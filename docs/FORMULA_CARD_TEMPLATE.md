@@ -299,6 +299,45 @@ CloudTCM 全文,本來就不是要逐條配對的。對 58 個沒人整理過的
 
 `review_status` AI 只能寫 `"draft"`;`source_checked` 由 Ting 的 RV1 流程升級。
 
+### §3.1 方中方 formula-in-formula(Ting 裁定 2A,2026-08-12)
+
+有些方把另一個成方整包當一味用 —— 蒿芩清膽湯組成表裡的**碧玉散**不是一味藥,
+是滑石:甘草:青黛 6:1:1 的成方。寫成 `herb_zh: "碧玉散"` 會被 F12 當成
+「中藥庫查無的藥」擋下來;拆成三味散進組成又會弄丟「這是一個成方」這件事。
+**兩件事都要留**:安全與交互作用必須能走到葉子藥材,考試要背的卻是那個方名。
+
+```json
+{
+  "entry_type": "formula_in_formula",
+  "formula_id": "formula.bi_yu_san",
+  "formula_id_status": "reserved_pending_card — 方劑庫尚無碧玉散記錄",
+  "herb_zh": "碧玉散", "role_zh": "佐", "dose_range": "9g",
+  "expanded_ratio_zh": "滑石:甘草:青黛 = 6:1:1",
+  "expanded_ingredients": [
+    { "herb_id": "herb.hua_shi", "herb_zh": "滑石", "ratio_part": 6 },
+    { "herb_id": "herb.gan_cao", "herb_zh": "甘草", "ratio_part": 1 },
+    { "herb_id": "herb.qing_dai", "herb_zh": "青黛", "ratio_part": 1 }
+  ]
+}
+```
+
+規則(F12 會擋,而且只加不減 —— 這個型別**不放寬任何既有檢查**):
+
+1. `entry_type: "formula_in_formula"` 是唯一的開關。沒有這個值的組成列照舊走
+   F12 的中藥庫比對,一個字都沒改。
+2. `formula_id` 必填,格式必須是 `formula.<english_slug>`(紅線一)。方劑庫還沒有
+   那張卡**照樣寫 id**,另加 `formula_id_status` 說明它是保留待建 ——
+   不准為了過檢查把 id 留空。
+3. `expanded_ingredients` 必填且不可為空。整包當一味而不展開,等於安全與交互作用
+   查不到葉子藥材,那正是這個型別要解決的問題。
+4. 每一味展開的藥都要有 `herb_zh`,而且**要嘛 `herb_id` 在中藥庫、要嘛 `herb_zh`
+   在中藥庫、要嘛帶 `herb_id_status` 誠實寫明為什麼查不到**。不准靜默無解。
+5. 其他欄位跟一般組成列完全一樣:`herb_zh`(F6)、`dose_range`(F6b)、
+   `role_zh`(F7)照擋。
+
+比例寫 `expanded_ratio_zh` 與各味的 `ratio_part`。**不要**把整包的 9g 除成三個
+克數 —— 那是換算,不是來源(特性 C 的同一條理由)。
+
 ## §4 來源優先序與驗證等級(教訓 7、10)
 
 **先框架、再內容。** 考綱決定**做哪些方、什麼是考點**;課件與網站決定**寫什麼**。
@@ -482,3 +521,10 @@ F11 會擋只有方名沒有 `change` 的條目。
 - 穴位卡的 `tcm_pattern_ids` 與方劑走**同一套證候詞彙**
 - **搜尋契約**:新增可搜欄位時要同步更新 `app.js` 的 `unifiedSearch`。
   穴位卡曾經漏掉標籤與身分,害辛苦翻譯的 151 個標籤搜不到(教訓 9)。
+
+## R2 Evidence 慣例(2026-08-11,三年藍圖 R2,全線統一)
+
+帶主張的欄位(劑量、安全、療效、機轉、紅旗)必掛 **per-field 來源錨點 +
+擷取日期**(`field_sources` 或本線等價欄位;格式參照 pharm 線
+`dailymed:<setid>#<SECTION>` 的可機器解析精神)。無來源的欄位誠實留空。
+新產卡即遵守;舊卡不回溯強制,由各線驗證器與 ratchet 自然收斂。

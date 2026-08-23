@@ -99,6 +99,30 @@ const knowledge = {
   patternRegistry: readJson("data/pathology/pattern_registry.json"),
   tdisRegistry: readJson("data/pathology/tdis_registry.json"),
   conditionCanon: readJson("data/pathology/condition_canon_shortlist.json"),
+  // 兩軸 maturity 的第二軸。完整度說「欄位齊了」,這個說「內容可不可信」——
+  // 92 張人工 eyes-on 判定過的卡的結論,原本只存在 docs 表格裡,畫面讀不到,
+  // 所以有未修復安全缺陷的卡看起來與乾淨的卡一模一樣。
+  // 由 scripts/build-content-quality-overlay.js 從 ledger 重新產生,不手改。
+  contentQuality: readJson("data/quality/content_quality.json"),
+  // 中西藥交互作用的逐條審查結論。渲染端只准顯示 render_eligible=true 的條目 ——
+  // 26 段裡目前只有 1 段(小柴胡湯的干擾素禁忌,講危害且有文獻),其餘 25 段
+  // 是無來源的效益宣稱,照規則留在資料裡但不上畫面。
+  formulaHdiReview: (() => {
+    // 雜湊比對在這裡做:瀏覽器沒有同步 sha1,而「顯示的必須就是被審過的那句話」
+    // 這個保證不能只靠 JSON 裡的一個布林值 —— 有人改了字沒重審,旗標不會自己變。
+    // 通過比對的原文放進 verified_texts,渲染端比對原文。
+    const review = readJson("data/quality/formula_hdi_review.json");
+    const formulas = readJson("data/herbs/formulas.json");
+    const sha = (s) => require("crypto").createHash("sha1").update(String(s).trim()).digest("hex").slice(0, 10);
+    const verified = [];
+    for (const rec of formulas.records || formulas) {
+      (rec.herb_drug_interactions_en || []).forEach((text, i) => {
+        const e = (review.entries || {})[`${rec.id}#${i}`];
+        if (e && e.render_eligible === true && e.text_sha1 === sha(text)) verified.push(String(text).trim());
+      });
+    }
+    return { ...review, verified_texts: verified };
+  })(),
   // §6.5 (B) — points carry tcm_pattern_ids; without the canon in the bundle
   // the card can only print "pat.肝氣鬱結" instead of the pattern's name.
   tcmPatternCanon: readJson("data/config/tcm_pattern_canon.json"),
@@ -151,6 +175,35 @@ const knowledge = {
   // Structured safety layer (2026-08-08). Canonical red flags live here as
   // records with tier + evidence; the card arrays below are presentation.
   redFlagRegistry: readJson("data/pathology/red_flag_registry.json"),
+  // Initial-intake minimum dataset (2026-08-09). Self-reported race/ethnicity
+  // checkboxes are rendered from this list at runtime — see
+  // docs/INTAKE_MINIMUM_DATASET_AUDIT.md — instead of being hard-coded into
+  // the case form, so the vocabulary can grow without touching index.html or
+  // app.js again.
+  demographicVocabulary: readJson("data/config/demographic_vocabulary.json"),
+  // Phase D batch 2 (docs/SPRINT_2026-08-12_BRIEF.md) — D17 §5/§6 vocab five-
+  // pack (Sonnet B3). Same "vocabulary first, records born when filled"
+  // approach as symptom_taxonomy.json (D14 build order): supp.*/life.*/
+  // exposure.*/adverse_event.*/modality.* records don't exist yet, but the
+  // SOAP dialog needs bilingual option lists NOW. Whole file bundled as-is
+  // (like safetyFlagVocabulary/demographicVocabulary above) — the SOAP form
+  // and any future card read the vocab's own top-level shape (`records` for
+  // four of the five, `categories` for supplementCategoryVocabulary), not a
+  // re-shaped copy.
+  supplementCategoryVocabulary: readJson("data/config/supplement_category_vocabulary.json"),
+  lifestyleFactorVocabulary: readJson("data/config/lifestyle_factor_vocabulary.json"),
+  exposureVocabulary: readJson("data/config/exposure_vocabulary.json"),
+  adverseEventVocabulary: readJson("data/config/adverse_event_vocabulary.json"),
+  modalityVocabulary: readJson("data/config/modality_vocabulary.json"),
+  // 第一批 supp.* 骨架卡(2026-08-12,docs/SUPP_CARD_TEMPLATE.md)。跟
+  // supplementCategoryVocabulary 同模式掛進 bundle:卡片讀自己的頂層形狀
+  // (`records`),不重塑一份副本。
+  supplementRecords: readJson("data/supplements/supplements.json"),
+  // AVS v3(Visit Checkout):建議庫 + 診所資訊進 bundle,Checkout 引擎
+  // (js/avs.js)從 ACUTING_KNOWLEDGE 讀 —— PHI-free 靜態 config(§11);
+  // 病人資料永不進這兩份檔案(validate-avs-library.js 把關)。
+  avsAdviceLibrary: readJson("data/config/avs_advice_library.json"),
+  clinicProfile: readJson("data/config/clinic_profile.json"),
 };
 
 // Runtime red-flag resolver — IN THE BUNDLE ONLY (D13: derive, never write

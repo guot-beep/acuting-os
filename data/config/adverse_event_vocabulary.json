@@ -1,0 +1,23 @@
+{
+  "dataset": "Adverse event (治療不良反應) controlled vocabulary",
+  "policy": [
+    "Canonical adverse_event.* ids (D17). adverse_event.* records do not exist yet — this is the vocabulary and the gap map, same approach as symptom_taxonomy.json (D14 build order).",
+    "觀察到的不良反應是一筆觀察值，不是診斷：任何程式路徑都不得將 adverse_event.* 觀察自動轉為 TCM 證型或病名（D17 §6）。",
+    "疑似暴露（suspected）不得自動升級為確診（confirmed）——本檔案的不良反應同理，通報後的嚴重度分級一律由臨床人員在該次就診記錄中人工判定，不由此清單推論。",
+    "severity_scale below is the closed set every adverse_event.* case entry's severity field must use — mild | moderate | severe. This file defines the scale; it does not assign a severity to any record.",
+    "IDs are ASCII (D10). Adding an adverse event is a schema change: this file, then the intake/visit form, then any validator that checks adverse_event.* ids."
+  ],
+  "created": "2026-08-12",
+  "applies_to": "Visit-level adverse event observations captured under a future adverse_event.* field",
+  "severity_scale": ["mild", "moderate", "severe"],
+  "records": [
+    { "id": "adverse_event.dizziness", "name_zh": "暈針／頭暈", "name_en": "Dizziness" },
+    { "id": "adverse_event.needling_pain", "name_zh": "針刺疼痛", "name_en": "Needling pain" },
+    { "id": "adverse_event.bruising", "name_zh": "瘀青", "name_en": "Bruising" },
+    { "id": "adverse_event.post_treatment_fatigue", "name_zh": "治療後疲倦", "name_en": "Post-treatment fatigue" },
+    { "id": "adverse_event.nausea", "name_zh": "噁心", "name_en": "Nausea" },
+    { "id": "adverse_event.post_treatment_headache", "name_zh": "治療後頭痛", "name_en": "Post-treatment headache" },
+    { "id": "adverse_event.anxiety", "name_zh": "焦慮", "name_en": "Anxiety" },
+    { "id": "adverse_event.cupping_blister", "name_zh": "拔罐水泡", "name_en": "Cupping blister" }
+  ]
+}

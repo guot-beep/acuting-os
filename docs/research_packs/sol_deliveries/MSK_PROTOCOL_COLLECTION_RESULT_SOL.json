@@ -1,0 +1,97 @@
+[
+  {
+    "condition_id":"cond.acute_lumbar_sprain","condition_name_zh":"急性腰扭傷","condition_name_en":"Acute lumbar sprain","protocol_status":"limited",
+    "points":[{"code":"DU26","name_zh":"水溝","role_zh":"急性下背痛文獻所用遠端穴","reason_zh":null,"source_ids":["ALS-S2"]},{"code":"SI3","name_zh":"後谿","role_zh":"急性下背痛文獻所用遠端穴","reason_zh":null,"source_ids":["ALS-S2"]},{"code":"BL40","name_zh":"委中","role_zh":"急性下背痛文獻所用遠端穴","reason_zh":null,"source_ids":["ALS-S2"]},{"code":"TE5","name_zh":"外關","role_zh":"急性下背痛文獻所用遠端穴","reason_zh":null,"source_ids":["ALS-S2"]},{"code":"EX-UE7","name_zh":"腰痛點","role_zh":"急性下背痛研究所用手部奇穴","reason_zh":null,"source_ids":["ALS-S2"]}],
+    "point_rationale_zh":"五穴是文獻列出的遠端穴候選集合，不是已驗證必須合用的固定方；急性腰扭傷直接試驗常把針刺與活動合併。","point_rationale_en":"These are distal points reported in acute-low-back-pain literature, not a validated mandatory combination. Direct lumbar-sprain trials often combined acupuncture with movement.",
+    "treatment_parameters":{"manual_or_electroacupuncture":"mixed","frequency":null,"session_duration":null,"treatment_course":null,"source_ids":["ALS-S1","ALS-S2","ALS-S3"]},
+    "scope_zh":"僅支持作為急性下背痛／腰扭傷疼痛與活動受限的輔助治療。","scope_conflict_note":null,
+    "evidence_note_zh":"13 項急性下背痛試驗的回顧顯示疼痛、ODI 與止痛藥使用可能小幅改善，但品質低且穴位、介入與對照異質；直接腰扭傷 RCT 合併活動療法，不能拆分效果。","condition_specific_cautions_zh":[],"referral_red_flags_zh":[],
+    "sources":[
+      {"source_id":"ALS-S1","type":"systematic_review","citation":"Su X, et al. Acupuncture for acute low back pain: a systematic review and meta-analysis. Ann Palliat Med. 2021;10:6156-6167.","url":"https://apm.amegroups.org/article/view/66741/html","pmid_or_doi":"10.21037/apm-21-551","covers":"急性下背痛；不全是 ICD S39.012 急性腰扭傷","modality":"mixed","comparator":"active_control","supports":["efficacy","scope"],"finding_zh":"相對藥物或假針等對照，VAS、ODI 與止痛藥使用可能小幅改善，但 RMDQ 未改善。","certainty":"low"},
+      {"source_id":"ALS-S2","type":"systematic_review","citation":"Chan S, et al. Treating acute low back pain with acupuncture. J Acupunct Meridian Stud. 2024.","url":"https://www.sciencedirect.com/science/article/pii/S2095754824000334","pmid_or_doi":null,"covers":"急性下背痛遠端取穴研究","modality":"acupuncture","comparator":"unclear","supports":["specific_points"],"finding_zh":"列出 DU26、SI3、BL40、TE5、EX-UE7 等遠端穴；未證明五穴合用優於其他方案。","certainty":"not_graded"},
+      {"source_id":"ALS-S3","type":"rct","citation":"Lin R, et al. Acupuncture-movement therapy for acute lumbar sprain: a randomized controlled clinical trial. J Tradit Chin Med. 2016;36:19-25.","url":"https://pubmed.ncbi.nlm.nih.gov/26946614/","pmid_or_doi":"PMID:26946614","covers":"急性腰扭傷；針刺運動療法","modality":"acupuncture","comparator":"active_control","supports":["efficacy","scope","treatment_parameters"],"finding_zh":"相對對照改善疼痛與活動度，但不能拆分運動的共同效果。","certainty":"low"}],
+    "no_source_found":false,"unresolved":["遠端穴是否應合併為固定方案未獲支持。"]
+  },
+  {
+    "condition_id":"cond.neck_pain_stiff","condition_name_zh":"急性頸痛／落枕","condition_name_en":"Acute neck pain / stiff neck","protocol_status":"limited",
+    "points":[{"code":"SI3","name_zh":"後谿","role_zh":"pilot RCT protocol 單穴方案","reason_zh":null,"source_ids":["NPS-S1"]}],
+    "point_rationale_zh":"SI3 來自直接針對 stiff neck with acute neck pain 的 pilot randomized protocol，只能標示為研究方案。","point_rationale_en":"SI3 was the single study point in a pilot randomized protocol for stiff neck with acute neck pain, not a universal standard.",
+    "treatment_parameters":{"manual_or_electroacupuncture":"manual","frequency":null,"session_duration":null,"treatment_course":null,"source_ids":["NPS-S1"]},"scope_zh":"可研究作為落枕造成急性頸痛的短期症狀輔助；protocol 本身不證明療效。","scope_conflict_note":null,
+    "evidence_note_zh":"找到疾病直接 pilot RCT protocol，但未用 protocol 本身宣稱有效，也未拿慢性頸痛資料代替。","condition_specific_cautions_zh":[],"referral_red_flags_zh":[],
+    "sources":[{"source_id":"NPS-S1","type":"trial_protocol","citation":"Sun Z, et al. Acupuncture at Houxi (SI3) acupoint for acute neck pain caused by stiff neck. BMJ Open. 2014;4:e006236.","url":"https://bmjopen.bmj.com/content/4/12/e006236","pmid_or_doi":"PMID:25537784; DOI:10.1136/bmjopen-2014-006236","covers":"stiff neck patients with acute neck pain","modality":"acupuncture","comparator":"sham","supports":["specific_points","treatment_parameters"],"finding_zh":"研究方案指定 SI3 與 sham 比較；protocol 尚不能提供療效結論。","certainty":"not_graded"}],
+    "no_source_found":false,"unresolved":["未取得可升格為通用臨床方案的確證結果。"]
+  },
+  {
+    "condition_id":"cond.whiplash","condition_name_zh":"揮鞭式頸部損傷","condition_name_en":"Whiplash-associated disorder","protocol_status":"symptom_only","points":[],"point_rationale_zh":null,"point_rationale_en":null,
+    "treatment_parameters":{"manual_or_electroacupuncture":"mixed","frequency":null,"session_duration":null,"treatment_course":null,"source_ids":["WAD-S1","WAD-S2"]},"scope_zh":"可能改善 WAD 疼痛與部分 ROM，但不能建立固定穴組或把 dry needling 結果視為針灸結果。","scope_conflict_note":null,
+    "evidence_note_zh":"2024 回顧混合 acupuncture、electroacupuncture 與 dry needling，不能把整體效果機械歸因於傳統針灸；較早回顧亦認為證據有限。","condition_specific_cautions_zh":[],"referral_red_flags_zh":[],
+    "sources":[
+      {"source_id":"WAD-S1","type":"systematic_review","citation":"Lee SH, et al. Efficacy of acupuncture for whiplash injury. BMJ Open. 2024;14:e077700.","url":"https://bmjopen.bmj.com/content/14/1/e077700","pmid_or_doi":"10.1136/bmjopen-2023-077700","covers":"Quebec-classified whiplash-associated disorder","modality":"mixed","comparator":"active_control","supports":["efficacy","scope"],"finding_zh":"相對 sham 或其他常規對照，VAS 與伸展 ROM 可能改善；介入混有乾針。","certainty":"low"},
+      {"source_id":"WAD-S2","type":"systematic_review","citation":"Moon TW, et al. Acupuncture for treating whiplash associated disorder: a systematic review. 2014.","url":"https://pmc.ncbi.nlm.nih.gov/articles/PMC4034516/","pmid_or_doi":null,"covers":"WAD 的 acupuncture、electroacupuncture、dry needling RCT","modality":"mixed","comparator":"unclear","supports":["efficacy","scope"],"finding_zh":"研究少且偏倚風險限制結論。","certainty":"very_low"}],
+    "no_source_found":false,"unresolved":["無法由混合介入回顧建立針灸專屬固定穴組。"]
+  },
+  {
+    "condition_id":"cond.rotator_cuff","condition_name_zh":"旋轉肌袖肌腱病變","condition_name_en":"Rotator cuff tendinopathy","protocol_status":"symptom_only","points":[],"point_rationale_zh":null,"point_rationale_en":null,
+    "treatment_parameters":{"manual_or_electroacupuncture":"mixed","frequency":null,"session_duration":null,"treatment_course":null,"source_ids":["RC-S1"]},"scope_zh":"僅可提案為症狀性 rotator cuff disease 的疼痛與功能輔助，不能宣稱修復撕裂。","scope_conflict_note":null,
+    "evidence_note_zh":"回顧認定利益證據 very low，安全報告不完整，診斷與介入異質；未建立通用固定穴組。","condition_specific_cautions_zh":[],"referral_red_flags_zh":[],
+    "sources":[{"source_id":"RC-S1","type":"systematic_review","citation":"Choi S, et al. Acupuncture for symptomatic rotator cuff disease: a systematic review. J Acupunct Res. 2021.","url":"https://www.e-jar.org/journal/view.html?pn=vol&uid=2486&vmd=Full","pmid_or_doi":null,"covers":"症狀性 rotator cuff disease；不同診斷與針灸相關介入","modality":"mixed","comparator":"active_control","supports":["efficacy","scope"],"finding_zh":"相對各種對照，短期疼痛／功能利益證據 very low，安全性不確定。","certainty":"very_low"}],
+    "no_source_found":false,"unresolved":["tendinopathy、subacromial pain 及不同程度 tear 無法整合成單一處方。"]
+  },
+  {
+    "condition_id":"cond.lateral_epicondylitis","condition_name_zh":"網球肘","condition_name_en":"Lateral epicondylitis","protocol_status":"limited",
+    "points":[{"code":"LI4","name_zh":"合谷","role_zh":"pilot RCT 固定穴","reason_zh":null,"source_ids":["LE-S1"]},{"code":"TE5","name_zh":"外關","role_zh":"pilot RCT 固定穴","reason_zh":null,"source_ids":["LE-S1"]},{"code":"LI10","name_zh":"手三里","role_zh":"pilot RCT 固定穴","reason_zh":null,"source_ids":["LE-S1"]},{"code":"LI11","name_zh":"曲池","role_zh":"pilot RCT 固定穴","reason_zh":null,"source_ids":["LE-S1"]},{"code":"LU5","name_zh":"尺澤","role_zh":"pilot RCT 固定穴","reason_zh":null,"source_ids":["LE-S1"]},{"code":"LI12","name_zh":"肘髎","role_zh":"pilot RCT 固定穴","reason_zh":null,"source_ids":["LE-S1"]},{"code":"ASHI","name_zh":"阿是穴","role_zh":"兩個患處壓痛點","reason_zh":"來源指定 two Ashi points，未給固定穴碼。","source_ids":["LE-S1"]}],
+    "point_rationale_zh":"整組來自 ipsilateral／contralateral／sham pilot RCT protocol，是特定研究方案，不是通用標準方。","point_rationale_en":"This point set comes from an ipsilateral-versus-contralateral-versus-sham pilot RCT protocol and is not a universal standard.",
+    "treatment_parameters":{"manual_or_electroacupuncture":"manual","frequency":"10 treatments over 4 weeks","session_duration":null,"treatment_course":"4 weeks","source_ids":["LE-S1"]},"scope_zh":"可作短期疼痛與功能輔助；長期效果與最佳穴組不確定。","scope_conflict_note":null,
+    "evidence_note_zh":"直接 protocol 提供完整穴組；系統性回顧提示短期效果，但品質限制可信度。","condition_specific_cautions_zh":[],"referral_red_flags_zh":[],
+    "sources":[
+      {"source_id":"LE-S1","type":"trial_protocol","citation":"Shin KM, et al. Acupuncture for lateral epicondylitis: study protocol for a randomized pilot trial. Trials. 2013;14:174.","url":"https://link.springer.com/article/10.1186/1745-6215-14-174","pmid_or_doi":"10.1186/1745-6215-14-174","covers":"lateral epicondylitis；患側、健側與非侵入 sham","modality":"acupuncture","comparator":"sham","supports":["specific_points","treatment_parameters"],"finding_zh":"明列 LI4、TE5、LI10、LI11、LU5、LI12 及兩個 Ashi，10 次／4 週；protocol 不證明療效。","certainty":"not_graded"},
+      {"source_id":"LE-S2","type":"systematic_review","citation":"Zhou Y, et al. Effectiveness of acupuncture for lateral epicondylitis. 2020.","url":"https://pmc.ncbi.nlm.nih.gov/articles/PMC7114772/","pmid_or_doi":null,"covers":"lateral epicondylitis RCT","modality":"acupuncture","comparator":"active_control","supports":["efficacy","scope"],"finding_zh":"相對藥物或其他對照可能有短期利益，但方法學品質受限。","certainty":"low"}],
+    "no_source_found":false,"unresolved":["pilot protocol 穴組不能升格為指引。"]
+  },
+  {
+    "condition_id":"cond.medial_epicondylitis","condition_name_zh":"高爾夫球肘","condition_name_en":"Medial epicondylitis","protocol_status":"no_source","points":[],"point_rationale_zh":null,"point_rationale_en":null,
+    "treatment_parameters":{"manual_or_electroacupuncture":null,"frequency":null,"session_duration":null,"treatment_course":null,"source_ids":[]},"scope_zh":"未建立專屬針灸處方；不可由 lateral epicondylitis 類推。","scope_conflict_note":null,
+    "evidence_note_zh":"2026-08-14 重新檢索 PubMed 索引結果、Cochrane Library 網頁及學術網頁；檢索詞：'acupuncture medial epicondylitis randomized trial acupoints'、'acupuncture golfer's elbow systematic review'。結果主要為 lateral epicondylitis、診所頁或未分內外側的 chronic epicondylitis，未找到合格直接列穴來源。","condition_specific_cautions_zh":[],"referral_red_flags_zh":[],"sources":[],"no_source_found":true,"unresolved":["未被英文資料庫索引的中文試驗是否存在尚不確定。"]
+  },
+  {
+    "condition_id":"cond.carpal_tunnel","condition_name_zh":"腕隧道症候群","condition_name_en":"Carpal tunnel syndrome","protocol_status":"limited",
+    "points":[{"code":"PC7","name_zh":"大陵","role_zh":"納入 RCT 100% 使用","reason_zh":null,"source_ids":["CTS-S1"]},{"code":"PC6","name_zh":"內關","role_zh":"納入 RCT 75% 使用","reason_zh":null,"source_ids":["CTS-S1"]},{"code":"LI4","name_zh":"合谷","role_zh":"納入 RCT 50% 使用","reason_zh":null,"source_ids":["CTS-S1"]},{"code":"LI11","name_zh":"曲池","role_zh":"納入 RCT 50% 使用","reason_zh":null,"source_ids":["CTS-S1"]},{"code":"PC8","name_zh":"勞宮","role_zh":"納入 RCT 37.5% 使用","reason_zh":null,"source_ids":["CTS-S1"]}],
+    "point_rationale_zh":"這是跨 RCT 使用頻率摘要，不代表五穴必須合用；研究主要限輕中度 CTS。","point_rationale_en":"These points reflect use frequencies across RCTs, not a mandatory five-point combination; evidence mainly concerns mild-to-moderate CTS.",
+    "treatment_parameters":{"manual_or_electroacupuncture":"mixed","frequency":null,"session_duration":null,"treatment_course":null,"source_ids":["CTS-S1"]},"scope_zh":"可作輕中度 CTS 症狀輔助；不能替代嚴重壓迫的減壓評估。","scope_conflict_note":null,
+    "evidence_note_zh":"回顧提供穴位頻率，但方案、對照及療程異質；較早回顧判定證據 encouraging but not convincing。","condition_specific_cautions_zh":[],"referral_red_flags_zh":[],
+    "sources":[
+      {"source_id":"CTS-S1","type":"systematic_review","citation":"Dong Q, et al. Acupuncture for carpal tunnel syndrome. Front Neurosci. 2023;17:1097455.","url":"https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2023.1097455/full","pmid_or_doi":"10.3389/fnins.2023.1097455","covers":"CTS RCT；主要為輕中度患者","modality":"mixed","comparator":"active_control","supports":["efficacy","specific_points","scope"],"finding_zh":"最常使用 PC7、PC6、LI4、LI11、PC8；相對 sham、藥物或其他療法結果異質。","certainty":"low"},
+      {"source_id":"CTS-S2","type":"systematic_review","citation":"Sim H, et al. Acupuncture for carpal tunnel syndrome. J Pain. 2011;12:307-314.","url":"https://pubmed.ncbi.nlm.nih.gov/21093382/","pmid_or_doi":"PMID:21093382","covers":"CTS 針灸及類針灸 RCT","modality":"mixed","comparator":"active_control","supports":["efficacy","scope"],"finding_zh":"症狀療法證據具鼓舞性但不具說服力；試驗少且品質低。","certainty":"low"}],
+    "no_source_found":false,"unresolved":["穴位頻率不能視為五穴合用處方。"]
+  },
+  {
+    "condition_id":"cond.meniscus_injury","condition_name_zh":"半月板損傷","condition_name_en":"Meniscal injury","protocol_status":"no_source","points":[],"point_rationale_zh":null,"point_rationale_en":null,
+    "treatment_parameters":{"manual_or_electroacupuncture":null,"frequency":null,"session_duration":null,"treatment_course":null,"source_ids":[]},"scope_zh":"不能建立未手術半月板損傷固定處方；資料主要為術後複合復健或膝 OA 間接證據。","scope_conflict_note":null,
+    "evidence_note_zh":"2026-08-14 重新檢索 PubMed 索引結果、Cochrane Library 網頁及學術網頁；檢索詞：'acupuncture meniscus injury randomized trial acupoints'、'acupuncture meniscal tear systematic review'、'acupuncture after meniscus repair trial'。結果主要為膝 OA、病例或術後針灸加功能訓練，不能分離效果或建立專屬穴組。","condition_specific_cautions_zh":[],"referral_red_flags_zh":[],"sources":[],"no_source_found":true,"unresolved":["術後複合復健中文試驗完整原文與獨立效果未核實。"]
+  },
+  {
+    "condition_id":"cond.achilles_tendinopathy","condition_name_zh":"阿基里斯腱病變","condition_name_en":"Achilles tendinopathy","protocol_status":"limited",
+    "points":[{"code":"ASHI","name_zh":"阿是穴","role_zh":"Achilles tendon 疼痛區四針","reason_zh":"位置依個體 painful area 變動，未指定固定經穴。","source_ids":["AT-S1"]}],
+    "point_rationale_zh":"feasibility RCT 採 Achilles tendon 疼痛區局部針刺，不得轉換成推測的固定穴碼。","point_rationale_en":"The feasibility RCT used four needles in the painful Achilles tendon region; these sites should remain ASHI rather than inferred traditional codes.",
+    "treatment_parameters":{"manual_or_electroacupuncture":"manual","frequency":"4 sessions over 2 weeks","session_duration":null,"treatment_course":"2 weeks; follow-up to 12 weeks","source_ids":["AT-S1"]},"scope_zh":"小型試驗支持對離心運動反應不足者作疼痛與功能輔助，不能外推至腱斷裂。","scope_conflict_note":null,
+    "evidence_note_zh":"相對 sham 的 VISA-A 與疼痛差異達臨床重要門檻，但樣本小且屬 feasibility study。","condition_specific_cautions_zh":[],"referral_red_flags_zh":[],
+    "sources":[{"source_id":"AT-S1","type":"rct","citation":"Kishmishian B, et al. A randomised feasibility study using an acupuncture protocol to the Achilles tendon in Achilles tendinopathy. 2019.","url":"https://knowledge.lancashire.ac.uk/id/eprint/24398/7/24398%20Clinical_Effects_Acupuncture_on_Achilles_Tendon_Revised%20Manuscript.pdf","pmid_or_doi":null,"covers":"對 modified eccentric exercise 反應不足的 Achilles tendinopathy","modality":"acupuncture","comparator":"sham","supports":["efficacy","specific_points","treatment_parameters","scope"],"finding_zh":"相對 sham，4 次局部疼痛區針刺後 VISA-A 與 NPRS 達統計及臨床重要差異；小型可行性研究。","certainty":"low"}],
+    "no_source_found":false,"unresolved":["研究未提供可轉為標準經穴代碼的固定位置。"]
+  },
+  {
+    "condition_id":"cond.hip_osteoarthritis","condition_name_zh":"髖骨關節炎","condition_name_en":"Hip osteoarthritis","protocol_status":"not_supported","points":[],"point_rationale_zh":null,"point_rationale_en":null,
+    "treatment_parameters":{"manual_or_electroacupuncture":"mixed","frequency":null,"session_duration":null,"treatment_course":null,"source_ids":["HOA-S1"]},"scope_zh":"不足以支持常規固定處方；相對 sham 幾乎無疼痛或功能差異。",
+    "scope_conflict_note":{"existing_says":"既有卡片可作輔助的 scope 不由本回傳直接覆蓋。","source_says":"Cochrane：相對 sham 可能幾乎無差異；加於 routine care 相對 routine care alone 可能改善。","source_ids":["HOA-S1"]},
+    "evidence_note_zh":"結果依 comparator 而變：相對 sham 幾乎無差異；相對 routine care alone 可能改善；相對運動或 NSAID 不確定。因此不建穴組。","condition_specific_cautions_zh":[],"referral_red_flags_zh":[],
+    "sources":[{"source_id":"HOA-S1","type":"systematic_review","citation":"Manheimer E, et al. Acupuncture for hip osteoarthritis. Cochrane Database Syst Rev. 2018;CD013010.","url":"https://www.cochrane.org/evidence/CD013010_acupuncture-hip-osteoarthritis","pmid_or_doi":"10.1002/14651858.CD013010","covers":"hip osteoarthritis；6 studies, 413 participants","modality":"acupuncture","comparator":"sham","supports":["efficacy","scope"],"finding_zh":"相對 sham 約 8 週時可能幾乎無差異；相對 routine care alone 可能改善；相對 advice/exercise 或 NSAID 不確定。","certainty":"moderate"}],
+    "no_source_found":false,"unresolved":["一般 hip pain 常用穴頻率不能當成 hip OA 有效處方。"]
+  },
+  {
+    "condition_id":"cond.piriformis_syndrome","condition_name_zh":"梨狀肌症候群","condition_name_en":"Piriformis syndrome","protocol_status":"no_source","points":[],"point_rationale_zh":null,"point_rationale_en":null,
+    "treatment_parameters":{"manual_or_electroacupuncture":null,"frequency":null,"session_duration":null,"treatment_course":null,"source_ids":["PS-S1"]},"scope_zh":"不能建立針灸固定穴組；常見直接 needling 資料多為 dry needling 或泛稱 sciatica。","scope_conflict_note":null,
+    "evidence_note_zh":"2026-08-14 重新檢索 PubMed 索引結果、Cochrane Library 網頁及學術網頁；檢索詞：'acupuncture piriformis syndrome randomized trial acupoints'、'piriformis syndrome acupuncture systematic review'、'piriformis dry needling randomized trial'。只找到尚未產生結果的針灸 network-meta-analysis protocol，以及 dry needling／sciatica 資料。",
+    "condition_specific_cautions_zh":[],"referral_red_flags_zh":[],
+    "sources":[{"source_id":"PS-S1","type":"trial_protocol","citation":"He Y, et al. Acupuncture methods for piriformis syndrome: a protocol for systematic review and network meta-analysis. J Pain Res. 2023.","url":"https://pmc.ncbi.nlm.nih.gov/articles/PMC10350400/","pmid_or_doi":null,"covers":"piriformis syndrome acupuncture RCT 的預定回顧","modality":"mixed","comparator":"unclear","supports":[],"finding_zh":"僅為回顧 protocol，不能提供療效、最佳介入或穴組結論。","certainty":"not_graded"}],
+    "no_source_found":true,"unresolved":["後續完成的 network meta-analysis 是否正式發表需追蹤。"]
+  }
+]

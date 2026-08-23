@@ -45,6 +45,14 @@ function categoryBadgesHtml(category) {
 const STORAGE_KEY = "acuting-acupoint-v3";
 const CASE_STORAGE_KEY = "acuting-clinical-cases-v1";
 const CONTENT_MODE_KEY = "acuting-content-mode-v1";
+// FIX A (Dry Clinic #6) — UI-convenience-only draft autosave for the case/
+// SOAP dialogs. Deliberately separate keys from CASE_STORAGE_KEY: drafts
+// are never read/written by persistClinicalCases/loadClinicalCases, never
+// touched by export/import, and never enter the clinical store. Cleared on
+// successful save; otherwise survive a reload so a crash/F5 mid-form
+// doesn't erase 30-60 filled fields.
+const CASE_DRAFT_KEY = "acuting-draft-case-v1";
+const SOAP_DRAFT_KEY = "acuting-draft-soap-v1";
 // CS1: clinical cases live only in localStorage until the durable store lands
 // (NORTH_STAR §H2). Until then, export discipline is the only backup. This
 // meta tracks the last export + saves since, to nudge before data is lost.
@@ -61,6 +69,161 @@ const OUTCOME_VERDICTS = {
 };
 const LEARN_FROM_VERDICTS = ["no_change", "worsened"];
 let learnFromMode = false;
+// 診務回顧面板的開合。宣告在這裡而不是 renderPracticeAuditPanel 旁邊:
+// renderClinicalCases 會讀它,而 render() 在檔案上方就執行 —— 放在下面會是 TDZ。
+let practiceAuditOpen = false;
+
+// Metadata-driven numeric outcome metric config (2026-08-09) — prototype
+// covering exactly the two metrics already proven (metric.pain_score,
+// metric.sleep_hours). Declared here, near OUTCOME_VERDICTS, rather than
+// beside the functions that use it (getOutcomeMetricDef etc., further down
+// near normalizeSoapNote): the bottom of this file calls render() at
+// top-level page-load time (line ~1036, before any case dialog even opens),
+// and render() can synchronously reach renderSoapNoteCard ->
+// formatNumericOutcomeMetrics on first load if a case with SOAP notes is
+// already selected. A `const` has no hoisting the way a function
+// declaration does — declaring it after that render() call throws
+// "Cannot access before initialization" the moment a real case loads.
+//
+// Deliberately NOT added to data/clinical_cases/outcome_metrics.json.
+// That file is the canonical clinical vocabulary — id/name/label/category/
+// unit/direction_good, meaning worth having independent of any UI. min/max/
+// integer-vs-decimal are form-rendering constraints with no clinical
+// meaning: they answer "what does an HTML input allow," not "what does
+// this measurement mean." Mixing them into the vocabulary would (a) let a
+// UI tweak edit a file that is supposed to be clinical content, and (b)
+// make every future non-numeric metric (bbt_pattern is text, adverse_
+// reaction is text) carry irrelevant numeric-only keys. Smallest clean
+// design: a short array literal, label/unit still looked up from
+// outcome_metrics.json (never duplicated) so there is exactly one place
+// either can drift. getOutcomeMetricDef/renderNumericOutcomeMetricInputs/
+// computeNumericOutcomeMetrics/formatNumericOutcomeMetrics (the functions
+// that consume this) live further down, near normalizeSoapNote.
+const NUMERIC_OUTCOME_METRIC_CONFIG = [
+  { metricId: "metric.pain_score", min: 0, max: 10, integer: true },
+  { metricId: "metric.sleep_hours", min: 0, max: null, integer: false },
+  // "One fact, one home" reconciliation (2026-08-09,
+  // docs/SOAP_FOLLOWUP_TRACKING_AUDIT.md's effect_duration_days duplicate-
+  // capture problem): note.effectDurationDays (SOAP audit batch, a direct
+  // column added before the structured-metric layer existed) and
+  // metric.effect_duration_days are the same clinical fact — "how many
+  // days did the last treatment's effect last," CLINICAL_GRAPH_TRACK.md
+  // CG6's own words. Integer semantics kept unchanged from the existing
+  // direct field (schema.sql's effect_duration_days is INTEGER, the old
+  // form input was step="1") — nothing in outcome_metrics.json's plain
+  // "days" unit argues for allowing half-days, and this batch isn't the
+  // place to change that. legacyField marks this as the one metric with a
+  // pre-existing alternate representation; resolveNumericMetricValue below
+  // is the only place that property is read.
+  { metricId: "metric.effect_duration_days", min: 0, max: null, integer: true, legacyField: "effectDurationDays" },
+  // Batch 2 (2026-08, docs/OUTCOME_METRICS_SEMANTIC_AUDIT_V2.md §8, approved
+  // as-is). All four share outcome_metrics.json's unit:"0-10" — that string
+  // is a vocabulary fact and gives the RANGE (0 to 10), but it does not by
+  // itself say whether entries within that range must be whole numbers; the
+  // audit doc was corrected to stop implying it did. Whole-number entry for
+  // every subjective 0-10 scale is an explicit AcuTing UI convention
+  // (approved this batch, applies to pain_score above too), not something
+  // "0-10" encodes on its own.
+  { metricId: "metric.stress_level", min: 0, max: 10, integer: true },
+  { metricId: "metric.mood", min: 0, max: 10, integer: true },
+  { metricId: "metric.energy_level", min: 0, max: 10, integer: true },
+  { metricId: "metric.sleep_quality", min: 0, max: 10, integer: true },
+  // Batch 3 (2026-08, docs/OUTCOME_METRICS_SEMANTIC_AUDIT_V2.md §8 deferred
+  // list, approved this batch). Deliberately mixed shapes, not four more
+  // 0-10 clones — proves the generic renderer across bounded scale (A),
+  // integer duration (D), and integer count (C) in one pass, same {min,
+  // max, integer} shape with zero new properties either way.
+  //   bloating: same bounded 0-10 whole-number AcuTing convention as
+  //     stress_level/mood/energy_level/sleep_quality above.
+  //   sleep_onset_minutes: unbounded (max: null) nonnegative whole-minute
+  //     duration — unit:"minutes" is the vocabulary fact (a duration);
+  //     whole-minute entry is the AcuTing convention, not something
+  //     "minutes" proves by itself. Same shape as effect_duration_days.
+  //   night_wakings: unbounded nonnegative integer count — unit:
+  //     "count_per_night" is a tally, decimals are meaningless. 0 is a
+  //     real value (slept through), not "not measured."
+  //   bowel_frequency: unbounded nonnegative integer count — unit:
+  //     "count_per_week". direction_good is "individualized" in
+  //     outcome_metrics.json; this config makes no higher/lower-is-better
+  //     claim, and formatNumericOutcomeMetrics below must not either.
+  { metricId: "metric.bloating", min: 0, max: 10, integer: true },
+  { metricId: "metric.sleep_onset_minutes", min: 0, max: null, integer: true },
+  { metricId: "metric.night_wakings", min: 0, max: null, integer: true },
+  { metricId: "metric.bowel_frequency", min: 0, max: null, integer: true },
+  // Academic-readiness batch (2026-08, pre-9/01 freeze): PGIC — the
+  // IMMPACT-recommended single-item global outcome. 1-7 whole-number
+  // anchor scale where the ANCHORS carry the meaning (1 very much
+  // improved … 4 no change … 7 very much worse) — min is 1, not 0,
+  // because 0 has no anchor on this instrument; entering it is a data
+  // error, not a lower bound clamp. Registry record metric.pgic
+  // introduces category "global" (IMMPACT's own domain name for this
+  // instrument class).
+  { metricId: "metric.pgic", min: 1, max: 7, integer: true },
+];
+
+// Outcome Tracking v1 direction-hint labels (2026-08, CG8). Declared here —
+// not beside renderOutcomeTrackingPanel further down — for the same TDZ
+// reason NUMERIC_OUTCOME_METRIC_CONFIG lives up here instead of near the
+// functions that use it: render() runs synchronously at top-level page-load
+// time and can reach renderOutcomeTrackingPanel on first load if a case is
+// already selected, which is before this file's later `const` declarations
+// would otherwise have initialized. direction_good is displayed verbatim as
+// vocabulary metadata (what the record says), never turned into a computed
+// verdict — no "higher/lower is better," no color. individualized/
+// contextual get the exact same neutral treatment as increase/decrease,
+// which is what specifically keeps bowel_frequency (individualized) from
+// reading as "more is better."
+const OUTCOME_DIRECTION_HINT_LABELS = {
+  increase: "方向：遞增 direction: increase",
+  decrease: "方向：遞減 direction: decrease",
+  individualized: "方向：因人而異 direction: individualized",
+  contextual: "方向：視情境 direction: contextual",
+};
+
+// outcome_metrics.json 的 interpretation_status 三態，畫在讀數字的地方。
+// 沒有這一行，Outcome Tracking 只會顯示「-3」，看的人無從分辨那是「文獻上
+// 有意義的變化」還是「一個沒有任何閾值可以對照的自評分數」——兩者長得一模一樣。
+// 契約寫在資料裡卻不上畫面，等於沒寫。
+const OUTCOME_INTERPRETATION_BADGES = {
+  no_published_threshold: { text: "無公認閾值 · 看趨勢", cls: "interp-none" },
+  source_pending: { text: "判讀來源待補", cls: "interp-pending" },
+};
+
+// Config-integrity self-check (2026-08, docs/OUTCOME_METRICS_SEMANTIC_AUDIT_V2.md
+// §7 — "worthwhile before more metrics," recommended there, implemented
+// here alongside this batch's new entries as suggested). Catches a
+// typo'd/nonexistent metricId in the array above the moment the page loads,
+// before it could ever reach a save — every entry here is a hand-typed
+// string a developer could mistype, unlike an entry inside a saved note's
+// outcomeMetrics[], which this check never looks at and never touches.
+// Deliberately narrow: checks ONLY this config array, not any note's actual
+// data. A metric recorded in the past and later removed from this config
+// (deprecated, or simply not yet re-added) must keep loading and
+// displaying exactly as it already does via resolveNumericMetricValue's
+// existing blank/legacy handling — "not currently configured" is never
+// "invalid," and this check must never suggest otherwise. console.error
+// only, never alert() — a config typo is a developer-facing bug to catch in
+// QA, not something a clinician using the app should ever see a popup
+// about. Runs once, synchronously, immediately after the array above:
+// index.html loads data/generated/knowledge_data.js (which sets
+// globalThis.ACUTING_KNOWLEDGE) before app.js, so getOutcomeMetricDef has
+// real data to check against from the very first line of this file — no
+// deferral to page-load events needed. A correctly-configured array (the
+// only state this repo should ever ship) produces zero console output.
+// Guarded on the vocabulary actually being loaded: scripts/validate-data.js
+// evaluates this whole file in a bare `new Function()` sandbox with no
+// index.html <script> tags, so globalThis.ACUTING_KNOWLEDGE is never set
+// there and every metricId would otherwise resolve to null regardless of
+// whether it's a real typo — that's an unloaded-vocabulary condition, not a
+// typo, and this check must not conflate the two. Only run the per-entry
+// scan once outcomeMetrics.records actually has rows to check against.
+if ((globalThis.ACUTING_KNOWLEDGE?.outcomeMetrics?.records || []).length > 0) {
+  NUMERIC_OUTCOME_METRIC_CONFIG.forEach((cfg) => {
+    if (!getOutcomeMetricDef(cfg.metricId)) {
+      console.error(`NUMERIC_OUTCOME_METRIC_CONFIG: "${cfg.metricId}" does not resolve to a record in data/clinical_cases/outcome_metrics.json — check for a typo.`);
+    }
+  });
+}
 
 // Data-load guard: the app is data-driven; if the generated data file did not
 // load (OneDrive not synced, file missing, 404), fail LOUDLY instead of
@@ -180,6 +343,16 @@ function adapt361Record(record) {
     patternsEn: record.indications_en || [],
     evidence: record.evidence || "",
     cautions: cleanCautions.join("\n"),
+    // 2026-08-12:361 經穴有兩個英文安全欄,而這個 adapter 一個都沒讀,
+    // 於是英文模式退回去印中文的 cautions。兩者差別是致命的:
+    //   contraindications_en —— 357/361 是同一句衛生教條(「Standard hygienic
+    //     practice; strictly control insertion depth…」),等於沒說。
+    //   cautions_en —— 逐穴手寫:LU1「⚠️ Deep medial insertion contraindicated
+    //     (pneumothorax risk)」、ST9「⚠️ Avoid carotid artery」、
+    //     ST17「⚠️ NEEDLING & MOXIBUSTION STRICTLY PROHIBITED! Landmark only.」
+    // 361 條逐穴警告存在資料裡,從來沒有一條到過畫面。逐穴的放前面。
+    pointCautionsEn: record.cautions_en || [],
+    cautionsEn: record.contraindications_en || [],
     techniqueNotes: needling361Text(record.needling),
     nccaomHighYield: record.nccaom_high_yield || [],
     // Board emphasis, read off the curriculum's own asterisks (2 = **, 1 = *).
@@ -550,6 +723,37 @@ let selectedCode = points[0]?.code || "";
 let editingCode = null;
 let clinicalCases = loadClinicalCases();
 let selectedCaseId = clinicalCases[0]?.id || "";
+// Meds & Supplements / Environmental exposures 的標籤 const —— 必須在初始
+// render() 之前宣告:renderAgentExposuresPanel / renderEnvironmentalExposuresPanel
+// 在第一次 render(第 ~1200 行)就可能執行,宣告留在面板函式旁是 TDZ,
+// 首個病例帶 exposures 時開機即崩(AVS v3 驗證走查實測抓到,非新引入)。
+const AGENT_EXPOSURE_TYPE_LABELS = { drug: "藥 Drug", supplement: "補 Supplement" };
+const AGENT_EXPOSURE_STATUS_LABELS = { current: "使用中 Current", stopped: "已停用 Stopped", prn: "需要時 PRN", unknown: "不確定 Unknown" };
+const ENV_EXPOSURE_CERTAINTY_LABELS = { suspected: "疑似 Suspected", patient_reported: "病人自述 Patient reported", confirmed: "已確認 Confirmed" };
+const ENV_EXPOSURE_TIMING_LABELS = { ongoing: "持續中 Ongoing", historical: "過去 Historical", unknown: "不確定 Unknown" };
+const ADVERSE_EVENT_INTERVENTION_LABELS = { acupuncture: "針刺 Acupuncture", cupping: "拔罐 Cupping", moxa: "艾灸 Moxa", herbs: "中藥 Herbs", formula: "方劑 Formula", other: "其他 Other" };
+const ADVERSE_EVENT_SEVERITY_LABELS = { mild: "輕度 Mild", moderate: "中度 Moderate", severe: "重度 Severe" };
+const ADVERSE_EVENT_RESOLUTION_LABELS = { resolved: "已緩解 Resolved", resolving: "緩解中 Resolving", ongoing: "持續中 Ongoing", unknown: "不確定 Unknown" };
+const CONSENT_LABELS = { granted: "已同意 Granted", declined: "婉拒 Declined", pending: "待決 Pending" };
+const AVS_CATEGORY_LABELS = {
+  aftercare: "治療後注意",
+  lifestyle: "作息生活",
+  diet: "飲食",
+  exercise: "運動",
+  special: "特別注意",
+  herb_caution: "服藥提醒"
+};
+// §5 的證據等級類別(scripts/validate-avs-library.js 的 EVIDENCE_TYPES)。
+// 只用在「為什麼建議?」面板 —— 醫師端判斷輔助,不進病人文件。
+const AVS_EVIDENCE_TYPE_LABELS = {
+  clinical_safety: "臨床安全",
+  regulatory_or_guideline: "法規/指引",
+  evidence_informed: "實證支持",
+  practice_standard: "臨床常規",
+  traditional_tcm_lifestyle: "中醫養生慣例",
+  clinic_preference: "診所慣例"
+};
+let selectedPatientCode = "";   // Patient Workspace W1 — read-only, list selection only
 let editingCaseId = null;
 let editingSoapId = null;
 let isSyncingPointHash = false;
@@ -627,10 +831,24 @@ const homeSearch = document.querySelector("#homeSearch");
 const caseList = document.querySelector("#caseList");
 const caseDetail = document.querySelector("#caseDetail");
 const caseResultCount = document.querySelector("#caseResultCount");
+const patientSearch = document.querySelector("#patientSearch");
+const patientList = document.querySelector("#patientList");
+const patientDetail = document.querySelector("#patientDetail");
+const patientResultCount = document.querySelector("#patientResultCount");
 const caseDialog = document.querySelector("#caseDialog");
 const caseForm = document.querySelector("#caseForm");
 const soapDialog = document.querySelector("#soapDialog");
 const soapForm = document.querySelector("#soapForm");
+// FIX A draft banner + FIX B submit-failure message line (both optional —
+// hidden by default in the markup, wired up further down).
+const caseDraftBanner = document.querySelector("#caseDraftBanner");
+const soapDraftBanner = document.querySelector("#soapDraftBanner");
+const caseSaveError = document.querySelector("#caseSaveError");
+const soapSaveError = document.querySelector("#soapSaveError");
+const agentExposureDialog = document.querySelector("#agentExposureDialog");
+const agentExposureForm = document.querySelector("#agentExposureForm");
+const environmentalExposureDialog = document.querySelector("#environmentalExposureDialog");
+const environmentalExposureForm = document.querySelector("#environmentalExposureForm");
 const dialog = document.querySelector("#editDialog");
 const form = document.querySelector("#pointForm");
 const deleteBtn = document.querySelector("#deleteBtn");
@@ -872,6 +1090,48 @@ function clearGlobalResults() {
   globalResultsEl.hidden = true;
 }
 
+/* 「開這張知識卡」的單一入口。
+ *
+ * 抽出來是因為現在有第二個地方要用它:診務回顧的知識缺口清單。列出
+ * 「桂枝湯 · 1 診 · draft」卻不能點,等於還是要自己去搜 —— 那條迴圈就沒閉。
+ * 如果那邊各寫一份路由,兩份遲早會分岔(P1 transport 的 MED-4 就是這樣來的)。
+ *
+ * 回傳 true = 真的把卡開起來了;false = 這一類目前沒有可用的入口。
+ * **呼叫端要照 false 決定「這個東西該不該長得像可以點」** —— 點了沒反應
+ * 比一開始就不做成連結更糟。
+ *
+ * 判斷「畫不畫成可點的」要用 canOpenKnowledgeRecord,不要只看 API 在不在:
+ * API 在、但那一筆查無此人,一樣是按了沒反應。
+ */
+function canOpenKnowledgeRecord(kind, id) {
+  if (!id) return false;
+  const api = globalThis.ACUTING_KNOWLEDGE_API;
+  if (!api) return false;
+  if (kind === "condition") return true;   // 走 section + scrollIntoView,沒有查表這一關
+  return typeof api.hasRecord === "function" && api.hasRecord(kind, id);
+}
+
+function openKnowledgeRecord(kind, id) {
+  if (!id) return false;
+  const api = globalThis.ACUTING_KNOWLEDGE_API;
+  if ((kind === "formula" || kind === "herb" || kind === "pharm") && api && api.openDetail) {
+    api.openDetail(kind, id);
+    return true;
+  }
+  if (kind === "pattern" && api && typeof api.openPattern === "function") {
+    return api.openPattern(id);
+  }
+  if (kind === "condition") {
+    goToSection("conditionGraph");
+    requestAnimationFrame(() => {
+      const card = document.querySelector(`[data-record-id="${(window.CSS && CSS.escape) ? CSS.escape(id) : id}"]`);
+      if (card) { card.scrollIntoView({ behavior: "smooth", block: "center" }); card.classList.add("gr-flash"); setTimeout(() => card.classList.remove("gr-flash"), 1600); }
+    });
+    return true;
+  }
+  return false;
+}
+
 function openGlobalResult(btn) {
   const kind = btn.dataset.kind;
   clearGlobalResults();
@@ -881,18 +1141,13 @@ function openGlobalResult(btn) {
     return;
   }
   if (kind === "formula" || kind === "herb") {
-    const api = globalThis.ACUTING_KNOWLEDGE_API;
-    if (api && api.openDetail) { api.openDetail(kind, btn.dataset.id); return; }
+    if (openKnowledgeRecord(kind, btn.dataset.id)) return;
+    // API 還沒載入時的退路:至少把人帶到對的區塊
     goToSection(kind === "formula" ? "ws/formula" : "ws/herb");
     return;
   }
   if (kind === "condition") {
-    goToSection("conditionGraph");
-    const id = btn.dataset.id;
-    requestAnimationFrame(() => {
-      const card = document.querySelector(`[data-record-id="${(window.CSS && CSS.escape) ? CSS.escape(id) : id}"]`);
-      if (card) { card.scrollIntoView({ behavior: "smooth", block: "center" }); card.classList.add("gr-flash"); setTimeout(() => card.classList.remove("gr-flash"), 1600); }
-    });
+    openKnowledgeRecord(kind, btn.dataset.id);
     return;
   }
   if (kind === "case") {
@@ -981,6 +1236,31 @@ document.querySelector("#closeCaseDialog").addEventListener("click", () => caseD
 document.querySelector("#cancelCaseBtn").addEventListener("click", () => caseDialog.close());
 document.querySelector("#closeSoapDialog").addEventListener("click", () => soapDialog.close());
 document.querySelector("#cancelSoapBtn").addEventListener("click", () => soapDialog.close());
+document.querySelector("#pastePrevisitBtn")?.addEventListener("click", pastePrevisitImport);
+document.querySelector("#closeAgentExposureDialog").addEventListener("click", () => agentExposureDialog.close());
+document.querySelector("#cancelAgentExposureBtn").addEventListener("click", () => agentExposureDialog.close());
+document.querySelector("#addLifestyleFactorRow")?.addEventListener("click", () => {
+  document.querySelector("#lifestyleFactorRows")?.insertAdjacentHTML("beforeend", lifestyleFactorRowHtml({}));
+});
+document.querySelector("#addPatternDifferentialRow")?.addEventListener("click", () => {
+  document.querySelector("#patternDifferentialRows")?.insertAdjacentHTML("beforeend", patternDifferentialRowHtml({}));
+});
+document.querySelector("#addAdverseEventRow")?.addEventListener("click", () => {
+  document.querySelector("#adverseEventRows")?.insertAdjacentHTML("beforeend", adverseEventRowHtml({}));
+});
+agentExposureForm.addEventListener("submit", saveAgentExposureFromForm);
+// Phase D batch 3: environmental exposures dialog — same wiring shape as the
+// agentExposureDialog block above. The exposureId <select> options are filled
+// in openEnvironmentalExposureEditor (vocab loads later in the file), but
+// this change listener can be attached now: the <select> node itself is
+// static markup, only its innerHTML (the <option> list) is rebuilt per open.
+document.querySelector("#closeEnvironmentalExposureDialog").addEventListener("click", () => environmentalExposureDialog.close());
+document.querySelector("#cancelEnvironmentalExposureBtn").addEventListener("click", () => environmentalExposureDialog.close());
+document.querySelector("#environmentalExposureSelect")?.addEventListener("change", (event) => {
+  const wrap = document.querySelector("#environmentalExposureNameTextWrap");
+  if (wrap) wrap.hidden = event.target.value !== REPEATABLE_ROW_OTHER_VALUE;
+});
+environmentalExposureForm.addEventListener("submit", saveEnvironmentalExposureFromForm);
 modelRotate?.addEventListener("input", () => renderMap(getFilteredPoints()));
 modelReset?.addEventListener("click", () => {
   modelView = "front";
@@ -1001,14 +1281,30 @@ form.addEventListener("submit", saveFromForm);
 deleteBtn.addEventListener("click", deleteCurrent);
 caseForm.addEventListener("submit", saveCaseFromForm);
 soapForm.addEventListener("submit", saveSoapFromForm);
+// FIX A — throttled draft autosave (see wireDraftAutosave near openCaseEditor/
+// openSoapEditor for the read/restore/clear side of this).
+wireDraftAutosave(caseForm, CASE_DRAFT_KEY, () => editingCaseId || "new");
+wireDraftAutosave(soapForm, SOAP_DRAFT_KEY, () => `${selectedCaseId || ""}:${editingSoapId || "new"}`);
+// FIX B — native "invalid" event fires (capture phase; it does not bubble)
+// on every :invalid field when the browser blocks an attempted submit. We
+// only surface the FIRST one so the message/scroll doesn't thrash across
+// several bad fields at once.
+wireSubmitFailureFeedback(caseForm, caseSaveError);
+wireSubmitFailureFeedback(soapForm, soapSaveError);
 deleteCaseBtn.addEventListener("click", deleteCurrentCase);
 deleteSoapBtn.addEventListener("click", deleteCurrentSoap);
 caseSearch.addEventListener("input", () => { learnFromMode = false; renderClinicalCases(); });
+patientSearch?.addEventListener("input", () => renderPatientsWorkspace());
 document.querySelector("#learnFromToggle")?.addEventListener("click", (e) => {
   learnFromMode = !learnFromMode;
   e.currentTarget.setAttribute("aria-pressed", String(learnFromMode));
   e.currentTarget.classList.toggle("active", learnFromMode);
   renderClinicalCases();
+});
+document.querySelector("#practiceAuditBtn")?.addEventListener("click", (e) => {
+  practiceAuditOpen = !practiceAuditOpen;
+  e.currentTarget.classList.toggle("active", practiceAuditOpen);
+  renderPracticeAuditPanel();
 });
 window.addEventListener("hashchange", handlePointHashChange);
 
@@ -1309,19 +1605,108 @@ function handlePointHashChange() {
   document.querySelector("#acupunctureWorkspace")?.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
+// Pointer-aware runtime + persist guard (2026-08-11, INDEPENDENT_AUDIT items
+// 1 & 3; pending Codex R9). clinicalStoreIntegrityError = the store threw on
+// load (pointer=v2 with missing/corrupt staging): the app runs READ-ONLY on
+// whatever loaded — persist refuses, because saving over a half-loaded world
+// is how data disappears.
+let clinicalStoreIntegrityError = null;
+
+// Dry Clinic #7:localhost 與 127.0.0.1 是不同 origin = 兩個互不相通的
+// 病人資料庫(2026-08-11 演練實測)。同機別名陷阱只有這一組;真機部署的
+// canonical 網域寫在 docs/DEPLOY_CLOUDFLARE.md SOP,不在此硬編碼。
+(function warnOriginAlias() {
+  if (location.hostname !== "127.0.0.1") return;
+  const el = document.createElement("div");
+  el.setAttribute("role", "alert");
+  el.style.cssText = "position:sticky;top:0;z-index:9999;background:#8a1f1f;color:#fff;padding:8px 14px;font-size:.9em;text-align:center";
+  el.textContent = "⚠️ 你正以 127.0.0.1 開啟本系統 — 這裡的病人資料庫與 localhost 的互不相通。臨床紀錄請一律使用同一個網址(建議 localhost),否則資料會分裂在兩邊。";
+  document.body.prepend(el);
+})();
+
+// Dry Clinic #8:日期一律用「本地日曆日」。toISOString() 是 UTC,晚上開診
+// 時 visit/start date 會預設成明天(演練實測 08-11 晚顯示 08-12)。
+function localDateISO(t) {
+  const d = t === undefined ? new Date() : new Date(t);
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+}
+
 function loadClinicalCases() {
+  // Phase C seam (js/clinical-store.js): storage I/O goes through the
+  // repository layer; normalization stays HERE (contract layer, not storage).
+  // The direct-localStorage fallback is not dead code — if the store script
+  // ever fails to load, silently returning [] would let the next save WIPE
+  // every real case. Reading directly is the safe failure mode.
+  if (window.AcuTingClinicalStore) {
+    try {
+      return AcuTingClinicalStore.load().map(normalizeClinicalCase);
+    } catch (e) {
+      clinicalStoreIntegrityError = e.message;
+      alert("臨床儲存層完整性錯誤,已進入唯讀保護:\n" + e.message);
+      return [];
+    }
+  }
+  // M1(C2b audit E5;review 升級裁定):pointer=v2 但 store 模組沒載入 ——
+  // 這不是「沒有 v2 資料」,是「有 v2 資料但讀不到」。落到這裡若照舊把
+  // v1 鍵當現況顯示,凍結的回滾錨會被誤報成現況(reload 後才發現不見),
+  // 而且第一次存檔會把回滾錨靜默改寫掉。鎖唯讀,不讀 v1 內容當正常資料。
+  if (localStorage.getItem("acuting-clinical-active") === "v2") {
+    clinicalStoreIntegrityError = "系統已切換 v2 但 clinical-store 模組未載入 —— 唯讀保護啟動,禁止存檔;請確認用正式入口開啟,勿用 legacy 頁。";
+    alert("臨床儲存層完整性錯誤,已進入唯讀保護:\n" + clinicalStoreIntegrityError);
+    return [];
+  }
   const saved = localStorage.getItem(CASE_STORAGE_KEY);
   if (!saved) return [];
   try {
     const parsed = JSON.parse(saved);
-    return Array.isArray(parsed) ? parsed.map(normalizeClinicalCase) : [];
-  } catch {
+    if (!Array.isArray(parsed)) throw new Error(`v1 store present but not an array (${typeof parsed})`);
+    return parsed.map(normalizeClinicalCase);
+  } catch (e) {
+    // R15(Dry Clinic #9):與 store 層同等 fail-loud —— 存在但壞 = 唯讀鎖,
+    // 絕不靜默回 [](那會讓下一次存檔蓋掉還救得回來的原始位元組)。
+    //
+    // Codex P4 seam HIGH-1(2026-08-12):這裡過去把 `e.message` 原樣放進
+    // alert,而 JSON.parse 的訊息會內嵌一段原始輸入 —— 壞掉的病歷內容因此
+    // 直接顯示在螢幕上。訊息改為只有 key 名與長度(長度不是 PHI,但足以
+    // 分辨空/截斷/格式壞)。這條 fallback 路徑在 store 模組載入失敗時才走,
+    // 所以不能依賴 store 的 parseFailureDetail,同款規則就地實作一次。
+    clinicalStoreIntegrityError = `v1 store corrupt: unparseable JSON, ${saved.length} char(s) present in localStorage["${CASE_STORAGE_KEY}"](內容不轉述,避免病歷資料出現在錯誤訊息)`;
+    alert("臨床儲存層完整性錯誤,已進入唯讀保護:\n" + clinicalStoreIntegrityError);
     return [];
   }
 }
 
 function persistClinicalCases() {
-  localStorage.setItem(CASE_STORAGE_KEY, JSON.stringify(clinicalCases, null, 2));
+  if (clinicalStoreIntegrityError) {
+    alert("唯讀保護中,拒絕存檔(避免覆蓋半載入的資料):\n" + clinicalStoreIntegrityError);
+    return false;
+  }
+  // M1:pointer=v2 但 store 缺失時,loadClinicalCases 通常已經先落入上面那條
+  // clinicalStoreIntegrityError 鎖。這裡是第二道防線 —— 萬一 pointer 在
+  // load 之後才切成 v2,或 persist 被獨立呼叫:一律零寫入,絕不寫回
+  // CASE_STORAGE_KEY(那是 v1 的回滾錨,寫了就把它蓋掉)。
+  if (!window.AcuTingClinicalStore && localStorage.getItem("acuting-clinical-active") === "v2") {
+    alert("唯讀保護中,拒絕存檔(pointer=v2 但 clinical-store 模組未載入):\n請確認用正式入口開啟,勿用 legacy 頁。");
+    return false;
+  }
+  try {
+    if (window.AcuTingClinicalStore) {
+      AcuTingClinicalStore.save(clinicalCases);
+      // v2 模式:存檔後補建 pending 病人(fire-and-forget;失敗不影響已存病歷)
+      if (AcuTingClinicalStore.activeIsV2 && AcuTingClinicalStore.activeIsV2() && AcuTingClinicalStore.syncPendingPatients) {
+        const sha = (s) => crypto.subtle.digest("SHA-256", new TextEncoder().encode(s))
+          .then((b) => [...new Uint8Array(b)].map((x) => x.toString(16).padStart(2, "0")).join(""));
+        AcuTingClinicalStore.syncPendingPatients(sha).catch((e) => console.error("syncPendingPatients failed (will retry next save):", e));
+      }
+    } else {
+      localStorage.setItem(CASE_STORAGE_KEY, JSON.stringify(clinicalCases, null, 2));
+    }
+    return true;
+  } catch (e) {
+    // 寫入失敗(配額滿/隱私模式/storage 例外):大聲告知,絕不假裝已存。
+    alert("存檔失敗 —— 資料尚未寫入!請立即匯出備份再重試。\n" + e.message);
+    return false;
+  }
 }
 
 // ---- CS2: knowledge counts derived at runtime (no hardcoded stats) --------
@@ -1567,6 +1952,7 @@ function render() {
   renderDatabaseHealth();
   renderKnowledgeCounts();   // CS2
   renderClinicalCases();
+  renderPatientsWorkspace();   // Patient Workspace W1
   renderBackupBanner();   // CS1
   renderDirectoryFilters();
   renderSystemToggleDrawer();
@@ -1711,12 +2097,98 @@ function renderOsStatus() {
   }
   if (caseCountEl) caseCountEl.textContent = String(clinicalCases.length);
   if (caseProgressEl) caseProgressEl.textContent = clinicalCases.length ? `${clinicalCases.length} cases / ${clinicalCases.reduce((sum, item) => sum + item.soapNotes.length, 0)} SOAP` : "病例紀錄入口";
+  renderHomeQuickGrid();
+}
+
+// Home quick-access tiles (2026-08-11 homepage pass). Counts are computed
+// from the loaded bundle + live case store at every renderOsStatus, same
+// honesty rule as the quality page — no hand-written numbers. The first
+// tile is "continue where you left off": the most recently updated case,
+// the single most common reason to open this app on a clinic day.
+function renderHomeQuickGrid() {
+  const host = document.getElementById("homeQuickGrid");
+  if (!host) return;
+  const K = globalThis.ACUTING_KNOWLEDGE || {};
+  const count = (k) => ((K[k] && K[k].records) || []).length;
+  const en = contentMode === "english";
+  const tiles = [];
+  const last = [...clinicalCases].sort((a, b) => String(b.updatedAt || "").localeCompare(String(a.updatedAt || "")))[0];
+  if (last) {
+    /* updatedAt 存的是 UTC 瞬間(new Date().toISOString()),不是日曆日。
+     * 直接切前 10 碼等於把「瞬間」當「日曆日」讀 —— 跟泳道軸標籤是反方向的
+     * 同一類錯(那邊是日曆日被當瞬間解析)。UTC-7 晚上 5 點後 UTC 已跨到
+     * 隔天,PROJECT_LOG 2026-08-12 記過:本地 08-12 晚上,卡片顯示 08-13。
+     * 用 localDateISO 轉回本地日曆日,不要對 ISO 字串切片。 */
+    const lastDate = last.updatedAt ? localDateISO(new Date(last.updatedAt).getTime()) : "";
+    tiles.push({ href: "#ws/cases", cls: "home-tile--continue", eyebrow: en ? "Continue" : "繼續上次",
+      title: last.caseTitle || last.patientCode || "Case", sub: `${last.soapNotes.length} SOAP · ${lastDate}` });
+  }
+  tiles.push(
+    { href: "#ws/cases", eyebrow: en ? "Cases" : "病例", title: String(clinicalCases.length), sub: en ? "clinical records" : "臨床病歷" },
+    { href: "#ws/acu", eyebrow: en ? "Acupoints" : "穴位", title: String(getDataQualityAudit().total), sub: en ? "channel + Tung + auricular + extra" : "經穴+董氏+耳穴+奇穴" },
+    { href: "#ws/formula", eyebrow: en ? "Formulas" : "方劑", title: String(count("formulas")), sub: en ? "with composition" : "含組成加減" },
+    { href: "#ws/herb", eyebrow: en ? "Herbs" : "中藥", title: String(count("herbs")), sub: en ? "materia medica" : "本草" },
+    { href: "#ws/condition", eyebrow: en ? "Conditions" : "病症", title: String(count("conditionCanon")), sub: en ? "western canon" : "西醫病名庫" },
+    { href: "#ws/quality", eyebrow: en ? "Quality" : "品質", title: String(count("symptoms") + count("tdisRegistry")), sub: en ? "sym + TCM disease" : "症狀+中醫病名" }
+  );
+  host.innerHTML = tiles.map((t) => `
+    <a class="home-tile ${t.cls || ""}" href="${t.href}">
+      <small>${escapeHtml(t.eyebrow)}</small>
+      <strong>${escapeHtml(t.title)}</strong>
+      <span>${escapeHtml(t.sub)}</span>
+    </a>`).join("");
+}
+
+// Quality-page honesty rebuild (2026-08-11, Ting: 「那個地方很亂很假」).
+// Every number is computed from the LOADED bundle at render time — no
+// hand-written claims. "有內容" per line = the line's own irreplaceable
+// field is non-empty (a card whose key field is blank counts as index-only,
+// exactly how the validators see it). Verification state is only asserted
+// where a real per-record status field exists.
+function renderKnowledgeLineMatrix() {
+  const host = document.getElementById("knowledgeLineMatrix");
+  if (!host) return;
+  const K = globalThis.ACUTING_KNOWLEDGE || {};
+  const recs = (k) => (K[k] && K[k].records) || (Array.isArray(K[k]) ? K[k] : []);
+  const filled = (list, f) => list.filter((r) => { const v = r[f]; return Array.isArray(v) ? v.length : !!v; }).length;
+  const lines = [];
+  const push = (zh, en, list, contentField, statusNote) => {
+    const n = list.length; if (!n) return;
+    const c = contentField ? filled(list, contentField) : n;
+    lines.push({ zh, en, n, c, pct: Math.round((c / n) * 100), note: statusNote });
+  };
+  // 穴位線:記錄集在 app_data(非 bundle),用既有 audit 的真實數字。
+  // 「有內容」對穴位 = source-checked(比 mere presence 嚴格,見
+  // renderDatabaseHealth 的 verified % 註解 — 同一把尺)。
+  const acu = getDataQualityAudit();
+  // 2026-08-11 Ting 指正:穴位線是全集(經穴+董氏+耳穴+經外奇穴),不只 361。
+  if (acu.total) {
+    lines.push({ zh: "穴位(全集)", en: "Acupoints (all)", n: acu.total, c: acu.sourceCheckedStandard, pct: Math.round((acu.sourceCheckedStandard / acu.total) * 100), note: "經穴+董氏+耳穴+奇穴;分數 = 標準經穴已源審核數" });
+  }
+  push("中藥", "Herbs", recs("herbs"), "category", "");
+  push("方劑", "Formulas", recs("formulas"), "composition", "");
+  push("西醫病名", "Conditions", recs("conditionCanon"), "summary_zh", "目標 300;驗證器逐批收斂中");
+  push("中醫病名", "TCM diseases", recs("tdisRegistry"), "definition_zh", "分批加深中");
+  push("證型", "Patterns", recs("patternLibrary"), "key_signs_zh", "");
+  push("症狀", "Symptoms", recs("symptoms"), "definition_zh", "驗證器 0 defects");
+  push("補充劑", "Supplements", recs("supplementRecords"), "evidence_snapshot_en", "全數 skeleton 級;interaction 層已建");
+  push("西藥", "Drugs", recs("pharmDrugs"), "mechanism_zh", "draft;DailyMed 補全中");
+  push("鑑別比較", "Comparisons", recs("comparisons"), "", "");
+  host.innerHTML = lines.map((l) => `
+    <article class="kline-row">
+      <div class="kline-name"><strong>${escapeHtml(l.zh)}</strong><small>${escapeHtml(l.en)}</small></div>
+      <div class="kline-nums"><span class="kline-count">${l.n}</span><small>records</small></div>
+      <div class="kline-bar" role="img" aria-label="${l.pct}% 有內容"><div class="kline-fill" style="width:${l.pct}%"></div></div>
+      <div class="kline-pct">${l.c}/${l.n}<small>有內容 ${l.pct}%</small></div>
+      <div class="kline-note">${escapeHtml(l.note || "")}</div>
+    </article>`).join("");
 }
 
 function renderDatabaseHealth() {
   const audit = getStandardPointAudit();
   const quality = getDataQualityAudit();
   renderProgressMatrix();
+  renderKnowledgeLineMatrix();
   if (auditGeneratedOnEl) auditGeneratedOnEl.textContent = `audit ${standardChannelAudit.generatedOn}`;
   if (healthStandardCountEl) healthStandardCountEl.textContent = `${audit.presentTotal}/${standardChannelAudit.expectedTotal}`;
   if (healthMissingCountEl) healthMissingCountEl.textContent = String(audit.missingTotal);
@@ -3710,7 +4182,7 @@ function renderDetail(point) {
     render();
     document.querySelector("#acupointDirectory")?.scrollIntoView({ behavior: "smooth", block: "start" });
   });
-  document.querySelector("#editBtn").addEventListener("click", () => openEditor(point));
+  document.querySelector("#editBtn")?.addEventListener("click", () => openEditor(point));
   document.querySelector("#copyPointLinkBtn")?.addEventListener("click", () => copyPointLink(point));
   detailCard.querySelectorAll("[data-related-point]").forEach((button) => {
     button.addEventListener("click", () => selectPoint(button.dataset.relatedPoint));
@@ -3896,7 +4368,13 @@ function pointCompareSection(point) {
 function pointLinkSection(point) {
   const K = globalThis.ACUTING_KNOWLEDGE || {};
   const condById = new Map((K.conditionCanon?.records || []).map((c) => [c.id, c]));
-  const patById = new Map((K.tcmPatternCanon?.records || []).map((p) => [p.id, p]));
+  /* 兩個 id 空間並存:既有 44 點的 tcm_pattern_ids 是 legacy pat.<中文>
+     (tcmPatternCanon 的鍵),新接的線依紅線 1 只寫 canonical pattern.<slug>
+     (patternLibrary 的鍵)。只查其中一邊,另一邊就整批變暗連結。 */
+  const patById = new Map([
+    ...((K.patternLibrary?.records || (Array.isArray(K.patternLibrary) ? K.patternLibrary : [])) || []).map((p) => [p.id, p]),
+    ...(K.tcmPatternCanon?.records || []).map((p) => [p.id, p]),
+  ]);
   const CAP = 12;
 
   const block = (label, items, render, showLabel = true) => {
@@ -4242,6 +4720,25 @@ function externalPointLinks(point) {
   const sources = point.sources || [];
   const visualLinks = normalizeVisualLinks(point.visualLinks || []);
 
+  // Extra-point codes are stable database identifiers, not derivable URL
+  // slugs. Expose only exact pages that were explicitly stored and reviewed;
+  // the standard-point builders below can otherwise produce an empty
+  // CloudTCM link or send American Dragon to its home page.
+  if (isExtraPoint(point)) {
+    const storedUrls = [...sources, ...visualLinks.map((link) => link.url)]
+      .map((url) => String(url || "").trim())
+      .filter((url) => /^https?:\/\//i.test(url));
+    const cloudtcm = storedUrls.find((url) => /cloudtcm\.com\/(?:dic|acupoint)\/\d+/i.test(url));
+    const americanDragon = storedUrls.find((url) => /americandragon\.com\/Points\/(?!Index2\.html(?:$|[?#]))[^/?#]+\.html(?:$|[?#])/i.test(url));
+    const elotus = storedUrls.find((url) => /mastertungacupuncture\.org\/acupuncture\/traditional\/points\/(?!list(?:$|[?#]))[^/?#]+/i.test(url));
+
+    return [
+      cloudtcm ? { label: contentMode === "english" ? "CloudTCM" : "雲端中醫", url: cloudtcm, kind: "chinese" } : null,
+      americanDragon ? { label: "American Dragon (AD)", url: americanDragon, kind: "english" } : null,
+      elotus ? { label: contentMode === "english" ? "eLotus CORE" : "eLotus 權威圖解", url: elotus, kind: "english" } : null
+    ].filter(Boolean);
+  }
+
   if (isAuricularPoint(point)) {
     const elotusLink = visualLinks.find(l => (l.url || '').includes('mastertungacupuncture.org'))?.url || sources.find(s => s.includes('mastertungacupuncture.org')) || `https://www.mastertungacupuncture.org/acupuncture/auricular/lch/points/${(point.code||'').toLowerCase().replace('ear-lch-', '').replace('ear-', '')}`;
     return [
@@ -4336,11 +4833,37 @@ function moxaTextEn(text) {
   return "As indicated / Warm moxibustion";
 }
 
+/* 這一穴到底是不是董氏穴。
+ * 2026-08-12:英文模式的簡介模板無條件寫「Master Tung Acupuncture point」,
+ * 於是 LI4 合谷 —— 十四正經最常用的穴 —— 的英文卡上寫著它是董氏穴,
+ * 433 個非董氏穴位全部如此。這不是翻譯不足,是**張冠李戴**:
+ * 生成的句子替卡片宣稱了一個它沒有的來源,而讀的人會以為那是查過的。
+ * 與假劑量 6~15g 同一類 —— 渲染層說了資料沒說過的話。 */
+function isTungPoint(point) {
+  const code = String(point.code || "");
+  if (/^T\d/.test(code) || /^TDT|^TVT/.test(code)) return true;
+  return /tung|董氏/i.test(String(point.meridian || "") + String(point.channel || "") + String(point.system || ""));
+}
+
 function pointIntro(point) {
   if (contentMode === "english") {
-    const regionText = regionEn(point) || point.region || "Master Tung anatomical region";
-    const actionsText = point.functionsEn || (Array.isArray(p => p.traditional_functions_en) ? p.traditional_functions_en.join(", ") : "") || "Harmonize Qi & Blood, Unblock Channels";
-    return `${point.nameEn} (${point.pinyin}; ${point.code}) belongs to ${shortMeridianEn(point)}. It is located in the ${regionText}.\n\nActions & Reaction Areas:\n${actionsText}\n\nClinical Application Note: Master Tung Acupuncture point for targeted channel regulation and internal organ harmony. Verify needling depth, angle, and safety precautions against professional textbooks.`;
+    // 有來源的英文簡介勝過生成的模板(49 個奇穴帶 nameIntroEn,先前完全沒被讀過)。
+    const introEn = String(point.nameIntroEn || "").trim();
+    const otherEn = Array.isArray(point.otherNamesEn) ? point.otherNamesEn.filter(Boolean).join(", ")
+      : String(point.otherNamesEn || "").trim();
+    if (introEn) {
+      const parts = [`【Name & Overview】\n${introEn}`];
+      if (otherEn) parts.push(`【Other names】${otherEn}`);
+      return parts.join("\n\n");
+    }
+    const regionText = regionEn(point) || point.region || "the recorded anatomical region";
+    const actionsText = point.functionsEn || "Harmonize Qi & Blood, Unblock Channels";
+    const tail = isTungPoint(point)
+      ? "Clinical Application Note: Master Tung Acupuncture point for targeted channel regulation and internal organ harmony. Verify needling depth, angle, and safety precautions against professional textbooks."
+      : "Clinical Application Note: verify needling depth, angle and safety precautions against professional textbooks.";
+    const head = [`${point.nameEn} (${point.pinyin}; ${point.code}) belongs to ${shortMeridianEn(point)}.`,
+      `It is located in the ${regionText}.`].join(" ");
+    return `${head}\n\nActions & Reaction Areas:\n${actionsText}\n\n${tail}`;
   }
   const introParts = [];
   if (point.nameIntroZh) {
@@ -4587,16 +5110,112 @@ function classicalRefsSection(point) {
   return studySection(title, text, "book");
 }
 
+// 2026-08-12(SOL 路由建議):361 經穴的中文 needling 與英文 acumethod_en 來自
+// 兩個來源(CloudTCM / eLotus),深度數字從未對帳。實測 145 穴兩邊不一致,英文較深
+// 者為多數,29 穴位於胸/背/頸/眶等高風險區;另有 7 穴中文明確禁直刺而英文寫
+// perpendicular(LR14 期門連自己的禁忌欄都與自己的針法欄互相矛盾)。
+// 在來源覆核完成前,fail-closed:不顯示任何一邊的數字,改顯示衝突聲明。
+// 顯示較淺的一邊等於替臨床選邊,顯示兩邊等於邀請讀者挑深的那個 —— 兩者都不做。
+function needlingDepthConflict(point) {
+  const ranges = (s) => {
+    const out = [];
+    const re = /(\d+(?:\.\d+)?)\s*[–\-~至]\s*(\d+(?:\.\d+)?)\s*(?:cun|寸|吋)/gi;
+    let m; while ((m = re.exec(s))) out.push(parseFloat(m[2]));
+    if (!out.length) { const one = /(\d+(?:\.\d+)?)\s*(?:cun|寸|吋)/gi; let s1; while ((s1 = one.exec(s))) out.push(parseFloat(s1[1])); }
+    return out;
+  };
+  // 「胸背部穴位斜刺…嚴禁直刺過深」是整條經共用的條件句(GB29–GB43 的膽經肢體穴
+  // 全都被貼上這句),它講的是胸背部穴位,不是這一穴。把條件句當成本穴禁令會在
+  // 丘墟、俠溪這種四肢穴上誤報,誤報會讓整個警告失去可信度 —— 先剔除再判斷。
+  const dropScoped = (s) => s.split(/[。\n]/).filter((t) => !/胸背部穴位|背部穴位/.test(t)).join("。");
+  const zhOwn = dropScoped([point.techniqueNotes, point.acumethodZh].filter(Boolean).join(" "));
+  const zhText = dropScoped([point.techniqueNotes, point.acumethodZh, point.cautions].filter(Boolean).join(" "));
+  const enText = String(point.acumethodEn || "");
+  if (!zhText || !enText) return null;
+  const zhMax = Math.max(...ranges(zhText), -Infinity);
+  const enMax = Math.max(...ranges(enText), -Infinity);
+  // 中文卡自己打自己:針法欄寫「直刺 0.3-0.5 寸」,禁忌欄寫「嚴禁直刺」(LR14 期門)。
+  // 這與語言無關,兩邊讀者看到的都是自相矛盾的卡,也不必比對英文就能判定。
+  // 危險區判定用「這一穴的文字自己講了什麼器官」,不用穴位代碼名單 —— 名單是我
+  // 手寫的,會漏;文字是有來源的。足通谷差 0.2 寸在腳趾上,與膏肓差 0.3 寸在肺上,
+  // 不是同一件事:前者藏起數字只損失可用性,後者藏起數字才是安全的一邊。
+  const hazard = /氣胸|傷及肺|肺臟|內臟|心臟|肝脾|大血管|動脈|眼球|眶|延髓|脊髓|胸腔|腹腔/.test(zhText)
+    || /pneumothorax|lung|pleura|artery|eyeball|orbit|spinal cord|medulla|cardiac|heart|viscera/i.test(enText);
+  const mark = (t) => (hazard ? t : t + "-soft");
+  const zhForbidsPerp = /嚴禁直刺|不可直刺|禁直刺|不宜直刺|僅可斜刺|只可斜刺/.test(zhText);
+  if (zhForbidsPerp && /直刺\s*\d/.test(zhOwn)) return mark("self");
+  // 英文側的 perpendicular 必須是「指示」而不是「警告」:多數英文欄長成
+  // 「Oblique insertion … CAUTION: deep perpendicular insertion risks pneumothorax」,
+  // 對整串做 /perpendicular/ 會把警告讀成許可,在兩邊其實一致的穴上誤報衝突。
+  const enInstruction = enText.split(/CAUTION|⚠|Contraindicat/i)[0];
+  if (zhForbidsPerp && /perpendicular/i.test(enInstruction)) return mark("angle");
+  if (Number.isFinite(zhMax) && Number.isFinite(enMax) && enMax > zhMax + 0.05) return mark("depth");
+  return null;
+}
+
 function needlingArticle(point) {
   const parts = [];
+  const rawConflict = needlingDepthConflict(point);
+  // -soft = 兩份來源確實不一致,但文字裡沒有任何器官風險(多為四肢穴、差距 0.2-0.3 寸)。
+  // 這種情況照常顯示數字,只在下面附一句提醒;只有危險區才 fail-closed 藏數字。
+  const softConflict = typeof rawConflict === "string" && rawConflict.endsWith("-soft");
+  const depthConflict = softConflict ? null : rawConflict;
+  if (softConflict) {
+    parts.push(contentMode === "english"
+      ? "NOTE: the Chinese and English sources give different depth figures for this point; the Chinese figure is the shallower one. Verify before needling."
+      : "提醒:本穴中英文來源的深度數字不一致(中文較淺),進針前請查證。");
+  }
+  if (depthConflict) {
+    parts.push(contentMode === "english"
+      ? {
+          self: "⚠️ SOURCE CONFLICT — DO NOT USE AS A NEEDLING GUIDE\nThis card contradicts itself: its technique field prescribes perpendicular insertion while its own contraindication field forbids it. Numeric technique is withheld until the sources are reconciled. Consult a verified text.",
+          angle: "⚠️ SOURCE CONFLICT — DO NOT USE AS A NEEDLING GUIDE\nThis point's two sources disagree on insertion angle: the Chinese source forbids perpendicular insertion, the English one prescribes it. Numeric technique is withheld until the sources are reconciled. Consult a verified text.",
+          depth: "⚠️ SOURCE CONFLICT — DO NOT USE AS A NEEDLING GUIDE\nThis point's two sources disagree on insertion depth (the English figure is deeper). Numeric technique is withheld until the sources are reconciled. Consult a verified text.",
+        }[depthConflict]
+      : {
+          self: "⚠️ 來源衝突 —— 禁止作為臨床進針指引\n本卡自相矛盾:針法欄寫直刺,而本卡自己的禁忌欄寫嚴禁直刺。在來源覆核完成前不顯示數字。請查證教材。",
+          angle: "⚠️ 來源衝突 —— 禁止作為臨床進針指引\n本穴兩份來源對進針角度的敘述不一致(中文禁直刺而英文指示直刺),在來源覆核完成前不顯示數字。請查證教材。",
+          depth: "⚠️ 來源衝突 —— 禁止作為臨床進針指引\n本穴兩份來源對進針深度的敘述不一致(英文側較深),在來源覆核完成前不顯示數字。請查證教材。",
+        }[depthConflict]);
+  }
   if (contentMode === "english") {
-    if (point.acumethodEn) parts.push(`TECHNIQUES:\n${point.acumethodEn}`);
+    if (depthConflict) { /* 數字已被 fail-closed 抑制,見函式頂端 */ }
+    else if (point.acumethodEn) parts.push(`TECHNIQUES:\n${point.acumethodEn}`);
     else if (point.acumethodZh) parts.push(`TECHNIQUES:\n${point.acumethodZh}`);
-    if (point.moxaEn) parts.push(`MOXIBUSTION & HEAT THERAPY:\n${point.moxaEn}`);
-    if (point.cautionsEn && point.cautionsEn.length) parts.push(`CONTRAINDICATIONS:\n${point.cautionsEn.join("\n")}`);
+    // 2026-08-12:21 個穴位的中文艾灸欄本身就是禁灸聲明(「不宜運用灸法」),
+    // 而英文欄寫著通用的「Moxibustion applicable: 3-5 moxa cones…」。名單是
+    // 睛明、攢竹、承泣、四白、瞳子髎、絲竹空(眼周)、缺盆、啞門、風府、乳中…
+    // 也就是傳統禁灸穴。英文那句是事後機器產生的通用字串(全 361 穴同一句),
+    // 中文那句是有來源的敘述 —— 與 cautions_en 同一個道理:來源欄勝過生成欄。
+    // 這裡不翻譯、不新增內容,只是在中文明文禁灸時不顯示那句生成的「可灸」,
+    // 改為原樣呈現中文禁灸聲明。寧可讓英文讀者看到中文,也不要讓他在眼睛旁邊點艾炷。
+    const moxaZhText = String(point.moxaZh || "").trim();
+    const moxaProhibited = /^(不宜運用灸法|禁灸|不可灸|不宜灸)/.test(moxaZhText);
+    if (moxaProhibited) {
+      parts.push(`MOXIBUSTION & HEAT THERAPY:\n⚠️ ${moxaZhText}`);
+    } else if (point.moxaEn) {
+      parts.push(`MOXIBUSTION & HEAT THERAPY:\n${point.moxaEn}`);
+    }
+    // cautionsEn arrives in BOTH shapes: an array from records whose
+    // contraindications_en is a list, and a plain string from 206 of the 947
+    // points (all of EX-UE6..UE17, EX-LE*, and others). `.join` on a string
+    // threw TypeError, so English mode silently lost the contraindications
+    // block on exactly those points — the safety text, on the language where
+    // the reader is least able to fall back to the Chinese field.
+    const asText = (v) => Array.isArray(v) ? v.filter(Boolean).join("\n") : (typeof v === "string" ? v.trim() : "");
+    // 逐穴警告優先,通用句在後。兩者都印,因為 cautions_en 常同時帶進針方式,
+    // 而 contraindications_en 偶爾(4/361)確實帶了逐穴內容 —— 丟掉哪一邊都會漏。
+    // 逐穴那條放前面:讀的人先看到「這一穴會出什麼事」,而不是先看到衛生守則。
+    const perPointEn = asText(point.pointCautionsEn);
+    const genericEn = asText(point.cautionsEn);
+    const enParts = [];
+    if (perPointEn) enParts.push(perPointEn);
+    if (genericEn && genericEn !== perPointEn) enParts.push(genericEn);
+    if (enParts.length) parts.push(`CONTRAINDICATIONS:\n${enParts.join("\n")}`);
     else if (point.cautions) parts.push(`CONTRAINDICATIONS / SAFETY:\n${point.cautions}`);
   } else {
-    if (point.acumethodZh) parts.push(`【針刺法】\n${point.acumethodZh}`);
+    if (depthConflict) { /* 數字已被 fail-closed 抑制,見函式頂端 */ }
+    else if (point.acumethodZh) parts.push(`【針刺法】\n${point.acumethodZh}`);
     else if (point.techniqueNotes) parts.push(`【針刺法】\n${point.techniqueNotes}`);
 
     if (point.needleSensationZh) parts.push(`【針感】\n${point.needleSensationZh}`);
@@ -4616,10 +5235,19 @@ function evidenceText(point) {
   if (contentMode === "english") {
     const modernEn = point.modernResearchEn || point.modernResearchZh;
     if (modernEn) parts.push(`【Clinical Application Notes】\n${modernEn}`);
+    // clinical_pearls_en:35 個奇穴帶著,先前沒被讀過。它記的是「這一穴在來源之間
+    // 有哪些延伸適應症與分歧」,與 modern_research 的整段研究敘述不同,兩者都留。
+    const pearls = Array.isArray(point.clinical_pearls_en)
+      ? point.clinical_pearls_en.filter(Boolean).join("\n")
+      : String(point.clinical_pearls_en || "").trim();
+    if (pearls && pearls !== String(modernEn || "").trim()) parts.push(`【Clinical Pearls】\n${pearls}`);
     if (point.reviewStatus === "sourced_elotus_direct") {
       parts.push("【Source Provenance】This record is sourced directly from eLotus CORE Master Tung Standard Documentation.");
     } else {
-      parts.push("Master Tung Acupuncture Clinical Reference: Verify point selection with classic literature and professional textbooks.");
+      // 同一個張冠李戴:這句原本無條件加在每一張英文卡上,包括十四正經與奇穴。
+      parts.push(isTungPoint(point)
+        ? "Master Tung Acupuncture Clinical Reference: Verify point selection with classic literature and professional textbooks."
+        : "Verify point selection with classic literature and professional textbooks.");
     }
     return parts.join("\n\n");
   }
@@ -4825,11 +5453,39 @@ function normalizeClinicalCase(value) {
     birthYear: value.birthYear ? Number(value.birthYear) : "",
     birthYearMonth: String(value.birthYearMonth || ""),
     sex: String(value.sex || ""),
+    // Initial-intake minimum dataset (2026-08-09, docs/INTAKE_MINIMUM_DATASET_AUDIT.md).
+    // All nullable/optional-by-default: an older case loaded without these
+    // keys gets "" / [] here, never a fabricated value (D4 spirit).
+    genderIdentity: String(value.genderIdentity || ""),
+    raceEthnicity: Array.isArray(value.raceEthnicity) ? value.raceEthnicity.map(String) : splitList(String(value.raceEthnicity || "")),
+    raceEthnicityDetail: String(value.raceEthnicityDetail || ""),
+    onsetApprox: String(value.onsetApprox || ""),
+    chronicity: String(value.chronicity || ""),
+    coursePattern: String(value.coursePattern || ""),
+    previousTreatment: Array.isArray(value.previousTreatment) ? value.previousTreatment.map(String) : splitList(String(value.previousTreatment || "")),
+    previousTreatmentNotes: String(value.previousTreatmentNotes || ""),
+    // Transitional (§7, same doc): nullable 0-10, never coerced to 0. Kept as
+    // "" (not 0) when absent so "not answered" and "scored zero" stay distinct.
+    baselineSeverity: (value.baselineSeverity === 0 || value.baselineSeverity) ? Number(value.baselineSeverity) : "",
     occupation: String(value.occupation || ""),
     goals: String(value.goals || ""),
+    // Publication consent (academic-readiness batch, pre-9/01 freeze; CARE
+    // requires informed consent BEFORE a case report can be written). Case-
+    // level, D4-style: "" = never asked (the default for every existing
+    // case — consent is NEVER fabricated), 'granted'|'declined'|'pending' =
+    // asked, with the date the answer was given. This records consent to
+    // publish a de-identified case report; it is not treatment consent.
+    publicationConsent: String(value.publicationConsent || ""),
+    publicationConsentDate: String(value.publicationConsentDate || ""),
     chiefComplaint: String(value.chiefComplaint || ""),
     historyPresent: String(value.historyPresent || ""),
     pastHistory: String(value.pastHistory || ""),
+    // Initial-intake Phase 2 (2026-08-09): coarse status paired with the
+    // existing free-text `allergies` detail below — not a replacement, and
+    // not an inference from it. "" (not yet asked) stays distinct from
+    // "unknown" (asked, patient doesn't know), same D4 pattern as elsewhere
+    // in this batch.
+    allergyStatus: String(value.allergyStatus || ""),
     allergies: String(value.allergies || ""),
     currentMeds: String(value.currentMeds || ""),
     menstrualObHistory: String(value.menstrualObHistory || ""),
@@ -4837,11 +5493,119 @@ function normalizeClinicalCase(value) {
     westernConditions: Array.isArray(value.westernConditions) ? value.westernConditions.map(String) : splitList(String(value.westernConditions || "")),
     easternDiseases: Array.isArray(value.easternDiseases) ? value.easternDiseases.map(String) : splitList(String(value.easternDiseases || "")),
     tcmPatterns: Array.isArray(value.tcmPatterns) ? value.tcmPatterns.map(String) : splitList(String(value.tcmPatterns || "")),
-    safetyFlags: Array.isArray(value.safetyFlags) ? value.safetyFlags.map(String) : splitList(String(value.safetyFlags || "")),
+    safetyFlags: Array.isArray(value.safetyFlags) ? value.safetyFlags.map(String) : splitSafetyFlags(String(value.safetyFlags || "")),   // FIX C
+    // D17 §5 — ONE longitudinal exposure timeline, CASE level. Each entry is a
+    // ledger ROW ("this patient is/was on this agent"), not a per-visit
+    // snapshot; a follow-up visit that changes a dose updates the SAME entry
+    // (status/changeSinceLast/lastConfirmedVisitId) so the timeline stays
+    // reconstructable. currentMeds free text above is UNTOUCHED — it remains
+    // the prose sibling, never auto-parsed into this array.
+    // agentId namespaces: drug.* (D15) or supp.* (D17 — not suppl.*).
+    // Maps to case_agent_exposures / case_environmental_exposures
+    // (localstorage_sqlite_mapping.json planned_mappings_d17).
+    agentExposures: Array.isArray(value.agentExposures)
+      ? value.agentExposures
+          .filter((e) => e && (e.agentId || e.nameText))
+          .map((e) => ({
+            id: String(e.id || createId("agentexp")),
+            agentType: String(e.agentType || ""),          // 'drug' | 'supplement'
+            agentId: String(e.agentId || ""),
+            nameText: String(e.nameText || ""),
+            doseText: String(e.doseText || ""),
+            frequencyText: String(e.frequencyText || ""),
+            route: String(e.route || ""),
+            startApprox: String(e.startApprox || ""),      // D4 coarse, never fabricated
+            stopApprox: String(e.stopApprox || ""),
+            status: String(e.status || ""),                // 'current'|'stopped'|'prn'|'unknown'
+            indicationText: String(e.indicationText || ""),
+            adherenceNote: String(e.adherenceNote || ""),
+            infoSource: String(e.infoSource || ""),        // 'patient_reported'|'records'
+            firstNotedVisitId: String(e.firstNotedVisitId || ""),
+            lastConfirmedVisitId: String(e.lastConfirmedVisitId || ""),
+            changeSinceLast: String(e.changeSinceLast || ""),
+            changeNote: String(e.changeNote || ""),
+            notes: String(e.notes || ""),
+            // B-1 fix (docs/AUDIT_PHASE_B_2026-08-12.md): append-only event
+            // history — the ledger fields above are the CURRENT snapshot;
+            // these rows are what make 200mg→400mg→stopped reconstructable.
+            // Write rule (app-enforced, normalizer only records): any change
+            // to the snapshot fields MUST push one event with the NEW values;
+            // events are never edited or removed — corrections are a new
+            // event with a note. Maps to case_exposure_events (parent_type
+            // 'agent'). Absent key on legacy data = [] — legal, means "no
+            // recorded history yet", never fabricated.
+            events: Array.isArray(e.events)
+              ? e.events
+                  .filter((ev) => ev && ev.eventType)
+                  .map((ev) => ({
+                    id: String(ev.id || createId("expevt")),
+                    visitId: String(ev.visitId || ""),
+                    eventType: String(ev.eventType || ""),
+                    doseText: String(ev.doseText || ""),
+                    frequencyText: String(ev.frequencyText || ""),
+                    status: String(ev.status || ""),
+                    effectiveApprox: String(ev.effectiveApprox || ""),
+                    note: String(ev.note || ""),
+                    // SOL Phase C review item 1: a missing historical timestamp
+                    // stays missing ("") — synthesizing one at load time would
+                    // stamp every legacy event with today's date and destroy
+                    // the very chronology the event layer exists to preserve.
+                    // New events get createdAt from applyExposureChange (the
+                    // write path), never from this read path.
+                    createdAt: String(ev.createdAt || "")
+                  }))
+              : []
+          }))
+      : [],
+    // D17 — environmental/toxic exposures, SEPARATE from lifestyle (an
+    // exposure happens TO the patient). certainty × timing are two
+    // independent axes; 'suspected' is never auto-promoted to 'confirmed'.
+    environmentalExposures: Array.isArray(value.environmentalExposures)
+      ? value.environmentalExposures
+          .filter((e) => e && (e.exposureId || e.nameText))
+          .map((e) => ({
+            id: String(e.id || createId("envexp")),
+            exposureId: String(e.exposureId || ""),        // exposure.*
+            nameText: String(e.nameText || ""),
+            certainty: String(e.certainty || ""),          // 'suspected'|'patient_reported'|'confirmed'
+            timing: String(e.timing || ""),                // 'ongoing'|'historical'|'unknown'
+            startApprox: String(e.startApprox || ""),
+            endApprox: String(e.endApprox || ""),
+            contextText: String(e.contextText || ""),
+            firstNotedVisitId: String(e.firstNotedVisitId || ""),
+            lastConfirmedVisitId: String(e.lastConfirmedVisitId || ""),
+            changeSinceLast: String(e.changeSinceLast || ""),
+            notes: String(e.notes || ""),
+            // B-1/H-1 fix: same append-only event history as agentExposures.
+            // certainty transitions (suspected→confirmed) MUST land here as
+            // certainty_changed events with a source note — closing the
+            // trace-less promotion channel the audit flagged. Maps to
+            // case_exposure_events (parent_type 'environmental').
+            events: Array.isArray(e.events)
+              ? e.events
+                  .filter((ev) => ev && ev.eventType)
+                  .map((ev) => ({
+                    id: String(ev.id || createId("expevt")),
+                    visitId: String(ev.visitId || ""),
+                    eventType: String(ev.eventType || ""),
+                    certainty: String(ev.certainty || ""),
+                    timing: String(ev.timing || ""),
+                    effectiveApprox: String(ev.effectiveApprox || ""),
+                    note: String(ev.note || ""),
+                    // Same rule as agent events: read path never synthesizes.
+                    createdAt: String(ev.createdAt || "")
+                  }))
+              : []
+          }))
+      : [],
     summary: String(value.summary || ""),
     soapNotes: Array.isArray(value.soapNotes) ? value.soapNotes.map(normalizeSoapNote) : [],
-    createdAt: String(value.createdAt || new Date().toISOString()),
-    updatedAt: String(value.updatedAt || new Date().toISOString())
+    // Codex audit HIGH#6: the READ path never synthesizes timestamps. A legacy
+    // record missing createdAt/updatedAt keeps "" — C2a's latest-wins and the
+    // C2b migration read these fields, and a load-time new Date() would
+    // disguise "unknown age" as "newest". Write sites stamp explicitly.
+    createdAt: String(value.createdAt || ""),
+    updatedAt: String(value.updatedAt || "")
   };
 }
 
@@ -4858,16 +5622,84 @@ function normalizeSoapNote(value) {
     tongueCoating: String(value.tongueCoating || ""),
     pulse: String(value.pulse || ""),
     vitals: String(value.vitals || ""),
+    // tcmPattern is UNCHANGED — same key, same free-text meaning it has
+    // always had. Relabelled in the UI as "TCM diagnosis notes" now that
+    // tcmPatternSelections below is the structured primary/secondary source,
+    // but the field itself is neither renamed nor auto-populated. Legacy
+    // prose here is never touched, never parsed, never destroyed.
     tcmPattern: String(value.tcmPattern || ""),
     pathomechanism: String(value.pathomechanism || ""),
     treatmentPrinciple: String(value.treatmentPrinciple || ""),
     modalities: String(value.modalities || ""),
+    // AVS v3 Phase C(§2.5):結構化療法記錄,modality.* id 陣列 —— Checkout
+    // 的權威來源(§7 順位 1)。自由文字 modalities 欄位原樣保留,legacy note
+    // 靠文字推斷 fallback(js/avs.js resolveModalities),兩者永不互相改寫。
+    modalitiesPerformed: normalizeStringList(value.modalitiesPerformed),
     advice: String(value.advice || ""),
     westernConditionLinks: normalizeStringList(value.westernConditionLinks),
     easternDiseaseLinks: normalizeStringList(value.easternDiseaseLinks),
+    // TCM pattern primary/secondary reconciliation (2026-08-09). Maps
+    // directly onto visit_tcm_patterns(pattern_id, is_primary) — one array
+    // entry per future row, no schema change needed. Distinct name from
+    // BOTH tcmPattern (free text, unrelated shape) and the CASE-level
+    // case.tcmPatterns (plain string[] of pattern labels, a different level
+    // of the object tree entirely) — reusing either name here would recreate
+    // the exact ambiguity this batch exists to resolve.
+    //
+    // Presence-vs-absence matters: an explicit [] (the field was touched by
+    // the new UI and left empty) is respected as-is. Only a genuinely ABSENT
+    // key (value.tcmPatternSelections === undefined — i.e. this note has
+    // never been through the new UI) falls back to deriving from the legacy
+    // tcmPatternLinks list, with EVERY derived entry isPrimary:false. No
+    // primary is ever guessed — an old multi-pattern note that never
+    // recorded which was primary keeps that uncertainty (docs/
+    // SOAP_FOLLOWUP_TRACKING_AUDIT.md's own instruction).
+    tcmPatternSelections: Array.isArray(value.tcmPatternSelections)
+      ? value.tcmPatternSelections
+          .filter((e) => e && typeof e.patternId === "string" && e.patternId)
+          // D17 §4 additions, both additive and never derived: role (MVP
+          // vocabulary primary|secondary; root|branch reserved) and
+          // confidence. role is NOT back-filled from isPrimary here — an old
+          // entry that only recorded isPrimary keeps role:"" (the normalizer
+          // records, it does not infer). Write-time code that SETS role must
+          // keep isPrimary in agreement (role==='primary' ⇔ isPrimary), so
+          // every legacy reader of isPrimary stays correct.
+          .map((e) => ({
+            patternId: String(e.patternId),
+            isPrimary: !!e.isPrimary,
+            role: String(e.role || ""),
+            confidence: String(e.confidence || ""),
+            // Codex HIGH#1 ruling: visit_tcm_patterns.note maps to this key
+            // (per-selection clinical note), ADDed to the contract rather than
+            // dropped from the schema. No form field yet — carried like
+            // confidence until the UI grows one.
+            note: String(e.note || "")
+          }))
+      : normalizeStringList(value.tcmPatternLinks).map((id) => ({ patternId: id, isPrimary: false, role: "", confidence: "", note: "" })),
+    // D17 §4 — differential candidates are NOT working patterns. Patterns the
+    // clinician CONSIDERED this visit (possibly ruled out) live here; adopted
+    // conclusions live in tcmPatternSelections above. Same id in both =
+    // considered, then adopted — legal and meaningful. Maps to
+    // visit_pattern_differentials.
+    patternDifferentials: Array.isArray(value.patternDifferentials)
+      ? value.patternDifferentials
+          .filter((e) => e && typeof e.patternId === "string" && e.patternId)
+          .map((e) => ({ patternId: String(e.patternId), ruledOut: !!e.ruledOut, note: String(e.note || "") }))
+      : [],
+    // Kept for every existing reader that resolves patterns off this flat
+    // list (window.AcuTingCases.usedIn's reverse index, the SOAP card's
+    // "Pattern links" row, Last Visit at a Glance's fallback) — now DERIVED
+    // from tcmPatternSelections on every save (see saveSoapFromForm) rather
+    // than typed into its own form field. The field itself, and every
+    // existing reader of it, is otherwise untouched.
     tcmPatternLinks: normalizeStringList(value.tcmPatternLinks),
     safetyFlagLinks: normalizeStringList(value.safetyFlagLinks),
     subjective: String(value.subjective || ""),
+    // Gate 3 (9/5 sym.* structured capture path): vocabulary = data/symptoms/
+    // symptoms.json (102 sym.* records), picker wired the same way
+    // easternDiseaseLinks reads tdisRegistry. subjective free text is
+    // untouched — this is an additive structured field, not a replacement.
+    symptomLinks: normalizeStringList(value.symptomLinks),
     objective: String(value.objective || ""),
     assessment: String(value.assessment || ""),
     plan: String(value.plan || ""),
@@ -4875,21 +5707,1222 @@ function normalizeSoapNote(value) {
     acupointLinks: normalizeStringList(value.acupointLinks),
     retentionMinutes: value.retentionMinutes ? Number(value.retentionMinutes) : "",
     technique: String(value.technique || ""),
+    // STRICTA 2010 item 2 needling parameters (academic-readiness batch,
+    // pre-9/01 freeze). Flat scalars beside the needling fields that already
+    // existed (pointsUsed/acupointLinks = 2b, retentionMinutes = 2f,
+    // technique = free text) — these five complete the checklist: 2a needle
+    // count, 2c depth, 2d response sought (de qi), 2e stimulation, 2g needle
+    // type/size. "" = not recorded (D4: distinct from zero/none — a visit
+    // with no needling keeps "" everywhere, it does not claim needleCount 0).
+    // deqiResponse vocabulary: ''|'obtained'|'partial'|'not_obtained'|
+    // 'not_sought'; needleStimulation: ''|'manual'|'electro'|'none'. Free-
+    // text where STRICTA itself is free-text (depth varies per point; type
+    // is gauge×length+material). No form fields yet — carried like
+    // tcmPatternSelections.note until the UI grows them.
+    needleCount: (value.needleCount === 0 || value.needleCount) ? Number(value.needleCount) : "",
+    needleDepthText: String(value.needleDepthText || ""),
+    deqiResponse: String(value.deqiResponse || ""),
+    needleStimulation: String(value.needleStimulation || ""),
+    needleTypeText: String(value.needleTypeText || ""),
     formulaHerbs: String(value.formulaHerbs || ""),
     formulaLinks: normalizeStringList(value.formulaLinks),
+    // Gate 3 (9/5 herb.* structured capture path): vocabulary = herb canon
+    // (358 herb.* records), picker wired the same way formulaLinks reads the
+    // formula library. formulaHerbs free text and linkifyFormulaHerbs()
+    // fuzzy matching are both untouched — herbLinks is an additive
+    // structured supplement, not a replacement.
+    herbLinks: normalizeStringList(value.herbLinks),
     westernMeds: String(value.westernMeds || ""),
     medicationLinks: normalizeStringList(value.medicationLinks),
     outcomes: String(value.outcomes || ""),
     outcomeMetricLinks: normalizeStringList(value.outcomeMetricLinks),
     outcomeVerdict: OUTCOME_VERDICTS[value.outcomeVerdict] ? value.outcomeVerdict : "",   // LL2
+    // Structured outcome metric proof-of-concept (2026-08-09,
+    // docs/SOAP_FOLLOWUP_TRACKING_AUDIT.md §9 ranked item #2). ONE
+    // {metricId, valueNumber} record per structured metric actually
+    // measured this visit, metricId always a real id from
+    // data/clinical_cases/outcome_metrics.json. Deliberately NOT a fixed
+    // set of named scalar fields (painScore/sleepQuality/...) — the whole
+    // point of this shape is that a future metric is one more entry
+    // through the same setOutcomeMetricValue() upsert helper, not a new
+    // normalizer line + a new form field wired by hand for each one.
+    // outcomeMetricLinks above is UNCHANGED and UNTOUCHED by this: it stays
+    // free text, never auto-parsed into this array (explicit requirement —
+    // "pain 7->4" prose is not a measurement record).
+    outcomeMetrics: Array.isArray(value.outcomeMetrics)
+      ? value.outcomeMetrics
+          .filter((m) => m && typeof m.metricId === "string" && m.metricId && Number.isFinite(Number(m.valueNumber)))
+          // relatedSymId (D17 §3): optional symptom anchor for this
+          // measurement — sym.* and metric.* are complementary namespaces,
+          // never competing. "" when the metric has no symptom anchor
+          // (routine vitals) or predates the field. Maps to
+          // visit_outcomes.related_sym_id.
+          .map((m) => ({ metricId: String(m.metricId), valueNumber: Number(m.valueNumber), relatedSymId: String(m.relatedSymId || "") }))
+      : [],
+    // SOAP/Follow-up audit (2026-08-09): nullable, never fabricated. "" (not
+    // 0) when absent — matches cases.baselineSeverity's D4-style distinction
+    // between "not answered" and "answered zero".
+    // D17 — per-VISIT observed lifestyle behavior rows (life.*). The
+    // trajectory (sleep 5h → 6h → 7h) IS the rows across visits; "current" is
+    // simply the latest visit's row, never an overwrite of history (V2 §18).
+    // valueNumber nullable "" — "not measured" stays distinct from zero (D4).
+    // HARD RULE (D17 §6): observations only. No code path may derive a
+    // pattern/tdis from these rows — TCM interpretation is typed by the
+    // practitioner in Assessment. Maps to visit_lifestyle_factors.
+    lifestyleFactors: Array.isArray(value.lifestyleFactors)
+      ? value.lifestyleFactors
+          .filter((f) => f && (f.factorId || f.nameText))
+          .map((f) => ({
+            id: String(f.id || createId("lifefac")),
+            factorId: String(f.factorId || ""),            // life.* (hierarchical ok)
+            nameText: String(f.nameText || ""),
+            valueNumber: (f.valueNumber === 0 || f.valueNumber) ? Number(f.valueNumber) : "",
+            unit: String(f.unit || ""),
+            valueText: String(f.valueText || ""),
+            frequencyText: String(f.frequencyText || ""),
+            changeSinceLast: String(f.changeSinceLast || ""),
+            notes: String(f.notes || "")
+          }))
+      : [],
+    // D17 — adverse events / treatment tolerance, linked to the visit where
+    // REPORTED (may be the visit after the causing treatment — onsetText
+    // carries that). Maps to visit_adverse_events.
+    adverseEvents: Array.isArray(value.adverseEvents)
+      ? value.adverseEvents
+          .filter((a) => a && (a.eventId || a.nameText))
+          .map((a) => ({
+            id: String(a.id || createId("advevt")),
+            eventId: String(a.eventId || ""),              // adverse_event.*
+            nameText: String(a.nameText || ""),
+            interventionType: String(a.interventionType || ""),
+            modalityId: String(a.modalityId || ""),        // modality.*
+            interventionRefId: String(a.interventionRefId || ""),
+            severity: String(a.severity || ""),            // 'mild'|'moderate'|'severe'
+            onsetText: String(a.onsetText || ""),
+            status: String(a.status || ""),                // 'patient_reported'|'observed'
+            resolutionStatus: String(a.resolutionStatus || ""),
+            resolvedDate: String(a.resolvedDate || ""),
+            notes: String(a.notes || "")
+          }))
+      : [],
+    // AVS v3 Phase B(§2.4/§8):Visit-owned 診後摘要 snapshot 陣列。
+    // PASS-THROUGH ON PURPOSE:finalized/superseded snapshot 是不可變歷史
+    // 文件,normalizer 絕不重塑/補欄/剝欄它們的內容 —— 只過濾掉根本不是
+    // 物件的殘渣。狀態機與唯一認可的變更路徑在 js/avs.js(upsertDraft/
+    // finalizeSnapshot/createCorrectionDraft),歷史不變量由
+    // AcuTingAVS.checkAvsInvariants + E2E(scripts/test-avs-checkout.js)把關。
+    avsSnapshots: Array.isArray(value.avsSnapshots)
+      ? value.avsSnapshots.filter((s) => s && typeof s === "object" && s.id)
+      : [],
+    effectDurationDays: (value.effectDurationDays === 0 || value.effectDurationDays) ? Number(value.effectDurationDays) : "",
+    referralOrSupervisorQuestion: String(value.referralOrSupervisorQuestion || ""),
     followUp: String(value.followUp || ""),
+    // CARE checklist item 12 — the patient's own words on how they are doing
+    // and what the episode means to them, captured per visit. This is the
+    // PATIENT's perspective verbatim/paraphrased, never the practitioner's
+    // assessment restated (that lives in assessment above). Academic-
+    // readiness batch, pre-9/01 freeze; no form field yet.
+    patientPerspective: String(value.patientPerspective || ""),
     // LL1 按語: optional structured reflection (Learning Loop track)
     differentialConsidered: String(value.differentialConsidered || ""),
     reflection: String(value.reflection || ""),
     ifIneffectivePlan: String(value.ifIneffectivePlan || ""),
-    createdAt: String(value.createdAt || new Date().toISOString()),
-    updatedAt: String(value.updatedAt || new Date().toISOString())
+    // Codex audit HIGH#6: the READ path never synthesizes timestamps. A legacy
+    // record missing createdAt/updatedAt keeps "" — C2a's latest-wins and the
+    // C2b migration read these fields, and a load-time new Date() would
+    // disguise "unknown age" as "newest". Write sites stamp explicitly.
+    createdAt: String(value.createdAt || ""),
+    updatedAt: String(value.updatedAt || "")
   };
+}
+
+// Structured outcome metric proof-of-concept (2026-08-09) — upsert-by-id
+// helpers for the note.outcomeMetrics array. Every future metric field
+// (sleep quality, stress, mood, ...) reads/writes through these same two
+// functions with its own metricId; nothing here is pain-score-specific.
+function getOutcomeMetricValue(list, metricId) {
+  const found = (list || []).find((m) => m.metricId === metricId);
+  return found ? found.valueNumber : "";
+}
+
+function setOutcomeMetricValue(list, metricId, value) {
+  // Preserve relatedSymId (D17 §3) across upserts — rebuilding the entry from
+  // scratch here would silently strip the symptom anchor every time the
+  // number is re-entered.
+  const existing = (list || []).find((m) => m.metricId === metricId);
+  const withoutThisMetric = (list || []).filter((m) => m.metricId !== metricId);
+  if (value === "" || value === null || value === undefined) return withoutThisMetric;
+  return [...withoutThisMetric, { metricId, valueNumber: Number(value), relatedSymId: String(existing?.relatedSymId || "") }];
+}
+
+// Metadata-driven numeric outcome metric renderer (2026-08-09) — prototype
+// covering exactly the two metrics already proven in 63f0896/eda9819
+// (metric.pain_score, metric.sleep_hours). Removes the per-metric
+// hydration/validation/display code that pattern would have repeated 20
+// more times. NUMERIC_OUTCOME_METRIC_CONFIG itself is declared near
+// OUTCOME_VERDICTS at the top of the file (TDZ: render() runs at top-level
+// page-load time, before this point in the file) — see that declaration's
+// comment for why the config lives in JS rather than
+// data/clinical_cases/outcome_metrics.json.
+// 表格那一格塞不下整串作者名。壓成「Farrar 2001」這種可以直接去查的短引用；
+// 完整書目留在 outcome_metrics.json，這裡只要能讓人認出是哪一篇。
+function shortCitation(name) {
+  const s = String(name || "").trim();
+  if (!s) return "";
+  const year = (s.match(/\b(1[89]|20)\d{2}\b/) || [])[0];
+  const lead = s.split(/[,.]/)[0].trim();
+  if (!lead) return year || "";
+  return year ? `${lead} ${year}` : lead;
+}
+
+function getOutcomeMetricDef(metricId) {
+  const records = globalThis.ACUTING_KNOWLEDGE?.outcomeMetrics?.records || [];
+  return records.find((r) => r.id === metricId) || null;
+}
+
+function outcomeMetricLabel(metricId) {
+  const def = getOutcomeMetricDef(metricId);
+  if (!def) return metricId;
+  return modeText(`${def.label_zh || def.name} ${def.label_en || ""}`.trim(), def.label_en || def.name);
+}
+
+// Chinese-only label minus its own parenthetical explanation (pain_score's
+// label_zh is "疼痛(0 無痛 / 10 最痛)") — for validation-error sentences,
+// which state the range themselves and have always been Chinese-only here
+// (matches every other alert() in this file, bilingual or not).
+function outcomeMetricShortLabel(metricId) {
+  const def = getOutcomeMetricDef(metricId);
+  const zh = def ? (def.label_zh || def.name) : metricId;
+  return zh.replace(/[（(][^）)]*[）)]/g, "").trim();
+}
+
+// FIX D (Dry Clinic #15) — outcome tracking panel row label. Some
+// label_zh/label_en values carry an internal semantic note AFTER the scale
+// parenthetical (e.g. mood: "情緒(0 最差 / 10 最好)。與 stress_level 分開:
+// 壓力是外在負荷,情緒是主觀狀態") — useful as a vocabulary-authoring
+// comment, not something a clinician scanning Baseline/Today/Change/Trend
+// needs. outcome_metrics.json has no separate short-name field (checked —
+// only label_zh/label_en/name, no name_zh), so per spec: truncate at the
+// first "(" in each language independently, same idea as
+// outcomeMetricShortLabel's regex-strip above but (a) bilingual/mode-aware
+// like outcomeMetricLabel, since this is a read-only display label, and
+// (b) a hard truncation rather than a strip-all-parens, so trailing prose
+// after the parenthetical is also dropped, not just the parenthetical
+// itself. Kept as its own function rather than changing
+// outcomeMetricShortLabel or outcomeMetricLabel in place — those still
+// serve validation-error text and the SOAP form's own input labels/Last
+// Visit at a Glance card respectively, unchanged. Baseline/Today/Change/
+// Trend values themselves are untouched — only this row's label text.
+function outcomeMetricPanelLabel(metricId) {
+  const def = getOutcomeMetricDef(metricId);
+  if (!def) return metricId;
+  const truncateAtParen = (s) => {
+    const str = String(s || "");
+    const i = str.search(/[（(]/);
+    return (i === -1 ? str : str.slice(0, i)).trim();
+  };
+  const zh = truncateAtParen(def.label_zh || def.name);
+  const en = truncateAtParen(def.label_en || "");
+  return modeText(`${zh} ${en}`.trim(), en || def.name);
+}
+
+// One-fact-one-home resolution for a metric that may still have a legacy
+// direct-field representation (only metric.effect_duration_days does, via
+// cfg.legacyField). Canonical (outcomeMetrics[]) wins whenever it exists —
+// a deterministic, always-applied rule, not a per-case guess. When BOTH
+// exist and disagree, that is surfaced (conflict:true) rather than the
+// legacy value being silently discarded; when only the legacy field has
+// ever been set (an old note nobody has resaved since this batch), it is
+// read as-is so historical values are never lost or blanked.
+function resolveNumericMetricValue(note, cfg) {
+  const canonical = getOutcomeMetricValue(note.outcomeMetrics, cfg.metricId);
+  const hasCanonical = canonical === 0 || !!canonical;
+  if (!cfg.legacyField) return { value: canonical, hasValue: hasCanonical, conflict: false };
+  const legacy = note[cfg.legacyField];
+  const hasLegacy = legacy === 0 || !!legacy;
+  if (hasCanonical && hasLegacy) {
+    return { value: canonical, hasValue: true, conflict: Number(canonical) !== Number(legacy), legacyValue: legacy };
+  }
+  if (hasCanonical) return { value: canonical, hasValue: true, conflict: false };
+  if (hasLegacy) return { value: legacy, hasValue: true, conflict: false };
+  return { value: "", hasValue: false, conflict: false };
+}
+
+// Renders one <label><input></label> per configured metric into the given
+// container, values pre-filled from `note` (canonical metric, or the
+// legacy field for the one metric still carrying one — see
+// resolveNumericMetricValue). Rebuilt every dialog open (like
+// renderRaceEthnicityOptions) — cheap, and always exactly right for
+// whichever note is being edited.
+function renderNumericOutcomeMetricInputs(note) {
+  const container = document.querySelector("#structuredOutcomeMetrics");
+  if (!container) return;
+  container.innerHTML = NUMERIC_OUTCOME_METRIC_CONFIG.map((cfg) => {
+    const def = getOutcomeMetricDef(cfg.metricId);
+    const unitNote = def?.unit ? ` <small>${escapeHtml(def.unit)}</small>` : "";
+    const resolved = resolveNumericMetricValue(note, cfg);
+    const attrs = [
+      `type="number"`,
+      `name="${escapeAttribute(cfg.metricId)}"`,
+      `min="${cfg.min}"`,
+      cfg.max != null ? `max="${cfg.max}"` : "",
+      `step="${cfg.integer ? "1" : "any"}"`,
+      `value="${resolved.hasValue ? escapeAttribute(String(resolved.value)) : ""}"`,
+      `placeholder="未測量可留空 leave blank if not measured"`,
+    ].filter(Boolean).join(" ");
+    const conflictWarning = resolved.conflict
+      ? `<small class="metric-conflict-warning">⚠ 與舊欄位不一致：舊值 ${escapeHtml(String(resolved.legacyValue))}，目前顯示新值 ${escapeHtml(String(resolved.value))}（儲存後舊欄位會清除）。Conflicts with the legacy field — old ${escapeHtml(String(resolved.legacyValue))}, showing new ${escapeHtml(String(resolved.value))}.</small>`
+      : "";
+    return `<label>${escapeHtml(outcomeMetricLabel(cfg.metricId))}${unitNote}<small>${escapeHtml(cfg.metricId)}</small><input ${attrs} />${conflictWarning}</label>`;
+  }).join("");
+}
+
+// Config-driven validate-and-set for every configured numeric metric.
+// `formValues` is the plain object saveSoapFromForm already builds from
+// FormData — each metric's input name IS its metricId, so formValues[
+// cfg.metricId] is exactly its raw string. Returns {metrics, legacyClears}
+// on success or {error} on the FIRST invalid field (reject, never clamp)
+// so the caller can alert and abort the save exactly like the two
+// hand-written blocks did. legacyClears is {fieldName: ""} for every
+// configured metric that has a legacyField — realizing "one fact, one
+// home" going forward: any save (new or edited) fully migrates that
+// metric to outcomeMetrics[] and blanks the old column, so only notes
+// nobody has touched since this batch still carry a legacy value.
+function computeNumericOutcomeMetrics(formValues, currentMetrics) {
+  let metrics = currentMetrics || [];
+  const legacyClears = {};
+  for (const cfg of NUMERIC_OUTCOME_METRIC_CONFIG) {
+    const raw = String(formValues[cfg.metricId] || "").trim();
+    if (raw) {
+      const shapeOk = cfg.integer ? /^\d+$/.test(raw) : /^\d+(\.\d+)?$/.test(raw);
+      const num = Number(raw);
+      const rangeOk = num >= cfg.min && (cfg.max == null || num <= cfg.max);
+      if (!shapeOk || !rangeOk) {
+        const rangeText = cfg.max != null ? `${cfg.min}–${cfg.max}` : `${cfg.min} 以上`;
+        const shapeText = cfg.integer ? "整數" : "數字，可含小數";
+        return { error: `${outcomeMetricShortLabel(cfg.metricId)}須為 ${rangeText} 的${shapeText}（可留空 = 未測量）。` };
+      }
+      // SOL R-2(瀏覽器實測確認):存檔端過去只有 regex + range,沒有量級上界,
+      // 而 sleep_hours 的 max 是 null。於是超過 MAX_SAFE_INTEGER 的輸入會被
+      // **靜默改成另一個數字**再存下去 —— 實測 9007199254740993 → …992、
+      // 99999999999999999999 → 1e20、24 個 9 → 1e+24。傳輸層早就擋這些
+      // (共用驗證器的 magnitude 規則),兩層卻不同尺。
+      //
+      // 這裡改用共用模組的同一把尺:值必須落在安全整數範圍內,而且「存下去的
+      // 數字」與「醫師打的字」必須是同一個值(canonicalDecimal 比較的是值,
+      // 不是寫法,所以 7.50 / 07.5 這種寫法差異不受影響)。
+      const V = globalThis.AcuTingPrevisitValidator;
+      if (Math.abs(num) > Number.MAX_SAFE_INTEGER) {
+        return { error: `${outcomeMetricShortLabel(cfg.metricId)}的數值超出可精確表示的範圍（|值| 須 ≤ ${Number.MAX_SAFE_INTEGER}）——存下去會變成另一個數字。` };
+      }
+      if (V && typeof V.canonicalDecimal === "function") {
+        const typedCanonical = V.canonicalDecimal(raw);
+        const storedCanonical = V.canonicalDecimal(String(num));
+        if (typedCanonical !== null && storedCanonical !== null && typedCanonical !== storedCanonical) {
+          return { error: `${outcomeMetricShortLabel(cfg.metricId)}存下去的數值會與您輸入的不同（${raw} → ${num}），請確認後重新輸入。` };
+        }
+      }
+    }
+    metrics = setOutcomeMetricValue(metrics, cfg.metricId, raw);
+    if (cfg.legacyField) legacyClears[cfg.legacyField] = "";
+  }
+  return { metrics, legacyClears };
+}
+
+// Single-value display formatter (2026-08, Outcome Tracking v1 extraction —
+// byte-identical to formatNumericOutcomeMetrics's old inline expression,
+// pulled out only so the new Baseline/Today columns below can render a
+// value exactly the same way the SOAP card already does, instead of a
+// second hand-written copy of "bounded shows /max, unbounded shows its
+// unit string" that could silently drift from this one over time).
+function formatMetricNumberDisplay(cfg, value) {
+  const def = getOutcomeMetricDef(cfg.metricId);
+  if (cfg.max != null) return `${value}/${cfg.max}`;
+  if (def?.unit === "hours") return `${value} h`;
+  if (def?.unit) return `${value} ${def.unit}`;
+  return `${value}`;
+}
+
+// Shared display formatter — SOAP card and Last Visit at a Glance both call
+// this instead of each hand-formatting pain/sleep/effect-duration
+// separately. [label, valueText] pairs, one per metric that actually has a
+// value (legacy-only historical notes included, via
+// resolveNumericMetricValue — never a fabricated "0", never a blanked
+// historical value). A conflicting metric shows its resolved (canonical)
+// value with a small ⚠ suffix rather than two rows — "no duplicate rows"
+// — the full explanation lives on the form, where it can actually be acted
+// on.
+function formatNumericOutcomeMetrics(note) {
+  return NUMERIC_OUTCOME_METRIC_CONFIG.map((cfg) => {
+    const resolved = resolveNumericMetricValue(note, cfg);
+    if (!resolved.hasValue) return null;
+    const valueText = formatMetricNumberDisplay(cfg, resolved.value) + (resolved.conflict ? " ⚠" : "");
+    // FIX D 延伸(Dry Clinic #15 實測):glance 卡同樣是唯讀掃視面,
+    // 用 panel 短標籤;完整語意註解留在 SOAP 表單輸入標籤(5661)那裡。
+    return [outcomeMetricPanelLabel(cfg.metricId), valueText];
+  }).filter(Boolean);
+}
+
+// Outcome Tracking v1 (2026-08, CG8 — docs/CLINICAL_GRAPH_TRACK.md §3):
+// Baseline / Today / Change / Trend, read-only and fully derived from
+// existing note.outcomeMetrics[] data. No new persisted field, no schema
+// change, no chart, no trend snapshot stored anywhere.
+//
+// Case-scoped, per CG8's own wording ("該病程首診值,不是該病人首診值"):
+// Baseline is THIS case's chronologically first visit, Today is THIS
+// case's chronologically latest visit. If visit 1 didn't measure a metric,
+// baseline for that metric is permanently "—" for this case — never
+// silently backfilled from a later visit, and never carried forward from
+// any other case even if it shares a patientCode.
+//
+// No LOCF anywhere: Today reads only the latest visit's own resolved
+// value; if the latest visit didn't measure the metric, Today is "—", full
+// stop, even if an earlier visit had a value.
+//
+// Trend is the CG8 first-phase contract exactly: ↑/↓/→ per consecutive
+// transition in the MEASURED sequence only (unmeasured visits are skipped
+// when building that sequence, never given a fabricated arrow), no color,
+// no "improved/worsened" wording — direction_good varies per metric
+// (increase/decrease/individualized/contextual) and some are explicitly
+// individualized (bowel_frequency), so an arrow here is describing numeric
+// movement only, not a verdict.
+function computeOutcomeTrackingRows(item) {
+  const chronological = [...(item.soapNotes || [])].sort((a, b) => {
+    const dateCompare = String(a.visitDate || "").localeCompare(String(b.visitDate || ""));
+    if (dateCompare) return dateCompare;
+    return Number(a.visitNumber || 0) - Number(b.visitNumber || 0);
+  });
+  if (!chronological.length) return [];
+
+  const firstNote = chronological[0];
+  const latestNote = chronological[chronological.length - 1];
+
+  return NUMERIC_OUTCOME_METRIC_CONFIG.map((cfg) => {
+    // Row visibility rule: show this metric only if it was measured on AT
+    // LEAST ONE visit anywhere in the case — otherwise this would be an
+    // 11-row wall of dashes on every new case. This is independent of
+    // whether baseline/today specifically have a value (they can still be
+    // "—" individually below even when the row is shown).
+    const measured = chronological
+      .map((note) => resolveNumericMetricValue(note, cfg))
+      .filter((r) => r.hasValue)
+      .map((r) => Number(r.value));
+    if (!measured.length) return null;
+
+    const baselineResolved = resolveNumericMetricValue(firstNote, cfg);
+    const todayResolved = resolveNumericMetricValue(latestNote, cfg);
+    const baseline = baselineResolved.hasValue ? Number(baselineResolved.value) : null;
+    const today = todayResolved.hasValue ? Number(todayResolved.value) : null;
+    // Floating-point cleanup only (e.g. 7.3 - 6.1 artifacts) — never a
+    // clinical rounding decision; sleep_hours is the only decimal metric
+    // today and this preserves whatever precision was actually entered.
+    const change = (baseline != null && today != null) ? Math.round((today - baseline) * 1e6) / 1e6 : null;
+
+    // One transition per consecutive pair in the measured-only sequence.
+    // A single-visit case (or a metric measured on only one visit) has
+    // measured.length === 1 → trend stays null → displayed as "—", per
+    // CG8's "fewer than 2 measured observations" rule.
+    let trend = null;
+    if (measured.length >= 2) {
+      trend = measured.slice(1).map((v, i) => {
+        const prev = measured[i];
+        if (v > prev) return "↑";
+        if (v < prev) return "↓";
+        return "→";
+      }).join("");
+    }
+
+    return { cfg, baseline, today, change, trend };
+  }).filter(Boolean);
+}
+
+function renderOutcomeTrackingPanel(item) {
+  const rows = computeOutcomeTrackingRows(item);
+  if (!rows.length) {
+    return `
+      <div class="timeline-head">
+        <strong>Outcome Tracking</strong>
+      </div>
+      <div class="case-empty">尚無結構化 outcome 數值。No structured numeric outcome metrics recorded in this case yet.</div>
+    `;
+  }
+  const fmt = (cfg, value) => (value == null ? "—" : formatMetricNumberDisplay(cfg, value));
+  const fmtChange = (value) => {
+    if (value == null) return "—";
+    if (value > 0) return `+${value}`;
+    return `${value}`;
+  };
+  return `
+    <div class="timeline-head">
+      <strong>Outcome Tracking</strong>
+      <small class="timeline-date">Baseline = 本病程首診 · Today = 本病程最新一診 · ${rows.length} 項有記錄</small>
+    </div>
+    <div class="outcome-tracking-wrap">
+      <table class="outcome-tracking-table">
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th>Baseline</th>
+            <th>Today</th>
+            <th>Change</th>
+            <th>Trend</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${rows.map((row) => {
+            const def = getOutcomeMetricDef(row.cfg.metricId);
+            const directionHint = def?.direction_good && OUTCOME_DIRECTION_HINT_LABELS[def.direction_good]
+              ? `<small class="direction-hint">${escapeHtml(OUTCOME_DIRECTION_HINT_LABELS[def.direction_good])}</small>`
+              : "";
+            // sourced 的 badge 直接引用來源名稱，因為那筆判讀是可查證的；
+            // 另外兩態走固定措辭。未標註狀態的 metric 不畫 badge——寧可空白，
+            // 也不要用一個看起來像結論的標籤去蓋住「還沒判斷過」。
+            let interpHint = "";
+            if (def?.interpretation_status === "sourced" && def.source?.name) {
+              interpHint = `<small class="interp-hint interp-sourced" title="${escapeHtml(def.interpretation_en || "")}">判讀依據：${escapeHtml(shortCitation(def.source.name))}</small>`;
+            } else if (def && OUTCOME_INTERPRETATION_BADGES[def.interpretation_status]) {
+              const b = OUTCOME_INTERPRETATION_BADGES[def.interpretation_status];
+              interpHint = `<small class="interp-hint ${b.cls}" title="${escapeHtml(def.interpretation_note_zh || "")}">${escapeHtml(b.text)}</small>`;
+            }
+            // 第二個軸(D20):沒有改善閾值,不代表沒有具名的正常範圍可以參考
+            // (例如 FIGO 對月經週期的正常範圍)。跟 interpHint 分開畫,
+            // 不要合成一行 —— 合成會讓讀的人把「有範圍」誤讀成「有閾值」。
+            let refRangeHint = "";
+            if (def?.interpretation_status !== "sourced" && def?.reference_range?.source?.name && def.reference_range.scope) {
+              const rr = def.reference_range;
+              const rrText = rr.text_zh || rr.text_en || "";
+              refRangeHint = `<small class="interp-hint interp-refrange" title="${escapeHtml(rrText)}${rr.scope ? "\n適用範圍：" + escapeHtml(rr.scope) : ""}">參考範圍：${escapeHtml(shortCitation(rr.source.name))}</small>`;
+            }
+            return `<tr>
+              <td>${escapeHtml(outcomeMetricPanelLabel(row.cfg.metricId))}${directionHint}${interpHint}${refRangeHint}</td>
+              <td>${escapeHtml(fmt(row.cfg, row.baseline))}</td>
+              <td>${escapeHtml(fmt(row.cfg, row.today))}</td>
+              <td>${escapeHtml(fmtChange(row.change))}</td>
+              <td>${escapeHtml(row.trend || "—")}</td>
+            </tr>`;
+          }).join("")}
+        </tbody>
+      </table>
+    </div>
+  `;
+}
+
+// Phase D batch 1 (docs/SPRINT_2026-08-12_BRIEF.md Phase D): case-level Meds &
+// Supplements ledger UI over agentExposures[] (D17 §5 — ONE longitudinal
+// timeline per agent, not a per-visit snapshot). Read side only queries the
+// store's pure helpers (getCurrentExposures/getExposureTimeline); write side
+// (openAgentExposureEditor/saveAgentExposureFromForm/promptAgentExposureAction)
+// goes exclusively through AcuTingClinicalStore.applyExposureChange — never a
+// direct row/events mutation (audit B-1 invariant). Legacy currentMeds /
+// westernMeds / medicationLinks are untouched (M-3: the two tracks coexist).
+// (宣告移至檔頭 selectedCaseId 附近 —— 初始 render() 在第 ~1200 行就會走到
+// renderAgentExposuresPanel,const 留在這裡是 TDZ:首個病例帶 agentExposures
+// 時開機即崩。AVS v3 驗證走查時實測抓到,非新引入。)
+// (宣告已前移至檔頭 —— 見 AGENT_EXPOSURE_TYPE_LABELS 註解,TDZ 修正)
+
+// Phase D batch 2 (docs/SPRINT_2026-08-12_BRIEF.md task 2): visit-level
+// Lifestyle / Adverse events repeatable rows inside the SOAP dialog, writing
+// note.lifestyleFactors[] / note.adverseEvents[] (D17 §6/§4 shapes owned by
+// normalizeSoapNote — this section only builds/reads the DOM rows, the
+// normalizer still enforces the actual field shapes on save). Rows are
+// DRAFT/editable/removable before save — the append-only rule applies to
+// case-level exposure EVENTS (applyExposureChange), never to these visit
+// rows. No code path here may turn a life.*/adverse_event.* selection into a
+// pattern/tdis id (D17 §6 hard rule) — these functions only read/write the
+// vocab id and free text the practitioner picked.
+const REPEATABLE_ROW_OTHER_VALUE = "__other__";
+// (宣告已前移至檔頭 boot-order 區 —— 見 AGENT_EXPOSURE_TYPE_LABELS 註解)
+// (宣告已前移至檔頭 boot-order 區 —— 見 AGENT_EXPOSURE_TYPE_LABELS 註解)
+// (宣告已前移至檔頭 boot-order 區 —— 見 AGENT_EXPOSURE_TYPE_LABELS 註解)
+
+// Shared <select> option builder for the two vocab-backed pickers below.
+// selectedValue is either a real vocab id, "" (nothing chosen yet), or
+// REPEATABLE_ROW_OTHER_VALUE (an "other" row whose free-text name lives in
+// nameText). A selectedValue that is none of those (a legacy id the current
+// vocab file no longer lists) gets its own fallback <option> rather than
+// silently resetting to blank — never lose a saved value on re-render.
+function vocabSelectOptionsHtml(records, selectedValue, opts = {}) {
+  const { includeOther = true, otherLabel = "其他 Other…", blankLabel = "—" } = opts;
+  const list = records || [];
+  const knownIds = new Set(list.map((r) => r.id));
+  const blank = `<option value=""${selectedValue === "" ? " selected" : ""}>${escapeHtml(blankLabel)}</option>`;
+  const known = list.map((r) => {
+    const label = `${r.name_zh || ""} ${r.name_en || ""}`.trim() || r.id;
+    return `<option value="${escapeAttribute(r.id)}"${selectedValue === r.id ? " selected" : ""}>${escapeHtml(label)}</option>`;
+  }).join("");
+  const other = includeOther
+    ? `<option value="${REPEATABLE_ROW_OTHER_VALUE}"${selectedValue === REPEATABLE_ROW_OTHER_VALUE ? " selected" : ""}>${escapeHtml(otherLabel)}</option>`
+    : "";
+  const isRecognized = selectedValue === "" || selectedValue === REPEATABLE_ROW_OTHER_VALUE || knownIds.has(selectedValue);
+  const fallback = (!isRecognized && selectedValue)
+    ? `<option value="${escapeAttribute(selectedValue)}" selected>${escapeHtml(selectedValue)}</option>`
+    : "";
+  return blank + known + other + fallback;
+}
+
+function lifestyleFactorRowHtml(row = {}) {
+  const vocab = globalThis.ACUTING_KNOWLEDGE?.lifestyleFactorVocabulary?.records || [];
+  const selectValue = row.factorId ? row.factorId : (row.nameText ? REPEATABLE_ROW_OTHER_VALUE : "");
+  const isOther = selectValue === REPEATABLE_ROW_OTHER_VALUE;
+  const matchedRecord = vocab.find((r) => r.id === row.factorId);
+  const unitPlaceholder = matchedRecord?.value_hint_en || "";
+  const hasValueNumber = row.valueNumber === 0 || !!row.valueNumber;
+  return `
+    <div class="lifestyle-factor-row" data-row-id="${escapeAttribute(row.id || "")}">
+      <label>因子 Factor<select data-role="factorId">${vocabSelectOptionsHtml(vocab, selectValue)}</select></label>
+      <label data-role="nameTextWrap"${isOther ? "" : " hidden"}>名稱 Name<input type="text" data-role="nameText" value="${escapeAttribute(row.nameText || "")}" placeholder="e.g. Screen time before bed" /></label>
+      <label>數值 Value<input type="number" step="any" data-role="valueNumber" value="${hasValueNumber ? escapeAttribute(row.valueNumber) : ""}" /></label>
+      <label>單位 Unit<input type="text" data-role="unit" value="${escapeAttribute(row.unit || "")}" placeholder="${escapeAttribute(unitPlaceholder)}" /></label>
+      <label>頻率 Frequency<input type="text" data-role="frequencyText" value="${escapeAttribute(row.frequencyText || "")}" placeholder="daily / 3x week" /></label>
+      <label>備註 Notes<input type="text" data-role="notes" value="${escapeAttribute(row.notes || "")}" /></label>
+      <button type="button" class="ghost repeatable-row-remove" data-remove-row data-mode-text data-bilingual="移除" data-english="Remove">移除</button>
+    </div>`;
+}
+
+function adverseEventRowHtml(row = {}) {
+  const vocab = globalThis.ACUTING_KNOWLEDGE?.adverseEventVocabulary?.records || [];
+  const modalityVocab = globalThis.ACUTING_KNOWLEDGE?.modalityVocabulary?.records || [];
+  const selectValue = row.eventId ? row.eventId : (row.nameText ? REPEATABLE_ROW_OTHER_VALUE : "");
+  const isOther = selectValue === REPEATABLE_ROW_OTHER_VALUE;
+  const optionRow = (value, label, current) => `<option value="${value}"${current === value ? " selected" : ""}>${escapeHtml(label)}</option>`;
+  return `
+    <div class="adverse-event-row" data-row-id="${escapeAttribute(row.id || "")}">
+      <label>事件 Event<select data-role="eventId">${vocabSelectOptionsHtml(vocab, selectValue)}</select></label>
+      <label data-role="nameTextWrap"${isOther ? "" : " hidden"}>名稱 Name<input type="text" data-role="nameText" value="${escapeAttribute(row.nameText || "")}" /></label>
+      <label>處置類型 Intervention<select data-role="interventionType">
+        <option value=""${row.interventionType ? "" : " selected"}>—</option>
+        ${Object.entries(ADVERSE_EVENT_INTERVENTION_LABELS).map(([v, l]) => optionRow(v, l, row.interventionType || "")).join("")}
+      </select></label>
+      <label>手法 Modality<select data-role="modalityId">${vocabSelectOptionsHtml(modalityVocab, row.modalityId || "", { includeOther: false, blankLabel: "—（選填）" })}</select></label>
+      <label>嚴重度 Severity<select data-role="severity">
+        <option value=""${row.severity ? "" : " selected"}>—</option>
+        ${Object.entries(ADVERSE_EVENT_SEVERITY_LABELS).map(([v, l]) => optionRow(v, l, row.severity || "")).join("")}
+      </select></label>
+      <label>處理狀態 Resolution<select data-role="resolutionStatus">
+        <option value=""${row.resolutionStatus ? "" : " selected"}>—</option>
+        ${Object.entries(ADVERSE_EVENT_RESOLUTION_LABELS).map(([v, l]) => optionRow(v, l, row.resolutionStatus || "")).join("")}
+      </select></label>
+      <label>備註 Notes<input type="text" data-role="notes" value="${escapeAttribute(row.notes || "")}" /></label>
+      <button type="button" class="ghost repeatable-row-remove" data-remove-row data-mode-text data-bilingual="移除" data-english="Remove">移除</button>
+    </div>`;
+}
+
+// Rebuilt every dialog open (like renderNumericOutcomeMetricInputs) — always
+// exactly matches whichever note is being edited (new note = []), which is
+// what keeps saveSoapFromForm's DOM read below honest: the container never
+// sits "un-rendered" while a saved note has rows, so collecting from it can
+// never clobber a saved array with [] just because the section wasn't
+// clicked into (SPRINT brief task 2's explicit clobber warning).
+function renderLifestyleFactorRows(rows) {
+  const container = document.querySelector("#lifestyleFactorRows");
+  if (!container) return;
+  container.innerHTML = (Array.isArray(rows) ? rows : []).map(lifestyleFactorRowHtml).join("");
+  wireRepeatableRowContainer(container, "factorId");
+}
+
+function renderAdverseEventRows(rows) {
+  const container = document.querySelector("#adverseEventRows");
+  if (!container) return;
+  container.innerHTML = (Array.isArray(rows) ? rows : []).map(adverseEventRowHtml).join("");
+  wireRepeatableRowContainer(container, "eventId");
+}
+
+/* 鑑別診斷 patternDifferentials —— 「還考慮過哪些證型、排除了沒有」。
+ *
+ * 這一欄的資料契約(normalizeSoapNote)、正典 id、以及 localStorage→SQLite
+ * 的欄位對照都早就存在,**只有輸入欄位從來沒做**。9/5 的 20 項裡它是唯一
+ * 一個「契約齊備但 UI 完全沒有」的,所以那一格永遠是空的:CG 檢查表的
+ * 「8b 鑑別思路」只能靠旁邊那個自由文字欄 differentialConsidered 撐著。
+ *
+ * 兩者不重複:自由文字是「為什麼」,這裡是**哪一個證型、有沒有被排除** ——
+ * 只有後者能被 usedIn 反查與月審統計拿去用。
+ *
+ * 證型清單刻意用跟 patternPickerOptions 同一批來源(patternLibrary + 舊
+ * conditions.tcm_patterns),否則這裡選出來的 id 會跟 tcmPatternSelections
+ * 對不起來,反查就會斷。 */
+function patternDifferentialVocab() {
+  const k = globalThis.ACUTING_KNOWLEDGE || {};
+  const lib = k.patternLibrary?.records || [];
+  const old = k.conditions?.tcm_patterns || [];
+  const seen = new Set();
+  return [...lib, ...old].filter((p) => {
+    if (!p || !p.id || seen.has(p.id)) return false;
+    seen.add(p.id);
+    return p.review_status !== "deprecated";
+  });
+}
+
+function patternDifferentialRowHtml(row = {}) {
+  return `
+    <div class="pattern-differential-row" data-row-id="${escapeAttribute(row.id || "")}">
+      <label>考慮過的證型 Pattern considered<select data-role="patternId">${vocabSelectOptionsHtml(patternDifferentialVocab(), row.patternId || "", { includeOther: false })}</select></label>
+      <label class="pd-ruled">已排除 Ruled out<input type="checkbox" data-role="ruledOut"${row.ruledOut ? " checked" : ""} /></label>
+      <label>理由 Note<input type="text" data-role="note" value="${escapeAttribute(row.note || "")}" placeholder="為什麼考慮、又為什麼排除" /></label>
+      <button type="button" class="ghost repeatable-row-remove" data-remove-row data-mode-text data-bilingual="移除" data-english="Remove">移除</button>
+    </div>`;
+}
+
+function renderPatternDifferentialRows(rows) {
+  const container = document.querySelector("#patternDifferentialRows");
+  if (!container) return;
+  container.innerHTML = (Array.isArray(rows) ? rows : []).map(patternDifferentialRowHtml).join("");
+  wireRepeatableRowContainer(container, "patternId");
+}
+
+function collectPatternDifferentialRows() {
+  const container = document.querySelector("#patternDifferentialRows");
+  if (!container) return [];
+  return [...container.querySelectorAll(".pattern-differential-row")].map((row) => ({
+    patternId: row.querySelector('[data-role="patternId"]').value || "",
+    ruledOut: !!row.querySelector('[data-role="ruledOut"]').checked,
+    note: (row.querySelector('[data-role="note"]').value || "").trim(),
+  })).filter((e) => e.patternId);   // normalizeSoapNote 也會濾,這裡先濾避免空列進存檔
+}
+
+// Delegated listeners on the container survive innerHTML rebuilds (the
+// container node itself is never replaced), so this only needs to attach
+// once per container — the dataset flag makes repeated calls (every dialog
+// open) idempotent.
+function wireRepeatableRowContainer(container, selectRole) {
+  if (container.dataset.wired) return;
+  container.dataset.wired = "1";
+  container.addEventListener("click", (event) => {
+    const removeBtn = event.target.closest("[data-remove-row]");
+    if (removeBtn) removeBtn.closest(".lifestyle-factor-row, .adverse-event-row")?.remove();
+  });
+  container.addEventListener("change", (event) => {
+    const select = event.target.closest(`[data-role="${selectRole}"]`);
+    if (!select) return;
+    const row = select.closest(".lifestyle-factor-row, .adverse-event-row");
+    const nameTextWrap = row?.querySelector('[data-role="nameTextWrap"]');
+    if (nameTextWrap) nameTextWrap.hidden = select.value !== REPEATABLE_ROW_OTHER_VALUE;
+    if (selectRole === "factorId") {
+      const vocab = globalThis.ACUTING_KNOWLEDGE?.lifestyleFactorVocabulary?.records || [];
+      const rec = vocab.find((r) => r.id === select.value);
+      const unitInput = row?.querySelector('[data-role="unit"]');
+      if (unitInput && rec?.value_hint_en) unitInput.placeholder = rec.value_hint_en;
+    }
+  });
+}
+
+// Read side of the two row widgets — plain objects matching
+// normalizeSoapNote's lifestyleFactors[]/adverseEvents[] field names
+// exactly; the normalizer still does the actual filtering/coercion, this
+// only translates DOM state into the same shape saveAgentExposureFromForm
+// already builds from FormData for its own dialog.
+function collectLifestyleFactorRows() {
+  const container = document.querySelector("#lifestyleFactorRows");
+  if (!container) return [];
+  return [...container.querySelectorAll(".lifestyle-factor-row")].map((row) => {
+    const select = row.querySelector('[data-role="factorId"]');
+    const isOther = select.value === REPEATABLE_ROW_OTHER_VALUE;
+    return {
+      id: row.dataset.rowId || "",
+      factorId: isOther ? "" : select.value,
+      nameText: (row.querySelector('[data-role="nameText"]').value || "").trim(),
+      valueNumber: row.querySelector('[data-role="valueNumber"]').value,
+      unit: (row.querySelector('[data-role="unit"]').value || "").trim(),
+      frequencyText: (row.querySelector('[data-role="frequencyText"]').value || "").trim(),
+      notes: (row.querySelector('[data-role="notes"]').value || "").trim()
+    };
+  });
+}
+
+function collectAdverseEventRows() {
+  const container = document.querySelector("#adverseEventRows");
+  if (!container) return [];
+  return [...container.querySelectorAll(".adverse-event-row")].map((row) => {
+    const select = row.querySelector('[data-role="eventId"]');
+    const isOther = select.value === REPEATABLE_ROW_OTHER_VALUE;
+    return {
+      id: row.dataset.rowId || "",
+      eventId: isOther ? "" : select.value,
+      nameText: (row.querySelector('[data-role="nameText"]').value || "").trim(),
+      interventionType: row.querySelector('[data-role="interventionType"]').value || "",
+      modalityId: row.querySelector('[data-role="modalityId"]').value || "",
+      severity: row.querySelector('[data-role="severity"]').value || "",
+      resolutionStatus: row.querySelector('[data-role="resolutionStatus"]').value || "",
+      notes: (row.querySelector('[data-role="notes"]').value || "").trim()
+    };
+  });
+}
+
+// SOAP note display card — mirrors how outcomes/patterns render (raw ids
+// resolved to vocab labels when known, falls back to nameText/id).
+function formatLifestyleFactorLine(f) {
+  const vocab = globalThis.ACUTING_KNOWLEDGE?.lifestyleFactorVocabulary?.records || [];
+  const rec = vocab.find((r) => r.id === f.factorId);
+  const label = rec ? `${rec.name_zh} ${rec.name_en}` : (f.nameText || f.factorId || "—");
+  const hasValue = f.valueNumber === 0 || !!f.valueNumber;
+  const valueText = [hasValue ? `${f.valueNumber}${f.unit ? " " + f.unit : ""}` : "", f.frequencyText].filter(Boolean).join(" · ");
+  return `<li><strong>${escapeHtml(label)}</strong>${valueText ? ` — ${escapeHtml(valueText)}` : ""}${f.notes ? `<br><small>${escapeHtml(f.notes)}</small>` : ""}</li>`;
+}
+
+function formatAdverseEventLine(a) {
+  const vocab = globalThis.ACUTING_KNOWLEDGE?.adverseEventVocabulary?.records || [];
+  const rec = vocab.find((r) => r.id === a.eventId);
+  const label = rec ? `${rec.name_zh} ${rec.name_en}` : (a.nameText || a.eventId || "—");
+  const meta = [
+    ADVERSE_EVENT_INTERVENTION_LABELS[a.interventionType] || a.interventionType,
+    ADVERSE_EVENT_SEVERITY_LABELS[a.severity] || a.severity,
+    ADVERSE_EVENT_RESOLUTION_LABELS[a.resolutionStatus] || a.resolutionStatus
+  ].filter(Boolean).join(" · ");
+  return `<li><strong>${escapeHtml(label)}</strong>${meta ? ` — ${escapeHtml(meta)}` : ""}${a.notes ? `<br><small>${escapeHtml(a.notes)}</small>` : ""}</li>`;
+}
+
+function renderLifestyleAdverseEventsView(note) {
+  const lifestyle = note.lifestyleFactors || [];
+  const adverse = note.adverseEvents || [];
+  if (!lifestyle.length && !adverse.length) return "";
+  return `
+    <div class="lifestyle-ae-view">
+      ${lifestyle.length ? `<div><small>生活型態 Lifestyle</small><ul>${lifestyle.map(formatLifestyleFactorLine).join("")}</ul></div>` : ""}
+      ${adverse.length ? `<div><small>不良反應 Adverse events</small><ul>${adverse.map(formatAdverseEventLine).join("")}</ul></div>` : ""}
+    </div>`;
+}
+
+function renderAgentExposuresPanel(item) {
+  const store = window.AcuTingClinicalStore;
+  const all = item.agentExposures || [];
+  const current = store ? store.getCurrentExposures(item) : all.filter((e) => e.status === "current" || e.status === "prn");
+  const currentIds = new Set(current.map((e) => e.id));
+  const ordered = [...current, ...all.filter((e) => !currentIds.has(e.id))];
+  const unstructuredHtml = renderUnstructuredMedsHtml([item]);
+  const header = `
+    <div class="timeline-head">
+      <strong>用藥與補充劑 Meds &amp; Supplements</strong>
+      <div class="case-actions"><button class="ghost" type="button" id="addAgentExposureInline">+ 新增 Add</button></div>
+    </div>
+  `;
+  if (!ordered.length && !unstructuredHtml) {
+    return `${header}<div class="case-empty">尚未記錄用藥或補充劑。Add current or past drugs/supplements as they come up.</div>`;
+  }
+  const structuredHtml = ordered.length ? `<div class="agent-exposure-list">${ordered.map(renderAgentExposureRow).join("")}</div>` : "";
+  return `${header}${structuredHtml}${unstructuredHtml}`;
+}
+
+/* 把已經在知識庫裡的藥物安全資訊,帶到病歷裡看得到的地方。
+ *
+ * 問題:59 種藥有 25 種帶 FDA 黑框警告,而且藥卡早就畫得出來 —— 但病歷的
+ * 用藥列只顯示藥名與劑量。要看到黑框,得離開病例、跳到藥卡、再跳回來。
+ * 那一跳正是「少查一次」的反例:最嚴重的那類警告,反而藏在最遠的地方。
+ *
+ * 三種狀態要分得清楚,這是本段的重點:
+ *   有卡片、有警告   → 畫出來
+ *   有卡片、沒警告   → 不畫。這是「查過了,沒有」
+ *   沒有卡片可查     → **明說沒查**。這一條最容易被寫成「不畫」,
+ *                      但兩者在畫面上長得一樣時,讀的人會把「沒查過」
+ *                      讀成「查過沒事」——那比不顯示更危險
+ */
+function lookupAgentSafetyCard(agentId) {
+  const id = String(agentId || "").trim();
+  if (!id) return { checked: false, reason: "沒有連結知識庫卡片" };
+  const K = globalThis.ACUTING_KNOWLEDGE;
+  if (!K) return { checked: false, reason: "知識庫未載入" };
+  const sections = id.startsWith("supp.") ? ["supplementRecords"]
+    : id.startsWith("med.") ? ["medications", "pharmDrugs"]
+    : ["pharmDrugs", "medications", "supplementRecords"];
+  for (const sec of sections) {
+    const recs = (K[sec] && K[sec].records) || [];
+    const hit = recs.find((r) => r && r.id === id);
+    if (hit) return { checked: true, card: hit, section: sec };
+  }
+  return { checked: false, reason: "知識庫沒有這張卡" };
+}
+
+// 安全欄位可能是字串或陣列(contraindications_zh 實測是 array[10])。
+// 統一成陣列,空的就是空的 —— 不要用 || 生出預設值。
+function safetyFieldList(card, zhKey, enKey) {
+  const out = [];
+  for (const key of [zhKey, enKey]) {
+    const v = card && card[key];
+    if (Array.isArray(v)) out.push(...v.map((x) => String(x || "").trim()).filter(Boolean));
+    else if (typeof v === "string" && v.trim()) out.push(v.trim());
+  }
+  return out;
+}
+
+/* 補充劑卡片的安全資訊不是 boxed_warning/contraindications,而是
+ * key_safety_notes: [{ note_en, interaction_flags[], source{name,url} }]。
+ *
+ * 這個形狀差異差點讓整件事失效:supp.omega_3 帶著「高劑量 omega-3 會延長
+ * 出血時間,抗凝血劑使用者需評估」+ interaction_flags:["anticoagulant"],
+ * 而只讀藥物欄位的渲染器對它回傳空字串 —— 畫面上等於「查過了,沒有」。
+ * 一個長期吃 warfarin 的病人自己加魚油,正是這條備註存在的理由。
+ *
+ * 有 interaction_flags 的排前面且直接展開(那是可行動的);其餘收起來。
+ * 不做交互作用比對 —— 系統不知道這個病人同時在吃什麼,判斷是醫師的。
+ */
+function supplementSafetyNotes(card) {
+  const raw = card && card.key_safety_notes;
+  if (!Array.isArray(raw)) return { flagged: [], rest: [] };
+  const flagged = [], rest = [];
+  for (const n of raw) {
+    if (!n || typeof n !== "object") continue;
+    const text = String(n.note_zh || n.note_en || "").trim();
+    if (!text) continue;
+    const flags = Array.isArray(n.interaction_flags) ? n.interaction_flags.filter(Boolean).map(String) : [];
+    const source = n.source && n.source.name ? String(n.source.name) : "";
+    (flags.length ? flagged : rest).push({ text, flags, source });
+  }
+  return { flagged, rest };
+}
+
+function renderAgentExposureSafety(exposure) {
+  const found = lookupAgentSafetyCard(exposure.agentId);
+  if (!found.checked) {
+    return `<div class="agent-safety agent-safety-unchecked"><small>⃠ 未做安全檢查:${escapeHtml(found.reason)}</small></div>`;
+  }
+  const boxed = safetyFieldList(found.card, "boxed_warning_zh", "boxed_warning_en");
+  const contra = safetyFieldList(found.card, "contraindications_zh", "contraindications_en");
+  const notes = supplementSafetyNotes(found.card);
+  if (!boxed.length && !contra.length && !notes.flagged.length && !notes.rest.length) return "";
+  const parts = [];
+  // 黑框警告直接展開:FDA 最高級別的警告不該藏在要點開的地方
+  if (boxed.length) {
+    parts.push(`<div class="agent-safety-boxed"><strong>⚠️ 黑框警告 BOXED WARNING</strong>${boxed.map((t) => `<p>${escapeHtml(t)}</p>`).join("")}</div>`);
+  }
+  // 帶交互作用標記的補充劑備註 = 可行動的,跟黑框一樣直接展開
+  if (notes.flagged.length) {
+    parts.push(`<div class="agent-safety-flagged"><strong>⚠ 交互作用註記 Interaction note</strong>${notes.flagged.map((n) =>
+      `<p>${escapeHtml(n.text)}${n.flags.length ? ` <span class="agent-safety-flag">${n.flags.map(escapeHtml).join(" · ")}</span>` : ""}${n.source ? `<em>來源:${escapeHtml(n.source)}</em>` : ""}</p>`
+    ).join("")}</div>`);
+  }
+  if (contra.length) {
+    parts.push(`<details class="agent-safety-contra"><summary>禁忌 Contraindications（${contra.length}）</summary><ul>${contra.map((t) => `<li>${escapeHtml(t)}</li>`).join("")}</ul></details>`);
+  }
+  if (notes.rest.length) {
+    parts.push(`<details class="agent-safety-contra"><summary>其他安全備註 Other safety notes（${notes.rest.length}）</summary><ul>${notes.rest.map((n) =>
+      `<li>${escapeHtml(n.text)}${n.source ? `<em> — ${escapeHtml(n.source)}</em>` : ""}</li>`
+    ).join("")}</ul></details>`);
+  }
+  return `<div class="agent-safety">${parts.join("")}</div>`;
+}
+
+function renderAgentExposureRow(exposure) {
+  const store = window.AcuTingClinicalStore;
+  const timeline = store ? store.getExposureTimeline(exposure) : [...(exposure.events || [])];
+  const typeLabel = AGENT_EXPOSURE_TYPE_LABELS[exposure.agentType] || "—";
+  const statusLabel = AGENT_EXPOSURE_STATUS_LABELS[exposure.status] || (exposure.status || "—");
+  const title = exposure.nameText || exposure.agentId || "未命名 Unnamed";
+  const doseFreq = [exposure.doseText, exposure.frequencyText].filter(Boolean).join(" · ") || "—";
+  return `
+    <div class="agent-exposure-row">
+      <div class="agent-exposure-head">
+        <span class="agent-exposure-type-chip">${escapeHtml(typeLabel)}</span>
+        <strong>${escapeHtml(title)}</strong>
+        <span class="agent-exposure-status">${escapeHtml(statusLabel)}</span>
+      </div>
+      <div class="agent-exposure-meta">
+        <small>劑量/頻率 Dose &amp; freq</small><span>${escapeHtml(doseFreq)}</span>
+      </div>
+      ${renderAgentExposureSafety(exposure)}
+      <div class="agent-exposure-actions">
+        <button type="button" class="ghost" data-agent-exposure-action="dose_changed" data-exposure-id="${escapeHtml(exposure.id)}">改劑量</button>
+        <button type="button" class="ghost" data-agent-exposure-action="frequency_changed" data-exposure-id="${escapeHtml(exposure.id)}">改頻率</button>
+        <button type="button" class="ghost" data-agent-exposure-action="stopped" data-exposure-id="${escapeHtml(exposure.id)}">停用</button>
+        <button type="button" class="ghost" data-agent-exposure-action="confirmed_unchanged" data-exposure-id="${escapeHtml(exposure.id)}">確認未變</button>
+      </div>
+      <details class="agent-exposure-timeline">
+        <summary>時間線 Timeline（${timeline.length}）</summary>
+        ${timeline.length ? `<ul>${timeline.map(renderAgentExposureEvent).join("")}</ul>` : `<p>尚無事件紀錄 No recorded events yet.</p>`}
+      </details>
+    </div>
+  `;
+}
+
+function renderAgentExposureEvent(ev) {
+  const head = [ev.eventType, ev.doseText, ev.frequencyText, ev.status].filter(Boolean).join(" · ");
+  const meta = [ev.visitId, ev.effectiveApprox].filter(Boolean).join(" · ");
+  return `<li><strong>${escapeHtml(head || ev.eventType)}</strong>${meta ? ` <small>(${escapeHtml(meta)})</small>` : ""}${ev.note ? `<br><small>${escapeHtml(ev.note)}</small>` : ""}</li>`;
+}
+
+function openAgentExposureEditor() {
+  const activeCase = clinicalCases.find((item) => item.id === selectedCaseId);
+  if (!activeCase) {
+    alert("請先新增或選擇一筆病例。");
+    return;
+  }
+  agentExposureForm.reset();
+  agentExposureDialog.showModal();
+}
+
+function saveAgentExposureFromForm(event) {
+  event.preventDefault();
+  const activeCase = clinicalCases.find((item) => item.id === selectedCaseId);
+  if (!activeCase) return;
+  const store = window.AcuTingClinicalStore;
+  if (!store) return;
+  const data = Object.fromEntries(new FormData(agentExposureForm).entries());
+  const agentId = (data.agentId || "").trim();
+  const nameText = (data.nameText || "").trim();
+  if (!data.agentType) {
+    alert("請選擇類型 Type（藥 drug / 補 supplement）。");
+    return;
+  }
+  if (!agentId && !nameText) {
+    alert("請至少填寫 Agent ID 或名稱 Name。");
+    return;
+  }
+  // Build the bare ledger row, then apply the 'started' event through the
+  // ONE authorized write path — the store fills doseText/frequencyText/
+  // status/startApprox from the event, never set directly here.
+  // createExposure enforces the initial-event rule at API level (SOL item 2).
+  // eventType: "started" = the agent actually began around startApprox;
+  // "initial_recorded" = patient was ALREADY on it when we first learned of it
+  // (intake) — started would falsify an onset we don't know. The form's
+  // 已在使用 checkbox picks between them.
+  const startedRow = store.createExposure(
+    { id: createId("agentexp"), agentType: data.agentType, agentId, nameText },
+    {
+      eventType: data.alreadyInUse ? "initial_recorded" : "started",
+      doseText: (data.doseText || "").trim(),
+      frequencyText: (data.frequencyText || "").trim(),
+      status: "current",
+      effectiveApprox: (data.startApprox || "").trim(),
+      note: (data.note || "").trim()
+    },
+    "agent"
+  );
+  startedRow.infoSource = (data.infoSource || "").trim();
+  const now = new Date().toISOString();
+  const snapshot = structuredClone(clinicalCases);
+  clinicalCases = clinicalCases.map((c) => {
+    if (c.id !== selectedCaseId) return c;
+    return normalizeClinicalCase({ ...c, agentExposures: [...(c.agentExposures || []), startedRow], updatedAt: now });
+  });
+  // R9 gate B (docs/AI_REVIEW_FEEDBACK.md §3): commit-on-true — a persist
+  // failure must not close the dialog or render as if the save landed.
+  if (!persistClinicalCases()) { clinicalCases = snapshot; return; }
+  agentExposureDialog.close();
+  render();
+}
+
+// Quick record-change actions (改劑量/改頻率/停用/確認未變) — a `prompt()` is
+// enough for Phase D batch 1's minimal-capture goal; every branch ends in the
+// same applyExposureChange call, never a direct field/events write.
+function promptAgentExposureAction(exposureId, eventType) {
+  const activeCase = clinicalCases.find((item) => item.id === selectedCaseId);
+  const exposure = activeCase && (activeCase.agentExposures || []).find((e) => e.id === exposureId);
+  if (!exposure) return;
+  const event = { eventType };
+  if (eventType === "dose_changed") {
+    const value = prompt("新劑量 New dose", exposure.doseText || "");
+    if (value === null) return;
+    event.doseText = value.trim();
+  } else if (eventType === "frequency_changed") {
+    const value = prompt("新頻率 New frequency", exposure.frequencyText || "");
+    if (value === null) return;
+    event.frequencyText = value.trim();
+  } else if (eventType === "stopped") {
+    if (!confirm(`確定將「${exposure.nameText || exposure.agentId}」標記為停用？`)) return;
+    event.status = "stopped";
+    const stopDate = prompt("停用日期（約，選填）Stop date (approx, optional)", "");
+    if (stopDate === null) return;
+    event.effectiveApprox = stopDate.trim();
+  } else if (eventType === "confirmed_unchanged") {
+    if (!confirm("確認這個項目維持現狀（劑量/頻率未變）？")) return;
+  } else {
+    return;
+  }
+  event.note = (prompt("備註（選填）Note (optional)", "") || "").trim();
+  const store = window.AcuTingClinicalStore;
+  if (!store) return;
+  const now = new Date().toISOString();
+  const snapshot = structuredClone(clinicalCases);
+  clinicalCases = clinicalCases.map((c) => {
+    if (c.id !== selectedCaseId) return c;
+    const nextExposures = (c.agentExposures || []).map((e) => e.id === exposureId ? store.applyExposureChange(e, event, "agent") : e);
+    return normalizeClinicalCase({ ...c, agentExposures: nextExposures, updatedAt: now });
+  });
+  // R9 gate B: persist failure rolls back the in-memory mutation; no render.
+  if (!persistClinicalCases()) { clinicalCases = snapshot; return; }
+  render();
+}
+
+// Phase D batch 3 (docs/SPRINT_2026-08-12_BRIEF.md Phase D task 3): case-level
+// Environmental/toxic exposures ledger UI over environmentalExposures[] — the
+// exact mirror of the Meds & Supplements panel above, over a different vocab
+// and a different pair of independent axes (certainty × timing instead of
+// dose/frequency). Exposures are OBSERVATIONS, never diagnoses: no code path
+// here (or anywhere) may turn an exposure.* row into a pattern/tdis id
+// (SPRINT brief §5). suspected→confirmed is a safety-relevant certainty
+// change, not a status tweak, so promptEnvironmentalExposureAction enforces a
+// REQUIRED note on every certainty_changed event (D17 §6) — the one place
+// this panel's write path is stricter than batch 1's. Write side goes
+// exclusively through AcuTingClinicalStore.createExposure/applyExposureChange
+// — never a direct row/events mutation (audit B-1 invariant).
+// (宣告已前移至檔頭 —— 見 AGENT_EXPOSURE_TYPE_LABELS 註解,TDZ 修正)
+// (宣告已前移至檔頭 —— 見 AGENT_EXPOSURE_TYPE_LABELS 註解,TDZ 修正)
+
+function renderEnvironmentalExposuresPanel(item) {
+  const all = item.environmentalExposures || [];
+  const header = `
+    <div class="timeline-head">
+      <strong>環境/毒性暴露 Environmental exposures</strong>
+      <div class="case-actions"><button class="ghost" type="button" id="addEnvironmentalExposureInline">+ 新增 Add</button></div>
+    </div>
+  `;
+  if (!all.length) {
+    return `${header}<div class="case-empty">尚未記錄環境或毒性暴露。Add suspected or confirmed exposures as they come up.</div>`;
+  }
+  return `${header}<div class="env-exposure-list">${all.map(renderEnvironmentalExposureRow).join("")}</div>`;
+}
+
+function renderEnvironmentalExposureRow(exposure) {
+  const store = window.AcuTingClinicalStore;
+  const timeline = store ? store.getExposureTimeline(exposure) : [...(exposure.events || [])];
+  const vocab = globalThis.ACUTING_KNOWLEDGE?.exposureVocabulary?.records || [];
+  const rec = vocab.find((r) => r.id === exposure.exposureId);
+  const title = rec ? `${rec.name_zh} ${rec.name_en}` : (exposure.nameText || exposure.exposureId || "未命名 Unnamed");
+  const certaintyLabel = ENV_EXPOSURE_CERTAINTY_LABELS[exposure.certainty] || (exposure.certainty || "—");
+  const timingLabel = ENV_EXPOSURE_TIMING_LABELS[exposure.timing] || (exposure.timing || "—");
+  return `
+    <div class="env-exposure-row">
+      <div class="env-exposure-head">
+        <span class="env-exposure-chip certainty-${escapeAttribute(exposure.certainty || "")}">${escapeHtml(certaintyLabel)}</span>
+        <strong>${escapeHtml(title)}</strong>
+        <span class="env-exposure-chip">${escapeHtml(timingLabel)}</span>
+      </div>
+      ${exposure.contextText ? `<div class="env-exposure-meta"><small>情境 Context</small><span>${escapeHtml(exposure.contextText)}</span></div>` : ""}
+      <div class="env-exposure-actions">
+        <button type="button" class="ghost" data-env-exposure-action="certainty_changed" data-exposure-id="${escapeHtml(exposure.id)}">改確定度</button>
+        <button type="button" class="ghost" data-env-exposure-action="timing_changed" data-exposure-id="${escapeHtml(exposure.id)}">改狀態</button>
+        <button type="button" class="ghost" data-env-exposure-action="stopped" data-exposure-id="${escapeHtml(exposure.id)}">已結束</button>
+        <button type="button" class="ghost" data-env-exposure-action="confirmed_unchanged" data-exposure-id="${escapeHtml(exposure.id)}">確認未變</button>
+      </div>
+      <details class="env-exposure-timeline">
+        <summary>時間線 Timeline（${timeline.length}）</summary>
+        ${timeline.length ? `<ul>${timeline.map(renderEnvironmentalExposureEvent).join("")}</ul>` : `<p>尚無事件紀錄 No recorded events yet.</p>`}
+      </details>
+    </div>
+  `;
+}
+
+function renderEnvironmentalExposureEvent(ev) {
+  const head = [ev.eventType, ENV_EXPOSURE_CERTAINTY_LABELS[ev.certainty] || ev.certainty, ENV_EXPOSURE_TIMING_LABELS[ev.timing] || ev.timing].filter(Boolean).join(" · ");
+  const meta = [ev.visitId, ev.effectiveApprox].filter(Boolean).join(" · ");
+  return `<li><strong>${escapeHtml(head || ev.eventType)}</strong>${meta ? ` <small>(${escapeHtml(meta)})</small>` : ""}${ev.note ? `<br><small>${escapeHtml(ev.note)}</small>` : ""}</li>`;
+}
+
+function openEnvironmentalExposureEditor() {
+  const activeCase = clinicalCases.find((item) => item.id === selectedCaseId);
+  if (!activeCase) {
+    alert("請先新增或選擇一筆病例。");
+    return;
+  }
+  environmentalExposureForm.reset();
+  // Rebuilt every open (like the lifestyle/adverse row selects) — always
+  // reflects the current exposureVocabulary bundle rather than whatever was
+  // baked into static markup at page load (there is none; see index.html).
+  const vocab = globalThis.ACUTING_KNOWLEDGE?.exposureVocabulary?.records || [];
+  const select = document.querySelector("#environmentalExposureSelect");
+  if (select) select.innerHTML = vocabSelectOptionsHtml(vocab, "");
+  const nameTextWrap = document.querySelector("#environmentalExposureNameTextWrap");
+  if (nameTextWrap) nameTextWrap.hidden = true;
+  environmentalExposureDialog.showModal();
+}
+
+function saveEnvironmentalExposureFromForm(event) {
+  event.preventDefault();
+  const activeCase = clinicalCases.find((item) => item.id === selectedCaseId);
+  if (!activeCase) return;
+  const store = window.AcuTingClinicalStore;
+  if (!store) return;
+  const data = Object.fromEntries(new FormData(environmentalExposureForm).entries());
+  const isOther = data.exposureId === REPEATABLE_ROW_OTHER_VALUE;
+  const exposureId = isOther ? "" : (data.exposureId || "").trim();
+  const nameText = (data.nameText || "").trim();
+  if (!exposureId && !nameText) {
+    alert("請選擇暴露項目，或選擇「其他」並填寫名稱 Name。");
+    return;
+  }
+  const certainty = data.certainty || "suspected";
+  const timing = data.timing || "unknown";
+  // Build the bare ledger row, then apply the initial event through the ONE
+  // authorized write path — certainty/timing land on the snapshot via
+  // applyExposureChange's env branch, never set directly here. Same
+  // started/initial_recorded intake-honesty split as saveAgentExposureFromForm.
+  const startedRow = store.createExposure(
+    { id: createId("envexp"), exposureId, nameText, contextText: (data.contextText || "").trim() },
+    {
+      eventType: data.alreadyExists ? "initial_recorded" : "started",
+      certainty,
+      timing,
+      effectiveApprox: (data.startApprox || "").trim(),
+      note: (data.note || "").trim()
+    },
+    "environmental"
+  );
+  const now = new Date().toISOString();
+  const snapshot = structuredClone(clinicalCases);
+  clinicalCases = clinicalCases.map((c) => {
+    if (c.id !== selectedCaseId) return c;
+    return normalizeClinicalCase({ ...c, environmentalExposures: [...(c.environmentalExposures || []), startedRow], updatedAt: now });
+  });
+  // R9 gate B: commit-on-true — failure keeps the dialog open with input intact.
+  if (!persistClinicalCases()) { clinicalCases = snapshot; return; }
+  environmentalExposureDialog.close();
+  render();
+}
+
+// Quick record-change actions (改確定度/改狀態/已結束/確認未變) — same
+// prompt()-based minimal-capture pattern as promptAgentExposureAction, with
+// one hard addition: certainty_changed REQUIRES a non-empty note. D17 §6 —
+// suspected→confirmed (or any certainty change) must never happen trace-less;
+// an empty note aborts the whole action rather than silently proceeding.
+function promptEnvironmentalExposureAction(exposureId, eventType) {
+  const activeCase = clinicalCases.find((item) => item.id === selectedCaseId);
+  const exposure = activeCase && (activeCase.environmentalExposures || []).find((e) => e.id === exposureId);
+  if (!exposure) return;
+  const event = { eventType };
+  if (eventType === "certainty_changed") {
+    const value = (prompt("新確定度 New certainty（suspected / patient_reported / confirmed）", exposure.certainty || "") || "").trim();
+    if (!value) return;
+    if (!["suspected", "patient_reported", "confirmed"].includes(value)) {
+      alert("確定度必須是 suspected / patient_reported / confirmed 其中一個，已取消。");
+      return;
+    }
+    const note = (prompt("備註（必填 — 例如檢測報告/病歷來源）Note (REQUIRED — e.g. lab result, chart source)", "") || "").trim();
+    if (!note) {
+      alert("改確定度必須附備註，已取消（D17 §6：確定度變更不得無痕發生，尤其 suspected→confirmed）。");
+      return;
+    }
+    event.certainty = value;
+    event.note = note;
+  } else if (eventType === "timing_changed") {
+    const value = (prompt("新狀態 New timing（ongoing / historical / unknown）", exposure.timing || "") || "").trim();
+    if (!value) return;
+    if (!["ongoing", "historical", "unknown"].includes(value)) {
+      alert("狀態必須是 ongoing / historical / unknown 其中一個，已取消。");
+      return;
+    }
+    event.timing = value;
+    event.note = (prompt("備註（選填）Note (optional)", "") || "").trim();
+  } else if (eventType === "stopped") {
+    if (!confirm(`確定將「${exposure.nameText || exposure.exposureId}」標記為已結束？`)) return;
+    const endDate = prompt("結束日期（約，選填）End date (approx, optional)", "");
+    if (endDate === null) return;
+    event.effectiveApprox = endDate.trim();
+    event.note = (prompt("備註（選填）Note (optional)", "") || "").trim();
+  } else if (eventType === "confirmed_unchanged") {
+    if (!confirm("確認這個項目維持現狀（確定度/狀態未變）？")) return;
+    event.note = (prompt("備註（選填）Note (optional)", "") || "").trim();
+  } else {
+    return;
+  }
+  const store = window.AcuTingClinicalStore;
+  if (!store) return;
+  const now = new Date().toISOString();
+  const snapshot = structuredClone(clinicalCases);
+  clinicalCases = clinicalCases.map((c) => {
+    if (c.id !== selectedCaseId) return c;
+    const nextExposures = (c.environmentalExposures || []).map((e) => e.id === exposureId ? store.applyExposureChange(e, event, "environmental") : e);
+    return normalizeClinicalCase({ ...c, environmentalExposures: nextExposures, updatedAt: now });
+  });
+  // R9 gate B: persist failure rolls back the in-memory mutation; no render.
+  if (!persistClinicalCases()) { clinicalCases = snapshot; return; }
+  render();
 }
 
 function normalizeStringList(value) {
@@ -4900,6 +6933,44 @@ function normalizeStringList(value) {
 function formatNoteList(value, fallback = "未連結") {
   const list = normalizeStringList(value);
   return list.length ? list.join("、") : fallback;
+}
+
+// TCM pattern primary/secondary reconciliation: compact display for
+// tcmPatternSelections, shared by the SOAP card view and Last Visit at a
+// Glance. Ids shown raw, not resolved to names — same convention every
+// other link field (acupointLinks, formulaLinks, ...) already uses in these
+// summary views.
+function formatPatternSelections(selections) {
+  const list = selections || [];
+  const primary = list.find((e) => e.isPrimary);
+  const secondary = list.filter((e) => !e.isPrimary);
+  const parts = [];
+  if (primary) parts.push(`★ ${primary.patternId}`);
+  if (secondary.length) parts.push(`+ ${secondary.map((e) => e.patternId).join("、")}`);
+  return parts.join("  ");
+}
+
+// Visit Brief / Case Swimlanes 共用的 id → 中文名解析。找不到就原樣回傳 id
+// (讓人至少知道有東西),不要回傳空字串。不讀 legacy `.conditions.*` 影子表 ——
+// 只讀 patternPickerOptions / formulaPickerOptions 已在用的同一批 canon 來源。
+function knowledgeRecordName(records, id) {
+  if (!id) return id;
+  const rec = (records || []).find((r) => r.id === id);
+  return rec ? (rec.name_zh || rec.name_en || id) : id;
+}
+function resolveFormulaName(id) {
+  return knowledgeRecordName(globalThis.ACUTING_KNOWLEDGE?.formulas?.records, id);
+}
+function resolveModalityName(id) {
+  return knowledgeRecordName(globalThis.ACUTING_KNOWLEDGE?.modalityVocabulary?.records, id);
+}
+function resolvePatternName(id) {
+  if (!id) return id;
+  const K = globalThis.ACUTING_KNOWLEDGE || {};
+  const rec = (K.patternLibrary?.records || []).find((r) => r.id === id)
+    || (K.patternRegistry?.records || []).find((r) => r.id === id)
+    || (K.tcmPatternCanon?.records || []).find((r) => r.id === id);
+  return rec ? (rec.name_zh || rec.name_en || id) : id;
 }
 
 function createId(prefix) {
@@ -4959,6 +7030,8 @@ window.AcuTingCases = {
 };
 
 function renderClinicalCases() {
+  // 病例一有變動就重算回顧,否則存完 SOAP 後面板還停在舊數字
+  if (practiceAuditOpen) renderPracticeAuditPanel();
   if (learnFromMode) return renderLearnFromReview();
   const filtered = getFilteredClinicalCases();
   if (selectedCaseId && !clinicalCases.some((item) => item.id === selectedCaseId)) selectedCaseId = clinicalCases[0]?.id || "";
@@ -5064,6 +7137,780 @@ function getFilteredClinicalCases() {
   });
 }
 
+// ---- Patient Longitudinal Workspace W1 (docs/PATIENT_WORKSPACE_DESIGN_v1.md)
+// ----------------------------------------------------------------------------
+// Read-only. UI calls ONLY AcuTingClinicalStore.getPatientsView(cases) — never
+// derivePatientsFromCases/activeIsV2 directly (the bridge is the one seam that
+// is allowed to know which world is active). Every helper below joins back to
+// `clinicalCases` by patient.caseIds, so it works unchanged whether patients
+// came from the v1 derive or a v2 staging envelope. Zero new write paths —
+// nothing here calls save()/persistClinicalCases()/applyExposureChange().
+//
+// PHI discipline: only patientCode is ever printed. Demographics render as a
+// coarse birth-YEAR-BAND (decade), never a birth date; there is no name field
+// on the case object to begin with, so there is nothing to accidentally leak.
+//
+// Shape note (resolved ambiguity): buildMigrationPlan() nests demographic
+// fields under patient.fields{...}, while derivePatientsFromCases() (v1) and
+// syncPendingPatients() (v2 runtime creation) both put them at the top level.
+// patientFieldValue() below reads top-level first, falling back to .fields —
+// this is a read-only accommodation of an existing shape wrinkle, not a fix
+// to clinical-store.js (out of scope for W1).
+
+// (宣告已前移至檔頭 boot-order 區 —— 見 AGENT_EXPOSURE_TYPE_LABELS 註解)
+
+function patientFieldValue(patient, key) {
+  const top = patient ? patient[key] : undefined;
+  if (top !== undefined && top !== null && top !== "") return top;
+  const nested = patient && patient.fields ? patient.fields[key] : undefined;
+  if (nested !== undefined && nested !== null) return nested;
+  return top !== undefined ? top : "";
+}
+
+function patientBirthYearBand(patient) {
+  const bym = String(patientFieldValue(patient, "birthYearMonth") || "");
+  const by = patientFieldValue(patient, "birthYear");
+  const year = bym ? Number(bym.slice(0, 4)) : (by ? Number(by) : null);
+  if (!year || !Number.isFinite(year)) return "";
+  return `${Math.floor(year / 10) * 10}s`;
+}
+
+function casesForPatient(patient) {
+  const ids = new Set(patient.caseIds || []);
+  return clinicalCases.filter((c) => ids.has(c.id));
+}
+
+function patientMostRecentVisitDate(cases) {
+  let latest = "";
+  for (const c of cases) {
+    for (const note of c.soapNotes || []) {
+      if (note.visitDate && note.visitDate > latest) latest = note.visitDate;
+    }
+  }
+  if (!latest) {
+    // No dated SOAP notes anywhere for this patient — fall back to the most
+    // recent case-level timestamp so the row still sorts sanely, rather than
+    // silently sinking to the bottom next to patients with zero data.
+    for (const c of cases) {
+      const t = (c.updatedAt || c.startDate || "").slice(0, 10);
+      if (t && t > latest) latest = t;
+    }
+  }
+  return latest;
+}
+
+function patientTrackedMetricsCount(cases) {
+  const ids = new Set();
+  for (const c of cases) for (const note of c.soapNotes || []) for (const m of note.outcomeMetrics || []) if (m.metricId) ids.add(m.metricId);
+  return ids.size;
+}
+
+function patientNeedsReview(patient) {
+  return !!((patient.needsReview && patient.needsReview.length) || Object.keys(patient.conflicts || {}).length);
+}
+
+function patientConsentSummary(cases) {
+  const vals = [...new Set(cases.map((c) => c.publicationConsent || "").filter(Boolean))];
+  if (!vals.length) return "未詢問 Not asked";
+  const label = (v) => CONSENT_LABELS[v] || v;
+  if (vals.length === 1) return label(vals[0]);
+  return `跨 case 不一致 Mixed: ${vals.map(label).join(" / ")}`;
+}
+
+function getFilteredPatientRows() {
+  const store = window.AcuTingClinicalStore;
+  if (!store || !store.getPatientsView) return { rows: [], error: "AcuTingClinicalStore.getPatientsView() 不可用" };
+  let patients;
+  try {
+    patients = store.getPatientsView(clinicalCases) || [];
+  } catch (e) {
+    // Fail loud, same spirit as loadClinicalCases()'s clinicalStoreIntegrityError
+    // path — a v2 staging envelope missing/corrupt must never silently render
+    // as "zero patients", which would look like a healthy, empty clinic.
+    return { rows: [], error: e.message };
+  }
+  const rows = patients.map((patient) => {
+    const cases = casesForPatient(patient);
+    return {
+      patient, cases,
+      mostRecentVisit: patientMostRecentVisitDate(cases),
+      trackedMetrics: patientTrackedMetricsCount(cases),
+      needsReview: patientNeedsReview(patient)
+    };
+  });
+  rows.sort((a, b) => String(b.mostRecentVisit || "").localeCompare(String(a.mostRecentVisit || "")));
+  const query = (patientSearch?.value || "").trim().toLowerCase();
+  const filtered = query ? rows.filter((r) => String(r.patient.patientCode || "").toLowerCase().includes(query)) : rows;
+  return { rows: filtered, error: null };
+}
+
+function renderPatientsWorkspace() {
+  if (!patientList || !patientDetail) return;   // section absent from this build — defensive, mirrors other optional-panel guards in this file
+  const { rows, error } = getFilteredPatientRows();
+  if (patientResultCount) patientResultCount.textContent = `${rows.length} patients`;
+  if (error) {
+    patientList.innerHTML = `<div class="case-empty">病人視圖讀取失敗<br>Patient view failed to load:<br>${escapeHtml(error)}</div>`;
+    patientDetail.innerHTML = "";
+    return;
+  }
+  if (selectedPatientCode && !rows.some((r) => r.patient.patientCode === selectedPatientCode)) selectedPatientCode = "";
+  if (!selectedPatientCode && rows.length) selectedPatientCode = rows[0].patient.patientCode;
+  patientList.innerHTML = "";
+  if (!rows.length) {
+    patientList.innerHTML = `<div class="case-empty">尚未有病人。<br>先在「病例 Cases」建立第一筆病例。</div>`;
+  } else {
+    rows.forEach((row) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = `case-list-item ${row.patient.patientCode === selectedPatientCode ? "active" : ""}`;
+      button.innerHTML = `
+        <span>${escapeHtml(row.patient.patientCode || "No code")}</span>
+        <strong>${row.cases.length} case${row.cases.length === 1 ? "" : "s"}</strong>
+        <small>最近就診 Last visit ${escapeHtml(row.mostRecentVisit || "—")} · ${row.trackedMetrics} metrics${row.needsReview ? ' · <span class="case-tag">⚠ needsReview</span>' : ""}</small>
+      `;
+      button.addEventListener("click", () => { selectedPatientCode = row.patient.patientCode; renderPatientsWorkspace(); });
+      patientList.append(button);
+    });
+  }
+  const selected = rows.find((r) => r.patient.patientCode === selectedPatientCode) || null;
+  renderPatientDetail(selected);
+}
+
+function renderPatientCaseListHtml(cases) {
+  if (!cases.length) return `<div class="timeline-head"><strong>Case 清單</strong></div><div class="case-empty">此病人目前沒有可見病例。</div>`;
+  const cards = cases.map((c) => {
+    const notes = [...c.soapNotes].sort((a, b) => String(b.visitDate || "").localeCompare(String(a.visitDate || "")));
+    const readiness = computeCareReadiness(c, notes);
+    const pct = readiness.max ? Math.round((readiness.score / readiness.max) * 100) : null;
+    const badge = pct === null ? "" : `<span class="care-badge ${pct >= 80 ? "care-badge-good" : pct >= 50 ? "care-badge-mid" : "care-badge-low"}">${pct}%</span>`;
+    return `
+      <button type="button" class="case-list-item" data-open-case="${escapeAttribute(c.id)}">
+        <span>${escapeHtml([c.caseCategory, c.status].filter(Boolean).join(" · ") || "—")}</span>
+        <strong>${escapeHtml(c.caseTitle || "Untitled case")}</strong>
+        <small>${escapeHtml(c.startDate || "—")} · ${notes.length} SOAP ${badge}</small>
+      </button>`;
+  }).join("");
+  return `
+    <div class="timeline-head"><strong>Case 清單</strong><small class="timeline-date">${cases.length} cases</small></div>
+    <div class="case-list">${cards}</div>`;
+}
+
+function renderPatientConflictsHtml(patient) {
+  const conflicts = patient.conflicts || {};
+  const needsReview = patient.needsReview || [];
+  if (!Object.keys(conflicts).length && !needsReview.length) return "";
+  const rows = Object.entries(conflicts).map(([field, entries]) => `
+    <div class="brief-row"><small>${escapeHtml(field)}</small><span>${(entries || []).map((e) => escapeHtml(`${e.value || "(空 empty)"} [${e.caseId || "?"}${e.updatedAt ? " · " + e.updatedAt : ""}]`)).join(" vs ")}</span></div>
+  `).join("");
+  return `
+    <div class="visit-brief">
+      <div class="brief-review">
+        ⚠ 跨 case 資料落差 Cross-case data conflicts(needsReview: ${needsReview.length ? escapeHtml(needsReview.join("、")) : "0"})
+      </div>
+      <div class="brief-grid">${rows}</div>
+    </div>`;
+}
+
+function renderPatientSafetyRollupHtml(cases) {
+  const flags = [...new Set(cases.flatMap((c) => c.safetyFlags || []))];
+  return `
+    <div class="timeline-head"><strong>跨 case 警訊聚合 Safety flags</strong><small class="timeline-date">${flags.length}</small></div>
+    ${flags.length ? `<div class="case-tags">${flags.map((f) => `<span class="case-tag">${escapeHtml(f)}</span>`).join("")}</div>` : `<div class="case-empty">尚無紀錄安全旗標。</div>`}`;
+}
+
+// Dry Clinic log #16: the structured ledger below only aggregates
+// agentExposures[]; intake's free-text currentMeds is a second, unrelated
+// source that can carry real agents (lorazepam + fish oil) the structured
+// side has never seen. This is deliberately NOT parsed into rows — no
+// invented structure over clinical free text — just surfaced verbatim,
+// deduplicated by exact string, so "0 agents" never reads as "no meds".
+function renderUnstructuredMedsHtml(cases) {
+  const seen = new Set();
+  const entries = [];
+  for (const c of cases) {
+    const text = (c.currentMeds || "").trim();
+    if (!text || seen.has(text)) continue;
+    seen.add(text);
+    entries.push({ caseTitle: c.caseTitle || c.id || "Untitled case", text });
+  }
+  if (!entries.length) return "";
+  return `
+    <div class="agent-exposure-unstructured">
+      <small>未結構化(intake 原文) Unstructured (from intake)</small>
+      <ul>
+        ${entries.map((e) => `<li><strong>${escapeHtml(e.caseTitle)}</strong>：${escapeHtml(e.text)}</li>`).join("")}
+      </ul>
+    </div>`;
+}
+
+function renderPatientAgentLedgerHtml(cases) {
+  const groups = new Map();
+  for (const c of cases) {
+    for (const e of c.agentExposures || []) {
+      const key = `${e.agentType}|${(e.agentId || e.nameText || "").toLowerCase().trim()}`;
+      if (!groups.has(key)) groups.set(key, []);
+      groups.get(key).push({ caseItem: c, exposure: e });
+    }
+  }
+  const unstructuredHtml = renderUnstructuredMedsHtml(cases);
+  const header = `<div class="timeline-head"><strong>用藥/補充劑總帳 Meds &amp; Supplements ledger</strong><small class="timeline-date">${groups.size} agents</small></div>`;
+  if (!groups.size && !unstructuredHtml) return `${header}<div class="case-empty">尚未記錄用藥或補充劑。</div>`;
+  const rows = [...groups.values()].map((entries) => {
+    const first = entries[0].exposure;
+    const typeLabel = AGENT_EXPOSURE_TYPE_LABELS[first.agentType] || "—";
+    const title = first.nameText || first.agentId || "未命名 Unnamed";
+    const anyCurrent = entries.some((en) => en.exposure.status === "current" || en.exposure.status === "prn");
+    const sources = entries.map((en) => {
+      const label = AGENT_EXPOSURE_STATUS_LABELS[en.exposure.status] || en.exposure.status || "—";
+      return escapeHtml(`${en.caseItem.caseTitle || en.caseItem.id}(${label})`);
+    }).join("、");
+    return `
+      <div class="agent-exposure-row">
+        <div class="agent-exposure-head">
+          <span class="agent-exposure-type-chip">${escapeHtml(typeLabel)}</span>
+          <strong>${escapeHtml(title)}</strong>
+          <span class="agent-exposure-status">${anyCurrent ? "使用中 Active" : "非使用中 Inactive"}</span>
+        </div>
+        <div class="agent-exposure-meta"><small>來源 Source cases（${entries.length}）</small><span>${sources}</span></div>
+        ${renderAgentExposureSafety(first)}
+      </div>`;
+  }).join("");
+  const structuredHtml = groups.size ? `<div class="agent-exposure-list">${rows}</div>` : "";
+  return `${header}${structuredHtml}${unstructuredHtml}`;
+}
+
+function renderPatientDetail(row) {
+  if (!row) {
+    patientDetail.innerHTML = `
+      <div class="case-empty">
+        <div>
+          <strong>Patient Longitudinal Workspace</strong>
+          <p>選一位病人查看跨病例總覽（頭卡、Case 清單、警訊聚合、用藥總帳）。</p>
+        </div>
+      </div>`;
+    return;
+  }
+  const { patient, cases } = row;
+  const sortedCases = [...cases].sort((a, b) => String(b.startDate || b.updatedAt || "").localeCompare(String(a.startDate || a.updatedAt || "")));
+  const band = patientBirthYearBand(patient);
+  const sex = patientFieldValue(patient, "sex");
+  patientDetail.innerHTML = `
+    <div class="case-detail-head">
+      <div>
+        <p class="eyebrow">${escapeHtml(patient.patientCode || "Patient")}</p>
+        <h3>${cases.length} case${cases.length === 1 ? "" : "s"} · 最近就診 ${escapeHtml(row.mostRecentVisit || "—")}</h3>
+        <div class="case-meta">${escapeHtml([band && `出生年段 Birth decade ${band}`, sex && `Sex ${sex}`, `發表同意 Consent: ${patientConsentSummary(cases)}`].filter(Boolean).join(" · "))}</div>
+      </div>
+    </div>
+    ${renderPatientConflictsHtml(patient)}
+    ${renderPatientCaseListHtml(sortedCases)}
+    ${renderPatientSafetyRollupHtml(cases)}
+    ${renderPatientAgentLedgerHtml(cases)}
+  `;
+  patientDetail.querySelectorAll("[data-open-case]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      selectedCaseId = btn.dataset.openCase;
+      if (window.location.hash === "#ws/cases") { renderClinicalCases(); window.scrollTo({ top: 0 }); }
+      else window.location.hash = "#ws/cases";
+    });
+  });
+}
+
+// P0.5 Visit Brief(OPTIMIZATION_PLAN_2026-08 P1 鏈的桌面版,SOL 設計:
+// Pre-Visit Capture → Visit Brief → clinician confirms 的中段先行)。
+// 純讀取衍生 —— 上次 vs 前次的 metric 差、ledger 事件、AE、生活型態變化、
+// ⚠ REVIEW 旗標。零新欄位;手機自填(P1)上線後這面板自動變得更完整。
+// P2 Case Report Readiness (2026-08-11, docs/CARE_READINESS_MAP_v0.md).
+// READ-ONLY over existing case/note data — computes which CARE/STRICTA
+// datapoints this case can already prove and which are still gaps. The
+// check list is the JUDGEABLE subset of the v0 map (denominator = what the
+// code can honestly decide from fields; prose-quality rows the map marks △
+// score 0.5 when their field has content). "na" rows (e.g. needling
+// parameters on a case with no needling visits) leave the denominator
+// entirely — an herbal-only case is not penalized for STRICTA items.
+function computeCareReadiness(item, notesDesc) {
+  const notes = notesDesc || [];
+  const any = (fn) => notes.some(fn);
+  const has = (v) => (Array.isArray(v) ? v.length > 0 : (v === 0 ? true : !!v));
+  const st = (ok) => (ok ? "ok" : "missing");
+  const checks = [];
+  const add = (label, status) => { if (status !== "na") checks.push({ label, status }); };
+
+  const demo = [item.sex, item.birthYearMonth || item.birthYear, item.occupation].filter(has).length;
+  add("5a 基本資料", demo >= 3 ? "ok" : demo >= 1 ? "partial" : "missing");
+  add("5b 主訴", st(has(item.chiefComplaint)));
+  add("5c 既往史", st(has(item.pastHistory)));
+  add("5c 生活/心理社會", st(has(item.lifestyle)));
+  add("5c 目前用藥", st(has(item.currentMeds) || has(item.agentExposures)));
+  add("5d 過往治療", st(has(item.previousTreatment) || has(item.previousTreatmentNotes)));
+  add("6 客觀所見", any((n) => has(n.objective)) ? "partial" : "missing");
+  add("7 Timeline(≥2 診)", st(notes.length >= 2));
+  add("8c 診斷(西/中)", (has(item.westernConditions) || has(item.easternDiseases)) && any((n) => has(n.tcmPatternSelections)) ? "ok"
+    : (has(item.westernConditions) || has(item.easternDiseases) || any((n) => has(n.tcmPatternSelections))) ? "partial" : "missing");
+  add("8b 鑑別思路", any((n) => has(n.patternDifferentials) || has(n.differentialConsidered)) ? "ok" : "missing");
+  add("9a 治療內容", st(any((n) => has(n.acupointLinks) || has(n.formulaLinks))));
+  add("9b 方藥細節", any((n) => has(n.formulaHerbs)) || (item.agentExposures || []).some((e) => has(e.doseText)) ? "ok" : "missing");
+  add("9c 治療調整軌跡", st((item.agentExposures || []).some((e) => (e.events || []).length > 1)));
+  add("10a 結構化 outcome", st(any((n) => has(n.outcomeMetrics))));
+  add("10a 療效判定", st(any((n) => has(n.outcomeVerdict))));
+  // AE: rows exist = ok; none recorded is indistinguishable from not-asked → partial, never ok (D4 spirit)
+  add("10d 不良事件", any((n) => has(n.adverseEvents)) ? "ok" : "partial");
+  add("12 病人視角", st(any((n) => has(n.patientPerspective))));
+  add("13 發表同意", item.publicationConsent === "granted" ? "ok" : item.publicationConsent ? "partial" : "missing");
+
+  // STRICTA 2a-2g — only for cases that actually needle
+  const needling = notes.filter((n) => has(n.acupointLinks) || has(n.pointsUsed));
+  if (needling.length) {
+    const frac = (f) => needling.filter(f).length / needling.length;
+    const stFrac = (x) => (x >= 1 ? "ok" : x > 0 ? "partial" : "missing");
+    add("2a 進針數", stFrac(frac((n) => has(n.needleCount))));
+    add("2c 深度", stFrac(frac((n) => has(n.needleDepthText))));
+    add("2d 得氣", stFrac(frac((n) => has(n.deqiResponse))));
+    add("2e 刺激方式", stFrac(frac((n) => has(n.needleStimulation))));
+    add("2f 留針", stFrac(frac((n) => has(n.retentionMinutes))));
+    add("2g 針具", stFrac(frac((n) => has(n.needleTypeText))));
+  }
+
+  const score = checks.reduce((s, c) => s + (c.status === "ok" ? 1 : c.status === "partial" ? 0.5 : 0), 0);
+  return { checks, score, max: checks.length };
+}
+
+/* 產生 CARE/STRICTA 草稿並下載成 .md —— 計算全部在 js/care-draft.js
+ * (同一份邏輯 CLI 也用,見 scripts/generate-care-draft.js)。
+ *
+ * 這是一個 **PHI export**(2026-08-14 Ting ruling / CODEX AUDIT #1)。
+ * 原本的檔頭寫「只在瀏覽器記憶體裡發生」,那描述的是計算,不是結果:按下去
+ * 之後硬碟上就多了一份病歷。所以這裡有兩道,兩道都不是裝飾:
+ *   1. 檔名不含 caseTitle、檔內不含 patientCode(js/care-draft.js 負責)
+ *   2. 下載前二次確認,而且確認框要**逐項講清楚裡面有什麼** —— 只寫「確定
+ *      下載?」等於沒問。日期處數與掃描命中數都是從真正要下載的那份文字算的。
+ * 取消就是取消:不建 Blob、不觸發下載。validate-care-draft-phi.js 守這條。 */
+function downloadCareDraft(item) {
+  const CD = globalThis.AcuTingCareDraft;
+  if (!CD) { alert("草稿產生器未載入(js/care-draft.js)。"); return; }
+  const K = globalThis.ACUTING_KNOWLEDGE || {};
+  const points = globalThis.ACUTING_POINTS_361 || [];
+  const labelIdx = CD.buildLabelIndexFromKnowledge(K, points);
+  const metricDefs = CD.metricDefMapFromKnowledge((K.outcomeMetrics && K.outcomeMetrics.records) || []);
+  const draft = CD.generateDraft(item, { lang: contentMode === "english" ? "en" : "both", labelIdx, metricDefs, refDate: new Date() });
+
+  // 黑框、確認框、CLI 警告共用 phiCounts —— 三個地方報同一組數字,
+  // 不然使用者會看到「黑框說 2 個、確認框說 3 個」而不知道信哪個。
+  const counts = CD.phiCounts(draft);
+  const findings = counts.findings;
+  const kinds = [...new Set(findings.map((f) => `${f.id} ${f.label}`))];
+  const confirmed = confirm(
+    "⚠️ 這份草稿含 PHI,未做任何去識別。\n\n" +
+      "即將存到硬碟的檔案包含:\n" +
+      `  · 精確日期 ${counts.dates.distinct} 個(就診日、暴露事件日),全文出現 ${counts.dates.total} 處\n` +
+      "  · 主訴 / 病史 / 客觀所見 / 評估 / 計畫的病歷原文\n" +
+      "  · 病人原話(CARE 12 病人視角)\n" +
+      (kinds.length
+        ? `  · 自動掃描另外命中 ${findings.length} 處識別碼樣式:${kinds.join("、")}\n`
+        : "  · 自動掃描未命中識別碼樣式 —— 但掃不到不代表乾淨,姓名沒有機器特徵\n") +
+      "\n檔名不含病例標題、檔內不含病人代碼;其餘內容一律照錄。\n" +
+      "下載後請勿放進雲端同步資料夾、勿以附件寄出、勿直接投稿。\n\n" +
+      "確定下載?"
+  );
+  if (!confirmed) return;
+
+  const blob = new Blob([draft], { type: "text/markdown" });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = CD.draftFilename(item, localDateISO());
+  link.click();
+  URL.revokeObjectURL(url);
+}
+
+function renderCareReadinessPanel(item, notesDesc) {
+  const r = computeCareReadiness(item, notesDesc);
+  if (!r.max) return "";
+  const pct = Math.round((r.score / r.max) * 100);
+  const gaps = r.checks.filter((c) => c.status === "missing");
+  const partials = r.checks.filter((c) => c.status === "partial");
+  return `
+    <div class="care-readiness">
+      <div class="care-readiness-head">
+        <strong>Case Report Readiness</strong>
+        <span class="care-badge ${pct >= 80 ? "care-badge-good" : pct >= 50 ? "care-badge-mid" : "care-badge-low"}">${r.score % 1 ? r.score.toFixed(1) : r.score}/${r.max} · ${pct}%</span>
+        <small>CARE 2013 + STRICTA 2010(v0 對映,docs/CARE_READINESS_MAP_v0.md)</small>
+        <button type="button" class="ghost" data-care-draft="${escapeAttribute(item.id)}" title="下載一份含 PHI 的 .md 草稿(未去識別,下載前會再確認一次)">產生草稿 Generate draft ⚠️ 含 PHI</button>
+      </div>
+      <div class="care-row"><small>⚠️ PHI</small><span>草稿照錄病歷原文與精確日期,屬於 PHI export。檔名不含病例標題、檔內不含病人代碼,其餘照錄 —— 投稿前必須人工去識別。</span></div>
+      ${gaps.length ? `<div class="care-row"><small>○ 缺</small><span>${gaps.map((c) => escapeHtml(c.label)).join("、")}</span></div>` : ""}
+      ${partials.length ? `<div class="care-row"><small>△ 部分</small><span>${partials.map((c) => escapeHtml(c.label)).join("、")}</span></div>` : ""}
+      ${!gaps.length && !partials.length ? `<div class="care-row"><span>全部資料點齊備 —— 可著手 CARE 草稿。</span></div>` : ""}
+    </div>`;
+}
+
+// Timeline swim-lanes (2026-08, SOL direction B — "Patient Over Time" 具象化).
+// READ-ONLY rendering over existing data. Lanes: outcome metrics (dots+line),
+// exposures (bars from event history), adverse events (markers). D4: coarse
+// dates position at period midpoint and are drawn hollow — coarsened, never
+// silently precisified into fake exact days.
+function swimDateToNum(s) {
+  const str = String(s || "");
+  let m = str.match(/^(\d{4})-(\d{2})-(\d{2})/);
+  if (m) return { t: Date.UTC(+m[1], +m[2] - 1, +m[3]), coarse: false };
+  m = str.match(/^(\d{4})-(\d{2})$/);
+  if (m) return { t: Date.UTC(+m[1], +m[2] - 1, 15), coarse: true };
+  m = str.match(/^(\d{4})$/);
+  if (m) return { t: Date.UTC(+m[1], 6, 1), coarse: true };
+  return null;
+}
+
+function renderCaseSwimlanes(item, notesAsc) {
+  const notes = (notesAsc || []).filter((n) => swimDateToNum(n.visitDate));
+  const visitDate = (vid) => { const n = notes.find((x) => x.id === vid); return n ? n.visitDate : ""; };
+  const evDate = (ev) => swimDateToNum(ev.effectiveApprox) || swimDateToNum(visitDate(ev.visitId)) || swimDateToNum(String(ev.createdAt || "").slice(0, 10));
+
+  // 收集全部時間點
+  const points = notes.map((n) => swimDateToNum(n.visitDate).t);
+  const expos = (item.agentExposures || []).map((e) => ({
+    label: e.nameText || e.agentId || "?", status: e.status || "",
+    evs: (e.events || []).map((ev) => ({ d: evDate(ev), type: ev.eventType || "" })).filter((x) => x.d)
+  })).filter((e) => e.evs.length);
+  expos.forEach((e) => e.evs.forEach((x) => points.push(x.d.t)));
+  if (points.length < 2 || new Set(points).size < 2) return "";
+
+  const min = Math.min(...points), max = Math.max(...points);
+  const X = (t) => 40 + ((t - min) / (max - min)) * 920;
+  /* 軸標籤用 UTC 還原,不能用 localDateISO。
+   *
+   * swimDateToNum 把 "2026-05-01" 這種**日曆日**解析成 Date.UTC 午夜;
+   * localDateISO 再用本地 getter 讀回來,在 UTC-7 就變成 2026-04-30 ——
+   * 泳道上每一診的日期都往前一天。實測輸入 05-01/05-08、畫出 04-30/05-07。
+   *
+   * localDateISO 本身沒錯,它是為「現在幾點」那種時間戳寫的(Dry Clinic #8:
+   * 晚診時 UTC 會把預設日期跳到明天)。錯在拿它去格式化一個沒有時區的日曆日:
+   * 存進來的 visitDate 是「五月一日」這個日子,不是某個瞬間,來回換算就會漂。 */
+  const fmt = (t) => {
+    const d = new Date(t);
+    return `${d.getUTCFullYear()}-${String(d.getUTCMonth() + 1).padStart(2, "0")}-${String(d.getUTCDate()).padStart(2, "0")}`;
+  };
+
+  // metric lanes:出現次數最多的前 4 個
+  const mCount = new Map();
+  notes.forEach((n) => (n.outcomeMetrics || []).forEach((m) => mCount.set(m.metricId, (mCount.get(m.metricId) || 0) + 1)));
+  const topMetrics = [...mCount.entries()].sort((a, b) => b[1] - a[1]).slice(0, 4).map(([id]) => id);
+
+  let y = 30, rows = [];
+  // 軸
+  rows.push(`<line x1="40" y1="20" x2="960" y2="20" class="sw-axis"/>
+    <text x="40" y="12" class="sw-t">${fmt(min)}</text><text x="960" y="12" class="sw-t" text-anchor="end">${fmt(max)}</text>`);
+  notes.forEach((n) => { const x = X(swimDateToNum(n.visitDate).t); rows.push(`<line x1="${x}" y1="16" x2="${x}" y2="24" class="sw-axis"/>`); });
+
+  for (const id of topMetrics) {
+    const def = getOutcomeMetricDef(id);
+    const label = def ? (def.label_zh || def.name) : id;
+    const pts = notes.map((n) => { const m = (n.outcomeMetrics || []).find((x) => x.metricId === id); return m ? { x: X(swimDateToNum(n.visitDate).t), v: m.valueNumber } : null; }).filter(Boolean);
+    if (!pts.length) continue;
+    const vals = pts.map((p) => p.v), vmin = Math.min(...vals), vmax = Math.max(...vals);
+    const Y = (v) => y + 26 - (vmax === vmin ? 13 : ((v - vmin) / (vmax - vmin)) * 22);
+    rows.push(`<text x="4" y="${y + 14}" class="sw-lane">${escapeHtml(String(label).slice(0, 14))}</text>`);
+    if (pts.length > 1) rows.push(`<polyline points="${pts.map((p) => `${p.x},${Y(p.v)}`).join(" ")}" class="sw-line"/>`);
+    pts.forEach((p) => rows.push(`<circle cx="${p.x}" cy="${Y(p.v)}" r="3.5" class="sw-dot"/><text x="${p.x}" y="${Y(p.v) - 6}" class="sw-v" text-anchor="middle">${p.v}</text>`));
+    y += 34;
+  }
+
+  // Patterns lane — 同一實體一條的畫法跟下面 exposures lane 一致:每個歷史上
+  // 出現過的證型各自一條,同證型跨診連成一條橫線,線上的 dot 是它出現過的診。
+  // patternId 取 tcmPatternSelections(primary+secondary 都算,一診可能同時屬於
+  // 好幾條),沒有才退回 tcmPatternLinks。
+  const patternOcc = new Map();
+  notes.forEach((n) => {
+    const ids = (n.tcmPatternSelections && n.tcmPatternSelections.length)
+      ? n.tcmPatternSelections.map((s) => s.patternId).filter(Boolean)
+      : (n.tcmPatternLinks || []);
+    const x = X(swimDateToNum(n.visitDate).t);
+    [...new Set(ids)].forEach((id) => {
+      if (!patternOcc.has(id)) patternOcc.set(id, []);
+      patternOcc.get(id).push(x);
+    });
+  });
+  for (const [pid, xs] of patternOcc) {
+    const label = resolvePatternName(pid);
+    const x1 = Math.min(...xs), x2 = Math.max(...xs);
+    rows.push(`<text x="4" y="${y + 12}" class="sw-lane">${escapeHtml(String(label).slice(0, 14))}</text>`);
+    if (xs.length > 1) rows.push(`<line x1="${x1}" y1="${y + 9}" x2="${x2}" y2="${y + 9}" class="sw-pattern-line"/>`);
+    xs.forEach((x) => rows.push(`<circle cx="${x}" cy="${y + 9}" r="3" class="sw-pattern-mark"/>`));
+    y += 22;
+  }
+
+  // Points lane — 單一條,一診一個標記;hover(<title>)顯示該診穴位清單。
+  const pointVisits = notes.filter((n) => (n.acupointLinks && n.acupointLinks.length) || n.pointsUsed);
+  if (pointVisits.length) {
+    rows.push(`<text x="4" y="${y + 12}" class="sw-lane">用穴 Points</text>`);
+    pointVisits.forEach((n) => {
+      const x = X(swimDateToNum(n.visitDate).t);
+      const list = (n.acupointLinks && n.acupointLinks.length) ? n.acupointLinks.join(" ") : n.pointsUsed;
+      rows.push(`<circle cx="${x}" cy="${y + 9}" r="3.5" class="sw-point-mark"><title>${escapeHtml(list)}</title></circle>`);
+    });
+    y += 22;
+  }
+
+  // Formulas lane — 單一條,formulaLinks 解析成中文名;方劑換掉的那一診標記換色
+  // 並加一條垂直虛線,看得出換方的時間點。只讀 formulaLinks(結構化 id),不退回
+  // formulaHerbs 自由文字 —— 換方偵測需要可比對的 id,自由文字比不出「換了」。
+  const formulaVisits = notes.filter((n) => n.formulaLinks && n.formulaLinks.length);
+  if (formulaVisits.length) {
+    rows.push(`<text x="4" y="${y + 12}" class="sw-lane">方劑 Formulas</text>`);
+    let prevSig = null;
+    formulaVisits.forEach((n) => {
+      const x = X(swimDateToNum(n.visitDate).t);
+      const names = n.formulaLinks.map(resolveFormulaName).join(" · ");
+      const sig = [...n.formulaLinks].slice().sort().join("|");
+      const changed = prevSig !== null && sig !== prevSig;
+      if (changed) rows.push(`<line x1="${x}" y1="${y}" x2="${x}" y2="${y + 18}" class="sw-formula-change"/>`);
+      rows.push(`<circle cx="${x}" cy="${y + 9}" r="3.5" class="sw-formula-mark${changed ? " sw-formula-mark-changed" : ""}"><title>${escapeHtml(names)}</title></circle>`);
+      prevSig = sig;
+    });
+    y += 22;
+  }
+
+  // 用藥/暴露變動 lane — 已存在的 exposures bar 就是這條(每個 agentExposure 一條
+  // bar,marker 來自 events[]);這裡只補 hover title(藥名:eventType),不另開
+  // 一條重複的 lane 畫同一份 item.agentExposures[].events[] 資料。
+  for (const e of expos.slice(0, 6)) {
+    const ts = e.evs.map((x) => x.d.t);
+    const x1 = X(Math.min(...ts));
+    const stopped = e.evs.some((x) => /stop|discontinu/i.test(x.type)) || /stopped|past/i.test(e.status);
+    const x2 = stopped ? X(Math.max(...ts)) : 960;
+    rows.push(`<text x="4" y="${y + 12}" class="sw-lane">${escapeHtml(String(e.label).slice(0, 14))}</text>
+      <rect x="${x1}" y="${y + 4}" width="${Math.max(x2 - x1, 4)}" height="10" rx="5" class="sw-bar${stopped ? " sw-bar-stopped" : ""}"/>`);
+    e.evs.forEach((x) => rows.push(`<circle cx="${X(x.d.t)}" cy="${y + 9}" r="3" class="sw-ev${x.d.coarse ? " sw-coarse" : ""}"><title>${escapeHtml(`${e.label}:${x.type}`)}</title></circle>`));
+    y += 22;
+  }
+
+  const aes = [];
+  notes.forEach((n) => (n.adverseEvents || []).forEach((a) => aes.push({ x: X(swimDateToNum(n.visitDate).t), sev: a.severity || "mild" })));
+  if (aes.length) {
+    rows.push(`<text x="4" y="${y + 12}" class="sw-lane">AE</text>`);
+    aes.forEach((a) => rows.push(`<path d="M ${a.x} ${y + 3} l 5 9 h -10 z" class="sw-ae sw-ae-${escapeHtml(a.sev)}"/>`));
+    y += 22;
+  }
+
+  return `<div class="swimlane-panel"><div class="timeline-head"><strong>病程泳道 Timeline</strong><small class="timeline-date">${notes.length} visits</small></div>
+    <svg viewBox="0 0 1000 ${y + 8}" preserveAspectRatio="xMidYMin meet">${rows.join("")}</svg></div>`;
+}
+
+/* ── 診務回顧 Practice Audit ────────────────────────────────────────────
+ *
+ * Knowledge OS 迴圈的回饋端:臨床使用 → 結構化資料 → 回顧 → 知識缺口。
+ * 目的是把「還有 300 張卡要填」換成「我的病例正在需要這 12 張」。
+ *
+ * 計算全部在 js/practice-audit.js —— 這裡只負責畫。月審 CLI 會呼叫同一份
+ * 計算,所以畫面與腳本不可能出現兩套數字(P1 transport 的 MED-4 就是
+ * app 一套規則、CLI 一套規則漂移出來的)。
+ *
+ * 這一層唯一的職責邊界:**不得在畫面上補計算層刻意不說的話。**
+ * 沒有具名來源的 metric,計算層只給變化量與 caveat,畫面就照樣只畫那兩個,
+ * 不准自己加箭頭顏色或「改善」字樣去暗示臨床顯著性。 */
+function renderPracticeAuditPanel() {
+  const panel = document.getElementById("practiceAuditPanel");
+  if (!panel) return;
+  panel.hidden = !practiceAuditOpen;
+  const btn = document.getElementById("practiceAuditBtn");
+  if (btn) btn.setAttribute("aria-pressed", practiceAuditOpen ? "true" : "false");
+  if (!practiceAuditOpen) { panel.innerHTML = ""; return; }
+
+  const engine = globalThis.AcuTingPracticeAudit;
+  if (!engine || typeof engine.computePracticeAudit !== "function") {
+    // fail loud:寧可明說算不出來,也不要畫一份空表讓人以為「都是 0」
+    panel.innerHTML = `<div class="case-empty">診務回顧模組未載入(js/practice-audit.js),無法計算。這不是「沒有資料」,是算不出來。</div>`;
+    return;
+  }
+  const r = engine.computePracticeAudit({ cases: clinicalCases, knowledge: globalThis.ACUTING_KNOWLEDGE });
+  const num = (v, suffix) => (v === null || v === undefined ? "—" : `${v}${suffix || ""}`);
+  const stat = (label, value, hint) =>
+    `<div class="pa-stat"><small>${escapeHtml(label)}</small><strong>${escapeHtml(String(value))}</strong>${hint ? `<em>${escapeHtml(hint)}</em>` : ""}</div>`;
+
+  const usedList = (rows, empty) => rows.length
+    // known === false = 查過但知識庫裡沒有這張卡,標出來而不是安靜顯示 id。
+    // undefined = 這一類本來就不查表(穴位是 LI4 這種代碼),不標。
+    ? `<ol class="pa-used">${rows.map((u) => `<li><span>${escapeHtml(u.name || u.id)}</span>${u.known === false ? `<em class="pa-basis pa-basis-none">知識庫沒有這張卡</em>` : ""}<small>${u.visits} 診 · ${u.cases} 例</small></li>`).join("")}</ol>`
+    : `<p class="pa-empty">${escapeHtml(empty)}</p>`;
+
+  const verdictRows = Object.entries(r.verdictMix)
+    .map(([k, v]) => `<li><span>${escapeHtml(OUTCOME_VERDICTS[k]?.zh || k)}</span><small>${v} 診</small></li>`).join("");
+
+  const outcomeRows = r.outcomeChanges.map((o) => {
+    const dir = o.medianChange === null ? "—" : (o.medianChange > 0 ? `+${o.medianChange}` : String(o.medianChange));
+    // 有具名來源才給得出「拿什麼對照」;沒有的就明寫沒有,不留空白讓人自行想像
+    const basis = o.interpretable
+      ? `<em class="pa-basis" title="${escapeHtml(o.interpretationText)}">可對照:${escapeHtml(shortCitation(o.interpretationSource))}</em>`
+      : `<em class="pa-basis pa-basis-none">${escapeHtml(o.caveat)}</em>`;
+    // 第二個軸(D20):正常範圍有具名來源,但不是改善閾值 —— 跟上面那行分開列,
+    // 不要合成一句,合成會讓「有範圍」看起來像「有閾值」。scope 放進 title,
+    // 那是這個數字唯一的圍欄。
+    const refRange = !o.interpretable && o.referenceRange
+      ? `<em class="pa-basis pa-basis-refrange" title="${escapeHtml(o.referenceRange.text)}\n適用範圍：${escapeHtml(o.referenceRange.scope)}">參考範圍:${escapeHtml(shortCitation(o.referenceRange.source))}</em>`
+      : "";
+    return `<li><span>${escapeHtml(o.label)}</span><strong>${escapeHtml(dir)}${escapeHtml(o.unitDisplay ? " " + o.unitDisplay : "")}</strong><small>${o.casesMeasured} 例有前後值</small>${basis}${refRange}</li>`;
+  }).join("");
+
+  /* 缺口要能點開那張卡,否則「病例正在需要這 12 張」還是要自己去搜,迴圈沒閉。
+   * 但**只有真的開得起來的才做成可點的** —— 逐筆問 canOpenKnowledgeRecord,
+   * 不是看 API 在不在。缺口是從 patternLibrary / patternRegistry /
+   * tcmPatternCanon 三個區塊找出來的,而開卡只認得 patternLibrary(且排除
+   * deprecated);只在 registry 裡的證型會通過缺口那關卻開不起來。 */
+  const gapKindToRecord = { "方劑": "formula", "證型": "pattern" };
+  const gapRows = r.knowledgeGaps.map((g) => {
+    const recordKind = gapKindToRecord[g.kind] || "";
+    const canOpen = canOpenKnowledgeRecord(recordKind, g.id);
+    const inner = `<span class="pa-gap-kind">${escapeHtml(g.kind)}</span><span>${escapeHtml(g.name)}</span><small>${g.visits} 診 · ${g.cases} 例</small><em>${escapeHtml(g.maturityLabel)}</em>`;
+    return canOpen
+      ? `<li><button type="button" class="pa-gap-open" data-gap-kind="${escapeHtml(recordKind)}" data-gap-id="${escapeHtml(g.id)}" title="開啟這張卡">${inner}</button></li>`
+      : `<li>${inner}</li>`;
+  }).join("");
+
+  panel.innerHTML = `
+    <div class="timeline-head">
+      <strong>診務回顧 Practice Audit</strong>
+      <small class="timeline-date">${r.volume.firstVisitDate || "—"} → ${r.volume.lastVisitDate || "—"} · 本機資料,不外送</small>
+    </div>
+    <div class="pa-stats">
+      ${stat("病人 Patients", r.volume.patients)}
+      ${stat("病例 Cases", r.volume.cases)}
+      ${stat("就診 Visits", r.volume.visits, r.volume.undatedVisits ? `${r.volume.undatedVisits} 診沒有日期` : "")}
+      ${stat("回診率 Follow-up", num(r.followUp.followUpRatePct, "%"), `${r.followUp.singleVisitCases} 例只來過一次`)}
+      ${stat("療效判定填寫率", num(r.completeness.verdictRatePct, "%"), `${r.completeness.visitsWithVerdict} / ${r.volume.visits} 診`)}
+      ${stat("Outcome 數值填寫率", num(r.completeness.metricRatePct, "%"), `${r.completeness.visitsWithMetric} / ${r.volume.visits} 診`)}
+      ${stat("不良事件率 AE", num(r.adverseEvents.aeRatePct, "%"), `${r.adverseEvents.visitsWithAe} 診有記錄`)}
+    </div>
+
+    <div class="pa-cols">
+      <div class="pa-col">
+        <h4>療效判定分佈</h4>
+        ${verdictRows ? `<ul class="pa-list">${verdictRows}</ul>` : `<p class="pa-empty">還沒有任何一診填過療效判定。</p>`}
+        <h4>Outcome 變化(首診 → 末診中位數)</h4>
+        ${outcomeRows ? `<ul class="pa-list pa-outcome">${outcomeRows}</ul>` : `<p class="pa-empty">還沒有任何 metric 在同一病例被測過兩次以上。</p>`}
+        <h4>不良事件</h4>
+        ${Object.keys(r.adverseEvents.bySeverity).length
+          ? `<ul class="pa-list">${Object.entries(r.adverseEvents.bySeverity).map(([k, v]) => `<li><span>${escapeHtml(k)}</span><small>${v} 筆</small></li>`).join("")}</ul>`
+          : `<p class="pa-empty">沒有記錄到不良事件。</p>`}
+      </div>
+      <div class="pa-col">
+        <h4>最常用穴位</h4>${usedList(r.mostUsed.points, "還沒有記錄用穴。")}
+        <h4>最常用方劑</h4>${usedList(r.mostUsed.formulas, "還沒有記錄方劑。")}
+        <h4>最常用證型</h4>${usedList(r.mostUsed.patterns, "還沒有記錄證型。")}
+      </div>
+    </div>
+
+    <div class="pa-gaps">
+      <h4>知識缺口 — 病例正在需要,但卡片還不到位(${r.knowledgeGapTotal} 項)</h4>
+      ${gapRows
+        ? `<ul class="pa-list pa-gap-list">${gapRows}</ul>`
+        : `<p class="pa-empty">目前用到的方劑與證型卡片都已有來源。</p>`}
+    </div>
+
+    <details class="pa-notstated">
+      <summary>這份回顧刻意不說什麼</summary>
+      <ul>${r.notStated.map((s) => `<li>${escapeHtml(s)}</li>`).join("")}</ul>
+    </details>
+  `;
+
+  // 面板每次重畫都是新的 DOM,所以在這裡綁,不要用全域委派 —— 全域委派會在
+  // 面板收起來之後還留著,是另一種安靜的漏。
+  panel.querySelectorAll("[data-gap-id]").forEach((btn) => {
+    btn.addEventListener("click", () => openKnowledgeRecord(btn.dataset.gapKind, btn.dataset.gapId));
+  });
+}
+
+function renderVisitBrief(item, notesDesc) {
+  if (!notesDesc.length) return "";
+  const L = notesDesc[0], P = notesDesc[1] || null;
+  const rows = [];
+  // 1. metric 差值(direction_good 上色)
+  const ids = [...new Set([...(L.outcomeMetrics || []), ...((P && P.outcomeMetrics) || [])].map((m) => m.metricId))];
+  for (const id of ids) {
+    const def = getOutcomeMetricDef(id);
+    const lv = (L.outcomeMetrics || []).find((m) => m.metricId === id)?.valueNumber;
+    const pv = P ? (P.outcomeMetrics || []).find((m) => m.metricId === id)?.valueNumber : undefined;
+    if (lv === undefined && pv === undefined) continue;
+    // FIX D 延伸(Dry Clinic #15 實測第三處):visit-brief 差值列同為
+    // 唯讀掃視面,用 panel 短標籤,語意註解不外漏。
+    const label = outcomeMetricPanelLabel(id);
+    let delta = "", cls = "";
+    if (lv !== undefined && pv !== undefined && lv !== pv) {
+      const arrow = lv > pv ? "↑" : "↓";
+      const good = def && def.direction_good === "decrease" ? lv < pv : def && def.direction_good === "increase" ? lv > pv : null;
+      cls = good === true ? "brief-good" : good === false ? "brief-bad" : "";
+      delta = `${pv} → ${lv} ${arrow}`;
+    } else {
+      delta = lv !== undefined ? `${pv !== undefined ? pv + " → " : ""}${lv}` : `${pv}(本次未測)`;
+    }
+    rows.push(`<div class="brief-row ${cls}"><small>${escapeHtml(label)}</small><span>${escapeHtml(delta)}</span></div>`);
+  }
+  // 1.5 上次治療 Last treatment — 全部讀既有欄位,不新增資料。找不到上一診
+  // (首診)時整塊不畫,改印一行「初診」;有上一診但個別欄位沒填,那一列
+  // 直接不印(不留空白列)。
+  let lastTreatmentHtml = "";
+  if (P) {
+    const ltRows = [];
+    const pointsText = (P.acupointLinks && P.acupointLinks.length) ? P.acupointLinks.join(" · ") : (P.pointsUsed || "");
+    if (pointsText) ltRows.push(["用穴", pointsText]);
+    const formulaText = (P.formulaLinks && P.formulaLinks.length)
+      ? P.formulaLinks.map(resolveFormulaName).join(" · ")
+      : (P.formulaHerbs || "");
+    if (formulaText) ltRows.push(["方劑", formulaText]);
+    const modalityText = (P.modalitiesPerformed || []).map(resolveModalityName).join(" · ");
+    if (modalityText) ltRows.push(["處置", modalityText]);
+    const retentionParts = [];
+    if (P.retentionMinutes !== "" && P.retentionMinutes !== undefined && P.retentionMinutes !== null) retentionParts.push(`${P.retentionMinutes} 分鐘`);
+    if (P.technique) retentionParts.push(P.technique);
+    if (retentionParts.length) ltRows.push(["留針/手法", retentionParts.join(" · ")]);
+    if (P.effectDurationDays !== "" && P.effectDurationDays !== undefined && P.effectDurationDays !== null) ltRows.push(["效果維持", `約 ${P.effectDurationDays} 天`]);
+    if (P.advice) ltRows.push(["醫囑", P.advice.length > 60 ? P.advice.slice(0, 60) + "…" : P.advice]);
+    const aeCount = (L.adverseEvents || []).length;
+    ltRows.push(["上次以來的不良事件", aeCount ? `本次記錄 ${aeCount} 筆` : "無"]);
+    if (L.patientPerspective) ltRows.push(["病人今日優先事項", L.patientPerspective]);
+    lastTreatmentHtml = `<div class="brief-last">
+      <small class="brief-last-label">上次治療 Last treatment</small>
+      ${ltRows.map(([label, val]) => `<div class="brief-row"><small>${escapeHtml(label)}</small><span>${escapeHtml(val)}</span></div>`).join("")}
+    </div>`;
+  } else {
+    lastTreatmentHtml = `<div class="brief-last brief-last-empty">初診，沒有前次紀錄</div>`;
+  }
+  // 2. 上次就診的 ledger 事件(用藥/補充劑/暴露變化)
+  const changes = [];
+  for (const [arr, kindZh] of [[item.agentExposures || [], ""], [item.environmentalExposures || [], "暴露 "]]) {
+    for (const row of arr) {
+      for (const ev of row.events || []) {
+        if (ev.visitId === L.id) {
+          const name = row.nameText || row.agentId || row.exposureId || "";
+          changes.push(`${kindZh}${name}:${ev.eventType}${ev.doseText ? " → " + ev.doseText : ""}${ev.certainty ? " → " + ev.certainty : ""}`);
+        }
+      }
+    }
+  }
+  // 3. 生活型態差值
+  for (const f of L.lifestyleFactors || []) {
+    const prev = P ? (P.lifestyleFactors || []).find((x) => x.factorId && x.factorId === f.factorId) : null;
+    if (prev && prev.valueNumber !== "" && f.valueNumber !== "" && prev.valueNumber !== f.valueNumber) {
+      changes.push(`${f.factorId.replace("life.", "")}:${prev.valueNumber} → ${f.valueNumber} ${f.unit || ""}`);
+    }
+  }
+  // 4. ⚠ REVIEW:未緩解 AE、certainty 晉升、壞方向大變化
+  const review = [];
+  for (const ae of L.adverseEvents || []) {
+    if (ae.resolutionStatus === "ongoing" || ae.resolutionStatus === "") review.push(`AE 未緩解:${ae.nameText || ae.eventId}`);
+  }
+  for (const row of item.environmentalExposures || []) {
+    for (const ev of row.events || []) if (ev.visitId === L.id && ev.eventType === "certainty_changed") review.push(`暴露確定度變更:${row.nameText || row.exposureId} → ${ev.certainty}`);
+  }
+  if (!rows.length && !changes.length && !review.length && !lastTreatmentHtml) return "";
+  return `
+    <div class="visit-brief">
+      <div class="timeline-head"><strong>Visit Brief · 上次以來</strong><small class="timeline-date">${escapeHtml(L.visitDate || "")}${P ? ` vs ${escapeHtml(P.visitDate || "")}` : "(首診)"}</small></div>
+      ${rows.length ? `<div class="brief-grid">${rows.join("")}</div>` : ""}
+      ${lastTreatmentHtml}
+      ${changes.length ? `<div class="brief-changes"><small>變化 Changes</small><span>${changes.map(escapeHtml).join(" · ")}</span></div>` : ""}
+      ${review.length ? `<div class="brief-review">⚠ ${review.map(escapeHtml).join(" · ")}</div>` : ""}
+    </div>`;
+}
+
 function renderClinicalCaseDetail(item) {
   if (!item) {
     caseDetail.innerHTML = `
@@ -5109,6 +7956,12 @@ function renderClinicalCaseDetail(item) {
       <div><small>Western Dx</small><span>${escapeHtml(item.westernConditions.join("、") || "—")}</span></div>
     </div>
     ${renderCaseTags(item)}
+    ${renderVisitBrief(item, notes)}
+    ${renderCareReadinessPanel(item, notes)}
+    ${renderOutcomeTrackingPanel(item)}
+    ${renderAgentExposuresPanel(item)}
+    ${renderEnvironmentalExposuresPanel(item)}
+    ${renderCaseSwimlanes(item, [...notes].reverse())}
     ${renderCaseTimeline(notes)}
     <div class="timeline-head">
       <strong>SOAP Timeline</strong>
@@ -5121,11 +7974,40 @@ function renderClinicalCaseDetail(item) {
 
   document.querySelector("#editCaseInline").addEventListener("click", () => openCaseEditor(item));
   document.querySelector("#addSoapInline").addEventListener("click", () => openSoapEditor());
+  // Phase D: Meds & Supplements ledger (agentExposures[]) — add button opens
+  // the dialog, row action buttons go through applyExposureChange (the only
+  // authorized ledger-write path, docs/AI_WORK_HANDOFF.md HANDOFF #3).
+  document.querySelector("#addAgentExposureInline")?.addEventListener("click", () => openAgentExposureEditor());
+  caseDetail.querySelectorAll("[data-agent-exposure-action]").forEach((button) => {
+    button.addEventListener("click", () => {
+      promptAgentExposureAction(button.dataset.exposureId, button.dataset.agentExposureAction);
+    });
+  });
+  // Phase D batch 3: Environmental exposures ledger (environmentalExposures[])
+  // — same wiring shape as the Meds & Supplements block above.
+  document.querySelector("#addEnvironmentalExposureInline")?.addEventListener("click", () => openEnvironmentalExposureEditor());
+  caseDetail.querySelectorAll("[data-env-exposure-action]").forEach((button) => {
+    button.addEventListener("click", () => {
+      promptEnvironmentalExposureAction(button.dataset.exposureId, button.dataset.envExposureAction);
+    });
+  });
   caseDetail.querySelectorAll("[data-edit-soap]").forEach((button) => {
     button.addEventListener("click", () => {
       const note = item.soapNotes.find((entry) => entry.id === button.dataset.editSoap);
       openSoapEditor(note);
     });
+  });
+  // AVS v3:Visit-level Checkout(§3 Step 2)。
+  caseDetail.querySelectorAll("[data-checkout-soap]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const note = item.soapNotes.find((entry) => entry.id === button.dataset.checkoutSoap);
+      if (note) openAvsCheckout(note.id);
+    });
+  });
+  // CARE readiness 面板的「產生草稿」——徽章早就告訴你缺什麼,但沒有按鈕能把
+  // 已經齊備的那些欄位實際組成草稿。這裡補上那顆按鈕。
+  caseDetail.querySelectorAll("[data-care-draft]").forEach((button) => {
+    button.addEventListener("click", () => downloadCareDraft(item));
   });
   // CS5: timeline node → scroll to that SOAP card + brief highlight
   caseDetail.querySelectorAll("[data-jump-soap]").forEach((node) => {
@@ -5173,11 +8055,39 @@ function formulaPickerOptions() {
   }));
 }
 
-function enhanceLinkField(fieldName, buildOptions) {
-  const textarea = soapForm?.elements?.[fieldName];
+// Gate 3 herb.* structured capture path — same shape as formulaPickerOptions,
+// reading the herb canon shortlist instead of the formula library.
+function herbPickerOptions() {
+  const records = globalThis.ACUTING_KNOWLEDGE?.herbs?.records || [];
+  return records.map((h) => ({
+    value: h.id,
+    label: `${h.name_zh || h.id}${h.pinyin ? " · " + h.pinyin : ""}`,
+    terms: `${h.name_zh || ""} ${h.pinyin || ""} ${h.name_en || ""} ${h.id}`.toLowerCase(),
+    meta: h.pinyin || h.name_en || "",
+  }));
+}
+
+// TCM pattern primary/secondary reconciliation (2026-08-09,
+// docs/SOAP_FOLLOWUP_TRACKING_AUDIT.md §9 ranked item #1). Three optional
+// behaviors added for the primary/secondary pattern pickers, all opt-in via
+// `opts` so every existing call (acupointLinks, formulaLinks, ...) is
+// unaffected:
+//   single         one chip only; picking a new one replaces it (does not
+//                  destroy it — see opts.onPick below).
+//   onPick(v, old) fires only in single mode when the value actually
+//                  changes. Lets the caller decide what happens to the
+//                  displaced value instead of silently dropping it.
+//   excludeValues  fn returning ids to hide from this field's own search
+//                  results — used so the secondary picker can't offer
+//                  whatever the primary picker currently holds.
+function enhanceLinkField(form, fieldName, buildOptions, opts = {}) {
+  const textarea = form?.elements?.[fieldName];
   if (!textarea || textarea.dataset.pickerReady) return;
   textarea.dataset.pickerReady = "1";
   textarea.hidden = true;
+  const single = !!opts.single;
+  const onPick = typeof opts.onPick === "function" ? opts.onPick : null;
+  const excludeValues = typeof opts.excludeValues === "function" ? opts.excludeValues : () => [];
 
   const wrap = document.createElement("div");
   wrap.className = "link-picker";
@@ -5188,9 +8098,19 @@ function enhanceLinkField(fieldName, buildOptions) {
   input.className = "link-picker-input";
   input.setAttribute("autocomplete", "off");
   input.placeholder = "輸入中文 / 拼音 / 代碼，從清單選取…";
+  // Dry Clinic log #1/#2: cheap ARIA combobox wiring — a unique per-instance
+  // id (not a shared module counter) so two dialogs open at once never
+  // collide on aria-activedescendant targets.
+  const uid = `linkpicker-${fieldName}-${Math.random().toString(36).slice(2, 8)}`;
   const menu = document.createElement("div");
   menu.className = "link-picker-menu";
+  menu.id = `${uid}-menu`;
+  menu.setAttribute("role", "listbox");
   menu.hidden = true;
+  input.setAttribute("role", "combobox");
+  input.setAttribute("aria-autocomplete", "list");
+  input.setAttribute("aria-expanded", "false");
+  input.setAttribute("aria-controls", menu.id);
   wrap.append(chips, input, menu);
   textarea.after(wrap);
 
@@ -5223,9 +8143,20 @@ function enhanceLinkField(fieldName, buildOptions) {
       chips.appendChild(chip);
     });
   }
-  function closeMenu() { menu.hidden = true; activeIndex = -1; }
+  function closeMenu() {
+    menu.hidden = true;
+    activeIndex = -1;
+    input.setAttribute("aria-expanded", "false");
+    input.removeAttribute("aria-activedescendant");
+  }
   function addValue(v) {
-    setValues([...getValues(), v]);
+    if (single) {
+      const old = getValues()[0] || null;
+      setValues([v]);
+      if (onPick && old !== v) onPick(v, old);
+    } else {
+      setValues([...getValues(), v]);
+    }
     input.value = "";
     closeMenu();
     input.focus();
@@ -5235,14 +8166,19 @@ function enhanceLinkField(fieldName, buildOptions) {
     const q = input.value.trim().toLowerCase();
     const qCompact = q.replace(/\s+/g, "");
     const chosen = new Set(getValues());
+    const excluded = new Set(excludeValues());
     const matches = !q ? [] : options
-      .filter((o) => !chosen.has(o.value) && (o.terms.includes(q) || o.terms.replace(/\s+/g, "").includes(qCompact)))
+      .filter((o) => !chosen.has(o.value) && !excluded.has(o.value) && (o.terms.includes(q) || o.terms.replace(/\s+/g, "").includes(qCompact)))
       .slice(0, 8);
     if (!matches.length) { closeMenu(); return; }
     menu.innerHTML = "";
     matches.forEach((o, i) => {
       const el = document.createElement("div");
+      const optionId = `${uid}-option-${i}`;
+      el.id = optionId;
       el.className = "link-picker-option" + (i === activeIndex ? " active" : "");
+      el.setAttribute("role", "option");
+      el.setAttribute("aria-selected", i === activeIndex ? "true" : "false");
       el.innerHTML = `<span></span><small></small>`;
       el.firstChild.textContent = o.label;
       el.lastChild.textContent = o.value;
@@ -5251,21 +8187,44 @@ function enhanceLinkField(fieldName, buildOptions) {
     });
     menu.hidden = false;
     menu._matches = matches;
+    input.setAttribute("aria-expanded", "true");
+    input.setAttribute("aria-activedescendant", activeIndex >= 0 ? `${uid}-option-${activeIndex}` : "");
   }
   input.addEventListener("input", () => { activeIndex = -1; renderMenu(); });
   input.addEventListener("focus", () => { if (input.value.trim()) renderMenu(); });
   input.addEventListener("blur", () => setTimeout(closeMenu, 120));
   input.addEventListener("keydown", (e) => {
     const m = menu._matches || [];
-    if (e.key === "ArrowDown") { e.preventDefault(); activeIndex = Math.min(activeIndex + 1, m.length - 1); renderMenu(); }
-    else if (e.key === "ArrowUp") { e.preventDefault(); activeIndex = Math.max(activeIndex - 1, 0); renderMenu(); }
-    else if (e.key === "Enter") {
+    // Dry Clinic log #2 (every-visit friction): full keyboard flow so a
+    // clinical typing session never has to reach for the mouse. Arrow keys
+    // wrap around the currently rendered options; Enter picks the active
+    // option or, if none highlighted yet, the first match; Escape closes
+    // just the menu — it must not fall through to the <dialog>'s native
+    // Escape-to-close (stopPropagation), and only when the menu is actually
+    // open (an Escape with no menu showing should close the dialog as usual).
+    if (e.key === "ArrowDown") {
+      e.preventDefault();
+      if (m.length) activeIndex = (activeIndex + 1) % m.length;
+      renderMenu();
+    } else if (e.key === "ArrowUp") {
+      e.preventDefault();
+      if (m.length) activeIndex = (activeIndex - 1 + m.length) % m.length;
+      renderMenu();
+    } else if (e.key === "Enter") {
       if (m.length) { e.preventDefault(); addValue(m[activeIndex >= 0 ? activeIndex : 0].value); }
-    } else if (e.key === "Escape") { closeMenu(); }
+    } else if (e.key === "Escape") {
+      if (!menu.hidden) {
+        e.preventDefault();
+        e.stopPropagation();
+        closeMenu();
+      }
+    }
   });
 
   linkPickerControllers[fieldName] = {
     sync() { ensureOptions(); renderChips(getValues()); input.value = ""; closeMenu(); },
+    getValues,
+    setValues,
   };
 }
 
@@ -5300,6 +8259,18 @@ function easternDiseasePickerOptions() {
   })));
 }
 
+// Gate 3 sym.* structured capture path — same shape as
+// easternDiseasePickerOptions, reading the symptom vocabulary instead of tdis.
+function symptomPickerOptions() {
+  const records = globalThis.ACUTING_KNOWLEDGE?.symptoms?.records || [];
+  return records.map((s) => ({
+    value: s.id,
+    label: `${s.name_zh || s.id}${s.pinyin ? " · " + s.pinyin : (s.name_en ? " · " + s.name_en : "")}`,
+    terms: `${s.name_zh || ""} ${s.pinyin || ""} ${s.name_en || ""} ${(s.aliases_zh || []).join(" ")} ${(s.aliases_en || []).join(" ")} ${s.id}`.toLowerCase(),
+    meta: s.id,
+  }));
+}
+
 function westernConditionPickerOptions() {
   const k = globalThis.ACUTING_KNOWLEDGE || {};
   const canon = k.conditionCanon?.records || [];
@@ -5312,13 +8283,30 @@ function westernConditionPickerOptions() {
   })));
 }
 
+// INDEPENDENT_AUDIT_2026-08-11 #3-adjacent / TOP-10 #5: this picker used to
+// read `medications.records` — the 12 legacy `med.*` stubs (D15: all 12
+// contraindications empty, draft-only) — while the 40 full SPL-transcribed
+// `drug.*` cards (ACUTING_KNOWLEDGE.pharmDrugs.records, build-data.js:147)
+// sat unreachable from clinical UI. D15/D17 gate: a Visit saved after the
+// migration must never MINT a new med.* reference; med.* is compatibility-
+// only, kept so pre-migration notes keep resolving. This picker is the only
+// place medicationLinks values get minted, so switching its source to
+// pharmDrugs is sufficient — it does not touch any note that already links
+// med.* (searched app.js for a "med."-prefix resolver / id-based dispatch on
+// medicationLinks: none exists — formatNoteList()/the "Treatment record
+// links" row render every linked id as raw text with no lookup, so an
+// existing med.* id and a new drug.* id both already display correctly
+// with zero extra wiring; data/config/medication_alias_map.json exists on
+// disk from scripts/build-medication-alias-map.js but is not read by
+// build-data.js into ACUTING_KNOWLEDGE, so it is out of this fix's scope —
+// bundle untouched).
 function medicationPickerOptions() {
-  const records = globalThis.ACUTING_KNOWLEDGE?.medications?.records || [];
-  return records.map((m) => ({
-    value: m.id,
-    label: `${m.generic_name_en || m.id}${m.drug_class_en ? " · " + m.drug_class_en : ""}`,
-    terms: `${m.generic_name_en || ""} ${(m.brand_names_en || []).join(" ")} ${m.drug_class_en || ""} ${m.id}`.toLowerCase(),
-    meta: m.id,
+  const records = globalThis.ACUTING_KNOWLEDGE?.pharmDrugs?.records || [];
+  return records.map((d) => ({
+    value: d.id,
+    label: `${d.name_zh || d.id}${d.name_en ? " · " + d.name_en : ""}`,
+    terms: `${d.name_zh || ""} ${d.name_en || ""} ${(d.brand_names_en || []).join(" ")} ${d.id}`.toLowerCase(),
+    meta: d.id,
   }));
 }
 
@@ -5333,13 +8321,38 @@ function safetyFlagPickerOptions() {
 }
 
 function setupLinkAutocomplete() {
-  enhanceLinkField("acupointLinks", pointPickerOptions);
-  enhanceLinkField("formulaLinks", formulaPickerOptions);
-  enhanceLinkField("tcmPatternLinks", patternPickerOptions);
-  enhanceLinkField("easternDiseaseLinks", easternDiseasePickerOptions);
-  enhanceLinkField("westernConditionLinks", westernConditionPickerOptions);
-  enhanceLinkField("medicationLinks", medicationPickerOptions);
-  enhanceLinkField("safetyFlagLinks", safetyFlagPickerOptions);
+  enhanceLinkField(soapForm, "acupointLinks", pointPickerOptions);
+  enhanceLinkField(soapForm, "formulaLinks", formulaPickerOptions);
+  // Primary/secondary TCM pattern reconciliation replaces the old single
+  // multi-select tcmPatternLinks field. tcmPatternPrimary is set up FIRST —
+  // its onPick closure reads linkPickerControllers.tcmPatternSecondary at
+  // CLICK time, not at setup time, so definition order here only matters
+  // in that tcmPatternSecondary must exist by the time a user can actually
+  // click anything, which the very next line guarantees.
+  enhanceLinkField(soapForm, "tcmPatternPrimary", patternPickerOptions, {
+    single: true,
+    onPick: (newId, oldId) => {
+      const secondary = linkPickerControllers.tcmPatternSecondary;
+      if (!secondary) return;
+      let vals = secondary.getValues();
+      // Demote: the displaced primary is not destroyed, it drops to secondary
+      // (unless it's already there, or there was no previous primary).
+      if (oldId && oldId !== newId && !vals.includes(oldId)) vals = [...vals, oldId];
+      // Promote: if the newly-picked primary was already listed as
+      // secondary, remove it there — a pattern is never both at once.
+      vals = vals.filter((v) => v !== newId);
+      secondary.setValues(vals);
+    },
+  });
+  enhanceLinkField(soapForm, "tcmPatternSecondary", patternPickerOptions, {
+    excludeValues: () => linkPickerControllers.tcmPatternPrimary?.getValues() || [],
+  });
+  enhanceLinkField(soapForm, "easternDiseaseLinks", easternDiseasePickerOptions);
+  enhanceLinkField(soapForm, "westernConditionLinks", westernConditionPickerOptions);
+  enhanceLinkField(soapForm, "medicationLinks", medicationPickerOptions);
+  enhanceLinkField(soapForm, "safetyFlagLinks", safetyFlagPickerOptions);
+  enhanceLinkField(soapForm, "symptomLinks", symptomPickerOptions);   // Gate 3 sym.*
+  enhanceLinkField(soapForm, "herbLinks", herbPickerOptions);         // Gate 3 herb.*
   // outcomeMetricLinks stays free text: entries carry values ("pain_score 7->4"),
   // not bare ids — structured outcome entry is the LL-track item (LL2/LL5).
 }
@@ -5416,7 +8429,9 @@ function renderSoapNoteCard(note) {
         <div class="case-actions">
           <small class="timeline-date">${escapeHtml([note.visitDate, note.fertilityPhase, note.cyclePhase, note.workflowLink, note.cycleDay ? `CD${note.cycleDay}` : ""].filter(Boolean).join(" · "))}</small>
           ${verdictBadge(note.outcomeVerdict)}
+          ${avsStatusBadge(note)}
           <button class="ghost" type="button" data-edit-soap="${escapeAttribute(note.id)}">編輯</button>
+          <button class="ghost" type="button" data-checkout-soap="${escapeAttribute(note.id)}">結帳 Checkout</button>
         </div>
       </div>
       <div class="soap-grid">
@@ -5431,9 +8446,10 @@ function renderSoapNoteCard(note) {
         <div><small>舌苔 Coating</small><span>${escapeHtml(note.tongueCoating || "—")}</span></div>
         <div><small>脈象 Pulse</small><span>${escapeHtml(note.pulse || "—")}</span></div>
       </div>` : ""}
-      ${(note.tcmPattern || note.pathomechanism || note.treatmentPrinciple) ? `
+      ${(note.tcmPatternSelections?.length || note.tcmPattern || note.pathomechanism || note.treatmentPrinciple) ? `
       <div class="tcm-dx-row">
-        <div><small>證型 Pattern</small><span>${escapeHtml(note.tcmPattern || "—")}</span></div>
+        ${note.tcmPatternSelections?.length ? `<div><small>證型 Pattern</small><span>${escapeHtml(formatPatternSelections(note.tcmPatternSelections))}</span></div>` : ""}
+        ${note.tcmPattern ? `<div><small>證型/病機記錄 Dx notes</small><span>${escapeHtml(note.tcmPattern)}</span></div>` : ""}
         <div><small>病機 Pathomechanism</small><span>${escapeHtml(note.pathomechanism || "—")}</span></div>
         <div><small>治法 Tx principle</small><span>${escapeHtml(note.treatmentPrinciple || "—")}</span></div>
       </div>` : ""}
@@ -5443,14 +8459,22 @@ function renderSoapNoteCard(note) {
         <div><small>方藥 Formula / Herbs</small><span>${linkifyFormulaHerbs(note.formulaHerbs)}</span></div>
         <div><small>生命徵象 Vitals</small><span>${escapeHtml(note.vitals || "—")}</span></div>
         <div><small>療效 Outcomes</small><span>${escapeHtml(note.outcomes || "未填")}</span></div>
+        ${formatNumericOutcomeMetrics(note).map(([label, val]) => `<div><small>${escapeHtml(label)}</small><span>${escapeHtml(val)}</span></div>`).join("")}
       </div>
+      ${renderLifestyleAdverseEventsView(note)}
       <div class="soap-link-grid">
         <div><small>Western links</small><span>${escapeHtml(formatNoteList(note.westernConditionLinks))}</span></div>
         <div><small>TCM disease links</small><span>${escapeHtml(formatNoteList(note.easternDiseaseLinks))}</span></div>
         <div><small>Pattern links</small><span>${escapeHtml(formatNoteList(note.tcmPatternLinks))}</span></div>
         <div><small>Safety links</small><span>${escapeHtml(formatNoteList(note.safetyFlagLinks))}</span></div>
+        <div><small>Symptom links</small><span>${escapeHtml(formatNoteList(note.symptomLinks))}</span></div>
+        <div><small>Herb links</small><span>${escapeHtml(formatNoteList(note.herbLinks))}</span></div>
         <div class="wide"><small>Treatment record links</small><span>${escapeHtml(formatNoteList(linkedRecords))}</span></div>
       </div>
+      ${(note.referralOrSupervisorQuestion) ? `
+      <div class="tcm-dx-row">
+        <div class="wide"><small>轉介/督導問題 Referral / supervisor question</small><span>${escapeHtml(note.referralOrSupervisorQuestion)}</span></div>
+      </div>` : ""}
       ${(note.differentialConsidered || note.reflection || note.ifIneffectivePlan) ? `
       <div class="soap-reflection-view">
         ${note.differentialConsidered ? `<div><small>鑑別考量 Differential</small><span>${escapeHtml(note.differentialConsidered)}</span></div>` : ""}
@@ -5514,6 +8538,164 @@ function selectPoint(code) {
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
+// FIX A (Dry Clinic #6) — form draft autosave for caseDialog/soapDialog ----
+// UI convenience only: lives entirely under CASE_DRAFT_KEY/SOAP_DRAFT_KEY
+// (never CASE_STORAGE_KEY), never read by persistClinicalCases/
+// loadClinicalCases, and never touched by export/import — those all stay
+// scoped to `clinicalCases`, which a draft never becomes part of.
+//
+// serializeFormDraft/restoreFormDraft round-trip every NAMED form element
+// via FormData: plain text/number/select/textarea fields, checkbox groups
+// (raceEthnicity, previousTreatment, modalitiesPerformed — restored via the
+// existing setCheckboxGroup helper), and every link-picker's HIDDEN
+// textarea (westernConditions, tcmPatternLinks, safetyFlagLinks, etc. —
+// enhanceLinkField's setValues keeps that textarea's value in sync with the
+// chips, and `hidden` does not exclude an element from FormData). Restoring
+// those textareas' values and then re-running each controller's `sync()`
+// rebuilds the chip UI through the SAME render path used on dialog open —
+// full chip restore, not just plain fields.
+//
+// Documented boundary: the two repeatable row widgets (#lifestyleFactorRows
+// / #adverseEventRows) are NOT restored. Their rows are built from
+// `<div data-role="...">` elements with no `name` attribute by design (read
+// via collectLifestyleFactorRows/collectAdverseEventRows querying
+// data-role directly — see wireRepeatableRowContainer above), so they never
+// appear in `new FormData(form)` in the first place. A restored draft
+// leaves those two sections empty; every other field (including all chip
+// pickers and every numeric outcome metric input) is fully covered.
+function serializeFormDraft(form) {
+  const fields = {};
+  new FormData(form).forEach((value, key) => {
+    (fields[key] || (fields[key] = [])).push(String(value));
+  });
+  return fields;
+}
+
+// Known gap: FormData omits a checkbox group entirely when NOTHING in it is
+// checked, so a draft saved with e.g. raceEthnicity fully unchecked has no
+// "raceEthnicity" key at all — restoring it then leaves whatever the
+// dialog's own hydrate step already checked untouched, rather than
+// force-unchecking. Acceptable for a UI-convenience recovery feature; every
+// other field type round-trips exactly.
+function restoreFormDraft(form, fields) {
+  Object.entries(fields || {}).forEach(([key, values]) => {
+    const el = form.elements[key];
+    if (!el) return;
+    if (typeof RadioNodeList !== "undefined" && el instanceof RadioNodeList && el[0]?.type === "checkbox") {
+      setCheckboxGroup(form, key, values);
+    } else if (el.type === "checkbox") {
+      // Standalone (non-grouped) checkbox — none exist in caseForm/soapForm
+      // today, but .value alone would silently no-op on a lone checkbox
+      // (checked state is separate from its value attribute), so this is
+      // handled explicitly rather than left as a latent gap.
+      el.checked = values.includes(el.value);
+    } else {
+      el.value = values[0] ?? "";
+    }
+  });
+}
+
+function readDraft(key) {
+  try {
+    const raw = localStorage.getItem(key);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw);
+    if (!parsed || typeof parsed !== "object" || !parsed.fields) return null;
+    return parsed;
+  } catch {
+    return null;
+  }
+}
+
+function writeDraft(key, context, form) {
+  try {
+    localStorage.setItem(key, JSON.stringify({
+      context,
+      savedAt: new Date().toISOString(),
+      fields: serializeFormDraft(form)
+    }));
+  } catch (e) {
+    console.error(`draft autosave failed (${key}):`, e);
+  }
+}
+
+function clearDraft(key) {
+  try { localStorage.removeItem(key); } catch { /* best-effort only */ }
+}
+
+// ~1s throttle: the first "input" after a save/restore starts a timer: any
+// further keystrokes within that window are absorbed, one write fires when
+// it elapses. Re-arms on the next input after that. getContext() is called
+// at write time (not bind time) so it always reflects whichever case/SOAP
+// note is currently open in the dialog.
+function wireDraftAutosave(form, key, getContext) {
+  let timer = null;
+  form.addEventListener("input", () => {
+    if (timer) return;
+    timer = setTimeout(() => {
+      timer = null;
+      writeDraft(key, getContext(), form);
+    }, 1000);
+  });
+}
+
+function formatDraftTimestamp(iso) {
+  const d = new Date(iso);
+  return Number.isNaN(d.getTime()) ? "" : d.toLocaleString();
+}
+
+// Inline banner (never window.confirm — a blocking native dialog is exactly
+// what log #14/#6 are both reacting against). Pass draft: null to hide it.
+function renderDraftBanner(bannerEl, draft, onRestore, onDiscard) {
+  if (!bannerEl) return;
+  if (!draft) {
+    bannerEl.hidden = true;
+    bannerEl.innerHTML = "";
+    return;
+  }
+  bannerEl.hidden = false;
+  bannerEl.innerHTML = `
+    <span>找到未儲存草稿（${escapeHtml(formatDraftTimestamp(draft.savedAt))}）— Unsaved draft found</span>
+    <button type="button" class="ghost" data-draft-restore>還原 Restore</button>
+    <button type="button" class="ghost" data-draft-discard>捨棄 Discard</button>
+  `;
+  bannerEl.querySelector("[data-draft-restore]").addEventListener("click", onRestore);
+  bannerEl.querySelector("[data-draft-discard]").addEventListener("click", onDiscard);
+}
+
+// FIX B (Dry Clinic #14) — save-button click on an :invalid form fires the
+// browser's native "invalid" event on every offending field (capture-phase
+// only; it does not bubble) and silently blocks "submit" from ever firing —
+// which is exactly why saveCaseFromForm/saveSoapFromForm never even run and
+// nothing visible happens. Report only the FIRST invalid field (by DOM
+// order) so a form with several bad fields doesn't thrash the scroll/message
+// on every one of them.
+function wireSubmitFailureFeedback(form, errorEl) {
+  form.addEventListener("invalid", (event) => {
+    // 只找真正的欄位::invalid 也會匹配包住欄位的 form/fieldset 祖先,
+    // 那會讓 event.target !== firstInvalid 永遠成立而提前 return(實測抓到)。
+    const firstInvalid = form.querySelector("input:invalid, select:invalid, textarea:invalid");
+    if (!firstInvalid || event.target !== firstInvalid) return;
+    firstInvalid.classList.add("field-invalid");
+    firstInvalid.scrollIntoView({ behavior: "smooth", block: "center" });
+    const labelEl = firstInvalid.closest("label");
+    const labelText = labelEl
+      ? [...labelEl.childNodes].filter((n) => n.nodeType === Node.TEXT_NODE).map((n) => n.textContent.trim()).filter(Boolean).join(" ")
+      : "";
+    const fieldName = labelText || firstInvalid.name || firstInvalid.id || "此欄位";
+    if (errorEl) {
+      errorEl.hidden = false;
+      errorEl.textContent = `有欄位格式不正確：${fieldName} — ${firstInvalid.validationMessage}`;
+    }
+    const clear = () => {
+      firstInvalid.classList.remove("field-invalid");
+      if (errorEl) { errorEl.hidden = true; errorEl.textContent = ""; }
+      firstInvalid.removeEventListener("input", clear);
+    };
+    firstInvalid.addEventListener("input", clear);
+  }, true);
+}
+
 function openCaseEditor(item = null) {
   editingCaseId = item?.id || null;
   document.querySelector("#caseDialogTitle").textContent = item ? `編輯 ${item.patientCode}` : "新增病例";
@@ -5523,15 +8705,25 @@ function openCaseEditor(item = null) {
     caseTitle: "",
     caseCategory: "",
     status: "active",
-    startDate: new Date().toISOString().slice(0, 10),
+    startDate: localDateISO(),
     birthYear: "",
     birthYearMonth: "",
     sex: "",
+    genderIdentity: "",
+    raceEthnicity: [],
+    raceEthnicityDetail: "",
+    onsetApprox: "",
+    chronicity: "",
+    coursePattern: "",
+    previousTreatment: [],
+    previousTreatmentNotes: "",
+    baselineSeverity: "",
     occupation: "",
     goals: "",
     chiefComplaint: "",
     historyPresent: "",
     pastHistory: "",
+    allergyStatus: "",
     allergies: "",
     currentMeds: "",
     menstrualObHistory: "",
@@ -5543,16 +8735,135 @@ function openCaseEditor(item = null) {
     summary: ""
   };
   const data = { ...fallback, ...(item || {}) };
+  renderRaceEthnicityOptions();                                    // build checkboxes from the bundled vocabulary before hydrating
+  const CHECKBOX_GROUP_FIELDS = new Set(["raceEthnicity", "previousTreatment"]);
   Object.entries(data).forEach(([key, value]) => {
+    if (CHECKBOX_GROUP_FIELDS.has(key)) return;                    // handled below — RadioNodeList.value is meaningless for checkboxes
     if (!caseForm.elements[key]) return;
     caseForm.elements[key].value = Array.isArray(value) ? value.join("、") : value;
   });
+  setCheckboxGroup(caseForm, "raceEthnicity", data.raceEthnicity);
+  setCheckboxGroup(caseForm, "previousTreatment", data.previousTreatment);
+  syncCaseCategoryQuickPick(data.caseCategory);                    // Phase 2: quick-select assist, caseCategory itself is still the stored field
+  setupCaseLinkAutocomplete();                                     // Phase 2: idempotent, reuses the SOAP chip-picker mechanism
+  Object.values(linkPickerControllers).forEach((c) => c.sync());   // rebuild chips from the values just hydrated above
+  if (caseSaveError) { caseSaveError.hidden = true; caseSaveError.textContent = ""; }
+  // FIX A — offer a draft back only if it belongs to the SAME target (this
+  // exact case being edited, or "new" for a fresh case) so a draft from a
+  // different case can never bleed into this one.
+  const caseDraftContext = editingCaseId || "new";
+  const caseDraft = readDraft(CASE_DRAFT_KEY);
+  if (caseDraft && caseDraft.context === caseDraftContext) {
+    renderDraftBanner(caseDraftBanner, caseDraft, () => {
+      restoreFormDraft(caseForm, caseDraft.fields);   // handles checkbox groups (raceEthnicity/previousTreatment) via setCheckboxGroup internally
+      Object.values(linkPickerControllers).forEach((c) => c.sync());
+      syncCaseCategoryQuickPick(caseForm.elements.caseCategory.value);
+      renderDraftBanner(caseDraftBanner, null);
+    }, () => {
+      clearDraft(CASE_DRAFT_KEY);
+      renderDraftBanner(caseDraftBanner, null);
+    });
+  } else {
+    renderDraftBanner(caseDraftBanner, null);
+  }
   caseDialog.showModal();
 }
 
+// Initial-intake Phase 2 (2026-08-09) — Category quick-pick ----------------
+// docs/CASE_SOAP_FLOW_REVIEW.md's 10 recommended routing tags. This is an
+// ASSIST control only: the stored field is still caseForm.elements.caseCategory
+// (plain text, unchanged shape/schema). Picking a quick option writes into
+// that text field; picking "Other / custom" or typing directly leaves it as
+// free text — old/uncommon categories are never lost or forced into the list.
+const CASE_CATEGORY_QUICK_VALUES = new Set([
+  "fertility", "pain", "digestive", "sleep", "stress_mood",
+  "respiratory", "gynecology", "dermatology", "internal_medicine", "general",
+]);
+
+function syncCaseCategoryQuickPick(currentCaseCategory) {
+  const quick = document.querySelector("#caseCategoryQuick");
+  if (!quick) return;
+  const val = String(currentCaseCategory || "").trim();
+  if (!val) quick.value = "";
+  else if (CASE_CATEGORY_QUICK_VALUES.has(val)) quick.value = val;
+  else quick.value = "__other__";                                  // legacy/custom value — shown as Other, left untouched in the text field
+  if (!quick.dataset.wired) {
+    quick.dataset.wired = "1";
+    quick.addEventListener("change", () => {
+      if (quick.value && quick.value !== "__other__") {
+        caseForm.elements.caseCategory.value = quick.value;
+      } else if (quick.value === "__other__") {
+        caseForm.elements.caseCategory.focus();
+      }
+    });
+  }
+}
+
+// Initial-intake Phase 2 (2026-08-09) — reuse the existing SOAP chip-picker
+// mechanism (enhanceLinkField/CS4) for the three Case-level baseline fields
+// that already hold canonical-id-shaped arrays (westernConditions/
+// easternDiseases/tcmPatterns — same splitList/join("、") shape as the SOAP
+// *Links fields). No new picker logic, no new vocabulary: same option
+// builders SOAP already uses. A legacy value that isn't a canonical id still
+// renders as its own chip (label falls back to the raw string) and is never
+// silently dropped — see docs/CASE_SOAP_FLOW_REVIEW.md's field notes.
+function setupCaseLinkAutocomplete() {
+  enhanceLinkField(caseForm, "westernConditions", westernConditionPickerOptions);
+  enhanceLinkField(caseForm, "easternDiseases", easternDiseasePickerOptions);
+  enhanceLinkField(caseForm, "tcmPatterns", patternPickerOptions);
+}
+
+// Initial-intake minimum dataset (2026-08-09) -------------------------------
+// Race/ethnicity checkboxes are rendered from data/config/demographic_vocabulary.json
+// (bundled as ACUTING_KNOWLEDGE.demographicVocabulary) instead of being
+// hard-coded in index.html, so the vocabulary can grow without a code change.
+// Idempotent: safe to call every time the case dialog opens.
+function renderRaceEthnicityOptions() {
+  const container = document.querySelector("#raceEthnicityOptions");
+  if (!container) return;
+  const options = globalThis.ACUTING_KNOWLEDGE?.demographicVocabulary?.race_ethnicity || [];
+  container.innerHTML = options.map((opt) => {
+    const label = modeText(`${opt.label_zh} ${opt.label_en}`, opt.label_en);
+    return `<label><input type="checkbox" name="raceEthnicity" value="${opt.id}" />${label}</label>`;
+  }).join("");
+}
+
+// Checkbox groups (repeated <input> sharing one `name`) don't hydrate through
+// the generic `form.elements[key].value = ...` loop above — RadioNodeList's
+// value setter is only meaningful for radio buttons. This checks the boxes
+// whose value is in `values`; every other box in the group is explicitly
+// unchecked so re-opening the dialog on a different case never leaks a
+// previous case's selections into the group.
+function setCheckboxGroup(form, name, values) {
+  const wanted = new Set((values || []).map(String));
+  form.querySelectorAll(`input[type="checkbox"][name="${name}"]`).forEach((cb) => {
+    cb.checked = wanted.has(cb.value);
+  });
+}
+
+// Initial-intake minimum dataset (2026-08-09): "" (not yet answered) and the
+// literal word "unknown" (asked, not known) are kept distinct on purpose —
+// both are legitimate, neither is a format error. D4: coarsen, never falsify.
+const ONSET_APPROX_RE = /^(\d{4}(-\d{2}(-\d{2})?)?|unknown)$/i;
+
 function saveCaseFromForm(event) {
   event.preventDefault();
-  const data = Object.fromEntries(new FormData(caseForm).entries());
+  const formData = new FormData(caseForm);
+  const data = Object.fromEntries(formData.entries());
+  const raceEthnicity = formData.getAll("raceEthnicity");
+  const previousTreatment = formData.getAll("previousTreatment");
+
+  const onsetApprox = (data.onsetApprox || "").trim();
+  if (onsetApprox && !ONSET_APPROX_RE.test(onsetApprox)) {
+    alert("大約發病時間格式須為 YYYY、YYYY-MM、YYYY-MM-DD 或 unknown（可留空）。");
+    return;
+  }
+  const baselineSeverityRaw = (data.baselineSeverity || "").trim();
+  if (baselineSeverityRaw && (!/^\d+$/.test(baselineSeverityRaw) || Number(baselineSeverityRaw) < 0 || Number(baselineSeverityRaw) > 10)) {
+    alert("初診基準嚴重度須為 0–10 的整數（可留空）。");
+    return;
+  }
+
   const now = new Date().toISOString();
   const current = clinicalCases.find((item) => item.id === editingCaseId);
   const nextCase = normalizeClinicalCase({
@@ -5566,11 +8877,21 @@ function saveCaseFromForm(event) {
     birthYearMonth: (data.birthYearMonth || "").trim(),
     birthYear: (data.birthYearMonth ? Number(String(data.birthYearMonth).slice(0, 4)) : data.birthYear),
     sex: (data.sex || "").trim(),
+    genderIdentity: (data.genderIdentity || "").trim(),
+    raceEthnicity,
+    raceEthnicityDetail: (data.raceEthnicityDetail || "").trim(),
+    onsetApprox,
+    chronicity: (data.chronicity || "").trim(),
+    coursePattern: (data.coursePattern || "").trim(),
+    previousTreatment,
+    previousTreatmentNotes: (data.previousTreatmentNotes || "").trim(),
+    baselineSeverity: baselineSeverityRaw === "" ? "" : Number(baselineSeverityRaw),
     occupation: (data.occupation || "").trim(),
     goals: (data.goals || "").trim(),
     chiefComplaint: data.chiefComplaint.trim(),
     historyPresent: (data.historyPresent || "").trim(),
     pastHistory: (data.pastHistory || "").trim(),
+    allergyStatus: (data.allergyStatus || "").trim(),
     allergies: (data.allergies || "").trim(),
     currentMeds: (data.currentMeds || "").trim(),
     menstrualObHistory: (data.menstrualObHistory || "").trim(),
@@ -5578,9 +8899,12 @@ function saveCaseFromForm(event) {
     westernConditions: splitList(data.westernConditions),
     easternDiseases: splitList(data.easternDiseases),
     tcmPatterns: splitList(data.tcmPatterns),
-    safetyFlags: splitList(data.safetyFlags),
+    safetyFlags: splitSafetyFlags(data.safetyFlags),   // FIX C: semicolon/newline split, not comma (Dry Clinic #3)
     summary: data.summary.trim(),
-    createdAt: current?.createdAt || now,
+    // HIGH#6 companion rule: an EXISTING record whose legacy createdAt is
+    // missing stays missing — stamping edit-time here would falsify creation
+    // time. Only a genuinely NEW record gets createdAt = now.
+    createdAt: current ? String(current.createdAt || "") : now,
     updatedAt: now,
     soapNotes: current?.soapNotes || []
   });
@@ -5590,20 +8914,43 @@ function saveCaseFromForm(event) {
     return;
   }
 
-  const duplicate = clinicalCases.find((item) => item.patientCode === nextCase.patientCode && item.id !== editingCaseId);
-  if (duplicate) {
-    alert("這個 patient code 已存在，請改用不同代碼。");
-    return;
+  // INDEPENDENT_AUDIT_2026-08-11 #2 / TOP-10 #2: patientCode is a
+  // Patient key, not a Case key (D5) — one patient legitimately opens
+  // multiple cases (a returning patient with a NEW chief complaint). The
+  // old hard block minted a false "already exists, use a different code"
+  // alert that pushed Ting toward inventing a second code for the same
+  // person — patientId = sha256(patientCode) (D1, irreversible), so a
+  // minted code permanently forks that patient's identity going forward.
+  // derivePatientsFromCases() (js/clinical-store.js:310) already groups
+  // cases by patientCode and was built for multi-case-per-code from C2a —
+  // this gate was the only place in app.js still assuming one-code-one-case
+  // (searched: no other patientCode equality check in app.js expects a
+  // single match). Same code, same patient → confirm, don't block.
+  const existingCasesForCode = clinicalCases.filter((item) => item.patientCode === nextCase.patientCode && item.id !== editingCaseId);
+  if (existingCasesForCode.length) {
+    const titles = existingCasesForCode.map((item) => item.caseTitle || item.patientCode).join("、");
+    const proceed = confirm(`此代碼已有 ${existingCasesForCode.length} 筆病例（${titles}）。要為同一位病人開新病例嗎？`);
+    if (!proceed) return;
   }
 
+  const snapshot = structuredClone(clinicalCases);
+  const prevSelectedCaseId = selectedCaseId;
   if (editingCaseId) {
     clinicalCases = clinicalCases.map((item) => item.id === editingCaseId ? nextCase : item);
   } else {
     clinicalCases = [nextCase, ...clinicalCases];
   }
   selectedCaseId = nextCase.id;
-  persistClinicalCases();
+  // R9 gate B: persist failure must not fire noteClinicalSave, close the
+  // dialog, or render — roll clinicalCases/selectedCaseId back and keep the
+  // form's input intact so the user can retry.
+  if (!persistClinicalCases()) {
+    clinicalCases = snapshot;
+    selectedCaseId = prevSelectedCaseId;
+    return;
+  }
   noteClinicalSave();   // CS1
+  clearDraft(CASE_DRAFT_KEY);   // FIX A: draft is only useful until a real save lands
   caseDialog.close();
   render();
 }
@@ -5611,12 +8958,94 @@ function saveCaseFromForm(event) {
 function deleteCurrentCase() {
   if (!editingCaseId) return;
   const item = clinicalCases.find((entry) => entry.id === editingCaseId);
+  // Codex NO-GO HIGH-2:含已定稿 AVS 的病例禁止 hard-delete —— 定稿文件是
+  // 交給過病人的歷史記錄,UI 沒有任何刪除它的路徑;真要銷毀走 Ting 明確
+  // 授權的災難流程(匯出備份 + 手動處理),不走這顆按鈕。
+  const finalizedAvsCount = (item?.soapNotes || [])
+    .reduce((n, note) => n + (note.avsSnapshots || []).filter((s) => s.status === "finalized" || s.status === "superseded").length, 0);
+  if (finalizedAvsCount) {
+    alert(`不可刪除:此病例有 ${finalizedAvsCount} 份已定稿/歷史 AVS 文件。\n定稿文件是不可變歷史;內容有誤請在該診 Checkout 建立更正版本。\n確要銷毀整筆病例,請先「立即匯出」備份並由 Ting 明確授權後手動處理。`);
+    return;
+  }
   if (!confirm(`確定刪除 ${item?.patientCode || "這筆病例"}？此動作會刪除其 SOAP notes。`)) return;
+  const snapshot = structuredClone(clinicalCases);
+  const prevSelectedCaseId = selectedCaseId;
   clinicalCases = clinicalCases.filter((entry) => entry.id !== editingCaseId);
   selectedCaseId = clinicalCases[0]?.id || "";
-  persistClinicalCases();
+  // R9 gate B: persist failure restores the deleted case in memory instead
+  // of closing the dialog on an unsaved deletion.
+  if (!persistClinicalCases()) {
+    clinicalCases = snapshot;
+    selectedCaseId = prevSelectedCaseId;
+    return;
+  }
   caseDialog.close();
   render();
+}
+
+// Last Visit at a Glance (2026-08-09, docs/SOAP_FOLLOWUP_TRACKING_AUDIT.md
+// §9 ranked item #3) — read-only reference only, never a data source. No new
+// storage: derived entirely from the case's existing soapNotes each time the
+// dialog opens.
+//
+// Ordering matches renderClinicalCaseDetail's own sort (visitDate then
+// visitNumber) so "previous" here means the same thing the SOAP Timeline
+// already shows, just ascending instead of descending.
+//
+//   - New visit (currentNoteId null): previous = the most recent existing
+//     visit in the case.
+//   - Editing visit N: previous = the visit immediately before N in
+//     chronological order — never N itself, never whatever happens to be
+//     newest in the case if that isn't N's actual predecessor.
+//   - Editing the earliest visit, or no visits yet: null (no previous).
+function findPreviousSoapNote(soapNotes, currentNoteId) {
+  const chrono = [...(soapNotes || [])].sort((a, b) => {
+    const d = String(a.visitDate || "").localeCompare(String(b.visitDate || ""));
+    if (d) return d;
+    return Number(a.visitNumber || 0) - Number(b.visitNumber || 0);
+  });
+  if (!currentNoteId) return chrono[chrono.length - 1] || null;
+  const idx = chrono.findIndex((n) => n.id === currentNoteId);
+  if (idx <= 0) return null;
+  return chrono[idx - 1];
+}
+
+function truncateText(text, maxLen) {
+  const s = String(text || "").trim();
+  if (!s) return "";
+  return s.length > maxLen ? s.slice(0, maxLen).trim() + "…" : s;
+}
+
+// Compact, read-only. Deliberately does NOT render the whole previous SOAP —
+// only the fields worth glancing at before writing today's note. Every row
+// except "Visit" is omitted when empty, so a sparse previous visit renders a
+// short panel rather than a wall of "—".
+function renderPreviousVisitPanel(note) {
+  const container = document.querySelector("#previousVisitPanel");
+  if (!container) return;
+  if (!note) {
+    container.innerHTML = `<p class="case-empty" style="margin:0;">尚無上一次就診紀錄 No previous visit yet.</p>`;
+    return;
+  }
+  const verdict = OUTCOME_VERDICTS[note.outcomeVerdict];
+  const pattern = formatPatternSelections(note.tcmPatternSelections) || note.tcmPattern || "";
+  const cells = [
+    ["就診 Visit", [note.visitNumber ? `Visit ${note.visitNumber}` : "", note.visitDate].filter(Boolean).join(" · ") || "—"],
+    ["S 主觀 Subjective", truncateText(note.subjective, 80)],
+    ["療效 Outcomes", truncateText(note.outcomes, 80)],
+    ["療效判定 Verdict", verdict ? `${verdict.zh} ${verdict.en}` : ""],
+    ...formatNumericOutcomeMetrics(note),
+    ["證型 Pattern", pattern],
+    ["治法 Tx principle", note.treatmentPrinciple || ""],
+    ["用穴 Points", formatNoteList(note.acupointLinks, "")],
+    ["方藥 Formula", formatNoteList(note.formulaLinks, "")],
+    ["手法 Modalities", note.modalities || ""],
+    ["醫囑 Advice", truncateText(note.advice, 60)],
+    ["下次計畫 Follow-up", truncateText(note.followUp, 60)],
+  ].filter(([, value]) => value);
+  container.innerHTML = `<div class="clinical-mini-grid">${cells.map(([label, value]) =>
+    `<div><small>${escapeHtml(label)}</small><span>${escapeHtml(value)}</span></div>`
+  ).join("")}</div>`;
 }
 
 function openSoapEditor(note = null) {
@@ -5628,8 +9057,18 @@ function openSoapEditor(note = null) {
   editingSoapId = note?.id || null;
   document.querySelector("#soapDialogTitle").textContent = note ? "編輯 SOAP Note" : `新增 SOAP - ${activeCase.patientCode}`;
   deleteSoapBtn.hidden = !note;
+  renderPreviousVisitPanel(findPreviousSoapNote(activeCase.soapNotes, editingSoapId));
+  // 週期/生殖區(2026-08-11 Ting 指正):sex at birth = M 整段隱藏 —— 但
+  // 若編輯中的舊 note 已有值,仍顯示且展開(已存在的資料絕不隱形,D4)。
+  // F / Other / 未填(不假設)保留,預設收合;有值必展開。
+  const cycleSection = document.getElementById("soapCycleSection");
+  if (cycleSection) {
+    const hasCycleData = !!(note && (note.cycleDay || note.cyclePhase || note.fertilityPhase || note.workflowLink));
+    cycleSection.hidden = activeCase.sex === "M" && !hasCycleData;
+    cycleSection.open = hasCycleData;
+  }
   const fallback = {
-    visitDate: new Date().toISOString().slice(0, 10),
+    visitDate: localDateISO(),
     visitNumber: activeCase.soapNotes.length + 1,
     cycleDay: "",
     fertilityPhase: "",
@@ -5647,8 +9086,10 @@ function openSoapEditor(note = null) {
     westernConditionLinks: [],
     easternDiseaseLinks: [],
     tcmPatternLinks: [],
+    tcmPatternSelections: [],
     safetyFlagLinks: [],
     subjective: "",
+    symptomLinks: [],
     objective: "",
     assessment: "",
     plan: "",
@@ -5658,32 +9099,306 @@ function openSoapEditor(note = null) {
     technique: "",
     formulaHerbs: "",
     formulaLinks: [],
+    herbLinks: [],
     westernMeds: "",
     medicationLinks: [],
     outcomes: "",
     outcomeMetricLinks: [],
     outcomeVerdict: "",
+    outcomeMetrics: [],
+    lifestyleFactors: [],
+    adverseEvents: [],
+    effectDurationDays: "",
+    referralOrSupervisorQuestion: "",
     followUp: "",
     differentialConsidered: "",
     reflection: "",
-    ifIneffectivePlan: ""
+    ifIneffectivePlan: "",
+    modalitiesPerformed: []
   };
   const data = { ...fallback, ...(note || {}) };
+  // AVS v3 Phase C:modality.* checkbox 群組先渲染再水合(與 case form 的
+  // raceEthnicity 同款作法)—— checkbox 群組不能走下面的 .value 泛用迴圈。
+  renderModalitiesPerformedOptions();
   Object.entries(data).forEach(([key, value]) => {
+    if (key === "modalitiesPerformed") return;   // checkbox group,下面 setCheckboxGroup 處理
     if (!soapForm.elements[key]) return;
     soapForm.elements[key].value = Array.isArray(value) ? value.join("、") : value;
   });
+  setCheckboxGroup(soapForm, "modalitiesPerformed", data.modalitiesPerformed);
+  // Metadata-driven numeric outcome metrics: one generic render instead of
+  // per-metric hydration ifs. Inputs are UI-only (no soap_notes.painScore/
+  // sleepHours key exists — they read/write through data.outcomeMetrics).
+  // Passed the whole `data`, not just data.outcomeMetrics: effect_duration_days
+  // needs data.effectDurationDays too, for the legacy-field fallback/conflict
+  // check (resolveNumericMetricValue).
+  renderNumericOutcomeMetricInputs(data);
+  // D17 §6/§4 — visit-level Lifestyle / Adverse events repeatable rows.
+  // Rebuilt every open, same as renderNumericOutcomeMetricInputs above: for
+  // an existing note this hydrates from data.lifestyleFactors/adverseEvents;
+  // for a new note both render as an empty list of rows.
+  renderLifestyleFactorRows(data.lifestyleFactors);
+  renderAdverseEventRows(data.adverseEvents);
+  renderPatternDifferentialRows(data.patternDifferentials);
+  // TCM pattern primary/secondary: same reasoning — tcmPatternPrimary and
+  // tcmPatternSecondary are UI-only form fields, no such keys exist on the
+  // note object itself (the note holds tcmPatternSelections instead).
+  if (soapForm.elements.tcmPatternPrimary) {
+    const primaryEntry = (data.tcmPatternSelections || []).find((e) => e.isPrimary);
+    soapForm.elements.tcmPatternPrimary.value = primaryEntry ? primaryEntry.patternId : "";
+  }
+  if (soapForm.elements.tcmPatternSecondary) {
+    soapForm.elements.tcmPatternSecondary.value = (data.tcmPatternSelections || [])
+      .filter((e) => !e.isPrimary)
+      .map((e) => e.patternId)
+      .join("、");
+  }
   setupLinkAutocomplete();                                   // CS4: idempotent
   Object.values(linkPickerControllers).forEach((c) => c.sync());  // rebuild chips from hydrated values
+  // P1 pre-visit paste-import (docs/P1_PREVISIT_INTAKE_CONTRACT_v0.md §6.2):
+  // patientPerspective has no form field yet, so a pasted intake stashes it
+  // here (soapForm.dataset), read by saveSoapFromForm below. Reset on every
+  // open so a stash from a PREVIOUS note/dialog session can never leak into
+  // an unrelated save — openSoapEditor is the one place every dialog open
+  // (new note or edit) passes through.
+  delete soapForm.dataset.previsitPatientPerspective;
+  if (soapSaveError) { soapSaveError.hidden = true; soapSaveError.textContent = ""; }
+  // FIX A — context is caseId+noteId (or "new") so a draft is only ever
+  // offered back for the SAME visit being edited, never a different case or
+  // a different SOAP note within the same case.
+  const soapDraftContext = `${selectedCaseId || ""}:${editingSoapId || "new"}`;
+  const soapDraft = readDraft(SOAP_DRAFT_KEY);
+  if (soapDraft && soapDraft.context === soapDraftContext) {
+    renderDraftBanner(soapDraftBanner, soapDraft, () => {
+      restoreFormDraft(soapForm, soapDraft.fields);
+      Object.values(linkPickerControllers).forEach((c) => c.sync());
+      renderDraftBanner(soapDraftBanner, null);
+    }, () => {
+      clearDraft(SOAP_DRAFT_KEY);
+      renderDraftBanner(soapDraftBanner, null);
+    });
+  } else {
+    renderDraftBanner(soapDraftBanner, null);
+  }
   soapDialog.showModal();
+}
+
+// P1 pre-visit intake paste-import (docs/P1_PREVISIT_INTAKE_CONTRACT_v0.md
+// §4 validation rules, §6.2 integration). Whole payload rejected on ANY
+// violation — never partial-apply a half-valid intake (contract: "非法整筆
+// 拒收並顯示原因"). metricId whitelist is NUMERIC_OUTCOME_METRIC_CONFIG
+// itself — the exact same config the SOAP form's own numeric metric inputs
+// already render from (declared near the top of this file) — one shared
+// source of truth, never a second copy that could drift out of sync.
+// P1 payload shape 驗證 —— 委派給共用模組 js/previsit-validator.js。
+// Codex P1 retest MED-4/HIGH-1 根因:這裡與 CLI validator 各有一份規則,
+// 兩份漂移(app 把非陣列 metrics 靜默降成 []、CLI 正確拒收),而 blocking
+// self-test 只跑 CLI 那份,漂移在全綠底下存活。現在 shape 規則只有一份,
+// app / CLI / self-test 跑的是同一段程式碼,漂移在結構上不可能。
+// import 端三道硬規則(patientCode 比對 / 過期 / 重放)仍在
+// pastePrevisitImport —— 那些需要目前開啟病例與 session 狀態,不屬 shape 層。
+function validatePrevisitPayload(raw) {
+  const V = globalThis.AcuTingPrevisitValidator;
+  // fail-loud:模組沒載入就整筆拒收。靜默退回較弱的內建驗證 = 把安全 gate
+  // 變成「載入失敗時自動關閉」,那正是這次修復要消滅的類別。
+  if (!V || typeof V.validatePrevisitShape !== "function") {
+    return { error: "診前資料驗證模組(js/previsit-validator.js)未載入,拒絕匯入。Validator module not loaded — import refused." };
+  }
+  const result = V.validatePrevisitShape(raw, {
+    metricConfig: NUMERIC_OUTCOME_METRIC_CONFIG,
+    registryHas: (id) => !!getOutcomeMetricDef(id),
+    labelOf: (id) => outcomeMetricShortLabel(id)
+  });
+  if (!result.ok) return { error: result.errors[0] };
+  return { data: result.data };
+}
+
+// Click handler for #pastePrevisitBtn. Prompts for pasted JSON, validates
+// it (reject-whole-payload-on-any-violation, above), then PREFILLS form
+// fields only — never writes clinicalCases/localStorage directly (contract
+// §1: "病人裝置絕不直寫任何 store"; this function runs on the CLINICIAN's
+// device, but the same rule applies here as a save-path discipline: the
+// clinician still has to review every field and press Save, same as if
+// they'd typed everything by hand). outcomeMetrics inputs are the SAME
+// <input name="metric.xxx"> elements renderNumericOutcomeMetricInputs
+// already rendered for this open dialog, so setting .value here is exactly
+// what a clinician typing into them by hand would produce — saveSoapFromForm
+// re-validates them again at save time regardless (computeNumericOutcomeMetrics),
+// so a stale/tampered clipboard value can never bypass that check.
+function pastePrevisitImport() {
+  const raw = prompt(
+    "貼上診前資料 JSON（病人手機頁產生的內容）\nPaste the pre-visit intake JSON (generated on the patient's phone):",
+    ""
+  );
+  if (raw == null) return;   // cancelled
+  const trimmed = raw.trim();
+  if (!trimmed) return;
+
+  const result = validatePrevisitPayload(trimmed);
+  if (result.error) {
+    alert(`診前資料格式不正確，整筆拒收：\n${result.error}`);
+    return;
+  }
+  const data = result.data;
+
+  // SOL P1 transport review(2026-08-12)硬規則,順序:比對 → 過期 → 重放。
+  // 1. patientCode 硬比對:與目前開啟病例逐字相等,錯一個字就整筆拒收
+  //    (不是提醒)—— wrong-patient prefill 是這條動線最危險的錯誤。
+  const openCase = clinicalCases.find((c) => c.id === selectedCaseId);
+  if (!openCase || data.patientCode !== openCase.patientCode) {
+    alert(`診前資料拒收:payload 的 patientCode「${data.patientCode}」與目前開啟病例「${openCase ? openCase.patientCode : "(無)"}」不一致。\n請先開啟正確病人的病例再匯入。Rejected — patientCode does not match the open case.`);
+    return;
+  }
+  // 2. 過期/未來時間 → 人工覆核(confirm),不是靜默接受:診前資料超過 72
+  //    小時通常已不是「這次就診」的狀態;未來時間代表裝置時鐘或 payload 有問題。
+  const PREVISIT_MAX_AGE_MS = 72 * 60 * 60 * 1000;
+  if (data.filledAt) {
+    const age = Date.now() - Date.parse(data.filledAt);
+    if (age > PREVISIT_MAX_AGE_MS || age < -(10 * 60 * 1000)) {
+      const ok = window.confirm(`⚠️ 診前資料填寫時間為 ${data.filledAt},${age < 0 ? "在未來(裝置時鐘異常?)" : "已超過 72 小時"}。\n內容可能不反映今日狀態 —— 確定仍要匯入並逐欄覆核?`);
+      if (!ok) return;
+    }
+  } else {
+    const ok = window.confirm("⚠️ 這份診前資料沒有填寫時間戳(舊版頁面產物?)。確定仍要匯入並逐欄覆核?");
+    if (!ok) return;
+  }
+  // 3. 重放防護:同一 payloadId 本次開機期間只接受一次;重複匯入需明確確認。
+  //    (跨 session 重放由 72h 過期規則涵蓋;不為此開新的持久層。)
+  window.__previsitImportedIds = window.__previsitImportedIds || new Set();
+  if (data.payloadId) {
+    if (window.__previsitImportedIds.has(data.payloadId)) {
+      const ok = window.confirm("⚠️ 這份診前資料(相同 payloadId)本次已匯入過。重複匯入會再次覆蓋表單欄位 —— 確定?");
+      if (!ok) return;
+    }
+    window.__previsitImportedIds.add(data.payloadId);
+  }
+  const filledLabels = [];
+
+  data.metrics.forEach((m) => {
+    if (soapForm.elements[m.metricId]) {
+      soapForm.elements[m.metricId].value = m.valueNumber;
+      filledLabels.push(outcomeMetricShortLabel(m.metricId));
+    }
+  });
+
+  // No dedicated AE/exposure form fields to prefill into yet (contract §2
+  // items 4-5: clinician confirmation turns these into adverseEvents[] /
+  // an applyExposureChange event manually, never automatically) — surfaced
+  // as clearly-labeled text in Subjective, the existing free-text catch-all
+  // field, rather than silently dropped.
+  const extraBlocks = [];
+  if (data.subjectiveText) extraBlocks.push(`[診前自填 Pre-visit self-report] ${data.subjectiveText}`);
+  if (data.aeSelfReport.any) extraBlocks.push(`[診前自報：不良反應 Pre-visit AE self-report] ${data.aeSelfReport.text || "（未描述 no description given）"}`);
+  if (data.exposureSelfReport.any) extraBlocks.push(`[診前自報：藥物/補品變動 Pre-visit medication/supplement change] ${data.exposureSelfReport.text || "（未描述 no description given）"}`);
+  if (extraBlocks.length && soapForm.elements.subjective) {
+    const existing = soapForm.elements.subjective.value.trim();
+    soapForm.elements.subjective.value = extraBlocks.join("\n") + (existing ? `\n\n${existing}` : "");
+    filledLabels.push("主觀 Subjective（已加在最前面 prefixed）");
+  }
+
+  if (data.patientPerspective) {
+    // Stashed on the form, not on any note object — saveSoapFromForm reads
+    // and consumes this exactly once (see its patientPerspective line).
+    soapForm.dataset.previsitPatientPerspective = data.patientPerspective;
+    filledLabels.push("病人視角 Patient perspective（存於表單，按儲存時併入 stashed — merged in when you press Save）");
+  }
+
+  alert(filledLabels.length
+    ? `已預填以下欄位，請逐項確認後再按「儲存」：\nThe following fields were prefilled — please review each one before pressing Save:\n\n${filledLabels.join("\n")}`
+    : "貼上的資料沒有可預填的內容（六項指標皆為空、且無文字欄位）。Nothing to prefill — every field in the pasted data was empty.");
 }
 
 function saveSoapFromForm(event) {
   event.preventDefault();
   const activeCase = clinicalCases.find((item) => item.id === selectedCaseId);
   if (!activeCase) return;
-  const data = Object.fromEntries(new FormData(soapForm).entries());
+  const soapFormData = new FormData(soapForm);
+  const data = Object.fromEntries(soapFormData.entries());
+  // AVS v3 Phase C:checkbox 群組要用 getAll —— fromEntries 只留最後一個值。
+  const modalitiesPerformed = soapFormData.getAll("modalitiesPerformed");
   const current = activeCase.soapNotes.find((note) => note.id === editingSoapId);
+  // P1 pre-visit paste-import: consume the stash exactly once, at the one
+  // authorized save path (pastePrevisitImport itself never writes
+  // clinicalCases/localStorage — see that function's comment).
+  //
+  // Codex P1 retest HIGH-3:過去在這裡就 read-then-delete,但這一行之後還有
+  // duplicate-visit 檢查、metric 重驗、以及 persist —— 任何一個提早 return
+  // 都會讓 dialog 仍開著、stash 卻已消失,醫師再按一次儲存時病人的原話已經
+  // 靜默不見。改成:此處只 READ;**只有 persist 成功後才 delete**(見本函式
+  // 末端),失敗路徑上 stash 原封不動,重試仍帶得回病人原話。
+  // 一次性語義由「成功後刪除」+ openSoapEditor 每次開啟的 reset 共同保證。
+  const previsitPerspective = soapForm.dataset.previsitPatientPerspective || "";
+
+  // SOAP/Follow-up audit (2026-08-09): visit numbers are meant to be unique
+  // per case (the timeline, "上次" comparisons, and CG8's future Baseline/
+  // Today columns all key off visitNumber). The field has always been a
+  // plain editable number with no check — same class of gap as the
+  // patientCode duplicate guard already had before it was added.
+  const visitNumberRaw = (data.visitNumber || "").trim();
+  if (visitNumberRaw) {
+    const dupe = activeCase.soapNotes.find((note) => note.id !== editingSoapId && String(note.visitNumber) === visitNumberRaw);
+    if (dupe) {
+      alert(`Visit #${visitNumberRaw} 在這個病例裡已經用過了（${dupe.visitDate || "無日期"}）。請確認就診次數。`);
+      return;
+    }
+  }
+  // Metadata-driven numeric outcome metrics (metric.pain_score,
+  // metric.sleep_hours, metric.effect_duration_days). Reject, never coerce
+  // — config-driven per-metric shape/range check, same rules the hand-
+  // written blocks enforced (pain: integer 0-10; sleep: non-negative
+  // decimal; effect duration: non-negative integer, same as its old
+  // dedicated block) but expressed once in NUMERIC_OUTCOME_METRIC_CONFIG.
+  // legacyClears realizes "one fact, one home": saving any note blanks
+  // effectDurationDays going forward, because outcomeMetrics[] just became
+  // this save's source of truth for it (merged into normalizeSoapNote()
+  // below — an explicit key always wins over the `...current` spread).
+  const numericMetricsResult = computeNumericOutcomeMetrics(data, current?.outcomeMetrics || []);
+  if (numericMetricsResult.error) {
+    alert(numericMetricsResult.error);
+    return;
+  }
+  const outcomeMetrics = numericMetricsResult.metrics;
+  const legacyMetricClears = numericMetricsResult.legacyClears;
+
+  // D17 §6/§4 — lifestyleFactors[] / adverseEvents[] from the repeatable row
+  // widgets. openSoapEditor always renders these containers (even to an
+  // empty row list) before the dialog opens, so their presence in the DOM
+  // here is reliable — but the guard below is the literal backstop the
+  // SPRINT brief asks for: only overwrite the saved array when the
+  // container actually rendered rows this session, never fall back to []
+  // just because the section markup is (for any future reason) absent.
+  const lifestyleRowsContainer = document.querySelector("#lifestyleFactorRows");
+  const adverseEventRowsContainer = document.querySelector("#adverseEventRows");
+  const lifestyleFactors = lifestyleRowsContainer ? collectLifestyleFactorRows() : (current?.lifestyleFactors || []);
+  const adverseEvents = adverseEventRowsContainer ? collectAdverseEventRows() : (current?.adverseEvents || []);
+  const patternDifferentialRowsContainer = document.querySelector("#patternDifferentialRows");
+  const patternDifferentials = patternDifferentialRowsContainer ? collectPatternDifferentialRows() : (current?.patternDifferentials || []);
+
+  // TCM pattern primary/secondary reconciliation. The excludeValues live
+  // filter (setupLinkAutocomplete) already keeps the current primary out of
+  // the secondary picker's search results, but this is the save-time
+  // backstop that guarantees the invariant regardless of how the two
+  // textareas actually ended up — "a pattern is never both at once" holds
+  // even if something bypassed the live UI.
+  const tcmPrimaryId = (data.tcmPatternPrimary || "").trim();
+  const tcmSecondaryIds = splitList(data.tcmPatternSecondary || "").filter((id) => id && id !== tcmPrimaryId);
+  // D17 §4: the primary/secondary pickers ARE the role semantics, so role is
+  // recorded from the same source as isPrimary (faithful recording, not
+  // inference) — which also keeps the role⇔isPrimary agreement invariant
+  // automatically. confidence has no form field yet, so it is CARRIED OVER
+  // from the current note's entry for the same patternId rather than being
+  // silently stripped by this rebuild.
+  const priorSelection = (patternId) =>
+    (current?.tcmPatternSelections || []).find((e) => e.patternId === patternId) || {};
+  const priorConfidence = (patternId) => priorSelection(patternId).confidence || "";
+  const priorNote = (patternId) => priorSelection(patternId).note || "";
+  const tcmPatternSelections = [
+    ...(tcmPrimaryId ? [{ patternId: tcmPrimaryId, isPrimary: true, role: "primary", confidence: priorConfidence(tcmPrimaryId), note: priorNote(tcmPrimaryId) }] : []),
+    ...tcmSecondaryIds.map((id) => ({ patternId: id, isPrimary: false, role: "secondary", confidence: priorConfidence(id), note: priorNote(id) })),
+  ];
+  // Derived, not typed — see the tcmPatternLinks comment in normalizeSoapNote.
+  const tcmPatternLinksDerived = tcmPatternSelections.map((e) => e.patternId);
+
   const now = new Date().toISOString();
   const nextNote = normalizeSoapNote({
     ...(current || {}),
@@ -5702,12 +9417,15 @@ function saveSoapFromForm(event) {
     pathomechanism: (data.pathomechanism || "").trim(),
     treatmentPrinciple: (data.treatmentPrinciple || "").trim(),
     modalities: (data.modalities || "").trim(),
+    modalitiesPerformed,
     advice: (data.advice || "").trim(),
     westernConditionLinks: splitList(data.westernConditionLinks),
     easternDiseaseLinks: splitList(data.easternDiseaseLinks),
-    tcmPatternLinks: splitList(data.tcmPatternLinks),
+    tcmPatternSelections,
+    tcmPatternLinks: tcmPatternLinksDerived,
     safetyFlagLinks: splitList(data.safetyFlagLinks),
     subjective: data.subjective.trim(),
+    symptomLinks: splitList(data.symptomLinks),
     objective: data.objective.trim(),
     assessment: data.assessment.trim(),
     plan: data.plan.trim(),
@@ -5717,19 +9435,37 @@ function saveSoapFromForm(event) {
     technique: data.technique.trim(),
     formulaHerbs: data.formulaHerbs.trim(),
     formulaLinks: splitList(data.formulaLinks),
+    herbLinks: splitList(data.herbLinks),
     westernMeds: data.westernMeds.trim(),
     medicationLinks: splitList(data.medicationLinks),
     outcomes: data.outcomes.trim(),
     outcomeMetricLinks: splitList(data.outcomeMetricLinks),
     outcomeVerdict: data.outcomeVerdict || "",
+    outcomeMetrics,
+    lifestyleFactors,
+    adverseEvents,
+    ...legacyMetricClears,
+    referralOrSupervisorQuestion: (data.referralOrSupervisorQuestion || "").trim(),
     followUp: data.followUp.trim(),
     differentialConsidered: (data.differentialConsidered || "").trim(),
+    patternDifferentials,
     reflection: (data.reflection || "").trim(),
     ifIneffectivePlan: (data.ifIneffectivePlan || "").trim(),
-    createdAt: current?.createdAt || now,
+    // P1 pre-visit paste-import (docs/P1_PREVISIT_INTAKE_CONTRACT_v0.md §6.2):
+    // no form field exists for this yet (see the field's own comment in
+    // normalizeSoapNote), so a pasted value only ever reaches this note via
+    // the stash read above. Falls back to whatever this note already had —
+    // a save with no paste this session must never blank out a
+    // patientPerspective that was set some other way.
+    patientPerspective: previsitPerspective || (current?.patientPerspective || ""),
+    // HIGH#6 companion rule: an EXISTING record whose legacy createdAt is
+    // missing stays missing — stamping edit-time here would falsify creation
+    // time. Only a genuinely NEW record gets createdAt = now.
+    createdAt: current ? String(current.createdAt || "") : now,
     updatedAt: now
   });
 
+  const snapshot = structuredClone(clinicalCases);
   clinicalCases = clinicalCases.map((item) => {
     if (item.id !== selectedCaseId) return item;
     const notes = editingSoapId
@@ -5737,33 +9473,500 @@ function saveSoapFromForm(event) {
       : [...item.soapNotes, nextNote];
     return { ...item, soapNotes: notes, updatedAt: now };
   });
-  persistClinicalCases();
+  // R9 gate B: persist failure must not fire noteClinicalSave, close the
+  // dialog, or render — roll back and keep the form's input intact.
+  if (!persistClinicalCases()) { clinicalCases = snapshot; return; }
+  // Codex P1 retest HIGH-3:病人原話的 stash 只在存檔真的落盤後才清除。
+  // 在此之前的任何 return(重複 visit number、metric 重驗失敗、persist 失敗)
+  // 都保留 stash,醫師重試時仍帶得回病人原話。
+  delete soapForm.dataset.previsitPatientPerspective;
   noteClinicalSave();   // CS1
+  clearDraft(SOAP_DRAFT_KEY);   // FIX A: draft is only useful until a real save lands
   soapDialog.close();
   render();
 }
 
 function deleteCurrentSoap() {
   if (!editingSoapId) return;
+  // Codex NO-GO HIGH-2(取代原「警告後仍可刪」版本):含已定稿 AVS 的 Visit
+  // 禁止 hard-delete。定稿 AVS 是交給過病人的歷史文件,append-only;要修正
+  // 走更正版本(supersede),要銷毀走 Ting 明確授權的災難流程,不走這顆按鈕。
+  const doomedNote = clinicalCases.find((item) => item.id === selectedCaseId)?.soapNotes.find((n) => n.id === editingSoapId);
+  const finalizedCount = (doomedNote?.avsSnapshots || []).filter((s) => s.status === "finalized" || s.status === "superseded").length;
+  if (finalizedCount) {
+    alert(`不可刪除:此診有 ${finalizedCount} 份已定稿/歷史 AVS 文件。\n內容有誤請在 Checkout 建立更正版本(舊版會標 superseded、永久保留)。\n確要銷毀請先「立即匯出」備份並由 Ting 明確授權後手動處理。`);
+    return;
+  }
   if (!confirm("確定刪除這筆 SOAP note？")) return;
+  const snapshot = structuredClone(clinicalCases);
   clinicalCases = clinicalCases.map((item) => {
     if (item.id !== selectedCaseId) return item;
     return { ...item, soapNotes: item.soapNotes.filter((note) => note.id !== editingSoapId), updatedAt: new Date().toISOString() };
   });
-  persistClinicalCases();
+  // R9 gate B: persist failure restores the deleted SOAP note in memory
+  // instead of closing the dialog on an unsaved deletion.
+  if (!persistClinicalCases()) { clinicalCases = snapshot; return; }
   soapDialog.close();
   render();
 }
 
+// ======================  AVS v3 — Visit Checkout  ==========================
+// (AVS_V3_VISIT_CHECKOUT_INTEGRATION_PLAN,2026-08-11)
+// 分工:狀態機/媒合/病人輸出渲染在 js/avs.js(零 DOM、node 可測);這裡只
+// 做 Checkout UI 與持久化。snapshot 唯一落盤路徑 = persistAvsSnapshots()
+// (失敗回滾,同 R9 gate B 模式)。病人可見輸出在預覽與定稿兩處都過
+// checkPatientOutputSafety 零診斷自檢,命中即 abort。
+
+// (宣告已前移至檔頭 boot-order 區 —— 見 AGENT_EXPOSURE_TYPE_LABELS 註解)
+
+let avsCheckoutNoteId = null;
+let avsWorkingDraft = null;   // 編輯中 draft(in-memory;儲存草稿/定稿才落盤)
+
+function avsStatusBadge(note) {
+  const snaps = note.avsSnapshots || [];
+  if (!window.AcuTingAVS || !snaps.length) return "";
+  if (AcuTingAVS.currentDraft(snaps)) return `<span class="avs-badge avs-badge-draft">AVS 草稿</span>`;
+  if (AcuTingAVS.latestFinalized(snaps)) return `<span class="avs-badge avs-badge-final">AVS ✓</span>`;
+  return "";
+}
+
+// SOAP 表單的 modality.* checkbox 群組(Phase C)—— 與 raceEthnicity 同款:
+// 由 bundled vocabulary 渲染,詞彙成長不再改 index.html。冪等。
+function renderModalitiesPerformedOptions() {
+  const container = document.querySelector("#modalitiesPerformedOptions");
+  if (!container) return;
+  const records = globalThis.ACUTING_KNOWLEDGE?.modalityVocabulary?.records || [];
+  container.innerHTML = records.map((r) =>
+    `<label><input type="checkbox" name="modalitiesPerformed" value="${escapeAttribute(r.id)}" />${escapeHtml(`${r.name_zh} ${r.name_en}`)}</label>`
+  ).join("");
+}
+
+function avsCheckoutContext() {
+  const kase = clinicalCases.find((item) => item.id === selectedCaseId);
+  const note = kase ? kase.soapNotes.find((n) => n.id === avsCheckoutNoteId) : null;
+  return { kase, note };
+}
+
+function avsAgentNameOf(agentId) {
+  if (!agentId) return null;
+  const k = globalThis.ACUTING_KNOWLEDGE || {};
+  for (const pool of [k.formulas, k.supplementRecords, k.pharmDrugs, k.medications]) {
+    const rec = ((pool && pool.records) || []).find((r) => r.id === agentId);
+    if (rec) return rec.name_zh || rec.name_en || null;
+  }
+  return null;
+}
+
+function buildAvsDraftFor(kase, note, version) {
+  return AcuTingAVS.buildDraftSnapshot({
+    kase,
+    note,
+    library: globalThis.ACUTING_KNOWLEDGE?.avsAdviceLibrary?.records || [],
+    clinic: globalThis.ACUTING_KNOWLEDGE?.clinicProfile || {},
+    modalityVocabulary: globalThis.ACUTING_KNOWLEDGE?.modalityVocabulary?.records || [],
+    outcomeMetricDefs: globalThis.ACUTING_KNOWLEDGE?.outcomeMetrics?.records || [],
+    nameOfAgent: avsAgentNameOf,
+    version
+  });
+}
+
+function openAvsCheckout(noteId) {
+  if (!window.AcuTingAVS) { alert("AVS 引擎未載入(js/avs.js)。"); return; }
+  avsCheckoutNoteId = noteId;
+  const { kase, note } = avsCheckoutContext();
+  if (!kase || !note) return;
+  const snaps = note.avsSnapshots || [];
+  const persisted = AcuTingAVS.currentDraft(snaps);
+  // 有 draft → 載入編輯;無 draft 也無 finalized → 依 §3 Step 3 產生草稿
+  // (draft 無副作用,不落盤;絕不自動定稿)。有 finalized 無 draft → 檢視模式。
+  avsWorkingDraft = persisted
+    ? structuredClone(persisted)
+    : (AcuTingAVS.latestFinalized(snaps) ? null : buildAvsDraftFor(kase, note));
+  const dialog = document.querySelector("#avsCheckoutDialog");
+  const closeBtn = document.querySelector("#closeAvsCheckout");
+  if (closeBtn && !closeBtn.dataset.wired) {
+    closeBtn.dataset.wired = "1";
+    closeBtn.addEventListener("click", () => dialog.close());
+  }
+  renderAvsCheckout();
+  dialog.showModal();
+}
+
+// 把 DOM 編輯狀態收回 avsWorkingDraft(勾選/改字/自訂/回診/觀察題)。
+function collectAvsDraftFromDom() {
+  const body = document.querySelector("#avsCheckoutBody");
+  if (!body || !avsWorkingDraft) return;
+  body.querySelectorAll("[data-avs-sel]").forEach((cb) => {
+    const row = avsWorkingDraft.renderedAdvice[Number(cb.dataset.avsSel)];
+    if (row) row.selected = cb.checked;
+  });
+  body.querySelectorAll("[data-avs-text]").forEach((ta) => {
+    const row = avsWorkingDraft.renderedAdvice[Number(ta.dataset.avsText)];
+    if (row) row.text_zh = ta.value;
+  });
+  body.querySelectorAll("[data-avs-custom-text]").forEach((ta) => {
+    const row = avsWorkingDraft.clinicianAddedAdvice[Number(ta.dataset.avsCustomText)];
+    if (row) row.text_zh = ta.value;
+  });
+  body.querySelectorAll("[data-avs-custom-cat]").forEach((sel) => {
+    const row = avsWorkingDraft.clinicianAddedAdvice[Number(sel.dataset.avsCustomCat)];
+    if (row) row.category = sel.value;
+  });
+  const followUp = body.querySelector("[data-avs-followup]");
+  if (followUp) avsWorkingDraft.followUpSnapshot = followUp.value.trim();
+  const keptPrompts = [];
+  body.querySelectorAll("[data-avs-watch]").forEach((cb) => {
+    if (cb.checked) keptPrompts.push(avsWorkingDraft.patientObservationPromptsSnapshot[Number(cb.dataset.avsWatch)]);
+  });
+  if (body.querySelector("[data-avs-watch]") || !avsWorkingDraft.patientObservationPromptsSnapshot.length) {
+    avsWorkingDraft.patientObservationPromptsSnapshot = keptPrompts.filter(Boolean);
+  }
+}
+
+// snapshot 唯一落盤路徑:換掉該 Visit 的 avsSnapshots,persist 失敗回滾
+// (storage 失敗絕不假裝已存 —— persistClinicalCases 已大聲告知)。
+function persistAvsSnapshots(nextSnaps) {
+  const backup = structuredClone(clinicalCases);
+  const now = new Date().toISOString();
+  clinicalCases = clinicalCases.map((item) => {
+    if (item.id !== selectedCaseId) return item;
+    return {
+      ...item,
+      updatedAt: now,
+      soapNotes: item.soapNotes.map((n) => n.id === avsCheckoutNoteId ? { ...n, avsSnapshots: nextSnaps } : n)
+    };
+  });
+  if (!persistClinicalCases()) { clinicalCases = backup; return false; }
+  return true;
+}
+
+function avsOpenWindow(html, autoPrint) {
+  const w = window.open("", "_blank");
+  if (!w) { alert("瀏覽器阻擋了彈出視窗,請允許此網站的彈出視窗後再試。"); return; }
+  w.document.open();
+  w.document.write(html);
+  w.document.close();
+  if (autoPrint) setTimeout(() => { try { w.print(); } catch (e) { /* 使用者可自行列印 */ } }, 300);
+}
+
+// 檢視/預覽共用:渲染 + 零診斷自檢(§2.2)。命中 = abort,絕不輸出。
+function avsRenderChecked(snapshot, kase, note) {
+  const html = AcuTingAVS.renderPatientHtml(snapshot, { visitDate: note.visitDate || "" });
+  const banned = AcuTingAVS.checkPatientOutputSafety(html, kase);
+  if (banned.length) {
+    alert("SAFETY ABORT:病人輸出含內部代碼/禁用詞,已中止輸出。\n命中:" + banned.join(", ") + "\n請檢查建議文字或自訂指示內容。");
+    return null;
+  }
+  return html;
+}
+
+function renderAvsCheckout() {
+  const body = document.querySelector("#avsCheckoutBody");
+  const { kase, note } = avsCheckoutContext();
+  if (!body || !kase || !note) return;
+  const snaps = note.avsSnapshots || [];
+  const finalized = AcuTingAVS.latestFinalized(snaps);
+  const superseded = snaps.filter((s) => s.status === "superseded").sort((a, b) => Number(b.version) - Number(a.version));
+  const persistedDraft = AcuTingAVS.currentDraft(snaps);
+
+  const historyHtml = (finalized || superseded.length) ? `
+    <section class="avs-co-section avs-co-history">
+      <h3>歷史版本 History</h3>
+      ${finalized ? `<div class="avs-co-history-row"><span>v${escapeHtml(String(finalized.version))} 定稿 ${escapeHtml(finalized.finalizedAt || "")}</span><button class="ghost" type="button" data-avs-view="${escapeAttribute(finalized.id)}">檢視 View</button></div>` : ""}
+      ${superseded.map((s) => `<div class="avs-co-history-row avs-co-superseded"><span>v${escapeHtml(String(s.version))} 已被取代(superseded)· 定稿於 ${escapeHtml(s.finalizedAt || "")}</span><button class="ghost" type="button" data-avs-view="${escapeAttribute(s.id)}">檢視 View</button></div>`).join("")}
+    </section>` : "";
+
+  if (!avsWorkingDraft) {
+    // 檢視模式:已定稿、無編輯中草稿。
+    body.innerHTML = `
+      <div class="avs-co-meta">Visit ${escapeHtml(note.visitDate || "")} · ${escapeHtml(kase.patientCode || "")}</div>
+      <section class="avs-co-section">
+        <h3>AVS 已定稿 v${escapeHtml(String(finalized.version))}</h3>
+        <p class="avs-co-final-time">定稿時間:${escapeHtml(finalized.finalizedAt || "")}</p>
+        <div class="avs-co-actions-row">
+          <button type="button" data-avs-view="${escapeAttribute(finalized.id)}">檢視 View</button>
+          <button type="button" data-avs-print="${escapeAttribute(finalized.id)}">列印 / 存 PDF</button>
+          <button class="ghost" type="button" id="avsCorrectionBtn">建立更正版本 Create correction</button>
+        </div>
+        <p class="avs-co-note">定稿文件不可修改;更正會建立 v${escapeHtml(String((Number(finalized.version) || 1) + 1))} 草稿,定稿後舊版標記為 superseded、永久保留可讀。</p>
+      </section>
+      ${historyHtml}`;
+  } else {
+    const d = avsWorkingDraft;
+    const sourceNote = d.modalitySource === "inferred"
+      ? `<p class="avs-co-warn">⚠ 治療項目由舊病歷自由文字推斷(legacy fallback),定稿前請確認正確。要改為結構化記錄,請在 SOAP「治療項目 Modalities performed」勾選後重新產生。</p>`
+      : (d.modalitySource === "none" ? `<p class="avs-co-warn">⚠ 此診未找到任何療法記錄 —— 「今天做了什麼」會是空白。</p>` : "");
+    const adviceRows = d.renderedAdvice.map((a, i) => `
+      <div class="avs-co-advice-row">
+        <label class="avs-co-advice-head">
+          <input type="checkbox" data-avs-sel="${i}" ${a.selected !== false ? "checked" : ""} />
+          <span class="avs-co-cat">${escapeHtml(AVS_CATEGORY_LABELS[a.category] || a.category)}</span>
+          <button class="ghost avs-co-why-btn" type="button" data-avs-why="${i}">為什麼建議? Why?</button>
+        </label>
+        <textarea data-avs-text="${i}" rows="2">${escapeHtml(a.text_zh)}</textarea>
+        <div class="avs-co-why" data-avs-why-panel="${i}" hidden>
+          <small>Matched(僅醫師端,不進病人文件):${escapeHtml((a.matchedTriggers || []).join("、") || "—")}</small>
+          ${a.evidenceType ? `<small>證據等級:${escapeHtml(AVS_EVIDENCE_TYPE_LABELS[a.evidenceType] || a.evidenceType)}</small>` : ""}
+          ${(a.sourceRefs || []).length ? `<small class="avs-co-sources">來源:${a.sourceRefs.map((s) => s && s.url ? `<a href="${escapeAttribute(s.url)}" target="_blank" rel="noopener">${escapeHtml(shortCitation(s.name))}</a>` : escapeHtml(shortCitation(s && s.name))).join("、")}</small>` : ""}
+        </div>
+      </div>`).join("");
+    const customRows = d.clinicianAddedAdvice.map((a, i) => `
+      <div class="avs-co-advice-row avs-co-custom-row">
+        <div class="avs-co-advice-head">
+          <select data-avs-custom-cat="${i}">
+            ${Object.entries(AVS_CATEGORY_LABELS).map(([id, label]) => `<option value="${escapeAttribute(id)}" ${a.category === id ? "selected" : ""}>${escapeHtml(label)}</option>`).join("")}
+          </select>
+          <button class="ghost" type="button" data-avs-custom-remove="${i}">移除 Remove</button>
+        </div>
+        <textarea data-avs-custom-text="${i}" rows="2" placeholder="病人語言,不放診斷詞與內部代碼">${escapeHtml(a.text_zh)}</textarea>
+      </div>`).join("");
+    body.innerHTML = `
+      <div class="avs-co-meta">Visit ${escapeHtml(note.visitDate || "")} · ${escapeHtml(kase.patientCode || "")} · 草稿 v${escapeHtml(String(d.version))}${finalized ? ` (更正 v${escapeHtml(String(finalized.version))})` : ""}</div>
+      <section class="avs-co-section">
+        <h3>1 · 今天 Today</h3>
+        ${d.todayCare.length ? `<p>${d.todayCare.map(escapeHtml).join("、")}</p>` : `<p class="avs-co-empty">無療法記錄</p>`}
+        ${sourceNote}
+      </section>
+      <section class="avs-co-section">
+        <h3>2 · 建議指示 Suggested instructions</h3>
+        ${adviceRows || `<p class="avs-co-empty">沒有符合的建議(可加自訂指示)。</p>`}
+      </section>
+      <section class="avs-co-section">
+        <h3>3 · 自訂指示 Custom instructions</h3>
+        ${customRows}
+        <button class="ghost" type="button" id="avsAddCustomBtn">+ 新增自訂指示 Add custom instruction</button>
+      </section>
+      <section class="avs-co-section">
+        <h3>4 · 中藥/營養品 Medicines & herbs</h3>
+        ${d.medicationInstructionsSnapshot.length ? `<table class="avs-co-med-table"><tr><th>名稱</th><th>用量</th><th>頻率</th></tr>${d.medicationInstructionsSnapshot.map((r) => `<tr><td>${escapeHtml(r.name)}</td><td>${escapeHtml(r.dose)}</td><td>${escapeHtml(r.freq)}</td></tr>`).join("")}</table><p class="avs-co-note">來源:病例用藥帳(active);要調整請回 Meds & Supplements ledger 再重新產生。</p>` : `<p class="avs-co-empty">目前沒有 active 的中藥/營養品。</p>`}
+      </section>
+      <section class="avs-co-section">
+        <h3>5 · 回診 Follow-up</h3>
+        <input type="text" data-avs-followup value="${escapeAttribute(d.followUpSnapshot)}" placeholder="例:兩週後回診" />
+      </section>
+      <section class="avs-co-section">
+        <h3>6 · 自我觀察 What to watch</h3>
+        ${d.patientObservationPromptsSnapshot.length ? d.patientObservationPromptsSnapshot.map((p, i) => `<label class="avs-co-watch-row"><input type="checkbox" data-avs-watch="${i}" checked />${escapeHtml(p)}</label>`).join("") : `<p class="avs-co-empty">此病例尚無追蹤指標題面。</p>`}
+        <p class="avs-co-note">通用警示(症狀加重/發燒/過敏反應等就醫指引)一律自動附在文件中。</p>
+      </section>
+      ${historyHtml}
+      <div class="dialog-actions">
+        <button class="ghost" type="button" id="avsRegenBtn">重新產生 Regenerate</button>
+        ${persistedDraft ? `<button class="ghost" type="button" id="avsDiscardBtn">捨棄草稿 Discard draft</button>` : ""}
+        <span></span>
+        <button class="ghost" type="button" id="avsSaveDraftBtn">儲存草稿 Save draft</button>
+        <button class="ghost" type="button" id="avsPreviewBtn">預覽 Preview</button>
+        <button type="button" id="avsFinalizeBtn">定稿 Finalize</button>
+      </div>`;
+  }
+  wireAvsCheckoutEvents();
+}
+
+function wireAvsCheckoutEvents() {
+  const body = document.querySelector("#avsCheckoutBody");
+  const { kase, note } = avsCheckoutContext();
+  if (!body || !kase || !note) return;
+  const snaps = note.avsSnapshots || [];
+
+  body.querySelectorAll("[data-avs-view]").forEach((btn) => btn.addEventListener("click", () => {
+    const snap = snaps.find((s) => s.id === btn.dataset.avsView);
+    if (!snap) return;
+    const html = avsRenderChecked(snap, kase, note);
+    if (html) avsOpenWindow(html, false);
+  }));
+  body.querySelectorAll("[data-avs-print]").forEach((btn) => btn.addEventListener("click", () => {
+    const snap = snaps.find((s) => s.id === btn.dataset.avsPrint);
+    if (!snap) return;
+    const html = avsRenderChecked(snap, kase, note);
+    if (html) avsOpenWindow(html, true);
+  }));
+  body.querySelectorAll("[data-avs-why]").forEach((btn) => btn.addEventListener("click", () => {
+    const panel = body.querySelector(`[data-avs-why-panel="${btn.dataset.avsWhy}"]`);
+    if (panel) panel.hidden = !panel.hidden;
+  }));
+
+  const correctionBtn = body.querySelector("#avsCorrectionBtn");
+  if (correctionBtn) correctionBtn.addEventListener("click", () => {
+    try {
+      avsWorkingDraft = AcuTingAVS.createCorrectionDraft(snaps);
+    } catch (e) { alert(e.message); return; }
+    renderAvsCheckout();
+  });
+
+  if (!avsWorkingDraft) return;   // 以下皆 draft 編輯模式
+
+  const addCustomBtn = body.querySelector("#avsAddCustomBtn");
+  if (addCustomBtn) addCustomBtn.addEventListener("click", () => {
+    collectAvsDraftFromDom();
+    avsWorkingDraft.clinicianAddedAdvice.push({ category: "lifestyle", text_zh: "" });
+    renderAvsCheckout();
+  });
+  body.querySelectorAll("[data-avs-custom-remove]").forEach((btn) => btn.addEventListener("click", () => {
+    collectAvsDraftFromDom();
+    avsWorkingDraft.clinicianAddedAdvice.splice(Number(btn.dataset.avsCustomRemove), 1);
+    renderAvsCheckout();
+  }));
+
+  const regenBtn = body.querySelector("#avsRegenBtn");
+  if (regenBtn) regenBtn.addEventListener("click", () => {
+    if (!confirm("重新產生會重算媒合建議,勾選與建議文字的編輯會被重置(自訂指示與回診欄保留)。continue?")) return;
+    collectAvsDraftFromDom();
+    const regenerated = buildAvsDraftFor(kase, note, avsWorkingDraft.version);
+    regenerated.clinicianAddedAdvice = avsWorkingDraft.clinicianAddedAdvice;
+    regenerated.followUpSnapshot = avsWorkingDraft.followUpSnapshot;
+    avsWorkingDraft = regenerated;
+    renderAvsCheckout();
+  });
+
+  const discardBtn = body.querySelector("#avsDiscardBtn");
+  if (discardBtn) discardBtn.addEventListener("click", () => {
+    if (!confirm("捨棄已儲存的草稿?(已定稿的歷史版本不受影響)")) return;
+    if (!persistAvsSnapshots(snaps.filter((s) => s.status !== "draft"))) return;
+    avsWorkingDraft = null;
+    render();
+    renderAvsCheckout();
+  });
+
+  const saveDraftBtn = body.querySelector("#avsSaveDraftBtn");
+  if (saveDraftBtn) saveDraftBtn.addEventListener("click", () => {
+    collectAvsDraftFromDom();
+    if (!persistAvsSnapshots(AcuTingAVS.upsertDraft(snaps, avsWorkingDraft))) return;
+    render();
+    renderAvsCheckout();
+  });
+
+  const previewBtn = body.querySelector("#avsPreviewBtn");
+  if (previewBtn) previewBtn.addEventListener("click", () => {
+    collectAvsDraftFromDom();
+    // 預覽 = 病人會拿到的樣子(§3 Step 6):renderPatientHtml 只渲染勾選項,
+    // 診斷後設資料(matchedTriggers)結構上不進渲染器。
+    const html = avsRenderChecked(avsWorkingDraft, kase, note);
+    if (html) avsOpenWindow(html, false);
+  });
+
+  const finalizeBtn = body.querySelector("#avsFinalizeBtn");
+  if (finalizeBtn) finalizeBtn.addEventListener("click", () => {
+    collectAvsDraftFromDom();
+    if (avsWorkingDraft.modalitySource === "inferred") {
+      if (!confirm("⚠ 治療項目由舊自由文字推斷(非結構化記錄)。已確認「今天」區塊內容正確?")) return;
+    }
+    let nextSnaps;
+    try {
+      nextSnaps = AcuTingAVS.finalizeSnapshot(AcuTingAVS.upsertDraft(snaps, avsWorkingDraft), avsWorkingDraft.id);
+    } catch (e) { alert(e.message); return; }
+    const fin = nextSnaps.find((s) => s.id === avsWorkingDraft.id);
+    const html = avsRenderChecked(fin, kase, note);
+    if (!html) return;   // 零診斷自檢未過,不定稿
+    if (!confirm(`定稿 AVS v${fin.version}?定稿後文件不可修改;之後的更正會建立新版本,舊版標記 superseded。`)) return;
+    if (!persistAvsSnapshots(nextSnaps)) return;
+    avsWorkingDraft = null;
+    render();
+    renderAvsCheckout();
+  });
+}
+
 function exportClinicalCases() {
-  const blob = new Blob([JSON.stringify(clinicalCases, null, 2)], { type: "application/json" });
+  // Codex C2B-R4 finding (P3.3): after the C2b pointer switch the world is
+  // {patients + cases + all V2 rows}, and an export that only serializes
+  // clinicalCases[] would silently drop the patients layer from every backup.
+  // Pre-switch (pointer absent/v1) the legacy array export stays byte-stable
+  // so existing backups and the import round-trip keep working unchanged.
+  const pointer = localStorage.getItem("acuting-clinical-active");
+  let payload;
+  if (pointer === "v2") {
+    // SOL R-13:這裡過去是裸 JSON.parse。staging 一旦毀損就是未捕捉例外,
+    // 而 V8 的 parse 訊息內嵌一段原始輸入 —— 病歷內容會出現在 console /
+    // 任何 error 收集器裡。匯出是「資料出事時最想用」的功能,它自己不能
+    // 在出事時再洩一次。失敗訊息只報長度,不轉述內容(與 clinical-store
+    // 的 parseFailureDetail 同款規則)。
+    let staging = null;
+    const rawStaging = localStorage.getItem(AcuTingClinicalStore.STAGING_KEY);
+    if (rawStaging) {
+      try {
+        staging = JSON.parse(rawStaging);
+      } catch {
+        alert(`匯出中止:staging 存在但無法解析(${rawStaging.length} 字元,內容不轉述)。\n原始位元組仍在 localStorage,請先人工備份該鍵再修復。未產生任何檔案。`);
+        return;
+      }
+    }
+    // Codex C2B-R4: fail closed — pointer=v2 with staging missing is a broken
+    // world; exporting a fabricated {patients:[]} envelope would masquerade
+    // as a valid backup and could later "restore" data loss.
+    if (!staging) {
+      alert("匯出中止:pointer=v2 但 staging 不存在——資料狀態異常,請先 rollback 或聯絡維護。未產生任何檔案。");
+      return;
+    }
+    payload = staging;
+  } else {
+    payload = clinicalCases;
+  }
+  const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
   link.href = url;
-  link.download = `acuting-clinical-cases-${new Date().toISOString().slice(0, 10)}.json`;
+  link.download = `acuting-clinical-${pointer === "v2" ? "v2" : "cases"}-${localDateISO()}.json`;
   link.click();
   URL.revokeObjectURL(url);
   markCasesBackedUp();   // CS1: reset backup age + save counter
+}
+
+// Codex audit HIGH#2: import was a silent replace-all — a hand-edited file
+// could delete cases or rewrite/truncate exposure event history with no
+// trace, which voided the append-only invariant globally. Split into two
+// explicit modes:
+//   merge   — default. Existing cases keep their identity; an incoming case
+//             with a matching id may only EXTEND exposure histories: for every
+//             exposure row present on both sides, the existing event sequence
+//             must be a prefix of the incoming one, else the whole import is
+//             rejected (nothing partially applied). New case ids are added.
+//   restore — replace-all, for disaster recovery only. Requires an explicit
+//             second confirmation AND auto-downloads a backup of the current
+//             store first, so the pre-restore state is never unrecoverable.
+// Codex re-audit gate#1: the original string startsWith comparison had two
+// false negatives (evt-1 → evt-10 counted as a prefix; same-id payload
+// rewrites passed). The structured per-index comparator lives in the store
+// (single source, shared with the R8 CLI validator) — this wrapper only maps
+// rows and formats messages.
+function findImportHistoryViolations(existingCases, incomingCases) {
+  const violations = [];
+  const byId = new Map(existingCases.map((c) => [c.id, c]));
+  for (const inc of incomingCases) {
+    const cur = byId.get(inc.id);
+    if (!cur) continue;
+    for (const field of ["agentExposures", "environmentalExposures"]) {
+      const incRows = new Map((inc[field] || []).map((r) => [r.id, r]));
+      for (const row of cur[field] || []) {
+        const incRow = incRows.get(row.id);
+        if (!incRow) { violations.push(`${inc.id}/${field}/${row.id}: exposure row missing from import`); continue; }
+        const check = AcuTingClinicalStore.exposureHistoryExtends(row, incRow);
+        if (!check.ok) violations.push(`${inc.id}/${field}/${row.id}: ${check.reason}`);
+      }
+    }
+    // Codex NO-GO HIGH-1:AVS 歷史與 exposure 同等待遇 —— merge 用 incoming
+    // 整筆蓋掉同 id case 之前,現存每一份 finalized/superseded snapshot 都
+    // 必須在 incoming 以同 id、同 canonical payload 存在(唯一合法變化:
+    // finalized→superseded)。帶著已定稿 AVS 的 Visit 整筆消失也算截斷。
+    if (window.AcuTingAVS) {
+      const incNotes = new Map((inc.soapNotes || []).map((n) => [n.id, n]));
+      for (const note of cur.soapNotes || []) {
+        const hasHistory = (note.avsSnapshots || []).some((s) => s.status === "finalized" || s.status === "superseded");
+        if (!hasHistory) continue;
+        const incNote = incNotes.get(note.id);
+        if (!incNote) { violations.push(`${inc.id}/${note.id}: visit with finalized AVS missing from import (history truncated)`); continue; }
+        const check = AcuTingAVS.avsHistoryExtends(note, incNote);
+        if (!check.ok) violations.push(`${inc.id}/${note.id}: ${check.reason}`);
+      }
+    }
+  }
+  // Codex retest(shadow bypass)整類收口:incoming 本身必須通過全部 AVS
+  // 歷史不變量(id 唯一、合法版本序、合法狀態…)才准進 merge —— 上面的
+  // extends 比對是「對現存歷史」的保護,這裡是「匯入資料自身健全」的保護,
+  // 兩層各擋一半,重複 id 的 shadow copy 在兩層都會死。
+  if (window.AcuTingAVS) {
+    const inv = AcuTingAVS.checkAvsInvariants(incomingCases);
+    for (const f of inv.failures || []) violations.push(`import AVS invariant: ${f}`);
+  }
+  return violations;
 }
 
 function importClinicalCases(event) {
@@ -5772,11 +9975,105 @@ function importClinicalCases(event) {
   const reader = new FileReader();
   reader.onload = () => {
     try {
-      const imported = JSON.parse(reader.result);
+      let imported = JSON.parse(reader.result);
+      // Codex C2B-R4 P3.3: a v2 envelope is NEVER silently downgraded to its
+      // cases[] (that discards patients+journal — exactly the data the v2
+      // backup exists to carry). In the v2 world it restores the FULL
+      // envelope into staging; outside the v2 world it is refused outright.
+      if (imported && !Array.isArray(imported) && imported.schema_version === 2 && Array.isArray(imported.cases)) {
+        const pointer = localStorage.getItem("acuting-clinical-active");
+        // R10-D6:runtime-era 備份(runtime_revision ≥ 1)在 pointer 缺席時
+        // 也必須可還原 —— 那正是「v2 keys 被清後靠備份復原」的場景;
+        // restoreV2Envelope 會做自洽性驗證並自行補回 pointer。
+        // migration-era(revision 缺/0)維持原規則:非 v2 世界一律拒絕。
+        // R11-E3(app 前置):runtime_revision 存在就必須是 safe integer ≥1;
+        // 字串 "2" 這類型別污染在進 store 前擋下,零寫入。
+        if (imported.runtime_revision !== undefined && imported.runtime_revision !== null
+            && (!Number.isSafeInteger(imported.runtime_revision) || imported.runtime_revision < 1)) {
+          alert(`匯入被拒絕:runtime_revision 型別/值非法(${JSON.stringify(imported.runtime_revision)})— 必須是 ≥1 的整數或不存在。未進行任何寫入。`);
+          return;
+        }
+        const importedIsRuntimeEra = Number.isSafeInteger(imported.runtime_revision) && imported.runtime_revision >= 1;
+        if (pointer !== "v2" && !importedIsRuntimeEra) {
+          alert("匯入被拒絕:這是 v2 備份(含 patients 層),目前系統仍在 v1 模式。v2 還原屬於 migration 工具流程,不能在這裡降級匯入(會丟失 patients/journal)。");
+          return;
+        }
+        // Codex C2B-R5 P3.3 gate:唯一認可路徑 restoreV2Envelope —— 寫入
+        // candidate、以「當下 v1 raw + 重建的 deterministic plan」做完整
+        // verifyStaging,全綠才原子替換 active staging;任何失敗保留原
+        // staging/pointer/畫面,不 reload。竄改過的 envelope 在這裡被拒。
+        const really = window.confirm(`⚠️ v2 完整還原:${imported.patients?.length ?? "?"} patients / ${imported.cases.length} cases。將先做完整驗證,通過才會替換。繼續?`);
+        if (!really) return;
+        const subtleSha256 = async (text) => {
+          const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(text));
+          return [...new Uint8Array(buf)].map((b) => b.toString(16).padStart(2, "0")).join("");
+        };
+        AcuTingClinicalStore.restoreV2Envelope(reader.result, subtleSha256).then((res) => {
+          if (res.ok) {
+            alert(`v2 staging 驗證通過並已還原(${res.patients} patients / ${res.cases} cases)。頁面將重新載入。`);
+            location.reload();
+          } else if (res.code === "INCONSISTENT_STATE") {
+            // R11-E5:部分寫入且回滾失敗 —— 絕不宣稱「未被更動」。顯示實際
+            // 兩鍵狀態、設唯讀保護(擋 persist),要求先匯出後人工修復。
+            clinicalStoreIntegrityError = res.failures.join("; ");
+            alert(`⚠️ 還原進入不一致狀態(部分寫入且回滾失敗)。已啟動唯讀保護,存檔已鎖定。\n實際狀態:\n${res.failures.join("\n")}\n\n請先匯出 localStorage 的 staging 與 pointer 兩鍵內容,再人工修復。`);
+          } else {
+            alert(`匯入被拒絕 — 驗證失敗(現有資料未被更動):\n\n${res.failures.slice(0, 5).join("\n")}${res.failures.length > 5 ? "\n…" : ""}`);
+          }
+        }).catch((e) => {
+          // Codex R6:restore 內部已收斂一切例外,這層 .catch 是縱深防禦 ——
+          // 萬一仍有洩漏,fail closed:提示、不 reload、資料未動。
+          alert("匯入失敗(現有資料未被更動):" + (e && e.message || e));
+        });
+        return;
+      }
       if (!Array.isArray(imported)) throw new Error("Clinical cases JSON must be an array");
-      clinicalCases = imported.map(normalizeClinicalCase);
+      const incoming = imported.map(normalizeClinicalCase);
+      // Codex spec §4.5: import 在 persist 前先驗不變量,不以 silent
+      // inference 修掉衝突 —— 規則與 CI 同一份(store.checkClinicalInvariants)。
+      if (window.AcuTingClinicalStore) {
+        const inv = AcuTingClinicalStore.checkClinicalInvariants(incoming);
+        if (inv.failures.length) {
+          alert(`匯入被拒絕 Import rejected — ${inv.failures.length} 筆契約違規:\n\n${inv.failures.slice(0, 5).join("\n")}${inv.failures.length > 5 ? "\n…" : ""}\n\n請修正匯入檔後重試(規則見 scripts/validate-clinical-invariants.js)。`);
+          return;
+        }
+      }
+      // OK = merge(安全預設), Cancel = restore(整包覆蓋)。
+      const restoreMode = !window.confirm(
+        "匯入模式 Import mode:\n\n【確定 OK】= 合併 Merge(安全:保留現有病例,只新增/延伸)\n【取消 Cancel】= 完整還原 Restore(整包覆蓋,僅災難復原用)"
+      );
+      const snapshot = structuredClone(clinicalCases);
+      const prevSelectedCaseId = selectedCaseId;
+      if (!restoreMode) {
+        const violations = findImportHistoryViolations(clinicalCases, incoming);
+        if (violations.length) {
+          alert(`合併被拒絕 Merge rejected — ${violations.length} 筆事件歷史會被改寫/截短:\n\n${violations.slice(0, 5).join("\n")}${violations.length > 5 ? "\n…" : ""}\n\n事件歷史只能延伸,不能改寫(append-only)。若這是刻意的災難復原,請改用 Restore 模式。`);
+          return;
+        }
+        const byId = new Map(clinicalCases.map((c) => [c.id, c]));
+        for (const inc of incoming) byId.set(inc.id, inc);
+        clinicalCases = [...byId.values()];
+      } else {
+        const really = window.confirm(
+          `⚠️ Restore 會以匯入檔完整取代現有 ${clinicalCases.length} 個病例。\n\n目前資料會先自動下載一份備份。確定要覆蓋?`
+        );
+        if (!really) return;
+        const backupBlob = new Blob([JSON.stringify(clinicalCases, null, 2)], { type: "application/json" });
+        const a = document.createElement("a");
+        a.href = URL.createObjectURL(backupBlob);
+        a.download = `acuting-cases-pre-restore-${new Date().toISOString().slice(0, 19).replace(/[:T]/g, "-")}.json`;
+        a.click();
+        URL.revokeObjectURL(a.href);
+        clinicalCases = incoming;
+      }
       selectedCaseId = clinicalCases[0]?.id || "";
-      persistClinicalCases();
+      // R9 gate B: persist failure rolls back the merged/restored in-memory
+      // state and skips render — the import must not appear to have applied.
+      if (!persistClinicalCases()) {
+        clinicalCases = snapshot;
+        selectedCaseId = prevSelectedCaseId;
+        return;
+      }
       render();
     } catch {
       alert("匯入失敗：請確認 JSON 是 AcuTing Clinical Cases 陣列格式。");
@@ -5896,6 +10193,20 @@ function splitList(text) {
   return text.split(/[、,，]/).map((item) => item.trim()).filter(Boolean);
 }
 
+// FIX C (Dry Clinic #3) — safetyFlags is safety-relevant free text scanned
+// before treatment; splitList's comma split breaks one flag with an
+// internal comma into two fragments (e.g. "偶服 lorazepam(鎮靜劑,注意電針/
+// 放鬆反應疊加)" → two broken pieces). Semicolon/newline only — commas
+// (inside or outside parentheses) never split a flag.
+// MIGRATION SAFETY: this only changes how NEW textarea input is parsed.
+// Every case's ALREADY-STORED safetyFlags is an array and goes through the
+// `Array.isArray(value.safetyFlags) ? value.safetyFlags.map(String) : ...`
+// branch in normalizeClinicalCase, never through this function — no
+// existing record's flags are re-split or rewritten by this change.
+function splitSafetyFlags(text) {
+  return String(text || "").split(/[;；]|\r?\n/).map((item) => item.trim()).filter(Boolean);
+}
+
 function splitLines(text) {
   return String(text || "").split(/\r?\n/).map((item) => item.trim()).filter(Boolean);
 }
@@ -5915,7 +10226,7 @@ function exportJson() {
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
   link.href = url;
-  link.download = `acupoint-atlas-${new Date().toISOString().slice(0, 10)}.json`;
+  link.download = `acupoint-atlas-${localDateISO()}.json`;
   link.click();
   URL.revokeObjectURL(url);
 }

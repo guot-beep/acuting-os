@@ -161,3 +161,12 @@ fires. The project's edge is curated data + discipline, not tech stack.
    docs/CLINICAL_GRAPH_TRACK.md — owner direction 2026-07-29. It also carries
    the reverse-index guard rail (DECISIONS D9) and the new evaluation weights
    (data structure 20% / search 18% / case-knowledge links 18% / visual 4%).
+
+## 2026-08-11 — Ting 定案的專案目標(Fable×SOL 共識,Ting 蓋章)
+
+> 上課/閱讀 → 知識卡 → 臨床使用 → 病人 outcome → practice audit →
+> 發現知識缺口 → 自動補研究 → 回到更好的臨床決策與複習。
+
+這不是「中醫版 EHR」。AcuTing OS 的終點是 Ting 的**第二醫學大腦 + 臨床記憶 +
+個人研究系統**。所有優化以三個問題衡量(不以功能數):
+少輸入一次了嗎?少查一次資料了嗎?這次看診產生的資料,下次學習、追蹤、研究能不能再利用?

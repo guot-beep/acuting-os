@@ -1,0 +1,1447 @@
+{
+ "generated": "2026-08-19",
+ "rule": "en aligned to zh, faithful translation only",
+ "source": "data/herbs/formulas.json @ branch codex/pattern-v2 (224 records)",
+ "stats": {
+  "records_scanned": 224,
+  "misaligned_found": 54,
+  "proposals": 54,
+  "entries_kept_verbatim": 121,
+  "entries_newly_translated": 120,
+  "orphan_en_entries": 22,
+  "damaged_zh_flags": 5,
+  "selfcheck_pass": 54,
+  "selfcheck_fail": 0
+ },
+ "proposals": [
+  {
+   "id": "formula.ma_huang_tang",
+   "name_zh": "麻黃湯",
+   "zh": [
+    "淋證者禁用",
+    "陰虛失血者禁用",
+    "細菌感染（熱證）者禁用",
+    "皮膚感染者禁用",
+    "風熱者禁用",
+    "脈弱者禁用",
+    "體虛者禁用",
+    "小便頻多者禁用",
+    "高血壓者慎用",
+    "忌大汗",
+    "只宜短期服用",
+    "表虛自汗、陰虛盜汗者禁用",
+    "瘡家、衄家、亡血家慎用（血汗同源，重劑不可發汗）",
+    "嚴重心臟病、高血壓患者慎用",
+    "孕婦慎用"
+   ],
+   "en_current": [
+    "Contraindicated for those with Lin Syndrome.",
+    "Contraindicated for those with Yin Deficiency bleeding.",
+    "Contraindicated for those with bacterial infections (Heat).",
+    "Contraindicated for those with skin infections.",
+    "Contraindicated for those with Wind-Heat.",
+    "Contraindicated for those with a weak pulse.",
+    "Contraindicated for those with debility.",
+    "Contraindicated for those with copious urination.",
+    "Use caution for those with hypertension.",
+    "Avoid profuse perspiration.",
+    "Use only for short periods of time."
+   ],
+   "en_proposed": [
+    "Contraindicated for those with Lin Syndrome.",
+    "Contraindicated for those with Yin Deficiency bleeding.",
+    "Contraindicated for those with bacterial infections (Heat).",
+    "Contraindicated for those with skin infections.",
+    "Contraindicated for those with Wind-Heat.",
+    "Contraindicated for those with a weak pulse.",
+    "Contraindicated for those with debility.",
+    "Contraindicated for those with copious urination.",
+    "Use caution for those with hypertension.",
+    "Avoid profuse perspiration.",
+    "Use only for short periods of time.",
+    "Contraindicated for those with spontaneous sweating from exterior deficiency or night sweats from Yin deficiency.",
+    "Use with caution in patients with sores, recurrent nosebleeds, or significant blood loss (Blood and sweat share the same source; do not induce sweating with heavy diaphoretic doses).",
+    "Use with caution in patients with severe heart disease or hypertension.",
+    "Use with caution during pregnancy."
+   ],
+   "orphan_en": [],
+   "damaged_zh": [],
+   "note": "zh[0..10] keep existing en verbatim; zh[11..14] newly translated."
+  },
+  {
+   "id": "formula.xiao_qing_long_tang",
+   "name_zh": "小青龍湯",
+   "zh": [
+    "不宜長期服用",
+    "熱證者禁用",
+    "咯血者禁用",
+    "陰虛乾咳無痰者禁用",
+    "肺熱咳喘、吐黃稠痰者禁用",
+    "咽痛、脈數者禁用",
+    "嚴重心臟病、高血壓患者慎用",
+    "孕婦慎用"
+   ],
+   "en_current": [
+    "Do not use long term.",
+    "Contraindicated for those with Heat conditions.",
+    "Contraindicated for those with hemoptysis.",
+    "Contraindicated for those with coughing due to Yin Deficiency.",
+    "Contraindicated for those with dry mouth and throat with thick, yellow sputum.",
+    "Contraindicated for those with a sore throat and a rapid pulse.",
+    "Use with caution for those with hypertension."
+   ],
+   "en_proposed": [
+    "Do not use long term.",
+    "Contraindicated for those with Heat conditions.",
+    "Contraindicated for those with hemoptysis.",
+    "Contraindicated for those with coughing due to Yin Deficiency.",
+    "Contraindicated for those with cough and wheezing due to Lung Heat with expectoration of thick, yellow sputum.",
+    "Contraindicated for those with a sore throat and a rapid pulse.",
+    "Use with caution in patients with severe heart disease or hypertension.",
+    "Use with caution during pregnancy."
+   ],
+   "orphan_en": [
+    "Contraindicated for those with dry mouth and throat with thick, yellow sputum."
+   ],
+   "damaged_zh": [],
+   "note": "en[4] (\"dry mouth and throat with thick, yellow sputum\") does not faithfully render zh[4] (肺熱咳喘、吐黃稠痰) — moved to orphan_en for ruling; zh[4] retranslated. en[6] replaced: original omitted 嚴重心臟病."
+  },
+  {
+   "id": "formula.yin_qiao_san",
+   "name_zh": "銀翹散",
+   "zh": [
+    "外感風寒表寒證（惡寒重、流清涕）禁用",
+    "脾胃虛寒、大便溏薄者慎用",
+    "瘡瘍陰證無熱者禁用"
+   ],
+   "en_current": [
+    "This formula must be significantly modified to treat Damp-Heat.",
+    "Contraindicated for Wind-Cold."
+   ],
+   "en_proposed": [
+    "Contraindicated for exterior Wind-Cold patterns with pronounced aversion to cold and clear nasal discharge.",
+    "Use with caution in those with Spleen and Stomach deficiency cold and loose stools.",
+    "Contraindicated for yin-type sores and abscesses without heat signs."
+   ],
+   "orphan_en": [
+    "This formula must be significantly modified to treat Damp-Heat."
+   ],
+   "damaged_zh": [],
+   "note": "en[1] (\"Contraindicated for Wind-Cold.\") subsumed by fuller translation of zh[0]. en[0] (modify for Damp-Heat) has no zh counterpart — orphaned."
+  },
+  {
+   "id": "formula.sang_ju_yin",
+   "name_zh": "桑菊飲",
+   "zh": [
+    "風寒咳嗽忌用",
+    "陰虛肺燥乾咳忌用"
+   ],
+   "en_current": [
+    "Contraindicated for those with an External Wind-Cold Invasion."
+   ],
+   "en_proposed": [
+    "Contraindicated for cough due to Wind-Cold.",
+    "Contraindicated for dry cough due to Yin deficiency and Lung dryness."
+   ],
+   "orphan_en": [],
+   "damaged_zh": [],
+   "note": "en[0] replaced: original (\"External Wind-Cold Invasion\") omitted 咳嗽; content subsumed."
+  },
+  {
+   "id": "formula.bai_hu_tang",
+   "name_zh": "白虎湯",
+   "zh": [
+    "表證未解、無汗惡寒者禁用",
+    "脈浮細、脈沉、不渴、汗不出者禁用（白虎四禁）",
+    "脾胃虛寒、大便溏薄者禁用",
+    "真寒假熱（陰盛格陽）者禁用",
+    "脾胃陰虛發熱，兼自汗、倦怠、惡風、脈浮而虛者禁用",
+    "陽明腑實證者禁用"
+   ],
+   "en_current": [
+    "Fever from Spleen/Stomach Yin Deficiency with spontaneous sweating, extreme fatigue, aversion to Wind, and a floating Deficiency pulse.",
+    "True Cold with False Heat.",
+    "Yang Ming Fu pattern.",
+    "Use caution with a floating, wiry, thin pulse.",
+    "Use caution with a submerged pulse.",
+    "Use caution when there is no thirst.",
+    "Use caution when there is no sweating."
+   ],
+   "en_proposed": [
+    "Contraindicated when the exterior pattern is unresolved, with no sweating and aversion to cold.",
+    "Contraindicated for those with a floating, thin pulse, a deep pulse, absence of thirst, or absence of sweating (the four prohibitions of Bai Hu).",
+    "Contraindicated for those with Spleen and Stomach deficiency cold and loose stools.",
+    "Contraindicated for true cold with false heat (exuberant Yin repelling Yang).",
+    "Fever from Spleen/Stomach Yin Deficiency with spontaneous sweating, extreme fatigue, aversion to Wind, and a floating Deficiency pulse.",
+    "Contraindicated for Yang Ming Fu-organ excess patterns."
+   ],
+   "orphan_en": [
+    "Use caution with a floating, wiry, thin pulse."
+   ],
+   "damaged_zh": [],
+   "note": "en[3..6] (four separate cautions) correspond to the single zh[1] 白虎四禁 entry — consolidated into one translation; en[4..6] content fully covered. en[3] orphaned because its \"wiry\" is absent from zh[1] (脈浮細). en[1] expanded with 陰盛格陽; en[2] expanded with 腑實. zh grades these 禁用 while old en said \"use caution\" — corrected to Contraindicated per zh."
+  },
+  {
+   "id": "formula.zhu_ye_shi_gao_tang",
+   "name_zh": "竹葉石膏湯",
+   "zh": [
+    "本方清涼質潤，如內有痰濕，或陽虛發熱，均應忌用。",
+    "熱病開盛邪實，大熱未哀，氣陰未傷者，不宜使用本方。",
+    "痰濕內蘊，見胸悶、乾嘔、舌苔黃膩者禁用"
+   ],
+   "en_current": [
+    "Febrile disease when both normal and pathogenic Qi remain abundant.",
+    "Febrile disease when fever remains high.",
+    "Febrile disease when Qi and Yin have not been injured.",
+    "Febrile disease with chest oppression, dry heaves, and a yellow greasy tongue coat from Damp-Heat."
+   ],
+   "en_proposed": [
+    "This formula is cooling and moist in nature; avoid in those with internal Phlegm-Damp or with fever due to Yang deficiency.",
+    "Not appropriate for febrile disease at the stage when the pathogen is exuberant and excess, high fever has not yet abated, and Qi and Yin are not yet injured.",
+    "Contraindicated for those with internal Phlegm-Damp accumulation presenting with chest oppression, dry heaves, and a yellow, greasy tongue coating."
+   ],
+   "orphan_en": [
+    "Febrile disease with chest oppression, dry heaves, and a yellow greasy tongue coat from Damp-Heat."
+   ],
+   "damaged_zh": [
+    {
+     "index": 1,
+     "zh": "熱病開盛邪實，大熱未哀，氣陰未傷者，不宜使用本方。",
+     "reason": "疑似訛字:「熱病開盛邪實」疑為「熱病初起邪實」、「大熱未哀」應為「大熱未衰」。已按推定原意提供暫譯,請人工確認原文。"
+    }
+   ],
+   "note": "en[0..2] are fragments of zh[1] — consolidated into one translation (content covered, not orphaned). en[3] attributes the pattern to \"Damp-Heat\" while zh[2] says 痰濕 (Phlegm-Damp) — attribution mismatch, orphaned; zh[2] retranslated."
+  },
+  {
+   "id": "formula.qing_wei_san",
+   "name_zh": "清胃散",
+   "zh": [
+    "風寒牙痛者禁用",
+    "腎虛所致牙齒或牙齦問題者禁用",
+    "凡屬風火牙痛或腎虛火炎所致的牙齦腫痛出血者，不宜使用本方。"
+   ],
+   "en_current": [
+    "Toothache due to Wind-Cold.",
+    "Tooth or gum problems due to Kidney Deficiency."
+   ],
+   "en_proposed": [
+    "Toothache due to Wind-Cold.",
+    "Tooth or gum problems due to Kidney Deficiency.",
+    "Not appropriate for toothache due to Wind-Fire, or for swollen, bleeding gums due to Kidney deficiency with upward-flaring Fire."
+   ],
+   "orphan_en": [],
+   "damaged_zh": [],
+   "note": "zh[2] partially restates zh[0]/zh[1] content (possible duplication within zh) — flagged for human review, translated faithfully as-is."
+  },
+  {
+   "id": "formula.da_cheng_qi_tang",
+   "name_zh": "大承氣湯",
+   "zh": [
+    "孕婦禁用",
+    "邪尚在衛分或太陽表證階段者禁用",
+    "心下痞硬，提示邪尚在膈上者禁用",
+    "面赤為熱浮於表者禁用",
+    "脾胃虛弱、食量甚少者禁用",
+    "不能進食者禁用",
+    "邪在少陽、頻頻嘔吐者禁用",
+    "裡寒脈遲者禁用",
+    "自汗出而小便自利者禁用",
+    "體虛者須極慎用,宜加補益之品",
+    "這個藥方作用強烈，可能會引起嘔吐或腹瀉，虛弱的患者應該特別小心使用。孕婦嚴禁使用。由於這是一種強效的通便藥，對於氣虛（身體能量不足）、陰液不足、便秘不嚴重的患者，特別是年老或體弱者，應該謹慎使用。",
+    "使用此藥時，應該注意一旦症狀緩解就停止服用，以免過度使用而損傷身體正氣。如果患者的身體虛弱、脈象沉弱或胃腸中沒有積熱，則不適合使用，否則可能會對身體造成傷害。"
+   ],
+   "en_current": [
+    "Contraindicated during pregnancy.",
+    "Contraindicated when a pathogen remains at the protective (Wei) stage or in the Tai Yang level.",
+    "Contraindicated when there is hardness in the epigastric area indicating that the pathogen is still above the diaphragm.",
+    "Contraindicated when there is a flushed face due to Heat Floating in the Exterior.",
+    "Contraindicated for those with Spleen and Stomach Deficiency who eat only small amounts.",
+    "Contraindicated for those who stop eating.",
+    "Contraindicated for those who vomit frequently due to the pathogen remaining in the Shao Yang.",
+    "Contraindicated for those who have Interior Cold with a slow pulse.",
+    "Contraindicated for those with spontaneous sweating and normal urination.",
+    "Use extreme caution with weak patients, add tonics."
+   ],
+   "en_proposed": [
+    "Contraindicated during pregnancy.",
+    "Contraindicated when a pathogen remains at the protective (Wei) stage or in the Tai Yang level.",
+    "Contraindicated when there is hardness in the epigastric area indicating that the pathogen is still above the diaphragm.",
+    "Contraindicated when there is a flushed face due to Heat Floating in the Exterior.",
+    "Contraindicated for those with Spleen and Stomach Deficiency who eat only small amounts.",
+    "Contraindicated for those who are unable to eat.",
+    "Contraindicated for those who vomit frequently due to the pathogen remaining in the Shao Yang.",
+    "Contraindicated for those who have Interior Cold with a slow pulse.",
+    "Contraindicated for those with spontaneous sweating and normal urination.",
+    "Use extreme caution with weak patients, add tonics.",
+    "This formula is strong in action and may cause vomiting or diarrhea; weak patients should use it with particular care. Strictly contraindicated in pregnancy. As a potent purgative, use cautiously in patients with Qi deficiency, insufficient Yin fluids, or constipation that is not severe — especially the elderly or debilitated.",
+    "Note that the formula should be discontinued as soon as symptoms improve, to avoid injuring the upright Qi through overuse. It is unsuitable for patients who are weak, whose pulse is deep and feeble, or who lack accumulated heat in the stomach and intestines; otherwise it may cause harm."
+   ],
+   "orphan_en": [],
+   "damaged_zh": [],
+   "note": "en[5] replaced: 不能進食 means \"unable to eat\", original said \"stop eating\". zh[10..11] newly translated."
+  },
+  {
+   "id": "formula.xiao_cheng_qi_tang",
+   "name_zh": "小承氣湯",
+   "zh": [
+    "孕婦禁用",
+    "體虛者僅於必要時使用，並加補益之品",
+    "小承氣湯具有瀉下作用，因此孕婦、哺乳期婦女、小兒、體弱者不宜服用。",
+    "服用小承氣湯後，可能會出現腹瀉、腹痛等副作用。如果出現嚴重的副作用，應立即停藥並就醫。"
+   ],
+   "en_current": [
+    "Contraindicated during pregnancy.",
+    "Only when necessary for weak patients plus tonic herbs."
+   ],
+   "en_proposed": [
+    "Contraindicated during pregnancy.",
+    "Only when necessary for weak patients plus tonic herbs.",
+    "Xiao Cheng Qi Tang has a purgative action; it is therefore not suitable for pregnant women, breastfeeding women, children, or the weak.",
+    "After taking Xiao Cheng Qi Tang, side effects such as diarrhea and abdominal pain may occur. If severe side effects occur, stop the medicine immediately and seek medical attention."
+   ],
+   "orphan_en": [],
+   "damaged_zh": [],
+   "note": "zh[2..3] newly translated."
+  },
+  {
+   "id": "formula.ma_zi_ren_wan",
+   "name_zh": "麻子仁丸",
+   "zh": [
+    "孕婦禁用",
+    "血虛便秘者，宜加減使用",
+    "體質甚虛者，宜加減使用",
+    "本方雖為潤腸緩下之劑，但含有攻下破滯之品，故年老體虛，津虧血少者，不宜常服，孕婦慎用。",
+    "對麻子仁過敏者禁用：如果對麻子仁過敏，應避免服用麻子仁丸。",
+    "不宜久服：麻子仁丸雖具有潤腸通便的功效，但不宜久服。",
+    "麻子仁是大麻的種子，需要驗尿者不宜服用。"
+   ],
+   "en_current": [
+    "Contraindicated during pregnancy.",
+    "Modify for treating constipation with Blood Deficiency.",
+    "Modify for treating the very weak."
+   ],
+   "en_proposed": [
+    "Contraindicated during pregnancy.",
+    "Modify for treating constipation with Blood Deficiency.",
+    "Modify for treating the very weak.",
+    "Although this formula moistens the intestines and gently purges, it contains purgative, stagnation-breaking ingredients; the elderly and weak, and those with depleted fluids and scanty Blood, should not take it regularly. Use with caution in pregnancy.",
+    "Contraindicated for those allergic to Ma Zi Ren: anyone allergic to hemp seed should avoid taking Ma Zi Ren Wan.",
+    "Not for long-term use: although Ma Zi Ren Wan moistens the intestines and unblocks the bowels, it should not be taken over a long period.",
+    "Ma Zi Ren is the seed of Cannabis sativa; those who must undergo urine drug testing should not take it."
+   ],
+   "orphan_en": [],
+   "damaged_zh": [],
+   "note": "zh[3..6] newly translated."
+  },
+  {
+   "id": "formula.xiao_chai_hu_tang",
+   "name_zh": "小柴胡湯",
+   "zh": [
+    "上實下虛者禁用",
+    "肝火者禁用",
+    "牙齦出血者禁用",
+    "肝陽上亢，高血壓，陰虛吐血慎用",
+    "柴胡升散，芩、夏性燥，故對陰虛血少者禁用。",
+    "長期服用可能引起頭痛、頭暈，牙齦出血、肺炎"
+   ],
+   "en_current": [
+    "Contraindicated for those with Excess above and deficiency below.",
+    "Contraindicated for those with Liver Fire.",
+    "Contraindicated for those with bleeding gums.",
+    "Use with caution for those with Liver Yang Rising.",
+    "Use with caution for those with hypertension.",
+    "Use with caution for those with hematemesis due to Yin Deficiency.",
+    "Use with caution for those with Yin and/or Blood Deficiency."
+   ],
+   "en_proposed": [
+    "Contraindicated for those with Excess above and deficiency below.",
+    "Contraindicated for those with Liver Fire.",
+    "Contraindicated for those with bleeding gums.",
+    "Use with caution for those with Liver Yang Rising, hypertension, or vomiting of blood due to Yin deficiency.",
+    "Chai Hu ascends and disperses while Huang Qin and Ban Xia are drying in nature, so this formula is contraindicated for those with Yin deficiency and scanty Blood.",
+    "Long-term use may cause headache, dizziness, bleeding gums, and pneumonia."
+   ],
+   "orphan_en": [],
+   "damaged_zh": [],
+   "note": "en[3..5] correspond to the single zh[3] entry — consolidated. en[6] corresponded to zh[4] but graded it \"use caution\" where zh says 禁用 — replaced with faithful translation including the herb rationale; content covered, nothing orphaned."
+  },
+  {
+   "id": "formula.da_chai_hu_tang",
+   "name_zh": "大柴胡湯",
+   "zh": [
+    "非實證者慎用",
+    "本方為少陽與陽明合病而設，單純少陽證或陽明證非本方所宜。使用時還需要依照少陽病與陽明熱結的輕重，斟酌修改方中的比例"
+   ],
+   "en_current": [
+    "Contraindicated for those with Spleen and Stomach Deficiencies."
+   ],
+   "en_proposed": [
+    "Use with caution in those without a true excess pattern.",
+    "This formula was designed for combined Shao Yang and Yang Ming disease; a purely Shao Yang or purely Yang Ming pattern is not appropriate for it. In use, the proportions of the ingredients should also be adjusted according to the relative severity of the Shao Yang disease and the Yang Ming heat accumulation."
+   ],
+   "orphan_en": [
+    "Contraindicated for those with Spleen and Stomach Deficiencies."
+   ],
+   "damaged_zh": [],
+   "note": "en[0] (Spleen and Stomach Deficiencies contraindicated) has no zh counterpart — orphaned."
+  },
+  {
+   "id": "formula.xiao_yao_san",
+   "name_zh": "逍遙散",
+   "zh": [
+    "孕婦慎用",
+    "肝腎陰虛兼氣滯者慎用",
+    "肝鬱多因情志不遂所致，服用的人也必須從心理下手釋放壓力，才會有效果。否則藥血「逍遙」而人不逍遙，效果有限。"
+   ],
+   "en_current": [
+    "Use with caution during pregnancy.",
+    "Use with caution for those with Qi Stagnation with underlying Liver and Kidney Yin Deficiency."
+   ],
+   "en_proposed": [
+    "Use with caution during pregnancy.",
+    "Use with caution for those with Qi Stagnation with underlying Liver and Kidney Yin Deficiency.",
+    "Liver constraint mostly arises from unfulfilled emotions; the person taking this formula must also work at the psychological level to release stress for it to be effective. Otherwise the medicine is 'free and easy' (xiao yao) while the person is not, and the benefit will be limited."
+   ],
+   "orphan_en": [],
+   "damaged_zh": [],
+   "note": "zh[2] newly translated."
+  },
+  {
+   "id": "formula.tong_xie_yao_fang",
+   "name_zh": "痛瀉要方",
+   "zh": [
+    "食積所致之腹瀉者禁用",
+    "防風劑量不可任意增加",
+    "應該與因食物中毒引起的腹痛進行鑑別，如果是因食物中毒導致的腹痛，則不宜使用此方劑。",
+    "陽明濕熱或熱毒引起的腹痛和腹瀉症狀，不適宜使用本方劑。本方中的白朮具有苦燥的特性，而陳皮和防風則具辛香且溫燥的性質，這些都不適合熱性腹痛的患者使用。因此，在臨床應用這個方劑之前，必須仔細辨別患者的症狀類型，以確保用藥的安全性。"
+   ],
+   "en_current": [
+    "Contraindicated for those with diarrhea due to Food Stagnation.",
+    "Do not arbitrarily increase the dosage of Fang Feng."
+   ],
+   "en_proposed": [
+    "Contraindicated for those with diarrhea due to Food Stagnation.",
+    "Do not arbitrarily increase the dosage of Fang Feng.",
+    "Differentiate from abdominal pain caused by food poisoning; if the abdominal pain is due to food poisoning, this formula should not be used.",
+    "Not appropriate for abdominal pain and diarrhea due to Yang Ming Damp-Heat or heat toxin. Bai Zhu in this formula is bitter and drying, and Chen Pi and Fang Feng are acrid, aromatic, warm and drying — unsuitable for patients with heat-type abdominal pain. Therefore, before clinical use, carefully differentiate the patient's pattern to ensure medication safety."
+   ],
+   "orphan_en": [],
+   "damaged_zh": [],
+   "note": "zh[2..3] newly translated."
+  },
+  {
+   "id": "formula.wu_zhu_yu_tang",
+   "name_zh": "吳茱萸湯",
+   "zh": [
+    "嘔吐甚劇者，藥宜冷服",
+    "因熱而致的嘔吐反酸忌，胃熱嘔吐，陰虛嘔吐，或肝陽上亢之頭痛均禁用本方。"
+   ],
+   "en_current": [
+    "For very severe vomiting, take the formula cool.",
+    "Contraindicated for those with vomiting or acid reflux due to Heat.",
+    "Contraindicated for those with headache due to Liver Yang Rising."
+   ],
+   "en_proposed": [
+    "For very severe vomiting, take the formula cool.",
+    "Contraindicated for vomiting or acid regurgitation due to Heat, vomiting due to Stomach Heat, vomiting due to Yin deficiency, and headache due to Liver Yang Rising."
+   ],
+   "orphan_en": [],
+   "damaged_zh": [],
+   "note": "en[1] and en[2] both belong to the single zh[1] entry — consolidated into one translation that also adds the 胃熱嘔吐/陰虛嘔吐 clauses zh lists; content of both old entries covered."
+  },
+  {
+   "id": "formula.dang_gui_si_ni_tang",
+   "name_zh": "當歸四逆湯",
+   "zh": [
+    "陰虛火旺者禁用",
+    "春夏或溫暖氣候慎用"
+   ],
+   "en_current": [
+    "Contraindicated for those with Yin Deficiency with Empty Fire.",
+    "Use with caution during Spring and Summer or in warm climates.",
+    "Contraindicated for those with during Spring and Summer or in warm climates."
+   ],
+   "en_proposed": [
+    "Contraindicated for those with Yin Deficiency with Empty Fire.",
+    "Use with caution during Spring and Summer or in warm climates."
+   ],
+   "orphan_en": [
+    "Contraindicated for those with during Spring and Summer or in warm climates."
+   ],
+   "damaged_zh": [],
+   "note": "en[2] is a defective duplicate of the seasonal caution (\"Contraindicated for those with during Spring and Summer...\") and contradicts zh grading (慎用) — orphaned for ruling."
+  },
+  {
+   "id": "formula.shen_ling_bai_zhu_san",
+   "name_zh": "參苓白朮散",
+   "zh": [
+    "實證者禁用",
+    "兼陰虛內熱者，宜加減使用",
+    "孕婦慎用",
+    "表裡有熱者慎用",
+    "服用本方，禁食生冷、油膩、不易消化之物"
+   ],
+   "en_current": [
+    "Contraindicated for those with Excess syndromes.",
+    "Modify for concurrent Heat from Yin Deficiency.",
+    "Use with caution during pregnancy.",
+    "Use with caution for those with Exterior or Interior Heat conditions."
+   ],
+   "en_proposed": [
+    "Contraindicated for those with Excess syndromes.",
+    "Modify for concurrent Heat from Yin Deficiency.",
+    "Use with caution during pregnancy.",
+    "Use with caution for those with Exterior or Interior Heat conditions.",
+    "While taking this formula, avoid raw, cold, greasy, and hard-to-digest foods."
+   ],
+   "orphan_en": [],
+   "damaged_zh": [],
+   "note": "zh[4] newly translated."
+  },
+  {
+   "id": "formula.yu_ping_feng_san",
+   "name_zh": "玉屏風散",
+   "zh": [
+    "實證者禁用",
+    "陰虛盜汗者禁用",
+    "虛人外感，邪多虛少，以及陰虛發熱之盜汗，不宜使用本方。"
+   ],
+   "en_current": [
+    "Contraindicated for those with Excess patterns.",
+    "Contraindicated for those with night sweats due to Yin Deficiency."
+   ],
+   "en_proposed": [
+    "Contraindicated for those with Excess patterns.",
+    "Contraindicated for those with night sweats due to Yin Deficiency.",
+    "Not appropriate for exterior invasion in deficient patients when the pathogen predominates over the deficiency, nor for night sweats with fever due to Yin deficiency."
+   ],
+   "orphan_en": [],
+   "damaged_zh": [],
+   "note": "zh[2] newly translated."
+  },
+  {
+   "id": "formula.si_wu_tang",
+   "name_zh": "四物湯",
+   "zh": [
+    "用於慢性病，但是不嚴重者。不能用於急性嚴重失血或其他血虛，包括嚴重的虛弱，此時應補氣(當歸補血湯)。",
+    "本方中的熟地性質黏滯、當歸性滑潤，因此對於濕氣較重、容易中滿、腹脹或大便稀溏的患者不宜使用。",
+    "急性嚴重失血者禁用",
+    "嚴重虛弱或呼吸費力者禁用",
+    "素體脾陽虛者須加減後使用",
+    "脫水者禁用",
+    "脾胃虛弱者慎用——熟地黃性質滋膩礙運",
+    "氣血暴脫者禁用",
+    "孕婦慎用"
+   ],
+   "en_current": [
+    "Contraindicated for those with acute, severe blood loss.",
+    "Contraindicated for those with severe weakness or labored breathing.",
+    "Modify for those with constitutional Spleen Yang Deficiency.",
+    "Contraindicated for those with dehydration.",
+    "Use with caution for those with Spleen and Stomach Deficiency due to the Stagnating nature of Shu Di Huang.",
+    "Contraindicated for those with Blood or Qi collapse.",
+    "Use with caution during pregnancy."
+   ],
+   "en_proposed": [
+    "For chronic conditions that are not severe. Not for acute severe blood loss or other Blood deficiency with severe debility, in which case tonify Qi instead (Dang Gui Bu Xue Tang).",
+    "Shu Di Huang in this formula is sticky and cloying and Dang Gui is slippery and moistening; therefore it is not suitable for patients with pronounced dampness, tendency to epigastric fullness, abdominal distension, or loose stools.",
+    "Contraindicated for those with acute, severe blood loss.",
+    "Contraindicated for those with severe weakness or labored breathing.",
+    "Modify for those with constitutional Spleen Yang Deficiency.",
+    "Contraindicated for those with dehydration.",
+    "Use with caution for those with Spleen and Stomach Deficiency due to the Stagnating nature of Shu Di Huang.",
+    "Contraindicated for those with Blood or Qi collapse.",
+    "Use with caution during pregnancy."
+   ],
+   "orphan_en": [],
+   "damaged_zh": [],
+   "note": "zh[0..1] newly translated; zh[2..8] keep existing en verbatim."
+  },
+  {
+   "id": "formula.ba_zhen_tang",
+   "name_zh": "八珍湯",
+   "zh": [
+    "感冒時不適合吃補，服用會加重感冒症狀。",
+    "月經來潮時容易造成經血量增加。",
+    "脾胃陽虛者，不適宜服用，應先去寒不宜補"
+   ],
+   "en_current": [
+    "Contraindicated for those with Heat or Excess conditions."
+   ],
+   "en_proposed": [
+    "Tonics are not appropriate during a common cold; taking this formula will worsen the cold symptoms.",
+    "Taking it during menstruation may increase menstrual flow.",
+    "Not suitable for those with Spleen and Stomach Yang deficiency; dispel the cold first rather than tonifying."
+   ],
+   "orphan_en": [
+    "Contraindicated for those with Heat or Excess conditions."
+   ],
+   "damaged_zh": [],
+   "note": "en[0] (Heat or Excess conditions) has no zh counterpart — orphaned."
+  },
+  {
+   "id": "formula.zuo_gui_wan",
+   "name_zh": "左歸丸",
+   "zh": [
+    "脾胃虛弱者，宜謹慎並加減使用",
+    "熱盛者禁用",
+    "本方不宜久服",
+    "本方組成藥物以陰柔滋潤為主，久服常服，每易滯脾礙胃，故脾虛泄瀉者慎用。"
+   ],
+   "en_current": [
+    "Use with caution and modify for those with Spleen and Stomach Deficiency.",
+    "Contraindicated for those with signs of Excess Heat.",
+    "This formula is not suited for long-term use."
+   ],
+   "en_proposed": [
+    "Use with caution and modify for those with Spleen and Stomach Deficiency.",
+    "Contraindicated for those with signs of Excess Heat.",
+    "This formula is not suited for long-term use.",
+    "The ingredients of this formula are mainly rich, yin-nourishing and moistening; taken long-term or regularly they easily obstruct the Spleen and hinder the Stomach, so use with caution in those with Spleen deficiency diarrhea."
+   ],
+   "orphan_en": [],
+   "damaged_zh": [],
+   "note": "zh[3] newly translated."
+  },
+  {
+   "id": "formula.yi_guan_jian",
+   "name_zh": "一貫煎",
+   "zh": [
+    "這個處方主要著重於滋養身體，雖然能夠調動身體內的無形能量，但是無法驅除有形的疾病因素。因為藥材大多甜膩，所以如果患者有痰飲停滯的情況，表現為舌苔白膩和脈象沉緊，則不適合使用這個方子。",
+    "特別需要注意的是，如果患者的舌頭沒有唾液，這幾個字非常關鍵。如果舌苔出現濁垢，這個方子就不適用。",
+    "對於那些氣滯、血滯、火旺、飲食不化、痰濕等各種狀態，如果不伴有陰虛的情況，則應避免使用。由於這個方子中的藥材較為滋膩，因此對於那些有痰飲停滯且舌苔白膩、脈象沉緊的人來說，不宜使用。"
+   ],
+   "en_current": [
+    "Contraindicated for those with chest pain due to Phlegm or Phlegm-Damp Retention."
+   ],
+   "en_proposed": [
+    "This formula focuses mainly on nourishment; although it can mobilize the body's formless energy, it cannot expel tangible pathogenic factors. Because the ingredients are mostly sweet and cloying, it is not suitable for patients with Phlegm-fluid retention manifesting as a white, greasy tongue coating and a deep, tight pulse.",
+    "Pay particular attention: the phrase 'the tongue has no saliva' is critical. If the tongue coating is turbid and dirty, this formula is not applicable.",
+    "Avoid in Qi stagnation, Blood stagnation, exuberant Fire, undigested food, Phlegm-Damp and similar conditions when they are not accompanied by Yin deficiency. As the ingredients are relatively rich and cloying, it is not suitable for those with Phlegm-fluid retention with a white, greasy tongue coating and a deep, tight pulse."
+   ],
+   "orphan_en": [
+    "Contraindicated for those with chest pain due to Phlegm or Phlegm-Damp Retention."
+   ],
+   "damaged_zh": [],
+   "note": "en[0] attributes the contraindication to \"chest pain\", which appears nowhere in zh — orphaned; zh[0..2] translated in full."
+  },
+  {
+   "id": "formula.tian_wang_bu_xin_dan",
+   "name_zh": "天王補心丹",
+   "zh": [
+    "古方含有硃砂有毒，不宜長期使用。現代科學中藥不含硃砂，可以服用。",
+    "本方滋陰之品較多，對脾胃虛弱、納食欠佳、大便不實者，不宜長期服用。"
+   ],
+   "en_current": [
+    "Review severe depression, suicidality, mania, sedatives, pregnancy, and digestive tolerance"
+   ],
+   "en_proposed": [
+    "The classical formula contains toxic Zhu Sha (cinnabar) and is not suitable for long-term use. Modern concentrated (scientific) Chinese medicine preparations do not contain Zhu Sha and may be taken.",
+    "This formula contains many yin-enriching ingredients; those with Spleen and Stomach weakness, poor appetite, or unformed stools should not take it long-term."
+   ],
+   "orphan_en": [
+    "Review severe depression, suicidality, mania, sedatives, pregnancy, and digestive tolerance"
+   ],
+   "damaged_zh": [],
+   "note": "en[0] (review severe depression, suicidality, mania, sedatives, pregnancy, digestive tolerance) has no zh counterpart — orphaned."
+  },
+  {
+   "id": "formula.ban_xia_hou_po_tang",
+   "name_zh": "半夏厚朴湯",
+   "zh": [
+    "肺陰虛所致胸痛，見顴紅口苦、舌紅少苔者禁用",
+    "氣滯化熱者禁用",
+    "不宜長期服用",
+    "方中多辛溫苦燥之品，僅適宜於痰氣互結而無熱者。若見顴紅口苦、舌紅少苔屬於氣鬱化火，陰傷津少者，雖具梅核氣之特徵，亦不宜使用本方。陰虛津虧或火旺者不宜使用。"
+   ],
+   "en_current": [
+    "Contraindicated for those with chest pain due to Lung Yin Deficiency with red cheeks, a bitter taste in the mouth and a red tongue with a scanty coating.",
+    "Contraindicated for those with Heat due to Qi Stagnation.",
+    "Do not use long term."
+   ],
+   "en_proposed": [
+    "Contraindicated for those with chest pain due to Lung Yin Deficiency with red cheeks, a bitter taste in the mouth and a red tongue with a scanty coating.",
+    "Contraindicated for those with Heat due to Qi Stagnation.",
+    "Do not use long term.",
+    "The formula contains many acrid-warm, bitter-drying ingredients and is only appropriate for Phlegm and Qi binding without heat. If there are red cheeks, a bitter taste in the mouth, and a red tongue with scanty coating — indicating Qi constraint transforming into Fire with damaged Yin and scanty fluids — this formula should not be used even when plum-pit qi features are present. Not suitable for those with Yin deficiency and fluid depletion or with exuberant Fire."
+   ],
+   "orphan_en": [],
+   "damaged_zh": [],
+   "note": "zh[3] newly translated."
+  },
+  {
+   "id": "formula.bu_yang_huan_wu_tang",
+   "name_zh": "補陽還五湯",
+   "zh": [
+    "腦出血所致中風後應立即禁用",
+    "中風見脈大有力，或弦而有力者禁用",
+    "陰虛者禁用",
+    "血熱者禁用",
+    "痰阻者禁用",
+    "孕婦禁用",
+    "須確認病人神志已清醒、體溫正常",
+    "須確認出血已止、脈象緩和",
+    "此中藥在中風急性期絕對禁用！本方宜用於病人神志清醒、體溫正常、出血已止、脈象緩弱者。",
+    "高血壓者可服用，但陰虛血熱者忌服。",
+    "使用本方需久服才能有效，愈後還應繼續服用，以鞏固療效，防止復發，王氏謂：「服此方愈後，藥不可斷，或隔三五日吃一付，或七八日吃一付。」但若中風後半身不遂屬陰虛陽亢，痰阻血瘀，見舌紅苔黃、脈洪大有力者，非本方所宜。",
+    "出血風險（特別是與西藥併用時）：陽還五湯中除了黃耆，還有活血化瘀的藥物（如川芎、紅花、桃仁等）。單獨用藥：對於「氣虛血瘀」證是對症的，一般不會引起出血。與西藥併用：如果患者正在服用抗血小板藥（如阿司匹林）或抗凝血劑（如華法林），再疊加使用強效的活血中藥，會顯著增加出血的風險，如牙齦出血、皮下瘀青、甚至內出血。這點務必告知醫師，並密切監測凝血功能。"
+   ],
+   "en_current": [
+    "Contraindicated immediately after a stroke due to cerebral hemorrhage.",
+    "Contraindicated for those with Wind-Stroke with a big, forceful or firm, wiry, forceful pulse.",
+    "Contraindicated for those with Yin Deficiency.",
+    "Contraindicated for those with Blood Heat.",
+    "Contraindicated for those with Phlegm Stagnation.",
+    "Contraindicated during pregnancy.",
+    "Be sure consciousness is returned and the temperature is normal.",
+    "Be sure there is no hemorrhage present and there is a moderate pulse."
+   ],
+   "en_proposed": [
+    "Contraindicated immediately after a stroke due to cerebral hemorrhage.",
+    "Contraindicated for those with Wind-Stroke with a big, forceful or firm, wiry, forceful pulse.",
+    "Contraindicated for those with Yin Deficiency.",
+    "Contraindicated for those with Blood Heat.",
+    "Contraindicated for those with Phlegm Stagnation.",
+    "Contraindicated during pregnancy.",
+    "Be sure consciousness is returned and the temperature is normal.",
+    "Be sure there is no hemorrhage present and there is a moderate pulse.",
+    "Absolutely contraindicated in the acute stage of stroke! This formula is appropriate once the patient is conscious, the temperature is normal, bleeding has stopped, and the pulse is moderate and weak.",
+    "May be taken by those with hypertension, but avoid in those with Yin deficiency and Blood heat.",
+    "This formula must be taken over a long period to be effective, and should be continued after recovery to consolidate the effect and prevent recurrence. Wang (Qingren) said: 'After recovery with this formula, the medicine must not be stopped; take one packet every three to five days, or one packet every seven to eight days.' However, if post-stroke hemiplegia belongs to Yin deficiency with Yang hyperactivity or Phlegm obstruction with Blood stasis, with a red tongue, yellow coating, and a surging, big, forceful pulse, this formula is not appropriate.",
+    "Bleeding risk (especially when combined with Western drugs): besides Huang Qi, this formula contains Blood-invigorating, stasis-transforming herbs (such as Chuan Xiong, Hong Hua, Tao Ren). Used alone for the Qi-deficiency-with-Blood-stasis pattern it is well indicated and generally does not cause bleeding. Combined with Western drugs: if the patient is taking antiplatelet drugs (such as aspirin) or anticoagulants (such as warfarin), adding potent Blood-invigorating Chinese herbs significantly increases the risk of bleeding — bleeding gums, subcutaneous bruising, even internal bleeding. Be sure to inform the physician and closely monitor coagulation function."
+   ],
+   "orphan_en": [],
+   "damaged_zh": [],
+   "note": "zh[8..11] newly translated."
+  },
+  {
+   "id": "formula.sheng_hua_tang",
+   "name_zh": "生化湯",
+   "zh": [
+    "血分有熱所致血瘀者禁用",
+    "產後因熱迫血妄行之出血者禁用",
+    "孕婦禁用",
+    "有出血傾向或活動性出血疾病者禁用",
+    "惡露已正常排出，僅輕微腹痛者，宜加減使用",
+    "本方宜用于產後血虛寒凝之證，血熱而有瘀滯者忌用。生化湯用於臨床，必須本著養血生新、活血化瘀這一治療原則，用治於 「血塊痛」 者，方能收到良好的效果，決不能以此當作補養劑而濫用之"
+   ],
+   "en_current": [
+    "Contraindicated for those with Blood Stasis due to Heat. in the Blood.",
+    "Contraindicated for those with postpartum hemorrhage due to Warm Blood.",
+    "Contraindicated during pregnancy.",
+    "Contraindicated for those with bleeding or active hemorrhage disorder.",
+    "Modify for those who already have normal discharge of lochia and only slight abdominal pain."
+   ],
+   "en_proposed": [
+    "Contraindicated for those with Blood Stasis due to Heat in the Blood.",
+    "Contraindicated for postpartum bleeding due to Heat forcing the Blood to move recklessly.",
+    "Contraindicated during pregnancy.",
+    "Contraindicated for those with bleeding or active hemorrhage disorder.",
+    "Modify for those who already have normal discharge of lochia and only slight abdominal pain.",
+    "This formula is appropriate for postpartum patterns of Blood deficiency with cold congealing; avoid in those with Blood heat with stasis. In clinical use, Sheng Hua Tang must follow the therapeutic principle of nourishing the Blood and engendering the new, invigorating the Blood and transforming stasis; only when used for 'blood-clot pain' does it achieve good results. It must never be misused as a general tonic."
+   ],
+   "orphan_en": [],
+   "damaged_zh": [],
+   "note": "en[0] kept with stray-period typo fixed (\"Heat. in the Blood\"). en[1] replaced: \"Warm Blood\" mistranslates 熱迫血妄行. zh[5] newly translated."
+  },
+  {
+   "id": "formula.shi_hui_san",
+   "name_zh": "十灰散",
+   "zh": [
+    "血止後應立即停藥",
+    "治療期間病人應安靜臥床",
+    "虛寒性出血者禁用",
+    "本方為急則治標之劑，血止之後，還當審因圖本，方能鞏固療效；對虛寒性出血則不宜使用。本方為散劑，既可內服，也能外用，但應預先制備，使火氣消退，方可使用。方中藥物皆燒炭，但應注意「存性」，否則藥效不確。"
+   ],
+   "en_current": [
+    "Discontinue as soon as bleeding stops.",
+    "The patient must lie quietly during the treatment.",
+    "Contraindicated for those with bleeding due to Deficiency and/or Cold."
+   ],
+   "en_proposed": [
+    "Discontinue as soon as bleeding stops.",
+    "The patient must lie quietly during the treatment.",
+    "Contraindicated for those with bleeding due to Deficiency and/or Cold.",
+    "This formula is a remedy for treating the branch in acute situations; once bleeding stops, seek the cause and address the root to consolidate the effect. It is not appropriate for bleeding of the deficiency-cold type. As a powder it can be taken internally or applied externally, but it should be prepared in advance so the fire qi dissipates before use. The ingredients are all charred, but take care to 'preserve their nature' (cun xing), otherwise the effect is unreliable."
+   ],
+   "orphan_en": [],
+   "damaged_zh": [],
+   "note": "zh[3] newly translated."
+  },
+  {
+   "id": "formula.wen_jing_tang",
+   "name_zh": "溫經湯",
+   "zh": [
+    "血瘀實症而致的腹部腫塊勿用",
+    "本方雖有涼性滋陰中藥，卻以溫熱為主，虛熱明顯者，宜慎用"
+   ],
+   "en_current": [
+    "Contraindicated for abdominal masses due to Blood Stasis from excess."
+   ],
+   "en_proposed": [
+    "Contraindicated for abdominal masses due to Blood Stasis from excess.",
+    "Although this formula contains some cooling, yin-nourishing herbs, it is predominantly warming; use with caution when deficiency heat is pronounced."
+   ],
+   "orphan_en": [],
+   "damaged_zh": [],
+   "note": "zh[1] newly translated."
+  },
+  {
+   "id": "formula.huo_xiang_zheng_qi_san",
+   "name_zh": "藿香正氣散",
+   "zh": [
+    "此方溫燥，風熱或陰虛火旺慎用",
+    "有高血壓、心臟病、肝病、糖尿病、腎病等慢性病嚴重者慎用",
+    "孕婦、小兒、老年體虛者應在醫師指導下服用",
+    "但本方藥偏溫燥，故對風寒襲表，濕滯脾胃，以及山嵐瘴氣所導致的病證，甚為合適。若屬於「陽暑」不適合，「陰屬」適合",
+    "「熱重於濕」，不合適，應避免。「濕重於熱」，謹慎、配伍後可用。"
+   ],
+   "en_current": [
+    "Contraindicated for Damp-Heat with thirst, dry throat, greasy yellow tongue coat.",
+    "Modify for Wind-Heat or Fire due to Deficiency.",
+    "Contraindicated for Yin or Blood Deficiencies."
+   ],
+   "en_proposed": [
+    "This formula is warm and drying; use with caution in Wind-Heat or in exuberant Fire due to Yin deficiency.",
+    "Use with caution in those with severe chronic diseases such as hypertension, heart disease, liver disease, diabetes, or kidney disease.",
+    "Pregnant women, children, and elderly or debilitated patients should take it under a physician's guidance.",
+    "This formula is warm and drying, and is therefore well suited to Wind-Cold assailing the exterior, dampness obstructing the Spleen and Stomach, and disorders caused by miasmic mountain vapors. It is not suitable for 'yang summerheat' but is suitable for 'yin summerheat'.",
+    "'Heat predominating over dampness' is not suitable — avoid. 'Dampness predominating over heat' — use cautiously; may be used with appropriate modification."
+   ],
+   "orphan_en": [
+    "Contraindicated for Damp-Heat with thirst, dry throat, greasy yellow tongue coat.",
+    "Contraindicated for Yin or Blood Deficiencies."
+   ],
+   "damaged_zh": [
+    {
+     "index": 3,
+     "zh": "但本方藥偏溫燥，故對風寒襲表，濕滯脾胃，以及山嵐瘴氣所導致的病證，甚為合適。若屬於「陽暑」不適合，「陰屬」適合",
+     "reason": "「陰屬」疑為「陰暑」之訛,已按「陰暑」推定翻譯,請人工確認。"
+    }
+   ],
+   "note": "en[1] (\"Modify for Wind-Heat or Fire due to Deficiency\") subsumed by faithful translation of zh[0] (zh grades it 慎用, not modify). en[0] (Damp-Heat with thirst, dry throat, greasy yellow coat) and en[2] (Yin or Blood Deficiencies) have no zh counterpart — orphaned."
+  },
+  {
+   "id": "formula.wu_ling_san",
+   "name_zh": "五苓散",
+   "zh": [
+    "脾氣虛、腎虛者宜減量，並可配合補益藥同用",
+    "陰虛而小便不利者，用時宜顧護陰液",
+    "過量症狀：頭暈、目眩、口淡、食慾不振",
+    "不宜長期服用",
+    "大汗傷津、體液耗竭者禁用",
+    "嘔吐過度者禁用",
+    "腹瀉過度者禁用",
+    "濕熱蓄積者禁用",
+    "本方藥性偏於滲利，劑量及用藥時間必須小心，過量出現頭暈、目眩、口淡、食慾減退。",
+    "本方不宜長服，體弱者常與補養脾胃劑合用。",
+    "本方傳統劑型為散劑，吞服散後多飲水，至微有汗出為好。現代一般用湯劑熱服，注意不宜久煎，以免減弱滲利之性。如津液耗傷的口渴或小便不利，不宜用本方，陰虛病人慎用。"
+   ],
+   "en_current": [
+    "With Spleen Qi and Kidney Deficiency limit dosage, may combine with tonics.",
+    "For urinary difficulty with Yin Deficiency, protect Yin.",
+    "Overdose symptoms: dizziness, vertigo, bland taste, anorexia.",
+    "Avoid long term administration.",
+    "Contraindicated with depleted body fluids from profuse perspiration.",
+    "Excessive vomiting.",
+    "Excessive diarrhea.",
+    "Damp-Heat Accumulation."
+   ],
+   "en_proposed": [
+    "With Spleen Qi and Kidney Deficiency limit dosage, may combine with tonics.",
+    "For urinary difficulty with Yin Deficiency, protect Yin.",
+    "Overdose symptoms: dizziness, vertigo, bland taste, anorexia.",
+    "Avoid long term administration.",
+    "Contraindicated with depleted body fluids from profuse perspiration.",
+    "Excessive vomiting.",
+    "Excessive diarrhea.",
+    "Damp-Heat Accumulation.",
+    "This formula leans toward percolating and draining; dosage and duration of use must be handled carefully — overdose produces dizziness, vertigo, a bland taste in the mouth, and reduced appetite.",
+    "This formula is not for long-term use; in weak patients it is often combined with formulas that tonify the Spleen and Stomach.",
+    "The traditional form is a powder; after swallowing the powder, drink plenty of water, ideally until slight sweating occurs. Nowadays it is generally taken as a hot decoction; do not decoct for long, lest the percolating-draining property be weakened. Not suitable for thirst or urinary difficulty from damaged fluids; use with caution in Yin-deficient patients."
+   ],
+   "orphan_en": [],
+   "damaged_zh": [],
+   "note": "zh[8..10] newly translated."
+  },
+  {
+   "id": "formula.zhu_ling_tang",
+   "name_zh": "豬苓湯",
+   "zh": [
+    "無熱象者不宜使用",
+    "熱盛陰傷嚴重者禁用",
+    "濕邪明顯者禁用",
+    "若患者內熱過盛，陰津大損，則不宜使用本方。《傷寒論》指出，在陽明病中，如果患者多汗且口渴，則不應使用猪苓湯，因為多汗會導致胃中過於乾燥，而猪苓湯進一步利小便可能會加重病情。如果患者水濕內滯而無陰虛的徵兆，也應避免使用，以防止阿膠的滋膩性質助長濕邪。"
+   ],
+   "en_current": [
+    "Without Heat.",
+    "Abundant Heat and severely damaged Yin.",
+    "Pronounced Dampness."
+   ],
+   "en_proposed": [
+    "Without Heat.",
+    "Abundant Heat and severely damaged Yin.",
+    "Pronounced Dampness.",
+    "If internal heat is excessive and Yin fluids are greatly damaged, this formula is not suitable. The Shang Han Lun points out that in Yang Ming disease with profuse sweating and thirst, Zhu Ling Tang should not be given, because profuse sweating makes the stomach too dry and further promoting urination with Zhu Ling Tang may worsen the condition. Also avoid it when water-damp collects internally without signs of Yin deficiency, lest the rich, cloying nature of E Jiao reinforce the damp pathogen."
+   ],
+   "orphan_en": [],
+   "damaged_zh": [],
+   "note": "zh[3] newly translated."
+  },
+  {
+   "id": "formula.san_ren_tang",
+   "name_zh": "三仁湯",
+   "zh": [
+    "舌苔黃膩，熱重於濕者則不宜使用。",
+    "凡治濕病，禁發其汗，而陽鬱者不微汗之，轉致傷人，醫之過也。濕家不可發汗，以身本多汗，易致亡陽，故濕濕之證，誤發其汗，名曰重喝。",
+    "吳瑭於《溫病條辨》中明示「三戒」：一者，不可見其頭痛惡寒，以為傷寒而汗之，汗傷心陽，則神昏耳聾，甚則目瞑不欲言；二者，不可見其中滿不飢，以為停滯而下之，下傷脾胃，濕邪乘勢下注，則為洞泄三者，不可見其午後身熱，以為陰虛而用柔藥潤之，濕為膠滯陰邪，再加柔潤陰藥，兩陰相合，則有錮結不解之勢。故治療之法，惟宜宣暢氣機、清熱利濕。"
+   ],
+   "en_current": [
+    "Use only for Damp-Heat disorders where Damp is predominant."
+   ],
+   "en_proposed": [
+    "Not suitable when the tongue coating is yellow and greasy and heat predominates over dampness.",
+    "In treating damp diseases, promoting sweating is prohibited; yet failing to induce slight sweating when yang is constrained also ends up harming the patient — the physician's error. Patients with dampness must not be made to sweat: their bodies already sweat copiously, and sweating easily leads to yang collapse. Hence when sweating is wrongly promoted in a damp-warmth pattern, it is called 'double summerheat injury' (chong ye).",
+    "In the Wen Bing Tiao Bian, Wu Tang set out 'three prohibitions': first, do not mistake the headache and aversion to cold for cold damage and promote sweating — sweating injures Heart yang, leading to clouded spirit and deafness, or even closed eyes with no desire to speak; second, do not mistake the fullness and absence of hunger for food stagnation and purge — purging injures the Spleen and Stomach, and the damp pathogen pours downward, causing profuse diarrhea; third, do not mistake the afternoon fever for Yin deficiency and treat it with rich, moistening yin herbs — dampness is a sticky, lingering yin pathogen, and adding rich yin medicinals joins two yins together, creating an intractable, unresolvable situation. The proper method is solely to diffuse the qi dynamic, clear heat and drain dampness."
+   ],
+   "orphan_en": [],
+   "damaged_zh": [
+    {
+     "index": 1,
+     "zh": "凡治濕病，禁發其汗，而陽鬱者不微汗之，轉致傷人，醫之過也。濕家不可發汗，以身本多汗，易致亡陽，故濕濕之證，誤發其汗，名曰重喝。",
+     "reason": "「重喝」疑為「重暍」、「濕濕之證」疑為「濕溫之證」之訛,已按推定原意提供暫譯,請人工確認。"
+    }
+   ],
+   "note": "en[0] was a positive restatement, not a faithful translation of zh[0] — replaced; its content is implied by zh[0], nothing orphaned. zh[1..2] newly translated."
+  },
+  {
+   "id": "formula.fang_ji_huang_qi_tang",
+   "name_zh": "防己黃耆湯",
+   "zh": [
+    "若水濕壅盛腫甚者，非本方所宜。",
+    "水腫實證而兼有噁心、腹脹、便溏等腸胃症狀者，不宜使用本方",
+    "若水濕壅盛，汗不出者，雖有脈浮惡風亦非本方所宜。",
+    "使用本方必須權衡虛實之輕重緩急，恰當配伍，務使固表不留邪，祛邪不傷正，因補之不當邪氣反實，散之太過，表氣益虛。",
+    "使用本方以微微汗出爲宜，不可大發其汗，因濕爲陰邪，其性重濁粘滯，尤其是此爲表虛證，更當審慎；應注意服藥方法及藥後調護。"
+   ],
+   "en_current": [
+    "Acute Excess type edema.",
+    "Dampness Obstructing the Protective Yang.",
+    "Overdose can cause nausea and anorexia."
+   ],
+   "en_proposed": [
+    "Not appropriate when water-damp is exuberant and the edema is severe.",
+    "Not appropriate for excess-type edema accompanied by gastrointestinal symptoms such as nausea, abdominal distension, and loose stools.",
+    "When water-damp is exuberant and there is no sweating, this formula is not appropriate even in the presence of a floating pulse and aversion to wind.",
+    "When using this formula, weigh the relative severity and urgency of deficiency and excess and combine ingredients appropriately, so that securing the exterior does not retain the pathogen and expelling the pathogen does not injure the upright Qi — improper tonification makes the pathogenic qi more excess, while excessive dispersion further weakens the exterior qi.",
+    "Slight sweating is the desired response; do not induce profuse sweating, for dampness is a yin pathogen — heavy, turbid, sticky and lingering — and as this is moreover an exterior-deficiency pattern, extra care is required. Pay attention to the method of administration and to care after taking the medicine."
+   ],
+   "orphan_en": [
+    "Acute Excess type edema.",
+    "Dampness Obstructing the Protective Yang.",
+    "Overdose can cause nausea and anorexia."
+   ],
+   "damaged_zh": [],
+   "note": "None of the three existing en entries is a faithful rendering of any single zh entry (en[0] \"Acute Excess type edema\" reframes zh[0]; en[1] \"Dampness Obstructing the Protective Yang\" and en[2] \"Overdose can cause nausea and anorexia\" appear nowhere in zh) — all orphaned for ruling; zh[0..4] translated in full."
+  },
+  {
+   "id": "formula.yin_chen_hao_tang",
+   "name_zh": "茵陳蒿湯",
+   "zh": [
+    "茵陳蒿湯性寒涼，脾胃虛寒者慎用。",
+    "孕婦及體弱者慎用。",
+    "服用期間應注意飲食清淡，忌食辛辣油膩之物。"
+   ],
+   "en_current": [
+    "Contraindicated for Yin jaundice.",
+    "Use Da Huang with extreme caution during pregnancy."
+   ],
+   "en_proposed": [
+    "Yin Chen Hao Tang is cold and cooling in nature; use with caution in those with Spleen and Stomach deficiency cold.",
+    "Use with caution in pregnant women and in weak or debilitated patients.",
+    "During the course of treatment, keep the diet light and avoid spicy and greasy foods."
+   ],
+   "orphan_en": [
+    "Contraindicated for Yin jaundice.",
+    "Use Da Huang with extreme caution during pregnancy."
+   ],
+   "damaged_zh": [],
+   "note": "en[0] (Yin jaundice) appears nowhere in zh; en[1] singles out Da Huang in pregnancy, which zh does not say (zh[1] is a general pregnancy/debility caution) — both orphaned."
+  },
+  {
+   "id": "formula.ba_zheng_san",
+   "name_zh": "八正散",
+   "zh": [
+    "久病淋證者禁用",
+    "孕婦禁用",
+    "長期服用可能導致虛弱、心悸、頭暈及食慾不振",
+    "久病體虛者禁用",
+    "虛寒者禁用",
+    "長期頭痛、心悸忌服",
+    "虛寒或孕婦忌服",
+    "本方爲苦寒通利之劑，多服會引起虛弱證候，如頭暈、心悸、四肢無力，食慾不佳等，故宜於實證，虛弱者慎用。"
+   ],
+   "en_current": [
+    "Chronic Lin Syndrome.",
+    "Pregnancy.",
+    "Long term use may produce weakness, palpitations, light headedness and loss of appetite.",
+    "Chronic disease with weakness.",
+    "Deficiency Cold."
+   ],
+   "en_proposed": [
+    "Chronic Lin Syndrome.",
+    "Pregnancy.",
+    "Long term use may produce weakness, palpitations, light headedness and loss of appetite.",
+    "Chronic disease with weakness.",
+    "Deficiency Cold.",
+    "Avoid in those with chronic headache or palpitations.",
+    "Avoid in deficiency cold and in pregnancy.",
+    "This is a bitter-cold, unblocking and draining formula; taking it for a long time produces deficiency signs such as dizziness, palpitations, weak limbs and poor appetite. It is therefore appropriate for excess patterns; use with caution in the weak."
+   ],
+   "orphan_en": [],
+   "damaged_zh": [],
+   "note": "zh[5..7] newly translated."
+  },
+  {
+   "id": "formula.er_chen_tang",
+   "name_zh": "二陳湯",
+   "zh": [
+    "使用不當會引起口渴 咽燥忌",
+    "肺陰虛咳嗽忌"
+   ],
+   "en_current": [
+    "Contraindicated for those with Lung Yin Deficiency cough."
+   ],
+   "en_proposed": [
+    "Improper use can cause thirst and a dry throat; avoid in such cases.",
+    "Contraindicated for those with Lung Yin Deficiency cough."
+   ],
+   "orphan_en": [],
+   "damaged_zh": [
+    {
+     "index": 0,
+     "zh": "使用不當會引起口渴 咽燥忌",
+     "reason": "句式殘缺(「使用不當會引起口渴 咽燥忌」),按「使用不當會引起口渴咽燥,(此類情況)忌」推定暫譯,請人工確認。"
+    }
+   ],
+   "note": "Existing en[0] maps to zh[1] (肺陰虛咳嗽) and is kept there; zh[0] newly translated with damage flag."
+  },
+  {
+   "id": "formula.chuan_xiong_cha_tiao_san",
+   "name_zh": "川芎茶調散",
+   "zh": [
+    "導致頭痛的原因很多，有外感與內傷的不同，對於氣虛、血虛、或肝腎陰虛、肝陽上亢、肝風內動等引起的頭痛，均不宜使用。"
+   ],
+   "en_current": [
+    "Contraindicated for those with headache due to Liver Yang Rising.",
+    "Contraindicated for those with headache due to Liver Wind.",
+    "Contraindicated for those with Kidney or Liver Yin Deficiency.",
+    "Contraindicated for those with Qi and Blood Deficiencies."
+   ],
+   "en_proposed": [
+    "Headache has many causes, both from external invasion and from internal damage; this formula is not suitable for headaches due to Qi deficiency, Blood deficiency, Liver-Kidney Yin deficiency, Liver Yang Rising, or internal stirring of Liver Wind."
+   ],
+   "orphan_en": [],
+   "damaged_zh": [],
+   "note": "en[0..3] are the four clauses of the single zh[0] sentence — consolidated into one translation; all four old entries fully covered, nothing orphaned."
+  },
+  {
+   "id": "formula.bao_he_wan",
+   "name_zh": "保和丸",
+   "zh": [
+    "脾虛者禁用",
+    "孕婦慎用",
+    "保和丸的消導效力較為溫和，一般適合食積不太嚴重、身體正氣尚未虧損且偏向體熱的人使用。如果身體正氣已經虛弱或者偏寒的人，應該適當調整藥方。"
+   ],
+   "en_current": [
+    "Contraindicated for those with Spleen Deficiency.",
+    "Use with caution during pregnancy."
+   ],
+   "en_proposed": [
+    "Contraindicated for those with Spleen Deficiency.",
+    "Use with caution during pregnancy.",
+    "The dispersing action of Bao He Wan is relatively mild; it generally suits those whose food stagnation is not severe, whose upright qi is not yet damaged, and whose constitution tends toward heat. Those whose upright qi is already weak or whose constitution tends toward cold should modify the formula appropriately."
+   ],
+   "orphan_en": [],
+   "damaged_zh": [],
+   "note": "zh[2] newly translated."
+  },
+  {
+   "id": "formula.an_gong_niu_huang_wan",
+   "name_zh": "安宮牛黃丸",
+   "zh": [
+    "脫證神昏者禁用；本方治閉證，不是亡陽脫證救逆方",
+    "寒閉神昏者禁用或不宜；應與蘇合香丸等溫開方辨別",
+    "孕婦禁用",
+    "含雄黃、硃砂等毒性礦物，不可自行使用或長期使用"
+   ],
+   "en_current": [
+    "Contraindicated during pregnancy.",
+    "Do not take Cinnabaris (Zhu Sha) in large doses or heated."
+   ],
+   "en_proposed": [
+    "Contraindicated in coma of the collapse (desertion) type; this formula treats closed patterns and is not a rescue formula for yang collapse and desertion.",
+    "Contraindicated or inappropriate for coma due to cold closure; differentiate from warm-opening formulas such as Su He Xiang Wan.",
+    "Contraindicated during pregnancy.",
+    "Contains toxic minerals such as Xiong Huang (realgar) and Zhu Sha (cinnabar); do not self-administer or use long-term."
+   ],
+   "orphan_en": [
+    "Do not take Cinnabaris (Zhu Sha) in large doses or heated."
+   ],
+   "damaged_zh": [],
+   "note": "en[1] (\"Do not take Cinnabaris in large doses or heated\") states specifics (large doses, heating) absent from zh[3] — orphaned; zh[3] retranslated."
+  },
+  {
+   "id": "formula.zhi_bao_dan",
+   "name_zh": "至寶丹",
+   "zh": [
+    "孕婦禁用",
+    "陰虛者禁用",
+    "陽盛者禁用",
+    "肝陽上亢所致昏迷者禁用",
+    "孕婦禁用",
+    "不宜長期服用",
+    "不可加熱服用",
+    "本方芳香辛燥之品較多，有耗陰劫液之弊，故神昏譫語由陽盛陰虛所致者忌用；孕婦慎用。"
+   ],
+   "en_current": [
+    "Contraindicated during pregnancy.",
+    "Contraindicated for those with Yin Deficiency.",
+    "Contraindicated for those with Yang Excess.",
+    "Contraindicated for those with coma due to Liver Yang Rising.",
+    "Pregnancy.",
+    "Not for long term use.",
+    "Do not heat."
+   ],
+   "en_proposed": [
+    "Contraindicated during pregnancy.",
+    "Contraindicated for those with Yin Deficiency.",
+    "Contraindicated for those with Yang Excess.",
+    "Contraindicated for those with coma due to Liver Yang Rising.",
+    "Pregnancy.",
+    "Not for long term use.",
+    "Do not heat.",
+    "This formula contains many aromatic, acrid and drying ingredients and tends to consume Yin and plunder fluids; avoid it when clouded spirit and delirious speech are due to Yang excess with Yin deficiency. Use with caution in pregnancy."
+   ],
+   "orphan_en": [],
+   "damaged_zh": [],
+   "note": "zh[7] newly translated. zh[0] and zh[4] are duplicate pregnancy entries in the source — preserved as-is per rules."
+  },
+  {
+   "id": "formula.gui_pi_tang",
+   "name_zh": "歸脾湯",
+   "zh": [
+    "忌生冷食物",
+    "勿思慮過度及過勞",
+    "陰虛內熱或實熱證者勿用"
+   ],
+   "en_current": [
+    "Contraindicated for those with Interior Heat.",
+    "Contraindicated for those with Yin Deficiency with Heat signs."
+   ],
+   "en_proposed": [
+    "Avoid raw and cold foods.",
+    "Avoid excessive worry, overthinking, and overwork.",
+    "Do not use in those with internal heat due to Yin deficiency or with excess heat patterns."
+   ],
+   "orphan_en": [],
+   "damaged_zh": [],
+   "note": "en[0] (Interior Heat) and en[1] (Yin Deficiency with Heat signs) both belong to the single zh[2] entry — consolidated; content covered, nothing orphaned. zh[0..1] newly translated."
+  },
+  {
+   "id": "formula.ding_chuan_tang",
+   "name_zh": "定喘湯",
+   "zh": [
+    "外感風寒、無汗、沒有痰者不宜用",
+    "氣虛脈弱不宜用",
+    "若新感風寒，雖惡寒發熱、無汗而喘，但內無痰熱者；或哮喘日久，肺腎陰虛者，皆不宜使用。"
+   ],
+   "en_current": [],
+   "en_proposed": [
+    "Not suitable for exterior Wind-Cold invasion with no sweating and no phlegm.",
+    "Not suitable for Qi deficiency with a weak pulse.",
+    "Not suitable for a recent Wind-Cold invasion with aversion to cold, fever, absence of sweating and wheezing but without internal Phlegm-Heat; nor for long-standing asthma with Lung and Kidney Yin deficiency."
+   ],
+   "orphan_en": [],
+   "damaged_zh": [],
+   "note": "en was empty; zh[0..2] newly translated."
+  },
+  {
+   "id": "formula.gan_lu_xiao_du_dan",
+   "name_zh": "甘露消毒丹",
+   "zh": [
+    "若濕熱入營、譫語舌絳者，則非本方所宜。",
+    "本方清利濕熱，易傷陰液，凡陰虛者不宜使用"
+   ],
+   "en_current": [
+    "Significant underlying Yin Deficiency."
+   ],
+   "en_proposed": [
+    "Not appropriate when Damp-Heat has entered the Ying level, with delirious speech and a crimson tongue.",
+    "This formula clears and drains Damp-Heat and easily damages Yin fluids; not suitable for those with Yin deficiency."
+   ],
+   "orphan_en": [],
+   "damaged_zh": [],
+   "note": "en[0] (\"Significant underlying Yin Deficiency.\") subsumed by faithful translation of zh[1]; zh[0] newly translated."
+  },
+  {
+   "id": "formula.huai_hua_san",
+   "name_zh": "槐花散",
+   "zh": [
+    "本方藥性寒涼，故只宜暫用．不宜久服",
+    "對中焦虛寒而大便下血者，則當慎用。",
+    "現多無無此散劑生產，本方漸被槐角丸等一類成藥所代替，臨床時注意選用。",
+    "本方對於原因比較單純的大腸下部出血，確有療效。但對於原因複雜，病久不愈的便血，本方只能治標，不能治本，應探查病因，尋求根治方法。"
+   ],
+   "en_current": [
+    "Do not use long term.",
+    "Use with caution for those with Middle Jiao Deficiency Cold.",
+    "Contraindicated for those with rectal bleeding with symptoms of Q i or Yin Deficiency."
+   ],
+   "en_proposed": [
+    "This formula is cold and cooling in nature; use it only temporarily, not long-term.",
+    "Use with caution in those with Middle Jiao deficiency cold who have blood in the stool.",
+    "This powder is now rarely produced; the formula has gradually been replaced by patent medicines of the Huai Jiao Wan type — choose accordingly in clinical practice.",
+    "This formula is genuinely effective for bleeding of the lower bowel from relatively simple causes. But for blood in the stool from complex causes or long-unhealed cases, it treats only the branch, not the root; investigate the cause and seek a curative approach."
+   ],
+   "orphan_en": [
+    "Contraindicated for those with rectal bleeding with symptoms of Q i or Yin Deficiency."
+   ],
+   "damaged_zh": [
+    {
+     "index": 2,
+     "zh": "現多無無此散劑生產，本方漸被槐角丸等一類成藥所代替，臨床時注意選用。",
+     "reason": "「現多無無此散劑生產」疑衍一「無」字,已按「現多無此散劑生產」翻譯。"
+    }
+   ],
+   "note": "en[0] replaced (original omitted 藥性寒涼/只宜暫用); en[1] replaced (original omitted 大便下血); en[2] (\"rectal bleeding with symptoms of Q i or Yin Deficiency\", note the \"Q i\" typo) has no zh counterpart — orphaned."
+  },
+  {
+   "id": "formula.ling_jiao_gou_teng_tang",
+   "name_zh": "羚角鉤藤湯",
+   "zh": [
+    "羚角鉤藤湯是一首具有平肝潛陽、熄風止痙功效的方劑，臨床應用時應注意以下幾點：",
+    "本方主要用於治療肝風上亢、肝陽上逆所致的頭暈脹痛、耳鳴心悸、手足躁擾、甚則瘈瘲、狂亂痙厥等症狀。",
+    "本方有一定的毒副作用，臨床應用時應注意用量，不可過量使用。",
+    "本方不宜長期服用，以免引起肝腎損害。"
+   ],
+   "en_current": [
+    "Contraindicated for those with Wind due to Deficiency."
+   ],
+   "en_proposed": [
+    "Ling Jiao Gou Teng Tang is a formula that calms the Liver, subdues Yang, extinguishes Wind and stops spasms; note the following points in clinical use:",
+    "This formula is mainly used for dizziness and distending headache, tinnitus and palpitations, restless agitation of the hands and feet, and in severe cases convulsive spasms and manic derangement with convulsions, caused by Liver Wind ascending and Liver Yang rising counterflow.",
+    "This formula has certain toxic side effects; pay attention to the dosage in clinical use and do not use it in excess.",
+    "Not for long-term use, to avoid causing damage to the Liver and Kidneys."
+   ],
+   "orphan_en": [
+    "Contraindicated for those with Wind due to Deficiency."
+   ],
+   "damaged_zh": [],
+   "note": "en[0] (Wind due to Deficiency) appears nowhere in zh — orphaned. NOTE for reviewer: zh[0..1] are lead-in/indication text rather than contraindications — possible misfiled content; translated faithfully without moving (attribution ruling belongs to a human)."
+  },
+  {
+   "id": "formula.ma_xing_shi_gan_tang",
+   "name_zh": "麻杏石甘湯",
+   "zh": [
+    "風寒咳喘，痰熱壅盛者，非本方所宜。",
+    "氣虛邪戀者禁用",
+    "體質虛弱之小兒與老年人禁用",
+    "久病初癒調養期者禁用",
+    "本方偏於寒涼，若患者體質虛寒或無肺熱症狀，不宜使用。",
+    "劑量比例需根據病情調整，現代臨床常根據症狀輕重變化各藥用量。"
+   ],
+   "en_current": [
+    "Contraindicated for those with asthma due to Wind-Cold.",
+    "Contraindicated when the pathogen lingers due to Qi Deficiency.",
+    "Contraindicated for children and the elderly with general weakness.",
+    "Contraindicated for those convalescing from chronic illness."
+   ],
+   "en_proposed": [
+    "Not appropriate for cough and wheezing due to Wind-Cold, nor when Phlegm-Heat is exuberant and obstructing.",
+    "Contraindicated when the pathogen lingers due to Qi Deficiency.",
+    "Contraindicated for children and the elderly with general weakness.",
+    "Contraindicated for those convalescing from chronic illness.",
+    "This formula leans cold and cooling; it is not suitable if the patient has a deficiency-cold constitution or lacks Lung heat signs.",
+    "The dosage ratios must be adjusted according to the condition; in modern practice the amounts of the individual herbs are commonly varied with the severity of symptoms."
+   ],
+   "orphan_en": [],
+   "damaged_zh": [],
+   "note": "en[0] replaced: original covered only Wind-Cold asthma and omitted the 痰熱壅盛 clause of zh[0]; content subsumed. zh[4..5] newly translated."
+  },
+  {
+   "id": "formula.qing_zao_jiu_fei_tang",
+   "name_zh": "清燥救肺湯",
+   "zh": [
+    "無表證之虛證者禁用",
+    "脾虛者慎用",
+    "原方使用煅石膏，但現代臨床多用生石膏，煅石膏則以外用為主。石膏用量需根據病情輕重斟酌，避免過量而傷肺氣。"
+   ],
+   "en_current": [
+    "Contraindicated for those with Deficiency without an Exterior Condition.",
+    "Use caution for those with Spleen Deficiency."
+   ],
+   "en_proposed": [
+    "Contraindicated for those with Deficiency without an Exterior Condition.",
+    "Use caution for those with Spleen Deficiency.",
+    "The original formula used calcined Shi Gao, but modern practice mostly uses raw Shi Gao, with calcined Shi Gao mainly for external application. The amount of Shi Gao should be weighed according to the severity of the condition, avoiding an excessive dose that would injure Lung Qi."
+   ],
+   "orphan_en": [],
+   "damaged_zh": [],
+   "note": "zh[2] newly translated."
+  },
+  {
+   "id": "formula.shi_xiao_san",
+   "name_zh": "失笑散",
+   "zh": [
+    "本方孕婦禁用，脾胃虛弱及婦女月經期慎用。"
+   ],
+   "en_current": [
+    "Contraindicated during pregnancy.",
+    "Use with caution for those with Stomach Deficiency."
+   ],
+   "en_proposed": [
+    "Contraindicated in pregnancy; use with caution in those with Spleen and Stomach weakness and in women during menstruation."
+   ],
+   "orphan_en": [],
+   "damaged_zh": [],
+   "note": "en[0..1] are clauses of the single zh[0] sentence — consolidated; en[1] said only \"Stomach Deficiency\" where zh says 脾胃虛弱, corrected in the consolidated translation. Content covered, nothing orphaned."
+  },
+  {
+   "id": "formula.wan_dai_tang",
+   "name_zh": "完帶湯",
+   "zh": [
+    "本方適用於「脾虛型白帶」，若為赤白或黃赤色，且稠粘惡臭，伴有舌紅脈數等濕熱下注表現者，則不宜使用本方。",
+    "凡帶下證屬濕熱下注，或肝鬱化火，帶下稠粘臭穢、色黃或赤白者，非本方所宜"
+   ],
+   "en_current": [
+    "Contraindicated for those with yellow, bloody, thick, sticky or foul smelling discharge due to Liver Stagnation transforming into Heat or Damp-Heat."
+   ],
+   "en_proposed": [
+    "This formula is for 'Spleen-deficiency type vaginal discharge'; it is not suitable when the discharge is red-and-white or yellow-red, thick, sticky and foul-smelling, accompanied by signs of Damp-Heat pouring downward such as a red tongue and a rapid pulse.",
+    "Contraindicated for those with yellow, bloody, thick, sticky or foul smelling discharge due to Liver Stagnation transforming into Heat or Damp-Heat."
+   ],
+   "orphan_en": [],
+   "damaged_zh": [],
+   "note": "Existing en[0] maps to zh[1] and is kept there; zh[0] newly translated."
+  },
+  {
+   "id": "formula.wu_mei_wan",
+   "name_zh": "烏梅丸",
+   "zh": [
+    "暴瀉（急性瀉痢）者禁用。",
+    "濕熱痢者禁用。",
+    "孕婦慎用。",
+    "本方性質偏於溫熱，以寒重者爲宜。《傷寒論》提到：「禁生冷、滑物、臭食等」"
+   ],
+   "en_current": [
+    "Contraindicated for those with explosive diarrhea.",
+    "Contraindicated for those with Damp-Heat dysentery.",
+    "Use with caution during pregnancy."
+   ],
+   "en_proposed": [
+    "Contraindicated for those with explosive diarrhea.",
+    "Contraindicated for those with Damp-Heat dysentery.",
+    "Use with caution during pregnancy.",
+    "This formula is warm-hot in nature and best suited to those in whom cold predominates. The Shang Han Lun notes: 'Prohibit raw and cold foods, slippery items, foul-smelling foods and the like.'"
+   ],
+   "orphan_en": [],
+   "damaged_zh": [],
+   "note": "zh[3] newly translated."
+  },
+  {
+   "id": "formula.yu_nu_jian",
+   "name_zh": "玉女煎",
+   "zh": [
+    "大便溏瀉者，不宜使用本方。",
+    "本方性寒，脾胃虛寒者慎用。",
+    "孕婦慎用。"
+   ],
+   "en_current": [],
+   "en_proposed": [
+    "Not suitable for those with loose stools or diarrhea.",
+    "This formula is cold in nature; use with caution in those with Spleen and Stomach deficiency cold.",
+    "Use with caution during pregnancy."
+   ],
+   "orphan_en": [],
+   "damaged_zh": [],
+   "note": "en was empty; zh[0..2] newly translated."
+  },
+  {
+   "id": "formula.zuo_jin_wan",
+   "name_zh": "左金丸",
+   "zh": [
+    "本方黃連與吳茱萸比例為6:1",
+    "本方藥偏苦寒，虛寒性嘔吐者忌用",
+    "因肝膽血虛所致脅痛者禁用",
+    "孕婦禁用"
+   ],
+   "en_current": [
+    "Acid regurgitation due to Stomach Deficiency Cold.",
+    "Hypochondriac pain due to Liver, Gallbladder, or Blood Deficiency.",
+    "Pregnancy."
+   ],
+   "en_proposed": [
+    "The ratio of Huang Lian to Wu Zhu Yu in this formula is 6:1.",
+    "This formula is bitter and cold in nature; avoid in those with deficiency-cold type vomiting.",
+    "Hypochondriac pain due to Liver, Gallbladder, or Blood Deficiency.",
+    "Pregnancy."
+   ],
+   "orphan_en": [
+    "Acid regurgitation due to Stomach Deficiency Cold."
+   ],
+   "damaged_zh": [],
+   "note": "en[0] (\"Acid regurgitation due to Stomach Deficiency Cold\") is a possible loose match to zh[1] but names a different symptom (反酸 vs zh 嘔吐) — orphaned for ruling; zh[1] retranslated. zh[0] newly translated."
+  },
+  {
+   "id": "formula.er_zhi_wan",
+   "name_zh": "二至丸",
+   "zh": [
+    "消化功能弱者慎用",
+    "濕熱內侵所致痿證者禁用"
+   ],
+   "en_current": [
+    "Use with caution for those with weak digestion.",
+    "Contraindicated for those with atrophy caused by Damp-Heat Invasion.",
+    "Contraindicated for those with for those with weak digestion."
+   ],
+   "en_proposed": [
+    "Use with caution for those with weak digestion.",
+    "Contraindicated for those with atrophy caused by Damp-Heat Invasion."
+   ],
+   "orphan_en": [
+    "Contraindicated for those with for those with weak digestion."
+   ],
+   "damaged_zh": [],
+   "note": "en[2] is a corrupted duplicate of en[0] (\"Contraindicated for those with for those with weak digestion\") and contradicts zh grading (慎用) — orphaned."
+  },
+  {
+   "id": "formula.fu_yuan_huo_xue_tang_import_stub",
+   "name_zh": "復元活血湯(匯入重複殘根)",
+   "zh": [
+    "孕婦禁用",
+    "若服用本方導致腹瀉未能痊癒，宜改用他方。",
+    "體虛氣血不足者禁用。",
+    "脾虛者慎用。"
+   ],
+   "en_current": [
+    "Contraindicated during pregnancy.",
+    "If this formula leads to diarrhea without a complete cure, use a different formula.",
+    "Contraindicated for those who are weak and deficient.",
+    "Use with caution for those with Spleen Deficiency.",
+    "Contraindicated for those with for those with Spleen Deficiency."
+   ],
+   "en_proposed": [
+    "Contraindicated during pregnancy.",
+    "If this formula leads to diarrhea without a complete cure, use a different formula.",
+    "Contraindicated for those who are weak and deficient.",
+    "Use with caution for those with Spleen Deficiency."
+   ],
+   "orphan_en": [
+    "Contraindicated for those with for those with Spleen Deficiency."
+   ],
+   "damaged_zh": [],
+   "note": "en[4] is a corrupted duplicate of en[3] (\"Contraindicated ... for those with for those with Spleen Deficiency\") and contradicts zh grading (慎用) — orphaned."
+  }
+ ]
+}

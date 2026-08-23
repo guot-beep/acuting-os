@@ -1,0 +1,1735 @@
+{
+  "generated": "2026-08-19",
+  "proposals": [
+    {
+      "id": "formula.cang_er_zi_san",
+      "field": "pattern_indications",
+      "zh": [
+        "風熱鬱肺、鼻塞流涕（鼻淵）證"
+      ],
+      "en_current": [
+        "Nasal congestion and sinusitis due to Wind-Heat",
+        "Wind-Heat invasion with nasal obstruction and headache"
+      ],
+      "en_proposed": [
+        "Wind-heat constrained in the lung with nasal congestion and runny nose (bi yuan, deep-source nasal congestion) pattern"
+      ],
+      "orphan_en": [
+        "Nasal congestion and sinusitis due to Wind-Heat",
+        "Wind-Heat invasion with nasal obstruction and headache"
+      ],
+      "damaged_zh": [],
+      "note": "Both existing en items are loose paraphrases (they drop 鬱肺 lung constraint; the second adds \"headache\" found nowhere in zh); both preserved in orphan_en."
+    },
+    {
+      "id": "formula.xie_xin_tang",
+      "field": "pattern_indications",
+      "zh": [
+        "腸胃不和、寒熱錯雜證",
+        "少陽誤下、中焦虛寒證",
+        "胃腸濕熱積滯證"
+      ],
+      "en_current": [
+        "Disharmony Between the Stomach and Intestines with interaction of Cold and Heat factors",
+        "Improper purging of the Shao Yang with underlying Stomach Deficiency",
+        "Damp-Heat in the gastrointestinal area",
+        "Gu Syndrome"
+      ],
+      "en_proposed": [
+        "Disharmony Between the Stomach and Intestines with interaction of Cold and Heat factors",
+        "Improper purgation in Shao Yang with deficiency cold of the middle jiao pattern",
+        "Damp-heat accumulation and stagnation in the stomach and intestines pattern"
+      ],
+      "orphan_en": [
+        "Improper purging of the Shao Yang with underlying Stomach Deficiency",
+        "Damp-Heat in the gastrointestinal area",
+        "Gu Syndrome"
+      ],
+      "damaged_zh": [],
+      "note": "en index 0 kept verbatim (faithful to zh 0). Old en for zh 1 said \"Stomach Deficiency\" where zh says 中焦虛寒 (middle jiao deficiency cold); old en for zh 2 dropped 積滯 (accumulation-stagnation); both replaced and preserved in orphan_en. \"Gu Syndrome\" matches no zh item."
+    },
+    {
+      "id": "formula.xie_xin_tang",
+      "field": "actions",
+      "zh": [
+        "清熱瀉火",
+        "瀉火解毒",
+        "燥濕便秘"
+      ],
+      "en_current": [
+        "Harmonizes the Stomach",
+        "Descends Rebellious Qi",
+        "Disperses clumping",
+        "Eliminates focal distention due to Cold and Heat factors"
+      ],
+      "en_proposed": [
+        "Clears heat and drains fire",
+        "Drains fire and resolves toxicity",
+        "Dries dampness and frees the stool (constipation)"
+      ],
+      "orphan_en": [
+        "Harmonizes the Stomach",
+        "Descends Rebellious Qi",
+        "Disperses clumping",
+        "Eliminates focal distention due to Cold and Heat factors"
+      ],
+      "damaged_zh": [
+        {
+          "index": 2,
+          "zh": "燥濕便秘",
+          "presumed_reading": "燥濕、通（治）便秘",
+          "reason": "Verb-object breakage: 便秘 (constipation, a symptom) cannot be the object of 燥濕; the phrase looks truncated or garbled (standard sources give 燥濕泄痞 or similar). Provisional translation follows the presumed reading \"dries dampness; frees constipated stool\", consistent with Da Huang in the formula."
+        }
+      ],
+      "note": "Attribution error in existing en: all four current en actions (Harmonizes the Stomach / Descends Rebellious Qi / Disperses clumping / Eliminates focal distention...) are Ban Xia Xie Xin Tang actions, not Xie Xin Tang (San Huang) actions; all moved to orphan_en."
+    },
+    {
+      "id": "formula.liu_yi_san",
+      "field": "pattern_indications",
+      "zh": [
+        "感受暑濕證",
+        "身熱口渴",
+        "小便短赤疼痛",
+        "泄瀉下痢",
+        "皮膚濕疹瘙癢"
+      ],
+      "en_current": [],
+      "en_proposed": [
+        "Contraction of summerheat-damp pattern",
+        "Generalized fever with thirst",
+        "Short voidings of scant, reddish, painful urine",
+        "Diarrhea and dysentery",
+        "Eczema and itching of the skin"
+      ],
+      "orphan_en": [],
+      "damaged_zh": [],
+      "note": "en was entirely empty. Note: zh items 1-4 are symptoms rather than pattern names; translated as symptoms without upgrading them to patterns."
+    },
+    {
+      "id": "formula.ma_zi_ren_wan",
+      "field": "pattern_indications",
+      "zh": [
+        "脾約腸燥便秘證",
+        "津虧血虛便秘證"
+      ],
+      "en_current": [
+        "Colon Heat",
+        "Deficiency of Fluid in Colon",
+        "Dry Heat Retention in the Stomach and Intestines due to Jin Ye Deficiency",
+        "Yang Ming Xu"
+      ],
+      "en_proposed": [
+        "Spleen bind (pi yue) with intestinal dryness and constipation pattern",
+        "Constipation due to fluid depletion and blood deficiency pattern"
+      ],
+      "orphan_en": [
+        "Colon Heat",
+        "Deficiency of Fluid in Colon",
+        "Dry Heat Retention in the Stomach and Intestines due to Jin Ye Deficiency",
+        "Yang Ming Xu"
+      ],
+      "damaged_zh": [],
+      "note": "None of the four existing en items is a faithful rendering of either zh item (they name Colon Heat / Yang Ming Xu instead of 脾約); all preserved in orphan_en."
+    },
+    {
+      "id": "formula.xiao_chai_hu_tang",
+      "field": "pattern_indications",
+      "zh": [
+        "少陽半表半裡證",
+        "熱入血室證",
+        "肝胃不和胸脅苦滿證"
+      ],
+      "en_current": [
+        "Shao Yang Stage disorders",
+        "Gu Syndrome",
+        "Liver Qi Stagnation with Spleen Dampness",
+        "Heat in the Liver, Gallbladder, Stomach and/or Lungs"
+      ],
+      "en_proposed": [
+        "Shao Yang half-exterior half-interior pattern",
+        "Heat entering the blood chamber pattern",
+        "Liver-stomach disharmony with chest and rib-side fullness and discomfort pattern"
+      ],
+      "orphan_en": [
+        "Shao Yang Stage disorders",
+        "Gu Syndrome",
+        "Liver Qi Stagnation with Spleen Dampness",
+        "Heat in the Liver, Gallbladder, Stomach and/or Lungs"
+      ],
+      "damaged_zh": [],
+      "note": "\"Shao Yang Stage disorders\" loosely corresponds to zh 0 but drops 半表半裡; replaced and preserved in orphan_en together with three en items matching no zh (Gu Syndrome etc.)."
+    },
+    {
+      "id": "formula.xiao_yao_san",
+      "field": "pattern_indications",
+      "zh": [
+        "肝鬱血虛脾弱證",
+        "肝脾不和胸脅脹痛證",
+        "月經不調乳房脹痛證"
+      ],
+      "en_current": [
+        "Liver Qi Stagnation Invades Stomach",
+        "Liver Qi Stagnation Invades the Spleen (Liver and Spleen Disharmony)",
+        "Liver Qi Stagnation with Blood Deficiency",
+        "Qi and Blood Stagnation",
+        "Blood Deficiency with fatigue",
+        "Disharmony between the Ying and Wei with Phlegm, cough, tidal fever and wasting of limbs which may lead to Bone Steaming",
+        "Gu Syndrome"
+      ],
+      "en_proposed": [
+        "Liver constraint with blood deficiency and spleen weakness pattern",
+        "Liver-spleen disharmony with chest and rib-side distention and pain pattern",
+        "Menstrual irregularity with breast distention and pain pattern"
+      ],
+      "orphan_en": [
+        "Liver Qi Stagnation Invades Stomach",
+        "Liver Qi Stagnation Invades the Spleen (Liver and Spleen Disharmony)",
+        "Liver Qi Stagnation with Blood Deficiency",
+        "Qi and Blood Stagnation",
+        "Blood Deficiency with fatigue",
+        "Disharmony between the Ying and Wei with Phlegm, cough, tidal fever and wasting of limbs which may lead to Bone Steaming",
+        "Gu Syndrome"
+      ],
+      "damaged_zh": [],
+      "note": "\"Liver Qi Stagnation with Blood Deficiency\" corresponds loosely to zh 0 but drops 脾弱; all seven existing en preserved in orphan_en (several — Bone Steaming, Gu Syndrome — match no zh at all)."
+    },
+    {
+      "id": "formula.tong_xie_yao_fang",
+      "field": "pattern_indications",
+      "zh": [
+        "脾虛肝旺腸鳴腹痛腹瀉證"
+      ],
+      "en_current": [
+        "Painful diarrhea due to Liver Qi Stagnation Invading the Spleen",
+        "Painful diarrhea due to Liver Qi Stagnation Invading the Spleen with concurrent Wind-Cold Invasion"
+      ],
+      "en_proposed": [
+        "Spleen deficiency with liver exuberance — borborygmi, abdominal pain, and diarrhea pattern"
+      ],
+      "orphan_en": [
+        "Painful diarrhea due to Liver Qi Stagnation Invading the Spleen",
+        "Painful diarrhea due to Liver Qi Stagnation Invading the Spleen with concurrent Wind-Cold Invasion"
+      ],
+      "damaged_zh": [],
+      "note": "Existing en frames the mechanism as Liver Qi Stagnation Invading the Spleen, where zh says 脾虛肝旺 (spleen deficiency, liver exuberance) and adds 腸鳴; both en preserved in orphan_en (the second adds a Wind-Cold variant found in no zh)."
+    },
+    {
+      "id": "formula.ban_xia_xie_xin_tang",
+      "field": "pattern_indications",
+      "zh": [
+        "寒熱錯雜痞證",
+        "腸胃不和嘔吐下利證"
+      ],
+      "en_current": [
+        "Disharmony Between the Stomach and Intestines with interaction of Cold and Heat factors",
+        "Improper purging of the Shao Yang with underlying Stomach Deficiency",
+        "Damp-Heat in the gastrointestinal area",
+        "Gu Syndrome"
+      ],
+      "en_proposed": [
+        "Focal distention (pi) due to intermingled cold and heat pattern",
+        "Stomach and intestinal disharmony with vomiting and diarrhea pattern"
+      ],
+      "orphan_en": [
+        "Disharmony Between the Stomach and Intestines with interaction of Cold and Heat factors",
+        "Improper purging of the Shao Yang with underlying Stomach Deficiency",
+        "Damp-Heat in the gastrointestinal area",
+        "Gu Syndrome"
+      ],
+      "damaged_zh": [],
+      "note": "The four existing en items are the same set stored on formula.xie_xin_tang; none is a 1:1 rendering of these two zh items; all preserved in orphan_en."
+    },
+    {
+      "id": "formula.li_zhong_wan",
+      "field": "pattern_indications",
+      "zh": [
+        "脾胃虛寒證",
+        "陽虛失血證",
+        "胸痺虛寒證"
+      ],
+      "en_current": [
+        "Spleen Yang Deficiency",
+        "Stomach Cold",
+        "Small Intestine Deficiency Cold",
+        "Middle Jiao Yang Deficiency",
+        "Tai Yin Shi (Spleen and Kidney Yang Deficiency - P: Slow and tight)",
+        "Tai Yin Xu (abdominal pain)",
+        "Sudden turmoil disorder (marked by absence of thirst)",
+        "Painful Obstruction in chest due to Upper Jiao Yang Deficiency",
+        "Cold in chest during recovery from chronic illness (causes spitting of fluids)",
+        "Loss of Blood due to Spleen Yang Deficiency",
+        "Chronic childhood convulsions"
+      ],
+      "en_proposed": [
+        "Spleen and stomach deficiency cold pattern",
+        "Bleeding due to yang deficiency pattern",
+        "Chest bi (painful obstruction) due to deficiency cold pattern"
+      ],
+      "orphan_en": [
+        "Spleen Yang Deficiency",
+        "Stomach Cold",
+        "Small Intestine Deficiency Cold",
+        "Middle Jiao Yang Deficiency",
+        "Tai Yin Shi (Spleen and Kidney Yang Deficiency - P: Slow and tight)",
+        "Tai Yin Xu (abdominal pain)",
+        "Sudden turmoil disorder (marked by absence of thirst)",
+        "Painful Obstruction in chest due to Upper Jiao Yang Deficiency",
+        "Cold in chest during recovery from chronic illness (causes spitting of fluids)",
+        "Loss of Blood due to Spleen Yang Deficiency",
+        "Chronic childhood convulsions"
+      ],
+      "damaged_zh": [],
+      "note": "The 11 existing en items form a much broader indication list than the 3 zh patterns (Tai Yin subtypes, sudden turmoil disorder, childhood convulsions); all preserved in orphan_en rather than forced onto zh slots."
+    },
+    {
+      "id": "formula.fu_zi_li_zhong_wan",
+      "field": "pattern_indications",
+      "zh": [
+        "脾腎陽虛陰寒內盛證"
+      ],
+      "en_current": [
+        "Colon Cold",
+        "Spleen Yang Deficiency",
+        "Spleen and Stomach Deficiency Cold",
+        "Stomach Cold",
+        "Spleen and Kidney Yang Deficiency",
+        "Tai Yin Deficiency with Cold"
+      ],
+      "en_proposed": [
+        "Spleen and kidney yang deficiency with exuberant internal yin cold pattern"
+      ],
+      "orphan_en": [
+        "Colon Cold",
+        "Spleen Yang Deficiency",
+        "Spleen and Stomach Deficiency Cold",
+        "Stomach Cold",
+        "Spleen and Kidney Yang Deficiency",
+        "Tai Yin Deficiency with Cold"
+      ],
+      "damaged_zh": [],
+      "note": "zh is a single combined pattern; the six existing en items are separate looser patterns (\"Spleen and Kidney Yang Deficiency\" is closest but drops 陰寒內盛); all preserved in orphan_en."
+    },
+    {
+      "id": "formula.huang_qi_jian_zhong_tang",
+      "field": "pattern_indications",
+      "zh": [
+        "中焦虛寒、氣血不足腹痛證"
+      ],
+      "en_current": [
+        "Stomach Qi Deficiency",
+        "Spleen Yang Deficiency",
+        "Deficiency Cold of the Middle Jiao with severe Qi Deficiency",
+        "Wei Qi Deficiency"
+      ],
+      "en_proposed": [
+        "Deficiency cold of the middle jiao with insufficiency of qi and blood and abdominal pain pattern"
+      ],
+      "orphan_en": [
+        "Stomach Qi Deficiency",
+        "Spleen Yang Deficiency",
+        "Deficiency Cold of the Middle Jiao with severe Qi Deficiency",
+        "Wei Qi Deficiency"
+      ],
+      "damaged_zh": [],
+      "note": "Closest existing en drops 氣血不足 and 腹痛; all four preserved in orphan_en."
+    },
+    {
+      "id": "formula.si_ni_tang",
+      "field": "pattern_indications",
+      "zh": [
+        "少陰病陰盛陽微證",
+        "真寒假熱證"
+      ],
+      "en_current": [
+        "Heart Yang Deficiency Exhaustion: Yang Xu Jue Ni",
+        "Kidney Yang Deficiency with Internal Cold",
+        "Shao Yin Cold",
+        "Yang Ming Han",
+        "Excess use of diaphoretics in Tai Yang Stage leading to loss of Yang"
+      ],
+      "en_proposed": [
+        "Shao Yin disease with exuberant yin and debilitated yang pattern",
+        "True cold with false heat pattern"
+      ],
+      "orphan_en": [
+        "Heart Yang Deficiency Exhaustion: Yang Xu Jue Ni",
+        "Kidney Yang Deficiency with Internal Cold",
+        "Shao Yin Cold",
+        "Yang Ming Han",
+        "Excess use of diaphoretics in Tai Yang Stage leading to loss of Yang"
+      ],
+      "damaged_zh": [],
+      "note": "None of the five existing en is a faithful rendering of either zh item; all preserved in orphan_en."
+    },
+    {
+      "id": "formula.wu_zhu_yu_tang",
+      "field": "pattern_indications",
+      "zh": [
+        "厥陰頭痛嘔吐證",
+        "陽明虛寒嘔吐證",
+        "少陰吐利手足逆冷證"
+      ],
+      "en_current": [
+        "Stomach Deficiency Cold",
+        "Deficiency Cold of Stomach and Liver",
+        "Cold Attacking the Middle Jiao",
+        "Shao Yin Cold",
+        "Jue Yin Cold in the Liver"
+      ],
+      "en_proposed": [
+        "Jue Yin headache with vomiting pattern",
+        "Yang Ming deficiency cold with vomiting pattern",
+        "Shao Yin vomiting and diarrhea with counterflow cold of the hands and feet pattern"
+      ],
+      "orphan_en": [
+        "Stomach Deficiency Cold",
+        "Deficiency Cold of Stomach and Liver",
+        "Cold Attacking the Middle Jiao",
+        "Shao Yin Cold",
+        "Jue Yin Cold in the Liver"
+      ],
+      "damaged_zh": [],
+      "note": "Existing en items name zang-fu patterns (Stomach Deficiency Cold etc.) where zh uses six-channel framing; all five preserved in orphan_en."
+    },
+    {
+      "id": "formula.dang_gui_si_ni_tang",
+      "field": "pattern_indications",
+      "zh": [
+        "血虛寒厥、經脈凝滯證"
+      ],
+      "en_current": [
+        "Cold in the Channels due to Blood Deficiency",
+        "Jue Yin Cold"
+      ],
+      "en_proposed": [
+        "Blood deficiency cold reversal with congealed stagnation of the channels pattern"
+      ],
+      "orphan_en": [
+        "Cold in the Channels due to Blood Deficiency",
+        "Jue Yin Cold"
+      ],
+      "damaged_zh": [],
+      "note": "\"Cold in the Channels due to Blood Deficiency\" is close but drops 寒厥 and 凝滯; both en preserved in orphan_en."
+    },
+    {
+      "id": "formula.tao_hong_si_wu_tang",
+      "field": "pattern_indications",
+      "zh": [
+        "根據古代醫書記載，桃紅四物湯主要功效為養血活血，通絡調經，祛瘀止痛。具體而言，可以應用於以下幾種情況：",
+        "經期血瘀：如《醫學集成》所述，月經延期不行，因血凝而導致脹痛，或經來色紫，有瘀塊，如《婦科冰鑑》中提到的「血多有塊，色紫稠黏者，有瘀停也」。",
+        "漏血不暢：如《婦科冰鑑》所記載，「漏血澀少，間有淤塊者」，指的是月經淋漓不盡，量少且伴有瘀塊。",
+        "治療原理",
+        "桃紅四物湯以四物湯為基礎，加入桃仁和紅花，增強活血化瘀的功效。各藥材的功效如下：",
+        "熟地黃：滋陰補腎，益精填髓，為補血之要藥。",
+        "白芍：養血調經，緩急止痛，與熟地黃相配，滋陰養血。",
+        "當歸：補血活血，調經止痛，既能補血，又能活血，使補而不滯。",
+        "川芎：活血行氣，散寒止痛，為血中氣藥，推動血液運行。",
+        "桃仁：活血化瘀，潤腸通便，破血行瘀，消癥散結。",
+        "紅花：活血通經，散瘀止痛，擅長活血通經，祛瘀止痛。",
+        "此方以熟地黃、白芍滋陰養血為基礎；當歸補血活血；川芎行氣活血；桃仁、紅花加強活血化瘀之力。諸藥合用，共奏養血活血、通絡調經、祛瘀止痛之效。",
+        "方劑加減變化",
+        "古籍中亦記載了桃紅四物湯的加減變化，以應對不同的症狀：",
+        "加強行氣止痛：如《醫學集成》中，對於「過期不行，因血凝脹痛」，在桃紅四物湯的基礎上加香附、莪朮、木通、木香、肉桂、甘草，以加強行氣活血、溫經止痛之效。",
+        "清熱涼血：對於「經來色紫」，《醫學集成》中提到可用桃紅四物湯，或生地四物湯，用歸尾、赤芍，加香附、丹皮、黃連、甘草。其中，丹皮、黃連具有清熱涼血的作用，歸尾、赤芍加強活血化瘀的功效。",
+        "破瘀行滯： 《婦科冰鑑》中記載的「漏血澀少，間有淤塊者」，在桃紅四物湯的基礎上加香附以增強破瘀行滯之力。",
+        "總體而言，桃紅四物湯通過養血與活血並用，達到調經止痛的目的。其加減變化靈活，可根據具體病情進行調整，體現了中醫辨證論治的精髓。"
+      ],
+      "en_current": [],
+      "en_proposed": [
+        "According to classical medical texts, Tao Hong Si Wu Tang's principal effects are nourishing blood and invigorating blood, freeing the collaterals and regulating menstruation, and dispelling stasis and relieving pain. Specifically, it can be applied in the following situations:",
+        "Menstrual blood stasis: as described in Yi Xue Ji Cheng, menstruation overdue and not arriving, with distending pain caused by congealed blood, or menses purple in color with stasis clots — as in Fu Ke Bing Jian's line about 'copious blood with clots, purple, thick, and sticky, indicating retained stasis.'",
+        "Spotting with inhibited flow: as recorded in Fu Ke Bing Jian, 'scant, rough spotting with occasional stasis clots' — dribbling, incessant menstruation, scant in volume and accompanied by stasis clots.",
+        "Treatment principle",
+        "Tao Hong Si Wu Tang takes Si Wu Tang as its base and adds Tao Ren and Hong Hua to strengthen the effect of invigorating blood and transforming stasis. The effects of each medicinal are as follows:",
+        "Shu Di Huang: enriches yin and supplements the kidney, boosts essence and fills the marrow; the key medicinal for supplementing blood.",
+        "Bai Shao: nourishes blood and regulates menstruation, relaxes tension and relieves pain; paired with Shu Di Huang, it enriches yin and nourishes blood.",
+        "Dang Gui: supplements blood and invigorates blood, regulates menstruation and relieves pain; able both to supplement and to invigorate blood, so that supplementation does not cause stagnation.",
+        "Chuan Xiong: invigorates blood and moves qi, scatters cold and relieves pain; the qi medicinal within the blood, propelling the movement of blood.",
+        "Tao Ren: invigorates blood and transforms stasis, moistens the intestines and frees the stool; breaks blood and moves stasis, disperses concretions and dissipates binds.",
+        "Hong Hua: invigorates blood and frees menstruation, dissipates stasis and relieves pain; excels at invigorating blood and freeing menstruation, dispelling stasis and relieving pain.",
+        "This formula takes Shu Di Huang and Bai Shao, enriching yin and nourishing blood, as its foundation; Dang Gui supplements and invigorates blood; Chuan Xiong moves qi and invigorates blood; Tao Ren and Hong Hua reinforce the power of invigorating blood and transforming stasis. Used together, the medicinals jointly achieve the effects of nourishing and invigorating blood, freeing the collaterals and regulating menstruation, and dispelling stasis and relieving pain.",
+        "Formula modifications",
+        "The classical literature also records modifications of Tao Hong Si Wu Tang to address different symptom presentations:",
+        "Strengthening qi-moving and pain relief: in Yi Xue Ji Cheng, for 'menstruation overdue and not arriving, with distending pain from congealed blood,' Xiang Fu, E Zhu, Mu Tong, Mu Xiang, Rou Gui, and Gan Cao are added to Tao Hong Si Wu Tang to strengthen the effects of moving qi and invigorating blood, warming the channels and relieving pain.",
+        "Clearing heat and cooling blood: for 'menses purple in color,' Yi Xue Ji Cheng mentions using Tao Hong Si Wu Tang, or Sheng Di Si Wu Tang, using Gui Wei and Chi Shao, with Xiang Fu, Dan Pi, Huang Lian, and Gan Cao added. Dan Pi and Huang Lian clear heat and cool the blood; Gui Wei and Chi Shao strengthen the effect of invigorating blood and transforming stasis.",
+        "Breaking stasis and moving stagnation: for Fu Ke Bing Jian's 'scant, rough spotting with occasional stasis clots,' Xiang Fu is added to Tao Hong Si Wu Tang to strengthen the power of breaking stasis and moving stagnation.",
+        "Overall, Tao Hong Si Wu Tang uses blood-nourishing and blood-invigorating together to achieve its aim of regulating menstruation and relieving pain. Its modifications are flexible and can be adjusted to the specific condition, embodying the essence of Chinese medicine's pattern identification and treatment."
+      ],
+      "orphan_en": [],
+      "damaged_zh": [],
+      "note": "ATTRIBUTION FLAG: zh is encyclopedia-style article prose (headers, per-herb analysis, modification notes) misfiled into pattern_indications — only items 1-2 resemble actual indications. en was empty. Translated faithfully line-by-line per alignment rules; the field itself needs a curation pass (move, do not delete). zh untouched."
+    },
+    {
+      "id": "formula.mu_li_san",
+      "field": "pattern_indications",
+      "zh": [
+        "體虛自汗盜汗證"
+      ],
+      "en_current": [
+        "Spontaneous sweating due to Qi Deficiency",
+        "Night sweats due to Yin Deficiency",
+        "Sweating due to Qi and Yin Deficiency"
+      ],
+      "en_proposed": [
+        "Spontaneous sweating and night sweats due to bodily deficiency pattern"
+      ],
+      "orphan_en": [
+        "Spontaneous sweating due to Qi Deficiency",
+        "Night sweats due to Yin Deficiency",
+        "Sweating due to Qi and Yin Deficiency"
+      ],
+      "damaged_zh": [],
+      "note": "The three existing en split the single zh pattern into Qi-/Yin-deficiency subtypes not stated in zh; all preserved in orphan_en."
+    },
+    {
+      "id": "formula.suan_zao_ren_tang",
+      "field": "pattern_indications",
+      "zh": [
+        "肝血不足、陰虛內熱虛煩失眠證"
+      ],
+      "en_current": [
+        "Heart Blood Deficiency",
+        "Heart and Liver Blood Deficiency",
+        "Liver Yin Deficiency with Empty Fire Disturbing Heart",
+        "Liver Blood Deficiency with Deficiency Heat Rising"
+      ],
+      "en_proposed": [
+        "Liver blood insufficiency with yin-deficiency internal heat, deficiency vexation, and insomnia pattern"
+      ],
+      "orphan_en": [
+        "Heart Blood Deficiency",
+        "Heart and Liver Blood Deficiency",
+        "Liver Yin Deficiency with Empty Fire Disturbing Heart",
+        "Liver Blood Deficiency with Deficiency Heat Rising"
+      ],
+      "damaged_zh": [],
+      "note": "The four existing en are looser zang-fu variants of the single zh pattern; all preserved in orphan_en."
+    },
+    {
+      "id": "formula.tian_wang_bu_xin_dan",
+      "field": "pattern_indications",
+      "zh": [
+        "心腎陰虛火旺證",
+        "陰虛血少心神失養證"
+      ],
+      "en_current": [],
+      "en_proposed": [
+        "Heart and kidney yin deficiency with effulgent fire pattern",
+        "Yin deficiency and scant blood failing to nourish the heart spirit pattern"
+      ],
+      "orphan_en": [],
+      "damaged_zh": [],
+      "note": "en was entirely empty."
+    },
+    {
+      "id": "formula.gui_zhi_fu_ling_wan",
+      "field": "pattern_indications",
+      "zh": [
+        "婦人宿症、瘀血阻滯胞宮證",
+        "產後惡露不盡、腹痛拒按證"
+      ],
+      "en_current": [
+        "Phlegm-Dampness in the Middke Jiao"
+      ],
+      "en_proposed": [
+        "Long-standing concretion disease (zheng masses) in women with static blood obstructing the uterus pattern",
+        "Incessant postpartum lochia with abdominal pain that refuses pressure pattern"
+      ],
+      "orphan_en": [
+        "Phlegm-Dampness in the Middke Jiao"
+      ],
+      "damaged_zh": [
+        {
+          "index": 0,
+          "zh": "婦人宿症、瘀血阻滯胞宮證",
+          "presumed_reading": "婦人宿癥、瘀血阻滯胞宮證",
+          "reason": "症 is almost certainly a homophone slip for 癥 (concretion): the Jin Gui source line is 婦人宿有癥病. Provisional translation follows the presumed reading 宿癥 (long-standing concretion)."
+        }
+      ],
+      "note": "ATTRIBUTION FLAG: the sole existing en item (\"Phlegm-Dampness in the Middke Jiao\", typo included) belongs to Er Chen Tang, not Gui Zhi Fu Ling Wan; moved to orphan_en."
+    },
+    {
+      "id": "formula.gui_zhi_fu_ling_wan",
+      "field": "actions",
+      "zh": [
+        "活血化瘀",
+        "緩消癥塊"
+      ],
+      "en_current": [
+        "Dries Dampness",
+        "Moves Qi",
+        "Transforms Phlegm"
+      ],
+      "en_proposed": [
+        "Invigorates the blood and transforms stasis",
+        "Gradually dissipates concretion masses"
+      ],
+      "orphan_en": [
+        "Dries Dampness",
+        "Moves Qi",
+        "Transforms Phlegm"
+      ],
+      "damaged_zh": [],
+      "note": "ATTRIBUTION FLAG: all three existing en actions (Dries Dampness / Moves Qi / Transforms Phlegm) are Er Chen Tang actions; moved to orphan_en."
+    },
+    {
+      "id": "formula.er_chen_tang",
+      "field": "pattern_indications",
+      "zh": [
+        "濕痰咳嗽噁心嘔吐證",
+        "脾胃不和咳嗽痰多證"
+      ],
+      "en_current": [
+        "Phlegm-Damp Obstructs the Lungs",
+        "Spleen-Damp Disturbs the Lungs",
+        "Damp-Phlegm Retention (Shi Tan)",
+        "Internal Phlegm-Damp with Qi Deficiency",
+        "Wind-Phlegm (Feng Tan)"
+      ],
+      "en_proposed": [
+        "Damp-phlegm cough with nausea and vomiting pattern",
+        "Spleen-stomach disharmony with cough and copious phlegm pattern"
+      ],
+      "orphan_en": [
+        "Phlegm-Damp Obstructs the Lungs",
+        "Spleen-Damp Disturbs the Lungs",
+        "Damp-Phlegm Retention (Shi Tan)",
+        "Internal Phlegm-Damp with Qi Deficiency",
+        "Wind-Phlegm (Feng Tan)"
+      ],
+      "damaged_zh": [],
+      "note": "The five existing en are looser phlegm-pattern variants, none a 1:1 rendering of either zh; all preserved in orphan_en."
+    },
+    {
+      "id": "formula.wen_dan_tang",
+      "field": "pattern_indications",
+      "zh": [
+        "膽胃不和、痰熱內擾失眠心悸證"
+      ],
+      "en_current": [
+        "Phlegm-Fire Disturbs the Heart",
+        "Gallbladder Deficiency Heat",
+        "Disharmony Between the Gallbladder and Stomach with Phlegm Heat",
+        "Qi Stage Gallbladder Damp-Heat"
+      ],
+      "en_proposed": [
+        "Gallbladder-stomach disharmony with phlegm-heat harassing internally, insomnia, and palpitations pattern"
+      ],
+      "orphan_en": [
+        "Phlegm-Fire Disturbs the Heart",
+        "Gallbladder Deficiency Heat",
+        "Disharmony Between the Gallbladder and Stomach with Phlegm Heat",
+        "Qi Stage Gallbladder Damp-Heat"
+      ],
+      "damaged_zh": [],
+      "note": "\"Disharmony Between the Gallbladder and Stomach with Phlegm Heat\" is closest but drops 失眠心悸; all four preserved in orphan_en."
+    },
+    {
+      "id": "formula.ban_xia_bai_zhu_tian_ma_tang",
+      "field": "pattern_indications",
+      "zh": [
+        "風痰上擾頭痛眩暈證"
+      ],
+      "en_current": [
+        "Wind-Phlegm (Feng Tan)",
+        "Shi Tan (Damp-Phlegm)"
+      ],
+      "en_proposed": [
+        "Wind-phlegm harassing above with headache and dizziness pattern"
+      ],
+      "orphan_en": [
+        "Wind-Phlegm (Feng Tan)",
+        "Shi Tan (Damp-Phlegm)"
+      ],
+      "damaged_zh": [],
+      "note": "\"Wind-Phlegm (Feng Tan)\" is closest but drops 上擾頭痛眩暈; both preserved in orphan_en."
+    },
+    {
+      "id": "formula.san_zi_yang_qin_tang",
+      "field": "pattern_indications",
+      "zh": [
+        "痰壅氣逆、食滯不化喘咳證"
+      ],
+      "en_current": [
+        "Cold in the Lungs with Food Stagnation",
+        "Cold Phlegm Obstructs the Lungs",
+        "Phlegm Retention with Qi Stagnation",
+        "Han Tan",
+        "Elderly person with a weak Spleen and Stomach and Phlegm due to Food Stagnation",
+        "Emergency Rebellious Qi Conditions"
+      ],
+      "en_proposed": [
+        "Phlegm congestion with qi counterflow and unresolved food stagnation, with panting and cough pattern"
+      ],
+      "orphan_en": [
+        "Cold in the Lungs with Food Stagnation",
+        "Cold Phlegm Obstructs the Lungs",
+        "Phlegm Retention with Qi Stagnation",
+        "Han Tan",
+        "Elderly person with a weak Spleen and Stomach and Phlegm due to Food Stagnation",
+        "Emergency Rebellious Qi Conditions"
+      ],
+      "damaged_zh": [],
+      "note": "The six existing en form a broader indication list; none is a 1:1 rendering; all preserved in orphan_en."
+    },
+    {
+      "id": "formula.xiao_feng_san",
+      "field": "pattern_indications",
+      "zh": [
+        "風濕熱邪浸淫肌膚瘙癢濕疹證"
+      ],
+      "en_current": [
+        "Damp-Heat Injures the Spleen",
+        "Skin conditions due to Wind-Damp (Damp Rash) and/or Wind-Heat (Wind Rash)"
+      ],
+      "en_proposed": [
+        "Wind, damp, and heat evils soaking into the skin with itching and eczema pattern"
+      ],
+      "orphan_en": [
+        "Damp-Heat Injures the Spleen",
+        "Skin conditions due to Wind-Damp (Damp Rash) and/or Wind-Heat (Wind Rash)"
+      ],
+      "damaged_zh": [],
+      "note": "Second existing en is closest but reframes as two rash subtypes; both preserved in orphan_en (\"Damp-Heat Injures the Spleen\" matches no zh)."
+    },
+    {
+      "id": "formula.tian_ma_gou_teng_yin",
+      "field": "pattern_indications",
+      "zh": [
+        "肝陽上亢、肝風內動頭痛眩暈證"
+      ],
+      "en_current": [
+        "Liver Wind Stirring Internally: Liver Yang (Liver Fire) Generates Wind",
+        "Liver Yin Deficiency with Liver Yang Rising"
+      ],
+      "en_proposed": [
+        "Ascendant hyperactivity of liver yang with internal stirring of liver wind, headache, and dizziness pattern"
+      ],
+      "orphan_en": [
+        "Liver Wind Stirring Internally: Liver Yang (Liver Fire) Generates Wind",
+        "Liver Yin Deficiency with Liver Yang Rising"
+      ],
+      "damaged_zh": [],
+      "note": "Both existing en are partial (each covers one half of the combined zh pattern); both preserved in orphan_en."
+    },
+    {
+      "id": "formula.zhen_gan_xi_feng_tang",
+      "field": "pattern_indications",
+      "zh": [
+        "類中風（肝陽上亢、肝風內動）證"
+      ],
+      "en_current": [
+        "Liver Wind Stirring Internally: Liver Yang (Liver Fire) Transforms into Wind",
+        "Liver and Kidney Yin Deficiency with Liver Yang Rising leading to Liver Wind with Rebellious Qi and Blood",
+        "Jue Yin Heat type headache"
+      ],
+      "en_proposed": [
+        "Wind-stroke-like disorder (lei zhong feng) pattern — ascendant hyperactivity of liver yang with internal stirring of liver wind"
+      ],
+      "orphan_en": [
+        "Liver Wind Stirring Internally: Liver Yang (Liver Fire) Transforms into Wind",
+        "Liver and Kidney Yin Deficiency with Liver Yang Rising leading to Liver Wind with Rebellious Qi and Blood",
+        "Jue Yin Heat type headache"
+      ],
+      "damaged_zh": [],
+      "note": "The three existing en are mechanism elaborations, none carrying the zh head-word 類中風 (stroke-like disorder); all preserved in orphan_en."
+    },
+    {
+      "id": "formula.xiao_huo_luo_dan",
+      "field": "pattern_indications",
+      "zh": [
+        "風寒濕痺、痰瘀阻絡手足不仁證"
+      ],
+      "en_current": [
+        "Obstruction of the channels by Wind-Cold-Dampness, Blood Stasis and Phlegm",
+        "Stubborn Bi",
+        "Windstroke"
+      ],
+      "en_proposed": [
+        "Wind-cold-damp bi with phlegm and stasis obstructing the collaterals and insensitivity (numbness) of the hands and feet pattern"
+      ],
+      "orphan_en": [
+        "Obstruction of the channels by Wind-Cold-Dampness, Blood Stasis and Phlegm",
+        "Stubborn Bi",
+        "Windstroke"
+      ],
+      "damaged_zh": [],
+      "note": "First existing en is closest but drops 手足不仁; all three preserved in orphan_en."
+    },
+    {
+      "id": "formula.sha_shen_mai_men_dong_tang",
+      "field": "pattern_indications",
+      "zh": [
+        "燥傷肺胃津液燥熱乾咳證"
+      ],
+      "en_current": [
+        "Stomach and Lung Yin Deficiency",
+        "Dryness Injuring the Lungs and Stomach",
+        "Atrophy disorder (Wei Syndrome) due to Lung Heat with Fluid Deficiency"
+      ],
+      "en_proposed": [
+        "Dryness damaging the fluids of the lung and stomach, with dry heat and dry cough pattern"
+      ],
+      "orphan_en": [
+        "Stomach and Lung Yin Deficiency",
+        "Dryness Injuring the Lungs and Stomach",
+        "Atrophy disorder (Wei Syndrome) due to Lung Heat with Fluid Deficiency"
+      ],
+      "damaged_zh": [],
+      "note": "\"Dryness Injuring the Lungs and Stomach\" is closest but drops 津液/燥熱乾咳 specifics; all three preserved in orphan_en."
+    },
+    {
+      "id": "formula.an_gong_niu_huang_wan",
+      "field": "pattern_indications",
+      "zh": [
+        "熱閉心包、高熱神昏讝語證"
+      ],
+      "en_current": [
+        "Phlegm Obstructs the Heart Orifice-Tense Type (Yang Obstruction)",
+        "Wen Bing-Ying Stage Heat Attacks the Pericardium",
+        "Coma due to Wind-Stroke"
+      ],
+      "en_proposed": [
+        "Heat block of the pericardium with high fever, clouded spirit, and delirious speech pattern"
+      ],
+      "orphan_en": [
+        "Phlegm Obstructs the Heart Orifice-Tense Type (Yang Obstruction)",
+        "Wen Bing-Ying Stage Heat Attacks the Pericardium",
+        "Coma due to Wind-Stroke"
+      ],
+      "damaged_zh": [],
+      "note": "The three existing en are related but none carries the full zh clause; all preserved in orphan_en."
+    },
+    {
+      "id": "formula.zhi_bao_dan",
+      "field": "pattern_indications",
+      "zh": [
+        "痰熱內閉心包、中風昏迷證"
+      ],
+      "en_current": [
+        "Closed-type Phlegm-Heat",
+        "Summerheat Stroke",
+        "Wind-Stroke",
+        "Wen Bing - Ying Stage Heat Attacks the Pericardium",
+        "Children with Phlegm-Heat causing fright collapse",
+        "Infantile epilepsy and seizures due to Phlegm-Heat"
+      ],
+      "en_proposed": [
+        "Phlegm-heat internally blocking the pericardium with wind-stroke coma pattern"
+      ],
+      "orphan_en": [
+        "Closed-type Phlegm-Heat",
+        "Summerheat Stroke",
+        "Wind-Stroke",
+        "Wen Bing - Ying Stage Heat Attacks the Pericardium",
+        "Children with Phlegm-Heat causing fright collapse",
+        "Infantile epilepsy and seizures due to Phlegm-Heat"
+      ],
+      "damaged_zh": [],
+      "note": "The six existing en form a broader list (summerheat stroke, infantile epilepsy) not present in zh; all preserved in orphan_en."
+    },
+    {
+      "id": "formula.yang_he_tang",
+      "field": "pattern_indications",
+      "zh": [
+        "陰疽、寒凝痰滯骨槽風證"
+      ],
+      "en_current": [
+        "Yin-Type abscess due to Yang Deficiency and Interior Cold Stagnation",
+        "Blood and Yang Deficiency with Cold"
+      ],
+      "en_proposed": [
+        "Yin flat-abscess (yin ju) and gu cao feng (jaw-groove wind) due to congealing cold and phlegm stagnation pattern"
+      ],
+      "orphan_en": [
+        "Yin-Type abscess due to Yang Deficiency and Interior Cold Stagnation",
+        "Blood and Yang Deficiency with Cold"
+      ],
+      "damaged_zh": [],
+      "note": "First existing en is closest but reframes mechanism as Yang Deficiency and drops 骨槽風; both preserved in orphan_en."
+    },
+    {
+      "id": "formula.bai_du_san",
+      "field": "pattern_indications",
+      "zh": [
+        "氣虛外感風寒濕邪惡寒發熱證"
+      ],
+      "en_current": [
+        "Wind-Cold-Dampness with Deficient normal Qi",
+        "Wind-Cold-Damp Bi",
+        "Muscular atrophy due to Qi and Blood Stagnation"
+      ],
+      "en_proposed": [
+        "Qi deficiency with external contraction of wind-cold-damp evils, aversion to cold, and fever pattern"
+      ],
+      "orphan_en": [
+        "Wind-Cold-Dampness with Deficient normal Qi",
+        "Wind-Cold-Damp Bi",
+        "Muscular atrophy due to Qi and Blood Stagnation"
+      ],
+      "damaged_zh": [],
+      "note": "First existing en is closest but drops 惡寒發熱; all three preserved in orphan_en."
+    },
+    {
+      "id": "formula.ding_chuan_tang",
+      "field": "pattern_indications",
+      "zh": [
+        "調和派：也有醫家持調和態度，如汪昂認為此方雖有爭議，但臨床應用廣泛，療效確切，可能是因為初起外感，需用風藥解表，而用血藥、氣藥調裡。費伯雄則認為方中四物俱備，不可謂無血藥，但建議減去石膏、細辛。",
+        "總結與思考",
+        "定喘湯作為一個經典方劑，其療效已得到廣泛認可，但其具體應用和機理仍存在一些爭議。",
+        "關於風藥的爭議：反對者認為方中風藥過多，有傷陰耗氣之弊；支持者則認為此方針對的是外感風寒、內有痰熱的病機，需要用風藥解表散寒。這提示我們，在臨床應用時，需要根據患者的具體情況，辨證施治，靈活加減。例如，對於體虛或久病患者，應減少風藥用量，或配伍補益氣血之品。",
+        "關於真中與類中：林佩琴提出「真中」和「類中」的概念，並認為定喘湯適用於「真中」之風邪在經。這提示我們，在應用定喘湯之前，需要仔細辨別中風的類型，不可一概而論。",
+        "關於現代研究：現代藥理研究表明，定喘湯中的麻黃、杏仁、白果等成分具有擴張支氣管、抗炎、鎮咳、祛痰等作用，這為其臨床應用提供了科學依據。但其作用機制和安全性仍需進一步深入研究。",
+        "總之，定喘湯是一個療效確切的方劑，但在臨床應用時，需要根據患者的具體情況，辨證施治，靈活加減，才能更好地發揮其療效。同時，也需要加強對其作用機制和安全性的研究，以更好地指導臨床應用。"
+      ],
+      "en_current": [
+        "Indication: 總結與思考"
+      ],
+      "en_proposed": [
+        "The moderating school: some physicians also took a conciliatory stance. Wang Ang, for example, held that although this formula is controversial, it is widely applied clinically with definite efficacy — perhaps because at the onset of an external contraction, wind medicinals are needed to release the exterior, while blood medicinals and qi medicinals regulate the interior. Fei Boxiong held that all four [Si Wu] ingredients are present in the formula, so it cannot be said to lack blood medicinals, but suggested removing Shi Gao and Xi Xin.",
+        "Summary and reflections",
+        "As a classic formula, Ding Chuan Tang's efficacy has gained wide recognition, but some controversy remains over its specific application and mechanism.",
+        "On the controversy over wind medicinals: opponents held that the formula contains too many wind medicinals, with the drawback of damaging yin and consuming qi; supporters held that the formula targets a pathodynamic of external wind-cold contraction with internal phlegm-heat, requiring wind medicinals to release the exterior and scatter cold. This reminds us that clinical application requires pattern identification and flexible modification according to the patient's specific situation — for example, for weak or chronically ill patients, reducing the dose of wind medicinals or combining them with qi-and-blood-supplementing agents.",
+        "On true stroke versus stroke-like disorders: Lin Peiqin proposed the concepts of 'true stroke' (zhen zhong) and 'stroke-like disorder' (lei zhong), and held that Ding Chuan Tang applies to 'true stroke' with the wind evil in the channels. This reminds us that before applying Ding Chuan Tang, the type of wind-stroke must be carefully distinguished rather than treated indiscriminately.",
+        "On modern research: modern pharmacological research indicates that components of Ding Chuan Tang such as Ma Huang, Xing Ren, and Bai Guo have bronchodilating, anti-inflammatory, antitussive, and expectorant actions, providing scientific support for its clinical application; but its mechanisms of action and safety still require further in-depth study.",
+        "In sum, Ding Chuan Tang is a formula of definite efficacy, but in clinical application it must be used with pattern identification and flexible modification according to the patient's specific situation in order to bring out its efficacy, and research into its mechanism of action and safety needs strengthening to better guide clinical use."
+      ],
+      "orphan_en": [
+        "Indication: 總結與思考"
+      ],
+      "damaged_zh": [],
+      "note": "ATTRIBUTION FLAG: zh is article prose, and its content is internally misattributed — it speaks of removing Shi Gao and Xi Xin, of \"all four [Si Wu] ingredients present\", and of true-stroke vs stroke-like windstroke; Ding Chuan Tang contains none of those herbs and does not treat windstroke. The passage fits a Da Qin Jiao Tang commentary. The sole existing en (\"Indication: 總結與思考\") is untranslated mixed-language junk; moved to orphan_en."
+    },
+    {
+      "id": "formula.ding_chuan_tang",
+      "field": "actions",
+      "zh": [
+        ":組成及藥物分析",
+        ":定喘湯的基本組成包括：",
+        ":麻黃：發汗解表，宣肺平喘，為君藥。在此方中主要作用是宣肺散寒，解表發汗，使外邪得以宣散。",
+        ":白果：斂肺定喘，止咳化痰，為臣藥。白果具有收斂肺氣的作用，可以緩解肺氣上逆導致的喘咳。",
+        ":杏仁：止咳平喘，潤腸通便，為佐藥。協助麻黃宣肺平喘，並可潤肺化痰。",
+        ":半夏：燥濕化痰，降逆止嘔，為佐藥。針對痰濕內阻，協助化痰降逆。",
+        ":款冬花：潤肺下氣，止咳化痰，為佐藥。",
+        ":黃芩：清熱燥濕，瀉火解毒，為佐藥。針對裡熱，清肺熱化痰。",
+        ":桑白皮：瀉肺平喘，利水消腫，為佐藥。協助清肺熱、降肺氣。",
+        ":甘草：調和諸藥，補脾益氣，為使藥。",
+        ":綜觀全方，以麻黃宣肺散寒為君，白果斂肺定喘為臣，其餘諸藥皆為佐使，共奏宣肺定喘，清熱化痰之功。",
+        ":治療原理",
+        ":定喘湯的治療原理主要體現在以下幾個方面：",
+        ":宣肺散寒，解表化痰：麻黃為辛溫解表藥，能發汗解表，宣肺平喘，針對外感風寒之邪。配伍杏仁、蘇子，加強宣肺降氣、止咳平喘之功。半夏、款冬花燥濕化痰，桑白皮、黃芩清熱化痰，白果斂肺定喘，諸藥合用，可使肺氣宣暢，痰熱得清，喘咳得平。",
+        ":針對病機，標本兼治：定喘湯針對哮喘“寒包火”的病機，既能用麻黃、杏仁等宣肺散寒以解表邪，又能用黃芩、桑白皮等清熱化痰以治裡熱，標本兼治，相輔相成。",
+        ":用藥精當，配伍巧妙：方中麻黃與白果相配，一宣一斂，相反相成，既能增強宣肺定喘之功，又能防止麻黃過於辛散耗氣。桑白皮與黃芩相配，清熱瀉肺，既能清肺中之熱，又能防麻黃、杏仁等溫燥之性傷陰。",
+        ":臨床應用及加減",
+        ":定喘湯主要用於治療外感風寒、痰熱內蘊所致的哮喘，症見：",
+        ":咳嗽",
+        ":氣喘",
+        ":喉中痰鳴",
+        ":痰黃稠黏",
+        ":胸悶",
+        ":或伴有惡寒發熱、鼻塞流涕等表證",
+        ":加減應用：",
+        ":天寒可加桂枝以增強溫肺散寒之力。",
+        ":雨濕可加生薑以增強化痰止咳、溫肺散寒之功。",
+        ":春夏可加知母以清熱瀉火，潤燥生津。",
+        ":心下痞滿可加枳殼以行氣消痞。",
+        ":痰多可加南星以加強燥濕化痰之力。",
+        ":風虛可加當歸以養血活血。",
+        ":口渴可加栝蔞根以生津止渴。",
+        ":身疼痛可加秦艽以祛風濕，止疼痛。",
+        ":喘急可加炒桑皮以瀉肺平喘。",
+        ":醫家觀點比較",
+        "組成及藥物分析",
+        "定喘湯的基本組成包括：",
+        "麻黃：發汗解表，宣肺平喘，為君藥。在此方中主要作用是宣肺散寒，解表發汗，使外邪得以宣散。",
+        "白果：斂肺定喘，止咳化痰，為臣藥。白果具有收斂肺氣的作用，可以緩解肺氣上逆導致的喘咳。",
+        "杏仁：止咳平喘，潤腸通便，為佐藥。協助麻黃宣肺平喘，並可潤肺化痰。",
+        "半夏：燥濕化痰，降逆止嘔，為佐藥。針對痰濕內阻，協助化痰降逆。",
+        "款冬花：潤肺下氣，止咳化痰，為佐藥。",
+        "黃芩：清熱燥濕，瀉火解毒，為佐藥。針對裡熱，清肺熱化痰。",
+        "桑白皮：瀉肺平喘，利水消腫，為佐藥。協助清肺熱、降肺氣。",
+        "甘草：調和諸藥，補脾益氣，為使藥。",
+        "綜觀全方，以麻黃宣肺散寒為君，白果斂肺定喘為臣，其餘諸藥皆為佐使，共奏宣肺定喘，清熱化痰之功。",
+        "治療原理",
+        "定喘湯的治療原理主要體現在以下幾個方面：",
+        "宣肺散寒，解表化痰：麻黃為辛溫解表藥，能發汗解表，宣肺平喘，針對外感風寒之邪。配伍杏仁、蘇子，加強宣肺降氣、止咳平喘之功。半夏、款冬花燥濕化痰，桑白皮、黃芩清熱化痰，白果斂肺定喘，諸藥合用，可使肺氣宣暢，痰熱得清，喘咳得平。",
+        "針對病機，標本兼治：定喘湯針對哮喘“寒包火”的病機，既能用麻黃、杏仁等宣肺散寒以解表邪，又能用黃芩、桑白皮等清熱化痰以治裡熱，標本兼治，相輔相成。",
+        "用藥精當，配伍巧妙：方中麻黃與白果相配，一宣一斂，相反相成，既能增強宣肺定喘之功，又能防止麻黃過於辛散耗氣。桑白皮與黃芩相配，清熱瀉肺，既能清肺中之熱，又能防麻黃、杏仁等溫燥之性傷陰。",
+        "臨床應用及加減",
+        "定喘湯主要用於治療外感風寒、痰熱內蘊所致的哮喘，症見：",
+        "喉中痰鳴",
+        "痰黃稠黏",
+        "或伴有惡寒發熱、鼻塞流涕等表證",
+        "加減應用：",
+        "天寒可加桂枝 以增強溫肺散寒之力。",
+        "雨濕可加生薑 以增強化痰止咳、溫肺散寒之功。",
+        "春夏可加知母 以清熱瀉火，潤燥生津。",
+        "心下痞滿可加枳殼 以行氣消痞。",
+        "痰多可加南星 以加強燥濕化痰之力。",
+        "風虛可加當歸 以養血活血。",
+        "口渴可加栝蔞根 以生津止渴。",
+        "身疼痛可加秦艽 以祛風濕，止疼痛。",
+        "喘急可加炒桑皮 以瀉肺平喘。",
+        "醫家觀點比較"
+      ],
+      "en_current": [
+        "Action: 咳嗽",
+        "Action: 氣喘",
+        "Action: 胸悶"
+      ],
+      "en_proposed": [
+        "Composition and analysis of the medicinals",
+        "The basic composition of Ding Chuan Tang includes:",
+        "Ma Huang: promotes sweating and releases the exterior, diffuses the lung and calms panting; the sovereign medicinal. Its main role in this formula is to diffuse the lung and scatter cold, release the exterior and promote sweating, so that the external evil can be diffused and dispersed.",
+        "Bai Guo: constrains the lung and stabilizes panting, stops cough and transforms phlegm; the minister medicinal. Bai Guo's action of astringing lung qi can relieve the panting cough caused by lung qi ascending counterflow.",
+        "Xing Ren: stops cough and calms panting, moistens the intestines and frees the stool; an assistant medicinal. It helps Ma Huang diffuse the lung and calm panting, and can also moisten the lung and transform phlegm.",
+        "Ban Xia: dries dampness and transforms phlegm, downbears counterflow and stops vomiting; an assistant medicinal. Targeting internal obstruction by phlegm-damp, it helps transform phlegm and downbear counterflow.",
+        "Kuan Dong Hua: moistens the lung and downbears qi, stops cough and transforms phlegm; an assistant medicinal.",
+        "Huang Qin: clears heat and dries dampness, drains fire and resolves toxicity; an assistant medicinal. Targeting the interior heat, it clears lung heat and transforms phlegm.",
+        "Sang Bai Pi: drains the lung and calms panting, disinhibits water and disperses swelling; an assistant medicinal. It helps clear lung heat and downbear lung qi.",
+        "Gan Cao: harmonizes the other medicinals, supplements the spleen and boosts qi; the envoy medicinal.",
+        "Viewing the whole formula: Ma Huang, diffusing the lung and scattering cold, is sovereign; Bai Guo, constraining the lung and stabilizing panting, is minister; the remaining medicinals all serve as assistants and envoys, together achieving the effects of diffusing the lung and stabilizing panting, clearing heat and transforming phlegm.",
+        "Treatment principle",
+        "The treatment principle of Ding Chuan Tang is mainly reflected in the following aspects:",
+        "Diffusing the lung and scattering cold, releasing the exterior and transforming phlegm: Ma Huang is an acrid-warm exterior-releasing medicinal that can promote sweating and release the exterior, diffuse the lung and calm panting, targeting the externally contracted wind-cold evil. Combined with Xing Ren and Su Zi, it strengthens the effects of diffusing the lung and downbearing qi, stopping cough and calming panting. Ban Xia and Kuan Dong Hua dry dampness and transform phlegm; Sang Bai Pi and Huang Qin clear heat and transform phlegm; Bai Guo constrains the lung and stabilizes panting. Used together, these medicinals allow lung qi to flow freely, the phlegm-heat to be cleared, and the panting cough to be calmed.",
+        "Addressing the pathodynamic, treating root and branch together: Ding Chuan Tang addresses the 'cold enveloping fire' pathodynamic of wheezing — it can use Ma Huang, Xing Ren, and the like to diffuse the lung and scatter cold, resolving the exterior evil, while using Huang Qin, Sang Bai Pi, and the like to clear heat and transform phlegm, treating the interior heat; root and branch are treated together, mutually complementing.",
+        "Precise medicinal choice, ingenious combination: in the formula, Ma Huang paired with Bai Guo — one diffusing, one constraining, opposites completing each other — both strengthens the effect of diffusing the lung and stabilizing panting and prevents Ma Huang's excessive acrid dissipation from consuming qi. Sang Bai Pi paired with Huang Qin clears heat and drains the lung — both clearing the heat within the lung and preventing the warm, drying natures of Ma Huang, Xing Ren, and the like from damaging yin.",
+        "Clinical application and modifications",
+        "Ding Chuan Tang is mainly used to treat wheezing caused by external contraction of wind-cold with phlegm-heat brewing internally, with symptoms including:",
+        "Cough",
+        "Panting",
+        "Phlegm rale in the throat",
+        "Yellow, thick, sticky phlegm",
+        "Chest oppression",
+        "Or accompanied by exterior signs such as aversion to cold with fever, nasal congestion, and runny nose",
+        "Modified applications:",
+        "In cold weather, Gui Zhi may be added to strengthen the power of warming the lung and scattering cold.",
+        "In rainy, damp weather, Sheng Jiang may be added to strengthen the effects of transforming phlegm and stopping cough, warming the lung and scattering cold.",
+        "In spring and summer, Zhi Mu may be added to clear heat and drain fire, moisten dryness and engender fluids.",
+        "For focal distention and fullness below the heart, Zhi Ke may be added to move qi and disperse the distention.",
+        "For copious phlegm, Nan Xing may be added to strengthen the power of drying dampness and transforming phlegm.",
+        "For wind deficiency, Dang Gui may be added to nourish blood and invigorate blood.",
+        "For thirst, Gua Lou Gen may be added to engender fluids and quench thirst.",
+        "For generalized body pain, Qin Jiao may be added to dispel wind-damp and relieve pain.",
+        "For acute panting, dry-fried Sang Bai Pi may be added to drain the lung and calm panting.",
+        "Comparison of physicians' viewpoints",
+        "Composition and analysis of the medicinals",
+        "The basic composition of Ding Chuan Tang includes:",
+        "Ma Huang: promotes sweating and releases the exterior, diffuses the lung and calms panting; the sovereign medicinal. Its main role in this formula is to diffuse the lung and scatter cold, release the exterior and promote sweating, so that the external evil can be diffused and dispersed.",
+        "Bai Guo: constrains the lung and stabilizes panting, stops cough and transforms phlegm; the minister medicinal. Bai Guo's action of astringing lung qi can relieve the panting cough caused by lung qi ascending counterflow.",
+        "Xing Ren: stops cough and calms panting, moistens the intestines and frees the stool; an assistant medicinal. It helps Ma Huang diffuse the lung and calm panting, and can also moisten the lung and transform phlegm.",
+        "Ban Xia: dries dampness and transforms phlegm, downbears counterflow and stops vomiting; an assistant medicinal. Targeting internal obstruction by phlegm-damp, it helps transform phlegm and downbear counterflow.",
+        "Kuan Dong Hua: moistens the lung and downbears qi, stops cough and transforms phlegm; an assistant medicinal.",
+        "Huang Qin: clears heat and dries dampness, drains fire and resolves toxicity; an assistant medicinal. Targeting the interior heat, it clears lung heat and transforms phlegm.",
+        "Sang Bai Pi: drains the lung and calms panting, disinhibits water and disperses swelling; an assistant medicinal. It helps clear lung heat and downbear lung qi.",
+        "Gan Cao: harmonizes the other medicinals, supplements the spleen and boosts qi; the envoy medicinal.",
+        "Viewing the whole formula: Ma Huang, diffusing the lung and scattering cold, is sovereign; Bai Guo, constraining the lung and stabilizing panting, is minister; the remaining medicinals all serve as assistants and envoys, together achieving the effects of diffusing the lung and stabilizing panting, clearing heat and transforming phlegm.",
+        "Treatment principle",
+        "The treatment principle of Ding Chuan Tang is mainly reflected in the following aspects:",
+        "Diffusing the lung and scattering cold, releasing the exterior and transforming phlegm: Ma Huang is an acrid-warm exterior-releasing medicinal that can promote sweating and release the exterior, diffuse the lung and calm panting, targeting the externally contracted wind-cold evil. Combined with Xing Ren and Su Zi, it strengthens the effects of diffusing the lung and downbearing qi, stopping cough and calming panting. Ban Xia and Kuan Dong Hua dry dampness and transform phlegm; Sang Bai Pi and Huang Qin clear heat and transform phlegm; Bai Guo constrains the lung and stabilizes panting. Used together, these medicinals allow lung qi to flow freely, the phlegm-heat to be cleared, and the panting cough to be calmed.",
+        "Addressing the pathodynamic, treating root and branch together: Ding Chuan Tang addresses the 'cold enveloping fire' pathodynamic of wheezing — it can use Ma Huang, Xing Ren, and the like to diffuse the lung and scatter cold, resolving the exterior evil, while using Huang Qin, Sang Bai Pi, and the like to clear heat and transform phlegm, treating the interior heat; root and branch are treated together, mutually complementing.",
+        "Precise medicinal choice, ingenious combination: in the formula, Ma Huang paired with Bai Guo — one diffusing, one constraining, opposites completing each other — both strengthens the effect of diffusing the lung and stabilizing panting and prevents Ma Huang's excessive acrid dissipation from consuming qi. Sang Bai Pi paired with Huang Qin clears heat and drains the lung — both clearing the heat within the lung and preventing the warm, drying natures of Ma Huang, Xing Ren, and the like from damaging yin.",
+        "Clinical application and modifications",
+        "Ding Chuan Tang is mainly used to treat wheezing caused by external contraction of wind-cold with phlegm-heat brewing internally, with symptoms including:",
+        "Phlegm rale in the throat",
+        "Yellow, thick, sticky phlegm",
+        "Or accompanied by exterior signs such as aversion to cold with fever, nasal congestion, and runny nose",
+        "Modified applications:",
+        "In cold weather, Gui Zhi may be added to strengthen the power of warming the lung and scattering cold.",
+        "In rainy, damp weather, Sheng Jiang may be added to strengthen the effects of transforming phlegm and stopping cough, warming the lung and scattering cold.",
+        "In spring and summer, Zhi Mu may be added to clear heat and drain fire, moisten dryness and engender fluids.",
+        "For focal distention and fullness below the heart, Zhi Ke may be added to move qi and disperse the distention.",
+        "For copious phlegm, Nan Xing may be added to strengthen the power of drying dampness and transforming phlegm.",
+        "For wind deficiency, Dang Gui may be added to nourish blood and invigorate blood.",
+        "For thirst, Gua Lou Gen may be added to engender fluids and quench thirst.",
+        "For generalized body pain, Qin Jiao may be added to dispel wind-damp and relieve pain.",
+        "For acute panting, dry-fried Sang Bai Pi may be added to drain the lung and calm panting.",
+        "Comparison of physicians' viewpoints"
+      ],
+      "orphan_en": [
+        "Action: 咳嗽",
+        "Action: 氣喘",
+        "Action: 胸悶"
+      ],
+      "damaged_zh": [
+        {
+          "indices": "0-34",
+          "zh": "items 0-34 each begin with a stray \":\"",
+          "presumed_reading": "same text without the leading colon (plain duplicates at indices 35-66 confirm the reading)",
+          "reason": "Leading-colon artifact from a broken import; content otherwise legible. Translations follow the colon-stripped reading."
+        }
+      ],
+      "note": "zh is a full article dump (composition / principle / modification prose), stored twice: 35 items with a leading \":\" artifact plus 32 plain duplicates (the plain copy lacks 咳嗽/氣喘/胸悶). Duplicated zh items get identical en, mirroring the duplication. The three existing en (\"Action: 咳嗽\" etc.) are untranslated mixed-language junk; moved to orphan_en. Field needs curation (move, not delete)."
+    },
+    {
+      "id": "formula.du_huo_ji_sheng_tang",
+      "field": "pattern_indications",
+      "zh": [
+        "肝腎兩虛、氣血不足風寒濕痺證"
+      ],
+      "en_current": [
+        "Bi Syndrome with Kidney and Liver Deficiency",
+        "Bi Syndrome with Qi and Blood Deficiency",
+        "Invasion of the muscles and bones by Wind-Cold-Damp",
+        "Atrophy disorder (wasting of the lower extremities)"
+      ],
+      "en_proposed": [
+        "Dual deficiency of the liver and kidney with insufficiency of qi and blood, wind-cold-damp bi pattern"
+      ],
+      "orphan_en": [
+        "Bi Syndrome with Kidney and Liver Deficiency",
+        "Bi Syndrome with Qi and Blood Deficiency",
+        "Invasion of the muscles and bones by Wind-Cold-Damp",
+        "Atrophy disorder (wasting of the lower extremities)"
+      ],
+      "damaged_zh": [],
+      "note": "The four existing en split the single combined zh pattern into subtypes and add an atrophy-disorder indication not in zh; all preserved in orphan_en."
+    },
+    {
+      "id": "formula.huai_hua_san",
+      "field": "pattern_indications",
+      "zh": [
+        "腸風臟毒便血濕熱便血證"
+      ],
+      "en_current": [
+        "Wind-Heat in the Stomach and Intestines (Intestinal Wind)",
+        "Damp-Heat in the Stomach and Intestines"
+      ],
+      "en_proposed": [
+        "Intestinal wind and visceral toxin bloody stool — damp-heat bloody stool pattern"
+      ],
+      "orphan_en": [
+        "Wind-Heat in the Stomach and Intestines (Intestinal Wind)",
+        "Damp-Heat in the Stomach and Intestines"
+      ],
+      "damaged_zh": [],
+      "note": "zh appears to concatenate two phrases without punctuation (腸風臟毒便血 + 濕熱便血); translated as written. Both existing en preserved in orphan_en."
+    },
+    {
+      "id": "formula.huang_tu_tang",
+      "field": "pattern_indications",
+      "zh": [
+        "黃土湯主治證候"
+      ],
+      "en_current": [],
+      "en_proposed": [
+        "Patterns treated by Huang Tu Tang"
+      ],
+      "orphan_en": [],
+      "damaged_zh": [
+        {
+          "index": 0,
+          "zh": "黃土湯主治證候",
+          "presumed_reading": "(placeholder heading — no clinical content)",
+          "reason": "Template scaffolding left in the data: a section title (\"patterns treated by Huang Tu Tang\") with no pattern following it."
+        }
+      ],
+      "note": "zh is a placeholder heading, not an actual pattern; en was empty. Translated literally; the record needs real content."
+    },
+    {
+      "id": "formula.huang_tu_tang",
+      "field": "actions",
+      "zh": [
+        ":黃土湯：清熱解表、調理氣血",
+        "黃土湯：清熱解表、調理氣血"
+      ],
+      "en_current": [],
+      "en_proposed": [
+        "Huang Tu Tang: clears heat and releases the exterior, regulates qi and blood",
+        "Huang Tu Tang: clears heat and releases the exterior, regulates qi and blood"
+      ],
+      "orphan_en": [],
+      "damaged_zh": [
+        {
+          "index": 0,
+          "zh": ":黃土湯：清熱解表、調理氣血",
+          "presumed_reading": "黃土湯：清熱解表、調理氣血 (leading colon stripped; identical to index 1)",
+          "reason": "Leading-colon artifact duplicating index 1; and the content itself is template junk inconsistent with the formula (see note)."
+        }
+      ],
+      "note": "SUSPECTED FAKE CONTENT: 清熱解表、調理氣血 contradicts Huang Tu Tang's established actions (warms yang, fortifies the spleen, nourishes blood, stops bleeding). Looks like generated template filler; the same sentence appears on formula.ling_jiao_gou_teng_yin with 本方 substituted. Translated literally per rules; needs clinical review before any downstream use. en was empty."
+    },
+    {
+      "id": "formula.ling_jiao_gou_teng_tang",
+      "field": "pattern_indications",
+      "zh": [
+        "熱極生風、肝經熱盛痙厥證"
+      ],
+      "en_current": [
+        "Phlegm Obstructs the Heart Orifice-Tense Type (Yang Obstruction)",
+        "Liver Wind Stirring Internally: Extreme Heat Generates Wind",
+        "Wen Bing Xue Level Heat (Xue Fen) Generating Wind",
+        "Phlegm-Heat"
+      ],
+      "en_proposed": [
+        "Extreme heat engendering wind — exuberant heat in the liver channel with convulsions and reversal pattern"
+      ],
+      "orphan_en": [
+        "Phlegm Obstructs the Heart Orifice-Tense Type (Yang Obstruction)",
+        "Liver Wind Stirring Internally: Extreme Heat Generates Wind",
+        "Wen Bing Xue Level Heat (Xue Fen) Generating Wind",
+        "Phlegm-Heat"
+      ],
+      "damaged_zh": [],
+      "note": "The four existing en are related Wen Bing framings plus two phlegm items matching no zh; all preserved in orphan_en."
+    },
+    {
+      "id": "formula.qian_zheng_san",
+      "field": "pattern_indications",
+      "zh": [
+        "風痰阻絡口眼歪斜證"
+      ],
+      "en_current": [
+        "Wind-Stroke",
+        "Wind-Phlegm Obstructing the channels of the head and face"
+      ],
+      "en_proposed": [
+        "Wind-phlegm obstructing the collaterals with deviation of the mouth and eye pattern"
+      ],
+      "orphan_en": [
+        "Wind-Stroke",
+        "Wind-Phlegm Obstructing the channels of the head and face"
+      ],
+      "damaged_zh": [],
+      "note": "Second existing en is closest but adds head-and-face channel detail and drops 口眼歪斜 phrasing; both preserved in orphan_en."
+    },
+    {
+      "id": "formula.qing_zao_jiu_fei_tang",
+      "field": "pattern_indications",
+      "zh": [
+        "燥熱傷肺、氣陰兩傷乾咳無痰證"
+      ],
+      "en_current": [
+        "Perverse Dryness Attacks the Lungs",
+        "Warm Dryness Attacks the Lungs",
+        "Qi and Yin Deficiency Due to Heat and Dryness in the Lungs",
+        "Zao Tan - Dry Phlegm",
+        "Atrophy disorder (Wei Syndrome) due to Lung Heat with Fluid Deficiency"
+      ],
+      "en_proposed": [
+        "Dry heat damaging the lung with damage to both qi and yin, dry cough without phlegm pattern"
+      ],
+      "orphan_en": [
+        "Perverse Dryness Attacks the Lungs",
+        "Warm Dryness Attacks the Lungs",
+        "Qi and Yin Deficiency Due to Heat and Dryness in the Lungs",
+        "Zao Tan - Dry Phlegm",
+        "Atrophy disorder (Wei Syndrome) due to Lung Heat with Fluid Deficiency"
+      ],
+      "damaged_zh": [],
+      "note": "The five existing en form a broader list; none is a 1:1 rendering; all preserved in orphan_en."
+    },
+    {
+      "id": "formula.shi_xiao_san",
+      "field": "pattern_indications",
+      "zh": [
+        "瘀血停滯少腹劇痛產後惡露不止證"
+      ],
+      "en_current": [
+        "Blood Stagnation in the Stomach",
+        "Blood Stasis which obstructs the vessels of the lower abdomen",
+        "Liver Qi Stagnation with Blood Blockage"
+      ],
+      "en_proposed": [
+        "Static blood collecting and stagnating, with severe lower-abdominal pain and incessant postpartum lochia pattern"
+      ],
+      "orphan_en": [
+        "Blood Stagnation in the Stomach",
+        "Blood Stasis which obstructs the vessels of the lower abdomen",
+        "Liver Qi Stagnation with Blood Blockage"
+      ],
+      "damaged_zh": [],
+      "note": "The three existing en name other stasis locations (Stomach, Liver) not in zh; all preserved in orphan_en."
+    },
+    {
+      "id": "formula.si_ni_san",
+      "field": "pattern_indications",
+      "zh": [
+        "陽鬱厥逆、肝脾不和脘腹疼痛證"
+      ],
+      "en_current": [
+        "Jue Yin Heat",
+        "Shao Yin Heat",
+        "Liver and Spleen Disharmony (Liver Attacking the Spleen) with costal or abdominal pain and menstrual complaints",
+        "Gu Syndrome"
+      ],
+      "en_proposed": [
+        "Constrained yang with reversal counterflow (cold extremities), liver-spleen disharmony with epigastric and abdominal pain pattern"
+      ],
+      "orphan_en": [
+        "Jue Yin Heat",
+        "Shao Yin Heat",
+        "Liver and Spleen Disharmony (Liver Attacking the Spleen) with costal or abdominal pain and menstrual complaints",
+        "Gu Syndrome"
+      ],
+      "damaged_zh": [],
+      "note": "The four existing en (Jue Yin Heat, Shao Yin Heat, Gu Syndrome, and a long Liver-Spleen item) do not map 1:1 onto the single combined zh pattern; all preserved in orphan_en."
+    },
+    {
+      "id": "formula.su_he_xiang_wan",
+      "field": "pattern_indications",
+      "zh": [
+        "寒厥/痰厥閉證（陰閉神昏）證"
+      ],
+      "en_current": [
+        "Wind-Stroke due to Phlegm Obstructing the Heart Orifices-Tense Type (Yin Obstruction)",
+        "Qi Stroke or Cold Stroke",
+        "Dry Sudden Turmoil Disorder",
+        "Painful Obstruction of the chest due to Qi Stagnation",
+        "Congealing due to Cold",
+        "Turbid Phlegm Obstructing the channels and collaterals"
+      ],
+      "en_proposed": [
+        "Cold reversal / phlegm reversal block pattern (yin block with clouded spirit)"
+      ],
+      "orphan_en": [
+        "Wind-Stroke due to Phlegm Obstructing the Heart Orifices-Tense Type (Yin Obstruction)",
+        "Qi Stroke or Cold Stroke",
+        "Dry Sudden Turmoil Disorder",
+        "Painful Obstruction of the chest due to Qi Stagnation",
+        "Congealing due to Cold",
+        "Turbid Phlegm Obstructing the channels and collaterals"
+      ],
+      "damaged_zh": [],
+      "note": "The six existing en form a broader indication list; all preserved in orphan_en."
+    },
+    {
+      "id": "formula.xuan_fu_dai_zhe_tang",
+      "field": "pattern_indications",
+      "zh": [
+        "代赭石質重而沈降，苦寒入肝，重而鎮肝降逆，與旋覆花二者相合，下氣消痰，鎮肝胃之虛逆。但味苦氣寒，故用量稍小。",
+        "生薑於本方用量獨重，寓意有三：一為和胃降逆以增止嘔之效，二為宣散水氣以助祛痰之功，三可制約代赭石的寒涼之性，使其鎮降氣逆而不伐胃。",
+        "半夏辛溫，祛痰散結，降逆和胃。人參、炙甘草、大棗益脾胃，補氣虛，扶助己傷之中氣，為佐使之用。",
+        "諸藥配合，共成降逆化痰，益氣和胃之劑，使痰涎得消，逆氣得平，中虛得復，則心下之痞硬除而噯氣、嘔呃可止。",
+        "後世用治胃氣虛寒之反胃、嘔吐涎沫，以及中焦虛痞而善噯氣者，亦取本方益氣和胃，降逆化痰之功。",
+        "現代運用於梅尼爾氏暈眩症、胃神經官能症、胃擴張、慢性胃炎、胃及十二指腸潰瘍、幽門不完全性梗阻、神經性呃逆嘔吐、膈肌痙攣、食道炎、賁門痙攣、食道癌、胃癌、肝炎、便秘、胃食道逆流、失眠、頭痛、腦膜炎後遺症等屬胃虛痰阻者。",
+        "由於脾胃病治療程序相當複雜，單純氣逆噫氣可用此方。如果陽虛體質者，可以先服「四逆湯」、「理中丸」，之後再服用「旋覆代赭湯」。"
+      ],
+      "en_current": [],
+      "en_proposed": [
+        "Dai Zhe Shi is heavy in substance and settling, bitter and cold, entering the liver; being heavy it settles the liver and downbears counterflow. Combined with Xuan Fu Hua, the two downbear qi and disperse phlegm, settling the deficiency counterflow of the liver and stomach. But because its flavor is bitter and its qi cold, its dose is kept somewhat small.",
+        "Sheng Jiang has a uniquely heavy dose in this formula, with threefold intent: first, to harmonize the stomach and downbear counterflow, increasing the vomiting-stopping effect; second, to diffuse and disperse water qi, assisting the effect of dispelling phlegm; third, to restrain the cold nature of Dai Zhe Shi, so that it settles counterflow qi without attacking the stomach.",
+        "Ban Xia, acrid and warm, dispels phlegm and dissipates binds, downbears counterflow and harmonizes the stomach. Ren Shen, Zhi Gan Cao, and Da Zao boost the spleen and stomach, supplement the deficient qi, and support the already-damaged center qi, serving as assistants and envoys.",
+        "The medicinals in combination form a formula that downbears counterflow and transforms phlegm, boosts qi and harmonizes the stomach — so that phlegm-drool is dispersed, counterflow qi is calmed, and the deficient center is restored; then the glomus hardness below the heart is removed, and belching, vomiting, and hiccough can stop.",
+        "Later generations also used this formula — drawing on its effects of boosting qi and harmonizing the stomach, downbearing counterflow and transforming phlegm — to treat stomach reflux (fan wei) and vomiting of drool and foam due to stomach qi deficiency cold, as well as middle jiao deficiency glomus with frequent belching.",
+        "In modern practice it is applied to Meniere's disease, gastric neurosis, gastric dilation, chronic gastritis, gastric and duodenal ulcer, incomplete pyloric obstruction, neurogenic hiccough and vomiting, diaphragmatic spasm, esophagitis, cardiospasm, esophageal cancer, gastric cancer, hepatitis, constipation, gastroesophageal reflux, insomnia, headache, sequelae of meningitis, and the like, where they belong to stomach deficiency with phlegm obstruction.",
+        "Because the treatment sequence for spleen-stomach diseases is quite complex, this formula may be used for simple qi-counterflow belching on its own; for those of yang-deficient constitution, Si Ni Tang or Li Zhong Wan may be taken first, followed afterward by Xuan Fu Dai Zhe Tang."
+      ],
+      "orphan_en": [],
+      "damaged_zh": [],
+      "note": "ATTRIBUTION FLAG: zh is formula-analysis prose (herb roles, modern biomedical disease list), not pattern indications; en was empty. Translated faithfully line-by-line; the field needs a curation pass (move, not delete)."
+    },
+    {
+      "id": "formula.xuan_fu_dai_zhe_tang",
+      "field": "actions",
+      "zh": [
+        ":旋覆代赭湯雖然並沒有太多人知道，但是卻是一個非常好用的中藥方劑，出自於中國古代漢朝的《傷寒雜病論》。",
+        "旋覆代赭湯雖然並沒有太多人知道，但是卻是一個非常好用的中藥方劑，出自於中國古代漢朝的《傷寒雜病論》。"
+      ],
+      "en_current": [],
+      "en_proposed": [
+        "Although Xuan Fu Dai Zhe Tang is not known to very many people, it is a very useful Chinese herbal formula, coming from the Shang Han Za Bing Lun (Treatise on Cold Damage and Miscellaneous Diseases) of China's Han dynasty.",
+        "Although Xuan Fu Dai Zhe Tang is not known to very many people, it is a very useful Chinese herbal formula, coming from the Shang Han Za Bing Lun (Treatise on Cold Damage and Miscellaneous Diseases) of China's Han dynasty."
+      ],
+      "orphan_en": [],
+      "damaged_zh": [
+        {
+          "index": 0,
+          "zh": ":旋覆代赭湯雖然並沒有太多人知道…",
+          "presumed_reading": "same sentence without the leading colon (identical to index 1)",
+          "reason": "Leading-colon import artifact duplicating index 1."
+        }
+      ],
+      "note": "zh is trivia prose (formula provenance), not action phrases, stored twice (leading-colon variant + plain). en was empty. Duplicated zh items get identical en."
+    },
+    {
+      "id": "formula.yu_nu_jian",
+      "field": "pattern_indications",
+      "zh": [
+        "此方具有清除胃部熱氣、滋養腎陰、滋陰清熱、養陰補虛的功效，主治陰虛津虧、肺熱咳嗽、骨蒸勞熱、虛汗盜汗、煩熱口渴、頭痛、牙痛、牙齦出血、舌紅苔黃、脈數等症狀。",
+        "根據《景岳全書》的說法，本方所治之證屬於「少陰不足，陽明有餘」。",
+        "這是指體內的陽明胃經氣血旺盛，胃熱沿經絡上攻頭面，導致頭痛、牙痛。熱氣傷及胃經的血絡，造成出血。",
+        "由於熱氣損傷陰液，少陰腎經氣血不足時會出現煩熱、口乾、舌紅且舌苔黃乾，腎陰不足則會使牙齒鬆動。",
+        "胃火沿著胃經往上容易造成牙痛",
+        "本方還能治療因胃熱過盛導致的食慾過強，虛火上炎時會見到口乾唇裂、五心煩熱等症狀。",
+        "綜上所述，本方主要針對體內津液不足、火氣過盛所引起的病症，以清除胃熱為主要治療方法。",
+        "因此，玉女煎適用於胃熱引起的各種症狀，如頭痛、牙痛、牙齒鬆動及出血、煩躁口渴、容易肚子餓、舌頭紅潤且舌苔黃而乾燥。",
+        "玉女煎運用「石膏」去除胃裡面過多的火氣。熟地黃則是用來幫助那些腎水不足的情況。這兩者搭配起來，不僅可以清掉火氣，還能補充水分。",
+        "再加上知母，它能加強石膏清理胃火的作用，也幫助熟地黃滋養腎裡的陰液。麥門冬有清熱和養陰的效果。牛膝則有助於引導體內的熱氣和血液往下走。",
+        "所有這些藥材一起用，能共同達到清理胃中的熱氣和滋養腎陰的目的。這個方子的特點是既能清除體內的火熱，又能補充所需要的陰液。",
+        "引導體內的熱氣往下移，讓身體裡的陰陽、水火達到一個平衡狀態，從而達到自然恢復健康的效果。",
+        "服用中藥降胃火，讓身體感到清涼",
+        "歷代對於此方應該用「熟地黃」還是「生地黃」產生爭議。因為玉女煎主要是用來治療胃裡的火太旺和身體陰液不足的問題，應該運用涼性的生地黃，但是卻運用溫和的熟地黃。",
+        "這是因為這個方子主要是針對那些身體裡水分不足、火氣太旺的狀況，需要補充身體的精華，所以用熟地黃來滋養身體的陰精。",
+        "如果是因為火氣太旺傷到了身體的陰液，讓身體的陰液變得不足，火氣更旺，那就應該用生地黃。",
+        "古代醫家張秉成就認為：「如果是因為陰液不足所引起的火旺，那麼應該換成用生地黃。」",
+        "所以，玉女煎裡面選用生地黃還是熟地黃，要看病情的具體情況來決定，這樣才能顯示出方子靈活應對的智慧。",
+        "類似的方劑還有「清胃散」，功用與之類似，都用於治療「胃熱」引起的牙痛，但清胃散主要針對清除胃火，以黃連為主藥，專門治療胃火過盛引起的牙痛、牙齦出血等症狀。",
+        "玉女煎加減法：對於火氣過盛的患者，可加入山豆根、地骨皮等藥物以增強清熱瀉火的效果。若血熱引起出血較多，則可去掉熟地，加入牛蒡子、玄參等藥物以增加清熱涼血的功效。",
+        "現代常用於治療口腔潰瘍、急性口腔炎、流鼻血、上消化道出血、糖尿病、舌炎、牙齦腫痛、三叉神經痛、牙周病、吐血衄血、病毒性心肌炎、腎虛腰痛、骨質疏鬆症、肺結核、慢性支氣管炎……等疾病。"
+      ],
+      "en_current": [],
+      "en_proposed": [
+        "This formula has the effects of clearing heat from the stomach, nourishing kidney yin, enriching yin and clearing heat, and nourishing yin and supplementing deficiency; it treats symptoms such as yin deficiency with fluid depletion, lung-heat cough, steaming-bone taxation fever, deficiency sweating and night sweats, vexing heat with thirst, headache, toothache, bleeding gums, a red tongue with yellow coating, and a rapid pulse.",
+        "According to Jing Yue Quan Shu (The Complete Works of Zhang Jingyue), the pattern this formula treats belongs to 'Shao Yin insufficiency with Yang Ming superabundance.'",
+        "This means that the qi and blood of the Yang Ming stomach channel are exuberant: stomach heat attacks the head and face upward along the channel, causing headache and toothache, and the heat damages the blood network vessels of the stomach channel, causing bleeding.",
+        "Because the heat damages yin humor, when the Shao Yin kidney channel's qi and blood are insufficient there is vexing heat, dry mouth, and a red tongue with a dry yellow coating; kidney yin insufficiency makes the teeth loosen.",
+        "Stomach fire ascending along the stomach channel readily causes toothache.",
+        "This formula can also treat excessive appetite caused by superabundant stomach heat; when deficiency fire flames upward there are symptoms such as dry mouth with cracked lips and vexing heat in the five hearts (palms, soles, and center of the chest).",
+        "In summary, this formula chiefly addresses conditions arising from insufficiency of fluids with excessive fire, taking the clearing of stomach heat as the main method of treatment.",
+        "Therefore Yu Nu Jian is suitable for the various symptoms caused by stomach heat, such as headache, toothache, loose and bleeding teeth, vexation and thirst, rapid hungering, and a tongue that is red with a yellow, dry coating.",
+        "Yu Nu Jian uses Shi Gao to eliminate the excess fire in the stomach, while Shu Di Huang is used to help where kidney water is insufficient; paired together, they not only clear the fire but also replenish fluids.",
+        "Zhi Mu is then added: it reinforces Shi Gao's clearing of stomach fire and also helps Shu Di Huang enrich the yin humor of the kidney. Mai Men Dong has heat-clearing and yin-nourishing effects. Niu Xi helps conduct the body's heat and blood downward.",
+        "Used together, all these medicinals jointly achieve the aim of clearing heat from the stomach and nourishing kidney yin. The formula's distinctive feature is that it both clears the body's fire-heat and replenishes the yin humor that is needed.",
+        "It conducts the body's heat downward, bringing yin and yang, water and fire, into a balanced state, and thereby achieves a natural restoration of health.",
+        "Taking Chinese herbs to bring down stomach fire lets the body feel cool and refreshed.",
+        "Physicians through the ages have debated whether this formula should use Shu Di Huang (prepared rehmannia) or Sheng Di Huang (raw rehmannia): since Yu Nu Jian mainly treats exuberant fire in the stomach with insufficiency of the body's yin humor, the cool-natured Sheng Di Huang would seem indicated, yet the mild, warm Shu Di Huang is used instead.",
+        "This is because the formula chiefly targets conditions where the body's fluids are insufficient and fire is too exuberant, and the body's essence needs replenishing, so Shu Di Huang is used to nourish the yin essence.",
+        "If instead an over-exuberant fire has damaged the body's yin humor, leaving the yin humor insufficient and the fire still more exuberant, then Sheng Di Huang should be used.",
+        "The physician Zhang Bingcheng of former times held: 'If the effulgence of fire arises from insufficiency of yin humor, then it should be changed to Sheng Di Huang.'",
+        "Thus, whether Sheng Di Huang or Shu Di Huang is chosen within Yu Nu Jian depends on the specifics of the condition — showing the flexible, responsive wisdom of the formula.",
+        "A similar formula is Qing Wei San, comparable in function; both are used for toothache caused by 'stomach heat,' but Qing Wei San focuses on eliminating stomach fire, takes Huang Lian as its chief medicinal, and specifically treats toothache, bleeding gums, and similar symptoms caused by superabundant stomach fire.",
+        "Modifications of Yu Nu Jian: for patients with over-exuberant fire, medicinals such as Shan Dou Gen and Di Gu Pi may be added to strengthen the effect of clearing heat and draining fire. If blood heat causes relatively heavy bleeding, Shu Di may be removed and medicinals such as Niu Bang Zi and Xuan Shen added to increase the effect of clearing heat and cooling the blood.",
+        "In modern practice it is commonly used to treat oral ulcers, acute stomatitis, nosebleed, upper gastrointestinal bleeding, diabetes, glossitis, swollen and painful gums, trigeminal neuralgia, periodontal disease, hematemesis and epistaxis, viral myocarditis, kidney-deficiency lumbar pain, osteoporosis, pulmonary tuberculosis, chronic bronchitis, and other such diseases."
+      ],
+      "orphan_en": [],
+      "damaged_zh": [],
+      "note": "ATTRIBUTION FLAG: zh is article prose misfiled into pattern_indications (item 0's indication list — lung-heat cough, steaming bone — is itself questionable for Yu Nu Jian). en was empty. Translated faithfully line-by-line; field needs curation (move, not delete)."
+    },
+    {
+      "id": "formula.yu_nu_jian",
+      "field": "actions",
+      "zh": [
+        ":根據《景岳全書》的說法，本方所治之證屬於「少陰不足，陽明有餘」。",
+        ":這是指體內的陽明胃經氣血旺盛，胃熱沿經絡上攻頭面，導致頭痛、牙痛。熱氣傷及胃經的血絡，造成出血。",
+        ":由於熱氣損傷陰液，少陰腎經氣血不足時會出現煩熱、口乾、舌紅且舌苔黃乾，腎陰不足則會使牙齒鬆動。",
+        ":胃火沿著胃經往上容易造成牙痛",
+        ":本方還能治療因胃熱過盛導致的食慾過強，虛火上炎時會見到口乾唇裂、五心煩熱等症狀。",
+        ":綜上所述，本方主要針對體內津液不足、火氣過盛所引起的病症，以清除胃熱為主要治療方法。",
+        ":因此，玉女煎適用於胃熱引起的各種症狀，如頭痛、牙痛、牙齒鬆動及出血、煩躁口渴、容易肚子餓、舌頭紅潤且舌苔黃而乾燥。",
+        ":玉女煎運用「石膏」去除胃裡面過多的火氣。熟地黃則是用來幫助那些腎水不足的情況。這兩者搭配起來，不僅可以清掉火氣，還能補充水分。",
+        ":再加上知母，它能加強石膏清理胃火的作用，也幫助熟地黃滋養腎裡的陰液。麥門冬有清熱和養陰的效果。牛膝則有助於引導體內的熱氣和血液往下走。",
+        ":所有這些藥材一起用，能共同達到清理胃中的熱氣和滋養腎陰的目的。這個方子的特點是既能清除體內的火熱，又能補充所需要的陰液。",
+        ":引導體內的熱氣往下移，讓身體裡的陰陽、水火達到一個平衡狀態，從而達到自然恢復健康的效果。",
+        ":服用中藥降胃火，讓身體感到清涼",
+        ":歷代對於此方應該用「熟地黃」還是「生地黃」產生爭議。因為玉女煎主要是用來治療胃裡的火太旺和身體陰液不足的問題，應該運用涼性的生地黃，但是卻運用溫和的熟地黃。",
+        ":這是因為這個方子主要是針對那些身體裡水分不足、火氣太旺的狀況，需要補充身體的精華，所以用熟地黃來滋養身體的陰精。",
+        ":如果是因為火氣太旺傷到了身體的陰液，讓身體的陰液變得不足，火氣更旺，那就應該用生地黃。",
+        ":古代醫家張秉成就認為：「如果是因為陰液不足所引起的火旺，那麼應該換成用生地黃。」",
+        ":所以，玉女煎裡面選用生地黃還是熟地黃，要看病情的具體情況來決定，這樣才能顯示出方子靈活應對的智慧。",
+        ":類似的方劑還有「清胃散」，功用與之類似，都用於治療「胃熱」引起的牙痛，但清胃散主要針對清除胃火，以黃連為主藥，專門治療胃火過盛引起的牙痛、牙齦出血等症狀。",
+        ":現代常用於治療口腔潰瘍、急性口腔炎、流鼻血、上消化道出血、糖尿病、舌炎、牙齦腫痛、三叉神經痛、牙周病、吐血衄血、病毒性心肌炎、腎虛腰痛、骨質疏鬆症、肺結核、慢性支氣管炎……等疾病。",
+        "根據《景岳全書》的說法，本方所治之證屬於「少陰不足，陽明有餘」。",
+        "這是指體內的陽明胃經氣血旺盛，胃熱沿經絡上攻頭面，導致頭痛、牙痛。熱氣傷及胃經的血絡，造成出血。",
+        "由於熱氣損傷陰液，少陰腎經氣血不足時會出現煩熱、口乾、舌紅且舌苔黃乾，腎陰不足則會使牙齒鬆動。",
+        "胃火沿著胃經往上容易造成牙痛",
+        "本方還能治療因胃熱過盛導致的食慾過強，虛火上炎時會見到口乾唇裂、五心煩熱等症狀。",
+        "綜上所述，本方主要針對體內津液不足、火氣過盛所引起的病症，以清除胃熱為主要治療方法。",
+        "因此，玉女煎適用於胃熱引起的各種症狀，如頭痛、牙痛、牙齒鬆動及出血、煩躁口渴、容易肚子餓、舌頭紅潤且舌苔黃而乾燥。",
+        "玉女煎運用「石膏」去除胃裡面過多的火氣。熟地黃則是用來幫助那些腎水不足的情況。這兩者搭配起來，不僅可以清掉火氣，還能補充水分。",
+        "再加上知母，它能加強石膏清理胃火的作用，也幫助熟地黃滋養腎裡的陰液。麥門冬有清熱和養陰的效果。牛膝則有助於引導體內的熱氣和血液往下走。",
+        "所有這些藥材一起用，能共同達到清理胃中的熱氣和滋養腎陰的目的。這個方子的特點是既能清除體內的火熱，又能補充所需要的陰液。",
+        "引導體內的熱氣往下移，讓身體裡的陰陽、水火達到一個平衡狀態，從而達到自然恢復健康的效果。",
+        "服用中藥降胃火，讓身體感到清涼",
+        "歷代對於此方應該用「熟地黃」還是「生地黃」產生爭議。因為玉女煎主要是用來治療胃裡的火太旺和身體陰液不足的問題，應該運用涼性的生地黃，但是卻運用溫和的熟地黃。",
+        "這是因為這個方子主要是針對那些身體裡水分不足、火氣太旺的狀況，需要補充身體的精華，所以用熟地黃來滋養身體的陰精。",
+        "如果是因為火氣太旺傷到了身體的陰液，讓身體的陰液變得不足，火氣更旺，那就應該用生地黃。",
+        "古代醫家張秉成就認為：「如果是因為陰液不足所引起的火旺，那麼應該換成用生地黃。」",
+        "所以，玉女煎裡面選用生地黃還是熟地黃，要看病情的具體情況來決定，這樣才能顯示出方子靈活應對的智慧。",
+        "類似的方劑還有「清胃散」，功用與之類似，都用於治療「胃熱」引起的牙痛，但清胃散主要針對清除胃火，以黃連為主藥，專門治療胃火過盛引起的牙痛、牙齦出血等症狀。",
+        "現代常用於治療口腔潰瘍、急性口腔炎、流鼻血、上消化道出血、糖尿病、舌炎、牙齦腫痛、三叉神經痛、牙周病、吐血衄血、病毒性心肌炎、腎虛腰痛、骨質疏鬆症、肺結核、慢性支氣管炎……等疾病。"
+      ],
+      "en_current": [],
+      "en_proposed": [
+        "According to Jing Yue Quan Shu (The Complete Works of Zhang Jingyue), the pattern this formula treats belongs to 'Shao Yin insufficiency with Yang Ming superabundance.'",
+        "This means that the qi and blood of the Yang Ming stomach channel are exuberant: stomach heat attacks the head and face upward along the channel, causing headache and toothache, and the heat damages the blood network vessels of the stomach channel, causing bleeding.",
+        "Because the heat damages yin humor, when the Shao Yin kidney channel's qi and blood are insufficient there is vexing heat, dry mouth, and a red tongue with a dry yellow coating; kidney yin insufficiency makes the teeth loosen.",
+        "Stomach fire ascending along the stomach channel readily causes toothache.",
+        "This formula can also treat excessive appetite caused by superabundant stomach heat; when deficiency fire flames upward there are symptoms such as dry mouth with cracked lips and vexing heat in the five hearts (palms, soles, and center of the chest).",
+        "In summary, this formula chiefly addresses conditions arising from insufficiency of fluids with excessive fire, taking the clearing of stomach heat as the main method of treatment.",
+        "Therefore Yu Nu Jian is suitable for the various symptoms caused by stomach heat, such as headache, toothache, loose and bleeding teeth, vexation and thirst, rapid hungering, and a tongue that is red with a yellow, dry coating.",
+        "Yu Nu Jian uses Shi Gao to eliminate the excess fire in the stomach, while Shu Di Huang is used to help where kidney water is insufficient; paired together, they not only clear the fire but also replenish fluids.",
+        "Zhi Mu is then added: it reinforces Shi Gao's clearing of stomach fire and also helps Shu Di Huang enrich the yin humor of the kidney. Mai Men Dong has heat-clearing and yin-nourishing effects. Niu Xi helps conduct the body's heat and blood downward.",
+        "Used together, all these medicinals jointly achieve the aim of clearing heat from the stomach and nourishing kidney yin. The formula's distinctive feature is that it both clears the body's fire-heat and replenishes the yin humor that is needed.",
+        "It conducts the body's heat downward, bringing yin and yang, water and fire, into a balanced state, and thereby achieves a natural restoration of health.",
+        "Taking Chinese herbs to bring down stomach fire lets the body feel cool and refreshed.",
+        "Physicians through the ages have debated whether this formula should use Shu Di Huang (prepared rehmannia) or Sheng Di Huang (raw rehmannia): since Yu Nu Jian mainly treats exuberant fire in the stomach with insufficiency of the body's yin humor, the cool-natured Sheng Di Huang would seem indicated, yet the mild, warm Shu Di Huang is used instead.",
+        "This is because the formula chiefly targets conditions where the body's fluids are insufficient and fire is too exuberant, and the body's essence needs replenishing, so Shu Di Huang is used to nourish the yin essence.",
+        "If instead an over-exuberant fire has damaged the body's yin humor, leaving the yin humor insufficient and the fire still more exuberant, then Sheng Di Huang should be used.",
+        "The physician Zhang Bingcheng of former times held: 'If the effulgence of fire arises from insufficiency of yin humor, then it should be changed to Sheng Di Huang.'",
+        "Thus, whether Sheng Di Huang or Shu Di Huang is chosen within Yu Nu Jian depends on the specifics of the condition — showing the flexible, responsive wisdom of the formula.",
+        "A similar formula is Qing Wei San, comparable in function; both are used for toothache caused by 'stomach heat,' but Qing Wei San focuses on eliminating stomach fire, takes Huang Lian as its chief medicinal, and specifically treats toothache, bleeding gums, and similar symptoms caused by superabundant stomach fire.",
+        "In modern practice it is commonly used to treat oral ulcers, acute stomatitis, nosebleed, upper gastrointestinal bleeding, diabetes, glossitis, swollen and painful gums, trigeminal neuralgia, periodontal disease, hematemesis and epistaxis, viral myocarditis, kidney-deficiency lumbar pain, osteoporosis, pulmonary tuberculosis, chronic bronchitis, and other such diseases.",
+        "According to Jing Yue Quan Shu (The Complete Works of Zhang Jingyue), the pattern this formula treats belongs to 'Shao Yin insufficiency with Yang Ming superabundance.'",
+        "This means that the qi and blood of the Yang Ming stomach channel are exuberant: stomach heat attacks the head and face upward along the channel, causing headache and toothache, and the heat damages the blood network vessels of the stomach channel, causing bleeding.",
+        "Because the heat damages yin humor, when the Shao Yin kidney channel's qi and blood are insufficient there is vexing heat, dry mouth, and a red tongue with a dry yellow coating; kidney yin insufficiency makes the teeth loosen.",
+        "Stomach fire ascending along the stomach channel readily causes toothache.",
+        "This formula can also treat excessive appetite caused by superabundant stomach heat; when deficiency fire flames upward there are symptoms such as dry mouth with cracked lips and vexing heat in the five hearts (palms, soles, and center of the chest).",
+        "In summary, this formula chiefly addresses conditions arising from insufficiency of fluids with excessive fire, taking the clearing of stomach heat as the main method of treatment.",
+        "Therefore Yu Nu Jian is suitable for the various symptoms caused by stomach heat, such as headache, toothache, loose and bleeding teeth, vexation and thirst, rapid hungering, and a tongue that is red with a yellow, dry coating.",
+        "Yu Nu Jian uses Shi Gao to eliminate the excess fire in the stomach, while Shu Di Huang is used to help where kidney water is insufficient; paired together, they not only clear the fire but also replenish fluids.",
+        "Zhi Mu is then added: it reinforces Shi Gao's clearing of stomach fire and also helps Shu Di Huang enrich the yin humor of the kidney. Mai Men Dong has heat-clearing and yin-nourishing effects. Niu Xi helps conduct the body's heat and blood downward.",
+        "Used together, all these medicinals jointly achieve the aim of clearing heat from the stomach and nourishing kidney yin. The formula's distinctive feature is that it both clears the body's fire-heat and replenishes the yin humor that is needed.",
+        "It conducts the body's heat downward, bringing yin and yang, water and fire, into a balanced state, and thereby achieves a natural restoration of health.",
+        "Taking Chinese herbs to bring down stomach fire lets the body feel cool and refreshed.",
+        "Physicians through the ages have debated whether this formula should use Shu Di Huang (prepared rehmannia) or Sheng Di Huang (raw rehmannia): since Yu Nu Jian mainly treats exuberant fire in the stomach with insufficiency of the body's yin humor, the cool-natured Sheng Di Huang would seem indicated, yet the mild, warm Shu Di Huang is used instead.",
+        "This is because the formula chiefly targets conditions where the body's fluids are insufficient and fire is too exuberant, and the body's essence needs replenishing, so Shu Di Huang is used to nourish the yin essence.",
+        "If instead an over-exuberant fire has damaged the body's yin humor, leaving the yin humor insufficient and the fire still more exuberant, then Sheng Di Huang should be used.",
+        "The physician Zhang Bingcheng of former times held: 'If the effulgence of fire arises from insufficiency of yin humor, then it should be changed to Sheng Di Huang.'",
+        "Thus, whether Sheng Di Huang or Shu Di Huang is chosen within Yu Nu Jian depends on the specifics of the condition — showing the flexible, responsive wisdom of the formula.",
+        "A similar formula is Qing Wei San, comparable in function; both are used for toothache caused by 'stomach heat,' but Qing Wei San focuses on eliminating stomach fire, takes Huang Lian as its chief medicinal, and specifically treats toothache, bleeding gums, and similar symptoms caused by superabundant stomach fire.",
+        "In modern practice it is commonly used to treat oral ulcers, acute stomatitis, nosebleed, upper gastrointestinal bleeding, diabetes, glossitis, swollen and painful gums, trigeminal neuralgia, periodontal disease, hematemesis and epistaxis, viral myocarditis, kidney-deficiency lumbar pain, osteoporosis, pulmonary tuberculosis, chronic bronchitis, and other such diseases."
+      ],
+      "orphan_en": [],
+      "damaged_zh": [
+        {
+          "indices": "0-18",
+          "zh": "items 0-18 each begin with a stray \":\"",
+          "presumed_reading": "same text without the leading colon (plain duplicates at indices 19-37 confirm the reading)",
+          "reason": "Leading-colon artifact from a broken import; content otherwise legible."
+        }
+      ],
+      "note": "zh duplicates 19 sentences of the pattern_indications prose, stored twice (19 leading-colon items + 19 plain duplicates = 38). Not action phrases. en was empty. Duplicated zh items get identical en; field needs curation."
+    },
+    {
+      "id": "formula.da_bu_yin_wan",
+      "field": "pattern_indications",
+      "zh": [
+        "陰虛火旺、骨蒸潮熱盜汗證"
+      ],
+      "en_current": [
+        "Liver Yin Deficiency with Yang Rising",
+        "Lung and Kidney Yin Deficiency",
+        "Liver and Kidney Yin Deficiency (with Fire Flaring)",
+        "Atrophy disorder (Wei Syndrome) due to Liver and Kidney Deficiency"
+      ],
+      "en_proposed": [
+        "Yin deficiency with effulgent fire, steaming-bone tidal fever, and night sweats pattern"
+      ],
+      "orphan_en": [
+        "Liver Yin Deficiency with Yang Rising",
+        "Lung and Kidney Yin Deficiency",
+        "Liver and Kidney Yin Deficiency (with Fire Flaring)",
+        "Atrophy disorder (Wei Syndrome) due to Liver and Kidney Deficiency"
+      ],
+      "damaged_zh": [],
+      "note": "The four existing en name organ-specific variants plus an atrophy indication not in zh; all preserved in orphan_en."
+    },
+    {
+      "id": "formula.da_qing_long_tang",
+      "field": "pattern_indications",
+      "zh": [
+        "風寒外束、水飲內停兼裡熱煩躁證"
+      ],
+      "en_current": [
+        "Exogenous Wind-Cold Invasion with Interior Heat",
+        "Tai Yang - Yang Ming",
+        "Severe floating edema",
+        "Yi Yin"
+      ],
+      "en_proposed": [
+        "Wind-cold fettering the exterior with water-rheum collecting internally and interior heat with vexation and agitation pattern"
+      ],
+      "orphan_en": [
+        "Exogenous Wind-Cold Invasion with Interior Heat",
+        "Tai Yang - Yang Ming",
+        "Severe floating edema",
+        "Yi Yin"
+      ],
+      "damaged_zh": [],
+      "note": "First existing en is closest but drops 水飲內停 and 煩躁; all four preserved in orphan_en (\"Yi Yin\" corresponds to the 溢飲 indication zh does not list)."
+    },
+    {
+      "id": "formula.ge_gen_huang_qin_huang_lian_tang",
+      "field": "pattern_indications",
+      "zh": [
+        "表證未解、邪熱入裡身熱下利證",
+        "濕熱下利身熱痛證"
+      ],
+      "en_current": [
+        "Improper treatment of Tai Yang Stage with purgatives (c).",
+        "Lower Jiao Damp Heat with lingering exterior symptoms.",
+        "Diarrhea and dysentery whether or not there is Wind Invasion."
+      ],
+      "en_proposed": [
+        "Unresolved exterior pattern with evil heat entering the interior, generalized fever, and diarrhea pattern",
+        "Damp-heat diarrhea with generalized fever and pain pattern"
+      ],
+      "orphan_en": [
+        "Improper treatment of Tai Yang Stage with purgatives (c).",
+        "Lower Jiao Damp Heat with lingering exterior symptoms.",
+        "Diarrhea and dysentery whether or not there is Wind Invasion."
+      ],
+      "damaged_zh": [],
+      "note": "None of the three existing en maps 1:1 (the first also carries a stray \"(c).\" artifact); all preserved in orphan_en."
+    },
+    {
+      "id": "formula.gui_zhi_shao_yao_zhi_mu_tang",
+      "field": "pattern_indications",
+      "zh": [
+        "風濕歷節、風寒濕痺化熱關節腫痛證",
+        "風濕痺痛關節紅腫證"
+      ],
+      "en_current": [
+        "Recurrent Wind-Cold-Damp Bi",
+        "Wind-Damp Bi with formation of Heat",
+        "Wind-Phlegm-Dampness with formation of Heat"
+      ],
+      "en_proposed": [
+        "Wind-damp li jie (joint-running disease) — wind-cold-damp bi transforming into heat with swollen, painful joints pattern",
+        "Wind-damp bi pain with red, swollen joints pattern"
+      ],
+      "orphan_en": [
+        "Recurrent Wind-Cold-Damp Bi",
+        "Wind-Damp Bi with formation of Heat",
+        "Wind-Phlegm-Dampness with formation of Heat"
+      ],
+      "damaged_zh": [],
+      "note": "The three existing en overlap but none maps 1:1 (歷節 head-word missing); all preserved in orphan_en."
+    },
+    {
+      "id": "formula.ling_jiao_gou_teng_yin",
+      "field": "pattern_indications",
+      "zh": [
+        "本方主治證候"
+      ],
+      "en_current": [],
+      "en_proposed": [
+        "Patterns treated by this formula"
+      ],
+      "orphan_en": [],
+      "damaged_zh": [
+        {
+          "index": 0,
+          "zh": "本方主治證候",
+          "presumed_reading": "(placeholder heading — no clinical content)",
+          "reason": "Template scaffolding left in the data: a section title with no pattern following it."
+        }
+      ],
+      "note": "zh is a placeholder heading, not an actual pattern; en was empty. Record 羚角鉤藤丸 also looks like a duplicate of formula.ling_jiao_gou_teng_tang (羚角鉤藤湯) — flag for dedupe review."
+    },
+    {
+      "id": "formula.ling_jiao_gou_teng_yin",
+      "field": "actions",
+      "zh": [
+        ":本方：清熱解表、調理氣血",
+        "本方：清熱解表、調理氣血"
+      ],
+      "en_current": [],
+      "en_proposed": [
+        "This formula: clears heat and releases the exterior, regulates qi and blood",
+        "This formula: clears heat and releases the exterior, regulates qi and blood"
+      ],
+      "orphan_en": [],
+      "damaged_zh": [
+        {
+          "index": 0,
+          "zh": ":本方：清熱解表、調理氣血",
+          "presumed_reading": "本方：清熱解表、調理氣血 (leading colon stripped; identical to index 1)",
+          "reason": "Leading-colon artifact duplicating index 1; content itself is template junk inconsistent with the formula (see note)."
+        }
+      ],
+      "note": "SUSPECTED FAKE CONTENT: 清熱解表、調理氣血 contradicts this formula's established actions (cools the liver, extinguishes wind, clears heat); identical template sentence appears on formula.huang_tu_tang with the name substituted. Translated literally per rules; needs clinical review. en was empty."
+    },
+    {
+      "id": "formula.xiao_ji_yin_zi",
+      "field": "pattern_indications",
+      "zh": [
+        "熱結下焦、血淋尿血尿痛證",
+        "尿血小腹脹痛證"
+      ],
+      "en_current": [
+        "Damp-Heat in the Bladder",
+        "Blood Lin",
+        "Heart Fire"
+      ],
+      "en_proposed": [
+        "Heat binding in the lower jiao with blood lin (blood strangury), bloody urine, and painful urination pattern",
+        "Bloody urine with lower-abdominal distention and pain pattern"
+      ],
+      "orphan_en": [
+        "Damp-Heat in the Bladder",
+        "Blood Lin",
+        "Heart Fire"
+      ],
+      "damaged_zh": [],
+      "note": "\"Blood Lin\" corresponds loosely to part of zh 0; none of the three existing en maps 1:1; all preserved in orphan_en."
+    },
+    {
+      "id": "formula.zeng_ye_tang",
+      "field": "pattern_indications",
+      "zh": [
+        "陽明溫病、津液虧損便秘證",
+        "陰虛腸燥便秘證"
+      ],
+      "en_current": [
+        "Deficiency of Fluid in Colon (Yang Ming Xu)",
+        "Constipation due to Yin Deficiency",
+        "Ying Stage Heat with Middle Jiao Dryness"
+      ],
+      "en_proposed": [
+        "Yang Ming warm disease with fluid depletion and constipation pattern",
+        "Yin deficiency with intestinal dryness and constipation pattern"
+      ],
+      "orphan_en": [
+        "Deficiency of Fluid in Colon (Yang Ming Xu)",
+        "Constipation due to Yin Deficiency",
+        "Ying Stage Heat with Middle Jiao Dryness"
+      ],
+      "damaged_zh": [],
+      "note": "\"Constipation due to Yin Deficiency\" is closest to zh 1 but drops 腸燥; all three preserved in orphan_en."
+    },
+    {
+      "id": "formula.wei_jing_tang",
+      "field": "pattern_indications",
+      "zh": [
+        "肺癰吐膿、痰熱瘀血鬱肺證",
+        "風熱毒邪壅肺身熱咳嗽證"
+      ],
+      "en_current": [
+        "Phlegm-Heat Congests the Lungs",
+        "Lung Abscess due to Wind-Heat toxin obstructing the Lungs with Phlegm and Blood Stasis",
+        "Lung Heat",
+        "Recuperation from febrile diseases",
+        "Eye disorders due to upward blazing of Heat toxin"
+      ],
+      "en_proposed": [
+        "Lung abscess with expectoration of pus — phlegm-heat and static blood constrained in the lung pattern",
+        "Wind-heat toxin evil congesting the lung with generalized fever and cough pattern"
+      ],
+      "orphan_en": [
+        "Phlegm-Heat Congests the Lungs",
+        "Lung Abscess due to Wind-Heat toxin obstructing the Lungs with Phlegm and Blood Stasis",
+        "Lung Heat",
+        "Recuperation from febrile diseases",
+        "Eye disorders due to upward blazing of Heat toxin"
+      ],
+      "damaged_zh": [],
+      "note": "The five existing en include one long item merging both zh clauses plus unrelated indications (eye disorders, recuperation); all preserved in orphan_en."
+    },
+    {
+      "id": "formula.dang_gui_nian_tong_tang",
+      "field": "pattern_indications",
+      "zh": [
+        "濕熱相搏、外感風邪肢節煩痛證",
+        "濕熱痺痛肢節紅腫證"
+      ],
+      "en_current": [
+        "Damp-Heat with External Wind Invasion",
+        "Damp-Heat Bi",
+        "Atrophy disorder (Wei Syndrome) due to Damp-Heat"
+      ],
+      "en_proposed": [
+        "Damp and heat contending with each other plus external contraction of wind evil, with vexing pain of the limbs and joints pattern",
+        "Damp-heat bi pain with red, swollen limbs and joints pattern"
+      ],
+      "orphan_en": [
+        "Damp-Heat with External Wind Invasion",
+        "Damp-Heat Bi",
+        "Atrophy disorder (Wei Syndrome) due to Damp-Heat"
+      ],
+      "damaged_zh": [],
+      "note": "\"Damp-Heat with External Wind Invasion\" is closest to zh 0 but drops 肢節煩痛; all three preserved in orphan_en."
+    }
+  ]
+}

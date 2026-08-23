@@ -25,6 +25,49 @@
       ],
       "note_zh": "spironolactone 同屬本系統與心血管腎臟 —— drugsystem_ids 是陣列不是單值,沒有主次。",
       "review_status": "draft"
+    },
+    {
+      "id": "drugsystem.autonomic_nervous_system",
+      "name_en": "Autonomic Nervous System",
+      "name_zh": "自主神經系統",
+      "course_files": [
+        "Bastyr_Pharm_W1_Autonomic"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "drugsystem.central_nervous_system",
+      "name_en": "Central Nervous System",
+      "name_zh": "中樞神經系統",
+      "course_files": [
+        "Bastyr_Pharm_W2_CNS"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "drugsystem.respiratory",
+      "name_en": "Respiratory System",
+      "name_zh": "呼吸系統",
+      "course_files": [
+        "Bastyr_Pharm_W1_Respiratory"
+      ],
+      "review_status": "draft"
+    },
+    {
+      "id": "drugsystem.musculoskeletal_pain",
+      "name_en": "Musculoskeletal / Pain and Inflammation",
+      "name_zh": "肌肉骨骼/疼痛與發炎",
+      "course_files": [],
+      "note_zh": "本系統為 Dry Clinic 診所常用頻率擴充新建(2026-08-11),非原 Bastyr 藥理課程涵蓋範圍——原 5 系統(心血管腎臟/內分泌/自主神經/中樞神經/呼吸)無一適合 NSAID/肌肉鬆弛劑此類周邊作用之止痛消炎藥,勉強套用會造成錯誤的機轉關聯(如 NSAID 主要周邊 COX 抑制,非中樞或自主神經機轉)。此為架構層級新增,建議 Ting 審閱確認或調整命名。",
+      "review_status": "draft"
+    },
+    {
+      "id": "drugsystem.gastrointestinal",
+      "name_en": "Gastrointestinal",
+      "name_zh": "消化系統",
+      "course_files": [],
+      "note_zh": "本系統為 Dry Clinic 診所常用頻率擴充新建(2026-08-11),非原 Bastyr 藥理課程涵蓋範圍——PPI 之胃壁細胞質子幫浦機轉與原 5 系統皆無關聯,勉強套用(如自主神經系統)會造成錯誤的機轉關聯。此為架構層級新增,建議 Ting 審閱確認或調整命名。",
+      "review_status": "draft"
     }
   ]
 }

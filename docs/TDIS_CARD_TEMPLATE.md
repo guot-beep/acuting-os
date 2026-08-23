@@ -224,3 +224,18 @@ node scripts/validate-tdis-standard.js --worklist --taxonomy tdx.gynecology_obst
 5. **不要跳過 red flags。**(§5)
 6. **不要把 75 筆有名字沒內容回報成「完成」。**(§0)
 7. **拼音不加聲調。**
+
+## R2 Evidence 慣例(2026-08-11,三年藍圖 R2,全線統一)
+
+帶主張的欄位(劑量、安全、療效、機轉、紅旗)必掛 **per-field 來源錨點 +
+擷取日期**(`field_sources` 或本線等價欄位;格式參照 pharm 線
+`dailymed:<setid>#<SECTION>` 的可機器解析精神)。無來源的欄位誠實留空。
+新產卡即遵守;舊卡不回溯強制,由各線驗證器與 ratchet 自然收斂。
+
+## T4 與骨架層(2026-08-11,鏡像 CONDITION 模板「C4 與骨架層」)
+
+純骨架卡(`review_status: "skeleton"` 且無任何內容欄:definition/etiology/
+pathomechanism/manifestations/related_patterns/red_flags;classical_source 屬出處可帶)
+不主張內容 → T4 改計 N4(note,不阻擋)。一旦加入任何內容欄位,T4 立即
+全力適用 —— 「有定義但沒紅旗」正是 T4 要抓的狀態(眩暈底下藏中風)。
+骨架卡必含:id/雙語名/pinyin/taxonomy_id/aliases(成對)/review_status。

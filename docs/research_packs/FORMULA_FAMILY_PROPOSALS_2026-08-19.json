@@ -1,0 +1,1154 @@
+{
+ "generated": "2026-08-19",
+ "note": "唯讀研究產出：formula_family 提案。name_zh 為標準方名（來源多為拼音，繁體由整理者依標準方名補）；劑量數字逐字照抄來源，來源無劑量者不寫。indication_zh 為來源英文適應症之中譯，原句見 evidence_quote。",
+ "family_proposals": [
+  {
+   "base_formula_id": "formula.jiu_wei_qiang_huo_tang",
+   "base_name_zh": "九味羌活湯",
+   "entries": [
+    {
+     "relation": "加",
+     "name_zh": "大羌活湯",
+     "change": [
+      "+獨活",
+      "+防己",
+      "+黃連",
+      "+白朮",
+      "+知母",
+      "-白芷"
+     ],
+     "indication_zh": "風寒濕表證而裡熱偏盛者",
+     "source": "curriculum 方剂学汇总 Table 25 (Jiu Wei Qiang Huo Tang)"
+    }
+   ],
+   "evidence_file": "curriculum/herbs/方剂学汇总_extracted.md",
+   "evidence": "Table 25, source lines 249",
+   "evidence_quote": "| Da Qiang Huo Tang  <br>(Ci Shi Nan Zhi By Li Dong- Yuan) | Plus <br>Du Huo, Fang Ji, <br>Huang Lian (Berberine) [stronger at clearing heat than Huang Qin, antibacterial &antiviral], <br>Bai Zhu, Zhi Mu:  Tonify Middle Jiao, nourish | minus bai zhi | Predominant Internal heat <br>compare to jiu wei<br><br>Written by Earth Advocate [Li Gao (also named as Li Dong Yuan, Li Ming Zhi)] |"
+  },
+  {
+   "base_formula_id": "formula.xiang_su_san",
+   "base_name_zh": "香蘇散",
+   "entries": [
+    {
+     "relation": "加",
+     "name_zh": "香蘇蔥豉湯",
+     "change": [
+      "+鮮蔥白",
+      "+淡豆豉"
+     ],
+     "indication_zh": "風寒較重者；孕婦外感風寒",
+     "source": "curriculum 方剂学汇总 Table 29 (Xiang Su San)"
+    },
+    {
+     "relation": "加",
+     "name_zh": "加味香蘇散",
+     "change": [
+      "+荊芥",
+      "+秦艽",
+      "+防風",
+      "+蔓荊子",
+      "+川芎",
+      "+生薑"
+     ],
+     "indication_zh": "較香蘇散發散力強，仍較麻黃湯、桂枝湯緩和",
+     "source": "curriculum 方剂学汇总 Table 29 (Xiang Su San)"
+    }
+   ],
+   "evidence_file": "curriculum/herbs/方剂学汇总_extracted.md",
+   "evidence": "Table 29, source lines 277,278",
+   "evidence_quote": "| Xiang Su Cong Chi Tang | Plus <br>Xian Cong Bai, <br>Dan Dou Chi | Severe Wind Cold; pregnant women with w-c |  |\n| Jia Wei Xiang Su San | Plus <br>Jing Jie, <br>Qin Jiao, <br>Fang Feng, <br>Man Jing Zi, <br>Chuan Xiong, <br>Sheng Jiang | Milder than Ma Huang Tang & Gui Zhi Tang<br>Stronger than Xiang Su San but weaker than Ma Huang Tang & Gui Zhi | Still milder |"
+  },
+  {
+   "base_formula_id": "formula.ma_xing_shi_gan_tang",
+   "base_name_zh": "麻杏石甘湯",
+   "entries": [
+    {
+     "relation": "加",
+     "name_zh": "越婢湯",
+     "change": [
+      "+生薑",
+      "+大棗",
+      "-杏仁"
+     ],
+     "indication_zh": "風水惡風：風寒閉阻肺與膀胱之水腫",
+     "source": "curriculum 方剂学汇总 Table 46 (Ma Xing Shi Gan Tang)"
+    },
+    {
+     "relation": "加",
+     "name_zh": "越婢加朮湯",
+     "change": [
+      "+生薑",
+      "+大棗",
+      "+白朮",
+      "-杏仁"
+     ],
+     "indication_zh": "風水重證：眼瞼浮腫、肢體沉重、小便不利、水濕停聚",
+     "source": "curriculum 方剂学汇总 Table 46 (Ma Xing Shi Gan Tang)"
+    }
+   ],
+   "evidence_file": "curriculum/herbs/方剂学汇总_extracted.md",
+   "evidence": "Table 46, source lines 428,429",
+   "evidence_quote": "| Yue Bi Tang (Jin Gui Yao Lue) | Sheng Jiang, <br>Da Zao | Xing Ren<br> | Wind edema with aversion to drafts<br>Wind Cold blocks LU & UB functions |\n| Yue Bi Jia Zhu Tang (Jin Gui Yao Lue) | Sheng Jiang, <br>Da Zao, <br>Bai Zhu | Xing Ren<br> | Severe wind edema with puffy orbits/heavy limbs, reduced urination, more water retention  stimulate middle jiao  transform fluids |"
+  },
+  {
+   "base_formula_id": "formula.ren_shen_bai_du_san",
+   "base_name_zh": "人參敗毒散",
+   "entries": [
+    {
+     "relation": "加",
+     "formula_id": "formula.jing_fang_bai_du_san",
+     "name_zh": "荊防敗毒散",
+     "change": [
+      "-人參",
+      "+荊芥",
+      "+防風"
+     ],
+     "indication_zh": "體實者之風寒濕重證（無汗）",
+     "source": "curriculum 方剂学汇总 Table 55 (Ren Shen Bai Du San)"
+    }
+   ],
+   "evidence_file": "curriculum/herbs/方剂学汇总_extracted.md",
+   "evidence": "Table 55, source lines 511",
+   "evidence_quote": "| Jing Fang Bai Du San<br>[Replace Ma Huang Tang, etc.  more comprehensive] | -  Ren Shen; <br>+ Jing Jie, Fang Feng [Often Paired] | Severe w-c-d in strong persons (without sweating) | Release wind [milder than Ma Huang & Gui Zhi], more commonly used than Ren Shen Bai Du San |"
+  },
+  {
+   "base_formula_id": "formula.da_cheng_qi_tang",
+   "base_name_zh": "大承氣湯",
+   "entries": [
+    {
+     "relation": "減",
+     "formula_id": "formula.xiao_cheng_qi_tang",
+     "name_zh": "小承氣湯",
+     "change": [
+      "-芒硝（大黃 12、厚朴 6、枳實 6-9 同煎）"
+     ],
+     "indication_zh": "陽明腑實輕證，無燥堅",
+     "source": "curriculum 方剂学汇总 Table 61 (Da Cheng Qi Tang)"
+    },
+    {
+     "relation": "減",
+     "formula_id": "formula.tiao_wei_cheng_qi_tang",
+     "name_zh": "調胃承氣湯",
+     "change": [
+      "-枳實",
+      "-厚朴",
+      "+甘草（大黃 12 與甘草 6 同煎、芒硝 9-12）"
+     ],
+     "indication_zh": "陽明腑實輕證，無痞滿",
+     "source": "curriculum 方剂学汇总 Table 61 (Da Cheng Qi Tang)"
+    },
+    {
+     "relation": "減",
+     "name_zh": "大黃甘草湯",
+     "change": [
+      "-芒硝",
+      "-枳實",
+      "-厚朴（大黃 12、甘草 3）"
+     ],
+     "indication_zh": "熱結大腸、胃火上逆之嘔吐；通便瀉熱、和胃止嘔",
+     "source": "curriculum 方剂学汇总 Table 61 (Da Cheng Qi Tang)"
+    },
+    {
+     "relation": "減",
+     "name_zh": "厚朴三物湯",
+     "change": [
+      "-芒硝（厚朴 24、枳實 12-15、大黃 12 後下）"
+     ],
+     "indication_zh": "氣滯便秘：行氣消脹、通腑導滯",
+     "source": "curriculum 方剂学汇总 Table 61 (Da Cheng Qi Tang)"
+    },
+    {
+     "relation": "加",
+     "formula_id": "formula.zeng_ye_cheng_qi_tang",
+     "name_zh": "增液承氣湯",
+     "change": [
+      "-枳實",
+      "-厚朴",
+      "+玄參",
+      "+麥冬",
+      "+生地"
+     ],
+     "indication_zh": "陽明腑實兼陰虛：增液瀉熱",
+     "source": "curriculum 方剂学汇总 Table 61 (Da Cheng Qi Tang)"
+    },
+    {
+     "relation": "加",
+     "name_zh": "複方大承氣湯",
+     "change": [
+      "+萊菔子",
+      "+桃仁",
+      "+赤芍（大黃 15 後下、芒硝 9-15）"
+     ],
+     "indication_zh": "單純性腸梗阻屬陽明腑實者：瀉下、行氣、活血",
+     "source": "curriculum 方剂学汇总 Table 61 (Da Cheng Qi Tang)"
+    }
+   ],
+   "evidence_file": "curriculum/herbs/方剂学汇总_extracted.md",
+   "evidence": "Table 61, source lines 552,553,554,555,556,557",
+   "evidence_quote": "| Xiao Cheng Qi Tang | Minus mang xiao (Da Huang 12, Hou Po 6, Zhi Shi 6-9 – cook together) [DH: Purging effect reduced] | Mild Yangming organ Sx w/o dryness | Not as strong, not as much hardness, less severe |\n| Tiao Wei Cheng Qi Tang | Minus Zhi Shi, Huo Po; Plus Gan Cao (Da Huang 12 & Gan Cao 6-Cook Together, Mang Xiao 9-12) | Mild Yangming organ Sx w/o distension and fullness | Gan Cao:  Tonify SP (middle jiao xu) |\n| Da Huang Gan Cao Tang | Minus Mang Xiao, Zhi Shi, Huo Po <br> (Da Huang 12, Gan Cao 3) | Unblock bowels, purge & harmonize ST, stop vomiting. For heat clumping in LI & fire rising to disturb ST | Tonify & harmonize at same time |\n| Hou Po San Wu Tang<br>Hou Po = Chief | Minus Mang Xiao (Hou Po 24, Zhi Shi 12-15, Da Huang 12-Add Near End) | Moves qi down & unblocks bowels. For qi stagnation causing constipation | Same ingredients as Xiao [XCQT], different dosage, bloating > heat |\n| Zeng Ye Cheng Qi Tang | Minus Zhi Shi, Hou Po; Plus Xuan Shen, Mai Dong, Sheng Di (Xuan Shen, Mai Dong, Sheng Di Huang, Da Huang [Add Near End], Mang Xiao) | Enriches Yin Fluids, Drains Heat. For Yangming Organ Sx With Yin Xu | Zeng Ye Tang:  Xuan Shen, Mai Man Dong, Sheng Di Huang  Add fluids |\n| Fu Fang Da Cheng Qi Tang | Plus Lai Fu Zi, Tao Ren [moisten intestines], Chi Shao Yao [move blood] (Da Huang 15-Add Near End, Mang Xiao 9-15,…) | Purges interior, moves qi & blood. For simple intestinal obstruction with Yangming organ Sx |  |"
+  },
+  {
+   "base_formula_id": "formula.da_huang_fu_zi_tang",
+   "base_name_zh": "大黃附子湯",
+   "entries": [
+    {
+     "relation": "加",
+     "formula_id": "formula.wen_pi_tang",
+     "name_zh": "溫脾湯",
+     "change": [
+      "-細辛",
+      "+乾薑",
+      "+人參",
+      "+甘草"
+     ],
+     "indication_zh": "脾陽虛寒積便秘；久痢赤白",
+     "source": "curriculum 方剂学汇总 Table 77 (Da Huang Fu Zi Tang)"
+    }
+   ],
+   "evidence_file": "curriculum/herbs/方剂学汇总_extracted.md",
+   "evidence": "Table 77, source lines 681",
+   "evidence_quote": "| Wen Pi Tang  (Qian Jin Yao Fang) | Minus Xi Xin; <br>Plus Gan Jiang, Ren Shen, Gan Cao | SP Yang Xu causing cold accumulation, constipation; also for chronic red-and –white dysenteric sx | Much warmer, more tonifying, focused on middle jiao [Wen Pi  Warm up SP] |"
+  },
+  {
+   "base_formula_id": "formula.xiao_chai_hu_tang",
+   "base_name_zh": "小柴胡湯",
+   "entries": [
+    {
+     "relation": "加",
+     "formula_id": "formula.chai_hu_gui_zhi_tang",
+     "name_zh": "柴胡桂枝湯",
+     "change": [
+      "+桂枝",
+      "+白芍"
+     ],
+     "indication_zh": "少陽證兼表證未解",
+     "source": "curriculum 方剂学汇总 Table 94 (Xiao Chai Hu Tang)"
+    },
+    {
+     "relation": "加",
+     "name_zh": "柴胡枳桔湯",
+     "change": [
+      "-人參",
+      "-大棗",
+      "-甘草",
+      "+枳殼",
+      "+桔梗",
+      "+陳皮",
+      "+綠茶"
+     ],
+     "indication_zh": "少陽證邪偏於表者",
+     "source": "curriculum 方剂学汇总 Table 94 (Xiao Chai Hu Tang)"
+    },
+    {
+     "relation": "加",
+     "name_zh": "柴胡清燥湯",
+     "change": [
+      "-人參",
+      "-半夏",
+      "+陳皮",
+      "+知母",
+      "+天花粉"
+     ],
+     "indication_zh": "熱入膜原、津液受傷",
+     "source": "curriculum 方剂学汇总 Table 94 (Xiao Chai Hu Tang)"
+    }
+   ],
+   "evidence_file": "curriculum/herbs/方剂学汇总_extracted.md",
+   "evidence": "Table 94, source lines 817,818,819",
+   "evidence_quote": "| Chai Hu Gui Zhi Tang (Jin Gui Yao Lue) | Add Gui Zhi, Bai Shao | Shao Yang sx where exterior has not been completely released | 5 of them.  Add chief pair of Gui Zhi Tang |\n| Chai Hu Zhi Jie Tang (Zhang Shi Yi Tong) | Minus Ren Shen, Da Zao, Gan Cao;  Add Zhi Ke, Jie Geng, Chen Pi, Lu Cha | Shao Yang sx Exterior > Interior [Vent exterior] | Not ZZJ, later guys [Lu Cha: Green Tea]<br>Tonic  Middle Jiao [Jie Geng  Guide pathogens to exterior] |\n| Chai Hu Qing Zao Tang (Wen Yi Lun) | Minus Ren Shen, Ban Xia,<br>Add Chen Pi, Zhi Mu, Tian Hua Fen | Heat entering the membrane source, causing fluids injury | Tian Hua Fen:  Good for treating HIV+, can directly enter blood, detox, soften lumps [mumps, mastitis] |"
+  },
+  {
+   "base_formula_id": "formula.si_ni_san",
+   "base_name_zh": "四逆散",
+   "entries": [
+    {
+     "relation": "減",
+     "name_zh": "枳實芍藥散",
+     "change": [
+      "-柴胡",
+      "-炙甘草"
+     ],
+     "indication_zh": "產後腹痛、煩滿不得臥，氣血鬱滯化熱",
+     "source": "curriculum 方剂学汇总 Table 105 (Si Ni San)"
+    },
+    {
+     "relation": "加",
+     "formula_id": "formula.chai_hu_shu_gan_san",
+     "name_zh": "柴胡疏肝散",
+     "change": [
+      "-枳實",
+      "+陳皮",
+      "+川芎",
+      "+香附",
+      "+枳殼"
+     ],
+     "indication_zh": "肝氣鬱結重證：脅肋疼痛、往來寒熱",
+     "source": "curriculum 方剂学汇总 Table 105 (Si Ni San)"
+    }
+   ],
+   "evidence_file": "curriculum/herbs/方剂学汇总_extracted.md",
+   "evidence": "Table 105, source lines 911,912",
+   "evidence_quote": "| Zhi Shi Shao Yao San (Jin Gui Yao Lue) | Minus Chai Hu, Zhi Gan Cao | Postpartum abdominal pain, irritability, fullness, difficult to lie flat d/t qi & blood stagnant heat | Qi & Blood level disorders |\n| Chai Hu Shu Gan San/Wan<br>(Jing Yue Quan Shu)<br>Very Important!!! | Minus Zhi Shi;         <br>Plus Chen Pi, Chuan Xiong, Xiang Fu, Zhi Ke | Hypochondriac pain, alternating fever & chills due to blood stagnation<br>Severe LV Qi Stagnation | Almost everyone can move the LV Qi, very strong!  Gynecological dept. likes to use Dang Gui to move blood, Xiang Fu to move the Qi<br>Very bad LV Qi Stagnation<br>Chuan Xiong:  Work on Blood (aromatic)<br>Zhi Ke stronger in moving Qi than Zhi Shi |"
+  },
+  {
+   "base_formula_id": "formula.xiao_yao_san",
+   "base_name_zh": "逍遙散",
+   "entries": [
+    {
+     "relation": "加",
+     "formula_id": "formula.jia_wei_xiao_yao_san",
+     "name_zh": "加味逍遙散",
+     "change": [
+      "+牡丹皮",
+      "+梔子"
+     ],
+     "indication_zh": "兼肝經鬱熱或肝火（又名丹梔逍遙散）",
+     "source": "curriculum 方剂学汇总 Table 109 (Xiao Yao San)"
+    },
+    {
+     "relation": "加",
+     "name_zh": "黑逍遙散",
+     "change": [
+      "+生地黃或熟地黃"
+     ],
+     "indication_zh": "兼血虛腹痛（產後）",
+     "source": "curriculum 方剂学汇总 Table 109 (Xiao Yao San)"
+    }
+   ],
+   "evidence_file": "curriculum/herbs/方剂学汇总_extracted.md",
+   "evidence": "Table 109, source lines 944,945",
+   "evidence_quote": "| Jia Wei Xiao Yao San(Also Named As Dan Zhi Xiao Yao San) | Plus Mu Dan Pi, Zhi Zi | With liver heat or fire | Very often used |\n| Hei Xiao Yao San<br>Patent availabe | Plus Sheng Di Or Shu Di Huang | With abdominal pain from blood xu [Yin nourishing stuff] | Hei = Black<br>Postpartum women |"
+  },
+  {
+   "base_formula_id": "formula.ban_xia_xie_xin_tang",
+   "base_name_zh": "半夏瀉心湯",
+   "entries": [
+    {
+     "relation": "加",
+     "name_zh": "生薑瀉心湯",
+     "change": [
+      "+生薑 12g",
+      "乾薑減至 3g"
+     ],
+     "indication_zh": "水熱互結；胃虛食滯、水飲內停",
+     "source": "curriculum 方剂学汇总 Table 117 (Ban Xia Xie Xin Tang)"
+    },
+    {
+     "relation": "倍",
+     "name_zh": "甘草瀉心湯",
+     "change": [
+      "炙甘草增至 12-15g"
+     ],
+     "indication_zh": "脾胃氣虛甚：下利日久、完穀不化",
+     "source": "curriculum 方剂学汇总 Table 117 (Ban Xia Xie Xin Tang)"
+    }
+   ],
+   "evidence_file": "curriculum/herbs/方剂学汇总_extracted.md",
+   "evidence": "Table 117, source lines 1010,1011",
+   "evidence_quote": "| Sheng Jiang Xie Xin Tang        <br>(Shang Han Lun) | Add Sheng Jiang  12 g, [take over as chief]<br>cut Gan Jiang down to 3g | Water & heat complexes<br>Or St xu with food stagnation and suspended fluids lingering inside | More dispersing |\n| Gan Cao Xie Xin Tang<br>(Shang Han Lun) | Increase Zhi Gan Cao to 12-15 g | Severe SP/ST Qi Xu [undigested food in stool, frequent long-term diarrhea] | SP/ST very deficient |"
+  },
+  {
+   "base_formula_id": "formula.bai_tou_weng_tang",
+   "base_name_zh": "白頭翁湯",
+   "entries": [
+    {
+     "relation": "加",
+     "name_zh": "白頭翁加甘草阿膠湯",
+     "change": [
+      "+甘草",
+      "+阿膠"
+     ],
+     "indication_zh": "痢疾兼血虛陰虛",
+     "source": "curriculum 方剂学汇总 Table 184 (Bai Tou Weng Tang)"
+    },
+    {
+     "relation": "加",
+     "name_zh": "加味白頭翁湯",
+     "change": [
+      "+白芍",
+      "+黃芩"
+     ],
+     "indication_zh": "濕溫化熱之熱痢",
+     "source": "curriculum 方剂学汇总 Table 184 (Bai Tou Weng Tang)"
+    }
+   ],
+   "evidence_file": "curriculum/herbs/方剂学汇总_extracted.md",
+   "evidence": "Table 184, source lines 1600,1601",
+   "evidence_quote": "| Bai Tou Weng Jia Gan Cao E Jiao Tang         (Jin Gui Yao Lue) | Plus gan cao, e jiao | Dysenteric disorders with blood/yin xu |  |\n| Jia Wei Bai Tou Weng Tang<br>(Wen Bing Tiao Bian) | Plus bai shao, huang qin | Damp warm-febrile dz leading to hot dysenteric disorders | Bai Shao:  soften muscles<br>Huang Qin:  make stronger |"
+  },
+  {
+   "base_formula_id": "formula.liu_yi_san",
+   "base_name_zh": "六一散",
+   "entries": [
+    {
+     "relation": "加",
+     "name_zh": "雞蘇散",
+     "change": [
+      "+薄荷 7.5g"
+     ],
+     "indication_zh": "兼外感風熱：頭痛、頭重而脹",
+     "source": "curriculum 方剂学汇总 Table 199 (Liu Yi San)"
+    },
+    {
+     "relation": "加",
+     "name_zh": "益元散",
+     "change": [
+      "+硃砂 10g（以燈心草湯送服）"
+     ],
+     "indication_zh": "兼心神不安、心悸、失眠多夢",
+     "source": "curriculum 方剂学汇总 Table 199 (Liu Yi San)"
+    },
+    {
+     "relation": "加",
+     "name_zh": "碧玉散",
+     "change": [
+      "+青黛 30g（6:1:1）"
+     ],
+     "indication_zh": "兼肝膽鬱熱：目赤、咽痛、口舌生瘡",
+     "source": "curriculum 方剂学汇总 Table 199 (Liu Yi San)"
+    }
+   ],
+   "evidence_file": "curriculum/herbs/方剂学汇总_extracted.md",
+   "evidence": "Table 199, source lines 1726,1727,1728",
+   "evidence_quote": "| Ji Su San [鸡苏散] | + bo he  7.5g | Concurrent exterior wind heat: headache, heavy distended head |  |\n| Yi Yuan San [益元散] | + zhu sha (cinnabar  mercury, not used anymore) 10g;  taken with den xin cao decoction | With anxiety, palpitations, insomnia, dream-disturbed sleep |  |\n| Bi Yu San [碧玉散] | + qing dai 30g<br>(6:1:1) | With LV & GB stagnant heat: red eyes, sore throat, mouth/tongue sores | Qing Dai:  even by itself, it works |"
+  },
+  {
+   "base_formula_id": "formula.dang_gui_si_ni_tang",
+   "base_name_zh": "當歸四逆湯",
+   "entries": [
+    {
+     "relation": "加",
+     "name_zh": "當歸四逆加吳茱萸生薑湯",
+     "change": [
+      "+吳茱萸 5g",
+      "+生薑 15g"
+     ],
+     "indication_zh": "血虛陽虛日久之內寒",
+     "source": "curriculum 方剂学汇总 Table 209 (Dang Gui Si Ni Tang)"
+    }
+   ],
+   "evidence_file": "curriculum/herbs/方剂学汇总_extracted.md",
+   "evidence": "Table 209, source lines 1809",
+   "evidence_quote": "| Dang Gui Si Ni Jia Wu Zhu Yu Sheng Jiang Tang (Shang Han Lun) | Dang gui si ni tang + wu zhu yu 5g, sheng jiang 15g | Internal cold with long-term blood and yang xu | Stronger to tonify yang & open meridians |"
+  },
+  {
+   "base_formula_id": "formula.li_zhong_wan",
+   "base_name_zh": "理中丸",
+   "entries": [
+    {
+     "relation": "加",
+     "formula_id": "formula.fu_zi_li_zhong_wan",
+     "name_zh": "附子理中丸",
+     "change": [
+      "+附子"
+     ],
+     "indication_zh": "裡寒重證；虛寒性反覆口瘡",
+     "source": "curriculum 方剂学汇总 Table 214 (Li Zhong Wan)"
+    },
+    {
+     "relation": "加",
+     "name_zh": "理中化痰丸",
+     "change": [
+      "+茯苓",
+      "+半夏"
+     ],
+     "indication_zh": "中陽虛兼寒飲痰濁停聚",
+     "source": "curriculum 方剂学汇总 Table 214 (Li Zhong Wan)"
+    },
+    {
+     "relation": "加",
+     "name_zh": "桂枝人參湯",
+     "change": [
+      "+桂枝"
+     ],
+     "indication_zh": "太陽病誤下，表未解而裡寒已成（脾陽受損）",
+     "source": "curriculum 方剂学汇总 Table 214 (Li Zhong Wan)"
+    }
+   ],
+   "evidence_file": "curriculum/herbs/方剂学汇总_extracted.md",
+   "evidence": "Table 214, source lines 1850,1851,1852",
+   "evidence_quote": "| Fu Zi Li Zhong Wan [附子理中丸] | + fu zi | More severe internal cold;<br>Recurrent oral ulcers from xu cold |  |\n| Li Zhong Hua Tan Wan | + fu ling, ban xia | The middle yang xu with cold and congested fluids/phlegm | Fluids, mucus accumulation |\n| Gui Zhi Ren Shen Tang (Shang Han Lun) | + gui zhi | Taiyang sx mistreated by purgatives, the exterior hasn’t been resolved<br>Internal cold developed [SP damaged] |  |"
+  },
+  {
+   "base_formula_id": "formula.xiao_jian_zhong_tang",
+   "base_name_zh": "小建中湯",
+   "entries": [
+    {
+     "relation": "加",
+     "formula_id": "formula.huang_qi_jian_zhong_tang",
+     "name_zh": "黃芪建中湯",
+     "change": [
+      "+黃芪 9g"
+     ],
+     "indication_zh": "氣虛較重：氣短、自汗、脈微弱",
+     "source": "curriculum 方剂学汇总 Table 218 (Xiao Jian Zhong Tang)"
+    },
+    {
+     "relation": "加",
+     "name_zh": "當歸建中湯",
+     "change": [
+      "+當歸 12g"
+     ],
+     "indication_zh": "產後虛羸：腹中拘急疼痛、氣短",
+     "source": "curriculum 方剂学汇总 Table 218 (Xiao Jian Zhong Tang)"
+    }
+   ],
+   "evidence_file": "curriculum/herbs/方剂学汇总_extracted.md",
+   "evidence": "Table 218, source lines 1885,1886",
+   "evidence_quote": "| Huang Qi Jian Zhong Tang<br>(Jin Gui Yao Lue) | + huang qi 9g | More severe qi xu: sob, spontaneous sweating, faint & frail Pulse | Add Qi tonic |\n| Dang Gui Jian Zhong Tang<br>(Qian Jin Yi Fang) | + dang gui 12g | Postpartum weakness & emaciation: tight, persistent abdominal pain, sob | Add blood tonic<br>Lose so much blood, then start feeding baby  Even more deficient |"
+  },
+  {
+   "base_formula_id": "formula.si_ni_tang",
+   "base_name_zh": "四逆湯",
+   "entries": [
+    {
+     "relation": "加",
+     "name_zh": "四逆加人參湯",
+     "change": [
+      "+人參 3g"
+     ],
+     "indication_zh": "服藥後四肢仍厥冷者，益氣固脫",
+     "source": "curriculum 方剂学汇总 Table 223 (Si Ni Tang)"
+    },
+    {
+     "relation": "加",
+     "name_zh": "白通湯",
+     "change": [
+      "+蔥白 4莖",
+      "-炙甘草"
+     ],
+     "indication_zh": "少陰證：下利、脈微",
+     "source": "curriculum 方剂学汇总 Table 223 (Si Ni Tang)"
+    },
+    {
+     "relation": "倍",
+     "name_zh": "通脈四逆湯",
+     "change": [
+      "生附子增至 15g",
+      "乾薑增至 9g"
+     ],
+     "indication_zh": "少陰證裡寒外熱；心陽虛衰重證",
+     "source": "curriculum 方剂学汇总 Table 223 (Si Ni Tang)"
+    }
+   ],
+   "evidence_file": "curriculum/herbs/方剂学汇总_extracted.md",
+   "evidence": "Table 223, source lines 1920,1921,1922",
+   "evidence_quote": "| Si Ni Jia Ren Shen Tang <br>(Shang Han Lun) | + ren shen 3g | Extremities remain cold with Tx | Maintain effects |\n| Bai Tong Tang<br>(Shang Han Lun) | + cong bai 4 pieces [bridge/open meridians]<br>-  zhi gan cao | Shaoyin sx: diarrhea, faint pulses |  |\n| Tong Mai Si Ni Tang (Shang Han Lun) | Increase sheng fu zi to 15g, <br>gan jiang to 9g | Shaoyin sx: interior cold with exterior heat;<br>Severe Ht yang xu | Heart attack, heart failure  Use higher dosage [use too much, could be dangerous, but needed for heart failure] |"
+  },
+  {
+   "base_formula_id": "formula.si_jun_zi_tang",
+   "base_name_zh": "四君子湯",
+   "entries": [
+    {
+     "relation": "加",
+     "name_zh": "異功散",
+     "change": [
+      "+陳皮 6-9（同生薑、大棗）"
+     ],
+     "indication_zh": "脾虛兼氣滯：食欲不振、脘悶",
+     "source": "curriculum 方剂学汇总 Table 248 (Si Jun Zi Tang)"
+    },
+    {
+     "relation": "加",
+     "formula_id": "formula.liu_jun_zi_tang",
+     "name_zh": "六君子湯",
+     "change": [
+      "+陳皮 3",
+      "+半夏 4.5（同生薑、大棗）"
+     ],
+     "indication_zh": "脾虛兼痰濕：納呆、痞悶、噁心嘔吐",
+     "source": "curriculum 方剂学汇总 Table 248 (Si Jun Zi Tang)"
+    },
+    {
+     "relation": "加",
+     "formula_id": "formula.xiang_sha_liu_jun_zi_tang",
+     "name_zh": "香砂六君子湯",
+     "change": [
+      "+陳皮",
+      "+半夏",
+      "+砂仁",
+      "+木香"
+     ],
+     "indication_zh": "脾胃氣虛兼氣滯痰阻：噯氣、嘔吐、泄瀉、脘腹脹痛",
+     "source": "curriculum 方剂学汇总 Table 248 (Si Jun Zi Tang)"
+    },
+    {
+     "relation": "加",
+     "name_zh": "七味白朮散",
+     "change": [
+      "+藿香葉",
+      "+木香",
+      "+葛根"
+     ],
+     "indication_zh": "小兒脾胃久虛之泄瀉嘔吐不止",
+     "source": "curriculum 方剂学汇总 Table 252 (Si Jun Zi Tang)"
+    }
+   ],
+   "evidence_file": "curriculum/herbs/方剂学汇总_extracted.md",
+   "evidence": "Table 248+252, source lines 2145,2146,2147,2188",
+   "evidence_quote": "| Yi Gong San [异功散]<br>(Xiao Er Yao Zheng Zhi Jue) | + Chen Pi 6-9   (Da Zao, Sheng Jiang) | Sp xu w/qi stagnation leading to an irregular appetite, stifling sensation |  |\n| Liu Jun Zi Tang [六君子汤]<br>(Yi Xue Zheng Zhuan) | + Chen Pi 3, Ban Xia 4.5 (Sheng Jiang, Da Zao) | Sp xu w/phlegm & damp: loss of appetite, focal distention, stifling sensation, nausea/vomiting | Sp xu w/phlegm & damp: loss of appetite, focal distention, stifling sensation, nausea/vomiting |\n| Xiang Sha Liu Jun Zi Tang <br>[香砂六君子汤]<br>(Zhang Shi Yi Tong) | + Chen Pi, Ban Xia, Sha Ren, Mu Xiang | Sp/St xu w/qi and phlegm stagnation: belching, vomiting, diarrhea, abdominal pain/distention… |  |\n| Qi Wei Bai Zhu San [七味白术散]<br>(Xiao Er Yao Zheng Zhi Jue) | Si Jun Zi Tang + Huo Xiang Ye, Mu Xiang, Ge Gen | Persistent diarrhea & vomiting due to chronic Sp St xu [for kids] |  |"
+  },
+  {
+   "base_formula_id": "formula.shen_ling_bai_zhu_san",
+   "base_name_zh": "參苓白朮散",
+   "entries": [
+    {
+     "relation": "加",
+     "name_zh": "資生丸（保胎資生丸）",
+     "change": [
+      "+藿香",
+      "+澤瀉",
+      "+麥芽",
+      "+陳皮",
+      "+山楂",
+      "+黃連",
+      "+芡實粉",
+      "-砂仁"
+     ],
+     "indication_zh": "脾虛氣滯之妊娠惡阻或先兆流產（妊娠早期）；脾虛乏力、食少、泄瀉、消瘦",
+     "source": "curriculum 方剂学汇总 Table 252 (Shen Ling Bai Zhu San)"
+    }
+   ],
+   "evidence_file": "curriculum/herbs/方剂学汇总_extracted.md",
+   "evidence": "Table 252, source lines 2189",
+   "evidence_quote": "| (Bao Tai) Zi Sheng Wan [资生丸]<br>(Xian Xing Zhai Yi Xue Guang Bi Ji)<br> | + Huo Xiang, Ze Xie, Mai Ya, Chen Pi, Shan Zha, Huang Lian, Qian Shi Fen;<br>- Sha Ren | Morning sickness or threatened miscarriage (1st trimester) from Sp qi <br>xu & qi stagnation; <br>Sp xu leading to weakness, reduced appetite, diarrhea, weight loss | Bao Tai = protect fetus<br>Cool/quiet uterus |"
+  },
+  {
+   "base_formula_id": "formula.si_wu_tang",
+   "base_name_zh": "四物湯",
+   "entries": [
+    {
+     "relation": "加",
+     "formula_id": "formula.tao_hong_si_wu_tang",
+     "name_zh": "桃紅四物湯",
+     "change": [
+      "+桃仁",
+      "+紅花"
+     ],
+     "indication_zh": "月經先期、經血夾暗塊、腹痛",
+     "source": "curriculum 方剂学汇总 Table 269 (Si Wu Tang)"
+    },
+    {
+     "relation": "加",
+     "formula_id": "formula.jiao_ai_tang",
+     "name_zh": "膠艾湯",
+     "change": [
+      "+阿膠",
+      "+艾葉",
+      "+甘草"
+     ],
+     "indication_zh": "衝任虛損：崩漏、胎漏、先兆流產、產後虛弱",
+     "source": "curriculum 方剂学汇总 Table 269 (Si Wu Tang)"
+    },
+    {
+     "relation": "加",
+     "name_zh": "補肝湯",
+     "change": [
+      "+酸棗仁",
+      "+木瓜",
+      "+炙甘草"
+     ],
+     "indication_zh": "肝血陰虛：筋惕肉瞤、麻木、視物模糊",
+     "source": "curriculum 方剂学汇总 Table 269 (Si Wu Tang)"
+    },
+    {
+     "relation": "加",
+     "name_zh": "聖愈湯",
+     "change": [
+      "+人參",
+      "+黃芪"
+     ],
+     "indication_zh": "氣血兩虛：月經先期、量多色淡、神疲乏力、小腹隱痛喜按、舌淡脈弱",
+     "source": "curriculum 方剂学汇总 Table 269 (Si Wu Tang)"
+    }
+   ],
+   "evidence_file": "curriculum/herbs/方剂学汇总_extracted.md",
+   "evidence": "Table 269, source lines 2328,2329,2330,2331",
+   "evidence_quote": "| Tao Hong Si Wu Tang [桃红四物汤] | + Tao Ren, Hong Hua | Early menses with dark clots & abdominal pain | Pair to move & invigorate blood |\n| Jiao Ai Tang [胶艾汤]<br>(Jin Gui Yao Lue) | + E Jiao, Ai Ye, Gan Cao | Chong & Ren xu/injury: uterine bleeding, incomplete or threatened miscarriage, postpartum weakness | E Jiao:  Tonify blood & stop bleeding at same time<br>Real Ai Ye:  very warm<br>Coldness whenever there is damage<br>E Jiao + Ai Ye:  Really good to treat gynecological bleeding, nourish uterus, fetus<br>Extra meridians [Enter Chong & Ren] |\n| Bu Gan Tang [补肝汤]<br> | + Suan Zao Ren, Mu Gua [Enter LV],<br>Zhi Gan Cao | LV Blood & Yin Xu: muscle twitches, numbness, blurred | Mu gua:  for muscles [charley horse] |\n| Sheng Yu Tang [圣愈汤] <br>(Yi Zong Jin Jian)<br> | + Ren Shen, Huang Qi | Qi & blood xu: early menses with excessive light-red blood, general weakness, fatigue, achy low abdomen preference to pressure, pale tongue, frail pulse | Add Qi tonics |"
+  },
+  {
+   "base_formula_id": "formula.dang_gui_bu_xue_tang",
+   "base_name_zh": "當歸補血湯",
+   "entries": [
+    {
+     "relation": "加",
+     "name_zh": "黃芪當歸散",
+     "change": [
+      "+人參",
+      "+白朮",
+      "+白芍",
+      "+甘草",
+      "+大棗",
+      "+生薑"
+     ],
+     "indication_zh": "勞淋（慢性淋證）：小便頻數淋瀝、勞累加重",
+     "source": "curriculum 方剂学汇总 Table 273 (Dang Gui Bu Xue Tang)"
+    },
+    {
+     "relation": "加",
+     "name_zh": "透膿散",
+     "change": [
+      "+川芎",
+      "+穿山甲",
+      "+皂角刺"
+     ],
+     "indication_zh": "瘡瘍膿成而不易外潰者",
+     "source": "curriculum 方剂学汇总 Table 273 (Dang Gui Bu Xue Tang)"
+    }
+   ],
+   "evidence_file": "curriculum/herbs/方剂学汇总_extracted.md",
+   "evidence": "Table 273, source lines 2358,2359",
+   "evidence_quote": "| Huang Qi Dang Gui San [黄芪当归散]<br>(Yi Zong Jin Jian) | + Ren Shen, Bai Zhu, Bai Shao, Gan Cao, Da Zao, Sheng Jiang | Lao lin (chronic UTI): frequent urination with dripping, worsen with exertion |  |\n| Tou Nong San [透脓散]<br>(Wai Ke Zheng Zong) | + Chuan Xiong, Chuan Shan Jia, Zao Jiao Ci | Chronic abscesses w/o heads which produce pus but do not readily perforate to discharge the pus | Drive the pus away<br>Chronic infections |"
+  },
+  {
+   "base_formula_id": "formula.ba_zhen_tang",
+   "base_name_zh": "八珍湯",
+   "entries": [
+    {
+     "relation": "加",
+     "name_zh": "八珍益母丸",
+     "change": [
+      "+益母草",
+      "+蜂蜜"
+     ],
+     "indication_zh": "氣血兩虛兼血瘀：月經不調、赤白帶下",
+     "source": "curriculum 方剂学汇总 Table 278 (Ba Zhen Tang)"
+    },
+    {
+     "relation": "加",
+     "formula_id": "formula.shi_quan_da_bu_tang",
+     "name_zh": "十全大補湯",
+     "change": [
+      "+黃芪",
+      "+肉桂"
+     ],
+     "indication_zh": "氣血兩虛偏於氣虛而有寒象：虛勞",
+     "source": "curriculum 方剂学汇总 Table 278 (Ba Zhen Tang)"
+    },
+    {
+     "relation": "加",
+     "name_zh": "人參養營湯",
+     "change": [
+      "-川芎",
+      "+黃芪",
+      "+陳皮",
+      "+肉桂",
+      "+五味子",
+      "+遠志"
+     ],
+     "indication_zh": "氣血兩虛兼神志不安：心悸、健忘",
+     "source": "curriculum 方剂学汇总 Table 278 (Ba Zhen Tang)"
+    }
+   ],
+   "evidence_file": "curriculum/herbs/方剂学汇总_extracted.md",
+   "evidence": "Table 278, source lines 2403,2404,2405",
+   "evidence_quote": "| Ba Zhen Yi Mu Wan [八珍益母丸] <br>(Jing Yue Quan Shu) | + Yi Mu Cao, Honey | Qi & blood xu with blood stasis leading to irregular menses, red & white vaginal discharge |  |\n| Shi Quan Da Bu Tang [十全大补丸] <br>(Tai Ping Hui Min He Ji Ju Fang) | + Huang Qi, Rou Gui [Warm Formula] | Qi & blood xu with a predominance of deficient qi tending toward cold: consumptive diseases | Chronic fatigue<br>Fibromyalgia |\n| Ren Shen Yang Ying Tang [养营]<br>(Tai Ping Hui Min He Ji Ju Tang) | - Chuan Xiong<br>+ Huang Qi, Chen Pi, Rou Gui, Wu Wei Zi, Yuan Zhi | Qi & blood xu with shen disturbance: palpitations, forgetfulness… | Shen lost spirit  wandering |"
+  },
+  {
+   "base_formula_id": "formula.zhi_gan_cao_tang",
+   "base_name_zh": "炙甘草湯",
+   "entries": [
+    {
+     "relation": "減",
+     "name_zh": "加減復脈湯",
+     "change": [
+      "-人參",
+      "-桂枝",
+      "-生薑",
+      "-大棗",
+      "-清酒",
+      "+白芍"
+     ],
+     "indication_zh": "陽明溫病下後熱退而陰液已傷：身熱面赤、手足心熱、口乾舌燥、脈虛大",
+     "source": "curriculum 方剂学汇总 Table 286 (Zhi Gan Cao Tang)"
+    }
+   ],
+   "evidence_file": "curriculum/herbs/方剂学汇总_extracted.md",
+   "evidence": "Table 286, source lines 2485",
+   "evidence_quote": "| Jia (+) Jian (-) Fu Mai Tang <br>[加减复脉汤]<br>(Wen Bing Tiao Bian) | - ren shen, gui zhi, sheng jiang, da zao, rice wine<br>+ bai shao | Yangming-fu in which purging has removed heat, but has also depleted yin-fluids: fever, red face, heat in palms and soles, dry mouth & tongue, large, deficient pulse. |  |"
+  },
+  {
+   "base_formula_id": "formula.jin_gui_shen_qi_wan",
+   "base_name_zh": "金匱腎氣丸",
+   "entries": [
+    {
+     "relation": "加",
+     "name_zh": "濟生腎氣丸",
+     "change": [
+      "+川牛膝",
+      "+車前子"
+     ],
+     "indication_zh": "腎陽虛水腫",
+     "source": "curriculum 方剂学汇总 Table 291 (Jin Gui Shen Qi Wan)"
+    }
+   ],
+   "evidence_file": "curriculum/herbs/方剂学汇总_extracted.md",
+   "evidence": "Table 291, source lines 2527",
+   "evidence_quote": "| Ji Sheng Shen Qi Wan [济生肾气丸] | Jin gui shen qi wan + chuan niu xi,<br>Che qian zi (promotes urination) | Edema due to KD Yang Xu |  |"
+  },
+  {
+   "base_formula_id": "formula.you_gui_wan",
+   "base_name_zh": "右歸丸",
+   "entries": [
+    {
+     "relation": "減",
+     "formula_id": "formula.you_gui_yin",
+     "name_zh": "右歸飲",
+     "change": [
+      "-鹿角膠",
+      "-菟絲子",
+      "-當歸",
+      "+炙甘草"
+     ],
+     "indication_zh": "腎陽虛衰憊：腹痛、腰痠、肢冷、脈細；真寒假熱",
+     "source": "curriculum 方剂学汇总 Table 295 (You Gui Wan)"
+    }
+   ],
+   "evidence_file": "curriculum/herbs/方剂学汇总_extracted.md",
+   "evidence": "Table 295, source lines 2569",
+   "evidence_quote": "| You Gui Yin [右归饮]<br>(Jing Yue Quan Shu)<br> | - lu jiao jiao, tu si zi, dang gui;<br>+ zhi gan cao | KD yang xu with feebleness & exhaustion: abdominal pain, sore low back, cold extremities, thin pulse.<br>True cold with false heat | Very young (60 years old) |"
+  },
+  {
+   "base_formula_id": "formula.liu_wei_di_huang_wan",
+   "base_name_zh": "六味地黃丸",
+   "entries": [
+    {
+     "relation": "加",
+     "formula_id": "formula.du_qi_wan",
+     "name_zh": "都氣丸",
+     "change": [
+      "+五味子 6g"
+     ],
+     "indication_zh": "腎陰虛：動則喘促、呃逆",
+     "source": "curriculum 方剂学汇总 Table 300 (Liu Wei Di Huang Wan)"
+    },
+    {
+     "relation": "加",
+     "formula_id": "formula.qi_ju_di_huang_wan",
+     "name_zh": "杞菊地黃丸",
+     "change": [
+      "+枸杞子 9g",
+      "+白菊花 9g"
+     ],
+     "indication_zh": "肝腎陰虛:視物昏花、畏光、迎風流淚",
+     "source": "curriculum 方剂学汇总 Table 300 (Liu Wei Di Huang Wan)"
+    },
+    {
+     "relation": "加",
+     "formula_id": "formula.zhi_bai_di_huang_wan",
+     "name_zh": "知柏地黃丸",
+     "change": [
+      "+知母 6g",
+      "+黃柏 6g"
+     ],
+     "indication_zh": "陰虛火旺、骨蒸勞熱：盜汗；濕熱淋證",
+     "source": "curriculum 方剂学汇总 Table 300 (Liu Wei Di Huang Wan)"
+    },
+    {
+     "relation": "加",
+     "name_zh": "麥味地黃丸（八仙長壽丸）",
+     "change": [
+      "+麥冬 9g",
+      "+五味子 6g"
+     ],
+     "indication_zh": "肺腎陰虛：咳嗽（或咯血）、氣喘、潮熱盜汗",
+     "source": "curriculum 方剂学汇总 Table 300 (Liu Wei Di Huang Wan)"
+    },
+    {
+     "relation": "加",
+     "name_zh": "明目地黃丸",
+     "change": [
+      "+生地",
+      "+柴胡",
+      "+當歸",
+      "+五味子",
+      "+茯神",
+      "-茯苓"
+     ],
+     "indication_zh": "肝腎陰虛：視物昏花、視力減退",
+     "source": "curriculum 方剂学汇总 Table 300 (Liu Wei Di Huang Wan)"
+    },
+    {
+     "relation": "加",
+     "name_zh": "耳聾左慈丸",
+     "change": [
+      "+磁石",
+      "+石菖蒲",
+      "+五味子"
+     ],
+     "indication_zh": "肝腎陰虛：蟬鳴樣耳鳴夜間加重、聽力下降、失眠、眩暈目花；老年性耳聾",
+     "source": "curriculum 方剂学汇总 Table 300 (Liu Wei Di Huang Wan)"
+    },
+    {
+     "relation": "加",
+     "name_zh": "八味地黃丸",
+     "change": [
+      "+五味子",
+      "+炙黃芪"
+     ],
+     "indication_zh": "陰虛：產後汗出不止",
+     "source": "curriculum 方剂学汇总 Table 300 (Liu Wei Di Huang Wan)"
+    }
+   ],
+   "evidence_file": "curriculum/herbs/方剂学汇总_extracted.md",
+   "evidence": "Table 300, source lines 2609,2610,2611,2612,2613,2614,2615",
+   "evidence_quote": "| Du Qi Wan都气 | + wu wei zi 6g | KD yin xu: wheezing with exertion, hiccups |  |\n| Qi Ju Di Huang Wan杞菊 | + gou qi zi 9g, bai ju hua 9g | Lr & K yin xu: diminished visual acuity, photophobia, tearing upon drafts |  |\n| Zhi Bai Di Huang Wan <br>(Zhi Bai Ba Wei八味 Wan) 知柏 | + zhi mu 6g, huang bai 6g | Yin xu with vigorous fire, steaming bone sx, consumptive heat:night sweats… UTI from d-h | Er Xian [One of favorite formulas]<br>Good for yin deficient heat in menopause |\n| Mai Wei麦味 Di Huang Wan (Ba Xian Chang Shou Wan八仙长寿) | + mai dong 9g, wu wei zi 6g | Lu & K yin xu:coughing (of blood), wheezing, tidal fever, night sweats | More yin tonifying function<br>Lot of yin deficient symptoms |\n| Ming Mu Di Huang Wan明目 | + sheng di, chai hu, dang gui, wu wei zi, fu shen;<br>- fu ling | Lr & K yin xu: blurry/diminished vision | Stronger in tonifying LV/KD yin<br>Stronger than Qi Ju Di Huang Wan |\n| Er Long Zuo Ci Wan耳聋左慈 | + ci shi, shi chang pu, wu wei zi | K & Lr yin xu: continuous, cicada-like tinnitus worsen at night, hearing loss, insomnia, vertigo with blurry vision. Senile hearing loss |  |\n| Ba Wei Di Huang Wan八味 | + wu wei zi, zhi huang qi | Yin xu: postpartum continuous sweating |  |"
+  },
+  {
+   "base_formula_id": "formula.ban_xia_hou_po_tang",
+   "base_name_zh": "半夏厚朴湯",
+   "entries": [
+    {
+     "relation": "加",
+     "name_zh": "四七湯",
+     "change": [
+      "+大棗"
+     ],
+     "indication_zh": "梅核氣輕證，痰濕停滯較輕者",
+     "source": "curriculum 方剂学汇总 Table 412 (Ban Xia Hou Po Tang)"
+    }
+   ],
+   "evidence_file": "curriculum/herbs/方剂学汇总_extracted.md",
+   "evidence": "Table 412, source lines 3607",
+   "evidence_quote": "| si qi tang  四七汤<br> | Ban xia hou po tang + da zao | For a milder case of plum-pit qi with less phlegm-damp stagnation. However, si qi tang is not appropriate for  a condition in which phlegm-damp is severe and Sp is not xu. |  |"
+  },
+  {
+   "base_formula_id": "formula.gua_lou_xie_bai_bai_jiu_tang",
+   "base_name_zh": "瓜蔞薤白白酒湯",
+   "entries": [
+    {
+     "relation": "加",
+     "formula_id": "formula.gua_lou_xie_bai_ban_xia_tang",
+     "name_zh": "瓜蔞薤白半夏湯",
+     "change": [
+      "+半夏"
+     ],
+     "indication_zh": "胸痹疼痛較甚、痰濁明顯者",
+     "source": "curriculum 方剂学汇总 Table 416 (Gua Lou Xie Bai Bai Jiu Tang)"
+    },
+    {
+     "relation": "加",
+     "formula_id": "formula.zhi_shi_xie_bai_gui_zhi_tang",
+     "name_zh": "枳實薤白桂枝湯",
+     "change": [
+      "+枳實",
+      "+厚朴",
+      "+桂枝",
+      "-白酒"
+     ],
+     "indication_zh": "胸痹氣結較甚：心中痞氣、脹滿",
+     "source": "curriculum 方剂学汇总 Table 416 (Gua Lou Xie Bai Bai Jiu Tang)"
+    }
+   ],
+   "evidence_file": "curriculum/herbs/方剂学汇总_extracted.md",
+   "evidence": "Table 416, source lines 3635,3636",
+   "evidence_quote": "| Gua lou xie bai ban xia tang <br>瓜蒌薤白半夏汤 | + ban xia | Chest Bi with severe pain due to significant phlegm sx |  |\n| Zhi shi xie bai gui zhi tang<br>枳实薤白桂枝汤 | + zhi shi, hou po, gui zhi<br>- Bai jiu | Chest Bi with severe qi clumping causing focal distension |  |"
+  },
+  {
+   "base_formula_id": "formula.er_miao_san",
+   "base_name_zh": "二妙散",
+   "entries": [
+    {
+     "relation": "加",
+     "formula_id": "formula.san_miao_wan",
+     "name_zh": "三妙丸",
+     "change": [
+      "+川牛膝"
+     ],
+     "indication_zh": "濕熱下注：足部麻木、灼痛、無力",
+     "source": "curriculum 方剂学汇总 Table 564 (Er Miao San)"
+    },
+    {
+     "relation": "加",
+     "formula_id": "formula.si_miao_wan",
+     "name_zh": "四妙丸",
+     "change": [
+      "+川牛膝",
+      "+薏苡仁"
+     ],
+     "indication_zh": "濕熱下注：痿證、下肢麻木無力、足腫痛",
+     "source": "curriculum 方剂学汇总 Table 564 (Er Miao San)"
+    },
+    {
+     "relation": "加",
+     "name_zh": "加味二妙丸",
+     "change": [
+      "+川牛膝",
+      "+薏苡仁",
+      "+當歸尾",
+      "+漢防己",
+      "+萆薢",
+      "+炙龜板"
+     ],
+     "indication_zh": "濕熱下注兼陰傷：肢體沉重不適、痿弱、浮腫、麻木",
+     "source": "curriculum 方剂学汇总 Table 564 (Er Miao San)"
+    }
+   ],
+   "evidence_file": "curriculum/herbs/方剂学汇总_extracted.md",
+   "evidence": "Table 564, source lines 4933,4934,4935",
+   "evidence_quote": "| San miao wan三妙丸 | + chuan niu xi | Damp-heat in Lower jiao: numbness or burning pain or weakness in feet |  |\n| Si miao wan<br>四妙丸 | + chuan niu xi, yi yi ren | Damp-heat in Lower jiao: atrophy, severe numbness & weakness in lower limbs with painful & swollen feet | Stronger to treat damp, more comprehensive |\n| Jia wei er miao wan<br>加味二妙丸 | + chuan niu xi, yi yi ren, dang gui wei (small roots of dang gui), han fang ji, bei xie, zhi gui ban | damp-heat in Lower jiao with yin damage: heaviness & discomfort in limbs with atrophy & weakness, edema, numbness. | Strongest |"
+  },
+  {
+   "base_formula_id": "formula.wu_ling_san",
+   "base_name_zh": "五苓散",
+   "entries": [
+    {
+     "relation": "減",
+     "name_zh": "四苓散",
+     "change": [
+      "-桂枝"
+     ],
+     "indication_zh": "內傷飲食夾濕：便溏、小便不利",
+     "source": "curriculum 方剂学汇总 Table 574 (Wu Ling San)"
+    },
+    {
+     "relation": "加",
+     "name_zh": "茵陳五苓散",
+     "change": [
+      "+茵陳蒿"
+     ],
+     "indication_zh": "濕熱黃疸（濕重於熱）兼小便不利",
+     "source": "curriculum 方剂学汇总 Table 574 (Wu Ling San)"
+    },
+    {
+     "relation": "合",
+     "name_zh": "胃苓湯",
+     "change": [
+      "合平胃散"
+     ],
+     "indication_zh": "夏秋之間脾胃傷於生冷：脘腹脹痛、泄瀉、小便不利",
+     "source": "curriculum 方剂学汇总 Table 574 (Wu Ling San)"
+    }
+   ],
+   "evidence_file": "curriculum/herbs/方剂学汇总_extracted.md",
+   "evidence": "Table 574, source lines 5012,5013,5014",
+   "evidence_quote": "| Si ling san<br>四苓散 | - Gui zhi | Internal Sp injury by food with damp – loose stools & urinary difficulty |  |\n| Yin chen wu ling san 茵陈五苓散 | + yin chen hao | Jaundice from damp-heat (damp>heat) with urinary difficulty, a slt. pale skin tone |  |\n| Wei ling tang<br>胃苓汤 | + ping wei san | Sp injury by cold/raw food between summer & fall – epigastric distension & pain, diarrhea, urinary difficulty |  |"
+  },
+  {
+   "base_formula_id": "formula.du_huo_ji_sheng_tang",
+   "base_name_zh": "獨活寄生湯",
+   "entries": [
+    {
+     "relation": "加",
+     "name_zh": "三痹湯",
+     "change": [
+      "-桑寄生",
+      "+黃芪",
+      "+續斷",
+      "+生薑"
+     ],
+     "indication_zh": "氣虛為主之痹證：肢體拘攣、活動受限",
+     "source": "curriculum 方剂学汇总 Table 595 (Du Huo Ji Sheng Tang)"
+    }
+   ],
+   "evidence_file": "curriculum/herbs/方剂学汇总_extracted.md",
+   "evidence": "Table 595, source lines 5211",
+   "evidence_quote": "| San bi tang<br>三痹汤 | - Sang ji sheng<br>+ huang qi, xu duan, sheng jiang | Similar to du huo ji sheng tang with more focus on qi xu predominant cases presenting spasms & limited motions of extremities.<br>Du huo ji sheng tang more focuses on Blood xu predominant cases presenting Bi sx in LB & lower extremities |  |"
+  },
+  {
+   "base_formula_id": "formula.er_chen_tang",
+   "base_name_zh": "二陳湯",
+   "entries": [
+    {
+     "relation": "加",
+     "name_zh": "導痰湯",
+     "change": [
+      "+天南星",
+      "+枳實",
+      "+生薑"
+     ],
+     "indication_zh": "頑痰重證：肝風夾痰、痰厥、痰阻胸膈",
+     "source": "curriculum 方剂学汇总 Table 604 (Er Chen Tang)"
+    },
+    {
+     "relation": "加",
+     "name_zh": "滌痰湯",
+     "change": [
+      "+膽南星",
+      "+枳實",
+      "+人參",
+      "+石菖蒲",
+      "+竹茹"
+     ],
+     "indication_zh": "中風痰迷心竅、舌強不能言",
+     "source": "curriculum 方剂学汇总 Table 604 (Er Chen Tang)"
+    },
+    {
+     "relation": "加",
+     "name_zh": "加味二陳湯",
+     "change": [
+      "+黃芩",
+      "+黃連",
+      "+薄荷"
+     ],
+     "indication_zh": "痰火：蟬鳴樣耳鳴不止或耳聾、頭重、胸悶",
+     "source": "curriculum 方剂学汇总 Table 604 (Er Chen Tang)"
+    },
+    {
+     "relation": "加",
+     "name_zh": "金水六君煎",
+     "change": [
+      "+當歸",
+      "+生地"
+     ],
+     "indication_zh": "肺腎陰虛、痰濕上泛；老年慢性支氣管炎",
+     "source": "curriculum 方剂学汇总 Table 604 (Er Chen Tang)"
+    }
+   ],
+   "evidence_file": "curriculum/herbs/方剂学汇总_extracted.md",
+   "evidence": "Table 604, source lines 5294,5295,5296,5297",
+   "evidence_quote": "| Dao Tan Tang<br>导痰汤 | + tian nan xing, zhi shi, sheng jiang | Severe phlegm disorders – Lr wind-phlegm, tan jue, phlegm blocked in chest & diaphragm |  |\n| Di Tan Tang<br>涤痰汤 | + dan nan xing, zhi shi, ren shen, shi chang pu, zhu ru | Stroke with phlegm misting shen, unable to speak |  |\n| Jia Wei Er Chen Tang加味二陈汤 | + huang qin, huang lian, bo he | Phlegm-fire – incessant, cicada-like tinnitus/ hearing loss, head heaviness, chest fullness |  |\n| Jin Shui Liu Jun Jian<br>金水六君煎 | + dang gui, sheng di | Lu & K yin xu with rising phlegm. Chronic bronchitis in the elderly |  |"
+  },
+  {
+   "base_formula_id": "formula.wen_dan_tang",
+   "base_name_zh": "溫膽湯",
+   "entries": [
+    {
+     "relation": "加",
+     "name_zh": "黃連溫膽湯",
+     "change": [
+      "+黃連"
+     ],
+     "indication_zh": "痰熱較重：煩躁不安明顯、口苦較甚",
+     "source": "curriculum 方剂学汇总 Table 609 (Wen Dan Tang)"
+    }
+   ],
+   "evidence_file": "curriculum/herbs/方剂学汇总_extracted.md",
+   "evidence": "Table 609, source lines 5337",
+   "evidence_quote": "| Huang lian wen dan tang<br>黄连温胆汤 | + huang lian | Severe heat-phlegm – more restlessness & irritability, more intensely bitter taste in the mouth |  |"
+  }
+ ],
+ "modifications_proposals": [],
+ "modifications_survey": {
+  "conclusion": "卡片 §13 無任何 {change, purpose, indication} 三元組完整的條目，依規則一筆不收。",
+  "files_scanned": 22,
+  "sections_scanned": 201,
+  "bullets_scanned": 1055,
+  "three_part_complete": 0,
+  "two_part_change_indication_only": 25,
+  "fold_broken_or_unstructured": 1030,
+  "example_broken": "02_Formula_Cards_011-020 §13 Dang Gui Bu Xue Tang: \"+ cong bai, sheng jiang, da zao, dan Menstrual and postpartum HA, fever + jin yin hua, gan cao Intractable ulcerated sores with toxin\"（兩欄 PDF 折行互相穿插，無法可靠重組）"
+ },
+ "abandoned": [
+  {
+   "where": "汇总 Table 13/16/21/41/123/358/584 等",
+   "reason": "基礎方（麻黃湯、桂枝湯、小青龍湯、銀翹散、白虎湯、安宮牛黃丸、五皮散）庫內已有 formula_family，不重複提案"
+  },
+  {
+   "where": "汇总 Table 33 (xiang ru san)、Table 88 (shi zao tang)、Table 100 (da yuan yin)、Table 444 (si mo tang)",
+   "reason": "基礎方不在庫內（無 base_formula_id 可掛），衍生關係整理了也無處落"
+  },
+  {
+   "where": "汇总 Table 25 第一列（九味羌活湯・醫方集解）",
+   "reason": "同名異源方，與基礎方同名，name_zh 無法區辨，放棄"
+  },
+  {
+   "where": "汇总 Table 55 Shen Su Yin、Table 64、69、83、134、139、144、148、156、160、164、168、172、180、203、229、237、242、256、260、264、282、291(Shi Bu Wan)、295(Er Xian Tang)、304、308、312、316、320、326、330、334、340、345、349、353、358、370、385、396、438、458、461、476、516、522、525、547、569、618、637、T209(Huang Qi Gui Zhi Wu Wu Tang)、T223(Shen Fu Tang)、T248(Xiang Sha Yang Wei Tang/Bao Yuan Tang)、T252(同名參苓白朮散・醫方集解)、T278(Tai Shan Pan Shi San/Chang Ning Tang)",
+   "reason": "來源只給完整藥物清單，未陳述與基礎方的加減關係，relation/change 無法照實填寫（約 70 列）"
+  },
+  {
+   "where": "汇总 Table 385 (Si Shen Wan = Er Shen Wan + Wu Wei Zi San)",
+   "reason": "方向相反（成分方合成基礎方），塞進以基礎方為主的 family 形狀會誤導，放棄"
+  }
+ ]
+}
