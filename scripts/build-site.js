@@ -24,7 +24,7 @@ const ENTRY = "index.html";
 const html = fs.readFileSync(path.join(ROOT, ENTRY), "utf8");
 const refs = [...html.matchAll(/(?:src|href)="([^"]+)"/g)]
   .map((m) => m[1])
-  .filter((u) => !/^(https?:)?\/\//.test(u) && !u.startsWith("#") && !u.startsWith("data:"));
+  .filter((u) => !/^(https?:)?\/\//.test(u) && !u.startsWith("#") && !u.startsWith("data:") && !u.startsWith("javascript:") && !u.startsWith("mailto:"));
 
 // previsit.html is a self-contained page deliberately NOT referenced by
 // index.html — the ref-scan alone would leave it out of dist/, and with
