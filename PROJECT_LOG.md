@@ -1,4 +1,28 @@
-# 2026-08-23 Claude — pattern-v2→main 併回 Phase H:Ting 選的三項安全項目
+# 2026-08-23 Claude — pattern-v2→main 併回 Phase I:CI workflow(第一個真衝突,解決)
+
+- **背景**:`.github/workflows/validate.yml` 雙邊都真的改過——main 只加了 8 行 concurrency 區塊
+  (2026-08-12,commit 訊息自己寫「先落在 codex/pattern-v2,這裡補回 main」);查證發現 pattern-v2 的
+  版本本來就含有一字不差的同一段 concurrency 設定,而且多了整批 render/PHI/previsit/avs 驗證器的 CI
+  掛載(54 支腳本,全部已在 Phase B/D 搬進 main 的 `scripts/`,只是從沒被 CI 呼叫過)——main 這份是
+  pattern-v2 那份的純子集,不是平行演化,可以直接整檔取代。
+- **落地前跑過一次「CI 真的會跑什麼」**:把 workflow 裡引用的 54 支 script 全部在本機跑一遍(不是只看
+  檔案存不存在),抓到一個真的會讓 CI 紅燈的問題——`test-pharm-source-integrity-negative-cases.js` 的
+  Test 10(「範本文件裡宣告的驗證狀態列舉 == 驗證器程式碼裡的列舉」)在 main 上失敗,原因是main 的
+  `docs/PHARM_CARD_TEMPLATE.md` 還是舊版,列舉值跟 pattern-v2 現在的驗證器對不上。在 pattern-v2 自己
+  的目錄重跑同一個測試全過,證實不是這批工作造成的新缺陷,是文件落後於程式碼。
+- **順手查了一件事**:是不是所有 docs/*.md 都是這種「程式碼真的會讀」的檔案?逐一 grep 54 支 CI 腳本裡
+  `docs/*.md` 的引用,發現絕大多數只是註解裡寫「規格見 docs/XXX.md」,不是程式跑時真的 `readFileSync`;
+  真正被讀進去、會影響驗證結果的只有這一個(`docs/PHARM_CARD_TEMPLATE.md` via
+  `test-pharm-source-integrity-negative-cases.js`)。所以這批只搬這一個文件檔,不是把整個 docs/ 一起搬——
+  範圍刻意收窄到「CI 真的依賴的部分」。
+- **做了什麼**:`.github/workflows/validate.yml` 整檔換成 pattern-v2 版本;`docs/PHARM_CARD_TEMPLATE.md`
+  一併換上(main 對它零獨立改動,查證過才動)。
+- **驗證**:54 支 CI 引用的 script 逐一在本機執行,全部 exit 0(含需要 `--self-test` 旗標才會走到正確
+  分支的 `generate-care-draft.js`/`validate-previsit-payload.js`,以及需要裸呼叫的
+  `test-pharm-source-integrity-negative-cases.js`);`build-data.js` PASS。無法真的觸發 GitHub Actions
+  執行,但確認 YAML 沒有 tab 字元、`jobs:` 結構完整,且每一支引用到的 script 檔案都存在於 main。
+
+
 
 - **背景**:上一輪(G)結束後 Ting 問「還有什麼沒併完」,重新盤點才發現 Phase A-G 沒有涵蓋一切——之前
   formulas/conditions/tdis 三個大檔的「0 never-ported fields」查證是準的(逐欄位重新核對過,main 沒有

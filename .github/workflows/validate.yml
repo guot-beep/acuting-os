@@ -17,26 +17,98 @@ name: validate
 on:
   pull_request:
   push:
-    branches: [main]
+    # codex/** 加進來的理由(2026-08-12):長命整合分支先前**只**靠 pull_request
+    # 事件觸發 CI。而 PR 一與 base 衝突,GitHub 就不建 merge ref,那個事件產生的
+    # run 是零 —— gate 不是變紅,是消失,沒有人會收到通知。PR #59 就這樣暗過一次。
+    # push 事件不受 PR 可合性影響,所以分支自己的 push 一定會跑,單點失效解除。
+    branches: [main, 'codex/**']
   workflow_dispatch:
 
-# CI 通知風暴處置(2026-08-12,Ting 授權;先落在 codex/pattern-v2,這裡補回 main,
-# 讓之後從 main 長出來的分支一開始就有):同一 PR(以 PR number 分組)或同一
-# branch(push/dispatch 以 ref 分組)同時只保留最新 run,舊 run 取消 ——
-# 不同 PR 互不取消。連續 push 不再每一發都跑完整 gate、各寄一封失敗信。
+# CI 通知風暴處置(2026-08-12,Ting 授權):
+#   1. concurrency:同一 PR(以 PR number 分組)或同一 branch(push/dispatch
+#      以 ref 分組)同時只保留最新 run,舊 run 取消 —— 不同 PR 互不取消。
+#   2. preflight 變更偵測:docs-only push(docs/** 與任何 *.md)不跑昂貴
+#      validators,但 workflow 本身有明確 success 結論,不會永久 Pending。
+#      任何 code/data/scripts/workflow 變更照舊全跑。
+#   no-PHI gate(clinical-data-never-committed)永遠無條件執行 —— 它便宜、
+#   而且是不准削弱的安全 gate。
 concurrency:
   group: validate-${{ github.event_name == 'pull_request' && format('pr-{0}', github.event.pull_request.number) || github.ref }}
   cancel-in-progress: true
 
 jobs:
+  preflight:
+    name: change detection (docs-only skips heavy validators)
+    runs-on: ubuntu-latest
+    outputs:
+      run_full: ${{ steps.detect.outputs.run_full }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: classify changed files
+        id: detect
+        run: |
+          # 非 PR 事件(main push / manual dispatch)一律全跑。
+          if [ "${{ github.event_name }}" != "pull_request" ]; then
+            echo "run_full=true" >> "$GITHUB_OUTPUT"
+            echo "non-PR event — full CI."
+            exit 0
+          fi
+          # 增量分類修正(2026-08-12 驗收實測):比對基準必須是「本次 push 的
+          # 增量」(synchronize 事件的 event.before),不是 PR base——300+ commit
+          # 的長 PR 對 main 累積 diff 永遠含 code,docs-only 永遠不會觸發。
+          # opened/reopened 沒有增量概念 → 保守全跑。
+          if [ "${{ github.event.action }}" = "synchronize" ] && [ -n "${{ github.event.before }}" ] && ! echo "${{ github.event.before }}" | grep -q "^000000"; then
+            BASE="${{ github.event.before }}"
+          else
+            echo "run_full=true" >> "$GITHUB_OUTPUT"
+            echo "PR ${{ github.event.action }} (no push delta) — full CI (conservative)."
+            exit 0
+          fi
+          HEAD_SHA="${{ github.event.pull_request.head.sha }}"
+          if ! git cat-file -e "$BASE" 2>/dev/null; then
+            echo "run_full=true" >> "$GITHUB_OUTPUT"
+            echo "before-SHA not in history (force push?) — full CI (conservative)."
+            exit 0
+          fi
+          files=$(git diff --name-only "$BASE" "$HEAD_SHA")
+          echo "changed files:"
+          echo "$files"
+          # docs-only = 每一個變更檔都是 docs/** 或任一 *.md(PROJECT_LOG.md、
+          # CODEX_HANDOFF.md、AI_REVIEW_FEEDBACK.md、DRY_CLINIC_LOG.md…)。
+          # 空 diff 視為異常,保守全跑。validators 不讀任何 .md,分類安全。
+          if [ -z "$files" ]; then
+            echo "run_full=true" >> "$GITHUB_OUTPUT"
+            echo "empty diff — full CI (conservative)."
+            exit 0
+          fi
+          run_full=false
+          while IFS= read -r f; do
+            case "$f" in
+              docs/*|*.md) ;;
+              *) run_full=true; break ;;
+            esac
+          done <<< "$files"
+          echo "run_full=$run_full" >> "$GITHUB_OUTPUT"
+          echo "classification: run_full=$run_full"
+
   green:
     name: green validators (blocking)
+    needs: preflight
+    if: needs.preflight.outputs.run_full == 'true'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
+
+      # 品質 overlay 在 build-data 之前重建:build-data 會把它包進 bundle,
+      # 順序反了的話 CI 綠燈證明的是舊 overlay。它是從 ledger 產生的,
+      # 所以「ledger 改了但 overlay 沒重跑」與「generated 沒重建」是同一種病。
+      - name: rebuild content-quality overlay
+        run: node scripts/build-content-quality-overlay.js
 
       # build-data first: everything downstream reads data/generated/*.
       - name: build data
@@ -45,14 +117,19 @@ jobs:
       # If build-data changed a generated file, the PR is missing a rebuild.
       - name: generated data is committed and current
         run: |
-          if ! git diff --quiet -- data/generated; then
-            echo "::error::data/generated is stale — run 'node scripts/build-data.js' and commit the result."
-            git --no-pager diff --stat -- data/generated
+          if ! git diff --quiet -- data/generated data/quality; then
+            echo "::error::data/generated or data/quality is stale — run 'node scripts/build-content-quality-overlay.js && node scripts/build-data.js' and commit the result."
+            git --no-pager diff --stat -- data/generated data/quality
             exit 1
           fi
 
       - name: app.js parses
         run: node --check app.js
+
+      # 開機順序守衛(2026-08-12):初始 render() 之後不得有頂層 const 宣告 ——
+      # TDZ 會讓「資料剛好走到那條 render 路徑」的使用者整個 app 開不起來。
+      - name: app boot order (no const in the TDZ of first render)
+        run: node scripts/validate-boot-order.js
 
       - name: referential integrity
         run: node scripts/validate-relations.js
@@ -95,14 +172,141 @@ jobs:
       - name: acupoint card standard
         run: node scripts/validate-acupoint-standard.js
 
+      - name: acupoint source conflicts (APB-2 / APB-4)
+        run: node scripts/validate-acupoint-source-conflicts.js
+
+      - name: formula herb-drug interactions are reviewed
+        run: node scripts/validate-formula-hdi-review.js
+
+      - name: clinical store never echoes raw parser text (PHI boundary)
+        run: node scripts/validate-clinical-store-phi-boundary.js
+
+      # CARE 草稿匯出邊界(2026-08-14 Ting ruling / CODEX AUDIT #1-#2)。
+      # 這三支在 CLAUDE.md 裡被列為「改完要跑」,但 `grep -c care` 在這個檔案
+      # 上一直回 0 —— 也就是說,唯一會逼人跑它們的東西不存在。而它們守的是
+      # 一個把病歷寫到硬碟的按鈕:patientCode/caseTitle 不得出門、黑框必須在、
+      # 產生器不准宣稱任何一份草稿已清乾淨、二次確認按取消就真的不下載。
+      # 三支都是純合成 fixture,不碰 data/**,實測 exit 0 -> blocking。
+      - name: CARE draft PHI export boundary (never claims a draft is clean)
+        run: node scripts/validate-care-draft-phi.js
+
+      - name: CARE draft button wiring + download confirmation
+        run: node scripts/validate-care-draft-render.js
+
+      - name: CARE draft generator self-test (CLI/browser shared compute)
+        run: node scripts/generate-care-draft.js --self-test
+
+      - name: bilingual render parity (no _en field left off the screen)
+        run: node scripts/validate-bilingual-render-parity.js
+
+      # 畫面層三支(2026-08-14 Ting 指示)。它們與上面的 CARE 三支同一種病:
+      # CLAUDE.md 把它們列為「改完要跑」,而這個檔案裡一個字都沒有 ——
+      # 唯一會逼人跑它們的東西不存在。而這一層抓的正是驗證器抓不到的東西:
+      # 資料是對的、驗證器全綠,但畫面上少了一塊,或畫出了資料沒說的話
+      # (捏造的劑量、沒人讀過的手寫警語、蓋掉來源欄的生成欄位)。
+      #   outcome-panel-render     三態指標有沒有真的畫到 Outcome Tracking
+      #   exposure-safety-render   黑框警告有沒有帶到病歷,且「沒查過」≠「查過沒事」
+      #   metric-interpretation    沒有來源就不准寫數字閾值
+      # 實測於 75f6d73e:三支皆 exit 0,且前後 `git status --porcelain` 相同
+      # (不像 pharm 那兩支會就地改 tracked 檔案)-> blocking。
+      - name: outcome panel actually renders the three-state metrics
+        run: node scripts/validate-outcome-panel-render.js
+
+      - name: exposure safety black-box warning reaches the chart
+        run: node scripts/validate-exposure-safety-render.js
+
+      - name: metric interpretation has no unsourced numeric threshold
+        run: node scripts/validate-metric-interpretation.js
+
+      # 可合性 gate 自己的回歸測試。**無條件跑**,不跟著下面那步的 if ——
+      # 2026-08-13 那次是 gate 自己發假紅燈(shallow clone 被判成衝突),
+      # 而那種缺陷只在 push 事件的環境裡現形,等於沒有人在看。這支自己造
+      # 七種 ancestry 的 repo(含 depth-1 shallow)在暫存目錄裡跑,不碰
+      # 這個 checkout,所以放在哪個事件都成立。
+      - name: mergeability gate regression suite (incl. shallow-clone case)
+        run: node scripts/test-branch-mergeable.js
+
+      # 分支對 main 的可合性。放在這裡是因為它必須在**分支的 push**上跑得到 ——
+      # PR 事件在衝突時根本不會發生,那正是需要警報的時刻。
+      # checkout 仍然是預設的 fetch-depth=1:歷史不夠時由腳本自己 unshallow
+      # (只有這一步會付那個成本),不用讓整個 job 每次都做完整 clone。
+      - name: branch is still mergeable into main
+        if: github.event_name == 'push' && github.ref != 'refs/heads/main'
+        run: |
+          git fetch --no-tags --depth=200 origin main || git fetch --no-tags origin main
+          node scripts/check-branch-mergeable.js origin/main
+
       - name: extra point standard
         run: node scripts/validate-extra-point-standard.js
 
       - name: herb card standard
         run: node scripts/validate-herb-standard.js
 
+      # 劑量暗欄位守門(docs/TING_DECISION_QUEUE.md C5c)。record.dosage 有 299 張
+      # 有內容卻從不上畫面,是刻意的:它混了食療用量(80 張食療上限高於藥用上限,
+      # 大黃 9g vs 30g),形狀也有四種。負控先跑 —— 守不住的測試不准當 gate。
+      - name: herb dosage shape (negative controls first)
+        run: node scripts/validate-herb-dosage-shape.js --self-test
+
+      - name: herb dosage shape
+        run: node scripts/validate-herb-dosage-shape.js
+
+      # 處方的證據等級有沒有真的到畫面上(模板 §3 / 條件卡 C14)。
+      # 20 筆以下的穴位清單是一排裸標籤,不印等級的話「一個試驗的固定方案」
+      # 與「標準處方」在畫面上一模一樣。負控先跑。
+      - name: protocol evidence render (negative controls first)
+        run: node scripts/validate-protocol-evidence-render.js --self-test
+
+      - name: protocol evidence render
+        run: node scripts/validate-protocol-evidence-render.js
+
       - name: formula card standard
         run: node scripts/validate-formula-standard.js
+
+      # FB-20 (docs/research_packs/FORMULA_EYESON_02.md F-32/F-41): composition-
+      # signature duplicate detector. NOTE tier on purpose — 4 unresolved
+      # exact-duplicate pairs exist in the live data today (see the script's
+      # own report), so `--blocking` would break this job over content
+      # nobody has fixed yet. This step runs informationally (always exits 0)
+      # so every CI run surfaces the count; it graduates to blocking (add
+      # `--blocking` below) once that count reaches 0 — mirroring how
+      # `validate-point-ids` moved out of the ratchet job into an
+      # unconditional failing step here on 2026-08-06. See the script header
+      # for the exact graduation condition.
+      - name: formula composition-signature duplicates (NOTE tier, see script header)
+        run: node scripts/validate-formula-composition-signatures.js --worklist
+
+      # docs/research_packs/FORMULA_EYESON_03.md §3.2 P1/P2/P3/P4/P6 — the
+      # hand-found safety classes from three eyes-on sweeps, turned into
+      # machine predicates so the class stops depending on someone's eyes.
+      # NOTE tier: measured on the live corpus none of the five is at zero
+      # (P1 10 · P2 10 · P3 5 · P4-card 7 · P6 6), so wiring any of them
+      # blocking today would break the build over a backlog nobody has been
+      # asked to fix — the same call the composition-signature step above
+      # makes. Each predicate graduates INDEPENDENTLY: when its count reaches
+      # zero, add it to the flag here, e.g. `--blocking=P6` then
+      # `--blocking=P2,P6`. Per-predicate graduation conditions are in the
+      # script header. Baseline worklist:
+      # docs/research_packs/FORMULA_SAFETY_PREDICATE_BASELINE.md
+      - name: formula safety predicates P1-P4/P6 (NOTE tier, see script header)
+        run: node scripts/validate-formula-safety-predicates.js
+
+      # docs/research_packs/HERB_EYESON_01.md §3.4 HB series — the herb-layer
+      # twin of the two formula predicate scripts above, for
+      # data/herbs/herb_canon_shortlist.json. NOTE tier: measured on the live
+      # corpus none of the eight is at zero (HB-4 910 · HB-5 19 · HB-6 11 ·
+      # HB-8 48 · HB-9 1 · HB-10 7 · HB-11 182 · HB-12 6), so wiring any of
+      # them blocking today would break the build over a backlog nobody has
+      # been asked to fix — same call the two formula-layer steps above make.
+      # HB-4's no_herb_in_comp bucket additionally cannot graduate before
+      # docs/TING_DECISION_QUEUE.md C6 rules on what related_formulas means.
+      # Each predicate graduates INDEPENDENTLY: when its count reaches zero,
+      # add it to the flag here, e.g. `--blocking=HB-9` then
+      # `--blocking=HB-6,HB-9`. Per-predicate graduation conditions are in
+      # the script header. Baseline worklist:
+      # docs/research_packs/HERB_INTEGRITY_BASELINE.md
+      - name: herb integrity predicates HB-4/5/6/8/9/10/11/12 (NOTE tier, see script header)
+        run: node scripts/validate-herb-integrity-predicates.js
 
       - name: comparison standard
         run: node scripts/validate-comparison-standard.js
@@ -114,6 +318,51 @@ jobs:
       - name: symptom standard
         run: node scripts/validate-symptom-standard.js
 
+      # Pharmacology line (2026-08-12). Until now `grep -c pharm` on this file
+      # returned 0: 59 drug cards, 48 classes, 38 targets and 7 systems had no
+      # CI gate at all. That is the exact state the header block above calls the
+      # repo's real failure mode — and it is how Test 10 of the source-integrity
+      # suite sat FAIL for a day without anyone noticing.
+      # Tier chosen per validator by MEASURING it on this tree, not by guessing:
+      #   validate-pharm-standard.js                      exit 0 (阻擋 0 提醒 0) -> blocking
+      #   test-pharm-negative-cases.js                    exit 0 (5/5)           -> blocking
+      #   test-pharm-source-integrity-negative-cases.js   exit 0 (10/10)         -> blocking
+      # The two test suites mutate data/pharmacology fixtures in-memory and
+      # restore in a `finally`; `git status --porcelain` was empty after each
+      # run, so neither can leave the checkout dirty for the `git diff --check`
+      # step at the end of this job.
+      - name: pharm card standard
+        run: node scripts/validate-pharm-standard.js
+
+      # Guards the §0 rule (no safety field without a verified_exact official
+      # label): each case feeds the validator a deliberately bad record and
+      # requires it to FAIL. If someone loosens §0, these go green-when-they-
+      # should-be-red and this step catches it.
+      - name: pharm negative cases A-E (§0 source gate cannot be loosened)
+        run: node scripts/test-pharm-negative-cases.js
+
+      # Tests 1-9 are external-resource/scope evidence probes; Test 10 asserts
+      # docs/PHARM_CARD_TEMPLATE.md §G and VERIFICATION_STATUSES in
+      # validate-pharm-standard.js declare the same enum. Test 10 was FAIL on
+      # this branch until the template port in the preceding commit.
+      - name: pharm source integrity + template/validator enum contract (1-10)
+        run: node scripts/test-pharm-source-integrity-negative-cases.js
+
+      # NOTE tier, same idiom as the two formula steps above — but for a
+      # different reason, so read this before promoting it. This script has no
+      # `process.exitCode` assignment anywhere: it CANNOT fail, by construction.
+      # It is a dashboard (scope manifest vs what is actually built), and today
+      # it reports M3 48 manifest/data disagreements and M4 10 cards outside the
+      # scope list, against a scope of 85 drugs. It runs here only so those two
+      # numbers appear in every CI run instead of being re-measured by hand.
+      # Graduation: it does NOT graduate as-is — first the script needs a
+      # `--blocking` flag that sets a non-zero exit when M3/M4 are non-empty;
+      # then, once M3 and M4 both reach 0 (i.e. drug_scope_manifest.json and
+      # drugs.json agree), add the flag here. Promoting it before it can fail
+      # would put a gate on the wall that is incapable of ever turning red.
+      - name: pharm scope-vs-implementation coverage (NOTE tier, cannot fail — see comment)
+        run: node scripts/report-pharm-coverage.js
+
       # The edge registry had ZERO consumers until 2026-08-06 — D13 called it
       # "the authority on which fields are edges" while nothing parsed it. This
       # step is that consumer: every declared edge must resolve against real
@@ -121,11 +370,80 @@ jobs:
       - name: relation registry is machine-resolvable
         run: node scripts/validate-relation-registry.js
 
+      # Codex audit 2026-08-11 §5: the K-series PHI validator was green but
+      # nothing ran it in CI, so a K4 regression sailed through. Both clinical
+      # gates block from now on — PHI regex on tracked clinical JSON, and the
+      # Clinical V2 contract invariants (R1-R8) on the tracked sample files.
+      - name: clinical PHI (K-series)
+        run: node scripts/validate-clinical-case-standard.js
+
+      - name: clinical contract invariants (R1-R8)
+        run: node scripts/validate-clinical-invariants.js
+
+      # 67 張條件卡曾經共用同一組逐字相同的「處方」(足三里/合谷/三陰交/中脘)。
+      # 已搬進 import_artifacts;這支守著它不要再長回來。
+      - name: no shared template posing as a condition protocol
+        run: node scripts/validate-no-template-protocol.js
+
+      # Phase E 縱向走查(P4 驗收標準的第四項)。先前不在 CI,而它的
+      # export→wipe→import 斷言原本是 JSON.parse∘JSON.stringify 的恆等檢查 ——
+      # 不可能失敗,所以也證明不了什麼。現在它真的走一次儲存層(save → 取位元組
+      # → wipe → 寫回 → load),納入 CI 才能防止它再退回空跑。
+      # 純假資料、不動任何 tracked 檔案,不會像 pharm 那兩支互相踩。
+      - name: Phase E longitudinal walkthrough (storage round-trip)
+        run: node scripts/walkthrough-phase-e.js
+
+      # pointer 三態與還原演練:P4 的另外兩項驗收標準(31/31、65/65)。
+      - name: pointer runtime three-state contract
+        run: node scripts/test-pointer-runtime.js
+
+      - name: runtime restore rehearsal
+        run: node scripts/rehearse-runtime-restore.js
+
+      # M1(C2b audit E5,2026-08-14):pointer=v2 且 store 模組缺失時
+      # fallback 必須 fail-closed(讀鎖定、寫零)。20 條負控,含回歸保護。
+      - name: M1 fallback fail-closed under pointer=v2
+        run: node scripts/test-m1-fallback-failclosed.js
+
+      # AVS v3(2026-08-12,Codex NO-GO 修復後納入 blocking):建議庫規則
+      # 驗證 + 引擎 E2E(§13 Scenario A–G + Codex HIGH-1/HIGH-3/MED-1 反例)。
+      - name: AVS advice library standard
+        run: node scripts/validate-avs-library.js
+
+      - name: AVS checkout engine E2E (incl. Codex NO-GO probes)
+        run: node scripts/test-avs-checkout.js
+
+      # P1 pre-visit transport(2026-08-12,SOL/Codex transport audit HIGH-1/
+      # HIGH-2/MED-1 修復後納入 blocking):payload shape + §7 必要欄位 +
+      # metric 型別(禁 JS coercion)+ 自由文字長度上限。fixtures 全合成、零 PHI。
+      - name: P1 previsit payload transport standard
+        run: node scripts/validate-previsit-payload.js --self-test
+
+      # 欄位型別一致性普查(2026-08-12)。動機是同一天連踩三次同一種缺陷:
+      # cautionsEn 在部分穴位是字串、部分是陣列,needlingArticle() 先看
+      # `.length`(字串也為真)再 `.join()` -> TypeError -> 英文禁忌在 206 個穴位
+      # 「安靜地」消失(c078f4e 修);previsit payload 的 metrics 可能是物件而非
+      # 陣列,app 端降級成 [] 就放行、CLI 端卻擋(aaf8b81 修);import_artifacts
+      # 同一天被兩條線各自發明成兩種鍵組。三次都是「碰巧」被發現的,沒有任何
+      # 檢查在看這一類。這一步就是那個檢查。
+      # NOTE tier,理由同上面兩個 formula 步驟:實測 SHAPE 28(A 10)、
+      # CROSS 81(A 24)、ITEM 13、NULLMIX 46 —— 122 筆發現全部是 data/** 的
+      # 修改,分屬穴位/方藥/病症/藥理四條線,而且都還沒派工。今天把它接成
+      # blocking 只會讓 build 為了沒人被要求修的 backlog 變紅,一週內就會被
+      # 關掉。這一步永遠 exit 0,只讓四個數字每次 CI 都被印出來,不准偷偷變大。
+      # 畢業條件逐層獨立,寫在腳本開頭:數字歸零後在這裡加 `--blocking=A`、
+      # 再加 `--blocking=A,CROSS` … 基準清單:
+      # docs/research_packs/FIELD_SHAPE_CONSISTENCY_BASELINE.md
+      - name: field shape consistency census (NOTE tier, see script header)
+        run: node scripts/validate-field-shape-consistency.js
+
       - name: whitespace / conflict markers
         run: git diff --check
 
   ratchet:
     name: defect ratchet (conditions · patterns · naming)
+    needs: preflight
+    if: needs.preflight.outputs.run_full == 'true'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
