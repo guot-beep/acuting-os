@@ -1,4 +1,45 @@
-# 2026-08-23 Claude — pattern-v2→main 併回 Phase H:Ting 選的三項安全項目
+# 2026-08-23 Claude — pattern-v2→main 併回 Phase J(收尾):docs/ 最後 43 個檔案
+
+- **背景**:上一輪以為 docs/*.md 需要逐檔比對(因為 `ANTIGRAVITY_HANDOFF.md` 這種 main 已經有更新版本的
+  例子),但寫了跟資料層同一套「main 有沒有獨立改過」查證腳本,對剩下 43 個檔案逐一跑過,結果是
+  **零筆真衝突**——29 個 main 完全沒有(純新增)、14 個 main 存在但 main 從沒獨立改過(pattern-v2 單邊
+  演化,可整檔取代)。`ANTIGRAVITY_HANDOFF.md`、`AI_CONSTITUTION.md` 這種 main 已經有自己版本(或雙邊
+  本來就一致)的檔案,因為 pattern-v2 那邊沒有改過,自動就不在這份清單裡——不用特別排除,查證方法本身
+  就會跳過它們。
+- **做了什麼**:43 個檔案(card templates 全套、AI_COLLAB_PROTOCOL、C2B 遷移計畫、SQLite 遷移設計、
+  previsit contract、patient workspace design 等)整批搬入。
+- **驗證**:`build-data.js` PASS;`check-validation-ratchet.js` PASS(全部 flat);
+  `check-today-survives.js` PASS(含明確驗證「AI_CONSTITUTION 仍是一頁版」——這份沒有被誤蓋掉,因為
+  它本來就不在搬動清單裡)。
+- **pattern-v2→main 併回全部結束(Phase A-J)**:唯一還剩的是 `data/research_staging/`(CR010 研究工作檔,
+  刻意不搬,`build-data.js` 未引用)。原本 695 vs 39 commits、93→265+ 個檔案的分岔,現在只剩這一塊
+  「不打算搬」的工作檔案,其餘全部核對過、驗證過、落地。
+
+
+
+- **背景**:`.github/workflows/validate.yml` 雙邊都真的改過——main 只加了 8 行 concurrency 區塊
+  (2026-08-12,commit 訊息自己寫「先落在 codex/pattern-v2,這裡補回 main」);查證發現 pattern-v2 的
+  版本本來就含有一字不差的同一段 concurrency 設定,而且多了整批 render/PHI/previsit/avs 驗證器的 CI
+  掛載(54 支腳本,全部已在 Phase B/D 搬進 main 的 `scripts/`,只是從沒被 CI 呼叫過)——main 這份是
+  pattern-v2 那份的純子集,不是平行演化,可以直接整檔取代。
+- **落地前跑過一次「CI 真的會跑什麼」**:把 workflow 裡引用的 54 支 script 全部在本機跑一遍(不是只看
+  檔案存不存在),抓到一個真的會讓 CI 紅燈的問題——`test-pharm-source-integrity-negative-cases.js` 的
+  Test 10(「範本文件裡宣告的驗證狀態列舉 == 驗證器程式碼裡的列舉」)在 main 上失敗,原因是main 的
+  `docs/PHARM_CARD_TEMPLATE.md` 還是舊版,列舉值跟 pattern-v2 現在的驗證器對不上。在 pattern-v2 自己
+  的目錄重跑同一個測試全過,證實不是這批工作造成的新缺陷,是文件落後於程式碼。
+- **順手查了一件事**:是不是所有 docs/*.md 都是這種「程式碼真的會讀」的檔案?逐一 grep 54 支 CI 腳本裡
+  `docs/*.md` 的引用,發現絕大多數只是註解裡寫「規格見 docs/XXX.md」,不是程式跑時真的 `readFileSync`;
+  真正被讀進去、會影響驗證結果的只有這一個(`docs/PHARM_CARD_TEMPLATE.md` via
+  `test-pharm-source-integrity-negative-cases.js`)。所以這批只搬這一個文件檔,不是把整個 docs/ 一起搬——
+  範圍刻意收窄到「CI 真的依賴的部分」。
+- **做了什麼**:`.github/workflows/validate.yml` 整檔換成 pattern-v2 版本;`docs/PHARM_CARD_TEMPLATE.md`
+  一併換上(main 對它零獨立改動,查證過才動)。
+- **驗證**:54 支 CI 引用的 script 逐一在本機執行,全部 exit 0(含需要 `--self-test` 旗標才會走到正確
+  分支的 `generate-care-draft.js`/`validate-previsit-payload.js`,以及需要裸呼叫的
+  `test-pharm-source-integrity-negative-cases.js`);`build-data.js` PASS。無法真的觸發 GitHub Actions
+  執行,但確認 YAML 沒有 tab 字元、`jobs:` 結構完整,且每一支引用到的 script 檔案都存在於 main。
+
+
 
 - **背景**:上一輪(G)結束後 Ting 問「還有什麼沒併完」,重新盤點才發現 Phase A-G 沒有涵蓋一切——之前
   formulas/conditions/tdis 三個大檔的「0 never-ported fields」查證是準的(逐欄位重新核對過,main 沒有
@@ -252,6 +293,45 @@
 - **下一步**:Phase C(herbs：main 現在 352 筆含 batch1/2/E10，pattern-v2 358 筆含 HB-B1~B10，需要三方合併，
   且要把 E10 驗證器規則也帶回 pattern-v2)；Phase B(formulas/conditions/tdis/comparisons：雙邊都真的改過，
   已確認 main side 至少兩個具體修正 pattern-v2 沒有——玉女煎重複卡合併、瀉心湯身分重建——逐筆比對不能省)。
+
+# 2026-08-21 Claude — 第三輪(PR #65):conditions C4/C5/C10 三線歸零/大幅推進;PR #64 ruling queue 6 項裁決
+
+- **做了什麼**:分支自 main 重啟(前兩輪 #60/#62 均已併入)。6 個分類 agent 平行處理
+  `condition_canon_shortlist.json` 的 C5(zh 填了 en 空)/C10(內容逐字共用,樣板句或誤植)
+  81 筆記錄,每筆先查 `curriculum/conditions/` 課件(找到就逐項引用 verbatim evidence),
+  查無覆蓋才依中醫內科學/傷科學/婦科學教材通行病因病機 + 西醫臨床通識撰寫;套用一律經
+  `apply-c5-c10-batch.js` 三道守衛(值未變過才寫、雙語成對、_en 不准夾雜中文),五批合計
+  0 筆被守衛擋下。另 1 個 agent 逐一核對 71 筆無紅旗(C4)病症的課件覆蓋率,6 筆有真實
+  課件段落(19 條紅旗直填 red_flags_zh/en,未用 red_flag_registry.json——該檔 RF5 檢查
+  要求 evidence 必須 https 網址,本地課件過不了),65 筆誠實記錄查詢範圍待補。
+  過程中 agent 主動抓到 6 筆內容錯置(非 C10 逐字共用檢測抓得到的範圍):cond.post_covid
+  (整段氣喘內容)、cond.migraine_vestibular(廣告部落格文)、cond.pcos/oligomenorrhea/
+  thin_endometrium(三筆共用同段「月經稀少」部落格長文)、**cond.heart_failure(整段講
+  心律不整)/cond.recurrent_uti(整段講泛用排尿困難)/cond.chronic_prostatitis(整段講
+  BPH,獨立疾病)**——後三筆原 _en 皆空,agent 依指示忠實翻譯但未判斷是否錯置,故未套用
+  其譯文,改由我依真實病機/病理重寫,原誤植內容(含部落格廣告痕跡)逐字存 field_sources。
+  另外處理 PR #64(main→codex/pattern-v2 整合)上 Ting 授權的 RULING_QUEUE 6 項裁決
+  (瀉心湯/玉女煎重複已由先前 main 合併解決,不重複改):桂枝茯苓丸 composition 誤植
+  指迷茯苓丸組成→依《金匱要略》重建;formula.fu_ling_wan 正名「指迷茯苓丸」補出典;
+  黃土湯/羚角鉤藤「丸」的樣板假動作依真實出典重寫,羚角鉤藤記錄正名「飲」標記
+  deprecated;桂枝湯 related_conditions 誤連 spleen_qi_deficiency 改回 tai_yang_wind_strike;
+  柴胡桂枝湯出典衝突(傷寒論 146 條 vs 金匱瘧病附方)兩者並記。
+- **數字 before→after**(每個都可一行指令重現):`validate-condition-standard.js` blocking
+  `376→65`(C5 `154→0`、C10 `151→0`、C4 `71→65`);乾淨記錄(0 defect)`40→85`/150;
+  ratchet 兩次鎖定(376→71、71→65)。formulas.json(PR #64 分支):formula-standard 0
+  blocking、naming PASS(586)、content-junk PASS、no-loss 0 退步。
+- **驗證**:每批 build-data + validate-condition-standard + validate-content-junk +
+  check-validation-ratchet;formulas 側另跑 validate-formula-standard + validate-naming +
+  check-formula-no-loss;CI(`validate` workflow)於兩分支最新 commit 均 success。
+- **已知未解/STOP(需 Ting)**:①C4 剩 65 筆:白名單來源(medlineplus/nih/cdc)本環境網路
+  阻擋,已逐筆記錄課件查詢範圍與日期於 field_sources,egress 放行後可直接續查,不用重查。
+  ②N1(51 筆病症 inline tcm_patterns 未提升為 related_patterns,note only 不擋)——需要
+  語意比對,嘗試比對「氣血不和證」「臟腑虛弱證」等複合證名發現無法機械匹配到既有
+  pattern.* 登記,未列入本輪範圍。③TDIS 紅旗(main 上仍 75 筆全缺)已在 codex/pattern-v2
+  解決(見 #64),等 #64 併入即帶過來,本輪未重做避免白工。④PR #64 上 RULING_QUEUE 剩餘
+  A/B 類身分/合併決定(#3 定喘湯/#8 敗毒散重複/#9 兩個 import stub)與 C 類其餘出典衝突
+  仍留給妳裁。⑤`cond.pcos` 的 etiology_en 仍有 1 筆 CJK-in-en 殘留(既有內容,非本輪所碰,
+  翻譯本身忠實但夾帶古籍原文引號內中文屬常見學術寫法,未強行清除)。
 
 # 2026-08-20 Claude — validate-herb-standard.js 補 E10:_en 欄位混入未譯中文斷言
 

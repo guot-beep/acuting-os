@@ -14,6 +14,12 @@
  *       correction queue, keep G43.82 marked incorrect_do_not_use, and have
  *       NO source_checked versioned mapping until the queue is decided
  *   XW6 a versioned entry with status source_checked but billable !== true
+ *   XW7 the calendar axis (2026-08-22): every versioned entry carries
+ *       effective_to, and before this rule NOTHING compared it to today —
+ *       on 2026-10-01 all 679 FY2026 codes expire and this file would keep
+ *       printing 0 defects. Expired entries are a hard failure; entries
+ *       inside the six-week runway print a loud warning (the FY2027 delta
+ *       task is pre-planned: docs/ANTIGRAVITY_DISPATCH_2026-08-19.md §4).
  */
 const fs = require("fs");
 const path = require("path");
@@ -48,6 +54,34 @@ else {
   if (!mv.icd10_correction_queue) defects.push("XW5 migraine_vestibular: correction queue removed");
   if ((mv.icd10 || [])[0]?.mapping_status !== "incorrect_do_not_use") defects.push("XW5 migraine_vestibular: G43.82 no longer marked incorrect");
   if ((mv.icd10 || []).some((e) => e.mapping_type && e.status === "source_checked")) defects.push("XW5 migraine_vestibular: a mapping was canonicalized while the queue is open");
+}
+
+// ── XW7 calendar axis ──────────────────────────────────────────────────────
+// Warn inside the runway, fail after expiry. The failure message names the
+// prepared remediation so the gate gets fixed, not switched off.
+const today = new Date().toISOString().slice(0, 10);
+const RUNWAY_DAYS = 42; // the dispatch plan's six-week deadline
+const runwayEdge = new Date(Date.now() + RUNWAY_DAYS * 864e5).toISOString().slice(0, 10);
+let expired = 0, expiring = 0, earliest = null;
+for (const rec of xw.records || []) {
+  for (const e of rec.icd10 || []) {
+    if (!e.mapping_type || !e.effective_to) continue; // legacy seeds exempt, like XW1
+    if (e.effective_to < today) {
+      expired++;
+      if (expired <= 3) defects.push(`XW7 ${rec.id} ${e.code}: effective_to ${e.effective_to} is in the past`);
+    } else if (e.effective_to <= runwayEdge) {
+      expiring++;
+      if (!earliest || e.effective_to < earliest) earliest = e.effective_to;
+    }
+  }
+}
+if (expired > 3) defects.push(`XW7 …and ${expired - 3} more expired entries (total ${expired})`);
+if (expired) {
+  console.log(`XW7: ${expired} versioned entries are EXPIRED — the mapping layer is stale.`);
+  console.log(`     Remediation is pre-planned: FY2027 delta per docs/ANTIGRAVITY_DISPATCH_2026-08-19.md §4.`);
+} else if (expiring) {
+  console.log(`⚠ XW7: ${expiring} versioned entries expire within ${RUNWAY_DAYS} days (earliest ${earliest}).`);
+  console.log(`  Six-week runway is open — dispatch the FY2027 delta (docs/ANTIGRAVITY_DISPATCH_2026-08-19.md §4).`);
 }
 
 const versioned = (xw.records || []).reduce((n, r) => n + (r.icd10 || []).filter((e) => e.mapping_type).length, 0);
