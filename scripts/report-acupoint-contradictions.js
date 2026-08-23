@@ -480,7 +480,6 @@ function findMirrors(excerpt) {
 
 const seedIdx = args.indexOf("--seed");
 const codes = [...new Set(findings.map((f) => f.code))];
-if (hIdiomSkips && (!ONLY || ONLY.has("H"))) console.log(`（H 慣用語經本卡識別欄證實跳過 ${hIdiomSkips} 筆：募穴/背俞/交會）`);
 
 if (args.includes("--json")) {
   console.log(JSON.stringify({ source: "data/acupoints/361.json", records: recs.length, findings }, null, 2));
@@ -513,6 +512,7 @@ if (args.includes("--json")) {
   fs.writeFileSync(out, JSON.stringify(seed, null, 2) + "\n");
   console.log(`seed written: ${out} (${seed.records.length} candidates across ${codes.length} points)`);
 } else {
+  if (hIdiomSkips && (!ONLY || ONLY.has("H"))) console.log(`（H 慣用語經本卡識別欄證實跳過 ${hIdiomSkips} 筆：募穴/背俞/交會）`);
   const byType = {};
   for (const f of findings) (byType[f.type] = byType[f.type] || []).push(f);
   const LABEL = {
