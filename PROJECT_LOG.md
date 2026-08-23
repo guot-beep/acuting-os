@@ -1,4 +1,27 @@
-# 2026-08-23 Claude — pattern-v2→main 併回 Phase G(收尾):docs/research_packs/ 127 個研究工作檔整批搬入
+# 2026-08-23 Claude — pattern-v2→main 併回 Phase H:Ting 選的三項安全項目
+
+- **背景**:上一輪(G)結束後 Ting 問「還有什麼沒併完」,重新盤點才發現 Phase A-G 沒有涵蓋一切——之前
+  formulas/conditions/tdis 三個大檔的「0 never-ported fields」查證是準的(逐欄位重新核對過,main 沒有
+  丟掉 pattern-v2 任何一筆已改內容),但另外挖出幾塊真的漏掉的東西。Ting 挑了其中三項安全的先做,
+  `.github/workflows/validate.yml`(雙邊都真改過)跟 `docs/*.md`(~40 個檔案,大多數 main 已經有
+  不同版本,不是單純新增)先擱著。
+- **做了什麼**(逐項確認 main 零獨立改動才落地):
+  - `wrangler.jsonc`:補上 Cloudflare `build.command`,讓部署不再依賴 Dashboard 上可能漂移的設定,
+    同時是隱私閘門——`scripts/build-site.js`(Phase B 已經搬過)在打包時強制隔離 curriculum/clinical/
+    imports/docs/。落地前實際跑了一次 `node scripts/build-site.js`:dist/ 20 個檔案、29.5MB,課件/
+    臨床/匯入/文件四類都沒有跑進去。
+  - `data/pathology/pattern_library.json`:91→154 筆證型卡(main 這個檔案完全沒動過,純新增)。
+  - `data/imports/cloudtcm/herb_url_map.json`、`data/tung/tungs_website_raw.json`、
+    `data/tung/tungs_zone_index.json`:三個小檔(BOM 修復等),main 零改動。
+- **驗證**:`build-data.js` PASS;`validate-pattern-standard.js` PASS(154/154 clean);
+  `validate-pattern-registry.js` PASS;`validate-relations.js` PASS;`validate-content-junk.js` PASS;
+  `check-validation-ratchet.js` PASS(全部 flat);`dist/` 確認有被 `.gitignore` 擋下,沒有誤入 commit。
+- **待辦(Ting 選擇先不做)**:`.github/workflows/validate.yml` 雙邊真衝突;`docs/*.md` 需要逐檔比對
+  main 現有版本(不是單純缺檔,是雙方各自演化,盲目整批搬會蓋掉 main 較新的內容,例如 main 這幾天
+  一直在更新的 `ANTIGRAVITY_HANDOFF.md`)。`data/research_staging/`(CR010 研究工作檔,`build-data.js`
+  未引用)仍然刻意不搬。
+
+
 
 - **做了什麼**:Phase A-F 刻意跳過的最後一塊——`docs/research_packs/`(SUPP/SYM/TDIS/PROTOCOL 各線的
   研究工作檔、SOL 交付物、批次分析報告),127 個檔案、67595 行、3.7MB。查證後確認 main 對這個目錄
