@@ -997,22 +997,52 @@
       核心定位參考 WHO / 專業教材；英文網路對照參考 AcuPoints.org，中文網路對照參考雲端中醫穴道資料庫。</span>
     </footer>
 
-    <script src="data/generated/app_data.js"></script>
-    <script src="data/generated/knowledge_data.js"></script>
-    <script src="data/generated/cloudtcm_map.js"></script>
-    <script src="data/generated/points_361.js"></script>
-    <script src="data/tung/point_index.js"></script>
-    <script src="data/auricular/gb93_index.js"></script>
-    <script src="data/auricular/gb93_worklist.js"></script>
-    <script src="js/review.js"></script>
-    <script src="js/notes.js"></script>
-    <script src="js/clinical-store.js"></script>
-    <script src="js/avs.js"></script>
-    <script src="js/previsit-validator.js"></script>
-    <script src="js/practice-audit.js"></script>
-    <script src="js/care-draft.js"></script>
-    <script src="app.js"></script>
-    <script src="js/router.js"></script>
-    <script src="js/knowledge.js"></script>
+        <div id="bootOverlay" aria-live="polite">
+      <div class="boot-card">
+        <span class="boot-spin" aria-hidden="true"></span>
+        <p><strong>知識庫載入中…</strong><br /><small>361 穴 · 223 方 · 363 藥 · 505 病症</small></p>
+        <p class="boot-fallback"><small>載入比平常久。請檢查網路後<a href="javascript:location.reload()">重新整理</a>。</small></p>
+      </div>
+    </div>
+    <style>
+      #bootOverlay { position: fixed; inset: 0; z-index: 9999; display: flex; align-items: center; justify-content: center; background: var(--paper, #f6f1e7); }
+      #bootOverlay .boot-card { text-align: center; color: var(--ink, #33291f); font-family: var(--serif, serif); }
+      #bootOverlay small { color: var(--muted, #786c5c); }
+      .boot-spin { display: inline-block; width: 28px; height: 28px; border: 3px solid var(--line, #e5dcc9); border-top-color: var(--accent, #6f7f58); border-radius: 50%; animation: bootspin 0.9s linear infinite; margin-bottom: 0.6rem; }
+      @keyframes bootspin { to { transform: rotate(360deg); } }
+      #bootOverlay.done { display: none; }
+      #bootOverlay .boot-fallback { display: none; margin-top: 0.8rem; font-size: 0.9rem; }
+      #bootOverlay.stalled .boot-fallback { display: block; }
+      #bootOverlay.stalled .boot-spin { animation-play-state: paused; opacity: 0.4; }
+    </style>
+    <script>
+      /* 防呆：資料 script 若載入失敗，overlay 不能永遠轉圈。60 秒未完成就
+         亮出重新整理提示（module 移除器只在全部 script 成功後執行）。 */
+      setTimeout(function () {
+        var o = document.getElementById("bootOverlay");
+        if (o && !o.classList.contains("done")) o.classList.add("stalled");
+      }, 60000);
+    </script>
+<script defer src="data/generated/app_data.js"></script>
+    <script defer src="data/generated/knowledge_data.js"></script>
+    <script defer src="data/generated/cloudtcm_map.js"></script>
+    <script defer src="data/generated/points_361.js"></script>
+    <script defer src="data/tung/point_index.js"></script>
+    <script defer src="data/auricular/gb93_index.js"></script>
+    <script defer src="data/auricular/gb93_worklist.js"></script>
+    <script defer src="js/review.js"></script>
+    <script defer src="js/notes.js"></script>
+    <script defer src="js/clinical-store.js"></script>
+    <script defer src="js/avs.js"></script>
+    <script defer src="js/previsit-validator.js"></script>
+    <script defer src="js/practice-audit.js"></script>
+    <script defer src="js/care-draft.js"></script>
+    <script defer src="app.js"></script>
+    <script defer src="js/router.js"></script>
+    <script defer src="js/knowledge.js"></script>    <script type="module">
+      /* module scripts 排在所有 defer script 之後執行——執行到這裡代表知識庫已掛好。 */
+      document.getElementById("bootOverlay")?.classList.add("done");
+    </script>
+
   </body>
 </html>
