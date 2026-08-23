@@ -2042,9 +2042,13 @@
 
   function openKnowledgeDetail(kind, id) {
     // pharm 先前不在這裡,所以「查看西藥卡」按鈕按了靜靜什麼都不做。
+    // 2026-08-23:未知 kind 原本靜默 fallback 到 herb 查表——日後照現有
+    // pattern 幫病症/症狀加關聯按鈕,會做出按了沒反應、console 也無跡可循
+    // 的死連結。改成明確分派,未知 kind 出聲。
     const record = kind === "formula" ? formulaById.get(id)
       : kind === "pharm" ? pharmDrugs.find((d) => d.id === id)
-      : herbById.get(id);
+      : kind === "herb" ? herbById.get(id)
+      : (console.warn(`openKnowledgeDetail: unsupported kind "${kind}" (id=${id})`), null);
     if (!record) return;
     const dialog = ensureDetailDialog();
     const panels = kind === "formula" ? formulaPanels(record)

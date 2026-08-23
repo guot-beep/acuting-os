@@ -40,6 +40,15 @@
     navLinks.forEach((a) => {
       a.classList.toggle("active", a.getAttribute("data-ws") === ws);
     });
+    // a11y (2026-08-23): hashchange 後鍵盤/讀屏焦點仍停在舊的導覽連結上,
+    // 使用者會「看到」新內容但 Tab 起點還在別處。把焦點帶到新 workspace 的
+    // 第一個標題;tabindex=-1 讓標題可程式聚焦但不進 Tab 順序,
+    // preventScroll 保留既有的捲動行為不被 focus 搶走。
+    const heading = document.querySelector(`section[data-workspace="${ws}"] h2, section[data-workspace="${ws}"] h1`);
+    if (heading) {
+      if (!heading.hasAttribute("tabindex")) heading.setAttribute("tabindex", "-1");
+      try { heading.focus({ preventScroll: true }); } catch (e) { /* focus 失敗不致命 */ }
+    }
   }
 
   function workspaceForElement(el) {
