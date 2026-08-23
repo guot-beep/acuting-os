@@ -1256,7 +1256,14 @@ textarea {
   height: 24px;
   line-height: 1;
   padding: 0;
+  position: relative;
   width: 24px;
+}
+/* UI/UX P1#7: 手機 44px 熱區——視覺不變，用透明偽元素撐大點擊範圍。 */
+.active-filter-chip button::after {
+  content: "";
+  inset: -10px;
+  position: absolute;
 }
 
 .clear-all-filters {
@@ -1515,6 +1522,12 @@ footer {
   padding: 0 0.42rem;
   position: absolute;
   transform: translate(-50%, -50%);
+}
+/* UI/UX P1#7: 經絡圖穴位標記的 44px 熱區（視覺尺寸不變）。 */
+.model-point::after {
+  content: "";
+  inset: -9px -4px;
+  position: absolute;
 }
 
 .model-point::before {
@@ -2857,20 +2870,25 @@ button:hover,
 }
 
 .section-quicknav a {
-  background: #fff;
-  border: 1px solid #d7e6dc;
+  /* UI/UX P1#5 (2026-08-23): this selector was declared twice; the later block
+     re-declared background/color but NOT border, so the old-palette border
+     survived per-property cascade — the same per-property trap the :root
+     comment at the top of this file documents. Merged into one rule. */
+  background: #f2ecdd;
+  border: 1px solid var(--line);
   border-radius: 999px;
-  color: #315e40;
+  color: #5c503f;
   font-size: 0.82rem;
   font-weight: 900;
-  min-height: 32px;
+  min-height: 44px;
   padding: 0.36rem 0.68rem;
   text-decoration: none;
 }
 
 .section-quicknav a:hover {
-  background: #edf8f3;
-  border-color: rgba(13, 111, 105, 0.28);
+  background: var(--green-soft);
+  border-color: var(--accent-dark);
+  color: var(--accent-dark);
 }
 
 .inline-anchor {
@@ -4640,16 +4658,8 @@ input:focus, select:focus, textarea:focus {
   border-radius: 999px;
 }
 
-/* --- Section quicknav pills ----------------------------------------- */
-.section-quicknav a {
-  background: #f2ecdd;
-  border-radius: 999px;
-  color: #5c503f;
-}
-.section-quicknav a:hover {
-  background: var(--green-soft);
-  color: var(--accent-dark);
-}
+/* --- Section quicknav pills: merged into the primary rule above (P1#5) --- */
+/* .section-quicknav a:hover merged into the primary rule (P1#5) */
 
 /* --- Tables & dialogs ------------------------------------------------ */
 table, th, td { border-color: var(--line); }
@@ -6358,7 +6368,7 @@ html { scroll-padding-top: 92px; }
   font-weight: 800;
   font-size: 0.82rem;
   letter-spacing: 0.04em;
-  color: #16352f;
+  color: var(--nav-bg);
   opacity: 0.72;
 }
 .point-identity__chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
@@ -6367,8 +6377,8 @@ html { scroll-padding-top: 92px; }
   font-size: 0.86rem;
   padding: 0.22rem 0.6rem;
   border-radius: 999px;
-  background: #16352f;
-  color: #f3eddf;
+  background: var(--nav-bg);
+  color: var(--nav-ink);
 }
 /* A prohibition in the identity list is a warning, not a badge — ST17's
    「絕對禁針禁灸」 must never read like 「合穴」. */

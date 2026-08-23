@@ -1003,6 +1003,15 @@ function unifiedSearch(rawQuery) {
       txt(c.tcm_patterns)]),
     cases: pick(clinicalCases, (c) => [c.patientCode, c.caseTitle, c.chiefComplaint,
       txt(c.westernConditions), txt(c.tcmPatterns)]),
+    // UI/UX P1#6 (2026-08-23): symptoms / pharm drugs / comparison tables each
+    // have their own workspace but were unreachable from the home search —
+    // typing 「頭痛」 or a drug name said "not found" while the card existed.
+    symptoms: pick(knowledgeRecords("symptoms"), (s) => [s.name_zh, s.name_en, s.pinyin, s.id,
+      txt(s.aliases_zh), txt(s.aliases_en)]),
+    pharmDrugs: pick(knowledgeRecords("pharmDrugs"), (d) => [d.name_zh, d.name_en, d.id,
+      txt(d.brand_names_en), d.mechanism_zh, d.mechanism_en]),
+    comparisons: pick(knowledgeRecords("comparisons"), (c) => [c.title_zh, c.title_en, c.id,
+      txt(c.compares)]),
   };
 }
 
@@ -1072,11 +1081,20 @@ function renderGlobalResults(rawQuery) {
   group(modeText("病例 Cases", "Cases"), res.cases, (c) =>
     grItem("case", modeText("病例", "Case"), c.patientCode || "", `${c.caseTitle || c.patientCode || ""}`,
       c.chiefComplaint || "", { code: c.patientCode || "" }));
+  group(modeText("症狀 Symptoms", "Symptoms"), res.symptoms, (sy) =>
+    grItem("symptom", modeText("症狀", "Symptom"), "", `${sy.name_zh || sy.name_en || sy.id}`,
+      [sy.name_en, sy.pinyin].filter(Boolean).join(" · "), { id: sy.id, name: sy.name_zh || sy.name_en || "" }));
+  group(modeText("西藥 Drugs", "Drugs"), res.pharmDrugs, (d) =>
+    grItem("pharm", modeText("西藥", "Drug"), "", `${d.name_zh || d.name_en || d.id}`,
+      [d.name_en, txt(d.brand_names_en)].filter(Boolean).join(" · "), { id: d.id }));
+  group(modeText("辨證鑑別 Comparisons", "Comparisons"), res.comparisons, (cp) =>
+    grItem("comparison", modeText("鑑別", "Compare"), "", `${cp.title_zh || cp.title_en || cp.id}`,
+      cp.title_en || "", { id: cp.id }));
 
   if (!groups.length) {
     globalResultsEl.innerHTML = `<p class="gr-empty">${escapeHtml(modeText(
-      `找不到「${rawQuery.trim()}」相關的穴位、方劑、中藥、病症或病例。`,
-      `No acupoints, formulas, herbs, conditions, or cases found for “${rawQuery.trim()}”.`
+      `找不到「${rawQuery.trim()}」相關的穴位、方劑、中藥、病症、病例、症狀、西藥或鑑別表。`,
+      `No acupoints, formulas, herbs, conditions, cases, symptoms, drugs, or comparison tables found for “${rawQuery.trim()}”.`
     ))}</p>`;
   } else {
     globalResultsEl.innerHTML = groups.join("");
@@ -1153,6 +1171,28 @@ function openGlobalResult(btn) {
   if (kind === "case") {
     if (caseSearch) { caseSearch.value = btn.dataset.code || ""; renderClinicalCases(); }
     goToSection("caseWorkspace");
+    return;
+  }
+  if (kind === "pharm") {
+    if (openKnowledgeRecord(kind, btn.dataset.id)) return;   // api.openDetail 已支援 pharm
+    goToSection("pharmSection");
+    return;
+  }
+  if (kind === "symptom") {
+    // 症狀區有自己的過濾框:帶著名字過去,清單直接收斂到那一筆。
+    goToSection("symptomSection");
+    requestAnimationFrame(() => {
+      const f = document.getElementById("symptomFilter");
+      if (f) { f.value = btn.dataset.name || ""; f.dispatchEvent(new Event("input", { bubbles: true })); }
+    });
+    return;
+  }
+  if (kind === "comparison") {
+    goToSection("comparisonSection");
+    requestAnimationFrame(() => {
+      const card = document.querySelector(`[data-record-id="${(window.CSS && CSS.escape) ? CSS.escape(btn.dataset.id) : btn.dataset.id}"]`);
+      if (card) { card.scrollIntoView({ behavior: "smooth", block: "center" }); card.classList.add("gr-flash"); setTimeout(() => card.classList.remove("gr-flash"), 1600); }
+    });
   }
 }
 
@@ -4142,7 +4182,9 @@ function renderDetail(point) {
           ${visualLinksSection(point)}
         ` : `
           ${studySection(contentMode === "english" ? "Location & Point Finding" : "定位・取穴・解剖", pointLocationArticle(point), "location")}
-          ${studySection(contentMode === "english" ? "Needling, Moxibustion & Safety" : "針法・艾灸・安全", needlingArticle(point), "needle", true)}
+          ${/* 2026-08-23 UI/UX P1#2: 361 穴中 85 筆 cautions 含「禁」（禁灸 56、絕對禁 9、禁刺 4）——
+             安全內容不收合，比照藥物卡「黑框警告直接展開」的先例（見 renderDrugDetail 的註解）。 */ ""}
+          ${studySection(contentMode === "english" ? "Needling, Moxibustion & Safety" : "針法・艾灸・安全", needlingArticle(point), "needle")}
           ${window.AcuTingNotes ? window.AcuTingNotes.panel("point", point.code, `${point.code} ${point.nameZh || point.nameEn || ""}`.trim()) : ""}
           ${pointIdentitySection(point)}
           ${examPearlSection(point)}
