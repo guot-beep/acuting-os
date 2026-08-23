@@ -997,7 +997,7 @@
       核心定位參考 WHO / 專業教材；英文網路對照參考 AcuPoints.org，中文網路對照參考雲端中醫穴道資料庫。</span>
     </footer>
 
-        <div id="bootOverlay" aria-live="polite">
+    <div id="bootOverlay" aria-live="polite">
       <div class="boot-card">
         <span class="boot-spin" aria-hidden="true"></span>
         <p><strong>知識庫載入中…</strong><br /><small>361 穴 · 223 方 · 363 藥 · 505 病症</small></p>
@@ -1011,18 +1011,12 @@
       .boot-spin { display: inline-block; width: 28px; height: 28px; border: 3px solid var(--line, #e5dcc9); border-top-color: var(--accent, #6f7f58); border-radius: 50%; animation: bootspin 0.9s linear infinite; margin-bottom: 0.6rem; }
       @keyframes bootspin { to { transform: rotate(360deg); } }
       #bootOverlay.done { display: none; }
-      #bootOverlay .boot-fallback { display: none; margin-top: 0.8rem; font-size: 0.9rem; }
-      #bootOverlay.stalled .boot-fallback { display: block; }
-      #bootOverlay.stalled .boot-spin { animation-play-state: paused; opacity: 0.4; }
+      /* 防呆（純 CSS）：60 秒還沒載完，重新整理提示自己浮現。
+         用 classic inline script 做這件事會 parser-block 等待 in-flight
+         stylesheet（Google Fonts 掛掉時整頁卡死 13 秒——實測踩到）。 */
+      #bootOverlay .boot-fallback { margin-top: 0.8rem; font-size: 0.9rem; opacity: 0; animation: bootreveal 0.4s ease 60s forwards; }
+      @keyframes bootreveal { to { opacity: 1; } }
     </style>
-    <script>
-      /* 防呆：資料 script 若載入失敗，overlay 不能永遠轉圈。60 秒未完成就
-         亮出重新整理提示（module 移除器只在全部 script 成功後執行）。 */
-      setTimeout(function () {
-        var o = document.getElementById("bootOverlay");
-        if (o && !o.classList.contains("done")) o.classList.add("stalled");
-      }, 60000);
-    </script>
 <script defer src="data/generated/app_data.js"></script>
     <script defer src="data/generated/knowledge_data.js"></script>
     <script defer src="data/generated/cloudtcm_map.js"></script>
