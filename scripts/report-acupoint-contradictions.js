@@ -388,7 +388,9 @@ function probeH(r) {
           continue; // 已逐位核對，不再走通用匹配
         }
       }
-      const m = sent.match(new RegExp("([一-鿿]{2,4})穴[^，,]{0,25}?(?:屬於|屬|為|位於|是)\\s*" + H_CHANNEL.source));
+      // gap 不准跨過另一個穴名或冒號——「中渚穴配伍: 通裏穴為手少陰心經」會把
+      // 通裏的經名錯位歸因給中渚（wave-3 實測 2 筆假回音）。
+      const m = sent.match(new RegExp("([一-鿿]{2,4})穴[^，,:：穴]{0,25}?(?:屬於|屬|為|位於|是)\\s*" + H_CHANNEL.source));
       if (!m) continue;
       const other = m[1];
       if (other === own) continue;                       // 本穴自述歸 A 管

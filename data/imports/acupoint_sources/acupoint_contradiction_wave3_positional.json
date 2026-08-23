@@ -1,0 +1,924 @@
+{
+  "dataset": "acupoint_positional_list_contradictions_wave3",
+  "policy": "staging only; adjudicated 2026-08-23; swaps applied same day",
+  "generated_by": "scripts/report-acupoint-contradictions.js (#83 位置式列舉逐位核對) + Sonnet 5 裁決",
+  "source_of_truth": "data/acupoints/361.json",
+  "tally": {
+    "applied": 10,
+    "deferred": 4,
+    "false_positive": 4
+  },
+  "note": "18 筆位置式列舉候選：10 swap 套用（曲池/天宗/少澤/風市/足三里 各×2 孿生欄位）、4 誤報（GB15 肝俞/膽俞背俞慣用語，本卡識別欄證實）、4 列冊（PC1 心俞屬督脈/厥陰俞屬腎經——連臟腑對應都錯，但後文推理依賴心/心包分屬前提，整段需重寫）。",
+  "records": [
+    {
+      "id": "contra.LI14.W3P0.clinical_pearls_2",
+      "code": "LI14",
+      "json_path": "$.clinical_pearls[2]",
+      "machine_note": "本卡位置式列舉說「曲池…手太陽小腸經」，但 LI11 曲池 自己的卡是 大腸經",
+      "current_excerpt": "肩髃、肩貞、臑俞等穴均位於肩臂部，直接作用於患處；曲池、天宗等穴分別屬於手太陽小腸經與足太陽膀胱經，能從整體上調節氣血，疏通經絡，緩解疼痛，恢復上肢功能",
+      "point_facts": [
+        {
+          "name": "曲池",
+          "code": "LI11",
+          "channel_zh": "大腸經",
+          "point_identity_zh": [
+            "合穴",
+            "土穴",
+            "補穴（土生金）",
+            "鬼穴",
+            "可灸"
+          ],
+          "wushu_point": "合穴"
+        },
+        {
+          "name": "肩髃",
+          "code": "LI15",
+          "channel_zh": "大腸經",
+          "point_identity_zh": [
+            "交會穴 —— 小腸經、陽蹻脈",
+            "可灸"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "肩貞",
+          "code": "SI9",
+          "channel_zh": "小腸經",
+          "point_identity_zh": [
+            "肩關節局部要穴"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "臑俞",
+          "code": "SI10",
+          "channel_zh": "小腸經",
+          "point_identity_zh": [
+            "交會穴（手太陽、陽維脈、陽蹻脈）",
+            "肩胛上部要穴"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "天宗",
+          "code": "SI11",
+          "channel_zh": "小腸經",
+          "point_identity_zh": [
+            "肩胛部要穴（天宗）",
+            "通乳、寬胸、止肩痛第一要穴"
+          ],
+          "wushu_point": ""
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "肩髃、肩貞、臑俞等穴均位於肩臂部，直接作用於患處；曲池、天宗等穴分別屬於手陽明大腸經與足太陽膀胱經，能從整體上調節氣血，疏通經絡，緩解疼痛，恢復上肢功能",
+      "confidence": "高",
+      "notes": "位置式列舉「曲池…屬於手太陽小腸經」對應第一位置（曲池），但 point_facts 顯示 LI11 曲池屬大腸經（「手太陽小腸經」其實是天宗的經）。單換此一位置經名為「手陽明大腸經」（同為6字，長度不減），後文「能從整體上調節氣血，疏通經絡…」為泛效果描述，不依賴此經名之精確值，全句仍連貫。",
+      "status": "applied_2026-08-23"
+    },
+    {
+      "id": "contra.LI14.W3P1.combine_points_zh",
+      "code": "LI14",
+      "json_path": "$.combine_points_zh",
+      "machine_note": "本卡位置式列舉說「曲池…手太陽小腸經」，但 LI11 曲池 自己的卡是 大腸經",
+      "current_excerpt": "肩髃、肩貞、臑俞等穴均位於肩臂部，直接作用於患處；曲池、天宗等穴分別屬於手太陽小腸經與足太陽膀胱經，能從整體上調節氣血，疏通經絡，緩解疼痛，恢復上肢功能",
+      "point_facts": [
+        {
+          "name": "曲池",
+          "code": "LI11",
+          "channel_zh": "大腸經",
+          "point_identity_zh": [
+            "合穴",
+            "土穴",
+            "補穴（土生金）",
+            "鬼穴",
+            "可灸"
+          ],
+          "wushu_point": "合穴"
+        },
+        {
+          "name": "肩髃",
+          "code": "LI15",
+          "channel_zh": "大腸經",
+          "point_identity_zh": [
+            "交會穴 —— 小腸經、陽蹻脈",
+            "可灸"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "肩貞",
+          "code": "SI9",
+          "channel_zh": "小腸經",
+          "point_identity_zh": [
+            "肩關節局部要穴"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "臑俞",
+          "code": "SI10",
+          "channel_zh": "小腸經",
+          "point_identity_zh": [
+            "交會穴（手太陽、陽維脈、陽蹻脈）",
+            "肩胛上部要穴"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "天宗",
+          "code": "SI11",
+          "channel_zh": "小腸經",
+          "point_identity_zh": [
+            "肩胛部要穴（天宗）",
+            "通乳、寬胸、止肩痛第一要穴"
+          ],
+          "wushu_point": ""
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "肩髃、肩貞、臑俞等穴均位於肩臂部，直接作用於患處；曲池、天宗等穴分別屬於手陽明大腸經與足太陽膀胱經，能從整體上調節氣血，疏通經絡，緩解疼痛，恢復上肢功能",
+      "confidence": "高",
+      "notes": "與 clinical_pearls_2 為孿生條目，判法一致：曲池位置經名「手太陽小腸經」有誤，單換為「手陽明大腸經」，全句仍連貫。",
+      "status": "applied_2026-08-23"
+    },
+    {
+      "id": "contra.LI15.W3P2.clinical_pearls_1",
+      "code": "LI15",
+      "json_path": "$.clinical_pearls[1]",
+      "machine_note": "本卡位置式列舉說「天宗…足太陽膀胱經」，但 SI11 天宗 自己的卡是 小腸經",
+      "current_excerpt": "肩髃配肩髎、天宗： 三穴均位於肩部，肩髎、天宗分別屬於手少陽三焦經與足太陽膀胱經，與大腸經共同支配肩關節及周圍肌肉",
+      "point_facts": [
+        {
+          "name": "肩髃",
+          "code": "LI15",
+          "channel_zh": "大腸經",
+          "point_identity_zh": [
+            "交會穴 —— 小腸經、陽蹻脈",
+            "可灸"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "天宗",
+          "code": "SI11",
+          "channel_zh": "小腸經",
+          "point_identity_zh": [
+            "肩胛部要穴（天宗）",
+            "通乳、寬胸、止肩痛第一要穴"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "肩髎",
+          "code": "TE14",
+          "channel_zh": "三焦經",
+          "point_identity_zh": [
+            "手少陽三焦經穴"
+          ],
+          "wushu_point": ""
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "肩髃配肩髎、天宗： 三穴均位於肩部，肩髎、天宗分別屬於手少陽三焦經與手太陽小腸經，與大腸經共同支配肩關節及周圍肌肉",
+      "confidence": "高",
+      "notes": "「肩髎、天宗分別屬於手少陽三焦經與足太陽膀胱經」中，天宗（第二位置）被指屬足太陽膀胱經，但 point_facts 顯示 SI11 天宗實屬小腸經。單換為「手太陽小腸經」（同為6字，長度不減），後文「與大腸經共同支配肩關節」為泛效果描述，不受影響，全句連貫。",
+      "status": "applied_2026-08-23"
+    },
+    {
+      "id": "contra.LI15.W3P3.combine_points_zh",
+      "code": "LI15",
+      "json_path": "$.combine_points_zh",
+      "machine_note": "本卡位置式列舉說「天宗…足太陽膀胱經」，但 SI11 天宗 自己的卡是 小腸經",
+      "current_excerpt": "肩髃配肩髎、天宗： 三穴均位於肩部，肩髎、天宗分別屬於手少陽三焦經與足太陽膀胱經，與大腸經共同支配肩關節及周圍肌肉",
+      "point_facts": [
+        {
+          "name": "肩髃",
+          "code": "LI15",
+          "channel_zh": "大腸經",
+          "point_identity_zh": [
+            "交會穴 —— 小腸經、陽蹻脈",
+            "可灸"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "天宗",
+          "code": "SI11",
+          "channel_zh": "小腸經",
+          "point_identity_zh": [
+            "肩胛部要穴（天宗）",
+            "通乳、寬胸、止肩痛第一要穴"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "肩髎",
+          "code": "TE14",
+          "channel_zh": "三焦經",
+          "point_identity_zh": [
+            "手少陽三焦經穴"
+          ],
+          "wushu_point": ""
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "肩髃配肩髎、天宗： 三穴均位於肩部，肩髎、天宗分別屬於手少陽三焦經與手太陽小腸經，與大腸經共同支配肩關節及周圍肌肉",
+      "confidence": "高",
+      "notes": "與 clinical_pearls_1 為孿生條目，判法一致：天宗位置經名「足太陽膀胱經」有誤，單換為「手太陽小腸經」，全句仍連貫。",
+      "status": "applied_2026-08-23"
+    },
+    {
+      "id": "contra.LU11.W3P4.clinical_pearls_13",
+      "code": "LU11",
+      "json_path": "$.clinical_pearls[13]",
+      "machine_note": "本卡位置式列舉說「少澤…腎經」，但 SI1 少澤 自己的卡是 小腸經",
+      "current_excerpt": "少商、中沖、關沖、少沖、少澤分別屬於肺經、心包經、三焦經、心經、腎經的井穴，具有瀉熱開竅的功效，而商陽為大腸經井穴，可通腑泄熱",
+      "point_facts": [
+        {
+          "name": "少衝",
+          "code": "HT9",
+          "channel_zh": "心經",
+          "point_identity_zh": [
+            "井穴 (木穴)"
+          ],
+          "wushu_point": "井穴"
+        },
+        {
+          "name": "商陽",
+          "code": "LI1",
+          "channel_zh": "大腸經",
+          "point_identity_zh": [
+            "井穴",
+            "金穴",
+            "不宜灸"
+          ],
+          "wushu_point": "井穴"
+        },
+        {
+          "name": "少商",
+          "code": "LU11",
+          "channel_zh": "肺經",
+          "point_identity_zh": [
+            "井穴",
+            "木穴",
+            "有稱不宜灸",
+            "可點刺放血"
+          ],
+          "wushu_point": "井穴"
+        },
+        {
+          "name": "少澤",
+          "code": "SI1",
+          "channel_zh": "小腸經",
+          "point_identity_zh": [
+            "井穴",
+            "金穴（五輸穴/本經少澤）",
+            "通乳急救要穴"
+          ],
+          "wushu_point": "井穴"
+        },
+        {
+          "name": "中衝",
+          "code": "PC9",
+          "channel_zh": "心包經",
+          "point_identity_zh": [
+            "井穴 (木穴)"
+          ],
+          "wushu_point": "井穴"
+        },
+        {
+          "name": "關衝",
+          "code": "TE1",
+          "channel_zh": "三焦經",
+          "point_identity_zh": [
+            "井穴",
+            "金穴（五輸穴）"
+          ],
+          "wushu_point": "井穴"
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "少商、中沖、關沖、少沖、少澤分別屬於肺經、心包經、三焦經、心經、小腸經的井穴，具有瀉熱開竅的功效，而商陽為大腸經井穴，可通腑泄熱",
+      "confidence": "高",
+      "notes": "井穴列舉「少商、中沖、關沖、少沖、少澤分別屬於肺經、心包經、三焦經、心經、腎經」，前四位置皆與 point_facts 相符，唯末位少澤被指屬腎經，但 SI1 少澤實屬小腸經。單換為「小腸經」（2字增至3字，長度不減），後文「瀉熱開竅功效」為泛效果描述，全句仍連貫。",
+      "status": "applied_2026-08-23"
+    },
+    {
+      "id": "contra.LU11.W3P5.combine_points_zh",
+      "code": "LU11",
+      "json_path": "$.combine_points_zh",
+      "machine_note": "本卡位置式列舉說「少澤…腎經」，但 SI1 少澤 自己的卡是 小腸經",
+      "current_excerpt": "少商、中沖、關沖、少沖、少澤分別屬於肺經、心包經、三焦經、心經、腎經的井穴，具有瀉熱開竅的功效，而商陽為大腸經井穴，可通腑泄熱",
+      "point_facts": [
+        {
+          "name": "少衝",
+          "code": "HT9",
+          "channel_zh": "心經",
+          "point_identity_zh": [
+            "井穴 (木穴)"
+          ],
+          "wushu_point": "井穴"
+        },
+        {
+          "name": "商陽",
+          "code": "LI1",
+          "channel_zh": "大腸經",
+          "point_identity_zh": [
+            "井穴",
+            "金穴",
+            "不宜灸"
+          ],
+          "wushu_point": "井穴"
+        },
+        {
+          "name": "少商",
+          "code": "LU11",
+          "channel_zh": "肺經",
+          "point_identity_zh": [
+            "井穴",
+            "木穴",
+            "有稱不宜灸",
+            "可點刺放血"
+          ],
+          "wushu_point": "井穴"
+        },
+        {
+          "name": "少澤",
+          "code": "SI1",
+          "channel_zh": "小腸經",
+          "point_identity_zh": [
+            "井穴",
+            "金穴（五輸穴/本經少澤）",
+            "通乳急救要穴"
+          ],
+          "wushu_point": "井穴"
+        },
+        {
+          "name": "中衝",
+          "code": "PC9",
+          "channel_zh": "心包經",
+          "point_identity_zh": [
+            "井穴 (木穴)"
+          ],
+          "wushu_point": "井穴"
+        },
+        {
+          "name": "關衝",
+          "code": "TE1",
+          "channel_zh": "三焦經",
+          "point_identity_zh": [
+            "井穴",
+            "金穴（五輸穴）"
+          ],
+          "wushu_point": "井穴"
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "少商、中沖、關沖、少沖、少澤分別屬於肺經、心包經、三焦經、心經、小腸經的井穴，具有瀉熱開竅的功效，而商陽為大腸經井穴，可通腑泄熱",
+      "confidence": "高",
+      "notes": "與 clinical_pearls_13 為孿生條目，判法一致：少澤位置經名「腎經」有誤，單換為「小腸經」，全句仍連貫。",
+      "status": "applied_2026-08-23"
+    },
+    {
+      "id": "contra.ST31.W3P6.clinical_pearls_4",
+      "code": "ST31",
+      "json_path": "$.clinical_pearls[4]",
+      "machine_note": "本卡位置式列舉說「風市…胃經」，但 GB31 風市 自己的卡是 膽經",
+      "current_excerpt": "環跳穴、風市穴分別屬於膽經和胃經，能通利下肢經絡；足三里穴為胃經的原穴，具有強壯身體的作用；承扶穴能調理大腿後側肌肉",
+      "point_facts": [
+        {
+          "name": "足三里",
+          "code": "ST36",
+          "channel_zh": "胃經",
+          "point_identity_zh": [
+            "合穴",
+            "土穴（本經本穴，Horary Point）",
+            "四總穴之「肚腹三里留」",
+            "水穀之海",
+            "腹部要穴（Command Point of the Abdomen）",
+            "全身首要強壯要穴（課件標註：MAIN TONIFICATION POINT ON BODY）",
+            "馬丹陽天星十二穴之一",
+            "可灸"
+          ],
+          "wushu_point": "合穴"
+        },
+        {
+          "name": "承扶",
+          "code": "BL36",
+          "channel_zh": "膀胱經",
+          "point_identity_zh": [
+            "足太陽膀胱經穴"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "環跳",
+          "code": "GB30",
+          "channel_zh": "膽經",
+          "point_identity_zh": [
+            "交會穴（足少陽、足太陽）",
+            "坐骨神經痛與腰腿第一要穴"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "風市",
+          "code": "GB31",
+          "channel_zh": "膽經",
+          "point_identity_zh": [
+            "足少陽膽經穴"
+          ],
+          "wushu_point": ""
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "環跳穴、風市穴分別屬於膽經和足少陽膽經，能通利下肢經絡；足三里穴為胃經的原穴，具有強壯身體的作用；承扶穴能調理大腿後側肌肉",
+      "confidence": "高",
+      "notes": "「環跳穴、風市穴分別屬於膽經和胃經」中，風市（第二位置）被指屬胃經，但 point_facts 顯示 GB31 風市實屬膽經（與環跳同經）。單換為「足少陽膽經」（2字增至5字，長度不減，並避免與前一「膽經」逐字重複），後文「通利下肢經絡」為泛效果描述，全句仍連貫。",
+      "status": "applied_2026-08-23"
+    },
+    {
+      "id": "contra.ST31.W3P7.combine_points_zh",
+      "code": "ST31",
+      "json_path": "$.combine_points_zh",
+      "machine_note": "本卡位置式列舉說「風市…胃經」，但 GB31 風市 自己的卡是 膽經",
+      "current_excerpt": "環跳穴、風市穴分別屬於膽經和胃經，能通利下肢經絡；足三里穴為胃經的原穴，具有強壯身體的作用；承扶穴能調理大腿後側肌肉",
+      "point_facts": [
+        {
+          "name": "足三里",
+          "code": "ST36",
+          "channel_zh": "胃經",
+          "point_identity_zh": [
+            "合穴",
+            "土穴（本經本穴，Horary Point）",
+            "四總穴之「肚腹三里留」",
+            "水穀之海",
+            "腹部要穴（Command Point of the Abdomen）",
+            "全身首要強壯要穴（課件標註：MAIN TONIFICATION POINT ON BODY）",
+            "馬丹陽天星十二穴之一",
+            "可灸"
+          ],
+          "wushu_point": "合穴"
+        },
+        {
+          "name": "承扶",
+          "code": "BL36",
+          "channel_zh": "膀胱經",
+          "point_identity_zh": [
+            "足太陽膀胱經穴"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "環跳",
+          "code": "GB30",
+          "channel_zh": "膽經",
+          "point_identity_zh": [
+            "交會穴（足少陽、足太陽）",
+            "坐骨神經痛與腰腿第一要穴"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "風市",
+          "code": "GB31",
+          "channel_zh": "膽經",
+          "point_identity_zh": [
+            "足少陽膽經穴"
+          ],
+          "wushu_point": ""
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "環跳穴、風市穴分別屬於膽經和足少陽膽經，能通利下肢經絡；足三里穴為胃經的原穴，具有強壯身體的作用；承扶穴能調理大腿後側肌肉",
+      "confidence": "高",
+      "notes": "與 clinical_pearls_4 為孿生條目，判法一致：風市位置經名「胃經」有誤，單換為「足少陽膽經」，全句仍連貫。",
+      "status": "applied_2026-08-23"
+    },
+    {
+      "id": "contra.KI2.W3P8.clinical_pearls_11",
+      "code": "KI2",
+      "json_path": "$.clinical_pearls[11]",
+      "machine_note": "本卡位置式列舉說「足三里…膽經」，但 ST36 足三里 自己的卡是 胃經",
+      "current_excerpt": "然谷穴配伏兔穴，足三里穴，有通絡舒筋的作用，下肢痿痹，足跗痛: 伏兔穴、足三里穴分別屬於足陽明胃經、膽經，與然谷穴共同作用，通經活絡，改善下肢痿痹、足跗痛",
+      "point_facts": [
+        {
+          "name": "足三里",
+          "code": "ST36",
+          "channel_zh": "胃經",
+          "point_identity_zh": [
+            "合穴",
+            "土穴（本經本穴，Horary Point）",
+            "四總穴之「肚腹三里留」",
+            "水穀之海",
+            "腹部要穴（Command Point of the Abdomen）",
+            "全身首要強壯要穴（課件標註：MAIN TONIFICATION POINT ON BODY）",
+            "馬丹陽天星十二穴之一",
+            "可灸"
+          ],
+          "wushu_point": "合穴"
+        },
+        {
+          "name": "伏兔",
+          "code": "ST32",
+          "channel_zh": "胃經",
+          "point_identity_zh": [
+            "局部穴",
+            "可灸"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "然谷",
+          "code": "KI2",
+          "channel_zh": "腎經",
+          "point_identity_zh": [
+            "滎穴",
+            "火穴（五輸穴）",
+            "滋陰降火要穴"
+          ],
+          "wushu_point": "滎穴"
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "然谷穴配伏兔穴，足三里穴，有通絡舒筋的作用，下肢痿痹，足跗痛: 伏兔穴、足三里穴分別屬於足陽明胃經、胃經，與然谷穴共同作用，通經活絡，改善下肢痿痹、足跗痛",
+      "confidence": "高",
+      "notes": "「伏兔穴、足三里穴分別屬於足陽明胃經、膽經」中，足三里（第二位置）被指屬膽經，但 point_facts 顯示 ST36 足三里實屬胃經（與伏兔同經）。單換為「胃經」（2字對2字，長度不減），後文「通經活絡，改善下肢痿痹」為泛效果描述，全句仍連貫。",
+      "status": "applied_2026-08-23"
+    },
+    {
+      "id": "contra.KI2.W3P9.combine_points_zh",
+      "code": "KI2",
+      "json_path": "$.combine_points_zh",
+      "machine_note": "本卡位置式列舉說「足三里…膽經」，但 ST36 足三里 自己的卡是 胃經",
+      "current_excerpt": "然谷穴配伏兔穴，足三里穴，有通絡舒筋的作用，下肢痿痹，足跗痛: 伏兔穴、足三里穴分別屬於足陽明胃經、膽經，與然谷穴共同作用，通經活絡，改善下肢痿痹、足跗痛",
+      "point_facts": [
+        {
+          "name": "足三里",
+          "code": "ST36",
+          "channel_zh": "胃經",
+          "point_identity_zh": [
+            "合穴",
+            "土穴（本經本穴，Horary Point）",
+            "四總穴之「肚腹三里留」",
+            "水穀之海",
+            "腹部要穴（Command Point of the Abdomen）",
+            "全身首要強壯要穴（課件標註：MAIN TONIFICATION POINT ON BODY）",
+            "馬丹陽天星十二穴之一",
+            "可灸"
+          ],
+          "wushu_point": "合穴"
+        },
+        {
+          "name": "伏兔",
+          "code": "ST32",
+          "channel_zh": "胃經",
+          "point_identity_zh": [
+            "局部穴",
+            "可灸"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "然谷",
+          "code": "KI2",
+          "channel_zh": "腎經",
+          "point_identity_zh": [
+            "滎穴",
+            "火穴（五輸穴）",
+            "滋陰降火要穴"
+          ],
+          "wushu_point": "滎穴"
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "然谷穴配伏兔穴，足三里穴，有通絡舒筋的作用，下肢痿痹，足跗痛: 伏兔穴、足三里穴分別屬於足陽明胃經、胃經，與然谷穴共同作用，通經活絡，改善下肢痿痹、足跗痛",
+      "confidence": "高",
+      "notes": "與 clinical_pearls_11 為孿生條目，判法一致：足三里位置經名「膽經」有誤，單換為「胃經」，全句仍連貫。",
+      "status": "applied_2026-08-23"
+    },
+    {
+      "id": "contra.GB15.W3P10.clinical_pearls_1",
+      "code": "GB15",
+      "json_path": "$.clinical_pearls[1]",
+      "machine_note": "本卡位置式列舉說「肝俞…足厥陰肝經」，但 BL18 肝俞 自己的卡是 膀胱經",
+      "current_excerpt": "間使穴、肝俞、膽俞穴分別屬於手厥陰心包經、足厥陰肝經、足少陽膽經，此三經與瘧疾的發生密切相關",
+      "point_facts": [
+        {
+          "name": "肝俞",
+          "code": "BL18",
+          "channel_zh": "膀胱經",
+          "point_identity_zh": [
+            "肝之背俞穴",
+            "疏肝理氣、養肝明目要穴"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "膽俞",
+          "code": "BL19",
+          "channel_zh": "膀胱經",
+          "point_identity_zh": [
+            "膽之背俞穴",
+            "清瀉肝膽濕熱要穴"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "間使",
+          "code": "PC5",
+          "channel_zh": "心包經",
+          "point_identity_zh": [
+            "經穴 (金穴)"
+          ],
+          "wushu_point": "經穴"
+        }
+      ],
+      "verdict": "false_positive",
+      "fix_mode": "none",
+      "proposed_excerpt": "",
+      "confidence": "高",
+      "notes": "「肝俞…屬於…足厥陰肝經」屬臟腑對應慣用語，非經絡歸經錯誤：point_facts 的 point_identity_zh 明確標示肝俞（BL18）為「肝之背俞穴」「疏肝理氣、養肝明目要穴」，證實其與肝臟的臟腑對應關係，符合誤報條件，不予更動。",
+      "status": "adjudicated_false_positive"
+    },
+    {
+      "id": "contra.GB15.W3P11.clinical_pearls_1",
+      "code": "GB15",
+      "json_path": "$.clinical_pearls[1]",
+      "machine_note": "本卡位置式列舉說「膽俞…足少陽膽經」，但 BL19 膽俞 自己的卡是 膀胱經",
+      "current_excerpt": "間使穴、肝俞、膽俞穴分別屬於手厥陰心包經、足厥陰肝經、足少陽膽經，此三經與瘧疾的發生密切相關",
+      "point_facts": [
+        {
+          "name": "肝俞",
+          "code": "BL18",
+          "channel_zh": "膀胱經",
+          "point_identity_zh": [
+            "肝之背俞穴",
+            "疏肝理氣、養肝明目要穴"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "膽俞",
+          "code": "BL19",
+          "channel_zh": "膀胱經",
+          "point_identity_zh": [
+            "膽之背俞穴",
+            "清瀉肝膽濕熱要穴"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "間使",
+          "code": "PC5",
+          "channel_zh": "心包經",
+          "point_identity_zh": [
+            "經穴 (金穴)"
+          ],
+          "wushu_point": "經穴"
+        }
+      ],
+      "verdict": "false_positive",
+      "fix_mode": "none",
+      "proposed_excerpt": "",
+      "confidence": "高",
+      "notes": "「膽俞…屬於…足少陽膽經」屬臟腑對應慣用語，非經絡歸經錯誤：point_facts 的 point_identity_zh 明確標示膽俞（BL19）為「膽之背俞穴」「清瀉肝膽濕熱要穴」，證實其與膽臟腑對應關係，符合誤報條件，不予更動。",
+      "status": "adjudicated_false_positive"
+    },
+    {
+      "id": "contra.GB15.W3P12.combine_points_zh",
+      "code": "GB15",
+      "json_path": "$.combine_points_zh",
+      "machine_note": "本卡位置式列舉說「肝俞…足厥陰肝經」，但 BL18 肝俞 自己的卡是 膀胱經",
+      "current_excerpt": "間使穴、肝俞、膽俞穴分別屬於手厥陰心包經、足厥陰肝經、足少陽膽經，此三經與瘧疾的發生密切相關",
+      "point_facts": [
+        {
+          "name": "肝俞",
+          "code": "BL18",
+          "channel_zh": "膀胱經",
+          "point_identity_zh": [
+            "肝之背俞穴",
+            "疏肝理氣、養肝明目要穴"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "膽俞",
+          "code": "BL19",
+          "channel_zh": "膀胱經",
+          "point_identity_zh": [
+            "膽之背俞穴",
+            "清瀉肝膽濕熱要穴"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "間使",
+          "code": "PC5",
+          "channel_zh": "心包經",
+          "point_identity_zh": [
+            "經穴 (金穴)"
+          ],
+          "wushu_point": "經穴"
+        }
+      ],
+      "verdict": "false_positive",
+      "fix_mode": "none",
+      "proposed_excerpt": "",
+      "confidence": "高",
+      "notes": "與 clinical_pearls_1（肝俞候選）為孿生條目，判法一致：肝俞屬肝經為背俞穴臟腑對應慣用語，point_facts 證實其為「肝之背俞穴」，屬誤報。",
+      "status": "adjudicated_false_positive"
+    },
+    {
+      "id": "contra.GB15.W3P13.combine_points_zh",
+      "code": "GB15",
+      "json_path": "$.combine_points_zh",
+      "machine_note": "本卡位置式列舉說「膽俞…足少陽膽經」，但 BL19 膽俞 自己的卡是 膀胱經",
+      "current_excerpt": "間使穴、肝俞、膽俞穴分別屬於手厥陰心包經、足厥陰肝經、足少陽膽經，此三經與瘧疾的發生密切相關",
+      "point_facts": [
+        {
+          "name": "肝俞",
+          "code": "BL18",
+          "channel_zh": "膀胱經",
+          "point_identity_zh": [
+            "肝之背俞穴",
+            "疏肝理氣、養肝明目要穴"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "膽俞",
+          "code": "BL19",
+          "channel_zh": "膀胱經",
+          "point_identity_zh": [
+            "膽之背俞穴",
+            "清瀉肝膽濕熱要穴"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "間使",
+          "code": "PC5",
+          "channel_zh": "心包經",
+          "point_identity_zh": [
+            "經穴 (金穴)"
+          ],
+          "wushu_point": "經穴"
+        }
+      ],
+      "verdict": "false_positive",
+      "fix_mode": "none",
+      "proposed_excerpt": "",
+      "confidence": "高",
+      "notes": "與 clinical_pearls_1（膽俞候選）為孿生條目，判法一致：膽俞屬膽經為背俞穴臟腑對應慣用語，point_facts 證實其為「膽之背俞穴」，屬誤報。",
+      "status": "adjudicated_false_positive"
+    },
+    {
+      "id": "contra.PC1.W3P14.clinical_pearls_8",
+      "code": "PC1",
+      "json_path": "$.clinical_pearls[8]",
+      "machine_note": "本卡位置式列舉說「心俞…督脈」，但 BL15 心俞 自己的卡是 膀胱經",
+      "current_excerpt": "原理：心俞、厥陰俞分別屬督脈及足少陰腎經，與心臟關係密切",
+      "point_facts": [
+        {
+          "name": "厥陰俞",
+          "code": "BL14",
+          "channel_zh": "膀胱經",
+          "point_identity_zh": [
+            "厥陰俞（心包背俞穴）"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "心俞",
+          "code": "BL15",
+          "channel_zh": "膀胱經",
+          "point_identity_zh": [
+            "心之背俞穴",
+            "養心安神、通心陽第一要穴"
+          ],
+          "wushu_point": ""
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "defer_passage",
+      "proposed_excerpt": "",
+      "confidence": "中",
+      "notes": "「心俞…分別屬督脈」既非 BL15 心俞的字面經絡（膀胱經），也不符合背俞穴臟腑對應慣用語（心俞對應心臟，慣用語應為「心經」），連臟腑對應都錯，屬實質錯誤（即題目提示中「心俞屬督脈」的範例）。但後文「與心臟關係密切」的論證，是建立在心俞、厥陰俞分別對應心／心包（因而與心臟相關）的前提上；若僅依 point_facts 字面經名換成「膀胱經」，心俞與厥陰俞會變成同一經，原本藉列舉經名區分兩穴各自與心臟關聯的『原理』說明便失去支撐、與後文論證脫節，單詞替換無法維持全句醫理連貫，需整段延後處理。",
+      "status": "deferred_wave4"
+    },
+    {
+      "id": "contra.PC1.W3P15.clinical_pearls_8",
+      "code": "PC1",
+      "json_path": "$.clinical_pearls[8]",
+      "machine_note": "本卡位置式列舉說「厥陰俞…足少陰腎經」，但 BL14 厥陰俞 自己的卡是 膀胱經",
+      "current_excerpt": "原理：心俞、厥陰俞分別屬督脈及足少陰腎經，與心臟關係密切",
+      "point_facts": [
+        {
+          "name": "厥陰俞",
+          "code": "BL14",
+          "channel_zh": "膀胱經",
+          "point_identity_zh": [
+            "厥陰俞（心包背俞穴）"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "心俞",
+          "code": "BL15",
+          "channel_zh": "膀胱經",
+          "point_identity_zh": [
+            "心之背俞穴",
+            "養心安神、通心陽第一要穴"
+          ],
+          "wushu_point": ""
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "defer_passage",
+      "proposed_excerpt": "",
+      "confidence": "中",
+      "notes": "「厥陰俞…分別屬…足少陰腎經」既非 BL14 厥陰俞的字面經絡（膀胱經），也不符合背俞穴臟腑對應慣用語（厥陰俞對應心包，慣用語應為「心包經」），連臟腑對應都錯，屬實質錯誤（即題目提示中「厥陰俞屬腎經」的範例）。後文「與心臟關係密切」的論證同樣建立在心俞、厥陰俞分別對應心／心包的前提上；若僅換成字面經名「膀胱經」，會使心俞與厥陰俞變成同一經，原理段落論證隨之失效，單詞替換無法維持全句連貫，需整段延後處理。",
+      "status": "deferred_wave4"
+    },
+    {
+      "id": "contra.PC1.W3P16.combine_points_zh",
+      "code": "PC1",
+      "json_path": "$.combine_points_zh",
+      "machine_note": "本卡位置式列舉說「心俞…督脈」，但 BL15 心俞 自己的卡是 膀胱經",
+      "current_excerpt": "原理：心俞、厥陰俞分別屬督脈及足少陰腎經，與心臟關係密切",
+      "point_facts": [
+        {
+          "name": "厥陰俞",
+          "code": "BL14",
+          "channel_zh": "膀胱經",
+          "point_identity_zh": [
+            "厥陰俞（心包背俞穴）"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "心俞",
+          "code": "BL15",
+          "channel_zh": "膀胱經",
+          "point_identity_zh": [
+            "心之背俞穴",
+            "養心安神、通心陽第一要穴"
+          ],
+          "wushu_point": ""
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "defer_passage",
+      "proposed_excerpt": "",
+      "confidence": "中",
+      "notes": "與 clinical_pearls_8（心俞候選）為孿生條目，判法一致：心俞屬督脈連臟腑對應都錯，屬實質錯誤；但後文論證依賴心俞/厥陰俞分別對應心/心包的前提，單詞換成字面經名「膀胱經」會使兩穴同經、論證脫節，需整段延後處理。",
+      "status": "deferred_wave4"
+    },
+    {
+      "id": "contra.PC1.W3P17.combine_points_zh",
+      "code": "PC1",
+      "json_path": "$.combine_points_zh",
+      "machine_note": "本卡位置式列舉說「厥陰俞…足少陰腎經」，但 BL14 厥陰俞 自己的卡是 膀胱經",
+      "current_excerpt": "原理：心俞、厥陰俞分別屬督脈及足少陰腎經，與心臟關係密切",
+      "point_facts": [
+        {
+          "name": "厥陰俞",
+          "code": "BL14",
+          "channel_zh": "膀胱經",
+          "point_identity_zh": [
+            "厥陰俞（心包背俞穴）"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "心俞",
+          "code": "BL15",
+          "channel_zh": "膀胱經",
+          "point_identity_zh": [
+            "心之背俞穴",
+            "養心安神、通心陽第一要穴"
+          ],
+          "wushu_point": ""
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "defer_passage",
+      "proposed_excerpt": "",
+      "confidence": "中",
+      "notes": "與 clinical_pearls_8（厥陰俞候選）為孿生條目，判法一致：厥陰俞屬足少陰腎經連臟腑對應都錯，屬實質錯誤；但後文論證依賴心俞/厥陰俞分別對應心/心包的前提，單詞換成字面經名「膀胱經」會使兩穴同經、論證脫節，需整段延後處理。",
+      "status": "deferred_wave4"
+    }
+  ]
+}
