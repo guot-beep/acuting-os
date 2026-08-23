@@ -26,7 +26,13 @@ const refs = [...html.matchAll(/(?:src|href)="([^"]+)"/g)]
   .map((m) => m[1])
   .filter((u) => !/^(https?:)?\/\//.test(u) && !u.startsWith("#") && !u.startsWith("data:"));
 
-const files = [...new Set([ENTRY, ...refs])];
+// previsit.html is a self-contained page deliberately NOT referenced by
+// index.html — the ref-scan alone would leave it out of dist/, and with
+// wrangler's single-page-application fallback a patient opening the previsit
+// link would silently get the ENTIRE clinical workstation instead of a 404.
+// (UI/UX P1#1, 2026-08-23.)
+const STANDALONE = ["previsit.html"];
+const files = [...new Set([ENTRY, ...STANDALONE, ...refs])];
 
 /* The "curriculum/ stays behind" promise in the header was never enforced — it
  * held only because index.html happened never to reference that directory. The
