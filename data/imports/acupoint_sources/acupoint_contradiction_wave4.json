@@ -1,0 +1,3740 @@
+{
+  "dataset": "acupoint_h_contradictions_wave4",
+  "policy": "staging only; adjudicated 2026-08-24; swaps applied same day",
+  "generated_by": "scripts/report-acupoint-contradictions.js（#86 兩處解析修正後新現形層）+ Sonnet 5 裁決",
+  "source_of_truth": "data/acupoints/361.json",
+  "tally": {
+    "applied": 64,
+    "deferred_wave5": 14,
+    "false_positive": 12
+  },
+  "note": "探針錯位歸因修正（gap 不跨穴名/冒號、位置式動詞補「為」）暴露的 90 筆：64 swap 套用；14 列冊 wave-5（「皆屬/同經」總論斷或後文推理依賴錯誤前提，單詞換會自相矛盾）；12 誤報（背俞/募穴慣用語 8、探針殘餘錯位 2、其他 2，皆本卡證實）。",
+  "records": [
+    {
+      "id": "contra.SI16.W4S23.clinical_pearls_7",
+      "code": "SI16",
+      "json_path": "$.clinical_pearls[7]",
+      "machine_note": "本卡說「人中穴…任脈」，但 GV26 人中 自己的卡是 督脈",
+      "current_excerpt": "天窗穴配人中穴、頰車穴: 人中穴屬任脈，頰車穴屬足陽明胃經，此配伍主要用於中風口噤，通過刺激穴位，改善神志，恢復言語功能",
+      "point_facts": [
+        {
+          "name": "天窗",
+          "code": "SI16",
+          "channel_zh": "小腸經",
+          "point_identity_zh": [
+            "天窗穴（Window of Sky Point）",
+            "利耳咽喉解毒要穴"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "頰車",
+          "code": "ST6",
+          "channel_zh": "胃經",
+          "point_identity_zh": [
+            "鬼穴",
+            "可灸"
+          ],
+          "wushu_point": ""
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "天窗穴配人中穴、頰車穴: 人中穴屬督脈，頰車穴屬足陽明胃經，此配伍主要用於中風口噤，通過刺激穴位，改善神志，恢復言語功能",
+      "confidence": "中",
+      "notes": "人中(GV26)確為督脈穴，非任脈；頰車部分(足陽明胃經)本身正確不動。point_facts 未附 GV26 本卡，但 machine_note 已明確給出督脈為其本卡歸經，屬公認常識，予以採信。",
+      "status": "applied_2026-08-24"
+    },
+    {
+      "id": "contra.SI16.W4S24.clinical_pearls_8",
+      "code": "SI16",
+      "json_path": "$.clinical_pearls[8]",
+      "machine_note": "本卡說「間使穴…手少陰心經」，但 PC5 間使 自己的卡是 心包經",
+      "current_excerpt": "天窗穴配間使穴、通谷穴: 間使穴屬手少陰心經，通谷穴屬足厥陰肝經，此配伍用於暴喑不能言，原理是通過疏通經絡，調和氣血，改善言語功能",
+      "point_facts": [
+        {
+          "name": "天窗",
+          "code": "SI16",
+          "channel_zh": "小腸經",
+          "point_identity_zh": [
+            "天窗穴（Window of Sky Point）",
+            "利耳咽喉解毒要穴"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "間使",
+          "code": "PC5",
+          "channel_zh": "心包經",
+          "point_identity_zh": [
+            "經穴 (金穴)"
+          ],
+          "wushu_point": "經穴"
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "天窗穴配間使穴、通谷穴: 間使穴屬手厥陰心包經，通谷穴屬足厥陰肝經，此配伍用於暴喑不能言，原理是通過疏通經絡，調和氣血，改善言語功能",
+      "confidence": "高",
+      "notes": "point_facts 確認間使(PC5)屬心包經(手厥陰)，非手少陰心經；通谷部分未被本題指控，不動。",
+      "status": "applied_2026-08-24"
+    },
+    {
+      "id": "contra.SI16.W4S25.combine_points_zh",
+      "code": "SI16",
+      "json_path": "$.combine_points_zh",
+      "machine_note": "本卡說「天容穴…足陽明胃經」，但 SI17 天容 自己的卡是 小腸經",
+      "current_excerpt": "天窗穴配天容穴、少商穴:  天容穴屬足陽明胃經，與天窗穴、少商穴合用，同樣具有清熱利咽的作用，針對咽喉腫痛，效果更佳",
+      "point_facts": [
+        {
+          "name": "少商",
+          "code": "LU11",
+          "channel_zh": "肺經",
+          "point_identity_zh": [
+            "井穴",
+            "木穴",
+            "有稱不宜灸",
+            "可點刺放血"
+          ],
+          "wushu_point": "井穴"
+        },
+        {
+          "name": "天窗",
+          "code": "SI16",
+          "channel_zh": "小腸經",
+          "point_identity_zh": [
+            "天窗穴（Window of Sky Point）",
+            "利耳咽喉解毒要穴"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "天容",
+          "code": "SI17",
+          "channel_zh": "小腸經",
+          "point_identity_zh": [
+            "天窗穴（Window of Sky Point）",
+            "頸部咽喉消腫要穴"
+          ],
+          "wushu_point": ""
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "天窗穴配天容穴、少商穴:  天容穴屬手太陽小腸經，與天窗穴、少商穴合用，同樣具有清熱利咽的作用，針對咽喉腫痛，效果更佳",
+      "confidence": "高",
+      "notes": "point_facts 確認天容(SI17)屬手太陽小腸經，非足陽明胃經。單一穴位歸經誤植，非探針錯位配對。",
+      "status": "applied_2026-08-24"
+    },
+    {
+      "id": "contra.SI16.W4S26.combine_points_zh",
+      "code": "SI16",
+      "json_path": "$.combine_points_zh",
+      "machine_note": "本卡說「人中穴…任脈」，但 GV26 人中 自己的卡是 督脈",
+      "current_excerpt": "天窗穴配人中穴、頰車穴: 人中穴屬任脈，頰車穴屬足陽明胃經，此配伍主要用於中風口噤，通過刺激穴位，改善神志，恢復言語功能",
+      "point_facts": [
+        {
+          "name": "天窗",
+          "code": "SI16",
+          "channel_zh": "小腸經",
+          "point_identity_zh": [
+            "天窗穴（Window of Sky Point）",
+            "利耳咽喉解毒要穴"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "頰車",
+          "code": "ST6",
+          "channel_zh": "胃經",
+          "point_identity_zh": [
+            "鬼穴",
+            "可灸"
+          ],
+          "wushu_point": ""
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "天窗穴配人中穴、頰車穴: 人中穴屬督脈，頰車穴屬足陽明胃經，此配伍主要用於中風口噤，通過刺激穴位，改善神志，恢復言語功能",
+      "confidence": "中",
+      "notes": "與 clinical_pearls_7 為孿生條目，判法一致：人中應為督脈。",
+      "status": "applied_2026-08-24"
+    },
+    {
+      "id": "contra.SI16.W4S27.combine_points_zh",
+      "code": "SI16",
+      "json_path": "$.combine_points_zh",
+      "machine_note": "本卡說「間使穴…手少陰心經」，但 PC5 間使 自己的卡是 心包經",
+      "current_excerpt": "天窗穴配間使穴、通谷穴: 間使穴屬手少陰心經，通谷穴屬足厥陰肝經，此配伍用於暴喑不能言，原理是通過疏通經絡，調和氣血，改善言語功能",
+      "point_facts": [
+        {
+          "name": "天窗",
+          "code": "SI16",
+          "channel_zh": "小腸經",
+          "point_identity_zh": [
+            "天窗穴（Window of Sky Point）",
+            "利耳咽喉解毒要穴"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "間使",
+          "code": "PC5",
+          "channel_zh": "心包經",
+          "point_identity_zh": [
+            "經穴 (金穴)"
+          ],
+          "wushu_point": "經穴"
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "天窗穴配間使穴、通谷穴: 間使穴屬手厥陰心包經，通谷穴屬足厥陰肝經，此配伍用於暴喑不能言，原理是通過疏通經絡，調和氣血，改善言語功能",
+      "confidence": "高",
+      "notes": "與 clinical_pearls_8 為孿生條目，判法一致：間使應為手厥陰心包經。",
+      "status": "applied_2026-08-24"
+    },
+    {
+      "id": "contra.SI18.W4S28.clinical_pearls_5",
+      "code": "SI18",
+      "json_path": "$.clinical_pearls[5]",
+      "machine_note": "本卡說「翳風穴…足少陽膽經」，但 TE17 翳風 自己的卡是 三焦經",
+      "current_excerpt": "5. 顴髎穴配翳風穴、合谷穴清熱鎮痛: 翳風穴為足少陽膽經穴，具有清熱解毒、鎮痛的功效",
+      "point_facts": [
+        {
+          "name": "合谷",
+          "code": "LI4",
+          "channel_zh": "大腸經",
+          "point_identity_zh": [
+            "原穴",
+            "入經穴",
+            "四總穴之面口合谷收（面、鼻、口、頜）",
+            "孕婦禁針禁灸"
+          ],
+          "wushu_point": "原穴"
+        },
+        {
+          "name": "顴髎",
+          "code": "SI18",
+          "channel_zh": "小腸經",
+          "point_identity_zh": [
+            "面部解剖要穴（顴髎）",
+            "⚠️ 古典禁灸（禁灸穴）"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "翳風",
+          "code": "TE17",
+          "channel_zh": "三焦經",
+          "point_identity_zh": [
+            "耳疾要穴（翳風）",
+            "面癱耳鳴耳聾第一要穴"
+          ],
+          "wushu_point": ""
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "5. 顴髎穴配翳風穴、合谷穴清熱鎮痛: 翳風穴為手少陽三焦經穴，具有清熱解毒、鎮痛的功效",
+      "confidence": "高",
+      "notes": "point_facts 確認翳風(TE17)屬手少陽三焦經，非足少陽膽經。",
+      "status": "applied_2026-08-24"
+    },
+    {
+      "id": "contra.SI18.W4S29.combine_points_zh",
+      "code": "SI18",
+      "json_path": "$.combine_points_zh",
+      "machine_note": "本卡說「翳風穴…足少陽膽經」，但 TE17 翳風 自己的卡是 三焦經",
+      "current_excerpt": "5. 顴髎穴配翳風穴、合谷穴清熱鎮痛: 翳風穴為足少陽膽經穴，具有清熱解毒、鎮痛的功效",
+      "point_facts": [
+        {
+          "name": "合谷",
+          "code": "LI4",
+          "channel_zh": "大腸經",
+          "point_identity_zh": [
+            "原穴",
+            "入經穴",
+            "四總穴之面口合谷收（面、鼻、口、頜）",
+            "孕婦禁針禁灸"
+          ],
+          "wushu_point": "原穴"
+        },
+        {
+          "name": "顴髎",
+          "code": "SI18",
+          "channel_zh": "小腸經",
+          "point_identity_zh": [
+            "面部解剖要穴（顴髎）",
+            "⚠️ 古典禁灸（禁灸穴）"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "翳風",
+          "code": "TE17",
+          "channel_zh": "三焦經",
+          "point_identity_zh": [
+            "耳疾要穴（翳風）",
+            "面癱耳鳴耳聾第一要穴"
+          ],
+          "wushu_point": ""
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "5. 顴髎穴配翳風穴、合谷穴清熱鎮痛: 翳風穴為手少陽三焦經穴，具有清熱解毒、鎮痛的功效",
+      "confidence": "高",
+      "notes": "與 clinical_pearls_5 孿生，判法一致：翳風應為手少陽三焦經。",
+      "status": "applied_2026-08-24"
+    },
+    {
+      "id": "contra.SP20.W4S30.clinical_pearls_4",
+      "code": "SP20",
+      "json_path": "$.clinical_pearls[4]",
+      "machine_note": "本卡說「大包穴…膽經」，但 SP21 大包 自己的卡是 脾經",
+      "current_excerpt": "5. 周榮穴配大包穴治肋間神經痛：  大包穴屬膽經，治療肋間神經痛，與周榮穴配合，可從不同的經絡角度緩解疼痛",
+      "point_facts": [
+        {
+          "name": "周榮",
+          "code": "SP20",
+          "channel_zh": "脾經",
+          "point_identity_zh": [
+            "局部穴",
+            "可灸"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "大包",
+          "code": "SP21",
+          "channel_zh": "脾經",
+          "point_identity_zh": [
+            "脾之大絡（總統絡穴）",
+            "統絡全身諸絡",
+            "可灸"
+          ],
+          "wushu_point": ""
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "defer_passage",
+      "proposed_excerpt": "",
+      "confidence": "高",
+      "notes": "大包(SP21)確屬脾經非膽經，但後文『可從不同的經絡角度緩解疼痛』的推理前提正是大包與周榮(同為脾經)分屬不同經；若只把膽經換成脾經，兩穴同屬脾經將與『不同的經絡角度』自相矛盾，需連同後文一併處理，不宜單詞替換。",
+      "status": "deferred_wave5"
+    },
+    {
+      "id": "contra.SP20.W4S31.combine_points_zh",
+      "code": "SP20",
+      "json_path": "$.combine_points_zh",
+      "machine_note": "本卡說「大包穴…膽經」，但 SP21 大包 自己的卡是 脾經",
+      "current_excerpt": "5. 周榮穴配大包穴治肋間神經痛：  大包穴屬膽經，治療肋間神經痛，與周榮穴配合，可從不同的經絡角度緩解疼痛",
+      "point_facts": [
+        {
+          "name": "周榮",
+          "code": "SP20",
+          "channel_zh": "脾經",
+          "point_identity_zh": [
+            "局部穴",
+            "可灸"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "大包",
+          "code": "SP21",
+          "channel_zh": "脾經",
+          "point_identity_zh": [
+            "脾之大絡（總統絡穴）",
+            "統絡全身諸絡",
+            "可灸"
+          ],
+          "wushu_point": ""
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "defer_passage",
+      "proposed_excerpt": "",
+      "confidence": "高",
+      "notes": "與 clinical_pearls_4 孿生，同一依賴鏈：修正歸經後『不同的經絡角度』論述需一併調整，不可只換詞。",
+      "status": "deferred_wave5"
+    },
+    {
+      "id": "contra.ST14.W4S32.clinical_pearls_0",
+      "code": "ST14",
+      "json_path": "$.clinical_pearls[0]",
+      "machine_note": "本卡說「屋翳穴…手太陽小腸經」，但 ST15 屋翳 自己的卡是 胃經",
+      "current_excerpt": "1. 庫房穴配屋翳穴治胸肋脹痛:  屋翳穴位於手太陽小腸經，具有理氣止痛的功效",
+      "point_facts": [
+        {
+          "name": "庫房",
+          "code": "ST14",
+          "channel_zh": "胃經",
+          "point_identity_zh": [
+            "局部穴",
+            "⚠️ 不可深刺 —— 可能刺穿肺",
+            "可灸"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "屋翳",
+          "code": "ST15",
+          "channel_zh": "胃經",
+          "point_identity_zh": [
+            "局部穴",
+            "⚠️ 不可深刺 —— 可能刺穿肺",
+            "可灸"
+          ],
+          "wushu_point": ""
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "1. 庫房穴配屋翳穴治胸肋脹痛:  屋翳穴位於足陽明胃經，具有理氣止痛的功效",
+      "confidence": "高",
+      "notes": "point_facts 確認屋翳(ST15)屬足陽明胃經，非手太陽小腸經；換詞後全句（局部理氣止痛）連貫無礙。",
+      "status": "applied_2026-08-24"
+    },
+    {
+      "id": "contra.ST14.W4S33.combine_points_zh",
+      "code": "ST14",
+      "json_path": "$.combine_points_zh",
+      "machine_note": "本卡說「屋翳穴…手太陽小腸經」，但 ST15 屋翳 自己的卡是 胃經",
+      "current_excerpt": "1. 庫房穴配屋翳穴治胸肋脹痛:  屋翳穴位於手太陽小腸經，具有理氣止痛的功效",
+      "point_facts": [
+        {
+          "name": "庫房",
+          "code": "ST14",
+          "channel_zh": "胃經",
+          "point_identity_zh": [
+            "局部穴",
+            "⚠️ 不可深刺 —— 可能刺穿肺",
+            "可灸"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "屋翳",
+          "code": "ST15",
+          "channel_zh": "胃經",
+          "point_identity_zh": [
+            "局部穴",
+            "⚠️ 不可深刺 —— 可能刺穿肺",
+            "可灸"
+          ],
+          "wushu_point": ""
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "1. 庫房穴配屋翳穴治胸肋脹痛:  屋翳穴位於足陽明胃經，具有理氣止痛的功效",
+      "confidence": "高",
+      "notes": "與 clinical_pearls_0 孿生，判法一致：屋翳應為足陽明胃經。",
+      "status": "applied_2026-08-24"
+    },
+    {
+      "id": "contra.ST41.W4S34.clinical_pearls_5",
+      "code": "ST41",
+      "json_path": "$.clinical_pearls[5]",
+      "machine_note": "本卡說「外關穴…心包經」，但 TE5 外關 自己的卡是 三焦經",
+      "current_excerpt": "此配伍中：內關穴、外關穴為心包經絡穴，具有寧心安神、理氣止痛的功效；足三里穴為足陽明胃經合穴，具有健脾和胃、補氣益血的作用；解溪穴則能清熱瀉火，通經活絡",
+      "point_facts": [
+        {
+          "name": "足三里",
+          "code": "ST36",
+          "channel_zh": "胃經",
+          "point_identity_zh": [
+            "合穴",
+            "土穴（本經本穴，Horary Point）",
+            "四總穴之「肚腹三里留」",
+            "水穀之海",
+            "腹部要穴（Command Point of the Abdomen）",
+            "全身首要強壯要穴（課件標註：MAIN TONIFICATION POINT ON BODY）",
+            "馬丹陽天星十二穴之一",
+            "可灸"
+          ],
+          "wushu_point": "合穴"
+        },
+        {
+          "name": "內關",
+          "code": "PC6",
+          "channel_zh": "心包經",
+          "point_identity_zh": [
+            "絡穴",
+            "八脈交會穴 —— 通陰維脈（配公孫 SP4）",
+            "心包經要穴",
+            "可灸"
+          ],
+          "wushu_point": "絡穴,八脈交會穴(陰維脈)"
+        },
+        {
+          "name": "解谿",
+          "code": "ST41",
+          "channel_zh": "胃經",
+          "point_identity_zh": [
+            "經穴 (火穴)"
+          ],
+          "wushu_point": "經穴"
+        },
+        {
+          "name": "外關",
+          "code": "TE5",
+          "channel_zh": "三焦經",
+          "point_identity_zh": [
+            "絡穴（三焦經別絡，通心包經）",
+            "八脈交會穴（通陽維脈）",
+            "配 GB41 足臨泣治少陽頭痛目疾偏頭痛"
+          ],
+          "wushu_point": "絡穴,八脈交會穴(陽維脈)"
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "此配伍中：內關穴為心包經絡穴、外關穴為三焦經絡穴，具有寧心安神、理氣止痛的功效；足三里穴為足陽明胃經合穴，具有健脾和胃、補氣益血的作用；解溪穴則能清熱瀉火，通經活絡",
+      "confidence": "中",
+      "notes": "原句將內關、外關並列歸為『心包經絡穴』，但 point_facts 顯示外關(TE5)實為三焦經絡穴（其別絡通心包經，非本身屬心包經）；內關(PC6)本身正確。需拆開兩穴各自歸經才醫理連貫，後文『寧心安神、理氣止痛』功效不依賴同經前提，故不影響。足三里、解谿部分未被指控，不動。",
+      "status": "applied_2026-08-24"
+    },
+    {
+      "id": "contra.ST41.W4S35.combine_points_zh",
+      "code": "ST41",
+      "json_path": "$.combine_points_zh",
+      "machine_note": "本卡說「外關穴…心包經」，但 TE5 外關 自己的卡是 三焦經",
+      "current_excerpt": "此配伍中：內關穴、外關穴為心包經絡穴，具有寧心安神、理氣止痛的功效；足三里穴為足陽明胃經合穴，具有健脾和胃、補氣益血的作用；解溪穴則能清熱瀉火，通經活絡",
+      "point_facts": [
+        {
+          "name": "足三里",
+          "code": "ST36",
+          "channel_zh": "胃經",
+          "point_identity_zh": [
+            "合穴",
+            "土穴（本經本穴，Horary Point）",
+            "四總穴之「肚腹三里留」",
+            "水穀之海",
+            "腹部要穴（Command Point of the Abdomen）",
+            "全身首要強壯要穴（課件標註：MAIN TONIFICATION POINT ON BODY）",
+            "馬丹陽天星十二穴之一",
+            "可灸"
+          ],
+          "wushu_point": "合穴"
+        },
+        {
+          "name": "內關",
+          "code": "PC6",
+          "channel_zh": "心包經",
+          "point_identity_zh": [
+            "絡穴",
+            "八脈交會穴 —— 通陰維脈（配公孫 SP4）",
+            "心包經要穴",
+            "可灸"
+          ],
+          "wushu_point": "絡穴,八脈交會穴(陰維脈)"
+        },
+        {
+          "name": "解谿",
+          "code": "ST41",
+          "channel_zh": "胃經",
+          "point_identity_zh": [
+            "經穴 (火穴)"
+          ],
+          "wushu_point": "經穴"
+        },
+        {
+          "name": "外關",
+          "code": "TE5",
+          "channel_zh": "三焦經",
+          "point_identity_zh": [
+            "絡穴（三焦經別絡，通心包經）",
+            "八脈交會穴（通陽維脈）",
+            "配 GB41 足臨泣治少陽頭痛目疾偏頭痛"
+          ],
+          "wushu_point": "絡穴,八脈交會穴(陽維脈)"
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "此配伍中：內關穴為心包經絡穴、外關穴為三焦經絡穴，具有寧心安神、理氣止痛的功效；足三里穴為足陽明胃經合穴，具有健脾和胃、補氣益血的作用；解溪穴則能清熱瀉火，通經活絡",
+      "confidence": "中",
+      "notes": "與 clinical_pearls_5 孿生，判法一致：外關應獨立標為三焦經絡穴。",
+      "status": "applied_2026-08-24"
+    },
+    {
+      "id": "contra.KI7.W4S36.clinical_pearls_9",
+      "code": "KI7",
+      "json_path": "$.clinical_pearls[9]",
+      "machine_note": "本卡位置式列舉說「肝俞…肝經」，但 BL18 肝俞 自己的卡是 膀胱經",
+      "current_excerpt": "肝俞、脾俞分別為肝經、脾經背俞穴",
+      "point_facts": [
+        {
+          "name": "肝俞",
+          "code": "BL18",
+          "channel_zh": "膀胱經",
+          "point_identity_zh": [
+            "肝之背俞穴",
+            "疏肝理氣、養肝明目要穴"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "脾俞",
+          "code": "BL20",
+          "channel_zh": "膀胱經",
+          "point_identity_zh": [
+            "脾之背俞穴",
+            "健脾益氣、運化水濕第一要穴"
+          ],
+          "wushu_point": ""
+        }
+      ],
+      "verdict": "false_positive",
+      "fix_mode": "none",
+      "proposed_excerpt": "",
+      "confidence": "高",
+      "notes": "『肝俞...為肝經...背俞穴』屬臟腑對應慣用語，實指肝之背俞穴，非謂肝俞physically在肝經上。point_facts 的 point_identity_zh 明確標註『肝之背俞穴』，證實此慣用語正確。",
+      "status": "adjudicated_false_positive"
+    },
+    {
+      "id": "contra.KI7.W4S37.clinical_pearls_9",
+      "code": "KI7",
+      "json_path": "$.clinical_pearls[9]",
+      "machine_note": "本卡位置式列舉說「脾俞…脾經」，但 BL20 脾俞 自己的卡是 膀胱經",
+      "current_excerpt": "肝俞、脾俞分別為肝經、脾經背俞穴",
+      "point_facts": [
+        {
+          "name": "肝俞",
+          "code": "BL18",
+          "channel_zh": "膀胱經",
+          "point_identity_zh": [
+            "肝之背俞穴",
+            "疏肝理氣、養肝明目要穴"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "脾俞",
+          "code": "BL20",
+          "channel_zh": "膀胱經",
+          "point_identity_zh": [
+            "脾之背俞穴",
+            "健脾益氣、運化水濕第一要穴"
+          ],
+          "wushu_point": ""
+        }
+      ],
+      "verdict": "false_positive",
+      "fix_mode": "none",
+      "proposed_excerpt": "",
+      "confidence": "高",
+      "notes": "同句『脾俞...為...脾經背俞穴』同屬臟腑對應慣用語，point_facts 的 point_identity_zh 標註『脾之背俞穴』證實正確。",
+      "status": "adjudicated_false_positive"
+    },
+    {
+      "id": "contra.KI7.W4S38.combine_points_zh",
+      "code": "KI7",
+      "json_path": "$.combine_points_zh",
+      "machine_note": "本卡位置式列舉說「肝俞…肝經」，但 BL18 肝俞 自己的卡是 膀胱經",
+      "current_excerpt": "肝俞、脾俞分別為肝經、脾經背俞穴",
+      "point_facts": [
+        {
+          "name": "肝俞",
+          "code": "BL18",
+          "channel_zh": "膀胱經",
+          "point_identity_zh": [
+            "肝之背俞穴",
+            "疏肝理氣、養肝明目要穴"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "脾俞",
+          "code": "BL20",
+          "channel_zh": "膀胱經",
+          "point_identity_zh": [
+            "脾之背俞穴",
+            "健脾益氣、運化水濕第一要穴"
+          ],
+          "wushu_point": ""
+        }
+      ],
+      "verdict": "false_positive",
+      "fix_mode": "none",
+      "proposed_excerpt": "",
+      "confidence": "高",
+      "notes": "與 clinical_pearls_9(肝俞) 孿生條目，判法一致：屬背俞穴慣用語，非錯誤。",
+      "status": "adjudicated_false_positive"
+    },
+    {
+      "id": "contra.KI7.W4S39.combine_points_zh",
+      "code": "KI7",
+      "json_path": "$.combine_points_zh",
+      "machine_note": "本卡位置式列舉說「脾俞…脾經」，但 BL20 脾俞 自己的卡是 膀胱經",
+      "current_excerpt": "肝俞、脾俞分別為肝經、脾經背俞穴",
+      "point_facts": [
+        {
+          "name": "肝俞",
+          "code": "BL18",
+          "channel_zh": "膀胱經",
+          "point_identity_zh": [
+            "肝之背俞穴",
+            "疏肝理氣、養肝明目要穴"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "脾俞",
+          "code": "BL20",
+          "channel_zh": "膀胱經",
+          "point_identity_zh": [
+            "脾之背俞穴",
+            "健脾益氣、運化水濕第一要穴"
+          ],
+          "wushu_point": ""
+        }
+      ],
+      "verdict": "false_positive",
+      "fix_mode": "none",
+      "proposed_excerpt": "",
+      "confidence": "高",
+      "notes": "與 clinical_pearls_9(脾俞) 孿生條目，判法一致：屬背俞穴慣用語，非錯誤。",
+      "status": "adjudicated_false_positive"
+    },
+    {
+      "id": "contra.CV11.W4S40.clinical_pearls_1",
+      "code": "CV11",
+      "json_path": "$.clinical_pearls[1]",
+      "machine_note": "本卡說「內關穴…心經」，但 PC6 內關 自己的卡是 心包經",
+      "current_excerpt": "1. 配內關穴： 內關穴屬心經，具有寧心安神、理氣止痛的功效",
+      "point_facts": [
+        {
+          "name": "內關",
+          "code": "PC6",
+          "channel_zh": "心包經",
+          "point_identity_zh": [
+            "絡穴",
+            "八脈交會穴 —— 通陰維脈（配公孫 SP4）",
+            "心包經要穴",
+            "可灸"
+          ],
+          "wushu_point": "絡穴,八脈交會穴(陰維脈)"
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "1. 配內關穴： 內關穴屬手厥陰心包經，具有寧心安神、理氣止痛的功效",
+      "confidence": "高",
+      "notes": "point_facts 確認內關(PC6)屬手厥陰心包經，非心經(手少陰心經)。",
+      "status": "applied_2026-08-24"
+    },
+    {
+      "id": "contra.CV11.W4S41.combine_points_zh",
+      "code": "CV11",
+      "json_path": "$.combine_points_zh",
+      "machine_note": "本卡說「內關穴…心經」，但 PC6 內關 自己的卡是 心包經",
+      "current_excerpt": "1. 配內關穴： 內關穴屬心經，具有寧心安神、理氣止痛的功效",
+      "point_facts": [
+        {
+          "name": "內關",
+          "code": "PC6",
+          "channel_zh": "心包經",
+          "point_identity_zh": [
+            "絡穴",
+            "八脈交會穴 —— 通陰維脈（配公孫 SP4）",
+            "心包經要穴",
+            "可灸"
+          ],
+          "wushu_point": "絡穴,八脈交會穴(陰維脈)"
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "1. 配內關穴： 內關穴屬手厥陰心包經，具有寧心安神、理氣止痛的功效",
+      "confidence": "高",
+      "notes": "與 clinical_pearls_1 孿生，判法一致：內關應為手厥陰心包經。",
+      "status": "applied_2026-08-24"
+    },
+    {
+      "id": "contra.CV15.W4S42.clinical_pearls_4",
+      "code": "CV15",
+      "json_path": "$.clinical_pearls[4]",
+      "machine_note": "本卡說「後溪穴…督脈」，但 SI3 後溪 自己的卡是 小腸經",
+      "current_excerpt": "鳩尾穴配後溪穴治癲癇： 後溪穴為督脈原穴，具有寧心安神、通調督脈之效",
+      "point_facts": [
+        {
+          "name": "後谿",
+          "code": "SI3",
+          "channel_zh": "小腸經",
+          "point_identity_zh": [
+            "輸穴",
+            "木穴（五輸穴/本經母穴 Tonification Point）",
+            "八脈交會穴（通督脈）",
+            "配 UB62 申脈治頭項脊背病症"
+          ],
+          "wushu_point": "輸穴,八脈交會穴(督脈)"
+        },
+        {
+          "name": "鳩尾",
+          "code": "CV15",
+          "channel_zh": "任脈",
+          "point_identity_zh": [
+            "絡穴"
+          ],
+          "wushu_point": "絡穴"
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "鳩尾穴配後溪穴治癲癇： 後溪穴為手太陽小腸經輸穴，具有寧心安神、通調督脈之效",
+      "confidence": "高",
+      "notes": "後谿(SI3)本身屬手太陽小腸經之輸穴，並非督脈之原穴（督脈亦無原穴概念）；point_facts 的 wushu_point 標明『輸穴,八脈交會穴(督脈)』，故歸經與穴類詞（原穴→輸穴）需一併更正；『通調督脈之效』因其為通督脈之八脈交會穴仍成立，不受影響。",
+      "status": "applied_2026-08-24"
+    },
+    {
+      "id": "contra.CV15.W4S43.combine_points_zh",
+      "code": "CV15",
+      "json_path": "$.combine_points_zh",
+      "machine_note": "本卡說「後溪穴…督脈」，但 SI3 後溪 自己的卡是 小腸經",
+      "current_excerpt": "鳩尾穴配後溪穴治癲癇： 後溪穴為督脈原穴，具有寧心安神、通調督脈之效",
+      "point_facts": [
+        {
+          "name": "後谿",
+          "code": "SI3",
+          "channel_zh": "小腸經",
+          "point_identity_zh": [
+            "輸穴",
+            "木穴（五輸穴/本經母穴 Tonification Point）",
+            "八脈交會穴（通督脈）",
+            "配 UB62 申脈治頭項脊背病症"
+          ],
+          "wushu_point": "輸穴,八脈交會穴(督脈)"
+        },
+        {
+          "name": "鳩尾",
+          "code": "CV15",
+          "channel_zh": "任脈",
+          "point_identity_zh": [
+            "絡穴"
+          ],
+          "wushu_point": "絡穴"
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "鳩尾穴配後溪穴治癲癇： 後溪穴為手太陽小腸經輸穴，具有寧心安神、通調督脈之效",
+      "confidence": "高",
+      "notes": "與 clinical_pearls_4 孿生，判法一致：後谿應為手太陽小腸經輸穴。",
+      "status": "applied_2026-08-24"
+    },
+    {
+      "id": "contra.CV22.W4S44.clinical_pearls_11",
+      "code": "CV22",
+      "json_path": "$.clinical_pearls[11]",
+      "machine_note": "本卡說「商陽穴…肺經」，但 LI1 商陽 自己的卡是 大腸經",
+      "current_excerpt": "配少商穴、商陽穴治梅核氣: 少商穴、商陽穴均為肺經井穴，具有瀉熱通絡之效，可疏通氣機，緩解梅核氣症狀",
+      "point_facts": [
+        {
+          "name": "商陽",
+          "code": "LI1",
+          "channel_zh": "大腸經",
+          "point_identity_zh": [
+            "井穴",
+            "金穴",
+            "不宜灸"
+          ],
+          "wushu_point": "井穴"
+        },
+        {
+          "name": "少商",
+          "code": "LU11",
+          "channel_zh": "肺經",
+          "point_identity_zh": [
+            "井穴",
+            "木穴",
+            "有稱不宜灸",
+            "可點刺放血"
+          ],
+          "wushu_point": "井穴"
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "配少商穴、商陽穴治梅核氣: 少商穴為肺經井穴、商陽穴為大腸經井穴，具有瀉熱通絡之效，可疏通氣機，緩解梅核氣症狀",
+      "confidence": "中",
+      "notes": "原句『少商穴、商陽穴均為肺經井穴』，但 point_facts 顯示商陽(LI1)屬大腸經井穴，非肺經；少商(LU11)本身正確。需拆開分別標註歸經才醫理連貫；後文『瀉熱通絡...緩解梅核氣』乃取肺與大腸相表裡、兩井穴協同瀉熱之效，不依賴同經前提，故不受影響。",
+      "status": "applied_2026-08-24"
+    },
+    {
+      "id": "contra.CV22.W4S45.combine_points_zh",
+      "code": "CV22",
+      "json_path": "$.combine_points_zh",
+      "machine_note": "本卡說「商陽穴…肺經」，但 LI1 商陽 自己的卡是 大腸經",
+      "current_excerpt": "配少商穴、商陽穴治梅核氣: 少商穴、商陽穴均為肺經井穴，具有瀉熱通絡之效，可疏通氣機，緩解梅核氣症狀",
+      "point_facts": [
+        {
+          "name": "商陽",
+          "code": "LI1",
+          "channel_zh": "大腸經",
+          "point_identity_zh": [
+            "井穴",
+            "金穴",
+            "不宜灸"
+          ],
+          "wushu_point": "井穴"
+        },
+        {
+          "name": "少商",
+          "code": "LU11",
+          "channel_zh": "肺經",
+          "point_identity_zh": [
+            "井穴",
+            "木穴",
+            "有稱不宜灸",
+            "可點刺放血"
+          ],
+          "wushu_point": "井穴"
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "配少商穴、商陽穴治梅核氣: 少商穴為肺經井穴、商陽穴為大腸經井穴，具有瀉熱通絡之效，可疏通氣機，緩解梅核氣症狀",
+      "confidence": "中",
+      "notes": "與 clinical_pearls_11 孿生，判法一致：商陽應獨立標為大腸經井穴。",
+      "status": "applied_2026-08-24"
+    },
+    {
+      "id": "contra.BL6.W4S0.clinical_pearls_4",
+      "code": "BL6",
+      "json_path": "$.clinical_pearls[4]",
+      "machine_note": "本卡說「承泣穴…足太陽膀胱經」，但 ST1 承泣 自己的卡是 胃經",
+      "current_excerpt": "配承泣穴、太陽穴治視力減退、目翳： 承泣穴屬足太陽膀胱經，太陽穴屬足太陽膀胱經，與承光穴同經，三穴合用，能滋養肝腎，明目退翳",
+      "point_facts": [
+        {
+          "name": "承光",
+          "code": "BL6",
+          "channel_zh": "膀胱經",
+          "point_identity_zh": [
+            "足太陽膀胱經穴"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "承泣",
+          "code": "ST1",
+          "channel_zh": "胃經",
+          "point_identity_zh": [
+            "入經穴",
+            "交會穴 —— 任脈、陽蹻脈",
+            "不宜灸",
+            "緩慢進針、不可大幅提插"
+          ],
+          "wushu_point": ""
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "defer_passage",
+      "proposed_excerpt": "",
+      "confidence": "中",
+      "notes": "承泣穴確實非膀胱經(是胃經)。但句式「承泣穴屬…膀胱經，太陽穴屬…膀胱經，與承光穴同經，三穴合用…明目退翳」是「三穴皆同經」的總論斷，後文「三穴合用」的協同理由建立在三穴同屬膀胱經之上；太陽穴為經外奇穴，point_facts未給其事實無法佐證換詞，若只換承泣穴一處會讓「與承光穴同經」的總論斷片面失真、自相矛盾，需整段處理，不宜單字替換。",
+      "status": "deferred_wave5"
+    },
+    {
+      "id": "contra.BL6.W4S1.combine_points_zh",
+      "code": "BL6",
+      "json_path": "$.combine_points_zh",
+      "machine_note": "本卡說「承泣穴…足太陽膀胱經」，但 ST1 承泣 自己的卡是 胃經",
+      "current_excerpt": "配承泣穴、太陽穴治視力減退、目翳： 承泣穴屬足太陽膀胱經，太陽穴屬足太陽膀胱經，與承光穴同經，三穴合用，能滋養肝腎，明目退翳",
+      "point_facts": [
+        {
+          "name": "承光",
+          "code": "BL6",
+          "channel_zh": "膀胱經",
+          "point_identity_zh": [
+            "足太陽膀胱經穴"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "承泣",
+          "code": "ST1",
+          "channel_zh": "胃經",
+          "point_identity_zh": [
+            "入經穴",
+            "交會穴 —— 任脈、陽蹻脈",
+            "不宜灸",
+            "緩慢進針、不可大幅提插"
+          ],
+          "wushu_point": ""
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "defer_passage",
+      "proposed_excerpt": "",
+      "confidence": "中",
+      "notes": "與 W4S0 為孿生條目，判法一致：承泣穴屬胃經非膀胱經，但「與承光穴同經，三穴合用」為依賴同經前提的總論斷，太陽穴又無point_facts可佐證換詞，單換一詞會使論斷自相矛盾，需整段處理。",
+      "status": "deferred_wave5"
+    },
+    {
+      "id": "contra.CV17.W4S2.clinical_pearls_6",
+      "code": "CV17",
+      "json_path": "$.clinical_pearls[6]",
+      "machine_note": "本卡說「厥陰俞穴…肝經」，但 BL14 厥陰俞 自己的卡是 膀胱經",
+      "current_excerpt": "膻中穴配厥陰俞穴、內關穴治心悸、心煩、心痛： 厥陰俞穴為肝經背俞穴，與心臟關係密切；此配伍協同作用，寧心安神，疏通心經，緩解心悸、心煩、心痛等症狀，屬於俞募配穴法",
+      "point_facts": [
+        {
+          "name": "厥陰俞",
+          "code": "BL14",
+          "channel_zh": "膀胱經",
+          "point_identity_zh": [
+            "厥陰俞（心包背俞穴）"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "膻中",
+          "code": "CV17",
+          "channel_zh": "任脈",
+          "point_identity_zh": [
+            "心包之募穴",
+            "八會穴之「氣會」",
+            "氣海（胸中氣海）",
+            "寬胸理氣、平喘通乳第一要穴（膻中）"
+          ],
+          "wushu_point": "心包募穴"
+        },
+        {
+          "name": "內關",
+          "code": "PC6",
+          "channel_zh": "心包經",
+          "point_identity_zh": [
+            "絡穴",
+            "八脈交會穴 —— 通陰維脈（配公孫 SP4）",
+            "心包經要穴",
+            "可灸"
+          ],
+          "wushu_point": "絡穴,八脈交會穴(陰維脈)"
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "膻中穴配厥陰俞穴、內關穴治心悸、心煩、心痛： 厥陰俞穴為心包經背俞穴，與心臟關係密切；此配伍協同作用，寧心安神，疏通心經，緩解心悸、心煩、心痛等症狀，屬於俞募配穴法",
+      "confidence": "高",
+      "notes": "point_facts證實厥陰俞是心包背俞穴(非肝經背俞穴)。換成「心包經」後，全句醫理不僅連貫，且修正後更契合俞募配穴法邏輯——膻中為心包之募穴，厥陰俞為心包之背俞穴，兩者正是同一臟腑的俞募相配，與後文「與心臟關係密切」「屬於俞募配穴法」完全吻合。",
+      "status": "applied_2026-08-24"
+    },
+    {
+      "id": "contra.CV17.W4S3.combine_points_zh",
+      "code": "CV17",
+      "json_path": "$.combine_points_zh",
+      "machine_note": "本卡說「厥陰俞穴…肝經」，但 BL14 厥陰俞 自己的卡是 膀胱經",
+      "current_excerpt": "膻中穴配厥陰俞穴、內關穴治心悸、心煩、心痛： 厥陰俞穴為肝經背俞穴，與心臟關係密切；此配伍協同作用，寧心安神，疏通心經，緩解心悸、心煩、心痛等症狀，屬於俞募配穴法",
+      "point_facts": [
+        {
+          "name": "厥陰俞",
+          "code": "BL14",
+          "channel_zh": "膀胱經",
+          "point_identity_zh": [
+            "厥陰俞（心包背俞穴）"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "膻中",
+          "code": "CV17",
+          "channel_zh": "任脈",
+          "point_identity_zh": [
+            "心包之募穴",
+            "八會穴之「氣會」",
+            "氣海（胸中氣海）",
+            "寬胸理氣、平喘通乳第一要穴（膻中）"
+          ],
+          "wushu_point": "心包募穴"
+        },
+        {
+          "name": "內關",
+          "code": "PC6",
+          "channel_zh": "心包經",
+          "point_identity_zh": [
+            "絡穴",
+            "八脈交會穴 —— 通陰維脈（配公孫 SP4）",
+            "心包經要穴",
+            "可灸"
+          ],
+          "wushu_point": "絡穴,八脈交會穴(陰維脈)"
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "膻中穴配厥陰俞穴、內關穴治心悸、心煩、心痛： 厥陰俞穴為心包經背俞穴，與心臟關係密切；此配伍協同作用，寧心安神，疏通心經，緩解心悸、心煩、心痛等症狀，屬於俞募配穴法",
+      "confidence": "高",
+      "notes": "與 W4S2 為孿生條目，判法一致，換「肝經」為「心包經」後與俞募配穴法邏輯完全吻合。",
+      "status": "applied_2026-08-24"
+    },
+    {
+      "id": "contra.LI5.W4S4.clinical_pearls_3",
+      "code": "LI5",
+      "json_path": "$.clinical_pearls[3]",
+      "machine_note": "本卡說「陽谷穴…足少陽膽經」，但 SI5 陽谷 自己的卡是 小腸經",
+      "current_excerpt": "3. 陽溪配陽谷穴有清熱作用： 陽谷穴位於足少陽膽經，具有清熱瀉火、通經止痛的功效",
+      "point_facts": [
+        {
+          "name": "陽谿",
+          "code": "LI5",
+          "channel_zh": "大腸經",
+          "point_identity_zh": [
+            "經穴",
+            "火穴",
+            "可灸"
+          ],
+          "wushu_point": "經穴"
+        },
+        {
+          "name": "陽谷",
+          "code": "SI5",
+          "channel_zh": "小腸經",
+          "point_identity_zh": [
+            "經穴",
+            "火穴（五輸穴/本經本穴 Horary Point）"
+          ],
+          "wushu_point": "經穴"
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "3. 陽溪配陽谷穴有清熱作用： 陽谷穴位於手太陽小腸經，具有清熱瀉火、通經止痛的功效",
+      "confidence": "高",
+      "notes": "point_facts證實陽谷穴屬小腸經(非膽經)。僅換經名，全句醫理連貫，無後文依賴此錯誤前提。",
+      "status": "applied_2026-08-24"
+    },
+    {
+      "id": "contra.LI5.W4S5.combine_points_zh",
+      "code": "LI5",
+      "json_path": "$.combine_points_zh",
+      "machine_note": "本卡說「陽谷穴…足少陽膽經」，但 SI5 陽谷 自己的卡是 小腸經",
+      "current_excerpt": "3. 陽溪配陽谷穴有清熱作用： 陽谷穴位於足少陽膽經，具有清熱瀉火、通經止痛的功效",
+      "point_facts": [
+        {
+          "name": "陽谿",
+          "code": "LI5",
+          "channel_zh": "大腸經",
+          "point_identity_zh": [
+            "經穴",
+            "火穴",
+            "可灸"
+          ],
+          "wushu_point": "經穴"
+        },
+        {
+          "name": "陽谷",
+          "code": "SI5",
+          "channel_zh": "小腸經",
+          "point_identity_zh": [
+            "經穴",
+            "火穴（五輸穴/本經本穴 Horary Point）"
+          ],
+          "wushu_point": "經穴"
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "3. 陽溪配陽谷穴有清熱作用： 陽谷穴位於手太陽小腸經，具有清熱瀉火、通經止痛的功效",
+      "confidence": "高",
+      "notes": "與 W4S4 為孿生條目，判法一致。",
+      "status": "applied_2026-08-24"
+    },
+    {
+      "id": "contra.LI6.W4S6.clinical_pearls_1",
+      "code": "LI6",
+      "json_path": "$.clinical_pearls[1]",
+      "machine_note": "本卡說「水分穴…足太陰脾經」，但 CV9 水分 自己的卡是 任脈",
+      "current_excerpt": "偏歷穴配水分、陰陵泉:  水分穴屬足太陰脾經，陰陵泉屬足太陰脾經，皆為脾經重要穴位，脾主運化水濕",
+      "point_facts": [
+        {
+          "name": "陰陵泉",
+          "code": "SP9",
+          "channel_zh": "脾經",
+          "point_identity_zh": [
+            "合穴",
+            "水穴",
+            "祛濕要穴",
+            "可灸"
+          ],
+          "wushu_point": "合穴"
+        },
+        {
+          "name": "偏歷",
+          "code": "LI6",
+          "channel_zh": "大腸經",
+          "point_identity_zh": [
+            "絡穴",
+            "可灸"
+          ],
+          "wushu_point": "絡穴"
+        },
+        {
+          "name": "水分",
+          "code": "CV9",
+          "channel_zh": "任脈",
+          "point_identity_zh": [
+            "任脈穴"
+          ],
+          "wushu_point": ""
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "defer_passage",
+      "proposed_excerpt": "",
+      "confidence": "高",
+      "notes": "point_facts證實水分穴屬任脈(非脾經)。但原句「水分穴屬…脾經，陰陵泉屬…脾經，皆為脾經重要穴位，脾主運化水濕」為典型「皆屬X經」總論斷，後文「脾主運化水濕」的功效推理完全依賴兩穴皆屬脾經的前提，單換水分穴一詞會使「皆為脾經重要穴位」片面失真、自相矛盾，需整段處理。",
+      "status": "deferred_wave5"
+    },
+    {
+      "id": "contra.LI6.W4S7.clinical_pearls_9",
+      "code": "LI6",
+      "json_path": "$.clinical_pearls[9]",
+      "machine_note": "本卡說「翳風穴…足少陽膽經」，但 TE17 翳風 自己的卡是 三焦經",
+      "current_excerpt": "偏歷穴配翳風: 翳風穴屬足少陽膽經，此配伍通過疏通大腸經與膽經，治療耳鳴耳聾",
+      "point_facts": [
+        {
+          "name": "偏歷",
+          "code": "LI6",
+          "channel_zh": "大腸經",
+          "point_identity_zh": [
+            "絡穴",
+            "可灸"
+          ],
+          "wushu_point": "絡穴"
+        },
+        {
+          "name": "翳風",
+          "code": "TE17",
+          "channel_zh": "三焦經",
+          "point_identity_zh": [
+            "耳疾要穴（翳風）",
+            "面癱耳鳴耳聾第一要穴"
+          ],
+          "wushu_point": ""
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "偏歷穴配翳風: 翳風穴屬手少陽三焦經，此配伍通過疏通大腸經與三焦經，治療耳鳴耳聾",
+      "confidence": "高",
+      "notes": "point_facts證實翳風穴屬三焦經(非膽經)。句中「膽經」出現兩次皆源於翳風穴同一錯誤前提，可一併換為「三焦經」，換後「疏通大腸經與三焦經治療耳鳴耳聾」醫理連貫，且翳風本為耳疾要穴，更貼切。",
+      "status": "applied_2026-08-24"
+    },
+    {
+      "id": "contra.LI6.W4S8.combine_points_zh",
+      "code": "LI6",
+      "json_path": "$.combine_points_zh",
+      "machine_note": "本卡說「水分穴…足太陰脾經」，但 CV9 水分 自己的卡是 任脈",
+      "current_excerpt": "偏歷穴配水分、陰陵泉:  水分穴屬足太陰脾經，陰陵泉屬足太陰脾經，皆為脾經重要穴位，脾主運化水濕",
+      "point_facts": [
+        {
+          "name": "陰陵泉",
+          "code": "SP9",
+          "channel_zh": "脾經",
+          "point_identity_zh": [
+            "合穴",
+            "水穴",
+            "祛濕要穴",
+            "可灸"
+          ],
+          "wushu_point": "合穴"
+        },
+        {
+          "name": "偏歷",
+          "code": "LI6",
+          "channel_zh": "大腸經",
+          "point_identity_zh": [
+            "絡穴",
+            "可灸"
+          ],
+          "wushu_point": "絡穴"
+        },
+        {
+          "name": "水分",
+          "code": "CV9",
+          "channel_zh": "任脈",
+          "point_identity_zh": [
+            "任脈穴"
+          ],
+          "wushu_point": ""
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "defer_passage",
+      "proposed_excerpt": "",
+      "confidence": "高",
+      "notes": "與 W4S6 為孿生條目，判法一致：水分穴誤植脾經之錯與「皆為脾經重要穴位，脾主運化水濕」總論斷連動，單換詞會自相矛盾。",
+      "status": "deferred_wave5"
+    },
+    {
+      "id": "contra.LI6.W4S9.combine_points_zh",
+      "code": "LI6",
+      "json_path": "$.combine_points_zh",
+      "machine_note": "本卡說「翳風穴…足少陽膽經」，但 TE17 翳風 自己的卡是 三焦經",
+      "current_excerpt": "偏歷穴配翳風: 翳風穴屬足少陽膽經，此配伍通過疏通大腸經與膽經，治療耳鳴耳聾",
+      "point_facts": [
+        {
+          "name": "偏歷",
+          "code": "LI6",
+          "channel_zh": "大腸經",
+          "point_identity_zh": [
+            "絡穴",
+            "可灸"
+          ],
+          "wushu_point": "絡穴"
+        },
+        {
+          "name": "翳風",
+          "code": "TE17",
+          "channel_zh": "三焦經",
+          "point_identity_zh": [
+            "耳疾要穴（翳風）",
+            "面癱耳鳴耳聾第一要穴"
+          ],
+          "wushu_point": ""
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "偏歷穴配翳風: 翳風穴屬手少陽三焦經，此配伍通過疏通大腸經與三焦經，治療耳鳴耳聾",
+      "confidence": "高",
+      "notes": "與 W4S7 為孿生條目，判法一致，兩處「膽經」皆換為「三焦經」。",
+      "status": "applied_2026-08-24"
+    },
+    {
+      "id": "contra.LI16.W4S10.clinical_pearls_8",
+      "code": "LI16",
+      "json_path": "$.clinical_pearls[8]",
+      "machine_note": "本卡說「前谷穴…手陽明大腸經」，但 SI2 前谷 自己的卡是 小腸經",
+      "current_excerpt": "巨骨穴配前谷穴： 前谷穴為手陽明大腸經的原穴，具有疏通經絡的作用，與巨骨穴共同作用於大腸經，可疏通經氣，改善肩肘關節的活動度",
+      "point_facts": [
+        {
+          "name": "巨骨",
+          "code": "LI16",
+          "channel_zh": "大腸經",
+          "point_identity_zh": [
+            "交會穴 —— 大腸經、陽蹻脈",
+            "可灸",
+            "⚠️ 深刺可能傷及肺"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "前谷",
+          "code": "SI2",
+          "channel_zh": "小腸經",
+          "point_identity_zh": [
+            "滎穴",
+            "水穴（五輸穴）"
+          ],
+          "wushu_point": "滎穴"
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "巨骨穴配前谷穴： 前谷穴為手太陽小腸經的滎穴，具有疏通經絡的作用，與巨骨穴共同作用於大腸經，可疏通經氣，改善肩肘關節的活動度",
+      "confidence": "中",
+      "notes": "point_facts證實前谷穴屬小腸經、五輸穴為滎穴(非大腸經原穴)。換「手陽明大腸經」為「手太陽小腸經」、「原穴」為「滎穴」後，全句仍連貫：「與巨骨穴共同作用於大腸經」是描述巨骨本身(確為大腸經)之循行標的,不受此次換詞影響。",
+      "status": "applied_2026-08-24"
+    },
+    {
+      "id": "contra.LI16.W4S11.combine_points_zh",
+      "code": "LI16",
+      "json_path": "$.combine_points_zh",
+      "machine_note": "本卡說「前谷穴…手陽明大腸經」，但 SI2 前谷 自己的卡是 小腸經",
+      "current_excerpt": "巨骨穴配前谷穴： 前谷穴為手陽明大腸經的原穴，具有疏通經絡的作用，與巨骨穴共同作用於大腸經，可疏通經氣，改善肩肘關節的活動度",
+      "point_facts": [
+        {
+          "name": "巨骨",
+          "code": "LI16",
+          "channel_zh": "大腸經",
+          "point_identity_zh": [
+            "交會穴 —— 大腸經、陽蹻脈",
+            "可灸",
+            "⚠️ 深刺可能傷及肺"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "前谷",
+          "code": "SI2",
+          "channel_zh": "小腸經",
+          "point_identity_zh": [
+            "滎穴",
+            "水穴（五輸穴）"
+          ],
+          "wushu_point": "滎穴"
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "巨骨穴配前谷穴： 前谷穴為手太陽小腸經的滎穴，具有疏通經絡的作用，與巨骨穴共同作用於大腸經，可疏通經氣，改善肩肘關節的活動度",
+      "confidence": "中",
+      "notes": "與 W4S10 為孿生條目，判法一致。",
+      "status": "applied_2026-08-24"
+    },
+    {
+      "id": "contra.LU1.W4S12.clinical_pearls_4",
+      "code": "LU1",
+      "json_path": "$.clinical_pearls[4]",
+      "machine_note": "本卡說「肩髎穴…膽經」，但 TE14 肩髎 自己的卡是 三焦經",
+      "current_excerpt": "5. 配肩髎穴治肩痛： 肩髎穴為膽經穴位，此配伍主要針對肺經循行至肩部的病症，通過疏通經絡，緩解肩部疼痛",
+      "point_facts": [
+        {
+          "name": "肩髎",
+          "code": "TE14",
+          "channel_zh": "三焦經",
+          "point_identity_zh": [
+            "手少陽三焦經穴"
+          ],
+          "wushu_point": ""
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "5. 配肩髎穴治肩痛： 肩髎穴為手少陽三焦經穴位，此配伍主要針對肺經循行至肩部的病症，通過疏通經絡，緩解肩部疼痛",
+      "confidence": "高",
+      "notes": "point_facts證實肩髎穴屬三焦經(非膽經)。僅換經名，全句醫理連貫，後文「肺經循行至肩部」的推理不依賴肩髎的錯誤歸經。",
+      "status": "applied_2026-08-24"
+    },
+    {
+      "id": "contra.LU1.W4S13.combine_points_zh",
+      "code": "LU1",
+      "json_path": "$.combine_points_zh",
+      "machine_note": "本卡說「肩髎穴…膽經」，但 TE14 肩髎 自己的卡是 三焦經",
+      "current_excerpt": "5. 配肩髎穴治肩痛： 肩髎穴為膽經穴位，此配伍主要針對肺經循行至肩部的病症，通過疏通經絡，緩解肩部疼痛",
+      "point_facts": [
+        {
+          "name": "肩髎",
+          "code": "TE14",
+          "channel_zh": "三焦經",
+          "point_identity_zh": [
+            "手少陽三焦經穴"
+          ],
+          "wushu_point": ""
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "5. 配肩髎穴治肩痛： 肩髎穴為手少陽三焦經穴位，此配伍主要針對肺經循行至肩部的病症，通過疏通經絡，緩解肩部疼痛",
+      "confidence": "高",
+      "notes": "與 W4S12 為孿生條目，判法一致。",
+      "status": "applied_2026-08-24"
+    },
+    {
+      "id": "contra.LU8.W4S14.clinical_pearls_5",
+      "code": "LU8",
+      "json_path": "$.clinical_pearls[5]",
+      "machine_note": "本卡位置式列舉說「曲池…手少陽三焦經」，但 LI11 曲池 自己的卡是 大腸經",
+      "current_excerpt": "6. 經渠配大椎、曲池、合谷治感冒咳嗽： 此配伍為多經穴配伍，大椎、曲池、合谷分別為督脈、手少陽三焦經、手陽明大腸經的原穴及原穴附近的經穴，與經渠配合，具有疏風清熱、解表散寒、止咳化痰的功效，適用於風寒感冒引起的咳嗽",
+      "point_facts": [
+        {
+          "name": "大椎",
+          "code": "GV14",
+          "channel_zh": "督脈",
+          "point_identity_zh": [
+            "大椎（解表退熱、通督陽氣第一要穴）",
+            "交會穴（督脈、手足三陽經）"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "合谷",
+          "code": "LI4",
+          "channel_zh": "大腸經",
+          "point_identity_zh": [
+            "原穴",
+            "入經穴",
+            "四總穴之面口合谷收（面、鼻、口、頜）",
+            "孕婦禁針禁灸"
+          ],
+          "wushu_point": "原穴"
+        },
+        {
+          "name": "曲池",
+          "code": "LI11",
+          "channel_zh": "大腸經",
+          "point_identity_zh": [
+            "合穴",
+            "土穴",
+            "補穴（土生金）",
+            "鬼穴",
+            "可灸"
+          ],
+          "wushu_point": "合穴"
+        },
+        {
+          "name": "經渠",
+          "code": "LU8",
+          "channel_zh": "肺經",
+          "point_identity_zh": [
+            "經穴",
+            "金穴",
+            "可灸"
+          ],
+          "wushu_point": "經穴"
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "6. 經渠配大椎、曲池、合谷治感冒咳嗽： 此配伍為多經穴配伍，大椎、曲池、合谷分別為督脈、手陽明大腸經、手陽明大腸經的原穴及原穴附近的經穴，與經渠配合，具有疏風清熱、解表散寒、止咳化痰的功效，適用於風寒感冒引起的咳嗽",
+      "confidence": "高",
+      "notes": "位置式列舉「大椎、曲池、合谷分別為督脈、手少陽三焦經、手陽明大腸經」逐位核對：大椎-督脈對、合谷-大腸經對，唯曲池被誤配三焦經(曲池實為大腸經)，且三經名單中並無其他點真屬三焦經，非探針錯位而是真錯。換為「手陽明大腸經」後與後文「疏風清熱…治感冒咳嗽」不衝突。",
+      "status": "applied_2026-08-24"
+    },
+    {
+      "id": "contra.LU8.W4S15.combine_points_zh",
+      "code": "LU8",
+      "json_path": "$.combine_points_zh",
+      "machine_note": "本卡位置式列舉說「曲池…手少陽三焦經」，但 LI11 曲池 自己的卡是 大腸經",
+      "current_excerpt": "6. 經渠配大椎、曲池、合谷治感冒咳嗽： 此配伍為多經穴配伍，大椎、曲池、合谷分別為督脈、手少陽三焦經、手陽明大腸經的原穴及原穴附近的經穴，與經渠配合，具有疏風清熱、解表散寒、止咳化痰的功效，適用於風寒感冒引起的咳嗽",
+      "point_facts": [
+        {
+          "name": "大椎",
+          "code": "GV14",
+          "channel_zh": "督脈",
+          "point_identity_zh": [
+            "大椎（解表退熱、通督陽氣第一要穴）",
+            "交會穴（督脈、手足三陽經）"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "合谷",
+          "code": "LI4",
+          "channel_zh": "大腸經",
+          "point_identity_zh": [
+            "原穴",
+            "入經穴",
+            "四總穴之面口合谷收（面、鼻、口、頜）",
+            "孕婦禁針禁灸"
+          ],
+          "wushu_point": "原穴"
+        },
+        {
+          "name": "曲池",
+          "code": "LI11",
+          "channel_zh": "大腸經",
+          "point_identity_zh": [
+            "合穴",
+            "土穴",
+            "補穴（土生金）",
+            "鬼穴",
+            "可灸"
+          ],
+          "wushu_point": "合穴"
+        },
+        {
+          "name": "經渠",
+          "code": "LU8",
+          "channel_zh": "肺經",
+          "point_identity_zh": [
+            "經穴",
+            "金穴",
+            "可灸"
+          ],
+          "wushu_point": "經穴"
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "6. 經渠配大椎、曲池、合谷治感冒咳嗽： 此配伍為多經穴配伍，大椎、曲池、合谷分別為督脈、手陽明大腸經、手陽明大腸經的原穴及原穴附近的經穴，與經渠配合，具有疏風清熱、解表散寒、止咳化痰的功效，適用於風寒感冒引起的咳嗽",
+      "confidence": "高",
+      "notes": "與 W4S14 為孿生條目，判法一致。",
+      "status": "applied_2026-08-24"
+    },
+    {
+      "id": "contra.PC6.W4S16.clinical_pearls_3",
+      "code": "PC6",
+      "json_path": "$.clinical_pearls[3]",
+      "machine_note": "本卡位置式列舉說「外關…小腸經」，但 TE5 外關 自己的卡是 三焦經",
+      "current_excerpt": "原理：外關、曲池分別為小腸經、大腸經的原穴和合穴，與內關配合，能疏通經絡，調和氣血，從而改善上肢氣血運行，治療上肢不遂及手振顫",
+      "point_facts": [
+        {
+          "name": "曲池",
+          "code": "LI11",
+          "channel_zh": "大腸經",
+          "point_identity_zh": [
+            "合穴",
+            "土穴",
+            "補穴（土生金）",
+            "鬼穴",
+            "可灸"
+          ],
+          "wushu_point": "合穴"
+        },
+        {
+          "name": "內關",
+          "code": "PC6",
+          "channel_zh": "心包經",
+          "point_identity_zh": [
+            "絡穴",
+            "八脈交會穴 —— 通陰維脈（配公孫 SP4）",
+            "心包經要穴",
+            "可灸"
+          ],
+          "wushu_point": "絡穴,八脈交會穴(陰維脈)"
+        },
+        {
+          "name": "外關",
+          "code": "TE5",
+          "channel_zh": "三焦經",
+          "point_identity_zh": [
+            "絡穴（三焦經別絡，通心包經）",
+            "八脈交會穴（通陽維脈）",
+            "配 GB41 足臨泣治少陽頭痛目疾偏頭痛"
+          ],
+          "wushu_point": "絡穴,八脈交會穴(陽維脈)"
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "原理：外關、曲池分別為三焦經、大腸經的絡穴和合穴，與內關配合，能疏通經絡，調和氣血，從而改善上肢氣血運行，治療上肢不遂及手振顫",
+      "confidence": "高",
+      "notes": "point_facts證實外關屬三焦經、五輸穴為絡穴(非小腸經原穴，其原穴實為陽池)。換「小腸經」為「三焦經」、「原穴」為「絡穴」後，全句醫理不僅連貫，更契合外關(三焦絡穴)配內關(心包絡穴)這一經典表裡絡穴相配原則。",
+      "status": "applied_2026-08-24"
+    },
+    {
+      "id": "contra.PC6.W4S17.combine_points_zh",
+      "code": "PC6",
+      "json_path": "$.combine_points_zh",
+      "machine_note": "本卡位置式列舉說「外關…小腸經」，但 TE5 外關 自己的卡是 三焦經",
+      "current_excerpt": "原理：外關、曲池分別為小腸經、大腸經的原穴和合穴，與內關配合，能疏通經絡，調和氣血，從而改善上肢氣血運行，治療上肢不遂及手振顫",
+      "point_facts": [
+        {
+          "name": "曲池",
+          "code": "LI11",
+          "channel_zh": "大腸經",
+          "point_identity_zh": [
+            "合穴",
+            "土穴",
+            "補穴（土生金）",
+            "鬼穴",
+            "可灸"
+          ],
+          "wushu_point": "合穴"
+        },
+        {
+          "name": "內關",
+          "code": "PC6",
+          "channel_zh": "心包經",
+          "point_identity_zh": [
+            "絡穴",
+            "八脈交會穴 —— 通陰維脈（配公孫 SP4）",
+            "心包經要穴",
+            "可灸"
+          ],
+          "wushu_point": "絡穴,八脈交會穴(陰維脈)"
+        },
+        {
+          "name": "外關",
+          "code": "TE5",
+          "channel_zh": "三焦經",
+          "point_identity_zh": [
+            "絡穴（三焦經別絡，通心包經）",
+            "八脈交會穴（通陽維脈）",
+            "配 GB41 足臨泣治少陽頭痛目疾偏頭痛"
+          ],
+          "wushu_point": "絡穴,八脈交會穴(陽維脈)"
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "原理：外關、曲池分別為三焦經、大腸經的絡穴和合穴，與內關配合，能疏通經絡，調和氣血，從而改善上肢氣血運行，治療上肢不遂及手振顫",
+      "confidence": "高",
+      "notes": "與 W4S16 為孿生條目，判法一致。",
+      "status": "applied_2026-08-24"
+    },
+    {
+      "id": "contra.SI2.W4S18.clinical_pearls_8",
+      "code": "SI2",
+      "json_path": "$.clinical_pearls[8]",
+      "machine_note": "本卡位置式列舉說「曲池…手少陽三焦經」，但 LI11 曲池 自己的卡是 大腸經",
+      "current_excerpt": "合谷、曲池、尺澤分別為手陽明大腸經、手少陽三焦經、手太陰肺經的原穴或合穴",
+      "point_facts": [
+        {
+          "name": "合谷",
+          "code": "LI4",
+          "channel_zh": "大腸經",
+          "point_identity_zh": [
+            "原穴",
+            "入經穴",
+            "四總穴之面口合谷收（面、鼻、口、頜）",
+            "孕婦禁針禁灸"
+          ],
+          "wushu_point": "原穴"
+        },
+        {
+          "name": "曲池",
+          "code": "LI11",
+          "channel_zh": "大腸經",
+          "point_identity_zh": [
+            "合穴",
+            "土穴",
+            "補穴（土生金）",
+            "鬼穴",
+            "可灸"
+          ],
+          "wushu_point": "合穴"
+        },
+        {
+          "name": "尺澤",
+          "code": "LU5",
+          "channel_zh": "肺經",
+          "point_identity_zh": [
+            "合穴",
+            "水穴",
+            "有稱不宜灸"
+          ],
+          "wushu_point": "合穴"
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "合谷、曲池、尺澤分別為手陽明大腸經、手陽明大腸經、手太陰肺經的原穴或合穴",
+      "confidence": "高",
+      "notes": "位置式列舉「合谷、曲池、尺澤分別為手陽明大腸經、手少陽三焦經、手太陰肺經」逐位核對：合谷-大腸經對、尺澤-肺經對，唯曲池被誤配三焦經(曲池實為大腸經)，三經名單中無其他點真屬三焦經，非探針錯位而是真錯。換後「原穴或合穴」泛稱不受影響。",
+      "status": "applied_2026-08-24"
+    },
+    {
+      "id": "contra.SI2.W4S19.combine_points_zh",
+      "code": "SI2",
+      "json_path": "$.combine_points_zh",
+      "machine_note": "本卡位置式列舉說「曲池…手少陽三焦經」，但 LI11 曲池 自己的卡是 大腸經",
+      "current_excerpt": "合谷、曲池、尺澤分別為手陽明大腸經、手少陽三焦經、手太陰肺經的原穴或合穴",
+      "point_facts": [
+        {
+          "name": "合谷",
+          "code": "LI4",
+          "channel_zh": "大腸經",
+          "point_identity_zh": [
+            "原穴",
+            "入經穴",
+            "四總穴之面口合谷收（面、鼻、口、頜）",
+            "孕婦禁針禁灸"
+          ],
+          "wushu_point": "原穴"
+        },
+        {
+          "name": "曲池",
+          "code": "LI11",
+          "channel_zh": "大腸經",
+          "point_identity_zh": [
+            "合穴",
+            "土穴",
+            "補穴（土生金）",
+            "鬼穴",
+            "可灸"
+          ],
+          "wushu_point": "合穴"
+        },
+        {
+          "name": "尺澤",
+          "code": "LU5",
+          "channel_zh": "肺經",
+          "point_identity_zh": [
+            "合穴",
+            "水穴",
+            "有稱不宜灸"
+          ],
+          "wushu_point": "合穴"
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "合谷、曲池、尺澤分別為手陽明大腸經、手陽明大腸經、手太陰肺經的原穴或合穴",
+      "confidence": "高",
+      "notes": "與 W4S18 為孿生條目，判法一致。",
+      "status": "applied_2026-08-24"
+    },
+    {
+      "id": "contra.SI5.W4S20.clinical_pearls_5",
+      "code": "SI5",
+      "json_path": "$.clinical_pearls[5]",
+      "machine_note": "本卡說「陽池穴…手太陽小腸經」，但 TE4 陽池 自己的卡是 三焦經",
+      "current_excerpt": "6. 配陽池穴治腕痛，陽谷穴配俠溪穴治頷腫口噤： 陽池穴同為手太陽小腸經穴位，與陽谷穴配伍，加強手太陽小腸經的循行路線，直接作用於腕部，治療腕痛",
+      "point_facts": [
+        {
+          "name": "陽谷",
+          "code": "SI5",
+          "channel_zh": "小腸經",
+          "point_identity_zh": [
+            "經穴",
+            "火穴（五輸穴/本經本穴 Horary Point）"
+          ],
+          "wushu_point": "經穴"
+        },
+        {
+          "name": "俠溪",
+          "code": "GB43",
+          "channel_zh": "膽經",
+          "point_identity_zh": [
+            "滎穴",
+            "水穴（五輸穴/母穴）"
+          ],
+          "wushu_point": "滎穴"
+        },
+        {
+          "name": "陽池",
+          "code": "TE4",
+          "channel_zh": "三焦經",
+          "point_identity_zh": [
+            "原穴（三焦經原穴）"
+          ],
+          "wushu_point": "原穴"
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "6. 配陽池穴治腕痛，陽谷穴配俠溪穴治頷腫口噤： 陽池穴同為手少陽三焦經穴位，與陽谷穴配伍，加強手少陽三焦經的循行路線，直接作用於腕部，治療腕痛",
+      "confidence": "高",
+      "notes": "point_facts證實陽池穴屬三焦經(非小腸經)。句中「手太陽小腸經」出現兩次皆源於陽池穴同一錯誤前提(同為…及加強…循行)，可一併換為「手少陽三焦經」，每處皆有point_facts佐證。",
+      "status": "applied_2026-08-24"
+    },
+    {
+      "id": "contra.SI5.W4S21.combine_points_zh",
+      "code": "SI5",
+      "json_path": "$.combine_points_zh",
+      "machine_note": "本卡說「陽池穴…手太陽小腸經」，但 TE4 陽池 自己的卡是 三焦經",
+      "current_excerpt": "6. 配陽池穴治腕痛，陽谷穴配俠溪穴治頷腫口噤： 陽池穴同為手太陽小腸經穴位，與陽谷穴配伍，加強手太陽小腸經的循行路線，直接作用於腕部，治療腕痛",
+      "point_facts": [
+        {
+          "name": "陽谷",
+          "code": "SI5",
+          "channel_zh": "小腸經",
+          "point_identity_zh": [
+            "經穴",
+            "火穴（五輸穴/本經本穴 Horary Point）"
+          ],
+          "wushu_point": "經穴"
+        },
+        {
+          "name": "俠溪",
+          "code": "GB43",
+          "channel_zh": "膽經",
+          "point_identity_zh": [
+            "滎穴",
+            "水穴（五輸穴/母穴）"
+          ],
+          "wushu_point": "滎穴"
+        },
+        {
+          "name": "陽池",
+          "code": "TE4",
+          "channel_zh": "三焦經",
+          "point_identity_zh": [
+            "原穴（三焦經原穴）"
+          ],
+          "wushu_point": "原穴"
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "6. 配陽池穴治腕痛，陽谷穴配俠溪穴治頷腫口噤： 陽池穴同為手少陽三焦經穴位，與陽谷穴配伍，加強手少陽三焦經的循行路線，直接作用於腕部，治療腕痛",
+      "confidence": "高",
+      "notes": "與 W4S20 為孿生條目，判法一致，兩處「手太陽小腸經」皆換為「手少陽三焦經」。",
+      "status": "applied_2026-08-24"
+    },
+    {
+      "id": "contra.SI16.W4S22.clinical_pearls_2",
+      "code": "SI16",
+      "json_path": "$.clinical_pearls[2]",
+      "machine_note": "本卡說「天容穴…足陽明胃經」，但 SI17 天容 自己的卡是 小腸經",
+      "current_excerpt": "天窗穴配天容穴、少商穴:  天容穴屬足陽明胃經，與天窗穴、少商穴合用，同樣具有清熱利咽的作用，針對咽喉腫痛，效果更佳",
+      "point_facts": [
+        {
+          "name": "少商",
+          "code": "LU11",
+          "channel_zh": "肺經",
+          "point_identity_zh": [
+            "井穴",
+            "木穴",
+            "有稱不宜灸",
+            "可點刺放血"
+          ],
+          "wushu_point": "井穴"
+        },
+        {
+          "name": "天窗",
+          "code": "SI16",
+          "channel_zh": "小腸經",
+          "point_identity_zh": [
+            "天窗穴（Window of Sky Point）",
+            "利耳咽喉解毒要穴"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "天容",
+          "code": "SI17",
+          "channel_zh": "小腸經",
+          "point_identity_zh": [
+            "天窗穴（Window of Sky Point）",
+            "頸部咽喉消腫要穴"
+          ],
+          "wushu_point": ""
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "天窗穴配天容穴、少商穴:  天容穴屬手太陽小腸經，與天窗穴、少商穴合用，同樣具有清熱利咽的作用，針對咽喉腫痛，效果更佳",
+      "confidence": "高",
+      "notes": "point_facts證實天容穴屬小腸經(非胃經)，且與同屬小腸經、同為Window of Sky Point的天窗穴相呼應。換經名後「同樣具有清熱利咽的作用」與天窗穴同經呼應更合理，全句連貫。",
+      "status": "applied_2026-08-24"
+    },
+    {
+      "id": "contra.GV4.W4S46.clinical_pearls_6",
+      "code": "GV4",
+      "json_path": "$.clinical_pearls[6]",
+      "machine_note": "本卡說「中極穴…膀胱經」，但 CV3 中極 自己的卡是 任脈",
+      "current_excerpt": "配中極穴: 中極穴為膀胱經穴，與腎經相通，協同作用於溫補腎陽，利水消腫",
+      "point_facts": [
+        {
+          "name": "中極",
+          "code": "CV3",
+          "channel_zh": "任脈",
+          "point_identity_zh": [
+            "膀胱之募穴",
+            "交會穴（任脈、足三陰經）",
+            "下焦利尿與生殖要穴（中極）"
+          ],
+          "wushu_point": "膀胱募穴"
+        }
+      ],
+      "verdict": "false_positive",
+      "fix_mode": "none",
+      "proposed_excerpt": "",
+      "confidence": "高",
+      "notes": "屬募穴句型：中極穴實歸任脈，但為「膀胱之募穴」（point_facts identity 明確列出「膀胱之募穴」、wushu_point「膀胱募穴」），『中極穴為膀胱經穴』是臟腑對應慣用語（同肝俞屬肝經模式），非literal歸經誤植。後文『與腎經相通…溫補腎陽』正是利用膀胱與腎相表裡、中極為膀胱募穴的醫理，全句自洽，不改。",
+      "status": "adjudicated_false_positive"
+    },
+    {
+      "id": "contra.GV4.W4S47.combine_points_zh",
+      "code": "GV4",
+      "json_path": "$.combine_points_zh",
+      "machine_note": "本卡說「中極穴…膀胱經」，但 CV3 中極 自己的卡是 任脈",
+      "current_excerpt": "配中極穴: 中極穴為膀胱經穴，與腎經相通，協同作用於溫補腎陽，利水消腫",
+      "point_facts": [
+        {
+          "name": "中極",
+          "code": "CV3",
+          "channel_zh": "任脈",
+          "point_identity_zh": [
+            "膀胱之募穴",
+            "交會穴（任脈、足三陰經）",
+            "下焦利尿與生殖要穴（中極）"
+          ],
+          "wushu_point": "膀胱募穴"
+        }
+      ],
+      "verdict": "false_positive",
+      "fix_mode": "none",
+      "proposed_excerpt": "",
+      "confidence": "高",
+      "notes": "與 clinical_pearls_6 為孿生條目，文字相同，判法一致：中極為膀胱之募穴，point_facts 佐證，屬臟腑對應慣用語，非錯誤。",
+      "status": "adjudicated_false_positive"
+    },
+    {
+      "id": "contra.GV5.W4S48.clinical_pearls_8",
+      "code": "GV5",
+      "json_path": "$.clinical_pearls[8]",
+      "machine_note": "本卡說「內關穴…心經」，但 PC6 內關 自己的卡是 心包經",
+      "current_excerpt": "懸樞穴配足三里穴、內關穴： 內關穴(心經)為心經的絡穴，具有寧心安神，理氣止痛的功效",
+      "point_facts": [
+        {
+          "name": "足三里",
+          "code": "ST36",
+          "channel_zh": "胃經",
+          "point_identity_zh": [
+            "合穴",
+            "土穴（本經本穴，Horary Point）",
+            "四總穴之「肚腹三里留」",
+            "水穀之海",
+            "腹部要穴（Command Point of the Abdomen）",
+            "全身首要強壯要穴（課件標註：MAIN TONIFICATION POINT ON BODY）",
+            "馬丹陽天星十二穴之一",
+            "可灸"
+          ],
+          "wushu_point": "合穴"
+        },
+        {
+          "name": "內關",
+          "code": "PC6",
+          "channel_zh": "心包經",
+          "point_identity_zh": [
+            "絡穴",
+            "八脈交會穴 —— 通陰維脈（配公孫 SP4）",
+            "心包經要穴",
+            "可灸"
+          ],
+          "wushu_point": "絡穴,八脈交會穴(陰維脈)"
+        },
+        {
+          "name": "懸樞",
+          "code": "GV5",
+          "channel_zh": "督脈",
+          "point_identity_zh": [
+            "督脈穴"
+          ],
+          "wushu_point": ""
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "懸樞穴配足三里穴、內關穴： 內關穴(心包經)為心包經的絡穴，具有寧心安神，理氣止痛的功效",
+      "confidence": "高",
+      "notes": "內關(PC6) point_facts 明確 channel_zh=心包經、identity含『絡穴』『心包經要穴』，與『心經』單純混淆(心經/心包經常見誤植)，非臟腑對應慣用語（心包無此類俗稱模式），亦非探針錯位。同句兩處『心經』同一前提錯誤，一併換為『心包經』，全句醫理仍連貫（絡穴、寧心安神功效不變）。",
+      "status": "applied_2026-08-24"
+    },
+    {
+      "id": "contra.GV5.W4S49.combine_points_zh",
+      "code": "GV5",
+      "json_path": "$.combine_points_zh",
+      "machine_note": "本卡說「內關穴…心經」，但 PC6 內關 自己的卡是 心包經",
+      "current_excerpt": "懸樞穴配足三里穴、內關穴： 內關穴(心經)為心經的絡穴，具有寧心安神，理氣止痛的功效",
+      "point_facts": [
+        {
+          "name": "足三里",
+          "code": "ST36",
+          "channel_zh": "胃經",
+          "point_identity_zh": [
+            "合穴",
+            "土穴（本經本穴，Horary Point）",
+            "四總穴之「肚腹三里留」",
+            "水穀之海",
+            "腹部要穴（Command Point of the Abdomen）",
+            "全身首要強壯要穴（課件標註：MAIN TONIFICATION POINT ON BODY）",
+            "馬丹陽天星十二穴之一",
+            "可灸"
+          ],
+          "wushu_point": "合穴"
+        },
+        {
+          "name": "內關",
+          "code": "PC6",
+          "channel_zh": "心包經",
+          "point_identity_zh": [
+            "絡穴",
+            "八脈交會穴 —— 通陰維脈（配公孫 SP4）",
+            "心包經要穴",
+            "可灸"
+          ],
+          "wushu_point": "絡穴,八脈交會穴(陰維脈)"
+        },
+        {
+          "name": "懸樞",
+          "code": "GV5",
+          "channel_zh": "督脈",
+          "point_identity_zh": [
+            "督脈穴"
+          ],
+          "wushu_point": ""
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "懸樞穴配足三里穴、內關穴： 內關穴(心包經)為心包經的絡穴，具有寧心安神，理氣止痛的功效",
+      "confidence": "高",
+      "notes": "與 clinical_pearls_8 孿生條目，文字相同，判法與修正一致。",
+      "status": "applied_2026-08-24"
+    },
+    {
+      "id": "contra.GV8.W4S50.clinical_pearls_1",
+      "code": "GV8",
+      "json_path": "$.clinical_pearls[1]",
+      "machine_note": "本卡說「水道穴…膀胱經」，但 ST28 水道 自己的卡是 胃經",
+      "current_excerpt": "2. 筋縮穴配水道穴治脊強： 水道穴位於膀胱經，具有利水消腫、通經活絡的作用",
+      "point_facts": [
+        {
+          "name": "水道",
+          "code": "ST28",
+          "channel_zh": "胃經",
+          "point_identity_zh": [
+            "可灸"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "筋縮",
+          "code": "GV8",
+          "channel_zh": "督脈",
+          "point_identity_zh": [
+            "督脈穴"
+          ],
+          "wushu_point": ""
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "2. 筋縮穴配水道穴治脊強： 水道穴位於胃經，具有利水消腫、通經活絡的作用",
+      "confidence": "高",
+      "notes": "水道(ST28) point_facts channel_zh=胃經，非膀胱經；亦無募穴/背俞臟腑對應可解釋此誤，屬單純歸經寫錯。只換經名，後文『利水消腫、通經活絡』仍醫理連貫。",
+      "status": "applied_2026-08-24"
+    },
+    {
+      "id": "contra.GV8.W4S51.clinical_pearls_5",
+      "code": "GV8",
+      "json_path": "$.clinical_pearls[5]",
+      "machine_note": "本卡說「通里穴…小腸經」，但 HT5 通里 自己的卡是 心經",
+      "current_excerpt": "6. 筋縮穴配通裏穴治癲癇： 通裏穴屬於小腸經，具有通利氣血、熄風止痙的作用",
+      "point_facts": [
+        {
+          "name": "通里",
+          "code": "HT5",
+          "channel_zh": "心經",
+          "point_identity_zh": [
+            "絡穴"
+          ],
+          "wushu_point": "絡穴"
+        },
+        {
+          "name": "筋縮",
+          "code": "GV8",
+          "channel_zh": "督脈",
+          "point_identity_zh": [
+            "督脈穴"
+          ],
+          "wushu_point": ""
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "6. 筋縮穴配通裏穴治癲癇： 通裏穴屬於心經，具有通利氣血、熄風止痙的作用",
+      "confidence": "高",
+      "notes": "通里(HT5) point_facts channel_zh=心經，identity=絡穴；『小腸經』屬單純歸經誤植（無臟腑對應可解釋），換經名後『通利氣血、熄風止痙』醫理仍連貫。",
+      "status": "applied_2026-08-24"
+    },
+    {
+      "id": "contra.GV8.W4S52.combine_points_zh",
+      "code": "GV8",
+      "json_path": "$.combine_points_zh",
+      "machine_note": "本卡說「水道穴…膀胱經」，但 ST28 水道 自己的卡是 胃經",
+      "current_excerpt": "2. 筋縮穴配水道穴治脊強： 水道穴位於膀胱經，具有利水消腫、通經活絡的作用",
+      "point_facts": [
+        {
+          "name": "水道",
+          "code": "ST28",
+          "channel_zh": "胃經",
+          "point_identity_zh": [
+            "可灸"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "筋縮",
+          "code": "GV8",
+          "channel_zh": "督脈",
+          "point_identity_zh": [
+            "督脈穴"
+          ],
+          "wushu_point": ""
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "2. 筋縮穴配水道穴治脊強： 水道穴位於胃經，具有利水消腫、通經活絡的作用",
+      "confidence": "高",
+      "notes": "與 clinical_pearls_1 孿生條目（水道/胃經），判法與修正一致。",
+      "status": "applied_2026-08-24"
+    },
+    {
+      "id": "contra.GV8.W4S53.combine_points_zh",
+      "code": "GV8",
+      "json_path": "$.combine_points_zh",
+      "machine_note": "本卡說「通里穴…小腸經」，但 HT5 通里 自己的卡是 心經",
+      "current_excerpt": "6. 筋縮穴配通裏穴治癲癇： 通裏穴屬於小腸經，具有通利氣血、熄風止痙的作用",
+      "point_facts": [
+        {
+          "name": "通里",
+          "code": "HT5",
+          "channel_zh": "心經",
+          "point_identity_zh": [
+            "絡穴"
+          ],
+          "wushu_point": "絡穴"
+        },
+        {
+          "name": "筋縮",
+          "code": "GV8",
+          "channel_zh": "督脈",
+          "point_identity_zh": [
+            "督脈穴"
+          ],
+          "wushu_point": ""
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "6. 筋縮穴配通裏穴治癲癇： 通裏穴屬於心經，具有通利氣血、熄風止痙的作用",
+      "confidence": "高",
+      "notes": "與 clinical_pearls_5 孿生條目（通里/心經），判法與修正一致。",
+      "status": "applied_2026-08-24"
+    },
+    {
+      "id": "contra.GV15.W4S54.clinical_pearls_4",
+      "code": "GV15",
+      "json_path": "$.clinical_pearls[4]",
+      "machine_note": "本卡說「人中穴…任脈」，但 GV26 人中 自己的卡是 督脈",
+      "current_excerpt": "啞門穴配人中穴、後溪穴： 人中穴為任脈急救穴，後溪穴為督脈經穴，此配伍急救作用明顯，能迅速開竅醒神，應用於癲癇發作、中風昏迷的急症",
+      "point_facts": [
+        {
+          "name": "後谿",
+          "code": "SI3",
+          "channel_zh": "小腸經",
+          "point_identity_zh": [
+            "輸穴",
+            "木穴（五輸穴/本經母穴 Tonification Point）",
+            "八脈交會穴（通督脈）",
+            "配 UB62 申脈治頭項脊背病症"
+          ],
+          "wushu_point": "輸穴,八脈交會穴(督脈)"
+        },
+        {
+          "name": "啞門",
+          "code": "GV15",
+          "channel_zh": "督脈",
+          "point_identity_zh": [
+            "髓海（啞門）"
+          ],
+          "wushu_point": ""
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "啞門穴配人中穴、後溪穴： 人中穴為督脈急救穴，後溪穴為督脈經穴，此配伍急救作用明顯，能迅速開竅醒神，應用於癲癇發作、中風昏迷的急症",
+      "confidence": "高",
+      "notes": "人中(水溝,GV26)實屬督脈，非任脈，是常見混淆(因位近口鼻近任脈終點)。僅換『任脈』為『督脈』，句中『後溪穴為督脈經穴』（後溪為小腸經,但八脈交會通督脈，此為既有描述，非本條目所指控對象，不予更動）不受影響，全句『迅速開竅醒神』醫理仍連貫且更一致(人中、後溪皆與督脈相關)。",
+      "status": "applied_2026-08-24"
+    },
+    {
+      "id": "contra.GV15.W4S55.combine_points_zh",
+      "code": "GV15",
+      "json_path": "$.combine_points_zh",
+      "machine_note": "本卡說「人中穴…任脈」，但 GV26 人中 自己的卡是 督脈",
+      "current_excerpt": "啞門穴配人中穴、後溪穴： 人中穴為任脈急救穴，後溪穴為督脈經穴，此配伍急救作用明顯，能迅速開竅醒神，應用於癲癇發作、中風昏迷的急症",
+      "point_facts": [
+        {
+          "name": "後谿",
+          "code": "SI3",
+          "channel_zh": "小腸經",
+          "point_identity_zh": [
+            "輸穴",
+            "木穴（五輸穴/本經母穴 Tonification Point）",
+            "八脈交會穴（通督脈）",
+            "配 UB62 申脈治頭項脊背病症"
+          ],
+          "wushu_point": "輸穴,八脈交會穴(督脈)"
+        },
+        {
+          "name": "啞門",
+          "code": "GV15",
+          "channel_zh": "督脈",
+          "point_identity_zh": [
+            "髓海（啞門）"
+          ],
+          "wushu_point": ""
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "啞門穴配人中穴、後溪穴： 人中穴為督脈急救穴，後溪穴為督脈經穴，此配伍急救作用明顯，能迅速開竅醒神，應用於癲癇發作、中風昏迷的急症",
+      "confidence": "高",
+      "notes": "與 clinical_pearls_4 孿生條目，文字相同，判法與修正一致。",
+      "status": "applied_2026-08-24"
+    },
+    {
+      "id": "contra.GV16.W4S56.clinical_pearls_1",
+      "code": "GV16",
+      "json_path": "$.clinical_pearls[1]",
+      "machine_note": "本卡說「合谷穴…手太陰肺經」，但 LI4 合谷 自己的卡是 大腸經",
+      "current_excerpt": "風門穴、風池穴皆位於頸項部，與風府穴相鄰，共同疏散頸項部之風寒；列缺穴、合谷穴為手太陰肺經、陽明大腸經原穴，能宣肺解表；復溜穴為腎經俞穴，可補腎助陽，提高機體抵抗力",
+      "point_facts": [
+        {
+          "name": "風門",
+          "code": "BL12",
+          "channel_zh": "膀胱經",
+          "point_identity_zh": [
+            "風門（祛風宣肺要穴）",
+            "交會穴（足太陽、督脈）"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "風池",
+          "code": "GB20",
+          "channel_zh": "膽經",
+          "point_identity_zh": [
+            "交會穴（足少陽、陽維脈）",
+            "祛風清頭目第一要穴"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "合谷",
+          "code": "LI4",
+          "channel_zh": "大腸經",
+          "point_identity_zh": [
+            "原穴",
+            "入經穴",
+            "四總穴之面口合谷收（面、鼻、口、頜）",
+            "孕婦禁針禁灸"
+          ],
+          "wushu_point": "原穴"
+        },
+        {
+          "name": "列缺",
+          "code": "LU7",
+          "channel_zh": "肺經",
+          "point_identity_zh": [
+            "絡穴（別走大腸經 LI4）",
+            "四總穴之頭項尋列缺",
+            "八脈交會穴 —— 通任脈（配腎經照海 KD6）"
+          ],
+          "wushu_point": "絡穴,八脈交會穴(任脈)"
+        },
+        {
+          "name": "復溜",
+          "code": "KI7",
+          "channel_zh": "腎經",
+          "point_identity_zh": [
+            "經穴",
+            "金穴（五輸穴/母穴）",
+            "調節汗液（止汗/發汗）第一要穴"
+          ],
+          "wushu_point": "經穴"
+        },
+        {
+          "name": "風府",
+          "code": "GV16",
+          "channel_zh": "督脈",
+          "point_identity_zh": [
+            "天窗穴（Window of Sky Point）",
+            "髓海（四海之一）",
+            "祛風醒腦第一要穴（風府）"
+          ],
+          "wushu_point": ""
+        }
+      ],
+      "verdict": "false_positive",
+      "fix_mode": "none",
+      "proposed_excerpt": "",
+      "confidence": "高",
+      "notes": "探針錯位配對：句子為並列句『列缺穴、合谷穴為手太陰肺經、陽明大腸經原穴』，逐位對應為 列缺→手太陰肺經、合谷→陽明大腸經，此配對本身正確（point_facts：列缺=肺經、合谷=大腸經）。探針把『合谷』誤配到『手太陰肺經』才產生矛盾指控，句子本身無誤，不動。(『列缺為原穴』一詞雖有疑義但不在本條目machine_note指控範圍，不予處理。)",
+      "status": "adjudicated_false_positive"
+    },
+    {
+      "id": "contra.GV16.W4S57.clinical_pearls_6",
+      "code": "GV16",
+      "json_path": "$.clinical_pearls[6]",
+      "machine_note": "本卡說「腰俞穴…腎經」，但 GV2 腰俞 自己的卡是 督脈",
+      "current_excerpt": "風府穴配腰俞穴治足不仁： 腰俞穴為腎經俞穴，足不仁多由腎經經氣不足或風寒痹阻引起，風府穴配腰俞穴，可疏通督脈及腎經經氣，溫通經絡，改善足部感覺",
+      "point_facts": [
+        {
+          "name": "腰俞",
+          "code": "GV2",
+          "channel_zh": "督脈",
+          "point_identity_zh": [
+            "督脈穴"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "風府",
+          "code": "GV16",
+          "channel_zh": "督脈",
+          "point_identity_zh": [
+            "天窗穴（Window of Sky Point）",
+            "髓海（四海之一）",
+            "祛風醒腦第一要穴（風府）"
+          ],
+          "wushu_point": ""
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "defer_passage",
+      "proposed_excerpt": "",
+      "confidence": "高",
+      "notes": "腰俞(GV2) point_facts channel_zh=督脈，identity僅『督脈穴』，無腎經或腎之背俞對應根據（腎之背俞為腎俞BL23，非腰俞），故『腰俞穴為腎經俞穴』為真錯誤。但後文『足不仁多由腎經經氣不足…引起』『可疏通督脈及腎經經氣』整段推理都建立在腰俞與腎經相關的錯誤前提上，僅換掉『腎經俞穴』一詞會讓後續『腎經經氣』論述失去依據、段落自相矛盾，需整段調整，非單詞可解。",
+      "status": "deferred_wave5"
+    },
+    {
+      "id": "contra.GV16.W4S58.clinical_pearls_13",
+      "code": "GV16",
+      "json_path": "$.clinical_pearls[13]",
+      "machine_note": "本卡位置式列舉說「迎香…足陽明胃經」，但 LI20 迎香 自己的卡是 大腸經",
+      "current_excerpt": "風府穴配二間穴，迎香穴治鼽衄： 二間穴、迎香穴分別為手陽明大腸經、足陽明胃經的經穴，鼽衄與肺、胃經相關，此配伍能清熱涼血，止血",
+      "point_facts": [
+        {
+          "name": "二間",
+          "code": "LI2",
+          "channel_zh": "大腸經",
+          "point_identity_zh": [
+            "滎穴",
+            "水穴",
+            "瀉穴",
+            "可灸"
+          ],
+          "wushu_point": "滎穴"
+        },
+        {
+          "name": "迎香",
+          "code": "LI20",
+          "channel_zh": "大腸經",
+          "point_identity_zh": [
+            "交會穴 —— 胃經",
+            "不宜灸"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "風府",
+          "code": "GV16",
+          "channel_zh": "督脈",
+          "point_identity_zh": [
+            "天窗穴（Window of Sky Point）",
+            "髓海（四海之一）",
+            "祛風醒腦第一要穴（風府）"
+          ],
+          "wushu_point": ""
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "defer_passage",
+      "proposed_excerpt": "",
+      "confidence": "中",
+      "notes": "迎香(LI20) point_facts channel_zh=大腸經（僅為胃經之交會穴，非本經），二間亦為大腸經，故『二間穴、迎香穴分別為手陽明大腸經、足陽明胃經的經穴』中『足陽明胃經』一詞確屬錯誤歸經。但若只把『足陽明胃經』換成『手陽明大腸經』，會變成『分別為手陽明大腸經、手陽明大腸經的經穴』，『分別』一詞預設兩穴分屬不同經，換詞後兩者相同卻仍言『分別』，讀來自相矛盾，且無法呈現迎香實為交會穴（與胃經有交會而非本經）之事實，需整段重寫而非單詞替換。",
+      "status": "deferred_wave5"
+    },
+    {
+      "id": "contra.GV16.W4S59.combine_points_zh",
+      "code": "GV16",
+      "json_path": "$.combine_points_zh",
+      "machine_note": "本卡說「合谷穴…手太陰肺經」，但 LI4 合谷 自己的卡是 大腸經",
+      "current_excerpt": "風門穴、風池穴皆位於頸項部，與風府穴相鄰，共同疏散頸項部之風寒；列缺穴、合谷穴為手太陰肺經、陽明大腸經原穴，能宣肺解表；復溜穴為腎經俞穴，可補腎助陽，提高機體抵抗力",
+      "point_facts": [
+        {
+          "name": "風門",
+          "code": "BL12",
+          "channel_zh": "膀胱經",
+          "point_identity_zh": [
+            "風門（祛風宣肺要穴）",
+            "交會穴（足太陽、督脈）"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "風池",
+          "code": "GB20",
+          "channel_zh": "膽經",
+          "point_identity_zh": [
+            "交會穴（足少陽、陽維脈）",
+            "祛風清頭目第一要穴"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "合谷",
+          "code": "LI4",
+          "channel_zh": "大腸經",
+          "point_identity_zh": [
+            "原穴",
+            "入經穴",
+            "四總穴之面口合谷收（面、鼻、口、頜）",
+            "孕婦禁針禁灸"
+          ],
+          "wushu_point": "原穴"
+        },
+        {
+          "name": "列缺",
+          "code": "LU7",
+          "channel_zh": "肺經",
+          "point_identity_zh": [
+            "絡穴（別走大腸經 LI4）",
+            "四總穴之頭項尋列缺",
+            "八脈交會穴 —— 通任脈（配腎經照海 KD6）"
+          ],
+          "wushu_point": "絡穴,八脈交會穴(任脈)"
+        },
+        {
+          "name": "復溜",
+          "code": "KI7",
+          "channel_zh": "腎經",
+          "point_identity_zh": [
+            "經穴",
+            "金穴（五輸穴/母穴）",
+            "調節汗液（止汗/發汗）第一要穴"
+          ],
+          "wushu_point": "經穴"
+        },
+        {
+          "name": "風府",
+          "code": "GV16",
+          "channel_zh": "督脈",
+          "point_identity_zh": [
+            "天窗穴（Window of Sky Point）",
+            "髓海（四海之一）",
+            "祛風醒腦第一要穴（風府）"
+          ],
+          "wushu_point": ""
+        }
+      ],
+      "verdict": "false_positive",
+      "fix_mode": "none",
+      "proposed_excerpt": "",
+      "confidence": "高",
+      "notes": "與 clinical_pearls_1(W4S56) 孿生條目，文字相同：探針錯位配對，句子逐位對應（列缺→肺經、合谷→大腸經）本身正確，不動。",
+      "status": "adjudicated_false_positive"
+    },
+    {
+      "id": "contra.GV16.W4S60.combine_points_zh",
+      "code": "GV16",
+      "json_path": "$.combine_points_zh",
+      "machine_note": "本卡說「腰俞穴…腎經」，但 GV2 腰俞 自己的卡是 督脈",
+      "current_excerpt": "風府穴配腰俞穴治足不仁： 腰俞穴為腎經俞穴，足不仁多由腎經經氣不足或風寒痹阻引起，風府穴配腰俞穴，可疏通督脈及腎經經氣，溫通經絡，改善足部感覺",
+      "point_facts": [
+        {
+          "name": "腰俞",
+          "code": "GV2",
+          "channel_zh": "督脈",
+          "point_identity_zh": [
+            "督脈穴"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "風府",
+          "code": "GV16",
+          "channel_zh": "督脈",
+          "point_identity_zh": [
+            "天窗穴（Window of Sky Point）",
+            "髓海（四海之一）",
+            "祛風醒腦第一要穴（風府）"
+          ],
+          "wushu_point": ""
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "defer_passage",
+      "proposed_excerpt": "",
+      "confidence": "高",
+      "notes": "與 clinical_pearls_6(W4S57) 孿生條目，文字相同：腰俞為腎經俞穴之誤與後文『腎經經氣』推理鏈綁定，需整段調整，判法一致。",
+      "status": "deferred_wave5"
+    },
+    {
+      "id": "contra.GV16.W4S61.combine_points_zh",
+      "code": "GV16",
+      "json_path": "$.combine_points_zh",
+      "machine_note": "本卡位置式列舉說「迎香…足陽明胃經」，但 LI20 迎香 自己的卡是 大腸經",
+      "current_excerpt": "風府穴配二間穴，迎香穴治鼽衄： 二間穴、迎香穴分別為手陽明大腸經、足陽明胃經的經穴，鼽衄與肺、胃經相關，此配伍能清熱涼血，止血",
+      "point_facts": [
+        {
+          "name": "二間",
+          "code": "LI2",
+          "channel_zh": "大腸經",
+          "point_identity_zh": [
+            "滎穴",
+            "水穴",
+            "瀉穴",
+            "可灸"
+          ],
+          "wushu_point": "滎穴"
+        },
+        {
+          "name": "迎香",
+          "code": "LI20",
+          "channel_zh": "大腸經",
+          "point_identity_zh": [
+            "交會穴 —— 胃經",
+            "不宜灸"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "風府",
+          "code": "GV16",
+          "channel_zh": "督脈",
+          "point_identity_zh": [
+            "天窗穴（Window of Sky Point）",
+            "髓海（四海之一）",
+            "祛風醒腦第一要穴（風府）"
+          ],
+          "wushu_point": ""
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "defer_passage",
+      "proposed_excerpt": "",
+      "confidence": "中",
+      "notes": "與 clinical_pearls_13(W4S58) 孿生條目，文字相同：迎香歸經誤植但『分別為』句型換詞後會產生自相矛盾，需整段處理，判法一致。",
+      "status": "deferred_wave5"
+    },
+    {
+      "id": "contra.GV21.W4S62.clinical_pearls_1",
+      "code": "GV21",
+      "json_path": "$.clinical_pearls[1]",
+      "machine_note": "本卡說「人中穴…任脈」，但 GV26 人中 自己的卡是 督脈",
+      "current_excerpt": "2. 前頂穴配人中穴治面腫虛浮： 人中穴為任脈要穴，具有醒腦開竅之功",
+      "point_facts": [
+        {
+          "name": "前頂",
+          "code": "GV21",
+          "channel_zh": "督脈",
+          "point_identity_zh": [
+            "督脈穴"
+          ],
+          "wushu_point": ""
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "2. 前頂穴配人中穴治面腫虛浮： 人中穴為督脈要穴，具有醒腦開竅之功",
+      "confidence": "高",
+      "notes": "人中(水溝,GV26)實屬督脈非任脈，屬單純歸經寫錯，換詞後『具有醒腦開竅之功』醫理仍連貫（且更符合督脈醒腦開竅要穴之定位）。",
+      "status": "applied_2026-08-24"
+    },
+    {
+      "id": "contra.GV21.W4S63.combine_points_zh",
+      "code": "GV21",
+      "json_path": "$.combine_points_zh",
+      "machine_note": "本卡說「人中穴…任脈」，但 GV26 人中 自己的卡是 督脈",
+      "current_excerpt": "2. 前頂穴配人中穴治面腫虛浮： 人中穴為任脈要穴，具有醒腦開竅之功",
+      "point_facts": [
+        {
+          "name": "前頂",
+          "code": "GV21",
+          "channel_zh": "督脈",
+          "point_identity_zh": [
+            "督脈穴"
+          ],
+          "wushu_point": ""
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "2. 前頂穴配人中穴治面腫虛浮： 人中穴為督脈要穴，具有醒腦開竅之功",
+      "confidence": "高",
+      "notes": "與 clinical_pearls_1(W4S62) 孿生條目，文字相同，判法與修正一致。",
+      "status": "applied_2026-08-24"
+    },
+    {
+      "id": "contra.GV24.W4S64.clinical_pearls_6",
+      "code": "GV24",
+      "json_path": "$.clinical_pearls[6]",
+      "machine_note": "本卡說「兌端穴…足陽明胃經」，但 GV27 兌端 自己的卡是 督脈",
+      "current_excerpt": "神庭穴配兌端穴、承漿穴治癲癇嘔沫： 兌端穴屬足陽明胃經，承漿穴屬任脈，二者皆具有鎮驚安神、開竅醒腦的作用",
+      "point_facts": [
+        {
+          "name": "承漿",
+          "code": "CV24",
+          "channel_zh": "任脈",
+          "point_identity_zh": [
+            "任脈穴"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "神庭",
+          "code": "GV24",
+          "channel_zh": "督脈",
+          "point_identity_zh": [
+            "督脈穴"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "兌端",
+          "code": "GV27",
+          "channel_zh": "督脈",
+          "point_identity_zh": [
+            "督脈穴"
+          ],
+          "wushu_point": ""
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "神庭穴配兌端穴、承漿穴治癲癇嘔沫： 兌端穴屬督脈，承漿穴屬任脈，二者皆具有鎮驚安神、開竅醒腦的作用",
+      "confidence": "高",
+      "notes": "兌端(GV27) point_facts channel_zh=督脈，identity=『督脈穴』，無胃經對應根據，『屬足陽明胃經』為單純歸經寫錯。換詞後『兌端穴屬督脈，承漿穴屬任脈』與神庭(督脈)同屬督/任二脈，醫理更連貫。",
+      "status": "applied_2026-08-24"
+    },
+    {
+      "id": "contra.GV24.W4S65.combine_points_zh",
+      "code": "GV24",
+      "json_path": "$.combine_points_zh",
+      "machine_note": "本卡說「兌端穴…足陽明胃經」，但 GV27 兌端 自己的卡是 督脈",
+      "current_excerpt": "神庭穴配兌端穴、承漿穴治癲癇嘔沫： 兌端穴屬足陽明胃經，承漿穴屬任脈，二者皆具有鎮驚安神、開竅醒腦的作用",
+      "point_facts": [
+        {
+          "name": "承漿",
+          "code": "CV24",
+          "channel_zh": "任脈",
+          "point_identity_zh": [
+            "任脈穴"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "神庭",
+          "code": "GV24",
+          "channel_zh": "督脈",
+          "point_identity_zh": [
+            "督脈穴"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "兌端",
+          "code": "GV27",
+          "channel_zh": "督脈",
+          "point_identity_zh": [
+            "督脈穴"
+          ],
+          "wushu_point": ""
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "神庭穴配兌端穴、承漿穴治癲癇嘔沫： 兌端穴屬督脈，承漿穴屬任脈，二者皆具有鎮驚安神、開竅醒腦的作用",
+      "confidence": "高",
+      "notes": "與 clinical_pearls_6(W4S64) 孿生條目，文字相同，判法與修正一致。",
+      "status": "applied_2026-08-24"
+    },
+    {
+      "id": "contra.GB1.W4S66.clinical_pearls_6",
+      "code": "GB1",
+      "json_path": "$.clinical_pearls[6]",
+      "machine_note": "本卡說「少澤穴…手少陰心經」，但 SI1 少澤 自己的卡是 小腸經",
+      "current_excerpt": "瞳子髎配少澤穴治婦人乳腫： 少澤穴為手少陰心經井穴，具有瀉火解毒的功效",
+      "point_facts": [
+        {
+          "name": "瞳子髎",
+          "code": "GB1",
+          "channel_zh": "膽經",
+          "point_identity_zh": [
+            "交會穴（手太陽、手少陽、足少陽）"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "少澤",
+          "code": "SI1",
+          "channel_zh": "小腸經",
+          "point_identity_zh": [
+            "井穴",
+            "金穴（五輸穴/本經少澤）",
+            "通乳急救要穴"
+          ],
+          "wushu_point": "井穴"
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "瞳子髎配少澤穴治婦人乳腫： 少澤穴為手太陽小腸經井穴，具有瀉火解毒的功效",
+      "confidence": "高",
+      "notes": "少澤(SI1) point_facts channel_zh=小腸經，identity=井穴/金穴/通乳急救要穴，與『手少陰心經』無臟腑對應可解釋，屬單純歸經寫錯。換詞後『瀉火解毒』井穴功效醫理仍連貫，且與少澤通乳識別相符（婦人乳腫）。",
+      "status": "applied_2026-08-24"
+    },
+    {
+      "id": "contra.GB1.W4S67.combine_points_zh",
+      "code": "GB1",
+      "json_path": "$.combine_points_zh",
+      "machine_note": "本卡說「少澤穴…手少陰心經」，但 SI1 少澤 自己的卡是 小腸經",
+      "current_excerpt": "瞳子髎配少澤穴治婦人乳腫： 少澤穴為手少陰心經井穴，具有瀉火解毒的功效",
+      "point_facts": [
+        {
+          "name": "瞳子髎",
+          "code": "GB1",
+          "channel_zh": "膽經",
+          "point_identity_zh": [
+            "交會穴（手太陽、手少陽、足少陽）"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "少澤",
+          "code": "SI1",
+          "channel_zh": "小腸經",
+          "point_identity_zh": [
+            "井穴",
+            "金穴（五輸穴/本經少澤）",
+            "通乳急救要穴"
+          ],
+          "wushu_point": "井穴"
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "瞳子髎配少澤穴治婦人乳腫： 少澤穴為手太陽小腸經井穴，具有瀉火解毒的功效",
+      "confidence": "高",
+      "notes": "與 clinical_pearls_6(W4S66) 孿生條目，文字相同，判法與修正一致。",
+      "status": "applied_2026-08-24"
+    },
+    {
+      "id": "contra.GB9.W4S68.clinical_pearls_5",
+      "code": "GB9",
+      "json_path": "$.clinical_pearls[5]",
+      "machine_note": "本卡說「水突穴…任脈」，但 ST10 水突 自己的卡是 胃經",
+      "current_excerpt": "原理： 天突穴、水突穴均位於任脈，與頸部相關，具有軟堅散結之效",
+      "point_facts": [
+        {
+          "name": "水突",
+          "code": "ST10",
+          "channel_zh": "胃經",
+          "point_identity_zh": [
+            "局部穴",
+            "可灸"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "天突",
+          "code": "CV22",
+          "channel_zh": "任脈",
+          "point_identity_zh": [
+            "天窗穴（Window of Sky Point）",
+            "降氣平喘宣肺第一要穴（天突）"
+          ],
+          "wushu_point": ""
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "defer_passage",
+      "proposed_excerpt": "",
+      "confidence": "高",
+      "notes": "水突(ST10) point_facts channel_zh=胃經，非任脈；『天突穴、水突穴均位於任脈』為『均屬X經』型總論斷，只有天突真屬任脈。若僅換掉一個詞無法反映『均』字所預設的兩穴同經前提已錯，需整段重寫為分述兩穴各自歸經，單詞替換無法保持句意連貫。",
+      "status": "deferred_wave5"
+    },
+    {
+      "id": "contra.GB9.W4S69.combine_points_zh",
+      "code": "GB9",
+      "json_path": "$.combine_points_zh",
+      "machine_note": "本卡說「水突穴…任脈」，但 ST10 水突 自己的卡是 胃經",
+      "current_excerpt": "原理： 天突穴、水突穴均位於任脈，與頸部相關，具有軟堅散結之效",
+      "point_facts": [
+        {
+          "name": "水突",
+          "code": "ST10",
+          "channel_zh": "胃經",
+          "point_identity_zh": [
+            "局部穴",
+            "可灸"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "天突",
+          "code": "CV22",
+          "channel_zh": "任脈",
+          "point_identity_zh": [
+            "天窗穴（Window of Sky Point）",
+            "降氣平喘宣肺第一要穴（天突）"
+          ],
+          "wushu_point": ""
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "defer_passage",
+      "proposed_excerpt": "",
+      "confidence": "高",
+      "notes": "「天突穴、水突穴均位於任脈」是總論斷式的『均』字句：天突(CV22)確為任脈，但水突(ST10)依point_facts為胃經，故『均』字本身站不住。單換一個經名無法保留『均』的並列語法(若只把任脈換胃經,天突又變錯;若不換,均字仍錯),需拆成『天突穴位於任脈，水突穴位於胃經』才對，屬於後文語法/邏輯依賴『均』前提，須整段改寫而非換詞，交由defer_passage處理。",
+      "status": "deferred_wave5"
+    },
+    {
+      "id": "contra.GB11.W4S70.clinical_pearls_2",
+      "code": "GB11",
+      "json_path": "$.clinical_pearls[2]",
+      "machine_note": "本卡說「強間穴…手少陽三焦經」，但 GV18 強間 自己的卡是 督脈",
+      "current_excerpt": "頭竅陰穴配強間穴: 強間穴位於手少陽三焦經，具有疏通經絡、清熱止痛的功效",
+      "point_facts": [
+        {
+          "name": "頭竅陰",
+          "code": "GB11",
+          "channel_zh": "膽經",
+          "point_identity_zh": [
+            "足少陽膽經穴"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "強間",
+          "code": "GV18",
+          "channel_zh": "督脈",
+          "point_identity_zh": [
+            "督脈穴"
+          ],
+          "wushu_point": ""
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "頭竅陰穴配強間穴: 強間穴位於督脈，具有疏通經絡、清熱止痛的功效",
+      "confidence": "高",
+      "notes": "強間(GV18)依point_facts屬督脈，非手少陽三焦經。單換經名「手少陽三焦經」→「督脈」後，後句『具有疏通經絡、清熱止痛的功效』為通用功效敘述，不依賴特定經別，全句仍醫理連貫。",
+      "status": "applied_2026-08-24"
+    },
+    {
+      "id": "contra.GB11.W4S71.combine_points_zh",
+      "code": "GB11",
+      "json_path": "$.combine_points_zh",
+      "machine_note": "本卡說「強間穴…手少陽三焦經」，但 GV18 強間 自己的卡是 督脈",
+      "current_excerpt": "頭竅陰穴配強間穴: 強間穴位於手少陽三焦經，具有疏通經絡、清熱止痛的功效",
+      "point_facts": [
+        {
+          "name": "頭竅陰",
+          "code": "GB11",
+          "channel_zh": "膽經",
+          "point_identity_zh": [
+            "足少陽膽經穴"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "強間",
+          "code": "GV18",
+          "channel_zh": "督脈",
+          "point_identity_zh": [
+            "督脈穴"
+          ],
+          "wushu_point": ""
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "頭竅陰穴配強間穴: 強間穴位於督脈，具有疏通經絡、清熱止痛的功效",
+      "confidence": "高",
+      "notes": "與W4S70為孿生條目(clinical_pearls/combine_points_zh)，判法一致：強間應為督脈，非手少陽三焦經，換詞後全句連貫。",
+      "status": "applied_2026-08-24"
+    },
+    {
+      "id": "contra.GB16.W4S72.clinical_pearls_8",
+      "code": "GB16",
+      "json_path": "$.clinical_pearls[8]",
+      "machine_note": "本卡說「瞳子髎穴…足太陽膀胱經」，但 GB1 瞳子髎 自己的卡是 膽經",
+      "current_excerpt": "睛明穴、瞳子髎穴均屬足太陽膀胱經，具有清肝明目、通經活絡的功效",
+      "point_facts": [
+        {
+          "name": "瞳子髎",
+          "code": "GB1",
+          "channel_zh": "膽經",
+          "point_identity_zh": [
+            "交會穴（手太陽、手少陽、足少陽）"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "睛明",
+          "code": "BL1",
+          "channel_zh": "膀胱經",
+          "point_identity_zh": [
+            "交會穴（手足太陽、足陽明、陰蹻、陽蹻）",
+            "眼睛解剖第一穴"
+          ],
+          "wushu_point": ""
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "defer_passage",
+      "proposed_excerpt": "",
+      "confidence": "高",
+      "notes": "「睛明穴、瞳子髎穴均屬足太陽膀胱經」為『均屬X經』總論斷：睛明(BL1)確屬膀胱經，但瞳子髎(GB1)依point_facts屬膽經。單換詞無法保留『均屬』並列語法，需拆句改寫，屬defer_passage。",
+      "status": "deferred_wave5"
+    },
+    {
+      "id": "contra.GB16.W4S73.combine_points_zh",
+      "code": "GB16",
+      "json_path": "$.combine_points_zh",
+      "machine_note": "本卡說「瞳子髎穴…足太陽膀胱經」，但 GB1 瞳子髎 自己的卡是 膽經",
+      "current_excerpt": "睛明穴、瞳子髎穴均屬足太陽膀胱經，具有清肝明目、通經活絡的功效",
+      "point_facts": [
+        {
+          "name": "瞳子髎",
+          "code": "GB1",
+          "channel_zh": "膽經",
+          "point_identity_zh": [
+            "交會穴（手太陽、手少陽、足少陽）"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "睛明",
+          "code": "BL1",
+          "channel_zh": "膀胱經",
+          "point_identity_zh": [
+            "交會穴（手足太陽、足陽明、陰蹻、陽蹻）",
+            "眼睛解剖第一穴"
+          ],
+          "wushu_point": ""
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "defer_passage",
+      "proposed_excerpt": "",
+      "confidence": "高",
+      "notes": "與W4S72為孿生條目，判法一致：『均屬足太陽膀胱經』對瞳子髎(膽經)不成立，屬均屬式總論斷須整段改寫，非單詞可換。",
+      "status": "deferred_wave5"
+    },
+    {
+      "id": "contra.PC5.W4S74.clinical_pearls_4",
+      "code": "PC5",
+      "json_path": "$.clinical_pearls[4]",
+      "machine_note": "本卡說「大杼穴…肺經」，但 BL11 大杼 自己的卡是 膀胱經",
+      "current_excerpt": "間使穴配大杼穴治瘧疾：  大杼穴為肺經穴位，具有宣肺解表之功",
+      "point_facts": [
+        {
+          "name": "大杼",
+          "code": "BL11",
+          "channel_zh": "膀胱經",
+          "point_identity_zh": [
+            "八會穴之「骨會」",
+            "海穴（血海/四海之一）",
+            "交會穴（足太陽、手太陽）"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "間使",
+          "code": "PC5",
+          "channel_zh": "心包經",
+          "point_identity_zh": [
+            "經穴 (金穴)"
+          ],
+          "wushu_point": "經穴"
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "間使穴配大杼穴治瘧疾：  大杼穴為膀胱經穴位，具有宣肺解表之功",
+      "confidence": "中",
+      "notes": "大杼(BL11)依point_facts屬膀胱經(骨會/海穴)，非肺經。換詞後『具有宣肺解表之功』仍可由足太陽經主表、大杼鄰近肺俞助肺解表之傳統理論支持，全句醫理連貫，故swap；僅換『肺經』一詞，字數由減轉增。",
+      "status": "applied_2026-08-24"
+    },
+    {
+      "id": "contra.PC5.W4S75.combine_points_zh",
+      "code": "PC5",
+      "json_path": "$.combine_points_zh",
+      "machine_note": "本卡說「大杼穴…肺經」，但 BL11 大杼 自己的卡是 膀胱經",
+      "current_excerpt": "間使穴配大杼穴治瘧疾：  大杼穴為肺經穴位，具有宣肺解表之功",
+      "point_facts": [
+        {
+          "name": "大杼",
+          "code": "BL11",
+          "channel_zh": "膀胱經",
+          "point_identity_zh": [
+            "八會穴之「骨會」",
+            "海穴（血海/四海之一）",
+            "交會穴（足太陽、手太陽）"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "間使",
+          "code": "PC5",
+          "channel_zh": "心包經",
+          "point_identity_zh": [
+            "經穴 (金穴)"
+          ],
+          "wushu_point": "經穴"
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "間使穴配大杼穴治瘧疾：  大杼穴為膀胱經穴位，具有宣肺解表之功",
+      "confidence": "中",
+      "notes": "與W4S74為孿生條目，判法一致：大杼應為膀胱經穴位，非肺經，換詞後太陽主表之理仍可支撐『宣肺解表』敘述。",
+      "status": "applied_2026-08-24"
+    },
+    {
+      "id": "contra.LR9.W4S76.clinical_pearls_2",
+      "code": "LR9",
+      "json_path": "$.clinical_pearls[2]",
+      "machine_note": "本卡說「交信穴…足太陰脾經」，但 KI8 交信 自己的卡是 腎經",
+      "current_excerpt": "陰包穴+交信穴: 交信穴位於足太陰脾經，與陰包穴配合，從肝脾兩經入手，調理氣血，改善月經失調",
+      "point_facts": [
+        {
+          "name": "交信",
+          "code": "KI8",
+          "channel_zh": "腎經",
+          "point_identity_zh": [
+            "陰蹻脈之郄穴"
+          ],
+          "wushu_point": "陰蹻郄"
+        },
+        {
+          "name": "陰包",
+          "code": "LR9",
+          "channel_zh": "肝經",
+          "point_identity_zh": [
+            "足厥陰肝經穴"
+          ],
+          "wushu_point": ""
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "陰包穴+交信穴: 交信穴位於足少陰腎經，與陰包穴配合，從肝腎兩經入手，調理氣血，改善月經失調",
+      "confidence": "高",
+      "notes": "交信(KI8)依point_facts屬腎經，非脾經。若只換首句『足太陰脾經』→『足少陰腎經』而不動後文『從肝脾兩經入手』，會與新前提自相矛盾(脾字失依)；此屬同句同前提錯誤重複出現(一次全名、一次簡稱『脾』)，依規則可一併換為『肝腎兩經』，兩處均可被point_facts(交信=腎經、陰包=肝經)佐證，換後全句醫理連貫(肝腎同源治月經失調)，且字數完全不變。",
+      "status": "applied_2026-08-24"
+    },
+    {
+      "id": "contra.LR9.W4S77.combine_points_zh",
+      "code": "LR9",
+      "json_path": "$.combine_points_zh",
+      "machine_note": "本卡說「交信穴…足太陰脾經」，但 KI8 交信 自己的卡是 腎經",
+      "current_excerpt": "陰包穴+交信穴: 交信穴位於足太陰脾經，與陰包穴配合，從肝脾兩經入手，調理氣血，改善月經失調",
+      "point_facts": [
+        {
+          "name": "交信",
+          "code": "KI8",
+          "channel_zh": "腎經",
+          "point_identity_zh": [
+            "陰蹻脈之郄穴"
+          ],
+          "wushu_point": "陰蹻郄"
+        },
+        {
+          "name": "陰包",
+          "code": "LR9",
+          "channel_zh": "肝經",
+          "point_identity_zh": [
+            "足厥陰肝經穴"
+          ],
+          "wushu_point": ""
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "陰包穴+交信穴: 交信穴位於足少陰腎經，與陰包穴配合，從肝腎兩經入手，調理氣血，改善月經失調",
+      "confidence": "高",
+      "notes": "與W4S76為孿生條目，判法一致：交信應為足少陰腎經，同句『肝脾』簡稱一併換為『肝腎』，全句醫理連貫且字數不變。",
+      "status": "applied_2026-08-24"
+    },
+    {
+      "id": "contra.TE1.W4S78.clinical_pearls_4",
+      "code": "TE1",
+      "json_path": "$.clinical_pearls[4]",
+      "machine_note": "本卡位置式列舉說「少澤…心經」，但 SI1 少澤 自己的卡是 小腸經",
+      "current_excerpt": "關衝瀉熱，少澤、少商分別為心經、肺經井穴，瀉心肺之火；竅陰為任脈穴，配合清熱瀉火",
+      "point_facts": [
+        {
+          "name": "少商",
+          "code": "LU11",
+          "channel_zh": "肺經",
+          "point_identity_zh": [
+            "井穴",
+            "木穴",
+            "有稱不宜灸",
+            "可點刺放血"
+          ],
+          "wushu_point": "井穴"
+        },
+        {
+          "name": "少澤",
+          "code": "SI1",
+          "channel_zh": "小腸經",
+          "point_identity_zh": [
+            "井穴",
+            "金穴（五輸穴/本經少澤）",
+            "通乳急救要穴"
+          ],
+          "wushu_point": "井穴"
+        },
+        {
+          "name": "關衝",
+          "code": "TE1",
+          "channel_zh": "三焦經",
+          "point_identity_zh": [
+            "井穴",
+            "金穴（五輸穴）"
+          ],
+          "wushu_point": "井穴"
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "關衝瀉熱，少澤、少商分別為小腸經、肺經井穴，瀉心肺之火；竅陰為任脈穴，配合清熱瀉火",
+      "confidence": "中",
+      "notes": "少澤(SI1)依point_facts屬小腸經，非心經(少商=肺經配對正確，非探針錯位)。換詞後『瀉心肺之火』仍可由心與小腸表裡、少澤瀉心火之傳統理論支持，全句醫理連貫。竅陰配任脈句非本條目授權範圍，不予處理。",
+      "status": "applied_2026-08-24"
+    },
+    {
+      "id": "contra.TE1.W4S79.combine_points_zh",
+      "code": "TE1",
+      "json_path": "$.combine_points_zh",
+      "machine_note": "本卡位置式列舉說「少澤…心經」，但 SI1 少澤 自己的卡是 小腸經",
+      "current_excerpt": "關衝瀉熱，少澤、少商分別為心經、肺經井穴，瀉心肺之火；竅陰為任脈穴，配合清熱瀉火",
+      "point_facts": [
+        {
+          "name": "少商",
+          "code": "LU11",
+          "channel_zh": "肺經",
+          "point_identity_zh": [
+            "井穴",
+            "木穴",
+            "有稱不宜灸",
+            "可點刺放血"
+          ],
+          "wushu_point": "井穴"
+        },
+        {
+          "name": "少澤",
+          "code": "SI1",
+          "channel_zh": "小腸經",
+          "point_identity_zh": [
+            "井穴",
+            "金穴（五輸穴/本經少澤）",
+            "通乳急救要穴"
+          ],
+          "wushu_point": "井穴"
+        },
+        {
+          "name": "關衝",
+          "code": "TE1",
+          "channel_zh": "三焦經",
+          "point_identity_zh": [
+            "井穴",
+            "金穴（五輸穴）"
+          ],
+          "wushu_point": "井穴"
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "關衝瀉熱，少澤、少商分別為小腸經、肺經井穴，瀉心肺之火；竅陰為任脈穴，配合清熱瀉火",
+      "confidence": "中",
+      "notes": "與W4S78為孿生條目，判法一致：少澤應為小腸經，換詞後藉心-小腸表裡理論仍可支撐『瀉心肺之火』。",
+      "status": "applied_2026-08-24"
+    },
+    {
+      "id": "contra.TE7.W4S80.clinical_pearls_5",
+      "code": "TE7",
+      "json_path": "$.clinical_pearls[5]",
+      "machine_note": "本卡說「外關穴…小腸經」，但 TE5 外關 自己的卡是 三焦經",
+      "current_excerpt": "5. 會宗穴配外關穴治耳聾： 外關穴為小腸經原穴，具有通經活絡的作用，與會宗穴配合，共同疏通三焦經和小腸經，改善耳部氣血循環，治療耳聾",
+      "point_facts": [
+        {
+          "name": "外關",
+          "code": "TE5",
+          "channel_zh": "三焦經",
+          "point_identity_zh": [
+            "絡穴（三焦經別絡，通心包經）",
+            "八脈交會穴（通陽維脈）",
+            "配 GB41 足臨泣治少陽頭痛目疾偏頭痛"
+          ],
+          "wushu_point": "絡穴,八脈交會穴(陽維脈)"
+        },
+        {
+          "name": "會宗",
+          "code": "TE7",
+          "channel_zh": "三焦經",
+          "point_identity_zh": [
+            "郄穴（三焦經急症要穴）"
+          ],
+          "wushu_point": "郄穴"
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "5. 會宗穴配外關穴治耳聾： 外關穴為三焦經絡穴，具有通經活絡的作用，與會宗穴配合，共同疏通三焦經和小腸經，改善耳部氣血循環，治療耳聾",
+      "confidence": "高",
+      "notes": "外關(TE5)依point_facts屬三焦經且穴類為絡穴(非原穴，三焦經原穴是陽池)。『小腸經』與『原穴』二詞均錯，wushu_point直接給出正確詞『絡穴』，一併換為『三焦經絡穴』後與後文『共同疏通三焦經和小腸經』(耳部三經皆入耳之理)仍連貫，字數不變。",
+      "status": "applied_2026-08-24"
+    },
+    {
+      "id": "contra.TE7.W4S81.combine_points_zh",
+      "code": "TE7",
+      "json_path": "$.combine_points_zh",
+      "machine_note": "本卡說「外關穴…小腸經」，但 TE5 外關 自己的卡是 三焦經",
+      "current_excerpt": "5. 會宗穴配外關穴治耳聾： 外關穴為小腸經原穴，具有通經活絡的作用，與會宗穴配合，共同疏通三焦經和小腸經，改善耳部氣血循環，治療耳聾",
+      "point_facts": [
+        {
+          "name": "外關",
+          "code": "TE5",
+          "channel_zh": "三焦經",
+          "point_identity_zh": [
+            "絡穴（三焦經別絡，通心包經）",
+            "八脈交會穴（通陽維脈）",
+            "配 GB41 足臨泣治少陽頭痛目疾偏頭痛"
+          ],
+          "wushu_point": "絡穴,八脈交會穴(陽維脈)"
+        },
+        {
+          "name": "會宗",
+          "code": "TE7",
+          "channel_zh": "三焦經",
+          "point_identity_zh": [
+            "郄穴（三焦經急症要穴）"
+          ],
+          "wushu_point": "郄穴"
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "5. 會宗穴配外關穴治耳聾： 外關穴為三焦經絡穴，具有通經活絡的作用，與會宗穴配合，共同疏通三焦經和小腸經，改善耳部氣血循環，治療耳聾",
+      "confidence": "高",
+      "notes": "與W4S80為孿生條目，判法一致：外關應為三焦經絡穴(非小腸經原穴)，換詞後全句連貫。",
+      "status": "applied_2026-08-24"
+    },
+    {
+      "id": "contra.TE11.W4S82.clinical_pearls_3",
+      "code": "TE11",
+      "json_path": "$.clinical_pearls[3]",
+      "machine_note": "本卡位置式列舉說「天井…手少陰心經」，但 TE10 天井 自己的卡是 三焦經",
+      "current_excerpt": "天井、少海分別為手少陰心經、手厥陰心包經之穴，與清冷淵及曲池配合，溫通手三陰經及手少陽經，改善肘部氣血循環，治療肘關節冷痛",
+      "point_facts": [
+        {
+          "name": "清冷淵",
+          "code": "TE11",
+          "channel_zh": "三焦經",
+          "point_identity_zh": [
+            "手少陽三焦經穴"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "少海",
+          "code": "HT3",
+          "channel_zh": "心經",
+          "point_identity_zh": [
+            "合穴 (水穴)"
+          ],
+          "wushu_point": "合穴"
+        },
+        {
+          "name": "曲池",
+          "code": "LI11",
+          "channel_zh": "大腸經",
+          "point_identity_zh": [
+            "合穴",
+            "土穴",
+            "補穴（土生金）",
+            "鬼穴",
+            "可灸"
+          ],
+          "wushu_point": "合穴"
+        },
+        {
+          "name": "天井",
+          "code": "TE10",
+          "channel_zh": "三焦經",
+          "point_identity_zh": [
+            "合穴",
+            "土穴（五輸穴/子穴）",
+            "化痰散結要穴（天井）"
+          ],
+          "wushu_point": "合穴"
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "天井、少海分別為手少陽三焦經、手少陰心經之穴，與清冷淵及曲池配合，溫通手三陰經及手少陽經，改善肘部氣血循環，治療肘關節冷痛",
+      "confidence": "高",
+      "notes": "天井(TE10)依point_facts屬三焦經(合穴)，非手少陰心經。本句同時對少海也有錯誤標示(另案W4S83指出少海應為手少陰心經而非手厥陰心包經)，為求全句醫理連貫、避免留下已知錯誤，兩處一併訂正為各自正確經名，換後『手少陽經』下文與天井、清冷淵(皆三焦經)一致，『手三陰經』下文與少海(心經)對應，全句連貫。",
+      "status": "applied_2026-08-24"
+    },
+    {
+      "id": "contra.TE11.W4S83.clinical_pearls_3",
+      "code": "TE11",
+      "json_path": "$.clinical_pearls[3]",
+      "machine_note": "本卡位置式列舉說「少海…手厥陰心包經」，但 HT3 少海 自己的卡是 心經",
+      "current_excerpt": "天井、少海分別為手少陰心經、手厥陰心包經之穴，與清冷淵及曲池配合，溫通手三陰經及手少陽經，改善肘部氣血循環，治療肘關節冷痛",
+      "point_facts": [
+        {
+          "name": "清冷淵",
+          "code": "TE11",
+          "channel_zh": "三焦經",
+          "point_identity_zh": [
+            "手少陽三焦經穴"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "少海",
+          "code": "HT3",
+          "channel_zh": "心經",
+          "point_identity_zh": [
+            "合穴 (水穴)"
+          ],
+          "wushu_point": "合穴"
+        },
+        {
+          "name": "曲池",
+          "code": "LI11",
+          "channel_zh": "大腸經",
+          "point_identity_zh": [
+            "合穴",
+            "土穴",
+            "補穴（土生金）",
+            "鬼穴",
+            "可灸"
+          ],
+          "wushu_point": "合穴"
+        },
+        {
+          "name": "天井",
+          "code": "TE10",
+          "channel_zh": "三焦經",
+          "point_identity_zh": [
+            "合穴",
+            "土穴（五輸穴/子穴）",
+            "化痰散結要穴（天井）"
+          ],
+          "wushu_point": "合穴"
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "天井、少海分別為手少陽三焦經、手少陰心經之穴，與清冷淵及曲池配合，溫通手三陰經及手少陽經，改善肘部氣血循環，治療肘關節冷痛",
+      "confidence": "高",
+      "notes": "少海(HT3)依point_facts屬心經(手少陰)，非手厥陰心包經。與W4S82(天井錯誤)同句，為避免只換一處造成『手少陰心經、手少陰心經』重複觀感，採用兩處皆訂正之版本，兩處均可被point_facts佐證，全句醫理連貫。",
+      "status": "applied_2026-08-24"
+    },
+    {
+      "id": "contra.TE11.W4S84.clinical_pearls_7",
+      "code": "TE11",
+      "json_path": "$.clinical_pearls[7]",
+      "machine_note": "本卡位置式列舉說「肝俞…肝經」，但 BL18 肝俞 自己的卡是 膀胱經",
+      "current_excerpt": "肝俞、膽俞、陽陵泉分別為肝經、膽經背俞穴及膽經原穴，與清冷淵配合，可清利肝膽，改善目黃",
+      "point_facts": [
+        {
+          "name": "陽陵泉",
+          "code": "GB34",
+          "channel_zh": "膽經",
+          "point_identity_zh": [
+            "合穴",
+            "土穴（五輸穴/本穴）",
+            "膽之下合穴",
+            "八會穴之「筋會」",
+            "舒筋利膽第一要穴"
+          ],
+          "wushu_point": "合穴"
+        },
+        {
+          "name": "清冷淵",
+          "code": "TE11",
+          "channel_zh": "三焦經",
+          "point_identity_zh": [
+            "手少陽三焦經穴"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "肝俞",
+          "code": "BL18",
+          "channel_zh": "膀胱經",
+          "point_identity_zh": [
+            "肝之背俞穴",
+            "疏肝理氣、養肝明目要穴"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "膽俞",
+          "code": "BL19",
+          "channel_zh": "膀胱經",
+          "point_identity_zh": [
+            "膽之背俞穴",
+            "清瀉肝膽濕熱要穴"
+          ],
+          "wushu_point": ""
+        }
+      ],
+      "verdict": "false_positive",
+      "fix_mode": "none",
+      "proposed_excerpt": "",
+      "confidence": "高",
+      "notes": "「肝俞…肝經背俞穴」屬臟腑對應慣用語：肝俞(BL18)循行雖屬膀胱經，但point_facts的point_identity_zh明確證實其為『肝之背俞穴』，『肝經背俞穴』即指此臟腑對應說法，非誤指其循行歸經，非真錯誤。",
+      "status": "adjudicated_false_positive"
+    },
+    {
+      "id": "contra.TE11.W4S85.clinical_pearls_7",
+      "code": "TE11",
+      "json_path": "$.clinical_pearls[7]",
+      "machine_note": "本卡位置式列舉說「膽俞…膽經」，但 BL19 膽俞 自己的卡是 膀胱經",
+      "current_excerpt": "肝俞、膽俞、陽陵泉分別為肝經、膽經背俞穴及膽經原穴，與清冷淵配合，可清利肝膽，改善目黃",
+      "point_facts": [
+        {
+          "name": "陽陵泉",
+          "code": "GB34",
+          "channel_zh": "膽經",
+          "point_identity_zh": [
+            "合穴",
+            "土穴（五輸穴/本穴）",
+            "膽之下合穴",
+            "八會穴之「筋會」",
+            "舒筋利膽第一要穴"
+          ],
+          "wushu_point": "合穴"
+        },
+        {
+          "name": "清冷淵",
+          "code": "TE11",
+          "channel_zh": "三焦經",
+          "point_identity_zh": [
+            "手少陽三焦經穴"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "肝俞",
+          "code": "BL18",
+          "channel_zh": "膀胱經",
+          "point_identity_zh": [
+            "肝之背俞穴",
+            "疏肝理氣、養肝明目要穴"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "膽俞",
+          "code": "BL19",
+          "channel_zh": "膀胱經",
+          "point_identity_zh": [
+            "膽之背俞穴",
+            "清瀉肝膽濕熱要穴"
+          ],
+          "wushu_point": ""
+        }
+      ],
+      "verdict": "false_positive",
+      "fix_mode": "none",
+      "proposed_excerpt": "",
+      "confidence": "高",
+      "notes": "「膽俞…膽經背俞穴」同屬臟腑對應慣用語：膽俞(BL19)的point_facts point_identity_zh證實為『膽之背俞穴』，此為背俞穴臟腑對應說法，非循行歸經錯誤。",
+      "status": "adjudicated_false_positive"
+    },
+    {
+      "id": "contra.TE11.W4S86.combine_points_zh",
+      "code": "TE11",
+      "json_path": "$.combine_points_zh",
+      "machine_note": "本卡位置式列舉說「天井…手少陰心經」，但 TE10 天井 自己的卡是 三焦經",
+      "current_excerpt": "天井、少海分別為手少陰心經、手厥陰心包經之穴，與清冷淵及曲池配合，溫通手三陰經及手少陽經，改善肘部氣血循環，治療肘關節冷痛",
+      "point_facts": [
+        {
+          "name": "清冷淵",
+          "code": "TE11",
+          "channel_zh": "三焦經",
+          "point_identity_zh": [
+            "手少陽三焦經穴"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "少海",
+          "code": "HT3",
+          "channel_zh": "心經",
+          "point_identity_zh": [
+            "合穴 (水穴)"
+          ],
+          "wushu_point": "合穴"
+        },
+        {
+          "name": "曲池",
+          "code": "LI11",
+          "channel_zh": "大腸經",
+          "point_identity_zh": [
+            "合穴",
+            "土穴",
+            "補穴（土生金）",
+            "鬼穴",
+            "可灸"
+          ],
+          "wushu_point": "合穴"
+        },
+        {
+          "name": "天井",
+          "code": "TE10",
+          "channel_zh": "三焦經",
+          "point_identity_zh": [
+            "合穴",
+            "土穴（五輸穴/子穴）",
+            "化痰散結要穴（天井）"
+          ],
+          "wushu_point": "合穴"
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "天井、少海分別為手少陽三焦經、手少陰心經之穴，與清冷淵及曲池配合，溫通手三陰經及手少陽經，改善肘部氣血循環，治療肘關節冷痛",
+      "confidence": "高",
+      "notes": "與W4S82為孿生條目，判法一致：天井應為三焦經，同句少海之錯誤(W4S87)一併訂正以求全句醫理連貫。",
+      "status": "applied_2026-08-24"
+    },
+    {
+      "id": "contra.TE11.W4S87.combine_points_zh",
+      "code": "TE11",
+      "json_path": "$.combine_points_zh",
+      "machine_note": "本卡位置式列舉說「少海…手厥陰心包經」，但 HT3 少海 自己的卡是 心經",
+      "current_excerpt": "天井、少海分別為手少陰心經、手厥陰心包經之穴，與清冷淵及曲池配合，溫通手三陰經及手少陽經，改善肘部氣血循環，治療肘關節冷痛",
+      "point_facts": [
+        {
+          "name": "清冷淵",
+          "code": "TE11",
+          "channel_zh": "三焦經",
+          "point_identity_zh": [
+            "手少陽三焦經穴"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "少海",
+          "code": "HT3",
+          "channel_zh": "心經",
+          "point_identity_zh": [
+            "合穴 (水穴)"
+          ],
+          "wushu_point": "合穴"
+        },
+        {
+          "name": "曲池",
+          "code": "LI11",
+          "channel_zh": "大腸經",
+          "point_identity_zh": [
+            "合穴",
+            "土穴",
+            "補穴（土生金）",
+            "鬼穴",
+            "可灸"
+          ],
+          "wushu_point": "合穴"
+        },
+        {
+          "name": "天井",
+          "code": "TE10",
+          "channel_zh": "三焦經",
+          "point_identity_zh": [
+            "合穴",
+            "土穴（五輸穴/子穴）",
+            "化痰散結要穴（天井）"
+          ],
+          "wushu_point": "合穴"
+        }
+      ],
+      "verdict": "real",
+      "fix_mode": "swap",
+      "proposed_excerpt": "天井、少海分別為手少陽三焦經、手少陰心經之穴，與清冷淵及曲池配合，溫通手三陰經及手少陽經，改善肘部氣血循環，治療肘關節冷痛",
+      "confidence": "高",
+      "notes": "與W4S83為孿生條目，判法一致：少海應為手少陰心經，同句天井之錯誤(W4S86)一併訂正以求全句醫理連貫。",
+      "status": "applied_2026-08-24"
+    },
+    {
+      "id": "contra.TE11.W4S88.combine_points_zh",
+      "code": "TE11",
+      "json_path": "$.combine_points_zh",
+      "machine_note": "本卡位置式列舉說「肝俞…肝經」，但 BL18 肝俞 自己的卡是 膀胱經",
+      "current_excerpt": "肝俞、膽俞、陽陵泉分別為肝經、膽經背俞穴及膽經原穴，與清冷淵配合，可清利肝膽，改善目黃",
+      "point_facts": [
+        {
+          "name": "陽陵泉",
+          "code": "GB34",
+          "channel_zh": "膽經",
+          "point_identity_zh": [
+            "合穴",
+            "土穴（五輸穴/本穴）",
+            "膽之下合穴",
+            "八會穴之「筋會」",
+            "舒筋利膽第一要穴"
+          ],
+          "wushu_point": "合穴"
+        },
+        {
+          "name": "清冷淵",
+          "code": "TE11",
+          "channel_zh": "三焦經",
+          "point_identity_zh": [
+            "手少陽三焦經穴"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "肝俞",
+          "code": "BL18",
+          "channel_zh": "膀胱經",
+          "point_identity_zh": [
+            "肝之背俞穴",
+            "疏肝理氣、養肝明目要穴"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "膽俞",
+          "code": "BL19",
+          "channel_zh": "膀胱經",
+          "point_identity_zh": [
+            "膽之背俞穴",
+            "清瀉肝膽濕熱要穴"
+          ],
+          "wushu_point": ""
+        }
+      ],
+      "verdict": "false_positive",
+      "fix_mode": "none",
+      "proposed_excerpt": "",
+      "confidence": "高",
+      "notes": "與W4S84為孿生條目，判法一致：『肝俞…肝經背俞穴』為臟腑對應慣用語，point_facts證實肝俞為『肝之背俞穴』，非真錯誤。",
+      "status": "adjudicated_false_positive"
+    },
+    {
+      "id": "contra.TE11.W4S89.combine_points_zh",
+      "code": "TE11",
+      "json_path": "$.combine_points_zh",
+      "machine_note": "本卡位置式列舉說「膽俞…膽經」，但 BL19 膽俞 自己的卡是 膀胱經",
+      "current_excerpt": "肝俞、膽俞、陽陵泉分別為肝經、膽經背俞穴及膽經原穴，與清冷淵配合，可清利肝膽，改善目黃",
+      "point_facts": [
+        {
+          "name": "陽陵泉",
+          "code": "GB34",
+          "channel_zh": "膽經",
+          "point_identity_zh": [
+            "合穴",
+            "土穴（五輸穴/本穴）",
+            "膽之下合穴",
+            "八會穴之「筋會」",
+            "舒筋利膽第一要穴"
+          ],
+          "wushu_point": "合穴"
+        },
+        {
+          "name": "清冷淵",
+          "code": "TE11",
+          "channel_zh": "三焦經",
+          "point_identity_zh": [
+            "手少陽三焦經穴"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "肝俞",
+          "code": "BL18",
+          "channel_zh": "膀胱經",
+          "point_identity_zh": [
+            "肝之背俞穴",
+            "疏肝理氣、養肝明目要穴"
+          ],
+          "wushu_point": ""
+        },
+        {
+          "name": "膽俞",
+          "code": "BL19",
+          "channel_zh": "膀胱經",
+          "point_identity_zh": [
+            "膽之背俞穴",
+            "清瀉肝膽濕熱要穴"
+          ],
+          "wushu_point": ""
+        }
+      ],
+      "verdict": "false_positive",
+      "fix_mode": "none",
+      "proposed_excerpt": "",
+      "confidence": "高",
+      "notes": "與W4S85為孿生條目，判法一致：『膽俞…膽經背俞穴』為臟腑對應慣用語，point_facts證實膽俞為『膽之背俞穴』，非真錯誤。",
+      "status": "adjudicated_false_positive"
+    }
+  ]
+}
