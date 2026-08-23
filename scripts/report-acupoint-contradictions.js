@@ -320,12 +320,74 @@ function probeG(r) {
  */
 const H_CHANNEL = /(手太陰肺經|手陽明大腸經|足陽明胃經|足太陰脾經|手少陰心經|手太陽小腸經|足太陽膀胱經|足少陰腎經|手厥陰心包經|手少陽三焦經|足少陽膽經|足厥陰肝經|任脈|督脈|肺經|大腸經|胃經|脾經|心經|小腸經|膀胱經|腎經|心包經|三焦經|膽經|肝經)/;
 const H_SHORT = { "手太陰肺經":"肺經","手陽明大腸經":"大腸經","足陽明胃經":"胃經","足太陰脾經":"脾經","手少陰心經":"心經","手太陽小腸經":"小腸經","足太陽膀胱經":"膀胱經","足少陰腎經":"腎經","手厥陰心包經":"心包經","手少陽三焦經":"三焦經","足少陽膽經":"膽經","足厥陰肝經":"肝經" };
+const H_ABBR = {};  // 膽經 → 足少陽：point_identity 慣用的三字縮寫
+for (const [long, short] of Object.entries(H_SHORT)) H_ABBR[short] = long.slice(0, 3);
+
+/**
+ * 三類臟腑/穴類慣用語（wave-2 誤報大宗，2026-08-23 裁決實測）：句面經名與
+ * channel_zh 不同，但其實在說「臟腑對應」而非歸經。逐類拿目標穴本卡識別欄
+ * 逐字證實才跳過——證實不了的照樣舉報（厥陰俞寫成「肝經背俞穴」仍是錯）。
+ */
+function hIdentityText(t) {
+  const parts = [];
+  for (const k of ["point_identity_zh", "pointIdentityZh", "wushu_point", "other_names_zh", "exam_pearl", "examPearl", "name_intro_zh"]) {
+    const v = t[k];
+    if (Array.isArray(v)) parts.push(...v.filter((x) => typeof x === "string"));
+    else if (typeof v === "string") parts.push(v);
+  }
+  return parts;
+}
+function hIdiomVerified(target, claimed, after) {
+  const organ = claimed.replace(/經$/, "");
+  if (organ === claimed && !/^[任督]/.test(claimed)) return null; // 非經名（保險）
+  const idText = hIdentityText(target);
+  if (organ !== claimed && /^[之的]?募穴/.test(after)) {
+    if (idText.some((x) => new RegExp(organ + "[之的]?募").test(x))) return "募穴慣用語";
+  }
+  if (organ !== claimed && /^[之的]?背俞/.test(after)) {
+    if (idText.some((x) => new RegExp(organ + "[之的]?背俞").test(x))) return "背俞穴慣用語";
+  }
+  if (/^[^。；]{0,10}交會/.test(after)) {
+    const abbr = H_ABBR[claimed] || claimed;
+    if (idText.some((x) => /交會|之會/.test(x) && (x.includes(claimed) || x.includes(abbr)))) return "交會穴語境";
+  }
+  return null;
+}
+let hIdiomSkips = 0;
 function probeH(r) {
   const own = fold(r.chinese || "");
   for (const [fpath, s] of walk(r, "$")) {
     if (/classical/.test(fpath)) continue;   // 古典引文照錄，同 B 的排除理由
     for (const rawSent of s.split(/[。\n]/)) {
       const sent = fold(rawSent);
+      // 位置式列舉：「A、B、C穴分別屬於X、Y、Z」逐位核對；通用匹配會把
+      // A 配到 X 以外的經名上（GV8 實例，wave-2 裁決）。
+      const pl = sent.match(/([一-鿿、]{2,30}?)穴?分別(?:屬於|屬|位於|是)([^。]*)/);
+      if (pl) {
+        const names = pl[1].split("、").map((x) => x.replace(/穴$/, "")).filter((x) => /^[一-鿿]{2,4}$/.test(x));
+        const cre = new RegExp(H_CHANNEL.source, "g");
+        const chans = []; let cm;
+        while ((cm = cre.exec(pl[2]))) chans.push(cm[0]);
+        if (names.length >= 2 && chans.length >= names.length) {
+          names.forEach((nm, i) => {
+            if (nm === own) return;
+            const cs = NAME_CODES.get(nm);
+            if (!cs || cs.size !== 1) return;
+            const tg = recs.find((x) => x.code === [...cs][0]);
+            if (!tg) return;
+            const cl = H_SHORT[chans[i]] || chans[i];
+            const ac = String(tg.channel_zh || tg.meridian || "").trim();
+            if (!ac || cl === ac) return;
+            add({
+              type: "H", label: "pairing_prose_wrong_channel",
+              code: r.code, chinese: r.chinese, field: fpath.split(".")[1] || "",
+              json_path: fpath, excerpt: rawSent.trim(),
+              conflict: `本卡位置式列舉說「${nm}…${chans[i]}」，但 ${tg.code} ${nm} 自己的卡是 ${ac}`,
+            });
+          });
+          continue; // 已逐位核對，不再走通用匹配
+        }
+      }
       const m = sent.match(new RegExp("([一-鿿]{2,4})穴[^，,]{0,25}?(?:屬於|屬|為|位於|是)\\s*" + H_CHANNEL.source));
       if (!m) continue;
       const other = m[1];
@@ -337,6 +399,8 @@ function probeH(r) {
       const claimed = H_SHORT[m[2]] || m[2];
       const actual = String(target.channel_zh || target.meridian || "").trim();
       if (!actual || claimed === actual) continue;       // 一致就不是矛盾
+      const idiom = hIdiomVerified(target, claimed, sent.slice(m.index + m[0].length));
+      if (idiom) { hIdiomSkips++; continue; }            // 本卡識別欄證實的慣用語
       add({
         type: "H", label: "pairing_prose_wrong_channel",
         code: r.code, chinese: r.chinese, field: fpath.split(".")[1] || "",
@@ -416,6 +480,7 @@ function findMirrors(excerpt) {
 
 const seedIdx = args.indexOf("--seed");
 const codes = [...new Set(findings.map((f) => f.code))];
+if (hIdiomSkips && (!ONLY || ONLY.has("H"))) console.log(`（H 慣用語經本卡識別欄證實跳過 ${hIdiomSkips} 筆：募穴/背俞/交會）`);
 
 if (args.includes("--json")) {
   console.log(JSON.stringify({ source: "data/acupoints/361.json", records: recs.length, findings }, null, 2));
