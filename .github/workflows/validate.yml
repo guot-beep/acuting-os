@@ -134,6 +134,11 @@ jobs:
       - name: referential integrity
         run: node scripts/validate-relations.js
 
+      # 2026-08-22: Phase C 的整檔取代帶走了 5 筆中藥而全綠——「淨增」蓋住了刪除。
+      # 這一步守七個 canonical 檔的 id 集合不准縮；退役走 --retire 留痕，不是刪除。
+      - name: canonical id sets may not shrink
+        run: node scripts/check-canon-no-loss.js
+
       # Graduated from the ratchet 2026-08-06: the 72 extra-point D2 ids were
       # backfilled (add-point-ids.js), validate-point-ids is green, so it now
       # blocks like everything else.
