@@ -314,9 +314,9 @@
       "verdict": "real",
       "proposed_excerpt": "中極穴為任脈募穴，是膀胱氣的聚集處，具有溫補腎陽，利水通淋的作用",
       "confidence": "中",
-      "notes": "中極=CV3，本卡channel_zh為任脈（point_identity「膀胱之募穴」，臟腑對應本身沒錯，只有經名錯）。換成「任脈募穴」後，後段「是膀胱氣的聚集處」仍成立（募穴對應膀胱這個臟腑，與所在經脈是任脈不衝突），全句不矛盾。中等信心：「任脈募穴」字面稍拗口但無矛盾。",
+      "notes": "中極=CV3，本卡channel_zh為任脈（point_identity「膀胱之募穴」，臟腑對應本身沒錯，只有經名錯）。換成「任脈募穴」後，後段「是膀胱氣的聚集處」仍成立（募穴對應膀胱這個臟腑，與所在經脈是任脈不衝突），全句不矛盾。中等信心：「任脈募穴」字面稍拗口但無矛盾。 【跨批次一致性仲裁 2026-08-23】本筆屬募穴/背俞穴臟腑對應慣用語，SP11/SP14/GB40 等批次同類判 FP 且經目標穴本卡識別欄逐字證實；本批次硬換產生語意退化（如「任脈募穴」）。swap 已回退，改判 false_positive。慣用語證實規則已形式化進探針。",
       "fix_mode": "swap",
-      "status": "applied_2026-08-23"
+      "status": "adjudicated_false_positive"
     },
     {
       "id": "contra.BL31.H15.combine_points_zh",
@@ -335,9 +335,9 @@
       "verdict": "real",
       "proposed_excerpt": "中極穴為任脈募穴，是膀胱氣的聚集處，具有溫補腎陽，利水通淋的作用",
       "confidence": "中",
-      "notes": "同 H14。",
+      "notes": "同 H14。 【跨批次一致性仲裁 2026-08-23】本筆屬募穴/背俞穴臟腑對應慣用語，SP11/SP14/GB40 等批次同類判 FP 且經目標穴本卡識別欄逐字證實；本批次硬換產生語意退化（如「任脈募穴」）。swap 已回退，改判 false_positive。慣用語證實規則已形式化進探針。",
       "fix_mode": "swap",
-      "status": "applied_2026-08-23"
+      "status": "adjudicated_false_positive"
     },
     {
       "id": "contra.BL33.H16.clinical_pearls_7",
@@ -520,9 +520,9 @@
       "verdict": "real",
       "proposed_excerpt": "原理： 大腸俞穴是膀胱經的背俞穴，與腰部經絡關係密切",
       "confidence": "高",
-      "notes": "大腸俞=BL25，本卡channel_zh為膀胱經（point_identity「大腸之背俞穴」，與原文「背俞穴」標籤一致，只有經名「大腸經」錯）。單一詞替換，換後全句連貫，且「與腰部經絡關係密切」因膀胱經本身循行腰背而更貼切。",
+      "notes": "大腸俞=BL25，本卡channel_zh為膀胱經（point_identity「大腸之背俞穴」，與原文「背俞穴」標籤一致，只有經名「大腸經」錯）。單一詞替換，換後全句連貫，且「與腰部經絡關係密切」因膀胱經本身循行腰背而更貼切。 【跨批次一致性仲裁 2026-08-23】本筆屬募穴/背俞穴臟腑對應慣用語，SP11/SP14/GB40 等批次同類判 FP 且經目標穴本卡識別欄逐字證實；本批次硬換產生語意退化（如「任脈募穴」）。swap 已回退，改判 false_positive。慣用語證實規則已形式化進探針。",
       "fix_mode": "swap",
-      "status": "applied_2026-08-23"
+      "status": "adjudicated_false_positive"
     },
     {
       "id": "contra.BL40.H25.combine_points_zh",
@@ -541,9 +541,9 @@
       "verdict": "real",
       "proposed_excerpt": "原理： 大腸俞穴是膀胱經的背俞穴，與腰部經絡關係密切",
       "confidence": "高",
-      "notes": "大腸俞(BL25)本卡channel_zh為膀胱經；背俞穴皆在膀胱經上，僅是以臟腑命名，換詞後醫理正確且與『與腰部經絡關係密切』(BL25位於腰部)連貫。",
+      "notes": "大腸俞(BL25)本卡channel_zh為膀胱經；背俞穴皆在膀胱經上，僅是以臟腑命名，換詞後醫理正確且與『與腰部經絡關係密切』(BL25位於腰部)連貫。 【跨批次一致性仲裁 2026-08-23】本筆屬募穴/背俞穴臟腑對應慣用語，SP11/SP14/GB40 等批次同類判 FP 且經目標穴本卡識別欄逐字證實；本批次硬換產生語意退化（如「任脈募穴」）。swap 已回退，改判 false_positive。慣用語證實規則已形式化進探針。",
       "fix_mode": "swap",
-      "status": "applied_2026-08-23"
+      "status": "adjudicated_false_positive"
     },
     {
       "id": "contra.BL44.H26.clinical_pearls_4",
@@ -683,9 +683,9 @@
       "verdict": "real",
       "proposed_excerpt": "原理： 天樞穴為胃經募穴，具有通利大腸、瀉熱通便的作用；氣海穴為任脈原穴，具有益氣補虛、溫陽利水的功效",
       "confidence": "高",
-      "notes": "天樞(ST25)本卡channel_zh為胃經(大腸之募穴，位於胃經上)。換詞後『通利大腸、瀉熱通便』功效描述仍成立(此功效對應大腸而非經名歸屬，與經名歸屬無衝突)，句子連貫。",
+      "notes": "天樞(ST25)本卡channel_zh為胃經(大腸之募穴，位於胃經上)。換詞後『通利大腸、瀉熱通便』功效描述仍成立(此功效對應大腸而非經名歸屬，與經名歸屬無衝突)，句子連貫。 【跨批次一致性仲裁 2026-08-23】本筆屬募穴/背俞穴臟腑對應慣用語，SP11/SP14/GB40 等批次同類判 FP 且經目標穴本卡識別欄逐字證實；本批次硬換產生語意退化（如「任脈募穴」）。swap 已回退，改判 false_positive。慣用語證實規則已形式化進探針。",
       "fix_mode": "swap",
-      "status": "applied_2026-08-23"
+      "status": "adjudicated_false_positive"
     },
     {
       "id": "contra.BL48.H33.combine_points_zh",
@@ -703,9 +703,9 @@
       "verdict": "real",
       "proposed_excerpt": "原理： 天樞穴為胃經募穴，具有通利大腸、瀉熱通便的作用；氣海穴為任脈原穴，具有益氣補虛、溫陽利水的功效",
       "confidence": "高",
-      "notes": "同H32，文字相同，換詞後連貫。",
+      "notes": "同H32，文字相同，換詞後連貫。 【跨批次一致性仲裁 2026-08-23】本筆屬募穴/背俞穴臟腑對應慣用語，SP11/SP14/GB40 等批次同類判 FP 且經目標穴本卡識別欄逐字證實；本批次硬換產生語意退化（如「任脈募穴」）。swap 已回退，改判 false_positive。慣用語證實規則已形式化進探針。",
       "fix_mode": "swap",
-      "status": "applied_2026-08-23"
+      "status": "adjudicated_false_positive"
     },
     {
       "id": "contra.BL49.H34.clinical_pearls_3",
@@ -766,9 +766,9 @@
       "verdict": "real",
       "proposed_excerpt": "脾俞穴是膀胱經的背俞穴，調節脾臟功能；四縫穴為小兒常用穴，具有消積導滯的作用",
       "confidence": "高",
-      "notes": "脾俞(BL20)本卡channel_zh為膀胱經，換詞後『調節脾臟功能』(臟腑功能描述，非經名描述)仍成立，句子連貫。",
+      "notes": "脾俞(BL20)本卡channel_zh為膀胱經，換詞後『調節脾臟功能』(臟腑功能描述，非經名描述)仍成立，句子連貫。 【跨批次一致性仲裁 2026-08-23】本筆屬募穴/背俞穴臟腑對應慣用語，SP11/SP14/GB40 等批次同類判 FP 且經目標穴本卡識別欄逐字證實；本批次硬換產生語意退化（如「任脈募穴」）。swap 已回退，改判 false_positive。慣用語證實規則已形式化進探針。",
       "fix_mode": "swap",
-      "status": "applied_2026-08-23"
+      "status": "adjudicated_false_positive"
     },
     {
       "id": "contra.BL50.H37.combine_points_zh",
@@ -787,9 +787,9 @@
       "verdict": "real",
       "proposed_excerpt": "脾俞穴是膀胱經的背俞穴，調節脾臟功能；四縫穴為小兒常用穴，具有消積導滯的作用",
       "confidence": "高",
-      "notes": "同H36，文字相同。",
+      "notes": "同H36，文字相同。 【跨批次一致性仲裁 2026-08-23】本筆屬募穴/背俞穴臟腑對應慣用語，SP11/SP14/GB40 等批次同類判 FP 且經目標穴本卡識別欄逐字證實；本批次硬換產生語意退化（如「任脈募穴」）。swap 已回退，改判 false_positive。慣用語證實規則已形式化進探針。",
       "fix_mode": "swap",
-      "status": "applied_2026-08-23"
+      "status": "adjudicated_false_positive"
     },
     {
       "id": "contra.BL52.H38.clinical_pearls_3",
@@ -807,9 +807,9 @@
       "verdict": "real",
       "proposed_excerpt": "原理： 腎俞穴為膀胱經背俞穴，直接作用於腎臟，具有補腎強腰的作用",
       "confidence": "高",
-      "notes": "腎俞(BL23)本卡channel_zh為膀胱經，換詞後『直接作用於腎臟，具有補腎強腰的作用』(臟腑功能描述)仍成立，句子連貫。",
+      "notes": "腎俞(BL23)本卡channel_zh為膀胱經，換詞後『直接作用於腎臟，具有補腎強腰的作用』(臟腑功能描述)仍成立，句子連貫。 【跨批次一致性仲裁 2026-08-23】本筆屬募穴/背俞穴臟腑對應慣用語，SP11/SP14/GB40 等批次同類判 FP 且經目標穴本卡識別欄逐字證實；本批次硬換產生語意退化（如「任脈募穴」）。swap 已回退，改判 false_positive。慣用語證實規則已形式化進探針。",
       "fix_mode": "swap",
-      "status": "applied_2026-08-23"
+      "status": "adjudicated_false_positive"
     },
     {
       "id": "contra.BL52.H39.combine_points_zh",
@@ -827,9 +827,9 @@
       "verdict": "real",
       "proposed_excerpt": "原理： 腎俞穴為膀胱經背俞穴，直接作用於腎臟，具有補腎強腰的作用",
       "confidence": "高",
-      "notes": "同H38，文字相同。",
+      "notes": "同H38，文字相同。 【跨批次一致性仲裁 2026-08-23】本筆屬募穴/背俞穴臟腑對應慣用語，SP11/SP14/GB40 等批次同類判 FP 且經目標穴本卡識別欄逐字證實；本批次硬換產生語意退化（如「任脈募穴」）。swap 已回退，改判 false_positive。慣用語證實規則已形式化進探針。",
       "fix_mode": "swap",
-      "status": "applied_2026-08-23"
+      "status": "adjudicated_false_positive"
     },
     {
       "id": "contra.BL58.H40.clinical_pearls_1",
@@ -1056,9 +1056,9 @@
       "verdict": "real",
       "proposed_excerpt": "腎俞穴為膀胱經背俞穴，補益腎氣；太沖穴為肝經原穴，疏泄肝氣，調理肝陽",
       "confidence": "高",
-      "notes": "腎俞(BL23)是膀胱經背俞穴，不是腎經；換詞後醫理仍連貫（背俞穴本就定義在膀胱經），太沖為肝經原穴一段本身正確未動。",
+      "notes": "腎俞(BL23)是膀胱經背俞穴，不是腎經；換詞後醫理仍連貫（背俞穴本就定義在膀胱經），太沖為肝經原穴一段本身正確未動。 【跨批次一致性仲裁 2026-08-23】本筆屬募穴/背俞穴臟腑對應慣用語，SP11/SP14/GB40 等批次同類判 FP 且經目標穴本卡識別欄逐字證實；本批次硬換產生語意退化（如「任脈募穴」）。swap 已回退，改判 false_positive。慣用語證實規則已形式化進探針。",
       "fix_mode": "swap",
-      "status": "applied_2026-08-23"
+      "status": "adjudicated_false_positive"
     },
     {
       "id": "contra.BL65.H51.clinical_pearls_6",
@@ -1140,9 +1140,9 @@
       "verdict": "real",
       "proposed_excerpt": "足三里為胃經合穴，具有補脾益氣，強壯身體的功能；腎俞穴為膀胱經背俞穴，補益腎氣，腎主骨生髓，與氣血生成密切相關",
       "confidence": "高",
-      "notes": "同 BL65 案例：腎俞是膀胱經背俞穴非腎經。足三里為胃經合穴一段本身正確。",
+      "notes": "同 BL65 案例：腎俞是膀胱經背俞穴非腎經。足三里為胃經合穴一段本身正確。 【跨批次一致性仲裁 2026-08-23】本筆屬募穴/背俞穴臟腑對應慣用語，SP11/SP14/GB40 等批次同類判 FP 且經目標穴本卡識別欄逐字證實；本批次硬換產生語意退化（如「任脈募穴」）。swap 已回退，改判 false_positive。慣用語證實規則已形式化進探針。",
       "fix_mode": "swap",
-      "status": "applied_2026-08-23"
+      "status": "adjudicated_false_positive"
     },
     {
       "id": "contra.BL67.H55.clinical_pearls_7",
@@ -1161,9 +1161,9 @@
       "verdict": "real",
       "proposed_excerpt": "肝俞穴為膀胱經背俞穴，疏肝理氣；行間穴為肝經瀉穴，瀉肝火，行氣活血；足三里補脾益氣，健運脾胃，有助於化解氣滯",
       "confidence": "高",
-      "notes": "肝俞(BL18)是膀胱經背俞穴，不是肝經；換詞後仍連貫。行間為肝經瀉穴一段本身正確，未動。",
+      "notes": "肝俞(BL18)是膀胱經背俞穴，不是肝經；換詞後仍連貫。行間為肝經瀉穴一段本身正確，未動。 【跨批次一致性仲裁 2026-08-23】本筆屬募穴/背俞穴臟腑對應慣用語，SP11/SP14/GB40 等批次同類判 FP 且經目標穴本卡識別欄逐字證實；本批次硬換產生語意退化（如「任脈募穴」）。swap 已回退，改判 false_positive。慣用語證實規則已形式化進探針。",
       "fix_mode": "swap",
-      "status": "applied_2026-08-23"
+      "status": "adjudicated_false_positive"
     },
     {
       "id": "contra.BL67.H56.combine_points_zh",
@@ -1182,9 +1182,9 @@
       "verdict": "real",
       "proposed_excerpt": "足三里為胃經合穴，具有補脾益氣，強壯身體的功能；腎俞穴為膀胱經背俞穴，補益腎氣，腎主骨生髓，與氣血生成密切相關",
       "confidence": "高",
-      "notes": "與 H54 同一段文字、同一錯誤，鏡射欄位。",
+      "notes": "與 H54 同一段文字、同一錯誤，鏡射欄位。 【跨批次一致性仲裁 2026-08-23】本筆屬募穴/背俞穴臟腑對應慣用語，SP11/SP14/GB40 等批次同類判 FP 且經目標穴本卡識別欄逐字證實；本批次硬換產生語意退化（如「任脈募穴」）。swap 已回退，改判 false_positive。慣用語證實規則已形式化進探針。",
       "fix_mode": "swap",
-      "status": "applied_2026-08-23"
+      "status": "adjudicated_false_positive"
     },
     {
       "id": "contra.BL67.H57.combine_points_zh",
@@ -1203,9 +1203,9 @@
       "verdict": "real",
       "proposed_excerpt": "肝俞穴為膀胱經背俞穴，疏肝理氣；行間穴為肝經瀉穴，瀉肝火，行氣活血；足三里補脾益氣，健運脾胃，有助於化解氣滯",
       "confidence": "高",
-      "notes": "與 H55 同一段文字、同一錯誤，鏡射欄位。",
+      "notes": "與 H55 同一段文字、同一錯誤，鏡射欄位。 【跨批次一致性仲裁 2026-08-23】本筆屬募穴/背俞穴臟腑對應慣用語，SP11/SP14/GB40 等批次同類判 FP 且經目標穴本卡識別欄逐字證實；本批次硬換產生語意退化（如「任脈募穴」）。swap 已回退，改判 false_positive。慣用語證實規則已形式化進探針。",
       "fix_mode": "swap",
-      "status": "applied_2026-08-23"
+      "status": "adjudicated_false_positive"
     },
     {
       "id": "contra.CV4.H58.clinical_pearls_1",
@@ -1224,9 +1224,9 @@
       "verdict": "real",
       "proposed_excerpt": "腎俞穴為膀胱經背俞穴，直接補益腎氣；中極穴為任脈與膀胱經交會穴，與關元穴同屬下焦，協同補益腎氣；太溪穴為腎經原穴，具有強腎壯陽的作用",
       "confidence": "高",
-      "notes": "腎俞是膀胱經背俞穴，不是腎經。中極、太溪二段本身無誤未動。",
+      "notes": "腎俞是膀胱經背俞穴，不是腎經。中極、太溪二段本身無誤未動。 【跨批次一致性仲裁 2026-08-23】本筆屬募穴/背俞穴臟腑對應慣用語，SP11/SP14/GB40 等批次同類判 FP 且經目標穴本卡識別欄逐字證實；本批次硬換產生語意退化（如「任脈募穴」）。swap 已回退，改判 false_positive。慣用語證實規則已形式化進探針。",
       "fix_mode": "swap",
-      "status": "applied_2026-08-23"
+      "status": "adjudicated_false_positive"
     },
     {
       "id": "contra.CV4.H59.clinical_pearls_3",
@@ -2613,9 +2613,9 @@
       "verdict": "real",
       "proposed_excerpt": "原理:  肩中俞穴通調膀胱經，膀胱經與肺經相表裡；肺俞穴為膀胱經背俞穴，直接作用於肺臟；內關穴為心包經絡穴，心包經與肺經相表裡，具有寧心安神、寬胸理氣之效；足三里穴為胃經合穴，具有調理脾胃、增強免疫力之功",
       "confidence": "高",
-      "notes": "肺俞=BL13，本卡channel_zh=膀胱經（背俞穴皆位於膀胱經）。『膀胱經背俞穴』為本資料庫多次出現(10x)且醫理正確的慣用寫法，換詞後與後句『直接作用於肺臟』仍連貫。句中另一句『肩中俞穴通調膀胱經，膀胱經與肺經相表裡』屬另一獨立醫理問題（膀胱經與肺經並非表裡），不在本次比對範圍內，未動。",
+      "notes": "肺俞=BL13，本卡channel_zh=膀胱經（背俞穴皆位於膀胱經）。『膀胱經背俞穴』為本資料庫多次出現(10x)且醫理正確的慣用寫法，換詞後與後句『直接作用於肺臟』仍連貫。句中另一句『肩中俞穴通調膀胱經，膀胱經與肺經相表裡』屬另一獨立醫理問題（膀胱經與肺經並非表裡），不在本次比對範圍內，未動。 【跨批次一致性仲裁 2026-08-23】本筆屬募穴/背俞穴臟腑對應慣用語，SP11/SP14/GB40 等批次同類判 FP 且經目標穴本卡識別欄逐字證實；本批次硬換產生語意退化（如「任脈募穴」）。swap 已回退，改判 false_positive。慣用語證實規則已形式化進探針。",
       "fix_mode": "swap",
-      "status": "applied_2026-08-23"
+      "status": "adjudicated_false_positive"
     },
     {
       "id": "contra.SI15.H127.clinical_pearls_4",
@@ -2776,9 +2776,9 @@
       "verdict": "real",
       "proposed_excerpt": "腎俞穴為膀胱經背俞穴，可補益腎氣；太溪穴為腎經原穴，具有滋補腎陰、強壯腎陽的作用",
       "confidence": "高",
-      "notes": "腎俞=BL23，本卡channel_zh=膀胱經（背俞穴皆在膀胱經），本卡exam_pearl亦寫『腎俞為腎之背俞穴』確認其為背俞穴身分。『膀胱經背俞穴』換詞後與後句『太溪穴為腎經原穴』（太溪本身確為腎經原穴，未動）並列，醫理連貫。",
+      "notes": "腎俞=BL23，本卡channel_zh=膀胱經（背俞穴皆在膀胱經），本卡exam_pearl亦寫『腎俞為腎之背俞穴』確認其為背俞穴身分。『膀胱經背俞穴』換詞後與後句『太溪穴為腎經原穴』（太溪本身確為腎經原穴，未動）並列，醫理連貫。 【跨批次一致性仲裁 2026-08-23】本筆屬募穴/背俞穴臟腑對應慣用語，SP11/SP14/GB40 等批次同類判 FP 且經目標穴本卡識別欄逐字證實；本批次硬換產生語意退化（如「任脈募穴」）。swap 已回退，改判 false_positive。慣用語證實規則已形式化進探針。",
       "fix_mode": "swap",
-      "status": "applied_2026-08-23"
+      "status": "adjudicated_false_positive"
     },
     {
       "id": "contra.SP11.H135.clinical_pearls_10",
@@ -3001,9 +3001,9 @@
       "verdict": "real",
       "proposed_excerpt": "肝俞穴為膀胱經背俞穴；陽陵泉穴屬膽經；支溝穴屬三焦經",
       "confidence": "高",
-      "notes": "肝俞=BL18，本卡channel_zh=膀胱經（背俞穴皆在膀胱經，本卡exam_pearl亦寫『肝俞為肝之背俞穴』）。換成『膀胱經背俞穴』後與同句『陽陵泉穴屬膽經；支溝穴屬三焦經』（皆正確、未動）並列，醫理連貫。",
+      "notes": "肝俞=BL18，本卡channel_zh=膀胱經（背俞穴皆在膀胱經，本卡exam_pearl亦寫『肝俞為肝之背俞穴』）。換成『膀胱經背俞穴』後與同句『陽陵泉穴屬膽經；支溝穴屬三焦經』（皆正確、未動）並列，醫理連貫。 【跨批次一致性仲裁 2026-08-23】本筆屬募穴/背俞穴臟腑對應慣用語，SP11/SP14/GB40 等批次同類判 FP 且經目標穴本卡識別欄逐字證實；本批次硬換產生語意退化（如「任脈募穴」）。swap 已回退，改判 false_positive。慣用語證實規則已形式化進探針。",
       "fix_mode": "swap",
-      "status": "applied_2026-08-23"
+      "status": "adjudicated_false_positive"
     },
     {
       "id": "contra.SP21.H146.combine_points_zh",
@@ -3350,9 +3350,9 @@
       "verdict": "real",
       "proposed_excerpt": "脾俞穴為膀胱經的背俞穴，具有健脾益氣的作用",
       "confidence": "高",
-      "notes": "脾俞（BL20）channel_zh為膀胱經；BL20本卡自身evidence欄位用語為「本穴歸屬於足太陽膀胱經，是脾臟於背後的『背俞穴』」——刻意用「脾臟」（器官）而非「脾經」，可見本卡並不採用「脾經」表述指稱脾俞，佐證此處「脾經的背俞穴」為經名誤植。換詞後醫理（健脾益氣為脾俞主治）仍通。",
+      "notes": "脾俞（BL20）channel_zh為膀胱經；BL20本卡自身evidence欄位用語為「本穴歸屬於足太陽膀胱經，是脾臟於背後的『背俞穴』」——刻意用「脾臟」（器官）而非「脾經」，可見本卡並不採用「脾經」表述指稱脾俞，佐證此處「脾經的背俞穴」為經名誤植。換詞後醫理（健脾益氣為脾俞主治）仍通。 【跨批次一致性仲裁 2026-08-23】本筆屬募穴/背俞穴臟腑對應慣用語，SP11/SP14/GB40 等批次同類判 FP 且經目標穴本卡識別欄逐字證實；本批次硬換產生語意退化（如「任脈募穴」）。swap 已回退，改判 false_positive。慣用語證實規則已形式化進探針。",
       "fix_mode": "swap",
-      "status": "applied_2026-08-23"
+      "status": "adjudicated_false_positive"
     },
     {
       "id": "contra.ST23.H163.combine_points_zh",
@@ -3371,9 +3371,9 @@
       "verdict": "real",
       "proposed_excerpt": "脾俞穴為膀胱經的背俞穴，具有健脾益氣的作用",
       "confidence": "高",
-      "notes": "與H162同一段文字，同一錯誤同一修法。",
+      "notes": "與H162同一段文字，同一錯誤同一修法。 【跨批次一致性仲裁 2026-08-23】本筆屬募穴/背俞穴臟腑對應慣用語，SP11/SP14/GB40 等批次同類判 FP 且經目標穴本卡識別欄逐字證實；本批次硬換產生語意退化（如「任脈募穴」）。swap 已回退，改判 false_positive。慣用語證實規則已形式化進探針。",
       "fix_mode": "swap",
-      "status": "applied_2026-08-23"
+      "status": "adjudicated_false_positive"
     },
     {
       "id": "contra.ST24.H164.clinical_pearls_3",
@@ -5423,9 +5423,9 @@
       "verdict": "real",
       "proposed_excerpt": "肺俞穴為膀胱經背俞穴，支溝穴屬三焦經，具有疏通經絡，宣肺止咳的作用",
       "confidence": "高",
-      "notes": "BL13 肺俞本卡 channel_zh=膀胱經，point_identity_zh=「肺之背俞穴」——所屬臟腑（肺）本身沒錯，但原句用「肺經」把功能歸屬與實際循行經絡混為一談，與本卡真正所在經（膀胱經）矛盾。換成膀胱經後，穴名「肺俞」本身仍保留肺的指涉，下文「宣肺止咳」功效不受影響，醫理連貫。",
+      "notes": "BL13 肺俞本卡 channel_zh=膀胱經，point_identity_zh=「肺之背俞穴」——所屬臟腑（肺）本身沒錯，但原句用「肺經」把功能歸屬與實際循行經絡混為一談，與本卡真正所在經（膀胱經）矛盾。換成膀胱經後，穴名「肺俞」本身仍保留肺的指涉，下文「宣肺止咳」功效不受影響，醫理連貫。 【跨批次一致性仲裁 2026-08-23】本筆屬募穴/背俞穴臟腑對應慣用語，SP11/SP14/GB40 等批次同類判 FP 且經目標穴本卡識別欄逐字證實；本批次硬換產生語意退化（如「任脈募穴」）。swap 已回退，改判 false_positive。慣用語證實規則已形式化進探針。",
       "fix_mode": "swap",
-      "status": "applied_2026-08-23"
+      "status": "adjudicated_false_positive"
     },
     {
       "id": "contra.PC2.H267.combine_points_zh",
@@ -5443,9 +5443,9 @@
       "verdict": "real",
       "proposed_excerpt": "肺俞穴為膀胱經背俞穴，支溝穴屬三焦經，具有疏通經絡，宣肺止咳的作用",
       "confidence": "高",
-      "notes": "同 H266，combine_points_zh 欄位為同一段重複文字，套用相同修正。",
+      "notes": "同 H266，combine_points_zh 欄位為同一段重複文字，套用相同修正。 【跨批次一致性仲裁 2026-08-23】本筆屬募穴/背俞穴臟腑對應慣用語，SP11/SP14/GB40 等批次同類判 FP 且經目標穴本卡識別欄逐字證實；本批次硬換產生語意退化（如「任脈募穴」）。swap 已回退，改判 false_positive。慣用語證實規則已形式化進探針。",
       "fix_mode": "swap",
-      "status": "applied_2026-08-23"
+      "status": "adjudicated_false_positive"
     },
     {
       "id": "contra.PC3.H268.clinical_pearls_2",
@@ -5576,9 +5576,9 @@
       "verdict": "real",
       "proposed_excerpt": "原理： 脾俞穴為膀胱經背俞穴，陰陵泉穴為脾經合穴，均能健脾利濕",
       "confidence": "高",
-      "notes": "BL20 脾俞本卡 channel_zh=膀胱經，point_identity_zh=「脾之背俞穴」——所屬臟腑（脾）正確，只是原句「脾經」把所屬臟腑與實際循行經絡混為一談，與本卡真正所在經（膀胱經）矛盾。換成膀胱經後，穴名「脾俞」仍保留脾的指涉，陰陵泉的「脾經合穴」維持不變（本身正確），「均能健脾利濕」功效不受影響（脾俞本卡功效即「健脾益氣、運化水濕」），醫理連貫。",
+      "notes": "BL20 脾俞本卡 channel_zh=膀胱經，point_identity_zh=「脾之背俞穴」——所屬臟腑（脾）正確，只是原句「脾經」把所屬臟腑與實際循行經絡混為一談，與本卡真正所在經（膀胱經）矛盾。換成膀胱經後，穴名「脾俞」仍保留脾的指涉，陰陵泉的「脾經合穴」維持不變（本身正確），「均能健脾利濕」功效不受影響（脾俞本卡功效即「健脾益氣、運化水濕」），醫理連貫。 【跨批次一致性仲裁 2026-08-23】本筆屬募穴/背俞穴臟腑對應慣用語，SP11/SP14/GB40 等批次同類判 FP 且經目標穴本卡識別欄逐字證實；本批次硬換產生語意退化（如「任脈募穴」）。swap 已回退，改判 false_positive。慣用語證實規則已形式化進探針。",
       "fix_mode": "swap",
-      "status": "applied_2026-08-23"
+      "status": "adjudicated_false_positive"
     },
     {
       "id": "contra.LR6.H275.combine_points_zh",
@@ -5595,9 +5595,9 @@
       "verdict": "real",
       "proposed_excerpt": "原理： 脾俞穴為膀胱經背俞穴，陰陵泉穴為脾經合穴，均能健脾利濕",
       "confidence": "高",
-      "notes": "脾俞=BL20,背俞穴按慣例皆在膀胱經(非以所屬臟腑之經命名)，本卡自己的資料庫channel_zh確認BL20=膀胱經。陰陵泉(SP9)本句已正確標脾經，未動。兩點各自獨立子句(非共用一個經名的複合主詞)，僅換脾俞那句的經名即可，字數30→31未減少。",
+      "notes": "脾俞=BL20,背俞穴按慣例皆在膀胱經(非以所屬臟腑之經命名)，本卡自己的資料庫channel_zh確認BL20=膀胱經。陰陵泉(SP9)本句已正確標脾經，未動。兩點各自獨立子句(非共用一個經名的複合主詞)，僅換脾俞那句的經名即可，字數30→31未減少。 【跨批次一致性仲裁 2026-08-23】本筆屬募穴/背俞穴臟腑對應慣用語，SP11/SP14/GB40 等批次同類判 FP 且經目標穴本卡識別欄逐字證實；本批次硬換產生語意退化（如「任脈募穴」）。swap 已回退，改判 false_positive。慣用語證實規則已形式化進探針。",
       "fix_mode": "swap",
-      "status": "applied_2026-08-23"
+      "status": "adjudicated_false_positive"
     },
     {
       "id": "contra.LR10.H276.clinical_pearls_2",
@@ -5878,10 +5878,10 @@
     "date": "2026-08-23",
     "method": "12×25 批次 Sonnet 5 結構化裁決 + 六道合併閘（覆蓋率/詞彙/數字不動/受控字元/原文存在/歧義）",
     "tally": {
-      "real_swap_applied": 176,
+      "real_swap_applied": 151,
       "real_defer_listed": 60,
-      "false_positive": 54
+      "false_positive": 79
     },
-    "note": "swap 已套用至 361.json+mirrors；defer_passage 整段推理建立在錯誤前提上，列冊 wave-3；false_positive 主因：募穴臟腑對應慣用語、交會穴語境、名稱撞名、古典引文。 同文異判（同一段文字孿生條目 swap/defer 不一致）2 組：SI8 取 swap 並延伸後文回音；KI1 取 defer 並回退 swap——此檢查已納入 wave-3 合併閘。"
+    "note": "swap 已套用至 361.json+mirrors；defer_passage 整段推理建立在錯誤前提上，列冊 wave-3；false_positive 主因：募穴臟腑對應慣用語、交會穴語境、名稱撞名、古典引文。 同文異判（同一段文字孿生條目 swap/defer 不一致）2 組：SI8 取 swap 並延伸後文回音；KI1 取 defer 並回退 swap——此檢查已納入 wave-3 合併閘。 跨批次一致性仲裁：25 筆募穴/背俞慣用語 swap 回退改判 FP（本卡識別欄逐字證實），詳各筆 notes。"
   }
 }
