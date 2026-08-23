@@ -7,7 +7,7 @@
  * per-asset limit), and it would have published curriculum/ — Ting's
  * copyrighted course PDFs, which must never leave the private repo.
  *
- * What ships is derived from index.html itself (every local src=/href=), so
+ * What ships is derived from index.html itself (every local src=/href=/poster=), so
  * this stays correct when the app gains or drops a data file. Everything else
  * — curriculum/, docs/, scripts/, data sources, imports, node_modules — stays
  * behind.
@@ -22,7 +22,7 @@ const OUT = path.join(ROOT, "dist");
 const ENTRY = "index.html";
 
 const html = fs.readFileSync(path.join(ROOT, ENTRY), "utf8");
-const refs = [...html.matchAll(/(?:src|href)="([^"]+)"/g)]
+const refs = [...html.matchAll(/(?:src|href|poster)="([^"]+)"/g)]
   .map((m) => m[1])
   .filter((u) => !/^(https?:)?\/\//.test(u) && !u.startsWith("#") && !u.startsWith("data:") && !u.startsWith("javascript:") && !u.startsWith("mailto:"));
 
