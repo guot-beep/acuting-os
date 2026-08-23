@@ -258,30 +258,10 @@
   /* ---- 病人輸出(§10)---------------------------------------------------- */
   const esc = (s) => String(s || "").replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]));
 
-  function renderPatientHtml(snapshot, opts) {
-    const clinic = snapshot.clinicProfileSnapshot || {};
-    const visitDate = (opts && opts.visitDate) || "";
-    const advice = [...(snapshot.renderedAdvice || []).filter((a) => a.selected !== false), ...(snapshot.clinicianAddedAdvice || [])];
-    const byCat = (...cats) => advice.filter((a) => cats.includes(a.category)).map((a) => a.text_zh).filter((t) => String(t || "").trim());
-    const ul = (items) => items.length ? `<ul>${items.map((i) => `<li>${esc(i)}</li>`).join("")}</ul>` : "";
-    const sec = (title, body) => body ? `<section><h2>${title}</h2>${body}</section>` : "";
-    const meds = snapshot.medicationInstructionsSnapshot || [];
-    const medTable = meds.length
-      ? `<table><tr><th>名稱</th><th>用量</th><th>頻率</th></tr>${meds.map((r) => `<tr><td>${esc(r.name)}</td><td>${esc(r.dose)}</td><td>${esc(r.freq)}</td></tr>`).join("")}${byCat("herb_caution").map((t) => `<tr><td colspan="3" class="note">${esc(t)}</td></tr>`).join("")}</table>`
-      : "";
-    const watch = [
-      "症狀明顯加重、或出現新的劇烈疼痛",
-      "發燒、持續頭暈、異常出血或瘀腫擴大",
-      "服用調理品後噁心、皮疹或任何過敏反應",
-      ...(snapshot.patientObservationPromptsSnapshot || [])
-    ];
-    // 頁首聯絡列:地址/電話有值才印(誠實顯示「(待填」佔位,不特判隱藏——
-    // 診所自己決定何時填真實值)。舊 snapshot 沒有 address 鍵時視為空字串。
-    const headerContact = [clinic.address, clinic.phone].filter((v) => String(v || "").trim()).map(esc).join("　·　");
-    const bookingNote = String(clinic.booking_note_zh || "").trim();
-    return `<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>診後照護指示</title><style>
-body{font-family:"Microsoft JhengHei","Noto Sans TC",sans-serif;background:#f6f1e7;color:#33291f;margin:0;padding:24px;line-height:1.7}
+  /* 病人文件的共用樣式 —— 單一來源。generate-avs.js（CLI v1）與
+   * renderPatientHtml（app 端）共用這一份：2026-08-23 色票同步時兩邊
+   * 都要手改的教訓（cautionsEn 雙鍵同病根），從此只改這裡。 */
+  const SHEET_CSS = `body{font-family:"Microsoft JhengHei","Noto Sans TC",sans-serif;background:#f6f1e7;color:#33291f;margin:0;padding:24px;line-height:1.7}
 .sheet{max-width:640px;margin:0 auto;background:#fff;border:1px solid #e5dcc9;border-radius:12px;padding:28px 32px;box-shadow:0 8px 30px rgba(23,33,38,.08)}
 .clinic-header{text-align:center;margin-bottom:6px}
 .clinic-header .clinic-name{font-family:"Noto Serif TC",serif;font-size:1.2em;color:#16352f}
@@ -306,8 +286,31 @@ ul{margin:4px 0;padding-left:20px}
   tr{page-break-inside:avoid}
   td,th{border:1px solid #999}
   .footer{break-inside:avoid}
-}
-</style></head><body><div class="sheet">
+}`;
+
+  function renderPatientHtml(snapshot, opts) {
+    const clinic = snapshot.clinicProfileSnapshot || {};
+    const visitDate = (opts && opts.visitDate) || "";
+    const advice = [...(snapshot.renderedAdvice || []).filter((a) => a.selected !== false), ...(snapshot.clinicianAddedAdvice || [])];
+    const byCat = (...cats) => advice.filter((a) => cats.includes(a.category)).map((a) => a.text_zh).filter((t) => String(t || "").trim());
+    const ul = (items) => items.length ? `<ul>${items.map((i) => `<li>${esc(i)}</li>`).join("")}</ul>` : "";
+    const sec = (title, body) => body ? `<section><h2>${title}</h2>${body}</section>` : "";
+    const meds = snapshot.medicationInstructionsSnapshot || [];
+    const medTable = meds.length
+      ? `<table><tr><th>名稱</th><th>用量</th><th>頻率</th></tr>${meds.map((r) => `<tr><td>${esc(r.name)}</td><td>${esc(r.dose)}</td><td>${esc(r.freq)}</td></tr>`).join("")}${byCat("herb_caution").map((t) => `<tr><td colspan="3" class="note">${esc(t)}</td></tr>`).join("")}</table>`
+      : "";
+    const watch = [
+      "症狀明顯加重、或出現新的劇烈疼痛",
+      "發燒、持續頭暈、異常出血或瘀腫擴大",
+      "服用調理品後噁心、皮疹或任何過敏反應",
+      ...(snapshot.patientObservationPromptsSnapshot || [])
+    ];
+    // 頁首聯絡列:地址/電話有值才印(誠實顯示「(待填」佔位,不特判隱藏——
+    // 診所自己決定何時填真實值)。舊 snapshot 沒有 address 鍵時視為空字串。
+    const headerContact = [clinic.address, clinic.phone].filter((v) => String(v || "").trim()).map(esc).join("　·　");
+    const bookingNote = String(clinic.booking_note_zh || "").trim();
+    return `<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>診後照護指示</title><style>${SHEET_CSS}</style></head><body><div class="sheet">
 <div class="clinic-header">
 <div class="clinic-name">${esc(clinic.clinic_name_zh)}</div>
 ${headerContact ? `<div class="clinic-contact">${headerContact}</div>` : ""}
@@ -486,6 +489,7 @@ ${sec("下次回診", snapshot.followUpSnapshot ? `<p>回診安排:${esc(snapsho
     finalizeSnapshot,
     createCorrectionDraft,
     renderPatientHtml,
+    SHEET_CSS,
     canonicalizeForScan,
     findBannedTokens,
     checkPatientOutputSafety,
