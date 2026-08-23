@@ -1,4 +1,21 @@
-# 2026-08-23 Claude — pattern-v2→main 併回 Phase I:CI workflow(第一個真衝突,解決)
+# 2026-08-23 Claude — pattern-v2→main 併回 Phase J(收尾):docs/ 最後 43 個檔案
+
+- **背景**:上一輪以為 docs/*.md 需要逐檔比對(因為 `ANTIGRAVITY_HANDOFF.md` 這種 main 已經有更新版本的
+  例子),但寫了跟資料層同一套「main 有沒有獨立改過」查證腳本,對剩下 43 個檔案逐一跑過,結果是
+  **零筆真衝突**——29 個 main 完全沒有(純新增)、14 個 main 存在但 main 從沒獨立改過(pattern-v2 單邊
+  演化,可整檔取代)。`ANTIGRAVITY_HANDOFF.md`、`AI_CONSTITUTION.md` 這種 main 已經有自己版本(或雙邊
+  本來就一致)的檔案,因為 pattern-v2 那邊沒有改過,自動就不在這份清單裡——不用特別排除,查證方法本身
+  就會跳過它們。
+- **做了什麼**:43 個檔案(card templates 全套、AI_COLLAB_PROTOCOL、C2B 遷移計畫、SQLite 遷移設計、
+  previsit contract、patient workspace design 等)整批搬入。
+- **驗證**:`build-data.js` PASS;`check-validation-ratchet.js` PASS(全部 flat);
+  `check-today-survives.js` PASS(含明確驗證「AI_CONSTITUTION 仍是一頁版」——這份沒有被誤蓋掉,因為
+  它本來就不在搬動清單裡)。
+- **pattern-v2→main 併回全部結束(Phase A-J)**:唯一還剩的是 `data/research_staging/`(CR010 研究工作檔,
+  刻意不搬,`build-data.js` 未引用)。原本 695 vs 39 commits、93→265+ 個檔案的分岔,現在只剩這一塊
+  「不打算搬」的工作檔案,其餘全部核對過、驗證過、落地。
+
+
 
 - **背景**:`.github/workflows/validate.yml` 雙邊都真的改過——main 只加了 8 行 concurrency 區塊
   (2026-08-12,commit 訊息自己寫「先落在 codex/pattern-v2,這裡補回 main」);查證發現 pattern-v2 的
