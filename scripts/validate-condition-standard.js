@@ -49,13 +49,51 @@
  *      valid value while absent is not. Also refuses a co_management that tells
  *      a patient to stop a medication without routing it to the prescriber —
  *      that is scope of practice, not just safety.
+ *   C13 import_artifacts entry not structured (§3.5.5). The relocation target
+ *      for import junk moved out of canonical fields: every entry must say what
+ *      moved, from where, and why. Accepts either of the two key shapes now in
+ *      the data — see §3.5.5; unifying them rewrites provenance and is Ting's
+ *      call.
  *
- * C11 and C12 check SHAPE, not presence. Requiring both on all 150 records
+ * C11, C12 and C13 check SHAPE, not presence. Requiring both on all 150 records
  * would add 300 defects to a layer already carrying 396, and a gate that fails
  * every run is a gate that gets switched off.
  *
  * NOTES (reported, do not fail the build):
  *   N1 inline tcm_patterns blobs not yet lifted into related_patterns
+ *   N5 classical_references_zh probably misattributed (P3, see below)
+ *
+ * N5 / P3 — the only check this file has ever had on `classical_references_zh`.
+ * Until 2026-08-12 the field appeared here exactly twice, both membership lines
+ * (CONTENT_FIELDS, SKELETON_CONTENT_FIELDS), and neither was a check: 52 filled
+ * records produced 0 defects. A classical citation reads as provenance — it
+ * tells the reader "a classic said this about THIS disease" — so a citation
+ * about a different disease is not an incomplete card, it is a card that is
+ * wrong with a source attached. Predicate, from
+ * docs/research_packs/CLASSICAL_REFS_ATTRIBUTION_SCAN.md §4.2:
+ *
+ *   flag R when
+ *     (a) normalize(R.classical_references_zh) equals that of >=1 other record
+ *         (normalize = drop HTML entities, keep CJK only), AND
+ *     (b) no term of length >=2 from
+ *         { R.name_zh, R.aliases_zh[], tdis_registry[R.related_eastern_diseases].name_zh }
+ *         occurs as a literal substring of the passage.
+ *
+ * Measured on the pre-remediation corpus: 18 flags, 16 of them records the scan
+ * had independently read as WRONG-TOPIC or ADJACENT — an 11.1 % false-positive
+ * rate. Both false positives were card-side vocabulary gaps, not passage
+ * problems (`cond.irregular_menstruation` lacks 月經先期/月經後期 in aliases_zh
+ * although the passage's 「或早或遲」 is exactly that; `cond.chronic_prostatitis`
+ * lacks 精濁, the correct classical name of its own disease). That is why this
+ * is an N-code and not a C-code: a blocking gate that fails on a correct card
+ * is a gate that gets switched off, and the two fixes are content improvements
+ * that belong to the card, not to the validator.
+ *
+ * Deliberately NOT done here: adding ["classical_references_zh",
+ * "classical_references_en"] to BILINGUAL_PAIRS. `_en` does not exist on any of
+ * the 505 records, so that one line would mint one C5 per filled record in a
+ * single commit and break check-validation-ratchet. Whether a classical Chinese
+ * passage should have an English twin at all is Ting's call (scan §4.3).
  *
  * WORKLIST — `--worklist` lists the actual condition ids behind the numbers,
  * grouped by category (batches run one category at a time).
@@ -70,6 +108,7 @@ const ROOT = path.resolve(__dirname, "..");
 const CONDITION_FILE = "data/pathology/condition_canon_shortlist.json";
 const PATTERN_REGISTRY = "data/pathology/pattern_registry.json";
 const PATTERN_LIBRARY = "data/pathology/pattern_library.json";
+const TDIS_REGISTRY = "data/pathology/tdis_registry.json";
 
 // --- the approved field set (docs/CONDITION_CARD_TEMPLATE.md §3) -------------
 // Anything outside this set is C8. Growing this list is a schema change: it
@@ -104,6 +143,16 @@ const RELATION_FIELDS = new Set([
   // after migration. New content must use sign_symptom_ids.
   "sign_symptom_ids", "related_tcm_symptoms",
   "herb_formulas", "acupoint_protocols", "medication_links", "workflow_links",
+  // Added 2026-08-14 (template §3). acupoint_protocols is just {name_zh, code},
+  // and a sub-20 list renders as bare tags with no caveat — so "one trial's
+  // fixed regimen at not_graded certainty" and "this condition's standard
+  // protocol" look identical on screen. This field carries the status and
+  // sources so the caveat travels with the points. C9 enforces the pairing.
+  "acupoint_protocol_evidence",
+  // Added 2026-08-15 (template §3). Audit trail for the code-convention rewrite
+  // (LV->LR, DU->GV, REN->CV, SJ->TE, de-zero-padding). Keeps the original code
+  // and name so the rewrite is reversible — §0 只加深不刪除.
+  "acupoint_code_normalization",
   // Added 2026-08-08 (template §3): ordered rf.* ids referencing the red-flag
   // registry. Optional — only batches whose registry migration is done carry
   // it. Wiring consistency is validate-red-flag-wiring.js's job, not C8's.
@@ -114,9 +163,15 @@ const PROVENANCE_FIELDS = new Set([
   "public_safe", "source_status",
 ]);
 // Raw import kept for provenance (§0 只加深不刪除). Never used for navigation.
-const RAW_IMPORT_FIELDS = new Set(["tcm_patterns"]);
+// import_artifacts (§3.5.5): misfiled import text archived move-not-delete.
+// Provenance only — C5/C9/C10 never look inside it.
+const RAW_IMPORT_FIELDS = new Set(["tcm_patterns", "import_artifacts"]);
 
 const APPROVED = new Set([
+  // 3.5.5 import_artifacts (2026-08-11): relocation destination for junk-import
+  // text (blog narratives, ad codes, misfiled essays) — provenance only,
+  // never rendered. See template §3.5.5.
+  "import_artifacts",
   ...CORE_FIELDS, ...CONTENT_FIELDS, ...RELATION_FIELDS,
   ...PROVENANCE_FIELDS, ...RAW_IMPORT_FIELDS,
 ]);
@@ -186,6 +241,12 @@ const patternIds = new Set([
   ...(readJson(PATTERN_REGISTRY).records || []).map((r) => r.id),
   ...(readJson(PATTERN_LIBRARY).records || []).map((r) => r.id),
 ]);
+// N5/P3 needs the TCM disease NAME behind each related_eastern_diseases id —
+// a card that links tdis.long_bi is claiming 癃閉, and that is the word the
+// passage has to contain for the citation to be about this card's disease.
+const tdisNames = new Map(
+  (readJson(TDIS_REGISTRY).records || []).map((r) => [r.id, r.name_zh])
+);
 
 const scope = ONLY_CATEGORY
   ? conditions.filter((c) => c.category === ONLY_CATEGORY)
@@ -202,6 +263,34 @@ for (const f of C10_FIELDS) {
     if (v) byVal.set(v, (byVal.get(v) || 0) + 1);
   }
   sharedValues.set(f, byVal);
+}
+
+// N5/P3 part (a): duplicate passage blocks, computed over the FULL dataset for
+// the same reason C10 is. Normalization keeps CJK only, so `&hellip;` vs `…`,
+// `"` vs 「」 and stray whitespace cannot hide a copy — those differences are
+// import damage, not different citations.
+const CLASSICAL_FIELD = "classical_references_zh";
+const normClassical = (s) => String(s).replace(/&[a-zA-Z#0-9]+;/g, "").replace(/[^一-鿿]/g, "");
+const classicalGroups = new Map(); // normalized passage -> [record ids]
+for (const rec of conditions) {
+  const v = typeof rec[CLASSICAL_FIELD] === "string" ? rec[CLASSICAL_FIELD].trim() : "";
+  if (!v) continue;
+  const k = normClassical(v);
+  if (!k) continue;
+  if (!classicalGroups.has(k)) classicalGroups.set(k, []);
+  classicalGroups.get(k).push(rec.id);
+}
+
+// N5/P3 part (b): the disease terms this card claims as its own identity.
+function ownDiseaseTerms(rec) {
+  const terms = [rec.name_zh, ...(Array.isArray(rec.aliases_zh) ? rec.aliases_zh : [])];
+  for (const tid of (Array.isArray(rec.related_eastern_diseases) ? rec.related_eastern_diseases : [])) {
+    if (tdisNames.has(tid)) terms.push(tdisNames.get(tid));
+  }
+  return terms
+    .filter((t) => typeof t === "string")
+    .map((t) => t.trim())
+    .filter((t) => t.length >= 2);
 }
 
 // --- checks -----------------------------------------------------------------
@@ -242,8 +331,24 @@ for (const rec of scope) {
   // 2026-08-08) is an equally valid home: build-data derives its triggers onto
   // the card, so a registry-covered condition DOES tell the reader when to
   // stop. Inline strings are legacy-authored and still count.
+  //
+  // Skeleton-tier carve-out (2026-08-11, template §5 "C4 與骨架層", Ting's
+  // uncapped-skeleton ruling): C4's target is a card that CLAIMS content but
+  // omits safety. A pure skeleton (review_status "skeleton" AND zero content
+  // fields) claims nothing — it is an index slot. It counts under N4 (note)
+  // instead, so the backlog stays visible without blocking. The moment ANY
+  // content field appears, C4 applies in full — "has a summary but no red
+  // flags" is exactly the state C4 exists to catch.
+  const SKELETON_CONTENT_FIELDS = ["summary_zh", "summary_en", "etiology_zh", "etiology_en",
+    "western_pathology_zh", "western_pathology_en", "western_context_zh", "western_context_en",
+    "risk_factors_zh", "risk_factors_en", "acupuncture_scope_zh", "acupuncture_scope_en",
+    "classical_references_zh", "classical_references_en"];
+  const isPureSkeleton = rec.review_status === "skeleton"
+    && SKELETON_CONTENT_FIELDS.every((f) => isEmpty(rec[f]))
+    && isEmpty(rec.red_flags_zh) && isEmpty(rec.red_flags_en);
   if (isEmpty(rec.red_flags_zh) && isEmpty(rec.red_flags_en) && !RED_FLAG_COVERED.has(rec.id)) {
-    add("C4", "no red_flags_zh / red_flags_en and no red_flag_registry record");
+    if (isPureSkeleton) notes.push({ code: "N4", id, category: cat, detail: "skeleton index slot (no content claimed) — C4 deferred until any content field lands" });
+    else add("C4", "no red_flags_zh / red_flags_en and no red_flag_registry record");
   }
 
   // C11 risk_factors shape (§5.5). Not required — checked only when filled, and
@@ -310,6 +415,37 @@ for (const rec of scope) {
     }
   }
 
+  // C13 import_artifacts shape (§3.5.5). Archived junk only earns its keep as
+  // provenance if every entry says WHAT moved, FROM WHERE, and WHY — a bare text
+  // blob is the junk relocated, not documented.
+  //
+  // Two key shapes exist on purpose (§3.5.5 warning box): the two lines that
+  // invented this field on 2026-08-11 named the keys differently, and the merge
+  // kept both verbatim because rewriting an archive entry rewrites provenance.
+  // So this gate accepts EITHER shape and refuses to normalise them — unifying
+  // the keys is Ting's call, not the validator's.
+  if (!isEmpty(rec.import_artifacts)) {
+    if (!Array.isArray(rec.import_artifacts)) {
+      add("C13", "import_artifacts must be an array of archive entries (§3.5.5)");
+    } else {
+      rec.import_artifacts.forEach((a, i) => {
+        if (!a || typeof a !== "object" || Array.isArray(a)) {
+          add("C13", `import_artifacts[${i}] must be an object (§3.5.5)`);
+          return;
+        }
+        const shapeA = ["original_field", "text", "reason", "moved_at"];
+        const shapeB = ["field", "text", "reason", "archived_at"];
+        const missA = shapeA.filter((k) => isEmpty(a[k]));
+        const missB = shapeB.filter((k) => isEmpty(a[k]));
+        if (missA.length && missB.length) {
+          const shape = missA.length <= missB.length ? shapeA : shapeB;
+          const miss = missA.length <= missB.length ? missA : missB;
+          add("C13", `import_artifacts[${i}] missing ${miss.join(", ")} — needs {${shape.join(", ")}} (§3.5.5)`);
+        }
+      });
+    }
+  }
+
   // C5 / C9 bilingual twins
   for (const [zh, en] of BILINGUAL_PAIRS) {
     const hasZh = !isEmpty(rec[zh]);
@@ -347,6 +483,56 @@ for (const rec of scope) {
     }
   }
 
+  // C14 (2026-08-14) points without their evidence. A sub-20 acupoint_protocols
+  // list renders as bare tags with no caveat, so an unqualified list reads as a
+  // vetted prescription. If a card carries points, it must also carry the status
+  // and sources that qualify them. See template §3.
+  {
+    const pts = Array.isArray(rec.acupoint_protocols) ? rec.acupoint_protocols : [];
+    const ev = rec.acupoint_protocol_evidence;
+    const STATUS = new Set(["supported", "limited", "symptom_only", "adjunct_only",
+      "postoperative_only", "not_supported", "no_source", "unassessed"]);
+    // unassessed = 匯入遺留,沒有人查過。它「沒有來源」正是它的內容,
+    // 所以不要求 sources;但必須把來歷寫在 evidence_note_zh 裡,否則等於沒說。
+    const ASSESSED = ev && ev.protocol_status !== "unassessed";
+    // The shared import default is its own known defect (F-07) and the renderer
+    // already names it — do not double-report it here.
+    const key = pts.map((p) => (typeof p === "string" ? p : `${p.name_zh || ""}${p.code || ""}`)).join("|");
+    const isSharedTemplate = pts.length <= 5 && /足三里/.test(key) && /合谷/.test(key)
+      && /三陰交/.test(key) && /中脘/.test(key);
+
+    /* 2026-08-15:N6 已畢業為 blocking。
+     *
+     * 這條原本是 NOTE + ratchet,因為當時有 73 張舊卡帶穴位卻沒有 evidence ——
+     * 一次把整個既有語料判成 blocking,gate 會變成一堵牆,下一個人就會去關掉它。
+     * 當時寫的畢業條件是「N6 降到 0 時改成 add("C14", ...)」。
+     * 那 73 張已於 2026-08-15 全部補上 protocol_status: unassessed(不是療效判斷,
+     * 是誠實標記「沒有人查過」),N6 歸零,所以照約定升級。
+     *
+     * 從此:有穴位就必須有 evidence,沒有寬限。 */
+    if (pts.length && !isSharedTemplate && !ev) {
+      add("C14", `has ${pts.length} acupoint_protocols but no acupoint_protocol_evidence — `
+        + "a sub-20 point list renders as bare tags with no caveat, so it reads as a vetted "
+        + "protocol. Even an unverified import must say so: use protocol_status \"unassessed\" "
+        + "with the provenance in evidence_note_zh (template §3).");
+    }
+    if (ev) {
+      if (!STATUS.has(ev.protocol_status)) {
+        add("C14", `acupoint_protocol_evidence.protocol_status "${ev.protocol_status}" is not one of ${[...STATUS].join("/")}`);
+      }
+      if (ASSESSED && (!Array.isArray(ev.sources) || !ev.sources.length)) {
+        add("C14", "acupoint_protocol_evidence has no sources — the status is an assertion without a citation");
+      }
+      if (!ASSESSED && !String(ev.evidence_note_zh || "").trim()) {
+        add("C14", "protocol_status is unassessed but evidence_note_zh is empty — "
+          + "an unassessed list must at least say where the points came from");
+      }
+      if (pts.length && !String(ev.evidence_note_zh || "").trim()) {
+        add("C14", "has points but acupoint_protocol_evidence.evidence_note_zh is empty — the caveat has nowhere to render from");
+      }
+    }
+  }
+
   // C10 verbatim-shared content
   for (const f of C10_FIELDS) {
     const v = typeof rec[f] === "string" ? rec[f].trim() : "";
@@ -358,6 +544,27 @@ for (const rec of scope) {
   // N2 deprecated_but_temporarily_accepted field still in use
   if (!isEmpty(rec.related_tcm_symptoms)) {
     notes.push({ code: "N2", id, category: cat, detail: "uses related_tcm_symptoms — deprecated_but_temporarily_accepted. Migrate to sign_symptom_ids (edge.condition_symptoms); no NEW content may use this field." });
+  }
+
+  // N5 classical_references_zh probably misattributed (P3 = duplicate block AND
+  // the card's own disease term absent from the passage). Note only — see the
+  // header for the measured 11.1 % false-positive rate and why it is not a C.
+  const classical = typeof rec[CLASSICAL_FIELD] === "string" ? rec[CLASSICAL_FIELD].trim() : "";
+  if (classical) {
+    const group = classicalGroups.get(normClassical(classical)) || [];
+    if (group.length >= 2) {
+      const terms = ownDiseaseTerms(rec);
+      const hit = terms.find((t) => classical.includes(t));
+      if (!hit) {
+        const others = group.filter((g) => g !== rec.id);
+        notes.push({
+          code: "N5",
+          id,
+          category: cat,
+          detail: `${CLASSICAL_FIELD} is shared verbatim with ${others.join(", ")} AND names none of this card's own disease terms (${terms.join(" / ") || "none declared"}). Inside a group of n cards at most one can be the true home, so this citation is probably about another card's disease. Either move it (see CONDITION_CARD_TEMPLATE §3.5.5: write the true home FIRST, then archive and clear here), or — if the passage really is about this disease under a classical name — add that name to aliases_zh, which is a content fix and clears this note honestly.`,
+        });
+      }
+    }
   }
 
   // N1 unlifted inline pattern blobs
@@ -384,6 +591,8 @@ const CODE_LABEL = {
   C10: "content shared verbatim across records (boilerplate/misfiled)",
   C11: "risk_factors shape (§5.5)",
   C12: "acupuncture_scope shape (§5.6)",
+  C13: "import_artifacts entry shape (§3.5.5)",
+  C14: "points without their evidence (§3)",
 };
 
 const cleanRecords = scope.filter((r) => !defects.some((d) => d.id === r.id)).length;
@@ -421,11 +630,22 @@ if (AS_JSON) {
     console.log("");
   }
   if (notes.length) {
-    console.log(`N1  inline tcm_patterns blobs not lifted into related_patterns — ${notes.length} record(s) (note only, does not fail)`);
-    if (WORKLIST) {
-      const shown = SHOW_ALL ? notes : notes.slice(0, 5);
-      shown.forEach((n) => console.log(`    ${n.id}: ${n.detail}`));
-      if (!SHOW_ALL && notes.length > shown.length) console.log(`    … +${notes.length - shown.length} more (--all)`);
+    // per-code note summary (N1 blobs / N2 deprecated field / N4 skeleton slots)
+    const NOTE_LABELS = {
+      N1: "inline tcm_patterns blobs not lifted into related_patterns",
+      N2: "related_tcm_symptoms (deprecated_but_temporarily_accepted)",
+      N4: "skeleton index slots (no content claimed; C4 deferred)",
+      N5: "classical_references_zh duplicated AND missing this card's own disease term (P3)",
+    };
+    for (const code of Object.keys(NOTE_LABELS)) {
+      const list = notes.filter((n) => n.code === code);
+      if (!list.length) continue;
+      console.log(`${code}  ${NOTE_LABELS[code]} — ${list.length} record(s) (note only, does not fail)`);
+      if (WORKLIST) {
+        const shown = SHOW_ALL ? list : list.slice(0, 5);
+        shown.forEach((n) => console.log(`    ${n.id}: ${n.detail}`));
+        if (!SHOW_ALL && list.length > shown.length) console.log(`    … +${list.length - shown.length} more (--all)`);
+      }
     }
     console.log("");
   }

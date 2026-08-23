@@ -58,6 +58,15 @@ Ting 2026-08-07:「我感覺要大改動。」對照後的誠實答案:
    繼往的 284 張卡按原計畫走 review_status 升級,不做一次性 field_sources
    回填(那是把 189 個假中文事件的修復力氣挪去搬格式)。
 
+**已知技術債(2026-08-09,Ting 裁決保留不解 —— 見
+`docs/INTAKE_MINIMUM_DATASET_AUDIT.md`)**:runtime(app.js + localStorage)
+沒有獨立的 Patient 實體 —— `patientCode`/`sex`/`occupation`,現在也包括
+`race_ethnicity`/`gender_identity`/`onset_approx` 等初診欄位,全部直接存在
+*case* 物件上,schema.sql 的 `patients` 表存在但沒被 wire 進來。同一個真人
+如果未來開第二個 case/episode,這些欄位會被重新填一次,兩邊可能不一致 ——
+這不是新問題(`sex`/`occupation` 早就這樣),只是欄位變多後值得寫下來一次。
+Patient hub(CG1–CG3)按既有排程留在 11–12 月,本批不動。
+
 ---
 
 ## §1 五層模型(每層一句話)
@@ -119,6 +128,37 @@ severity_baseline TEXT    -- 初診嚴重度摘要(數值進 visit_observations)
 
 `cases.status` 詞彙擴為 active|recurrence|relapse|remission|resolved|closed
 (FHIR clinicalStatus 的可用子集,v2 spec §14)。
+
+> **決議 2026-08-09(Ting,`docs/INTAKE_MINIMUM_DATASET_AUDIT.md` 之後)—
+> 上面四點的實作形狀由本決議取代,原文保留供對照:**
+>
+> 1. **race + ethnicity → 合併一題。** 不是 v2 spec §13 的兩欄分開設計,
+>    改採 2024 OMB SPD 15 方向的單一「Race and/or ethnicity, select all
+>    that apply」複選題。落地為 `case_race_ethnicity` 一對多 junction
+>    (case 層,不是 patients 層 — Patient entity 本批不 wire,見 §0 之後
+>    新增的技術債段落)+ `cases.race_ethnicity_detail` 自填細節文字。詞彙
+>    表 `data/config/demographic_vocabulary.json`(7 個 SPD 15 最小類別 +
+>    unknown + prefer_not_to_answer),id 不透明、不可改名,細節文字永遠
+>    不升格為新 id。
+> 2. **`course` 拆成兩個獨立維度,不是一個 enum。** `chronicity`
+>    (acute|subacute|chronic|unknown)回答「多久了」,`course_pattern`
+>    (continuous|intermittent|episodic|recurrent|progressive|improving|
+>    stable|unknown)回答「怎麼變化」。急性發作可以是 episodic,慢性病可
+>    以是 progressive — 併成一個欄位會丟失這個軸。
+> 3. **`duration_at_intake` 不做手動欄位。** 一旦 `approx_onset` 存在,
+>    duration 是 onset 與 intake 日期的減法,存兩份只會製造互相矛盾的
+>    風險。
+> 4. **`severity_baseline` 不等 `visit_observations` 落地才能用。** 首診
+>    量到的嚴重度過了這次看診就補不回來,不能因為 sym.\*/metric.\*
+>    的 identity 之爭(仍 DEFERRED,未重開)而沒地方放。改為
+>    `cases.baseline_severity_0_10 INTEGER`(nullable,0–10 CHECK),明確
+>    標記「暫時欄位,等結構化量測層定案後可能遷移」,不等測量層那場辯論
+>    結束。
+>
+> 實作(schema + UI + runtime)已於 2026-08-09 完成,見
+> `docs/INTAKE_MINIMUM_DATASET_AUDIT.md` §implementation 與
+> `data/clinical_cases/schema.sql`。`duration_at_intake` 从 MUST 欄位表移除
+> (定性為 derived,§2 的 C 類)。
 
 ### §3.2 ★ visit_observations — 本設計唯一的新表
 

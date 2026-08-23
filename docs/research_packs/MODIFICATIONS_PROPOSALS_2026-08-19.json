@@ -1,0 +1,2118 @@
+{
+ "generated": "2026-08-19",
+ "source": "curriculum/herbs/方剂学汇总_extracted.md (640 extracted tables)",
+ "shape_notes": "庫內 modifications 形狀（樣本：formula.gui_zhi_tang、formula.ma_huang_tang、formula.xiao_yao_san）：modifications_zh 與 modifications_en 均為字串陣列、等長成對，每條格式為「指徵 → 加/去/重用藥物」（如「項背強几几 → 加葛根（桂枝加葛根湯）」）。本提案照此形狀輸出。重要：汇总原文為英文+拼音縮寫（非中文），故 modifications_zh 為忠實中譯（藥名依標準拼音→漢字對照，主要出自庫內 single_herbs/composition 資料），modifications_en 為原文的規範化轉寫；原句逐字保存在 evidence_quotes。劑量數字（僅 Table 369 蘇合香丸一處）逐字照抄。多數來源表為「加減|指徵」兩欄對（無作用欄），僅 Table 24、28 帶作用欄（見 purposes_zh/purposes_en）——來源表本身無作用欄者不視為欄位缺失。",
+ "stats": {
+  "modification_tables_found": 105,
+  "proposal_formulas": 79,
+  "proposal_entries": 337,
+  "partial_entries": 2,
+  "abandoned_tables": 14,
+  "skipped_formula_already_has_modifications": [
+   "Table 17: formula.gui_zhi_tang",
+   "Table 20: formula.xiao_qing_long_tang",
+   "Table 37: formula.sang_ju_yin",
+   "Table 40: formula.yin_qiao_san",
+   "Table 45: formula.ma_xing_shi_gan_tang",
+   "Table 93: formula.xiao_chai_hu_tang",
+   "Table 104: formula.si_ni_san",
+   "Table 108: formula.xiao_yao_san",
+   "Table 122: formula.bai_hu_tang",
+   "Table 143: formula.huang_lian_jie_du_tang",
+   "Table 155: formula.dao_chi_san",
+   "Table 159: formula.long_dan_xie_gan_tang",
+   "Table 188: formula.qing_hao_bie_jia_tang",
+   "Table 268: formula.si_wu_tang",
+   "Table 344: formula.suan_zao_ren_tang"
+  ]
+ },
+ "proposals": [
+  {
+   "formula_id": "formula.jiu_wei_qiang_huo_tang",
+   "formula_zh": "九味羌活湯",
+   "modifications_zh": [
+    "裏熱明顯 → 加石膏、知母",
+    "濕邪明顯 → 加藿香、半夏、陳皮，去生地",
+    "肢體痠痛劇烈 → 重用羌活、蒼朮，加威靈仙、秦艽、防己",
+    "咽喉腫痛甚 → 加桔梗、薄荷、牛蒡子",
+    "無熱象 → 去生地、黃芩"
+   ],
+   "modifications_en": [
+    "Pronounced interior heat → add Shi Gao and Zhi Mu",
+    "Pronounced dampness → add Huo Xiang, Ban Xia and Chen Pi; remove Sheng Di",
+    "Severe aches and pain → increase Qiang Huo and Cang Zhu; add Wei Ling Xian, Qin Jiao and Fang Ji",
+    "Severe sore throat → add Jie Geng, Bo He and Niu Bang Zi",
+    "No heat presentation → remove Sheng Di and Huang Qin"
+   ],
+   "evidence": "Table 24",
+   "evidence_line": 236,
+   "evidence_quotes": [
+    "Plus shi gao, zhi mu | Stronger heat-clearing effect | Pronounced internal heat",
+    "Plus huo xiang, ban xia, chen pi | Minus sheng di | Stronger damp-eliminating effect | Pronounced damp",
+    "Qiang huo and cang zhu up;  <br>Plus wei ling xian, qin jiao, fang ji | Stronger damp-   eliminating and Bi-treating effect | Severe aches and pain",
+    "Plus jie geng, bo he, niu bang zi | Soothe throat | Severe sore throat",
+    "Minus sheng di, huang qin | No more heat-clearing effect | No heat presentation"
+   ],
+   "notes": "three-column layout with purpose; source columns: change|change2|purpose|indication",
+   "purposes_zh": [
+    "加強清熱之力",
+    "加強祛濕之力",
+    "加強祛濕蠲痺之力",
+    "利咽",
+    "去清熱之力"
+   ],
+   "purposes_en": [
+    "Stronger heat-clearing effect",
+    "Stronger damp-eliminating effect",
+    "Stronger damp-eliminating and Bi-treating effect",
+    "Soothes the throat",
+    "Removes the heat-clearing effect"
+   ]
+  },
+  {
+   "formula_id": "formula.xiang_su_san",
+   "formula_zh": "香蘇散",
+   "modifications_zh": [
+    "頭痛 → 加羌活、白芷、川芎、蔓荊子",
+    "咳嗽痰多 → 加紫蘇子、半夏"
+   ],
+   "modifications_en": [
+    "Headaches → add Qiang Huo, Bai Zhi, Chuan Xiong and Man Jing Zi",
+    "Coughing with copious sputum → add Zi Su Zi and Ban Xia"
+   ],
+   "evidence": "Table 28",
+   "evidence_line": 267,
+   "evidence_quotes": [
+    "Plus qiang huo, bai zhi, chuan xiong, man jing zi | Guides effect into each meridian respectively | Headaches",
+    "Plus zi su zi, ban xia | Stronger damp-drying and qi-downward moving effect | Coughing with copious sputum"
+   ],
+   "notes": "three-column layout with purpose",
+   "purposes_zh": [
+    "分經引藥",
+    "加強燥濕降氣之力"
+   ],
+   "purposes_en": [
+    "Guides the effect into each meridian respectively",
+    "Stronger damp-drying and qi-descending effect"
+   ]
+  },
+  {
+   "formula_id": "formula.ren_shen_bai_du_san",
+   "formula_zh": "人參敗毒散",
+   "modifications_zh": [
+    "無咳嗽咯痰 → 去桔梗、前胡",
+    "急性風濕熱 → 加桂枝、知母、忍冬藤、桑枝",
+    "風寒濕痺疼痛 → 去桔梗、前胡，加威靈仙、秦艽、烏頭",
+    "風毒癮疹瘙癢 → 加蟬蛻、苦參",
+    "無濕象 → 去羌活、獨活、茯苓"
+   ],
+   "modifications_en": [
+    "Without cough and sputum → remove Jie Geng and Qian Hu",
+    "Acute rheumatic fever → add Gui Zhi, Zhi Mu, Ren Dong Teng and Sang Zhi",
+    "Pains due to Wind-Damp Bi → remove Jie Geng and Qian Hu; add Wei Ling Xian, Qin Jiao and Wu Tou",
+    "Wind-toxin rashes with itchiness → add Chan Tui and Ku Shen",
+    "Without damp presentation → remove Qiang Huo, Du Huo and Fu Ling"
+   ],
+   "evidence": "Table 54",
+   "evidence_line": 500,
+   "evidence_quotes": [
+    "Minus jie geng, qian hu | Without presentation of cough and sputum",
+    "Plus gui zhi, zhi mu, ren dong teng, sang zhi | Acute rheumatic fever",
+    "Minus jie geng, qian hu;<br>Plus wei ling xian, qin jiao, wu tou | Pains due to wind-damp Bi",
+    "Plus chan tui, ku shen | Wind toxic rashes with itchness",
+    "Minus qiang huo, du huo, fu ling | Without damp presentation"
+   ]
+  },
+  {
+   "formula_id": "formula.da_cheng_qi_tang",
+   "formula_zh": "大承氣湯",
+   "modifications_zh": [
+    "脈細數、口唇舌乾燥 → 加玄參、麥冬、生地",
+    "陽明經腑同病 → 加石膏、知母",
+    "脈沉澀、舌暗紅、夜間發熱 → 加桃仁、赤芍、當歸",
+    "脹滿甚 → 加萊菔子"
+   ],
+   "modifications_en": [
+    "Thready rapid pulse with dry mouth, lips and tongue → add Xuan Shen, Mai Dong and Sheng Di",
+    "Concurrent Yangming channel and organ stage → add Shi Gao and Zhi Mu",
+    "Deep hesitant pulse, dark red tongue and fever at night → add Tao Ren, Chi Shao and Dang Gui",
+    "Severe distension and fullness → add Lai Fu Zi"
+   ],
+   "evidence": "Table 60",
+   "evidence_line": 542,
+   "evidence_quotes": [
+    "Plus xuan shen, mai dong, sheng di | Thready, rapid pulse, dry mouth, lips & tongue",
+    "Plus shi gao, zhi mu | A concurrent Yangming channel & organ stage",
+    "Plus tao ren, chi shao, dang gui | Deep hesitated pulse, dark red tongue, fever at night",
+    "Plus lai fu zi | Severe distension & fullness"
+   ]
+  },
+  {
+   "formula_id": "formula.ma_zi_ren_wan",
+   "formula_zh": "麻子仁丸",
+   "modifications_zh": [
+    "術後、外傷後便秘 → 加桃仁、當歸",
+    "痔瘡 → 加槐花、槐角",
+    "產後便秘 → 加熟地、當歸、何首烏",
+    "習慣性便秘 → 加郁李仁",
+    "中風後便秘 → 加瓜蔞、生地、肉蓯蓉"
+   ],
+   "modifications_en": [
+    "Post-surgical or post-injury constipation → add Tao Ren and Dang Gui",
+    "Hemorrhoids → add Huai Hua and Huai Jiao",
+    "Postpartum constipation → add Shu Di, Dang Gui and He Shou Wu",
+    "Habitual constipation → add Yu Li Ren",
+    "Post-apoplexy constipation → add Gua Lou, Sheng Di and Rou Cong Rong"
+   ],
+   "evidence": "Table 68",
+   "evidence_line": 604,
+   "evidence_quotes": [
+    "Plus tao ren, dang gui | Post-surgical, post-injury",
+    "Plus hui hua, hui jiao | Hemorrhoids",
+    "Plus shu di, dang gui, he shou wu | Postpartum",
+    "Plus yu li ren (acrid,bitter,sweet,neutral; LI,Sp,SI) | Habitual constipation",
+    "Plus gua lou, sheng di, rou cong rong | Post-apoplexy"
+   ],
+   "notes": "source \"hui hua, hui jiao\" normalized to 槐花、槐角 (Huai Hua/Huai Jiao, standard hemorrhoid pair; source typo)"
+  },
+  {
+   "formula_id": "formula.ji_chuan_jian",
+   "formula_zh": "濟川煎",
+   "modifications_zh": [
+    "氣虛 → 加人參",
+    "兼有熱象 → 加黃芩",
+    "腎陰精虧虛甚 → 加熟地",
+    "虛甚 → 去枳殼",
+    "腸燥失潤 → 加火麻仁",
+    "腰膝痠痛甚 → 去澤瀉，加杜仲、枸杞子",
+    "心煩失眠 → 加柏子仁、酸棗仁"
+   ],
+   "modifications_en": [
+    "Qi deficiency → add Ren Shen",
+    "With heat → add Huang Qin",
+    "Severe Kidney Yin and Essence deficiency → add Shu Di",
+    "Severe deficiency → remove Zhi Ke",
+    "Lack of lubrication → add Huo Ma Ren",
+    "Severe low-back pain and knee soreness → remove Ze Xie; add Du Zhong and Gou Qi Zi",
+    "Irritability and insomnia → add Bai Zi Ren and Suan Zao Ren"
+   ],
+   "evidence": "Table 72",
+   "evidence_line": 637,
+   "evidence_quotes": [
+    "Plus ren shen | Qi xu",
+    "Plus huang qin | With heat",
+    "Plus shu di | Severe K Yin/essence xu",
+    "Minus zhi ke | Severe xu",
+    "Plus huo ma ren | Lack of lubrication",
+    "Minus ze xie, plus du zhong, gou qi zi | Severe LBP and knee soreness",
+    "Bai zi ren, suan zao ren | Irritability, insomnia  [no +/- marker: implied add]"
+   ],
+   "notes": "last row has no +/- marker in source; read as implied add per table context"
+  },
+  {
+   "formula_id": "formula.da_huang_fu_zi_tang",
+   "formula_zh": "大黃附子湯",
+   "modifications_zh": [
+    "寒甚惡寒明顯 → 制附子、細辛加倍",
+    "體質虛弱 → 加黨參、當歸",
+    "積滯脹滿甚 → 加枳實、厚朴",
+    "疼痛劇烈 → 加桂枝、白芍",
+    "噁心嘔吐 → 加半夏、陳皮、黃連"
+   ],
+   "modifications_en": [
+    "Severe cold with chills → double Zhi Fu Zi and Xi Xin",
+    "Weak constitution → add Dang Shen and Dang Gui",
+    "Severe accumulation with distension → add Zhi Shi and Hou Po",
+    "Severe pains → add Gui Zhi and Bai Shao",
+    "Nausea and vomiting → add Ban Xia, Chen Pi and Huang Lian"
+   ],
+   "evidence": "Table 76",
+   "evidence_line": 669,
+   "evidence_quotes": [
+    "Double Zhi Fu Zi And Xi Xin | Severe cold with chills",
+    "Plus Dang Shen, Dang Gui | Weak constitution",
+    "Plus Zhi Shi, Hou Po | Severe accumulation with distention",
+    "Plus Gui Zhi, Bai Shao | Severe pains",
+    "Plus Ban Xia, Chen Pi, Huang Lian | Nausea, vomiting"
+   ]
+  },
+  {
+   "formula_id": "formula.hao_qin_qing_dan_tang",
+   "formula_zh": "蒿芩清膽湯",
+   "modifications_zh": [
+    "嘔吐明顯 → 加黃連、紫蘇葉",
+    "痰熱壅肺 → 加魚腥草、蘆根、冬瓜仁",
+    "濕痰偏重 → 加藿香、薏苡仁",
+    "舌苔厚膩、胸膈痞滿 → 加厚朴、藿香",
+    "小便不利 → 加澤瀉、車前子、通草"
+   ],
+   "modifications_en": [
+    "Pronounced vomiting → add Huang Lian and Zi Su Ye",
+    "Phlegm-heat in the Lungs → add Yu Xing Cao, Lu Gen and Dong Gua Ren",
+    "Severe damp and phlegm → add Huo Xiang and Yi Yi Ren",
+    "Thick greasy tongue coating with fullness in the chest and diaphragm → add Hou Po and Huo Xiang",
+    "Difficult urination → add Ze Xie, Che Qian Zi and Tong Cao"
+   ],
+   "evidence": "Table 97",
+   "evidence_line": 841,
+   "evidence_quotes": [
+    "Plus huang lian, zi su ye | Pronounced vomiting",
+    "Plus yu xing cao, lu gen, dong gua ren | Phlegm heat in lungs",
+    "Plus huo xiang, yi yi ren | Severe damp/phlegm",
+    "Plus hou po, huo xiang | Thick greasy tongue coating, fullness in chest and diaphragm",
+    "Plus ze xie, che qian zi, tong cao | Difficult urination"
+   ]
+  },
+  {
+   "formula_id": "formula.tong_xie_yao_fang",
+   "formula_zh": "痛瀉要方",
+   "modifications_zh": [
+    "久瀉 → 加升麻",
+    "便下膿血 → 加黃芩、白頭翁",
+    "舌苔黃膩 → 加黃連",
+    "裏急後重 → 加木香、檳榔",
+    "水瀉 → 加茯苓、乾薑、車前子",
+    "小便不利 → 加滑石"
+   ],
+   "modifications_en": [
+    "Long-term diarrhea → add Sheng Ma",
+    "Blood and pus in the stool → add Huang Qin and Bai Tou Weng",
+    "Yellow greasy tongue coating → add Huang Lian",
+    "Tenesmus → add Mu Xiang and Bing Lang",
+    "Watery diarrhea → add Fu Ling, Gan Jiang and Che Qian Zi",
+    "Urinary difficulty → add Hua Shi"
+   ],
+   "evidence": "Table 112",
+   "evidence_line": 963,
+   "evidence_quotes": [
+    "Plus sheng ma | Long-term diarrhea",
+    "Plus huang qin, bai tou weng | Blood & pus in stool",
+    "Plus huang lian | With yellow greasy tongue coating",
+    "Plus mu xiang, bing lang | tenesmus",
+    "Plus fu ling, gan jiang, che qian zi | Watery diarrhea",
+    "Plus hua shi | Urinary difficulty"
+   ]
+  },
+  {
+   "formula_id": "formula.ban_xia_xie_xin_tang",
+   "formula_zh": "半夏瀉心湯",
+   "modifications_zh": [
+    "熱重於寒 → 重用黃芩、黃連",
+    "痰濁上逆明顯 → 重用半夏",
+    "寒重於熱 → 重用乾薑",
+    "舌苔厚膩、乾嘔甚而無中氣虛 → 去人參、大棗，加枳實、生薑"
+   ],
+   "modifications_en": [
+    "Heat greater than cold → increase Huang Qin and Huang Lian",
+    "Pronounced turbidity rising up → increase Ban Xia",
+    "Cold greater than heat → increase Gan Jiang",
+    "Thick greasy tongue coating and severe dry heaves without middle Qi deficiency → remove Ren Shen and Da Zao; add Zhi Shi and Sheng Jiang"
+   ],
+   "evidence": "Table 116",
+   "evidence_line": 999,
+   "evidence_quotes": [
+    "More huang qin and huang lian | Heat > cold",
+    "More ban xia | Pronounced turbidity [too much acid come up]",
+    "More gan jiang | Cold > heat",
+    "-  Ren shen,  da zao;<br>+ Zhi shi,  sheng jiang | Thick greasy tongue coat [too much tonics not good], severe dry heaves w/o middle qi xu"
+   ]
+  },
+  {
+   "formula_id": "formula.zhu_ye_shi_gao_tang",
+   "formula_zh": "竹葉石膏湯",
+   "modifications_zh": [
+    "舌紅乾、口舌生瘡 → 加石斛、天花粉、北沙參",
+    "舌紅脈數、消穀善飢屬胃火 → 加知母、玄參、天花粉",
+    "胃熱輕微或無、胃氣陰兩虛 → 去石膏"
+   ],
+   "modifications_en": [
+    "Red dry tongue with canker sores in the mouth → add Shi Hu, Tian Hua Fen and Bei Sha Shen",
+    "Red tongue, rapid pulse and excessive hunger due to Stomach fire → add Zhi Mu, Xuan Shen and Tian Hua Fen",
+    "Mild or no Stomach heat with Stomach Qi and Yin deficiency → remove Shi Gao"
+   ],
+   "evidence": "Table 126",
+   "evidence_line": 1076,
+   "evidence_quotes": [
+    "Plus shi hu, tian hua fen, bai sha shen | Red dry tongue with canker sore in the mouth",
+    "Plus zhi mu, xuan shen, tian hua fen | Red tongue, rapid pulse with excessive hunger due to stomach fire",
+    "Minus shi gao | Mild/no stomach heat;<br>Stomach qi and yin xu"
+   ],
+   "notes": "source \"bai sha shen\" rendered as 北沙參 (Bei Sha Shen; likely source typo)"
+  },
+  {
+   "formula_id": "formula.qing_ying_tang",
+   "formula_zh": "清營湯",
+   "modifications_zh": [
+    "氣分火盛 → 加石膏、知母，或大青葉、板藍根",
+    "陰虛見脈細數 → 去黃連",
+    "營分熱盛 → 重用水牛角、生地、玄參",
+    "陰液耗傷甚 → 加沙參",
+    "抽搐震顫 → 加鉤藤、地龍"
+   ],
+   "modifications_en": [
+    "Severe Qi-level fire → add Shi Gao and Zhi Mu, or Da Qing Ye and Ban Lan Gen",
+    "Yin deficiency with thready rapid pulse → remove Huang Lian",
+    "Severe Ying-level heat → increase Shui Niu Jiao, Sheng Di and Xuan Shen",
+    "Severe Yin depletion → add Sha Shen",
+    "Tremors and spasms → add Gou Teng and Di Long"
+   ],
+   "evidence": "Table 130",
+   "evidence_line": 1110,
+   "evidence_quotes": [
+    "Plus shi gao, zhi mu, or da qing ye, ban lan gen | Severe qi-level fire",
+    "Minus huang lian | Yin xu: thready rapid pulse",
+    "Use more shui niu jiao, sheng di, xuan shen | Severe ying-level heat",
+    "Plus sha shen | Sever yin depletion",
+    "Plus gou teng, di long | tremors, spasms"
+   ]
+  },
+  {
+   "formula_id": "formula.xi_jiao_di_huang_tang",
+   "formula_zh": "犀角地黃湯",
+   "modifications_zh": [
+    "熱毒熾盛 → 加青黛、紫草",
+    "吐血 → 加側柏葉、白茅根、三七",
+    "便血 → 加槐花、地榆",
+    "衄血 → 加白茅根、黃芩",
+    "尿血 → 加白茅根、小薊"
+   ],
+   "modifications_en": [
+    "Severe heat toxin → add Qing Dai and Zi Cao",
+    "Vomiting of blood → add Ce Bai Ye, Bai Mao Gen and San Qi",
+    "Blood in the stool → add Huai Hua and Di Yu",
+    "Nosebleed → add Bai Mao Gen and Huang Qin",
+    "Blood in the urine → add Bai Mao Gen and Xiao Ji"
+   ],
+   "evidence": "Table 133",
+   "evidence_line": 1133,
+   "evidence_quotes": [
+    "Plus qing dai, zi cao | Severe heat toxin",
+    "Plus ce bai ye, bai mao gen, san qi | Vomiting with blood",
+    "Plus hui hua, di yu | Blood in stool",
+    "Plus bai mao gen, huang qin | Nosebleed",
+    "Plus bai mao gen, xiao ji | Blood in urine"
+   ],
+   "notes": "source \"hui hua\" normalized to 槐花 (Huai Hua; source typo)"
+  },
+  {
+   "formula_id": "formula.qing_wen_bai_du_yin",
+   "formula_zh": "清瘟敗毒飲",
+   "modifications_zh": [
+    "便秘 → 加大黃、芒硝",
+    "腮腺腫大 → 加金銀花、青黛",
+    "高熱甚 → 加大青葉、板藍根",
+    "頭痛如劈、視物模糊 → 加菊花、夏枯草",
+    "顏面腫脹 → 加紫花地丁、生大黃",
+    "腰痛、關節痠痛 → 加黃柏、知母"
+   ],
+   "modifications_en": [
+    "Constipation → add Da Huang and Mang Xiao",
+    "Swollen parotid gland → add Jin Yin Hua and Qing Dai",
+    "Very high fever → add Da Qing Ye and Ban Lan Gen",
+    "Splitting headache with blurred vision → add Ju Hua and Xia Ku Cao",
+    "Swollen face → add Zi Hua Di Ding and Sheng Da Huang",
+    "Low-back pain and sore joints → add Huang Bai and Zhi Mu"
+   ],
+   "evidence": "Table 138",
+   "evidence_line": 1179,
+   "evidence_quotes": [
+    "Plus da huang, mang xiao | constipation",
+    "Plus jin yin hua, qing dai | Swollen parotid gland",
+    "Plus da qing ye, ban lan gen | Very high fever",
+    "Plus ju hua, xia ku cao | Splitting HA, blurring vision",
+    "Plus zi hua di ding, sheng da huang | Swollen face",
+    "Plus huang bai, zhi mu | LBP, sore joints"
+   ]
+  },
+  {
+   "formula_id": "formula.liang_ge_san",
+   "formula_zh": "涼膈散",
+   "modifications_zh": [
+    "上焦熱盛 → 加梔子、天花粉、麥冬",
+    "咽喉腫痛 → 加桔梗、板藍根、山豆根",
+    "口舌生瘡 → 加黃連、生地",
+    "小兒驚厥 → 加鉤藤、羚羊角"
+   ],
+   "modifications_en": [
+    "Severe heat in the Upper Jiao → add Zhi Zi, Tian Hua Fen and Mai Dong",
+    "Sore throat → add Jie Geng, Ban Lan Gen and Shan Dou Gen",
+    "Mouth and tongue sores → add Huang Lian and Sheng Di",
+    "Infantile convulsion → add Gou Teng and Ling Yang Jiao"
+   ],
+   "evidence": "Table 147",
+   "evidence_line": 1249,
+   "evidence_quotes": [
+    "Plus zhi zi, tian hua fen, mai dong | Severe heat in upper jiao",
+    "Plus jie geng, ban lan gen, shan dou gen | Sore throat",
+    "Plus huang lian, sheng di | Mouth and tongue sores",
+    "Plus gou teng, ling yang jiao | Infantile convulsion"
+   ]
+  },
+  {
+   "formula_id": "formula.pu_ji_xiao_du_yin",
+   "formula_zh": "普濟消毒飲",
+   "modifications_zh": [
+    "表證仍在、裏熱較輕 → 減黃芩、黃連用量，加荊芥、防風、桑葉",
+    "表證已解、裏熱熾盛 → 去柴胡、薄荷，加金銀花、石膏、青黛",
+    "裏熱結聚成實 → 加大黃、枳實、芒硝",
+    "硬結腫塊日久 → 加丹皮、貝母、夏枯草、赤芍、絲瓜絡、陳皮",
+    "併發睪丸炎 → 加川楝子、龍膽草、蒲公英"
+   ],
+   "modifications_en": [
+    "Exterior still present with mild interior heat → reduce Huang Qin and Huang Lian; add Jing Jie, Fang Feng and Sang Ye",
+    "Blazing interior fire with the exterior resolved → remove Chai Hu and Bo He; add Jin Yin Hua, Shi Gao and Qing Dai",
+    "Interior formed heat clumping → add Da Huang, Zhi Shi and Mang Xiao",
+    "Long-standing hard lumps and nodules → add Dan Pi, Bei Mu, Xia Ku Cao, Chi Shao, Si Gua Luo and Chen Pi",
+    "Complicated by orchitis → add Chuan Lian Zi, Long Dan Cao and Pu Gong Ying"
+   ],
+   "evidence": "Table 151",
+   "evidence_line": 1288,
+   "evidence_quotes": [
+    "Cut down huang qin, huang lian; plus jing jie, fang feng, sang ye | Still with the exterior, mild interior heat",
+    "Minus chai hu, bo he;<br>Plus jin yin hua, shi gao, qing dai | Blazing interior heat fire with the exterior is over",
+    "Plus da huang, zhi shi, mang xiao | With interior formed heat clumping",
+    "Plus dan pi, bei mu, xia ku cao, chi shao, si gua luo, chen pi | Hard lumps/nodules that has been there long-term",
+    "Plus chuan lian zi, long dan cao, pu gong ying | Complicated with orchitis"
+   ]
+  },
+  {
+   "formula_id": "formula.zuo_jin_wan",
+   "formula_zh": "左金丸",
+   "modifications_zh": [
+    "脅肋脹痛甚 → 加川楝子、延胡索",
+    "吞酸明顯 → 加海螵蛸（烏賊骨）、煅瓦楞子"
+   ],
+   "modifications_en": [
+    "Severe hypochondriac pain and distension → add Chuan Lian Zi and Yan Hu Suo",
+    "Pronounced acid reflux → add Hai Piao Xiao (Wu Zei Gu) and Duan Wa Leng Zi"
+   ],
+   "evidence": "Table 163",
+   "evidence_line": 1389,
+   "evidence_quotes": [
+    "Plus chuan lian zi, yan hu suo | Severe hypochondriac pain and distention",
+    "Plus hai piao xiao(wu zei gu), duan wa leng zi(cockle shell) | Pronounced acid reflux"
+   ]
+  },
+  {
+   "formula_id": "formula.xie_bai_san",
+   "formula_zh": "瀉白散",
+   "modifications_zh": [
+    "口舌生瘡 → 加生地、赤芍",
+    "陰虛午後潮熱 → 加青蒿、鱉甲",
+    "便秘 → 加大黃",
+    "痰輕 → 加茯苓，去粳米",
+    "熱甚 → 加黃芩、知母"
+   ],
+   "modifications_en": [
+    "Mouth and tongue sores → add Sheng Di and Chi Shao",
+    "Afternoon fever from deficiency → add Qing Hao and Bie Jia",
+    "Constipation → add Da Huang",
+    "Mild phlegm → add Fu Ling; remove Geng Mi",
+    "Severe heat → add Huang Qin and Zhi Mu"
+   ],
+   "evidence": "Table 167",
+   "evidence_line": 1420,
+   "evidence_quotes": [
+    "Plus sheng di, chi shao | Mouth and tongue sores",
+    "Plus qing hao, bie jia | Afternoon fever from xu",
+    "Plus da huang | constipation",
+    "Plus fu ling; minus geng mi | Mild phlegm",
+    "Plus huang qin, zhi mu | Severe heat"
+   ]
+  },
+  {
+   "formula_id": "formula.qing_wei_san",
+   "formula_zh": "清胃散",
+   "modifications_zh": [
+    "胃火熾盛 → 加石膏",
+    "齒齦出血 → 加牛膝",
+    "熱毒 → 加金銀花、連翹",
+    "口渴甚 → 加玄參、天花粉"
+   ],
+   "modifications_en": [
+    "Blazing Stomach fire → add Shi Gao",
+    "Gum bleeding → add Niu Xi",
+    "Heat with toxin → add Jin Yin Hua and Lian Qiao",
+    "Severe thirst → add Xuan Shen and Tian Hua Fen"
+   ],
+   "evidence": "Table 171",
+   "evidence_line": 1461,
+   "evidence_quotes": [
+    "Plus shi gao | Blazing stomach fire",
+    "Plus niu xi | Gum bleeding",
+    "Plus jin yin hua, lian qiao | Heat and toxin",
+    "Plus xuan shen, tian hua fen | Severe thirst"
+   ]
+  },
+  {
+   "formula_id": "formula.yu_nu_jian",
+   "formula_zh": "玉女煎",
+   "modifications_zh": [
+    "陰虛有熱甚 → 加玄參、女貞子、黃柏",
+    "出血甚 → 重用石膏、知母，加白茅根、丹皮",
+    "汗多口渴甚 → 加五味子",
+    "胃火熾盛 → 加梔子、大黃，以生地易熟地"
+   ],
+   "modifications_en": [
+    "Severe Yin deficiency with heat → add Xuan Shen, Nu Zhen Zi and Huang Bai",
+    "Severe bleeding → increase Shi Gao and Zhi Mu; add Bai Mao Gen and Dan Pi",
+    "Profuse sweating with severe thirst → add Wu Wei Zi",
+    "Blazing Stomach fire → add Zhi Zi and Da Huang; substitute Sheng Di for Shu Di"
+   ],
+   "evidence": "Table 175",
+   "evidence_line": 1499,
+   "evidence_quotes": [
+    "Plus xuan shen, nu zhen zi, huang bai | Severe yin xu with heat",
+    "More shi gao, zhi mu; plus bai mao gen, dan pi | Severe bleeding",
+    "Plus wu wei zi | Profuse sweating, severe thirst",
+    "Plus zhi zi, da huang; sheng di replaces shu di | Blazing St fire"
+   ]
+  },
+  {
+   "formula_id": "formula.shao_yao_tang",
+   "formula_zh": "芍藥湯",
+   "modifications_zh": [
+    "便血多於膿 → 以當歸尾易當歸，加地榆、丹皮",
+    "舌乾口渴 → 去肉桂",
+    "兼食積 → 去甘草，加焦山楂、神麴",
+    "熱毒甚 → 加白頭翁、金銀花"
+   ],
+   "modifications_en": [
+    "More blood than pus → substitute Dang Gui Wei for Dang Gui; add Di Yu and Dan Pi",
+    "Dry tongue and thirst → remove Rou Gui",
+    "With food stagnation → remove Gan Cao; add Jiao Shan Zha and Shen Qu",
+    "Severe heat toxin → add Bai Tou Weng and Jin Yin Hua"
+   ],
+   "evidence": "Table 179",
+   "evidence_line": 1544,
+   "evidence_quotes": [
+    "Dang gui wei subs dang gui;  plus di yu, dan pi | More blood than pus",
+    "Minus rou gui | Dry tongue, thirst",
+    "Minus gan cao; plus jiao shan zha, shen qu | With food stagnation",
+    "Plus bai tou weng, jin yin hua | Severe heat-toxin"
+   ]
+  },
+  {
+   "formula_id": "formula.bai_tou_weng_tang",
+   "formula_zh": "白頭翁湯",
+   "modifications_zh": [
+    "血分熱毒甚 → 加生地、丹皮、金銀花",
+    "裏急後重甚 → 加木香、檳榔、白芍",
+    "便下膿血多 → 加赤芍、丹皮、地榆",
+    "兼食積 → 加焦山楂、枳實"
+   ],
+   "modifications_en": [
+    "Severe heat toxin in the Blood → add Sheng Di, Dan Pi and Jin Yin Hua",
+    "Severe tenesmus → add Mu Xiang, Bing Lang and Bai Shao",
+    "More pus and blood in the stool → add Chi Shao, Dan Pi and Di Yu",
+    "With food stagnation → add charred (Jiao) Shan Zha and Zhi Shi"
+   ],
+   "evidence": "Table 183",
+   "evidence_line": 1584,
+   "evidence_quotes": [
+    "Plus sheng di, dan pi, jin yin hua | Severe heat toxin in blood",
+    "Plus mu xiang, bing lang, bai shao | Severe tenesmus",
+    "Plus chi shao, dan pi, di yu | More pus and blood in stool",
+    "Plus jiao(charred) shan zha, zhi shi | With food stagnation"
+   ]
+  },
+  {
+   "formula_id": "formula.qing_gu_san",
+   "formula_zh": "清骨散",
+   "modifications_zh": [
+    "兼血虛 → 加當歸、芍藥、生地",
+    "兼氣虛 → 加黃耆、黨參",
+    "兼咳嗽 → 加阿膠、麥冬、五味子",
+    "兼脾虛 → 去秦艽、知母、胡黃連，加山藥、白扁豆"
+   ],
+   "modifications_en": [
+    "With Blood deficiency → add Dang Gui, Shao Yao and Sheng Di",
+    "With Qi deficiency → add Huang Qi and Dang Shen",
+    "With coughing → add E Jiao, Mai Dong and Wu Wei Zi",
+    "With Spleen deficiency → remove Qin Jiao, Zhi Mu and Hu Huang Lian; add Shan Yao and Bai Bian Dou"
+   ],
+   "evidence": "Table 191",
+   "evidence_line": 1656,
+   "evidence_quotes": [
+    "Plus dang gui, shao yao, sheng di | With blood xu",
+    "Plus huang qi, dang shen | With qi xu",
+    "Plus e jiao, mai dong, wu wei zi | With coughing",
+    "Minus qin jiao, zhi mu, hu huang lian; plus shan yao, bai bian dou | With Spleen xu"
+   ]
+  },
+  {
+   "formula_id": "formula.dang_gui_liu_huang_tang",
+   "formula_zh": "當歸六黃湯",
+   "modifications_zh": [
+    "虛火較輕 → 去黃連、黃芩，加知母",
+    "陰虛陽亢 → 加白芍、龜板",
+    "盜汗甚 → 加煅龍骨、煅牡蠣、五味子、麻黃根",
+    "自汗 → 去黃連、黃芩、黃柏，加黨參、浮小麥、白朮",
+    "兼濕熱 → 加梔子、六一散、車前子",
+    "兼耳鳴眩暈 → 加龍膽草、磁石"
+   ],
+   "modifications_en": [
+    "Mild deficiency fire → remove Huang Lian and Huang Qin; add Zhi Mu",
+    "Excess Yang rising with Yin deficiency → add Bai Shao and Gui Ban",
+    "Severe night sweats → add Duan Long Gu, Duan Mu Li, Wu Wei Zi and Ma Huang Gen",
+    "Spontaneous sweating → remove Huang Lian, Huang Qin and Huang Bai; add Dang Shen, Fu Xiao Mai and Bai Zhu",
+    "With Damp-Heat → add Zhi Zi, Liu Yi San and Che Qian Zi",
+    "With tinnitus and dizziness → add Long Dan Cao and Ci Shi"
+   ],
+   "evidence": "Table 194",
+   "evidence_line": 1682,
+   "evidence_quotes": [
+    "- huang lian, huang qin; <br>+ zhi mu | Mild xu fire",
+    "+ bai shao, gui ban | Excess yang rises with yin xu",
+    "+ duan long gu, duan mu li, wu wei zi, ma huang gen | Severe night sweats",
+    "- huang lian, huang qin, hunag bai;<br>+ dang shen, fu xiao mai, bai zhu | Spontaneous sweats",
+    "+ zhi zi, liu yi san, che qian zi | With damp-heat",
+    "+ long dan cao, ci shi | With tinnitus, dizziness"
+   ],
+   "notes": "source \"hunag bai\" normalized to 黃柏 (Huang Bai; source typo)"
+  },
+  {
+   "formula_id": "formula.liu_yi_san",
+   "formula_zh": "六一散",
+   "modifications_zh": [
+    "兼風寒 → 加蔥白、淡豆豉",
+    "重症 → 加西瓜霜、淡竹葉",
+    "心煩甚 → 加梔子、淡竹葉",
+    "氣陰兩傷 → 加西洋參",
+    "血淋 → 加白茅根、小薊",
+    "膀胱炎或尿道炎 → 加黃柏、金錢草",
+    "暑熱傷津無濕 → 以半量石膏易滑石",
+    "口渴甚、舌紅屬陰津虧虛 → 加麥冬、沙參、石斛、知母"
+   ],
+   "modifications_en": [
+    "With Wind-Cold → add Cong Bai and Dan Dou Chi",
+    "Severe cases → add Xi Gua Shuang and Dan Zhu Ye",
+    "Severe irritability → add Zhi Zi and Dan Zhu Ye",
+    "Injury to Qi and Yin → add Xi Yang Shen",
+    "Bloody Lin syndrome → add Bai Mao Gen and Xiao Ji",
+    "Cystitis or urethritis → add Huang Bai and Jin Qian Cao",
+    "Dry summerheat → substitute Shi Gao at half the dosage for Hua Shi",
+    "Severe thirst and red tongue from Yin-fluid deficiency → add Mai Dong, Sha Shen, Shi Hu and Zhi Mu"
+   ],
+   "evidence": "Table 198",
+   "evidence_line": 1713,
+   "evidence_quotes": [
+    "Plus cong bai, dan dou chi | With w-c",
+    "Plus xi gua shuang, dan zhu ye | Severe cases",
+    "Plus zhi zi, dan zhu ye | Severe irritability",
+    "Plus xi yang shen | Injury to qi and yin",
+    "Plus bai mao gen, xiao ji | Bloody Lin sx",
+    "Plus huang bai, jin qian cao | Cystitis, or urethritis",
+    "Sub shi gao for hua shi with half dosage | Dry summerheat",
+    "Plus mai dong, sha shen, shi hu, zhi mu | Severe thirst, red tongue – yin fluids xu"
+   ]
+  },
+  {
+   "formula_id": "formula.dang_gui_si_ni_tang",
+   "formula_zh": "當歸四逆湯",
+   "modifications_zh": [
+    "足、腿、股、腰冷痛 → 加續斷、牛膝、雞血藤",
+    "巔頂頭痛、嘔吐白色泡沫涎沫 → 加生薑、吳茱萸",
+    "經行冷痛、疝氣、脈沉肢冷 → 加烏藥、小茴香、木香、高良薑",
+    "眩暈、耳鳴、慢性頭痛 → 加白芷、防風"
+   ],
+   "modifications_en": [
+    "Cold pains in the foot, leg, thigh and low back → add Xu Duan, Niu Xi and Ji Xue Teng",
+    "Vertex headache with vomiting of white foamy mucus → add Sheng Jiang and Wu Zhu Yu",
+    "Menstrual cold cramping and hernial disorders with a deep pulse and cold limbs → add Wu Yao, Xiao Hui Xiang, Mu Xiang and Gao Liang Jiang",
+    "Vertigo, tinnitus and chronic headache → add Bai Zhi and Fang Feng"
+   ],
+   "evidence": "Table 208",
+   "evidence_line": 1798,
+   "evidence_quotes": [
+    "+ xu duan, niu xi, ji xue teng | Cold pains in foot, leg, thigh, and low back",
+    "+ plus sheng jiang, wu zhu yu | Vertex headache, vomiting of white foamy mucus",
+    "+ wu yao, xiao hui xiang, mu xiang, gao liang jiang | Menstral cold cramping, hernial disorders, deep pulse, cold limbs",
+    "+ bai zhi, fang feng | Vertigo, tinnitus, chronic headache"
+   ]
+  },
+  {
+   "formula_id": "formula.li_zhong_wan",
+   "formula_zh": "理中丸",
+   "modifications_zh": [
+    "嘔吐甚 → 加生薑，去白朮",
+    "寒甚 → 加附子、肉桂",
+    "兼心悸 → 加茯苓",
+    "腹滿 → 加附子，去白朮",
+    "腹痛甚 → 重用人參",
+    "陽虛失血 → 加艾葉、黃耆、阿膠，以炮薑易乾薑"
+   ],
+   "modifications_en": [
+    "Severe vomiting → add Sheng Jiang; remove Bai Zhu",
+    "Severe cold → add Fu Zi and Rou Gui",
+    "With palpitations → add Fu Ling",
+    "Abdominal fullness → add Fu Zi; remove Bai Zhu",
+    "Severe abdominal pain → increase Ren Shen",
+    "Bleeding from Yang deficiency → add Ai Ye, Huang Qi and E Jiao; replace Gan Jiang with Pao Jiang"
+   ],
+   "evidence": "Table 213",
+   "evidence_line": 1834,
+   "evidence_quotes": [
+    "+ sheng jiang<br>-  bai zhu | Severe vomiting",
+    "+ fu zi, rou gui | Severe cold",
+    "+ fu ling | With palpitations",
+    "+ fu zi<br>-  bai zhu | Abdominal fullness",
+    "+ more ren shen | Severe abdominal pain",
+    "+ ai ye, huang qi, e jiao<br>Replace gan jiang with pao jiang | Bleeding from yang xu"
+   ]
+  },
+  {
+   "formula_id": "formula.xiao_jian_zhong_tang",
+   "formula_zh": "小建中湯",
+   "modifications_zh": [
+    "寒甚 → 加川椒，以肉桂易桂枝",
+    "便溏 → 加白朮、白扁豆",
+    "兼氣滯 → 加木香、陳皮",
+    "蟲積 → 加烏梅、川椒，減飴糖、白芍"
+   ],
+   "modifications_en": [
+    "More severe cold → add Chuan Jiao; substitute Rou Gui for Gui Zhi",
+    "Loose stools → add Bai Zhu and Bai Bian Dou",
+    "With Qi stagnation → add Mu Xiang and Chen Pi",
+    "Parasites → add Wu Mei and Chuan Jiao; reduce Yi Tang and Bai Shao"
+   ],
+   "evidence": "Table 217",
+   "evidence_line": 1874,
+   "evidence_quotes": [
+    "+ chuan jiao<br>Sub rou gui for gui zhi | More severe cold",
+    "+ bai zhu, bai bian dou | Loose stools",
+    "+ mu xiang, chen pi | With qi stagnation",
+    "+ wu mei, chuan jiao<br>Cut down yi tang, bai shao | Parasites"
+   ]
+  },
+  {
+   "formula_id": "formula.si_ni_tang",
+   "formula_zh": "四逆湯",
+   "modifications_zh": [
+    "虛寒水腫、帶下 → 加黨參、茯苓、澤瀉",
+    "腰痛 → 加桑寄生、杜仲",
+    "體弱脈微 → 加紅參、黃耆",
+    "寒甚、汗出過多、下利甚 → 重用附子、乾薑，加龍骨、牡蠣",
+    "頑痺 → 加桂枝、白朮"
+   ],
+   "modifications_en": [
+    "Edema or leukorrhea from deficiency cold → add Dang Shen, Fu Ling and Ze Xie",
+    "Low-back pain → add Sang Ji Sheng and Du Zhong",
+    "Weak constitution with a frail pulse → add Hong Shen and Huang Qi",
+    "Severe cold with excessive sweating and severe diarrhea → increase Fu Zi and Gan Jiang; add Long Gu and Mu Li",
+    "Intractable Bi syndrome → add Gui Zhi and Bai Zhu"
+   ],
+   "evidence": "Table 222",
+   "evidence_line": 1909,
+   "evidence_quotes": [
+    "+ dang shen, fu ling, ze xie | Edema, leukorrhea from xu cold",
+    "+ sang ji sheng, du zhong | LBP",
+    "+ hong shen, huang qi | Weak constitution, frail pulse",
+    "Increase fu zi, gan jiang<br>+ long gu, mu li | Severe cold, excessive sweating, severe diarrhea",
+    "+ gui zhi, bai zhu | Intractable Bi sx"
+   ]
+  },
+  {
+   "formula_id": "formula.da_chai_hu_tang",
+   "formula_zh": "大柴胡湯",
+   "modifications_zh": [
+    "濕熱甚 → 加蒲公英、梔子、鬱金",
+    "腹痛甚 → 加延胡索、香附、川楝子",
+    "納差、便溏 → 加蒼朮、厚朴、陳皮、雞內金",
+    "體質虛弱 → 加太子參、當歸"
+   ],
+   "modifications_en": [
+    "Severe Damp-Heat → add Pu Gong Ying, Zhi Zi and Yu Jin",
+    "Severe abdominal pain → add Yan Hu Suo, Xiang Fu and Chuan Lian Zi",
+    "Poor appetite with loose stools → add Cang Zhu, Hou Po, Chen Pi and Ji Nei Jin",
+    "Weak constitution → add Tai Zi Shen and Dang Gui"
+   ],
+   "evidence": "Table 228",
+   "evidence_line": 1957,
+   "evidence_quotes": [
+    "+ pu gong ying, zhi zi,   yu jin | Severe damp-heat",
+    "+ yan hu suo, xiang fu, chuan lian zi | Severe abdominal pain",
+    "+ cang zhu, hou po, chen pi, ji nei jin | Poor appetite, loose stools",
+    "+ tai zi shen, dang gui | Weak constitution"
+   ]
+  },
+  {
+   "formula_id": "formula.fang_feng_tong_sheng_san",
+   "formula_zh": "防风通圣散",
+   "modifications_zh": [
+    "表證輕 → 去麻黃",
+    "裏熱輕 → 去石膏",
+    "無便秘 → 去大黃、芒硝",
+    "咳嗽有痰 → 加薑半夏",
+    "體質壯實 → 去當歸、白芍、白朮"
+   ],
+   "modifications_en": [
+    "Mild exterior symptoms → remove Ma Huang",
+    "Mild interior heat → remove Shi Gao",
+    "Without constipation → remove Da Huang and Mang Xiao",
+    "Productive cough → add Jiang Ban Xia",
+    "Strong constitution → remove Dang Gui, Bai Shao and Bai Zhu"
+   ],
+   "evidence": "Table 232",
+   "evidence_line": 2001,
+   "evidence_quotes": [
+    "- ma huang | Mild exterior sx",
+    "- shi gao | Mild interior heat",
+    "- da huang, mang xiao | W/o constipation",
+    "+ jiang ban xia | With productive cough",
+    "- dang gui, bai shao, bai zhu | Strong constitution"
+   ],
+   "notes": "right-hand columns of source table are ingredient analysis, excluded"
+  },
+  {
+   "formula_id": "formula.ge_gen_huang_qin_huang_lian_tang",
+   "formula_zh": "葛根黄芩黄连汤",
+   "modifications_zh": [
+    "腹痛腸絞 → 加木香、白芍",
+    "兼食積 → 加炒山楂、神麴",
+    "便血 → 加牡丹皮、槐花、地榆",
+    "表證明顯 → 加桑白皮、薄荷"
+   ],
+   "modifications_en": [
+    "Abdominal cramps → add Mu Xiang and Bai Shao",
+    "With food stagnation → add Chao Shan Zha and Shen Qu",
+    "Bloody stool → add Mu Dan Pi, Huai Hua and Di Yu",
+    "Prominent exterior symptoms → add Sang Bai Pi and Bo He"
+   ],
+   "evidence": "Table 236",
+   "evidence_line": 2037,
+   "evidence_quotes": [
+    "+ mu xiang, bai shao | With abdominal cramps",
+    "+ chao shan zha, shen qu | With food stagnation",
+    "+ mu dan pi, hui hua, di yu | With boody stool",
+    "+ sang bai pi, bo he | Prominent exterior sx"
+   ],
+   "notes": "source \"hui hua\"/\"boody\" normalized to 槐花/bloody (source typos)"
+  },
+  {
+   "formula_id": "formula.si_jun_zi_tang",
+   "formula_zh": "四君子湯",
+   "modifications_zh": [
+    "噁心嘔吐 → 加半夏",
+    "心悸失眠 → 加酸棗仁",
+    "胸膈痞悶 → 加枳殼、陳皮",
+    "兼腎陽虛 → 加附子",
+    "氣虛甚 → 加黃耆"
+   ],
+   "modifications_en": [
+    "Nausea and vomiting → add Ban Xia",
+    "Palpitations and insomnia → add Suan Zao Ren",
+    "Fullness and stifling sensation in the chest and diaphragm → add Zhi Ke and Chen Pi",
+    "With Kidney Yang deficiency → add Fu Zi",
+    "Severe Qi deficiency → add Huang Qi"
+   ],
+   "evidence": "Table 247",
+   "evidence_line": 2134,
+   "evidence_quotes": [
+    "+ ban xia | With nausea, vomiting",
+    "+  suan zao ren | With palpitations, insomnia",
+    "+ zhi ke, chen pi | With fullness & stifling sensation in chest and diaphragm",
+    "+ fu zi | With kidney yang xu",
+    "+ huang qi | Severe Qi xu"
+   ]
+  },
+  {
+   "formula_id": "formula.shen_ling_bai_zhu_san",
+   "formula_zh": "參苓白朮散",
+   "modifications_zh": [
+    "裏寒腹痛泄瀉 → 加乾薑、肉桂",
+    "濕熱泄瀉 → 加黃連、車前子、澤瀉",
+    "消化不良、納差 → 加神麴、麥芽、山楂",
+    "經行泄瀉 → 加香附、木香"
+   ],
+   "modifications_en": [
+    "Diarrhea with cramps due to interior cold → add Gan Jiang and Rou Gui",
+    "Diarrhea due to Damp-Heat → add Huang Lian, Che Qian Zi and Ze Xie",
+    "Poor digestion and anorexia → add Shen Qu, Mai Ya and Shan Zha",
+    "Diarrhea with the onset of menstrual flow → add Xiang Fu and Mu Xiang"
+   ],
+   "evidence": "Table 251",
+   "evidence_line": 2174,
+   "evidence_quotes": [
+    "+ gan jiang, rou gui | Diarrhea with cramps due to internal cold",
+    "+ huang lian, che qian zi, ze xie | Diarrhea due to damp-heat",
+    "+ shen qu, mai ya, shan zha | With poor digestion, anorexia",
+    "+ xiang fu, mu xiang | Diarrhea onset with menstrual flow"
+   ],
+   "notes": "right-hand columns of source table are ingredient analysis, excluded"
+  },
+  {
+   "formula_id": "formula.bu_zhong_yi_qi_tang",
+   "formula_zh": "補中益氣湯",
+   "modifications_zh": [
+    "腹痛 → 加白芍",
+    "氣陷甚 → 加枳殼，黃耆加倍",
+    "兼咳嗽 → 加五味子、麥冬",
+    "自汗甚 → 加白芍、五味子",
+    "兼氣滯 → 加木香、枳殼"
+   ],
+   "modifications_en": [
+    "Abdominal pain → add Bai Shao",
+    "Severe Qi sinking → add Zhi Ke; double Huang Qi",
+    "With cough → add Wu Wei Zi and Mai Dong",
+    "Severe spontaneous sweating → add Bai Shao and Wu Wei Zi",
+    "With Qi stagnation → add Mu Xiang and Zhi Ke"
+   ],
+   "evidence": "Table 255",
+   "evidence_line": 2211,
+   "evidence_quotes": [
+    "+ bai shao | With abdominal pain",
+    "+ zhi ke, double huang qi | Severe qi sinking",
+    "+ wu wei zi, mai dong | With cough",
+    "+ bai shao, wu wei zi | Severe spontaneous sweating",
+    "+ mu xiang, zhi ke | With qi stagnation"
+   ]
+  },
+  {
+   "formula_id": "formula.sheng_mai_san",
+   "formula_zh": "生脈散",
+   "modifications_zh": [
+    "兼咳嗽 → 加百合、款冬花",
+    "汗多 → 加麻黃根、浮小麥",
+    "口渴甚 → 加石斛、葛根"
+   ],
+   "modifications_en": [
+    "With cough → add Bai He and Kuan Dong Hua",
+    "Profuse sweating → add Ma Huang Gen and Fu Xiao Mai",
+    "Severe thirst → add Shi Hu and Ge Gen"
+   ],
+   "evidence": "Table 259",
+   "evidence_line": 2245,
+   "evidence_quotes": [
+    "+ bai he, kuan dong hua | With cough",
+    "+ ma huang gen, fu xiao mai | Profuse sweating",
+    "+ shi hu, ge gen | Severe thirst"
+   ]
+  },
+  {
+   "formula_id": "formula.dang_gui_bu_xue_tang",
+   "formula_zh": "當歸補血湯",
+   "modifications_zh": [
+    "經期、產後外感發熱頭痛 → 加蔥白、生薑、大棗、淡豆豉",
+    "瘡瘍潰久不斂、毒盛正虛 → 加金銀花、甘草",
+    "過敏性紫癜 → 加懷牛膝、僵蠶",
+    "失血氣虛出血不止 → 加阿膠、山茱萸、煅龍骨"
+   ],
+   "modifications_en": [
+    "Menstrual or postpartum headache and fever from external invasion → add Cong Bai, Sheng Jiang, Da Zao and Dan Dou Chi",
+    "Intractable ulcerated sores with toxin and deficiency → add Jin Yin Hua and Gan Cao",
+    "Allergic purpura → add Huai Niu Xi and Jiang Can",
+    "Persistent bleeding due to Qi deficiency from blood loss → add E Jiao, Shan Zhu Yu and Duan Long Gu"
+   ],
+   "evidence": "Table 272",
+   "evidence_line": 2347,
+   "evidence_quotes": [
+    "+ cong bai, sheng jiang, da zao, dan dou chi | Menstrual and postpartum HA, fever due to EPI invasion",
+    "+ jin yin hua, gan cao | Intractable ulcerated sores with toxin and xu",
+    "+ hui niu xi, jiang can | Allergic purpura",
+    "+ e jiao, shan zhu yu, duan long gu | Persistent bleeding due to qi xu from blood loss"
+   ],
+   "notes": "source \"hui niu xi\" normalized to 懷牛膝 (Huai Niu Xi; source typo)"
+  },
+  {
+   "formula_id": "formula.ba_zhen_tang",
+   "formula_zh": "八珍湯",
+   "modifications_zh": [
+    "脘腹脹滿 → 加枳殼、厚朴、木香",
+    "納差、食積 → 加砂仁、山楂、麥芽、神麴",
+    "泄瀉、水腫 → 加山藥、薏苡仁、車前子",
+    "虛性久漏不止 → 去川芎，加黃耆、五味子"
+   ],
+   "modifications_en": [
+    "Gastric and abdominal fullness and distension → add Zhi Ke, Hou Po and Mu Xiang",
+    "Poor appetite with food stagnation → add Sha Ren, Shan Zha, Mai Ya and Shen Qu",
+    "Diarrhea and edema → add Shan Yao, Yi Yi Ren and Che Qian Zi",
+    "Chronic leakage from deficiency → remove Chuan Xiong; add Huang Qi and Wu Wei Zi"
+   ],
+   "evidence": "Table 277",
+   "evidence_line": 2390,
+   "evidence_quotes": [
+    "+ zhi ke, hou po, mu xiang | Gastric and abdominal fullness/distention",
+    "+ sha ren, shan zha, mai ya, shen qu | Poor appetite, food stagnation",
+    "+ shan yao, yi yi ren, che qian zi | Diarrhea, edema",
+    "- chuan xiong<br>+ huang qi, wu wei zi | Chronic leakage from xu"
+   ]
+  },
+  {
+   "formula_id": "formula.gui_pi_tang",
+   "formula_zh": "歸脾湯",
+   "modifications_zh": [
+    "崩漏屬虛寒 → 加艾葉、炮薑",
+    "崩漏兼熱 → 加生地、阿膠",
+    "皮下出血 → 加阿膠、何首烏、鹿角膠",
+    "出血過多 → 加山茱萸、煅龍骨、煅牡蠣"
+   ],
+   "modifications_en": [
+    "Uterine bleeding or spotting with cold → add Ai Ye and Pao Jiang",
+    "Uterine bleeding with heat → add Sheng Di and E Jiao",
+    "Subcutaneous bleeding → add E Jiao, He Shou Wu and Lu Jiao Jiao",
+    "Excessive bleeding → add Shan Zhu Yu, Duan Long Gu and Duan Mu Li"
+   ],
+   "evidence": "Table 281",
+   "evidence_line": 2433,
+   "evidence_quotes": [
+    "+ ai ye, pao jiang | Uterine bleeding/spotting with cold",
+    "+ sheng di, e jiao | Uterine bleeding with heat",
+    "+ e jiao, he shou wu, lu jiao jiao | Subcutaneous bleeding",
+    "+ shan zhu yu, duan long gu, duan mu li | Excessive bleeding"
+   ],
+   "notes": "right-hand columns of source table are ingredient analysis, excluded"
+  },
+  {
+   "formula_id": "formula.zhi_gan_cao_tang",
+   "formula_zh": "炙甘草湯",
+   "modifications_zh": [
+    "便溏 → 去火麻仁",
+    "失眠 → 加酸棗仁、柏子仁",
+    "心悸甚 → 加龍齒、琥珀",
+    "水腫 → 加茯苓、車前子"
+   ],
+   "modifications_en": [
+    "Loose stools → remove Huo Ma Ren",
+    "Insomnia → add Suan Zao Ren and Bai Zi Ren",
+    "Severe palpitations → add Long Chi and Hu Po",
+    "Edema → add Fu Ling and Che Qian Zi"
+   ],
+   "evidence": "Table 285",
+   "evidence_line": 2472,
+   "evidence_quotes": [
+    "- huo ma ren | Loose stools",
+    "+ suan zao ren, bai zi ren | insomnia",
+    "+ long chi, hu po | Severe palpitations",
+    "+ fu ling, che qian zi | edema"
+   ],
+   "notes": "right-hand columns of source table are ingredient analysis, excluded"
+  },
+  {
+   "formula_id": "formula.jin_gui_shen_qi_wan",
+   "formula_zh": "金匱腎氣丸",
+   "modifications_zh": [
+    "腰痠、下肢無力 → 加杜仲、枸杞子",
+    "性慾低下 → 加淫羊藿、補骨脂",
+    "需加強溫腎之力 → 加肉桂，去桂枝",
+    "小便清長頻多、形體消瘦 → 加補骨脂、鹿茸、巴戟天",
+    "夜尿多 → 加五味子"
+   ],
+   "modifications_en": [
+    "Sore low back with weak lower limbs → add Du Zhong and Gou Qi Zi",
+    "Low sex drive → add Yin Yang Huo and Bu Gu Zhi",
+    "For a stronger Kidney-warming effect → add Rou Gui; remove Gui Zhi",
+    "Clear, frequent and copious urination with emaciation → add Bu Gu Zhi, Lu Rong and Ba Ji Tian",
+    "Night urination → add Wu Wei Zi"
+   ],
+   "evidence": "Table 290",
+   "evidence_line": 2513,
+   "evidence_quotes": [
+    "+ du zhong, gou qi zi | Sore LB, weak lower limbs",
+    "+ yin yang huo, bu gu zhi | Low sex drive",
+    "+ rou gui;  - gui zhi | Stronger K-warming effect",
+    "+ bu gu zhi, lu rong, ba ji | Clear, frequent, copious urination with emaciation",
+    "+ wu wei zi | Night urination"
+   ],
+   "notes": "left-hand columns of source table are ingredient analysis, excluded; third row indication is stated as a purpose in the source"
+  },
+  {
+   "formula_id": "formula.liu_wei_di_huang_wan",
+   "formula_zh": "六味地黃丸",
+   "modifications_zh": [
+    "陰虛火旺 → 加知母、玄參、黃柏",
+    "便溏 → 加蓮子、芡實，重用山藥、茯苓，減熟地",
+    "兼脾虛氣滯 → 加白朮、砂仁、陳皮",
+    "陰液虧耗甚兼熱象 → 加生地，去熟地"
+   ],
+   "modifications_en": [
+    "Yin deficiency with fire → add Zhi Mu, Xuan Shen and Huang Bai",
+    "Loose stools → add Lian Zi and Qian Shi; increase Shan Yao and Fu Ling; reduce Shu Di",
+    "With Spleen deficiency and Qi stagnation → add Bai Zhu, Sha Ren and Chen Pi",
+    "Severe Yin-fluid depletion with heat signs → add Sheng Di; remove Shu Di"
+   ],
+   "evidence": "Table 299",
+   "evidence_line": 2598,
+   "evidence_quotes": [
+    "+ zhi mu, xuan shen, huang bai | Yin xu with fire",
+    "+ lian zi, qian shi, more shan yao, fu ling; - less shu di | With loose stools",
+    "+ bai zhu, sha ren, chen pi | With Sp xu and qi stagnation",
+    "+ sheng di<br>- shu di | Severe yin-fluids depletion with heat signs"
+   ],
+   "notes": "owner: header T297 corrupted to \"Jun Wan [六味地黄丸]\"; zh bracket confirms Liu Wei Di Huang Wan"
+  },
+  {
+   "formula_id": "formula.da_bu_yin_wan",
+   "formula_zh": "大补阴丸",
+   "modifications_zh": [
+    "陰虛甚 → 加天冬、麥冬",
+    "盜汗甚 → 加牡蠣、浮小麥",
+    "遺精 → 加金櫻子、芡實、桑螵蛸",
+    "咳嗽痰難咯 → 加百部、貝母、款冬花"
+   ],
+   "modifications_en": [
+    "Severe Yin deficiency → add Tian Dong and Mai Dong",
+    "Severe night sweats → add Mu Li and Fu Xiao Mai",
+    "Spontaneous emissions → add Jin Ying Zi, Qian Shi and Sang Piao Xiao",
+    "Coughing with difficult expectoration → add Bai Bu, Bei Mu and Kuan Dong Hua"
+   ],
+   "evidence": "Table 307",
+   "evidence_line": 2680,
+   "evidence_quotes": [
+    "+ tian dong, mai dong | Severe yi xu",
+    "+ mu li, fu xiao mai | Severe night sweats",
+    "+ jin ying zi, qian shi, sang piao xiao | Spontaneous emissions",
+    "+ bai bu, bei mu, kuan dong hua | Coughing with difficult expectoration"
+   ],
+   "notes": "source \"Severe yi xu\" read as yin xu (source typo)"
+  },
+  {
+   "formula_id": "formula.yi_guan_jian",
+   "formula_zh": "一貫煎",
+   "modifications_zh": [
+    "便秘 → 加瓜蔞仁、火麻仁",
+    "陰虛熱汗 → 加地骨皮、生地",
+    "疼痛甚 → 加白芍、甘草",
+    "口乾口苦甚 → 加黃連、黃芩、天花粉",
+    "高血壓 → 加桑寄生、杜仲"
+   ],
+   "modifications_en": [
+    "Constipation → add Gua Lou Ren and Huo Ma Ren",
+    "Sweating from Yin-deficiency heat → add Di Gu Pi and Sheng Di",
+    "Severe pain → add Bai Shao and Gan Cao",
+    "Very dry mouth with a bitter taste → add Huang Lian, Huang Qin and Tian Hua Fen",
+    "Hypertension → add Sang Ji Sheng and Du Zhong"
+   ],
+   "evidence": "Table 319",
+   "evidence_line": 2784,
+   "evidence_quotes": [
+    "+ gua lou ren, huo ma ren | constipation",
+    "+ di gu pi, sheng di | Sweating from yin xu heat",
+    "+ bai shao, gan cao | Severe pain",
+    "+ huang lian, huang qin, tian hua fen | very dry and bitter taste in the mouth",
+    "+ sang ji sheng, du zhong | hypertension"
+   ]
+  },
+  {
+   "formula_id": "formula.zhu_sha_an_shen_wan",
+   "formula_zh": "朱砂安神丸",
+   "modifications_zh": [
+    "陰虛口乾咽燥 → 加熟地、麥冬、玉竹",
+    "苔膩、胸悶 → 加瓜蔞、竹茹、半夏",
+    "舌紅脈數、胸中煩熱 → 加梔子、蓮子",
+    "失眠甚 → 加遠志、茯神、蓮子心"
+   ],
+   "modifications_en": [
+    "Dry mouth and throat from Yin deficiency → add Shu Di, Mai Dong and Yu Zhu",
+    "Greasy tongue coating with chest stifling sensation → add Gua Lou, Zhu Ru and Ban Xia",
+    "Red tongue, rapid pulse and a heat sensation in the chest → add Zhi Zi and Lian Zi",
+    "Severe insomnia → add Yuan Zhi, Fu Shen and Lian Zi Xin"
+   ],
+   "evidence": "Table 339",
+   "evidence_line": 2963,
+   "evidence_quotes": [
+    "+ shu di, mai dong, yu zhu | Dry mouth and throat from Yin xu",
+    "+ gua lou, zhu ru, ban xia | Greasy tongue coating, chest stifling sensation",
+    "+ zhi zi, lian zi | Red tongue, rapid pulse, hot sensation in the chest",
+    "+ yuan zhi, fu shen, lian xin | Severe insomnia"
+   ]
+  },
+  {
+   "formula_id": "formula.tian_wang_bu_xin_dan",
+   "formula_zh": "天王補心丹",
+   "modifications_zh": [
+    "心火旺、脈數 → 加黃連、梔子",
+    "心痛 → 加枳殼、川芎",
+    "心痛甚 → 加生蒲黃、降香、三七",
+    "脈結代 → 加炙甘草、桂枝",
+    "脅肋疼痛 → 加鬱金、川楝子"
+   ],
+   "modifications_en": [
+    "Heart fire with a rapid pulse → add Huang Lian and Zhi Zi",
+    "Cardiac pain → add Zhi Ke and Chuan Xiong",
+    "Severe cardiac pain → add Sheng Pu Huang, Jiang Xiang and San Qi",
+    "Irregular pulse → add Zhi Gan Cao and Gui Zhi",
+    "Hypochondriac pain → add Yu Jin and Chuan Lian Zi"
+   ],
+   "evidence": "Table 348",
+   "evidence_line": 3044,
+   "evidence_quotes": [
+    "+ huang lian, zhi zi | Ht fire, rapid pulse",
+    "+ zhi ke, chuan xiong | Cardiac pain",
+    "+ sheng pu huang, jiang xiang, san qi | Severe cardiac pain",
+    "+ zhi gan cao, gui zhi | Irregular pulse",
+    "+ yu jin, chuan lian zi | Hypochondriac pain"
+   ],
+   "notes": "right-hand columns of source table are ingredient analysis, excluded"
+  },
+  {
+   "formula_id": "formula.gan_mai_da_zao_tang",
+   "formula_zh": "甘麥大棗湯",
+   "modifications_zh": [
+    "陰虛甚（舌紅少苔、失眠心煩） → 加生地、百合",
+    "血虛甚（目糊眩暈） → 加酸棗仁、當歸",
+    "便秘 → 加何首烏、黑芝麻",
+    "精神分裂症 → 加龍骨、牡蠣、桂枝"
+   ],
+   "modifications_en": [
+    "Severe Yin deficiency with red tongue, little coating, insomnia and irritability → add Sheng Di and Bai He",
+    "Severe Blood deficiency with blurred vision and dizziness → add Suan Zao Ren and Dang Gui",
+    "Constipation → add He Shou Wu and Hei Zhi Ma",
+    "Schizophrenia → add Long Gu, Mu Li and Gui Zhi"
+   ],
+   "evidence": "Table 352",
+   "evidence_line": 3078,
+   "evidence_quotes": [
+    "+ sheng di, bai he | Severe yin xu: red tongue with little coating, insomnia, irritability",
+    "+ suan zao ren, dang gui | Severe blood xu: blurred vision, dizziness",
+    "+ he shou wu, hei zhi ma | constipation",
+    "+ long gu, mu li, gui zhi | Schizophrenia"
+   ],
+   "notes": "right-hand columns of source table are a formula comparison chart, excluded"
+  },
+  {
+   "formula_id": "formula.zi_xue_dan",
+   "formula_zh": "紫雪丹",
+   "modifications_zh": [
+    "敗血症見癤腫 → 合五味消毒飲（金銀花、野菊花、蒲公英、紫花地丁、紫背天葵）",
+    "急性疫病高熱、頸項強直、煩躁 → 合白虎湯",
+    "痢疾高熱、肌肉瞤動、神識受擾 → 合白頭翁湯",
+    "急性熱病譫語 → 合清瘟敗毒飲",
+    "麻疹高熱、口渴、疹色紫暗 → 合犀角地黃湯"
+   ],
+   "modifications_en": [
+    "Septicemia with furuncles → combine with Wu Wei Xiao Du Yin (Jin Yin Hua, Ye Ju Hua, Pu Gong Ying, Zi Hua Di Ding, Zi Bei Tian Kui)",
+    "Acute epidemic diseases with high fever, neck stiffness and irritability → combine with Bai Hu Tang",
+    "Dysenteric disorders with high fever, muscle twitches and impaired spirit → combine with Bai Tou Weng Tang",
+    "Acute febrile diseases with delirious speech → combine with Qing Wen Bai Du Yin",
+    "Measles with high fever, thirst and purple rashes → combine with Xi Jiao Di Huang Tang"
+   ],
+   "evidence": "Table 361",
+   "evidence_line": 3164,
+   "evidence_quotes": [
+    "+ wu wei xiao du yin [jin yin hua, ye ju hua, pu gong ying, zi hua di ding, zi bei tian kui] | Septicemia with furuncles",
+    "+ bai hu tang | Acute epidemic diseases with high fever, neck stiffness, irritability…",
+    "+ bai tou weng tang | Dysenteric disorders with high fever, muscle twitches and impaired spirit",
+    "+ qing wen bai du yin | Acute febrile diseases with delirious speech",
+    "+ xi jiao di huang tang | Measles with high fever, thirst, purple rashes"
+   ],
+   "notes": "these rows are formula combinations (合方), copied faithfully from the source table"
+  },
+  {
+   "formula_id": "formula.su_he_xiang_wan",
+   "formula_zh": "蘇合香丸",
+   "modifications_zh": [
+    "氣虛或體弱者 → 加人參10-15g，白朮增量至100-120g",
+    "氣滯血瘀或寒凝之心絞痛 → 加蟾酥，重用蓽茇，去犀角、硃砂、訶子"
+   ],
+   "modifications_en": [
+    "With Qi deficiency or a weak constitution → add Ren Shen 10-15g; increase Bai Zhu to 100-120g",
+    "Angina pectoris due to Qi stagnation, Blood stasis or congealing cold → add Chan Su; increase Bi Bo; remove Xi Jiao, Zhu Sha and He Zi"
+   ],
+   "evidence": "Table 369",
+   "evidence_line": 3244,
+   "evidence_quotes": [
+    "+ ren shen 10-15g<br>Increase the amount of bai zhu to 100-120g | With qi xu, or weak constitutional patients",
+    "+chan su, increase bi bo;<br>- xi jiao, zhu sha, he zi | Angina pectoris due to qi stagnation, blood stasis, or congealing of cold"
+   ],
+   "notes": "dosage figures copied verbatim from the source table"
+  },
+  {
+   "formula_id": "formula.yu_ping_feng_san",
+   "formula_zh": "玉屏風散",
+   "modifications_zh": [
+    "汗多 → 加浮小麥、煅牡蠣、麻黃根",
+    "外感後汗出不止 → 加桂枝",
+    "體弱易感冒 → 合補中益氣湯"
+   ],
+   "modifications_en": [
+    "Severe sweating → add Fu Xiao Mai, Duan Mu Li and Ma Huang Gen",
+    "Continuous sweating after external invasion → add Gui Zhi",
+    "Weak constitution with frequent colds → combine with Bu Zhong Yi Qi Tang"
+   ],
+   "evidence": "Table 377",
+   "evidence_line": 3308,
+   "evidence_quotes": [
+    "+ fu xiao mai, duan mu li, ma huang gen | Severe sweating",
+    "+ gui zhi | Continuous sweating due to EPI",
+    "+ bu zhong yi qi tang | Weak constitutional person catching cold frequently"
+   ]
+  },
+  {
+   "formula_id": "formula.si_shen_wan",
+   "formula_zh": "四神丸",
+   "modifications_zh": [
+    "水瀉 → 加罌粟殼、訶子",
+    "腰及四肢冷痛 → 加附子、肉桂",
+    "中氣下陷脫肛 → 加黃耆、升麻、人參",
+    "腹脹 → 加木香、小茴香",
+    "裏寒腹痛嘔惡 → 合理中丸"
+   ],
+   "modifications_en": [
+    "Watery diarrhea → add Ying Su Ke and He Zi",
+    "Sore and cold low back and extremities → add Fu Zi and Rou Gui",
+    "Prolapsed rectum from middle Qi sinking → add Huang Qi, Sheng Ma and Ren Shen",
+    "Abdominal distension → add Mu Xiang and Xiao Hui Xiang",
+    "Interior cold with abdominal pain and nausea → combine with Li Zhong Wan"
+   ],
+   "evidence": "Table 384",
+   "evidence_line": 3366,
+   "evidence_quotes": [
+    "+ ying su ke, he zi | Watery diarrhea",
+    "+ fu zi, rou gui | Sore and cold low back/extremities",
+    "+ huang qi, sheng ma, ren shen | Prolapsed rectum from middle qi sinking",
+    "+ mu xiang, xiao hui xiang | Abdominal distention",
+    "+ li zhong wan | Interior cold with abdominal pain & nausea"
+   ]
+  },
+  {
+   "formula_id": "formula.gu_jing_wan",
+   "formula_zh": "固经丸",
+   "modifications_zh": [
+    "出血量多不止之重症 → 加煅龍骨、煅牡蠣、烏賊骨、茜草",
+    "熱輕而陰虛甚 → 去黃柏，加女貞子、旱蓮草"
+   ],
+   "modifications_en": [
+    "Severe cases with heavy or continuous bleeding → add Duan Long Gu, Duan Mu Li, Wu Zei Gu and Qian Cao",
+    "Less heat with severe Yin deficiency → remove Huang Bai; add Nu Zhen Zi and Han Lian Cao"
+   ],
+   "evidence": "Table 390",
+   "evidence_line": 3419,
+   "evidence_quotes": [
+    "+ duan long gu, duan mu li, wu zei gu, qian cao | Severe cases with heavy/continous bleeding",
+    "- Huang bai<br>+ nu zhen zi, han lian cao | Cases with less heat & severe yin xu"
+   ]
+  },
+  {
+   "formula_id": "formula.yue_ju_wan",
+   "formula_zh": "越鞠丸",
+   "modifications_zh": [
+    "氣鬱甚 → 重用香附，加木香、檳榔、枳實",
+    "火鬱甚 → 重用梔子，加黃連、青黛",
+    "濕鬱甚 → 重用蒼朮，加茯苓、澤瀉",
+    "痰鬱甚 → 重用蒼朮，加膽南星、瓜蔞",
+    "食鬱甚 → 重用神麴，加麥芽、山楂",
+    "血鬱甚 → 重用川芎，加桃仁、紅花"
+   ],
+   "modifications_en": [
+    "Severe Qi constraint → increase Xiang Fu; add Mu Xiang, Bing Lang and Zhi Shi",
+    "Severe Fire constraint → increase Zhi Zi; add Huang Lian and Qing Dai",
+    "Severe Damp constraint → increase Cang Zhu; add Fu Ling and Ze Xie",
+    "Severe Phlegm constraint → increase Cang Zhu; add Dan Nan Xing and Gua Lou",
+    "Severe Food constraint → increase Shen Qu; add Mai Ya and Shan Zha",
+    "Severe Blood constraint → increase Chuan Xiong; add Tao Ren and Hong Hua"
+   ],
+   "evidence": "Table 408",
+   "evidence_line": 3572,
+   "evidence_quotes": [
+    "Severe qi yu | Amount of xiang fu up, + mu xiang, bing lang, zhi shi",
+    "Severe fire yu | Amount of zhi zi up, + huang lian, qing dai",
+    "Severe damp yu | Amount of cang zhu up, + fu ling, ze xie",
+    "Severe phlegm yu | Amount of cang zhu up, + dan nan xing, gua lou",
+    "Severe food yu | Amount of shen qu up, + mai ya, shan zha",
+    "Severe blood yu | Amount of chuan xiong up, + tao ren, hong hua"
+   ],
+   "notes": "reversed source layout (indication|change); conditional meta-row routed to partial"
+  },
+  {
+   "formula_id": "formula.ban_xia_hou_po_tang",
+   "formula_zh": "半夏厚朴湯",
+   "modifications_zh": [
+    "肝氣鬱甚、頻頻嘆息噯氣 → 加香附、青皮、陳皮、瓜蔞、柴胡",
+    "咽中如物梗阻甚 → 加桔梗、玄參、甘草、赤芍藥",
+    "氣鬱化火、急躁易怒、口苦 → 加黃連、黃芩、梔子",
+    "兼氣陰兩虛之失眠、神疲乏力 → 加酸棗仁、牡丹皮、黃耆、沙參"
+   ],
+   "modifications_en": [
+    "Severe Liver Qi stagnation with frequent sighing and burping → add Xiang Fu, Qing Pi, Chen Pi, Gua Lou and Chai Hu",
+    "Severe clumped feeling in the throat → add Jie Geng, Xuan Shen, Gan Cao and Chi Shao Yao",
+    "Fire generated by stagnant Qi with short temper, irritability and a bitter taste in the mouth → add Huang Lian, Huang Qin and Zhi Zi",
+    "With Qi and Yin deficiency manifesting as insomnia, low spirits and fatigue → add Suan Zao Ren, Mu Dan Pi, Huang Qi and Sha Shen"
+   ],
+   "evidence": "Table 411",
+   "evidence_line": 3597,
+   "evidence_quotes": [
+    "Severe liver qi stagnation with frequent sighing/burping | + xiang fu, qing pi, chen pi, gua lou, chai hu",
+    "Severe clumped feeling in the throat | Jie geng, xuan shen, gan cao, chi shao yao",
+    "Fire generated by stagnant qi with short temper, irritability and bitter taste in the mouth | + huang lian, huang qin, zhi zi",
+    "With qi & yin xu manifesting as insomnia, low spirit, fatigue | + suan zao ren, mu dan pi, huang qi, sha shen"
+   ],
+   "notes": "owner: header T409 \"[Ban Xia Hou Po Tang\" leading bracket broke name regex / reversed source layout; second row has no +/- marker in source, read as implied add"
+  },
+  {
+   "formula_id": "formula.gua_lou_xie_bai_bai_jiu_tang",
+   "formula_zh": "瓜蔞薤白白酒湯",
+   "modifications_zh": [
+    "氣滯血瘀甚 → 加丹參、當歸、桃仁、紅花、蒲黃、赤芍、枳實、厚朴、青皮、乳香",
+    "痰阻甚 → 加半夏、天南星、石菖蒲、鬱金"
+   ],
+   "modifications_en": [
+    "Severe Qi stagnation with Blood stasis → add Dan Shen, Dang Gui, Tao Ren, Hong Hua, Pu Huang, Chi Shao, Zhi Shi, Hou Po, Qing Pi and Ru Xiang",
+    "Severe phlegm blockage → add Ban Xia, Tian Nan Xing, Shi Chang Pu and Yu Jin"
+   ],
+   "evidence": "Table 415",
+   "evidence_line": 3624,
+   "evidence_quotes": [
+    "Severe qi stagnation with blood stagnation | + dan shen, dang gui, tao ren, hong hau, pu huang, chi shao, zhi shi, hou po, qing pi, ru xiang",
+    "Severe phlegm blockage | + ban xia, tian nan xing, shi chang pu, yu jin (turmeric)"
+   ],
+   "notes": "reversed source layout; source \"hong hau\" normalized to 紅花 (Hong Hua; source typo)"
+  },
+  {
+   "formula_id": "formula.su_zi_jiang_qi_tang",
+   "formula_zh": "蘇子降氣湯",
+   "modifications_zh": [
+    "喘甚兼表證 → 加杏仁、麻黃",
+    "兼氣虛 → 加黨參、五味子、黃耆",
+    "小便不利 → 加茯苓、車前子"
+   ],
+   "modifications_en": [
+    "Severe wheezing with an exterior condition → add Xing Ren and Ma Huang",
+    "With Qi deficiency → add Dang Shen, Wu Wei Zi and Huang Qi",
+    "Urinary difficulty → add Fu Ling and Che Qian Zi"
+   ],
+   "evidence": "Table 430",
+   "evidence_line": 3745,
+   "evidence_quotes": [
+    "+ xing ren, ma huang | Severe wheezing with exterior condition",
+    "+ dang shen, wu wei zi, huang qi | With qi xu",
+    "+ fu ling, che qian zi | Urinary difficulty"
+   ]
+  },
+  {
+   "formula_id": "formula.ding_chuan_tang",
+   "formula_zh": "定喘湯",
+   "modifications_zh": [
+    "無外感風寒 → 去麻黃，或改用炙麻黃",
+    "痰黏稠色黃難咯 → 加瓜蔞皮、膽南星、白芥子",
+    "肺熱甚 → 加石膏、魚腥草"
+   ],
+   "modifications_en": [
+    "No exterior Wind-Cold → remove Ma Huang, or use Zhi Ma Huang",
+    "Sticky, thick, yellow sputum that is hard to expectorate → add Gua Lou Pi, Dan Nan Xing and Bai Jie Zi",
+    "Severe Lung heat → add Shi Gao and Yu Xing Cao"
+   ],
+   "evidence": "Table 433",
+   "evidence_line": 3777,
+   "evidence_quotes": [
+    "- Ma huang, or use zhi ma huang | No exterior wind-cold",
+    "+ gua lou pi, dan nan xing, bai jie zi | Sticky, thick & yellow sputum that is hard to expectorate",
+    "+ shi gao, yu xing cao | Severe Lu heat"
+   ]
+  },
+  {
+   "formula_id": "formula.ju_pi_zhu_ru_tang",
+   "formula_zh": "橘皮竹茹湯",
+   "modifications_zh": [
+    "兼胃陰虛 → 加麥冬、石斛",
+    "兼胃熱 → 去人參、大棗，加柿蒂",
+    "胃陰虛兼痰 → 加茯苓、半夏、麥冬、枇杷葉",
+    "妊娠惡阻 → 加黃芩、白朮"
+   ],
+   "modifications_en": [
+    "With Stomach Yin deficiency → add Mai Dong and Shi Hu",
+    "With Stomach heat → remove Ren Shen and Da Zao; add Shi Di",
+    "Stomach Yin deficiency with phlegm → add Fu Ling, Ban Xia, Mai Dong and Pi Pa Ye",
+    "Morning sickness → add Huang Qin and Bai Zhu"
+   ],
+   "evidence": "Table 441",
+   "evidence_line": 3854,
+   "evidence_quotes": [
+    "+ mai dong, shi hu | With St yin xu",
+    "- Ren shen, da zao<br>+ shi di | With St heat",
+    "+ fu ling, ban xia, mai dong, pi pa ye | With St yin xu & phlegm",
+    "+ huang qin, bai zhu | Morning sickness"
+   ],
+   "notes": "owner: header T439 \"Ju (Chen) Pi Zhu Ru Tang\" parenthesis broke name regex; content (St heat/qi xu hiccough, morning sickness) matches"
+  },
+  {
+   "formula_id": "formula.tao_he_cheng_qi_tang",
+   "formula_zh": "桃核承氣湯",
+   "modifications_zh": [
+    "外傷瘀痛固定劇烈 → 加赤芍、紅花、蘇木",
+    "經閉 → 加當歸、紅花、水蛭、虻蟲",
+    "齒齦出血、牙痛、頭痛 → 加生地、丹皮、梔子、牛膝",
+    "兼氣滯 → 加香附、烏藥、青皮、木香"
+   ],
+   "modifications_en": [
+    "Fixed and severe pain from trauma → add Chi Shao, Hong Hua and Su Mu",
+    "Amenorrhea → add Dang Gui, Hong Hua, Shui Zhi and Meng Chong",
+    "Gum bleeding, toothache and headache → add Sheng Di, Dan Pi, Zhi Zi and Niu Xi",
+    "With Qi stagnation → add Xiang Fu, Wu Yao, Qing Pi and Mu Xiang"
+   ],
+   "evidence": "Table 453",
+   "evidence_line": 3946,
+   "evidence_quotes": [
+    "+ chi shao, hong hua, su mu | Fixed & severe pain from trauma",
+    "+ dang gui, hong hua, shui zhi, meng chong | Amenorrhea",
+    "+ sheng di, dan pi, zhi zi, niu xi | Gum bleeding, toothache, HA",
+    "+ xiang fu, wu yao, qing pi, mu xiang | With qi stagnation"
+   ]
+  },
+  {
+   "formula_id": "formula.xue_fu_zhu_yu_tang",
+   "formula_zh": "血府逐瘀湯",
+   "modifications_zh": [
+    "經閉、痛經 → 去桔梗，加香附、益母草、澤蘭",
+    "脅下腹中癥塊不移 → 加鬱金、丹參",
+    "冠心病心絞痛 → 加丹參，重用紅花、川芎"
+   ],
+   "modifications_en": [
+    "Amenorrhea or dysmenorrhea → remove Jie Geng; add Xiang Fu, Yi Mu Cao and Ze Lan",
+    "Immobile subcostal and abdominal masses → add Yu Jin and Dan Shen",
+    "Angina pectoris due to coronary heart disease → add Dan Shen; increase the dosage of Hong Hua and Chuan Xiong"
+   ],
+   "evidence": "Table 457",
+   "evidence_line": 3985,
+   "evidence_quotes": [
+    "- Jie geng<br>+ xiang fu, yi mu cao, ze lan | Amenorrhea<br>dysmenorrhea",
+    "+ yu jin, dan shen | Immobile subcostal & abdominal masses",
+    "+ dan shen, increase the dosage of hong hua & chuan xiong | Angina pectoris d/t CHD"
+   ]
+  },
+  {
+   "formula_id": "formula.gui_zhi_fu_ling_wan",
+   "formula_zh": "桂枝茯苓丸",
+   "modifications_zh": [
+    "氣滯 → 加香附、陳皮",
+    "氣虛甚 → 加黨參、黃耆",
+    "血虛 → 加熟地、何首烏",
+    "血瘀甚 → 加皂角刺、三稜、莪朮、大黃"
+   ],
+   "modifications_en": [
+    "Qi stagnation → add Xiang Fu and Chen Pi",
+    "Severe Qi deficiency → add Dang Shen and Huang Qi",
+    "Blood deficiency → add Shu Di and He Shou Wu",
+    "Severe Blood stasis → add Zao Jiao Ci, San Leng, E Zhu and Da Huang"
+   ],
+   "evidence": "Table 469",
+   "evidence_line": 4079,
+   "evidence_quotes": [
+    "+ xiang fu, chen pi | Qi stagnation",
+    "+ dang shen, huang qi | Severe qi xu",
+    "+ shu di, shou wu | Blood xu",
+    "+ zao jiao ci, san leng, <br>   e zhu, da huang | Severe blood stasis"
+   ]
+  },
+  {
+   "formula_id": "formula.wen_jing_tang",
+   "formula_zh": "溫經湯",
+   "modifications_zh": [
+    "腹中冷痛 → 去丹皮、麥冬，加艾葉、附子，或以肉桂易桂枝",
+    "兼氣滯 → 加香附、烏藥",
+    "漏下不止、血色淡紅 → 加艾葉、熟地",
+    "兼氣虛 → 加黃耆"
+   ],
+   "modifications_en": [
+    "Cold abdominal pain → remove Dan Pi and Mai Dong; add Ai Ye and Fu Zi, or replace Gui Zhi with Rou Gui",
+    "With Qi stagnation → add Xiang Fu and Wu Yao",
+    "Persistent spotting with light-red blood → add Ai Ye and Shu Di",
+    "With Qi deficiency → add Huang Qi"
+   ],
+   "evidence": "Table 475",
+   "evidence_line": 4140,
+   "evidence_quotes": [
+    "- Dan pi, mai dong<br>+ ai ye, fu zi;  or replace gui zhi with rou gui | Abd. Cold pain",
+    "+ xiang fu, wu yao | With qi stagnation",
+    "+ ai ye, shu di | Persistent spotting with light-red blood",
+    "+ huang qi | With qi xu"
+   ]
+  },
+  {
+   "formula_id": "formula.fu_yuan_huo_xue_tang",
+   "formula_zh": "復元活血湯",
+   "modifications_zh": [
+    "血瘀劇痛 → 加乳香、沒藥、三七",
+    "氣滯甚 → 加鬱金、青皮、木香、枳殼",
+    "瘀血重且日久 → 加三稜、莪朮、血竭、自然銅、蜈蚣",
+    "瘀腫可見、疼痛劇烈 → 加草烏、兒茶外敷"
+   ],
+   "modifications_en": [
+    "Intense pain due to Blood stasis → add Ru Xiang, Mo Yao and San Qi",
+    "Severe Qi stagnation → add Yu Jin, Qing Pi, Mu Xiang and Zhi Ke",
+    "Severe and long-term Blood stasis → add San Leng, E Zhu, Xue Jie, Zi Ran Tong and Wu Gong",
+    "Visible bruise with excruciating pain → add Cao Wu and Er Cha applied topically"
+   ],
+   "evidence": "Table 481",
+   "evidence_line": 4191,
+   "evidence_quotes": [
+    "+ ru xiang, mo yao, san qi | Intense pain d/t Blood stasis",
+    "+ yu jin, qing pi, mu xiang, zhi ke | Severe Qi stagnation",
+    "+ san leng, e zhu, xue ji, zi ran tong, wu gong | Severe & long-term blood stasis",
+    "+ cao wu, er cha (acacia or uncaria) topically apply | Visible bruise with excruciating pain"
+   ],
+   "notes": "owner: header T479 lowercase \"Fu yuan huo xue tang\"; trauma/bruise content matches / source \"xue ji\" normalized to 血竭 (Xue Jie; source typo)"
+  },
+  {
+   "formula_id": "formula.xiao_feng_san",
+   "formula_zh": "消風散",
+   "modifications_zh": [
+    "風熱毒盛 → 加金銀花、連翹、蒲公英、野菊花",
+    "血熱毒盛 → 加赤芍、丹皮、紫草",
+    "兼血虛 → 合四物湯",
+    "濕熱甚 → 加地膚子、車前子、梔子、薏苡仁",
+    "瘙癢劇烈頑固難癒 → 加烏梢蛇、全蠍、僵蠶"
+   ],
+   "modifications_en": [
+    "Severe Wind-Heat with toxin → add Jin Yin Hua, Lian Qiao, Pu Gong Ying and Ye Ju Hua",
+    "Severe Blood-heat toxin → add Chi Shao, Dan Pi and Zi Cao",
+    "With Blood deficiency → combine with Si Wu Tang",
+    "Severe Damp-Heat → add Di Fu Zi, Che Qian Zi, Zhi Zi and Yi Yi Ren",
+    "Severe and persistent itchiness in hard cases → add Wu Shao She, Quan Xie and Jiang Can"
+   ],
+   "evidence": "Table 509",
+   "evidence_line": 4445,
+   "evidence_quotes": [
+    "+ jin yin hua, lian qiao, pu gong ying, ye ju hua | Severe W-H & toxin",
+    "+ chi shao, dan pi, zi cao | Severe blood heat toxin",
+    "+ si wu tang | With Blood xu",
+    "+ di fu zi, che qian zi, zhi zi, yi yi ren | Severe damp-heat",
+    "+ wu shao she, quan xie, jiang can | Severe & persistent itchiness, hard cases"
+   ]
+  },
+  {
+   "formula_id": "formula.xiao_huo_luo_dan",
+   "formula_zh": "小活絡丹",
+   "modifications_zh": [
+    "風邪甚 → 加防風、秦艽、羌活、獨活",
+    "濕邪甚 → 加蒼朮、薏苡仁",
+    "兼肝腎虧虛、氣血不足 → 合獨活寄生湯"
+   ],
+   "modifications_en": [
+    "Severe Wind → add Fang Feng, Qin Jiao, Qiang Huo and Du Huo",
+    "Severe Damp → add Cang Zhu and Yi Yi Ren",
+    "With Liver and Kidney deficiency and Qi and Blood deficiency → combine with Du Huo Ji Sheng Tang"
+   ],
+   "evidence": "Table 515",
+   "evidence_line": 4502,
+   "evidence_quotes": [
+    "+ fang feng, qin jiao, qiang huo, du huo | Severe wind",
+    "+ cang zhu, yi yi ren | Severe damp",
+    "+ du huo ji sheng tang | With Lr & K, qi & blood xu"
+   ]
+  },
+  {
+   "formula_id": "formula.tian_ma_gou_teng_yin",
+   "formula_zh": "天麻鉤藤飲",
+   "modifications_zh": [
+    "麻木眩暈之重症 → 加羚羊角、龍骨、牡蠣、磁石、代赭石",
+    "肝火甚、頭痛顯著、面紅、苔黃而乾 → 加龍膽草、夏枯草、牡丹皮，或合龍膽瀉肝湯",
+    "兼便秘 → 加大黃、芒硝，或合當歸龍薈丸",
+    "肝腎陰虛甚 → 加女貞子、枸杞子、白芍、生地、何首烏"
+   ],
+   "modifications_en": [
+    "Severe cases with numbness and vertigo → add Ling Yang Jiao, Long Gu, Mu Li, Ci Shi and Dai Zhe Shi",
+    "Severe Liver fire with significant headache, flushed face and a dry yellow tongue coating → add Long Dan Cao, Xia Ku Cao and Mu Dan Pi, or combine with Long Dan Xie Gan Tang",
+    "With constipation → add Da Huang and Mang Xiao, or combine with Dang Gui Long Hui Wan",
+    "Severe Liver and Kidney Yin deficiency → add Nu Zhen Zi, Gou Qi Zi, Bai Shao, Sheng Di and He Shou Wu"
+   ],
+   "evidence": "Table 521",
+   "evidence_line": 4556,
+   "evidence_quotes": [
+    "+ ling yang jiao, long gu, mu li, ci shi, dai ze shi | Severe cases with numbness & vertigo",
+    "+ long dan cao, xia ku cao, mu dan pi, or long dan xie gan tang | Severe Lr fire with significant HA, flushed face, dry yellow tongue coating",
+    "+ da huang, mang xiao, or dang gui long hui wan | With constipation",
+    "+ nu zhen zi, gou qi zi, bai shao, sheng di, shou wu | Severe Lr & K yin xu"
+   ]
+  },
+  {
+   "formula_id": "formula.ping_wei_san",
+   "formula_zh": "平胃散",
+   "modifications_zh": [
+    "苔黃厚、口苦、咽乾不渴 → 加黃芩、黃連",
+    "食積痞滿便秘 → 加枳殼、萊菔子、檳榔",
+    "寒濕甚、喜熱惡寒 → 加乾薑、肉桂",
+    "噁心嘔吐 → 加半夏",
+    "兼表證發熱惡寒 → 加藿香、蘇葉、白芷"
+   ],
+   "modifications_en": [
+    "Thick yellow tongue coating, bitter taste and dry throat without thirst → add Huang Qin and Huang Lian",
+    "Food stagnation with focal fullness and constipation → add Zhi Ke, Lai Fu Zi and Bing Lang",
+    "Severe Cold-Damp with heat preference and dislike of cold → add Gan Jiang and Rou Gui",
+    "Nausea and vomiting → add Ban Xia",
+    "With an exterior condition, fever and chills → add Huo Xiang, Su Ye and Bai Zhi"
+   ],
+   "evidence": "Table 546",
+   "evidence_line": 4772,
+   "evidence_quotes": [
+    "+ huang qin, Huang lian | Yellow thick tongue coating, bitter taste in mouth, dry throat, no thirst",
+    "+ zhi ke, lai fu zi, bing lang | Food stagnation with focal fullness & constipation",
+    "+ gan jiang, rou gui | With severe cold damp, heat preference, dislike of cold",
+    "+ ban xia | Nausea, vomiting",
+    "+ huo xiang, su ye, bai zhi | With exterior condition, fever & chills"
+   ]
+  },
+  {
+   "formula_id": "formula.huo_xiang_zheng_qi_san",
+   "formula_zh": "藿香正氣散",
+   "modifications_zh": [
+    "風寒甚 → 重用蘇葉",
+    "食積 → 去甘草、大棗，加雞內金、神麴",
+    "濕甚 → 加蒼朮",
+    "小便短少 → 加澤瀉、木通"
+   ],
+   "modifications_en": [
+    "Severe Wind-Cold → increase Su Ye",
+    "Food stagnation → remove Gan Cao and Da Zao; add Ji Nei Jin and Shen Qu",
+    "Severe Damp → add Cang Zhu",
+    "Scanty urination → add Ze Xie and Mu Tong"
+   ],
+   "evidence": "Table 551",
+   "evidence_line": 4820,
+   "evidence_quotes": [
+    "More su ye | Severe wind-cold",
+    "- Gan cao, da zao<br>+ ji nei jin, shen qu | Food stagnation",
+    "+ cang zhu | Severe damp",
+    "+ ze xie, mu tong | Scanty urination"
+   ]
+  },
+  {
+   "formula_id": "formula.zhen_wu_tang",
+   "formula_zh": "真武湯",
+   "modifications_zh": [
+    "咳喘痰稀量多 → 加乾薑、細辛、五味子",
+    "兼嘔吐 → 加吳茱萸、半夏",
+    "泄瀉甚 → 去白芍，加乾薑、益智仁",
+    "兼心悸 → 加人參"
+   ],
+   "modifications_en": [
+    "Wheezing or coughing with copious watery sputum → add Gan Jiang, Xi Xin and Wu Wei Zi",
+    "With vomiting → add Wu Zhu Yu and Ban Xia",
+    "Severe diarrhea → remove Bai Shao; add Gan Jiang and Yi Zhi Ren",
+    "With palpitations → add Ren Shen"
+   ],
+   "evidence": "Table 568",
+   "evidence_line": 4963,
+   "evidence_quotes": [
+    "+ gan jiang, xi xin, wu wei zi | Wheezing or coughing with copious watery sputum",
+    "+ wu zhu yu, ban xia | With vomiting",
+    "- Bai shao<br>+ gan jiang, yi zhi ren | Severe diarrhea",
+    "+ ren shen | With palpitations"
+   ]
+  },
+  {
+   "formula_id": "formula.zhu_ling_tang",
+   "formula_zh": "豬苓湯",
+   "modifications_zh": [
+    "熱淋 → 加梔子、車前子",
+    "血淋 → 加白茅根、大薊、小薊",
+    "陰虛口渴甚 → 加沙參、天花粉"
+   ],
+   "modifications_en": [
+    "Hot Lin syndrome → add Zhi Zi and Che Qian Zi",
+    "Bloody Lin syndrome → add Bai Mao Gen, Da Ji and Xiao Ji",
+    "Severe thirst from Yin deficiency → add Sha Shen and Tian Hua Fen"
+   ],
+   "evidence": "Table 578",
+   "evidence_line": 5044,
+   "evidence_quotes": [
+    "+ zhi zi, che qian zi | Hot Lin",
+    "+ bai mao gen, da ji, xiao ji | Bloody Lin",
+    "+ sha shen, tian hua fen | Severe thirst from Yin xu"
+   ]
+  },
+  {
+   "formula_id": "formula.wu_pi_san",
+   "formula_zh": "五皮散",
+   "modifications_zh": [
+    "脾虛甚 → 加白朮、黃耆、黨參",
+    "濕甚 → 合五苓散",
+    "兼肺熱 → 合瀉白散",
+    "妊娠水腫 → 加益母草",
+    "腹脹甚 → 加萊菔子、厚朴"
+   ],
+   "modifications_en": [
+    "Severe Spleen deficiency → add Bai Zhu, Huang Qi and Dang Shen",
+    "Severe dampness → combine with Wu Ling San",
+    "With Lung heat → combine with Xie Bai San",
+    "Edema during pregnancy → add Yi Mu Cao",
+    "Severe abdominal distension → add Lai Fu Zi and Hou Po"
+   ],
+   "evidence": "Table 583",
+   "evidence_line": 5090,
+   "evidence_quotes": [
+    "+ bai zhu, huang qi, dang shen | Severe Sp xu",
+    "+ wu ling san | Severe dampness",
+    "+ xie bai san | With Lu heat",
+    "+ yi mu cao | Edema during pregnancy",
+    "+ lai fu zi, hou po | Severe abdominal distension"
+   ]
+  },
+  {
+   "formula_id": "formula.du_huo_ji_sheng_tang",
+   "formula_zh": "獨活寄生湯",
+   "modifications_zh": [
+    "寒甚疼痛劇烈 → 加附子、乾薑、川烏",
+    "濕重下肢浮腫 → 加薏苡仁、防己、蒼朮、豬苓、澤瀉",
+    "瘀滯疼痛甚 → 加三七、白花蛇、全蠍、桃仁、紅花",
+    "無明顯虛象 → 去生地、白芍、人參",
+    "腰部劇痛如折 → 加狗脊、菟絲子、川斷"
+   ],
+   "modifications_en": [
+    "Severe pain from cold → add Fu Zi, Gan Jiang and Chuan Wu",
+    "Puffiness of the lower limbs from damp → add Yi Yi Ren, Fang Ji, Cang Zhu, Zhu Ling and Ze Xie",
+    "Severe pain from stagnation and stasis → add San Qi, Bai Hua She, Quan Xie, Tao Ren and Hong Hua",
+    "Without significant deficiency → remove Sheng Di, Bai Shao and Ren Shen",
+    "Breaking pain in the low back → add Gou Ji, Tu Si Zi and Chuan Duan"
+   ],
+   "evidence": "Table 594",
+   "evidence_line": 5198,
+   "evidence_quotes": [
+    "+ fu zi, gan jiang, chuan wu | Severe pain form cold",
+    "+ yi yi ren, fang ji, cang zhu, zhu ling, ze xie | Lower limbs puffiness from damp",
+    "+ san qi, bai hua she, quan xie, tao ren, hong hua | Severe pain from stagnation/stasis",
+    "- Sheng di, ba shao, ren shen | Without significant xu",
+    "+ gou ji, tu si zi, chuan duan | Breaking pain in LB"
+   ],
+   "notes": "source \"ba shao\"/\"pain form cold\" read as 白芍/from (source typos)"
+  },
+  {
+   "formula_id": "formula.er_chen_tang",
+   "formula_zh": "二陳湯",
+   "modifications_zh": [
+    "風痰 → 加天南星、竹瀝",
+    "熱痰 → 加黃芩、膽南星",
+    "寒痰 → 加乾薑、細辛",
+    "食痰 → 加萊菔子、神麴",
+    "氣痰 → 加枳實、厚朴",
+    "皮裏膜外之痰 → 加白芥子"
+   ],
+   "modifications_en": [
+    "Wind-phlegm → add Tian Nan Xing and Zhu Li",
+    "Hot phlegm → add Huang Qin and Dan Nan Xing",
+    "Cold phlegm → add Gan Jiang and Xi Xin",
+    "Food phlegm → add Lai Fu Zi and Shen Qu",
+    "Qi phlegm → add Zhi Shi and Hou Po",
+    "Phlegm in the muscles and beneath the skin → add Bai Jie Zi"
+   ],
+   "evidence": "Table 603",
+   "evidence_line": 5278,
+   "evidence_quotes": [
+    "+ tian na xing, zhu li | Wind-phlegm",
+    "+ huang qin, dan nan xing | Hot-phlegm",
+    "+ gan jiang, xi xin | Cold-phlegm",
+    "+ lai fu zi, shen qu | Food-phlegm",
+    "+ zhi shi, hou po | Qi-phlegm",
+    "+ bai jie zi | Phlegm in muscles/below skin"
+   ],
+   "notes": "source \"tian na xing\" normalized to 天南星 (Tian Nan Xing; source typo)"
+  },
+  {
+   "formula_id": "formula.wen_dan_tang",
+   "formula_zh": "溫膽湯",
+   "modifications_zh": [
+    "口舌乾燥 → 去半夏，加麥冬、天花粉",
+    "耳鳴、耳聾、驚癇 → 加膽南星、鉤藤、全蠍",
+    "虛煩失眠甚 → 加酸棗仁、麥冬"
+   ],
+   "modifications_en": [
+    "Dry mouth and tongue → remove Ban Xia; add Mai Dong and Tian Hua Fen",
+    "Tinnitus, hearing loss and seizures → add Dan Nan Xing, Gou Teng and Quan Xie",
+    "Severe insomnia from deficiency → add Suan Zao Ren and Mai Dong"
+   ],
+   "evidence": "Table 608",
+   "evidence_line": 5325,
+   "evidence_quotes": [
+    "- Ban xia<br>+ mai dong, tian hua fen | With dry mouth & tongue",
+    "+ dan nan xing, gou teng, quan xie | Tinnitus, hearing loss, seizures",
+    "+ suan zao ren, mai dong | Severe insomnia from xu"
+   ]
+  },
+  {
+   "formula_id": "formula.bei_mu_gua_lou_san",
+   "formula_zh": "貝母瓜蔞散",
+   "modifications_zh": [
+    "咽喉癢而不適 → 加前胡、牛蒡子",
+    "聲音嘶啞、痰中帶血絲 → 去橘紅，加沙參、麥冬、仙鶴草",
+    "熱甚咽乾痛 → 加生地、玄參、麥冬、蘆根",
+    "喘咳 → 加杏仁"
+   ],
+   "modifications_en": [
+    "Itchy and scratchy throat → add Qian Hu and Niu Bang Zi",
+    "Raspy voice and coughing with blood-streaked sputum → remove Ju Hong; add Sha Shen, Mai Dong and Xian He Cao",
+    "Severe heat with a dry, sore throat → add Sheng Di, Xuan Shen, Mai Dong and Lu Gen",
+    "Wheezing and coughing → add Xing Ren"
+   ],
+   "evidence": "Table 617",
+   "evidence_line": 5397,
+   "evidence_quotes": [
+    "+ qian hu, niu bang zi | Itchy & scratchy throat",
+    "- Ju hong<br>+ sha shen, mai dong, xian he cao | Raspy voice, coughing with streaked-sputum",
+    "+ sheng di, xuan shen, mai dong, lu gen | Severe heat with Dry & sore throat",
+    "+ xing ren | Wheezing & coughing"
+   ]
+  },
+  {
+   "formula_id": "formula.zhi_sou_san",
+   "formula_zh": "止嗽散",
+   "modifications_zh": [
+    "風寒偏盛 → 加紫蘇葉、生薑、防風",
+    "風熱偏盛 → 加金銀花、連翹、蘆根",
+    "風燥偏盛 → 加桑葉、杏仁、沙參、麥冬",
+    "暑令夾濕 → 加藿香、香薷、薏苡仁",
+    "兼脾虛 → 合二陳湯"
+   ],
+   "modifications_en": [
+    "Wind-Cold predominance → add Zi Su Ye, Sheng Jiang and Fang Feng",
+    "Wind-Heat predominance → add Jin Yin Hua, Lian Qiao and Lu Gen",
+    "Wind-Dryness predominance → add Sang Ye, Xing Ren, Sha Shen and Mai Dong",
+    "Summer Wind-Damp → add Huo Xiang, Xiang Ru and Yi Yi Ren",
+    "With Spleen deficiency → combine with Er Chen Tang"
+   ],
+   "evidence": "Table 629",
+   "evidence_line": 5491,
+   "evidence_quotes": [
+    "+ zi su ye, sheng jiang, fang feng | Wind-cold predominance",
+    "+ jin yin hua, lian qiao, lu gen | Wind-heat predominance",
+    "+ sang ye, xing ren, sha shen, mai dong | Wind-dry predominance",
+    "+ huo xiang, xiang ru, yi yi ren | Summer wind-damp",
+    "+ er chen tang | With Sp xu"
+   ]
+  },
+  {
+   "formula_id": "formula.ban_xia_bai_zhu_tian_ma_tang",
+   "formula_zh": "半夏白朮天麻湯",
+   "modifications_zh": [
+    "濕痰甚 → 加澤瀉、桂枝",
+    "肝陽上亢 → 加鉤藤、代赭石",
+    "眩暈甚 → 加僵蠶、膽南星"
+   ],
+   "modifications_en": [
+    "Severe Damp-phlegm → add Ze Xie and Gui Zhi",
+    "Liver Yang rising → add Gou Teng and Dai Zhe Shi",
+    "Severe dizziness and vertigo → add Jiang Can and Dan Nan Xing"
+   ],
+   "evidence": "Table 632",
+   "evidence_line": 5521,
+   "evidence_quotes": [
+    "+ ze xie, gui zhi | Severe damp-phlegm",
+    "+ gou teng, dai zhe, shi | Lr yang rising",
+    "+ jiang can, dan nan xing | Severe dizziness/vertigo"
+   ],
+   "notes": "source \"dai zhe, shi\" read as 代赭石 (Dai Zhe Shi; comma is a source artifact)"
+  },
+  {
+   "formula_id": "formula.bao_he_wan",
+   "formula_zh": "保和丸",
+   "modifications_zh": [
+    "脹滿痞悶甚 → 加枳實、厚朴",
+    "兼熱 → 加黃芩、黃連",
+    "兼脾虛 → 加白朮",
+    "重症 → 加檳榔、大黃、枳實"
+   ],
+   "modifications_en": [
+    "Severe bloating and stuffiness → add Zhi Shi and Hou Po",
+    "With heat → add Huang Qin and Huang Lian",
+    "With Spleen deficiency → add Bai Zhu",
+    "Severe cases → add Bing Lang, Da Huang and Zhi Shi"
+   ],
+   "evidence": "Table 636",
+   "evidence_line": 5559,
+   "evidence_quotes": [
+    "+ zhi shi, hou po | Severe bloating & stuffiness",
+    "+ huang qin, huang lian | With heat",
+    "+ bai zhu | With Sp xu",
+    "+ bing lang,  da huang, zhi shi | Severe cases"
+   ]
+  },
+  {
+   "formula_id": "formula.jian_pi_wan",
+   "formula_zh": "健脾丸",
+   "modifications_zh": [
+    "噁心嘔吐 → 加半夏、丁香",
+    "虛寒腹痛甚 → 加乾薑",
+    "便溏尿少 → 加薏苡仁"
+   ],
+   "modifications_en": [
+    "Nausea and vomiting → add Ban Xia and Ding Xiang",
+    "Severe abdominal pain from deficiency cold → add Gan Jiang",
+    "Loose stools with reduced urination → add Yi Yi Ren"
+   ],
+   "evidence": "Table 640",
+   "evidence_line": 5593,
+   "evidence_quotes": [
+    "+ ban xia, ding xiang | With nausea & vomiting",
+    "+ gan jiang | Severe abdominal pain from xu cold",
+    "+ yi yi ren | Loose stools, reduced urination"
+   ]
+  }
+ ],
+ "partial": [
+  {
+   "formula_id": "formula.yue_ju_wan",
+   "formula_zh": "越鞠丸",
+   "evidence": "Table 408",
+   "evidence_line": 3572,
+   "evidence_quote": "Absence of fire yu,… | - Zhi zi,…( no damp, - cang zhu, no food, - shen qu)",
+   "reason": "conditional meta-row: remove the corresponding herb for each absent constraint (- Zhi Zi if no fire, - Cang Zhu if no damp, - Shen Qu if no food); not a single concrete modification"
+  },
+  {
+   "formula_id": "formula.er_zhi_wan",
+   "formula_zh": "二至丸",
+   "evidence": "Table 315",
+   "evidence_line": 2754,
+   "evidence_quote": "+ sang shen zi | Sweet, cool;<br>Lr, K | Stronger effect in enriching yin and tonifying blood",
+   "draft_zh": "加桑椹子（作用：加強滋陰養血之力）",
+   "draft_en": "add Sang Shen Zi (purpose: stronger effect in enriching Yin and tonifying Blood)",
+   "reason": "source row has change + purpose but no indication column; cannot form a \"indication → change\" entry"
+  }
+ ],
+ "abandoned": [
+  {
+   "table": "Table 32",
+   "reason": "owner formula not in repo: Xiang Ru San"
+  },
+  {
+   "table": "Table 56",
+   "reason": "not a modifications table (chapter banner \"Formulas That Drain Downward\")"
+  },
+  {
+   "table": "Table 82",
+   "reason": "owner formula not in repo: Xin Jia Huang Long Tang"
+  },
+  {
+   "table": "Table 87",
+   "reason": "owner formula not in repo: Shi Zao Tang"
+  },
+  {
+   "table": "Table 202",
+   "reason": "owner formula not in repo: Qing Shu Yi Qi Tang"
+  },
+  {
+   "table": "Table 241",
+   "reason": "owner formula not in repo: Wu Ji San"
+  },
+  {
+   "table": "Table 263",
+   "reason": "owner formula not in repo: Ren Shen Ge Jie San"
+  },
+  {
+   "table": "Table 297",
+   "reason": "not a modifications table (Liu Wei Di Huang Wan description table, misclassified)"
+  },
+  {
+   "table": "Table 311",
+   "reason": "owner formula not in repo: Hu Qian Wan"
+  },
+  {
+   "table": "Table 325",
+   "reason": "owner formula not in repo: Bu Fei E Jiao Tang"
+  },
+  {
+   "table": "Table 329",
+   "reason": "owner formula not in repo: Gui Lu Er Xian Jiao"
+  },
+  {
+   "table": "Table 333",
+   "reason": "owner formula not in repo: Qi Bao Mei Ran Dan"
+  },
+  {
+   "table": "Table 428",
+   "reason": "not a modifications table (Su Zi Jiang Qi Tang description table, misclassified)"
+  },
+  {
+   "table": "Table 472",
+   "reason": "not a modifications table (Sheng Hua Tang vs Shi Xiao San comparison chart)"
+  }
+ ]
+}

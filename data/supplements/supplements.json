@@ -1,0 +1,3232 @@
+{
+  "dataset": "supp_supplements",
+  "policy": "supp.* 骨架層(D17)。西式營養補充劑產品——不是 herb.* 飲片/顆粒,不是 drug.* 處方藥。每個帶主張的欄位掛來源(NIH ODS > Examine.com > Natural Medicines > 官方單張/藥典 > 綜述論文,docs/SUPP_CARD_TEMPLATE.md §2);查不到就留空,不填樣板句。interaction_flags 是審閱旗標,不是斷言;CR-009 supp→drugclass 關係種子仍在 staging,尚未審閱前不落 related_drugclass_review_flags。herb/supp 同源物質分開建卡,經 related_herb_id 單側連結(D13)。",
+  "interaction_focus_vocabulary": {
+    "note": "interaction_focus 的三個審閱類別與五個狀態值(CR-006 triage 正規化)。狀態不是斷言,是「這一類藥要不要人工覆核」的旗標;除 no_specific_flag_in_source 外一律需要覆核。原始研究包字串保留在 staged_label,正規化可回溯。",
+    "classes": [
+      "anticoagulant",
+      "immunosuppressant",
+      "thyroid"
+    ],
+    "statuses": {
+      "known_concern": "Primary source names a specific concern with this drug class.",
+      "possible_concern": "Plausible, theoretical, case-level, or product-dependent signal; not established.",
+      "component_dependent": "Multi-ingredient product — review each ingredient and dose separately.",
+      "no_specific_flag_in_source": "Primary source was reviewed and carries no class-specific flag. NOT equivalent to 'no interaction'.",
+      "insufficient_data": "Evidence insufficient. Must not be converted to 'no interaction'."
+    },
+    "staging_refs": [
+      "docs/research_packs/SUPP_BATCH01_INTERACTION_FOCUS_MATRIX_v1.md",
+      "docs/research_packs/SUPP_SKELETON_BATCH_02_v1.md"
+    ]
+  },
+  "created": "2026-08-12",
+  "records": [
+    {
+      "id": "supp.vitamin_d3",
+      "name_zh": "維生素 D3",
+      "name_en": "Vitamin D3 (cholecalciferol)",
+      "aliases": [
+        "cholecalciferol",
+        "vitamin D"
+      ],
+      "category": "vitamins",
+      "maturity": "skeleton",
+      "common_forms_en": [
+        "cholecalciferol (D3) softgel/capsule",
+        "drops/liquid",
+        "combined calcium+D"
+      ],
+      "typical_dose_range_en": "Adults: DRI 600–800 IU/day (15–20 mcg); common supplement products often provide ~1,000–2,000 IU/day; adult UL 4,000 IU/day unless medically supervised.",
+      "dose_source": {
+        "name": "NIH ODS",
+        "url": "https://ods.od.nih.gov/factsheets/VitaminD-HealthProfessional/"
+      },
+      "key_safety_notes": [
+        {
+          "note_en": "Excess intake can cause hypercalcemia/hypercalciuria.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NIH ODS",
+            "url": "https://ods.od.nih.gov/factsheets/VitaminD-HealthProfessional/"
+          }
+        },
+        {
+          "note_en": "Thiazide diuretics can increase hypercalcemia risk; corticosteroids and some weight-loss/cholesterol drugs can alter vitamin D status/absorption.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NIH ODS",
+            "url": "https://ods.od.nih.gov/factsheets/VitaminD-HealthProfessional/"
+          }
+        },
+        {
+          "note_en": "No specific anticoagulant, immunosuppressant, or thyroid-drug interaction is a defining D3 interaction, but medication review remains appropriate.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NIH ODS",
+            "url": "https://ods.od.nih.gov/factsheets/VitaminD-HealthProfessional/"
+          }
+        }
+      ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_specific_flag_in_primary_source",
+            "note_en": null
+          },
+          "immunosuppressant": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_specific_flag_in_primary_source",
+            "note_en": null
+          },
+          "thyroid": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_specific_flag_in_primary_source",
+            "note_en": null
+          }
+        },
+        "focus_note_en": "Thiazide diuretics can raise hypercalcemia risk; other drugs affecting vitamin D or calcium handling warrant review.",
+        "source": {
+          "name": "NIH ODS",
+          "url": "https://ods.od.nih.gov/factsheets/VitaminD-HealthProfessional/"
+        },
+        "staging_ref": "docs/research_packs/SUPP_BATCH01_INTERACTION_FOCUS_MATRIX_v1.md"
+      },
+      "evidence_snapshot_en": "Established nutrient for calcium/bone metabolism; supplementation benefit is strongest for preventing/treating deficiency rather than as a universal disease treatment.",
+      "evidence_source": {
+        "name": "NIH ODS",
+        "url": "https://ods.od.nih.gov/factsheets/VitaminD-HealthProfessional/"
+      },
+      "related_herb_id": null,
+      "related_drugclass_review_flags": [],
+      "sources": [
+        {
+          "name": "NIH ODS",
+          "url": "https://ods.od.nih.gov/factsheets/VitaminD-HealthProfessional/"
+        }
+      ],
+      "review_status": "skeleton_unreviewed"
+    },
+    {
+      "id": "supp.b_complex",
+      "name_zh": "維生素 B 群",
+      "name_en": "B-complex vitamins",
+      "aliases": [
+        "vitamin B complex",
+        "B vitamins"
+      ],
+      "category": "multi_ingredient",
+      "maturity": "skeleton",
+      "common_forms_en": [
+        "tablet/capsule blends",
+        "high-potency B-complex",
+        "B-complex with vitamin C"
+      ],
+      "typical_dose_range_en": "No standardized formula. Usually provides multiple B vitamins from around Daily Value levels to high multiples; assess each component separately, especially B6, niacin, folic acid, and B12.",
+      "dose_source": {
+        "name": "NIH ODS",
+        "url": "https://ods.od.nih.gov/factsheets/MVMS-HealthProfessional/"
+      },
+      "key_safety_notes": [
+        {
+          "note_en": "Safety depends on individual component doses; high-dose B6 can cause neuropathy and niacin can cause flushing/hepatotoxicity at pharmacologic doses.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NIH ODS",
+            "url": "https://ods.od.nih.gov/factsheets/VitaminB12-HealthProfessional/"
+          }
+        },
+        {
+          "note_en": "Folic acid can mask hematologic signs of B12 deficiency.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NIH ODS",
+            "url": "https://ods.od.nih.gov/factsheets/VitaminB12-HealthProfessional/"
+          }
+        },
+        {
+          "note_en": "Review interactions component-by-component; no single class-wide anticoagulant/immunosuppressant/thyroid interaction rule.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NIH ODS",
+            "url": "https://ods.od.nih.gov/factsheets/VitaminB12-HealthProfessional/"
+          }
+        }
+      ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "component_dependent",
+            "staged_label": "component_dependent",
+            "note_en": null
+          },
+          "immunosuppressant": {
+            "status": "component_dependent",
+            "staged_label": "component_dependent",
+            "note_en": null
+          },
+          "thyroid": {
+            "status": "component_dependent",
+            "staged_label": "component_dependent",
+            "note_en": null
+          }
+        },
+        "focus_note_en": "Review B6, niacin, folate and B12 amounts separately; a blend does not carry one class-wide interaction conclusion.",
+        "source": {
+          "name": "NIH ODS",
+          "url": "https://ods.od.nih.gov/factsheets/MVMS-HealthProfessional/"
+        },
+        "staging_ref": "docs/research_packs/SUPP_BATCH01_INTERACTION_FOCUS_MATRIX_v1.md"
+      },
+      "evidence_snapshot_en": "Useful when one or more B-vitamin needs are not met, but a B-complex is not one standardized intervention and evidence cannot be generalized across formulations.",
+      "evidence_source": {
+        "name": "NIH ODS",
+        "url": "https://ods.od.nih.gov/factsheets/MVMS-HealthProfessional/"
+      },
+      "related_herb_id": null,
+      "related_drugclass_review_flags": [],
+      "sources": [
+        {
+          "name": "NIH ODS",
+          "url": "https://ods.od.nih.gov/factsheets/MVMS-HealthProfessional/"
+        },
+        {
+          "name": "NIH ODS",
+          "url": "https://ods.od.nih.gov/factsheets/VitaminB12-HealthProfessional/"
+        },
+        {
+          "name": "NIH ODS",
+          "url": "https://ods.od.nih.gov/factsheets/Folate-HealthProfessional/"
+        }
+      ],
+      "review_status": "skeleton_unreviewed"
+    },
+    {
+      "id": "supp.b12",
+      "name_zh": "維生素 B12",
+      "name_en": "Vitamin B12 (cobalamin)",
+      "aliases": [
+        "cobalamin",
+        "cyanocobalamin",
+        "methylcobalamin"
+      ],
+      "category": "vitamins",
+      "maturity": "skeleton",
+      "common_forms_en": [
+        "cyanocobalamin",
+        "methylcobalamin",
+        "sublingual/tablet",
+        "injection (prescription/clinical)"
+      ],
+      "typical_dose_range_en": "Adult RDA 2.4 mcg/day; oral supplements commonly contain much higher amounts (e.g. 25–1,000+ mcg) because absorption is limited and dose-dependent.",
+      "dose_source": {
+        "name": "NIH ODS",
+        "url": "https://ods.od.nih.gov/factsheets/VitaminB12-HealthProfessional/"
+      },
+      "key_safety_notes": [
+        {
+          "note_en": "Generally low toxicity; no established UL.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NIH ODS",
+            "url": "https://ods.od.nih.gov/factsheets/VitaminB12-HealthProfessional/"
+          }
+        },
+        {
+          "note_en": "Metformin and acid-suppressing drugs can reduce B12 status over time.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NIH ODS",
+            "url": "https://ods.od.nih.gov/factsheets/VitaminB12-HealthProfessional/"
+          }
+        },
+        {
+          "note_en": "No characteristic anticoagulant/immunosuppressant/thyroid-drug interaction.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NIH ODS",
+            "url": "https://ods.od.nih.gov/factsheets/VitaminB12-HealthProfessional/"
+          }
+        }
+      ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_specific_flag_in_primary_source",
+            "note_en": null
+          },
+          "immunosuppressant": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_specific_flag_in_primary_source",
+            "note_en": null
+          },
+          "thyroid": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_specific_flag_in_primary_source",
+            "note_en": null
+          }
+        },
+        "focus_note_en": "Metformin and acid-suppressing drugs can contribute to low B12 status over time.",
+        "source": {
+          "name": "NIH ODS",
+          "url": "https://ods.od.nih.gov/factsheets/VitaminB12-HealthProfessional/"
+        },
+        "staging_ref": "docs/research_packs/SUPP_BATCH01_INTERACTION_FOCUS_MATRIX_v1.md"
+      },
+      "evidence_snapshot_en": "Strong evidence for correcting B12 deficiency; benefit in people with adequate status for nonspecific energy/cognition claims is not established.",
+      "evidence_source": {
+        "name": "NIH ODS",
+        "url": "https://ods.od.nih.gov/factsheets/VitaminB12-HealthProfessional/"
+      },
+      "related_herb_id": null,
+      "related_drugclass_review_flags": [],
+      "sources": [
+        {
+          "name": "NIH ODS",
+          "url": "https://ods.od.nih.gov/factsheets/VitaminB12-HealthProfessional/"
+        }
+      ],
+      "review_status": "skeleton_unreviewed"
+    },
+    {
+      "id": "supp.folate",
+      "name_zh": "葉酸 / 維生素 B9",
+      "name_en": "Folate / folic acid (vitamin B9)",
+      "aliases": [
+        "folic acid",
+        "vitamin B9",
+        "5-MTHF",
+        "methylfolate"
+      ],
+      "category": "vitamins",
+      "maturity": "skeleton",
+      "common_forms_en": [
+        "folic acid",
+        "5-MTHF/methylfolate",
+        "multivitamin/prenatal formulations"
+      ],
+      "typical_dose_range_en": "Adults DFE RDA 400 mcg/day; pregnancy 600 mcg DFE/day. Common supplements often provide 400–800 mcg folic acid or equivalent; adult UL for folic acid from supplements/fortified foods is 1,000 mcg/day.",
+      "dose_source": {
+        "name": "NIH ODS",
+        "url": "https://ods.od.nih.gov/factsheets/Folate-HealthProfessional/"
+      },
+      "key_safety_notes": [
+        {
+          "note_en": "High folic acid intake can mask hematologic signs of vitamin B12 deficiency.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NIH ODS",
+            "url": "https://ods.od.nih.gov/factsheets/Folate-HealthProfessional/"
+          }
+        },
+        {
+          "note_en": "Interacts with some antifolate drugs and antiseizure medicines; medication-specific review required.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NIH ODS",
+            "url": "https://ods.od.nih.gov/factsheets/Folate-HealthProfessional/"
+          }
+        },
+        {
+          "note_en": "No general anticoagulant or thyroid-drug warning.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NIH ODS",
+            "url": "https://ods.od.nih.gov/factsheets/Folate-HealthProfessional/"
+          }
+        }
+      ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_specific_flag_in_primary_source",
+            "note_en": null
+          },
+          "immunosuppressant": {
+            "status": "known_concern",
+            "staged_label": "known_concern_antifolate_drugs",
+            "note_en": "Antifolate drugs — a group that overlaps with agents used as immunosuppressants — are the relevant interaction."
+          },
+          "thyroid": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_specific_flag_in_primary_source",
+            "note_en": null
+          }
+        },
+        "focus_note_en": "Antifolate and some antiseizure medicines are more relevant here than the three focus classes; high folic acid intake can mask hematologic signs of B12 deficiency.",
+        "source": {
+          "name": "NIH ODS",
+          "url": "https://ods.od.nih.gov/factsheets/Folate-HealthProfessional/"
+        },
+        "staging_ref": "docs/research_packs/SUPP_BATCH01_INTERACTION_FOCUS_MATRIX_v1.md"
+      },
+      "evidence_snapshot_en": "Established role in one-carbon metabolism and prevention of neural tube defects when adequate folic acid is taken per public-health guidance around conception.",
+      "evidence_source": {
+        "name": "NIH ODS",
+        "url": "https://ods.od.nih.gov/factsheets/Folate-HealthProfessional/"
+      },
+      "related_herb_id": null,
+      "related_drugclass_review_flags": [],
+      "sources": [
+        {
+          "name": "NIH ODS",
+          "url": "https://ods.od.nih.gov/factsheets/Folate-HealthProfessional/"
+        }
+      ],
+      "review_status": "skeleton_unreviewed"
+    },
+    {
+      "id": "supp.coq10",
+      "name_zh": "輔酶 Q10",
+      "name_en": "Coenzyme Q10 (CoQ10)",
+      "aliases": [
+        "ubiquinone",
+        "ubiquinol",
+        "coenzyme Q10"
+      ],
+      "category": "antioxidants_coenzymes",
+      "maturity": "skeleton",
+      "common_forms_en": [
+        "ubiquinone",
+        "ubiquinol",
+        "softgel"
+      ],
+      "typical_dose_range_en": "Common clinical-study/supplement range ~100–300 mg/day; higher doses have been studied for specific conditions. No U.S. RDA.",
+      "dose_source": {
+        "name": "NCCIH",
+        "url": "https://www.nccih.nih.gov/health/coenzyme-q10"
+      },
+      "key_safety_notes": [
+        {
+          "note_en": "May interact with warfarin and potentially reduce anticoagulant effect; monitor if combined.",
+          "interaction_flags": [
+            "anticoagulant"
+          ],
+          "source": {
+            "name": "NCCIH",
+            "url": "https://www.nccih.nih.gov/health/coenzyme-q10"
+          }
+        },
+        {
+          "note_en": "May interact with insulin/diabetes treatment.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NCCIH",
+            "url": "https://www.nccih.nih.gov/health/coenzyme-q10"
+          }
+        },
+        {
+          "note_en": "Compatibility with some cancer treatments is uncertain; coordinate with oncology team.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NCCIH",
+            "url": "https://www.nccih.nih.gov/health/coenzyme-q10"
+          }
+        }
+      ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "known_concern",
+            "staged_label": "known_concern_warfarin",
+            "note_en": "May reduce warfarin effect; monitor anticoagulation clinically if combined."
+          },
+          "immunosuppressant": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_data",
+            "note_en": null
+          },
+          "thyroid": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_specific_flag_in_primary_source",
+            "note_en": null
+          }
+        },
+        "focus_note_en": "May also interact with insulin and diabetes treatment; compatibility with some cancer treatments is uncertain and should be coordinated with the oncology team.",
+        "source": {
+          "name": "NCCIH",
+          "url": "https://www.nccih.nih.gov/health/coenzyme-q10"
+        },
+        "staging_ref": "docs/research_packs/SUPP_BATCH01_INTERACTION_FOCUS_MATRIX_v1.md"
+      },
+      "evidence_snapshot_en": "Evidence is condition-specific and mixed; NCCIH does not support broad disease-treatment claims, though limited signals exist in selected cardiovascular/migraine contexts.",
+      "evidence_source": {
+        "name": "NCCIH",
+        "url": "https://www.nccih.nih.gov/health/coenzyme-q10"
+      },
+      "related_herb_id": null,
+      "related_drugclass_review_flags": [],
+      "sources": [
+        {
+          "name": "NCCIH",
+          "url": "https://www.nccih.nih.gov/health/coenzyme-q10"
+        }
+      ],
+      "review_status": "skeleton_unreviewed"
+    },
+    {
+      "id": "supp.ginkgo",
+      "name_zh": "銀杏葉萃取物",
+      "name_en": "Ginkgo biloba extract",
+      "aliases": [
+        "Ginkgo biloba extract",
+        "ginkgo leaf extract"
+      ],
+      "category": "botanical_extracts",
+      "maturity": "skeleton",
+      "common_forms_en": [
+        "standardized leaf extract tablets/capsules",
+        "liquid extract"
+      ],
+      "typical_dose_range_en": "Common research dosing ~120–240 mg/day standardized extract, divided or once/twice daily; product standardization matters.",
+      "dose_source": {
+        "name": "NCCIH",
+        "url": "https://www.nccih.nih.gov/health/ginkgo"
+      },
+      "key_safety_notes": [
+        {
+          "note_en": "Potential bleeding risk/interaction concern with anticoagulant or antiplatelet drugs; perioperative review warranted.",
+          "interaction_flags": [
+            "anticoagulant"
+          ],
+          "source": {
+            "name": "NCCIH",
+            "url": "https://www.nccih.nih.gov/health/ginkgo"
+          }
+        },
+        {
+          "note_en": "Seeds are toxic when raw/roasted in quantity; supplement data mainly concern leaf extract.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NCCIH",
+            "url": "https://www.nccih.nih.gov/health/ginkgo"
+          }
+        },
+        {
+          "note_en": "No established thyroid-drug benefit; medication review required.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NCCIH",
+            "url": "https://www.nccih.nih.gov/health/ginkgo"
+          }
+        }
+      ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "known_concern",
+            "staged_label": "known_concern_bleeding",
+            "note_en": "Bleeding interaction concern with anticoagulant or antiplatelet therapy; perioperative review warranted."
+          },
+          "immunosuppressant": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_data",
+            "note_en": null
+          },
+          "thyroid": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_specific_flag_in_primary_source",
+            "note_en": null
+          }
+        },
+        "focus_note_en": "Supplement interaction data concern standardized leaf extract; raw or roasted seeds eaten in quantity are a separate toxic exposure.",
+        "source": {
+          "name": "NCCIH",
+          "url": "https://www.nccih.nih.gov/health/ginkgo"
+        },
+        "staging_ref": "docs/research_packs/SUPP_BATCH01_INTERACTION_FOCUS_MATRIX_v1.md"
+      },
+      "evidence_snapshot_en": "NCCIH reports no conclusive evidence that ginkgo is helpful for any health condition; dementia prevention and tinnitus benefit have not been demonstrated.",
+      "evidence_source": {
+        "name": "NCCIH",
+        "url": "https://www.nccih.nih.gov/health/ginkgo"
+      },
+      "related_herb_id": null,
+      "related_drugclass_review_flags": [],
+      "sources": [
+        {
+          "name": "NCCIH",
+          "url": "https://www.nccih.nih.gov/health/ginkgo"
+        }
+      ],
+      "review_status": "skeleton_unreviewed"
+    },
+    {
+      "id": "supp.curcumin",
+      "name_zh": "薑黃素",
+      "name_en": "Curcumin / turmeric extract",
+      "aliases": [
+        "turmeric extract",
+        "curcuminoids"
+      ],
+      "category": "botanical_extracts",
+      "maturity": "skeleton",
+      "common_forms_en": [
+        "turmeric root powder",
+        "standardized curcuminoid extract",
+        "enhanced-bioavailability curcumin with piperine/lipid systems"
+      ],
+      "typical_dose_range_en": "Research products vary widely, commonly hundreds of mg to ~1–2 g/day curcuminoids/turmeric extracts; formulations are not dose-equivalent because bioavailability differs.",
+      "dose_source": {
+        "name": "NCCIH",
+        "url": "https://www.nccih.nih.gov/health/turmeric"
+      },
+      "key_safety_notes": [
+        {
+          "note_en": "Highly bioavailable formulations have been associated with liver injury; stop and evaluate if jaundice/dark urine or marked systemic symptoms occur.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NCCIH",
+            "url": "https://www.nccih.nih.gov/health/turmeric"
+          }
+        },
+        {
+          "note_en": "Potential antiplatelet/bleeding interaction is plausible; use caution with anticoagulants/antiplatelets.",
+          "interaction_flags": [
+            "anticoagulant"
+          ],
+          "source": {
+            "name": "NCCIH",
+            "url": "https://www.nccih.nih.gov/health/turmeric"
+          }
+        },
+        {
+          "note_en": "Piperine-containing products can alter drug exposure; interaction review is important.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NCCIH",
+            "url": "https://www.nccih.nih.gov/health/turmeric"
+          }
+        }
+      ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "possible_concern",
+            "staged_label": "possible_bleeding_concern",
+            "note_en": "Antiplatelet and bleeding concern is plausible rather than established; use caution with anticoagulants and antiplatelets."
+          },
+          "immunosuppressant": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_data",
+            "note_en": null
+          },
+          "thyroid": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_specific_flag_in_primary_source",
+            "note_en": null
+          }
+        },
+        "focus_note_en": "Piperine-containing and enhanced-bioavailability products can alter drug exposure, so interaction review must name the specific formulation.",
+        "source": {
+          "name": "NCCIH",
+          "url": "https://www.nccih.nih.gov/health/turmeric"
+        },
+        "staging_ref": "docs/research_packs/SUPP_BATCH01_INTERACTION_FOCUS_MATRIX_v1.md"
+      },
+      "evidence_snapshot_en": "NCCIH considers evidence insufficient for definitive health-purpose conclusions; osteoarthritis results are promising but not definitive.",
+      "evidence_source": {
+        "name": "NCCIH",
+        "url": "https://www.nccih.nih.gov/health/turmeric"
+      },
+      "related_herb_id": "herb.jiang_huang",
+      "related_drugclass_review_flags": [],
+      "sources": [
+        {
+          "name": "NCCIH",
+          "url": "https://www.nccih.nih.gov/health/turmeric"
+        }
+      ],
+      "review_status": "skeleton_unreviewed"
+    },
+    {
+      "id": "supp.lutein",
+      "name_zh": "葉黃素",
+      "name_en": "Lutein",
+      "aliases": [
+        "lutein/zeaxanthin"
+      ],
+      "category": "antioxidants_coenzymes",
+      "maturity": "skeleton",
+      "common_forms_en": [
+        "lutein softgel",
+        "lutein + zeaxanthin",
+        "AREDS2-style eye-health combinations"
+      ],
+      "typical_dose_range_en": "Common eye-health formulations/studies often use lutein 10 mg/day with zeaxanthin 2 mg/day; no RDA established.",
+      "dose_source": {
+        "name": "NIH National Eye Institute — AREDS2 results (lutein/zeaxanthin 10 mg/2 mg)",
+        "url": "https://www.nei.nih.gov/about/news-and-events/news/nih-study-provides-clarity-supplements-protection-against-blinding-eye-disease",
+        "verified": "2026-08-11",
+        "note": "AREDS2 formula dose; replaces dead ODS directory link (2026-08-11 fix, prior link did not support the claim)"
+      },
+      "key_safety_notes": [
+        {
+          "note_en": "Generally well tolerated in studied doses; high carotenoid intake can cause benign skin discoloration.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NIH ODS",
+            "url": "https://ods.od.nih.gov/factsheets/list-all/"
+          }
+        },
+        {
+          "note_en": "No defining anticoagulant/immunosuppressant/thyroid-drug interaction established.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NIH ODS",
+            "url": "https://ods.od.nih.gov/factsheets/list-all/"
+          }
+        },
+        {
+          "note_en": "Combination products may introduce other interaction risks.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NIH ODS",
+            "url": "https://ods.od.nih.gov/factsheets/list-all/"
+          }
+        }
+      ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "insufficient_data",
+            "staged_label": "no_specific_flag_in_primary_source",
+            "note_en": null
+          },
+          "immunosuppressant": {
+            "status": "insufficient_data",
+            "staged_label": "no_specific_flag_in_primary_source",
+            "note_en": null
+          },
+          "thyroid": {
+            "status": "insufficient_data",
+            "staged_label": "no_specific_flag_in_primary_source",
+            "note_en": null
+          }
+        },
+        "focus_note_en": "Downgraded from the staging matrix's 'no specific flag' to insufficient data: NIH ODS has no lutein ingredient fact sheet — the cited ODS page is a directory index that routes to an external entry — so no primary source was actually reviewed for these three classes. Combination eye-health products may also introduce interactions from their other ingredients.",
+        "source": {
+          "name": "NIH ODS",
+          "url": "https://ods.od.nih.gov/factsheets/list-all/"
+        },
+        "staging_ref": "docs/research_packs/SUPP_BATCH01_INTERACTION_FOCUS_MATRIX_v1.md"
+      },
+      "evidence_snapshot_en": "Lutein/zeaxanthin are retinal carotenoids; evidence is strongest in specific ophthalmic contexts and combination formulations rather than as a general-purpose supplement.",
+      "evidence_source": {
+        "name": "NIH ODS",
+        "url": "https://ods.od.nih.gov/factsheets/list-all/"
+      },
+      "related_herb_id": null,
+      "related_drugclass_review_flags": [],
+      "sources": [
+        {
+          "name": "NIH NEI — AREDS2 announcement",
+          "url": "https://www.nei.nih.gov/about/news-and-events/news/nih-study-provides-clarity-supplements-protection-against-blinding-eye-disease",
+          "verified": "2026-08-11"
+        }
+      ],
+      "review_status": "skeleton_unreviewed"
+    },
+    {
+      "id": "supp.multivitamin",
+      "name_zh": "綜合維生素礦物質",
+      "name_en": "Multivitamin/mineral",
+      "aliases": [
+        "MVM",
+        "multi",
+        "multivitamin/mineral"
+      ],
+      "category": "multi_ingredient",
+      "maturity": "skeleton",
+      "common_forms_en": [
+        "once-daily MVM",
+        "age/sex-specific formulas",
+        "prenatal formulas"
+      ],
+      "typical_dose_range_en": "No standard formulation or dose; many products provide nutrients near Daily Values, while high-potency products may greatly exceed them.",
+      "dose_source": {
+        "name": "NIH ODS",
+        "url": "https://ods.od.nih.gov/factsheets/MVMS-HealthProfessional/"
+      },
+      "key_safety_notes": [
+        {
+          "note_en": "Interaction and toxicity profile depends on ingredients and dose; duplicate intake with other supplements is a major issue.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NIH ODS",
+            "url": "https://ods.od.nih.gov/factsheets/MVMS-HealthProfessional/"
+          }
+        },
+        {
+          "note_en": "Vitamin K-containing products can affect warfarin management.",
+          "interaction_flags": [
+            "anticoagulant"
+          ],
+          "source": {
+            "name": "NIH ODS",
+            "url": "https://ods.od.nih.gov/factsheets/MVMS-HealthProfessional/"
+          }
+        },
+        {
+          "note_en": "Minerals such as calcium/iron can interfere with levothyroxine absorption if taken too close together.",
+          "interaction_flags": [
+            "thyroid"
+          ],
+          "source": {
+            "name": "NIH ODS",
+            "url": "https://ods.od.nih.gov/factsheets/MVMS-HealthProfessional/"
+          }
+        }
+      ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "known_concern",
+            "staged_label": "known_concern_if_vitamin_k",
+            "note_en": "Vitamin K-containing products can affect warfarin management."
+          },
+          "immunosuppressant": {
+            "status": "component_dependent",
+            "staged_label": "component_dependent",
+            "note_en": null
+          },
+          "thyroid": {
+            "status": "known_concern",
+            "staged_label": "known_concern_if_calcium_iron",
+            "note_en": "Calcium and iron can impair levothyroxine absorption when taken too close together."
+          }
+        },
+        "focus_note_en": "The interaction profile follows the specific ingredient list and doses; duplicate intake alongside single-ingredient supplements is the major practical issue.",
+        "source": {
+          "name": "NIH ODS",
+          "url": "https://ods.od.nih.gov/factsheets/MVMS-HealthProfessional/"
+        },
+        "staging_ref": "docs/research_packs/SUPP_BATCH01_INTERACTION_FOCUS_MATRIX_v1.md"
+      },
+      "evidence_snapshot_en": "MVMs can help fill nutrient gaps, but compositions vary widely and broad prevention benefits are not uniform across outcomes.",
+      "evidence_source": {
+        "name": "NIH ODS",
+        "url": "https://ods.od.nih.gov/factsheets/MVMS-HealthProfessional/"
+      },
+      "related_herb_id": null,
+      "related_drugclass_review_flags": [],
+      "sources": [
+        {
+          "name": "NIH ODS",
+          "url": "https://ods.od.nih.gov/factsheets/MVMS-HealthProfessional/"
+        }
+      ],
+      "review_status": "skeleton_unreviewed"
+    },
+    {
+      "id": "supp.calcium",
+      "name_zh": "鈣",
+      "name_en": "Calcium",
+      "aliases": [
+        "calcium carbonate",
+        "calcium citrate"
+      ],
+      "category": "minerals",
+      "maturity": "skeleton",
+      "common_forms_en": [
+        "calcium carbonate",
+        "calcium citrate",
+        "calcium + vitamin D"
+      ],
+      "typical_dose_range_en": "Adult RDA generally 1,000–1,200 mg/day total intake depending on age/sex. Supplemental doses are often 500–600 mg per dose; total intake should account for diet. Adult UL commonly 2,000–2,500 mg/day depending on age.",
+      "dose_source": {
+        "name": "NIH ODS",
+        "url": "https://ods.od.nih.gov/factsheets/Calcium-HealthProfessional/"
+      },
+      "key_safety_notes": [
+        {
+          "note_en": "Higher supplemental intake can increase kidney-stone risk in some people.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NIH ODS",
+            "url": "https://ods.od.nih.gov/factsheets/Calcium-HealthProfessional/"
+          }
+        },
+        {
+          "note_en": "Calcium can reduce absorption of levothyroxine; separate administration per medication guidance.",
+          "interaction_flags": [
+            "thyroid"
+          ],
+          "source": {
+            "name": "NIH ODS",
+            "url": "https://ods.od.nih.gov/factsheets/Calcium-HealthProfessional/"
+          }
+        },
+        {
+          "note_en": "Also interacts with some antibiotics and bisphosphonates; no defining anticoagulant interaction.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NIH ODS",
+            "url": "https://ods.od.nih.gov/factsheets/Calcium-HealthProfessional/"
+          }
+        }
+      ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_specific_flag_in_primary_source",
+            "note_en": null
+          },
+          "immunosuppressant": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_specific_flag_in_primary_source",
+            "note_en": null
+          },
+          "thyroid": {
+            "status": "known_concern",
+            "staged_label": "known_absorption_concern",
+            "note_en": "Calcium reduces levothyroxine absorption; separate administration per medication guidance."
+          }
+        },
+        "focus_note_en": "Also interacts with some antibiotics and with bisphosphonates; higher supplemental intake can raise kidney-stone risk in some people.",
+        "source": {
+          "name": "NIH ODS",
+          "url": "https://ods.od.nih.gov/factsheets/Calcium-HealthProfessional/"
+        },
+        "staging_ref": "docs/research_packs/SUPP_BATCH01_INTERACTION_FOCUS_MATRIX_v1.md"
+      },
+      "evidence_snapshot_en": "Essential for bone and neuromuscular physiology; supplementation is most rational when dietary intake is inadequate or specific clinical indications exist.",
+      "evidence_source": {
+        "name": "NIH ODS",
+        "url": "https://ods.od.nih.gov/factsheets/Calcium-HealthProfessional/"
+      },
+      "related_herb_id": null,
+      "related_drugclass_review_flags": [],
+      "sources": [
+        {
+          "name": "NIH ODS",
+          "url": "https://ods.od.nih.gov/factsheets/Calcium-HealthProfessional/"
+        }
+      ],
+      "review_status": "skeleton_unreviewed"
+    },
+    {
+      "id": "supp.magnesium",
+      "name_zh": "鎂",
+      "name_en": "Magnesium",
+      "aliases": [
+        "magnesium glycinate",
+        "magnesium citrate"
+      ],
+      "category": "minerals",
+      "maturity": "skeleton",
+      "common_forms_en": [
+        "magnesium citrate",
+        "magnesium glycinate",
+        "magnesium oxide",
+        "magnesium chloride"
+      ],
+      "typical_dose_range_en": "Adult RDA from all sources roughly 310–420 mg/day by age/sex. Supplemental products often provide ~100–350 mg elemental magnesium/day; U.S. UL for supplemental magnesium is 350 mg/day, excluding food magnesium.",
+      "dose_source": {
+        "name": "NIH ODS",
+        "url": "https://ods.od.nih.gov/factsheets/Magnesium-HealthProfessional/"
+      },
+      "key_safety_notes": [
+        {
+          "note_en": "High supplemental doses commonly cause diarrhea; extreme doses can cause serious toxicity, especially with renal impairment.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NIH ODS",
+            "url": "https://ods.od.nih.gov/factsheets/Magnesium-HealthProfessional/"
+          }
+        },
+        {
+          "note_en": "Can reduce absorption of some antibiotics and bisphosphonates; separate dosing.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NIH ODS",
+            "url": "https://ods.od.nih.gov/factsheets/Magnesium-HealthProfessional/"
+          }
+        },
+        {
+          "note_en": "No defining anticoagulant or thyroid interaction, but product timing with medications should be reviewed.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NIH ODS",
+            "url": "https://ods.od.nih.gov/factsheets/Magnesium-HealthProfessional/"
+          }
+        }
+      ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_specific_flag_in_primary_source",
+            "note_en": null
+          },
+          "immunosuppressant": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_specific_flag_in_primary_source",
+            "note_en": null
+          },
+          "thyroid": {
+            "status": "possible_concern",
+            "staged_label": "possible_absorption_timing_concern",
+            "note_en": "Timing against thyroid medication should be checked against the exact product and medication guidance."
+          }
+        },
+        "focus_note_en": "The strongest established timing interactions are with selected antibiotics and bisphosphonates; extreme doses can cause serious toxicity in renal impairment.",
+        "source": {
+          "name": "NIH ODS",
+          "url": "https://ods.od.nih.gov/factsheets/Magnesium-HealthProfessional/"
+        },
+        "staging_ref": "docs/research_packs/SUPP_BATCH01_INTERACTION_FOCUS_MATRIX_v1.md"
+      },
+      "evidence_snapshot_en": "Essential mineral with established deficiency indications; evidence for symptom-specific supplementation varies by condition and baseline status.",
+      "evidence_source": {
+        "name": "NIH ODS",
+        "url": "https://ods.od.nih.gov/factsheets/Magnesium-HealthProfessional/"
+      },
+      "related_herb_id": null,
+      "related_drugclass_review_flags": [],
+      "sources": [
+        {
+          "name": "NIH ODS",
+          "url": "https://ods.od.nih.gov/factsheets/Magnesium-HealthProfessional/"
+        }
+      ],
+      "review_status": "skeleton_unreviewed"
+    },
+    {
+      "id": "supp.zinc",
+      "name_zh": "鋅",
+      "name_en": "Zinc",
+      "aliases": [
+        "zinc gluconate",
+        "zinc picolinate"
+      ],
+      "category": "minerals",
+      "maturity": "skeleton",
+      "common_forms_en": [
+        "zinc gluconate",
+        "zinc acetate",
+        "zinc picolinate",
+        "zinc sulfate"
+      ],
+      "typical_dose_range_en": "Adult RDA 8 mg/day women and 11 mg/day men; common supplements often 10–30 mg/day. Adult UL 40 mg/day.",
+      "dose_source": {
+        "name": "NIH ODS",
+        "url": "https://ods.od.nih.gov/factsheets/Zinc-HealthProfessional/"
+      },
+      "key_safety_notes": [
+        {
+          "note_en": "Chronic high doses can cause copper deficiency and neurologic/hematologic problems.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NIH ODS",
+            "url": "https://ods.od.nih.gov/factsheets/Zinc-HealthProfessional/"
+          }
+        },
+        {
+          "note_en": "Interacts with quinolone/tetracycline antibiotics and penicillamine; separate dosing.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NIH ODS",
+            "url": "https://ods.od.nih.gov/factsheets/Zinc-HealthProfessional/"
+          }
+        },
+        {
+          "note_en": "No defining anticoagulant or thyroid-drug interaction.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NIH ODS",
+            "url": "https://ods.od.nih.gov/factsheets/Zinc-HealthProfessional/"
+          }
+        }
+      ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_specific_flag_in_primary_source",
+            "note_en": null
+          },
+          "immunosuppressant": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_specific_flag_in_primary_source",
+            "note_en": null
+          },
+          "thyroid": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_specific_flag_in_primary_source",
+            "note_en": null
+          }
+        },
+        "focus_note_en": "Key interactions are with quinolone and tetracycline antibiotics and with penicillamine; separate dosing. Chronic high doses can cause copper deficiency.",
+        "source": {
+          "name": "NIH ODS",
+          "url": "https://ods.od.nih.gov/factsheets/Zinc-HealthProfessional/"
+        },
+        "staging_ref": "docs/research_packs/SUPP_BATCH01_INTERACTION_FOCUS_MATRIX_v1.md"
+      },
+      "evidence_snapshot_en": "Established nutrient with clear deficiency treatment value. Benefit beyond correcting inadequate zinc status is indication-specific.",
+      "evidence_source": {
+        "name": "NIH ODS",
+        "url": "https://ods.od.nih.gov/factsheets/Zinc-HealthProfessional/"
+      },
+      "related_herb_id": null,
+      "related_drugclass_review_flags": [],
+      "sources": [
+        {
+          "name": "NIH ODS",
+          "url": "https://ods.od.nih.gov/factsheets/Zinc-HealthProfessional/"
+        }
+      ],
+      "review_status": "skeleton_unreviewed"
+    },
+    {
+      "id": "supp.creatine",
+      "name_zh": "肌酸",
+      "name_en": "Creatine",
+      "aliases": [
+        "creatine monohydrate"
+      ],
+      "category": "amino_acids_performance",
+      "maturity": "skeleton",
+      "common_forms_en": [
+        "creatine monohydrate powder",
+        "capsules",
+        "buffered/other salts"
+      ],
+      "typical_dose_range_en": "Well-studied regimen: loading ~20 g/day divided for 5–7 days, then maintenance ~3–5 g/day; loading is optional.",
+      "dose_source": {
+        "name": "NIH ODS",
+        "url": "https://ods.od.nih.gov/factsheets/ExerciseAndAthleticPerformance-HealthProfessional/"
+      },
+      "key_safety_notes": [
+        {
+          "note_en": "Typical doses are generally well tolerated in healthy adults; weight gain from water retention and GI effects can occur.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NIH ODS",
+            "url": "https://ods.od.nih.gov/factsheets/ExerciseAndAthleticPerformance-HealthProfessional/"
+          }
+        },
+        {
+          "note_en": "People with kidney disease or complex medical conditions should use clinician guidance.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NIH ODS",
+            "url": "https://ods.od.nih.gov/factsheets/ExerciseAndAthleticPerformance-HealthProfessional/"
+          }
+        },
+        {
+          "note_en": "No characteristic anticoagulant/immunosuppressant/thyroid-drug interaction established.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NIH ODS",
+            "url": "https://ods.od.nih.gov/factsheets/ExerciseAndAthleticPerformance-HealthProfessional/"
+          }
+        }
+      ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_specific_flag_in_primary_source",
+            "note_en": null
+          },
+          "immunosuppressant": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_specific_flag_in_primary_source",
+            "note_en": null
+          },
+          "thyroid": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_specific_flag_in_primary_source",
+            "note_en": null
+          }
+        },
+        "focus_note_en": "Kidney disease and complex medical context are more relevant to review than these three drug classes.",
+        "source": {
+          "name": "NIH ODS",
+          "url": "https://ods.od.nih.gov/factsheets/ExerciseAndAthleticPerformance-HealthProfessional/"
+        },
+        "staging_ref": "docs/research_packs/SUPP_BATCH01_INTERACTION_FOCUS_MATRIX_v1.md"
+      },
+      "evidence_snapshot_en": "One of the best-supported sports supplements for repeated high-intensity exercise, strength and power; little value for endurance performance.",
+      "evidence_source": {
+        "name": "NIH ODS",
+        "url": "https://ods.od.nih.gov/factsheets/ExerciseAndAthleticPerformance-HealthProfessional/"
+      },
+      "related_herb_id": null,
+      "related_drugclass_review_flags": [],
+      "sources": [
+        {
+          "name": "NIH ODS",
+          "url": "https://ods.od.nih.gov/factsheets/ExerciseAndAthleticPerformance-HealthProfessional/"
+        }
+      ],
+      "review_status": "skeleton_unreviewed"
+    },
+    {
+      "id": "supp.nad_plus",
+      "name_zh": "NAD+（菸醯胺腺嘌呤二核苷酸）",
+      "name_en": "NAD+",
+      "aliases": [
+        "NAD",
+        "nicotinamide adenine dinucleotide"
+      ],
+      "category": "antioxidants_coenzymes",
+      "maturity": "skeleton",
+      "common_forms_en": [
+        "oral NAD+ capsules/tablets",
+        "sublingual products",
+        "IV/IM products marketed outside standard supplement evidence base"
+      ],
+      "typical_dose_range_en": null,
+      "dose_source": null,
+      "key_safety_notes": [
+        {
+          "note_en": "Long-term safety and clinically meaningful oral bioavailability are uncertain.",
+          "interaction_flags": [],
+          "source": {
+            "name": "FDA",
+            "url": "https://www.fda.gov/food/dietary-supplements"
+          }
+        },
+        {
+          "note_en": "Interaction data with anticoagulants, immunosuppressants, and thyroid drugs are insufficient rather than proven absent.",
+          "interaction_flags": [
+            "anticoagulant",
+            "immunosuppressant",
+            "thyroid"
+          ],
+          "source": {
+            "name": "FDA",
+            "url": "https://www.fda.gov/food/dietary-supplements"
+          }
+        },
+        {
+          "note_en": "Parenteral NAD+ should not be treated as equivalent to ordinary dietary-supplement use.",
+          "interaction_flags": [],
+          "source": {
+            "name": "FDA",
+            "url": "https://www.fda.gov/food/dietary-supplements"
+          }
+        }
+      ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_data",
+            "note_en": null
+          },
+          "immunosuppressant": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_data",
+            "note_en": null
+          },
+          "thyroid": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_data",
+            "note_en": null
+          }
+        },
+        "focus_note_en": "Sparse interaction evidence must not be read as absence of interaction; parenteral NAD+ products are not equivalent to ordinary dietary-supplement use.",
+        "source": {
+          "name": "FDA",
+          "url": "https://www.fda.gov/food/dietary-supplements"
+        },
+        "staging_ref": "docs/research_packs/SUPP_BATCH01_INTERACTION_FOCUS_MATRIX_v1.md"
+      },
+      "evidence_snapshot_en": "Human evidence for direct NAD+ supplementation is limited; avoid extrapolating benefits observed with NR/NMN or preclinical NAD biology to direct NAD+ products.",
+      "evidence_source": {
+        "name": "FDA",
+        "url": "https://www.fda.gov/food/dietary-supplements"
+      },
+      "related_herb_id": null,
+      "related_drugclass_review_flags": [],
+      "sources": [
+        {
+          "name": "FDA",
+          "url": "https://www.fda.gov/food/dietary-supplements"
+        }
+      ],
+      "review_status": "skeleton_unreviewed"
+    },
+    {
+      "id": "supp.nr",
+      "name_zh": "菸醯胺核糖（NR）",
+      "name_en": "Nicotinamide riboside (NR)",
+      "aliases": [
+        "nicotinamide riboside"
+      ],
+      "category": "antioxidants_coenzymes",
+      "maturity": "skeleton",
+      "common_forms_en": [
+        "nicotinamide riboside chloride capsules",
+        "NR combination products"
+      ],
+      "typical_dose_range_en": "Human trials commonly study ~100–1,000 mg/day; one randomized trial found 100–1,000 mg/day well tolerated over 8 weeks. No RDA established.",
+      "dose_source": {
+        "name": "PubMed Central",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6611812/"
+      },
+      "key_safety_notes": [
+        {
+          "note_en": "Short-term human safety is reasonably characterized at studied doses, but long-term clinical outcome data remain limited.",
+          "interaction_flags": [],
+          "source": {
+            "name": "PubMed Central",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6611812/"
+          }
+        },
+        {
+          "note_en": "Interaction data with anticoagulants/immunosuppressants/thyroid drugs are insufficient.",
+          "interaction_flags": [
+            "anticoagulant",
+            "immunosuppressant",
+            "thyroid"
+          ],
+          "source": {
+            "name": "PubMed Central",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6611812/"
+          }
+        },
+        {
+          "note_en": "Do not infer anti-aging or disease-treatment benefit from NAD+ biomarker increases alone.",
+          "interaction_flags": [],
+          "source": {
+            "name": "PubMed Central",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6611812/"
+          }
+        }
+      ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_data",
+            "note_en": null
+          },
+          "immunosuppressant": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_data",
+            "note_en": null
+          },
+          "thyroid": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_data",
+            "note_en": null
+          }
+        },
+        "focus_note_en": "Short-term human safety at studied doses does not establish broad drug-interaction absence.",
+        "source": {
+          "name": "PubMed Central",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6611812/"
+        },
+        "staging_ref": "docs/research_packs/SUPP_BATCH01_INTERACTION_FOCUS_MATRIX_v1.md"
+      },
+      "evidence_snapshot_en": "NR can raise NAD-related biomarkers in humans, but clinically meaningful benefits for aging or disease outcomes remain unproven/condition-specific.",
+      "evidence_source": {
+        "name": "PubMed Central",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6611812/"
+      },
+      "related_herb_id": null,
+      "related_drugclass_review_flags": [],
+      "sources": [
+        {
+          "name": "PubMed Central",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6611812/"
+        },
+        {
+          "name": "PubMed Central",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10684646/"
+        }
+      ],
+      "review_status": "skeleton_unreviewed"
+    },
+    {
+      "id": "supp.nmn",
+      "name_zh": "菸醯胺單核苷酸（NMN）",
+      "name_en": "Nicotinamide mononucleotide (NMN)",
+      "aliases": [
+        "nicotinamide mononucleotide"
+      ],
+      "category": "antioxidants_coenzymes",
+      "maturity": "skeleton",
+      "common_forms_en": [
+        "NMN capsules/tablets",
+        "powder/sublingual marketed forms"
+      ],
+      "typical_dose_range_en": null,
+      "dose_source": null,
+      "key_safety_notes": [
+        {
+          "note_en": "Short-term trial safety appears generally acceptable, but long-term safety and efficacy remain uncertain.",
+          "interaction_flags": [],
+          "source": {
+            "name": "PubMed",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/?term=nicotinamide+mononucleotide+randomized+trial+human"
+          }
+        },
+        {
+          "note_en": "Interaction data with anticoagulants/immunosuppressants/thyroid drugs are insufficient.",
+          "interaction_flags": [
+            "anticoagulant",
+            "immunosuppressant",
+            "thyroid"
+          ],
+          "source": {
+            "name": "PubMed",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/?term=nicotinamide+mononucleotide+randomized+trial+human"
+          }
+        },
+        {
+          "note_en": "Regulatory status and product quality should be checked because marketplace status may change.",
+          "interaction_flags": [],
+          "source": {
+            "name": "PubMed",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/?term=nicotinamide+mononucleotide+randomized+trial+human"
+          }
+        }
+      ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_data",
+            "note_en": null
+          },
+          "immunosuppressant": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_data",
+            "note_en": null
+          },
+          "thyroid": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_data",
+            "note_en": null
+          }
+        },
+        "focus_note_en": "Long-term and interaction evidence remains limited; regulatory status and product quality should be re-checked because marketplace status may change.",
+        "source": {
+          "name": "FDA",
+          "url": "https://www.fda.gov/food/dietary-supplements"
+        },
+        "staging_ref": "docs/research_packs/SUPP_BATCH01_INTERACTION_FOCUS_MATRIX_v1.md"
+      },
+      "evidence_snapshot_en": "Early human trials suggest NMN can affect NAD-related biomarkers, but clinical benefits remain preliminary and should be labeled uncertain.",
+      "evidence_source": {
+        "name": "FDA",
+        "url": "https://www.fda.gov/food/dietary-supplements"
+      },
+      "related_herb_id": null,
+      "related_drugclass_review_flags": [],
+      "sources": [
+        {
+          "name": "FDA",
+          "url": "https://www.fda.gov/food/dietary-supplements"
+        },
+        {
+          "name": "PubMed",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/?term=nicotinamide+mononucleotide+randomized+trial+human"
+        }
+      ],
+      "review_status": "skeleton_unreviewed"
+    },
+    {
+      "id": "supp.omega_3",
+      "name_zh": "Omega-3 脂肪酸",
+      "name_en": "Omega-3 fatty acids (EPA/DHA/ALA)",
+      "aliases": [
+        "fish oil",
+        "EPA/DHA",
+        "krill oil"
+      ],
+      "category": "fatty_acids",
+      "maturity": "skeleton",
+      "common_forms_en": [
+        "fish oil EPA+DHA",
+        "algal DHA/EPA",
+        "krill oil",
+        "ALA plant oils"
+      ],
+      "typical_dose_range_en": "ALA AI: ~1.1–1.6 g/day for adults. EPA+DHA supplement amounts vary; many products provide ~250–1,000 mg/day combined EPA+DHA, while prescription-level triglyceride treatment uses higher doses under medical supervision.",
+      "dose_source": {
+        "name": "NIH ODS",
+        "url": "https://ods.od.nih.gov/factsheets/Omega3FattyAcids-HealthProfessional/"
+      },
+      "key_safety_notes": [
+        {
+          "note_en": "High-dose omega-3 can increase bleeding-time laboratory effects; clinically significant bleeding risk is usually low but anticoagulant/antiplatelet users need review, especially at high doses.",
+          "interaction_flags": [
+            "anticoagulant"
+          ],
+          "source": {
+            "name": "NIH ODS",
+            "url": "https://ods.od.nih.gov/factsheets/Omega3FattyAcids-HealthProfessional/"
+          }
+        },
+        {
+          "note_en": "High-dose omega-3 may increase atrial fibrillation risk in some cardiovascular trials.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NIH ODS",
+            "url": "https://ods.od.nih.gov/factsheets/Omega3FattyAcids-HealthProfessional/"
+          }
+        },
+        {
+          "note_en": "No characteristic thyroid-drug or immunosuppressant interaction.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NIH ODS",
+            "url": "https://ods.od.nih.gov/factsheets/Omega3FattyAcids-HealthProfessional/"
+          }
+        }
+      ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "possible_concern",
+            "staged_label": "dose_dependent_bleeding_review",
+            "note_en": "High-dose use warrants anticoagulant or antiplatelet review; clinically significant bleeding risk is usually low at common supplement doses."
+          },
+          "immunosuppressant": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_specific_flag_in_primary_source",
+            "note_en": null
+          },
+          "thyroid": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_specific_flag_in_primary_source",
+            "note_en": null
+          }
+        },
+        "focus_note_en": "High-dose omega-3 may increase atrial fibrillation risk in some cardiovascular trials; fish-oil products are not interchangeable.",
+        "source": {
+          "name": "NIH ODS",
+          "url": "https://ods.od.nih.gov/factsheets/Omega3FattyAcids-HealthProfessional/"
+        },
+        "staging_ref": "docs/research_packs/SUPP_BATCH01_INTERACTION_FOCUS_MATRIX_v1.md"
+      },
+      "evidence_snapshot_en": "EPA/DHA lower triglycerides at pharmacologic doses; cardiovascular outcome effects depend on formulation, dose, and population, so fish-oil products are not interchangeable.",
+      "evidence_source": {
+        "name": "NIH ODS",
+        "url": "https://ods.od.nih.gov/factsheets/Omega3FattyAcids-HealthProfessional/"
+      },
+      "related_herb_id": null,
+      "related_drugclass_review_flags": [],
+      "sources": [
+        {
+          "name": "NIH ODS",
+          "url": "https://ods.od.nih.gov/factsheets/Omega3FattyAcids-HealthProfessional/"
+        }
+      ],
+      "review_status": "skeleton_unreviewed"
+    },
+    {
+      "id": "supp.probiotics",
+      "name_zh": "益生菌",
+      "name_en": "Probiotics",
+      "aliases": [
+        "Lactobacillus",
+        "Bifidobacterium"
+      ],
+      "category": "probiotics",
+      "maturity": "skeleton",
+      "common_forms_en": [
+        "Lactobacillus-containing products",
+        "Bifidobacterium-containing products",
+        "multi-strain capsules/powders",
+        "fermented foods"
+      ],
+      "typical_dose_range_en": "No universal dose. Products commonly contain millions to tens of billions of CFU per serving; efficacy is strain-, indication-, and product-specific.",
+      "dose_source": {
+        "name": "NCCIH",
+        "url": "https://www.nccih.nih.gov/health/probiotics-usefulness-and-safety"
+      },
+      "key_safety_notes": [
+        {
+          "note_en": "Usually few side effects in healthy people, but serious infections have occurred in vulnerable populations; FDA/NCCIH highlight particular concern in premature infants.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NCCIH",
+            "url": "https://www.nccih.nih.gov/health/probiotics-usefulness-and-safety"
+          }
+        },
+        {
+          "note_en": "Use caution in severely immunocompromised or critically ill patients; this is the key immunosuppression-related safety flag.",
+          "interaction_flags": [
+            "immunosuppressant"
+          ],
+          "source": {
+            "name": "NCCIH",
+            "url": "https://www.nccih.nih.gov/health/probiotics-usefulness-and-safety"
+          }
+        },
+        {
+          "note_en": "Drug interaction data are not captured by a single class-wide rule.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NCCIH",
+            "url": "https://www.nccih.nih.gov/health/probiotics-usefulness-and-safety"
+          }
+        }
+      ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_specific_flag_in_primary_source",
+            "note_en": null
+          },
+          "immunosuppressant": {
+            "status": "known_concern",
+            "staged_label": "known_host_risk_if_severely_immunocompromised",
+            "note_en": "Serious infections are rare but reported in severely immunocompromised or critically ill hosts; this is a host-risk flag, not a pharmacokinetic interaction."
+          },
+          "thyroid": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_specific_flag_in_primary_source",
+            "note_en": null
+          }
+        },
+        "focus_note_en": "FDA and NCCIH highlight particular concern in premature infants; drug-interaction data are not captured by one class-wide rule across strains.",
+        "source": {
+          "name": "NCCIH",
+          "url": "https://www.nccih.nih.gov/health/probiotics-usefulness-and-safety"
+        },
+        "staging_ref": "docs/research_packs/SUPP_BATCH01_INTERACTION_FOCUS_MATRIX_v1.md"
+      },
+      "evidence_snapshot_en": "Some specific formulations show benefit for selected GI/other indications, but effects cannot be generalized across all probiotic strains/products.",
+      "evidence_source": {
+        "name": "NCCIH",
+        "url": "https://www.nccih.nih.gov/health/probiotics-usefulness-and-safety"
+      },
+      "related_herb_id": null,
+      "related_drugclass_review_flags": [],
+      "sources": [
+        {
+          "name": "NCCIH",
+          "url": "https://www.nccih.nih.gov/health/probiotics-usefulness-and-safety"
+        }
+      ],
+      "review_status": "skeleton_unreviewed"
+    },
+    {
+      "id": "supp.vitamin_a",
+      "name_zh": "維生素 A",
+      "name_en": "Vitamin A",
+      "aliases": [
+        "retinol",
+        "retinyl palmitate"
+      ],
+      "category": "vitamins",
+      "maturity": "skeleton",
+      "common_forms_en": [
+        "retinyl palmitate",
+        "retinyl acetate",
+        "beta-carotene-containing products"
+      ],
+      "typical_dose_range_en": "Adult RDA: 700–900 mcg RAE/day; adult UL for preformed vitamin A: 3,000 mcg RAE/day. Supplement content varies widely.",
+      "dose_source": {
+        "name": "NIH ODS",
+        "url": "https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/"
+      },
+      "key_safety_notes": [
+        {
+          "note_en": "Chronic excess preformed vitamin A can cause toxicity.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NIH ODS",
+            "url": "https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/"
+          }
+        },
+        {
+          "note_en": "Pregnancy: high-dose preformed vitamin A is teratogenic; avoid excess unless specifically medically indicated.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NIH ODS",
+            "url": "https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/"
+          }
+        },
+        {
+          "note_en": "Retinoid medications can create additive toxicity concerns.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NIH ODS",
+            "url": "https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/"
+          }
+        }
+      ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_specific_data",
+            "note_en": null
+          },
+          "immunosuppressant": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_specific_data",
+            "note_en": null
+          },
+          "thyroid": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_primary_class_flag",
+            "note_en": null
+          }
+        },
+        "focus_note_en": "Retinoid medications create additive toxicity concerns, and high-dose preformed vitamin A is teratogenic in pregnancy.",
+        "source": {
+          "name": "NIH ODS",
+          "url": "https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/"
+        },
+        "staging_ref": "docs/research_packs/SUPP_SKELETON_BATCH_02_v1.md"
+      },
+      "evidence_snapshot_en": "Essential nutrient with established roles in vision, immunity, reproduction, and cellular differentiation; supplementation is primarily indicated when intake/status is inadequate.",
+      "evidence_source": {
+        "name": "NIH ODS",
+        "url": "https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/"
+      },
+      "related_herb_id": null,
+      "related_drugclass_review_flags": [],
+      "sources": [
+        {
+          "name": "NIH ODS",
+          "url": "https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/"
+        }
+      ],
+      "review_status": "skeleton_unreviewed"
+    },
+    {
+      "id": "supp.vitamin_e",
+      "name_zh": "維生素 E",
+      "name_en": "Vitamin E (alpha-tocopherol)",
+      "aliases": [
+        "alpha-tocopherol",
+        "tocopherol"
+      ],
+      "category": "vitamins",
+      "maturity": "skeleton",
+      "common_forms_en": [
+        "natural d-alpha-tocopherol",
+        "synthetic dl-alpha-tocopherol",
+        "mixed tocopherols"
+      ],
+      "typical_dose_range_en": "Adult RDA: 15 mg/day alpha-tocopherol. Supplements often provide much more; adult UL from supplements is 1,000 mg/day alpha-tocopherol.",
+      "dose_source": {
+        "name": "NIH ODS",
+        "url": "https://ods.od.nih.gov/factsheets/VitaminE-HealthProfessional/"
+      },
+      "key_safety_notes": [
+        {
+          "note_en": "High-dose vitamin E can increase bleeding tendency.",
+          "interaction_flags": [
+            "anticoagulant"
+          ],
+          "source": {
+            "name": "NIH ODS",
+            "url": "https://ods.od.nih.gov/factsheets/VitaminE-HealthProfessional/"
+          }
+        },
+        {
+          "note_en": "Use caution with anticoagulant/antiplatelet therapy.",
+          "interaction_flags": [
+            "anticoagulant"
+          ],
+          "source": {
+            "name": "NIH ODS",
+            "url": "https://ods.od.nih.gov/factsheets/VitaminE-HealthProfessional/"
+          }
+        },
+        {
+          "note_en": "High-dose antioxidant supplementation can complicate some oncology treatment contexts; coordinate with oncology team.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NIH ODS",
+            "url": "https://ods.od.nih.gov/factsheets/VitaminE-HealthProfessional/"
+          }
+        }
+      ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "known_concern",
+            "staged_label": "known_bleeding_concern_high_dose",
+            "note_en": "High-dose vitamin E can increase bleeding tendency; use caution with anticoagulant or antiplatelet therapy."
+          },
+          "immunosuppressant": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_specific_data",
+            "note_en": null
+          },
+          "thyroid": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_primary_class_flag",
+            "note_en": null
+          }
+        },
+        "focus_note_en": "High-dose antioxidant supplementation can complicate some oncology treatment contexts; coordinate with the oncology team.",
+        "source": {
+          "name": "NIH ODS",
+          "url": "https://ods.od.nih.gov/factsheets/VitaminE-HealthProfessional/"
+        },
+        "staging_ref": "docs/research_packs/SUPP_SKELETON_BATCH_02_v1.md"
+      },
+      "evidence_snapshot_en": "Essential antioxidant nutrient; high-dose supplementation has not shown broad preventive benefit and can create safety concerns.",
+      "evidence_source": {
+        "name": "NIH ODS",
+        "url": "https://ods.od.nih.gov/factsheets/VitaminE-HealthProfessional/"
+      },
+      "related_herb_id": null,
+      "related_drugclass_review_flags": [],
+      "sources": [
+        {
+          "name": "NIH ODS",
+          "url": "https://ods.od.nih.gov/factsheets/VitaminE-HealthProfessional/"
+        }
+      ],
+      "review_status": "skeleton_unreviewed"
+    },
+    {
+      "id": "supp.vitamin_k",
+      "name_zh": "維生素 K",
+      "name_en": "Vitamin K",
+      "aliases": [
+        "phylloquinone",
+        "menaquinone",
+        "vitamin K1/K2"
+      ],
+      "category": "vitamins",
+      "maturity": "skeleton",
+      "common_forms_en": [
+        "phylloquinone (K1)",
+        "menaquinone-4 (MK-4)",
+        "menaquinone-7 (MK-7)"
+      ],
+      "typical_dose_range_en": "Adult AI: 90 mcg/day women and 120 mcg/day men. Supplement doses vary by K1/K2 form.",
+      "dose_source": {
+        "name": "NIH ODS",
+        "url": "https://ods.od.nih.gov/factsheets/VitaminK-HealthProfessional/"
+      },
+      "key_safety_notes": [
+        {
+          "note_en": "Major interaction with warfarin and related vitamin-K antagonist management; intake should be consistent and medically coordinated.",
+          "interaction_flags": [
+            "anticoagulant"
+          ],
+          "source": {
+            "name": "NIH ODS",
+            "url": "https://ods.od.nih.gov/factsheets/VitaminK-HealthProfessional/"
+          }
+        },
+        {
+          "note_en": "No established UL for natural K forms, but this does not remove drug-interaction risk.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NIH ODS",
+            "url": "https://ods.od.nih.gov/factsheets/VitaminK-HealthProfessional/"
+          }
+        }
+      ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "known_concern",
+            "staged_label": "major_known_warfarin_interaction",
+            "note_en": "Major interaction with warfarin and related vitamin-K antagonists; intake should be kept consistent and medically coordinated."
+          },
+          "immunosuppressant": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_primary_class_flag",
+            "note_en": null
+          },
+          "thyroid": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_primary_class_flag",
+            "note_en": null
+          }
+        },
+        "focus_note_en": "The absence of an established UL for natural K forms does not remove drug-interaction risk.",
+        "source": {
+          "name": "NIH ODS",
+          "url": "https://ods.od.nih.gov/factsheets/VitaminK-HealthProfessional/"
+        },
+        "staging_ref": "docs/research_packs/SUPP_SKELETON_BATCH_02_v1.md"
+      },
+      "evidence_snapshot_en": "Essential for normal coagulation protein activation and bone-related proteins; its clinical importance is strongly tied to anticoagulant management.",
+      "evidence_source": {
+        "name": "NIH ODS",
+        "url": "https://ods.od.nih.gov/factsheets/VitaminK-HealthProfessional/"
+      },
+      "related_herb_id": null,
+      "related_drugclass_review_flags": [],
+      "sources": [
+        {
+          "name": "NIH ODS",
+          "url": "https://ods.od.nih.gov/factsheets/VitaminK-HealthProfessional/"
+        }
+      ],
+      "review_status": "skeleton_unreviewed"
+    },
+    {
+      "id": "supp.iron",
+      "name_zh": "鐵",
+      "name_en": "Iron",
+      "aliases": [
+        "ferrous sulfate",
+        "ferrous gluconate",
+        "iron bisglycinate"
+      ],
+      "category": "minerals",
+      "maturity": "skeleton",
+      "common_forms_en": [
+        "ferrous sulfate",
+        "ferrous gluconate",
+        "ferrous fumarate",
+        "iron bisglycinate",
+        "carbonyl iron"
+      ],
+      "typical_dose_range_en": "Adult RDA varies by age/sex; common iron-only supplements provide ~18–65 mg elemental iron. Adult UL is 45 mg/day from all sources, though therapeutic dosing can exceed this under medical supervision.",
+      "dose_source": {
+        "name": "NIH ODS",
+        "url": "https://ods.od.nih.gov/factsheets/Iron-HealthProfessional/"
+      },
+      "key_safety_notes": [
+        {
+          "note_en": "GI upset, constipation, nausea are common at higher doses.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NIH ODS",
+            "url": "https://ods.od.nih.gov/factsheets/Iron-HealthProfessional/"
+          }
+        },
+        {
+          "note_en": "Iron overdose is dangerous, especially in children.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NIH ODS",
+            "url": "https://ods.od.nih.gov/factsheets/Iron-HealthProfessional/"
+          }
+        },
+        {
+          "note_en": "Iron can impair levothyroxine absorption; separate dosing per thyroid-medication guidance.",
+          "interaction_flags": [
+            "thyroid"
+          ],
+          "source": {
+            "name": "NIH ODS",
+            "url": "https://ods.od.nih.gov/factsheets/Iron-HealthProfessional/"
+          }
+        },
+        {
+          "note_en": "Also interacts with several antibiotics and other medications.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NIH ODS",
+            "url": "https://ods.od.nih.gov/factsheets/Iron-HealthProfessional/"
+          }
+        }
+      ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_primary_class_flag",
+            "note_en": null
+          },
+          "immunosuppressant": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_primary_class_flag",
+            "note_en": null
+          },
+          "thyroid": {
+            "status": "known_concern",
+            "staged_label": "known_absorption_interaction",
+            "note_en": "Iron impairs levothyroxine absorption; separate dosing per thyroid-medication guidance."
+          }
+        },
+        "focus_note_en": "Also interacts with several antibiotics; iron overdose is dangerous, especially in children.",
+        "source": {
+          "name": "NIH ODS",
+          "url": "https://ods.od.nih.gov/factsheets/Iron-HealthProfessional/"
+        },
+        "staging_ref": "docs/research_packs/SUPP_SKELETON_BATCH_02_v1.md"
+      },
+      "evidence_snapshot_en": "Strong evidence for treatment of iron deficiency; routine use without indication can cause harm or obscure the reason for abnormal iron status.",
+      "evidence_source": {
+        "name": "NIH ODS",
+        "url": "https://ods.od.nih.gov/factsheets/Iron-HealthProfessional/"
+      },
+      "related_herb_id": null,
+      "related_drugclass_review_flags": [],
+      "sources": [
+        {
+          "name": "NIH ODS",
+          "url": "https://ods.od.nih.gov/factsheets/Iron-HealthProfessional/"
+        }
+      ],
+      "review_status": "skeleton_unreviewed"
+    },
+    {
+      "id": "supp.selenium",
+      "name_zh": "硒",
+      "name_en": "Selenium",
+      "aliases": [
+        "selenomethionine",
+        "selenium yeast"
+      ],
+      "category": "minerals",
+      "maturity": "skeleton",
+      "common_forms_en": [
+        "selenomethionine",
+        "selenium-enriched yeast",
+        "sodium selenite",
+        "sodium selenate"
+      ],
+      "typical_dose_range_en": "Adult RDA: 55 mcg/day. Many supplements provide 50–200 mcg; selenium-only products may provide 100–400 mcg. Adult UL: 400 mcg/day.",
+      "dose_source": {
+        "name": "NIH ODS",
+        "url": "https://ods.od.nih.gov/factsheets/Selenium-HealthProfessional/"
+      },
+      "key_safety_notes": [
+        {
+          "note_en": "Chronic excess can cause selenosis with hair/nail changes, GI symptoms, neurologic abnormalities and garlic-like breath odor.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NIH ODS",
+            "url": "https://ods.od.nih.gov/factsheets/Selenium-HealthProfessional/"
+          }
+        },
+        {
+          "note_en": "No established role for high-dose selenium as a general cancer-prevention supplement.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NIH ODS",
+            "url": "https://ods.od.nih.gov/factsheets/Selenium-HealthProfessional/"
+          }
+        }
+      ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_specific_data",
+            "note_en": null
+          },
+          "immunosuppressant": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_specific_data",
+            "note_en": null
+          },
+          "thyroid": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "thyroid_biology_relevant_but_no_blanket_drug_rule",
+            "note_en": "Selenoproteins participate in thyroid-hormone metabolism, but no blanket thyroid-drug interaction rule is established."
+          }
+        },
+        "focus_note_en": "Chronic excess causes selenosis with hair and nail changes, GI and neurologic symptoms; more is not better.",
+        "source": {
+          "name": "NIH ODS",
+          "url": "https://ods.od.nih.gov/factsheets/Selenium-HealthProfessional/"
+        },
+        "staging_ref": "docs/research_packs/SUPP_SKELETON_BATCH_02_v1.md"
+      },
+      "evidence_snapshot_en": "Essential trace mineral in selenoproteins including antioxidant and thyroid-hormone metabolism pathways; more is not necessarily better.",
+      "evidence_source": {
+        "name": "NIH ODS",
+        "url": "https://ods.od.nih.gov/factsheets/Selenium-HealthProfessional/"
+      },
+      "related_herb_id": null,
+      "related_drugclass_review_flags": [],
+      "sources": [
+        {
+          "name": "NIH ODS",
+          "url": "https://ods.od.nih.gov/factsheets/Selenium-HealthProfessional/"
+        }
+      ],
+      "review_status": "skeleton_unreviewed"
+    },
+    {
+      "id": "supp.iodine",
+      "name_zh": "碘",
+      "name_en": "Iodine",
+      "aliases": [
+        "potassium iodide",
+        "kelp iodine"
+      ],
+      "category": "minerals",
+      "maturity": "skeleton",
+      "common_forms_en": [
+        "potassium iodide",
+        "sodium iodide",
+        "kelp/seaweed-derived iodine"
+      ],
+      "typical_dose_range_en": "Adult RDA: 150 mcg/day; pregnancy 220 mcg/day; lactation 290 mcg/day. Adult UL: 1,100 mcg/day.",
+      "dose_source": {
+        "name": "NIH ODS",
+        "url": "https://ods.od.nih.gov/factsheets/Iodine-HealthProfessional/"
+      },
+      "key_safety_notes": [
+        {
+          "note_en": "Both deficiency and excess iodine can alter thyroid function.",
+          "interaction_flags": [
+            "thyroid"
+          ],
+          "source": {
+            "name": "NIH ODS",
+            "url": "https://ods.od.nih.gov/factsheets/Iodine-HealthProfessional/"
+          }
+        },
+        {
+          "note_en": "High iodine intake can interact with thyroid disease management and thyroid-active drugs; clinician review is warranted.",
+          "interaction_flags": [
+            "thyroid"
+          ],
+          "source": {
+            "name": "NIH ODS",
+            "url": "https://ods.od.nih.gov/factsheets/Iodine-HealthProfessional/"
+          }
+        },
+        {
+          "note_en": "Seaweed products can have highly variable iodine content.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NIH ODS",
+            "url": "https://ods.od.nih.gov/factsheets/Iodine-HealthProfessional/"
+          }
+        }
+      ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_primary_class_flag",
+            "note_en": null
+          },
+          "immunosuppressant": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_primary_class_flag",
+            "note_en": null
+          },
+          "thyroid": {
+            "status": "known_concern",
+            "staged_label": "major_clinical_context_flag",
+            "note_en": "Both deficiency and excess iodine alter thyroid function and can interact with thyroid disease management and thyroid-active drugs."
+          }
+        },
+        "focus_note_en": "Seaweed- and kelp-derived products can have highly variable iodine content.",
+        "source": {
+          "name": "NIH ODS",
+          "url": "https://ods.od.nih.gov/factsheets/Iodine-HealthProfessional/"
+        },
+        "staging_ref": "docs/research_packs/SUPP_SKELETON_BATCH_02_v1.md"
+      },
+      "evidence_snapshot_en": "Essential substrate for thyroid hormone synthesis; supplementation should respect baseline intake and thyroid context.",
+      "evidence_source": {
+        "name": "NIH ODS",
+        "url": "https://ods.od.nih.gov/factsheets/Iodine-HealthProfessional/"
+      },
+      "related_herb_id": null,
+      "related_drugclass_review_flags": [],
+      "sources": [
+        {
+          "name": "NIH ODS",
+          "url": "https://ods.od.nih.gov/factsheets/Iodine-HealthProfessional/"
+        }
+      ],
+      "review_status": "skeleton_unreviewed"
+    },
+    {
+      "id": "supp.melatonin",
+      "name_zh": "褪黑激素",
+      "name_en": "Melatonin",
+      "aliases": [
+        "N-acetyl-5-methoxytryptamine"
+      ],
+      "category": "antioxidants_coenzymes",
+      "maturity": "skeleton",
+      "common_forms_en": [
+        "immediate-release tablets/capsules",
+        "extended-release",
+        "gummies/liquids"
+      ],
+      "typical_dose_range_en": "No RDA. Common adult supplemental doses range roughly 0.5–5 mg near bedtime; research uses wider ranges. Product labeling accuracy is variable.",
+      "dose_source": {
+        "name": "NCCIH",
+        "url": "https://www.nccih.nih.gov/health/melatonin-what-you-need-to-know"
+      },
+      "key_safety_notes": [
+        {
+          "note_en": "Short-term use appears relatively safe; long-term safety is less established.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NCCIH",
+            "url": "https://www.nccih.nih.gov/health/melatonin-what-you-need-to-know"
+          }
+        },
+        {
+          "note_en": "Drowsiness, headache, dizziness, nausea can occur.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NCCIH",
+            "url": "https://www.nccih.nih.gov/health/melatonin-what-you-need-to-know"
+          }
+        },
+        {
+          "note_en": "Product-content variability is a known concern.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NCCIH",
+            "url": "https://www.nccih.nih.gov/health/melatonin-what-you-need-to-know"
+          }
+        },
+        {
+          "note_en": "Use caution with sedatives and in children without clinical guidance.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NCCIH",
+            "url": "https://www.nccih.nih.gov/health/melatonin-what-you-need-to-know"
+          }
+        }
+      ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_specific_data",
+            "note_en": null
+          },
+          "immunosuppressant": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_specific_data",
+            "note_en": null
+          },
+          "thyroid": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_specific_data",
+            "note_en": null
+          }
+        },
+        "focus_note_en": "Caution with sedatives and in children without clinical guidance; product-content variability against label is a documented concern.",
+        "source": {
+          "name": "NCCIH",
+          "url": "https://www.nccih.nih.gov/health/melatonin-what-you-need-to-know"
+        },
+        "staging_ref": "docs/research_packs/SUPP_SKELETON_BATCH_02_v1.md"
+      },
+      "evidence_snapshot_en": "May help some circadian-timing disorders and jet lag; evidence does not support treating all chronic insomnia as a simple melatonin deficiency.",
+      "evidence_source": {
+        "name": "NCCIH",
+        "url": "https://www.nccih.nih.gov/health/melatonin-what-you-need-to-know"
+      },
+      "related_herb_id": null,
+      "related_drugclass_review_flags": [],
+      "sources": [
+        {
+          "name": "NCCIH",
+          "url": "https://www.nccih.nih.gov/health/melatonin-what-you-need-to-know"
+        }
+      ],
+      "review_status": "skeleton_unreviewed"
+    },
+    {
+      "id": "supp.ashwagandha",
+      "name_zh": "南非醉茄 / 印度人參",
+      "name_en": "Ashwagandha (Withania somnifera)",
+      "aliases": [
+        "Withania somnifera",
+        "Indian ginseng",
+        "winter cherry"
+      ],
+      "category": "botanical_extracts",
+      "maturity": "skeleton",
+      "common_forms_en": [
+        "root extract",
+        "root powder",
+        "root+leaf extract"
+      ],
+      "typical_dose_range_en": "No standardized therapeutic dose. Many short-term trials use several hundred mg/day of standardized extract; formulations are not equivalent.",
+      "dose_source": {
+        "name": "NCCIH",
+        "url": "https://www.nccih.nih.gov/health/ashwagandha"
+      },
+      "key_safety_notes": [
+        {
+          "note_en": "Rare liver injury has been reported.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NCCIH",
+            "url": "https://www.nccih.nih.gov/health/ashwagandha"
+          }
+        },
+        {
+          "note_en": "Avoid in pregnancy; NCCIH advises against use in breastfeeding.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NCCIH",
+            "url": "https://www.nccih.nih.gov/health/ashwagandha"
+          }
+        },
+        {
+          "note_en": "Not recommended before surgery or in autoimmune/thyroid disorders without clinical review.",
+          "interaction_flags": [
+            "immunosuppressant",
+            "thyroid"
+          ],
+          "source": {
+            "name": "NCCIH",
+            "url": "https://www.nccih.nih.gov/health/ashwagandha"
+          }
+        },
+        {
+          "note_en": "Can interact with immunosuppressants, sedatives, anticonvulsants, diabetes/BP medicines, and thyroid hormone medications.",
+          "interaction_flags": [
+            "immunosuppressant",
+            "thyroid"
+          ],
+          "source": {
+            "name": "NCCIH",
+            "url": "https://www.nccih.nih.gov/health/ashwagandha"
+          }
+        }
+      ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_specific_data",
+            "note_en": null
+          },
+          "immunosuppressant": {
+            "status": "known_concern",
+            "staged_label": "known_theoretical_clinical_concern",
+            "note_en": "NCCIH lists interaction with immunosuppressants; autoimmune disorders warrant clinical review before use."
+          },
+          "thyroid": {
+            "status": "known_concern",
+            "staged_label": "known_clinical_concern",
+            "note_en": "Can interact with thyroid hormone medications; thyroid disorders warrant clinical review before use."
+          }
+        },
+        "focus_note_en": "Also interacts with sedatives, anticonvulsants and diabetes or blood-pressure medicines; rare liver injury reported; avoid in pregnancy and not advised while breastfeeding.",
+        "source": {
+          "name": "NCCIH",
+          "url": "https://www.nccih.nih.gov/health/ashwagandha"
+        },
+        "staging_ref": "docs/research_packs/SUPP_SKELETON_BATCH_02_v1.md"
+      },
+      "evidence_snapshot_en": "Some preparations may help stress or insomnia, but studies are small and heterogeneous; benefits should not be generalized across products.",
+      "evidence_source": {
+        "name": "NCCIH",
+        "url": "https://www.nccih.nih.gov/health/ashwagandha"
+      },
+      "related_herb_id": null,
+      "related_drugclass_review_flags": [],
+      "sources": [
+        {
+          "name": "NCCIH",
+          "url": "https://www.nccih.nih.gov/health/ashwagandha"
+        }
+      ],
+      "review_status": "skeleton_unreviewed"
+    },
+    {
+      "id": "supp.echinacea",
+      "name_zh": "紫錐菊",
+      "name_en": "Echinacea",
+      "aliases": [
+        "purple coneflower",
+        "Echinacea purpurea"
+      ],
+      "category": "botanical_extracts",
+      "maturity": "skeleton",
+      "common_forms_en": [
+        "E. purpurea extract",
+        "E. angustifolia extract",
+        "mixed-species products"
+      ],
+      "typical_dose_range_en": "No universal standardized dose; studies use different species, plant parts, extracts, and dosing schedules.",
+      "dose_source": {
+        "name": "NCCIH",
+        "url": "https://www.nccih.nih.gov/health/echinacea"
+      },
+      "key_safety_notes": [
+        {
+          "note_en": "Allergic reactions can occur and can be severe.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NCCIH",
+            "url": "https://www.nccih.nih.gov/health/echinacea"
+          }
+        },
+        {
+          "note_en": "Theoretical interaction concern exists with immunosuppressants.",
+          "interaction_flags": [
+            "immunosuppressant"
+          ],
+          "source": {
+            "name": "NCCIH",
+            "url": "https://www.nccih.nih.gov/health/echinacea"
+          }
+        },
+        {
+          "note_en": "Possible liver-enzyme drug interactions are not fully resolved.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NCCIH",
+            "url": "https://www.nccih.nih.gov/health/echinacea"
+          }
+        }
+      ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_specific_data",
+            "note_en": null
+          },
+          "immunosuppressant": {
+            "status": "possible_concern",
+            "staged_label": "theoretical_concern",
+            "note_en": "Theoretical interaction concern with immunosuppressants; not established in clinical data."
+          },
+          "thyroid": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_specific_data",
+            "note_en": null
+          }
+        },
+        "focus_note_en": "Allergic reactions can occur and can be severe; possible liver-enzyme drug interactions are not fully resolved.",
+        "source": {
+          "name": "NCCIH",
+          "url": "https://www.nccih.nih.gov/health/echinacea"
+        },
+        "staging_ref": "docs/research_packs/SUPP_SKELETON_BATCH_02_v1.md"
+      },
+      "evidence_snapshot_en": "May slightly reduce the chance of catching a cold; evidence that it shortens an established cold is unclear.",
+      "evidence_source": {
+        "name": "NCCIH",
+        "url": "https://www.nccih.nih.gov/health/echinacea"
+      },
+      "related_herb_id": null,
+      "related_drugclass_review_flags": [],
+      "sources": [
+        {
+          "name": "NCCIH",
+          "url": "https://www.nccih.nih.gov/health/echinacea"
+        }
+      ],
+      "review_status": "skeleton_unreviewed"
+    },
+    {
+      "id": "supp.garlic",
+      "name_zh": "大蒜萃取物",
+      "name_en": "Garlic supplement",
+      "aliases": [
+        "Allium sativum",
+        "aged garlic extract"
+      ],
+      "category": "botanical_extracts",
+      "maturity": "skeleton",
+      "common_forms_en": [
+        "aged garlic extract",
+        "garlic powder tablets",
+        "garlic oil products"
+      ],
+      "typical_dose_range_en": "No single standardized dose; study products vary substantially by preparation and sulfur-compound content.",
+      "dose_source": {
+        "name": "NCCIH",
+        "url": "https://www.nccih.nih.gov/health/garlic"
+      },
+      "key_safety_notes": [
+        {
+          "note_en": "Garlic supplements may increase bleeding risk.",
+          "interaction_flags": [
+            "anticoagulant"
+          ],
+          "source": {
+            "name": "NCCIH",
+            "url": "https://www.nccih.nih.gov/health/garlic"
+          }
+        },
+        {
+          "note_en": "Important perioperative and anticoagulant/antiplatelet review.",
+          "interaction_flags": [
+            "anticoagulant"
+          ],
+          "source": {
+            "name": "NCCIH",
+            "url": "https://www.nccih.nih.gov/health/garlic"
+          }
+        },
+        {
+          "note_en": "GI symptoms and odor are common; raw topical garlic can burn skin.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NCCIH",
+            "url": "https://www.nccih.nih.gov/health/garlic"
+          }
+        }
+      ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "known_concern",
+            "staged_label": "known_bleeding_concern",
+            "note_en": "Garlic supplements may increase bleeding risk; perioperative and anticoagulant or antiplatelet review is important."
+          },
+          "immunosuppressant": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_specific_data",
+            "note_en": null
+          },
+          "thyroid": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_primary_class_flag",
+            "note_en": null
+          }
+        },
+        "focus_note_en": "GI symptoms and odour are common; raw garlic applied to skin can cause burns.",
+        "source": {
+          "name": "NCCIH",
+          "url": "https://www.nccih.nih.gov/health/garlic"
+        },
+        "staging_ref": "docs/research_packs/SUPP_SKELETON_BATCH_02_v1.md"
+      },
+      "evidence_snapshot_en": "May modestly reduce LDL cholesterol, blood pressure, or glucose in some populations, but effects are small and product-dependent.",
+      "evidence_source": {
+        "name": "NCCIH",
+        "url": "https://www.nccih.nih.gov/health/garlic"
+      },
+      "related_herb_id": null,
+      "related_drugclass_review_flags": [],
+      "sources": [
+        {
+          "name": "NCCIH",
+          "url": "https://www.nccih.nih.gov/health/garlic"
+        }
+      ],
+      "review_status": "skeleton_unreviewed"
+    },
+    {
+      "id": "supp.st_johns_wort",
+      "name_zh": "聖約翰草",
+      "name_en": "St. John's wort (Hypericum perforatum)",
+      "aliases": [
+        "Hypericum perforatum",
+        "SJW"
+      ],
+      "category": "botanical_extracts",
+      "maturity": "skeleton",
+      "common_forms_en": [
+        "standardized extract tablets/capsules",
+        "tincture/liquid extract"
+      ],
+      "typical_dose_range_en": "No universal supplement standard. Depression trials often use standardized extracts in divided daily dosing; product hypericin/hyperforin content matters.",
+      "dose_source": {
+        "name": "NCCIH",
+        "url": "https://www.nccih.nih.gov/health/st-johns-wort"
+      },
+      "key_safety_notes": [
+        {
+          "note_en": "High-priority interaction herb: induces drug-metabolizing pathways and can reduce effects of many critical medicines.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NCCIH",
+            "url": "https://www.nccih.nih.gov/health/st-johns-wort"
+          }
+        },
+        {
+          "note_en": "Can reduce warfarin, cyclosporine, oral contraceptive, HIV, oncology and other drug exposure.",
+          "interaction_flags": [
+            "anticoagulant",
+            "immunosuppressant"
+          ],
+          "source": {
+            "name": "NCCIH",
+            "url": "https://www.nccih.nih.gov/health/st-johns-wort"
+          }
+        },
+        {
+          "note_en": "Serotonergic combinations can cause serious serotonin-related toxicity.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NCCIH",
+            "url": "https://www.nccih.nih.gov/health/st-johns-wort"
+          }
+        },
+        {
+          "note_en": "Photosensitivity can occur.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NCCIH",
+            "url": "https://www.nccih.nih.gov/health/st-johns-wort"
+          }
+        }
+      ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "known_concern",
+            "staged_label": "major_known_interaction_warfarin",
+            "note_en": "Induction of drug-metabolizing pathways can reduce warfarin exposure and destabilize anticoagulant control."
+          },
+          "immunosuppressant": {
+            "status": "known_concern",
+            "staged_label": "major_known_interaction_cyclosporine",
+            "note_en": "Can substantially reduce cyclosporine exposure, with transplant-rejection risk."
+          },
+          "thyroid": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_specific_data",
+            "note_en": null
+          }
+        },
+        "focus_note_en": "High-priority interaction outlier: also lowers oral contraceptive, HIV and oncology drug exposure, and serotonergic combinations can cause serious serotonin-related toxicity. Warrants full medication reconciliation rather than a generic herb warning.",
+        "source": {
+          "name": "NCCIH",
+          "url": "https://www.nccih.nih.gov/health/st-johns-wort"
+        },
+        "staging_ref": "docs/research_packs/SUPP_SKELETON_BATCH_02_v1.md"
+      },
+      "evidence_snapshot_en": "May help some mild-to-moderate depressive symptoms, but interaction burden is unusually high and makes medication reconciliation essential.",
+      "evidence_source": {
+        "name": "NCCIH",
+        "url": "https://www.nccih.nih.gov/health/st-johns-wort"
+      },
+      "related_herb_id": null,
+      "related_drugclass_review_flags": [],
+      "sources": [
+        {
+          "name": "NCCIH",
+          "url": "https://www.nccih.nih.gov/health/st-johns-wort"
+        }
+      ],
+      "review_status": "skeleton_unreviewed"
+    },
+    {
+      "id": "supp.glucosamine",
+      "name_zh": "葡萄糖胺",
+      "name_en": "Glucosamine",
+      "aliases": [
+        "glucosamine sulfate",
+        "glucosamine hydrochloride"
+      ],
+      "category": "amino_acids_performance",
+      "maturity": "skeleton",
+      "common_forms_en": [
+        "glucosamine sulfate",
+        "glucosamine hydrochloride",
+        "glucosamine+chondroitin"
+      ],
+      "typical_dose_range_en": "Common osteoarthritis studies use ~1,500 mg/day glucosamine; formulations and pharmaceutical-grade products differ.",
+      "dose_source": {
+        "name": "NCCIH",
+        "url": "https://www.nccih.nih.gov/health/glucosamine-and-chondroitin-for-osteoarthritis-what-you-need-to-know"
+      },
+      "key_safety_notes": [
+        {
+          "note_en": "Evidence for knee osteoarthritis is inconsistent.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NCCIH",
+            "url": "https://www.nccih.nih.gov/health/glucosamine-and-chondroitin-for-osteoarthritis-what-you-need-to-know"
+          }
+        },
+        {
+          "note_en": "Warfarin interaction/INR elevation has been reported and should be reviewed.",
+          "interaction_flags": [
+            "anticoagulant"
+          ],
+          "source": {
+            "name": "NCCIH",
+            "url": "https://www.nccih.nih.gov/health/glucosamine-and-chondroitin-for-osteoarthritis-what-you-need-to-know"
+          }
+        },
+        {
+          "note_en": "Shellfish allergy concerns depend on product source/manufacturing rather than glucosamine molecule alone.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NCCIH",
+            "url": "https://www.nccih.nih.gov/health/glucosamine-and-chondroitin-for-osteoarthritis-what-you-need-to-know"
+          }
+        }
+      ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "possible_concern",
+            "staged_label": "known_warfarin_case_signal",
+            "note_en": "Warfarin interaction with INR elevation has been reported at case level and should be reviewed."
+          },
+          "immunosuppressant": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_specific_data",
+            "note_en": null
+          },
+          "thyroid": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_primary_class_flag",
+            "note_en": null
+          }
+        },
+        "focus_note_en": "Shellfish-allergy concern depends on product source and manufacturing rather than on the glucosamine molecule itself.",
+        "source": {
+          "name": "NCCIH",
+          "url": "https://www.nccih.nih.gov/health/glucosamine-and-chondroitin-for-osteoarthritis-what-you-need-to-know"
+        },
+        "staging_ref": "docs/research_packs/SUPP_SKELETON_BATCH_02_v1.md"
+      },
+      "evidence_snapshot_en": "Substantial research exists, but guidelines disagree and results are inconsistent; product quality/formulation matters.",
+      "evidence_source": {
+        "name": "NCCIH",
+        "url": "https://www.nccih.nih.gov/health/glucosamine-and-chondroitin-for-osteoarthritis-what-you-need-to-know"
+      },
+      "related_herb_id": null,
+      "related_drugclass_review_flags": [],
+      "sources": [
+        {
+          "name": "NCCIH",
+          "url": "https://www.nccih.nih.gov/health/glucosamine-and-chondroitin-for-osteoarthritis-what-you-need-to-know"
+        }
+      ],
+      "review_status": "skeleton_unreviewed"
+    },
+    {
+      "id": "supp.chondroitin",
+      "name_zh": "軟骨素",
+      "name_en": "Chondroitin sulfate",
+      "aliases": [
+        "chondroitin sulfate"
+      ],
+      "category": "amino_acids_performance",
+      "maturity": "skeleton",
+      "common_forms_en": [
+        "chondroitin sulfate",
+        "glucosamine+chondroitin combinations"
+      ],
+      "typical_dose_range_en": "Common osteoarthritis studies use roughly 800–1,200 mg/day; pharmaceutical-grade preparations are not necessarily equivalent to retail products.",
+      "dose_source": {
+        "name": "NCCIH",
+        "url": "https://www.nccih.nih.gov/health/glucosamine-and-chondroitin-for-osteoarthritis-what-you-need-to-know"
+      },
+      "key_safety_notes": [
+        {
+          "note_en": "Evidence and guideline recommendations are inconsistent.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NCCIH",
+            "url": "https://www.nccih.nih.gov/health/glucosamine-and-chondroitin-for-osteoarthritis-what-you-need-to-know"
+          }
+        },
+        {
+          "note_en": "Potential anticoagulant interaction/bleeding concern warrants review, especially in combination products.",
+          "interaction_flags": [
+            "anticoagulant"
+          ],
+          "source": {
+            "name": "NCCIH",
+            "url": "https://www.nccih.nih.gov/health/glucosamine-and-chondroitin-for-osteoarthritis-what-you-need-to-know"
+          }
+        }
+      ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "possible_concern",
+            "staged_label": "possible_bleeding_or_warfarin_concern",
+            "note_en": "Potential anticoagulant interaction or bleeding concern warrants review, especially in combination products."
+          },
+          "immunosuppressant": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_specific_data",
+            "note_en": null
+          },
+          "thyroid": {
+            "status": "no_specific_flag_in_source",
+            "staged_label": "no_primary_class_flag",
+            "note_en": null
+          }
+        },
+        "focus_note_en": "Evidence and guideline recommendations are inconsistent; retail products are not necessarily equivalent to pharmaceutical-grade preparations.",
+        "source": {
+          "name": "NCCIH",
+          "url": "https://www.nccih.nih.gov/health/glucosamine-and-chondroitin-for-osteoarthritis-what-you-need-to-know"
+        },
+        "staging_ref": "docs/research_packs/SUPP_SKELETON_BATCH_02_v1.md"
+      },
+      "evidence_snapshot_en": "May help pain/function in selected osteoarthritis studies, but results vary and expert guidelines disagree.",
+      "evidence_source": {
+        "name": "NCCIH",
+        "url": "https://www.nccih.nih.gov/health/glucosamine-and-chondroitin-for-osteoarthritis-what-you-need-to-know"
+      },
+      "related_herb_id": null,
+      "related_drugclass_review_flags": [],
+      "sources": [
+        {
+          "name": "NCCIH",
+          "url": "https://www.nccih.nih.gov/health/glucosamine-and-chondroitin-for-osteoarthritis-what-you-need-to-know"
+        }
+      ],
+      "review_status": "skeleton_unreviewed"
+    },
+    {
+      "id": "supp.nac",
+      "name_zh": "N-乙醯半胱胺酸（NAC）",
+      "name_en": "N-acetylcysteine (NAC)",
+      "aliases": [
+        "N-acetylcysteine",
+        "acetylcysteine"
+      ],
+      "category": "antioxidants_coenzymes",
+      "maturity": "skeleton",
+      "common_forms_en": [
+        "capsules/tablets",
+        "powder"
+      ],
+      "typical_dose_range_en": "No general RDA. Dietary-supplement studies often use ~600–1,200 mg/day, but indication-specific research varies.",
+      "dose_source": {
+        "name": "NIH ODS",
+        "url": "https://ods.od.nih.gov/factsheets/ImmuneFunction-HealthProfessional/"
+      },
+      "key_safety_notes": [
+        {
+          "note_en": "GI effects can occur.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NIH ODS",
+            "url": "https://ods.od.nih.gov/factsheets/ImmuneFunction-HealthProfessional/"
+          }
+        },
+        {
+          "note_en": "NAC is also used as a medication in specific clinical settings; supplement and medical-use contexts should not be conflated.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NIH ODS",
+            "url": "https://ods.od.nih.gov/factsheets/ImmuneFunction-HealthProfessional/"
+          }
+        },
+        {
+          "note_en": "Drug-interaction evidence is indication-specific and incomplete.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NIH ODS",
+            "url": "https://ods.od.nih.gov/factsheets/ImmuneFunction-HealthProfessional/"
+          }
+        }
+      ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_specific_data",
+            "note_en": null
+          },
+          "immunosuppressant": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_specific_data",
+            "note_en": null
+          },
+          "thyroid": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_specific_data",
+            "note_en": null
+          }
+        },
+        "focus_note_en": "NAC is also used as a medication in specific clinical settings; supplement and medical-use contexts should not be conflated, and interaction evidence is indication-specific.",
+        "source": {
+          "name": "NIH ODS",
+          "url": "https://ods.od.nih.gov/factsheets/ImmuneFunction-HealthProfessional/"
+        },
+        "staging_ref": "docs/research_packs/SUPP_SKELETON_BATCH_02_v1.md"
+      },
+      "evidence_snapshot_en": "Biochemical precursor to glutathione with established medical uses as a drug; supplement evidence for general wellness is much less definitive.",
+      "evidence_source": {
+        "name": "NIH ODS",
+        "url": "https://ods.od.nih.gov/factsheets/ImmuneFunction-HealthProfessional/"
+      },
+      "related_herb_id": null,
+      "related_drugclass_review_flags": [],
+      "sources": [
+        {
+          "name": "NIH ODS",
+          "url": "https://ods.od.nih.gov/factsheets/ImmuneFunction-HealthProfessional/"
+        }
+      ],
+      "review_status": "skeleton_unreviewed"
+    },
+    {
+      "id": "supp.glutathione",
+      "name_zh": "穀胱甘肽",
+      "name_en": "Glutathione",
+      "aliases": [
+        "GSH",
+        "reduced glutathione"
+      ],
+      "category": "antioxidants_coenzymes",
+      "maturity": "skeleton",
+      "common_forms_en": [
+        "oral reduced glutathione",
+        "liposomal glutathione",
+        "sublingual products"
+      ],
+      "typical_dose_range_en": "No RDA or standardized therapeutic oral dose. Human supplement studies use varied doses and formulations.",
+      "dose_source": {
+        "name": "NIH ODS",
+        "url": "https://ods.od.nih.gov/factsheets/ImmuneFunction-HealthProfessional/"
+      },
+      "key_safety_notes": [
+        {
+          "note_en": "Oral bioavailability and clinical outcomes vary by formulation.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NIH ODS",
+            "url": "https://ods.od.nih.gov/factsheets/ImmuneFunction-HealthProfessional/"
+          }
+        },
+        {
+          "note_en": "Interaction data with anticoagulants, immunosuppressants, and thyroid drugs are insufficient.",
+          "interaction_flags": [
+            "anticoagulant",
+            "immunosuppressant",
+            "thyroid"
+          ],
+          "source": {
+            "name": "NIH ODS",
+            "url": "https://ods.od.nih.gov/factsheets/ImmuneFunction-HealthProfessional/"
+          }
+        },
+        {
+          "note_en": "Do not extrapolate intravenous or disease-specific research to routine oral supplement use.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NIH ODS",
+            "url": "https://ods.od.nih.gov/factsheets/ImmuneFunction-HealthProfessional/"
+          }
+        }
+      ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_specific_data",
+            "note_en": null
+          },
+          "immunosuppressant": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_specific_data",
+            "note_en": null
+          },
+          "thyroid": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_specific_data",
+            "note_en": null
+          }
+        },
+        "focus_note_en": "Do not extrapolate intravenous or disease-specific research to routine oral supplement use; oral bioavailability varies by formulation.",
+        "source": {
+          "name": "NIH ODS",
+          "url": "https://ods.od.nih.gov/factsheets/ImmuneFunction-HealthProfessional/"
+        },
+        "staging_ref": "docs/research_packs/SUPP_SKELETON_BATCH_02_v1.md"
+      },
+      "evidence_snapshot_en": "Important endogenous antioxidant, but evidence that routine oral supplementation produces meaningful clinical outcomes remains formulation- and indication-dependent.",
+      "evidence_source": {
+        "name": "NIH ODS",
+        "url": "https://ods.od.nih.gov/factsheets/ImmuneFunction-HealthProfessional/"
+      },
+      "related_herb_id": null,
+      "related_drugclass_review_flags": [],
+      "sources": [
+        {
+          "name": "NIH ODS",
+          "url": "https://ods.od.nih.gov/factsheets/ImmuneFunction-HealthProfessional/"
+        }
+      ],
+      "review_status": "skeleton_unreviewed"
+    },
+    {
+      "id": "supp.green_tea_extract",
+      "name_zh": "綠茶萃取物",
+      "name_en": "Green tea extract",
+      "aliases": [
+        "EGCG",
+        "Camellia sinensis extract"
+      ],
+      "category": "botanical_extracts",
+      "maturity": "skeleton",
+      "common_forms_en": [
+        "EGCG/catechin extract capsules",
+        "decaffeinated extract",
+        "caffeinated extract"
+      ],
+      "typical_dose_range_en": "No universal safe/effective dose. Studies use varying catechin/EGCG amounts; concentrated extracts are not equivalent to brewed tea.",
+      "dose_source": {
+        "name": "NCCIH",
+        "url": "https://www.nccih.nih.gov/health/green-tea"
+      },
+      "key_safety_notes": [
+        {
+          "note_en": "Rare liver injury has been reported, particularly with concentrated extracts.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NCCIH",
+            "url": "https://www.nccih.nih.gov/health/green-tea"
+          }
+        },
+        {
+          "note_en": "High-dose green tea can reduce nadolol exposure; extract can alter atorvastatin exposure.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NCCIH",
+            "url": "https://www.nccih.nih.gov/health/green-tea"
+          }
+        },
+        {
+          "note_en": "Caffeine-containing products add stimulant effects.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NCCIH",
+            "url": "https://www.nccih.nih.gov/health/green-tea"
+          }
+        },
+        {
+          "note_en": "Medication interaction review is required.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NCCIH",
+            "url": "https://www.nccih.nih.gov/health/green-tea"
+          }
+        }
+      ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "possible_concern",
+            "staged_label": "product_dependent_vitamin_k_caffeine_context",
+            "note_en": "Anticoagulant relevance is product-dependent, turning on vitamin K content and caffeine context rather than one class rule."
+          },
+          "immunosuppressant": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_specific_data",
+            "note_en": null
+          },
+          "thyroid": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_specific_data",
+            "note_en": null
+          }
+        },
+        "focus_note_en": "High-dose green tea can reduce nadolol exposure and extract can alter atorvastatin exposure; rare liver injury is reported with concentrated extracts.",
+        "source": {
+          "name": "NCCIH",
+          "url": "https://www.nccih.nih.gov/health/green-tea"
+        },
+        "staging_ref": "docs/research_packs/SUPP_SKELETON_BATCH_02_v1.md"
+      },
+      "evidence_snapshot_en": "May modestly affect LDL cholesterol or body weight in some studies; evidence for cancer prevention is inconsistent.",
+      "evidence_source": {
+        "name": "NCCIH",
+        "url": "https://www.nccih.nih.gov/health/green-tea"
+      },
+      "related_herb_id": null,
+      "related_drugclass_review_flags": [],
+      "sources": [
+        {
+          "name": "NCCIH",
+          "url": "https://www.nccih.nih.gov/health/green-tea"
+        }
+      ],
+      "review_status": "skeleton_unreviewed"
+    },
+    {
+      "id": "supp.elderberry",
+      "name_zh": "接骨木莓",
+      "name_en": "Elderberry (Sambucus nigra)",
+      "aliases": [
+        "Sambucus nigra",
+        "black elderberry"
+      ],
+      "category": "botanical_extracts",
+      "maturity": "skeleton",
+      "common_forms_en": [
+        "syrup",
+        "gummies",
+        "capsules/extracts"
+      ],
+      "typical_dose_range_en": "No standardized therapeutic dose; clinical products vary widely in extract concentration and formulation.",
+      "dose_source": {
+        "name": "NCCIH",
+        "url": "https://www.nccih.nih.gov/health/elderberry"
+      },
+      "key_safety_notes": [
+        {
+          "note_en": "Raw/unripe berries and some plant parts contain cyanogenic compounds and can cause GI toxicity; properly prepared products differ.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NCCIH",
+            "url": "https://www.nccih.nih.gov/health/elderberry"
+          }
+        },
+        {
+          "note_en": "Medication-interaction data are limited.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NCCIH",
+            "url": "https://www.nccih.nih.gov/health/elderberry"
+          }
+        },
+        {
+          "note_en": "Pregnancy/breastfeeding safety data are insufficient.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NCCIH",
+            "url": "https://www.nccih.nih.gov/health/elderberry"
+          }
+        }
+      ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_specific_data",
+            "note_en": null
+          },
+          "immunosuppressant": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_specific_data",
+            "note_en": null
+          },
+          "thyroid": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_specific_data",
+            "note_en": null
+          }
+        },
+        "focus_note_en": "Raw or unripe berries and some plant parts contain cyanogenic compounds; pregnancy and breastfeeding safety data are insufficient.",
+        "source": {
+          "name": "NCCIH",
+          "url": "https://www.nccih.nih.gov/health/elderberry"
+        },
+        "staging_ref": "docs/research_packs/SUPP_SKELETON_BATCH_02_v1.md"
+      },
+      "evidence_snapshot_en": "Preliminary evidence suggests possible symptom relief in some upper respiratory infections, but evidence is limited and does not support broad antiviral claims.",
+      "evidence_source": {
+        "name": "NCCIH",
+        "url": "https://www.nccih.nih.gov/health/elderberry"
+      },
+      "related_herb_id": null,
+      "related_drugclass_review_flags": [],
+      "sources": [
+        {
+          "name": "NCCIH",
+          "url": "https://www.nccih.nih.gov/health/elderberry"
+        }
+      ],
+      "review_status": "skeleton_unreviewed"
+    },
+    {
+      "id": "supp.asian_ginseng",
+      "name_zh": "人參（亞洲人參）",
+      "name_en": "Asian ginseng (Panax ginseng)",
+      "aliases": [
+        "Panax ginseng",
+        "Korean ginseng",
+        "red ginseng"
+      ],
+      "category": "botanical_extracts",
+      "maturity": "skeleton",
+      "common_forms_en": [
+        "white ginseng root extract",
+        "red ginseng extract",
+        "standardized ginsenoside products"
+      ],
+      "typical_dose_range_en": "No universal standardized dose; trials use varied extracts and ginsenoside content, often over weeks to a few months.",
+      "dose_source": {
+        "name": "NCCIH",
+        "url": "https://www.nccih.nih.gov/health/asian-ginseng"
+      },
+      "key_safety_notes": [
+        {
+          "note_en": "Insomnia is common.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NCCIH",
+            "url": "https://www.nccih.nih.gov/health/asian-ginseng"
+          }
+        },
+        {
+          "note_en": "May affect blood sugar and may interfere with blood clotting.",
+          "interaction_flags": [
+            "anticoagulant"
+          ],
+          "source": {
+            "name": "NCCIH",
+            "url": "https://www.nccih.nih.gov/health/asian-ginseng"
+          }
+        },
+        {
+          "note_en": "May worsen autoimmune disorders; medication interaction review is warranted.",
+          "interaction_flags": [
+            "immunosuppressant"
+          ],
+          "source": {
+            "name": "NCCIH",
+            "url": "https://www.nccih.nih.gov/health/asian-ginseng"
+          }
+        },
+        {
+          "note_en": "Pregnancy safety is uncertain and some evidence raises concern.",
+          "interaction_flags": [],
+          "source": {
+            "name": "NCCIH",
+            "url": "https://www.nccih.nih.gov/health/asian-ginseng"
+          }
+        }
+      ],
+      "interaction_focus": {
+        "classes": {
+          "anticoagulant": {
+            "status": "possible_concern",
+            "staged_label": "possible_clotting_interaction",
+            "note_en": "May interfere with blood clotting; anticoagulant or antiplatelet review is warranted."
+          },
+          "immunosuppressant": {
+            "status": "possible_concern",
+            "staged_label": "autoimmune_immunologic_context_flag",
+            "note_en": "May worsen autoimmune disorders; a host-context flag rather than an established drug interaction."
+          },
+          "thyroid": {
+            "status": "insufficient_data",
+            "staged_label": "insufficient_specific_data",
+            "note_en": null
+          }
+        },
+        "focus_note_en": "Insomnia is common and blood sugar may be affected; pregnancy safety is uncertain and some evidence raises concern.",
+        "source": {
+          "name": "NCCIH",
+          "url": "https://www.nccih.nih.gov/health/asian-ginseng"
+        },
+        "staging_ref": "docs/research_packs/SUPP_SKELETON_BATCH_02_v1.md"
+      },
+      "evidence_snapshot_en": "Human evidence is mixed; possible small effects on fatigue or selected metabolic/sexual outcomes, but many trials are small and short.",
+      "evidence_source": {
+        "name": "NCCIH",
+        "url": "https://www.nccih.nih.gov/health/asian-ginseng"
+      },
+      "related_herb_id": "herb.ren_shen",
+      "related_drugclass_review_flags": [],
+      "sources": [
+        {
+          "name": "NCCIH",
+          "url": "https://www.nccih.nih.gov/health/asian-ginseng"
+        }
+      ],
+      "review_status": "skeleton_unreviewed"
+    }
+  ]
+}

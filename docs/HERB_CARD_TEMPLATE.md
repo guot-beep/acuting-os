@@ -166,6 +166,24 @@ Appendix B，`key_pairs` 一律留空了事——不是因為真的沒有來源�
 | `review_notes_zh` | 一句話說明依據哪些來源建卡、仍待 RV1 | 每筆可依實際來源微調文字 |
 | `source_type` | `"full_card_verified_multi_source"` | 固定值 |
 
+### 3.6 重複卡退役(D6 機制,2026-08-14 補記,對應 DECISIONS.md D21)
+
+同一味藥被重複匯入成兩個 id 時,**不硬刪**——照 D6:`review_status` 改
+`"deprecated"`,記錄整筆留在 `herb_canon_shortlist.json` 內(D16 pattern 線
+用過的同一機制)。
+
+| 欄位 | 值 | 說明 |
+|---|---|---|
+| `review_status` | `"deprecated"` | 退役卡專用,其餘卡不可用這個值 |
+| `deprecated_note_zh` | 一段話:為什麼退役、正典 id 是誰、遷了什麼欄位、決策出處(D 編號) | 必填,讓人看懂為什麼這筆還在檔案裡 |
+
+退役前:兩卡逐欄位比對,**較完整的一方內容遷入正卡**(不論哪一邊是「新
+id」)；正卡原本較短的欄位在覆蓋前先寫進正卡自己的 `import_artifacts`
+(archive-before-replace),不是丟棄。全庫(含 `formulas.json` composition
+的 `herb_id`、`herb_pairs.json` 的 `herbs[]`、`data/imports/**` 的
+`herb_id`)的退役 id 引用一律改指向正卡 id；退役卡的 `id` 本身**不改**
+(D1)。
+
 驗證新卡有沒有漏欄最快的方法：拿新記錄的 `Object.keys()` 跟
 `herb.he_tao_ren` 的 `Object.keys()` 比對，缺什麼、多什麼一次看清楚——
 不要只跑 `validate-herb-standard.js` 就當作做完了，那支只檢查它自己認得的
@@ -219,3 +237,10 @@ major combinations、NCBAHM 對藥、CloudTCM、American Dragon 與實際核讀�
 
 接手指令:`docs/HERB_FILL_DISPATCH.md`(整段貼給 AI)。
 欄位規範:`docs/HERB_RECORD_STANDARD.md`。批次順序照 board exam outline。
+
+## R2 Evidence 慣例(2026-08-11,三年藍圖 R2,全線統一)
+
+帶主張的欄位(劑量、安全、療效、機轉、紅旗)必掛 **per-field 來源錨點 +
+擷取日期**(`field_sources` 或本線等價欄位;格式參照 pharm 線
+`dailymed:<setid>#<SECTION>` 的可機器解析精神)。無來源的欄位誠實留空。
+新產卡即遵守;舊卡不回溯強制,由各線驗證器與 ratchet 自然收斂。
