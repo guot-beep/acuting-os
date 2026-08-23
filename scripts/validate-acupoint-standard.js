@@ -21,6 +21,8 @@
  *      (depth/angle is safety-critical — never leave it prose-only)
  *   A8 template-grade record still carries shared boilerplate contraindications
  *   A9 an existing content field (配穴 / 臨床要點) was emptied — never delete
+ *   E11 camelCase cautionsEn twin key present (a safety field must not have
+ *       a divergent duplicate; 84 template-sentence twins removed 2026-08-23)
  *
  * WORKLIST — `--worklist` lists the actual point codes behind the numbers,
  * grouped by channel (batches run one channel at a time).
@@ -137,6 +139,14 @@ let misaligned = 0, boilerplateHits = 0, missingEnAny = 0;
 
 for (const r of recs) {
   const id = r.code || r.id || r.chinese || "(unknown)";
+
+  // E11 (2026-08-23) — the dual-key disease: 84 records once carried a
+  // camelCase `cautionsEn` twin holding 3 generic template sentences that
+  // nothing rendered, while the real per-point safety text lived in
+  // `cautions_en`. Divergent duplicates of a SAFETY field are how a fix
+  // lands on one copy and the stale copy survives review. The camelCase
+  // key is now banned outright on 361 records.
+  if (r.cautionsEn !== undefined) errors.push(`E11 ${id}: camelCase cautionsEn 雙鍵（安全欄位不准有分岔副本）`);
   // "Template-grade" means the point has actually been curated against the
   // curriculum, not merely that it carries some citation. Marking board stars
   // adds field_sources.exam_star to 145 otherwise-untouched points; keying off
