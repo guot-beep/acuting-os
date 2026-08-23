@@ -281,20 +281,20 @@
     const bookingNote = String(clinic.booking_note_zh || "").trim();
     return `<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>診後照護指示</title><style>
-body{font-family:"Microsoft JhengHei","Noto Sans TC",sans-serif;background:#f3eddf;color:#202427;margin:0;padding:24px;line-height:1.7}
-.sheet{max-width:640px;margin:0 auto;background:#fff;border:1px solid #d9e0e4;border-radius:12px;padding:28px 32px;box-shadow:0 8px 30px rgba(23,33,38,.08)}
+body{font-family:"Microsoft JhengHei","Noto Sans TC",sans-serif;background:#f6f1e7;color:#33291f;margin:0;padding:24px;line-height:1.7}
+.sheet{max-width:640px;margin:0 auto;background:#fff;border:1px solid #e5dcc9;border-radius:12px;padding:28px 32px;box-shadow:0 8px 30px rgba(23,33,38,.08)}
 .clinic-header{text-align:center;margin-bottom:6px}
 .clinic-header .clinic-name{font-family:"Noto Serif TC",serif;font-size:1.2em;color:#16352f}
-.clinic-header .clinic-contact{font-size:.82em;color:#66717a;margin-top:2px}
-h1{font-family:"Noto Serif TC",serif;font-size:1.5em;color:#0a5956;border-bottom:2px solid #c89033;padding-bottom:8px;margin:0 0 4px}
-.date{color:#66717a;font-size:.9em;margin-bottom:16px}
+.clinic-header .clinic-contact{font-size:.82em;color:#786c5c;margin-top:2px}
+h1{font-family:"Noto Serif TC",serif;font-size:1.5em;color:#515f3e;border-bottom:2px solid #b98b44;padding-bottom:8px;margin:0 0 4px}
+.date{color:#786c5c;font-size:.9em;margin-bottom:16px}
 h2{font-family:"Noto Serif TC",serif;font-size:1.05em;color:#16352f;margin:18px 0 6px}
 table{width:100%;border-collapse:collapse;font-size:.95em}
 td,th{border:1px solid #e5e0d4;padding:6px 10px;text-align:left}
 th{background:#f7f3e8}
-td.note{font-size:.85em;color:#66717a}
+td.note{font-size:.85em;color:#786c5c}
 ul{margin:4px 0;padding-left:20px}
-.footer{margin-top:22px;padding-top:10px;border-top:1px dashed #c89033;font-size:.78em;color:#66717a}
+.footer{margin-top:22px;padding-top:10px;border-top:1px dashed #b98b44;font-size:.78em;color:#786c5c}
 .footer .booking-note{margin-top:4px}
 .version{font-size:.72em;color:#9aa4ab;text-align:right}
 @media print{
@@ -320,7 +320,7 @@ ${sec("調理品怎麼吃", medTable)}
 ${sec("特別注意", ul(byCat("special")))}
 ${sec("什麼情況請盡快與我們聯絡或就醫", ul(watch))}
 ${sec("下次回診", snapshot.followUpSnapshot ? `<p>回診安排:${esc(snapshot.followUpSnapshot)}</p>` : "")}
-<div style="margin-top:18px;display:flex;justify-content:space-between;font-size:.9em;align-items:flex-end"><div>醫師:${esc(clinic.practitioner_zh)}＿＿＿＿＿＿</div><div style="text-align:right;color:#66717a">預約電話:${esc(clinic.phone)}<br>${esc(clinic.website)}</div></div>
+<div style="margin-top:18px;display:flex;justify-content:space-between;font-size:.9em;align-items:flex-end"><div>醫師:${esc(clinic.practitioner_zh)}＿＿＿＿＿＿</div><div style="text-align:right;color:#786c5c">預約電話:${esc(clinic.phone)}<br>${esc(clinic.website)}</div></div>
 <div class="footer">本文件為衛教與照護指示,非診斷證明,不適用於保險申報。如有疑問請聯絡診所。${bookingNote ? `<div class="booking-note">${esc(bookingNote)}</div>` : ""}</div>
 </div></body></html>`;
   }

@@ -85,16 +85,16 @@ const sec = (key, title, bodyHtml) => (skip.has(key) || !bodyHtml) ? "" : `<sect
 
 const html = `<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>診後照護指示</title><style>
-body{font-family:"Microsoft JhengHei","Noto Sans TC",sans-serif;background:#f3eddf;color:#202427;margin:0;padding:24px;line-height:1.7}
-.sheet{max-width:640px;margin:0 auto;background:#fff;border:1px solid #d9e0e4;border-radius:12px;padding:28px 32px;box-shadow:0 8px 30px rgba(23,33,38,.08)}
-h1{font-family:"Noto Serif TC",serif;font-size:1.5em;color:#0a5956;border-bottom:2px solid #c89033;padding-bottom:8px;margin:0 0 4px}
-.date{color:#66717a;font-size:.9em;margin-bottom:16px}
+body{font-family:"Microsoft JhengHei","Noto Sans TC",sans-serif;background:#f6f1e7;color:#33291f;margin:0;padding:24px;line-height:1.7}
+.sheet{max-width:640px;margin:0 auto;background:#fff;border:1px solid #e5dcc9;border-radius:12px;padding:28px 32px;box-shadow:0 8px 30px rgba(23,33,38,.08)}
+h1{font-family:"Noto Serif TC",serif;font-size:1.5em;color:#515f3e;border-bottom:2px solid #b98b44;padding-bottom:8px;margin:0 0 4px}
+.date{color:#786c5c;font-size:.9em;margin-bottom:16px}
 h2{font-family:"Noto Serif TC",serif;font-size:1.05em;color:#16352f;margin:18px 0 6px}
 table{width:100%;border-collapse:collapse;font-size:.95em}
 td,th{border:1px solid #e5e0d4;padding:6px 10px;text-align:left}
 th{background:#f7f3e8}
 ul{margin:4px 0;padding-left:20px}
-.footer{margin-top:22px;padding-top:10px;border-top:1px dashed #c89033;font-size:.78em;color:#66717a}
+.footer{margin-top:22px;padding-top:10px;border-top:1px dashed #b98b44;font-size:.78em;color:#786c5c}
 @media print{body{background:#fff;padding:0}.sheet{border:0;box-shadow:none}}
 </style></head><body><div class="sheet">
 <div style="text-align:center;margin-bottom:6px"><div style="font-family:'Noto Serif TC',serif;font-size:1.2em;color:#16352f">${esc(CLINIC.clinic_name_zh || "")}</div></div>
@@ -102,7 +102,7 @@ ul{margin:4px 0;padding-left:20px}
 <div class="date">日期:${esc(note.visitDate)}</div>
 ${sec("today", "今天做了什麼", didToday.length ? `<p>${didToday.map(esc).join("、")}。</p>` : "")}
 ${sec("summary", "近況小結", note.avsSummary ? `<p>${esc(note.avsSummary)}</p>` : "")}
-${sec("herbs", "調理品怎麼吃", medRows.length ? `<table><tr><th>名稱</th><th>用量</th><th>頻率</th></tr>${medRows.map((r) => `<tr><td>${esc(r.name)}</td><td>${esc(r.dose)}</td><td>${esc(r.freq)}</td></tr>`).join("")}</table><p style="font-size:.85em;color:#66717a">${esc(byCat("herb_caution").join(" ") || "請依本次提供的方式使用中藥或營養品;若同時使用處方藥或其他長期用藥,請讓醫療團隊知道,不要自行停藥或更改劑量;有任何不適先暫停並聯絡我們。")}</p>` : "")}
+${sec("herbs", "調理品怎麼吃", medRows.length ? `<table><tr><th>名稱</th><th>用量</th><th>頻率</th></tr>${medRows.map((r) => `<tr><td>${esc(r.name)}</td><td>${esc(r.dose)}</td><td>${esc(r.freq)}</td></tr>`).join("")}</table><p style="font-size:.85em;color:#786c5c">${esc(byCat("herb_caution").join(" ") || "請依本次提供的方式使用中藥或營養品;若同時使用處方藥或其他長期用藥,請讓醫療團隊知道,不要自行停藥或更改劑量;有任何不適先暫停並聯絡我們。")}</p>` : "")}
 ${sec("aftercare", "今日治療後注意事項", byCat("aftercare").length ? "<ul>" + byCat("aftercare").map((a) => "<li>" + esc(a) + "</li>").join("") + "</ul>" : "")}
 ${sec("special", "特別注意", byCat("special").length ? "<ul>" + byCat("special").map((a) => "<li>" + esc(a) + "</li>").join("") + "</ul>" : "")}
 ${sec("lifestyle", "作息與生活建議", (byCat("lifestyle").length || note.avsLifestyle) ? (byCat("lifestyle").length ? "<ul>" + byCat("lifestyle").map((a) => "<li>" + esc(a) + "</li>").join("") + "</ul>" : "") + (note.avsLifestyle ? "<p>" + esc(note.avsLifestyle) + "</p>" : "") : "")}
@@ -110,7 +110,7 @@ ${sec("diet", "飲食建議", (byCat("diet").length || note.avsDiet) ? (byCat("d
 ${sec("exercise", "活動與運動建議", note.avsExercise ? `<p>${esc(note.avsExercise)}</p>` : "")}
 ${sec("safety", "什麼情況請盡快與我們聯絡或就醫", `<ul><li>症狀明顯加重、或出現新的劇烈疼痛</li><li>發燒、持續頭暈、異常出血或瘀腫擴大</li><li>服用調理品後噁心、皮疹或任何過敏反應</li>${note.avsSafety ? `<li>${esc(note.avsSafety)}</li>` : ""}</ul>`)}
 ${sec("followup", "下次回診與自我觀察", `${note.followUp ? `<p>回診安排:${esc(note.followUp)}</p>` : ""}${prompts.length ? `<p>這段期間請留意:</p><ul>${prompts.map((p) => `<li>${esc(p)}</li>`).join("")}</ul>` : ""}`)}
-<div style="margin-top:18px;display:flex;justify-content:space-between;font-size:.9em;align-items:flex-end"><div>醫師:${esc(CLINIC.practitioner_zh || "")}＿＿＿＿＿＿</div><div style="text-align:right;color:#66717a">預約電話:${esc(CLINIC.phone || "")}<br>${esc(CLINIC.website || "")}</div></div>
+<div style="margin-top:18px;display:flex;justify-content:space-between;font-size:.9em;align-items:flex-end"><div>醫師:${esc(CLINIC.practitioner_zh || "")}＿＿＿＿＿＿</div><div style="text-align:right;color:#786c5c">預約電話:${esc(CLINIC.phone || "")}<br>${esc(CLINIC.website || "")}</div></div>
 <div class="footer">本文件為衛教與照護指示,非診斷證明,不適用於保險申報。如有疑問請聯絡診所。</div>
 </div></body></html>`;
 
