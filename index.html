@@ -1001,7 +1001,7 @@
       <div class="boot-card">
         <span class="boot-spin" aria-hidden="true"></span>
         <p><strong>知識庫載入中…</strong><br /><small>361 穴 · 223 方 · 363 藥 · 505 病症</small></p>
-        <p class="boot-fallback"><small>載入比平常久。請檢查網路後<a href="javascript:location.reload()">重新整理</a>。</small></p>
+        <p class="boot-fallback"><small>載入比平常久。請檢查網路後<button type="button" class="boot-reload" onclick="location.reload()">重新整理</button>。</small></p>
       </div>
     </div>
     <style>
@@ -1016,6 +1016,7 @@
          stylesheet（Google Fonts 掛掉時整頁卡死 13 秒——實測踩到）。 */
       #bootOverlay .boot-fallback { margin-top: 0.8rem; font-size: 0.9rem; opacity: 0; animation: bootreveal 0.4s ease 60s forwards; }
       @keyframes bootreveal { to { opacity: 1; } }
+      .boot-reload { background: none; border: none; padding: 0; color: var(--accent-dark, #515f3e); text-decoration: underline; cursor: pointer; font: inherit; }
     </style>
 <script defer src="data/generated/app_data.js"></script>
     <script defer src="data/generated/knowledge_data.js"></script>
