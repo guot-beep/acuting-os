@@ -392,6 +392,13 @@
   - `node scripts/validate-no-boilerplate.js`: PASS (0 boilerplate)
   - `node scripts/validate-content-junk.js`: PASS
 - **已隔離邊界**: `data/pathology/**` 零異動；無修改任何 ID；無異動 UI/腳本。
+# 2026-08-20 Codex — 方歌／中藥禁忌／TDIS 直接來源收尾與方劑裁決落地
+
+- **做了什麼**：原以 `091af577` 為基底，在隔離分支補 88 首具名方歌；依課件逐味補 18 味中藥的中英禁忌與頁碼 provenance；只為有一對一課件的 `tdis.bu_yu` 補定義、病因、病機、表現、證型與 ASRM 轉介紅旗。依 Ting 後續授權核正 14 張方劑卡：重建桂枝茯苓丸、黃土湯；瀉心湯／定喘湯沿用已核正身分；玉女煎沿用較佳 canonical；白毒散、羚角鉤藤飲以 never-hard-delete 改為 deprecated；其餘錯誤關聯與出典改正或並列來源。2026-08-21 已 rebase 至 `origin/claude/system-optimization-3ptpk0@2cb06a0b`；上游／本批 herb 改動 ID 交集 `0`，generated bundle 由 source 重建。
+- **數字 before→after**：方劑 `221→221`；`formula_song_zh 109→197/221`（+88，尚缺 24）；`source_classic 138→146/221`；中藥 `352→352`，`contraindications_zh 122→140/352`、`contraindications_en 113→131/352`（各 +18）；TDIS `75→75`，index-only N2 `43→42`、T4 `75→74`。
+- **驗證／遠端**：rebase 後 `build-data`；formula standard/song；含 E10 的 herb standard；`tdx.andrology.general` TDIS scoped validator；naming；content-quality/junk；no-boilerplate；validate-data；formula no-loss；validation-ratchet；`git diff --check` 均 PASS。ratchet 顯示 conditions `65` 持平及 TDIS `75→74`，無回歸。分支已 push，stacked draft PR [#66](https://github.com/guot-beep/acuting-os/pull/66) 以 `claude/system-optimization-3ptpk0` 為 base。
+- **已知未解／STOP**：方歌仍缺 24 首，其中 `ding_zhi_wan`、`er_xian_tang` 的歷史歌訣與組成不符，兩張 deprecated 卡不再補；中藥 `contraindications_zh` 尚缺 212/352；TDIS 尚有 N2 42 與 T4 74。全庫 `validate-herb-canon`／`validate-encoding` 仍有本批前即存在的跨線缺陷，未列作本批綠燈。
+- **下一步**：從方歌 24 首 worklist 逐首找可驗證文本；中藥禁忌續按 `HERB_FILL_DISPATCH` 的精確課件頁／官方 monograph 順序小批補；TDIS 只在取得卡片一對一來源後續填，不套 taxonomy 樣板。
 
 # 2026-08-19 Claude — 5–20 年全系統檢測（唯讀稽核）:8 線並行調查,產出 SYSTEM_OPTIMIZATION_REVIEW_2026-08-19.md
 
