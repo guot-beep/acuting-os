@@ -182,6 +182,9 @@ jobs:
       - name: acupoint card standard
         run: node scripts/validate-acupoint-standard.js
 
+      - name: condition card standard
+        run: node scripts/validate-condition-standard.js
+
       - name: acupoint source conflicts (APB-2 / APB-4)
         run: node scripts/validate-acupoint-source-conflicts.js
 
