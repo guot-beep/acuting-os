@@ -1,0 +1,2412 @@
+{
+ "dataset": "中文欄回填：待 Ting 裁定的詞",
+ "how_to_use": [
+  "在 ting_ruling 填上妳要的中文（或填 \"skip\" 表示這個詞維持英文不譯）。",
+  "填完把該筆搬進 data/config/clinical_term_zh_map.json，method 寫 ting_ruling——",
+  "那個檔是最高權威，永遠壓過模型收斂；接著跑：",
+  "  node scripts/build-term-crosswalk.js && node scripts/apply-zh-term-backfill.js && node scripts/build-data.js"
+ ],
+ "why_deferred": {
+  "deferred_disagreement": "兩位互不相見的譯者給出不同譯名——真正需要人判斷的地方",
+  "deferred_translator_declined": "至少一位譯者自認不確定而棄權（規則是寧可留白不可猜）",
+  "deferred_outside_repo_candidates": "兩位譯者一致，但譯名不在 repo 既有詞彙內——選新詞還是沿用舊詞是妳的決定",
+  "deferred_no_first_opinion": "只有單方回覆，缺第二意見"
+ },
+ "totals": {
+  "terms": 248,
+  "slots": 1102
+ },
+ "items": [
+  {
+   "en": "Weakness",
+   "slots": 92,
+   "reason": "deferred_outside_repo_candidates",
+   "translator_x": "乏力",
+   "translator_y": "乏力",
+   "repo_candidates": [
+    "無力",
+    "疲弱"
+   ],
+   "ting_ruling": null
+  },
+  {
+   "en": "Hemoptysis",
+   "slots": 46,
+   "reason": "deferred_disagreement",
+   "translator_x": "咳血",
+   "translator_y": "咯血",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "西醫術語，台灣作「咳血」；中醫文獻亦見「咯血」。兩者同指，採台灣通行之「咳血」。 ｜ 中西醫共用「咯血」，台灣臨床亦作「咳血」。方劑卡脈絡採中醫標準詞「咯血」。"
+  },
+  {
+   "en": "Progressive muscular dystrophy",
+   "slots": 38,
+   "reason": "deferred_disagreement",
+   "translator_x": "進行性肌肉失養症",
+   "translator_y": "進行性肌肉萎縮症",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "台灣罕病用語為肌肉失養症；坊間亦作進行性肌肉萎縮症 ｜ 台灣亦稱「肌肉失養症」；「肌營養不良」為中國大陸用語，不採。"
+  },
+  {
+   "en": "Progressive myodystrophy",
+   "slots": 32,
+   "reason": "deferred_disagreement",
+   "translator_x": "進行性肌肉失養症",
+   "translator_y": "進行性肌肉萎縮症",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "與 progressive muscular dystrophy 同義 ｜ 與 Progressive muscular dystrophy 同義異寫。"
+  },
+  {
+   "en": "Painful obstruction",
+   "slots": 28,
+   "reason": "deferred_disagreement",
+   "translator_x": "痺證",
+   "translator_y": "痹證",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "中醫術語，painful obstruction 為痺之標準英譯；亦寫作痹證 ｜ 中醫術語，Wiseman 系統以 painful obstruction 對譯「痹」。"
+  },
+  {
+   "en": "Progressive myodystrophia",
+   "slots": 28,
+   "reason": "deferred_disagreement",
+   "translator_x": "進行性肌肉失養症",
+   "translator_y": "進行性肌肉萎縮症",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "原文拼法異體，與前兩筆同義 ｜ 與 Progressive muscular dystrophy 同義異寫。"
+  },
+  {
+   "en": "Psoriasis",
+   "slots": 28,
+   "reason": "deferred_outside_repo_candidates",
+   "translator_x": "乾癬",
+   "translator_y": "乾癬",
+   "repo_candidates": [
+    "牛皮癬",
+    "乾癬／銀屑病",
+    "白疕"
+   ],
+   "ting_ruling": null
+  },
+  {
+   "en": "Epstein-Barr virus syndrome",
+   "slots": 24,
+   "reason": "deferred_translator_declined",
+   "translator_x": "EB病毒感染症候群",
+   "translator_y": null,
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "EB病毒為台灣標準稱法，但原文 syndrome 所指不明（可能為慢性EB病毒感染或傳染性單核球增多症），建議人工確認 ｜ EB病毒（Epstein-Barr virus）在台灣譯名固定，但「EBV syndrome」非標準疾病名，可能指傳染性單核球增多症，也可能指慢性活動性EB病毒感染，對應不唯一，留待人工確認。"
+  },
+  {
+   "en": "Cor pulmonare",
+   "slots": 22,
+   "reason": "deferred_disagreement",
+   "translator_x": "肺心症",
+   "translator_y": "肺性心臟病",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "原文為 cor pulmonale 誤拼；全名肺性心臟病／肺源性心臟病 ｜ 原文拼寫應為 cor pulmonale；台灣亦簡稱「肺心症」。"
+  },
+  {
+   "en": "Gu syndrome",
+   "slots": 20,
+   "reason": "deferred_translator_declined",
+   "translator_x": null,
+   "translator_y": "蠱證",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "西方中醫著作自創詞（Heiner Fruehauf 所倡），中文可能對應蠱證／蠱毒，但非台灣中醫教科書標準病名，且所指範圍（慢性寄生蟲／慢性感染）不明確，留待人工判定 ｜ 中醫「蠱」之證，非西醫病名；亦作「蠱毒證」。"
+  },
+  {
+   "en": "Urolithiasis",
+   "slots": 20,
+   "reason": "deferred_disagreement",
+   "translator_x": "泌尿道結石",
+   "translator_y": "尿路結石",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Behcet's disease",
+   "slots": 18,
+   "reason": "deferred_disagreement",
+   "translator_x": "貝西氏症",
+   "translator_y": "貝賽特氏症",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "台灣罕病名冊用貝西氏症；皮膚科文獻亦作貝賽特氏症 ｜ 台灣亦見「貝西氏症」、「貝赫切特氏症」等音譯寫法。"
+  },
+  {
+   "en": "Eye pain",
+   "slots": 18,
+   "reason": "deferred_disagreement",
+   "translator_x": "目痛",
+   "translator_y": "眼痛",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "中醫症狀詞；白話可作眼睛痛"
+  },
+  {
+   "en": "Abdominal masses",
+   "slots": 16,
+   "reason": "deferred_outside_repo_candidates",
+   "translator_x": "腹部腫塊",
+   "translator_y": "腹部腫塊",
+   "repo_candidates": [
+    "癥瘕積聚",
+    "腹部癥瘕積聚"
+   ],
+   "ting_ruling": null
+  },
+  {
+   "en": "Perspiration",
+   "slots": 16,
+   "reason": "deferred_disagreement",
+   "translator_x": "汗出",
+   "translator_y": "出汗",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "中醫症狀詞；白話為出汗 ｜ 中醫語境下亦作「汗出」。"
+  },
+  {
+   "en": "Rheumatism",
+   "slots": 12,
+   "reason": "deferred_disagreement",
+   "translator_x": "風濕病",
+   "translator_y": "風濕",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "泛稱，非特定診斷 ｜ 泛稱之舊詞，台灣亦作「風濕症」。"
+  },
+  {
+   "en": "Thromboangitis obliterans",
+   "slots": 12,
+   "reason": "deferred_disagreement",
+   "translator_x": "阻塞性血栓血管炎",
+   "translator_y": "血栓閉塞性脈管炎",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "即柏格氏病；中醫對應脫疽 ｜ 即柏格氏病（Buerger's disease）。"
+  },
+  {
+   "en": "Breast distention",
+   "slots": 10,
+   "reason": "deferred_disagreement",
+   "translator_x": "乳房脹滿",
+   "translator_y": "乳房脹",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "中醫卡片常見寫法為乳房脹痛，惟原文未含痛字，故不擅加 ｜ 原文僅言脹未言痛，故不加「痛」；中醫常寫作「乳脹」或「乳房脹痛」。"
+  },
+  {
+   "en": "Gasping",
+   "slots": 10,
+   "reason": "deferred_disagreement",
+   "translator_x": "喘促",
+   "translator_y": "喘",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "中醫症狀詞；避免用氣喘（台灣指 asthma） ｜ 指呼吸急促之「喘」，非台灣所稱之氣喘（asthma）。"
+  },
+  {
+   "en": "Panarthralgia",
+   "slots": 10,
+   "reason": "deferred_disagreement",
+   "translator_x": "全身關節疼痛",
+   "translator_y": "全身關節痛",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Premature ovarian failure, prevention",
+   "slots": 10,
+   "reason": "deferred_disagreement",
+   "translator_x": "卵巢早衰預防",
+   "translator_y": "預防卵巢早衰",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "原文含 prevention，為用途標籤而非病名，建議人工確認是否併入前一詞 ｜ 原文含 prevention 之限定語，照譯為預防用途標籤。"
+  },
+  {
+   "en": "Acid regurgitation",
+   "slots": 8,
+   "reason": "deferred_outside_repo_candidates",
+   "translator_x": "泛酸",
+   "translator_y": "泛酸",
+   "repo_candidates": [
+    "吞酸",
+    "反酸"
+   ],
+   "ting_ruling": null
+  },
+  {
+   "en": "Insufficient lactation",
+   "slots": 8,
+   "reason": "deferred_outside_repo_candidates",
+   "translator_x": "乳汁不足",
+   "translator_y": "乳汁不足",
+   "repo_candidates": [
+    "產後缺乳",
+    "缺乳",
+    "乳汁不下",
+    "乳汁不通"
+   ],
+   "ting_ruling": null
+  },
+  {
+   "en": "Post-herpetic neuralgia",
+   "slots": 8,
+   "reason": "deferred_disagreement",
+   "translator_x": "疱疹後神經痛",
+   "translator_y": "帶狀疱疹後神經痛",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Premenstrual breast distention",
+   "slots": 8,
+   "reason": "deferred_disagreement",
+   "translator_x": "經前乳房脹滿",
+   "translator_y": "經前乳房脹",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "原文僅言脹，未含痛；常見寫法為經前乳房脹痛"
+  },
+  {
+   "en": "Retarded growth in children",
+   "slots": 8,
+   "reason": "deferred_disagreement",
+   "translator_x": "小兒生長遲緩",
+   "translator_y": "小兒發育遲緩",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Rosacea",
+   "slots": 8,
+   "reason": "deferred_disagreement",
+   "translator_x": "酒糟鼻",
+   "translator_y": "酒糟性皮膚炎",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "台灣皮膚科亦稱酒糟／玫瑰斑，不限於鼻部"
+  },
+  {
+   "en": "Sjogren's syndrome",
+   "slots": 8,
+   "reason": "deferred_disagreement",
+   "translator_x": "乾燥症候群",
+   "translator_y": "修格蘭氏症候群",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "台灣亦稱修格蘭氏症候群 ｜ 亦譯乾燥症候群"
+  },
+  {
+   "en": "Wrist and hand pain",
+   "slots": 8,
+   "reason": "deferred_disagreement",
+   "translator_x": "手腕與手部疼痛",
+   "translator_y": "腕手疼痛",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Bronchiaesthenia",
+   "slots": 6,
+   "reason": "deferred_translator_declined",
+   "translator_x": null,
+   "translator_y": null,
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "非標準英文病名，疑為 bronchial asthenia（支氣管無力）之誤植或匯入雜訊，查無台灣標準譯名，留待人工確認 ｜ 非標準醫學詞，疑為 bronchial asthenia 之誤植或匯入雜訊，無對應台灣譯名，留待人工"
+  },
+  {
+   "en": "Eye disorders",
+   "slots": 6,
+   "reason": "deferred_disagreement",
+   "translator_x": "眼部疾病",
+   "translator_y": "眼部疾患",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "泛稱"
+  },
+  {
+   "en": "Hypertensive encephalopathy",
+   "slots": 6,
+   "reason": "deferred_disagreement",
+   "translator_x": "高血壓腦病變",
+   "translator_y": "高血壓性腦病變",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Intoxication",
+   "slots": 6,
+   "reason": "deferred_translator_declined",
+   "translator_x": null,
+   "translator_y": null,
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "詞義含糊：可指中毒，亦可指酒醉（醉酒），兩者對應不同病名，留待人工依原卡片上下文判斷 ｜ 詞義含糊：可指中毒，亦可指酒醉／藥物急性中毒狀態，無法判定，留待人工"
+  },
+  {
+   "en": "Middle back pain",
+   "slots": 6,
+   "reason": "deferred_disagreement",
+   "translator_x": "背部中段疼痛",
+   "translator_y": "中背部疼痛",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Perimenopause syndrome",
+   "slots": 6,
+   "reason": "deferred_disagreement",
+   "translator_x": "更年期症候群",
+   "translator_y": "圍停經期症候群",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "直譯為圍停經期症候群，台灣慣用更年期症候群 ｜ 台灣臨床多逕稱更年期症候群"
+  },
+  {
+   "en": "Pernicious vomiting",
+   "slots": 6,
+   "reason": "deferred_translator_declined",
+   "translator_x": null,
+   "translator_y": null,
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "詞義含糊：可能指妊娠劇吐（pernicious vomiting of pregnancy），亦可能泛指頑固性嘔吐，兩者病名不同，留待人工確認 ｜ 未標明妊娠，無法確定是指妊娠劇吐（pernicious vomiting of pregnancy）或泛指劇烈頑固嘔吐，留待人工"
+  },
+  {
+   "en": "Urinary calculi",
+   "slots": 6,
+   "reason": "deferred_disagreement",
+   "translator_x": "泌尿道結石",
+   "translator_y": "尿路結石",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Vascular Bi",
+   "slots": 6,
+   "reason": "deferred_disagreement",
+   "translator_x": "脈痺",
+   "translator_y": "脈痹",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "中醫五體痺之一 ｜ 中醫五體痹之一"
+  },
+  {
+   "en": "Acute icteric nephroatrophy",
+   "slots": 4,
+   "reason": "deferred_translator_declined",
+   "translator_x": null,
+   "translator_y": null,
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "原文疑為匯入錯字：icteric（黃疸）與 nephroatrophy（腎萎縮）搭配不成立，可能原為 acute icteric hepatic atrophy（急性黃疸型肝萎縮），無法確定，留待人工核對原文 ｜ 原文疑為殘缺或誤植（acute icteric hepatoatrophy 急性黃色肝萎縮？）；nephro- 與黃疸萎縮組合無對應病名，留待人工"
+  },
+  {
+   "en": "Adnexitis",
+   "slots": 4,
+   "reason": "deferred_disagreement",
+   "translator_x": "附件炎",
+   "translator_y": "子宮附件炎",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "即子宮附件（輸卵管與卵巢）發炎"
+  },
+  {
+   "en": "Anuria",
+   "slots": 4,
+   "reason": "deferred_disagreement",
+   "translator_x": "無尿症",
+   "translator_y": "無尿",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Blurred vision",
+   "slots": 4,
+   "reason": "deferred_outside_repo_candidates",
+   "translator_x": "視力模糊",
+   "translator_y": "視力模糊",
+   "repo_candidates": [
+    "眼睛模糊",
+    "目暗昏花／視瞻昏渺",
+    "視物模糊",
+    "視物昏花"
+   ],
+   "ting_ruling": null
+  },
+  {
+   "en": "Colon cancer",
+   "slots": 4,
+   "reason": "deferred_disagreement",
+   "translator_x": "大腸癌",
+   "translator_y": "結腸癌",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "台灣慣用大腸癌（結腸癌） ｜ 台灣臨床亦常合稱大腸癌"
+  },
+  {
+   "en": "Cystic tuberculosis",
+   "slots": 4,
+   "reason": "deferred_translator_declined",
+   "translator_x": null,
+   "translator_y": null,
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "詞義含糊：字面為囊性結核，依方劑（腎氣丸）推測可能為膀胱結核（tuberculosis of the bladder），無法確定何者，留待人工核對 ｜ cystic 可指膀胱（膀胱結核）或囊狀病灶，兩者對應不同疾病，無法判定，留待人工"
+  },
+  {
+   "en": "Endocrine disorders",
+   "slots": 4,
+   "reason": "deferred_disagreement",
+   "translator_x": "內分泌疾病",
+   "translator_y": "內分泌失調",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "亦常作內分泌失調 ｜ 泛稱，亦可作內分泌疾病"
+  },
+  {
+   "en": "Gastric distention",
+   "slots": 4,
+   "reason": "deferred_disagreement",
+   "translator_x": "胃脹",
+   "translator_y": "胃脹滿",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "中醫多作胃脘脹滿"
+  },
+  {
+   "en": "Gastromegaly",
+   "slots": 4,
+   "reason": "deferred_disagreement",
+   "translator_x": "胃擴大",
+   "translator_y": "胃擴張",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "亦作胃擴張（gastrectasis） ｜ 亦作巨胃症"
+  },
+  {
+   "en": "Genital warts",
+   "slots": 4,
+   "reason": "deferred_disagreement",
+   "translator_x": "生殖器疣",
+   "translator_y": "尖形濕疣",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "俗稱菜花，中醫作尖形濕疣 ｜ 俗稱菜花，亦作尖銳濕疣"
+  },
+  {
+   "en": "Herniated lumbar disc",
+   "slots": 4,
+   "reason": "deferred_disagreement",
+   "translator_x": "腰椎椎間盤突出",
+   "translator_y": "腰椎間盤突出",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Hypertrophic myelitis",
+   "slots": 4,
+   "reason": "deferred_translator_declined",
+   "translator_x": null,
+   "translator_y": null,
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "非標準西醫病名，可能為 hypertrophic pachymeningitis（肥厚性硬脊膜炎）之誤植，無法確定對應疾病 ｜ 英文本身非標準病名（可能為 hypertrophic pachymeningitis 之誤），無法確定台灣對應譯名，留待人工判讀"
+  },
+  {
+   "en": "Hyperventilation disorders",
+   "slots": 4,
+   "reason": "deferred_disagreement",
+   "translator_x": "換氣過度症候群",
+   "translator_y": "過度換氣症候群",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "原文為 disorders，台灣通用名為換氣過度症候群 ｜ 原文為 disorders（複數泛稱），此處以台灣通用臨床病名對應"
+  },
+  {
+   "en": "Inappropriate erection",
+   "slots": 4,
+   "reason": "deferred_translator_declined",
+   "translator_x": null,
+   "translator_y": "異常勃起",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "詞義含糊，可能指異常勃起、非情境性勃起或勃起功能異常，無標準對應譯名 ｜ 原文非標準病名，指不適當時機之勃起"
+  },
+  {
+   "en": "Inflammatory bowel syndrome",
+   "slots": 4,
+   "reason": "deferred_translator_declined",
+   "translator_x": null,
+   "translator_y": null,
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "原文疑為 inflammatory bowel disease（發炎性腸道疾病）與 irritable bowel syndrome（大腸激躁症）混寫，兩者為不同疾病，無法判定 ｜ 英文混淆 inflammatory bowel disease（發炎性腸道疾病）與 irritable bowel syndrome（大腸激躁症），兩者為不同疾病，不猜"
+  },
+  {
+   "en": "Leukocytic leukemia",
+   "slots": 4,
+   "reason": "deferred_translator_declined",
+   "translator_x": null,
+   "translator_y": null,
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "原文語義重複且非標準病名，無法判定係指白血病之何種細胞型別 ｜ 英文語意重複、非標準病名，無法確定所指白血病類型，不猜"
+  },
+  {
+   "en": "Nictitation",
+   "slots": 4,
+   "reason": "deferred_translator_declined",
+   "translator_x": null,
+   "translator_y": "頻繁眨眼",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "原文僅指「眨眼」動作，無法判定係指頻繁眨眼（中醫目劄）、眼瞼痙攣或其他眼疾 ｜ 原文僅指瞬目動作，中醫小兒科相近病名為目劄"
+  },
+  {
+   "en": "Nightmares",
+   "slots": 4,
+   "reason": "deferred_disagreement",
+   "translator_x": "夢魘",
+   "translator_y": "惡夢",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Ophthalmic disorders",
+   "slots": 4,
+   "reason": "deferred_disagreement",
+   "translator_x": "眼疾",
+   "translator_y": "眼科疾患",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "原文為泛稱，非特定病名"
+  },
+  {
+   "en": "Painful menstruation",
+   "slots": 4,
+   "reason": "deferred_disagreement",
+   "translator_x": "經痛",
+   "translator_y": "痛經",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "台灣民間亦作經痛"
+  },
+  {
+   "en": "Parasites",
+   "slots": 4,
+   "reason": "deferred_disagreement",
+   "translator_x": "寄生蟲",
+   "translator_y": "寄生蟲病",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "原文僅列蟲名，未指明蟲種或蟲病 ｜ 原文為泛稱"
+  },
+  {
+   "en": "Phthisis",
+   "slots": 4,
+   "reason": "deferred_disagreement",
+   "translator_x": "肺結核",
+   "translator_y": "肺癆",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "西醫舊稱（癆病）；中醫對應病名為「肺癆」 ｜ 中醫病名肺癆／癆瘵，對應西醫肺結核"
+  },
+  {
+   "en": "Reduced appetite",
+   "slots": 4,
+   "reason": "deferred_disagreement",
+   "translator_x": "食慾不振",
+   "translator_y": "食慾減退",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Rheumatic valvular Heart disease",
+   "slots": 4,
+   "reason": "deferred_disagreement",
+   "translator_x": "風濕性心瓣膜病",
+   "translator_y": "風濕性心臟瓣膜病",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Sequelae of cerebrovascular accident",
+   "slots": 4,
+   "reason": "deferred_disagreement",
+   "translator_x": "腦血管意外後遺症",
+   "translator_y": "中風後遺症",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "即腦中風後遺症 ｜ 亦可作腦血管意外後遺症"
+  },
+  {
+   "en": "Sweating from the chest",
+   "slots": 4,
+   "reason": "deferred_disagreement",
+   "translator_x": "胸部汗出",
+   "translator_y": "胸部出汗",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "中醫近於「心汗」 ｜ 中醫相近說法為心汗"
+  },
+  {
+   "en": "Urinary retention from spinal cord injuries",
+   "slots": 4,
+   "reason": "deferred_disagreement",
+   "translator_x": "脊髓損傷性尿滯留",
+   "translator_y": "脊髓損傷後尿滯留",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Vicarious menstruation",
+   "slots": 4,
+   "reason": "deferred_disagreement",
+   "translator_x": "代償性月經",
+   "translator_y": "倒經",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "中醫稱「倒經」或「經行吐衄」 ｜ 中醫病名倒經（經行吐衄），亦作逆經"
+  },
+  {
+   "en": "Acute or chronic cholecystitis",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "急性或慢性膽囊炎",
+   "translator_y": "急慢性膽囊炎",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Acute or chronic enteritis",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "急性或慢性腸炎",
+   "translator_y": "急慢性腸炎",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Acute or chronic tracheitis",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "急性或慢性氣管炎",
+   "translator_y": "急慢性氣管炎",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Adjunctive for chemotherapy and radiation treatments",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "化療與放射治療輔助",
+   "translator_y": "化療及放射治療輔助",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Adjunctive therapy in conjunction with chemotherapy or radiation therapy in cancer patients",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "癌症化療或放射治療之輔助療法",
+   "translator_y": "癌症化療或放射治療輔助療法",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Advanced stage epidemic encephalitis",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "流行性腦炎後期",
+   "translator_y": "流行性腦炎晚期",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Aftermath of miscarriage",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "流產後諸症",
+   "translator_y": "流產後遺症",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "原文 aftermath 泛指流產後的後續狀況，非特定病名"
+  },
+  {
+   "en": "All types of boils",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "各種癤腫",
+   "translator_y": "各類癤腫",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "All types of carbuncles",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "各種癰腫",
+   "translator_y": "各類癰腫",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Arthritis with inflammation and swelling",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "關節炎伴發炎腫脹",
+   "translator_y": "關節炎伴紅腫",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Atelectasis",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "肺塌陷",
+   "translator_y": "肺不張",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "亦譯肺膨脹不全／肺不張"
+  },
+  {
+   "en": "Athlete's foot",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "香港腳",
+   "translator_y": "足癬",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "即足癬 ｜ 台灣民間稱香港腳"
+  },
+  {
+   "en": "Atrophy of the lower limbs",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "下肢萎縮",
+   "translator_y": "下肢肌肉萎縮",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Blood dyscrasia",
+   "slots": 2,
+   "reason": "deferred_translator_declined",
+   "translator_x": null,
+   "translator_y": "血液異常",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "dyscrasia 泛指血液成分異常，可對應血液惡病質、血液病變或特定血球異常，台灣無單一標準譯名，留待人工判定 ｜ dyscrasia 為統稱性舊詞，非單一疾病，僅能作概括譯"
+  },
+  {
+   "en": "Bursitis",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "滑液囊炎",
+   "translator_y": "滑囊炎",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "亦作滑囊炎"
+  },
+  {
+   "en": "Canker sores due to Summer Heat",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "暑熱口瘡",
+   "translator_y": "暑熱型口瘡",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Cerebral vascular accident",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "腦血管意外",
+   "translator_y": "腦中風",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "即腦中風（CVA） ｜ CVA 直譯為腦血管意外，台灣臨床通稱腦中風"
+  },
+  {
+   "en": "Certain stages of some warm febrile diseases",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "溫病某些階段",
+   "translator_y": "溫病部分階段",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "warm febrile disease 為中醫溫病 ｜ warm febrile disease 為中醫溫病"
+  },
+  {
+   "en": "Cervical disorders",
+   "slots": 2,
+   "reason": "deferred_translator_declined",
+   "translator_x": null,
+   "translator_y": null,
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "cervical 可指頸椎或子宮頸，兩者為完全不同疾病；雖樣本方劑為羌活勝濕湯偏向頸部，仍不宜臆測 ｜ cervical 可指頸椎（頸部疾患）或子宮頸（子宮頸疾患），單獨出現無法判定，留待人工確認"
+  },
+  {
+   "en": "Cervical dysplasia",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "子宮頸細胞異常增生",
+   "translator_y": "子宮頸上皮異常增生",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "對應 CIN／子宮頸上皮異生，台灣臨床亦稱子宮頸細胞病變 ｜ 台灣亦見子宮頸細胞病變、子宮頸上皮內贅瘤（CIN）等寫法"
+  },
+  {
+   "en": "Cervicitis with leukorrhagia",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "子宮頸炎併白帶過多",
+   "translator_y": "子宮頸炎併帶下過多",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Chronic arthralgia",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "慢性關節痛",
+   "translator_y": "慢性關節疼痛",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Chronic childhood convulsions",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "慢驚風",
+   "translator_y": "小兒慢驚風",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "中醫兒科病名，Bensky 以此英譯對應慢驚風 ｜ 中醫兒科病名"
+  },
+  {
+   "en": "Chronic epidural hemorrhage",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "慢性硬腦膜外出血",
+   "translator_y": "慢性硬膜外出血",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Chronic oral ulcers due to Spleen and Stomach Deficiency Cold",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "脾胃虛寒之慢性口瘡",
+   "translator_y": "脾胃虛寒型慢性口腔潰瘍",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Compulsive sleeping after eating",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "飯後嗜睡",
+   "translator_y": "食後嗜睡",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Conjunctival disorders",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "結膜疾病",
+   "translator_y": "結膜疾患",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Cor Pulmonare",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "肺心症",
+   "translator_y": "肺性心臟病",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "原文為 cor pulmonale 拼寫變體；亦作肺源性心臟病 ｜ 原文拼字誤植，判讀為 cor pulmonale；中國大陸稱肺源性心臟病"
+  },
+  {
+   "en": "Dacrystitis",
+   "slots": 2,
+   "reason": "deferred_translator_declined",
+   "translator_x": null,
+   "translator_y": "淚囊炎",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "原文非標準拼寫，可能為 dacryocystitis（淚囊炎）或 dacryoadenitis（淚腺炎），兩者不同，不宜臆測 ｜ 原文非標準拼法，判讀為 dacryocystitis；若原意為 dacryoadenitis（淚腺炎）則需人工確認"
+  },
+  {
+   "en": "Debility and chronic illness in children",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "小兒體弱與慢性病",
+   "translator_y": "小兒體虛久病",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Degenerative nephritis",
+   "slots": 2,
+   "reason": "deferred_translator_declined",
+   "translator_x": null,
+   "translator_y": "退化性腎炎",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "舊式病名，可能指腎病變（nephrosis）或退化性腎臟病變，台灣無對應標準譯名，留待人工判定 ｜ 非現行西醫標準診斷名，僅作字面對譯"
+  },
+  {
+   "en": "Delayed menstruation due to Phlegm",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "痰濕型月經後期",
+   "translator_y": "痰阻型月經後期",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "中醫病證，delayed menstruation 對應月經後期"
+  },
+  {
+   "en": "Diffuse polyps of the vocal cords",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "瀰漫性聲帶息肉",
+   "translator_y": "聲帶瀰漫性息肉",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Disc disease",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "椎間盤病變",
+   "translator_y": "椎間盤疾病",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Early stages of boils",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "癤初期",
+   "translator_y": "癤腫初期",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Early stages of schizophrenia",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "思覺失調症初期",
+   "translator_y": "思覺失調症早期",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Early-stage abscesses or sores",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "瘡瘍初期",
+   "translator_y": "瘡瘍膿腫初期",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Early-stage renal insufficiency",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "腎功能不全初期",
+   "translator_y": "腎功能不全早期",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Elevated Liver enzymes",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "肝指數上升",
+   "translator_y": "肝功能指數升高",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "台灣臨床慣稱肝指數上升，亦作肝功能指數升高"
+  },
+  {
+   "en": "Endocrine dyscrasia-uterine Cold",
+   "slots": 2,
+   "reason": "deferred_translator_declined",
+   "translator_x": null,
+   "translator_y": "內分泌失調兼胞宮虛寒",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "以連字號拼接西醫 endocrine dyscrasia 與中醫子宮虛寒，像匯入雜訊；且 dyscrasia 本身譯名不定，建議人工拆為兩詞處理 ｜ 原文為中西醫混寫，uterine Cold 對應中醫宮寒／胞宮虛寒"
+  },
+  {
+   "en": "Erythema induratum",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "硬紅斑",
+   "translator_y": "硬結性紅斑",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "即 Bazin 病"
+  },
+  {
+   "en": "Fright in children with vomiting",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "小兒驚嚇兼嘔吐",
+   "translator_y": "小兒驚嚇嘔吐",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Fulminant dyspepsia",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "暴發性消化不良",
+   "translator_y": "猛爆性消化不良",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "非西醫標準病名，採直譯。 ｜ 原文非標準病名；fulminant 台灣譯猛爆性，語意為急重度消化不良"
+  },
+  {
+   "en": "Functional gastrointestinal disorders",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "功能性腸胃疾病",
+   "translator_y": "功能性胃腸疾病",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Furuncles and boils",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "癤腫",
+   "translator_y": "疔瘡癤腫",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "原文兩詞同義重複，合譯為癤腫。"
+  },
+  {
+   "en": "Gastrointestinal influenza",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "腸胃型流感",
+   "translator_y": "腸胃型流行性感冒",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Gastrointestinal side effects of radiation or chemotherapy",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "放化療腸胃道副作用",
+   "translator_y": "放射治療或化學治療之腸胃道副作用",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "General debility due to prolonged external injury",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "久傷體虛",
+   "translator_y": "外傷日久所致體虛",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "General pain",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "周身疼痛",
+   "translator_y": "全身疼痛",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Generalized pain and swelling",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "周身腫痛",
+   "translator_y": "周身疼痛腫脹",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Genital eruptions",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "陰部發疹",
+   "translator_y": "生殖器疹",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "eruptions 泛指皮疹，未指明特定病種，採泛稱直譯。 ｜ 原文未指明疹型；中醫脈絡可對應陰部瘡瘍"
+  },
+  {
+   "en": "Genital itching",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "陰部搔癢",
+   "translator_y": "陰癢",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "中醫婦科病名作「陰癢」（專指女性外陰）；原文 genital 未指明性別，故採中性之「陰部搔癢」。 ｜ 中醫病名「陰癢」；台灣西醫敘述作「外陰搔癢」或「生殖器搔癢」。原文未指明性別，中醫「陰癢」不增添資訊，故選中醫詞。"
+  },
+  {
+   "en": "Geriatric dryness",
+   "slots": 2,
+   "reason": "deferred_translator_declined",
+   "translator_x": null,
+   "translator_y": "老年乾燥症",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "語義含糊，可能指老年皮膚乾燥、口乾（含乾燥症候群）或腸燥便秘，無法判定所指，留待人工核對原卡上下文。 ｜ 指老年津液不足之乾燥表現"
+  },
+  {
+   "en": "Gingivitis with bleeding",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "牙齦炎伴出血",
+   "translator_y": "牙齦炎併牙齦出血",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Globus pharyngeus",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "咽球症",
+   "translator_y": "咽喉異物感",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "西醫病名，台灣亦稱咽喉異物感；中醫對應證候為梅核氣。 ｜ 中醫相當於梅核氣；台灣醫學亦見「咽球症」寫法"
+  },
+  {
+   "en": "Gonarthrosis",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "退化性膝關節炎",
+   "translator_y": "膝退化性關節炎",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Hemiplegia after cerebrovascular accident",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "腦中風後偏癱",
+   "translator_y": "腦血管意外後偏癱",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Hemorrhagic febrile diseases",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "出血性熱病",
+   "translator_y": "出血性熱性疾病",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Hemospermia",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "血精",
+   "translator_y": "血精症",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Hernia pain",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "疝痛",
+   "translator_y": "疝氣疼痛",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Herpetiformis",
+   "slots": 2,
+   "reason": "deferred_translator_declined",
+   "translator_x": null,
+   "translator_y": null,
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "原文僅為拉丁形容詞殘片（如 dermatitis herpetiformis 疱疹樣皮膚炎、impetigo herpetiformis），單獨出現無法確定所指疾病。 ｜ 原文為形容詞殘片，無法判定是 dermatitis herpetiformis（疱疹樣皮膚炎）或 impetigo herpetiformis（疱疹樣膿痂疹），留待人工確認"
+  },
+  {
+   "en": "Hyper-plastic tuberculosis of the Intestines",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "增殖型腸結核",
+   "translator_y": "增生型腸結核",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Hyperchlorhydria",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "胃酸過多",
+   "translator_y": "胃酸過多症",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Hyperkeratosis of the palms",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "掌部角化過度",
+   "translator_y": "手掌角化過度",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Hypopnea",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "低通氣",
+   "translator_y": "呼吸淺弱",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "台灣睡眠醫學譯低通氣／呼吸不足；此處僅取字面呼吸淺弱之義。 ｜ 睡眠醫學脈絡下台灣稱「低呼吸」；此處依方劑（半夏厚朴湯）語境取呼吸淺弱"
+  },
+  {
+   "en": "Idiopathic bone hyperplasia",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "原發性骨質增生",
+   "translator_y": "特發性骨質增生",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Idiopathic halitosis",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "原發性口臭",
+   "translator_y": "特發性口臭",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Impetigo herpetiformis",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "疱疹樣膿疱病",
+   "translator_y": "疱疹樣膿痂疹",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "亦見「疱疹樣膿痂疹」譯法。"
+  },
+  {
+   "en": "Indigestion due to hyper-secretion of acid",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "胃酸過多所致消化不良",
+   "translator_y": "胃酸分泌過多所致消化不良",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Infantile convulsions",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "小兒驚風",
+   "translator_y": "小兒驚厥",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "西醫對應為嬰幼兒抽搐；方劑卡脈絡多作小兒驚風。 ｜ 中醫稱小兒驚風"
+  },
+  {
+   "en": "Infections",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "感染",
+   "translator_y": "感染症",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Infectious mononucleosis with hepatomegaly",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "傳染性單核球增多症伴肝腫大",
+   "translator_y": "傳染性單核球增多症併肝腫大",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Initial stage of measles",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "麻疹初起",
+   "translator_y": "麻疹初期",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Insanity",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "癲狂",
+   "translator_y": "精神錯亂",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "方劑卡脈絡為中醫癲狂；西醫舊詞義近精神錯亂。 ｜ 中醫脈絡相當於癲狂"
+  },
+  {
+   "en": "Intestinal flaccidity",
+   "slots": 2,
+   "reason": "deferred_translator_declined",
+   "translator_x": null,
+   "translator_y": "腸弛緩",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "非標準病名，可能指腸麻痺、腸道張力低下或腸無力（弛緩性便秘），語義含糊，留待人工判定。 ｜ 指腸壁張力低下（腸無力）"
+  },
+  {
+   "en": "Intestinal hemorrhage",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "腸道出血",
+   "translator_y": "腸出血",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Kehsan's syndrome",
+   "slots": 2,
+   "reason": "deferred_translator_declined",
+   "translator_x": null,
+   "translator_y": "克山病",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "疑為 Keshan disease（克山病，硒缺乏性心肌病）之誤拼，但拼寫與「syndrome」皆不符標準，無法確認，不猜。 ｜ 原文疑為 Keshan disease（硒缺乏性心肌病）拼寫變體，建議人工複核"
+  },
+  {
+   "en": "Labyrinths",
+   "slots": 2,
+   "reason": "deferred_translator_declined",
+   "translator_x": null,
+   "translator_y": null,
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "原文為解剖詞複數（內耳迷路），疑為 labyrinthitis（迷路炎）之殘缺或匯入雜訊，無法確認所指病名。 ｜ 原文為殘缺字（迷路），疑為 labyrinthitis 內耳迷路炎，亦可能指迷路積水，無法確定"
+  },
+  {
+   "en": "Lens disorders",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "水晶體病變",
+   "translator_y": "水晶體疾患",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "台灣眼科用「水晶體」，非「晶狀體」。"
+  },
+  {
+   "en": "Loffler’s Syndrome",
+   "slots": 2,
+   "reason": "deferred_translator_declined",
+   "translator_x": "呂弗勒氏症候群",
+   "translator_y": null,
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "人名音譯在台灣不統一，亦見「勒夫勒氏症候群」；指單純性肺嗜伊紅性球浸潤。 ｜ 即 Löffler syndrome（單純性肺嗜酸性球浸潤），台灣音譯不統一（呂弗勒／洛夫勒／羅氏），不確定標準譯名，留待人工確認"
+  },
+  {
+   "en": "Low back",
+   "slots": 2,
+   "reason": "deferred_translator_declined",
+   "translator_x": null,
+   "translator_y": null,
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "原文為殘缺片語（僅部位名，疑漏 pain／weakness），無法判定所指症狀。 ｜ 原文為殘缺片語，疑為 low back pain（下背痛／腰痛）遭截斷，不宜臆補"
+  },
+  {
+   "en": "Lumbago in women",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "婦人腰痛",
+   "translator_y": "婦女腰痛",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Mania with convulsions",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "狂躁伴抽搐",
+   "translator_y": "狂躁併抽搐",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "中醫脈絡為狂證兼抽搐"
+  },
+  {
+   "en": "Menstrual bleeding",
+   "slots": 2,
+   "reason": "deferred_translator_declined",
+   "translator_x": null,
+   "translator_y": null,
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "語義含糊：可能指正常經血、經量過多或崩漏（異常子宮出血），三者處置不同，不宜臆測。 ｜ 原文語意含糊，可能指月經量多、經期延長或崩漏（異常子宮出血），對應病名不唯一，留待人工判讀"
+  },
+  {
+   "en": "Menstrual pain and cramps",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "經痛伴腹部絞痛",
+   "translator_y": "經痛併腹部痙攣",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Menstrual problems",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "月經不調",
+   "translator_y": "月經障礙",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Mental and emotional disorders",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "精神情志疾患",
+   "translator_y": "精神情緒障礙",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Mental instability in children",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "小兒情緒不穩",
+   "translator_y": "小兒精神不安",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "中醫脈絡為小兒神志不寧"
+  },
+  {
+   "en": "Metrypertrophia",
+   "slots": 2,
+   "reason": "deferred_translator_declined",
+   "translator_x": null,
+   "translator_y": null,
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "拼寫非標準，疑為 metrohypertrophia（子宮肥大）之誤拼，但無法確認，不猜。 ｜ 原文疑為 metrohypertrophia（子宮肥大）之誤拼或匯入雜訊，無法確定，不宜臆譯"
+  },
+  {
+   "en": "Mild leptospirosis",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "輕型鉤端螺旋體病",
+   "translator_y": "輕症鉤端螺旋體病",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Mild miasmic malaria",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "輕型瘴瘧",
+   "translator_y": "輕症瘴瘧",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "瘴瘧為中醫病名。 ｜ 瘴瘧為中醫病名"
+  },
+  {
+   "en": "Nervous ulcers",
+   "slots": 2,
+   "reason": "deferred_translator_declined",
+   "translator_x": "神經性潰瘍",
+   "translator_y": null,
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "原文未指明部位，多指壓力相關之神經性胃潰瘍 ｜ 詞義含糊：可指精神緊張引起的消化性潰瘍，也可指神經病變性潰瘍（皮膚），兩者譯名完全不同，留給人工判讀"
+  },
+  {
+   "en": "Neurological rashes",
+   "slots": 2,
+   "reason": "deferred_translator_declined",
+   "translator_x": null,
+   "translator_y": "神經性皮疹",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "非標準病名，可能指神經性皮膚炎，也可能是壓力相關皮疹的泛稱，無法確定，留待人工判讀 ｜ 原文非標準病名，亦可能指神經性皮膚炎（慢性單純苔癬）"
+  },
+  {
+   "en": "Night terrors",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "夜驚症",
+   "translator_y": "夜驚",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Noctiphobia",
+   "slots": 2,
+   "reason": "deferred_translator_declined",
+   "translator_x": null,
+   "translator_y": "夜間恐懼症",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "台灣無通用標準譯名（見「懼夜症」「夜間恐懼症」等不同寫法），不猜測 ｜ 台灣無固定標準譯名，亦見「懼夜症」「黑夜恐懼症」"
+  },
+  {
+   "en": "Non-healing ulcers",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "久不癒合的潰瘍",
+   "translator_y": "潰瘍久不癒合",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Obstruction",
+   "slots": 2,
+   "reason": "deferred_translator_declined",
+   "translator_x": null,
+   "translator_y": null,
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "單一「阻塞」無部位、無性質，可對應腸阻塞、氣機阻滯等多種指涉，留待人工依卡片上下文判定 ｜ 單一「阻塞」未指明部位或系統（腸道？氣機？血管？），無法定譯"
+  },
+  {
+   "en": "Obstruction of the chest",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "胸痺",
+   "translator_y": "胸痹",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "中醫病名；理中丸（人參湯）即《金匱》胸痺篇用方 ｜ 對應方劑為理中丸（即《金匱》人參湯），屬胸痹門"
+  },
+  {
+   "en": "Obstruction of the nasolacrymal canal with Lacrimation of cold tears",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "鼻淚管阻塞伴冷淚",
+   "translator_y": "鼻淚管阻塞合併流冷淚",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "「冷淚」為中醫眼科術語，予以保留 ｜ 「流冷淚」為中醫描述用語，予以保留"
+  },
+  {
+   "en": "Obstructive bowel disease",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "腸阻塞",
+   "translator_y": "阻塞性腸道疾病",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "若原意為 intestinal obstruction 則應作「腸阻塞」"
+  },
+  {
+   "en": "Odontorrhagia",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "牙齦出血",
+   "translator_y": "齒衄",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "中醫對應病名為「齒衄」；原詞亦可指拔牙後齒槽出血 ｜ 西醫嚴格指拔牙後齒槽出血；此處為方劑卡，採中醫病名齒衄（即牙齦出血）"
+  },
+  {
+   "en": "Oligospermia",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "少精症",
+   "translator_y": "精子稀少症",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "亦見「精子過少症」寫法 ｜ 台灣亦作「精蟲稀少症」「少精症」"
+  },
+  {
+   "en": "Oliguria with reddish urine",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "小便短赤",
+   "translator_y": "尿少色紅",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "中醫證候用語；直譯為「尿少色赤」"
+  },
+  {
+   "en": "Oral side effects of radiation",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "放射治療的口腔副作用",
+   "translator_y": "放射治療後口腔副作用",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Orbital optic neuritis",
+   "slots": 2,
+   "reason": "deferred_translator_declined",
+   "translator_x": null,
+   "translator_y": "眶內視神經炎",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "視神經炎依部位分「視神經乳頭炎」與「球後視神經炎」，orbital 一詞對應何者不確定，不猜測 ｜ 非標準分類詞；標準分為視神經乳頭炎與球後視神經炎"
+  },
+  {
+   "en": "Pain and discomfort from spasms of the skeletal muscles, ligaments and related tissues",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "骨骼肌、韌帶及相關組織痙攣引起的疼痛與不適",
+   "translator_y": "骨骼肌與韌帶痙攣所致疼痛",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "原文本身即為長敘述句，非短病名 ｜ 原文為長描述句，濃縮為卡片標籤，未增刪病理內容"
+  },
+  {
+   "en": "Patch-like rashes",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "斑疹",
+   "translator_y": "片狀皮疹",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "直譯為「片狀皮疹」，中醫作斑疹 ｜ 中醫多稱斑疹"
+  },
+  {
+   "en": "Pediatric and adult seizure disorders",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "小兒與成人癲癇發作",
+   "translator_y": "兒童與成人癲癇發作",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "seizure 亦可泛指抽搐發作，未必限於癲癇 ｜ seizure disorders 泛指抽搐性疾患，不必然等同癲癇"
+  },
+  {
+   "en": "Pericardial and pleural effusions",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "心包積液與胸腔積液",
+   "translator_y": "心包積液與肋膜積液",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "台灣胸腔積液亦常稱「肋膜積水」"
+  },
+  {
+   "en": "Pericoronitis",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "冠周炎",
+   "translator_y": "齒冠周圍炎",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "臨床多見於智齒，稱「智齒冠周炎」 ｜ 亦作冠周炎，常見於智齒"
+  },
+  {
+   "en": "Perimenopause with uterine leiomyoma",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "圍停經期合併子宮肌瘤",
+   "translator_y": "更年期合併子宮肌瘤",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "perimenopause 台灣亦作「更年期過渡期」 ｜ perimenopause 嚴格為「停經前後期」，台灣臨床多逕稱更年期"
+  },
+  {
+   "en": "Periproctosis",
+   "slots": 2,
+   "reason": "deferred_translator_declined",
+   "translator_x": null,
+   "translator_y": null,
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "非標準醫學名詞，疑為 periproctitis（直腸周圍炎）誤植，不猜測 ｜ 非標準醫學詞，可能為 periproctitis 之誤植或匯入雜訊，不敢臆測"
+  },
+  {
+   "en": "Pharyngeal paresthesia",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "咽喉異感症",
+   "translator_y": "咽部異感症",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "中醫對應梅核氣 ｜ 即咽喉異物感，中醫稱梅核氣"
+  },
+  {
+   "en": "Post illness convalescence",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "病後恢復期",
+   "translator_y": "病後調養",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Post traumatic shock syndrome",
+   "slots": 2,
+   "reason": "deferred_translator_declined",
+   "translator_x": "創傷後休克症候群",
+   "translator_y": null,
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "與下一條 PTSD 並列，故判為生理性休克而非心理創傷 ｜ 含糊：可能是「創傷後壓力症候群」的誤寫（本批另有 Post traumatic stress syndrome 一條），也可能指外傷後休克，兩者譯名不同"
+  },
+  {
+   "en": "Post tubal ligation pain",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "輸卵管結紮術後疼痛",
+   "translator_y": "輸卵管結紮後疼痛",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Post-febrile disease",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "熱病後",
+   "translator_y": "熱病後期",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "原文語意為「熱病之後（餘熱未清）」，非獨立病名 ｜ 原文為片語，指熱病之後的階段"
+  },
+  {
+   "en": "Post-gastrectomy syndrome",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "胃切除術後症候群",
+   "translator_y": "胃切除後症候群",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Post-illness weakness",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "病後體虛",
+   "translator_y": "病後虛弱",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Post-miscarriage bleeding",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "自然流產後出血",
+   "translator_y": "流產後出血",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Post-surgical urinary retention",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "術後尿滯留",
+   "translator_y": "手術後尿滯留",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Postpartum illnesses",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "產後諸病",
+   "translator_y": "產後病",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Postpartum urinary disorder",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "產後小便異常",
+   "translator_y": "產後排尿障礙",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "原文未指明何種異常"
+  },
+  {
+   "en": "Pox with collapsed sores",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "痘瘡內陷",
+   "translator_y": "痘瘡倒陷",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "中醫痘疹術語，指痘瘡塌陷不起 ｜ 中醫痘疹門用語，指痘瘡塌陷內陷"
+  },
+  {
+   "en": "Premature rupture of placenta",
+   "slots": 2,
+   "reason": "deferred_translator_declined",
+   "translator_x": null,
+   "translator_y": null,
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "原文可能為「胎盤早期剝離」(placental abruption) 或「胎膜早期破裂」(PROM) 之誤，兩者為不同疾病，不猜測 ｜ 原文可疑：胎盤不會「破裂」，可能指胎盤早期剝離（abruptio placentae），也可能是 premature rupture of membranes（早期破水）之誤，兩者不同"
+  },
+  {
+   "en": "Premenstrual syndrome with breast distention",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "經前症候群伴乳房脹痛",
+   "translator_y": "經前症候群合併乳房脹痛",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Prevents colds and respiratory tract infection",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "預防感冒與呼吸道感染",
+   "translator_y": "預防感冒及呼吸道感染",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Primary or secondary dysmenorrhea",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "原發性或續發性經痛",
+   "translator_y": "原發性或續發性痛經",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "台灣用「續發性」，不用「繼發性」"
+  },
+  {
+   "en": "Prolapse of lumbar intervertebral disc",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "腰椎椎間盤突出",
+   "translator_y": "腰椎間盤突出",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Puerperal eclampsia",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "產後子癇",
+   "translator_y": "產後子癇症",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Pustules",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "膿疱",
+   "translator_y": "膿皰",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Pustulosis",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "膿疱症",
+   "translator_y": "膿皰症",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "未指明部位；若指掌蹠者則為掌蹠膿皰症"
+  },
+  {
+   "en": "Pyemia",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "膿血症",
+   "translator_y": "膿毒血症",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "亦作「膿毒血症」"
+  },
+  {
+   "en": "Raynaud’s Disease due to Liver Qi Stagnation with Internal Heat",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "雷諾氏病（肝氣鬱結兼內熱）",
+   "translator_y": "肝鬱內熱型雷諾氏病",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "病名為西醫，括號內為原文所附中醫證型，予以保留 ｜ 西醫病名加中醫證型，依原文結構合譯"
+  },
+  {
+   "en": "Reactive lymphoid hyperplasia",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "反應性淋巴組織增生",
+   "translator_y": "反應性淋巴增生",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Recalcitrant perimenopausal vomiting",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "頑固性圍停經期嘔吐",
+   "translator_y": "頑固性更年期嘔吐",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Recovery from chronic illness",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "慢性病後康復",
+   "translator_y": "慢性病後調養",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Recuperation from febrile disease",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "熱病後康復",
+   "translator_y": "熱病後調養",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Recuperation from infectious disease",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "傳染病後康復",
+   "translator_y": "傳染病後調養",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Recurrent neurotic esophageal constriction",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "反覆性神經性食道緊縮",
+   "translator_y": "反覆性神經性食道狹窄",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "非標準病名；語境（半夏厚朴湯）指梅核氣式咽食道緊縮感 ｜ 對應中醫梅核氣／食道痙攣之描述"
+  },
+  {
+   "en": "Recurrent nosebleeds",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "反覆性鼻衄",
+   "translator_y": "反覆性鼻出血",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "中醫稱鼻衄"
+  },
+  {
+   "en": "Red nose",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "鼻頭紅赤",
+   "translator_y": "酒糟鼻",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "原文為描述性症狀；依方劑（防風通聖散）亦可能指酒渣鼻，未逕自改為病名 ｜ 中醫稱鼻赤／酒皶鼻；若原文僅描述鼻頭紅赤而非病名，需人工確認"
+  },
+  {
+   "en": "Reduces recovery time after gastric surgery",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "縮短胃部手術後的恢復時間",
+   "translator_y": "縮短胃部手術後恢復時間",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "原文為功效敘述而非病名"
+  },
+  {
+   "en": "Regurgitation",
+   "slots": 2,
+   "reason": "deferred_translator_declined",
+   "translator_x": "反胃",
+   "translator_y": null,
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "亦可指西醫之食物／胃酸逆流，原文未區分 ｜ 單詞含糊：消化科指胃食道逆流／反胃，心臟科指瓣膜逆流，兩者譯名不同；依對應方劑推測偏消化道，仍留人工判讀"
+  },
+  {
+   "en": "Rheumatic valvular heart disease",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "風濕性心臟瓣膜病",
+   "translator_y": "風濕性心臟瓣膜疾病",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "亦作風濕性瓣膜性心臟病"
+  },
+  {
+   "en": "Rice-field dermatitis",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "稻田性皮膚炎",
+   "translator_y": "稻田皮膚炎",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "即稻農接觸尾動幼蟲所致皮膚炎，台灣文獻多稱稻田皮膚炎"
+  },
+  {
+   "en": "Ruptured appendicitis with peritonitis",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "闌尾炎破裂併腹膜炎",
+   "translator_y": "闌尾炎破裂併發腹膜炎",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Scrotal hydrocele",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "陰囊積水",
+   "translator_y": "陰囊水腫",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "台灣亦稱陰囊水腫／鞘膜積液 ｜ 即陰囊積水（鞘膜積液）"
+  },
+  {
+   "en": "Sequelae of cerebrovasculitis with hemiplegia",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "腦血管炎後遺症併半身不遂",
+   "translator_y": "腦血管炎後遺症併偏癱",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "hemiplegia 亦可作半身不遂"
+  },
+  {
+   "en": "Sequelae of infections, especially in children",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "感染後遺症（尤其小兒）",
+   "translator_y": "感染後遺症（尤見於小兒）",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Severe sore throat",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "嚴重咽喉腫痛",
+   "translator_y": "嚴重咽喉痛",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Sexual neurosis",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "性神經官能症",
+   "translator_y": "性精神官能症",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "台灣 neurosis 標準譯為精神官能症；亦見性神經官能症寫法"
+  },
+  {
+   "en": "Shoulder ache",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "肩痛",
+   "translator_y": "肩部痠痛",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Shwachman syndrome",
+   "slots": 2,
+   "reason": "deferred_translator_declined",
+   "translator_x": null,
+   "translator_y": null,
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "台灣標準譯名不確定（Shwachman-Diamond syndrome 中譯多為音譯且寫法分歧），留待人工確認 ｜ 罕見遺傳病（Shwachman-Diamond syndrome），台灣多沿用英文或音譯不一，無確定的標準中譯，留待人工確認"
+  },
+  {
+   "en": "Side effects of radiation therapy",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "放射線治療副作用",
+   "translator_y": "放射治療副作用",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Side effects of radiation treatments",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "放射線治療副作用",
+   "translator_y": "放射治療副作用",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Side effects or complications arising from the inappropriate use of warming substances including excess alcohol consumption",
+   "slots": 2,
+   "reason": "deferred_translator_declined",
+   "translator_x": null,
+   "translator_y": "誤用溫熱藥物或飲酒過量所致的副作用與變證",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "原文為敘述性長句而非病名，無法濃縮成卡片標籤；語意約為「誤用溫熱藥物（含飲酒過度）所致之副作用或變證」，建議人工決定欄位歸屬 ｜ 原文為長描述句，已壓縮為標籤式譯名"
+  },
+  {
+   "en": "Sloughing ulcer",
+   "slots": 2,
+   "reason": "deferred_translator_declined",
+   "translator_x": null,
+   "translator_y": "腐肉脫落之潰瘍",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "詞義含糊：可指潰瘍腐肉脫落、脫疽潰爛或壞死性潰瘍，無對應台灣標準病名，留待人工判讀 ｜ slough 指壞死腐肉；中醫脈絡近於脫疽潰爛，無固定台灣標準譯名"
+  },
+  {
+   "en": "Smoke inhalation",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "吸入性嗆傷",
+   "translator_y": "濃煙吸入傷害",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "亦可作「濃煙吸入」"
+  },
+  {
+   "en": "Some gynecological disorders",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "部分婦科疾患",
+   "translator_y": "部分婦科疾病",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Some types of neurosis",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "部分類型神經官能症",
+   "translator_y": "部分類型的精神官能症",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "台灣 neurosis 標準譯為精神官能症"
+  },
+  {
+   "en": "Spasms of the extremities",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "四肢抽搐",
+   "translator_y": "四肢痙攣",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Streptococci",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "鏈球菌",
+   "translator_y": "鏈球菌感染",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "原文為菌名而非病名，是否應作「鏈球菌感染」請人工確認 ｜ 原文僅為菌名（鏈球菌），依方劑卡語境補為感染"
+  },
+  {
+   "en": "Supportive therapy during radiation treatment",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "放射線治療期間支持性治療",
+   "translator_y": "放射治療期間的支持療法",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Supportive treatment during chemotherapy",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "化學治療期間支持性治療",
+   "translator_y": "化學治療期間的支持療法",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Thoracic strains",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "胸部扭挫傷",
+   "translator_y": "胸部拉傷",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "指胸部肌肉扭挫傷"
+  },
+  {
+   "en": "Throat blockage",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "咽喉梗阻感",
+   "translator_y": "咽喉阻塞感",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "中醫或指梅核氣，原文未明言 ｜ 半夏厚朴湯語境常指梅核氣"
+  },
+  {
+   "en": "Thrombocytic purpura",
+   "slots": 2,
+   "reason": "deferred_translator_declined",
+   "translator_x": null,
+   "translator_y": "血小板減少性紫斑症",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "原文疑為 thrombocytopenic purpura（血小板減少性紫斑）誤植；逕譯需增字，留待人工核對原卡 ｜ 原文疑為 thrombocytopenic purpura；若特指 TTP 則為血栓性血小板減少性紫斑症"
+  },
+  {
+   "en": "Thrombosis",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "血栓症",
+   "translator_y": "血栓形成",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Tongue atrophy after radiation treatment",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "放射線治療後舌萎縮",
+   "translator_y": "放射治療後舌萎縮",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Toxicity secondary to chemotherapy",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "化學治療繼發毒性反應",
+   "translator_y": "化學治療所致毒性反應",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Tropical eosinophilia",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "熱帶性嗜酸性球增多症",
+   "translator_y": "熱帶性嗜伊紅性白血球增多症",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "台灣用「嗜伊紅性白血球」，大陸作嗜酸性粒細胞"
+  },
+  {
+   "en": "Ulcers with a small amount of pus or no pus or pus with no tissue degeneration",
+   "slots": 2,
+   "reason": "deferred_translator_declined",
+   "translator_x": null,
+   "translator_y": "膿少或無膿、膿液無腐肉之潰瘍",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "原文為敘述性長句（膿少、無膿、膿而無腐三種情況），無法濃縮為卡片標籤，留待人工分拆 ｜ 原文為長描述句，已壓縮為標籤式譯名"
+  },
+  {
+   "en": "Unrelenting seepage after burns",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "燒傷後滲液不止",
+   "translator_y": "燒燙傷後滲液不止",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Uremia following renal disease",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "腎病後尿毒症",
+   "translator_y": "腎臟病續發尿毒症",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Urticaria due to seafood poisoning",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "海鮮中毒所致蕁麻疹",
+   "translator_y": "海鮮中毒引起的蕁麻疹",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Uterine cramping",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "子宮痙攣痛",
+   "translator_y": "子宮痙攣",
+   "repo_candidates": [],
+   "ting_ruling": null
+  },
+  {
+   "en": "Vaginal hernia",
+   "slots": 2,
+   "reason": "deferred_translator_declined",
+   "translator_x": null,
+   "translator_y": null,
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "詞義含糊：可能指鞘膜（tunica vaginalis）疝，亦可能誤指女性陰道脫垂或中醫狐疝；與下一條並列更顯歧義，留待人工核對原卡 ｜ vaginal 在此可能指女性陰道（陰道疝／腸膨出），也可能指睪丸鞘膜 tunica vaginalis（鞘膜疝），兩者是完全不同的疾病，無法判定，留待人工確認"
+  },
+  {
+   "en": "Vaginal or testicular hernia",
+   "slots": 2,
+   "reason": "deferred_translator_declined",
+   "translator_x": null,
+   "translator_y": null,
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "同上，vaginal hernia 一詞可能指鞘膜疝或女性生殖道疝，無法確定台灣標準對應，留待人工核對 ｜ 同上，vaginal 究竟指陰道或睪丸鞘膜無法判定；與同批 Scrotal hernia、Testicular hernia 並列更難區分，留待人工確認"
+  },
+  {
+   "en": "Visual hallucinations associated with schizophrenia",
+   "slots": 2,
+   "reason": "deferred_disagreement",
+   "translator_x": "思覺失調症之視幻覺",
+   "translator_y": "思覺失調症的視幻覺",
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "台灣自2014年起 schizophrenia 正名為思覺失調症"
+  },
+  {
+   "en": "Vital conjunctivitis",
+   "slots": 2,
+   "reason": "deferred_translator_declined",
+   "translator_x": null,
+   "translator_y": null,
+   "repo_candidates": [],
+   "ting_ruling": null,
+   "note": "原文疑為 Viral conjunctivitis（病毒性結膜炎）誤植；「vital conjunctivitis」非既有病名，留待人工核對原卡 ｜ 「Vital conjunctivitis」非既有病名，疑為 Viral conjunctivitis（病毒性結膜炎）匯入時的誤植，不敢逕自更正，留待人工確認"
+  },
+  {
+   "en": "Neuralgia",
+   "slots": 0,
+   "reason": "deferred_no_first_opinion",
+   "repo_candidates": [],
+   "ting_ruling": null
+  }
+ ]
+}
