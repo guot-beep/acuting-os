@@ -1,5 +1,13 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-24] Codex Handoff — Conditions official provenance B10
+
+- **Exact ids / fields**: only `cond.ehlers_danlos_syndrome`, `cond.otitis_media`, `cond.marfan_syndrome`, and `cond.cancer_parent`; only `sources` and `field_sources`. Existing prose, red-flag objects, relations, Symptoms, herbs, formulas, and acupoints were not modified.
+- **Official source sets**: MedlinePlus Genetics/GeneReviews/MedlinePlus emergency guidance for EDS; MedlinePlus/CDC/NICE/NHS for otitis media; MedlinePlus Genetics/NHLBI for Marfan syndrome; NCI/NICE/MedlinePlus emergency guidance for the cancer parent card. Scope citations are safety/co-management boundaries, not acupuncture efficacy evidence.
+- **Measured delta**: maturity `183→187 FULL_DETAIL_CANDIDATE`, `322→318 DETAIL_PARTIAL`, `0→0 SKELETON`; direct source entries `691→709`; records with `field_sources` `486→490/505`; records with at least one source remain `245/505`.
+- **Validation**: record-level diff audit passed (`4 ids`, fields exactly `sources,field_sources`); source-label audit passed; `build-data.js`; condition standard `505/505 clean`; ratchet; condition sources (`709`); relation registry; content junk; and `git diff --check` passed without a new defect.
+- **Explicit exclusions**: viral-hepatitis “severe jaundice = emergency” grading, OCD/Down syndrome urgency statements, and uterine-fibroid TCM causal/self-care prose require canonical content review before provenance. Fifteen condition records still have no `field_sources` after this batch.
+
 ## [2026-08-24] Codex Handoff — Conditions official provenance B9
 
 - **Exact ids / fields**: only `cond.sudden_sensorineural_hearing_loss`, `cond.acute_bacterial_sinusitis`, `cond.lyme_disease`, and `cond.prostate_cancer`; only `sources` and `field_sources`. Existing prose, red flags, relations, Symptoms, herb/formula/acupoint data were not changed.

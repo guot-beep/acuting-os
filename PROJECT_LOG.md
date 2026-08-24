@@ -1,3 +1,13 @@
+# 2026-08-24 — Codex Conditions 官方欄位溯源 B10
+
+- **範圍**：只補 `cond.ehlers_danlos_syndrome`、`cond.otitis_media`、`cond.marfan_syndrome`、`cond.cancer_parent` 的 `sources`／`field_sources`；未改正文、紅旗、關聯或相鄰 canonical data。
+- **數字**：`FULL_DETAIL_CANDIDATE 183→187`、`DETAIL_PARTIAL 322→318`、`SKELETON 0→0`；直接來源 `691→709`；有 `field_sources` 的 condition `486→490/505`。
+- **來源與邊界**：使用 MedlinePlus／Genetics、NCBI GeneReviews、CDC、NICE、NHS、NHLBI、NCI；針灸欄來源只支撐組織／血管風險、急症轉介與共同照護，不代表療效。
+- **驗證**：逐記錄 diff 僅 4 ids／2 fields；source-label audit；`build-data`、condition standard `505/505`、ratchet、condition sources `709`、relation registry、content-junk、`git diff --check` 均無新增 defect。
+- **未解**：完全缺 `field_sources` 降至 15 筆；病毒性肝炎「嚴重黃疸」等 urgency、OCD／Down syndrome 紅旗、fibroids 中醫因果敘述需先審正文，不以 provenance 假背書。
+
+---
+
 # 2026-08-24 — Codex Conditions 官方欄位溯源 B9
 
 - **範圍**：只補 `cond.sudden_sensorineural_hearing_loss`、`cond.acute_bacterial_sinusitis`、`cond.lyme_disease`、`cond.prostate_cancer` 的 `sources`／`field_sources`；既有醫療文字、紅旗、關聯與相鄰資料均未改。
