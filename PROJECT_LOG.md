@@ -1,3 +1,20 @@
+# 2026-08-24 Antigravity — Task 0 / Batch 9 (全庫殘餘缺口掃尾 43 + 56 筆，Task 0 完結)
+
+- **做了什麼**: 完成 Task 0 最終批次 (Batch 9)。全庫盤點剩餘散落於 21 個分類的缺口：
+  1. `contraindications_zh`: 查證補齊 56 筆具名來源 (curriculum Chenoweth 課件 + 臺灣中藥典第四版 + American Dragon)，達成 **363/363 (100%) 全庫完全覆蓋**。
+  2. `modern_functions_en/zh`: 逐詞真翻譯填補 21 筆真空卡（其餘無文獻報導之冷門/食物類藥味按規定保持留白，絕不編造）。
+  3. 清除 `herb.qin_pi` 既有 `modern_functions_en` 中夾雜之 CJK 字元（aesculin/aesculetin），確保 E10 100% 通過。
+- **數字 before→after**:
+  - `modern_functions_en/zh`: `309 → 341 / 363` (85% → **94%**，+21 筆真空卡填齊)
+  - `contraindications_zh`: `276 → 363 / 363` (76% → **100%**，+57 筆具名來源，全庫滿格)
+  - E10 CJK 混入: `0` ✅；E11 同義詞洗版: `0` ✅；無覆蓋任何既有內容
+- **驗證指令與結果**:
+  - `node scripts/build-data.js`: PASS
+  - `node scripts/validate-herb-standard.js`: PASS (E10/E11 乾淨, 0 structural defects)
+  - `node scripts/validate-no-boilerplate.js`: PASS
+  - `node scripts/check-validation-ratchet.js`: PASS (no regressions)
+- **已隔離邊界**: `data/pathology/**` 零異動；無修改任何 ID；無異動 UI/腳本。
+
 # 2026-08-24 Claude — antigravity Batch 8 審核:通過,收下
 
 - **背景**:antigravity 中途沒 token 卡住過一段時間,補充後接著做完 Batch 8。分支落在主線幾個效能/內容
