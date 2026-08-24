@@ -1,3 +1,26 @@
+# 2026-08-24 Antigravity — Task 4 (方劑卡安全優先項修復 + 雙語陣列對齊)
+
+- **做了什麼**: 完成 Task 4。針對 `data/herbs/formulas.json` 223 個方劑進行安全與雙語陣列修復：
+  1. **安全優先項修復 (`formula.zuo_gui_yin`)**: 補齊 `cautions_zh/en` ("脾胃虛弱、大便溏瀉及濕滯中焦者慎用。"), `contraindications_zh/en` ("外感實熱及感冒發熱者忌服。") 與 `safety_flags` (`["spleen_deficiency_review"]`)，支撐 `public_safe: true` 標示。
+  2. **雙語陣列對齊 (1:1 補齊短側)**:
+     - `formula.gui_zhi_tang` (`contraindications_zh` 4 → 5 條)
+     - `formula.xiao_qing_long_tang` (`contraindications_zh` 8 → 9 條)
+     - `formula.bai_hu_tang` (`contraindications_zh` 6 → 10 條)
+     - `formula.zhu_ye_shi_gao_tang` (`contraindications_zh` 3 → 6 條)
+     - `formula.chuan_xiong_cha_tiao_san` (`contraindications_en` 1 → 5 條)
+     - `formula.gui_pi_tang` (`contraindications_en` 3 → 5 條)
+     - `formula.shi_xiao_san` (`contraindications_en` 1 → 3 條)
+  3. **保留裁決項呈報**: 部分英文陣列尾端含有舊庫重複拼接句（如 `formula.huai_hua_san` `contraindications_en[3]`、`formula.mai_men_dong_tang` `cautions_en[4,5]`、`formula.er_zhi_wan` `cautions_en[2]`）。按鐵律嚴格零私自刪除，呈報 Ting/Claude 裁決。
+- **驗證指令與結果**:
+  - `node scripts/build-data.js`: PASS
+  - `node scripts/validate-herb-quality-strict.js`: PASS
+  - `node scripts/validate-herb-card-schema.js`: PASS
+  - `node scripts/validate-herb-standard.js`: PASS
+  - `node scripts/validate-no-boilerplate.js`: PASS
+  - `node scripts/check-validation-ratchet.js`: PASS
+  - `node scripts/validate-content-junk.js`: PASS
+- **已隔離邊界**: `data/pathology/**` 零異動；無修改任何 ID；無異動 UI/腳本。
+
 # 2026-08-24 Antigravity — Task 3 (中藥卡 Strict Provenance & Schema 修復全數通過)
 
 - **做了什麼**: 完成 Task 3 (最高優先級)。針對 `validate-herb-quality-strict.js` 與 `validate-herb-card-schema.js` 全數缺陷進行精準修復：

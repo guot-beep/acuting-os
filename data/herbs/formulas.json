@@ -166,7 +166,8 @@
         "溫病初起、表有鬱熱而見發熱口渴、脈數者不宜 —— 辛溫助熱。",
         "表實無汗者禁用 —— 此為麻黃湯證，誤用桂枝湯則邪無出路。《傷寒論》：「桂枝本為解肌，若其人脈浮緊、發熱汗不出者，不可與之也。」",
         "酒客（濕熱內蘊者）不宜，服之易致嘔。",
-        "暑天或天候炎熱時宜謹慎使用。"
+        "暑天或天候炎熱時宜謹慎使用。",
+        "酒客病（長期嗜酒體質內熱者）禁用。"
       ],
       "herb_drug_cautions": [
         "sweating",
@@ -1877,7 +1878,8 @@
         "肺熱咳喘、吐黃稠痰者禁用",
         "咽痛、脈數者禁用",
         "嚴重心臟病、高血壓患者慎用",
-        "孕婦慎用"
+        "孕婦慎用",
+        "陰虛乾咳無痰者禁用。"
       ],
       "safety_flags": [],
       "source_urls": [
@@ -8226,7 +8228,11 @@
         "脾胃虛寒、大便溏薄者禁用",
         "真寒假熱（陰盛格陽）者禁用",
         "脾胃陰虛發熱，兼自汗、倦怠、惡風、脈浮而虛者禁用",
-        "陽明腑實證者禁用"
+        "陽明腑實證者禁用",
+        "表證未解（無汗惡寒）者禁用。",
+        "血虛發熱者禁用。",
+        "真寒假熱（陰盛格陽）者禁用。",
+        "津傷過甚無津可生者禁用。"
       ],
       "safety_flags": [],
       "source_urls": [
@@ -9144,7 +9150,10 @@
       "contraindications_zh": [
         "本方清涼質潤，如內有痰濕，或陽虛發熱，均應忌用。",
         "熱病開盛邪實，大熱未哀，氣陰未傷者，不宜使用本方。",
-        "痰濕內蘊，見胸悶、乾嘔、舌苔黃膩者禁用"
+        "痰濕內蘊，見胸悶、乾嘔、舌苔黃膩者禁用",
+        "陽虛體質者禁用。",
+        "嘔吐原因屬於胃寒者禁用。",
+        "濕熱內蘊型病證禁用。"
       ],
       "safety_flags": [],
       "source_urls": [
@@ -50376,7 +50385,8 @@
         ],
         "source_classic": [
           "https://www.zhongyifangji.com/home/prescription/detail/id/50(「左归丸(《景岳全书》)頁【附方】:左归饮《景岳全书》」;帳本 docs/research_packs/SOURCE_CLASSIC_WEB_PROPOSALS_2026-08-19.json)"
-        ]
+        ],
+        "cautions_zh": "curriculum/formulas/11_Formula_Cards_101-110_固澀劑_理氣劑.md"
       },
       "clinical_classification_zh": "臨床常用專病處方",
       "condition_tags_zh": [
@@ -50520,8 +50530,12 @@
         "遺精",
         "- 崩漏 / 功能性子宮出血"
       ],
-      "contraindications_en": [],
-      "cautions_en": [],
+      "contraindications_en": [
+        "Contraindicated in exterior Heat or fever from common cold."
+      ],
+      "cautions_en": [
+        "Use with caution in Spleen-Stomach deficiency, loose stools, and Dampness retention in the Middle Jiao."
+      ],
       "herb_drug_interactions_en": [],
       "symptoms_zh": [
         "腰痠",
@@ -50550,6 +50564,15 @@
         "Nourishes Yin, generates fluids, regulates water-salt metabolism",
         "Protects renal function, reduces proteinuria",
         "Modulates immunity and endocrine system"
+      ],
+      "cautions_zh": [
+        "脾胃虛弱、大便溏瀉及濕滯中焦者慎用。"
+      ],
+      "contraindications_zh": [
+        "外感實熱及感冒發熱者忌服。"
+      ],
+      "safety_flags": [
+        "spleen_deficiency_review"
       ]
     },
     {
@@ -84197,7 +84220,11 @@
       "modifications_en": [],
       "modifications_zh": [],
       "contraindications_en": [
-        "Headache has many causes, both from external invasion and from internal damage; this formula is not suitable for headaches due to Qi deficiency, Blood deficiency, Liver-Kidney Yin deficiency, Liver Yang Rising, or internal stirring of Liver Wind."
+        "Contraindicated in headache due to Liver Yang hyperactivity.",
+        "Contraindicated in headache due to Qi and Blood deficiency.",
+        "Contraindicated in headache due to Kidney Yin deficiency with Heat.",
+        "Use with caution in patients with hypertension.",
+        "Contraindicated during pregnancy."
       ],
       "contraindications_zh": [
         "導致頭痛的原因很多，有外感與內傷的不同，對於氣虛、血虛、或肝腎陰虛、肝陽上亢、肝風內動等引起的頭痛，均不宜使用。",
@@ -92549,9 +92576,11 @@
         "出血過多 → 加山茱萸、煅龍骨、煅牡蠣"
       ],
       "contraindications_en": [
-        "Avoid raw and cold foods.",
-        "Avoid excessive worry, overthinking, and overwork.",
-        "Do not use in those with internal heat due to Yin deficiency or with excess heat patterns."
+        "Contraindicated in Internal Heat from Yin Deficiency.",
+        "Contraindicated in Damp-Heat in Middle Jiao.",
+        "Use with caution in cases of Stagnation and Fullness.",
+        "Contraindicated in active fever from Common Cold.",
+        "Use with caution in hypertension."
       ],
       "contraindications_zh": [
         "忌生冷食物",
@@ -104216,7 +104245,9 @@
       "modifications_en": [],
       "modifications_zh": [],
       "contraindications_en": [
-        "Contraindicated in pregnancy; use with caution in those with Spleen and Stomach weakness and in women during menstruation."
+        "Contraindicated during pregnancy; use with caution in Spleen-Stomach weakness and during menstruation.",
+        "Contraindicated during pregnancy.",
+        "Use with caution in Stomach deficiency."
       ],
       "contraindications_zh": [
         "本方孕婦禁用，脾胃虛弱及婦女月經期慎用。",
