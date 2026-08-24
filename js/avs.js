@@ -113,7 +113,12 @@
    * 「發明」診斷 —— 只讀已結構化的欄位(§2.5)。 */
   function buildMatchContext(kase, note) {
     const resolved = resolveModalities(note);
-    const activeMeds = (kase.agentExposures || []).filter((e) => !/stopped|past/i.test(String(e.status || "")));
+    /* 「使用中」用**肯定式**判準,與 clinical-store.getCurrentExposures 同一把尺。
+     * 舊版寫成否定式 !/stopped|past/,於是 status 為 'unknown'、""(legacy)、
+     * 或任何打錯的值都會被當成使用中 —— 而病人跨 case 總帳與病例的 current
+     * 清單用的是肯定式,同一筆資料兩個相反結論,說得比較大聲的那個(病人文件)
+     * 還印給了病人。病人文件只印確定使用中的;被排除的由 checkout 明說。 */
+    const activeMeds = (kase.agentExposures || []).filter((e) => e.status === "current" || e.status === "prn");
     return {
       patterns: new Set((note.tcmPatternSelections || []).map((x) => x.patternId)),
       conditions: new Set([...(kase.westernConditions || []), ...(kase.easternDiseases || []), ...(note.westernConditionLinks || []), ...(note.easternDiseaseLinks || [])]),
@@ -135,11 +140,16 @@
     const nameByModality = new Map((modalityVocabulary || []).map((r) => [r.id, r.name_zh]));
     const candidates = matchAdvice(library, ctx);
     if (typeof nameOfAgent !== "function") nameOfAgent = () => null;
+    /* 劑量留空就是留空。舊版寫 `e.doseText || "依醫囑"` —— 劑量欄是選填,
+     * 沒填時病人文件會印出「用量:依醫囑」,而資料裡沒有任何醫囑,那四個字
+     * 是渲染層生出來的,病歷側同一筆顯示的卻是誠實的「—」。病人拿到的文件
+     * 因此比病歷多說了一句話,而且看起來像醫師交代過。缺就缺,由 checkout
+     * 提醒醫師回用藥帳補。 */
     const medRows = ctx.activeMeds.map((e) => ({
       name: nameOfAgent(e.agentId) || e.nameText || "",
-      dose: e.doseText || "依醫囑",
+      dose: e.doseText || "",
       freq: e.frequencyText || ""
-    })).filter((r) => r.name);
+    })).filter((r) => r.name);   // 認不出名字的不印給病人(不印 internal id);checkout 會明說被丟了幾筆
     // 自我觀察題面:此 case 追蹤中的 metric 的病人語言 prompt(≤4,承 v1)。
     const tracked = new Set();
     for (const n of kase.soapNotes || []) for (const m of n.outcomeMetrics || []) tracked.add(m.metricId);
@@ -273,14 +283,21 @@
     const sec = (title, body) => body ? `<section><h2>${title}</h2>${body}</section>` : "";
     const meds = snapshot.medicationInstructionsSnapshot || [];
     const medTable = meds.length
-      ? `<table><tr><th>名稱</th><th>用量</th><th>頻率</th></tr>${meds.map((r) => `<tr><td>${esc(r.name)}</td><td>${esc(r.dose)}</td><td>${esc(r.freq)}</td></tr>`).join("")}${byCat("herb_caution").map((t) => `<tr><td colspan="3" class="note">${esc(t)}</td></tr>`).join("")}</table>`
+      // 沒記錄的劑量/頻率印「—」,不補任何指示語(見 buildDraftSnapshot 註解)
+      ? `<table><tr><th>名稱</th><th>用量</th><th>頻率</th></tr>${meds.map((r) => `<tr><td>${esc(r.name)}</td><td>${esc(r.dose) || "—"}</td><td>${esc(r.freq) || "—"}</td></tr>`).join("")}${byCat("herb_caution").map((t) => `<tr><td colspan="3" class="note">${esc(t)}</td></tr>`).join("")}</table>`
       : "";
-    const watch = [
+    /* 紅旗與自我觀察是兩件事,不能合成一份清單。
+     * patientObservationPromptsSnapshot 來自 outcome_metrics 的 patient_prompt_zh
+     * ——「上次月經到這次月經開始,間隔大約幾天?」這類**追蹤題目**;
+     * checkout 上的標題也是「自我觀察 What to watch」。舊版把它併進
+     * 「什麼情況請盡快與我們聯絡或就醫」,於是病人讀到的是「出現這個情況請
+     * 盡快就醫」。追蹤睡眠、排便、經期的病例每一份文件都會中。 */
+    const urgent = [
       "症狀明顯加重、或出現新的劇烈疼痛",
       "發燒、持續頭暈、異常出血或瘀腫擴大",
-      "服用調理品後噁心、皮疹或任何過敏反應",
-      ...(snapshot.patientObservationPromptsSnapshot || [])
+      "服用調理品後噁心、皮疹或任何過敏反應"
     ];
+    const observe = snapshot.patientObservationPromptsSnapshot || [];
     // 頁首聯絡列:地址/電話有值才印(誠實顯示「(待填」佔位,不特判隱藏——
     // 診所自己決定何時填真實值)。舊 snapshot 沒有 address 鍵時視為空字串。
     const headerContact = [clinic.address, clinic.phone].filter((v) => String(v || "").trim()).map(esc).join("　·　");
@@ -324,7 +341,8 @@ ${sec("今天做了什麼", (snapshot.todayCare || []).length ? `<p>${snapshot.t
 ${sec("居家照護計畫", ul(byCat("aftercare", "lifestyle", "diet", "exercise")))}
 ${sec("調理品怎麼吃", medTable)}
 ${sec("特別注意", ul(byCat("special")))}
-${sec("什麼情況請盡快與我們聯絡或就醫", ul(watch))}
+${sec("什麼情況請盡快與我們聯絡或就醫", ul(urgent))}
+${sec("這段期間請幫我留意這幾件事", observe.length ? `<p>下次回診時我會問到,先記在心裡就好 —— 這些不是警訊。</p>${ul(observe)}` : "")}
 ${sec("下次回診", snapshot.followUpSnapshot ? `<p>回診安排:${esc(snapshot.followUpSnapshot)}</p>` : "")}
 <div style="margin-top:18px;display:flex;justify-content:space-between;font-size:.9em;align-items:flex-end"><div>醫師:${esc(clinic.practitioner_zh)}＿＿＿＿＿＿</div><div style="text-align:right;color:#66717a">預約電話:${esc(clinic.phone)}<br>${esc(clinic.website)}</div></div>
 <div class="footer">本文件為衛教與照護指示,非診斷證明,不適用於保險申報。如有疑問請聯絡診所。${bookingNote ? `<div class="booking-note">${esc(bookingNote)}</div>` : ""}</div>

@@ -7742,6 +7742,9 @@ html { scroll-padding-top: 92px; }
 .avs-co-empty { color: var(--muted); font-size: .85em; margin: 4px 0; }
 .avs-co-note { color: var(--muted); font-size: .78em; margin: 8px 0 0; }
 .avs-co-warn { color: #9a6a12; background: rgba(184, 134, 47, .1); border: 1px solid rgba(184, 134, 47, .35); border-radius: 8px; padding: 6px 10px; font-size: .85em; }
+/* 用藥排除說明:一次可能有三種原因,每種一段,不擠成一行 */
+.avs-co-med-exclusions { margin-top: 8px; display: grid; gap: 6px; }
+.avs-co-med-exclusions p { margin: 0; line-height: 1.55; }
 .avs-co-advice-row { border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; margin-bottom: 8px; }
 .avs-co-advice-row textarea { width: 100%; box-sizing: border-box; margin-top: 6px; line-height: 1.5; }
 .avs-co-advice-head { display: flex; align-items: flex-start; gap: 8px; flex-wrap: wrap; }

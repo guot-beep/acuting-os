@@ -9873,6 +9873,34 @@ function avsCheckoutContext() {
   return { kase, note };
 }
 
+/* 病人文件會少印哪幾筆用藥、為什麼 —— 從 live 病例算,不塞進 snapshot
+ * (snapshot 就是病人文件本體,不該夾帶 internal id)。
+ *
+ * 三種「少印」過去都是靜默的:
+ *   1. status 不是 current/prn(unknown / 空白 / 打錯)—— 不確定使用中的
+ *      不印給病人是對的,但醫師必須知道有這筆存在,否則會以為漏掉了。
+ *   2. 名稱解析不出來 —— 舊版直接 filter 掉,若它是唯一一筆 active,
+ *      checkout 顯示「目前沒有 active」,與真的沒有藥完全同一個畫面。
+ *   3. 沒有劑量 —— 病人文件會印「—」。過去這裡會被補成「依醫囑」,
+ *      看起來像交代過,反而校對不出來。 */
+function renderAvsMedExclusions(kase) {
+  const rows = (kase && kase.agentExposures) || [];
+  const isCurrent = (e) => e.status === "current" || e.status === "prn";
+  const isStopped = (e) => /stopped|past/i.test(String(e.status || ""));
+  const label = (e) => avsAgentNameOf(e.agentId) || e.nameText || e.agentId || "(未命名)";
+
+  const unclearStatus = rows.filter((e) => !isCurrent(e) && !isStopped(e));
+  const unnamed = rows.filter((e) => isCurrent(e) && !avsAgentNameOf(e.agentId) && !String(e.nameText || "").trim());
+  const noDose = rows.filter((e) => isCurrent(e) && (avsAgentNameOf(e.agentId) || String(e.nameText || "").trim()) && !String(e.doseText || "").trim());
+
+  const blocks = [];
+  if (unclearStatus.length) blocks.push(`<p>⚠ ${unclearStatus.length} 筆用藥的狀態不是「使用中/需要時」(而是未確定或空白),<strong>不會出現在病人文件</strong>:${unclearStatus.map((e) => escapeHtml(label(e))).join("、")}。要印給病人請先回用藥帳把狀態改成 current/prn。</p>`);
+  if (unnamed.length) blocks.push(`<p>⚠ ${unnamed.length} 筆使用中的用藥解析不到名稱(agent id 可能打錯,或知識庫沒有這張卡),<strong>不會出現在病人文件</strong> —— 病人文件不印內部代碼。請回用藥帳補「名稱」欄。</p>`);
+  if (noDose.length) blocks.push(`<p>⚠ ${noDose.length} 筆沒有劑量,病人文件的「用量」會印「—」:${noDose.map((e) => escapeHtml(label(e))).join("、")}。系統不會代填「依醫囑」——沒交代過的話不該印在病人紙上。</p>`);
+  if (!blocks.length) return "";
+  return `<div class="avs-co-warn avs-co-med-exclusions">${blocks.join("")}</div>`;
+}
+
 function avsAgentNameOf(agentId) {
   if (!agentId) return null;
   const k = globalThis.ACUTING_KNOWLEDGE || {};
@@ -10074,7 +10102,8 @@ function renderAvsCheckout() {
       </section>
       <section class="avs-co-section">
         <h3>4 · 中藥/營養品 Medicines & herbs</h3>
-        ${d.medicationInstructionsSnapshot.length ? `<table class="avs-co-med-table"><tr><th>名稱</th><th>用量</th><th>頻率</th></tr>${d.medicationInstructionsSnapshot.map((r) => `<tr><td>${escapeHtml(r.name)}</td><td>${escapeHtml(r.dose)}</td><td>${escapeHtml(r.freq)}</td></tr>`).join("")}</table><p class="avs-co-note">來源:病例用藥帳(active);要調整請回 Meds & Supplements ledger 再重新產生。</p>` : `<p class="avs-co-empty">目前沒有 active 的中藥/營養品。</p>`}
+        ${d.medicationInstructionsSnapshot.length ? `<table class="avs-co-med-table"><tr><th>名稱</th><th>用量</th><th>頻率</th></tr>${d.medicationInstructionsSnapshot.map((r) => `<tr><td>${escapeHtml(r.name)}</td><td>${escapeHtml(r.dose) || "—"}</td><td>${escapeHtml(r.freq) || "—"}</td></tr>`).join("")}</table><p class="avs-co-note">來源:病例用藥帳(active);要調整請回 Meds & Supplements ledger 再重新產生。</p>` : `<p class="avs-co-empty">目前沒有 active 的中藥/營養品。</p>`}
+        ${renderAvsMedExclusions(kase)}
       </section>
       <section class="avs-co-section">
         <h3>5 · 回診 Follow-up</h3>

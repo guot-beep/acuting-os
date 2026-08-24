@@ -359,5 +359,62 @@ console.log("回歸鎖 #12 — SOAP followUp 不自動進病人文件");
   assert(corr.followUpSnapshot === "兩週後回診", "更正草稿保留醫師定稿過的回診文字");
 }
 
+// ---- 回歸鎖 — 病人文件不得多說資料沒說的話 --------------------------------
+// 四筆同一天掃出來的缺陷,共通點都是「渲染層比資料多說了一句」或「兩種不同
+// 的狀態被印成同一種」,而且既有的 72 條斷言一條都沒擋住。
+console.log("回歸鎖 — 病人文件的四條界線");
+{
+  const METRIC_PROMPT = "月經週期:上次月經到這次月經開始,間隔大約幾天?";
+  const metricDefs = [{ id: "metric.cycle_len", patient_prompt_zh: METRIC_PROMPT }];
+
+  const kase = makeCase({
+    agentExposures: [
+      { agentId: "", nameText: "當歸芍藥散", status: "current", doseText: "", frequencyText: "每日兩次" },
+      { agentId: "", nameText: "魚油", status: "unknown", doseText: "1000mg", frequencyText: "每日一次" },
+      { agentId: "", nameText: "維生素D", status: "", doseText: "2000IU", frequencyText: "每日一次" },
+      { agentId: "drug.does_not_exist_anywhere", nameText: "", status: "current", doseText: "5mg", frequencyText: "每日一次" },
+      { agentId: "", nameText: "已停的藥", status: "stopped", doseText: "10mg", frequencyText: "每日一次" }
+    ]
+  });
+  const note = makeNote({ modalitiesPerformed: ["modality.acupuncture"], outcomeMetrics: [{ metricId: "metric.cycle_len" }] });
+  kase.soapNotes = [note];
+  const d = AVS.buildDraftSnapshot({
+    kase, note, library: LIBRARY, clinic: CLINIC,
+    modalityVocabulary: MODALITY_VOCAB, outcomeMetricDefs: metricDefs
+  });
+  const html = AVS.renderPatientHtml(d, { visitDate: note.visitDate });
+
+  // (1) 劑量留空就留空 —— 不得補「依醫囑」
+  assert(!html.includes("依醫囑"), "沒填劑量時病人文件不生出「依醫囑」");
+  const dangGui = d.medicationInstructionsSnapshot.find((r) => r.name === "當歸芍藥散");
+  assert(dangGui && dangGui.dose === "", "snapshot 的空劑量保持空字串,不被渲染層以外的地方填掉");
+
+  // (2) 使用中的判準是肯定式,與 clinical-store.getCurrentExposures 同一把尺
+  assert(html.includes("當歸芍藥散"), "status=current 會印給病人");
+  assert(!html.includes("魚油"), "status=unknown 不印給病人(不確定使用中的不印)");
+  assert(!html.includes("維生素D"), "status 空白(legacy)不印給病人");
+  assert(!html.includes("已停的藥"), "status=stopped 不印給病人");
+
+  // (3) 認不出名字的不印內部代碼,也不假裝沒有這筆
+  assert(!html.includes("does_not_exist_anywhere"), "解析不到名稱時不把 agent id 印給病人");
+  assert(d.medicationInstructionsSnapshot.length === 1, "只有名稱解析得出、且確定使用中的那一筆進表格");
+
+  // (4) 追蹤題面不得混進「請盡快就醫」清單
+  const urgentIdx = html.indexOf("什麼情況請盡快與我們聯絡或就醫");
+  const observeIdx = html.indexOf("這段期間請幫我留意這幾件事");
+  const promptIdx = html.indexOf(METRIC_PROMPT);
+  assert(urgentIdx > -1 && observeIdx > -1, "紅旗與自我觀察是兩個獨立段落");
+  assert(promptIdx > -1, "追蹤題面仍有印出來(不是靠刪掉來解決)");
+  assert(promptIdx > observeIdx, "追蹤題面落在『自我觀察』段,不在『請盡快就醫』段");
+  assert(html.slice(urgentIdx, observeIdx).indexOf(METRIC_PROMPT) === -1, "『請盡快就醫』段裡沒有任何追蹤題面");
+
+  // 沒有追蹤指標的病例不該憑空長出一個空段落
+  const bare = makeCase();
+  const bareNote = makeNote({ modalitiesPerformed: ["modality.acupuncture"] });
+  bare.soapNotes = [bareNote];
+  const d2 = AVS.buildDraftSnapshot({ kase: bare, note: bareNote, library: LIBRARY, clinic: CLINIC, modalityVocabulary: MODALITY_VOCAB, outcomeMetricDefs: metricDefs });
+  assert(!AVS.renderPatientHtml(d2, {}).includes("這段期間請幫我留意這幾件事"), "沒有追蹤指標時不印空的自我觀察段");
+}
+
 console.log(`\n${pass} passed, ${fail} failed`);
 process.exit(fail ? 1 : 0);
