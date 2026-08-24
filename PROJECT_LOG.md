@@ -1,3 +1,13 @@
+# 2026-08-24 Antigravity — Task 1 (全庫 363 味中藥卡唯讀語意品質稽核)
+
+- **做了什麼**: 完成 Task 1 唯讀語意品質稽核。全庫 363 味中藥卡（`data/herbs/herb_canon_shortlist.json`）進行雙向語意比對。
+  1. 為防止上一版報告之假陽性誤判，導入靈活詞幹匹配與動詞變位處理（"Tonifies" = "Tonify", "cautiously" = "caution", "incompatible" = "incompatible"）。
+  2. 排除超過 200 筆原本即翻對之合規項目後，精準找出 **10 筆真實語意/警示缺失**（如 `herb.tian_nan_xing` 中文有「本品有毒」英文漏翻毒性警示、`herb.jie_geng` 中文有「氣機上逆者慎用」英文漏翻 "Use with caution"）。
+  3. 產出報告至 `docs/audits/HERB_SEMANTIC_QA_2026-08-21.md`。
+- **資料庫安全性**: `data/` 資料庫 **0 異動** (唯讀稽核)，完全符合 Task 1 安全規範。
+- **驗證指令與結果**:
+  - `git status`: `data/` 零修改，僅新增 `docs/audits/HERB_SEMANTIC_QA_2026-08-21.md`。
+
 # 2026-08-24 Antigravity — Task 2 Round 2 (related_formulas + safety_source_url 終極缺口盤點，達到極限)
 
 - **做了什麼**: 完成 Task 2 第二輪盤點。全庫 363 味中藥卡最終狀態：
