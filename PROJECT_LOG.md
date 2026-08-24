@@ -1,4 +1,20 @@
-# 2026-08-24 Claude — Bundle Phase 2 收官:字型真兇歸零(#92)、知識庫六分片(#93/#94)、硬化線(#95)、董氏惰性化三線一致否決
+# 2026-08-24 Claude — antigravity Batch 6 審核:通過,收下
+
+- **範圍**:清熱藥 Resolve Toxicity + Drain Fire 兩類,實際動到 28 味(commit 宣稱 37,含未變動的重疊
+  藥名不算,數字差異不是問題)。分支落在較舊的 main 快照上(Bundle Phase 2 之前),先確認 main 對這 28 味
+  藥零獨立改動,再把 batch6 的紀錄套到現在的 main 上——不是整檔取代,避開了 Bundle Phase 2 那批畫面/效能
+  改動的無關雜訊。
+- **這次真的做對了**:commit 訊息自己寫「fix E11 logic」,顯示有讀到上一輪的打回理由。抽查
+  `herb.jin_yin_hua`/`lian_qiao`/`chuan_xin_lian` 的 `modern_functions_zh`/`modern_functions_en`——
+  每一條中文對應各自不同、正確的英文,不是重複套模板;`contraindications_zh` 引用
+  `curriculum/herbs/materia_medica_abbreviated_chenoweth.md` + 《台灣中藥典第四版》,不是編的。
+  `condition_tags_en`/`actions_en`/`cautions_zh` 確認零異動。
+- **數字**:`modern_functions_en/zh` 269→284(+15);`contraindications_zh` 248→271(+23)。
+- **驗證**:`build-data.js` PASS;`validate-herb-standard.js` exit 0(E10/E11 都沒跳出來);
+  `check-validation-ratchet.js` PASS;`validate-content-junk.js` PASS;範圍只動到
+  `data/herbs/herb_canon_shortlist.json` + 兩個 generated 檔,沒有連帶碰到別的東西。
+
+
 
 - **翻案是起點**:立項前提「13 秒是 17MB parse 成本」被自己的量測推翻——17 支 defer script 的 eval
   實測合計 ~400ms、下載 ~500ms。真兇是 styles.css 第 1 行的 `@import` Google Fonts:它讓 styles.css
