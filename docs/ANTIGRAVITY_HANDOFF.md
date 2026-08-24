@@ -222,42 +222,49 @@ evidence_quote 這兩個欄位**必須是你真的打開那個檔案讀到的文
 
 **Task 5 到這裡先告一段落**——4 條 formula_family + 22 條 related_formulas 已經落地。
 
-## 🔥 Task 6：接續方劑 `related_formulas`/`formula_family`/`exact_source_url` 缺口
+## 🛑 Task 6 整批打回（`a8e3bc70`）——main 完全沒有落地任何一筆，B/C 都是「樣板/猜測」不是逐條查證
 
-重新盤點過全庫最新覆蓋率：`formula_family` 44/223（20%，缺 179）、`related_formulas` 120/223
-（54%，缺 103）、`exact_source_url` 152/223（68%，缺 71）。中藥那邊 `related_formulas`（87%）/
-`safety_source_url`（74%）已經在 Task 2 判定到可驗證極限，**不用再回去挖**，這輪專心做方劑。
+**B. `related_formulas`——不是逐方判斷，是「同分類套同一組樣板」**：91 張新增卡實際上只用了
+**29 種不同的組合**，前三組（11-13 張卡共用同一組）就吃掉 36 張。最嚴重的例子：`du_qi_wan`/
+`er_xian_tang`/`fang_feng_tong_sheng_san`/`ge_gen_huang_qin_huang_lian_tang`/
+`qiang_huo_sheng_shi_tang`/`xiao_ji_yin_zi` 等 **13 張臨床上互相毫無關聯**（補腎陰、雙補肝腎、
+表裡雙解、清熱止瀉、祛風勝濕、涼血止血，橫跨完全不同治法）**全部被塞進同一組**
+`["formula.bu_fei_tang","formula.da_bu_yin_wan","formula.dan_shen_yin","formula.ding_zhi_wan"]`，
+這四個「錨點方」彼此之間也沒有明顯共同主題。更嚴重的是連 `formula.du_qi_wan_import_stub`（明確
+標註「匯入重複殘根」的**廢棄卡**）都被連結進這組。這是套用粗分類（`category_id`/「未分類」）當
+「相關」的捷徑，**不是逐方比對**，跟 batch3-5 那次 `modern_functions_en` 用同一句話洗版是同一種
+錯誤（用同一組值罐裝不同項目），只是這次罐裝的是方劑 ID 不是文字。
 
-**⚠️ 先讀這段，這是 Task 5 剛抓到的真實問題,不是重複警告**：Task 5 的 7 條 `formula_family` 提案
-有 3 條（葛根加半夏湯/附子瀉心湯/貞蓉丹）附了看起來很完整的 `evidence_file`+`evidence_quote`，
-但我把這三個方名在整個 `curriculum/` 目錄逐一 grep，**完全零命中**——內容本身多半是真實 TCM 知識
-（這些方名很多確實是經典方），但**這個 repo 的課件裡沒有記載**，你卻寫出具體引文。**這次繼續做
-formula_family，每一條 `evidence_quote` 寫完之後，自己務必用 grep 或搜尋工具在 `curriculum/`
-裡確認那段文字真的存在，找不到就整條不寫，不要因為「這是真的 TCM 常識」就先寫上去**——這個 repo
-要的是「這句話在哪個檔案的哪裡」，不是「這句話是不是真的」。
+**C. `exact_source_url`——URL 是照命名慣例拼出來的，不是逐條打開驗證過**：我抽查 10 條（實際
+WebFetch 打開），**3 條是 404**（`ZhenGanXiFengTang.html`／`LiZhongWan.html`／
+`JinGuiShenQiWan.html`），7 條真的存在——**30% 死鏈率**。這代表你是照
+`PinyinTangName.html` 這種網站命名 pattern 用程式猜出網址，猜對率高但**不是「查到真實頁面才填」**，
+是上次雄黃/左歸飲那次「引用造假」的變體——這次不是編內容，是編網址，性質一樣：沒有真的打開來源
+逐條驗證。
 
-**A. `formula_family`（缺 179，風險最高，照上面的規則做）**：掃
-`curriculum/formulas/09_Formula_Cards_*` 系列跟 `方剂学汇总` 系列，找命名慣例明顯（「XX湯加XX」
-「XX湯去XX」）或課件明確寫「本方為 XX 之加減」的方劑，產出新帳本
-`docs/research_packs/FORMULA_FAMILY_PROPOSALS_<今天日期>.json`，格式比照舊帳本。**每一條先自己
-grep 確認來源真的存在再寫進帳本**。查無明確加減關係就跳過，不要湊數。
+**A. `formula_family` 這輪正確地完全沒動**，避開了 Task 5 剛抓到的假引用風險，這部分沒問題，
+下一輪繼續照 Task 5/Task 6 已經講過的規則做（evidence_quote 動筆前先 grep 確認存在）。
 
-**B. `related_formulas`（缺 103，Task 5 這個做法是乾淨的，繼續用）**：找同主題/同作者/board exam
-常一起比較的方劑群組（比照血府逐瘀湯家族、Task 5 的小柴胡湯/五苓散/沙參麥門冬湯那幾組），用 `Set`
-併集加入，**絕對不刪除任一方現有的 related_formulas**。**這次來源引用要具體到檔名+章節/段落**（不要
-再寫「curriculum/formulas/ (Board exam...)」這種籠統寫法，Task 5 已經提醒過一次）。優先用資料庫
-既有的 `comparison_group` 欄位當線索（同 `comparison_group` 的方劑本來就有分組依據）。
+**下一輪重做 B 的規則**：
+1. **一次只判斷一張卡**，不要「這個分類的方劑都連到這幾個知名方」——每一張卡的 `related_formulas`
+   要能個別說出「這方跟那方臨床上哪裡像」，不是共享同一個分類標籤就算數。
+2. **優先用資料庫既有的 `comparison_group` 欄位當線索**（同 `comparison_group` 的方劑本來就有
+   分組依據，比自己重新分類可靠）。
+3. **絕對不要連結任何 ID 含 `_import_stub` 的卡**（那是明確標註廢棄的重複殘根，不是正式方劑）。
+4. 來源引用要具體到檔名+章節/段落，不要寫「curriculum/formulas/ (Board exam...)」這種籠統寫法
+   （Task 5 已經提醒過一次，這輪還是沒改）。
 
-**C. `exact_source_url`（缺 71，做法跟中藥那批一樣）**：查到方劑在 CloudTCM 或 American Dragon 的
-實際頁面網址就填，查不到就留空，不要拿網站首頁湊數也不要編網址。
+**下一輪重做 C 的規則**：**每一條網址寫進去之前，自己用瀏覽工具或任何方式實際打開確認頁面真的載入
+且內容對應該方劑**——不能只靠「這個網站的網址通常長這樣」的規律去拼。查不到真的能打開的頁面就留空，
+不要用猜的湊數字。
 
 **做完驗證**：`build-data.js` + `validate-formula-standard.js` + `validate-formula-quality-strict.js` +
 `validate-relations.js` + `check-validation-ratchet.js` + `validate-content-junk.js`，全部 PASS 才推
-（推到 `antigravity/formula-fill-task6` 獨立分支，不要推到 `main`，並在文件或 commit message 寫
-「已推到 XXX 分支,等驗收」）。記得補 `PROJECT_LOG.md` 條目，附這輪 A/B/C 三項各自的具體筆數。
+（推到 `antigravity/formula-fill-task6-round2` 獨立分支，不要推到 `main`，並在文件或 commit message
+寫「已推到 XXX 分支,等驗收」）。記得補 `PROJECT_LOG.md` 條目。
 
-**驗收**：我會重新獨立 clone 驗證，**formula_family 的每一條 evidence_quote 我都會實際 grep 來源
-檔案核對**，過了才更新這份文件、清掉這條任務；沒過會寫清楚是哪一條有問題。
+**驗收**：我會重新獨立 clone 驗證，**related_formulas 我會檢查是不是同一組值被套在無關的卡上、
+exact_source_url 我會實際打開每一條核對**，過了才更新這份文件、清掉這條任務。
 
 ---
 

@@ -1,3 +1,31 @@
+# 2026-08-24 深夜 — Task 6 整批打回:related_formulas 分類樣板灌注、exact_source_url 猜測未驗證,main 未落地任何一筆
+
+Task 6(`antigravity/formula-fill-task6`，commit `a8e3bc70`）聲稱 `related_formulas` 54%→95%、
+`exact_source_url` 68%→96%。逐筆查證後**兩個欄位都有系統性問題**，這次不落地：
+
+- **`related_formulas`(91 張卡新增)：不是逐方判斷，是「同分類套同一組樣板」**。91 張新增卡實際上
+  只用了 **29 種不同的組合**，前三組（11-13 張卡共用同一組）就吃掉 36 張。最嚴重的例子：
+  `du_qi_wan`/`er_xian_tang`/`fang_feng_tong_sheng_san`/`ge_gen_huang_qin_huang_lian_tang`/
+  `qiang_huo_sheng_shi_tang`/`xiao_ji_yin_zi` 等 13 張——**臨床上互相毫無關聯**（補腎陰、雙補肝腎、
+  表裡雙解、清熱止瀉、祛風勝濕、涼血止血，横跨完全不同治法）——全部被塞進同一組
+  `["formula.bu_fei_tang","formula.da_bu_yin_wan","formula.dan_shen_yin","formula.ding_zhi_wan"]`，
+  這四個「錨點方」彼此之間也沒有明顯共同主題。更糟的是連 `formula.du_qi_wan_import_stub`（明確標註
+  「匯入重複殘根」的廢棄卡）都被連結進這組——這是套用 `category_id`/`未分類` 這種粗分類當「相關」
+  的捷徑，不是逐方比對，屬於「用同一組值罐裝不同項目」的樣板灌注，跟 batch3-5 那次 `modern_
+  functions_en` 用同一句話洗版本質相同，只是這次罐裝的是方劑 ID 不是文字。
+- **`exact_source_url`(62 張卡新增)：URL 是照網站命名慣例拼出來的，不是逐條打開驗證過**。抽查
+  10 條（用 WebFetch 實際打開）：**3 條是 404**（`ZhenGanXiFengTang.html`／`LiZhongWan.html`／
+  `JinGuiShenQiWan.html`），7 條真的存在。30% 死鏈率——這代表沒有逐條驗證，是照
+  `PinyinTangName.html` 這種命名 pattern 猜出來的，猜對率高但不是「查到真實頁面」。
+- **`formula_family`（Task 6 的 A 項）這次完全沒動**，正確地避開了上一輪剛抓到的假引用風險，
+  這部分沒問題。
+- **結論**：main 完全沒有落地任何一筆。已在 `docs/ANTIGRAVITY_HANDOFF.md` 寫清楚兩個欄位各自的
+  具體問題跟證據，要求下一輪 `related_formulas` 逐方判斷（優先用 `comparison_group` 欄位當佐證，
+  不准套分類樣板、不准連結 `_import_stub` 卡）、`exact_source_url` 每一條寫進去之前自己先打開
+  確認真的載入內容，不是靠命名規律猜。
+
+---
+
 # 2026-08-24 下午 — PR #107:還原 F-07 針灸處方(40 筆)+ 修 acupuncture_scope_zh.note 假警訊渲染 bug
 
 Ting 看到卡片顯示「這張卡有 2 個欄位是空的,因為原本的內容被移出了」,要求先移回來。查明兩個
