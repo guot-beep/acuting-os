@@ -1,3 +1,17 @@
+# 2026-08-24 Claude — antigravity Batch 7 審核:通過,收下
+
+- **範圍**:止血藥(20)+ 補虛藥·陰(18)+ 活血化瘀藥(24),實際動到 25 筆記錄(commit 宣稱 62,含未變動
+  重疊不算)。這批分支直接長在 Batch 6 落地後的 main 上,沒有過期快照問題,不需要額外的重新套用。
+- **抽查**:`herb.san_qi`/`herb.ren_shen`/`herb.dan_shen` 的 `modern_functions_zh/en`——每一條中文對應
+  各自不同、正確的英文;`herb.ren_shen` 的 `contraindications_zh` 特別完整(十八反/十九畏、American
+  Dragon 血壓閾值),來源引用課件 + American Dragon 網址,不是編的。`condition_tags_en`/`actions_en`/
+  `cautions_zh` 確認零異動。
+- **數字**:`modern_functions_en/zh` 284→309(+25);`contraindications_zh` 271→276(+5,跟指派時算的
+  三類總缺口 2+2+1=5 完全對上)。
+- **驗證**:`build-data.js` PASS;`validate-herb-standard.js` exit 0(E10/E11 都沒跳出來);
+  `check-validation-ratchet.js` PASS;`validate-content-junk.js` PASS。
+- **小提醒**:這批沒有像前幾批一樣附 `PROJECT_LOG.md` 條目,不影響這次驗收,但下次記得補上,習慣要維持。
+
 # 2026-08-24 Claude — antigravity Batch 6 審核:通過,收下
 
 - **範圍**:清熱藥 Resolve Toxicity + Drain Fire 兩類,實際動到 28 味(commit 宣稱 37,含未變動的重疊
