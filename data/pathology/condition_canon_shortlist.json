@@ -63878,10 +63878,155 @@
    "name_en": "Uterine Prolapse",
    "category": "gyn_fertility",
    "icd_hint": "N81.4",
-   "aliases_zh": [],
-   "aliases_en": [],
+   "aliases_zh": [
+    "子宮下垂"
+   ],
+   "aliases_en": [
+    "Prolapsed Uterus"
+   ],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "子宮脫垂是骨盆器官脫垂的一種,指骨盆底肌肉與結締組織支持力減弱,使子宮下降甚至脫出於陰道口外,依脫垂程度分為第一至第四期(第四期為子宮完全外翻);好發於經產婦、停經後婦女及長期腹壓增加者。",
+   "summary_en": "Uterine prolapse is a type of pelvic organ prolapse in which weakening of the pelvic floor muscles and connective tissue support allows the uterus to descend into, or even protrude beyond, the vaginal opening. It is staged from I to IV based on severity, with stage IV representing complete uterine eversion, and is more common in women who have given birth vaginally, postmenopausal women, and those with chronically increased intra-abdominal pressure.",
+   "western_context_zh": "西醫處理依脫垂程度與症狀嚴重度分階段:輕度可先以骨盆底肌肉訓練(凱格爾運動)、體重控制與避免用力增加腹壓等保守處置觀察,中重度或影響排尿排便功能者可考慮子宮托或轉診婦科評估手術治療;合併泌尿道症狀者需同步評估腎功能。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western management is staged by severity and symptom burden: mild prolapse is often managed conservatively with pelvic floor muscle training (Kegel exercises), weight management, and avoiding activities that raise intra-abdominal pressure, while moderate-to-severe prolapse or prolapse affecting bladder/bowel function may warrant a pessary or referral for surgical evaluation; patients with urinary symptoms are also assessed for renal function. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "主要機轉為骨盆底支持結構(子宮薦韌帶、主韌帶、提肛肌群)因分娩損傷、神經肌肉功能障礙、結締組織退化(停經後雌激素降低)或慢性腹壓增加(慢性咳嗽、便秘、肥胖、重複提重物)而失去支撐力,使子宮沿陰道軸向下移位;診斷以骨盆器官脫垂定量分期系統(POP-Q)評估脫垂最遠點相對於處女膜的位置,分為第一期(脫垂點在處女膜上方1公分以上)至第四期(完全外翻)。",
+   "western_pathology_en": "The primary mechanism is loss of support from the pelvic floor structures — the uterosacral and cardinal ligaments and levator ani muscle group — due to birth-related trauma, neuromuscular dysfunction, connective tissue degeneration from postmenopausal estrogen decline, or chronic increases in intra-abdominal pressure (chronic cough, constipation, obesity, repeated heavy lifting), allowing the uterus to descend along the vaginal axis. Diagnosis uses the Pelvic Organ Prolapse Quantification (POP-Q) system, which stages prolapse from Stage I (leading edge more than 1 cm above the hymen) to Stage IV (complete eversion) based on the position of the most distal point relative to the hymen.",
+   "red_flags_zh": [
+    "完全性子宮脫垂合併無法解釋的少尿或無尿,需警覺雙側輸尿管受壓致阻塞性腎病變,應緊急轉診泌尿科或婦科",
+    "脫垂組織出現潰瘍、大量出血或無法回納,需儘速就醫處理",
+    "合併發燒、下腹劇痛或膿樣分泌物,提示可能感染需緊急評估",
+    "急性尿滯留或反覆泌尿道感染合併脫垂惡化,需及早轉診評估腎功能"
+   ],
+   "red_flags_en": [
+    "Complete uterine prolapse with unexplained oliguria or anuria should raise concern for bilateral ureteral obstruction and obstructive uropathy, warranting urgent urology or gynecology referral",
+    "Ulceration, heavy bleeding, or inability to reduce the prolapsed tissue requires prompt medical attention",
+    "Fever, severe lower abdominal pain, or purulent discharge suggests possible infection requiring urgent evaluation",
+    "Acute urinary retention or recurrent urinary tract infections accompanying worsening prolapse warrant early referral for renal function assessment"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "經陰道生產次數多",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Cleveland Clinic: Pelvic Organ Prolapse"
+    },
+    {
+     "factor": "停經後雌激素降低",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Cleveland Clinic: Uterine Prolapse"
+    },
+    {
+     "factor": "肥胖",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Cleveland Clinic: Pelvic Organ Prolapse"
+    },
+    {
+     "factor": "慢性咳嗽或便秘致長期腹壓增加",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Cleveland Clinic: Pelvic Organ Prolapse"
+    },
+    {
+     "factor": "高齡",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Cleveland Clinic: Uterine Prolapse"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Multiple vaginal deliveries",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Cleveland Clinic: Pelvic Organ Prolapse"
+    },
+    {
+     "factor": "Postmenopausal estrogen decline",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Cleveland Clinic: Uterine Prolapse"
+    },
+    {
+     "factor": "Obesity",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Cleveland Clinic: Pelvic Organ Prolapse"
+    },
+    {
+     "factor": "Chronic cough or constipation causing sustained raised intra-abdominal pressure",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Cleveland Clinic: Pelvic Organ Prolapse"
+    },
+    {
+     "factor": "Older age",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Cleveland Clinic: Uterine Prolapse"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "可能作為輕度脫垂患者骨盆底功能調理的輔助手段,但無法使已脫垂之子宮解剖復位,中重度脫垂仍需轉診評估子宮托或手術",
+    "precautions": "會陰及下腹部穴位針刺前須確認脫垂組織是否有潰瘍或感染,避免直接刺激受損黏膜",
+    "co_management": "若病人已配戴子宮托或安排手術評估,如需併用針灸應聯絡原婦科主治醫師",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "May serve as an adjunct for pelvic floor conditioning in mild prolapse, but cannot anatomically reposition an already prolapsed uterus; moderate-to-severe prolapse still requires referral for pessary or surgical evaluation",
+    "precautions": "Before needling perineal or lower abdominal points, confirm whether prolapsed tissue shows ulceration or infection and avoid direct stimulation of damaged mucosa",
+    "co_management": "If the patient is already fitted with a pessary or scheduled for surgical evaluation, contact the prescribing gynecologist before adding acupuncture",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.yin_ting"
+   ],
+   "related_patterns": [
+    "pattern.spleen_qi_sinking",
+    "pattern.kidney_qi_not_firm"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "Cleveland Clinic: Prolapsed Uterus — Stages, Symptoms, Treatment & Surgery (my.clevelandclinic.org/health/diseases/16030-uterine-prolapse, retrieved 2026-08)"
+    ],
+    "summary_en": [
+     "Cleveland Clinic: Prolapsed Uterus — Stages, Symptoms, Treatment & Surgery (my.clevelandclinic.org/health/diseases/16030-uterine-prolapse, retrieved 2026-08)"
+    ],
+    "western_context_zh": [
+     "Cleveland Clinic: Pelvic Organ Prolapse — Types, Causes & Treatment (my.clevelandclinic.org/health/diseases/24046-pelvic-organ-prolapse, retrieved 2026-08)"
+    ],
+    "western_context_en": [
+     "Cleveland Clinic: Pelvic Organ Prolapse — Types, Causes & Treatment (my.clevelandclinic.org/health/diseases/24046-pelvic-organ-prolapse, retrieved 2026-08)"
+    ],
+    "western_pathology_zh": [
+     "PMC: Pelvic Organ Prolapse Quantification System (POP-Q) — a new era in pelvic prolapse staging (PMC3056425, retrieved 2026-08)"
+    ],
+    "western_pathology_en": [
+     "PMC: Pelvic Organ Prolapse Quantification System (POP-Q) — a new era in pelvic prolapse staging (PMC3056425, retrieved 2026-08)"
+    ],
+    "red_flags_zh": [
+     "PMC: Total uterine prolapse — a rare cause of chronic obstructive uropathy associated with renal dysfunction (PMC10148173, retrieved 2026-08); PMC: Bilateral hydroureteronephrosis with infection due to uterine prolapse (PMC7060291, retrieved 2026-08)"
+    ],
+    "red_flags_en": [
+     "PMC: Total uterine prolapse — a rare cause of chronic obstructive uropathy associated with renal dysfunction (PMC10148173, retrieved 2026-08); PMC: Bilateral hydroureteronephrosis with infection due to uterine prolapse (PMC7060291, retrieved 2026-08)"
+    ],
+    "risk_factors_zh": [
+     "Cleveland Clinic: Pelvic Organ Prolapse; Cleveland Clinic: Uterine Prolapse"
+    ],
+    "risk_factors_en": [
+     "Cleveland Clinic: Pelvic Organ Prolapse; Cleveland Clinic: Uterine Prolapse"
+    ],
+    "aliases_zh": [
+     "Cleveland Clinic: Uterine Prolapse (common lay term)"
+    ],
+    "aliases_en": [
+     "Cleveland Clinic: Prolapsed Uterus (common lay term)"
+    ]
+   }
   },
   {
    "id": "cond.pelvic_organ_prolapse",
@@ -63917,7 +64062,143 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "產後出血指分娩後24小時內失血量達1000毫升以上或伴隨低血容量徵象(原發性產後出血),也包含分娩24小時後至產後12週內的異常大量出血(續發性產後出血);最常見原因為子宮收縮乏力,是全球孕產婦死亡的主要原因之一。",
+   "summary_en": "Postpartum hemorrhage (PPH) is defined as cumulative blood loss of 1000 mL or more, or blood loss accompanied by signs of hypovolemia, within 24 hours of birth (primary PPH); secondary PPH refers to abnormal heavy bleeding occurring more than 24 hours after delivery and up to 12 weeks postpartum. Uterine atony is the most common cause, and PPH remains a leading cause of maternal mortality worldwide.",
+   "western_context_zh": "西醫處理著重於預防(第三產程主動處置:給予子宮收縮劑、子宮按摩、臍帶牽引)與出血後的分級處置,包括子宮收縮劑、子宮按摩、必要時宮腔內球囊填塞、氨甲環酸(tranexamic acid)給藥,嚴重時安排介入性放射栓塞或手術止血,並密切監測生命徵象與凝血功能。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western management emphasizes prevention through active management of the third stage of labor (uterotonic administration, uterine massage, controlled cord traction) and a stepwise response to bleeding — uterotonics, uterine massage, intrauterine balloon tamponade when needed, tranexamic acid, and escalation to interventional radiology or surgery for refractory bleeding — with close monitoring of vital signs and coagulation status. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "主要機轉可歸納為「4T」:子宮收縮乏力(Tone,最常見,約占七至八成)、產道或子宮頸裂傷(Trauma)、胎盤組織殘留或植入異常(Tissue)、凝血功能障礙(Thrombin);子宮收縮乏力使胎盤剝離處血管無法有效壓迫止血,導致持續出血。診斷依失血量估計(目測常低估,建議秤重或收集量測)、生命徵象變化及子宮觸診鬆軟程度綜合判斷,並以超音波評估是否有胎盤組織殘留。",
+   "western_pathology_en": "The mechanisms are commonly summarized as the \"4 Ts\": uterine atony (Tone — the most common cause, roughly 70-80% of cases), genital tract lacerations (Trauma), retained placental tissue or abnormal placentation (Tissue), and coagulopathy (Thrombin). In uterine atony, the myometrium fails to contract adequately around the vessels at the placental implantation site, so bleeding continues unchecked. Diagnosis relies on quantified blood loss estimation (visual estimation commonly underestimates loss; weighing or calibrated collection is preferred), vital sign trends, palpation of a soft/boggy uterus, and ultrasound to assess for retained products of conception.",
+   "red_flags_zh": [
+    "產後大量出血合併頭暈、心悸、冒冷汗或意識改變,提示低血容性休克,需立即急救處置",
+    "惡露突然由減少轉為大量鮮紅出血或排出大於雞蛋大小血塊,提示可能有胎盤組織殘留",
+    "產後持續下腹劇痛合併發燒,需警覺子宮內感染或子宮破裂",
+    "血壓下降、心跳加快、意識混亂或暈厥為休克徵象,屬產科急症需緊急送醫"
+   ],
+   "red_flags_en": [
+    "Heavy postpartum bleeding with dizziness, palpitations, cold sweats, or altered mental status suggests hypovolemic shock and requires immediate emergency care",
+    "Lochia that suddenly turns from tapering to heavy bright red bleeding, or passage of clots larger than an egg, suggests retained placental tissue",
+    "Persistent severe lower abdominal pain with fever after delivery raises concern for uterine infection or uterine rupture",
+    "Falling blood pressure, rising heart rate, confusion, or fainting are signs of shock and constitute an obstetric emergency requiring urgent transport"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "多胎妊娠",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "ACOG Practice Bulletin: Postpartum Hemorrhage"
+    },
+    {
+     "factor": "產程延長或引產",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "ACOG Practice Bulletin: Postpartum Hemorrhage"
+    },
+    {
+     "factor": "巨嬰或羊水過多致子宮過度擴張",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "ACOG Practice Bulletin: Postpartum Hemorrhage"
+    },
+    {
+     "factor": "前置胎盤或植入性胎盤病史",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "ACOG Practice Bulletin: Postpartum Hemorrhage"
+    },
+    {
+     "factor": "曾有產後出血病史",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "ACOG Practice Bulletin: Postpartum Hemorrhage"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Multiple gestation",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "ACOG Practice Bulletin: Postpartum Hemorrhage"
+    },
+    {
+     "factor": "Prolonged labor or induction",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "ACOG Practice Bulletin: Postpartum Hemorrhage"
+    },
+    {
+     "factor": "Uterine overdistension from macrosomia or polyhydramnios",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "ACOG Practice Bulletin: Postpartum Hemorrhage"
+    },
+    {
+     "factor": "History of placenta previa or abnormal placentation",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "ACOG Practice Bulletin: Postpartum Hemorrhage"
+    },
+    {
+     "factor": "Prior history of postpartum hemorrhage",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "ACOG Practice Bulletin: Postpartum Hemorrhage"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "不可用於急性產後出血的止血處置,此為產科急症,針灸並非適當的第一線介入",
+    "precautions": "急性出血期間應以緊急醫療處置為優先,不應以針灸延遲轉診",
+    "co_management": "若病人已由產科團隊處置中,任何輔助介入均須先聯絡主治醫師確認生命徵象穩定與許可",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "Not for stopping acute postpartum hemorrhage; this is an obstetric emergency for which acupuncture is not an appropriate first-line intervention",
+    "precautions": "During active bleeding, emergency medical care takes priority and acupuncture must not delay referral",
+    "co_management": "If the patient is already being managed by an obstetric team, any adjunct intervention must first be confirmed with the treating physician once vital signs are stable and it is deemed appropriate",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.chan_hou_xue_yun",
+    "tdis.e_lu_bu_jue"
+   ],
+   "related_patterns": [
+    "pattern.qi_deficiency",
+    "pattern.uterus_blood_stasis"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "ACOG Practice Bulletin: Postpartum Hemorrhage (acog.org/clinical/clinical-guidance/practice-bulletin/articles/2017/10/postpartum-hemorrhage, retrieved 2026-08)"
+    ],
+    "summary_en": [
+     "ACOG Practice Bulletin: Postpartum Hemorrhage (acog.org/clinical/clinical-guidance/practice-bulletin/articles/2017/10/postpartum-hemorrhage, retrieved 2026-08)"
+    ],
+    "western_context_zh": [
+     "Medscape: ACOG Updates Recommendations on Postpartum Hemorrhage (medscape.com/viewarticle/886125, retrieved 2026-08)"
+    ],
+    "western_context_en": [
+     "Medscape: ACOG Updates Recommendations on Postpartum Hemorrhage (medscape.com/viewarticle/886125, retrieved 2026-08)"
+    ],
+    "western_pathology_zh": [
+     "Medscape: Postpartum Hemorrhage — Overview, Etiology, Diagnosis (emedicine.medscape.com/article/275038-overview, retrieved 2026-08)"
+    ],
+    "western_pathology_en": [
+     "Medscape: Postpartum Hemorrhage — Overview, Etiology, Diagnosis (emedicine.medscape.com/article/275038-overview, retrieved 2026-08)"
+    ],
+    "red_flags_zh": [
+     "Hoag: Postpartum Bleeding Red Flags You Shouldn't Ignore (hoag.org/articles/postpartum-bleeding-red-flags-you-shouldnt-ignore, retrieved 2026-08); Kaiser Permanente: Postpartum Hemorrhage Care Instructions (retrieved 2026-08)"
+    ],
+    "red_flags_en": [
+     "Hoag: Postpartum Bleeding Red Flags You Shouldn't Ignore (hoag.org/articles/postpartum-bleeding-red-flags-you-shouldnt-ignore, retrieved 2026-08); Kaiser Permanente: Postpartum Hemorrhage Care Instructions (retrieved 2026-08)"
+    ],
+    "risk_factors_zh": [
+     "ACOG Practice Bulletin: Postpartum Hemorrhage"
+    ],
+    "risk_factors_en": [
+     "ACOG Practice Bulletin: Postpartum Hemorrhage"
+    ]
+   }
   },
   {
    "id": "cond.placenta_previa",
@@ -63953,7 +64234,143 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "早產指懷孕滿20週但未滿37週即出現規律子宮收縮並伴隨子宮頸變化(擴張或變薄),可能導致早產兒出生;是新生兒發病與死亡的重要原因,常見於有早產病史、多胎妊娠或子宮頸機能不全的孕婦。",
+   "summary_en": "Preterm labor is defined as regular uterine contractions accompanied by cervical change (dilation or effacement) occurring after 20 weeks but before 37 weeks of gestation, and it can lead to preterm birth. It is a major cause of neonatal morbidity and mortality and is more common in women with a prior preterm birth, multiple gestation, or cervical insufficiency.",
+   "western_context_zh": "西醫處理以確認子宮頸變化與胎兒狀況為主,包括經陰道超音波測量子宮頸長度、胎兒纖維黏連蛋白(fetal fibronectin)檢測評估早產風險,必要時給予促胎肺成熟類固醇、硫酸鎂神經保護,以及短期抑制宮縮藥物爭取轉診時間,依風險程度安排住院觀察或轉診至具新生兒加護能力之醫療院所。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western management focuses on assessing cervical change and fetal status through transvaginal ultrasound measurement of cervical length and fetal fibronectin testing to estimate risk, and may include antenatal corticosteroids to accelerate fetal lung maturity, magnesium sulfate for neuroprotection, and short-term tocolytics to buy time for transfer, with hospital observation or referral to a facility with neonatal intensive care capability based on risk level. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "早產的病理機轉多元,常見路徑包括子宮胎盤缺血或出血誘發前列腺素釋放、母體或胎兒生殖道上行性感染引發發炎反應刺激子宮收縮、子宮過度擴張(多胎妊娠或羊水過多)、以及母體或胎兒下視丘-腦垂體-腎上腺軸提早活化;診斷依規律子宮收縮頻率(每小時六次以上)合併子宮頸擴張或變薄程度判斷,並輔以經陰道超音波子宮頸長度測量與胎兒纖維黏連蛋白檢測評估早產風險。",
+   "western_pathology_en": "The pathophysiology of preterm labor is heterogeneous, with common pathways including uteroplacental ischemia or hemorrhage triggering prostaglandin release, ascending genitourinary tract infection provoking an inflammatory cascade that stimulates uterine contractions, uterine overdistension (multiple gestation or polyhydramnios), and premature activation of the maternal or fetal hypothalamic-pituitary-adrenal axis. Diagnosis is based on the frequency of regular contractions (six or more per hour) combined with the degree of cervical dilation or effacement, supported by transvaginal ultrasound cervical length measurement and fetal fibronectin testing to estimate risk.",
+   "red_flags_zh": [
+    "規律宮縮每小時六次以上合併陰道出血或大量透明液體流出(疑似破水),需立即就醫",
+    "劇烈持續性腹痛不隨休息緩解,需排除胎盤早期剝離等急症",
+    "胎動明顯減少或消失,為胎兒窘迫警訊需緊急評估",
+    "發燒合併宮縮或分泌物異味,提示可能絨毛膜羊膜炎需緊急處理"
+   ],
+   "red_flags_en": [
+    "Regular contractions occurring six or more times per hour with vaginal bleeding or a gush of clear fluid (suspected rupture of membranes) require immediate evaluation",
+    "Severe, constant abdominal pain that does not ease with rest should raise concern for placental abruption",
+    "Markedly decreased or absent fetal movement is a warning sign of fetal distress requiring urgent assessment",
+    "Fever with contractions or foul-smelling discharge suggests possible chorioamnionitis and needs urgent management"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "曾有早產病史",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Cleveland Clinic: Preterm Labor"
+    },
+    {
+     "factor": "多胎妊娠",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Cleveland Clinic: Preterm Labor"
+    },
+    {
+     "factor": "子宮頸長度過短",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Merck Manual: Preterm Labor"
+    },
+    {
+     "factor": "孕期吸菸",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Cleveland Clinic: Preterm Labor"
+    },
+    {
+     "factor": "生殖泌尿道感染",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "PMC: Epidemiology and Related Risk Factors of Preterm Labor"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Prior preterm birth",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Cleveland Clinic: Preterm Labor"
+    },
+    {
+     "factor": "Multiple gestation",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Cleveland Clinic: Preterm Labor"
+    },
+    {
+     "factor": "Short cervical length",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Merck Manual: Preterm Labor"
+    },
+    {
+     "factor": "Smoking during pregnancy",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Cleveland Clinic: Preterm Labor"
+    },
+    {
+     "factor": "Genitourinary tract infection",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "PMC: Epidemiology and Related Risk Factors of Preterm Labor"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "不適用於治療或預防早產本身,懷疑早產徵兆時應以產科緊急評估為優先",
+    "precautions": "懷孕期間傳統上避免針刺特定被認為可能有催產作用的穴位(如合谷、三陰交、崑崙等),此為臨床經驗性的執業範圍判斷,並非已證實的療效聲明",
+    "co_management": "若孕婦已由產科團隊監測或處置早產徵兆,任何輔助介入均須先聯絡主治醫師確認目前妊娠狀況與許可",
+    "evidence": "clinical_judgment",
+    "source": "Clinical judgment — standard TCM obstetric precaution against needling points classically avoided in pregnancy (e.g., LI4, SP6, BL60) due to theoretical uterine-stimulating effect; scope-of-practice inference, not an efficacy claim"
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "Not applicable for treating or preventing preterm labor itself; suspected preterm labor requires prompt obstetric evaluation as first priority",
+    "precautions": "During pregnancy, points classically avoided due to theoretical uterine-stimulating effects (e.g., LI4, SP6, BL60) are traditionally not needled — this is a scope-of-practice inference, not an established efficacy claim",
+    "co_management": "If the patient is already being monitored or managed by an obstetric team for signs of preterm labor, contact the prescribing physician before adding any adjunct intervention",
+    "evidence": "clinical_judgment",
+    "source": "Clinical judgment — standard TCM obstetric precaution against needling points classically avoided in pregnancy (e.g., LI4, SP6, BL60) due to theoretical uterine-stimulating effect; scope-of-practice inference, not an efficacy claim"
+   },
+   "related_eastern_diseases": [
+    "tdis.tai_dong_bu_an"
+   ],
+   "related_patterns": [
+    "pattern.kidney_qi_not_firm",
+    "pattern.spleen_qi_deficiency",
+    "pattern.chong_ren_deficiency"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "Mayo Clinic: Preterm labor — Symptoms and causes (mayoclinic.org/diseases-conditions/preterm-labor/symptoms-causes/syc-20376842, retrieved 2026-08)"
+    ],
+    "summary_en": [
+     "Mayo Clinic: Preterm labor — Symptoms and causes (mayoclinic.org/diseases-conditions/preterm-labor/symptoms-causes/syc-20376842, retrieved 2026-08)"
+    ],
+    "western_context_zh": [
+     "ACOG: Preterm Labor and Birth FAQ (acog.org/womens-health/faqs/preterm-labor-and-birth, retrieved 2026-08)"
+    ],
+    "western_context_en": [
+     "ACOG: Preterm Labor and Birth FAQ (acog.org/womens-health/faqs/preterm-labor-and-birth, retrieved 2026-08)"
+    ],
+    "western_pathology_zh": [
+     "Merck Manual: Preterm Labor (merckmanuals.com/professional/gynecology-and-obstetrics/antenatal-complications/preterm-labor, retrieved 2026-08); PMC: Epidemiology and Related Risk Factors of Preterm Labor (PMC5325899, retrieved 2026-08)"
+    ],
+    "western_pathology_en": [
+     "Merck Manual: Preterm Labor (merckmanuals.com/professional/gynecology-and-obstetrics/antenatal-complications/preterm-labor, retrieved 2026-08); PMC: Epidemiology and Related Risk Factors of Preterm Labor (PMC5325899, retrieved 2026-08)"
+    ],
+    "red_flags_zh": [
+     "ACOG: Preterm Labor and Birth FAQ (acog.org/womens-health/faqs/preterm-labor-and-birth, retrieved 2026-08); March of Dimes: Signs and symptoms of preterm labor (retrieved 2026-08)"
+    ],
+    "red_flags_en": [
+     "ACOG: Preterm Labor and Birth FAQ (acog.org/womens-health/faqs/preterm-labor-and-birth, retrieved 2026-08); March of Dimes: Signs and symptoms of preterm labor (retrieved 2026-08)"
+    ],
+    "risk_factors_zh": [
+     "Cleveland Clinic: Preterm Labor; Merck Manual: Preterm Labor; PMC: Epidemiology and Related Risk Factors of Preterm Labor (PMC5325899)"
+    ],
+    "risk_factors_en": [
+     "Cleveland Clinic: Preterm Labor; Merck Manual: Preterm Labor; PMC: Epidemiology and Related Risk Factors of Preterm Labor (PMC5325899)"
+    ]
+   }
   },
   {
    "id": "cond.gestational_diabetes",
@@ -63977,7 +64394,143 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "停經後出血指停經(最後一次月經滿12個月以上)後又出現陰道出血,並非正常生理現象,任何量的出血都需要就醫評估;最常見於停經後陰道或子宮內膜萎縮,但也可能與息肉、增生或惡性腫瘤有關,好發於50歲以上停經婦女。",
+   "summary_en": "Postmenopausal bleeding is any vaginal bleeding occurring after menopause (defined as 12 or more months without a period) and is never considered normal, regardless of how light it is. It is most often due to atrophy of the vaginal or endometrial lining, but can also result from polyps, endometrial hyperplasia, or malignancy, and typically affects women over age 50.",
+   "western_context_zh": "西醫處理以婦科評估為主,包含骨盆腔檢查、經陰道超音波測量子宮內膜厚度,必要時安排子宮內膜切片、子宮鏡檢查以排除子宮內膜增生或惡性腫瘤;確診後依病因轉診婦科腫瘤或安排賀爾蒙調整。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western management typically begins with a gynecologic evaluation including a pelvic exam and transvaginal ultrasound to measure endometrial thickness, followed by endometrial biopsy or hysteroscopy when indicated to rule out hyperplasia or malignancy; referral to gynecologic oncology or hormonal management follows once a cause is identified. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "常見機轉包括停經後雌激素驟降造成陰道與子宮內膜組織萎縮、變薄、微血管脆弱易破;其他病因包括子宮內膜息肉或肌瘤造成局部血管異常、子宮內膜增生(雌激素相對過多刺激內膜增厚)、荷爾蒙補充治療或泰莫西芬(tamoxifen)藥物影響,以及子宮內膜癌或子宮頸癌等惡性病變;診斷依經陰道超音波測量內膜厚度(通常以≥4-5mm為切點),配合子宮內膜切片或子宮鏡取樣確認組織學診斷。",
+   "western_pathology_en": "Common mechanisms include postmenopausal estrogen decline causing atrophy and thinning of the vaginal and endometrial tissue with fragile, easily disrupted microvasculature; other causes include endometrial polyps or fibroids with abnormal local vasculature, endometrial hyperplasia from relative estrogen stimulation, hormone therapy or tamoxifen effects, and malignancies such as endometrial or cervical cancer. Diagnosis relies on transvaginal ultrasound measurement of endometrial thickness (commonly using a ≥4-5mm cutoff to prompt further workup), combined with endometrial biopsy or hysteroscopic sampling for histologic confirmation.",
+   "red_flags_zh": [
+    "任何停經後陰道出血都必須就醫評估,不可自行觀察等待,以排除子宮內膜癌",
+    "大量出血合併頭暈、心悸或暈厥需視為急症立即送醫",
+    "出血合併持續骨盆腔悶痛或不明原因體重減輕,需提高惡性腫瘤警覺並儘速轉診",
+    "出血伴隨異味分泌物或發燒,需考慮子宮內膜感染,應及早就醫"
+   ],
+   "red_flags_en": [
+    "Any postmenopausal vaginal bleeding warrants prompt medical evaluation rather than watchful waiting, to rule out endometrial cancer",
+    "Heavy bleeding with dizziness, palpitations, or fainting should be treated as an emergency requiring immediate care",
+    "Bleeding accompanied by persistent pelvic discomfort or unexplained weight loss should raise suspicion for malignancy and prompt urgent referral",
+    "Bleeding with foul-smelling discharge or fever suggests possible endometrial infection and needs timely evaluation"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "肥胖(周邊脂肪組織轉化雌激素增加)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Cleveland Clinic: Postmenopausal Bleeding"
+    },
+    {
+     "factor": "未曾生育",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Cleveland Clinic: Postmenopausal Bleeding"
+    },
+    {
+     "factor": "長期使用未加黃體素之雌激素補充治療",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Mayo Clinic: Bleeding after menopause"
+    },
+    {
+     "factor": "服用泰莫西芬(tamoxifen)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Mayo Clinic: Bleeding after menopause"
+    },
+    {
+     "factor": "糖尿病",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Cleveland Clinic: Postmenopausal Bleeding"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Obesity (increased peripheral conversion of androgens to estrogen)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Cleveland Clinic: Postmenopausal Bleeding"
+    },
+    {
+     "factor": "Nulliparity",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Cleveland Clinic: Postmenopausal Bleeding"
+    },
+    {
+     "factor": "Long-term unopposed estrogen therapy",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Mayo Clinic: Bleeding after menopause"
+    },
+    {
+     "factor": "Tamoxifen use",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Mayo Clinic: Bleeding after menopause"
+    },
+    {
+     "factor": "Diabetes",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Cleveland Clinic: Postmenopausal Bleeding"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "不可用於治療或替代停經後出血的病因評估,針灸無法排除或治療子宮內膜癌等惡性病變",
+    "precautions": "病人尚未完成婦科評估前,不應以針灸延遲就醫;下腹部與腰薦部穴位須謹慎評估後使用",
+    "co_management": "若病人已由婦科醫師安排檢查或治療中,如需併用針灸應聯絡原主治醫師確認目前診斷與治療階段",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "Not for treating or substituting for the diagnostic workup of postmenopausal bleeding; acupuncture cannot rule out or treat malignancies such as endometrial cancer",
+    "precautions": "Acupuncture should not delay medical evaluation before a gynecologic workup is completed; lower abdominal and lumbosacral points require careful assessment before use",
+    "co_management": "If the patient is already undergoing gynecologic workup or treatment, contact the prescribing physician before adding acupuncture to confirm the current diagnosis and treatment stage",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.beng_lou"
+   ],
+   "related_patterns": [
+    "pattern.kidney_yin_deficiency",
+    "pattern.blood_heat",
+    "pattern.blood_stasis"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "Mayo Clinic: Bleeding after menopause: A concern? (mayoclinic.org/diseases-conditions/menopause/expert-answers/bleeding-after-menopause/faq-20058396, retrieved 2026-08)"
+    ],
+    "summary_en": [
+     "Mayo Clinic: Bleeding after menopause: A concern? (mayoclinic.org/diseases-conditions/menopause/expert-answers/bleeding-after-menopause/faq-20058396, retrieved 2026-08)"
+    ],
+    "western_context_zh": [
+     "Cleveland Clinic: Postmenopausal Bleeding — Causes, Diagnosis & Treatment (my.clevelandclinic.org/health/diseases/21549-postmenopausal-bleeding, retrieved 2026-08)"
+    ],
+    "western_context_en": [
+     "Cleveland Clinic: Postmenopausal Bleeding — Causes, Diagnosis & Treatment (my.clevelandclinic.org/health/diseases/21549-postmenopausal-bleeding, retrieved 2026-08)"
+    ],
+    "western_pathology_zh": [
+     "Mayo Clinic Proceedings: Diagnostic Options for Assessment of Postmenopausal Bleeding (mayoclinicproceedings.org/article/S0025-6196(11)63335-1/fulltext, retrieved 2026-08)"
+    ],
+    "western_pathology_en": [
+     "Mayo Clinic Proceedings: Diagnostic Options for Assessment of Postmenopausal Bleeding (mayoclinicproceedings.org/article/S0025-6196(11)63335-1/fulltext, retrieved 2026-08)"
+    ],
+    "red_flags_zh": [
+     "Yale Medicine: Postmenopausal Bleeding Fact Sheet; PMC: First-time postmenopausal bleeding as a clinical marker of long-term cancer risk (PMC7000815) (retrieved 2026-08)"
+    ],
+    "red_flags_en": [
+     "Yale Medicine: Postmenopausal Bleeding Fact Sheet; PMC: First-time postmenopausal bleeding as a clinical marker of long-term cancer risk (PMC7000815) (retrieved 2026-08)"
+    ],
+    "risk_factors_zh": [
+     "Cleveland Clinic: Postmenopausal Bleeding; Mayo Clinic: Bleeding after menopause"
+    ],
+    "risk_factors_en": [
+     "Cleveland Clinic: Postmenopausal Bleeding; Mayo Clinic: Bleeding after menopause"
+    ]
+   }
   },
   {
    "id": "cond.cervical_insufficiency",
@@ -97659,7 +98212,131 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "皮肌炎是一種自體免疫性發炎性肌病,特徵為對稱性近端肌肉無力合併特徵性皮膚病灶(如眼瞼周圍紫紅色heliotrope疹、手指關節伸側Gottron丘疹),可侵犯食道、肺臟及心臟等其他器官,成人病例與惡性腫瘤相關性較高,好發於40至60歲成人及5至15歲兒童。",
+   "summary_en": "Dermatomyositis is an autoimmune inflammatory myopathy characterized by symmetric proximal muscle weakness together with characteristic skin findings, such as a violet (heliotrope) rash around the eyelids and Gottron papules over the extensor surfaces of the finger joints. It can also involve the esophagus, lungs, and heart, and adult-onset disease carries an increased association with underlying malignancy. It most commonly affects adults aged 40-60 and children aged 5-15.",
+   "western_context_zh": "西醫處理以風濕免疫科評估為主,包括肌肉酵素檢測、肌電圖、肌肉切片及自體抗體檢測(如anti-Jo-1、anti-MDA5)確立診斷與亞型,成人確診後常規安排惡性腫瘤篩檢;治療以類固醇及免疫抑制劑控制發炎為主,合併間質性肺病者需轉診胸腔科密切追蹤肺功能。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western management involves rheumatology evaluation with muscle enzyme testing, electromyography, muscle biopsy, and myositis-specific autoantibody testing (e.g., anti-Jo-1, anti-MDA5) to confirm the diagnosis and subtype; adult-onset cases routinely undergo age-appropriate malignancy screening. Treatment centers on corticosteroids and immunosuppressive agents to control inflammation, and patients with interstitial lung disease are referred to pulmonology for close monitoring of lung function. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "病理機轉主要為免疫媒介的微血管病變,補體沉積於肌肉及皮膚血管壁,合併第一型干擾素訊息路徑活化,導致肌纖維周邊微血管受損、肌纖維萎縮及發炎細胞浸潤;診斷依對稱性近端肌無力合併特徵性皮疹之臨床表現、血清肌酸激酶(CK)升高、肌電圖顯示肌病變化,並以肌肉切片或皮膚切片確診,近年亦可透過肌炎特異性抗體(如anti-Mi-2、anti-MDA5、anti-TIF1γ)輔助分型與預後評估。",
+   "western_pathology_en": "The underlying pathology is an immune-mediated microangiopathy in which complement deposits in the vasculature of muscle and skin, together with activation of the type I interferon signaling pathway, damage the perifascicular capillaries and lead to muscle fiber atrophy and inflammatory infiltration. Diagnosis is based on the clinical picture of symmetric proximal muscle weakness with the characteristic rash, elevated serum creatine kinase (CK), electromyographic evidence of a myopathic pattern, and confirmation by muscle or skin biopsy; myositis-specific autoantibodies (e.g., anti-Mi-2, anti-MDA5, anti-TIF1-gamma) increasingly help with subtyping and prognosis.",
+   "red_flags_zh": [
+    "快速惡化的呼吸困難、乾咳或血氧下降,需警覺急性間質性肺病或肺纖維化進展,屬呼吸系統急症",
+    "合併明顯體重減輕、不明原因貧血或特定部位持續疼痛,需提高警覺並安排年齡相符之惡性腫瘤篩檢",
+    "吞嚥困難合併嗆咳或體重下降,需警覺食道肌肉受累致吸入性肺炎風險",
+    "anti-MDA5抗體陽性合併皮膚潰瘍或快速進行性肺病變者預後較差,需儘速轉診風濕免疫科積極處置"
+   ],
+   "red_flags_en": [
+    "Rapidly worsening shortness of breath, dry cough, or falling oxygen saturation should raise concern for acute interstitial lung disease or progressive pulmonary fibrosis, a respiratory emergency",
+    "Notable unintentional weight loss, unexplained anemia, or persistent localized pain warrants heightened suspicion and age-appropriate malignancy screening given the disease's cancer association",
+    "Difficulty swallowing with choking or weight loss should raise concern for esophageal muscle involvement and aspiration risk",
+    "Anti-MDA5 antibody positivity with skin ulceration or rapidly progressive lung disease carries a worse prognosis and warrants prompt rheumatology referral for aggressive management"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "女性",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Mayo Clinic: Dermatomyositis"
+    },
+    {
+     "factor": "年齡40至60歲或兒童5至15歲",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Mayo Clinic: Dermatomyositis"
+    },
+    {
+     "factor": "anti-Jo-1或anti-MDA5等肌炎特異性抗體陽性",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "PMC: Factors Associated with Interstitial Lung Disease in PM/DM"
+    },
+    {
+     "factor": "合併惡性腫瘤",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "PMC: Incidence and impact of interstitial lung disease and malignancy in PM/DM"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Female sex",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Mayo Clinic: Dermatomyositis"
+    },
+    {
+     "factor": "Age 40-60 in adults, or 5-15 in children",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Mayo Clinic: Dermatomyositis"
+    },
+    {
+     "factor": "Positive myositis-specific autoantibodies such as anti-Jo-1 or anti-MDA5",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "PMC: Factors Associated with Interstitial Lung Disease in PM/DM"
+    },
+    {
+     "factor": "Coexisting malignancy",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "PMC: Incidence and impact of interstitial lung disease and malignancy in PM/DM"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "可能作為肌肉痠痛、關節不適等伴隨症狀之輔助緩解,但無法控制皮肌炎的自體免疫發炎過程或替代類固醇/免疫抑制劑治療",
+    "precautions": "急性肌肉發炎期或皮膚病灶(如潰瘍)部位應避免直接針刺;免疫抑制治療中病人須注意感染風險與凝血功能",
+    "co_management": "病人多由風濕免疫科長期追蹤並使用類固醇或免疫抑制劑,任何輔助介入應聯絡原主治醫師,不可建議自行減藥或停藥",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "May serve as an adjunct to relieve accompanying symptoms such as muscle soreness or joint discomfort, but cannot control the autoimmune inflammatory process of dermatomyositis or replace corticosteroid/immunosuppressive therapy",
+    "precautions": "Direct needling should be avoided during acute muscle inflammation or over skin lesions such as ulcers; patients on immunosuppressive therapy require attention to infection risk and coagulation status",
+    "co_management": "Patients are usually followed long-term by rheumatology on corticosteroids or immunosuppressants; any adjunct intervention should be coordinated with the treating physician, and reducing or stopping medication should never be suggested",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.wei_zheng"
+   ],
+   "related_patterns": [
+    "pattern.spleen_qi_deficiency",
+    "pattern.damp_heat",
+    "pattern.qi_yin_deficiency"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "Mayo Clinic: Dermatomyositis — Symptoms & causes (mayoclinic.org/diseases-conditions/dermatomyositis/symptoms-causes/syc-20353188, retrieved 2026-08)"
+    ],
+    "summary_en": [
+     "Mayo Clinic: Dermatomyositis — Symptoms & causes (mayoclinic.org/diseases-conditions/dermatomyositis/symptoms-causes/syc-20353188, retrieved 2026-08)"
+    ],
+    "western_context_zh": [
+     "Mayo Clinic: Dermatomyositis — Diagnosis & treatment (mayoclinic.org/diseases-conditions/dermatomyositis/diagnosis-treatment/drc-20353192, retrieved 2026-08)"
+    ],
+    "western_context_en": [
+     "Mayo Clinic: Dermatomyositis — Diagnosis & treatment (mayoclinic.org/diseases-conditions/dermatomyositis/diagnosis-treatment/drc-20353192, retrieved 2026-08)"
+    ],
+    "western_pathology_zh": [
+     "Medscape: Dermatomyositis — Background, Etiology, Pathophysiology (emedicine.medscape.com/article/332783-overview, retrieved 2026-08)"
+    ],
+    "western_pathology_en": [
+     "Medscape: Dermatomyositis — Background, Etiology, Pathophysiology (emedicine.medscape.com/article/332783-overview, retrieved 2026-08)"
+    ],
+    "red_flags_zh": [
+     "PMC: Incidence and impact of interstitial lung disease and malignancy in patients with polymyositis, dermatomyositis, and CADM (PMC4474966, retrieved 2026-08); PMC: Factors Associated with Interstitial Lung Disease in PM/DM (PMC4865124, retrieved 2026-08)"
+    ],
+    "red_flags_en": [
+     "PMC: Incidence and impact of interstitial lung disease and malignancy in patients with polymyositis, dermatomyositis, and CADM (PMC4474966, retrieved 2026-08); PMC: Factors Associated with Interstitial Lung Disease in PM/DM (PMC4865124, retrieved 2026-08)"
+    ],
+    "risk_factors_zh": [
+     "Mayo Clinic: Dermatomyositis; PMC: Factors Associated with Interstitial Lung Disease in PM/DM (PMC4865124); PMC: Incidence and impact of interstitial lung disease and malignancy (PMC4474966)"
+    ],
+    "risk_factors_en": [
+     "Mayo Clinic: Dermatomyositis; PMC: Factors Associated with Interstitial Lung Disease in PM/DM (PMC4865124); PMC: Incidence and impact of interstitial lung disease and malignancy (PMC4474966)"
+    ]
+   }
   },
   {
    "id": "cond.polymyositis",
@@ -97912,7 +98589,129 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "抗磷脂症候群是一種自體免疫疾病,特徵為血液中持續存在抗磷脂抗體(如狼瘡抗凝血因子、抗心磷脂抗體、抗乙二型醣蛋白I抗體),合併反覆靜脈或動脈血栓形成,或反覆妊娠併發症(如反覆流產、子癲前症);可為原發性,或續發於全身性紅斑狼瘡等其他自體免疫疾病。",
+   "summary_en": "Antiphospholipid syndrome (APS) is an autoimmune disorder characterized by persistent antiphospholipid antibodies (such as lupus anticoagulant, anticardiolipin antibodies, or anti-beta2-glycoprotein I antibodies) in combination with recurrent venous or arterial thrombosis, or recurrent pregnancy complications such as recurrent miscarriage or preeclampsia. It can occur as a primary condition or secondary to another autoimmune disease, most commonly systemic lupus erythematosus.",
+   "western_context_zh": "西醫處理以風濕免疫科評估為主,確診後依血栓病史給予長期抗凝血治療(如warfarin),妊娠相關APS則常合併低劑量阿斯匹靈與低分子量肝素以降低流產風險,並密切監測凝血功能與妊娠併發症;懷疑災難性APS發作屬重症加護等級急症。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western management typically involves rheumatology evaluation, with long-term anticoagulation (e.g., warfarin) for patients with a history of thrombosis; pregnancy-related APS is often managed with low-dose aspirin plus low-molecular-weight heparin to reduce miscarriage risk, alongside close monitoring of coagulation status and pregnancy complications. Suspected catastrophic APS is managed as a critical-care emergency. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "抗磷脂抗體與磷脂結合蛋白(如乙二型醣蛋白I)結合後,干擾凝血系統調控並活化血管內皮細胞、血小板與補體系統,促進血栓形成並損害胎盤血管功能;診斷依國際共識分類標準,需同時具備臨床事件(血栓或妊娠併發症)與實驗室檢測(狼瘡抗凝血因子、抗心磷脂抗體或抗乙二型醣蛋白I抗體須間隔12週以上兩次陽性)。",
+   "western_pathology_en": "Antiphospholipid antibodies bind phospholipid-binding proteins (such as beta2-glycoprotein I), disrupting normal coagulation regulation and activating vascular endothelium, platelets, and the complement system, promoting thrombosis and impairing placental vascular function. Diagnosis follows international consensus classification criteria requiring both a clinical event (thrombosis or pregnancy morbidity) and laboratory confirmation (lupus anticoagulant, anticardiolipin, or anti-beta2-glycoprotein I antibodies positive on two occasions at least 12 weeks apart).",
+   "red_flags_zh": [
+    "短時間內(約一週內)出現三個以上器官同時發生血栓合併多重器官衰竭,需高度懷疑災難性抗磷脂症候群,屬重症急症",
+    "突發單側肢體無力、言語不清或視力喪失,需排除中風等動脈血栓事件並立即送醫",
+    "孕期出現嚴重頭痛、視力模糊、上腹痛合併高血壓,需警覺子癲前症或HELLP症候群",
+    "單側下肢腫脹疼痛合併呼吸困難或胸痛,需排除深部靜脈栓塞併發肺栓塞"
+   ],
+   "red_flags_en": [
+    "Simultaneous thrombosis in three or more organs within about a week, with multi-organ failure, raises strong suspicion for catastrophic antiphospholipid syndrome, a critical-care emergency",
+    "Sudden unilateral limb weakness, slurred speech, or vision loss should prompt evaluation for an arterial thrombotic event such as stroke and immediate transport for care",
+    "Severe headache, blurred vision, or upper abdominal pain with hypertension during pregnancy should raise concern for preeclampsia or HELLP syndrome",
+    "Unilateral leg swelling and pain with shortness of breath or chest pain should raise concern for deep vein thrombosis complicated by pulmonary embolism"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "合併全身性紅斑狼瘡等自體免疫疾病",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "PMC: Antiphospholipid Syndrome — A Comprehensive Clinical Review"
+    },
+    {
+     "factor": "吸菸",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "PMC: Antiphospholipid Syndrome — A Comprehensive Clinical Review"
+    },
+    {
+     "factor": "口服雌激素避孕藥或荷爾蒙治療",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "PMC: Antiphospholipid Syndrome — A Comprehensive Clinical Review"
+    },
+    {
+     "factor": "手術或長期臥床致不動狀態",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "PMC: Antiphospholipid Syndrome and Catastrophic Antiphospholipid Syndrome"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Coexisting autoimmune disease such as systemic lupus erythematosus",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "PMC: Antiphospholipid Syndrome — A Comprehensive Clinical Review"
+    },
+    {
+     "factor": "Smoking",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "PMC: Antiphospholipid Syndrome — A Comprehensive Clinical Review"
+    },
+    {
+     "factor": "Estrogen-containing oral contraceptives or hormone therapy",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "PMC: Antiphospholipid Syndrome — A Comprehensive Clinical Review"
+    },
+    {
+     "factor": "Surgery or prolonged immobility",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "PMC: Antiphospholipid Syndrome and Catastrophic Antiphospholipid Syndrome"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "不可用於治療抗磷脂症候群本身或替代抗凝血治療,僅可能作為一般不適症狀之輔助照護",
+    "precautions": "病人若正接受抗凝血藥物治療,針刺部位選擇與深度須謹慎評估出血風險",
+    "co_management": "病人多由風濕免疫科或血液科長期追蹤抗凝血治療,任何輔助介入應聯絡原主治醫師,不可自行建議停用抗凝血藥物",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "Not for treating antiphospholipid syndrome itself or substituting for anticoagulation; may only serve as general supportive care for nonspecific discomfort",
+    "precautions": "In patients on anticoagulant therapy, needle site selection and depth require careful assessment of bleeding risk",
+    "co_management": "Patients are usually followed long-term by rheumatology or hematology for anticoagulation; any adjunct intervention should be coordinated with the treating physician, and stopping anticoagulant medication should never be suggested",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.hua_tai"
+   ],
+   "related_patterns": [
+    "pattern.blood_stasis"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "PMC: Antiphospholipid Syndrome — A Comprehensive Clinical Review (PMC11818257, retrieved 2026-08)"
+    ],
+    "summary_en": [
+     "PMC: Antiphospholipid Syndrome — A Comprehensive Clinical Review (PMC11818257, retrieved 2026-08)"
+    ],
+    "western_context_zh": [
+     "PMC: Pathogenesis, Diagnosis and Management of Obstetric Antiphospholipid Syndrome (PMC8836886, retrieved 2026-08)"
+    ],
+    "western_context_en": [
+     "PMC: Pathogenesis, Diagnosis and Management of Obstetric Antiphospholipid Syndrome (PMC8836886, retrieved 2026-08)"
+    ],
+    "western_pathology_zh": [
+     "PMC: Antiphospholipid Syndrome: Insights into Molecular Mechanisms and Clinical Manifestations (PMC11277906, retrieved 2026-08); ASH: New definitions for antiphospholipid syndrome (retrieved 2026-08)"
+    ],
+    "western_pathology_en": [
+     "PMC: Antiphospholipid Syndrome: Insights into Molecular Mechanisms and Clinical Manifestations (PMC11277906, retrieved 2026-08); ASH: New definitions for antiphospholipid syndrome (retrieved 2026-08)"
+    ],
+    "red_flags_zh": [
+     "PMC: Antiphospholipid Syndrome and Catastrophic Antiphospholipid Syndrome — Review (PMC11381965, retrieved 2026-08); PMC: Catastrophic Antiphospholipid Syndrome — A Life-Threatening Condition (PMC11316836, retrieved 2026-08)"
+    ],
+    "red_flags_en": [
+     "PMC: Antiphospholipid Syndrome and Catastrophic Antiphospholipid Syndrome — Review (PMC11381965, retrieved 2026-08); PMC: Catastrophic Antiphospholipid Syndrome — A Life-Threatening Condition (PMC11316836, retrieved 2026-08)"
+    ],
+    "risk_factors_zh": [
+     "PMC: Antiphospholipid Syndrome — A Comprehensive Clinical Review (PMC11818257); PMC: Antiphospholipid Syndrome and Catastrophic Antiphospholipid Syndrome (PMC11381965)"
+    ],
+    "risk_factors_en": [
+     "PMC: Antiphospholipid Syndrome — A Comprehensive Clinical Review (PMC11818257); PMC: Antiphospholipid Syndrome and Catastrophic Antiphospholipid Syndrome (PMC11381965)"
+    ]
+   }
   },
   {
    "id": "cond.cancer_related_fatigue",
@@ -98504,10 +99303,143 @@
    "name_en": "Kawasaki Disease",
    "category": "immune_misc",
    "icd_hint": "M30.3",
-   "aliases_zh": [],
-   "aliases_en": [],
+   "aliases_zh": [
+    "皮膚黏膜淋巴結症候群"
+   ],
+   "aliases_en": [
+    "Mucocutaneous Lymph Node Syndrome"
+   ],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "川崎氏症是一種好發於五歲以下幼兒的急性全身性血管炎,好發於中型動脈,尤其是冠狀動脈,病因未明;臨床特徵為持續高燒五天以上,合併雙側非化膿性結膜炎、口腔黏膜變化(如草莓舌、嘴唇乾裂)、多形性皮疹、四肢末端變化及頸部淋巴結腫大等表現,若未及時治療,約四分之一病人可能發生冠狀動脈瘤等心臟併發症。",
+   "summary_en": "Kawasaki disease is an acute systemic vasculitis of unknown cause that predominantly affects children under age 5, with a particular predilection for medium-sized arteries, especially the coronary arteries. It presents clinically with persistent high fever lasting five or more days, together with bilateral non-purulent conjunctivitis, oral mucosal changes (strawberry tongue, cracked lips), a polymorphous rash, changes in the extremities, and cervical lymphadenopathy. If untreated, roughly one in four children develop coronary artery aneurysms or other cardiac complications.",
+   "western_context_zh": "西醫處理以兒科或兒童心臟科評估為主,確診依臨床診斷準則(持續發燒五天以上合併五項主要症狀中四項以上),治療首選為十天內給予高劑量靜脈注射免疫球蛋白合併阿斯匹靈,並以心臟超音波於急性期及追蹤期評估冠狀動脈狀況;對治療反應不佳或已有冠狀動脈瘤者需長期心臟科追蹤。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western management involves pediatric or pediatric cardiology evaluation, with diagnosis based on established clinical criteria (fever for five or more days plus at least four of the five principal features). First-line treatment is high-dose intravenous immunoglobulin given within 10 days of fever onset, combined with aspirin, with echocardiography performed during the acute phase and on follow-up to assess coronary artery status; children who respond poorly to treatment or who develop coronary artery aneurysms require long-term cardiology follow-up. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "確切病因未明,推測與遺傳易感性個體受感染性或環境誘發因子刺激後,引發異常免疫反應及全身性血管發炎有關;發炎反應主要侵犯中型肌肉動脈管壁,尤其是冠狀動脈,可導致血管壁結構破壞、擴張甚至形成動脈瘤。診斷為臨床診斷,依持續發燒五天以上合併雙側非化膿性結膜炎、口腔黏膜變化、多形性皮疹、四肢末端變化、頸部淋巴結腫大等五項主要表現中至少四項確立,並以心臟超音波評估冠狀動脈內徑(依年齡校正Z分數異常界定冠狀動脈瘤)。",
+   "western_pathology_en": "The exact cause remains unknown, but is thought to involve an aberrant immune response and systemic vasculitis triggered by infectious or environmental factors in genetically susceptible individuals. The inflammatory process primarily targets the walls of medium-sized muscular arteries, especially the coronary arteries, causing structural damage, dilation, and potentially aneurysm formation. Diagnosis is clinical, based on fever for five or more days plus at least four of five principal features (bilateral non-purulent conjunctivitis, oral mucosal changes, polymorphous rash, extremity changes, and cervical lymphadenopathy), with echocardiography used to assess coronary artery diameter (using age-adjusted Z-scores to define aneurysms).",
+   "red_flags_zh": [
+    "持續高燒五天以上未明原因合併上述主要症狀,需及早診斷並於十天內給予靜脈注射免疫球蛋白,延誤治療顯著增加冠狀動脈瘤風險",
+    "治療後燒仍未退或再度發燒,需警覺對免疫球蛋白治療反應不佳,應儘速回診評估追加治療",
+    "合併嗜睡、意識改變或持續嘔吐,需排除無菌性腦膜炎等神經系統併發症",
+    "確診病人日後出現胸痛、心悸或活動力下降,需警覺冠狀動脈病變進展並緊急轉診心臟科"
+   ],
+   "red_flags_en": [
+    "Unexplained high fever persisting five or more days with the associated principal features requires prompt diagnosis and IVIG treatment within 10 days of fever onset, as delayed treatment significantly increases the risk of coronary artery aneurysm",
+    "Fever that does not resolve or recurs after treatment suggests poor response to IVIG and warrants prompt reassessment for additional therapy",
+    "Lethargy, altered mental status, or persistent vomiting should raise concern for neurologic complications such as aseptic meningitis",
+    "A previously diagnosed child who develops chest pain, palpitations, or reduced activity tolerance should be urgently evaluated for progressive coronary artery involvement"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "五歲以下幼兒",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "PMC: Kawasaki Disease and Coronary Artery Involvement"
+    },
+    {
+     "factor": "東亞裔(尤其日裔)血統",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "PMC: Racial/Ethnic Differences in the Incidence of Kawasaki Syndrome"
+    },
+    {
+     "factor": "男性",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "PMC: Racial/Ethnic Differences in the Incidence of Kawasaki Syndrome"
+    },
+    {
+     "factor": "手足曾罹患川崎氏症之家族史",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "PMC: Association of Kawasaki disease with family characteristics in Taiwan"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Age under 5 years",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "PMC: Kawasaki Disease and Coronary Artery Involvement"
+    },
+    {
+     "factor": "East Asian (especially Japanese) ancestry",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "PMC: Racial/Ethnic Differences in the Incidence of Kawasaki Syndrome"
+    },
+    {
+     "factor": "Male sex",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "PMC: Racial/Ethnic Differences in the Incidence of Kawasaki Syndrome"
+    },
+    {
+     "factor": "Family history of a sibling with Kawasaki disease",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "PMC: Association of Kawasaki disease with family characteristics in Taiwan"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "不適用於治療川崎氏症急性期,確診或疑似個案須立即轉診接受靜脈注射免疫球蛋白治療,延誤將增加冠狀動脈併發症風險",
+    "precautions": "急性發燒期兒童不建議以針灸做為主要處置,應優先轉診接受急性醫療評估",
+    "co_management": "若病人已由兒科或心臟科團隊處置中,任何輔助介入應聯絡原主治醫師確認病程階段",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "Not applicable for treating acute Kawasaki disease; confirmed or suspected cases require immediate referral for IVIG treatment, as delay increases the risk of coronary artery complications",
+    "precautions": "Acupuncture is not recommended as primary management for a febrile child in the acute phase; urgent medical evaluation should take priority",
+    "co_management": "If the patient is already being managed by a pediatric or cardiology team, any adjunct intervention should be coordinated with the treating physician to confirm the disease stage",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.wen_bing"
+   ],
+   "related_patterns": [
+    "pattern.heat_toxin_blazing",
+    "pattern.qi_stage_heat"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "PMC: Kawasaki Disease (PMC6048561, retrieved 2026-08)"
+    ],
+    "summary_en": [
+     "PMC: Kawasaki Disease (PMC6048561, retrieved 2026-08)"
+    ],
+    "western_context_zh": [
+     "AHA Scientific Statement: Diagnosis, Treatment, and Long-Term Management of Kawasaki Disease (ahajournals.org/doi/10.1161/cir.0000000000000484, retrieved 2026-08)"
+    ],
+    "western_context_en": [
+     "AHA Scientific Statement: Diagnosis, Treatment, and Long-Term Management of Kawasaki Disease (ahajournals.org/doi/10.1161/cir.0000000000000484, retrieved 2026-08)"
+    ],
+    "western_pathology_zh": [
+     "PMC: Kawasaki Disease and Coronary Artery Involvement: A Narrative Review (PMC9514671, retrieved 2026-08)"
+    ],
+    "western_pathology_en": [
+     "PMC: Kawasaki Disease and Coronary Artery Involvement: A Narrative Review (PMC9514671, retrieved 2026-08)"
+    ],
+    "red_flags_zh": [
+     "AHA Scientific Statement: Diagnosis, Treatment, and Long-Term Management of Kawasaki Disease (retrieved 2026-08); PMC: Kawasaki Disease and Coronary Artery Involvement (PMC9514671, retrieved 2026-08)"
+    ],
+    "red_flags_en": [
+     "AHA Scientific Statement: Diagnosis, Treatment, and Long-Term Management of Kawasaki Disease (retrieved 2026-08); PMC: Kawasaki Disease and Coronary Artery Involvement (PMC9514671, retrieved 2026-08)"
+    ],
+    "risk_factors_zh": [
+     "PMC: Racial/Ethnic Differences in the Incidence of Kawasaki Syndrome among Children in Hawai'i (PMC3118023); PMC: Association of Kawasaki disease with urbanization level and family characteristics in Taiwan (PMC10769101)"
+    ],
+    "risk_factors_en": [
+     "PMC: Racial/Ethnic Differences in the Incidence of Kawasaki Syndrome among Children in Hawai'i (PMC3118023); PMC: Association of Kawasaki disease with urbanization level and family characteristics in Taiwan (PMC10769101)"
+    ],
+    "aliases_zh": [
+     "AHA Scientific Statement: Kawasaki Disease (common alias)"
+    ],
+    "aliases_en": [
+     "AHA Scientific Statement: Kawasaki Disease (common alias: Mucocutaneous Lymph Node Syndrome)"
+    ]
+   }
   },
   {
    "id": "cond.polyarteritis_nodosa",
@@ -98937,7 +99869,144 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "白血病是源自骨髓造血幹細胞的惡性腫瘤,依細胞分化速度分為急性與慢性,依細胞系別分為淋巴性與骨髓性,共四大類(急性淋巴性白血病、急性骨髓性白血病、慢性淋巴性白血病、慢性骨髓性白血病);異常白血球大量增生並取代正常造血功能,導致貧血、易出血及感染傾向,各類型好發年齡與臨床病程差異甚大。",
+   "summary_en": "Leukemia is a malignancy arising from hematopoietic stem cells in the bone marrow, classified as acute or chronic based on the pace of disease and as lymphocytic or myeloid based on the cell lineage involved, giving four major categories: acute lymphoblastic leukemia, acute myeloid leukemia, chronic lymphocytic leukemia, and chronic myeloid leukemia. Abnormal leukocytes proliferate and crowd out normal hematopoiesis, resulting in anemia, bleeding tendency, and susceptibility to infection; typical age of onset and clinical course differ substantially across the four subtypes.",
+   "western_context_zh": "西醫處理以血液腫瘤科評估為核心,依全血球計數異常懷疑後以骨髓穿刺切片、流式細胞術及細胞遺傳學/分子檢測確立診斷與分型,治療依類型選擇化學治療、標靶藥物(如酪胺酸激酶抑制劑用於慢性骨髓性白血病)或造血幹細胞移植,治療期間需密切監測血球數值及感染風險。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western management centers on hematology-oncology evaluation: suspicion raised by abnormal complete blood counts is confirmed with bone marrow aspiration/biopsy, flow cytometry, and cytogenetic/molecular testing to establish diagnosis and subtype. Treatment is selected by subtype and may include chemotherapy, targeted agents (e.g., tyrosine kinase inhibitors for chronic myeloid leukemia), or hematopoietic stem cell transplantation, with close monitoring of blood counts and infection risk throughout treatment. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "造血幹細胞或其前驅細胞因基因突變(如BCR-ABL融合基因見於慢性骨髓性白血病)獲得不受控制的增殖能力並喪失正常分化功能,異常純系細胞在骨髓內大量增生並可能溢出至周邊血液及浸潤肝脾、淋巴結等器官,同時排擠正常紅血球、白血球及血小板生成。診斷依周邊血液抹片與全血球計數異常為初步線索,確診需骨髓穿刺及切片檢查,並以流式細胞術鑑定細胞表面標記、細胞遺傳學及分子檢測(如BCR-ABL、FLT3等)輔助分型與預後判斷。",
+   "western_pathology_en": "A hematopoietic stem or progenitor cell acquires uncontrolled proliferative capacity and loses normal differentiation, typically through an acquired genetic mutation (e.g., the BCR-ABL fusion gene in chronic myeloid leukemia). The resulting clonal population expands within the bone marrow, may spill into the peripheral blood, and can infiltrate organs such as the liver, spleen, and lymph nodes, while crowding out normal erythroid, myeloid, and platelet production. Diagnosis is first suggested by an abnormal peripheral smear and complete blood count, then confirmed by bone marrow aspiration and biopsy, with flow cytometry for surface marker immunophenotyping and cytogenetic/molecular testing (e.g., BCR-ABL, FLT3) used for subtyping and prognostication.",
+   "red_flags_zh": [
+    "白血球數目極度升高合併呼吸困難、視力模糊、意識混亂,需警覺白血球淤滯症(leukostasis),屬血液科急症需立即處置",
+    "發燒合併嗜中性球低下,即使無明顯感染部位,亦須視為發燒性嗜中性球低下症緊急處理以降低敗血症風險",
+    "不明原因瘀青、牙齦出血或黏膜出血合併血小板嚴重低下,需緊急評估出血風險",
+    "骨頭疼痛合併不明原因發燒、盜汗及體重減輕,尤其兒童,需及早轉診血液科排除白血病"
+   ],
+   "red_flags_en": [
+    "Extremely elevated white blood cell count with shortness of breath, blurred vision, or confusion raises concern for leukostasis (symptomatic hyperleukocytosis), a hematologic emergency requiring immediate treatment",
+    "Fever with neutropenia, even without an obvious source of infection, must be treated as febrile neutropenia and managed urgently to reduce sepsis risk",
+    "Unexplained bruising, gum bleeding, or mucosal bleeding with severely low platelet count requires urgent evaluation of bleeding risk",
+    "Bone pain with unexplained fever, night sweats, and weight loss — particularly in a child — warrants early hematology referral to rule out leukemia"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "高劑量游離輻射暴露史",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Memorial Sloan Kettering: Risk Factors for Leukemia"
+    },
+    {
+     "factor": "吸菸",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Blood Cancer United: Predisposing factors to leukemia"
+    },
+    {
+     "factor": "唐氏症等特定遺傳性疾病",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Cleveland Clinic: Is Leukemia Hereditary?"
+    },
+    {
+     "factor": "一等親罹患慢性淋巴性白血病家族史",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Cleveland Clinic: Is Leukemia Hereditary?"
+    },
+    {
+     "factor": "先前接受化學治療或特定化學藥劑暴露",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Memorial Sloan Kettering: Risk Factors for Leukemia"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "History of high-dose ionizing radiation exposure",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Memorial Sloan Kettering: Risk Factors for Leukemia"
+    },
+    {
+     "factor": "Smoking",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Blood Cancer United: Predisposing factors to leukemia"
+    },
+    {
+     "factor": "Certain genetic conditions such as Down syndrome",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Cleveland Clinic: Is Leukemia Hereditary?"
+    },
+    {
+     "factor": "First-degree relative with chronic lymphocytic leukemia",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Cleveland Clinic: Is Leukemia Hereditary?"
+    },
+    {
+     "factor": "Prior chemotherapy or exposure to certain chemical agents",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Memorial Sloan Kettering: Risk Factors for Leukemia"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "不可用於治療白血病本身,僅可能作為化學治療期間噁心嘔吐等副作用之輔助緩解,NCCN指引將針灸列為化療所致噁心嘔吐的輔助選項之一",
+    "precautions": "血小板低下或嗜中性球低下期間應避免針刺以降低出血及感染風險,治療前應確認當前血球數值",
+    "co_management": "病人多由血液腫瘤科團隊主導治療,任何輔助介入應聯絡原主治醫師確認目前血球數值與治療階段是否適合",
+    "evidence": "guideline",
+    "source": "NCCN Clinical Practice Guidelines — Antiemesis (acupuncture listed as adjunct option for chemotherapy-induced nausea/vomiting)"
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "Not a treatment for leukemia itself; may serve as an adjunct to help relieve chemotherapy-induced nausea and vomiting, an indication for which NCCN guidelines list acupuncture as an adjunct option",
+    "precautions": "Needling should be avoided during periods of thrombocytopenia or neutropenia due to bleeding and infection risk; current blood counts should be confirmed before any session",
+    "co_management": "Treatment is typically led by a hematology-oncology team; any adjunct intervention should be coordinated with the treating physician to confirm current blood counts and whether it is appropriate at that stage of treatment",
+    "evidence": "guideline",
+    "source": "NCCN Clinical Practice Guidelines — Antiemesis (acupuncture listed as adjunct option for chemotherapy-induced nausea/vomiting)"
+   },
+   "related_eastern_diseases": [
+    "tdis.xu_lao",
+    "tdis.xue_zheng"
+   ],
+   "related_patterns": [
+    "pattern.qi_blood_deficiency",
+    "pattern.blood_heat",
+    "pattern.heat_toxin_blazing"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "Mayo Clinic Comprehensive Cancer Center Blog: Leukemia — A cancer that affects children and adults (cancerblog.mayoclinic.org/2022/01/18/leukemia-a-cancer-that-affects-children-and-adults, retrieved 2026-08)"
+    ],
+    "summary_en": [
+     "Mayo Clinic Comprehensive Cancer Center Blog: Leukemia — A cancer that affects children and adults (cancerblog.mayoclinic.org/2022/01/18/leukemia-a-cancer-that-affects-children-and-adults, retrieved 2026-08)"
+    ],
+    "western_context_zh": [
+     "Mayo Clinic News Network: Why leukemia type matters for treatment decisions (retrieved 2026-08)"
+    ],
+    "western_context_en": [
+     "Mayo Clinic News Network: Why leukemia type matters for treatment decisions (retrieved 2026-08)"
+    ],
+    "western_pathology_zh": [
+     "Mayo Clinic Comprehensive Cancer Center Blog: Leukemia (retrieved 2026-08); Wikipedia/reviewed summary: Leukostasis (en.wikipedia.org/wiki/Leukostasis, retrieved 2026-08)"
+    ],
+    "western_pathology_en": [
+     "Mayo Clinic Comprehensive Cancer Center Blog: Leukemia (retrieved 2026-08); Wikipedia/reviewed summary: Leukostasis (en.wikipedia.org/wiki/Leukostasis, retrieved 2026-08)"
+    ],
+    "red_flags_zh": [
+     "Wikipedia/reviewed summary: Leukostasis (en.wikipedia.org/wiki/Leukostasis, retrieved 2026-08); Mayo Clinic Comprehensive Cancer Center Blog: Leukemia (retrieved 2026-08)"
+    ],
+    "red_flags_en": [
+     "Wikipedia/reviewed summary: Leukostasis (en.wikipedia.org/wiki/Leukostasis, retrieved 2026-08); Mayo Clinic Comprehensive Cancer Center Blog: Leukemia (retrieved 2026-08)"
+    ],
+    "risk_factors_zh": [
+     "Memorial Sloan Kettering: Risk Factors for Leukemia; Blood Cancer United: Predisposing factors to leukemia; Cleveland Clinic: Is Leukemia Hereditary?"
+    ],
+    "risk_factors_en": [
+     "Memorial Sloan Kettering: Risk Factors for Leukemia; Blood Cancer United: Predisposing factors to leukemia; Cleveland Clinic: Is Leukemia Hereditary?"
+    ]
+   }
   },
   {
    "id": "cond.multiple_myeloma",
@@ -99086,7 +100155,124 @@
     "Kissing Disease"
    ],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "傳染性單核球增多症是由EB病毒(Epstein-Barr virus)原發感染引起的疾病,典型三主症為發燒、咽喉炎(常合併扁桃腺滲出物)及淋巴結腫大,好發於青少年與年輕成人,病毒主要經唾液傳播故俗稱「接吻病」,多數為自限性病程但可能合併脾臟腫大。",
+   "summary_en": "Infectious mononucleosis is caused by primary infection with Epstein-Barr virus (EBV) and classically presents with a triad of fever, pharyngitis (often with tonsillar exudate), and lymphadenopathy. It most commonly affects adolescents and young adults, is transmitted primarily through saliva (hence the nickname \"kissing disease\"), and is usually self-limited, though it can be accompanied by splenomegaly.",
+   "western_context_zh": "西醫處理以支持性照護為主(休息、水分補充、退燒止痛藥物),診斷確立後衛教避免接觸運動及腹部撞擊以降低脾臟破裂風險(通常建議症狀出現後至少三至四週避免劇烈或碰撞性運動);若合併呼吸道阻塞或嚴重肝功能異常需轉診評估。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western management is primarily supportive (rest, hydration, analgesics/antipyretics). Once diagnosed, patients are counseled to avoid contact sports and abdominal trauma to reduce the risk of splenic rupture, typically for at least three to four weeks after symptom onset, and referral is warranted for airway compromise or significant liver dysfunction. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "EB病毒經唾液進入口咽部,感染上皮細胞後進一步感染B淋巴球並在其中建立終身潛伏感染;感染的B淋巴球誘發強烈細胞毒性T淋巴球(即所謂「非典型淋巴球」)反應,循環中異型淋巴球比例可從正常1-2%升高至10-40%,並可造成脾臟紅髓擴張及免疫母細胞浸潤,約五至六成病人出現脾腫大。診斷依臨床三主症、周邊血液抹片異型淋巴球增多,配合嗜異性抗體檢測(單點試驗)或EB病毒特異性血清學抗體確立。",
+   "western_pathology_en": "EBV enters the oropharynx via saliva, infects epithelial cells, and then infects B lymphocytes, in which it establishes lifelong latency. The infected B cells trigger a vigorous cytotoxic T-lymphocyte response (the \"atypical lymphocytes\" seen on smear), with circulating atypical lymphocytes rising from a normal 1-2% to 10-40% of the white cell count, and immunoblastic infiltration with red pulp expansion in the spleen, producing splenomegaly in roughly 50-60% of patients. Diagnosis is based on the classic clinical triad, atypical lymphocytosis on peripheral smear, and a positive heterophile antibody (monospot) test or EBV-specific serology.",
+   "red_flags_zh": [
+    "左上腹或左肩劇痛合併頭暈或血壓下降,需緊急排除脾臟自發性破裂,屬外科急症",
+    "喉部嚴重腫脹合併呼吸困難或喘鳴,提示上呼吸道阻塞需立即就醫",
+    "高燒不退合併嚴重黃疸或右上腹痛,需評估病毒性肝炎程度",
+    "神經學症狀如意識改變、頸部僵硬或劇烈頭痛,需排除腦膜炎或腦炎等罕見併發症"
+   ],
+   "red_flags_en": [
+    "Severe left upper quadrant or left shoulder pain with dizziness or falling blood pressure requires urgent evaluation for spontaneous splenic rupture, a surgical emergency",
+    "Severe throat swelling with shortness of breath or stridor suggests upper airway obstruction and requires immediate care",
+    "Persistent high fever with significant jaundice or right upper quadrant pain warrants evaluation for the degree of viral hepatitis",
+    "Neurologic symptoms such as altered mental status, neck stiffness, or severe headache should prompt evaluation for rare complications such as meningitis or encephalitis"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "青少年或年輕成人",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Merck Manual: Infectious Mononucleosis"
+    },
+    {
+     "factor": "與感染者密切接觸(共用飲食器具、親吻)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Merck Manual: Infectious Mononucleosis"
+    },
+    {
+     "factor": "群居環境(如大學宿舍)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Medscape: EBV Infectious Mononucleosis Clinical Presentation"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Adolescence or young adulthood",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Merck Manual: Infectious Mononucleosis"
+    },
+    {
+     "factor": "Close contact with an infected person (shared utensils, kissing)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Merck Manual: Infectious Mononucleosis"
+    },
+    {
+     "factor": "Congregate living settings (e.g., college dormitories)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Medscape: EBV Infectious Mononucleosis Clinical Presentation"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "可能作為病程中疲勞、咽喉不適等症狀之輔助緩解,但無法縮短EB病毒感染病程或替代必要之醫療監測",
+    "precautions": "確診或懷疑脾臟腫大者應避免腹部區域針刺及可能增加腹壓之操作,以降低脾臟破裂風險",
+    "co_management": "若病人正由醫師追蹤肝脾腫大或血液學異常,如需併用針灸應聯絡原主治醫師確認目前狀況",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "May serve as an adjunct to relieve symptoms such as fatigue or throat discomfort during the illness, but cannot shorten the course of EBV infection or replace necessary medical monitoring",
+    "precautions": "In confirmed or suspected splenomegaly, abdominal needling and maneuvers that increase intra-abdominal pressure should be avoided to reduce the risk of splenic rupture",
+    "co_management": "If the patient is being followed by a physician for hepatosplenomegaly or hematologic abnormalities, contact the treating physician before adding acupuncture to confirm current status",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.ru_e"
+   ],
+   "related_patterns": [
+    "pattern.wind_heat",
+    "pattern.damp_heat"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "Merck Manual: Infectious Mononucleosis (merckmanuals.com/professional/infectious-diseases/herpesviruses/infectious-mononucleosis, retrieved 2026-08)"
+    ],
+    "summary_en": [
+     "Merck Manual: Infectious Mononucleosis (merckmanuals.com/professional/infectious-diseases/herpesviruses/infectious-mononucleosis, retrieved 2026-08)"
+    ],
+    "western_context_zh": [
+     "Merck Manual: Infectious Mononucleosis (merckmanuals.com/professional/infectious-diseases/herpesviruses/infectious-mononucleosis, retrieved 2026-08)"
+    ],
+    "western_context_en": [
+     "Merck Manual: Infectious Mononucleosis (merckmanuals.com/professional/infectious-diseases/herpesviruses/infectious-mononucleosis, retrieved 2026-08)"
+    ],
+    "western_pathology_zh": [
+     "Medscape: EBV Infectious Mononucleosis Clinical Presentation (emedicine.medscape.com/article/222040-clinical, retrieved 2026-08); PathologyOutlines: Infectious mononucleosis (retrieved 2026-08)"
+    ],
+    "western_pathology_en": [
+     "Medscape: EBV Infectious Mononucleosis Clinical Presentation (emedicine.medscape.com/article/222040-clinical, retrieved 2026-08); PathologyOutlines: Infectious mononucleosis (retrieved 2026-08)"
+    ],
+    "red_flags_zh": [
+     "PMC: Splenic Rupture in Infectious Mononucleosis: A Case Report (PMC12049665, retrieved 2026-08)"
+    ],
+    "red_flags_en": [
+     "PMC: Splenic Rupture in Infectious Mononucleosis: A Case Report (PMC12049665, retrieved 2026-08)"
+    ],
+    "risk_factors_zh": [
+     "Merck Manual: Infectious Mononucleosis; Medscape: EBV Infectious Mononucleosis Clinical Presentation"
+    ],
+    "risk_factors_en": [
+     "Merck Manual: Infectious Mononucleosis; Medscape: EBV Infectious Mononucleosis Clinical Presentation"
+    ],
+    "aliases_zh": [
+     "Merck Manual: Infectious Mononucleosis (common alias)"
+    ],
+    "aliases_en": [
+     "Merck Manual: Infectious Mononucleosis (common alias: Glandular Fever)"
+    ]
+   }
   },
   {
    "id": "cond.cytomegalovirus_infection",
@@ -99098,7 +100284,123 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "巨細胞病毒感染是由人類巨細胞病毒(一種疱疹病毒科成員)引起的感染,免疫功能正常者感染多數無症狀或僅有類似傳染性單核球增多症的輕微表現,病毒可終身潛伏於體內;對免疫功能低下者(器官移植、愛滋病、化療病人)及胎兒(母體孕期原發感染經胎盤垂直傳染)則可能造成嚴重甚至致命的器官侵犯。",
+   "summary_en": "Cytomegalovirus (CMV) infection is caused by human cytomegalovirus, a member of the herpesvirus family, that establishes lifelong latency after primary infection. In immunocompetent individuals, infection is usually asymptomatic or produces a mild mononucleosis-like illness. In immunocompromised patients (organ transplant recipients, people with HIV/AIDS, or those undergoing chemotherapy) and in fetuses infected transplacentally after primary maternal infection during pregnancy, CMV can cause severe and potentially life-threatening organ involvement.",
+   "western_context_zh": "西醫處理依感染族群而異:免疫功能正常者通常僅需支持性照護與觀察;器官移植或免疫低下病人需以聚合酶連鎖反應(PCR)監測病毒量並視情況給予抗病毒藥物(如ganciclovir);孕婦懷疑原發感染需轉診母胎醫學評估胎兒風險,新生兒疑似先天性感染需轉診新生兒科進一步聽力與神經發展追蹤。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western management varies by patient population: immunocompetent individuals generally require only supportive care and observation; transplant recipients and immunocompromised patients require PCR-based viral load monitoring with antiviral therapy (e.g., ganciclovir) as indicated; pregnant patients with suspected primary infection are referred for maternal-fetal medicine evaluation of fetal risk, and infants with suspected congenital infection are referred to neonatology for hearing and neurodevelopmental follow-up. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "CMV感染後可終身潛伏於單核球及其前驅細胞內,免疫功能低下時病毒重新活化並經血液擴散至多重器官,直接造成組織細胞病變(如視網膜壞死、腸道黏膜潰瘍、間質性肺炎);先天性感染則因母體病毒經胎盤傳播,直接侵犯胎兒發育中之腦部及其他器官造成畸形或功能損傷。診斷依聚合酶連鎖反應(PCR)偵測病毒核酸、血清學抗體檢測,先天性感染需於出生後3週內以尿液或唾液PCR確診。",
+   "western_pathology_en": "After primary infection, CMV establishes lifelong latency in monocytes and their precursor cells; when immune control is impaired, the virus reactivates and disseminates hematogenously to multiple organs, causing direct cytopathic tissue damage (e.g., retinal necrosis, intestinal mucosal ulceration, interstitial pneumonitis). In congenital infection, maternal viremia crosses the placenta and directly injures the developing fetal brain and other organs, producing structural anomalies or functional impairment. Diagnosis relies on PCR detection of viral nucleic acid and serologic antibody testing; congenital infection must be confirmed by urine or saliva PCR within the first 3 weeks of life.",
+   "red_flags_zh": [
+    "免疫低下病人出現視力模糊或視野缺損,需緊急轉診眼科排除CMV視網膜炎,延誤治療可能致失明",
+    "器官移植或化療病人出現持續發燒、腹瀉或呼吸困難,需警覺CMV瀰漫性感染(腸炎、肺炎)並儘速回診",
+    "新生兒出現肝脾腫大、瘀點瘀斑、黃疸或小頭畸形,需考慮先天性CMV感染並轉診新生兒科",
+    "孕婦出現類流感症狀合併淋巴結腫大,雖多數無害,仍建議告知產檢醫師評估原發感染可能性"
+   ],
+   "red_flags_en": [
+    "Blurred vision or visual field loss in an immunocompromised patient warrants urgent ophthalmology referral to rule out CMV retinitis, as delayed treatment can lead to blindness",
+    "Persistent fever, diarrhea, or shortness of breath in a transplant or chemotherapy patient raises concern for disseminated CMV disease (colitis, pneumonitis) and needs prompt medical reassessment",
+    "Hepatosplenomegaly, petechiae, jaundice, or microcephaly in a newborn should prompt consideration of congenital CMV infection and neonatology referral",
+    "Flu-like symptoms with lymphadenopathy during pregnancy, while usually benign, should still be reported to the prenatal care provider to evaluate for possible primary infection"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "器官或幹細胞移植後免疫抑制治療",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Medscape: Pediatric Cytomegalovirus Infection — Pathophysiology"
+    },
+    {
+     "factor": "愛滋病或其他重度免疫功能低下狀態",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "PMC: Overview of Cytomegalovirus Ocular Diseases"
+    },
+    {
+     "factor": "孕期首次感染(原發感染)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "PMC: Congenital Cytomegalovirus Infection — Molecular Mechanisms"
+    },
+    {
+     "factor": "與幼童密切接觸(如托育工作)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "PMC: Decoding human cytomegalovirus for innovative diagnostics"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Immunosuppressive therapy after organ or stem cell transplant",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Medscape: Pediatric Cytomegalovirus Infection — Pathophysiology"
+    },
+    {
+     "factor": "HIV/AIDS or other severe immunocompromise",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "PMC: Overview of Cytomegalovirus Ocular Diseases"
+    },
+    {
+     "factor": "First-time (primary) infection during pregnancy",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "PMC: Congenital Cytomegalovirus Infection — Molecular Mechanisms"
+    },
+    {
+     "factor": "Close contact with young children (e.g., childcare work)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "PMC: Decoding human cytomegalovirus for innovative diagnostics"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "不可用於治療CMV感染本身或替代抗病毒藥物,僅可能作為一般疲勞等伴隨症狀之輔助照護",
+    "precautions": "免疫低下病人針刺前應評估感染風險與凝血狀態,注意無菌操作",
+    "co_management": "病人若正接受抗病毒藥物治療或由移植團隊追蹤,任何輔助介入應聯絡原主治醫師",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "Not for treating CMV infection itself or substituting for antiviral therapy; may only serve as general supportive care for accompanying symptoms such as fatigue",
+    "precautions": "In immunocompromised patients, infection risk and coagulation status should be assessed before needling, with careful attention to sterile technique",
+    "co_management": "If the patient is on antiviral therapy or followed by a transplant team, any adjunct intervention should be coordinated with the treating physician",
+    "evidence": "unknown",
+    "source": null
+   },
+   "field_sources": {
+    "summary_zh": [
+     "Mayo Clinic: CMV infection — Symptoms & causes (mayoclinic.org/diseases-conditions/cmv/symptoms-causes/syc-20355358, retrieved 2026-08)"
+    ],
+    "summary_en": [
+     "Mayo Clinic: CMV infection — Symptoms & causes (mayoclinic.org/diseases-conditions/cmv/symptoms-causes/syc-20355358, retrieved 2026-08)"
+    ],
+    "western_context_zh": [
+     "Medscape: Pediatric Cytomegalovirus Infection — Practice Essentials (emedicine.medscape.com/article/963090-overview, retrieved 2026-08)"
+    ],
+    "western_context_en": [
+     "Medscape: Pediatric Cytomegalovirus Infection — Practice Essentials (emedicine.medscape.com/article/963090-overview, retrieved 2026-08)"
+    ],
+    "western_pathology_zh": [
+     "PMC: Congenital Cytomegalovirus Infection: Molecular Mechanisms Mediating Viral Pathogenesis (PMC3869401, retrieved 2026-08)"
+    ],
+    "western_pathology_en": [
+     "PMC: Congenital Cytomegalovirus Infection: Molecular Mechanisms Mediating Viral Pathogenesis (PMC3869401, retrieved 2026-08)"
+    ],
+    "red_flags_zh": [
+     "PMC: Overview of Cytomegalovirus Ocular Diseases: Retinitis, Corneal Endotheliitis, and Iridocyclitis (PMC11281654, retrieved 2026-08); PMC: Simultaneous Occurrence of Cytomegalovirus Colitis and Retinitis (PMC8942289, retrieved 2026-08)"
+    ],
+    "red_flags_en": [
+     "PMC: Overview of Cytomegalovirus Ocular Diseases: Retinitis, Corneal Endotheliitis, and Iridocyclitis (PMC11281654, retrieved 2026-08); PMC: Simultaneous Occurrence of Cytomegalovirus Colitis and Retinitis (PMC8942289, retrieved 2026-08)"
+    ],
+    "risk_factors_zh": [
+     "Medscape: Pediatric Cytomegalovirus Infection; PMC: Overview of Cytomegalovirus Ocular Diseases (PMC11281654); PMC: Congenital Cytomegalovirus Infection (PMC3869401)"
+    ],
+    "risk_factors_en": [
+     "Medscape: Pediatric Cytomegalovirus Infection; PMC: Overview of Cytomegalovirus Ocular Diseases (PMC11281654); PMC: Congenital Cytomegalovirus Infection (PMC3869401)"
+    ]
+   }
   },
   {
    "id": "cond.sarcoidosis",
@@ -99232,7 +100534,131 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "澱粉樣變性是一群疾病的統稱,由折疊異常的不溶性蛋白質(澱粉樣蛋白)以細胞外沉積方式堆積於組織器官,逐漸破壞其結構與功能;依前驅蛋白不同分為多種類型,最常見為輕鏈型(AL,漿細胞疾病相關)與反應性澱粉樣變性(AA,慢性發炎或感染相關),好發於中老年人,可侵犯心臟、腎臟、神經及腸胃道等多重器官。",
+   "summary_en": "Amyloidosis is a group of diseases in which misfolded, insoluble proteins (amyloid) deposit extracellularly in tissues and organs, progressively disrupting their structure and function. It is classified by the precursor protein involved, with the most common forms being AL amyloidosis (related to a plasma cell disorder producing abnormal light chains) and AA amyloidosis (a reactive form linked to chronic inflammation or infection). It most often affects middle-aged and older adults and can involve multiple organs including the heart, kidneys, nerves, and gastrointestinal tract.",
+   "western_context_zh": "西醫處理依受累器官與類型而定,AL型需血液腫瘤科評估漿細胞疾病並給予化學治療或標靶藥物,AA型則需控制潛在慢性發炎或感染;監測著重於心臟(心臟超音波、NT-proBNP、肌鈣蛋白)、腎臟(尿蛋白、腎功能)及肝功能追蹤,並可能需多專科團隊共同照護。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western management depends on the affected organs and amyloid type: AL amyloidosis requires hematology-oncology evaluation of the underlying plasma cell disorder with chemotherapy or targeted agents, while AA amyloidosis requires control of the underlying chronic inflammatory or infectious process. Monitoring focuses on cardiac status (echocardiogram, NT-proBNP, troponin), renal status (urine protein, kidney function), and liver function, often requiring a multidisciplinary care team. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "前驅蛋白(如免疫球蛋白輕鏈、血清類澱粉A蛋白等)因構形異常而聚集成不溶性β摺疊纖維,沉積於細胞外基質,壓迫並取代正常組織結構,導致受累器官漸進性功能喪失(如心肌增厚僵硬造成限制性心臟病變、腎絲球病變致蛋白尿);診斷依組織切片以剛果紅染色呈現偏光顯微鏡下特有的蘋果綠雙折射確診,並以免疫組織化學或免疫螢光染色鑑定澱粉樣蛋白類型,心臟受累可輔以心臟磁振造影評估。",
+   "western_pathology_en": "Precursor proteins (such as immunoglobulin light chains or serum amyloid A protein) misfold and aggregate into insoluble beta-pleated sheet fibrils that deposit in the extracellular matrix, compressing and replacing normal tissue architecture and causing progressive organ dysfunction (e.g., thickened, stiff myocardium producing restrictive cardiomyopathy, or glomerular deposits causing proteinuria). Diagnosis is confirmed on tissue biopsy showing Congo red staining with the characteristic apple-green birefringence under polarized light, with immunohistochemistry or immunofluorescence used to type the amyloid protein; cardiac MRI can further characterize cardiac involvement.",
+   "red_flags_zh": [
+    "心衰竭合併心臟超音波顯示心室壁異常增厚但無高血壓病史,需警覺心臟澱粉樣變性並儘速轉診",
+    "對標準心衰竭藥物治療反應不佳或無法耐受,為心臟澱粉樣變性重要警訊",
+    "不明原因蛋白尿合併腎功能惡化,需考慮腎臟澱粉樣變性並轉診腎臟科",
+    "合併雙側腕隧道症候群、周邊神經病變或姿勢性低血壓等多系統症狀,提示可能為全身性澱粉樣變性需整合評估"
+   ],
+   "red_flags_en": [
+    "Heart failure with echocardiographic evidence of unexplained ventricular wall thickening without a history of hypertension should raise suspicion for cardiac amyloidosis and prompt urgent referral",
+    "Poor response to or intolerance of standard heart failure medications is an important warning sign for underlying cardiac amyloidosis",
+    "Unexplained proteinuria with worsening renal function should prompt consideration of renal amyloidosis and nephrology referral",
+    "Bilateral carpal tunnel syndrome, peripheral neuropathy, or orthostatic hypotension occurring together suggest possible systemic amyloidosis and warrant integrated evaluation"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "高齡",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: Amyloidosis"
+    },
+    {
+     "factor": "慢性發炎性疾病(如類風濕性關節炎)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Amyloidosis"
+    },
+    {
+     "factor": "漿細胞疾病(如多發性骨髓瘤)病史",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: Amyloidosis"
+    },
+    {
+     "factor": "男性",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: Amyloidosis"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Older age",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: Amyloidosis"
+    },
+    {
+     "factor": "Chronic inflammatory disease (e.g., rheumatoid arthritis)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Amyloidosis"
+    },
+    {
+     "factor": "History of a plasma cell disorder (e.g., multiple myeloma)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: Amyloidosis"
+    },
+    {
+     "factor": "Male sex",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: Amyloidosis"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "不可用於治療澱粉樣變性本身或逆轉器官澱粉樣蛋白沉積,僅可能作為疲勞、周邊神經病變不適等症狀之輔助緩解",
+    "precautions": "合併周邊神經病變或姿勢性低血壓患者針刺後應注意跌倒風險;心臟或腎臟功能嚴重受損者針刺強度與體位須謹慎評估",
+    "co_management": "病人多同時接受血液腫瘤科或腎臟科治療,任何輔助介入應聯絡原主治醫師確認目前治療階段",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "Not for treating amyloidosis itself or reversing organ amyloid deposition; may only serve as an adjunct to relieve symptoms such as fatigue or peripheral neuropathic discomfort",
+    "precautions": "Patients with peripheral neuropathy or orthostatic hypotension should be monitored for fall risk after needling; needling intensity and positioning require careful assessment in those with significant cardiac or renal impairment",
+    "co_management": "Patients are usually concurrently managed by hematology-oncology or nephrology; any adjunct intervention should be coordinated with the treating physician to confirm the current treatment stage",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.xu_lao",
+    "tdis.shui_zhong"
+   ],
+   "related_patterns": [
+    "pattern.qi_blood_deficiency",
+    "pattern.kidney_yang_deficiency"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "NCBI StatPearls: Amyloidosis (NBK470285, retrieved 2026-08)"
+    ],
+    "summary_en": [
+     "NCBI StatPearls: Amyloidosis (NBK470285, retrieved 2026-08)"
+    ],
+    "western_context_zh": [
+     "PMC: AL Amyloidosis (PMC3495844, retrieved 2026-08); PMC: Physiology, Diagnosis and Treatment of Cardiac Light Chain Amyloidosis (PMC8880759, retrieved 2026-08)"
+    ],
+    "western_context_en": [
+     "PMC: AL Amyloidosis (PMC3495844, retrieved 2026-08); PMC: Physiology, Diagnosis and Treatment of Cardiac Light Chain Amyloidosis (PMC8880759, retrieved 2026-08)"
+    ],
+    "western_pathology_zh": [
+     "NCBI StatPearls: Amyloidosis (NBK470285, retrieved 2026-08)"
+    ],
+    "western_pathology_en": [
+     "NCBI StatPearls: Amyloidosis (NBK470285, retrieved 2026-08)"
+    ],
+    "red_flags_zh": [
+     "Cleveland Clinic: Cardiac Amyloidosis — What You Need To Know (my.clevelandclinic.org/health/diseases/22598-cardiac-amyloidosis, retrieved 2026-08); Oxford Academic: Keys to early diagnosis of cardiac amyloidosis — red flags (retrieved 2026-08)"
+    ],
+    "red_flags_en": [
+     "Cleveland Clinic: Cardiac Amyloidosis — What You Need To Know (my.clevelandclinic.org/health/diseases/22598-cardiac-amyloidosis, retrieved 2026-08); Oxford Academic: Keys to early diagnosis of cardiac amyloidosis — red flags (retrieved 2026-08)"
+    ],
+    "risk_factors_zh": [
+     "NCBI StatPearls: Amyloidosis (NBK470285)"
+    ],
+    "risk_factors_en": [
+     "NCBI StatPearls: Amyloidosis (NBK470285)"
+    ]
+   }
   },
   {
    "id": "cond.lymphadenopathy",
@@ -99360,7 +100786,123 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "遺傳性血管性水腫是一種罕見的體染色體顯性遺傳疾病,因C1酯酶抑制劑數量不足(第一型)或功能異常(第二型),導致緩激肽調控失衡,反覆發作非搔癢性、非蕁麻疹性的皮下或黏膜下水腫,好發部位包括顏面、四肢、生殖器、腸胃道黏膜及喉部,喉部水腫可能致命。",
+   "summary_en": "Hereditary angioedema (HAE) is a rare autosomal dominant disorder caused by a deficiency (type 1) or dysfunction (type 2) of C1 esterase inhibitor, leading to dysregulated bradykinin production and recurrent episodes of non-pruritic, non-urticarial subcutaneous or submucosal swelling. Common sites include the face, limbs, genitals, gastrointestinal mucosa, and larynx; laryngeal involvement can be fatal.",
+   "western_context_zh": "西醫處理以過敏免疫科或血液科評估為主,確診依C4、C1酯酶抑制劑濃度與功能檢測;病人需備有急性發作時可自行注射之藥物,並教育辨識喉部水腫前驅症狀(聲音改變、吞嚥困難),疑似喉部受累須視為急症立即送醫評估插管可能性。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western management typically involves allergy/immunology or hematology evaluation, with diagnosis confirmed by C4 level and C1 esterase inhibitor level/function testing. Patients are equipped with self-injectable on-demand medication for acute attacks and educated to recognize early signs of laryngeal involvement (voice change, difficulty swallowing); suspected laryngeal involvement is treated as an emergency requiring immediate evaluation for possible airway intervention. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "C1酯酶抑制劑基因突變導致其數量不足或功能缺陷,無法有效抑制接觸活化系統與激肽釋放酶-激肽路徑,造成緩激肽過度生成;緩激肽作用於血管內皮細胞使血管通透性增加,體液滲入組織間隙形成局部非發炎性、非搔癢性水腫,好發於顏面、四肢、腸胃道及喉部黏膜。診斷依C4濃度降低、C1酯酶抑制劑濃度或功能低下確立,並須與過敏性(組織胺媒介)血管性水腫做鑑別,因兩者對抗組織胺及類固醇治療反應不同。",
+   "western_pathology_en": "Mutations in the gene encoding C1 esterase inhibitor result in insufficient quantity or defective function of the protein, impairing its regulation of the contact activation system and the kallikrein-kinin pathway, which leads to excessive bradykinin production. Bradykinin acts on vascular endothelium to increase permeability, allowing fluid to leak into tissue spaces and produce localized, non-inflammatory, non-pruritic edema, most often affecting the face, limbs, gastrointestinal tract, and laryngeal mucosa. Diagnosis is established by low C4, together with low C1 esterase inhibitor level or function, and must be differentiated from histamine-mediated allergic angioedema, since the two respond differently to antihistamines and corticosteroids.",
+   "red_flags_zh": [
+    "聲音改變、吞嚥困難、喘鳴或呼吸困難,提示喉部水腫可能致命,需視為急症立即送醫並準備緊急氣道處置",
+    "腹部劇痛合併噁心嘔吐,可能為腸胃道黏膜水腫發作,易被誤診為急腹症",
+    "臉部或舌頭快速腫脹並持續惡化,需儘速就醫評估呼吸道風險",
+    "已知病史者於手術、拔牙或感染等誘發因子後出現新發或加劇腫脹,需提高警覺並儘早使用備用藥物"
+   ],
+   "red_flags_en": [
+    "Voice change, difficulty swallowing, stridor, or shortness of breath suggests laryngeal edema, which can be fatal, and should be treated as an emergency with immediate preparation for airway management",
+    "Severe abdominal pain with nausea and vomiting may represent a gastrointestinal mucosal edema attack and is easily mistaken for an acute abdomen",
+    "Rapidly progressive facial or tongue swelling warrants urgent evaluation for airway compromise",
+    "New or worsening swelling after known triggers such as surgery, dental procedures, or infection in a patient with known HAE warrants heightened vigilance and prompt use of on-demand medication"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "C1酯酶抑制劑基因(SERPING1)突變家族史",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "PMC: The Pathophysiology of Hereditary Angioedema"
+    },
+    {
+     "factor": "雌激素相關藥物(口服避孕藥、荷爾蒙療法)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Merck Manual: Hereditary and Acquired C1 Inhibitor Deficiency"
+    },
+    {
+     "factor": "血管收縮素轉化酶抑制劑(ACE inhibitor)使用",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Medscape: Acute Angioedema Overview"
+    },
+    {
+     "factor": "物理性創傷、手術或牙科處置",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "PMC: Hereditary angioedema — how to approach it at the emergency department"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Family history of SERPING1 (C1 inhibitor gene) mutation",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "PMC: The Pathophysiology of Hereditary Angioedema"
+    },
+    {
+     "factor": "Estrogen-related medications (oral contraceptives, hormone therapy)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Merck Manual: Hereditary and Acquired C1 Inhibitor Deficiency"
+    },
+    {
+     "factor": "ACE inhibitor use",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Medscape: Acute Angioedema Overview"
+    },
+    {
+     "factor": "Physical trauma, surgery, or dental procedures",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "PMC: Hereditary angioedema — how to approach it at the emergency department"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "不可用於治療遺傳性血管性水腫本身或預防急性發作,無法替代急性期自行注射之備用藥物",
+    "precautions": "急性腫脹發作期間應以緊急醫療處置為優先,不應以針灸延遲送醫,尤其懷疑喉部受累時",
+    "co_management": "病人多由過敏免疫科或血液科長期追蹤並備有緊急藥物,任何輔助介入應聯絡原主治醫師確認目前用藥與發作史",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "Not for treating hereditary angioedema itself or preventing acute attacks; cannot substitute for self-injectable on-demand medication during an acute episode",
+    "precautions": "During an acute swelling episode, emergency medical care takes priority and acupuncture must not delay transport for care, especially when laryngeal involvement is suspected",
+    "co_management": "Patients are usually followed long-term by allergy/immunology or hematology and carry emergency medication; any adjunct intervention should be coordinated with the treating physician to confirm current medication and attack history",
+    "evidence": "unknown",
+    "source": null
+   },
+   "field_sources": {
+    "summary_zh": [
+     "PMC: The Pathophysiology of Hereditary Angioedema (PMC3666152, retrieved 2026-08)"
+    ],
+    "summary_en": [
+     "PMC: The Pathophysiology of Hereditary Angioedema (PMC3666152, retrieved 2026-08)"
+    ],
+    "western_context_zh": [
+     "PMC: Hereditary angioedema — how to approach it at the emergency department? (PMC8020838, retrieved 2026-08)"
+    ],
+    "western_context_en": [
+     "PMC: Hereditary angioedema — how to approach it at the emergency department? (PMC8020838, retrieved 2026-08)"
+    ],
+    "western_pathology_zh": [
+     "PMC: The Pathophysiology of Hereditary Angioedema (PMC3666152, retrieved 2026-08); Merck Manual: Hereditary and Acquired C1 Inhibitor Deficiency or Dysfunction (retrieved 2026-08)"
+    ],
+    "western_pathology_en": [
+     "PMC: The Pathophysiology of Hereditary Angioedema (PMC3666152, retrieved 2026-08); Merck Manual: Hereditary and Acquired C1 Inhibitor Deficiency or Dysfunction (retrieved 2026-08)"
+    ],
+    "red_flags_zh": [
+     "PMC: Management of upper airway edema caused by hereditary angioedema (PMC2920238, retrieved 2026-08); PubMed: An ABC of the Warning Signs of Hereditary Angioedema (retrieved 2026-08)"
+    ],
+    "red_flags_en": [
+     "PMC: Management of upper airway edema caused by hereditary angioedema (PMC2920238, retrieved 2026-08); PubMed: An ABC of the Warning Signs of Hereditary Angioedema (retrieved 2026-08)"
+    ],
+    "risk_factors_zh": [
+     "PMC: The Pathophysiology of Hereditary Angioedema (PMC3666152); Merck Manual: Hereditary and Acquired C1 Inhibitor Deficiency; Medscape: Acute Angioedema Overview"
+    ],
+    "risk_factors_en": [
+     "PMC: The Pathophysiology of Hereditary Angioedema (PMC3666152); Merck Manual: Hereditary and Acquired C1 Inhibitor Deficiency; Medscape: Acute Angioedema Overview"
+    ]
+   }
   }
  ]
 }
