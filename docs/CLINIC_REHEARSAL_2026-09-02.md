@@ -86,6 +86,10 @@ build command `node scripts/build-site.js`、deploy command `npx wrangler deploy
 - [ ] 「新增 SOAP」→ 填 S/O/A/P
 - [ ] 用穴欄輸入中文或代碼(例如打「足三里」或「ST36」)→ 從下拉選,**不要手打 id**
 - [ ] 選 7–8 個穴,填留針分鐘、手法
+- [ ] **試一次分區導航**:對話框頂端那排晶片(上次/脈絡/S/O/A/P/生活/AE/成效),
+      點「P 治法」應直接跳到治法區,不必捲
+- [ ] 展開 P 區的「針刺參數 Needling parameters」,填進針數/深度/得氣/刺激/針具
+      (選填;留空 = 未記錄,與「0 針」「未得氣」是不同的事實)
 - [ ] 存檔 → 病例詳情出現這一診
 
 ### Step 5 — 寫第二診,測「沿用上次治療」⚠️ 這步在測速度
@@ -121,6 +125,15 @@ build command `node scripts/build-site.js`、deploy command `npx wrangler deploy
 - [ ] 演練用的假病例全部刪除,或整個換到正式入口重來
 - [ ] 確認正式入口是乾淨的 0 筆(或只有真實資料)
 
+### Step 9 — 走一次反思(這是這套系統對你的真正用途)
+
+- [ ] 打開任一病例 → 導航點「反思」→ 六問全部選填,填一兩問就好
+- [ ] 存檔 → 病例詳情出現「臨床反思 N/6 已填」,只列你寫過的那幾問
+- [ ] 一句都沒寫的病例,整塊不會出現(不會有一排空標題)
+
+> 「病例記錄只是資料,反思才會把資料轉成臨床能力。」——你自己寫的。
+> 六問一個都不強迫填,系統也絕不代你寫任何一句。
+
 ---
 
 ## 2. 開診當天的固定動作
@@ -138,11 +151,15 @@ build command `node scripts/build-site.js`、deploy command `npx wrangler deploy
 
 | 洞 | 症狀 | 繞法 |
 |---|---|---|
-| SOAP 對話框超長(約 8500px) | 手機上要一路捲到底 | 先用 quicknav 跳區;完整分區導航未實作 |
-| 針刺參數無輸入欄 | 進針數/深度/得氣/刺激方式/針具**沒有欄位可填** | 暫時寫進「手法」自由文字欄 |
 | 沒有自動備份 | 只有手動匯出 | 照 §2 的固定動作走 |
 | 無容量監測 | localStorage 約 5–10MB;35 案 ≈ 149KB,短期不會爆 | 定期匯出即可 |
 | `file://` 多 checkout 污染(M2) | 舊 worktree 的 `legacy/index.html` 會直寫 v1 鍵 | 不要用 `file://`;真要用就只留一份 checkout |
+| 診前資料貼上用 `window.prompt()` | 無法多行預覽 | 貼上後在 SOAP 欄位裡自己核對 |
+
+### 已經補掉的(原本列在這裡,2026-08-24 修完)
+
+- ~~SOAP 對話框超長要一路捲~~ → 兩個長表單都有吸頂分區導航了,見 Step 4 的補充。
+- ~~針刺參數沒有欄位可填~~ → P 區的「針刺參數 Needling parameters」收合區已可填五欄。
 
 ---
 
@@ -154,5 +171,8 @@ build command `node scripts/build-site.js`、deploy command `npx wrangler deploy
 | `636556ef` | M3 fail-loud:病人 id 鑄造失敗改為可見橫幅 | Step 3 |
 | `8418510c` | 沿用上次治療(白名單只帶處置,不帶所見) | Step 5 |
 | `323cb538` | 入口指示行 + 空病例解釋 | Step 1 |
+| `3656dd26` | 長表單分區導航(SOAP 8012px / 病例 4371px) | Step 4 |
+| `8cc1610e` | STRICTA 針刺參數五欄可填(得氣不可沿用) | Step 4 |
+| `41c5146d` | CG9 臨床反思六問接上 UI | Step 9 |
 
 全部在 `codex/pattern-v2`。**尚未進 main,因此也尚未上線** —— 見 §0.1。
