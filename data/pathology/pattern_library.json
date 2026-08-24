@@ -2196,9 +2196,9 @@
     },
     {
      "pattern_id": "pattern.liver_wind",
-     "distinguishing_zh": "肝陽上亢以眩暈頭痛為主,尚未出現動風徵象;若病情發展,陽亢化風,則見肢體麻木震顫、口眼喎斜,甚則猝然昏仆偏癱,即轉為肝風內動——兩者常是同一病理的先後階段,肝陽上亢是肝風內動的前驅證。",
-     "distinguishing_en": "Liver Yang Rising presents mainly with dizziness and headache, without wind-stirring signs. If it progresses (Yang transforming into Wind), limb numbness/tremor, facial/mouth deviation, or sudden collapse with hemiplegia appear — this is Liver Wind Stirring. The two are often sequential stages of the same pathology, with Liver Yang Rising as the prodrome.",
-     "source": "TCM textbook standard (中醫診斷學 藏象/氣血津液/淋證辨證通說;2026-08-24 撰寫,pattern_id 逐一核對存在於本庫)"
+     "distinguishing_zh": "肝陽上亢以眩暈頭痛為主,尚未出現動風徵象;若病情沿「肝陽化風」這條病機路徑發展,則見肢體麻木震顫、口眼喎斜,甚則猝然昏仆偏癱,即轉為肝風內動——此路徑上兩者常是同一病理的先後階段,肝陽上亢可為前驅證。但肝風內動另有熱極生風、血虛生風、陰虛動風等不同病因路徑(見本庫 pattern.liver_wind 卡自身 mechanism_zh),並非皆由肝陽上亢發展而來,不能把肝陽上亢當成肝風內動的共同前驅證。",
+     "distinguishing_en": "Liver Yang Rising presents mainly with dizziness and headache, without wind-stirring signs. If it progresses along the Liver-Yang-transforming-into-Wind pathway specifically, limb numbness/tremor, facial/mouth deviation, or sudden collapse with hemiplegia appear — this is Liver Wind Stirring. Along that pathway the two are often sequential stages, with Liver Yang Rising as a possible prodrome. But Liver Wind Stirring also arises via other mechanisms — extreme Heat, Blood deficiency, or Yin deficiency generating Wind (see this card's own pattern.liver_wind mechanism_zh) — not all of which descend from Liver Yang Rising, so it should not be described as the shared prodrome of Liver Wind Stirring in general.",
+     "source": "TCM textbook standard (中醫診斷學 藏象/氣血津液/淋證辨證通說;2026-08-24 撰寫,pattern_id 逐一核對存在於本庫)。2026-08-24 範圍修正：原文把肝陽上亢寫成肝風內動的共同前驅證,過度概化——本庫 pattern.liver_wind 卡自身 mechanism_zh 已明載肝風內動另有熱極生風/血虛生風路徑,與肝陽化風無關。Codex review 抓到,依本庫既有卡片內容改寫,未新增未經查證的病機宣稱。"
     }
    ]
   },
@@ -3552,9 +3552,9 @@
     {
      "pattern_id": "pattern.phlegm_fire_disturbing_heart",
      "distinguishing_zh": "痰蒙心竅為痰濁(陰邪)矇蔽心竅,神識昏蒙、表情呆滯、喉中痰鳴、苔白膩,病勢較緩(如癲證、中風痰蒙清竅);痰火擾心為痰與火(陽邪)互結擾心,神志狂躁不安、胡言亂語、面赤氣粗、舌紅苔黃膩,病勢較急(如狂證)。",
-     "distinguishing_en": "Phlegm Misting the Heart is turbid Phlegm (a yin pathogen) clouding the Heart orifices: dulled consciousness, blank affect, rattling phlegm in the throat, white greasy coating — a slower-onset pattern (e.g. withdrawal-type psychosis, stroke with phlegm obscuring the orifices). Phlegm-Fire Disturbing the Heart is Phlegm bound with Fire (a yang pathogen) disturbing the Heart: manic agitation, incoherent raving, red face, coarse breathing, red tongue with yellow greasy coating — a faster-onset pattern (e.g. manic-type psychosis).",
+     "distinguishing_en": "Phlegm Misting the Heart is turbid Phlegm (a yin pathogen) clouding the Heart orifices: dulled consciousness, blank affect, rattling phlegm in the throat, white greasy coating — a slower-onset pattern (e.g. dian pattern, withdrawn or quiescent presentation; stroke with phlegm obscuring the orifices). Phlegm-Fire Disturbing the Heart is Phlegm bound with Fire (a yang pathogen) disturbing the Heart: manic agitation, incoherent raving, red face, coarse breathing, red tongue with yellow greasy coating — a faster-onset pattern (e.g. kuang pattern, agitated presentation).",
      "tongue_difference_zh": "痰蒙心竅舌苔白膩;痰火擾心舌紅苔黃膩",
-     "source": "TCM textbook standard (中醫診斷學 藏象/氣血津液/淋證辨證通說;2026-08-24 撰寫,pattern_id 逐一核對存在於本庫)"
+     "source": "TCM textbook standard (中醫診斷學 藏象/氣血津液/淋證辨證通說;2026-08-24 撰寫,pattern_id 逐一核對存在於本庫)。2026-08-24 譯詞修正：distinguishing_en 原用「withdrawal-type psychosis」/「manic-type psychosis」——前者易被讀成物質戒斷性精神病,且把 TCM 癲/狂證與 biomedical psychosis 近似等同；改為「dian pattern」/「kuang pattern」+ 現象描述,保留兩套概念的界線。Codex review 抓到。本卡僅 1 個 differential_patterns,未達 PATTERN_CARD_TEMPLATE.md 要求的至少 2 個,待補第二個易混淆證型（未新增,需要額外查證撰寫）。"
     }
    ],
    "sources": [
@@ -7684,7 +7684,7 @@
    "typical_points": [
     "SI3",
     "SI8",
-    "BL39",
+    "ST39",
     "SP9",
     "SP6"
    ],
@@ -7726,7 +7726,8 @@
      "中醫診斷學/方劑學統編教材通行證型-方穴對應(2026-08-24 撰寫,id 逐一核對 formulas.json/acupoints/361.json 實際存在,無虛構連結)"
     ],
     "points": [
-     "中醫診斷學/方劑學統編教材通行證型-方穴對應(2026-08-24 撰寫,id 逐一核對 formulas.json/acupoints/361.json 實際存在,無虛構連結)"
+     "中醫診斷學/方劑學統編教材通行證型-方穴對應(2026-08-24 撰寫,id 逐一核對 formulas.json/acupoints/361.json 實際存在,無虛構連結)",
+     "2026-08-24 錯連結修正：BL39(委陽)改為 ST39(下巨虛)。本庫 data/acupoints/361.json 逐點明載 BL39 wushu_point 為「三焦下合穴」、ST39 為「小腸下合穴」——小腸實熱證屬小腸腑病,原下合穴取穴取的是三焦經而非小腸經。原值=[\"SI3\",\"SI8\",\"BL39\",\"SP9\",\"SP6\"]。Codex review 抓到。"
     ]
    },
    "tongue_zh": "舌紅，苔黃",
@@ -9834,9 +9835,7 @@
      "source": "https://iris.who.int/bitstream/handle/10665/206952/9789290612487_eng.pdf"
     }
    ],
-   "typical_formulas": [
-    "formula.huo_xiang_zheng_qi_san"
-   ],
+   "typical_formulas": [],
    "typical_points": [
     "PC6",
     "ST36",
@@ -9876,7 +9875,7 @@
      "https://www.meandqi.com/knowledge-base/patterns/summer-heat-with-dampness"
     ],
     "formulas": [
-     "中醫診斷學/方劑學統編教材通行證型-方穴對應(2026-08-24 撰寫,id 逐一核對 formulas.json/acupoints/361.json 實際存在,無虛構連結)"
+     "2026-08-24 移除錯連結：原值=[\"formula.huo_xiang_zheng_qi_san\"]（中醫診斷學/方劑學統編教材通行證型-方穴對應,2026-08-24 撰寫）。移除理由：本卡自身 tongue_zh「舌紅，苔黃膩或白黃相兼而膩」、pulse_zh「脈濡數」與 formula.huo_xiang_zheng_qi_san 卡片自身 contraindications_zh/cautions_zh 明載的禁忌「濕熱證見口渴、咽乾、舌苔黃膩者禁用」「『熱重於濕』，不合適，應避免」幾乎逐字相符——同庫兩卡互相矛盾,連結本身就是錯的,不是資料庫收斂問題。誠實留空,不臆測替代方——本庫暑濕相關方卡需要重新盤點才能確定真正對應（熱重於濕/濕重於熱兩種偏向可能需要不同方）,這裡不猜。Codex review 抓到。"
     ],
     "points": [
      "中醫診斷學/方劑學統編教材通行證型-方穴對應(2026-08-24 撰寫,id 逐一核對 formulas.json/acupoints/361.json 實際存在,無虛構連結)"
