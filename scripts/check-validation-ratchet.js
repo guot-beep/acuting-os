@@ -84,6 +84,17 @@ const RATCHETED = [
     detail: () => null,
     doc: "DECISIONS.md D3",
   },
+  {
+    key: "encoding",
+    script: "scripts/validate-encoding.js",
+    args: ["--json"],
+    extract: (out) => JSON.parse(out).defects,
+    detail: (out) => JSON.parse(out).by_code,
+    // 2026-08-24 加入：中文欄位裝英文（chinese_field_without_cjk）與匯入殘留的
+    // 置換字元，一度 13,201 筆而完全沒有 gate ——「Ting 在中文欄看到英文」是
+    // 每天都看得到的內容缺陷，卻能無聲增長。方劑主治／現代運用回填後入棘輪。
+    doc: "data/audits/en_zh_term_crosswalk.json",
+  },
   // point_ids sat here temporarily (ceiling 72) while the extra-point line
   // backfilled the D2 ids. Done 2026-08-06 — it graduated into the blocking
   // `green` job in .github/workflows/validate.yml. That is the intended life

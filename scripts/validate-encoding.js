@@ -135,6 +135,13 @@ function main() {
     }, {})
   };
 
+  // --json：給 check-validation-ratchet 用的機器可讀輸出（defects/by_code），
+  // 讓這個缺陷類有天花板可守——它一度有 13,201 筆而完全沒有 gate。
+  if (process.argv.includes("--json")) {
+    console.log(JSON.stringify({ defects: issues.length, by_code: summary.by_type, by_file: summary.by_file }));
+    return;
+  }
+
   if (issues.length > 0) {
     console.error("Encoding validation failed.");
     console.error(JSON.stringify(summary, null, 2));

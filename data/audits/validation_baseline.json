@@ -39,6 +39,15 @@
     "naming": {
       "defects": 0,
       "doc": "DECISIONS.md D3"
+    },
+    "encoding": {
+      "defects": 10129,
+      "by_code": {
+        "chinese_field_without_cjk": 9028,
+        "replacement_character": 1100,
+        "question_mark_only": 1
+      },
+      "doc": "data/audits/en_zh_term_crosswalk.json"
     }
   }
 }
