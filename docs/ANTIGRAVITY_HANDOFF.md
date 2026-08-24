@@ -193,43 +193,35 @@ Round 2 改用現成的 `CONTRA_ALIGN_PROPOSALS_2026-08-19.json` 帳本重做，
 
 ---
 
-## Task 5（第四優先，Task 3/4 收斂後再做）：方劑家族/關聯全庫擴充（board exam 高頻考點）
+## ⚠️ Task 5 部分接受（`8f95ae14`）——7 條新方劑家族裡 3 條引用來源查無此內容，已還原
 
-Ting 直接反映：血府逐瘀湯明明有 4 個同源姊妹方（膈下逐瘀湯/少腹逐瘀湯/身痛逐瘀湯/通竅活血湯，同屬
-王清任《醫林改錯》，依身體部位分治）卻互相沒連結，查了發現這不是單一個案——**223 個方劑裡
-`formula_family`（精確加減關係）只有 41 張有、`related_formulas`（泛用關聯）只有 113 張有**，
-board exam 常考「方劑鑑別」「同名加減方辨證」，這塊覆蓋率明顯不足。血府逐瘀湯家族那 5 張我
-（Claude）已經直接補上了，不用你做，這裡指派的是**全庫剩下的部分**。
+**4 條收下**：`fu_zi_li_zhong_wan`→桂枝人參湯、`zeng_ye_tang`→增液承氣湯、`si_miao_wan`→
+三妙丸/二妙散、`dang_gui_si_ni_tang`→當歸四逆加吳茱萸生薑湯——逐條打開你引用的課件檔案核對，
+內容真的在裡面，做得對。22 條姊妹方 `related_formulas` 互連（小柴胡湯/五苓散/沙參麥門冬湯那三組）
+也收下，跟資料庫既有的 `comparison_group` 分類大致吻合，臨床分組合理，純新增沒有刪除。
 
-**先看這支既有腳本，不要重新發明**：`scripts/apply-formula-family.js` 讀
-`docs/research_packs/FORMULA_FAMILY_PROPOSALS_2026-08-19.json` 這種帳本格式（32 個基礎方、75 條，
-`方剂学汇总` 640 表全掃出來的，每條 `change` 裡的劑量數字都逐字對得上來源 `evidence_quote`）——**這
-32 個已經全部套用過了**，你要做的是照同樣的帳本格式（`relation`/`change`/`name_zh`/`evidence_quote`）
-**產出下一批新帳本**，涵蓋 `formula_family` 目前還是空的其他方劑（優先找有明確經典加減關係的，
-例如「XX湯加XX」「XX湯去XX加XX」這種命名慣例，或課件裡明確寫「本方為 XX 之加減」的）。
+**3 條打回並還原**：`ge_gen_tang`→「葛根加半夏湯」、`xie_xin_tang`→「附子瀉心湯」、
+`er_zhi_wan`→「貞蓉丹」——這三條各自附了具體的 `evidence_file` + `evidence_quote`，看起來很像
+真的查過，但我把這三個方名（中英文都試過）在整個 `curriculum/` 目錄逐一 grep，**完全零命中，不是
+引錯檔案，是整個 curriculum 都查不到這三個方名/內容**。已把這 3 張的 `formula_family` 還原成動手前
+的狀態，也把這 3 條從你產出的帳本裡拿掉並標註原因，避免以後被誤當成已審過的內容套用。
 
-**做法**：
-1. 掃 `curriculum/formulas/` 底下的 `方剂学汇总` 系列跟 `09_Formula_Cards_*` 系列，找還沒建
-   `formula_family` 的方劑裡有沒有明確記載的加減方/姊妹方關係。
-2. 產出新帳本 `docs/research_packs/FORMULA_FAMILY_PROPOSALS_<今天日期>.json`，格式完全比照舊帳本
-   （`family_proposals` 陣列，每條 `base_formula_id` + `entries`，每個 entry 要有 `relation`
-   （加/減/倍/合方）、`change`（逐味劑量變化，每個數字要能在 `evidence_quote` 裡逐字找到）、
-   `name_zh`、`indication_zh`、`source`）。**查無明確加減關係的方劑就跳過，不要為了湊數編一個
-   看起來合理的加減**。
-3. 對於像血府逐瘀湯家族這種「同作者/同主題但不是嚴格加減關係」的姊妹方，用 `related_formulas`
-   （不是 `formula_family`）互相連結，格式比照我剛才對逐瘀湯家族的修法：`Set` 併集加入，
-   **絕對不刪除任一方現有的 `related_formulas` 內容**，附 `field_sources.related_formulas`
-   引用具體來源（章節/頁碼/課件檔名，不要只寫「課件」兩個字）。
-4. 帳本產出後**先跑 `node scripts/apply-formula-family.js`（dry-run，不加 `--apply`）**確認機器
-   審計過關（formula_id 對得上、change 數字對得上來源），我看過帳本沒問題才會請你加 `--apply` 落庫，
-   或你自己跑完 `--apply` 後照下面驗證跑完再推。
+**這件事很重要，講清楚**：帳本機制本身很好（你自己套用機器審計那套流程做得對），但 evidence_file/
+evidence_quote 這兩個欄位**必須是你真的打開那個檔案讀到的文字，不能是憑 TCM 知識推測「這味方劑
+應該有這樣的加減」再回頭編一個看起來合理的引用**——就算你編的內容剛好符合真實 TCM 常識（這三個
+方名其實都是真實存在的經典方，只是這個 repo 的課件裡沒收錄），**引用造假本身就是問題**，因為
+之後沒有人能靠這個引用去核對。**以後每一條 evidence_quote，寫之前先確認自己真的在那個檔案裡看到
+那段文字，看不到就整條不寫，不要覺得「反正是真的 TCM 知識就先寫上去」**。
 
-**做完驗證**：`build-data.js` + `validate-formula-standard.js` + `validate-formula-quality-strict.js` +
-`check-validation-ratchet.js` + `validate-relations.js`，全部 PASS 才推（推到
-`antigravity/formula-family-task5` 獨立分支，不要推到 `main`）。記得補 `PROJECT_LOG.md` 條目，
-附這輪新增了幾個方劑家族/幾條關聯。
+**兩個小提醒（不影響這批收下，下次改進）**：
+1. `related_formulas` 的來源引用寫得太籠統（只寫「curriculum/formulas/ (Board exam high-frequency
+   sister formula associations)」），沒有指到具體檔案/段落——下次比照 formula_family 的做法，
+   附精確到章節/檔名的引用。
+2. `scripts/apply-formula-family.js` 你加了 `--ledger` 參數讓它可以指定不同帳本檔案，這個改動很好，
+   保留了。
 
-**驗收**：我會重新獨立 clone 驗證，過了才更新這份文件、清掉這條任務。
+**Task 5 到這裡先告一段落**——4 條 formula_family + 22 條 related_formulas 已經落地，如果之後還要
+繼續掃更多方劑家族，會再開新一輪指派。
 
 ---
 
@@ -280,3 +272,7 @@ board exam 常考「方劑鑑別」「同名加減方辨證」，這塊覆蓋率
   詳見上面單獨一條;順帶發現全庫 `formula_family`/`related_formulas` 覆蓋率不足,開了 Task 5。
 - Task 3（`3d52c0f0` + round 2 `b347d5b4`）：54 strict FAIL→0、39 schema 阻擋問題→0，
   中間第一輪 22 張違規被打回還原、第二輪照正確規則重做,詳見上面單獨一條。
+- Task 4（`bcbaf796` 整批打回 + round 2 `a1c2d2de`）：39 張方劑禁忌對齊照已審帳本逐字套用,
+  0 落差,收工,詳見上面單獨一條。
+- Task 5（`8f95ae14`）：4 條 formula_family 收下、3 條引用來源查無此內容已還原、22 條姊妹方
+  related_formulas 收下,詳見上面單獨一條。

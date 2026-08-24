@@ -6532,9 +6532,6 @@
         ],
         "exact_source_url": [
           "FB-10 2026-08-12：原值「https://cloudtcm.com/formula/99」為 59 筆共用的錯誤預設值（大黃牡丹湯的頁面），與本筆自己的 source_urls/cloudtcm_id 不符；改回本筆對應的「https://cloudtcm.com/formula/260」。見 docs/research_packs/FORMULA_EYESON_01.md F-18 / §3 FB-10。"
-        ],
-        "formula_family": [
-          "curriculum/formulas/07_Formula_Cards_061-070_祛濕劑_解表劑.md(Ge Gen Tang card, Section 17 Modifications;帳本 docs/research_packs/FORMULA_FAMILY_PROPOSALS_2026-08-24.json,劑量逐字審計)"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/260",
@@ -6583,18 +6580,7 @@
         "Regulates immune response, antiallergic action",
         "Protective effect against acute ischemia and hypoxia"
       ],
-      "composition_suspect_cleared_note": "2026-08-19 原組成誤植為升麻葛根湯五味(該五列仍完整存於 formula.sheng_ma_ge_gen_tang),依《傷寒論》葛根湯條文重建七味",
-      "formula_family": [
-        {
-          "relation": "加",
-          "name_zh": "葛根加半夏湯",
-          "change": [
-            "+半夏"
-          ],
-          "indication_zh": "外感風寒表實兼胃氣上逆之嘔吐",
-          "source": "curriculum/formulas/07_Formula_Cards_061-070_祛濕劑_解表劑.md"
-        }
-      ]
+      "composition_suspect_cleared_note": "2026-08-19 原組成誤植為升麻葛根湯五味(該五列仍完整存於 formula.sheng_ma_ge_gen_tang),依《傷寒論》葛根湯條文重建七味"
     },
     {
       "id": "formula.sheng_ma_ge_gen_tang",
@@ -10916,9 +10902,6 @@
         ],
         "source_classic": [
           "《金匱要略·驚悸吐衄下血胸滿瘀血病脈證治》瀉心湯(心氣不足,吐血衄血,瀉心湯主之)+ 方劑學通行內容;2026-08-19 重建,待 Ting 複核"
-        ],
-        "formula_family": [
-          "curriculum/formulas/04_Formula_Cards_031-040_清熱劑.md(Xie Xin Tang card, Section 17 Modifications;帳本 docs/research_packs/FORMULA_FAMILY_PROPOSALS_2026-08-24.json,劑量逐字審計)"
         ]
       },
       "clinical_classification_zh": "臨床常用專病處方",
@@ -10980,18 +10963,7 @@
       "tongue_zh": "紅",
       "coating_zh": "黃",
       "pulse_zh": "數有力",
-      "source_classic": "《金匱要略》",
-      "formula_family": [
-        {
-          "relation": "加",
-          "name_zh": "附子瀉心湯",
-          "change": [
-            "+附子"
-          ],
-          "indication_zh": "邪熱聚結心下兼陽虛惡寒者",
-          "source": "curriculum/formulas/04_Formula_Cards_031-040_清熱劑.md"
-        }
-      ]
+      "source_classic": "《金匱要略》"
     },
     {
       "id": "formula.liang_ge_san",
@@ -114756,17 +114728,7 @@
         "Use with caution for those with weak digestion.",
         "Contraindicated for those with atrophy caused by Damp-Heat Invasion."
       ],
-      "formula_family": [
-        {
-          "relation": "加",
-          "name_zh": "貞蓉丹",
-          "change": [
-            "+肉蓯蓉"
-          ],
-          "indication_zh": "肝腎陰虛兼便秘或腰膝酸軟者",
-          "source": "curriculum/formulas/19_Formula_Cards_181-190_未分類-考點與補充劑.md"
-        }
-      ],
+      "formula_family": [],
       "review_status": "draft",
       "source_type": "board_outline_skeleton",
       "needs_fill": "骨架記錄：僅有考綱的官方方名。組成、君臣佐使、功效、主治、禁忌全部待從 curriculum/formulas 補齊，不可憑方名推測。",
@@ -114823,10 +114785,7 @@
         "source_classic": [
           "curriculum/formulas/19_Formula_Cards_181-190_未分類-考點與補充劑.md(「# 184. 二至丸 · Er Zhi Wan — Classical / course source: Yi Fang Ji Jie」;帳本 docs/research_packs/SOURCE_CLASSIC_PROPOSALS_2026-08-19.json)"
         ],
-        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)",
-        "formula_family": [
-          "curriculum/formulas/19_Formula_Cards_181-190_未分類-考點與補充劑.md(Er Zhi Wan card, Section 17 Modifications;帳本 docs/research_packs/FORMULA_FAMILY_PROPOSALS_2026-08-24.json,劑量逐字審計)"
-        ]
+        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)"
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/345",
       "cloudtcm_id": 345,

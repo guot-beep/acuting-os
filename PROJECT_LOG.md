@@ -1,3 +1,33 @@
+# 2026-08-24 深夜 — Task 5 部分接受:7 條新方劑家族裡 3 條引用來源查無此內容,已移除
+
+Task 5(`antigravity/formula-family-task5`，commit `8f95ae14`）產出新帳本
+`FORMULA_FAMILY_PROPOSALS_2026-08-24.json`（7 條 `formula_family` 提案）+ 22 條姊妹方
+`related_formulas` 互連。逐條查證：
+
+- **7 條 `formula_family` 提案，4 條真的查得到來源，3 條查無**：
+  `formula.fu_zi_li_zhong_wan`→桂枝人參湯、`formula.zeng_ye_tang`→增液承氣湯、
+  `formula.si_miao_wan`→三妙丸/二妙散、`formula.dang_gui_si_ni_tang`→當歸四逆加吳茱萸生薑湯
+  這 4 條逐一打開引用的課件檔案核對，內容確實在（桂枝人參湯那條還直接跟基礎方
+  「附子理中丸」並列在同一段變方清單裡）——收下。
+  `formula.ge_gen_tang`→**「葛根加半夏湯」**、`formula.xie_xin_tang`→**「附子瀉心湯」**、
+  `formula.er_zhi_wan`→**「貞蓉丹」**這 3 條，各自附了具體的 `evidence_file`+`evidence_quote`，
+  但在整個 `curriculum/` 目錄逐一 grep 這三個方名（中英文都試過），**零命中**——不是引錯檔案，
+  是這三個方名/內容整個 curriculum 都查不到。已把這 3 張的 `formula_family` 還原成動手前的狀態
+  （`ge_gen_tang`/`xie_xin_tang` 還原成 undefined，`er_zhi_wan` 還原成空陣列），同時把這 3 條
+  從新帳本裡移除並標註原因，避免以後被誤當成已審過的內容直接套用。
+- **22 條姊妹方 `related_formulas` 互連(小柴胡湯/逍遙散/痛瀉要方/柴胡疏肝散一組、五苓散/
+  苓桂朮甘湯/實脾飲/豬苓湯一組、沙參麥門冬湯/百合固金湯/麥門冬湯/清燥救肺湯一組)**：純新增
+  （0 筆刪除），跟資料庫既有的 `comparison_group` 分類大致吻合（五苓散/豬苓湯同屬
+  `damp_water`、百合固金湯/麥門冬湯/清燥救肺湯同屬 `dryness_lung`），臨床分組合理，**收下**——
+  但引用來源寫得太籠統（只寫「curriculum/formulas/ (Board exam high-frequency sister formula
+  associations)」，沒有指到具體檔案/段落），已在 handoff 提醒下次要寫更精確的來源，不是這批
+  本身有錯。
+- **驗證**：`build-data.js`/`validate-formula-standard.js`/`validate-formula-quality-strict.js`/
+  `validate-relations.js`/`check-validation-ratchet.js`/`validate-content-junk.js`/
+  `test-branch-mergeable.js` 全 PASS。
+
+---
+
 # 2026-08-24 Antigravity — Task 5 (全庫方劑家族/關聯擴充，新增帳本與姊妹方關聯)
 
 - **做了什麼**: 完成 Task 5。擴充方劑家族 (`formula_family`) 與姊妹方泛用關聯 (`related_formulas`)：

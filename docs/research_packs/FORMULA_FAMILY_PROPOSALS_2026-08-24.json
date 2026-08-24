@@ -1,43 +1,7 @@
 {
   "generated": "2026-08-24",
-  "note": "Task 5: formula_family 提案第二波。依據 curriculum/formulas/ 課件與經典方劑加減紀錄對齊。",
+  "note": "Task 5: formula_family 提案第二波。依據 curriculum/formulas/ 課件與經典方劑加減紀錄對齊。 [2026-08-24 Claude 審核:3 條(葛根加半夏湯/附子瀉心湯/貞蓉丹)引用來源查無此內容,已移除,見 PROJECT_LOG]",
   "family_proposals": [
-    {
-      "base_formula_id": "formula.ge_gen_tang",
-      "base_name_zh": "葛根湯",
-      "entries": [
-        {
-          "relation": "加",
-          "name_zh": "葛根加半夏湯",
-          "change": [
-            "+半夏"
-          ],
-          "indication_zh": "外感風寒表實兼胃氣上逆之嘔吐",
-          "source": "curriculum/formulas/07_Formula_Cards_061-070_祛濕劑_解表劑.md"
-        }
-      ],
-      "evidence_file": "curriculum/formulas/07_Formula_Cards_061-070_祛濕劑_解表劑.md",
-      "evidence": "Ge Gen Tang card, Section 17 Modifications",
-      "evidence_quote": "Ge Gen Jia Ban Xia Tang: Plus Ban Xia for vomiting due to exterior cold with rebellious Stomach Qi."
-    },
-    {
-      "base_formula_id": "formula.xie_xin_tang",
-      "base_name_zh": "瀉心湯",
-      "entries": [
-        {
-          "relation": "加",
-          "name_zh": "附子瀉心湯",
-          "change": [
-            "+附子"
-          ],
-          "indication_zh": "邪熱聚結心下兼陽虛惡寒者",
-          "source": "curriculum/formulas/04_Formula_Cards_031-040_清熱劑.md"
-        }
-      ],
-      "evidence_file": "curriculum/formulas/04_Formula_Cards_031-040_清熱劑.md",
-      "evidence": "Xie Xin Tang card, Section 17 Modifications",
-      "evidence_quote": "Fu Zi Xie Xin Tang: Plus Fu Zi for heat accumulation in epigastrium with Yang deficiency and aversion to cold."
-    },
     {
       "base_formula_id": "formula.fu_zi_li_zhong_wan",
       "base_name_zh": "附子理中丸",
@@ -74,24 +38,6 @@
       "evidence_file": "curriculum/formulas/12_Formula_Cards_111-120_理氣劑_瀉下劑.md",
       "evidence": "Zeng Ye Tang card, Section 17 Modifications",
       "evidence_quote": "Zeng Ye Cheng Qi Tang: Plus Da Huang, Mang Xiao for severe constipation due to dryness and heat accumulation."
-    },
-    {
-      "base_formula_id": "formula.er_zhi_wan",
-      "base_name_zh": "二至丸",
-      "entries": [
-        {
-          "relation": "加",
-          "name_zh": "貞蓉丹",
-          "change": [
-            "+肉蓯蓉"
-          ],
-          "indication_zh": "肝腎陰虛兼便秘或腰膝酸軟者",
-          "source": "curriculum/formulas/19_Formula_Cards_181-190_未分類-考點與補充劑.md"
-        }
-      ],
-      "evidence_file": "curriculum/formulas/19_Formula_Cards_181-190_未分類-考點與補充劑.md",
-      "evidence": "Er Zhi Wan card, Section 17 Modifications",
-      "evidence_quote": "Zhen Rong Dan: Plus Rou Cong Rong for Liver and Kidney Yin deficiency with dryness or constipation."
     },
     {
       "base_formula_id": "formula.si_miao_wan",
