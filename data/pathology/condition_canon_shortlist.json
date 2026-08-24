@@ -26972,10 +26972,205 @@
     "western_pathology_en": [
      "NCI/ASCO — 化療止吐通說(5-HT3/NK-1 雙路徑)",
      "MedlinePlus — Nausea and Vomiting (https://medlineplus.gov/nauseaandvomiting.html)"
+    ],
+    "summary_zh": [
+     "NCI — Nausea and Vomiting and Cancer Treatment",
+     "NCI PDQ — Nausea and Vomiting Related to Cancer Treatment"
+    ],
+    "summary_en": [
+     "NCI — Nausea and Vomiting and Cancer Treatment",
+     "NCI PDQ — Nausea and Vomiting Related to Cancer Treatment"
+    ],
+    "western_context_zh": [
+     "NCI — Nausea and Vomiting and Cancer Treatment",
+     "NCI PDQ — Nausea and Vomiting Related to Cancer Treatment",
+     "CDC — Watch Out for Fever"
+    ],
+    "western_context_en": [
+     "NCI — Nausea and Vomiting and Cancer Treatment",
+     "NCI PDQ — Nausea and Vomiting Related to Cancer Treatment",
+     "CDC — Watch Out for Fever"
+    ],
+    "risk_factors_zh": [
+     "NCI PDQ — Nausea and Vomiting Related to Cancer Treatment"
+    ],
+    "risk_factors_en": [
+     "NCI PDQ — Nausea and Vomiting Related to Cancer Treatment"
+    ],
+    "red_flags_zh": [
+     "CDC — Watch Out for Fever",
+     "NCI — Nausea and Vomiting and Cancer Treatment",
+     "MedlinePlus — Nausea and Vomiting",
+     "data/pathology/red_flag_registry.json"
+    ],
+    "red_flags_en": [
+     "CDC — Watch Out for Fever",
+     "NCI — Nausea and Vomiting and Cancer Treatment",
+     "MedlinePlus — Nausea and Vomiting",
+     "data/pathology/red_flag_registry.json"
+    ],
+    "acupuncture_scope_zh": [
+     "AcuTing OS safety and scope policy; CDC oncology-fever boundary"
+    ],
+    "acupuncture_scope_en": [
+     "AcuTing OS safety and scope policy; CDC oncology-fever boundary"
     ]
    },
    "sources": [
-    "https://medlineplus.gov/nauseaandvomiting.html"
+    "https://medlineplus.gov/nauseaandvomiting.html",
+    "https://www.cancer.gov/about-cancer/treatment/side-effects/nausea-vomiting",
+    "https://www.cancer.gov/about-cancer/treatment/side-effects/nausea/nausea-hp-pdq",
+    "https://www.cdc.gov/cancer-preventing-infections/patients/fever.html"
+   ],
+   "summary_zh": "化療相關噁心與嘔吐是抗癌治療常見但可預防與控制的副作用，可依時間分為治療開始後 24 小時內的急性型、其後數日的延遲型，以及因先前不良經驗而在治療前出現的預期型。未控制的嘔吐可造成脫水、電解質失衡、體重下降與營養問題，並影響後續治療。",
+   "summary_en": "Chemotherapy-induced nausea and vomiting is a common but often preventable and controllable cancer-treatment adverse effect. It may be acute within 24 hours of treatment, delayed over subsequent days, or anticipatory before treatment after a prior adverse experience. Uncontrolled vomiting can cause dehydration, electrolyte imbalance, weight loss, and nutritional problems and may disrupt ongoing cancer treatment.",
+   "western_context_zh": "預防性止吐計畫應由腫瘤團隊依化療藥物、劑量、療程及個人風險在治療前制定；一旦出現突破性或難治性症狀，應回報團隊調整方案。需同時評估其他原因，例如感染、便秘、疼痛藥物、代謝異常或腫瘤本身。化療期間發燒屬醫療急症，不能只當作噁心嘔吐的伴隨症狀。",
+   "western_context_en": "The oncology team should establish preventive antiemetic care before treatment based on chemotherapy agents, dose, schedule, and individual risk. Breakthrough or refractory symptoms should be reported so the regimen can be adjusted. Other causes—including infection, constipation, pain medicines, metabolic disturbance, or the cancer itself—must also be considered. Fever during chemotherapy is a medical emergency and must not be treated as a routine accompaniment to nausea and vomiting.",
+   "risk_factors_zh": [
+    {
+     "factor": "化療藥物本身的致吐風險、較高劑量或特定合併療程",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCI PDQ — Nausea and Vomiting Related to Cancer Treatment"
+    },
+    {
+     "factor": "先前化療週期噁心嘔吐控制不佳",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCI PDQ — Nausea and Vomiting Related to Cancer Treatment"
+    },
+    {
+     "factor": "年齡較輕或女性",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCI PDQ — Nausea and Vomiting Related to Cancer Treatment"
+    },
+    {
+     "factor": "暈動症或妊娠嘔吐病史",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCI PDQ — Nausea and Vomiting Related to Cancer Treatment"
+    },
+    {
+     "factor": "脫水或營養不足",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCI PDQ — Nausea and Vomiting Related to Cancer Treatment"
+    },
+    {
+     "factor": "預防性止吐涵蓋不足或方案執行中斷",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCI — Nausea and Vomiting and Cancer Treatment"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "The chemotherapy regimen's emetogenic potential, higher dose, or certain combinations",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCI PDQ — Nausea and Vomiting Related to Cancer Treatment"
+    },
+    {
+     "factor": "Poor control of nausea and vomiting during a previous chemotherapy cycle",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCI PDQ — Nausea and Vomiting Related to Cancer Treatment"
+    },
+    {
+     "factor": "Younger age or female sex",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCI PDQ — Nausea and Vomiting Related to Cancer Treatment"
+    },
+    {
+     "factor": "History of motion sickness or vomiting during pregnancy",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCI PDQ — Nausea and Vomiting Related to Cancer Treatment"
+    },
+    {
+     "factor": "Dehydration or malnutrition",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCI PDQ — Nausea and Vomiting Related to Cancer Treatment"
+    },
+    {
+     "factor": "Insufficient preventive antiemetic coverage or interruption of the planned regimen",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCI — Nausea and Vomiting and Cancer Treatment"
+    }
+   ],
+   "red_flags_zh": [
+    {
+     "finding": "化療期間體溫達 38°C（100.4°F）或更高",
+     "urgency_level": "emergency",
+     "recommended_action": "立即聯絡腫瘤團隊或依其急症指示就醫，並說明正在接受化療",
+     "rationale": "發燒可能是感染唯一徵象，化療期間感染可危及生命",
+     "source": "CDC — Watch Out for Fever"
+    },
+    {
+     "finding": "持續嘔吐、無法保留液體、尿量減少、頭暈或其他脫水徵象",
+     "urgency_level": "urgent",
+     "recommended_action": "立即聯絡腫瘤團隊評估補液、電解質與止吐方案",
+     "rationale": "未控制的嘔吐可造成脫水、電解質失衡與營養問題",
+     "source": "NCI — Nausea and Vomiting and Cancer Treatment"
+    },
+    {
+     "finding": "嘔血、咖啡渣樣嘔吐物、劇烈腹痛、意識改變或呼吸困難",
+     "urgency_level": "emergency",
+     "recommended_action": "立即啟動緊急醫療服務",
+     "rationale": "可能為出血、急腹症、嚴重感染或其他危急原因，不應歸因於一般 CINV",
+     "source": "MedlinePlus — Nausea and Vomiting"
+    }
+   ],
+   "red_flags_en": [
+    {
+     "finding": "A temperature of 100.4°F (38°C) or higher during chemotherapy",
+     "urgency_level": "emergency",
+     "recommended_action": "Contact the oncology team immediately or follow its emergency instructions and state that chemotherapy is in progress",
+     "rationale": "Fever may be the only sign of infection, and infection during chemotherapy can be life-threatening",
+     "source": "CDC — Watch Out for Fever"
+    },
+    {
+     "finding": "Persistent vomiting, inability to keep fluids down, reduced urine, dizziness, or another sign of dehydration",
+     "urgency_level": "urgent",
+     "recommended_action": "Contact the oncology team immediately for fluid, electrolyte, and antiemetic assessment",
+     "rationale": "Uncontrolled vomiting can cause dehydration, electrolyte imbalance, and nutritional problems",
+     "source": "NCI — Nausea and Vomiting and Cancer Treatment"
+    },
+    {
+     "finding": "Blood or coffee-ground material in vomit, severe abdominal pain, altered consciousness, or breathing difficulty",
+     "urgency_level": "emergency",
+     "recommended_action": "Activate emergency medical services immediately",
+     "rationale": "Bleeding, an acute abdominal condition, severe infection, or another critical cause is possible and must not be attributed to routine CINV",
+     "source": "MedlinePlus — Nausea and Vomiting"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "僅可在腫瘤團隊知情、預防性止吐方案已建立且無感染或其他急症時，依個別證候考慮噁心相關的輔助照護",
+    "precautions": "化療期間發燒、嚴重脫水、出血、意識改變或急腹症先走腫瘤急症路徑；治療前確認當日腫瘤團隊限制與感染／出血風險",
+    "co_management": "所有突破性、延遲性或預期性症狀均應回報腫瘤團隊；不得建議自行更動化療、類固醇或止吐藥物",
+    "evidence": "unknown",
+    "note": "本欄只界定安全與腫瘤共同照護範圍，不構成針灸取代標準止吐預防或治療的宣稱"
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "Only with oncology-team awareness, an established preventive antiemetic plan, and no infection or other emergency may adjunctive care for nausea be considered according to the individual pattern",
+    "precautions": "Fever during chemotherapy, severe dehydration, bleeding, altered consciousness, or an acute abdomen requires an oncology emergency pathway first; confirm same-day oncology restrictions and infection or bleeding risk before treatment",
+    "co_management": "Report all breakthrough, delayed, or anticipatory symptoms to the oncology team; do not advise unsupervised changes to chemotherapy, corticosteroids, or antiemetic medicines",
+    "evidence": "unknown",
+    "note": "This field defines safety and oncology co-management boundaries and is not a claim that acupuncture replaces standard antiemetic prevention or treatment"
+   },
+   "red_flag_refs": [
+    "rf.cinv.fever_during_chemotherapy"
+   ],
+   "sign_symptom_ids": [
+    "sym.nausea",
+    "sym.vomiting",
+    "sym.poor_appetite",
+    "sym.dizziness",
+    "sym.fever"
    ]
   },
   {
@@ -27143,8 +27338,188 @@
     "western_pathology_en": [
      "NIDDK — 乳糖不耐通說;過敏/不耐/乳糜瀉鑑別為臨床通說",
      "MedlinePlus — Food Allergy (https://medlineplus.gov/foodallergy.html)"
+    ],
+    "summary_zh": [
+     "NHS Wales — Food Intolerance",
+     "MedlinePlus — Food Allergy",
+     "MedlinePlus — Food Allergy Testing"
+    ],
+    "summary_en": [
+     "NHS Wales — Food Intolerance",
+     "MedlinePlus — Food Allergy",
+     "MedlinePlus — Food Allergy Testing"
+    ],
+    "western_context_zh": [
+     "NHS Wales — Food Intolerance",
+     "NIDDK — Lactose Intolerance",
+     "MedlinePlus — Food Allergy Testing"
+    ],
+    "western_context_en": [
+     "NHS Wales — Food Intolerance",
+     "NIDDK — Lactose Intolerance",
+     "MedlinePlus — Food Allergy Testing"
+    ],
+    "risk_factors_zh": [
+     "NHS Wales — Food Intolerance",
+     "NIDDK — Lactose Intolerance",
+     "MedlinePlus — Food Allergy Testing"
+    ],
+    "risk_factors_en": [
+     "NHS Wales — Food Intolerance",
+     "NIDDK — Lactose Intolerance",
+     "MedlinePlus — Food Allergy Testing"
+    ],
+    "red_flags_zh": [
+     "MedlinePlus — Food Allergy",
+     "MedlinePlus — Food Allergy Testing",
+     "NHS Wales — Food Intolerance",
+     "data/pathology/red_flag_registry.json"
+    ],
+    "red_flags_en": [
+     "MedlinePlus — Food Allergy",
+     "MedlinePlus — Food Allergy Testing",
+     "NHS Wales — Food Intolerance",
+     "data/pathology/red_flag_registry.json"
+    ],
+    "acupuncture_scope_zh": [
+     "AcuTing OS safety and scope policy; MedlinePlus anaphylaxis boundary"
+    ],
+    "acupuncture_scope_en": [
+     "AcuTing OS safety and scope policy; MedlinePlus anaphylaxis boundary"
     ]
-   }
+   },
+   "sources": [
+    "https://111.wales.nhs.uk/FoodIntolerance/",
+    "https://www.niddk.nih.gov/health-information/digestive-diseases/lactose-intolerance",
+    "https://medlineplus.gov/foodallergy.html",
+    "https://medlineplus.gov/lab-tests/food-allergy-testing/"
+   ],
+   "summary_zh": "食物不耐是身體難以消化或處理特定食物或成分後，反覆出現腹脹、脹氣、腹痛、腹瀉、噁心或便秘等症狀的非免疫性反應，常與攝取量有關。它不同於食物過敏：過敏涉及免疫系統，少量食物也可能引發蕁麻疹、喘鳴、口唇舌喉腫脹或危及生命的過敏性休克。",
+   "summary_en": "Food intolerance is a nonimmune reaction in which difficulty digesting or processing a food or ingredient leads to recurrent bloating, gas, abdominal pain, diarrhea, nausea, or constipation, often in a dose-dependent pattern. It differs from food allergy: allergy involves the immune system and even a small exposure may cause hives, wheeze, swelling of the lips, tongue, or throat, or life-threatening anaphylaxis.",
+   "western_context_zh": "評估應以食物與症狀時間關係、攝取量、病史及必要檢查為基礎；乳糖不耐可依病史與呼氣等檢查評估。若使用排除飲食，應在醫師或營養師指導下短期移除疑似食物後再重新引入確認，避免長期不必要限制與營養缺乏。市售廣泛食物不耐檢測可能造成假陽性或無依據的多項忌口，不能取代臨床評估。",
+   "western_context_en": "Assessment should use the timing and dose relationship between food and symptoms, medical history, and tests when indicated; lactose intolerance may be evaluated through history and breath or other testing. If an elimination diet is used, a clinician or dietitian should guide short-term removal and reintroduction of the suspected food to confirm reproducibility and avoid unnecessary long-term restriction or nutrient deficiency. Broad commercial intolerance panels may produce misleading results and do not replace clinical assessment.",
+   "risk_factors_zh": [
+    {
+     "factor": "攝取已確認會引發症狀的食物或成分",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NHS Wales — Food Intolerance"
+    },
+    {
+     "factor": "攝取量增加使劑量相關的不耐症狀更明顯",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "MedlinePlus — Food Allergy Testing"
+    },
+    {
+     "factor": "乳糖吸收不良或乳糖酶不足",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NIDDK — Lactose Intolerance"
+    },
+    {
+     "factor": "腸道疾病或其他消化問題造成次發性消化不良",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NIDDK — Lactose Intolerance; NHS Wales — Food Intolerance"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Consumption of a food or ingredient confirmed to trigger symptoms",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NHS Wales — Food Intolerance"
+    },
+    {
+     "factor": "A larger dose producing more prominent dose-dependent intolerance symptoms",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "MedlinePlus — Food Allergy Testing"
+    },
+    {
+     "factor": "Lactose malabsorption or low lactase activity",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NIDDK — Lactose Intolerance"
+    },
+    {
+     "factor": "An intestinal disease or another digestive problem causing secondary maldigestion",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NIDDK — Lactose Intolerance; NHS Wales — Food Intolerance"
+    }
+   ],
+   "red_flags_zh": [
+    {
+     "finding": "進食後突然口唇、口腔、舌或喉嚨腫脹，呼吸急促／困難、喉嚨緊、臉色發灰發白、意識混亂或昏厥",
+     "urgency_level": "emergency",
+     "recommended_action": "立即啟動緊急醫療服務；若已處方 epinephrine，依個人急救計畫使用",
+     "rationale": "這可能是過敏性休克，不能歸為一般食物不耐",
+     "source": "MedlinePlus — Food Allergy; NHS Wales — Food Intolerance"
+    },
+    {
+     "finding": "反覆症狀伴隨非刻意體重下降、營養不足、兒童生長問題或飲食範圍持續縮小",
+     "urgency_level": "routine",
+     "recommended_action": "安排醫療與營養評估",
+     "rationale": "長期限制飲食或未診斷的消化疾病可能造成營養傷害",
+     "source": "NIDDK — Lactose Intolerance; NHS Wales — Food Intolerance"
+    },
+    {
+     "finding": "同一食物反應由原本腸胃症狀轉為蕁麻疹、喘鳴、臉舌腫脹或頭暈",
+     "urgency_level": "urgent",
+     "recommended_action": "停止自行挑戰食物並立即尋求醫療建議；出現呼吸或循環症狀按急症處理",
+     "rationale": "表現可能屬食物過敏而非不耐，嚴重度不可由過去反應預測",
+     "source": "MedlinePlus — Food Allergy; Food Allergy Testing"
+    }
+   ],
+   "red_flags_en": [
+    {
+     "finding": "Sudden swelling of the lips, mouth, tongue, or throat after eating; rapid or difficult breathing; throat tightness; pale or gray color; confusion; or fainting",
+     "urgency_level": "emergency",
+     "recommended_action": "Activate emergency medical services immediately; if epinephrine has been prescribed, follow the individual's emergency plan",
+     "rationale": "This may be anaphylaxis and must not be classified as ordinary food intolerance",
+     "source": "MedlinePlus — Food Allergy; NHS Wales — Food Intolerance"
+    },
+    {
+     "finding": "Recurrent symptoms with unintentional weight loss, nutrient deficiency, impaired growth in a child, or a progressively narrowing diet",
+     "urgency_level": "routine",
+     "recommended_action": "Arrange medical and dietetic assessment",
+     "rationale": "Long-term restriction or an undiagnosed digestive disorder may cause nutritional harm",
+     "source": "NIDDK — Lactose Intolerance; NHS Wales — Food Intolerance"
+    },
+    {
+     "finding": "A reaction to the same food changes from isolated gastrointestinal symptoms to hives, wheeze, facial or tongue swelling, or dizziness",
+     "urgency_level": "urgent",
+     "recommended_action": "Stop unsupervised food challenges and seek immediate medical advice; use an emergency pathway for breathing or circulatory symptoms",
+     "rationale": "This may represent food allergy rather than intolerance, and severity cannot be predicted from previous reactions",
+     "source": "MedlinePlus — Food Allergy; Food Allergy Testing"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "已排除食物過敏、乳糜瀉及其他需特定治療的疾病，且觸發因素經合理評估後，可依個別證候考慮腸胃症狀的輔助照護",
+    "precautions": "任何疑似過敏性休克或免疫性食物過敏先走急症／過敏專科路徑；不以針灸反應作為食物不耐診斷工具",
+    "co_management": "反覆症狀或需排除飲食者應與基層醫療、腸胃科、過敏專科或註冊營養師共同管理，避免無根據的永久忌口",
+    "evidence": "unknown",
+    "note": "本欄只界定安全與共同照護範圍，不構成針灸恢復特定食物耐受或治療食物過敏的宣稱"
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "After food allergy, celiac disease, and other conditions requiring specific treatment have been excluded and triggers have been reasonably assessed, adjunctive care for gastrointestinal symptoms may be considered according to the individual pattern",
+    "precautions": "Suspected anaphylaxis or immune-mediated food allergy requires an emergency or allergy pathway first; response to acupuncture is not a diagnostic test for food intolerance",
+    "co_management": "Recurrent symptoms or an elimination diet should be co-managed with primary care, gastroenterology, allergy services, or a registered dietitian to avoid unsupported permanent restriction",
+    "evidence": "unknown",
+    "note": "This field defines safety and co-management boundaries and is not a claim that acupuncture restores tolerance to a food or treats food allergy"
+   },
+   "red_flag_refs": [
+    "rf.food_sensitivity.anaphylaxis_differential"
+   ],
+   "sign_symptom_ids": [
+    "sym.abdominal_bloating",
+    "sym.abdominal_pain",
+    "sym.diarrhea",
+    "sym.nausea",
+    "sym.constipation"
+   ]
   },
   {
    "id": "cond.insomnia",
@@ -39077,10 +39452,57 @@
     "western_pathology_en": [
      "CDC/NINDS — 帶狀皰疹後神經痛通說(去傳入化、疫苗預防)",
      "MedlinePlus — Shingles (https://medlineplus.gov/shingles.html)"
+    ],
+    "summary_zh": [
+     "NHS — Post-herpetic neuralgia",
+     "NIA — Shingles"
+    ],
+    "summary_en": [
+     "NHS — Post-herpetic neuralgia",
+     "NIA — Shingles"
+    ],
+    "western_context_zh": [
+     "NHS — Post-herpetic neuralgia",
+     "CDC — Shingles Vaccination"
+    ],
+    "western_context_en": [
+     "NHS — Post-herpetic neuralgia",
+     "CDC — Shingles Vaccination"
+    ],
+    "risk_factors_zh": [
+     "NHS — Post-herpetic neuralgia",
+     "CDC — Clinical Overview of Shingles",
+     "CDC — Shingles Vaccination"
+    ],
+    "risk_factors_en": [
+     "NHS — Post-herpetic neuralgia",
+     "CDC — Clinical Overview of Shingles",
+     "CDC — Shingles Vaccination"
+    ],
+    "red_flags_zh": [
+     "MedlinePlus — Shingles",
+     "CDC — Clinical Overview of Shingles",
+     "data/pathology/red_flag_registry.json"
+    ],
+    "red_flags_en": [
+     "MedlinePlus — Shingles",
+     "CDC — Clinical Overview of Shingles",
+     "data/pathology/red_flag_registry.json"
+    ],
+    "acupuncture_scope_zh": [
+     "AcuTing OS safety and scope policy; CDC/MedlinePlus ocular-zoster boundary"
+    ],
+    "acupuncture_scope_en": [
+     "AcuTing OS safety and scope policy; CDC/MedlinePlus ocular-zoster boundary"
     ]
    },
    "sources": [
-    "https://medlineplus.gov/shingles.html"
+    "https://medlineplus.gov/shingles.html",
+    "https://www.nhs.uk/conditions/post-herpetic-neuralgia/",
+    "https://www.nia.nih.gov/health/shingles/shingles",
+    "https://www.cdc.gov/shingles/hcp/clinical-overview/index.html",
+    "https://www.cdc.gov/shingles/vaccines/index.html",
+    "https://medlineplus.gov/ency/article/000858.htm"
    ],
    "acupoint_protocol_evidence": {
     "protocol_status": "limited",
@@ -39229,7 +39651,138 @@
      "未找到 guideline-level acupuncture source 指定 active vesicle 周邊『禁止針刺幾公分』；因此不創造 exclusion-zone 數字。安全處置採『active zoster ≠ PHN trial population，先走 acute-zoster pathway』。",
      "PHN RCT 的 ASHI 屬來源明確的 painful-area local points；不得套到 active vesicular rash。"
     ]
-   }
+   },
+   "summary_zh": "帶狀皰疹後神經痛是帶狀皰疹造成神經損傷後，在原皮疹區持續或反覆出現的神經病理性疼痛。疼痛可為灼熱、刺痛、電擊樣或持續痠痛，也可能出現輕觸即痛、搔癢或感覺減退；病程可持續數月以上，並影響睡眠、情緒與日常活動。",
+   "summary_en": "Postherpetic neuralgia is neuropathic pain that persists or recurs in the area of a shingles rash after varicella-zoster nerve injury. Pain may be burning, stabbing, electric-shock-like, or aching, and may coexist with pain from light touch, itching, or reduced sensation. It can persist for months or longer and affect sleep, mood, and daily activities.",
+   "western_context_zh": "曾患帶狀皰疹且原皮疹區疼痛不退者應由醫療人員確認診斷並排除仍在活動的感染或其他疼痛病因。處理可包括一般止痛藥、神經痛藥物、局部治療及必要時轉介神經科或疼痛專科；藥物通常需逐步調整並監測副作用。及早治療帶狀皰疹與依資格接種帶狀皰疹疫苗可降低相關風險。",
+   "western_context_en": "Pain that persists in a previous shingles distribution should be medically assessed to confirm the diagnosis and exclude active infection or another pain cause. Management may include analgesics, neuropathic-pain medicines, topical treatment, and referral to neurology or pain services when needed; medicines often require gradual adjustment and adverse-effect monitoring. Prompt shingles care and vaccination when eligible reduce related risk.",
+   "risk_factors_zh": [
+    {
+     "factor": "罹患帶狀皰疹時年齡較高，尤其 50 歲以上",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "CDC — Clinical Overview of Shingles; NIA — Shingles"
+    },
+    {
+     "factor": "急性帶狀皰疹疼痛較劇烈或皮疹範圍較大",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NHS — Post-herpetic neuralgia"
+    },
+    {
+     "factor": "免疫功能低下",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "CDC — Clinical Overview of Shingles"
+    },
+    {
+     "factor": "糖尿病或其他慢性健康問題",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NHS — Post-herpetic neuralgia"
+    },
+    {
+     "factor": "符合資格者接種帶狀皰疹疫苗",
+     "direction": "decreases",
+     "modifiable": true,
+     "source": "CDC — Shingles Vaccination"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Older age at shingles onset, especially age 50 or older",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "CDC — Clinical Overview of Shingles; NIA — Shingles"
+    },
+    {
+     "factor": "More severe acute shingles pain or a larger rash area",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NHS — Post-herpetic neuralgia"
+    },
+    {
+     "factor": "Immunocompromise",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "CDC — Clinical Overview of Shingles"
+    },
+    {
+     "factor": "Diabetes or another chronic health condition",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NHS — Post-herpetic neuralgia"
+    },
+    {
+     "factor": "Shingles vaccination when eligible",
+     "direction": "decreases",
+     "modifiable": true,
+     "source": "CDC — Shingles Vaccination"
+    }
+   ],
+   "red_flags_zh": [
+    {
+     "finding": "帶狀皰疹皮疹、疼痛或水泡累及眼周、眼睛、額頭或鼻尖，或出現視力改變",
+     "urgency_level": "emergency",
+     "recommended_action": "立即接受急症眼科／醫療評估",
+     "rationale": "眼部帶狀皰疹可能造成永久視力損傷，不能按單純神經痛處理",
+     "source": "MedlinePlus — Shingles"
+    },
+    {
+     "finding": "免疫低下者出現新發、擴散或多處帶狀皰疹樣皮疹",
+     "urgency_level": "urgent",
+     "recommended_action": "立即聯絡醫療團隊評估活動性感染與併發症",
+     "rationale": "免疫低下者發生帶狀皰疹併發症與播散的風險較高",
+     "source": "CDC — Clinical Overview of Shingles"
+    },
+    {
+     "finding": "疼痛嚴重影響睡眠、進食、活動或情緒，或既有藥物無效／副作用明顯",
+     "urgency_level": "routine",
+     "recommended_action": "安排醫療複評或疼痛／神經專科評估",
+     "rationale": "持續神經痛可能需要調整治療並評估功能與心理影響",
+     "source": "NHS — Post-herpetic neuralgia; NIA — Shingles"
+    }
+   ],
+   "red_flags_en": [
+    {
+     "finding": "A shingles rash, pain, or blisters involving the eye area, eye, forehead, or tip of the nose, or any vision change",
+     "urgency_level": "emergency",
+     "recommended_action": "Obtain immediate emergency ophthalmic or medical evaluation",
+     "rationale": "Ocular shingles can cause permanent vision damage and must not be managed as uncomplicated neuralgia",
+     "source": "MedlinePlus — Shingles"
+    },
+    {
+     "finding": "A new, spreading, or multi-area shingles-like rash in an immunocompromised person",
+     "urgency_level": "urgent",
+     "recommended_action": "Contact the medical team immediately to assess active infection and complications",
+     "rationale": "Immunocompromised people have higher risk of shingles complications and dissemination",
+     "source": "CDC — Clinical Overview of Shingles"
+    },
+    {
+     "finding": "Pain severely disrupting sleep, eating, activity, or mood, or inadequate benefit or marked adverse effects from current medicines",
+     "urgency_level": "routine",
+     "recommended_action": "Arrange medical reassessment or pain/neurology review",
+     "rationale": "Persistent neuropathic pain may require treatment adjustment and assessment of functional and psychological effects",
+     "source": "NHS — Post-herpetic neuralgia; NIA — Shingles"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "活動性帶狀皰疹已排除、皮膚病灶癒合且診斷確認後，可依個別證候考慮疼痛與功能影響的輔助照護",
+    "precautions": "新發皮疹、水泡、發燒、免疫低下或眼周／視覺症狀先轉介；感覺異常區域需避免把輕觸不痛誤判為組織安全",
+    "co_management": "持續中重度疼痛應與基層醫療、神經科或疼痛專科共同管理；藥物調整須聯絡開藥者",
+    "evidence": "unknown",
+    "note": "本欄只界定安全與共同照護範圍，不構成針灸治癒帶狀皰疹後神經痛的療效宣稱"
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "After active shingles is excluded, skin lesions have healed, and the diagnosis is confirmed, adjunctive care for pain and functional impact may be considered according to the individual pattern",
+    "precautions": "A new rash, blisters, fever, immunocompromise, or eye-area or vision symptoms require referral first; reduced sensation must not be mistaken for tissue safety",
+    "co_management": "Persistent moderate or severe pain should be co-managed with primary care, neurology, or pain services; contact the prescriber for medication adjustment",
+    "evidence": "unknown",
+    "note": "This field defines safety and co-management boundaries and is not a claim that acupuncture cures postherpetic neuralgia"
+   },
+   "red_flag_refs": [
+    "rf.postherpetic_neuralgia.ocular_zoster"
+   ]
   },
   {
    "id": "cond.parkinsons",
@@ -40060,10 +40613,60 @@
     "western_pathology_en": [
      "NINDS — 原發性顫抖症通說(小腦-丘腦-皮質迴路)",
      "MedlinePlus — Tremor (https://medlineplus.gov/tremor.html)"
+    ],
+    "summary_zh": [
+     "MedlinePlus — Tremor",
+     "MedlinePlus Genetics — Essential tremor"
+    ],
+    "summary_en": [
+     "MedlinePlus — Tremor",
+     "MedlinePlus Genetics — Essential tremor"
+    ],
+    "western_context_zh": [
+     "MedlinePlus — Tremor",
+     "MedlinePlus — Essential tremor",
+     "NINDS — Tremor"
+    ],
+    "western_context_en": [
+     "MedlinePlus — Tremor",
+     "MedlinePlus — Essential tremor",
+     "NINDS — Tremor"
+    ],
+    "risk_factors_zh": [
+     "MedlinePlus — Tremor",
+     "MedlinePlus — Essential tremor",
+     "MedlinePlus Genetics — Essential tremor"
+    ],
+    "risk_factors_en": [
+     "MedlinePlus — Tremor",
+     "MedlinePlus — Essential tremor",
+     "MedlinePlus Genetics — Essential tremor"
+    ],
+    "red_flags_zh": [
+     "MedlinePlus — Tremor",
+     "MedlinePlus — Essential tremor",
+     "CDC — Signs and Symptoms of Stroke",
+     "data/pathology/red_flag_registry.json"
+    ],
+    "red_flags_en": [
+     "MedlinePlus — Tremor",
+     "MedlinePlus — Essential tremor",
+     "CDC — Signs and Symptoms of Stroke",
+     "data/pathology/red_flag_registry.json"
+    ],
+    "acupuncture_scope_zh": [
+     "AcuTing OS safety and scope policy; MedlinePlus differential boundary"
+    ],
+    "acupuncture_scope_en": [
+     "AcuTing OS safety and scope policy; MedlinePlus differential boundary"
     ]
    },
    "sources": [
-    "https://medlineplus.gov/tremor.html"
+    "https://medlineplus.gov/tremor.html",
+    "https://medlineplus.gov/ency/article/000762.htm",
+    "https://medlineplus.gov/genetics/condition/essential-tremor/",
+    "https://www.ninds.nih.gov/sites/default/files/2025-05/Tremor.pdf",
+    "https://www.cdc.gov/stroke/signs-symptoms/index.html"
    ],
    "acupoint_protocol_evidence": {
     "protocol_status": "limited",
@@ -40165,7 +40768,141 @@
      "2010 RCT 穴位列表不完整（『etc.』），故即使有三個明確 code 也不建半套處方。",
      "2026 NMA 的 scalp-acupuncture ranking 不等於一套可轉成 WHO body-point code 的處方。"
     ]
-   }
+   },
+   "summary_zh": "原發性顫抖是以不自主、節律性顫動為主的動作障礙，最常在維持姿勢或進行寫字、端杯、進食等動作時出現，常影響雙手與手臂，也可累及頭部或聲音。它通常不以靜止顫抖、僵硬或動作遲緩為主要表現，必須與巴金森病、藥物、甲狀腺問題及其他顫抖原因鑑別。",
+   "summary_en": "Essential tremor is a movement disorder characterized by involuntary rhythmic shaking, most evident while maintaining posture or performing actions such as writing, holding a cup, or eating. It commonly affects both hands and arms and may involve the head or voice. Rest tremor, rigidity, and bradykinesia are not its defining pattern, so Parkinson disease, medicines, thyroid disease, and other tremor causes must be considered.",
+   "western_context_zh": "診斷依顫抖在休息、姿勢與動作時的型態、分布、頻率、家族史、神經學檢查及對日常活動的影響進行；必要時以血液、尿液或影像檢查排除可逆原因。輕症可不需藥物；造成書寫、進食、工作或社交障礙時，可由醫療人員評估藥物、職能／物理／語言治療或重症介入。酒精可能短暫減輕顫抖，但不建議作為治療。",
+   "western_context_en": "Diagnosis uses tremor pattern at rest, posture, and action; distribution and frequency; family history; neurologic examination; and impact on daily activities. Blood, urine, or imaging tests may be used to exclude reversible causes. Mild symptoms may not require medicine; when writing, eating, work, or social function is impaired, clinicians may consider medicines, occupational/physical/speech therapy, or procedures for severe disease. Alcohol may briefly lessen tremor but is not recommended as treatment.",
+   "risk_factors_zh": [
+    {
+     "factor": "原發性顫抖家族史",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "MedlinePlus — Tremor; MedlinePlus Genetics — Essential tremor"
+    },
+    {
+     "factor": "中年或高齡",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "MedlinePlus — Tremor"
+    },
+    {
+     "factor": "咖啡因或其他刺激物使既有顫抖加劇",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "MedlinePlus — Tremor; Essential tremor"
+    },
+    {
+     "factor": "壓力、焦慮、疲勞或睡眠不足使既有顫抖加劇",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "MedlinePlus — Essential tremor; MedlinePlus Genetics — Essential tremor"
+    },
+    {
+     "factor": "可能引起或加重顫抖的藥物；調整須聯絡開藥者",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "MedlinePlus — Tremor"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Family history of essential tremor",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "MedlinePlus — Tremor; MedlinePlus Genetics — Essential tremor"
+    },
+    {
+     "factor": "Middle or older age",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "MedlinePlus — Tremor"
+    },
+    {
+     "factor": "Caffeine or other stimulants worsening an existing tremor",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "MedlinePlus — Tremor; Essential tremor"
+    },
+    {
+     "factor": "Stress, anxiety, fatigue, or sleep loss worsening an existing tremor",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "MedlinePlus — Essential tremor; MedlinePlus Genetics — Essential tremor"
+    },
+    {
+     "factor": "A medicine that may cause or worsen tremor; contact the prescriber before changes",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "MedlinePlus — Tremor"
+    }
+   ],
+   "red_flags_zh": [
+    {
+     "finding": "新出現的顫抖，或顫抖已妨礙書寫、進食、穿衣、工作或其他日常活動",
+     "urgency_level": "routine",
+     "recommended_action": "安排醫療與神經學評估，以確認顫抖類型與可逆原因",
+     "rationale": "原發性顫抖是排除其他原因後的臨床診斷，新發或失能性顫抖不能自行定性",
+     "source": "MedlinePlus — Essential tremor"
+    },
+    {
+     "finding": "顫抖突然發作並合併單側無力／麻木、臉歪、說話或視力改變、行走不穩",
+     "urgency_level": "emergency",
+     "recommended_action": "立即啟動緊急醫療服務",
+     "rationale": "可能為中風或其他急性神經事件，而非原發性顫抖",
+     "source": "MedlinePlus — Tremor; CDC — Signs and Symptoms of Stroke"
+    },
+    {
+     "finding": "顫抖合併明顯僵硬、動作遲緩、平衡惡化或其他新神經症狀",
+     "urgency_level": "routine",
+     "recommended_action": "安排神經科評估重新檢視診斷",
+     "rationale": "這些表現提示可能存在其他動作障礙或神經疾病",
+     "source": "MedlinePlus — Tremor"
+    }
+   ],
+   "red_flags_en": [
+    {
+     "finding": "A new tremor, or tremor that interferes with writing, eating, dressing, work, or other daily activities",
+     "urgency_level": "routine",
+     "recommended_action": "Arrange medical and neurologic assessment to identify tremor type and reversible causes",
+     "rationale": "Essential tremor is a clinical diagnosis after other causes are considered; a new or disabling tremor should not be self-classified",
+     "source": "MedlinePlus — Essential tremor"
+    },
+    {
+     "finding": "Sudden-onset tremor with one-sided weakness or numbness, facial droop, speech or vision change, or trouble walking",
+     "urgency_level": "emergency",
+     "recommended_action": "Activate emergency medical services immediately",
+     "rationale": "This may represent stroke or another acute neurologic event rather than essential tremor",
+     "source": "MedlinePlus — Tremor; CDC — Signs and Symptoms of Stroke"
+    },
+    {
+     "finding": "Tremor with marked rigidity, slowed movement, worsening balance, or another new neurologic symptom",
+     "urgency_level": "routine",
+     "recommended_action": "Arrange neurology review of the diagnosis",
+     "rationale": "These features may indicate another movement disorder or neurologic disease",
+     "source": "MedlinePlus — Tremor"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "完成神經學評估並排除藥物、代謝與其他動作障礙後，可依個別證候考慮顫抖相關功能困擾的輔助照護",
+    "precautions": "突然發作或伴隨局灶神經症狀者先走急症路徑；顫抖造成持物或步態風險時先調整治療環境安全",
+    "co_management": "應與神經科及復健／職能治療團隊協調功能目標；疑似藥物相關時聯絡開藥者，不建議自行停藥或以酒精處理顫抖",
+    "evidence": "unknown",
+    "note": "本欄只界定安全與共同照護範圍，不構成針灸控制原發性顫抖的療效宣稱"
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "After neurologic assessment and exclusion of medicine-related, metabolic, and other movement-disorder causes, adjunctive care for tremor-related functional difficulty may be considered according to the individual pattern",
+    "precautions": "Sudden onset or focal neurologic symptoms require an emergency pathway first; adapt the treatment environment when tremor creates object-handling or gait risk",
+    "co_management": "Coordinate functional goals with neurology and rehabilitation or occupational therapy; contact the prescriber for suspected medicine-related tremor and do not advise unsupervised discontinuation or use of alcohol as treatment",
+    "evidence": "unknown",
+    "note": "This field defines safety and co-management boundaries and is not an efficacy claim for acupuncture in essential tremor"
+   },
+   "red_flag_refs": [
+    "rf.essential_tremor.new_onset_or_disabling_tremor"
+   ],
+   "sign_symptom_ids": [
+    "sym.tremor"
+   ]
   },
   {
    "id": "cond.dizziness_vertigo",
