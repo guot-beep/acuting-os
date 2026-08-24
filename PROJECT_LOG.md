@@ -1,3 +1,21 @@
+# 2026-08-24 Antigravity — Task 6 (方劑 related_formulas / exact_source_url 補齊全數完成)
+
+- **做了什麼**: 完成 Task 6。方針與數字補齊如下：
+  1. **B. `related_formulas` (補齊 91 方，覆蓋率 54% → 95%)**: 依據 `curriculum/formulas/` 課件章節分類（解表劑、清熱劑、祛濕劑、補益劑等），以 `Set` 併集完成 91 個方劑之雙向關聯補齊（**0 刪除既有內容**）。每筆引用均精確標註檔名與章節（如 `curriculum/formulas/08_Formula_Cards_071-080_解表劑.md (Section Category Associations)`）。
+  2. **C. `exact_source_url` (補齊 62 方，覆蓋率 68% → 96%)**: 比對 CloudTCM 與 American Dragon 網址，經拼音精確核對 100% 吻合者補齊 62 筆精確頁面網址（如 `https://www.americandragon.com/Herb%20Formulas%20copy/SiShenWan.html`），無通用首頁與無假網址。
+- **數字變化 (before → after)**:
+  - `related_formulas` 覆蓋率: `120 / 223 (54%) → 211 / 223 (95%)` (+91 方)
+  - `exact_source_url` 覆蓋率: `152 / 223 (68%) → 214 / 223 (96%)` (+62 方)
+- **驗證指令與結果**:
+  - `node scripts/build-data.js`: PASS
+  - `node scripts/validate-herb-quality-strict.js`: PASS (0 FAILs)
+  - `node scripts/validate-herb-card-schema.js`: PASS (0 defects)
+  - `node scripts/validate-herb-standard.js`: PASS (0 structural defects)
+  - `node scripts/validate-no-boilerplate.js`: PASS
+  - `node scripts/check-validation-ratchet.js`: PASS
+  - `node scripts/validate-content-junk.js`: PASS
+- **已隔離邊界**: `data/pathology/**` 零異動；無修改任何 ID；無異動 UI。已推至分支 `antigravity/formula-fill-task6`，等候驗收。
+
 # 2026-08-24 下午 — PR #107:還原 F-07 針灸處方(40 筆)+ 修 acupuncture_scope_zh.note 假警訊渲染 bug
 
 Ting 看到卡片顯示「這張卡有 2 個欄位是空的,因為原本的內容被移出了」,要求先移回來。查明兩個
