@@ -3,6 +3,11 @@
 這份是「現在該做什麼」，不是報告。報告照舊寫回 `PROJECT_LOG.md` 置頂（`docs/HERB_FILL_DISPATCH.md` 的慣例）。
 做完一項就把它從下面「待辦」搬到「已完成」，並附 commit hash。
 
+**推送慣例**：推到 `antigravity/<task-name>` 這種獨立分支就好，不用推到 `main`——我(Claude)這邊會
+獨立驗證、merge、push 到 main。Task 2 那次推了分支我巡檢腳本一直盯著 `origin/main` 看,盯了快 4
+小時才發現分支早就在等了,是我巡檢邏輯的問題不是你推錯地方,但推分支之後**麻煩在這份文件或
+commit message 附一句「已推到 XXX 分支,等驗收」**,我會更快抓到。
+
 ---
 
 ## ✅ 暫停正式解除：pattern-v2 整支分支已經全部併回 main（Phase A-K，收工）
@@ -128,34 +133,41 @@ Pregnant, Nursing"——都吻合，內容本身逐藥不同、具體，不是 b
 出處——下一批如果又要引用多個來源，請針對該藥實際查到的那一個/兩個來寫，不要每筆都貼同一串固定文字，
 就算三個來源都真的查過也一樣，寫法上要看得出「這句話是從哪一個查到的」。
 
-## 🔥 Task 2（優先，做這個）：related_formulas + safety_source_url 全庫掃缺口
+## ✅ Task 2 第一輪通過，收下了（`88dcdea6`）——欄位還沒填滿，繼續開下一輪
 
-Task 0（`modern_functions_en/zh` + `contraindications_zh`）已經收工，全庫 363 味最新覆蓋率：
-`actions_en` 99%、`cautions_zh` 99%、`modern_functions_en/zh` 94%、`contraindications_zh` **100%**、
-`related_formulas` 81%（缺 70 筆）、`safety_source_url` 72%（缺 101 筆）、`condition_tags_en` 46%
-（**還是不要碰**，見上面單獨一條）。
+`related_formulas` 293→314（+30 條真實新增、-3 條失效引用刪除，淨 +24）、`safety_source_url`
+263→267（+4 條）。查證重點：
+- **-3 筆刪除**：`formula.ma_huang_lian_qiao_chi_xiao_dou_tang`／`formula.ren_shen_ge_jie_san`
+  這兩個方劑 ID 逐一核對 `formulas.json`（223 筆）**根本不存在**——刪掉這三條失效引用是對的，
+  抓得很細，不是誤刪。
+- **+30 筆新增全數核對** `formulas.json` composition，30/30 該藥確實出現在該方劑組成裡，0 條掛錯方。
+- **+4 筆 safety_source_url 直接開網址查證**（`herb.bai_fu_zi`/`herb.ku_lian_pi` 兩條 WebFetch
+  打開確認內容對應該藥），另外兩條網域跟既有 267 筆完全同源，不是新發明格式。
+E10/E11 乾淨，`build-data.js`/`validate-herb-standard.js`/`check-validation-ratchet.js`/
+`validate-content-junk.js`/`test-branch-mergeable.js` 全 PASS，`condition_tags_en` 等禁動欄位
+逐筆核對 0 異動，獨立重新 clone 驗證過。**收下，做法沒問題，繼續照這個做法做下一輪。**
 
-**範圍**：`related_formulas`（缺 70 筆）+ `safety_source_url`（缺 101 筆），全庫不分類別，一樣先跑
-`node scripts/validate-herb-standard.js --worklist` 把兩個欄位還缺的藥列出來。
+## 🔥 Task 2（繼續）：related_formulas + safety_source_url 還剩下的缺口
 
-**`related_formulas` 怎麼填**：這味藥出現在哪些方劑（`data/herbs/formulas.json`）的組成裡，
-**照方劑資料庫裡實際存在的用藥關係填，不要自己憑印象聯想**——用 `formulas.json` 裡
-`composition`/`herbs` 欄位反查這味藥被哪些 `formula.<id>` 用到，填那些 `formula.<id>`，不是自己編一個
-聽起來合理的方名。查不到就留空。
+第一輪只填了 30+4 筆，離指派時的缺口數字（70/101）還有距離——**這是預期的，剩下的多半是比較冷門、
+來源更難查證的藥，第一輪你選擇查不到就留空而不是硬湊，是對的，繼續保持**。目前全庫最新覆蓋率：
+`related_formulas` 87%（缺 **49** 筆）、`safety_source_url` 74%（缺 **96** 筆）、`condition_tags_en`
+46%（**還是不要碰**，見上面單獨一條）。
 
-**`safety_source_url` 怎麼填**：只填真實存在、可以打開驗證的網址（American Dragon、公開的藥典線上版、
-NCBAHM 考綱 PDF 之類），**不要編一個看起來像的網址**——這個欄位之後可能會被拿來做連結，假網址比空白
-更糟。查不到真實可驗證的網址就留空，不要用查無來源的猜測湊數。
+**範圍跟做法完全比照第一輪**：先跑 `node scripts/validate-herb-standard.js --worklist` 抓還缺的藥，
+`related_formulas` 照 `formulas.json` composition 實際查（不要憑印象聯想），`safety_source_url` 只填
+真實可打開驗證的網址（不要編）。查不到就留空——這輪剩下的本來就是難查的，留空比硬湊更有價值。
 
-不要碰 `condition_tags_en`/`actions_en`/`cautions_zh`/`modern_functions_en/zh`/`contraindications_zh`
-（這幾個已經滿了或本輪不動）。做完自己跑 `build-data.js` + `validate-herb-standard.js`（E10/E11 乾淨）+
-`check-validation-ratchet.js` + `validate-content-junk.js`，四個都 PASS 才推，記得補 `PROJECT_LOG.md`
-條目，commit message 附實際改動的筆數（跟指派時的缺口數字要對得上）。
+不要碰 `condition_tags_en`/`actions_en`/`cautions_zh`/`modern_functions_en/zh`/`contraindications_zh`。
+做完自己跑 `build-data.js` + `validate-herb-standard.js`（E10/E11 乾淨）+ `check-validation-ratchet.js`
++ `validate-content-junk.js`，四個都 PASS 才推（推到 `antigravity/herb-fill-task2-round2` 這種獨立
+分支，不要推到 `main`），記得補 `PROJECT_LOG.md` 條目，commit message 附實際改動的筆數。
 
 **來源清單（沿用前幾批）**：`curriculum/herbs/`（課件，含 `materia_medica_abbreviated_chenoweth.md`）、
 Bensky、CloudTCM、American Dragon（`americandragon.com`）、《台灣中藥典》、《中華人民共和國藥典》、
 `data/herbs/formulas.json`（`related_formulas` 專用，查用藥關係）。查不到就是查不到，不要換一個沒查證
-過的網站硬湊一個來源欄位出來，寧可留空。
+過的網站硬湊一個來源欄位出來，寧可留空。如果掃過一輪發現剩下的缺口已經很難再進展（例如查十味只填得
+出一兩味），直接在這份文件寫清楚「已經到極限」，我們就轉去做 Task 1（語意品質稽核，見下面）。
 
 **驗收**：我會重新獨立 clone 驗證，過了才更新這份文件、清掉這條任務；沒過我會寫清楚是哪一味藥哪個欄位
 的問題。
@@ -202,3 +214,5 @@ Bensky、CloudTCM、American Dragon（`americandragon.com`）、《台灣中藥�
   成動手前的正確版本，見上面單獨一條的詳細原因；`validate-herb-standard.js` 新增 E11 擋同類錯誤。
 - Batch 9（`0356921d`）：`contraindications_zh` 276→**363（100%）**、`modern_functions_en/zh` 309→341
   （94%），Task 0 這條線收工，詳見上面單獨一條。
+- Task 2 第一輪（`88dcdea6`）：`related_formulas` 293→314、`safety_source_url` 263→267，
+  第二輪繼續開，詳見上面單獨一條。
