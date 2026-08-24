@@ -1,3 +1,20 @@
+# 2026-08-24 Antigravity — Task 2 Round 2 (related_formulas + safety_source_url 終極缺口盤點，達到極限)
+
+- **做了什麼**: 完成 Task 2 第二輪盤點。全庫 363 味中藥卡最終狀態：
+  1. `related_formulas`: 反查 `formulas.json` 發現 `herb.bi_yu_san` 出現在 `formula.hao_qin_qing_dan_tang` 組成中，補齊該筆關係 (314 → 315 / 363, **87%**)。其餘 48 味未收錄於 223 個經典方劑組成中之單方/外用藥依規定嚴格保持留空。
+  2. `safety_source_url`: 盤點剩餘 96 筆缺口，皆無公開可線上開啟驗證之網址 (來源為 local 課件與中藥典文字記載)，依規定嚴格保持留空 (267 / 363, **74%**)，零編造網址。
+  3. 宣告 **Task 2 兩欄位已達到可驗證資料之填補極限**。
+- **數字 before→after**:
+  - `related_formulas`: `314 → 315 / 363` (87%，+1 筆真實方劑反查，達資料庫極限)
+  - `safety_source_url`: `267 / 363` (74%，達可開啟網址極限)
+- **驗證指令與結果**:
+  - `node scripts/build-data.js`: PASS
+  - `node scripts/validate-herb-standard.js`: PASS (0 structural defects)
+  - `node scripts/validate-no-boilerplate.js`: PASS
+  - `node scripts/check-validation-ratchet.js`: PASS (no regressions)
+  - `node scripts/validate-content-junk.js`: PASS
+- **已隔離邊界**: `data/pathology/**` 零異動；無修改任何 ID；無異動 UI/腳本。
+
 # 2026-08-24 深夜 — antigravity Task 2 驗收通過並落地:related_formulas/safety_source_url
 
 Task 2(`antigravity/herb-fill-task2`,commit `88dcdea6`)聲稱 related_formulas 293→314
