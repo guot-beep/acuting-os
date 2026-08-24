@@ -5,10 +5,11 @@
  *
  * Fill source: data/pathology/condition_fill_<batch>.json (a {fills: {condId:
  * {fields}}} object). Adds fields to matching records ONLY; never overwrites a
- * non-empty existing field. The `sources` array is the sole merge field: new
- * unique source URLs are appended while existing provenance is retained. The
- * script never touches records not named in the fill and never changes ids,
- * mappings, or review_status. All content stays draft.
+ * non-empty existing field. Two provenance fields are merged: unique `sources`
+ * URLs are appended and `field_sources` arrays are unioned key by key. Existing
+ * provenance is always retained. The script never touches records not named in
+ * the fill and never changes ids, mappings, or review_status. All content stays
+ * draft.
  *
  *   node scripts/apply-condition-fill.js gyn           # dry run
  *   node scripts/apply-condition-fill.js gyn --apply
@@ -55,6 +56,28 @@ for (const [condId, fields] of Object.entries(fill.fills)) {
       }
       console.log(`${APPLY ? "appended" : "would append"} ${condId}.sources (+${additions.length})`);
       if (APPLY) rec.sources = [...current, ...additions];
+      added += 1;
+      continue;
+    }
+    if (field === "field_sources" && value && typeof value === "object" && !Array.isArray(value)) {
+      const current = rec.field_sources && typeof rec.field_sources === "object" && !Array.isArray(rec.field_sources)
+        ? rec.field_sources
+        : {};
+      const merged = { ...current };
+      let changedKeys = 0;
+      for (const [sourceField, sourceValues] of Object.entries(value)) {
+        const existing = Array.isArray(merged[sourceField]) ? merged[sourceField] : [];
+        const incoming = Array.isArray(sourceValues) ? sourceValues : [sourceValues];
+        const next = [...new Set([...existing, ...incoming])];
+        if (next.length !== existing.length) changedKeys += 1;
+        merged[sourceField] = next;
+      }
+      if (changedKeys === 0) {
+        skipped.push(`${condId}.field_sources (no new provenance — untouched)`);
+        continue;
+      }
+      console.log(`${APPLY ? "merged" : "would merge"} ${condId}.field_sources (${changedKeys} key${changedKeys === 1 ? "" : "s"})`);
+      if (APPLY) rec.field_sources = merged;
       added += 1;
       continue;
     }

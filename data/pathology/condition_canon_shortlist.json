@@ -24635,8 +24635,205 @@
     ],
     "etiology_en": [
      "translated 2026-08-19 from the record's own etiology_zh"
+    ],
+    "summary_zh": [
+     "NIDDK — Symptoms & Causes of Constipation",
+     "MedlinePlus — Constipation"
+    ],
+    "summary_en": [
+     "NIDDK — Symptoms & Causes of Constipation",
+     "MedlinePlus — Constipation"
+    ],
+    "western_context_zh": [
+     "NIDDK — Treatment for Constipation",
+     "MedlinePlus — Constipation",
+     "NHS — Constipation"
+    ],
+    "western_context_en": [
+     "NIDDK — Treatment for Constipation",
+     "MedlinePlus — Constipation",
+     "NHS — Constipation"
+    ],
+    "risk_factors_zh": [
+     "NIDDK — Symptoms & Causes of Constipation",
+     "NHS — Constipation"
+    ],
+    "risk_factors_en": [
+     "NIDDK — Symptoms & Causes of Constipation",
+     "NHS — Constipation"
+    ],
+    "red_flags_zh": [
+     "NIDDK — Symptoms & Causes of Constipation",
+     "NHS — Constipation",
+     "data/pathology/red_flag_registry.json"
+    ],
+    "red_flags_en": [
+     "NIDDK — Symptoms & Causes of Constipation",
+     "NHS — Constipation",
+     "data/pathology/red_flag_registry.json"
+    ],
+    "acupuncture_scope_zh": [
+     "AcuTing OS safety and scope policy; NIDDK red-flag boundary"
+    ],
+    "acupuncture_scope_en": [
+     "AcuTing OS safety and scope policy; NIDDK red-flag boundary"
     ]
-   }
+   },
+   "sources": [
+    "https://www.niddk.nih.gov/health-information/digestive-diseases/constipation/symptoms-causes",
+    "https://www.niddk.nih.gov/health-information/digestive-diseases/constipation/treatment",
+    "https://medlineplus.gov/constipation.html",
+    "https://www.nhs.uk/conditions/constipation/"
+   ],
+   "summary_zh": "慢性便秘是排便頻率減少或排便困難持續存在的症狀群，常見表現包括每週排便少於 3 次、糞便乾硬或結塊、排便疼痛費力，或排便不盡感。它不是單一疾病，可能與結腸傳輸變慢、骨盆底排便協調障礙、飲食與活動、藥物或其他疾病有關。",
+   "summary_en": "Chronic constipation is a persistent pattern of infrequent or difficult bowel movements. Common features include fewer than three bowel movements a week, hard or lumpy stool, painful or difficult passage, or a sense of incomplete evacuation. It is not a single disease and may reflect slow colonic transit, a pelvic-floor defecation disorder, diet and activity, medicines, or another health condition.",
+   "western_context_zh": "評估應記錄症狀時間、糞便型態、排便習慣、飲食與液體、活動量、藥物及警訊；若自我照護無效、排便習慣明顯改變或出現警訊，應由醫療人員評估是否需要檢驗或腸道檢查。一般處理可包括增加適合的纖維與液體、規律活動和排便訓練；瀉劑或會影響排便的藥物應由醫療人員個別指導，不應自行停藥。",
+   "western_context_en": "Evaluation should document duration, stool form, bowel habits, diet and fluids, activity, medicines, and warning features. If self-care fails, bowel habits change substantially, or warning features occur, medical evaluation should determine whether laboratory or bowel testing is needed. General management may include appropriate fiber and fluid intake, regular activity, and bowel training; laxatives and medicines that affect bowel function require individualized professional guidance rather than unsupervised medication changes.",
+   "risk_factors_zh": [
+    {
+     "factor": "膳食纖維不足",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NIDDK — Symptoms & Causes of Constipation"
+    },
+    {
+     "factor": "液體攝取不足或脫水",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NIDDK — Symptoms & Causes of Constipation"
+    },
+    {
+     "factor": "身體活動不足",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NIDDK — Symptoms & Causes of Constipation"
+    },
+    {
+     "factor": "忽略便意或日常作息改變",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NIDDK — Symptoms & Causes of Constipation"
+    },
+    {
+     "factor": "使用可能造成便秘的藥物或補充品；調整須聯絡開藥者",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NIDDK — Symptoms & Causes of Constipation; Treatment for Constipation"
+    },
+    {
+     "factor": "高齡、妊娠、神經系統疾病、糖尿病、甲狀腺低下或骨盆底障礙",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NIDDK — Symptoms & Causes of Constipation"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Low dietary fiber intake",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NIDDK — Symptoms & Causes of Constipation"
+    },
+    {
+     "factor": "Inadequate fluid intake or dehydration",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NIDDK — Symptoms & Causes of Constipation"
+    },
+    {
+     "factor": "Insufficient physical activity",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NIDDK — Symptoms & Causes of Constipation"
+    },
+    {
+     "factor": "Ignoring the urge to defecate or a change in daily routine",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NIDDK — Symptoms & Causes of Constipation"
+    },
+    {
+     "factor": "Medicines or supplements that can cause constipation; contact the prescriber before changes",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NIDDK — Symptoms & Causes of Constipation; Treatment for Constipation"
+    },
+    {
+     "factor": "Older age, pregnancy, neurologic disease, diabetes, hypothyroidism, or a pelvic-floor disorder",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NIDDK — Symptoms & Causes of Constipation"
+    }
+   ],
+   "red_flags_zh": [
+    {
+     "finding": "無法排氣、嘔吐、發燒或持續腹痛",
+     "urgency_level": "urgent",
+     "recommended_action": "立即接受醫療評估，以排除腸阻塞或其他急性腹部問題",
+     "rationale": "此組表現不屬單純慢性便秘的常規自我處理範圍",
+     "source": "NIDDK — Symptoms & Causes of Constipation"
+    },
+    {
+     "finding": "直腸出血或糞便帶血",
+     "urgency_level": "same_day",
+     "recommended_action": "儘速由醫療人員評估出血來源",
+     "rationale": "出血可能來自需另外診斷的肛門、直腸或結腸病變",
+     "source": "NIDDK — Symptoms & Causes of Constipation"
+    },
+    {
+     "finding": "非刻意體重下降，或症狀持續且自我照護無效",
+     "urgency_level": "routine",
+     "recommended_action": "安排醫療評估並釐清次發原因",
+     "rationale": "持續症狀與非刻意體重下降需要排除結構性或全身性疾病",
+     "source": "NIDDK — Symptoms & Causes of Constipation; NHS — Constipation"
+    }
+   ],
+   "red_flags_en": [
+    {
+     "finding": "Inability to pass gas, vomiting, fever, or constant abdominal pain",
+     "urgency_level": "urgent",
+     "recommended_action": "Obtain immediate medical evaluation to exclude bowel obstruction or another acute abdominal condition",
+     "rationale": "This combination is outside routine self-management of chronic constipation",
+     "source": "NIDDK — Symptoms & Causes of Constipation"
+    },
+    {
+     "finding": "Rectal bleeding or blood in the stool",
+     "urgency_level": "same_day",
+     "recommended_action": "Arrange prompt medical evaluation of the bleeding source",
+     "rationale": "Bleeding may arise from an anal, rectal, or colonic condition requiring separate diagnosis",
+     "source": "NIDDK — Symptoms & Causes of Constipation"
+    },
+    {
+     "finding": "Unintentional weight loss, or persistent symptoms despite self-care",
+     "urgency_level": "routine",
+     "recommended_action": "Arrange medical assessment and evaluate for a secondary cause",
+     "rationale": "Persistent symptoms and unintentional weight loss require exclusion of structural or systemic disease",
+     "source": "NIDDK — Symptoms & Causes of Constipation; NHS — Constipation"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "完成必要的醫療評估、且無腸阻塞或其他急性病因後，可依個別證候考慮便秘症狀的輔助照護",
+    "precautions": "無法排氣、嘔吐、發燒、持續腹痛、出血或非刻意體重下降時，不進入常規針灸流程，先安排醫療評估",
+    "co_management": "持續便秘、疑似骨盆底障礙或藥物相關便秘應與基層醫療或腸胃科共同管理；疑似藥物因素時應聯絡開藥者",
+    "evidence": "unknown",
+    "note": "本欄只界定安全與執業範圍，不構成針灸治療慢性便秘的療效宣稱"
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "After appropriate medical evaluation and exclusion of obstruction or another acute cause, symptom-oriented adjunctive care may be considered according to the individual pattern",
+    "precautions": "Inability to pass gas, vomiting, fever, constant abdominal pain, bleeding, or unintentional weight loss requires medical evaluation before a routine acupuncture pathway",
+    "co_management": "Persistent constipation, suspected pelvic-floor dysfunction, or medicine-related constipation should be co-managed with primary care or gastroenterology; contact the prescriber when a medicine is suspected",
+    "evidence": "unknown",
+    "note": "This field defines safety and scope of practice and is not an efficacy claim for acupuncture in chronic constipation"
+   },
+   "red_flag_refs": [
+    "rf.chronic_constipation.cannot_pass_gas_vomiting_fever"
+   ],
+   "sign_symptom_ids": [
+    "sym.constipation",
+    "sym.abdominal_bloating",
+    "sym.abdominal_pain",
+    "sym.vomiting"
+   ]
   },
   {
    "id": "cond.chronic_diarrhea",
@@ -37311,10 +37508,54 @@
     "western_pathology_en": [
      "AHA/ASA — 中風復健通說(可塑性、任務導向訓練)",
      "MedlinePlus — Stroke Rehabilitation (https://medlineplus.gov/strokerehabilitation.html)"
+    ],
+    "summary_zh": [
+     "MedlinePlus — Stroke Rehabilitation",
+     "NINDS — Recovery"
+    ],
+    "summary_en": [
+     "MedlinePlus — Stroke Rehabilitation",
+     "NINDS — Recovery"
+    ],
+    "western_context_zh": [
+     "MedlinePlus — Stroke Rehabilitation",
+     "NINDS — Recovery",
+     "CDC — Preventing Stroke"
+    ],
+    "western_context_en": [
+     "MedlinePlus — Stroke Rehabilitation",
+     "NINDS — Recovery",
+     "CDC — Preventing Stroke"
+    ],
+    "risk_factors_zh": [
+     "CDC — Risk Factors for Stroke",
+     "CDC — Preventing Stroke"
+    ],
+    "risk_factors_en": [
+     "CDC — Risk Factors for Stroke",
+     "CDC — Preventing Stroke"
+    ],
+    "red_flags_zh": [
+     "CDC — Signs and Symptoms of Stroke",
+     "data/pathology/red_flag_registry.json"
+    ],
+    "red_flags_en": [
+     "CDC — Signs and Symptoms of Stroke",
+     "data/pathology/red_flag_registry.json"
+    ],
+    "acupuncture_scope_zh": [
+     "AcuTing OS safety and scope policy; CDC stroke-emergency boundary"
+    ],
+    "acupuncture_scope_en": [
+     "AcuTing OS safety and scope policy; CDC stroke-emergency boundary"
     ]
    },
    "sources": [
-    "https://medlineplus.gov/strokerehabilitation.html"
+    "https://medlineplus.gov/strokerehabilitation.html",
+    "https://www.ninds.nih.gov/health-information/stroke/recovery",
+    "https://www.cdc.gov/stroke/signs-symptoms/index.html",
+    "https://www.cdc.gov/stroke/risk-factors/index.html",
+    "https://www.cdc.gov/stroke/prevention/index.html"
    ],
    "acupoint_protocol_evidence": {
     "protocol_status": "adjunct_only",
@@ -37511,7 +37752,159 @@
      "ST2 有獨立 motor-aphasia 針灸 regimen，ST3 有 dysphagia evidence；為避免 renderer 把不同功能領域拼成標準方，未把它們的穴位混入正式 points。",
      "本卡未把 hemorrhagic stroke 與 ischemic stroke 的 rehab evidence 視為完全等同；正式 7 穴方案來自 subacute ischemic stroke RCT。"
     ]
-   }
+   },
+   "summary_zh": "中風後復健是針對中風造成之動作、語言、認知、吞嚥、感覺與日常生活能力改變所設計的個別化計畫，目標是重新學習受損技能、補償殘留失能並提高獨立性。復健不是單一療法，而是由復健醫師、護理、物理治療、職能治療、語言治療及其他專業共同參與的持續過程。",
+   "summary_en": "Post-stroke rehabilitation is an individualized program for changes in movement, language, cognition, swallowing, sensation, and daily living caused by stroke. It aims to relearn impaired skills, compensate for remaining disability, and maximize independence. Rehabilitation is not a single treatment but a continuing multidisciplinary process involving rehabilitation medicine, nursing, physical therapy, occupational therapy, speech-language therapy, and other professionals.",
+   "western_context_zh": "在病況穩定後，復健通常於住院早期開始，內容與強度依中風部位、失能程度、耐受度及個人目標調整；重複且任務導向的練習可支持功能重建。復健必須與再次中風預防同步，包括由醫療團隊管理血壓、心房顫動、糖尿病、血脂、吸菸及處方藥物；新發神經症狀即使數分鐘後消失，也需按中風或短暫性腦缺血發作處理。",
+   "western_context_en": "Once medically stable, rehabilitation often begins early in the hospital and is individualized to stroke location, disability, tolerance, and personal goals; repetitive task-directed practice supports functional relearning. Rehabilitation must run alongside secondary prevention through clinician-led management of blood pressure, atrial fibrillation, diabetes, lipids, smoking, and prescribed medicines. New neurologic symptoms require a stroke or transient-ischemic-attack pathway even if they resolve within minutes.",
+   "risk_factors_zh": [
+    {
+     "factor": "曾有中風或短暫性腦缺血發作",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "CDC — Risk Factors for Stroke"
+    },
+    {
+     "factor": "高血壓控制不佳",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "CDC — Risk Factors for Stroke"
+    },
+    {
+     "factor": "心房顫動或其他心臟疾病",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "CDC — Risk Factors for Stroke"
+    },
+    {
+     "factor": "糖尿病",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "CDC — Risk Factors for Stroke"
+    },
+    {
+     "factor": "高膽固醇",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "CDC — Risk Factors for Stroke"
+    },
+    {
+     "factor": "吸菸與身體活動不足",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "CDC — Risk Factors for Stroke; Preventing Stroke"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Previous stroke or transient ischemic attack",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "CDC — Risk Factors for Stroke"
+    },
+    {
+     "factor": "Poorly controlled high blood pressure",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "CDC — Risk Factors for Stroke"
+    },
+    {
+     "factor": "Atrial fibrillation or other heart disease",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "CDC — Risk Factors for Stroke"
+    },
+    {
+     "factor": "Diabetes",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "CDC — Risk Factors for Stroke"
+    },
+    {
+     "factor": "High cholesterol",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "CDC — Risk Factors for Stroke"
+    },
+    {
+     "factor": "Smoking and insufficient physical activity",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "CDC — Risk Factors for Stroke; Preventing Stroke"
+    }
+   ],
+   "red_flags_zh": [
+    {
+     "finding": "突然新發或復發的單側臉、手臂或腿無力／麻木，臉歪或手臂下垂",
+     "urgency_level": "emergency",
+     "recommended_action": "立即啟動緊急醫療服務並記錄症狀開始時間",
+     "rationale": "可能為急性中風，治療具有時間窗",
+     "source": "CDC — Signs and Symptoms of Stroke"
+    },
+    {
+     "finding": "突然說話困難、理解困難、視力改變、行走不穩、失去平衡或協調",
+     "urgency_level": "emergency",
+     "recommended_action": "立即啟動緊急醫療服務",
+     "rationale": "這些是 CDC 列出的急性中風警訊",
+     "source": "CDC — Signs and Symptoms of Stroke"
+    },
+    {
+     "finding": "突然發生、原因不明的劇烈頭痛，或上述症狀數分鐘後自行消失",
+     "urgency_level": "emergency",
+     "recommended_action": "仍須立即接受急症評估，不因症狀消失而延誤",
+     "rationale": "短暫症狀可能是短暫性腦缺血發作，仍代表重大風險",
+     "source": "CDC — Signs and Symptoms of Stroke"
+    }
+   ],
+   "red_flags_en": [
+    {
+     "finding": "Sudden new or recurrent one-sided weakness or numbness of the face, arm, or leg, facial droop, or arm drift",
+     "urgency_level": "emergency",
+     "recommended_action": "Activate emergency medical services immediately and record symptom-onset time",
+     "rationale": "This may be acute stroke, for which treatment is time-dependent",
+     "source": "CDC — Signs and Symptoms of Stroke"
+    },
+    {
+     "finding": "Sudden trouble speaking or understanding, vision change, trouble walking, loss of balance, or loss of coordination",
+     "urgency_level": "emergency",
+     "recommended_action": "Activate emergency medical services immediately",
+     "rationale": "CDC lists these as acute stroke warning signs",
+     "source": "CDC — Signs and Symptoms of Stroke"
+    },
+    {
+     "finding": "A sudden severe headache with no known cause, or any warning symptom that resolves after a few minutes",
+     "urgency_level": "emergency",
+     "recommended_action": "Obtain emergency assessment even if symptoms resolve",
+     "rationale": "Transient symptoms may represent a transient ischemic attack and still signal major risk",
+     "source": "CDC — Signs and Symptoms of Stroke"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "病況穩定並完成急性中風處置後，可在正式復健計畫內依個別證候考慮輔助照護",
+    "precautions": "任何新發或復發的中風警訊均中止一般門診流程並立即走急症路徑；吞嚥、跌倒與認知風險須納入治療環境安全",
+    "co_management": "應與中風／復健團隊協調功能目標、活動限制與再次中風預防；不得建議自行更動抗血小板、抗凝血、降壓或其他處方藥",
+    "evidence": "unknown",
+    "note": "本欄只界定安全與團隊照護範圍，不宣稱針灸可取代標準中風復健或再次中風預防"
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "After medical stabilization and completion of acute stroke care, adjunctive care may be considered according to the individual pattern within a formal rehabilitation plan",
+    "precautions": "Any new or recurrent stroke warning sign requires an emergency pathway instead of routine outpatient care; swallowing, fall, and cognitive risks must be incorporated into treatment-setting safety",
+    "co_management": "Coordinate functional goals, activity restrictions, and secondary prevention with the stroke and rehabilitation team; do not advise unsupervised changes to antiplatelet, anticoagulant, antihypertensive, or other prescribed medicines",
+    "evidence": "unknown",
+    "note": "This field defines safety and team-care boundaries and does not claim that acupuncture replaces standard stroke rehabilitation or secondary prevention"
+   },
+   "red_flag_refs": [
+    "rf.stroke_rehab.recurrent_stroke_signs"
+   ],
+   "sign_symptom_ids": [
+    "sym.hemiplegia",
+    "sym.facial_deviation",
+    "sym.slurred_speech",
+    "sym.weakness",
+    "sym.numbness",
+    "sym.dizziness",
+    "sym.blurred_vision"
+   ]
   },
   {
    "id": "cond.peripheral_neuropathy",
@@ -37951,7 +38344,10 @@
    ],
    "sources": [
     "https://cloudtcm.com/disease/tcm/88",
-    "https://medlineplus.gov/diabeticnerveproblems.html"
+    "https://medlineplus.gov/diabeticnerveproblems.html",
+    "https://www.niddk.nih.gov/health-information/diabetes/overview/preventing-problems/nerve-damage-diabetic-neuropathies/what-is-diabetic-neuropathy",
+    "https://www.niddk.nih.gov/health-information/diabetes/overview/preventing-problems/foot-problems",
+    "https://www.cdc.gov/diabetes/diabetes-complications/diabetes-and-your-feet.html"
    ],
    "entity_type": "biomedical_condition",
    "import_artifacts": [
@@ -37992,6 +38388,48 @@
     "western_pathology_en": [
      "ADA — 糖尿病神經病變通說(機轉路徑、足部照護)",
      "MedlinePlus — Diabetic Nerve Problems (https://medlineplus.gov/diabeticnerveproblems.html)"
+    ],
+    "summary_zh": [
+     "NIDDK — What Is Diabetic Neuropathy?",
+     "CDC — Your Feet and Diabetes"
+    ],
+    "summary_en": [
+     "NIDDK — What Is Diabetic Neuropathy?",
+     "CDC — Your Feet and Diabetes"
+    ],
+    "western_context_zh": [
+     "NIDDK — What Is Diabetic Neuropathy?",
+     "CDC — Your Feet and Diabetes",
+     "MedlinePlus — Diabetic Nerve Problems"
+    ],
+    "western_context_en": [
+     "NIDDK — What Is Diabetic Neuropathy?",
+     "CDC — Your Feet and Diabetes",
+     "MedlinePlus — Diabetic Nerve Problems"
+    ],
+    "risk_factors_zh": [
+     "NIDDK — What Is Diabetic Neuropathy?",
+     "CDC — Your Feet and Diabetes"
+    ],
+    "risk_factors_en": [
+     "NIDDK — What Is Diabetic Neuropathy?",
+     "CDC — Your Feet and Diabetes"
+    ],
+    "red_flags_zh": [
+     "NIDDK — Diabetes & Foot Problems",
+     "CDC — Your Feet and Diabetes",
+     "data/pathology/red_flag_registry.json"
+    ],
+    "red_flags_en": [
+     "NIDDK — Diabetes & Foot Problems",
+     "CDC — Your Feet and Diabetes",
+     "data/pathology/red_flag_registry.json"
+    ],
+    "acupuncture_scope_zh": [
+     "AcuTing OS safety and scope policy; NIDDK/CDC diabetic-foot boundary"
+    ],
+    "acupuncture_scope_en": [
+     "AcuTing OS safety and scope policy; NIDDK/CDC diabetic-foot boundary"
     ]
    },
    "acupoint_protocol_evidence": {
@@ -38190,7 +38628,156 @@
      "EX-LE10 在本 repo extra-point generator 有正式代碼；來源寫 EX-LE-10，本交付依 repo 正規化成 EX-LE10。",
      "2025 NMA 的 nerve-conduction velocity 是 surrogate；未用來宣稱降低 ulcer/amputation 或恢復 protective sensation。"
     ]
-   }
+   },
+   "summary_zh": "糖尿病神經病變是糖尿病造成的神經損傷；最常見的周邊型通常先影響足部與腿部，有些人出現灼痛、刺痛或麻木，也有人因感覺喪失而沒有明顯疼痛。感覺下降會增加未察覺足部傷口、潰瘍、感染、跌倒與截肢的風險。",
+   "summary_en": "Diabetic neuropathy is nerve damage caused by diabetes. The common peripheral form typically affects the feet and legs first; some people have burning, shooting pain, tingling, or numbness, while others have little pain because sensation is lost. Reduced sensation increases the risk of unnoticed foot injury, ulcer, infection, falls, and amputation.",
+   "western_context_zh": "照護重點包括由糖尿病團隊管理血糖、血壓、血脂與體重，檢視其他可能的神經病變原因，至少定期進行神經與足部檢查，並每天查看雙足。疼痛處理須與醫療人員討論；任何水泡、傷口、潰瘍、感染或足部顏色與溫度改變都不應等到下次例行回診才處理。",
+   "western_context_en": "Care includes diabetes-team management of blood glucose, blood pressure, lipids, and weight; assessment for other neuropathy causes; regular neurologic and foot examinations; and daily inspection of both feet. Pain treatment should be discussed with a clinician. A blister, wound, ulcer, infection, or change in foot color or temperature should not wait until the next routine appointment.",
+   "risk_factors_zh": [
+    {
+     "factor": "糖尿病病程較長或年齡增加",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NIDDK — What Is Diabetic Neuropathy?"
+    },
+    {
+     "factor": "血糖長期高於個人目標或難以控制",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NIDDK — What Is Diabetic Neuropathy?; CDC — Your Feet and Diabetes"
+    },
+    {
+     "factor": "過重",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NIDDK — What Is Diabetic Neuropathy?"
+    },
+    {
+     "factor": "高血壓或高膽固醇",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NIDDK — What Is Diabetic Neuropathy?; CDC — Your Feet and Diabetes"
+    },
+    {
+     "factor": "晚期腎臟病",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NIDDK — What Is Diabetic Neuropathy?"
+    },
+    {
+     "factor": "吸菸或過量飲酒",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NIDDK — What Is Diabetic Neuropathy?"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Longer duration of diabetes or increasing age",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NIDDK — What Is Diabetic Neuropathy?"
+    },
+    {
+     "factor": "Blood glucose persistently above the individual's target or difficult to manage",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NIDDK — What Is Diabetic Neuropathy?; CDC — Your Feet and Diabetes"
+    },
+    {
+     "factor": "Overweight",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NIDDK — What Is Diabetic Neuropathy?"
+    },
+    {
+     "factor": "High blood pressure or high cholesterol",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NIDDK — What Is Diabetic Neuropathy?; CDC — Your Feet and Diabetes"
+    },
+    {
+     "factor": "Advanced kidney disease",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NIDDK — What Is Diabetic Neuropathy?"
+    },
+    {
+     "factor": "Smoking or excessive alcohol use",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NIDDK — What Is Diabetic Neuropathy?"
+    }
+   ],
+   "red_flags_zh": [
+    {
+     "finding": "足部感染、發黑或出現惡臭",
+     "urgency_level": "urgent",
+     "recommended_action": "立即接受醫療評估，以排除壞疽或嚴重感染",
+     "rationale": "糖尿病合併神經與血流問題時，感染可快速惡化並威脅肢體",
+     "source": "NIDDK — Diabetes & Foot Problems"
+    },
+    {
+     "finding": "新發水泡、傷口、潰瘍、紅腫、化膿或嵌甲",
+     "urgency_level": "same_day",
+     "recommended_action": "不要自行處理，儘速聯絡一般醫師或足病專業人員",
+     "rationale": "感覺下降可能使小傷口在未察覺下惡化",
+     "source": "CDC — Your Feet and Diabetes"
+    },
+    {
+     "finding": "足部顏色、溫度或形狀明顯改變，或突然無法承重／行走",
+     "urgency_level": "same_day",
+     "recommended_action": "儘速接受足部、血流與神經評估",
+     "rationale": "可能提示感染、血流障礙、骨關節問題或進展性神經損傷",
+     "source": "CDC — Your Feet and Diabetes"
+    }
+   ],
+   "red_flags_en": [
+    {
+     "finding": "A foot infection that is turning black or becoming foul-smelling",
+     "urgency_level": "urgent",
+     "recommended_action": "Obtain immediate medical evaluation for gangrene or severe infection",
+     "rationale": "In diabetes, combined nerve and blood-flow problems can allow infection to progress rapidly and threaten the limb",
+     "source": "NIDDK — Diabetes & Foot Problems"
+    },
+    {
+     "finding": "A new blister, wound, ulcer, redness, swelling, drainage, or ingrown toenail",
+     "urgency_level": "same_day",
+     "recommended_action": "Do not self-treat; contact a medical or foot-care professional promptly",
+     "rationale": "Reduced sensation can allow a small injury to worsen without being noticed",
+     "source": "CDC — Your Feet and Diabetes"
+    },
+    {
+     "finding": "A marked change in foot color, temperature, or shape, or sudden inability to bear weight or walk",
+     "urgency_level": "same_day",
+     "recommended_action": "Obtain prompt foot, circulation, and neurologic assessment",
+     "rationale": "This may indicate infection, impaired blood flow, a bone or joint problem, or progressive nerve injury",
+     "source": "CDC — Your Feet and Diabetes"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "完成糖尿病與神經病變評估、且足部皮膚完整無感染後，可依個別證候考慮疼痛或感覺症狀的輔助照護",
+    "precautions": "每次先查看感覺下降區域與足部皮膚；水泡、傷口、潰瘍、感染、發黑或血流異常先轉介，不把無痛當作安全",
+    "co_management": "應與糖尿病照護及足部專業團隊共同管理血糖、足部風險與藥物；不得以針灸取代每日足部檢查、傷口照護或感染治療",
+    "evidence": "unknown",
+    "note": "本欄只界定安全與共同照護範圍，不構成針灸逆轉糖尿病神經損傷的療效宣稱"
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "After diabetes and neuropathy assessment, and only when foot skin is intact without infection, adjunctive care for pain or sensory symptoms may be considered according to the individual pattern",
+    "precautions": "Inspect areas of reduced sensation and both feet before each session; a blister, wound, ulcer, infection, black tissue, or circulation concern requires referral first, and absence of pain must not be treated as proof of safety",
+    "co_management": "Co-manage glucose control, foot risk, and medicines with the diabetes and foot-care team; acupuncture must not replace daily foot inspection, wound care, or infection treatment",
+    "evidence": "unknown",
+    "note": "This field defines safety and co-management boundaries and is not a claim that acupuncture reverses diabetic nerve damage"
+   },
+   "red_flag_refs": [
+    "rf.diabetic_neuropathy.diabetic_foot_gangrene"
+   ],
+   "sign_symptom_ids": [
+    "sym.numbness",
+    "sym.weakness",
+    "sym.muscle_atrophy",
+    "sym.cold_extremities"
+   ]
   },
   {
    "id": "cond.trigeminal_neuralgia",
@@ -39666,8 +40253,208 @@
     ],
     "etiology_en": [
      "translated 2026-08-19 from the record's own etiology_zh"
+    ],
+    "summary_zh": [
+     "NIDCD — Balance Disorders",
+     "MedlinePlus — Dizziness"
+    ],
+    "summary_en": [
+     "NIDCD — Balance Disorders",
+     "MedlinePlus — Dizziness"
+    ],
+    "western_context_zh": [
+     "NIDCD — Balance Disorders",
+     "MedlinePlus — Dizziness"
+    ],
+    "western_context_en": [
+     "NIDCD — Balance Disorders",
+     "MedlinePlus — Dizziness"
+    ],
+    "risk_factors_zh": [
+     "NIDCD — Balance Disorders",
+     "MedlinePlus — Dizziness"
+    ],
+    "risk_factors_en": [
+     "NIDCD — Balance Disorders",
+     "MedlinePlus — Dizziness"
+    ],
+    "red_flags_zh": [
+     "MedlinePlus — Dizziness and vertigo aftercare",
+     "CDC — Signs and Symptoms of Stroke",
+     "data/pathology/red_flag_registry.json"
+    ],
+    "red_flags_en": [
+     "MedlinePlus — Dizziness and vertigo aftercare",
+     "CDC — Signs and Symptoms of Stroke",
+     "data/pathology/red_flag_registry.json"
+    ],
+    "acupuncture_scope_zh": [
+     "AcuTing OS safety and scope policy; CDC/MedlinePlus emergency boundary"
+    ],
+    "acupuncture_scope_en": [
+     "AcuTing OS safety and scope policy; CDC/MedlinePlus emergency boundary"
     ]
-   }
+   },
+   "sources": [
+    "https://www.nidcd.nih.gov/health/balance-disorders",
+    "https://medlineplus.gov/ency/article/003093.htm",
+    "https://medlineplus.gov/ency/patientinstructions/000692.htm",
+    "https://www.cdc.gov/stroke/signs-symptoms/index.html"
+   ],
+   "summary_zh": "頭暈是涵蓋頭重腳輕、快要昏倒、不穩與旋轉感的非特異性描述；眩暈則特指自身或周圍環境在移動、旋轉的錯覺。兩者都不是單一診斷，可來自內耳與前庭系統、藥物、血壓或心血管問題、視覺與肌骨系統，亦可能是腦部疾病的表現。",
+   "summary_en": "Dizziness is a nonspecific description that may mean lightheadedness, near-fainting, unsteadiness, or a spinning sensation; vertigo specifically means an illusion that the person or surroundings are moving or spinning. Neither is a single diagnosis. Causes may involve the inner ear and vestibular system, medicines, blood pressure or cardiovascular problems, vision and musculoskeletal systems, or the brain.",
+   "western_context_zh": "評估應先釐清感受類型、起始時間、持續時間、誘發姿勢、聽力與耳鳴、藥物、跌倒／昏厥，以及是否有神經或心血管症狀；必要時進行聽力、眼球運動、平衡、血壓、神經或影像檢查。治療取決於病因；在診斷前應降低跌倒風險，並確認何時可安全駕駛或獨自行走。",
+   "western_context_en": "Evaluation should distinguish the sensation, onset, duration, positional triggers, hearing change or tinnitus, medicines, falls or fainting, and associated neurologic or cardiovascular symptoms. Hearing, eye-movement, balance, blood-pressure, neurologic, or imaging tests may be needed. Treatment depends on the cause; fall risk and the safety of driving or walking alone should be addressed before diagnosis is complete.",
+   "risk_factors_zh": [
+    {
+     "factor": "年齡增加",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NIDCD — Balance Disorders"
+    },
+    {
+     "factor": "使用可能影響平衡或血壓的藥物",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NIDCD — Balance Disorders"
+    },
+    {
+     "factor": "內耳感染或其他前庭疾病",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NIDCD — Balance Disorders"
+    },
+    {
+     "factor": "頭部外傷",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NIDCD — Balance Disorders"
+    },
+    {
+     "factor": "低血壓",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NIDCD — Balance Disorders; MedlinePlus — Dizziness"
+    },
+    {
+     "factor": "視覺問題或肌骨系統疾病",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NIDCD — Balance Disorders"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Increasing age",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NIDCD — Balance Disorders"
+    },
+    {
+     "factor": "Medicines that may affect balance or blood pressure",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NIDCD — Balance Disorders"
+    },
+    {
+     "factor": "Inner-ear infection or another vestibular disorder",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NIDCD — Balance Disorders"
+    },
+    {
+     "factor": "Head injury",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NIDCD — Balance Disorders"
+    },
+    {
+     "factor": "Low blood pressure",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NIDCD — Balance Disorders; MedlinePlus — Dizziness"
+    },
+    {
+     "factor": "Visual problems or musculoskeletal disease",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NIDCD — Balance Disorders"
+    }
+   ],
+   "red_flags_zh": [
+    {
+     "finding": "頭暈或眩暈合併突然單側無力／麻木、說話困難或視力改變",
+     "urgency_level": "emergency",
+     "recommended_action": "立即啟動緊急醫療服務",
+     "rationale": "可能為急性中風或其他中樞神經急症",
+     "source": "MedlinePlus — Dizziness and vertigo aftercare; CDC — Signs and Symptoms of Stroke"
+    },
+    {
+     "finding": "頭暈或眩暈合併昏厥、意識下降或無法正常喚醒",
+     "urgency_level": "emergency",
+     "recommended_action": "立即啟動緊急醫療服務",
+     "rationale": "可能為心血管、神經或其他威脅生命的病因",
+     "source": "MedlinePlus — Dizziness and vertigo aftercare"
+    },
+    {
+     "finding": "突然無法行走、嚴重失去平衡或協調",
+     "urgency_level": "emergency",
+     "recommended_action": "立即按急性中風路徑評估",
+     "rationale": "CDC 將突發行走困難、頭暈、失衡或失去協調列為中風警訊",
+     "source": "CDC — Signs and Symptoms of Stroke"
+    }
+   ],
+   "red_flags_en": [
+    {
+     "finding": "Dizziness or vertigo with sudden one-sided weakness or numbness, trouble speaking, or vision change",
+     "urgency_level": "emergency",
+     "recommended_action": "Activate emergency medical services immediately",
+     "rationale": "This may represent acute stroke or another central neurologic emergency",
+     "source": "MedlinePlus — Dizziness and vertigo aftercare; CDC — Signs and Symptoms of Stroke"
+    },
+    {
+     "finding": "Dizziness or vertigo with fainting, reduced alertness, or inability to awaken normally",
+     "urgency_level": "emergency",
+     "recommended_action": "Activate emergency medical services immediately",
+     "rationale": "A cardiovascular, neurologic, or other life-threatening cause is possible",
+     "source": "MedlinePlus — Dizziness and vertigo aftercare"
+    },
+    {
+     "finding": "Sudden inability to walk, severe loss of balance, or loss of coordination",
+     "urgency_level": "emergency",
+     "recommended_action": "Use an acute stroke pathway immediately",
+     "rationale": "CDC lists sudden trouble walking, dizziness, loss of balance, or lack of coordination as stroke warning signs",
+     "source": "CDC — Signs and Symptoms of Stroke"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "急性中樞神經與心血管病因已排除、診斷與跌倒風險已評估後，可依個別證候考慮症狀導向的輔助照護",
+    "precautions": "新發神經缺損、昏厥、意識下降或突然無法行走時不進入常規針灸流程；治療環境須先處理起身與跌倒風險",
+    "co_management": "持續、反覆或原因未明的眩暈應與基層醫療、耳鼻喉科、神經科或心血管團隊依疑似病因共同管理；藥物檢視應聯絡開藥者",
+    "evidence": "unknown",
+    "note": "本欄只界定安全與轉介範圍，不構成針灸對未確診眩暈病因的療效宣稱"
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "After acute central-neurologic and cardiovascular causes are excluded and diagnosis and fall risk are assessed, symptom-oriented adjunctive care may be considered according to the individual pattern",
+    "precautions": "New neurologic deficit, fainting, reduced alertness, or sudden inability to walk is not a routine acupuncture pathway; standing and fall risk must be addressed in the treatment environment",
+    "co_management": "Persistent, recurrent, or unexplained vertigo should be co-managed with primary care, otolaryngology, neurology, or cardiovascular care according to the suspected cause; contact the prescriber for medication review",
+    "evidence": "unknown",
+    "note": "This field defines safety and referral boundaries and is not an efficacy claim for acupuncture in an undiagnosed cause of vertigo"
+   },
+   "red_flag_refs": [
+    "rf.dizziness_vertigo.weakness_vision_speech_changes",
+    "rf.dizziness_vertigo.syncope_altered_consciousness",
+    "rf.dizziness_vertigo.sudden_gait_ataxia"
+   ],
+   "sign_symptom_ids": [
+    "sym.dizziness",
+    "sym.vertigo",
+    "sym.nausea",
+    "sym.vomiting",
+    "sym.tinnitus",
+    "sym.syncope",
+    "sym.blurred_vision"
+   ]
   },
   {
    "id": "cond.menieres",
