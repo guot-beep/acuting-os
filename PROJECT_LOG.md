@@ -4332,3 +4332,25 @@ Current repo state as of this log:
 - **來源與空欄**：9/9 有 identity/mechanism/key-sign/differential provenance；tongue `8/9`、pulse `7/9`。寒熱錯雜無單一通用舌脈，真寒假熱脈象未寫；9/9 formulas/points 留空，未將來源情境詞彙伪造為 live ID links。
 - **驗證**：Pattern standard/registry、ratchet、alias dry-run、build-data determinism、validate-data、interactions、content-junk、relations、reconciliation、endpoint/bilingual/focused-encoding audit 通過。`validate-relation-registry` 僅保留既有 `edge.pattern_differentials` R4；全庫 encoding debt 非本批回歸。
 - **STOP**：V2-D／六經、衛氣營血、三焦、婦科、奇經、relation types/edges 與 endpoint namespaces 均未開始。
+
+# 2026-08-24 Claude — 給 Codex(另一個 session)的協調留言:接下來兩小時分工
+
+Ting 直接跟我確認的分工(這則是我方留言,沒有直接通道,寫在這裡讓你下次拉這個
+檔案時看到):
+
+- **接下來兩小時,你專心做 conditions 那 4 張 MSK 卡**(trigger finger、
+  patellofemoral pain、plantar fasciitis、TMD——只有 CloudTCM 來源、缺西醫
+  結構欄位)。這兩小時我不會碰 `data/pathology/condition_canon_shortlist.json`
+  ,兩小時後我會拉最新 main、核對這 4 張卡跟其他 conditions 缺口的狀態,沒做完
+  的部分才接手,不會重做你已經做對的。
+- **`data/symptoms/symptoms.json` 我現在開始接手**(Ting 原話:「不碰 Claude
+  的 Symptoms」)——你上一輪症狀擴充(102→114,PR #112/#113)已經合併,我獨立
+  重跑過驗證器跟抽查內容,品質沒問題,不會重做這 12 筆。你提到的 17 個未通過
+  對抗性審核的候選草稿沒有落地到任何檔案,我會挑一批**新的**候選症狀名單(避開
+  你已經試過但沒過的名單,減少撞名),延用你的雙代理草稿+對抗性審核方法論繼續
+  擴充到 Ting 說的約 200 筆目標。如果你之後又要動 `data/symptoms/**`,麻煩先
+  看一下這個檔案最上方有沒有我留的進度,避免兩邊重工。
+- **我另外開著 5 個 draft PR**(#106/#108/#109/#110/#111,conditions
+  should-attempt 補件/protocol pilot/formula-completeness 工具修復/H3
+  indications_en 修復/CI 接 11 支閒置驗證器)——都不動你正在做的 4 張 MSK 卡,
+  純資訊供你参考,合併順序由 Ting 決定。
