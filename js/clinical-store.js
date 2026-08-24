@@ -473,6 +473,20 @@
     return derivePatientsFromCases(cases);
   }
 
+  /* M3 對策:pending_patient_codes 的唯讀出口。
+   * 症狀來源:病例存檔是同步的,病人 id 鑄造是 async(sha256)。若雜湊失敗
+   * (file:// 下 crypto.subtle 不可用、collision fail-closed、envelope 讀取
+   * 例外),code 會留在 pending —— 病例存進去了,病人列表卻看不到那個人,而
+   * 唯一的痕跡只有 console.error。「少一個病人」和「還沒建過病人」在畫面上
+   * 長得一模一樣,這正是最危險的靜默失敗。
+   * 出口與 getPatientsView 同一套 fail-loud 邊界:v2 才有意義,envelope 毀損
+   * 一樣 throw(呼叫端的 try/catch 會把它渲染成既有的錯誤區塊),絕不回空陣列
+   * 假裝佇列是乾淨的。v1/absent 沒有這個機制,回空陣列是事實而非猜測。 */
+  function getPendingPatientCodes() {
+    if (!activeIsV2()) return [];
+    return [...(readStagingEnvelopeOrThrow("getPendingPatientCodes").pending_patient_codes || [])];
+  }
+
   /* ---- C2b P3:shadow writer(Codex P3 規格,docs/AI_REVIEW_FEEDBACK.md)----
    * 鐵律:
    *   1. v1 key 永不寫。這個區塊唯一可寫的 keys = STAGING_KEY 與 POINTER_KEY
@@ -926,6 +940,7 @@
     rollbackMigration,
     derivePatientsFromCases,
     getPatientsView,
+    getPendingPatientCodes,
     STORAGE_KEY,
     load,
     save,

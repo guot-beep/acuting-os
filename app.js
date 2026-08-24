@@ -754,6 +754,9 @@ const AVS_EVIDENCE_TYPE_LABELS = {
   clinic_preference: "診所慣例"
 };
 let selectedPatientCode = "";   // Patient Workspace W1 — read-only, list selection only
+// M3:最近一次病人 id 鑄造失敗的原因(null = 沒有未解失敗)。存檔是同步的、
+// 鑄造是 async,失敗過去只進 console —— 這個變數讓它走得到畫面上。
+let patientSyncError = null;
 let editingCaseId = null;
 let editingSoapId = null;
 let isSyncingPointHash = false;
@@ -833,6 +836,7 @@ const caseDetail = document.querySelector("#caseDetail");
 const caseResultCount = document.querySelector("#caseResultCount");
 const patientSearch = document.querySelector("#patientSearch");
 const patientList = document.querySelector("#patientList");
+const patientSyncBanner = document.querySelector("#patientSyncBanner");
 const patientDetail = document.querySelector("#patientDetail");
 const patientResultCount = document.querySelector("#patientResultCount");
 const caseDialog = document.querySelector("#caseDialog");
@@ -1694,9 +1698,23 @@ function persistClinicalCases() {
       AcuTingClinicalStore.save(clinicalCases);
       // v2 模式:存檔後補建 pending 病人(fire-and-forget;失敗不影響已存病歷)
       if (AcuTingClinicalStore.activeIsV2 && AcuTingClinicalStore.activeIsV2() && AcuTingClinicalStore.syncPendingPatients) {
-        const sha = (s) => crypto.subtle.digest("SHA-256", new TextEncoder().encode(s))
-          .then((b) => [...new Uint8Array(b)].map((x) => x.toString(16).padStart(2, "0")).join(""));
-        AcuTingClinicalStore.syncPendingPatients(sha).catch((e) => console.error("syncPendingPatients failed (will retry next save):", e));
+        // M3:病人 id 鑄造失敗過去只有 console.error —— 病例存進去了、病人列表
+        // 少一個人,而畫面上「少一個病人」與「還沒建過病人」長得一模一樣。
+        // 保持 fire-and-forget(雜湊失敗絕不可害已存好的病歷 rollback),但把
+        // 失敗原因記下來,由 renderPatientsWorkspace 掛成可見橫幅。
+        if (!globalThis.crypto || !crypto.subtle) {
+          patientSyncError = "此瀏覽器環境沒有 crypto.subtle(常見於某些 file:// 情境),無法鑄造病人 id。病例已存,但病人列表會少人。請改用正式入口(本機伺服器或部署網址)開啟後再存一次。";
+        } else {
+          const sha = (s) => crypto.subtle.digest("SHA-256", new TextEncoder().encode(s))
+            .then((b) => [...new Uint8Array(b)].map((x) => x.toString(16).padStart(2, "0")).join(""));
+          AcuTingClinicalStore.syncPendingPatients(sha)
+            .then(() => { patientSyncError = null; renderPatientsWorkspace(); })
+            .catch((e) => {
+              patientSyncError = String((e && e.message) || e);
+              console.error("syncPendingPatients failed (will retry next save):", e);
+              renderPatientsWorkspace();
+            });
+        }
       }
     } else {
       localStorage.setItem(CASE_STORAGE_KEY, JSON.stringify(clinicalCases, null, 2));
@@ -7221,8 +7239,12 @@ function getFilteredPatientRows() {
   const store = window.AcuTingClinicalStore;
   if (!store || !store.getPatientsView) return { rows: [], error: "AcuTingClinicalStore.getPatientsView() 不可用" };
   let patients;
+  let pendingCodes = [];
   try {
     patients = store.getPatientsView(clinicalCases) || [];
+    // 與 patients 讀同一個 envelope、同一個 try —— 佇列讀不到時走既有錯誤路徑,
+    // 不會出現「病人列表正常、佇列悄悄當成空的」這種半真半假的畫面。
+    pendingCodes = store.getPendingPatientCodes ? store.getPendingPatientCodes() : [];
   } catch (e) {
     // Fail loud, same spirit as loadClinicalCases()'s clinicalStoreIntegrityError
     // path — a v2 staging envelope missing/corrupt must never silently render
@@ -7241,17 +7263,36 @@ function getFilteredPatientRows() {
   rows.sort((a, b) => String(b.mostRecentVisit || "").localeCompare(String(a.mostRecentVisit || "")));
   const query = (patientSearch?.value || "").trim().toLowerCase();
   const filtered = query ? rows.filter((r) => String(r.patient.patientCode || "").toLowerCase().includes(query)) : rows;
-  return { rows: filtered, error: null };
+  return { rows: filtered, error: null, pendingCodes };
 }
 
 function renderPatientsWorkspace() {
   if (!patientList || !patientDetail) return;   // section absent from this build — defensive, mirrors other optional-panel guards in this file
-  const { rows, error } = getFilteredPatientRows();
+  const { rows, error, pendingCodes } = getFilteredPatientRows();
   if (patientResultCount) patientResultCount.textContent = `${rows.length} patients`;
   if (error) {
     patientList.innerHTML = `<div class="case-empty">病人視圖讀取失敗<br>Patient view failed to load:<br>${escapeHtml(error)}</div>`;
     patientDetail.innerHTML = "";
     return;
+  }
+  // M3 橫幅:病例存好了但病人還沒鑄造出來 —— 說出「少了誰」與「為什麼」。
+  // 沒有這一條時,少一個病人跟還沒建過病人在畫面上完全同一個樣子。
+  // 佇列非空但沒有記到錯誤,通常是鑄造還在飛(下次存檔會補),照樣講清楚,
+  // 不假裝一切正常也不謊稱一定壞了。
+  const pending = pendingCodes || [];
+  if (patientSyncBanner) {
+    if (!pending.length && !patientSyncError) {
+      patientSyncBanner.hidden = true;
+      patientSyncBanner.innerHTML = "";
+    } else {
+      patientSyncBanner.hidden = false;
+      patientSyncBanner.innerHTML = `
+        <strong>⚠ ${pending.length} 個病人代碼尚未建檔</strong>
+        <div>病例已經存好了,但下列代碼還沒有對應的病人列:${pending.map(escapeHtml).join("、") || "(佇列已空)"}</div>
+        ${patientSyncError
+          ? `<div>上次鑄造失敗原因:${escapeHtml(patientSyncError)}</div>`
+          : `<div>尚未記錄到失敗 —— 可能仍在進行中,下次存檔會自動再試。</div>`}`;
+    }
   }
   if (selectedPatientCode && !rows.some((r) => r.patient.patientCode === selectedPatientCode)) selectedPatientCode = "";
   if (!selectedPatientCode && rows.length) selectedPatientCode = rows[0].patient.patientCode;
