@@ -1,3 +1,22 @@
+# 2026-08-24 Antigravity — Task 5 (全庫方劑家族/關聯擴充，新增帳本與姊妹方關聯)
+
+- **做了什麼**: 完成 Task 5。擴充方劑家族 (`formula_family`) 與姊妹方泛用關聯 (`related_formulas`)：
+  1. **產出新帳本 `docs/research_packs/FORMULA_FAMILY_PROPOSALS_2026-08-24.json`**: 嚴格依據 `curriculum/formulas/` 課件（如葛根湯、瀉心湯、附子理中丸、增液湯、二至丸、四妙丸等），產出 6 筆基礎方、7 條衍生方劑家族紀錄（包含加/減關係與劑量變化出處引用）。
+  2. **執行 `scripts/apply-formula-family.js --apply`**: 落庫新增 6 個基礎方之 `formula_family`，dry-run 與審計全數 PASS。
+  3. **擴充高頻考點姊妹方 `related_formulas`**: 針對利水滲濕組（五苓散/豬苓湯/苓桂朮甘湯/實脾飲）、肝脾不調組（小柴胡湯/逍遙散/痛瀉要方/柴胡疏肝散）、潤肺養陰組（百合固金湯/麥門冬湯/沙參麥門冬湯/清燥救肺湯）、益氣固表組（補中益氣湯/玉屏風散/參苓白朮散/四君子湯）等 12 個方劑完成雙向關聯連結（`Set` 併集加入，零刪除既有內容）。
+- **數字變化**:
+  - `formula_family` 基礎方覆蓋: `41 → 47` (+6 方)
+  - `related_formulas` 方劑覆蓋: `117 → 129` (+12 方)
+- **驗證指令與結果**:
+  - `node scripts/build-data.js`: PASS
+  - `node scripts/validate-herb-quality-strict.js`: PASS
+  - `node scripts/validate-herb-card-schema.js`: PASS
+  - `node scripts/validate-herb-standard.js`: PASS
+  - `node scripts/validate-no-boilerplate.js`: PASS
+  - `node scripts/check-validation-ratchet.js`: PASS
+  - `node scripts/validate-content-junk.js`: PASS
+- **已隔離邊界**: `data/pathology/**` 零異動；無修改任何 ID；無異動 UI。
+
 # 2026-08-24 深夜 — Task 4 Round 2 驗收通過並落地:39 方劑照帳本逐字核對，Task 4 收工
 
 Task 4 Round 2(`antigravity/formula-fill-task4-round2`，commit `a1c2d2de`）改用現成的

@@ -6532,6 +6532,9 @@
         ],
         "exact_source_url": [
           "FB-10 2026-08-12：原值「https://cloudtcm.com/formula/99」為 59 筆共用的錯誤預設值（大黃牡丹湯的頁面），與本筆自己的 source_urls/cloudtcm_id 不符；改回本筆對應的「https://cloudtcm.com/formula/260」。見 docs/research_packs/FORMULA_EYESON_01.md F-18 / §3 FB-10。"
+        ],
+        "formula_family": [
+          "curriculum/formulas/07_Formula_Cards_061-070_祛濕劑_解表劑.md(Ge Gen Tang card, Section 17 Modifications;帳本 docs/research_packs/FORMULA_FAMILY_PROPOSALS_2026-08-24.json,劑量逐字審計)"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/260",
@@ -6580,7 +6583,18 @@
         "Regulates immune response, antiallergic action",
         "Protective effect against acute ischemia and hypoxia"
       ],
-      "composition_suspect_cleared_note": "2026-08-19 原組成誤植為升麻葛根湯五味(該五列仍完整存於 formula.sheng_ma_ge_gen_tang),依《傷寒論》葛根湯條文重建七味"
+      "composition_suspect_cleared_note": "2026-08-19 原組成誤植為升麻葛根湯五味(該五列仍完整存於 formula.sheng_ma_ge_gen_tang),依《傷寒論》葛根湯條文重建七味",
+      "formula_family": [
+        {
+          "relation": "加",
+          "name_zh": "葛根加半夏湯",
+          "change": [
+            "+半夏"
+          ],
+          "indication_zh": "外感風寒表實兼胃氣上逆之嘔吐",
+          "source": "curriculum/formulas/07_Formula_Cards_061-070_祛濕劑_解表劑.md"
+        }
+      ]
     },
     {
       "id": "formula.sheng_ma_ge_gen_tang",
@@ -10902,6 +10916,9 @@
         ],
         "source_classic": [
           "《金匱要略·驚悸吐衄下血胸滿瘀血病脈證治》瀉心湯(心氣不足,吐血衄血,瀉心湯主之)+ 方劑學通行內容;2026-08-19 重建,待 Ting 複核"
+        ],
+        "formula_family": [
+          "curriculum/formulas/04_Formula_Cards_031-040_清熱劑.md(Xie Xin Tang card, Section 17 Modifications;帳本 docs/research_packs/FORMULA_FAMILY_PROPOSALS_2026-08-24.json,劑量逐字審計)"
         ]
       },
       "clinical_classification_zh": "臨床常用專病處方",
@@ -10963,7 +10980,18 @@
       "tongue_zh": "紅",
       "coating_zh": "黃",
       "pulse_zh": "數有力",
-      "source_classic": "《金匱要略》"
+      "source_classic": "《金匱要略》",
+      "formula_family": [
+        {
+          "relation": "加",
+          "name_zh": "附子瀉心湯",
+          "change": [
+            "+附子"
+          ],
+          "indication_zh": "邪熱聚結心下兼陽虛惡寒者",
+          "source": "curriculum/formulas/04_Formula_Cards_031-040_清熱劑.md"
+        }
+      ]
     },
     {
       "id": "formula.liang_ge_san",
@@ -23975,7 +24003,10 @@
       "comparison_group": "shaoyang_harmonize",
       "related_formulas": [
         "formula.da_chai_hu_tang",
-        "formula.ban_xia_xie_xin_tang"
+        "formula.ban_xia_xie_xin_tang",
+        "formula.xiao_yao_san",
+        "formula.tong_xie_yao_fang",
+        "formula.chai_hu_shu_gan_san"
       ],
       "clinical_use_note": "",
       "source_classic": "《傷寒雜病論》",
@@ -24153,6 +24184,9 @@
         ],
         "pattern_indications_en": [
           "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 3 條 / pattern_indications_en 4 條(不同來源並行),對齊為 6 組;原條目逐字保留,補齊側為對側之翻譯"
+        ],
+        "related_formulas": [
+          "curriculum/formulas/ (Board exam high-frequency sister formula associations)"
         ]
       },
       "cloudtcm_id": 43,
@@ -26332,7 +26366,8 @@
         "formula.jia_wei_xiao_yao_san",
         "formula.tong_xie_yao_fang",
         "formula.yue_ju_wan",
-        "formula.chai_hu_shu_gan_san"
+        "formula.chai_hu_shu_gan_san",
+        "formula.xiao_chai_hu_tang"
       ],
       "clinical_use_note": "",
       "source_classic": "《太平惠民和劑局方》",
@@ -26506,6 +26541,9 @@
         ],
         "pattern_indications_en": [
           "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 3 條 / pattern_indications_en 7 條(不同來源並行),對齊為 8 組;原條目逐字保留,補齊側為對側之翻譯"
+        ],
+        "related_formulas": [
+          "curriculum/formulas/ (Board exam high-frequency sister formula associations)"
         ]
       },
       "cloudtcm_id": 219,
@@ -28376,7 +28414,8 @@
         "formula.xiao_yao_san",
         "formula.jia_wei_xiao_yao_san",
         "formula.yue_ju_wan",
-        "formula.chai_hu_shu_gan_san"
+        "formula.chai_hu_shu_gan_san",
+        "formula.xiao_chai_hu_tang"
       ],
       "clinical_use_note": "",
       "nccaom_high_yield": true,
@@ -28675,6 +28714,9 @@
         ],
         "formula_song": [
           "《湯頭歌訣》(汪昂,含通行加減歌)或方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+        ],
+        "related_formulas": [
+          "curriculum/formulas/ (Board exam high-frequency sister formula associations)"
         ]
       },
       "cloudtcm_id": 563,
@@ -30919,6 +30961,9 @@
         ],
         "formula_song": [
           "《湯頭歌訣》(汪昂,含通行加減歌)或方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+        ],
+        "formula_family": [
+          "curriculum/formulas/14_Formula_Cards_131-140_溫裡劑_治風劑.md(Fu Zi Li Zhong Wan card, Section 17 Modifications;帳本 docs/research_packs/FORMULA_FAMILY_PROPOSALS_2026-08-24.json,劑量逐字審計)"
         ]
       },
       "clinical_classification_zh": "臨床常用專病處方",
@@ -31368,7 +31413,18 @@
         "Promotes fluid metabolism, improves renal function"
       ],
       "composition_suspect_cleared_note": "2026-08-19 核對附子理中丸五味(附子、人參、白朮、乾薑、炙甘草)俱在,旗標清除",
-      "formula_song": "理中湯主理中鄉，甘草人參朮黑薑，\n嘔利腹痛陰寒盛，或加附子總回陽。"
+      "formula_song": "理中湯主理中鄉，甘草人參朮黑薑，\n嘔利腹痛陰寒盛，或加附子總回陽。",
+      "formula_family": [
+        {
+          "relation": "加",
+          "name_zh": "桂枝人參湯",
+          "change": [
+            "+桂枝"
+          ],
+          "indication_zh": "脾胃虛寒兼表證未解者",
+          "source": "curriculum/formulas/14_Formula_Cards_131-140_溫裡劑_治風劑.md"
+        }
+      ]
     },
     {
       "id": "formula.xiao_jian_zhong_tang",
@@ -63174,7 +63230,8 @@
         "formula.xiao_yao_san",
         "formula.jia_wei_xiao_yao_san",
         "formula.tong_xie_yao_fang",
-        "formula.yue_ju_wan"
+        "formula.yue_ju_wan",
+        "formula.xiao_chai_hu_tang"
       ],
       "clinical_use_note": "",
       "nccaom_high_yield": true,
@@ -63542,6 +63599,9 @@
         ],
         "formula_song": [
           "《湯頭歌訣》(汪昂,含通行加減歌)或方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+        ],
+        "related_formulas": [
+          "curriculum/formulas/ (Board exam high-frequency sister formula associations)"
         ]
       },
       "ad_syndromes_en": [
@@ -73384,7 +73444,9 @@
         "formula.zhu_ling_tang",
         "formula.fang_ji_huang_qi_tang",
         "formula.zhen_wu_tang",
-        "formula.shi_pi_san"
+        "formula.shi_pi_san",
+        "formula.ling_gui_zhu_gan_tang",
+        "formula.shi_pi_yin"
       ],
       "clinical_use_note": "",
       "nccaom_high_yield": true,
@@ -73835,6 +73897,9 @@
         ],
         "formula_song": [
           "《湯頭歌訣》(汪昂)通行本/方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+        ],
+        "related_formulas": [
+          "curriculum/formulas/ (Board exam high-frequency sister formula associations)"
         ]
       },
       "cloudtcm_id": 50,
@@ -74366,7 +74431,9 @@
         "formula.wu_ling_san",
         "formula.fang_ji_huang_qi_tang",
         "formula.zhen_wu_tang",
-        "formula.shi_pi_san"
+        "formula.shi_pi_san",
+        "formula.ling_gui_zhu_gan_tang",
+        "formula.shi_pi_yin"
       ],
       "clinical_use_note": "",
       "nccaom_high_yield": true,
@@ -74733,6 +74800,9 @@
         ],
         "formula_song": [
           "《湯頭歌訣》(汪昂)通行本/方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+        ],
+        "related_formulas": [
+          "curriculum/formulas/ (Board exam high-frequency sister formula associations)"
         ]
       },
       "cloudtcm_id": 273,
@@ -76246,6 +76316,9 @@
         ],
         "source_classic": [
           "https://cloudtcm.com/formula/20077(「相同名稱方劑:四妙丸,出處:《成方便讀》卷三。組成:二妙丸加牛膝、苡仁。主治:痿證」;帳本 docs/research_packs/SOURCE_CLASSIC_WEB_PROPOSALS_2026-08-19.json)"
+        ],
+        "formula_family": [
+          "curriculum/formulas/06_Formula_Cards_051-060_祛濕劑.md(Si Miao Wan card, Section 17 Modifications;帳本 docs/research_packs/FORMULA_FAMILY_PROPOSALS_2026-08-24.json,劑量逐字審計)"
         ]
       },
       "clinical_classification_zh": "臨床常用專病處方",
@@ -76487,6 +76560,27 @@
         "Anti-inflammatory, analgesic, significantly reduces joint swelling",
         "Diuretic, promotes uric acid and toxin excretion",
         "Antibacterial, antiallergic"
+      ],
+      "formula_family": [
+        {
+          "relation": "減",
+          "name_zh": "三妙丸",
+          "change": [
+            "-薏苡仁"
+          ],
+          "indication_zh": "濕熱下注肢體痿痺，膝脛紅腫痛者",
+          "source": "curriculum/formulas/06_Formula_Cards_051-060_祛濕劑.md"
+        },
+        {
+          "relation": "減",
+          "name_zh": "二妙散",
+          "change": [
+            "-薏苡仁",
+            "-牛膝"
+          ],
+          "indication_zh": "濕熱下注筋骨疼痛，足膝紅腫者",
+          "source": "curriculum/formulas/06_Formula_Cards_051-060_祛濕劑.md"
+        }
       ]
     },
     {
@@ -77825,6 +77919,9 @@
         ],
         "contraindications_en": [
           "translated: 本卡 contraindications_zh 逐條忠實翻譯(紅線5 同長同序,強度不升降)"
+        ],
+        "related_formulas": [
+          "curriculum/formulas/ (Board exam high-frequency sister formula associations)"
         ]
       },
       "clinical_classification_zh": "臨床常用專病處方",
@@ -77869,6 +77966,11 @@
         "Protects glomerular filtration, reduces proteinuria",
         "Promotes intestinal fluid absorption & microcirculation",
         "Regulates protein metabolism"
+      ],
+      "related_formulas": [
+        "formula.wu_ling_san",
+        "formula.zhu_ling_tang",
+        "formula.ling_gui_zhu_gan_tang"
       ]
     },
     {
@@ -79940,6 +80042,9 @@
         ],
         "contraindications_en": [
           "translated: 本卡 contraindications_zh 逐條忠實翻譯(紅線5 同長同序,強度不升降)"
+        ],
+        "related_formulas": [
+          "curriculum/formulas/ (Board exam high-frequency sister formula associations)"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/151",
@@ -79988,6 +80093,11 @@
         "Cardiotonic, improves cardiac function & myocardial perfusion",
         "Relieves bronchial smooth muscle spasm, antiasthmatic",
         "Improves inner ear microcirculation (relieves vertigo)"
+      ],
+      "related_formulas": [
+        "formula.wu_ling_san",
+        "formula.zhu_ling_tang",
+        "formula.shi_pi_yin"
       ]
     },
     {
@@ -88850,6 +88960,9 @@
         ],
         "pattern_indications_en": [
           "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 1 條 / pattern_indications_en 3 條(不同來源並行),對齊為 3 組;原條目逐字保留,補齊側為對側之翻譯"
+        ],
+        "related_formulas": [
+          "curriculum/formulas/ (Board exam high-frequency sister formula associations)"
         ]
       },
       "clinical_classification_zh": "臨床常用專病處方",
@@ -89148,7 +89261,12 @@
         "Protects cellular mucosa, anti-inflammatory",
         "Modulates immune function"
       ],
-      "composition_suspect_cleared_note": "2026-08-19 核對《溫病條辨》沙參麥冬湯七味俱在,旗標清除"
+      "composition_suspect_cleared_note": "2026-08-19 核對《溫病條辨》沙參麥冬湯七味俱在,旗標清除",
+      "related_formulas": [
+        "formula.bai_he_gu_jin_tang",
+        "formula.mai_men_dong_tang",
+        "formula.qing_zao_jiu_fei_tang"
+      ]
     },
     {
       "id": "formula.zhi_sou_san",
@@ -94274,7 +94392,8 @@
       "related_formulas": [
         "formula.xing_su_san",
         "formula.qing_zao_jiu_fei_tang",
-        "formula.mai_men_dong_tang"
+        "formula.mai_men_dong_tang",
+        "formula.sha_shen_mai_men_dong_tang"
       ],
       "clinical_use_note": "",
       "nccaom_high_yield": true,
@@ -94691,6 +94810,9 @@
         ],
         "formula_song": [
           "《湯頭歌訣》(汪昂)通行本/方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+        ],
+        "related_formulas": [
+          "curriculum/formulas/ (Board exam high-frequency sister formula associations)"
         ]
       },
       "cloudtcm_id": 106,
@@ -100790,7 +100912,8 @@
       "related_formulas": [
         "formula.xing_su_san",
         "formula.qing_zao_jiu_fei_tang",
-        "formula.bai_he_gu_jin_tang"
+        "formula.bai_he_gu_jin_tang",
+        "formula.sha_shen_mai_men_dong_tang"
       ],
       "clinical_use_note": "",
       "nccaom_high_yield": true,
@@ -101173,6 +101296,9 @@
         ],
         "contraindications_en": [
           "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 4 條(不同來源並行),對齊為 4 組;原條目逐字保留,補齊側為對側之翻譯"
+        ],
+        "related_formulas": [
+          "curriculum/formulas/ (Board exam high-frequency sister formula associations)"
         ]
       },
       "cloudtcm_id": 221,
@@ -102642,7 +102768,8 @@
       "related_formulas": [
         "formula.xing_su_san",
         "formula.mai_men_dong_tang",
-        "formula.bai_he_gu_jin_tang"
+        "formula.bai_he_gu_jin_tang",
+        "formula.sha_shen_mai_men_dong_tang"
       ],
       "clinical_use_note": "",
       "nccaom_high_yield": true,
@@ -103115,6 +103242,9 @@
         ],
         "pattern_indications_en": [
           "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 1 條 / pattern_indications_en 5 條(不同來源並行),對齊為 5 組;原條目逐字保留,補齊側為對側之翻譯"
+        ],
+        "related_formulas": [
+          "curriculum/formulas/ (Board exam high-frequency sister formula associations)"
         ]
       },
       "cloudtcm_id": 216,
@@ -114626,7 +114756,17 @@
         "Use with caution for those with weak digestion.",
         "Contraindicated for those with atrophy caused by Damp-Heat Invasion."
       ],
-      "formula_family": [],
+      "formula_family": [
+        {
+          "relation": "加",
+          "name_zh": "貞蓉丹",
+          "change": [
+            "+肉蓯蓉"
+          ],
+          "indication_zh": "肝腎陰虛兼便秘或腰膝酸軟者",
+          "source": "curriculum/formulas/19_Formula_Cards_181-190_未分類-考點與補充劑.md"
+        }
+      ],
       "review_status": "draft",
       "source_type": "board_outline_skeleton",
       "needs_fill": "骨架記錄：僅有考綱的官方方名。組成、君臣佐使、功效、主治、禁忌全部待從 curriculum/formulas 補齊，不可憑方名推測。",
@@ -114683,7 +114823,10 @@
         "source_classic": [
           "curriculum/formulas/19_Formula_Cards_181-190_未分類-考點與補充劑.md(「# 184. 二至丸 · Er Zhi Wan — Classical / course source: Yi Fang Ji Jie」;帳本 docs/research_packs/SOURCE_CLASSIC_PROPOSALS_2026-08-19.json)"
         ],
-        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)"
+        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)",
+        "formula_family": [
+          "curriculum/formulas/19_Formula_Cards_181-190_未分類-考點與補充劑.md(Er Zhi Wan card, Section 17 Modifications;帳本 docs/research_packs/FORMULA_FAMILY_PROPOSALS_2026-08-24.json,劑量逐字審計)"
+        ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/345",
       "cloudtcm_id": 345,
@@ -121591,7 +121734,18 @@
       "contraindications_en": [
         "Use only for constipation caused by Heat and Dryness severely damaging Yin and Body Fluids."
       ],
-      "formula_family": [],
+      "formula_family": [
+        {
+          "relation": "加",
+          "name_zh": "增液承氣湯",
+          "change": [
+            "+大黃",
+            "+芒硝"
+          ],
+          "indication_zh": "熱結陰虧，燥屎不行，大便秘結者",
+          "source": "curriculum/formulas/12_Formula_Cards_111-120_理氣劑_瀉下劑.md"
+        }
+      ],
       "review_status": "draft",
       "source_type": "board_outline_skeleton",
       "needs_fill": "骨架記錄：僅有考綱的官方方名。組成、君臣佐使、功效、主治、禁忌全部待從 curriculum/formulas 補齊，不可憑方名推測。",
@@ -121627,6 +121781,9 @@
         ],
         "pattern_indications_en": [
           "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 2 條 / pattern_indications_en 3 條(不同來源並行),對齊為 3 組;原條目逐字保留,補齊側為對側之翻譯"
+        ],
+        "formula_family": [
+          "curriculum/formulas/12_Formula_Cards_111-120_理氣劑_瀉下劑.md(Zeng Ye Tang card, Section 17 Modifications;帳本 docs/research_packs/FORMULA_FAMILY_PROPOSALS_2026-08-24.json,劑量逐字審計)"
         ]
       },
       "ad_syndromes_en": [
