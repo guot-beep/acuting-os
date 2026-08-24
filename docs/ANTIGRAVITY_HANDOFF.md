@@ -243,6 +243,46 @@ American Dragon 的實際頁面網址（格式參考其他已經填對的卡，�
 
 ---
 
+## Task 5（第四優先，Task 3/4 收斂後再做）：方劑家族/關聯全庫擴充（board exam 高頻考點）
+
+Ting 直接反映：血府逐瘀湯明明有 4 個同源姊妹方（膈下逐瘀湯/少腹逐瘀湯/身痛逐瘀湯/通竅活血湯，同屬
+王清任《醫林改錯》，依身體部位分治）卻互相沒連結，查了發現這不是單一個案——**223 個方劑裡
+`formula_family`（精確加減關係）只有 41 張有、`related_formulas`（泛用關聯）只有 113 張有**，
+board exam 常考「方劑鑑別」「同名加減方辨證」，這塊覆蓋率明顯不足。血府逐瘀湯家族那 5 張我
+（Claude）已經直接補上了，不用你做，這裡指派的是**全庫剩下的部分**。
+
+**先看這支既有腳本，不要重新發明**：`scripts/apply-formula-family.js` 讀
+`docs/research_packs/FORMULA_FAMILY_PROPOSALS_2026-08-19.json` 這種帳本格式（32 個基礎方、75 條，
+`方剂学汇总` 640 表全掃出來的，每條 `change` 裡的劑量數字都逐字對得上來源 `evidence_quote`）——**這
+32 個已經全部套用過了**，你要做的是照同樣的帳本格式（`relation`/`change`/`name_zh`/`evidence_quote`）
+**產出下一批新帳本**，涵蓋 `formula_family` 目前還是空的其他方劑（優先找有明確經典加減關係的，
+例如「XX湯加XX」「XX湯去XX加XX」這種命名慣例，或課件裡明確寫「本方為 XX 之加減」的）。
+
+**做法**：
+1. 掃 `curriculum/formulas/` 底下的 `方剂学汇总` 系列跟 `09_Formula_Cards_*` 系列，找還沒建
+   `formula_family` 的方劑裡有沒有明確記載的加減方/姊妹方關係。
+2. 產出新帳本 `docs/research_packs/FORMULA_FAMILY_PROPOSALS_<今天日期>.json`，格式完全比照舊帳本
+   （`family_proposals` 陣列，每條 `base_formula_id` + `entries`，每個 entry 要有 `relation`
+   （加/減/倍/合方）、`change`（逐味劑量變化，每個數字要能在 `evidence_quote` 裡逐字找到）、
+   `name_zh`、`indication_zh`、`source`）。**查無明確加減關係的方劑就跳過，不要為了湊數編一個
+   看起來合理的加減**。
+3. 對於像血府逐瘀湯家族這種「同作者/同主題但不是嚴格加減關係」的姊妹方，用 `related_formulas`
+   （不是 `formula_family`）互相連結，格式比照我剛才對逐瘀湯家族的修法：`Set` 併集加入，
+   **絕對不刪除任一方現有的 `related_formulas` 內容**，附 `field_sources.related_formulas`
+   引用具體來源（章節/頁碼/課件檔名，不要只寫「課件」兩個字）。
+4. 帳本產出後**先跑 `node scripts/apply-formula-family.js`（dry-run，不加 `--apply`）**確認機器
+   審計過關（formula_id 對得上、change 數字對得上來源），我看過帳本沒問題才會請你加 `--apply` 落庫，
+   或你自己跑完 `--apply` 後照下面驗證跑完再推。
+
+**做完驗證**：`build-data.js` + `validate-formula-standard.js` + `validate-formula-quality-strict.js` +
+`check-validation-ratchet.js` + `validate-relations.js`，全部 PASS 才推（推到
+`antigravity/formula-family-task5` 獨立分支，不要推到 `main`）。記得補 `PROJECT_LOG.md` 條目，
+附這輪新增了幾個方劑家族/幾條關聯。
+
+**驗收**：我會重新獨立 clone 驗證，過了才更新這份文件、清掉這條任務。
+
+---
+
 ## Task 1（`docs/audits/` 資料夾還不存在，看起來還沒開工，Task 0 做完再看這個）：中藥卡語意品質稽核（唯讀，不寫 herb_canon_shortlist.json）
 
 **範圍**：`main` 上現有 **363** 味中藥卡（`data/herbs/herb_canon_shortlist.json`，數字又比前幾天多了，
@@ -286,3 +326,5 @@ American Dragon 的實際頁面網址（格式參考其他已經填對的卡，�
 - Task 2 第一輪（`88dcdea6`）：`related_formulas` 293→314、`safety_source_url` 263→267。
 - Task 2 第二輪（`4fa8e761`）：`related_formulas` 314→315、`safety_source_url` 不動,
   達可驗證資料極限,Task 2 這條線收工,詳見上面單獨一條。
+- 王清任逐瘀湯家族 5 方互相連結（Claude 直接做,不是 antigravity）：`related_formulas` 純新增,
+  詳見上面單獨一條;順帶發現全庫 `formula_family`/`related_formulas` 覆蓋率不足,開了 Task 5。

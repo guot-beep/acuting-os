@@ -1,3 +1,30 @@
+# 2026-08-24 深夜 — Ting 直接指出王清任逐瘀湯家族沒互相連結,Claude 直接補上(純新增)
+
+Ting:「血府逐瘀湯有很多加減 沒見到其他加減方?例如下腹逐瘀 那些很重要」。查證：
+
+- **資料其實都在,不是缺卡**:`formula.xue_fu_zhu_yu_tang`/`ge_xia_zhu_yu_tang`/`shao_fu_zhu_yu_tang`/
+  `shen_tong_zhu_yu_tang`/`tong_qiao_huo_xue_tang` 五方都存在,4 張非血府逐瘀本身的卡欄位填充度
+  64-68/68,不是空殼——問題是**互相沒有連結**:只有血府逐瘀湯有 `related_formulas`(5 條),
+  指向的是其他血瘀方而不是自己的家族;另外 4 張 `related_formulas` 全是 `undefined`。
+- **來源確認**:`curriculum/formulas/09_Formula_Cards_081-090_解表劑_理血劑.md` #084-088 五方連續
+  編號、同屬「理血劑」、`Classical / course source` 欄位五方一致寫「Yi Lin Gai Cuo」(王清任《醫林
+  改錯》)——五方同一位作者、依身體部位分治(胸中血府/膈下/少腹/週身痛/頭面清竅),是真實可查證的
+  classical grouping,不是我自己聯想的。
+- **修法純新增**:寫一支一次性腳本,每張卡的 `related_formulas` 只用 `Set` 併集加入另外 4 個家族
+  成員,原有的 5 條(血府逐瘀湯上)一條不刪;沒有 `related_formulas` 的 4 張各自新建陣列並附
+  `field_sources.related_formulas` 引用上面的來源。`git diff` 逐行核對過,唯一的變動是新增陣列
+  項目,零刪除。
+- **驗證**:`build-data.js`/`validate-formula-standard.js`/`validate-formula-quality-strict.js`/
+  `check-validation-ratchet.js`(無新增退步)/`validate-content-junk.js`/`validate-relations.js`
+  全 PASS。`validate-formula-correctness.js` 既有 1 error+1 gap(四神丸/甘麥大棗湯)跟這次改動
+  無關,ratchet 數字沒變。
+- **同時發現的系統性缺口**(Ting 原話「方劑整體上感覺 related formula 這一塊很薄弱」,查證屬實):
+  223 個方劑裡 `formula_family`(精確加減關係,如桂枝湯→桂枝加葛根湯逐味記載)只有 41 張有、
+  `related_formulas`(泛用關聯)只有 113 張有——這是board exam高頻考點(方劑鑑別、加減方辨證)但
+  覆蓋率明顯不足,已在 `docs/ANTIGRAVITY_HANDOFF.md` 開新任務 Task 5 處理,詳見下方指派記錄。
+
+---
+
 # 2026-08-24 深夜 — antigravity Task 2 Round 2 驗收通過並落地:達到可驗證極限,Task 2 這條線收工
 
 Task 2 Round 2(`antigravity/herb-fill-task2-round2`,commit `4fa8e761`)只新增 1 筆:
