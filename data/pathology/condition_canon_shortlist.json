@@ -64208,7 +64208,142 @@
     "AS"
    ],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "僵直性脊椎炎是一種慢性發炎性脊椎關節病變,屬於中軸型脊椎關節炎的原型,主要侵犯薦髂關節與脊椎關節,導致漸進性發炎性下背痛及脊椎活動度受限,嚴重者脊椎可因新骨形成而呈「竹節狀脊椎」融合;好發於青壯年男性,與HLA-B27基因高度相關。",
+   "summary_en": "Ankylosing spondylitis (AS) is a chronic inflammatory spondyloarthropathy and the prototype of axial spondyloarthritis, primarily affecting the sacroiliac joints and spine, producing progressive inflammatory low back pain and loss of spinal mobility. In severe cases, new bone formation can fuse the spine into a \"bamboo spine\" appearance. It predominantly affects young men and is strongly associated with the HLA-B27 gene.",
+   "western_context_zh": "西醫處理以風濕免疫科主導的長期追蹤為主,依症狀嚴重度階梯式使用NSAID作為第一線藥物,反應不佳者升階至生物製劑(如TNF抑制劑、IL-17抑制劑);定期監測發炎指數(CRP)、脊椎活動度及影像進展,並轉介眼科處理反覆發生之急性前葡萄膜炎,物理治療師協助維持脊椎伸展與姿勢。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western management is long-term follow-up led by rheumatology, with NSAIDs as first-line therapy stepped up to biologics (TNF inhibitors, IL-17 inhibitors) for inadequate responders. Inflammatory markers (CRP), spinal mobility, and imaging progression are monitored regularly; ophthalmology is involved for recurrent acute anterior uveitis, and physical therapists help maintain spinal extension and posture. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "病理機轉涉及韌帶及肌腱附著點(enthesis)的慢性發炎(附著點炎),進而引發薦髂關節及脊椎小面關節的骨侵蝕與新骨形成,長期反覆發炎-修復循環使脊椎逐漸骨化融合。約80-95%患者帶有HLA-B27基因,惟其確切致病角色仍在研究中。診斷無單一確診工具,需綜合影像(薦髂關節X光顯示侵蝕、硬化或關節融合;早期病灶MRI STIR序列更敏感)、發炎指數及臨床分類準則(如改良版紐約準則需具備明確X光薦髂關節炎證據,ASAS準則則納入MRI及臨床特徵以因應早期尚無X光變化之病例)。",
+   "western_pathology_en": "The pathologic mechanism involves chronic inflammation at ligament and tendon attachment points (enthesitis), which drives bone erosion and new bone formation at the sacroiliac joints and spinal facet joints; repeated cycles of inflammation and repair progressively ossify and fuse the spine. About 80-95% of patients carry the HLA-B27 gene, though its precise pathogenic role is still under investigation. There is no single diagnostic test; diagnosis combines imaging (sacroiliac X-ray showing erosion, sclerosis, or fusion; MRI STIR sequences are more sensitive for early disease before X-ray changes appear), inflammatory markers, and classification criteria (the modified New York criteria require definite radiographic sacroiliitis, while the ASAS criteria incorporate MRI and clinical features to capture earlier disease without X-ray changes).",
+   "red_flags_zh": [
+    "眼睛紅、痛、畏光需優先排除急性前葡萄膜炎,屬需儘速轉介眼科處理之急症,延誤治療可能影響視力",
+    "已知僵直性脊椎炎病人於外傷(即使輕微)後出現急性加劇之頸/背痛,需優先排除脊椎骨折或半脫位——因長期脊椎融合使骨折風險大幅上升且易被忽略",
+    "下背痛合併鞍狀區感覺喪失、排尿排便功能障礙,雖為僵直性脊椎炎罕見(約0.5%)但嚴重的後期併發症,需立即排除馬尾症候群",
+    "不明原因體重減輕、腹瀉或血便,需評估是否合併發炎性腸道疾病"
+   ],
+   "red_flags_en": [
+    "Red, painful, photophobic eye should prompt urgent evaluation for acute anterior uveitis, an ophthalmologic emergency where delayed treatment risks vision loss",
+    "A known AS patient with acute worsening of neck/back pain after even minor trauma should be evaluated for spinal fracture or subluxation — chronic spinal fusion greatly increases fracture risk, and such fractures are easily missed",
+    "Low back pain with saddle-area sensory loss or bladder/bowel dysfunction, while a rare (~0.5%) late complication of AS, requires immediate evaluation for cauda equina syndrome",
+    "Unexplained weight loss, diarrhea, or blood in stool should prompt evaluation for coexisting inflammatory bowel disease"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "HLA-B27基因陽性",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: HLA-B27 Syndromes (NBK551523)"
+    },
+    {
+     "factor": "一等親家族史",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: HLA-B27 Syndromes (NBK551523)"
+    },
+    {
+     "factor": "男性",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: HLA-B27 Syndromes (NBK551523)"
+    },
+    {
+     "factor": "吸菸(與較嚴重之脊椎影像進展相關)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "HLA-B27 gene positivity",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: HLA-B27 Syndromes (NBK551523)"
+    },
+    {
+     "factor": "First-degree family history",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: HLA-B27 Syndromes (NBK551523)"
+    },
+    {
+     "factor": "Male sex",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: HLA-B27 Syndromes (NBK551523)"
+    },
+    {
+     "factor": "Smoking (associated with more severe radiographic spinal progression)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "可作為慢性中軸性疼痛及脊椎僵硬症狀之輔助性疼痛管理與活動度維持選項,惟無法改變疾病之發炎進程或阻止脊椎融合",
+    "precautions": "疾病後期脊椎明顯融合(竹節狀脊椎)者骨折風險大幅上升,脊椎附近深刺或整脊手法需格外謹慎;若病人主訴新發神經學症狀或眼部紅痛,應優先轉介而非持續針灸觀察",
+    "co_management": "病人正接受NSAID或生物製劑治療者,針灸為輔助角色,用藥調整應由風濕免疫科醫師決定",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "May serve as an adjunct for pain management and mobility maintenance in chronic axial pain and spinal stiffness, but cannot alter the inflammatory disease course or halt spinal fusion",
+    "precautions": "Late-stage disease with marked spinal fusion (bamboo spine) carries substantially elevated fracture risk — deep needling or manipulation near the spine requires extra caution; new neurologic symptoms or red, painful eyes should prompt priority referral rather than continued watchful acupuncture",
+    "co_management": "For patients on NSAID or biologic therapy, acupuncture plays an adjunct role; medication adjustments remain the rheumatologist's decision",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.bi_zheng",
+    "tdis.yao_tong"
+   ],
+   "related_patterns": [
+    "pattern.kidney_yang_deficiency",
+    "pattern.wind_cold_damp_bi",
+    "pattern.qi_stagnation_blood_stasis"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "NCBI StatPearls: HLA-B27 Syndromes (NBK551523)"
+    ],
+    "summary_en": [
+     "NCBI StatPearls: HLA-B27 Syndromes (NBK551523)"
+    ],
+    "western_context_zh": [
+     "Healio: Extra-articular Manifestations — Ankylosing Spondylitis"
+    ],
+    "western_context_en": [
+     "Healio: Extra-articular Manifestations — Ankylosing Spondylitis"
+    ],
+    "western_pathology_zh": [
+     "NCBI StatPearls: HLA-B27 Syndromes (NBK551523)"
+    ],
+    "western_pathology_en": [
+     "NCBI StatPearls: HLA-B27 Syndromes (NBK551523)"
+    ],
+    "red_flags_zh": [
+     "European Journal of Internal Medicine: Extra-articular manifestations of ankylosing spondylitis",
+     "PMC5804077: Recurrent anterior uveitis and subsequent incidence of ankylosing spondylitis",
+     "emedicine Medscape: Ankylosing Spondylitis Clinical Presentation"
+    ],
+    "red_flags_en": [
+     "European Journal of Internal Medicine: Extra-articular manifestations of ankylosing spondylitis",
+     "PMC5804077: Recurrent anterior uveitis and subsequent incidence of ankylosing spondylitis",
+     "emedicine Medscape: Ankylosing Spondylitis Clinical Presentation"
+    ],
+    "risk_factors_zh": [
+     "NCBI StatPearls: HLA-B27 Syndromes (NBK551523)"
+    ],
+    "risk_factors_en": [
+     "NCBI StatPearls: HLA-B27 Syndromes (NBK551523)"
+    ],
+    "aliases_zh": [
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "aliases_en": [
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ]
+   }
   },
   {
    "id": "cond.si_joint_dysfunction",
@@ -65291,10 +65426,148 @@
    "name_en": "Costochondritis",
    "category": "pain_msk",
    "icd_hint": "M94.0",
-   "aliases_zh": [],
-   "aliases_en": [],
+   "aliases_zh": [
+    "肋胸骨症候群",
+    "前胸壁症候群"
+   ],
+   "aliases_en": [
+    "Costosternal syndrome",
+    "Anterior chest wall syndrome"
+   ],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "肋軟骨炎(又稱肋胸骨症候群或前胸壁症候群)是肋骨與胸骨連接處軟骨的局部發炎,表現為前胸壁疼痛,觸診或胸廓活動時疼痛加劇,屬於良性自限性疾病,但因症狀類似心臟疾病,常於急診或門診須先排除心因性胸痛才能確立診斷。",
+   "summary_en": "Costochondritis (also called costosternal syndrome or anterior chest wall syndrome) is localized inflammation of the cartilage connecting the ribs to the sternum, presenting as anterior chest wall pain that worsens with palpation or chest wall movement. It is a benign, self-limited condition, but because its presentation can mimic cardiac disease, cardiac causes of chest pain must be excluded before the diagnosis is confirmed.",
+   "western_context_zh": "西醫評估以病史及理學檢查為核心——於肋軟骨處觸診可誘發與病人主訴相符之疼痛是診斷關鍵;成年病人應常規考慮心電圖以排除心因性病灶,若有心血管危險因子或不典型表現則進一步安排心肌酵素或影像檢查,確診後以症狀緩解及活動調整為主要處置方向。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western evaluation centers on history and examination — reproducing the patient's pain by palpating the costal cartilages is the diagnostic key. An ECG should be considered routinely in adults with anterior chest pain to exclude a cardiac cause, with cardiac enzymes or imaging added when cardiovascular risk factors or atypical features are present. Once confirmed, management focuses on symptom relief and activity modification. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "病理機轉為肋軟骨與胸骨連接處(肋胸關節)的局部發炎反應,可能因反覆胸壁勞損、劇烈咳嗽(如病毒性上呼吸道感染後)、非慣用之上肢過度使用或胸部輕微外傷所誘發,但多數病例無法找到明確誘因。診斷主要依賴病史與觸診誘發疼痛之典型表現,兒童、青少年及年輕成人通常僅需病史及理學檢查即可確立診斷;成年病人因需優先排除心因性胸痛,診斷流程中常規加入心電圖評估。",
+   "western_pathology_en": "The pathologic mechanism is localized inflammation of the costosternal joints where rib cartilage meets the sternum. It can be triggered by repetitive chest-wall strain, a vigorous cough (e.g., following a viral upper respiratory infection), unaccustomed upper-body exertion, or minor chest trauma, though most cases have no identifiable trigger. Diagnosis relies mainly on history and the classic finding of reproducible pain on palpation; in children, adolescents, and young adults, history and exam alone are usually sufficient, while adults routinely undergo ECG to exclude a cardiac cause first.",
+   "red_flags_zh": [
+    "胸痛合併壓迫感、放射至手臂/下顎/頸部、冒冷汗、呼吸困難或暈厥,需視為心因性急症,立即撥打急救電話,不可等待門診評估",
+    "胸痛合併心搏過速或血壓過低,提示可能存在其他更嚴重病因,需優先排除而非直接歸類為肋軟骨炎",
+    "局部紅腫熱痛明顯、合併發燒,需排除肋軟骨感染(如化膿性肋軟骨炎),尤其近期有胸部手術、靜脈注射藥物使用史或免疫低下者風險較高"
+   ],
+   "red_flags_en": [
+    "Chest pain with crushing pressure, radiation to the arm/jaw/neck, cold sweats, shortness of breath, or fainting should be treated as a cardiac emergency — call emergency services immediately rather than waiting for outpatient evaluation",
+    "Chest pain with tachycardia or hypotension suggests a more serious alternative cause and should be prioritized for evaluation rather than assumed to be costochondritis",
+    "Marked local redness, warmth, swelling, and fever should raise concern for costal cartilage infection (septic costochondritis), particularly in patients with recent chest surgery, IV drug use, or immunosuppression"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "反覆性上肢/胸壁勞損運動",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Costochondritis (NBK532931)"
+    },
+    {
+     "factor": "劇烈咳嗽(如病毒性上呼吸道感染後)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Costochondritis (NBK532931)"
+    },
+    {
+     "factor": "女性",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "AAFP: Costochondritis — Diagnosis and Treatment"
+    },
+    {
+     "factor": "合併纖維肌痛症",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Repetitive upper-body/chest-wall strain exercise",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Costochondritis (NBK532931)"
+    },
+    {
+     "factor": "Vigorous coughing (e.g., following a viral upper respiratory infection)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Costochondritis (NBK532931)"
+    },
+    {
+     "factor": "Female sex",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "AAFP: Costochondritis — Diagnosis and Treatment"
+    },
+    {
+     "factor": "Comorbid fibromyalgia",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "已排除心因性及感染性病因之肋軟骨炎,針灸可作為胸壁肌筋膜疼痛之輔助性疼痛管理選項",
+    "precautions": "胸壁區域針灸須格外留意進針深度與角度,避免氣胸;治療前必須確認病人已由醫療團隊排除心因性胸痛,不可因觸診可誘發疼痛即逕自判定為良性肋軟骨炎而略過心因性篩檢",
+    "co_management": "若病人正在心臟科排查胸痛病因,應待排除心因性病灶後再開始針灸介入,並與原診療團隊保持聯繫",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "For costochondritis with cardiac and infectious causes already excluded, acupuncture may serve as an adjunct pain-management option for chest-wall myofascial pain",
+    "precautions": "Chest-wall needling requires extra attention to needle depth and angle to avoid pneumothorax; confirm the medical team has excluded a cardiac cause before treatment — reproducible pain on palpation alone should not be used to bypass cardiac screening",
+    "co_management": "If the patient is undergoing cardiology work-up for chest pain, acupuncture should wait until a cardiac cause is excluded, and stay coordinated with that care team",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.xiong_bi"
+   ],
+   "related_patterns": [
+    "pattern.qi_stagnation_blood_stasis",
+    "pattern.liver_qi_stagnation",
+    "pattern.phlegm_qi_binding"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "NCBI StatPearls: Costochondritis (NBK532931)"
+    ],
+    "summary_en": [
+     "NCBI StatPearls: Costochondritis (NBK532931)"
+    ],
+    "western_context_zh": [
+     "AAFP: Costochondritis — Diagnosis and Treatment"
+    ],
+    "western_context_en": [
+     "AAFP: Costochondritis — Diagnosis and Treatment"
+    ],
+    "western_pathology_zh": [
+     "NCBI StatPearls: Costochondritis (NBK532931)"
+    ],
+    "western_pathology_en": [
+     "NCBI StatPearls: Costochondritis (NBK532931)"
+    ],
+    "red_flags_zh": [
+     "AAFP: Costochondritis — Diagnosis and Treatment",
+     "NCBI StatPearls: Costochondritis (NBK532931)"
+    ],
+    "red_flags_en": [
+     "AAFP: Costochondritis — Diagnosis and Treatment",
+     "NCBI StatPearls: Costochondritis (NBK532931)"
+    ],
+    "risk_factors_zh": [
+     "NCBI StatPearls: Costochondritis (NBK532931)",
+     "AAFP: Costochondritis — Diagnosis and Treatment"
+    ],
+    "risk_factors_en": [
+     "NCBI StatPearls: Costochondritis (NBK532931)",
+     "AAFP: Costochondritis — Diagnosis and Treatment"
+    ],
+    "aliases_zh": [
+     "NCBI StatPearls: Costochondritis (NBK532931)"
+    ],
+    "aliases_en": [
+     "NCBI StatPearls: Costochondritis (NBK532931)"
+    ]
+   }
   },
   {
    "id": "cond.coccydynia",
@@ -65303,10 +65576,145 @@
    "name_en": "Coccydynia",
    "category": "pain_msk",
    "icd_hint": "M53.3",
-   "aliases_zh": [],
-   "aliases_en": [],
+   "aliases_zh": [
+    "尾骨痛症"
+   ],
+   "aliases_en": [
+    "Coccygodynia"
+   ],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "尾骨痛(尾骨疼痛症)是指侷限於脊椎最尾端尾骨區域之局部疼痛,坐下、由坐姿起身或身體後仰時疼痛加劇為其特徵,約占下背痛就診原因的1-3%,好發於女性及體重過重或體重波動明顯者,多數由跌坐外傷、生產或長時間坐於堅硬表面所誘發。",
+   "summary_en": "Coccydynia is localized pain at the tailbone (coccyx) that is characteristically worsened by sitting, rising from a seated position, or leaning backward. It accounts for only 1-3% of back pain presentations but can be prolonged and debilitating, occurring more often in women and in people with elevated or fluctuating body weight. Most cases follow a fall onto the tailbone, childbirth, or prolonged sitting on a hard surface.",
+   "western_context_zh": "西醫評估先以坐姿及站立動態X光檢查尾骨形態及活動度作為第一線影像,若懷疑結構性、退化性或發炎性病灶則進一步安排電腦斷層或磁振造影;原發病因不明者屬「排除性診斷」,需先仔細篩檢肌肉骨骼(如腰椎椎間盤突出、薦髂關節功能障礙、梨狀肌症候群)、骨盆底功能異常及骨盆內臟器病灶等其他來源之轉移痛。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western evaluation starts with dynamic seated and standing X-rays to assess coccyx shape and mobility as the first-line imaging, with CT or MRI added if a structural, degenerative, or inflammatory lesion is suspected. Idiopathic coccydynia is a diagnosis of exclusion, requiring careful screening for other sources of referred pain — musculoskeletal (lumbar disc herniation, sacroiliac joint dysfunction, piriformis syndrome), pelvic floor dysfunction, or pelvic visceral pathology. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "造成尾骨疼痛的結構性因素包括尾骨異常之側彎變形、過度前屈或後仰的位置異常,以及尾骨遠端骨刺(spicule)在坐姿時因皮膚受夾擠而誘發疼痛;此外亦可能為腰椎椎間盤突出、薦髂關節功能障礙、梨狀肌症候群等肌肉骨骼病灶的轉移痛,或骨盆底功能障礙、骨盆內臟病灶、陰部神經痛等神經性病因所致。多數病人症狀可透過保守治療改善或緩解,但部分病人可能發展為持續甚至終生之慢性疼痛。",
+   "western_pathology_en": "Structural contributors to coccyx pain include abnormal scoliotic deformity or excessive flexion/extension of the coccyx, and a distal coccygeal bone spur that causes pain when skin is pinched against it while sitting. Coccydynia can also be referred pain from musculoskeletal conditions (lumbar disc herniation, sacroiliac joint dysfunction, piriformis syndrome), or arise from pelvic floor dysfunction, pelvic visceral pathology, or neuropathic causes such as pudendal neuralgia. Most patients improve or resolve with conservative care, but a subset develops persistent, even lifelong, chronic pain.",
+   "red_flags_zh": [
+    "夜間痛醒或休息時仍持續之尾骨痛,且對保守治療反應不佳,需優先排除脊索瘤(chordoma)等原發性尾骨腫瘤或轉移性病灶,而非直接視為姿勢性尾骨痛",
+    "尾骨區域可觸及腫塊,或合併不明原因體重減輕、排便習慣改變(可能提示直腸癌侵犯),需安排磁振造影評估",
+    "合併肢體(手臂、腿部或鼠蹊部)麻木、刺痛,或新發排尿排便功能障礙,需排除神經受壓迫之其他病灶"
+   ],
+   "red_flags_en": [
+    "Coccyx pain that wakes the patient at night or persists at rest, and does not respond to conservative treatment, warrants evaluation for a primary coccygeal tumor such as chordoma or a metastatic lesion rather than being assumed to be positional coccydynia",
+    "A palpable mass at the coccyx, or unexplained weight loss and a change in bowel habits (which may suggest rectal cancer invasion), should prompt MRI evaluation",
+    "Numbness or tingling in the arms, legs, or groin, or new bladder/bowel dysfunction, should raise concern for another nerve-compressive lesion"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "女性/曾有生產經驗",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: Coccyx Pain (NBK563139)"
+    },
+    {
+     "factor": "肥胖或體重波動明顯",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Coccyx Pain (NBK563139)"
+    },
+    {
+     "factor": "長時間久坐於堅硬表面",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Coccyx Pain (NBK563139)"
+    },
+    {
+     "factor": "跌坐直接外傷病史",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: Coccyx Pain (NBK563139)"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Female sex/prior childbirth",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: Coccyx Pain (NBK563139)"
+    },
+    {
+     "factor": "Obesity or marked weight fluctuation",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Coccyx Pain (NBK563139)"
+    },
+    {
+     "factor": "Prolonged sitting on a hard surface",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Coccyx Pain (NBK563139)"
+    },
+    {
+     "factor": "History of a direct fall onto the tailbone",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: Coccyx Pain (NBK563139)"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "對排除結構性/腫瘤性病因後之慢性肌筋膜或姿勢性尾骨痛,可作為疼痛管理之輔助選項",
+    "precautions": "尾骨/薦骨區域緊鄰直腸,局部深刺需嚴格注意解剖位置與感染控制;夜間痛或休息痛等警訊未排除前不應僅以針灸處理",
+    "co_management": "疑似骨盆底功能障礙或婦科/大腸直腸科相關病因者,應與相關專科協調評估,針灸不取代影像學排除惡性病灶之流程",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "May serve as an adjunct pain-management option for chronic myofascial or positional coccydynia once structural/neoplastic causes have been excluded",
+    "precautions": "The coccyx/sacral region lies close to the rectum — local deep needling requires strict attention to anatomy and infection control; night pain or pain at rest should not be managed with acupuncture alone until such red flags are excluded",
+    "co_management": "Suspected pelvic floor dysfunction or a gynecologic/colorectal cause should be coordinated with the relevant specialty; acupuncture does not replace imaging to exclude malignancy",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.bi_zheng",
+    "tdis.jin_shang"
+   ],
+   "related_patterns": [
+    "pattern.qi_stagnation_blood_stasis",
+    "pattern.blood_stasis",
+    "pattern.channel_qi_blood_obstruction"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "NCBI StatPearls: Coccyx Pain (NBK563139)"
+    ],
+    "summary_en": [
+     "NCBI StatPearls: Coccyx Pain (NBK563139)"
+    ],
+    "western_context_zh": [
+     "NCBI StatPearls: Coccyx Pain (NBK563139)"
+    ],
+    "western_context_en": [
+     "NCBI StatPearls: Coccyx Pain (NBK563139)"
+    ],
+    "western_pathology_zh": [
+     "NCBI StatPearls: Coccyx Pain (NBK563139)"
+    ],
+    "western_pathology_en": [
+     "NCBI StatPearls: Coccyx Pain (NBK563139)"
+    ],
+    "red_flags_zh": [
+     "ICGI: Can Coccyx Pain Be Cancer?",
+     "coccyx.org: Coccydynia or coccyx pain as a result of cancer"
+    ],
+    "red_flags_en": [
+     "ICGI: Can Coccyx Pain Be Cancer?",
+     "coccyx.org: Coccydynia or coccyx pain as a result of cancer"
+    ],
+    "risk_factors_zh": [
+     "NCBI StatPearls: Coccyx Pain (NBK563139)"
+    ],
+    "risk_factors_en": [
+     "NCBI StatPearls: Coccyx Pain (NBK563139)"
+    ],
+    "aliases_zh": [
+     "emedicine Medscape: Coccygodynia — Practice Essentials"
+    ],
+    "aliases_en": [
+     "emedicine Medscape: Coccygodynia — Practice Essentials"
+    ]
+   }
   },
   {
    "id": "cond.myositis",
@@ -69362,10 +69770,138 @@
    "name_en": "Social Anxiety Disorder",
    "category": "psych_sleep",
    "icd_hint": "F40.10",
-   "aliases_zh": [],
-   "aliases_en": [],
+   "aliases_zh": [
+    "社交畏懼症"
+   ],
+   "aliases_en": [
+    "Social Phobia"
+   ],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "社交焦慮症(社交畏懼症)指個體對於一種或多種可能受他人檢視的社交情境(如社交互動、被觀察、公開表演)產生顯著且持續的恐懼或焦慮,擔心自己的言行會招致負面評價、羞辱或拒絕,患者常主動迴避該情境或帶著強烈的恐懼/焦慮忍受,症狀須持續至少六個月並造成臨床顯著痛苦或社會、職業等重要功能損害。",
+   "summary_en": "Social anxiety disorder (social phobia) is marked, persistent fear or anxiety about one or more social situations in which the person may be scrutinized by others — social interactions, being observed, or performing in front of others — driven by concern that one's words or actions will lead to negative evaluation, humiliation, or rejection. The person typically avoids the situation or endures it with intense fear or anxiety; symptoms must last at least 6 months and cause clinically significant distress or impairment in social, occupational, or other functioning.",
+   "western_context_zh": "西醫以臨床晤談確認DSM-5診斷準則並排除畏避型人格疾患、廣場恐懼症等重疊診斷後確立;治療首選認知行為治療(尤其漸進式暴露療法)搭配選擇性血清素回收抑制劑或血清素-正腎上腺素回收抑制劑等藥物,中重度或合併其他焦慮/憂鬱共病者轉介精神科追蹤。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western diagnosis is established through clinical interview confirming DSM-5 criteria and excluding overlapping conditions such as avoidant personality disorder and agoraphobia. First-line treatment is cognitive behavioral therapy — particularly graded exposure — combined with SSRI or SNRI medication as indicated, with psychiatric referral for moderate-to-severe cases or comorbid anxiety/depression. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "確切病因尚不明確,但研究指向杏仁核對社交威脅線索之反應過度活化,加上遺傳因素(一等親罹患率較高)、早期負面社交經驗(如被霸凌、羞辱、拒絕)、氣質上天生害羞退縮傾向與家庭衝突或創傷等環境因子交互作用。診斷屬臨床評估,須確認恐懼/焦慮反應與實際社交情境所帶來的威脅程度不成比例,且症狀非其他精神疾患或物質使用所致。",
+   "western_pathology_en": "The exact cause remains unclear, though research points to amygdala hyperreactivity to social-threat cues, combined with genetic factors (higher rates among first-degree relatives), early negative social experiences (bullying, humiliation, rejection), an innately shy or withdrawn temperament, and environmental factors such as family conflict or trauma. Diagnosis is clinical, requiring that the fear/anxiety response be disproportionate to the actual threat posed by the social situation and not better explained by another mental disorder or substance use.",
+   "red_flags_zh": [
+    "社交焦慮伴隨明顯自傷或自殺意念,需優先轉介精神科進行自殺風險評估",
+    "因焦慮引發之社交迴避已演變為長期社會孤立、無法就學就業或完全足不出戶,需評估功能損害程度並考慮更積極之精神科介入",
+    "合併恐慌發作(如突發胸痛、呼吸困難、瀕死感)須先排除心血管或呼吸系統急症,再歸因於焦慮"
+   ],
+   "red_flags_en": [
+    "Social anxiety accompanied by clear self-harm or suicidal ideation requires prompt psychiatric referral for suicide risk assessment",
+    "Anxiety-driven social avoidance that has progressed to long-term social isolation, inability to attend school or work, or complete homebound behavior warrants assessment of functional impairment and consideration of more intensive psychiatric intervention",
+    "Comorbid panic attacks (sudden chest pain, breathlessness, sense of impending doom) should first be worked up to exclude a cardiovascular or respiratory emergency before attributing symptoms to anxiety"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "父母或手足罹患社交焦慮症",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Mayo Clinic: Social anxiety disorder (social phobia) - Symptoms & causes (mayoclinic.org, retrieved 2026-08)"
+    },
+    {
+     "factor": "童年期遭受霸凌、羞辱或拒絕經驗",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Mayo Clinic: Social anxiety disorder (social phobia) - Symptoms & causes (mayoclinic.org, retrieved 2026-08)"
+    },
+    {
+     "factor": "氣質上天生害羞、退縮、面對新情境易感壓抑",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Mayo Clinic: Social anxiety disorder (social phobia) - Symptoms & causes (mayoclinic.org, retrieved 2026-08)"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Having a parent or sibling with social anxiety disorder",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Mayo Clinic: Social anxiety disorder (social phobia) - Symptoms & causes (mayoclinic.org, retrieved 2026-08)"
+    },
+    {
+     "factor": "Childhood experience of bullying, humiliation, or rejection",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Mayo Clinic: Social anxiety disorder (social phobia) - Symptoms & causes (mayoclinic.org, retrieved 2026-08)"
+    },
+    {
+     "factor": "An innately shy, withdrawn, or inhibited temperament in new situations",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Mayo Clinic: Social anxiety disorder (social phobia) - Symptoms & causes (mayoclinic.org, retrieved 2026-08)"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "可作為焦慮相關身體症狀(如心悸、腸胃不適、肌肉緊繃)之輔助照護,無法治療社交焦慮症之核心病理",
+    "precautions": "中重度個案或已有藥物治療者,針灸僅作為輔助,不應延誤認知行為治療等實證心理治療介入",
+    "co_management": "藥物治療調整須由原處方醫師/精神科決定",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "May support anxiety-related somatic symptoms (e.g., palpitations, GI upset, muscle tension) as adjunct care; no role in treating the core pathology of social anxiety disorder",
+    "precautions": "For moderate-to-severe cases or those already on medication, acupuncture is adjunct only and should not delay evidence-based psychotherapy such as CBT",
+    "co_management": "Medication adjustment is decided by the prescribing physician/psychiatrist",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_patterns": [
+    "pattern.heart_gallbladder_qi_deficiency",
+    "pattern.liver_qi_stagnation"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "Mayo Clinic: Social anxiety disorder (social phobia) - Symptoms & causes (mayoclinic.org, retrieved 2026-08)"
+    ],
+    "summary_en": [
+     "Mayo Clinic: Social anxiety disorder (social phobia) - Symptoms & causes (mayoclinic.org, retrieved 2026-08)"
+    ],
+    "western_context_zh": [
+     "Mayo Clinic: Social anxiety disorder (social phobia) - Diagnosis & treatment (mayoclinic.org, retrieved 2026-08)"
+    ],
+    "western_context_en": [
+     "Mayo Clinic: Social anxiety disorder (social phobia) - Diagnosis & treatment (mayoclinic.org, retrieved 2026-08)"
+    ],
+    "western_pathology_zh": [
+     "Mayo Clinic: Social anxiety disorder (social phobia) - Symptoms & causes (mayoclinic.org, retrieved 2026-08)"
+    ],
+    "western_pathology_en": [
+     "Mayo Clinic: Social anxiety disorder (social phobia) - Symptoms & causes (mayoclinic.org, retrieved 2026-08)"
+    ],
+    "red_flags_zh": [
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "red_flags_en": [
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "risk_factors_zh": [
+     "Mayo Clinic: Social anxiety disorder (social phobia) - Symptoms & causes (mayoclinic.org, retrieved 2026-08)"
+    ],
+    "risk_factors_en": [
+     "Mayo Clinic: Social anxiety disorder (social phobia) - Symptoms & causes (mayoclinic.org, retrieved 2026-08)"
+    ],
+    "acupuncture_scope_zh": [
+     "clinical judgment: general acupuncture scope-of-practice reasoning applied to this condition; no guideline/RCT source identified this session"
+    ],
+    "acupuncture_scope_en": [
+     "clinical judgment: general acupuncture scope-of-practice reasoning applied to this condition; no guideline/RCT source identified this session"
+    ],
+    "aliases_zh": [
+     "Mayo Clinic: Social anxiety disorder (social phobia) - Symptoms & causes (mayoclinic.org, retrieved 2026-08)"
+    ],
+    "aliases_en": [
+     "Mayo Clinic: Social anxiety disorder (social phobia) - Symptoms & causes (mayoclinic.org, retrieved 2026-08)"
+    ],
+    "related_eastern_diseases": [
+     "valid-tdis-ids.txt reviewed; no confident overlapping-presentation match identified"
+    ],
+    "related_patterns": [
+     "clinical correlation between TCM disease/pattern definitions and DSM-5/ICD-10 criteria for this condition; not a formal cross-nosology guideline"
+    ]
+   }
   },
   {
    "id": "cond.specific_phobia",
@@ -69559,10 +70095,153 @@
    "name_en": "Seasonal Affective Disorder",
    "category": "psych_sleep",
    "icd_hint": "F33.9",
-   "aliases_zh": [],
-   "aliases_en": [],
+   "aliases_zh": [
+    "冬季憂鬱症"
+   ],
+   "aliases_en": [
+    "Winter depression"
+   ],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "季節性情緒失調症是一種具季節性型態的憂鬱症,好發於日照時間縮短的秋冬季節(尤其緯度較高地區),症狀包括情緒低落或易怒、對原本感興趣活動失去興趣、專注困難、持續疲憊倦怠、嗜睡(睡眠過多)、體重增加與渴望攝取碳水化合物等非典型憂鬱表現,少數患者發生於夏季並呈現失眠與食慾下降等相反模式,症狀通常隨季節轉換而緩解。",
+   "summary_en": "Seasonal affective disorder is a form of depression with a seasonal pattern, most often occurring in fall and winter when daylight decreases (particularly at higher latitudes). Symptoms include low mood or irritability, loss of interest in previously enjoyed activities, difficulty concentrating, persistent fatigue, hypersomnia (oversleeping), weight gain, and carbohydrate cravings — an atypical depressive pattern; a minority of patients experience a summer-pattern variant with the opposite features of insomnia and decreased appetite. Symptoms typically remit with the change of season.",
+   "western_context_zh": "西醫確診需符合重度憂鬱症診斷準則,並確認發作與特定季節之間存在至少兩年的規律關聯性(DSM-5「具季節性型態」註記);治療首選光照治療(晨間強光照射)、心理治療(如季節性情緒失調專用認知行為治療)與抗憂鬱藥物,依症狀嚴重度分級處置,並於症狀出現自殺意念時轉介精神科緊急評估。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western diagnosis requires meeting major depressive disorder criteria and confirming a regular seasonal relationship over at least two years (the DSM-5 \"with seasonal pattern\" specifier). First-line treatment is light therapy (bright light exposure in the morning), psychotherapy (including CBT adapted for SAD), and antidepressant medication, escalated by symptom severity, with urgent psychiatric referral if suicidal ideation emerges. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "確切病因未明,主流假說認為日照減少擾亂調控晝夜節律的下視丘視叉上核功能,進而影響褪黑激素分泌時序與血清素等神經傳導物質活性,導致情緒與睡眠調節失衡;部分研究亦指出患者對光線變化之視網膜敏感度可能與一般人不同。診斷屬臨床評估,須確認症狀符合重度憂鬱發作準則,且與特定季節間存在至少連續兩年的規律時序關聯,並排除季節性心理社會壓力源(如特定季節失業)所致之單純情境性憂鬱。",
+   "western_pathology_en": "The exact cause is unknown; the leading hypothesis is that reduced daylight disrupts the suprachiasmatic nucleus's circadian regulation, altering the timing of melatonin secretion and the activity of neurotransmitters such as serotonin, producing mood and sleep dysregulation. Some research also suggests altered retinal sensitivity to light changes in affected individuals. Diagnosis is clinical: symptoms must meet major depressive episode criteria and show a regular temporal relationship with a specific season over at least two consecutive years, with exclusion of situational depression from a season-linked psychosocial stressor (e.g., seasonal unemployment).",
+   "red_flags_zh": [
+    "出現自殺意念、計畫或既往企圖史,需立即轉介精神科進行自殺風險評估",
+    "憂鬱症狀合併明顯脫離現實之幻覺或妄想,需排除精神病性重度憂鬱症或其他重大精神疾病",
+    "憂鬱伴隨顯著甲狀腺功能低下相關症狀(如怕冷、體重明顯改變、皮膚乾燥),應先以甲狀腺功能檢查排除生理病因"
+   ],
+   "red_flags_en": [
+    "Any suicidal ideation, plan, or prior attempt requires immediate psychiatric referral for suicide risk assessment",
+    "Depressive symptoms with prominent hallucinations or delusions should prompt evaluation for psychotic depression or another major psychiatric disorder",
+    "Depression accompanied by prominent hypothyroid features (cold intolerance, significant weight change, dry skin) should first be worked up with thyroid function testing to exclude a physiological cause"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "女性",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Mayo Clinic: Seasonal affective disorder (SAD) - Symptoms & causes (mayoclinic.org, retrieved 2026-08)"
+    },
+    {
+     "factor": "居住地緯度較高(遠離赤道)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Mayo Clinic: Seasonal affective disorder (SAD) - Symptoms & causes (mayoclinic.org, retrieved 2026-08)"
+    },
+    {
+     "factor": "憂鬱症或季節性情緒失調症家族史",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Mayo Clinic: Seasonal affective disorder (SAD) - Symptoms & causes (mayoclinic.org, retrieved 2026-08)"
+    },
+    {
+     "factor": "年輕成人",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Mayo Clinic: Seasonal affective disorder (SAD) - Symptoms & causes (mayoclinic.org, retrieved 2026-08)"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Female sex",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Mayo Clinic: Seasonal affective disorder (SAD) - Symptoms & causes (mayoclinic.org, retrieved 2026-08)"
+    },
+    {
+     "factor": "Living at a higher latitude (farther from the equator)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Mayo Clinic: Seasonal affective disorder (SAD) - Symptoms & causes (mayoclinic.org, retrieved 2026-08)"
+    },
+    {
+     "factor": "Family history of depression or seasonal affective disorder",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Mayo Clinic: Seasonal affective disorder (SAD) - Symptoms & causes (mayoclinic.org, retrieved 2026-08)"
+    },
+    {
+     "factor": "Younger adult age",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Mayo Clinic: Seasonal affective disorder (SAD) - Symptoms & causes (mayoclinic.org, retrieved 2026-08)"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "可能作為情緒與疲勞症狀之輔助支持,無法取代光照治療或抗憂鬱藥物作為首選介入",
+    "precautions": "出現自殺意念或精神病症狀者不適用針灸作為主要照護",
+    "co_management": "抗憂鬱藥物調整由原處方醫師/精神科決定",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "May offer adjunct support for mood and fatigue symptoms; cannot replace light therapy or antidepressant medication as first-line intervention",
+    "precautions": "Not appropriate as primary care for patients with suicidal ideation or psychotic features",
+    "co_management": "Antidepressant medication adjustment is decided by the prescribing physician/psychiatrist",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.yu_zheng"
+   ],
+   "related_patterns": [
+    "pattern.liver_qi_stagnation",
+    "pattern.spleen_qi_deficiency"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "Mayo Clinic: Seasonal affective disorder (SAD) - Symptoms & causes (mayoclinic.org, retrieved 2026-08)"
+    ],
+    "summary_en": [
+     "Mayo Clinic: Seasonal affective disorder (SAD) - Symptoms & causes (mayoclinic.org, retrieved 2026-08)"
+    ],
+    "western_context_zh": [
+     "Mayo Clinic: Seasonal affective disorder (SAD) - Diagnosis & treatment (mayoclinic.org, retrieved 2026-08)"
+    ],
+    "western_context_en": [
+     "Mayo Clinic: Seasonal affective disorder (SAD) - Diagnosis & treatment (mayoclinic.org, retrieved 2026-08)"
+    ],
+    "western_pathology_zh": [
+     "Mayo Clinic: Seasonal affective disorder (SAD) - Symptoms & causes (mayoclinic.org, retrieved 2026-08)"
+    ],
+    "western_pathology_en": [
+     "Mayo Clinic: Seasonal affective disorder (SAD) - Symptoms & causes (mayoclinic.org, retrieved 2026-08)"
+    ],
+    "red_flags_zh": [
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "red_flags_en": [
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "risk_factors_zh": [
+     "Mayo Clinic: Seasonal affective disorder (SAD) - Symptoms & causes (mayoclinic.org, retrieved 2026-08)"
+    ],
+    "risk_factors_en": [
+     "Mayo Clinic: Seasonal affective disorder (SAD) - Symptoms & causes (mayoclinic.org, retrieved 2026-08)"
+    ],
+    "acupuncture_scope_zh": [
+     "clinical judgment: general acupuncture scope-of-practice reasoning applied to this condition; no guideline/RCT source identified this session"
+    ],
+    "acupuncture_scope_en": [
+     "clinical judgment: general acupuncture scope-of-practice reasoning applied to this condition; no guideline/RCT source identified this session"
+    ],
+    "aliases_zh": [
+     "Mayo Clinic: Seasonal affective disorder (SAD) - Symptoms & causes (mayoclinic.org, retrieved 2026-08)"
+    ],
+    "aliases_en": [
+     "Mayo Clinic: Seasonal affective disorder (SAD) - Symptoms & causes (mayoclinic.org, retrieved 2026-08)"
+    ],
+    "related_eastern_diseases": [
+     "clinical correlation between TCM disease/pattern definitions and DSM-5/ICD-10 criteria for this condition; not a formal cross-nosology guideline"
+    ],
+    "related_patterns": [
+     "clinical correlation between TCM disease/pattern definitions and DSM-5/ICD-10 criteria for this condition; not a formal cross-nosology guideline"
+    ]
+   }
   },
   {
    "id": "cond.autism_spectrum_disorder",
@@ -69743,7 +70422,115 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "猝睡症是一種慢性神經系統睡眠障礙,以無法克制的日間過度嗜睡為核心特徵,常伴隨猝倒(情緒誘發之短暫肌肉張力喪失)、入睡前後幻覺與睡眠癱瘓,部分患者合併夜間睡眠片段化。好發於青少年至30歲前成人,第一型(伴猝倒)與下視丘泌素(hypocretin/orexin)分泌神經元喪失高度相關。",
+   "summary_en": "Narcolepsy is a chronic neurological sleep disorder characterized by irrepressible excessive daytime sleepiness, often accompanied by cataplexy (sudden emotion-triggered loss of muscle tone), hypnagogic/hypnopompic hallucinations, and sleep paralysis, with fragmented nighttime sleep in some patients. Onset typically occurs from adolescence through the early 30s; type 1 narcolepsy (with cataplexy) is strongly linked to loss of hypocretin (orexin)-producing hypothalamic neurons.",
+   "western_context_zh": "西醫以睡眠專科評估為主,先以夜間多項睡眠生理檢查(PSG)排除其他睡眠疾患(如阻塞型睡眠呼吸中止),隔日接續進行多次入睡潛時測試(MSLT);治療著重行為調整(規律排程小睡)、興奮劑或清醒促進劑、抗猝倒藥物等處方藥物管理,並涉及駕駛安全評估與職業調整,通常由神經科或睡眠醫學專科追蹤。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western management centers on sleep-medicine evaluation: an overnight polysomnogram (PSG) first excludes other sleep disorders (e.g., obstructive sleep apnea), followed by a multiple sleep latency test (MSLT) the next day. Ongoing care combines behavioral measures (scheduled naps), prescription stimulant or wake-promoting medications and anticataplexy agents, and safety counseling around driving and occupational risk, typically followed by neurology or sleep medicine. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "第一型猝睡症的核心病理機轉為下視丘外側區分泌泌素(hypocretin/orexin)之神經元不可逆喪失,目前證據指向與具HLA-DQB1*0602基因型個體的自體免疫反應有關,泌素喪失導致無法穩定維持清醒與睡眠的邊界,造成日間嗜睡與REM睡眠成分(如猝倒、幻覺、睡眠癱瘓)侵入清醒狀態。診斷標準為PSG合併MSLT顯示平均入睡潛時≤8分鐘,且出現兩次以上睡眠起始快速動眼期(SOREMP);第二型猝睡症無猝倒且腦脊髓液泌素濃度多為正常或輕度下降。",
+   "western_pathology_en": "In type 1 narcolepsy, the core mechanism is irreversible loss of hypocretin (orexin)-producing neurons in the lateral hypothalamus, a process strongly linked to an autoimmune response in individuals carrying the HLA-DQB1*0602 allele. Hypocretin loss destabilizes the normal boundary between wake and sleep, producing daytime sleepiness and intrusion of REM-sleep components (cataplexy, hallucinations, sleep paralysis) into wakefulness. Diagnosis requires PSG followed by MSLT showing a mean sleep latency ≤8 minutes with two or more sleep-onset REM periods (SOREMPs); type 2 narcolepsy lacks cataplexy and typically shows normal or only mildly reduced CSF hypocretin levels.",
+   "red_flags_zh": [
+    "猝倒發作合併跌倒外傷風險,或發作時仍在駕駛/操作機械,需立即進行駕駛安全與職業風險評估",
+    "研究顯示猝睡症患者車禍風險較一般人高約3至4倍,逾半數患者曾在開車時打瞌睡,發作未穩定控制前應避免長途或高風險駕駛",
+    "日間嗜睡合併打鼾、明顯體重過重或觀察到呼吸暫停,需先以多項睡眠生理檢查排除阻塞型睡眠呼吸中止症等其他病因"
+   ],
+   "red_flags_en": [
+    "Cataplexy episodes with fall-related injury risk, or occurring while driving or operating machinery, warrant immediate assessment of driving safety and occupational risk",
+    "Studies show people with narcolepsy have roughly a 3- to 4-fold higher car accident risk, and more than half report falling asleep while driving — high-risk or long-distance driving should be avoided until symptoms are well controlled",
+    "Daytime sleepiness accompanied by snoring, significant obesity, or witnessed apnea should first be worked up with polysomnography to exclude obstructive sleep apnea and other causes"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "帶有HLA-DQB1*0602基因型",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: Narcolepsy (NBK459236)"
+    },
+    {
+     "factor": "近期上呼吸道感染或特定H1N1流感疫苗暴露史(如Pandemrix)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "HLA-DQB1*0602 genotype",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: Narcolepsy (NBK459236)"
+    },
+    {
+     "factor": "Recent upper respiratory infection or a specific H1N1 influenza vaccine exposure history (e.g., Pandemrix)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "無法治療泌素神經元喪失之根本病理機轉,可能作為日間嗜睡相關疲勞、睡眠品質或伴隨焦慮情緒之輔助照護",
+    "precautions": "猝倒發作風險高者針灸時的姿勢調整與跌倒防護需特別留意;正在使用興奮劑類藥物者應避免同時使用高刺激強度手法",
+    "co_management": "藥物調整(如興奮劑劑量、抗猝倒藥物)須由開立處方之神經科/睡眠醫學醫師決定,針灸師僅可協助轉介聯繫",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "No role in treating the underlying loss of hypocretin neurons; may support fatigue, sleep quality, or accompanying anxiety as adjunct care",
+    "precautions": "Extra care with positioning and fall prevention during treatment for patients with high cataplexy risk; avoid high-intensity stimulating techniques in patients on stimulant medication",
+    "co_management": "Adjustment of medications (stimulant dosing, anticataplexy agents) is decided by the prescribing neurologist/sleep physician; the acupuncturist's role is limited to facilitating referral",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_patterns": [
+    "pattern.qi_deficiency",
+    "pattern.phlegm_damp"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "NCBI StatPearls: Narcolepsy (NBK459236)"
+    ],
+    "summary_en": [
+     "NCBI StatPearls: Narcolepsy (NBK459236)"
+    ],
+    "western_context_zh": [
+     "NCBI StatPearls: Narcolepsy (NBK459236)"
+    ],
+    "western_context_en": [
+     "NCBI StatPearls: Narcolepsy (NBK459236)"
+    ],
+    "western_pathology_zh": [
+     "NCBI StatPearls: Narcolepsy (NBK459236)",
+     "PMC: Narcolepsy — Pathophysiology, Diagnosis, Management, and Future Directions, a Narrative Review (PMC12683072)"
+    ],
+    "western_pathology_en": [
+     "NCBI StatPearls: Narcolepsy (NBK459236)",
+     "PMC: Narcolepsy — Pathophysiology, Diagnosis, Management, and Future Directions, a Narrative Review (PMC12683072)"
+    ],
+    "red_flags_zh": [
+     "Sleep Foundation: Can You Drive With Narcolepsy? (sleepfoundation.org, retrieved 2026-08)"
+    ],
+    "red_flags_en": [
+     "Sleep Foundation: Can You Drive With Narcolepsy? (sleepfoundation.org, retrieved 2026-08)"
+    ],
+    "risk_factors_zh": [
+     "NCBI StatPearls: Narcolepsy (NBK459236)"
+    ],
+    "risk_factors_en": [
+     "NCBI StatPearls: Narcolepsy (NBK459236)"
+    ],
+    "acupuncture_scope_zh": [
+     "clinical judgment: general acupuncture scope-of-practice reasoning applied to this condition; no guideline/RCT source identified this session"
+    ],
+    "acupuncture_scope_en": [
+     "clinical judgment: general acupuncture scope-of-practice reasoning applied to this condition; no guideline/RCT source identified this session"
+    ],
+    "related_eastern_diseases": [
+     "valid-tdis-ids.txt reviewed; no confident overlapping-presentation match identified"
+    ],
+    "related_patterns": [
+     "clinical correlation between TCM disease/pattern definitions and DSM-5/ICD-10 criteria for this condition; not a formal cross-nosology guideline"
+    ]
+   }
   },
   {
    "id": "cond.sleepwalking",
@@ -69752,10 +70539,138 @@
    "name_en": "Sleepwalking Disorder",
    "category": "psych_sleep",
    "icd_hint": "F51.3",
-   "aliases_zh": [],
-   "aliases_en": [],
+   "aliases_zh": [
+    "睡行症"
+   ],
+   "aliases_en": [
+    "Somnambulism"
+   ],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "夢遊症(睡行症)屬於NREM異睡症,指個體於深層慢波睡眠中發生不完全甦醒,出現離床行走或其他複雜動作行為,當下對外界刺激反應遲鈍、事後對發作過程幾乎沒有記憶。好發於兒童,多數於青春期前緩解,成人夢遊則可能與藥物、其他睡眠疾患或神經系統病變有關,需另行評估。",
+   "summary_en": "Sleepwalking disorder is a NREM parasomnia in which incomplete arousal from deep slow-wave sleep leads to walking or other complex behaviors out of bed, during which the person is unresponsive to external stimuli and afterward has little to no memory of the episode. It is most common in children and usually resolves before adolescence; sleepwalking with adult onset may be associated with medications, other sleep disorders, or neurological disease and warrants separate evaluation.",
+   "western_context_zh": "西醫先以病史排除藥物誘發(如某些抗生素、抗癲癇藥、抗憂鬱劑、苯二氮平類、鋰鹽、抗精神病藥、SSRIs、奎寧、乙型阻斷劑、三環抗憂鬱劑)及帕金森氏症等神經退化性疾病所致之睡行表現,兒童個案以居家安全防護(鎖窗鎖門、移除易碎物)與睡眠衛生為主,成人或頻繁危險發作個案可能考慮睡前使用增強GABA作用之藥物(如clonazepam、gabapentin),並轉介睡眠醫學專科進一步評估。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western management first uses history to rule out medication-induced sleepwalking (e.g., certain antibiotics, anticonvulsants, antidepressants, benzodiazepines, lithium, antipsychotics, SSRIs, quinine, beta-blockers, TCAs) and neurodegenerative disease such as Parkinson's disease as the cause. Pediatric cases are managed primarily with home safety-proofing (locking windows and doors, removing breakable objects) and sleep hygiene; adult or frequent, dangerous episodes may be considered for GABA-enhancing medication before bed (e.g., clonazepam, gabapentin), with referral to sleep medicine for further evaluation. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "病理機轉為深層NREM/慢波睡眠中發生不完全甦醒——大腦部分區域已進入清醒狀態而產生行為動作,部分區域仍處於睡眠狀態而缺乏意識覺察與判斷力,睡眠剝奪研究亦顯示夢遊症患者存在異常之腦部血流灌流型態。診斷須排除藥物誘發及帕金森氏症等神經退化性病因,頻繁或危險發作個案建議以睡眠多項生理檢查評估是否合併其他睡眠疾患。",
+   "western_pathology_en": "The mechanism is incomplete arousal from deep NREM/slow-wave sleep — some brain regions become sufficiently aroused to produce complex behavior while others remain in a sleep state, lacking conscious awareness and judgment; sleep-deprivation studies have also shown altered brain perfusion patterns in people who sleepwalk. Diagnosis requires excluding medication-induced causes and neurodegenerative conditions such as Parkinson's disease; frequent or dangerous episodes warrant polysomnography to evaluate for other coexisting sleep disorders.",
+   "red_flags_zh": [
+    "夢遊發作中曾有跌倒、撞傷、離家外出或接觸危險物品(如爐火、樓梯、道路)等傷害風險,須立即加強居家安全防護並考慮專科評估",
+    "成人新發夢遊或發作頻率突然增加,需排除藥物副作用、癲癇或帕金森氏症等神經退化性疾病,轉介神經科/睡眠醫學評估",
+    "夢遊發作中出現攻擊性行為或可能傷及同床者,需優先處理睡眠安全並轉介睡眠醫學專科"
+   ],
+   "red_flags_en": [
+    "Episodes involving falls, injury, leaving the home, or contact with hazards (stove, stairs, roadway) require immediate reinforcement of home safety measures and specialist evaluation",
+    "New-onset sleepwalking in an adult, or a sudden increase in episode frequency, should prompt evaluation for a medication side effect, epilepsy, or a neurodegenerative disease such as Parkinson's disease, with referral to neurology/sleep medicine",
+    "Episodes involving aggressive behavior or risk of injuring a bed partner require prioritizing sleep safety and referral to sleep medicine"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "夢遊症或其他NREM異睡症家族史",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: Somnambulism (NBK559001)"
+    },
+    {
+     "factor": "睡眠剝奪與睡眠不規律",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Somnambulism (NBK559001)"
+    },
+    {
+     "factor": "使用特定藥物(如苯二氮平類、抗精神病藥、鋰鹽等)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Somnambulism (NBK559001)"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Family history of sleepwalking or other NREM parasomnias",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: Somnambulism (NBK559001)"
+    },
+    {
+     "factor": "Sleep deprivation and irregular sleep schedule",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Somnambulism (NBK559001)"
+    },
+    {
+     "factor": "Use of certain medications (e.g., benzodiazepines, antipsychotics, lithium)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Somnambulism (NBK559001)"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "可作為睡眠品質與壓力調節之輔助照護,無法直接治療夢遊症之神經生理機轉",
+    "precautions": "成人新發或危險性高之夢遊發作應先完成神經科/睡眠醫學評估,排除器質性病因後再考慮輔助照護",
+    "co_management": "藥物(如苯二氮平類)之啟動或調整須由原處方醫師決定",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "May support sleep quality and stress regulation as adjunct care; no direct role in treating the neurophysiological mechanism of sleepwalking",
+    "precautions": "New-onset or dangerous sleepwalking in an adult should first complete neurology/sleep-medicine evaluation to exclude an organic cause before considering adjunct care",
+    "co_management": "Initiation or adjustment of medication (e.g., benzodiazepines) is decided by the prescribing physician",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_patterns": [
+    "pattern.heart_gallbladder_qi_deficiency",
+    "pattern.phlegm_fire_disturbing_heart"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "NCBI StatPearls: Somnambulism (NBK559001)"
+    ],
+    "summary_en": [
+     "NCBI StatPearls: Somnambulism (NBK559001)"
+    ],
+    "western_context_zh": [
+     "NCBI StatPearls: Somnambulism (NBK559001)"
+    ],
+    "western_context_en": [
+     "NCBI StatPearls: Somnambulism (NBK559001)"
+    ],
+    "western_pathology_zh": [
+     "NCBI StatPearls: Somnambulism (NBK559001)"
+    ],
+    "western_pathology_en": [
+     "NCBI StatPearls: Somnambulism (NBK559001)"
+    ],
+    "red_flags_zh": [
+     "NCBI StatPearls: Somnambulism (NBK559001)"
+    ],
+    "red_flags_en": [
+     "NCBI StatPearls: Somnambulism (NBK559001)"
+    ],
+    "risk_factors_zh": [
+     "NCBI StatPearls: Somnambulism (NBK559001)"
+    ],
+    "risk_factors_en": [
+     "NCBI StatPearls: Somnambulism (NBK559001)"
+    ],
+    "acupuncture_scope_zh": [
+     "clinical judgment: general acupuncture scope-of-practice reasoning applied to this condition; no guideline/RCT source identified this session"
+    ],
+    "acupuncture_scope_en": [
+     "clinical judgment: general acupuncture scope-of-practice reasoning applied to this condition; no guideline/RCT source identified this session"
+    ],
+    "aliases_zh": [
+     "NCBI StatPearls: Somnambulism (NBK559001)"
+    ],
+    "aliases_en": [
+     "NCBI StatPearls: Somnambulism (NBK559001)"
+    ],
+    "related_eastern_diseases": [
+     "valid-tdis-ids.txt reviewed; no confident overlapping-presentation match identified"
+    ],
+    "related_patterns": [
+     "clinical correlation between TCM disease/pattern definitions and DSM-5/ICD-10 criteria for this condition; not a formal cross-nosology guideline"
+    ]
+   }
   },
   {
    "id": "cond.sleep_terror_disorder",
@@ -69764,10 +70679,141 @@
    "name_en": "Sleep Terror Disorder",
    "category": "psych_sleep",
    "icd_hint": "F51.4",
-   "aliases_zh": [],
-   "aliases_en": [],
+   "aliases_zh": [
+    "夜驚症"
+   ],
+   "aliases_en": [
+    "Night Terror"
+   ],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "睡驚症屬於非快速動眼期(NREM)異睡症之一,以睡眠中突然自深睡期(第三、四期慢波睡眠)醒轉,伴隨劇烈驚恐反應(如尖叫、心跳加速、盜汗、瞳孔放大)為特徵,發作時個體對安撫幾乎無反應,清醒後通常對發作內容毫無記憶或僅有片段記憶。好發於學齡前至學齡兒童,多數青春期前自行緩解,成人發生則相對少見。",
+   "summary_en": "Sleep terror disorder is a NREM parasomnia characterized by abrupt arousal from deep (stage 3/4 slow-wave) sleep accompanied by intense fear responses — screaming, tachycardia, sweating, dilated pupils — during which the person is largely unresponsive to comforting, and on waking typically has no memory or only fragmentary recall of the episode. It is most common in preschool- to school-age children, usually resolving spontaneously before adolescence; adult-onset cases are relatively uncommon.",
+   "western_context_zh": "西醫先以病史(發作時間點、頻率、觸發因子如發燒、睡眠剝奪、壓力)評估,兒童個案多採衛教與安全防護為主(移除環境中危險物、避免誘發因子),成人或頻繁發作個案需以睡眠多項生理檢查排除癲癇、睡眠呼吸中止等其他病因,並評估共病精神疾患;藥物治療僅用於發作頻繁或有明顯傷害風險之個案。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western management begins with history-taking (timing, frequency, triggers such as fever, sleep deprivation, stress); pediatric cases are typically managed with education and environmental safety-proofing (removing hazards, avoiding triggers), while adult-onset or frequent cases require polysomnography to exclude epilepsy, sleep apnea, and other causes, alongside screening for psychiatric comorbidity. Medication is reserved for frequent episodes or clear injury risk. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "病理機轉尚未完全明朗,推測與深層NREM睡眠不穩定有關,患者處於睡眠與清醒間之過渡狀態(部分腦區已清醒、部分仍處深睡),成人研究則指出慢波睡眠碎片化程度較高可能與發作有關;發燒疾病、劇烈運動、過量咖啡因或酒精、睡眠剝奪與情緒壓力皆與發作誘發相關。成人首次發生睡驚症或伴隨其他異常神經學徵象時,需提高警覺並考慮潛在神經系統病因之可能性。",
+   "western_pathology_en": "The pathophysiology is not fully understood but is thought to involve instability of deep NREM sleep, with the person caught in a transitional state between sleep and wakefulness — part of the brain aroused, part still in deep sleep. Adult studies suggest a higher degree of slow-wave sleep fragmentation may underlie episodes. Febrile illness, strenuous exercise, excess caffeine or alcohol, sleep deprivation, and emotional stress are all associated with triggering episodes. New-onset sleep terrors in adulthood, or episodes accompanied by other abnormal neurological signs, should raise suspicion for an underlying neurological cause requiring further workup.",
+   "red_flags_zh": [
+    "成人首次出現睡驚症發作較為罕見,可能提示潛在神經系統疾病,需轉介神經科進一步檢查",
+    "發作中出現自傷或傷及同床者之肢體動作,或曾因發作跌落、撞傷,需優先處理環境安全並考慮睡眠多項生理檢查排除其他異睡症",
+    "成人反覆睡驚發作合併明顯創傷後壓力症候群、廣泛性焦慮或人格疾患等精神共病表現,需精神科評估"
+   ],
+   "red_flags_en": [
+    "New-onset sleep terrors in an adult are uncommon and may indicate an underlying neurological disorder requiring neurology referral for further workup",
+    "Episodes involving self-injury, injury to a bed partner, or falls/impact injury during the episode require immediate environmental safety measures and consideration of polysomnography to exclude other parasomnias",
+    "Recurrent adult sleep terrors accompanied by prominent PTSD, generalized anxiety, or personality-disorder features warrant psychiatric evaluation"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "發燒或急性病中",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Night Terrors (NBK493222)"
+    },
+    {
+     "factor": "睡眠剝奪與過度疲勞",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Night Terrors (NBK493222)"
+    },
+    {
+     "factor": "睡驚症或其他異睡症家族史",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: Night Terrors (NBK493222)"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Fever or acute illness",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Night Terrors (NBK493222)"
+    },
+    {
+     "factor": "Sleep deprivation and excessive fatigue",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Night Terrors (NBK493222)"
+    },
+    {
+     "factor": "Family history of sleep terrors or other parasomnias",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: Night Terrors (NBK493222)"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "可作為情緒壓力與睡眠品質之輔助支持照護,無法直接治療睡驚症之神經生理機轉",
+    "precautions": "成人新發睡驚症應先完成神經科/睡眠醫學評估排除器質性病因,再考慮輔助照護",
+    "co_management": "若懷疑合併癲癇或其他神經疾病,須轉介神經科而非逕行針灸處置",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "May support emotional stress and sleep quality as adjunct care; no direct role in treating the neurophysiological mechanism of sleep terror disorder",
+    "precautions": "New-onset sleep terrors in an adult should first complete neurology/sleep-medicine evaluation to exclude an organic cause before considering adjunct care",
+    "co_management": "If epilepsy or another neurological disorder is suspected, refer to neurology rather than proceeding directly to acupuncture",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.ye_ti"
+   ],
+   "related_patterns": [
+    "pattern.heart_gallbladder_qi_deficiency",
+    "pattern.phlegm_fire_disturbing_heart"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "NCBI StatPearls: Night Terrors (NBK493222)"
+    ],
+    "summary_en": [
+     "NCBI StatPearls: Night Terrors (NBK493222)"
+    ],
+    "western_context_zh": [
+     "NCBI StatPearls: Night Terrors (NBK493222)"
+    ],
+    "western_context_en": [
+     "NCBI StatPearls: Night Terrors (NBK493222)"
+    ],
+    "western_pathology_zh": [
+     "NCBI StatPearls: Night Terrors (NBK493222)"
+    ],
+    "western_pathology_en": [
+     "NCBI StatPearls: Night Terrors (NBK493222)"
+    ],
+    "red_flags_zh": [
+     "NCBI StatPearls: Night Terrors (NBK493222)"
+    ],
+    "red_flags_en": [
+     "NCBI StatPearls: Night Terrors (NBK493222)"
+    ],
+    "risk_factors_zh": [
+     "NCBI StatPearls: Night Terrors (NBK493222)"
+    ],
+    "risk_factors_en": [
+     "NCBI StatPearls: Night Terrors (NBK493222)"
+    ],
+    "acupuncture_scope_zh": [
+     "clinical judgment: general acupuncture scope-of-practice reasoning applied to this condition; no guideline/RCT source identified this session"
+    ],
+    "acupuncture_scope_en": [
+     "clinical judgment: general acupuncture scope-of-practice reasoning applied to this condition; no guideline/RCT source identified this session"
+    ],
+    "aliases_zh": [
+     "NCBI StatPearls: Night Terrors (NBK493222)"
+    ],
+    "aliases_en": [
+     "NCBI StatPearls: Night Terrors (NBK493222)"
+    ],
+    "related_eastern_diseases": [
+     "clinical correlation between TCM disease/pattern definitions and DSM-5/ICD-10 criteria for this condition; not a formal cross-nosology guideline"
+    ],
+    "related_patterns": [
+     "clinical correlation between TCM disease/pattern definitions and DSM-5/ICD-10 criteria for this condition; not a formal cross-nosology guideline"
+    ]
+   }
   },
   {
    "id": "cond.nightmare_disorder",
@@ -69779,7 +70825,118 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "夢魘症指反覆出現冗長、內容鮮明痛苦、通常涉及生存/安全/身體完整性受威脅的夢境,多發生於睡眠後半段(REM睡眠為主),醒來後個體迅速恢復定向與清醒,夢境內容記憶清晰,且此困擾造成臨床顯著的痛苦或社會、職業等重要功能損害,並非物質/藥物或其他病況所致。",
+   "summary_en": "Nightmare disorder involves repeated, extended, vividly dysphoric dreams — typically involving threats to survival, security, or physical integrity — that occur mainly during the second half of the sleep period (REM-predominant), with rapid reorientation and alertness on waking and clear dream recall, causing clinically significant distress or impairment in social, occupational, or other functioning, and not attributable to a substance/medication or another condition.",
+   "western_context_zh": "西醫先以病史排除物質使用、創傷後壓力症候群或其他睡眠疾患(如睡驚症、REM睡眠行為障礙)導致的夢境困擾,治療首選為心理治療,尤其是意象排演治療(imagery rehearsal therapy)與認知行為治療,睡眠衛生調整為輔助,必要時精神科評估合併用藥。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western management first uses history-taking to rule out substance use, PTSD, or other sleep disorders (e.g., sleep terror disorder, REM sleep behavior disorder) as the cause of the dream disturbance. First-line treatment is psychotherapy — particularly imagery rehearsal therapy and cognitive behavioral therapy — with sleep hygiene as an adjunct, and psychiatric referral for medication when indicated. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "夢魘多發生於REM睡眠階段,機轉與情緒調節迴路(杏仁核、內側前額葉)於REM睡眠期間之異常活化或情緒記憶處理失調有關,常與創傷經驗、壓力、特定藥物(如某些抗憂鬱劑、貝他阻斷劑)或戒斷有關。診斷依賴詳細睡眠及夢境病史,嚴重度以每週發作頻率分級(輕度<每週一次、中度每週一次以上但未達每晚、重度每晚發作),病程分為急性(≤1個月)、亞急性(1-6個月)、持續性(≥6個月)。",
+   "western_pathology_en": "Nightmares occur predominantly during REM sleep, and the mechanism is thought to involve dysregulated activation of emotion-processing circuits (amygdala, medial prefrontal cortex) during REM sleep and impaired emotional memory processing; nightmares are commonly linked to trauma exposure, stress, certain medications (e.g., some antidepressants, beta-blockers), or medication withdrawal. Diagnosis relies on detailed sleep and dream history; severity is graded by weekly frequency (mild <1/week, moderate ≥1/week but not nightly, severe nightly), and duration is classified as acute (≤1 month), subacute (1–6 months), or persistent (≥6 months).",
+   "red_flags_zh": [
+    "夢魘內容涉及重演真實創傷事件、合併日間閃回或過度警覺,需評估創傷後壓力症候群並轉介精神科",
+    "夢魘發作合併明顯自傷、自殺意念或睡眠中出現傷害自己或他人之肢體動作,需優先進行安全評估,並與REM睡眠行為障礙等神經退化性疾病做鑑別",
+    "兒童夢魘頻率驟增或伴隨白天行為明顯退化,需排除虐待、受創或其他心理壓力來源"
+   ],
+   "red_flags_en": [
+    "Nightmares that re-enact a real traumatic event, with daytime flashbacks or hyperarousal, should be assessed for PTSD and referred to psychiatry",
+    "Nightmares accompanied by significant self-harm or suicidal ideation, or physically injurious movements during sleep, require urgent safety assessment and differentiation from REM sleep behavior disorder and other neurodegenerative conditions",
+    "A sudden increase in nightmare frequency in a child, especially with daytime behavioral regression, should prompt screening for abuse, trauma, or other psychosocial stressors"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "創傷暴露史(如意外、暴力、戰爭經驗)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    },
+    {
+     "factor": "共病創傷後壓力症候群或重度憂鬱症",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "History of trauma exposure (e.g., accident, violence, combat experience)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    },
+    {
+     "factor": "Comorbid PTSD or major depressive disorder",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "可作為壓力/創傷相關睡眠困擾之輔助放鬆照護,無法直接治療夢魘症本身之病因",
+    "precautions": "急性創傷後壓力反應或有活躍自傷風險者,應先由精神科穩定,針灸僅作輔助",
+    "co_management": "抗憂鬱劑或其他精神科用藥之啟動或調整由原處方醫師決定",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "May support relaxation for stress/trauma-related sleep disturbance as adjunct care; no direct treatment role for the underlying cause of nightmare disorder",
+    "precautions": "Acute post-traumatic stress reactions or active self-harm risk should be stabilized by psychiatry first, with acupuncture as an adjunct only",
+    "co_management": "Initiation or adjustment of antidepressants or other psychiatric medication is decided by the prescribing physician",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.bu_mei"
+   ],
+   "related_patterns": [
+    "pattern.heart_blood_deficiency",
+    "pattern.phlegm_fire_disturbing_heart"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "Theravive/Carepatron DSM-5 criteria summary: Nightmare Disorder 307.47 (F51.5) (retrieved 2026-08)"
+    ],
+    "summary_en": [
+     "Theravive/Carepatron DSM-5 criteria summary: Nightmare Disorder 307.47 (F51.5) (retrieved 2026-08)"
+    ],
+    "western_context_zh": [
+     "Theravive/Carepatron DSM-5 criteria summary: Nightmare Disorder 307.47 (F51.5) (retrieved 2026-08)"
+    ],
+    "western_context_en": [
+     "Theravive/Carepatron DSM-5 criteria summary: Nightmare Disorder 307.47 (F51.5) (retrieved 2026-08)"
+    ],
+    "western_pathology_zh": [
+     "Medscape: Nightmare Disorder — Practice Essentials, Background, Pathophysiology (emedicine.medscape.com, retrieved 2026-08)",
+     "Theravive/Carepatron DSM-5 criteria summary: Nightmare Disorder 307.47 (F51.5) (retrieved 2026-08)"
+    ],
+    "western_pathology_en": [
+     "Medscape: Nightmare Disorder — Practice Essentials, Background, Pathophysiology (emedicine.medscape.com, retrieved 2026-08)",
+     "Theravive/Carepatron DSM-5 criteria summary: Nightmare Disorder 307.47 (F51.5) (retrieved 2026-08)"
+    ],
+    "red_flags_zh": [
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "red_flags_en": [
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "risk_factors_zh": [
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "risk_factors_en": [
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "acupuncture_scope_zh": [
+     "clinical judgment: general acupuncture scope-of-practice reasoning applied to this condition; no guideline/RCT source identified this session"
+    ],
+    "acupuncture_scope_en": [
+     "clinical judgment: general acupuncture scope-of-practice reasoning applied to this condition; no guideline/RCT source identified this session"
+    ],
+    "related_eastern_diseases": [
+     "clinical correlation between TCM disease/pattern definitions and DSM-5/ICD-10 criteria for this condition; not a formal cross-nosology guideline"
+    ],
+    "related_patterns": [
+     "clinical correlation between TCM disease/pattern definitions and DSM-5/ICD-10 criteria for this condition; not a formal cross-nosology guideline"
+    ]
+   }
   },
   {
    "id": "cond.adjustment_disorder",
@@ -69912,10 +71069,154 @@
    "name_en": "Postpartum Depression",
    "category": "psych_sleep",
    "icd_hint": "F53.0",
-   "aliases_zh": [],
-   "aliases_en": [],
+   "aliases_zh": [
+    "產後憂鬱"
+   ],
+   "aliases_en": [
+    "PPD"
+   ],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "產後憂鬱症是發生於分娩後(DSM-5歸類為重度憂鬱症「產褥期發作」,多數臨床定義涵蓋產後最初數週至一年內)之持續性憂鬱發作,核心症狀包括持續悲傷、情緒低落、對嬰兒或日常活動失去興趣、精力低落、睡眠與食慾改變、與嬰兒建立連結困難,嚴重程度與時間長短皆超過短暫、通常於產後兩週內自行緩解的「產後情緒低落」(baby blues)。",
+   "summary_en": "Postpartum depression is a persistent depressive episode occurring after childbirth (classified in DSM-5 as major depressive disorder \"with peripartum onset\"; most clinical definitions span the first weeks to up to a year postpartum), with core features of persistent sadness, low mood, loss of interest in the infant or daily activities, low energy, changes in sleep and appetite, and difficulty bonding with the baby — distinguished by severity and duration from the transient \"baby blues,\" which typically resolves within about two weeks of delivery.",
+   "western_context_zh": "西醫以產後憂鬱篩檢量表(如愛丁堡產後憂鬱量表)於產檢與兒科回診時常規篩檢,確診後依嚴重度採心理治療(認知行為治療、人際治療)、選擇性血清素回收抑制劑等抗憂鬱藥物(需評估哺乳期用藥安全性)分級處置,中重度或有精神病症狀者轉介精神科,必要時評估親子互動與嬰兒照顧安全網絡。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western management uses routine screening with validated tools (e.g., the Edinburgh Postnatal Depression Scale) at postpartum and pediatric visits; confirmed cases are managed by severity with psychotherapy (CBT, interpersonal therapy) and, when indicated, antidepressant medication such as SSRIs (with lactation-safety review), escalating to psychiatric referral for moderate-to-severe cases or any psychotic features, alongside safety-net assessment of parent-infant interaction and infant care. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "病因被認為是生物、心理、社會多重因素交互作用:分娩後雌激素與黃體素急遽下降、甲狀腺荷爾蒙波動、睡眠剝奪與晝夜節律紊亂,加上心理社會壓力(角色轉換、支持不足、既有憂鬱或焦慮病史)共同促成情緒調節失衡。臨床診斷依DSM-5重度憂鬱症準則,發作須始於妊娠期間或產後四週內(「產褥期發作」),需與短暫性、通常不需治療的產後情緒低落(baby blues)及罕見但屬急症的產後精神病做鑑別。",
+   "western_pathology_en": "The etiology is considered multifactorial — biological, psychological, and social factors interact: the sharp postpartum drop in estrogen and progesterone, fluctuating thyroid hormones, sleep deprivation, and circadian disruption combine with psychosocial stressors (role transition, inadequate support, prior depression or anxiety) to destabilize mood regulation. Clinical diagnosis follows DSM-5 major depressive disorder criteria with onset during pregnancy or within four weeks postpartum (\"peripartum onset\"), and must be distinguished from the transient, usually self-limiting baby blues and from the rare but emergent condition of postpartum psychosis.",
+   "red_flags_zh": [
+    "出現傷害自己或嬰兒的意念或行為,須視為急症立即轉介精神科或撥打急救專線,不可延遲",
+    "出現幻覺、妄想、明顯脫離現實或行為混亂等產後精神病表徵,屬精神科急症,需立即住院評估",
+    "症狀持續超過兩週未緩解、逐漸惡化,或已明顯影響照顧嬰兒與日常生活能力,須主動聯繫醫療提供者評估"
+   ],
+   "red_flags_en": [
+    "Any thoughts or behaviors of harming self or the infant must be treated as an emergency with immediate psychiatric referral or emergency services — never delayed",
+    "Hallucinations, delusions, marked disorientation, or disorganized behavior suggest postpartum psychosis, a psychiatric emergency requiring immediate hospital-level evaluation",
+    "Symptoms persisting beyond two weeks without improvement, worsening, or clearly impairing the ability to care for the infant or manage daily life should prompt the patient to contact a healthcare provider"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "曾有產後憂鬱症病史(前胎)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Mayo Clinic: Postpartum depression - Symptoms & causes (mayoclinic.org, retrieved 2026-08)"
+    },
+    {
+     "factor": "孕期或孕前已有憂鬱或焦慮病史",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Mayo Clinic: Postpartum depression - Symptoms & causes (mayoclinic.org, retrieved 2026-08)"
+    },
+    {
+     "factor": "憂鬱症家族史",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Mayo Clinic: Postpartum depression - Symptoms & causes (mayoclinic.org, retrieved 2026-08)"
+    },
+    {
+     "factor": "睡眠剝奪、照顧負荷過重與社會支持不足",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Mayo Clinic: Postpartum depression - Symptoms & causes (mayoclinic.org, retrieved 2026-08)"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Prior history of postpartum depression (previous pregnancy)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Mayo Clinic: Postpartum depression - Symptoms & causes (mayoclinic.org, retrieved 2026-08)"
+    },
+    {
+     "factor": "History of depression or anxiety before or during pregnancy",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Mayo Clinic: Postpartum depression - Symptoms & causes (mayoclinic.org, retrieved 2026-08)"
+    },
+    {
+     "factor": "Family history of depression",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Mayo Clinic: Postpartum depression - Symptoms & causes (mayoclinic.org, retrieved 2026-08)"
+    },
+    {
+     "factor": "Sleep deprivation, high caregiving burden, and inadequate social support",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Mayo Clinic: Postpartum depression - Symptoms & causes (mayoclinic.org, retrieved 2026-08)"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "可作為情緒穩定、疲勞與睡眠困擾之輔助照護,不能取代心理治療或抗憂鬱藥物",
+    "precautions": "出現自傷/傷害嬰兒意念、精神病症狀者不適用針灸做為主要照護,須立即精神科介入",
+    "co_management": "抗憂鬱藥物之啟動、調整或哺乳期用藥安全評估須由原開立之婦產科或精神科醫師決定",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "May support mood stabilization, fatigue, and sleep disturbance as adjunct care; cannot replace psychotherapy or antidepressant medication",
+    "precautions": "Not appropriate as primary care for patients with thoughts of self-harm or harming the infant, or with psychotic features — immediate psychiatric involvement is required",
+    "co_management": "Initiation, adjustment, or lactation-safety review of antidepressant medication is decided by the prescribing obstetric or psychiatric physician",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.yu_zheng",
+    "tdis.zang_zao"
+   ],
+   "related_patterns": [
+    "pattern.liver_qi_stagnation",
+    "pattern.heart_spleen_deficiency"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "Mayo Clinic: Postpartum depression - Symptoms & causes (mayoclinic.org, retrieved 2026-08)"
+    ],
+    "summary_en": [
+     "Mayo Clinic: Postpartum depression - Symptoms & causes (mayoclinic.org, retrieved 2026-08)"
+    ],
+    "western_context_zh": [
+     "Mayo Clinic: Postpartum depression - Diagnosis & treatment (mayoclinic.org, retrieved 2026-08)"
+    ],
+    "western_context_en": [
+     "Mayo Clinic: Postpartum depression - Diagnosis & treatment (mayoclinic.org, retrieved 2026-08)"
+    ],
+    "western_pathology_zh": [
+     "Mayo Clinic: Postpartum depression - Symptoms & causes (mayoclinic.org, retrieved 2026-08)"
+    ],
+    "western_pathology_en": [
+     "Mayo Clinic: Postpartum depression - Symptoms & causes (mayoclinic.org, retrieved 2026-08)"
+    ],
+    "red_flags_zh": [
+     "Mayo Clinic: Postpartum depression - Symptoms & causes (mayoclinic.org, retrieved 2026-08)"
+    ],
+    "red_flags_en": [
+     "Mayo Clinic: Postpartum depression - Symptoms & causes (mayoclinic.org, retrieved 2026-08)"
+    ],
+    "risk_factors_zh": [
+     "Mayo Clinic: Postpartum depression - Symptoms & causes (mayoclinic.org, retrieved 2026-08)"
+    ],
+    "risk_factors_en": [
+     "Mayo Clinic: Postpartum depression - Symptoms & causes (mayoclinic.org, retrieved 2026-08)"
+    ],
+    "acupuncture_scope_zh": [
+     "clinical judgment: general acupuncture scope-of-practice reasoning applied to this condition; no guideline/RCT source identified this session"
+    ],
+    "acupuncture_scope_en": [
+     "clinical judgment: general acupuncture scope-of-practice reasoning applied to this condition; no guideline/RCT source identified this session"
+    ],
+    "aliases_zh": [
+     "Mayo Clinic: Postpartum depression - Symptoms & causes (mayoclinic.org, retrieved 2026-08)"
+    ],
+    "aliases_en": [
+     "Mayo Clinic: Postpartum depression - Symptoms & causes (mayoclinic.org, retrieved 2026-08)"
+    ],
+    "related_eastern_diseases": [
+     "clinical correlation between TCM disease/pattern definitions and DSM-5/ICD-10 criteria for this condition; not a formal cross-nosology guideline"
+    ],
+    "related_patterns": [
+     "clinical correlation between TCM disease/pattern definitions and DSM-5/ICD-10 criteria for this condition; not a formal cross-nosology guideline"
+    ]
+   }
   },
   {
    "id": "cond.borderline_personality_disorder",
@@ -70096,7 +71397,132 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "思覺失調症是一種慢性精神病性疾患,核心特徵包括正性症狀(妄想、幻覺、解構性言語、混亂或緊張性行為)、負性症狀(動機與情緒表達減退)及認知功能損害(執行功能、記憶與處理速度下降),症狀需持續至少六個月(含至少一個月之活躍期症狀)並顯著影響社會、職業或自我照顧功能,好發於青春期後期至30多歲初發。",
+   "summary_en": "Schizophrenia is a chronic psychotic disorder characterized by positive symptoms (delusions, hallucinations, disorganized speech, grossly disorganized or catatonic behavior), negative symptoms (diminished motivation and emotional expression), and cognitive impairment (executive function, memory, and processing speed), with a required minimum six-month symptom duration (including at least one month of active-phase symptoms) and significant impairment in social, occupational, or self-care functioning; onset is typically in late adolescence through the early 30s.",
+   "western_context_zh": "西醫診斷須排除物質誘發精神病、其他內科病因與情感性精神病後,以詳細精神病史與精神狀態檢查確立;治療以抗精神病藥物為核心,搭配心理社會介入(社交技能訓練、家庭衛教、職能復健)及個案管理,急性發作期或有安全疑慮時需住院,長期由精神科團隊追蹤並定期評估用藥副作用與代謝風險。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western diagnosis requires ruling out substance-induced psychosis, other medical causes, and mood-disorder-related psychosis, then confirming through detailed psychiatric history and mental status examination. Core treatment is antipsychotic medication combined with psychosocial interventions (social skills training, family psychoeducation, vocational rehabilitation) and case management; acute episodes or safety concerns require hospitalization, with long-term follow-up by a psychiatric team including regular monitoring of medication side effects and metabolic risk. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "病理機轉尚未完全闡明,目前證據最支持多巴胺假說:正性症狀與中腦邊緣路徑(mesolimbic pathway)多巴胺活性過高有關,同時觀察到背外側前額葉皮質於休息與執行任務時活性降低、內側前額葉活性增加,可能與負性症狀及認知缺損相關;亦涉及麩胺酸系統失調與神經發育因素(如產前感染、周產期併發症)。臨床診斷不依賴影像或生物標記,而是透過詳細病史排除其他精神或內科病因,並依DSM-5活性期症狀與病程準則確立。",
+   "western_pathology_en": "The underlying pathophysiology is not fully understood, but current evidence most strongly supports the dopamine hypothesis: positive symptoms are linked to excess dopamine activity in the mesolimbic pathway, while reduced activity in the dorsolateral prefrontal cortex at rest and during executive tasks, alongside increased medial prefrontal activity, may underlie negative symptoms and cognitive deficits. Glutamatergic system dysregulation and neurodevelopmental factors (e.g., prenatal infection, perinatal complications) are also implicated. Clinical diagnosis does not rely on imaging or biomarkers but on detailed history to exclude other psychiatric or medical causes, applying DSM-5 active-phase symptom and duration criteria.",
+   "red_flags_zh": [
+    "出現指令性幻聽要求患者從事暴力或危險行為,或出現明確自傷/自殺意念、計畫或準備行動,屬精神科急症需立即轉介",
+    "出現對他人的攻擊意念或行為、持有武器意圖傷人,需立即進行危險性評估並可能需要非自願住院程序",
+    "急性精神病發作合併明顯脫水、拒食拒水或無法自我照顧,需評估內科急症與住院治療需求"
+   ],
+   "red_flags_en": [
+    "Command hallucinations instructing violent or dangerous acts, or clear suicidal ideation, plan, or preparatory behavior, constitute a psychiatric emergency requiring immediate referral",
+    "Aggressive ideation or behavior toward others, or intent to harm with a weapon, requires immediate danger assessment and may necessitate involuntary hospitalization procedures",
+    "Acute psychotic episodes with significant dehydration, refusal of food/water, or inability to self-care warrant evaluation for medical emergency and need for hospitalization"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "思覺失調症家族史",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: Schizophrenia (NBK539864)"
+    },
+    {
+     "factor": "生產併發症、周產期缺氧或母親孕期嚴重營養不良",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: Schizophrenia (NBK539864)"
+    },
+    {
+     "factor": "孕期母親感染流感",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: Schizophrenia (NBK539864)"
+    },
+    {
+     "factor": "青少年期大麻使用",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Schizophrenia (NBK539864)"
+    },
+    {
+     "factor": "童年創傷與社會孤立",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Schizophrenia (NBK539864)"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Family history of schizophrenia",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: Schizophrenia (NBK539864)"
+    },
+    {
+     "factor": "Birth complications, perinatal hypoxia, or severe maternal malnutrition during pregnancy",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: Schizophrenia (NBK539864)"
+    },
+    {
+     "factor": "Maternal influenza infection during pregnancy",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: Schizophrenia (NBK539864)"
+    },
+    {
+     "factor": "Cannabis use during adolescence",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Schizophrenia (NBK539864)"
+    },
+    {
+     "factor": "Childhood trauma and social isolation",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Schizophrenia (NBK539864)"
+    }
+   ],
+   "related_eastern_diseases": [
+    "tdis.dian_kuang"
+   ],
+   "related_patterns": [
+    "pattern.phlegm_fire_disturbing_heart",
+    "pattern.phlegm_misting_heart"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "NCBI StatPearls: Schizophrenia (NBK539864)"
+    ],
+    "summary_en": [
+     "NCBI StatPearls: Schizophrenia (NBK539864)"
+    ],
+    "western_context_zh": [
+     "NCBI StatPearls: Schizophrenia (NBK539864)"
+    ],
+    "western_context_en": [
+     "NCBI StatPearls: Schizophrenia (NBK539864)"
+    ],
+    "western_pathology_zh": [
+     "NCBI StatPearls: Schizophrenia (NBK539864)"
+    ],
+    "western_pathology_en": [
+     "NCBI StatPearls: Schizophrenia (NBK539864)"
+    ],
+    "red_flags_zh": [
+     "NCBI StatPearls: Schizophrenia (NBK539864)"
+    ],
+    "red_flags_en": [
+     "NCBI StatPearls: Schizophrenia (NBK539864)"
+    ],
+    "risk_factors_zh": [
+     "NCBI StatPearls: Schizophrenia (NBK539864)"
+    ],
+    "risk_factors_en": [
+     "NCBI StatPearls: Schizophrenia (NBK539864)"
+    ],
+    "related_eastern_diseases": [
+     "clinical correlation between TCM disease/pattern definitions and DSM-5/ICD-10 criteria for this condition; not a formal cross-nosology guideline"
+    ],
+    "related_patterns": [
+     "clinical correlation between TCM disease/pattern definitions and DSM-5/ICD-10 criteria for this condition; not a formal cross-nosology guideline"
+    ]
+   }
   },
   {
    "id": "cond.learning_disorder",
@@ -70105,10 +71531,118 @@
    "name_en": "Specific Learning Disorder",
    "category": "psych_sleep",
    "icd_hint": "F81.9",
-   "aliases_zh": [],
-   "aliases_en": [],
+   "aliases_zh": [
+    "學習障礙"
+   ],
+   "aliases_en": [
+    "Learning Disability"
+   ],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "特定學習障礙是一種神經發展性疾病,患者在閱讀、書寫表達或數學運算等特定學業技能上,持續出現顯著低於其年齡、智力與所受教育程度應有的表現,且並非肇因於智能障礙、未矯正的視力或聽力問題、其他精神或神經疾病、社會心理逆境、語言能力不足或教學不當。症狀通常在學齡階段開始顯現,並對學業或職業功能造成明顯干擾,常見亞型包括閱讀障礙(dyslexia)、書寫障礙與數學障礙(dyscalculia)。",
+   "summary_en": "Specific learning disorder is a neurodevelopmental condition in which a person shows persistent, significantly below-expected performance in a specific academic skill — reading, written expression, or mathematics — relative to their age, intelligence, and schooling, and the difficulty is not better explained by intellectual disability, uncorrected vision or hearing problems, other mental or neurological disorders, psychosocial adversity, limited language proficiency, or inadequate instruction. Onset is typically during school-age years and causes clear interference with academic or occupational functioning; recognized subtypes include dyslexia (reading), disorders of written expression, and dyscalculia (mathematics).",
+   "western_context_zh": "西醫透過臨床病史、發展史、家族史、標準化學業成就測驗與智力測驗來診斷,並排除感官與其他病因;確診後主要透過特殊教育介入處理,包括個別化教育計畫(IEP)、結構化多感官閱讀教學、學習輔助科技與考試調整(如延長作答時間),必要時轉介臨床心理師、聽力師或眼科排除感官因素,合併注意力不足過動症等共病時可能另行藥物治療該共病。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western management is diagnostic and educational: clinicians establish the diagnosis through developmental and family history plus standardized achievement and cognitive testing, ruling out sensory and other causes, then coordinate individualized education plans (IEPs), structured multisensory literacy instruction, assistive technology, and academic accommodations (e.g., extended time); referral to audiology, ophthalmology, or psychology excludes sensory or intellectual causes, and any comorbid ADHD is managed separately with its own protocol. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "病理機轉與大腦處理語言、符號或數量訊息的神經迴路發育差異有關,例如閱讀障礙者常見左側顳頂葉與枕顳葉(「視覺文字形式區」)活化模式異於一般人,具中度遺傳性。DSM-5診斷需符合:(1)至少一項學業技能持續困難達六個月以上,雖經介入仍未改善;(2)受影響之學業技能顯著低於該年齡應有水準,並經個別化標準化測驗與臨床評估證實,對學業、職業或日常功能造成顯著干擾;(3)困難始於學齡期(但可能至技能需求超出個人能力時才明顯);(4)排除智能障礙、未矯正視力聽力問題、其他神經或精神疾病、社會心理逆境、語言不熟練或教學不足所致。",
+   "western_pathology_en": "The disorder reflects atypical development of the neural circuits that process language, symbols, or quantity — for example, dyslexia is associated with altered activation patterns in the left temporo-parietal and occipito-temporal (\"visual word form area\") regions — and shows moderate heritability. DSM-5 diagnosis requires: (1) at least one academic skill causing persistent difficulty for six months or more despite targeted intervention; (2) the affected skill performing substantially below age expectations, confirmed by individually administered standardized tests and clinical assessment, with clear interference in academic, occupational, or daily functioning; (3) onset during school-age years (though it may not become fully apparent until skill demands exceed capacity); (4) exclusion of intellectual disability, uncorrected visual or auditory acuity problems, other neurological or mental disorders, psychosocial adversity, limited language proficiency, or inadequate instruction.",
+   "red_flags_zh": [
+    "學業困難合併明顯情緒低落、焦慮或自傷/自殺意念,需優先轉介精神科或心理衛生資源評估,學習障礙兒童青少年續發焦慮憂鬱風險較高",
+    "疑似學習困難但從未做過視力、聽力篩檢,需先排除可矯正的感官問題再下學習障礙診斷",
+    "學業表現全面性落後而非侷限於單一技能領域,需考慮智能障礙或廣泛性發展障礙等其他診斷,轉介完整發展評估"
+   ],
+   "red_flags_en": [
+    "Academic difficulty accompanied by clear low mood, anxiety, or self-harm/suicidal ideation warrants prompt referral to psychiatry or mental health services — learning disorders carry an elevated risk of secondary anxiety and depression in children and adolescents",
+    "Suspected learning difficulty with no prior vision or hearing screening should first rule out a correctable sensory cause before a learning disorder diagnosis is made",
+    "Global (not skill-specific) academic underperformance should prompt consideration of intellectual disability or a broader neurodevelopmental disorder, with referral for full developmental evaluation"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "學習障礙家族史",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: Learning Disorder (NBK554371)"
+    },
+    {
+     "factor": "早產或出生體重過低",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: Learning Disorder (NBK554371)"
+    },
+    {
+     "factor": "產前暴露於酒精或菸草",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Learning Disorder (NBK554371)"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Family history of learning disorders",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: Learning Disorder (NBK554371)"
+    },
+    {
+     "factor": "Prematurity or low birth weight",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: Learning Disorder (NBK554371)"
+    },
+    {
+     "factor": "Prenatal exposure to alcohol or tobacco",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Learning Disorder (NBK554371)"
+    }
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "NCBI StatPearls: Learning Disorder (NBK554371)",
+     "American Psychiatric Association: What Are Specific Learning Disorders? (psychiatry.org, retrieved 2026-08)"
+    ],
+    "summary_en": [
+     "NCBI StatPearls: Learning Disorder (NBK554371)",
+     "American Psychiatric Association: What Are Specific Learning Disorders? (psychiatry.org, retrieved 2026-08)"
+    ],
+    "western_context_zh": [
+     "American Psychiatric Association: What Are Specific Learning Disorders? (psychiatry.org, retrieved 2026-08)"
+    ],
+    "western_context_en": [
+     "American Psychiatric Association: What Are Specific Learning Disorders? (psychiatry.org, retrieved 2026-08)"
+    ],
+    "western_pathology_zh": [
+     "NCBI StatPearls: Learning Disorder (NBK554371)"
+    ],
+    "western_pathology_en": [
+     "NCBI StatPearls: Learning Disorder (NBK554371)"
+    ],
+    "red_flags_zh": [
+     "NCBI StatPearls: Learning Disorder (NBK554371)",
+     "American Academy of Ophthalmology: Joint Statement — Learning Disabilities, Dyslexia, and Vision (aao.org, retrieved 2026-08)"
+    ],
+    "red_flags_en": [
+     "NCBI StatPearls: Learning Disorder (NBK554371)",
+     "American Academy of Ophthalmology: Joint Statement — Learning Disabilities, Dyslexia, and Vision (aao.org, retrieved 2026-08)"
+    ],
+    "risk_factors_zh": [
+     "NCBI StatPearls: Learning Disorder (NBK554371)"
+    ],
+    "risk_factors_en": [
+     "NCBI StatPearls: Learning Disorder (NBK554371)"
+    ],
+    "aliases_zh": [
+     "American Psychiatric Association: What Are Specific Learning Disorders? (psychiatry.org, retrieved 2026-08)"
+    ],
+    "aliases_en": [
+     "American Psychiatric Association: What Are Specific Learning Disorders? (psychiatry.org, retrieved 2026-08)"
+    ],
+    "related_eastern_diseases": [
+     "valid-tdis-ids.txt reviewed; no confident overlapping-presentation match identified"
+    ],
+    "related_patterns": [
+     "valid-pattern-ids.txt reviewed; no confident overlapping-presentation match identified"
+    ]
+   }
   },
   {
    "id": "cond.tourette_syndrome",
@@ -70148,7 +71682,137 @@
     "Complicated Grief"
    ],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "延長哀傷障礙症指喪親後,強烈渴望或持續掛念逝者的哀傷反應,遠超出所屬文化、宗教或年齡層預期的正常哀悼歷程,並伴隨顯著功能損害。DSM-5-TR規定喪親須至少滿12個月(兒童青少年至少6個月)才可診斷,需符合至少一項核心分離苦惱症狀(強烈渴望逝者或持續耽溺於對逝者的思念),加上至少三項附加症狀(如認同混亂、否認死亡帶來的痛苦現實、逃避提醒物、強烈情緒痛苦、難以重新融入社交生活、情感麻木、覺得人生失去意義、強烈孤獨感)並造成臨床顯著痛苦或功能障礙,幾乎每天出現。ICD-11則採較短的6個月門檻與較不嚴格的症狀計數方式。",
+   "summary_en": "Prolonged grief disorder is a bereavement reaction marked by intense yearning for, or persistent preoccupation with, the deceased that exceeds what is expected within the person's culture, religion, or age group, accompanied by significant functional impairment. DSM-5-TR requires the loss to have occurred at least 12 months earlier (6 months for children and adolescents) and requires at least one core separation-distress symptom (intense yearning for the deceased and/or persistent preoccupation with the deceased) plus at least three of eight additional symptoms (e.g., identity disruption, disbelief about the death, avoidance of reminders, intense emotional pain, difficulty reintegrating socially, emotional numbness, feeling that life is meaningless, intense loneliness), occurring nearly every day and causing clinically significant distress or impairment. ICD-11 uses a shorter 6-month threshold with a less rigid symptom-count approach.",
+   "western_context_zh": "西醫先確認喪親時間是否已達診斷門檻,並排除喪親所誘發之重度憂鬱症、創傷後壓力症候群等重疊診斷,治療以哀傷聚焦心理治療(如複雜性哀傷治療)為主要實證介入,合併憂鬱或創傷症狀者可搭配藥物治療與精神科追蹤,並常規評估自殺風險。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western management first confirms that the required time since loss has been met and rules out overlapping diagnoses such as major depressive disorder or PTSD triggered by the bereavement; grief-focused psychotherapy (e.g., complicated grief treatment) is the primary evidence-based intervention, with medication and psychiatric follow-up added for comorbid depression or trauma symptoms, and routine suicide-risk assessment. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "目前對延長哀傷障礙症的神經生物機轉了解有限,推測與依附系統及酬賞迴路調節失常有關(部分影像學研究指出思念逝者時伏隔核等酬賞相關腦區活化),核心病理為喪親引發的急性哀傷未能隨時間自然轉化、整合為持續性的內在連結,而是停滯在強烈渴望與功能損害的狀態。診斷須以標準化時間門檻(DSM-5-TR滿12個月、ICD-11滿6個月)搭配症狀計數,並排除以憂鬱或創傷症狀為主之其他診斷。",
+   "western_pathology_en": "The neurobiology of prolonged grief disorder is still incompletely understood, though it is thought to involve dysregulation of attachment systems and reward circuitry (some imaging studies show activation of reward-related regions such as the nucleus accumbens when bereaved individuals view reminders of the deceased). The core pathology is a failure of the normal acute grief response to resolve and integrate over time, instead remaining fixed in a state of intense yearning and functional impairment. Diagnosis requires meeting a standardized time threshold (12 months in DSM-5-TR, 6 months in ICD-11) plus symptom-count criteria, with exclusion of presentations better explained primarily by depression or trauma.",
+   "red_flags_zh": [
+    "出現自殺意念、計畫或既往自殺企圖史,需優先進行自殺風險評估——喪親後之延長哀傷與自殺風險上升有關",
+    "合併明顯精神病症狀(如聽到/看到逝者的幻覺並影響現實判斷,而非文化認可的短暫感應經驗)需轉介精神科排除其他重大精神疾病",
+    "哀傷反應中出現對自身安全的嚴重忽略(如無法進食飲水、自我照顧全面退化)需評估是否需緊急醫療介入"
+   ],
+   "red_flags_en": [
+    "Any suicidal ideation, plan, or prior suicide attempt requires immediate suicide risk assessment — prolonged grief is associated with elevated suicide risk",
+    "Prominent psychotic features (e.g., hallucinations of the deceased that disrupt reality testing, beyond culturally normative brief sensing experiences) warrant psychiatric referral to exclude another major psychiatric disorder",
+    "Severe self-neglect during grief (e.g., inability to eat or drink, global collapse of self-care) should prompt evaluation for urgent medical intervention"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "與逝者關係緊密程度高(如配偶或子女死亡)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    },
+    {
+     "factor": "逝者死亡方式突然、暴力或非預期(如意外、自殺、暴力致死)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    },
+    {
+     "factor": "既有憂鬱、焦慮病史或不安全依附型態",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "A very close relationship to the deceased (e.g., death of a spouse or child)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    },
+    {
+     "factor": "Sudden, violent, or unexpected death (e.g., accident, suicide, homicide)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    },
+    {
+     "factor": "Pre-existing depression, anxiety, or an insecure attachment style",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "可作為哀傷歷程中失眠、疲勞與身心壓力症狀之輔助支持照護,無法治療哀傷障礙本身之核心病理",
+    "precautions": "有自殺風險或明顯精神病症狀者,針灸不可取代緊急精神科評估與介入",
+    "co_management": "若已由精神科處方抗憂鬱劑等藥物,調整劑量須聯繫原處方醫師",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "May support insomnia, fatigue, and physical stress symptoms during the grief process as adjunct care; no role in treating the core pathology of the grief disorder itself",
+    "precautions": "For patients with suicide risk or prominent psychotic features, acupuncture cannot substitute for urgent psychiatric evaluation and intervention",
+    "co_management": "If antidepressants or other medication are already prescribed by psychiatry, dosage changes must be coordinated with the prescribing physician",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.yu_zheng",
+    "tdis.zang_zao"
+   ],
+   "related_patterns": [
+    "pattern.liver_qi_stagnation",
+    "pattern.heart_spleen_deficiency"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "PMC: Prolonged grief disorder in ICD-11 and DSM-5-TR: differences in prevalence and diagnostic criteria (PMC10881750)",
+     "Psychiatry Online (Focus): Prolonged Grief Disorder — Course, Diagnosis, Assessment, and Treatment (retrieved 2026-08)"
+    ],
+    "summary_en": [
+     "PMC: Prolonged grief disorder in ICD-11 and DSM-5-TR: differences in prevalence and diagnostic criteria (PMC10881750)",
+     "Psychiatry Online (Focus): Prolonged Grief Disorder — Course, Diagnosis, Assessment, and Treatment (retrieved 2026-08)"
+    ],
+    "western_context_zh": [
+     "Psychiatry Online (Focus): Prolonged Grief Disorder — Course, Diagnosis, Assessment, and Treatment (retrieved 2026-08)"
+    ],
+    "western_context_en": [
+     "Psychiatry Online (Focus): Prolonged Grief Disorder — Course, Diagnosis, Assessment, and Treatment (retrieved 2026-08)"
+    ],
+    "western_pathology_zh": [
+     "PMC: Prolonged grief disorder in ICD-11 and DSM-5-TR: differences in prevalence and diagnostic criteria (PMC10881750)"
+    ],
+    "western_pathology_en": [
+     "PMC: Prolonged grief disorder in ICD-11 and DSM-5-TR: differences in prevalence and diagnostic criteria (PMC10881750)"
+    ],
+    "red_flags_zh": [
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "red_flags_en": [
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "risk_factors_zh": [
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "risk_factors_en": [
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "acupuncture_scope_zh": [
+     "clinical judgment: general acupuncture scope-of-practice reasoning applied to this condition; no guideline/RCT source identified this session"
+    ],
+    "acupuncture_scope_en": [
+     "clinical judgment: general acupuncture scope-of-practice reasoning applied to this condition; no guideline/RCT source identified this session"
+    ],
+    "aliases_zh": [
+     "Psychiatry Online (Focus): Prolonged Grief Disorder — Course, Diagnosis, Assessment, and Treatment (retrieved 2026-08)"
+    ],
+    "aliases_en": [
+     "Psychiatry Online (Focus): Prolonged Grief Disorder — Course, Diagnosis, Assessment, and Treatment (retrieved 2026-08)"
+    ],
+    "related_eastern_diseases": [
+     "clinical correlation between TCM disease/pattern definitions and DSM-5/ICD-10 criteria for this condition; not a formal cross-nosology guideline"
+    ],
+    "related_patterns": [
+     "clinical correlation between TCM disease/pattern definitions and DSM-5/ICD-10 criteria for this condition; not a formal cross-nosology guideline"
+    ]
+   }
   },
   {
    "id": "cond.agoraphobia",
@@ -70301,7 +71965,125 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "分離焦慮症指個體對於與主要依附對象(如父母、配偶)分離或預期分離,產生發展階段不相稱且過度的焦慮反應,症狀包含對分離感到反覆強烈苦惱、持續擔心依附對象遭遇不測或自己與依附對象永久分離、因害怕分離而抗拒獨處或外出、反覆做出與分離相關的惡夢及身體症狀(如頭痛、腹痛、心悸)。兒童青少年症狀須持續至少四週,成人則通常需六個月以上。",
+   "summary_en": "Separation anxiety disorder involves developmentally inappropriate and excessive anxiety related to separation, or anticipated separation, from a primary attachment figure (e.g., parent, spouse). Symptoms include recurrent excessive distress with actual or anticipated separation, persistent worry about harm befalling the attachment figure or about permanent separation, reluctance to be alone or go out due to fear of separation, and recurrent separation-themed nightmares and somatic symptoms (e.g., headache, abdominal pain, palpitations). Symptoms must persist at least 4 weeks in children/adolescents and typically 6 months or longer in adults.",
+   "western_context_zh": "西醫以病史晤談確認至少三項DSM-5-TR診斷準則,並排除自閉症類群障礙、廣泛性焦慮症、恐慌症等其他病因後確立診斷;治療以認知行為治療(含暴露技巧、家庭參與式介入)為首選,中重度或合併其他焦慮/憂鬱症狀者可搭配選擇性血清素回收抑制劑等藥物,兒童個案常需協同學校系統處理拒學問題。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western diagnosis relies on clinical interview confirming at least three DSM-5-TR criteria, after excluding autism spectrum disorder, generalized anxiety disorder, panic disorder, and other conditions. First-line treatment is cognitive behavioral therapy (including exposure techniques and family-involved interventions), with SSRIs or other medication added for moderate-to-severe cases or comorbid anxiety/depression, and school-based coordination often needed for children with school-refusal behavior. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "病理機轉涉及皮質-邊緣迴路失調、杏仁核反應性過高、下視丘-腦垂體-腎上腺軸功能失衡、神經傳導物質訊號異常,加上不安全依附型態與環境風險因子(如創傷性分離經驗、過度保護之教養型態)交互作用。診斷需符合至少三項DSM-5-TR核心準則,且症狀須造成臨床顯著痛苦或功能障礙,並排除自閉症類群障礙、廣泛性焦慮症、畏懼症等其他病因之解釋。",
+   "western_pathology_en": "The pathophysiology involves dysregulation of cortico-limbic circuits, heightened amygdala reactivity, hypothalamic-pituitary-adrenal axis dysfunction, and altered neurotransmitter signaling, interacting with insecure attachment patterns and environmental risk factors (e.g., traumatic separation experiences, overprotective parenting). Diagnosis requires at least three core DSM-5-TR criteria causing clinically significant distress or impairment, with exclusion of autism spectrum disorder, generalized anxiety disorder, specific phobia, and other conditions as the primary explanation.",
+   "red_flags_zh": [
+    "分離焦慮伴隨明顯自傷或自殺意念,需立即轉介精神科評估",
+    "反覆出現無法以醫學解釋的身體症狀(如反覆腹痛、胸痛、暈厥)須先由兒科/內科排除器質性病因,再歸因於焦慮",
+    "拒學行為合併明顯體重下降、退縮或社交功能全面崩解,需評估是否合併憂鬱症或其他更嚴重之精神疾患"
+   ],
+   "red_flags_en": [
+    "Separation anxiety accompanied by clear self-harm or suicidal ideation requires immediate psychiatric referral",
+    "Recurrent medically unexplained somatic symptoms (e.g., recurrent abdominal pain, chest pain, syncope) should first be worked up by pediatrics/internal medicine to exclude an organic cause before attributing them to anxiety",
+    "School refusal accompanied by significant weight loss, withdrawal, or global collapse of social functioning warrants evaluation for comorbid depression or another more severe psychiatric condition"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "曾經歷創傷性分離事件(如父母離異、重要照顧者死亡)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: Separation Anxiety Disorder (NBK560793)"
+    },
+    {
+     "factor": "過度保護或高度控制之教養型態",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Separation Anxiety Disorder (NBK560793)"
+    },
+    {
+     "factor": "焦慮症家族史或不安全依附型態",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: Separation Anxiety Disorder (NBK560793)"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "History of a traumatic separation event (e.g., parental divorce, death of a key caregiver)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: Separation Anxiety Disorder (NBK560793)"
+    },
+    {
+     "factor": "Overprotective or highly controlling parenting style",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Separation Anxiety Disorder (NBK560793)"
+    },
+    {
+     "factor": "Family history of anxiety disorders or an insecure attachment pattern",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: Separation Anxiety Disorder (NBK560793)"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "可作為焦慮相關身體症狀(如緊張性頭痛、腸胃不適)之輔助照護,無法治療分離焦慮症之核心病理",
+    "precautions": "兒童個案需監護人陪同並確認知情同意,且不可延誤認知行為治療等實證心理治療之介入時機",
+    "co_management": "藥物治療調整須由原處方醫師/精神科決定",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "May support anxiety-related somatic symptoms (e.g., tension headache, GI upset) as adjunct care; no role in treating the core pathology of separation anxiety disorder",
+    "precautions": "Pediatric cases require guardian accompaniment and confirmed informed consent, and must never delay evidence-based psychotherapy such as CBT",
+    "co_management": "Medication adjustment is decided by the prescribing physician/psychiatrist",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_patterns": [
+    "pattern.heart_qi_deficiency",
+    "pattern.heart_gallbladder_qi_deficiency"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "NCBI StatPearls: Separation Anxiety Disorder (NBK560793)"
+    ],
+    "summary_en": [
+     "NCBI StatPearls: Separation Anxiety Disorder (NBK560793)"
+    ],
+    "western_context_zh": [
+     "NCBI StatPearls: Separation Anxiety Disorder (NBK560793)"
+    ],
+    "western_context_en": [
+     "NCBI StatPearls: Separation Anxiety Disorder (NBK560793)"
+    ],
+    "western_pathology_zh": [
+     "NCBI StatPearls: Separation Anxiety Disorder (NBK560793)"
+    ],
+    "western_pathology_en": [
+     "NCBI StatPearls: Separation Anxiety Disorder (NBK560793)"
+    ],
+    "red_flags_zh": [
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "red_flags_en": [
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "risk_factors_zh": [
+     "NCBI StatPearls: Separation Anxiety Disorder (NBK560793)"
+    ],
+    "risk_factors_en": [
+     "NCBI StatPearls: Separation Anxiety Disorder (NBK560793)"
+    ],
+    "acupuncture_scope_zh": [
+     "clinical judgment: general acupuncture scope-of-practice reasoning applied to this condition; no guideline/RCT source identified this session"
+    ],
+    "acupuncture_scope_en": [
+     "clinical judgment: general acupuncture scope-of-practice reasoning applied to this condition; no guideline/RCT source identified this session"
+    ],
+    "related_eastern_diseases": [
+     "valid-tdis-ids.txt reviewed; no confident overlapping-presentation match identified"
+    ],
+    "related_patterns": [
+     "clinical correlation between TCM disease/pattern definitions and DSM-5/ICD-10 criteria for this condition; not a formal cross-nosology guideline"
+    ]
+   }
   },
   {
    "id": "cond.body_dysmorphic_disorder",
@@ -70963,10 +72745,132 @@
    "name_en": "Reactive Attachment Disorder",
    "category": "psych_sleep",
    "icd_hint": "F94.1",
-   "aliases_zh": [],
-   "aliases_en": [],
+   "aliases_zh": [
+    "依附障礙症"
+   ],
+   "aliases_en": [
+    "RAD"
+   ],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "反應性依附障礙症是一種早期兒童期因社會忽視或照顧被剝奪(如頻繁更換主要照顧者、機構教養、長期缺乏情感回應)而發展出的創傷與壓力相關障礙,核心表現為兒童對照顧者持續呈現情緒退縮行為,鮮少主動尋求或回應安慰,並伴隨社會情緒問題(如對他人互動反應極少、正向情緒表達有限、與照顧者互動時出現無法解釋的易怒、悲傷或恐懼)。診斷通常不早於9個月大,症狀多在5歲前出現。",
+   "summary_en": "Reactive attachment disorder is a trauma- and stressor-related disorder of early childhood that develops from social neglect or deprivation of care (e.g., frequent changes of primary caregiver, institutional rearing, chronic lack of emotional responsiveness). Its core feature is a consistent pattern of emotionally withdrawn behavior toward caregivers, with rarely seeking or responding to comfort, alongside social and emotional problems such as minimal responsiveness to others, limited positive affect, and unexplained irritability, sadness, or fearfulness during caregiver interactions. Diagnosis is not usually made before 9 months of age, with symptoms typically appearing before age 5.",
+   "western_context_zh": "西醫診斷需詳細評估照顧史(確認確實存在社會忽視/剝奪或頻繁更換照顧者之病理性照顧型態),並與自閉症類群障礙、去抑制型社會參與症等做鑑別;治療核心在於建立穩定、具情感回應性的照顧環境(如家庭治療、親職教育、依附導向心理治療),同時須依法通報並轉介兒童保護體系評估目前照顧環境安全性。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western diagnosis requires a detailed caregiving history to confirm a pattern of pathological care — genuine social neglect/deprivation or frequent caregiver changes — and differentiation from autism spectrum disorder and disinhibited social engagement disorder. Core management focuses on establishing a stable, emotionally responsive caregiving environment (family therapy, parenting support, attachment-focused psychotherapy), together with mandated reporting and referral to child protective services to assess the safety of the current caregiving environment. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "病理成因為早期照顧被剝奪或嚴重忽視干擾正常依附系統發展,研究顯示兒童期受虐與工作記憶、執行功能缺損有關,嚴重忽視則與左側大腦半球及海馬迴發育不全有關。DSM-5診斷需符合:對照顧者持續情緒退縮行為(遇困擾時很少尋求或回應安慰)、社會情緒障礙(對他人互動反應極少、正向情緒有限、與照顧者互動時出現無法解釋的易怒/悲傷/恐懼)、以及病理性照顧史(社會忽視剝奪、反覆更換主要照顧者致無法形成穩定依附,或於機構等高兒童對照顧者比例環境中成長),且症狀須排除自閉症類群障礙之解釋。",
+   "western_pathology_en": "The disorder arises when early deprivation or severe neglect disrupts normal attachment-system development; childhood abuse has been linked to deficits in working memory and executive function, and severe neglect to underdevelopment of the left cerebral hemisphere and hippocampus. DSM-5 diagnosis requires a consistent pattern of emotionally withdrawn behavior toward caregivers (rarely seeking or responding to comfort when distressed), social and emotional disturbance (minimal responsiveness to others, limited positive affect, unexplained irritability/sadness/fearfulness during caregiver interactions), and a documented history of pathogenic care (social neglect/deprivation, repeated changes of primary caregiver preventing stable attachments, or rearing in settings with high child-to-caregiver ratios such as institutions) — with autism spectrum disorder excluded as the explanation.",
+   "red_flags_zh": [
+    "兒童目前仍處於忽視、虐待或不穩定照顧環境中,持續暴露於病理性照顧來源,須依法通報兒童保護單位並優先確保安全",
+    "與照顧者互動時出現無法解釋之強烈恐懼、明顯自傷行為或發展全面性嚴重退化,需排除急性創傷事件或合併其他嚴重身心疾患",
+    "難以鑑別是否合併自閉症類群障礙(如固著興趣、感覺處理異常、儀式化行為屬自閉症特有表現),需轉介兒童發展專科完整評估"
+   ],
+   "red_flags_en": [
+    "A child still living in an ongoing neglectful, abusive, or unstable caregiving environment must be reported to child protective services under mandatory reporting, with safety prioritized immediately",
+    "Unexplained intense fear toward caregivers, marked self-injurious behavior, or global developmental regression should prompt evaluation for an acute traumatic event or another serious co-occurring condition",
+    "Difficulty distinguishing from autism spectrum disorder (restricted interests, sensory processing differences, and rigid rituals are ASD-specific features) warrants referral for comprehensive child-development evaluation"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "機構教養或反覆更換主要照顧者",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Mayo Clinic: Reactive attachment disorder - Diagnosis & treatment (mayoclinic.org, retrieved 2026-08)"
+    },
+    {
+     "factor": "早期嚴重社會忽視或情感剝奪",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Reactive Attachment Disorder (NBK537155)"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Institutional rearing or repeated changes of primary caregiver",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Mayo Clinic: Reactive attachment disorder - Diagnosis & treatment (mayoclinic.org, retrieved 2026-08)"
+    },
+    {
+     "factor": "Severe early social neglect or emotional deprivation",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Reactive Attachment Disorder (NBK537155)"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "無法治療依附障礙之核心社會情緒病理,亦不適合作為主要照護介入",
+    "precautions": "兒童針灸需特別考量發展年齡、合作度與監護人知情同意,且不可延誤兒童保護通報與依附導向心理治療",
+    "co_management": "兒童保護、依附治療與精神科追蹤由兒童精神科/心理衛生團隊主責,針灸師若接觸此類個案應優先確認轉介狀態",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "No role in treating the core social-emotional pathology of attachment disorder, and not appropriate as a primary intervention",
+    "precautions": "Pediatric acupuncture requires special attention to developmental age, cooperation, and guardian informed consent, and must never delay child-protection reporting or attachment-focused psychotherapy",
+    "co_management": "Child protection, attachment therapy, and psychiatric follow-up are led by a child psychiatry/mental health team; an acupuncturist encountering such a case should first confirm referral status",
+    "evidence": "unknown",
+    "source": null
+   },
+   "field_sources": {
+    "summary_zh": [
+     "NCBI StatPearls: Reactive Attachment Disorder (NBK537155)",
+     "Mayo Clinic: Reactive attachment disorder - Diagnosis & treatment (mayoclinic.org, retrieved 2026-08)"
+    ],
+    "summary_en": [
+     "NCBI StatPearls: Reactive Attachment Disorder (NBK537155)",
+     "Mayo Clinic: Reactive attachment disorder - Diagnosis & treatment (mayoclinic.org, retrieved 2026-08)"
+    ],
+    "western_context_zh": [
+     "Mayo Clinic: Reactive attachment disorder - Diagnosis & treatment (mayoclinic.org, retrieved 2026-08)",
+     "BJPsych Advances: Autism and attachment disorders – how do we tell the difference? (cambridge.org, retrieved 2026-08)"
+    ],
+    "western_context_en": [
+     "Mayo Clinic: Reactive attachment disorder - Diagnosis & treatment (mayoclinic.org, retrieved 2026-08)",
+     "BJPsych Advances: Autism and attachment disorders – how do we tell the difference? (cambridge.org, retrieved 2026-08)"
+    ],
+    "western_pathology_zh": [
+     "NCBI StatPearls: Reactive Attachment Disorder (NBK537155)",
+     "Mayo Clinic: Reactive attachment disorder - Diagnosis & treatment (mayoclinic.org, retrieved 2026-08)"
+    ],
+    "western_pathology_en": [
+     "NCBI StatPearls: Reactive Attachment Disorder (NBK537155)",
+     "Mayo Clinic: Reactive attachment disorder - Diagnosis & treatment (mayoclinic.org, retrieved 2026-08)"
+    ],
+    "red_flags_zh": [
+     "NCBI StatPearls: Reactive Attachment Disorder (NBK537155)",
+     "BJPsych Advances: Autism and attachment disorders – how do we tell the difference? (cambridge.org, retrieved 2026-08)"
+    ],
+    "red_flags_en": [
+     "NCBI StatPearls: Reactive Attachment Disorder (NBK537155)",
+     "BJPsych Advances: Autism and attachment disorders – how do we tell the difference? (cambridge.org, retrieved 2026-08)"
+    ],
+    "risk_factors_zh": [
+     "Mayo Clinic: Reactive attachment disorder - Diagnosis & treatment (mayoclinic.org, retrieved 2026-08)",
+     "NCBI StatPearls: Reactive Attachment Disorder (NBK537155)"
+    ],
+    "risk_factors_en": [
+     "Mayo Clinic: Reactive attachment disorder - Diagnosis & treatment (mayoclinic.org, retrieved 2026-08)",
+     "NCBI StatPearls: Reactive Attachment Disorder (NBK537155)"
+    ],
+    "acupuncture_scope_zh": [
+     "clinical judgment: general acupuncture scope-of-practice reasoning applied to this condition; no guideline/RCT source identified this session"
+    ],
+    "acupuncture_scope_en": [
+     "clinical judgment: general acupuncture scope-of-practice reasoning applied to this condition; no guideline/RCT source identified this session"
+    ],
+    "aliases_zh": [
+     "NCBI StatPearls: Reactive Attachment Disorder (NBK537155)"
+    ],
+    "aliases_en": [
+     "NCBI StatPearls: Reactive Attachment Disorder (NBK537155)"
+    ],
+    "related_eastern_diseases": [
+     "valid-tdis-ids.txt reviewed; no confident overlapping-presentation match identified"
+    ],
+    "related_patterns": [
+     "valid-pattern-ids.txt reviewed; no confident overlapping-presentation match identified"
+    ]
+   }
   },
   {
    "id": "cond.bronchiectasis",
@@ -73818,7 +75722,146 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "蜘蛛膜下腔出血是指血液積聚於蛛網膜與軟腦膜之間的蜘蛛膜下腔,約85%為非外傷性,主因腦動脈瘤破裂所致,屬於神經科急重症;典型表現為「此生最劇烈的頭痛」之雷擊性頭痛,常合併噁心嘔吐、頸部僵硬及意識程度改變,需立即就醫。",
+   "summary_en": "Subarachnoid hemorrhage (SAH) is bleeding into the subarachnoid space between the arachnoid membrane and the pia mater. About 85% of non-traumatic cases result from a ruptured cerebral aneurysm, making this a neurologic emergency. The classic presentation is a thunderclap headache described as \"the worst headache of my life,\" often with nausea/vomiting, neck stiffness, and altered consciousness — requiring immediate medical attention.",
+   "western_context_zh": "西醫處理為急重症流程:疑似個案立即安排非顯影腦部電腦斷層,陰性但高度懷疑者續行腰椎穿刺;確診後由神經外科/神經介入科評估動脈瘤處置(開顱夾閉或血管內線圈栓塞),並於加護病房監測腦血管痙攣、再出血、腦積水等併發症,急性期後方進入復健科主導之神經復健。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western management follows an emergency protocol: suspected cases receive an immediate non-contrast head CT; if negative but suspicion remains high, lumbar puncture follows. Once confirmed, neurosurgery/neurointerventional radiology determines aneurysm treatment (surgical clipping or endovascular coiling), and the patient is monitored in intensive care for complications such as vasospasm, rebleeding, and hydrocephalus. Only after the acute phase does neurologic rehabilitation, led by rehabilitation medicine, begin. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "血液進入蜘蛛膜下腔後,一方面直接刺激腦膜引起劇烈頭痛及腦膜刺激徵象(頸部僵硬),另一方面血液分解產物可誘發腦血管痙攣,造成延遲性腦缺血,是急性期後主要的致病致死原因之一;此外血液可阻塞蜘蛛膜顆粒影響腦脊髓液再吸收,導致急性或慢性水腦症。僅約半數動脈瘤性蜘蛛膜下腔出血病人以典型雷擊性頭痛表現,另有近二成頭痛是在數分鐘內漸進發展,故臨床上不可因頭痛非「瞬間達到最高峰」而排除此診斷。",
+   "western_pathology_en": "Once blood enters the subarachnoid space, it directly irritates the meninges, causing severe headache and meningismus (neck stiffness). Breakdown products of the blood can also trigger cerebral vasospasm, causing delayed cerebral ischemia — a major cause of morbidity and mortality after the acute bleed. Blood can also obstruct arachnoid granulations and impair CSF reabsorption, leading to acute or chronic hydrocephalus. Only about half of aneurysmal SAH patients present with a truly instantaneous thunderclap headache; nearly 20% have a headache that builds gradually over minutes — so a headache that isn't instantly maximal at onset should not be used to exclude the diagnosis.",
+   "red_flags_zh": [
+    "「此生最劇烈頭痛」之突發性頭痛(雷擊性頭痛)無論是否合併其他神經學症狀,均需視為蜘蛛膜下腔出血高度疑似個案,立即送急診安排腦部影像",
+    "頭痛合併意識程度改變、癲癇發作或局部神經學缺損(如複視、眼瞼下垂等提示動脈瘤壓迫顱神經之「前哨性」徵象),為極高危險徵象,需立即急診處置",
+    "頭痛合併頸部僵硬、畏光,即使無明顯意識改變,仍需優先排除出血或腦膜炎等急症,不可視為一般偏頭痛或緊張型頭痛處理"
+   ],
+   "red_flags_en": [
+    "A sudden 'worst headache of my life' (thunderclap headache), with or without other neurologic symptoms, should be treated as highly suspicious for subarachnoid hemorrhage and warrants immediate emergency neuroimaging",
+    "Headache with altered consciousness, seizure, or a focal neurologic deficit (e.g., diplopia or ptosis suggesting a 'sentinel' cranial nerve palsy from aneurysmal compression) is a very high-risk sign requiring immediate emergency care",
+    "Headache with neck stiffness and photophobia, even without obvious altered consciousness, still needs urgent evaluation to rule out hemorrhage or meningitis rather than being managed as ordinary migraine or tension-type headache"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "高血壓",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    },
+    {
+     "factor": "吸菸",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    },
+    {
+     "factor": "一等親曾患腦動脈瘤或蜘蛛膜下腔出血",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    },
+    {
+     "factor": "過量飲酒",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    },
+    {
+     "factor": "多囊腎病史",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Hypertension",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    },
+    {
+     "factor": "Smoking",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    },
+    {
+     "factor": "First-degree relative with cerebral aneurysm or subarachnoid hemorrhage",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    },
+    {
+     "factor": "Heavy alcohol use",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    },
+    {
+     "factor": "History of polycystic kidney disease",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "急性期蜘蛛膜下腔出血屬神經外科/神經加護急重症,針灸不適用於急性期處置;若病人已由神經外科完成動脈瘤處置且進入穩定復健期,針灸可能作為中風後復健(如中風後肢體功能、疼痛)之輔助介入,比照一般中風復健原則",
+    "precautions": "急性期或未處置動脈瘤之疑似個案絕對避免針灸介入,以免延誤送醫;復健期若病人仍有腦血管痙攣、顱內壓不穩定等疑慮,治療前應確認醫療團隊已排除相關風險",
+    "co_management": "任何復健期介入均應與神經外科/復健科團隊協調治療時程與強度,不可自行判斷病人已脫離急性風險期",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "Acute-phase subarachnoid hemorrhage is a neurosurgical/neuro-ICU emergency; acupuncture has no role in acute management. Once neurosurgery has treated the aneurysm and the patient has entered stable rehabilitation, acupuncture may serve as an adjunct in post-stroke rehabilitation (limb function, pain), following general stroke-rehabilitation principles",
+    "precautions": "Acupuncture must never be given during the acute phase or in a suspected case with an untreated aneurysm, to avoid delaying transfer for emergency care; if concerns about vasospasm or unstable intracranial pressure remain during rehabilitation, confirm the medical team has cleared these risks before treatment",
+    "co_management": "Any rehabilitation-phase intervention should be coordinated with the neurosurgery/rehabilitation team on timing and intensity — never independently judge that a patient has passed the acute-risk period",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.zhong_feng",
+    "tdis.tou_tong"
+   ],
+   "related_patterns": [
+    "pattern.liver_yang_rising",
+    "pattern.liver_wind",
+    "pattern.fire"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "NCBI StatPearls: Subarachnoid Hemorrhage (NBK441958)"
+    ],
+    "summary_en": [
+     "NCBI StatPearls: Subarachnoid Hemorrhage (NBK441958)"
+    ],
+    "western_context_zh": [
+     "NCBI StatPearls: Subarachnoid Hemorrhage (NBK441958)"
+    ],
+    "western_context_en": [
+     "NCBI StatPearls: Subarachnoid Hemorrhage (NBK441958)"
+    ],
+    "western_pathology_zh": [
+     "NCBI StatPearls: Subarachnoid Hemorrhage (NBK441958)",
+     "LITFL: Thunderclap headache"
+    ],
+    "western_pathology_en": [
+     "NCBI StatPearls: Subarachnoid Hemorrhage (NBK441958)",
+     "LITFL: Thunderclap headache"
+    ],
+    "red_flags_zh": [
+     "NCBI StatPearls: Subarachnoid Hemorrhage (NBK441958)",
+     "PMC12092147: 'Sentinel Oculomotor Nerve Palsy': A Harbinger of Subarachnoid Hemorrhage"
+    ],
+    "red_flags_en": [
+     "NCBI StatPearls: Subarachnoid Hemorrhage (NBK441958)",
+     "PMC12092147: 'Sentinel Oculomotor Nerve Palsy': A Harbinger of Subarachnoid Hemorrhage"
+    ],
+    "risk_factors_zh": [
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "risk_factors_en": [
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ]
+   }
   },
   {
    "id": "cond.peroneal_nerve_entrapment",
@@ -73830,7 +75873,133 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "腓神經壓迫(總腓神經病變)是下肢最常見的嵌壓性神經病變,好發於腓骨頭處神經受壓迫或牽拉,臨床表現為患側垂足(足下垂)、足背外側及小腿外側感覺異常,常因久蹲、翹腳、外部直接壓迫(如石膏固定)或快速大量體重減輕而誘發。",
+   "summary_en": "Common peroneal nerve entrapment at the fibular head is the most common entrapment mononeuropathy of the lower extremity. It presents with foot drop and sensory disturbance over the dorsum of the foot and lateral lower leg, and is commonly precipitated by prolonged squatting, habitual leg-crossing, direct external compression (e.g., a tight cast), or rapid significant weight loss.",
+   "western_context_zh": "西醫評估以病史及理學檢查(踝背屈及外翻肌力、Tinel氏徵象)為主,搭配神經傳導檢查/肌電圖定位病灶並評估嚴重度,影像學(超音波或MRI)用於排除腫塊性病灶壓迫;垂足明顯或持續進展者由骨科/神經外科評估手術減壓之適應性,合併足踝副木輔具由復健科安排。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western evaluation relies on history and exam (ankle dorsiflexion/eversion strength, Tinel's sign), with nerve conduction studies/EMG to localize and grade severity, and imaging (ultrasound or MRI) to exclude a mass compressing the nerve. Marked or progressive foot drop is referred to orthopedics/neurosurgery for evaluation of surgical decompression, with ankle-foot orthosis fitting arranged through rehabilitation medicine. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "總腓神經在膕窩繞經股二頭肌長頭後方,於腓骨頸處僅由皮下軟組織覆蓋而位置表淺,是全身神經最易受外部直接壓迫的部位之一;於此分出腓深神經與腓淺神經。壓迫、牽拉或缺血性損傷造成神經傳導阻滯,使脛前肌、腓骨肌等踝背屈及外翻肌群產生「抗重力無力」,臨床表現為典型的垂足步態(跨閾步態)及對應皮節感覺異常。糖尿病等代謝性疾病會增加神經對壓迫的易感性。",
+   "western_pathology_en": "The common peroneal nerve courses posterolaterally behind the biceps femoris long head before wrapping superficially around the fibular neck, where it is covered by only a thin layer of subcutaneous tissue — making it one of the most externally compressible nerves in the body. It divides into deep and superficial peroneal branches near this point. Compression, traction, or ischemic injury here blocks conduction, producing antigravity weakness of the tibialis anterior and peroneal muscles (dorsiflexors/evertors) and the classic foot-drop, high-stepping gait, along with sensory disturbance in the corresponding dermatome. Metabolic conditions such as diabetes increase the nerve's susceptibility to compression injury.",
+   "red_flags_zh": [
+    "垂足於短時間內快速進展或合併明顯肌肉萎縮,需儘速轉介評估是否有需手術減壓之病灶(如腫塊壓迫)",
+    "垂足合併同側下肢多條神經分布之無力或感覺喪失(非侷限於腓神經分布),需排除腰薦神經叢病變或脊髓病灶等更廣泛病因",
+    "外傷後(如腓骨骨折、膝關節脫臼)合併垂足及肢體遠端脈搏減弱或冰冷,需立即評估血管損傷之可能性"
+   ],
+   "red_flags_en": [
+    "Rapidly progressive foot drop or significant muscle wasting warrants prompt referral to evaluate for a compressive mass lesion that may need surgical decompression",
+    "Foot drop with weakness or sensory loss extending beyond the peroneal nerve distribution should raise concern for a lumbosacral plexopathy or spinal cord lesion rather than isolated peroneal entrapment",
+    "Foot drop after trauma (e.g., fibular fracture, knee dislocation) with a cold or pulseless distal limb requires immediate evaluation for vascular injury"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "習慣性翹腳或久蹲姿勢",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Orthopedic Reviews: An Update on Peroneal Nerve Entrapment and Neuropathy"
+    },
+    {
+     "factor": "糖尿病",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Orthopedic Reviews: An Update on Peroneal Nerve Entrapment and Neuropathy"
+    },
+    {
+     "factor": "短期內快速大量體重減輕",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Orthopedic Reviews: An Update on Peroneal Nerve Entrapment and Neuropathy"
+    },
+    {
+     "factor": "石膏固定或其他長時間外部壓迫腓骨頭處",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Orthopedic Reviews: An Update on Peroneal Nerve Entrapment and Neuropathy"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Habitual leg-crossing or prolonged squatting",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Orthopedic Reviews: An Update on Peroneal Nerve Entrapment and Neuropathy"
+    },
+    {
+     "factor": "Diabetes mellitus",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Orthopedic Reviews: An Update on Peroneal Nerve Entrapment and Neuropathy"
+    },
+    {
+     "factor": "Rapid significant weight loss over a short period",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Orthopedic Reviews: An Update on Peroneal Nerve Entrapment and Neuropathy"
+    },
+    {
+     "factor": "Cast immobilization or other prolonged external compression at the fibular head",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Orthopedic Reviews: An Update on Peroneal Nerve Entrapment and Neuropathy"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "對輕度、非進行性之感覺異常或肌肉緊繃可作為輔助照護,惟明顯肌力喪失(垂足)之神經傳導阻滯本身無法透過針灸逆轉",
+    "precautions": "腓骨頭處為神經表淺易受壓迫部位,應避免於該處直接深刺或長時間留針加重局部壓迫,治療後應持續評估肌力是否惡化",
+    "co_management": "垂足進行性惡化或懷疑結構性壓迫者,應轉介骨科/神經科評估手術介入時機,不應僅以針灸觀察等待",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "May serve as adjunct care for mild, non-progressive sensory disturbance or muscle tightness, but cannot reverse the conduction block underlying marked motor loss (foot drop)",
+    "precautions": "The fibular head is a superficial, compression-prone site — avoid direct deep needling or prolonged needle retention there that could add to local compression; continue to reassess motor strength for worsening after treatment",
+    "co_management": "Progressively worsening foot drop or suspected structural compression should be referred to orthopedics/neurology for evaluation of surgical timing rather than managed with watchful acupuncture alone",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.bi_zheng",
+    "tdis.wei_zheng",
+    "tdis.ma_mu"
+   ],
+   "related_patterns": [
+    "pattern.channel_qi_blood_obstruction",
+    "pattern.qi_blood_deficiency",
+    "pattern.wind_damp_bi"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "Orthopedic Reviews: An Update on Peroneal Nerve Entrapment and Neuropathy",
+     "NCBI StatPearls: Peroneal Nerve Injury (NBK549859)"
+    ],
+    "summary_en": [
+     "Orthopedic Reviews: An Update on Peroneal Nerve Entrapment and Neuropathy",
+     "NCBI StatPearls: Peroneal Nerve Injury (NBK549859)"
+    ],
+    "western_context_zh": [
+     "NCBI StatPearls: Foot Drop (NBK554393)"
+    ],
+    "western_context_en": [
+     "NCBI StatPearls: Foot Drop (NBK554393)"
+    ],
+    "western_pathology_zh": [
+     "Orthopedic Reviews: An Update on Peroneal Nerve Entrapment and Neuropathy"
+    ],
+    "western_pathology_en": [
+     "Orthopedic Reviews: An Update on Peroneal Nerve Entrapment and Neuropathy"
+    ],
+    "red_flags_zh": [
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "red_flags_en": [
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "risk_factors_zh": [
+     "Orthopedic Reviews: An Update on Peroneal Nerve Entrapment and Neuropathy"
+    ],
+    "risk_factors_en": [
+     "Orthopedic Reviews: An Update on Peroneal Nerve Entrapment and Neuropathy"
+    ]
+   }
   },
   {
    "id": "cond.radial_nerve_palsy",
@@ -73839,10 +76008,150 @@
    "name_en": "Radial Nerve Palsy",
    "category": "neuro",
    "icd_hint": "G56.30",
-   "aliases_zh": [],
-   "aliases_en": [],
+   "aliases_zh": [
+    "週六夜麻痺"
+   ],
+   "aliases_en": [
+    "Saturday night palsy"
+   ],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "橈神經麻痺是橈神經於其解剖路徑(最常見於肱骨螺旋溝處)受壓迫或損傷所致的周邊神經病變,典型表現為患側垂腕(腕下垂)及手指、拇指伸展無力,合併手背橈側感覺異常。俗稱「週六夜麻痺(Saturday night palsy)」即指因熟睡或酒醉時上臂長時間受壓所致之神經失用症。",
+   "summary_en": "Radial nerve palsy is a peripheral neuropathy from compression or injury to the radial nerve along its course — most commonly at the humeral spiral groove — producing the characteristic wrist drop with weak finger and thumb extension and sensory disturbance over the radial dorsum of the hand. \"Saturday night palsy\" refers specifically to a neurapraxia from prolonged compression of the upper arm during deep sleep or alcohol intoxication.",
+   "western_context_zh": "西醫評估以病史(是否有外傷、骨折、長時間壓迫史)及理學檢查(腕伸肌、指伸肌肌力、感覺分布)為主,合併神經傳導檢查/肌電圖定位及評估嚴重度;因肱骨骨幹骨折所致者需骨科同步評估骨折處置,單純壓迫性神經失用症多可於數週至6個月內自行恢復,期間搭配副木及復健維持關節活動度。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western evaluation relies on history (trauma, fracture, prolonged compression) and exam (wrist/finger extensor strength, sensory distribution), with nerve conduction studies/EMG to localize and grade the injury. When associated with a humeral shaft fracture, orthopedics co-manages fracture care; a simple compressive neurapraxia typically recovers spontaneously over weeks to six months, supported by splinting and rehabilitation to maintain joint range of motion in the interim. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "橈神經沿肱骨後外側螺旋溝走行,此處緊貼骨面且缺乏軟組織保護,是最常見的壓迫部位;肱骨骨幹骨折、長時間外部壓迫(如上臂枕靠硬物、不當使用腋下拐杖)、或鉛中毒等全身性/代謝性因素均可造成神經傳導阻斷。因橈神經主要支配腕、指、拇指伸肌群,損傷後呈現典型垂腕姿勢(前臂水平放置時手腕呈鬆弛屈曲),多數週六夜麻痺型態之神經失用症預後良好,6個月內可完全恢復。",
+   "western_pathology_en": "The radial nerve runs along the posterolateral spiral groove of the humerus, where it lies directly against bone with little soft-tissue protection — the most common site of compression. Humeral shaft fractures, prolonged external compression (resting the upper arm against a hard surface, improper axillary crutch use), or systemic/metabolic causes such as lead toxicity can all block nerve conduction. Because the radial nerve supplies the wrist, finger, and thumb extensors, injury produces the characteristic wrist-drop posture (a flaccid, flexed wrist when the forearm is held horizontal). Saturday-night-palsy-type neurapraxia generally has a good prognosis, with full recovery expected within six months.",
+   "red_flags_zh": [
+    "垂腕合併肱骨骨幹骨折病史,需優先評估是否為骨折直接損傷神經,並與骨科同步處理,不可僅視為單純壓迫性神經失用症",
+    "外傷後垂腕合併患肢遠端脈搏減弱、蒼白或劇烈疼痛,需立即評估血管損傷或急性腔室症候群之可能性",
+    "垂腕持續超過預期恢復時間(如3-6個月無改善跡象)或呈進行性惡化,需轉介評估是否需手術探查"
+   ],
+   "red_flags_en": [
+    "Wrist drop with a history of humeral shaft fracture requires priority evaluation for direct nerve injury from the fracture, co-managed with orthopedics, rather than being assumed to be simple compressive neurapraxia",
+    "Post-traumatic wrist drop with a weak/absent distal pulse, pallor, or severe pain requires immediate evaluation for vascular injury or acute compartment syndrome",
+    "Wrist drop persisting beyond the expected recovery window (e.g., no improvement by 3-6 months) or progressively worsening warrants referral to evaluate for surgical exploration"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "肱骨骨幹骨折",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: Wrist Drop (NBK532993)"
+    },
+    {
+     "factor": "熟睡或酒精/藥物影響意識下上臂長時間受壓(週六夜麻痺)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Cureus: The 'Dangles' — Wrist, Finger and Thumb Drop: A Case Report of Saturday Night Palsy"
+    },
+    {
+     "factor": "不當使用腋下拐杖",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Wrist Drop (NBK532993)"
+    },
+    {
+     "factor": "鉛暴露/鉛中毒",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Wrist Drop (NBK532993)"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Humeral shaft fracture",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: Wrist Drop (NBK532993)"
+    },
+    {
+     "factor": "Prolonged upper-arm compression during deep sleep or alcohol/substance-impaired consciousness (Saturday night palsy)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Cureus: The 'Dangles' — Wrist, Finger and Thumb Drop: A Case Report of Saturday Night Palsy"
+    },
+    {
+     "factor": "Improper axillary crutch use",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Wrist Drop (NBK532993)"
+    },
+    {
+     "factor": "Lead exposure/toxicity",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Wrist Drop (NBK532993)"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "對單純壓迫性神經失用症(如週六夜麻痺)恢復期之肌肉張力、循環及功能促進可作為輔助照護",
+    "precautions": "合併骨折或懷疑血管損傷者,針灸非優先處置,應待骨科/血管評估後再考慮介入;上臂螺旋溝處避免加壓或長時間留針,以免加重局部壓迫",
+    "co_management": "若病人正接受骨折固定或副木治療,應與骨科/復健科協調治療介入時機",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "May serve as adjunct care during the recovery phase of simple compressive neurapraxia (e.g., Saturday night palsy) to support muscle tone, circulation, and function",
+    "precautions": "When a fracture or suspected vascular injury is present, acupuncture is not a priority intervention and should wait until orthopedic/vascular evaluation is complete; avoid pressure or prolonged needle retention at the humeral spiral groove that could add to local compression",
+    "co_management": "If the patient is undergoing fracture fixation or splinting, coordinate treatment timing with orthopedics/rehabilitation medicine",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.wei_zheng",
+    "tdis.ma_mu",
+    "tdis.bi_zheng"
+   ],
+   "related_patterns": [
+    "pattern.channel_qi_blood_obstruction",
+    "pattern.qi_blood_deficiency",
+    "pattern.qi_stagnation_blood_stasis"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "NCBI StatPearls: Wrist Drop (NBK532993)",
+     "NCBI StatPearls: Radial Nerve Injury (NBK537304)"
+    ],
+    "summary_en": [
+     "NCBI StatPearls: Wrist Drop (NBK532993)",
+     "NCBI StatPearls: Radial Nerve Injury (NBK537304)"
+    ],
+    "western_context_zh": [
+     "NCBI StatPearls: Wrist Drop (NBK532993)"
+    ],
+    "western_context_en": [
+     "NCBI StatPearls: Wrist Drop (NBK532993)"
+    ],
+    "western_pathology_zh": [
+     "NCBI StatPearls: Wrist Drop (NBK532993)",
+     "Cureus: The 'Dangles' — Saturday Night Palsy case report"
+    ],
+    "western_pathology_en": [
+     "NCBI StatPearls: Wrist Drop (NBK532993)",
+     "Cureus: The 'Dangles' — Saturday Night Palsy case report"
+    ],
+    "red_flags_zh": [
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "red_flags_en": [
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "risk_factors_zh": [
+     "NCBI StatPearls: Wrist Drop (NBK532993)",
+     "Cureus: Saturday Night Palsy case report"
+    ],
+    "risk_factors_en": [
+     "NCBI StatPearls: Wrist Drop (NBK532993)",
+     "Cureus: Saturday Night Palsy case report"
+    ],
+    "aliases_zh": [
+     "Cureus: The 'Dangles' — Saturday Night Palsy case report"
+    ],
+    "aliases_en": [
+     "Cureus: The 'Dangles' — Saturday Night Palsy case report"
+    ]
+   }
   },
   {
    "id": "cond.radiculopathy",
@@ -73854,7 +76163,138 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "神經根病變是脊神經根受到機械性壓迫、發炎或血管性因素影響所致的神經功能障礙,依受影響節段可分為頸椎神經根病變與腰椎神經根病變,臨床表現為對應皮節之疼痛、麻木、感覺異常,及/或對應肌節之肌力減弱、反射改變,最常見病因為椎間盤突出,其次為骨刺、關節面肥厚或韌帶增厚造成之椎間孔狹窄。",
+   "summary_en": "Radiculopathy is spinal nerve root dysfunction resulting from combined mechanical compression, inflammatory, and vascular factors. It is classified by the affected spinal level — cervical or lumbar radiculopathy — and presents with pain, numbness, and paresthesia in the corresponding dermatome and/or weakness and reflex changes in the corresponding myotome. Disc herniation is the most common cause, followed by osteophyte formation, facet hypertrophy, or ligamentous thickening narrowing the neural foramen.",
+   "western_context_zh": "西醫評估結合病史、理學檢查(如頸椎Spurling氏測試、腰椎直膝抬腿測試)及必要時之神經傳導/肌電圖檢查以確認節段與嚴重度;多數病例以症狀導向的保守治療(活動調整、物理治療、必要時短期止痛藥)為主,持續劇烈或合併進行性神經學缺損者由骨科/神經外科評估影像檢查與手術介入時機。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western evaluation combines history, examination (e.g., the Spurling test for cervical radiculopathy, straight-leg-raise testing for lumbar radiculopathy), and, when needed, nerve conduction studies/EMG to confirm the level and severity. Most cases are managed conservatively — activity modification, physical therapy, short-term analgesics as needed — while persistent severe symptoms or progressive neurologic deficit are referred to orthopedics/neurosurgery for imaging and consideration of surgical intervention. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "神經根病變的病理生理涉及機械性壓迫(椎間盤突出、骨刺、關節面肥厚或韌帶增厚造成椎間孔狹窄)、發炎介質釋放,及神經根局部血流受阻等因素的共同作用,造成神經傳導功能障礙。頸椎神經根病變較腰椎少見,其中C7神經根受影響比例最高(超過半數病例);診斷結合病史、理學檢查(如頸椎Spurling氏測試,具高特異性但敏感度中等,適合用於確認而非篩檢)及電生理檢查綜合判斷。",
+   "western_pathology_en": "The pathophysiology of radiculopathy involves a combination of mechanical compression (disc herniation, osteophytes, facet hypertrophy, or ligamentous thickening narrowing the foramen), inflammatory mediator release, and impaired local blood flow to the nerve root, together disrupting nerve conduction. Cervical radiculopathy is less common than lumbar radiculopathy, with the C7 nerve root affected in more than half of cervical cases. Diagnosis combines history, examination (e.g., the Spurling test, which is highly specific but only moderately sensitive — useful for confirmation rather than screening), and electrodiagnostic testing.",
+   "red_flags_zh": [
+    "雙側下肢疼痛/無力合併鞍狀區(會陰、大腿內側、臀部)感覺喪失、排尿或排便功能障礙,需立即排除馬尾症候群並緊急轉介手術評估,延誤處置可能造成永久性功能喪失",
+    "神經根病變合併進行性肌力惡化(而非僅疼痛)需優先安排影像檢查與外科評估,而非持續保守治療觀察",
+    "合併發燒、近期感染史或免疫抑制狀態者,需排除硬脊膜外膿瘍等感染性病灶"
+   ],
+   "red_flags_en": [
+    "Bilateral leg pain/weakness with saddle-region (perineum, inner thighs, buttocks) sensory loss and bladder or bowel dysfunction requires immediate evaluation for cauda equina syndrome and urgent surgical referral — delayed treatment risks permanent functional loss",
+    "Radiculopathy with progressive motor weakness (not just pain) should prompt imaging and surgical evaluation rather than continued conservative observation",
+    "Fever, recent infection, or an immunosuppressed state accompanying radiculopathy should raise concern for an infectious process such as epidural abscess"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "年齡相關椎間盤退化",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: Cervical Radiculopathy (NBK441828)"
+    },
+    {
+     "factor": "重複性粗重勞動或不良搬運姿勢",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    },
+    {
+     "factor": "吸菸",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    },
+    {
+     "factor": "肥胖",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Age-related disc degeneration",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: Cervical Radiculopathy (NBK441828)"
+    },
+    {
+     "factor": "Repetitive heavy manual labor or poor lifting mechanics",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    },
+    {
+     "factor": "Smoking",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    },
+    {
+     "factor": "Obesity",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "對神經根病變相關之疼痛症狀可作為輔助性疼痛管理選項,惟需注意:英國NICE指引已不再將針灸列為腰痛/坐骨神經痛之常規建議治療,主因實證顯示其效果與安慰性針灸相比差異有限",
+    "precautions": "合併進行性肌力惡化、馬尾症候群徵象或感染性病灶疑慮者,不應以針灸延誤影像檢查與外科轉介;脊椎旁深刺需留意解剖安全深度",
+    "co_management": "已在骨科/神經外科追蹤或使用止痛藥物者,應與原治療團隊協調,針灸作為輔助而非替代性治療",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "May serve as an adjunct pain-management option for radiculopathy-related pain, noting that UK NICE guidance no longer recommends acupuncture as routine care for low back pain/sciatica, largely because evidence shows limited benefit over sham acupuncture",
+    "precautions": "Progressive motor weakness, signs of cauda equina syndrome, or suspicion of an infectious lesion should not have acupuncture delay imaging or surgical referral; deep paraspinal needling requires attention to safe anatomic depth",
+    "co_management": "Patients already followed by orthopedics/neurosurgery or on analgesic medication should have acupuncture coordinated as an adjunct with, not a replacement for, that care team",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.yao_tong",
+    "tdis.bi_zheng"
+   ],
+   "related_patterns": [
+    "pattern.wind_cold_damp_bi",
+    "pattern.qi_stagnation_blood_stasis",
+    "pattern.kidney_deficiency"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "NCBI StatPearls: Cervical Radiculopathy (NBK441828)"
+    ],
+    "summary_en": [
+     "NCBI StatPearls: Cervical Radiculopathy (NBK441828)"
+    ],
+    "western_context_zh": [
+     "NCBI StatPearls: Cervical Radiculopathy (NBK441828)",
+     "PM&R KnowledgeNow: Cervical Radiculopathy"
+    ],
+    "western_context_en": [
+     "NCBI StatPearls: Cervical Radiculopathy (NBK441828)",
+     "PM&R KnowledgeNow: Cervical Radiculopathy"
+    ],
+    "western_pathology_zh": [
+     "NCBI StatPearls: Cervical Radiculopathy (NBK441828)"
+    ],
+    "western_pathology_en": [
+     "NCBI StatPearls: Cervical Radiculopathy (NBK441828)"
+    ],
+    "red_flags_zh": [
+     "Legent Spine / AANS: Cauda Equina Syndrome red flag symptoms"
+    ],
+    "red_flags_en": [
+     "Legent Spine / AANS: Cauda Equina Syndrome red flag symptoms"
+    ],
+    "risk_factors_zh": [
+     "NCBI StatPearls: Cervical Radiculopathy (NBK441828)"
+    ],
+    "risk_factors_en": [
+     "NCBI StatPearls: Cervical Radiculopathy (NBK441828)"
+    ],
+    "acupuncture_scope_zh": [
+     "NICE Guideline NG59: Low back pain and sciatica in over 16s (NBK562933); BackCare: NICE drops acupuncture from back pain guidelines"
+    ],
+    "acupuncture_scope_en": [
+     "NICE Guideline NG59: Low back pain and sciatica in over 16s (NBK562933); BackCare: NICE drops acupuncture from back pain guidelines"
+    ]
+   }
   },
   {
    "id": "cond.cidp",
@@ -74782,10 +77222,130 @@
    "name_en": "Medication-Overuse Headache",
    "category": "neuro",
    "icd_hint": "G44.41",
-   "aliases_zh": [],
-   "aliases_en": [],
+   "aliases_zh": [
+    "止痛藥反彈性頭痛",
+    "藥物濫用性頭痛"
+   ],
+   "aliases_en": [
+    "Analgesic rebound headache",
+    "Drug-induced headache"
+   ],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "藥物過度使用性頭痛是一種續發性頭痛,好發於原本已有偏頭痛或緊張型頭痛病史者,因長期、規律地過量使用急性止痛藥物(如止痛藥、麥角胺、triptan類藥物或含鴉片類成分的複方止痛藥)超過三個月,導致頭痛從陣發性轉變為每月15天以上的慢性頭痛型態。好發族群為原有慢性頭痛病史的成年女性。",
+   "summary_en": "Medication-overuse headache (MOH) is a secondary headache disorder that develops in people with a pre-existing primary headache disorder (most often migraine or tension-type headache) who regularly overuse acute headache medications — analgesics, ergotamine, triptans, or opioid-containing combination analgesics — for more than three months, causing headache to transform from an episodic into a chronic pattern occurring on 15 or more days per month. It typically affects adults with a long-standing headache history, more commonly women.",
+   "western_context_zh": "西醫處理著重於「戒斷」與轉銜:先確認符合ICHD-3診斷標準(每月頭痛≥15天,合併過量使用急性止痛藥≥3個月),再由開立處方的醫師擬定漸進式或立即停藥計畫,必要時搭配預防性藥物(如CGRP拮抗劑、乙型阻斷劑、抗癲癇藥)銜接,並監測戒斷期反彈性頭痛與情緒症狀。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western management centers on medication withdrawal and transition: clinicians confirm ICHD-3 criteria (headache ≥15 days/month with overuse of acute medication for >3 months), then the prescribing physician designs a tapering or abrupt-discontinuation plan, often bridging with a preventive medication class (CGRP antagonists, beta-blockers, or anticonvulsants) and monitoring for rebound headache and mood symptoms during withdrawal. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "反覆暴露於急性止痛藥物會調節中樞血清素系統,造成抗傷害感受性血清素路徑的改變與中樞敏感化;NMDA受體、類鴉片系統與細胞膜訊息傳遞的變化也被認為參與其中,使痛覺閾值下降、頭痛頻率與強度隨藥物使用而升高,形成惡性循環。診斷主要依據病史(頭痛天數與藥物使用天數的對應)而非影像檢查,國際頭痛協會ICHD-3標準為目前公認依據。",
+   "western_pathology_en": "Repeated exposure to acute headache medications modulates the central serotonergic system, altering antinociceptive serotonin pathways and driving central sensitization; changes in NMDA-receptor signaling, the endogenous opioid system, and membrane transduction have also been implicated. The result is a lowered pain threshold and a self-perpetuating cycle in which headache frequency and severity increase with continued medication use. Diagnosis relies primarily on history — correlating headache days with medication-use days — against the ICHD-3 criteria rather than on imaging.",
+   "red_flags_zh": [
+    "頭痛型態突然改變(如新出現之雷擊性頭痛、持續加劇或伴隨神經學症狀)需優先排除次發性頭痛病因,而非直接歸因於藥物過度使用",
+    "長期使用鴉片類或含barbiturate(如butalbital)複方止痛藥者,自行驟然停藥可能導致戒斷症狀甚至癲癇發作,應由醫師擬定減藥計畫",
+    "頭痛合併發燒、頸部僵硬或意識改變需立即排除腦膜炎等急症"
+   ],
+   "red_flags_en": [
+    "A sudden change in headache pattern — new thunderclap onset, progressive worsening, or new focal neurologic signs — should prompt evaluation for a secondary headache cause rather than being attributed to medication overuse by default",
+    "Patients on long-term opioid- or barbiturate-containing (e.g., butalbital) combination analgesics should not abruptly self-discontinue; withdrawal can cause rebound symptoms or seizures and needs a physician-directed tapering plan",
+    "Fever, neck stiffness, or altered consciousness accompanying headache warrants immediate evaluation to rule out meningitis or another acute intracranial process"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "本身已有慢性偏頭痛或緊張型頭痛病史",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: Medication-Overuse Headache (NBK538150)"
+    },
+    {
+     "factor": "每月使用急性止痛藥物達10-15天以上",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Medication-Overuse Headache (NBK538150)"
+    },
+    {
+     "factor": "使用鴉片類或含barbiturate複方止痛藥(相較於單方NSAID)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Medication-Overuse Headache (NBK538150)"
+    },
+    {
+     "factor": "合併焦慮或憂鬱等情緒共病",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Pre-existing chronic migraine or tension-type headache disorder",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: Medication-Overuse Headache (NBK538150)"
+    },
+    {
+     "factor": "Acute headache medication use on ≥10-15 days per month",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Medication-Overuse Headache (NBK538150)"
+    },
+    {
+     "factor": "Use of opioid- or barbiturate-containing combination analgesics (vs. single-agent NSAIDs)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Medication-Overuse Headache (NBK538150)"
+    },
+    {
+     "factor": "Comorbid anxiety or depression",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    }
+   ],
+   "related_eastern_diseases": [
+    "tdis.tou_tong"
+   ],
+   "related_patterns": [
+    "pattern.liver_qi_stagnation",
+    "pattern.blood_stasis",
+    "pattern.qi_blood_deficiency"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "NCBI StatPearls: Medication-Overuse Headache (NBK538150)"
+    ],
+    "summary_en": [
+     "NCBI StatPearls: Medication-Overuse Headache (NBK538150)"
+    ],
+    "western_context_zh": [
+     "NCBI StatPearls: Medication-Overuse Headache (NBK538150)"
+    ],
+    "western_context_en": [
+     "NCBI StatPearls: Medication-Overuse Headache (NBK538150)"
+    ],
+    "western_pathology_zh": [
+     "NCBI StatPearls: Medication-Overuse Headache (NBK538150)"
+    ],
+    "western_pathology_en": [
+     "NCBI StatPearls: Medication-Overuse Headache (NBK538150)"
+    ],
+    "red_flags_zh": [
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "red_flags_en": [
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "risk_factors_zh": [
+     "NCBI StatPearls: Medication-Overuse Headache (NBK538150)"
+    ],
+    "risk_factors_en": [
+     "NCBI StatPearls: Medication-Overuse Headache (NBK538150)"
+    ],
+    "aliases_zh": [
+     "NCBI StatPearls: Medication-Overuse Headache (NBK538150)"
+    ],
+    "aliases_en": [
+     "NCBI StatPearls: Medication-Overuse Headache (NBK538150)"
+    ]
+   }
   },
   {
    "id": "cond.menstrual_migraine",
@@ -74797,7 +77357,120 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "月經性偏頭痛是偏頭痛的一種與月經週期密切相關的亞型,依國際頭痛協會標準,發作集中在月經來潮前2天至來潮後3天內,並在至少三分之二的週期中出現。可分為僅於經期前後發作的「純月經性偏頭痛」,與經期外仍有發作的「月經相關性偏頭痛」兩型,好發於生育年齡女性。",
+   "summary_en": "Menstrual migraine is a subtype of migraine tied closely to the menstrual cycle: by International Headache Society criteria, attacks cluster in the window from 2 days before to 3 days after the onset of menses, occurring in at least two of three cycles. It is divided into \"pure menstrual migraine\" (attacks occur only in this perimenstrual window) and \"menstrually-related migraine\" (attacks also occur at other times of the cycle), and it primarily affects women of reproductive age.",
+   "western_context_zh": "西醫處理會先以頭痛日誌確認發作與月經週期的時序關係,急性期用藥與一般偏頭痛類似(如triptan類藥物、NSAID),對頻繁發作者可考慮短期經期預防性投藥或連續性荷爾蒙療法;若病人合併有預兆(aura),開立複方荷爾蒙避孕藥前需由醫師評估中風風險。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western management starts with a headache diary to confirm the attack pattern tracks the menstrual cycle. Acute treatment mirrors migraine generally (triptans, NSAIDs); for frequent attacks, short-term perimenstrual mini-prophylaxis or a continuous hormonal regimen may be considered, and a physician must weigh stroke risk before prescribing combined hormonal contraceptives in anyone with migraine with aura. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "目前主要提出兩個機轉假說:其一為經期前雌激素濃度驟降,透過三叉神經血管系統調控痛覺敏感度而誘發發作(雌激素戒斷假說);其二為子宮內膜前列腺素釋放增加,引起神經性發炎及P物質、降鈣素基因相關胜肽(CGRP)等神經胜肽釋放。然而近期文獻回顧指出,雌激素戒斷假說的實證證據其實有限且結果不一致,機轉仍待釐清。診斷仍以臨床病史(頭痛日誌對照月經週期)為主,無特異性生物標記或影像檢查。",
+   "western_pathology_en": "Two mechanisms have been proposed: estrogen withdrawal — the premenstrual drop in estrogen modulating pain sensitivity through the trigeminovascular system — and increased endometrial prostaglandin release, producing neurogenic inflammation and release of neuropeptides such as substance P and CGRP. A recent critical review, however, found the evidence for the estrogen-withdrawal hypothesis to be limited and inconsistent, so the underlying mechanism remains unsettled. Diagnosis remains clinical, based on a headache diary correlated with the menstrual cycle; there is no specific biomarker or imaging test.",
+   "red_flags_zh": [
+    "偏頭痛合併預兆(視覺閃光、感覺異常等)且正在使用或考慮使用複方荷爾蒙避孕藥者,缺血性腦中風風險上升,應由醫師重新評估用藥選擇",
+    "發作時出現非典型預兆(單側肢體無力、言語不清、意識改變)需立即排除腦中風或其他血管事件,不可逕自視為偏頭痛預兆",
+    "頭痛型態於短期內明顯改變、強度持續加劇或合併發燒/頸部僵硬,需排除次發性頭痛病因"
+   ],
+   "red_flags_en": [
+    "Migraine with aura in a patient using or considering combined hormonal contraceptives carries an increased ischemic stroke risk and warrants medical reassessment of the contraceptive choice",
+    "Atypical aura features — unilateral limb weakness, slurred speech, altered consciousness — should prompt urgent evaluation for stroke or another vascular event rather than being assumed to be migraine aura",
+    "A headache that changes character abruptly, worsens progressively, or is accompanied by fever or neck stiffness needs evaluation for a secondary cause"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "家族偏頭痛病史",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    },
+    {
+     "factor": "本身已有無預兆偏頭痛病史",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Journal of Headache and Pain: Menstrual migraine is caused by estrogen withdrawal — revisiting the evidence (PMC10512516)"
+    },
+    {
+     "factor": "使用較高劑量雌激素之複方避孕藥,尤其合併偏頭痛預兆者",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Cleveland Clinic Journal of Medicine: Combined hormonal contraceptives and migraine — an update on the evidence"
+    },
+    {
+     "factor": "更年期前後荷爾蒙劇烈波動期間",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Family history of migraine",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    },
+    {
+     "factor": "Pre-existing migraine without aura",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Journal of Headache and Pain: Menstrual migraine is caused by estrogen withdrawal — revisiting the evidence (PMC10512516)"
+    },
+    {
+     "factor": "Use of higher-estrogen-dose combined contraceptives, especially with migraine aura",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Cleveland Clinic Journal of Medicine: Combined hormonal contraceptives and migraine — an update on the evidence"
+    },
+    {
+     "factor": "Perimenopausal period of marked hormonal fluctuation",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    }
+   ],
+   "related_eastern_diseases": [
+    "tdis.tou_tong",
+    "tdis.jing_xing_tou_tong"
+   ],
+   "related_patterns": [
+    "pattern.liver_qi_stagnation",
+    "pattern.liver_yang_rising",
+    "pattern.blood_deficiency"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "Journal of Headache and Pain: Menstrual migraine is caused by estrogen withdrawal — revisiting the evidence (PMC10512516)"
+    ],
+    "summary_en": [
+     "Journal of Headache and Pain: Menstrual migraine is caused by estrogen withdrawal — revisiting the evidence (PMC10512516)"
+    ],
+    "western_context_zh": [
+     "Cleveland Clinic Journal of Medicine: Combined hormonal contraceptives and migraine — an update on the evidence"
+    ],
+    "western_context_en": [
+     "Cleveland Clinic Journal of Medicine: Combined hormonal contraceptives and migraine — an update on the evidence"
+    ],
+    "western_pathology_zh": [
+     "Journal of Headache and Pain: Menstrual migraine is caused by estrogen withdrawal — revisiting the evidence (PMC10512516)"
+    ],
+    "western_pathology_en": [
+     "Journal of Headache and Pain: Menstrual migraine is caused by estrogen withdrawal — revisiting the evidence (PMC10512516)"
+    ],
+    "red_flags_zh": [
+     "American Headache Society: Migraine with Aura, Contraceptives and Stroke Risk",
+     "PMC5662520: Hormonal contraceptives and risk of ischemic stroke in women with migraine (EHF/ESC consensus)"
+    ],
+    "red_flags_en": [
+     "American Headache Society: Migraine with Aura, Contraceptives and Stroke Risk",
+     "PMC5662520: Hormonal contraceptives and risk of ischemic stroke in women with migraine (EHF/ESC consensus)"
+    ],
+    "risk_factors_zh": [
+     "Journal of Headache and Pain (PMC10512516)",
+     "Cleveland Clinic Journal of Medicine: Combined hormonal contraceptives and migraine"
+    ],
+    "risk_factors_en": [
+     "Journal of Headache and Pain (PMC10512516)",
+     "Cleveland Clinic Journal of Medicine: Combined hormonal contraceptives and migraine"
+    ]
+   }
   },
   {
    "id": "cond.occipital_neuralgia",
@@ -74809,7 +77482,117 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "枕神經痛是一種源於枕大神經、枕小神經或第三枕神經病灶的陣發性神經痛,表現為由後頸/枕部延伸至頭皮的針刺樣或電擊樣劇痛,發作僅持續數秒至數分鐘,常合併患側頭皮觸痛或感覺異常(allodynia)。約九成病例源於枕大神經病灶。",
+   "summary_en": "Occipital neuralgia is a paroxysmal neuralgic pain arising from the greater occipital, lesser occipital, or third occipital nerve, presenting as brief (seconds-to-minutes) stabbing or electric-shock-like pain radiating from the posterior neck/occiput into the scalp, typically with tenderness or allodynia over the affected nerve's territory. About 90% of cases arise from greater occipital nerve pathology.",
+   "western_context_zh": "西醫診斷除病史與理學檢查(枕部壓痛、扳機點)外,依ICHD-3標準需以局部麻醉阻斷疑似受累神經作為確診依據,若阻斷後疼痛在局部麻醉藥作用期間內明顯緩解則支持診斷;治療選項包含枕神經阻斷注射、肉毒桿菌素、脈衝式射頻或神經刺激,依疼痛科/神經科評估後選用。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Beyond history and physical exam (occipital tenderness, trigger points), ICHD-3 criteria require confirmatory local anesthetic blockade of the suspected nerve, with pain relief lasting at least as long as the anesthetic's duration supporting the diagnosis. Treatment options — occipital nerve block injection, botulinum toxin, pulsed radiofrequency, or nerve stimulation — are selected by pain medicine/neurology. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "疼痛幾乎均源於枕大、枕小或第三枕神經在其解剖路徑上某一點受到壓迫,常見部位包括神經穿出頭半棘肌及斜方肌腱膜處、或於上頸椎(C2)神經根周圍受到骨性或軟組織結構壓迫;局部發炎、外傷、長期姿勢不良或頸椎退化性病變均可能是誘發壓迫的因素。診斷核心在於局部麻醉神經阻斷後疼痛緩解的臨床反應,而非影像學單獨判定。",
+   "western_pathology_en": "The pain almost always arises from compression of the greater occipital, lesser occipital, or third occipital nerve at some point along its course — commonly where it pierces the semispinalis capitis and trapezius aponeurosis, or around the C2 nerve root where bony or soft-tissue structures can compress it. Local inflammation, trauma, sustained poor posture, or cervical spine degeneration can all predispose to this compression. The diagnostic core is the clinical response to local anesthetic nerve blockade rather than imaging alone.",
+   "red_flags_zh": [
+    "枕部疼痛合併發燒、頸部僵硬或意識改變,需排除腦膜炎或顱內感染等急症",
+    "疼痛型態由陣發性轉為持續性、合併局部無力或其他神經學缺損,需排除頸椎腫瘤、動脈剝離或其他結構性病灶,而非逕自診斷為原發性枕神經痛",
+    "近期頭頸部外傷後新發劇烈枕部疼痛,需排除椎動脈剝離等血管性急症"
+   ],
+   "red_flags_en": [
+    "Occipital pain with fever, neck stiffness, or altered consciousness needs evaluation for meningitis or intracranial infection",
+    "A shift from paroxysmal to constant pain, or new focal weakness or other neurologic deficit, should prompt evaluation for a cervical spine tumor, arterial dissection, or other structural lesion rather than a default diagnosis of primary occipital neuralgia",
+    "New severe occipital pain after recent head/neck trauma should raise concern for vertebral artery dissection"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "近期頸部外傷或揮鞭式損傷病史",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: Occipital Neuralgia (NBK538281)"
+    },
+    {
+     "factor": "頸椎退化性關節炎",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: Occipital Neuralgia (NBK538281)"
+    },
+    {
+     "factor": "長時間頭頸前傾姿勢(如長時間低頭使用3C產品)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Recent neck trauma or whiplash injury",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: Occipital Neuralgia (NBK538281)"
+    },
+    {
+     "factor": "Cervical spine osteoarthritis",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: Occipital Neuralgia (NBK538281)"
+    },
+    {
+     "factor": "Prolonged forward-head posture (e.g., extended device use with a flexed neck)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "對源於枕部肌筋膜緊繃或姿勢性因素之枕神經痛,針灸常用於局部及遠端穴位以緩解肌肉張力與疼痛,惟目前無枕神經痛專屬之大型臨床試驗證據",
+    "precautions": "枕部深層穴位進針需留意解剖位置(避開椎動脈行經處),疼痛型態驟變或合併神經學缺損時應優先轉介排除結構性病灶",
+    "co_management": "若病人已接受神經阻斷注射或肉毒桿菌素治療,建議與原治療醫師協調治療時程,避免混淆療效評估",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "For occipital neuralgia arising from suboccipital myofascial tension or postural factors, acupuncture is commonly used at local and distal points to ease muscle tension and pain, though no large occipital-neuralgia-specific trial evidence currently exists",
+    "precautions": "Deep needling at suboccipital points requires attention to anatomy (avoiding the vertebral artery's course); a sudden change in pain pattern or a new neurologic deficit should prompt priority referral to rule out a structural lesion",
+    "co_management": "If the patient has had a nerve block injection or botulinum toxin treatment, coordinate timing with the treating physician to avoid confounding outcome assessment",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.tou_tong"
+   ],
+   "related_patterns": [
+    "pattern.wind_cold_invading_collaterals",
+    "pattern.channel_qi_blood_obstruction",
+    "pattern.qi_stagnation_blood_stasis"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "NCBI StatPearls: Occipital Neuralgia (NBK538281)"
+    ],
+    "summary_en": [
+     "NCBI StatPearls: Occipital Neuralgia (NBK538281)"
+    ],
+    "western_context_zh": [
+     "NCBI StatPearls: Occipital Neuralgia (NBK538281)"
+    ],
+    "western_context_en": [
+     "NCBI StatPearls: Occipital Neuralgia (NBK538281)"
+    ],
+    "western_pathology_zh": [
+     "NCBI StatPearls: Occipital Neuralgia (NBK538281)"
+    ],
+    "western_pathology_en": [
+     "NCBI StatPearls: Occipital Neuralgia (NBK538281)"
+    ],
+    "red_flags_zh": [
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "red_flags_en": [
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "risk_factors_zh": [
+     "NCBI StatPearls: Occipital Neuralgia (NBK538281)"
+    ],
+    "risk_factors_en": [
+     "NCBI StatPearls: Occipital Neuralgia (NBK538281)"
+    ]
+   }
   },
   {
    "id": "cond.glossopharyngeal_neuralgia",
@@ -75096,7 +77879,108 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "正常腦壓性水腦症是一種好發於60歲以上長者的交通性水腦症,典型表現為Hakim-Adams三主徵:漸進性步態障礙(多為寬基底、小碎步、抬腳困難)、認知功能減退、與尿失禁或急迫性排尿障礙。因症狀與退化性失智症或巴金森氏症相似,常被誤診,但屬於少數可透過腦室腹腔分流手術改善的失智症成因之一。",
+   "summary_en": "Idiopathic normal pressure hydrocephalus (iNPH) is a communicating hydrocephalus that primarily affects adults over 60, classically presenting with the Hakim-Adams triad of progressive gait disturbance (wide-based, shuffling, difficulty lifting the feet), cognitive decline, and urinary urgency or incontinence. Because its presentation overlaps with degenerative dementia and Parkinson's disease, it is frequently misdiagnosed, but it is one of the few potentially reversible causes of dementia-like symptoms — treatable with ventriculoperitoneal shunt surgery.",
+   "western_context_zh": "西醫評估以臨床三主徵合併影像學腦室擴大為基礎,依「可能」、「極可能」、「確定」三級診斷架構分層(極可能需腰椎穿刺開口壓≤200mmH2O且其餘腦脊髓液檢查正常、影像符合不成比例腦室擴大合併蜘蛛膜下腔壓迫之DESH徵象,或腰椎穿刺/引流後症狀明顯改善),確診後由神經外科評估腦室腹腔分流手術之適應性,並由神經內科排除其他退化性失智症。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western evaluation is based on the clinical triad combined with imaging evidence of ventriculomegaly, stratified as possible, probable, or definite iNPH (probable requires a lumbar opening pressure ≤200 mm H2O with otherwise normal CSF studies, imaging showing disproportionately enlarged subarachnoid space/DESH, or clear improvement after a CSF tap-test or drainage trial). Once confirmed, neurosurgery evaluates candidacy for ventriculoperitoneal shunt surgery, while neurology works to exclude other degenerative dementias. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "病理機轉為腦脊髓液流動於腦室系統遠端(第四腦室以下)受阻或吸收障礙,造成腦室系統過量堆積(屬「交通性」水腦症);腰椎穿刺當下腦壓可能量測為正常,但實際上存在間歇性壓力升高的情形,故又稱「間歇性壓力水腦症」。長期腦室擴大對周邊白質造成牽張及缺血性壓迫,被認為是步態、認知及排尿症狀的病理生理基礎。",
+   "western_pathology_en": "The underlying mechanism is impaired CSF flow or absorption distal to the fourth ventricle, causing excess CSF accumulation within the ventricular system — hence \"communicating\" hydrocephalus. Lumbar puncture may capture a normal opening pressure at a single point in time even though intermittent pressure elevations occur, which is why the condition is also called \"intermittent pressure hydrocephalus.\" Chronic ventricular enlargement is thought to stretch and ischemically compress adjacent periventricular white matter, underlying the gait, cognitive, and urinary symptoms.",
+   "red_flags_zh": [
+    "步態障礙合併認知快速惡化或意識程度改變,需優先排除急性/亞急性水腦症或其他顱內病灶,而非直接歸類為慢性iNPH",
+    "新發之劇烈頭痛、噁心嘔吐或視力模糊,可能反映顱內壓急性上升,需立即安排神經影像檢查",
+    "步態極不穩定、跌倒風險高者應評估居家防跌措施,避免因跌倒導致顱內出血等併發症"
+   ],
+   "red_flags_en": [
+    "Gait disturbance accompanied by rapidly worsening cognition or altered consciousness should prompt evaluation for acute/subacute hydrocephalus or another intracranial lesion rather than being assumed to be chronic iNPH",
+    "New severe headache, nausea/vomiting, or blurred vision may reflect acutely rising intracranial pressure and needs urgent neuroimaging",
+    "Patients with severe gait instability and high fall risk should have a home fall-prevention assessment, since a fall can precipitate intracranial hemorrhage or other complications"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "年齡60歲以上",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: Idiopathic Normal Pressure Hydrocephalus (NBK542247)"
+    },
+    {
+     "factor": "曾有蜘蛛膜下腔出血、腦膜炎或頭部外傷病史(續發性水腦症之危險因子)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Age over 60",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: Idiopathic Normal Pressure Hydrocephalus (NBK542247)"
+    },
+    {
+     "factor": "History of subarachnoid hemorrhage, meningitis, or head trauma (risk factor for secondary NPH)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "可作為步態訓練、平衡功能及一般虛損症狀(健忘、頭暈)之輔助性照護,無法改變腦脊髓液動力學異常本身",
+    "precautions": "步態極不穩定或跌倒高風險病人,治療前後應注意扶持與環境安全,避免因治療後暈眩加重跌倒風險",
+    "co_management": "確診或疑似iNPH者應由神經外科評估分流手術適應性,針灸不應延誤此類可逆性病因之評估與轉介",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "May serve as adjunct support for gait training, balance, and general deficiency-type symptoms (forgetfulness, dizziness), but cannot correct the underlying CSF-dynamics abnormality",
+    "precautions": "For patients with severe gait instability or high fall risk, ensure support and a safe environment before and after treatment to avoid post-treatment dizziness compounding fall risk",
+    "co_management": "Confirmed or suspected iNPH should be evaluated by neurosurgery for shunt-surgery candidacy; acupuncture should not delay evaluation or referral for this potentially reversible cause",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.jian_wang",
+    "tdis.tan_yin"
+   ],
+   "related_patterns": [
+    "pattern.kidney_yang_deficiency_water_flooding",
+    "pattern.phlegm_damp",
+    "pattern.kidney_essence_deficiency"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "NCBI StatPearls: Idiopathic Normal Pressure Hydrocephalus (NBK542247)"
+    ],
+    "summary_en": [
+     "NCBI StatPearls: Idiopathic Normal Pressure Hydrocephalus (NBK542247)"
+    ],
+    "western_context_zh": [
+     "NCBI StatPearls: Idiopathic Normal Pressure Hydrocephalus (NBK542247)"
+    ],
+    "western_context_en": [
+     "NCBI StatPearls: Idiopathic Normal Pressure Hydrocephalus (NBK542247)"
+    ],
+    "western_pathology_zh": [
+     "NCBI StatPearls: Idiopathic Normal Pressure Hydrocephalus (NBK542247)"
+    ],
+    "western_pathology_en": [
+     "NCBI StatPearls: Idiopathic Normal Pressure Hydrocephalus (NBK542247)"
+    ],
+    "red_flags_zh": [
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "red_flags_en": [
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "risk_factors_zh": [
+     "NCBI StatPearls: Idiopathic Normal Pressure Hydrocephalus (NBK542247)",
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "risk_factors_en": [
+     "NCBI StatPearls: Idiopathic Normal Pressure Hydrocephalus (NBK542247)",
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ]
+   }
   },
   {
    "id": "cond.multiple_system_atrophy",
@@ -75108,7 +77992,99 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "多系統退化症是一種罕見的成人發病、快速進展的神經退化性疾病,病理特徵為寡樹突膠細胞內出現α-突觸核蛋白(alpha-synuclein)異常聚集,臨床上以自律神經功能衰竭(如姿勢性低血壓、排尿障礙)合併巴金森氏症樣運動遲緩僵硬,或小腦性運動失調兩大類表現為主,依主要表現分為MSA-P(巴金森型)與MSA-C(小腦型)。好發於50-60歲成人,病程進展較典型巴金森氏症更快。",
+   "summary_en": "Multiple system atrophy (MSA) is a rare, adult-onset, rapidly progressive neurodegenerative disease characterized pathologically by abnormal alpha-synuclein aggregation within oligodendroglial cells. Clinically it presents with autonomic failure (orthostatic hypotension, urinary dysfunction) combined with either parkinsonian bradykinesia/rigidity (MSA-P) or cerebellar ataxia (MSA-C). Onset is typically in the 50s-60s, and the disease progresses more rapidly than typical Parkinson's disease.",
+   "western_context_zh": "西醫處理以症狀支持性治療與多專科追蹤為主:神經科評估運動症狀對左多巴反應性(MSA通常反應不佳),自律神經科或心臟科處理姿勢性低血壓,泌尿科處理排尿障礙,並定期評估吞嚥與呼吸功能(睡眠喘鳴需盡早轉介),目前無疾病修飾性治療。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western management is symptomatic and multidisciplinary: neurology assesses motor symptoms and response to levodopa (typically poor in MSA), autonomic/cardiology services manage orthostatic hypotension, urology addresses voiding dysfunction, and swallowing/respiratory function are monitored regularly (nocturnal stridor warrants early referral). There is currently no disease-modifying treatment. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "病理特徵為中樞神經系統多處部位(基底核、小腦、腦幹、脊髓中間外側柱等自律神經核團)出現寡樹突膠細胞內α-突觸核蛋白聚集及神經元進行性喪失。依國際運動障礙學會(MDS)MSA診斷準則,分為臨床確診、臨床極可能、及研究用之可能前驅期三個確定性等級,診斷需同時具備自律神經功能衰竭(心血管或泌尿系統)、巴金森症狀(對左多巴反應不佳)或小腦症候群其中之一,並合併支持性motor/non-motor徵象(即所謂的「MSA紅旗徵象」,如發病3年內即出現姿勢不穩跌倒、10年內需輪椅、Pisa氏軀幹側傾徵候、不成比例的頸前屈),同時須排除其他診斷。",
+   "western_pathology_en": "Pathologically, MSA involves alpha-synuclein aggregation within oligodendroglia and progressive neuronal loss across multiple CNS regions — basal ganglia, cerebellum, brainstem, and the intermediolateral columns of the spinal cord that govern autonomic function. Under the current Movement Disorder Society MSA criteria, diagnosis is stratified into clinically established, clinically probable, and a research category of possible prodromal MSA. Diagnosis requires autonomic failure (cardiovascular or urologic) plus either poorly levodopa-responsive parkinsonism or a cerebellar syndrome, supported by motor/non-motor \"MSA red flags\" (e.g., postural instability with falls within 3 years of onset, wheelchair dependence within 10 years, Pisa syndrome, disproportionate antecollis) and exclusion of alternative diagnoses.",
+   "red_flags_zh": [
+    "姿勢性低血壓合併暈厥或跌倒為自律神經衰竭之表現,需心臟科/自律神經科介入評估,並注意跌倒外傷風險",
+    "夜間出現高頻哮鳴聲(stridor)可能反映聲帶外展肌功能異常,有猝死及呼吸道急症風險,需盡快轉介耳鼻喉科/睡眠中心評估",
+    "吞嚥困難合併嗆咳需評估吸入性肺炎風險,必要時轉介語言治療/胃造口評估"
+   ],
+   "red_flags_en": [
+    "Orthostatic hypotension with syncope or falls reflects autonomic failure and requires cardiology/autonomic evaluation, with attention to fall-related injury risk",
+    "Nocturnal high-pitched stridor may indicate vocal cord abductor dysfunction, carries a risk of sudden death and airway emergency, and warrants prompt ENT/sleep-medicine referral",
+    "Dysphagia with coughing on swallowing raises aspiration pneumonia risk and should prompt speech-language/swallow evaluation, with gastrostomy considered when needed"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "年齡50歲以上",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "MedLink Neurology: Multiple system atrophy"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Age over 50",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "MedLink Neurology: Multiple system atrophy"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "可作為顫證/痿證等症狀之輔助性照護,可能有助於一般肌肉僵硬、疼痛及生活品質支持,但無法影響疾病本身的神經退化進程",
+    "precautions": "自律神經功能衰竭病人姿勢性低血壓風險高,治療時應避免病人由臥位/坐位驟然起身,建議採漸進式體位改變,治療室宜留意血壓變化",
+    "co_management": "自律神經症狀(姿勢性低血壓、排尿障礙)之藥物調整應由原治療醫師負責,針灸不應替代其自律神經藥物治療",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "May serve as supportive adjunct care for general muscle stiffness, pain, and quality of life, but cannot alter the underlying neurodegenerative process",
+    "precautions": "Patients with autonomic failure have high orthostatic hypotension risk — avoid having the patient rise abruptly from lying/sitting after treatment; use gradual position changes and monitor blood pressure in the treatment setting",
+    "co_management": "Medication adjustments for autonomic symptoms (orthostatic hypotension, voiding dysfunction) remain the responsibility of the treating physician; acupuncture should not replace autonomic medication management",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.chan_zheng",
+    "tdis.wei_zheng",
+    "tdis.xuan_yun"
+   ],
+   "related_patterns": [
+    "pattern.kidney_essence_deficiency",
+    "pattern.liver_wind",
+    "pattern.qi_blood_deficiency"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "MedLink Neurology: Multiple system atrophy",
+     "PMC10485100: A Review on the Clinical Diagnosis of Multiple System Atrophy"
+    ],
+    "summary_en": [
+     "MedLink Neurology: Multiple system atrophy",
+     "PMC10485100: A Review on the Clinical Diagnosis of Multiple System Atrophy"
+    ],
+    "western_context_zh": [
+     "MedLink Neurology: Multiple system atrophy"
+    ],
+    "western_context_en": [
+     "MedLink Neurology: Multiple system atrophy"
+    ],
+    "western_pathology_zh": [
+     "PMC10485100: A Review on the Clinical Diagnosis of Multiple System Atrophy"
+    ],
+    "western_pathology_en": [
+     "PMC10485100: A Review on the Clinical Diagnosis of Multiple System Atrophy"
+    ],
+    "red_flags_zh": [
+     "PMC10485100: A Review on the Clinical Diagnosis of Multiple System Atrophy",
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "red_flags_en": [
+     "PMC10485100: A Review on the Clinical Diagnosis of Multiple System Atrophy",
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "risk_factors_zh": [
+     "MedLink Neurology: Multiple system atrophy"
+    ],
+    "risk_factors_en": [
+     "MedLink Neurology: Multiple system atrophy"
+    ]
+   }
   },
   {
    "id": "cond.dystonia",
