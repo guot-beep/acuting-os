@@ -280,6 +280,53 @@ grep -c "herb_drug_interactions" js/knowledge.js app.js   # 0 和 0
 (c) 其他排法。**這會決定接下來數十小時的工作方向,所以我沒有自己動手。**
 來源:`docs/research_packs/HERB_CLOUDTCM_LAYER_SCAN.md`。
 
+### A14 · 玉屏風散的君藥「黃耆」只以替代註記形式存在(比較表已經在漏顯示它)
+**問題**:`formula.yu_ping_feng_san` 全部組成只有 3 條:`(蜜炙黃耆)`(`is_alternate:true`)、
+白朮、防風。全庫**唯一**一張「君藥的唯一標記就掛在 `is_alternate` 條目上」的卡
+(用 `node -e` 掃過全部 223 方,見下方指令)——正常的替代註記(如四君子湯的
+`(黨參)`)旁邊都有一條**非替代**的正牌君藥;這張沒有。
+**已有的下游後果**:玉屏風散在 `cmp.qi_tonify` 比較表裡,#89 上的自動列渲染
+(`js/knowledge.js` `AUTO_DIM_FORMULA["組成差異"]`)依既定規則排除 `is_alternate`
+條目——所以那張表現在自動生成的「組成差異」欄**只顯示白朮、防風,黃耆(這帖方
+存在的理由)不會出現**。這不是我這次改的,是既有排除規則撞上這筆本來就不完整的資料。
+**我沒有動這筆資料**:補一條真正的黃耆條目(非替代、標君)需要判斷這是原始資料
+遺漏(該加回黃耆)還是註記打錯(`is_alternate` 該拿掉),兩種修法都在動組成結構,
+我不確定該選哪個。
+**重現**:`node -e 'const j=require("./data/herbs/formulas.json");for(const r of j.records){const c=r.composition||[];const chiefs=c.filter(x=>/君/.test(x.role_zh||""));if(chiefs.length&&!chiefs.some(x=>!x.is_alternate))console.log(r.name_zh)}'`
+
+### A15 · 四神丸:方名寫「四」,組成 6 味(生薑、大棗是否該排除在名稱計數外)
+**問題**:`validate-formula-correctness.js`(2026-08-24 修過誤判後仍在報)標記
+`formula.si_shen_wan` 方名編碼 4 味,實際組成 6 味:補骨脂、吳茱萸、肉豆蔻、
+五味子、生薑、大棗——後兩者不是替代註記(`is_alternate:false`)。
+**我的猜測、沒有寫進資料**:傳統方論常把生薑、大棗視為此方的「藥引/水煎輔料」
+（如《內科摘要》原方「生薑八兩切片,大棗百枚,水煮姜棗」煮湯製丸,不計入「四神」
+之數),但這是我的印象,不是這個 repo 裡任何來源文件說的,不敢當正式判定寫回去。
+**選項**:(a) 若判定屬實,幫 comp 加一個結構欄位(例如 `counts_toward_name:false`)
+標這兩味,比照 `is_alternate` 排除進計數;(b) 查到來源證實/推翻後我再動;
+(c) 維持現狀,方名編碼表本身就是「人工核實過」的清單(見腳本內註解),也可能是
+清單本身該把四神丸拿掉。
+
+### A16 · 甘麥大棗湯:組成無君藥標註
+**問題**:`formula.gan_mai_da_zao_tang` 四味(甘草、小麥、(浮小麥)替代、大棗)
+role_zh 全部是臣/佐,沒有一味標君。《金匱要略》原方是否明確定過君藥,各家說法
+不盡相同(有的以小麥為君,有的以甘草為君)——這是需要查證的方論判斷,我沒有
+自己補上。
+
+### A17 · 銀翹散劑量待補檔:「Zhu Ye」竹葉 vs 該方組成「Dan Zhu Ye」淡竹葉是否同一味藥
+**背景**:`data/imports/formula_doses/formula_dose_staging.json`(僅 5 筆,
+`status:staging_only`、`review_status:draft`,還沒上任何畫面)是從 HKBU 機構典藏
+逐字轉錄的劑量草稿。`formula.yin_qiao_san` 那筆的第 5 味逐字轉錄成「竹葉」
+(pinyin: Zhu Ye),`herb_id` 明確標 `null`、`dose_status:
+source_transcribed_herb_id_pending`——轉錄的人自己就標了「尚待核對」。
+**問題**:`herb.zhu_ye`(竹葉)與 `herb.dan_zhu_ye`(淡竹葉)是藥典裡**不同的兩味藥**
+(禾本科竹葉 vs 淡竹葉/Lophatherum),而銀翹散現有組成用的是「Dan Zhu Ye」。
+兩者藥性相近、古方常混用,但究竟這筆劑量來源(HKBU 掃描頁)寫的是哪一味,
+需要對照原始掃描頁核實,我不會用相近性猜。
+**同一批的另一筆(小柴胡湯「Ban Xia」vs 組成「Zhi Ban Xia」)已經確認是同一味藥**
+(`herb_id` 兩邊都是 `herb.ban_xia`,只是生/製的加工法命名差異)——已修掉驗證器
+對這種情況的誤判,不影響這筆。這筆是唯一還留著的,因為 `herb_id` 本來就是空的。
+**來源**:https://sys01.lib.hkbu.edu.hk/cmed/cmfid/detail.php?id=F00008&lang=chs
+
 ## B. Schema / 結構裁定
 
 ### B1 · 十八反、十九畏無處可放
