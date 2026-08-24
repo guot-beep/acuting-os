@@ -1,5 +1,13 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-24] Codex Handoff — Conditions official provenance B8
+
+- **Exact ids / fields**: only `cond.abnormal_uterine_bleeding`, `cond.ectopic_pregnancy`, `cond.lung_cancer`, and `cond.syphilis`; only `sources` and `field_sources`. No existing medical prose, inline red-flag object, relation, acupoint protocol, Symptoms, herb, or formula canonical data changed.
+- **Official source sets**: ACOG/MedlinePlus/NICHD for AUB; ACOG/MedlinePlus/NICE for ectopic pregnancy; NCI/CDC/MedlinePlus/NICE for lung cancer; CDC condition/treatment/neuro-ocular-otic/pregnancy guidance for syphilis. Acupuncture-scope provenance explicitly means emergency/referral/co-management boundaries, not acupuncture efficacy evidence.
+- **Measured delta**: maturity `175→179 FULL_DETAIL_CANDIDATE`, `330→326 DETAIL_PARTIAL`, `0→0 SKELETON`; direct source entries `656→677`; records with `field_sources` `478→482/505`; records with at least one source remain `245/505`.
+- **Validation**: record-level diff audit passed (`4 ids`, fields exactly `sources,field_sources`); `build-data.js`; condition standard `505/505 clean`; validation ratchet; condition sources (`677`); relation registry; content junk; and `git diff --check` all passed without a new defect.
+- **Explicit exclusions / unresolved**: `cond.systemic_lupus_erythematosus` was excluded because NIAMS/MedlinePlus general disease pages do not directly support all five existing urgency grades. Existing `cond.appendicitis` age/family-history and `cond.bowel_obstruction` mechanical-vs-pseudo-obstruction provenance issues still require a canonical overwrite decision and were not silently certified.
+
 ## [2026-08-24] Codex Handoff — Conditions official provenance B7
 
 - **Branch / integration**: `codex/condition-safety-b1`; latest `origin/main@097481a7` was semantically merged as `24e06a26` before this batch. Main's 114 Symptoms, herb/formula changes, and F-07 restoration were preserved; the four record-level conflicts retained Codex safety content plus main's `acupoint_protocols` and `protocol_status:"unassessed"`.

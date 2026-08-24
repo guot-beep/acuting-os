@@ -1,3 +1,13 @@
+# 2026-08-24 — Codex Conditions 官方欄位溯源 B8
+
+- **範圍**：只補 `cond.abnormal_uterine_bleeding`、`cond.ectopic_pregnancy`、`cond.lung_cancer`、`cond.syphilis` 的 `sources`／`field_sources`；既有醫療文字、紅旗物件、關聯、Symptoms、藥物、方劑與穴位資料均未改。
+- **數字**：`FULL_DETAIL_CANDIDATE 175→179`、`DETAIL_PARTIAL 330→326`、`SKELETON 0→0`；直接來源 `656→677`；有 `field_sources` 的 condition `478→482/505`。
+- **來源與邊界**：使用 ACOG、MedlinePlus、NICE、CDC、NCI、NICHD 多個官方頁；`acupuncture_scope` 只引用急診／轉介／共同照護邊界，明示不是針灸療效證據。
+- **驗證**：逐記錄 diff 僅 4 ids／2 fields；`build-data`、condition standard `505/505`、ratchet、condition sources、relation registry、content-junk、`git diff --check` 全部無新增 defect。
+- **未解**：SLE 因官網不足以直接支撐既有五級 urgency 敘述而未納入；`cond.appendicitis` 精確年齡／家族史與 `cond.bowel_obstruction` mechanical／pseudo-obstruction 來源錯配仍須 canonical 覆蓋決策。
+
+---
+
 # 2026-08-24 下午 — PR #107:還原 F-07 針灸處方(40 筆)+ 修 acupuncture_scope_zh.note 假警訊渲染 bug
 
 Ting 看到卡片顯示「這張卡有 2 個欄位是空的,因為原本的內容被移出了」,要求先移回來。查明兩個
