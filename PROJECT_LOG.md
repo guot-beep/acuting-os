@@ -1,3 +1,13 @@
+# 2026-08-24 — Codex Conditions 肌骨官方內容補強 B12
+
+- **範圍**：只補 `cond.de_quervain`、`cond.ankle_sprain`、`cond.myofascial_pain` 原本空白的 `western_pathology_*`、`etiology_*`、`risk_factors_*`、`acupuncture_scope_*`；以 non-overwrite fill 工具合併來源，未改既有摘要、red flags、relations 或 Symptoms／中藥／方劑／穴位 canonical data。
+- **數字**：`FULL_DETAIL_CANDIDATE 191→194`、`DETAIL_PARTIAL 314→311`、`SKELETON 0→0`；直接來源 `719→722`；三卡 `field_sources` 均 `4→12 keys`；western pathology／etiology／risk factors／acupuncture scope 缺口各再減 3，現為 `17／288／45／71`。
+- **來源與邊界**：使用 AAOS OrthoInfo、North Tees NHS、NHS、AAPM&R、NCBI StatPearls；6 個實際內容頁皆 HTTP 200。De Quervain 與 ankle scope 不推導未具名的針刺深度／角度；myofascial pain 明確區分 dry needling 證據與固定穴位處方。
+- **驗證**：dry-run `30 fields / 3 ids / skipped 0 / missing 0`；逐記錄 diff 僅 3 ids／10 欄；填充檔逐欄 equality、雙語陣列、duplicate-key audit；`build-data`、condition standard `505/505`、ratchet、sources `722`、relation registry、content-junk、maturity audit、`git diff --check` 均無新增 defect。
+- **未解**：仍有 106 個 detail slots 才達 300；`myofascial_pain` 既有 red flags 及前批既有 provenance 未在本批覆蓋，新增 scope 只支撐輔助與共同照護界線。
+
+---
+
 # 2026-08-24 — Codex Conditions 肌骨官方內容補強 B11
 
 - **範圍**：只補 `cond.trigger_finger`、`cond.patellofemoral_pain`、`cond.plantar_fasciitis`、`cond.tmd` 原本空白的 `western_pathology_*`、`etiology_*`、`risk_factors_*`、`acupuncture_scope_*`，並加入逐欄位 provenance；未改 Symptoms、中藥、方劑、穴位 canonical data 或既有正文／紅旗。

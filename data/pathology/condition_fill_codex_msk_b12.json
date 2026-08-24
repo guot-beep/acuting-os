@@ -1,0 +1,154 @@
+{
+  "dataset": "Codex Conditions official MSK detail B12",
+  "policy": "Fill only currently empty bilingual detail fields for three musculoskeletal Conditions. Preserve all existing canonical prose, red flags, relations, and provenance; append official or professional sources. Acupuncture scope does not infer unsourced needling depth, angle, or curative efficacy.",
+  "created": "2026-08-24",
+  "fills": {
+    "cond.de_quervain": {
+      "western_pathology_zh": "拇長展肌（APL）與拇短伸肌（EPB）肌腱共同通過腕橈側第一伸肌腔室。當肌腱受刺激、滑膜性腱鞘增厚時，肌腱與狹窄骨纖維隧道不再匹配，滑動阻力與摩擦增加，因而在拇指或手腕活動時產生橈側腕痛、腫脹或彈響。",
+      "western_pathology_en": "The abductor pollicis longus (APL) and extensor pollicis brevis (EPB) tendons share the first dorsal compartment at the radial wrist. When the tendons become irritated and the synovial sheath thickens, they no longer fit or glide freely within the narrow fibro-osseous tunnel, increasing friction and causing radial-wrist pain, swelling, or catching with thumb and wrist movement.",
+      "etiology_zh": "確切病因尚未完全釐清。腕與拇指反覆或突然增加的負荷可使症狀惡化；手腕或拇指受傷、發炎性疾病，以及妊娠相關荷爾蒙與組織腫脹也可能促成發病。應把這些視為相關或促發因素，而非每一病例都由「過度使用」單獨造成。",
+      "etiology_en": "The exact cause is not completely understood. Repetitive or suddenly increased wrist and thumb loading can worsen symptoms; wrist or thumb injury, inflammatory disease, and pregnancy-related hormonal change and swelling may also contribute. These are associated or precipitating factors, not proof that every case is caused by overuse alone.",
+      "risk_factors_zh": [
+        {"factor": "妊娠與產後期", "direction": "increases", "modifiable": false, "source": "AAOS OrthoInfo: De Quervain's Tenosynovitis"},
+        {"factor": "女性", "direction": "increases", "modifiable": false, "source": "AAOS OrthoInfo: De Quervain's Tenosynovitis"},
+        {"factor": "40–59 歲", "direction": "increases", "modifiable": false, "source": "AAOS OrthoInfo: De Quervain's Tenosynovitis"},
+        {"factor": "類風濕性關節炎", "direction": "increases", "modifiable": false, "source": "AAOS OrthoInfo: De Quervain's Tenosynovitis"},
+        {"factor": "腕與拇指反覆使用或活動量突然改變", "direction": "increases", "modifiable": true, "source": "North Tees and Hartlepool NHS: De Quervain's Tenosynovitis"},
+        {"factor": "拇指或手腕受傷／拉傷", "direction": "increases", "modifiable": false, "source": "North Tees and Hartlepool NHS: De Quervain's Tenosynovitis"}
+      ],
+      "risk_factors_en": [
+        {"factor": "Pregnancy and the postpartum period", "direction": "increases", "modifiable": false, "source": "AAOS OrthoInfo: De Quervain's Tenosynovitis"},
+        {"factor": "Female sex", "direction": "increases", "modifiable": false, "source": "AAOS OrthoInfo: De Quervain's Tenosynovitis"},
+        {"factor": "Age 40–59", "direction": "increases", "modifiable": false, "source": "AAOS OrthoInfo: De Quervain's Tenosynovitis"},
+        {"factor": "Rheumatoid arthritis", "direction": "increases", "modifiable": false, "source": "AAOS OrthoInfo: De Quervain's Tenosynovitis"},
+        {"factor": "Repetitive wrist and thumb use or a sudden activity change", "direction": "increases", "modifiable": true, "source": "North Tees and Hartlepool NHS: De Quervain's Tenosynovitis"},
+        {"factor": "Prior thumb or wrist injury or strain", "direction": "increases", "modifiable": false, "source": "North Tees and Hartlepool NHS: De Quervain's Tenosynovitis"}
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "所選 AAOS 與 NHS 來源未建立針灸可解除第一伸肌腔室狹窄的療效；若使用，只能作為疼痛或功能復健的輔助，不能取代活動調整、副木、注射或手外科評估。",
+        "precautions": "AAOS 手術說明指出腱鞘附近神經需辨識保護；官方頁未提供針刺深度或角度，因此本卡不自行推導局部安全參數。診斷不明、神經症狀或外傷後劇痛時應先評估。",
+        "co_management": "症狀嚴重或六週保守治療後仍未改善者宜轉介手外科或手部治療；妊娠／哺乳期或糖尿病患者考慮注射、手術等治療時，應與原醫療團隊協調。",
+        "evidence": "unknown",
+        "source": null
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "The selected AAOS and NHS sources do not establish that acupuncture releases first-dorsal-compartment narrowing. If used, it should be only an adjunct for pain or functional rehabilitation and must not replace activity modification, splinting, injection, or hand-surgery assessment.",
+        "precautions": "AAOS notes that nerves near the tendon sheath must be identified and protected during surgery. The official pages provide no acupuncture depth or angle, so this card does not infer local needling parameters. Diagnostic uncertainty, neurological symptoms, or severe post-traumatic pain requires assessment first.",
+        "co_management": "Severe symptoms or failure to improve after six weeks of conservative care warrants hand-surgery or hand-therapy referral. During pregnancy or breastfeeding, or in people with diabetes, injection or surgical decisions should be coordinated with the treating team.",
+        "evidence": "unknown",
+        "source": null
+      },
+      "sources": [
+        "https://www.nth.nhs.uk/resources/hand-therapy-de-quervains-tenosynovitis-inflammation-of-the-tendons-of-the-thumb/"
+      ],
+      "field_sources": {
+        "western_pathology_zh": ["AAOS OrthoInfo: De Quervain's Tenosynovitis (anatomy and pathology, retrieved 2026-08); North Tees and Hartlepool NHS (reviewed 2026-03)"],
+        "western_pathology_en": ["AAOS OrthoInfo: De Quervain's Tenosynovitis (anatomy and pathology, retrieved 2026-08); North Tees and Hartlepool NHS (reviewed 2026-03)"],
+        "etiology_zh": ["AAOS OrthoInfo: De Quervain's Tenosynovitis (causes, retrieved 2026-08); North Tees and Hartlepool NHS (causes, reviewed 2026-03)"],
+        "etiology_en": ["AAOS OrthoInfo: De Quervain's Tenosynovitis (causes, retrieved 2026-08); North Tees and Hartlepool NHS (causes, reviewed 2026-03)"],
+        "risk_factors_zh": ["AAOS OrthoInfo: De Quervain's Tenosynovitis (risk factors, retrieved 2026-08); North Tees and Hartlepool NHS (risk factors, reviewed 2026-03)"],
+        "risk_factors_en": ["AAOS OrthoInfo: De Quervain's Tenosynovitis (risk factors, retrieved 2026-08); North Tees and Hartlepool NHS (risk factors, reviewed 2026-03)"],
+        "acupuncture_scope_zh": ["AAOS OrthoInfo and North Tees NHS define anatomy, conservative-care, and referral boundaries; they do not establish acupuncture efficacy or needling parameters."],
+        "acupuncture_scope_en": ["AAOS OrthoInfo and North Tees NHS define anatomy, conservative-care, and referral boundaries; they do not establish acupuncture efficacy or needling parameters."]
+      }
+    },
+    "cond.ankle_sprain": {
+      "western_pathology_zh": "踝關節韌帶超出生理範圍而被拉伸或撕裂；約九成踝扭傷屬內翻傷，主要累及外側距腓前韌帶（ATFL）與跟腓韌帶（CFL）。損傷可由顯微撕裂進展到完全斷裂；完全斷裂若未充分癒合與復健，可留下機械性不穩並進一步傷及軟骨與骨。",
+      "western_pathology_en": "An ankle sprain stretches or tears stabilizing ligaments beyond their normal range. About 90% are inversion injuries involving the lateral anterior talofibular (ATFL) and calcaneofibular (CFL) ligaments. Injury ranges from microscopic fiber tears to complete rupture; if a complete tear does not heal and rehabilitate adequately, mechanical instability and later cartilage or bone damage can result.",
+      "etiology_zh": "典型機轉是足踝突然扭轉：踩到不平地面、跌倒或絆倒，以及需要急停、切向或跳躍的運動都可造成。足部內翻多傷外側韌帶；較少見的外翻機轉可傷及內側三角韌帶。",
+      "etiology_en": "The typical mechanism is a sudden twisting injury from uneven ground, a fall or trip, or sport requiring cutting or jumping. Inversion usually injures the lateral ligaments; the less common eversion mechanism can injure the medial deltoid ligament.",
+      "risk_factors_zh": [
+        {"factor": "曾有踝扭傷", "direction": "increases", "modifiable": false, "source": "AAOS OrthoInfo: Sprained Ankle"},
+        {"factor": "平衡或本體感覺不佳", "direction": "increases", "modifiable": true, "source": "AAOS OrthoInfo: Sprained Ankle"},
+        {"factor": "韌帶鬆弛或過度柔軟", "direction": "increases", "modifiable": false, "source": "AAOS OrthoInfo: Sprained Ankle"},
+        {"factor": "踝部排列不良", "direction": "increases", "modifiable": false, "source": "AAOS OrthoInfo: Sprained Ankle"},
+        {"factor": "支撐不足或鞋底易滑的鞋具", "direction": "increases", "modifiable": true, "source": "AAOS OrthoInfo: Sprained Ankle"},
+        {"factor": "不平地面或需切向／跳躍的高風險運動", "direction": "increases", "modifiable": true, "source": "AAOS OrthoInfo: Sprained Ankle"}
+      ],
+      "risk_factors_en": [
+        {"factor": "Previous ankle sprain", "direction": "increases", "modifiable": false, "source": "AAOS OrthoInfo: Sprained Ankle"},
+        {"factor": "Poor balance or proprioception", "direction": "increases", "modifiable": true, "source": "AAOS OrthoInfo: Sprained Ankle"},
+        {"factor": "Ligament laxity or excessive flexibility", "direction": "increases", "modifiable": false, "source": "AAOS OrthoInfo: Sprained Ankle"},
+        {"factor": "Poor ankle alignment", "direction": "increases", "modifiable": false, "source": "AAOS OrthoInfo: Sprained Ankle"},
+        {"factor": "Footwear with inadequate support or slippery soles", "direction": "increases", "modifiable": true, "source": "AAOS OrthoInfo: Sprained Ankle"},
+        {"factor": "Uneven surfaces or high-risk cutting and jumping sports", "direction": "increases", "modifiable": true, "source": "AAOS OrthoInfo: Sprained Ankle"}
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "所選 AAOS 與 NHS 來源未建立針灸可修復撕裂韌帶或恢復機械性穩定的療效；若使用，只能作為疼痛輔助，不能取代骨折排除、短期保護與漸進式活動、肌力及平衡復健。",
+        "precautions": "嚴重扭傷與骨折的疼痛、腫脹及瘀青可能相似；無法負重、明顯變形或劇烈／惡化疼痛時，不應先做局部針刺而延誤影像或急性評估。官方來源未提供踝部針刺深度或角度，本卡不自行推導。",
+        "co_management": "症狀數週仍未改善、持續負重困難，或復健後仍有不穩者，應由醫師或物理治療師評估；完整活動度、肌力與本體感覺訓練是降低再扭傷的重要部分。",
+        "evidence": "unknown",
+        "source": null
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "The selected AAOS and NHS sources do not establish that acupuncture repairs a torn ligament or restores mechanical stability. If used, it should be only a pain adjunct and must not replace fracture exclusion, short-term protection, or progressive motion, strength, and balance rehabilitation.",
+        "precautions": "A severe sprain and a fracture can produce similar pain, swelling, and bruising. Inability to bear weight, obvious deformity, or severe or worsening pain requires assessment or imaging before local needling. The official sources provide no ankle needling depth or angle, so this card does not infer one.",
+        "co_management": "Symptoms persisting for weeks, continued difficulty bearing weight, or instability despite rehabilitation warrants physician or physiotherapy assessment. Full range-of-motion, strength, and proprioception training is important for reducing recurrence.",
+        "evidence": "unknown",
+        "source": null
+      },
+      "sources": [
+        "https://www.nhs.uk/conditions/sprains-and-strains/"
+      ],
+      "field_sources": {
+        "western_pathology_zh": ["AAOS OrthoInfo: Sprained Ankle (injury anatomy and grading, retrieved 2026-08)"],
+        "western_pathology_en": ["AAOS OrthoInfo: Sprained Ankle (injury anatomy and grading, retrieved 2026-08)"],
+        "etiology_zh": ["AAOS OrthoInfo: Sprained Ankle (causes and mechanisms, retrieved 2026-08); NHS: Sprains and strains (retrieved 2026-08)"],
+        "etiology_en": ["AAOS OrthoInfo: Sprained Ankle (causes and mechanisms, retrieved 2026-08); NHS: Sprains and strains (retrieved 2026-08)"],
+        "risk_factors_zh": ["AAOS OrthoInfo: Sprained Ankle (risk factors and recurrence, retrieved 2026-08)"],
+        "risk_factors_en": ["AAOS OrthoInfo: Sprained Ankle (risk factors and recurrence, retrieved 2026-08)"],
+        "acupuncture_scope_zh": ["AAOS OrthoInfo: Sprained Ankle; NHS: Sprains and strains (fracture exclusion, rehabilitation, and referral boundaries, retrieved 2026-08). These sources do not establish acupuncture efficacy or needling parameters."],
+        "acupuncture_scope_en": ["AAOS OrthoInfo: Sprained Ankle; NHS: Sprains and strains (fracture exclusion, rehabilitation, and referral boundaries, retrieved 2026-08). These sources do not establish acupuncture efficacy or needling parameters."]
+      }
+    },
+    "cond.myofascial_pain": {
+      "western_pathology_zh": "確切病理生理仍未定論。較常採用的「能量危機」假說認為，反覆或持續肌肉過載可造成局部缺氧與缺血、鈣離子幫浦失常及持續收縮，形成緊繃帶；受損肌細胞與局部介質使痛覺受器敏化，維持局部壓痛與轉移痛。這是主要假說，不應表述為已證實的單一機轉。",
+      "western_pathology_en": "The exact pathophysiology remains unsettled. A leading energy-crisis hypothesis proposes that repetitive or sustained muscle overload causes local hypoxia and ischemia, calcium-pump dysfunction, and persistent contraction that forms a taut band. Mediators from injured myocytes then sensitize nociceptors and perpetuate local and referred pain. This is a major hypothesis, not a proven single mechanism.",
+      "etiology_zh": "病因尚未完全了解；肌肉過載被認為是主要起始因素，可來自過度使用或廢用後突然負荷。長期肌肉牽張、不良姿勢、人體工學不佳、異常肌肉徵召、關節功能障礙與反覆微創傷都可能促發；直接或間接外傷則可能但較不常見。",
+      "etiology_en": "The etiology is not fully understood. Muscle overload is considered a major initiating factor and may follow overuse or loading after disuse. Chronic stretch, suboptimal posture or ergonomics, abnormal muscle recruitment, joint dysfunction, and repetitive microtrauma may contribute; direct or indirect trauma is possible but less common.",
+      "risk_factors_zh": [
+        {"factor": "肌肉受傷或反覆微創傷", "direction": "increases", "modifiable": false, "source": "NCBI StatPearls: Myofascial Pain Syndrome"},
+        {"factor": "重複過度使用、不良姿勢或人體工學", "direction": "increases", "modifiable": true, "source": "AAPM&R KnowledgeNow: Myofascial Pain"},
+        {"factor": "脊椎病變、脊柱側彎、骨關節炎等結構因素", "direction": "increases", "modifiable": false, "source": "NCBI StatPearls: Myofascial Pain Syndrome"},
+        {"factor": "甲狀腺功能低下、維生素 D 或鐵缺乏", "direction": "increases", "modifiable": true, "source": "NCBI StatPearls: Myofascial Pain Syndrome"},
+        {"factor": "久坐、競技運動或高體力工作負荷", "direction": "increases", "modifiable": true, "source": "NCBI StatPearls: Myofascial Pain Syndrome"},
+        {"factor": "睡眠不足、疲勞、焦慮或憂鬱等持續因素", "direction": "increases", "modifiable": true, "source": "AAPM&R KnowledgeNow: Myofascial Pain"}
+      ],
+      "risk_factors_en": [
+        {"factor": "Muscle injury or repetitive microtrauma", "direction": "increases", "modifiable": false, "source": "NCBI StatPearls: Myofascial Pain Syndrome"},
+        {"factor": "Repetitive overuse, poor posture, or poor ergonomics", "direction": "increases", "modifiable": true, "source": "AAPM&R KnowledgeNow: Myofascial Pain"},
+        {"factor": "Structural factors such as spondylosis, scoliosis, or osteoarthritis", "direction": "increases", "modifiable": false, "source": "NCBI StatPearls: Myofascial Pain Syndrome"},
+        {"factor": "Hypothyroidism, vitamin D deficiency, or iron deficiency", "direction": "increases", "modifiable": true, "source": "NCBI StatPearls: Myofascial Pain Syndrome"},
+        {"factor": "Sedentary lifestyle, athletic load, or physically demanding work", "direction": "increases", "modifiable": true, "source": "NCBI StatPearls: Myofascial Pain Syndrome"},
+        {"factor": "Sleep deprivation, fatigue, anxiety, or depression as perpetuating factors", "direction": "increases", "modifiable": true, "source": "AAPM&R KnowledgeNow: Myofascial Pain"}
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "NCBI 綜述將乾針與針灸列為非藥物選項，乾針與激痛點徒手治療對短至中期疼痛與功能均可能有幫助，但兩者無一證實優於另一者。這支持症狀輔助，不代表可治癒所有肌筋膜疼痛或可直接套用固定穴位處方。",
+        "precautions": "先確認是區域性肌筋膜痛並排除肌腱病、關節炎、滑囊炎、神經夾擠或廣泛性纖維肌痛。官方頁未提供各部位針刺深度與角度，本卡不自行從『激痛點』概念推導解剖安全參數。",
+        "co_management": "應與物理治療的伸展、肌力、姿勢與人體工學調整並行；若懷疑甲狀腺、營養缺乏、結構性病變或顯著焦慮／憂鬱，需由相應醫療專業共同評估。",
+        "evidence": "unknown",
+        "source": null
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "The NCBI review lists dry needling and acupuncture among nonpharmacological options. Dry needling and trigger-point manual therapy may both improve short- to medium-term pain and function, with neither proven superior. This supports adjunctive symptom care, not a cure for all myofascial pain or a fixed acupuncture-point prescription.",
+        "precautions": "Confirm a regional myofascial pain diagnosis and exclude tendinopathy, arthritis, bursitis, nerve entrapment, or widespread fibromyalgia. The official pages do not provide site-specific needling depth or angle, so this card does not derive anatomical safety parameters from the trigger-point concept.",
+        "co_management": "Coordinate with physical therapy for stretching, strengthening, posture, and ergonomic modification. Suspected thyroid disease, nutritional deficiency, structural disease, or significant anxiety or depression requires assessment by the relevant healthcare professional.",
+        "evidence": "unknown",
+        "source": null
+      },
+      "sources": [
+        "https://www.ncbi.nlm.nih.gov/books/NBK499882/"
+      ],
+      "field_sources": {
+        "western_pathology_zh": ["NCBI StatPearls: Myofascial Pain Syndrome (pathophysiology, updated 2025-04); AAPM&R KnowledgeNow: Myofascial Pain (updated 2024-01)"],
+        "western_pathology_en": ["NCBI StatPearls: Myofascial Pain Syndrome (pathophysiology, updated 2025-04); AAPM&R KnowledgeNow: Myofascial Pain (updated 2024-01)"],
+        "etiology_zh": ["NCBI StatPearls: Myofascial Pain Syndrome (etiology, updated 2025-04); AAPM&R KnowledgeNow: Myofascial Pain (etiology, updated 2024-01)"],
+        "etiology_en": ["NCBI StatPearls: Myofascial Pain Syndrome (etiology, updated 2025-04); AAPM&R KnowledgeNow: Myofascial Pain (etiology, updated 2024-01)"],
+        "risk_factors_zh": ["NCBI StatPearls: Myofascial Pain Syndrome (risk factors, updated 2025-04); AAPM&R KnowledgeNow: Myofascial Pain (risk and perpetuating factors, updated 2024-01)"],
+        "risk_factors_en": ["NCBI StatPearls: Myofascial Pain Syndrome (risk factors, updated 2025-04); AAPM&R KnowledgeNow: Myofascial Pain (risk and perpetuating factors, updated 2024-01)"],
+        "acupuncture_scope_zh": ["NCBI StatPearls: Myofascial Pain Syndrome (nonpharmacological therapies, differential diagnosis, and interprofessional care, updated 2025-04); AAPM&R KnowledgeNow (management, updated 2024-01)"],
+        "acupuncture_scope_en": ["NCBI StatPearls: Myofascial Pain Syndrome (nonpharmacological therapies, differential diagnosis, and interprofessional care, updated 2025-04); AAPM&R KnowledgeNow (management, updated 2024-01)"]
+      }
+    }
+  }
+}

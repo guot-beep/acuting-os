@@ -1,5 +1,13 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-24] Codex Handoff — Conditions official MSK detail B12
+
+- **Exact ids / fields**: only `cond.de_quervain`, `cond.ankle_sprain`, and `cond.myofascial_pain`; filled empty bilingual western pathology, etiology, risk factors, and acupuncture scope, then merged sources/provenance with the repository's non-overwrite fill tool. Existing summaries, western context, red flags, relations, and adjacent datasets were not changed.
+- **Official/professional source sets**: AAOS OrthoInfo + North Tees NHS for De Quervain; AAOS + NHS for ankle sprain; AAPM&R KnowledgeNow + NCBI StatPearls for myofascial pain. All six actual content URLs returned HTTP 200.
+- **Safety boundary**: no unsourced needling depth or angle was inferred for the first dorsal compartment or ankle. Myofascial scope distinguishes evidence for dry needling/manual trigger-point care from a curative acupuncture claim or fixed point prescription; all schema evidence values remain `unknown`.
+- **Measured delta**: maturity `191→194 FULL_DETAIL_CANDIDATE`, `314→311 DETAIL_PARTIAL`, `0→0 SKELETON`; direct source entries `719→722`; each card's `field_sources` expanded `4→12 keys`. Missing western pathology, etiology, risk factors, and acupuncture scope are now `17`, `288`, `45`, and `71` respectively.
+- **Validation**: dry-run `30 fields / 3 ids / skipped 0 / missing 0`; exact fill equality and record diff (`3 ids`, expected 10 top-level fields each); bilingual alignment and duplicate-key audit; `build-data.js`; condition standard `505/505 clean`; ratchet; condition sources (`722`); relation registry; content junk; maturity audit; and `git diff --check` passed.
+
 ## [2026-08-24] Codex Handoff — Conditions official MSK detail B11
 
 - **Exact ids / fields**: only `cond.trigger_finger`, `cond.patellofemoral_pain`, `cond.plantar_fasciitis`, and `cond.tmd`; filled previously empty `western_pathology_zh/en`, `etiology_zh/en`, `risk_factors_zh/en`, and `acupuncture_scope_zh/en`, then added `sources` and `field_sources`. Existing summaries, western context, red flags, relations, Symptoms, herbs, formulas, and acupoint canonical data were not overwritten.
