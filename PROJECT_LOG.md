@@ -1,3 +1,35 @@
+# 2026-08-24 深夜 — Ting 轉交 Codex 稽核報告,重新驗證後指派 Task 3(中藥 strict/schema)+ Task 4(方劑對齊)
+
+Ting 貼了一份 Codex 剛跑完的稽核報告(中藥 363/方劑 223/耳穴 GB93/頭皮針),逐條核實再指派,不直接
+照抄報告數字:
+
+- **中藥 strict provenance**:`node scripts/validate-herb-quality-strict.js` 實跑,**54 張 FAIL**
+  跟報告數字完全對上(53 張 `exact_source_url` 只是 American Dragon 首頁不是精確頁面、
+  `herb.xiong_huang` 卡著「待補」樣板句觸發禁詞檢查)。
+- **中藥 schema**:`node scripts/validate-herb-card-schema.js` 實跑,**39 個阻擋問題**跟報告數字
+  對上(涉及卡數我自己重算是 46 張,報告寫 36,小差異不影響結論——主因是 `functions_zh`/`actions_en`
+  長度不對齊約 30 張、`indications_en` 型別應為陣列卻是字串 3 張、`dosage` 型別/缺 `dosage_g` 數張)。
+- **CI 真的沒跑這兩支**:`grep validate-herb-quality-strict\|validate-herb-card-schema
+  .github/workflows/validate.yml` 零命中,證實報告說的「CI 綠會遮住這些缺陷」——這兩支還沒有 --json
+  輸出,沒辦法直接掛進 `check-validation-ratchet.js` 的棘輪機制,已用 spawn_task 開一張獨立背景任務
+  記著這個缺口,不在這次改動範圍內一起做,避免這次改動範圍發散。
+- **方劑中英對齊自己重新掃**(不是沿用報告的「11 張」,那是報告腳本只查九區塊「完成」子集算出來的):
+  全庫用同一套 zh/en 陣列長度比對邏輯全庫掃一次,**28 張卡至少一個欄位不對齊**(`contraindications`/
+  `cautions`/`symptoms`/`herb_drug_interactions` 幾種最多),比報告的 11 張範圍更完整。
+  `validate-formula-quality-strict.js`/`validate-formula-correctness.js` 兩支目前 PASS(1 error + 1
+  gap,是既有已知項,`aa5b6386` 那批才剛修過),跟報告「140 完成但 11 張未對齊」的落差確認是**不同
+  檢查口徑**造成,不是驗證器互相矛盾。
+- **指派**(`docs/ANTIGRAVITY_HANDOFF.md`):Task 3(中藥 strict/schema 修復)設為最高優先,蓋過原本
+  在跑的 Task 2 續作;Task 4(方劑陣列對齊 + 3 張安全欄位結構性缺口)第三優先。**兩個任務都寫了同一條
+  最重要的鐵律**:陣列長度不對齊只能靠「補短的那一側」修正,絕對不准刪長的那一側去遷就——這是 Ting
+  這輪特別交代的紅線(「你可以指使antigravity優化不足 但不要刪除很多重要內容」)。
+- **明確排除、不派給 antigravity 的項目**(留給 Ting 裁定,寫清楚原因,已記在 handoff 裡)：
+  功效重新策展 138 張(要決定留砍標準)、性味寒溫/有毒無毒自相矛盾 11 張(安全欄位互打架，不能自己
+  選一邊改)、`related_formulas` 912 條/228 張卡的語意判定(常配伍 vs 組成裡有，是判斷不是資料錯)、
+  方劑 condition/pattern relation 覆蓋率過低(臨床判斷不是查資料)。
+
+---
+
 # 2026-08-24 深夜 — antigravity Task 2 驗收通過並落地:related_formulas/safety_source_url
 
 Task 2(`antigravity/herb-fill-task2`,commit `88dcdea6`)聲稱 related_formulas 293→314
