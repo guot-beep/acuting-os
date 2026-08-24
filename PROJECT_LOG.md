@@ -1,3 +1,59 @@
+# 2026-08-24 Claude — Bundle Phase 2 收官:字型真兇歸零(#92)、知識庫六分片(#93/#94)、硬化線(#95)、董氏惰性化三線一致否決
+
+- **翻案是起點**:立項前提「13 秒是 17MB parse 成本」被自己的量測推翻——17 支 defer script 的 eval
+  實測合計 ~400ms、下載 ~500ms。真兇是 styles.css 第 1 行的 `@import` Google Fonts:它讓 styles.css
+  在遠端 CSS 回來前一直 in-flight,而 Chromium 讓**所有 script 執行(含外部 defer)**等 in-flight 的
+  render-blocking stylesheet。字型服務慢/被牆的網路整個 app 凍 12 秒級,#80 只移除了 inline script,
+  這個更底層的柵欄一直在。同一機制至此已復發兩次(#80/#91)。
+- **#92(P0)**:@import 移除+preconnect×2+preload+`media="print"`+js/fonts.js 翻轉驅動
+  (翻轉只發生在確定不 in-flight 之後;6 秒 deadline 永久退系統字)。三態實測:字型掛死
+  13,065ms → 969/971ms;瞬斷 1,178/959ms;正常 ~1.0s。
+- **#93(P1 六分片)**:knowledge 依「變動頻率 × 消費時機」切 core/ref/rx/mm/dx/pat
+  (raw 207KB/1335KB/3964KB/5251KB/4103KB/1598KB;gzip 60/357/825/1322/1128/369KB),
+  每片 Object.assign 合流同一個 globalThis.ACUTING_KNOWLEDGE,消費端形狀零改動。三條邊界是 build 期
+  耦合強迫的:red-flag resolver 就地改寫 conditionCanon/tdisRegistry(→dx 同片);formulaHdiReview 由
+  formulas 逐條 sha1 對出(→rx 同片)。**分片對載入時間零收益(全部 boot 前置),收益只有快取粒度**:
+  內容 PR 重抓從每次 4061KB 變成觸到哪片抓哪片;previsit 病人端從無 defer 同步拉 16.8MB 變只載 core
+  (−97.9%);首次冷載誠實記帳貴 ~2%(brotli +50KB)。單體暫時雙寫(可回滾+驗證對照組)。
+  防的三個坑:generate-care-draft 正則硬解發射格式(catch→null→標籤退化 raw id 而 exit 0)→
+  scripts/lib/load-knowledge.js 成為 node 端唯一載入器,四支產出腳本 before/after 逐位元組相同;
+  缺片的無聲空 grid → dataLoadGuard 讀 core 片 __expected 逐一點名(Playwright 實測 mm 片 404 →
+  紅 banner 指名、overlay 照樣清除);js/knowledge.js 全檔恰兩處無 guard 讀取(K.sources.sources/
+  K.audit)→ 補防衛,否則單鍵缺席會炸掉整個 IIFE 連帶 openDetail。
+  活例證:#94 的 conditions 改動進 main 後,六片只有 dx 需要重建,其餘五片+單體位元組不變。
+- **多 agent 分線與對抗驗證**:4 路圖譜 → 3 個獨立設計(fonts 主攻/split 主攻/魯棒性對抗)→ 評審。
+  評審獨立重量所有數字後判 split 案勝(risk 2/gain 9/maint 8);對抗者實測審過 WIP 判方向正確,
+  殘差全數落地——validate-knowledge-parts K1–K9(六片沙箱可執行/互斥/鍵集=單體/逐鍵位元組相等/
+  __expected 一致/載入序/previsit 綁定/loader 端到端/core 400KB 天花板)、build-site 掃 STANDALONE
+  頁自身引用、care-draft self-test 逐片點名三個 id、staleness gate 補 data/tung+data/auricular。
+  每條守衛都反向測過(故意弄壞→紅→還原)。
+- **#95(硬化線)**:fonts.js load 事件可信化——load 依規格只在抓取並解析完成後觸發,依定義不
+  in-flight,不再 gate 在 link.sheet 上(WebKit 對 media 不匹配跨網域 sheet 填不填 .sheet 無真機
+  證據,不填的話 iPhone 永不翻轉且零錯誤);加 error→立刻放棄與 ACUTING_FONTS_STATE 驗收鉤。
+  validate-render-blocking.js R1–R4 把「@import 禁令/media=print/禁 inline classic script/翻轉驅動
+  完整性」從註解升級成 exit 1。**build-site 進 CI**(評審抓到、三個設計分線都沒發現的缺口:它先前
+  只在 wrangler 部署時跑,ref-scan 守衛不進 CI 等於沒有守衛)。三態 ×2 輪:normal flipped@1.1s、
+  hang ready=1.0s+gaveup@6.06s、error 同(瞬斷的 error 事件發生在 defer 掛監聽前,走 deadline 兜底)。
+- **P2 董氏惰性化:三線一致否決,重啟條件存證(別靠記憶)**。算術:point_index.js 傳輸僅 ~97KB gz
+  (全站 JS ~2%),而 eval 總成本已證僅 ~400ms;工程代價是 app.js:719 defaultPoints 改可重跑管線+
+  六處 loading 態+深連結重試。**最致命**:validate-data.js 在 node 端同步載 tung 對帳 947/277,
+  瀏覽器卻走惰性——CI 綠、真機壞的完美溫床。**重啟條件:P0+P1 上線後 Ting 手機實測仍 >2s 就緒
+  再議,且第一順位是 points_361(1124KB gz),不是董氏**。
+- **facts v2 勘誤(評審獨立量測,後續決策別引舊數)**:頂層鍵尺寸普遍偏小 15–25% 且排序錯——實際
+  herbs 4765KB > formulas 3956KB > conditionCanon 3296KB;「P2 只有 3 個消費點 416/474/477」錯,
+  474/477 是 GB93;cloudtcm_map 不是 on-demand,是 parse 期逐點查兩次(體積小所以此刻無關決策,
+  但帶進未來惰性化會讓 CloudTCM 連結整批消失)。
+- **Ting 決策佇列(新增三項)**:① app_data 死資料裁切提案——10 個 embedded 陣列 256 筆在 runtime
+  被 361 過濾後只活 2 筆(EX-HN3/EX-HN5),佔 app_data br 體積 54%;收益真實但這是唯一「刪除形狀」
+  的改動,在被洗掉過兩次的 repo 裡,**須妳點頭**才做(獨立 PR+defaultPoints code 集合 before/after
+  diff 當證據)。② P1-E 移除單體——等妳真機用過數天沒異狀再開(移除後無回滾路;同 PR 要處理
+  populate-all-disease-tags.js 把 generated 當可寫檔的問題)。③ iPhone 真機驗收一次:Safari 開
+  app,Mac Safari 遠端偵錯 console 讀 `ACUTING_FONTS_STATE`——正常網應 "flipped" 且 Noto 字型;
+  爛網應 6 秒內 "gaveup" 且系統字可用。這次驗收會直接回答 WebKit 填不填 .sheet 的懸案。
+  另:分片後的人眼驗收八條(首頁磁磚計數/品質頁九線/七線搜尋 SP6=7/八工作區 grid/開卡/
+  **有病例資料的機器**看詳情面板 label 不退化 raw id/previsit Network 確認 core 200/AVS 列印零變化)
+  已寫進 #93 PR 描述。
+
 # 2026-08-24 Claude — antigravity Batch 3/4/5 審核:contraindications_zh 收下,modern_functions_en/zh 整批打回
 
 - **背景**:指派 Task 0(Batch 3,55 味)後,antigravity 自己接續做了 Batch 4(69 味)、Batch 5(50 味),
