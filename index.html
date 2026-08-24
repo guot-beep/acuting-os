@@ -577,6 +577,10 @@
             <input id="importCasesFile" type="file" accept="application/json" />
           </label>
         </div>
+        <!-- Dry Clinic #7 續：病歷綁定開啟網址，file:// / localhost / 部署網址是三個
+             互不相通的資料庫。永遠顯示「我現在在哪一個」，讓開錯書籤在存進第一筆
+             之前就看得出來，而不是等到病人清單看起來全空了才發現。 -->
+        <p class="entry-point-line" id="caseEntryPoint"></p>
         <!-- 診務回顧:病例反過來告訴你該補哪些卡片。預設收起,按工具列的按鈕展開。
              資料全部來自本機已存在的病例,不另外儲存、不外送。 -->
         <section class="practice-audit-panel" id="practiceAuditPanel" aria-label="診務回顧 Practice Audit" hidden></section>

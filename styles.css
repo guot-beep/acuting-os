@@ -4681,6 +4681,27 @@ a { color: var(--accent-dark); }
   z-index: 999;
 }
 
+/* 入口指示行 + 空病例清單的解釋。刻意不做成紅色警報:她大部分時間開的是
+   對的入口,天天彈紅字只會被忽略。但「0 筆」那一刻必須解釋得完整,因為
+   那正是「我的病人全不見了」的瞬間。 */
+.entry-point-line {
+  margin: 0.4rem 0 0;
+  font-size: 0.76rem;
+  color: var(--muted);
+  word-break: break-all;
+}
+
+.case-empty-entry {
+  display: grid;
+  gap: 0.45rem;
+  text-align: left;
+  line-height: 1.6;
+}
+
+.case-empty-entry strong { font-size: 0.95rem; }
+.case-empty-entry p { margin: 0; font-size: 0.82rem; }
+.case-empty-entry .entry-point-line { margin: 0; }
+
 /* 沿用上次治療:按鈕 + 規則說明 + 逐項結果。說明句與按鈕同區塊,因為
    「它到底帶了什麼、沒帶什麼」必須在按下去之前就看得到。 */
 .carry-forward {
