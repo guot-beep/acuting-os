@@ -12581,7 +12581,90 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "definition_zh": "喉痹是因外邪侵襲或臟腑失調所致，以咽部紅腫疼痛、乾燥不適、異物梗阻感為主要表現的咽部常見病，包含急性與慢性兩類，相當於現代醫學的急、慢性咽炎。",
+   "definition_en": "Hou Bi (Throat Bi) is a common pharyngeal disorder caused by external pathogen invasion or zang-fu dysfunction, presenting mainly with redness, swelling and pain of the pharynx, dryness/discomfort, and a foreign-body sensation in the throat; it includes both acute and chronic forms and corresponds to acute and chronic pharyngitis in Western medicine.",
+   "etiology_zh": "外因多為風熱、風寒之邪由口鼻侵犯咽喉，或肺胃積熱上攻；內因多見肺腎陰虛、虛火上炎，或脾胃虛弱、氣滯痰凝，常因用嗓過度、菸酒辛辣、氣候乾燥而誘發或加重。",
+   "etiology_en": "The external cause is usually Wind-Heat or Wind-Cold invading the throat via the mouth and nose, or accumulated Lung-Stomach heat surging upward; the internal cause is often Lung-Kidney Yin deficiency with deficient fire flaring, or Spleen-Stomach weakness with Qi stagnation and Phlegm binding, commonly triggered or aggravated by vocal overuse, smoking, alcohol, spicy food, or dry climate.",
+   "pathomechanism_zh": "急性者外邪循口鼻、肺經侵犯咽喉，壅遏氣血，肺胃熱盛循經上攻，咽部脈絡壅滯故見紅腫疼痛；慢性者多因急性反覆未癒，或肺腎陰虛，虛火上炎灼傷咽喉，或痰瘀互結，咽部黏膜失於濡養而見肥厚黯紅、異物感纏綿。",
+   "pathomechanism_en": "In the acute form, an external pathogen invades the throat via the mouth, nose, and Lung channel, obstructing Qi and Blood; accumulated Lung-Stomach heat surges upward along the channel, congesting the throat's vessels and producing redness, swelling, and pain. The chronic form usually follows repeated unresolved acute episodes, or arises from Lung-Kidney Yin deficiency with deficient fire scorching the throat, or from Phlegm and Blood stasis binding together so the pharyngeal mucosa loses nourishment, becoming thickened and dusky-red with a persistent foreign-body sensation.",
+   "key_manifestations_zh": [
+    "咽部疼痛或灼熱感",
+    "咽干咽癢",
+    "咽部異物梗阻感",
+    "咽黏膜紅腫（急性）或肥厚黯紅（慢性）",
+    "吞咽不適",
+    "咳嗽或咳痰"
+   ],
+   "key_manifestations_en": [
+    "Throat pain or a burning sensation",
+    "Dryness and itching of the throat",
+    "A foreign-body/obstructive sensation in the throat",
+    "Redness and swelling of the pharyngeal mucosa (acute) or dusky-red thickening (chronic)",
+    "Discomfort on swallowing",
+    "Cough with or without phlegm"
+   ],
+   "associated_manifestations_zh": [
+    "聲音嘶啞",
+    "頜下淋巴結腫痛（急性期）",
+    "口乾口臭"
+   ],
+   "associated_manifestations_en": [
+    "Hoarseness",
+    "Tender submandibular lymphadenopathy (acute stage)",
+    "Dry mouth and bad breath"
+   ],
+   "disease_location_zh": "病位在咽喉，屬肺、胃；慢性者常涉及肺腎陰虛及脾。",
+   "disease_location_en": "Disease location is the throat, pertaining to the Lung and Stomach; chronic cases often involve Lung-Kidney Yin deficiency and the Spleen.",
+   "treatment_principle_zh": "急性以疏風清熱、解毒利咽為主；慢性以滋陰降火，或健脾益氣、化痰活血利咽為主。",
+   "treatment_principle_en": "The acute form is treated by dispersing Wind, clearing Heat, resolving toxicity, and benefiting the throat; the chronic form is treated by nourishing Yin and lowering fire, or by fortifying the Spleen, boosting Qi, transforming Phlegm, and moving Blood to benefit the throat.",
+   "red_flags_zh": [
+    "咽痛合併單側扁桃體明顯腫大、牙關緊閉（張口困難）、口水難以下嚥，提示扁桃體周膿瘍，應立即轉診耳鼻喉科或急診，不宜僅以中藥/針灸處理",
+    "咽喉劇痛合併呼吸困難、喘鳴、坐立不安（呈前傾流涎姿勢），提示會厭炎等上呼吸道阻塞急症，應立即送急診",
+    "咽痛合併高燒、頸部腫脹疼痛、頸部活動受限，提示深頸部間隙感染，須立即轉診",
+    "成人單側咽痛持續超過2-3週未緩解，或伴頸部無痛性腫塊、痰中帶血、體重下降，應轉診排除咽喉部惡性腫瘤"
+   ],
+   "red_flags_en": [
+    "Sore throat with marked unilateral tonsillar swelling, trismus (difficulty opening the mouth), and inability to swallow saliva suggests a peritonsillar abscess — refer immediately to ENT or the emergency department; do not manage with herbs/acupuncture alone",
+    "Severe throat pain with breathing difficulty, stridor, or a tripod/drooling posture suggests epiglottitis or another upper-airway obstruction emergency — seek emergency care immediately",
+    "Throat pain with high fever, neck swelling/pain, and restricted neck movement suggests a deep neck space infection — refer immediately",
+    "Persistent unilateral throat pain lasting more than 2-3 weeks in an adult, or accompanied by a painless neck mass, blood-streaked sputum, or weight loss, warrants referral to rule out a pharyngeal/laryngeal malignancy"
+   ],
+   "related_patterns": [
+    "pattern.wind_heat",
+    "pattern.stomach_heat",
+    "pattern.lung_kidney_yin_deficiency",
+    "pattern.phlegm_stasis_binding"
+   ],
+   "field_sources": {
+    "definition_zh": [
+     "TCM ENT textbook standard (統編教材《中醫耳鼻喉科學》)"
+    ],
+    "etiology_zh": [
+     "TCM ENT textbook standard (統編教材《中醫耳鼻喉科學》)"
+    ],
+    "pathomechanism_zh": [
+     "TCM ENT textbook standard (統編教材《中醫耳鼻喉科學》)"
+    ],
+    "key_manifestations_zh": [
+     "TCM ENT textbook standard (統編教材《中醫耳鼻喉科學》)"
+    ],
+    "associated_manifestations_zh": [
+     "TCM ENT textbook standard (統編教材《中醫耳鼻喉科學》)"
+    ],
+    "disease_location_zh": [
+     "TCM ENT textbook standard (統編教材《中醫耳鼻喉科學》)"
+    ],
+    "treatment_principle_zh": [
+     "TCM ENT textbook standard (統編教材《中醫耳鼻喉科學》)"
+    ],
+    "related_patterns": [
+     "TCM ENT textbook standard (統編教材《中醫耳鼻喉科學》)"
+    ],
+    "red_flags_zh": [
+     "established TCM/biomedical clinical knowledge, not curriculum or whitelist-verified — flag for Ting to source-check; searched curriculum/ for 喉痹/pharyngitis, only found acupoint-indication mentions, no disease-specific red-flag content"
+    ]
+   }
   },
   {
    "id": "tdis.hou_yin",
@@ -12592,7 +12675,88 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "definition_zh": "喉喑是以聲音嘶啞，甚則失音為主要表現的喉部疾病，可分為新病暴喑（起病急）與久病久喑（病程遷延）兩類，相當於現代醫學的急、慢性喉炎及聲帶病變所致的聲音嘶啞。",
+   "definition_en": "Hou Yin (Voice Loss) is a laryngeal disorder characterized mainly by hoarseness, which may progress to complete loss of voice; it is divided into sudden-onset acute hoarseness and protracted chronic hoarseness, corresponding to acute and chronic laryngitis and vocal-fold disorders causing hoarseness in Western medicine.",
+   "etiology_zh": "外因多為風寒、風熱之邪襲肺，肺氣壅遏，喉竅不利；內因多因用嗓過度耗傷肺氣，或久病傷及肺腎之陰，虛火上炎，或肺脾氣虛，或痰凝血瘀阻於喉竅所致。",
+   "etiology_en": "The external cause is usually Wind-Cold or Wind-Heat invading the Lung, obstructing Lung Qi and impairing the throat's function; the internal cause is often vocal overuse consuming Lung Qi, or prolonged illness damaging Lung-Kidney Yin with deficient fire flaring, or Lung-Spleen Qi deficiency, or Phlegm and Blood stasis obstructing the throat.",
+   "pathomechanism_zh": "新病多因外邪襲肺，肺氣失於宣降，喉竅氣機壅滯，發為暴喑，古稱「金實不鳴」；久病多因肺腎陰虛或肺脾氣虛，喉竅失於濡養或溫煦，聲門開闔無力，或痰瘀互結聲帶，致聲嘶纏綿難癒，古稱「金破不鳴」。",
+   "pathomechanism_en": "In the acute form, an external pathogen invades the Lung, impairing its dispersing-and-descending function, so Qi movement at the throat is obstructed and sudden hoarseness results — classically described as \"the metal is solid and cannot sound.\" The chronic form usually arises from Lung-Kidney Yin deficiency or Lung-Spleen Qi deficiency, in which the throat loses nourishment or warmth and the vocal folds open and close weakly, or Phlegm and Blood stasis bind at the vocal folds, causing persistent, hard-to-resolve hoarseness — classically described as \"the metal is broken and cannot sound.\"",
+   "key_manifestations_zh": [
+    "聲音嘶啞（程度輕重不等，甚則失音）",
+    "咽喉乾燥或不適",
+    "講話費力、音調改變",
+    "聲帶或喉黏膜充血、腫脹或肥厚（檢查所見）",
+    "病程遷延反覆（慢性者）"
+   ],
+   "key_manifestations_en": [
+    "Hoarseness (ranging from mild to complete voice loss)",
+    "Dryness or discomfort of the throat",
+    "Effortful speaking with altered pitch/quality",
+    "Congestion, swelling, or thickening of the vocal folds/laryngeal mucosa (on examination)",
+    "A protracted, recurring course (in chronic cases)"
+   ],
+   "associated_manifestations_zh": [
+    "咳嗽",
+    "咽癢",
+    "乏力氣短（氣虛者）"
+   ],
+   "associated_manifestations_en": [
+    "Cough",
+    "Throat itching",
+    "Fatigue and shortness of breath (in Qi-deficient patients)"
+   ],
+   "disease_location_zh": "病位在喉（聲門），屬肺；久病及腎、脾。",
+   "disease_location_en": "Disease location is the larynx (vocal folds), pertaining to the Lung; chronic cases involve the Kidney and Spleen as well.",
+   "treatment_principle_zh": "新病以疏風宣肺、利喉開音為主；久病以滋補肺腎、益氣養陰為主，痰瘀互結者佐以化痰活血開音。",
+   "treatment_principle_en": "The acute form is treated by dispersing Wind, diffusing the Lung, and benefiting the throat to restore the voice; the chronic form is treated by nourishing Lung-Kidney and boosting Qi and Yin, with transforming Phlegm and moving Blood added when Phlegm-stasis binding is present.",
+   "red_flags_zh": [
+    "聲音嘶啞持續超過2-3週未緩解，尤其有吸菸史者，應轉診耳鼻喉科進行喉鏡檢查，排除喉癌等惡性病變",
+    "聲音突然喪失合併呼吸困難、喘鳴，提示上呼吸道阻塞，應立即送急診",
+    "兒童聲嘶合併喘鳴、流涎、呼吸急促、坐立難安，提示急性會厭炎等呼吸道急症，須立即就醫，避免刺激患兒（含檢查口腔）",
+    "聲嘶合併吞咽困難、頸部腫塊或咳血，應及早轉診評估"
+   ],
+   "red_flags_en": [
+    "Hoarseness persisting more than 2-3 weeks, especially in a smoker, warrants ENT referral for laryngoscopy to rule out laryngeal carcinoma or another malignancy",
+    "Sudden voice loss with breathing difficulty or stridor suggests upper-airway obstruction — seek emergency care immediately",
+    "A child with hoarseness plus stridor, drooling, rapid breathing, and an anxious/tripod posture suggests acute epiglottitis or another airway emergency — seek care immediately and avoid examining the throat/mouth, which can trigger complete obstruction",
+    "Hoarseness with swallowing difficulty, a neck mass, or hemoptysis warrants prompt referral for evaluation"
+   ],
+   "related_patterns": [
+    "pattern.wind_cold",
+    "pattern.wind_heat",
+    "pattern.lung_kidney_yin_deficiency",
+    "pattern.phlegm_stasis_binding"
+   ],
+   "field_sources": {
+    "definition_zh": [
+     "TCM ENT textbook standard (統編教材《中醫耳鼻喉科學》)"
+    ],
+    "etiology_zh": [
+     "TCM ENT textbook standard (統編教材《中醫耳鼻喉科學》)"
+    ],
+    "pathomechanism_zh": [
+     "TCM ENT textbook standard (統編教材《中醫耳鼻喉科學》)"
+    ],
+    "key_manifestations_zh": [
+     "TCM ENT textbook standard (統編教材《中醫耳鼻喉科學》)"
+    ],
+    "associated_manifestations_zh": [
+     "TCM ENT textbook standard (統編教材《中醫耳鼻喉科學》)"
+    ],
+    "disease_location_zh": [
+     "TCM ENT textbook standard (統編教材《中醫耳鼻喉科學》)"
+    ],
+    "treatment_principle_zh": [
+     "TCM ENT textbook standard (統編教材《中醫耳鼻喉科學》)"
+    ],
+    "related_patterns": [
+     "TCM ENT textbook standard (統編教材《中醫耳鼻喉科學》)"
+    ],
+    "red_flags_zh": [
+     "established TCM/biomedical clinical knowledge, not curriculum or whitelist-verified — flag for Ting to source-check; searched curriculum/ for 喉喑/hoarseness, only found materia medica herb-indication mentions, no disease-specific red-flag content"
+    ]
+   }
   },
   {
    "id": "tdis.bi_zhi",
@@ -12603,7 +12767,86 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "definition_zh": "鼻窒是以鼻塞為主要表現、呈持續性或交替性、病程較長的慢性鼻病，相當於現代醫學的慢性鼻炎。",
+   "definition_en": "Bi Zhi (Nasal Congestion Disorder) is a chronic nasal disease characterized mainly by persistent or alternating-side nasal obstruction over a prolonged course, corresponding to chronic rhinitis in Western medicine.",
+   "etiology_zh": "多因外感風寒、風熱反覆侵襲鼻竅，邪毒久留未清；內因肺脾氣虛，衛外不固，鼻竅失於溫煦；病久氣滯血瘀，鼻甲脈絡壅塞。",
+   "etiology_en": "Often caused by repeated Wind-Cold or Wind-Heat invasion of the nasal orifice with lingering, incompletely resolved pathogenic toxin; the internal cause is Lung-Spleen Qi deficiency with a poorly consolidated exterior, leaving the nasal orifice without warmth and nourishment; over time, Qi stagnation transforms into Blood stasis, congesting the vessels of the nasal turbinates.",
+   "pathomechanism_zh": "肺開竅於鼻，肺脾氣虛或外邪反覆侵襲未能徹底清解，邪滯鼻竅，氣血運行不暢，鼻甲脈絡壅滯，鼻竅肌膜腫脹而見鼻塞；病程日久，氣滯血瘀，鼻甲組織增生肥厚，鼻塞加重且交替發作，纏綿難癒。",
+   "pathomechanism_en": "The Lung opens into the nose; when Lung-Spleen Qi is deficient, or an external pathogen repeatedly invades without being fully resolved, the lingering pathogen obstructs the nasal orifice, impairing the free flow of Qi and Blood. The vessels of the nasal turbinates become congested and the nasal mucosa swells, producing nasal obstruction. Over a prolonged course, Qi stagnation transforms into Blood stasis, the turbinate tissue hypertrophies, and the obstruction worsens and alternates sides, becoming difficult to resolve.",
+   "key_manifestations_zh": [
+    "鼻塞（持續性或交替性，遇冷、平臥時加重）",
+    "鼻涕黏白或黃稠",
+    "嗅覺減退",
+    "鼻甲腫脹肥厚或黯紅（檢查所見）",
+    "頭脹或頭痛"
+   ],
+   "key_manifestations_en": [
+    "Nasal obstruction (persistent or alternating between sides, worse in cold or when lying down)",
+    "White sticky or yellow thick nasal discharge",
+    "Reduced sense of smell",
+    "Swollen, hypertrophic, or dusky-red nasal turbinates (on examination)",
+    "Head distension or headache"
+   ],
+   "associated_manifestations_zh": [
+    "語音重濁",
+    "咽干",
+    "打鼾"
+   ],
+   "associated_manifestations_en": [
+    "A thick, nasal-sounding voice",
+    "Dry throat",
+    "Snoring"
+   ],
+   "disease_location_zh": "病位在鼻，屬肺；久病涉及脾，兼夾血瘀。",
+   "disease_location_en": "Disease location is the nose, pertaining to the Lung; chronic cases involve the Spleen and are often complicated by Blood stasis.",
+   "treatment_principle_zh": "以宣肺通竅為主，佐以益氣健脾；病久血瘀者活血化瘀通竅。",
+   "treatment_principle_en": "The main principle is diffusing the Lung and opening the nasal orifice, combined with boosting Qi and fortifying the Spleen; in prolonged cases with Blood stasis, moving Blood and resolving stasis to open the orifice is added.",
+   "red_flags_zh": [
+    "單側持續性鼻塞合併鼻涕帶血或惡臭、面部麻木感、複視，應及早轉診排除鼻竇或鼻咽部腫瘤（尤其鼻咽癌）",
+    "鼻塞合併單側頸部無痛性腫塊、耳鳴或聽力下降，提示可能為鼻咽癌，應轉診耳鼻喉科進一步檢查",
+    "長期慢性鼻塞經一般治療無效，或症狀持續惡化，應安排鼻內視鏡檢查以排除結構性病變或腫瘤"
+   ],
+   "red_flags_en": [
+    "Persistent unilateral nasal obstruction with blood-tinged or foul-smelling discharge, facial numbness, or double vision warrants prompt referral to rule out a sinonasal or nasopharyngeal tumor (especially nasopharyngeal carcinoma)",
+    "Nasal obstruction with a painless unilateral neck mass, tinnitus, or hearing loss suggests possible nasopharyngeal carcinoma and warrants ENT referral for further evaluation",
+    "Chronic nasal obstruction that fails to respond to standard treatment, or that progressively worsens, should be evaluated by nasal endoscopy to rule out a structural lesion or tumor"
+   ],
+   "related_patterns": [
+    "pattern.lung_qi_deficiency",
+    "pattern.spleen_qi_deficiency",
+    "pattern.blood_stasis",
+    "pattern.wind_cold"
+   ],
+   "field_sources": {
+    "definition_zh": [
+     "TCM ENT textbook standard (統編教材《中醫耳鼻喉科學》)"
+    ],
+    "etiology_zh": [
+     "TCM ENT textbook standard (統編教材《中醫耳鼻喉科學》)"
+    ],
+    "pathomechanism_zh": [
+     "TCM ENT textbook standard (統編教材《中醫耳鼻喉科學》)"
+    ],
+    "key_manifestations_zh": [
+     "TCM ENT textbook standard (統編教材《中醫耳鼻喉科學》)"
+    ],
+    "associated_manifestations_zh": [
+     "TCM ENT textbook standard (統編教材《中醫耳鼻喉科學》)"
+    ],
+    "disease_location_zh": [
+     "TCM ENT textbook standard (統編教材《中醫耳鼻喉科學》)"
+    ],
+    "treatment_principle_zh": [
+     "TCM ENT textbook standard (統編教材《中醫耳鼻喉科學》)"
+    ],
+    "related_patterns": [
+     "TCM ENT textbook standard (統編教材《中醫耳鼻喉科學》)"
+    ],
+    "red_flags_zh": [
+     "established TCM/biomedical clinical knowledge, not curriculum or whitelist-verified — flag for Ting to source-check; searched curriculum/ for 鼻窒/nasal congestion, only found acupoint-indication mentions, no disease-specific red-flag content"
+    ]
+   }
   },
   {
    "id": "tdis.bi_nu",
@@ -12614,7 +12857,91 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "definition_zh": "鼻衄是以鼻腔非外傷性出血為主要表現的病證，可為單純鼻病，亦可為全身疾病在鼻部的反映，相當於現代醫學的鼻出血（epistaxis）。",
+   "definition_en": "Bi Nu (Epistaxis) refers to non-traumatic bleeding from the nasal cavity as the primary presenting sign; it may be an isolated nasal disorder or a nasal manifestation of a systemic disease, corresponding to epistaxis in Western medicine.",
+   "etiology_zh": "外因多為風熱、燥熱之邪犯肺，損傷鼻絡；內因多見胃熱熾盛、肝火上逆，或陰虛火旺灼傷脈絡，或脾氣虛弱、氣不攝血，久病體虛者尤易反覆發作。",
+   "etiology_en": "The external cause is usually Wind-Heat or Dryness-Heat invading the Lung and damaging the nasal collaterals; the internal cause is often blazing Stomach heat or Liver fire surging upward, or Yin deficiency with effulgent deficient fire scorching the vessels, or Spleen Qi deficiency failing to hold Blood within the vessels — chronically debilitated patients are especially prone to recurrent bleeding.",
+   "pathomechanism_zh": "熱邪（肺熱、胃火、肝火）迫血妄行，灼傷鼻部脈絡，血溢脈外而為鼻衄，多起病急、血色鮮紅、量較多，屬實證；陰虛火旺者虛火灼絡，出血量少而反覆難止；脾氣虛弱者統攝無權，血液不循常道，出血色淡、量或多或少，且易伴他處出血（如齒衄），纏綿難癒。",
+   "pathomechanism_en": "Heat (from the Lung, Stomach, or Liver) forces Blood to move recklessly, scorching the nasal collaterals so Blood escapes the vessels as epistaxis — usually of sudden onset, bright red, and copious, an excess pattern. In Yin deficiency with effulgent fire, deficient fire scorches the collaterals, producing scanty but recurrent, hard-to-stop bleeding. In Spleen Qi deficiency, the Spleen loses its ability to hold Blood within the vessels, so Blood fails to follow its normal pathways — the bleeding is pale, variable in amount, often accompanied by bleeding elsewhere (such as gum bleeding), and difficult to resolve.",
+   "key_manifestations_zh": [
+    "鼻中出血或涕中帶血",
+    "出血色澤與量因證型而異（鮮紅量多屬實，淡紅量少反覆屬虛）",
+    "鼻黏膜或血管糜爛（檢查所見，多見於鼻中隔前下方）",
+    "口乾咽燥或口臭（熱證明顯者）"
+   ],
+   "key_manifestations_en": [
+    "Bleeding from the nose, or blood-tinged nasal discharge",
+    "Color and volume of bleeding vary by pattern (bright red and copious in excess patterns; pale and scanty but recurrent in deficiency patterns)",
+    "Erosion of the nasal mucosa or vessels (on examination, most often at the anteroinferior septum)",
+    "Dry mouth/throat or bad breath (prominent in heat patterns)"
+   ],
+   "associated_manifestations_zh": [
+    "頭痛",
+    "心煩",
+    "便秘",
+    "齒衄同見（脾虛或胃熱者）"
+   ],
+   "associated_manifestations_en": [
+    "Headache",
+    "Vexation/irritability",
+    "Constipation",
+    "Concurrent gum bleeding (in Spleen deficiency or Stomach heat patterns)"
+   ],
+   "disease_location_zh": "病位在鼻，涉及肺、胃、肝；反覆不止者涉及脾、腎。",
+   "disease_location_en": "Disease location is the nose, involving the Lung, Stomach, and Liver; recurrent, unremitting bleeding involves the Spleen and Kidney.",
+   "treatment_principle_zh": "實證以清熱瀉火、涼血止血為主；虛證以滋陰降火或健脾攝血為主，並隨證施以局部止血法。",
+   "treatment_principle_en": "Excess patterns are treated by clearing heat, draining fire, cooling the Blood, and stopping bleeding; deficiency patterns are treated by nourishing Yin and lowering fire, or by fortifying the Spleen to hold the Blood, combined with local hemostatic measures as needed.",
+   "red_flags_zh": [
+    "鼻出血以直接壓迫鼻翼15-20分鐘仍無法止血，或血液流向咽喉（提示後鼻部出血），應立即送急診處理，可能需鼻腔填塞或電燒",
+    "鼻衄合併皮膚瘀斑瘀點、牙齦出血、其他部位反覆出血，或正在使用抗凝血/抗血小板藥物，應轉診檢查凝血功能、血小板，排除凝血功能障礙",
+    "成人單側反覆鼻衄合併單側鼻塞、面部麻木或頸部腫塊，應轉診排除鼻咽部或鼻竇腫瘤",
+    "鼻衄合併血壓極高（如收縮壓>180mmHg）或伴頭痛、意識改變，應視為高血壓急症評估",
+    "兒童反覆鼻衄合併不明原因瘀傷、蒼白、疲倦，應轉診排除白血病等血液系統疾病"
+   ],
+   "red_flags_en": [
+    "Epistaxis that does not stop after 15-20 minutes of direct pressure on the nasal ala, or blood draining down the throat (suggesting a posterior bleed), should be treated as an emergency — refer immediately, as nasal packing or cautery may be required",
+    "Epistaxis with skin bruising/petechiae, gum bleeding, recurrent bleeding elsewhere, or use of anticoagulant/antiplatelet medication warrants referral to check coagulation studies and platelet count to rule out a bleeding disorder",
+    "Recurrent unilateral epistaxis in an adult with unilateral nasal obstruction, facial numbness, or a neck mass warrants referral to rule out a nasopharyngeal or sinonasal tumor",
+    "Epistaxis with markedly elevated blood pressure (e.g., systolic >180 mmHg), headache, or altered consciousness should be evaluated as a hypertensive emergency",
+    "Recurrent epistaxis in a child with unexplained bruising, pallor, or fatigue warrants referral to rule out leukemia or another hematologic disorder"
+   ],
+   "related_patterns": [
+    "pattern.stomach_fire",
+    "pattern.liver_fire",
+    "pattern.blood_heat",
+    "pattern.yin_deficiency_fire_flaring",
+    "pattern.spleen_not_governing_blood"
+   ],
+   "field_sources": {
+    "definition_zh": [
+     "TCM ENT textbook standard (統編教材《中醫耳鼻喉科學》)"
+    ],
+    "etiology_zh": [
+     "TCM ENT textbook standard (統編教材《中醫耳鼻喉科學》)"
+    ],
+    "pathomechanism_zh": [
+     "TCM ENT textbook standard (統編教材《中醫耳鼻喉科學》)"
+    ],
+    "key_manifestations_zh": [
+     "TCM ENT textbook standard (統編教材《中醫耳鼻喉科學》)"
+    ],
+    "associated_manifestations_zh": [
+     "TCM ENT textbook standard (統編教材《中醫耳鼻喉科學》)"
+    ],
+    "disease_location_zh": [
+     "TCM ENT textbook standard (統編教材《中醫耳鼻喉科學》)"
+    ],
+    "treatment_principle_zh": [
+     "TCM ENT textbook standard (統編教材《中醫耳鼻喉科學》)"
+    ],
+    "related_patterns": [
+     "TCM ENT textbook standard (統編教材《中醫耳鼻喉科學》)"
+    ],
+    "red_flags_zh": [
+     "established TCM/biomedical clinical knowledge, not curriculum or whitelist-verified — flag for Ting to source-check; curriculum/conditions/Hypertension_高血壓.md and formula-card files only list 鼻衄 as a symptom within a herb/pattern list, no dedicated red-flag protocol was found"
+    ]
+   }
   },
   {
    "id": "tdis.er_xuan_yun",
@@ -12625,7 +12952,91 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "definition_zh": "耳眩暈是因耳部病變引起的以突發性、發作性真性眩暈（自覺自身或外界景物旋轉）為主要表現的病證，常伴耳鳴、聽力下降、噁心嘔吐，發作時神志清楚，相當於現代醫學的梅尼埃病等周圍性眩暈疾患。",
+   "definition_en": "Er Xuan Yun (Aural Vertigo) is a disorder originating in the ear, characterized by sudden, paroxysmal true vertigo (a sensation that oneself or the surroundings are spinning), often accompanied by tinnitus, hearing loss, nausea, and vomiting, with consciousness remaining clear throughout the episode; it corresponds to Meniere's disease and other peripheral vestibular disorders in Western medicine.",
+   "etiology_zh": "多因情志不遂，肝鬱化火，肝陽上亢；或飲食不節，脾失健運，痰濕內生，痰濁上蒙；或素體腎虛，或年老、久病、房勞過度耗傷腎精；亦可因外感風邪誘發或加重。",
+   "etiology_en": "Commonly caused by emotional frustration leading to Liver depression transforming into fire and Liver Yang rising; or an improper diet impairing Spleen transportation and generating internal Phlegm-Dampness that clouds the upper orifices; or an underlying Kidney deficiency, whether constitutional or from aging, chronic illness, or sexual overexertion depleting Kidney essence; onset may also be triggered or worsened by an external Wind pathogen.",
+   "pathomechanism_zh": "耳為清竅，賴腎精充養及清陽之氣上奉；肝陽上亢或肝火上炎，擾動耳竅清空之府，發為眩暈耳鳴，多起病急、症狀劇；脾虛生痰，痰濁夾肝風上擾清竅，見眩暈伴頭重、噁心嘔吐痰涎；腎精虧虛，髓海不足，耳竅失養，眩暈反覆發作、聽力漸損；反覆發作日久，可耗傷氣血，轉為虛證。",
+   "pathomechanism_en": "The ear is a clear orifice nourished by Kidney essence and the ascending clear Yang Qi. When Liver Yang rises or Liver fire flares upward, it disturbs the clear space of the ear, producing sudden, severe vertigo with tinnitus. When Spleen deficiency generates Phlegm, turbid Phlegm combined with internal Liver Wind rises to disturb the clear orifice, producing vertigo with a heavy head, nausea, and vomiting of phlegm-fluid. When Kidney essence is depleted, the Sea of Marrow becomes insufficient and the ear loses its nourishment, producing recurrent vertigo with progressively worsening hearing. Repeated episodes over time can deplete Qi and Blood, shifting the disorder toward a deficiency pattern.",
+   "key_manifestations_zh": [
+    "突發性旋轉性眩暈（自覺天旋地轉）",
+    "伴耳鳴",
+    "伴聽力減退",
+    "伴噁心嘔吐",
+    "反覆發作",
+    "發作時神志清楚（不伴意識喪失）"
+   ],
+   "key_manifestations_en": [
+    "Sudden-onset spinning (rotatory) vertigo",
+    "Accompanying tinnitus",
+    "Accompanying hearing loss",
+    "Accompanying nausea and vomiting",
+    "A recurrent, episodic course",
+    "Clear consciousness throughout the episode (no loss of consciousness)"
+   ],
+   "associated_manifestations_zh": [
+    "耳脹悶感",
+    "汗出",
+    "面色蒼白"
+   ],
+   "associated_manifestations_en": [
+    "A sensation of fullness/pressure in the ear",
+    "Sweating",
+    "Pale complexion"
+   ],
+   "disease_location_zh": "病位在耳，與肝、脾、腎密切相關。",
+   "disease_location_en": "Disease location is the ear, closely related to the Liver, Spleen, and Kidney.",
+   "treatment_principle_zh": "肝陽上亢或肝火上炎者平肝潛陽、清肝瀉火；痰濁上蒙者健脾化痰、和胃降逆；腎精虧虛者補腎填精、充養清竅。",
+   "treatment_principle_en": "For Liver Yang rising or Liver fire flaring, calm the Liver, subdue Yang, clear the Liver, and drain fire; for turbid Phlegm clouding the orifice, fortify the Spleen, transform Phlegm, harmonize the Stomach, and direct rebellious Qi downward; for Kidney essence depletion, tonify the Kidney, replenish essence, and nourish the clear orifice.",
+   "red_flags_zh": [
+    "眩暈發作合併複視、言語不清、單側肢體無力或麻木、步態不穩（無法獨立行走）、意識狀態異常，應視為中樞性眩暈（腦幹/小腦中風或TIA）警訊，須立即送急診，不可先按耳源性眩暈處理",
+    "眩暈合併劇烈頭痛、與以往發作型態明顯不同的突發嚴重眩暈，尤其有血管危險因子（高血壓、糖尿病、高齡）者，應提高警覺盡速轉診神經科或急診評估",
+    "眩暈合併眼球震顫方向多變或垂直性眼震，屬中樞病灶徵象，應轉診神經科排除",
+    "耳眩暈雖反覆發作但每次均能自行緩解且無神經學症狀，仍應建議至少一次由醫師完整評估以確立診斷，排除其他病因"
+   ],
+   "red_flags_en": [
+    "Vertigo accompanied by double vision, slurred speech, unilateral limb weakness or numbness, an inability to walk unassisted, or altered consciousness should be treated as a red flag for central (brainstem/cerebellar) vertigo from stroke or TIA — seek emergency care immediately rather than treating it as simple aural vertigo",
+    "Vertigo with a severe headache, or a sudden severe episode markedly different in character from prior episodes — especially in a patient with vascular risk factors (hypertension, diabetes, advanced age) — warrants urgent referral to neurology or the emergency department",
+    "Vertigo with direction-changing or vertical nystagmus is a sign suggestive of a central lesion and warrants neurology referral to rule this out",
+    "Even when aural vertigo is recurrent, self-limiting, and free of neurologic symptoms, at least one full medical evaluation is recommended to confirm the diagnosis and exclude other causes"
+   ],
+   "related_patterns": [
+    "pattern.liver_yang_rising",
+    "pattern.liver_fire",
+    "pattern.phlegm_damp",
+    "pattern.kidney_essence_deficiency",
+    "pattern.qi_blood_deficiency"
+   ],
+   "field_sources": {
+    "definition_zh": [
+     "TCM ENT textbook standard (統編教材《中醫耳鼻喉科學》)"
+    ],
+    "etiology_zh": [
+     "TCM ENT textbook standard (統編教材《中醫耳鼻喉科學》)"
+    ],
+    "pathomechanism_zh": [
+     "TCM ENT textbook standard (統編教材《中醫耳鼻喉科學》)"
+    ],
+    "key_manifestations_zh": [
+     "TCM ENT textbook standard (統編教材《中醫耳鼻喉科學》)"
+    ],
+    "associated_manifestations_zh": [
+     "TCM ENT textbook standard (統編教材《中醫耳鼻喉科學》)"
+    ],
+    "disease_location_zh": [
+     "TCM ENT textbook standard (統編教材《中醫耳鼻喉科學》)"
+    ],
+    "treatment_principle_zh": [
+     "TCM ENT textbook standard (統編教材《中醫耳鼻喉科學》)"
+    ],
+    "related_patterns": [
+     "TCM ENT textbook standard (統編教材《中醫耳鼻喉科學》)"
+    ],
+    "red_flags_zh": [
+     "curriculum/conditions/2 Dizziness and Vertigo.docx#p22 (\"When to refer to ER\": double vision, headache, limb weakness, difficulty walking/controlling arms, difficulty speaking, abnormal eye movements, altered consciousness), elaborated with established TCM/biomedical clinical knowledge on central-vs-peripheral vertigo — flag for Ting to source-check the added elaboration beyond the curriculum doc"
+    ]
+   }
   },
   {
    "id": "tdis.er_chuang",
@@ -12636,7 +13047,87 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "definition_zh": "耳瘡是發生於外耳道皮膚的急性化膿性炎症，以耳道皮膚紅腫疼痛，或伴糜爛滲液、化膿為主要表現，相當於現代醫學的外耳道炎。",
+   "definition_en": "Er Chuang (Ear Sores) is an acute suppurative inflammation of the skin of the external auditory canal, presenting mainly with redness, swelling, and pain of the canal skin, sometimes with erosion, discharge, or pus formation; it corresponds to otitis externa in Western medicine.",
+   "etiology_zh": "多因挖耳損傷耳道皮膚，或游泳、洗浴污水入耳，感受風熱濕邪之毒，蘊結耳道；亦可因肝膽濕熱循經上蒸，燻蒸耳竅所致。",
+   "etiology_en": "Commonly caused by injury to the ear canal skin from ear-picking, or by contaminated water entering the ear during swimming or bathing, allowing Wind-Heat-Damp toxin to accumulate in the ear canal; it may also result from Liver-Gallbladder Damp-Heat steaming upward along its channel to the ear.",
+   "pathomechanism_zh": "邪毒（外感風熱濕邪，或肝膽濕熱循經上犯）蘊結耳道皮膚，壅滯氣血，故見紅腫灼痛；濕熱腐肉成膿則見糜爛滲液，甚則化膿；濕熱久羈，耗傷陰血，耳道皮膚失於濡養，可轉為乾燥脫屑、瘙癢反覆的慢性狀態。",
+   "pathomechanism_en": "Pathogenic toxin (externally contracted Wind-Heat-Damp, or Liver-Gallbladder Damp-Heat traveling upward along its channel) accumulates in the skin of the ear canal, obstructing Qi and Blood and producing redness, swelling, and a burning pain. When Damp-Heat putrefies the flesh, erosion with discharge or frank pus formation follows. If Damp-Heat lingers and damages Yin-Blood, the ear canal skin loses its nourishment and the condition may become chronic, with dryness, scaling, and recurrent itching.",
+   "key_manifestations_zh": [
+    "耳道皮膚紅腫",
+    "耳痛（張口、咀嚼或牽拉耳廓時加重）",
+    "耳道灼熱或搔癢",
+    "耳道滲液或黃色分泌物",
+    "耳道皮膚可見水皰或糜爛"
+   ],
+   "key_manifestations_en": [
+    "Redness and swelling of the ear canal skin",
+    "Ear pain (worsened by opening the mouth, chewing, or pulling on the pinna)",
+    "Burning or itching in the ear canal",
+    "Discharge or yellow secretion from the ear canal",
+    "Vesicles or erosion visible on the ear canal skin"
+   ],
+   "associated_manifestations_zh": [
+    "耳悶脹感",
+    "聽力輕度下降（因耳道腫脹阻塞）",
+    "發熱（重症）"
+   ],
+   "associated_manifestations_en": [
+    "A sensation of ear fullness/blockage",
+    "Mild hearing reduction (from canal swelling obstructing sound)",
+    "Fever (in severe cases)"
+   ],
+   "disease_location_zh": "病位在耳道皮膚，屬肝膽經；與脾胃濕熱有關。",
+   "disease_location_en": "Disease location is the skin of the ear canal, along the Liver-Gallbladder channel; also related to Spleen-Stomach Damp-Heat.",
+   "treatment_principle_zh": "以清熱利濕解毒為主，佐以疏風；局部外治與整體辨證並用。",
+   "treatment_principle_en": "The main principle is clearing heat, disinhibiting dampness, and resolving toxicity, combined with dispersing Wind; local topical treatment is used alongside systemic pattern-based treatment.",
+   "red_flags_zh": [
+    "耳痛程度與外觀不成比例地劇烈，合併糖尿病或免疫功能低下病史，應高度懷疑惡性（壞死性）外耳道炎，此為可能致命的急症，須立即轉診耳鼻喉科",
+    "耳道腫脹合併耳廓、耳周或顏面部紅腫擴散、發燒，提示蜂窩性組織炎，應儘速就醫給予全身性治療",
+    "外耳道感染合併同側顏面神經麻痺（口角歪斜、閉眼無力），提示感染可能侵犯顱底神經，屬急症，須立即轉診",
+    "耳道感染合併劇烈頭痛、頸部僵硬或意識改變，應立即送急診排除顱內併發症"
+   ],
+   "red_flags_en": [
+    "Ear pain disproportionately severe relative to examination findings, in a patient with diabetes or immunocompromise, should raise strong suspicion for malignant (necrotizing) otitis externa — a potentially life-threatening emergency requiring immediate ENT referral",
+    "Ear canal swelling with spreading redness/swelling of the pinna, surrounding skin, or face, plus fever, suggests cellulitis and warrants prompt medical treatment with systemic therapy",
+    "External ear infection with same-side facial nerve weakness (drooping mouth, inability to close the eye) suggests possible skull-base nerve involvement — this is an emergency requiring immediate referral",
+    "Ear canal infection with severe headache, neck stiffness, or altered consciousness should be sent to the emergency department immediately to rule out an intracranial complication"
+   ],
+   "related_patterns": [
+    "pattern.liver_gallbladder_damp_heat",
+    "pattern.damp_heat",
+    "pattern.wind_heat"
+   ],
+   "field_sources": {
+    "definition_zh": [
+     "TCM ENT textbook standard (統編教材《中醫耳鼻喉科學》)"
+    ],
+    "etiology_zh": [
+     "TCM ENT textbook standard (統編教材《中醫耳鼻喉科學》)"
+    ],
+    "pathomechanism_zh": [
+     "TCM ENT textbook standard (統編教材《中醫耳鼻喉科學》)"
+    ],
+    "key_manifestations_zh": [
+     "TCM ENT textbook standard (統編教材《中醫耳鼻喉科學》)"
+    ],
+    "associated_manifestations_zh": [
+     "TCM ENT textbook standard (統編教材《中醫耳鼻喉科學》)"
+    ],
+    "disease_location_zh": [
+     "TCM ENT textbook standard (統編教材《中醫耳鼻喉科學》)"
+    ],
+    "treatment_principle_zh": [
+     "TCM ENT textbook standard (統編教材《中醫耳鼻喉科學》)"
+    ],
+    "related_patterns": [
+     "TCM ENT textbook standard (統編教材《中醫耳鼻喉科學》)"
+    ],
+    "red_flags_zh": [
+     "established TCM/biomedical clinical knowledge, not curriculum or whitelist-verified — flag for Ting to source-check; searched curriculum/ for 耳瘡/otitis externa, no disease-specific content found"
+    ]
+   }
   },
   {
    "id": "tdis.nong_er",
@@ -12647,7 +13138,90 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "definition_zh": "膿耳是發生於中耳的化膿性疾病，以耳痛、聽力減退，穿孔後耳道流膿為主要表現，相當於現代醫學的急、慢性化膿性中耳炎。",
+   "definition_en": "Nong Er (Purulent Ear) is a suppurative disease of the middle ear, presenting mainly with ear pain, hearing loss, and — once the eardrum perforates — purulent ear discharge; it corresponds to acute and chronic suppurative otitis media in Western medicine.",
+   "etiology_zh": "多因外感風熱、風寒之邪化熱，或肝膽火熱、脾胃濕熱循經上蒸，蘊結中耳；慢性反覆者多因餘毒未清，兼脾虛濕困或腎虛虛火所致。",
+   "etiology_en": "Commonly caused by an externally contracted Wind-Heat or Wind-Cold pathogen transforming into heat, or by Liver-Gallbladder fire-heat or Spleen-Stomach Damp-Heat steaming upward along their channels to accumulate in the middle ear; chronic, recurrent cases usually reflect lingering unresolved toxin complicated by Spleen deficiency with Dampness encumbrance or Kidney deficiency with deficient fire.",
+   "pathomechanism_zh": "外邪化熱，兼肝膽火熱或濕熱循經上犯中耳，腐蝕肌膜，蒸釀成膿，膿液蓄積不能外泄，壓迫耳膜致其穿破，穿孔後膿液外泄則疼痛減輕；病久餘毒未淨，兼脾虛不能運化水濕，或腎虛虛火上炎，致膿液或黏或稀，穿孔與耳流膿反覆遷延不癒；若邪毒熾盛未能及時清解，可蝕骨傷筋，甚則內陷侵犯耳周組織，引動變證。",
+   "pathomechanism_en": "An external pathogen transforms into heat and, combined with Liver-Gallbladder fire-heat or Damp-Heat, travels upward along the channel to invade the middle ear, corroding the mucosal lining and brewing pus; when the accumulated pus cannot drain, pressure builds and ruptures the eardrum, after which the pain lessens as pus discharges outward. If lingering toxin is not fully cleared and is complicated by Spleen deficiency (unable to transform Water-Dampness) or Kidney deficiency with deficient fire flaring, the discharge becomes sticky or thin and the perforation/otorrhea becomes protracted and recurrent. If the pathogenic toxin remains unchecked and intense, it can erode bone and sinew, and in severe cases spread inward to invade the tissues around the ear, triggering serious complications.",
+   "key_manifestations_zh": [
+    "耳痛（穿孔後疼痛減輕）",
+    "耳道流膿（黃稠或伴血絲）",
+    "聽力減退",
+    "耳膜穿孔或充血膨隆（檢查所見）",
+    "反覆發作或纏綿不癒（慢性者）"
+   ],
+   "key_manifestations_en": [
+    "Ear pain (which lessens once the eardrum perforates)",
+    "Purulent ear discharge (thick and yellow, sometimes blood-streaked)",
+    "Hearing loss",
+    "Perforation, congestion, or bulging of the eardrum (on examination)",
+    "A recurrent or protracted course (in chronic cases)"
+   ],
+   "associated_manifestations_zh": [
+    "發熱惡寒（急性期）",
+    "耳鳴",
+    "耳悶脹感",
+    "頭痛"
+   ],
+   "associated_manifestations_en": [
+    "Fever with aversion to cold (acute stage)",
+    "Tinnitus",
+    "A sensation of ear fullness/pressure",
+    "Headache"
+   ],
+   "disease_location_zh": "病位在耳（中耳），與肝膽、脾、腎相關。",
+   "disease_location_en": "Disease location is the ear (middle ear), related to the Liver-Gallbladder, Spleen, and Kidney.",
+   "treatment_principle_zh": "急性以清熱解毒、瀉肝膽火為主；慢性以健脾滲濕，或補腎培元、托毒排膿為主，並佐以清除餘毒。",
+   "treatment_principle_en": "The acute form is treated by clearing heat, resolving toxicity, and draining Liver-Gallbladder fire; the chronic form is treated by fortifying the Spleen and disinhibiting Dampness, or by tonifying the Kidney and supporting the root while expelling residual toxin and pus.",
+   "red_flags_zh": [
+    "耳痛加劇、耳後乳突區紅腫壓痛、耳廓被推向前下方外突，提示乳突炎，應立即轉診耳鼻喉科或急診，不可僅以中藥/針灸拖延處理",
+    "高燒不退、頭痛劇烈、頸項僵硬、意識改變、噴射狀嘔吐，提示顱內併發症（腦膜炎、硬膜外膿瘍或腦膿瘍等），屬急症，須立即送急診",
+    "膿耳合併患側顏面神經麻痺（口角歪斜、閉眼無力），提示感染侵犯面神經管，須緊急轉診",
+    "兒童膿耳合併持續高燒、精神狀態差、嗜睡或拒食，兒童發生乳突炎及顱內併發症風險較高，應提高警覺並及早轉診評估"
+   ],
+   "red_flags_en": [
+    "Worsening ear pain with redness, swelling, and tenderness over the mastoid area behind the ear, with the pinna pushed forward and downward, suggests mastoiditis — refer immediately to ENT or the emergency department; do not delay with herbs/acupuncture alone",
+    "Persistent high fever, severe headache, neck stiffness, altered consciousness, or projectile vomiting suggests an intracranial complication (meningitis, epidural abscess, or brain abscess) — this is an emergency requiring immediate emergency care",
+    "Purulent ear discharge with same-side facial nerve weakness (drooping mouth, inability to close the eye) suggests the infection has invaded the facial nerve canal and warrants emergency referral",
+    "A child with purulent otitis media and persistent high fever, poor mental status, lethargy, or refusal to eat carries a higher risk of mastoiditis and intracranial spread — maintain a high index of suspicion and refer promptly for evaluation"
+   ],
+   "related_patterns": [
+    "pattern.liver_gallbladder_damp_heat",
+    "pattern.damp_heat",
+    "pattern.spleen_qi_deficiency",
+    "pattern.kidney_deficiency"
+   ],
+   "field_sources": {
+    "definition_zh": [
+     "TCM ENT textbook standard (統編教材《中醫耳鼻喉科學》)"
+    ],
+    "etiology_zh": [
+     "TCM ENT textbook standard (統編教材《中醫耳鼻喉科學》)"
+    ],
+    "pathomechanism_zh": [
+     "TCM ENT textbook standard (統編教材《中醫耳鼻喉科學》)"
+    ],
+    "key_manifestations_zh": [
+     "TCM ENT textbook standard (統編教材《中醫耳鼻喉科學》)"
+    ],
+    "associated_manifestations_zh": [
+     "TCM ENT textbook standard (統編教材《中醫耳鼻喉科學》)"
+    ],
+    "disease_location_zh": [
+     "TCM ENT textbook standard (統編教材《中醫耳鼻喉科學》)"
+    ],
+    "treatment_principle_zh": [
+     "TCM ENT textbook standard (統編教材《中醫耳鼻喉科學》)"
+    ],
+    "related_patterns": [
+     "TCM ENT textbook standard (統編教材《中醫耳鼻喉科學》)"
+    ],
+    "red_flags_zh": [
+     "established TCM/biomedical clinical knowledge, not curriculum or whitelist-verified — flag for Ting to source-check; searched curriculum/ for 膿耳/otitis media/mastoid, only found anatomical-landmark mentions in acupoint files and an unrelated Bell's palsy handout, no disease-specific red-flag content"
+    ]
+   }
   },
   {
    "id": "tdis.zhen_yan",
@@ -12658,7 +13232,81 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "definition_zh": "針眼是發生於眼瞼邊緣，以局部紅腫熱痛、形成硬結，甚則化膿為主要表現的眼瞼腺體急性化膿性疾病，相當於現代醫學的瞼腺炎（麥粒腫）。",
+   "definition_en": "Zhen Yan (Stye) is an acute suppurative disease of the eyelid glands, occurring at the lid margin and presenting mainly with localized redness, swelling, heat, and pain, forming a hard nodule that may progress to suppuration; it corresponds to hordeolum (stye) in Western medicine.",
+   "etiology_zh": "外因多為風熱之邪客於眼瞼；內因多見脾胃蘊熱，或心火上炎，常因飲食辛辣肥甘、用眼疲勞或衛生不佳而誘發，體質偏熱者易反覆發作。",
+   "etiology_en": "The external cause is usually Wind-Heat lodging in the eyelid; the internal cause is often accumulated Spleen-Stomach heat, or Heart fire flaring upward, commonly triggered by spicy/greasy food, eye fatigue, or poor hygiene — those with a heat-prone constitution are prone to recurrence.",
+   "pathomechanism_zh": "風熱之邪客於眼瞼（瞼屬脾），與內熱相合，壅滯局部氣血，故見紅腫硬結、觸痛；熱毒熾盛則腐肉成膿，膿成則自潰外泄，腫消痛止；素體脾胃積熱或心火偏旺者，易反覆發作，纏綿難癒。",
+   "pathomechanism_en": "A Wind-Heat pathogen lodges in the eyelid (which pertains to the Spleen) and combines with internal heat, obstructing Qi and Blood locally to produce redness, swelling, and a tender hard nodule. As the heat toxin intensifies, it putrefies the flesh and forms pus, which then ruptures and drains on its own, resolving the swelling and pain. Those with an underlying Spleen-Stomach accumulated-heat or Heart-fire-prone constitution are prone to recurrent, protracted episodes.",
+   "key_manifestations_zh": [
+    "眼瞼局部紅腫",
+    "硬結（初起如麥粒狀）",
+    "觸痛（尤以觸壓時明顯）",
+    "病灶頂端出現黃白色膿點（化膿期）",
+    "潰後膿出腫消"
+   ],
+   "key_manifestations_en": [
+    "Localized redness and swelling of the eyelid",
+    "A hard nodule (initially the size of a barley grain)",
+    "Tenderness (especially on palpation)",
+    "A yellow-white purulent point at the tip of the lesion (during suppuration)",
+    "Resolution of swelling once the pus drains"
+   ],
+   "associated_manifestations_zh": [
+    "眼瞼癢感",
+    "反覆發作（體質偏熱者）"
+   ],
+   "associated_manifestations_en": [
+    "Itching of the eyelid",
+    "Recurrent episodes (in those with a heat-prone constitution)"
+   ],
+   "disease_location_zh": "病位在眼瞼，屬脾；與心、胃有關。",
+   "disease_location_en": "Disease location is the eyelid, pertaining to the Spleen; also related to the Heart and Stomach.",
+   "treatment_principle_zh": "以清熱解毒、消腫散結為主；化膿期佐以透膿；體虛易反覆發作者兼調理脾胃。",
+   "treatment_principle_en": "The main principle is clearing heat, resolving toxicity, reducing swelling, and dispersing the nodule; venting the pus is added during suppuration; for those prone to recurrence from underlying deficiency, regulating the Spleen and Stomach is added.",
+   "red_flags_zh": [
+    "眼瞼腫脹範圍擴散超出瞼緣，波及整個眼眶，合併眼球突出、眼球轉動疼痛、視力下降或發燒，應懷疑眶隔前蜂窩性組織炎或眶內蜂窩性組織炎，屬急症，須立即轉診眼科或急診，不可僅以針灸/中藥處理",
+    "同一部位反覆出現、經治療未消退、且無明顯疼痛的病灶（尤其中老年人），應轉診排除瞼板腺癌等罕見惡性腫瘤"
+   ],
+   "red_flags_en": [
+    "Eyelid swelling that extends beyond the lid margin to involve the whole orbit, with proptosis, pain on eye movement, decreased vision, or fever, should raise suspicion for preseptal or orbital cellulitis — an emergency requiring immediate ophthalmology or emergency department referral, not management with acupuncture/herbs alone",
+    "A lesion recurring at the same site, failing to resolve with treatment, and relatively painless (especially in an older adult) warrants referral to rule out a rare malignancy such as meibomian gland (sebaceous) carcinoma"
+   ],
+   "related_patterns": [
+    "pattern.wind_heat",
+    "pattern.stomach_heat",
+    "pattern.heart_fire"
+   ],
+   "field_sources": {
+    "definition_zh": [
+     "TCM Ophthalmology textbook standard (統編教材《中醫眼科學》); cross-checked against curriculum/conditions/STY.DOC#p1 (Bastyr AOM Therapeutics notes on Lid Abscess/Stye)"
+    ],
+    "etiology_zh": [
+     "TCM Ophthalmology textbook standard (統編教材《中醫眼科學》); cross-checked against curriculum/conditions/STY.DOC#p1 (Bastyr AOM Therapeutics notes on Lid Abscess/Stye)"
+    ],
+    "pathomechanism_zh": [
+     "TCM Ophthalmology textbook standard (統編教材《中醫眼科學》); cross-checked against curriculum/conditions/STY.DOC#p1 (Bastyr AOM Therapeutics notes on Lid Abscess/Stye)"
+    ],
+    "key_manifestations_zh": [
+     "TCM Ophthalmology textbook standard (統編教材《中醫眼科學》); cross-checked against curriculum/conditions/STY.DOC#p1 (Bastyr AOM Therapeutics notes on Lid Abscess/Stye)"
+    ],
+    "associated_manifestations_zh": [
+     "TCM Ophthalmology textbook standard (統編教材《中醫眼科學》); cross-checked against curriculum/conditions/STY.DOC#p1 (Bastyr AOM Therapeutics notes on Lid Abscess/Stye)"
+    ],
+    "disease_location_zh": [
+     "TCM Ophthalmology textbook standard (統編教材《中醫眼科學》); cross-checked against curriculum/conditions/STY.DOC#p1 (Bastyr AOM Therapeutics notes on Lid Abscess/Stye)"
+    ],
+    "treatment_principle_zh": [
+     "TCM Ophthalmology textbook standard (統編教材《中醫眼科學》); cross-checked against curriculum/conditions/STY.DOC#p1 (Bastyr AOM Therapeutics notes on Lid Abscess/Stye)"
+    ],
+    "related_patterns": [
+     "TCM Ophthalmology textbook standard (統編教材《中醫眼科學》); cross-checked against curriculum/conditions/STY.DOC#p1 (Bastyr AOM Therapeutics notes on Lid Abscess/Stye)"
+    ],
+    "red_flags_zh": [
+     "established TCM/biomedical clinical knowledge, not curriculum or whitelist-verified — flag for Ting to source-check; curriculum/conditions/STY.DOC#p1 was checked and covers Western drainage/antibiotic-drop treatment but does not itself state these emergency red flags"
+    ]
+   }
   },
   {
    "id": "tdis.tian_xing_chi_yan",
@@ -12669,7 +13317,89 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "definition_zh": "天行赤眼是感受天行癘氣（時邪疫毒）所致，以起病急驟、白睛紅赤腫脹、眵淚黏稠、傳染性強、易於流行為特徵的外障眼病，相當於現代醫學之流行性（病毒性）結膜炎。",
+   "definition_en": "Tian Xing Chi Yan (Epidemic Conjunctivitis) is an external eye disease caused by contracting an epidemic pestilential toxin, characterized by sudden onset, redness and swelling of the conjunctiva (\"white of the eye\"), copious sticky discharge and tearing, strong contagiousness, and a tendency to occur in outbreaks; it corresponds to epidemic (viral) conjunctivitis in Western medicine.",
+   "etiology_zh": "感受時行癘氣（風熱時毒），多發於夏秋季節，經接觸傳播（手、毛巾、器物）；素體肝膽或肺經蘊熱者更易發病，且病情較重。",
+   "etiology_en": "Caused by contracting an epidemic pestilential Wind-Heat toxin, most common in summer and autumn, and spread by contact (hands, towels, shared objects); those with a constitutional predisposition to accumulated Liver-Gallbladder or Lung-channel heat are more susceptible and tend to develop a more severe presentation.",
+   "pathomechanism_zh": "天行癘氣毒邪由外侵襲白睛（結膜）之絡，邪毒熾盛，壅滯氣血，故見白睛暴赤腫脹、眵淚驟增、羞明流淚；毒邪熾熱灼傷血絡，甚則白睛下見片狀出血；因其為癘氣所致，故傳染迅速，易在人群中流行。",
+   "pathomechanism_en": "An epidemic pestilential toxin externally invades the collaterals of the conjunctiva (\"white of the eye\"); the fierce toxic heat obstructs Qi and Blood, producing sudden marked redness and swelling of the conjunctiva, a rapid increase in discharge and tearing, and photophobia. Intense toxic heat can scorch the conjunctival vessels, sometimes causing patchy subconjunctival hemorrhage. Because the pathogen is pestilential in nature, the disease spreads rapidly and readily occurs in outbreaks among close contacts.",
+   "key_manifestations_zh": [
+    "白睛紅赤腫脹（甚則片狀出血）",
+    "眼部分泌物驟增（初起水樣，後轉黏稠或膿性）",
+    "起病急驟",
+    "畏光流淚、異物感",
+    "傳染性強，易於流行發病"
+   ],
+   "key_manifestations_en": [
+    "Redness and swelling of the conjunctiva, sometimes with patchy subconjunctival hemorrhage",
+    "A rapid increase in eye discharge (initially watery, later thick or purulent)",
+    "Sudden onset",
+    "Photophobia, tearing, and a foreign-body sensation",
+    "Strong contagiousness with a tendency toward outbreaks"
+   ],
+   "associated_manifestations_zh": [
+    "眼瞼腫脹",
+    "頭痛",
+    "耳前淋巴結腫大",
+    "全身輕微不適"
+   ],
+   "associated_manifestations_en": [
+    "Eyelid swelling",
+    "Headache",
+    "Preauricular lymphadenopathy",
+    "Mild general malaise"
+   ],
+   "disease_location_zh": "病位在白睛（結膜），屬肺；與心、肝有關。",
+   "disease_location_en": "Disease location is the conjunctiva (\"white of the eye\"), pertaining to the Lung; also related to the Heart and Liver.",
+   "treatment_principle_zh": "以疏風清熱解毒為主，重症佐以涼血；並應注意隔離消毒以防傳染。",
+   "treatment_principle_en": "The main principle is dispersing Wind, clearing heat, and resolving toxicity, with cooling the Blood added in severe cases; isolation and disinfection measures should also be observed to prevent spread.",
+   "red_flags_zh": [
+    "眼紅合併視力明顯下降、角膜出現白色混濁點或潰瘍、畏光程度與結膜炎不成比例，應立即轉診眼科排除角膜炎/角膜潰瘍，此類病灶可能危及視力，不可僅按結膜炎處理",
+    "配戴隱形眼鏡者出現紅眼合併疼痛，感染性角膜炎風險較高，應儘速轉診眼科",
+    "單眼劇烈眼痛、視力模糊、瞳孔異常、虹視合併紅眼，應排除急性閉角型青光眼偽裝成結膜炎的可能，須測量眼壓",
+    "新生兒出現眼睛紅腫、膿性分泌物，有淋菌性/披衣菌感染導致角膜損傷甚至失明的風險，應立即轉診處理"
+   ],
+   "red_flags_en": [
+    "Red eye with markedly reduced vision, a white corneal opacity or ulcer, or photophobia disproportionate to the degree of conjunctival injection warrants immediate ophthalmology referral to rule out keratitis/corneal ulcer, which can be vision-threatening and should not be managed as simple conjunctivitis",
+    "A contact lens wearer presenting with a red, painful eye carries a higher risk of infectious keratitis and should be referred to ophthalmology promptly",
+    "Severe unilateral eye pain, blurred vision, an abnormal pupil, or halos around lights accompanying a red eye should raise suspicion for acute angle-closure glaucoma masquerading as conjunctivitis — intraocular pressure should be measured",
+    "A neonate with red, swollen eyes and purulent discharge (ophthalmia neonatorum) carries a risk of gonococcal/chlamydial corneal damage and even blindness, and should be referred for immediate treatment"
+   ],
+   "related_patterns": [
+    "pattern.wind_heat",
+    "pattern.liver_fire",
+    "pattern.heat_toxin_blazing"
+   ],
+   "field_sources": {
+    "definition_zh": [
+     "TCM Ophthalmology textbook standard (統編教材《中醫眼科學》); cross-checked against curriculum/conditions/CONJUNC.DOC#p1 (Bastyr AOM Therapeutics notes on Conjunctivitis)"
+    ],
+    "etiology_zh": [
+     "TCM Ophthalmology textbook standard (統編教材《中醫眼科學》); cross-checked against curriculum/conditions/CONJUNC.DOC#p1 (Bastyr AOM Therapeutics notes on Conjunctivitis)"
+    ],
+    "pathomechanism_zh": [
+     "TCM Ophthalmology textbook standard (統編教材《中醫眼科學》); cross-checked against curriculum/conditions/CONJUNC.DOC#p1 (Bastyr AOM Therapeutics notes on Conjunctivitis)"
+    ],
+    "key_manifestations_zh": [
+     "TCM Ophthalmology textbook standard (統編教材《中醫眼科學》); cross-checked against curriculum/conditions/CONJUNC.DOC#p1 (Bastyr AOM Therapeutics notes on Conjunctivitis)"
+    ],
+    "associated_manifestations_zh": [
+     "TCM Ophthalmology textbook standard (統編教材《中醫眼科學》); cross-checked against curriculum/conditions/CONJUNC.DOC#p1 (Bastyr AOM Therapeutics notes on Conjunctivitis)"
+    ],
+    "disease_location_zh": [
+     "TCM Ophthalmology textbook standard (統編教材《中醫眼科學》); cross-checked against curriculum/conditions/CONJUNC.DOC#p1 (Bastyr AOM Therapeutics notes on Conjunctivitis)"
+    ],
+    "treatment_principle_zh": [
+     "TCM Ophthalmology textbook standard (統編教材《中醫眼科學》); cross-checked against curriculum/conditions/CONJUNC.DOC#p1 (Bastyr AOM Therapeutics notes on Conjunctivitis)"
+    ],
+    "related_patterns": [
+     "TCM Ophthalmology textbook standard (統編教材《中醫眼科學》); cross-checked against curriculum/conditions/CONJUNC.DOC#p1 (Bastyr AOM Therapeutics notes on Conjunctivitis)"
+    ],
+    "red_flags_zh": [
+     "established TCM/biomedical clinical knowledge, not curriculum or whitelist-verified — flag for Ting to source-check; curriculum/conditions/CONJUNC.DOC#p1 was checked and covers epidemiology/treatment but does not itself state these vision-threatening red flags"
+    ]
+   }
   },
   {
    "id": "tdis.bai_se_zheng",
@@ -12680,7 +13410,85 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "definition_zh": "白澀症是以眼乾澀不適、白睛少澤而不紅不腫為主要表現的慢性外障眼病，相當於現代醫學的乾眼症。",
+   "definition_en": "Bai Se Zheng (Dry Eye Disorder) is a chronic external eye disease characterized mainly by ocular dryness and discomfort, with the conjunctiva appearing dull/pale rather than red or swollen; it corresponds to dry eye disease (keratoconjunctivitis sicca) in Western medicine.",
+   "etiology_zh": "多因肺陰不足，或肝腎陰虧，津液不能上潤於目；或久病傷陰、年老體衰；亦可因長時間閱讀、用眼過度耗傷陰血；濕熱或氣鬱阻滯亦可影響淚液敷布。",
+   "etiology_en": "Commonly caused by Lung Yin insufficiency, or Liver-Kidney Yin deficiency, in which body fluids fail to rise and moisten the eye; or by prolonged illness damaging Yin, or the decline of Yin-Blood with aging; it may also result from prolonged reading or eye overuse consuming Yin-Blood; residual Damp-Heat or Qi stagnation can likewise disrupt the normal distribution of tear fluid.",
+   "pathomechanism_zh": "目賴陰血津液濡養，肺陰不足或肝腎陰虧，津液虧耗，不能上榮於目，白睛失於濡潤，故見乾澀少澤而不紅不腫；病久用眼疲勞，陰血愈耗，症狀反覆加重；濕熱或氣鬱者，淚液敷布失常，雖津液未必虧虛，亦可見眼乾澀不適。",
+   "pathomechanism_en": "The eye depends on the moistening nourishment of Yin-Blood and body fluids; when Lung Yin is insufficient or Liver-Kidney Yin is deficient, fluids are depleted and cannot rise to nourish the eye, so the conjunctiva loses its moisture and appears dry and dull without redness or swelling. Prolonged eye strain further consumes Yin-Blood, worsening symptoms over time. In those with residual Damp-Heat or Qi stagnation, the normal distribution of tear fluid to the eye surface is disrupted, producing dryness and discomfort even without underlying fluid depletion.",
+   "key_manifestations_zh": [
+    "眼乾澀感",
+    "眼部異物感或灼熱感",
+    "白睛少澤但不紅不腫",
+    "視物易疲勞",
+    "症狀因用眼、環境乾燥而加重"
+   ],
+   "key_manifestations_en": [
+    "A sensation of ocular dryness",
+    "A foreign-body sensation or burning in the eye",
+    "Dull, lusterless conjunctiva without redness or swelling",
+    "Visual fatigue with use",
+    "Symptoms worsened by eye use or a dry environment"
+   ],
+   "associated_manifestations_zh": [
+    "畏光",
+    "瞬目頻繁",
+    "口乾（陰虛明顯者）"
+   ],
+   "associated_manifestations_en": [
+    "Photophobia",
+    "Frequent blinking",
+    "Dry mouth (prominent in marked Yin deficiency)"
+   ],
+   "disease_location_zh": "病位在白睛，與肺、肝、腎相關。",
+   "disease_location_en": "Disease location is the conjunctiva, related to the Lung, Liver, and Kidney.",
+   "treatment_principle_zh": "以滋陰潤燥、養肝明目為主；兼夾濕熱或氣鬱者佐以清利或疏解。",
+   "treatment_principle_en": "The main principle is nourishing Yin, moistening dryness, nourishing the Liver, and brightening the eyes; when complicated by Damp-Heat or Qi stagnation, clearing/disinhibiting or soothing the Qi is added.",
+   "red_flags_zh": [
+    "眼乾澀合併眼痛劇烈、畏光程度與乾眼不成比例、視力驟降，或角膜可見絲狀物、白色混濁區，應轉診眼科排除角膜潰瘍或暴露性角膜病變",
+    "眼乾合併口乾、關節疼痛、腮腺反覆腫大等全身症狀，應考慮修格連氏症候群（Sjögren's syndrome）等自體免疫疾病，建議轉診風濕免疫科評估",
+    "單側突發嚴重乾澀合併同側顏面麻痺、眼瞼閉合不全，應排除顏面神經麻痺所致暴露性角膜病變，須及早轉診"
+   ],
+   "red_flags_en": [
+    "Dry eye with severe pain, photophobia disproportionate to the degree of dryness, sudden vision loss, or visible corneal filaments/white opacity warrants ophthalmology referral to rule out corneal ulceration or exposure keratopathy",
+    "Dry eye accompanied by dry mouth, joint pain, or recurrent parotid gland swelling should raise suspicion for Sjögren's syndrome or another autoimmune disease — refer for rheumatology/immunology evaluation",
+    "Sudden severe unilateral dryness with same-side facial weakness and incomplete eyelid closure should raise suspicion for facial nerve palsy causing exposure keratopathy and warrants prompt referral"
+   ],
+   "related_patterns": [
+    "pattern.liver_kidney_yin_deficiency",
+    "pattern.lung_yin_deficiency",
+    "pattern.yin_deficiency"
+   ],
+   "field_sources": {
+    "definition_zh": [
+     "TCM Ophthalmology textbook standard (統編教材《中醫眼科學》)"
+    ],
+    "etiology_zh": [
+     "TCM Ophthalmology textbook standard (統編教材《中醫眼科學》)"
+    ],
+    "pathomechanism_zh": [
+     "TCM Ophthalmology textbook standard (統編教材《中醫眼科學》)"
+    ],
+    "key_manifestations_zh": [
+     "TCM Ophthalmology textbook standard (統編教材《中醫眼科學》)"
+    ],
+    "associated_manifestations_zh": [
+     "TCM Ophthalmology textbook standard (統編教材《中醫眼科學》)"
+    ],
+    "disease_location_zh": [
+     "TCM Ophthalmology textbook standard (統編教材《中醫眼科學》)"
+    ],
+    "treatment_principle_zh": [
+     "TCM Ophthalmology textbook standard (統編教材《中醫眼科學》)"
+    ],
+    "related_patterns": [
+     "TCM Ophthalmology textbook standard (統編教材《中醫眼科學》)"
+    ],
+    "red_flags_zh": [
+     "established TCM/biomedical clinical knowledge, not curriculum or whitelist-verified — flag for Ting to source-check; searched curriculum/ for 白澀症/dry eye, only found tangential symptom-list mentions in unrelated pattern files, no disease-specific red-flag content"
+    ]
+   }
   },
   {
    "id": "tdis.lu_feng_nei_zhang",
@@ -12691,7 +13499,87 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "definition_zh": "綠風內障是以起病急驟、眼珠劇痛、視力驟降、瞳神散大、瞳色淡綠、眼珠變硬如石為特徵的急重眼病，相當於現代醫學的急性閉角型青光眼；病勢緩慢者相當於慢性閉角型/原發性青光眼。",
+   "definition_en": "Lu Feng Nei Zhang (\"Green-Wind Internal Obstruction\") is an acute, severe eye disease characterized by sudden onset, severe eye pain, marked vision loss, a dilated pupil, a greenish cast to the pupil, and a rock-hard globe on palpation; it most closely corresponds to acute angle-closure glaucoma in Western medicine, while its slower-onset form corresponds to chronic angle-closure/primary glaucoma.",
+   "etiology_zh": "多因情志鬱怒，肝氣鬱結化火，肝火上攻於目；或脾虛生痰，痰濕蘊久化火，痰火上擾清竅；或素體肝腎陰虧，虛火上炎，耗傷目中津液；發作常因情緒激動、疲勞、久處暗室（瞳孔散大）而誘發。",
+   "etiology_en": "Commonly caused by emotional depression and anger leading to Liver Qi stagnation that transforms into fire, which attacks the eye; or Spleen deficiency generating Phlegm that, over time, transforms into fire and disturbs the eye's clear orifice; or an underlying Liver-Kidney Yin deficiency with deficient fire flaring upward, consuming the eye's fluids. Attacks are often triggered by emotional upset, fatigue, or prolonged time in a dark environment (pupil dilation).",
+   "pathomechanism_zh": "肝火（因氣鬱化火）或痰火（因脾虛生痰化火）循肝經上攻於目，氣血津液壅滯，眼中神水運行通路驟然閉塞，故見眼珠劇痛連及頭部、眼壓驟升、眼珠變硬如石、視力急劇下降，瞳神因氣血壅滯而散大固定、色現淡綠；久病或肝腎陰虧者，虛火漸耗目中精氣，病勢較緩但持續損害視神經，終致視野漸損，若拖延不治，可致失明。",
+   "pathomechanism_en": "Liver fire (from Qi stagnation transforming into fire) or Phlegm-fire (from Spleen deficiency generating Phlegm that transforms into fire) surges upward along the Liver channel to attack the eye; Qi, Blood, and fluids become congested, and the pathway for the eye's \"spirit fluid\" (aqueous humor) is suddenly obstructed — producing severe eye pain radiating to the head, a sudden rise in intraocular pressure, a rock-hard globe, and rapidly declining vision, with the pupil becoming fixed, dilated, and tinged green from the congestion of Qi and Blood. In chronic cases, or in those with underlying Liver-Kidney Yin deficiency, deficient fire gradually consumes the eye's essence-Qi — the course is slower but continues to damage the optic nerve, eventually causing progressive visual field loss, and if left untreated, blindness.",
+   "key_manifestations_zh": [
+    "眼脹痛劇烈，連及頭部（患側頭痛）",
+    "視力驟降或視物如隔雲霧",
+    "瞳孔散大、固定，展現淡綠色反光",
+    "眼壓升高，眼珠變硬如石",
+    "虹視（視燈光有虹暈）",
+    "噁心嘔吐"
+   ],
+   "key_manifestations_en": [
+    "Severe distending eye pain radiating to the head (same-side headache)",
+    "Sudden marked vision loss or visual blurring \"as through fog\"",
+    "A dilated, fixed pupil with a greenish reflex",
+    "Elevated intraocular pressure with the globe hard as a stone on palpation",
+    "Halos seen around lights",
+    "Nausea and vomiting"
+   ],
+   "associated_manifestations_zh": [
+    "眼球結膜混合充血",
+    "面色蒼白、冷汗（劇痛時）"
+   ],
+   "associated_manifestations_en": [
+    "Mixed conjunctival/ciliary injection",
+    "Pale complexion and cold sweat (during severe pain)"
+   ],
+   "disease_location_zh": "病位在目（瞳神／前房），與肝、腎、脾密切相關。",
+   "disease_location_en": "Disease location is the eye (the pupil/anterior chamber), closely related to the Liver, Kidney, and Spleen.",
+   "treatment_principle_zh": "急則清熱瀉火、平肝息風以急降眼壓為第一要務，須立即配合西醫降眼壓治療及必要時手術；緩解後依證滋陰降火或健脾化痰以固本。",
+   "treatment_principle_en": "In the acute attack, the first priority is clearing heat, draining fire, calming the Liver, and extinguishing Wind to urgently lower intraocular pressure, in immediate combination with Western pressure-lowering treatment and surgery when necessary; once the acute attack has resolved, nourishing Yin and lowering fire, or fortifying the Spleen and transforming Phlegm, is used according to the pattern to secure the root.",
+   "red_flags_zh": [
+    "突發劇烈眼痛、視力驟降、瞳孔散大固定、虹視（視燈光有光暈）、眼球結膜混合充血、眼壓升高眼珠變硬——此為綠風內障急性發作（急性閉角型青光眼），屬眼科急症，須即刻轉診眼科或急診降眼壓治療，切勿僅以針灸/中藥拖延就醫，以免數小時內視神經不可逆損傷、失明",
+    "眼痛合併噁心嘔吐、頭痛，若誤診為腸胃疾患或偏頭痛而延誤降眼壓治療，可導致永久性視力喪失，應主動測量眼壓以資鑑別",
+    "單眼急性發作後，對側眼有相同機轉發作的風險，應提醒患者對側眼一旦出現類似症狀（眼痛、虹視、視力模糊），同樣須立即就醫視為急症",
+    "慢性隱伏型（視野漸進性缺損、無明顯眼痛）仍須定期測量眼壓與視野檢查，不可僅憑症狀輕微而輕忽延誤，以免不知不覺中喪失視力"
+   ],
+   "red_flags_en": [
+    "Sudden severe eye pain, marked vision loss, a fixed dilated pupil, halos around lights, mixed conjunctival injection, and an elevated, rock-hard intraocular pressure together indicate an acute attack of Lu Feng Nei Zhang (acute angle-closure glaucoma) — an ophthalmic emergency requiring immediate ophthalmology or emergency department referral for pressure-lowering treatment; do not delay care by treating with acupuncture/herbs alone, as irreversible optic nerve damage and blindness can occur within hours",
+    "Eye pain with nausea, vomiting, and headache can be mistaken for a gastrointestinal illness or migraine, delaying pressure-lowering treatment and causing permanent vision loss — intraocular pressure should be actively checked to differentiate",
+    "After a unilateral acute attack, the fellow eye carries a real risk of the same mechanism triggering an attack — patients should be told that similar symptoms (eye pain, halos, blurred vision) in the other eye must also be treated as an emergency",
+    "The chronic, insidious form (progressive visual field loss with little pain) still requires regular intraocular pressure and visual field monitoring — mild symptoms should never lead to complacency, since vision can be lost gradually and unnoticed"
+   ],
+   "related_patterns": [
+    "pattern.liver_qi_stagnation",
+    "pattern.liver_fire",
+    "pattern.liver_kidney_yin_deficiency"
+   ],
+   "field_sources": {
+    "definition_zh": [
+     "TCM Ophthalmology textbook standard (統編教材《中醫眼科學》); cross-checked against curriculum/conditions/glaucoma.doc#p1 (Bastyr AOM Therapeutics notes on Glaucoma / 青風內障)"
+    ],
+    "etiology_zh": [
+     "TCM Ophthalmology textbook standard (統編教材《中醫眼科學》); cross-checked against curriculum/conditions/glaucoma.doc#p1 (Bastyr AOM Therapeutics notes on Glaucoma / 青風內障)"
+    ],
+    "pathomechanism_zh": [
+     "TCM Ophthalmology textbook standard (統編教材《中醫眼科學》); cross-checked against curriculum/conditions/glaucoma.doc#p1 (Bastyr AOM Therapeutics notes on Glaucoma / 青風內障)"
+    ],
+    "key_manifestations_zh": [
+     "TCM Ophthalmology textbook standard (統編教材《中醫眼科學》); cross-checked against curriculum/conditions/glaucoma.doc#p1 (Bastyr AOM Therapeutics notes on Glaucoma / 青風內障)"
+    ],
+    "associated_manifestations_zh": [
+     "TCM Ophthalmology textbook standard (統編教材《中醫眼科學》); cross-checked against curriculum/conditions/glaucoma.doc#p1 (Bastyr AOM Therapeutics notes on Glaucoma / 青風內障)"
+    ],
+    "disease_location_zh": [
+     "TCM Ophthalmology textbook standard (統編教材《中醫眼科學》); cross-checked against curriculum/conditions/glaucoma.doc#p1 (Bastyr AOM Therapeutics notes on Glaucoma / 青風內障)"
+    ],
+    "treatment_principle_zh": [
+     "TCM Ophthalmology textbook standard (統編教材《中醫眼科學》); cross-checked against curriculum/conditions/glaucoma.doc#p1 (Bastyr AOM Therapeutics notes on Glaucoma / 青風內障)"
+    ],
+    "related_patterns": [
+     "TCM Ophthalmology textbook standard (統編教材《中醫眼科學》); cross-checked against curriculum/conditions/glaucoma.doc#p1 (Bastyr AOM Therapeutics notes on Glaucoma / 青風內障)"
+    ],
+    "red_flags_zh": [
+     "curriculum/conditions/glaucoma.doc#p1 explicitly states that acute closed-angle glaucoma is a medical emergency and that untreated elevated pressure causes optic nerve atrophy and blindness; elaborated with established TCM/biomedical clinical knowledge (same-attack-timeframe urgency, fellow-eye risk, chronic monitoring) — flag for Ting to source-check the elaborated specifics beyond what the curriculum doc itself states"
+    ]
+   }
   },
   {
    "id": "tdis.yuan_yi_nei_zhang",
@@ -12702,7 +13590,86 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "definition_zh": "圓翳內障是以晶珠（晶狀體）漸進性混濁、視力緩慢無痛性下降為主要表現，眼外觀無紅無痛的慢性眼病，相當於現代醫學的老年性（年齡相關性）白內障。",
+   "definition_en": "Yuan Yi Nei Zhang (Cataract, TCM) is a chronic eye disease characterized by progressive clouding of the lens and a slow, painless decline in vision, with no external redness or pain; it most closely corresponds to age-related (senile) cataract in Western medicine.",
+   "etiology_zh": "多因年老體衰，肝腎精血漸虧，不能上榮於目；或脾胃虛弱，氣血生化不足，晶珠失養；或久病陰虛內熱、消渴（糖尿病）耗傷津液，均可致晶珠漸失清瑩而混濁；亦可因眼部外傷或他病日久累及晶珠。",
+   "etiology_en": "Commonly caused by the decline of Liver-Kidney essence-Blood with advancing age, which fails to nourish the eye upward; or Spleen-Stomach weakness with insufficient generation of Qi and Blood, leaving the lens undernourished; or prolonged illness with internal Yin-deficiency heat, or wasting-thirst (diabetes) consuming body fluids — all of which can cause the once-clear lens to gradually cloud. It may also follow ocular trauma or another prolonged eye disease affecting the lens.",
+   "pathomechanism_zh": "年老肝腎精血漸衰，或脾胃氣血化生不足，晶珠失於精血津液的濡養與充盈，逐漸失去清瑩而混濁，因無外邪熱毒或氣血瘀滯，故眼外觀正常、無紅無痛，惟視物漸見模糊；病程進展緩慢，多歷時數月至數年；若兼消渴病耗傷陰津，晶珠混濁可較一般為速。",
+   "pathomechanism_en": "With advancing age, Liver-Kidney essence-Blood gradually declines, or Spleen-Stomach Qi-Blood generation becomes insufficient, so the lens loses the nourishing fullness of essence-Blood and fluids and gradually becomes clouded. Because no external heat toxin or Qi-Blood stasis is involved, the eye's external appearance remains normal — without redness or pain — while vision progressively blurs. The course is typically slow, spanning months to years; when complicated by wasting-thirst (diabetes) consuming Yin-fluids, the lens can cloud more rapidly than usual.",
+   "key_manifestations_zh": [
+    "視力漸進性、無痛性下降",
+    "視物模糊如隔輕紗",
+    "晶狀體混濁（檢查所見，瞳仁內可見圓翳）",
+    "眼外觀正常、無紅無痛",
+    "病程進展緩慢"
+   ],
+   "key_manifestations_en": [
+    "Progressive, painless decline in vision",
+    "Visual blurring \"as through a thin veil\"",
+    "Lens opacity (on examination, a rounded cloudiness visible within the pupil)",
+    "Normal external eye appearance, without redness or pain",
+    "A slowly progressive course"
+   ],
+   "associated_manifestations_zh": [
+    "畏光眩光",
+    "單眼視物有重影",
+    "近視度數改變或老視加重"
+   ],
+   "associated_manifestations_en": [
+    "Glare and light sensitivity",
+    "Monocular double vision",
+    "A shift in refractive error or worsening presbyopia"
+   ],
+   "disease_location_zh": "病位在目（晶珠／瞳神），與肝、腎、脾關係密切。",
+   "disease_location_en": "Disease location is the eye (the lens/pupil), closely related to the Liver, Kidney, and Spleen.",
+   "treatment_principle_zh": "以補益肝腎、健脾益氣為主，佐以養血明目；中藥難以逆轉已混濁之晶狀體，視力明顯受影響者仍應配合西醫手術評估。",
+   "treatment_principle_en": "The main principle is tonifying the Liver and Kidney and fortifying the Spleen and boosting Qi, combined with nourishing Blood to brighten the eyes; herbal treatment cannot reverse an already-clouded lens, so when vision is significantly affected, Western surgical evaluation should still be pursued.",
+   "red_flags_zh": [
+    "白內障成熟或過熟階段，突發同側眼劇烈疼痛合併眼壓明顯升高、視力急劇惡化，應排除晶狀體誘發性青光眼（膨脹性/溶解性青光眼），屬急症，須立即轉診眼科",
+    "白內障病史患者出現突發閃光感、飛蚊症明顯增多，或視野出現固定黑影/簾幕狀缺損，此非白內障本身病程所致，應立即轉診眼科排除視網膜剝離",
+    "視力惡化速度明顯快於平常漸進性白內障病程（如數日內明顯加重），不應逕自歸因於白內障，須及早轉診眼科排除其他病因"
+   ],
+   "red_flags_en": [
+    "In a mature or hypermature cataract, sudden severe pain in the same eye with markedly elevated intraocular pressure and rapidly worsening vision should raise suspicion for lens-induced (phacomorphic/phacolytic) glaucoma — an emergency requiring immediate ophthalmology referral",
+    "A patient with known cataract who develops sudden flashes of light, a marked increase in floaters, or a fixed dark shadow/curtain-like visual field defect should not attribute this to the cataract itself — refer immediately to ophthalmology to rule out retinal detachment",
+    "Vision loss progressing markedly faster than the typical gradual cataract course (e.g., clear worsening over days) should not be assumed to be simple cataract progression and warrants prompt ophthalmology referral to exclude another cause"
+   ],
+   "related_patterns": [
+    "pattern.liver_kidney_yin_deficiency",
+    "pattern.qi_blood_deficiency",
+    "pattern.spleen_qi_deficiency",
+    "pattern.kidney_deficiency"
+   ],
+   "field_sources": {
+    "definition_zh": [
+     "TCM Ophthalmology textbook standard (統編教材《中醫眼科學》)"
+    ],
+    "etiology_zh": [
+     "TCM Ophthalmology textbook standard (統編教材《中醫眼科學》)"
+    ],
+    "pathomechanism_zh": [
+     "TCM Ophthalmology textbook standard (統編教材《中醫眼科學》)"
+    ],
+    "key_manifestations_zh": [
+     "TCM Ophthalmology textbook standard (統編教材《中醫眼科學》)"
+    ],
+    "associated_manifestations_zh": [
+     "TCM Ophthalmology textbook standard (統編教材《中醫眼科學》)"
+    ],
+    "disease_location_zh": [
+     "TCM Ophthalmology textbook standard (統編教材《中醫眼科學》)"
+    ],
+    "treatment_principle_zh": [
+     "TCM Ophthalmology textbook standard (統編教材《中醫眼科學》)"
+    ],
+    "related_patterns": [
+     "TCM Ophthalmology textbook standard (統編教材《中醫眼科學》)"
+    ],
+    "red_flags_zh": [
+     "established TCM/biomedical clinical knowledge, not curriculum or whitelist-verified — flag for Ting to source-check; searched curriculum/ for 圓翳內障/cataract, found only a tangential one-line mention of cataract as a cause of myopia in curriculum/conditions/MYOPIA.md, not disease-specific red-flag content"
+    ]
+   }
   },
   {
    "id": "tdis.ya_xuan",
@@ -12713,7 +13680,87 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "definition_zh": "牙宣是以牙齦萎縮、牙根暴露、牙齦出血，甚則牙齒鬆動脫落為主要表現的慢性牙齦及牙周疾病，相當於現代醫學的牙周病。",
+   "definition_en": "Ya Xuan (Gum Bleeding / Periodontal Disease) is a chronic disease of the gums and periodontal tissues characterized mainly by gum recession, exposure of the tooth root, gum bleeding, and, as it progresses, loosening and eventual loss of teeth; it corresponds to periodontal disease (periodontitis) in Western medicine.",
+   "etiology_zh": "多因嗜食辛辣肥甘、胃腑積熱，胃火循經上炎於齦；或稟賦不足、年老體衰、久病及房勞過度，腎精虧損，齒失所養；常因口腔衛生不良、牙石堆積而誘發或加重。",
+   "etiology_en": "Commonly caused by a preference for spicy, greasy food leading to Stomach heat accumulation, with Stomach fire flaring upward along its channel to the gums; or by a constitutional insufficiency, aging, prolonged illness, or sexual overexertion depleting Kidney essence, so the teeth lose their nourishment; often triggered or worsened by poor oral hygiene and accumulated dental plaque/calculus.",
+   "pathomechanism_zh": "胃火熾盛，循足陽明胃經上攻齦肉，灼傷脈絡，迫血妄行，故見牙齦紅腫疼痛、出血，此屬實證，多見於病之初起；齒為骨之餘，賴腎精充養，久病或年老腎精虧虛，牙齦失於濡養，逐漸萎縮、齦肉退縮、牙根暴露，甚則牙齒鬆動脫落，此屬虛證，紅腫多不明顯；臨床亦常見胃熱與腎虛虛實夾雜之候。",
+   "pathomechanism_en": "When Stomach fire blazes, it travels upward along the Foot Yangming Stomach channel to attack the gum tissue, scorching the vessels and forcing Blood to move recklessly, producing red, swollen, painful, bleeding gums — an excess pattern typically seen early in the disease. Since the teeth are \"the surplus of bone\" and depend on Kidney essence for nourishment, prolonged illness or Kidney essence depletion with aging leaves the gums undernourished, so they gradually atrophy, recede, and expose the tooth root, eventually leading to loose or lost teeth — a deficiency pattern in which redness and swelling are usually less pronounced. Clinically, a mixed excess-deficiency presentation combining Stomach heat and Kidney deficiency is also common.",
+   "key_manifestations_zh": [
+    "牙齦出血（刷牙或咀嚼時明顯）",
+    "牙齦萎縮、齦肉退縮",
+    "牙根暴露",
+    "牙齒鬆動",
+    "口臭"
+   ],
+   "key_manifestations_en": [
+    "Gum bleeding (especially with brushing or chewing)",
+    "Gum atrophy and recession",
+    "Exposure of the tooth root",
+    "Loosening of the teeth",
+    "Bad breath"
+   ],
+   "associated_manifestations_zh": [
+    "牙齦紅腫（實證明顯，虛證較輕）",
+    "咀嚼無力或疼痛",
+    "腰膝痠軟（腎虛型）"
+   ],
+   "associated_manifestations_en": [
+    "Red, swollen gums (pronounced in excess patterns, milder in deficiency patterns)",
+    "Weak or painful chewing",
+    "Soreness and weakness of the lower back and knees (in the Kidney-deficiency type)"
+   ],
+   "disease_location_zh": "病位在牙齦、牙根，屬胃、腎；胃為標，腎為本。",
+   "disease_location_en": "Disease location is the gums and tooth roots, pertaining to the Stomach and Kidney; the Stomach represents the branch (acute manifestation) and the Kidney the root (underlying cause).",
+   "treatment_principle_zh": "實證（胃火）以清胃瀉火、涼血止血為主；虛證（腎虛）以滋補腎陰、固齒為主；虛實夾雜者標本兼顧。",
+   "treatment_principle_en": "The excess (Stomach fire) pattern is treated by clearing the Stomach, draining fire, cooling the Blood, and stopping bleeding; the deficiency (Kidney deficiency) pattern is treated by nourishing Kidney Yin and firming the teeth; mixed excess-deficiency presentations are treated by addressing both the branch and the root.",
+   "red_flags_zh": [
+    "牙齦出血合併皮膚瘀斑瘀點、其他部位反覆出血或輕微碰撞即出血不止，應轉診檢查血液及凝血功能，排除白血病等血液系統疾病",
+    "牙齒快速鬆動、牙周組織迅速破壞，尤其年輕患者或血糖控制不良之糖尿病患者，應轉診牙周科積極治療，血糖控制不佳會顯著加重牙周破壞",
+    "牙齦局部出現不易癒合的潰瘍或腫塊，合併出血，且無明顯牙科誘因，應轉診排除口腔惡性腫瘤",
+    "牙齦出血合併發燒、全身倦怠不適，應考慮急性壞死性牙周疾病等感染，須儘速就醫"
+   ],
+   "red_flags_en": [
+    "Gum bleeding with skin bruising/petechiae, recurrent bleeding elsewhere, or bleeding that will not stop after minor trauma warrants referral for blood and coagulation studies to rule out leukemia or another hematologic disorder",
+    "Rapidly progressive tooth mobility and periodontal tissue destruction, especially in a young patient or a diabetic with poor glycemic control, warrants referral to periodontics for aggressive treatment — poorly controlled blood sugar significantly worsens periodontal destruction",
+    "A non-healing ulcer or mass on the gum with bleeding and no clear dental cause warrants referral to rule out an oral malignancy",
+    "Gum bleeding with fever and systemic malaise should raise suspicion for acute necrotizing periodontal disease or another infection and warrants prompt medical/dental care"
+   ],
+   "related_patterns": [
+    "pattern.stomach_fire",
+    "pattern.kidney_yin_deficiency",
+    "pattern.kidney_deficiency"
+   ],
+   "field_sources": {
+    "definition_zh": [
+     "TCM Stomatology textbook standard (統編教材《中醫口腔科學》)"
+    ],
+    "etiology_zh": [
+     "TCM Stomatology textbook standard (統編教材《中醫口腔科學》)"
+    ],
+    "pathomechanism_zh": [
+     "TCM Stomatology textbook standard (統編教材《中醫口腔科學》)"
+    ],
+    "key_manifestations_zh": [
+     "TCM Stomatology textbook standard (統編教材《中醫口腔科學》)"
+    ],
+    "associated_manifestations_zh": [
+     "TCM Stomatology textbook standard (統編教材《中醫口腔科學》)"
+    ],
+    "disease_location_zh": [
+     "TCM Stomatology textbook standard (統編教材《中醫口腔科學》)"
+    ],
+    "treatment_principle_zh": [
+     "TCM Stomatology textbook standard (統編教材《中醫口腔科學》)"
+    ],
+    "related_patterns": [
+     "TCM Stomatology textbook standard (統編教材《中醫口腔科學》)"
+    ],
+    "red_flags_zh": [
+     "established TCM/biomedical clinical knowledge, not curriculum or whitelist-verified — flag for Ting to source-check; searched curriculum/ for 牙宣/periodontal disease, no matches found"
+    ]
+   }
   }
  ]
 }
