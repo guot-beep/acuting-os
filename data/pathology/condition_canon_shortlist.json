@@ -70355,7 +70355,141 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "單純疱疹是由單純疱疹病毒（HSV-1、HSV-2）引起的反覆發作性黏膜皮膚感染，HSV-1傳統上多與口唇疱疹（唇皰疹）相關，HSV-2多與生殖器疱疹相關，但兩型皆可經口交等途徑感染對方部位。病毒初次感染後會潛伏於感覺神經節，在壓力、日曬、發燒或月經等誘因下反覆發作。",
+   "summary_en": "Herpes simplex virus (HSV) infection is a recurrent mucocutaneous condition caused by HSV-1 or HSV-2. HSV-1 has traditionally been associated with orolabial herpes (cold sores) and HSV-2 with genital herpes, though either type can infect either site via oral or genital contact. After primary infection, the virus establishes latency in sensory ganglia and reactivates intermittently, triggered by stress, sun exposure, fever, or menstruation.",
+   "western_context_zh": "西醫以口服抗病毒藥物（如acyclovir、valacyclovir）治療急性發作，反覆頻繁發作者可考慮長期抑制性療法；生殖器疱疹需衛教安全性行為及告知伴侶，孕婦近產期發作需轉診產科評估分娩方式以降低新生兒感染風險。此處僅為文件對照用語，非治療指示。",
+   "western_context_en": "Western management uses oral antivirals (e.g., acyclovir, valacyclovir) for acute outbreaks, with long-term suppressive therapy considered for frequent recurrences; genital herpes requires counseling on safer sex practices and partner disclosure, and an outbreak near term in pregnancy warrants obstetric referral regarding delivery mode to reduce neonatal transmission risk. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "HSV為雙股DNA病毒，感染上皮細胞後經由感覺神經（如三叉神經）逆行運送至神經節建立潛伏感染，並可在誘因刺激下再活化、沿神經下行至皮膚黏膜產生水疱病灶。診斷以臨床型態（成群水疱、破潰後結痂）為初步依據，可用病灶採檢做PCR核酸擴增檢測或病毒培養確診，並以血清學檢測分型以利諮詢復發風險與傳染性。",
+   "western_pathology_en": "HSV is a double-stranded DNA virus that infects epithelial cells and is transported retrogradely via sensory nerves (e.g., the trigeminal nerve) to sensory ganglia, where it establishes latency; reactivation triggers travel back down the nerve to produce vesicular mucocutaneous lesions. Diagnosis is initially clinical (grouped vesicles progressing to crusted erosions), confirmed via PCR/nucleic acid amplification testing or viral culture of a lesion swab, with type-specific serology used to counsel on recurrence risk and transmissibility.",
+   "red_flags_zh": [
+    "異位性皮膚炎病人突發大範圍單型態水疱、打洞狀糜爛合併發燒及淋巴結腫大，需警覺疱疹性濕疹（eczema herpeticum），此為皮膚科急症，須立即給予抗病毒治療",
+    "眼周或眼部出現病灶，需緊急轉診眼科排除疱疹性角膜炎，延誤治療可能導致角膜疤痕與永久視力受損",
+    "發燒、頭痛、意識改變、局部神經學缺損或新發癲癇，需警覺疱疹性腦炎並立即送急診",
+    "懷孕婦女近生產期出現生殖器疱疹初發病灶，需立即轉診產科評估以降低新生兒疱疹感染風險（新生兒疱疹死亡率約三成）",
+    "免疫功能低下病人出現病灶廣泛擴散或不典型型態，需警覺全身性瀰漫性感染"
+   ],
+   "red_flags_en": [
+    "Sudden widespread, monomorphic vesicles with punched-out erosions plus fever and lymphadenopathy in a patient with atopic dermatitis—suspect eczema herpeticum, a dermatologic emergency requiring urgent antiviral treatment",
+    "Periocular or ocular lesions—refer urgently to ophthalmology to exclude herpetic keratitis, as delayed treatment can cause corneal scarring and permanent vision loss",
+    "Fever, headache, altered mental status, focal neurologic deficits, or new-onset seizures—suspect herpes encephalitis and refer to emergency care immediately",
+    "A first-episode genital herpes outbreak near term in pregnancy—refer to obstetrics urgently to reduce the risk of neonatal herpes transmission (neonatal herpes carries roughly 30% mortality)",
+    "Widespread or atypical lesions in an immunocompromised patient—raises concern for disseminated infection"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "免疫功能低下或免疫抑制治療",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI PMC: Diagnosis of genital HSV infection in the clinical laboratory (PMC4032358)"
+    },
+    {
+     "factor": "紫外線（日曬）暴露",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "WebMD: Herpes Simplex Virus — Symptoms, Diagnosis, Treatment"
+    },
+    {
+     "factor": "壓力、發燒等身體壓力源",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "WebMD: Herpes Simplex Virus — Symptoms, Diagnosis, Treatment"
+    },
+    {
+     "factor": "既有異位性皮膚炎",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: Eczema Herpeticum (NBK560781)"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Immunosuppression or immunosuppressive therapy",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI PMC: Diagnosis of genital HSV infection in the clinical laboratory (PMC4032358)"
+    },
+    {
+     "factor": "UV/sun exposure",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "WebMD: Herpes Simplex Virus — Symptoms, Diagnosis, Treatment"
+    },
+    {
+     "factor": "Stress, fever, and other physiologic stressors",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "WebMD: Herpes Simplex Virus — Symptoms, Diagnosis, Treatment"
+    },
+    {
+     "factor": "Pre-existing atopic dermatitis",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: Eczema Herpeticum (NBK560781)"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "可作為緩解發作誘因（如壓力）及症狀期不適的輔助手段；無法清除潛伏病毒或預防復發本身。",
+    "precautions": "避免直接針刺活動性水疱病灶，以防病毒經破損皮膚擴散或自體接種至其他部位（如眼周）。",
+    "co_management": "出現異位性濕疹病人合併廣泛水疱發燒、眼周病灶、神經學症狀或孕婦近產期病灶等警訊時，應立即轉診急診或相關專科，不可僅以針灸處理延誤就醫。",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "May serve as an adjunct to address flare triggers (e.g., stress) and symptomatic discomfort during an outbreak; cannot clear latent virus or itself prevent recurrence.",
+    "precautions": "Avoid needling directly into active vesicular lesions to prevent viral spread through broken skin or autoinoculation to other sites (e.g., periocular skin).",
+    "co_management": "If red-flag signs appear—widespread vesicles with fever in an atopic dermatitis patient, periocular lesions, neurologic symptoms, or an outbreak near term in pregnancy—refer immediately to emergency or the relevant specialty rather than managing with acupuncture alone.",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.re_chuang"
+   ],
+   "related_patterns": [
+    "pattern.damp_heat",
+    "pattern.liver_gallbladder_damp_heat",
+    "pattern.heat_toxin_blazing"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "WebMD: Herpes Simplex (HSV-1 and HSV-2) Virus — Symptoms, Diagnosis, Treatment"
+    ],
+    "summary_en": [
+     "WebMD: Herpes Simplex (HSV-1 and HSV-2) Virus — Symptoms, Diagnosis, Treatment"
+    ],
+    "western_context_zh": [
+     "Testing.com: HSV-1 and HSV-2 Test — A Herpes Screening"
+    ],
+    "western_context_en": [
+     "Testing.com: HSV-1 and HSV-2 Test — A Herpes Screening"
+    ],
+    "western_pathology_zh": [
+     "NCBI PMC: Diagnosis of genital herpes simplex virus infection in the clinical laboratory (PMC4032358)"
+    ],
+    "western_pathology_en": [
+     "NCBI PMC: Diagnosis of genital herpes simplex virus infection in the clinical laboratory (PMC4032358)"
+    ],
+    "red_flags_zh": [
+     "NCBI StatPearls: Eczema Herpeticum (NBK560781)",
+     "PMC: Eczema herpeticum — A medical emergency (PMC3520662)",
+     "EyeWiki: Eczema Herpeticum"
+    ],
+    "red_flags_en": [
+     "NCBI StatPearls: Eczema Herpeticum (NBK560781)",
+     "PMC: Eczema herpeticum — A medical emergency (PMC3520662)",
+     "EyeWiki: Eczema Herpeticum"
+    ],
+    "risk_factors_zh": [
+     "NCBI PMC: Diagnosis of genital HSV infection in the clinical laboratory (PMC4032358)",
+     "WebMD: Herpes Simplex Virus — Symptoms, Diagnosis, Treatment",
+     "NCBI StatPearls: Eczema Herpeticum (NBK560781)"
+    ],
+    "risk_factors_en": [
+     "NCBI PMC: Diagnosis of genital HSV infection in the clinical laboratory (PMC4032358)",
+     "WebMD: Herpes Simplex Virus — Symptoms, Diagnosis, Treatment",
+     "NCBI StatPearls: Eczema Herpeticum (NBK560781)"
+    ]
+   }
   },
   {
    "id": "cond.onychomycosis",
@@ -70650,7 +70784,127 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "汗皰疹（掌蹠濕疹、pompholyx）是一種慢性、反覆發作的水疱性濕疹，特徵為手指側緣、掌心與蹠部出現深藏於皮下、劇癢的細小透明水疱，好發於青壯年，常與異位性體質、金屬（鎳、鈷）接觸或多汗有關。",
+   "summary_en": "Dyshidrotic eczema (pompholyx, vesicular hand eczema) is a chronic, relapsing vesicular eczema characterized by intensely itchy, deep-seated small clear blisters along the lateral fingers, palms, and soles. It most often affects young to middle-aged adults and is frequently linked to an atopic background, metal (nickel, cobalt) contact, or excessive sweating.",
+   "western_context_zh": "西醫處理以高效價外用類固醇及冷敷緩解急性發作為第一線，反覆發作者可考慮短期口服類固醇或鈣調磷酸酶抑制劑外用；懷疑接觸過敏者可轉診做貼膚試驗（patch test）以找出誘因並避免接觸。此處僅為文件對照用語，非治療指示。",
+   "western_context_en": "Western management uses high-potency topical corticosteroids and cold compresses as first-line therapy for acute flares; recurrent cases may warrant a short course of oral corticosteroids or topical calcineurin inhibitors, and suspected contact allergy can be referred for patch testing to identify and avoid triggers. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "確切病因未明，目前認為是多重內在（異位性體質、精神壓力）與外在因子（金屬接觸、清潔劑刺激、多汗、皮膚黴菌感染引發的自身敏感反應）共同作用下的一種反應型態，造成表皮內海綿樣水腫並形成多發性小水疱。診斷主要依臨床型態（手指側緣與掌蹠部位深在水疱、劇癢）判斷，必要時做貼膚試驗排除接觸性過敏，或黴菌鏡檢排除足癬併發的自身敏感反應。",
+   "western_pathology_en": "The exact etiology is unresolved; it is currently understood as a reaction pattern arising from multiple endogenous (atopic diathesis, psychological stress) and exogenous factors (metal contact, irritant exposure from detergents/solvents, hyperhidrosis, or an autosensitization response to a fungal skin infection elsewhere). These trigger intraepidermal spongiotic edema that forms multiple small vesicles. Diagnosis is primarily clinical, based on the characteristic deep-seated, intensely itchy vesicles on the lateral fingers, palms, and soles, with patch testing to exclude contact allergy or fungal microscopy to exclude a dermatophyte-driven autosensitization reaction where indicated.",
+   "red_flags_zh": [
+    "水疱區出現化膿、擴大紅腫熱痛或發燒，提示續發細菌感染，需評估是否需口服抗生素",
+    "皮疹型態不典型、對標準治療反應差，或伴隨其他部位大片水疱，需考慮切片排除其他大疱性皮膚病（如天疱瘡類疾病）"
+   ],
+   "red_flags_en": [
+    "Purulent discharge, spreading warmth/erythema, or fever at the vesicular site—suggests secondary bacterial infection requiring evaluation for oral antibiotics",
+    "Atypical morphology, poor response to standard therapy, or widespread blistering elsewhere on the body—warrants biopsy to exclude other bullous dermatoses (e.g., pemphigus-group disease)"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "異位性皮膚炎或異位性體質病史",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "DermNet: Dyshidrotic eczema (Pompholyx)"
+    },
+    {
+     "factor": "鎳、鈷等金屬接觸（皮膚接觸或飲食攝入）",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "DermNet: Dyshidrotic eczema (Pompholyx)"
+    },
+    {
+     "factor": "手部多汗症",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "DermNet: Dyshidrotic eczema (Pompholyx)"
+    },
+    {
+     "factor": "精神壓力",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "DermNet: Dyshidrotic eczema (Pompholyx)"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "History of atopic dermatitis or atopic diathesis",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "DermNet: Dyshidrotic eczema (Pompholyx)"
+    },
+    {
+     "factor": "Nickel or cobalt contact (skin exposure or dietary intake)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "DermNet: Dyshidrotic eczema (Pompholyx)"
+    },
+    {
+     "factor": "Hand hyperhidrosis",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "DermNet: Dyshidrotic eczema (Pompholyx)"
+    },
+    {
+     "factor": "Psychological stress",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "DermNet: Dyshidrotic eczema (Pompholyx)"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "可作為止癢、緩解壓力誘發性發作的輔助手段；無法去除接觸過敏原或治癒潛在異位性體質。",
+    "precautions": "急性水疱破損處避免直接針刺，以防感染。",
+    "co_management": "反覆發作或懷疑接觸性過敏者，建議轉診皮膚科安排貼膚試驗；若出現化膿發燒等感染徵象，應聯繫醫師評估是否需抗生素。",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "May serve as an adjunct for itch relief and stress-related flare management; cannot remove a contact allergen or cure the underlying atopic diathesis.",
+    "precautions": "Avoid direct needling over ruptured acute vesicles to reduce infection risk.",
+    "co_management": "Refer recurrent cases or suspected contact allergy to dermatology for patch testing; if purulence, fever, or other infection signs appear, contact the physician to evaluate the need for antibiotics.",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.shi_chuang"
+   ],
+   "related_patterns": [
+    "pattern.damp_heat",
+    "pattern.spleen_deficiency_damp_encumbrance",
+    "pattern.blood_deficiency_wind_dryness"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "DermNet: Dyshidrotic eczema (Pompholyx, Vesicular Hand Eczema)"
+    ],
+    "summary_en": [
+     "DermNet: Dyshidrotic eczema (Pompholyx, Vesicular Hand Eczema)"
+    ],
+    "western_context_zh": [
+     "Medscape: Dyshidrotic Eczema (Pompholyx) — Treatment & Management (emedicine.medscape.com/article/1122527)"
+    ],
+    "western_context_en": [
+     "Medscape: Dyshidrotic Eczema (Pompholyx) — Treatment & Management (emedicine.medscape.com/article/1122527)"
+    ],
+    "western_pathology_zh": [
+     "Medscape: Dyshidrotic Eczema (Pompholyx) — Background, Etiology, Epidemiology"
+    ],
+    "western_pathology_en": [
+     "Medscape: Dyshidrotic Eczema (Pompholyx) — Background, Etiology, Epidemiology"
+    ],
+    "red_flags_zh": [
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "red_flags_en": [
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "risk_factors_zh": [
+     "DermNet: Dyshidrotic eczema (Pompholyx, Vesicular Hand Eczema)"
+    ],
+    "risk_factors_en": [
+     "DermNet: Dyshidrotic eczema (Pompholyx, Vesicular Hand Eczema)"
+    ]
+   }
   },
   {
    "id": "cond.nummular_eczema",
@@ -71484,7 +71738,133 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "傳染性軟疣是一種由痘病毒科的傳染性軟疣病毒（MCV）引起的良性、通常會自行痊癒的皮膚病毒感染，特徵為圓頂狀、中央臍狀凹陷的膚色丘疹，好發於兒童、性活躍成人（性接觸傳染）及免疫功能低下者，經直接接觸、自體接種或共用物品傳播。",
+   "summary_en": "Molluscum contagiosum is a benign, usually self-limited viral skin infection caused by the molluscum contagiosum virus (MCV), a member of the poxvirus family. It presents as dome-shaped, flesh-colored papules with central umbilication, most commonly affecting children, sexually active adults (via sexual contact), and immunocompromised individuals, and spreads through direct contact, autoinoculation, or fomites.",
+   "western_context_zh": "西醫處理多以觀察等待為主，因多數免疫功能正常者的病灶會在數月至數年內自行痊癒；若病灶造成明顯不適、美觀困擾或有傳染疑慮，可選擇冷凍治療、刮除術或外用藥劑移除。此處僅為文件對照用語，非治療指示。",
+   "western_context_en": "Western management is typically watchful waiting, since most lesions in immunocompetent individuals resolve spontaneously over months to years; lesions causing significant discomfort, cosmetic concern, or contagion risk may be removed via cryotherapy, curettage, or topical agents. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "傳染性軟疣病毒為雙股DNA病毒，感染角質形成細胞，潛伏期約2至7週後造成表皮屏障功能改變並形成特徵性丘疹，病灶大小取決於免疫反應強弱。病毒如同其他痘病毒，會產生特定蛋白以逃避免疫系統偵測，細胞媒介免疫在控制感染範圍上扮演關鍵角色。診斷主要依臨床外觀（圓頂狀、中央臍狀凹陷丘疹），必要時可經細胞學或病理切片見到特徵性包涵體確診。",
+   "western_pathology_en": "Molluscum contagiosum virus is a double-stranded DNA poxvirus that infects keratinocytes; after an incubation period of roughly 2-7 weeks, it disrupts the skin barrier and produces the characteristic papules, with lesion extent depending on the strength of the immune response. Like other poxviruses, MCV produces virus-specific proteins that evade immune detection, with cell-mediated immunity playing the key role in controlling infection. Diagnosis is primarily clinical, based on dome-shaped papules with central umbilication; cytology or histology showing characteristic inclusion bodies can confirm the diagnosis when needed.",
+   "red_flags_zh": [
+    "成人出現廣泛、不典型或難治型病灶，需警覺潛在未診斷之HIV感染或其他免疫缺陷並安排相關檢查",
+    "病灶位於眼周並造成慢性結膜炎，需轉診眼科評估",
+    "免疫功能低下病人出現巨大或融合性病灶，需進一步評估免疫狀態並考慮轉診皮膚科",
+    "幼兒生殖器周圍出現病灶，需依機構兒少保護通報流程評估傳染途徑，不應逕自假設為單純接觸傳染"
+   ],
+   "red_flags_en": [
+    "Widespread, atypical, or treatment-resistant lesions in an adult—raise concern for undiagnosed HIV infection or other immunodeficiency and warrant relevant testing",
+    "Periocular lesions causing chronic conjunctivitis—warrant ophthalmology referral",
+    "Giant or confluent lesions in an immunocompromised patient—warrant further evaluation of immune status and dermatology referral",
+    "Lesions in the genital area of a young child—warrant evaluation per institutional child-protection protocol rather than assuming simple contact transmission"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "異位性皮膚炎",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Medscape: Molluscum Contagiosum — Background, Pathophysiology, Etiology"
+    },
+    {
+     "factor": "免疫功能低下（含HIV感染）",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Medscape: Molluscum Contagiosum — Background, Pathophysiology, Etiology"
+    },
+    {
+     "factor": "密切肢體接觸活動（如角力等接觸性運動）",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Medscape: Molluscum Contagiosum — Background, Pathophysiology, Etiology"
+    },
+    {
+     "factor": "溫暖潮濕環境／共用游泳池等設施",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Merck Manual: Molluscum Contagiosum — Dermatology, Professional Edition"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Atopic dermatitis",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Medscape: Molluscum Contagiosum — Background, Pathophysiology, Etiology"
+    },
+    {
+     "factor": "Immunosuppression (including HIV infection)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Medscape: Molluscum Contagiosum — Background, Pathophysiology, Etiology"
+    },
+    {
+     "factor": "Close-contact activities (e.g., contact sports such as wrestling)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Medscape: Molluscum Contagiosum — Background, Pathophysiology, Etiology"
+    },
+    {
+     "factor": "Warm, humid environments/shared facilities such as swimming pools",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Merck Manual: Molluscum Contagiosum — Dermatology, Professional Edition"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "無明確實證支持針灸做為傳染性軟疣的主要治療；病灶多可自行消退，或由皮膚科以物理性方式移除。",
+    "precautions": "避免針刺穿過病灶本體，以防病毒經破損皮膚自體接種擴散至其他部位。",
+    "co_management": "病灶廣泛、不典型或病人有免疫功能低下疑慮時，應轉診皮膚科評估是否需進一步檢查潛在免疫缺陷。",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "No clear evidence supports acupuncture as primary treatment for molluscum contagiosum; lesions typically resolve on their own or are removed physically by a dermatologist.",
+    "precautions": "Avoid needling through the lesion itself, to prevent viral autoinoculation spreading through broken skin to other sites.",
+    "co_management": "If lesions are widespread, atypical, or immunosuppression is suspected, refer to dermatology to evaluate for possible underlying immunodeficiency.",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.you"
+   ],
+   "related_patterns": [
+    "pattern.damp_heat"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "Medscape: Molluscum Contagiosum — Background, Pathophysiology, Etiology"
+    ],
+    "summary_en": [
+     "Medscape: Molluscum Contagiosum — Background, Pathophysiology, Etiology"
+    ],
+    "western_context_zh": [
+     "Merck Manual: Molluscum Contagiosum — Dermatology, Professional Edition"
+    ],
+    "western_context_en": [
+     "Merck Manual: Molluscum Contagiosum — Dermatology, Professional Edition"
+    ],
+    "western_pathology_zh": [
+     "Medscape: Molluscum Contagiosum — Background, Pathophysiology, Etiology"
+    ],
+    "western_pathology_en": [
+     "Medscape: Molluscum Contagiosum — Background, Pathophysiology, Etiology"
+    ],
+    "red_flags_zh": [
+     "Medscape: Molluscum Contagiosum — Background, Pathophysiology, Etiology",
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "red_flags_en": [
+     "Medscape: Molluscum Contagiosum — Background, Pathophysiology, Etiology",
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "risk_factors_zh": [
+     "Medscape: Molluscum Contagiosum — Background, Pathophysiology, Etiology",
+     "Merck Manual: Molluscum Contagiosum — Dermatology, Professional Edition"
+    ],
+    "risk_factors_en": [
+     "Medscape: Molluscum Contagiosum — Background, Pathophysiology, Etiology",
+     "Merck Manual: Molluscum Contagiosum — Dermatology, Professional Edition"
+    ]
+   }
   },
   {
    "id": "cond.verruca_vulgaris",
@@ -71663,7 +72043,147 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "扁平苔癬是一種慢性T細胞媒介的發炎性黏膜皮膚疾病，典型皮膚表現為劇癢、紫色、多角形丘疹（常描述為「6P」：pruritic癢、polygonal多角形、planar扁平、purple紫色、papules丘疹、plaques斑塊），口腔黏膜則常見網狀白色紋路（Wickham紋）；口腔扁平苔癬被世界衛生組織列為潛在惡性病變。",
+   "summary_en": "Lichen planus is a chronic T-cell-mediated inflammatory mucocutaneous disease. Classic cutaneous lesions are intensely itchy, purple, polygonal papules (the \"6 P's\": pruritic, polygonal, planar, purple, papules, plaques), while oral involvement typically shows a lace-like network of white lines (Wickham's striae). Oral lichen planus (OLP) is classified by the WHO as a potentially malignant disorder.",
+   "western_context_zh": "西醫治療以外用或病灶內類固醇控制發炎與症狀為主，診斷確立常需切片病理及直接免疫螢光檢查；口腔扁平苔癬須建議每年定期由專科醫師追蹤，監測是否有惡性轉化跡象。此處僅為文件對照用語，非治療指示。",
+   "western_context_en": "Western management uses topical or intralesional corticosteroids to control inflammation and symptoms; diagnosis is often confirmed with biopsy and direct immunofluorescence. Oral lichen planus warrants recommending annual specialist follow-up to monitor for signs of malignant transformation. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "扁平苔癬的核心病理機轉是CD8+細胞毒性T細胞攻擊基底層角質細胞，形成沿真皮表皮交界處帶狀淋巴球浸潤，屬於免疫失調反應，可由多種內外因子誘發。口腔扁平苔癬中，鱗狀細胞癌的發生率約在追蹤族群中達2%左右，紅斑糜爛型、病灶範圍局限但持續存在者風險較高。診斷依臨床表現（典型皮疹型態或Wickham紋）合併切片病理及直接免疫螢光確認。",
+   "western_pathology_en": "The core pathophysiology of lichen planus is a CD8+ cytotoxic T-cell attack on basal keratinocytes, producing a band-like lymphocytic infiltrate at the dermoepidermal junction—an immunologically dysregulated response triggered by various endogenous and exogenous factors. In oral lichen planus, squamous cell carcinoma develops in roughly 2% of followed lesions, with higher risk in the erosive/erythematous form and in limited but persistent sites. Diagnosis relies on clinical presentation (classic morphology or Wickham's striae) combined with biopsy and direct immunofluorescence for confirmation.",
+   "red_flags_zh": [
+    "口腔糜爛性或潰瘍性病灶久未癒合或外觀改變，需切片排除惡性轉化",
+    "長期口腔扁平苔癬病灶內出現快速生長、變硬或潰瘍的新病灶，需儘速轉診口腔顎面外科或耳鼻喉科評估",
+    "食道受侵犯造成吞嚥困難，需轉診消化科評估是否有食道狹窄",
+    "生殖器糜爛型扁平苔癬（外陰-陰道-牙齦症候群）造成沾黏或疤痕，需婦科／泌尿科介入"
+   ],
+   "red_flags_en": [
+    "Oral erosive/ulcerative lesions that fail to heal or change in appearance—warrant biopsy to exclude malignant transformation",
+    "A new rapidly growing, indurated, or ulcerating area arising within a long-standing oral lichen planus lesion—warrants prompt referral to oral/maxillofacial surgery or ENT",
+    "Esophageal involvement causing dysphagia—warrants gastroenterology referral to evaluate for stricture",
+    "Erosive genital lichen planus (vulvovaginal-gingival syndrome) causing adhesions or scarring—warrants gynecology/urology involvement"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "C型肝炎病毒感染",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI PMC: Oral Lichen Planus — A Narrative Review (PMC11396719)"
+    },
+    {
+     "factor": "特定藥物使用（誘發苔癬樣藥物反應）",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI PMC: Oral Lichen Planus — A Narrative Review (PMC11396719)"
+    },
+    {
+     "factor": "吸菸（口腔扁平苔癬惡性轉化風險）",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI PMC: Risk of Malignant Transformation in 3173 Subjects with OLP (PMC8616266)"
+    },
+    {
+     "factor": "甲狀腺疾病",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI PMC: Risk of Malignant Transformation in 3173 Subjects with OLP (PMC8616266)"
+    },
+    {
+     "factor": "年齡增長",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI PMC: Risk of Malignant Transformation in 3173 Subjects with OLP (PMC8616266)"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Hepatitis C virus infection",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI PMC: Oral Lichen Planus — A Narrative Review (PMC11396719)"
+    },
+    {
+     "factor": "Certain medications (triggering lichenoid drug reaction)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI PMC: Oral Lichen Planus — A Narrative Review (PMC11396719)"
+    },
+    {
+     "factor": "Smoking (malignant transformation risk in OLP)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI PMC: Risk of Malignant Transformation in 3173 Subjects with OLP (PMC8616266)"
+    },
+    {
+     "factor": "Thyroid disorder",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI PMC: Risk of Malignant Transformation in 3173 Subjects with OLP (PMC8616266)"
+    },
+    {
+     "factor": "Older age",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI PMC: Risk of Malignant Transformation in 3173 Subjects with OLP (PMC8616266)"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "尚無明確實證顯示針灸能改變扁平苔癬病程；可能作為皮膚癢感或口腔不適的輔助支持。",
+    "precautions": "口腔糜爛性病灶處避免直接針刺或刺激；扁平苔癬本身無法透過針灸「治癒」，應避免此類宣稱。",
+    "co_management": "口腔扁平苔癬病人應轉診定期專科追蹤監測惡性轉化風險，尤其糜爛型病灶；不應以針灸取代必要的切片追蹤。",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "No clear evidence shows acupuncture alters the disease course of lichen planus; it may serve as adjunctive support for itch or oral discomfort.",
+    "precautions": "Avoid direct needling or stimulation of erosive oral lesions; lichen planus itself cannot be \"cured\" by acupuncture and such claims should be avoided.",
+    "co_management": "Patients with oral lichen planus should be referred for regular specialist follow-up to monitor malignant transformation risk, especially with erosive lesions; acupuncture should not substitute for necessary biopsy-based surveillance.",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_patterns": [
+    "pattern.liver_depression_transforming_fire",
+    "pattern.damp_heat",
+    "pattern.blood_stasis",
+    "pattern.yin_deficiency"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "NCBI PMC: Oral Lichen Planus — A Narrative Review (PMC11396719)"
+    ],
+    "summary_en": [
+     "NCBI PMC: Oral Lichen Planus — A Narrative Review (PMC11396719)"
+    ],
+    "western_context_zh": [
+     "NCBI StatPearls: Oral Lichen Planus (NBK578201)"
+    ],
+    "western_context_en": [
+     "NCBI StatPearls: Oral Lichen Planus (NBK578201)"
+    ],
+    "western_pathology_zh": [
+     "NCBI PMC: Oral Lichen Planus — A Narrative Review (PMC11396719)",
+     "NCBI PMC: Risk of Malignant Transformation in 3173 Subjects with OLP (PMC8616266)"
+    ],
+    "western_pathology_en": [
+     "NCBI PMC: Oral Lichen Planus — A Narrative Review (PMC11396719)",
+     "NCBI PMC: Risk of Malignant Transformation in 3173 Subjects with OLP (PMC8616266)"
+    ],
+    "red_flags_zh": [
+     "NCBI PMC: Risk of Malignant Transformation in 3173 Subjects with OLP (PMC8616266)",
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "red_flags_en": [
+     "NCBI PMC: Risk of Malignant Transformation in 3173 Subjects with OLP (PMC8616266)",
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "risk_factors_zh": [
+     "NCBI PMC: Oral Lichen Planus — A Narrative Review (PMC11396719)",
+     "NCBI PMC: Risk of Malignant Transformation in 3173 Subjects with OLP (PMC8616266)"
+    ],
+    "risk_factors_en": [
+     "NCBI PMC: Oral Lichen Planus — A Narrative Review (PMC11396719)",
+     "NCBI PMC: Risk of Malignant Transformation in 3173 Subjects with OLP (PMC8616266)"
+    ]
+   }
   },
   {
    "id": "cond.prurigo_nodularis",
@@ -72047,7 +72567,102 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "表皮樣囊腫（俗稱皮脂腺囊腫）是一種常見的良性皮下囊腫，源自毛囊漏斗部上皮，囊壁由角質形成細胞構成，內含角質與脂質碎屑，生長緩慢，常見於臉、頸、軀幹。與皮脂腺無關，稱「皮脂腺囊腫」實為俗名誤稱。",
+   "summary_en": "An epidermoid cyst (commonly but inaccurately called a \"sebaceous cyst\") is a common benign subcutaneous cyst arising from the infundibulum (upper portion) of a hair follicle, lined by keratinizing epithelium and filled with keratin and lipid-rich debris. It grows slowly and most often appears on the face, neck, or trunk. Despite the common name, it is unrelated to sebaceous gland tissue.",
+   "western_context_zh": "西醫多採觀察處置，除非囊腫反覆發炎、感染、造成美觀困擾或體積持續增大，才考慮完整手術切除（含囊壁）以降低復發率；單純切開引流若未清除囊壁，容易復發。此處僅為文件對照用語，非治療指示。",
+   "western_context_en": "Western management is typically observation unless the cyst becomes recurrently inflamed, infected, cosmetically bothersome, or continues to enlarge—in which case complete surgical excision including the cyst wall is used to minimize recurrence; simple incision and drainage without removing the wall often leads to recurrence. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "多數表皮樣囊腫源於毛囊皮脂腺單位開口因外傷、發炎或阻塞而使毛囊漏斗部上皮向下增生內陷，形成含角質的囊袋。臨床上常被誤認為「感染」而給予切開引流或抗生素，但研究顯示發炎與非發炎囊腫的菌叢組成相似——多數急性紅腫疼痛其實是囊腫破裂後角質內容物引發的異物肉芽腫反應，而非真正細菌感染。診斷主要依理學檢查，通常不需切片，若懷疑其他病灶或位置深層，可用超音波輔助評估。",
+   "western_pathology_en": "Most epidermoid cysts arise when trauma, inflammation, or occlusion of a folliculosebaceous unit's opening causes the follicular infundibular epithelium to proliferate inward, forming a keratin-filled sac. Clinically these are often mislabeled as \"infected\" and treated with incision/drainage or antibiotics, but studies show the bacterial flora of inflamed and non-inflamed cysts is similar—most acute painful, red, swollen episodes actually reflect a foreign-body granulomatous reaction to keratin contents released after cyst rupture, rather than true bacterial infection. Diagnosis is usually clinical and biopsy is not typically required; ultrasound can assist evaluation when the lesion is deep or the diagnosis is uncertain.",
+   "red_flags_zh": [
+    "短時間內快速增大或直徑超過5公分，需評估是否為其他腫瘤性病灶",
+    "病灶固定、質地堅硬、與周圍組織沾黏，或長期潰瘍不癒，需切片排除少見的惡性病變（如囊腫惡性轉化）",
+    "反覆同一部位發炎化膿或切除後復發，提示囊壁未完全清除，需外科重新評估"
+   ],
+   "red_flags_en": [
+    "Rapid growth over a short period, or diameter exceeding 5 cm—warrants evaluation to exclude other neoplastic lesions",
+    "A fixed, hard lesion adherent to surrounding tissue, or a chronic non-healing ulceration—warrants biopsy to exclude rare malignant transformation",
+    "Recurrent inflammation/suppuration at the same site, or recurrence after excision—suggests incomplete removal of the cyst wall and warrants surgical re-evaluation"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "先前有痤瘡或毛囊發炎病史",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Epidermoid Cyst (NBK499974)"
+    },
+    {
+     "factor": "局部皮膚外傷",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Epidermoid Cyst (NBK499974)"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Prior history of acne or follicular inflammation",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Epidermoid Cyst (NBK499974)"
+    },
+    {
+     "factor": "Local skin trauma",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Epidermoid Cyst (NBK499974)"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "針灸無法使既存的表皮樣囊腫消失或改變其囊性結構，本質為結構性病灶，需仰賴外科處置。",
+    "precautions": "避免直接針刺囊腫本體，尤其發炎腫痛期間，以免刺激破裂或增加感染風險。",
+    "co_management": "囊腫持續增大、反覆發炎化膿或病人要求根治時，轉診外科評估完整切除。",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "Acupuncture cannot resolve or structurally alter an existing epidermoid cyst, which is a structural lesion requiring surgical management for definitive treatment.",
+    "precautions": "Avoid needling directly into the cyst itself, particularly during inflamed/painful episodes, to avoid provoking rupture or increasing infection risk.",
+    "co_management": "Refer to surgery for evaluation of complete excision if the cyst continues to enlarge, recurrently becomes inflamed/suppurative, or the patient requests definitive treatment.",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_patterns": [
+    "pattern.phlegm_stasis_binding"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "NCBI StatPearls: Epidermoid Cyst (NBK499974)"
+    ],
+    "summary_en": [
+     "NCBI StatPearls: Epidermoid Cyst (NBK499974)"
+    ],
+    "western_context_zh": [
+     "Cleveland Clinic: Epidermal Inclusion Cysts (Sebaceous Cysts) — Treatment & Causes"
+    ],
+    "western_context_en": [
+     "Cleveland Clinic: Epidermal Inclusion Cysts (Sebaceous Cysts) — Treatment & Causes"
+    ],
+    "western_pathology_zh": [
+     "DermNet: Epidermoid cyst",
+     "NCBI StatPearls: Epidermoid Cyst (NBK499974)"
+    ],
+    "western_pathology_en": [
+     "DermNet: Epidermoid cyst",
+     "NCBI StatPearls: Epidermoid Cyst (NBK499974)"
+    ],
+    "red_flags_zh": [
+     "Cleveland Clinic: Epidermal Inclusion Cysts (Sebaceous Cysts) — Treatment & Causes"
+    ],
+    "red_flags_en": [
+     "Cleveland Clinic: Epidermal Inclusion Cysts (Sebaceous Cysts) — Treatment & Causes"
+    ],
+    "risk_factors_zh": [
+     "NCBI StatPearls: Epidermoid Cyst (NBK499974)"
+    ],
+    "risk_factors_en": [
+     "NCBI StatPearls: Epidermoid Cyst (NBK499974)"
+    ]
+   }
   },
   {
    "id": "cond.hidradenitis_suppurativa",
@@ -72059,7 +72674,121 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "化膿性汗腺炎（又稱逆向性痤瘡）是一種慢性發炎性毛囊阻塞性疾病，特徵為腋下、鼠蹊、臀部及乳房下方等皮膚皺褶處反覆出現疼痛結節、膿瘍及竇道，並可能留下疤痕，好發於青壯年女性，與肥胖、吸菸有密切關聯，並非單純感染或衛生不良所致。",
+   "summary_en": "Hidradenitis suppurativa (also called acne inversa) is a chronic inflammatory follicular occlusive disease characterized by recurrent painful nodules, abscesses, and sinus tracts in skin-fold areas—axillae, groin, buttocks, and inframammary regions—often leading to scarring. It most commonly affects young adult women and is strongly associated with obesity and smoking; it is not caused by infection or poor hygiene.",
+   "western_context_zh": "西醫處理依嚴重度分階段：早期以生活型態調整（減重、戒菸）、外用/口服抗生素為主，中重度病人可使用生物製劑（如adalimumab）控制發炎，晚期廣泛竇道與疤痕則需外科廣泛切除。分期採用Hurley分級（第一至三期），一旦形成疤痕即無法藉藥物逆轉分期。此處僅為文件對照用語，非治療指示。",
+   "western_context_en": "Western management is staged by severity: early disease is managed with lifestyle modification (weight loss, smoking cessation) and topical/oral antibiotics; moderate-to-severe disease may use biologic agents (e.g., adalimumab) to control inflammation; advanced disease with extensive sinus tracts and scarring requires wide surgical excision. Severity is staged using the Hurley system (stages I-III); once scarring develops, the stage cannot be reversed medically. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "病理機轉始於毛囊漏斗部阻塞，導致毛囊破裂並引發強烈發炎反應，屬遺傳與環境因子（肥胖、吸菸）共同作用的疾病，並非原發性感染。反覆發炎造成竇道形成與纖維化疤痕，Hurley分級：第一期為單一或多發膿瘍、無竇道疤痕；第二期為反覆膿瘍合併竇道與疤痕；第三期為瀰漫性或多發互通竇道與膿瘍遍布整個區域。診斷主要依臨床表現（好發部位反覆病灶史）判斷。",
+   "western_pathology_en": "The pathophysiology begins with follicular infundibular occlusion, leading to follicle rupture and a robust inflammatory response; it is driven by genetic and environmental factors (obesity, smoking) rather than primary infection. Repeated inflammation produces sinus tract formation and fibrotic scarring. Hurley staging: Stage I—single or multiple abscesses without sinus tracts or scarring; Stage II—recurrent abscesses with sinus tracts and scarring; Stage III—diffuse or multiple interconnected sinus tracts and abscesses across the entire area. Diagnosis is primarily clinical, based on a history of recurrent lesions in characteristic locations.",
+   "red_flags_zh": [
+    "急性病灶快速惡化合併發燒、畏寒等全身性感染徵象，需警覺敗血症並儘速就醫",
+    "長期未癒合的竇道或潰瘍區域出現新的硬結、快速生長或潰瘍化，需切片排除少見的續發鱗狀細胞癌",
+    "會陰／肛周廣泛竇道形成或瘻管，需轉診外科評估",
+    "病灶造成關節活動明顯受限或攣縮，需外科介入評估"
+   ],
+   "red_flags_en": [
+    "Rapidly worsening acute lesions with fever or chills (systemic infection signs)—raise concern for sepsis and warrant prompt medical evaluation",
+    "A new indurated, rapidly growing, or ulcerating area within a long-standing non-healing sinus tract—warrants biopsy to exclude rare secondary squamous cell carcinoma",
+    "Extensive perianal/perineal sinus tract formation or fistula—warrants surgical referral",
+    "Significant functional limitation or contracture from lesions—warrants surgical evaluation"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "肥胖",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Mayo Clinic (via DermNet synthesis); DermNet: Hidradenitis Suppurativa"
+    },
+    {
+     "factor": "吸菸",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "DermNet: Hidradenitis Suppurativa"
+    },
+    {
+     "factor": "家族病史",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: Hidradenitis Suppurativa (NBK534867)"
+    },
+    {
+     "factor": "女性",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: Hidradenitis Suppurativa (NBK534867)"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Obesity",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "DermNet: Hidradenitis Suppurativa"
+    },
+    {
+     "factor": "Smoking",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "DermNet: Hidradenitis Suppurativa"
+    },
+    {
+     "factor": "Family history",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: Hidradenitis Suppurativa (NBK534867)"
+    },
+    {
+     "factor": "Female sex",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: Hidradenitis Suppurativa (NBK534867)"
+    }
+   ],
+   "related_eastern_diseases": [
+    "tdis.yong"
+   ],
+   "related_patterns": [
+    "pattern.damp_heat",
+    "pattern.phlegm_stasis_binding",
+    "pattern.qi_stagnation_blood_stasis"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "DermNet: Hidradenitis Suppurativa (Acne Inversa) — A Complete Picture"
+    ],
+    "summary_en": [
+     "DermNet: Hidradenitis Suppurativa (Acne Inversa) — A Complete Picture"
+    ],
+    "western_context_zh": [
+     "myHSteam: Hidradenitis Suppurativa Stages — What Are the 3 Hurley Stages?"
+    ],
+    "western_context_en": [
+     "myHSteam: Hidradenitis Suppurativa Stages — What Are the 3 Hurley Stages?"
+    ],
+    "western_pathology_zh": [
+     "DermNet: Hidradenitis Suppurativa (Acne Inversa) — A Complete Picture",
+     "myHSteam: Hidradenitis Suppurativa Stages"
+    ],
+    "western_pathology_en": [
+     "DermNet: Hidradenitis Suppurativa (Acne Inversa) — A Complete Picture",
+     "myHSteam: Hidradenitis Suppurativa Stages"
+    ],
+    "red_flags_zh": [
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "red_flags_en": [
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "risk_factors_zh": [
+     "DermNet: Hidradenitis Suppurativa (Acne Inversa) — A Complete Picture",
+     "NCBI StatPearls: Hidradenitis Suppurativa (NBK534867)"
+    ],
+    "risk_factors_en": [
+     "DermNet: Hidradenitis Suppurativa (Acne Inversa) — A Complete Picture",
+     "NCBI StatPearls: Hidradenitis Suppurativa (NBK534867)"
+    ]
+   }
   },
   {
    "id": "cond.melasma",
@@ -72071,7 +72800,129 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "黃褐斑是一種後天性、對稱性的臉部色素沉澱疾病，好發於陽光曝曬部位（頰、額、上唇、鼻樑），呈現褐色至灰褐色斑片，好發於育齡女性，與懷孕、荷爾蒙用藥及日曬密切相關，具遺傳易感性。",
+   "summary_en": "Melasma is an acquired, symmetric facial hyperpigmentation disorder presenting as brown to gray-brown patches on sun-exposed areas (cheeks, forehead, upper lip, nose bridge). It most commonly affects women of reproductive age and is closely linked to pregnancy, hormonal medication use, and sun exposure, with a genetic predisposition.",
+   "western_context_zh": "西醫處理以嚴格防曬（廣效性SPF50以上防曬乳合併物理性遮蔽）為基礎，配合外用褪色劑（如對苯二酚類）、外用A酸或杜鵑花酸，難治型可考慮化學換膚或雷射；若懷疑口服避孕藥或荷爾蒙補充為誘因，應與原處方醫師討論是否調整。此處僅為文件對照用語，非治療指示。",
+   "western_context_en": "Western management centers on strict sun protection (broad-spectrum SPF 50+ sunscreen combined with physical blocking agents), alongside topical depigmenting agents (e.g., hydroquinone), topical retinoids, or azelaic acid; refractory cases may be considered for chemical peels or laser therapy. If oral contraceptives or hormone therapy are suspected triggers, this should be discussed with the prescribing physician regarding adjustment. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "黃褐斑成因為多重因子交互作用：紫外線及可見光誘發皮膚產生活性氧物質，刺激黑色素細胞功能亢進並增加黑色素製造；女性荷爾蒙（雌激素、黃體素）為重要促發因子，懷孕是女性最常見誘因，男性則以日曬與家族史為主要相關因子。除黑色素細胞功能異常外，病灶皮膚也可見表皮、基底膜及真皮上層的結構性改變（如血管增生、日光彈力纖維變性）。診斷主要依臨床外觀，可用伍氏燈（Wood's lamp）輔助判斷色素位於表皮或真皮層。",
+   "western_pathology_en": "Melasma arises from multiple interacting factors: UV and visible light exposure generates reactive oxygen species that stimulate melanocyte hyperfunction and increased melanin production. Female sex hormones (estrogen, progesterone) are important triggers, with pregnancy the most common trigger in women, while sun exposure and family history are the leading associated factors in men. Beyond melanocyte dysfunction, affected skin also shows structural changes in the epidermis, basement membrane, and upper dermis (e.g., increased vascularity, solar elastosis). Diagnosis is primarily clinical; Wood's lamp examination can help assess whether pigment is predominantly epidermal or dermal.",
+   "red_flags_zh": [
+    "色素病灶快速變化、邊界不規則或單側不對稱，需排除黑色素瘤等惡性病灶",
+    "廣泛性、非典型分布的色素沉著合併疲倦、體重變化等全身症狀，需考慮腎上腺功能不全或血色素沉著症等系統性疾病",
+    "經標準防曬與外用藥物治療數月仍持續惡化，需轉診皮膚科評估切片"
+   ],
+   "red_flags_en": [
+    "Rapidly changing, irregularly bordered, or markedly asymmetric pigmented lesions—warrant excluding melanoma or other malignant lesions",
+    "Widespread, atypically distributed hyperpigmentation with systemic symptoms such as fatigue or weight change—consider systemic causes such as adrenal insufficiency or hemochromatosis",
+    "Progressive worsening despite months of standard sun protection and topical therapy—warrants dermatology referral for biopsy evaluation"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "女性",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Springer: Update on Melasma — Part I: Pathogenesis"
+    },
+    {
+     "factor": "懷孕",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Springer: Update on Melasma — Part I: Pathogenesis"
+    },
+    {
+     "factor": "紫外線曝曬",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI PMC: Exposure factors in the occurrence and development of melasma (PMC10895611)"
+    },
+    {
+     "factor": "口服避孕藥或荷爾蒙補充治療",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Springer: Update on Melasma — Part I: Pathogenesis"
+    },
+    {
+     "factor": "家族病史",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Springer: Update on Melasma — Part I: Pathogenesis"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Female sex",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Springer: Update on Melasma — Part I: Pathogenesis"
+    },
+    {
+     "factor": "Pregnancy",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Springer: Update on Melasma — Part I: Pathogenesis"
+    },
+    {
+     "factor": "UV exposure",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI PMC: Exposure factors in the occurrence and development of melasma (PMC10895611)"
+    },
+    {
+     "factor": "Oral contraceptive or hormone replacement therapy use",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Springer: Update on Melasma — Part I: Pathogenesis"
+    },
+    {
+     "factor": "Family history",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Springer: Update on Melasma — Part I: Pathogenesis"
+    }
+   ],
+   "related_patterns": [
+    "pattern.liver_qi_stagnation",
+    "pattern.kidney_yin_deficiency",
+    "pattern.blood_stasis",
+    "pattern.spleen_qi_deficiency"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "Springer: Update on Melasma — Part I: Pathogenesis"
+    ],
+    "summary_en": [
+     "Springer: Update on Melasma — Part I: Pathogenesis"
+    ],
+    "western_context_zh": [
+     "NCBI PMC: Exposure factors in the occurrence and development of melasma (PMC10895611)"
+    ],
+    "western_context_en": [
+     "NCBI PMC: Exposure factors in the occurrence and development of melasma (PMC10895611)"
+    ],
+    "western_pathology_zh": [
+     "Springer: Update on Melasma — Part I: Pathogenesis",
+     "NCBI PMC: Heterogeneous Pathology of Melasma and Its Clinical Implications (PMC4926358)"
+    ],
+    "western_pathology_en": [
+     "Springer: Update on Melasma — Part I: Pathogenesis",
+     "NCBI PMC: Heterogeneous Pathology of Melasma and Its Clinical Implications (PMC4926358)"
+    ],
+    "red_flags_zh": [
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "red_flags_en": [
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "risk_factors_zh": [
+     "Springer: Update on Melasma — Part I: Pathogenesis",
+     "NCBI PMC: Exposure factors in the occurrence and development of melasma (PMC10895611)"
+    ],
+    "risk_factors_en": [
+     "Springer: Update on Melasma — Part I: Pathogenesis",
+     "NCBI PMC: Exposure factors in the occurrence and development of melasma (PMC10895611)"
+    ]
+   }
   },
   {
    "id": "cond.cellulitis",
@@ -72252,7 +73103,131 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "膿皰瘡是一種好發於2至5歲兒童的淺表細菌性皮膚感染，以非水疱型（金黃色蜜黃色結痂）最常見，也有水疱型（鬆弛型大水疱），主要致病菌為金黃色葡萄球菌與/或化膿性鏈球菌，經皮膚破損（如蚊蟲叮咬、濕疹搔抓處）入侵而感染。",
+   "summary_en": "Impetigo is a superficial bacterial skin infection most common in children aged 2-5, typically presenting as nonbullous impetigo (honey-colored crusted lesions) or, less commonly, bullous impetigo (flaccid large bullae). It is caused by Staphylococcus aureus and/or Streptococcus pyogenes entering through breaks in the skin barrier, such as insect bites or eczema-related excoriations.",
+   "western_context_zh": "西醫治療依範圍分流：局部少量病灶以外用莫匹羅星（mupirocin）等抗生素藥膏為主，病灶廣泛或多發時使用口服抗生素；並衛教手部衛生與病灶覆蓋以減少接觸傳染，托育機構常有排除上學規定。此處僅為文件對照用語，非治療指示。",
+   "western_context_en": "Western management is triaged by extent: limited localized lesions are treated with topical antibiotics such as mupirocin, while widespread or multiple lesions warrant oral antibiotics; hand hygiene and covering lesions are advised to reduce contact spread, and childcare settings commonly have exclusion policies until treatment has started. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "金黃色葡萄球菌與化膿性鏈球菌經皮膚破損處入侵表皮最外層角質層，形成表淺感染；水疱型是由產生剝脫毒素（exfoliative toxin）的金黃色葡萄球菌菌株引起，毒素破壞表皮內橋粒蛋白造成表皮內裂隙與大水疱。診斷主要依臨床外觀（蜜黃色結痂或鬆弛型水疱），必要時可取分泌物培養以指導抗生素選擇，尤其懷疑MRSA或反覆感染時。",
+   "western_pathology_en": "Staphylococcus aureus and Streptococcus pyogenes invade the outermost keratin layer of the epidermis through skin breaks, producing a superficial infection. Bullous impetigo results from exfoliative toxin-producing S. aureus strains, where the toxin disrupts intraepidermal desmosomal proteins to create an intraepidermal split and large bullae. Diagnosis is primarily clinical (honey-colored crusting or flaccid bullae); wound culture can guide antibiotic choice when MRSA is suspected or infection is recurrent.",
+   "red_flags_zh": [
+    "病灶周圍出現擴大紅腫熱痛或發燒等蜂窩性組織炎徵象，需評估是否感染已侵犯深層組織",
+    "感染後1至3週內出現水腫、高血壓或茶色尿，需警覺鏈球菌感染後腎絲球腎炎並轉診檢查",
+    "新生兒或嬰幼兒出現廣泛皮膚脫皮合併發燒、活力差，需警覺葡萄球菌燙傷樣皮膚症候群並儘速就醫",
+    "反覆發作的膿皰瘡，需評估MRSA帶菌篩檢與衛生習慣調整"
+   ],
+   "red_flags_en": [
+    "Spreading erythema, warmth, swelling, or fever around a lesion—suggests possible progression to deeper tissue infection (cellulitis)",
+    "Edema, hypertension, or tea-colored urine appearing 1-3 weeks after infection—suspect post-streptococcal glomerulonephritis and refer for evaluation",
+    "Widespread skin peeling with fever and poor feeding/lethargy in a neonate or infant—suspect staphylococcal scalded skin syndrome and seek urgent care",
+    "Recurrent impetigo—warrants MRSA colonization screening and hygiene practice review"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "年齡介於2至5歲",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI Bookshelf: Streptococcus pyogenes Impetigo, Erysipelas, and Cellulitis (NBK587091)"
+    },
+    {
+     "factor": "溫暖潮濕氣候",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI Bookshelf: Streptococcus pyogenes Impetigo, Erysipelas, and Cellulitis (NBK587091)"
+    },
+    {
+     "factor": "群聚環境（如托育機構）",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI Bookshelf: Streptococcus pyogenes Impetigo, Erysipelas, and Cellulitis (NBK587091)"
+    },
+    {
+     "factor": "皮膚輕微創傷或濕疹搔抓",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI Bookshelf: Streptococcus pyogenes Impetigo, Erysipelas, and Cellulitis (NBK587091)"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Age 2-5 years",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI Bookshelf: Streptococcus pyogenes Impetigo, Erysipelas, and Cellulitis (NBK587091)"
+    },
+    {
+     "factor": "Warm, humid climate",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI Bookshelf: Streptococcus pyogenes Impetigo, Erysipelas, and Cellulitis (NBK587091)"
+    },
+    {
+     "factor": "Crowded settings (e.g., childcare)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI Bookshelf: Streptococcus pyogenes Impetigo, Erysipelas, and Cellulitis (NBK587091)"
+    },
+    {
+     "factor": "Minor skin trauma or eczema-related scratching",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI Bookshelf: Streptococcus pyogenes Impetigo, Erysipelas, and Cellulitis (NBK587091)"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "無明確實證支持針灸治療活動性膿皰瘡感染；急性期以局部或全身性抗生素治療為主。",
+    "precautions": "避免針刺於活動性病灶或其周圍未癒合皮膚，以防交叉感染或病灶擴散。",
+    "co_management": "出現蜂窩性組織炎徵象、疑似腎絲球腎炎相關症狀（水腫、茶色尿）或反覆感染時，應轉診醫師評估抗生素治療與相關檢查。",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "No clear evidence supports acupuncture for treating active impetigo infection; acute-phase management relies on topical or systemic antibiotics.",
+    "precautions": "Avoid needling active lesions or surrounding unhealed skin to prevent cross-contamination or spreading the infection.",
+    "co_management": "If signs of cellulitis, possible post-streptococcal glomerulonephritis (edema, tea-colored urine), or recurrent infection appear, refer to a physician to evaluate antibiotic treatment and further testing.",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_patterns": [
+    "pattern.damp_heat",
+    "pattern.heat_toxin_blazing"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "NCBI Bookshelf: Streptococcus pyogenes Impetigo, Erysipelas, and Cellulitis (NBK587091)"
+    ],
+    "summary_en": [
+     "NCBI Bookshelf: Streptococcus pyogenes Impetigo, Erysipelas, and Cellulitis (NBK587091)"
+    ],
+    "western_context_zh": [
+     "Medscape: Impetigo — Background, Pathophysiology, Etiology (emedicine.medscape.com/article/965254)"
+    ],
+    "western_context_en": [
+     "Medscape: Impetigo — Background, Pathophysiology, Etiology (emedicine.medscape.com/article/965254)"
+    ],
+    "western_pathology_zh": [
+     "NCBI Bookshelf: Streptococcus pyogenes Impetigo, Erysipelas, and Cellulitis (NBK587091)",
+     "PMC: Impetigo — Bacteriologic Features and Renal Involvement (PMC1516328)"
+    ],
+    "western_pathology_en": [
+     "NCBI Bookshelf: Streptococcus pyogenes Impetigo, Erysipelas, and Cellulitis (NBK587091)",
+     "PMC: Impetigo — Bacteriologic Features and Renal Involvement (PMC1516328)"
+    ],
+    "red_flags_zh": [
+     "PMC: Impetigo — Bacteriologic Features and Renal Involvement (PMC1516328)",
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "red_flags_en": [
+     "PMC: Impetigo — Bacteriologic Features and Renal Involvement (PMC1516328)",
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "risk_factors_zh": [
+     "NCBI Bookshelf: Streptococcus pyogenes Impetigo, Erysipelas, and Cellulitis (NBK587091)"
+    ],
+    "risk_factors_en": [
+     "NCBI Bookshelf: Streptococcus pyogenes Impetigo, Erysipelas, and Cellulitis (NBK587091)"
+    ]
+   }
   },
   {
    "id": "cond.folliculitis",
@@ -72264,7 +73239,142 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "毛囊炎是毛囊發生發炎或感染，形成毛髮周圍紅色丘疹或膿疱，通常表淺、預後良好，最常見致病菌為金黃色葡萄球菌，也可由黴菌（如糠疹芽孢菌）、病毒（單純疱疹）或非感染性刺激（剃毛、摩擦）引起。",
+   "summary_en": "Folliculitis is inflammation or infection of the hair follicle, presenting as red papules or pustules centered on hair-bearing skin. It is usually superficial and self-limited; Staphylococcus aureus is the most common cause, though fungal (e.g., Malassezia), viral (herpes simplex), and non-infectious irritant causes (shaving, friction) also occur.",
+   "western_context_zh": "西醫治療依病因分流：細菌性以外用或口服抗生素為主，黴菌性使用外用/口服抗黴菌藥，並針對誘因（如剃毛方式、悶熱潮濕環境、糖尿病控制）做衛教；反覆或深部化膿性病灶需轉診皮膚科評估培養與MRSA篩檢。此處僅為文件對照用語，非治療指示。",
+   "western_context_en": "Western management is triaged by cause: bacterial folliculitis is treated with topical or oral antibiotics, fungal folliculitis with topical/oral antifungals, alongside counseling on triggers (shaving technique, hot/humid occlusion, glycemic control in diabetes); recurrent or deep suppurative lesions are referred to dermatology for culture and MRSA screening. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "毛囊炎源於發炎細胞在毛囊淺層或深層堆積，常因剃毛、搔抓、反覆摩擦或毛囊持續阻塞造成的微小創傷觸發局部發炎反應。細菌性以金黃色葡萄球菌（含MRSA）最常見；黴菌性可由皮癬菌、糠疹芽孢菌（好發於糖尿病、使用類固醇或嗜中性球低下者）或念珠菌引起；病毒性多為單純疱疹病毒。診斷主要依臨床外觀，反覆發作、不典型分布或治療反應不佳者可做細菌/黴菌培養確認病原。",
+   "western_pathology_en": "Folliculitis results from an accumulation of inflammatory cells within the superficial or deep hair follicle, typically triggered by minor trauma from shaving, scratching, recurrent friction, or persistent follicular occlusion. Staphylococcus aureus (including MRSA) is the most common bacterial cause; fungal causes include dermatophytes, Malassezia furfur (more common with diabetes, glucocorticoid use, or neutropenia), or Candida; viral folliculitis is most often due to herpes simplex virus. Diagnosis is primarily clinical; recurrent, atypically distributed, or treatment-refractory cases warrant bacterial/fungal culture to confirm the pathogen.",
+   "red_flags_zh": [
+    "病灶周圍出現擴大紅腫熱痛、發燒或全身不適，提示已進展為蜂窩性組織炎，需儘速就醫",
+    "深部、反覆發作或群聚的膿疱性病灶，需考慮MRSA感染並安排細菌培養",
+    "免疫功能低下病人（糖尿病、化療、HIV）出現廣泛或不典型毛囊炎，需警覺病情可能較嚴重且進展較快"
+   ],
+   "red_flags_en": [
+    "Spreading erythema, warmth, swelling, fever, or systemic malaise around the lesion—suggests progression to cellulitis and warrants prompt medical evaluation",
+    "Deep, recurrent, or clustered pustular lesions—consider MRSA infection and arrange bacterial culture",
+    "Widespread or atypical folliculitis in an immunocompromised patient (diabetes, chemotherapy, HIV)—raises concern for more severe, rapidly progressive disease"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "糖尿病",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Folliculitis (NBK547754)"
+    },
+    {
+     "factor": "肥胖",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Folliculitis (NBK547754)"
+    },
+    {
+     "factor": "長期口服抗生素使用",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Folliculitis (NBK547754)"
+    },
+    {
+     "factor": "免疫功能低下／免疫抑制狀態",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: Folliculitis (NBK547754)"
+    },
+    {
+     "factor": "頻繁剃毛",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Folliculitis (NBK547754)"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Diabetes",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Folliculitis (NBK547754)"
+    },
+    {
+     "factor": "Obesity",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Folliculitis (NBK547754)"
+    },
+    {
+     "factor": "Prolonged oral antibiotic use",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Folliculitis (NBK547754)"
+    },
+    {
+     "factor": "Immunosuppression/immunocompromised state",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: Folliculitis (NBK547754)"
+    },
+    {
+     "factor": "Frequent shaving",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Folliculitis (NBK547754)"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "無明確實證支持針灸治療毛囊炎本身；急性感染以西醫抗菌/抗黴菌治療為主。",
+    "precautions": "避免直接針刺於活動性膿疱或發炎病灶，以防感染擴散。",
+    "co_management": "出現蜂窩性組織炎徵象、發燒或反覆化膿時，應轉診原診療醫師評估是否需抗生素治療。",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "No clear evidence supports acupuncture as a treatment for folliculitis itself; acute infection is managed primarily with antimicrobial/antifungal therapy.",
+    "precautions": "Avoid needling directly into active pustular or inflamed lesions to reduce risk of spreading infection.",
+    "co_management": "If signs of cellulitis, fever, or recurrent suppuration appear, refer back to the treating physician to evaluate the need for antibiotic therapy.",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.jie"
+   ],
+   "related_patterns": [
+    "pattern.damp_heat",
+    "pattern.heat_toxin_blazing"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "NCBI StatPearls: Folliculitis (NBK547754)"
+    ],
+    "summary_en": [
+     "NCBI StatPearls: Folliculitis (NBK547754)"
+    ],
+    "western_context_zh": [
+     "Mayo Clinic: Folliculitis — Symptoms & causes"
+    ],
+    "western_context_en": [
+     "Mayo Clinic: Folliculitis — Symptoms & causes"
+    ],
+    "western_pathology_zh": [
+     "NCBI StatPearls: Folliculitis (NBK547754)"
+    ],
+    "western_pathology_en": [
+     "NCBI StatPearls: Folliculitis (NBK547754)"
+    ],
+    "red_flags_zh": [
+     "NCBI StatPearls: Folliculitis (NBK547754)",
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "red_flags_en": [
+     "NCBI StatPearls: Folliculitis (NBK547754)",
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "risk_factors_zh": [
+     "NCBI StatPearls: Folliculitis (NBK547754)"
+    ],
+    "risk_factors_en": [
+     "NCBI StatPearls: Folliculitis (NBK547754)"
+    ]
+   }
   },
   {
    "id": "cond.furuncle_carbuncle",
@@ -72276,7 +73386,137 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "癤（furuncle）是單一毛囊深部化膿性感染形成的膿瘍（俗稱疔），癰（carbuncle）則是多個相鄰癤互相貫通、深及皮下組織的化膿性感染叢，好發於頸部、背部、大腿等摩擦部位，主要致病菌為金黃色葡萄球菌，包括社區型MRSA。",
+   "summary_en": "A furuncle (boil) is a deep suppurative infection of a single hair follicle forming an abscess; a carbuncle is a cluster of interconnected, adjacent furuncles extending into the subcutaneous tissue. Both most often occur on the neck, back, and thighs (friction-prone areas) and are primarily caused by Staphylococcus aureus, including community-acquired MRSA.",
+   "western_context_zh": "西醫治療以切開引流為主要處置，尤其病灶已形成明顯膿頭或波動感時；出現全身症狀、免疫低下或MRSA感染時，需加上針對性抗生素（如口服/靜脈萬古黴素、達托黴素等）。反覆發作者需評估糖尿病、MRSA帶菌狀態等潛在因子。此處僅為文件對照用語，非治療指示。",
+   "western_context_en": "Western management centers on incision and drainage, particularly once a lesion has pointed or become fluctuant; systemic symptoms, immunosuppression, or MRSA infection warrant targeted antibiotics (e.g., oral/IV vancomycin, daptomycin). Recurrent cases are evaluated for underlying contributors such as diabetes or MRSA colonization. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "感染自毛囊向下延伸至真皮及皮下組織，造成局部組織壞死並形成膿瘍腔；癰則是多個癤病灶相互貫通、形成含多個引流通道的較大膿瘍團塊，常伴隨全身症狀。社區型MRSA因帶有特殊毒力因子，感染擴散較快、症狀較傳統院內型MRSA嚴重，可侵犯重要器官甚至導致敗血症、中毒性休克或壞死性肺炎。診斷主要依臨床外觀，膿液可送培養以確認病原及抗藥性。",
+   "western_pathology_en": "Infection extends from the hair follicle downward into the dermis and subcutaneous tissue, causing local tissue necrosis and abscess cavity formation; a carbuncle results when multiple furuncles interconnect into a larger abscess mass with several draining tracts, often with systemic symptoms. Community-acquired MRSA strains carry virulence factors that let infection spread more rapidly and cause more severe illness than traditional hospital-acquired MRSA, potentially involving vital organs and leading to sepsis, toxic shock syndrome, or necrotizing pneumonia. Diagnosis is primarily clinical; purulent drainage can be cultured to confirm the pathogen and antibiotic susceptibility.",
+   "red_flags_zh": [
+    "發燒、心跳加快、意識改變等全身性感染徵象，需警覺敗血症並儘速就醫",
+    "病灶位於鼻、上唇周圍「危險三角區」，有經由靜脈逆流引發海綿竇栓塞的罕見但嚴重風險",
+    "病灶周圍疼痛程度與外觀不成比例、快速擴大的紅腫或皮膚變色，需排除壞死性筋膜炎等更危急感染",
+    "反覆發作的癤或癰，需評估糖尿病、免疫功能低下或MRSA帶菌狀態等潛在因子"
+   ],
+   "red_flags_en": [
+    "Systemic signs of infection—fever, tachycardia, altered mental status—raise concern for sepsis and warrant urgent medical evaluation",
+    "A lesion located in the nasal/upper-lip \"danger triangle\" carries a rare but serious risk of retrograde venous spread to cavernous sinus thrombosis",
+    "Pain disproportionate to appearance, or rapidly spreading erythema/skin discoloration—warrants excluding necrotizing fasciitis or other more dangerous infection",
+    "Recurrent furuncles or carbuncles—warrants evaluation for diabetes, immunosuppression, or MRSA colonization"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "糖尿病",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Mayo Clinic: Boils and carbuncles — Symptoms & causes"
+    },
+    {
+     "factor": "肥胖",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Mayo Clinic: Boils and carbuncles — Symptoms & causes"
+    },
+    {
+     "factor": "免疫功能低下",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Mayo Clinic: Boils and carbuncles — Symptoms & causes"
+    },
+    {
+     "factor": "MRSA皮膚帶菌狀態",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI Bookshelf: Overview — Boils and carbuncles (NBK513141)"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Diabetes",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Mayo Clinic: Boils and carbuncles — Symptoms & causes"
+    },
+    {
+     "factor": "Obesity",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Mayo Clinic: Boils and carbuncles — Symptoms & causes"
+    },
+    {
+     "factor": "Immunosuppression",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Mayo Clinic: Boils and carbuncles — Symptoms & causes"
+    },
+    {
+     "factor": "MRSA skin colonization",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI Bookshelf: Overview — Boils and carbuncles (NBK513141)"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "無明確實證支持針灸治療活動性癤或癰；急性化膿性病灶以切開引流及抗生素為主。",
+    "precautions": "禁止於活動性病灶正上方或周圍紅腫範圍內針刺，以免造成感染擴散。",
+    "co_management": "出現發燒、快速擴大紅腫或全身不適等警訊時，應立即聯繫醫師評估是否需切開引流或抗生素治療。",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "No clear evidence supports acupuncture as treatment for an active furuncle or carbuncle; acute suppurative lesions are managed primarily with incision/drainage and antibiotics.",
+    "precautions": "Do not needle directly over or within the surrounding erythematous margin of an active lesion, to avoid spreading infection.",
+    "co_management": "If fever, rapidly spreading erythema, or systemic malaise (red-flag signs) appear, contact the physician promptly to evaluate the need for incision/drainage or antibiotic therapy.",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.jie",
+    "tdis.yong"
+   ],
+   "related_patterns": [
+    "pattern.heat_toxin_blazing",
+    "pattern.damp_heat"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "Mayo Clinic: Boils and carbuncles — Symptoms & causes"
+    ],
+    "summary_en": [
+     "Mayo Clinic: Boils and carbuncles — Symptoms & causes"
+    ],
+    "western_context_zh": [
+     "Merck Manual: Furuncles and Carbuncles — Professional Edition"
+    ],
+    "western_context_en": [
+     "Merck Manual: Furuncles and Carbuncles — Professional Edition"
+    ],
+    "western_pathology_zh": [
+     "Cleveland Clinic: Boils & Carbuncles",
+     "NCBI Bookshelf: Overview — Boils and carbuncles (NBK513141)"
+    ],
+    "western_pathology_en": [
+     "Cleveland Clinic: Boils & Carbuncles",
+     "NCBI Bookshelf: Overview — Boils and carbuncles (NBK513141)"
+    ],
+    "red_flags_zh": [
+     "NCBI Bookshelf: Overview — Boils and carbuncles (NBK513141)",
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "red_flags_en": [
+     "NCBI Bookshelf: Overview — Boils and carbuncles (NBK513141)",
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "risk_factors_zh": [
+     "Mayo Clinic: Boils and carbuncles — Symptoms & causes",
+     "NCBI Bookshelf: Overview — Boils and carbuncles (NBK513141)"
+    ],
+    "risk_factors_en": [
+     "Mayo Clinic: Boils and carbuncles — Symptoms & causes",
+     "NCBI Bookshelf: Overview — Boils and carbuncles (NBK513141)"
+    ]
+   }
   },
   {
    "id": "cond.xerosis",
@@ -72431,7 +73671,107 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "多汗症是指汗液分泌明顯超過體溫調節所需的程度，分為原發性（局部、對稱、通常於兒童或青少年期發病、清醒時發作、原因不明）與續發性（通常全身性，起因於潛在疾病如甲狀腺機能亢進、糖尿病、感染、腫瘤或藥物）。",
+   "summary_en": "Hyperhidrosis is excessive sweating beyond what is needed for thermoregulation. It is classified as primary (focal, bilaterally symmetric, typically childhood/adolescent onset, occurring while awake, of unclear cause) or secondary (usually generalized, arising from an underlying condition such as hyperthyroidism, diabetes, infection, malignancy, or medication).",
+   "western_context_zh": "西醫處理先評估區分原發性與續發性，續發性需針對潛在疾病治療；原發性多汗依嚴重度採外用止汗劑（氯化鋁）、離子導入療法、肉毒桿菌素注射、口服抗膽鹼藥物，難治型可考慮手術（如胸交感神經切除術）。此處僅為文件對照用語，非治療指示。",
+   "western_context_en": "Western management first distinguishes primary from secondary hyperhidrosis, with secondary cases treated by addressing the underlying condition; primary hyperhidrosis is managed by severity with topical antiperspirants (aluminum chloride), iontophoresis, botulinum toxin injection, oral anticholinergics, and surgery (e.g., thoracic sympathectomy) for refractory cases. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "原發性多汗症確切機轉未明，目前主要理論為支配外泌汗腺的交感神經系統過度興奮，汗腺數目與構造正常，但對正常刺激（情緒、體溫變化）產生過度反應；續發性多汗則反映潛在的內分泌（甲狀腺機能亢進、糖尿病）、神經、感染、腫瘤或藥物相關病理機轉。診斷依臨床準則（局部對稱性出汗、影響日常生活、每週至少一次、25歲前發病、有家族史、睡眠中不出汗）及澱粉-碘試驗輔助定位。",
+   "western_pathology_en": "The exact mechanism of primary hyperhidrosis remains unclear; the prevailing theory is neurogenic hyperexcitability of the sympathetic cholinergic circuits innervating eccrine sweat glands—gland number and structure are normal, but the response to normal stimuli (emotion, temperature change) is exaggerated. Secondary hyperhidrosis reflects the underlying endocrine (hyperthyroidism, diabetes), neurologic, infectious, neoplastic, or drug-related pathology. Diagnosis uses clinical criteria (focal, bilaterally symmetric sweating that impairs daily activities, occurring at least weekly, onset before age 25, positive family history, no sweating during sleep) supported by the starch-iodine test for localization.",
+   "red_flags_zh": [
+    "不對稱性多汗，提示可能存在局部神經學病灶，需神經科評估",
+    "夜間盜汗，需排除感染、惡性腫瘤或內分泌疾病等續發性原因",
+    "25歲後才發病且無家族史，較不符合原發性多汗典型表現，需評估續發性病因",
+    "合併體重減輕、發燒、心悸等全身症狀，需安排相關系統性疾病檢查"
+   ],
+   "red_flags_en": [
+    "Asymmetric sweating—suggests a possible focal neurologic lesion and warrants neurology evaluation",
+    "Night sweats—warrants excluding infection, malignancy, or endocrine disease as a secondary cause",
+    "Onset after age 25 without a family history—atypical for primary hyperhidrosis and warrants secondary-cause workup",
+    "Accompanying weight loss, fever, or palpitations—warrants evaluation for underlying systemic disease"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "家族病史",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: Hyperhidrosis (NBK459227)"
+    },
+    {
+     "factor": "肥胖",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Hyperhidrosis (NBK459227)"
+    },
+    {
+     "factor": "焦慮或情緒壓力",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Hyperhidrosis (NBK459227)"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Family history",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: Hyperhidrosis (NBK459227)"
+    },
+    {
+     "factor": "Obesity",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Hyperhidrosis (NBK459227)"
+    },
+    {
+     "factor": "Anxiety or emotional stress",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Hyperhidrosis (NBK459227)"
+    }
+   ],
+   "related_eastern_diseases": [
+    "tdis.han_zheng"
+   ],
+   "related_patterns": [
+    "pattern.qi_deficiency",
+    "pattern.yin_deficiency",
+    "pattern.damp_heat"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "NCBI StatPearls: Hyperhidrosis (NBK459227)"
+    ],
+    "summary_en": [
+     "NCBI StatPearls: Hyperhidrosis (NBK459227)"
+    ],
+    "western_context_zh": [
+     "Merck Manual: Hyperhidrosis — Dermatology, Professional Edition"
+    ],
+    "western_context_en": [
+     "Merck Manual: Hyperhidrosis — Dermatology, Professional Edition"
+    ],
+    "western_pathology_zh": [
+     "NCBI StatPearls: Hyperhidrosis (NBK459227)",
+     "Shanghai Chest: Pathophysiology of hyperhidrosis (Choe)"
+    ],
+    "western_pathology_en": [
+     "NCBI StatPearls: Hyperhidrosis (NBK459227)",
+     "Shanghai Chest: Pathophysiology of hyperhidrosis (Choe)"
+    ],
+    "red_flags_zh": [
+     "NCBI StatPearls: Hyperhidrosis (NBK459227)"
+    ],
+    "red_flags_en": [
+     "NCBI StatPearls: Hyperhidrosis (NBK459227)"
+    ],
+    "risk_factors_zh": [
+     "NCBI StatPearls: Hyperhidrosis (NBK459227)"
+    ],
+    "risk_factors_en": [
+     "NCBI StatPearls: Hyperhidrosis (NBK459227)"
+    ]
+   }
   },
   {
    "id": "cond.stasis_dermatitis",
@@ -72590,7 +73930,111 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "藥物疹（皮膚藥物不良反應）是指全身性給藥後在皮膚（有時合併黏膜）出現的不良免疫反應，型態範圍極廣，從最常見、輕度的斑丘疹型（morbilliform）皮疹，到少數會危及生命的重症藥物反應，如史蒂文生氏-強生症候群（SJS）、毒性表皮壞死溶解症（TEN）、藥物性嗜酸性球增多合併全身症狀（DRESS）與急性泛發性發疹性膿皰病（AGEP）。多數病例在開始用藥後數天至數週內發疹，致病藥物以抗生素、抗癲癇藥最常見。",
+   "summary_en": "Drug eruption (cutaneous adverse drug reaction) is an adverse immune-mediated skin reaction—sometimes with mucosal involvement—following systemic medication exposure. Presentations span a wide spectrum, from the common, mild morbilliform (measles-like) rash to a small subset of severe, life-threatening reactions: Stevens-Johnson syndrome (SJS), toxic epidermal necrolysis (TEN), drug reaction with eosinophilia and systemic symptoms (DRESS), and acute generalized exanthematous pustulosis (AGEP). Most eruptions appear within days to weeks of starting the causative drug, most commonly antibiotics or anticonvulsants.",
+   "western_context_zh": "西醫處理的核心是及早辨識並停用可疑藥物，並依嚴重度分流：輕度斑丘疹型多以抗組織胺、外用類固醇及觀察為主；出現黏膜侵犯、水疱、皮膚痛、發燒或器官功能異常等跡象時，需立即轉診皮膚科或急診，重症藥物反應常需住院及跨科照護。用藥史（包含近期新增或劑量調整的藥物）與時序關係是診斷關鍵。此處僅為文件對照用語，非治療指示。",
+   "western_context_en": "Western management centers on early recognition and prompt discontinuation of the suspected drug, triaged by severity: mild morbilliform eruptions are typically managed with antihistamines, topical corticosteroids, and observation; mucosal involvement, blistering, skin pain, fever, or organ dysfunction warrant urgent dermatology or emergency referral, and severe reactions often require hospitalization and multidisciplinary care. A careful medication history—including recently started or dose-adjusted drugs—and the temporal relationship to eruption onset are central to diagnosis. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "多數藥物疹屬於T細胞媒介的第四型過敏反應：藥物或其代謝產物作為半抗原與皮膚蛋白結合，活化細胞毒性T細胞攻擊角質細胞，形成血管周圍淋巴球浸潤與斑丘疹。重症型態病理機轉各異——SJS／TEN以廣泛角質細胞凋亡、表皮與真皮分離為特徵；DRESS則與嗜酸性球活化及多重臟器（肝、心、肺）發炎有關；AGEP以嗜中性球主導之無菌性膿皰為特徵。診斷主要依臨床型態與用藥時序，必要時輔以皮膚切片；SJS／TEN、DRESS等重症診斷須綜合黏膜、全身症狀與實驗室數據（如肝腎功能、嗜酸性球）。",
+   "western_pathology_en": "Most drug eruptions are T-cell-mediated (type IV) hypersensitivity reactions: the drug or a metabolite acts as a hapten bound to skin proteins, activating cytotoxic T cells that attack keratinocytes and produce a perivascular lymphocytic infiltrate with morbilliform rash. Severe subtypes differ mechanistically—SJS/TEN feature widespread keratinocyte apoptosis with epidermal-dermal separation; DRESS involves eosinophil activation and multi-organ (hepatic, cardiac, pulmonary) inflammation; AGEP is driven by neutrophils forming sterile pustules. Diagnosis rests on clinical morphology and the drug-exposure timeline, supplemented by skin biopsy when needed; severe reactions require correlating mucosal findings, systemic symptoms, and labs (liver/renal function, eosinophil count).",
+   "red_flags_zh": [
+    "黏膜（口腔、眼、生殖器）侵犯合併廣泛水疱或表皮剝離，需立即排除SJS／TEN並轉急診",
+    "發燒、顏面水腫、淋巴結腫大合併皮疹，尤其在用藥後2至6週發作，需警覺DRESS並檢查肝腎功能與嗜酸性球",
+    "皮膚疼痛感明顯超過癢感、皮膚出現大片紫斑或表皮鬆解（尼氏徵象陽性），提示表皮壞死正在進行",
+    "發燒合併廣泛無菌性膿皰快速擴散，需考慮AGEP",
+    "皮疹合併肝功能異常、腎功能惡化或呼吸道症狀，提示重症藥物反應已侵犯內臟器官"
+   ],
+   "red_flags_en": [
+    "Mucosal (oral, ocular, genital) involvement with widespread blistering or skin sloughing—suspect SJS/TEN and refer emergently",
+    "Fever, facial edema, and lymphadenopathy accompanying a rash, especially arising 2-6 weeks after starting a drug—suspect DRESS and check liver/renal function and eosinophil count",
+    "Skin pain out of proportion to itch, or extensive purpura/positive Nikolsky sign (skin sloughing with gentle pressure)—suggests ongoing epidermal necrosis",
+    "Fever with rapidly spreading sterile pustules—consider AGEP",
+    "Rash accompanied by abnormal liver enzymes, worsening renal function, or respiratory symptoms—suggests visceral organ involvement in a severe drug reaction"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "同時使用多種藥物（多重用藥）",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Cutaneous Adverse Drug Reaction (NBK533000)"
+    },
+    {
+     "factor": "抗癲癇藥、磺胺類、別嘌呤醇等高風險藥物使用",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Cutaneous Adverse Drug Reaction (NBK533000)"
+    },
+    {
+     "factor": "HIV感染或免疫功能低下",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Medscape: Drug Eruptions — Etiology"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Concurrent use of multiple medications (polypharmacy)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Cutaneous Adverse Drug Reaction (NBK533000)"
+    },
+    {
+     "factor": "Use of high-risk drug classes (anticonvulsants, sulfonamides, allopurinol)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Cutaneous Adverse Drug Reaction (NBK533000)"
+    },
+    {
+     "factor": "HIV infection or immunosuppression",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Medscape: Drug Eruptions — Etiology"
+    }
+   ],
+   "related_eastern_diseases": [
+    "tdis.yin_zhen"
+   ],
+   "related_patterns": [
+    "pattern.blood_heat",
+    "pattern.wind_heat",
+    "pattern.heat_toxin_blazing"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "NCBI StatPearls: Cutaneous Adverse Drug Reaction (NBK533000)"
+    ],
+    "summary_en": [
+     "NCBI StatPearls: Cutaneous Adverse Drug Reaction (NBK533000)"
+    ],
+    "western_context_zh": [
+     "Medscape: Drug Eruptions — Background, Pathophysiology, Etiology (emedicine.medscape.com/article/1049474)"
+    ],
+    "western_context_en": [
+     "Medscape: Drug Eruptions — Background, Pathophysiology, Etiology (emedicine.medscape.com/article/1049474)"
+    ],
+    "western_pathology_zh": [
+     "NCBI StatPearls: Cutaneous Adverse Drug Reaction (NBK533000)",
+     "PMC: New Insights into DRESS Pathophysiology (PMC5722807)"
+    ],
+    "western_pathology_en": [
+     "NCBI StatPearls: Cutaneous Adverse Drug Reaction (NBK533000)",
+     "PMC: New Insights into DRESS Pathophysiology (PMC5722807)"
+    ],
+    "red_flags_zh": [
+     "NCBI StatPearls: Cutaneous Adverse Drug Reaction (NBK533000)",
+     "PMC: DRESS and Stevens-Johnson Syndrome Overlap Secondary to Allopurinol (PMC10744808)"
+    ],
+    "red_flags_en": [
+     "NCBI StatPearls: Cutaneous Adverse Drug Reaction (NBK533000)",
+     "PMC: DRESS and Stevens-Johnson Syndrome Overlap Secondary to Allopurinol (PMC10744808)"
+    ],
+    "risk_factors_zh": [
+     "NCBI StatPearls: Cutaneous Adverse Drug Reaction (NBK533000)"
+    ],
+    "risk_factors_en": [
+     "NCBI StatPearls: Cutaneous Adverse Drug Reaction (NBK533000)"
+    ]
+   }
   },
   {
    "id": "cond.thyroid_nodule",
@@ -78237,7 +79681,143 @@
     "Swimmer's Ear"
    ],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "外耳炎(俗稱游泳耳)是外耳道皮膚的發炎或感染,以細菌感染最常見(常見綠膿桿菌、金黃色葡萄球菌),黴菌感染次之。典型表現為耳道搔癢或疼痛(常因牽拉耳廓或按壓耳屏而加劇)、耳道紅腫、分泌物增多及聽力悶塞感;慢性型則以持續搔癢、乾燥脫屑為主。",
+   "summary_en": "Otitis externa (commonly called swimmer's ear) is inflammation or infection of the skin lining the ear canal, most often bacterial (commonly Pseudomonas aeruginosa or Staphylococcus aureus), with fungal infection being less common. The typical presentation is ear canal itching or pain (classically worsened by pulling the pinna or pressing the tragus), canal redness and swelling, increased discharge, and a sensation of muffled hearing; the chronic form presents mainly with persistent itching and dry, flaky skin.",
+   "western_context_zh": "治療以局部耳滴劑為主(依感染類型選用抗生素、抗黴菌或合併類固醇成分之滴劑),嚴重腫脹阻塞耳道時可置入耳撚(wick)協助藥物送達;一般建議治療期間避免耳道進水。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Treatment is primarily topical ear drops (antibiotic, antifungal, or combination antibiotic-steroid drops selected according to the type of infection); when swelling significantly narrows the canal, an ear wick may be placed to help deliver the medication, and the ear is generally kept dry during treatment. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "外耳道正常具有酸性環境與耳垢的保護屏障,當耳道長時間潮濕(游泳、洗澡進水)、耳垢過度清除或耳道皮膚因搔抓、耳塞/助聽器摩擦受損時,酸性保護屏障被破壞,細菌或黴菌得以在潮濕環境中增生,引發皮膚與軟組織的發炎反應。診斷主要依耳鏡檢查(耳道紅腫、分泌物、牽拉耳廓誘發疼痛)判斷,必要時取分泌物做細菌培養以指導抗生素選擇。",
+   "western_pathology_en": "The ear canal is normally protected by an acidic environment and cerumen; when the canal stays wet for prolonged periods (swimming, water in the shower), cerumen is over-removed, or the canal skin is damaged by scratching or friction from earplugs/hearing aids, this protective acidic barrier breaks down, allowing bacteria or fungi to proliferate in the moist environment and trigger inflammation of the skin and soft tissue. Diagnosis is mainly by otoscopy (canal erythema and edema, discharge, pain reproduced by pulling the pinna), with discharge culture obtained when needed to guide antibiotic selection.",
+   "red_flags_zh": [
+    "持續耳部劇痛、耳道分泌物不止合併發燒或吞嚥困難,尤其發生於糖尿病患者或免疫功能低下者,須立即排除壞死性(惡性)外耳炎,可能危及生命",
+    "合併顏面神經麻痺或其他顱神經症狀,提示感染已侵犯顱底骨,屬急症",
+    "耳道出現肉芽組織、持續不癒或治療反應不佳,須排除少見的外耳道惡性腫瘤"
+   ],
+   "red_flags_en": [
+    "Ongoing severe ear pain with persistent discharge, fever, or difficulty swallowing—especially in a patient with diabetes or immunocompromise—should raise immediate concern for necrotizing (malignant) otitis externa, which can be life-threatening",
+    "Associated facial nerve palsy or other cranial nerve symptoms suggests skull-base extension of infection and is an emergency",
+    "Granulation tissue in the canal, a non-healing lesion, or poor response to treatment should raise suspicion for a rare ear canal malignancy"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "游泳或耳道經常進水",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Mayo Clinic: Swimmer's ear - Symptoms & causes"
+    },
+    {
+     "factor": "棉花棒清潔耳道或過度清除耳垢",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Mayo Clinic: Swimmer's ear - Symptoms & causes"
+    },
+    {
+     "factor": "糖尿病或免疫功能低下",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Necrotizing (Malignant) Otitis Externa (NBK556138)"
+    },
+    {
+     "factor": "配戴助聽器或耳塞",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Mayo Clinic: Swimmer's ear - Symptoms & causes"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Swimming or frequent water exposure in the ear canal",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Mayo Clinic: Swimmer's ear - Symptoms & causes"
+    },
+    {
+     "factor": "Cotton swab cleaning or over-removal of cerumen",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Mayo Clinic: Swimmer's ear - Symptoms & causes"
+    },
+    {
+     "factor": "Diabetes or immunocompromise",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Necrotizing (Malignant) Otitis Externa (NBK556138)"
+    },
+    {
+     "factor": "Use of hearing aids or earplugs",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Mayo Clinic: Swimmer's ear - Symptoms & causes"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "針灸對外耳道細菌或黴菌感染本身無直接治療效果;不作為急性外耳炎的第一線處置",
+    "precautions": "感染活動期耳周局部紅腫熱痛時應避免該區域針刺,以免增加感染擴散風險",
+    "co_management": "病人若正使用耳滴劑治療,應建議持續完成療程並與原診療醫師聯繫,不建議以針灸替代局部抗生素或抗黴菌藥物",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "Acupuncture has no direct effect on the bacterial or fungal infection of otitis externa itself and is not first-line treatment for acute otitis externa",
+    "precautions": "Local needling around the ear should be avoided during active infection (redness, swelling, heat, pain) to avoid increasing the risk of spreading infection",
+    "co_management": "If the patient is using ear drops, advise completing the course as prescribed and maintaining contact with the treating physician; acupuncture should not replace topical antibiotic or antifungal medication",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.er_chuang"
+   ],
+   "related_patterns": [
+    "pattern.liver_gallbladder_damp_heat",
+    "pattern.damp_heat"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "Mayo Clinic: Swimmer's ear - Symptoms & causes; Cleveland Clinic: Swimmer's Ear (Otitis Externa)"
+    ],
+    "summary_en": [
+     "Mayo Clinic: Swimmer's ear - Symptoms & causes; Cleveland Clinic: Swimmer's Ear (Otitis Externa)"
+    ],
+    "western_context_zh": [
+     "Mayo Clinic: Swimmer's ear - Symptoms & causes; Cleveland Clinic: Swimmer's Ear (Otitis Externa)"
+    ],
+    "western_context_en": [
+     "Mayo Clinic: Swimmer's ear - Symptoms & causes; Cleveland Clinic: Swimmer's Ear (Otitis Externa)"
+    ],
+    "western_pathology_zh": [
+     "Mayo Clinic: Swimmer's ear - Symptoms & causes; Wikipedia/clinical summary: Otitis externa"
+    ],
+    "western_pathology_en": [
+     "Mayo Clinic: Swimmer's ear - Symptoms & causes; Wikipedia/clinical summary: Otitis externa"
+    ],
+    "red_flags_zh": [
+     "StatPearls: Necrotizing (Malignant) Otitis Externa (NBK556138); AAFP: Necrotizing (Malignant) External Otitis"
+    ],
+    "red_flags_en": [
+     "StatPearls: Necrotizing (Malignant) Otitis Externa (NBK556138); AAFP: Necrotizing (Malignant) External Otitis"
+    ],
+    "risk_factors_zh": [
+     "Mayo Clinic: Swimmer's ear - Symptoms & causes; StatPearls: Necrotizing (Malignant) Otitis Externa (NBK556138)"
+    ],
+    "risk_factors_en": [
+     "Mayo Clinic: Swimmer's ear - Symptoms & causes; StatPearls: Necrotizing (Malignant) Otitis Externa (NBK556138)"
+    ],
+    "acupuncture_scope_zh": [
+     "established biomedical/scope-of-practice judgment, not source-verified — flag for Ting to source-check"
+    ],
+    "acupuncture_scope_en": [
+     "established biomedical/scope-of-practice judgment, not source-verified — flag for Ting to source-check"
+    ],
+    "aliases_zh": [
+     "Mayo Clinic: Swimmer's ear (common synonym)"
+    ],
+    "aliases_en": [
+     "Mayo Clinic: Swimmer's ear (common synonym)"
+    ],
+    "related_eastern_diseases": [
+     "direct TCM disease-name correspondence (耳瘡 = infective external ear inflammation)"
+    ]
+   }
   },
   {
    "id": "cond.conjunctivitis",
@@ -79449,7 +81029,137 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "眼壓過高症指眼內壓持續高於統計正常上限(通常以 21 mmHg 為參考值),但視神經外觀正常、視野檢查未發現青光眼性缺損的狀態。本身不等於青光眼,而是青光眼最重要的可測量危險因子之一,多於例行眼科檢查中意外發現,患者通常無自覺症狀。",
+   "summary_en": "Ocular hypertension refers to intraocular pressure (IOP) persistently above the statistical normal upper limit (commonly referenced as 21 mmHg), but with a normal-appearing optic nerve and no glaucomatous visual field defect on testing. It is not itself glaucoma, but is one of the most important measurable risk factors for glaucoma, and is usually discovered incidentally on routine eye examination since patients typically have no symptoms.",
+   "western_context_zh": "處置以個別化風險評估為核心,依中央角膜厚度、視神經杯盤比、眼壓數值及年齡等因子估算未來進展為青光眼的機率,高風險者建議以局部降眼壓藥物治療並定期追蹤視野與視神經檢查,低風險者可選擇密切觀察而暫不用藥。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Management centers on individualized risk assessment—estimating the future probability of progression to glaucoma based on factors such as central corneal thickness, optic disc cup-to-disc ratio, IOP level, and age—with topical IOP-lowering medication and regular visual field and optic nerve monitoring recommended for higher-risk patients, while lower-risk patients may be followed closely without medication. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "眼壓由房水生成與經由小樑網、許萊姆氏管排出之間的平衡決定,當房水排出阻力增加、生成與排出失衡時眼壓上升。持續偏高眼壓會增加視神經纖維承受的機械與血流灌注壓力,長期可能導致視神經纖維逐漸受損進展為青光眼性視神經病變,但個體對相同眼壓的耐受度差異很大。診斷須排除視神經外觀異常及視野缺損(以確認尚非青光眼),並以中央角膜厚度測量校正眼壓讀數(角膜較薄者實際眼壓可能被低估)。",
+   "western_pathology_en": "Intraocular pressure is determined by the balance between aqueous humor production and outflow through the trabecular meshwork and Schlemm's canal; when outflow resistance increases and this balance is disrupted, IOP rises. Sustained elevated IOP increases the mechanical and perfusion-pressure burden on optic nerve fibers, and over time may progressively damage the nerve fibers, leading to glaucomatous optic neuropathy—though individual tolerance to a given IOP level varies considerably. Diagnosis requires excluding optic disc abnormality and visual field defect (to confirm the condition is not yet glaucoma), and central corneal thickness measurement is used to correct the IOP reading, since a thinner cornea can cause true IOP to be underestimated.",
+   "red_flags_zh": [
+    "突發單側眼紅、劇烈眼痛合併視力模糊、虹視(看燈出現光暈)、頭痛噁心,須立即排除急性隅角閉鎖性青光眼發作,為眼科急症",
+    "眼壓極高(如超過 30 mmHg)合併視神經杯盤比不對稱或視野檢查異常,應視為疑似青光眼而非單純眼壓過高症",
+    "有青光眼家族史、高度近視或長期使用類固醇(含眼藥水)病史者,眼壓過高的追蹤密度需提高"
+   ],
+   "red_flags_en": [
+    "Sudden unilateral eye redness, severe eye pain with blurred vision, halos around lights, headache, or nausea should raise immediate concern for acute angle-closure glaucoma, an ophthalmic emergency",
+    "Markedly elevated IOP (e.g., above 30 mmHg) combined with asymmetric cup-to-disc ratio or an abnormal visual field should be treated as suspected glaucoma rather than simple ocular hypertension",
+    "A family history of glaucoma, high myopia, or a history of prolonged steroid use (including steroid eye drops) warrants closer monitoring intervals"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "眼壓數值越高",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "AAO EyeNet: Glaucoma - Calculating the Risk (OHTS)"
+    },
+    {
+     "factor": "中央角膜厚度較薄",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "AAO EyeNet: Glaucoma - Calculating the Risk (OHTS)"
+    },
+    {
+     "factor": "視神經杯盤比偏大",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "AAO EyeNet: Glaucoma - Calculating the Risk (OHTS)"
+    },
+    {
+     "factor": "年齡增長",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "AAO EyeNet: Glaucoma - Calculating the Risk (OHTS)"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Higher IOP level",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "AAO EyeNet: Glaucoma - Calculating the Risk (OHTS)"
+    },
+    {
+     "factor": "Thinner central corneal thickness",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "AAO EyeNet: Glaucoma - Calculating the Risk (OHTS)"
+    },
+    {
+     "factor": "Larger cup-to-disc ratio",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "AAO EyeNet: Glaucoma - Calculating the Risk (OHTS)"
+    },
+    {
+     "factor": "Older age",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "AAO EyeNet: Glaucoma - Calculating the Risk (OHTS)"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "目前缺乏高品質證據支持針灸可有效且穩定降低眼壓;不應以針灸取代已建議之降眼壓藥物治療或定期眼科追蹤",
+    "precautions": "眼周針刺需嚴格遵守解剖安全深度與角度,避免傷及眼球或造成球後出血",
+    "co_management": "病人若已在使用降眼壓藥物或處於眼科密切追蹤中,應建議持續遵醫囑並與眼科醫師保持聯繫,不建議自行以針灸替代眼壓監測",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "There is currently no high-quality evidence that acupuncture can effectively and reliably lower intraocular pressure; it should not replace recommended IOP-lowering medication or scheduled ophthalmology follow-up",
+    "precautions": "Periocular needling must strictly follow safe anatomical depth and angle to avoid injury to the globe or retrobulbar hemorrhage",
+    "co_management": "If the patient is already on IOP-lowering medication or under close ophthalmologic follow-up, advise continuing as prescribed and maintaining contact with the ophthalmologist; acupuncture should not replace IOP monitoring",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.lu_feng_nei_zhang"
+   ],
+   "related_patterns": [
+    "pattern.liver_fire",
+    "pattern.liver_yang_rising"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "AAO EyeNet: Glaucoma - Calculating the Risk (OHTS); AAOJournal: Primary Open-Angle Glaucoma Suspect Preferred Practice Pattern"
+    ],
+    "summary_en": [
+     "AAO EyeNet: Glaucoma - Calculating the Risk (OHTS); AAOJournal: Primary Open-Angle Glaucoma Suspect Preferred Practice Pattern"
+    ],
+    "western_context_zh": [
+     "AAO EyeNet: Glaucoma - Calculating the Risk (OHTS)"
+    ],
+    "western_context_en": [
+     "AAO EyeNet: Glaucoma - Calculating the Risk (OHTS)"
+    ],
+    "western_pathology_zh": [
+     "EyeWiki: Primary Open-Angle Glaucoma; AAO EyeNet: Glaucoma - Calculating the Risk (OHTS)"
+    ],
+    "western_pathology_en": [
+     "EyeWiki: Primary Open-Angle Glaucoma; AAO EyeNet: Glaucoma - Calculating the Risk (OHTS)"
+    ],
+    "red_flags_zh": [
+     "established biomedical knowledge (acute angle-closure glaucoma as a distinct emergency mimicking/co-occurring with elevated IOP), not source-verified — flag for Ting to source-check"
+    ],
+    "red_flags_en": [
+     "established biomedical knowledge (acute angle-closure glaucoma as a distinct emergency mimicking/co-occurring with elevated IOP), not source-verified — flag for Ting to source-check"
+    ],
+    "risk_factors_zh": [
+     "AAO EyeNet: Glaucoma - Calculating the Risk (Ocular Hypertension Treatment Study, OHTS)"
+    ],
+    "risk_factors_en": [
+     "AAO EyeNet: Glaucoma - Calculating the Risk (Ocular Hypertension Treatment Study, OHTS)"
+    ],
+    "acupuncture_scope_zh": [
+     "established scope-of-practice/safety judgment, not source-verified — flag for Ting to source-check"
+    ],
+    "acupuncture_scope_en": [
+     "established scope-of-practice/safety judgment, not source-verified — flag for Ting to source-check"
+    ],
+    "related_eastern_diseases": [
+     "clinical correlation: ocular hypertension as a measurable precursor risk state for the acute angle-closure glaucoma classically described as 綠風內障, not a specific cited source"
+    ]
+   }
   },
   {
    "id": "cond.amblyopia",
@@ -79618,7 +81328,143 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "斜視是雙眼無法同時注視同一目標的眼位偏斜,依偏斜方向分為內斜視(眼球偏向內側)、外斜視(偏向外側)及垂直斜視;可為間歇性或恆定性。兒童斜視最常見病因為屈光異常或眼外肌控制失衡,若未及時矯正,大腦會逐漸抑制偏斜眼的影像輸入而導致弱視;成人新發斜視則以中風等神經血管事件最常見,主要症狀為複視。",
+   "summary_en": "Strabismus is misalignment of the eyes such that they cannot simultaneously fixate on the same target, classified by direction as esotropia (inward turning), exotropia (outward turning), or vertical strabismus (hypertropia/hypotropia), and can be intermittent or constant. In children, the most common causes are refractive error or imbalance in extraocular muscle control; if not corrected in time, the brain progressively suppresses input from the deviated eye, leading to amblyopia. In adults, new-onset strabismus is most commonly due to a neurovascular event such as stroke, with double vision as the main symptom.",
+   "western_context_zh": "兒童斜視評估著重及早發現與治療,以爭取弱視治療的黃金期(出生至約八歲的視覺發育關鍵期);處置依病因與嚴重度選擇屈光矯正、遮眼或藥物治療弱視、稜鏡矯正,或手術調整眼外肌位置。成人新發斜視或複視應優先評估神經血管病因,再考量稜鏡或手術矯正。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Evaluation of childhood strabismus emphasizes early detection and treatment to capture the window for amblyopia therapy (the critical period of visual development from birth to roughly age 8); management is selected based on cause and severity and may include refractive correction, patching or medication for amblyopia, prism correction, or surgery to reposition the extraocular muscles. New-onset strabismus or diplopia in an adult should first prompt evaluation for a neurovascular cause before considering prism or surgical correction. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "眼位協調有賴六條眼外肌力量平衡與腦幹、皮質眼球運動控制中樞的正常整合,任何環節失衡(屈光度數不對稱造成調節性內斜視、眼外肌本身結構或神經支配異常、控制眼球運動之腦神經(第三、四、六對)受損)皆可能造成斜視。兒童因視覺系統仍在發育,長期單眼影像輸入被抑制會使該眼對應之視覺皮質區發育受阻,形成弱視;成人由於視覺系統已發育成熟,新發斜視主要造成複視而非弱視。診斷以眼位檢查(遮蓋測試)、眼球運動評估及必要時神經影像檢查(成人新發病例)綜合判斷。",
+   "western_pathology_en": "Coordinated eye alignment depends on balanced force among the six extraocular muscles and normal integration by brainstem and cortical eye-movement control centers; imbalance at any point—asymmetric refractive error causing accommodative esotropia, structural or innervational abnormality of an extraocular muscle itself, or injury to the cranial nerves controlling eye movement (III, IV, VI)—can produce strabismus. Because a child's visual system is still developing, prolonged suppression of input from one eye impairs development of the corresponding visual cortex, producing amblyopia; in adults, whose visual system is already mature, new-onset strabismus mainly causes diplopia rather than amblyopia. Diagnosis combines ocular alignment testing (cover test), assessment of eye movements, and, for new adult-onset cases, neuroimaging as indicated.",
+   "red_flags_zh": [
+    "成人突發斜視合併複視,尤其伴隨頭痛、肢體無力或言語不清,須立即排除中風等神經血管急症",
+    "斜視合併瞳孔不等大、眼瞼下垂(提示第三對腦神經麻痺),須警覺顱內動脈瘤壓迫等急症",
+    "兒童單眼瞳孔區出現白色反光(白瞳)合併斜視,須優先排除視網膜母細胞瘤等眼內腫瘤"
+   ],
+   "red_flags_en": [
+    "Sudden-onset strabismus with diplopia in an adult—especially with headache, limb weakness, or slurred speech—should raise immediate concern for stroke or another neurovascular emergency",
+    "Strabismus with unequal pupil size and eyelid ptosis (suggesting third cranial nerve palsy) should raise concern for an intracranial aneurysm or other compressive emergency",
+    "A child with strabismus and a white pupillary reflex (leukocoria) in one eye should be urgently evaluated to exclude an intraocular tumor such as retinoblastoma"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "家族斜視病史",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Cleveland Clinic: Strabismus (Eye Misalignment)"
+    },
+    {
+     "factor": "顯著屈光異常(尤其遠視)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Merck Manual: Strabismus"
+    },
+    {
+     "factor": "早產、低出生體重",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Cleveland Clinic: Strabismus (Eye Misalignment)"
+    },
+    {
+     "factor": "腦性麻痺、唐氏症等神經發育相關疾病",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Cleveland Clinic: Strabismus (Eye Misalignment)"
+    },
+    {
+     "factor": "成人:中風等腦血管疾病",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Cleveland Clinic: Strabismus (Eye Misalignment)"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Family history of strabismus",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Cleveland Clinic: Strabismus (Eye Misalignment)"
+    },
+    {
+     "factor": "Significant refractive error (especially hyperopia)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Merck Manual: Strabismus"
+    },
+    {
+     "factor": "Prematurity, low birth weight",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Cleveland Clinic: Strabismus (Eye Misalignment)"
+    },
+    {
+     "factor": "Neurodevelopmental conditions such as cerebral palsy or Down syndrome",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Cleveland Clinic: Strabismus (Eye Misalignment)"
+    },
+    {
+     "factor": "In adults: cerebrovascular disease such as stroke",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Cleveland Clinic: Strabismus (Eye Misalignment)"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "中文臨床研究對麻痺性斜視(如腦神經麻痺造成者)合併中藥治療顯示部分改善眼位及複視之報告,但多為樣本數小、未設盲之觀察性研究,證據強度有限;對屈光性或調節性斜視則無獨立治療角色",
+    "precautions": "成人新發斜視須先由醫療排除中風等神經血管急症後,才適合考慮針灸作為輔助;眼周針刺須嚴格遵守安全深度",
+    "co_management": "兒童斜視合併弱視風險者,應優先轉診眼科把握治療黃金期,不建議以針灸替代或延誤標準弱視治療(遮眼、屈光矯正)",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "Chinese-language clinical studies on paralytic strabismus (e.g., from cranial nerve palsy) combined with herbal treatment report some improvement in eye alignment and diplopia, but most are small, unblinded observational studies with limited evidence strength; acupuncture has no independent role for refractive or accommodative strabismus",
+    "precautions": "New-onset strabismus in an adult must first be medically evaluated to exclude stroke or another neurovascular emergency before acupuncture is considered as adjunctive care; periocular needling must strictly follow safe depth",
+    "co_management": "Children with strabismus at risk for amblyopia should be referred to ophthalmology promptly to capture the treatment window; acupuncture should not replace or delay standard amblyopia treatment (patching, refractive correction)",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_patterns": [
+    "pattern.liver_wind",
+    "pattern.qi_blood_deficiency"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "Cleveland Clinic: Strabismus (Eye Misalignment); Merck Manual Consumer: Strabismus"
+    ],
+    "summary_en": [
+     "Cleveland Clinic: Strabismus (Eye Misalignment); Merck Manual Consumer: Strabismus"
+    ],
+    "western_context_zh": [
+     "Cleveland Clinic: Strabismus (Eye Misalignment); Merck Manual Consumer: Strabismus"
+    ],
+    "western_context_en": [
+     "Cleveland Clinic: Strabismus (Eye Misalignment); Merck Manual Consumer: Strabismus"
+    ],
+    "western_pathology_zh": [
+     "Cleveland Clinic: Strabismus (Eye Misalignment); Wikipedia/clinical summary: Amblyopia"
+    ],
+    "western_pathology_en": [
+     "Cleveland Clinic: Strabismus (Eye Misalignment); Wikipedia/clinical summary: Amblyopia"
+    ],
+    "red_flags_zh": [
+     "established biomedical knowledge (stroke, third-nerve palsy, and leukocoria as classic red-flag strabismus presentations), not source-verified — flag for Ting to source-check"
+    ],
+    "red_flags_en": [
+     "established biomedical knowledge (stroke, third-nerve palsy, and leukocoria as classic red-flag strabismus presentations), not source-verified — flag for Ting to source-check"
+    ],
+    "risk_factors_zh": [
+     "Cleveland Clinic: Strabismus (Eye Misalignment); Merck Manual: Strabismus"
+    ],
+    "risk_factors_en": [
+     "Cleveland Clinic: Strabismus (Eye Misalignment); Merck Manual: Strabismus"
+    ],
+    "acupuncture_scope_zh": [
+     "general web search summary of Chinese-language clinical studies on acupuncture for paralytic strabismus, not a single peer-reviewed systematic review — low-confidence, flagged for Ting to source-check before use"
+    ],
+    "acupuncture_scope_en": [
+     "general web search summary of Chinese-language clinical studies on acupuncture for paralytic strabismus, not a single peer-reviewed systematic review — low-confidence, flagged for Ting to source-check before use"
+    ]
+   }
   },
   {
    "id": "cond.dacryocystitis",
@@ -79771,7 +81617,141 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "鼻咽癌是發生於鼻咽部(鼻腔後方、顱底下方的黏膜區域)的惡性腫瘤,與 EB 病毒(Epstein-Barr virus)感染關係密切,在東南亞及華南地區發生率明顯高於歐美。因鼻咽部位置隱蔽,早期症狀不易察覺,患者常以無痛性頸部淋巴結腫大為最初就醫原因,其他常見表現包括單側鼻塞、鼻涕帶血絲、單側耳悶或聽力下降。",
+   "summary_en": "Nasopharyngeal carcinoma (NPC) is a malignant tumor of the nasopharynx (the mucosal region behind the nasal cavity and below the skull base), closely associated with Epstein-Barr virus (EBV) infection, and notably more common in Southeast Asia and southern China than in Western populations. Because the nasopharynx is anatomically hidden, early symptoms are easily missed, and a painless neck lump is often the presenting complaint that first brings patients to medical attention; other common features include unilateral nasal obstruction, blood-tinged nasal discharge, and unilateral ear fullness or hearing loss.",
+   "western_context_zh": "確診依賴鼻咽內視鏡切片病理與 EB 病毒相關檢測,分期以磁振造影評估局部侵犯及頸部淋巴結、遠端轉移;放射治療是主要治療方式,局部晚期常合併化學治療,治療後需長期追蹤聽力、口乾及吞嚥等放療相關後遺症與局部復發。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Diagnosis relies on nasopharyngeal endoscopy with biopsy and EBV-related testing, and staging uses MRI to assess local invasion, cervical nodal involvement, and distant metastasis; radiation therapy is the mainstay of treatment, often combined with chemotherapy for locally advanced disease, followed by long-term monitoring for radiation-related sequelae such as hearing loss, xerostomia, and dysphagia, as well as local recurrence. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "EB 病毒感染鼻咽上皮細胞後,病毒潛伏基因產物與宿主基因體交互作用,配合遺傳易感性(特定 HLA 基因型)及環境因子(醃漬食物中的亞硝胺、吸菸)共同促成上皮細胞惡性轉化,絕大多數為未分化型非角化性癌。腫瘤好發於咽隱窩(Rosenmüller fossa),向上可侵犯顱底、向外側易早期經淋巴引流轉移至頸部淋巴結,也可能經由耳咽管開口阻塞造成單側中耳積液。診斷須以鼻咽內視鏡切片病理確診,並以血清 EB 病毒 DNA 及抗體檢測輔助篩檢與追蹤。",
+   "western_pathology_en": "EBV infects nasopharyngeal epithelial cells, and interaction of latent viral gene products with the host genome—together with genetic susceptibility (specific HLA genotypes) and environmental factors (nitrosamines in salt-preserved foods, smoking)—drives malignant transformation of the epithelium; the great majority are undifferentiated, non-keratinizing carcinomas. Tumors characteristically arise in the fossa of Rosenmüller, can invade superiorly into the skull base, and spread early via lymphatics to cervical lymph nodes; obstruction of the Eustachian tube opening can also cause unilateral middle ear effusion. Diagnosis requires nasopharyngeal endoscopy with biopsy for pathological confirmation, with serum EBV DNA and antibody testing used to aid screening and follow-up.",
+   "red_flags_zh": [
+    "成人單側、持續超過二週不消的無痛性頸部腫塊,應假定為惡性直到排除為止,須優先轉診",
+    "單側鼻塞合併反覆鼻出血或血絲鼻涕,尤其伴隨單側耳悶、耳鳴或聽力下降,是鼻咽癌典型但常被忽略的組合表現",
+    "成人單側中耳積液(過去無反覆中耳炎病史)須由專科檢查鼻咽部,不可僅當作一般中耳炎處理",
+    "出現複視、臉部麻木或頭痛加劇提示腫瘤已侵犯顱底神經,屬疾病進展警訊"
+   ],
+   "red_flags_en": [
+    "A painless, persistent (>2 weeks) unilateral neck mass in an adult should be presumed malignant until proven otherwise and warrants prompt referral",
+    "Unilateral nasal obstruction with recurrent epistaxis or blood-tinged discharge, especially combined with unilateral ear fullness, tinnitus, or hearing loss, is a classic but often overlooked symptom cluster of NPC",
+    "New unilateral middle ear effusion in an adult without a prior history of recurrent otitis media should prompt specialist examination of the nasopharynx rather than routine otitis management",
+    "Double vision, facial numbness, or worsening headache suggests skull-base nerve involvement and is a sign of disease progression"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "EB 病毒感染",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Cleveland Clinic: Nasopharyngeal Cancer"
+    },
+    {
+     "factor": "食用醃漬鹹魚等含高濃度亞硝胺食物(尤其兒童期長期攝取)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "PMC: The distinctive profile of risk factors of nasopharyngeal carcinoma"
+    },
+    {
+     "factor": "吸菸",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "PMC: Cigarette smoking increases the risk of nasopharyngeal carcinoma through elevated IgA anti-EBV antibody"
+    },
+    {
+     "factor": "華南、東南亞族裔及家族史",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Cleveland Clinic: Nasopharyngeal Cancer"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Epstein-Barr virus infection",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Cleveland Clinic: Nasopharyngeal Cancer"
+    },
+    {
+     "factor": "Consumption of salt-preserved fish and other high-nitrosamine foods (especially long-term intake in childhood)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "PMC: The distinctive profile of risk factors of nasopharyngeal carcinoma"
+    },
+    {
+     "factor": "Smoking",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "PMC: Cigarette smoking increases the risk of nasopharyngeal carcinoma through elevated IgA anti-EBV antibody"
+    },
+    {
+     "factor": "Southern Chinese/Southeast Asian ethnicity and family history",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Cleveland Clinic: Nasopharyngeal Cancer"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "針灸不具治療鼻咽癌本身的效果;在放療脈絡下,常作為放療後口乾症、張口困難、頸部纖維化等後遺症的輔助支持照護",
+    "precautions": "放療後頸部組織血循及淋巴回流可能受損,針刺該區域須格外留意感染與傷口癒合風險,並與腫瘤團隊確認治療階段",
+    "co_management": "應與原腫瘤科/放射腫瘤科醫師保持聯繫確認病情控制與治療排程,不建議因輔助照護延誤正規癌症治療或追蹤",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "Acupuncture has no effect on nasopharyngeal carcinoma itself; in the context of radiation therapy, it is often used as adjunctive supportive care for post-radiation xerostomia, trismus, or neck fibrosis",
+    "precautions": "Blood flow and lymphatic drainage in the neck may be impaired after radiation, so needling in that region requires extra attention to infection risk and wound healing, with treatment phase confirmed with the oncology team",
+    "co_management": "Maintain contact with the treating oncology/radiation oncology physician to confirm disease control and treatment schedule; adjunctive care should not delay standard cancer treatment or follow-up",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.bi_nu",
+    "tdis.er_ming_er_long",
+    "tdis.luo_li"
+   ],
+   "related_patterns": [
+    "pattern.heat_toxin_blazing",
+    "pattern.phlegm_stasis_binding"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "Cleveland Clinic: Nasopharyngeal Cancer; StatPearls: Nasopharyngeal Cancer (NBK459256)"
+    ],
+    "summary_en": [
+     "Cleveland Clinic: Nasopharyngeal Cancer; StatPearls: Nasopharyngeal Cancer (NBK459256)"
+    ],
+    "western_context_zh": [
+     "Merck Manual Professional: Nasopharyngeal Cancer; Cleveland Clinic: Nasopharyngeal Cancer"
+    ],
+    "western_context_en": [
+     "Merck Manual Professional: Nasopharyngeal Cancer; Cleveland Clinic: Nasopharyngeal Cancer"
+    ],
+    "western_pathology_zh": [
+     "StatPearls: Nasopharyngeal Cancer (NBK459256); Mayo Clinic Proceedings: Nasopharyngeal Carcinoma Due to Epstein-Barr Virus"
+    ],
+    "western_pathology_en": [
+     "StatPearls: Nasopharyngeal Cancer (NBK459256); Mayo Clinic Proceedings: Nasopharyngeal Carcinoma Due to Epstein-Barr Virus"
+    ],
+    "red_flags_zh": [
+     "Moffitt Cancer Center: What are the most common symptoms of nasopharyngeal cancer?; Cleveland Clinic: Nasopharyngeal Cancer"
+    ],
+    "red_flags_en": [
+     "Moffitt Cancer Center: What are the most common symptoms of nasopharyngeal cancer?; Cleveland Clinic: Nasopharyngeal Cancer"
+    ],
+    "risk_factors_zh": [
+     "Cleveland Clinic: Nasopharyngeal Cancer; PMC: distinctive risk-factor profile of NPC; PMC: cigarette smoking and EBV IgA"
+    ],
+    "risk_factors_en": [
+     "Cleveland Clinic: Nasopharyngeal Cancer; PMC: distinctive risk-factor profile of NPC; PMC: cigarette smoking and EBV IgA"
+    ],
+    "acupuncture_scope_zh": [
+     "established scope-of-practice/oncology supportive-care judgment, not source-verified — flag for Ting to source-check"
+    ],
+    "acupuncture_scope_en": [
+     "established scope-of-practice/oncology supportive-care judgment, not source-verified — flag for Ting to source-check"
+    ],
+    "related_eastern_diseases": [
+     "clinical correlation: epistaxis, tinnitus/hearing loss, and cervical lymphadenopathy overlap with classical TCM disease presentations, not a specific cited source"
+    ]
+   }
   },
   {
    "id": "cond.laryngeal_cancer",
@@ -80050,10 +82030,151 @@
    "name_en": "Smell Disorder (Anosmia)",
    "category": "ent_eye",
    "icd_hint": "R43.0",
-   "aliases_zh": [],
-   "aliases_en": [],
+   "aliases_zh": [
+    "嗅覺減退"
+   ],
+   "aliases_en": [
+    "Hyposmia"
+   ],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "嗅覺障礙指嗅覺敏感度下降(hyposmia)或完全喪失(anosmia),病因涵蓋鼻腔鼻竇阻塞性病變(過敏性鼻炎、慢性鼻竇炎、鼻息肉)、病毒性上呼吸道感染後嗅神經損傷(含新冠病毒感染)、頭部外傷、神經退化性疾病(如巴金森氏病、阿茲海默症早期表現)及老化等。依機轉可粗分為傳導性(氣流無法到達嗅覺上皮)與感覺神經性(嗅覺受器或神經路徑受損)兩大類。",
+   "summary_en": "Smell disorder refers to reduced smell sensitivity (hyposmia) or complete loss of smell (anosmia). Causes include obstructive nasal/sinus disease (allergic rhinitis, chronic rhinosinusitis, nasal polyps), post-viral olfactory nerve injury following upper respiratory infection (including COVID-19), head trauma, neurodegenerative disease (an early feature of conditions such as Parkinson's disease and Alzheimer's disease), and normal aging. Mechanistically it is broadly divided into conductive causes (airflow fails to reach the olfactory epithelium) and sensorineural causes (damage to olfactory receptors or neural pathways).",
+   "western_context_zh": "評估需先區分傳導性與感覺神經性病因:鼻鏡或鼻竇影像用於排除結構性阻塞,嗅覺功能測試(如氣味識別測試)可客觀量化障礙程度;病毒感染後嗅覺障礙多數會於數月內部分或完全恢復,可建議進行嗅覺訓練,長期未恢復或合併其他神經學症狀者建議轉診神經科評估。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Evaluation begins with distinguishing conductive from sensorineural causes: nasal endoscopy or sinus imaging is used to exclude structural obstruction, and smell function testing (e.g., odor identification tests) can objectively quantify the degree of impairment; post-viral smell loss usually partially or fully recovers over months, and olfactory training may be recommended, with neurology referral suggested when loss persists long-term or is accompanied by other neurological symptoms. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "傳導性嗅覺障礙是鼻腔鼻竇黏膜腫脹、息肉或分泌物阻擋氣流,使含氣味分子的空氣無法到達位於鼻腔頂部的嗅覺上皮;感覺神經性嗅覺障礙則是嗅覺受器細胞、嗅絲或嗅球等神經路徑直接受損,常見於病毒(包含新冠病毒)直接或經發炎反應損及嗅覺上皮支持細胞與受器神經元,或頭部外傷造成嗅絲於篩板處斷裂。神經退化性疾病則常在動作或認知症狀出現前,嗅球與嗅覺相關腦區已先出現病理變化,故嗅覺減退可為早期指標之一。",
+   "western_pathology_en": "Conductive smell loss occurs when nasal/sinus mucosal swelling, polyps, or secretions block airflow, preventing odor-carrying air from reaching the olfactory epithelium at the roof of the nasal cavity; sensorineural smell loss involves direct damage to olfactory receptor cells, the olfactory nerve fibers, or the olfactory bulb pathway—commonly seen when viruses (including SARS-CoV-2) damage the supporting cells and receptor neurons of the olfactory epithelium directly or via inflammation, or when head trauma shears the olfactory fila at the cribriform plate. In neurodegenerative disease, pathological changes in the olfactory bulb and related brain regions often precede motor or cognitive symptoms, making smell loss a potential early marker.",
+   "red_flags_zh": [
+    "嗅覺喪失合併持續性頭痛、視力改變或其他局部神經學症狀,須排除顱內病灶(如額葉腫瘤)壓迫嗅神經路徑",
+    "頭部外傷後急性發生的嗅覺喪失,需評估篩板骨折及腦脊髓液鼻漏之可能",
+    "嗅覺障礙超過六週且無法以感冒、鼻竇炎等常見原因解釋,尤其合併其他神經學症狀者,建議影像學檢查排除中樞病灶並轉診神經科"
+   ],
+   "red_flags_en": [
+    "Smell loss accompanied by persistent headache, vision change, or other focal neurological symptoms should raise concern for an intracranial lesion (e.g., a frontal lobe tumor) compressing the olfactory pathway",
+    "Acute smell loss following head trauma warrants evaluation for cribriform plate fracture and possible cerebrospinal fluid rhinorrhea",
+    "Smell loss persisting beyond 6 weeks without an obvious cause such as a cold or sinusitis—especially with other neurological symptoms—warrants imaging to exclude a central lesion and neurology referral"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "病毒性上呼吸道感染(含新冠病毒感染)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "PMC: Smell disorders associated with COVID-19 infection"
+    },
+    {
+     "factor": "慢性鼻竇炎、鼻息肉",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Cleveland Clinic: Loss of Taste and Smell"
+    },
+    {
+     "factor": "年齡增長",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Cleveland Clinic: Loss of Taste and Smell"
+    },
+    {
+     "factor": "頭部外傷史",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Cleveland Clinic: Loss of Taste and Smell"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Viral upper respiratory infection (including COVID-19)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "PMC: Smell disorders associated with COVID-19 infection"
+    },
+    {
+     "factor": "Chronic sinusitis, nasal polyps",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Cleveland Clinic: Loss of Taste and Smell"
+    },
+    {
+     "factor": "Older age",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Cleveland Clinic: Loss of Taste and Smell"
+    },
+    {
+     "factor": "History of head trauma",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Cleveland Clinic: Loss of Taste and Smell"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "可作為病毒感染後嗅覺障礙(如新冠後嗅覺喪失)在嗅覺訓練基礎上的輔助照護選項之一,但目前尚缺乏高品質證據證實其獨立療效",
+    "precautions": "應先釐清是傳導性(鼻竇阻塞)或感覺神經性病因,若合併其他神經學症狀不應僅以針灸處理而延誤神經科評估",
+    "co_management": "病人若合併慢性鼻竇炎正接受藥物治療,應建議持續配合原處方並與開立醫師保持聯繫",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "May be considered as one adjunctive option alongside olfactory training for post-viral smell disorder (e.g., post-COVID anosmia), but there is currently insufficient high-quality evidence to confirm an independent effect",
+    "precautions": "The underlying cause—conductive (sinus obstruction) versus sensorineural—should first be clarified; if other neurological symptoms are present, acupuncture alone should not delay neurology evaluation",
+    "co_management": "If the patient has coexisting chronic sinusitis under medical treatment, advise continuing the prescribed regimen and maintaining contact with the prescribing physician",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.bi_zhi",
+    "tdis.bi_yuan"
+   ],
+   "related_patterns": [
+    "pattern.lung_qi_deficiency",
+    "pattern.phlegm_damp"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "Cleveland Clinic: Loss of Taste and Smell; PMC: Smell disorders associated with COVID-19 infection"
+    ],
+    "summary_en": [
+     "Cleveland Clinic: Loss of Taste and Smell; PMC: Smell disorders associated with COVID-19 infection"
+    ],
+    "western_context_zh": [
+     "PMC: Loss of Olfactory Function - Early Indicator for Covid-19, Other Viral Infections and Neurodegenerative Disorders"
+    ],
+    "western_context_en": [
+     "PMC: Loss of Olfactory Function - Early Indicator for Covid-19, Other Viral Infections and Neurodegenerative Disorders"
+    ],
+    "western_pathology_zh": [
+     "PMC: Anosmia in COVID-19 - Underlying Mechanisms and Assessment of an Olfactory Route to Brain Infection (PMC7488171)"
+    ],
+    "western_pathology_en": [
+     "PMC: Anosmia in COVID-19 - Underlying Mechanisms and Assessment of an Olfactory Route to Brain Infection (PMC7488171)"
+    ],
+    "red_flags_zh": [
+     "established biomedical knowledge (UK guidance: anosmia >6 weeks with neurological symptoms warrants MRI); referral-timing detail per PMC review of COVID-19 anosmia literature"
+    ],
+    "red_flags_en": [
+     "established biomedical knowledge (UK guidance: anosmia >6 weeks with neurological symptoms warrants MRI); referral-timing detail per PMC review of COVID-19 anosmia literature"
+    ],
+    "risk_factors_zh": [
+     "Cleveland Clinic: Loss of Taste and Smell; PMC: Smell disorders associated with COVID-19 infection"
+    ],
+    "risk_factors_en": [
+     "Cleveland Clinic: Loss of Taste and Smell; PMC: Smell disorders associated with COVID-19 infection"
+    ],
+    "acupuncture_scope_zh": [
+     "established biomedical/scope-of-practice judgment, not source-verified — flag for Ting to source-check"
+    ],
+    "acupuncture_scope_en": [
+     "established biomedical/scope-of-practice judgment, not source-verified — flag for Ting to source-check"
+    ],
+    "aliases_zh": [
+     "common clinical synonym (partial smell loss)"
+    ],
+    "aliases_en": [
+     "common clinical synonym (partial smell loss)"
+    ],
+    "related_eastern_diseases": [
+     "clinical correlation: nasal obstruction/chronic sinusitis as common causes of conductive smell loss, not a specific cited source"
+    ]
+   }
   },
   {
    "id": "cond.vocal_cord_paralysis",
@@ -81219,7 +83340,138 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "鼻息肉是鼻腔與鼻竇黏膜因慢性發炎而形成的良性、無痛軟組織增生,好發於鼻竇引流至鼻腔的開口處,常為慢性鼻竇炎(chronic rhinosinusitis with nasal polyps)的一部分表現。因質地柔軟不痛,患者初期往往無自覺,直至息肉增大阻塞鼻道才出現持續鼻塞、流鼻涕、嗅覺減退或喪失、鼻竇壓迫感等症狀。",
+   "summary_en": "Nasal polyps are benign, painless soft-tissue growths of the nasal and sinus mucosa that arise from chronic inflammation, typically at the drainage openings where the sinuses empty into the nasal cavity; they are commonly part of chronic rhinosinusitis with nasal polyps. Because they are soft and painless, most people are unaware of them until the polyps enlarge enough to obstruct the nasal airway, producing persistent nasal congestion, rhinorrhea, decreased or lost sense of smell, and sinus pressure.",
+   "western_context_zh": "藥物治療以鼻用及口服類固醇為第一線,用以縮小息肉並改善症狀;症狀持續或反應不佳者可評估內視鏡鼻竇手術切除息肉,合併第二型發炎(如氣喘、阿斯匹靈過敏三聯症)者可評估生物製劑;由於息肉易於治療後復發,通常需長期追蹤與維持治療。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "First-line medical treatment is intranasal and/or oral corticosteroids to shrink the polyps and relieve symptoms; endoscopic sinus surgery may be considered for persistent or refractory symptoms, and biologic agents may be considered for patients with type 2 inflammation (e.g., coexisting asthma or aspirin-exacerbated respiratory disease); because polyps tend to recur after treatment, long-term follow-up and maintenance therapy are usually needed. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "病理機轉為鼻竇黏膜長期發炎(常屬第二型發炎反應,伴隨嗜酸性球浸潤與局部細胞激素如 IL-4、IL-5、IL-13 增加),使黏膜下組織水腫、間質增生形成有蒂或無蒂的息肉樣構造;確切病因未明,但氣喘、阿斯匹靈過敏、囊性纖維化及慢性鼻竇炎皆與其發生相關。診斷結合鼻內視鏡直接觀察雙側灰白色半透明息肉,並以電腦斷層評估鼻竇受累範圍。",
+   "western_pathology_en": "The mechanism is chronic sinonasal mucosal inflammation (often type 2 inflammation with eosinophilic infiltration and elevated local cytokines such as IL-4, IL-5, and IL-13), causing submucosal edema and stromal proliferation that forms pedunculated or sessile polypoid tissue; the precise cause is unknown, but asthma, aspirin sensitivity, cystic fibrosis, and chronic rhinosinusitis are all associated with polyp development. Diagnosis combines nasal endoscopy showing bilateral grayish, translucent polypoid masses with CT to assess the extent of sinus involvement.",
+   "red_flags_zh": [
+    "單側、質地堅硬或合併出血的鼻腔腫物,尤其伴隨臉部麻木、單側眼球突出或視力變化,須排除鼻竇惡性腫瘤而非逕自視為息肉",
+    "兒童出現鼻息肉需優先排除囊性纖維化",
+    "急性單側鼻塞合併劇烈頭痛、發燒、視力改變或眼眶周圍腫脹,須排除鼻竇炎併發眶內或顱內感染等急症"
+   ],
+   "red_flags_en": [
+    "A unilateral, firm, or bleeding nasal mass—especially with facial numbness, unilateral proptosis, or vision change—should raise suspicion for sinonasal malignancy rather than being assumed to be a polyp",
+    "Nasal polyps in a child should prompt evaluation for cystic fibrosis",
+    "Acute unilateral obstruction with severe headache, fever, vision change, or periorbital swelling should raise concern for orbital or intracranial extension of sinus infection and needs urgent evaluation"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "氣喘",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Mayo Clinic Press: What causes chronic sinusitis and nasal polyps?"
+    },
+    {
+     "factor": "阿斯匹靈或非類固醇消炎藥過敏(阿斯匹靈加重呼吸道疾病)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Mayo Clinic Press: What causes chronic sinusitis and nasal polyps?"
+    },
+    {
+     "factor": "慢性鼻竇炎、過敏性鼻炎",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Mayo Clinic Press: What causes chronic sinusitis and nasal polyps?"
+    },
+    {
+     "factor": "囊性纖維化",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Mayo Clinic Press: What causes chronic sinusitis and nasal polyps?"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Asthma",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Mayo Clinic Press: What causes chronic sinusitis and nasal polyps?"
+    },
+    {
+     "factor": "Aspirin or NSAID sensitivity (aspirin-exacerbated respiratory disease)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Mayo Clinic Press: What causes chronic sinusitis and nasal polyps?"
+    },
+    {
+     "factor": "Chronic sinusitis, allergic rhinitis",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Mayo Clinic Press: What causes chronic sinusitis and nasal polyps?"
+    },
+    {
+     "factor": "Cystic fibrosis",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Mayo Clinic Press: What causes chronic sinusitis and nasal polyps?"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "系統性回顧顯示針灸作為單一或合併常規治療,可能改善慢性鼻竇炎(含鼻息肉族群)之症狀評分與生活品質,但證據品質多為中低等級",
+    "precautions": "鼻腔局部結構性阻塞(息肉本身)無法以針灸消除,不應以針灸取代已有適應症之藥物或手術評估",
+    "co_management": "病人若正使用鼻用或口服類固醇,應建議持續遵醫囑用藥並與原處方醫師保持聯繫,針灸僅作輔助角色",
+    "evidence": "guideline",
+    "source": "Systematic review/meta-analysis: Acupuncture for the Treatment of Chronic Rhinosinusitis (PMC9451955)"
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "Systematic reviews suggest acupuncture, alone or combined with standard treatment, may improve symptom scores and quality of life in chronic rhinosinusitis (including nasal-polyp populations), though evidence quality is generally moderate to low",
+    "precautions": "Acupuncture cannot resolve the structural nasal obstruction caused by the polyp itself and should not replace already-indicated medication or surgical evaluation",
+    "co_management": "If the patient is using intranasal or oral corticosteroids, advise continuing as prescribed and maintain contact with the prescribing physician; acupuncture is adjunctive only",
+    "evidence": "guideline",
+    "source": "Systematic review/meta-analysis: Acupuncture for the Treatment of Chronic Rhinosinusitis (PMC9451955)"
+   },
+   "related_eastern_diseases": [
+    "tdis.bi_yuan",
+    "tdis.bi_zhi"
+   ],
+   "related_patterns": [
+    "pattern.phlegm_damp",
+    "pattern.damp_heat"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "Mayo Clinic Press: What causes chronic sinusitis and nasal polyps?"
+    ],
+    "summary_en": [
+     "Mayo Clinic Press: What causes chronic sinusitis and nasal polyps?"
+    ],
+    "western_context_zh": [
+     "Mayo Clinic Press: What causes chronic sinusitis and nasal polyps?; Mayo Clinic News Network: Understanding nasal polyps"
+    ],
+    "western_context_en": [
+     "Mayo Clinic Press: What causes chronic sinusitis and nasal polyps?; Mayo Clinic News Network: Understanding nasal polyps"
+    ],
+    "western_pathology_zh": [
+     "Mayo Clinic Press: What causes chronic sinusitis and nasal polyps?"
+    ],
+    "western_pathology_en": [
+     "Mayo Clinic Press: What causes chronic sinusitis and nasal polyps?"
+    ],
+    "red_flags_zh": [
+     "established biomedical knowledge (unilateral/bleeding mass and pediatric CF association), not source-verified — flag for Ting to source-check"
+    ],
+    "red_flags_en": [
+     "established biomedical knowledge (unilateral/bleeding mass and pediatric CF association), not source-verified — flag for Ting to source-check"
+    ],
+    "risk_factors_zh": [
+     "Mayo Clinic Press: What causes chronic sinusitis and nasal polyps?"
+    ],
+    "risk_factors_en": [
+     "Mayo Clinic Press: What causes chronic sinusitis and nasal polyps?"
+    ],
+    "acupuncture_scope_zh": [
+     "PMC9451955: Acupuncture for the Treatment of Chronic Rhinosinusitis, PRISMA-compliant systematic review and meta-analysis"
+    ],
+    "acupuncture_scope_en": [
+     "PMC9451955: Acupuncture for the Treatment of Chronic Rhinosinusitis, PRISMA-compliant systematic review and meta-analysis"
+    ],
+    "related_eastern_diseases": [
+     "clinical correlation: chronic rhinosinusitis/nasal obstruction overlap, not a specific cited source"
+    ]
+   }
   },
   {
    "id": "cond.scarlet_fever",
@@ -81231,7 +83483,126 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "猩紅熱是由A型鏈球菌(Streptococcus pyogenes)分泌的紅疹毒素引起的急性傳染病,好發於五至十五歲兒童,常伴隨或緊接於鏈球菌性咽喉炎之後出現。典型表現為發燒、咽喉痛,隨後出現自頸部、腋下、鼠蹊部開始、觸感如砂紙般的細密紅疹,並可見「草莓舌」(舌頭初期覆白苔、之後轉為紅腫顆粒狀)。",
+   "summary_en": "Scarlet fever is an acute infectious illness caused by erythrogenic (pyrogenic) exotoxins produced by group A Streptococcus pyogenes, most common in children aged 5-15, and often occurring with or immediately following streptococcal pharyngitis. The typical presentation is fever and sore throat, followed by a fine, sandpaper-textured rash that begins on the neck, underarms, and groin, along with a \"strawberry tongue\" (initially white-coated, later becoming red, swollen, and bumpy).",
+   "western_context_zh": "確診依臨床表現並以咽喉快篩或培養確認A型鏈球菌感染,治療以青黴素或amoxicillin為首選抗生素,療程約十天,及時且完整用藥可預防風濕熱等免疫相關併發症;確診後通常建議服藥滿24小時且退燒後才返校/返園,以降低傳染風險。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Diagnosis is clinical, confirmed with a rapid strep test or throat culture for group A Streptococcus; penicillin or amoxicillin is the antibiotic of choice, given for about 10 days, and prompt, complete treatment helps prevent immune-mediated complications such as rheumatic fever; children are generally advised to stay out of school/daycare until at least 24 hours of antibiotics and resolution of fever, to reduce transmission risk. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "A型鏈球菌感染咽喉部後,若菌株帶有可產生紅疹毒素(streptococcal pyrogenic exotoxin)的噬菌體,毒素進入血液循環作為超級抗原,引發廣泛性 T 細胞活化與細胞激素釋放,導致皮膚微血管擴張充血,形成瀰漫性細砂紙狀紅疹;未經妥善治療者,體內對鏈球菌細胞壁成分產生的抗體可能與心臟瓣膜、關節滑膜等組織之抗原產生交叉反應,誘發風濕熱等免疫相關併發症。診斷以臨床特徵(發燒、咽喉炎、典型皮疹、草莓舌)配合咽喉快篩或培養確認。",
+   "western_pathology_en": "When group A Streptococcus infecting the throat carries a bacteriophage encoding a streptococcal pyrogenic (erythrogenic) exotoxin, the toxin enters the bloodstream and acts as a superantigen, triggering widespread T-cell activation and cytokine release that causes dermal capillary dilation and congestion, producing the diffuse sandpaper-textured rash. If inadequately treated, antibodies generated against streptococcal cell-wall components can cross-react with antigens in tissues such as heart valves and joint synovium, triggering immune-mediated complications such as rheumatic fever. Diagnosis is based on clinical features (fever, pharyngitis, the characteristic rash, strawberry tongue) combined with a positive rapid strep test or throat culture.",
+   "red_flags_zh": [
+    "發燒持續不退、關節紅腫疼痛游走性發作或出現胸悶心悸,須警覺風濕熱等鏈球菌感染後免疫併發症,需及時就醫評估",
+    "出現茶色尿、眼瞼水腫等表現需排除鏈球菌感染後腎絲球腎炎",
+    "高燒不退合併皮疹快速惡化、低血壓或意識改變,須排除侵襲性鏈球菌感染或中毒性休克症候群等急症"
+   ],
+   "red_flags_en": [
+    "Persistent fever, migratory joint pain/swelling, or new chest discomfort/palpitations should raise concern for post-streptococcal immune complications such as rheumatic fever and warrant prompt medical evaluation",
+    "Tea-colored urine or eyelid swelling should prompt evaluation for post-streptococcal glomerulonephritis",
+    "High persistent fever with rapidly worsening rash, low blood pressure, or altered mental status should raise concern for invasive streptococcal infection or toxic shock syndrome, an emergency"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "五至十五歲學齡兒童",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "CDC: About Scarlet Fever"
+    },
+    {
+     "factor": "與確診鏈球菌咽喉炎/猩紅熱病人密切接觸(校園、家庭群聚)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "CDC: About Scarlet Fever"
+    },
+    {
+     "factor": "未經妥善抗生素治療的鏈球菌咽喉炎",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "CDC: About Rheumatic Fever"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "School-age children (5-15 years)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "CDC: About Scarlet Fever"
+    },
+    {
+     "factor": "Close contact with a confirmed case of strep throat/scarlet fever (school or household clusters)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "CDC: About Scarlet Fever"
+    },
+    {
+     "factor": "Inadequately antibiotic-treated strep throat",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "CDC: About Rheumatic Fever"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "急性期猩紅熱屬需抗生素治療的細菌毒素相關傳染病,針灸不具治療感染本身的角色",
+    "precautions": "發燒、出疹等傳染病急性期不建議進行針灸,應優先完成抗生素療程並注意傳染期間的接觸隔離",
+    "co_management": "應建議病人依醫囑完成完整抗生素療程,不可以針灸替代或延誤抗生素治療,以免增加風濕熱等併發症風險",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "Acute scarlet fever is a bacterial toxin-mediated infectious disease requiring antibiotic treatment; acupuncture has no role in treating the infection itself",
+    "precautions": "Acupuncture is not advised during the acute febrile/rash phase of this contagious illness; completing the antibiotic course and observing contact precautions during the infectious period take priority",
+    "co_management": "Advise the patient to complete the full antibiotic course as prescribed; acupuncture must not replace or delay antibiotic treatment, to avoid increasing the risk of complications such as rheumatic fever",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.wen_bing",
+    "tdis.hou_bi"
+   ],
+   "related_patterns": [
+    "pattern.wei_stage_wind_heat",
+    "pattern.qi_stage_heat"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "CDC: Symptoms of Scarlet Fever; CDC: About Scarlet Fever"
+    ],
+    "summary_en": [
+     "CDC: Symptoms of Scarlet Fever; CDC: About Scarlet Fever"
+    ],
+    "western_context_zh": [
+     "CDC: Clinical Guidance for Scarlet Fever; Mayo Clinic: Scarlet fever - Symptoms & causes"
+    ],
+    "western_context_en": [
+     "CDC: Clinical Guidance for Scarlet Fever; Mayo Clinic: Scarlet fever - Symptoms & causes"
+    ],
+    "western_pathology_zh": [
+     "StatPearls: Scarlet Fever (NBK507889); CDC: About Scarlet Fever"
+    ],
+    "western_pathology_en": [
+     "StatPearls: Scarlet Fever (NBK507889); CDC: About Scarlet Fever"
+    ],
+    "red_flags_zh": [
+     "CDC: About Rheumatic Fever; established biomedical knowledge (post-streptococcal glomerulonephritis, toxic shock) not source-verified in this search — flag for Ting to source-check"
+    ],
+    "red_flags_en": [
+     "CDC: About Rheumatic Fever; established biomedical knowledge (post-streptococcal glomerulonephritis, toxic shock) not source-verified in this search — flag for Ting to source-check"
+    ],
+    "risk_factors_zh": [
+     "CDC: About Scarlet Fever; CDC: About Rheumatic Fever"
+    ],
+    "risk_factors_en": [
+     "CDC: About Scarlet Fever; CDC: About Rheumatic Fever"
+    ],
+    "acupuncture_scope_zh": [
+     "established biomedical/scope-of-practice judgment, not source-verified — flag for Ting to source-check"
+    ],
+    "acupuncture_scope_en": [
+     "established biomedical/scope-of-practice judgment, not source-verified — flag for Ting to source-check"
+    ],
+    "related_eastern_diseases": [
+     "clinical correlation: scarlet fever as a classical warm-disease (溫病) presentation with pharyngitis, not a specific cited source"
+    ]
+   }
   },
   {
    "id": "cond.acute_epiglottitis",
