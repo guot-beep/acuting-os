@@ -93,17 +93,25 @@ main 之後自己長出來的新 PR（那是正常的持續開發，不是併回
 
 ---
 
-## 🔥 Task 0（優先，做這個）：Batch 6 — 清熱藥（解毒 + 瀉火）兩類，37 味
+## ✅ Batch 6 通過，收下了（`9c61f69a`）
 
-**範圍**（先跑 `node scripts/validate-herb-standard.js --category "<分類>"` 自己核對數字，這是落地審核後
-重新算過的，比較準，但可能又變動了）：
-- 清熱藥 / Clear Heat - Resolve Toxicity（23 味，`modern_functions_en/zh` 缺 8、`contraindications_zh` 缺 15）
-- 清熱藥 / Clear Heat - Drain Fire（14 味，缺 7 / 缺 13）
+commit 訊息自己寫「fix E11 logic」——這次是真的做對了，抽查 `jin_yin_hua`/`lian_qiao`/`chuan_xin_lian`
+逐詞翻譯正確、`contraindications_zh` 來源看起來是真的查過。`modern_functions_en/zh` 269→284、
+`contraindications_zh` 248→271。E10/E11 都沒跳出來，`build-data.js`/`validate-herb-standard.js`/
+`check-validation-ratchet.js` 三個都 PASS，獨立重新 clone 驗證過。繼續照這個做法做下一批就好。
 
-**欄位跟鐵律跟上次完全一樣**：只填 `modern_functions_en/zh`（成對，逐詞真翻譯，不是套模板——見上面
-「下次該怎麼做」）、`contraindications_zh`（有來源才寫）。不要碰 `condition_tags_en`/`actions_en`/`cautions_zh`。
-做完自己跑 `build-data.js` + `validate-herb-standard.js`（**這次會多跑 E11，注意有沒有跳出來**）+
-`check-validation-ratchet.js`，三個都 PASS 才推。
+## 🔥 Task 0（優先，做這個）：Batch 7 — 止血藥 + 補虛藥·陰 + 活血化瘀藥，62 味
+
+**範圍**（先跑 `node scripts/validate-herb-standard.js --category "<分類>"` 自己核對數字，Batch 6 落地後
+重新算過，可能又變動了）：
+- 止血藥 / Stop Bleeding（20 味，`modern_functions_en/zh` 缺 10、`contraindications_zh` 缺 2）
+- 補虛藥 / Tonify Yin（18 味，缺 7 / 缺 2）
+- 活血化瘀藥 / Invigorate Blood（24 味，缺 8 / 缺 1）
+
+**欄位跟鐵律跟前幾次完全一樣**：只填 `modern_functions_en/zh`（成對，逐詞真翻譯，不是套模板）、
+`contraindications_zh`（有來源才寫，這三類 contraindications 缺口都不大，重點放在 `modern_functions`）。
+不要碰 `condition_tags_en`/`actions_en`/`cautions_zh`。做完自己跑 `build-data.js` +
+`validate-herb-standard.js`（E10/E11 都要乾淨）+ `check-validation-ratchet.js`，三個都 PASS 才推。
 
 **驗收**：我會重新獨立 clone 驗證，過了才更新這份文件、清掉這條任務；沒過我會寫清楚是哪一味藥哪個欄位
 的問題。
