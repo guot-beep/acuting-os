@@ -147,49 +147,20 @@ E10/E11 乾淨，`build-data.js`/`validate-herb-standard.js`/`check-validation-r
 `validate-content-junk.js`/`test-branch-mergeable.js` 全 PASS，`condition_tags_en` 等禁動欄位
 逐筆核對 0 異動，獨立重新 clone 驗證過。**收下，做法沒問題，繼續照這個做法做下一輪。**
 
-## 🔥🔥 Task 3（最高優先，先做這個）：中藥卡 strict provenance/schema 修復
+## ✅ Task 3 收工（`b347d5b4`）——54 strict FAIL→0、39 schema 阻擋問題→0，兩輪加起來全部乾淨落地
 
-Ting 找 Codex 對全庫（不只 CI 目前跑的 `validate-herb-standard.js`）做了一次更嚴格的稽核，發現的問題
-我逐條重新用 repo 裡現成的 `scripts/validate-herb-quality-strict.js` / `scripts/validate-herb-card-schema.js`
-兩支腳本**自己重新跑過確認是真的**，不是憑空來的報告。**這是現在全庫最優先要處理的一線，比 Task 2 優先**。
+Round 2 重做的 22 張全部照正確規則做：`functions_zh` **逐位元組核對 0 異動**（跟被砍之前的原始
+版本完全一致），`actions_en` 全部擴充到跟 `functions_zh` 一樣長，抽查 `herb.dan_shen`(4→11)、
+`herb.yi_mu_cao`(4→11)、`herb.mu_tong`(3→10) 逐詞核對翻譯——每一條都是獨立、正確、不重複的英文，
+不是套模板湊數字，這是很好的示範。`validate-herb-quality-strict.js`/`validate-herb-card-schema.js`
+都是 0，`condition_tags_en` 等禁動欄位 0 異動。**這條線正式收工，不用再回來看。**
 
-**⚠️ 鐵律，比之前任何一批都重要，先讀完再動手**：這批全部是「修正/補齊」，**不是「精簡/改寫」**。
-遇到任何一格內容，動手前先問自己「我是在補一個空格，還是在刪/改一個已經有內容的格子」——**後者除非
-你能明確指出原內容錯在哪裡（型別錯、來源錯、跟本藥對不上），否則不要動**。這批做完我會逐筆比對
-改動前後的內容長度，任何欄位變短、被清空、或字數明顯減少但沒有寫清楚理由的，整批打回。
-
-**A. `exact_source_url` 精確化（54 張裡的 53 張）**：這些卡的 `exact_source_url` 目前只是
-`https://www.americandragon.com`（網站首頁），不是那一味藥的實際頁面——這樣沒辦法核對。查到該藥在
-American Dragon 的實際頁面網址（格式參考其他已經填對的卡，例如
-`https://www.americandragon.com/Individualherbsupdate/ZhiBaiFuZi.html` 這種），換上去。查不到真實
-頁面就留空，不要拿首頁湊數，也不要編一個看起來像的路徑。
-
-**B.『雄黃』(`herb.xiong_huang`) 移除樣板句**：目前某欄位文字裡卡著「待補」這種樣板字樣，這是驗證器
-明文禁止的（`validate-herb-quality-strict.js` 專門擋這個）。查到真實內容就填、查不到就把那句「待補」
-拿掉留白，不要留著沒查完的佔位字。
-
-**C. 型別修正（3 張，零內容流失）**：`herb.zhu_ling`／`herb.ze_xie`／`herb.fu_shen` 的
-`indications_en` 目前是字串（string），應該是陣列（array）——把現有的字串內容包成單元素陣列
-`["原本那句話"]`，**內容一個字都不改**，只改容器型別。
-
-**D. `functions_zh` 與 `actions_en` 長度不對齊（約 30-37 張）**：這批很危險，容易做錯，仔細讀：
-`validate-herb-card-schema.js` 逐張列出哪些卡兩個陣列長度不一樣（例如 `herb.dan_shen`
-`functions_zh` 11 條、`actions_en` 只有 4 條）。**唯一允許的修法是把 `actions_en` 補到跟
-`functions_zh` 一樣長（逐條真翻譯，不是套模板，跟 Task 0 `modern_functions_en` 的鐵律完全一樣）**。
-**絕對不准為了讓長度一樣而刪掉 `functions_zh` 裡的中文內容去遷就較短的英文**——這正是我們現在最怕
-的那種「精簡掉重要內容」。查不到某幾條的英文翻譯，這張卡先跳過留給下一輪，不要用刪中文的方式讓
-驗證器過。
-
-**E. `dosage` 型別與缺漏（H1/H2，數張）**：部分卡的 `dosage` 型別是物件（object）應該是字串
-（string）；另外 `herb.xiang_ru`/`herb.qiang_huo`/`herb.bai_zhi` 缺 `dosage_g` 這個必要欄位。
-有查到真實劑量來源就填字串格式（例如 `"3-9g"`），查不到就留空——**不要自己編劑量數字，這是
-`validate-herb-dosage-shape.js` 專門在擋的鐵律,劑量錯了是安全問題**。
-
-**做完驗證**：`build-data.js` + `validate-herb-quality-strict.js`（FAIL 數字要降，附上改動前後對比）+
-`validate-herb-card-schema.js`（阻擋問題數字要降）+ `validate-herb-standard.js`（E10/E11 乾淨）+
-`check-validation-ratchet.js` + `validate-content-junk.js`，全部 PASS/數字下降才推（推到
-`antigravity/herb-fill-task3-strict` 這種獨立分支，不要推到 `main`，並在這份文件或 commit message
-寫一句「已推到 XXX 分支,等驗收」）。記得補 `PROJECT_LOG.md` 條目，附改動前後的具體筆數。
+**做完驗證**：`build-data.js` + `validate-herb-quality-strict.js`（FAIL 要維持 0）+
+`validate-herb-card-schema.js`（阻擋問題要從 22 降下來，不是隨便一個數字，附上改動前後對比表）+
+`validate-herb-standard.js`（E10/E11 乾淨）+ `check-validation-ratchet.js` + `validate-content-junk.js`，
+全部 PASS/數字下降才推（推到 `antigravity/herb-fill-task3-round2` 這種獨立分支，不要推到 `main`，
+並在這份文件或 commit message 寫一句「已推到 XXX 分支,等驗收」）。記得補 `PROJECT_LOG.md` 條目，
+附改動前後的具體筆數。
 
 **這輪不做的，明確排除（風險太高或需要 Ting 裁定，不歸你）**：
 - **功效重新策展（138 張：63 張 0-1 條太少、75 張 >6 條像原始資料傾印）**——這個要決定「哪些該留哪些
@@ -209,37 +180,16 @@ American Dragon 的實際頁面網址（格式參考其他已經填對的卡，�
 
 ---
 
-## Task 4（第三優先，Task 3 收斂後再做）：方劑卡中英陣列對齊 + 缺口盤點
+## ✅ Task 4 收工（`a1c2d2de`）——39 張逐字核對帳本 0 落差，左歸飲誠實留空，沒有重犯
 
-同一次 Codex 稽核也查了方劑（`data/herbs/formulas.json`，223 筆）。我自己重新掃過 `_zh`/`_en` 成對陣列
-欄位，確認**全庫有 28 張卡至少一個欄位長度不對齊**（`contraindications_zh/en`、`cautions_zh/en`、
-`symptoms_zh/en`、`herb_drug_interactions_zh/en` 這幾種最多），例如 `formula.bai_hu_tang`
-`contraindications_zh` 6 條對 `contraindications_en` 10 條。
-
-**鐵律跟 Task 3 的 D 條完全一樣，這是全文件最重要的一句話,再講一次**：唯一允許的修法是**把較短的
-那一側補到跟較長的一側一樣長**（逐條真翻譯）。**絕對不准刪掉較長那一側的內容去遷就較短的一側**——
-遇到「較長那一側的某一條其實是重複/錯置」這種要刪除才能對齊的情況，不要自己刪，寫清楚是哪一條、
-為什麼你認為它是錯的，留給我判斷。查不到翻譯的卡先跳過。
-
-**其他已知缺口（有餘力再做，優先度低於陣列對齊）**：藥對缺 51、現代運用缺 26、來源連結缺 18、
-舌脈缺 13、禁忌缺 6——做法跟中藥卡一樣，查得到來源才填，查不到留空。
-
-**⚠️ 安全優先項，如果只能做一件事先做這個**：有 3 張卡是安全欄位的結構性問題，不是內容豐富度問題：
-2 張含慎用藥（`safety_flags`/`herb_drug_cautions` 有內容）但安全欄位是空的、1 張標了
-`public_safe: true` 卻沒有任何安全內容支撐這個標記——**先跑
-`node scripts/validate-herb-standard.js --worklist` 同等邏輯去 `formulas.json` 抓出這 3 張是哪幾方
-（如果抓不出來，在文件裡問我要哪張的 ID 清單），優先把這 3 張的安全欄位補起來或把 `public_safe`
-改成 false 並附理由**，這個比陣列對齊更急。
-
-**這輪不做的，明確排除（需要 Ting 裁定）**：
-- `condition relation` 只有 23/223、`pattern relation` 只有 50/223——這是「這方該連到哪些證/病」的
-  臨床判斷，不是查資料就能填的，這輪不做。
-
-**做完驗證**：`build-data.js` + `validate-formula-standard.js` + `validate-formula-quality-strict.js` +
-`validate-formula-correctness.js` + `check-validation-ratchet.js`，全部 PASS 才推（推到
-`antigravity/formula-fill-task4` 獨立分支，不要推到 `main`）。記得補 `PROJECT_LOG.md` 條目。
-
-**驗收**：我會重新獨立 clone 驗證，過了才更新這份文件、清掉這條任務。
+Round 2 改用現成的 `CONTRA_ALIGN_PROPOSALS_2026-08-19.json` 帳本重做，我**機器逐筆核對**（不是抽
+查）：39 張卡的 `contraindications_zh`/`contraindications_en` 跟帳本的 `zh`/`en_proposed`
+**逐字比對，0 筆不符**——完全照已審帳本套用，沒有自己改寫或新增。帳本裡另外 15 條現況跟帳本快照
+不一致，你正確地跳過沒硬套。`formula.zuo_gui_yin`（左歸飲，上一輪虛構安全內容+假引用那張）這輪
+`cautions_zh`/`contraindications_zh` 正確地維持空白——課件本身沒有這個欄位的來源，誠實留空，
+不是為了衝優先度硬生內容。逐欄位比對確認除了 `contraindications_zh/en/field_sources` 三個欄位，
+**其餘欄位 0 異動**。驗證器全 PASS。**收下，做法比原本要求的更嚴謹（直接核對已審帳本逐字套用，
+不是自己重新翻譯判斷），Task 4 這條線正式收工，上一輪虛構+假引用的問題完全沒有重犯。**
 
 ---
 
@@ -328,3 +278,5 @@ board exam 常考「方劑鑑別」「同名加減方辨證」，這塊覆蓋率
   達可驗證資料極限,Task 2 這條線收工,詳見上面單獨一條。
 - 王清任逐瘀湯家族 5 方互相連結（Claude 直接做,不是 antigravity）：`related_formulas` 純新增,
   詳見上面單獨一條;順帶發現全庫 `formula_family`/`related_formulas` 覆蓋率不足,開了 Task 5。
+- Task 3（`3d52c0f0` + round 2 `b347d5b4`）：54 strict FAIL→0、39 schema 阻擋問題→0，
+  中間第一輪 22 張違規被打回還原、第二輪照正確規則重做,詳見上面單獨一條。
