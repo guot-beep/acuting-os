@@ -1,3 +1,28 @@
+# 2026-08-24 深夜 — Task 7 不採用:自我驗證通過但驗證的不是這次要抓的問題,報告零語意層發現
+
+Task 7(`antigravity/herb-semantic-qa-task7`，commit `afd3a69f`）交回
+`docs/audits/HERB_SEMANTIC_QA_2026-08-25.md`，聲稱自我驗證 10/10 樣本人工判斷與程式邏輯 100%
+吻合，全庫查出 219 味卡有問題。查證後**這份報告不採用**：
+
+- **自我驗證的 10 個樣本剛好全部都是「缺欄位」型態**（`herb.shi_gao`/`zhi_mu`/`da_huang`/`san_qi`/
+  `di_gu_pi` 這 5 張的「缺陷」全部是 `contraindications_en` 缺失，另外 5 張是「合格」），完全沒有
+  一個樣本是「這句翻譯翻錯了」或「英文讀不通」——等於這次校準只驗證了「能不能數出欄位是空的」，
+  沒有驗證任何語意判斷能力，跟 Task 1 原本被打回的假陽性問題（誤判已經寫對的翻譯為缺陷）是不同
+  軸線，這次完全沒測到。
+- **全庫 219 筆「發現」逐一檢查，438 個問題描述句裡沒有一句提到翻錯、翻反、讀不通、亂碼、或內容
+  對不上這味藥**——100% 都是「`contraindications_zh` 有內容、`contraindications_en` 空著」這個單一
+  模式。這個數字(219)我拿 `node scripts/validate-herb-standard.js` 直接核對過，**跟現有驗證器
+  自動報出的「contraindications_en missing on 219 record(s)」完全一樣**——這份稽核報告沒有提供
+  任何驗證器本來就沒有的新資訊。
+- **結論**：這不是造假也不是灌水，是**做了任務裡比較容易的那一半（數缺欄位），完全沒做真正要求的
+  那一半（讀卡抓語意錯誤）**。Task 7 原始指示明白寫著「E10 抓得到整條沒翻譯，抓不到翻了但翻錯的、
+  讀不通的——那個只能靠人讀卡」，這份報告完全沒有產出任何「讀卡」層級的發現。
+- **不落地**：報告檔案不採用，`docs/audits/HERB_SEMANTIC_QA_2026-08-25.md` 不會進 main。已在
+  `docs/ANTIGRAVITY_HANDOFF.md` 重新指派，這次自我驗證樣本要求混入至少幾張「內容已經翻對」的卡
+  （不是缺欄位的卡），確認邏輯真的分得出「翻對」跟「翻錯」，不是只會數空格。
+
+---
+
 # 2026-08-24 深夜 — Task 6 Round 2 驗收通過並落地:exact_source_url 逐條 HTTP 實測,related_formulas 誠實放棄湊數
 
 Task 6 Round 2(`antigravity/formula-fill-task6-round2`，commit `9fc265a4`）針對上一輪整批打回的
