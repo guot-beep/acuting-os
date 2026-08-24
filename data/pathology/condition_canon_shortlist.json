@@ -21910,11 +21910,26 @@
         }
       ],
       "acupoint_protocols": [
-        "中脘 (CV12)",
-        "內關 (PC6)",
-        "足三里 (ST36)",
-        "太衝 (LR3)",
-        "陽陵泉 (GB34)"
+        {
+          "name_zh": "中脘",
+          "code": "CV12"
+        },
+        {
+          "name_zh": "內關",
+          "code": "PC6"
+        },
+        {
+          "name_zh": "足三里",
+          "code": "ST36"
+        },
+        {
+          "name_zh": "太衝",
+          "code": "LR3"
+        },
+        {
+          "name_zh": "陽陵泉",
+          "code": "GB34"
+        }
       ],
       "herb_formulas": [
         "柴胡疏肝散",
@@ -22152,6 +22167,48 @@
         "collected_by": null,
         "assessed": false,
         "no_source_found": false
+      },
+      "acupoint_code_normalization": {
+        "date": "2026-08-21",
+        "rule": "字串型條目「中文名 (代碼)」拆成 {name_zh, code};代碼與中文名雙重驗證(異體字視為相同),原字串保留在 string_entries_converted。",
+        "changed": [],
+        "string_entries_converted": [
+          {
+            "from_string": "中脘 (CV12)",
+            "to": {
+              "name_zh": "中脘",
+              "code": "CV12"
+            }
+          },
+          {
+            "from_string": "內關 (PC6)",
+            "to": {
+              "name_zh": "內關",
+              "code": "PC6"
+            }
+          },
+          {
+            "from_string": "足三里 (ST36)",
+            "to": {
+              "name_zh": "足三里",
+              "code": "ST36"
+            }
+          },
+          {
+            "from_string": "太衝 (LR3)",
+            "to": {
+              "name_zh": "太衝",
+              "code": "LR3"
+            }
+          },
+          {
+            "from_string": "陽陵泉 (GB34)",
+            "to": {
+              "name_zh": "陽陵泉",
+              "code": "GB34"
+            }
+          }
+        ]
       }
     },
     {
@@ -22238,11 +22295,26 @@
         }
       ],
       "acupoint_protocols": [
-        "中脘 (CV12)",
-        "足三里 (ST36)",
-        "內關 (PC6)",
-        "脾俞 (BL20)",
-        "太衝 (LR3)"
+        {
+          "name_zh": "中脘",
+          "code": "CV12"
+        },
+        {
+          "name_zh": "足三里",
+          "code": "ST36"
+        },
+        {
+          "name_zh": "內關",
+          "code": "PC6"
+        },
+        {
+          "name_zh": "脾俞",
+          "code": "BL20"
+        },
+        {
+          "name_zh": "太衝",
+          "code": "LR3"
+        }
       ],
       "herb_formulas": [
         "保和丸",
@@ -22380,6 +22452,48 @@
         "collected_by": null,
         "assessed": false,
         "no_source_found": false
+      },
+      "acupoint_code_normalization": {
+        "date": "2026-08-21",
+        "rule": "字串型條目「中文名 (代碼)」拆成 {name_zh, code};代碼與中文名雙重驗證(異體字視為相同),原字串保留在 string_entries_converted。",
+        "changed": [],
+        "string_entries_converted": [
+          {
+            "from_string": "中脘 (CV12)",
+            "to": {
+              "name_zh": "中脘",
+              "code": "CV12"
+            }
+          },
+          {
+            "from_string": "足三里 (ST36)",
+            "to": {
+              "name_zh": "足三里",
+              "code": "ST36"
+            }
+          },
+          {
+            "from_string": "內關 (PC6)",
+            "to": {
+              "name_zh": "內關",
+              "code": "PC6"
+            }
+          },
+          {
+            "from_string": "脾俞 (BL20)",
+            "to": {
+              "name_zh": "脾俞",
+              "code": "BL20"
+            }
+          },
+          {
+            "from_string": "太衝 (LR3)",
+            "to": {
+              "name_zh": "太衝",
+              "code": "LR3"
+            }
+          }
+        ]
       }
     },
     {
@@ -23749,11 +23863,26 @@
       "fetched_at": "2026-07-23T07:46:04.600Z",
       "source_type": "sourced_research_pack",
       "acupoint_protocols": [
-        "天樞 (ST25)",
-        "足三里 (ST36)",
-        "太衝 (LR3)",
-        "上巨虛 (ST37)",
-        "氣海 (CV6)"
+        {
+          "name_zh": "天樞",
+          "code": "ST25"
+        },
+        {
+          "name_zh": "足三里",
+          "code": "ST36"
+        },
+        {
+          "name_zh": "太衝",
+          "code": "LR3"
+        },
+        {
+          "name_zh": "上巨虛",
+          "code": "ST37"
+        },
+        {
+          "name_zh": "氣海",
+          "code": "CV6"
+        }
       ],
       "sources": [
         "https://cloudtcm.com/disease/tcm/1671",
@@ -23971,6 +24100,48 @@
         "collected_by": null,
         "assessed": false,
         "no_source_found": false
+      },
+      "acupoint_code_normalization": {
+        "date": "2026-08-21",
+        "rule": "字串型條目「中文名 (代碼)」拆成 {name_zh, code};代碼與中文名雙重驗證(異體字視為相同),原字串保留在 string_entries_converted。",
+        "changed": [],
+        "string_entries_converted": [
+          {
+            "from_string": "天樞 (ST25)",
+            "to": {
+              "name_zh": "天樞",
+              "code": "ST25"
+            }
+          },
+          {
+            "from_string": "足三里 (ST36)",
+            "to": {
+              "name_zh": "足三里",
+              "code": "ST36"
+            }
+          },
+          {
+            "from_string": "太衝 (LR3)",
+            "to": {
+              "name_zh": "太衝",
+              "code": "LR3"
+            }
+          },
+          {
+            "from_string": "上巨虛 (ST37)",
+            "to": {
+              "name_zh": "上巨虛",
+              "code": "ST37"
+            }
+          },
+          {
+            "from_string": "氣海 (CV6)",
+            "to": {
+              "name_zh": "氣海",
+              "code": "CV6"
+            }
+          }
+        ]
       }
     },
     {
@@ -24271,11 +24442,26 @@
         }
       ],
       "acupoint_protocols": [
-        "天樞 (ST25)",
-        "支溝 (TE6)",
-        "大腸俞 (BL25)",
-        "足三里 (ST36)",
-        "照海 (KI6)"
+        {
+          "name_zh": "天樞",
+          "code": "ST25"
+        },
+        {
+          "name_zh": "支溝",
+          "code": "TE6"
+        },
+        {
+          "name_zh": "大腸俞",
+          "code": "BL25"
+        },
+        {
+          "name_zh": "足三里",
+          "code": "ST36"
+        },
+        {
+          "name_zh": "照海",
+          "code": "KI6"
+        }
       ],
       "herb_formulas": [
         "麻子仁丸",
@@ -24297,6 +24483,48 @@
         "collected_by": null,
         "assessed": false,
         "no_source_found": false
+      },
+      "acupoint_code_normalization": {
+        "date": "2026-08-21",
+        "rule": "字串型條目「中文名 (代碼)」拆成 {name_zh, code};代碼與中文名雙重驗證(異體字視為相同),原字串保留在 string_entries_converted。",
+        "changed": [],
+        "string_entries_converted": [
+          {
+            "from_string": "天樞 (ST25)",
+            "to": {
+              "name_zh": "天樞",
+              "code": "ST25"
+            }
+          },
+          {
+            "from_string": "支溝 (TE6)",
+            "to": {
+              "name_zh": "支溝",
+              "code": "TE6"
+            }
+          },
+          {
+            "from_string": "大腸俞 (BL25)",
+            "to": {
+              "name_zh": "大腸俞",
+              "code": "BL25"
+            }
+          },
+          {
+            "from_string": "足三里 (ST36)",
+            "to": {
+              "name_zh": "足三里",
+              "code": "ST36"
+            }
+          },
+          {
+            "from_string": "照海 (KI6)",
+            "to": {
+              "name_zh": "照海",
+              "code": "KI6"
+            }
+          }
+        ]
       }
     },
     {
@@ -26083,12 +26311,30 @@
         }
       ],
       "acupoint_protocols": [
-        "神門 (HT7)",
-        "三陰交 (SP6)",
-        "百會 (GV20)",
-        "印堂 (EX-HN3)",
-        "安眠 (EX-HN16)",
-        "照海 (KI6)"
+        {
+          "name_zh": "神門",
+          "code": "HT7"
+        },
+        {
+          "name_zh": "三陰交",
+          "code": "SP6"
+        },
+        {
+          "name_zh": "百會",
+          "code": "GV20"
+        },
+        {
+          "name_zh": "印堂",
+          "code": "EX-HN3"
+        },
+        {
+          "name_zh": "安眠",
+          "code": "EX-HN16"
+        },
+        {
+          "name_zh": "照海",
+          "code": "KI6"
+        }
       ],
       "herb_formulas": [
         "酸棗仁湯",
@@ -26314,6 +26560,55 @@
         "collected_by": null,
         "assessed": false,
         "no_source_found": false
+      },
+      "acupoint_code_normalization": {
+        "date": "2026-08-21",
+        "rule": "字串型條目「中文名 (代碼)」拆成 {name_zh, code};代碼與中文名雙重驗證(異體字視為相同),原字串保留在 string_entries_converted。",
+        "changed": [],
+        "string_entries_converted": [
+          {
+            "from_string": "神門 (HT7)",
+            "to": {
+              "name_zh": "神門",
+              "code": "HT7"
+            }
+          },
+          {
+            "from_string": "三陰交 (SP6)",
+            "to": {
+              "name_zh": "三陰交",
+              "code": "SP6"
+            }
+          },
+          {
+            "from_string": "百會 (GV20)",
+            "to": {
+              "name_zh": "百會",
+              "code": "GV20"
+            }
+          },
+          {
+            "from_string": "印堂 (EX-HN3)",
+            "to": {
+              "name_zh": "印堂",
+              "code": "EX-HN3"
+            }
+          },
+          {
+            "from_string": "安眠 (EX-HN16)",
+            "to": {
+              "name_zh": "安眠",
+              "code": "EX-HN16"
+            }
+          },
+          {
+            "from_string": "照海 (KI6)",
+            "to": {
+              "name_zh": "照海",
+              "code": "KI6"
+            }
+          }
+        ]
       }
     },
     {
@@ -32180,11 +32475,26 @@
         }
       ],
       "acupoint_protocols": [
-        "迎香 (LI20)",
-        "印堂 (EX-HN3)",
-        "風池 (GB20)",
-        "合谷 (LI4)",
-        "足三里 (ST36)"
+        {
+          "name_zh": "迎香",
+          "code": "LI20"
+        },
+        {
+          "name_zh": "印堂",
+          "code": "EX-HN3"
+        },
+        {
+          "name_zh": "風池",
+          "code": "GB20"
+        },
+        {
+          "name_zh": "合谷",
+          "code": "LI4"
+        },
+        {
+          "name_zh": "足三里",
+          "code": "ST36"
+        }
       ],
       "herb_formulas": [
         "玉屏風散",
@@ -32383,6 +32693,48 @@
         "collected_by": null,
         "assessed": false,
         "no_source_found": false
+      },
+      "acupoint_code_normalization": {
+        "date": "2026-08-21",
+        "rule": "字串型條目「中文名 (代碼)」拆成 {name_zh, code};代碼與中文名雙重驗證(異體字視為相同),原字串保留在 string_entries_converted。",
+        "changed": [],
+        "string_entries_converted": [
+          {
+            "from_string": "迎香 (LI20)",
+            "to": {
+              "name_zh": "迎香",
+              "code": "LI20"
+            }
+          },
+          {
+            "from_string": "印堂 (EX-HN3)",
+            "to": {
+              "name_zh": "印堂",
+              "code": "EX-HN3"
+            }
+          },
+          {
+            "from_string": "風池 (GB20)",
+            "to": {
+              "name_zh": "風池",
+              "code": "GB20"
+            }
+          },
+          {
+            "from_string": "合谷 (LI4)",
+            "to": {
+              "name_zh": "合谷",
+              "code": "LI4"
+            }
+          },
+          {
+            "from_string": "足三里 (ST36)",
+            "to": {
+              "name_zh": "足三里",
+              "code": "ST36"
+            }
+          }
+        ]
       }
     },
     {
@@ -35968,12 +36320,30 @@
         }
       ],
       "acupoint_protocols": [
-        "地倉 (ST4)",
-        "頰車 (ST6)",
-        "陽白 (GB14)",
-        "四白 (ST2)",
-        "合谷 (LI4)",
-        "太衝 (LR3)"
+        {
+          "name_zh": "地倉",
+          "code": "ST4"
+        },
+        {
+          "name_zh": "頰車",
+          "code": "ST6"
+        },
+        {
+          "name_zh": "陽白",
+          "code": "GB14"
+        },
+        {
+          "name_zh": "四白",
+          "code": "ST2"
+        },
+        {
+          "name_zh": "合谷",
+          "code": "LI4"
+        },
+        {
+          "name_zh": "太衝",
+          "code": "LR3"
+        }
       ],
       "herb_formulas": [
         "牽正散",
@@ -36199,6 +36569,55 @@
         "collected_by": null,
         "assessed": false,
         "no_source_found": false
+      },
+      "acupoint_code_normalization": {
+        "date": "2026-08-21",
+        "rule": "字串型條目「中文名 (代碼)」拆成 {name_zh, code};代碼與中文名雙重驗證(異體字視為相同),原字串保留在 string_entries_converted。",
+        "changed": [],
+        "string_entries_converted": [
+          {
+            "from_string": "地倉 (ST4)",
+            "to": {
+              "name_zh": "地倉",
+              "code": "ST4"
+            }
+          },
+          {
+            "from_string": "頰車 (ST6)",
+            "to": {
+              "name_zh": "頰車",
+              "code": "ST6"
+            }
+          },
+          {
+            "from_string": "陽白 (GB14)",
+            "to": {
+              "name_zh": "陽白",
+              "code": "GB14"
+            }
+          },
+          {
+            "from_string": "四白 (ST2)",
+            "to": {
+              "name_zh": "四白",
+              "code": "ST2"
+            }
+          },
+          {
+            "from_string": "合谷 (LI4)",
+            "to": {
+              "name_zh": "合谷",
+              "code": "LI4"
+            }
+          },
+          {
+            "from_string": "太衝 (LR3)",
+            "to": {
+              "name_zh": "太衝",
+              "code": "LR3"
+            }
+          }
+        ]
       }
     },
     {
@@ -37251,11 +37670,26 @@
         }
       ],
       "acupoint_protocols": [
-        "下關 (ST7)",
-        "合谷 (LI4)",
-        "四白 (ST2)",
-        "太陽 (EX-HN5)",
-        "內庭 (ST44)"
+        {
+          "name_zh": "下關",
+          "code": "ST7"
+        },
+        {
+          "name_zh": "合谷",
+          "code": "LI4"
+        },
+        {
+          "name_zh": "四白",
+          "code": "ST2"
+        },
+        {
+          "name_zh": "太陽",
+          "code": "EX-HN5"
+        },
+        {
+          "name_zh": "內庭",
+          "code": "ST44"
+        }
       ],
       "herb_formulas": [
         "龍膽瀉肝湯",
@@ -37397,6 +37831,48 @@
         "collected_by": null,
         "assessed": false,
         "no_source_found": false
+      },
+      "acupoint_code_normalization": {
+        "date": "2026-08-21",
+        "rule": "字串型條目「中文名 (代碼)」拆成 {name_zh, code};代碼與中文名雙重驗證(異體字視為相同),原字串保留在 string_entries_converted。",
+        "changed": [],
+        "string_entries_converted": [
+          {
+            "from_string": "下關 (ST7)",
+            "to": {
+              "name_zh": "下關",
+              "code": "ST7"
+            }
+          },
+          {
+            "from_string": "合谷 (LI4)",
+            "to": {
+              "name_zh": "合谷",
+              "code": "LI4"
+            }
+          },
+          {
+            "from_string": "四白 (ST2)",
+            "to": {
+              "name_zh": "四白",
+              "code": "ST2"
+            }
+          },
+          {
+            "from_string": "太陽 (EX-HN5)",
+            "to": {
+              "name_zh": "太陽",
+              "code": "EX-HN5"
+            }
+          },
+          {
+            "from_string": "內庭 (ST44)",
+            "to": {
+              "name_zh": "內庭",
+              "code": "ST44"
+            }
+          }
+        ]
       }
     },
     {
@@ -38639,11 +39115,26 @@
         }
       ],
       "acupoint_protocols": [
-        "風池 (GB20)",
-        "百會 (GV20)",
-        "太衝 (LR3)",
-        "豐隆 (ST40)",
-        "太溪 (KI3)"
+        {
+          "name_zh": "風池",
+          "code": "GB20"
+        },
+        {
+          "name_zh": "百會",
+          "code": "GV20"
+        },
+        {
+          "name_zh": "太衝",
+          "code": "LR3"
+        },
+        {
+          "name_zh": "豐隆",
+          "code": "ST40"
+        },
+        {
+          "name_zh": "太谿",
+          "code": "KI3"
+        }
       ],
       "herb_formulas": [
         "天麻鉤藤飲",
@@ -38665,6 +39156,48 @@
         "collected_by": null,
         "assessed": false,
         "no_source_found": false
+      },
+      "acupoint_code_normalization": {
+        "date": "2026-08-21",
+        "rule": "字串型條目「中文名 (代碼)」拆成 {name_zh, code};代碼與中文名雙重驗證(異體字視為相同),原字串保留在 string_entries_converted。",
+        "changed": [],
+        "string_entries_converted": [
+          {
+            "from_string": "風池 (GB20)",
+            "to": {
+              "name_zh": "風池",
+              "code": "GB20"
+            }
+          },
+          {
+            "from_string": "百會 (GV20)",
+            "to": {
+              "name_zh": "百會",
+              "code": "GV20"
+            }
+          },
+          {
+            "from_string": "太衝 (LR3)",
+            "to": {
+              "name_zh": "太衝",
+              "code": "LR3"
+            }
+          },
+          {
+            "from_string": "豐隆 (ST40)",
+            "to": {
+              "name_zh": "豐隆",
+              "code": "ST40"
+            }
+          },
+          {
+            "from_string": "太溪 (KI3)",
+            "to": {
+              "name_zh": "太谿",
+              "code": "KI3"
+            }
+          }
+        ]
       }
     },
     {
@@ -39562,11 +40095,26 @@
       "fetched_at": "2026-07-23T07:45:11.943Z",
       "source_type": "sourced_cloudtcm_record",
       "acupoint_protocols": [
-        "曲池 (LI11)",
-        "血海 (SP10)",
-        "合谷 (LI4)",
-        "三陰交 (SP6)",
-        "陰陵泉 (SP9)"
+        {
+          "name_zh": "曲池",
+          "code": "LI11"
+        },
+        {
+          "name_zh": "血海",
+          "code": "SP10"
+        },
+        {
+          "name_zh": "合谷",
+          "code": "LI4"
+        },
+        {
+          "name_zh": "三陰交",
+          "code": "SP6"
+        },
+        {
+          "name_zh": "陰陵泉",
+          "code": "SP9"
+        }
       ],
       "sources": [
         "https://cloudtcm.com/disease/tcm/253",
@@ -39739,6 +40287,48 @@
         "collected_by": null,
         "assessed": false,
         "no_source_found": false
+      },
+      "acupoint_code_normalization": {
+        "date": "2026-08-21",
+        "rule": "字串型條目「中文名 (代碼)」拆成 {name_zh, code};代碼與中文名雙重驗證(異體字視為相同),原字串保留在 string_entries_converted。",
+        "changed": [],
+        "string_entries_converted": [
+          {
+            "from_string": "曲池 (LI11)",
+            "to": {
+              "name_zh": "曲池",
+              "code": "LI11"
+            }
+          },
+          {
+            "from_string": "血海 (SP10)",
+            "to": {
+              "name_zh": "血海",
+              "code": "SP10"
+            }
+          },
+          {
+            "from_string": "合谷 (LI4)",
+            "to": {
+              "name_zh": "合谷",
+              "code": "LI4"
+            }
+          },
+          {
+            "from_string": "三陰交 (SP6)",
+            "to": {
+              "name_zh": "三陰交",
+              "code": "SP6"
+            }
+          },
+          {
+            "from_string": "陰陵泉 (SP9)",
+            "to": {
+              "name_zh": "陰陵泉",
+              "code": "SP9"
+            }
+          }
+        ]
       }
     },
     {
@@ -39761,11 +40351,26 @@
       "western_pathology_zh": "肥大細胞釋放組胺等介質引發的皮膚、黏膜小血管擴張及滲透性增加，出現風團及劇癢。",
       "western_pathology_en": "Histamine and other mediators released by mast cells cause dilation and increased permeability of small blood vessels in the skin and mucosa, producing wheals and intense pruritus.",
       "acupoint_protocols": [
-        "曲池 (LI11)",
-        "合谷 (LI4)",
-        "血海 (SP10)",
-        "三陰交 (SP6)",
-        "風門 (BL12)"
+        {
+          "name_zh": "曲池",
+          "code": "LI11"
+        },
+        {
+          "name_zh": "合谷",
+          "code": "LI4"
+        },
+        {
+          "name_zh": "血海",
+          "code": "SP10"
+        },
+        {
+          "name_zh": "三陰交",
+          "code": "SP6"
+        },
+        {
+          "name_zh": "風門",
+          "code": "BL12"
+        }
       ],
       "herb_formulas": [
         "消風散",
@@ -39990,6 +40595,48 @@
         "collected_by": null,
         "assessed": false,
         "no_source_found": false
+      },
+      "acupoint_code_normalization": {
+        "date": "2026-08-21",
+        "rule": "字串型條目「中文名 (代碼)」拆成 {name_zh, code};代碼與中文名雙重驗證(異體字視為相同),原字串保留在 string_entries_converted。",
+        "changed": [],
+        "string_entries_converted": [
+          {
+            "from_string": "曲池 (LI11)",
+            "to": {
+              "name_zh": "曲池",
+              "code": "LI11"
+            }
+          },
+          {
+            "from_string": "合谷 (LI4)",
+            "to": {
+              "name_zh": "合谷",
+              "code": "LI4"
+            }
+          },
+          {
+            "from_string": "血海 (SP10)",
+            "to": {
+              "name_zh": "血海",
+              "code": "SP10"
+            }
+          },
+          {
+            "from_string": "三陰交 (SP6)",
+            "to": {
+              "name_zh": "三陰交",
+              "code": "SP6"
+            }
+          },
+          {
+            "from_string": "風門 (BL12)",
+            "to": {
+              "name_zh": "風門",
+              "code": "BL12"
+            }
+          }
+        ]
       }
     },
     {
@@ -41369,11 +42016,26 @@
         }
       ],
       "acupoint_protocols": [
-        "胰俞 (EX-B3)",
-        "足三里 (ST36)",
-        "三陰交 (SP6)",
-        "太溪 (KI3)",
-        "腎俞 (BL23)"
+        {
+          "name_zh": "胰俞",
+          "code": "EX-B3"
+        },
+        {
+          "name_zh": "足三里",
+          "code": "ST36"
+        },
+        {
+          "name_zh": "三陰交",
+          "code": "SP6"
+        },
+        {
+          "name_zh": "太谿",
+          "code": "KI3"
+        },
+        {
+          "name_zh": "腎俞",
+          "code": "BL23"
+        }
       ],
       "herb_formulas": [
         "玉女煎",
@@ -41596,6 +42258,48 @@
         "collected_by": null,
         "assessed": false,
         "no_source_found": false
+      },
+      "acupoint_code_normalization": {
+        "date": "2026-08-21",
+        "rule": "字串型條目「中文名 (代碼)」拆成 {name_zh, code};代碼與中文名雙重驗證(異體字視為相同),原字串保留在 string_entries_converted。",
+        "changed": [],
+        "string_entries_converted": [
+          {
+            "from_string": "胰俞 (EX-B3)",
+            "to": {
+              "name_zh": "胰俞",
+              "code": "EX-B3"
+            }
+          },
+          {
+            "from_string": "足三里 (ST36)",
+            "to": {
+              "name_zh": "足三里",
+              "code": "ST36"
+            }
+          },
+          {
+            "from_string": "三陰交 (SP6)",
+            "to": {
+              "name_zh": "三陰交",
+              "code": "SP6"
+            }
+          },
+          {
+            "from_string": "太溪 (KI3)",
+            "to": {
+              "name_zh": "太谿",
+              "code": "KI3"
+            }
+          },
+          {
+            "from_string": "腎俞 (BL23)",
+            "to": {
+              "name_zh": "腎俞",
+              "code": "BL23"
+            }
+          }
+        ]
       }
     },
     {
@@ -43146,11 +43850,26 @@
         }
       ],
       "acupoint_protocols": [
-        "太衝 (LR3)",
-        "曲池 (LI11)",
-        "風池 (GB20)",
-        "太溪 (KI3)",
-        "三陰交 (SP6)"
+        {
+          "name_zh": "太衝",
+          "code": "LR3"
+        },
+        {
+          "name_zh": "曲池",
+          "code": "LI11"
+        },
+        {
+          "name_zh": "風池",
+          "code": "GB20"
+        },
+        {
+          "name_zh": "太谿",
+          "code": "KI3"
+        },
+        {
+          "name_zh": "三陰交",
+          "code": "SP6"
+        }
       ],
       "herb_formulas": [
         "天麻鉤藤飲",
@@ -43381,6 +44100,48 @@
         "collected_by": null,
         "assessed": false,
         "no_source_found": false
+      },
+      "acupoint_code_normalization": {
+        "date": "2026-08-21",
+        "rule": "字串型條目「中文名 (代碼)」拆成 {name_zh, code};代碼與中文名雙重驗證(異體字視為相同),原字串保留在 string_entries_converted。",
+        "changed": [],
+        "string_entries_converted": [
+          {
+            "from_string": "太衝 (LR3)",
+            "to": {
+              "name_zh": "太衝",
+              "code": "LR3"
+            }
+          },
+          {
+            "from_string": "曲池 (LI11)",
+            "to": {
+              "name_zh": "曲池",
+              "code": "LI11"
+            }
+          },
+          {
+            "from_string": "風池 (GB20)",
+            "to": {
+              "name_zh": "風池",
+              "code": "GB20"
+            }
+          },
+          {
+            "from_string": "太溪 (KI3)",
+            "to": {
+              "name_zh": "太谿",
+              "code": "KI3"
+            }
+          },
+          {
+            "from_string": "三陰交 (SP6)",
+            "to": {
+              "name_zh": "三陰交",
+              "code": "SP6"
+            }
+          }
+        ]
       }
     },
     {
@@ -48462,11 +49223,26 @@
         }
       ],
       "acupoint_protocols": [
-        "聽宮 (SI19)",
-        "聽會 (GB2)",
-        "耳門 (TE21)",
-        "中渚 (TE3)",
-        "太溪 (KI3)"
+        {
+          "name_zh": "聽宮",
+          "code": "SI19"
+        },
+        {
+          "name_zh": "聽會",
+          "code": "GB2"
+        },
+        {
+          "name_zh": "耳門",
+          "code": "TE21"
+        },
+        {
+          "name_zh": "中渚",
+          "code": "TE3"
+        },
+        {
+          "name_zh": "太谿",
+          "code": "KI3"
+        }
       ],
       "herb_formulas": [
         "龍膽瀉肝湯",
@@ -48661,6 +49437,48 @@
         "collected_by": null,
         "assessed": false,
         "no_source_found": false
+      },
+      "acupoint_code_normalization": {
+        "date": "2026-08-21",
+        "rule": "字串型條目「中文名 (代碼)」拆成 {name_zh, code};代碼與中文名雙重驗證(異體字視為相同),原字串保留在 string_entries_converted。",
+        "changed": [],
+        "string_entries_converted": [
+          {
+            "from_string": "聽宮 (SI19)",
+            "to": {
+              "name_zh": "聽宮",
+              "code": "SI19"
+            }
+          },
+          {
+            "from_string": "聽會 (GB2)",
+            "to": {
+              "name_zh": "聽會",
+              "code": "GB2"
+            }
+          },
+          {
+            "from_string": "耳門 (TE21)",
+            "to": {
+              "name_zh": "耳門",
+              "code": "TE21"
+            }
+          },
+          {
+            "from_string": "中渚 (TE3)",
+            "to": {
+              "name_zh": "中渚",
+              "code": "TE3"
+            }
+          },
+          {
+            "from_string": "太溪 (KI3)",
+            "to": {
+              "name_zh": "太谿",
+              "code": "KI3"
+            }
+          }
+        ]
       }
     },
     {
@@ -49363,11 +50181,26 @@
         }
       ],
       "acupoint_protocols": [
-        "睛明 (BL1)",
-        "攢竹 (BL2)",
-        "太陽 (EX-HN5)",
-        "太溪 (KI3)",
-        "光明 (GB37)"
+        {
+          "name_zh": "睛明",
+          "code": "BL1"
+        },
+        {
+          "name_zh": "攢竹",
+          "code": "BL2"
+        },
+        {
+          "name_zh": "太陽",
+          "code": "EX-HN5"
+        },
+        {
+          "name_zh": "太谿",
+          "code": "KI3"
+        },
+        {
+          "name_zh": "光明",
+          "code": "GB37"
+        }
       ],
       "herb_formulas": [
         "杞菊地黃丸",
@@ -49569,6 +50402,48 @@
         "collected_by": null,
         "assessed": false,
         "no_source_found": false
+      },
+      "acupoint_code_normalization": {
+        "date": "2026-08-21",
+        "rule": "字串型條目「中文名 (代碼)」拆成 {name_zh, code};代碼與中文名雙重驗證(異體字視為相同),原字串保留在 string_entries_converted。",
+        "changed": [],
+        "string_entries_converted": [
+          {
+            "from_string": "睛明 (BL1)",
+            "to": {
+              "name_zh": "睛明",
+              "code": "BL1"
+            }
+          },
+          {
+            "from_string": "攢竹 (BL2)",
+            "to": {
+              "name_zh": "攢竹",
+              "code": "BL2"
+            }
+          },
+          {
+            "from_string": "太陽 (EX-HN5)",
+            "to": {
+              "name_zh": "太陽",
+              "code": "EX-HN5"
+            }
+          },
+          {
+            "from_string": "太溪 (KI3)",
+            "to": {
+              "name_zh": "太谿",
+              "code": "KI3"
+            }
+          },
+          {
+            "from_string": "光明 (GB37)",
+            "to": {
+              "name_zh": "光明",
+              "code": "GB37"
+            }
+          }
+        ]
       }
     },
     {
