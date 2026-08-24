@@ -762,6 +762,21 @@
             <label class="wide">就診目標 Goals（病人想改善什麼）<input name="goals" placeholder="想改善睡眠 / 助孕 / 減痛…" /></label>
             <label class="wide">摘要 Summary<textarea name="summary" rows="2"></textarea></label>
           </fieldset>
+
+          <!-- 臨床反思六問（CG9，docs/CLINICAL_GRAPH_TRACK.md §4）。
+               Ting：「病例記錄只是資料，反思才會把資料轉成臨床能力。」
+               病程層，一段療程結束後回頭填；單診的三問在 SOAP 的按語區。
+               全部選填、預設收合、絕不由模型預填 —— 反思被代寫就不再是
+               她的臨床判斷，而錯的反思會反過來教壞下一次的決策。 -->
+          <fieldset class="form-section case-reflection" data-nav-label="反思">
+            <legend><span class="form-section-step">↻</span>臨床反思 Reflection<small>療程告一段落再回來填；全部選填</small></legend>
+            <label class="wide">哪些有效 What worked?<textarea name="reflectionWhatWorked" rows="2" placeholder="哪一組穴、哪個方、哪次調整之後有明顯變化"></textarea></label>
+            <label class="wide">哪些沒效 What did not work?<textarea name="reflectionWhatDidNotWork" rows="2" placeholder="做了但沒反應的部分"></textarea></label>
+            <label class="wide">病人身上變了什麼 What changed?<textarea name="reflectionWhatChanged" rows="2" placeholder="症狀、舌脈、生活、情緒 —— 不只是主訴分數"></textarea></label>
+            <label class="wide">哪裡出乎意料 What surprised me?<textarea name="reflectionWhatSurprised" rows="2" placeholder="與課本或預期不同的地方，往往是最值得記的一段"></textarea></label>
+            <label class="wide">下次會怎麼改 What would I change next time?<textarea name="reflectionWhatToAdjust" rows="2" placeholder="換穴、改頻率、先問什麼、什麼時候該轉介"></textarea></label>
+            <label class="wide">我需要補什麼 What do I need to study?<textarea name="reflectionWhatToStudy" rows="2" placeholder="這個病例暴露出來的知識缺口"></textarea></label>
+          </fieldset>
         </div>
         <div id="caseSaveError" class="save-error-msg" hidden></div>
         <div class="dialog-actions">

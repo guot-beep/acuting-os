@@ -735,6 +735,17 @@ const ADVERSE_EVENT_INTERVENTION_LABELS = { acupuncture: "針刺 Acupuncture", c
 const ADVERSE_EVENT_SEVERITY_LABELS = { mild: "輕度 Mild", moderate: "中度 Moderate", severe: "重度 Severe" };
 const ADVERSE_EVENT_RESOLUTION_LABELS = { resolved: "已緩解 Resolved", resolving: "緩解中 Resolving", ongoing: "持續中 Ongoing", unknown: "不確定 Unknown" };
 const CONSENT_LABELS = { granted: "已同意 Granted", declined: "婉拒 Declined", pending: "待決 Pending" };
+/* 臨床反思六問(CG9)的題目與欄位對映。同上,必須在初始 render() 之前宣告
+ * —— renderCaseReflection 在首次 render 就會執行。順序即畫面順序。 */
+const CASE_REFLECTION_QUESTIONS = [
+  ["reflectionWhatWorked", "哪些有效"],
+  ["reflectionWhatDidNotWork", "哪些沒效"],
+  ["reflectionWhatChanged", "病人身上變了什麼"],
+  ["reflectionWhatSurprised", "哪裡出乎意料"],
+  ["reflectionWhatToAdjust", "下次會怎麼改"],
+  ["reflectionWhatToStudy", "我需要補什麼"],
+];
+
 /* 沿用上次治療的白名單(同上,必須在初始 render() 之前宣告)。
  * 鐵則:只列「今天要做的處置」。S/O/A/P、療效、證型、治則、醫囑、下次計畫
  * 一律不得加入 —— 把上一診的觀察複製成今天的紀錄就是捏造病歷。
@@ -5652,6 +5663,23 @@ function normalizeClinicalCase(value) {
           }))
       : [],
     summary: String(value.summary || ""),
+    /* 臨床反思六問(CG9,docs/CLINICAL_GRAPH_TRACK.md §4)。
+     * Ting 的原話:「病例記錄只是資料,反思才會把資料轉成臨床能力。」
+     *
+     * 病程層(case)而非單診層 —— 單診的三問(differentialConsidered /
+     * reflection / ifIneffectivePlan,LL1)早就在 SOAP 裡了;這六個是一段
+     * 療程結束後回頭看的東西。
+     *
+     * 兩條規矩來自 CG9 原文,寫在這裡是因為它們是契約不是風格:
+     *   全部選填 —— 沒寫完不擋存檔,逼填只會讓人亂填。
+     *   絕不由模型預填 —— 反思一旦被代寫就不再是她的臨床判斷,
+     *   而錯誤的反思會反過來教壞下一次的決策。 */
+    reflectionWhatWorked: String(value.reflectionWhatWorked || ""),
+    reflectionWhatDidNotWork: String(value.reflectionWhatDidNotWork || ""),
+    reflectionWhatChanged: String(value.reflectionWhatChanged || ""),
+    reflectionWhatSurprised: String(value.reflectionWhatSurprised || ""),
+    reflectionWhatToAdjust: String(value.reflectionWhatToAdjust || ""),
+    reflectionWhatToStudy: String(value.reflectionWhatToStudy || ""),
     soapNotes: Array.isArray(value.soapNotes) ? value.soapNotes.map(normalizeSoapNote) : [],
     // Codex audit HIGH#6: the READ path never synthesizes timestamps. A legacy
     // record missing createdAt/updatedAt keeps "" — C2a's latest-wins and the
@@ -8042,6 +8070,7 @@ function renderClinicalCaseDetail(item) {
       <div><small>Western Dx</small><span>${escapeHtml(item.westernConditions.join("、") || "—")}</span></div>
     </div>
     ${renderCaseTags(item)}
+    ${renderCaseReflection(item)}
     ${renderVisitBrief(item, notes)}
     ${renderCareReadinessPanel(item, notes)}
     ${renderOutcomeTrackingPanel(item)}
@@ -8105,6 +8134,25 @@ function renderClinicalCaseDetail(item) {
       setTimeout(() => card.classList.remove("soap-note-flash"), 1200);
     });
   });
+}
+
+/* 臨床反思(CG9)在病例詳情的呈現。
+ * 一句都沒寫時整塊不畫 —— 空的六個標題只會變成常態噪音,看久了連填過的
+ * 那一次都不會注意到。只印真的寫過的那幾問,沒寫的不留空列。 */
+// (CASE_REFLECTION_QUESTIONS 宣告已前移至檔頭 boot-order 區 ——
+//  renderCaseReflection 在首次 render 就會執行,留在這裡是 TDZ。)
+
+function renderCaseReflection(item) {
+  const rows = CASE_REFLECTION_QUESTIONS
+    .map(([key, label]) => [label, String(item[key] || "").trim()])
+    .filter(([, value]) => value);
+  if (!rows.length) return "";
+  return `<div class="case-reflection-panel">
+    <div class="mini-head"><strong>臨床反思 Reflection</strong><small>${rows.length}/${CASE_REFLECTION_QUESTIONS.length} 已填</small></div>
+    <div class="clinical-mini-grid">${rows.map(([label, value]) =>
+      `<div><small>${escapeHtml(label)}</small><span>${escapeHtml(value)}</span></div>`
+    ).join("")}</div>
+  </div>`;
 }
 
 function renderCaseTags(item) {
@@ -8806,6 +8854,14 @@ function openCaseEditor(item = null) {
     baselineSeverity: "",
     occupation: "",
     goals: "",
+    // CG9 反思六問也要進 fallback:水合迴圈只走 data 的鍵,漏掉就會把上一個
+    // 病例的反思留在表單上,變成別人病例的反思。
+    reflectionWhatWorked: "",
+    reflectionWhatDidNotWork: "",
+    reflectionWhatChanged: "",
+    reflectionWhatSurprised: "",
+    reflectionWhatToAdjust: "",
+    reflectionWhatToStudy: "",
     chiefComplaint: "",
     historyPresent: "",
     pastHistory: "",
@@ -9079,6 +9135,14 @@ function saveCaseFromForm(event) {
     tcmPatterns: splitList(data.tcmPatterns),
     safetyFlags: splitSafetyFlags(data.safetyFlags),   // FIX C: semicolon/newline split, not comma (Dry Clinic #3)
     summary: data.summary.trim(),
+    // CG9 反思六問(病程層)。全部選填 —— 空字串是合法且常見的狀態,
+    // 不得因為沒填就擋存檔,也不得代為生成任何一句。
+    reflectionWhatWorked: (data.reflectionWhatWorked || "").trim(),
+    reflectionWhatDidNotWork: (data.reflectionWhatDidNotWork || "").trim(),
+    reflectionWhatChanged: (data.reflectionWhatChanged || "").trim(),
+    reflectionWhatSurprised: (data.reflectionWhatSurprised || "").trim(),
+    reflectionWhatToAdjust: (data.reflectionWhatToAdjust || "").trim(),
+    reflectionWhatToStudy: (data.reflectionWhatToStudy || "").trim(),
     // HIGH#6 companion rule: an EXISTING record whose legacy createdAt is
     // missing stays missing — stamping edit-time here would falsify creation
     // time. Only a genuinely NEW record gets createdAt = now.

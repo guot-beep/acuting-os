@@ -613,6 +613,16 @@ h1 {
 }
 .soap-reflection > label { margin-top: 0.5rem; }
 
+/* 臨床反思(CG9)在病例詳情的區塊。一句都沒寫時整塊不畫(見
+   renderCaseReflection),所以這裡只需要處理「有內容」的樣子。 */
+.case-reflection-panel {
+  margin-top: 0.8rem;
+  padding: 0.7rem 0.9rem;
+  border: 1px dashed #cbb98f;
+  border-radius: 10px;
+}
+.case-reflection-panel .mini-head { margin-bottom: 0.45rem; }
+
 /* STRICTA 針刺參數:與按語區同款收合子區塊。不是每一診都記到這個顆粒度,
    但寫個案報告時必須找得到 —— 收起來是為了不吵,不是為了藏。 */
 .soap-needling {
