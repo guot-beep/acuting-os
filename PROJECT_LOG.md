@@ -1,3 +1,42 @@
+# 2026-08-24 深夜 — antigravity Task 2 驗收通過並落地:related_formulas/safety_source_url
+
+Task 2(`antigravity/herb-fill-task2`,commit `88dcdea6`)聲稱 related_formulas 293→314
+（+24 條真實方劑引用、-3 條失效引用）、safety_source_url 263→267（+4 條已驗證網址）。
+驗收流程:
+
+- **結構驗證全過**:`build-data.js`、`validate-herb-standard.js`(exit 0,E10/E11 乾淨)、
+  `check-validation-ratchet.js`(PASS 無退步)、`validate-content-junk.js`、
+  `test-branch-mergeable.js` 全 PASS。`condition_tags_en`/`actions_en`/`cautions_zh`/
+  `modern_functions_en/zh`/`contraindications_zh` 逐筆比對 0 異動(本輪禁動欄位全數守住)。
+- **-3 筆刪除逐一查證**:`formula.ma_huang_lian_qiao_chi_xiao_dou_tang`、
+  `formula.ren_shen_ge_jie_san` 兩個方劑 ID 在 `formulas.json`(223 筆)裡**根本不存在**
+  （逐 ID 比對、模糊搜尋都零命中）——刪除這三條失效引用是對的,不是誤刪真資料。
+- **+30 筆新增(淨 +24,因為同時有刪除)逐一比對 `formulas.json` composition**:
+  30 條全部命中(該藥確實出現在該方劑組成裡),0 條掛錯方。
+- **+4 筆 safety_source_url 直接開網址查證**:`herb.bai_fu_zi`(americandragon.com)
+  跟 `herb.ku_lian_pi`(cloudtcm.com/herb/6540)兩條實際 WebFetch 打開,內容確實對應
+  該藥,不是 404/假連結;另外兩條網域(cloudtcm.com/americandragon.com)跟現存 267 筆
+  裡的既有 202+62 筆完全同源,不是新發明的網域格式。**收下,乾淨的一批**。
+- **落地**:origin/main 稽核期間又前進三個 commit(pattern/condition review 修正 #104、
+  N4 西醫病名骨架卡 257→0 #105,皆與本次無關檔案)——merge 進 task2 分支、重跑
+  `build-data.js` 重生 generated 檔、五個驗證器全過、fetch 再次確認無新 commit 後
+  push HEAD:main(`60ececd6..ce47b437`)。
+- **獨立驗證**:全新 `git clone --depth 1` 核對 `herb_canon_shortlist.json` 逐位元組
+  與 HEAD 一致;**這次 clone checkout 因 `scratch/ad_cache/` 長檔名局部失敗,索引裡殘留
+  了幾千筆「D」(working-tree 缺檔導致的偽刪除),差點在補寫報告時被 `git commit` 一起
+  當真刪除提交——中途發現、整個丟棄、改在完整 checkout 過的原 worktree 補寫,沒有推
+  出去**。以後在部分 checkout 失敗的 clone 裡絕對不能跑 `git add`/`git commit`,只能拿來
+  做唯讀比對。
+- **落地後欄位覆蓋率**(363 筆):related_formulas 81%→**87%**(缺 49)、
+  safety_source_url 72%→**74%**(缺 96)、其餘欄位不變。
+  這輪產量(+24/+4)明顯小於指派時的缺口數字(70/101)——**這是預期中的正常現象,不是
+  沒做完**:剩下的缺口多半是比較冷門、來源更難查證的藥,antigravity 選擇「查不到就
+  留空」而不是硬湊,是對的做法,鐵律有守住。
+- **下一輪指派**:`docs/ANTIGRAVITY_HANDOFF.md` 已更新,Task 2 保持開放繼續掃剩下的
+  49+96 缺口(同樣鐵律),Task 1(語意品質稽核)維持排在後面等 Task 2 缺口收斂後再開工。
+
+---
+
 # 2026-08-24 Antigravity — Task 2 (related_formulas + safety_source_url 全庫缺口盤點與填補)
 
 - **做了什麼**: 完成 Task 2。全庫 363 味中藥卡盤點與處理：
