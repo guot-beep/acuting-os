@@ -1,5 +1,13 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-24] Codex Handoff — Conditions official MSK etiology B13
+
+- **Exact ids / fields**: only `cond.lumbar_spinal_stenosis`, `cond.stress_fracture`, `cond.spondylolisthesis`, and `cond.spondylolysis`; filled empty bilingual etiology, appended direct sources, and merged etiology provenance through the repository's non-overwrite fill tool. Existing pathology, risk factors, red flags, acupuncture scope, relations, and adjacent datasets were not changed.
+- **Official/professional source sets**: NIAMS + South Tees NHS for lumbar stenosis; AAOS OrthoInfo + Gloucestershire Hospitals NHS for stress fracture; AAOS + NHS for spondylolisthesis; AAOS + HSS for spondylolysis. All seven actual content URLs returned HTTP 200.
+- **Clinical distinctions**: stress fracture separates fatigue from insufficiency mechanisms; spondylolisthesis is not reduced to a pars fracture and distinguishes isthmic, degenerative, congenital, traumatic, pathologic, and postoperative mechanisms; lumbar imaging narrowing is not equated with symptomatic disease.
+- **Measured delta**: maturity `194→198 FULL_DETAIL_CANDIDATE`, `311→307 DETAIL_PARTIAL`, `0→0 SKELETON`, leaving `102` slots to 300; source entries `722→730`, sourced records `245→249`; empty etiology `288→284` while the other detail gaps remain `17 / 45 / 71`.
+- **Validation**: dry-run/apply `16 operations / 4 ids / skipped 0 / missing 0`; exact fill equality and record diff (`4 ids`, expected four top-level keys each); `build-data.js`; condition standard `505/505 clean`; ratchet; condition sources (`730`); relation registry; content junk; maturity audit; and `git diff --check` passed.
+
 ## [2026-08-24] Codex Handoff — Conditions official MSK detail B12
 
 - **Exact ids / fields**: only `cond.de_quervain`, `cond.ankle_sprain`, and `cond.myofascial_pain`; filled empty bilingual western pathology, etiology, risk factors, and acupuncture scope, then merged sources/provenance with the repository's non-overwrite fill tool. Existing summaries, western context, red flags, relations, and adjacent datasets were not changed.

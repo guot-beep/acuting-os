@@ -4398,3 +4398,10 @@ Current repo state as of this log:
 - **下一批／已知邊界**：可續做其他「內容已足、只缺 field_sources」卡；`cond.appendicitis` 與 `cond.bowel_obstruction` 的舊來源錯配仍不以新增 provenance 假裝解決，需另做 canonical 覆蓋裁定。
 
 ---
+# 2026-08-24 — Codex Conditions 肌骨官方病因補強 B13
+
+- **範圍**：只補 `cond.lumbar_spinal_stenosis`、`cond.stress_fracture`、`cond.spondylolisthesis`、`cond.spondylolysis` 原本空白的 `etiology_zh/en`，並合併直達來源與 etiology provenance；未改既有 pathology、risk factors、red flags、acupuncture scope、relations 或 Symptoms／中藥／方劑／穴位 canonical data。
+- **數字**：`FULL_DETAIL_CANDIDATE 194→198`、`DETAIL_PARTIAL 311→307`、`SKELETON 0→0`，距 300 張尚差 `102`；condition source validator 的來源項目 `722→730`、有來源記錄 `245→249`；全庫 etiology 空白 `288→284`，其他 western pathology／risk factors／acupuncture scope 缺口維持 `17／45／71`。
+- **來源與內容邊界**：使用 NIAMS、AAOS OrthoInfo、NHS 與 HSS，7 個實際內容 URL 皆 HTTP 200；stress fracture 區分 fatigue 與 insufficiency 機轉，spondylolisthesis 區分峽部型、退化型與少見病因，並明示影像狹窄不等於有症狀。
+- **驗證**：dry-run／apply 均為 `16 operations / 4 ids / skipped 0 / missing 0`；逐欄 equality、逐記錄 diff 僅 4 ids／4 expected keys；`build-data`、condition standard `505/505`、ratchet、sources `730`、relation registry、content-junk、maturity audit、`git diff --check` 均無新增 defect。
+- **未解**：etiology 仍缺 `284` 張；本批只補原空白病因與其直接來源，沒有把既有 red flags、scope 或舊 provenance 視為重新核准。
