@@ -1,3 +1,14 @@
+# 2026-08-24 Codex — Conditions 官網安全內容 B1–B6（20 張；獨立 branch）
+
+- **範圍／分工**：branch `codex/condition-safety-b1`，只改 Conditions 與其 generated bundle；未改 Claude 的 Symptoms，也未改 Antigravity／Claude 的 herb、formula、acupoint canonical。已合入 `origin/main@e4500038`，唯一衝突為 generated `knowledge_data.js`，以最新 sources 重建解決。
+- **內容批次**：14 張補入雙語 summary／clinical context／risk factors／red flags／acupuncture scope／relations 與逐欄位來源；另 6 張既有急症卡補多個政府／國家醫療機構官網與 field-level provenance。content commits：`b9ef394d`、`0ee1aef3`、`c100b47e`、`41fc6c32`、`b3751cdf`、`24ce964d`。
+- **數字 before→after**：Conditions maturity `151→171 FULL_DETAIL_CANDIDATE`、`351→334 DETAIL_PARTIAL`、`3→0 SKELETON`；direct source entries `553→632`；有來源卡 `241→245/505`；有 field_sources `465→474/505`；雙語 red flags `491→505/505`；雙語 acupuncture scope `413→427/505`；sign_symptom_ids `118→131/505`。
+- **驗證**：`build-data`、`validate-condition-standard`=`505/505 clean`、`check-validation-ratchet`、`validate-condition-sources`（632 direct entries）、`validate-relation-registry`、`validate-content-junk`、`git diff --check` 均 PASS；既有 frozen warnings 未增加。
+- **已知未解**：334 張 partial 的缺欄位互相重疊：`etiology 279`、`sources 260`、`acupuncture_scope 78`、`risk_factors 52`、`summary 42`、`western_context 42`、`field_sources 31`、`structured_relations 26`、`western_pathology 21`。`cond.appendicitis` 的「10–30 歲／家族史」並未被現引 NIDDK 頁完整支持；`cond.bowel_obstruction` 多個 inline source 誤指向 pseudo-obstruction boundary。依 canonical 覆蓋 gate 未自行刪改，需 Ting／Claude 逐筆裁定。
+- **其他線只讀盤點**：361 經穴 `361/361 template-grade`；72 奇穴 `50 strict complete / 22 needs work`。223 方劑 `216 template-grade / 7 needs work`、中英未對齊 15、correctness 既有 `1 error + 1 gap`；Symptoms `102/102 clean`。這些線本批零修改。
+
+---
+
 # 2026-08-24 深夜 — Ting 直接指出王清任逐瘀湯家族沒互相連結,Claude 直接補上(純新增)
 
 Ting:「血府逐瘀湯有很多加減 沒見到其他加減方?例如下腹逐瘀 那些很重要」。查證：
