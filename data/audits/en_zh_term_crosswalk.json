@@ -8,19 +8,20 @@
   "ambiguous_deferred 需人工裁定語域（台灣用語 vs 其他），不得用頻次自動取。"
  ],
  "authority_pairs": 1881,
+ "curated_entries": 27,
  "totals": {
-  "unique_terms": 1673,
-  "slots_total": 11550,
+  "unique_terms": 1471,
+  "slots_total": 8478,
   "by_status": {
    "junk": 8,
-   "ambiguous_deferred": 35,
-   "applied": 202,
+   "ambiguous_deferred": 8,
+   "applied": 27,
    "untranslated": 1428
   },
   "slots_by_status": {
    "junk": 172,
-   "ambiguous_deferred": 740,
-   "applied": 3072,
+   "ambiguous_deferred": 204,
+   "applied": 536,
    "untranslated": 7566
   }
  },
@@ -46,49 +47,15 @@
    "sample_formula": "白虎湯"
   },
   {
-   "term_en": "Indigestion",
-   "zh": "消化不良",
-   "status": "applied",
-   "count": 88,
-   "slots_en_mirrored": 88,
-   "sources": [
-    "herb.condition_tags"
-   ],
-   "sample_formula": "香蘇散"
-  },
-  {
    "term_en": "Dysmenorrhea",
-   "zh": null,
-   "status": "ambiguous_deferred",
+   "zh": "痛經",
+   "status": "applied",
    "count": 82,
    "slots_en_mirrored": 82,
-   "candidates": [
-    "痛經",
-    "經痛"
+   "sources": [
+    "curated:three_way_converged"
    ],
    "sample_formula": "小柴胡湯"
-  },
-  {
-   "term_en": "Influenza",
-   "zh": "流行性感冒",
-   "status": "applied",
-   "count": 80,
-   "slots_en_mirrored": 80,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "桂枝湯"
-  },
-  {
-   "term_en": "Pneumonia",
-   "zh": "肺炎",
-   "status": "applied",
-   "count": 76,
-   "slots_en_mirrored": 76,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "桂枝湯"
   },
   {
    "term_en": "Neurosis",
@@ -107,38 +74,12 @@
    "sample_formula": "涼膈散"
   },
   {
-   "term_en": "Abdominal fullness and distention",
-   "zh": "腹滿脹痛",
-   "status": "applied",
-   "count": 68,
-   "slots_en_mirrored": 68,
-   "sources": [
-    "herb.condition_tags"
-   ],
-   "sample_formula": "白虎湯"
-  },
-  {
    "term_en": "Upper respiratory tract infection",
    "zh": null,
    "status": "untranslated",
    "count": 66,
    "slots_en_mirrored": 66,
    "sample_formula": "桂枝湯"
-  },
-  {
-   "term_en": "Irregular menstruation",
-   "zh": "月經不調",
-   "status": "applied",
-   "count": 64,
-   "slots_en_mirrored": 64,
-   "sources": [
-    "condition_canon",
-    "conditions.eastern_diseases",
-    "formula.condition_tags",
-    "herb.condition_tags",
-    "config/modern_application_vocabulary.json"
-   ],
-   "sample_formula": "逍遙散"
   },
   {
    "term_en": "Cholecystitis",
@@ -157,36 +98,13 @@
    "sample_formula": "麻黃湯"
   },
   {
-   "term_en": "Bronchiectasis",
-   "zh": "支氣管擴張症",
-   "status": "applied",
-   "count": 58,
-   "slots_en_mirrored": 58,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "小青龍湯"
-  },
-  {
-   "term_en": "Chronic pancreatitis",
-   "zh": "慢性胰臟炎",
-   "status": "applied",
-   "count": 56,
-   "slots_en_mirrored": 56,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "黃連解毒湯"
-  },
-  {
    "term_en": "Urticaria",
-   "zh": null,
-   "status": "ambiguous_deferred",
+   "zh": "蕁麻疹",
+   "status": "applied",
    "count": 56,
    "slots_en_mirrored": 56,
-   "candidates": [
-    "蕁麻疹",
-    "癮疹"
+   "sources": [
+    "curated:three_way_converged"
    ],
    "sample_formula": "桂枝湯"
   },
@@ -199,26 +117,13 @@
    "sample_formula": "竹葉石膏湯"
   },
   {
-   "term_en": "Hyperthyroidism",
-   "zh": "甲狀腺亢進",
+   "term_en": "Sore throat",
+   "zh": "咽喉痛",
    "status": "applied",
    "count": 54,
    "slots_en_mirrored": 54,
    "sources": [
-    "cloudtcm_disease"
-   ],
-   "sample_formula": "白虎湯"
-  },
-  {
-   "term_en": "Sore throat",
-   "zh": null,
-   "status": "ambiguous_deferred",
-   "count": 54,
-   "slots_en_mirrored": 54,
-   "candidates": [
-    "咽喉痛",
-    "咽痛",
-    "咽喉腫痛"
+    "curated:three_way_converged"
    ],
    "sample_formula": "麻黃湯"
   },
@@ -255,38 +160,15 @@
    "sample_formula": "清胃散"
   },
   {
-   "term_en": "Rheumatoid arthritis",
-   "zh": "類風濕性關節炎",
+   "term_en": "Spermatorrhea",
+   "zh": "遺精",
    "status": "applied",
    "count": 50,
    "slots_en_mirrored": 50,
    "sources": [
-    "cloudtcm_disease"
-   ],
-   "sample_formula": "九味羌活湯"
-  },
-  {
-   "term_en": "Spermatorrhea",
-   "zh": null,
-   "status": "ambiguous_deferred",
-   "count": 50,
-   "slots_en_mirrored": 50,
-   "candidates": [
-    "遺精",
-    "滑精"
+    "curated:three_way_converged"
    ],
    "sample_formula": "導赤散"
-  },
-  {
-   "term_en": "Pertussis",
-   "zh": "百日咳",
-   "status": "applied",
-   "count": 48,
-   "slots_en_mirrored": 48,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "桑菊飲"
   },
   {
    "term_en": "Cirrhosis of the Liver",
@@ -295,18 +177,6 @@
    "count": 46,
    "slots_en_mirrored": 46,
    "sample_formula": "逍遙散"
-  },
-  {
-   "term_en": "Emphysema",
-   "zh": "肺氣腫",
-   "status": "applied",
-   "count": 46,
-   "slots_en_mirrored": 46,
-   "sources": [
-    "condition_canon",
-    "herb.condition_tags"
-   ],
-   "sample_formula": "四君子湯"
   },
   {
    "term_en": "Hemoptysis",
@@ -321,81 +191,12 @@
    "sample_formula": "黃連解毒湯"
   },
   {
-   "term_en": "Otitis media",
-   "zh": "中耳炎",
-   "status": "applied",
-   "count": 46,
-   "slots_en_mirrored": 46,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "銀翹散"
-  },
-  {
-   "term_en": "Trigeminal neuralgia",
-   "zh": "三叉神經痛",
-   "status": "applied",
-   "count": 46,
-   "slots_en_mirrored": 46,
-   "sources": [
-    "cloudtcm_disease",
-    "condition_canon"
-   ],
-   "sample_formula": "麻黃湯"
-  },
-  {
-   "term_en": "Acute tonsillitis",
-   "zh": "急性扁桃腺炎",
-   "status": "applied",
-   "count": 44,
-   "slots_en_mirrored": 44,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "銀翹散"
-  },
-  {
-   "term_en": "Anxiety",
-   "zh": "焦慮",
-   "status": "applied",
-   "count": 44,
-   "slots_en_mirrored": 44,
-   "sources": [
-    "formula.condition_tags",
-    "config/adverse_event_vocabulary.json",
-    "config/modern_application_vocabulary.json"
-   ],
-   "sample_formula": "黃連解毒湯"
-  },
-  {
    "term_en": "Chronic glomerulonephritis",
    "zh": null,
    "status": "untranslated",
    "count": 44,
    "slots_en_mirrored": 44,
    "sample_formula": "理中丸"
-  },
-  {
-   "term_en": "Morning sickness",
-   "zh": "妊娠惡阻",
-   "status": "applied",
-   "count": 44,
-   "slots_en_mirrored": 44,
-   "sources": [
-    "tdis_registry"
-   ],
-   "sample_formula": "桂枝湯"
-  },
-  {
-   "term_en": "Polyuria",
-   "zh": "多尿",
-   "status": "applied",
-   "count": 44,
-   "slots_en_mirrored": 44,
-   "sources": [
-    "herb.condition_tags"
-   ],
-   "sample_formula": "逍遙散"
   },
   {
    "term_en": "Cholelithiasis",
@@ -407,13 +208,12 @@
   },
   {
    "term_en": "Epilepsy",
-   "zh": null,
-   "status": "ambiguous_deferred",
+   "zh": "癲癇",
+   "status": "applied",
    "count": 42,
    "slots_en_mirrored": 42,
-   "candidates": [
-    "癲癇",
-    "癇病"
+   "sources": [
+    "curated:three_way_converged"
    ],
    "sample_formula": "小青龍湯"
   },
@@ -424,28 +224,6 @@
    "count": 42,
    "slots_en_mirrored": 42,
    "sample_formula": "五味消毒飲"
-  },
-  {
-   "term_en": "Schizophrenia",
-   "zh": "思覺失調症",
-   "status": "applied",
-   "count": 42,
-   "slots_en_mirrored": 42,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "竹葉石膏湯"
-  },
-  {
-   "term_en": "Ascites",
-   "zh": "腹水",
-   "status": "applied",
-   "count": 40,
-   "slots_en_mirrored": 40,
-   "sources": [
-    "herb.condition_tags"
-   ],
-   "sample_formula": "大承氣湯"
   },
   {
    "term_en": "Gingivitis",
@@ -464,41 +242,15 @@
    "sample_formula": "五味消毒飲"
   },
   {
-   "term_en": "Jaundice",
-   "zh": "黃疸",
+   "term_en": "Knee pain",
+   "zh": "膝痛",
    "status": "applied",
    "count": 40,
    "slots_en_mirrored": 40,
    "sources": [
-    "tdis_registry",
-    "symptoms",
-    "formula.condition_tags"
-   ],
-   "sample_formula": "黃連解毒湯"
-  },
-  {
-   "term_en": "Knee pain",
-   "zh": null,
-   "status": "ambiguous_deferred",
-   "count": 40,
-   "slots_en_mirrored": 40,
-   "candidates": [
-    "膝蓋痛",
-    "膝痛"
+    "curated:three_way_converged"
    ],
    "sample_formula": "理中丸"
-  },
-  {
-   "term_en": "Numbness",
-   "zh": "麻木",
-   "status": "applied",
-   "count": 40,
-   "slots_en_mirrored": 40,
-   "sources": [
-    "tdis_registry",
-    "symptoms"
-   ],
-   "sample_formula": "麻黃湯"
   },
   {
    "term_en": "Periodic paralysis",
@@ -533,34 +285,11 @@
    "sample_formula": "小柴胡湯"
   },
   {
-   "term_en": "Bronchitis",
-   "zh": "支氣管炎",
-   "status": "applied",
-   "count": 38,
-   "slots_en_mirrored": 38,
-   "sources": [
-    "formula.condition_tags",
-    "herb.condition_tags"
-   ],
-   "sample_formula": "桂枝湯"
-  },
-  {
    "term_en": "Congestive Heart failure",
    "zh": null,
    "status": "untranslated",
    "count": 38,
    "slots_en_mirrored": 38,
-   "sample_formula": "小青龍湯"
-  },
-  {
-   "term_en": "Conjunctivitis",
-   "zh": "結膜炎",
-   "status": "applied",
-   "count": 38,
-   "slots_en_mirrored": 38,
-   "sources": [
-    "condition_canon"
-   ],
    "sample_formula": "小青龍湯"
   },
   {
@@ -580,29 +309,6 @@
    "sample_formula": "桂枝湯"
   },
   {
-   "term_en": "Hoarseness",
-   "zh": "聲音嘶啞",
-   "status": "applied",
-   "count": 38,
-   "slots_en_mirrored": 38,
-   "sources": [
-    "cloudtcm_disease",
-    "herb.condition_tags"
-   ],
-   "sample_formula": "桑菊飲"
-  },
-  {
-   "term_en": "Hypothyroidism",
-   "zh": "甲狀腺機能減退",
-   "status": "applied",
-   "count": 38,
-   "slots_en_mirrored": 38,
-   "sources": [
-    "cloudtcm_disease"
-   ],
-   "sample_formula": "痛瀉要方"
-  },
-  {
    "term_en": "Hysterical paralysis",
    "zh": null,
    "status": "untranslated",
@@ -620,26 +326,14 @@
   },
   {
    "term_en": "Toothache",
-   "zh": null,
-   "status": "ambiguous_deferred",
+   "zh": "牙痛",
+   "status": "applied",
    "count": 38,
    "slots_en_mirrored": 38,
-   "candidates": [
-    "牙齒痛",
-    "牙痛"
+   "sources": [
+    "curated:three_way_converged"
    ],
    "sample_formula": "麻黃湯"
-  },
-  {
-   "term_en": "Glaucoma",
-   "zh": "青光眼",
-   "status": "applied",
-   "count": 36,
-   "slots_en_mirrored": 36,
-   "sources": [
-    "cloudtcm_disease"
-   ],
-   "sample_formula": "犀角地黃湯"
   },
   {
    "term_en": "Meniere's disease",
@@ -667,13 +361,12 @@
   },
   {
    "term_en": "Acne",
-   "zh": null,
-   "status": "ambiguous_deferred",
+   "zh": "痤瘡",
+   "status": "applied",
    "count": 34,
    "slots_en_mirrored": 34,
-   "candidates": [
-    "痤瘡",
-    "粉刺"
+   "sources": [
+    "curated:three_way_converged"
    ],
    "sample_formula": "荊防敗毒散"
   },
@@ -686,34 +379,12 @@
    "sample_formula": "瀉白散"
   },
   {
-   "term_en": "Coronary artery disease",
-   "zh": "冠心病",
-   "status": "applied",
-   "count": 34,
-   "slots_en_mirrored": 34,
-   "sources": [
-    "herb.condition_tags"
-   ],
-   "sample_formula": "半夏瀉心湯"
-  },
-  {
    "term_en": "Ear pain",
    "zh": null,
    "status": "untranslated",
    "count": 34,
    "slots_en_mirrored": 34,
    "sample_formula": "銀翹散"
-  },
-  {
-   "term_en": "Hematemesis",
-   "zh": "吐血",
-   "status": "applied",
-   "count": 34,
-   "slots_en_mirrored": 34,
-   "sources": [
-    "herb.condition_tags"
-   ],
-   "sample_formula": "竹葉石膏湯"
   },
   {
    "term_en": "The sequelae of poliomyelitis",
@@ -724,56 +395,12 @@
    "sample_formula": "五味消毒飲"
   },
   {
-   "term_en": "Viral hepatitis",
-   "zh": "病毒性肝炎",
-   "status": "applied",
-   "count": 34,
-   "slots_en_mirrored": 34,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "白虎湯"
-  },
-  {
-   "term_en": "Acute gastroenteritis",
-   "zh": "急性腸胃炎",
-   "status": "applied",
-   "count": 32,
-   "slots_en_mirrored": 32,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "香蘇散"
-  },
-  {
    "term_en": "Dermatitis",
    "zh": null,
    "status": "untranslated",
    "count": 32,
    "slots_en_mirrored": 32,
    "sample_formula": "荊防敗毒散"
-  },
-  {
-   "term_en": "Diabetes mellitus",
-   "zh": "糖尿病",
-   "status": "applied",
-   "count": 32,
-   "slots_en_mirrored": 32,
-   "sources": [
-    "cloudtcm_disease"
-   ],
-   "sample_formula": "白虎湯"
-  },
-  {
-   "term_en": "Enteritis",
-   "zh": "腸炎",
-   "status": "applied",
-   "count": 32,
-   "slots_en_mirrored": 32,
-   "sources": [
-    "herb.condition_tags"
-   ],
-   "sample_formula": "小青龍湯"
   },
   {
    "term_en": "Menopause syndrome",
@@ -800,18 +427,6 @@
    "sample_formula": "黃連阿膠湯"
   },
   {
-   "term_en": "Premenstrual syndrome",
-   "zh": "經前症候群",
-   "status": "applied",
-   "count": 32,
-   "slots_en_mirrored": 32,
-   "sources": [
-    "condition_canon",
-    "config/modern_application_vocabulary.json"
-   ],
-   "sample_formula": "小柴胡湯"
-  },
-  {
    "term_en": "Progressive myodystrophy",
    "zh": null,
    "status": "untranslated",
@@ -836,17 +451,6 @@
    "sample_formula": "白虎湯"
   },
   {
-   "term_en": "Acute pancreatitis",
-   "zh": "急性胰臟炎",
-   "status": "applied",
-   "count": 30,
-   "slots_en_mirrored": 30,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "黃連解毒湯"
-  },
-  {
    "term_en": "Allergic purpura",
    "zh": null,
    "status": "untranslated",
@@ -855,56 +459,12 @@
    "sample_formula": "桂枝湯"
   },
   {
-   "term_en": "Beriberi",
-   "zh": "腳氣",
-   "status": "applied",
-   "count": 30,
-   "slots_en_mirrored": 30,
-   "sources": [
-    "herb.condition_tags"
-   ],
-   "sample_formula": "大承氣湯"
-  },
-  {
-   "term_en": "Lung cancer",
-   "zh": "肺癌",
-   "status": "applied",
-   "count": 30,
-   "slots_en_mirrored": 30,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "清營湯"
-  },
-  {
    "term_en": "Osteoarthritis",
    "zh": null,
    "status": "untranslated",
    "count": 30,
    "slots_en_mirrored": 30,
    "sample_formula": "白虎湯"
-  },
-  {
-   "term_en": "Pleurisy",
-   "zh": "肋膜炎",
-   "status": "applied",
-   "count": 30,
-   "slots_en_mirrored": 30,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "清營湯"
-  },
-  {
-   "term_en": "Acute bronchitis",
-   "zh": "急性支氣管炎",
-   "status": "applied",
-   "count": 28,
-   "slots_en_mirrored": 28,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "麻黃湯"
   },
   {
    "term_en": "Anxiety neurosis",
@@ -931,35 +491,12 @@
    "sample_formula": "涼膈散"
   },
   {
-   "term_en": "Gout",
-   "zh": "痛風",
-   "status": "applied",
-   "count": 28,
-   "slots_en_mirrored": 28,
-   "sources": [
-    "cloudtcm_disease",
-    "condition_canon"
-   ],
-   "sample_formula": "當歸四逆湯"
-  },
-  {
    "term_en": "Liver cancer",
    "zh": null,
    "status": "untranslated",
    "count": 28,
    "slots_en_mirrored": 28,
    "sample_formula": "黃連解毒湯"
-  },
-  {
-   "term_en": "Measles",
-   "zh": "麻疹",
-   "status": "applied",
-   "count": 28,
-   "slots_en_mirrored": 28,
-   "sources": [
-    "tdis_registry"
-   ],
-   "sample_formula": "升麻葛根湯"
   },
   {
    "term_en": "Myalgic encephalomyelitis",
@@ -984,17 +521,6 @@
    "count": 28,
    "slots_en_mirrored": 28,
    "sample_formula": "犀角地黃湯"
-  },
-  {
-   "term_en": "Parkinson's disease",
-   "zh": "巴金森氏症",
-   "status": "applied",
-   "count": 28,
-   "slots_en_mirrored": 28,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "八珍湯"
   },
   {
    "term_en": "Periodontitis",
@@ -1024,17 +550,6 @@
     "白疕"
    ],
    "sample_formula": "桂枝湯"
-  },
-  {
-   "term_en": "Strangury",
-   "zh": "淋證",
-   "status": "applied",
-   "count": 28,
-   "slots_en_mirrored": 28,
-   "sources": [
-    "tdis_registry"
-   ],
-   "sample_formula": "導赤散"
   },
   {
    "term_en": "Stress",
@@ -1069,17 +584,6 @@
    "sample_formula": "導赤散"
   },
   {
-   "term_en": "Heel pain",
-   "zh": "腳跟痛",
-   "status": "applied",
-   "count": 26,
-   "slots_en_mirrored": 26,
-   "sources": [
-    "cloudtcm_disease"
-   ],
-   "sample_formula": "當歸補血湯"
-  },
-  {
    "term_en": "Hemafecia",
    "zh": null,
    "status": "untranslated",
@@ -1096,17 +600,6 @@
    "sample_formula": "竹葉石膏湯"
   },
   {
-   "term_en": "Intercostal neuralgia",
-   "zh": "肋間神經疼痛",
-   "status": "applied",
-   "count": 26,
-   "slots_en_mirrored": 26,
-   "sources": [
-    "cloudtcm_disease"
-   ],
-   "sample_formula": "龍膽瀉肝湯"
-  },
-  {
    "term_en": "Meniere’s disease",
    "zh": null,
    "status": "untranslated",
@@ -1115,47 +608,12 @@
    "sample_formula": "逍遙散"
   },
   {
-   "term_en": "Menopause",
-   "zh": "更年期",
-   "status": "applied",
-   "count": 26,
-   "slots_en_mirrored": 26,
-   "sources": [
-    "formula.condition_tags",
-    "herb.condition_tags",
-    "config/modern_application_vocabulary.json"
-   ],
-   "sample_formula": "加味逍遙散"
-  },
-  {
-   "term_en": "Nephrotic syndrome",
-   "zh": "腎病症候群",
-   "status": "applied",
-   "count": 26,
-   "slots_en_mirrored": 26,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "附子理中丸"
-  },
-  {
    "term_en": "Optic atrophy",
    "zh": null,
    "status": "untranslated",
    "count": 26,
    "slots_en_mirrored": 26,
    "sample_formula": "加味逍遙散"
-  },
-  {
-   "term_en": "Urinary tract infection",
-   "zh": "泌尿道感染",
-   "status": "applied",
-   "count": 26,
-   "slots_en_mirrored": 26,
-   "sources": [
-    "herb.condition_tags"
-   ],
-   "sample_formula": "黃連解毒湯"
   },
   {
    "term_en": "Arteriosclerosis",
@@ -1174,46 +632,12 @@
    "sample_formula": "九味羌活湯"
   },
   {
-   "term_en": "Breast cancer",
-   "zh": "乳癌",
-   "status": "applied",
-   "count": 24,
-   "slots_en_mirrored": 24,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "逍遙散"
-  },
-  {
    "term_en": "Epstein-Barr virus syndrome",
    "zh": null,
    "status": "untranslated",
    "count": 24,
    "slots_en_mirrored": 24,
    "sample_formula": "導赤散"
-  },
-  {
-   "term_en": "Erysipelas",
-   "zh": "丹毒",
-   "status": "applied",
-   "count": 24,
-   "slots_en_mirrored": 24,
-   "sources": [
-    "tdis_registry",
-    "herb.condition_tags"
-   ],
-   "sample_formula": "九味羌活湯"
-  },
-  {
-   "term_en": "Herpes zoster",
-   "zh": "蛇串瘡",
-   "status": "applied",
-   "count": 24,
-   "slots_en_mirrored": 24,
-   "sources": [
-    "tdis_registry"
-   ],
-   "sample_formula": "荊防敗毒散"
   },
   {
    "term_en": "Hysteria",
@@ -1296,52 +720,6 @@
    "sample_formula": "小柴胡湯"
   },
   {
-   "term_en": "Migraine",
-   "zh": "偏頭痛",
-   "status": "applied",
-   "count": 22,
-   "slots_en_mirrored": 22,
-   "sources": [
-    "cloudtcm_disease",
-    "condition_canon",
-    "herb.condition_tags"
-   ],
-   "sample_formula": "九味羌活湯"
-  },
-  {
-   "term_en": "Scanty menstruation",
-   "zh": "月經過少",
-   "status": "applied",
-   "count": 22,
-   "slots_en_mirrored": 22,
-   "sources": [
-    "tdis_registry"
-   ],
-   "sample_formula": "逍遙散"
-  },
-  {
-   "term_en": "Tongue pain",
-   "zh": "舌頭痛",
-   "status": "applied",
-   "count": 22,
-   "slots_en_mirrored": 22,
-   "sources": [
-    "cloudtcm_disease"
-   ],
-   "sample_formula": "銀翹散"
-  },
-  {
-   "term_en": "Angina pectoris",
-   "zh": "心絞痛",
-   "status": "applied",
-   "count": 20,
-   "slots_en_mirrored": 20,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "小柴胡湯"
-  },
-  {
    "term_en": "Aphasia",
    "zh": null,
    "status": "untranslated",
@@ -1356,28 +734,6 @@
    "count": 20,
    "slots_en_mirrored": 20,
    "sample_formula": "當歸四逆湯"
-  },
-  {
-   "term_en": "Blepharitis",
-   "zh": "眼瞼炎",
-   "status": "applied",
-   "count": 20,
-   "slots_en_mirrored": 20,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "桑菊飲"
-  },
-  {
-   "term_en": "Cervicitis",
-   "zh": "子宮頸炎",
-   "status": "applied",
-   "count": 20,
-   "slots_en_mirrored": 20,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "加味逍遙散"
   },
   {
    "term_en": "Chronic enteritis",
@@ -1404,17 +760,6 @@
    "sample_formula": "涼膈散"
   },
   {
-   "term_en": "Eclampsia",
-   "zh": "子癇",
-   "status": "applied",
-   "count": 20,
-   "slots_en_mirrored": 20,
-   "sources": [
-    "tdis_registry"
-   ],
-   "sample_formula": "桂枝湯"
-  },
-  {
    "term_en": "Giardiasis",
    "zh": null,
    "status": "untranslated",
@@ -1437,17 +782,6 @@
    "count": 20,
    "slots_en_mirrored": 20,
    "sample_formula": "黃連解毒湯"
-  },
-  {
-   "term_en": "Habitual miscarriage",
-   "zh": "滑胎",
-   "status": "applied",
-   "count": 20,
-   "slots_en_mirrored": 20,
-   "sources": [
-    "tdis_registry"
-   ],
-   "sample_formula": "膠艾湯"
   },
   {
    "term_en": "Intestinal tuberculosis",
@@ -1483,13 +817,12 @@
   },
   {
    "term_en": "Mastitis",
-   "zh": null,
-   "status": "ambiguous_deferred",
+   "zh": "乳腺炎",
+   "status": "applied",
    "count": 20,
    "slots_en_mirrored": 20,
-   "candidates": [
-    "乳腺炎",
-    "乳癰"
+   "sources": [
+    "curated:three_way_converged"
    ],
    "sample_formula": "荊防敗毒散"
   },
@@ -1508,18 +841,6 @@
    "count": 20,
    "slots_en_mirrored": 20,
    "sample_formula": "銀翹散"
-  },
-  {
-   "term_en": "Tourette syndrome",
-   "zh": "妥瑞氏症",
-   "status": "applied",
-   "count": 20,
-   "slots_en_mirrored": 20,
-   "sources": [
-    "cloudtcm_disease",
-    "condition_canon"
-   ],
-   "sample_formula": "痛瀉要方"
   },
   {
    "term_en": "Urolithiasis",
@@ -1554,17 +875,6 @@
    "sample_formula": "黃連解毒湯"
   },
   {
-   "term_en": "Biliary ascariasis",
-   "zh": "膽道蛔蟲",
-   "status": "applied",
-   "count": 18,
-   "slots_en_mirrored": 18,
-   "sources": [
-    "herb.condition_tags"
-   ],
-   "sample_formula": "大承氣湯"
-  },
-  {
    "term_en": "Eye pain",
    "zh": null,
    "status": "untranslated",
@@ -1573,46 +883,12 @@
    "sample_formula": "柴葛解肌湯"
   },
   {
-   "term_en": "Hemiplegia",
-   "zh": "半身不遂",
-   "status": "applied",
-   "count": 18,
-   "slots_en_mirrored": 18,
-   "sources": [
-    "cloudtcm_disease",
-    "herb.condition_tags"
-   ],
-   "sample_formula": "杞菊地黃丸"
-  },
-  {
    "term_en": "Kidney failure",
    "zh": null,
    "status": "untranslated",
    "count": 18,
    "slots_en_mirrored": 18,
    "sample_formula": "犀角地黃湯"
-  },
-  {
-   "term_en": "Narcolepsy",
-   "zh": "猝睡症",
-   "status": "applied",
-   "count": 18,
-   "slots_en_mirrored": 18,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "加味逍遙散"
-  },
-  {
-   "term_en": "Neck pain and stiffness",
-   "zh": "脖子頸項酸痛",
-   "status": "applied",
-   "count": 18,
-   "slots_en_mirrored": 18,
-   "sources": [
-    "cloudtcm_disease"
-   ],
-   "sample_formula": "荊防敗毒散"
   },
   {
    "term_en": "Nervous exhaustion",
@@ -1673,17 +949,6 @@
    "count": 16,
    "slots_en_mirrored": 16,
    "sample_formula": "銀翹散"
-  },
-  {
-   "term_en": "Celiac disease",
-   "zh": "乳糜瀉",
-   "status": "applied",
-   "count": 16,
-   "slots_en_mirrored": 16,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "半夏瀉心湯"
   },
   {
    "term_en": "Cerebrovascular accident",
@@ -1750,38 +1015,15 @@
    "sample_formula": "逍遙散"
   },
   {
-   "term_en": "Mania",
-   "zh": "癲狂",
+   "term_en": "Nausea",
+   "zh": "噁心",
    "status": "applied",
    "count": 16,
    "slots_en_mirrored": 16,
    "sources": [
-    "herb.condition_tags"
-   ],
-   "sample_formula": "大承氣湯"
-  },
-  {
-   "term_en": "Nausea",
-   "zh": null,
-   "status": "ambiguous_deferred",
-   "count": 16,
-   "slots_en_mirrored": 16,
-   "candidates": [
-    "噁心反胃",
-    "噁心"
+    "curated:three_way_converged"
    ],
    "sample_formula": "逍遙散"
-  },
-  {
-   "term_en": "Perimenopausal syndrome",
-   "zh": "絕經前後諸證",
-   "status": "applied",
-   "count": 16,
-   "slots_en_mirrored": 16,
-   "sources": [
-    "tdis_registry"
-   ],
-   "sample_formula": "腎氣丸"
   },
   {
    "term_en": "Perspiration",
@@ -1816,17 +1058,6 @@
    "sample_formula": "加味逍遙散"
   },
   {
-   "term_en": "Primary dysmenorrhea",
-   "zh": "原發性痛經",
-   "status": "applied",
-   "count": 16,
-   "slots_en_mirrored": 16,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "大黃牡丹湯"
-  },
-  {
    "term_en": "Profuse perspiration",
    "zh": null,
    "status": "untranslated",
@@ -1841,17 +1072,6 @@
    "count": 16,
    "slots_en_mirrored": 16,
    "sample_formula": "涼膈散"
-  },
-  {
-   "term_en": "Systemic lupus erythematosus",
-   "zh": "系統性紅斑性狼瘡",
-   "status": "applied",
-   "count": 16,
-   "slots_en_mirrored": 16,
-   "sources": [
-    "cloudtcm_disease"
-   ],
-   "sample_formula": "生脈散"
   },
   {
    "term_en": "Thrombophlebitis",
@@ -1870,17 +1090,6 @@
    "sample_formula": "犀角地黃湯"
   },
   {
-   "term_en": "Acute cholecystitis",
-   "zh": "急性膽囊炎",
-   "status": "applied",
-   "count": 14,
-   "slots_en_mirrored": 14,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "黃連解毒湯"
-  },
-  {
    "term_en": "Addison's disease",
    "zh": null,
    "status": "untranslated",
@@ -1895,17 +1104,6 @@
    "count": 14,
    "slots_en_mirrored": 14,
    "sample_formula": "補陽還五湯"
-  },
-  {
-   "term_en": "Cardiac arrhythmia",
-   "zh": "心律不整",
-   "status": "applied",
-   "count": 14,
-   "slots_en_mirrored": 14,
-   "sources": [
-    "cloudtcm_disease"
-   ],
-   "sample_formula": "四君子湯"
   },
   {
    "term_en": "Chronic obstructive pulmonary disease",
@@ -1924,34 +1122,12 @@
    "sample_formula": "右歸丸"
   },
   {
-   "term_en": "Costochondritis",
-   "zh": "肋軟骨炎",
-   "status": "applied",
-   "count": 14,
-   "slots_en_mirrored": 14,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "一貫煎"
-  },
-  {
    "term_en": "Drug-induced dermatitis",
    "zh": null,
    "status": "untranslated",
    "count": 14,
    "slots_en_mirrored": 14,
    "sample_formula": "銀翹散"
-  },
-  {
-   "term_en": "Early menstruation",
-   "zh": "月經先期",
-   "status": "applied",
-   "count": 14,
-   "slots_en_mirrored": 14,
-   "sources": [
-    "tdis_registry"
-   ],
-   "sample_formula": "逍遙散"
   },
   {
    "term_en": "Ephidrosis",
@@ -1986,17 +1162,6 @@
    "sample_formula": "四君子湯"
   },
   {
-   "term_en": "Gastric ulcer",
-   "zh": "胃潰瘍",
-   "status": "applied",
-   "count": 14,
-   "slots_en_mirrored": 14,
-   "sources": [
-    "herb.condition_tags"
-   ],
-   "sample_formula": "大柴胡湯"
-  },
-  {
    "term_en": "Globus hystericus",
    "zh": null,
    "status": "untranslated",
@@ -2011,18 +1176,6 @@
    "count": 14,
    "slots_en_mirrored": 14,
    "sample_formula": "荊防敗毒散"
-  },
-  {
-   "term_en": "Hiccup",
-   "zh": "呃逆",
-   "status": "applied",
-   "count": 14,
-   "slots_en_mirrored": 14,
-   "sources": [
-    "tdis_registry",
-    "herb.condition_tags"
-   ],
-   "sample_formula": "竹葉石膏湯"
   },
   {
    "term_en": "Hordeolum",
@@ -2049,47 +1202,12 @@
    "sample_formula": "涼膈散"
   },
   {
-   "term_en": "Nasal congestion",
-   "zh": "鼻塞",
-   "status": "applied",
-   "count": 14,
-   "slots_en_mirrored": 14,
-   "sources": [
-    "cloudtcm_disease",
-    "symptoms",
-    "herb.condition_tags"
-   ],
-   "sample_formula": "麻黃湯"
-  },
-  {
    "term_en": "Panic attacks",
    "zh": null,
    "status": "untranslated",
    "count": 14,
    "slots_en_mirrored": 14,
    "sample_formula": "竹葉石膏湯"
-  },
-  {
-   "term_en": "Peripheral neuropathy",
-   "zh": "周邊神經病變",
-   "status": "applied",
-   "count": 14,
-   "slots_en_mirrored": 14,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "麻黃湯"
-  },
-  {
-   "term_en": "Prolonged menstruation",
-   "zh": "經期延長",
-   "status": "applied",
-   "count": 14,
-   "slots_en_mirrored": 14,
-   "sources": [
-    "tdis_registry"
-   ],
-   "sample_formula": "補中益氣湯"
   },
   {
    "term_en": "Pyelitis",
@@ -2130,21 +1248,6 @@
    "count": 14,
    "slots_en_mirrored": 14,
    "sample_formula": "四君子湯"
-  },
-  {
-   "term_en": "Vomiting",
-   "zh": "嘔吐",
-   "status": "applied",
-   "count": 14,
-   "slots_en_mirrored": 14,
-   "sources": [
-    "cloudtcm_disease",
-    "tdis_registry",
-    "symptoms",
-    "formula.condition_tags",
-    "herb.condition_tags"
-   ],
-   "sample_formula": "香蘇散"
   },
   {
    "term_en": "Acute enteritis",
@@ -2188,27 +1291,14 @@
   },
   {
    "term_en": "Convulsions",
-   "zh": null,
-   "status": "ambiguous_deferred",
-   "count": 12,
-   "slots_en_mirrored": 12,
-   "candidates": [
-    "驚厥",
-    "驚風抽搐",
-    "抽搐"
-   ],
-   "sample_formula": "清營湯"
-  },
-  {
-   "term_en": "Ectopic pregnancy",
-   "zh": "子宮外孕",
+   "zh": "抽搐",
    "status": "applied",
    "count": 12,
    "slots_en_mirrored": 12,
    "sources": [
-    "condition_canon"
+    "curated:three_way_converged"
    ],
-   "sample_formula": "四物湯"
+   "sample_formula": "清營湯"
   },
   {
    "term_en": "Encephalitis",
@@ -2219,46 +1309,12 @@
    "sample_formula": "黃連解毒湯"
   },
   {
-   "term_en": "Facial pain",
-   "zh": "面痛",
-   "status": "applied",
-   "count": 12,
-   "slots_en_mirrored": 12,
-   "sources": [
-    "tdis_registry"
-   ],
-   "sample_formula": "涼膈散"
-  },
-  {
    "term_en": "Fibrocystic breast disease",
    "zh": null,
    "status": "untranslated",
    "count": 12,
    "slots_en_mirrored": 12,
    "sample_formula": "四君子湯"
-  },
-  {
-   "term_en": "Fibromyalgia",
-   "zh": "纖維肌痛症",
-   "status": "applied",
-   "count": 12,
-   "slots_en_mirrored": 12,
-   "sources": [
-    "cloudtcm_disease",
-    "condition_canon"
-   ],
-   "sample_formula": "九味羌活湯"
-  },
-  {
-   "term_en": "Frequent urination",
-   "zh": "小便頻數",
-   "status": "applied",
-   "count": 12,
-   "slots_en_mirrored": 12,
-   "sources": [
-    "herb.condition_tags"
-   ],
-   "sample_formula": "小建中湯"
   },
   {
    "term_en": "Gastrointestinal neurosis",
@@ -2293,17 +1349,6 @@
    "sample_formula": "小柴胡湯"
   },
   {
-   "term_en": "Intestinal obstruction",
-   "zh": "腸阻塞",
-   "status": "applied",
-   "count": 12,
-   "slots_en_mirrored": 12,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "大黃牡丹湯"
-  },
-  {
    "term_en": "Keratitis",
    "zh": null,
    "status": "untranslated",
@@ -2336,29 +1381,6 @@
    "sample_formula": "桑菊飲"
   },
   {
-   "term_en": "Proteinuria",
-   "zh": "蛋白尿",
-   "status": "applied",
-   "count": 12,
-   "slots_en_mirrored": 12,
-   "sources": [
-    "condition_canon",
-    "herb.condition_tags"
-   ],
-   "sample_formula": "參苓白朮散"
-  },
-  {
-   "term_en": "Purpura",
-   "zh": "紫斑",
-   "status": "applied",
-   "count": 12,
-   "slots_en_mirrored": 12,
-   "sources": [
-    "herb.condition_tags"
-   ],
-   "sample_formula": "黃連解毒湯"
-  },
-  {
    "term_en": "Rheumatism",
    "zh": null,
    "status": "untranslated",
@@ -2389,17 +1411,6 @@
    "count": 12,
    "slots_en_mirrored": 12,
    "sample_formula": "四君子湯"
-  },
-  {
-   "term_en": "Tonsillitis",
-   "zh": "扁桃腺炎",
-   "status": "applied",
-   "count": 12,
-   "slots_en_mirrored": 12,
-   "sources": [
-    "cloudtcm_disease"
-   ],
-   "sample_formula": "柴葛解肌湯"
   },
   {
    "term_en": "Unilateral pain",
@@ -2498,28 +1509,6 @@
    "sample_formula": "清骨散"
   },
   {
-   "term_en": "Dyspepsia",
-   "zh": "消化不良",
-   "status": "applied",
-   "count": 10,
-   "slots_en_mirrored": 10,
-   "sources": [
-    "config/modern_application_vocabulary.json"
-   ],
-   "sample_formula": "理中丸"
-  },
-  {
-   "term_en": "Dysuria",
-   "zh": "尿痛",
-   "status": "applied",
-   "count": 10,
-   "slots_en_mirrored": 10,
-   "sources": [
-    "symptoms"
-   ],
-   "sample_formula": "導赤散"
-  },
-  {
    "term_en": "Encephalitis B",
    "zh": null,
    "status": "untranslated",
@@ -2576,28 +1565,6 @@
    "sample_formula": "犀角地黃湯"
   },
   {
-   "term_en": "Hot flashes",
-   "zh": "潮熱",
-   "status": "applied",
-   "count": 10,
-   "slots_en_mirrored": 10,
-   "sources": [
-    "cloudtcm_disease"
-   ],
-   "sample_formula": "竹葉石膏湯"
-  },
-  {
-   "term_en": "Hydrocele",
-   "zh": "鞘膜積液",
-   "status": "applied",
-   "count": 10,
-   "slots_en_mirrored": 10,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "補中益氣湯"
-  },
-  {
    "term_en": "Hyperlipoproteinemia",
    "zh": null,
    "status": "untranslated",
@@ -2612,17 +1579,6 @@
    "count": 10,
    "slots_en_mirrored": 10,
    "sample_formula": "知柏地黃丸"
-  },
-  {
-   "term_en": "Leukemia",
-   "zh": "白血病",
-   "status": "applied",
-   "count": 10,
-   "slots_en_mirrored": 10,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "小建中湯"
   },
   {
    "term_en": "Lochioschesis",
@@ -2665,25 +1621,13 @@
    "sample_formula": "清營湯"
   },
   {
-   "term_en": "Orchitis",
-   "zh": "睪丸炎",
+   "term_en": "Osteoporosis",
+   "zh": "骨質疏鬆症",
    "status": "applied",
    "count": 10,
    "slots_en_mirrored": 10,
    "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "吳茱萸湯"
-  },
-  {
-   "term_en": "Osteoporosis",
-   "zh": null,
-   "status": "ambiguous_deferred",
-   "count": 10,
-   "slots_en_mirrored": 10,
-   "candidates": [
-    "骨質疏鬆症",
-    "骨質疏鬆"
+    "curated:three_way_converged"
    ],
    "sample_formula": "參苓白朮散"
   },
@@ -2705,13 +1649,12 @@
   },
   {
    "term_en": "Polycystic ovary syndrome",
-   "zh": null,
-   "status": "ambiguous_deferred",
+   "zh": "多囊性卵巢症候群",
+   "status": "applied",
    "count": 10,
    "slots_en_mirrored": 10,
-   "candidates": [
-    "多囊性卵巢症候群",
-    "多囊卵巢症候群"
+   "sources": [
+    "curated:three_way_converged"
    ],
    "sample_formula": "加味逍遙散"
   },
@@ -2738,17 +1681,6 @@
    "count": 10,
    "slots_en_mirrored": 10,
    "sample_formula": "白虎湯"
-  },
-  {
-   "term_en": "Pterygium",
-   "zh": "翼狀胬肉",
-   "status": "applied",
-   "count": 10,
-   "slots_en_mirrored": 10,
-   "sources": [
-    "herb.condition_tags"
-   ],
-   "sample_formula": "導赤散"
   },
   {
    "term_en": "Rheumatic Heart disease",
@@ -2789,28 +1721,6 @@
    "count": 10,
    "slots_en_mirrored": 10,
    "sample_formula": "竹葉石膏湯"
-  },
-  {
-   "term_en": "Upper gastrointestinal bleeding",
-   "zh": "上消化道出血",
-   "status": "applied",
-   "count": 10,
-   "slots_en_mirrored": 10,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "犀角地黃湯"
-  },
-  {
-   "term_en": "Urethritis",
-   "zh": "尿道炎",
-   "status": "applied",
-   "count": 10,
-   "slots_en_mirrored": 10,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "導赤散"
   },
   {
    "term_en": "Yawning",
@@ -2913,17 +1823,6 @@
    "sample_formula": "加味逍遙散"
   },
   {
-   "term_en": "Cervical spondylosis",
-   "zh": "頸椎病",
-   "status": "applied",
-   "count": 8,
-   "slots_en_mirrored": 8,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "補陽還五湯"
-  },
-  {
    "term_en": "Chronic cholecystitis",
    "zh": null,
    "status": "untranslated",
@@ -2972,17 +1871,6 @@
    "sample_formula": "四物湯"
   },
   {
-   "term_en": "Emotional instability",
-   "zh": "情緒不穩",
-   "status": "applied",
-   "count": 8,
-   "slots_en_mirrored": 8,
-   "sources": [
-    "herb.condition_tags"
-   ],
-   "sample_formula": "黃連解毒湯"
-  },
-  {
    "term_en": "Endometritis",
    "zh": null,
    "status": "untranslated",
@@ -2992,25 +1880,23 @@
   },
   {
    "term_en": "Epigastric pain",
-   "zh": null,
-   "status": "ambiguous_deferred",
+   "zh": "胃脘痛",
+   "status": "applied",
    "count": 8,
    "slots_en_mirrored": 8,
-   "candidates": [
-    "胃脘痛",
-    "胃脘作痛"
+   "sources": [
+    "curated:three_way_converged"
    ],
    "sample_formula": "膈下逐瘀湯"
   },
   {
    "term_en": "Erectile dysfunction",
-   "zh": null,
-   "status": "ambiguous_deferred",
+   "zh": "勃起功能障礙",
+   "status": "applied",
    "count": 8,
    "slots_en_mirrored": 8,
-   "candidates": [
-    "男性勃起障礙",
-    "勃起功能障礙"
+   "sources": [
+    "curated:three_way_converged"
    ],
    "sample_formula": "黃連阿膠湯"
   },
@@ -3037,31 +1923,6 @@
    "count": 8,
    "slots_en_mirrored": 8,
    "sample_formula": "犀角地黃湯"
-  },
-  {
-   "term_en": "Hyperlipidemia",
-   "zh": "高血脂",
-   "status": "applied",
-   "count": 8,
-   "slots_en_mirrored": 8,
-   "sources": [
-    "cloudtcm_disease",
-    "herb.condition_tags"
-   ],
-   "sample_formula": "大柴胡湯"
-  },
-  {
-   "term_en": "Hypochondriac pain",
-   "zh": "脅痛",
-   "status": "applied",
-   "count": 8,
-   "slots_en_mirrored": 8,
-   "sources": [
-    "tdis_registry",
-    "formula.condition_tags",
-    "herb.condition_tags"
-   ],
-   "sample_formula": "枳實薤白桂枝湯"
   },
   {
    "term_en": "Idiopathic thrombocytopenic purpura",
@@ -3103,13 +1964,12 @@
   },
   {
    "term_en": "Menopausal syndrome",
-   "zh": null,
-   "status": "ambiguous_deferred",
+   "zh": "更年期症候群",
+   "status": "applied",
    "count": 8,
    "slots_en_mirrored": 8,
-   "candidates": [
-    "更年期綜合症",
-    "更年期症候群"
+   "sources": [
+    "curated:three_way_converged"
    ],
    "sample_formula": "黃連解毒湯"
   },
@@ -3138,39 +1998,15 @@
    "sample_formula": "四君子湯"
   },
   {
-   "term_en": "Mumps",
-   "zh": "痄腮",
+   "term_en": "Myocardial infarction",
+   "zh": "心肌梗塞",
    "status": "applied",
    "count": 8,
    "slots_en_mirrored": 8,
    "sources": [
-    "tdis_registry",
-    "herb.condition_tags"
-   ],
-   "sample_formula": "小柴胡湯"
-  },
-  {
-   "term_en": "Myocardial infarction",
-   "zh": null,
-   "status": "ambiguous_deferred",
-   "count": 8,
-   "slots_en_mirrored": 8,
-   "candidates": [
-    "心肌梗塞",
-    "急性心肌梗塞"
+    "curated:three_way_converged"
    ],
    "sample_formula": "生脈散"
-  },
-  {
-   "term_en": "Neck pain",
-   "zh": "頸痛",
-   "status": "applied",
-   "count": 8,
-   "slots_en_mirrored": 8,
-   "sources": [
-    "symptoms"
-   ],
-   "sample_formula": "涼膈散"
   },
   {
    "term_en": "Neck stiffness",
@@ -3187,17 +2023,6 @@
    "count": 8,
    "slots_en_mirrored": 8,
    "sample_formula": "小柴胡湯"
-  },
-  {
-   "term_en": "Otitis externa",
-   "zh": "外耳炎",
-   "status": "applied",
-   "count": 8,
-   "slots_en_mirrored": 8,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "六君子湯"
   },
   {
    "term_en": "Panic disorder",
@@ -3248,17 +2073,6 @@
    "sample_formula": "逍遙散"
   },
   {
-   "term_en": "Prolonged lochia",
-   "zh": "惡露不絕",
-   "status": "applied",
-   "count": 8,
-   "slots_en_mirrored": 8,
-   "sources": [
-    "tdis_registry"
-   ],
-   "sample_formula": "膠艾湯"
-  },
-  {
    "term_en": "Pulmonary emphysema",
    "zh": null,
    "status": "untranslated",
@@ -3300,13 +2114,12 @@
   },
   {
    "term_en": "Scabies",
-   "zh": null,
-   "status": "ambiguous_deferred",
+   "zh": "疥瘡",
+   "status": "applied",
    "count": 8,
    "slots_en_mirrored": 8,
-   "candidates": [
-    "疥瘡",
-    "疥癬"
+   "sources": [
+    "curated:three_way_converged"
    ],
    "sample_formula": "荊防敗毒散"
   },
@@ -3341,18 +2154,6 @@
    "count": 8,
    "slots_en_mirrored": 8,
    "sample_formula": "竹葉石膏湯"
-  },
-  {
-   "term_en": "Tetanus",
-   "zh": "破傷風",
-   "status": "applied",
-   "count": 8,
-   "slots_en_mirrored": 8,
-   "sources": [
-    "tdis_registry",
-    "herb.condition_tags"
-   ],
-   "sample_formula": "大承氣湯"
   },
   {
    "term_en": "Trichomonas",
@@ -3411,17 +2212,6 @@
    "sample_formula": "犀角地黃湯"
   },
   {
-   "term_en": "Acute mastitis",
-   "zh": "乳癰",
-   "status": "applied",
-   "count": 6,
-   "slots_en_mirrored": 6,
-   "sources": [
-    "tdis_registry"
-   ],
-   "sample_formula": "防风通圣散"
-  },
-  {
    "term_en": "Acute meningitis",
    "zh": null,
    "status": "untranslated",
@@ -3435,28 +2225,6 @@
    "status": "untranslated",
    "count": 6,
    "slots_en_mirrored": 6,
-   "sample_formula": "麻黃湯"
-  },
-  {
-   "term_en": "Acute pelvic inflammatory disease",
-   "zh": "急性骨盆腔炎",
-   "status": "applied",
-   "count": 6,
-   "slots_en_mirrored": 6,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "黃連解毒湯"
-  },
-  {
-   "term_en": "Acute pharyngitis",
-   "zh": "急性咽炎",
-   "status": "applied",
-   "count": 6,
-   "slots_en_mirrored": 6,
-   "sources": [
-    "condition_canon"
-   ],
    "sample_formula": "麻黃湯"
   },
   {
@@ -3484,29 +2252,6 @@
    "sample_formula": "六味地黃丸"
   },
   {
-   "term_en": "Appendicitis",
-   "zh": "闌尾炎",
-   "status": "applied",
-   "count": 6,
-   "slots_en_mirrored": 6,
-   "sources": [
-    "condition_canon",
-    "herb.condition_tags"
-   ],
-   "sample_formula": "桂枝湯"
-  },
-  {
-   "term_en": "Arrhythmia",
-   "zh": "心律失常",
-   "status": "applied",
-   "count": 6,
-   "slots_en_mirrored": 6,
-   "sources": [
-    "herb.condition_tags"
-   ],
-   "sample_formula": "生脈散"
-  },
-  {
    "term_en": "Benzene poisoning",
    "zh": null,
    "status": "untranslated",
@@ -3531,17 +2276,6 @@
    "sample_formula": "防己黃耆湯"
   },
   {
-   "term_en": "Breast tenderness",
-   "zh": "乳房脹痛",
-   "status": "applied",
-   "count": 6,
-   "slots_en_mirrored": 6,
-   "sources": [
-    "symptoms"
-   ],
-   "sample_formula": "逍遙散"
-  },
-  {
    "term_en": "Bronchiaesthenia",
    "zh": null,
    "status": "untranslated",
@@ -3559,13 +2293,12 @@
   },
   {
    "term_en": "Carpal tunnel syndrome",
-   "zh": null,
-   "status": "ambiguous_deferred",
+   "zh": "腕隧道症候群",
+   "status": "applied",
    "count": 6,
    "slots_en_mirrored": 6,
-   "candidates": [
-    "腕管綜合症",
-    "腕隧道症候群"
+   "sources": [
+    "curated:three_way_converged"
    ],
    "sample_formula": "身痛逐瘀湯"
   },
@@ -3602,17 +2335,6 @@
    "sample_formula": "清氣化痰丸"
   },
   {
-   "term_en": "Contact dermatitis",
-   "zh": "接觸性皮膚炎",
-   "status": "applied",
-   "count": 6,
-   "slots_en_mirrored": 6,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "消風散"
-  },
-  {
    "term_en": "Cor pulmonale",
    "zh": null,
    "status": "untranslated",
@@ -3645,29 +2367,6 @@
    "sample_formula": "腎氣丸"
   },
   {
-   "term_en": "Delayed menstruation",
-   "zh": "月經後期",
-   "status": "applied",
-   "count": 6,
-   "slots_en_mirrored": 6,
-   "sources": [
-    "tdis_registry",
-    "conditions.eastern_diseases"
-   ],
-   "sample_formula": "逍遙散"
-  },
-  {
-   "term_en": "Diabetes insipidus",
-   "zh": "尿崩症",
-   "status": "applied",
-   "count": 6,
-   "slots_en_mirrored": 6,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "六味地黃丸"
-  },
-  {
    "term_en": "Diphtheria",
    "zh": null,
    "status": "untranslated",
@@ -3681,17 +2380,6 @@
    "status": "untranslated",
    "count": 6,
    "slots_en_mirrored": 6,
-   "sample_formula": "六味地黃丸"
-  },
-  {
-   "term_en": "Dry mouth",
-   "zh": "口乾",
-   "status": "applied",
-   "count": 6,
-   "slots_en_mirrored": 6,
-   "sources": [
-    "symptoms"
-   ],
    "sample_formula": "六味地黃丸"
   },
   {
@@ -3751,17 +2439,6 @@
    "sample_formula": "六味地黃丸"
   },
   {
-   "term_en": "Frozen shoulder",
-   "zh": "肩凝症（漏肩風）",
-   "status": "applied",
-   "count": 6,
-   "slots_en_mirrored": 6,
-   "sources": [
-    "tdis_registry"
-   ],
-   "sample_formula": "當歸四逆湯"
-  },
-  {
    "term_en": "Gangrene",
    "zh": null,
    "status": "untranslated",
@@ -3792,28 +2469,6 @@
    "count": 6,
    "slots_en_mirrored": 6,
    "sample_formula": "附子理中丸"
-  },
-  {
-   "term_en": "Glomerulonephritis",
-   "zh": "腎絲球腎炎",
-   "status": "applied",
-   "count": 6,
-   "slots_en_mirrored": 6,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "麻黃湯"
-  },
-  {
-   "term_en": "Goiter",
-   "zh": "癭瘤",
-   "status": "applied",
-   "count": 6,
-   "slots_en_mirrored": 6,
-   "sources": [
-    "herb.condition_tags"
-   ],
-   "sample_formula": "加味逍遙散"
   },
   {
    "term_en": "Halitosis",
@@ -3848,17 +2503,6 @@
    "sample_formula": "犀角地黃湯"
   },
   {
-   "term_en": "Hemorrhoidal bleeding",
-   "zh": "痔血",
-   "status": "applied",
-   "count": 6,
-   "slots_en_mirrored": 6,
-   "sources": [
-    "herb.condition_tags"
-   ],
-   "sample_formula": "理中丸"
-  },
-  {
    "term_en": "Hepatic abscess",
    "zh": null,
    "status": "untranslated",
@@ -3873,17 +2517,6 @@
    "count": 6,
    "slots_en_mirrored": 6,
    "sample_formula": "附子理中丸"
-  },
-  {
-   "term_en": "Hydronephrosis",
-   "zh": "腎盂積水",
-   "status": "applied",
-   "count": 6,
-   "slots_en_mirrored": 6,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "豬苓湯"
   },
   {
    "term_en": "Hyperosteogeny",
@@ -4014,18 +2647,6 @@
    "sample_formula": "補中益氣湯"
   },
   {
-   "term_en": "Myocarditis",
-   "zh": "心肌炎",
-   "status": "applied",
-   "count": 6,
-   "slots_en_mirrored": 6,
-   "sources": [
-    "cloudtcm_disease",
-    "condition_canon"
-   ],
-   "sample_formula": "生脈散"
-  },
-  {
    "term_en": "Neonatal jaundice",
    "zh": null,
    "status": "untranslated",
@@ -4043,13 +2664,12 @@
   },
   {
    "term_en": "Nocturia",
-   "zh": null,
-   "status": "ambiguous_deferred",
+   "zh": "夜尿",
+   "status": "applied",
    "count": 6,
    "slots_en_mirrored": 6,
-   "candidates": [
-    "夜尿",
-    "夜尿多"
+   "sources": [
+    "curated:three_way_converged"
    ],
    "sample_formula": "腎氣丸"
   },
@@ -4110,17 +2730,6 @@
    "sample_formula": "理中丸"
   },
   {
-   "term_en": "Polymyositis",
-   "zh": "多發性肌炎",
-   "status": "applied",
-   "count": 6,
-   "slots_en_mirrored": 6,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "六味地黃丸"
-  },
-  {
    "term_en": "Polymyositis/Dermatomyositis",
    "zh": null,
    "status": "untranslated",
@@ -4143,29 +2752,6 @@
    "count": 6,
    "slots_en_mirrored": 6,
    "sample_formula": "玉屏風散"
-  },
-  {
-   "term_en": "Premature ejaculation",
-   "zh": "早洩",
-   "status": "applied",
-   "count": 6,
-   "slots_en_mirrored": 6,
-   "sources": [
-    "condition_canon",
-    "herb.condition_tags"
-   ],
-   "sample_formula": "知柏地黃丸"
-  },
-  {
-   "term_en": "Primary hyperaldosteronism",
-   "zh": "原發性高醛固酮症",
-   "status": "applied",
-   "count": 6,
-   "slots_en_mirrored": 6,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "腎氣丸"
   },
   {
    "term_en": "Prostamegaly",
@@ -4240,45 +2826,12 @@
    "sample_formula": "補陽還五湯"
   },
   {
-   "term_en": "Shoulder pain",
-   "zh": "肩痛",
-   "status": "applied",
-   "count": 6,
-   "slots_en_mirrored": 6,
-   "sources": [
-    "symptoms"
-   ],
-   "sample_formula": "逍遙散"
-  },
-  {
-   "term_en": "Sick sinus syndrome",
-   "zh": "病態竇房結症候群",
-   "status": "applied",
-   "count": 6,
-   "slots_en_mirrored": 6,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "生脈散"
-  },
-  {
    "term_en": "Side effects of steroids",
    "zh": null,
    "status": "untranslated",
    "count": 6,
    "slots_en_mirrored": 6,
    "sample_formula": "六味地黃丸"
-  },
-  {
-   "term_en": "Stiff neck",
-   "zh": "落枕",
-   "status": "applied",
-   "count": 6,
-   "slots_en_mirrored": 6,
-   "sources": [
-    "tdis_registry"
-   ],
-   "sample_formula": "八珍湯"
   },
   {
    "term_en": "Stress-related breathing problems",
@@ -4305,34 +2858,12 @@
    "sample_formula": "大黃牡丹湯"
   },
   {
-   "term_en": "Tinea",
-   "zh": "疥癬",
-   "status": "applied",
-   "count": 6,
-   "slots_en_mirrored": 6,
-   "sources": [
-    "herb.condition_tags"
-   ],
-   "sample_formula": "桂枝湯"
-  },
-  {
    "term_en": "Typhoid",
    "zh": null,
    "status": "untranslated",
    "count": 6,
    "slots_en_mirrored": 6,
    "sample_formula": "連朴飲"
-  },
-  {
-   "term_en": "Ulcer",
-   "zh": "潰瘍",
-   "status": "applied",
-   "count": 6,
-   "slots_en_mirrored": 6,
-   "sources": [
-    "herb.condition_tags"
-   ],
-   "sample_formula": "小柴胡湯"
   },
   {
    "term_en": "Uncomplicated intestinal obstruction",
@@ -4357,17 +2888,6 @@
    "count": 6,
    "slots_en_mirrored": 6,
    "sample_formula": "少腹逐瘀湯"
-  },
-  {
-   "term_en": "Urinary retention",
-   "zh": "尿瀦留",
-   "status": "applied",
-   "count": 6,
-   "slots_en_mirrored": 6,
-   "sources": [
-    "symptoms"
-   ],
-   "sample_formula": "右歸飲"
   },
   {
    "term_en": "Uterine cancer",
@@ -4408,17 +2928,6 @@
    "count": 4,
    "slots_en_mirrored": 4,
    "sample_formula": "大承氣湯"
-  },
-  {
-   "term_en": "Acne vulgaris",
-   "zh": "痤瘡",
-   "status": "applied",
-   "count": 4,
-   "slots_en_mirrored": 4,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "瀉白散"
   },
   {
    "term_en": "Acrocyanosis",
@@ -4501,18 +3010,6 @@
    "sample_formula": "腎氣丸"
   },
   {
-   "term_en": "Ankylosing spondylitis",
-   "zh": "僵直性脊椎炎",
-   "status": "applied",
-   "count": 4,
-   "slots_en_mirrored": 4,
-   "sources": [
-    "cloudtcm_disease",
-    "condition_canon"
-   ],
-   "sample_formula": "二妙散"
-  },
-  {
    "term_en": "Anuria",
    "zh": null,
    "status": "untranslated",
@@ -4553,45 +3050,12 @@
    "sample_formula": "當歸四逆湯"
   },
   {
-   "term_en": "Atrial fibrillation",
-   "zh": "心房顫動",
-   "status": "applied",
-   "count": 4,
-   "slots_en_mirrored": 4,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "炙甘草湯"
-  },
-  {
-   "term_en": "Bell's palsy",
-   "zh": "顏面神經麻痺",
-   "status": "applied",
-   "count": 4,
-   "slots_en_mirrored": 4,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "補陽還五湯"
-  },
-  {
    "term_en": "Biliary tract infection",
    "zh": null,
    "status": "untranslated",
    "count": 4,
    "slots_en_mirrored": 4,
    "sample_formula": "小柴胡湯"
-  },
-  {
-   "term_en": "Bleeding",
-   "zh": "出血",
-   "status": "applied",
-   "count": 4,
-   "slots_en_mirrored": 4,
-   "sources": [
-    "herb.condition_tags"
-   ],
-   "sample_formula": "黃連阿膠湯"
   },
   {
    "term_en": "Blood or pus in the anterior chamber of the eye",
@@ -4705,13 +3169,12 @@
   },
   {
    "term_en": "Cellulitis",
-   "zh": null,
-   "status": "ambiguous_deferred",
+   "zh": "蜂窩性組織炎",
+   "status": "applied",
    "count": 4,
    "slots_en_mirrored": 4,
-   "candidates": [
-    "蜂窩性組織炎",
-    "蜂窩組織炎"
+   "sources": [
+    "curated:three_way_converged"
    ],
    "sample_formula": "黃連解毒湯"
   },
@@ -4754,17 +3217,6 @@
    "count": 4,
    "slots_en_mirrored": 4,
    "sample_formula": "當歸四逆湯"
-  },
-  {
-   "term_en": "Chills",
-   "zh": "惡寒",
-   "status": "applied",
-   "count": 4,
-   "slots_en_mirrored": 4,
-   "sources": [
-    "symptoms"
-   ],
-   "sample_formula": "九味羌活湯"
   },
   {
    "term_en": "Chromaffinoma",
@@ -4895,34 +3347,12 @@
    "sample_formula": "腎氣丸"
   },
   {
-   "term_en": "Deep vein thrombosis",
-   "zh": "深部靜脈血栓",
-   "status": "applied",
-   "count": 4,
-   "slots_en_mirrored": 4,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "補陽還五湯"
-  },
-  {
    "term_en": "Deformed vertebrae",
    "zh": null,
    "status": "untranslated",
    "count": 4,
    "slots_en_mirrored": 4,
    "sample_formula": "腎氣丸"
-  },
-  {
-   "term_en": "Delirium",
-   "zh": "神昏譫語",
-   "status": "applied",
-   "count": 4,
-   "slots_en_mirrored": 4,
-   "sources": [
-    "herb.condition_tags"
-   ],
-   "sample_formula": "安宮牛黃丸"
   },
   {
    "term_en": "Dermatosclerosis",
@@ -5125,17 +3555,6 @@
    "sample_formula": "銀翹散"
   },
   {
-   "term_en": "Folliculitis",
-   "zh": "毛囊炎",
-   "status": "applied",
-   "count": 4,
-   "slots_en_mirrored": 4,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "紫雪丹"
-  },
-  {
    "term_en": "Food allergy",
    "zh": null,
    "status": "untranslated",
@@ -5158,17 +3577,6 @@
    "count": 4,
    "slots_en_mirrored": 4,
    "sample_formula": "六味地黃丸"
-  },
-  {
-   "term_en": "Gallstones",
-   "zh": "膽結石",
-   "status": "applied",
-   "count": 4,
-   "slots_en_mirrored": 4,
-   "sources": [
-    "cloudtcm_disease"
-   ],
-   "sample_formula": "龍膽瀉肝湯"
   },
   {
    "term_en": "Gastric cancer",
@@ -5233,17 +3641,6 @@
    "count": 4,
    "slots_en_mirrored": 4,
    "sample_formula": "二妙散"
-  },
-  {
-   "term_en": "Gynecomastia",
-   "zh": "男性女乳症",
-   "status": "applied",
-   "count": 4,
-   "slots_en_mirrored": 4,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "腎氣丸"
   },
   {
    "term_en": "Hemolytic jaundice",
@@ -5350,17 +3747,6 @@
    "sample_formula": "桃核承氣湯"
   },
   {
-   "term_en": "Impetigo",
-   "zh": "膿皰瘡",
-   "status": "applied",
-   "count": 4,
-   "slots_en_mirrored": 4,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "補中益氣湯"
-  },
-  {
    "term_en": "Inappropriate erection",
    "zh": null,
    "status": "untranslated",
@@ -5450,14 +3836,12 @@
   },
   {
    "term_en": "Irritability",
-   "zh": null,
-   "status": "ambiguous_deferred",
+   "zh": "煩躁",
+   "status": "applied",
    "count": 4,
    "slots_en_mirrored": 4,
-   "candidates": [
-    "易怒",
-    "心煩",
-    "煩躁"
+   "sources": [
+    "curated:three_way_converged"
    ],
    "sample_formula": "逍遙散"
   },
@@ -5559,13 +3943,12 @@
   },
   {
    "term_en": "Lung abscess",
-   "zh": null,
-   "status": "ambiguous_deferred",
+   "zh": "肺膿瘍",
+   "status": "applied",
    "count": 4,
    "slots_en_mirrored": 4,
-   "candidates": [
-    "肺膿瘍",
-    "肺癰"
+   "sources": [
+    "curated:three_way_converged"
    ],
    "sample_formula": "葦莖湯"
   },
@@ -5583,17 +3966,6 @@
    "status": "untranslated",
    "count": 4,
    "slots_en_mirrored": 4,
-   "sample_formula": "炙甘草湯"
-  },
-  {
-   "term_en": "Mitral valve prolapse",
-   "zh": "二尖瓣脫垂",
-   "status": "applied",
-   "count": 4,
-   "slots_en_mirrored": 4,
-   "sources": [
-    "condition_canon"
-   ],
    "sample_formula": "炙甘草湯"
   },
   {
@@ -5701,17 +4073,6 @@
    "sample_formula": "導赤散"
   },
   {
-   "term_en": "Non-healing sores and ulcers",
-   "zh": "瘡瘍不斂",
-   "status": "applied",
-   "count": 4,
-   "slots_en_mirrored": 4,
-   "sources": [
-    "herb.condition_tags"
-   ],
-   "sample_formula": "當歸補血湯"
-  },
-  {
    "term_en": "Numbness of the legs",
    "zh": null,
    "status": "untranslated",
@@ -5798,17 +4159,6 @@
    "count": 4,
    "slots_en_mirrored": 4,
    "sample_formula": "青蒿鱉甲湯"
-  },
-  {
-   "term_en": "Piriformis syndrome",
-   "zh": "梨狀肌症候群",
-   "status": "applied",
-   "count": 4,
-   "slots_en_mirrored": 4,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "逍遙散"
   },
   {
    "term_en": "Pneumonitis from measles",
@@ -6019,17 +4369,6 @@
    "sample_formula": "復元活血湯"
   },
   {
-   "term_en": "Seborrheic dermatitis",
-   "zh": "脂漏性皮膚炎",
-   "status": "applied",
-   "count": 4,
-   "slots_en_mirrored": 4,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "茵陳蒿湯"
-  },
-  {
    "term_en": "Senile cystoatrophy",
    "zh": null,
    "status": "untranslated",
@@ -6142,17 +4481,6 @@
    "sample_formula": "香蘇散"
   },
   {
-   "term_en": "Subarachnoid hemorrhage",
-   "zh": "蜘蛛膜下腔出血",
-   "status": "applied",
-   "count": 4,
-   "slots_en_mirrored": 4,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "血府逐瘀湯"
-  },
-  {
    "term_en": "Suppurative otitis media",
    "zh": null,
    "status": "untranslated",
@@ -6185,46 +4513,12 @@
    "sample_formula": "九味羌活湯"
   },
   {
-   "term_en": "Thirst",
-   "zh": "口渴",
-   "status": "applied",
-   "count": 4,
-   "slots_en_mirrored": 4,
-   "sources": [
-    "formula.condition_tags",
-    "herb.condition_tags"
-   ],
-   "sample_formula": "腎氣丸"
-  },
-  {
-   "term_en": "Tinea pedis",
-   "zh": "足癬",
-   "status": "applied",
-   "count": 4,
-   "slots_en_mirrored": 4,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "二妙散"
-  },
-  {
    "term_en": "Toxemia",
    "zh": null,
    "status": "untranslated",
    "count": 4,
    "slots_en_mirrored": 4,
    "sample_formula": "犀角地黃湯"
-  },
-  {
-   "term_en": "Traumatic injury",
-   "zh": "跌打損傷",
-   "status": "applied",
-   "count": 4,
-   "slots_en_mirrored": 4,
-   "sources": [
-    "herb.condition_tags"
-   ],
-   "sample_formula": "復元活血湯"
   },
   {
    "term_en": "Typhus",
@@ -6289,17 +4583,6 @@
    "count": 4,
    "slots_en_mirrored": 4,
    "sample_formula": "補中益氣湯"
-  },
-  {
-   "term_en": "Varicocele",
-   "zh": "精索靜脈曲張",
-   "status": "applied",
-   "count": 4,
-   "slots_en_mirrored": 4,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "當歸四逆湯"
   },
   {
    "term_en": "Vegetative nerve disturbance",
@@ -6412,17 +4695,6 @@
    "count": 2,
    "slots_en_mirrored": 0,
    "sample_formula": "當歸四逆湯"
-  },
-  {
-   "term_en": "Abdominal Fullness and distention",
-   "zh": "腹滿脹痛",
-   "status": "applied",
-   "count": 2,
-   "slots_en_mirrored": 2,
-   "sources": [
-    "herb.condition_tags"
-   ],
-   "sample_formula": "大承氣湯"
   },
   {
    "term_en": "Abdominal Heat",
@@ -6905,28 +5177,6 @@
    "sample_formula": "人參養榮湯"
   },
   {
-   "term_en": "Amyloidosis",
-   "zh": "澱粉樣變性",
-   "status": "applied",
-   "count": 2,
-   "slots_en_mirrored": 2,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "桑螵蛸散"
-  },
-  {
-   "term_en": "Anal fissure",
-   "zh": "肛裂",
-   "status": "applied",
-   "count": 2,
-   "slots_en_mirrored": 2,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "槐花散"
-  },
-  {
    "term_en": "Anal fissures",
    "zh": null,
    "status": "untranslated",
@@ -6989,17 +5239,6 @@
    "count": 2,
    "slots_en_mirrored": 2,
    "sample_formula": "香蘇散"
-  },
-  {
-   "term_en": "Anovulation",
-   "zh": "無排卵",
-   "status": "applied",
-   "count": 2,
-   "slots_en_mirrored": 2,
-   "sources": [
-    "conditions.records"
-   ],
-   "sample_formula": "溫經湯"
   },
   {
    "term_en": "Anxiety due to stress",
@@ -7082,17 +5321,6 @@
    "sample_formula": "清燥救肺湯"
   },
   {
-   "term_en": "Atherosclerosis",
-   "zh": "動脈粥狀硬化",
-   "status": "applied",
-   "count": 2,
-   "slots_en_mirrored": 2,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "杞菊地黃丸"
-  },
-  {
    "term_en": "Athlete's foot",
    "zh": null,
    "status": "untranslated",
@@ -7109,34 +5337,12 @@
    "sample_formula": "桃核承氣湯"
   },
   {
-   "term_en": "Atopic dermatitis",
-   "zh": "異位性皮膚炎",
-   "status": "applied",
-   "count": 2,
-   "slots_en_mirrored": 2,
-   "sources": [
-    "cloudtcm_disease"
-   ],
-   "sample_formula": "瀉黃散"
-  },
-  {
    "term_en": "Atrial fibrilation",
    "zh": null,
    "status": "untranslated",
    "count": 2,
    "slots_en_mirrored": 2,
    "sample_formula": "蘇合香丸"
-  },
-  {
-   "term_en": "Atrial flutter",
-   "zh": "心房撲動",
-   "status": "applied",
-   "count": 2,
-   "slots_en_mirrored": 2,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "炙甘草湯"
   },
   {
    "term_en": "Atrioventricular blockage",
@@ -7409,17 +5615,6 @@
    "count": 2,
    "slots_en_mirrored": 2,
    "sample_formula": "桃核承氣湯"
-  },
-  {
-   "term_en": "Breast abscess",
-   "zh": "乳癰",
-   "status": "applied",
-   "count": 2,
-   "slots_en_mirrored": 2,
-   "sources": [
-    "herb.condition_tags"
-   ],
-   "sample_formula": "仙方活命飲"
   },
   {
    "term_en": "Breast hyperplasia",
@@ -7758,19 +5953,6 @@
    "sample_formula": "蘇合香丸"
   },
   {
-   "term_en": "Chest pain",
-   "zh": "胸痛",
-   "status": "applied",
-   "count": 2,
-   "slots_en_mirrored": 2,
-   "sources": [
-    "symptoms",
-    "herb.condition_tags",
-    "config/modern_application_vocabulary.json"
-   ],
-   "sample_formula": "麻杏石甘湯"
-  },
-  {
    "term_en": "Chilblains",
    "zh": null,
    "status": "untranslated",
@@ -7780,13 +5962,12 @@
   },
   {
    "term_en": "Childhood convulsions",
-   "zh": null,
-   "status": "ambiguous_deferred",
+   "zh": "小兒驚風",
+   "status": "applied",
    "count": 2,
    "slots_en_mirrored": 2,
-   "candidates": [
-    "小兒驚風",
-    "小兒驚癇"
+   "sources": [
+    "curated:three_way_converged"
    ],
    "sample_formula": "涼膈散"
   },
@@ -7879,17 +6060,6 @@
    "sample_formula": "獨活寄生湯"
   },
   {
-   "term_en": "Chronic bleeding",
-   "zh": "慢性出血",
-   "status": "applied",
-   "count": 2,
-   "slots_en_mirrored": 2,
-   "sources": [
-    "herb.condition_tags"
-   ],
-   "sample_formula": "歸脾湯"
-  },
-  {
    "term_en": "Chronic childhood convulsions",
    "zh": null,
    "status": "untranslated",
@@ -7976,17 +6146,6 @@
    "count": 2,
    "slots_en_mirrored": 2,
    "sample_formula": "知柏地黃丸"
-  },
-  {
-   "term_en": "Chronic non-healing sores",
-   "zh": "瘡瘍久不收口",
-   "status": "applied",
-   "count": 2,
-   "slots_en_mirrored": 2,
-   "sources": [
-    "herb.condition_tags"
-   ],
-   "sample_formula": "人參養榮湯"
   },
   {
    "term_en": "Chronic ocular disorders",
@@ -8123,17 +6282,6 @@
    "count": 2,
    "slots_en_mirrored": 2,
    "sample_formula": "五苓散"
-  },
-  {
-   "term_en": "Coma",
-   "zh": "昏迷",
-   "status": "applied",
-   "count": 2,
-   "slots_en_mirrored": 2,
-   "sources": [
-    "herb.condition_tags"
-   ],
-   "sample_formula": "生脈散"
   },
   {
    "term_en": "Coma due to brain injury",
@@ -8342,17 +6490,6 @@
    "count": 2,
    "slots_en_mirrored": 2,
    "sample_formula": "十全大補湯"
-  },
-  {
-   "term_en": "Deep-rooted boils",
-   "zh": "疔瘡腫毒",
-   "status": "applied",
-   "count": 2,
-   "slots_en_mirrored": 2,
-   "sources": [
-    "herb.condition_tags"
-   ],
-   "sample_formula": "黃連解毒湯"
   },
   {
    "term_en": "Degeneration of the circulatory and digestive organs",
@@ -8811,17 +6948,6 @@
    "sample_formula": "柴葛解肌湯"
   },
   {
-   "term_en": "Epididymitis",
-   "zh": "副睪炎",
-   "status": "applied",
-   "count": 2,
-   "slots_en_mirrored": 2,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "天台烏藥散"
-  },
-  {
    "term_en": "Epitrochleitis",
    "zh": null,
    "status": "untranslated",
@@ -8894,17 +7020,6 @@
    "sample_formula": "牡蠣散"
   },
   {
-   "term_en": "Excessive salivation",
-   "zh": "唾液過多",
-   "status": "applied",
-   "count": 2,
-   "slots_en_mirrored": 2,
-   "sources": [
-    "cloudtcm_disease"
-   ],
-   "sample_formula": "理中丸"
-  },
-  {
    "term_en": "Excessive worrying",
    "zh": null,
    "status": "untranslated",
@@ -8943,17 +7058,6 @@
    "count": 2,
    "slots_en_mirrored": 2,
    "sample_formula": "防风通圣散"
-  },
-  {
-   "term_en": "Facial nerve palsy",
-   "zh": "顏面神經麻痺",
-   "status": "applied",
-   "count": 2,
-   "slots_en_mirrored": 2,
-   "sources": [
-    "cloudtcm_disease"
-   ],
-   "sample_formula": "九味羌活湯"
   },
   {
    "term_en": "Fallopian tube blockage",
@@ -9060,17 +7164,6 @@
    "sample_formula": "血府逐瘀湯"
   },
   {
-   "term_en": "Fungal infection",
-   "zh": "真菌感染",
-   "status": "applied",
-   "count": 2,
-   "slots_en_mirrored": 2,
-   "sources": [
-    "herb.condition_tags"
-   ],
-   "sample_formula": "藿香正氣散"
-  },
-  {
    "term_en": "Fungal infections",
    "zh": null,
    "status": "untranslated",
@@ -9160,26 +7253,14 @@
   },
   {
    "term_en": "Gastroesophageal reflux disease",
-   "zh": null,
-   "status": "ambiguous_deferred",
-   "count": 2,
-   "slots_en_mirrored": 2,
-   "candidates": [
-    "胃酸食道逆流",
-    "胃食道逆流"
-   ],
-   "sample_formula": "半夏瀉心湯"
-  },
-  {
-   "term_en": "Gastrointestinal bleeding",
-   "zh": "胃腸出血",
+   "zh": "胃食道逆流",
    "status": "applied",
    "count": 2,
    "slots_en_mirrored": 2,
    "sources": [
-    "herb.condition_tags"
+    "curated:three_way_converged"
    ],
-   "sample_formula": "固经丸"
+   "sample_formula": "半夏瀉心湯"
   },
   {
    "term_en": "Gastrointestinal flu",
@@ -9674,17 +7755,6 @@
    "sample_formula": "加味逍遙散"
   },
   {
-   "term_en": "Hyperparathyroidism",
-   "zh": "副甲狀腺機能亢進",
-   "status": "applied",
-   "count": 2,
-   "slots_en_mirrored": 2,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "桑螵蛸散"
-  },
-  {
    "term_en": "Hypersalivation",
    "zh": null,
    "status": "untranslated",
@@ -9715,17 +7785,6 @@
    "count": 2,
    "slots_en_mirrored": 2,
    "sample_formula": "增液湯"
-  },
-  {
-   "term_en": "Hypocalcemia",
-   "zh": "低血鈣症",
-   "status": "applied",
-   "count": 2,
-   "slots_en_mirrored": 2,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "越鞠丸"
   },
   {
    "term_en": "Hypochondriac neuralgia",
@@ -9888,17 +7947,6 @@
    "sample_formula": "瀉白散"
   },
   {
-   "term_en": "Infantile night crying",
-   "zh": "夜啼",
-   "status": "applied",
-   "count": 2,
-   "slots_en_mirrored": 2,
-   "sources": [
-    "tdis_registry"
-   ],
-   "sample_formula": "甘麥大棗湯"
-  },
-  {
    "term_en": "Infantile sore throat",
    "zh": null,
    "status": "untranslated",
@@ -9953,17 +8001,6 @@
    "count": 2,
    "slots_en_mirrored": 2,
    "sample_formula": "清胃散"
-  },
-  {
-   "term_en": "Infectious mononucleosis",
-   "zh": "傳染性單核球增多症",
-   "status": "applied",
-   "count": 2,
-   "slots_en_mirrored": 2,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "防风通圣散"
   },
   {
    "term_en": "Infectious mononucleosis with hepatomegaly",
@@ -10036,18 +8073,6 @@
    "count": 2,
    "slots_en_mirrored": 2,
    "sample_formula": "止嗽散"
-  },
-  {
-   "term_en": "Intestinal abscess",
-   "zh": "腸癰",
-   "status": "applied",
-   "count": 2,
-   "slots_en_mirrored": 2,
-   "sources": [
-    "tdis_registry",
-    "herb.condition_tags"
-   ],
-   "sample_formula": "柴胡疏肝散"
   },
   {
    "term_en": "Intestinal ascariasis",
@@ -10338,45 +8363,12 @@
    "sample_formula": "八珍湯"
   },
   {
-   "term_en": "Lumbar pain",
-   "zh": "腰痛",
-   "status": "applied",
-   "count": 2,
-   "slots_en_mirrored": 2,
-   "sources": [
-    "tdis_registry"
-   ],
-   "sample_formula": "蘇子降氣湯"
-  },
-  {
-   "term_en": "Lung consumption",
-   "zh": "肺癆",
-   "status": "applied",
-   "count": 2,
-   "slots_en_mirrored": 2,
-   "sources": [
-    "tdis_registry"
-   ],
-   "sample_formula": "一貫煎"
-  },
-  {
    "term_en": "Luteal phase defects",
    "zh": null,
    "status": "untranslated",
    "count": 2,
    "slots_en_mirrored": 2,
    "sample_formula": "溫經湯"
-  },
-  {
-   "term_en": "Lyme Disease",
-   "zh": "萊姆病",
-   "status": "applied",
-   "count": 2,
-   "slots_en_mirrored": 2,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "當歸拈痛湯"
   },
   {
    "term_en": "Lymphangitis",
@@ -10443,17 +8435,6 @@
    "sample_formula": "仙方活命飲"
   },
   {
-   "term_en": "Mammary gland hyperplasia",
-   "zh": "乳癖",
-   "status": "applied",
-   "count": 2,
-   "slots_en_mirrored": 2,
-   "sources": [
-    "tdis_registry"
-   ],
-   "sample_formula": "血府逐瘀湯"
-  },
-  {
    "term_en": "Mania with convulsions",
    "zh": null,
    "status": "untranslated",
@@ -10492,17 +8473,6 @@
    "count": 2,
    "slots_en_mirrored": 2,
    "sample_formula": "歸脾湯"
-  },
-  {
-   "term_en": "Melasma",
-   "zh": "黃褐斑",
-   "status": "applied",
-   "count": 2,
-   "slots_en_mirrored": 2,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "當歸拈痛湯"
   },
   {
    "term_en": "Memory loss",
@@ -10753,17 +8723,6 @@
    "sample_formula": "桑杏湯"
   },
   {
-   "term_en": "Nasal polyps",
-   "zh": "鼻息肉",
-   "status": "applied",
-   "count": 2,
-   "slots_en_mirrored": 2,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "川芎茶調散"
-  },
-  {
    "term_en": "Neck and shoulder stiffness",
    "zh": null,
    "status": "untranslated",
@@ -10892,17 +8851,6 @@
    "sample_formula": "補陽還五湯"
   },
   {
-   "term_en": "Neutropenia",
-   "zh": "嗜中性白血球減少症",
-   "status": "applied",
-   "count": 2,
-   "slots_en_mirrored": 2,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "十全大補湯"
-  },
-  {
    "term_en": "Night blindness",
    "zh": null,
    "status": "untranslated",
@@ -10933,17 +8881,6 @@
    "count": 2,
    "slots_en_mirrored": 2,
    "sample_formula": "芍藥甘草湯"
-  },
-  {
-   "term_en": "Nocturnal emission",
-   "zh": "夢遺",
-   "status": "applied",
-   "count": 2,
-   "slots_en_mirrored": 2,
-   "sources": [
-    "herb.condition_tags"
-   ],
-   "sample_formula": "加味逍遙散"
   },
   {
    "term_en": "Nodular erythema nodosum",
@@ -11154,39 +9091,6 @@
    "sample_formula": "大补阴丸"
   },
   {
-   "term_en": "Otitis Media",
-   "zh": "中耳炎",
-   "status": "applied",
-   "count": 2,
-   "slots_en_mirrored": 2,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "通竅活血湯"
-  },
-  {
-   "term_en": "Ovarian cyst",
-   "zh": "卵巢囊腫",
-   "status": "applied",
-   "count": 2,
-   "slots_en_mirrored": 2,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "少腹逐瘀湯"
-  },
-  {
-   "term_en": "Overactive Bladder",
-   "zh": "膀胱過動症",
-   "status": "applied",
-   "count": 2,
-   "slots_en_mirrored": 2,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "縮泉丸"
-  },
-  {
    "term_en": "Pain and discomfort from spasms of the skeletal muscles, ligaments and related tissues",
    "zh": null,
    "status": "untranslated",
@@ -11395,17 +9299,6 @@
    "sample_formula": "五苓散"
   },
   {
-   "term_en": "Pericarditis",
-   "zh": "心包炎",
-   "status": "applied",
-   "count": 2,
-   "slots_en_mirrored": 2,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "溫膽湯"
-  },
-  {
    "term_en": "Pericoronitis",
    "zh": null,
    "status": "untranslated",
@@ -11550,17 +9443,6 @@
    "sample_formula": "小陷胸湯"
   },
   {
-   "term_en": "Pneumothorax",
-   "zh": "氣胸",
-   "status": "applied",
-   "count": 2,
-   "slots_en_mirrored": 2,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "血府逐瘀湯"
-  },
-  {
    "term_en": "Poison ivy",
    "zh": null,
    "status": "untranslated",
@@ -11618,14 +9500,12 @@
   },
   {
    "term_en": "Poor appetite",
-   "zh": null,
-   "status": "ambiguous_deferred",
+   "zh": "食慾不振",
+   "status": "applied",
    "count": 2,
    "slots_en_mirrored": 2,
-   "candidates": [
-    "食慾不振",
-    "食少",
-    "納呆食少"
+   "sources": [
+    "curated:three_way_converged"
    ],
    "sample_formula": "健脾丸"
   },
@@ -11782,17 +9662,6 @@
    "sample_formula": "十全大補湯"
   },
   {
-   "term_en": "Postpartum body pain",
-   "zh": "產後身痛",
-   "status": "applied",
-   "count": 2,
-   "slots_en_mirrored": 2,
-   "sources": [
-    "tdis_registry"
-   ],
-   "sample_formula": "獨活寄生湯"
-  },
-  {
    "term_en": "Postpartum clots or bleeding",
    "zh": null,
    "status": "untranslated",
@@ -11903,17 +9772,6 @@
    "count": 2,
    "slots_en_mirrored": 2,
    "sample_formula": "當歸芍藥散"
-  },
-  {
-   "term_en": "Premature ventricular contractions",
-   "zh": "心室早期收縮",
-   "status": "applied",
-   "count": 2,
-   "slots_en_mirrored": 2,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "炙甘草湯"
   },
   {
    "term_en": "Premenstrual nervousness",
@@ -12154,17 +10012,6 @@
    "count": 2,
    "slots_en_mirrored": 2,
    "sample_formula": "黃連解毒湯"
-  },
-  {
-   "term_en": "Qi Stagnation",
-   "zh": "氣滯",
-   "status": "applied",
-   "count": 2,
-   "slots_en_mirrored": 2,
-   "sources": [
-    "formula.pattern_tags"
-   ],
-   "sample_formula": "參蘇飲"
   },
   {
    "term_en": "Radio-dermatitis",
@@ -12543,17 +10390,6 @@
    "sample_formula": "葛根黄芩黄连汤"
   },
   {
-   "term_en": "Sarcoidosis",
-   "zh": "類肉瘤病",
-   "status": "applied",
-   "count": 2,
-   "slots_en_mirrored": 2,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "桑螵蛸散"
-  },
-  {
    "term_en": "Schistosomiasis",
    "zh": null,
    "status": "untranslated",
@@ -12578,18 +10414,6 @@
    "sample_formula": "大定風珠"
   },
   {
-   "term_en": "Scrofula",
-   "zh": "瘰癧",
-   "status": "applied",
-   "count": 2,
-   "slots_en_mirrored": 2,
-   "sources": [
-    "tdis_registry",
-    "herb.condition_tags"
-   ],
-   "sample_formula": "十全大補湯"
-  },
-  {
    "term_en": "Scrotal hernia",
    "zh": null,
    "status": "untranslated",
@@ -12612,17 +10436,6 @@
    "count": 2,
    "slots_en_mirrored": 2,
    "sample_formula": "五苓散"
-  },
-  {
-   "term_en": "Secondary dysmenorrhea",
-   "zh": "繼發性痛經",
-   "status": "applied",
-   "count": 2,
-   "slots_en_mirrored": 2,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "十全大補湯"
   },
   {
    "term_en": "Seizure disorder",
@@ -12775,17 +10588,6 @@
    "count": 2,
    "slots_en_mirrored": 2,
    "sample_formula": "十全大補湯"
-  },
-  {
-   "term_en": "Sickle cell disease",
-   "zh": "鐮狀細胞疾病",
-   "status": "applied",
-   "count": 2,
-   "slots_en_mirrored": 2,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "小蓟饮子"
   },
   {
    "term_en": "Side effects of radiation therapy",
@@ -13020,17 +10822,6 @@
    "sample_formula": "小柴胡湯"
   },
   {
-   "term_en": "Stye",
-   "zh": "針眼",
-   "status": "applied",
-   "count": 2,
-   "slots_en_mirrored": 2,
-   "sources": [
-    "tdis_registry"
-   ],
-   "sample_formula": "仙方活命飲"
-  },
-  {
    "term_en": "Subdermal abscess",
    "zh": null,
    "status": "untranslated",
@@ -13045,17 +10836,6 @@
    "count": 2,
    "slots_en_mirrored": 2,
    "sample_formula": "完帶湯"
-  },
-  {
-   "term_en": "Sudden turmoil disorder",
-   "zh": "霍亂",
-   "status": "applied",
-   "count": 2,
-   "slots_en_mirrored": 2,
-   "sources": [
-    "tdis_registry"
-   ],
-   "sample_formula": "理中丸"
   },
   {
    "term_en": "Sudden turmoil disorder with muscle spasms",
@@ -13202,35 +10982,12 @@
    "sample_formula": "蘇合香丸"
   },
   {
-   "term_en": "Syncope",
-   "zh": "暈厥",
-   "status": "applied",
-   "count": 2,
-   "slots_en_mirrored": 2,
-   "sources": [
-    "symptoms"
-   ],
-   "sample_formula": "人參養榮湯"
-  },
-  {
    "term_en": "Syncope due to Blood disorders",
    "zh": null,
    "status": "untranslated",
    "count": 2,
    "slots_en_mirrored": 2,
    "sample_formula": "通竅活血湯"
-  },
-  {
-   "term_en": "Syphilis",
-   "zh": "梅毒",
-   "status": "applied",
-   "count": 2,
-   "slots_en_mirrored": 2,
-   "sources": [
-    "condition_canon",
-    "herb.condition_tags"
-   ],
-   "sample_formula": "荊防敗毒散"
   },
   {
    "term_en": "Systremma",
@@ -13274,13 +11031,12 @@
   },
   {
    "term_en": "Tenesmus",
-   "zh": null,
-   "status": "ambiguous_deferred",
+   "zh": "裡急後重",
+   "status": "applied",
    "count": 2,
    "slots_en_mirrored": 2,
-   "candidates": [
-    "里急後重",
-    "裡急後重"
+   "sources": [
+    "curated:three_way_converged"
    ],
    "sample_formula": "補中益氣湯"
   },
@@ -13365,17 +11121,6 @@
    "sample_formula": "豬苓湯"
   },
   {
-   "term_en": "Thrombocytopenia",
-   "zh": "血小板減少症",
-   "status": "applied",
-   "count": 2,
-   "slots_en_mirrored": 2,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "歸脾湯"
-  },
-  {
    "term_en": "Thrombosis",
    "zh": null,
    "status": "untranslated",
@@ -13390,17 +11135,6 @@
    "count": 2,
    "slots_en_mirrored": 2,
    "sample_formula": "六味地黃丸"
-  },
-  {
-   "term_en": "Thyroid cancer",
-   "zh": "甲狀腺癌",
-   "status": "applied",
-   "count": 2,
-   "slots_en_mirrored": 2,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "小柴胡湯"
   },
   {
    "term_en": "Thyroid tumors",
@@ -13689,17 +11423,6 @@
    "count": 2,
    "slots_en_mirrored": 2,
    "sample_formula": "藿香正氣散"
-  },
-  {
-   "term_en": "Turbid urine",
-   "zh": "白濁",
-   "status": "applied",
-   "count": 2,
-   "slots_en_mirrored": 2,
-   "sources": [
-    "herb.condition_tags"
-   ],
-   "sample_formula": "加味逍遙散"
   },
   {
    "term_en": "Tympanites",
@@ -14038,17 +11761,6 @@
    "sample_formula": "半夏厚朴湯"
   },
   {
-   "term_en": "Vestibular neuritis",
-   "zh": "前庭神經炎",
-   "status": "applied",
-   "count": 2,
-   "slots_en_mirrored": 2,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "半夏白朮天麻湯"
-  },
-  {
    "term_en": "Vestibulitis",
    "zh": null,
    "status": "untranslated",
@@ -14087,17 +11799,6 @@
    "count": 2,
    "slots_en_mirrored": 2,
    "sample_formula": "五苓散"
-  },
-  {
-   "term_en": "Vitiligo",
-   "zh": "白斑症",
-   "status": "applied",
-   "count": 2,
-   "slots_en_mirrored": 2,
-   "sources": [
-    "condition_canon"
-   ],
-   "sample_formula": "通竅活血湯"
   },
   {
    "term_en": "Warts",

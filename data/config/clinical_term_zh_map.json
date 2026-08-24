@@ -1,0 +1,203 @@
+{
+ "dataset": "Curated EN→ZH clinical term map (方劑主治／現代運用 中文欄回填)",
+ "policy": [
+  "這裡的每一筆都是『已裁定』的譯名，scripts/build-term-crosswalk.js 視為最高權威，",
+  "不再走多義偵測——歧義在這裡已經被解掉了。",
+  "method=three_way_converged：兩位互不相見的譯者獨立得出同一譯名，且落在 repo 既有詞彙內。",
+  "method=dual_translation_agreed：兩位互不相見的譯者獨立得出同一譯名（repo 原本沒有這個詞）。",
+  "method=ting_ruling：Ting 本人裁定，永遠勝過上面兩者。",
+  "台灣語域是硬要求：症候群不是綜合症、乾癬不是牛皮癬、胃食道逆流、腕隧道症候群。"
+ ],
+ "generated_note": "初版由 scripts/build-term-crosswalk.js 的多義佇列經雙盲收斂產生；後續由人工增修。",
+ "entries": [
+  {
+   "en": "Dysmenorrhea",
+   "zh": "痛經",
+   "method": "three_way_converged",
+   "evidence": "兩位盲譯者獨立得出同一譯名，且該譯名已存在於 repo 既有中英配對（候選：痛經／經痛）",
+   "slots": 82
+  },
+  {
+   "en": "Urticaria",
+   "zh": "蕁麻疹",
+   "method": "three_way_converged",
+   "evidence": "兩位盲譯者獨立得出同一譯名，且該譯名已存在於 repo 既有中英配對（候選：蕁麻疹／癮疹）",
+   "slots": 56
+  },
+  {
+   "en": "Sore throat",
+   "zh": "咽喉痛",
+   "method": "three_way_converged",
+   "evidence": "兩位盲譯者獨立得出同一譯名，且該譯名已存在於 repo 既有中英配對（候選：咽喉痛／咽痛／咽喉腫痛）",
+   "slots": 54
+  },
+  {
+   "en": "Spermatorrhea",
+   "zh": "遺精",
+   "method": "three_way_converged",
+   "evidence": "兩位盲譯者獨立得出同一譯名，且該譯名已存在於 repo 既有中英配對（候選：遺精／滑精）",
+   "slots": 50
+  },
+  {
+   "en": "Epilepsy",
+   "zh": "癲癇",
+   "method": "three_way_converged",
+   "evidence": "兩位盲譯者獨立得出同一譯名，且該譯名已存在於 repo 既有中英配對（候選：癲癇／癇病）",
+   "slots": 42
+  },
+  {
+   "en": "Knee pain",
+   "zh": "膝痛",
+   "method": "three_way_converged",
+   "evidence": "兩位盲譯者獨立得出同一譯名，且該譯名已存在於 repo 既有中英配對（候選：膝蓋痛／膝痛）",
+   "slots": 40
+  },
+  {
+   "en": "Toothache",
+   "zh": "牙痛",
+   "method": "three_way_converged",
+   "evidence": "兩位盲譯者獨立得出同一譯名，且該譯名已存在於 repo 既有中英配對（候選：牙齒痛／牙痛）",
+   "slots": 38
+  },
+  {
+   "en": "Acne",
+   "zh": "痤瘡",
+   "method": "three_way_converged",
+   "evidence": "兩位盲譯者獨立得出同一譯名，且該譯名已存在於 repo 既有中英配對（候選：痤瘡／粉刺）",
+   "slots": 34
+  },
+  {
+   "en": "Mastitis",
+   "zh": "乳腺炎",
+   "method": "three_way_converged",
+   "evidence": "兩位盲譯者獨立得出同一譯名，且該譯名已存在於 repo 既有中英配對（候選：乳腺炎／乳癰）",
+   "slots": 20
+  },
+  {
+   "en": "Nausea",
+   "zh": "噁心",
+   "method": "three_way_converged",
+   "evidence": "兩位盲譯者獨立得出同一譯名，且該譯名已存在於 repo 既有中英配對（候選：噁心反胃／噁心）",
+   "slots": 16
+  },
+  {
+   "en": "Convulsions",
+   "zh": "抽搐",
+   "method": "three_way_converged",
+   "evidence": "兩位盲譯者獨立得出同一譯名，且該譯名已存在於 repo 既有中英配對（候選：驚厥／驚風抽搐／抽搐）",
+   "slots": 12
+  },
+  {
+   "en": "Osteoporosis",
+   "zh": "骨質疏鬆症",
+   "method": "three_way_converged",
+   "evidence": "兩位盲譯者獨立得出同一譯名，且該譯名已存在於 repo 既有中英配對（候選：骨質疏鬆症／骨質疏鬆）",
+   "slots": 10
+  },
+  {
+   "en": "Polycystic ovary syndrome",
+   "zh": "多囊性卵巢症候群",
+   "method": "three_way_converged",
+   "evidence": "兩位盲譯者獨立得出同一譯名，且該譯名已存在於 repo 既有中英配對（候選：多囊性卵巢症候群／多囊卵巢症候群）",
+   "slots": 10
+  },
+  {
+   "en": "Epigastric pain",
+   "zh": "胃脘痛",
+   "method": "three_way_converged",
+   "evidence": "兩位盲譯者獨立得出同一譯名，且該譯名已存在於 repo 既有中英配對（候選：胃脘痛／胃脘作痛）",
+   "slots": 8
+  },
+  {
+   "en": "Erectile dysfunction",
+   "zh": "勃起功能障礙",
+   "method": "three_way_converged",
+   "evidence": "兩位盲譯者獨立得出同一譯名，且該譯名已存在於 repo 既有中英配對（候選：男性勃起障礙／勃起功能障礙）",
+   "slots": 8
+  },
+  {
+   "en": "Menopausal syndrome",
+   "zh": "更年期症候群",
+   "method": "three_way_converged",
+   "evidence": "兩位盲譯者獨立得出同一譯名，且該譯名已存在於 repo 既有中英配對（候選：更年期綜合症／更年期症候群）",
+   "slots": 8
+  },
+  {
+   "en": "Myocardial infarction",
+   "zh": "心肌梗塞",
+   "method": "three_way_converged",
+   "evidence": "兩位盲譯者獨立得出同一譯名，且該譯名已存在於 repo 既有中英配對（候選：心肌梗塞／急性心肌梗塞）",
+   "slots": 8
+  },
+  {
+   "en": "Scabies",
+   "zh": "疥瘡",
+   "method": "three_way_converged",
+   "evidence": "兩位盲譯者獨立得出同一譯名，且該譯名已存在於 repo 既有中英配對（候選：疥瘡／疥癬）",
+   "slots": 8
+  },
+  {
+   "en": "Carpal tunnel syndrome",
+   "zh": "腕隧道症候群",
+   "method": "three_way_converged",
+   "evidence": "兩位盲譯者獨立得出同一譯名，且該譯名已存在於 repo 既有中英配對（候選：腕管綜合症／腕隧道症候群）",
+   "slots": 6
+  },
+  {
+   "en": "Nocturia",
+   "zh": "夜尿",
+   "method": "three_way_converged",
+   "evidence": "兩位盲譯者獨立得出同一譯名，且該譯名已存在於 repo 既有中英配對（候選：夜尿／夜尿多）",
+   "slots": 6
+  },
+  {
+   "en": "Cellulitis",
+   "zh": "蜂窩性組織炎",
+   "method": "three_way_converged",
+   "evidence": "兩位盲譯者獨立得出同一譯名，且該譯名已存在於 repo 既有中英配對（候選：蜂窩性組織炎／蜂窩組織炎）",
+   "slots": 4
+  },
+  {
+   "en": "Irritability",
+   "zh": "煩躁",
+   "method": "three_way_converged",
+   "evidence": "兩位盲譯者獨立得出同一譯名，且該譯名已存在於 repo 既有中英配對（候選：易怒／心煩／煩躁）",
+   "slots": 4
+  },
+  {
+   "en": "Lung abscess",
+   "zh": "肺膿瘍",
+   "method": "three_way_converged",
+   "evidence": "兩位盲譯者獨立得出同一譯名，且該譯名已存在於 repo 既有中英配對（候選：肺膿瘍／肺癰）",
+   "slots": 4
+  },
+  {
+   "en": "Childhood convulsions",
+   "zh": "小兒驚風",
+   "method": "three_way_converged",
+   "evidence": "兩位盲譯者獨立得出同一譯名，且該譯名已存在於 repo 既有中英配對（候選：小兒驚風／小兒驚癇）",
+   "slots": 2
+  },
+  {
+   "en": "Gastroesophageal reflux disease",
+   "zh": "胃食道逆流",
+   "method": "three_way_converged",
+   "evidence": "兩位盲譯者獨立得出同一譯名，且該譯名已存在於 repo 既有中英配對（候選：胃酸食道逆流／胃食道逆流）",
+   "slots": 2
+  },
+  {
+   "en": "Poor appetite",
+   "zh": "食慾不振",
+   "method": "three_way_converged",
+   "evidence": "兩位盲譯者獨立得出同一譯名，且該譯名已存在於 repo 既有中英配對（候選：食慾不振／食少／納呆食少）",
+   "slots": 2
+  },
+  {
+   "en": "Tenesmus",
+   "zh": "裡急後重",
+   "method": "three_way_converged",
+   "evidence": "兩位盲譯者獨立得出同一譯名，且該譯名已存在於 repo 既有中英配對（候選：里急後重／裡急後重）",
+   "slots": 2
+  }
+ ]
+}

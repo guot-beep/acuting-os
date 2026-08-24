@@ -7,6 +7,7 @@
  * 中文欄看到的是 "Gonorrhea"、"Chicken pox"。validate-encoding 抓得到
  * （chinese_field_without_cjk），但沒有任何 gate 擋，也沒人回填過。
  *
+ * 權威順序：data/config/clinical_term_zh_map.json（已裁定，最高）→ repo 既有中英配對。
  * 這支的原則：**一個字都不發明**。中文只能來自 repo 既有的權威中英配對
  * （病名 canon、證型／症狀登記簿、以及同一批卡上已策展的雙語標籤），
  * 每一筆都記下出處。推不出來的就標 untranslated，留給下一波人工／查證，
@@ -84,6 +85,16 @@ for (const f of fs.readdirSync(path.join(ROOT, "data/config"))) {
   } catch (e) {}
 }
 
+// 已裁定的譯名（data/config/clinical_term_zh_map.json）是最高權威：歧義在那裡
+// 已經被解掉了，所以命中就直接 applied，不再走多義偵測。Ting 的裁定（method=
+// ting_ruling）與雙盲收斂的結果都住在同一個檔，來源逐筆可查。
+const CURATED = new Map();
+try {
+  for (const e of (rd("data/config/clinical_term_zh_map.json").entries || [])) {
+    if (e && e.en && e.zh) CURATED.set(norm(e.en), e);
+  }
+} catch (err) {}
+
 // ---- 2. 蒐集待回填的英文詞（只看會上卡的兩個中文欄位） --------------------
 const TARGET_FIELDS = [["treats_zh", "treats_en"], ["modern_applications_zh", "modern_applications_en"]];
 const terms = new Map();
@@ -111,6 +122,14 @@ for (const rec of [...terms.values()].sort((a, b) => b.count - a.count || a.term
   let status, zh = null, sources = [], candidates;
   if (!/[A-Za-z]/.test(t)) {
     status = "junk";                                   // "( )" 這類匯入殘渣，不碰
+  } else if (CURATED.has(norm(t))) {
+    const c = CURATED.get(norm(t));
+    zh = c.zh;
+    sources = ["curated:" + (c.method || "manual")];
+    status = digits(t) !== digits(zh) ? "rejected_digit_mismatch"
+      : !hasCJK(zh) ? "rejected_not_chinese"
+      : rec.slots_en_mirrored !== rec.count ? "rejected_en_not_mirrored"
+      : "applied";
   } else {
     const m = pairs.get(norm(t));
     if (!m) status = "untranslated";
@@ -140,6 +159,7 @@ const doc = {
     "ambiguous_deferred 需人工裁定語域（台灣用語 vs 其他），不得用頻次自動取。",
   ],
   authority_pairs: pairs.size,
+  curated_entries: CURATED.size,
   totals: {
     unique_terms: out.length,
     slots_total: out.reduce((n, o) => n + o.count, 0),
