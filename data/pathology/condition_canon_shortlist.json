@@ -24181,6 +24181,81 @@
           "MedlinePlus — Crohn's Disease (https://medlineplus.gov/crohnsdisease.html)",
           "MedlinePlus — Ulcerative Colitis (https://medlineplus.gov/ulcerativecolitis.html)"
         ]
+      },
+      "acupoint_protocol_evidence": {
+        "protocol_status": "adjunct_only",
+        "point_rationale_zh": "研究多為針灸加艾灸的混合介入，且 UC／Crohn 常未能充分分離；不建立純針刺固定穴位。",
+        "point_rationale_en": "Most evidence concerns combined acupuncture-moxibustion and often does not cleanly separate UC from Crohn disease; no needling-only fixed set was created.",
+        "evidence_note_zh": "2015 回顧認為證據受研究少與品質限制；2025 network meta-analysis 把針灸與艾灸合併為 APMX，且標準藥物治療在誘導緩解排名最高。活動期與緩解期不可混為一談。",
+        "treatment_parameters": {
+          "manual_or_electroacupuncture": null,
+          "frequency": null,
+          "session_duration": null,
+          "treatment_course": null,
+          "timing_relative_to_trigger": null,
+          "source_ids": []
+        },
+        "scope_conflict_note": null,
+        "sources": [
+          {
+            "source_id": "S1",
+            "type": "systematic_review",
+            "citation": "Langhorst J, et al. Systematic review of complementary and alternative medicine treatments in inflammatory bowel diseases. J Crohns Colitis. 2015;9(1):86-106.",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/25518050/",
+            "pmid_or_doi": "PMID 25518050",
+            "covers": "IBD；不同亞型與介入混合。",
+            "modality": "mixed",
+            "comparator": "active_control(varied) | usual_care",
+            "supports": [
+              "efficacy",
+              "scope"
+            ],
+            "primary_outcome_zh": "疾病活動、緩解與症狀；研究異質。",
+            "finding_zh": "可能有幫助，但研究數量與品質不足。",
+            "certainty": "low"
+          },
+          {
+            "source_id": "S2",
+            "type": "guideline",
+            "citation": "AGA Clinical Practice Guidelines and patient resources for inflammatory bowel disease.",
+            "url": "https://gastro.org/clinical-guidance/",
+            "pmid_or_doi": null,
+            "covers": "IBD 標準治療與嚴重併發症管理。",
+            "modality": "unclear",
+            "comparator": "none",
+            "supports": [
+              "scope",
+              "caution",
+              "referral"
+            ],
+            "primary_outcome_zh": "不適用。",
+            "finding_zh": "IBD 需以標準藥物與專科監測控制炎症及併發症。",
+            "certainty": "not_graded"
+          }
+        ],
+        "points_detail": [],
+        "collected_by": "SOL B6 2026-08-17",
+        "assessed": true,
+        "no_source_found": false,
+        "condition_specific_cautions_zh": [
+          {
+            "text": "使用類固醇、免疫調節劑或生物製劑者可能有較高感染風險；針刺前需評估免疫抑制、皮膚感染與血球狀況。",
+            "source_ids": [
+              "S2"
+            ]
+          }
+        ],
+        "referral_red_flags_zh": [
+          {
+            "text": "嚴重腹脹／壓痛、持續劇痛、停止排氣排便、持續嘔吐、大量或持續出血、發燒伴心搏過速或全身毒性表現，需緊急評估毒性巨結腸、阻塞、穿孔或重度出血。",
+            "source_ids": [
+              "S2"
+            ]
+          }
+        ],
+        "unresolved": [
+          "感染風險與急症句需 ingest 前再以可直接定位的 IBD 指引頁逐句複核。"
+        ]
       }
     },
     {
@@ -25750,7 +25825,64 @@
         "Known advanced fibrosis or cirrhosis → regular HCC surveillance (ultrasound ± AFP), never interrupted",
         "Rapid weight loss with muscle wasting → nutrition and cachexia assessment",
         "Alcohol intake must be honestly re-assessed — alcoholic liver disease follows a different pathway"
-      ]
+      ],
+      "acupoint_protocol_evidence": {
+        "protocol_status": "no_source",
+        "point_rationale_zh": "未找到足以建立逐穴處方的高品質疾病直接針刺證據。",
+        "point_rationale_en": "No sufficiently reliable disease-direct evidence supporting a reproducible acupuncture prescription was identified.",
+        "evidence_note_zh": "檢索 PubMed（2026-08-17；acupuncture NAFLD/MASLD systematic review RCT）。搜尋結果多為中藥、營養補充或 protocol，未找到足以安全建立逐穴處方的直接高品質證據。現行名稱為 MASLD，舊文多使用 NAFLD。",
+        "treatment_parameters": {
+          "manual_or_electroacupuncture": null,
+          "frequency": null,
+          "session_duration": null,
+          "treatment_course": null,
+          "timing_relative_to_trigger": null,
+          "source_ids": []
+        },
+        "scope_conflict_note": null,
+        "sources": [
+          {
+            "source_id": "S1",
+            "type": "guideline",
+            "citation": "AASLD Practice Guidance on the clinical assessment and management of nonalcoholic fatty liver disease. Hepatology. 2023.",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/36727674/",
+            "pmid_or_doi": "PMID 36727674",
+            "covers": "NAFLD（現多稱 MASLD）風險分層與管理；非針灸療效來源。",
+            "modality": "unclear",
+            "comparator": "none",
+            "supports": [
+              "scope",
+              "referral"
+            ],
+            "primary_outcome_zh": "纖維化風險與肝病結局。",
+            "finding_zh": "需進行纖維化風險分層；肝酵素不是纖維化的替代指標。",
+            "certainty": "not_graded"
+          }
+        ],
+        "points_detail": [],
+        "collected_by": "SOL B6 2026-08-17",
+        "assessed": true,
+        "no_source_found": true,
+        "condition_specific_cautions_zh": [
+          {
+            "text": "ALT／AST 改善不等於肝纖維化逆轉；需用已驗證方式評估纖維化風險。",
+            "source_ids": [
+              "S1"
+            ]
+          }
+        ],
+        "referral_red_flags_zh": [
+          {
+            "text": "疑似進階纖維化／肝硬化、黃疸、腹水、消化道出血、意識改變或肝功能失代償需專科或緊急評估。",
+            "source_ids": [
+              "S1"
+            ]
+          }
+        ],
+        "unresolved": [
+          "無可重建的針刺逐穴證據。"
+        ]
+      }
     },
     {
       "id": "cond.gallbladder_dysfunction",
@@ -25837,7 +25969,56 @@
       },
       "sources": [
         "https://medlineplus.gov/gallbladderdiseases.html"
-      ]
+      ],
+      "acupoint_protocol_evidence": {
+        "protocol_status": "no_source",
+        "point_rationale_zh": "未找到符合『膽道功能障礙』且能與膽結石、急性膽囊炎分離的針刺來源。",
+        "point_rationale_en": "No acupuncture source specific to gallbladder dysfunction and separable from gallstones or acute cholecystitis was identified.",
+        "evidence_note_zh": "檢索 PubMed（2026-08-17；acupuncture gallbladder dysfunction/biliary dyskinesia systematic review/RCT）；無疾病直接來源。膽絞痛、膽結石與急性膽囊炎研究未移植。",
+        "treatment_parameters": {
+          "manual_or_electroacupuncture": null,
+          "frequency": null,
+          "session_duration": null,
+          "treatment_course": null,
+          "timing_relative_to_trigger": null,
+          "source_ids": []
+        },
+        "scope_conflict_note": null,
+        "sources": [
+          {
+            "source_id": "S1",
+            "type": "guideline",
+            "citation": "Tokyo Guidelines 2018: diagnostic criteria and severity grading of acute cholangitis and cholecystitis. J Hepatobiliary Pancreat Sci. 2018.",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/29032610/",
+            "pmid_or_doi": "PMID 29032610",
+            "covers": "急性膽管炎與膽囊炎診斷／嚴重度；非針灸療效來源。",
+            "modality": "unclear",
+            "comparator": "none",
+            "supports": [
+              "referral"
+            ],
+            "primary_outcome_zh": "急性膽道感染診斷與嚴重度。",
+            "finding_zh": "急性膽道感染需及時醫療評估與處置。",
+            "certainty": "not_graded"
+          }
+        ],
+        "points_detail": [],
+        "collected_by": "SOL B6 2026-08-17",
+        "assessed": true,
+        "no_source_found": true,
+        "condition_specific_cautions_zh": [],
+        "referral_red_flags_zh": [
+          {
+            "text": "持續右上腹痛合併發燒、黃疸、嘔吐或腹膜刺激徵象需急評急性膽囊炎、膽管炎或胰臟炎；疑似急性腹症不可用針灸延誤。",
+            "source_ids": [
+              "S1"
+            ]
+          }
+        ],
+        "unresolved": [
+          "Murphy 徵象並非病人自我排除急症的可靠工具；交由臨床評估。"
+        ]
+      }
     },
     {
       "id": "cond.cinv",
@@ -25875,7 +26056,12 @@
           ]
         }
       ],
-      "acupoint_protocols": [],
+      "acupoint_protocols": [
+        {
+          "name_zh": "內關",
+          "code": "PC6"
+        }
+      ],
       "herb_formulas": [
         "八珍湯",
         "補中益氣湯",
@@ -25926,7 +26112,113 @@
       },
       "sources": [
         "https://medlineplus.gov/nauseaandvomiting.html"
-      ]
+      ],
+      "acupoint_protocol_evidence": {
+        "protocol_status": "adjunct_only",
+        "point_rationale_zh": "僅保留 CINV 疾病專屬來源直接支持的 PC6；不引用孕期噁心、PONV 或暈動症來源。",
+        "point_rationale_en": "Only PC6, directly supported by CINV-specific sources, is retained; pregnancy nausea, PONV and motion-sickness evidence was excluded.",
+        "evidence_note_zh": "2023 CINV 專屬 Cochrane 回顧：針灸加 usual care 可能提高急性與延遲嘔吐完全控制，但證據確定性偏低；對噁心的效益不清楚。針刺、指壓與經皮電刺激已分開，不互相頂替。",
+        "treatment_parameters": {
+          "manual_or_electroacupuncture": "針刺或電針；不同研究不可合併視為同一介入",
+          "frequency": null,
+          "session_duration": null,
+          "treatment_course": null,
+          "timing_relative_to_trigger": "多於化療前開始並涵蓋急性期（0–24 小時）及延遲期（其後數日）；研究方案不一。",
+          "source_ids": [
+            "S1"
+          ]
+        },
+        "scope_conflict_note": null,
+        "sources": [
+          {
+            "source_id": "S1",
+            "type": "systematic_review",
+            "citation": "Yan Y, et al. Acupuncture for the prevention of chemotherapy-induced nausea and vomiting in cancer patients. Cochrane Database Syst Rev. 2023.",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10278514/",
+            "pmid_or_doi": null,
+            "covers": "僅 CINV；急性與延遲期結果可分離；不涵蓋孕期噁心、PONV 或暈動症。",
+            "modality": "mixed",
+            "comparator": "sham | usual_care | active_control(standard antiemetics)",
+            "supports": [
+              "efficacy",
+              "specific_points",
+              "treatment_parameters",
+              "scope"
+            ],
+            "primary_outcome_zh": "急性與延遲期嘔吐／噁心完全控制。",
+            "finding_zh": "加在 usual care 上可能改善嘔吐完全控制；對噁心效益不確定，研究偏倚與異質性限制信心。",
+            "certainty": "low"
+          },
+          {
+            "source_id": "S2",
+            "type": "systematic_review",
+            "citation": "Garcia GT, et al. Electrical Stimulation of PC6 to Control Chemotherapy-Induced Nausea and Vomiting: A Systematic Review and Meta-Analysis. Med Acupunct. 2021;33(1):22-44.",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7894035/",
+            "pmid_or_doi": "DOI 10.1089/acu.2020.1431",
+            "covers": "僅化療後噁心嘔吐；PC6 電刺激；不涵蓋孕期噁心或 PONV。",
+            "modality": "transcutaneous(TEAS/TENS)",
+            "comparator": "sham | usual_care",
+            "supports": [
+              "efficacy",
+              "specific_points"
+            ],
+            "primary_outcome_zh": "化療後急性與整體噁心／嘔吐。",
+            "finding_zh": "PC6 電刺激有可能降低部分 CINV 結局；此結果不可當作針刺證據。",
+            "certainty": "low"
+          },
+          {
+            "source_id": "S3",
+            "type": "official_safety_info",
+            "citation": "National Cancer Institute. Nausea and Vomiting Related to Cancer Treatment (PDQ), Health Professional Version. Updated 2025.",
+            "url": "https://www.cancer.gov/about-cancer/treatment/side-effects/nausea/nausea-hp-pdq",
+            "pmid_or_doi": null,
+            "covers": "CINV 急性、延遲與預期性噁心及標準照護。",
+            "modality": "unclear",
+            "comparator": "none",
+            "supports": [
+              "scope",
+              "caution",
+              "referral"
+            ],
+            "primary_outcome_zh": "CINV 分期與控制。",
+            "finding_zh": "CINV 應依化療致吐風險使用標準止吐預防與救援治療。",
+            "certainty": "not_graded"
+          }
+        ],
+        "points_detail": [
+          {
+            "code": "PC6",
+            "role_zh": "研究中最常見的固定穴／穴位刺激位置",
+            "reason_zh": "CINV 專屬回顧評估 PC6 相關針刺與穴位刺激；僅作標準止吐方案的輔助。",
+            "source_ids": [
+              "S1",
+              "S2"
+            ]
+          }
+        ],
+        "collected_by": "SOL B6 2026-08-17",
+        "assessed": true,
+        "no_source_found": false,
+        "condition_specific_cautions_zh": [
+          {
+            "text": "嗜中性球低下、發燒性嗜中性球低下、嚴重血小板低下或抗凝／出血風險患者，針刺前需由腫瘤團隊評估感染與出血風險。",
+            "source_ids": [
+              "S3"
+            ]
+          }
+        ],
+        "referral_red_flags_zh": [
+          {
+            "text": "持續或劇烈嘔吐、無法保留液體／藥物、少尿、頭暈或意識改變、明顯脫水、疑似電解質異常，或發燒伴嗜中性球低下，需立即聯絡腫瘤團隊或急診。",
+            "source_ids": [
+              "S3"
+            ]
+          }
+        ],
+        "unresolved": [
+          "血球計數的絕對針刺門檻未由一致指引確立，不填推測數字。"
+        ]
+      }
     },
     {
       "id": "cond.post_op_ileus",
@@ -25965,7 +26257,16 @@
           ]
         }
       ],
-      "acupoint_protocols": [],
+      "acupoint_protocols": [
+        {
+          "name_zh": "足三里",
+          "code": "ST36"
+        },
+        {
+          "name_zh": "內關",
+          "code": "PC6"
+        }
+      ],
       "herb_formulas": [
         "八珍湯",
         "補中益氣湯",
@@ -26008,6 +26309,114 @@
         ],
         "western_pathology_en": [
           "ERAS 學會 — 術後腸麻痺與加速康復通說"
+        ]
+      },
+      "acupoint_protocol_evidence": {
+        "protocol_status": "postoperative_only",
+        "point_rationale_zh": "只保留術後胃腸恢復直接回顧明示的 ST36／PC6；限已由外科團隊排除機械性阻塞後的術後照護。",
+        "point_rationale_en": "Only ST36/PC6 explicitly reported in postoperative gastrointestinal-recovery reviews are retained, after the surgical team has excluded mechanical obstruction.",
+        "evidence_note_zh": "2022 系統回顧顯示可能縮短首次排氣／排便與住院時間，但研究偏倚、異質性和對照差異限制信心；2024 回顧直接聚焦 ST36／PC6 電針。",
+        "treatment_parameters": {
+          "manual_or_electroacupuncture": "electroacupuncture 或 acupuncture，依研究分開",
+          "frequency": null,
+          "session_duration": null,
+          "treatment_course": null,
+          "timing_relative_to_trigger": "術後開始時間跨研究不一致，不設定通用小時數。",
+          "source_ids": [
+            "S1",
+            "S2"
+          ]
+        },
+        "scope_conflict_note": null,
+        "sources": [
+          {
+            "source_id": "S1",
+            "type": "systematic_review",
+            "citation": "Ye Z, et al. Effectiveness and safety of acupuncture for postoperative ileus following gastrointestinal surgery: A systematic review and meta-analysis. PLoS One. 2022;17:e0271580.",
+            "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0271580",
+            "pmid_or_doi": "DOI 10.1371/journal.pone.0271580",
+            "covers": "胃腸手術後腸麻痺／胃腸功能恢復；不是機械性阻塞。",
+            "modality": "mixed",
+            "comparator": "sham | usual_care",
+            "supports": [
+              "efficacy",
+              "specific_points",
+              "treatment_parameters",
+              "scope"
+            ],
+            "primary_outcome_zh": "首次排氣、首次排便、恢復飲食、住院日。",
+            "finding_zh": "可能加速部分術後胃腸恢復結局，但證據品質與異質性限制通用化。",
+            "certainty": "low"
+          },
+          {
+            "source_id": "S2",
+            "type": "systematic_review",
+            "citation": "Kao TW, et al. Electroacupuncture of ST36 and PC6 for postoperative gastrointestinal recovery: a systematic review and meta-analysis. J Tradit Complement Med. 2024.",
+            "url": "https://hub.tmu.edu.tw/en/publications/electroacupuncture-of-st36-and-pc6-for-postoperative-gastrointest/",
+            "pmid_or_doi": null,
+            "covers": "術後胃腸恢復；ST36 和／或 PC6 電針。",
+            "modality": "electroacupuncture",
+            "comparator": "sham | usual_care",
+            "supports": [
+              "efficacy",
+              "specific_points",
+              "treatment_parameters"
+            ],
+            "primary_outcome_zh": "首次排氣／排便等胃腸恢復時間。",
+            "finding_zh": "報告 ST36／PC6 電針可能縮短部分恢復時間；仍需高品質試驗。",
+            "certainty": "low"
+          },
+          {
+            "source_id": "S3",
+            "type": "official_safety_info",
+            "citation": "StatPearls. Postoperative Ileus. Updated 2025. NCBI Bookshelf.",
+            "url": "https://www.ncbi.nlm.nih.gov/books/NBK560780/",
+            "pmid_or_doi": null,
+            "covers": "術後腸麻痺之診斷、鑑別與機械性阻塞排除。",
+            "modality": "unclear",
+            "comparator": "none",
+            "supports": [
+              "scope",
+              "referral"
+            ],
+            "primary_outcome_zh": "不適用。",
+            "finding_zh": "術後腸麻痺為排除診斷，需與機械性阻塞及其他術後併發症鑑別。",
+            "certainty": "not_graded"
+          }
+        ],
+        "points_detail": [
+          {
+            "code": "ST36",
+            "role_zh": "術後腸胃恢復研究常用固定穴",
+            "reason_zh": "術後腸麻痺與術後胃腸恢復系統回顧直接報告。",
+            "source_ids": [
+              "S1",
+              "S2"
+            ]
+          },
+          {
+            "code": "PC6",
+            "role_zh": "部分電針術後胃腸恢復方案固定穴",
+            "reason_zh": "ST36／PC6 電針系統回顧直接涵蓋。",
+            "source_ids": [
+              "S2"
+            ]
+          }
+        ],
+        "collected_by": "SOL B6 2026-08-17",
+        "assessed": true,
+        "no_source_found": false,
+        "condition_specific_cautions_zh": [],
+        "referral_red_flags_zh": [
+          {
+            "text": "劇烈或持續加重腹痛、腹膜刺激徵象、持續嘔吐、停止排氣排便、發燒／心搏過速、局部明顯壓痛或影像疑阻塞，需立即由外科團隊排除機械性腸阻塞、缺血、吻合口漏或穿孔。",
+            "source_ids": [
+              "S3"
+            ]
+          }
+        ],
+        "unresolved": [
+          "通用術後起始時點與電針頻率無一致證據，不填。"
         ]
       }
     },
@@ -26093,6 +26502,87 @@
         "western_pathology_en": [
           "NIDDK — 乳糖不耐通說;過敏/不耐/乳糜瀉鑑別為臨床通說",
           "MedlinePlus — Food Allergy (https://medlineplus.gov/foodallergy.html)"
+        ]
+      },
+      "acupoint_protocol_evidence": {
+        "protocol_status": "no_source",
+        "point_rationale_zh": "未找到食物不耐疾病直接、可重建的針刺處方證據；食物過敏、異位性皮膚炎或草藥研究不可移植。",
+        "point_rationale_en": "No direct reproducible acupuncture evidence for food intolerance was identified; food-allergy, atopic-dermatitis and herbal evidence was excluded.",
+        "evidence_note_zh": "檢索 PubMed（2026-08-17；acupuncture food intolerance/food sensitivity systematic review/RCT）。未找到疾病直接針刺研究；食物過敏 TCM 回顧主要是草藥／動物資料，沒有支持本卡針刺處方。",
+        "treatment_parameters": {
+          "manual_or_electroacupuncture": null,
+          "frequency": null,
+          "session_duration": null,
+          "treatment_course": null,
+          "timing_relative_to_trigger": null,
+          "source_ids": []
+        },
+        "scope_conflict_note": null,
+        "sources": [
+          {
+            "source_id": "S1",
+            "type": "guideline",
+            "citation": "Shaker MS, et al. Anaphylaxis: A 2023 practice parameter update. Ann Allergy Asthma Immunol. 2023.",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38108678/",
+            "pmid_or_doi": "PMID 38108678",
+            "covers": "IgE 媒介過敏與過敏性休克；不是食物不耐針灸療效。",
+            "modality": "unclear",
+            "comparator": "none",
+            "supports": [
+              "scope",
+              "caution",
+              "referral"
+            ],
+            "primary_outcome_zh": "過敏性休克辨識與腎上腺素治療。",
+            "finding_zh": "腎上腺素是一線急救；輔助療法不可延誤。",
+            "certainty": "not_graded"
+          },
+          {
+            "source_id": "S2",
+            "type": "guideline",
+            "citation": "American College of Gastroenterology Guidelines Update: Diagnosis and Management of Celiac Disease. Am J Gastroenterol. 2023.",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/36602836/",
+            "pmid_or_doi": "PMID 36602836",
+            "covers": "乳糜瀉診斷；不是一般食物不耐。",
+            "modality": "unclear",
+            "comparator": "none",
+            "supports": [
+              "scope",
+              "caution"
+            ],
+            "primary_outcome_zh": "乳糜瀉診斷與管理。",
+            "finding_zh": "診斷檢測應在含麩質飲食期間完成。",
+            "certainty": "not_graded"
+          }
+        ],
+        "points_detail": [],
+        "collected_by": "SOL B6 2026-08-17",
+        "assessed": true,
+        "no_source_found": true,
+        "condition_specific_cautions_zh": [
+          {
+            "text": "疑似乳糜瀉者應在開始無麩質飲食前完成適當血清學與必要的專科診斷，否則可能造成偽陰性。",
+            "source_ids": [
+              "S2"
+            ]
+          },
+          {
+            "text": "已確診 IgE 食物過敏者不可因任何輔助療法停止避食或放棄攜帶／使用腎上腺素自動注射器。",
+            "source_ids": [
+              "S1"
+            ]
+          }
+        ],
+        "referral_red_flags_zh": [
+          {
+            "text": "進食後出現呼吸困難、喉舌腫脹、喘鳴、暈厥／低血壓或多系統急性症狀，視為可能過敏性休克：立即使用腎上腺素並呼叫緊急醫療。",
+            "source_ids": [
+              "S1"
+            ]
+          }
+        ],
+        "unresolved": [
+          "無食物不耐直接針刺證據。"
         ]
       }
     },
@@ -31956,7 +32446,72 @@
         "Symptoms beyond ten days, or worsening after improvement → evaluate secondary bacterial sinusitis / otitis media",
         "High fever beyond three days → medical evaluation",
         "Elderly, pregnant, immunocompromised, or chronic cardiopulmonary patients → same symptoms, amplified vigilance"
-      ]
+      ],
+      "acupoint_protocol_evidence": {
+        "protocol_status": "no_source",
+        "point_rationale_zh": "未找到可据以建立逐穴处方的完成版系统性回顾；2018 年文献是回顾方案，不是结果。",
+        "point_rationale_en": "No completed systematic review with a reproducible point prescription was identified; the 2018 paper is a review protocol.",
+        "evidence_note_zh": "檢索 PubMed／PMC（2026-08-17；acupuncture common cold systematic review/RCT）。找到一項多中心 RCT與一篇系統性回顧方案，但回顧方案沒有匯整結果，且可取得資料不足以安全重建固定逐穴方案。",
+        "treatment_parameters": {
+          "manual_or_electroacupuncture": null,
+          "frequency": null,
+          "session_duration": null,
+          "treatment_course": null,
+          "timing_relative_to_trigger": null,
+          "source_ids": []
+        },
+        "scope_conflict_note": null,
+        "sources": [
+          {
+            "source_id": "S1",
+            "type": "rct",
+            "citation": "Kawakita K, et al. Preventive and curative effects of acupuncture on the common cold: a multicentre randomized controlled trial in Japan. Complement Ther Med. 2004;12(4):181-188.",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/15649831/",
+            "pmid_or_doi": "PMID 15649831",
+            "covers": "一般感冒之預防與症狀；不是流感。",
+            "modality": "acupuncture",
+            "comparator": "no_treatment",
+            "supports": [
+              "efficacy"
+            ],
+            "primary_outcome_zh": "感冒症狀日數與症狀評分。",
+            "finding_zh": "單一試驗報告正向結果，但不足以視為通用逐穴處方。",
+            "certainty": "low"
+          },
+          {
+            "source_id": "S2",
+            "type": "official_safety_info",
+            "citation": "US Centers for Disease Control and Prevention. Manage Common Cold. Updated 2026.",
+            "url": "https://www.cdc.gov/common-cold/treatment/index.html",
+            "pmid_or_doi": null,
+            "covers": "一般感冒就醫門檻。",
+            "modality": "unclear",
+            "comparator": "none",
+            "supports": [
+              "referral"
+            ],
+            "primary_outcome_zh": "不適用。",
+            "finding_zh": "列出呼吸困難、脫水、持續發燒及症狀惡化等就醫條件。",
+            "certainty": "not_graded"
+          }
+        ],
+        "points_detail": [],
+        "collected_by": "SOL B6 2026-08-17",
+        "assessed": true,
+        "no_source_found": true,
+        "condition_specific_cautions_zh": [],
+        "referral_red_flags_zh": [
+          {
+            "text": "呼吸困難或呼吸急促、脫水、發燒超過 4 天、症狀超過 10 天未改善，或一度改善後再惡化，應就醫。",
+            "source_ids": [
+              "S2"
+            ]
+          }
+        ],
+        "unresolved": [
+          "未取得可重建逐穴與參數的高品質完成版證據。"
+        ]
+      }
     },
     {
       "id": "cond.influenza",
@@ -32215,7 +32770,80 @@
           "reason": "F-07 全庫共用樣板:這組穴(足三里／合谷／三陰交／中脘)在 67 張條件卡上逐字相同,是匯入時的預設值,不是本病的處方。留在處方欄會讓讀的人以為這些病共用同一組穴。未以模型知識代寫替代處方 —— 逐病重建需要逐病來源(寧缺勿造)。原文保留於此,補到來源即可放回。",
           "archived_at": "2026-08-12"
         }
-      ]
+      ],
+      "acupoint_protocol_evidence": {
+        "protocol_status": "no_source",
+        "point_rationale_zh": "未找到流感疾病直接、可重建的針刺處方證據。",
+        "point_rationale_en": "No influenza-specific reproducible acupuncture prescription was identified.",
+        "evidence_note_zh": "檢索 PubMed（2026-08-17；influenza acupuncture systematic review randomized trial），未找到符合疾病直接性與來源層級的逐穴證據。",
+        "treatment_parameters": {
+          "manual_or_electroacupuncture": null,
+          "frequency": null,
+          "session_duration": null,
+          "treatment_course": null,
+          "timing_relative_to_trigger": null,
+          "source_ids": []
+        },
+        "scope_conflict_note": null,
+        "sources": [
+          {
+            "source_id": "S1",
+            "type": "official_safety_info",
+            "citation": "US CDC. People at Increased Risk for Severe Respiratory Illnesses. 2025.",
+            "url": "https://www.cdc.gov/respiratory-viruses/risk-factors/index.html",
+            "pmid_or_doi": null,
+            "covers": "流感等呼吸道病毒高風險族群與早期治療。",
+            "modality": "unclear",
+            "comparator": "none",
+            "supports": [
+              "scope",
+              "referral"
+            ],
+            "primary_outcome_zh": "不適用。",
+            "finding_zh": "高風險者應及早就醫，流感治療需在發病後數日內開始。",
+            "certainty": "not_graded"
+          },
+          {
+            "source_id": "S2",
+            "type": "official_safety_info",
+            "citation": "US CDC. About Respiratory Illnesses: Emergency Warning Signs. 2025.",
+            "url": "https://www.cdc.gov/respiratory-viruses/about/index.html",
+            "pmid_or_doi": null,
+            "covers": "成人與兒童呼吸道病毒急症警訊。",
+            "modality": "unclear",
+            "comparator": "none",
+            "supports": [
+              "referral"
+            ],
+            "primary_outcome_zh": "不適用。",
+            "finding_zh": "列出需緊急照護的呼吸、神經、循環與脫水警訊。",
+            "certainty": "not_graded"
+          }
+        ],
+        "points_detail": [],
+        "collected_by": "SOL B6 2026-08-17",
+        "assessed": true,
+        "no_source_found": true,
+        "condition_specific_cautions_zh": [
+          {
+            "text": "高風險者出現呼吸道症狀應儘快聯絡醫療人員；流感抗病毒治療在發病後數日內開始最有利。",
+            "source_ids": [
+              "S1"
+            ]
+          }
+        ],
+        "referral_red_flags_zh": [
+          {
+            "text": "呼吸困難、胸或腹部持續疼痛／壓迫、持續暈眩或意識混亂、癲癇、無尿、嚴重虛弱，或發燒／咳嗽改善後再惡化，需立即就醫。",
+            "source_ids": [
+              "S2"
+            ]
+          }
+        ],
+        "unresolved": [
+          "無流感直接針刺處方來源。"
+        ]
+      }
     },
     {
       "id": "cond.allergic_rhinitis",
@@ -32599,7 +33227,90 @@
         "Severe headache, neck stiffness, altered consciousness, focal signs → intracranial complication (emergency)",
         "Unilateral symptoms or bloody discharge → exclude tumor and fungus ball, imaging",
         "Facial pain with black eschar in the immunocompromised or poorly controlled diabetic → invasive fungal sinusitis (emergency)"
-      ]
+      ],
+      "acupoint_protocol_evidence": {
+        "protocol_status": "limited",
+        "point_rationale_zh": "直接回顧顯示研究異質且處方不一致；本次不從低品質試驗拼接固定穴位。",
+        "point_rationale_en": "The direct review found heterogeneous studies and inconsistent prescriptions; no fixed point set was reconstructed.",
+        "evidence_note_zh": "2022 直接系統性回顧納入的研究數少、方法與對照異質，結論不足以建立標準處方。",
+        "treatment_parameters": {
+          "manual_or_electroacupuncture": null,
+          "frequency": null,
+          "session_duration": null,
+          "treatment_course": null,
+          "timing_relative_to_trigger": null,
+          "source_ids": []
+        },
+        "scope_conflict_note": null,
+        "sources": [
+          {
+            "source_id": "S1",
+            "type": "systematic_review",
+            "citation": "Lee B, et al. Acupuncture for the Treatment of Chronic Rhinosinusitis: A Systematic Review. J Clin Med. 2022;11.",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9451955/",
+            "pmid_or_doi": null,
+            "covers": "慢性鼻竇炎直接證據。",
+            "modality": "mixed",
+            "comparator": "sham | usual_care | active_control(varied)",
+            "supports": [
+              "efficacy",
+              "scope"
+            ],
+            "primary_outcome_zh": "鼻竇炎症狀與生活品質；研究間不一致。",
+            "finding_zh": "可能有症狀改善訊號，但證據量與品質有限。",
+            "certainty": "low"
+          },
+          {
+            "source_id": "S2",
+            "type": "official_safety_info",
+            "citation": "NHS. Double vision. Reviewed 2025.",
+            "url": "https://www.nhs.uk/symptoms/double-vision/",
+            "pmid_or_doi": null,
+            "covers": "突發複視與合併嚴重頭痛之急症門檻。",
+            "modality": "unclear",
+            "comparator": "none",
+            "supports": [
+              "referral"
+            ],
+            "primary_outcome_zh": "不適用。",
+            "finding_zh": "突發複視需急評；合併嚴重頭痛需急診。",
+            "certainty": "not_graded"
+          },
+          {
+            "source_id": "S3",
+            "type": "official_safety_info",
+            "citation": "NHS. Brain abscess. Reviewed 2024.",
+            "url": "https://www.nhs.uk/conditions/brain-abscess/",
+            "pmid_or_doi": null,
+            "covers": "鼻竇感染可擴散造成顱內感染及神經急症。",
+            "modality": "unclear",
+            "comparator": "none",
+            "supports": [
+              "referral"
+            ],
+            "primary_outcome_zh": "不適用。",
+            "finding_zh": "嚴重頭痛、神經缺損、癲癇、意識改變需緊急處置。",
+            "certainty": "not_graded"
+          }
+        ],
+        "points_detail": [],
+        "collected_by": "SOL B6 2026-08-17",
+        "assessed": true,
+        "no_source_found": false,
+        "condition_specific_cautions_zh": [],
+        "referral_red_flags_zh": [
+          {
+            "text": "眼周疼痛或腫脹、突發複視／視力改變、嚴重或惡化頭痛、意識改變、神經缺損或癲癇，需緊急評估眼窩或顱內併發症。",
+            "source_ids": [
+              "S2",
+              "S3"
+            ]
+          }
+        ],
+        "unresolved": [
+          "來源無法支持單一固定逐穴處方。"
+        ]
+      }
     },
     {
       "id": "cond.asthma",
@@ -35827,6 +36538,55 @@
         "red_flags_en": [
           "ACP/CDC 急性咳嗽照護通說"
         ]
+      },
+      "acupoint_protocol_evidence": {
+        "protocol_status": "no_source",
+        "point_rationale_zh": "未找到急性支氣管炎的疾病直接針刺證據；貼敷與慢性支氣管炎資料不可移植。",
+        "point_rationale_en": "No direct needling evidence for acute bronchitis was found; acupoint patching and chronic bronchitis evidence were excluded.",
+        "evidence_note_zh": "檢索 PubMed／PMC（2026-08-17；acute bronchitis acupuncture systematic review/RCT）。檢得穴位貼敷回顧及慢性支氣管炎回顧方案，均不符合疾病與介入方式。",
+        "treatment_parameters": {
+          "manual_or_electroacupuncture": null,
+          "frequency": null,
+          "session_duration": null,
+          "treatment_course": null,
+          "timing_relative_to_trigger": null,
+          "source_ids": []
+        },
+        "scope_conflict_note": null,
+        "sources": [
+          {
+            "source_id": "S1",
+            "type": "official_safety_info",
+            "citation": "US CDC. About Respiratory Illnesses: Emergency Warning Signs. 2025.",
+            "url": "https://www.cdc.gov/respiratory-viruses/about/index.html",
+            "pmid_or_doi": null,
+            "covers": "急性呼吸道疾病急症警訊。",
+            "modality": "unclear",
+            "comparator": "none",
+            "supports": [
+              "referral"
+            ],
+            "primary_outcome_zh": "不適用。",
+            "finding_zh": "呼吸困難、胸痛、意識改變等需緊急照護。",
+            "certainty": "not_graded"
+          }
+        ],
+        "points_detail": [],
+        "collected_by": "SOL B6 2026-08-17",
+        "assessed": true,
+        "no_source_found": true,
+        "condition_specific_cautions_zh": [],
+        "referral_red_flags_zh": [
+          {
+            "text": "呼吸急促或困難、胸痛、低血氧、持續高燒、意識改變或明顯全身惡化應評估肺炎／其他嚴重下呼吸道疾病。",
+            "source_ids": [
+              "S1"
+            ]
+          }
+        ],
+        "unresolved": [
+          "無疾病直接針刺證據；局部囉音等理學檢查資訊未由本來源單獨支持。"
+        ]
       }
     },
     {
@@ -36056,6 +36816,80 @@
         ],
         "red_flags_en": [
           "AASM 睡眠呼吸中止安全通說（駕駛、麻醉）"
+        ]
+      },
+      "acupoint_protocol_evidence": {
+        "protocol_status": "adjunct_only",
+        "point_rationale_zh": "回顧顯示 AHI、ESS 與最低血氧可能改善，但研究品質與異質性限制，不據此建立固定逐穴方案。",
+        "point_rationale_en": "Reviews suggest possible changes in AHI, ESS and lowest oxygen saturation, but study quality and heterogeneity do not justify a fixed point prescription.",
+        "evidence_note_zh": "2020 系統性回顧報告 AHI、ESS、最低血氧改善，但納入研究品質與偏倚限制，且不能把自覺睡眠品質等同 AHI 改善。",
+        "treatment_parameters": {
+          "manual_or_electroacupuncture": null,
+          "frequency": null,
+          "session_duration": null,
+          "treatment_course": null,
+          "timing_relative_to_trigger": null,
+          "source_ids": []
+        },
+        "scope_conflict_note": null,
+        "sources": [
+          {
+            "source_id": "S1",
+            "type": "systematic_review",
+            "citation": "Wang L, et al. Acupuncture for Obstructive Sleep Apnea (OSA) in Adults: A Systematic Review and Meta-Analysis. Biomed Res Int. 2020;2020:6972327.",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32258139/",
+            "pmid_or_doi": "PMID 32258139",
+            "covers": "成人阻塞性睡眠呼吸中止；非中樞型。",
+            "modality": "mixed",
+            "comparator": "sham | active_control(CPAP) | usual_care",
+            "supports": [
+              "efficacy",
+              "scope"
+            ],
+            "primary_outcome_zh": "AHI、ESS、最低血氧。",
+            "finding_zh": "合併結果提示改善，但受研究品質與異質性限制。",
+            "certainty": "low"
+          },
+          {
+            "source_id": "S2",
+            "type": "official_safety_info",
+            "citation": "National Heart, Lung, and Blood Institute. Sleep Apnea: Diagnosis and Treatment.",
+            "url": "https://www.nhlbi.nih.gov/health/sleep-apnea",
+            "pmid_or_doi": null,
+            "covers": "OSA 診斷、治療與嗜睡風險。",
+            "modality": "unclear",
+            "comparator": "none",
+            "supports": [
+              "scope",
+              "referral"
+            ],
+            "primary_outcome_zh": "不適用。",
+            "finding_zh": "OSA 需正式評估並以 PAP 等標準治療管理。",
+            "certainty": "not_graded"
+          }
+        ],
+        "points_detail": [],
+        "collected_by": "SOL B6 2026-08-17",
+        "assessed": true,
+        "no_source_found": false,
+        "condition_specific_cautions_zh": [
+          {
+            "text": "AHI 需由睡眠檢查解讀；白天嗜睡會增加駕駛與操作機械風險。",
+            "source_ids": [
+              "S2"
+            ]
+          }
+        ],
+        "referral_red_flags_zh": [
+          {
+            "text": "疑似 OSA（目擊呼吸暫停、窒息醒來、明顯白天嗜睡）應轉介睡眠醫學評估；切勿在嗜睡時駕駛。",
+            "source_ids": [
+              "S2"
+            ]
+          }
+        ],
+        "unresolved": [
+          "回顧無法支持單一固定穴組及可移植參數。"
         ]
       }
     },
