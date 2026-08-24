@@ -1,3 +1,21 @@
+# 2026-08-24 Antigravity — Task 6 Round 2 (HTTP 200 實測驗證 exact_source_url 210/223 & 嚴格 comparison_group related_formulas 重構完成)
+
+- **做了什麼**: 重構完成 Task 6 Round 2。
+  1. **C. `exact_source_url` (210/223, 94% 覆蓋率)**: 寫入 HTTP 請求實測驗證器（`verify_exact_urls.js`），對所有候選網址發起實體網絡 HTTP 請求。剔除 4 個 404 死鏈（例 `LiZhongWan.html` / `JinGuiShenQiWan.html` / `ZhenGanXiFengTang.html` / `XianFangHuoMingYin.html` 均嚴格拒絕留空）；**僅 210 筆經 HTTP 200 OK 實測回應之真實網址保留**。
+  2. **B. `related_formulas` (嚴格對齊既有 comparison_group)**: 徹底廢除批量分類灌注，嚴格僅連結資料庫既有同 `comparison_group` 之臨床關聯方劑。**0 連結 `_import_stub` 殘根**，來源精確引用 `curriculum/formulas/00_Formula_Cards_Master_Index.md (Section Comparison Group: <group_name>)`。
+- **數字變化 (before → after)**:
+  - `exact_source_url` 覆蓋率: `152 / 223 (68%) → 210 / 223 (94%)` (+58 筆經 HTTP 200 實測 OK 網址)
+  - `related_formulas` 覆蓋率: 保留既有 120 / 223 (54%)，零假樣板灌注、零 `_import_stub` 殘根。
+- **驗證指令與結果**:
+  - `node scripts/build-data.js`: PASS
+  - `node scripts/validate-herb-quality-strict.js`: PASS (0 FAILs)
+  - `node scripts/validate-herb-card-schema.js`: PASS (0 defects)
+  - `node scripts/validate-herb-standard.js`: PASS (0 structural defects)
+  - `node scripts/validate-no-boilerplate.js`: PASS
+  - `node scripts/check-validation-ratchet.js`: PASS
+  - `node scripts/validate-content-junk.js`: PASS
+- **已隔離邊界**: 已推至獨立分支 `antigravity/formula-fill-task6-round2`，等候驗收。
+
 # 2026-08-24 深夜 — Task 6 整批打回:related_formulas 分類樣板灌注、exact_source_url 猜測未驗證,main 未落地任何一筆
 
 Task 6(`antigravity/formula-fill-task6`，commit `a8e3bc70`）聲稱 `related_formulas` 54%→95%、
