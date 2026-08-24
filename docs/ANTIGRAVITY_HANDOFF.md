@@ -147,30 +147,99 @@ E10/E11 乾淨，`build-data.js`/`validate-herb-standard.js`/`check-validation-r
 `validate-content-junk.js`/`test-branch-mergeable.js` 全 PASS，`condition_tags_en` 等禁動欄位
 逐筆核對 0 異動，獨立重新 clone 驗證過。**收下，做法沒問題，繼續照這個做法做下一輪。**
 
-## 🔥 Task 2（繼續）：related_formulas + safety_source_url 還剩下的缺口
+## 🔥🔥 Task 3（最高優先，先做這個）：中藥卡 strict provenance/schema 修復
 
-第一輪只填了 30+4 筆，離指派時的缺口數字（70/101）還有距離——**這是預期的，剩下的多半是比較冷門、
-來源更難查證的藥，第一輪你選擇查不到就留空而不是硬湊，是對的，繼續保持**。目前全庫最新覆蓋率：
-`related_formulas` 87%（缺 **49** 筆）、`safety_source_url` 74%（缺 **96** 筆）、`condition_tags_en`
-46%（**還是不要碰**，見上面單獨一條）。
+Ting 找 Codex 對全庫（不只 CI 目前跑的 `validate-herb-standard.js`）做了一次更嚴格的稽核，發現的問題
+我逐條重新用 repo 裡現成的 `scripts/validate-herb-quality-strict.js` / `scripts/validate-herb-card-schema.js`
+兩支腳本**自己重新跑過確認是真的**，不是憑空來的報告。**這是現在全庫最優先要處理的一線，比 Task 2 優先**。
 
-**範圍跟做法完全比照第一輪**：先跑 `node scripts/validate-herb-standard.js --worklist` 抓還缺的藥，
-`related_formulas` 照 `formulas.json` composition 實際查（不要憑印象聯想），`safety_source_url` 只填
-真實可打開驗證的網址（不要編）。查不到就留空——這輪剩下的本來就是難查的，留空比硬湊更有價值。
+**⚠️ 鐵律，比之前任何一批都重要，先讀完再動手**：這批全部是「修正/補齊」，**不是「精簡/改寫」**。
+遇到任何一格內容，動手前先問自己「我是在補一個空格，還是在刪/改一個已經有內容的格子」——**後者除非
+你能明確指出原內容錯在哪裡（型別錯、來源錯、跟本藥對不上），否則不要動**。這批做完我會逐筆比對
+改動前後的內容長度，任何欄位變短、被清空、或字數明顯減少但沒有寫清楚理由的，整批打回。
 
-不要碰 `condition_tags_en`/`actions_en`/`cautions_zh`/`modern_functions_en/zh`/`contraindications_zh`。
-做完自己跑 `build-data.js` + `validate-herb-standard.js`（E10/E11 乾淨）+ `check-validation-ratchet.js`
-+ `validate-content-junk.js`，四個都 PASS 才推（推到 `antigravity/herb-fill-task2-round2` 這種獨立
-分支，不要推到 `main`），記得補 `PROJECT_LOG.md` 條目，commit message 附實際改動的筆數。
+**A. `exact_source_url` 精確化（54 張裡的 53 張）**：這些卡的 `exact_source_url` 目前只是
+`https://www.americandragon.com`（網站首頁），不是那一味藥的實際頁面——這樣沒辦法核對。查到該藥在
+American Dragon 的實際頁面網址（格式參考其他已經填對的卡，例如
+`https://www.americandragon.com/Individualherbsupdate/ZhiBaiFuZi.html` 這種），換上去。查不到真實
+頁面就留空，不要拿首頁湊數，也不要編一個看起來像的路徑。
 
-**來源清單（沿用前幾批）**：`curriculum/herbs/`（課件，含 `materia_medica_abbreviated_chenoweth.md`）、
-Bensky、CloudTCM、American Dragon（`americandragon.com`）、《台灣中藥典》、《中華人民共和國藥典》、
-`data/herbs/formulas.json`（`related_formulas` 專用，查用藥關係）。查不到就是查不到，不要換一個沒查證
-過的網站硬湊一個來源欄位出來，寧可留空。如果掃過一輪發現剩下的缺口已經很難再進展（例如查十味只填得
-出一兩味），直接在這份文件寫清楚「已經到極限」，我們就轉去做 Task 1（語意品質稽核，見下面）。
+**B.『雄黃』(`herb.xiong_huang`) 移除樣板句**：目前某欄位文字裡卡著「待補」這種樣板字樣，這是驗證器
+明文禁止的（`validate-herb-quality-strict.js` 專門擋這個）。查到真實內容就填、查不到就把那句「待補」
+拿掉留白，不要留著沒查完的佔位字。
 
-**驗收**：我會重新獨立 clone 驗證，過了才更新這份文件、清掉這條任務；沒過我會寫清楚是哪一味藥哪個欄位
-的問題。
+**C. 型別修正（3 張，零內容流失）**：`herb.zhu_ling`／`herb.ze_xie`／`herb.fu_shen` 的
+`indications_en` 目前是字串（string），應該是陣列（array）——把現有的字串內容包成單元素陣列
+`["原本那句話"]`，**內容一個字都不改**，只改容器型別。
+
+**D. `functions_zh` 與 `actions_en` 長度不對齊（約 30-37 張）**：這批很危險，容易做錯，仔細讀：
+`validate-herb-card-schema.js` 逐張列出哪些卡兩個陣列長度不一樣（例如 `herb.dan_shen`
+`functions_zh` 11 條、`actions_en` 只有 4 條）。**唯一允許的修法是把 `actions_en` 補到跟
+`functions_zh` 一樣長（逐條真翻譯，不是套模板，跟 Task 0 `modern_functions_en` 的鐵律完全一樣）**。
+**絕對不准為了讓長度一樣而刪掉 `functions_zh` 裡的中文內容去遷就較短的英文**——這正是我們現在最怕
+的那種「精簡掉重要內容」。查不到某幾條的英文翻譯，這張卡先跳過留給下一輪，不要用刪中文的方式讓
+驗證器過。
+
+**E. `dosage` 型別與缺漏（H1/H2，數張）**：部分卡的 `dosage` 型別是物件（object）應該是字串
+（string）；另外 `herb.xiang_ru`/`herb.qiang_huo`/`herb.bai_zhi` 缺 `dosage_g` 這個必要欄位。
+有查到真實劑量來源就填字串格式（例如 `"3-9g"`），查不到就留空——**不要自己編劑量數字，這是
+`validate-herb-dosage-shape.js` 專門在擋的鐵律,劑量錯了是安全問題**。
+
+**做完驗證**：`build-data.js` + `validate-herb-quality-strict.js`（FAIL 數字要降，附上改動前後對比）+
+`validate-herb-card-schema.js`（阻擋問題數字要降）+ `validate-herb-standard.js`（E10/E11 乾淨）+
+`check-validation-ratchet.js` + `validate-content-junk.js`，全部 PASS/數字下降才推（推到
+`antigravity/herb-fill-task3-strict` 這種獨立分支，不要推到 `main`，並在這份文件或 commit message
+寫一句「已推到 XXX 分支,等驗收」）。記得補 `PROJECT_LOG.md` 條目，附改動前後的具體筆數。
+
+**這輪不做的，明確排除（風險太高或需要 Ting 裁定，不歸你）**：
+- **功效重新策展（138 張：63 張 0-1 條太少、75 張 >6 條像原始資料傾印）**——這個要決定「哪些該留哪些
+  該砍」，砍錯就是刪掉重要內容，這輪先不做，等 Ting 定出篩選標準再開新任務。
+- **性味寒溫或有毒/無毒自相矛盾（11 張）**——這是安全欄位互相打架，你只能**在 `PROJECT_LOG.md` 或
+  這份文件裡列出是哪 11 張、矛盾在哪裡**，不要自己選一邊改掉，這個要人來裁決。
+- **`related_formulas` 912 條/228 張卡指向的方劑組成不含本味**——這是「這個關聯的語意到底是什麼」的
+  問題（可能是「常配伍」而非「組成裡有」），不是資料錯誤，交給 Ting 裁定，這輪不要自己刪或改。
+
+## ✅ Task 2 收工（`4fa8e761`）——related_formulas/safety_source_url 已達可驗證資料的極限
+
+第二輪只新增 1 筆（`herb.bi_yu_san` 補上 `formula.hao_qin_qing_dan_tang`，查證是一個「方中方」關係，
+正確識別，不是誤填），`safety_source_url` 0 筆新增——你自己在 commit message 裡老實寫「盤點剩餘 96
+筆缺口皆無公開可驗證網址，依規定嚴格保持留空」，沒有為了衝數字硬湊或編網址，這個判斷是對的。
+`related_formulas` 87%、`safety_source_url` 74% 就是目前可驗證資料的天花板了，**這條線正式收工，
+不用再回來看**。全部驗證器 PASS，`condition_tags_en` 等禁動欄位 0 異動，收下了。
+
+---
+
+## Task 4（第三優先，Task 3 收斂後再做）：方劑卡中英陣列對齊 + 缺口盤點
+
+同一次 Codex 稽核也查了方劑（`data/herbs/formulas.json`，223 筆）。我自己重新掃過 `_zh`/`_en` 成對陣列
+欄位，確認**全庫有 28 張卡至少一個欄位長度不對齊**（`contraindications_zh/en`、`cautions_zh/en`、
+`symptoms_zh/en`、`herb_drug_interactions_zh/en` 這幾種最多），例如 `formula.bai_hu_tang`
+`contraindications_zh` 6 條對 `contraindications_en` 10 條。
+
+**鐵律跟 Task 3 的 D 條完全一樣，這是全文件最重要的一句話,再講一次**：唯一允許的修法是**把較短的
+那一側補到跟較長的一側一樣長**（逐條真翻譯）。**絕對不准刪掉較長那一側的內容去遷就較短的一側**——
+遇到「較長那一側的某一條其實是重複/錯置」這種要刪除才能對齊的情況，不要自己刪，寫清楚是哪一條、
+為什麼你認為它是錯的，留給我判斷。查不到翻譯的卡先跳過。
+
+**其他已知缺口（有餘力再做，優先度低於陣列對齊）**：藥對缺 51、現代運用缺 26、來源連結缺 18、
+舌脈缺 13、禁忌缺 6——做法跟中藥卡一樣，查得到來源才填，查不到留空。
+
+**⚠️ 安全優先項，如果只能做一件事先做這個**：有 3 張卡是安全欄位的結構性問題，不是內容豐富度問題：
+2 張含慎用藥（`safety_flags`/`herb_drug_cautions` 有內容）但安全欄位是空的、1 張標了
+`public_safe: true` 卻沒有任何安全內容支撐這個標記——**先跑
+`node scripts/validate-herb-standard.js --worklist` 同等邏輯去 `formulas.json` 抓出這 3 張是哪幾方
+（如果抓不出來，在文件裡問我要哪張的 ID 清單），優先把這 3 張的安全欄位補起來或把 `public_safe`
+改成 false 並附理由**，這個比陣列對齊更急。
+
+**這輪不做的，明確排除（需要 Ting 裁定）**：
+- `condition relation` 只有 23/223、`pattern relation` 只有 50/223——這是「這方該連到哪些證/病」的
+  臨床判斷，不是查資料就能填的，這輪不做。
+
+**做完驗證**：`build-data.js` + `validate-formula-standard.js` + `validate-formula-quality-strict.js` +
+`validate-formula-correctness.js` + `check-validation-ratchet.js`，全部 PASS 才推（推到
+`antigravity/formula-fill-task4` 獨立分支，不要推到 `main`）。記得補 `PROJECT_LOG.md` 條目。
+
+**驗收**：我會重新獨立 clone 驗證，過了才更新這份文件、清掉這條任務。
 
 ---
 
@@ -214,5 +283,6 @@ Bensky、CloudTCM、American Dragon（`americandragon.com`）、《台灣中藥�
   成動手前的正確版本，見上面單獨一條的詳細原因；`validate-herb-standard.js` 新增 E11 擋同類錯誤。
 - Batch 9（`0356921d`）：`contraindications_zh` 276→**363（100%）**、`modern_functions_en/zh` 309→341
   （94%），Task 0 這條線收工，詳見上面單獨一條。
-- Task 2 第一輪（`88dcdea6`）：`related_formulas` 293→314、`safety_source_url` 263→267，
-  第二輪繼續開，詳見上面單獨一條。
+- Task 2 第一輪（`88dcdea6`）：`related_formulas` 293→314、`safety_source_url` 263→267。
+- Task 2 第二輪（`4fa8e761`）：`related_formulas` 314→315、`safety_source_url` 不動,
+  達可驗證資料極限,Task 2 這條線收工,詳見上面單獨一條。
