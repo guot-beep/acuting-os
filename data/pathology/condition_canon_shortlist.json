@@ -14518,8 +14518,41 @@
     "standard_orthopedic_reference"
    ],
    "authored_by": "model_draft",
-   "etiology_zh": "",
-   "western_pathology_zh": "",
+   "etiology_zh": "多數病例沒有明確單一病因；症狀可在沒有活動改變時自行出現，部分病例與手部受傷、反覆抓握或捏握有關。這些負荷可能促使屈肌腱或 A1 滑車增厚，但不應把職業或單一動作視為所有病例的確定病因。",
+   "western_pathology_zh": "屈指肌腱與 A1 滑車之間出現尺寸不匹配：肌腱可增厚或形成結節，A1 滑車亦可增厚、變窄，使肌腱無法平順滑動。結節通過狹窄滑車時產生彈響、卡頓；嚴重時手指會固定在屈曲位。",
+   "risk_factors_zh": [
+    {
+     "factor": "40–60 歲女性",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "AAOS OrthoInfo: Trigger Finger"
+    },
+    {
+     "factor": "糖尿病、類風濕性關節炎或類澱粉沉積症",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "AAOS OrthoInfo: Trigger Finger"
+    },
+    {
+     "factor": "反覆抓握或捏握活動",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "AAOS OrthoInfo: Trigger Finger"
+    },
+    {
+     "factor": "特定肌腱結構差異",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "AAOS OrthoInfo: Trigger Finger"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "所選官方來源未建立針灸可解除 A1 滑車狹窄或固定鎖指的療效；若使用，只能定位為疼痛、僵硬等症狀的輔助照護，不能取代副木、注射或手外科評估。",
+    "precautions": "手指已固定在屈曲位且無法伸直時，不應強行活動或以局部針刺延誤評估；AAOS 將此列為可能需要手術評估的嚴重表現。",
+    "co_management": "症狀持續、妨礙日常活動，或手指固定無法伸直者，應轉介家庭醫師或手外科；糖尿病患者接受類固醇注射時需依醫囑監測血糖。",
+    "evidence": "unknown",
+    "source": null
+   },
    "tcm_patterns": [
     {
      "pattern_zh": "黃耆桂枝五物湯證",
@@ -14862,7 +14895,9 @@
    "source_type": "sourced_cloudtcm_record",
    "entity_type": "biomedical_condition",
    "sources": [
-    "https://cloudtcm.com/disease/tcm/9750"
+    "https://cloudtcm.com/disease/tcm/9750",
+    "https://www.orthoinfo.org/diseases--conditions/trigger-finger/",
+    "https://www.nhs.uk/conditions/trigger-finger/"
    ],
    "red_flag_refs": [
     "rf.trigger_finger.legacy01",
@@ -15047,9 +15082,55 @@
     "assessed": false,
     "no_source_found": false
    },
-   "western_pathology_en": "",
-   "field_sources": {},
-   "etiology_en": ""
+   "western_pathology_en": "A size mismatch develops between the flexor tendon and A1 pulley: the tendon may thicken or form a nodule, while the A1 pulley may also thicken and narrow, preventing smooth tendon glide. The nodule catches as it passes through the narrowed pulley; severe disease can leave the digit fixed in flexion.",
+   "field_sources": {
+    "summary_zh": ["AAOS OrthoInfo: Trigger Finger (orthoinfo.org/diseases--conditions/trigger-finger/, retrieved 2026-08); NHS: Trigger finger (nhs.uk/conditions/trigger-finger/, reviewed 2025-11)"],
+    "summary_en": ["AAOS OrthoInfo: Trigger Finger (orthoinfo.org/diseases--conditions/trigger-finger/, retrieved 2026-08); NHS: Trigger finger (nhs.uk/conditions/trigger-finger/, reviewed 2025-11)"],
+    "western_context_zh": ["AAOS OrthoInfo: Trigger Finger (treatment and diabetes sections, retrieved 2026-08); NHS: Trigger finger (treatment section, reviewed 2025-11)"],
+    "western_context_en": ["AAOS OrthoInfo: Trigger Finger (treatment and diabetes sections, retrieved 2026-08); NHS: Trigger finger (treatment section, reviewed 2025-11)"],
+    "western_pathology_zh": ["AAOS OrthoInfo: Trigger Finger (What Is Trigger Finger?, retrieved 2026-08)"],
+    "western_pathology_en": ["AAOS OrthoInfo: Trigger Finger (What Is Trigger Finger?, retrieved 2026-08)"],
+    "etiology_zh": ["AAOS OrthoInfo: Trigger Finger (Causes, retrieved 2026-08); NHS: Trigger finger (Causes, reviewed 2025-11)"],
+    "etiology_en": ["AAOS OrthoInfo: Trigger Finger (Causes, retrieved 2026-08); NHS: Trigger finger (Causes, reviewed 2025-11)"],
+    "risk_factors_zh": ["AAOS OrthoInfo: Trigger Finger (Causes, retrieved 2026-08); NHS: Trigger finger (Causes, reviewed 2025-11)"],
+    "risk_factors_en": ["AAOS OrthoInfo: Trigger Finger (Causes, retrieved 2026-08); NHS: Trigger finger (Causes, reviewed 2025-11)"],
+    "acupuncture_scope_zh": ["AAOS OrthoInfo: Trigger Finger (treatment and surgical indications, retrieved 2026-08); NHS: Trigger finger (when to seek care and treatment, reviewed 2025-11). These sources define diagnostic and co-management boundaries, not acupuncture efficacy."],
+    "acupuncture_scope_en": ["AAOS OrthoInfo: Trigger Finger (treatment and surgical indications, retrieved 2026-08); NHS: Trigger finger (when to seek care and treatment, reviewed 2025-11). These sources define diagnostic and co-management boundaries, not acupuncture efficacy."]
+   },
+   "etiology_en": "Most cases have no single clear cause; symptoms may begin without a change in activity, while some cases are associated with hand injury or repetitive gripping and pinching. These loads may contribute to tendon or A1 pulley thickening, but occupation or one specific activity should not be treated as the proven cause in every case.",
+   "risk_factors_en": [
+    {
+     "factor": "Women aged 40–60",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "AAOS OrthoInfo: Trigger Finger"
+    },
+    {
+     "factor": "Diabetes, rheumatoid arthritis, or amyloidosis",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "AAOS OrthoInfo: Trigger Finger"
+    },
+    {
+     "factor": "Repetitive gripping or pinching activities",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "AAOS OrthoInfo: Trigger Finger"
+    },
+    {
+     "factor": "Certain tendon structural differences",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "AAOS OrthoInfo: Trigger Finger"
+    }
+   ],
+   "acupuncture_scope_en": {
+    "can_treat": "The selected official sources do not establish that acupuncture releases A1 pulley narrowing or a fixed locked digit. If used, it should be limited to adjunctive symptom care for pain or stiffness and must not replace splinting, injection, or hand-surgery assessment.",
+    "precautions": "If the digit is fixed in flexion and cannot be straightened, do not force movement or let local needling delay assessment; AAOS lists this as a severe presentation that may require surgical evaluation.",
+    "co_management": "Persistent symptoms, interference with daily activities, or a digit that cannot be straightened warrant GP or hand-specialist referral. People with diabetes who receive a steroid injection should monitor glucose as directed.",
+    "evidence": "unknown",
+    "source": null
+   }
   },
   {
    "id": "cond.knee_osteoarthritis",
@@ -15772,8 +15853,41 @@
     "standard_orthopedic_reference"
    ],
    "authored_by": "model_draft",
-   "etiology_zh": "",
-   "western_pathology_zh": "",
+   "etiology_zh": "病因通常是多因素。反覆屈膝負荷或突然增加訓練量可使髕股區超出目前負荷耐受；髕骨在股骨滑車內追蹤不良、下肢排列差異，以及股四頭肌或髖部肌群無力／失衡，也可能增加局部壓力與組織敏感度。",
+   "western_pathology_zh": "疼痛訊號主要來自髕骨周圍的軟組織與骨，包括肌腱、髕下脂肪墊、滑膜及軟骨下骨。關節軟骨本身沒有痛覺神經；若合併髕骨軟化，軟骨改變可透過滑膜發炎或軟骨下骨受力間接產生疼痛，因此髕股疼痛不等同於單一軟骨病灶。",
+   "risk_factors_zh": [
+    {
+     "factor": "跑步、跳躍、深蹲或上下樓等反覆屈膝負荷",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "AAOS OrthoInfo: Patellofemoral Pain Syndrome"
+    },
+    {
+     "factor": "活動頻率、時間或強度突然增加",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "AAOS OrthoInfo: Patellofemoral Pain Syndrome"
+    },
+    {
+     "factor": "股四頭肌或髖外展／外旋肌無力或失衡",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "AAOS OrthoInfo: Patellofemoral Pain Syndrome"
+    },
+    {
+     "factor": "下肢排列或髕骨追蹤異常",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "AAOS OrthoInfo: Patellofemoral Pain Syndrome"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "NHS Scotland 的臨床資源將髕股疼痛針灸證據評為非常有限且品質差；若使用，只能作為短期疼痛輔助，不能取代負荷調整與膝、髖肌群運動治療。",
+    "precautions": "明顯關節積液、真性鎖膝、急性外傷後無法負重，或紅熱膝合併發燒時，應先停止局部針刺並排除關節內損傷、骨折或感染。",
+    "co_management": "疼痛持續或惡化、膝關節活動愈來愈困難，或運動治療後仍無改善時，應由醫師或物理治療師重新評估診斷與復健計畫。",
+    "evidence": "unknown",
+    "source": null
+   },
    "tcm_patterns": [
     {
      "pattern_zh": "當歸四逆湯證",
@@ -16067,7 +16181,10 @@
    "source_type": "sourced_cloudtcm_record",
    "entity_type": "biomedical_condition",
    "sources": [
-    "https://cloudtcm.com/disease/tcm/92511"
+    "https://cloudtcm.com/disease/tcm/92511",
+    "https://www.orthoinfo.org/diseases--conditions/patellofemoral-pain-syndrome/",
+    "https://www.rightdecisions.scot.nhs.uk/ggc-msk-index/knee/patellofemoral-joint-pain/",
+    "https://www.nhs.uk/symptoms/knee-pain/"
    ],
    "red_flag_refs": [
     "rf.patellofemoral_pain.legacy01",
@@ -16168,9 +16285,51 @@
     "assessed": false,
     "no_source_found": false
    },
-   "western_pathology_en": "",
-   "field_sources": {},
-   "etiology_en": ""
+   "western_pathology_en": "Pain signals arise mainly from soft tissues and bone around the patella, including tendons, the infrapatellar fat pad, synovium, and subchondral bone. Articular cartilage itself has no pain nerves; when chondromalacia is present, cartilage change may cause pain indirectly through synovial inflammation or underlying bone stress. Patellofemoral pain therefore does not equal one isolated cartilage lesion.",
+   "field_sources": {
+    "western_pathology_zh": ["AAOS OrthoInfo: Patellofemoral Pain Syndrome (Why Does Patellofemoral Pain Syndrome Occur?, retrieved 2026-08)"],
+    "western_pathology_en": ["AAOS OrthoInfo: Patellofemoral Pain Syndrome (Why Does Patellofemoral Pain Syndrome Occur?, retrieved 2026-08)"],
+    "etiology_zh": ["AAOS OrthoInfo: Patellofemoral Pain Syndrome (Causes, retrieved 2026-08); NHS Scotland Right Decisions: Patellofemoral joint pain (retrieved 2026-08)"],
+    "etiology_en": ["AAOS OrthoInfo: Patellofemoral Pain Syndrome (Causes, retrieved 2026-08); NHS Scotland Right Decisions: Patellofemoral joint pain (retrieved 2026-08)"],
+    "risk_factors_zh": ["AAOS OrthoInfo: Patellofemoral Pain Syndrome (overuse and patellar malalignment, retrieved 2026-08); NHS Scotland Right Decisions: Patellofemoral joint pain (retrieved 2026-08)"],
+    "risk_factors_en": ["AAOS OrthoInfo: Patellofemoral Pain Syndrome (overuse and patellar malalignment, retrieved 2026-08); NHS Scotland Right Decisions: Patellofemoral joint pain (retrieved 2026-08)"],
+    "acupuncture_scope_zh": ["NHS Scotland Right Decisions: Patellofemoral joint pain (acupuncture: very limited evidence of poor quality, retrieved 2026-08); NHS: Knee pain (urgent red flags, retrieved 2026-08); AAOS OrthoInfo defines exercise and reassessment boundaries."],
+    "acupuncture_scope_en": ["NHS Scotland Right Decisions: Patellofemoral joint pain (acupuncture: very limited evidence of poor quality, retrieved 2026-08); NHS: Knee pain (urgent red flags, retrieved 2026-08); AAOS OrthoInfo defines exercise and reassessment boundaries."]
+   },
+   "etiology_en": "The cause is usually multifactorial. Repeated knee-flexion loading or a sudden increase in training can exceed current patellofemoral load tolerance. Poor patellar tracking, lower-limb alignment differences, and weak or imbalanced quadriceps or hip muscles may also increase local pressure and tissue sensitivity.",
+   "risk_factors_en": [
+    {
+     "factor": "Repeated knee-flexion loading from running, jumping, squatting, or stairs",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "AAOS OrthoInfo: Patellofemoral Pain Syndrome"
+    },
+    {
+     "factor": "Sudden increase in activity frequency, duration, or intensity",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "AAOS OrthoInfo: Patellofemoral Pain Syndrome"
+    },
+    {
+     "factor": "Weak or imbalanced quadriceps or hip abductor/external rotator muscles",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "AAOS OrthoInfo: Patellofemoral Pain Syndrome"
+    },
+    {
+     "factor": "Lower-limb alignment or patellar tracking abnormality",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "AAOS OrthoInfo: Patellofemoral Pain Syndrome"
+    }
+   ],
+   "acupuncture_scope_en": {
+    "can_treat": "NHS Scotland's clinical resource rates acupuncture evidence for patellofemoral pain as very limited and poor quality. If used, it should be only a short-term pain adjunct and must not replace load modification or knee and hip exercise therapy.",
+    "precautions": "Marked effusion, true mechanical locking, inability to bear weight after acute trauma, or a red hot knee with fever requires stopping local needling and excluding intra-articular injury, fracture, or infection first.",
+    "co_management": "Persistent or worsening pain, increasing difficulty moving the knee, or lack of improvement with exercise therapy warrants reassessment by a physician or physiotherapist.",
+    "evidence": "unknown",
+    "source": null
+   }
   },
   {
    "id": "cond.meniscus_injury",
@@ -16854,8 +17013,59 @@
     "aaos_orthoinfo",
     "standard_orthopedic_reference"
    ],
-   "etiology_zh": "",
-   "western_pathology_zh": "",
+   "etiology_zh": "多數病例沒有單一可辨識原因。足底筋膜原本承受步行、跑步與運動時的張力；當負荷超過組織耐受，可能產生微小損傷或撕裂並引發疼痛。突然增加活動量、硬地高衝擊活動與長時間站立是常見負荷來源。",
+   "western_pathology_zh": "足底筋膜連接跟骨與前足並支撐足弓。反覆過載可造成筋膜微小損傷、刺激與發炎，疼痛多集中在跟骨前方的筋膜附著區。跟骨骨刺可反映長期牽拉，但多數有骨刺者沒有跟痛，骨刺本身不是足底筋膜炎疼痛的原因。",
+   "risk_factors_zh": [
+    {
+     "factor": "新開始或突然增加活動量",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "AAOS OrthoInfo: Plantar Fasciitis and Bone Spurs"
+    },
+    {
+     "factor": "跑步、舞蹈或運動等反覆高衝擊活動",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "AAOS OrthoInfo: Plantar Fasciitis and Bone Spurs"
+    },
+    {
+     "factor": "在硬地長時間站立",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "AAOS OrthoInfo: Plantar Fasciitis and Bone Spurs"
+    },
+    {
+     "factor": "扁平足或高弓足",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "AAOS OrthoInfo: Plantar Fasciitis and Bone Spurs"
+    },
+    {
+     "factor": "小腿肌緊繃或踝背屈受限",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "AAOS OrthoInfo: Plantar Fasciitis and Bone Spurs"
+    },
+    {
+     "factor": "肥胖",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "AAOS OrthoInfo: Plantar Fasciitis and Bone Spurs"
+    },
+    {
+     "factor": "40–60 歲",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "AAOS OrthoInfo: Plantar Fasciitis and Bone Spurs"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "所選 AAOS 與 NHS 官方頁未建立針灸治療足底筋膜炎的療效；若使用，只能作為疼痛輔助，不能取代負荷調整、小腿與足底筋膜伸展、支撐鞋具或物理治療。",
+    "precautions": "足部刺麻或感覺減退，或糖尿病患者出現足部疼痛時，應先接受醫療評估再考慮局部針刺；NHS 提醒糖尿病足部問題可能較嚴重，AAOS 亦將足底神經夾擠列入鑑別。",
+    "co_management": "疼痛嚴重、反覆或自我照護兩週仍未改善者，應由家庭醫師、物理治療師或足病專業人員評估；影像通常只在需要排除其他病因時使用。",
+    "evidence": "unknown",
+    "source": null
+   },
    "tcm_patterns": [
     {
      "pattern_zh": "腎陰虛",
@@ -17156,7 +17366,9 @@
    "source_type": "sourced_cloudtcm_record",
    "entity_type": "biomedical_condition",
    "sources": [
-    "https://cloudtcm.com/disease/tcm/92257"
+    "https://cloudtcm.com/disease/tcm/92257",
+    "https://www.orthoinfo.org/diseases--conditions/plantar-fasciitis-and-bone-spurs/",
+    "https://www.nhs.uk/conditions/plantar-fasciitis/"
    ],
    "red_flag_refs": [
     "rf.plantar_fasciitis.legacy01",
@@ -17281,9 +17493,71 @@
     "assessed": false,
     "no_source_found": false
    },
-   "western_pathology_en": "",
-   "field_sources": {},
-   "etiology_en": ""
+   "western_pathology_en": "The plantar fascia connects the heel to the forefoot and supports the arch. Repeated overload can cause microdamage, irritation, and inflammation, with pain usually centered near the fascial attachment just in front of the heel bone. A heel spur may reflect longstanding traction, but most people with spurs do not have heel pain; the spur itself is not the cause of plantar-fasciitis pain.",
+   "field_sources": {
+    "western_context_zh": ["AAOS OrthoInfo: Plantar Fasciitis and Bone Spurs (risk factors and nonsurgical treatment, retrieved 2026-08); NHS: Plantar fasciitis (self-care and treatment, retrieved 2026-08)"],
+    "western_context_en": ["AAOS OrthoInfo: Plantar Fasciitis and Bone Spurs (risk factors and nonsurgical treatment, retrieved 2026-08); NHS: Plantar fasciitis (self-care and treatment, retrieved 2026-08)"],
+    "western_pathology_zh": ["AAOS OrthoInfo: Plantar Fasciitis and Bone Spurs (causes and heel-spur sections, retrieved 2026-08)"],
+    "western_pathology_en": ["AAOS OrthoInfo: Plantar Fasciitis and Bone Spurs (causes and heel-spur sections, retrieved 2026-08)"],
+    "etiology_zh": ["AAOS OrthoInfo: Plantar Fasciitis and Bone Spurs (causes and risk factors, retrieved 2026-08); NHS: Plantar fasciitis (common causes, retrieved 2026-08)"],
+    "etiology_en": ["AAOS OrthoInfo: Plantar Fasciitis and Bone Spurs (causes and risk factors, retrieved 2026-08); NHS: Plantar fasciitis (common causes, retrieved 2026-08)"],
+    "risk_factors_zh": ["AAOS OrthoInfo: Plantar Fasciitis and Bone Spurs (risk factors, retrieved 2026-08); NHS: Plantar fasciitis (common causes, retrieved 2026-08)"],
+    "risk_factors_en": ["AAOS OrthoInfo: Plantar Fasciitis and Bone Spurs (risk factors, retrieved 2026-08); NHS: Plantar fasciitis (common causes, retrieved 2026-08)"],
+    "acupuncture_scope_zh": ["AAOS OrthoInfo: Plantar Fasciitis and Bone Spurs; NHS: Plantar fasciitis (treatment, differential diagnosis, and referral boundaries, retrieved 2026-08). These sources do not establish acupuncture efficacy."],
+    "acupuncture_scope_en": ["AAOS OrthoInfo: Plantar Fasciitis and Bone Spurs; NHS: Plantar fasciitis (treatment, differential diagnosis, and referral boundaries, retrieved 2026-08). These sources do not establish acupuncture efficacy."]
+   },
+   "etiology_en": "Most cases have no single identifiable cause. The plantar fascia normally absorbs tension during walking, running, and sport; when load exceeds tissue tolerance, microdamage or tearing and pain can develop. Sudden activity increases, high-impact activity on hard surfaces, and prolonged standing are common loading exposures.",
+   "risk_factors_en": [
+    {
+     "factor": "New or suddenly increased activity",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "AAOS OrthoInfo: Plantar Fasciitis and Bone Spurs"
+    },
+    {
+     "factor": "Repeated high-impact activity such as running, dance, or sport",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "AAOS OrthoInfo: Plantar Fasciitis and Bone Spurs"
+    },
+    {
+     "factor": "Prolonged standing on hard surfaces",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "AAOS OrthoInfo: Plantar Fasciitis and Bone Spurs"
+    },
+    {
+     "factor": "Flat feet or a high arch",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "AAOS OrthoInfo: Plantar Fasciitis and Bone Spurs"
+    },
+    {
+     "factor": "Tight calf muscles or limited ankle dorsiflexion",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "AAOS OrthoInfo: Plantar Fasciitis and Bone Spurs"
+    },
+    {
+     "factor": "Obesity",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "AAOS OrthoInfo: Plantar Fasciitis and Bone Spurs"
+    },
+    {
+     "factor": "Age 40–60",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "AAOS OrthoInfo: Plantar Fasciitis and Bone Spurs"
+    }
+   ],
+   "acupuncture_scope_en": {
+    "can_treat": "The selected AAOS and NHS pages do not establish acupuncture efficacy for plantar fasciitis. If used, it should be only a pain adjunct and must not replace load modification, calf and plantar-fascia stretching, supportive footwear, or physical therapy.",
+    "precautions": "Foot tingling or sensory loss, or foot pain in a person with diabetes, requires medical assessment before local needling. NHS notes that diabetic foot problems can be more serious, and AAOS includes plantar nerve entrapment in the differential diagnosis.",
+    "co_management": "Severe, recurrent pain or symptoms that have not improved after two weeks of self-care warrant assessment by a GP, physiotherapist, or podiatry professional. Imaging is usually reserved for excluding another cause.",
+    "evidence": "unknown",
+    "source": null
+   }
   },
   {
    "id": "cond.achilles_tendinopathy",
@@ -18983,8 +19257,41 @@
     "standard_orofacial_reference"
    ],
    "authored_by": "model_draft",
-   "etiology_zh": "",
-   "western_pathology_zh": "",
+   "etiology_zh": "TMD 是異質性疾病群，不是單一病因。下顎或顳顎關節受傷可引發部分病例，但多數病例的確切原因不明；遺傳、心理與生活壓力，以及個體對疼痛的感知方式，可能共同影響發病與是否轉為慢性。現有研究不支持把咬合不正或矯正器本身視為 TMD 病因。",
+   "western_pathology_zh": "TMD 包含三大類：顳顎關節本身的疾病（如關節痛、關節盤移位或退化性關節病）、咀嚼肌疾病，以及與 TMD 相關的頭痛。患者可同時有一種以上類型；疼痛與功能障礙可來自關節、肌肉或周圍支持組織，因此不能把所有 TMD 都等同於單純關節盤問題。",
+   "risk_factors_zh": [
+    {
+     "factor": "女性（觀察到的盛行率較高）",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NIDCR: TMD"
+    },
+    {
+     "factor": "20–40 歲年齡層（疼痛性 TMD 盛行較高）",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NIDCR: Temporomandibular Disorders and Jaw Pain"
+    },
+    {
+     "factor": "下顎或顳顎關節受傷",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NIDCR: TMD"
+    },
+    {
+     "factor": "遺傳、心理與生活壓力及疼痛感知因素的組合（可能相關）",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NIDCR: TMD"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "NIDCR 指出針灸對 TMD 的證據有限；若使用，只能作為可逆、保守治療架構中的疼痛輔助，不能取代醫師／牙醫診斷，也不能宣稱可矯正咬合或關節盤位置。",
+    "precautions": "顎部因外傷後出現咬合改變、無法進食或飲水、顎關節鎖住或張口明顯受限，應先接受急性醫療或牙科評估；不應以針刺延誤排除骨折、脫位或其他嚴重病因。",
+    "co_management": "先採軟食、熱／冷敷、溫和下顎運動與減少咬緊等可逆措施；症狀持續或診斷不清時與牙醫、醫師、口顏面疼痛或物理治療專業人員共同照護，避免在證據不足下做永久性咬合改變。",
+    "evidence": "unknown",
+    "source": null
+   },
    "tcm_patterns": [
     {
      "pattern_zh": "葛根湯證",
@@ -19253,7 +19560,10 @@
    "source_type": "sourced_cloudtcm_record",
    "entity_type": "biomedical_condition",
    "sources": [
-    "https://cloudtcm.com/disease/tcm/8371"
+    "https://cloudtcm.com/disease/tcm/8371",
+    "https://www.nidcr.nih.gov/health-info/tmd",
+    "https://www.nidcr.nih.gov/research/data-statistics/temporomandibular-disorders-jaw-pain",
+    "https://www.nhs.uk/conditions/temporomandibular-disorder-tmd/"
    ],
    "red_flag_refs": [
     "rf.tmd.legacy01",
@@ -19420,9 +19730,51 @@
     "assessed": false,
     "no_source_found": false
    },
-   "western_pathology_en": "",
-   "field_sources": {},
-   "etiology_en": ""
+   "western_pathology_en": "TMDs comprise three major classes: disorders of the temporomandibular joint itself (such as arthralgia, disc displacement, or degenerative joint disease), disorders of the masticatory muscles, and headaches associated with TMD. A person may have more than one class at once; pain and dysfunction can arise from the joint, muscles, or supporting tissues, so TMD should not be reduced to a disc problem alone.",
+   "field_sources": {
+    "western_pathology_zh": ["NIDCR: TMD (classification, reviewed 2025-11); NIDCR: Classification of TMDs with Examples (retrieved 2026-08)"],
+    "western_pathology_en": ["NIDCR: TMD (classification, reviewed 2025-11); NIDCR: Classification of TMDs with Examples (retrieved 2026-08)"],
+    "etiology_zh": ["NIDCR: TMD (causes, reviewed 2025-11)"],
+    "etiology_en": ["NIDCR: TMD (causes, reviewed 2025-11)"],
+    "risk_factors_zh": ["NIDCR: TMD (causes and sex distribution, reviewed 2025-11); NIDCR: Temporomandibular Disorders and Jaw Pain (age distribution, retrieved 2026-08)"],
+    "risk_factors_en": ["NIDCR: TMD (causes and sex distribution, reviewed 2025-11); NIDCR: Temporomandibular Disorders and Jaw Pain (age distribution, retrieved 2026-08)"],
+    "acupuncture_scope_zh": ["NIDCR: TMD (complementary treatments: limited acupuncture evidence; reversible-care and referral guidance, reviewed 2025-11); NHS: Temporomandibular disorder (self-management and urgent clinical boundaries, reviewed 2023-06)"],
+    "acupuncture_scope_en": ["NIDCR: TMD (complementary treatments: limited acupuncture evidence; reversible-care and referral guidance, reviewed 2025-11); NHS: Temporomandibular disorder (self-management and urgent clinical boundaries, reviewed 2023-06)"]
+   },
+   "etiology_en": "TMD is a heterogeneous group rather than a disease with one cause. Jaw or temporomandibular-joint injury can lead to some cases, but the exact cause is unclear in most. Genes, psychological and life stressors, and individual pain perception may jointly influence onset and chronicity. Current research does not support malocclusion or orthodontic braces themselves as causes of TMD.",
+   "risk_factors_en": [
+    {
+     "factor": "Female sex (higher observed prevalence)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NIDCR: TMD"
+    },
+    {
+     "factor": "Age 20–40 (higher prevalence of painful TMD)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NIDCR: Temporomandibular Disorders and Jaw Pain"
+    },
+    {
+     "factor": "Prior jaw or temporomandibular-joint injury",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NIDCR: TMD"
+    },
+    {
+     "factor": "Possible contribution from combined genetic, psychological and life stressors, and pain-perception factors",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NIDCR: TMD"
+    }
+   ],
+   "acupuncture_scope_en": {
+    "can_treat": "NIDCR states that evidence for acupuncture in TMD is limited. If used, it should be only a pain adjunct within a reversible conservative-care plan; it must not replace medical or dental diagnosis or be claimed to correct the bite or disc position.",
+    "precautions": "A post-traumatic bite change, inability to eat or drink, jaw locking, or marked limitation of mouth opening requires medical or dental assessment first. Needling must not delay exclusion of fracture, dislocation, or another serious cause.",
+    "co_management": "Begin with reversible measures such as soft foods, heat or cold, gentle jaw exercise, and reducing clenching. Persistent or diagnostically unclear symptoms should be co-managed with a dentist, physician, orofacial-pain clinician, or physiotherapist, avoiding permanent bite changes when evidence is lacking.",
+    "evidence": "unknown",
+    "source": null
+   }
   },
   {
    "id": "cond.tension_headache",

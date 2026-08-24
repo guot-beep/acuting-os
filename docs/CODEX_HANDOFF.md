@@ -1,5 +1,13 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-24] Codex Handoff — Conditions official MSK detail B11
+
+- **Exact ids / fields**: only `cond.trigger_finger`, `cond.patellofemoral_pain`, `cond.plantar_fasciitis`, and `cond.tmd`; filled previously empty `western_pathology_zh/en`, `etiology_zh/en`, `risk_factors_zh/en`, and `acupuncture_scope_zh/en`, then added `sources` and `field_sources`. Existing summaries, western context, red flags, relations, Symptoms, herbs, formulas, and acupoint canonical data were not overwritten.
+- **Official source sets**: AAOS OrthoInfo + NHS for trigger finger and plantar fasciitis; AAOS + NHS Scotland Right Decisions + NHS knee urgency guidance for PFPS; NIH/NIDCR + NHS for TMD. All 10 new direct official URLs returned HTTP 200. Existing summary provenance was deliberately omitted where its wording was more specific than the selected official pages.
+- **Safety / efficacy boundary**: trigger-finger scope does not claim that needling releases A1-pulley narrowing; PFPS and plantar care do not replace load modification or exercise; NIDCR's limited TMD acupuncture evidence is stated explicitly. The schema value remains template-valid `evidence:"unknown"`, not an invented `limited` enum.
+- **Measured delta**: maturity `187→191 FULL_DETAIL_CANDIDATE`, `318→314 DETAIL_PARTIAL`, `0→0 SKELETON`; direct source entries `709→719`; records with `field_sources` `490→494/505`. Missing western pathology `24→20`, etiology `295→291`, risk factors `52→48`, acupuncture scope `78→74`; records with direct sources remain `245/505`.
+- **Validation / exclusions**: record diff audit passed (`4 ids`, expected ten top-level fields per record); bilingual array/scope checks; `build-data.js`; condition standard `505/505 clean`; ratchet; condition sources (`719`); relation registry; content junk; maturity audit; and `git diff --check` passed. Eleven records still lack all `field_sources`; entries requiring canonical wording or urgency correction were not silently certified.
+
 ## [2026-08-24] Codex Handoff — Conditions official provenance B10
 
 - **Exact ids / fields**: only `cond.ehlers_danlos_syndrome`, `cond.otitis_media`, `cond.marfan_syndrome`, and `cond.cancer_parent`; only `sources` and `field_sources`. Existing prose, red-flag objects, relations, Symptoms, herbs, formulas, and acupoints were not modified.

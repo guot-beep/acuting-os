@@ -1,3 +1,13 @@
+# 2026-08-24 — Codex Conditions 肌骨官方內容補強 B11
+
+- **範圍**：只補 `cond.trigger_finger`、`cond.patellofemoral_pain`、`cond.plantar_fasciitis`、`cond.tmd` 原本空白的 `western_pathology_*`、`etiology_*`、`risk_factors_*`、`acupuncture_scope_*`，並加入逐欄位 provenance；未改 Symptoms、中藥、方劑、穴位 canonical data 或既有正文／紅旗。
+- **數字**：`FULL_DETAIL_CANDIDATE 187→191`、`DETAIL_PARTIAL 318→314`、`SKELETON 0→0`；直接來源 `709→719`；有 `field_sources` 的 condition `490→494/505`；western pathology／etiology／risk factors／acupuncture scope 缺口分別 `24→20`、`295→291`、`52→48`、`78→74`。
+- **來源與邊界**：使用 AAOS OrthoInfo、NHS、NHS Scotland Right Decisions、NIH/NIDCR；10 個新增官方直連網址實測皆為 HTTP 200。PFPS 與 TMD 的針灸證據明示為有限，但 schema 依模板使用 `evidence:"unknown"`；不宣稱解除機械性卡鎖、矯正關節盤或取代運動／復健。
+- **驗證**：逐記錄 diff 僅 4 ids／10 欄位；雙語陣列與 scope 形狀檢查；`build-data`、condition standard `505/505`、ratchet、condition sources `719`、relation registry、content-junk、maturity audit、`git diff --check` 均無新增 defect。
+- **未解**：仍有 11 筆完全缺 `field_sources`；fibroids／viral hepatitis／COVID／HIV／OCD／Down syndrome 等含需先做 canonical 內容或 urgency 審核的舊敘述，不以 provenance 假背書。
+
+---
+
 # 2026-08-24 — Codex Conditions 官方欄位溯源 B10
 
 - **範圍**：只補 `cond.ehlers_danlos_syndrome`、`cond.otitis_media`、`cond.marfan_syndrome`、`cond.cancer_parent` 的 `sources`／`field_sources`；未改正文、紅旗、關聯或相鄰 canonical data。
