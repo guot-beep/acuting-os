@@ -735,6 +735,20 @@ const ADVERSE_EVENT_INTERVENTION_LABELS = { acupuncture: "針刺 Acupuncture", c
 const ADVERSE_EVENT_SEVERITY_LABELS = { mild: "輕度 Mild", moderate: "中度 Moderate", severe: "重度 Severe" };
 const ADVERSE_EVENT_RESOLUTION_LABELS = { resolved: "已緩解 Resolved", resolving: "緩解中 Resolving", ongoing: "持續中 Ongoing", unknown: "不確定 Unknown" };
 const CONSENT_LABELS = { granted: "已同意 Granted", declined: "婉拒 Declined", pending: "待決 Pending" };
+/* 沿用上次治療的白名單(同上,必須在初始 render() 之前宣告)。
+ * 鐵則:只列「今天要做的處置」。S/O/A/P、療效、證型、治則、醫囑、下次計畫
+ * 一律不得加入 —— 把上一診的觀察複製成今天的紀錄就是捏造病歷。
+ * 這條線由 scripts/validate-carry-forward-scope.js 機器守著。 */
+const CARRY_FORWARD_FIELDS = [
+  { key: "acupointLinks", label: "用穴", link: true },
+  { key: "pointsUsed", label: "用穴(自由文字)" },
+  { key: "retentionMinutes", label: "留針分鐘" },
+  { key: "technique", label: "手法" },
+  { key: "modalities", label: "處置(自由文字)" },
+  { key: "formulaLinks", label: "方劑", link: true },
+  { key: "herbLinks", label: "中藥", link: true },
+  { key: "formulaHerbs", label: "方藥(自由文字)" },
+];
 const AVS_CATEGORY_LABELS = {
   aftercare: "治療後注意",
   lifestyle: "作息生活",
@@ -9057,6 +9071,49 @@ function truncateText(text, maxLen) {
   return s.length > maxLen ? s.slice(0, maxLen).trim() + "…" : s;
 }
 
+/* 沿用上次治療 —— 複診最大的速度缺口:同一個病人同一組處方,過去每次都要
+ * 從 picker 重挑 7-8 個穴。
+ *
+ * 鐵則一:只帶「今天要做的處置」,不帶任何判斷與所見。
+ *   S/O/A/P、療效與判定、證型、治則、醫囑、下次計畫、不良事件一律不碰 ——
+ *   把上一診的觀察複製成今天的紀錄就是捏造病歷,那比多打幾個字嚴重得多。
+ *   證型與治則刻意排除:它們是每一診要重新確認的判斷,預填等於替她下診斷。
+ * 鐵則二:只填目前空著的欄位,已經打過的一個字都不覆寫(只加深,不刪除)。
+ * 鐵則三:逐欄回報填了什麼、跳過什麼 —— 沉默的批次動作最容易讓人以為
+ *   「都帶進來了」,然後漏掉那個因為已有內容而被跳過的欄位。 */
+// (CARRY_FORWARD_FIELDS 宣告已前移至檔頭 boot-order 區 —— 見
+//  AGENT_EXPOSURE_TYPE_LABELS 註解。renderPreviousVisitPanel 讀它,而該函式
+//  在首次 render 就可能執行,留在這裡是 TDZ。)
+
+function carryForwardTreatment(prev) {
+  const filled = [], skipped = [];
+  for (const f of CARRY_FORWARD_FIELDS) {
+    const raw = prev[f.key];
+    const vals = Array.isArray(raw) ? raw.filter(Boolean) : String(raw ?? "").trim();
+    if (Array.isArray(vals) ? !vals.length : !vals) continue;   // 上次也沒填 → 沒東西可帶
+    const ctrl = f.link ? linkPickerControllers[f.key] : null;
+    if (ctrl) {
+      if (ctrl.getValues().length) { skipped.push(f.label); continue; }
+      ctrl.setValues(vals);
+      filled.push(`${f.label} ${vals.length} 項`);
+    } else {
+      const el = soapForm.elements[f.key];
+      if (!el) continue;
+      if (String(el.value || "").trim()) { skipped.push(f.label); continue; }
+      el.value = vals;
+      filled.push(f.label);
+    }
+  }
+  // 處置 checkbox 群組:沒有現成 getter,直接讀 DOM 判斷是否已有勾選。
+  const mods = (prev.modalitiesPerformed || []).filter(Boolean);
+  if (mods.length) {
+    const boxes = [...soapForm.querySelectorAll('input[type="checkbox"][name="modalitiesPerformed"]')];
+    if (boxes.some((cb) => cb.checked)) skipped.push("處置");
+    else { setCheckboxGroup(soapForm, "modalitiesPerformed", mods); filled.push(`處置 ${mods.length} 項`); }
+  }
+  return { filled, skipped };
+}
+
 // Compact, read-only. Deliberately does NOT render the whole previous SOAP —
 // only the fields worth glancing at before writing today's note. Every row
 // except "Visit" is omitted when empty, so a sparse previous visit renders a
@@ -9084,9 +9141,31 @@ function renderPreviousVisitPanel(note) {
     ["醫囑 Advice", truncateText(note.advice, 60)],
     ["下次計畫 Follow-up", truncateText(note.followUp, 60)],
   ].filter(([, value]) => value);
+  const hasTreatment = CARRY_FORWARD_FIELDS.some((f) => {
+    const raw = note[f.key];
+    return Array.isArray(raw) ? raw.filter(Boolean).length > 0 : String(raw ?? "").trim() !== "";
+  }) || (note.modalitiesPerformed || []).filter(Boolean).length > 0;
   container.innerHTML = `<div class="clinical-mini-grid">${cells.map(([label, value]) =>
     `<div><small>${escapeHtml(label)}</small><span>${escapeHtml(value)}</span></div>`
-  ).join("")}</div>`;
+  ).join("")}</div>
+  ${hasTreatment ? `<div class="carry-forward">
+    <button class="ghost" type="button" id="carryForwardBtn">沿用上次治療 Carry forward treatment</button>
+    <small>只帶用穴／留針／手法／處置／方藥,且只填目前空著的欄位。證型、治則、S/O/A/P、療效與醫囑不會帶過來 —— 那些是今天要重新判斷的。</small>
+    <p class="carry-forward-result" id="carryForwardResult" hidden></p>
+  </div>` : ""}`;
+  const btn = container.querySelector("#carryForwardBtn");
+  if (btn) btn.addEventListener("click", () => {
+    const { filled, skipped } = carryForwardTreatment(note);
+    const out = container.querySelector("#carryForwardResult");
+    if (!out) return;
+    out.hidden = false;
+    // 逐項講清楚。「已有內容,未覆寫」必須點名到欄位 —— 只說「部分跳過」
+    // 等於要她自己回頭一欄一欄找。
+    out.textContent = [
+      filled.length ? `已帶入:${filled.join("、")}` : "沒有帶入任何欄位",
+      skipped.length ? `已有內容未覆寫:${skipped.join("、")}(要沿用請先清空該欄)` : ""
+    ].filter(Boolean).join(" · ");
+  });
 }
 
 function openSoapEditor(note = null) {

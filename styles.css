@@ -4681,6 +4681,30 @@ a { color: var(--accent-dark); }
   z-index: 999;
 }
 
+/* 沿用上次治療:按鈕 + 規則說明 + 逐項結果。說明句與按鈕同區塊,因為
+   「它到底帶了什麼、沒帶什麼」必須在按下去之前就看得到。 */
+.carry-forward {
+  margin-top: 0.7rem;
+  padding-top: 0.7rem;
+  border-top: 1px dashed var(--line, rgba(0, 0, 0, .15));
+  display: grid;
+  gap: 0.35rem;
+  justify-items: start;
+}
+
+.carry-forward small { color: var(--muted); font-size: 0.78rem; line-height: 1.5; }
+
+.carry-forward-result {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #7a5410;
+  background: rgba(184, 134, 47, .12);
+  border-radius: 6px;
+  padding: 0.4rem 0.6rem;
+}
+
+.carry-forward-result[hidden] { display: none; }
+
 /* M3: 病人 id 尚未鑄造的可見橫幅。刻意用警示色而非灰階說明色 —— 它報的是
    「病人列表現在是不完整的」,不是一則提示。[hidden] 要明寫,否則下面的
    display 會蓋掉 hidden 屬性,橫幅會在佇列乾淨時照樣現身。 */
