@@ -3396,14 +3396,24 @@
        *   {original_field, text, reason, moved_at}  ← 較早的批次
        * 只讀 field 會漏掉後者 —— 而胎位不正卡正是後者,也就是這個提示最該出現的
        * 那一張(它的處方欄被清空,原本是孕期禁忌的合谷＋三陰交組合)。
-       * 兩種都讀,並在下面把形狀不一致回報給 Ting。 */
+       * 兩種都讀,並在下面把形狀不一致回報給 Ting。
+     *
+     * 2026-08-24 修正:field 有時是點狀路徑(如 "acupuncture_scope_zh.note",
+     * 20 張卡都是這個名字),但 c[fieldOf(a)] 是平面查找,永遠讀不到巢狀物件
+     * 裡的值 —— 等於這 20 張卡不管 note 欄位實際有沒有內容都會被判定成
+     * 「空」。查過 cond.menorrhagia 的樣本:note 欄位其實有完整的證據說明,
+     * 不是空的,是這支函式沒查對地方。改用 getPath 逐層解析點狀路徑。 */
       const fieldOf = (a) => (a && (a.field || a.original_field)) || "";
-      const arts = (c.import_artifacts || []).filter((a) => fieldOf(a) && !String(c[fieldOf(a)] || "").trim());
+      const getPath = (obj, keyPath) => keyPath.split(".").reduce(
+        (o, k) => (o && typeof o === "object" ? o[k] : undefined), obj
+      );
+      const arts = (c.import_artifacts || []).filter((a) => fieldOf(a) && !String(getPath(c, fieldOf(a)) || "").trim());
       if (!arts.length) return "";
       const LABEL = {
         western_pathology_zh: "西醫病理", western_pathology_en: "西醫病理(英)",
         etiology_zh: "病因", etiology_en: "病因(英)",
         acupoint_protocols: "針灸處方", herb_formulas: "方劑", aliases_zh: "別名",
+        "acupuncture_scope_zh.note": "針灸範圍備註", "acupuncture_scope_en.note": "針灸範圍備註(英)",
       };
       const rows = arts.map((a) => {
         const name = LABEL[fieldOf(a)] || fieldOf(a);

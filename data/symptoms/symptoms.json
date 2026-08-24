@@ -17501,6 +17501,2756 @@
       "source_type": "source_assisted_draft_pending_ting_verification",
       "review_status": "draft",
       "authored_by": "model_draft"
+    },
+    {
+      "aliases_en": [
+        "Depressed mood",
+        "Feeling down",
+        "Low spirits",
+        "Despondency"
+      ],
+      "aliases_zh": [
+        "心情低落",
+        "鬱悶",
+        "悶悶不樂",
+        "提不起勁"
+      ],
+      "clinical_attributes": {
+        "location": {
+          "applicable": false
+        },
+        "quality": {
+          "applicable": false
+        },
+        "laterality": {
+          "applicable": false
+        },
+        "timing": {
+          "applicable": true,
+          "vocabulary": "symptom_timing"
+        },
+        "severity": {
+          "applicable": false,
+          "why": "實例值，屬病例層（§8）"
+        },
+        "duration": {
+          "applicable": false,
+          "why": "實例值，屬病例層（§8）"
+        }
+      },
+      "definition_en": "A persistent or recurrent subjective sense of sadness, dejection and lack of drive, usually with reduced interest or pleasure, lower energy, and diminished self-regard. It is a presenting complaint, not a diagnosis — the same low mood appears under dozens of biomedical labels (major depressive disorder, dysthymia, adjustment disorder, postpartum depression, hypothyroidism, menopausal syndrome, medication side effects) and under TCM disease categories such as 鬱證 (depression-type disorder), 臟躁 (organ restlessness) and 梅核氣 (plum-pit qi), so this card records what to ask, what it points toward, and when to refer — not a conclusion.",
+      "definition_zh": "情緒持續或反覆出現的低落、憂傷、提不起勁的主觀感受，常伴隨興趣與愉悅感減退、精力下降、自我評價降低。它是主訴，不是診斷——同一個「情緒低落」可以出現在重度憂鬱症、輕鬱症、適應障礙、產後憂鬱、甲狀腺功能低下、更年期綜合症、藥物副作用等數十個西醫病名之下，中醫則多歸屬鬱證、臟躁、梅核氣等病機範疇，所以卡片記錄的是「該問什麼、指向哪裡、何時該轉診」，不是結論。",
+      "differentiation_en": [
+        {
+          "variant": "Distending oppression worse with emotional swings, frequent sighing",
+          "points_to": [
+            "pattern.liver_qi_stagnation"
+          ],
+          "distinguishing": "Low mood triggered by unresolved emotional stress, clearly worse with emotional fluctuation, with distending oppression or wandering pain in the chest and hypochondrium (or breasts), frequent sighing, a sensation of something stuck in the throat, slightly eased premenstrually or after emotional release, wiry pulse"
+        },
+        {
+          "variant": "Low mood with irritability, bitter taste and constipation",
+          "points_to": [
+            "pattern.liver_depression_transforming_fire"
+          ],
+          "distinguishing": "Low mood together with marked irritability, burning distending pain in the chest and hypochondrium, headache with red eyes, bitter taste and dry mouth, constipation with dark urine, red tongue with yellow coating, wiry rapid pulse"
+        },
+        {
+          "variant": "Fatigue and sallow complexion, poor appetite and loose stools",
+          "points_to": [
+            "pattern.heart_spleen_deficiency"
+          ],
+          "distinguishing": "Low mood that has lingered for a long time, with marked listlessness, palpitations and insomnia, forgetfulness with vivid dreams, poor appetite and fatigue, sallow complexion — often after excessive overthinking, illness or childbirth, pale tongue with thin coating"
+        },
+        {
+          "variant": "Tearfulness, palpitations and forgetfulness, pale complexion",
+          "points_to": [
+            "pattern.heart_blood_deficiency"
+          ],
+          "distinguishing": "Low mood with easy tearfulness and being easily moved, palpitations, insomnia with dreaming, forgetfulness and dizziness, pale complexion without lustre, pale tongue and thin pulse"
+        },
+        {
+          "variant": "Blunted apathy with a lump-in-throat sensation, chest oppression and head heaviness",
+          "points_to": [
+            "pattern.phlegm_qi_binding"
+          ],
+          "distinguishing": "Low mood with blunted, apathetic affect, a sensation of something stuck in the throat that can neither be coughed up nor swallowed down, fullness and distension in the chest and epigastrium, heavy head and body, white greasy coating, wiry slippery pulse"
+        },
+        {
+          "variant": "Timidity and easy fright, fearful of being alone",
+          "points_to": [
+            "pattern.heart_gallbladder_qi_deficiency"
+          ],
+          "distinguishing": "Low mood together with being easily startled and fearful, indecisiveness, timidity about being alone, disturbed sleep with frequent waking, shortness of breath with spontaneous sweating, the heart races with minimal provocation, pale tongue with thin coating"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "情緒低落隨情志波動加重，胸脅脹悶善太息",
+          "points_to": [
+            "pattern.liver_qi_stagnation"
+          ],
+          "distinguishing": "情緒低落因情志不遂誘發，隨情緒波動明顯加重，兼胸脅或乳房脹悶竄痛、喜歎息、咽中如有物梗，經前或情緒紓解後稍減，脈弦"
+        },
+        {
+          "variant": "情緒低落夾煩躁易怒，口苦目赤便秘",
+          "points_to": [
+            "pattern.liver_depression_transforming_fire"
+          ],
+          "distinguishing": "情緒低落與急躁易怒並見，胸脅脹痛灼熱，頭痛目赤、口苦咽乾，便秘尿黃，舌紅苔黃，脈弦數"
+        },
+        {
+          "variant": "情緒低落神疲乏力，面色萎黃食少便溏",
+          "points_to": [
+            "pattern.heart_spleen_deficiency"
+          ],
+          "distinguishing": "情緒低落纏綿日久，精神萎靡不振，兼心悸失眠、多夢健忘、食少倦怠、面色萎黃，多見於思慮過度或病後、產後，舌淡苔薄"
+        },
+        {
+          "variant": "情緒低落悲傷欲哭，心悸健忘面色淡白",
+          "points_to": [
+            "pattern.heart_blood_deficiency"
+          ],
+          "distinguishing": "情緒低落兼悲傷欲哭、觸景易感，心悸怔忡、失眠多夢、健忘眩暈，面色淡白無華，舌淡脈細"
+        },
+        {
+          "variant": "情緒低落淡漠遲鈍，咽中如物梗胸悶頭重",
+          "points_to": [
+            "pattern.phlegm_qi_binding"
+          ],
+          "distinguishing": "情緒低落兼反應淡漠遲鈍，咽中如有異物梗阻、咯之不出嚥之不下，胸脅脘悶脹滿，頭重身困，苔白膩，脈弦滑"
+        },
+        {
+          "variant": "情緒低落善恐易驚，膽怯不敢獨處",
+          "points_to": [
+            "pattern.heart_gallbladder_qi_deficiency"
+          ],
+          "distinguishing": "情緒低落兼遇事善驚易恐、猶豫不決、膽怯不敢獨處，少寐多夢、氣短自汗，稍受驚嚇即心悸不寧，舌淡苔薄"
+        }
+      ],
+      "field_sources": {
+        "definition_zh/en": "DSM-5-TR 重度憂鬱發作（Major Depressive Episode）診斷準則 + 中醫內科學 鬱證篇對情志致病的一般描述，並比照 sym.anxiety 建立情緒類症狀卡的書寫慣例",
+        "clinical_attributes": "比照 sym.anxiety／sym.restlessness／sym.irritability 等既有情緒類症狀卡的 location/quality/laterality 判定慣例——symptom_quality.json 詞彙表（脹/刺/隱/空/灼/重等）為疼痛性質專用，不適用於情緒症狀",
+        "inquiry_zh/en": "DSM-5-TR 憂鬱發作／雙相障礙鑑別診斷準則（誘因、病程、伴隨症、日夜節律）+ 中醫內科學 鬱證篇情志辨證問診要點",
+        "differentiation_zh/en": "中醫內科學 鬱證證型分類 + data/pathology/pattern_library.json 各證型 key_signs_zh 對照（肝氣鬱結、肝鬱化火、心脾兩虛、心血虛、痰氣互結、心膽氣虛）",
+        "red_flags_zh/en": "NICE NG222 憂鬱症治療指引 + NICE NG225 自傷風險評估原則 + DSM-5-TR 雙相障礙篩檢準則 + ACOG Committee Opinion No. 757 產後憂鬱症／產後精神病警示準則",
+        "supporting_measurements": "data/clinical_cases/outcome_metrics.json — metric.mood、metric.energy_level、metric.sleep_quality（既有，未新增）"
+      },
+      "id": "sym.low_mood",
+      "inquiry_en": [
+        {
+          "dimension": "Triggers",
+          "why": "A clear precipitating event (bereavement, job loss, relationship breakdown, childbirth, a serious diagnosis), medication history or medical illness determines whether the mood is primarily psychosocial, organic, or reflects a TCM emotion-based mechanism"
+        },
+        {
+          "dimension": "Diurnal/timing pattern",
+          "why": "A diurnal pattern of worse-in-the-morning, better-by-evening is typical of a major depressive episode; marked premenstrual worsening implicates the Chong/Ren and Liver Qi stagnation; a seasonal pattern should also be recorded, as it shapes the treatment direction"
+        },
+        {
+          "dimension": "Quality",
+          "why": "Dejection with chest and hypochondriac fullness, irritability with a bitter taste, tearfulness with palpitations, and blunted apathy with head heaviness point to four different mechanisms — the highest-yield question for pattern differentiation"
+        },
+        {
+          "dimension": "Accompanying physical symptoms",
+          "why": "Changes in sleep, appetite, weight, energy and libido are core diagnostic criteria for a depressive episode, and also the basis for TCM organ (Heart/Spleen/Liver/Kidney) differentiation"
+        },
+        {
+          "dimension": "Accompanying cognitive and behavioural changes",
+          "why": "Reduced concentration, self-blame, loss of interest and pleasure, and the presence or absence of self-harm or suicidal ideation are the key question deciding red-flag status and referral priority"
+        },
+        {
+          "dimension": "Relief and aggravating factors",
+          "why": "Improvement with exercise, talking things through or social contact suggests a treatable qi-stagnation pattern; worsening with isolation or exertion suggests deficiency — this decides whether home-based management can be tried first or referral is needed sooner"
+        },
+        {
+          "dimension": "Course and history",
+          "why": "A first versus recurrent episode, any history of mania or hypomania, and any thyroid or other chronic illness history determine the treatment direction and rule out bipolar disorder or an organic cause"
+        }
+      ],
+      "inquiry_zh": [
+        {
+          "dimension": "誘因",
+          "why": "是否有明確誘發事件（喪親、失業、關係破裂、產後、重大疾病診斷）、藥物或內科疾病史，決定屬心因性、器質性或中醫情志致病"
+        },
+        {
+          "dimension": "時間節律",
+          "why": "晨重夜輕的日夜節律典型見於重度憂鬱發作；經前明顯加重提示衝任與肝鬱；季節性發作需一併記錄，決定治療方向"
+        },
+        {
+          "dimension": "性質",
+          "why": "悶悶不樂而胸脅脹悶、煩躁易怒而口苦、悲傷欲哭而心悸、淡漠遲鈍而頭重胸悶，四種性質分屬不同病機，是本症最有辨證重量的一問"
+        },
+        {
+          "dimension": "伴隨身體症狀",
+          "why": "睡眠、食慾、體重、精力、性慾的改變是憂鬱發作的核心診斷條件，也是中醫辨臟腑虛實（心、脾、肝、腎）的依據"
+        },
+        {
+          "dimension": "伴隨認知與行為改變",
+          "why": "專注力下降、自責感、興趣與愉悅感喪失，以及有無自傷或自殺意念，是紅旗判斷與是否需優先轉診的關鍵一問"
+        },
+        {
+          "dimension": "緩解與加重因素",
+          "why": "運動、傾訴、社交後是否減輕屬氣鬱可疏；獨處、勞累後加重屬虛；決定可否先以居家調理觀察或需及早轉診"
+        },
+        {
+          "dimension": "病程與病史",
+          "why": "首次發作或反覆發作、有無躁狂／輕躁狂發作史、有無甲狀腺或其他慢性病史，決定治療方向並排除雙相情感障礙或器質性病因"
+        }
+      ],
+      "name_en": "Low mood",
+      "name_zh": "情緒低落",
+      "observation_modes": [
+        "patient_reported"
+      ],
+      "patient_words_en": "\"I feel so heavy, I don't want to do anything\", \"I can't feel happy about anything\", \"I have no drive left, nothing feels worth doing\", \"there's an emptiness inside I can't explain\", \"I burst into tears for no reason\", \"mornings are the worst, I feel a bit better by evening\", \"I feel worthless, like a burden to everyone\"",
+      "patient_words_zh": "「心情很悶，什麼都不想做」「開心不起來」「整個人提不起勁，做什麼都沒意思」「心裡空空的，說不出哪裡不舒服」「動不動就想哭」「早上起床特別難受，到了晚上反而好一點」「覺得自己很沒用、拖累別人」",
+      "pinyin": "qing xu di luo",
+      "pinyin_toned": "qíng xù dī luò",
+      "primary_mode": "patient_reported",
+      "red_flags_en": [
+        "Clear thoughts, plans or intent of self-harm or suicide, or a past suicide attempt → immediate urgent psychiatric evaluation, not routine emotional support or acupuncture/TCM management alone",
+        "Low mood with hallucinations, delusions or marked loss of touch with reality → suggests a major depressive episode with psychotic features, requiring emergency psychiatric intervention",
+        "New-onset low mood within 4 weeks postpartum with confused thinking or thoughts of harming self or the infant → rule out postpartum psychosis, a medical emergency",
+        "A history of mania or hypomania (abnormally elevated mood, markedly reduced need for sleep with retained energy, impulsive behaviour with impaired judgment) → suggests bipolar disorder; specialist evaluation is needed before starting an antidepressant, which can precipitate a manic switch",
+        "Onset of low mood after starting steroids, interferon, isotretinoin, certain antihypertensives (e.g. propranolol), or hormonal contraception → consider medication-induced mood disturbance and review the drug history",
+        "Low mood with palpitations, heat or cold intolerance, marked unintentional weight change, or constipation → medical evaluation to rule out thyroid dysfunction or another organic cause",
+        "New-onset low mood in an older adult with marked cognitive decline or disorientation → differentiate depression-related pseudodementia from an organic dementia, and refer for evaluation"
+      ],
+      "red_flags_zh": [
+        "出現明確自傷或自殺意念、計畫，或曾有自殺未遂史 → 立即精神科緊急評估，不可僅以一般情緒疏導或針灸／中醫方式處理",
+        "情緒低落合併幻覺、妄想或明顯脫離現實的思考 → 提示伴精神病性特徵的重度憂鬱，需精神科緊急介入",
+        "產後 4 週內新發情緒低落，合併思路混亂、傷害自己或嬰兒的念頭 → 排除產後精神病，屬醫療急症",
+        "曾有躁狂或輕躁狂發作史（情緒異常高昂、睡眠需求明顯減少仍精力旺盛、判斷力受損的衝動行為）→ 疑似雙相情感障礙，使用抗憂鬱藥物前須先由專科評估，以免誘發躁狂轉相",
+        "近期新使用類固醇、干擾素、異維 A 酸（isotretinoin）、某些降壓藥（如 propranolol）或荷爾蒙避孕藥後出現情緒低落 → 考慮藥物誘發性情緒障礙，需回顧用藥史",
+        "合併心悸、怕熱或怕冷、體重明顯驟降或驟升、便秘等代謝症狀 → 需醫療評估排除甲狀腺功能異常等器質性病因",
+        "老年人新發情緒低落合併認知功能明顯下降、定向力障礙 → 需鑑別假性失智（憂鬱所致認知障礙）與器質性失智，轉診評估"
+      ],
+      "safety_flags": [
+        "psychiatric_red_flags",
+        "medication_review"
+      ],
+      "safety_review_sources": [
+        "NICE guideline NG222 — Depression in adults: treatment and management (2022)",
+        "DSM-5-TR — Diagnostic and Statistical Manual of Mental Disorders, 5th ed. Text Revision (American Psychiatric Association, 2022)",
+        "NICE guideline NG225 — Self-harm: assessment, management and preventing recurrence (2022)",
+        "ACOG Committee Opinion No. 757 — Screening for Perinatal Depression (2018)"
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "sources": [
+        "NICE guideline NG222 — Depression in adults: treatment and management (2022)（憂鬱症治療與轉診準則）",
+        "DSM-5-TR — Diagnostic and Statistical Manual of Mental Disorders, 5th ed. Text Revision（重度憂鬱發作與躁狂／輕躁狂發作鑑別診斷準則）",
+        "NICE guideline NG225 — Self-harm: assessment, management and preventing recurrence (2022)（自傷風險評估原則）",
+        "ACOG Committee Opinion No. 757 — Screening for Perinatal Depression (2018)（產後憂鬱症／產後精神病警示準則）",
+        "中醫內科學 通行教材 鬱證篇（情志致病病機、肝氣鬱結等證型辨證）",
+        "中醫診斷學 通行教材（心、肝、脾、膽相關情志辨證通行內容）",
+        "本 repo 既有卡片：sym.anxiety · sym.restlessness · sym.irritability（情緒類症狀卡 clinical_attributes 判定慣例對照）與 data/pathology/pattern_library.json 各證型 key_signs_zh"
+      ],
+      "supporting_measurements": [
+        "metric.mood",
+        "metric.energy_level",
+        "metric.sleep_quality"
+      ],
+      "taxonomy_ids": [
+        "sym.mental_emotional"
+      ],
+      "tradition": "both",
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "sym.gum_bleeding",
+      "name_zh": "牙齦出血",
+      "name_en": "Gum bleeding",
+      "pinyin": "ya yin chu xue",
+      "pinyin_toned": "yá yín chū xuè",
+      "aliases_zh": [
+        "齒衄",
+        "刷牙牙齦流血",
+        "牙齦流血"
+      ],
+      "aliases_en": [
+        "Gingival bleeding",
+        "Bleeding gums",
+        "Bleeding on brushing"
+      ],
+      "taxonomy_ids": [
+        "sym.head_face_nose"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported",
+        "examiner_observed"
+      ],
+      "primary_mode": "patient_reported",
+      "definition_zh": "牙齦邊緣或牙齦溝滲出、滴出或噴出血液，可能是刷牙、使用牙線或進食碰觸誘發，也可能完全沒有碰觸也自發出血。最常見的原因是局部牙齦發炎（牙菌斑堆積導致的牙齦炎或牙周病），但也可能是全身性凝血功能異常、營養缺乏或血液系統疾病的表現。牙齦出血是一個主訴／體徵，不是診斷——本卡記錄的是「該問什麼、指向哪裡」，不是結論。",
+      "definition_en": "Blood oozing, dripping or spurting from the gingival margin or sulcus — sometimes provoked by brushing, flossing or eating, sometimes fully spontaneous with no touch at all. The overwhelmingly common cause is local gingival inflammation (plaque-driven gingivitis or periodontitis), but it can also be the presenting sign of a systemic coagulation disorder, a nutritional deficiency, or a hematologic disease. Gum bleeding is a presenting complaint/sign, not a diagnosis — this card records what to ask and what it points toward, not a conclusion.",
+      "patient_words_zh": "「刷牙都會流血」「牙齦一碰就出血，還帶血絲」「早上起床枕頭或牙刷上有血」「牙齦紅腫，咬東西會痛」「沒有碰它也會自己流血」",
+      "patient_words_en": "\"My gums bleed every time I brush\", \"even a light touch makes my gums bleed, there's blood in my saliva\", \"there's blood on my pillow or toothbrush when I wake up\", \"my gums are red and swollen, it hurts to bite down\", \"they bleed on their own, even without touching them\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": true,
+          "vocabulary": "symptom_taxonomy"
+        },
+        "quality": {
+          "applicable": false
+        },
+        "laterality": {
+          "applicable": false
+        },
+        "timing": {
+          "applicable": true,
+          "vocabulary": "symptom_timing"
+        },
+        "severity": {
+          "applicable": false,
+          "why": "實例值，屬病例層（§8）"
+        },
+        "duration": {
+          "applicable": false,
+          "why": "實例值，屬病例層（§8）"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "部位",
+          "why": "局部單一部位出血多與該處牙結石堆積、齲齒或機械性創傷有關；瀰漫全口牙齦出血則需考慮全身性因素，兩者處置方向不同"
+        },
+        {
+          "dimension": "性質",
+          "why": "血色鮮紅、量較多多屬熱迫血行（胃火）；血色淡紅、反覆不止多屬氣虛不能攝血或陰虛虛火，是本症最有辨證重量的一問"
+        },
+        {
+          "dimension": "時間",
+          "why": "夜間牙菌斑堆積使晨起刷牙時出血最明顯，屬局部牙周病典型表現；若不分時段持續自發出血，需提高警覺"
+        },
+        {
+          "dimension": "誘因",
+          "why": "僅在刷牙、使用牙線或進食碰觸時誘發，與完全無碰觸也自發出血，兩者代表的嚴重度完全不同；同時要問抗凝血劑、抗血小板藥物、魚油等保健品使用史，以及是否懷孕"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "牙齦紅腫疼痛、口臭、牙齒鬆動指向局部牙周病；合併鼻出血、皮下瘀斑、月經量多、其他部位出血、發熱、體重減輕、淋巴結腫大，則指向全身性凝血或血液系統疾病，紅旗都掛在這一問"
+        },
+        {
+          "dimension": "病程",
+          "why": "新發生且與近期洗牙、更換牙刷或潔牙方式相關者多屬局部刺激；長期反覆未癒、與全身病史（糖尿病、肝病）相關者需另作評估"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Location",
+          "why": "An isolated bleeding site usually relates to local calculus buildup, a cavity, or mechanical trauma there; diffuse bleeding across all the gums raises concern for a systemic cause — the two point toward completely different management"
+        },
+        {
+          "dimension": "Quality",
+          "why": "Bright red, heavier bleeding usually reflects heat forcing the blood (Stomach Fire); pale, recurring bleeding usually reflects qi deficiency failing to contain the blood, or yin-deficiency deficient fire — the highest-yield question on this symptom"
+        },
+        {
+          "dimension": "Timing",
+          "why": "Overnight plaque accumulation makes bleeding most obvious on morning brushing — the classic picture of local periodontal disease; bleeding that is spontaneous and continuous regardless of time of day warrants closer attention"
+        },
+        {
+          "dimension": "Triggers",
+          "why": "Bleeding only with brushing, flossing or eating versus bleeding with no provocation at all represent very different severity; also ask about anticoagulant or antiplatelet use, fish oil and other supplements, and pregnancy"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Red, swollen, painful gums, foul breath and loose teeth point to local periodontal disease; nosebleeds, bruising, heavy periods, bleeding elsewhere, fever, weight loss or lymphadenopathy point toward a systemic coagulation or hematologic disorder — most red flags hang off this question"
+        },
+        {
+          "dimension": "Course",
+          "why": "New-onset bleeding tied to a recent scaling, a new toothbrush, or a change in oral hygiene technique usually reflects local irritation; long-standing, recurrent bleeding, or bleeding tied to a systemic history (diabetes, liver disease), needs separate evaluation"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "齒衄血色鮮紅，齦腫疼痛口臭",
+          "points_to": [
+            "pattern.stomach_fire"
+          ],
+          "distinguishing": "齒衄血色鮮紅，量較多，牙齦紅腫疼痛，口臭，口渴喜冷飲，大便秘結，舌紅苔黃，脈洪數"
+        },
+        {
+          "variant": "齒衄血色淡紅，反覆難癒，兼陰虛熱象",
+          "points_to": [
+            "pattern.yin_deficiency_fire_flaring"
+          ],
+          "distinguishing": "出血血色較淡，起病較緩，牙齦不甚紅腫或微萎縮，遇勞累、熬夜或食熱物後易發，兼頭暈耳鳴、兩顴潮紅、五心煩熱、腰膝痠軟，舌紅少苔，脈細數"
+        },
+        {
+          "variant": "齒衄血色淡，反覆不止，兼氣虛諸症",
+          "points_to": [
+            "pattern.spleen_not_governing_blood"
+          ],
+          "distinguishing": "出血反覆纏綿，血色淡紅，牙齦不紅不腫，兼神疲乏力、氣短懶言、食少便溏、面色萎黃，或同時可見皮下瘀斑等其他部位出血，舌淡脈細弱"
+        },
+        {
+          "variant": "齒衄與鼻衄、肌衄同時或反覆並見",
+          "points_to": [
+            "pattern.blood_heat"
+          ],
+          "distinguishing": "牙齦出血反覆合併鼻出血、肌衄（皮下出血點或瘀斑）等多部位同時出血，血色鮮紅，兼心煩口渴、小便短赤，舌紅絳，脈弦數；牙齦局部腫痛不若胃火熾盛明顯"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Bright red bleeding with swollen, painful, foul-smelling gums",
+          "points_to": [
+            "pattern.stomach_fire"
+          ],
+          "distinguishing": "Bright red bleeding, often in greater amount, with red swollen painful gums, foul breath, thirst for cold drinks, constipation, red tongue with yellow coating, surging rapid pulse"
+        },
+        {
+          "variant": "Pale-red bleeding, recurrent, with yin-deficiency heat signs",
+          "points_to": [
+            "pattern.yin_deficiency_fire_flaring"
+          ],
+          "distinguishing": "Paler, more gradual-onset bleeding, gums not markedly swollen or slightly receded, triggered by exertion, late nights or hot food, with dizziness, tinnitus, malar flushing, five-center heat, weak aching low back and knees, red tongue with scant coating, thin rapid pulse"
+        },
+        {
+          "variant": "Pale, recurrent bleeding with qi-deficiency signs",
+          "points_to": [
+            "pattern.spleen_not_governing_blood"
+          ],
+          "distinguishing": "Recurring, lingering bleeding, pale-red blood, gums neither red nor swollen, with fatigue, shortness of breath, reluctance to speak, poor appetite, loose stool, sallow complexion, sometimes with concurrent bruising elsewhere; pale tongue, thin weak pulse"
+        },
+        {
+          "variant": "Gum bleeding co-occurring or alternating with nosebleeds and subcutaneous bleeding",
+          "points_to": [
+            "pattern.blood_heat"
+          ],
+          "distinguishing": "Recurrent gum bleeding together with epistaxis and petechiae/ecchymoses at multiple sites, bright red blood, with irritability, thirst, scanty dark urine, deep-red tongue, wiry rapid pulse; local gum swelling and pain less prominent than in Stomach Fire"
+        }
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "American Academy of Periodontology (AAP) — patient/clinical guidance on gingivitis and periodontitis as the leading cause of gingival bleeding",
+        "American Dental Association (ADA) MouthHealthy — Bleeding Gums patient guidance",
+        "National Cancer Institute (NCI) — leukemia signs and symptoms patient information (gum bleeding as a hematologic red flag)"
+      ],
+      "safety_flags": [
+        "active_bleeding_medical_review"
+      ],
+      "red_flags_zh": [
+        "自發性、非碰觸誘發的持續牙齦出血，合併不明原因發熱、疲倦、皮下瘀斑或其他部位出血、淋巴結腫大 → 需警覺血液系統惡性疾病（如白血病），應儘速轉診評估",
+        "服用抗凝血劑或抗血小板藥物者，牙齦出血量突然增加或難以止血 → 需醫療評估藥物劑量與凝血功能",
+        "牙齦出血合併牙齦明顯萎縮、牙齒鬆動或脫落、傷口癒合緩慢，尤其長期飲食缺乏新鮮蔬果者 → 需考慮維生素 C 缺乏（壞血病）",
+        "局部口腔清潔改善後牙齦出血仍持續超過兩週，或出血量與局部牙齦紅腫程度明顯不成比例 → 轉診牙科排除牙周病以外的全身性病因",
+        "合併其他部位無法解釋的自發性出血（鼻出血、瘀斑、血尿、血便）→ 需排除全身性凝血功能障礙，轉診評估"
+      ],
+      "red_flags_en": [
+        "Persistent, unprovoked gum bleeding with unexplained fever, fatigue, bruising or bleeding elsewhere, or lymphadenopathy → raises concern for a hematologic malignancy (e.g. leukemia); refer promptly for evaluation",
+        "A sudden increase in gum bleeding or bleeding that won't stop in someone on anticoagulant or antiplatelet therapy → medical evaluation of medication dosing and coagulation status",
+        "Gum bleeding with marked gingival recession, loose or falling teeth, and slow wound healing, especially with a diet chronically low in fresh fruit and vegetables → consider vitamin C deficiency (scurvy)",
+        "Gum bleeding that persists beyond two weeks despite improved oral hygiene, or bleeding out of proportion to the degree of local gingival redness/swelling → refer to dentistry to rule out a systemic cause beyond periodontal disease",
+        "Unexplained spontaneous bleeding at other sites (nosebleeds, bruising, blood in urine or stool) accompanying gum bleeding → rule out a systemic coagulation disorder; refer for evaluation"
+      ],
+      "supporting_measurements": [],
+      "sources": [
+        "American Academy of Periodontology (AAP) — gingivitis and periodontitis clinical guidance",
+        "American Dental Association (ADA) MouthHealthy — Bleeding Gums patient guidance",
+        "National Cancer Institute (NCI) — leukemia signs and symptoms patient information",
+        "中醫內科學 血證篇 —— 齒衄辨證分型（胃火熾盛・陰虛火旺・脾不統血）",
+        "本 repo 既有卡片：sym.spontaneous_bruising（多部位出血、紅旗結構參照）· pattern_library 各證型 key_signs_zh"
+      ],
+      "field_sources": {
+        "definition_zh/en": "American Academy of Periodontology 對牙齦出血／牙周病的一般定義 + 中醫內科學 血證篇 齒衄 一般描述",
+        "inquiry_zh/en": "AAP/ADA 臨床衛教（誘發 vs 自發、局部 vs 瀰漫的鑑別邏輯）+ 中醫內科學 齒衄問診重點",
+        "differentiation_zh/en": "中醫內科學 血證篇 齒衄辨證分型（胃火熾盛・陰虛火旺・脾不統血）+ 本 repo pattern_library 各證型 key_signs_zh 對照",
+        "red_flags_zh/en": "American Academy of Periodontology / American Dental Association 牙周病衛教 + National Cancer Institute 白血病症狀衛教資訊",
+        "supporting_measurements": "刻意留空 —— 目前既有 outcome metrics 無對應牙齦出血頻率／範圍量化項"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "sym.epistaxis",
+      "name_zh": "鼻衄",
+      "name_en": "Epistaxis (nosebleed)",
+      "pinyin": "bi nv",
+      "pinyin_toned": "bí nǜ",
+      "aliases_zh": [
+        "鼻出血",
+        "流鼻血",
+        "衄血(鼻部)"
+      ],
+      "aliases_en": [
+        "Nosebleed",
+        "Nasal bleeding",
+        "Nasal hemorrhage"
+      ],
+      "taxonomy_ids": [
+        "sym.head_face_nose"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported",
+        "examiner_observed"
+      ],
+      "primary_mode": "patient_reported",
+      "definition_zh": "鼻衄是血液自單側或雙側鼻孔流出的症狀，出血點多位於鼻中隔前下方的黎氏區（Kiesselbach 叢），少數源自鼻腔後段。它是一個主訴，不是診斷 —— 背後可能只是局部黏膜乾燥或外傷等良性原因，也可能是凝血功能障礙、血液疾病、肝腎疾病、高血壓或鼻咽腫瘤等全身或局部病灶的外在表現，所以卡片記錄的是「該問什麼、指向哪裡」，不是結論。",
+      "definition_en": "Epistaxis is bleeding from one or both nostrils, most often originating from Kiesselbach's plexus on the anteroinferior nasal septum, less commonly from the posterior nasal cavity. It is a presenting complaint, not a diagnosis — the cause may be as benign as dry mucosa or minor trauma, or it may be the external sign of a coagulopathy, a blood dyscrasia, liver or kidney disease, hypertension, or a nasopharyngeal tumour, so this card records what to ask and what it points toward, not a conclusion.",
+      "patient_words_zh": "「突然流鼻血，不知道為什麼」「早上起床發現枕頭上有血」「一擤鼻涕就帶血絲」「鼻血一直止不住」「只有一邊鼻孔在流血」「反覆流鼻血，量不多但很煩」「吞了很多血下去，吐出來也是血」",
+      "patient_words_en": "\"My nose just started bleeding out of nowhere\", \"I woke up and there was blood on my pillow\", \"There's blood-streaked mucus when I blow my nose\", \"The bleeding won't stop\", \"It's only bleeding from one nostril\", \"My nose keeps bleeding on and off, not much blood but it's annoying\", \"I swallowed a lot of blood and it came back up when I vomited\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": true,
+          "vocabulary": "symptom_taxonomy"
+        },
+        "quality": {
+          "applicable": true,
+          "vocabulary": "symptom_quality",
+          "diagnostic_note_zh": "血色鮮紅量多屬熱盛(肺熱/胃熱/肝火)迫血妄行 · 色淡量少滲出屬脾氣虛不攝 · 反覆量少色紅屬陰虛火旺 · 夾瘀塊色紫暗屬血瘀"
+        },
+        "laterality": {
+          "applicable": true,
+          "vocabulary": "symptom_laterality"
+        },
+        "timing": {
+          "applicable": true,
+          "vocabulary": "symptom_timing"
+        },
+        "severity": {
+          "applicable": false,
+          "why": "實例值，屬病例層"
+        },
+        "duration": {
+          "applicable": false,
+          "why": "實例值，屬病例層"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "部位/側別",
+          "why": "單側或雙側出血、前鼻中隔(黎氏區)或後鼻腔出血，直接影響病因判斷與處置方式——後鼻腔出血量大、不易壓迫止血，需及早轉診"
+        },
+        {
+          "dimension": "性質(血色與血量)",
+          "why": "鮮紅量多、色淡量少、滲滲而出或夾瘀塊分屬不同病機，是本症最有辨證重量的一問"
+        },
+        {
+          "dimension": "誘因",
+          "why": "外傷挖鼻、氣候乾燥、情緒激動、飲酒辛辣、劇烈咳嗽噴嚏、抗凝血或抗血小板藥物使用"
+        },
+        {
+          "dimension": "緩解",
+          "why": "壓迫冷敷能否止血、按之加重屬實、喜按屬虛；反覆止血困難提示需排查凝血功能"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "牙齦出血、皮下瘀斑、月經過多提示全身性出血傾向；頭暈耳鳴腰膝痠軟提示陰虛；發熱頭痛面赤提示熱證"
+        },
+        {
+          "dimension": "頻率與病程",
+          "why": "偶發單次與反覆發作的病機、處置與是否需轉診耳鼻喉科或血液科完全不同"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Location/laterality",
+          "why": "Unilateral vs bilateral bleeding, and anterior septal (Kiesselbach's plexus) vs posterior origin, shapes both the likely cause and the management — posterior bleeds are heavier, harder to control with pressure, and warrant earlier referral"
+        },
+        {
+          "dimension": "Quality (blood colour and volume)",
+          "why": "Bright-red and copious, pale and scant, oozing, or streaked with clots each point to a different mechanism — the highest-yield question on this symptom"
+        },
+        {
+          "dimension": "Triggers",
+          "why": "Trauma or nose-picking, dry climate, emotional upset, alcohol and spicy food, forceful coughing or sneezing, and anticoagulant or antiplatelet medication"
+        },
+        {
+          "dimension": "Relief",
+          "why": "Whether cold compression and pressure control the bleeding; worse with pressure suggests excess, better with pressure suggests deficiency; bleeding that is hard to stop repeatedly should prompt a coagulation work-up"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Gum bleeding, bruising and heavy menstrual flow suggest a systemic bleeding tendency; dizziness, tinnitus and weak low back/knees suggest yin deficiency; fever, headache and a flushed face suggest a heat pattern"
+        },
+        {
+          "dimension": "Frequency and course",
+          "why": "A single isolated episode and a recurrent pattern differ completely in mechanism, management, and whether ENT or haematology referral is needed"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "血色鮮紅、量較多，鼻黏膜乾燥",
+          "points_to": [
+            "pattern.lung_heat_excess"
+          ],
+          "distinguishing": "鼻衄血色鮮紅，鼻黏膜乾燥灼熱，常伴口乾咽燥、乾咳少痰、或有身熱，多見於燥熱季節或外感風熱化燥之後"
+        },
+        {
+          "variant": "血色鮮紅量多，牙齦亦見出血",
+          "points_to": [
+            "pattern.stomach_heat"
+          ],
+          "distinguishing": "鼻衄與齒衄並見，血色鮮紅量多，兼口臭、口渴喜冷飲、牙齦紅腫疼痛、大便秘結，多因嗜食辛辣厚味或胃熱素盛"
+        },
+        {
+          "variant": "鼻衄伴頭痛面赤、急躁易怒",
+          "points_to": [
+            "pattern.liver_fire"
+          ],
+          "distinguishing": "鼻衄多發於情緒激動之後，血色深紅，兼頭痛頭脹、面紅目赤、口苦咽乾、急躁易怒、脅肋脹痛"
+        },
+        {
+          "variant": "血色淡紅、量少滲出，反覆發作",
+          "points_to": [
+            "pattern.spleen_not_governing_blood"
+          ],
+          "distinguishing": "鼻衄反覆發作，血色淡而量少，滲滲而出不易驟止，兼神疲乏力、食少便溏、面色萎黃、皮下常見瘀斑或其他部位出血傾向"
+        },
+        {
+          "variant": "鼻衄量少色紅，夜間或勞累後加重",
+          "points_to": [
+            "pattern.yin_deficiency_fire_flaring"
+          ],
+          "distinguishing": "鼻衄量少色紅，反覆發作，多在夜間、勞累或情緒激動後出現，兼五心煩熱、顴紅盜汗、口燥咽乾、腰膝痠軟"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Bright-red, moderate-to-heavy flow, with dry nasal mucosa",
+          "points_to": [
+            "pattern.lung_heat_excess"
+          ],
+          "distinguishing": "Bright-red epistaxis with dry, burning nasal mucosa, often with dry mouth and throat, a dry cough with little phlegm, or mild fever; typically seen in dry seasons or after wind-heat has transformed into dryness"
+        },
+        {
+          "variant": "Bright-red, heavy flow, with concurrent gum bleeding",
+          "points_to": [
+            "pattern.stomach_heat"
+          ],
+          "distinguishing": "Epistaxis together with gum bleeding, bright-red and copious, with bad breath, thirst with preference for cold drinks, red swollen painful gums and constipation, usually from a rich spicy diet or constitutional stomach heat"
+        },
+        {
+          "variant": "Epistaxis with headache, a flushed face and irritability",
+          "points_to": [
+            "pattern.liver_fire"
+          ],
+          "distinguishing": "Epistaxis triggered by emotional upset, deep red in colour, with distending headache, red face and eyes, bitter taste, dry throat, irritability and rib-side distension"
+        },
+        {
+          "variant": "Pale-red, scant, oozing, recurrent",
+          "points_to": [
+            "pattern.spleen_not_governing_blood"
+          ],
+          "distinguishing": "Recurrent epistaxis, pale and scant, oozing rather than gushing and slow to stop, with fatigue, poor appetite, loose stools, sallow complexion and a tendency toward bruising or bleeding elsewhere"
+        },
+        {
+          "variant": "Scant and red, worse at night or after exertion",
+          "points_to": [
+            "pattern.yin_deficiency_fire_flaring"
+          ],
+          "distinguishing": "Scant, red, recurrent epistaxis, typically appearing at night, after exertion, or with emotional upset, accompanied by five-centre heat, malar flushing, night sweats, dry mouth and throat, and weak aching low back and knees"
+        }
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "AAO-HNS Clinical Practice Guideline: Nosebleed (Epistaxis) (Tunkel DE et al., Otolaryngology–Head and Neck Surgery, 2020)",
+        "NICE CKS — Nosebleeds (epistaxis)"
+      ],
+      "safety_flags": [
+        "active_bleeding_medical_review",
+        "anticoagulant_review",
+        "hypertension_review",
+        "urgent_red_flag_review"
+      ],
+      "red_flags_zh": [
+        "出血量大或持續不止，伴頭暈、心悸、冷汗、面色蒼白、血壓下降等失血徵象 → 立即送急診",
+        "使用抗凝血劑(如 warfarin、DOAC)或抗血小板藥物(如 aspirin、clopidogrel)期間發生鼻衄，或合併牙齦出血、皮下瘀斑、血尿血便等多處出血 → 需評估凝血功能與藥物調整",
+        "頭部外傷後鼻衄合併清澈液體流出或意識改變 → 立即影像評估，排除顱底骨折與腦脊髓液鼻漏",
+        "單側持續性鼻衄合併鼻塞、頸部腫塊、耳鳴聽力下降(尤其成年男性) → 排除鼻咽癌等佔位病灶，轉診耳鼻喉科",
+        "兒童反覆鼻衄合併不明瘀斑、齒齦出血、疲倦蒼白 → 排除白血病等血液系統疾病",
+        "血壓顯著升高合併鼻衄、劇烈頭痛、視力模糊 → 排除高血壓急症",
+        "後鼻腔出血、前鼻部壓迫止血無效、血液持續向咽部流下 → 出血量通常較大，需耳鼻喉科專科處理(後鼻填塞或血管栓塞)"
+      ],
+      "red_flags_en": [
+        "Heavy or persistent bleeding with dizziness, palpitations, cold sweat, pallor or falling blood pressure — signs of significant blood loss → send to emergency care immediately",
+        "Epistaxis while on anticoagulants (e.g. warfarin, DOACs) or antiplatelet agents (e.g. aspirin, clopidogrel), or bleeding from multiple sites — gums, bruising, haematuria, melena → evaluate coagulation status and review medication",
+        "Epistaxis after head trauma with clear fluid drainage or altered consciousness → immediate imaging to rule out skull-base fracture and CSF rhinorrhoea",
+        "Persistent unilateral epistaxis with nasal obstruction, a neck mass, or tinnitus/hearing loss (especially in an adult male) → rule out nasopharyngeal carcinoma or another space-occupying lesion, refer to ENT",
+        "Recurrent epistaxis in a child with unexplained bruising, gum bleeding, fatigue or pallor → rule out leukaemia or another haematologic disease",
+        "Markedly elevated blood pressure with epistaxis, severe headache or blurred vision → rule out a hypertensive emergency",
+        "Posterior bleeding — blood running down the throat, unresponsive to anterior nasal pressure — is usually higher-volume and needs ENT-level management (posterior packing or embolisation)"
+      ],
+      "sources": [
+        "AAO-HNS Clinical Practice Guideline: Nosebleed (Epistaxis) (Tunkel DE et al., Otolaryngology–Head and Neck Surgery, 2020)（分類、前後鼻腔出血區分、紅旗處置）",
+        "NICE CKS — Nosebleeds (epistaxis)（初級照護紅旗與轉診準則）",
+        "中醫內科學／中醫診斷學 通行教材內容 —— 鼻衄的證型鑑別(肺熱、胃熱、肝火、脾不統血、陰虛火旺)",
+        "本 repo 既有 pattern_library 各證型 key_signs_zh 對照"
+      ],
+      "field_sources": {
+        "definition_zh/en": "中醫內科學 鼻衄篇 + AAO-HNS guideline 對 epistaxis 作為主訴/徵候與出血部位(前鼻中隔黎氏區/後鼻腔)的界定",
+        "inquiry_zh/en 部位": "AAO-HNS guideline 前鼻中隔(Kiesselbach's plexus)與後鼻腔出血的臨床區分及其處置意義",
+        "differentiation_zh/en": "中醫內科學 鼻衄篇 證型鑑別(肺熱、胃熱、肝火、脾不統血、陰虛火旺) + 本 repo pattern_library 各證型 key_signs_zh 對照",
+        "red_flags_zh/en": "AAO-HNS Clinical Practice Guideline: Nosebleed (Epistaxis), 2020 與 NICE CKS Nosebleeds 紅旗與轉診準則"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "sym.joint_swelling",
+      "name_zh": "關節腫脹",
+      "name_en": "Joint swelling",
+      "pinyin": "guan jie zhong zhang",
+      "pinyin_toned": "guān jié zhǒng zhàng",
+      "aliases_zh": [
+        "關節腫大",
+        "關節積水",
+        "關節浮腫"
+      ],
+      "aliases_en": [
+        "Joint enlargement",
+        "Joint effusion",
+        "Swollen joint"
+      ],
+      "taxonomy_ids": [
+        "sym.general_limb"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported",
+        "examiner_observed"
+      ],
+      "primary_mode": "examiner_observed",
+      "definition_zh": "關節周圍軟組織或關節腔內因發炎、積液、增生或組織液積聚而造成的局部腫大，可伴或不伴疼痛、發紅、發熱。它是一個體徵／主訴，不是診斷——從痛風急性發作、化膿性關節炎、類風濕性關節炎到單純外傷後瘀腫，都可能表現為「關節腫脹」，所以本卡記錄的是該問什麼、該摸什麼、指向哪裡，不是結論。",
+      "definition_en": "Localized swelling at a joint arising from inflammation, effusion, synovial proliferation or fluid accumulation in or around the joint capsule, with or without accompanying pain, redness or warmth. It is a sign/presenting complaint, not a diagnosis — acute gout, septic arthritis, rheumatoid arthritis and simple post-traumatic bruising can all present as \"joint swelling\", so this card records what to ask, what to palpate, and what it points toward, rather than a conclusion.",
+      "patient_words_zh": "「關節腫得像饅頭」「按下去會留一個坑」「腫得皮膚發亮、繃得緊緊的」「膝蓋裡面好像積水」「早上起來手指腫脹僵硬，要動一動才消」「一按就痛，又腫又熱」「腫了好幾天，越腫越大」",
+      "patient_words_en": "\"My joint is swollen like a bun\", \"it leaves a dent when I press on it\", \"the skin looks shiny and stretched tight\", \"it feels like there's water inside my knee\", \"my fingers are swollen and stiff in the morning until I move them\", \"it hurts to press and feels hot and swollen\", \"it's been swelling for days and keeps getting bigger\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": true,
+          "vocabulary": "symptom_taxonomy"
+        },
+        "quality": {
+          "applicable": true,
+          "vocabulary": "symptom_quality",
+          "diagnostic_note_zh": "脹屬氣滯或水濕停聚 · 重屬濕邪偏盛（著痺）· 灼屬熱痺或感染 · 麻屬痰瘀阻絡"
+        },
+        "laterality": {
+          "applicable": true,
+          "vocabulary": "symptom_laterality"
+        },
+        "timing": {
+          "applicable": true,
+          "vocabulary": "symptom_timing"
+        },
+        "severity": {
+          "applicable": false,
+          "why": "實例值，屬病例層（§8）"
+        },
+        "duration": {
+          "applicable": false,
+          "why": "實例值，屬病例層（§8）"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "部位",
+          "why": "單一大關節（膝、踝、第一蹠趾）紅腫熱痛好發於痛風與化膿性關節炎；對稱性近端指間、掌指、腕關節腫脹提示類風濕性關節炎。部位直接影響觸診重點與轉診急迫性"
+        },
+        {
+          "dimension": "性質",
+          "why": "按之凹陷屬水濕停聚或陽虛水泛；腫硬結節推之不移屬痰瘀互結；紅腫灼熱屬熱痺或感染；皮膚繃緊發亮提示關節腔積液量大"
+        },
+        {
+          "dimension": "時間",
+          "why": "晨起關節僵硬腫脹超過一小時、活動後緩解，提示發炎性關節病；久站或午後下肢關節腫脹加重，提示氣虛或水濕下注"
+        },
+        {
+          "dimension": "誘因",
+          "why": "外傷跌撲、外感風寒濕、飲食（高普林、海鮮、酒）、勞累久站、近期關節注射或穿刺史，各自指向不同機轉"
+        },
+        {
+          "dimension": "緩解",
+          "why": "得溫則減屬寒濕；得涼則舒屬熱痺；抬高患肢可減輕提示循環性水腫；制動休息腫脹不減甚至加重，須考慮感染或腫瘤"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "發熱惡寒、皮膚灼熱提示化膿性關節炎需緊急處理；晨僵、多關節對稱受累、皮疹、口腔潰瘍提示自體免疫疾病；下肢單側腫脹合併疼痛需排除深部靜脈血栓"
+        },
+        {
+          "dimension": "病程",
+          "why": "急性單一關節腫脹於24小時內達高峰，須優先排除痛風急性發作或化膿性關節炎；慢性反覆腫脹變形、日久不消，提示久痺入絡、痰瘀互結"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Location",
+          "why": "A single large joint (knee, ankle, first MTP) that is hot, red and swollen is typical of gout or septic arthritis; symmetric swelling of the PIP, MCP or wrist joints suggests rheumatoid arthritis. Location shapes both what to palpate and how urgently to refer"
+        },
+        {
+          "dimension": "Quality",
+          "why": "Pitting on pressure suggests fluid retention or Kidney-Yang deficiency with water flooding; a hard, fixed nodular swelling suggests phlegm-stasis binding; hot, red, burning swelling suggests Heat Bi or infection; tight, shiny skin points to a large joint effusion"
+        },
+        {
+          "dimension": "Timing",
+          "why": "Morning stiffness and swelling lasting over an hour that eases with movement suggests an inflammatory arthropathy; swelling worse after prolonged standing or in the afternoon suggests Qi deficiency or dependent fluid pooling"
+        },
+        {
+          "dimension": "Triggers",
+          "why": "Trauma, exposure to wind-cold-damp, diet (high-purine foods, seafood, alcohol), exertion or prolonged standing, or a recent joint injection/aspiration each point toward a different mechanism"
+        },
+        {
+          "dimension": "Relief",
+          "why": "Better with warmth suggests cold-damp; better with cold suggests Heat Bi; improvement with elevation suggests circulatory/dependent edema; swelling that does not ease — or worsens — with rest raises concern for infection or tumour"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Fever and chills with hot skin suggest septic arthritis requiring urgent care; morning stiffness with symmetric multi-joint involvement, rash or mouth ulcers suggests autoimmune disease; unilateral lower-limb swelling with pain requires DVT to be excluded"
+        },
+        {
+          "dimension": "Course",
+          "why": "A single joint swelling that peaks within 24 hours should first raise concern for acute gout or septic arthritis; a chronic, recurrent, progressively deforming swelling suggests long-standing Bi with phlegm and stasis binding the channels"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "紅腫灼熱疼痛",
+          "points_to": [
+            "pattern.heat_bi"
+          ],
+          "distinguishing": "關節局部紅腫、灼熱、拒按，得涼則舒，可伴發熱口渴，多見於痛風急性發作或感染性關節炎誘發的熱象"
+        },
+        {
+          "variant": "腫脹重著，不紅不熱",
+          "points_to": [
+            "pattern.wind_cold_damp_bi"
+          ],
+          "distinguishing": "關節腫脹沉重、僵硬，屈伸不利，遇陰雨寒冷加重、得溫則減，患處通常不紅不熱，多為濕邪偏盛的著痺表現"
+        },
+        {
+          "variant": "跌撲外傷後腫脹青紫，刺痛拒按",
+          "points_to": [
+            "pattern.blood_stasis"
+          ],
+          "distinguishing": "腫脹處固定不移、刺痛拒按，夜間痛甚，局部或見瘀斑青紫，多有明確外傷或勞損史"
+        },
+        {
+          "variant": "腫脹日久，關節局部腫塊質硬",
+          "points_to": [
+            "pattern.phlegm_stasis_binding"
+          ],
+          "distinguishing": "反覆腫脹遷延不消，關節周圍出現硬結或腫塊，推之不移，常伴肢體麻木、屈伸不利，多見於久痺不愈、關節變形"
+        },
+        {
+          "variant": "肢節或周身浮腫，按之凹陷",
+          "points_to": [
+            "pattern.kidney_yang_deficiency_water_flooding"
+          ],
+          "distinguishing": "關節連同肢體浮腫，按之凹陷不易起，畏寒肢冷、腰膝痠軟、小便短少，屬陽虛水泛、水濕泛溢肌膚關節"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Hot, red, burning pain",
+          "points_to": [
+            "pattern.heat_bi"
+          ],
+          "distinguishing": "Localized redness, swelling and burning heat, tender to pressure, better with cold, may be accompanied by fever and thirst; typically seen in acute gout flares or the heat pattern triggered by infectious arthritis"
+        },
+        {
+          "variant": "Heavy swelling, not red or hot",
+          "points_to": [
+            "pattern.wind_cold_damp_bi"
+          ],
+          "distinguishing": "Heavy, swollen, stiff joint with restricted movement, worse in cold damp weather and better with warmth, the area usually neither red nor hot; the dampness-predominant \"fixed Bi\" presentation"
+        },
+        {
+          "variant": "Bruised, stabbing swelling after trauma",
+          "points_to": [
+            "pattern.blood_stasis"
+          ],
+          "distinguishing": "Fixed, unmoving swelling with stabbing pain tender to pressure, worse at night, often with visible bruising/discoloration; usually a clear history of trauma or overuse"
+        },
+        {
+          "variant": "Chronic swelling with hard nodules",
+          "points_to": [
+            "pattern.phlegm_stasis_binding"
+          ],
+          "distinguishing": "Recurrent swelling that lingers, with hard nodules or lumps around the joint that do not move on palpation, often with numbness and restricted flexion/extension; seen in long-standing Bi with joint deformity"
+        },
+        {
+          "variant": "Joint and limb pitting edema",
+          "points_to": [
+            "pattern.kidney_yang_deficiency_water_flooding"
+          ],
+          "distinguishing": "Swelling of the joint together with the limb, pitting and slow to rebound, with cold intolerance, weak aching low back and knees, and scanty urination; Kidney-Yang deficiency with water overflowing into the skin and joints"
+        }
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "BSR and BHPR guideline for the management of the hot swollen joint in adults (Coakley G et al., Rheumatology, 2006)",
+        "2010 ACR/EULAR Rheumatoid Arthritis Classification Criteria (Aletaha D et al., Arthritis Rheum 2010)",
+        "Wells clinical prediction rule for deep vein thrombosis (Wells PS et al., Lancet 1997)",
+        "Kocher criteria for septic arthritis vs. transient synovitis in children (Kocher MS et al., J Bone Joint Surg Am 1999)",
+        "中醫內科學／中醫診斷學 通行教材 —— 痺証章節（行痺・痛痺・著痺・熱痺辨證）"
+      ],
+      "safety_flags": [
+        "infection_review",
+        "autoimmune_review",
+        "anticoagulant_review"
+      ],
+      "red_flags_zh": [
+        "單一關節急性紅腫熱痛，伴發熱、畏寒或全身倦怠 → 須立即排除化膿性關節炎（感染性關節炎），延誤處置可能導致軟骨破壞、菌血症",
+        "兒童新發單一大關節（尤其髖、膝）腫脹合併發燒、拒絕負重 → 立即轉診評估，化膿性關節炎風險高，延誤恐致關節永久損傷",
+        "關節腫脹合併正服用抗凝或抗血小板藥物、或近期明確外傷、關節穿刺史 → 須排除關節腔內出血（血友病性關節病變或抗凝相關關節積血），需醫療評估後才可考慮針灸介入",
+        "對稱性多關節腫脹合併晨僵超過一小時、皮疹、口腔潰瘍或不明原因發熱 → 提示自體免疫性關節炎（類風濕性關節炎、紅斑性狼瘡等），需轉診風濕免疫科確診",
+        "下肢單側腫脹合併疼痛、局部溫熱、近期長途久坐制動、癌症病史或凝血功能異常 → 須先排除深部靜脈血栓，避免局部推拿或艾灸導致血栓脫落",
+        "關節腫脹呈進行性加重，伴不明原因體重減輕、夜間痛醒、局部腫塊質硬固定不移 → 須排除骨或關節腫瘤，轉診影像學評估"
+      ],
+      "red_flags_en": [
+        "Acute red, hot, swollen single joint with fever, chills or systemic malaise → immediately rule out septic (infectious) arthritis; delayed treatment can destroy cartilage and lead to bacteraemia",
+        "New swelling of a single large joint (especially hip or knee) in a child, with fever and refusal to bear weight → refer immediately; septic arthritis risk is high and delay risks permanent joint damage",
+        "Joint swelling in a patient on anticoagulant or antiplatelet therapy, or with a clear recent trauma or joint aspiration history → rule out intra-articular bleeding (haemophilic arthropathy or anticoagulant-related haemarthrosis); requires medical evaluation before considering acupuncture",
+        "Symmetric multi-joint swelling with morning stiffness over an hour, rash, mouth ulcers or unexplained fever → suggests autoimmune arthritis (rheumatoid arthritis, lupus, etc.); refer for rheumatology assessment",
+        "Unilateral lower-limb swelling with pain, local warmth, recent prolonged sitting or immobilization, cancer history or a clotting disorder → rule out deep vein thrombosis first; avoid local massage or moxibustion that could dislodge a clot",
+        "Progressively worsening joint swelling with unexplained weight loss, pain that wakes the patient at night, or a hard fixed local mass → rule out bone/joint tumour; refer for imaging"
+      ],
+      "supporting_measurements": [
+        "metric.pain_score",
+        "metric.range_of_motion_deg"
+      ],
+      "sources": [
+        "BSR and BHPR guideline for the management of the hot swollen joint in adults (Coakley G et al., Rheumatology, 2006)（感染性關節炎排除準則）",
+        "2010 ACR/EULAR Rheumatoid Arthritis Classification Criteria (Aletaha D et al., Arthritis Rheum 2010)（自體免疫性關節炎警示特徵）",
+        "Wells clinical prediction rule for deep vein thrombosis (Wells PS et al., Lancet 1997)（下肢腫脹之深部靜脈血栓排除）",
+        "Kocher criteria for differentiating septic arthritis from transient synovitis in children (Kocher MS et al., J Bone Joint Surg Am 1999)",
+        "中醫內科學／中醫診斷學 通行教材內容 —— 痺証之行痺、痛痺、著痺、熱痺辨證分型",
+        "本 repo 既有卡片：cond.gout · cond.rheumatoid_arthritis · cond.knee_osteoarthritis · tdis.bi_zheng · pattern_library 各證型 key_signs_zh（pattern.heat_bi、pattern.wind_cold_damp_bi、pattern.blood_stasis、pattern.phlegm_stasis_binding、pattern.kidney_yang_deficiency_water_flooding）"
+      ],
+      "field_sources": {
+        "definition_zh/en": "中醫內科學 痺証章節對關節腫脹的病機描述 + 一般骨科／風濕科對 joint swelling／effusion 的臨床定義",
+        "inquiry_zh/en 部位": "痛風、類風濕性關節炎、化膿性關節炎的典型受累關節分佈（骨科／風濕科臨床通識）",
+        "differentiation_zh/en": "中醫內科學 痺証辨證分型（行痺・痛痺・著痺・熱痺）+ 本 repo pattern_library 各證型 key_signs_zh 對照（pattern.heat_bi、pattern.wind_cold_damp_bi、pattern.blood_stasis、pattern.phlegm_stasis_binding、pattern.kidney_yang_deficiency_water_flooding）",
+        "red_flags_zh/en": "BSR/BHPR hot swollen joint guideline (Coakley et al. 2006)、Kocher criteria (1999)、Wells DVT rule (1997)、ACR/EULAR RA classification criteria (2010)",
+        "supporting_measurements": "data/clinical_cases/outcome_metrics.json —— metric.pain_score、metric.range_of_motion_deg（既有，未新增）"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "aliases_en": [
+        "Hives",
+        "Wheals",
+        "Nettle rash"
+      ],
+      "aliases_zh": [
+        "風疹塊",
+        "癮疹",
+        "風疙瘩"
+      ],
+      "clinical_attributes": {
+        "location": {
+          "applicable": true,
+          "vocabulary": "symptom_taxonomy"
+        },
+        "quality": {
+          "applicable": true,
+          "vocabulary": "symptom_quality",
+          "diagnostic_note_zh": "色紅灼熱、遇熱加重屬風熱；色白或淡紅、遇冷加重屬風寒；風團反覆日久、色淡皮乾屬血虛生風；紅腫成片、灼熱滲液屬濕熱浸淫；色暗紅或紫暗、固定不消屬瘀血內阻"
+        },
+        "laterality": {
+          "applicable": false
+        },
+        "timing": {
+          "applicable": true,
+          "vocabulary": "symptom_timing"
+        },
+        "severity": {
+          "applicable": false,
+          "why": "實例值，屬病例層（§8）"
+        },
+        "duration": {
+          "applicable": false,
+          "why": "實例值，屬病例層（§8）"
+        }
+      },
+      "definition_en": "Itchy, well-demarcated, erythematous or skin-colored wheals of variable size that classically resolve within 24 hours without residual marks, often recurring in crops over hours to days; may be accompanied by angioedema. Classified as acute (under 6 weeks) or chronic (6 weeks or longer). It is a presenting sign, not a diagnosis — causes range from food or drug allergy, infection, and physical triggers (cold, pressure, heat, sun, exercise) to autoimmune disease. Known in TCM as \"yin zhen\" (癮疹) or \"wind-rash patches\" (風疹塊).",
+      "definition_zh": "皮膚出現大小不一、邊緣清楚的紅色或膚色風團(wheals),劇癢,特徵是單一風團通常在24小時內自行消退、不留痕跡,此起彼伏、反覆成批出現,可能合併血管性水腫。依病程分急性(病程小於6週)與慢性(6週以上)。它是一個臨床表現/主訴,不是診斷——病因涵蓋食物藥物過敏、感染、物理刺激(冷熱、壓力、日曬、運動)、自體免疫等,中醫稱「癮疹」「風疹塊」。",
+      "differentiation_en": [
+        {
+          "variant": "Wind-Heat — red, hot wheals with intense itch, worse with heat",
+          "points_to": [
+            "pattern.wind_heat"
+          ],
+          "distinguishing": "Sudden onset; wheals bright to deep red, worse with heat or sun exposure and better with cold; accompanied by a sore red throat, thirst and a floating rapid pulse — typical of early external wind-heat invasion or an acute food/drug allergic reaction"
+        },
+        {
+          "variant": "Wind-Cold — pale wheals, worse with wind and cold, better with warmth",
+          "points_to": [
+            "pattern.wind_cold"
+          ],
+          "distinguishing": "Wheals pale or whitish, worse on exposure to cold wind or water, better when warmed and covered; with aversion to cold, no thirst and a thin white tongue coating — common after a sudden temperature drop or contact with cold water"
+        },
+        {
+          "variant": "Damp-Heat in Spleen-Stomach — wheals with epigastric pain, nausea or diarrhea after dietary indiscretion",
+          "points_to": [
+            "pattern.damp_heat_spleen_stomach"
+          ],
+          "distinguishing": "Onset typically follows eating fish, shellfish, spicy food or something unclean; with epigastric distension and pain, nausea, sticky or loose stool and a yellow greasy tongue coating"
+        },
+        {
+          "variant": "Damp-Heat Invading the Skin — confluent, hot, stinging-itchy lesions that weep when scratched",
+          "points_to": [
+            "pattern.damp_heat_skin_invasion"
+          ],
+          "distinguishing": "Lesions red and swollen in patches with marked burning and stinging itch, weeping or eroding after scratching, tends to flare in hot humid environments or sweat-prone areas, with a yellow greasy tongue coating"
+        },
+        {
+          "variant": "Blood Deficiency with Wind-Dryness — long-recurring, pale wheals worse at night, with dizziness and fatigue",
+          "points_to": [
+            "pattern.blood_deficiency_wind_dryness"
+          ],
+          "distinguishing": "Course beyond six weeks; wheals pale, skin dry, itch marked at night and disrupting sleep; with sallow complexion, dizziness, insomnia with excessive dreaming and a pale tongue with scant fluid"
+        },
+        {
+          "variant": "Blood Stasis — recurrent, dusky or purplish lesions, relatively fixed and slow to resolve",
+          "points_to": [
+            "pattern.blood_stasis"
+          ],
+          "distinguishing": "Long-standing course; wheals or plaques dusky red or purplish, location relatively fixed, triggered or worsened by emotional upset or overexertion, with a dusky purple tongue or petechiae"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "風團色紅、灼熱劇癢,遇熱加重",
+          "points_to": [
+            "pattern.wind_heat"
+          ],
+          "distinguishing": "起病急驟,風團色紅或鮮紅,遇熱、日曬加重,遇冷則減,兼咽紅、口渴、脈浮數,多見於外感風熱初起或藥物食物過敏急性發作"
+        },
+        {
+          "variant": "風團色白或淡紅,遇風遇冷加重,得溫則減",
+          "points_to": [
+            "pattern.wind_cold"
+          ],
+          "distinguishing": "風團色淡或蒼白,遇冷風、遇水加重,得溫覆蓋則減,兼惡風寒、口不渴、苔薄白,常見於氣溫驟降或接觸冷水後"
+        },
+        {
+          "variant": "風團發作前多有飲食不節史,伴脘腹疼痛、噁心或腹瀉",
+          "points_to": [
+            "pattern.damp_heat_spleen_stomach"
+          ],
+          "distinguishing": "發疹前常有進食魚蝦、辛辣或不潔飲食史,伴脘腹脹痛、噁心、大便黏滯或腹瀉,苔黃膩"
+        },
+        {
+          "variant": "風團色鮮紅成片、灼熱刺癢,抓破滲液",
+          "points_to": [
+            "pattern.damp_heat_skin_invasion"
+          ],
+          "distinguishing": "皮損紅腫成片、灼熱刺癢明顯,搔抓後滲液或糜爛,好發於潮濕悶熱環境或多汗部位,苔黃膩"
+        },
+        {
+          "variant": "反覆發作日久,風團色淡、劇癢入夜尤甚,伴頭暈乏力",
+          "points_to": [
+            "pattern.blood_deficiency_wind_dryness"
+          ],
+          "distinguishing": "病程遷延超過六週,風團色淡、皮膚乾燥,夜間癢甚影響睡眠,兼面色萎黃、頭暈眼花、失眠多夢,舌淡少津"
+        },
+        {
+          "variant": "皮損反覆發作、色暗紅或紫暗,部位固定不易消退",
+          "points_to": [
+            "pattern.blood_stasis"
+          ],
+          "distinguishing": "病程日久,風團或斑塊色暗紅或紫暗、部位相對固定,遇情緒不暢或勞累誘發或加重,舌質紫暗或有瘀斑"
+        }
+      ],
+      "field_sources": {
+        "definition_zh/en": "EAACI/GA²LEN/EuroGuiDerm/APAAACI urticaria guideline（風團定義、24小時內消退的特徵、急性6週分界）+ 中醫外科學 癮疹章節",
+        "inquiry_zh/en": "EAACI urticaria guideline 誘發因子分類(食物、藥物、感染、物理性)+ 中醫外科學／中醫診斷學 病因病機(風寒、風熱、食滯、血虛)",
+        "differentiation_zh/en": "中醫外科學／中醫皮膚病學 通行教材 癮疹證型分類 + 本 repo pattern_library 各證型 key_signs_zh 對照",
+        "red_flags_zh/en": "World Allergy Organization Anaphylaxis Guidance 2020(過敏性休克辨識與處置)+ EAACI/GA²LEN urticaria guideline 鑑別診斷附錄(蕁麻疹性血管炎特徵、慢性蕁麻疹系統性評估指徵)",
+        "supporting_measurements": "data/clinical_cases/outcome_metrics.json — metric.sleep_quality／metric.night_wakings(夜間搔癢影響睡眠)、metric.stress_level(情緒壓力為常見誘發及加重因子)（皆為既有，未新增）"
+      },
+      "id": "sym.urticaria",
+      "inquiry_en": [
+        {
+          "dimension": "Trigger",
+          "why": "Drugs, food, infection, heat/cold exposure, friction, sun exposure, emotion or exercise — the single highest-yield question for identifying cause and TCM pattern"
+        },
+        {
+          "dimension": "Wheal color and character",
+          "why": "Red and hot suggests wind-heat; pale and worse with cold suggests wind-cold; pale, dry and long-standing suggests blood deficiency generating wind; extensive red swelling with burning and stinging itch points to intermingled damp-heat"
+        },
+        {
+          "dimension": "Duration of illness",
+          "why": "Sudden new onset usually reflects external wind invasion (wind-cold/wind-heat); recurrence beyond six weeks in a constitutionally deficient patient more often reflects blood deficiency with wind-dryness or blood stasis"
+        },
+        {
+          "dimension": "Location and provoking context",
+          "why": "Generalized versus confined to specific sites (areas of pressure, sun exposure, sweat-prone skin, or cold contact) points to different inducible-urticaria subtypes and shapes trigger-avoidance advice"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Abdominal pain and diarrhea suggest intestinal damp-heat or food allergy; swelling of the lips/tongue, throat tightness or breathing difficulty signal angioedema or impending anaphylaxis and require immediate referral"
+        },
+        {
+          "dimension": "Aggravating and relieving factors",
+          "why": "Worse or better with heat/cold, spreading after scratching, or onset after a hot shower or exercise (suggesting cholinergic urticaria) — all help identify the trigger mechanism and pattern"
+        }
+      ],
+      "inquiry_zh": [
+        {
+          "dimension": "誘因",
+          "why": "藥物、食物、感染、冷熱刺激、摩擦、日曬、情緒或運動,是找出病因與選擇證型最重要的一問"
+        },
+        {
+          "dimension": "風團色澤與性狀",
+          "why": "色紅灼熱屬風熱,色淡遇冷加重屬風寒,反覆日久色淡皮乾屬血虛生風,紅腫成片灼熱刺癢提示濕熱夾雜"
+        },
+        {
+          "dimension": "病程長短",
+          "why": "初發驟起多屬外感風邪(風寒/風熱);反覆發作超過六週、體虛易感者多屬血虛風燥或瘀血內阻"
+        },
+        {
+          "dimension": "部位與誘發情境",
+          "why": "全身泛發或侷限特定部位(受壓處、日曬處、多汗部位、遇冷部位)提示不同誘發型蕁麻疹亞型,影響迴避誘因的建議"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "腹痛腹瀉提示腸胃濕熱或食物過敏;唇舌腫脹、喉嚨緊縮、呼吸困難為血管性水腫或過敏性休克前兆,需立即轉診"
+        },
+        {
+          "dimension": "緩解與加重因素",
+          "why": "遇熱遇冷加重或緩解、抓搔後範圍擴大、洗熱水澡或運動後發作(提示膽鹼性蕁麻疹),皆有助辨別誘發機轉與證型"
+        }
+      ],
+      "name_en": "Urticaria (hives)",
+      "name_zh": "蕁麻疹",
+      "observation_modes": [
+        "patient_reported",
+        "examiner_observed"
+      ],
+      "patient_words_en": "\"Raised itchy welts that pop up in patches\", \"scratching makes it spread and merge together\", \"the bumps show up suddenly and then disappear again within a few hours\", \"like mosquito bites but all over\", \"the more I scratch, the itchier and the more there are\", \"worse at night, it keeps me awake\"",
+      "patient_words_zh": "「一塊一塊突起來,很癢」「抓了就更大片、連成一片」「風團一下子冒出來,過幾個小時又不見了」「像被蚊子咬,但是整片都是」「越抓越癢、越抓越多」「晚上特別癢,睡不著」",
+      "pinyin": "xun ma zhen",
+      "pinyin_toned": "xún má zhěn",
+      "primary_mode": "patient_reported",
+      "red_flags_en": [
+        "Swelling of lips, tongue or throat with voice change, difficulty swallowing or breathing → angioedema involving the upper airway; treat as an emergency and refer immediately",
+        "Accompanied by dizziness, altered consciousness, falling blood pressure, wheeze or generalized flushing → possible anaphylaxis; requires immediate epinephrine and emergency care",
+        "A single wheal persisting beyond 24 hours, painful or burning rather than simply itchy, and leaving bruising or pigmentation as it fades → suspect urticarial vasculitis; needs skin biopsy and referral",
+        "Chronic urticaria (6 weeks or longer) with fever, joint pain, unexplained weight loss or other systemic symptoms → rule out autoimmune disease (e.g. lupus) or an underlying infection",
+        "Known history of reaction to insect stings, drugs (e.g. antibiotics, NSAIDs) or foods, with rapid-onset reaction after re-exposure → high anaphylaxis risk; an epinephrine auto-injector should be available"
+      ],
+      "red_flags_zh": [
+        "合併嘴唇、舌頭、咽喉腫脹,聲音改變、吞嚥或呼吸困難 → 血管性水腫侵犯上呼吸道,應視為急症立即轉診",
+        "合併頭暈、意識改變、血壓下降、喘鳴或全身皮膚潮紅 → 疑似過敏性休克,需立即腎上腺素注射與急救處置",
+        "單一風團持續超過24小時不退、伴疼痛灼熱而非單純癢感,消退後留下瘀斑或色素沉著 → 疑似蕁麻疹性血管炎,需皮膚切片與轉診",
+        "慢性蕁麻疹(病程6週以上)合併發燒、關節痛、不明原因體重減輕等全身症狀 → 需排除自體免疫疾病(如紅斑性狼瘡)或潛在感染",
+        "已知對蜂螫、藥物(如抗生素、非類固醇消炎藥)或食物過敏,再次暴露後快速發作 → 過敏性休克高風險,須備妥腎上腺素自動注射器"
+      ],
+      "safety_flags": [
+        "allergy_review",
+        "urgent_red_flag_review",
+        "medication_review",
+        "autoimmune_review"
+      ],
+      "safety_review_sources": [
+        "EAACI/GA²LEN/EuroGuiDerm/APAAACI Guideline for Urticaria — international consensus on definition, classification, diagnosis and management of urticaria (Zuberbier T, et al.)",
+        "World Allergy Organization (WAO) Anaphylaxis Guidance 2020 (Cardona V, et al.)"
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "sources": [
+        "EAACI/GA²LEN/EuroGuiDerm/APAAACI Guideline for Urticaria — international consensus on definition, classification, diagnosis and management of urticaria (Zuberbier T, et al.)",
+        "World Allergy Organization (WAO) Anaphylaxis Guidance 2020 (Cardona V, et al.)",
+        "中醫外科學 通行教材 —— 癮疹(蕁麻疹)病因病機與辨證分型",
+        "中醫診斷學 通行教材 —— 風團辨色、遇風遇熱遇冷辨證",
+        "本 repo 既有卡片:pattern_library 各證型 key_signs_zh 對照(風熱、風寒、脾胃濕熱、濕熱浸淫、血虛風燥、瘀血內阻)"
+      ],
+      "supporting_measurements": [
+        "metric.sleep_quality",
+        "metric.night_wakings",
+        "metric.stress_level"
+      ],
+      "taxonomy_ids": [
+        "sym.skin"
+      ],
+      "tradition": "both",
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "sym.excessive_sweating",
+      "name_zh": "多汗",
+      "name_en": "Generalized excessive sweating",
+      "pinyin": "duo han",
+      "pinyin_toned": "duō hàn",
+      "aliases_zh": [
+        "汗出過多",
+        "全身性多汗",
+        "多汗症"
+      ],
+      "aliases_en": [
+        "Excessive sweating",
+        "Profuse sweating",
+        "Hyperhidrosis (generalized)"
+      ],
+      "taxonomy_ids": [
+        "sym.general_limb"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported",
+        "examiner_observed"
+      ],
+      "primary_mode": "patient_reported",
+      "definition_zh": "出汗量明顯超過環境溫度、衣著與活動量所能解釋的程度，可見於白天、夜間，或日夜皆有，範圍可遍及全身或局限某處。這是病人常見的初診主訴——「我很會流汗」——本卡記錄的是如何用問診把這個主訴分流：白天靜態下無明顯誘因即汗出見 sym.spontaneous_sweating（自汗）；睡中汗出、醒後即止見 sym.night_sweats（盜汗）；冷汗濕冷、面色蒼白的危重表現見 sym.cold_sweating（冷汗）。本卡專門收錄日夜皆汗、不易單純二分的情況，以及裏熱熾盛、濕熱蘊蒸等實證機轉導致的多汗，並統整需要立即轉診的紅旗徵象。",
+      "definition_en": "Sweating that clearly exceeds what the ambient temperature, clothing, and activity level would explain — occurring by day, by night, or both, and either generalized or localized to one area. It is a common presenting complaint (\"I sweat too much\") that this card is built to triage: daytime sweating at rest without a clear trigger is covered under sym.spontaneous_sweating; sweating during sleep that stops on waking is covered under sym.night_sweats; cold, clammy sweating with pallor — a marker of acute severe illness — is covered under sym.cold_sweating. This card holds the presentations that do not sort cleanly into day-only or night-only — combined day-and-night sweating, and excess-type sweating driven by interior heat or damp-heat — and consolidates the red flags that call for urgent referral.",
+      "patient_words_zh": "「我很會流汗，別人都不會的天氣我卻濕透」「衣服常常濕到能擰出水」「不管冬天夏天都在流汗」「動一下就滿頭大汗，止不住」「整個人常常濕濕黏黏的」「連睡覺也是，起床發現床單都濕了」",
+      "patient_words_en": "\"I sweat so much, drenched even when no one else is\", \"My shirt is often wet enough to wring out\", \"I sweat no matter the season\", \"The slightest movement and I'm pouring sweat, it won't stop\", \"I always feel damp and sticky\", \"Even at night — I wake up and the sheets are soaked\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": true,
+          "vocabulary": "symptom_taxonomy"
+        },
+        "quality": {
+          "applicable": false
+        },
+        "laterality": {
+          "applicable": false
+        },
+        "timing": {
+          "applicable": true,
+          "vocabulary": "symptom_timing"
+        },
+        "severity": {
+          "applicable": false,
+          "why": "實例值，屬病例層（§8）"
+        },
+        "duration": {
+          "applicable": false,
+          "why": "實例值，屬病例層（§8）"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "部位／範圍",
+          "why": "全身性或局部性(手心、腳心、臉部為主)——局部多汗多屬原發性多汗症，是另一獨立疾病實體；全身性才進入本卡的臟腑辨證與紅旗流程"
+        },
+        {
+          "dimension": "時間",
+          "why": "日間動則汗出、夜間睡中汗出，或日夜皆有——三者方向不同，分別導向自汗、盜汗或氣陰兩虛"
+        },
+        {
+          "dimension": "誘因",
+          "why": "是否遠超乎天熱、厚衣、勞動等預期誘因——若無明顯誘因，或誘因程度與汗量明顯不成比例，才構成病理性多汗"
+        },
+        {
+          "dimension": "汗質與觸感",
+          "why": "黏膩有味多屬濕熱；清稀無味多屬氣虛；冷汗濕冷伴面色蒼白為危候(見 sym.cold_sweating)，觸感直接分流輕重緩急"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "心悸手抖體重下降怕熱提示甲狀腺機能亢進；發熱寒顫提示感染；胸悶胸痛冒冷汗提示心血管急症；近期新用藥物提示藥物性多汗"
+        },
+        {
+          "dimension": "病程",
+          "why": "新發劇烈與長期反覆的處置完全不同——伴不明原因體重下降或持續發燒的新發多汗，需優先排除感染或惡性腫瘤再論證型"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Location/Distribution",
+          "why": "Generalized versus localized (palms, soles, face) — localized excess sweating is usually primary focal hyperhidrosis, a separate disease entity; only generalized sweating enters this card's pattern differentiation and red-flag pathway"
+        },
+        {
+          "dimension": "Timing",
+          "why": "Daytime with exertion, during sleep, or both — the three point in different directions, toward spontaneous sweating, night sweats, or combined qi-yin deficiency respectively"
+        },
+        {
+          "dimension": "Triggers",
+          "why": "Whether sweating clearly exceeds what heat, heavy clothing, or exertion would explain — pathological excessive sweating is diagnosed when there is no adequate trigger, or the sweat volume is disproportionate to the trigger present"
+        },
+        {
+          "dimension": "Sweat quality and feel",
+          "why": "Sticky and malodorous points to damp-heat; thin and odorless points to qi deficiency; cold and clammy with pallor is a marker of acute severe illness (see sym.cold_sweating) — the feel of the sweat itself triages urgency"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Palpitations, hand tremor, weight loss and heat intolerance suggest hyperthyroidism; fever with chills suggests infection; chest tightness, chest pain or cold sweating suggests a cardiovascular emergency; a recently started medication suggests drug-induced sweating"
+        },
+        {
+          "dimension": "Course",
+          "why": "A new, severe presentation is managed very differently from a long-standing recurrent one — new-onset excessive sweating with unexplained weight loss or persistent fever needs infection or malignancy ruled out before pattern differentiation"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "蒸蒸汗出，汗黏而穢，身熱不揚",
+          "points_to": [
+            "pattern.damp_heat"
+          ],
+          "distinguishing": "汗出黏膩有異味，伴頭身困重、胸悶脘痞、口苦而黏、小便黃赤，悶熱潮濕環境或午後加重"
+        },
+        {
+          "variant": "壯熱大汗，大渴引冷飲",
+          "points_to": [
+            "pattern.yang_ming_channel_heat"
+          ],
+          "distinguishing": "汗出量多如洗，伴高熱、不惡寒反惡熱、面赤煩躁、脈洪大，起病急驟，多見於外感熱病極期"
+        },
+        {
+          "variant": "動則汗出，氣短懶言，易感冒",
+          "points_to": [
+            "pattern.qi_deficiency"
+          ],
+          "distinguishing": "白天為主，稍勞尤甚，兼神疲乏力、聲低氣短、易反覆感冒，按之無灼熱感，遇冷風加重"
+        },
+        {
+          "variant": "夜間汗出，五心煩熱，顴紅",
+          "points_to": [
+            "pattern.yin_deficiency_fire_flaring"
+          ],
+          "distinguishing": "睡中汗出、醒後即止，伴潮熱顴紅、咽乾口燥、失眠多夢、腰膝痠軟，多見於陰虛體質或熱病後期"
+        },
+        {
+          "variant": "自汗與盜汗並見，神疲氣短兼口乾",
+          "points_to": [
+            "pattern.qi_yin_deficiency"
+          ],
+          "distinguishing": "日間夜間皆汗出，量多而持續，兼倦怠乏力、氣短懶言、口乾咽燥、渴喜飲水，多見於久病、腫瘤或心血管疾病後期"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Steaming sweat, sticky and foul-smelling, with a low-grade fever that does not spike clearly",
+          "points_to": [
+            "pattern.damp_heat"
+          ],
+          "distinguishing": "Sweat is sticky with an odor, with heavy sluggish head and body, chest/epigastric fullness, a bitter sticky taste, dark scanty urine; worse in hot humid weather or in the afternoon"
+        },
+        {
+          "variant": "High fever with drenching sweat, intense thirst with a craving for cold drinks",
+          "points_to": [
+            "pattern.yang_ming_channel_heat"
+          ],
+          "distinguishing": "Sweat pours out as if washed, with high fever, aversion to heat rather than cold, a flushed agitated face and a surging pulse; abrupt onset, typically at the height of an acute febrile illness"
+        },
+        {
+          "variant": "Sweating with exertion, shortness of breath and disinclination to speak, prone to catching colds",
+          "points_to": [
+            "pattern.qi_deficiency"
+          ],
+          "distinguishing": "Predominantly daytime, markedly worse with even mild exertion, with fatigue, a low weak voice and shortness of breath, recurrent colds; not warm to the touch, worse with wind exposure"
+        },
+        {
+          "variant": "Sweating during sleep, vexing heat in the palms/soles/chest, malar flushing",
+          "points_to": [
+            "pattern.yin_deficiency_fire_flaring"
+          ],
+          "distinguishing": "Sweating occurs during sleep and stops on waking, with tidal fever, malar flush, dry mouth and throat, restless dream-disturbed sleep, weak aching low back and knees; typically a yin-deficient constitution or the aftermath of febrile illness"
+        },
+        {
+          "variant": "Both daytime spontaneous sweating and night sweats present, fatigue and shortness of breath with a dry mouth",
+          "points_to": [
+            "pattern.qi_yin_deficiency"
+          ],
+          "distinguishing": "Sweating occurs both by day and by night, profuse and persistent, with fatigue, shortness of breath, disinclination to speak, a dry mouth and throat with thirst; typically seen in chronic illness, malignancy, or late-stage cardiovascular disease"
+        }
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "Viera AJ, Bond MM, Yates SW. Diagnosing Night Sweats. Am Fam Physician. 2003;67(5):1019-1024.",
+        "Cheshire WP, Freeman R. Disorders of Sweating. Semin Neurol. 2003;23(4):399-406.",
+        "Cheshire WP, Fealey RD. Drug-Induced Hyperhidrosis and Hypohidrosis: Incidence, Prevention and Management. Drug Saf. 2008;31(2):109-126.",
+        "Ross DS et al. 2016 American Thyroid Association Guidelines for Diagnosis and Management of Hyperthyroidism and Other Causes of Thyrotoxicosis. Thyroid. 2016;26(10):1343-1421.",
+        "Cryer PE et al. Evaluation and Management of Adult Hypoglycemic Disorders: An Endocrine Society Clinical Practice Guideline. J Clin Endocrinol Metab. 2009;94(3):709-728.",
+        "Singer M et al. The Third International Consensus Definitions for Sepsis and Septic Shock (Sepsis-3). JAMA. 2016;315(8):801-810.",
+        "2021 AHA/ACC/ASE/CHEST/SAEM/SCCT/SCMR Guideline for the Evaluation and Diagnosis of Chest Pain. Circulation. 2021;144(22):e368-e454."
+      ],
+      "safety_flags": [
+        "chest_pain_red_flag",
+        "febrile_illness",
+        "blood_sugar_review",
+        "medication_review",
+        "urgent_red_flag_review"
+      ],
+      "red_flags_zh": [
+        "大量出汗合併胸悶、胸痛、冒冷汗、噁心或呼吸困難 → 立即排除急性冠心症候群(心肌梗塞)",
+        "夜間盜汗合併不明原因體重下降、持續發燒、淋巴結腫大 → 排除肺結核、淋巴瘤等慢性感染或惡性腫瘤",
+        "大量出汗合併心悸、手抖、心跳過速、體重減輕、怕熱 → 排除甲狀腺機能亢進",
+        "大量出汗合併飢餓感、心悸、手抖、意識混亂或頭暈，尤其糖尿病患者使用降血糖藥物時 → 立即測血糖，排除低血糖症",
+        "大量出汗合併發燒、心跳過速、意識改變、血壓下降或皮膚濕冷蒼白 → 排除敗血症或休克，需立即送醫",
+        "突發單側身體多汗或無汗(不對稱) → 提示自主神經病變、Horner氏症候群或中樞神經病灶，需神經科評估",
+        "近期新增藥物(如抗憂鬱藥、退燒藥、荷爾蒙製劑或部分降血糖藥)後出現明顯多汗 → 考慮藥物性多汗，評估是否需調整用藥"
+      ],
+      "red_flags_en": [
+        "Profuse sweating with chest tightness, chest pain, cold sweat, nausea or shortness of breath → rule out acute coronary syndrome (myocardial infarction) immediately",
+        "Night sweats with unexplained weight loss, persistent fever, or swollen lymph nodes → rule out tuberculosis, lymphoma or other chronic infection or malignancy",
+        "Profuse sweating with palpitations, hand tremor, tachycardia, weight loss, heat intolerance → rule out hyperthyroidism",
+        "Profuse sweating with hunger, palpitations, tremor, confusion or dizziness, especially in a diabetic patient on glucose-lowering medication → check blood glucose immediately, rule out hypoglycemia",
+        "Profuse sweating with fever, tachycardia, altered consciousness, low blood pressure or cold clammy pale skin → rule out sepsis or shock, seek emergency care",
+        "Sudden-onset asymmetric sweating or absent sweating on one side of the body → suggests autonomic neuropathy, Horner syndrome or a central nervous system lesion, needs neurological evaluation",
+        "Marked new-onset excessive sweating after starting a new medication (e.g. antidepressants, antipyretics, hormonal agents, some glucose-lowering drugs) → consider drug-induced sweating, assess whether the medication needs adjusting"
+      ],
+      "supporting_measurements": [],
+      "sources": [
+        "Viera AJ, Bond MM, Yates SW. Diagnosing Night Sweats. Am Fam Physician. 2003;67(5):1019-1024.",
+        "Cheshire WP, Freeman R. Disorders of Sweating. Semin Neurol. 2003;23(4):399-406.",
+        "Cheshire WP, Fealey RD. Drug-Induced Hyperhidrosis and Hypohidrosis: Incidence, Prevention and Management. Drug Saf. 2008;31(2):109-126.",
+        "Ross DS et al. 2016 American Thyroid Association Guidelines for Diagnosis and Management of Hyperthyroidism and Other Causes of Thyrotoxicosis. Thyroid. 2016;26(10):1343-1421.",
+        "Cryer PE et al. Evaluation and Management of Adult Hypoglycemic Disorders: An Endocrine Society Clinical Practice Guideline. J Clin Endocrinol Metab. 2009;94(3):709-728.",
+        "Singer M et al. The Third International Consensus Definitions for Sepsis and Septic Shock (Sepsis-3). JAMA. 2016;315(8):801-810.",
+        "2021 AHA/ACC/ASE/CHEST/SAEM/SCCT/SCMR Guideline for the Evaluation and Diagnosis of Chest Pain. Circulation. 2021;144(22):e368-e454.",
+        "中醫內科學 通行教材 —— 汗證篇(自汗、盜汗、裏熱迫汗辨證)",
+        "中醫診斷學 通行教材 —— 汗診(局部與全身汗出的診斷意義)",
+        "本 repo 既有卡片：sym.spontaneous_sweating · sym.night_sweats · sym.cold_sweating · sym.hot_flash · data/pathology/pattern_library.json 各證型 key_signs_zh"
+      ],
+      "field_sources": {
+        "definition_zh/en": "中醫診斷學 汗診 對全身性／局部性汗出的界定 + 本 repo sym.spontaneous_sweating／sym.night_sweats／sym.cold_sweating 既有卡片的範圍切分，用以界定本卡收錄之情境",
+        "inquiry_zh/en": "中醫內科學 汗證篇問診要點 + Viera 2003 night sweats 評估架構 + Cheshire 2003 sweating disorders 分類",
+        "differentiation_zh/en": "中醫內科學 汗證篇 裏熱、濕熱、氣虛、陰虛火旺、氣陰兩虛分證 + data/pathology/pattern_library.json 對應證型 key_signs_zh／mechanism_zh 對照(pattern.damp_heat・pattern.yang_ming_channel_heat・pattern.qi_deficiency・pattern.yin_deficiency_fire_flaring・pattern.qi_yin_deficiency)",
+        "red_flags_zh/en": "2021 AHA/ACC Chest Pain Guideline(心血管紅旗) + Viera 2003(夜間盜汗紅旗：感染／惡性腫瘤) + Ross 2016 ATA Guidelines(甲狀腺機能亢進) + Cryer 2009 Endocrine Society Guideline(低血糖) + Singer 2016 Sepsis-3(敗血症／休克) + Cheshire 2003(不對稱多汗／自主神經病變) + Cheshire 2008(藥物性多汗)",
+        "safety_flags": "對應 red_flags_zh 所涉及之心血管(chest_pain_red_flag)、感染發熱(febrile_illness)、血糖(blood_sugar_review)、藥物(medication_review)與需緊急處理(urgent_red_flag_review)五個類別"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "aliases_en": [
+        "Excessive daytime sleepiness (EDS)",
+        "Somnolence",
+        "Excessive sleepiness",
+        "Drowsiness"
+      ],
+      "aliases_zh": [
+        "多寐",
+        "嗜眠",
+        "貪睡",
+        "昏昏欲睡"
+      ],
+      "clinical_attributes": {
+        "location": {
+          "applicable": false
+        },
+        "quality": {
+          "applicable": false
+        },
+        "laterality": {
+          "applicable": false
+        },
+        "timing": {
+          "applicable": true,
+          "vocabulary": "symptom_timing"
+        },
+        "severity": {
+          "applicable": false,
+          "why": "實例值，屬病例層"
+        },
+        "duration": {
+          "applicable": false,
+          "why": "實例值，屬病例層"
+        }
+      },
+      "definition_en": "An irrepressible urge to sleep or unintentional dozing off during the day in situations where wakefulness is expected — easy napping, needing prolonged sleep to feel rested, or persistent daytime drowsiness despite ostensibly adequate sleep hours. It is a presenting complaint, not a diagnosis — behind it may lie simple sleep deprivation, obstructive sleep apnea, narcolepsy, medication sedation, or a central nervous system disorder, so this card records what to ask and what it points toward, not a conclusion.",
+      "definition_zh": "白天在不應該想睡的情境下出現難以克制的睡意或不自主入睡，包括容易打瞌睡、需要延長睡眠時數才感覺清醒，或即使睡眠時數看似足夠仍整日昏沉欲睡。它是主訴而非診斷——背後可能是單純睡眠不足，也可能是阻塞型睡眠呼吸中止症、猝睡症、藥物鎮靜作用或中樞神經系統病變，所以卡片記錄的是「該問什麼、指向哪裡」，不是結論。",
+      "differentiation_en": [
+        {
+          "variant": "Heavy-headed drowsiness, chest and epigastric fullness, heavy limbs, greasy white coating",
+          "points_to": [
+            "pattern.phlegm_damp"
+          ],
+          "distinguishing": "Drowsy and foggy all day, head heavy as if wrapped in cloth, with chest and epigastric fullness, heavy tired limbs, copious sticky phlegm, worse in damp weather, white greasy tongue coating"
+        },
+        {
+          "variant": "Drowsiness worse after meals, shortness of breath, poor appetite and loose stool",
+          "points_to": [
+            "pattern.spleen_qi_deficiency"
+          ],
+          "distinguishing": "Sleepiness most pronounced after eating, breathless on exertion, poor appetite, loose stool, sallow complexion, weak pulse"
+        },
+        {
+          "variant": "Drowsiness with epigastric distension and poor appetite, sticky bitter taste, yellow greasy coating",
+          "points_to": [
+            "pattern.damp_heat_spleen_stomach"
+          ],
+          "distinguishing": "Drowsiness with epigastric fullness and poor appetite, a sticky bitter taste in the mouth, scanty dark urine, yellow greasy tongue coating, soft rapid pulse"
+        },
+        {
+          "variant": "All-day curled-up drowsiness, cold limbs and cold intolerance, weak aching low back and knees, copious clear urine",
+          "points_to": [
+            "pattern.spleen_kidney_yang_deficiency"
+          ],
+          "distinguishing": "Listless and wanting to sleep all day with little movement, cold extremities, aching cold low back and knees, frequent night urination, loose stool, deep weak slow pulse"
+        },
+        {
+          "variant": "Desire only to sleep (dan yu mei), profound lethargy, faint thready pulse",
+          "points_to": [
+            "pattern.shao_yin_cold_transformation"
+          ],
+          "distinguishing": "The hallmark pattern of the Shanghan Lun's Shaoyin disease chapter — profound lethargy, curled up all day wanting only to lie down rather than resting restfully, with cold extremities, undigested food in loose stool, faint thready pulse; typically seen in severe illness or the very elderly with declining yang qi"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "嗜睡頭重如裹，胸悶脘痞，肢體困重，苔白膩",
+          "points_to": [
+            "pattern.phlegm_damp"
+          ],
+          "distinguishing": "終日昏昏欲睡，頭重如裹布，胸悶脘痞、肢體困重，痰多黏膩，陰雨天加重，苔白膩"
+        },
+        {
+          "variant": "食後嗜睡尤甚，氣短懶言，食少便溏",
+          "points_to": [
+            "pattern.spleen_qi_deficiency"
+          ],
+          "distinguishing": "以餐後困倦欲睡最明顯，動則氣短，食慾不振、大便溏薄，面色萎黃，脈弱"
+        },
+        {
+          "variant": "嗜睡脘悶納呆，口黏而苦，苔黃膩",
+          "points_to": [
+            "pattern.damp_heat_spleen_stomach"
+          ],
+          "distinguishing": "嗜睡兼脘腹脹悶、食慾差，口中黏膩而苦，小便短黃，苔黃膩，脈濡數"
+        },
+        {
+          "variant": "終日蜷臥嗜睡，肢冷畏寒，腰膝痠軟，小便清長",
+          "points_to": [
+            "pattern.spleen_kidney_yang_deficiency"
+          ],
+          "distinguishing": "精神萎靡、終日思睡懶動，兼四肢不溫、腰膝痠冷、夜尿頻多、大便溏薄，脈沉遲無力"
+        },
+        {
+          "variant": "但欲寐，精神極度倦怠，脈微細",
+          "points_to": [
+            "pattern.shao_yin_cold_transformation"
+          ],
+          "distinguishing": "《傷寒論》少陰病提綱證——精神極度萎靡，終日蜷臥但欲寐而非真能安睡，兼手足厥冷、下利清穀，脈微細，多見於重病或年老陽氣衰微者"
+        }
+      ],
+      "field_sources": {
+        "definition_zh/en": "ICSD-3 對 hypersomnolence 的一般界定 + 中醫內科學 多寐篇",
+        "inquiry_zh/en": "ICSD-3 中樞性嗜睡疾患評估要點（猝倒、小睡恢復感、危險情境入睡）+ 中醫內科學 多寐病因辨析",
+        "differentiation_zh/en": "中醫內科學 多寐分證（脾氣虛・痰濕困脾・脾胃濕熱・脾腎陽虛）+《傷寒論》少陰病提綱證 + 本 repo pattern_library 各證型 key_signs_zh 對照",
+        "red_flags_zh/en": "ICSD-3 中樞性嗜睡疾患（猝睡症等）診斷要點 + MedlinePlus 意識改變／緊急就醫指引，改寫為本卡具體情境",
+        "supporting_measurements": "data/clinical_cases/outcome_metrics.json — metric.sleep_hours／metric.sleep_quality／metric.energy_level（既有，未新增）"
+      },
+      "id": "sym.hypersomnia",
+      "inquiry_en": [
+        {
+          "dimension": "Timing",
+          "why": "Postprandial, afternoon, or all-day sleepiness point to different mechanisms — drowsiness worse after meals suggests Spleen Qi deficiency with clear yang failing to rise, while continuous all-day sleepiness that resists relief raises concern for more pronounced yang deficiency or a pathological hypersomnia"
+        },
+        {
+          "dimension": "Triggers",
+          "why": "First rule out simple sleep deprivation or an irregular schedule; then ask about snoring, witnessed breathing pauses, medications (sedative-hypnotics, antihistamines, opioids, some antidepressants), recent illness, low mood, or blood sugar control"
+        },
+        {
+          "dimension": "Degree",
+          "why": "Whether sleep has ever intruded involuntarily during a hazardous activity (driving, operating machinery, eating) — this question directly determines safety risk and whether the patient should be advised to stop driving and be referred immediately"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Cataplexy (sudden muscle weakness triggered by strong emotion, without loss of consciousness) strongly suggests narcolepsy; snoring, obesity and morning headache suggest obstructive sleep apnea; altered consciousness, fever with neck stiffness, head trauma or unilateral limb weakness enter the red-flag pathway"
+        },
+        {
+          "dimension": "Relief",
+          "why": "Whether a brief nap brings clear refreshment — classic in narcolepsy, whereas simple sleep deprivation or depression often leaves the patient unrefreshed even after napping"
+        },
+        {
+          "dimension": "Course",
+          "why": "A new abrupt onset and a long-standing recurrent pattern are managed completely differently — new-onset sleepiness with altered consciousness or a neurologic change must first rule out an emergency, while a long-standing recurrent pattern moves into the sleep-disorder or pattern-differentiation workup"
+        }
+      ],
+      "inquiry_zh": [
+        {
+          "dimension": "時間",
+          "why": "食後、午後或整日皆然，指向不同機轉——食後困倦多屬脾氣虛清陽不升，全日持續、難以緩解則須考慮陽虛較重或病理性嗜睡"
+        },
+        {
+          "dimension": "誘因",
+          "why": "先排除單純睡眠不足或作息不規律；再問打鼾、目睹呼吸中止、藥物（鎮靜安眠藥、抗組織胺、鴉片類、部分抗憂鬱藥）、近期病後、情緒低落或血糖控制情形"
+        },
+        {
+          "dimension": "程度",
+          "why": "是否曾在危險情境下不自主入睡（開車、操作機械、進食中）——這一問直接決定安全風險，是否需要立即建議停止駕駛並轉診評估"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "猝倒（情緒激動時突發肌肉無力而意識清楚）高度提示猝睡症；打鼾、肥胖、晨起頭痛提示阻塞型睡眠呼吸中止症；意識改變、發熱頸強、頭部外傷史、單側肢體無力則進入紅旗流程"
+        },
+        {
+          "dimension": "緩解",
+          "why": "短暫小睡後是否感到明顯恢復——猝睡症典型是小睡即神清，單純睡眠剝奪或憂鬱則常小睡也難以緩解"
+        },
+        {
+          "dimension": "病程",
+          "why": "新發驟起與長期反覆處置方向完全不同——新發合併意識或神經症狀改變需優先排除急症；長期反覆則進入睡眠疾病或證型辨證流程"
+        }
+      ],
+      "name_en": "Hypersomnia (excessive daytime sleepiness)",
+      "name_zh": "嗜睡",
+      "observation_modes": [
+        "patient_reported",
+        "examiner_observed"
+      ],
+      "patient_words_en": "\"I could fall asleep anywhere, anytime\", \"I nearly dozed off while driving\", \"I doze off the moment I sit down to watch TV\", \"No matter how much I sleep I never feel rested\", \"My daytime feels like it's under a fog, I can't stay sharp\", \"I can't keep my eyes open in meetings or class\"",
+      "patient_words_zh": "「隨時隨地都想睡」「開車開到一半差點睡著」「一坐下來看電視就打瞌睡」「怎麼睡都睡不飽」「白天整個人像蒙著一層霧，提不起精神」「開會、上課忍不住閉眼」",
+      "pinyin": "shi shui",
+      "pinyin_toned": "shì shuì",
+      "primary_mode": "patient_reported",
+      "red_flags_en": [
+        "Difficult to rouse, or an altered level of consciousness (not simple sleepiness but sluggish responses, incoherent answers, or unresponsiveness) → treat as a medical emergency; rule out stroke, intracranial haemorrhage, encephalitis or meningitis first",
+        "Fever with neck stiffness and worsening drowsiness → rule out meningitis/encephalitis",
+        "New or worsening drowsiness after head trauma → rule out intracranial haemorrhage; urgent imaging required",
+        "Sudden muscle weakness triggered by strong emotion (laughing, surprise, anger) with consciousness preserved (cataplexy) → strongly suggests narcolepsy; refer to a sleep specialist",
+        "Recent initiation or dose increase of sedative-hypnotics, opioids, antihistamines, or combined alcohol use → rule out drug-induced over-sedation and respiratory depression risk; medication review needed",
+        "In a person with diabetes, drowsiness with sweating, tremor or confusion → rule out hypoglycaemia; check blood glucose immediately",
+        "Sleepiness has caused involuntary dozing off while driving or operating machinery → advise immediate cessation of driving/operating and refer for evaluation"
+      ],
+      "red_flags_zh": [
+        "難以喚醒、意識程度改變（非單純想睡而是反應遲鈍、答非所問，甚至無法喚醒）→ 應立即視為醫療急症，優先排除腦血管意外、顱內出血、腦炎腦膜炎",
+        "發熱合併頸項僵硬、嗜睡加重 → 排除腦膜炎／腦炎",
+        "頭部外傷後新發或加重的嗜睡 → 排除顱內出血，需緊急影像評估",
+        "情緒激動（大笑、驚訝、憤怒）時突發肌肉無力但意識清楚（猝倒）→ 高度提示猝睡症，需轉診睡眠專科",
+        "近期新增或調高鎮靜安眠藥、鴉片類止痛藥、抗組織胺劑量，或合併飲酒 → 排除藥物過度鎮靜與呼吸抑制風險，需藥物審查",
+        "糖尿病患者嗜睡合併冒汗、顫抖、意識混亂 → 排除低血糖，需立即測血糖",
+        "嗜睡已導致駕駛或操作機械時不自主入睡 → 應立即建議停止駕駛／操作，並轉診評估"
+      ],
+      "safety_flags": [
+        "neurologic_red_flags",
+        "sedative_medication_review",
+        "blood_sugar_review"
+      ],
+      "safety_review_sources": [
+        "ICSD-3 — International Classification of Sleep Disorders, 3rd edition (American Academy of Sleep Medicine, 2014)",
+        "MedlinePlus — When to seek emergency care (https://medlineplus.gov/ency/patientinstructions/000593.htm)"
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "sources": [
+        "ICSD-3 — International Classification of Sleep Disorders, 3rd edition (American Academy of Sleep Medicine, 2014)",
+        "Epworth Sleepiness Scale (Johns MW. A new method for measuring daytime sleepiness. Sleep. 1991;14(6):540-545)",
+        "MedlinePlus — When to seek emergency care (https://medlineplus.gov/ency/patientinstructions/000593.htm)",
+        "中醫內科學 通行教材 多寐篇 —— 脾氣虛、痰濕困脾、脾胃濕熱、脾腎陽虛分證",
+        "《傷寒論》少陰病篇——「少陰之為病，脈微細，但欲寐也」",
+        "本 repo 既有卡片：sym.insomnia · sym.fatigue · pattern_library 各證型 key_signs_zh"
+      ],
+      "supporting_measurements": [
+        "metric.sleep_hours",
+        "metric.sleep_quality",
+        "metric.energy_level"
+      ],
+      "taxonomy_ids": [
+        "sym.mental_emotional"
+      ],
+      "tradition": "both",
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "sym.weight_loss",
+      "name_zh": "體重減輕",
+      "name_en": "Unintentional weight loss",
+      "pinyin": "ti zhong jian qing",
+      "pinyin_toned": "tǐ zhòng jiǎn qīng",
+      "aliases_zh": [
+        "體重下降",
+        "非刻意性體重減輕",
+        "體重減少"
+      ],
+      "aliases_en": [
+        "Weight loss",
+        "Involuntary weight loss",
+        "Weight reduction (unintentional)"
+      ],
+      "taxonomy_ids": [
+        "sym.general_limb",
+        "sym.dietary_gastrointestinal"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported",
+        "examiner_observed"
+      ],
+      "primary_mode": "patient_reported",
+      "definition_zh": "在未刻意節食、增加運動或改變生活型態的情況下，體重在一段時間內非預期地下降。西醫將 6–12 個月內減少原體重 5% 以上（或 ≥4.5 公斤）列為需要評估的一般臨床警戒線；NICE NG12 對 60 歲以上、6 個月內體重減輕逾原體重 5% 者，另訂有優先轉診評估的建議。本症強調的是「量」的變化趨勢——體重數字、百分比、衣物腰圍鬆緊——與著重外觀肌肉脂肪流失的「形體消瘦」（sym.wasting）常同時出現，但體重減輕往往在明顯消瘦外觀形成前就已能被量出，也可能發生在體型原本偏胖、外觀變化不明顯的病人身上。它是主訴，不是診斷。",
+      "definition_en": "An unintended decrease in body weight over a period of time, occurring without deliberate dieting, increased exercise, or a change in lifestyle. Biomedicine sets a general clinical threshold of losing ≥5% of body weight (or ≥4.5 kg/10 lb) over 6–12 months as warranting evaluation; NICE NG12 additionally flags adults aged 60 and over who lose more than 5% of body weight within 6 months for priority assessment and referral. This symptom tracks the quantitative trend — the number on the scale, the percentage change, how loose clothing or a belt has become — and often precedes the visibly wasted appearance captured under sym.wasting (muscle/fat loss on exam); it can also occur in patients who started out overweight, where the change is not visually obvious. It is a presenting complaint, not a diagnosis.",
+      "patient_words_zh": "「最近體重一直往下掉，量了才發現少了好幾公斤」「沒有刻意減肥，褲子卻愈來愈鬆」「皮帶要多打一個洞」「食量沒什麼變，體重卻一直降」「別人都說我瘦了一大圈」",
+      "patient_words_en": "\"My weight just keeps dropping, I only noticed when I weighed myself\", \"I haven't been dieting but my pants keep getting loose\", \"I've had to punch a new hole in my belt\", \"I'm eating about the same as always but still losing weight\", \"Everyone keeps telling me I look like I've lost a lot of weight\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": false
+        },
+        "quality": {
+          "applicable": false
+        },
+        "laterality": {
+          "applicable": false
+        },
+        "timing": {
+          "applicable": false
+        },
+        "severity": {
+          "applicable": false,
+          "why": "實例值，屬病例層（§8）"
+        },
+        "duration": {
+          "applicable": false,
+          "why": "實例值，屬病例層（§8）"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "食慾與攝食量",
+          "why": "食慾正常或亢進卻仍消瘦，提示消耗性或代謝亢進病因（如甲狀腺機能亢進、惡性腫瘤、糖尿病）；食慾減退多指向脾胃功能失調、情緒因素或器質性腸胃疾病；食慾亢進反瘦兼多飲多尿，需考慮消渴"
+        },
+        {
+          "dimension": "病程與速度",
+          "why": "數週內快速下降與數月緩慢累積分屬完全不同的病因光譜，也決定是否優先轉診而非先嘗試治療"
+        },
+        {
+          "dimension": "客觀量測",
+          "why": "確認實際掉了多少公斤、佔原體重百分比，以及量測所跨的時間——遠比病人主觀『覺得瘦了』可靠，也是判斷是否達到臨床警戒線（6–12個月內≥5%，或 60 歲以上 6 個月內≥5%）的關鍵"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "發熱、夜間盜汗、新發或加重疼痛、可觸摸腫塊、淋巴結腫大、吞嚥困難或疼痛、血便吐血、排便習慣改變 → 進入紅旗流程，需優先評估"
+        },
+        {
+          "dimension": "年齡、病史與用藥",
+          "why": "60 歲以上本身即提高重症機率；糖尿病、甲狀腺疾病、腫瘤病史、免疫低下病史，以及利尿劑、瀉藥、二甲雙胍、SSRIs、化療藥物等用藥，都可能是致病或誘發因素"
+        },
+        {
+          "dimension": "情緒與社會因素",
+          "why": "憂鬱、焦慮、飲食障礙、獨居、經濟困難、咀嚼吞嚥功能退化，是盛行率高卻常被忽略的成因，尤其在長者；但仍須先排除器質性疾病才能歸因於此"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Appetite and intake",
+          "why": "Weight loss with normal or increased appetite points toward a hypermetabolic or wasting cause (hyperthyroidism, malignancy, diabetes); reduced appetite more often reflects Spleen-Stomach dysfunction, mood disturbance, or organic GI disease; weight loss with a ravenous appetite plus excess thirst/urination raises Xiaoke (wasting-thirsting disorder)"
+        },
+        {
+          "dimension": "Course and pace",
+          "why": "Rapid loss over weeks and gradual loss over months sit on entirely different causal spectrums, and this question decides whether to refer first rather than trial treatment"
+        },
+        {
+          "dimension": "Objective measurement",
+          "why": "Confirm the actual kilograms lost, the percentage of baseline weight, and the time span involved — far more reliable than the patient's subjective sense of 'getting thinner', and this is what determines whether a clinical threshold has been crossed (≥5% over 6-12 months generally, or ≥5% within 6 months for adults 60+)"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Fever, night sweats, new or worsening pain, a palpable mass, lymphadenopathy, difficulty or pain swallowing, blood in stool or vomit, or a change in bowel habit → enters the red-flag pathway and needs priority evaluation"
+        },
+        {
+          "dimension": "Age, history and medications",
+          "why": "Age 60+ itself raises the probability of serious disease; a history of diabetes, thyroid disease, prior cancer, or immunosuppression, and medications such as diuretics, laxatives, metformin, SSRIs, or chemotherapy can all cause or contribute"
+        },
+        {
+          "dimension": "Mood and social factors",
+          "why": "Depression, anxiety, disordered eating, living alone, financial hardship, and declining chewing/swallowing function are common but easily overlooked causes, especially in older adults — though organic disease must still be excluded before attributing weight loss to these"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "食少納呆，體重漸減",
+          "points_to": [
+            "pattern.spleen_qi_deficiency"
+          ],
+          "distinguishing": "食欲不振、食量減少，體重緩慢下降，兼腹脹便溏、神疲乏力、面色萎黃，勞累後諸症加重"
+        },
+        {
+          "variant": "多食易饑而反瘦",
+          "points_to": [
+            "pattern.stomach_fire"
+          ],
+          "distinguishing": "食量正常甚至增加、易饑餓，但體重仍持續下降，兼口渴喜冷飲、口臭、大便乾結、舌紅苔黃"
+        },
+        {
+          "variant": "消瘦兼潮熱盜汗、五心煩熱",
+          "points_to": [
+            "pattern.yin_deficiency"
+          ],
+          "distinguishing": "體重逐漸下降，兼午後潮熱、夜間盜汗、手足心熱、口燥咽乾，舌紅少苔、脈細數"
+        },
+        {
+          "variant": "情緒抑鬱、脅脹食少而體重下降",
+          "points_to": [
+            "pattern.liver_qi_stagnation"
+          ],
+          "distinguishing": "體重減輕伴隨明顯情緒低落或焦慮、胸脅脹悶、噯氣、食欲隨情緒波動、女性可見月經不調，需先排除器質性病因後再考慮此型"
+        },
+        {
+          "variant": "久病體弱，氣血雙虧",
+          "points_to": [
+            "pattern.qi_blood_deficiency"
+          ],
+          "distinguishing": "病程較長，體重持續下降，兼面色淡白或萎黃、頭暈心悸、氣短懶言、爪甲色淡，多見於慢性消耗性疾病後期"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Poor appetite with gradual weight loss",
+          "points_to": [
+            "pattern.spleen_qi_deficiency"
+          ],
+          "distinguishing": "Reduced appetite and food intake with slow, progressive weight loss, plus abdominal distension, loose stools, fatigue, and a sallow complexion; all symptoms worsen with exertion"
+        },
+        {
+          "variant": "Ravenous appetite yet still losing weight",
+          "points_to": [
+            "pattern.stomach_fire"
+          ],
+          "distinguishing": "Normal or increased appetite with easy hunger, yet weight keeps dropping, plus marked thirst for cold drinks, bad breath, dry stool, red tongue with yellow coating"
+        },
+        {
+          "variant": "Wasting with tidal fever and night sweats",
+          "points_to": [
+            "pattern.yin_deficiency"
+          ],
+          "distinguishing": "Progressive weight loss with afternoon tidal fever, night sweats, heat in the palms/soles/chest, dry mouth and throat, red tongue with scant coating, thin rapid pulse"
+        },
+        {
+          "variant": "Weight loss with depressed mood and hypochondriac fullness",
+          "points_to": [
+            "pattern.liver_qi_stagnation"
+          ],
+          "distinguishing": "Weight loss accompanied by a noticeably low or anxious mood, chest and hypochondriac distension, belching, appetite that fluctuates with emotional state, and irregular menses in women; consider this pattern only after organic disease has been excluded"
+        },
+        {
+          "variant": "Long illness with combined Qi-Blood deficiency",
+          "points_to": [
+            "pattern.qi_blood_deficiency"
+          ],
+          "distinguishing": "A longer disease course with continued weight loss, plus pale or sallow complexion, dizziness, palpitations, shortness of breath, reluctance to speak, and pale nail beds; typically seen in the later stage of chronic wasting illness"
+        }
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "NICE NG12 — Suspected cancer: recognition and referral（非特定部位症狀章節，體重減輕轉診建議 1.13.2，2026-04-15 複閱更新）",
+        "MedlinePlus Medical Encyclopedia, \"Weight loss - unintentional\", https://medlineplus.gov/ency/article/003107.htm",
+        "Cleveland Clinic, \"Unexplained Weight Loss\", https://my.clevelandclinic.org/health/symptoms/unexplained-weight-loss",
+        "American Family Physician, \"Unintentional Weight Loss in Older Adults\" (2021), https://www.aafp.org/afp/2021/0700/p34"
+      ],
+      "safety_flags": [
+        "urgent_red_flag_review"
+      ],
+      "red_flags_zh": [
+        "非刻意性體重減輕合併持續發熱、夜間盜汗（反覆感染或惡性腫瘤的典型伴隨症）",
+        "合併新發或逐漸加重的疼痛、可觸及的腫塊，或表淺淋巴結腫大",
+        "合併吞嚥困難／吞嚥疼痛、持續嘔吐、血便或吐血、排便習慣改變 → 優先排除消化道腫瘤",
+        "60 歲以上，6 個月內體重減輕超過原體重 5%（NICE NG12 非特定部位症狀轉診閾值）→ 建議儘速安排評估或轉診",
+        "合併明顯情緒低落、認知改變，或社會孤立、經濟困難、咀嚼吞嚥功能退化等非器質性成因線索，仍須先排除器質性疾病",
+        "正在服用可能致體重減輕的藥物（如利尿劑、瀉藥、二甲雙胍、SSRIs、化療藥物），或有甲狀腺疾病、糖尿病、免疫低下病史 → 需個別評估"
+      ],
+      "red_flags_en": [
+        "Unintentional weight loss with persistent fever or night sweats (a typical accompaniment of recurrent infection or malignancy)",
+        "New or worsening pain, a palpable mass, or superficial lymphadenopathy",
+        "Difficulty or pain swallowing, persistent vomiting, blood in stool or vomit, or a change in bowel habit → prioritise ruling out a GI-tract malignancy",
+        "Age 60 or over with more than 5% of body weight lost within 6 months (the NICE NG12 threshold for non-site-specific symptom referral) → arrange prompt assessment or referral",
+        "Marked low mood or cognitive change, or non-organic contributors such as social isolation, financial hardship, or declining chewing/swallowing function — organic disease still needs to be excluded first",
+        "Currently taking a medication that can cause weight loss (diuretics, laxatives, metformin, SSRIs, chemotherapy), or a history of thyroid disease, diabetes, or immunosuppression → individualised evaluation"
+      ],
+      "supporting_measurements": [],
+      "sources": [
+        "NICE NG12 — Suspected cancer: recognition and referral（英國 NICE 指引，非特定部位體重減輕轉診建議，2026-04-15 複閱更新）",
+        "MedlinePlus Medical Encyclopedia, \"Weight loss - unintentional\"（https://medlineplus.gov/ency/article/003107.htm）",
+        "Cleveland Clinic, \"Unexplained Weight Loss\"（https://my.clevelandclinic.org/health/symptoms/unexplained-weight-loss）",
+        "American Family Physician, \"Unintentional Weight Loss in Older Adults\"（2021，https://www.aafp.org/afp/2021/0700/p34）",
+        "中醫內科學／中醫診斷學 通行教材 —— 虛勞、消瘦相關證型辨證（脾胃氣虛・胃熱熾盛・陰虛・肝氣鬱結・氣血兩虛）",
+        "本 repo 既有卡片：sym.wasting（形體消瘦）· sym.poor_appetite · pattern_library 各證型 key_signs_zh 對照"
+      ],
+      "field_sources": {
+        "definition_zh/en": "MedlinePlus Weight loss - unintentional 的 5%／6-12個月一般閾值 + NICE NG12 對 60 歲以上、6個月內≥5%的優先轉診建議（1.13.2，2026-04-15 複閱）；與 sym.wasting 的關係說明為本卡新增撰述",
+        "inquiry_zh/en": "American Family Physician, Unintentional Weight Loss in Older Adults（2021）的初始評估架構（病史／用藥／年齡風險）+ 中醫內科學 虛勞篇問診要點",
+        "differentiation_zh/en": "中醫內科學 虛勞、消瘦辨證分型 + 中醫診斷學 情志致病（肝氣鬱結）+ 本 repo pattern_library 各證型 key_signs_zh 對照",
+        "red_flags_zh/en": "NICE NG12（非特定部位體重減輕轉診閾值，1.13.2）+ MedlinePlus + Cleveland Clinic Unexplained Weight Loss",
+        "taxonomy_ids": "data/config/symptom_taxonomy.json candidates —— CloudTCM『身體消瘦』條目原始僅對應 sym.general_limb；本卡另加 sym.dietary_gastrointestinal，因鑑別證型（脾胃氣虛／胃熱熾盛）與問診面向皆高度圍繞飲食腸胃"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "sym.lymphadenopathy",
+      "name_zh": "淋巴結腫大",
+      "name_en": "Lymphadenopathy",
+      "pinyin": "lin ba jie zhong da",
+      "pinyin_toned": "lín bā jié zhǒng dà",
+      "aliases_zh": [
+        "淋巴結腫",
+        "淋巴腫大",
+        "淋巴結肥大",
+        "腺體腫大"
+      ],
+      "aliases_en": [
+        "Swollen lymph nodes",
+        "Enlarged lymph nodes",
+        "Swollen glands",
+        "Lymph node enlargement"
+      ],
+      "taxonomy_ids": [
+        "sym.general_limb"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported",
+        "examiner_observed"
+      ],
+      "primary_mode": "examiner_observed",
+      "definition_zh": "淋巴結因反應性增生、感染、發炎或腫瘤浸潤而體積增大、可被觸診到,常見於頸部、腋下、腹股溝、鎖骨上等淋巴引流區域,也可能同時出現在兩處以上非鄰接部位(全身性)。它是一個體徵/主訴,不是診斷——同一個「淋巴結腫大」可以只是上呼吸道感染這種良性自限性反應,也可以是淋巴瘤或轉移癌的第一個線索,所以卡片記錄的是「該問什麼、該摸什麼、何時要提高警覺」,不是結論。中醫將表淺可觸及的頸項腫核依病程與性質分屬「痰核」「瘰癧」「失榮」等病名範疇。",
+      "definition_en": "Enlargement of one or more lymph nodes, palpable on examination, due to reactive hyperplasia, infection, inflammation or neoplastic infiltration — most commonly in the cervical, axillary, inguinal or supraclavicular drainage regions, and sometimes in two or more non-contiguous regions at once (generalized lymphadenopathy). It is a physical sign / presenting complaint, not a diagnosis — the same finding can be a benign, self-limited reaction to an upper respiratory infection, or the first clue to lymphoma or metastatic cancer, so this card records what to ask, what to palpate for, and when to raise concern, not a conclusion. TCM classifies palpable superficial neck/lymph masses by course and character under the disease categories 痰核 (phlegm nodule), 瘰癧 (scrofula) and 失榮 (loss-of-nourishment mass).",
+      "patient_words_zh": "「脖子摸到一顆東西」「腋下有一顆硬塊」「鼠蹊部那邊腫起來,不知道是什麼」「淋巴結一直腫著,消不下去」「壓下去會痛」「感覺越長越大」「洗澡的時候摸到一顆凸出來的東西」",
+      "patient_words_en": "\"I felt a lump in my neck\", \"There's a hard bump under my arm\", \"Something's swollen down in my groin and I don't know what it is\", \"My lymph node's been swollen for weeks and won't go down\", \"It hurts when I press on it\", \"It feels like it keeps getting bigger\", \"I found a lump while showering\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": true,
+          "vocabulary": "symptom_taxonomy"
+        },
+        "quality": {
+          "applicable": true,
+          "vocabulary": "symptom_quality",
+          "diagnostic_note_zh": "灼(灼熱腫痛)多屬熱毒蘊結,常見於急性化膿性淋巴結炎;脹(脹悶不適)多屬氣滯痰結,隨情緒波動而消長;隱(隱痛或按之微痛)多屬正虛痰凝,病程遷延。質地堅硬、固定不移而不痛,是本症最具警示意義的表現,但不屬本表列的痛覺性質詞彙,需另於觸診記錄並優先排除惡性。"
+        },
+        "laterality": {
+          "applicable": true,
+          "vocabulary": "symptom_laterality"
+        },
+        "timing": {
+          "applicable": true,
+          "vocabulary": "symptom_timing"
+        },
+        "severity": {
+          "applicable": false,
+          "why": "實例值，屬病例層（§8）"
+        },
+        "duration": {
+          "applicable": false,
+          "why": "實例值，屬病例層（§8）"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "部位",
+          "why": "頸部、腋下、腹股溝、鎖骨上或全身性(兩處以上非鄰接部位同時腫大);鎖骨上淋巴結腫大警示意義最高,全身性腫大則指向病毒感染、自體免疫病或血液系統疾病"
+        },
+        {
+          "dimension": "性質",
+          "why": "觸診質地軟硬、能否推動、是否與周圍組織粘連、有無壓痛及皮膚是否焮紅發熱;質軟能推動多屬反應性或痰氣鬱結,質硬固定不痛則需高度警惕惡性"
+        },
+        {
+          "dimension": "時間",
+          "why": "腫大是持續存在還是時消時長、發現至今已多久;持續超過 4–6 週未消退是決定是否轉診的重要門檻"
+        },
+        {
+          "dimension": "誘因",
+          "why": "近期咽喉炎、齲齒膿腫、皮膚感染、貓抓傷、蟲咬、疫苗接種或旅遊/動物接觸史,有助追溯感染來源"
+        },
+        {
+          "dimension": "緩解",
+          "why": "抗生素或消炎治療後是否縮小、隨感染控制而消退;若持續不消甚或反而增大,則不符合單純反應性腫大"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "發熱、夜間盜汗、不明原因體重減輕、疲勞、皮膚破潰竇道經久不癒,是決定是否啟動紅旗轉診流程的核心線索"
+        },
+        {
+          "dimension": "病程",
+          "why": "數日內快速增大提示急性感染或高侵襲性疾病,數週至數月緩慢漸大且不消退提示惡性腫瘤,反覆消長多年則提示慢性瘰癧痰核"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Location",
+          "why": "Cervical, axillary, inguinal, supraclavicular, or generalized (two or more non-contiguous regions at once); supraclavicular nodes carry the highest warning significance, and generalized lymphadenopathy points toward viral infection, autoimmune disease, or a hematologic malignancy"
+        },
+        {
+          "dimension": "Quality",
+          "why": "Texture on palpation (soft vs firm), mobility, adherence to surrounding tissue, tenderness, and whether the overlying skin is red and warm; soft and mobile usually reflects a reactive process or phlegm-qi binding, while hard and fixed without pain raises strong suspicion for malignancy"
+        },
+        {
+          "dimension": "Timing",
+          "why": "Whether the swelling is persistent or waxes and wanes, and how long it has been present; persistence beyond 4–6 weeks without regressing is an important threshold for referral"
+        },
+        {
+          "dimension": "Triggers",
+          "why": "A recent sore throat, dental abscess, skin infection, cat scratch, insect bite, vaccination, or travel/animal-exposure history helps trace an infectious source"
+        },
+        {
+          "dimension": "Relief",
+          "why": "Whether the node shrinks with antibiotics or anti-inflammatory treatment, tracking resolution of the underlying infection; failure to regress, or continued growth, argues against simple reactive lymphadenopathy"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Fever, night sweats, unexplained weight loss, fatigue, or overlying skin ulceration/a non-healing draining sinus are the core clues that decide whether the red-flag referral pathway is triggered"
+        },
+        {
+          "dimension": "Course",
+          "why": "Rapid enlargement over days suggests acute infection or an aggressive disease process; slow enlargement over weeks to months that does not regress suggests malignancy; a relapsing, years-long waxing-and-waning course suggests chronic scrofula/phlegm-nodule"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "質軟不痛,推之可移",
+          "points_to": [
+            "pattern.phlegm_qi_binding"
+          ],
+          "distinguishing": "觸診質地柔軟如豆,邊界清楚,可推動而不與周圍組織粘連,皮色不變,病程緩慢、按之不痛或微脹,多伴胸脅脹悶、情緒抑鬱、苔薄膩、脈弦滑,常見於痰核、瘰癧初起"
+        },
+        {
+          "variant": "紅腫熱痛,拒按",
+          "points_to": [
+            "pattern.heat_toxin_blazing"
+          ],
+          "distinguishing": "局部皮膚焮紅灼熱,腫脹疼痛、按之痛甚拒按,發病急驟,常伴發熱、口渴、便秘尿黃,舌紅苔黃、脈數,多見於急性化膿性淋巴結炎"
+        },
+        {
+          "variant": "質硬如石,固定不移,不痛不癢",
+          "points_to": [
+            "pattern.phlegm_stasis_binding"
+          ],
+          "distinguishing": "結塊堅硬,推之不動,與周圍組織粘連,皮色不變或黯滯不澤,病程日久漸大而無明顯疼痛,舌質紫暗或有瘀斑,此型最需高度警惕惡性病變(失榮),應優先轉診"
+        },
+        {
+          "variant": "腫核經久不消或漸軟將潰,潮熱盜汗",
+          "points_to": [
+            "pattern.yin_deficiency_fire_flaring"
+          ],
+          "distinguishing": "腫核纏綿日久,或已見局部變軟欲潰,伴午後潮熱、夜間盜汗、五心煩熱、口燥咽乾、形體消瘦,舌紅少苔、脈細數,多見於瘰癧後期陰虛內熱"
+        },
+        {
+          "variant": "反覆腫大,勞累加重,神疲乏力",
+          "points_to": [
+            "pattern.qi_blood_deficiency"
+          ],
+          "distinguishing": "淋巴結反覆腫大、時消時長,勞累後明顯加重,平素神疲乏力、面色萎黃、食少便溏、易感冒,病程遷延反覆,多見於久病體虛或反覆感染之後"
+        },
+        {
+          "variant": "隨情緒起伏時大時小,脹悶不舒",
+          "points_to": [
+            "pattern.liver_qi_stagnation"
+          ],
+          "distinguishing": "結塊大小隨情緒波動而變化,伴胸脅脹悶、善太息、經前或情緒不佳時加重,按之微脹而痛不甚,舌苔薄白、脈弦"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Soft, non-tender, freely mobile",
+          "points_to": [
+            "pattern.phlegm_qi_binding"
+          ],
+          "distinguishing": "Soft on palpation like a small bean, well-circumscribed, mobile and not adherent to surrounding tissue, overlying skin unchanged, slow-growing with little or no tenderness; often with chest/hypochondriac fullness and low mood, thin greasy coating and a wiry-slippery pulse — typical of early phlegm-nodule or scrofula presentations"
+        },
+        {
+          "variant": "Red, hot, swollen and painful, worse for pressure",
+          "points_to": [
+            "pattern.heat_toxin_blazing"
+          ],
+          "distinguishing": "Overlying skin red and hot, markedly swollen and painful with pronounced tenderness, sudden onset, often with fever, thirst, constipation and dark urine, red tongue with yellow coating and a rapid pulse — typical of acute suppurative lymphadenitis"
+        },
+        {
+          "variant": "Hard as stone, fixed, painless",
+          "points_to": [
+            "pattern.phlegm_stasis_binding"
+          ],
+          "distinguishing": "A firm, unyielding mass that does not move under the fingers and is adherent to surrounding tissue, overlying skin unchanged or dusky, growing slowly over a long course with little pain, tongue dusky purple or with stasis spots — this presentation most urgently warrants suspicion for malignancy (\"loss-of-nourishment mass\") and should be referred first"
+        },
+        {
+          "variant": "Long-standing, softening toward rupture, with tidal fever and night sweats",
+          "points_to": [
+            "pattern.yin_deficiency_fire_flaring"
+          ],
+          "distinguishing": "A chronic, persistent node, sometimes already softening as if about to discharge, with afternoon tidal fever, night sweats, five-center heat, dry mouth and throat, and wasting; red tongue with little coating and a thin rapid pulse — typical of the late, yin-deficient-heat stage of scrofula"
+        },
+        {
+          "variant": "Recurrent swelling, worse with exertion, fatigue",
+          "points_to": [
+            "pattern.qi_blood_deficiency"
+          ],
+          "distinguishing": "Node recurrently swells and subsides, clearly worse after exertion, with a background of fatigue, sallow complexion, poor appetite, loose stools and frequent colds; a protracted, relapsing course typical of chronic illness or after repeated infection"
+        },
+        {
+          "variant": "Waxes and wanes with mood, with distending discomfort",
+          "points_to": [
+            "pattern.liver_qi_stagnation"
+          ],
+          "distinguishing": "Size of the mass fluctuates with emotional state, with chest/hypochondriac fullness, frequent sighing, worse premenstrually or with low mood, mild distending discomfort but little true pain on pressure, thin white coating and a wiry pulse"
+        }
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "Ferrer R. Lymphadenopathy: Differential Diagnosis and Evaluation. American Family Physician. 1998;58(6):1313-1320.",
+        "Bazemore AW, Smucker DR. Lymphadenopathy and Malignancy. American Family Physician. 2002;66(11):2103-2110.",
+        "Mohseni S, Shojaiefard A, Khorgami Z, et al. Peripheral Lymphadenopathy: Approach and Diagnostic Tools. Iranian Journal of Medical Sciences. 2014;39(2 Suppl):158-170.",
+        "NICE guideline NG12 — Suspected cancer: recognition and referral"
+      ],
+      "safety_flags": [
+        "infection_review",
+        "autoimmune_review",
+        "urgent_red_flag_review"
+      ],
+      "red_flags_zh": [
+        "淋巴結質地堅硬如石、固定不移、無壓痛 → 高度懷疑惡性腫瘤(轉移癌或淋巴瘤),須儘速轉診切片評估",
+        "鎖骨上窩淋巴結腫大(Virchow氏結) → 常提示胸腔或腹腔內惡性腫瘤,無論大小皆應立即轉診",
+        "淋巴結直徑超過 2 公分,且持續 4–6 週未消退甚或持續增大 → 需轉診排除淋巴瘤或轉移性疾病",
+        "合併不明原因發熱、夜間盜汗、體重明顯減輕(B 症狀) → 淋巴瘤或全身性惡性/感染性疾病的重要警訊",
+        "兩處以上非鄰接部位同時出現全身性淋巴結腫大 → 需排除病毒性感染(EBV/CMV/HIV)、自體免疫疾病或血液系統惡性疾病",
+        "表面皮膚發紅破潰、竇道形成、經久不癒合 → 需排除結核性淋巴結炎或深部化膿性感染,轉診做病原學與病理檢查",
+        "40 歲以上新發、無明顯感染來源的無痛性淋巴結腫大 → 惡性機率隨年齡上升,應提高警覺並優先轉診"
+      ],
+      "red_flags_en": [
+        "Firm or hard, fixed, non-tender lymph node → strongly suggests malignancy (metastatic cancer or lymphoma); refer promptly for biopsy evaluation",
+        "Supraclavicular lymphadenopathy (Virchow's node) → often signals intrathoracic or intra-abdominal malignancy regardless of size; refer immediately",
+        "Node larger than 2 cm that persists beyond 4–6 weeks without regressing, or continues to enlarge → refer to rule out lymphoma or metastatic disease",
+        "Accompanied by unexplained fever, night sweats, or significant weight loss (B symptoms) → an important warning sign for lymphoma or systemic malignant/infectious disease",
+        "Generalized lymphadenopathy in two or more non-contiguous regions → rule out viral infection (EBV/CMV/HIV), autoimmune disease, or a hematologic malignancy",
+        "Overlying skin redness, ulceration, or a persistent draining sinus that fails to heal → rule out tuberculous lymphadenitis or a deep suppurative infection; refer for culture and pathology",
+        "New, painless lymphadenopathy in a patient over 40 with no clear infectious source → malignancy risk rises with age; raise suspicion and refer promptly"
+      ],
+      "supporting_measurements": [
+        "metric.pain_score"
+      ],
+      "sources": [
+        "Ferrer R. Lymphadenopathy: Differential Diagnosis and Evaluation. American Family Physician. 1998;58(6):1313-1320.",
+        "Bazemore AW, Smucker DR. Lymphadenopathy and Malignancy. American Family Physician. 2002;66(11):2103-2110.",
+        "Mohseni S, Shojaiefard A, Khorgami Z, et al. Peripheral Lymphadenopathy: Approach and Diagnostic Tools. Iranian Journal of Medical Sciences. 2014;39(2 Suppl):158-170.",
+        "NICE guideline NG12 — Suspected cancer: recognition and referral（不明原因淋巴結腫大／疑似淋巴瘤轉診準則）",
+        "中醫外科學 通行教材 —— 痰核、瘰癧、失榮 章節(病機與辨證分型)",
+        "本 repo 既有卡片:pattern_library 各證型 key_signs_zh 對照(熱毒熾盛、痰氣互結、痰瘀互結、陰虛火旺、氣血兩虛、肝氣鬱結)"
+      ],
+      "field_sources": {
+        "definition_zh/en": "Mohseni S et al. Peripheral Lymphadenopathy: Approach and Diagnostic Tools (Iran J Med Sci 2014) 對淋巴結腫大作為表徵的界定；中醫外科學 通行教材 痰核／瘰癧／失榮 章節",
+        "inquiry_zh/en": "Ferrer R. Lymphadenopathy: Differential Diagnosis and Evaluation (Am Fam Physician 1998) 與 Bazemore & Smucker. Lymphadenopathy and Malignancy (Am Fam Physician 2002) 的觸診特徵與問診要點",
+        "differentiation_zh/en": "中醫外科學 通行教材 痰核／瘰癧／失榮 辨證分型 + 本 repo pattern_library 各證型 key_signs_zh 對照",
+        "red_flags_zh/en": "NICE guideline NG12（Suspected cancer: recognition and referral）+ Bazemore & Smucker 2002 + Mohseni et al. 2014 的惡性警示特徵(質地、鎖骨上位置、大小、持續時間、伴隨 B 症狀、年齡)",
+        "supporting_measurements": "data/clinical_cases/outcome_metrics.json — metric.pain_score(既有,未新增)"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "sym.vaginal_dryness",
+      "name_zh": "陰道乾澀",
+      "name_en": "Vaginal dryness",
+      "pinyin": "yin dao gan se",
+      "pinyin_toned": "yīn dào gān sè",
+      "taxonomy_ids": [
+        "sym.female"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported",
+        "examiner_observed"
+      ],
+      "primary_mode": "patient_reported",
+      "aliases_en": [
+        "Vulvovaginal dryness",
+        "Vaginal atrophy symptom",
+        "Genitourinary syndrome of menopause (dryness)"
+      ],
+      "aliases_zh": [
+        "陰道乾燥",
+        "外陰陰道乾澀",
+        "下體乾澀"
+      ],
+      "definition_en": "Dryness, tightness, burning, or friction discomfort of the vaginal and vulvar mucosa from reduced lubrication, often with pain during intercourse. A presenting complaint, not a diagnosis — the same vaginal dryness can sit under postmenopausal estrogen decline (genitourinary syndrome of menopause / vaginal atrophy), lactation-related estrogen suppression, anti-estrogen medication, or Sjögren's syndrome in biomedicine, or under the TCM categories of Kidney Yin deficiency, Liver Blood deficiency, or Chong-Ren essence-blood insufficiency failing to moisten the lower burner.",
+      "definition_zh": "陰道及外陰部黏膜濕潤度下降所產生的乾燥、緊繃、灼熱或摩擦不適感,常伴性交疼痛。是主訴而非診斷——同一個陰道乾澀,西醫可見於停經後雌激素低下(停經泌尿生殖症候群／陰道萎縮)、哺乳期雌激素抑制、抗雌激素藥物治療、修格蘭氏症候群等,中醫則多屬腎陰虛、肝血虛、衝任精血虧虛,精血津液不能濡養下焦所致。",
+      "patient_words_en": "\"It's really dry down there, sex hurts\", \"there's hardly any lubrication left, everything feels like friction\", \"it itches and stings, especially during intercourse\", \"it started after menopause and keeps getting worse every year\", \"it feels tight and uncomfortable even just sitting\"",
+      "patient_words_zh": "「下面很乾,同房會痛」「好像都沒有分泌物了,摩擦感很重」「會癢又刺痛,尤其是行房的時候」「停經後就變這樣,一年比一年嚴重」「緊緊繃繃的,坐久也不舒服」",
+      "clinical_attributes": {
+        "location": {
+          "applicable": false
+        },
+        "quality": {
+          "applicable": true,
+          "vocabulary": "symptom_quality",
+          "diagnostic_note_zh": "灼(灼熱感)提示陰虛內熱,是腎陰虛證的辨證重點;若乾澀而無明顯灼熱等熱象,多屬肝血虛、衝任精血虧虛或氣血兩虛,精血津液不足以濡潤下焦"
+        },
+        "laterality": {
+          "applicable": false
+        },
+        "timing": {
+          "applicable": true,
+          "vocabulary": "symptom_timing"
+        },
+        "severity": {
+          "applicable": false,
+          "why": "實例值,屬病例層(§8)"
+        },
+        "duration": {
+          "applicable": false,
+          "why": "實例值,屬病例層(§8)"
+        }
+      },
+      "inquiry_en": [
+        {
+          "dimension": "Triggers",
+          "why": "Determines whether the dryness is physiologic (menopause/lactation), medication-induced, or autoimmune — the management path differs completely"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Whether there is bleeding — especially postmenopausal or postcoital bleeding — is the single most important red-flag sign here; a positive finding requires prompt gynecologic referral to rule out endometrial or cervical pathology rather than being attributed to simple dryness. Also assess for dry eyes, dry mouth, and joint pain, which determine whether referral to rheumatology (to rule out autoimmune disease) or dermatology (to rule out vulvar skin disease) is needed"
+        },
+        {
+          "dimension": "Timing",
+          "why": "A continuous, progressive course usually reflects sustained postmenopausal estrogen decline; cyclical fluctuation suggests ovarian function has not yet fully declined"
+        },
+        {
+          "dimension": "Degree",
+          "why": "Determines how aggressively to treat, and is the most direct patient-reported outcome for tracking response"
+        },
+        {
+          "dimension": "Relief",
+          "why": "Whether relief occurs helps distinguish simple mucosal dryness from a case complicated by infection or another pathology"
+        },
+        {
+          "dimension": "Course",
+          "why": "New, persistent dryness in a young premenopausal patient warrants evaluation for premature ovarian insufficiency, not an assumption of normal aging"
+        }
+      ],
+      "inquiry_zh": [
+        {
+          "dimension": "誘因",
+          "why": "決定乾澀是生理性(停經／哺乳)、藥物誘發、還是自體免疫所致,處置方向完全不同"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "有無出血(特別是停經後或性交後出血)是本症最重要的紅旗徵象,陽性應優先轉診婦科排除子宮內膜或子宮頸病變,而非逕自歸因於單純乾澀;另需留意有無眼乾、口乾、關節痛等全身伴隨症,以判斷是否需轉診風濕免疫科排除自體免疫疾病,或轉診皮膚科排除外陰皮膚病變"
+        },
+        {
+          "dimension": "時間",
+          "why": "持續進行性多屬停經雌激素持續低下;週期性波動則提示卵巢功能尚未完全衰退"
+        },
+        {
+          "dimension": "程度",
+          "why": "決定治療積極度,也是追蹤療效時最直接的病人自評指標"
+        },
+        {
+          "dimension": "緩解",
+          "why": "有效與否可反推病因是單純黏膜乾燥,還是合併感染或其他病理"
+        },
+        {
+          "dimension": "病程",
+          "why": "停經前年輕患者新發且持續的乾澀,需考慮卵巢功能早衰,不可逕自歸因於老化"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Genital dryness with a burning sensation, tidal fever and night sweats",
+          "points_to": [
+            "pattern.kidney_yin_deficiency"
+          ],
+          "distinguishing": "Genital dryness with a mild burning sensation or pain on intercourse, usually around menopause, with tidal fever and night sweats worse in the afternoon or at night, five-center heat, sore weak low back and knees, dizziness and tinnitus, and a red tongue with scant coating — Tiangui approaching exhaustion, Kidney Yin insufficient to nourish the uterus and vulva; the most common pattern behind this symptom"
+        },
+        {
+          "variant": "Genital dryness without heat signs, dizziness, pale nails and lips",
+          "points_to": [
+            "pattern.liver_blood_deficiency"
+          ],
+          "distinguishing": "Genital dryness without a marked burning sensation or other heat signs, with dizziness, blurred vision, a pale or sallow complexion, pale brittle nails, and scanty pale menstruation — usually following postpartum hemorrhage, chronic blood loss, or emotional strain depleting Liver Blood, leaving the uterine vessels and vulva without moisture"
+        },
+        {
+          "variant": "Genital dryness with progressively scanty menses or amenorrhea, infertility",
+          "points_to": [
+            "pattern.chong_ren_deficiency"
+          ],
+          "distinguishing": "Genital dryness together with progressively scanty menstruation or amenorrhea and difficulty conceiving, with sore weak low back and knees and dizziness with tinnitus — seen with premature ovarian insufficiency, repeated pregnancy termination, or multiple pregnancies depleting essence-blood, leaving the Chong-Ren vessels and uterus undernourished; distinguished from plain Kidney Yin deficiency by leading involvement of the whole reproductive axis (menses and fertility), not just local dryness with heat signs"
+        },
+        {
+          "variant": "Genital dryness with fatigue, sallow complexion, palpitations and insomnia",
+          "points_to": [
+            "pattern.qi_blood_deficiency"
+          ],
+          "distinguishing": "Genital dryness without prominent heat signs, dominated instead by mental fatigue, shortness of breath and reluctance to speak, a pale or sallow complexion, palpitations, insomnia, and poor appetite — seen in chronic illness, after chemotherapy, or in frail elderly patients; combined Qi and Blood deficiency depletes fluids, essence, and blood alike, leaving the lower burner without nourishment"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "陰道乾澀灼熱,潮熱盜汗,五心煩熱",
+          "points_to": [
+            "pattern.kidney_yin_deficiency"
+          ],
+          "distinguishing": "多見於停經前後,陰部乾澀伴輕度灼熱感或性交疼痛,同時有午後或夜間潮熱盜汗、五心煩熱、腰膝痠軟、頭暈耳鳴,舌紅少苔——天癸將竭、腎陰不足,精血無以下榮胞宮陰戶,為本症最常見的證型"
+        },
+        {
+          "variant": "陰道乾澀但無明顯熱象,頭暈眼花,爪甲唇色淡白",
+          "points_to": [
+            "pattern.liver_blood_deficiency"
+          ],
+          "distinguishing": "陰部乾澀,但少有灼熱或潮熱等熱象,兼頭暈眼花、視物模糊、面色蒼白或萎黃、爪甲不榮、月經量少色淡,常見於產後失血過多、慢性失血或情志耗傷肝血之後,血虛不能濡潤胞脈陰戶所致"
+        },
+        {
+          "variant": "陰道乾澀合併月經量進行性減少或閉經,不易受孕",
+          "points_to": [
+            "pattern.chong_ren_deficiency"
+          ],
+          "distinguishing": "陰道乾澀合併月經量進行性減少甚至閉經、不易受孕,兼腰膝痠軟、頭暈耳鳴,多見於卵巢功能早衰、反覆人工流產或多產耗傷精血者,衝任二脈失於濡養、胞宮失養所致——與單純腎陰虛的差異在於本證以生殖軸功能全面衰退(經、孕)為主症,非僅局部乾澀熱象"
+        },
+        {
+          "variant": "陰道乾澀,神疲乏力,面色萎黃,心悸失眠",
+          "points_to": [
+            "pattern.qi_blood_deficiency"
+          ],
+          "distinguishing": "陰道乾澀但熱象不顯,以神疲乏力、氣短懶言、面色淡白或萎黃、心悸失眠、食慾不振為主,常見於慢性病、化療後或高齡體弱者,氣血兩虛、化源不足,津液精血俱乏,無以濡養下焦"
+        }
+      ],
+      "red_flags_en": [
+        "Vaginal dryness with postmenopausal or postcoital bleeding → gynecologic evaluation needed first to rule out endometrial or cervical pathology",
+        "Vulvar skin changes — white patches, thickening or thinning, fissuring, or a non-healing ulcer → rule out lichen sclerosus or vulvar (pre)malignancy; refer to gynecology or dermatology",
+        "Vaginal dryness with dry eyes, dry mouth, and joint pain → consider Sjögren's syndrome or another autoimmune disease; refer to rheumatology",
+        "Dryness clearly tied to an aromatase inhibitor, anti-estrogen therapy (e.g. for breast cancer), or another medication and severely affecting quality of life → discuss with the prescriber; do not stop the medication independently",
+        "Fever, purulent or foul-smelling discharge, or severe pain → rule out infection, seek prompt medical care",
+        "New persistent vaginal dryness in a young premenopausal patient, with menstrual irregularity or amenorrhea → evaluate for premature ovarian insufficiency"
+      ],
+      "red_flags_zh": [
+        "陰道乾澀合併停經後出血或性交後出血 → 需優先婦科評估,排除子宮內膜或子宮頸病變",
+        "外陰皮膚出現白斑、增厚或變薄、皸裂或潰瘍不癒 → 需排除外陰硬化性苔癬或外陰癌前病變,轉診婦科或皮膚科",
+        "陰道乾澀合併眼乾、口乾、關節痛 → 需考慮修格蘭氏症候群等自體免疫疾病,轉診風濕免疫科評估",
+        "明確與芳香酶抑制劑、抗雌激素治療(如乳癌治療用藥)或其他藥物相關,且嚴重影響生活品質 → 應與處方醫師討論,不可自行停藥",
+        "合併發燒、化膿或惡臭分泌物、劇烈疼痛 → 需排除感染,儘速就醫",
+        "停經前年輕患者新發持續性陰道乾澀,合併月經紊亂或停經 → 需評估卵巢功能早衰"
+      ],
+      "safety_flags": [
+        "dryness_review",
+        "medication_review",
+        "autoimmune_review",
+        "bleeding_review"
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "NAMS 2020 — The 2020 genitourinary syndrome of menopause position statement of The North American Menopause Society",
+        "ACOG Practice Bulletin No. 141 — Management of Menopausal Symptoms",
+        "NICE NG12 — Suspected cancer: recognition and referral(停經後出血轉診準則)",
+        "British Association of Dermatologists — Guidelines for the management of lichen sclerosus 2018",
+        "2016 ACR-EULAR Classification Criteria for Primary Sjögren's Syndrome"
+      ],
+      "sources": [
+        "NAMS 2020 — The 2020 genitourinary syndrome of menopause position statement of The North American Menopause Society(GSM 定義與紅旗)",
+        "ACOG Practice Bulletin No. 141 — Management of Menopausal Symptoms(病因與臨床處置)",
+        "NICE NG12 — Suspected cancer: recognition and referral(停經後出血轉診準則)",
+        "British Association of Dermatologists — Guidelines for the management of lichen sclerosus 2018(外陰皮膚紅旗)",
+        "2016 ACR-EULAR Classification Criteria for Primary Sjögren's Syndrome(自體免疫紅旗)",
+        "中醫婦科學 通行教材 —— 絕經前後諸證篇、陰癢篇(腎陰虛、肝血虛、衝任虛損、氣血兩虛分證)",
+        "本 repo 既有卡片:pattern_library 各證型 key_signs_zh;sym.hot_flash、sym.dry_eyes、sym.vaginal_discharge 格式與內容參照"
+      ],
+      "supporting_measurements": [],
+      "field_sources": {
+        "definition_zh/en": "NAMS 2020 genitourinary syndrome of menopause 位置聲明對陰道乾澀／GSM 的定義 + 中醫婦科學 絕經前後諸證篇一般描述",
+        "inquiry_zh/en": "ACOG Practice Bulletin No. 141 病因分類(生理性／藥物性)+ 2016 ACR-EULAR 分類準則(自體免疫性病因)+ NICE NG12 停經後出血轉診準則;dimension 詞彙依 docs/SYMPTOM_CARD_TEMPLATE.md §6.4 固定詞彙表收斂,出血相關內容併入「伴隨症」",
+        "differentiation_zh/en": "中醫婦科學 絕經前後諸證／衝任病機篇分證 + 本 repo pattern_library 對應證型 key_signs_zh/tongue_zh/pulse_zh 逐條核對",
+        "red_flags_zh/en": "NICE NG12(停經後出血轉診準則)+ British Association of Dermatologists 2018(外陰皮膚硬化性苔癬紅旗)+ 2016 ACR-EULAR 分類準則(自體免疫紅旗)+ NAMS 2020(藥物性／感染性紅旗)",
+        "supporting_measurements": "刻意留空——目前 27 個 outcome metrics 無對應陰道乾澀量化項",
+        "clinical_attributes.quality": "data/config/symptom_quality.json 收錄 burning/灼;本卡 differentiation 以灼熱有無區分腎陰虛與肝血虛/衝任虛損/氣血兩虛三證,故 quality 應為 applicable:true 而非 false"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "sym.unsteady_gait",
+      "name_zh": "步態不穩",
+      "name_en": "Unsteady gait",
+      "pinyin": "bu tai bu wen",
+      "pinyin_toned": "bù tài bù wěn",
+      "aliases_zh": [
+        "走路不穩",
+        "步履蹣跚",
+        "行走不穩"
+      ],
+      "aliases_en": [
+        "Gait instability",
+        "Unsteady walking",
+        "Wobbly gait"
+      ],
+      "taxonomy_ids": [
+        "sym.general_limb"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported",
+        "examiner_observed"
+      ],
+      "primary_mode": "examiner_observed",
+      "definition_zh": "行走時身體搖晃、東倒西歪，雙腳難以穩定支撐，或步伐明顯偏向一側、呈寬基底步態，病人常自覺隨時可能跌倒、需要扶靠支撐物才敢行走。這是一個主訴兼可觀察的體徵，不是診斷——步態不穩是前庭病變、小腦性共濟失調、本體感覺喪失(周邊神經病變、脊髓病變)、巴金森氏症、姿位性低血壓、藥物副作用(鎮靜安眠藥、降壓藥)乃至急性腦血管病變等多種病因共同的最終表現路徑，臨床上必須先問清楚是哪一種型態，才能決定評估與轉診的方向。",
+      "definition_en": "A gait that sways, staggers, veers to one side, or is broad-based, with poor balance while walking — the patient often feels they might fall at any moment and needs to hold onto something to walk safely. Both a presenting complaint and an observable sign, not a diagnosis — unsteady gait is the common final pathway for a wide range of causes: vestibular dysfunction, cerebellar ataxia, loss of proprioception (peripheral neuropathy, spinal cord disease), Parkinsonism, orthostatic hypotension, medication side effects (sedatives, antihypertensives), or acute cerebrovascular disease. Sorting out which pattern is present is the first step before deciding how to work it up or refer.",
+      "patient_words_zh": "「走路東倒西歪，好像隨時會跌倒」「腳步踩不穩，像踩在棉花上」「走一走會偏向一邊」「需要扶著牆或家具才敢走」「晚上或閉著眼睛更容易不穩」「站起來那一下天旋地轉，走路就晃」",
+      "patient_words_en": "\"I stagger when I walk, like I'm about to fall\", \"my steps feel unsteady, like walking on cotton\", \"I drift to one side when I walk\", \"I need to hold onto the wall or furniture to feel safe walking\", \"it's worse at night or with my eyes closed\", \"the room spins when I stand up, then I wobble when I walk\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": false
+        },
+        "quality": {
+          "applicable": false
+        },
+        "laterality": {
+          "applicable": true,
+          "vocabulary": "symptom_laterality"
+        },
+        "timing": {
+          "applicable": true,
+          "vocabulary": "symptom_timing"
+        },
+        "severity": {
+          "applicable": false,
+          "why": "實例值，屬病例層（§8）"
+        },
+        "duration": {
+          "applicable": false,
+          "why": "實例值，屬病例層（§8）"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "部位",
+          "why": "單側偏斜、跛行或拖曳步態多提示單側中樞(小腦、大腦半球)或周邊神經病灶；雙側對稱的寬基底步態多見於周邊神經病變或雙側前庭功能減退"
+        },
+        {
+          "dimension": "誘因",
+          "why": "閉眼或暗處加重提示本體感覺或前庭代償不足；站起瞬間加重提示姿位性低血壓；特定藥物(鎮靜安眠藥、降壓藥、酒精)常是可逆病因"
+        },
+        {
+          "dimension": "時間",
+          "why": "夜間或用藥後加重提示藥物相關；晨起站立時加重需考慮姿位性低血壓"
+        },
+        {
+          "dimension": "緩解",
+          "why": "需扶物或倚賴視覺才能走穩，提示本體感覺或前庭代償依賴；閉眼後明顯惡化即陽性 Romberg 徵"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "眩暈、複視、言語不清、單側肢體無力麻木 → 立即啟動中風流程；尿失禁與認知功能減退 → 提示常壓性腦積水；靜止性震顫與肌強直 → 提示巴金森氏症"
+        },
+        {
+          "dimension": "病程",
+          "why": "急性突發須優先排除腦血管病變；緩慢漸進多見於周邊神經病變、退化性疾病或藥物累積效應；跌倒史與跌倒頻率決定是否啟動跌倒風險評估"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Location",
+          "why": "Unilateral veering, limping, or a dragging gait suggests a one-sided central (cerebellar/hemispheric) or peripheral lesion; a symmetric wide-based gait suggests peripheral neuropathy or bilateral vestibular loss"
+        },
+        {
+          "dimension": "Triggers",
+          "why": "Worse with eyes closed or in the dark suggests impaired proprioception or vestibular compensation; worse immediately on standing suggests orthostatic hypotension; specific medications (sedatives, antihypertensives, alcohol) are often a reversible cause"
+        },
+        {
+          "dimension": "Timing",
+          "why": "Worse at night or after taking medication suggests a drug-related cause; worse on waking raises orthostatic hypotension"
+        },
+        {
+          "dimension": "Relief",
+          "why": "Needing to hold onto something or rely on vision to walk safely suggests dependence on proprioceptive or vestibular compensation; marked worsening with eyes closed is a positive Romberg sign"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Vertigo, double vision, slurred speech, or one-sided limb weakness/numbness → start the stroke pathway immediately; urinary incontinence with cognitive decline → suggests normal pressure hydrocephalus; resting tremor with rigidity → suggests parkinsonism"
+        },
+        {
+          "dimension": "Course",
+          "why": "Acute sudden onset should first rule out cerebrovascular disease; slow gradual onset is more typical of peripheral neuropathy, degenerative disease, or cumulative medication effect; fall history and frequency determine whether a falls-risk assessment should be triggered"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "步態浮虛不穩，兼頭暈耳鳴、腰膝痠軟",
+          "points_to": [
+            "pattern.kidney_essence_deficiency"
+          ],
+          "distinguishing": "步態緩慢虛浮、如踩棉絮，兼頭暈耳鳴、健忘、腰膝痠軟、齒搖髮脫，多見於年長或久病者，腦為髓海，髓海不足則步履不正"
+        },
+        {
+          "variant": "步態遲緩不穩，兼頭暈耳鳴、腰膝痠軟、五心煩熱",
+          "points_to": [
+            "pattern.liver_kidney_yin_deficiency"
+          ],
+          "distinguishing": "步態遲緩、動作徐緩，兼眩暈耳鳴、眼乾或視物模糊、腰膝痠軟、五心煩熱或低熱、盜汗、咽乾，舌紅少苔或無苔，脈細數可兼弦——多見於年長或久病，肝腎陰虛、筋脈失於濡養故步履遲滯不穩；與腎精不足證(無明顯熱象)不同，肝腎陰虛以五心煩熱、盜汗等虛熱之象為辨"
+        },
+        {
+          "variant": "步態不穩，兼神疲乏力、氣短懶言",
+          "points_to": [
+            "pattern.qi_blood_deficiency"
+          ],
+          "distinguishing": "步態虛軟無力，勞累後加重，休息可稍緩，兼神疲乏力、氣短懶言、面色淡白或萎黃、心悸"
+        },
+        {
+          "variant": "步態沉重不穩，頭重如裹，兼胸悶痰多",
+          "points_to": [
+            "pattern.phlegm_damp"
+          ],
+          "distinguishing": "步態沉重不穩，兼頭暈昏沉如裹、胸悶脘痞、痰多、身重困倦，陰雨天加重"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Weak, floating unsteady gait with dizziness, tinnitus, low back/knee weakness",
+          "points_to": [
+            "pattern.kidney_essence_deficiency"
+          ],
+          "distinguishing": "Slow, floating gait as if walking on cotton, with dizziness, tinnitus, forgetfulness, weak aching low back and knees, loosening teeth and hair loss — usually elderly or chronic illness; the brain is the 'sea of marrow', so essence deficiency leaves the gait unsteady"
+        },
+        {
+          "variant": "Slow, sluggish unsteady gait with dizziness, tinnitus, and low back/knee soreness",
+          "points_to": [
+            "pattern.liver_kidney_yin_deficiency"
+          ],
+          "distinguishing": "Slow, sluggish gait with dizziness, tinnitus, dry or blurred eyes, sore weak low back and knees, five-center Heat or low-grade fever, night sweats, and dry throat; tongue red with little or no coating, pulse thin and rapid, possibly wiry — typically in the elderly or with chronic illness, as Liver-Kidney Yin deficiency leaves the sinews unnourished and the gait grows sluggish and unsteady; distinguished from Kidney Essence Deficiency (no heat signs) by these deficiency-Heat features"
+        },
+        {
+          "variant": "Weak unsteady gait with fatigue and shortness of breath",
+          "points_to": [
+            "pattern.qi_blood_deficiency"
+          ],
+          "distinguishing": "Weak, unsteady gait worse after exertion and somewhat relieved by rest, with fatigue, shortness of breath, reluctance to speak, pale or sallow complexion, palpitations"
+        },
+        {
+          "variant": "Heavy unsteady gait with a muzzy heavy head and chest fullness",
+          "points_to": [
+            "pattern.phlegm_damp"
+          ],
+          "distinguishing": "Heavy, unsteady gait with a muzzy heaviness in the head as if wrapped, chest and epigastric fullness, copious phlegm, heavy tired limbs, worse in damp weather"
+        }
+      ],
+      "red_flags_zh": [
+        "突然出現步態不穩、平衡或協調喪失，尤其合併臉部下垂、單側手臂無力、言語不清或視覺改變 → 依 BE-FAST 原則視為中風，立即送急診",
+        "步態不穩合併眩暈、噁心嘔吐、複視或嚴重頭痛，且為突然發作 → 小腦掌管平衡與協調，此組合提示小腦或後循環中風，需緊急神經學評估",
+        "老年人新發或惡化的步態不穩，或有跌倒史／跌倒風險徵象 → 建議依跌倒風險準則(如 NICE NG249)進行多面向跌倒風險評估",
+        "步態不穩合併尿失禁與認知功能減退(步態異常常是三主徵中最早、最主要的表現) → 提示常壓性腦積水，屬潛在可逆病因，惟即使符合完整三主徵，分流手術後也並非人人能完全恢復，建議神經影像評估"
+      ],
+      "red_flags_en": [
+        "Sudden onset of unsteady gait with loss of balance or coordination, especially with facial drooping, one-sided arm weakness, slurred speech, or vision change → treat as stroke per the BE-FAST protocol, seek emergency care immediately",
+        "Unsteady gait with vertigo, nausea/vomiting, double vision, or severe headache, especially with sudden onset → the cerebellum governs balance and coordination, so this combination suggests cerebellar or posterior-circulation stroke and needs urgent neurological evaluation",
+        "New or worsening unsteady gait in an older adult, or a history of falls / fall-risk signs → recommend a multifactorial falls-risk assessment per falls guidance such as NICE NG249",
+        "Unsteady gait with urinary incontinence and cognitive decline (gait disturbance is usually the earliest and most dominant of the three) → suggests normal pressure hydrocephalus, a potentially reversible cause — even among patients with the full triad, shunting does not fully resolve symptoms in everyone — recommend neuroimaging evaluation"
+      ],
+      "safety_flags": [
+        "neurologic_red_flags"
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "American Stroke Association, \"B.E. F.A.S.T. Experience: Balance Loss\", https://www.stroke.org/en/be-fast-experience/balance-loss, retrieved 2026-08-24",
+        "NICE guideline NG249, \"Falls: assessment and prevention in older people and in people 50 and over at higher risk\" (2025, replaces CG161), https://www.nice.org.uk/guidance/ng249, retrieved 2026-08-24",
+        "PMC, \"The Triad of Idiopathic Normal-Pressure Hydrocephalus: A Clinical Practice Case Report\", https://pmc.ncbi.nlm.nih.gov/articles/PMC3074332/, retrieved 2026-08-24"
+      ],
+      "supporting_measurements": [],
+      "sources": [
+        "American Stroke Association, B.E. F.A.S.T. Experience: Balance Loss (https://www.stroke.org/en/be-fast-experience/balance-loss, retrieved 2026-08-24)(紅旗：急性中風平衡徵象)",
+        "NICE guideline NG249, Falls: assessment and prevention in older people and in people 50 and over at higher risk (https://www.nice.org.uk/guidance/ng249, retrieved 2026-08-24)(紅旗：跌倒風險評估；2025 年發布，取代 2013 年版 CG161)",
+        "PMC, The Triad of Idiopathic Normal-Pressure Hydrocephalus: A Clinical Practice Case Report (https://pmc.ncbi.nlm.nih.gov/articles/PMC3074332/, retrieved 2026-08-24)(紅旗：常壓性腦積水三主徵，完整三主徵患者術後改善比例並非100%)",
+        "中醫內科學／中醫診斷學 通行教材 —— 眩暈、痿證、顫證篇步態相關證型鑑別(腎精不足、肝腎陰虛、氣血兩虛、痰濕內蘊)",
+        "本 repo 既有卡片：sym.dizziness · sym.vertigo · sym.tremor · sym.bradykinesia · pattern_library 各證型 key_signs_zh/tongue_zh/pulse_zh(逐一核對內容後選用，非逐卡複製；sym.vertigo、sym.bradykinesia 現仍指向已依 DECISIONS.md D16 停用、應併入 pattern.liver_wind 的 pattern.liver_wind_stirring，尚未遷移，本卡不宣稱與其一致)；步態遲緩兼虛熱一項改採 pattern.liver_kidney_yin_deficiency，與 sym.tremor 既有變體、本 repo cond.parkinsons etiology_zh 所列常見證型『肝腎陰虛』相符"
+      ],
+      "field_sources": {
+        "definition_zh/en": "一般臨床對 gait instability/unsteady gait 的定義(前庭、小腦、本體感覺、巴金森氏症、姿位性低血壓、藥物等多重病因架構) + 中醫內科學 眩暈／痿證 步態相關描述",
+        "clinical_attributes.laterality/timing": "單側 vs 雙側對稱的臨床區辨、姿位性低血壓與 Romberg 徵(暗處/閉眼加重)為一般神經學檢查常識架構",
+        "differentiation_zh/en": "中醫內科學 眩暈／痿證／顫證步態相關證型 + 本 repo 既有卡片 sym.dizziness、sym.vertigo、sym.tremor、sym.bradykinesia 之證型對照庫(逐一核對內容後選用，各卡實際採用的證型 id 並不完全一致——例如 sym.vertigo、sym.bradykinesia 現仍指向已依 DECISIONS.md D16 停用、應併入 pattern.liver_wind 的 pattern.liver_wind_stirring，尚未遷移，本卡不宣稱與其一致，僅取可核對的內容為參考)；原第2條擬指向 pattern.liver_wind 描述慢性步態遲緩兼震顫的巴金森氏症型態，但實查 pattern_library.json，pattern.liver_wind 自身 key_signs_zh(眩暈欲仆、肢體震顫、抽搐、言語不利甚則卒然昏仆)、tongue_zh(舌紅)、pulse_zh(脈弦有力)描述的是肝陽化風之急性中風前兆實熱證，與慢性退化性步態不符，故改指 pattern.liver_kidney_yin_deficiency——該證型自身 key_signs_zh(眩暈耳鳴/眼乾或視物模糊/腰膝痠軟/五心煩熱或低熱/盜汗/咽乾)、tongue_zh(舌紅，少苔或無苔)、pulse_zh(脈細數，可兼弦)可支持步態遲緩兼虛熱之描述，且與 sym.tremor 既有變體(震顫緩慢細微，兼腰膝痠軟、健忘、五心煩熱，多見於年長或久病)、本 repo cond.parkinsons etiology_zh 所列常見證型『肝腎陰虛』相符；急性中風偏癱情境已在 red_flags 明確列出，避免鑑別表與紅旗表互相打架",
+        "red_flags_zh/en": "American Stroke Association B.E. F.A.S.T.(急性中風平衡徵象，2026-08-24 查證) + NICE guideline NG249(跌倒風險評估，2025 年發布，取代 2013 年版 CG161，2026-08-24 查證) + PMC 常壓性腦積水三主徵案例報告(2026-08-24 查證；該報告指出完整三主徵患者術後改善比例約61.2%，非人人可逆，故 red_flags 措辭已加註限定語)",
+        "supporting_measurements": "刻意留空 —— 現有 27 個 outcome metrics 無步態速度／平衡評分／跌倒次數對應量化項"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "sym.hematemesis",
+      "name_zh": "吐血",
+      "name_en": "Hematemesis",
+      "pinyin": "tu xue",
+      "pinyin_toned": "tù xuè",
+      "aliases_zh": [
+        "嘔血"
+      ],
+      "aliases_en": [
+        "Vomiting blood"
+      ],
+      "taxonomy_ids": [
+        "sym.dietary_gastrointestinal"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported",
+        "examiner_observed"
+      ],
+      "primary_mode": "patient_reported",
+      "definition_zh": "血液經口嘔吐而出，多混有胃內容物，是上消化道出血最典型的表現之一。血色與性狀反映出血速度與在胃內停留的時間——鮮紅色、質地較稀者多為活動性大出血；暗紅色、混有食物殘渣、呈咖啡渣樣者，提示血液已與胃酸作用形成正鐵血紅素，出血速度較緩或已趨緩。西醫將吐血列為需立即評估的警示症狀，常見於消化性潰瘍、食道或胃靜脈曲張破裂、胃黏膜病變等；需與咳血（血液來自下呼吸道，經咳嗽而出）及口鼻咽喉出血後吞入再吐出者鑑別來源。中醫將本症歸入「血證」範疇，依血色、性狀與兼證辨其寒熱虛實。",
+      "definition_en": "Blood expelled through the mouth by vomiting, usually mixed with stomach contents — one of the classic presentations of upper gastrointestinal bleeding. The color and character of the blood reflect the rate of bleeding and how long it has sat in the stomach: bright red, thinner blood usually indicates active, brisk bleeding; dark red or coffee-ground vomitus, mixed with food residue, indicates the blood has reacted with gastric acid to form acid hematin, suggesting slower or recently-stopped bleeding. Biomedicine lists hematemesis as a warning symptom requiring immediate evaluation, commonly seen in peptic ulcer disease, ruptured esophageal or gastric varices, and gastric mucosal lesions; it must be distinguished from hemoptysis (blood from the lower respiratory tract, expelled by coughing) and from blood that was swallowed after a nose/mouth/throat bleed and then vomited back up. TCM places this symptom under the \"Blood Disorders\" (血證) category, differentiating cold/heat/deficiency/excess by the blood's color, character, and accompanying signs.",
+      "patient_words_zh": "「吐出來的是紅色的」「吐了一大口血」「吐的東西像咖啡渣」「吐出來混著食物，顏色暗暗的」「吐到胃在抽痛」",
+      "patient_words_en": "\"What came up was red\", \"I threw up a mouthful of blood\", \"it looked like coffee grounds\", \"there was dark stuff mixed with food in it\", \"my stomach was cramping while I was throwing it up\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": false
+        },
+        "quality": {
+          "applicable": false
+        },
+        "laterality": {
+          "applicable": false
+        },
+        "timing": {
+          "applicable": true,
+          "vocabulary": "symptom_timing"
+        },
+        "severity": {
+          "applicable": false,
+          "why": "實例值，屬病例層（§8）"
+        },
+        "duration": {
+          "applicable": false,
+          "why": "實例值，屬病例層（§8）"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "性質",
+          "why": "血色鮮紅、質稀多為活動性大出血；暗紅或咖啡渣樣、質稠夾食物殘渣，提示血液已與胃酸作用一段時間，出血速度較緩——是判斷出血是否仍在進行、危急程度的第一問"
+        },
+        {
+          "dimension": "時間",
+          "why": "空腹時或夜間發作提示消化性潰瘍；長期飲酒者急性大量發作、無明顯誘因，需優先考慮食道或胃靜脈曲張破裂"
+        },
+        {
+          "dimension": "誘因",
+          "why": "飲酒、辛辣飲食、非類固醇消炎止痛藥（NSAID）或抗凝血劑使用史、劇烈嘔吐或乾嘔之後（提示 Mallory-Weiss 撕裂）、已知肝硬化或潰瘍病史，都直接指向不同的出血來源"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "頭暈、心悸、冷汗、心跳加快提示低血容量性休克，紅旗都掛在這一問；隨後解黑便（柏油便）可確認上消化道持續出血；胸骨後灼熱痛或吞嚥困難則指向食道來源"
+        },
+        {
+          "dimension": "病程",
+          "why": "首次發作與慢性潰瘍或肝硬化靜脈曲張反覆出血的評估與轉診急迫性完全不同——這一問決定要不要立即送急診"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Quality",
+          "why": "Bright red, thin blood usually means active brisk bleeding; dark red or coffee-ground, thicker vomitus mixed with food residue suggests the blood has reacted with gastric acid over time and bleeding has slowed — the first question for judging whether bleeding is ongoing and how urgent it is"
+        },
+        {
+          "dimension": "Timing",
+          "why": "Onset on an empty stomach or at night points toward peptic ulcer disease; a sudden large-volume episode with no clear trigger in someone with a history of heavy drinking should raise concern for ruptured esophageal or gastric varices"
+        },
+        {
+          "dimension": "Triggers",
+          "why": "Alcohol, spicy food, NSAID or anticoagulant use, occurring right after forceful vomiting or retching (suggesting a Mallory-Weiss tear), known cirrhosis or ulcer history — each points toward a different bleeding source"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Dizziness, palpitations, cold sweating, and tachycardia suggest hypovolemic shock — most red flags hang off this question; passing black tarry stool (melena) afterward confirms ongoing upper GI bleeding; retrosternal burning pain or dysphagia points toward an esophageal source"
+        },
+        {
+          "dimension": "Course",
+          "why": "A first-ever episode versus recurrent bleeding from a known chronic ulcer or cirrhotic varices differ completely in urgency and referral — this question decides whether to send the patient to the emergency department immediately"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "血色鮮紅或紫紅，質稠，口臭便秘，口渴喜冷飲",
+          "points_to": [
+            "pattern.stomach_heat"
+          ],
+          "distinguishing": "吐血色紅或紫紅、質地黏稠，常夾食物殘渣，伴隨胃脘灼痛拒按、消穀善飢、口臭、牙齦腫痛或出血、口渴喜冷飲、大便秘結或色黑；舌紅苔黃，脈滑數——多因嗜食辛辣肥甘或飲酒，胃熱熾盛，熱盛動血，迫血妄行"
+        },
+        {
+          "variant": "血色紫紅，隨情緒波動而發，兼脅痛、口苦",
+          "points_to": [
+            "pattern.liver_fire_invading_stomach"
+          ],
+          "distinguishing": "吐血多在情緒激動、暴怒後發作或加重，血色紫紅或鮮紅；兼脘脅灼痛、痛勢急迫，泛酸嘈雜、口苦口乾，急躁易怒，或見嘔吐酸苦水；舌紅苔黃，脈弦數——肝鬱化火，橫逆犯胃，肝胃氣火上逆所致"
+        },
+        {
+          "variant": "血色紫暗夾血塊，胃脘刺痛拒按，痛有定處",
+          "points_to": [
+            "pattern.blood_stasis"
+          ],
+          "distinguishing": "吐血色紫暗，夾雜血塊，胃脘刺痛，痛處固定拒按，常見於久病胃疾、外傷或反覆發作病史，舌質紫暗或有瘀斑，瘀血內阻、血不循經"
+        },
+        {
+          "variant": "血色暗淡質稀，反覆發作，兼神疲乏力、其他部位出血傾向",
+          "points_to": [
+            "pattern.spleen_not_governing_blood"
+          ],
+          "distinguishing": "吐血色暗淡、質地清稀，反覆發作，量或多或少，常兼其他部位出血傾向（如鼻衄、皮下瘀斑），兼神疲乏力、氣短懶言、食少便溏、頭暈心悸；舌淡，脈細弱——脾氣虛弱，統攝血液功能失職，血不循經而外溢"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Bright or purplish-red blood, thick in consistency, bad breath and constipation, thirst for cold drinks",
+          "points_to": [
+            "pattern.stomach_heat"
+          ],
+          "distinguishing": "Red or purplish-red, thick, sticky vomited blood, often mixed with food residue, with burning epigastric pain worse for pressure, excessive hunger, bad breath, swollen or bleeding gums, thirst for cold drinks, and constipation or black stool; red tongue with yellow coating, slippery rapid pulse — usually from a diet heavy in spicy, rich food or alcohol; blazing Stomach Heat forces Blood to move recklessly"
+        },
+        {
+          "variant": "Purplish-red blood, triggered by emotional upset, with rib-side pain and a bitter taste",
+          "points_to": [
+            "pattern.liver_fire_invading_stomach"
+          ],
+          "distinguishing": "Hematemesis that occurs or worsens with anger or emotional agitation, purplish-red or bright red blood; with burning epigastric/flank pain of acute onset, acid regurgitation and stomach discomfort, a bitter and dry mouth, irritability, and possibly vomiting of sour, bitter fluid; red tongue with yellow coating, wiry rapid pulse — Liver Qi stagnation transforming into Fire and invading the Stomach horizontally, the combined Liver-Stomach Qi and Fire rebelling upward"
+        },
+        {
+          "variant": "Dark purplish blood with clots, stabbing fixed epigastric pain worse for pressure",
+          "points_to": [
+            "pattern.blood_stasis"
+          ],
+          "distinguishing": "Dark purplish vomited blood mixed with clots, fixed stabbing epigastric pain worse for pressure, often with a history of chronic gastric disease, trauma, or recurrent episodes; dusky purple tongue or with stasis spots — Blood Stasis obstructing internally, blood failing to move within its vessels"
+        },
+        {
+          "variant": "Pale, thin blood, recurrent, with fatigue and bleeding tendencies at other sites",
+          "points_to": [
+            "pattern.spleen_not_governing_blood"
+          ],
+          "distinguishing": "Pale, dilute vomited blood, recurring in variable amounts, often with bleeding tendencies at other sites (such as nosebleeds or subcutaneous purpura), with fatigue, shortness of breath and reluctance to speak, poor appetite and loose stool, dizziness and palpitations; pale tongue, thready weak pulse — Spleen Qi too weak to govern Blood, allowing Blood to escape outside its normal pathways"
+        }
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "sources": [
+        "ACG Clinical Guideline: Upper Gastrointestinal and Ulcer Bleeding (Laine L, Barkun AN, Saltzman JR, et al., Am J Gastroenterol. 2021;116(5):899-917)",
+        "NICE Guideline [CG141]: Acute upper gastrointestinal bleeding in over 16s: management",
+        "MedlinePlus: Vomiting blood（https://medlineplus.gov/ency/article/003118.htm）",
+        "中醫內科學／中醫診斷學 通行教材 —— 血證篇，吐血辨證分型（胃熱熾盛・肝火犯胃・瘀血內阻・脾不統血）",
+        "本 repo 既有卡片：sym.hemoptysis · sym.vomiting · sym.bloody_stool · pattern_library 各證型 key_signs_zh 對照"
+      ],
+      "field_sources": {
+        "definition_zh/en": "MedlinePlus Vomiting blood 條目（西醫定義與常見病因分類）+ 中醫內科學 血證 吐血章節一般描述",
+        "inquiry_zh/en 性質": "中醫內科學 吐血 血色與胃酸作用機轉（正鐵血紅素/咖啡渣樣）描述 + ACG Clinical Guideline 2021 對活動性出血判斷之討論",
+        "inquiry_zh/en 誘因": "ACG Clinical Guideline 2021 危險因子（NSAID、抗凝血劑、肝硬化、飲酒、劇烈嘔吐後撕裂）+ 中醫內科學 吐血病因",
+        "differentiation_zh/en": "中醫內科學 血證 吐血分證（胃熱熾盛．肝火犯胃．瘀血內阻．脾不統血）+ 本 repo pattern_library 各證型 key_signs_zh/tongue_zh/pulse_zh/mechanism_zh 逐條核對（本輪修訂已重新核對並改寫，移除 pattern_library 無記載之描述，如「目赤」「舌苔膩」）",
+        "red_flags_zh/en": "ACG Clinical Guideline 2021 + NICE CG141 急性上消化道出血處置準則 + MedlinePlus Vomiting blood 條目",
+        "supporting_measurements": "刻意留空 —— 現有 metric.* 清單無出血量/血紅素相關量化項"
+      },
+      "red_flags_zh": [
+        "吐血合併心跳加快、血壓下降、冒冷汗、意識改變 → 低血容量性休克徵象，需立即急診處置與輸液復甦",
+        "鮮紅色血液、量大且持續不止 → 提示活動性大出血，死亡率高，需緊急內視鏡止血評估",
+        "已知肝硬化病史者發生吐血 → 高度懷疑食道或胃靜脈曲張破裂出血，屬內科急症",
+        "吐血合併解黑便（柏油便） → 確認上消化道出血，需評估出血總量與是否持續",
+        "服用抗凝血劑、抗血小板藥物，或近期大量使用非類固醇消炎止痛藥（NSAID）者發生吐血 → 出血風險高，需立即醫療評估",
+        "劇烈嘔吐或乾嘔之後才出現吐血（尤其大量飲酒後） → 需考慮 Mallory-Weiss 撕裂傷",
+        "高齡、合併心血管疾病或腎功能不全者發生吐血 → 死亡風險顯著提高，應優先評估轉診"
+      ],
+      "red_flags_en": [
+        "Hematemesis with tachycardia, hypotension, cold sweating, or altered consciousness → signs of hypovolemic shock; requires immediate emergency management and fluid resuscitation",
+        "Bright red blood, large volume, and ongoing bleeding → suggests active major hemorrhage with high mortality; requires urgent endoscopic evaluation for hemostasis",
+        "Hematemesis in a patient with known cirrhosis → high suspicion for ruptured esophageal or gastric varices, a medical emergency",
+        "Hematemesis followed by melena (black, tarry stool) → confirms upper GI bleeding; assess total blood loss and whether bleeding is ongoing",
+        "Hematemesis in someone on anticoagulants, antiplatelet agents, or recent heavy NSAID use → high bleeding risk, requires immediate medical evaluation",
+        "Hematemesis appearing only after forceful vomiting or retching (especially after heavy alcohol use) → consider a Mallory-Weiss tear",
+        "Hematemesis in an elderly patient or one with cardiovascular disease or renal impairment → significantly higher mortality risk; prioritize evaluation and referral"
+      ],
+      "safety_flags": [
+        "gi_red_flags",
+        "active_bleeding_medical_review"
+      ],
+      "safety_review_sources": [
+        "ACG Clinical Guideline: Upper Gastrointestinal and Ulcer Bleeding (Laine L, Barkun AN, Saltzman JR, et al., Am J Gastroenterol. 2021;116(5):899-917)",
+        "NICE Guideline [CG141]: Acute upper gastrointestinal bleeding in over 16s: management",
+        "MedlinePlus: Vomiting blood (https://medlineplus.gov/ency/article/003118.htm)"
+      ],
+      "supporting_measurements": [],
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     }
   ]
 }
