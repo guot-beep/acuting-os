@@ -1,3 +1,22 @@
+# 2026-08-24 Antigravity — Task 1 (中藥卡語意品質唯讀稽核報告產出完成)
+
+- **做了什麼**: 完成 Task 1 (中藥卡語意品質唯讀稽核)。
+  1. 稽核範圍覆蓋 `main` 上全庫 **363** 味單味中藥卡（`data/herbs/herb_canon_shortlist.json`）。
+  2. 逐卡對照 `functions_zh` / `modern_functions_zh` / `cautions_zh` / `contraindications_zh` 與其對應之 `_en` 欄位。
+  3. 產出獨立稽核報告檔 `docs/audits/HERB_SEMANTIC_QA_2026-08-21.md`。詳細列出 219 味具備雙語禁忌/注意事項譯詞缺口、現代藥理及傳統治法語意對齊建議。
+- **數字與邊界 (before → after)**:
+  - `data/` 目錄: **0 異動 (100% 唯讀稽核，無修改任何 JSON / js 數據)**。
+  - 新增稽核報告: `docs/audits/HERB_SEMANTIC_QA_2026-08-21.md` (涵蓋 219 味藥卡語意與對譯落差明細)。
+- **驗證指令與結果**:
+  - `node scripts/build-data.js`: PASS
+  - `node scripts/validate-herb-quality-strict.js`: PASS (0 FAILs)
+  - `node scripts/validate-herb-card-schema.js`: PASS (0 defects)
+  - `node scripts/validate-herb-standard.js`: PASS (0 structural defects)
+  - `node scripts/validate-no-boilerplate.js`: PASS
+  - `node scripts/check-validation-ratchet.js`: PASS
+  - `node scripts/validate-content-junk.js`: PASS
+- **已隔離邊界**: 已推至獨立分支 `antigravity/herb-semantic-qa-task1`，等候驗收。
+
 # 2026-08-24 深夜 — Task 6 Round 2 驗收通過並落地:exact_source_url 逐條 HTTP 實測,related_formulas 誠實放棄湊數
 
 Task 6 Round 2(`antigravity/formula-fill-task6-round2`，commit `9fc265a4`）針對上一輪整批打回的
