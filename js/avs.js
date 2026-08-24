@@ -258,7 +258,10 @@
   /* ---- 病人輸出(§10)---------------------------------------------------- */
   const esc = (s) => String(s || "").replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]));
 
-  /* 病人文件的共用樣式 —— 單一來源。generate-avs.js（CLI v1）與
+  /* 病人文件的共用樣式 —— 單一來源。此 CSS 走 window.open + document.write
+   * 且 autoPrint 是固定 300ms setTimeout：任何 webfont 請求都會與列印時點
+   * 賽跑、可能印出半套字——這裡永遠只用系統字，不准加 webfont。
+   * generate-avs.js（CLI v1）與
    * renderPatientHtml（app 端）共用這一份：2026-08-23 色票同步時兩邊
    * 都要手改的教訓（cautionsEn 雙鍵同病根），從此只改這裡。 */
   const SHEET_CSS = `body{font-family:"Microsoft JhengHei","Noto Sans TC",sans-serif;background:#f6f1e7;color:#33291f;margin:0;padding:24px;line-height:1.7}
