@@ -5,8 +5,10 @@
  *
  * Fill source: data/pathology/condition_fill_<batch>.json (a {fills: {condId:
  * {fields}}} object). Adds fields to matching records ONLY; never overwrites a
- * non-empty existing field; never touches records not named in the fill; never
- * changes ids, mappings, or review_status. All content stays draft.
+ * non-empty existing field. The `sources` array is the sole merge field: new
+ * unique source URLs are appended while existing provenance is retained. The
+ * script never touches records not named in the fill and never changes ids,
+ * mappings, or review_status. All content stays draft.
  *
  *   node scripts/apply-condition-fill.js gyn           # dry run
  *   node scripts/apply-condition-fill.js gyn --apply
@@ -32,6 +34,7 @@ function isEmpty(v) {
   if (v == null) return true;
   if (typeof v === "string") return v.trim() === "";
   if (Array.isArray(v)) return v.length === 0;
+  if (typeof v === "object") return Object.keys(v).length === 0;
   return false;
 }
 
@@ -43,6 +46,18 @@ for (const [condId, fields] of Object.entries(fill.fills)) {
   const rec = byId.get(condId);
   if (!rec) { missing.push(condId); continue; }
   for (const [field, value] of Object.entries(fields)) {
+    if (field === "sources" && Array.isArray(value)) {
+      const current = Array.isArray(rec.sources) ? rec.sources : [];
+      const additions = value.filter((source) => !current.includes(source));
+      if (additions.length === 0) {
+        skipped.push(`${condId}.sources (no new unique sources — untouched)`);
+        continue;
+      }
+      console.log(`${APPLY ? "appended" : "would append"} ${condId}.sources (+${additions.length})`);
+      if (APPLY) rec.sources = [...current, ...additions];
+      added += 1;
+      continue;
+    }
     if (!isEmpty(rec[field])) {
       skipped.push(`${condId}.${field} (already non-empty — untouched)`);
       continue;
@@ -59,17 +74,10 @@ skipped.forEach((s) => console.log("  " + s));
 
 if (missing.length) { console.error("Refusing to write: unknown condition ids."); process.exit(1); }
 if (APPLY) {
-  // Preserve the file's existing compact one-record-per-line layout so the
-  // diff shows only the changed gyn records, not a 150-record reformat.
-  const head = { ...canon };
-  delete head.records;
-  const headKeys = Object.keys(head);
-  let out = "{\n";
-  headKeys.forEach((k) => { out += `  ${JSON.stringify(k)}: ${JSON.stringify(head[k])},\n`; });
-  out += '  "records": [\n';
-  out += canon.records.map((r) => "    " + JSON.stringify(r)).join(",\n");
-  out += "\n  ]\n}\n";
-  fs.writeFileSync(canonPath, out);
+  // Match the canonical file's established one-space JSON indentation so a
+  // fill batch produces a reviewable record-level diff instead of reformatting
+  // the entire database.
+  fs.writeFileSync(canonPath, JSON.stringify(canon, null, 1) + "\n");
   console.log("Written " + path.relative(ROOT, canonPath));
 } else {
   console.log("Dry run. Use --apply to write.");

@@ -1,0 +1,478 @@
+{
+  "fills": {
+    "cond.chronic_diarrhea": {
+      "sources": [
+        "https://www.niddk.nih.gov/health-information/digestive-diseases/diarrhea/symptoms-causes",
+        "https://www.niddk.nih.gov/health-information/digestive-diseases/diarrhea/diagnosis",
+        "https://www.niddk.nih.gov/health-information/digestive-diseases/diarrhea/treatment",
+        "https://medlineplus.gov/diarrhea.html",
+        "https://www.nhs.uk/conditions/diarrhoea-and-vomiting/"
+      ],
+      "summary_zh": "慢性腹瀉通常指稀便或水樣便持續至少 4 週，可持續存在或反覆發作；它不是單一疾病，可能與持續感染、食物不耐、消化道疾病、腹部手術、藥物或腸腦互動障礙有關。長期腹瀉可能造成脫水、營養吸收不良與體重下降，需釐清病因。",
+      "summary_en": "Chronic diarrhea usually means loose or watery stools lasting at least four weeks; symptoms may be continuous or intermittent. It is not a single disease and may be related to persistent infection, food intolerance, digestive-tract disease, abdominal surgery, medicines, or a disorder of gut-brain interaction. Prolonged diarrhea may cause dehydration, malabsorption, and weight loss, so its cause should be evaluated.",
+      "western_context_zh": "評估重點包括症狀持續時間、排便外觀與頻率、飲食、藥物、近期旅行及既往疾病；依情況安排糞便檢查、血液檢查或其他消化道評估。處理以補充液體與電解質、治療已確認的病因為主；高齡、免疫低下、孕婦、近期使用抗生素者或有嚴重共病者應較早與醫療人員聯絡。",
+      "western_context_en": "Evaluation focuses on duration, stool appearance and frequency, diet, medicines, recent travel, and medical history; stool tests, blood tests, or further gastrointestinal evaluation may be used when indicated. Management centers on replacing fluids and electrolytes and treating the identified cause. Older adults, immunocompromised people, pregnant patients, recent antibiotic users, and people with serious comorbidity should contact a medical professional earlier.",
+      "western_pathology_zh": "慢性腹瀉是多種機制的共同表現，包括持續感染或感染後消化障礙、食物過敏或不耐、腸道發炎或吸收不良、胰臟或小腸疾病、腸腦互動障礙、手術後改變及長期藥物影響；共同結果是糞便含水量增加及排便頻率上升。",
+      "western_pathology_en": "Chronic diarrhea is a final common manifestation of several mechanisms, including persistent or post-infectious digestive disturbance, food allergy or intolerance, intestinal inflammation or malabsorption, pancreatic or small-bowel disease, disorders of gut-brain interaction, postsurgical change, and long-term medicine effects. The shared result is increased stool water and bowel-movement frequency.",
+      "etiology_zh": "中醫辨證種子：泄瀉多從脾失健運、濕邪內盛與胃腸傳導失常辨治；久瀉可累及腎陽，情志不調可見肝木乘脾，飲食停滯則可兼食積。此欄只列候選病機，不能把慢性腹瀉固定等同於單一證型。",
+      "etiology_en": "TCM differentiation seed: diarrhea is commonly assessed through impaired Spleen transportation, internal dampness, and disordered gastrointestinal transmission. Prolonged diarrhea may involve Kidney yang; emotional constraint may present as Liver overacting on the Spleen, and dietary retention may contribute food stagnation. These are candidate mechanisms, not a one-to-one equation between chronic diarrhea and any single pattern.",
+      "risk_factors_zh": [
+        {
+          "factor": "長期使用可能引起腹瀉的藥物，包括部分抗生素",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK — Symptoms & Causes of Diarrhea"
+        },
+        {
+          "factor": "食物過敏、乳糖或其他醣類不耐",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK — Symptoms & Causes of Diarrhea"
+        },
+        {
+          "factor": "乳糜瀉、發炎性腸病、胰臟疾病或小腸細菌過度生長等消化道問題",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK — Symptoms & Causes of Diarrhea"
+        },
+        {
+          "factor": "胃、食道、膽囊、胰臟、小腸或大腸手術史",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK — Symptoms & Causes of Diarrhea"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Long-term use of medicines that may cause diarrhea, including some antibiotics",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK — Symptoms & Causes of Diarrhea"
+        },
+        {
+          "factor": "Food allergy, lactose intolerance, or intolerance of other carbohydrates",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK — Symptoms & Causes of Diarrhea"
+        },
+        {
+          "factor": "Digestive-tract problems such as celiac disease, inflammatory bowel disease, pancreatic disease, or small intestinal bacterial overgrowth",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK — Symptoms & Causes of Diarrhea"
+        },
+        {
+          "factor": "History of surgery involving the stomach, esophagus, gallbladder, pancreas, small intestine, or large intestine",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK — Symptoms & Causes of Diarrhea"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "黑色柏油樣便，或糞便含鮮血或膿液",
+          "urgency_level": "urgent",
+          "recommended_action": "立即聯絡醫療人員評估消化道出血、感染或發炎性疾病",
+          "rationale": "NIDDK 將黑便、鮮血便或膿便列為腹瀉時應立即就醫的警示症狀",
+          "source": "NIDDK — Symptoms & Causes of Diarrhea"
+        },
+        {
+          "finding": "明顯脫水徵象，例如口乾極渴、尿量減少、深色尿、頭暈或嗜睡",
+          "urgency_level": "urgent",
+          "recommended_action": "立即聯絡醫療人員；若意識改變、昏厥或無法補充液體則緊急處理",
+          "rationale": "嚴重脫水可迅速惡化，且是腹瀉的重要併發症",
+          "source": "NIDDK — Symptoms & Causes of Diarrhea"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Black, tarry stool or stool containing red blood or pus",
+          "urgency_level": "urgent",
+          "recommended_action": "Contact a medical professional immediately to assess for gastrointestinal bleeding, infection, or inflammatory disease",
+          "rationale": "NIDDK lists black or tarry stool and stool containing blood or pus as warning symptoms requiring prompt medical care",
+          "source": "NIDDK — Symptoms & Causes of Diarrhea"
+        },
+        {
+          "finding": "Significant dehydration such as extreme thirst or dry mouth, reduced urination, dark urine, dizziness, or lethargy",
+          "urgency_level": "urgent",
+          "recommended_action": "Contact a medical professional immediately; altered mental state, fainting, or inability to replace fluids requires emergency care",
+          "rationale": "Severe dehydration may worsen quickly and is a major complication of diarrhea",
+          "source": "NIDDK — Symptoms & Causes of Diarrhea"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "完成必要醫療評估、病因處置及補液後，可依個別證候考慮症狀導向的輔助照護；不得以針灸取代慢性腹瀉病因檢查",
+        "precautions": "有黑便、血便、膿便、發燒、頻繁嘔吐、劇烈腹痛或脫水時先停止常規治療流程並轉介",
+        "co_management": "持續腹瀉應與基層醫療或腸胃科共同管理；疑似藥物相關腹瀉時應聯絡開藥者評估，不建議自行停藥",
+        "evidence": "unknown",
+        "note": "本欄是安全與執業範圍界線，不構成針灸療效宣稱"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "After appropriate medical evaluation, treatment of the cause, and fluid replacement, symptom-oriented adjunctive care may be considered according to the individual pattern; acupuncture must not replace evaluation of chronic-diarrhea causes",
+        "precautions": "Black stool, blood or pus in stool, fever, frequent vomiting, severe abdominal pain, or dehydration requires stopping routine treatment and arranging referral first",
+        "co_management": "Persistent diarrhea should be co-managed with primary care or gastroenterology; contact the prescriber to review suspected medicine-related diarrhea rather than prompting unsupervised discontinuation",
+        "evidence": "unknown",
+        "note": "This field defines safety and scope of practice and is not an acupuncture-efficacy claim"
+      },
+      "red_flag_refs": [
+        "rf.chronic_diarrhea.bloody_pus_tarry_stools",
+        "rf.chronic_diarrhea.dehydration_signs"
+      ],
+      "field_sources": {
+        "summary_zh": ["NIDDK — Diarrhea; Symptoms & Causes of Diarrhea", "MedlinePlus — Diarrhea"],
+        "summary_en": ["NIDDK — Diarrhea; Symptoms & Causes of Diarrhea", "MedlinePlus — Diarrhea"],
+        "western_context_zh": ["NIDDK — Diagnosis of Diarrhea; Treatment of Diarrhea", "MedlinePlus — Diarrhea", "NHS — Diarrhoea and vomiting"],
+        "western_context_en": ["NIDDK — Diagnosis of Diarrhea; Treatment of Diarrhea", "MedlinePlus — Diarrhea", "NHS — Diarrhoea and vomiting"],
+        "western_pathology_zh": ["NIDDK — Symptoms & Causes of Diarrhea", "MedlinePlus — Diarrhea"],
+        "western_pathology_en": ["NIDDK — Symptoms & Causes of Diarrhea", "MedlinePlus — Diarrhea"],
+        "etiology_zh": ["本卡既有 classical_references_zh 與 related_patterns 的保守整合"],
+        "etiology_en": ["Translated from the source-governed etiology_zh in this fill"],
+        "risk_factors_zh": ["NIDDK — Symptoms & Causes of Diarrhea", "MedlinePlus — Diarrhea"],
+        "risk_factors_en": ["NIDDK — Symptoms & Causes of Diarrhea", "MedlinePlus — Diarrhea"],
+        "red_flags_zh": ["NIDDK — Symptoms & Causes of Diarrhea; MedlinePlus — Diarrhea; NHS — Diarrhoea and vomiting; data/pathology/red_flag_registry.json"],
+        "red_flags_en": ["NIDDK — Symptoms & Causes of Diarrhea; MedlinePlus — Diarrhea; NHS — Diarrhoea and vomiting; data/pathology/red_flag_registry.json"],
+        "acupuncture_scope_zh": ["AcuTing OS safety and scope policy; NIDDK red-flag boundary"],
+        "acupuncture_scope_en": ["AcuTing OS safety and scope policy; NIDDK red-flag boundary"]
+      },
+      "sign_symptom_ids": [
+        "sym.diarrhea",
+        "sym.loose_stool",
+        "sym.bloody_stool",
+        "sym.nausea",
+        "sym.vomiting"
+      ]
+    },
+    "cond.nausea_vomiting": {
+      "sources": [
+        "https://medlineplus.gov/nauseaandvomiting.html",
+        "https://www.nhs.uk/symptoms/feeling-sick-nausea/",
+        "https://www.nhs.uk/conditions/diarrhoea-and-vomiting/",
+        "https://www.cancer.gov/about-cancer/treatment/side-effects/nausea-vomiting"
+      ],
+      "summary_zh": "噁心是即將嘔吐的不適感，嘔吐則是胃內容物經口排出；兩者都是症狀而非單一疾病，可見於感染、食物中毒、偏頭痛、暈動症、懷孕、藥物副作用、胃食道疾病或腸阻塞等情況。應依持續時間、伴隨症狀及脫水程度判斷是否需立即評估。",
+      "summary_en": "Nausea is the sensation of feeling sick to the stomach as if one may vomit; vomiting is expulsion of stomach contents through the mouth. They are symptoms rather than a single disease and may occur with infection, food poisoning, migraine, motion sickness, pregnancy, medicine effects, gastroesophageal disease, or intestinal obstruction. Duration, associated symptoms, and dehydration determine the urgency of evaluation.",
+      "western_context_zh": "臨床評估包括病史、症狀特徵與身體檢查，並依疑似病因安排檢驗。處理重點是補充液體、矯正脫水並治療病因；若懷疑中毒、嘔吐超過 24 小時、嘔血、劇烈腹痛、劇烈頭痛合併頸部僵硬或有脫水徵象，應立即聯絡醫療人員。",
+      "western_context_en": "Clinical evaluation includes history, symptom characterization, and physical examination, with testing guided by the suspected cause. Management focuses on fluid replacement, correction of dehydration, and treatment of the cause. Suspected poisoning, vomiting lasting longer than 24 hours, blood in vomit, severe abdominal pain, severe headache with a stiff neck, or signs of dehydration require immediate medical contact.",
+      "western_pathology_zh": "噁心與嘔吐不是單一病理診斷；胃腸感染、食物中毒、胃食道逆流、潰瘍、腸阻塞、偏頭痛、暈動症、妊娠及藥物等不同原因都可能產生相同症狀，因此必須依病史與伴隨表現辨識病因。",
+      "western_pathology_en": "Nausea and vomiting do not represent a single pathologic diagnosis. Gastrointestinal infection, food poisoning, reflux, ulcer, intestinal obstruction, migraine, motion sickness, pregnancy, and medicines can produce the same symptoms, so the cause must be distinguished through history and associated findings.",
+      "etiology_zh": "中醫辨證種子：核心病機為胃失和降、胃氣上逆；可再依實際表現鑑別外邪犯胃、食滯、痰飲、肝胃不和、胃熱、脾胃虛寒或胃陰不足。此欄不能替代對腸阻塞、中毒、感染或中樞神經病因的排除。",
+      "etiology_en": "TCM differentiation seed: the core mechanism is failure of the Stomach to descend harmoniously with rebellious Stomach qi. Actual findings may support differentiation among external invasion, food stagnation, phlegm-fluid retention, Liver-Stomach disharmony, Stomach heat, Spleen-Stomach deficiency-cold, or Stomach yin deficiency. This does not replace exclusion of obstruction, poisoning, infection, or a central neurologic cause.",
+      "risk_factors_zh": [
+        {
+          "factor": "妊娠",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "MedlinePlus — Nausea and Vomiting"
+        },
+        {
+          "factor": "容易暈動或有偏頭痛病史",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "MedlinePlus — Nausea and Vomiting"
+        },
+        {
+          "factor": "使用可能引起噁心嘔吐的藥物，包括癌症化學治療",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "MedlinePlus — Nausea and Vomiting"
+        },
+        {
+          "factor": "腸胃感染、食物中毒、胃食道逆流、潰瘍或腸阻塞",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "MedlinePlus — Nausea and Vomiting"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Pregnancy",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "MedlinePlus — Nausea and Vomiting"
+        },
+        {
+          "factor": "Susceptibility to motion sickness or a history of migraine",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "MedlinePlus — Nausea and Vomiting"
+        },
+        {
+          "factor": "Use of medicines that may cause nausea or vomiting, including cancer chemotherapy",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "MedlinePlus — Nausea and Vomiting"
+        },
+        {
+          "factor": "Gastrointestinal infection, food poisoning, GERD, ulcer disease, or intestinal obstruction",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "MedlinePlus — Nausea and Vomiting"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "嘔吐物帶血",
+          "urgency_level": "urgent",
+          "recommended_action": "立即聯絡醫療人員評估消化道出血",
+          "rationale": "MedlinePlus 將嘔血列為需要立即聯絡醫療人員的警示症狀",
+          "source": "MedlinePlus — Nausea and Vomiting"
+        },
+        {
+          "finding": "劇烈頭痛伴隨頸部僵硬",
+          "urgency_level": "urgent",
+          "recommended_action": "立即醫療評估，排除腦膜刺激或其他中樞神經急症",
+          "rationale": "此組合不是單純胃腸症狀",
+          "source": "MedlinePlus — Nausea and Vomiting"
+        },
+        {
+          "finding": "劇烈腹痛或出現脫水徵兆",
+          "urgency_level": "urgent",
+          "recommended_action": "立即聯絡醫療人員；若意識改變、昏厥或無法補液則緊急處理",
+          "rationale": "可能提示腹部急症或需要補液治療的脫水",
+          "source": "MedlinePlus — Nausea and Vomiting"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Blood in the vomit",
+          "urgency_level": "urgent",
+          "recommended_action": "Contact a medical professional immediately to evaluate gastrointestinal bleeding",
+          "rationale": "MedlinePlus lists blood in vomit as a warning symptom requiring immediate medical contact",
+          "source": "MedlinePlus — Nausea and Vomiting"
+        },
+        {
+          "finding": "Severe headache with a stiff neck",
+          "urgency_level": "urgent",
+          "recommended_action": "Obtain immediate medical evaluation to exclude meningeal irritation or another central neurologic emergency",
+          "rationale": "This combination is not explained by an uncomplicated gastrointestinal symptom",
+          "source": "MedlinePlus — Nausea and Vomiting"
+        },
+        {
+          "finding": "Severe abdominal pain or signs of dehydration",
+          "urgency_level": "urgent",
+          "recommended_action": "Contact a medical professional immediately; altered mental state, fainting, or inability to replace fluids requires emergency care",
+          "rationale": "This may indicate an abdominal emergency or dehydration requiring fluid treatment",
+          "source": "MedlinePlus — Nausea and Vomiting"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "在病因與紅旗症狀已適當評估後，可依個別證候考慮症狀導向的輔助照護；不得以針灸延誤腸阻塞、中毒、感染或神經急症評估",
+        "precautions": "持續嘔吐、嘔血、劇烈腹痛、劇烈頭痛合併頸僵或脫水時不進行常規門診療程，先轉介",
+        "co_management": "孕期、化療相關或藥物相關噁心嘔吐應與產科、腫瘤科共同管理；疑似藥物相關時應聯絡開藥者，不建議自行停藥",
+        "evidence": "unknown",
+        "note": "本欄是安全與執業範圍界線，不構成針灸療效宣稱"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "After appropriate evaluation of the cause and warning symptoms, symptom-oriented adjunctive care may be considered according to the individual pattern; acupuncture must not delay assessment of obstruction, poisoning, infection, or a neurologic emergency",
+        "precautions": "Persistent vomiting, hematemesis, severe abdominal pain, severe headache with neck stiffness, or dehydration is not appropriate for a routine outpatient session and requires referral first",
+        "co_management": "Pregnancy-related or chemotherapy-related nausea and vomiting should be co-managed with obstetrics or oncology; contact the prescriber for suspected medicine-related symptoms and do not advise unsupervised medication discontinuation",
+        "evidence": "unknown",
+        "note": "This field defines safety and scope of practice and is not an acupuncture-efficacy claim"
+      },
+      "red_flag_refs": [
+        "rf.nausea_vomiting.hematemesis",
+        "rf.nausea_vomiting.severe_headache_stiff_neck",
+        "rf.nausea_vomiting.severe_abdominal_pain_or_dehydration"
+      ],
+      "field_sources": {
+        "summary_zh": ["MedlinePlus — Nausea and Vomiting", "NHS — Feeling sick (nausea)"],
+        "summary_en": ["MedlinePlus — Nausea and Vomiting", "NHS — Feeling sick (nausea)"],
+        "western_context_zh": ["MedlinePlus — Nausea and Vomiting", "NHS — Diarrhoea and vomiting"],
+        "western_context_en": ["MedlinePlus — Nausea and Vomiting", "NHS — Diarrhoea and vomiting"],
+        "western_pathology_zh": ["MedlinePlus — Nausea and Vomiting", "NHS — Feeling sick (nausea)"],
+        "western_pathology_en": ["MedlinePlus — Nausea and Vomiting", "NHS — Feeling sick (nausea)"],
+        "etiology_zh": ["本卡既有 related_patterns 與 tcm_patterns 的保守整合"],
+        "etiology_en": ["Translated from the source-governed etiology_zh in this fill"],
+        "risk_factors_zh": ["MedlinePlus — Nausea and Vomiting", "NHS — Feeling sick (nausea)", "NCI — Nausea and Vomiting and Cancer"],
+        "risk_factors_en": ["MedlinePlus — Nausea and Vomiting", "NHS — Feeling sick (nausea)", "NCI — Nausea and Vomiting and Cancer"],
+        "red_flags_zh": ["MedlinePlus — Nausea and Vomiting; NHS — Diarrhoea and vomiting; data/pathology/red_flag_registry.json"],
+        "red_flags_en": ["MedlinePlus — Nausea and Vomiting; NHS — Diarrhoea and vomiting; data/pathology/red_flag_registry.json"],
+        "acupuncture_scope_zh": ["AcuTing OS safety and scope policy; MedlinePlus red-flag boundary"],
+        "acupuncture_scope_en": ["AcuTing OS safety and scope policy; MedlinePlus red-flag boundary"]
+      },
+      "sign_symptom_ids": [
+        "sym.nausea",
+        "sym.vomiting"
+      ]
+    },
+    "cond.hemorrhoids": {
+      "sources": [
+        "https://www.niddk.nih.gov/health-information/digestive-diseases/hemorrhoids/symptoms-causes",
+        "https://www.niddk.nih.gov/health-information/digestive-diseases/hemorrhoids/diagnosis",
+        "https://www.niddk.nih.gov/health-information/digestive-diseases/hemorrhoids/treatment",
+        "https://www.niddk.nih.gov/health-information/digestive-diseases/gastrointestinal-bleeding/symptoms-causes",
+        "https://medlineplus.gov/hemorrhoids.html",
+        "https://medlineplus.gov/ency/article/000292.htm"
+      ],
+      "summary_zh": "痔瘡是肛門周圍或下段直腸的血管與支持組織腫脹、發炎或脫垂所形成的病變，可分為外痔與內痔。外痔常見搔癢、壓痛硬塊或坐位疼痛；內痔可見鮮紅色直腸出血或脫出。直腸出血不能自行假定都是痔瘡，仍需排除其他腸道疾病。",
+      "summary_en": "Hemorrhoids are swollen, inflamed, or prolapsing vascular and supporting tissues around the anus or in the lower rectum and are classified as external or internal. External hemorrhoids may cause itching, a tender lump, or pain when sitting; internal hemorrhoids may cause bright-red rectal bleeding or prolapse. Rectal bleeding must not automatically be attributed to hemorrhoids because other bowel disease may present similarly.",
+      "western_context_zh": "評估依病史、肛門視診與必要的直腸或下消化道檢查進行。輕症可先調整排便習慣、增加纖維與適當液體攝取、避免用力與久坐馬桶；持續症狀、脫垂或出血可能需要門診處置或外科治療。居家處理一週仍有症狀或出現直腸出血，應就醫。",
+      "western_context_en": "Evaluation uses history, inspection of the anus, and rectal or lower-gastrointestinal examination when indicated. Mild disease may first be managed by improving bowel habits, increasing fiber and appropriate fluid intake, and avoiding straining or prolonged toilet sitting. Persistent symptoms, prolapse, or bleeding may require an office procedure or surgery. Symptoms that continue after one week of home treatment or any rectal bleeding warrant medical evaluation.",
+      "western_pathology_zh": "痔瘡是肛門周圍或下段直腸的靜脈腫脹、發炎所形成；可位於肛門周圍皮下（外痔），或位於肛門與下段直腸內層（內痔）。排便用力、長時間坐馬桶、慢性便秘或腹瀉、老化、妊娠及反覆提重物會增加發生風險。",
+      "western_pathology_en": "Hemorrhoids are swollen and inflamed veins around the anus or in the lower rectum. They may occur under the skin around the anus (external) or in the lining of the anus and lower rectum (internal). Straining, prolonged toilet sitting, chronic constipation or diarrhea, aging, pregnancy, and repeated heavy lifting increase risk.",
+      "etiology_zh": "中醫辨證種子：可依出血、腫痛、脫出與全身表現鑑別大腸濕熱、血熱、氣滯血瘀或脾氣虛陷等候選病機；濕熱下注與瘀血可見腫痛出血，久病或反覆脫出可兼中氣下陷。此欄不把痔瘡固定等同於單一證型。",
+      "etiology_en": "TCM differentiation seed: bleeding, swelling, pain, prolapse, and systemic findings may support candidate mechanisms such as Large Intestine damp-heat, Blood heat, qi stagnation with blood stasis, or sinking Spleen qi. Damp-heat and stasis may present with painful bleeding, while chronic or recurrent prolapse may involve sinking middle qi. Hemorrhoids are not equated with any single TCM pattern.",
+      "risk_factors_zh": [
+        {
+          "factor": "排便時反覆用力或長時間坐在馬桶上",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK — Symptoms & Causes of Hemorrhoids"
+        },
+        {
+          "factor": "慢性便秘或慢性腹瀉",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK — Symptoms & Causes of Hemorrhoids"
+        },
+        {
+          "factor": "低纖維飲食",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK — Symptoms & Causes of Hemorrhoids"
+        },
+        {
+          "factor": "老化造成肛門與直腸支持組織減弱",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK — Symptoms & Causes of Hemorrhoids"
+        },
+        {
+          "factor": "妊娠",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK — Symptoms & Causes of Hemorrhoids"
+        },
+        {
+          "factor": "經常提舉重物",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK — Symptoms & Causes of Hemorrhoids"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Repeated straining during bowel movements or prolonged toilet sitting",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK — Symptoms & Causes of Hemorrhoids"
+        },
+        {
+          "factor": "Chronic constipation or chronic diarrhea",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK — Symptoms & Causes of Hemorrhoids"
+        },
+        {
+          "factor": "Low-fiber diet",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK — Symptoms & Causes of Hemorrhoids"
+        },
+        {
+          "factor": "Age-related weakening of supporting tissue in the anus and rectum",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK — Symptoms & Causes of Hemorrhoids"
+        },
+        {
+          "factor": "Pregnancy",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK — Symptoms & Causes of Hemorrhoids"
+        },
+        {
+          "factor": "Frequent heavy lifting",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK — Symptoms & Causes of Hemorrhoids"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "劇烈肛門痛合併直腸出血，尤其伴隨腹部不適、腹瀉或發燒",
+          "urgency_level": "urgent",
+          "recommended_action": "立即就醫評估，不能只按痔瘡處理",
+          "rationale": "NIDDK 將此組合列為應立即求診的情況",
+          "source": "NIDDK — Treatment of Hemorrhoids"
+        },
+        {
+          "finding": "大量出血合併頭暈、昏厥、呼吸困難、意識改變或冷汗",
+          "urgency_level": "emergency",
+          "recommended_action": "立即啟動緊急醫療服務",
+          "rationale": "可能為嚴重消化道出血或休克，不應歸因於單純痔瘡",
+          "source": "NIDDK — Symptoms & Causes of GI Bleeding"
+        },
+        {
+          "finding": "任何未經評估的直腸出血",
+          "urgency_level": "same_day",
+          "recommended_action": "安排醫療評估以排除發炎性腸病、息肉或大腸直腸癌等其他原因",
+          "rationale": "NIDDK 明確指出並非所有肛門症狀或直腸出血都由痔瘡造成",
+          "source": "NIDDK — Symptoms & Causes of Hemorrhoids"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Severe anal pain with rectal bleeding, especially with abdominal discomfort, diarrhea, or fever",
+          "urgency_level": "urgent",
+          "recommended_action": "Seek immediate medical evaluation rather than treating this as uncomplicated hemorrhoids",
+          "rationale": "NIDDK lists this combination as requiring care right away",
+          "source": "NIDDK — Treatment of Hemorrhoids"
+        },
+        {
+          "finding": "Heavy bleeding with dizziness, fainting, shortness of breath, altered consciousness, or cold sweating",
+          "urgency_level": "emergency",
+          "recommended_action": "Activate emergency medical services immediately",
+          "rationale": "This may represent severe gastrointestinal bleeding or shock and must not be attributed to uncomplicated hemorrhoids",
+          "source": "NIDDK — Symptoms & Causes of GI Bleeding"
+        },
+        {
+          "finding": "Any rectal bleeding that has not been medically evaluated",
+          "urgency_level": "same_day",
+          "recommended_action": "Arrange medical evaluation to exclude inflammatory bowel disease, polyps, colorectal cancer, or another cause",
+          "rationale": "NIDDK states that not every anal symptom or episode of rectal bleeding is caused by hemorrhoids",
+          "source": "NIDDK — Symptoms & Causes of Hemorrhoids"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "在直腸出血已完成適當醫療評估、且無急症或需手術情況後，可依個別證候考慮症狀導向的輔助照護；不得把所有出血直接歸因於痔瘡",
+        "precautions": "劇烈疼痛、持續或大量出血、發燒、腹瀉、腹痛、頭暈或昏厥時先停止常規治療流程並轉介",
+        "co_management": "持續出血、脫垂或居家處理一週未改善者應與基層醫療、腸胃科或大腸直腸外科共同管理",
+        "evidence": "unknown",
+        "note": "本欄是安全與執業範圍界線，不構成針灸縮小痔瘡或止血的療效宣稱"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "After rectal bleeding has received appropriate medical evaluation and an emergency or surgical condition has been excluded, symptom-oriented adjunctive care may be considered according to the individual pattern; do not attribute all bleeding directly to hemorrhoids",
+        "precautions": "Severe pain, persistent or heavy bleeding, fever, diarrhea, abdominal pain, dizziness, or fainting requires stopping routine treatment and arranging referral first",
+        "co_management": "Persistent bleeding, prolapse, or symptoms not improving after one week of home care should be co-managed with primary care, gastroenterology, or colorectal surgery",
+        "evidence": "unknown",
+        "note": "This field defines safety and scope of practice and is not a claim that acupuncture shrinks hemorrhoids or stops bleeding"
+      },
+      "red_flag_refs": [
+        "rf.hemorrhoids.severe_pain_bleeding_with_systemic_symptoms"
+      ],
+      "field_sources": {
+        "summary_zh": ["NIDDK — Symptoms & Causes of Hemorrhoids", "MedlinePlus — Hemorrhoids"],
+        "summary_en": ["NIDDK — Symptoms & Causes of Hemorrhoids", "MedlinePlus — Hemorrhoids"],
+        "western_context_zh": ["NIDDK — Diagnosis of Hemorrhoids; Treatment of Hemorrhoids", "MedlinePlus — Hemorrhoids"],
+        "western_context_en": ["NIDDK — Diagnosis of Hemorrhoids; Treatment of Hemorrhoids", "MedlinePlus — Hemorrhoids"],
+        "western_pathology_zh": ["NIDDK — Symptoms & Causes of Hemorrhoids", "MedlinePlus — Hemorrhoids"],
+        "western_pathology_en": ["NIDDK — Symptoms & Causes of Hemorrhoids", "MedlinePlus — Hemorrhoids"],
+        "etiology_zh": ["本卡既有 classical_references_zh、related_patterns 與 tcm_patterns 的保守整合"],
+        "etiology_en": ["Translated from the source-governed etiology_zh in this fill"],
+        "risk_factors_zh": ["NIDDK — Symptoms & Causes of Hemorrhoids", "MedlinePlus — Hemorrhoids"],
+        "risk_factors_en": ["NIDDK — Symptoms & Causes of Hemorrhoids", "MedlinePlus — Hemorrhoids"],
+        "red_flags_zh": ["NIDDK — Symptoms & Causes of Hemorrhoids; Treatment of Hemorrhoids; Symptoms & Causes of GI Bleeding; MedlinePlus — Hemorrhoids; data/pathology/red_flag_registry.json"],
+        "red_flags_en": ["NIDDK — Symptoms & Causes of Hemorrhoids; Treatment of Hemorrhoids; Symptoms & Causes of GI Bleeding; MedlinePlus — Hemorrhoids; data/pathology/red_flag_registry.json"],
+        "acupuncture_scope_zh": ["AcuTing OS safety and scope policy; NIDDK red-flag boundary"],
+        "acupuncture_scope_en": ["AcuTing OS safety and scope policy; NIDDK red-flag boundary"]
+      },
+      "sign_symptom_ids": [
+        "sym.bloody_stool",
+        "sym.rectal_prolapse",
+        "sym.constipation",
+        "sym.diarrhea"
+      ]
+    }
+  }
+}
