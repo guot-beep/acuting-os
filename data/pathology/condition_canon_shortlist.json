@@ -6572,8 +6572,35 @@
    "etiology_zh": "黃體功能不足之中醫病機主要責之於腎陽不足與脾氣虛弱。腎陽為一身陽氣之根,主司胞宮溫煦與封藏,腎陽不足則排卵後陽氣不能續長,黃體溫煦無力,經前基礎體溫上升幅度不足或維持時間過短,經前點滴出血、經期提前;脾氣虛弱、氣血生化不足者,則沖任氣血不充,黃體期陰血無以續養胞宮內膜,著床環境不足,伴神疲乏力、食少便溏。腎陽脾氣兩虛互為因果,久之亦影響腎精化生,與月經週期縮短及受孕、安胎困難相關。",
    "western_pathology_zh": "黃體功能不足指排卵後黃體分泌黃體素之量或作用時間不足,無法提供足夠且持續之黃體素以支持子宮內膜分泌期轉化,可能表現為黃體期縮短(通常少於十日)、經前點狀出血或反覆早期流產。其成因包括濾泡發育不良、排卵前黃體化激素分泌不足、高泌乳素血症或甲狀腺功能異常等。此診斷之客觀標準仍具爭議,單次血清黃體素或子宮內膜切片組織學已不被視為可靠獨立診斷依據,目前傾向以整體生殖內分泌評估取代單一黃體期指標。",
    "tcm_patterns": [],
-   "acupoint_protocols": [],
-   "herb_formulas": [],
+   "acupoint_protocols": [
+    {
+     "name_zh": "關元",
+     "code": "CV4"
+    },
+    {
+     "name_zh": "氣海",
+     "code": "CV6"
+    },
+    {
+     "name_zh": "三陰交",
+     "code": "SP6"
+    },
+    {
+     "name_zh": "腎俞",
+     "code": "BL23"
+    },
+    {
+     "name_zh": "足三里",
+     "code": "ST36"
+    }
+   ],
+   "herb_formulas": [
+    "右歸丸",
+    "金匱腎氣丸",
+    "壽胎丸",
+    "歸脾湯",
+    "溫經湯"
+   ],
    "entity_type": "biomedical_condition",
    "red_flag_refs": [
     "rf.luteal_phase_defect.legacy01",
@@ -6651,6 +6678,9 @@
     "acupuncture_scope_en": [
      "ASRM — Diagnosis and treatment of luteal phase deficiency",
      "AcuTing OS Disease Knowledge Research Pack — CR-010 Batch 03"
+    ],
+    "herb_formulas": [
+     "中醫婦科學黃體功能不足（月經後期、滑胎、不孕範疇）常見腎陽虛、腎陰陽兩虛、氣血兩虛證型之通行辨證論治用方"
     ]
    },
    "acupuncture_scope_zh": {
@@ -6702,7 +6732,35 @@
      "belongs_to": null,
      "text": "相關系統功能障礙及發炎或代謝異常導致的臨床症狀。"
     }
-   ]
+   ],
+   "acupoint_protocol_evidence": {
+    "protocol_status": "limited",
+    "point_rationale_zh": "以關元、氣海溫補下焦元氣，腎俞益腎陽以助黃體功能，足三里健脾益氣，三陰交調理肝脾腎三經、為婦科最常用配穴。文獻中頻繁使用之「子宮穴」為經外奇穴，非十四經穴，未列入本資料庫代碼故未採用。",
+    "point_rationale_en": null,
+    "evidence_note_zh": "檢索關鍵字「acupuncture luteal phase deficiency」「luteal phase defect acupuncture meta-analysis」。找到2025年一篇統合分析（IMR Press, Clinical and Experimental Obstetrics & Gynecology），納入9篇RCT共638例，結果顯示針灸合併藥物（如可洛米芬）治療組總有效率顯著優於單用藥物組（OR=1.56, 95% CI 1.11–2.18, p=0.010），並改善黃體期黃體素、雌二醇濃度。惟納入研究多為中國大陸單中心RCT、非安慰劑對照（多為針灸+藥物 vs. 藥物），方法學品質風險中至高，無法排除針灸以外因素（如就診頻率、關注效應）之混雜。整體證據等級判定為「limited」。",
+    "treatment_parameters": {
+     "manual_or_electroacupuncture": "manual acupuncture（各研究方案略有差異）",
+     "frequency": "多數研究為每週2-3次，於黃體期或月經週期特定階段介入",
+     "session_duration": "約20-30分鐘留針（各研究不一）",
+     "treatment_course": "通常配合1-3個月經週期之藥物療程"
+    },
+    "scope_conflict_note": "黃體功能不足之標準醫療處置為黃體素補充及病因治療，針灸為輔助介入，不應取代黃體素補充等生殖醫學標準治療。",
+    "sources": [
+     {
+      "source_id": "S1",
+      "type": "meta_analysis",
+      "citation": "Acupuncture in the Treatment of Infertility due to Luteal Phase Defect: A Meta-Analysis. Clinical and Experimental Obstetrics & Gynecology. 2025;52(4).",
+      "url": "https://www.imrpress.com/journal/CEOG/52/4/10.31083/CEOG19928/htm",
+      "pmid_or_doi": "doi:10.31083/CEOG19928",
+      "modality": "針灸（多數研究為針灸合併藥物）",
+      "comparator": "藥物治療（如可洛米芬）單獨使用組",
+      "certainty": "low（納入研究多為單中心、非安慰劑對照RCT）",
+      "finding_zh": "9篇RCT、638例，針灸合併藥物組總有效率OR=1.56（95% CI 1.11–2.18, p=0.010）優於單用藥物組，並改善黃體期黃體素與雌二醇濃度；常用穴位含關元、子宮穴（經外奇穴）、三陰交。"
+     }
+    ],
+    "collected_by": "pilot batch 2026-08-24",
+    "no_source_found": false
+   }
   },
   {
    "id": "cond.menopause_syndrome",
@@ -52877,6 +52935,9 @@
     ],
     "acupuncture_scope_en": [
      "AcuTing OS Disease Knowledge Research Pack — Batch A Hematology (compiled from NHLBI clinical materials)"
+    ],
+    "herb_formulas": [
+     "中醫內科學／血證篇 氣血兩虛所致貧血之脾胃虛弱、心脾兩虛、氣血雙虧等常見證型通行辨證論治用方"
     ]
    },
    "source_type": "sourced_research_pack",
@@ -52885,7 +52946,15 @@
     "ncbahm_biomedicine_appendix_a",
     "research_pack_batch_a_hematology"
    ],
-   "source_status": "draft_pending_ting_review"
+   "source_status": "draft_pending_ting_review",
+   "herb_formulas": [
+    "八珍湯",
+    "十全大補湯",
+    "歸脾湯",
+    "當歸補血湯",
+    "人參養榮湯",
+    "四物湯"
+   ]
   },
   {
    "id": "cond.thrombocytopenia",
@@ -53103,6 +53172,9 @@
     ],
     "acupuncture_scope_en": [
      "AcuTing OS Disease Knowledge Research Pack — Batch A Hematology (compiled from NHLBI clinical materials)"
+    ],
+    "herb_formulas": [
+     "中醫內科學血證（紫斑／肌衄）篇 血熱妄行、氣不攝血（脾不統血）、陰虛火旺等常見證型通行辨證論治用方"
     ]
    },
    "source_type": "sourced_research_pack",
@@ -53111,7 +53183,14 @@
     "ncbahm_biomedicine_appendix_a",
     "research_pack_batch_a_hematology"
    ],
-   "source_status": "draft_pending_ting_review"
+   "source_status": "draft_pending_ting_review",
+   "herb_formulas": [
+    "犀角地黃湯",
+    "歸脾湯",
+    "黃土湯",
+    "十灰散",
+    "知柏地黃丸"
+   ]
   },
   {
    "id": "cond.sickle_cell_disease",
@@ -53542,6 +53621,9 @@
     ],
     "acupuncture_scope_en": [
      "AcuTing OS Disease Knowledge Research Pack — Batch B Cardio/Autonomic (compiled from NIH/NHLBI clinical materials)"
+    ],
+    "herb_formulas": [
+     "現代中醫師將POTS常見之頭暈、心悸、倦怠、站立不耐等症狀對應中醫氣虛清陽不升、心脾兩虛、氣陰兩虛、陽虛水泛等證型之通行辨證用方；POTS為現代生物醫學診斷，中醫古籍無直接對應病名，此為症狀辨證類比而非疾病專屬實證"
     ]
    },
    "source_type": "sourced_research_pack",
@@ -53550,7 +53632,68 @@
     "ncbahm_biomedicine_appendix_a",
     "research_pack_batch_b_cardio_autonomic"
    ],
-   "source_status": "draft_pending_ting_review"
+   "source_status": "draft_pending_ting_review",
+   "herb_formulas": [
+    "補中益氣湯",
+    "生脈散",
+    "歸脾湯",
+    "苓桂朮甘湯",
+    "炙甘草湯"
+   ],
+   "acupoint_protocols": [
+    {
+     "name_zh": "內關",
+     "code": "PC6"
+    },
+    {
+     "name_zh": "百會",
+     "code": "GV20"
+    },
+    {
+     "name_zh": "足三里",
+     "code": "ST36"
+    },
+    {
+     "name_zh": "氣海",
+     "code": "CV6"
+    },
+    {
+     "name_zh": "太谿",
+     "code": "KI3"
+    },
+    {
+     "name_zh": "三陰交",
+     "code": "SP6"
+    }
+   ],
+   "acupoint_protocol_evidence": {
+    "protocol_status": "symptom_only",
+    "point_rationale_zh": "依中醫氣虛清陽不升、心脾兩虛所致頭暈心悸之辨證取穴：百會升提清陽，內關寧心定悸，足三里、氣海健脾益氣以固本，太谿滋腎陰，三陰交調理肝脾腎三經。因所引個案報告原始全文未能取得（NCBI存取受限），無法逐一核實該個案實際使用之確切穴位，以下為對應證型之常規配穴組合，並非該個案報告內容之逐字重現。",
+    "point_rationale_en": null,
+    "evidence_note_zh": "檢索關鍵字「acupuncture POTS postural orthostatic tachycardia syndrome trial」「acupuncture POTS randomized controlled trial」。僅檢得一篇2025年個案報告（Medical Acupuncture期刊），描述頭暈於第一次治療後改善、心悸於第三次治療後改善、站立心率增量亦於第三次治療後下降；未檢得任何RCT或系統性文獻回顧。證據等級極低（單一個案報告、無對照組），故列為symptom_only：僅反映針灸可能對頭暈、心悸等直立不耐症狀有輔助緩解作用之初步觀察，不代表對POTS病理機轉（自律神經失調）具實證療效。POTS之主要實證處置為衛教（水分/鹽分攝取調整）、漸進式運動復健（如PULSE試驗）及必要時藥物治療，針灸目前僅有個案報告層級證據，不應取代上述標準處置。",
+    "treatment_parameters": {
+     "manual_or_electroacupuncture": "manual acupuncture（個案報告採個別化辨證取穴）",
+     "frequency": "個案報告為連續多次治療，逐次評估症狀變化",
+     "session_duration": null,
+     "treatment_course": null
+    },
+    "scope_conflict_note": "POTS診斷與主要治療（衛教、運動復健、藥物）應由心臟科／自律神經科醫師主導，針灸僅作為症狀緩解之輔助手段，證據等級極低。",
+    "sources": [
+     {
+      "source_id": "S1",
+      "type": "case_report",
+      "citation": "Sari RK, Ellen E, Mihardja H. Acupuncture Therapy in Postural Orthostatic Tachycardia Syndrome (POTS). Medical Acupuncture. 2025.",
+      "url": "https://journals.sagepub.com/doi/10.1177/19336586251384668",
+      "pmid_or_doi": "doi:10.1177/19336586251384668",
+      "modality": "manual acupuncture, individualized TCM diagnosis",
+      "comparator": "無對照組（單一個案、治療前後比較）",
+      "certainty": "very low（單一個案報告）",
+      "finding_zh": "頭暈於第一次治療後改善，心悸於第三次治療後改善，站立時心率增量亦於第三次治療後下降。"
+     }
+    ],
+    "collected_by": "pilot batch 2026-08-24",
+    "no_source_found": false
+   }
   },
   {
    "id": "cond.addison_disease",
@@ -53747,6 +53890,9 @@
     ],
     "acupuncture_scope_en": [
      "AcuTing OS Disease Knowledge Research Pack — Batch C Endocrine (compiled from NIDDK clinical materials)"
+    ],
+    "herb_formulas": [
+     "中醫內科學虛勞／陽虛證型（脾腎陽虛）辨證論治對應；僅作為終身類固醇（皮質醇／礦皮質醇）替代治療之輔助支持用方，不可替代荷爾蒙替代治療，腎上腺危象（adrenal crisis）為西醫急症，須立即靜脈補充皮質醇，非中藥可及時處理"
     ]
    },
    "source_type": "sourced_research_pack",
@@ -53755,7 +53901,13 @@
     "ncbahm_biomedicine_appendix_a",
     "research_pack_batch_c_endocrine"
    ],
-   "source_status": "draft_pending_ting_review"
+   "source_status": "draft_pending_ting_review",
+   "herb_formulas": [
+    "右歸丸",
+    "金匱腎氣丸",
+    "四逆湯",
+    "參附湯"
+   ]
   },
   {
    "id": "cond.graves_disease",
@@ -53962,6 +54114,9 @@
     ],
     "acupuncture_scope_en": [
      "AcuTing OS Disease Knowledge Research Pack — Batch C Endocrine (compiled from NIDDK clinical materials)"
+    ],
+    "herb_formulas": [
+     "中醫內科學癭病（甲亢）篇 肝火旺盛、陰虛陽亢、氣陰兩虛、陰虛火旺等常見證型通行辨證論治用方"
     ]
    },
    "source_type": "sourced_research_pack",
@@ -53970,7 +54125,77 @@
     "ncbahm_biomedicine_appendix_a",
     "research_pack_batch_c_endocrine"
    ],
-   "source_status": "draft_pending_ting_review"
+   "source_status": "draft_pending_ting_review",
+   "herb_formulas": [
+    "龍膽瀉肝湯",
+    "天麻鉤藤飲",
+    "一貫煎",
+    "生脈散",
+    "酸棗仁湯",
+    "知柏地黃丸"
+   ],
+   "acupoint_protocols": [
+    {
+     "name_zh": "攢竹",
+     "code": "BL2"
+    },
+    {
+     "name_zh": "絲竹空",
+     "code": "TE23"
+    },
+    {
+     "name_zh": "陽白",
+     "code": "GB14"
+    },
+    {
+     "name_zh": "四白",
+     "code": "ST2"
+    },
+    {
+     "name_zh": "睛明",
+     "code": "BL1"
+    },
+    {
+     "name_zh": "合谷",
+     "code": "LI4"
+    },
+    {
+     "name_zh": "太衝",
+     "code": "LR3"
+    },
+    {
+     "name_zh": "三陰交",
+     "code": "SP6"
+    }
+   ],
+   "acupoint_protocol_evidence": {
+    "protocol_status": "adjunct_only",
+    "point_rationale_zh": "取局部眼周穴（攢竹、絲竹空、陽白、四白、睛明）疏通眼周氣血以改善突眼／眼瞼徵象，遠端配合合谷、太衝（開四關）平肝理氣，三陰交滋陰調肝脾腎，對應葛瑞夫茲眼病（甲狀腺相關眼病）陽氣不足、痰瘀互結之證型。因原始試驗全文存取受限（NCBI/期刊網站遭網路政策阻擋），無法逐一核實該試驗實際採用之確切穴位組合，以下為中醫眼科治療眼病之常規配穴原則，非該試驗處方之逐字重現。",
+    "point_rationale_en": null,
+    "evidence_note_zh": "檢索關鍵字「acupuncture Graves disease hyperthyroidism systematic review」「acupuncture thyroid ophthalmopathy RCT」。找到一篇2020年RCT（Medicine期刊）：120例非活動期甲狀腺相關眼病（陽氣不足、痰瘀互結證）患者分3組，比較平目湯（Pingmu Decoction）合併針灸／艾灸 vs. 平目湯單獨使用，療程12週，結果顯示合併針灸組於突眼度與中醫證候積分改善優於單用中藥組。此證據僅針對葛瑞夫茲病之眼部併發症（突眼／眼病），且是作為中藥處方之輔助（合併治療），並非針對甲狀腺機能亢進本身（甲狀腺激素過高）之治療，亦未檢得任何以西醫抗甲狀腺藥物、放射碘或手術為對照之針灸RCT或系統性回顧。故列為adjunct_only：僅作為甲狀腺相關眼病此一局部症狀之中藥輔助手段，不涉及甲亢本身的疾病修飾證據。",
+    "treatment_parameters": {
+     "manual_or_electroacupuncture": "manual acupuncture合併艾灸",
+     "frequency": "研究方案未於摘要中完整揭露，一般眼周穴位治療多為每週2-3次",
+     "session_duration": null,
+     "treatment_course": "12週（該RCT療程）"
+    },
+    "scope_conflict_note": "葛瑞夫茲病（甲狀腺機能亢進）之主要治療為抗甲狀腺藥物、放射碘或手術，此針灸／中藥方案僅作為甲狀腺相關眼病（突眼等眼部併發症）之輔助介入，不得取代或延誤上述甲亢核心治療。",
+    "sources": [
+     {
+      "source_id": "S1",
+      "type": "rct",
+      "citation": "Li H, et al. A prospective randomized controlled clinical trial of Pingmu Decoction combined with acupuncture in the treatment of non-active thyroid-related ophthalmopathy. Medicine (Baltimore). 2020;99(51):e23734.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33371126/",
+      "pmid_or_doi": "PMID 33371126 / doi:10.1097/MD.0000000000023734",
+      "modality": "中藥（平目湯）合併針灸／艾灸 vs. 中藥單獨使用",
+      "comparator": "平目湯單獨使用組（另設對照組，共3組）",
+      "certainty": "low-moderate（單中心RCT，樣本120例，屬中藥+針灸複合介入，無法單獨區分針灸貢獻）",
+      "finding_zh": "合併針灸／艾灸組於突眼度改善與中醫證候積分優於單用中藥組。"
+     }
+    ],
+    "collected_by": "pilot batch 2026-08-24",
+    "no_source_found": false
+   }
   },
   {
    "id": "cond.deep_vein_thrombosis",
@@ -54241,6 +54466,9 @@
     ],
     "acupuncture_scope_en": [
      "AcuTing OS Disease Knowledge Research Pack — Batch D Emergency/Vascular (compiled from NHLBI clinical materials)"
+    ],
+    "herb_formulas": [
+     "急性期以抗凝血治療為主，中藥非首選；此二方僅作為急性期後、已接受標準抗凝血治療下之氣虛血瘀／血瘀證恢復期輔助支持用方，非替代抗凝血治療。活血化瘀類藥物可能與抗凝血劑產生交互作用而增加出血風險，須經西醫師評估後審慎使用"
     ]
    },
    "source_type": "sourced_research_pack",
@@ -54249,7 +54477,11 @@
     "ncbahm_biomedicine_appendix_a",
     "research_pack_batch_d_emergency_vascular"
    ],
-   "source_status": "draft_pending_ting_review"
+   "source_status": "draft_pending_ting_review",
+   "herb_formulas": [
+    "補陽還五湯",
+    "血府逐瘀湯"
+   ]
   },
   {
    "id": "cond.pulmonary_embolism",
