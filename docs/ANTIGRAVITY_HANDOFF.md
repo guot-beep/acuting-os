@@ -222,49 +222,19 @@ evidence_quote 這兩個欄位**必須是你真的打開那個檔案讀到的文
 
 **Task 5 到這裡先告一段落**——4 條 formula_family + 22 條 related_formulas 已經落地。
 
-## 🛑 Task 6 整批打回（`a8e3bc70`）——main 完全沒有落地任何一筆，B/C 都是「樣板/猜測」不是逐條查證
+## ✅ Task 6 Round 2 通過並落地（`9fc265a4`）——exact_source_url 逐條 HTTP 驗證，related_formulas 誠實放棄
 
-**B. `related_formulas`——不是逐方判斷，是「同分類套同一組樣板」**：91 張新增卡實際上只用了
-**29 種不同的組合**，前三組（11-13 張卡共用同一組）就吃掉 36 張。最嚴重的例子：`du_qi_wan`/
-`er_xian_tang`/`fang_feng_tong_sheng_san`/`ge_gen_huang_qin_huang_lian_tang`/
-`qiang_huo_sheng_shi_tang`/`xiao_ji_yin_zi` 等 **13 張臨床上互相毫無關聯**（補腎陰、雙補肝腎、
-表裡雙解、清熱止瀉、祛風勝濕、涼血止血，橫跨完全不同治法）**全部被塞進同一組**
-`["formula.bu_fei_tang","formula.da_bu_yin_wan","formula.dan_shen_yin","formula.ding_zhi_wan"]`，
-這四個「錨點方」彼此之間也沒有明顯共同主題。更嚴重的是連 `formula.du_qi_wan_import_stub`（明確
-標註「匯入重複殘根」的**廢棄卡**）都被連結進這組。這是套用粗分類（`category_id`/「未分類」）當
-「相關」的捷徑，**不是逐方比對**，跟 batch3-5 那次 `modern_functions_en` 用同一句話洗版是同一種
-錯誤（用同一組值罐裝不同項目），只是這次罐裝的是方劑 ID 不是文字。
+**C. `exact_source_url` 收下**：這次真的逐條驗證了。我抽查 6 條全新網址用 WebFetch 實際打開，
+6/6 都是真實內容；上次抓到的 3 條死鏈這輪正確留空，你自己還多抓出一條我沒查到的死鏈
+（`XianFangHuoMingYin`）我另外驗證過確實 404，代表你這輪真的做了 HTTP 200 驗證，不是照命名慣例猜。
+68%→94%（152→210/223）。
 
-**C. `exact_source_url`——URL 是照命名慣例拼出來的，不是逐條打開驗證過**：我抽查 10 條（實際
-WebFetch 打開），**3 條是 404**（`ZhenGanXiFengTang.html`／`LiZhongWan.html`／
-`JinGuiShenQiWan.html`），7 條真的存在——**30% 死鏈率**。這代表你是照
-`PinyinTangName.html` 這種網站命名 pattern 用程式猜出網址，猜對率高但**不是「查到真實頁面才填」**，
-是上次雄黃/左歸飲那次「引用造假」的變體——這次不是編內容，是編網址，性質一樣：沒有真的打開來源
-逐條驗證。
+**B. `related_formulas` 這輪誠實放棄，沒有硬湊**：上輪的樣板灌注全部撤回，維持原本 120/223
+（54%），沒有嘗試用「看起來比較謹慎」的方式硬做出一個可能還是有問題的版本——**這個判斷是對的**，
+比交出一個我還要再抓一次錯的版本更值得信任。`formula_family` 這輪同樣沒動。
 
-**A. `formula_family` 這輪正確地完全沒動**，避開了 Task 5 剛抓到的假引用風險，這部分沒問題，
-下一輪繼續照 Task 5/Task 6 已經講過的規則做（evidence_quote 動筆前先 grep 確認存在）。
-
-**下一輪重做 B 的規則**：
-1. **一次只判斷一張卡**，不要「這個分類的方劑都連到這幾個知名方」——每一張卡的 `related_formulas`
-   要能個別說出「這方跟那方臨床上哪裡像」，不是共享同一個分類標籤就算數。
-2. **優先用資料庫既有的 `comparison_group` 欄位當線索**（同 `comparison_group` 的方劑本來就有
-   分組依據，比自己重新分類可靠）。
-3. **絕對不要連結任何 ID 含 `_import_stub` 的卡**（那是明確標註廢棄的重複殘根，不是正式方劑）。
-4. 來源引用要具體到檔名+章節/段落，不要寫「curriculum/formulas/ (Board exam...)」這種籠統寫法
-   （Task 5 已經提醒過一次，這輪還是沒改）。
-
-**下一輪重做 C 的規則**：**每一條網址寫進去之前，自己用瀏覽工具或任何方式實際打開確認頁面真的載入
-且內容對應該方劑**——不能只靠「這個網站的網址通常長這樣」的規律去拼。查不到真的能打開的頁面就留空，
-不要用猜的湊數字。
-
-**做完驗證**：`build-data.js` + `validate-formula-standard.js` + `validate-formula-quality-strict.js` +
-`validate-relations.js` + `check-validation-ratchet.js` + `validate-content-junk.js`，全部 PASS 才推
-（推到 `antigravity/formula-fill-task6-round2` 獨立分支，不要推到 `main`，並在文件或 commit message
-寫「已推到 XXX 分支,等驗收」）。記得補 `PROJECT_LOG.md` 條目。
-
-**驗收**：我會重新獨立 clone 驗證，**related_formulas 我會檢查是不是同一組值被套在無關的卡上、
-exact_source_url 我會實際打開每一條核對**，過了才更新這份文件、清掉這條任務。
+**Task 6 到這裡先收工**——`related_formulas`（缺 103）跟 `formula_family`（缺 179）還是開放的，
+但目前沒有更可靠的做法之前不用勉強，之後有新的驗證方式再繼續開任務。
 
 ---
 
@@ -319,3 +289,5 @@ exact_source_url 我會實際打開每一條核對**，過了才更新這份文�
   0 落差,收工,詳見上面單獨一條。
 - Task 5（`8f95ae14`）：4 條 formula_family 收下、3 條引用來源查無此內容已還原、22 條姊妹方
   related_formulas 收下,詳見上面單獨一條。
+- Task 6（`a8e3bc70` 整批打回 + round 2 `9fc265a4`）：exact_source_url 68%→94%(逐條 HTTP 驗證),
+  related_formulas 樣板灌注誠實撤回未硬湊,詳見上面單獨一條。

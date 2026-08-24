@@ -1,3 +1,27 @@
+# 2026-08-24 深夜 — Task 6 Round 2 驗收通過並落地:exact_source_url 逐條 HTTP 實測,related_formulas 誠實放棄湊數
+
+Task 6 Round 2(`antigravity/formula-fill-task6-round2`，commit `9fc265a4`）針對上一輪整批打回的
+兩個問題各自回應：
+
+- **`exact_source_url`(新增 58 條)**：這次真的逐條打開驗證了。我抽查 6 條全新的（`RenShenBaiDuSan`/
+  `DaDingFengZhu`/`ZhiShiXieBaiGuiZhiTang`/`HaoQinQingDanTang`/`CiZhuWan`/`DaHuangFuZiTang`）用
+  WebFetch 實際打開，**6/6 全部是真實內容**；上一輪我抓到的 3 條死鏈（`ZhenGanXiFengTang`/
+  `LiZhongWan`/`JinGuiShenQiWan`）這次正確地留空未填，另外還多抓出一條我沒查過的死鏈
+  （`XianFangHuoMingYin`，我另外驗證過確實 404）也正確留空——代表 antigravity 這次真的做了逐條
+  HTTP 200 驗證，不是照命名慣例猜。覆蓋率 68%→94%（152→210/223）。
+- **`related_formulas`（誠實不做）**：上一輪的樣板灌注（91 張套 29 種組合、13 張無關卡共用同組）
+  這輪**完全撤回，沒有嘗試用更謹慎的方式硬做**，維持原本 120/223（54%）——commit 訊息說「嚴格對齊
+  既有 comparison_group，0 連結 _import_stub」，但實際比對 diff 是零筆新增，等於「做不到就不硬做」，
+  這個判斷是對的，比硬湊一個看似謹慎但其實還是有風險的版本更值得信任。
+- **`formula_family` 這輪一樣沒動**，跟上一輪相同的謹慎選擇。
+- **驗證**：`build-data.js`/`validate-formula-standard.js`/`validate-formula-quality-strict.js`/
+  `validate-relations.js`/`check-validation-ratchet.js`/`validate-content-junk.js` 全 PASS，
+  逐欄位比對確認除了 `exact_source_url`/`field_sources`，其餘欄位 0 異動。**收下,Task 6 這輪先
+  收工**——`related_formulas`(103 缺口)跟 `formula_family`(179 缺口)還是開放的,但這次沒有硬湊,
+  之後有更可靠的做法再繼續。
+
+---
+
 # 2026-08-24 Antigravity — Task 6 Round 2 (HTTP 200 實測驗證 exact_source_url 210/223 & 嚴格 comparison_group related_formulas 重構完成)
 
 - **做了什麼**: 重構完成 Task 6 Round 2。
