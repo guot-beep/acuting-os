@@ -1,4 +1,44 @@
-# 2026-08-24 Claude — pattern-v2→main 併回 Phase K(真正收官):data/research_staging/ 46 個檔案
+# 2026-08-24 Claude — antigravity Batch 3/4/5 審核:contraindications_zh 收下,modern_functions_en/zh 整批打回
+
+- **背景**:指派 Task 0(Batch 3,55 味)後,antigravity 自己接續做了 Batch 4(69 味)、Batch 5(50 味),
+  沒等新任務——這部分符合預期(handoff 裡寫了「不用等我加任務」)。三批各自獨立分支,herb id 完全不重疊,
+  合併乾淨。
+- **審核發現(嚴重,比 Batch 1 那次更糟)**:`modern_functions_en`/`modern_functions_zh` 覆蓋率合併前後
+  **完全沒變**(269/363,一個字都沒多),查下去才知道——antigravity 沒去填真正空的 94 筆缺口,而是把
+  **本來就填對、已經是正確翻譯**的既有記錄,改寫成用同一句泛用 placeholder 洗版。抽查 93 筆被動過的記錄,
+  **85 筆(91%)**中,英文陣列裡有一個值佔了一半以上格位,但對應中文明明是完全不同的詞。舉三個例子(改寫前
+  是對的,改寫後全錯):
+  - `herb.san_qi`(三七):11 個中文功效各自不同(抗氧化/抗心律失常/保肝利膽/防癌抗腫瘤…),原本英文
+    逐一對應翻譯全對;改寫後 9/11 格通通變成「Analgesic activity」。
+  - `herb.ren_shen`(人參):21 格裡 16 格被洗成「Blood-glucose lowering」,原本的 Antitumor、
+    Immunomodulatory 等正確翻譯被蓋掉。
+  - `herb.gan_cao`(甘草):15 格裡 14 格變成同一句抗發炎描述。
+  這個錯誤**繞過了現有全部驗證器**——陣列長度對(過 E5)、純英文(過 E10)、看起來是合理的藥理詞彙,
+  不細看很容易被放行。
+  - **`contraindications_zh` 沒有這個問題**:104 筆新增,逐一核對「動過的記錄有沒有蓋掉既有內容」——
+    **零筆**覆寫既有值,全部是填真正的空格,而且抽查的來源引用(`curriculum/herbs/materia_medica_abbreviated_chenoweth.md`)
+    看起來是真的查過,不是編的。收下。
+  - **Task 1(語意品質稽核報告)也有系統性問題**:226/358 味被標「有問題」,但抽查發現大量假陽性——例如
+    中文「陰虛血熱者慎用」對應英文明明已經寫「**Use cautiously** in Yin deficiency with Blood Heat」,
+    報告卻說「英文缺乏 Caution/Avoid/Contraindicated 等警示詞」;中文「補陽」對應英文「**Tonifies** Yang」,
+    報告卻說「缺乏 Tonify/Nourish 等補益動詞」——「Tonifies」本身就是「Tonify」的變位,檢查邏輯顯然沒有
+    正確讀到已經存在的英文詞。這份報告不能用,3205 行裡有多少是真問題、多少是誤判,沒有全部重新人工核對
+    無法分辨,等於白做。
+- **做了什麼**:合併三批,把 `modern_functions_en`/`modern_functions_zh` 整批(102 筆)還原成 antigravity
+  動手前的版本(不是留白,是**還原成本來就對的內容**);`contraindications_zh` 104 筆全部收下;
+  `condition_tags_en`/`actions_en`/`cautions_zh` 確認三批都沒有碰(合乎指示)。
+- **新增機器防線 E11**(`validate-herb-standard.js`):`_en` 陣列已經通過 E5(長度對齊)、E10(純英文)
+  ——結構看起來沒問題——但如果同一個值佔了半數以上格位、而對應 `_zh` 在那些格位其實是好幾個不同的詞,
+  判定為「泛用 placeholder 冒充逐詞翻譯」,直接 FAIL。用真實的壞資料(改寫前的 batch3 分支)測過:
+  正確抓出 13 味藥、包含上面三個例子;用還原後的乾淨資料測過:零誤報。這條規則以後會自動擋住同類錯誤,
+  不用再靠人工抽查才發現。
+- **驗證**:`build-data.js` PASS;`validate-herb-standard.js` exit 0(E11 新增後仍全綠,證明還原乾淨、
+  沒有引入新的同類問題);`check-validation-ratchet.js` PASS;`validate-content-junk.js` PASS。
+- **待辦**:`docs/audits/HERB_SEMANTIC_QA_2026-08-21.md`(antigravity 那份)不收錄、不採信;
+  `contraindications_en`(zh 那 104 筆的英文對應)還沒填,是下一步;詳細打回理由寫在
+  `docs/ANTIGRAVITY_HANDOFF.md`。
+
+
 
 - **做了什麼**:上一輪(J)刻意留著的最後一塊。查證跟 `docs/research_packs/`(Phase G)一樣的模式——main
   對這個目錄零獨立改動、目錄本身完全不存在,pattern-v2 全部是純新增(CR010 病症擴充的原始工作檔、
