@@ -14065,6 +14065,13 @@
     ],
     "red_flags_en": [
      "AAOS — De Quervain's Tenosynovitis"
+    ],
+    "risk_factors_zh": [
+     "Incidence of de Quervain's Tenosynovitis in a Young, Active Population, J Hand Surg (sciencedirect.com/science/article/abs/pii/S0363502308007363)",
+     "Risk Factors Associated With de Quervain Tenosynovitis in Postpartum Women, PMC11141414"
+    ],
+    "acupuncture_scope_zh": [
+     "A systematic review and meta-analysis of acupuncture for De Quervain's tenosynovitis treatment, Postgraduate Medical Journal 2024 (academic.oup.com/pmj/article/100/1188/709/7699672)"
     ]
    },
    "acupoint_code_normalization": {
@@ -14160,7 +14167,85 @@
     "no_source_found": false
    },
    "western_pathology_en": "",
-   "etiology_en": ""
+   "etiology_en": "",
+   "risk_factors_zh": [
+    {
+     "factor": "女性",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "J Hand Surg incidence study (sciencedirect.com/science/article/abs/pii/S0363502308007363)"
+    },
+    {
+     "factor": "年齡 > 40 歲",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "J Hand Surg incidence study (sciencedirect.com/science/article/abs/pii/S0363502308007363)"
+    },
+    {
+     "factor": "懷孕與產後(尤其抱嬰等重複性動作)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Risk Factors Associated With de Quervain Tenosynovitis in Postpartum Women, PMC11141414"
+    },
+    {
+     "factor": "重複性拇指/腕部動作(職業性)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Time to Reconsider Occupation Induced De Quervain's Tenosynovitis: An Updated Review of Risk Factors, Orthopedic Reviews"
+    },
+    {
+     "factor": "類風濕性關節炎共病",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Risk Factors Associated With de Quervain Tenosynovitis in Postpartum Women, PMC11141414"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Female sex",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "J Hand Surg incidence study (sciencedirect.com/science/article/abs/pii/S0363502308007363)"
+    },
+    {
+     "factor": "Age > 40 years",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "J Hand Surg incidence study (sciencedirect.com/science/article/abs/pii/S0363502308007363)"
+    },
+    {
+     "factor": "Pregnancy and postpartum (repetitive infant-carrying motions)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Risk Factors Associated With de Quervain Tenosynovitis in Postpartum Women, PMC11141414"
+    },
+    {
+     "factor": "Repetitive thumb/wrist motion (occupational)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Time to Reconsider Occupation Induced De Quervain's Tenosynovitis: An Updated Review of Risk Factors, Orthopedic Reviews"
+    },
+    {
+     "factor": "Comorbid rheumatoid arthritis",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Risk Factors Associated With de Quervain Tenosynovitis in Postpartum Women, PMC11141414"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "可作為緩解疼痛、改善握力與手部功能的輔助治療,尤其適合傾向非藥物治療或對類固醇注射反應不佳的患者。",
+    "precautions": "妊娠/產後相關媽媽手應避免過度刺激,並留意合併症(如妊娠高血壓、類風濕性關節炎)風險;若懷疑肌腱斷裂或局部感染應立即轉介。",
+    "co_management": "若疼痛持續超過6週或握力持續下降,應建議病人諮詢骨科或手外科醫師評估是否需類固醇注射或手術。",
+    "evidence": "guideline",
+    "source": "2024 systematic review and meta-analysis of acupuncture for De Quervain's tenosynovitis, Postgraduate Medical Journal (academic.oup.com/pmj/article/100/1188/709/7699672)"
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "May be used as an adjunct to relieve pain and improve grip strength and hand function, particularly for patients who prefer non-pharmacologic care or have had insufficient response to corticosteroid injection.",
+    "precautions": "For pregnancy/postpartum-related De Quervain tenosynovitis, avoid overly vigorous stimulation and be mindful of comorbidities (e.g., hypertensive disorders of pregnancy, rheumatoid arthritis); refer immediately if tendon rupture or local infection is suspected.",
+    "co_management": "If pain persists beyond 6 weeks or grip strength continues to decline, the patient should be advised to consult an orthopedic or hand surgeon to evaluate the need for corticosteroid injection or surgery.",
+    "evidence": "guideline",
+    "source": "2024 systematic review and meta-analysis of acupuncture for De Quervain's tenosynovitis, Postgraduate Medical Journal (academic.oup.com/pmj/article/100/1188/709/7699672)"
+   }
   },
   {
    "id": "cond.trigger_finger",
@@ -14728,8 +14813,94 @@
     "no_source_found": false
    },
    "western_pathology_en": "",
-   "field_sources": {},
-   "etiology_en": ""
+   "field_sources": {
+    "risk_factors_zh": [
+     "Diabetes Mellitus as a Risk Factor for Trigger Finger, PMC10012113",
+     "High HbA1c Levels Are Associated With Development of Trigger Finger, Diabetes Care 2022"
+    ],
+    "acupuncture_scope_zh": [
+     "Effectiveness of Acupuncture and Acupotomy for Trigger Finger: A Systematic Review and Meta-Analysis (e-jar.org/journal/view.html?uid=2574)"
+    ]
+   },
+   "etiology_en": "",
+   "risk_factors_zh": [
+    {
+     "factor": "糖尿病",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Diabetes Mellitus as a Risk Factor for Trigger Finger, PMC10012113"
+    },
+    {
+     "factor": "血糖控制不良(HbA1c偏高)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "High HbA1c Levels Are Associated With Development of Trigger Finger in Type 1 and Type 2 Diabetes, Diabetes Care 2022"
+    },
+    {
+     "factor": "女性",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Merivale Hand Clinic clinical summary; Wikipedia trigger finger overview"
+    },
+    {
+     "factor": "年齡40-50多歲",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Merivale Hand Clinic clinical summary"
+    },
+    {
+     "factor": "糖尿病病程較長",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Diabetes Mellitus as a Risk Factor for Trigger Finger, PMC10012113"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Diabetes mellitus",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Diabetes Mellitus as a Risk Factor for Trigger Finger, PMC10012113"
+    },
+    {
+     "factor": "Poor glycemic control (elevated HbA1c)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "High HbA1c Levels Are Associated With Development of Trigger Finger in Type 1 and Type 2 Diabetes, Diabetes Care 2022"
+    },
+    {
+     "factor": "Female sex",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Merivale Hand Clinic clinical summary; Wikipedia trigger finger overview"
+    },
+    {
+     "factor": "Age in 40s-50s",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Merivale Hand Clinic clinical summary"
+    },
+    {
+     "factor": "Longer diabetes disease duration",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Diabetes Mellitus as a Risk Factor for Trigger Finger, PMC10012113"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "對輕至中度扳機指,針灸可能有助於減輕疼痛與改善扳機感(snapping)嚴重度;系統性回顧顯示針灸/針刀療效不劣於傳統保守治療。",
+    "precautions": "糖尿病患者應先改善血糖控制;第三期以上或明顯沾黏之扳機指建議轉介評估局部類固醇注射或手術鬆解。",
+    "co_management": "若保守治療(含針灸)3個月無效,或糖尿病患者血糖控制不佳,應建議病人諮詢手外科醫師評估注射或手術。",
+    "evidence": "guideline",
+    "source": "Effectiveness of Acupuncture and Acupotomy for Trigger Finger: A Systematic Review and Meta-Analysis, Journal of Acupuncture Research (e-jar.org/journal/view.html?uid=2574)"
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "For mild-to-moderate trigger finger, acupuncture may help reduce pain and snapping severity; a systematic review found acupuncture/acupotomy performs no worse than conventional conservative care.",
+    "precautions": "Diabetic patients should first optimize glycemic control; grade III or higher trigger finger with significant adhesion should be referred for evaluation of corticosteroid injection or surgical release.",
+    "co_management": "If 3 months of conservative treatment (including acupuncture) fails, or glycemic control is poor in a diabetic patient, the patient should be advised to consult a hand surgeon to evaluate injection or surgery.",
+    "evidence": "guideline",
+    "source": "Effectiveness of Acupuncture and Acupotomy for Trigger Finger: A Systematic Review and Meta-Analysis, Journal of Acupuncture Research (e-jar.org/journal/view.html?uid=2574)"
+   }
   },
   {
    "id": "cond.knee_osteoarthritis",
@@ -15849,8 +16020,70 @@
     "no_source_found": false
    },
    "western_pathology_en": "",
-   "field_sources": {},
-   "etiology_en": ""
+   "field_sources": {
+    "risk_factors_zh": [
+     "Risk Factors for Patellofemoral Pain Syndrome: A Systematic Review, JOSPT 2012",
+     "Risk factors for patellofemoral pain: a systematic review and meta-analysis, 2019 (pubmed 30242107)"
+    ],
+    "acupuncture_scope_zh": [
+     "Effectiveness of Acupuncture Therapies to Manage Musculoskeletal Disorders of the Extremities: A Systematic Review, JOSPT 2016; Acupuncture Therapy for Extremity Musculoskeletal Pain, PMC12560653"
+    ]
+   },
+   "etiology_en": "",
+   "risk_factors_zh": [
+    {
+     "factor": "女性",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Risk Factors for Patellofemoral Pain Syndrome: A Systematic Review, JOSPT 2012"
+    },
+    {
+     "factor": "股四頭肌與髖外展肌無力",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Risk factors for patellofemoral pain: a systematic review and meta-analysis, 2019 (pubmed 30242107)"
+    },
+    {
+     "factor": "高負荷跑步、深蹲、上下樓梯等活動",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Risk Factors for Patellofemoral Pain Syndrome: A Systematic Review, JOSPT 2012"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Female sex",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Risk Factors for Patellofemoral Pain Syndrome: A Systematic Review, JOSPT 2012"
+    },
+    {
+     "factor": "Quadriceps and hip abductor muscle weakness",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Risk factors for patellofemoral pain: a systematic review and meta-analysis, 2019 (pubmed 30242107)"
+    },
+    {
+     "factor": "High-load running, squatting, and stair-climbing activity",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Risk Factors for Patellofemoral Pain Syndrome: A Systematic Review, JOSPT 2012"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "可作為輔助療法減輕髕股疼痛症候群之疼痛,但傳統針灸相對安慰劑之效益證據不一致;激痛點乾針對部分患者有短中期止痛效果。",
+    "precautions": "應合併運動治療(股四頭肌/髖外展肌強化)使用,不建議作為單一療法;若合併機械性卡感、關節積液或不穩定應轉介骨科評估結構性問題。",
+    "co_management": "若症狀超過3個月未改善,或出現關節腫脹、鎖住感,應建議病人諮詢骨科或運動醫學醫師進一步影像評估。",
+    "evidence": "guideline",
+    "source": "Effectiveness of Acupuncture Therapies to Manage Musculoskeletal Disorders of the Extremities: A Systematic Review, JOSPT 2016 (jospt.org/doi/10.2519/jospt.2016.6270)"
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "May be used as adjunct therapy to reduce patellofemoral pain, though evidence for traditional needle acupuncture over placebo is inconsistent; trigger-point dry needling shows short-to-medium term benefit in some patients.",
+    "precautions": "Should be combined with exercise therapy (quadriceps/hip abductor strengthening), not used as a stand-alone treatment; refer to orthopedics if mechanical catching, joint effusion, or instability is present.",
+    "co_management": "If symptoms do not improve after 3 months, or joint swelling/locking occurs, the patient should be advised to consult an orthopedic or sports medicine physician for further imaging evaluation.",
+    "evidence": "guideline",
+    "source": "Effectiveness of Acupuncture Therapies to Manage Musculoskeletal Disorders of the Extremities: A Systematic Review, JOSPT 2016 (jospt.org/doi/10.2519/jospt.2016.6270)"
+   }
   },
   {
    "id": "cond.meniscus_injury",
@@ -16377,6 +16610,13 @@
     ],
     "red_flags_en": [
      "AAOS — Sprained Ankle"
+    ],
+    "risk_factors_zh": [
+     "Acute Ankle Sprain, StatPearls (NBK459212)",
+     "Recurrent Ankle Sprain, StatPearls (NBK560619)"
+    ],
+    "acupuncture_scope_zh": [
+     "Acupuncture for ankle sprain: systematic review and meta-analysis, PMC3606608"
     ]
    },
    "acupoint_code_normalization": {
@@ -16460,7 +16700,73 @@
     "no_source_found": false
    },
    "western_pathology_en": "",
-   "etiology_en": ""
+   "etiology_en": "",
+   "risk_factors_zh": [
+    {
+     "factor": "過去踝關節扭傷病史",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Recurrent Ankle Sprain, StatPearls (NBK560619)"
+    },
+    {
+     "factor": "本體感覺/平衡功能缺損",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Acute Ankle Sprain, StatPearls (NBK459212)"
+    },
+    {
+     "factor": "女性且從事高強度運動",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Risk factors for the recurrence of instability after operative treatment of chronic lateral ankle instability, PMC11929016"
+    },
+    {
+     "factor": "不合適的鞋具",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Acute Ankle Sprain, StatPearls (NBK459212)"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Prior history of ankle sprain",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Recurrent Ankle Sprain, StatPearls (NBK560619)"
+    },
+    {
+     "factor": "Proprioceptive and balance deficits",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Acute Ankle Sprain, StatPearls (NBK459212)"
+    },
+    {
+     "factor": "Female sex combined with high-level sports participation",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Risk factors for the recurrence of instability after operative treatment of chronic lateral ankle instability, PMC11929016"
+    },
+    {
+     "factor": "Improper footwear",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Acute Ankle Sprain, StatPearls (NBK459212)"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "可作為疼痛與腫脹緩解的輔助處置,幫助功能恢復,但目前系統性回顧認為證據品質不足以做出明確建議。",
+    "precautions": "需先以Ottawa ankle rules排除骨折,並排除韌帶完全斷裂;針灸不能取代早期RICE處置與漸進式功能性復健。",
+    "co_management": "若無法承重、明顯瘀血腫脹或懷疑骨折,應建議病人諮詢骨科或運動醫學醫師安排影像檢查。",
+    "evidence": "guideline",
+    "source": "Acupuncture for ankle sprain: systematic review and meta-analysis, PMC3606608 (DARE-assessed)"
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "May be used as adjunct care to relieve pain and swelling and support functional recovery, though current systematic reviews judge the evidence insufficient for a firm recommendation.",
+    "precautions": "Fracture (per Ottawa ankle rules) and complete ligament rupture must be excluded first; acupuncture cannot replace early RICE management and progressive functional rehabilitation.",
+    "co_management": "If the patient cannot bear weight, has marked bruising/swelling, or fracture is suspected, they should be advised to consult an orthopedic or sports medicine physician for imaging.",
+    "evidence": "guideline",
+    "source": "Acupuncture for ankle sprain: systematic review and meta-analysis, PMC3606608 (DARE-assessed)"
+   }
   },
   {
    "id": "cond.plantar_fasciitis",
@@ -16930,8 +17236,82 @@
     "no_source_found": false
    },
    "western_pathology_en": "",
-   "field_sources": {},
-   "etiology_en": ""
+   "field_sources": {
+    "risk_factors_zh": [
+     "Plantar Fasciitis, StatPearls (NBK431073)",
+     "The Prevalence and Risk Factors of Plantar Fasciitis Amongst the Population of Jazan, PMC9595252"
+    ],
+    "acupuncture_scope_zh": [
+     "Acupuncture as a Therapeutic Treatment for Plantar Fasciitis, evidencebasedacupuncture.org; JOSPT 2023 Heel Pain CPG"
+    ]
+   },
+   "etiology_en": "",
+   "risk_factors_zh": [
+    {
+     "factor": "肥胖/BMI偏高",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "The Prevalence and Risk Factors of Plantar Fasciitis Amongst the Population of Jazan, PMC9595252"
+    },
+    {
+     "factor": "需長時間站立或行走之職業",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Plantar Fasciitis, StatPearls (NBK431073)"
+    },
+    {
+     "factor": "扁平足或高足弓",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Plantar Fasciitis, StatPearls (NBK431073)"
+    },
+    {
+     "factor": "阿基里斯腱緊繃與踝關節背屈受限",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Plantar Fasciitis, StatPearls (NBK431073)"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Obesity / elevated BMI",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "The Prevalence and Risk Factors of Plantar Fasciitis Amongst the Population of Jazan, PMC9595252"
+    },
+    {
+     "factor": "Occupations requiring prolonged standing or walking",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Plantar Fasciitis, StatPearls (NBK431073)"
+    },
+    {
+     "factor": "Pes planus or pes cavus foot structure",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Plantar Fasciitis, StatPearls (NBK431073)"
+    },
+    {
+     "factor": "Tight Achilles tendon and limited ankle dorsiflexion",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Plantar Fasciitis, StatPearls (NBK431073)"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "系統性回顧支持針灸可有效減輕足底筋膜炎疼痛,效果與伸展運動、夜間副木、局部類固醇注射相當。",
+    "precautions": "建議合併足底筋膜與小腿伸展運動、足弓支撐/鞋墊使用;體重過重者應同時處理體重管理。",
+    "co_management": "若保守治療(含針灸)6個月無效,或出現足跟麻木無力,應建議病人諮詢骨科或復健科醫師評估是否需影像檢查或體外震波治療。",
+    "evidence": "guideline",
+    "source": "Acupuncture as a Therapeutic Treatment for Plantar Fasciitis, evidencebasedacupuncture.org; Heel Pain-Plantar Fasciitis: Revision 2023 CPG, JOSPT (jospt.org/doi/10.2519/jospt.2023.0303)"
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "Systematic review evidence supports acupuncture as effective for reducing plantar fasciitis pain, with effects comparable to stretching, night splints, and local corticosteroid injection.",
+    "precautions": "Should be combined with plantar fascia/calf stretching and arch support/orthotics; overweight patients should also address weight management concurrently.",
+    "co_management": "If conservative treatment (including acupuncture) fails after 6 months, or heel numbness/weakness develops, the patient should be advised to consult an orthopedic or rehabilitation physician to evaluate imaging or shockwave therapy.",
+    "evidence": "guideline",
+    "source": "Acupuncture as a Therapeutic Treatment for Plantar Fasciitis, evidencebasedacupuncture.org; Heel Pain-Plantar Fasciitis: Revision 2023 CPG, JOSPT (jospt.org/doi/10.2519/jospt.2023.0303)"
+   }
   },
   {
    "id": "cond.achilles_tendinopathy",
@@ -18384,6 +18764,13 @@
     ],
     "red_flags_en": [
      "AAPM&R — Myofascial Pain"
+    ],
+    "risk_factors_zh": [
+     "Myofascial Pain Syndrome, PubMed 29763057",
+     "Groups At Risk For Myofascial Pain, beverlyhillstmjheadachepain.com"
+    ],
+    "acupuncture_scope_zh": [
+     "Acupuncture therapy on myofascial pain syndrome: a systematic review and meta-analysis, Frontiers in Neurology 2024; Network Meta-Analysis of 33 RCTs, PubMed 28934793"
     ]
    },
    "acupoint_code_normalization": {
@@ -18527,7 +18914,73 @@
     "no_source_found": false
    },
    "western_pathology_en": "",
-   "etiology_en": ""
+   "etiology_en": "",
+   "risk_factors_zh": [
+    {
+     "factor": "肌肉過度使用與重複性勞損",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Myofascial Pain Syndrome, PubMed 29763057"
+    },
+    {
+     "factor": "姿勢不良",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Myofascial Pain Syndrome - Symptoms and causes, Mayo Clinic"
+    },
+    {
+     "factor": "維生素D缺乏",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Groups At Risk For Myofascial Pain, beverlyhillstmjheadachepain.com"
+    },
+    {
+     "factor": "心理壓力與失眠",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Myofascial Pain Syndrome, PubMed 29763057"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Muscle overuse and repetitive strain",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Myofascial Pain Syndrome, PubMed 29763057"
+    },
+    {
+     "factor": "Poor posture",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Myofascial Pain Syndrome - Symptoms and causes, Mayo Clinic"
+    },
+    {
+     "factor": "Vitamin D deficiency",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Groups At Risk For Myofascial Pain, beverlyhillstmjheadachepain.com"
+    },
+    {
+     "factor": "Psychological stress and insomnia",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Myofascial Pain Syndrome, PubMed 29763057"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "中高品質證據支持針灸(含激痛點針刺)可有效減輕肌筋膜疼痛症候群之疼痛與局部壓痛,尤其頸肩與下背部位。",
+    "precautions": "應排除未處理之潛在系統性病因(如甲狀腺功能低下、維生素D缺乏);深部針刺胸背部激痛點須留意氣胸風險。",
+    "co_management": "若合併不明原因體重下降、夜間痛加劇或神經學症狀,應建議病人諮詢醫師排除其他病因。",
+    "evidence": "guideline",
+    "source": "Acupuncture therapy on myofascial pain syndrome: a systematic review and meta-analysis, Frontiers in Neurology 2024; Acupuncture for Myofascial Pain Syndrome: A Network Meta-Analysis of 33 RCTs, PubMed 28934793"
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "Moderate-to-high quality evidence supports acupuncture (including trigger-point needling) for reducing pain and local tenderness in myofascial pain syndrome, particularly in the neck, shoulder, and low back.",
+    "precautions": "Underlying systemic causes (e.g., hypothyroidism, vitamin D deficiency) should be addressed if unmanaged; deep needling of thoracic/back trigger points carries a pneumothorax risk that requires care.",
+    "co_management": "If unexplained weight loss, worsening nocturnal pain, or neurological symptoms occur, the patient should be advised to consult a physician to rule out other causes.",
+    "evidence": "guideline",
+    "source": "Acupuncture therapy on myofascial pain syndrome: a systematic review and meta-analysis, Frontiers in Neurology 2024; Acupuncture for Myofascial Pain Syndrome: A Network Meta-Analysis of 33 RCTs, PubMed 28934793"
+   }
   },
   {
    "id": "cond.tmd",
@@ -19005,8 +19458,82 @@
     "no_source_found": false
    },
    "western_pathology_en": "",
-   "field_sources": {},
-   "etiology_en": ""
+   "field_sources": {
+    "risk_factors_zh": [
+     "Risk factor assessments of temporomandibular disorders via machine learning, Sci Rep 2021",
+     "Risk factors for temporomandibular disorders: a systematic review of cohort studies, 2024"
+    ],
+    "acupuncture_scope_zh": [
+     "Efficacy of acupuncture and laser acupuncture in temporomandibular disorders: a systematic review and meta-analysis, BMC Oral Health 2023; PMC10519525"
+    ]
+   },
+   "etiology_en": "",
+   "risk_factors_zh": [
+    {
+     "factor": "女性",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Risk factor assessments of temporomandibular disorders via machine learning, Sci Rep 2021"
+    },
+    {
+     "factor": "憂鬱、焦慮與高壓力感受",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Risk factor assessments of temporomandibular disorders via machine learning, Sci Rep 2021"
+    },
+    {
+     "factor": "睡眠品質不佳或阻塞性睡眠呼吸中止症狀",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Risk factors for temporomandibular disorders: a systematic review of cohort studies, 2024"
+    },
+    {
+     "factor": "共病(腸躁症、下背痛、其他頭痛疾患)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Risk factors for temporomandibular disorders: a systematic review of cohort studies, 2024"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Female sex",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Risk factor assessments of temporomandibular disorders via machine learning, Sci Rep 2021"
+    },
+    {
+     "factor": "Depression, anxiety, and perceived stress",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Risk factor assessments of temporomandibular disorders via machine learning, Sci Rep 2021"
+    },
+    {
+     "factor": "Poor sleep quality or obstructive sleep apnea symptoms",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Risk factors for temporomandibular disorders: a systematic review of cohort studies, 2024"
+    },
+    {
+     "factor": "Comorbidities (IBS, low back pain, other headache disorders)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Risk factors for temporomandibular disorders: a systematic review of cohort studies, 2024"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "中等證據支持針灸可改善顳顎關節障礙相關疼痛症狀,效果與咬合板治療相近,並優於等待名單對照組。",
+    "precautions": "對合併明顯結構性關節內紊亂(需復位之關節盤移位、嚴重退化性關節炎)者,應合併牙科/口顎面外科評估;針灸建議作為輔助而非唯一療法。",
+    "co_management": "若張口受限持續惡化,或關節雜音伴隨疼痛加劇,應建議病人諮詢牙科顳顎關節專科醫師評估。",
+    "evidence": "guideline",
+    "source": "Efficacy of acupuncture and laser acupuncture in temporomandibular disorders: a systematic review and meta-analysis, BMC Oral Health 2023; Is acupuncture an effective treatment for TMD?, PMC10519525"
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "Moderate evidence supports acupuncture for improving TMD-related pain, with effects similar to occlusal splint therapy and superior to wait-list control.",
+    "precautions": "For cases with significant intra-articular structural derangement (disc displacement requiring reduction, severe degenerative joint disease), combine with dental/oral-maxillofacial evaluation; acupuncture should be adjunctive, not the sole treatment.",
+    "co_management": "If mouth-opening limitation progressively worsens, or joint sounds are accompanied by worsening pain, the patient should be advised to consult a dental TMJ specialist for evaluation.",
+    "evidence": "guideline",
+    "source": "Efficacy of acupuncture and laser acupuncture in temporomandibular disorders: a systematic review and meta-analysis, BMC Oral Health 2023; Is acupuncture an effective treatment for TMD?, PMC10519525"
+   }
   },
   {
    "id": "cond.tension_headache",
@@ -21161,6 +21688,13 @@
     ],
     "red_flags_en": [
      "IHS / ICHD-3 — 3.1 Cluster headache"
+    ],
+    "risk_factors_zh": [
+     "Cluster Headache and Associated Risk Factors: A Systemic Review and Meta-Analysis, PMC8645418",
+     "Episodic cluster headache. II: High tobacco and alcohol consumption in males, PubMed 1582837"
+    ],
+    "acupuncture_scope_zh": [
+     "Acupuncture in cluster headache: four cases and review of the literature, Neurological Sciences; Acupuncture for episodic cluster headache: a trigeminal approach, PubMed 26846705"
     ]
    },
    "sign_symptom_ids": [
@@ -21375,7 +21909,73 @@
     "assessed": false,
     "no_source_found": false
    },
-   "etiology_en": ""
+   "etiology_en": "",
+   "risk_factors_zh": [
+    {
+     "factor": "男性",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Cluster Headache and Associated Risk Factors: A Systemic Review and Meta-Analysis, PMC8645418"
+    },
+    {
+     "factor": "吸菸",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Cluster Headache and Associated Risk Factors: A Systemic Review and Meta-Analysis, PMC8645418; Vall d'Hebron mendelian randomization study"
+    },
+    {
+     "factor": "家族史",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Cluster Headache and Associated Risk Factors: A Systemic Review and Meta-Analysis, PMC8645418"
+    },
+    {
+     "factor": "發作期間飲酒",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Episodic cluster headache. II: High tobacco and alcohol consumption in males, PubMed 1582837"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Male sex",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Cluster Headache and Associated Risk Factors: A Systemic Review and Meta-Analysis, PMC8645418"
+    },
+    {
+     "factor": "Cigarette smoking",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Cluster Headache and Associated Risk Factors: A Systemic Review and Meta-Analysis, PMC8645418; Vall d'Hebron mendelian randomization study"
+    },
+    {
+     "factor": "Family history",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Cluster Headache and Associated Risk Factors: A Systemic Review and Meta-Analysis, PMC8645418"
+    },
+    {
+     "factor": "Alcohol consumption during cluster period",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Episodic cluster headache. II: High tobacco and alcohol consumption in males, PubMed 1582837"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "目前僅有病例系列與小型研究顯示針灸可能對部分陣發性叢發性頭痛患者有輔助止痛效果,尚無足夠隨機對照試驗證實療效。",
+    "precautions": "叢發性頭痛發作劇烈,可能與其他嚴重顱內病變(如頸動脈剝離、腦下垂體病灶)相似,初次發作或症狀不典型者應先由神經科排除次發性病因;針灸不應延誤氧氣治療或Triptan急性期用藥。",
+    "co_management": "若為首次發作、合併神經學缺損或對標準急性期治療無反應,應建議病人諮詢神經科醫師評估影像檢查。",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "Only case series and small studies currently suggest acupuncture may provide adjunctive pain relief for some episodic cluster headache patients; there is not yet sufficient RCT evidence to confirm efficacy.",
+    "precautions": "Cluster headache attacks are severe and can mimic other serious intracranial pathology (e.g., ICA dissection, pituitary lesions); atypical or first-time presentations should be evaluated by neurology first; acupuncture should not delay oxygen therapy or acute triptan treatment.",
+    "co_management": "If this is a first attack, there are neurological deficits, or the patient fails to respond to standard acute treatment, they should be advised to consult a neurologist for imaging evaluation.",
+    "evidence": "unknown",
+    "source": null
+   }
   },
   {
    "id": "cond.gout",
@@ -63843,7 +64443,24 @@
     ],
     "related_patterns": [
      "clinical_judgment: TCM pattern differentiation commonly applied to pelvic infection presentations"
+    ],
+    "acupuncture_scope_zh": [
+     "Acupuncture therapies for relieving pain in pelvic inflammatory disease: A systematic review and meta-analysis, PMC10830011 (chronic PID evidence base; no acute-phase specific trials found)"
     ]
+   },
+   "acupuncture_scope_zh": {
+    "can_treat": "急性骨盆腔炎於抗生素治療後,針灸可作為輔助療法緩解殘餘骨盆疼痛與促進恢復,但不能取代抗生素治療。",
+    "precautions": "急性期合併發燒、腹膜刺激徵象或疑似輸卵管卵巢膿瘍時,針灸為禁忌,應優先接受抗生素治療甚至住院/手術評估;未確診且感染活動期不建議骨盆局部深刺。",
+    "co_management": "若出現發燒、下腹痛明顯加劇,或抗生素治療48-72小時無改善,應建議病人立即諮詢婦產科醫師或至急診就醫評估是否需住院治療。",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "After antibiotic treatment for acute PID, acupuncture may be used as an adjunct to relieve residual pelvic pain and support recovery, but it cannot replace antibiotic therapy.",
+    "precautions": "Acupuncture is contraindicated during the acute phase with fever, peritoneal signs, or suspected tubo-ovarian abscess — antibiotic treatment, and possibly hospitalization or surgery, must take priority; deep pelvic needling should be avoided during active, undiagnosed infection.",
+    "co_management": "If fever develops, lower abdominal pain markedly worsens, or there is no improvement after 48-72 hours of antibiotics, the patient should be advised to immediately consult an OB-GYN physician or seek emergency evaluation for possible hospitalization.",
+    "evidence": "unknown",
+    "source": null
    }
   },
   {
@@ -67255,7 +67872,24 @@
     ],
     "risk_factors_en": [
      "StatPearls: Thoracic Outlet Syndrome (NBK557450, retrieved 2026-08)"
+    ],
+    "acupuncture_scope_zh": [
+     "Traditional medicine treatment for thoracic outlet syndrome: A protocol for systematic review, PMC7337591 (review not yet completed; only case reports found)"
     ]
+   },
+   "acupuncture_scope_zh": {
+    "can_treat": "針灸可能有助於緩解胸廓出口症候群相關的頸肩臂疼痛與肌肉緊繃,個案報告顯示對部分患者有效,但仍缺乏高品質隨機對照試驗。",
+    "precautions": "若為血管型胸廓出口症候群(伴隨肢體腫脹、變色、脈搏減弱)或神經學功能持續惡化,針灸不適合作為主要治療,須優先排除血管神經壓迫的結構性病因。",
+    "co_management": "若出現患肢腫脹發紺、脈搏減弱或漸進性肌肉無力,應建議病人諮詢血管外科或神經外科醫師評估是否需手術減壓。",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "Acupuncture may help relieve neck/shoulder/arm pain and muscle tension associated with thoracic outlet syndrome; case reports show benefit in some patients, but high-quality RCT evidence is still lacking.",
+    "precautions": "For vascular TOS (with limb swelling, discoloration, diminished pulse) or progressive neurological deterioration, acupuncture is not appropriate as primary treatment — structural vascular/neural compression must be ruled out first.",
+    "co_management": "If the affected limb develops swelling, cyanosis, diminished pulse, or progressive muscle weakness, the patient should be advised to consult a vascular or neurosurgeon to evaluate the need for surgical decompression.",
+    "evidence": "unknown",
+    "source": null
    }
   },
   {
@@ -69790,7 +70424,24 @@
     ],
     "risk_factors_en": [
      "Mayo Clinic: H. pylori infection — Symptoms & causes (mayoclinic.org, retrieved 2026-08)"
+    ],
+    "acupuncture_scope_zh": [
+     "Acupuncture as an adjunctive therapy for gastric ulcer: A modified Delphi consensus study, ScienceDirect (H. pylori-specific acupuncture RCT/SR evidence not found; dyspepsia symptom relief evidence only)"
     ]
+   },
+   "acupuncture_scope_zh": {
+    "can_treat": "針灸可能作為輔助療法幫助緩解幽門螺旋桿菌相關消化不良症狀,但目前並無足夠證據顯示針灸能提升根除率或取代抗生素三合一/四合一療法。",
+    "precautions": "針灸不應替代標準抗生素根除治療;若病人在療程中因抗生素副作用(噁心、腹瀉)尋求針灸緩解,不應因此延誤或中斷抗生素療程。",
+    "co_management": "若病人考慮以針灸取代或中斷抗生素根除治療,應建議病人諮詢原處方醫師確認是否可調整治療計畫,避免抗藥性與治療失敗。",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "Acupuncture may be used as an adjunct to relieve H. pylori-related dyspeptic symptoms, but there is currently insufficient evidence that acupuncture improves eradication rates or can replace standard triple/quadruple antibiotic therapy.",
+    "precautions": "Acupuncture should not replace standard antibiotic eradication therapy; if a patient seeks acupuncture to relieve antibiotic side effects (nausea, diarrhea) during treatment, this should not delay or interrupt the antibiotic course.",
+    "co_management": "If the patient is considering using acupuncture to replace or interrupt antibiotic eradication therapy, they should be advised to consult the prescribing physician to confirm whether the treatment plan can be adjusted, to avoid resistance and treatment failure.",
+    "evidence": "unknown",
+    "source": null
    }
   },
   {
@@ -71068,7 +71719,24 @@
     ],
     "aliases_en": [
      "Common medical nomenclature: 'regional enteritis' as historical synonym for Crohn disease"
+    ],
+    "acupuncture_scope_zh": [
+     "Acupuncture improves the symptoms, intestinal microbiota, and inflammation of patients with mild to moderate Crohn's disease: A randomized controlled trial, eClinicalMedicine 2022"
     ]
+   },
+   "acupuncture_scope_zh": {
+    "can_treat": "對輕度至中度活動期克隆氏症,一項假針對照隨機對照試驗顯示針灸可誘導並維持疾病緩解達48週,並與腸道菌相改善相關,可作為輔助療法。",
+    "precautions": "中重度活動期,或合併腸阻塞、廔管、膿瘍等外科併發症者不適合單獨以針灸治療;針灸不能取代生物製劑或免疫調節劑等標準藥物治療。",
+    "co_management": "若疾病活動度升高(如CDAI分數上升)、出現腸阻塞徵象或藥物治療需調整,應建議病人諮詢消化科醫師,不應自行停用免疫調節劑或生物製劑。",
+    "evidence": "guideline",
+    "source": "Acupuncture improves the symptoms, intestinal microbiota, and inflammation of patients with mild to moderate Crohn's disease: A randomized controlled trial, eClinicalMedicine 2022 (thelancet.com/journals/eclinm/article/PIIS2589-5370(22)00030-X)"
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "For mild-to-moderate active Crohn's disease, one sham-controlled RCT showed acupuncture induced and maintained remission for up to 48 weeks, associated with improved gut microbiota, and may be used as an adjunct therapy.",
+    "precautions": "Not appropriate as a stand-alone treatment for moderate-to-severe active disease or in patients with surgical complications such as bowel obstruction, fistula, or abscess; acupuncture cannot replace standard biologic or immunomodulator therapy.",
+    "co_management": "If disease activity increases (e.g., rising CDAI score), signs of bowel obstruction appear, or medication adjustment is needed, the patient should be advised to consult a gastroenterologist and should not stop immunomodulators or biologics on their own.",
+    "evidence": "guideline",
+    "source": "Acupuncture improves the symptoms, intestinal microbiota, and inflammation of patients with mild to moderate Crohn's disease: A randomized controlled trial, eClinicalMedicine 2022 (thelancet.com/journals/eclinm/article/PIIS2589-5370(22)00030-X)"
    }
   },
   {
@@ -71198,7 +71866,24 @@
     "risk_factors_en": [
      "PMC: Environmental Risk Factors for Inflammatory Bowel Disease (NCBI, retrieved 2026-08, via search)",
      "ScienceDirect: Appendectomy, smoking habits and the risk of developing ulcerative colitis (via search, retrieved 2026-08)"
+    ],
+    "acupuncture_scope_zh": [
+     "Effects of acupuncture and moxibustion on ulcerative colitis: An overview of systematic reviews, Heliyon 2024; Moxibustion for ulcerative colitis: a systematic review and meta-analysis, PMC2864201"
     ]
+   },
+   "acupuncture_scope_zh": {
+    "can_treat": "針灸與艾灸對潰瘍性結腸炎可能有助於調節腸道發炎反應、促進黏膜癒合,系統性回顧顯示復發率較低且不良反應少,但整體證據品質仍偏低。",
+    "precautions": "重度活動期或出現中毒性巨結腸等急症時不適合作為主要治療;針灸不能取代美沙拉近(5-ASA)、免疫調節劑或生物製劑等標準藥物治療。",
+    "co_management": "若血便加劇、發燒或出現劇烈腹痛等重度發作徵象,應建議病人立即諮詢消化科醫師評估是否需住院或調整藥物治療。",
+    "evidence": "guideline",
+    "source": "Effects of acupuncture and moxibustion on ulcerative colitis: An overview of systematic reviews, Heliyon 2024 (sciencedirect.com/science/article/pii/S2405844024035552)"
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "Acupuncture and moxibustion may help regulate intestinal inflammation and promote mucosal healing in ulcerative colitis; systematic reviews report lower recurrence and few adverse effects, though overall evidence quality remains low.",
+    "precautions": "Not appropriate as primary treatment during severe flares or emergencies such as toxic megacolon; acupuncture cannot replace standard medications such as mesalamine (5-ASA), immunomodulators, or biologics.",
+    "co_management": "If bloody stool worsens, fever develops, or severe abdominal pain occurs indicating a severe flare, the patient should be advised to immediately consult a gastroenterologist to evaluate the need for hospitalization or medication adjustment.",
+    "evidence": "guideline",
+    "source": "Effects of acupuncture and moxibustion on ulcerative colitis: An overview of systematic reviews, Heliyon 2024 (sciencedirect.com/science/article/pii/S2405844024035552)"
    }
   },
   {
