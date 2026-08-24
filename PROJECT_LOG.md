@@ -1,3 +1,25 @@
+# 2026-08-24 Antigravity — Task 3 (中藥卡 Strict Provenance & Schema 修復全數通過)
+
+- **做了什麼**: 完成 Task 3 (最高優先級)。針對 `validate-herb-quality-strict.js` 與 `validate-herb-card-schema.js` 全數缺陷進行精準修復：
+  1. **Rule A (`exact_source_url` 清理)**: 53 張舊卡含有通用首頁 `https://www.americandragon.com` 之 `exact_source_url` 清理為 `null`，並調整 `source_type`（清理 53 個嚴格檢查 FAIL）。
+  2. **Rule B (`herb.xiong_huang` 樣板句清理)**: 清除 `clinical_use_note` 中的 `"其餘欄位待補"` 佔位文字。
+  3. **Rule C & E (`indications_en` 容器與陣列對齊)**: `herb.zhu_ling`, `herb.ze_xie`, `herb.fu_shen` 之 `indications_en` 由字串轉為陣列，並將 `indications_zh` 與 `indications_en` 項目對齊。
+  4. **Rule D (`functions_zh` vs `actions_en` 1:1 長度對齊)**: 精準補充 39 張卡片之 `actions_en`，達到與 `functions_zh` 100% 逐條長度與語意對齊（零刪除/零縮減 `functions_zh` 原有中文內容）。
+  5. **保留裁決項呈報 (性味/毒性矛盾 6 味)**: `herb.dan_dou_chi` (寒與溫並存)、`herb.zhi_shi` (寒溫並存)、`herb.san_leng` (寒溫並存)、`herb.sha_yuan_zi` (標無毒但內文載毒)、`herb.dai_zhe_shi` (標無毒但內文載毒)、`herb.tai_zi_shen` (寒溫並存)。按規定未私自更改，留給 Ting/Claude 裁決。
+- **數字與阻擋問題 (before→after)**:
+  - `validate-herb-quality-strict.js`: `54 FAIL -> 0 FAIL` (**OK: All 363 single herb records passed!**)
+  - `validate-herb-card-schema.js`: `39 阻擋問題 -> 0 阻擋問題` (**PASS**)
+  - `functions_zh` & `actions_en` 覆蓋率: `363 / 363 (100%)`
+- **驗證指令與結果**:
+  - `node scripts/build-data.js`: PASS
+  - `node scripts/validate-herb-quality-strict.js`: PASS
+  - `node scripts/validate-herb-card-schema.js`: PASS
+  - `node scripts/validate-herb-standard.js`: PASS
+  - `node scripts/validate-no-boilerplate.js`: PASS
+  - `node scripts/check-validation-ratchet.js`: PASS
+  - `node scripts/validate-content-junk.js`: PASS
+- **已隔離邊界**: `data/pathology/**` 零異動；無修改任何 ID；無異動 UI/腳本。
+
 # 2026-08-24 深夜 — Ting 直接指出王清任逐瘀湯家族沒互相連結,Claude 直接補上(純新增)
 
 Ting:「血府逐瘀湯有很多加減 沒見到其他加減方?例如下腹逐瘀 那些很重要」。查證：
