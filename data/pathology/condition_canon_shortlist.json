@@ -63335,10 +63335,135 @@
    "name_en": "Adenomyosis",
    "category": "gyn_fertility",
    "icd_hint": "N80.0",
-   "aliases_zh": [],
-   "aliases_en": [],
+   "aliases_zh": [
+    "子宮肌腺症"
+   ],
+   "aliases_en": [
+    "Uterine Adenomyosis"
+   ],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "子宮腺肌症是子宮內膜腺體與間質異位生長於子宮肌層內的婦科疾病,屬雌激素依賴性病變,導致子宮肌層增厚、瀰漫性或局部性子宮增大。好發於 40 歲上下、經產婦女,典型症狀為漸進加重的經痛與經血過多。",
+   "summary_en": "Adenomyosis is a gynecologic condition in which endometrial glands and stroma abnormally grow within the uterine myometrium. It is an estrogen-dependent disease that causes diffuse or focal thickening and enlargement of the uterus. It occurs most often in parous women around age 40, typically presenting with progressively worsening dysmenorrhea and heavy menstrual bleeding.",
+   "western_context_zh": "西醫依症狀嚴重度與生育需求選擇處置:症狀輕者以非類固醇消炎止痛藥或荷爾蒙療法(如含黃體素子宮內投藥系統、口服避孕藥、GnRH 促效劑)控制經痛與出血,並以經陰道超音波或磁振造影定期追蹤子宮變化;已完成生育且症狀難以控制者可轉診評估子宮切除。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Management is chosen by symptom severity and fertility goals: mild cases are managed with NSAIDs or hormonal therapy (e.g., levonorgestrel intrauterine system, oral contraceptives, GnRH agonists) to control pain and bleeding, with periodic transvaginal ultrasound or MRI monitoring of uterine changes; patients who have completed childbearing with refractory symptoms may be referred for evaluation of hysterectomy. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "病理機轉為子宮內膜與肌層交界處(junctional zone)受損,使內膜組織侵入肌層,在雌激素刺激下持續增生,並誘發周圍平滑肌代償性肥厚增生與前列腺素分泌增加,造成子宮增大、經痛及經血量增加。診斷以經陰道超音波(可見肌層回音不均、交界處增厚)或磁振造影為主要非侵入性工具,確診傳統上需子宮切除後之組織病理檢查。",
+   "western_pathology_en": "The underlying mechanism involves disruption of the endometrial-myometrial junctional zone, allowing endometrial tissue to invade the myometrium, where it proliferates under estrogen stimulation and triggers compensatory hypertrophy of surrounding smooth muscle plus increased prostaglandin production, producing uterine enlargement, dysmenorrhea, and heavy bleeding. Transvaginal ultrasound (showing heterogeneous myometrial echotexture and junctional zone thickening) or MRI are the main noninvasive diagnostic tools; definitive diagnosis has traditionally required histopathologic examination after hysterectomy.",
+   "red_flags_zh": [
+    "急性劇烈骨盆痛合併發燒需排除感染或其他急症,不應直接歸因於腺肌症",
+    "經血過多導致頭暈、心悸、面色蒼白等貧血徵象,或血紅素明顯下降,需儘快醫療評估與可能輸血",
+    "停經後出血並非腺肌症典型表現,須依標準流程排除子宮內膜癌等惡性病變",
+    "子宮短期內快速增大需與子宮平滑肌肉瘤等惡性腫瘤鑑別,建議影像追蹤並轉診婦科"
+   ],
+   "red_flags_en": [
+    "Acute severe pelvic pain with fever should not be attributed to adenomyosis without first ruling out infection or another acute process",
+    "Heavy menstrual bleeding causing dizziness, palpitations, pallor, or a significant drop in hemoglobin needs prompt medical evaluation and possible transfusion",
+    "Postmenopausal bleeding is not typical of adenomyosis and must be worked up per standard protocol to exclude endometrial cancer",
+    "Rapid uterine enlargement over a short period warrants imaging follow-up and gynecologic referral to exclude malignancy such as leiomyosarcoma"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "經產(曾生育)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls/臨床文獻"
+    },
+    {
+     "factor": "曾接受子宮手術(如剖腹產、刮宮術)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "臨床文獻"
+    },
+    {
+     "factor": "年齡 40-50 歲",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "流行病學觀察"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Parity (having given birth)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls/clinical literature"
+    },
+    {
+     "factor": "Prior uterine surgery (e.g., cesarean section, curettage)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "clinical literature"
+    },
+    {
+     "factor": "Age 40-50",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "epidemiologic observation"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "可作為經痛與骨盆不適之輔助症狀管理,搭配西醫荷爾蒙或止痛治療",
+    "precautions": "經血過多合併貧血徵象應先由醫療評估處理;懷疑合併其他急症時避免延誤轉診",
+    "co_management": "與婦科醫師保持聯繫,配合其荷爾蒙治療計畫,不建議自行替代藥物治療",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "May provide adjunctive symptom management for dysmenorrhea and pelvic discomfort alongside conventional hormonal or analgesic therapy",
+    "precautions": "Heavy bleeding with anemia signs should be medically evaluated first; avoid delaying referral if another acute process is suspected",
+    "co_management": "Coordinate with the treating gynecologist and support their hormonal therapy plan; not a substitute for medical treatment",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.tong_jing",
+    "tdis.yue_jing_guo_duo",
+    "tdis.zheng_jia"
+   ],
+   "related_patterns": [
+    "pattern.blood_stasis",
+    "pattern.qi_stagnation_blood_stasis",
+    "pattern.cold_congealing_uterus",
+    "pattern.uterus_blood_stasis"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "NCBI StatPearls: Adenomyosis (NBK539868, retrieved 2026-08); Mayo Clinic: Adenomyosis — Symptoms & causes (retrieved 2026-08)"
+    ],
+    "summary_en": [
+     "NCBI StatPearls: Adenomyosis (NBK539868, retrieved 2026-08); Mayo Clinic: Adenomyosis — Symptoms & causes (retrieved 2026-08)"
+    ],
+    "western_context_zh": [
+     "Mayo Clinic: Adenomyosis — Diagnosis & treatment (retrieved 2026-08)"
+    ],
+    "western_context_en": [
+     "Mayo Clinic: Adenomyosis — Diagnosis & treatment (retrieved 2026-08)"
+    ],
+    "western_pathology_zh": [
+     "NCBI PMC: Adenomyosis — An Updated Review on Diagnosis and Classification (PMC10381628, retrieved 2026-08)"
+    ],
+    "western_pathology_en": [
+     "NCBI PMC: Adenomyosis — An Updated Review on Diagnosis and Classification (PMC10381628, retrieved 2026-08)"
+    ],
+    "red_flags_zh": [
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check (malignancy/anemia/infection differentials for uterine enlargement and heavy bleeding)"
+    ],
+    "red_flags_en": [
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check (malignancy/anemia/infection differentials for uterine enlargement and heavy bleeding)"
+    ],
+    "risk_factors_zh": [
+     "NCBI StatPearls: Adenomyosis (NBK539868, retrieved 2026-08)"
+    ],
+    "risk_factors_en": [
+     "NCBI StatPearls: Adenomyosis (NBK539868, retrieved 2026-08)"
+    ],
+    "related_eastern_diseases": [
+     "clinical_judgment: dysmenorrhea/menorrhagia/uterine-mass presentation overlap"
+    ],
+    "related_patterns": [
+     "clinical_judgment: blood stasis-type patterns commonly associated with adenomyosis presentation"
+    ]
+   }
   },
   {
    "id": "cond.ovarian_cyst",
@@ -63350,7 +63475,137 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "卵巢囊腫是卵巢內或表面形成之充液囊狀構造,大多數為隨月經週期出現、通常會自行消退的功能性囊腫(濾泡囊腫、黃體囊腫),少數為病理性囊腫(如子宮內膜異位瘤、皮樣囊腫、囊腺瘤),常於理學檢查或影像檢查中偶然發現,好發於整個生育年齡層。",
+   "summary_en": "An ovarian cyst is a fluid-filled sac forming within or on the ovary. Most are functional cysts (follicular cysts, corpus luteum cysts) that arise as part of the menstrual cycle and typically resolve spontaneously; a smaller subset are pathologic cysts (e.g., endometrioma, dermoid cyst, cystadenoma). They are commonly found incidentally on exam or imaging and occur throughout the reproductive years.",
+   "western_context_zh": "西醫對於單純性、小於 5 公分之囊腫多採定期經陰道超音波追蹤觀察等待其自行消退;體積較大、複雜性、停經後或影像表現可疑者則進一步以腫瘤標記(如 CA-125)評估並轉診婦科考慮手術。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Conventional management of simple cysts under about 5 cm is typically expectant, with serial transvaginal ultrasound to confirm spontaneous resolution; larger, complex, postmenopausal, or imaging-suspicious cysts are further evaluated with tumor markers (e.g., CA-125) and referred to gynecology for possible surgery. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "功能性囊腫源自濾泡未能正常排卵破裂(濾泡囊腫)或黃體未能正常退化(黃體囊腫),屬於正常排卵週期的變異;病理性囊腫則源自子宮內膜異位病灶(子宮內膜異位瘤)、生殖細胞來源(皮樣囊腫/畸胎瘤)或上皮細胞增生(囊腺瘤)。診斷主要以經陰道超音波判別單純性或複雜性型態,必要時輔以腫瘤標記或磁振造影進一步定性。",
+   "western_pathology_en": "Functional cysts arise from a follicle that fails to rupture with ovulation (follicular cyst) or a corpus luteum that fails to regress normally (corpus luteum cyst), representing variations of the normal ovulatory cycle. Pathologic cysts arise from endometriotic implants (endometrioma), germ cell origin (dermoid cyst/teratoma), or epithelial proliferation (cystadenoma). Diagnosis relies mainly on transvaginal ultrasound to characterize simple versus complex morphology, supplemented by tumor markers or MRI for further characterization when needed.",
+   "red_flags_zh": [
+    "突發劇烈單側骨盆腔痛合併噁心嘔吐,需優先排除卵巢扭轉或囊腫破裂等急症",
+    "囊腫破裂合併低血壓、頭暈、反彈痛等腹腔內出血徵象,需緊急外科評估",
+    "停經後出現複雜性或實心附件腫塊,或 CA-125 明顯升高,需提高惡性腫瘤警覺並轉診婦癌科",
+    "囊腫短期內快速增大需儘速影像追蹤與婦科評估"
+   ],
+   "red_flags_en": [
+    "Sudden, severe unilateral pelvic pain with nausea and vomiting should first raise concern for ovarian torsion or cyst rupture as an emergency",
+    "Cyst rupture with signs of intra-abdominal bleeding (hypotension, dizziness, rebound tenderness) requires urgent surgical evaluation",
+    "A complex or solid adnexal mass after menopause, or markedly elevated CA-125, raises malignancy concern and warrants gynecologic oncology referral",
+    "Rapid enlargement of a cyst over a short period warrants prompt imaging follow-up and gynecologic evaluation"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "育齡期規律排卵週期",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "臨床文獻(功能性囊腫)"
+    },
+    {
+     "factor": "子宮內膜異位症",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "臨床文獻"
+    },
+    {
+     "factor": "多囊性卵巢症候群",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "臨床文獻"
+    },
+    {
+     "factor": "接受排卵誘導/不孕症治療",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "臨床文獻"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Reproductive-age ovulatory cycles",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "clinical literature (functional cysts)"
+    },
+    {
+     "factor": "Endometriosis",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "clinical literature"
+    },
+    {
+     "factor": "Polycystic ovary syndrome",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "clinical literature"
+    },
+    {
+     "factor": "Ovulation induction/fertility treatment",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "clinical literature"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "可作為已由醫療追蹤確認之單純性功能性囊腫相關骨盆不適或經期症狀之輔助支持",
+    "precautions": "已知較大囊腫者應避免腹部深層或強力手法針刺(理論上有扭轉/破裂風險考量,屬臨床判斷而非實證),突發劇痛應立即轉診排除扭轉或破裂",
+    "co_management": "與婦科醫師保持聯繫,配合其影像追蹤與手術評估計畫",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "May offer adjunctive support for pelvic discomfort or cycle-related symptoms in medically monitored, simple functional cysts",
+    "precautions": "For known larger cysts, avoid deep or forceful abdominal needling as a scope-of-practice precaution (clinical judgment, not evidence-based); refer immediately for sudden severe pain to rule out torsion or rupture",
+    "co_management": "Coordinate with the treating gynecologist and support their imaging follow-up and surgical evaluation plan",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.zheng_jia"
+   ],
+   "related_patterns": [
+    "pattern.blood_stasis",
+    "pattern.phlegm_damp",
+    "pattern.qi_stagnation_blood_stasis"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "Cleveland Clinic: Ovarian Cysts — Causes, Symptoms, Diagnosis & Treatment (retrieved 2026-08); NCBI StatPearls: Ovarian Cyst (NBK560541, retrieved 2026-08)"
+    ],
+    "summary_en": [
+     "Cleveland Clinic: Ovarian Cysts — Causes, Symptoms, Diagnosis & Treatment (retrieved 2026-08); NCBI StatPearls: Ovarian Cyst (NBK560541, retrieved 2026-08)"
+    ],
+    "western_context_zh": [
+     "AMBOSS: Ovarian cysts (retrieved 2026-08)"
+    ],
+    "western_context_en": [
+     "AMBOSS: Ovarian cysts (retrieved 2026-08)"
+    ],
+    "western_pathology_zh": [
+     "NCBI StatPearls: Ovarian Cyst (NBK560541, retrieved 2026-08)"
+    ],
+    "western_pathology_en": [
+     "NCBI StatPearls: Ovarian Cyst (NBK560541, retrieved 2026-08)"
+    ],
+    "red_flags_zh": [
+     "Johns Hopkins Medicine: What Risks Are Associated with a Ruptured Ovarian Cyst? (retrieved 2026-08); established biomedical knowledge (malignancy workup for postmenopausal complex mass), not source-verified — flag for Ting to source-check"
+    ],
+    "red_flags_en": [
+     "Johns Hopkins Medicine: What Risks Are Associated with a Ruptured Ovarian Cyst? (retrieved 2026-08); established biomedical knowledge (malignancy workup for postmenopausal complex mass), not source-verified — flag for Ting to source-check"
+    ],
+    "risk_factors_zh": [
+     "NCBI StatPearls: Ovarian Cyst (NBK560541, retrieved 2026-08); Wiley: Ovarian torsion — a modern approach to management (retrieved 2026-08)"
+    ],
+    "risk_factors_en": [
+     "NCBI StatPearls: Ovarian Cyst (NBK560541, retrieved 2026-08); Wiley: Ovarian torsion — a modern approach to management (retrieved 2026-08)"
+    ],
+    "related_eastern_diseases": [
+     "clinical_judgment: 癥瘕 as classic TCM disease for pelvic/ovarian mass presentation"
+    ],
+    "related_patterns": [
+     "clinical_judgment: blood stasis/phlegm-damp patterns commonly associated with ovarian cyst formation"
+    ]
+   }
   },
   {
    "id": "cond.acute_pid",
@@ -63359,10 +63614,131 @@
    "name_en": "Acute Pelvic Inflammatory Disease",
    "category": "gyn_fertility",
    "icd_hint": "N70.9",
-   "aliases_zh": [],
-   "aliases_en": [],
+   "aliases_zh": [
+    "骨盆腔感染"
+   ],
+   "aliases_en": [
+    "Pelvic Infection"
+   ],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "急性骨盆腔炎是女性上生殖道(子宮內膜、輸卵管、卵巢及鄰近腹膜)的急性感染,多由陰道/子宮頸感染上行擴散所致,常見病原體為淋病雙球菌與披衣菌,亦可為多重菌感染(厭氧菌、腸道菌、B 型鏈球菌等)。好發於性活躍的育齡女性,典型表現為下腹/骨盆疼痛、異常分泌物、發燒,嚴重者可形成輸卵管卵巢膿瘍。",
+   "summary_en": "Acute pelvic inflammatory disease (PID) is an acute infection of the upper female genital tract (endometrium, fallopian tubes, ovaries, and adjacent peritoneum), usually from ascending spread of a lower genital tract infection. Neisseria gonorrhoeae and Chlamydia trachomatis are classic causes, though many cases are polymicrobial (anaerobes, enteric organisms, group B strep). It occurs mainly in sexually active reproductive-age women, presenting with pelvic pain, abnormal discharge, and fever; severe cases can progress to tubo-ovarian abscess.",
+   "western_context_zh": "西醫以經驗性廣效抗生素治療為主(涵蓋淋病、披衣菌及厭氧菌),依症狀嚴重度決定門診或住院治療,並建議性伴侶同步篩檢與治療;治療後追蹤症狀是否於 72 小時內改善,未改善者需重新評估影像(超音波)是否有膿瘍形成。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Conventional management is empiric broad-spectrum antibiotics covering gonorrhea, chlamydia, and anaerobes, with outpatient versus inpatient treatment chosen by severity; sexual partners are typically screened and treated concurrently. Response is reassessed within about 72 hours, and imaging (ultrasound) is repeated if symptoms fail to improve to check for abscess formation. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "致病菌自子宮頸經子宮腔上行感染輸卵管與卵巢,引發輸卵管黏膜發炎、沾黏,嚴重時波及腹膜造成骨盆腔腹膜炎,或形成輸卵管卵巢膿瘍。臨床診斷缺乏單一可靠指標,主要依骨盆診察發現子宮頸舉痛、子宮或附件壓痛,合併發燒、白血球/發炎指標上升;經陰道超音波可用於評估是否有膿瘍,腹腔鏡確診時陽性預測值約 65%。",
+   "western_pathology_en": "Pathogens ascend from the cervix through the endometrial cavity to infect the fallopian tubes and ovaries, causing salpingitis and tubal adhesions; severe disease can extend to the peritoneum (pelvic peritonitis) or form a tubo-ovarian abscess. No single history, exam, or lab finding is reliably diagnostic; clinical diagnosis relies on cervical motion tenderness, uterine or adnexal tenderness, plus supporting fever and elevated inflammatory markers. Transvaginal ultrasound helps assess for abscess, and the clinical diagnosis has a reported positive predictive value of about 65% against laparoscopic confirmation.",
+   "red_flags_zh": [
+    "劇烈骨盆疼痛合併發燒、腹膜刺激徵象(反彈痛)需懷疑輸卵管卵巢膿瘍破裂或瀰漫性腹膜炎,為外科急症",
+    "抗生素治療 72 小時內症狀未改善或惡化,需重新評估並排除膿瘍,可能需住院或手術引流",
+    "育齡女性出現急性骨盆痛應先以驗孕排除子宮外孕,避免誤診延誤處理",
+    "發燒合併低血壓、心搏過速等全身感染徵象提示可能已進展為敗血症,需立即急診處置"
+   ],
+   "red_flags_en": [
+    "Severe pelvic pain with fever and peritoneal signs (rebound tenderness) raises concern for ruptured tubo-ovarian abscess or diffuse peritonitis — a surgical emergency",
+    "Failure to improve, or worsening, within 72 hours of antibiotics warrants re-evaluation for abscess and possible hospitalization or drainage",
+    "A pregnancy test should be obtained in any reproductive-age woman with acute pelvic pain to exclude ectopic pregnancy before attributing symptoms to PID",
+    "Fever with hypotension or tachycardia suggests possible progression to sepsis and requires immediate emergency care"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "多重性伴侶",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "CDC/臨床文獻常見危險因子"
+    },
+    {
+     "factor": "年齡小於 25 歲",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "流行病學研究"
+    },
+    {
+     "factor": "曾有骨盆腔炎病史",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "臨床文獻"
+    },
+    {
+     "factor": "未使用屏障式避孕(保險套)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "臨床文獻"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Multiple sexual partners",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "commonly cited risk factor in CDC/clinical literature"
+    },
+    {
+     "factor": "Age under 25",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "epidemiologic studies"
+    },
+    {
+     "factor": "Prior history of PID",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "clinical literature"
+    },
+    {
+     "factor": "No barrier contraception (condom) use",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "clinical literature"
+    }
+   ],
+   "related_eastern_diseases": [
+    "tdis.dai_xia_bing",
+    "tdis.fu_tong"
+   ],
+   "related_patterns": [
+    "pattern.damp_heat_lower_burner",
+    "pattern.liver_gallbladder_damp_heat",
+    "pattern.qi_stagnation_blood_stasis"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "CDC STI Treatment Guidelines / clinical literature synthesis on PID (retrieved 2026-08)"
+    ],
+    "summary_en": [
+     "CDC STI Treatment Guidelines / clinical literature synthesis on PID (retrieved 2026-08)"
+    ],
+    "western_context_zh": [
+     "CDC STI Treatment Guidelines: Pelvic Inflammatory Disease (retrieved 2026-08)"
+    ],
+    "western_context_en": [
+     "CDC STI Treatment Guidelines: Pelvic Inflammatory Disease (retrieved 2026-08)"
+    ],
+    "western_pathology_zh": [
+     "NCBI PMC: A Practical Approach to the Diagnosis of Pelvic Inflammatory Disease (PMC3148590, retrieved 2026-08)"
+    ],
+    "western_pathology_en": [
+     "NCBI PMC: A Practical Approach to the Diagnosis of Pelvic Inflammatory Disease (PMC3148590, retrieved 2026-08)"
+    ],
+    "red_flags_zh": [
+     "NCBI PMC: Pelvic Inflammatory Disease (PMC4530285); clinician.com PID Diagnosis, Disposition, and Current Antimicrobials (retrieved 2026-08)"
+    ],
+    "red_flags_en": [
+     "NCBI PMC: Pelvic Inflammatory Disease (PMC4530285); clinician.com PID Diagnosis, Disposition, and Current Antimicrobials (retrieved 2026-08)"
+    ],
+    "risk_factors_zh": [
+     "CDC STI Treatment Guidelines / general clinical literature on PID risk factors (retrieved 2026-08)"
+    ],
+    "risk_factors_en": [
+     "CDC STI Treatment Guidelines / general clinical literature on PID risk factors (retrieved 2026-08)"
+    ],
+    "related_eastern_diseases": [
+     "clinical_judgment: overlapping presentation (abnormal discharge, abdominal pain) with 帶下病/腹痛"
+    ],
+    "related_patterns": [
+     "clinical_judgment: TCM pattern differentiation commonly applied to pelvic infection presentations"
+    ]
+   }
   },
   {
    "id": "cond.bacterial_vaginosis",
@@ -63547,7 +63923,123 @@
     "Vulvovaginal Atrophy"
    ],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "停經泌尿生殖症候群是因停經後雌激素缺乏所導致的一系列慢性外陰、陰道及泌尿道症狀,包含陰道乾澀、灼熱、性交疼痛,以及頻尿、排尿灼熱感、反覆泌尿道感染等,是取代舊稱「陰道萎縮」的整合性名詞,好發於停經後女性。",
+   "summary_en": "Genitourinary syndrome of menopause (GSM) is a chronic constellation of vulvar, vaginal, and urinary symptoms caused by postmenopausal estrogen deficiency, including vaginal dryness, burning, dyspareunia, and urinary urgency, dysuria, or recurrent urinary tract infection. It is the updated umbrella term replacing the older label \"vulvovaginal atrophy\" and occurs in postmenopausal women.",
+   "western_context_zh": "西醫首選處理為陰道保濕劑與潤滑劑等非荷爾蒙介入,中重度症狀可考慮低劑量局部陰道雌激素,對無法使用雌激素者(如乳癌病史)可轉診評估其他選項(如 ospemifene、DHEA);此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "First-line management uses nonhormonal vaginal moisturizers and lubricants; moderate-to-severe symptoms may be managed with low-dose local vaginal estrogen, and patients who cannot use estrogen (e.g., breast cancer history) can be referred for evaluation of alternatives such as ospemifene or DHEA. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "雌激素下降導致陰道與外陰組織膠原蛋白與彈性蛋白流失、平滑肌功能改變、血管數量減少及結締組織增加,造成上皮變薄、血流減少、彈性下降,並使陰道酸鹼值上升、菌叢改變,增加泌尿道感染風險。診斷主要依病史、症狀問卷與理學檢查,可輔以陰道酸鹼值測定與陰道成熟指數評估。",
+   "western_pathology_en": "Estrogen decline leads to loss of collagen and elastin, altered smooth muscle function, reduced vascularity, and increased connective tissue in vulvovaginal tissue, causing epithelial thinning, decreased blood flow, and reduced elasticity, while vaginal pH rises and the microbiome shifts, raising urinary tract infection risk. Diagnosis relies mainly on history, symptom questionnaires, and physical exam, supplemented by vaginal pH measurement and vaginal maturation index assessment.",
+   "red_flags_zh": [
+    "停經後出血或不明分泌物不應直接歸因於萎縮性變化,須依標準流程排除子宮內膜癌或子宮頸病變",
+    "反覆泌尿道感染合併發燒、腰側疼痛需緊急泌尿科評估以排除腎盂腎炎",
+    "外陰潰瘍或病灶持續未癒合需切片以排除外陰惡性腫瘤"
+   ],
+   "red_flags_en": [
+    "Postmenopausal bleeding or unexplained discharge should not be attributed to atrophic changes by default and must be worked up per standard protocol to exclude endometrial or cervical pathology",
+    "Recurrent urinary tract infection with fever or flank pain needs urgent urologic evaluation to exclude pyelonephritis",
+    "A persistent, non-healing vulvar lesion or ulcer requires biopsy to exclude vulvar malignancy"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "自然或手術停經",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "臨床文獻"
+    },
+    {
+     "factor": "使用抗雌激素藥物(如芳香酶抑制劑、他莫西芬)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "臨床文獻"
+    },
+    {
+     "factor": "吸菸",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "臨床文獻"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Natural or surgical menopause",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "clinical literature"
+    },
+    {
+     "factor": "Antiestrogen therapy (e.g., aromatase inhibitors, tamoxifen)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "clinical literature"
+    },
+    {
+     "factor": "Smoking",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "clinical literature"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "可作為停經相關全身症狀(如熱潮紅、情緒不適)之輔助照護,對外陰陰道萎縮性變化本身效果有限",
+    "precautions": "反覆泌尿道症狀應先由醫療評估;外陰病灶未癒合者避免局部針刺,應轉診確認診斷",
+    "co_management": "與處方醫師協調荷爾蒙相關治療計畫,不建議自行替代局部雌激素治療",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "May provide adjunctive support for broader menopausal symptoms (e.g., hot flashes, mood changes); limited direct effect on vulvovaginal atrophic tissue change itself",
+    "precautions": "Recurrent urinary symptoms should be medically evaluated first; avoid local needling near a non-healing vulvar lesion and refer for diagnosis",
+    "co_management": "Coordinate with the prescribing physician on hormone-related treatment plans; not a substitute for local estrogen therapy",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.yin_yang",
+    "tdis.jing_duan_qian_hou"
+   ],
+   "related_patterns": [
+    "pattern.kidney_yin_deficiency",
+    "pattern.liver_kidney_yin_deficiency"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "ObG Project: Genitourinary Syndrome of Menopause — New Name, Old Problem (retrieved 2026-08); NCBI StatPearls: Genitourinary Syndrome of Menopause (NBK559297, retrieved 2026-08)"
+    ],
+    "summary_en": [
+     "ObG Project: Genitourinary Syndrome of Menopause — New Name, Old Problem (retrieved 2026-08); NCBI StatPearls: Genitourinary Syndrome of Menopause (NBK559297, retrieved 2026-08)"
+    ],
+    "western_context_zh": [
+     "NCBI PMC: Genitourinary Syndrome of Menopause — Epidemiology, Physiopathology, Clinical Manifestation and Diagnostic (PMC9580828, retrieved 2026-08)"
+    ],
+    "western_context_en": [
+     "NCBI PMC: Genitourinary Syndrome of Menopause — Epidemiology, Physiopathology, Clinical Manifestation and Diagnostic (PMC9580828, retrieved 2026-08)"
+    ],
+    "western_pathology_zh": [
+     "AJOG: Genitourinary syndrome of menopause — overview of clinical manifestations, pathophysiology, etiology, evaluation, and management (retrieved 2026-08)"
+    ],
+    "western_pathology_en": [
+     "AJOG: Genitourinary syndrome of menopause — overview of clinical manifestations, pathophysiology, etiology, evaluation, and management (retrieved 2026-08)"
+    ],
+    "red_flags_zh": [
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check (standard exclusion of malignancy for postmenopausal bleeding/non-healing vulvar lesions)"
+    ],
+    "red_flags_en": [
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check (standard exclusion of malignancy for postmenopausal bleeding/non-healing vulvar lesions)"
+    ],
+    "risk_factors_zh": [
+     "NCBI PMC: Genitourinary Syndrome of Menopause — Epidemiology, Physiopathology, Clinical Manifestation and Diagnostic (PMC9580828, retrieved 2026-08)"
+    ],
+    "risk_factors_en": [
+     "NCBI PMC: Genitourinary Syndrome of Menopause — Epidemiology, Physiopathology, Clinical Manifestation and Diagnostic (PMC9580828, retrieved 2026-08)"
+    ],
+    "related_eastern_diseases": [
+     "clinical_judgment: vulvar itching/perimenopausal syndrome presentation overlap"
+    ],
+    "related_patterns": [
+     "clinical_judgment: kidney/liver yin deficiency patterns classically associated with menopausal genitourinary atrophy"
+    ]
+   }
   },
   {
    "id": "cond.mastitis",
@@ -63556,10 +64048,144 @@
    "name_en": "Mastitis",
    "category": "gyn_fertility",
    "icd_hint": "N61",
-   "aliases_zh": [],
-   "aliases_en": [],
+   "aliases_zh": [
+    "哺乳期乳腺炎"
+   ],
+   "aliases_en": [
+    "Lactational Mastitis"
+   ],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "乳腺炎是乳房組織的發炎,常見於哺乳期婦女(哺乳性乳腺炎),多發生於產後數週內,表現為局部紅腫熱痛,可合併發燒與全身倦怠;若延遲處理可能進展為乳房膿瘍。",
+   "summary_en": "Mastitis is inflammation of breast tissue, most commonly seen in breastfeeding women (lactational mastitis) within the first weeks postpartum, presenting with localized redness, swelling, warmth, and tenderness, often with fever and systemic malaise; untreated cases can progress to breast abscess.",
+   "western_context_zh": "西醫建議持續哺乳或排空乳汁以緩解乳汁鬱積,搭配非類固醇消炎止痛藥緩解疼痛發炎;若 12-24 小時未改善或臨床懷疑感染,則使用涵蓋金黃色葡萄球菌(含 MRSA 考量)之抗生素,懷疑膿瘍者安排超音波檢查並轉診引流。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Conventional management encourages continued breastfeeding or milk removal to relieve milk stasis, plus NSAIDs for pain and inflammation; antibiotics covering Staphylococcus aureus (with MRSA considered) are used if there is no improvement within 12-24 hours or infection is clinically suspected, and ultrasound with referral for drainage is arranged if abscess is suspected. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "乳汁鬱積引發局部發炎反應,乳頭破損或皸裂處成為細菌(常見金黃色葡萄球菌,含 MRSA)入侵途徑,造成乳房實質局部蜂窩性組織炎;未妥善處理可能形成膿瘍。診斷主要依臨床表現(紅腫熱痛、發燒、全身症狀),超音波可用於偵測是否已形成膿瘍及波動感,反覆或院內感染個案建議進行乳汁培養。",
+   "western_pathology_en": "Milk stasis triggers a local inflammatory response, and nipple trauma or fissures provide an entry point for bacteria (commonly Staphylococcus aureus, including MRSA), producing localized cellulitis of the breast parenchyma; inadequate treatment can progress to abscess formation. Diagnosis is mainly clinical (erythema, swelling, warmth, tenderness, fever, systemic symptoms), with ultrasound used to detect abscess and fluctuance, and milk culture recommended for recurrent or hospital-acquired cases.",
+   "red_flags_zh": [
+    "觸診發現波動性腫塊(疑似膿瘍)需轉診安排引流",
+    "體溫持續高於 38.5°C 或使用抗生素 48-72 小時後症狀未改善甚至惡化,需重新評估",
+    "紅腫迅速擴散合併心搏過速、低血壓等全身中毒徵象,提示可能進展為敗血症,屬急症",
+    "非哺乳期婦女出現持續不消退之乳房發炎變化(如橘皮樣皮膚、不消退腫塊)需緊急轉診排除發炎性乳癌"
+   ],
+   "red_flags_en": [
+    "A fluctuant mass on palpation (suspected abscess) should prompt referral for drainage",
+    "Persistent fever above 38.5°C, or no improvement (or worsening) after 48-72 hours of antibiotics, warrants re-evaluation",
+    "Rapidly spreading erythema with systemic toxicity signs (tachycardia, hypotension) suggests possible progression to sepsis and is an emergency",
+    "Non-resolving inflammatory breast changes in a non-lactating woman (e.g., peau d'orange skin, a persistent mass) need urgent referral to exclude inflammatory breast cancer"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "乳汁鬱積/含乳姿勢不良",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "臨床文獻"
+    },
+    {
+     "factor": "乳頭破損或皸裂",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "臨床文獻"
+    },
+    {
+     "factor": "曾有乳腺炎病史",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "臨床文獻"
+    },
+    {
+     "factor": "吸菸",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "臨床文獻"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Milk stasis/poor latch",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "clinical literature"
+    },
+    {
+     "factor": "Nipple trauma or cracking",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "clinical literature"
+    },
+    {
+     "factor": "Prior history of mastitis",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "clinical literature"
+    },
+    {
+     "factor": "Smoking",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "clinical literature"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "可作為乳汁鬱積早期或發炎初期之輔助疼痛與腫脹症狀支持",
+    "precautions": "避免直接針刺已發炎波動或疑似膿瘍部位;懷疑膿瘍應優先轉診引流,不以針灸延誤",
+    "co_management": "若已使用抗生素,與處方醫師保持聯繫;出現膿瘍或全身感染徵象時立即轉診",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "May offer adjunctive support for pain and swelling in early milk stasis or the initial inflammatory phase",
+    "precautions": "Avoid needling directly into an inflamed, fluctuant, or suspected-abscess area; refer for drainage first if abscess is suspected rather than delaying with acupuncture",
+    "co_management": "If antibiotics have been started, stay in contact with the prescribing physician; refer immediately if abscess or systemic infection signs appear",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.ru_yong"
+   ],
+   "related_patterns": [
+    "pattern.liver_qi_stagnation",
+    "pattern.stomach_heat",
+    "pattern.heat_toxin_blazing"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "NCBI PMC: Risk factors and prognosis of acute lactation mastitis developing into a breast abscess (PMC9436116, retrieved 2026-08)"
+    ],
+    "summary_en": [
+     "NCBI PMC: Risk factors and prognosis of acute lactation mastitis developing into a breast abscess (PMC9436116, retrieved 2026-08)"
+    ],
+    "western_context_zh": [
+     "Geeky Medics: Mastitis and Breast Abscess (retrieved 2026-08)"
+    ],
+    "western_context_en": [
+     "Geeky Medics: Mastitis and Breast Abscess (retrieved 2026-08)"
+    ],
+    "western_pathology_zh": [
+     "NCBI PMC: Risk factors and prognosis of acute lactation mastitis developing into a breast abscess (PMC9436116, retrieved 2026-08)"
+    ],
+    "western_pathology_en": [
+     "NCBI PMC: Risk factors and prognosis of acute lactation mastitis developing into a breast abscess (PMC9436116, retrieved 2026-08)"
+    ],
+    "red_flags_zh": [
+     "NCBI PMC: Risk factors and prognosis of acute lactation mastitis developing into a breast abscess (PMC9436116, retrieved 2026-08); established biomedical knowledge (inflammatory breast cancer mimicker), not source-verified — flag for Ting to source-check"
+    ],
+    "red_flags_en": [
+     "NCBI PMC: Risk factors and prognosis of acute lactation mastitis developing into a breast abscess (PMC9436116, retrieved 2026-08); established biomedical knowledge (inflammatory breast cancer mimicker), not source-verified — flag for Ting to source-check"
+    ],
+    "risk_factors_zh": [
+     "NCBI PMC: Risk factors and prognosis of acute lactation mastitis developing into a breast abscess (PMC9436116, retrieved 2026-08)"
+    ],
+    "risk_factors_en": [
+     "NCBI PMC: Risk factors and prognosis of acute lactation mastitis developing into a breast abscess (PMC9436116, retrieved 2026-08)"
+    ],
+    "related_eastern_diseases": [
+     "clinical_judgment: 乳癰 is the direct classical TCM disease name for acute mastitis/breast abscess"
+    ],
+    "related_patterns": [
+     "clinical_judgment: liver qi stagnation with stomach heat/toxin patterns classically applied to acute mastitis"
+    ]
+   }
   },
   {
    "id": "cond.cervicitis",
@@ -64038,7 +64664,148 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "骨盆器官脫垂是因骨盆底支持結構(筋膜、韌帶、提肛肌)減弱,導致膀胱、子宮、直腸或陰道頂端經陰道下降甚至脫出的病症,常見於曾陰道生產、停經後女性,典型症狀為陰道有下墜感或可觸及腫塊突出感。",
+   "summary_en": "Pelvic organ prolapse (POP) is descent of the bladder, uterus, rectum, or vaginal vault through the vaginal canal due to weakening of the pelvic floor support structures (fascia, ligaments, levator ani muscle). It is common in women with prior vaginal delivery and after menopause, typically presenting as a sensation of vaginal pressure or a palpable bulge.",
+   "western_context_zh": "西醫依症狀嚴重度提供骨盆底肌肉訓練(凱格爾運動)、子宮托放置等非手術選項,或轉診婦產泌尿科評估組織修補或手術治療,適用於症狀明顯或保守治療效果不佳者。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Conventional management offers pelvic floor muscle training (Kegel exercises) and pessary fitting as nonsurgical options depending on symptom severity, with referral to urogynecology for tissue repair or surgical treatment in patients with significant symptoms or inadequate response to conservative care. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "陰道壁筋膜、子宮薦骨韌帶與主韌帶等支持結構撕裂或減弱,加上提肛肌體積與張力下降,使骨盆內臟器失去正常支托而向下移位。依受累腔室分為前腔室(膀胱膨出)、頂端(子宮或陰道頂脫垂)與後腔室(直腸膨出),並以 POP-Q 分期系統評估嚴重度。診斷主要依骨盆理學檢查(含用力憋氣/Valsalva 動作誘發)搭配泌尿/腸道症狀評估。",
+   "western_pathology_en": "Tearing or weakening of the vaginal wall fascia and pelvic ligaments (uterosacral, cardinal), combined with reduced levator ani muscle bulk and tone, causes loss of normal support and downward displacement of pelvic viscera. Prolapse is classified by compartment — anterior (cystocele), apical (uterine or vaginal vault prolapse), and posterior (rectocele) — and staged using the POP-Q system. Diagnosis relies mainly on pelvic examination (including Valsalva maneuver to elicit descent) combined with assessment of urinary and bowel symptoms.",
+   "red_flags_zh": [
+    "急性尿滯留或完全無法排尿需緊急泌尿科/婦科評估",
+    "脫垂組織出現潰瘍、壞死或無法回納(嵌頓性脫垂)需緊急外科評估",
+    "後腔室脫垂合併新發腸阻塞相關症狀需緊急評估",
+    "嚴重子宮脫垂合併影像顯示輸尿管受壓迫水腎需緊急轉診"
+   ],
+   "red_flags_en": [
+    "Acute urinary retention or complete inability to void requires urgent urologic/gynecologic evaluation",
+    "Ulceration, necrosis, or a non-reducible (incarcerated) prolapse requires urgent surgical evaluation",
+    "Posterior compartment prolapse with new bowel obstruction-type symptoms needs urgent evaluation",
+    "Severe uterine prolapse with imaging showing ureteral compression and hydronephrosis needs urgent referral"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "陰道生產",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Mayo Clinic Proceedings/臨床文獻"
+    },
+    {
+     "factor": "肥胖",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "臨床文獻"
+    },
+    {
+     "factor": "慢性便秘/用力解便",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "臨床文獻"
+    },
+    {
+     "factor": "停經後狀態",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "臨床文獻"
+    },
+    {
+     "factor": "結締組織疾病",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "臨床文獻"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Vaginal delivery",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Mayo Clinic Proceedings/clinical literature"
+    },
+    {
+     "factor": "Obesity",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "clinical literature"
+    },
+    {
+     "factor": "Chronic constipation/straining",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "clinical literature"
+    },
+    {
+     "factor": "Postmenopausal status",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "clinical literature"
+    },
+    {
+     "factor": "Connective tissue disorder",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "clinical literature"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "可作為骨盆下墜感、腰薦部不適等相關症狀之輔助支持,搭配骨盆底肌肉訓練",
+    "precautions": "無法逆轉已發生之解剖結構脫垂,症狀明顯或分期較重者不應以針灸取代子宮托或手術轉診",
+    "co_management": "與婦產泌尿科團隊配合,轉診安排骨盆底物理治療評估",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "May offer adjunctive support for associated symptoms such as pelvic heaviness or lumbosacral discomfort, alongside pelvic floor muscle training",
+    "precautions": "Does not reverse established anatomic prolapse; acupuncture should not substitute for pessary fitting or surgical referral in symptomatic or higher-stage cases",
+    "co_management": "Coordinate with the urogynecology team and refer for pelvic floor physical therapy evaluation",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.yin_ting"
+   ],
+   "related_patterns": [
+    "pattern.spleen_qi_sinking",
+    "pattern.kidney_qi_not_firm"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "NCBI PMC: Narrative review of the epidemiology, diagnosis and pathophysiology of pelvic organ prolapse (PMC6968909, retrieved 2026-08)"
+    ],
+    "summary_en": [
+     "NCBI PMC: Narrative review of the epidemiology, diagnosis and pathophysiology of pelvic organ prolapse (PMC6968909, retrieved 2026-08)"
+    ],
+    "western_context_zh": [
+     "Mayo Clinic Proceedings: Evaluation and Management of Pelvic Organ Prolapse (retrieved 2026-08)"
+    ],
+    "western_context_en": [
+     "Mayo Clinic Proceedings: Evaluation and Management of Pelvic Organ Prolapse (retrieved 2026-08)"
+    ],
+    "western_pathology_zh": [
+     "NCBI PMC: Narrative review of the epidemiology, diagnosis and pathophysiology of pelvic organ prolapse (PMC6968909, retrieved 2026-08); Merck Manual Professional: Overview of Pelvic Organ Prolapse (retrieved 2026-08)"
+    ],
+    "western_pathology_en": [
+     "NCBI PMC: Narrative review of the epidemiology, diagnosis and pathophysiology of pelvic organ prolapse (PMC6968909, retrieved 2026-08); Merck Manual Professional: Overview of Pelvic Organ Prolapse (retrieved 2026-08)"
+    ],
+    "red_flags_zh": [
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check (acute retention/incarcerated or ulcerated prolapse as recognized surgical urgencies)"
+    ],
+    "red_flags_en": [
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check (acute retention/incarcerated or ulcerated prolapse as recognized surgical urgencies)"
+    ],
+    "risk_factors_zh": [
+     "NCBI PMC: Risk factors of pelvic organ prolapse at Asella Teaching and Referral Hospital (PMC9513197, retrieved 2026-08); Mayo Clinic Proceedings (retrieved 2026-08)"
+    ],
+    "risk_factors_en": [
+     "NCBI PMC: Risk factors of pelvic organ prolapse at Asella Teaching and Referral Hospital (PMC9513197, retrieved 2026-08); Mayo Clinic Proceedings (retrieved 2026-08)"
+    ],
+    "related_eastern_diseases": [
+     "clinical_judgment: 陰挺 is the direct classical TCM disease name for genital/uterine prolapse"
+    ],
+    "related_patterns": [
+     "clinical_judgment: spleen qi sinking and kidney qi not firm as classic patterns for organ prolapse"
+    ]
+   }
   },
   {
    "id": "cond.endometrial_polyp",
@@ -64047,10 +64814,144 @@
    "name_en": "Endometrial Polyp",
    "category": "gyn_fertility",
    "icd_hint": "N84.0",
-   "aliases_zh": [],
-   "aliases_en": [],
+   "aliases_zh": [
+    "子宮息肉"
+   ],
+   "aliases_en": [
+    "Uterine Polyp"
+   ],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "子宮內膜息肉是子宮內膜腺體、間質與血管組織局部增生並突出於子宮腔內的良性病灶,常見致異常子宮出血的原因之一。好發於 40-49 歲左右的女性,亦與肥胖、他莫西芬使用等雌激素相關因子有關。",
+   "summary_en": "An endometrial polyp is a localized, usually benign overgrowth of endometrial glands, stroma, and vascular tissue that projects into the uterine cavity, and is a common cause of abnormal uterine bleeding. It occurs most often in women around age 40-49 and is associated with estrogen-related factors such as obesity and tamoxifen use.",
+   "western_context_zh": "西醫以經陰道超音波或子宮鏡評估息肉大小與位置,無症狀之停經前小型息肉可先觀察,有症狀、體積較大或位於停經後、使用他莫西芬者則建議子宮鏡下息肉切除並送病理檢查;此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Conventional evaluation uses transvaginal ultrasound or hysteroscopy to characterize polyp size and location; small, asymptomatic polyps in premenopausal women may be observed, while symptomatic, larger, postmenopausal, or tamoxifen-associated polyps are generally referred for hysteroscopic polypectomy with pathology review. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "息肉源於子宮內膜腺體與間質圍繞中心血管核心之增生性過度生長,對雌激素刺激較敏感,與肥胖、高血壓、無拮抗雌激素暴露及他莫西芬使用相關。診斷主要以經陰道超音波、生理食鹽水灌注超音波或子宮鏡檢查,並可搭配切片以排除內膜增生或惡性病變。",
+   "western_pathology_en": "Polyps arise from hyperplastic overgrowth of endometrial glands and stroma around a central vascular core, and are estrogen-sensitive, being associated with obesity, hypertension, unopposed estrogen exposure, and tamoxifen therapy. Diagnosis relies on transvaginal ultrasound, saline infusion sonography, or hysteroscopy, with biopsy used to exclude endometrial hyperplasia or malignancy.",
+   "red_flags_zh": [
+    "停經後陰道出血必須進行子宮內膜切片以排除子宮內膜癌或增生病變,不可逕自歸因於息肉",
+    "出血型態突然改變或短期內明顯增大之息肉,惡性風險升高,需優先安排子宮鏡切除送病理",
+    "息肉大於 1.5 公分、停經後或長期使用他莫西芬者,惡性轉化風險較高,應轉診婦科評估切除"
+   ],
+   "red_flags_en": [
+    "Postmenopausal vaginal bleeding requires endometrial biopsy to exclude endometrial cancer or hyperplasia rather than being attributed to a polyp by default",
+    "A sudden change in bleeding pattern or rapid polyp growth raises malignancy concern and should prompt priority hysteroscopic removal with pathology",
+    "Polyps larger than 1.5 cm, occurring after menopause, or in patients on long-term tamoxifen carry higher malignant potential and warrant gynecologic referral for removal"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "肥胖",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Mayo Clinic"
+    },
+    {
+     "factor": "使用他莫西芬(乳癌治療藥物)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Mayo Clinic"
+    },
+    {
+     "factor": "停經前後/停經後狀態",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Mayo Clinic"
+    },
+    {
+     "factor": "高血壓",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "臨床文獻"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Obesity",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Mayo Clinic"
+    },
+    {
+     "factor": "Tamoxifen use (breast cancer therapy)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Mayo Clinic"
+    },
+    {
+     "factor": "Perimenopausal/postmenopausal status",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Mayo Clinic"
+    },
+    {
+     "factor": "Hypertension",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "clinical literature"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "可作為異常子宮出血相關週期調理之輔助支持,搭配結構性檢查與追蹤",
+    "precautions": "異常出血或停經後出血須先完成醫療評估排除惡性病變,再考慮僅以症狀為導向的輔助照護",
+    "co_management": "若出血持續或屬停經後族群,應轉診婦科安排子宮鏡評估",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "May offer adjunctive support for cycle-related symptom management around abnormal uterine bleeding, alongside structural workup and follow-up",
+    "precautions": "Abnormal or postmenopausal bleeding must first be medically evaluated to exclude malignancy before pursuing symptom-focused adjunctive care alone",
+    "co_management": "Refer to gynecology for hysteroscopic evaluation if bleeding persists or the patient is postmenopausal",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.beng_lou",
+    "tdis.yue_jing_guo_duo",
+    "tdis.jing_qi_yan_chang"
+   ],
+   "related_patterns": [
+    "pattern.blood_stasis",
+    "pattern.qi_stagnation_blood_stasis",
+    "pattern.spleen_not_governing_blood"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "Mayo Clinic: Uterine polyps — Symptoms & causes (retrieved 2026-08); NCBI StatPearls: Endometrial Polyp (NBK557824, retrieved 2026-08)"
+    ],
+    "summary_en": [
+     "Mayo Clinic: Uterine polyps — Symptoms & causes (retrieved 2026-08); NCBI StatPearls: Endometrial Polyp (NBK557824, retrieved 2026-08)"
+    ],
+    "western_context_zh": [
+     "Cleveland Clinic: Endometrial Polyps — Causes, Symptoms, Diagnosis & Treatment (retrieved 2026-08)"
+    ],
+    "western_context_en": [
+     "Cleveland Clinic: Endometrial Polyps — Causes, Symptoms, Diagnosis & Treatment (retrieved 2026-08)"
+    ],
+    "western_pathology_zh": [
+     "NCBI StatPearls: Endometrial Polyp (NBK557824, retrieved 2026-08); doi.org/10.1515/med-2026-1417 Endometrial polyps recurrence: risk factors (retrieved 2026-08)"
+    ],
+    "western_pathology_en": [
+     "NCBI StatPearls: Endometrial Polyp (NBK557824, retrieved 2026-08); doi.org/10.1515/med-2026-1417 Endometrial polyps recurrence: risk factors (retrieved 2026-08)"
+    ],
+    "red_flags_zh": [
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check (postmenopausal bleeding malignancy workup is standard biomedical practice)"
+    ],
+    "red_flags_en": [
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check (postmenopausal bleeding malignancy workup is standard biomedical practice)"
+    ],
+    "risk_factors_zh": [
+     "Mayo Clinic: Uterine polyps — Symptoms & causes (retrieved 2026-08)"
+    ],
+    "risk_factors_en": [
+     "Mayo Clinic: Uterine polyps — Symptoms & causes (retrieved 2026-08)"
+    ],
+    "related_eastern_diseases": [
+     "clinical_judgment: abnormal/heavy/prolonged bleeding presentation overlap"
+    ],
+    "related_patterns": [
+     "clinical_judgment: blood stasis and qi-not-securing-blood patterns commonly seen with polyp-related bleeding"
+    ]
+   }
   },
   {
    "id": "cond.postpartum_hemorrhage",
@@ -64210,7 +65111,148 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "前置胎盤是胎盤著床於子宮下段並覆蓋部分或全部子宮頸內口的病症,典型表現為妊娠中後期無痛性陰道出血,與曾接受剖腹產或其他子宮手術等造成子宮內膜損傷之病史相關。",
+   "summary_en": "Placenta previa is abnormal implantation of the placenta over the lower uterine segment, partially or completely covering the internal cervical os. It classically presents as painless vaginal bleeding in the second or third trimester and is associated with prior cesarean delivery or other uterine surgery causing endometrial injury.",
+   "western_context_zh": "西醫以連續經陰道超音波追蹤胎盤位置變化(常於中孕期解剖篩檢後持續追蹤至妊娠 32 週左右觀察是否隨子宮下段伸展而遠離子宮頸口),建議避免性行為、陰道內診及劇烈活動等可能誘發出血之行為,出血風險高者於較早孕週給予產前類固醇,持續前置者通常規劃於妊娠 36-37 週擇期剖腹產,並於曾接受剖腹產者加強評估是否合併植入性胎盤。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Conventional management uses serial transvaginal ultrasound to track placental position (often continuing from the mid-pregnancy anatomy scan to about 32 weeks to see if the placenta migrates away from the cervical os as the lower segment stretches), with avoidance of intercourse, digital vaginal exam, and vigorous activity that could provoke bleeding; antenatal corticosteroids are given if preterm bleeding risk is high, persistent previa is generally planned for elective cesarean delivery at 36-37 weeks, and women with a prior cesarean are further evaluated for coexisting placenta accreta spectrum. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "確切病理機轉未完全明瞭,但普遍認為與子宮內膜組織損傷及疤痕(如曾接受剖腹產、子宮刮除術)有關,使胚胎較難於子宮底正常著床而偏向下段。依胎盤與子宮頸內口之關係分為完全性、部分性及邊緣性前置胎盤;隨妊娠進展子宮下段逐漸伸展變薄,覆蓋於內口之胎盤血管易被拉扯撕裂,產生無痛性鮮紅色陰道出血。診斷以經陰道超音波為主要且較準確之工具,懷疑前置胎盤時應避免陰道指診。",
+   "western_pathology_en": "The exact mechanism is not fully understood, but it is generally believed to relate to endometrial tissue injury and scarring (e.g., from prior cesarean delivery or uterine curettage), which makes normal fundal implantation less likely and favors implantation in the lower segment. Placenta previa is classified as complete, partial, or marginal based on its relationship to the internal cervical os. As the lower uterine segment progressively thins in later pregnancy, placental vessels overlying the os are prone to tearing, producing painless bright red vaginal bleeding. Transvaginal ultrasound is the primary and more accurate diagnostic tool, and digital vaginal examination should be avoided once previa is suspected.",
+   "red_flags_zh": [
+    "已知或疑似前置胎盤者出現任何陰道出血都屬產科急症,需立即就醫評估,絕不可進行陰道指診",
+    "大量出血合併母體低血壓、心搏過速需緊急剖腹產與輸液/輸血復甦",
+    "前置胎盤合併出現產兆或子宮收縮屬急症,有大出血風險",
+    "曾接受剖腹產之前置胎盤個案需提高警覺是否合併植入性胎盤,大幅增加大出血與子宮切除風險,應轉診母胎醫學評估"
+   ],
+   "red_flags_en": [
+    "Any vaginal bleeding in a woman with known or suspected placenta previa is an obstetric emergency requiring immediate evaluation, and digital vaginal examination must never be performed",
+    "Heavy bleeding with maternal hypotension or tachycardia requires emergent cesarean delivery with fluid/blood resuscitation",
+    "Onset of labor or uterine contractions in a patient with placenta previa is an emergency due to catastrophic hemorrhage risk",
+    "Placenta previa with a prior cesarean delivery raises concern for coexisting placenta accreta spectrum, markedly increasing hemorrhage and hysterectomy risk, and warrants maternal-fetal medicine referral"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "曾接受剖腹產",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "臨床文獻"
+    },
+    {
+     "factor": "曾接受子宮手術或刮宮術",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "臨床文獻"
+    },
+    {
+     "factor": "多產",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "臨床文獻"
+    },
+    {
+     "factor": "高齡孕婦",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "臨床文獻"
+    },
+    {
+     "factor": "吸菸",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "臨床文獻"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Prior cesarean delivery",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "clinical literature"
+    },
+    {
+     "factor": "Prior uterine surgery or curettage",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "clinical literature"
+    },
+    {
+     "factor": "Multiparity",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "clinical literature"
+    },
+    {
+     "factor": "Advanced maternal age",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "clinical literature"
+    },
+    {
+     "factor": "Smoking",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "clinical literature"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "僅於已獲產科明確清況且無出血、病情穩定之個案,可考慮一般孕期舒適度支持;對前置胎盤此結構性問題本身無治療角色",
+    "precautions": "避免腹部、下背部及任何強刺激穴位;未經產科明確清況前不應介入任何照護,一旦出血須立即轉診,不得延誤",
+    "co_management": "任何照護皆須完全配合並服從主治產科醫師之判斷,未獲明確清況不予處置",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "Only in cases explicitly cleared by the obstetric team as stable and non-bleeding might general pregnancy-comfort support be considered; acupuncture has no treatment role for the structural condition itself",
+    "precautions": "Avoid abdominal, lower back, and any strongly stimulating points; do not provide any care without explicit obstetric clearance, and refer immediately without delay for any bleeding",
+    "co_management": "Any care must fully defer to and be coordinated with the treating obstetrician; do not proceed without explicit clearance",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.tai_lou"
+   ],
+   "related_patterns": [
+    "pattern.qi_deficiency",
+    "pattern.blood_heat"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "Ochsner Journal: Evaluation of Antepartum Factors for Predicting the Risk of Emergency Cesarean Delivery in Pregnancies Complicated With Placenta Previa (retrieved 2026-08)"
+    ],
+    "summary_en": [
+     "Ochsner Journal: Evaluation of Antepartum Factors for Predicting the Risk of Emergency Cesarean Delivery in Pregnancies Complicated With Placenta Previa (retrieved 2026-08)"
+    ],
+    "western_context_zh": [
+     "NCBI PMC: Evaluation of Antepartum Factors for Predicting the Risk of Emergency Cesarean Delivery in Pregnancies Complicated With Placenta Previa (PMC9196971, retrieved 2026-08)"
+    ],
+    "western_context_en": [
+     "NCBI PMC: Evaluation of Antepartum Factors for Predicting the Risk of Emergency Cesarean Delivery in Pregnancies Complicated With Placenta Previa (PMC9196971, retrieved 2026-08)"
+    ],
+    "western_pathology_zh": [
+     "Ochsner Journal: Evaluation of Antepartum Factors for Predicting the Risk of Emergency Cesarean Delivery in Pregnancies Complicated With Placenta Previa (retrieved 2026-08); ACOG: Placenta Accreta Spectrum obstetric care consensus (retrieved 2026-08)"
+    ],
+    "western_pathology_en": [
+     "Ochsner Journal: Evaluation of Antepartum Factors for Predicting the Risk of Emergency Cesarean Delivery in Pregnancies Complicated With Placenta Previa (retrieved 2026-08); ACOG: Placenta Accreta Spectrum obstetric care consensus (retrieved 2026-08)"
+    ],
+    "red_flags_zh": [
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check (no digital vaginal exam, emergency management of previa bleeding, accreta spectrum risk with prior cesarean are standard obstetric teaching)"
+    ],
+    "red_flags_en": [
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check (no digital vaginal exam, emergency management of previa bleeding, accreta spectrum risk with prior cesarean are standard obstetric teaching)"
+    ],
+    "risk_factors_zh": [
+     "Ochsner Journal / ACOG Placenta Accreta Spectrum consensus (retrieved 2026-08)"
+    ],
+    "risk_factors_en": [
+     "Ochsner Journal / ACOG Placenta Accreta Spectrum consensus (retrieved 2026-08)"
+    ],
+    "related_eastern_diseases": [
+     "clinical_judgment: 胎漏 (painless antepartum bleeding) is the precise TCM presentation match for placenta previa's defining painless-bleeding pattern"
+    ],
+    "related_patterns": [
+     "clinical_judgment: qi deficiency (failure to secure) and blood heat patterns classically applied to painless antepartum bleeding"
+    ]
+   }
   },
   {
    "id": "cond.placental_abruption",
@@ -64219,10 +65261,155 @@
    "name_en": "Placental Abruption",
    "category": "gyn_fertility",
    "icd_hint": "O45",
-   "aliases_zh": [],
-   "aliases_en": [],
+   "aliases_zh": [
+    "胎盤剝離"
+   ],
+   "aliases_en": [
+    "Abruptio Placentae"
+   ],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "胎盤早期剝離是正常著床之胎盤在分娩前提早自子宮壁剝離,常伴隨陰道出血(亦可能為隱藏性出血)、腹痛與胎兒窘迫,屬產科急症,與妊娠高血壓/子癲前症、吸菸、腹部外傷等因子密切相關。",
+   "summary_en": "Placental abruption is premature separation of a normally implanted placenta from the uterine wall before delivery, typically with vaginal bleeding (which may be concealed), abdominal pain, and fetal distress. It is an obstetric emergency strongly associated with hypertensive disorders of pregnancy, smoking, and abdominal trauma.",
+   "western_context_zh": "西醫處置以持續性胎兒監測、緊急產科理學及超音波評估(影像對偵測剝離敏感度有限,主要用於排除前置胎盤)、凝血功能檢查(警覺瀰漫性血管內凝血)為主,依剝離嚴重度與孕週決定是否緊急剖腹產或引產,並同時穩定母體血行動力學。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Conventional management involves continuous fetal monitoring, urgent obstetric examination and ultrasound (imaging has limited sensitivity for detecting abruption itself and is mainly used to exclude previa), coagulation studies (with vigilance for disseminated intravascular coagulation), and expedited delivery — often emergency cesarean — timed to abruption severity and gestational age, alongside maternal hemodynamic stabilization. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "母體蛻膜螺旋動脈破裂出血進入蛻膜基底層,形成血腫使胎盤與子宮壁分離,影響母胎間氣體與養分交換;嚴重時後胎盤血液可滲入子宮肌層形成庫弗萊爾子宮(Couvelaire uterus),削弱子宮壁強度,亦可能因組織因子釋放誘發消耗性凝血病(瀰漫性血管內凝血)。典型表現為陰道出血(可能為隱藏性)、腹痛或背痛、子宮壓痛與子宮張力過高,並常合併胎兒心跳異常;診斷主要依臨床表現,超音波敏感度有限但有助排除前置胎盤。",
+   "western_pathology_en": "Rupture of maternal decidual spiral arteries causes bleeding into the decidua basalis, forming a hematoma that separates the placenta from the uterine wall and compromises maternal-fetal gas and nutrient exchange. In severe cases, retroplacental blood can infiltrate the myometrium, producing a Couvelaire uterus that weakens the uterine wall, and tissue factor release can trigger consumptive coagulopathy (disseminated intravascular coagulation). Classic presentation includes vaginal bleeding (which may be concealed), abdominal or back pain, uterine tenderness and hypertonus, often with fetal heart rate abnormalities; diagnosis is mainly clinical, as ultrasound has limited sensitivity though it helps exclude placenta previa.",
+   "red_flags_zh": [
+    "陰道出血合併腹痛及子宮如板狀般僵硬壓痛,為典型胎盤早期剝離表現,需立即緊急產科評估",
+    "隱藏性剝離(外觀出血量少甚至無出血,但實際剝離範圍大)可能掩蓋嚴重度,任何可疑腹痛/宮縮型態合併胎兒心跳異常即使無明顯出血也需緊急評估",
+    "出現異常出血傾向、易瘀傷、血小板低下等瀰漫性血管內凝血徵象,或母體血行動力學不穩定,提示嚴重剝離,屬急症",
+    "胎動明顯減少或胎兒心跳監測顯示不安定型態,需立即由產科評估"
+   ],
+   "red_flags_en": [
+    "Vaginal bleeding with abdominal pain and a firm, tender (\"board-like\") uterus is the classic abruption presentation requiring immediate emergency obstetric evaluation",
+    "Concealed abruption (little or no visible bleeding despite significant separation) can mask severity; any suspicious pain/contraction pattern with fetal heart rate abnormality needs urgent evaluation even without visible bleeding",
+    "Signs of disseminated intravascular coagulation (abnormal bleeding tendency, easy bruising, low platelets) or maternal hemodynamic instability indicate severe abruption and are an emergency",
+    "Markedly decreased fetal movement or a non-reassuring fetal heart rate pattern requires immediate obstetric assessment"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "妊娠高血壓/子癲前症",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "臨床文獻(最常見相關因子,約占案例 44%)"
+    },
+    {
+     "factor": "吸菸",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "臨床文獻(孕前吸菸每增加一年風險上升約 40%)"
+    },
+    {
+     "factor": "古柯鹼使用",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "臨床文獻"
+    },
+    {
+     "factor": "腹部外傷",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "臨床文獻"
+    },
+    {
+     "factor": "曾有胎盤早期剝離病史",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "臨床文獻"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Maternal hypertension/preeclampsia",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "clinical literature (most common associated factor, present in ~44% of cases)"
+    },
+    {
+     "factor": "Cigarette smoking",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "clinical literature (~40% increased risk per year of smoking prior to pregnancy)"
+    },
+    {
+     "factor": "Cocaine use",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "clinical literature"
+    },
+    {
+     "factor": "Abdominal trauma",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "clinical literature"
+    },
+    {
+     "factor": "Prior history of placental abruption",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "clinical literature"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "急性期不屬於針灸介入範疇,此為產科急症",
+    "precautions": "疑似胎盤早期剝離時針灸屬禁忌,任何孕期出血或腹痛都應先由產科排除本病,不得以針灸延誤",
+    "co_management": "立即轉診急診產科,未經醫療團隊排除本病前不應提供任何輔助照護",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "Not indicated in the acute setting — this is an obstetric emergency",
+    "precautions": "Acupuncture is contraindicated when abruption is suspected; any pregnancy bleeding or abdominal pain must first be evaluated by obstetric care to exclude this diagnosis before any CAM care",
+    "co_management": "Refer immediately to emergency obstetric care; do not provide adjunctive care until the medical team has excluded this diagnosis",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.tai_dong_bu_an"
+   ],
+   "related_patterns": [
+    "pattern.blood_stasis",
+    "pattern.blood_heat"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "Medscape: Abruptio Placentae — Background, Etiology, Pathophysiology (retrieved 2026-08)"
+    ],
+    "summary_en": [
+     "Medscape: Abruptio Placentae — Background, Etiology, Pathophysiology (retrieved 2026-08)"
+    ],
+    "western_context_zh": [
+     "NCBI PMC: Clinical Factors Predicting Disseminated Intravascular Coagulation (DIC) in Women With Placental Abruption and a Live Fetus (PMC10371384, retrieved 2026-08)"
+    ],
+    "western_context_en": [
+     "NCBI PMC: Clinical Factors Predicting Disseminated Intravascular Coagulation (DIC) in Women With Placental Abruption and a Live Fetus (PMC10371384, retrieved 2026-08)"
+    ],
+    "western_pathology_zh": [
+     "Medscape: Abruptio Placentae — Background, Etiology, Pathophysiology (retrieved 2026-08)"
+    ],
+    "western_pathology_en": [
+     "Medscape: Abruptio Placentae — Background, Etiology, Pathophysiology (retrieved 2026-08)"
+    ],
+    "red_flags_zh": [
+     "Medscape: Abruptio Placentae (retrieved 2026-08); established biomedical knowledge (concealed abruption masking severity), not source-verified — flag for Ting to source-check"
+    ],
+    "red_flags_en": [
+     "Medscape: Abruptio Placentae (retrieved 2026-08); established biomedical knowledge (concealed abruption masking severity), not source-verified — flag for Ting to source-check"
+    ],
+    "risk_factors_zh": [
+     "Medscape: Abruptio Placentae — Background, Etiology, Pathophysiology (retrieved 2026-08)"
+    ],
+    "risk_factors_en": [
+     "Medscape: Abruptio Placentae — Background, Etiology, Pathophysiology (retrieved 2026-08)"
+    ],
+    "related_eastern_diseases": [
+     "clinical_judgment: 胎動不安 (painful antepartum bleeding/threatened pregnancy) is the precise TCM presentation match distinguishing abruption's painful bleeding from previa's painless bleeding"
+    ],
+    "related_patterns": [
+     "clinical_judgment: blood stasis and blood heat patterns classically applied to painful antepartum hemorrhage"
+    ]
+   }
   },
   {
    "id": "cond.preterm_labor",
@@ -64379,10 +65566,143 @@
    "name_en": "Gestational Diabetes Mellitus",
    "category": "gyn_fertility",
    "icd_hint": "O24.4",
-   "aliases_zh": [],
-   "aliases_en": [],
+   "aliases_zh": [
+    "妊娠期糖尿病"
+   ],
+   "aliases_en": [
+    "GDM"
+   ],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "妊娠糖尿病是懷孕期間首次被發現的葡萄糖耐受不良,由胎盤荷爾蒙導致的胰島素阻抗疊加在原本邊緣性胰島 β 細胞功能之上所致,好發於中後孕期,與胎兒巨嬰症及母體日後發展第二型糖尿病風險增加有關。",
+   "summary_en": "Gestational diabetes mellitus (GDM) is glucose intolerance first identified during pregnancy, arising when placental hormone-driven insulin resistance is superimposed on borderline pancreatic beta-cell function. It typically manifests in the second half of pregnancy and is associated with fetal macrosomia and an increased maternal risk of later type 2 diabetes.",
+   "western_context_zh": "西醫多於懷孕 24-32 週進行全面篩檢(一階段 75 克 2 小時口服葡萄糖耐受測試,或二階段 50 克初篩加 100 克確診測試),以飲食與運動為第一線介入,搭配血糖自我監測,血糖控制不佳者加用胰島素或口服降血糖藥物,並定期超音波追蹤胎兒生長,產後 6-12 週建議複查葡萄糖耐受測試;此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Universal screening is typically performed at 24-32 weeks of gestation (a one-step 75 g 2-hour oral glucose tolerance test, or a two-step 50 g screen followed by a 100 g diagnostic test). First-line management is medical nutrition therapy and exercise with self-monitored blood glucose; insulin or oral hypoglycemics are added if glycemic targets are not met, alongside periodic ultrasound monitoring of fetal growth, with a postpartum glucose tolerance test recommended at 6-12 weeks. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "胎盤分泌之人類胎盤泌乳素、黃體素、皮質醇等荷爾蒙隨孕期增加而誘發生理性胰島素阻抗,若母體胰島 β 細胞代償能力不足,即出現高血糖;母體高血糖經胎盤傳遞使胎兒血糖升高,刺激胎兒胰島素分泌增加,進而導致巨嬰症與新生兒低血糖風險。診斷依 ACOG 建議之一階段或二階段口服葡萄糖耐受測試標準判定。",
+   "western_pathology_en": "Placental hormones such as human placental lactogen, progesterone, and cortisol increase across gestation and drive physiologic insulin resistance; when maternal beta-cell compensation is insufficient, maternal hyperglycemia results. This hyperglycemia crosses the placenta, raising fetal glucose and stimulating fetal insulin secretion, which drives fetal macrosomia and neonatal hypoglycemia risk. Diagnosis follows ACOG-endorsed one-step or two-step oral glucose tolerance testing criteria.",
+   "red_flags_zh": [
+    "噁心嘔吐、腹痛合併意識改變需警覺糖尿病酮酸中毒,屬產科急症應立即就醫",
+    "嚴重高血糖合併多尿、明顯脫水徵象需緊急醫療評估",
+    "併發頭痛、視力改變、上腹痛等症狀可能為子癲前症合併表現,需立即產科評估",
+    "胎動明顯減少需儘速由產科評估胎兒狀況"
+   ],
+   "red_flags_en": [
+    "Nausea, vomiting, abdominal pain with altered mental status should raise concern for diabetic ketoacidosis, an obstetric emergency requiring immediate care",
+    "Severe hyperglycemia with polyuria and marked dehydration needs urgent medical evaluation",
+    "Headache, visual disturbance, or epigastric pain may indicate coexisting preeclampsia and needs immediate obstetric evaluation",
+    "Markedly decreased fetal movement should prompt urgent obstetric assessment"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "孕前體重過重或肥胖",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "ACOG/臨床文獻"
+    },
+    {
+     "factor": "曾有妊娠糖尿病病史",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "臨床文獻"
+    },
+    {
+     "factor": "糖尿病家族史",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "臨床文獻"
+    },
+    {
+     "factor": "高齡孕婦",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "臨床文獻"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Pre-pregnancy overweight or obesity",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "ACOG/clinical literature"
+    },
+    {
+     "factor": "Prior history of gestational diabetes",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "clinical literature"
+    },
+    {
+     "factor": "Family history of diabetes",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "clinical literature"
+    },
+    {
+     "factor": "Advanced maternal age",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "clinical literature"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "可作為孕期整體舒適度與壓力調節之輔助照護,並非血糖控制之治療手段",
+    "precautions": "避免使用孕期禁針或強刺激穴位;不得以針灸取代血糖監測或藥物治療",
+    "co_management": "與產科/內分泌團隊保持聯繫,任何血糖控制計畫調整均需經處方醫師確認",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "May offer adjunctive support for general pregnancy comfort and stress regulation; not a treatment for glycemic control itself",
+    "precautions": "Avoid points contraindicated in pregnancy or strong stimulation; acupuncture must not replace glucose monitoring or medication",
+    "co_management": "Coordinate with the obstetric/endocrine team; any change to the glycemic management plan must be confirmed with the prescribing physician",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.xiao_ke"
+   ],
+   "related_patterns": [
+    "pattern.qi_yin_deficiency",
+    "pattern.yin_deficiency"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "NCBI PMC: The Pathophysiology of Gestational Diabetes Mellitus (PMC6274679, retrieved 2026-08)"
+    ],
+    "summary_en": [
+     "NCBI PMC: The Pathophysiology of Gestational Diabetes Mellitus (PMC6274679, retrieved 2026-08)"
+    ],
+    "western_context_zh": [
+     "Contemporary OB/GYN: ACOG Guidelines at a Glance — Gestational Diabetes Mellitus (retrieved 2026-08)"
+    ],
+    "western_context_en": [
+     "Contemporary OB/GYN: ACOG Guidelines at a Glance — Gestational Diabetes Mellitus (retrieved 2026-08)"
+    ],
+    "western_pathology_zh": [
+     "NCBI PMC: Deep Insight of the Pathophysiology of Gestational Diabetes Mellitus (PMC9455072, retrieved 2026-08)"
+    ],
+    "western_pathology_en": [
+     "NCBI PMC: Deep Insight of the Pathophysiology of Gestational Diabetes Mellitus (PMC9455072, retrieved 2026-08)"
+    ],
+    "red_flags_zh": [
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check (DKA in pregnancy, coexisting preeclampsia symptoms, decreased fetal movement as standard obstetric red flags)"
+    ],
+    "red_flags_en": [
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check (DKA in pregnancy, coexisting preeclampsia symptoms, decreased fetal movement as standard obstetric red flags)"
+    ],
+    "risk_factors_zh": [
+     "NCBI PMC: Gestational diabetes mellitus — Major risk factors and pregnancy-related outcomes (PMC8548751, retrieved 2026-08)"
+    ],
+    "risk_factors_en": [
+     "NCBI PMC: Gestational diabetes mellitus — Major risk factors and pregnancy-related outcomes (PMC8548751, retrieved 2026-08)"
+    ],
+    "related_eastern_diseases": [
+     "clinical_judgment: 消渴 as classic TCM wasting-thirst disease overlapping with glucose intolerance presentation"
+    ],
+    "related_patterns": [
+     "clinical_judgment: qi-yin deficiency/yin deficiency patterns commonly applied to pregnancy-related glucose dysregulation"
+    ]
+   }
   },
   {
    "id": "cond.postmenopausal_bleeding",
@@ -64694,10 +66014,142 @@
    "name_en": "Gestational Hypertension",
    "category": "gyn_fertility",
    "icd_hint": "O13",
-   "aliases_zh": [],
-   "aliases_en": [],
+   "aliases_zh": [
+    "妊娠期高血壓"
+   ],
+   "aliases_en": [
+    "Pregnancy-Induced Hypertension (PIH)"
+   ],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "妊娠高血壓是懷孕 20 週後新發生的血壓升高(收縮壓 ≥140 或舒張壓 ≥90 mmHg),但不合併蛋白尿或其他子癲前症之嚴重表現;約半數個案會在孕期後續進展為子癲前症,產後血壓多恢復正常。",
+   "summary_en": "Gestational hypertension is new-onset blood pressure elevation (systolic ≥140 or diastolic ≥90 mmHg) developing after 20 weeks of gestation, without proteinuria or other severe features of preeclampsia. Roughly half of cases go on to develop preeclampsia later in pregnancy, and blood pressure typically normalizes postpartum.",
+   "western_context_zh": "西醫以定期血壓監測與蛋白尿篩檢追蹤病程進展,依血壓嚴重程度考慮使用妊娠安全之降血壓藥物,並安排超音波評估胎兒生長與臍動脈血流,依孕週規劃分娩時機;血壓達重度範圍需立即處置。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Management includes regular blood pressure monitoring and proteinuria screening to track disease progression, pregnancy-safe antihypertensives when blood pressure severity warrants, ultrasound surveillance of fetal growth and umbilical artery flow, and delivery timing planned according to gestational age; severe-range blood pressure requires immediate treatment. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "致病機轉與胎盤著床異常及母體全身性血管內皮反應有關,造成周邊血管阻力上升,但不若子癲前症伴隨腎絲球內皮細胞病變與蛋白尿。診斷依 ACOG 標準:懷孕 20 週後、原本血壓正常之孕婦,間隔 4 小時以上兩次測量收縮壓 ≥140 或舒張壓 ≥90 mmHg,且無蛋白尿或其他嚴重表現。",
+   "western_pathology_en": "The underlying mechanism involves abnormal placentation and a systemic maternal vascular endothelial response that raises peripheral vascular resistance, without the glomerular endotheliosis and proteinuria characteristic of preeclampsia. Diagnosis follows ACOG criteria: in a previously normotensive woman after 20 weeks of gestation, systolic BP ≥140 or diastolic BP ≥90 mmHg on two occasions at least 4 hours apart, without proteinuria or other severe features.",
+   "red_flags_zh": [
+    "血壓達重度範圍(收縮壓 ≥160 或舒張壓 ≥110 mmHg)屬產科急症,需立即降壓治療",
+    "新發蛋白尿、頭痛、視力改變或上腹/右上腹疼痛提示可能已進展為子癲前症或 HELLP 症候群",
+    "胎動明顯減少或尿量減少需儘速由產科評估"
+   ],
+   "red_flags_en": [
+    "Severe-range blood pressure (systolic ≥160 or diastolic ≥110 mmHg) is an obstetric emergency requiring immediate antihypertensive treatment",
+    "New-onset proteinuria, headache, visual disturbance, or epigastric/right upper quadrant pain suggests progression to preeclampsia or HELLP syndrome",
+    "Markedly decreased fetal movement or reduced urine output should prompt urgent obstetric evaluation"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "初產婦",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "ACOG/臨床文獻"
+    },
+    {
+     "factor": "肥胖",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "臨床文獻"
+    },
+    {
+     "factor": "多胞胎妊娠",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "臨床文獻"
+    },
+    {
+     "factor": "高齡孕婦",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "臨床文獻"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Nulliparity",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "ACOG/clinical literature"
+    },
+    {
+     "factor": "Obesity",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "clinical literature"
+    },
+    {
+     "factor": "Multiple gestation",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "clinical literature"
+    },
+    {
+     "factor": "Advanced maternal age",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "clinical literature"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "可作為孕期一般舒適度與壓力調節之輔助照護,並非血壓控制之治療手段",
+    "precautions": "避免孕期禁針或強刺激穴位;出現重度血壓或子癲前症警訊症狀時應立即轉診,不得以針灸延誤",
+    "co_management": "與產科團隊密切配合,不得以針灸取代血壓監測或降血壓藥物治療",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "May offer adjunctive support for general pregnancy comfort and stress regulation; not a treatment for blood pressure control itself",
+    "precautions": "Avoid points contraindicated in pregnancy or strong stimulation; refer immediately if severe-range blood pressure or preeclampsia warning symptoms appear",
+    "co_management": "Coordinate closely with the obstetric team; acupuncture must not replace blood pressure monitoring or antihypertensive therapy",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.zi_zhong",
+    "tdis.zi_xian"
+   ],
+   "related_patterns": [
+    "pattern.liver_yang_rising",
+    "pattern.water_fluid_retention"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "AAFP: Gestational Hypertension and Preeclampsia — A Practice Bulletin from ACOG (retrieved 2026-08)"
+    ],
+    "summary_en": [
+     "AAFP: Gestational Hypertension and Preeclampsia — A Practice Bulletin from ACOG (retrieved 2026-08)"
+    ],
+    "western_context_zh": [
+     "ACOG Practice Bulletin No. 222 (interim update), Gestational Hypertension and Preeclampsia (retrieved 2026-08)"
+    ],
+    "western_context_en": [
+     "ACOG Practice Bulletin No. 222 (interim update), Gestational Hypertension and Preeclampsia (retrieved 2026-08)"
+    ],
+    "western_pathology_zh": [
+     "AAFP: Gestational Hypertension and Preeclampsia — A Practice Bulletin from ACOG (retrieved 2026-08)"
+    ],
+    "western_pathology_en": [
+     "AAFP: Gestational Hypertension and Preeclampsia — A Practice Bulletin from ACOG (retrieved 2026-08)"
+    ],
+    "red_flags_zh": [
+     "AAFP/ACOG: Gestational Hypertension and Preeclampsia — severe features criteria (retrieved 2026-08)"
+    ],
+    "red_flags_en": [
+     "AAFP/ACOG: Gestational Hypertension and Preeclampsia — severe features criteria (retrieved 2026-08)"
+    ],
+    "risk_factors_zh": [
+     "ACOG Practice Bulletin / general obstetric literature on hypertensive disorders of pregnancy (retrieved 2026-08)"
+    ],
+    "risk_factors_en": [
+     "ACOG Practice Bulletin / general obstetric literature on hypertensive disorders of pregnancy (retrieved 2026-08)"
+    ],
+    "related_eastern_diseases": [
+     "clinical_judgment: 子腫/子癇 as TCM pregnancy-hypertension-spectrum diseases overlapping in presentation"
+    ],
+    "related_patterns": [
+     "clinical_judgment: liver yang rising and fluid retention patterns classically applied to pregnancy hypertension/edema"
+    ]
+   }
   },
   {
    "id": "cond.ovarian_torsion",
@@ -64706,10 +66158,143 @@
    "name_en": "Ovarian Torsion",
    "category": "gyn_fertility",
    "icd_hint": "N83.53",
-   "aliases_zh": [],
-   "aliases_en": [],
+   "aliases_zh": [
+    "附件扭轉"
+   ],
+   "aliases_en": [
+    "Adnexal Torsion"
+   ],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "卵巢扭轉是卵巢連同輸卵管(附件)沿其支持韌帶扭轉,導致血流供應中斷的婦科外科急症。最常見於卵巢腫塊大於等於 5 公分的育齡女性,亦可發生於懷孕期間與兒童青少年,若未及時處理可能導致卵巢壞死喪失。",
+   "summary_en": "Ovarian torsion is a gynecologic surgical emergency in which the ovary, often with the fallopian tube (adnexa), twists around its supporting ligaments, compromising blood supply. It occurs most often in reproductive-age women with an ovarian mass of 5 cm or larger, and can also occur during pregnancy and in children/adolescents; untreated torsion can lead to ovarian necrosis and loss.",
+   "western_context_zh": "此為外科急症,西醫處置為立即急診轉診與影像評估(經陰道超音波搭配都卜勒血流),但血流正常仍不能排除扭轉,最終需以腹腔鏡手術確診並嘗試解套保留卵巢或視壞死程度切除;非門診保守觀察或替代療法可處理之情況。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "This is a surgical emergency. Conventional management is immediate emergency referral and imaging (transvaginal ultrasound with Doppler), though normal flow does not exclude torsion; definitive diagnosis requires laparoscopy, with detorsion and ovarian conservation attempted or oophorectomy performed depending on the extent of necrosis. It is not a condition suited to outpatient watchful waiting or alternative therapy. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "卵巢沿骨盆漏斗韌帶與卵巢固有韌帶扭轉,先造成靜脈與淋巴回流受阻、組織水腫,隨腫脹加劇進一步壓迫動脈供應,最終導致缺血、出血性梗塞,未處理則進展為壞死甚至腹膜炎。臨床上以突發劇烈單側骨盆/下腹痛合併噁心嘔吐為特徵,理學檢查可觸及附件腫塊與壓痛;經陰道超音波搭配都卜勒為主要影像工具,但確診仍需腹腔鏡探查。",
+   "western_pathology_en": "The ovary rotates around the infundibulopelvic and utero-ovarian ligaments, first obstructing venous and lymphatic outflow and causing tissue edema; as swelling worsens, arterial inflow is also compromised, leading to ischemia and hemorrhagic infarction, progressing to necrosis and possibly peritonitis if untreated. Clinically it is characterized by sudden, severe unilateral pelvic/lower abdominal pain with nausea and vomiting, with a palpable, tender adnexal mass on exam. Transvaginal ultrasound with Doppler is the main imaging tool, but definitive diagnosis still requires laparoscopic exploration.",
+   "red_flags_zh": [
+    "突發劇烈單側骨盆腔痛合併噁心嘔吐本身即為紅旗症狀,即使影像血流正常亦不能排除扭轉,需立即外科評估",
+    "延遲手術介入會顯著增加卵巢壞死與喪失的可能性,懷疑扭轉應儘速安排腹腔鏡探查",
+    "懷孕期間新發劇烈單側腹痛需列入卵巢扭轉之鑑別診斷,避免僅歸因於一般妊娠不適",
+    "反覆間歇性劇痛可能為間歇性扭轉(自發性復位後再發),仍需緊急影像與婦科評估以防真正扭轉發生"
+   ],
+   "red_flags_en": [
+    "Sudden, severe unilateral pelvic pain with nausea and vomiting is itself the red flag; normal Doppler flow on imaging does not exclude torsion and warrants immediate surgical evaluation",
+    "Delayed surgical intervention significantly increases the likelihood of ovarian necrosis and loss, so suspected torsion should prompt urgent laparoscopic exploration",
+    "New severe unilateral abdominal pain during pregnancy should be included in the differential for ovarian torsion rather than attributed only to routine pregnancy discomfort",
+    "Recurrent intermittent severe pain may represent intermittent torsion (spontaneous detorsion with recurrence) and still requires emergency imaging and gynecologic evaluation to prevent a completed torsion"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "卵巢腫塊大於等於 5 公分",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls"
+    },
+    {
+     "factor": "懷孕",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls"
+    },
+    {
+     "factor": "接受排卵誘導或卵巢過度刺激症候群",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "臨床文獻"
+    },
+    {
+     "factor": "曾有卵巢扭轉病史",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "臨床文獻"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Ovarian mass 5 cm or larger",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls"
+    },
+    {
+     "factor": "Pregnancy",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls"
+    },
+    {
+     "factor": "Ovulation induction or ovarian hyperstimulation syndrome",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "clinical literature"
+    },
+    {
+     "factor": "Prior history of ovarian torsion",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "clinical literature"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "急性扭轉本身完全不屬於針灸介入範疇;僅可能於確診手術後之恢復期,提供術後疼痛或沾黏相關不適之輔助支持",
+    "precautions": "疑似卵巢扭轉時針灸屬禁忌,不得作為第一線處置,應立即轉診急診/外科",
+    "co_management": "立即轉診急診婦產科/外科,任何輔助照護皆需待手術評估與醫療團隊確認後再考慮",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "Acupuncture has no role in acute torsion itself; it may only offer adjunctive support for postoperative pain or adhesion-related discomfort after surgical management",
+    "precautions": "Acupuncture is contraindicated as first-line management for suspected torsion; immediate referral to emergency/surgical care is required",
+    "co_management": "Refer immediately to emergency obstetrics-gynecology/surgery; any adjunctive care should only be considered after surgical evaluation and confirmation from the medical team",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.fu_tong"
+   ],
+   "related_patterns": [
+    "pattern.qi_stagnation_blood_stasis",
+    "pattern.blood_stasis"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "NCBI StatPearls: Ovarian Torsion (NBK560675, retrieved 2026-08)"
+    ],
+    "summary_en": [
+     "NCBI StatPearls: Ovarian Torsion (NBK560675, retrieved 2026-08)"
+    ],
+    "western_context_zh": [
+     "Medscape: Ovarian (Adnexal) Torsion — Background, Etiology, Pathophysiology (retrieved 2026-08)"
+    ],
+    "western_context_en": [
+     "Medscape: Ovarian (Adnexal) Torsion — Background, Etiology, Pathophysiology (retrieved 2026-08)"
+    ],
+    "western_pathology_zh": [
+     "NCBI StatPearls: Ovarian Torsion (NBK560675, retrieved 2026-08); WikEM: Ovarian torsion (retrieved 2026-08)"
+    ],
+    "western_pathology_en": [
+     "NCBI StatPearls: Ovarian Torsion (NBK560675, retrieved 2026-08); WikEM: Ovarian torsion (retrieved 2026-08)"
+    ],
+    "red_flags_zh": [
+     "NCBI StatPearls: Ovarian Torsion (NBK560675, retrieved 2026-08); Wiley: Ovarian torsion — a modern approach to management (retrieved 2026-08)"
+    ],
+    "red_flags_en": [
+     "NCBI StatPearls: Ovarian Torsion (NBK560675, retrieved 2026-08); Wiley: Ovarian torsion — a modern approach to management (retrieved 2026-08)"
+    ],
+    "risk_factors_zh": [
+     "NCBI StatPearls: Ovarian Torsion (NBK560675, retrieved 2026-08)"
+    ],
+    "risk_factors_en": [
+     "NCBI StatPearls: Ovarian Torsion (NBK560675, retrieved 2026-08)"
+    ],
+    "related_eastern_diseases": [
+     "clinical_judgment: acute abdominal pain presentation overlap with 腹痛"
+    ],
+    "related_patterns": [
+     "clinical_judgment: acute qi-blood obstruction pattern framing for a sudden vascular/structural emergency"
+    ]
+   }
   },
   {
    "id": "cond.lumbar_spinal_stenosis",
