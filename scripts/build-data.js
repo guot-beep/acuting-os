@@ -55,6 +55,39 @@ const payload = {};
 for (const [name, rel] of Object.entries(SOURCES)) {
   payload[name] = readJson(rel);
 }
+// 死資料裁切（2026-08-24，Ting 同意）。這十個 embedded 陣列共 256 筆記錄裡，
+// 有 254 筆的 code 屬於 361 標準經穴——app.js:717-719 在 runtime 用
+// `.filter((point) => !standard361Codes.has(point.code))` 把它們全部丟掉，
+// 只留 2 筆（EX-HN3 印堂、EX-HN5 太陽）。也就是說瀏覽器每次都下載並解析
+// 1.3MB 的資料，只為了在啟動時把 99.2% 丟進垃圾桶（app.js:713-715 的註解
+// 本來就寫明「embedded 陣列留著只為了貢獻 361 範圍之外的記錄」）。
+// 這裡在發射前先套用同一個述詞（361.json 的 code 集合；adapt361Record 以
+// `code: record.code` 原樣透傳，兩邊述詞逐字相同），app.js 一行都不用改——
+// 它那條 runtime filter 保留當防禦，變成 no-op。
+//
+// 這是「刪除形狀」的改動，界線寫清楚：source JSON（data/acupoints/embedded/*.json）
+// 一個字都沒動，退役的記錄仍在版控裡；被裁掉的只有**產出檔**中 runtime 已證明
+// 會丟棄的部分。證據見 PR：defaultPoints 的 code 集合與完整記錄內容 before/after
+// 逐字元相同。
+{
+  const standard361Codes = new Set(readJson("data/acupoints/361.json").map((r) => r.code));
+  const EMBEDDED_POINT_KEYS = [
+    "starterPoints", "professionalPoints",
+    "lungMeridianExpansion", "largeIntestineMeridianExpansion", "stomachMeridianExpansion",
+    "spleenMeridianExpansion", "heartMeridianExpansion", "smallIntestineMeridianExpansion",
+    "bladderMeridianExpansion", "kidneyMeridianExpansion",
+  ];
+  let dropped = 0, kept = 0;
+  for (const key of EMBEDDED_POINT_KEYS) {
+    const before = payload[key] || [];
+    const after = before.filter((point) => !standard361Codes.has(point && point.code));
+    dropped += before.length - after.length;
+    kept += after.length;
+    payload[key] = after;
+  }
+  console.log(`Embedded point arrays: dropped ${dropped} records already rendered by the 361 layer, kept ${kept}`);
+}
+
 const i18n = readJson(I18N_SOURCE);
 Object.assign(payload, i18n);
 payload.uiConfig = readJson(UI_CONFIG_SOURCE);
