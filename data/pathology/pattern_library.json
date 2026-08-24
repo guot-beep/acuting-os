@@ -2177,10 +2177,29 @@
     "supporting_signs": [
      "NCBAHM_2026_CH_Outline",
      "https://cloudtcm.com/pattern/120"
+    ],
+    "differentiation": [
+     "TCM textbook standard (中醫診斷學 藏象/氣血津液/淋證辨證通說;2026-08-24 撰寫,pattern_id 逐一核對存在於本庫)"
     ]
    },
    "legacy_ids": [
     "pat.肝陽上亢"
+   ],
+   "differential_patterns": [
+    {
+     "pattern_id": "pattern.liver_fire",
+     "distinguishing_zh": "肝陽上亢屬上實下虛(肝腎陰虛於下、肝陽亢逆於上),眩暈頭脹痛之外必兼腰膝痠軟、耳鳴如蟬等下虛之象,舌紅少津;肝火上炎為純實證,肝經氣火上逆,頭痛如劈、口苦口乾、脅肋灼痛、便秘尿黃,舌紅苔黃,無明顯下虛表現。",
+     "distinguishing_en": "Liver Yang Rising is excess-above/deficiency-below (Liver-Kidney yin deficiency below, Yang rising above): dizziness and distending headache always accompany deficiency signs below (sore lumbar/knees, cicada-like tinnitus), tongue red with scant fluid. Liver Fire Flaring is pure excess with Qi-Fire rushing upward: splitting headache, bitter/dry mouth, burning rib-side pain, constipation, dark urine — no deficiency signs below.",
+     "tongue_difference_zh": "肝陽上亢舌紅少津;肝火上炎舌紅苔黃厚",
+     "pulse_difference_zh": "肝陽上亢脈弦細數;肝火上炎脈弦數有力",
+     "source": "TCM textbook standard (中醫診斷學 藏象/氣血津液/淋證辨證通說;2026-08-24 撰寫,pattern_id 逐一核對存在於本庫)"
+    },
+    {
+     "pattern_id": "pattern.liver_wind",
+     "distinguishing_zh": "肝陽上亢以眩暈頭痛為主,尚未出現動風徵象;若病情發展,陽亢化風,則見肢體麻木震顫、口眼喎斜,甚則猝然昏仆偏癱,即轉為肝風內動——兩者常是同一病理的先後階段,肝陽上亢是肝風內動的前驅證。",
+     "distinguishing_en": "Liver Yang Rising presents mainly with dizziness and headache, without wind-stirring signs. If it progresses (Yang transforming into Wind), limb numbness/tremor, facial/mouth deviation, or sudden collapse with hemiplegia appear — this is Liver Wind Stirring. The two are often sequential stages of the same pathology, with Liver Yang Rising as the prodrome.",
+     "source": "TCM textbook standard (中醫診斷學 藏象/氣血津液/淋證辨證通說;2026-08-24 撰寫,pattern_id 逐一核對存在於本庫)"
+    }
    ]
   },
   {
@@ -3529,7 +3548,15 @@
    "common_causes_en": "Emotional disturbance generating Phlegm via Qi stagnation, dietary irregularity producing Damp-Phlegm, constitutional Phlegm excess",
    "progression_zh": "痰濁久鬱化熱,可轉為痰火擾心;蒙竅甚者可致中風閉證。",
    "progression_en": "Long-stagnant Phlegm may transform into heat, shifting toward Phlegm-Fire Disturbing the Heart; severe orifice obstruction can present as the closed pattern of Wind-stroke.",
-   "differential_patterns": [],
+   "differential_patterns": [
+    {
+     "pattern_id": "pattern.phlegm_fire_disturbing_heart",
+     "distinguishing_zh": "痰蒙心竅為痰濁(陰邪)矇蔽心竅,神識昏蒙、表情呆滯、喉中痰鳴、苔白膩,病勢較緩(如癲證、中風痰蒙清竅);痰火擾心為痰與火(陽邪)互結擾心,神志狂躁不安、胡言亂語、面赤氣粗、舌紅苔黃膩,病勢較急(如狂證)。",
+     "distinguishing_en": "Phlegm Misting the Heart is turbid Phlegm (a yin pathogen) clouding the Heart orifices: dulled consciousness, blank affect, rattling phlegm in the throat, white greasy coating — a slower-onset pattern (e.g. withdrawal-type psychosis, stroke with phlegm obscuring the orifices). Phlegm-Fire Disturbing the Heart is Phlegm bound with Fire (a yang pathogen) disturbing the Heart: manic agitation, incoherent raving, red face, coarse breathing, red tongue with yellow greasy coating — a faster-onset pattern (e.g. manic-type psychosis).",
+     "tongue_difference_zh": "痰蒙心竅舌苔白膩;痰火擾心舌紅苔黃膩",
+     "source": "TCM textbook standard (中醫診斷學 藏象/氣血津液/淋證辨證通說;2026-08-24 撰寫,pattern_id 逐一核對存在於本庫)"
+    }
+   ],
    "sources": [
     "American Dragon (curriculum/conditions/TCM patterns/ad_batches/01_AD_PATTERN_HEART_SHEN.md)",
     "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
@@ -3554,7 +3581,7 @@
      "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
     ],
     "differentiation": [
-     "TCM textbook standard (Maciocia, Foundations of Chinese Medicine; 中醫診斷學 藏象辨證通說)"
+     "TCM textbook standard (中醫診斷學 藏象/氣血津液/淋證辨證通說;2026-08-24 撰寫,pattern_id 逐一核對存在於本庫)"
     ],
     "points": [
      "American Dragon (curriculum/conditions/TCM patterns/ad_batches/01_AD_PATTERN_HEART_SHEN.md)",
@@ -5238,7 +5265,27 @@
     "pat.血瘀",
     "pat.血瘀閉阻",
     "pat.瘀血阻絡"
-   ]
+   ],
+   "differential_patterns": [
+    {
+     "pattern_id": "pattern.liver_qi_stagnation",
+     "distinguishing_zh": "氣滯以脹痛為主,痛處遊走不定,隨情緒波動而增減,無腫塊瘀斑;血瘀以刺痛為主,痛有定處且拒按,可捫及腫塊,舌質紫暗或有瘀斑瘀點,兩者皆屬「不通則痛」但性質(脹/刺)與體徵(有無腫塊)不同。",
+     "distinguishing_en": "Qi Stagnation causes distending pain that migrates and fluctuates with emotion, without masses or ecchymosis. Blood Stasis causes fixed, stabbing pain that resists pressure, may present with a palpable mass, and shows a dusky-purple tongue or petechiae — both are \"pain from obstruction\" but differ in pain quality (distending vs. stabbing) and physical signs (mass or none).",
+     "tongue_difference_zh": "氣滯舌象多無明顯瘀象;血瘀舌質紫暗或有瘀斑瘀點",
+     "source": "TCM textbook standard (中醫診斷學 藏象/氣血津液/淋證辨證通說;2026-08-24 撰寫,pattern_id 逐一核對存在於本庫)"
+    },
+    {
+     "pattern_id": "pattern.qi_stagnation_blood_stasis",
+     "distinguishing_zh": "純血瘀證以刺痛拒按、腫塊、舌紫暗為主,情緒誘因不明顯;氣滯血瘀證則脹痛與刺痛兼具,情緒波動可明顯誘發或加重疼痛,是氣滯發展到血瘀階段的過渡/合併證。",
+     "distinguishing_en": "Pure Blood Stasis presents mainly with stabbing, pressure-averse pain, a mass, and a dusky tongue, without a clear emotional trigger. Qi Stagnation with Blood Stasis shows both distending and stabbing pain, with emotional fluctuation clearly triggering or worsening the pain — it is the transitional/combined pattern where Qi Stagnation has progressed into Blood Stasis.",
+     "source": "TCM textbook standard (中醫診斷學 藏象/氣血津液/淋證辨證通說;2026-08-24 撰寫,pattern_id 逐一核對存在於本庫)"
+    }
+   ],
+   "field_sources": {
+    "differentiation": [
+     "TCM textbook standard (中醫診斷學 藏象/氣血津液/淋證辨證通說;2026-08-24 撰寫,pattern_id 逐一核對存在於本庫)"
+    ]
+   }
   },
   {
    "id": "pattern.blood_heat",
@@ -5553,7 +5600,27 @@
    "legacy_ids": [
     "pat.濕痰",
     "pat.痰濕中阻"
-   ]
+   ],
+   "differential_patterns": [
+    {
+     "pattern_id": "pattern.spleen_yang_deficiency",
+     "distinguishing_zh": "痰濕內蘊以痰濕之邪壅滯為主,胸悶脘痞、嘔惡痰多、身重困倦、苔白膩,病性偏實或虛實夾雜;脾陽虛以陽氣不足、溫煦無力為主,畏寒肢冷、完穀不化、腹痛喜溫喜按,病性純虛,無明顯痰濁壅盛之象——但脾陽久虛常是痰濕內蘊的病理基礎(脾失健運,水濕不化而聚為痰)。",
+     "distinguishing_en": "Phlegm-Damp Accumulation centers on obstruction by turbid Phlegm-Damp: chest oppression, epigastric fullness, nausea with copious phlegm, heavy limbs, white greasy coating — an excess or mixed excess-deficiency pattern. Spleen Yang Deficiency centers on insufficient warming yang: cold intolerance, cold limbs, undigested food in the stool, pain relieved by warmth/pressure — a pure deficiency pattern without phlegm-turbidity accumulation. Chronic Spleen yang deficiency is often the pathological basis that lets Phlegm-Damp accumulate (impaired transport-transformation lets water-damp condense into phlegm).",
+     "tongue_difference_zh": "痰濕內蘊苔白膩;脾陽虛舌淡胖苔白滑",
+     "source": "TCM textbook standard (中醫診斷學 藏象/氣血津液/淋證辨證通說;2026-08-24 撰寫,pattern_id 逐一核對存在於本庫)"
+    },
+    {
+     "pattern_id": "pattern.damp_heat_spleen_stomach",
+     "distinguishing_zh": "痰濕內蘊屬寒濕或濕邪為主,無明顯熱象,苔白膩;脾胃濕熱則濕與熱合,兼見口苦口黏、身熱不揚、苔黃膩,小便短赤——同為濕邪為患,寒熱屬性相反。",
+     "distinguishing_en": "Phlegm-Damp Accumulation is cold-damp or damp-predominant without heat signs, white greasy coating. Damp-Heat in the Spleen-Stomach combines Damp with Heat: bitter/sticky mouth, low-grade lingering fever, yellow greasy coating, scanty dark urine — both are damp pathogens but with opposite thermal nature.",
+     "source": "TCM textbook standard (中醫診斷學 藏象/氣血津液/淋證辨證通說;2026-08-24 撰寫,pattern_id 逐一核對存在於本庫)"
+    }
+   ],
+   "field_sources": {
+    "differentiation": [
+     "TCM textbook standard (中醫診斷學 藏象/氣血津液/淋證辨證通說;2026-08-24 撰寫,pattern_id 逐一核對存在於本庫)"
+    ]
+   }
   },
   {
    "id": "pattern.wind_damp_bi",
@@ -6074,8 +6141,25 @@
      "Bastyr_MM2_Lin_Syndrome_Overview_2025",
      "NCBAHM_CH_Exam_Content_Outline_2026",
      "Maciocia_Practice_of_Chinese_Medicine_2nd"
+    ],
+    "differentiation": [
+     "TCM textbook standard (中醫診斷學 藏象/氣血津液/淋證辨證通說;2026-08-24 撰寫,pattern_id 逐一核對存在於本庫)"
     ]
-   }
+   },
+   "differential_patterns": [
+    {
+     "pattern_id": "pattern.heat_lin",
+     "distinguishing_zh": "石淋以尿中夾雜砂石、排尿突然中斷或艱澀刺痛、腰腹絞痛陣作為特徵,可伴血尿;熱淋以尿頻尿急尿痛、小便黃赤渾濁、少腹拘急為主,病勢較石淋緩和,無砂石排出。",
+     "distinguishing_en": "Stone Lin features sand/gravel in the urine, sudden interruption or difficult painful urination, and paroxysmal colicky flank/lower-abdominal pain, sometimes with hematuria. Heat Lin features urgency, frequency, and burning pain with turbid dark-yellow urine and lower-abdominal tension — milder in course than Stone Lin, with no stone/gravel passage.",
+     "source": "TCM textbook standard (中醫診斷學 藏象/氣血津液/淋證辨證通說;2026-08-24 撰寫,pattern_id 逐一核對存在於本庫)"
+    },
+    {
+     "pattern_id": "pattern.cloudy_lin",
+     "distinguishing_zh": "石淋以砂石排出、疼痛劇烈如絞為特異性表現;膏淋以小便渾濁如米泔水或滑膩如脂膏為特異性表現,尿道疼痛感通常較石淋輕微,但排尿不暢、尿道滯澀感明顯。",
+     "distinguishing_en": "Stone Lin's hallmark is passage of sand/gravel with severe colicky pain. Cloudy Lin's hallmark is urine turbid like rice-washing water or greasy like fat — urethral pain is usually milder than in Stone Lin, but a sense of urinary obstruction/stagnation is prominent.",
+     "source": "TCM textbook standard (中醫診斷學 藏象/氣血津液/淋證辨證通說;2026-08-24 撰寫,pattern_id 逐一核對存在於本庫)"
+    }
+   ]
   },
   {
    "id": "pattern.qi_lin_excess",
@@ -6452,8 +6536,25 @@
      "Bastyr_MM2_Lin_Syndrome_Overview_2025",
      "NCBAHM_CH_Exam_Content_Outline_2026",
      "Maciocia_Practice_of_Chinese_Medicine_2nd"
+    ],
+    "differentiation": [
+     "TCM textbook standard (中醫診斷學 藏象/氣血津液/淋證辨證通說;2026-08-24 撰寫,pattern_id 逐一核對存在於本庫)"
     ]
-   }
+   },
+   "differential_patterns": [
+    {
+     "pattern_id": "pattern.heat_lin",
+     "distinguishing_zh": "膏淋以小便渾濁如米泔水或滑膩如脂膏為特徵,多因脾腎兩虛、清濁不分或濕熱下注、脂液下滲所致,病程可遷延;熱淋以尿頻尿急尿痛為主,尿色黃赤但不見脂膏樣渾濁,病勢較急。",
+     "distinguishing_en": "Cloudy Lin is characterized by urine turbid like rice-washing water or greasy like fat, from Spleen-Kidney deficiency (failure to separate clear from turbid) or damp-heat forcing lipid substance downward — often a protracted course. Heat Lin centers on urgency, frequency, and burning pain with dark-yellow but non-greasy urine — a more acute presentation.",
+     "source": "TCM textbook standard (中醫診斷學 藏象/氣血津液/淋證辨證通說;2026-08-24 撰寫,pattern_id 逐一核對存在於本庫)"
+    },
+    {
+     "pattern_id": "pattern.fatigue_lin",
+     "distinguishing_zh": "膏淋以尿液渾濁如脂膏之特異性外觀為主要辨識點;勞淋以「遇勞則發、逢勞加重」之誘因與神疲乏力、腰膝痠軟等虛損表現為主要辨識點,尿液本身未必渾濁——兩者皆可見於淋證日久轉虛之階段,但辨證眼目不同。",
+     "distinguishing_en": "Cloudy Lin is identified chiefly by the distinctive greasy-turbid appearance of the urine. Fatigue Lin is identified chiefly by its \"triggered/worsened by exertion\" pattern with fatigue and lumbar-knee soreness — the urine itself need not be turbid. Both can appear in the chronic, deficiency-leaning stage of stranguria, but the diagnostic hallmark differs.",
+     "source": "TCM textbook standard (中醫診斷學 藏象/氣血津液/淋證辨證通說;2026-08-24 撰寫,pattern_id 逐一核對存在於本庫)"
+    }
+   ]
   },
   {
    "id": "pattern.fatigue_lin",
@@ -6574,8 +6675,25 @@
      "Bastyr_MM2_Lin_Syndrome_Overview_2025",
      "NCBAHM_CH_Exam_Content_Outline_2026",
      "Maciocia_Practice_of_Chinese_Medicine_2nd"
+    ],
+    "differentiation": [
+     "TCM textbook standard (中醫診斷學 藏象/氣血津液/淋證辨證通說;2026-08-24 撰寫,pattern_id 逐一核對存在於本庫)"
     ]
-   }
+   },
+   "differential_patterns": [
+    {
+     "pattern_id": "pattern.heat_lin",
+     "distinguishing_zh": "勞淋因勞累或房勞誘發,病程遷延反覆,尿澀痛不甚而神疲腰痠等虛象明顯,屬虛證或虛實夾雜;熱淋起病急驟,尿頻尿急尿痛明顯,屬濕熱下注之實證,「遇勞則發」並非其特徵。",
+     "distinguishing_en": "Fatigue Lin is triggered by exertion or sexual taxation, follows a protracted relapsing course, with mild urinary discomfort but prominent deficiency signs (fatigue, lumbar soreness) — a deficiency or mixed pattern. Heat Lin has an abrupt onset with prominent urgency/frequency/burning pain — a damp-heat excess pattern not characteristically triggered by exertion.",
+     "source": "TCM textbook standard (中醫診斷學 藏象/氣血津液/淋證辨證通說;2026-08-24 撰寫,pattern_id 逐一核對存在於本庫)"
+    },
+    {
+     "pattern_id": "pattern.kidney_qi_not_firm",
+     "distinguishing_zh": "勞淋以淋證反覆發作、遇勞則發為核心特徵,仍有排尿澀痛等淋證本身的表現;腎氣不固以小便頻數清長、遺尿失禁、腰膝痠軟為主,通常不伴排尿澀痛,病機重心在腎氣固攝無力而非下焦濕熱殘留。",
+     "distinguishing_en": "Fatigue Lin is centered on stranguria recurring with exertion, still retaining the core dysuria/discomfort of Lin syndrome. Kidney Qi Not Firm centers on frequent clear urination, enuresis/incontinence, and lumbar-knee soreness, usually without urinary discomfort — its mechanism is failure of Kidney qi to secure/contain, not residual lower-burner damp-heat.",
+     "source": "TCM textbook standard (中醫診斷學 藏象/氣血津液/淋證辨證通說;2026-08-24 撰寫,pattern_id 逐一核對存在於本庫)"
+    }
+   ]
   },
   {
    "id": "pattern.liver_fire_flaring",
