@@ -1232,9 +1232,7 @@
         "tcm_pattern_ids": [
           "derived: 本方 pattern_indications_zh 經 data/config/pattern_alias_map.json + data/pathology/pattern_registry.json name_zh 逐字對照(scripts/derive-formula-pattern-links.js,不拆複合證、不近似匹配、不用 syndromes_zh)"
         ],
-        "contraindications_en": [
-          "aligned: docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json(逐條忠實翻譯 _zh,既有可對上的 _en 原文保留;紅線5 對齊)"
-        ]
+        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)"
       },
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
@@ -1859,15 +1857,14 @@
         "水腫、小便不利者：加茯苓 15g、澤瀉 9g 利水滲濕"
       ],
       "contraindications_en": [
-        "Contraindicated for those with coughing due to Yin Deficiency.",
-        "Contraindicated for those with Lung Heat cough and wheezing with expectoration of thick, yellow sputum.",
-        "Use with caution for those with hypertension.",
-        "Use caution during pregnancy.",
         "Do not use long term.",
         "Contraindicated for those with Heat conditions.",
         "Contraindicated for those with hemoptysis.",
-        "Contraindicated for those with dry mouth and throat with thick, yellow sputum.",
-        "Contraindicated for those with a sore throat and a rapid pulse."
+        "Contraindicated for those with coughing due to Yin Deficiency.",
+        "Contraindicated for those with cough and wheezing due to Lung Heat with expectoration of thick, yellow sputum.",
+        "Contraindicated for those with a sore throat and a rapid pulse.",
+        "Use with caution in patients with severe heart disease or hypertension.",
+        "Use with caution during pregnancy."
       ],
       "contraindications_zh": [
         "不宜長期服用",
@@ -2089,9 +2086,7 @@
         "tcm_pattern_ids": [
           "derived: 本方 pattern_indications_zh 經 data/config/pattern_alias_map.json + data/pathology/pattern_registry.json name_zh 逐字對照(scripts/derive-formula-pattern-links.js,不拆複合證、不近似匹配、不用 syndromes_zh)"
         ],
-        "contraindications_en": [
-          "2026-08-19 雙語聯集對齊：原 contraindications_zh 4 條 / contraindications_en 7 條(不同來源並行),對齊為 9 組;原條目逐字保留,補齊側為對側之翻譯"
-        ]
+        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)"
       },
       "cloudtcm_id": 41,
       "action_profile": {
@@ -4364,9 +4359,7 @@
         "tcm_pattern_ids": [
           "derived: 本方 pattern_indications_zh 經 data/config/pattern_alias_map.json + data/pathology/pattern_registry.json name_zh 逐字對照(scripts/derive-formula-pattern-links.js,不拆複合證、不近似匹配、不用 syndromes_zh)"
         ],
-        "contraindications_en": [
-          "aligned: docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json(逐條忠實翻譯 _zh,既有可對上的 _en 原文保留;紅線5 對齊)"
-        ]
+        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)"
       },
       "cloudtcm_id": 162,
       "condition_tags_zh": [
@@ -8209,16 +8202,12 @@
         "兼濕熱身重、脘痞者：加蒼朮 9g ➔ 即白虎加蒼朮湯（燥濕清熱）"
       ],
       "contraindications_en": [
-        "Contraindicated when the exterior pattern has not resolved, with absence of sweating and aversion to cold.",
-        "Contraindicated when the pulse is floating and thin, or submerged, or when there is no thirst or no sweating (the four prohibitions of Bai Hu).",
-        "Contraindicated for those with Spleen and Stomach Deficiency Cold with loose stools.",
-        "True Cold with False Heat.",
+        "Contraindicated when the exterior pattern is unresolved, with no sweating and aversion to cold.",
+        "Contraindicated for those with a floating, thin pulse, a deep pulse, absence of thirst, or absence of sweating (the four prohibitions of Bai Hu).",
+        "Contraindicated for those with Spleen and Stomach deficiency cold and loose stools.",
+        "Contraindicated for true cold with false heat (exuberant Yin repelling Yang).",
         "Fever from Spleen/Stomach Yin Deficiency with spontaneous sweating, extreme fatigue, aversion to Wind, and a floating Deficiency pulse.",
-        "Yang Ming Fu pattern.",
-        "Use caution with a floating, wiry, thin pulse.",
-        "Use caution with a submerged pulse.",
-        "Use caution when there is no thirst.",
-        "Use caution when there is no sweating."
+        "Contraindicated for Yang Ming Fu-organ excess patterns."
       ],
       "contraindications_zh": [
         "表證未解、無汗惡寒者禁用",
@@ -8471,9 +8460,7 @@
         "tcm_pattern_ids": [
           "derived: 本方 pattern_indications_zh 經 data/config/pattern_alias_map.json + data/pathology/pattern_registry.json name_zh 逐字對照(scripts/derive-formula-pattern-links.js,不拆複合證、不近似匹配、不用 syndromes_zh)"
         ],
-        "contraindications_en": [
-          "2026-08-19 雙語聯集對齊：原 contraindications_zh 4 條 / contraindications_en 7 條(不同來源並行),對齊為 10 組;原條目逐字保留,補齊側為對側之翻譯"
-        ]
+        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)"
       },
       "cloudtcm_id": 98,
       "action_profile": {
@@ -9134,12 +9121,9 @@
         "胃熱輕微或無、胃氣陰兩虛 → 去石膏"
       ],
       "contraindications_en": [
-        "This formula is cooling and moistening; it is contraindicated when there is internal Phlegm-Damp, or fever due to Yang Deficiency.",
-        "Not appropriate in febrile disease while the pathogen remains exuberant, the high fever has not yet abated, and Qi and Yin have not yet been injured.",
-        "Febrile disease when both normal and pathogenic Qi remain abundant.",
-        "Febrile disease when fever remains high.",
-        "Febrile disease when Qi and Yin have not been injured.",
-        "Febrile disease with chest oppression, dry heaves, and a yellow greasy tongue coat from Damp-Heat."
+        "This formula is cooling and moist in nature; avoid in those with internal Phlegm-Damp or with fever due to Yang deficiency.",
+        "Not appropriate for febrile disease at the stage when the pathogen is exuberant and excess, high fever has not yet abated, and Qi and Yin are not yet injured.",
+        "Contraindicated for those with internal Phlegm-Damp accumulation presenting with chest oppression, dry heaves, and a yellow, greasy tongue coating."
       ],
       "contraindications_zh": [
         "本方清涼質潤，如內有痰濕，或陽虛發熱，均應忌用。",
@@ -9373,9 +9357,7 @@
         "formula_song": [
           "《湯頭歌訣》(汪昂)通行本/方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
         ],
-        "contraindications_en": [
-          "2026-08-19 雙語聯集對齊：原 contraindications_zh 2 條 / contraindications_en 4 條(不同來源並行),對齊為 6 組;原條目逐字保留,補齊側為對側之翻譯"
-        ]
+        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)"
       },
       "cloudtcm_id": 108,
       "action_profile": {
@@ -15410,9 +15392,7 @@
         "tcm_pattern_ids": [
           "derived: 本方 pattern_indications_zh 經 data/config/pattern_alias_map.json + data/pathology/pattern_registry.json name_zh 逐字對照(scripts/derive-formula-pattern-links.js,不拆複合證、不近似匹配、不用 syndromes_zh)"
         ],
-        "contraindications_en": [
-          "aligned: docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json(逐條忠實翻譯 _zh,既有可對上的 _en 原文保留;紅線5 對齊)"
-        ],
+        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)",
         "formula_song_zh": [
           "https://www.zhongyifangji.com/cht/prescription/detail/id/114"
         ],
@@ -19804,9 +19784,7 @@
         "cautions_zh": [
           "中文譯自本筆記錄既有 contraindications_en/cautions_en。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
         ],
-        "contraindications_en": [
-          "aligned: docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json(逐條忠實翻譯 _zh,既有可對上的 _en 原文保留;紅線5 對齊)"
-        ],
+        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)",
         "formula_family": [
           "curriculum/herbs/方剂学汇总_extracted.md(Table 61, source lines 552,553,554,555,556,557;帳本 docs/research_packs/FORMULA_FAMILY_PROPOSALS_2026-08-19.json,劑量逐字審計)"
         ],
@@ -20694,9 +20672,7 @@
         "cautions_zh": [
           "中文譯自本筆記錄既有 contraindications_en/cautions_en。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
         ],
-        "contraindications_en": [
-          "aligned: docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json(逐條忠實翻譯 _zh,既有可對上的 _en 原文保留;紅線5 對齊)"
-        ],
+        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)",
         "formula_song_zh": [
           "https://jicheng.tw/tcm/book/%E9%95%B7%E6%B2%99%E6%96%B9%E6%AD%8C%E6%8B%AC/index.html"
         ],
@@ -22933,9 +22909,7 @@
         "cautions_zh": [
           "中文譯自本筆記錄既有 contraindications_en/cautions_en。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
         ],
-        "contraindications_en": [
-          "aligned: docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json(逐條忠實翻譯 _zh,既有可對上的 _en 原文保留;紅線5 對齊)"
-        ],
+        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)",
         "formula_song_zh": [
           "https://www.zhongyifangji.com/cht/prescription/detail/id/127"
         ],
@@ -24149,9 +24123,7 @@
         "modern_research_en": [
           "American Dragon HERB/DRUG INTERACTIONS — 屬藥理與交互作用,不是禁忌,2026-08-06 歸位"
         ],
-        "contraindications_en": [
-          "zh 為既有中文原文,en 為其對譯(內容與 American Dragon 2026-08 harvest 的禁忌條目一致);原值為無來源流程草稿,2026-08-06 替換"
-        ],
+        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)",
         "actions_zh": [
           "American Dragon Formula Index (American_Dragon_201_Formulas_Name_Actions_Syndromes.md, 2026-08-07)"
         ],
@@ -26528,9 +26500,7 @@
         "cautions_zh": [
           "中文譯自本筆記錄既有 contraindications_en/cautions_en。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
         ],
-        "contraindications_en": [
-          "aligned: docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json(逐條忠實翻譯 _zh,既有可對上的 _en 原文保留;紅線5 對齊)"
-        ],
+        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)",
         "formula_family": [
           "curriculum/herbs/方剂学汇总_extracted.md(Table 109, source lines 944,945;帳本 docs/research_packs/FORMULA_FAMILY_PROPOSALS_2026-08-19.json,劑量逐字審計)"
         ],
@@ -28693,9 +28663,7 @@
         "cautions_zh": [
           "中文譯自本筆記錄既有 contraindications_en/cautions_en。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
         ],
-        "contraindications_en": [
-          "aligned: docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json(逐條忠實翻譯 _zh,既有可對上的 _en 原文保留;紅線5 對齊)"
-        ],
+        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)",
         "formula_song_zh": [
           "https://www.zhongyifangji.com/cht/prescription/detail/id/134"
         ],
@@ -34102,9 +34070,7 @@
         "cautions_zh": [
           "中文譯自本筆記錄既有 contraindications_en/cautions_en。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
         ],
-        "contraindications_en": [
-          "aligned: docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json(逐條忠實翻譯 _zh,既有可對上的 _en 原文保留;紅線5 對齊)"
-        ],
+        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)",
         "formula_song_zh": [
           "https://www.zhongyifangji.com/cht/prescription/detail/id/70"
         ],
@@ -34628,8 +34594,7 @@
       ],
       "contraindications_en": [
         "Contraindicated for those with Yin Deficiency with Empty Fire.",
-        "Use with caution during Spring and Summer or in warm climates.",
-        "Contraindicated for those with during Spring and Summer or in warm climates."
+        "Use with caution during Spring and Summer or in warm climates."
       ],
       "contraindications_zh": [
         "陰虛火旺者禁用",
@@ -34870,9 +34835,7 @@
         "pattern_indications_en": [
           "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 1 條 / pattern_indications_en 2 條(不同來源並行),對齊為 2 組;原條目逐字保留,補齊側為對側之翻譯"
         ],
-        "contraindications_en": [
-          "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 3 條(不同來源並行),對齊為 3 組;原條目逐字保留,補齊側為對側之翻譯"
-        ]
+        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)"
       },
       "cloudtcm_id": 256,
       "action_profile": {
@@ -38460,9 +38423,7 @@
         "tcm_pattern_ids": [
           "derived: 本方 pattern_indications_zh 經 data/config/pattern_alias_map.json + data/pathology/pattern_registry.json name_zh 逐字對照(scripts/derive-formula-pattern-links.js,不拆複合證、不近似匹配、不用 syndromes_zh)"
         ],
-        "contraindications_en": [
-          "aligned: docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json(逐條忠實翻譯 _zh,既有可對上的 _en 原文保留;紅線5 對齊)"
-        ],
+        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)",
         "formula_family": [
           "curriculum/herbs/方剂学汇总_extracted.md(Table 252, source lines 2189;帳本 docs/research_packs/FORMULA_FAMILY_PROPOSALS_2026-08-19.json,劑量逐字審計)"
         ],
@@ -41060,9 +41021,7 @@
         "tcm_pattern_ids": [
           "derived: 本方 pattern_indications_zh 經 data/config/pattern_alias_map.json + data/pathology/pattern_registry.json name_zh 逐字對照(scripts/derive-formula-pattern-links.js,不拆複合證、不近似匹配、不用 syndromes_zh)"
         ],
-        "contraindications_en": [
-          "aligned: docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json(逐條忠實翻譯 _zh,既有可對上的 _en 原文保留;紅線5 對齊)"
-        ],
+        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)",
         "formula_song_zh": [
           "https://www.zhongyifangji.com/cht/prescription/detail/id/54"
         ],
@@ -43425,9 +43384,7 @@
         "actions_en": [
           "American Dragon formula page (harvested 2026-08)(完整 4 條;先前僅採用舊的 2 條摘要)"
         ],
-        "contraindications_en": [
-          "American Dragon formula page (harvested 2026-08) — 後 7 條 en 照原文、zh 為對譯;前 2 條 zh 為 CloudTCM 原文、en 為其對譯。原 contraindications_en 為無來源草稿,2026-08-06 替換"
-        ],
+        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)",
         "contraindications_zh": [
           "American Dragon formula page (harvested 2026-08) — 後 7 條 en 照原文、zh 為對譯;前 2 條 zh 為 CloudTCM 原文、en 為其對譯。原 contraindications_en 為無來源草稿,2026-08-06 替換"
         ],
@@ -49842,9 +49799,7 @@
         "tcm_pattern_ids": [
           "derived: 本方 pattern_indications_zh 經 data/config/pattern_alias_map.json + data/pathology/pattern_registry.json name_zh 逐字對照(scripts/derive-formula-pattern-links.js,不拆複合證、不近似匹配、不用 syndromes_zh)"
         ],
-        "contraindications_en": [
-          "aligned: docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json(逐條忠實翻譯 _zh,既有可對上的 _en 原文保留;紅線5 對齊)"
-        ]
+        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)"
       },
       "cloudtcm_id": 81,
       "action_profile": {
@@ -64542,9 +64497,7 @@
         "cautions_zh": [
           "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處：既有 field_sources 各欄位所列課件/CloudTCM 來源）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
         ],
-        "contraindications_en": [
-          "aligned: docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json(逐條忠實翻譯 _zh,既有可對上的 _en 原文保留;紅線5 對齊)"
-        ],
+        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)",
         "formula_family": [
           "curriculum/herbs/方剂学汇总_extracted.md(Table 412, source lines 3607;帳本 docs/research_packs/FORMULA_FAMILY_PROPOSALS_2026-08-19.json,劑量逐字審計)"
         ],
@@ -67529,9 +67482,7 @@
         "cautions_zh": [
           "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處：既有 field_sources 各欄位所列課件/CloudTCM 來源）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
         ],
-        "contraindications_en": [
-          "aligned: docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json(逐條忠實翻譯 _zh,既有可對上的 _en 原文保留;紅線5 對齊)"
-        ]
+        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)"
       },
       "cloudtcm_id": 264,
       "action_profile": {
@@ -68172,9 +68123,7 @@
         "cautions_zh": [
           "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處：既有 field_sources 各欄位所列課件/CloudTCM 來源）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
         ],
-        "contraindications_en": [
-          "aligned: docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json(逐條忠實翻譯 _zh,既有可對上的 _en 原文保留;紅線5 對齊)"
-        ],
+        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)",
         "formula_song_zh": [
           "https://www.zhongyifangji.com/cht/prescription/detail/id/58"
         ],
@@ -68757,9 +68706,7 @@
         "cautions_zh": [
           "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處：既有 field_sources 各欄位所列課件/CloudTCM 來源）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
         ],
-        "contraindications_en": [
-          "aligned: docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json(逐條忠實翻譯 _zh,既有可對上的 _en 原文保留;紅線5 對齊)"
-        ],
+        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)",
         "formula_song_zh": [
           "https://www.zhongyifangji.com/cht/prescription/detail/id/8"
         ],
@@ -69455,9 +69402,7 @@
         "cautions_zh": [
           "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處：既有 field_sources 各欄位所列課件/CloudTCM 來源）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
         ],
-        "contraindications_en": [
-          "aligned: docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json(逐條忠實翻譯 _zh,既有可對上的 _en 原文保留;紅線5 對齊)"
-        ],
+        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)",
         "modifications_zh": [
           "curriculum/herbs/方剂学汇总_extracted.md(Table 475;原文英文+拼音,zh 為忠實中譯,原句在帳本 docs/research_packs/MODIFICATIONS_PROPOSALS_2026-08-19.json evidence_quotes)"
         ],
@@ -73881,9 +73826,7 @@
         "cautions_zh": [
           "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處：既有 field_sources 各欄位所列課件/CloudTCM 來源）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
         ],
-        "contraindications_en": [
-          "aligned: docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json(逐條忠實翻譯 _zh,既有可對上的 _en 原文保留;紅線5 對齊)"
-        ],
+        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)",
         "formula_family": [
           "curriculum/herbs/方剂学汇总_extracted.md(Table 574, source lines 5012,5013,5014;帳本 docs/research_packs/FORMULA_FAMILY_PROPOSALS_2026-08-19.json,劑量逐字審計)"
         ],
@@ -74781,9 +74724,7 @@
         "cautions_zh": [
           "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處：既有 field_sources 各欄位所列課件/CloudTCM 來源）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
         ],
-        "contraindications_en": [
-          "aligned: docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json(逐條忠實翻譯 _zh,既有可對上的 _en 原文保留;紅線5 對齊)"
-        ],
+        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)",
         "modifications_zh": [
           "curriculum/herbs/方剂学汇总_extracted.md(Table 578;原文英文+拼音,zh 為忠實中譯,原句在帳本 docs/research_packs/MODIFICATIONS_PROPOSALS_2026-08-19.json evidence_quotes)"
         ],
@@ -79561,9 +79502,7 @@
         "tcm_pattern_ids": [
           "derived: 本方 pattern_indications_zh 經 data/config/pattern_alias_map.json + data/pathology/pattern_registry.json name_zh 逐字對照(scripts/derive-formula-pattern-links.js,不拆複合證、不近似匹配、不用 syndromes_zh)"
         ],
-        "contraindications_en": [
-          "aligned: docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json(逐條忠實翻譯 _zh,既有可對上的 _en 原文保留;紅線5 對齊)"
-        ]
+        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)"
       },
       "cloudtcm_id": 15,
       "action_profile": {
@@ -80230,7 +80169,7 @@
         "皮裏膜外之痰 → 加白芥子"
       ],
       "contraindications_en": [
-        "Improper use may cause thirst; contraindicated for those with a dry throat.",
+        "Improper use can cause thirst and a dry throat; avoid in such cases.",
         "Contraindicated for those with Lung Yin Deficiency cough."
       ],
       "contraindications_zh": [
@@ -80501,9 +80440,7 @@
         "pattern_indications_en": [
           "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 2 條 / pattern_indications_en 5 條(不同來源並行),對齊為 5 組;原條目逐字保留,補齊側為對側之翻譯"
         ],
-        "contraindications_en": [
-          "2026-08-19 雙語聯集對齊：原 contraindications_zh 2 條 / contraindications_en 1 條(不同來源並行),對齊為 2 組;原條目逐字保留,補齊側為對側之翻譯"
-        ]
+        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)"
       },
       "cloudtcm_id": 7,
       "condition_tags_zh": [
@@ -87487,9 +87424,7 @@
         "contraindications_zh": [
           "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處見該筆 field_sources.contraindications_en / en 陣列本身）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
         ],
-        "contraindications_en": [
-          "aligned: docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json(逐條忠實翻譯 _zh,既有可對上的 _en 原文保留;紅線5 對齊)"
-        ],
+        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)",
         "modifications_zh": [
           "curriculum/herbs/方剂学汇总_extracted.md(Table 636;原文英文+拼音,zh 為忠實中譯,原句在帳本 docs/research_packs/MODIFICATIONS_PROPOSALS_2026-08-19.json evidence_quotes)"
         ],
@@ -91573,9 +91508,7 @@
         "cautions_zh": [
           "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處見該筆 field_sources.contraindications_en / en 陣列本身）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
         ],
-        "contraindications_en": [
-          "aligned: docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json(逐條忠實翻譯 _zh,既有可對上的 _en 原文保留;紅線5 對齊)"
-        ],
+        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)",
         "tongue_zh": [
           "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md(「- T: red or deep-red with a foul, greasy, yellow coating, P: slippery, rapid Thi」;帳本 docs/research_packs/TONGUE_PULSE_BACKFILL_2026-08-19.json)"
         ],
@@ -96199,9 +96132,7 @@
         "cloudtcm_url": [
           "data/imports/cloudtcm/formula_url_map.json（匯入時擷取的真實頁面編號）"
         ],
-        "contraindications_en": [
-          "aligned: docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json(逐條忠實翻譯 _zh,既有可對上的 _en 原文保留;紅線5 對齊)"
-        ],
+        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)",
         "modifications_zh": [
           "curriculum/herbs/方剂学汇总_extracted.md(Table 433;原文英文+拼音,zh 為忠實中譯,原句在帳本 docs/research_packs/MODIFICATIONS_PROPOSALS_2026-08-19.json evidence_quotes)"
         ],
@@ -97638,9 +97569,7 @@
         "tcm_pattern_ids": [
           "derived: 本方 pattern_indications_zh 經 data/config/pattern_alias_map.json + data/pathology/pattern_registry.json name_zh 逐字對照(scripts/derive-formula-pattern-links.js,不拆複合證、不近似匹配、不用 syndromes_zh)"
         ],
-        "contraindications_en": [
-          "aligned: docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json(逐條忠實翻譯 _zh,既有可對上的 _en 原文保留;紅線5 對齊)"
-        ]
+        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)"
       },
       "cloudtcm_id": 88,
       "action_profile": {
@@ -100473,9 +100402,7 @@
         "tcm_pattern_ids": [
           "derived: 本方 pattern_indications_zh 經 data/config/pattern_alias_map.json + data/pathology/pattern_registry.json name_zh 逐字對照(scripts/derive-formula-pattern-links.js,不拆複合證、不近似匹配、不用 syndromes_zh)"
         ],
-        "contraindications_en": [
-          "aligned: docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json(逐條忠實翻譯 _zh,既有可對上的 _en 原文保留;紅線5 對齊)"
-        ],
+        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)",
         "formula_family": [
           "curriculum/herbs/方剂学汇总_extracted.md(Table 46, source lines 428,429;帳本 docs/research_packs/FORMULA_FAMILY_PROPOSALS_2026-08-19.json,劑量逐字審計)"
         ],
@@ -103182,9 +103109,7 @@
         "cautions_zh": [
           "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處：見本筆 field_sources.contraindications 或 field_sources.composition 等既有出處欄位）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
         ],
-        "contraindications_en": [
-          "aligned: docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json(逐條忠實翻譯 _zh,既有可對上的 _en 原文保留;紅線5 對齊)"
-        ],
+        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)",
         "formula_song_zh": [
           "https://www.zhongyifangji.com/cht/prescription/detail/id/120"
         ],
@@ -107676,9 +107601,7 @@
         "cautions_zh": [
           "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處：見本筆 field_sources.contraindications 或 field_sources.composition 等既有出處欄位）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
         ],
-        "contraindications_en": [
-          "aligned: docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json(逐條忠實翻譯 _zh,既有可對上的 _en 原文保留;紅線5 對齊)"
-        ],
+        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)",
         "formula_song_zh": [
           "https://www.zhongyifangji.com/cht/prescription/detail/id/71"
         ],
@@ -108344,9 +108267,7 @@
           "《傷寒論·辨厥陰病脈證並治》烏梅丸條（SOL 2026-08-12 裁定，docs/research_packs/FORMULA_4_BLOCKERS_SOL.md §2）",
           "國家中醫藥研究所〈烏梅丸的現代研究新知〉https://www.nricm.edu.tw/p/406-1000-7453%2Cr11.php?Lang=zh-tw"
         ],
-        "contraindications_en": [
-          "aligned: docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json(逐條忠實翻譯 _zh,既有可對上的 _en 原文保留;紅線5 對齊)"
-        ],
+        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)",
         "pattern_indications_en": [
           "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 1 條 / pattern_indications_en 4 條(不同來源並行),對齊為 5 組;原條目逐字保留,補齊側為對側之翻譯"
         ]
@@ -109818,9 +109739,7 @@
         "taiwan_pharmacopeia_zh": [
           "curriculum/formulas/04_Formula_Cards_031-040_清熱劑.md（22 區塊方劑卡）"
         ],
-        "contraindications_en": [
-          "aligned: docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json(逐條忠實翻譯 _zh,既有可對上的 _en 原文保留;紅線5 對齊)"
-        ],
+        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)",
         "modifications_zh": [
           "curriculum/herbs/方剂学汇总_extracted.md(Table 175;原文英文+拼音,zh 為忠實中譯,原句在帳本 docs/research_packs/MODIFICATIONS_PROPOSALS_2026-08-19.json evidence_quotes)"
         ],
@@ -110531,9 +110450,8 @@
         "吞酸明顯 → 加海螵蛸（烏賊骨）、煅瓦楞子"
       ],
       "contraindications_en": [
-        "In this formula the ratio of Huang Lian to Wu Zhu Yu is 6:1.",
-        "This formula is bitter and cold in nature; contraindicated for vomiting due to Deficiency Cold.",
-        "Acid regurgitation due to Stomach Deficiency Cold.",
+        "The ratio of Huang Lian to Wu Zhu Yu in this formula is 6:1.",
+        "This formula is bitter and cold in nature; avoid in those with deficiency-cold type vomiting.",
         "Hypochondriac pain due to Liver, Gallbladder, or Blood Deficiency.",
         "Pregnancy."
       ],
@@ -110715,9 +110633,7 @@
         "formula_song_zh": [
           "https://www.zhongyifangji.com/cht/prescription/detail/id/49"
         ],
-        "contraindications_en": [
-          "2026-08-19 雙語聯集對齊：原 contraindications_zh 2 條 / contraindications_en 3 條(不同來源並行),對齊為 5 組;原條目逐字保留,補齊側為對側之翻譯"
-        ],
+        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)",
         "formula_song": [
           "《湯頭歌訣》(汪昂)通行本/方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
         ]
@@ -114708,8 +114624,7 @@
       ],
       "contraindications_en": [
         "Use with caution for those with weak digestion.",
-        "Contraindicated for those with atrophy caused by Damp-Heat Invasion.",
-        "Contraindicated for those with for those with weak digestion."
+        "Contraindicated for those with atrophy caused by Damp-Heat Invasion."
       ],
       "formula_family": [],
       "review_status": "draft",
@@ -114767,7 +114682,8 @@
         ],
         "source_classic": [
           "curriculum/formulas/19_Formula_Cards_181-190_未分類-考點與補充劑.md(「# 184. 二至丸 · Er Zhi Wan — Classical / course source: Yi Fang Ji Jie」;帳本 docs/research_packs/SOURCE_CLASSIC_PROPOSALS_2026-08-19.json)"
-        ]
+        ],
+        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)"
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/345",
       "cloudtcm_id": 345,
@@ -129541,8 +129457,7 @@
         "Contraindicated during pregnancy.",
         "If this formula leads to diarrhea without a complete cure, use a different formula.",
         "Contraindicated for those who are weak and deficient.",
-        "Use with caution for those with Spleen Deficiency.",
-        "Contraindicated for those with for those with Spleen Deficiency."
+        "Use with caution for those with Spleen Deficiency."
       ],
       "cautions_en": [
         "Contraindicated during pregnancy.",
@@ -129583,7 +129498,8 @@
         ],
         "cautions_zh": [
           "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處：American Dragon Formula Index, American_Dragon_201_Formulas_Name_Actions_Syndromes.md, 2026-08-07 匯入）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
-        ]
+        ],
+        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)"
       },
       "category": "未分類 / 考點與補充劑",
       "ba_fa_zh": "No single Ba Fa assigned mechanically; use the formula-specific actions/pattern and course chapter framing.",

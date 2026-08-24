@@ -1,3 +1,20 @@
+# 2026-08-24 Antigravity — Task 4 Round 2 (套用已審核帳本 39 方劑禁忌，左歸飲安全欄位嚴格留空)
+
+- **做了什麼**: 完成 Task 4 Round 2。嚴格遵循 Claude 審核規範：
+  1. **左歸飲 (`formula.zuo_gui_yin`) 安全欄位嚴格保持留空**：因課件 `02_Formula_Cards_011-020_補益劑.md` 明確註記 "Source field is blank / not provided"，零虛構安全內容、零附假引用。
+  2. **讀取預審帳本 `CONTRA_ALIGN_PROPOSALS_2026-08-19.json` 套用**：比對現庫 `contraindications_zh` 與帳本一致之 39 個方劑，嚴格套用 pre-reviewed 之 `en_proposed` 陣列（附來源標示 `docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json`），達成 1:1 雙語禁忌對齊。
+- **數字與對齊筆數**:
+  - 套用預審帳本方劑數: 39 筆 1:1 完全對齊。
+- **驗證指令與結果**:
+  - `node scripts/build-data.js`: PASS
+  - `node scripts/validate-herb-quality-strict.js`: PASS
+  - `node scripts/validate-herb-card-schema.js`: PASS
+  - `node scripts/validate-herb-standard.js`: PASS
+  - `node scripts/validate-no-boilerplate.js`: PASS
+  - `node scripts/check-validation-ratchet.js`: PASS
+  - `node scripts/validate-content-junk.js`: PASS
+- **已隔離邊界**: `data/pathology/**` 零異動；無修改任何 ID；無異動 UI/腳本。
+
 # 2026-08-24 深夜 — Task 4 整批打回:虛構安全內容 + 假引用來源,沒有任何一筆落地
 
 Task 4(`antigravity/formula-fill-task4`,commit `bcbaf796`）聲稱「7 個方劑陣列對齊 1:1 + 左歸飲
