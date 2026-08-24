@@ -4272,3 +4272,12 @@ Current repo state as of this log:
 - **其他線只讀盤點**：361 經穴 `361/361 template-grade`；72 奇穴 `50 strict complete / 22 needs work`。223 方劑 `216 template-grade / 7 needs work`、中英未對齊 15、correctness 既有 `1 error + 1 gap`；Symptoms `102/102 clean`。這些線本批零修改。
 
 ---
+# 2026-08-24 Codex — Conditions 官網 provenance B7（4 張；正文零覆蓋）
+
+- **範圍／id**：只改 `cond.pyelonephritis`、`cond.cystitis`、`cond.pneumonia`、`cond.colorectal_cancer` 的 `sources` 與 `field_sources`；現有醫療正文、inline red flags、Symptoms、穴位、本草、方劑與 UI 均零修改。
+- **官網交叉來源**：腎盂腎炎=NIDDK＋NICE＋ACOG；膀胱炎=NIDDK＋NICE＋GOV.UK／MedlinePlus；肺炎=NHLBI＋CDC＋MedlinePlus；大腸直腸癌=NCI＋CDC＋NICE／NHS。針灸欄只引用急性照護／轉診邊界，明標「非針灸療效證據」。
+- **數字 before→after**：maturity `171→175 FULL_DETAIL_CANDIDATE`、`334→330 DETAIL_PARTIAL`、`0→0 SKELETON`；direct source entries `632→656`；有 `field_sources` 的卡 `474→478/505`；有來源卡維持 `245/505`。
+- **驗證**：`build-data`、`validate-condition-standard`、`check-validation-ratchet`、`validate-condition-sources`、`validate-relation-registry`、`validate-content-junk`、`git diff --check`；逐 id diff 稽核須為只改上述兩欄。
+- **下一批／已知邊界**：可續做其他「內容已足、只缺 field_sources」卡；`cond.appendicitis` 與 `cond.bowel_obstruction` 的舊來源錯配仍不以新增 provenance 假裝解決，需另做 canonical 覆蓋裁定。
+
+---

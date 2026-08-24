@@ -1,5 +1,13 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-24] Codex Handoff — Conditions official provenance B7
+
+- **Branch / integration**: `codex/condition-safety-b1`; latest `origin/main@097481a7` was semantically merged as `24e06a26` before this batch. Main's 114 Symptoms, herb/formula changes, and F-07 restoration were preserved; the four record-level conflicts retained Codex safety content plus main's `acupoint_protocols` and `protocol_status:"unassessed"`.
+- **Exact ids / fields**: only `cond.pyelonephritis`, `cond.cystitis`, `cond.pneumonia`, and `cond.colorectal_cancer`; only `sources` and `field_sources`. No existing prose, inline red-flag object, relation, acupoint protocol, or adjacent canonical dataset was overwritten.
+- **Official source sets**: NIDDK/NICE/ACOG for pyelonephritis; NIDDK/NICE/GOV.UK/MedlinePlus for cystitis; NHLBI/CDC/MedlinePlus for pneumonia; NCI/CDC/NICE/NHS for colorectal cancer. Acupuncture-scope provenance explicitly labels these as urgency/co-management boundaries rather than efficacy evidence.
+- **Measured delta**: maturity `171→175 FULL_DETAIL_CANDIDATE`, `334→330 DETAIL_PARTIAL`, `0→0 SKELETON`; direct source entries `632→656`; records with `field_sources` `474→478/505`; records with sources remain `245/505`.
+- **Preserved unresolved source corrections**: `cond.appendicitis` exact age/family-history claims and `cond.bowel_obstruction` mechanical-vs-pseudo-obstruction provenance still require a canonical overwrite decision; they were not silently certified.
+
 ## [2026-08-24] Codex Handoff — Conditions official-source safety B1–B6
 
 - **Branch / integration**: `codex/condition-safety-b1`; content commits `b9ef394d`, `0ee1aef3`, `c100b47e`, `41fc6c32`, `b3751cdf`, `24ce964d`; merged latest `origin/main@e4500038` as `85a41c16`. The only merge conflict was generated `data/generated/knowledge_data.js`; it was rebuilt from the combined latest sources. No Symptoms, herb, formula, or acupoint canonical record was edited by this line.
