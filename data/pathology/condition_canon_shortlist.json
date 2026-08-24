@@ -5820,7 +5820,8 @@
         "pattern.qi_blood_deficiency",
         "pattern.qi_stagnation_blood_stasis",
         "pattern.cold_stagnation_liver_channel",
-        "pattern.damp_heat_lower_burner"
+        "pattern.damp_heat_lower_burner",
+        "pattern.liver_spleen_disharmony"
       ],
       "review_status": "draft",
       "summary_zh": "習慣性流產（文件情境）一般指連續兩次以上的自然流產，成因包括染色體、子宮結構、內分泌（如甲狀腺、血糖）、抗磷脂症候群與凝血異常等，需系統性評估雙方。",
@@ -18529,7 +18530,8 @@
         "pattern.qi_stagnation_blood_stasis",
         "pattern.wind_damp_bi",
         "pattern.liver_fire",
-        "pattern.qi_blood_deficiency"
+        "pattern.qi_blood_deficiency",
+        "pattern.spleen_deficiency_damp_encumbrance"
       ],
       "review_status": "draft",
       "summary_zh": "顳顎關節與咀嚼肌功能障礙。症狀為顎關節或咀嚼肌痛、開口受限或偏移、關節彈響、咀嚼與說話時加重，可伴頭痛耳前痛。",
@@ -19921,7 +19923,8 @@
         "pattern.phlegm_damp",
         "pattern.blood_stasis",
         "pattern.qi_stagnation_blood_stasis",
-        "pattern.kidney_yang_deficiency"
+        "pattern.kidney_yang_deficiency",
+        "pattern.spleen_stomach_yang_deficiency"
       ],
       "review_status": "draft",
       "summary_zh": "反覆發作的原發性頭痛，典型為單側、搏動性、中重度、日常活動加重，伴噁心嘔吐、畏光畏聲，可有先兆（視覺閃光、暗點）。發作可持續 4–72 小時。",
@@ -22159,7 +22162,9 @@
       "related_patterns": [
         "pattern.liver_stomach_disharmony",
         "pattern.stomach_heat",
-        "pattern.spleen_qi_deficiency"
+        "pattern.spleen_qi_deficiency",
+        "pattern.gallbladder_heat_invading_stomach",
+        "pattern.spleen_stomach_yang_deficiency"
       ],
       "review_status": "draft",
       "etiology_zh": "肝胃不和，胃失和降，痰濁中阻，胃氣上逆。",
@@ -22469,7 +22474,8 @@
       "related_patterns": [
         "pattern.liver_stomach_disharmony",
         "pattern.spleen_qi_deficiency",
-        "pattern.food_stagnation"
+        "pattern.food_stagnation",
+        "pattern.spleen_deficiency_damp_encumbrance"
       ],
       "related_tcm_symptoms": [
         {
@@ -24539,7 +24545,10 @@
         "pattern.stomach_heat",
         "pattern.liver_qi_stagnation",
         "pattern.qi_blood_deficiency",
-        "pattern.kidney_yang_deficiency"
+        "pattern.kidney_yang_deficiency",
+        "pattern.heat_constipation",
+        "pattern.qi_constipation",
+        "pattern.deficiency_constipation"
       ],
       "review_status": "draft",
       "etiology_zh": "腸胃積熱，氣滯不行，氣血津液不足，大腸傳導無力。",
@@ -25645,7 +25654,8 @@
         "pattern.blood_heat",
         "pattern.large_intestine_damp_heat",
         "pattern.spleen_qi_deficiency",
-        "pattern.liver_qi_stagnation"
+        "pattern.liver_qi_stagnation",
+        "pattern.phlegm_stasis_binding"
       ],
       "review_status": "draft",
       "etiology_zh": "",
@@ -26380,7 +26390,9 @@
         "pattern.heart_kidney_not_communicating",
         "pattern.liver_fire",
         "pattern.heart_blood_deficiency",
-        "pattern.phlegm_damp"
+        "pattern.phlegm_damp",
+        "pattern.yin_deficiency_fire_flaring",
+        "pattern.liver_depression_transforming_fire"
       ],
       "review_status": "draft",
       "etiology_zh": "心神失養，情志所傷，飲食不節，病後體虛，致使陽不入陰、神不守舍。",
@@ -27105,7 +27117,8 @@
         "pattern.heart_kidney_not_communicating",
         "pattern.kidney_essence_deficiency",
         "pattern.kidney_yin_deficiency",
-        "pattern.liver_fire"
+        "pattern.liver_fire",
+        "pattern.phlegm_qi_binding"
       ],
       "review_status": "draft",
       "etiology_zh": "",
@@ -32502,7 +32515,8 @@
       "related_patterns": [
         "pattern.lung_qi_deficiency",
         "pattern.spleen_qi_deficiency",
-        "pattern.kidney_yang_deficiency"
+        "pattern.kidney_yang_deficiency",
+        "pattern.lung_qi_deficiency_cold"
       ],
       "review_status": "draft",
       "etiology_zh": "肺氣虛弱，衛表不固，脾氣虛弱，腎氣不足，感受風寒異氣。",
@@ -39944,7 +39958,9 @@
         "pattern.damp_heat_spleen_stomach",
         "pattern.blood_heat",
         "pattern.spleen_qi_deficiency",
-        "pattern.liver_blood_deficiency"
+        "pattern.liver_blood_deficiency",
+        "pattern.damp_heat_skin_invasion",
+        "pattern.blood_deficiency_wind_dryness"
       ],
       "review_status": "draft",
       "etiology_zh": "風濕熱邪浸淫肌膚，或久病耗血傷陰、血虛風燥。",
@@ -40178,7 +40194,9 @@
       "related_patterns": [
         "pattern.wind_heat_invading_lung",
         "pattern.blood_heat",
-        "pattern.qi_blood_deficiency"
+        "pattern.qi_blood_deficiency",
+        "pattern.wind_heat",
+        "pattern.blood_deficiency_wind_dryness"
       ],
       "review_status": "draft",
       "etiology_zh": "風邪侵襲肌表，腸胃積熱，或營衛不和、血虛風燥。",
@@ -40438,7 +40456,11 @@
         "pattern.blood_heat",
         "pattern.chong_ren_disharmony",
         "pattern.liver_qi_stagnation",
-        "pattern.kidney_yin_deficiency"
+        "pattern.kidney_yin_deficiency",
+        "pattern.san_jiao_damp_heat",
+        "pattern.lung_heat_excess",
+        "pattern.heat_toxin_blazing",
+        "pattern.spleen_stomach_yang_deficiency"
       ],
       "review_status": "draft",
       "etiology_zh": "",
@@ -41041,7 +41063,8 @@
         "pattern.damp_heat_spleen_stomach",
         "pattern.blood_stasis",
         "pattern.liver_fire",
-        "pattern.liver_qi_stagnation"
+        "pattern.liver_qi_stagnation",
+        "pattern.phlegm_stasis_binding"
       ],
       "review_status": "draft",
       "etiology_zh": "古代沒有「帶狀疱疹」這個名詞，但是卻有不少類似疾病，可見古代就有帶狀疱疹。\n\n中醫沒有免疫力這種名詞，只有所謂的「正氣」，當體內臟腑經絡不平衡，免疫力就會開始低下，帶狀疱疹就會在這種狀況下出現。\n\n傳統中醫認為帶狀皰疹是因為外感毒邪，造成肝火、膽火熾盛，阻滯經絡，凝結于肌膚所造成。\n\n1.火熱形成的帶狀疱疹\n\n從現代人的經絡數據中發現，絕多數人長期肝經實證、膽經虛證，長期在這樣的狀態下久了就會出現經絡氣血阻塞，出現肝經與膽經上的疼痛，這是帶狀疱疹的常見原因。\n\n現代人經常肝經實證、膽經虛證，長期表裡經絡不平衡\n\n依照一些雲端中醫會員觀察，發現人體只要非常疲勞時，很容易出現鐵三角經絡型態(肝經實證、脾經與膀胱經虛證)，因此這也可以說是免疫力開始下降的經絡型態。\n\n這時候容易出現中醫所說的「肝火上炎」證候，經常出現口苦、口乾、煩躁易怒，大便乾或小便黃的現象。\n\n這種現象也會與中醫所說的「少陽病」重疊，所以會造成肝經、膽經與三焦經的異常，這通常是肝經鬱熱所造成。\n\n如果就「寒熱指數」而言，只要持續保持在「上下皆熱」的狀態之下，就有機會出現帶狀皰疹。\n\n由於「鐵三角經絡體質」的人，長期出現鐵三角經絡型態，同時少陽經(三焦經、膽經)與陽明經(大腸經、胃經)實證，到了一定的時間點體內化熱，就會出現帶狀疱疹。\n\n疲勞或天氣濕熱時，就會出現鐵三角經絡型態\n\n尤其是現代人長期三焦經實證，代表體內火氣旺盛。足以解釋為什麼有些人的帶狀疱疹會出現在耳朵附近，這就是體內「毒熱熾盛」的一個現象。所以夏天很容易出現帶狀疱疹。\n\n這種體內的鬱熱，也有可能是長期飲食不節制，體內醞釀濕熱久了，造成脾虛濕熱嚴重，濕阻氣機，蘊滯肌膚，而出現皮膚皰疹、水皰。\n\n由於鐵三角經絡型態與情緒密切相關，一個人如果情緒突然間崩潰了(親友死亡、失業、離婚、破產...等等)或壓力過大，也有機會出現鐵三角經絡型態，進而出現帶狀疱疹。\n\n不只是帶狀疱疹，中醫治療許多皮膚病都可以從去除體內濕熱下手。大家可以去看看脾經的路線，也會通過胸部、肋間部，這也是帶狀疱疹常見部位。\n\n2.陰寒形成的帶狀疱疹\n\n傳統中醫針對帶狀疱疹的治療，主要都是從肝膽火熱、脾胃濕熱蘊毒來思考，難道寒邪不會出現帶狀疱疹嗎？\n\n現代醫學發現，冬季及初春很容易出現帶狀疱疹，尤其是天氣忽冷忽熱的春季，造成免疫力低下也容易出現帶狀疱疹。\n\n然而，冬季常見的經絡型態，其實是與夏季期間是完全相反的，可見體內「過寒」或「過熱」時，都會造成免疫力低下，而引發帶狀皰疹。\n\n進入秋冬之後，經絡紊亂造成免疫力低下\n\n以秋季為例，原本夏季的鐵三角，在氣溫下降之後，膽經、胃經與腎經能量也會開始下降，這時候人體的免疫力會快速下降。\n\n以春季為例，很容易延續冬天常見的「陽虛」經絡型態。以2023年4月為例，都已經進入春季末期即將進入夏季了，台灣地區依然出現寒流，感覺完全就像冬天一樣。\n\n有一位會員就回報他的帶狀疱疹復發，而他的體能數值只有17，這麼低的體能數值通常代表體內氣血循環不佳，而下半身所有經絡都是虛證，帶動上半身經絡實證(見下圖)。\n\n天氣溫度下降出現帶狀皰疹案例\n\n尤其是三焦經火熱嚴重，這其實根源於天氣寒冷引發的下半身經絡能量不足，出現「上實下虛」經絡現象。\n\n這種「上實下虛」的經絡型態，很容易出現代中老年身上，這位會員約60歲，也符合這個年齡。現代醫學發現老年人容易出現帶狀皰疹，背後的經絡模型應該就是這種經絡現象。\n\n如果就「寒熱指數」而言，只要長期保持在「上熱下寒」或是「上下皆寒」的狀態之下，就有機會出現帶狀皰疹。\n\n總而言之，如果一個人體內長期保持過度火熱，或是過度陰寒，都會造成免疫力低下，進而誘發皰疹病毒活躍，出現帶狀皰疹。\n\n如果這種經絡體質沒有加以改善，後續會延伸出更多的疾病，並不會真正的痊癒，所以改善經絡體質才是最根本的方法。\n\n直至2023年為止，從數據中發現「鐵三角經絡體質」最容易引發帶狀皰疹，其次就是「上實下虛」的經絡型態。\n\n夏季或情緒壓力最容易讓「鐵三角經絡型態」趨於嚴重，冬季最容易讓「上實下虛」經絡型態趨於嚴重，因此這就是這兩個季節誘發帶狀皰疹的經絡模型。",
@@ -41789,7 +41812,8 @@
         "pattern.stomach_yin_deficiency",
         "pattern.kidney_yin_deficiency",
         "pattern.qi_blood_deficiency",
-        "pattern.damp_heat_spleen_stomach"
+        "pattern.damp_heat_spleen_stomach",
+        "pattern.lung_stomach_dryness_heat"
       ],
       "review_status": "draft",
       "fetched_at": "2026-07-23T07:46:09.931Z",
@@ -43585,7 +43609,8 @@
         "pattern.liver_yang_rising",
         "pattern.liver_fire",
         "pattern.phlegm_damp",
-        "pattern.kidney_yin_deficiency"
+        "pattern.kidney_yin_deficiency",
+        "pattern.liver_kidney_yin_deficiency"
       ],
       "review_status": "draft",
       "etiology_zh": "肝陽上亢，肝腎陰虛，痰濕中阻，陰陽兩虛。",
@@ -44294,7 +44319,8 @@
         "pattern.phlegm_damp",
         "pattern.heart_spleen_deficiency",
         "pattern.kidney_yang_deficiency",
-        "pattern.liver_qi_stagnation"
+        "pattern.liver_qi_stagnation",
+        "pattern.heart_blood_stasis"
       ],
       "review_status": "draft",
       "etiology_zh": "",
@@ -46737,7 +46763,8 @@
         "pattern.liver_qi_stagnation",
         "pattern.lung_qi_deficiency",
         "pattern.kidney_qi_deficiency",
-        "pattern.kidney_yin_deficiency"
+        "pattern.kidney_yin_deficiency",
+        "pattern.spleen_stomach_yang_deficiency"
       ],
       "review_status": "draft",
       "etiology_zh": "",
@@ -49930,7 +49957,8 @@
       "related_patterns": [
         "pattern.liver_yin_deficiency",
         "pattern.liver_blood_deficiency",
-        "pattern.lung_yin_deficiency"
+        "pattern.lung_yin_deficiency",
+        "pattern.liver_kidney_yin_deficiency"
       ],
       "review_status": "draft",
       "fetched_at": "2026-07-23T07:46:17.244Z",
@@ -52128,7 +52156,8 @@
         "pattern.liver_qi_stagnation",
         "pattern.kidney_essence_deficiency",
         "pattern.kidney_yin_deficiency",
-        "pattern.liver_fire"
+        "pattern.liver_fire",
+        "pattern.phlegm_qi_binding"
       ],
       "review_status": "draft",
       "etiology_zh": "",
