@@ -60772,8 +60772,44 @@
    },
    "related_eastern_diseases": [],
    "related_patterns": [],
-   "herb_formulas": [],
-   "acupoint_protocols": [],
+   "herb_formulas": [
+    "逍遙散",
+    "加味逍遙散",
+    "溫膽湯",
+    "天王補心丹",
+    "甘麥大棗湯",
+    "柴胡加龍骨牡蠣湯"
+   ],
+   "acupoint_protocols": [
+    {
+     "name_zh": "百會",
+     "code": "GV20"
+    },
+    {
+     "name_zh": "神庭",
+     "code": "GV24"
+    },
+    {
+     "name_zh": "神門",
+     "code": "HT7"
+    },
+    {
+     "name_zh": "內關",
+     "code": "PC6"
+    },
+    {
+     "name_zh": "三陰交",
+     "code": "SP6"
+    },
+    {
+     "name_zh": "太衝",
+     "code": "LR3"
+    },
+    {
+     "name_zh": "心俞",
+     "code": "BL15"
+    }
+   ],
    "sources": [
     "NIMH — Obsessive-Compulsive Disorder: https://www.nimh.nih.gov/health/topics/obsessive-compulsive-disorder-ocd",
     "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/"
@@ -60782,7 +60818,40 @@
     "nih_nimh_overview",
     "research_pack_batch_j_mental_behavioral"
    ],
-   "source_status": "draft_pending_ting_review"
+   "source_status": "draft_pending_ting_review",
+   "field_sources": {
+    "herb_formulas": [
+     "中醫內科學/中醫精神科教材 郁症、臟躁、驚悸怔忡辨證論治對應(強迫症無獨立中醫病名,依症狀歸類肝鬱氣滯、痰熱擾心、心陰不足、少陽樞機不利等證型選方)"
+    ]
+   },
+   "acupoint_protocol_evidence": {
+    "protocol_status": "limited",
+    "point_rationale_zh": "百會、神庭鎮靜安神、清頭寧神;神門、內關寧心安神、調暢情志;三陰交、太衝疏肝理氣、滋陰潛陽;心俞調心氣、寧心神。全方以「疏肝解鬱、寧心安神」為思路,作為藥物/認知行為治療之輔助手段,非取代標準精神科治療。",
+    "point_rationale_en": null,
+    "evidence_note_zh": "檢索 PubMed／Frontiers 等資料庫,找到一篇2026年發表於Frontiers in Neurology之系統性回顧暨統合分析(doi:10.3389/fneur.2026.1875285),納入23篇RCT、共1713名受試者,評估穴位刺激(針刺、電針、經皮穴位電刺激TEAS)作為強迫症「輔助療法」(合併藥物/常規治療)之療效,以耶魯-布朗強迫量表(Y-BOCS)為主要指標,結果顯示穴位刺激組較對照組有統計上顯著之症狀改善。惟納入研究全數來自中國,以Cochrane ROB 2.0評估後方法學品質參差不齊、異質性高,且穴位刺激均為藥物/常規治療之「輔助」角色而非單獨治療,故證據等級列為limited。文中取穴組合為依常見臨床選穴(百會、神庭、神門、內關、三陰交、太衝、心俞)整理,非逐篇RCT取穴之窮舉,原文未能完整檢視取穴細節。",
+    "treatment_parameters": {
+     "manual_or_electroacupuncture": "文獻中以電針/經皮穴位電刺激(TEAS)及傳統針刺並用,均作為藥物合併之輔助治療",
+     "frequency": null,
+     "session_duration": null,
+     "treatment_course": null
+    },
+    "scope_conflict_note": "穴位刺激僅可作為標準藥物治療(如SSRI)或認知行為治療之輔助手段,不應取代精神科標準治療或延誤就醫。",
+    "sources": [
+     {
+      "source_id": "S1",
+      "type": "systematic_review",
+      "citation": "The effect of acupoint stimulation as an adjuvant therapy for obsessive-compulsive disorder: a systematic review and meta-analysis. Frontiers in Neurology (2026).",
+      "url": "https://www.frontiersin.org/journals/neurology/articles/10.3389/fneur.2026.1875285/full",
+      "pmid_or_doi": "10.3389/fneur.2026.1875285",
+      "modality": "acupuncture / electroacupuncture / TEAS as adjuvant to standard care",
+      "comparator": "standard care (medication/CBT) alone, or sham stimulation plus standard care",
+      "certainty": "低-中(納入研究全數來自中國,方法學品質不一,異質性高)",
+      "finding_zh": "納入23篇RCT(n=1713),穴位刺激合併常規治療較單純常規治療於Y-BOCS分數上有統計上顯著改善,但證據強度受限於研究品質與地域單一性,均屬輔助治療角色。"
+     }
+    ],
+    "collected_by": "pilot batch 2026-08-24",
+    "no_source_found": false
+   }
   },
   {
    "id": "cond.substance_use_disorder",
@@ -60925,7 +60994,12 @@
    },
    "related_eastern_diseases": [],
    "related_patterns": [],
-   "herb_formulas": [],
+   "herb_formulas": [
+    "溫膽湯",
+    "甘麥大棗湯",
+    "酸棗仁湯",
+    "歸脾湯"
+   ],
    "acupoint_protocols": [],
    "sources": [
     "NIDA — Drugs, Brains, and Behavior: The Science of Addiction: https://nida.nih.gov/publications/drugs-brains-behavior-science-addiction",
@@ -60935,7 +61009,12 @@
     "nida_overview",
     "research_pack_batch_j_mental_behavioral"
    ],
-   "source_status": "draft_pending_ting_review"
+   "source_status": "draft_pending_ting_review",
+   "field_sources": {
+    "herb_formulas": [
+     "中醫內科學 不寐、鬱症、臟躁辨證論治對應(物質使用障礙涵蓋酒精、鴉片類、興奮劑等多種物質,無統一中醫病名,此處僅列針對戒斷/渴求相關常見伴隨症狀﹝煩躁、失眠、心脾兩虛﹞之支持性選方,非物質使用障礙本身之病因治療)"
+    ]
+   }
   },
   {
    "id": "cond.abnormal_uterine_bleeding",
@@ -61518,7 +61597,10 @@
    ],
    "related_eastern_diseases": [],
    "related_patterns": [],
-   "herb_formulas": [],
+   "herb_formulas": [
+    "龍膽瀉肝湯",
+    "天麻鉤藤飲"
+   ],
    "acupoint_protocols": [],
    "sources": [
     "NEI — Glaucoma: https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/glaucoma",
@@ -61528,7 +61610,12 @@
     "nih_nei_overview",
     "research_pack_batch_l_ent_ophthalmic_emergencies"
    ],
-   "source_status": "draft_pending_ting_review"
+   "source_status": "draft_pending_ting_review",
+   "field_sources": {
+    "herb_formulas": [
+     "中醫眼科學 綠風內障(五風內障)辨證論治對應;急性發作期以西醫降眼壓藥物/雷射虹膜造孔術為首要且唯一適當治療,此處僅列肝膽實火、肝陽上亢證型之輔助/恢復期選方,非急性眼壓危象之主要治療,不可延誤緊急就醫"
+    ]
+   }
   },
   {
    "id": "cond.retinal_detachment",
@@ -61628,7 +61715,10 @@
    ],
    "related_eastern_diseases": [],
    "related_patterns": [],
-   "herb_formulas": [],
+   "herb_formulas": [
+    "補中益氣湯",
+    "血府逐瘀湯"
+   ],
    "acupoint_protocols": [],
    "sources": [
     "NEI — Retinal Detachment: https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/retinal-detachment",
@@ -61638,7 +61728,12 @@
     "nih_nei_overview",
     "research_pack_batch_l_ent_ophthalmic_emergencies"
    ],
-   "source_status": "draft_pending_ting_review"
+   "source_status": "draft_pending_ting_review",
+   "field_sources": {
+    "herb_formulas": [
+     "中醫眼科學 視衣脫離(暴盲)術後恢復期氣虛/血瘀證型對應;視網膜剝離之主要治療為手術(鞏膜扣壓術/玻璃體切除術/氣體或矽油填塞),此處僅列術後氣血兩虛、血瘀證型之輔助恢復期選方,非視網膜剝離急症本身之治療,不可延誤緊急手術轉介"
+    ]
+   }
   },
   {
    "id": "cond.sudden_sensorineural_hearing_loss",
@@ -66781,7 +66876,84 @@
     ],
     "acupuncture_scope_en": [
      "established biomedical/scope-of-practice knowledge, not source-verified for LSS specifically — flag for Ting to source-check"
+    ],
+    "herb_formulas": [
+     "中醫內科學 腰痛/痹症辨證論治對應(寒濕痺阻用獨活寄生湯、血瘀阻絡用身痛逐瘀湯、腎陽虛用右歸丸、腎陰虛用左歸丸、濕熱痺阻用四妙丸、氣虛血瘀夾麻木無力用補陽還五湯)"
     ]
+   },
+   "herb_formulas": [
+    "獨活寄生湯",
+    "身痛逐瘀湯",
+    "右歸丸",
+    "左歸丸",
+    "四妙丸",
+    "補陽還五湯"
+   ],
+   "acupoint_protocols": [
+    {
+     "name_zh": "腎俞",
+     "code": "BL23"
+    },
+    {
+     "name_zh": "大腸俞",
+     "code": "BL25"
+    },
+    {
+     "name_zh": "委中",
+     "code": "BL40"
+    },
+    {
+     "name_zh": "環跳",
+     "code": "GB30"
+    },
+    {
+     "name_zh": "陽陵泉",
+     "code": "GB34"
+    },
+    {
+     "name_zh": "腰陽關",
+     "code": "GV3"
+    },
+    {
+     "name_zh": "命門",
+     "code": "GV4"
+    },
+    {
+     "name_zh": "足三里",
+     "code": "ST36"
+    },
+    {
+     "name_zh": "三陰交",
+     "code": "SP6"
+    }
+   ],
+   "acupoint_protocol_evidence": {
+    "protocol_status": "limited",
+    "point_rationale_zh": "腎俞、腰陽關、命門補益腎氣、溫通腰府;大腸俞、環跳、陽陵泉疏通腰臀部足少陽/足太陽經氣、緩解下肢麻痛;委中為腰背足太陽經要穴(「腰背委中求」);足三里、三陰交健脾益氣、標本兼治。取穴以疏通腰腿部經氣、緩解神經性跛行相關症狀為主要方向,非解決椎管結構性狹窄。",
+    "point_rationale_en": null,
+    "evidence_note_zh": "檢索 PubMed 等資料庫,找到 Kim KH 等人發表於Complementary Therapies in Medicine (2013;21(5):535-556)之系統性回顧暨統合分析,納入6篇RCT及6篇對照研究(均來自中國、以中文發表),比較深刺夾脊穴(Ex-B2)與一般針刺、電針合併刺絡放血 vs 單純電針、針刺合併中藥 vs 單純針刺等組合。原文因高或不確定的偏倚風險(分配隱藏、盲法、選擇性結果報告)而未能進行統合分析,結論明白指出「現有證據不足以支持或反對將針刺用於腰椎椎管狹窄症」,惟個別偏倚風險較低之研究顯示正向訊號。因原始研究主要取穴為「夾脊穴」(Ex-B2經外奇穴,不在本資料庫有效穴位代碼表中),此處取穴組合改以標準經穴(腎俞、大腸俞、委中、環跳、陽陵泉、腰陽關、命門、足三里、三陰交)呈現臨床常用替代選穴,並非逐字複製原始RCT取穴,證據等級列為limited。",
+    "treatment_parameters": {
+     "manual_or_electroacupuncture": "研究中部分採電針合併刺絡放血,部分為單純手針合併中藥",
+     "frequency": null,
+     "session_duration": null,
+     "treatment_course": null
+    },
+    "scope_conflict_note": "神經性跛行症狀嚴重、快速惡化或出現進行性神經功能缺損(如馬尾症候群、大小便功能障礙)時應優先轉介神經外科/骨科評估手術介入,針刺僅為保守治療選項之一,不應延誤必要之外科評估。",
+    "sources": [
+     {
+      "source_id": "S1",
+      "type": "systematic_review",
+      "citation": "Kim KH, Kim TH, Lee BR, Kim JK, Son DW, Lee SW, et al. Acupuncture for lumbar spinal stenosis: A systematic review and meta-analysis. Complementary Therapies in Medicine. 2013;21(5):535-556.",
+      "url": "https://doi.org/10.1016/j.ctim.2013.08.007",
+      "pmid_or_doi": "10.1016/j.ctim.2013.08.007",
+      "modality": "manual acupuncture / electroacupuncture ± bloodletting / deep needling at Jiaji (Ex-B2)",
+      "comparator": "conventional acupuncture, electroacupuncture alone, acupuncture alone (vs combined with herbs)",
+      "certainty": "低(高或不確定偏倚風險,證據不足以下定論)",
+      "finding_zh": "6篇RCT及6篇對照研究均來自中國,因方法學偏倚風險高或不明確,未能合併統合分析;結論為現有證據不足以支持或反對針刺用於腰椎椎管狹窄症,惟部分低偏倚風險研究顯示正向效果。"
+     }
+    ],
+    "collected_by": "pilot batch 2026-08-24",
+    "no_source_found": false
    }
   },
   {
@@ -66935,8 +67107,18 @@
     ],
     "acupuncture_scope_en": [
      "clinical/scope-of-practice judgment — no guideline or RCT source found for acupuncture specifically in CPPD/pseudogout; evidence marked unknown"
+    ],
+    "herb_formulas": [
+     "中醫內科學 痹症(熱痹/濕熱痹阻)辨證論治對應,依急性紅腫熱痛(濕熱蘊結)至反覆發作/慢性期(肝腎不足夾痺)分階段選方;假性痛風(CPPD)為西醫病理分類,中醫依關節紅腫熱痛之痹症證型辨證,非獨立病名"
     ]
-   }
+   },
+   "herb_formulas": [
+    "四妙丸",
+    "當歸拈痛湯",
+    "桂枝芍藥知母湯",
+    "二妙散",
+    "獨活寄生湯"
+   ]
   },
   {
    "id": "cond.sarcopenia",
@@ -84226,7 +84408,73 @@
     ],
     "acupuncture_scope_en": [
      "No guideline/RCT basis found specific to acupuncture and contact dermatitis; precautions derived from general dermatologic scope-of-practice judgment — flag for Ting to source-check"
+    ],
+    "herb_formulas": [
+     "中醫皮膚科學 接觸性皮膚炎(接觸性皮炎/膏藥風/漆瘡)風熱夾濕、濕熱蘊膚、熱毒熾盛證型辨證論治對應"
     ]
+   },
+   "herb_formulas": [
+    "消風散",
+    "龍膽瀉肝湯",
+    "五味消毒飲",
+    "黃連解毒湯"
+   ],
+   "acupoint_protocols": [
+    {
+     "name_zh": "曲池",
+     "code": "LI11"
+    },
+    {
+     "name_zh": "血海",
+     "code": "SP10"
+    },
+    {
+     "name_zh": "三陰交",
+     "code": "SP6"
+    },
+    {
+     "name_zh": "足三里",
+     "code": "ST36"
+    }
+   ],
+   "acupoint_protocol_evidence": {
+    "protocol_status": "symptom_only",
+    "point_rationale_zh": "曲池、血海為皮膚科止癢常用配穴,曲池清熱涼血、血海活血養血;三陰交健脾利濕、養血潤燥;足三里健脾扶正。四穴合用以「清熱利濕、養血止癢」為思路,針對接觸性皮膚炎之搔癢等伴隨症狀,非直接處理過敏原暴露或皮膚屏障破壞之病因。",
+    "point_rationale_en": null,
+    "evidence_note_zh": "以「contact dermatitis acupuncture」「irritant contact dermatitis acupuncture points」等關鍵字檢索 PubMed 及相關資料庫,未找到專門針對接觸性皮膚炎(刺激性或過敏性)之針刺系統性回顧或RCT。找到的實證均為相近但不同診斷:(1) Acupoint stimulation for chronic urticaria: a systematic review of randomized controlled trials(2015,納入針刺/電針/穴位埋線/穴位注射治療慢性蕁麻疹之RCT,常用曲池、血海、三陰交、足三里);(2) Acupuncture for atopic dermatitis: a systematic review and meta-analysis(PMC11624827,檢索PubMed/Embase/CENTRAL/中國資料庫至2024年10月,以SCORAD、EASI、搔癢VAS為指標)。因接觸性皮膚炎與異位性皮膚炎、慢性蕁麻疹之病理機轉不同(前者為接觸物直接刺激或第四型遲發性過敏,後者多為IgE或慢性自發性機轉),此處僅將上述止癢取穴列為「症狀緩解」用途,非接觸性皮膚炎本身之實證治療,亦非病因處置,誠實標註為symptom_only。",
+    "treatment_parameters": {
+     "manual_or_electroacupuncture": null,
+     "frequency": null,
+     "session_duration": null,
+     "treatment_course": null
+    },
+    "scope_conflict_note": "接觸性皮膚炎之核心處置為移除/避免致敏原或刺激物,並視情況使用外用類固醇或口服抗組織胺,針刺僅可作為搔癢症狀之輔助緩解手段,不能取代過敏原辨識與迴避。",
+    "sources": [
+     {
+      "source_id": "S1",
+      "type": "systematic_review",
+      "citation": "Acupoint stimulation for chronic urticaria: a systematic review of randomized controlled trials. (2015)",
+      "url": "https://www.sciencedirect.com/science/article/pii/S1876382015300391",
+      "pmid_or_doi": null,
+      "modality": "acupuncture / electroacupuncture / acupoint catgut embedding / acupoint injection",
+      "comparator": "antihistamine / sham / no treatment",
+      "certainty": "低-中(研究對象為慢性蕁麻疹,而非接觸性皮膚炎)",
+      "finding_zh": "納入針刺相關療法治療慢性蕁麻疹之RCT,常用曲池、血海、三陰交、足三里等止癢配穴,但此為蕁麻疹而非接觸性皮膚炎之實證,僅供症狀取穴參考。"
+     },
+     {
+      "source_id": "S2",
+      "type": "systematic_review",
+      "citation": "Acupuncture for atopic dermatitis: a systematic review and meta-analysis. (PMC11624827)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11624827/",
+      "pmid_or_doi": null,
+      "modality": "acupuncture",
+      "comparator": "sham acupuncture / usual care",
+      "certainty": "低-中(研究對象為異位性皮膚炎,而非接觸性皮膚炎)",
+      "finding_zh": "以SCORAD、EASI、搔癢VAS為指標,顯示針刺對異位性皮膚炎搔癢症狀可能有幫助,但研究數量與品質有限,且診斷為異位性皮膚炎而非接觸性皮膚炎,不能直接外推。"
+     }
+    ],
+    "collected_by": "pilot batch 2026-08-24",
+    "no_source_found": false
    }
   },
   {
@@ -84361,8 +84609,17 @@
     ],
     "risk_factors_en": [
      "Medscape: Seborrheic Dermatitis; PMC12562114; AAFP"
+    ],
+    "herb_formulas": [
+     "中醫皮膚科學 面游風/白屑風辨證論治對應(濕熱蘊膚急性期用消風散/龍膽瀉肝湯,血虛風燥慢性期用當歸飲子,脾虛濕盛用參苓白朮散)"
     ]
-   }
+   },
+   "herb_formulas": [
+    "消風散",
+    "龍膽瀉肝湯",
+    "當歸飲子",
+    "參苓白朮散"
+   ]
   },
   {
    "id": "cond.herpes_simplex",
