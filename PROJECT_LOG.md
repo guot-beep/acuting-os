@@ -1,3 +1,17 @@
+# 2026-08-24 Antigravity — Task 0 / Batch 8 (平肝息風 + 止咳平喘 + 安神 + 補虛·陽 51 味)
+
+- **做了什麼**: 完成 Task 0 Batch 8。掃描 4 個分類的真實缺口，區分 MOD+CONTRA（11 味）與 CONTRA_ONLY（24 味）兩種模式分開處理：CONTRA_ONLY 卡片完全不碰 modern_functions；MOD+CONTRA 卡片逐詞唯一翻譯，落地前通過 E10/E11 預檢。`contraindications_zh` 依 curriculum Chenoweth 課件 + American Dragon + 《臺灣中藥典第四版》查證填入 31 筆。
+- **數字 before→after**:
+  - `modern_functions_en/zh`: `309 → 320 / 363` (85% → **88%**，+11 筆真空卡)
+  - `contraindications_zh`: `276 → 307 / 363` (76% → **85%**，+31 筆具名來源)
+  - E10 CJK 混入: `0` ✅；E11 同義詞洗版: `0` ✅；skipped（已有內容）: `40` 筆未動
+- **驗證指令與結果**:
+  - `node scripts/build-data.js`: PASS
+  - `node scripts/validate-herb-standard.js`: PASS (E10/E11 乾淨, 0 structural defects)
+  - `node scripts/validate-no-boilerplate.js`: PASS
+  - `node scripts/check-validation-ratchet.js`: PASS (no regressions)
+- **已隔離邊界**: `data/pathology/**` 零異動；無修改任何 ID；無異動 UI/腳本。
+
 # 2026-08-24 Claude — antigravity Batch 7 審核:通過,收下
 
 - **範圍**:止血藥(20)+ 補虛藥·陰(18)+ 活血化瘀藥(24),實際動到 25 筆記錄(commit 宣稱 62,含未變動
