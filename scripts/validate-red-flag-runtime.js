@@ -22,8 +22,8 @@
 const fs = require("fs");
 const path = require("path");
 const ROOT = path.join(__dirname, "..");
-require(path.join(ROOT, "data/generated/knowledge_data.js"));
-const K = globalThis.ACUTING_KNOWLEDGE;
+const K = require("./lib/load-knowledge.js").loadKnowledge();
+if (!K) { console.error("validate-red-flag-runtime: 知識分片載入失敗 — 先跑 node scripts/build-data.js"); process.exit(1); }
 const canon = JSON.parse(fs.readFileSync(path.join(ROOT, "data/pathology/condition_canon_shortlist.json"), "utf8"));
 const registry = JSON.parse(fs.readFileSync(path.join(ROOT, "data/pathology/red_flag_registry.json"), "utf8"));
 const regById = new Map(registry.records.map((r) => [r.id, r]));

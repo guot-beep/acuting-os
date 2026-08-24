@@ -32,20 +32,17 @@ const CareDraft = require(path.join(__dirname, "..", "js", "care-draft.js"));
 // missing/unparseable is silently skipped; resolveLabel() falls back to the
 // raw id. This generator must still work on a fresh checkout that has not
 // run build-data.js.
+//
+// 載入一律走 scripts/lib/load-knowledge.js。這裡曾用「單一賦值 + 裸 JSON RHS」
+// 的正則自己解發射格式——分片改用 Object.assign 合流後那個正則會靜默解掛
+// （catch → null → 標籤全部退化成 raw id 而 exit 0）。發射格式只准 build-data
+// 與 lib 兩處知道。
 // ---------------------------------------------------------------------------
-function loadGeneratedGlobalAssignment(relPath) {
-  try {
-    const raw = fs.readFileSync(path.join(__dirname, "..", relPath), "utf8");
-    const jsonText = raw.replace(/^[^=]*=\s*/, "").replace(/;\s*$/, "");
-    return JSON.parse(jsonText);
-  } catch (e) {
-    return null;
-  }
-}
+const { loadKnowledge, loadGeneratedGlobal } = require(path.join(__dirname, "lib", "load-knowledge.js"));
 
 function buildLabelIndex() {
-  const K = loadGeneratedGlobalAssignment(path.join("data", "generated", "knowledge_data.js"));
-  const points = loadGeneratedGlobalAssignment(path.join("data", "generated", "points_361.js"));
+  const K = loadKnowledge();
+  const points = loadGeneratedGlobal(path.join("data", "generated", "points_361.js"), "ACUTING_POINTS_361");
   return CareDraft.buildLabelIndexFromKnowledge(K, points);
 }
 

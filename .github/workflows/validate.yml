@@ -123,6 +123,11 @@ jobs:
             exit 1
           fi
 
+      # P1 分包（2026-08-24）：六片 Object.assign 合流必須逐鍵位元組等於單體
+      # （單體暫時雙寫當對照組；P1-E 移除單體後這支降級為分片自洽證明）。
+      - name: knowledge shards are lossless
+        run: node scripts/validate-knowledge-parts.js
+
       - name: app.js parses
         run: node --check app.js
 

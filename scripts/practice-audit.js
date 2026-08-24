@@ -58,15 +58,7 @@ const cases = month
 
 // knowledge bundle 用來解析名稱與卡片成熟度。讀不到就誠實跳過缺口那一節,
 // 不要印一個空清單讓人以為「沒有缺口」。
-let knowledge = null;
-try {
-  const src = fs.readFileSync(path.join(__dirname, "..", "data/generated/knowledge_data.js"), "utf8");
-  const g = {};
-  new Function("globalThis", src)(g);
-  knowledge = g.ACUTING_KNOWLEDGE || null;
-} catch (err) {
-  knowledge = null;
-}
+const knowledge = require("./lib/load-knowledge.js").loadKnowledge();
 
 const r = computePracticeAudit({ cases, knowledge });
 
