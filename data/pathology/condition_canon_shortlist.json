@@ -71234,7 +71234,116 @@
     "Whooping Cough"
    ],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "百日咳是由百日咳桿菌(Bordetella pertussis)引起的高度傳染性呼吸道感染,以陣發性劇烈咳嗽為特徵,典型病程分為卡他期、陣發期與恢復期,合計可達數週至數月;陣發期咳嗽發作後常伴隨特有的深吸氣哮鳴聲(whoop)及咳後嘔吐,嬰幼兒(尤其6個月以下)為重症與併發症高風險族群。",
+   "summary_en": "Pertussis (whooping cough) is a highly contagious respiratory infection caused by Bordetella pertussis, characterized by paroxysmal severe coughing fits. The classic course runs through catarrhal, paroxysmal, and convalescent stages spanning weeks to months; paroxysms are often followed by an inspiratory whoop and post-tussive vomiting. Infants, especially those under 6 months, are at highest risk for severe disease and complications.",
+   "western_context_zh": "西醫管理著重早期抗生素治療(如大環內酯類)以縮短傳染期、密切接觸者預防性投藥,以及嬰兒重症病例的住院監測(含血氧、呼吸型態觀察);疫苗接種是主要預防策略。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western management emphasizes early antibiotic therapy (e.g., macrolides) to shorten the infectious period, prophylaxis for close contacts, and hospitalization with monitoring (oxygen saturation, breathing pattern) for severe infant cases; pertussis vaccination is the primary prevention strategy. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "百日咳桿菌附著於呼吸道纖毛上皮並釋放多種毒素(包括百日咳毒素、氣管細胞毒素),破壞纖毛清除功能並引發局部發炎,導致黏液分泌增加與氣道刺激,產生特徵性陣發性咳嗽。臨床病例定義為咳嗽持續2週以上,合併陣發性咳嗽、吸氣哮鳴聲或咳後嘔吐其中之一;確診依賴鼻咽拭子PCR或培養檢出百日咳桿菌,並可輔以百日咳毒素IgG血清學檢查。",
+   "western_pathology_en": "Bordetella pertussis adheres to ciliated respiratory epithelium and releases toxins (including pertussis toxin and tracheal cytotoxin) that impair mucociliary clearance and provoke local inflammation, driving excess mucus production and airway irritation that produces the characteristic paroxysmal cough. The clinical case definition requires a cough lasting 2 or more weeks plus at least one of paroxysmal coughing, inspiratory whoop, or post-tussive vomiting; confirmation relies on nasopharyngeal PCR or culture for B. pertussis, supplemented by anti-pertussis toxin IgG serology.",
+   "red_flags_zh": [
+    "嬰兒(尤其未滿2個月)出現呼吸暫停或發紺,需立即住院觀察",
+    "陣發性咳嗽合併餵食困難、嗜睡或活動力下降,提示重症風險",
+    "咳嗽後劇烈嘔吐導致脫水或體重下降徵象",
+    "心跳過速或血流動力學不穩定(新生兒尤需警惕),為重症百日咳警訊"
+   ],
+   "red_flags_en": [
+    "Apnea or cyanosis in an infant (especially under 2 months) requires immediate hospitalization",
+    "Paroxysmal coughing with poor feeding, lethargy, or decreased activity signals risk of severe disease",
+    "Post-tussive vomiting causing dehydration or weight loss",
+    "Tachycardia or hemodynamic instability (particularly in neonates) is a warning sign of critical pertussis"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "未滿6個月之嬰兒",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "CDC: Clinical Features of Pertussis"
+    },
+    {
+     "factor": "百日咳疫苗接種不完整或未接種",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "CDC: Clinical Features of Pertussis"
+    },
+    {
+     "factor": "家戶或密切接觸者中有百日咳確診病例",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "CDC: Clinical Features of Pertussis"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Age under 6 months",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "CDC: Clinical Features of Pertussis"
+    },
+    {
+     "factor": "Incomplete or absent pertussis vaccination",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "CDC: Clinical Features of Pertussis"
+    },
+    {
+     "factor": "Household or close contact with a confirmed pertussis case",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "CDC: Clinical Features of Pertussis"
+    }
+   ],
+   "related_eastern_diseases": [
+    "tdis.dun_ke",
+    "tdis.ke_sou"
+   ],
+   "related_patterns": [
+    "pattern.wind_heat_invading_lung",
+    "pattern.phlegm_heat_in_lung",
+    "pattern.lung_qi_deficiency"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "Mayo Clinic: Whooping cough — Symptoms & causes (mayoclinic.org, retrieved 2026-08)"
+    ],
+    "summary_en": [
+     "Mayo Clinic: Whooping cough — Symptoms & causes (mayoclinic.org, retrieved 2026-08)"
+    ],
+    "western_context_zh": [
+     "Mayo Clinic: Whooping cough — Diagnosis & treatment (mayoclinic.org, retrieved 2026-08)"
+    ],
+    "western_context_en": [
+     "Mayo Clinic: Whooping cough — Diagnosis & treatment (mayoclinic.org, retrieved 2026-08)"
+    ],
+    "western_pathology_zh": [
+     "CDC: Clinical Features of Pertussis (cdc.gov/pertussis, retrieved 2026-08)",
+     "Medscape: Pertussis — Pathophysiology (retrieved 2026-08)"
+    ],
+    "western_pathology_en": [
+     "CDC: Clinical Features of Pertussis (cdc.gov/pertussis, retrieved 2026-08)",
+     "Medscape: Pertussis — Pathophysiology (retrieved 2026-08)"
+    ],
+    "red_flags_zh": [
+     "The Pharmaceutical Journal: Recognition and management of whooping cough (retrieved 2026-08)",
+     "PMC3659513: Critical Pertussis in a Young Infant Requiring Mechanical Ventilation"
+    ],
+    "red_flags_en": [
+     "The Pharmaceutical Journal: Recognition and management of whooping cough (retrieved 2026-08)",
+     "PMC3659513: Critical Pertussis in a Young Infant Requiring Mechanical Ventilation"
+    ],
+    "risk_factors_zh": [
+     "CDC: Clinical Features of Pertussis (cdc.gov/pertussis, retrieved 2026-08)"
+    ],
+    "risk_factors_en": [
+     "CDC: Clinical Features of Pertussis (cdc.gov/pertussis, retrieved 2026-08)"
+    ],
+    "aliases_zh": [
+     "Common usage — colloquial Chinese/English synonym"
+    ],
+    "aliases_en": [
+     "Common usage — colloquial Chinese/English synonym"
+    ]
+   }
   },
   {
    "id": "cond.rsv_infection",
@@ -71864,10 +71973,141 @@
    "name_en": "Pneumoconiosis",
    "category": "respiratory",
    "icd_hint": "J64",
-   "aliases_zh": [],
-   "aliases_en": [],
+   "aliases_zh": [
+    "塵肺病"
+   ],
+   "aliases_en": [
+    "Black Lung Disease"
+   ],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "塵肺症是長期吸入無機粉塵(如矽塵、石綿、煤塵)所導致的職業性肺部疾病,粉塵沉積於肺實質引發慢性發炎與纖維化,造成不可逆的肺功能損害;常見類型包括矽肺症、石綿肺與煤礦工塵肺症,診斷需結合職業暴露史、特徵性胸部影像變化,並排除其他可能造成類似影像表現的疾病。",
+   "summary_en": "Pneumoconiosis is an occupational lung disease caused by long-term inhalation of inorganic dust (such as silica, asbestos, or coal dust), which deposits in lung parenchyma and triggers chronic inflammation and fibrosis, leading to irreversible impairment of lung function. Common types include silicosis, asbestosis, and coal workers' pneumoconiosis. Diagnosis requires a compatible occupational exposure history, characteristic chest imaging changes, and exclusion of other conditions that could mimic these findings.",
+   "western_context_zh": "西醫管理著重脫離粉塵暴露源、定期胸部影像與肺功能追蹤、肺結核篩檢(矽肺症患者風險升高)、疫苗接種(流感、肺炎鏈球菌)及呼吸道症狀之支持性治療,重症者轉介胸腔科評估肺移植或長期氧氣治療。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western management emphasizes removal from further dust exposure, periodic chest imaging and pulmonary function monitoring, tuberculosis screening (elevated risk in silicosis), vaccination (influenza, pneumococcal), and supportive treatment of respiratory symptoms, with referral to pulmonology for evaluation of lung transplant or long-term oxygen therapy in advanced disease. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "吸入之粉塵顆粒沉積於肺泡與肺間質,活化巨噬細胞並釋放發炎介質,長期慢性發炎導致纖維母細胞增生與膠原沉積,形成不可逆纖維化病灶;近年研究亦顯示粉塵暴露可誘發DNA甲基化等表觀遺傳改變,參與疾病進展。診斷三大要件為:明確粉塵暴露史、特徵性胸部X光/電腦斷層變化,以及排除可能造成類似影像之其他疾病。",
+   "western_pathology_en": "Inhaled dust particles deposit in the alveoli and interstitium, activating macrophages that release inflammatory mediators; chronic inflammation drives fibroblast proliferation and collagen deposition, producing irreversible fibrotic lesions. Recent research also shows dust exposure can induce epigenetic changes such as DNA methylation that contribute to disease progression. The three major diagnostic criteria are: a documented history of dust exposure, characteristic chest X-ray/CT findings, and exclusion of other conditions that could mimic these imaging changes.",
+   "red_flags_zh": [
+    "進行性呼吸困難合併發紺或血氧下降,提示呼吸衰竭需立即就醫",
+    "矽肺症患者出現發燒、咳血或體重減輕,需排除併發肺結核",
+    "合併右心衰竭徵象(下肢水腫、頸靜脈怒張),提示肺心症需轉診心臟科",
+    "急性大量粉塵暴露後短期內快速惡化之呼吸困難,需立即轉診"
+   ],
+   "red_flags_en": [
+    "Progressive dyspnea with cyanosis or falling oxygen saturation suggests respiratory failure and requires immediate medical attention",
+    "Fever, hemoptysis, or weight loss in a silicosis patient should raise suspicion for coexisting tuberculosis",
+    "Signs of right heart failure (lower extremity edema, jugular venous distension) suggest cor pulmonale and warrant cardiology referral",
+    "Rapidly worsening dyspnea shortly after acute massive dust exposure requires immediate referral"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "礦業、採石、噴砂等高粉塵暴露職業",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "StatPearls: Pneumoconiosis (NBK555902)"
+    },
+    {
+     "factor": "石綿相關行業暴露史",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "StatPearls: Pneumoconiosis (NBK555902)"
+    },
+    {
+     "factor": "吸菸",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "StatPearls: Pneumoconiosis (NBK555902)"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "High-dust occupations (mining, quarrying, sandblasting)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "StatPearls: Pneumoconiosis (NBK555902)"
+    },
+    {
+     "factor": "History of asbestos-related occupational exposure",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "StatPearls: Pneumoconiosis (NBK555902)"
+    },
+    {
+     "factor": "Smoking",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "StatPearls: Pneumoconiosis (NBK555902)"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "可作為慢性咳嗽、氣促、乏力等症狀之輔助調理,無法逆轉已形成之肺纖維化",
+    "precautions": "急性呼吸窘迫或血氧不穩定者不宜針灸;胸背部腧穴避免深刺以防氣胸,尤其肺功能已顯著受損者",
+    "co_management": "應與追蹤之胸腔科醫師保持聯繫,粉塵暴露史與職業病申報由西醫與職業醫學專科處理",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "May support management of chronic cough, breathlessness, and fatigue as adjunct care; cannot reverse established pulmonary fibrosis",
+    "precautions": "Avoid acupuncture during acute respiratory distress or unstable oxygenation; avoid deep needling of thoracic/back points, especially in patients with significantly impaired lung function, to reduce pneumothorax risk",
+    "co_management": "Maintain contact with the treating pulmonology physician; occupational exposure history and occupational disease reporting are managed by Western medicine and occupational medicine specialists",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.fei_zhang",
+    "tdis.chuan_zheng"
+   ],
+   "related_patterns": [
+    "pattern.lung_qi_deficiency",
+    "pattern.phlegm_damp_in_lung",
+    "pattern.qi_stagnation_blood_stasis"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "StatPearls: Pneumoconiosis (NBK555902, retrieved 2026-08)"
+    ],
+    "summary_en": [
+     "StatPearls: Pneumoconiosis (NBK555902, retrieved 2026-08)"
+    ],
+    "western_context_zh": [
+     "StatPearls: Pneumoconiosis (NBK555902, retrieved 2026-08)"
+    ],
+    "western_context_en": [
+     "StatPearls: Pneumoconiosis (NBK555902, retrieved 2026-08)"
+    ],
+    "western_pathology_zh": [
+     "StatPearls: Pneumoconiosis (NBK555902, retrieved 2026-08)",
+     "PMC11757636: A comprehensive retrospect on pneumoconiosis"
+    ],
+    "western_pathology_en": [
+     "StatPearls: Pneumoconiosis (NBK555902, retrieved 2026-08)",
+     "PMC11757636: A comprehensive retrospect on pneumoconiosis"
+    ],
+    "red_flags_zh": [
+     "Clinical judgment based on established pneumoconiosis complications (TB co-infection, cor pulmonale, acute silicosis) — established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "red_flags_en": [
+     "Clinical judgment based on established pneumoconiosis complications (TB co-infection, cor pulmonale, acute silicosis) — established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "risk_factors_zh": [
+     "StatPearls: Pneumoconiosis (NBK555902, retrieved 2026-08)"
+    ],
+    "risk_factors_en": [
+     "StatPearls: Pneumoconiosis (NBK555902, retrieved 2026-08)"
+    ],
+    "acupuncture_scope_zh": [
+     "Clinical judgment — scope-of-practice inference; no acupuncture guideline/RCT source found, evidence marked unknown"
+    ],
+    "acupuncture_scope_en": [
+     "Clinical judgment — scope-of-practice inference; no acupuncture guideline/RCT source found, evidence marked unknown"
+    ],
+    "aliases_zh": [
+     "Common clinical usage"
+    ],
+    "aliases_en": [
+     "Common clinical usage"
+    ]
+   }
   },
   {
    "id": "cond.pleural_effusion",
@@ -71876,10 +72116,144 @@
    "name_en": "Pleural Effusion",
    "category": "respiratory",
    "icd_hint": "J94.8",
-   "aliases_zh": [],
-   "aliases_en": [],
+   "aliases_zh": [
+    "肋膜積水"
+   ],
+   "aliases_en": [
+    "Pleural Fluid Accumulation"
+   ],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "胸腔積液指胸膜腔內液體異常堆積,可分為漏出液(如心衰竭、肝硬化、腎病症候群造成靜水壓上升或滲透壓下降)與滲出液(如肺炎、惡性腫瘤、肺栓塞造成微血管通透性增加),依Light's criteria以積液與血清之蛋白質、LDH比值加以區分;患者可能無症狀,或表現胸痛、呼吸困難與乾咳。",
+   "summary_en": "Pleural effusion is an abnormal accumulation of fluid in the pleural space, categorized as transudate (e.g., from heart failure, cirrhosis, or nephrotic syndrome via elevated hydrostatic or reduced oncotic pressure) or exudate (e.g., from pneumonia, malignancy, or pulmonary embolism via increased capillary permeability), distinguished using Light's criteria comparing pleural fluid to serum protein and LDH ratios. Presentation ranges from asymptomatic to pleuritic chest pain, dyspnea, and dry cough.",
+   "western_context_zh": "西醫評估以胸部X光、超音波或電腦斷層確認積液,並依臨床情境行診斷性胸腔穿刺分析積液性質(漏出液/滲出液)、必要時送細胞學或培養;治療依病因而定,大量或造成呼吸窘迫者需引流,並轉介相關專科(心臟、腫瘤、感染科)處理根本病因。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western evaluation confirms effusion via chest X-ray, ultrasound, or CT, followed by diagnostic thoracentesis when clinically indicated to characterize the fluid (transudate vs. exudate) and, if needed, cytology or culture; management is cause-directed, with drainage for large or symptomatic effusions and referral to the relevant specialty (cardiology, oncology, infectious disease) to address the underlying etiology. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "正常胸膜腔僅含少量潤滑液體,由壁層胸膜微血管濾出並經淋巴系統回收;當液體生成增加(微血管靜水壓上升、通透性增加)或回收減少(淋巴阻塞、腫瘤浸潤)時即形成積液。Light's criteria判定滲出液需符合:積液/血清蛋白比大於0.5、積液/血清LDH比大於0.6,或積液LDH大於血清LDH正常上限三分之二,三項中至少一項;細菌性肺炎患者約40-60%併發肋膜旁積液。",
+   "western_pathology_en": "The normal pleural space contains only a thin lubricating fluid film, filtered from parietal pleural capillaries and cleared by lymphatics. Effusion forms when fluid production rises (increased capillary hydrostatic pressure or permeability) or lymphatic clearance falls (obstruction, tumor infiltration). Light's criteria classify an effusion as exudative if any of the following are met: pleural/serum protein ratio greater than 0.5, pleural/serum LDH ratio greater than 0.6, or pleural fluid LDH greater than two-thirds the upper limit of normal serum LDH; roughly 40-60% of bacterial pneumonia patients develop a parapneumonic effusion.",
+   "red_flags_zh": [
+    "急性呼吸窘迫、低血氧或血流動力學不穩定(如低血壓、氣管偏移),提示張力性積液需立即引流",
+    "發燒合併膿胸徵象(積液pH小於7.2、LDH大於1000 IU/L或葡萄糖小於60 mg/dL)需立即胸管引流,不可僅觀察",
+    "外傷後合併血胸或氣胸,屬急診處理範疇",
+    "大量積液合併縱膈腔移位或心包填塞徵象,需立即轉急診"
+   ],
+   "red_flags_en": [
+    "Acute respiratory distress, hypoxemia, or hemodynamic instability (hypotension, tracheal deviation) suggests tension physiology requiring immediate drainage",
+    "Fever with empyema features (pleural fluid pH less than 7.2, LDH greater than 1000 IU/L, or glucose less than 60 mg/dL) mandates immediate chest tube drainage, not observation alone",
+    "Post-traumatic hemothorax or concurrent pneumothorax is an emergency requiring immediate referral",
+    "Massive effusion with mediastinal shift or signs of cardiac tamponade requires immediate emergency referral"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "充血性心衰竭病史",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "StatPearls: Pleural Effusion (NBK448189)"
+    },
+    {
+     "factor": "惡性腫瘤病史(尤其肺癌、乳癌)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Mayo Clinic Proceedings: Recent Advances in Diagnosis and Management of Malignant Pleural Effusions"
+    },
+    {
+     "factor": "細菌性肺炎",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "StatPearls: Pleural Effusion (NBK448189)"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "History of congestive heart failure",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "StatPearls: Pleural Effusion (NBK448189)"
+    },
+    {
+     "factor": "History of malignancy (especially lung, breast cancer)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Mayo Clinic Proceedings: Recent Advances in Diagnosis and Management of Malignant Pleural Effusions"
+    },
+    {
+     "factor": "Bacterial pneumonia",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "StatPearls: Pleural Effusion (NBK448189)"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "可作為緩解胸悶、氣促等伴隨症狀之輔助調理,不能消除積液本身或替代引流/病因治療",
+    "precautions": "大量積液、呼吸窘迫或疑似惡性/感染性積液者,應避免深刺胸背部腧穴,以免延誤西醫處置或增加氣胸風險",
+    "co_management": "應與診治之胸腔科或內科醫師保持聯繫,積液病因與引流時機由西醫團隊決定",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "May support relief of associated symptoms such as chest tightness or breathlessness as adjunct care; cannot resolve the effusion itself or replace drainage/cause-directed treatment",
+    "precautions": "Avoid deep needling of thoracic/back points in patients with large effusions, respiratory distress, or suspected malignant/infectious effusion, to prevent delaying medical care or increasing pneumothorax risk",
+    "co_management": "Maintain contact with the treating pulmonology or internal medicine physician; the underlying cause and timing of drainage are determined by the medical team",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.tan_yin",
+    "tdis.xie_tong"
+   ],
+   "related_patterns": [
+    "pattern.water_fluid_retention",
+    "pattern.phlegm_damp"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "StatPearls: Pleural Effusion (NBK448189, retrieved 2026-08)"
+    ],
+    "summary_en": [
+     "StatPearls: Pleural Effusion (NBK448189, retrieved 2026-08)"
+    ],
+    "western_context_zh": [
+     "StatPearls: Pleural Effusion (NBK448189, retrieved 2026-08)",
+     "Medicine Today: Pleural effusion — recognition, triage and treatment"
+    ],
+    "western_context_en": [
+     "StatPearls: Pleural Effusion (NBK448189, retrieved 2026-08)",
+     "Medicine Today: Pleural effusion — recognition, triage and treatment"
+    ],
+    "western_pathology_zh": [
+     "StatPearls: Pleural Effusion (NBK448189, retrieved 2026-08)"
+    ],
+    "western_pathology_en": [
+     "StatPearls: Pleural Effusion (NBK448189, retrieved 2026-08)"
+    ],
+    "red_flags_zh": [
+     "Medicine Today: Pleural effusion — recognition, triage and treatment (retrieved 2026-08)",
+     "droracle.ai: What constitutes a pleural effusion emergency (retrieved 2026-08)"
+    ],
+    "red_flags_en": [
+     "Medicine Today: Pleural effusion — recognition, triage and treatment (retrieved 2026-08)",
+     "droracle.ai: What constitutes a pleural effusion emergency (retrieved 2026-08)"
+    ],
+    "risk_factors_zh": [
+     "StatPearls: Pleural Effusion (NBK448189, retrieved 2026-08)",
+     "Mayo Clinic Proceedings: Malignant Pleural Effusions"
+    ],
+    "risk_factors_en": [
+     "StatPearls: Pleural Effusion (NBK448189, retrieved 2026-08)",
+     "Mayo Clinic Proceedings: Malignant Pleural Effusions"
+    ],
+    "acupuncture_scope_zh": [
+     "Clinical judgment — scope-of-practice inference; no acupuncture guideline/RCT source found, evidence marked unknown"
+    ],
+    "acupuncture_scope_en": [
+     "Clinical judgment — scope-of-practice inference; no acupuncture guideline/RCT source found, evidence marked unknown"
+    ],
+    "aliases_zh": [
+     "Common clinical usage"
+    ],
+    "aliases_en": [
+     "Common clinical usage"
+    ]
+   }
   },
   {
    "id": "cond.pleurisy",
@@ -71888,10 +72262,127 @@
    "name_en": "Pleurisy",
    "category": "respiratory",
    "icd_hint": "R09.1",
-   "aliases_zh": [],
-   "aliases_en": [],
+   "aliases_zh": [
+    "胸膜炎"
+   ],
+   "aliases_en": [
+    "Pleuritis"
+   ],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "肋膜炎(胸膜炎)指壁層胸膜發炎,典型表現為隨呼吸、咳嗽或打噴嚏加劇之銳利、侷限性胸痛,聽診可聞及胸膜摩擦音;病毒感染為最常見病因,約30-40%病例找不出明確原因(特發性),其餘可由肺炎、肺栓塞、氣胸、血胸等引發。",
+   "summary_en": "Pleurisy (pleuritis) is inflammation of the parietal pleura, classically presenting as sharp, localized chest pain that worsens with breathing, coughing, or sneezing, often with an audible pleural friction rub on auscultation. Viral infection is the most common cause, while roughly 30-40% of cases are idiopathic; other causes include pneumonia, pulmonary embolism, pneumothorax, and hemothorax.",
+   "western_context_zh": "西醫處理著重釐清潛在病因(病史、理學檢查、胸部影像,必要時抽血或D-dimer排除肺栓塞),疼痛控制以NSAID類藥物為主,並依病因轉介相關專科。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western management focuses on identifying the underlying cause (history, physical exam, chest imaging, and blood work or D-dimer testing to rule out pulmonary embolism when indicated), with pain control primarily via NSAIDs and referral to the relevant specialty based on etiology. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "胸膜發炎使原本光滑的臟層與壁層胸膜表面變得粗糙,呼吸時兩層胸膜互相摩擦產生特徵性摩擦音及疼痛;致病機轉包括感染(病毒最常見)、肺栓塞造成肺實質缺血或發炎介質釋放、肺炎造成間質水腫波及胸膜,以及自體免疫疾病之胸膜受累。診斷主要依臨床病史與理學檢查,輔以胸部X光排除氣胸、積液等其他病因。",
+   "western_pathology_en": "Pleural inflammation roughens the normally smooth visceral and parietal pleural surfaces; as they rub against each other during breathing, this produces the characteristic friction rub and pain. Mechanisms include infection (most commonly viral), pulmonary embolism causing parenchymal ischemia or release of inflammatory cytokines, pneumonia causing interstitial edema that extends to the pleura, and pleural involvement in autoimmune disease. Diagnosis relies mainly on history and physical exam, supported by chest X-ray to exclude pneumothorax, effusion, and other causes.",
+   "red_flags_zh": [
+    "胸痛合併呼吸困難、心搏過速、單側下肢腫脹,需排除肺栓塞",
+    "胸痛合併發燒、膿痰或呼吸急促,提示肺炎或膿胸可能,需儘速轉診",
+    "突發劇烈胸痛合併呼吸音消失,需排除氣胸",
+    "胸痛合併低血壓或意識改變,屬急症徵象需立即轉急診"
+   ],
+   "red_flags_en": [
+    "Chest pain with dyspnea, tachycardia, and unilateral leg swelling warrants urgent evaluation to exclude pulmonary embolism",
+    "Chest pain with fever, purulent sputum, or tachypnea suggests possible pneumonia or empyema and requires prompt referral",
+    "Sudden severe chest pain with absent breath sounds should raise suspicion for pneumothorax",
+    "Chest pain with hypotension or altered mental status is an emergency sign requiring immediate referral"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "近期病毒性上呼吸道感染",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Pleurisy (NBK558958)"
+    },
+    {
+     "factor": "自體免疫疾病(如紅斑性狼瘡、類風濕性關節炎)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Pleurisy (NBK558958)"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Recent viral upper respiratory infection",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Pleurisy (NBK558958)"
+    },
+    {
+     "factor": "Autoimmune disease (e.g., lupus, rheumatoid arthritis)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Pleurisy (NBK558958)"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "排除急症病因後,可作為胸脅疼痛之輔助止痛調理",
+    "precautions": "胸痛未明確排除肺栓塞、氣胸等急症前不宜針灸,需避免患側胸背部深刺以防氣胸",
+    "co_management": "若懷疑肺栓塞、氣胸或膿胸等急症,應立即轉介急診,不可以針灸延誤就醫",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "Once emergent causes have been excluded, may support pain relief for pleuritic chest pain as adjunct care",
+    "precautions": "Avoid acupuncture until pulmonary embolism, pneumothorax, and other emergencies are excluded; avoid deep needling over the affected posterior thorax to reduce pneumothorax risk",
+    "co_management": "If pulmonary embolism, pneumothorax, or empyema is suspected, refer immediately to emergency care rather than delaying with acupuncture",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.xie_tong",
+    "tdis.xiong_bi"
+   ],
+   "related_patterns": [
+    "pattern.liver_qi_stagnation",
+    "pattern.qi_stagnation_blood_stasis",
+    "pattern.phlegm_heat_in_lung"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "StatPearls: Pleurisy (NBK558958, retrieved 2026-08)"
+    ],
+    "summary_en": [
+     "StatPearls: Pleurisy (NBK558958, retrieved 2026-08)"
+    ],
+    "western_context_zh": [
+     "AAFP: Pleuritic Chest Pain — Sorting Through the Differential Diagnosis (retrieved 2026-08)"
+    ],
+    "western_context_en": [
+     "AAFP: Pleuritic Chest Pain — Sorting Through the Differential Diagnosis (retrieved 2026-08)"
+    ],
+    "western_pathology_zh": [
+     "StatPearls: Pleurisy (NBK558958, retrieved 2026-08)"
+    ],
+    "western_pathology_en": [
+     "StatPearls: Pleurisy (NBK558958, retrieved 2026-08)"
+    ],
+    "red_flags_zh": [
+     "AAFP: Pleuritic Chest Pain — Sorting Through the Differential Diagnosis (retrieved 2026-08)"
+    ],
+    "red_flags_en": [
+     "AAFP: Pleuritic Chest Pain — Sorting Through the Differential Diagnosis (retrieved 2026-08)"
+    ],
+    "risk_factors_zh": [
+     "StatPearls: Pleurisy (NBK558958, retrieved 2026-08)"
+    ],
+    "risk_factors_en": [
+     "StatPearls: Pleurisy (NBK558958, retrieved 2026-08)"
+    ],
+    "acupuncture_scope_zh": [
+     "Clinical judgment — scope-of-practice inference; no acupuncture guideline/RCT source found, evidence marked unknown"
+    ],
+    "acupuncture_scope_en": [
+     "Clinical judgment — scope-of-practice inference; no acupuncture guideline/RCT source found, evidence marked unknown"
+    ],
+    "aliases_zh": [
+     "Common clinical usage"
+    ],
+    "aliases_en": [
+     "Common clinical usage"
+    ]
+   }
   },
   {
    "id": "cond.cough_variant_asthma",
@@ -71927,7 +72418,127 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "睡眠低通氣症候群指睡眠期間換氣不足,導致動脈血二氧化碳分壓(PaCO2)異常升高,常見於肥胖低通氣症候群、慢性阻塞性肺病、神經肌肉疾病或胸廓變形患者,可單獨發生或與阻塞性睡眠呼吸中止症並存;患者可能表現晨間頭痛、白天嗜睡與認知功能下降。",
+   "summary_en": "Sleep-related hypoventilation is impaired ventilation during sleep that causes abnormal elevation of arterial carbon dioxide (PaCO2), commonly seen in obesity hypoventilation syndrome, chronic obstructive pulmonary disease, neuromuscular disease, or chest wall deformity, and may occur alone or overlap with obstructive sleep apnea. Patients may present with morning headache, daytime sleepiness, and cognitive impairment.",
+   "western_context_zh": "西醫診斷依賴多項生理睡眠檢查(polysomnography)合併經皮或呼氣末二氧化碳監測,居家睡眠檢測不適用於此診斷;治療視病因採用夜間無創正壓通氣、減重、氧氣治療或原發疾病(如COPD、神經肌肉疾病)之控制,並定期追蹤動脈血氣體。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western diagnosis relies on in-laboratory polysomnography combined with transcutaneous or end-tidal CO2 monitoring; home sleep apnea testing is not appropriate for this diagnosis. Treatment is cause-directed, using nocturnal noninvasive positive pressure ventilation, weight loss, oxygen therapy, or management of the underlying condition (e.g., COPD, neuromuscular disease), with periodic arterial blood gas follow-up. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "睡眠低通氣的病理機轉可概括為「不願呼吸」與「無法呼吸」兩類:前者為呼吸調控失常(如中樞驅動力降低),後者為呼吸執行機制受損(如神經肌肉無力、胸廓結構異常或氣道阻力增加);肥胖相關者則合併機械性限制、通氣控制異常與化學感受性改變,常與阻塞性睡眠呼吸中止症重疊。診斷金標準為多項生理睡眠檢查顯示PaCO2大於55 mmHg達10分鐘以上,或PaCO2較清醒平躺值上升10 mmHg以上且超過50 mmHg,持續10分鐘以上。",
+   "western_pathology_en": "The pathophysiology of sleep-related hypoventilation can be summarized as \"won't breathe\" (impaired central respiratory drive) versus \"can't breathe\" (impaired execution of ventilation, such as neuromuscular weakness, chest wall abnormality, or increased airway resistance). Obesity-related cases involve mechanical restriction, abnormal ventilatory control, and altered chemosensitivity, and frequently overlap with obstructive sleep apnea. The diagnostic gold standard is in-laboratory polysomnography demonstrating PaCO2 greater than 55 mmHg for 10 or more minutes, or a rise in PaCO2 of 10 mmHg or more above the awake supine value to a level exceeding 50 mmHg, sustained for 10 or more minutes.",
+   "red_flags_zh": [
+    "日間清醒時已出現高碳酸血症合併意識模糊或嗜睡加劇,提示呼吸衰竭需立即就醫",
+    "合併右心衰竭徵象(下肢水腫、發紺、頸靜脈怒張),提示肺心症需緊急轉診",
+    "神經肌肉疾病患者呼吸急促加劇或無法平躺入睡,可能為呼吸肌無力惡化之警訊",
+    "血氧飽和度睡眠中持續低於90%且合併晨間劇烈頭痛,需儘速安排睡眠檢查與追蹤"
+   ],
+   "red_flags_en": [
+    "Daytime wakeful hypercapnia with confusion or worsening drowsiness suggests respiratory failure and requires immediate medical attention",
+    "Signs of right heart failure (leg edema, cyanosis, jugular venous distension) suggest cor pulmonale and require urgent referral",
+    "Worsening tachypnea or inability to lie flat in a patient with neuromuscular disease may signal deteriorating respiratory muscle weakness",
+    "Persistent overnight oxygen saturation below 90% with severe morning headache warrants prompt sleep study evaluation and follow-up"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "肥胖(尤其重度肥胖)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "StatPearls: Obesity-Hypoventilation Syndrome (NBK542216)"
+    },
+    {
+     "factor": "慢性阻塞性肺病或神經肌肉疾病",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "PMC4561264: Chronic hypoventilation syndromes and sleep-related hypoventilation"
+    },
+    {
+     "factor": "合併阻塞性睡眠呼吸中止症",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "PMC4561264: Chronic hypoventilation syndromes and sleep-related hypoventilation"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Obesity (especially severe obesity)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "StatPearls: Obesity-Hypoventilation Syndrome (NBK542216)"
+    },
+    {
+     "factor": "Chronic obstructive pulmonary disease or neuromuscular disease",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "PMC4561264: Chronic hypoventilation syndromes and sleep-related hypoventilation"
+    },
+    {
+     "factor": "Coexisting obstructive sleep apnea",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "PMC4561264: Chronic hypoventilation syndromes and sleep-related hypoventilation"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "可作為疲憊、日間嗜睡等伴隨症狀之輔助調理,無法治療或替代夜間正壓通氣等醫療處置",
+    "precautions": "確診或疑似重度高碳酸血症、意識改變者不宜以針灸取代緊急醫療評估",
+    "co_management": "應與睡眠醫學或胸腔科醫師保持聯繫,呼吸器設定與病因治療由西醫團隊決定",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "May support management of associated fatigue and daytime sleepiness as adjunct care; cannot treat or replace nocturnal positive pressure ventilation or other medical interventions",
+    "precautions": "Acupuncture should not substitute for urgent medical evaluation in patients with confirmed or suspected severe hypercapnia or altered consciousness",
+    "co_management": "Maintain contact with the treating sleep medicine or pulmonology physician; ventilator settings and cause-directed treatment are determined by the medical team",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.fei_zhang"
+   ],
+   "related_patterns": [
+    "pattern.lung_kidney_qi_deficiency",
+    "pattern.phlegm_damp",
+    "pattern.kidney_not_grasping_qi"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "PMC4561264: Chronic hypoventilation syndromes and sleep-related hypoventilation (retrieved 2026-08)"
+    ],
+    "summary_en": [
+     "PMC4561264: Chronic hypoventilation syndromes and sleep-related hypoventilation (retrieved 2026-08)"
+    ],
+    "western_context_zh": [
+     "droracle.ai: How do you diagnose sleep-related hypoventilation (retrieved 2026-08)"
+    ],
+    "western_context_en": [
+     "droracle.ai: How do you diagnose sleep-related hypoventilation (retrieved 2026-08)"
+    ],
+    "western_pathology_zh": [
+     "PMC4561264: Chronic hypoventilation syndromes and sleep-related hypoventilation (retrieved 2026-08)"
+    ],
+    "western_pathology_en": [
+     "PMC4561264: Chronic hypoventilation syndromes and sleep-related hypoventilation (retrieved 2026-08)"
+    ],
+    "red_flags_zh": [
+     "Clinical judgment based on established hypoventilation/cor pulmonale complications — established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "red_flags_en": [
+     "Clinical judgment based on established hypoventilation/cor pulmonale complications — established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "risk_factors_zh": [
+     "StatPearls: Obesity-Hypoventilation Syndrome (NBK542216, retrieved 2026-08)",
+     "PMC4561264: Chronic hypoventilation syndromes and sleep-related hypoventilation"
+    ],
+    "risk_factors_en": [
+     "StatPearls: Obesity-Hypoventilation Syndrome (NBK542216, retrieved 2026-08)",
+     "PMC4561264: Chronic hypoventilation syndromes and sleep-related hypoventilation"
+    ],
+    "acupuncture_scope_zh": [
+     "Clinical judgment — scope-of-practice inference; no acupuncture guideline/RCT source found, evidence marked unknown"
+    ],
+    "acupuncture_scope_en": [
+     "Clinical judgment — scope-of-practice inference; no acupuncture guideline/RCT source found, evidence marked unknown"
+    ]
+   }
   },
   {
    "id": "cond.central_sleep_apnea",
@@ -72115,10 +72726,132 @@
    "name_en": "Solitary Pulmonary Nodule",
    "category": "respiratory",
    "icd_hint": "R91.1",
-   "aliases_zh": [],
-   "aliases_en": [],
+   "aliases_zh": [
+    "肺部結節"
+   ],
+   "aliases_en": [
+    "Lung Nodule"
+   ],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "肺結節指胸部影像上發現的單一、直徑小於等於3公分、周圍為正常肺組織包圍且無淋巴結腫大或肺萎陷的圓形病灶,絕大多數為良性(如肉芽腫、錯構瘤),但仍需評估惡性可能;隨低劑量電腦斷層篩檢普及,偶發性肺結節的發現率大幅增加。",
+   "summary_en": "A solitary pulmonary nodule is a single, round lesion 3 cm or less in diameter on chest imaging, surrounded by normal lung parenchyma without associated lymphadenopathy or atelectasis. Most are benign (e.g., granulomas, hamartomas), but malignancy must still be assessed. With the growing use of low-dose CT screening, incidental detection of pulmonary nodules has risen substantially.",
+   "western_context_zh": "西醫依Fleischner Society準則,依結節大小、實質性(實心/毛玻璃樣)及病人風險因子(吸菸史、家族史)決定追蹤電腦斷層之時間間隔或進一步影像(PET/CT)、切片評估,目的在減少不必要之重複掃描與侵入性檢查。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western management follows Fleischner Society guidelines, using nodule size, composition (solid vs. ground-glass), and patient risk factors (smoking history, family history) to determine follow-up CT intervals or further evaluation (PET/CT, biopsy), aiming to reduce unnecessary repeat scanning and invasive procedures. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "肺結節的病理本質多元,包括感染後肉芽腫、錯構瘤等良性病灶,亦可能為原發性肺癌或轉移性病灶;鑑別診斷考量結節之大小、邊緣型態(毛刺狀提示惡性可能較高)、生長速度及病人整體風險。6毫米為多數追蹤建議之關鍵閾值,大於8毫米之結節則依型態、生長模式及臨床情境採個別化處置,可能包括短期追蹤電腦斷層、PET/CT或切片。",
+   "western_pathology_en": "The pathologic nature of pulmonary nodules is diverse, ranging from post-infectious granulomas and hamartomas (benign) to primary lung cancer or metastatic lesions. Differential assessment weighs nodule size, margin morphology (spiculated margins raise malignancy concern), growth rate, and overall patient risk. A 6 mm threshold is central to most follow-up recommendations, while nodules larger than 8 mm are managed individually based on morphology, growth pattern, and clinical context, potentially including short-interval CT, PET/CT, or biopsy.",
+   "red_flags_zh": [
+    "結節於追蹤影像中快速增大或出現毛刺狀邊緣,需儘速轉診胸腔科或胸外科評估惡性可能",
+    "合併咳血、不明原因體重減輕或持續性胸痛,提示需加速惡性腫瘤評估",
+    "結節患者出現聲音沙啞或吞嚥困難,可能提示縱膈腔淋巴結轉移壓迫,需儘速轉診",
+    "新發現結節合併鎖骨上淋巴結腫大,為轉移警訊需優先評估"
+   ],
+   "red_flags_en": [
+    "Rapid nodule growth or development of spiculated margins on follow-up imaging warrants prompt referral to pulmonology or thoracic surgery to evaluate for malignancy",
+    "Hemoptysis, unexplained weight loss, or persistent chest pain should prompt expedited malignancy workup",
+    "Hoarseness or dysphagia in a patient with a pulmonary nodule may suggest mediastinal lymph node involvement and warrants prompt referral",
+    "A newly discovered nodule with supraclavicular lymphadenopathy is a warning sign for metastasis and should be prioritized for evaluation"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "吸菸史(尤其現行吸菸者)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "StatPearls: Solitary Pulmonary Nodule (NBK556143)"
+    },
+    {
+     "factor": "年齡增長",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Solitary Pulmonary Nodule (NBK556143)"
+    },
+    {
+     "factor": "肺癌家族史",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Solitary Pulmonary Nodule (NBK556143)"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Smoking history (especially current smokers)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "StatPearls: Solitary Pulmonary Nodule (NBK556143)"
+    },
+    {
+     "factor": "Increasing age",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Solitary Pulmonary Nodule (NBK556143)"
+    },
+    {
+     "factor": "Family history of lung cancer",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Solitary Pulmonary Nodule (NBK556143)"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "多數肺結節無症狀,針灸無法縮小或消除結節,僅能就伴隨之焦慮或睡眠問題提供輔助調理",
+    "precautions": "不應以針灸或任何替代療法延誤影像追蹤排程或建議之切片評估",
+    "co_management": "結節之惡性風險分級與追蹤計畫應完全依循胸腔科醫師建議,針灸從業人員不應提供結節良惡性之判斷",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "Most pulmonary nodules are asymptomatic; acupuncture cannot shrink or resolve a nodule, but may offer adjunct support for associated anxiety or sleep disturbance",
+    "precautions": "Acupuncture or any complementary therapy should never be used to delay recommended imaging follow-up or biopsy evaluation",
+    "co_management": "Risk stratification and follow-up planning for a nodule should follow the treating pulmonologist's recommendations entirely; acupuncture practitioners should not offer judgments on malignancy risk",
+    "evidence": "unknown",
+    "source": null
+   },
+   "field_sources": {
+    "summary_zh": [
+     "StatPearls: Solitary Pulmonary Nodule (NBK556143, retrieved 2026-08)"
+    ],
+    "summary_en": [
+     "StatPearls: Solitary Pulmonary Nodule (NBK556143, retrieved 2026-08)"
+    ],
+    "western_context_zh": [
+     "StatPearls: Solitary Pulmonary Nodule (NBK556143, retrieved 2026-08)",
+     "MDCalc: Fleischner Society Guidelines for Incidental Pulmonary Nodules"
+    ],
+    "western_context_en": [
+     "StatPearls: Solitary Pulmonary Nodule (NBK556143, retrieved 2026-08)",
+     "MDCalc: Fleischner Society Guidelines for Incidental Pulmonary Nodules"
+    ],
+    "western_pathology_zh": [
+     "StatPearls: Solitary Pulmonary Nodule (NBK556143, retrieved 2026-08)"
+    ],
+    "western_pathology_en": [
+     "StatPearls: Solitary Pulmonary Nodule (NBK556143, retrieved 2026-08)"
+    ],
+    "red_flags_zh": [
+     "Clinical judgment based on established malignant pulmonary nodule warning features (growth, spiculation, systemic symptoms) — established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "red_flags_en": [
+     "Clinical judgment based on established malignant pulmonary nodule warning features (growth, spiculation, systemic symptoms) — established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "risk_factors_zh": [
+     "StatPearls: Solitary Pulmonary Nodule (NBK556143, retrieved 2026-08)"
+    ],
+    "risk_factors_en": [
+     "StatPearls: Solitary Pulmonary Nodule (NBK556143, retrieved 2026-08)"
+    ],
+    "acupuncture_scope_zh": [
+     "Clinical judgment — scope-of-practice inference; no acupuncture guideline/RCT source found, evidence marked unknown"
+    ],
+    "acupuncture_scope_en": [
+     "Clinical judgment — scope-of-practice inference; no acupuncture guideline/RCT source found, evidence marked unknown"
+    ],
+    "aliases_zh": [
+     "Common clinical usage"
+    ],
+    "aliases_en": [
+     "Common clinical usage"
+    ]
+   }
   },
   {
    "id": "cond.latent_tuberculosis_infection",
@@ -86119,7 +86852,109 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "急性腎損傷指腎功能於數小時至數天內快速下降,依KDIGO準則以血清肌酸酐上升或尿量減少作為診斷依據;病因可分為腎前性(腎血流灌注不足)、腎因性(腎絲球腎炎、急性腎小管壞死、間質性腎炎)與腎後性(尿路阻塞)三大類,多數患者早期無明顯症狀,常於例行抽血檢查時發現。",
+   "summary_en": "Acute kidney injury (AKI) is a rapid decline in kidney function occurring over hours to days, diagnosed per KDIGO criteria based on a rise in serum creatinine or a fall in urine output. Causes fall into three categories: prerenal (inadequate renal perfusion), intrinsic renal (glomerulonephritis, acute tubular necrosis, interstitial nephritis), and postrenal (urinary tract obstruction). Most patients have no obvious symptoms early on and are often identified on routine blood testing.",
+   "western_context_zh": "西醫依KDIGO準則分期並尋找可逆病因(如脫水、藥物腎毒性、阻塞),監測項目包括血清肌酸酐、電解質、尿量及必要時腎臟超音波;治療著重矯正誘因、調整或停用腎毒性藥物(經開立醫師評估後)、必要時轉介腎臟科考慮透析。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western management stages AKI per KDIGO criteria and searches for reversible causes (dehydration, nephrotoxic medications, obstruction), monitoring serum creatinine, electrolytes, urine output, and renal ultrasound when indicated; treatment focuses on correcting precipitating factors, adjusting or discontinuing nephrotoxic medications (as determined by the prescribing physician), and nephrology referral for possible dialysis when needed. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "多數急性腎損傷之共同病理途徑為腎血流量下降導致腎絲球過濾率降低;腎因性損傷則可能來自腎絲球腎炎或急性間質性腎炎之免疫媒介發炎(血管發炎反應、免疫複合體沉積)造成腎絲球與腎小管損傷,或腎缺血/腎毒性藥物直接造成急性腎小管壞死。KDIGO診斷準則:48小時內血清肌酸酐上升0.3 mg/dL以上,或7天內上升至基礎值1.5倍以上,或尿量小於0.5 mL/kg/hr持續6小時以上,符合任一項即成立診斷。",
+   "western_pathology_en": "A common pathologic pathway across most AKI causes is reduced renal blood flow leading to decreased glomerular filtration rate. Intrinsic renal injury may arise from immune-mediated inflammation in glomerulonephritis or acute interstitial nephritis (vascular inflammation, immune complex deposition) damaging glomeruli and tubules, or from renal ischemia or nephrotoxic drugs directly causing acute tubular necrosis. KDIGO diagnostic criteria: a rise in serum creatinine of 0.3 mg/dL or more within 48 hours, a rise to 1.5 times baseline or more within 7 days, or urine output less than 0.5 mL/kg/hr for 6 or more hours — any one of these establishes the diagnosis.",
+   "red_flags_zh": [
+    "尿量顯著減少或無尿,合併意識改變、呼吸急促,提示嚴重代謝紊亂或體液過荷需立即就醫",
+    "合併高血鉀心電圖變化或嚴重代謝性酸中毒,為急需透析之警訊",
+    "出現紫斑、皮膚網狀青斑或蝶形紅斑等自體免疫/血管炎徵象,需儘速轉診腎臟科排除急進性腎絲球腎炎",
+    "合併發燒、腰痛與膿尿,需排除急性腎盂腎炎或尿路阻塞併感染之急症"
+   ],
+   "red_flags_en": [
+    "Markedly decreased or absent urine output with altered mental status or tachypnea suggests severe metabolic derangement or fluid overload requiring immediate medical attention",
+    "ECG changes of hyperkalemia or severe metabolic acidosis are warning signs of impending need for dialysis",
+    "Purpura, livedo reticularis, or a butterfly rash suggesting autoimmune disease/vasculitis warrants prompt nephrology referral to exclude rapidly progressive glomerulonephritis",
+    "Fever, flank pain, and pyuria should raise concern for acute pyelonephritis or obstructed, infected urinary tract requiring emergency care"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "既有慢性腎臟病",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Acute Kidney Injury (NBK441896)"
+    },
+    {
+     "factor": "使用腎毒性藥物(如NSAID、部分抗生素、顯影劑)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "StatPearls: Acute Kidney Injury (NBK441896)"
+    },
+    {
+     "factor": "敗血症或嚴重脫水",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "StatPearls: Acute Kidney Injury (NBK441896)"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Pre-existing chronic kidney disease",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Acute Kidney Injury (NBK441896)"
+    },
+    {
+     "factor": "Use of nephrotoxic agents (e.g., NSAIDs, certain antibiotics, contrast media)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "StatPearls: Acute Kidney Injury (NBK441896)"
+    },
+    {
+     "factor": "Sepsis or severe dehydration",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "StatPearls: Acute Kidney Injury (NBK441896)"
+    }
+   ],
+   "related_eastern_diseases": [
+    "tdis.guan_ge",
+    "tdis.shui_zhong",
+    "tdis.long_bi"
+   ],
+   "related_patterns": [
+    "pattern.damp_heat",
+    "pattern.blood_stasis",
+    "pattern.kidney_yang_deficiency_water_flooding"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "StatPearls: Acute Kidney Injury (NBK441896, retrieved 2026-08)"
+    ],
+    "summary_en": [
+     "StatPearls: Acute Kidney Injury (NBK441896, retrieved 2026-08)"
+    ],
+    "western_context_zh": [
+     "KDIGO: Acute Kidney Injury (AKI) and Acute Kidney Disease (AKD) guideline (kdigo.org, retrieved 2026-08)"
+    ],
+    "western_context_en": [
+     "KDIGO: Acute Kidney Injury (AKI) and Acute Kidney Disease (AKD) guideline (kdigo.org, retrieved 2026-08)"
+    ],
+    "western_pathology_zh": [
+     "StatPearls: Acute Kidney Injury (NBK441896, retrieved 2026-08)",
+     "KDIGO 2012 Clinical Practice Guideline for Acute Kidney Injury"
+    ],
+    "western_pathology_en": [
+     "StatPearls: Acute Kidney Injury (NBK441896, retrieved 2026-08)",
+     "KDIGO 2012 Clinical Practice Guideline for Acute Kidney Injury"
+    ],
+    "red_flags_zh": [
+     "StatPearls: Acute Kidney Injury (NBK441896, retrieved 2026-08) — clinical presentation and autoimmune skin signs"
+    ],
+    "red_flags_en": [
+     "StatPearls: Acute Kidney Injury (NBK441896, retrieved 2026-08) — clinical presentation and autoimmune skin signs"
+    ],
+    "risk_factors_zh": [
+     "StatPearls: Acute Kidney Injury (NBK441896, retrieved 2026-08)"
+    ],
+    "risk_factors_en": [
+     "StatPearls: Acute Kidney Injury (NBK441896, retrieved 2026-08)"
+    ]
+   }
   },
   {
    "id": "cond.renal_cyst",
@@ -86155,7 +86990,116 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "腎絲球腎炎指腎絲球發炎,可依病程分為急性與慢性、依免疫機轉分為多種類型(如免疫複合體沉積型、抗腎絲球基底膜型、ANCA相關血管炎型),臨床表現包括血尿(常為茶色尿)、蛋白尿、水腫與高血壓,嚴重者可快速進展為急進性腎絲球腎炎導致腎功能急遽惡化。",
+   "summary_en": "Glomerulonephritis is inflammation of the glomeruli, categorized by course (acute vs. chronic) and by immune mechanism (e.g., immune complex-mediated, anti-glomerular basement membrane disease, ANCA-associated vasculitis). Clinical features include hematuria (often tea-colored urine), proteinuria, edema, and hypertension; severe forms can progress rapidly to rapidly progressive glomerulonephritis with acute deterioration of kidney function.",
+   "western_context_zh": "西醫評估包括尿液分析(紅血球型態、蛋白尿定量)、血清學檢查(補體、ANCA、抗GBM抗體等)及必要時腎臟切片以確立病理型態,治療依病因採用免疫抑制劑等處置並定期監測腎功能與血壓,通常由腎臟科主導。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western evaluation includes urinalysis (red cell morphology, quantitative proteinuria), serologic testing (complement levels, ANCA, anti-GBM antibodies, etc.), and, when needed, renal biopsy to establish the pathologic pattern; cause-directed treatment may include immunosuppressive therapy, with periodic monitoring of kidney function and blood pressure, typically led by nephrology. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "急進性腎絲球腎炎之核心病理機轉為腎絲球基底膜破裂、纖維蛋白滲出及壁層上皮細胞增生形成新月體;依免疫機轉可分為第I型(抗GBM線狀抗體沉積)、第II型(顆粒狀免疫複合體沉積)、第III型(缺乏免疫沉積之ANCA相關血管炎,成人最常見,約佔40-50%)及兼具抗GBM與ANCA陽性之第IV型。臨床診斷依據腎功能於短期內急速惡化、尿液分析異常及腎臟切片病理確認新月體形成。",
+   "western_pathology_en": "The core pathologic mechanism in rapidly progressive glomerulonephritis involves rupture of the glomerular basement membrane, fibrin exudation, and proliferation of parietal epithelial cells forming crescents. By immune mechanism it is classified as Type I (linear anti-GBM antibody deposition), Type II (granular immune complex deposition), Type III (pauci-immune, ANCA-associated vasculitis — the most common presentation in adults, roughly 40-50% of cases), and Type IV (dual positivity for both anti-GBM and ANCA). Clinical diagnosis rests on rapid decline in renal function over a short period, abnormal urinalysis, and renal biopsy confirming crescent formation.",
+   "red_flags_zh": [
+    "血尿合併腎功能於數天至數週內急速惡化,提示急進性腎絲球腎炎需立即轉診腎臟科",
+    "合併咳血或肺出血症狀,提示可能為抗GBM疾病(Goodpasture症候群)之肺腎症候群,屬急症",
+    "嚴重高血壓合併頭痛、視力模糊或意識改變,提示高血壓急症需立即就醫",
+    "大量蛋白尿合併全身水腫、少尿,提示腎病症候群或急性腎功能惡化需儘速評估"
+   ],
+   "red_flags_en": [
+    "Hematuria with rapidly deteriorating kidney function over days to weeks suggests rapidly progressive glomerulonephritis and requires immediate nephrology referral",
+    "Hemoptysis or pulmonary hemorrhage symptoms may indicate anti-GBM disease (Goodpasture syndrome) presenting as pulmonary-renal syndrome, an emergency",
+    "Severe hypertension with headache, blurred vision, or altered mental status suggests a hypertensive emergency requiring immediate care",
+    "Heavy proteinuria with generalized edema and oliguria suggests nephrotic syndrome or acute kidney function decline and warrants prompt evaluation"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "近期鏈球菌感染(咽喉炎或膿皮症)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Infection-Related Glomerulonephritis (NBK538255)"
+    },
+    {
+     "factor": "自體免疫疾病(如紅斑性狼瘡、ANCA相關血管炎)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Rapidly Progressive Glomerulonephritis (NBK557430)"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Recent streptococcal infection (pharyngitis or skin infection)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Infection-Related Glomerulonephritis (NBK538255)"
+    },
+    {
+     "factor": "Autoimmune disease (e.g., lupus, ANCA-associated vasculitis)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Rapidly Progressive Glomerulonephritis (NBK557430)"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "慢性穩定期可就水腫、疲憊等伴隨症狀提供輔助調理,無法治療腎絲球本身之免疫發炎病理",
+    "precautions": "急性期或急進性腎絲球腎炎、嚴重水腫合併凝血功能異常者,針刺部位與深度須格外謹慎評估",
+    "co_management": "應與診治之腎臟科醫師密切配合,免疫抑制劑等藥物調整須由原處方醫師決定",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "During chronic stable phases, may support management of associated edema and fatigue as adjunct care; cannot treat the underlying immune-mediated glomerular pathology",
+    "precautions": "During acute or rapidly progressive glomerulonephritis, or with severe edema and coagulopathy, needling site and depth require extra-careful assessment",
+    "co_management": "Coordinate closely with the treating nephrology physician; adjustment of immunosuppressive medications must be decided by the prescribing physician",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.shui_zhong",
+    "tdis.xue_zheng"
+   ],
+   "related_patterns": [
+    "pattern.wind_external",
+    "pattern.damp_heat",
+    "pattern.spleen_kidney_yang_deficiency"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "StatPearls: Rapidly Progressive Glomerulonephritis (NBK557430, retrieved 2026-08)"
+    ],
+    "summary_en": [
+     "StatPearls: Rapidly Progressive Glomerulonephritis (NBK557430, retrieved 2026-08)"
+    ],
+    "western_context_zh": [
+     "StatPearls: Rapidly Progressive Glomerulonephritis (NBK557430, retrieved 2026-08)"
+    ],
+    "western_context_en": [
+     "StatPearls: Rapidly Progressive Glomerulonephritis (NBK557430, retrieved 2026-08)"
+    ],
+    "western_pathology_zh": [
+     "StatPearls: Rapidly Progressive Glomerulonephritis (NBK557430, retrieved 2026-08)"
+    ],
+    "western_pathology_en": [
+     "StatPearls: Rapidly Progressive Glomerulonephritis (NBK557430, retrieved 2026-08)"
+    ],
+    "red_flags_zh": [
+     "Clinical judgment based on established glomerulonephritis emergency presentations (pulmonary-renal syndrome, hypertensive emergency) — established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "red_flags_en": [
+     "Clinical judgment based on established glomerulonephritis emergency presentations (pulmonary-renal syndrome, hypertensive emergency) — established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "risk_factors_zh": [
+     "StatPearls: Infection-Related Glomerulonephritis (NBK538255, retrieved 2026-08)",
+     "StatPearls: Rapidly Progressive Glomerulonephritis (NBK557430, retrieved 2026-08)"
+    ],
+    "risk_factors_en": [
+     "StatPearls: Infection-Related Glomerulonephritis (NBK538255, retrieved 2026-08)",
+     "StatPearls: Rapidly Progressive Glomerulonephritis (NBK557430, retrieved 2026-08)"
+    ],
+    "acupuncture_scope_zh": [
+     "Clinical judgment — scope-of-practice inference; no acupuncture guideline/RCT source found, evidence marked unknown"
+    ],
+    "acupuncture_scope_en": [
+     "Clinical judgment — scope-of-practice inference; no acupuncture guideline/RCT source found, evidence marked unknown"
+    ]
+   }
   },
   {
    "id": "cond.nephrotic_syndrome",
@@ -86191,7 +87135,128 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "血尿指尿液中出現紅血球,可分為肉眼可見之肉眼血尿與需顯微鏡檢出之顯微鏡血尿(每高倍視野3顆以上紅血球);病因涵蓋泌尿道感染、結石、良性攝護腺肥大、腎絲球疾病乃至泌尿道惡性腫瘤,肉眼血尿與惡性腫瘤之相關性顯著高於顯微鏡血尿。",
+   "summary_en": "Hematuria is the presence of red blood cells in the urine, categorized as visible gross hematuria or microscopic hematuria (3 or more red blood cells per high-power field on microscopy). Causes range from urinary tract infection, calculi, and benign prostatic hyperplasia to glomerular disease and urinary tract malignancy; gross hematuria carries a substantially higher association with malignancy than microscopic hematuria alone.",
+   "western_context_zh": "西醫依美國泌尿科學會(AUA)指引依年齡與危險因子分層評估,35歲以上成人建議完整評估(含泌尿系統影像及膀胱鏡檢),年輕族群若合併高風險因子(吸菸、持續性血尿、肉眼血尿病史)亦建議評估,以排除泌尿道惡性腫瘤及其他病因。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western management follows American Urological Association (AUA) guidelines, risk-stratifying by age and risk factors — adults age 35 or older are recommended for full evaluation (including urinary tract imaging and cystoscopy), while younger patients with high-risk features (smoking, persistent hematuria, history of gross hematuria) are also recommended for evaluation, to exclude urinary tract malignancy and other causes. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "血尿之來源可能為腎絲球性(紅血球通過受損腎絲球基底膜,常合併變形紅血球與蛋白尿)或非腎絲球性(泌尿道任何部位之出血,如結石、感染、腫瘤、外傷造成上皮或血管破損);評估重點在區分肉眼與顯微鏡血尿、確認是否合併蛋白尿或紅血球圓柱(提示腎絲球來源),並依風險分層決定影像學(電腦斷層尿路攝影)與膀胱鏡檢查之必要性。一項針對逾3500名血尿轉診病人之前瞻性研究顯示,整體泌尿道惡性腫瘤比例約10%,其中肉眼血尿病人為13.2%,單純顯微鏡血尿病人為3.1%。",
+   "western_pathology_en": "Hematuria may originate from a glomerular source (red cells passing through a damaged glomerular basement membrane, often with dysmorphic red cells and proteinuria) or a non-glomerular source (bleeding anywhere along the urinary tract, such as calculi, infection, tumor, or trauma disrupting epithelium or vasculature). Evaluation focuses on distinguishing gross from microscopic hematuria, checking for accompanying proteinuria or red cell casts (suggesting a glomerular origin), and risk-stratifying to determine the need for imaging (CT urography) and cystoscopy. A prospective study of over 3,500 patients referred for hematuria found an overall urinary tract cancer rate of about 10%, rising to 13.2% among those with gross hematuria versus 3.1% among those with microscopic hematuria alone.",
+   "red_flags_zh": [
+    "肉眼血尿合併血塊阻塞、劇烈腎絞痛或無法排尿,屬急症需立即就醫",
+    "血尿合併血流動力學不穩定(低血壓、心搏過速)或明顯貧血徵象,需儘速評估",
+    "40歲以上、長期吸菸或曾接觸致癌化學物質者出現肉眼血尿,需優先排除泌尿道惡性腫瘤",
+    "血尿合併發燒、腰痛,需排除急性腎盂腎炎等泌尿道感染急症"
+   ],
+   "red_flags_en": [
+    "Gross hematuria with clot retention, severe renal colic, or inability to urinate is an emergency requiring immediate care",
+    "Hematuria with hemodynamic instability (hypotension, tachycardia) or signs of significant anemia warrants prompt evaluation",
+    "Gross hematuria in a patient over 40, a long-term smoker, or someone with occupational carcinogen exposure should prioritize evaluation for urinary tract malignancy",
+    "Hematuria with fever and flank pain should raise concern for acute pyelonephritis or other urinary tract infection emergencies"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "吸菸",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "AUA/SUFU Microhematuria Guideline"
+    },
+    {
+     "factor": "年齡35歲以上",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "AUA/SUFU Microhematuria Guideline"
+    },
+    {
+     "factor": "職業性化學致癌物暴露史",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "AUA/SUFU Microhematuria Guideline"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Smoking",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "AUA/SUFU Microhematuria Guideline"
+    },
+    {
+     "factor": "Age 35 or older",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "AUA/SUFU Microhematuria Guideline"
+    },
+    {
+     "factor": "History of occupational carcinogenic chemical exposure",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "AUA/SUFU Microhematuria Guideline"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "病因確立且無惡性腫瘤疑慮後,可就反覆發作之下泌尿道不適提供輔助調理",
+    "precautions": "血尿之惡性腫瘤篩檢未完成前,不應以針灸作為主要處置或延誤泌尿科轉診",
+    "co_management": "應與診治之泌尿科或腎臟科醫師保持聯繫,血尿病因診斷與影像學安排由西醫團隊決定",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "Once the cause is established and malignancy has been reasonably excluded, may support recurrent lower urinary tract discomfort as adjunct care",
+    "precautions": "Acupuncture should not be used as primary management or to delay urology referral before malignancy screening for hematuria is complete",
+    "co_management": "Maintain contact with the treating urology or nephrology physician; diagnostic workup and imaging for hematuria are determined by the medical team",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.xue_zheng",
+    "tdis.lin_zheng"
+   ],
+   "related_patterns": [
+    "pattern.damp_heat_lower_burner",
+    "pattern.blood_heat",
+    "pattern.spleen_not_governing_blood"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "StatPearls: Gross and Microscopic Hematuria (NBK534213, retrieved 2026-08)"
+    ],
+    "summary_en": [
+     "StatPearls: Gross and Microscopic Hematuria (NBK534213, retrieved 2026-08)"
+    ],
+    "western_context_zh": [
+     "AUA/SUFU Microhematuria Guideline (auanet.org, retrieved 2026-08)"
+    ],
+    "western_context_en": [
+     "AUA/SUFU Microhematuria Guideline (auanet.org, retrieved 2026-08)"
+    ],
+    "western_pathology_zh": [
+     "StatPearls: Gross and Microscopic Hematuria (NBK534213, retrieved 2026-08)",
+     "PMC12411799: Clinical Significance, Differential Diagnosis and Initial Management of Hematuria"
+    ],
+    "western_pathology_en": [
+     "StatPearls: Gross and Microscopic Hematuria (NBK534213, retrieved 2026-08)",
+     "PMC12411799: Clinical Significance, Differential Diagnosis and Initial Management of Hematuria"
+    ],
+    "red_flags_zh": [
+     "PMC12411799: Clinical Significance, Differential Diagnosis and Initial Management of Hematuria (retrieved 2026-08)"
+    ],
+    "red_flags_en": [
+     "PMC12411799: Clinical Significance, Differential Diagnosis and Initial Management of Hematuria (retrieved 2026-08)"
+    ],
+    "risk_factors_zh": [
+     "AUA/SUFU Microhematuria Guideline (auanet.org, retrieved 2026-08)"
+    ],
+    "risk_factors_en": [
+     "AUA/SUFU Microhematuria Guideline (auanet.org, retrieved 2026-08)"
+    ],
+    "acupuncture_scope_zh": [
+     "Clinical judgment — scope-of-practice inference; no acupuncture guideline/RCT source found, evidence marked unknown"
+    ],
+    "acupuncture_scope_en": [
+     "Clinical judgment — scope-of-practice inference; no acupuncture guideline/RCT source found, evidence marked unknown"
+    ]
+   }
   },
   {
    "id": "cond.orchitis",
@@ -86215,7 +87280,109 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "副睪炎是副睪的發炎,以陰囊疼痛、腫脹為主要表現,病程小於6週者稱為急性副睪炎;年輕性活躍男性多由披衣菌、淋病雙球菌等性傳染病原引起,年長者或行尿路器械操作者則常見腸道菌(如大腸桿菌)逆行感染,常與副睪炎合併睪丸炎(epididymo-orchitis)。",
+   "summary_en": "Epididymitis is inflammation of the epididymis, presenting primarily with scrotal pain and swelling; acute epididymitis refers to a course of less than 6 weeks. In young, sexually active men it is commonly caused by sexually transmitted pathogens such as Chlamydia trachomatis and Neisseria gonorrhoeae, while in older men or those with recent urinary instrumentation it is more often caused by ascending enteric organisms (e.g., E. coli), frequently presenting together with orchitis as epididymo-orchitis.",
+   "western_context_zh": "西醫依危險因子與臨床表現選擇經驗性抗生素治療(涵蓋性傳染病原或腸道菌),並依治療指引調整藥物;高度懷疑性傳染感染時應同時篩檢其他性病並建議性伴侶治療。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western management selects empiric antibiotic therapy based on risk factors and presentation (covering sexually transmitted pathogens or enteric organisms), following treatment guidelines; when sexually transmitted infection is strongly suspected, screening for other STIs and partner treatment are typically advised. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "副睪炎多由下泌尿道或性傳染病原經輸精管逆行感染副睪所致,發炎反應造成副睪腫脹、觸痛;診斷主要依臨床病史與理學檢查,若上提患側睪丸後疼痛減輕(Prehn's sign陽性)提示副睪炎而非睪丸扭轉,但此徵象敏感度有限,仍須以杜卜勒超音波確認睪丸血流,以排除睪丸扭轉等急症。",
+   "western_pathology_en": "Epididymitis most commonly results from retrograde spread of lower urinary tract or sexually transmitted pathogens up the vas deferens into the epididymis, producing inflammatory swelling and tenderness. Diagnosis relies mainly on history and physical exam; pain relief with elevation of the affected testicle (a positive Prehn's sign) suggests epididymitis rather than torsion, though this sign has limited sensitivity, and color Doppler ultrasound confirming testicular blood flow remains necessary to exclude the emergency of testicular torsion.",
+   "red_flags_zh": [
+    "突發劇烈單側陰囊疼痛,尤其30歲以下男性,合併提睪反射消失,需立即以杜卜勒超音波排除睪丸扭轉(6小時內處置攸關睪丸存活)",
+    "陰囊痛合併發燒、寒顫及全身倦怠,提示可能併發睪丸炎或膿瘍,需儘速轉診",
+    "上提患側睪丸後疼痛未緩解(Prehn's sign陰性),應優先考慮睪丸扭轉而非副睪炎",
+    "陰囊腫脹合併皮膚變黑、壞死徵象,提示Fournier's壞疽等外科急症"
+   ],
+   "red_flags_en": [
+    "Sudden severe unilateral scrotal pain, especially in men under 30, with absent cremasteric reflex requires immediate color Doppler ultrasound to exclude testicular torsion (testicular salvage is time-critical within about 6 hours)",
+    "Scrotal pain with fever, chills, and systemic malaise suggests possible orchitis or abscess and warrants prompt referral",
+    "Failure of pain relief with elevation of the affected testicle (negative Prehn's sign) should raise priority concern for testicular torsion over epididymitis",
+    "Scrotal swelling with skin discoloration or necrosis suggests a surgical emergency such as Fournier's gangrene"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "多重性伴侶或未使用保險套之性行為",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "CDC STI Treatment Guidelines: Epididymitis"
+    },
+    {
+     "factor": "近期尿路器械操作或導尿管留置",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Merck Manual: Epididymitis"
+    },
+    {
+     "factor": "良性攝護腺肥大或尿路阻塞",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Merck Manual: Epididymitis"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Multiple sexual partners or condomless intercourse",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "CDC STI Treatment Guidelines: Epididymitis"
+    },
+    {
+     "factor": "Recent urinary tract instrumentation or catheterization",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Merck Manual: Epididymitis"
+    },
+    {
+     "factor": "Benign prostatic hyperplasia or urinary tract obstruction",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Merck Manual: Epididymitis"
+    }
+   ],
+   "related_patterns": [
+    "pattern.damp_heat_lower_burner",
+    "pattern.qi_stagnation_blood_stasis"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "Cleveland Clinic: Epididymitis (retrieved 2026-08)",
+     "Merck Manual Professional Edition: Epididymitis (retrieved 2026-08)"
+    ],
+    "summary_en": [
+     "Cleveland Clinic: Epididymitis (retrieved 2026-08)",
+     "Merck Manual Professional Edition: Epididymitis (retrieved 2026-08)"
+    ],
+    "western_context_zh": [
+     "CDC STI Treatment Guidelines: Epididymitis (cdc.gov/std, retrieved 2026-08)"
+    ],
+    "western_context_en": [
+     "CDC STI Treatment Guidelines: Epididymitis (cdc.gov/std, retrieved 2026-08)"
+    ],
+    "western_pathology_zh": [
+     "Merck Manual Professional Edition: Epididymitis (retrieved 2026-08)",
+     "StatPearls: Acute Scrotum Pain (NBK470335)"
+    ],
+    "western_pathology_en": [
+     "Merck Manual Professional Edition: Epididymitis (retrieved 2026-08)",
+     "StatPearls: Acute Scrotum Pain (NBK470335)"
+    ],
+    "red_flags_zh": [
+     "StatPearls: Testicular Torsion (NBK448199, retrieved 2026-08)",
+     "StatPearls: Acute Scrotum Pain (NBK470335, retrieved 2026-08)"
+    ],
+    "red_flags_en": [
+     "StatPearls: Testicular Torsion (NBK448199, retrieved 2026-08)",
+     "StatPearls: Acute Scrotum Pain (NBK470335, retrieved 2026-08)"
+    ],
+    "risk_factors_zh": [
+     "CDC STI Treatment Guidelines: Epididymitis (retrieved 2026-08)",
+     "Merck Manual Professional Edition: Epididymitis (retrieved 2026-08)"
+    ],
+    "risk_factors_en": [
+     "CDC STI Treatment Guidelines: Epididymitis (retrieved 2026-08)",
+     "Merck Manual Professional Edition: Epididymitis (retrieved 2026-08)"
+    ]
+   }
   },
   {
    "id": "cond.peyronie_disease",
@@ -86236,10 +87403,123 @@
    "name_en": "Hydrocele",
    "category": "uro_renal",
    "icd_hint": "N43.3",
-   "aliases_zh": [],
-   "aliases_en": [],
+   "aliases_zh": [
+    "水疝"
+   ],
+   "aliases_en": [
+    "Scrotal Hydrocele"
+   ],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "鞘膜積液指睪丸鞘膜腔內漿液性液體異常堆積,造成陰囊無痛性腫大;先天性者因腹膜鞘狀突未完全閉合,與腹腔相通形成交通性鞘膜積液,常見於男嬰,成人則多為非交通性,可續發於感染、外傷或腫瘤等局部刺激。",
+   "summary_en": "Hydrocele is an abnormal accumulation of serous fluid within the tunica vaginalis surrounding the testicle, causing painless scrotal swelling. Congenital hydroceles result from a patent processus vaginalis that remains in communication with the peritoneal cavity (communicating hydrocele), most common in male infants; adult hydroceles are typically non-communicating and may develop secondary to local irritation from infection, trauma, or tumor.",
+   "western_context_zh": "西醫以理學檢查(透光試驗)及陰囊超音波確診,並排除睪丸扭轉、腫瘤或副睪炎等其他病因;無症狀之嬰兒鞘膜積液多可觀察至1-2歲自行吸收,成人症狀性或體積持續增大者則考慮外科手術處理。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western diagnosis relies on physical examination (transillumination) and scrotal ultrasound, which also excludes other causes such as testicular torsion, tumor, or epididymitis; asymptomatic infant hydroceles are typically observed and often resolve spontaneously by age 1-2, while symptomatic or progressively enlarging cases in adults may be considered for surgical repair. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "鞘膜為胚胎期腹膜鞘狀突下降隨睪丸進入陰囊後所遺留之腹膜盲端;若近端鞘狀突未完全閉合,腹腔液可經此通道流入陰囊形成交通性鞘膜積液(腫脹常隨體位或哭鬧變化);若鞘狀突已閉合但鞘膜本身液體分泌與吸收失衡,則形成非交通性鞘膜積液。超音波下呈現睪丸周圍無回音或低回音區域,並可同時評估睪丸血流以排除潛在之睪丸扭轉、腫瘤等病灶。",
+   "western_pathology_en": "The tunica vaginalis is a remnant of the processus vaginalis, the peritoneal fold that descends with the testicle into the scrotum during embryonic development. If the proximal processus vaginalis fails to close, peritoneal fluid can flow through this channel into the scrotum, forming a communicating hydrocele (swelling that often varies with position or crying). If the processus has closed but fluid secretion and absorption within the tunica vaginalis itself become imbalanced, a non-communicating hydrocele results. On ultrasound it appears as an anechoic or hypoechoic area surrounding the testis, and Doppler assessment of testicular blood flow can simultaneously help exclude underlying torsion or tumor.",
+   "red_flags_zh": [
+    "陰囊腫脹合併突發劇痛、噁心嘔吐及提睪反射消失,需立即以杜卜勒超音波排除睪丸扭轉",
+    "鞘膜積液合併發燒、局部紅腫熱痛,提示可能併發感染需儘速評估",
+    "成人新發鞘膜積液合併睪丸觸診異常(硬塊、不規則),需排除潛在睪丸腫瘤",
+    "腹股溝或陰囊腫脹無法回納且合併腸阻塞症狀,需排除嵌頓性腹股溝疝氣"
+   ],
+   "red_flags_en": [
+    "Scrotal swelling with sudden severe pain, nausea/vomiting, and absent cremasteric reflex requires immediate Doppler ultrasound to exclude testicular torsion",
+    "A hydrocele with fever and local redness, warmth, or tenderness suggests possible infection and warrants prompt evaluation",
+    "A new adult-onset hydrocele with an abnormal (hard, irregular) testicular finding on palpation should raise concern for an underlying testicular tumor",
+    "An irreducible inguinal or scrotal swelling with bowel obstruction symptoms should raise concern for an incarcerated inguinal hernia"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "早產或出生時鞘狀突未完全閉合",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Hydrocele (NBK559125)"
+    },
+    {
+     "factor": "陰囊或腹股溝手術、外傷病史",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Hydrocele (NBK559125)"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Prematurity or incomplete closure of the processus vaginalis at birth",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Hydrocele (NBK559125)"
+    },
+    {
+     "factor": "History of scrotal or inguinal surgery or trauma",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Hydrocele (NBK559125)"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "對於已排除急症、體積穩定之慢性非交通性鞘膜積液,可依中醫辨證就局部氣血運行提供輔助調理,無法消除已形成之液體積聚",
+    "precautions": "陰囊腫痛急性發作或懷疑睪丸扭轉、疝氣嵌頓時不應以針灸處理,應立即轉診;會陰及腹股溝取穴避開明顯腫脹或疝氣部位",
+    "co_management": "應與診治之泌尿科醫師保持聯繫,是否需手術修補由西醫評估決定",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "For chronic, non-communicating hydroceles with stable size and emergencies already excluded, TCM pattern-based adjunct care may support local qi-blood circulation; it cannot resolve fluid already accumulated",
+    "precautions": "Acute scrotal pain or suspected testicular torsion/incarcerated hernia should not be managed with acupuncture and requires immediate referral; avoid needling directly over visibly swollen or herniated inguinal/scrotal areas",
+    "co_management": "Maintain contact with the treating urology physician; the decision for surgical repair is determined by medical evaluation",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_patterns": [
+    "pattern.cold_stagnation_liver_channel"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "StatPearls: Hydrocele (NBK559125, retrieved 2026-08)"
+    ],
+    "summary_en": [
+     "StatPearls: Hydrocele (NBK559125, retrieved 2026-08)"
+    ],
+    "western_context_zh": [
+     "StatPearls: Hydrocele (NBK559125, retrieved 2026-08)"
+    ],
+    "western_context_en": [
+     "StatPearls: Hydrocele (NBK559125, retrieved 2026-08)"
+    ],
+    "western_pathology_zh": [
+     "StatPearls: Hydrocele (NBK559125, retrieved 2026-08)"
+    ],
+    "western_pathology_en": [
+     "StatPearls: Hydrocele (NBK559125, retrieved 2026-08)"
+    ],
+    "red_flags_zh": [
+     "StatPearls: Testicular Torsion (NBK448199, retrieved 2026-08)",
+     "StatPearls: Hydrocele (NBK559125, retrieved 2026-08)"
+    ],
+    "red_flags_en": [
+     "StatPearls: Testicular Torsion (NBK448199, retrieved 2026-08)",
+     "StatPearls: Hydrocele (NBK559125, retrieved 2026-08)"
+    ],
+    "risk_factors_zh": [
+     "StatPearls: Hydrocele (NBK559125, retrieved 2026-08)"
+    ],
+    "risk_factors_en": [
+     "StatPearls: Hydrocele (NBK559125, retrieved 2026-08)"
+    ],
+    "acupuncture_scope_zh": [
+     "Clinical judgment — scope-of-practice inference; no acupuncture guideline/RCT source found, evidence marked unknown"
+    ],
+    "acupuncture_scope_en": [
+     "Clinical judgment — scope-of-practice inference; no acupuncture guideline/RCT source found, evidence marked unknown"
+    ],
+    "aliases_zh": [
+     "Common TCM/clinical usage"
+    ],
+    "aliases_en": [
+     "Common clinical usage"
+    ]
+   }
   },
   {
    "id": "cond.urethritis",
@@ -86716,7 +87996,127 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "腎盂積水指因尿路阻塞導致腎盂及腎盞擴張積水,常見病因包括腎結石、腫瘤壓迫(膀胱、攝護腺、子宮等)、良性攝護腺肥大及先天性腎盂輸尿管交界處阻塞;長期未解除之阻塞可造成腎小管萎縮與不可逆腎元喪失,增加慢性腎臟病風險。",
+   "summary_en": "Hydronephrosis is dilation of the renal pelvis and calyces due to obstruction of urine flow, commonly caused by kidney stones, compression from tumors (bladder, prostate, uterus, etc.), benign prostatic hyperplasia, or congenital ureteropelvic junction obstruction. Prolonged unrelieved obstruction leads to tubular atrophy and irreversible nephron loss, increasing the risk of chronic kidney disease.",
+   "western_context_zh": "西醫以超音波或電腦斷層確認阻塞部位與程度,搭配尿液分析與血清肌酸酐評估腎功能受損程度,依阻塞病因決定處置(如結石移除、導管引流、原發腫瘤治療),並定期追蹤影像評估腎功能恢復情形。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western evaluation uses ultrasound or CT to confirm the location and degree of obstruction, combined with urinalysis and serum creatinine to assess kidney function impairment; management is determined by the underlying obstructive cause (e.g., stone removal, catheter drainage, treatment of the primary tumor), with periodic imaging follow-up to assess recovery of kidney function. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "尿路任一部位受阻(結石嵌頓、腫瘤外壓或管腔內阻塞、攝護腺肥大造成膀胱出口阻塞等)使尿液回流蓄積於腎盂腎盞,腔內壓力上升逆向傳導至腎絲球,造成腎絲球過濾率下降;若阻塞持續存在,將進展為腎小管萎縮與間質纖維化,導致不可逆之腎元喪失。診斷依尿液分析、血清肌酸酐及超音波或電腦斷層確認阻塞部位與嚴重程度;泌尿道感染為腎盂積水最常見之併發症,可進一步導致腎盂腎炎。",
+   "western_pathology_en": "Obstruction at any point in the urinary tract (impacted stone, external tumor compression or intraluminal blockage, bladder outlet obstruction from prostatic enlargement, etc.) causes urine to back up and accumulate in the renal pelvis and calyces; the resulting rise in intraluminal pressure is transmitted retrograde to the glomeruli, reducing glomerular filtration rate. If obstruction persists, tubular atrophy and interstitial fibrosis develop, causing irreversible nephron loss. Diagnosis relies on urinalysis, serum creatinine, and ultrasound or CT to localize and grade the obstruction; urinary tract infection is the most common complication of hydronephrosis and can progress to pyelonephritis.",
+   "red_flags_zh": [
+    "腰腹劇痛合併發燒、寒顫,提示阻塞性腎盂腎炎併感染,屬泌尿科急症需立即引流",
+    "雙側腎盂積水合併少尿或無尿,提示急性腎損傷需立即就醫",
+    "合併敗血症徵象(低血壓、心搏過速、意識改變),為急需緊急處置之泌尿系敗血症警訊",
+    "腎絞痛合併肉眼血尿及無法緩解之嘔吐,需儘速評估結石阻塞程度"
+   ],
+   "red_flags_en": [
+    "Severe flank/abdominal pain with fever and chills suggests obstructive pyelonephritis with infection, a urologic emergency requiring immediate drainage",
+    "Bilateral hydronephrosis with oliguria or anuria suggests acute kidney injury and requires immediate medical attention",
+    "Signs of sepsis (hypotension, tachycardia, altered mental status) are warning signs of urosepsis requiring emergency management",
+    "Renal colic with gross hematuria and intractable vomiting warrants prompt evaluation of the degree of obstructive calculus"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "泌尿道結石病史",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Hydronephrosis and Hydroureter (NBK563217)"
+    },
+    {
+     "factor": "良性攝護腺肥大或攝護腺癌",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Hydronephrosis and Hydroureter (NBK563217)"
+    },
+    {
+     "factor": "骨盆腔腫瘤(膀胱、子宮頸等)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Hydronephrosis and Hydroureter (NBK563217)"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "History of urinary tract calculi",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Hydronephrosis and Hydroureter (NBK563217)"
+    },
+    {
+     "factor": "Benign prostatic hyperplasia or prostate cancer",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Hydronephrosis and Hydroureter (NBK563217)"
+    },
+    {
+     "factor": "Pelvic malignancy (bladder, cervical, etc.)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Hydronephrosis and Hydroureter (NBK563217)"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "阻塞已解除且腎功能穩定後,可就腰痛、排尿不適等殘餘症狀提供輔助調理,無法解除機械性阻塞",
+    "precautions": "急性腎絞痛、發燒或懷疑感染性阻塞者不宜以針灸取代緊急泌尿科處置",
+    "co_management": "應與診治之泌尿科或腎臟科醫師保持聯繫,阻塞原因處置(結石移除、引流、腫瘤治療)由西醫團隊決定",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "Once obstruction is relieved and kidney function is stable, may support residual symptoms such as flank pain or urinary discomfort as adjunct care; cannot relieve mechanical obstruction itself",
+    "precautions": "Acupuncture should not substitute for emergency urologic management in acute renal colic, fever, or suspected infected obstruction",
+    "co_management": "Maintain contact with the treating urology or nephrology physician; management of the obstructive cause (stone removal, drainage, tumor treatment) is determined by the medical team",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.long_bi",
+    "tdis.lin_zheng"
+   ],
+   "related_patterns": [
+    "pattern.stone_lin",
+    "pattern.qi_stagnation_blood_stasis"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "StatPearls: Hydronephrosis and Hydroureter (NBK563217, retrieved 2026-08)"
+    ],
+    "summary_en": [
+     "StatPearls: Hydronephrosis and Hydroureter (NBK563217, retrieved 2026-08)"
+    ],
+    "western_context_zh": [
+     "StatPearls: Hydronephrosis and Hydroureter (NBK563217, retrieved 2026-08)",
+     "Cleveland Clinic: Hydronephrosis (retrieved 2026-08)"
+    ],
+    "western_context_en": [
+     "StatPearls: Hydronephrosis and Hydroureter (NBK563217, retrieved 2026-08)",
+     "Cleveland Clinic: Hydronephrosis (retrieved 2026-08)"
+    ],
+    "western_pathology_zh": [
+     "StatPearls: Hydronephrosis and Hydroureter (NBK563217, retrieved 2026-08)"
+    ],
+    "western_pathology_en": [
+     "StatPearls: Hydronephrosis and Hydroureter (NBK563217, retrieved 2026-08)"
+    ],
+    "red_flags_zh": [
+     "StatPearls: Hydronephrosis and Hydroureter (NBK563217, retrieved 2026-08) — urgent treatment indicators"
+    ],
+    "red_flags_en": [
+     "StatPearls: Hydronephrosis and Hydroureter (NBK563217, retrieved 2026-08) — urgent treatment indicators"
+    ],
+    "risk_factors_zh": [
+     "StatPearls: Hydronephrosis and Hydroureter (NBK563217, retrieved 2026-08)"
+    ],
+    "risk_factors_en": [
+     "StatPearls: Hydronephrosis and Hydroureter (NBK563217, retrieved 2026-08)"
+    ],
+    "acupuncture_scope_zh": [
+     "Clinical judgment — scope-of-practice inference; no acupuncture guideline/RCT source found, evidence marked unknown"
+    ],
+    "acupuncture_scope_en": [
+     "Clinical judgment — scope-of-practice inference; no acupuncture guideline/RCT source found, evidence marked unknown"
+    ]
+   }
   },
   {
    "id": "cond.neurogenic_bladder",
