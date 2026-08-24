@@ -115,11 +115,14 @@ jobs:
         run: node scripts/build-data.js
 
       # If build-data changed a generated file, the PR is missing a rebuild.
+      # data/tung 與 data/auricular 也在範圍內（2026-08-24）：build-data 會寫
+      # 那裡的三顆 JS twin（point_index.js / gb93_index.js / gb93_worklist.js），
+      # 先前 gate 只看 data/generated，twin 可以相對 JSON 正本過期而 CI 全綠。
       - name: generated data is committed and current
         run: |
-          if ! git diff --quiet -- data/generated data/quality; then
-            echo "::error::data/generated or data/quality is stale — run 'node scripts/build-content-quality-overlay.js && node scripts/build-data.js' and commit the result."
-            git --no-pager diff --stat -- data/generated data/quality
+          if ! git diff --quiet -- data/generated data/quality data/tung data/auricular; then
+            echo "::error::generated data is stale — run 'node scripts/build-content-quality-overlay.js && node scripts/build-data.js' and commit the result."
+            git --no-pager diff --stat -- data/generated data/quality data/tung data/auricular
             exit 1
           fi
 

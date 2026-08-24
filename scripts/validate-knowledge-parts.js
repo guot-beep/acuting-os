@@ -11,6 +11,17 @@
  *  K4 每個鍵 JSON.stringify(合流值) === JSON.stringify(單體值)（逐位元組）
  *  K5 core 片的 __expected 清單 === 實際存在的片名集合（dataLoadGuard 的
  *     缺片守衛靠這份清單，清單漂移 = 守衛失明）
+ *  K6 index.html 載入序：六片各出現一次，且全部排在 app.js 之前、app.js 排在
+ *     js/knowledge.js 之前——js/knowledge.js 在 IIFE 頂端一次性捕捉 const K，
+ *     晚到的鍵它永遠看不到。這條是整個分片設計的地基，之前只有註解在守。
+ *  K7 previsit 綁定：outcomeMetrics 必須住 core 片，且 previsit.html 載的是
+ *     knowledge_core.js——previsit 有 FALLBACK_PROMPTS，這條斷開時病人只會
+ *     悄悄拿到另一套題目，不會有任何錯誤。
+ *  K8 node 載入器端到端：六支 node 消費者實際走的 scripts/lib/load-knowledge.js
+ *     必須回傳完整鍵集——K1–K5 自己讀檔，loader 內部丟例外時它們照樣全綠。
+ *  K9 core 體積天花板 400KB（現值 ~213KB）：previsit 病人端「阻塞式」載 core，
+ *     而 build-data 對未分派新鍵只 console.warn——沒有天花板，一顆大鍵靜默
+ *     落 core 就讓病人頁回到阻塞巨檔。
  *
  * 單體移除（P1-E）後，K3/K4 的對照組換成 build-data 的 PARTS 表宣告。
  * Usage: node scripts/validate-knowledge-parts.js
@@ -78,6 +89,58 @@ if (!diffs) console.log(`OK: 全部 ${mKeys.size} 鍵逐位元組等於單體`);
   else if (JSON.stringify([...expected].sort()) !== JSON.stringify([...SHARDS].sort()))
     fail(`K5 __expected [${expected}] ≠ 分片清單 [${SHARDS}]`);
   else console.log(`OK: __expected 清單與分片一致（${expected.join(", ")}）`);
+}
+
+// ---- K6 index.html 載入序 ----
+{
+  // 先剝 HTML 註解再抽 <script src>，被註解掉的標籤不算數。
+  const html = fs.readFileSync(path.join(ROOT, "index.html"), "utf8").replace(/<!--[\s\S]*?-->/g, "");
+  const srcs = [...html.matchAll(/<script[^>]*\bsrc="([^"]+)"/g)].map((m) => m[1]);
+  const idxOf = (name) => srcs.findIndex((s) => s.endsWith(name));
+  const appIdx = idxOf("app.js");
+  const knowledgeIdx = idxOf("js/knowledge.js");
+  if (appIdx < 0) fail("K6 index.html 找不到 app.js script 標籤");
+  if (knowledgeIdx < 0) fail("K6 index.html 找不到 js/knowledge.js script 標籤");
+  let k6ok = appIdx >= 0 && knowledgeIdx >= 0;
+  for (const name of SHARDS) {
+    const file = `knowledge_${name}.js`;
+    const hits = srcs.filter((s) => s.endsWith(file)).length;
+    const i = idxOf(file);
+    if (hits !== 1) { fail(`K6 ${file} 在 index.html 出現 ${hits} 次（必須恰好 1 次）`); k6ok = false; }
+    else if (appIdx >= 0 && i > appIdx) { fail(`K6 ${file} 排在 app.js 之後——js/knowledge.js 的一次性捕捉看不到它`); k6ok = false; }
+  }
+  if (appIdx >= 0 && knowledgeIdx >= 0 && appIdx > knowledgeIdx) { fail("K6 app.js 排在 js/knowledge.js 之後"); k6ok = false; }
+  if (k6ok) console.log("OK: K6 載入序——六片全部在 app.js 之前，app.js 在 js/knowledge.js 之前");
+}
+
+// ---- K7 previsit 綁定 ----
+{
+  const owner = keyOwner.get("outcomeMetrics");
+  const previsit = fs.readFileSync(path.join(ROOT, "previsit.html"), "utf8");
+  const loadsCore = previsit.includes("data/generated/knowledge_core.js");
+  if (owner !== "core") fail(`K7 outcomeMetrics 住在 ${owner} 片——previsit 只載 core，會靜默退回 FALLBACK_PROMPTS`);
+  if (!loadsCore) fail("K7 previsit.html 沒有載 data/generated/knowledge_core.js");
+  if (owner === "core" && loadsCore) console.log("OK: K7 previsit 載 core 片且 outcomeMetrics 在 core");
+}
+
+// ---- K8 node 載入器端到端 ----
+{
+  const K = require("./lib/load-knowledge.js").loadKnowledge();
+  if (!K) fail("K8 loadKnowledge() 回 null——六支 node 消費者全部會靜默降級");
+  else {
+    const kKeys = new Set(Object.keys(K));
+    const missing8 = [...keyOwner.keys()].filter((k) => !kKeys.has(k));
+    if (missing8.length) fail(`K8 loader 鍵集缺：${missing8.join(", ")}`);
+    else console.log(`OK: K8 loadKnowledge() 回傳完整 ${kKeys.size} 鍵`);
+  }
+}
+
+// ---- K9 core 體積天花板 ----
+{
+  const CORE_CEILING = 400 * 1024;   // 現值 ~213KB 的兩倍寬容度；病人端阻塞載入這顆
+  const size = fs.statSync(path.join(ROOT, "data/generated/knowledge_core.js")).size;
+  if (size > CORE_CEILING) fail(`K9 knowledge_core.js ${size}B 超過 ${CORE_CEILING}B 天花板——previsit 病人端阻塞載入這顆檔，查 build-data 是否有新鍵誤落 core`);
+  else console.log(`OK: K9 core 片 ${Math.round(size / 1024)}KB ≤ ${CORE_CEILING / 1024}KB`);
 }
 
 if (failures) { console.error(`validate-knowledge-parts: ${failures} defects`); process.exit(1); }
