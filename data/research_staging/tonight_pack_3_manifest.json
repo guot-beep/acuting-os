@@ -1,0 +1,36 @@
+{
+  "pack": "AcuTing OS Tonight Pack 3",
+  "status": "research_staging_not_canonical",
+  "requests": [
+    "CR-004",
+    "CR-005",
+    "CR-006"
+  ],
+  "files": [
+    "data/research_staging/metric_alias_semantic_dedupe_map_v1.json",
+    "data/research_staging/supp_batch01_interaction_focus_matrix_v1.json",
+    "data/research_staging/sym_tcm_extension_batch_c_v1.json",
+    "docs/research_packs/00_README_TONIGHT_PACK_3.md",
+    "docs/research_packs/METRIC_ALIAS_SEMANTIC_DEDUPE_MAP_v1.md",
+    "docs/research_packs/SUPP_BATCH01_INTERACTION_FOCUS_MATRIX_v1.md",
+    "docs/research_packs/SYM_TCM_EXTENSION_BATCH_C_v1.md"
+  ],
+  "no_phi": true,
+  "recommended_consumers": {
+    "Fable": [
+      "CR-004",
+      "CR-005",
+      "CR-006"
+    ],
+    "Sonnet": [
+      "CR-005",
+      "CR-006"
+    ],
+    "Codex": [
+      "validate semantic dedupe and no false-none interaction normalization"
+    ],
+    "Antigravity": [
+      "none until canonical contract acceptance"
+    ]
+  }
+}

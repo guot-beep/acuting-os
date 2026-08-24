@@ -1,0 +1,29 @@
+{
+  "adjudication_id": "P-4_pat_external_wind_damp",
+  "input_label": "pat.外感風濕",
+  "decision": "CREATE_CANONICAL",
+  "recommended_concept_en": "wind-dampness assailing the exterior pattern",
+  "recommended_concept_zh": "風濕襲表證 / 外感風濕表證",
+  "do_not_map_to": "pattern.wind_cold_damp_bi",
+  "basis_zh": "病位與主症群不同：外感風濕屬衛表受邪，以惡風、發熱、頭身困重酸楚為核心；風寒濕痹屬經絡痹阻，以肌肉骨節／關節疼痛、重著與屈伸不利為核心，因此不是「少了寒」的同一證型。",
+  "relation_note": "Can be differential/associated depending on presentation, but not synonym/equivalent.",
+  "sources": [
+    {
+      "title": "GB/T 16751.2-2021 中醫臨床診療術語 第2部分：證候",
+      "url": "https://std.samr.gov.cn/gb/search/gbDetailed?id=D1E86BE73A31430EE05397BE0A0A206B",
+      "authority": "SAMR / National TCM standard"
+    },
+    {
+      "title": "WHO international standard terminologies on traditional Chinese medicine",
+      "url": "https://www.who.int/publications/i/item/9789240042322",
+      "authority": "WHO"
+    },
+    {
+      "title": "ICD-11 / Chinese national TCM code mapping paper",
+      "url": "https://chinarxiv.org/items/chinaxiv-202307.00672",
+      "authority": "ChinaRxiv mapping study",
+      "note": "Explicitly lists Wind-dampness exterior pattern as a distinct coded pattern under the national standard mapping."
+    }
+  ],
+  "status": "SOL_adjudication_for_repo_review"
+}

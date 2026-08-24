@@ -1,0 +1,329 @@
+{
+  "status": "research_staging_not_canonical",
+  "namespaces": {
+    "life": [
+      {
+        "id": "life.sleep_schedule",
+        "name_en": "Sleep schedule",
+        "name_zh": "睡眠作息"
+      },
+      {
+        "id": "life.sleep_duration",
+        "name_en": "Sleep duration",
+        "name_zh": "睡眠時數"
+      },
+      {
+        "id": "life.caffeine",
+        "name_en": "Caffeine intake",
+        "name_zh": "咖啡因攝取"
+      },
+      {
+        "id": "life.alcohol",
+        "name_en": "Alcohol use",
+        "name_zh": "酒精使用"
+      },
+      {
+        "id": "life.nicotine",
+        "name_en": "Nicotine use",
+        "name_zh": "尼古丁使用"
+      },
+      {
+        "id": "life.exercise",
+        "name_en": "Exercise",
+        "name_zh": "運動"
+      },
+      {
+        "id": "life.sedentary_time",
+        "name_en": "Sedentary time",
+        "name_zh": "久坐時間"
+      },
+      {
+        "id": "life.hydration",
+        "name_en": "Hydration",
+        "name_zh": "飲水"
+      },
+      {
+        "id": "life.late_meals",
+        "name_en": "Late meals",
+        "name_zh": "晚餐過晚"
+      },
+      {
+        "id": "life.raw_cold_foods",
+        "name_en": "Raw/cold foods",
+        "name_zh": "生冷食物"
+      },
+      {
+        "id": "life.hot_beverages",
+        "name_en": "Very hot beverages",
+        "name_zh": "過熱飲品"
+      },
+      {
+        "id": "life.spicy_food",
+        "name_en": "Spicy food",
+        "name_zh": "辛辣食物"
+      },
+      {
+        "id": "life.processed_food",
+        "name_en": "Processed food",
+        "name_zh": "加工食品"
+      },
+      {
+        "id": "life.sugar_intake",
+        "name_en": "Sugar intake",
+        "name_zh": "糖攝取"
+      },
+      {
+        "id": "life.fasting",
+        "name_en": "Fasting",
+        "name_zh": "禁食/斷食"
+      },
+      {
+        "id": "life.raw_seafood",
+        "name_en": "Raw seafood",
+        "name_zh": "生食海鮮"
+      },
+      {
+        "id": "life.meal_regularities",
+        "name_en": "Meal regularity",
+        "name_zh": "進餐規律"
+      },
+      {
+        "id": "life.screen_before_bed",
+        "name_en": "Screen use before bed",
+        "name_zh": "睡前螢幕使用"
+      },
+      {
+        "id": "life.stress_load",
+        "name_en": "Perceived stress load",
+        "name_zh": "自覺壓力"
+      },
+      {
+        "id": "life.outdoor_activity",
+        "name_en": "Outdoor activity",
+        "name_zh": "戶外活動"
+      },
+      {
+        "id": "life.resistance_training",
+        "name_en": "Resistance training",
+        "name_zh": "阻力訓練"
+      },
+      {
+        "id": "life.aerobic_activity",
+        "name_en": "Aerobic activity",
+        "name_zh": "有氧活動"
+      },
+      {
+        "id": "life.work_schedule",
+        "name_en": "Work schedule",
+        "name_zh": "工作作息"
+      },
+      {
+        "id": "life.travel_jetlag",
+        "name_en": "Travel/jet lag",
+        "name_zh": "旅行/時差"
+      }
+    ],
+    "exposure": [
+      {
+        "id": "exposure.wildfire_smoke",
+        "name_en": "Wildfire smoke",
+        "name_zh": "野火煙霧"
+      },
+      {
+        "id": "exposure.mold",
+        "name_en": "Mold exposure",
+        "name_zh": "黴菌暴露"
+      },
+      {
+        "id": "exposure.lead",
+        "name_en": "Lead exposure",
+        "name_zh": "鉛暴露"
+      },
+      {
+        "id": "exposure.mercury",
+        "name_en": "Mercury exposure",
+        "name_zh": "汞暴露"
+      },
+      {
+        "id": "exposure.pesticide",
+        "name_en": "Pesticide exposure",
+        "name_zh": "農藥暴露"
+      },
+      {
+        "id": "exposure.solvent",
+        "name_en": "Solvent exposure",
+        "name_zh": "溶劑暴露"
+      },
+      {
+        "id": "exposure.occupational_dust",
+        "name_en": "Occupational dust",
+        "name_zh": "職業粉塵"
+      },
+      {
+        "id": "exposure.carbon_monoxide",
+        "name_en": "Carbon monoxide",
+        "name_zh": "一氧化碳"
+      },
+      {
+        "id": "exposure.secondhand_smoke",
+        "name_en": "Secondhand smoke",
+        "name_zh": "二手菸"
+      },
+      {
+        "id": "exposure.air_pollution",
+        "name_en": "Air pollution",
+        "name_zh": "空氣污染"
+      },
+      {
+        "id": "exposure.chemical_fumes",
+        "name_en": "Chemical fumes",
+        "name_zh": "化學煙霧"
+      },
+      {
+        "id": "exposure.extreme_heat",
+        "name_en": "Extreme heat",
+        "name_zh": "極端高溫"
+      },
+      {
+        "id": "exposure.extreme_cold",
+        "name_en": "Extreme cold",
+        "name_zh": "極端低溫"
+      },
+      {
+        "id": "exposure.noise",
+        "name_en": "High noise exposure",
+        "name_zh": "高噪音暴露"
+      }
+    ],
+    "adverse_event": [
+      {
+        "id": "adverse_event.dizziness",
+        "name_en": "Dizziness",
+        "name_zh": "頭暈"
+      },
+      {
+        "id": "adverse_event.needling_pain",
+        "name_en": "Needling pain",
+        "name_zh": "針刺疼痛"
+      },
+      {
+        "id": "adverse_event.bruising",
+        "name_en": "Bruising",
+        "name_zh": "瘀青"
+      },
+      {
+        "id": "adverse_event.post_treatment_fatigue",
+        "name_en": "Post-treatment fatigue",
+        "name_zh": "治療後疲勞"
+      },
+      {
+        "id": "adverse_event.nausea",
+        "name_en": "Nausea",
+        "name_zh": "噁心"
+      },
+      {
+        "id": "adverse_event.headache_after_treatment",
+        "name_en": "Headache after treatment",
+        "name_zh": "治療後頭痛"
+      },
+      {
+        "id": "adverse_event.anxiety",
+        "name_en": "Anxiety",
+        "name_zh": "焦慮"
+      },
+      {
+        "id": "adverse_event.cupping_blister",
+        "name_en": "Cupping blister",
+        "name_zh": "拔罐水泡"
+      },
+      {
+        "id": "adverse_event.fainting",
+        "name_en": "Fainting/syncope",
+        "name_zh": "暈厥"
+      },
+      {
+        "id": "adverse_event.minor_bleeding",
+        "name_en": "Minor bleeding",
+        "name_zh": "少量出血"
+      },
+      {
+        "id": "adverse_event.skin_irritation",
+        "name_en": "Skin irritation",
+        "name_zh": "皮膚刺激"
+      },
+      {
+        "id": "adverse_event.burn",
+        "name_en": "Burn",
+        "name_zh": "燙傷"
+      }
+    ],
+    "modality": [
+      {
+        "id": "modality.acupuncture",
+        "name_en": "Acupuncture",
+        "name_zh": "針刺"
+      },
+      {
+        "id": "modality.electroacupuncture",
+        "name_en": "Electroacupuncture",
+        "name_zh": "電針"
+      },
+      {
+        "id": "modality.cupping",
+        "name_en": "Cupping",
+        "name_zh": "拔罐"
+      },
+      {
+        "id": "modality.gua_sha",
+        "name_en": "Gua sha",
+        "name_zh": "刮痧"
+      },
+      {
+        "id": "modality.moxibustion",
+        "name_en": "Moxibustion",
+        "name_zh": "艾灸"
+      },
+      {
+        "id": "modality.tuina",
+        "name_en": "Tui na",
+        "name_zh": "推拿"
+      },
+      {
+        "id": "modality.ear_acupuncture",
+        "name_en": "Auricular acupuncture",
+        "name_zh": "耳針"
+      },
+      {
+        "id": "modality.scalp_acupuncture",
+        "name_en": "Scalp acupuncture",
+        "name_zh": "頭皮針"
+      },
+      {
+        "id": "modality.heat_therapy",
+        "name_en": "Heat therapy",
+        "name_zh": "熱療"
+      },
+      {
+        "id": "modality.exercise_therapy",
+        "name_en": "Exercise therapy",
+        "name_zh": "運動治療"
+      },
+      {
+        "id": "modality.dietary_counseling",
+        "name_en": "Dietary counseling",
+        "name_zh": "飲食衛教"
+      },
+      {
+        "id": "modality.herbal_formula",
+        "name_en": "Herbal formula",
+        "name_zh": "中藥方劑"
+      }
+    ]
+  },
+  "notes": [
+    "Candidates only; dedupe against existing registries before canonical ingestion.",
+    "Lifestyle factors do not auto-create diagnoses or patterns.",
+    "Exposure status must preserve suspected/patient-reported/confirmed/history semantics.",
+    "Adverse events record safety/tolerance observations, not automatic causality."
+  ]
+}

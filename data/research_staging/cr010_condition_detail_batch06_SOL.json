@@ -1,0 +1,2813 @@
+{
+  "schema": "cr010_condition_detail_research_staging_v1",
+  "request_id": "CR-010",
+  "batch": "06",
+  "generated_at": "2026-08-12",
+  "source_commit": "2ddced2",
+  "status": "NOT_CANONICAL",
+  "phi": false,
+  "selection": "Live queue ranks 46-60 copied verbatim from cr010_common300_detail_queue_live.json",
+  "condition_payload_count": 15,
+  "new_detail_count": 15,
+  "scope_backfill_count": 0,
+  "rules": [
+    "PRESERVE_EXISTING",
+    "LIVE_QUEUE_IDS_ONLY",
+    "NO_CROSSREF_AUTO_RESOLUTION",
+    "NO_PHI",
+    "NOT_CANONICAL",
+    "UNKNOWN_WHEN_NO_ACUPUNCTURE_EFFICACY_GUIDELINE"
+  ],
+  "conditions": [
+    {
+      "request_id": "CR-010",
+      "batch": "06",
+      "live_rank": 46,
+      "id": "cond.central_sleep_apnea",
+      "name_zh": "中樞型睡眠呼吸中止症",
+      "name_en": "Central Sleep Apnea",
+      "category": "respiratory",
+      "merge_mode": "EXISTING_ENRICH",
+      "live_maturity": "SKELETON",
+      "fill_targets": [
+        "summary",
+        "western_context",
+        "western_pathology",
+        "etiology",
+        "risk_factors",
+        "red_flags",
+        "acupuncture_scope",
+        "sources",
+        "field_sources"
+      ],
+      "summary_zh": "睡眠時因腦部呼吸驅動暫時失常而反覆停止或減弱呼吸，與上呼吸道阻塞型不同。",
+      "summary_en": "A sleep-related breathing disorder in which brain respiratory drive repeatedly pauses or weakens, distinct from upper-airway obstruction.",
+      "western_context_zh": "睡眠時因腦部呼吸驅動暫時失常而反覆停止或減弱呼吸，與上呼吸道阻塞型不同。",
+      "western_context_en": "A sleep-related breathing disorder in which brain respiratory drive repeatedly pauses or weakens, distinct from upper-airway obstruction.",
+      "western_pathology_zh": "呼吸控制中樞未能持續向呼吸肌發出訊號，造成氣流與呼吸努力同步下降。",
+      "western_pathology_en": "Respiratory control centers intermittently fail to signal the breathing muscles, reducing airflow and respiratory effort together.",
+      "etiology_zh": "呼吸控制中樞未能持續向呼吸肌發出訊號，造成氣流與呼吸努力同步下降。",
+      "etiology_en": "Respiratory control centers intermittently fail to signal the breathing muscles, reducing airflow and respiratory effort together.",
+      "risk_factors_zh": [
+        {
+          "factor": "高齡",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI — Sleep Apnea — Causes and Risk Factors"
+        },
+        {
+          "factor": "心臟衰竭或中樞神經疾病",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI — Sleep Apnea — Causes and Risk Factors"
+        },
+        {
+          "factor": "鴉片類藥物或高海拔暴露",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI — Sleep Apnea — Causes and Risk Factors"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Older age",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI — Sleep Apnea — Causes and Risk Factors"
+        },
+        {
+          "factor": "Heart failure or central neurologic disease",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI — Sleep Apnea — Causes and Risk Factors"
+        },
+        {
+          "factor": "Opioid exposure or high altitude",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NHLBI — Sleep Apnea — Causes and Risk Factors"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "清醒時呼吸困難、胸痛或發紺",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估",
+          "rationale": "可能為嚴重低氧或心肺急症",
+          "source": "NHLBI — Sleep Apnea — Causes and Risk Factors"
+        },
+        {
+          "finding": "嗜睡已影響駕駛安全或出現昏厥",
+          "urgency_level": "same_day",
+          "recommended_action": "停止駕駛並接受當日醫療評估",
+          "rationale": "未控制的睡眠呼吸障礙會造成即時安全風險",
+          "source": "NHLBI — Sleep Apnea — Causes and Risk Factors"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Breathing difficulty while awake, chest pain, or cyanosis",
+          "urgency_level": "emergency",
+          "recommended_action": "Seek emergency evaluation immediately",
+          "rationale": "May indicate severe hypoxemia or an acute cardiopulmonary problem",
+          "source": "NHLBI — Sleep Apnea — Causes and Risk Factors"
+        },
+        {
+          "finding": "Sleepiness affecting driving safety or syncope",
+          "urgency_level": "same_day",
+          "recommended_action": "Stop driving and obtain same-day medical assessment",
+          "rationale": "Uncontrolled sleep-disordered breathing creates an immediate safety risk",
+          "source": "NHLBI — Sleep Apnea — Causes and Risk Factors"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "僅可輔助處理失眠、緊張或治療相關不適，不可取代睡眠檢查、正壓通氣或病因治療。",
+        "cannot_treat": "不能矯正睡眠時呼吸驅動或取代呼吸支持。",
+        "precautions": "確認呼吸狀態穩定；嚴重嗜睡、低氧或未治療心衰時不進行常規門診針灸。",
+        "co_management": "與睡眠醫學、心臟科或神經科共同管理。",
+        "evidence": "unknown",
+        "source": "NHLBI — Sleep Apnea — Causes and Risk Factors",
+        "note": "未核實可支持病種療效宣稱的針灸臨床指引；此欄僅界定輔助範圍與共同照護。"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "May only support insomnia, tension, or treatment-related discomfort; it cannot replace sleep testing, positive-airway-pressure therapy, or treatment of the cause.",
+        "cannot_treat": "Cannot correct sleep-related respiratory drive or replace ventilatory support.",
+        "precautions": "Confirm respiratory stability; defer routine outpatient acupuncture with severe somnolence, hypoxemia, or untreated heart failure.",
+        "co_management": "Co-manage with sleep medicine, cardiology, or neurology.",
+        "evidence": "unknown",
+        "source": "NHLBI — Sleep Apnea — Causes and Risk Factors",
+        "note": "No condition-specific acupuncture guideline supporting an efficacy claim was verified; this entry only defines adjunctive scope and co-management."
+      },
+      "sources": [
+        {
+          "authority": "NHLBI",
+          "title": "Sleep Apnea — Causes and Risk Factors",
+          "url": "https://www.nhlbi.nih.gov/health/sleep-apnea/causes-and-risk-factors",
+          "supports_fields": [
+            "summary",
+            "western_context",
+            "western_pathology",
+            "etiology",
+            "risk_factors",
+            "red_flags",
+            "acupuncture_scope_boundary",
+            "co_management"
+          ]
+        }
+      ],
+      "field_sources": {
+        "summary_zh": [
+          "https://www.nhlbi.nih.gov/health/sleep-apnea/causes-and-risk-factors"
+        ],
+        "summary_en": [
+          "https://www.nhlbi.nih.gov/health/sleep-apnea/causes-and-risk-factors"
+        ],
+        "western_context_zh": [
+          "https://www.nhlbi.nih.gov/health/sleep-apnea/causes-and-risk-factors"
+        ],
+        "western_context_en": [
+          "https://www.nhlbi.nih.gov/health/sleep-apnea/causes-and-risk-factors"
+        ],
+        "western_pathology_zh": [
+          "https://www.nhlbi.nih.gov/health/sleep-apnea/causes-and-risk-factors"
+        ],
+        "western_pathology_en": [
+          "https://www.nhlbi.nih.gov/health/sleep-apnea/causes-and-risk-factors"
+        ],
+        "etiology_zh": [
+          "https://www.nhlbi.nih.gov/health/sleep-apnea/causes-and-risk-factors"
+        ],
+        "etiology_en": [
+          "https://www.nhlbi.nih.gov/health/sleep-apnea/causes-and-risk-factors"
+        ],
+        "risk_factors_zh": [
+          "https://www.nhlbi.nih.gov/health/sleep-apnea/causes-and-risk-factors"
+        ],
+        "risk_factors_en": [
+          "https://www.nhlbi.nih.gov/health/sleep-apnea/causes-and-risk-factors"
+        ],
+        "red_flags_zh": [
+          "https://www.nhlbi.nih.gov/health/sleep-apnea/causes-and-risk-factors"
+        ],
+        "red_flags_en": [
+          "https://www.nhlbi.nih.gov/health/sleep-apnea/causes-and-risk-factors"
+        ],
+        "acupuncture_scope_zh": [
+          "https://www.nhlbi.nih.gov/health/sleep-apnea/causes-and-risk-factors"
+        ],
+        "acupuncture_scope_en": [
+          "https://www.nhlbi.nih.gov/health/sleep-apnea/causes-and-risk-factors"
+        ]
+      },
+      "structured_relation_seeds": [],
+      "crossrefs_auto_resolved": false,
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    },
+    {
+      "request_id": "CR-010",
+      "batch": "06",
+      "live_rank": 47,
+      "id": "cond.cerebral_palsy",
+      "name_zh": "腦性麻痺",
+      "name_en": "Cerebral Palsy",
+      "category": "neuro",
+      "merge_mode": "EXISTING_ENRICH",
+      "live_maturity": "SKELETON",
+      "fill_targets": [
+        "summary",
+        "western_context",
+        "western_pathology",
+        "etiology",
+        "risk_factors",
+        "red_flags",
+        "acupuncture_scope",
+        "sources",
+        "field_sources"
+      ],
+      "summary_zh": "一組由發育中腦部異常或損傷造成的永久性動作、平衡與姿勢障礙；功能表現與共病差異很大。",
+      "summary_en": "A group of permanent movement, balance, and posture disorders caused by abnormal development of or injury to the developing brain; function and comorbidities vary widely.",
+      "western_context_zh": "一組由發育中腦部異常或損傷造成的永久性動作、平衡與姿勢障礙；功能表現與共病差異很大。",
+      "western_context_en": "A group of permanent movement, balance, and posture disorders caused by abnormal development of or injury to the developing brain; function and comorbidities vary widely.",
+      "western_pathology_zh": "非進行性的腦部病灶會影響運動控制，但肌骨併發症與功能限制可隨成長改變。",
+      "western_pathology_en": "A nonprogressive brain disturbance affects motor control, while musculoskeletal complications and functional limitations can change with growth.",
+      "etiology_zh": "非進行性的腦部病灶會影響運動控制，但肌骨併發症與功能限制可隨成長改變。",
+      "etiology_en": "A nonprogressive brain disturbance affects motor control, while musculoskeletal complications and functional limitations can change with growth.",
+      "risk_factors_zh": [
+        {
+          "factor": "早產或低出生體重",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "CDC — About Cerebral Palsy"
+        },
+        {
+          "factor": "多胞胎妊娠",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "CDC — About Cerebral Palsy"
+        },
+        {
+          "factor": "發育中腦部感染、出血或損傷",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "CDC — About Cerebral Palsy"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Preterm birth or low birth weight",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "CDC — About Cerebral Palsy"
+        },
+        {
+          "factor": "Multiple gestation",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "CDC — About Cerebral Palsy"
+        },
+        {
+          "factor": "Infection, bleeding, or injury affecting the developing brain",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "CDC — About Cerebral Palsy"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "新出現或進行性無力、功能退化",
+          "urgency_level": "urgent",
+          "recommended_action": "數日內由神經科或兒科評估",
+          "rationale": "腦性麻痺本身非進行性，退化須查其他原因",
+          "source": "CDC — About Cerebral Palsy"
+        },
+        {
+          "finding": "癲癇持續、呼吸或吞嚥困難",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診",
+          "rationale": "可能危及呼吸道或代表癲癇重積",
+          "source": "CDC — About Cerebral Palsy"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "New or progressive weakness or functional regression",
+          "urgency_level": "urgent",
+          "recommended_action": "Obtain neurologic or pediatric assessment within days",
+          "rationale": "Cerebral palsy itself is nonprogressive, so regression requires another cause to be assessed",
+          "source": "CDC — About Cerebral Palsy"
+        },
+        {
+          "finding": "Prolonged seizure, breathing difficulty, or swallowing difficulty",
+          "urgency_level": "emergency",
+          "recommended_action": "Seek emergency care immediately",
+          "rationale": "May threaten the airway or represent status epilepticus",
+          "source": "CDC — About Cerebral Palsy"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "可作痙攣相關疼痛、睡眠或照護壓力的輔助處理；不可宣稱修復腦損傷或取代復健。",
+        "cannot_treat": "不能修復既有腦損傷、逆轉腦性麻痺或取代復健。",
+        "precautions": "依溝通、感覺敏感、攣縮、骨密度與癲癇狀況調整體位和刺激量。",
+        "co_management": "與兒科／神經科、物理／職能／語言治療及照護者共同管理。",
+        "evidence": "unknown",
+        "source": "CDC — About Cerebral Palsy",
+        "note": "未核實可支持病種療效宣稱的針灸臨床指引；此欄僅界定輔助範圍與共同照護。"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "May support spasticity-related pain, sleep, or care stress; it must not be presented as repairing brain injury or replacing rehabilitation.",
+        "cannot_treat": "Cannot repair established brain injury, reverse cerebral palsy, or replace rehabilitation.",
+        "precautions": "Adapt positioning and stimulation to communication needs, sensory sensitivity, contractures, bone health, and seizure status.",
+        "co_management": "Co-manage with pediatrics/neurology, physical/occupational/speech therapy, and caregivers.",
+        "evidence": "unknown",
+        "source": "CDC — About Cerebral Palsy",
+        "note": "No condition-specific acupuncture guideline supporting an efficacy claim was verified; this entry only defines adjunctive scope and co-management."
+      },
+      "sources": [
+        {
+          "authority": "CDC",
+          "title": "About Cerebral Palsy",
+          "url": "https://www.cdc.gov/cerebral-palsy/about/index.html",
+          "supports_fields": [
+            "summary",
+            "western_context",
+            "western_pathology",
+            "etiology",
+            "risk_factors",
+            "red_flags",
+            "acupuncture_scope_boundary",
+            "co_management"
+          ]
+        }
+      ],
+      "field_sources": {
+        "summary_zh": [
+          "https://www.cdc.gov/cerebral-palsy/about/index.html"
+        ],
+        "summary_en": [
+          "https://www.cdc.gov/cerebral-palsy/about/index.html"
+        ],
+        "western_context_zh": [
+          "https://www.cdc.gov/cerebral-palsy/about/index.html"
+        ],
+        "western_context_en": [
+          "https://www.cdc.gov/cerebral-palsy/about/index.html"
+        ],
+        "western_pathology_zh": [
+          "https://www.cdc.gov/cerebral-palsy/about/index.html"
+        ],
+        "western_pathology_en": [
+          "https://www.cdc.gov/cerebral-palsy/about/index.html"
+        ],
+        "etiology_zh": [
+          "https://www.cdc.gov/cerebral-palsy/about/index.html"
+        ],
+        "etiology_en": [
+          "https://www.cdc.gov/cerebral-palsy/about/index.html"
+        ],
+        "risk_factors_zh": [
+          "https://www.cdc.gov/cerebral-palsy/about/index.html"
+        ],
+        "risk_factors_en": [
+          "https://www.cdc.gov/cerebral-palsy/about/index.html"
+        ],
+        "red_flags_zh": [
+          "https://www.cdc.gov/cerebral-palsy/about/index.html"
+        ],
+        "red_flags_en": [
+          "https://www.cdc.gov/cerebral-palsy/about/index.html"
+        ],
+        "acupuncture_scope_zh": [
+          "https://www.cdc.gov/cerebral-palsy/about/index.html"
+        ],
+        "acupuncture_scope_en": [
+          "https://www.cdc.gov/cerebral-palsy/about/index.html"
+        ]
+      },
+      "structured_relation_seeds": [],
+      "crossrefs_auto_resolved": false,
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    },
+    {
+      "request_id": "CR-010",
+      "batch": "06",
+      "live_rank": 48,
+      "id": "cond.cerumen_impaction",
+      "name_zh": "耵聹栓塞",
+      "name_en": "Cerumen Impaction",
+      "category": "ent_eye",
+      "merge_mode": "EXISTING_ENRICH",
+      "live_maturity": "SKELETON",
+      "fill_targets": [
+        "summary",
+        "western_context",
+        "western_pathology",
+        "etiology",
+        "risk_factors",
+        "red_flags",
+        "acupuncture_scope",
+        "sources",
+        "field_sources"
+      ],
+      "summary_zh": "耳垢堆積至造成症狀或妨礙耳道與鼓膜檢查的狀態，可引起耳悶、聽力下降、耳鳴或耳痛。",
+      "summary_en": "Accumulation of cerumen that causes symptoms or prevents examination of the canal and tympanic membrane; it may cause fullness, hearing loss, tinnitus, or pain.",
+      "western_context_zh": "耳垢堆積至造成症狀或妨礙耳道與鼓膜檢查的狀態，可引起耳悶、聽力下降、耳鳴或耳痛。",
+      "western_context_en": "Accumulation of cerumen that causes symptoms or prevents examination of the canal and tympanic membrane; it may cause fullness, hearing loss, tinnitus, or pain.",
+      "western_pathology_zh": "耳垢生成、外移與清除失衡，或被棉棒、助聽器等推入深處而阻塞耳道。",
+      "western_pathology_en": "Cerumen production, outward migration, and clearance become imbalanced, or wax is pushed deeper by swabs, hearing devices, or other objects.",
+      "etiology_zh": "耳垢生成、外移與清除失衡，或被棉棒、助聽器等推入深處而阻塞耳道。",
+      "etiology_en": "Cerumen production, outward migration, and clearance become imbalanced, or wax is pushed deeper by swabs, hearing devices, or other objects.",
+      "risk_factors_zh": [
+        {
+          "factor": "助聽器或耳塞使用",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "AAO-HNSF — Earwax (Cerumen Impaction)"
+        },
+        {
+          "factor": "狹窄或形狀異常的耳道",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "AAO-HNSF — Earwax (Cerumen Impaction)"
+        },
+        {
+          "factor": "以棉棒或物品清耳",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "AAO-HNSF — Earwax (Cerumen Impaction)"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Hearing-aid or earplug use",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "AAO-HNSF — Earwax (Cerumen Impaction)"
+        },
+        {
+          "factor": "Narrow or anatomically altered ear canal",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "AAO-HNSF — Earwax (Cerumen Impaction)"
+        },
+        {
+          "factor": "Cleaning with swabs or objects",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "AAO-HNSF — Earwax (Cerumen Impaction)"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "突發單側聽力喪失、眩暈或神經症狀",
+          "urgency_level": "same_day",
+          "recommended_action": "當日耳鼻喉或急診評估",
+          "rationale": "不能把突發性感音神經性聽損誤認為耳垢",
+          "source": "AAO-HNSF — Earwax (Cerumen Impaction)"
+        },
+        {
+          "finding": "耳流膿、出血、劇痛或發燒",
+          "urgency_level": "urgent",
+          "recommended_action": "停止自行處理並儘速就醫",
+          "rationale": "可能有感染、外傷或鼓膜問題",
+          "source": "AAO-HNSF — Earwax (Cerumen Impaction)"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Sudden unilateral hearing loss, vertigo, or neurologic symptoms",
+          "urgency_level": "same_day",
+          "recommended_action": "Obtain same-day ENT or emergency assessment",
+          "rationale": "Sudden sensorineural hearing loss must not be mistaken for wax",
+          "source": "AAO-HNSF — Earwax (Cerumen Impaction)"
+        },
+        {
+          "finding": "Ear drainage, bleeding, severe pain, or fever",
+          "urgency_level": "urgent",
+          "recommended_action": "Stop self-treatment and seek prompt medical care",
+          "rationale": "May indicate infection, trauma, or tympanic-membrane disease",
+          "source": "AAO-HNSF — Earwax (Cerumen Impaction)"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "針灸不能移除耳垢；至多輔助處理緊張，不得延誤耳鏡檢查與安全清除。",
+        "cannot_treat": "不能軟化、沖出或器械移除阻塞耳垢。",
+        "precautions": "不在耳道內操作；若疑鼓膜穿孔、耳管、感染或既往耳部手術，避免自行沖洗。",
+        "co_management": "轉介基層醫療或耳鼻喉科確認診斷並清除。",
+        "evidence": "unknown",
+        "source": "AAO-HNSF — Earwax (Cerumen Impaction)",
+        "note": "未核實可支持病種療效宣稱的針灸臨床指引；此欄僅界定輔助範圍與共同照護。"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Acupuncture cannot remove impacted wax; at most it may support anxiety and must not delay otoscopy or safe removal.",
+        "cannot_treat": "Cannot soften, irrigate, or instrumentally remove impacted cerumen.",
+        "precautions": "Do not manipulate the ear canal; avoid unsupervised irrigation when perforation, tubes, infection, or prior ear surgery is possible.",
+        "co_management": "Refer to primary care or ENT for confirmation and removal.",
+        "evidence": "unknown",
+        "source": "AAO-HNSF — Earwax (Cerumen Impaction)",
+        "note": "No condition-specific acupuncture guideline supporting an efficacy claim was verified; this entry only defines adjunctive scope and co-management."
+      },
+      "sources": [
+        {
+          "authority": "AAO-HNSF",
+          "title": "Earwax (Cerumen Impaction)",
+          "url": "https://www.enthealth.org/conditions/earwax-cerumen-impaction/",
+          "supports_fields": [
+            "summary",
+            "western_context",
+            "western_pathology",
+            "etiology",
+            "risk_factors",
+            "red_flags",
+            "acupuncture_scope_boundary",
+            "co_management"
+          ]
+        }
+      ],
+      "field_sources": {
+        "summary_zh": [
+          "https://www.enthealth.org/conditions/earwax-cerumen-impaction/"
+        ],
+        "summary_en": [
+          "https://www.enthealth.org/conditions/earwax-cerumen-impaction/"
+        ],
+        "western_context_zh": [
+          "https://www.enthealth.org/conditions/earwax-cerumen-impaction/"
+        ],
+        "western_context_en": [
+          "https://www.enthealth.org/conditions/earwax-cerumen-impaction/"
+        ],
+        "western_pathology_zh": [
+          "https://www.enthealth.org/conditions/earwax-cerumen-impaction/"
+        ],
+        "western_pathology_en": [
+          "https://www.enthealth.org/conditions/earwax-cerumen-impaction/"
+        ],
+        "etiology_zh": [
+          "https://www.enthealth.org/conditions/earwax-cerumen-impaction/"
+        ],
+        "etiology_en": [
+          "https://www.enthealth.org/conditions/earwax-cerumen-impaction/"
+        ],
+        "risk_factors_zh": [
+          "https://www.enthealth.org/conditions/earwax-cerumen-impaction/"
+        ],
+        "risk_factors_en": [
+          "https://www.enthealth.org/conditions/earwax-cerumen-impaction/"
+        ],
+        "red_flags_zh": [
+          "https://www.enthealth.org/conditions/earwax-cerumen-impaction/"
+        ],
+        "red_flags_en": [
+          "https://www.enthealth.org/conditions/earwax-cerumen-impaction/"
+        ],
+        "acupuncture_scope_zh": [
+          "https://www.enthealth.org/conditions/earwax-cerumen-impaction/"
+        ],
+        "acupuncture_scope_en": [
+          "https://www.enthealth.org/conditions/earwax-cerumen-impaction/"
+        ]
+      },
+      "structured_relation_seeds": [],
+      "crossrefs_auto_resolved": false,
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    },
+    {
+      "request_id": "CR-010",
+      "batch": "06",
+      "live_rank": 49,
+      "id": "cond.cervical_dysplasia",
+      "name_zh": "子宮頸上皮內瘤變",
+      "name_en": "Cervical Intraepithelial Neoplasia",
+      "category": "gyn_fertility",
+      "merge_mode": "EXISTING_ENRICH",
+      "live_maturity": "SKELETON",
+      "fill_targets": [
+        "summary",
+        "western_context",
+        "western_pathology",
+        "etiology",
+        "risk_factors",
+        "red_flags",
+        "acupuncture_scope",
+        "sources",
+        "field_sources"
+      ],
+      "summary_zh": "子宮頸表面細胞的癌前異常，通常依活檢分為 CIN 1–3；不是癌症，但高級別病變可能進展。",
+      "summary_en": "Precancerous abnormality of cervical surface cells, generally graded CIN 1–3 on biopsy; it is not cancer, but high-grade disease can progress.",
+      "western_context_zh": "子宮頸表面細胞的癌前異常，通常依活檢分為 CIN 1–3；不是癌症，但高級別病變可能進展。",
+      "western_context_en": "Precancerous abnormality of cervical surface cells, generally graded CIN 1–3 on biopsy; it is not cancer, but high-grade disease can progress.",
+      "western_pathology_zh": "持續高危型 HPV 感染可導致子宮頸細胞逐步出現異型與上皮內病變。",
+      "western_pathology_en": "Persistent high-risk HPV infection can drive progressive cellular atypia and intraepithelial lesions of the cervix.",
+      "etiology_zh": "持續高危型 HPV 感染可導致子宮頸細胞逐步出現異型與上皮內病變。",
+      "etiology_en": "Persistent high-risk HPV infection can drive progressive cellular atypia and intraepithelial lesions of the cervix.",
+      "risk_factors_zh": [
+        {
+          "factor": "持續高危型 HPV 感染",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NCI — HPV and Pap Test Results: Next Steps after an Abnormal Test"
+        },
+        {
+          "factor": "吸菸",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NCI — HPV and Pap Test Results: Next Steps after an Abnormal Test"
+        },
+        {
+          "factor": "免疫功能低下",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NCI — HPV and Pap Test Results: Next Steps after an Abnormal Test"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Persistent high-risk HPV infection",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NCI — HPV and Pap Test Results: Next Steps after an Abnormal Test"
+        },
+        {
+          "factor": "Smoking",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NCI — HPV and Pap Test Results: Next Steps after an Abnormal Test"
+        },
+        {
+          "factor": "Immunocompromise",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NCI — HPV and Pap Test Results: Next Steps after an Abnormal Test"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "性交後或不明原因陰道出血",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速婦科評估，不以針灸處理出血",
+          "rationale": "需排除侵襲癌或其他婦科病因",
+          "source": "NCI — HPV and Pap Test Results: Next Steps after an Abnormal Test"
+        },
+        {
+          "finding": "追蹤活檢或切除治療逾期",
+          "urgency_level": "urgent",
+          "recommended_action": "儘速聯絡婦科完成風險分層與處置",
+          "rationale": "高級別病變可能進展且常無症狀",
+          "source": "NCI — HPV and Pap Test Results: Next Steps after an Abnormal Test"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Postcoital or unexplained vaginal bleeding",
+          "urgency_level": "urgent",
+          "recommended_action": "Obtain prompt gynecologic assessment; do not treat the bleeding with acupuncture",
+          "rationale": "Invasive cancer or another gynecologic cause must be excluded",
+          "source": "NCI — HPV and Pap Test Results: Next Steps after an Abnormal Test"
+        },
+        {
+          "finding": "Overdue biopsy follow-up or excisional treatment",
+          "urgency_level": "urgent",
+          "recommended_action": "Contact gynecology promptly for risk stratification and management",
+          "rationale": "High-grade lesions can progress and are often asymptomatic",
+          "source": "NCI — HPV and Pap Test Results: Next Steps after an Abnormal Test"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "不能治療或清除 CIN／HPV；僅可處理檢查或手術前後的焦慮、疼痛等輔助症狀。",
+        "cannot_treat": "不能清除高危型 HPV、逆轉 CIN 或預防癌症進展。",
+        "precautions": "不得針刺活動性出血或感染區；術後依婦科限制調整。",
+        "co_management": "必須由婦科依 HPV、細胞學與活檢結果持續追蹤。",
+        "evidence": "unknown",
+        "source": "NCI — HPV and Pap Test Results: Next Steps after an Abnormal Test",
+        "note": "未核實可支持病種療效宣稱的針灸臨床指引；此欄僅界定輔助範圍與共同照護。"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Cannot treat or clear CIN/HPV; it may only support anxiety, pain, or other symptoms around evaluation and procedures.",
+        "cannot_treat": "Cannot clear high-risk HPV, reverse CIN, or prevent cancer progression.",
+        "precautions": "Do not needle through active bleeding or infection; follow post-procedure gynecologic restrictions.",
+        "co_management": "Ongoing gynecologic follow-up based on HPV, cytology, and biopsy findings is required.",
+        "evidence": "unknown",
+        "source": "NCI — HPV and Pap Test Results: Next Steps after an Abnormal Test",
+        "note": "No condition-specific acupuncture guideline supporting an efficacy claim was verified; this entry only defines adjunctive scope and co-management."
+      },
+      "sources": [
+        {
+          "authority": "NCI",
+          "title": "HPV and Pap Test Results: Next Steps after an Abnormal Test",
+          "url": "https://www.cancer.gov/types/cervical/screening/abnormal-hpv-pap-test-results",
+          "supports_fields": [
+            "summary",
+            "western_context",
+            "western_pathology",
+            "etiology",
+            "risk_factors",
+            "red_flags",
+            "acupuncture_scope_boundary",
+            "co_management"
+          ]
+        }
+      ],
+      "field_sources": {
+        "summary_zh": [
+          "https://www.cancer.gov/types/cervical/screening/abnormal-hpv-pap-test-results"
+        ],
+        "summary_en": [
+          "https://www.cancer.gov/types/cervical/screening/abnormal-hpv-pap-test-results"
+        ],
+        "western_context_zh": [
+          "https://www.cancer.gov/types/cervical/screening/abnormal-hpv-pap-test-results"
+        ],
+        "western_context_en": [
+          "https://www.cancer.gov/types/cervical/screening/abnormal-hpv-pap-test-results"
+        ],
+        "western_pathology_zh": [
+          "https://www.cancer.gov/types/cervical/screening/abnormal-hpv-pap-test-results"
+        ],
+        "western_pathology_en": [
+          "https://www.cancer.gov/types/cervical/screening/abnormal-hpv-pap-test-results"
+        ],
+        "etiology_zh": [
+          "https://www.cancer.gov/types/cervical/screening/abnormal-hpv-pap-test-results"
+        ],
+        "etiology_en": [
+          "https://www.cancer.gov/types/cervical/screening/abnormal-hpv-pap-test-results"
+        ],
+        "risk_factors_zh": [
+          "https://www.cancer.gov/types/cervical/screening/abnormal-hpv-pap-test-results"
+        ],
+        "risk_factors_en": [
+          "https://www.cancer.gov/types/cervical/screening/abnormal-hpv-pap-test-results"
+        ],
+        "red_flags_zh": [
+          "https://www.cancer.gov/types/cervical/screening/abnormal-hpv-pap-test-results"
+        ],
+        "red_flags_en": [
+          "https://www.cancer.gov/types/cervical/screening/abnormal-hpv-pap-test-results"
+        ],
+        "acupuncture_scope_zh": [
+          "https://www.cancer.gov/types/cervical/screening/abnormal-hpv-pap-test-results"
+        ],
+        "acupuncture_scope_en": [
+          "https://www.cancer.gov/types/cervical/screening/abnormal-hpv-pap-test-results"
+        ]
+      },
+      "structured_relation_seeds": [],
+      "crossrefs_auto_resolved": false,
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    },
+    {
+      "request_id": "CR-010",
+      "batch": "06",
+      "live_rank": 50,
+      "id": "cond.cervical_insufficiency",
+      "name_zh": "子宮頸閉鎖不全",
+      "name_en": "Cervical Insufficiency",
+      "category": "gyn_fertility",
+      "merge_mode": "EXISTING_ENRICH",
+      "live_maturity": "SKELETON",
+      "fill_targets": [
+        "summary",
+        "western_context",
+        "western_pathology",
+        "etiology",
+        "risk_factors",
+        "red_flags",
+        "acupuncture_scope",
+        "sources",
+        "field_sources"
+      ],
+      "summary_zh": "妊娠中期子宮頸可能在缺乏明顯宮縮下提早縮短或擴張，增加晚期流產與早產風險。",
+      "summary_en": "Premature cervical shortening or dilation in mid-pregnancy, often without clear contractions, increasing risk of late miscarriage and preterm birth.",
+      "western_context_zh": "妊娠中期子宮頸可能在缺乏明顯宮縮下提早縮短或擴張，增加晚期流產與早產風險。",
+      "western_context_en": "Premature cervical shortening or dilation in mid-pregnancy, often without clear contractions, increasing risk of late miscarriage and preterm birth.",
+      "western_pathology_zh": "子宮頸結構或功能無法在妊娠負荷下維持閉合；診斷依病史、檢查與超音波綜合判斷。",
+      "western_pathology_en": "Cervical structure or function fails to remain closed under pregnancy load; diagnosis integrates history, examination, and ultrasound.",
+      "etiology_zh": "子宮頸結構或功能無法在妊娠負荷下維持閉合；診斷依病史、檢查與超音波綜合判斷。",
+      "etiology_en": "Cervical structure or function fails to remain closed under pregnancy load; diagnosis integrates history, examination, and ultrasound.",
+      "risk_factors_zh": [
+        {
+          "factor": "既往無痛性妊娠中期流產或早產",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "RCOG — Cervical stitch"
+        },
+        {
+          "factor": "既往子宮頸手術或創傷",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "RCOG — Cervical stitch"
+        },
+        {
+          "factor": "先天性子宮或子宮頸異常",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "RCOG — Cervical stitch"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Prior painless mid-trimester loss or preterm birth",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "RCOG — Cervical stitch"
+        },
+        {
+          "factor": "Prior cervical surgery or trauma",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "RCOG — Cervical stitch"
+        },
+        {
+          "factor": "Congenital uterine or cervical anomaly",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "RCOG — Cervical stitch"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "陰道大量流水、出血、規律宮縮或骨盆壓力增加",
+          "urgency_level": "same_day",
+          "recommended_action": "立即聯絡產科分娩單位接受當日評估",
+          "rationale": "可能為破水、早產或子宮頸進一步擴張",
+          "source": "RCOG — Cervical stitch"
+        },
+        {
+          "finding": "發燒、惡臭分泌物或劇烈腹痛",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診／產科評估",
+          "rationale": "可能為羊膜腔感染或其他妊娠急症",
+          "source": "RCOG — Cervical stitch"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Gush of fluid, bleeding, regular contractions, or increasing pelvic pressure",
+          "urgency_level": "same_day",
+          "recommended_action": "Contact obstetric triage immediately for same-day assessment",
+          "rationale": "May indicate membrane rupture, preterm labor, or further cervical dilation",
+          "source": "RCOG — Cervical stitch"
+        },
+        {
+          "finding": "Fever, foul discharge, or severe abdominal pain",
+          "urgency_level": "emergency",
+          "recommended_action": "Seek immediate emergency/obstetric assessment",
+          "rationale": "May indicate intra-amniotic infection or another pregnancy emergency",
+          "source": "RCOG — Cervical stitch"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "針灸不能加固子宮頸或預防早產；只有產科明確同意時才可輔助處理一般妊娠不適。",
+        "cannot_treat": "不能使子宮頸閉合、替代環紮或預防早產。",
+        "precautions": "疑似宮縮、出血、破水或感染時不治療；避免任何可能刺激子宮活動的處置。",
+        "co_management": "由高危產科／母胎醫學決定超音波監測、黃體素或環紮等管理。",
+        "evidence": "unknown",
+        "source": "RCOG — Cervical stitch",
+        "note": "未核實可支持病種療效宣稱的針灸臨床指引；此欄僅界定輔助範圍與共同照護。"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Acupuncture cannot reinforce the cervix or prevent preterm birth; it may support ordinary pregnancy discomfort only with explicit obstetric agreement.",
+        "cannot_treat": "Cannot close the cervix, replace cerclage, or prevent preterm birth.",
+        "precautions": "Do not treat when contractions, bleeding, membrane rupture, or infection is suspected; avoid any intervention that may stimulate uterine activity.",
+        "co_management": "Maternal-fetal medicine/obstetrics directs ultrasound surveillance, progesterone, cerclage, or other management.",
+        "evidence": "unknown",
+        "source": "RCOG — Cervical stitch",
+        "note": "No condition-specific acupuncture guideline supporting an efficacy claim was verified; this entry only defines adjunctive scope and co-management."
+      },
+      "sources": [
+        {
+          "authority": "RCOG",
+          "title": "Cervical stitch",
+          "url": "https://www.rcog.org.uk/for-the-public/browse-our-patient-information/cervical-stitch/",
+          "supports_fields": [
+            "summary",
+            "western_context",
+            "western_pathology",
+            "etiology",
+            "risk_factors",
+            "red_flags",
+            "acupuncture_scope_boundary",
+            "co_management"
+          ]
+        }
+      ],
+      "field_sources": {
+        "summary_zh": [
+          "https://www.rcog.org.uk/for-the-public/browse-our-patient-information/cervical-stitch/"
+        ],
+        "summary_en": [
+          "https://www.rcog.org.uk/for-the-public/browse-our-patient-information/cervical-stitch/"
+        ],
+        "western_context_zh": [
+          "https://www.rcog.org.uk/for-the-public/browse-our-patient-information/cervical-stitch/"
+        ],
+        "western_context_en": [
+          "https://www.rcog.org.uk/for-the-public/browse-our-patient-information/cervical-stitch/"
+        ],
+        "western_pathology_zh": [
+          "https://www.rcog.org.uk/for-the-public/browse-our-patient-information/cervical-stitch/"
+        ],
+        "western_pathology_en": [
+          "https://www.rcog.org.uk/for-the-public/browse-our-patient-information/cervical-stitch/"
+        ],
+        "etiology_zh": [
+          "https://www.rcog.org.uk/for-the-public/browse-our-patient-information/cervical-stitch/"
+        ],
+        "etiology_en": [
+          "https://www.rcog.org.uk/for-the-public/browse-our-patient-information/cervical-stitch/"
+        ],
+        "risk_factors_zh": [
+          "https://www.rcog.org.uk/for-the-public/browse-our-patient-information/cervical-stitch/"
+        ],
+        "risk_factors_en": [
+          "https://www.rcog.org.uk/for-the-public/browse-our-patient-information/cervical-stitch/"
+        ],
+        "red_flags_zh": [
+          "https://www.rcog.org.uk/for-the-public/browse-our-patient-information/cervical-stitch/"
+        ],
+        "red_flags_en": [
+          "https://www.rcog.org.uk/for-the-public/browse-our-patient-information/cervical-stitch/"
+        ],
+        "acupuncture_scope_zh": [
+          "https://www.rcog.org.uk/for-the-public/browse-our-patient-information/cervical-stitch/"
+        ],
+        "acupuncture_scope_en": [
+          "https://www.rcog.org.uk/for-the-public/browse-our-patient-information/cervical-stitch/"
+        ]
+      },
+      "structured_relation_seeds": [],
+      "crossrefs_auto_resolved": false,
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    },
+    {
+      "request_id": "CR-010",
+      "batch": "06",
+      "live_rank": 51,
+      "id": "cond.cervicitis",
+      "name_zh": "子宮頸炎",
+      "name_en": "Cervicitis",
+      "category": "gyn_fertility",
+      "merge_mode": "EXISTING_ENRICH",
+      "live_maturity": "SKELETON",
+      "fill_targets": [
+        "summary",
+        "western_context",
+        "western_pathology",
+        "etiology",
+        "risk_factors",
+        "red_flags",
+        "acupuncture_scope",
+        "sources",
+        "field_sources"
+      ],
+      "summary_zh": "子宮頸發炎，可表現為膿性分泌物或接觸性出血；常需檢測披衣菌、淋病及其他感染。",
+      "summary_en": "Inflammation of the cervix that may cause mucopurulent discharge or contact bleeding; testing for chlamydia, gonorrhea, and other infections is often needed.",
+      "western_context_zh": "子宮頸發炎，可表現為膿性分泌物或接觸性出血；常需檢測披衣菌、淋病及其他感染。",
+      "western_context_en": "Inflammation of the cervix that may cause mucopurulent discharge or contact bleeding; testing for chlamydia, gonorrhea, and other infections is often needed.",
+      "western_pathology_zh": "感染或非感染性刺激造成子宮頸上皮發炎與脆弱；未治療的性傳染感染可能上行形成骨盆腔炎。",
+      "western_pathology_en": "Infectious or noninfectious irritation inflames and friabilizes cervical epithelium; untreated sexually transmitted infection may ascend and cause PID.",
+      "etiology_zh": "感染或非感染性刺激造成子宮頸上皮發炎與脆弱；未治療的性傳染感染可能上行形成骨盆腔炎。",
+      "etiology_en": "Infectious or noninfectious irritation inflames and friabilizes cervical epithelium; untreated sexually transmitted infection may ascend and cause PID.",
+      "risk_factors_zh": [
+        {
+          "factor": "未使用保險套的新伴侶或多重伴侶",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "CDC — Urethritis and Cervicitis — STI Treatment Guidelines"
+        },
+        {
+          "factor": "既往性傳染感染",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "CDC — Urethritis and Cervicitis — STI Treatment Guidelines"
+        },
+        {
+          "factor": "陰道沖洗或持續化學刺激",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "CDC — Urethritis and Cervicitis — STI Treatment Guidelines"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "New or multiple partners without barrier protection",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "CDC — Urethritis and Cervicitis — STI Treatment Guidelines"
+        },
+        {
+          "factor": "Prior sexually transmitted infection",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "CDC — Urethritis and Cervicitis — STI Treatment Guidelines"
+        },
+        {
+          "factor": "Douching or persistent chemical irritation",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "CDC — Urethritis and Cervicitis — STI Treatment Guidelines"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "下腹／骨盆痛合併發燒、噁心或子宮頸舉痛",
+          "urgency_level": "same_day",
+          "recommended_action": "當日評估骨盆腔炎並開始適當治療",
+          "rationale": "上行感染可能損害生育力或造成全身感染",
+          "source": "CDC — Urethritis and Cervicitis — STI Treatment Guidelines"
+        },
+        {
+          "finding": "懷孕時出血、疼痛或疑似感染",
+          "urgency_level": "same_day",
+          "recommended_action": "當日聯絡產科",
+          "rationale": "妊娠感染與出血需產科風險評估",
+          "source": "CDC — Urethritis and Cervicitis — STI Treatment Guidelines"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Pelvic/lower abdominal pain with fever, nausea, or cervical-motion tenderness",
+          "urgency_level": "same_day",
+          "recommended_action": "Obtain same-day assessment for PID and appropriate treatment",
+          "rationale": "Ascending infection can harm fertility or cause systemic illness",
+          "source": "CDC — Urethritis and Cervicitis — STI Treatment Guidelines"
+        },
+        {
+          "finding": "Bleeding, pain, or suspected infection during pregnancy",
+          "urgency_level": "same_day",
+          "recommended_action": "Contact obstetric care the same day",
+          "rationale": "Infection and bleeding in pregnancy require obstetric risk assessment",
+          "source": "CDC — Urethritis and Cervicitis — STI Treatment Guidelines"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "針灸不能清除感染；可在抗感染處置後輔助處理疼痛或焦慮，但不可延誤檢測與伴侶管理。",
+        "cannot_treat": "不能根除感染、替代抗生素或完成伴侶治療。",
+        "precautions": "急性感染、發燒或未明出血時暫緩；不在發炎生殖器區域操作。",
+        "co_management": "與婦科／性健康服務共同管理，確保檢測、抗生素及伴侶處置。",
+        "evidence": "unknown",
+        "source": "CDC — Urethritis and Cervicitis — STI Treatment Guidelines",
+        "note": "未核實可支持病種療效宣稱的針灸臨床指引；此欄僅界定輔助範圍與共同照護。"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Acupuncture cannot clear infection; after infectious management it may support pain or anxiety but must not delay testing or partner management.",
+        "cannot_treat": "Cannot eradicate infection, replace antibiotics, or provide partner treatment.",
+        "precautions": "Defer with acute infection, fever, or unexplained bleeding; do not needle inflamed genital tissue.",
+        "co_management": "Co-manage with gynecology/sexual-health services for testing, antibiotics, and partner management.",
+        "evidence": "unknown",
+        "source": "CDC — Urethritis and Cervicitis — STI Treatment Guidelines",
+        "note": "No condition-specific acupuncture guideline supporting an efficacy claim was verified; this entry only defines adjunctive scope and co-management."
+      },
+      "sources": [
+        {
+          "authority": "CDC",
+          "title": "Urethritis and Cervicitis — STI Treatment Guidelines",
+          "url": "https://www.cdc.gov/std/treatment-guidelines/urethritis-and-cervicitis.htm",
+          "supports_fields": [
+            "summary",
+            "western_context",
+            "western_pathology",
+            "etiology",
+            "risk_factors",
+            "red_flags",
+            "acupuncture_scope_boundary",
+            "co_management"
+          ]
+        }
+      ],
+      "field_sources": {
+        "summary_zh": [
+          "https://www.cdc.gov/std/treatment-guidelines/urethritis-and-cervicitis.htm"
+        ],
+        "summary_en": [
+          "https://www.cdc.gov/std/treatment-guidelines/urethritis-and-cervicitis.htm"
+        ],
+        "western_context_zh": [
+          "https://www.cdc.gov/std/treatment-guidelines/urethritis-and-cervicitis.htm"
+        ],
+        "western_context_en": [
+          "https://www.cdc.gov/std/treatment-guidelines/urethritis-and-cervicitis.htm"
+        ],
+        "western_pathology_zh": [
+          "https://www.cdc.gov/std/treatment-guidelines/urethritis-and-cervicitis.htm"
+        ],
+        "western_pathology_en": [
+          "https://www.cdc.gov/std/treatment-guidelines/urethritis-and-cervicitis.htm"
+        ],
+        "etiology_zh": [
+          "https://www.cdc.gov/std/treatment-guidelines/urethritis-and-cervicitis.htm"
+        ],
+        "etiology_en": [
+          "https://www.cdc.gov/std/treatment-guidelines/urethritis-and-cervicitis.htm"
+        ],
+        "risk_factors_zh": [
+          "https://www.cdc.gov/std/treatment-guidelines/urethritis-and-cervicitis.htm"
+        ],
+        "risk_factors_en": [
+          "https://www.cdc.gov/std/treatment-guidelines/urethritis-and-cervicitis.htm"
+        ],
+        "red_flags_zh": [
+          "https://www.cdc.gov/std/treatment-guidelines/urethritis-and-cervicitis.htm"
+        ],
+        "red_flags_en": [
+          "https://www.cdc.gov/std/treatment-guidelines/urethritis-and-cervicitis.htm"
+        ],
+        "acupuncture_scope_zh": [
+          "https://www.cdc.gov/std/treatment-guidelines/urethritis-and-cervicitis.htm"
+        ],
+        "acupuncture_scope_en": [
+          "https://www.cdc.gov/std/treatment-guidelines/urethritis-and-cervicitis.htm"
+        ]
+      },
+      "structured_relation_seeds": [],
+      "crossrefs_auto_resolved": false,
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    },
+    {
+      "request_id": "CR-010",
+      "batch": "06",
+      "live_rank": 52,
+      "id": "cond.cervicogenic_headache",
+      "name_zh": "頸源性頭痛",
+      "name_en": "Cervicogenic Headache",
+      "category": "pain_msk",
+      "merge_mode": "EXISTING_ENRICH",
+      "live_maturity": "SKELETON",
+      "fill_targets": [
+        "summary",
+        "western_context",
+        "western_pathology",
+        "etiology",
+        "risk_factors",
+        "red_flags",
+        "acupuncture_scope",
+        "sources",
+        "field_sources"
+      ],
+      "summary_zh": "由頸椎或頸部軟組織病變轉移至頭部的次發性頭痛，通常與頸部活動受限或特定動作誘發相關。",
+      "summary_en": "A secondary headache referred from cervical spine or neck soft-tissue pathology, often associated with restricted neck motion or provocation by specific movement.",
+      "western_context_zh": "由頸椎或頸部軟組織病變轉移至頭部的次發性頭痛，通常與頸部活動受限或特定動作誘發相關。",
+      "western_context_en": "A secondary headache referred from cervical spine or neck soft-tissue pathology, often associated with restricted neck motion or provocation by specific movement.",
+      "western_pathology_zh": "上頸段結構的傷害性輸入在三叉神經－頸髓複合體匯聚，使疼痛被感知於頭部。",
+      "western_pathology_en": "Nociceptive input from upper cervical structures converges in the trigeminocervical complex, producing pain perceived in the head.",
+      "etiology_zh": "上頸段結構的傷害性輸入在三叉神經－頸髓複合體匯聚，使疼痛被感知於頭部。",
+      "etiology_en": "Nociceptive input from upper cervical structures converges in the trigeminocervical complex, producing pain perceived in the head.",
+      "risk_factors_zh": [
+        {
+          "factor": "頸部外傷",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "AMF — What Is Cervicogenic Headache?"
+        },
+        {
+          "factor": "頸椎退化或關節病變",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "AMF — What Is Cervicogenic Headache?"
+        },
+        {
+          "factor": "持續受限姿勢與頸部負荷",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "AMF — What Is Cervicogenic Headache?"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Neck trauma",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "AMF — What Is Cervicogenic Headache?"
+        },
+        {
+          "factor": "Cervical degeneration or joint disease",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "AMF — What Is Cervicogenic Headache?"
+        },
+        {
+          "factor": "Sustained constrained posture and neck loading",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "AMF — What Is Cervicogenic Headache?"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "雷鳴樣首次劇烈頭痛",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診",
+          "rationale": "需排除蛛網膜下腔出血等危急原因",
+          "source": "AMF — What Is Cervicogenic Headache?"
+        },
+        {
+          "finding": "發燒、癌症史、進行性神經缺損或近期重大外傷",
+          "urgency_level": "urgent",
+          "recommended_action": "停止常規治療並儘速醫療評估",
+          "rationale": "可能為感染、腫瘤、骨折或脊髓／神經病變",
+          "source": "AMF — What Is Cervicogenic Headache?"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "First severe thunderclap headache",
+          "urgency_level": "emergency",
+          "recommended_action": "Seek emergency care immediately",
+          "rationale": "A critical cause such as subarachnoid hemorrhage must be excluded",
+          "source": "AMF — What Is Cervicogenic Headache?"
+        },
+        {
+          "finding": "Fever, cancer history, progressive neurologic deficit, or recent major trauma",
+          "urgency_level": "urgent",
+          "recommended_action": "Stop routine treatment and obtain prompt medical assessment",
+          "rationale": "May indicate infection, tumor, fracture, or spinal/neurologic disease",
+          "source": "AMF — What Is Cervicogenic Headache?"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "可作為已排除危險病因後之疼痛與頸部功能管理的輔助手段；不可用標籤掩蓋其他次發性頭痛。",
+        "cannot_treat": "不能在未排除危險次發病因前把頭痛視為單純肌骨疼痛。",
+        "precautions": "先做神經與頸椎安全篩檢；疑不穩定、骨折、血管病變或脊髓病時避免頸部強刺激。",
+        "co_management": "持續或非典型病例與基層醫療、神經科或物理治療共同管理。",
+        "evidence": "unknown",
+        "source": "AMF — What Is Cervicogenic Headache?",
+        "note": "未核實可支持病種療效宣稱的針灸臨床指引；此欄僅界定輔助範圍與共同照護。"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "May be an adjunct for pain and neck-function management after dangerous causes are excluded; the label must not obscure another secondary headache.",
+        "cannot_treat": "Cannot treat the headache as uncomplicated musculoskeletal pain before dangerous secondary causes are excluded.",
+        "precautions": "Screen neurologic and cervical safety first; avoid strong cervical stimulation when instability, fracture, vascular disease, or myelopathy is possible.",
+        "co_management": "Co-manage persistent or atypical cases with primary care, neurology, or physical therapy.",
+        "evidence": "unknown",
+        "source": "AMF — What Is Cervicogenic Headache?",
+        "note": "No condition-specific acupuncture guideline supporting an efficacy claim was verified; this entry only defines adjunctive scope and co-management."
+      },
+      "sources": [
+        {
+          "authority": "AMF",
+          "title": "What Is Cervicogenic Headache?",
+          "url": "https://americanmigrainefoundation.org/resource-library/cervicogenic-headache/",
+          "supports_fields": [
+            "summary",
+            "western_context",
+            "western_pathology",
+            "etiology",
+            "risk_factors",
+            "red_flags",
+            "acupuncture_scope_boundary",
+            "co_management"
+          ]
+        }
+      ],
+      "field_sources": {
+        "summary_zh": [
+          "https://americanmigrainefoundation.org/resource-library/cervicogenic-headache/"
+        ],
+        "summary_en": [
+          "https://americanmigrainefoundation.org/resource-library/cervicogenic-headache/"
+        ],
+        "western_context_zh": [
+          "https://americanmigrainefoundation.org/resource-library/cervicogenic-headache/"
+        ],
+        "western_context_en": [
+          "https://americanmigrainefoundation.org/resource-library/cervicogenic-headache/"
+        ],
+        "western_pathology_zh": [
+          "https://americanmigrainefoundation.org/resource-library/cervicogenic-headache/"
+        ],
+        "western_pathology_en": [
+          "https://americanmigrainefoundation.org/resource-library/cervicogenic-headache/"
+        ],
+        "etiology_zh": [
+          "https://americanmigrainefoundation.org/resource-library/cervicogenic-headache/"
+        ],
+        "etiology_en": [
+          "https://americanmigrainefoundation.org/resource-library/cervicogenic-headache/"
+        ],
+        "risk_factors_zh": [
+          "https://americanmigrainefoundation.org/resource-library/cervicogenic-headache/"
+        ],
+        "risk_factors_en": [
+          "https://americanmigrainefoundation.org/resource-library/cervicogenic-headache/"
+        ],
+        "red_flags_zh": [
+          "https://americanmigrainefoundation.org/resource-library/cervicogenic-headache/"
+        ],
+        "red_flags_en": [
+          "https://americanmigrainefoundation.org/resource-library/cervicogenic-headache/"
+        ],
+        "acupuncture_scope_zh": [
+          "https://americanmigrainefoundation.org/resource-library/cervicogenic-headache/"
+        ],
+        "acupuncture_scope_en": [
+          "https://americanmigrainefoundation.org/resource-library/cervicogenic-headache/"
+        ]
+      },
+      "structured_relation_seeds": [],
+      "crossrefs_auto_resolved": false,
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    },
+    {
+      "request_id": "CR-010",
+      "batch": "06",
+      "live_rank": 53,
+      "id": "cond.chronic_bronchitis",
+      "name_zh": "慢性支氣管炎",
+      "name_en": "Chronic Bronchitis",
+      "category": "respiratory",
+      "merge_mode": "EXISTING_ENRICH",
+      "live_maturity": "SKELETON",
+      "fill_targets": [
+        "summary",
+        "western_context",
+        "western_pathology",
+        "etiology",
+        "risk_factors",
+        "red_flags",
+        "acupuncture_scope",
+        "sources",
+        "field_sources"
+      ],
+      "summary_zh": "長期支氣管發炎與黏液過度分泌造成持續咳嗽、痰與呼吸困難，常屬慢性阻塞性肺病表型。",
+      "summary_en": "Long-term bronchial inflammation and mucus hypersecretion causing persistent cough, sputum, and breathlessness, commonly a COPD phenotype.",
+      "western_context_zh": "長期支氣管發炎與黏液過度分泌造成持續咳嗽、痰與呼吸困難，常屬慢性阻塞性肺病表型。",
+      "western_context_en": "Long-term bronchial inflammation and mucus hypersecretion causing persistent cough, sputum, and breathlessness, commonly a COPD phenotype.",
+      "western_pathology_zh": "反覆吸入刺激物引起氣道發炎、杯狀細胞增生、黏液滯留與氣流受限。",
+      "western_pathology_en": "Repeated inhalational injury causes airway inflammation, goblet-cell hyperplasia, mucus retention, and airflow limitation.",
+      "etiology_zh": "反覆吸入刺激物引起氣道發炎、杯狀細胞增生、黏液滯留與氣流受限。",
+      "etiology_en": "Repeated inhalational injury causes airway inflammation, goblet-cell hyperplasia, mucus retention, and airflow limitation.",
+      "risk_factors_zh": [
+        {
+          "factor": "吸菸或二手菸",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI — What Is COPD?"
+        },
+        {
+          "factor": "職業粉塵與化學煙霧",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI — What Is COPD?"
+        },
+        {
+          "factor": "室內外空氣污染",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI — What Is COPD?"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Smoking or secondhand smoke",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI — What Is COPD?"
+        },
+        {
+          "factor": "Occupational dusts and chemical fumes",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI — What Is COPD?"
+        },
+        {
+          "factor": "Indoor or outdoor air pollution",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NHLBI — What Is COPD?"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "靜息呼吸困難、發紺、意識改變或胸痛",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診",
+          "rationale": "可能為嚴重急性惡化、低氧或心肺急症",
+          "source": "NHLBI — What Is COPD?"
+        },
+        {
+          "finding": "痰量或膿性突然增加並伴發燒",
+          "urgency_level": "same_day",
+          "recommended_action": "當日醫療評估",
+          "rationale": "可能為感染性急性惡化",
+          "source": "NHLBI — What Is COPD?"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Breathlessness at rest, cyanosis, altered mental status, or chest pain",
+          "urgency_level": "emergency",
+          "recommended_action": "Seek emergency care immediately",
+          "rationale": "May represent severe exacerbation, hypoxemia, or an acute cardiopulmonary problem",
+          "source": "NHLBI — What Is COPD?"
+        },
+        {
+          "finding": "Sudden increase in sputum volume or purulence with fever",
+          "urgency_level": "same_day",
+          "recommended_action": "Obtain same-day medical assessment",
+          "rationale": "May indicate an infectious exacerbation",
+          "source": "NHLBI — What Is COPD?"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "可輔助處理穩定期呼吸困難感、焦慮或戒菸支持；不可取代吸入藥、氧療或急性惡化處置。",
+        "cannot_treat": "不能逆轉氣流受限、治療低氧或處理急性惡化。",
+        "precautions": "急性呼吸窘迫、低氧或感染惡化時不進行常規治療；採能呼吸舒適的體位。",
+        "co_management": "與基層醫療／胸腔科共同管理肺功能、藥物、疫苗與肺復健。",
+        "evidence": "unknown",
+        "source": "NHLBI — What Is COPD?",
+        "note": "未核實可支持病種療效宣稱的針灸臨床指引；此欄僅界定輔助範圍與共同照護。"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "May support stable breathlessness perception, anxiety, or smoking cessation; it cannot replace inhaled therapy, oxygen, or exacerbation care.",
+        "cannot_treat": "Cannot reverse airflow limitation, treat hypoxemia, or manage an acute exacerbation.",
+        "precautions": "Defer routine treatment during acute respiratory distress, hypoxemia, or worsening infection; use a breathing-comfortable position.",
+        "co_management": "Co-manage pulmonary function, medication, vaccination, and rehabilitation with primary care/pulmonology.",
+        "evidence": "unknown",
+        "source": "NHLBI — What Is COPD?",
+        "note": "No condition-specific acupuncture guideline supporting an efficacy claim was verified; this entry only defines adjunctive scope and co-management."
+      },
+      "sources": [
+        {
+          "authority": "NHLBI",
+          "title": "What Is COPD?",
+          "url": "https://www.nhlbi.nih.gov/health/copd",
+          "supports_fields": [
+            "summary",
+            "western_context",
+            "western_pathology",
+            "etiology",
+            "risk_factors",
+            "red_flags",
+            "acupuncture_scope_boundary",
+            "co_management"
+          ]
+        }
+      ],
+      "field_sources": {
+        "summary_zh": [
+          "https://www.nhlbi.nih.gov/health/copd"
+        ],
+        "summary_en": [
+          "https://www.nhlbi.nih.gov/health/copd"
+        ],
+        "western_context_zh": [
+          "https://www.nhlbi.nih.gov/health/copd"
+        ],
+        "western_context_en": [
+          "https://www.nhlbi.nih.gov/health/copd"
+        ],
+        "western_pathology_zh": [
+          "https://www.nhlbi.nih.gov/health/copd"
+        ],
+        "western_pathology_en": [
+          "https://www.nhlbi.nih.gov/health/copd"
+        ],
+        "etiology_zh": [
+          "https://www.nhlbi.nih.gov/health/copd"
+        ],
+        "etiology_en": [
+          "https://www.nhlbi.nih.gov/health/copd"
+        ],
+        "risk_factors_zh": [
+          "https://www.nhlbi.nih.gov/health/copd"
+        ],
+        "risk_factors_en": [
+          "https://www.nhlbi.nih.gov/health/copd"
+        ],
+        "red_flags_zh": [
+          "https://www.nhlbi.nih.gov/health/copd"
+        ],
+        "red_flags_en": [
+          "https://www.nhlbi.nih.gov/health/copd"
+        ],
+        "acupuncture_scope_zh": [
+          "https://www.nhlbi.nih.gov/health/copd"
+        ],
+        "acupuncture_scope_en": [
+          "https://www.nhlbi.nih.gov/health/copd"
+        ]
+      },
+      "structured_relation_seeds": [],
+      "crossrefs_auto_resolved": false,
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    },
+    {
+      "request_id": "CR-010",
+      "batch": "06",
+      "live_rank": 54,
+      "id": "cond.chronic_hepatitis_c",
+      "name_zh": "慢性 C 型肝炎",
+      "name_en": "Chronic Hepatitis C",
+      "category": "gi",
+      "merge_mode": "EXISTING_ENRICH",
+      "live_maturity": "SKELETON",
+      "fill_targets": [
+        "summary",
+        "western_context",
+        "western_pathology",
+        "etiology",
+        "risk_factors",
+        "red_flags",
+        "acupuncture_scope",
+        "sources",
+        "field_sources"
+      ],
+      "summary_zh": "C 型肝炎病毒持續感染，可多年無症狀但逐步造成纖維化、肝硬化、肝癌與肝衰竭。",
+      "summary_en": "Persistent hepatitis C virus infection that may remain asymptomatic for years while progressing to fibrosis, cirrhosis, liver cancer, or liver failure.",
+      "western_context_zh": "C 型肝炎病毒持續感染，可多年無症狀但逐步造成纖維化、肝硬化、肝癌與肝衰竭。",
+      "western_context_en": "Persistent hepatitis C virus infection that may remain asymptomatic for years while progressing to fibrosis, cirrhosis, liver cancer, or liver failure.",
+      "western_pathology_zh": "病毒持續複製與宿主免疫反應造成慢性肝細胞損傷、發炎與纖維化。",
+      "western_pathology_en": "Ongoing viral replication and host immune responses drive chronic hepatocyte injury, inflammation, and fibrosis.",
+      "etiology_zh": "病毒持續複製與宿主免疫反應造成慢性肝細胞損傷、發炎與纖維化。",
+      "etiology_en": "Ongoing viral replication and host immune responses drive chronic hepatocyte injury, inflammation, and fibrosis.",
+      "risk_factors_zh": [
+        {
+          "factor": "共用注射器具",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "CDC — Hepatitis C Basics"
+        },
+        {
+          "factor": "1992 年前輸血或未篩檢血液暴露",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "CDC — Hepatitis C Basics"
+        },
+        {
+          "factor": "不安全醫療、刺青或針具暴露",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "CDC — Hepatitis C Basics"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Sharing injection equipment",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "CDC — Hepatitis C Basics"
+        },
+        {
+          "factor": "Transfusion before 1992 or exposure to unscreened blood",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "CDC — Hepatitis C Basics"
+        },
+        {
+          "factor": "Unsafe medical, tattoo, or needle exposure",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "CDC — Hepatitis C Basics"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "吐血、黑便、意識混亂或明顯腹脹",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診",
+          "rationale": "可能為肝硬化失代償、出血或肝性腦病",
+          "source": "CDC — Hepatitis C Basics"
+        },
+        {
+          "finding": "黃疸快速加重、持續嘔吐或右上腹劇痛",
+          "urgency_level": "same_day",
+          "recommended_action": "當日醫療評估",
+          "rationale": "可能為急性肝損傷或其他肝膽急症",
+          "source": "CDC — Hepatitis C Basics"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Hematemesis, black stool, confusion, or marked abdominal distension",
+          "urgency_level": "emergency",
+          "recommended_action": "Seek emergency care immediately",
+          "rationale": "May indicate decompensated cirrhosis, bleeding, or hepatic encephalopathy",
+          "source": "CDC — Hepatitis C Basics"
+        },
+        {
+          "finding": "Rapidly worsening jaundice, persistent vomiting, or severe right-upper-quadrant pain",
+          "urgency_level": "same_day",
+          "recommended_action": "Obtain same-day medical assessment",
+          "rationale": "May indicate acute liver injury or another hepatobiliary emergency",
+          "source": "CDC — Hepatitis C Basics"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "只能輔助處理疲勞、噁心或疼痛；不能清除 HCV，也不可延誤可治癒的直接抗病毒治療。",
+        "cannot_treat": "不能清除 HCV、取代直接抗病毒藥或監測肝癌。",
+        "precautions": "有出血傾向、血小板低下、腹水或失代償肝病時避免深刺與強刺激。",
+        "co_management": "與肝病／感染科共同管理抗病毒治療、纖維化與肝癌監測。",
+        "evidence": "unknown",
+        "source": "CDC — Hepatitis C Basics",
+        "note": "未核實可支持病種療效宣稱的針灸臨床指引；此欄僅界定輔助範圍與共同照護。"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "May only support fatigue, nausea, or pain; it cannot clear HCV and must not delay curative direct-acting antiviral treatment.",
+        "cannot_treat": "Cannot clear HCV, replace direct-acting antivirals, or provide liver-cancer surveillance.",
+        "precautions": "Avoid deep or strong needling with bleeding tendency, thrombocytopenia, ascites, or decompensated liver disease.",
+        "co_management": "Co-manage antiviral therapy, fibrosis, and liver-cancer surveillance with hepatology/infectious disease.",
+        "evidence": "unknown",
+        "source": "CDC — Hepatitis C Basics",
+        "note": "No condition-specific acupuncture guideline supporting an efficacy claim was verified; this entry only defines adjunctive scope and co-management."
+      },
+      "sources": [
+        {
+          "authority": "CDC",
+          "title": "Hepatitis C Basics",
+          "url": "https://www.cdc.gov/hepatitis-c/about/index.html",
+          "supports_fields": [
+            "summary",
+            "western_context",
+            "western_pathology",
+            "etiology",
+            "risk_factors",
+            "red_flags",
+            "acupuncture_scope_boundary",
+            "co_management"
+          ]
+        }
+      ],
+      "field_sources": {
+        "summary_zh": [
+          "https://www.cdc.gov/hepatitis-c/about/index.html"
+        ],
+        "summary_en": [
+          "https://www.cdc.gov/hepatitis-c/about/index.html"
+        ],
+        "western_context_zh": [
+          "https://www.cdc.gov/hepatitis-c/about/index.html"
+        ],
+        "western_context_en": [
+          "https://www.cdc.gov/hepatitis-c/about/index.html"
+        ],
+        "western_pathology_zh": [
+          "https://www.cdc.gov/hepatitis-c/about/index.html"
+        ],
+        "western_pathology_en": [
+          "https://www.cdc.gov/hepatitis-c/about/index.html"
+        ],
+        "etiology_zh": [
+          "https://www.cdc.gov/hepatitis-c/about/index.html"
+        ],
+        "etiology_en": [
+          "https://www.cdc.gov/hepatitis-c/about/index.html"
+        ],
+        "risk_factors_zh": [
+          "https://www.cdc.gov/hepatitis-c/about/index.html"
+        ],
+        "risk_factors_en": [
+          "https://www.cdc.gov/hepatitis-c/about/index.html"
+        ],
+        "red_flags_zh": [
+          "https://www.cdc.gov/hepatitis-c/about/index.html"
+        ],
+        "red_flags_en": [
+          "https://www.cdc.gov/hepatitis-c/about/index.html"
+        ],
+        "acupuncture_scope_zh": [
+          "https://www.cdc.gov/hepatitis-c/about/index.html"
+        ],
+        "acupuncture_scope_en": [
+          "https://www.cdc.gov/hepatitis-c/about/index.html"
+        ]
+      },
+      "structured_relation_seeds": [],
+      "crossrefs_auto_resolved": false,
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    },
+    {
+      "request_id": "CR-010",
+      "batch": "06",
+      "live_rank": 55,
+      "id": "cond.chronic_open_angle_glaucoma",
+      "name_zh": "慢性開角型青光眼",
+      "name_en": "Chronic Open-Angle Glaucoma",
+      "category": "ent_eye",
+      "merge_mode": "EXISTING_ENRICH",
+      "live_maturity": "SKELETON",
+      "fill_targets": [
+        "summary",
+        "western_context",
+        "western_pathology",
+        "etiology",
+        "risk_factors",
+        "red_flags",
+        "acupuncture_scope",
+        "sources",
+        "field_sources"
+      ],
+      "summary_zh": "慢性進行性視神經病變，房角保持開放但眼壓相關損傷可逐步造成不可逆周邊視野喪失。",
+      "summary_en": "A chronic progressive optic neuropathy in which the angle remains open but pressure-related injury can cause irreversible peripheral visual-field loss.",
+      "western_context_zh": "慢性進行性視神經病變，房角保持開放但眼壓相關損傷可逐步造成不可逆周邊視野喪失。",
+      "western_context_en": "A chronic progressive optic neuropathy in which the angle remains open but pressure-related injury can cause irreversible peripheral visual-field loss.",
+      "western_pathology_zh": "房水流出阻力與眼壓相關應力損傷視神經軸突；即使眼壓不高也可能發生。",
+      "western_pathology_en": "Resistance to aqueous outflow and pressure-related stress injure optic-nerve axons; disease can also occur without elevated measured pressure.",
+      "etiology_zh": "房水流出阻力與眼壓相關應力損傷視神經軸突；即使眼壓不高也可能發生。",
+      "etiology_en": "Resistance to aqueous outflow and pressure-related stress injure optic-nerve axons; disease can also occur without elevated measured pressure.",
+      "risk_factors_zh": [
+        {
+          "factor": "年齡增加",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NEI — Types of Glaucoma"
+        },
+        {
+          "factor": "青光眼家族史",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NEI — Types of Glaucoma"
+        },
+        {
+          "factor": "黑人／非裔或西語裔族群及糖尿病／高血壓",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NEI — Types of Glaucoma"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Increasing age",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NEI — Types of Glaucoma"
+        },
+        {
+          "factor": "Family history of glaucoma",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NEI — Types of Glaucoma"
+        },
+        {
+          "factor": "Black/African or Hispanic/Latino ancestry and diabetes/hypertension",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NEI — Types of Glaucoma"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "突發劇烈眼痛、紅眼、噁心與視力模糊",
+          "urgency_level": "emergency",
+          "recommended_action": "立即眼科急診",
+          "rationale": "可能是急性閉角型青光眼而非慢性開角型病程",
+          "source": "NEI — Types of Glaucoma"
+        },
+        {
+          "finding": "新出現視野或視力快速惡化",
+          "urgency_level": "same_day",
+          "recommended_action": "當日眼科評估",
+          "rationale": "急性變化不符合典型緩慢病程，需防止不可逆視損",
+          "source": "NEI — Types of Glaucoma"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Sudden severe eye pain, red eye, nausea, and blurred vision",
+          "urgency_level": "emergency",
+          "recommended_action": "Seek emergency ophthalmic care immediately",
+          "rationale": "May be acute angle-closure glaucoma rather than the chronic open-angle course",
+          "source": "NEI — Types of Glaucoma"
+        },
+        {
+          "finding": "New rapid worsening of vision or visual field",
+          "urgency_level": "same_day",
+          "recommended_action": "Obtain same-day ophthalmic assessment",
+          "rationale": "Acute change is atypical of the slow course and irreversible loss must be prevented",
+          "source": "NEI — Types of Glaucoma"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "不能降低眼壓或阻止視神經損傷；最多輔助處理焦慮、頭頸緊張，不得取代眼藥、雷射或手術。",
+        "cannot_treat": "不能降低眼壓、恢復已喪失視野或阻止視神經損傷。",
+        "precautions": "避免眼球直接施壓及眼眶深刺；任何急性視覺改變先轉診。",
+        "co_management": "由眼科定期監測眼壓、視神經與視野並調整治療。",
+        "evidence": "unknown",
+        "source": "NEI — Types of Glaucoma",
+        "note": "未核實可支持病種療效宣稱的針灸臨床指引；此欄僅界定輔助範圍與共同照護。"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Cannot lower intraocular pressure or stop optic-nerve injury; at most it may support anxiety or head/neck tension and cannot replace drops, laser, or surgery.",
+        "cannot_treat": "Cannot lower intraocular pressure, restore lost visual field, or stop optic-nerve injury.",
+        "precautions": "Avoid direct pressure on the globe and deep orbital needling; refer any acute visual change first.",
+        "co_management": "Ophthalmology must monitor pressure, optic nerve, and visual fields and adjust treatment.",
+        "evidence": "unknown",
+        "source": "NEI — Types of Glaucoma",
+        "note": "No condition-specific acupuncture guideline supporting an efficacy claim was verified; this entry only defines adjunctive scope and co-management."
+      },
+      "sources": [
+        {
+          "authority": "NEI",
+          "title": "Types of Glaucoma",
+          "url": "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/glaucoma/types-glaucoma",
+          "supports_fields": [
+            "summary",
+            "western_context",
+            "western_pathology",
+            "etiology",
+            "risk_factors",
+            "red_flags",
+            "acupuncture_scope_boundary",
+            "co_management"
+          ]
+        }
+      ],
+      "field_sources": {
+        "summary_zh": [
+          "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/glaucoma/types-glaucoma"
+        ],
+        "summary_en": [
+          "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/glaucoma/types-glaucoma"
+        ],
+        "western_context_zh": [
+          "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/glaucoma/types-glaucoma"
+        ],
+        "western_context_en": [
+          "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/glaucoma/types-glaucoma"
+        ],
+        "western_pathology_zh": [
+          "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/glaucoma/types-glaucoma"
+        ],
+        "western_pathology_en": [
+          "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/glaucoma/types-glaucoma"
+        ],
+        "etiology_zh": [
+          "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/glaucoma/types-glaucoma"
+        ],
+        "etiology_en": [
+          "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/glaucoma/types-glaucoma"
+        ],
+        "risk_factors_zh": [
+          "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/glaucoma/types-glaucoma"
+        ],
+        "risk_factors_en": [
+          "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/glaucoma/types-glaucoma"
+        ],
+        "red_flags_zh": [
+          "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/glaucoma/types-glaucoma"
+        ],
+        "red_flags_en": [
+          "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/glaucoma/types-glaucoma"
+        ],
+        "acupuncture_scope_zh": [
+          "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/glaucoma/types-glaucoma"
+        ],
+        "acupuncture_scope_en": [
+          "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/glaucoma/types-glaucoma"
+        ]
+      },
+      "structured_relation_seeds": [],
+      "crossrefs_auto_resolved": false,
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    },
+    {
+      "request_id": "CR-010",
+      "batch": "06",
+      "live_rank": 56,
+      "id": "cond.chronic_pancreatitis",
+      "name_zh": "慢性胰臟炎",
+      "name_en": "Chronic Pancreatitis",
+      "category": "gi",
+      "merge_mode": "EXISTING_ENRICH",
+      "live_maturity": "SKELETON",
+      "fill_targets": [
+        "summary",
+        "western_context",
+        "western_pathology",
+        "etiology",
+        "risk_factors",
+        "red_flags",
+        "acupuncture_scope",
+        "sources",
+        "field_sources"
+      ],
+      "summary_zh": "胰臟反覆或持續發炎造成不可逆纖維化，導致慢性腹痛、消化酵素不足、營養不良與糖尿病。",
+      "summary_en": "Repeated or persistent pancreatic inflammation causing irreversible fibrosis, chronic abdominal pain, exocrine insufficiency, malnutrition, and diabetes.",
+      "western_context_zh": "胰臟反覆或持續發炎造成不可逆纖維化，導致慢性腹痛、消化酵素不足、營養不良與糖尿病。",
+      "western_context_en": "Repeated or persistent pancreatic inflammation causing irreversible fibrosis, chronic abdominal pain, exocrine insufficiency, malnutrition, and diabetes.",
+      "western_pathology_zh": "持續損傷啟動發炎與纖維化，逐步破壞胰臟外分泌與內分泌功能。",
+      "western_pathology_en": "Ongoing injury drives inflammation and fibrosis, progressively destroying exocrine and endocrine pancreatic function.",
+      "etiology_zh": "持續損傷啟動發炎與纖維化，逐步破壞胰臟外分泌與內分泌功能。",
+      "etiology_en": "Ongoing injury drives inflammation and fibrosis, progressively destroying exocrine and endocrine pancreatic function.",
+      "risk_factors_zh": [
+        {
+          "factor": "長期大量飲酒",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK — Symptoms & Causes of Pancreatitis"
+        },
+        {
+          "factor": "遺傳性胰臟疾病",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK — Symptoms & Causes of Pancreatitis"
+        },
+        {
+          "factor": "胰管阻塞、高三酸甘油酯或高血鈣",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK — Symptoms & Causes of Pancreatitis"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Long-term heavy alcohol use",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "NIDDK — Symptoms & Causes of Pancreatitis"
+        },
+        {
+          "factor": "Hereditary pancreatic disease",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK — Symptoms & Causes of Pancreatitis"
+        },
+        {
+          "factor": "Pancreatic-duct obstruction, hypertriglyceridemia, or hypercalcemia",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NIDDK — Symptoms & Causes of Pancreatitis"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "突然加劇的持續上腹痛、反覆嘔吐或發燒",
+          "urgency_level": "same_day",
+          "recommended_action": "當日急診或醫療評估",
+          "rationale": "可能為急性胰臟炎、感染或阻塞",
+          "source": "NIDDK — Symptoms & Causes of Pancreatitis"
+        },
+        {
+          "finding": "黃疸、昏厥、低血糖意識改變或消化道出血",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診",
+          "rationale": "可能為膽道阻塞、代謝急症或出血",
+          "source": "NIDDK — Symptoms & Causes of Pancreatitis"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Suddenly worse persistent upper-abdominal pain, repeated vomiting, or fever",
+          "urgency_level": "same_day",
+          "recommended_action": "Obtain same-day emergency or medical assessment",
+          "rationale": "May indicate acute pancreatitis, infection, or obstruction",
+          "source": "NIDDK — Symptoms & Causes of Pancreatitis"
+        },
+        {
+          "finding": "Jaundice, syncope, altered mental status from hypoglycemia, or GI bleeding",
+          "urgency_level": "emergency",
+          "recommended_action": "Seek emergency care immediately",
+          "rationale": "May indicate biliary obstruction, metabolic emergency, or bleeding",
+          "source": "NIDDK — Symptoms & Causes of Pancreatitis"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "可輔助穩定期疼痛、噁心或壓力管理；不可取代酵素、營養、糖尿病與併發症治療。",
+        "cannot_treat": "不能逆轉胰臟纖維化或取代酵素、營養與糖尿病治療。",
+        "precautions": "急性劇痛、嘔吐、發燒、黃疸或脫水時不治療；避免在壓痛腹部強刺激。",
+        "co_management": "與胃腸科、疼痛、營養與內分泌團隊共同管理。",
+        "evidence": "unknown",
+        "source": "NIDDK — Symptoms & Causes of Pancreatitis",
+        "note": "未核實可支持病種療效宣稱的針灸臨床指引；此欄僅界定輔助範圍與共同照護。"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "May support stable pain, nausea, or stress management; it cannot replace enzyme, nutrition, diabetes, or complication treatment.",
+        "cannot_treat": "Cannot reverse pancreatic fibrosis or replace enzyme, nutrition, and diabetes treatment.",
+        "precautions": "Defer during acute severe pain, vomiting, fever, jaundice, or dehydration; avoid strong stimulation over a tender abdomen.",
+        "co_management": "Co-manage with gastroenterology, pain, nutrition, and endocrine teams.",
+        "evidence": "unknown",
+        "source": "NIDDK — Symptoms & Causes of Pancreatitis",
+        "note": "No condition-specific acupuncture guideline supporting an efficacy claim was verified; this entry only defines adjunctive scope and co-management."
+      },
+      "sources": [
+        {
+          "authority": "NIDDK",
+          "title": "Symptoms & Causes of Pancreatitis",
+          "url": "https://www.niddk.nih.gov/health-information/digestive-diseases/pancreatitis/symptoms-causes",
+          "supports_fields": [
+            "summary",
+            "western_context",
+            "western_pathology",
+            "etiology",
+            "risk_factors",
+            "red_flags",
+            "acupuncture_scope_boundary",
+            "co_management"
+          ]
+        }
+      ],
+      "field_sources": {
+        "summary_zh": [
+          "https://www.niddk.nih.gov/health-information/digestive-diseases/pancreatitis/symptoms-causes"
+        ],
+        "summary_en": [
+          "https://www.niddk.nih.gov/health-information/digestive-diseases/pancreatitis/symptoms-causes"
+        ],
+        "western_context_zh": [
+          "https://www.niddk.nih.gov/health-information/digestive-diseases/pancreatitis/symptoms-causes"
+        ],
+        "western_context_en": [
+          "https://www.niddk.nih.gov/health-information/digestive-diseases/pancreatitis/symptoms-causes"
+        ],
+        "western_pathology_zh": [
+          "https://www.niddk.nih.gov/health-information/digestive-diseases/pancreatitis/symptoms-causes"
+        ],
+        "western_pathology_en": [
+          "https://www.niddk.nih.gov/health-information/digestive-diseases/pancreatitis/symptoms-causes"
+        ],
+        "etiology_zh": [
+          "https://www.niddk.nih.gov/health-information/digestive-diseases/pancreatitis/symptoms-causes"
+        ],
+        "etiology_en": [
+          "https://www.niddk.nih.gov/health-information/digestive-diseases/pancreatitis/symptoms-causes"
+        ],
+        "risk_factors_zh": [
+          "https://www.niddk.nih.gov/health-information/digestive-diseases/pancreatitis/symptoms-causes"
+        ],
+        "risk_factors_en": [
+          "https://www.niddk.nih.gov/health-information/digestive-diseases/pancreatitis/symptoms-causes"
+        ],
+        "red_flags_zh": [
+          "https://www.niddk.nih.gov/health-information/digestive-diseases/pancreatitis/symptoms-causes"
+        ],
+        "red_flags_en": [
+          "https://www.niddk.nih.gov/health-information/digestive-diseases/pancreatitis/symptoms-causes"
+        ],
+        "acupuncture_scope_zh": [
+          "https://www.niddk.nih.gov/health-information/digestive-diseases/pancreatitis/symptoms-causes"
+        ],
+        "acupuncture_scope_en": [
+          "https://www.niddk.nih.gov/health-information/digestive-diseases/pancreatitis/symptoms-causes"
+        ]
+      },
+      "structured_relation_seeds": [],
+      "crossrefs_auto_resolved": false,
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    },
+    {
+      "request_id": "CR-010",
+      "batch": "06",
+      "live_rank": 57,
+      "id": "cond.chronic_scrotal_pain_syndrome",
+      "name_zh": "慢性陰囊內容物疼痛症候群",
+      "name_en": "Chronic Scrotal Pain Syndrome",
+      "category": "uro_renal",
+      "merge_mode": "EXISTING_ENRICH",
+      "live_maturity": "SKELETON",
+      "fill_targets": [
+        "summary",
+        "western_context",
+        "western_pathology",
+        "etiology",
+        "risk_factors",
+        "red_flags",
+        "acupuncture_scope",
+        "sources",
+        "field_sources"
+      ],
+      "summary_zh": "陰囊內容物疼痛持續或反覆，影響日常活動且需排除腫瘤、扭轉、感染、疝氣與轉移痛。",
+      "summary_en": "Persistent or recurrent pain localized to scrotal contents that impairs activity and requires exclusion of tumor, torsion, infection, hernia, and referred pain.",
+      "western_context_zh": "陰囊內容物疼痛持續或反覆，影響日常活動且需排除腫瘤、扭轉、感染、疝氣與轉移痛。",
+      "western_context_en": "Persistent or recurrent pain localized to scrotal contents that impairs activity and requires exclusion of tumor, torsion, infection, hernia, and referred pain.",
+      "western_pathology_zh": "可能涉及術後或外傷神經損傷、感染後敏化、骨盆底肌痛或其他部位轉移痛，部分病例原因不明。",
+      "western_pathology_en": "Mechanisms may include postsurgical or traumatic nerve injury, postinfectious sensitization, pelvic-floor myalgia, or referred pain; some cases remain idiopathic.",
+      "etiology_zh": "可能涉及術後或外傷神經損傷、感染後敏化、骨盆底肌痛或其他部位轉移痛，部分病例原因不明。",
+      "etiology_en": "Mechanisms may include postsurgical or traumatic nerve injury, postinfectious sensitization, pelvic-floor myalgia, or referred pain; some cases remain idiopathic.",
+      "risk_factors_zh": [
+        {
+          "factor": "既往輸精管結紮或鼠蹊／陰囊手術",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "AUA — Diagnosis and Management of Male Chronic Pelvic Pain"
+        },
+        {
+          "factor": "陰囊外傷或感染史",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "AUA — Diagnosis and Management of Male Chronic Pelvic Pain"
+        },
+        {
+          "factor": "骨盆底肌痛或慢性骨盆痛",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "AUA — Diagnosis and Management of Male Chronic Pelvic Pain"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Prior vasectomy or inguinal/scrotal surgery",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "AUA — Diagnosis and Management of Male Chronic Pelvic Pain"
+        },
+        {
+          "factor": "History of scrotal trauma or infection",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "AUA — Diagnosis and Management of Male Chronic Pelvic Pain"
+        },
+        {
+          "factor": "Pelvic-floor myalgia or chronic pelvic pain",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "AUA — Diagnosis and Management of Male Chronic Pelvic Pain"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "突然單側劇痛、睪丸高位或噁心嘔吐",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診評估睪丸扭轉",
+          "rationale": "睪丸缺血需緊急處置",
+          "source": "AUA — Diagnosis and Management of Male Chronic Pelvic Pain"
+        },
+        {
+          "finding": "新出現睪丸硬塊、明顯腫脹、發燒或紅斑",
+          "urgency_level": "same_day",
+          "recommended_action": "當日泌尿科／急診評估",
+          "rationale": "需排除腫瘤、感染或其他急性陰囊病變",
+          "source": "AUA — Diagnosis and Management of Male Chronic Pelvic Pain"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Sudden severe unilateral pain, high-riding testis, or nausea/vomiting",
+          "urgency_level": "emergency",
+          "recommended_action": "Seek emergency assessment for testicular torsion",
+          "rationale": "Testicular ischemia requires urgent management",
+          "source": "AUA — Diagnosis and Management of Male Chronic Pelvic Pain"
+        },
+        {
+          "finding": "New hard testicular mass, marked swelling, fever, or erythema",
+          "urgency_level": "same_day",
+          "recommended_action": "Obtain same-day urologic/emergency assessment",
+          "rationale": "Tumor, infection, or another acute scrotal disorder must be excluded",
+          "source": "AUA — Diagnosis and Management of Male Chronic Pelvic Pain"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "完成泌尿科評估後，可輔助處理骨盆底肌痛、神經病理性疼痛與壓力；不可直接假定為肌肉問題。",
+        "cannot_treat": "不能在未排除扭轉、腫瘤、感染或疝氣前進行症狀治療。",
+        "precautions": "不直接針刺陰囊；有急性腫脹、感染、腫塊或扭轉疑慮時禁止治療。",
+        "co_management": "與泌尿科、骨盆底物理治療及疼痛醫學共同管理。",
+        "evidence": "unknown",
+        "source": "AUA — Diagnosis and Management of Male Chronic Pelvic Pain",
+        "note": "未核實可支持病種療效宣稱的針灸臨床指引；此欄僅界定輔助範圍與共同照護。"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "After urologic assessment, may support pelvic-floor myalgia, neuropathic pain, and stress; it must not be assumed to be muscular without evaluation.",
+        "cannot_treat": "Cannot provide symptom treatment before torsion, tumor, infection, and hernia are excluded.",
+        "precautions": "Do not needle the scrotum; defer with acute swelling, infection, mass, or concern for torsion.",
+        "co_management": "Co-manage with urology, pelvic-floor physical therapy, and pain medicine.",
+        "evidence": "unknown",
+        "source": "AUA — Diagnosis and Management of Male Chronic Pelvic Pain",
+        "note": "No condition-specific acupuncture guideline supporting an efficacy claim was verified; this entry only defines adjunctive scope and co-management."
+      },
+      "sources": [
+        {
+          "authority": "AUA",
+          "title": "Diagnosis and Management of Male Chronic Pelvic Pain",
+          "url": "https://www.auanet.org/guidelines-and-quality/guidelines/male-chronic-pelvic-pain",
+          "supports_fields": [
+            "summary",
+            "western_context",
+            "western_pathology",
+            "etiology",
+            "risk_factors",
+            "red_flags",
+            "acupuncture_scope_boundary",
+            "co_management"
+          ]
+        }
+      ],
+      "field_sources": {
+        "summary_zh": [
+          "https://www.auanet.org/guidelines-and-quality/guidelines/male-chronic-pelvic-pain"
+        ],
+        "summary_en": [
+          "https://www.auanet.org/guidelines-and-quality/guidelines/male-chronic-pelvic-pain"
+        ],
+        "western_context_zh": [
+          "https://www.auanet.org/guidelines-and-quality/guidelines/male-chronic-pelvic-pain"
+        ],
+        "western_context_en": [
+          "https://www.auanet.org/guidelines-and-quality/guidelines/male-chronic-pelvic-pain"
+        ],
+        "western_pathology_zh": [
+          "https://www.auanet.org/guidelines-and-quality/guidelines/male-chronic-pelvic-pain"
+        ],
+        "western_pathology_en": [
+          "https://www.auanet.org/guidelines-and-quality/guidelines/male-chronic-pelvic-pain"
+        ],
+        "etiology_zh": [
+          "https://www.auanet.org/guidelines-and-quality/guidelines/male-chronic-pelvic-pain"
+        ],
+        "etiology_en": [
+          "https://www.auanet.org/guidelines-and-quality/guidelines/male-chronic-pelvic-pain"
+        ],
+        "risk_factors_zh": [
+          "https://www.auanet.org/guidelines-and-quality/guidelines/male-chronic-pelvic-pain"
+        ],
+        "risk_factors_en": [
+          "https://www.auanet.org/guidelines-and-quality/guidelines/male-chronic-pelvic-pain"
+        ],
+        "red_flags_zh": [
+          "https://www.auanet.org/guidelines-and-quality/guidelines/male-chronic-pelvic-pain"
+        ],
+        "red_flags_en": [
+          "https://www.auanet.org/guidelines-and-quality/guidelines/male-chronic-pelvic-pain"
+        ],
+        "acupuncture_scope_zh": [
+          "https://www.auanet.org/guidelines-and-quality/guidelines/male-chronic-pelvic-pain"
+        ],
+        "acupuncture_scope_en": [
+          "https://www.auanet.org/guidelines-and-quality/guidelines/male-chronic-pelvic-pain"
+        ]
+      },
+      "structured_relation_seeds": [],
+      "crossrefs_auto_resolved": false,
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    },
+    {
+      "request_id": "CR-010",
+      "batch": "06",
+      "live_rank": 58,
+      "id": "cond.chronic_venous_insufficiency",
+      "name_zh": "慢性靜脈功能不全",
+      "name_en": "Chronic Venous Insufficiency",
+      "category": "cardio",
+      "merge_mode": "EXISTING_ENRICH",
+      "live_maturity": "SKELETON",
+      "fill_targets": [
+        "summary",
+        "western_context",
+        "western_pathology",
+        "etiology",
+        "risk_factors",
+        "red_flags",
+        "acupuncture_scope",
+        "sources",
+        "field_sources"
+      ],
+      "summary_zh": "下肢靜脈瓣膜或回流功能受損造成靜脈高壓，出現腫脹、沉重、皮膚變化與靜脈性潰瘍。",
+      "summary_en": "Impaired lower-extremity venous valves or return causes venous hypertension, swelling, heaviness, skin change, and venous ulceration.",
+      "western_context_zh": "下肢靜脈瓣膜或回流功能受損造成靜脈高壓，出現腫脹、沉重、皮膚變化與靜脈性潰瘍。",
+      "western_context_en": "Impaired lower-extremity venous valves or return causes venous hypertension, swelling, heaviness, skin change, and venous ulceration.",
+      "western_pathology_zh": "瓣膜逆流或靜脈阻塞提高站立時靜脈壓，使液體與發炎介質外滲並逐步損傷皮膚。",
+      "western_pathology_en": "Valvular reflux or venous obstruction raises ambulatory venous pressure, promoting fluid and inflammatory leakage and progressive skin injury.",
+      "etiology_zh": "瓣膜逆流或靜脈阻塞提高站立時靜脈壓，使液體與發炎介質外滲並逐步損傷皮膚。",
+      "etiology_en": "Valvular reflux or venous obstruction raises ambulatory venous pressure, promoting fluid and inflammatory leakage and progressive skin injury.",
+      "risk_factors_zh": [
+        {
+          "factor": "既往深部靜脈栓塞",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "SVS — Chronic Venous Insufficiency"
+        },
+        {
+          "factor": "久站、肥胖或活動不足",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "SVS — Chronic Venous Insufficiency"
+        },
+        {
+          "factor": "多次妊娠與年齡增加",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "SVS — Chronic Venous Insufficiency"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Prior deep-vein thrombosis",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "SVS — Chronic Venous Insufficiency"
+        },
+        {
+          "factor": "Prolonged standing, obesity, or inactivity",
+          "direction": "increases",
+          "modifiable": true,
+          "source": "SVS — Chronic Venous Insufficiency"
+        },
+        {
+          "factor": "Multiple pregnancies and increasing age",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "SVS — Chronic Venous Insufficiency"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "單側突然腫痛、發紅或發熱",
+          "urgency_level": "same_day",
+          "recommended_action": "當日評估深部靜脈栓塞",
+          "rationale": "新發單側症狀可能為血栓而非單純慢性靜脈病",
+          "source": "SVS — Chronic Venous Insufficiency"
+        },
+        {
+          "finding": "突發呼吸困難、胸痛或咳血",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診",
+          "rationale": "可能為肺栓塞",
+          "source": "SVS — Chronic Venous Insufficiency"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Sudden unilateral swelling, pain, redness, or warmth",
+          "urgency_level": "same_day",
+          "recommended_action": "Obtain same-day assessment for deep-vein thrombosis",
+          "rationale": "New unilateral symptoms may be thrombosis rather than uncomplicated chronic venous disease",
+          "source": "SVS — Chronic Venous Insufficiency"
+        },
+        {
+          "finding": "Sudden shortness of breath, chest pain, or hemoptysis",
+          "urgency_level": "emergency",
+          "recommended_action": "Seek emergency care immediately",
+          "rationale": "May indicate pulmonary embolism",
+          "source": "SVS — Chronic Venous Insufficiency"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "可輔助處理穩定期腿部不適，但不能修復靜脈逆流或取代壓迫、傷口與血管治療。",
+        "cannot_treat": "不能修復靜脈瓣膜、溶解血栓或取代壓迫與傷口照護。",
+        "precautions": "不針刺潰瘍、感染皮膚、脆弱曲張靜脈或疑似血栓區；先確認動脈循環與壓迫禁忌。",
+        "co_management": "與血管科／傷口照護共同管理壓迫、潰瘍及介入治療。",
+        "evidence": "unknown",
+        "source": "SVS — Chronic Venous Insufficiency",
+        "note": "未核實可支持病種療效宣稱的針灸臨床指引；此欄僅界定輔助範圍與共同照護。"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "May support stable leg discomfort but cannot repair venous reflux or replace compression, wound, or vascular care.",
+        "cannot_treat": "Cannot repair venous valves, dissolve thrombosis, or replace compression and wound care.",
+        "precautions": "Do not needle ulcers, infected skin, fragile varicosities, or suspected thrombosis; arterial circulation and compression contraindications must be assessed.",
+        "co_management": "Co-manage compression, ulcers, and intervention with vascular and wound-care teams.",
+        "evidence": "unknown",
+        "source": "SVS — Chronic Venous Insufficiency",
+        "note": "No condition-specific acupuncture guideline supporting an efficacy claim was verified; this entry only defines adjunctive scope and co-management."
+      },
+      "sources": [
+        {
+          "authority": "SVS",
+          "title": "Chronic Venous Insufficiency",
+          "url": "https://vascular.org/your-vascular-health/vascular-conditions/chronic-venous-insufficiency",
+          "supports_fields": [
+            "summary",
+            "western_context",
+            "western_pathology",
+            "etiology",
+            "risk_factors",
+            "red_flags",
+            "acupuncture_scope_boundary",
+            "co_management"
+          ]
+        }
+      ],
+      "field_sources": {
+        "summary_zh": [
+          "https://vascular.org/your-vascular-health/vascular-conditions/chronic-venous-insufficiency"
+        ],
+        "summary_en": [
+          "https://vascular.org/your-vascular-health/vascular-conditions/chronic-venous-insufficiency"
+        ],
+        "western_context_zh": [
+          "https://vascular.org/your-vascular-health/vascular-conditions/chronic-venous-insufficiency"
+        ],
+        "western_context_en": [
+          "https://vascular.org/your-vascular-health/vascular-conditions/chronic-venous-insufficiency"
+        ],
+        "western_pathology_zh": [
+          "https://vascular.org/your-vascular-health/vascular-conditions/chronic-venous-insufficiency"
+        ],
+        "western_pathology_en": [
+          "https://vascular.org/your-vascular-health/vascular-conditions/chronic-venous-insufficiency"
+        ],
+        "etiology_zh": [
+          "https://vascular.org/your-vascular-health/vascular-conditions/chronic-venous-insufficiency"
+        ],
+        "etiology_en": [
+          "https://vascular.org/your-vascular-health/vascular-conditions/chronic-venous-insufficiency"
+        ],
+        "risk_factors_zh": [
+          "https://vascular.org/your-vascular-health/vascular-conditions/chronic-venous-insufficiency"
+        ],
+        "risk_factors_en": [
+          "https://vascular.org/your-vascular-health/vascular-conditions/chronic-venous-insufficiency"
+        ],
+        "red_flags_zh": [
+          "https://vascular.org/your-vascular-health/vascular-conditions/chronic-venous-insufficiency"
+        ],
+        "red_flags_en": [
+          "https://vascular.org/your-vascular-health/vascular-conditions/chronic-venous-insufficiency"
+        ],
+        "acupuncture_scope_zh": [
+          "https://vascular.org/your-vascular-health/vascular-conditions/chronic-venous-insufficiency"
+        ],
+        "acupuncture_scope_en": [
+          "https://vascular.org/your-vascular-health/vascular-conditions/chronic-venous-insufficiency"
+        ]
+      },
+      "structured_relation_seeds": [],
+      "crossrefs_auto_resolved": false,
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    },
+    {
+      "request_id": "CR-010",
+      "batch": "06",
+      "live_rank": 59,
+      "id": "cond.cidp",
+      "name_zh": "慢性發炎性脫髓鞘性多發神經病變",
+      "name_en": "Chronic Inflammatory Demyelinating Polyneuropathy",
+      "category": "neuro",
+      "merge_mode": "EXISTING_ENRICH",
+      "live_maturity": "SKELETON",
+      "fill_targets": [
+        "summary",
+        "western_context",
+        "western_pathology",
+        "etiology",
+        "risk_factors",
+        "red_flags",
+        "acupuncture_scope",
+        "sources",
+        "field_sources"
+      ],
+      "summary_zh": "免疫介導的周邊神經脫髓鞘疾病，通常呈進行或反覆的對稱近端與遠端無力、感覺異常及反射降低。",
+      "summary_en": "An immune-mediated demyelinating peripheral neuropathy, typically causing progressive or relapsing symmetric proximal and distal weakness, sensory change, and reduced reflexes.",
+      "western_context_zh": "免疫介導的周邊神經脫髓鞘疾病，通常呈進行或反覆的對稱近端與遠端無力、感覺異常及反射降低。",
+      "western_context_en": "An immune-mediated demyelinating peripheral neuropathy, typically causing progressive or relapsing symmetric proximal and distal weakness, sensory change, and reduced reflexes.",
+      "western_pathology_zh": "免疫系統攻擊周邊神經髓鞘與神經根，造成傳導減慢或阻斷，長期可有軸突損傷。",
+      "western_pathology_en": "Immune attack on peripheral myelin and nerve roots slows or blocks conduction and may eventually cause axonal injury.",
+      "etiology_zh": "免疫系統攻擊周邊神經髓鞘與神經根，造成傳導減慢或阻斷，長期可有軸突損傷。",
+      "etiology_en": "Immune attack on peripheral myelin and nerve roots slows or blocks conduction and may eventually cause axonal injury.",
+      "risk_factors_zh": [
+        {
+          "factor": "自身免疫失調",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NINDS — Peripheral Neuropathy"
+        },
+        {
+          "factor": "糖尿病或其他免疫相關共病",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NINDS — Peripheral Neuropathy"
+        },
+        {
+          "factor": "部分感染或免疫刺激後發病",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NINDS — Peripheral Neuropathy"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Autoimmune dysregulation",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NINDS — Peripheral Neuropathy"
+        },
+        {
+          "factor": "Diabetes or other immune-related comorbidity",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NINDS — Peripheral Neuropathy"
+        },
+        {
+          "factor": "Onset after some infections or immune triggers",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NINDS — Peripheral Neuropathy"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "快速惡化無力、無法行走、吞嚥或呼吸困難",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診與神經科評估",
+          "rationale": "可能有呼吸或延髓肌受累，且需排除急性神經病變",
+          "source": "NINDS — Peripheral Neuropathy"
+        },
+        {
+          "finding": "治療期間新發嚴重頭痛、胸痛、血栓症狀或腎功能異常",
+          "urgency_level": "same_day",
+          "recommended_action": "當日聯絡治療團隊",
+          "rationale": "免疫球蛋白等治療可能有嚴重併發症",
+          "source": "NINDS — Peripheral Neuropathy"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Rapidly worsening weakness, inability to walk, or swallowing/breathing difficulty",
+          "urgency_level": "emergency",
+          "recommended_action": "Seek immediate emergency and neurologic assessment",
+          "rationale": "Respiratory or bulbar muscles may be involved and an acute neuropathy must be excluded",
+          "source": "NINDS — Peripheral Neuropathy"
+        },
+        {
+          "finding": "New severe headache, chest pain, thrombotic symptoms, or renal abnormality during treatment",
+          "urgency_level": "same_day",
+          "recommended_action": "Contact the treating team the same day",
+          "rationale": "Therapies such as immunoglobulin can have serious complications",
+          "source": "NINDS — Peripheral Neuropathy"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "可輔助處理穩定期疼痛、疲勞或睡眠；不能抑制免疫性脫髓鞘或取代 IVIg、類固醇等治療。",
+        "cannot_treat": "不能抑制免疫性脫髓鞘或取代疾病修飾治療。",
+        "precautions": "依感覺喪失、肌無力、跌倒風險與免疫抑制調整刺激；避免傷口與感染區。",
+        "co_management": "與神經肌肉專科、復健與物理治療共同管理。",
+        "evidence": "unknown",
+        "source": "NINDS — Peripheral Neuropathy",
+        "note": "未核實可支持病種療效宣稱的針灸臨床指引；此欄僅界定輔助範圍與共同照護。"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "May support stable pain, fatigue, or sleep; it cannot suppress immune demyelination or replace IVIg, corticosteroids, or other treatment.",
+        "cannot_treat": "Cannot suppress immune demyelination or replace disease-modifying treatment.",
+        "precautions": "Adapt stimulation for sensory loss, weakness, fall risk, and immunosuppression; avoid wounds and infected areas.",
+        "co_management": "Co-manage with neuromuscular neurology, rehabilitation, and physical therapy.",
+        "evidence": "unknown",
+        "source": "NINDS — Peripheral Neuropathy",
+        "note": "No condition-specific acupuncture guideline supporting an efficacy claim was verified; this entry only defines adjunctive scope and co-management."
+      },
+      "sources": [
+        {
+          "authority": "NINDS",
+          "title": "Peripheral Neuropathy",
+          "url": "https://www.ninds.nih.gov/health-information/disorders/peripheral-neuropathy",
+          "supports_fields": [
+            "summary",
+            "western_context",
+            "western_pathology",
+            "etiology",
+            "risk_factors",
+            "red_flags",
+            "acupuncture_scope_boundary",
+            "co_management"
+          ]
+        }
+      ],
+      "field_sources": {
+        "summary_zh": [
+          "https://www.ninds.nih.gov/health-information/disorders/peripheral-neuropathy"
+        ],
+        "summary_en": [
+          "https://www.ninds.nih.gov/health-information/disorders/peripheral-neuropathy"
+        ],
+        "western_context_zh": [
+          "https://www.ninds.nih.gov/health-information/disorders/peripheral-neuropathy"
+        ],
+        "western_context_en": [
+          "https://www.ninds.nih.gov/health-information/disorders/peripheral-neuropathy"
+        ],
+        "western_pathology_zh": [
+          "https://www.ninds.nih.gov/health-information/disorders/peripheral-neuropathy"
+        ],
+        "western_pathology_en": [
+          "https://www.ninds.nih.gov/health-information/disorders/peripheral-neuropathy"
+        ],
+        "etiology_zh": [
+          "https://www.ninds.nih.gov/health-information/disorders/peripheral-neuropathy"
+        ],
+        "etiology_en": [
+          "https://www.ninds.nih.gov/health-information/disorders/peripheral-neuropathy"
+        ],
+        "risk_factors_zh": [
+          "https://www.ninds.nih.gov/health-information/disorders/peripheral-neuropathy"
+        ],
+        "risk_factors_en": [
+          "https://www.ninds.nih.gov/health-information/disorders/peripheral-neuropathy"
+        ],
+        "red_flags_zh": [
+          "https://www.ninds.nih.gov/health-information/disorders/peripheral-neuropathy"
+        ],
+        "red_flags_en": [
+          "https://www.ninds.nih.gov/health-information/disorders/peripheral-neuropathy"
+        ],
+        "acupuncture_scope_zh": [
+          "https://www.ninds.nih.gov/health-information/disorders/peripheral-neuropathy"
+        ],
+        "acupuncture_scope_en": [
+          "https://www.ninds.nih.gov/health-information/disorders/peripheral-neuropathy"
+        ]
+      },
+      "structured_relation_seeds": [],
+      "crossrefs_auto_resolved": false,
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    },
+    {
+      "request_id": "CR-010",
+      "batch": "06",
+      "live_rank": 60,
+      "id": "cond.cipn",
+      "name_zh": "化療誘發周邊神經病變",
+      "name_en": "Chemotherapy-Induced Peripheral Neuropathy",
+      "category": "neuro",
+      "merge_mode": "EXISTING_ENRICH",
+      "live_maturity": "SKELETON",
+      "fill_targets": [
+        "summary",
+        "western_context",
+        "western_pathology",
+        "etiology",
+        "risk_factors",
+        "red_flags",
+        "acupuncture_scope",
+        "sources",
+        "field_sources"
+      ],
+      "summary_zh": "部分抗癌藥造成的周邊神經毒性，可引起手足麻木、刺痛、疼痛、無力、平衡或自主神經問題。",
+      "summary_en": "Peripheral neurotoxicity from some anticancer drugs causing numbness, tingling, pain, weakness, balance problems, or autonomic symptoms in the hands and feet.",
+      "western_context_zh": "部分抗癌藥造成的周邊神經毒性，可引起手足麻木、刺痛、疼痛、無力、平衡或自主神經問題。",
+      "western_context_en": "Peripheral neurotoxicity from some anticancer drugs causing numbness, tingling, pain, weakness, balance problems, or autonomic symptoms in the hands and feet.",
+      "western_pathology_zh": "化療可損傷感覺、運動或自主神經的軸突、神經元與支持細胞；累積劑量與藥物種類影響風險。",
+      "western_pathology_en": "Chemotherapy can injure axons, neurons, and supporting cells in sensory, motor, or autonomic nerves; risk varies by agent and cumulative exposure.",
+      "etiology_zh": "化療可損傷感覺、運動或自主神經的軸突、神經元與支持細胞；累積劑量與藥物種類影響風險。",
+      "etiology_en": "Chemotherapy can injure axons, neurons, and supporting cells in sensory, motor, or autonomic nerves; risk varies by agent and cumulative exposure.",
+      "risk_factors_zh": [
+        {
+          "factor": "神經毒性化療藥與較高累積暴露",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NCI — Nerve Problems (Peripheral Neuropathy) and Cancer Treatment"
+        },
+        {
+          "factor": "既有糖尿病或周邊神經病變",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NCI — Nerve Problems (Peripheral Neuropathy) and Cancer Treatment"
+        },
+        {
+          "factor": "高齡或合併其他神經毒性暴露",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NCI — Nerve Problems (Peripheral Neuropathy) and Cancer Treatment"
+        }
+      ],
+      "risk_factors_en": [
+        {
+          "factor": "Neurotoxic chemotherapy and greater cumulative exposure",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NCI — Nerve Problems (Peripheral Neuropathy) and Cancer Treatment"
+        },
+        {
+          "factor": "Pre-existing diabetes or peripheral neuropathy",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NCI — Nerve Problems (Peripheral Neuropathy) and Cancer Treatment"
+        },
+        {
+          "factor": "Older age or concurrent neurotoxic exposure",
+          "direction": "increases",
+          "modifiable": false,
+          "source": "NCI — Nerve Problems (Peripheral Neuropathy) and Cancer Treatment"
+        }
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "新出現吞嚥、呼吸困難或快速惡化無力",
+          "urgency_level": "emergency",
+          "recommended_action": "立即急診並通知腫瘤團隊",
+          "rationale": "可能有嚴重運動神經受累或其他急症",
+          "source": "NCI — Nerve Problems (Peripheral Neuropathy) and Cancer Treatment"
+        },
+        {
+          "finding": "神經症狀影響走路、跌倒、精細動作或日常安全",
+          "urgency_level": "same_day",
+          "recommended_action": "在下一次化療前立即通知腫瘤團隊",
+          "rationale": "可能需要調整抗癌治療以限制永久神經損傷",
+          "source": "NCI — Nerve Problems (Peripheral Neuropathy) and Cancer Treatment"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "New swallowing/breathing difficulty or rapidly worsening weakness",
+          "urgency_level": "emergency",
+          "recommended_action": "Seek emergency care and notify oncology immediately",
+          "rationale": "May indicate severe motor-nerve involvement or another emergency",
+          "source": "NCI — Nerve Problems (Peripheral Neuropathy) and Cancer Treatment"
+        },
+        {
+          "finding": "Neuropathy affecting walking, falls, fine motor tasks, or daily safety",
+          "urgency_level": "same_day",
+          "recommended_action": "Notify oncology promptly before the next chemotherapy dose",
+          "rationale": "Cancer treatment may need adjustment to limit permanent nerve injury",
+          "source": "NCI — Nerve Problems (Peripheral Neuropathy) and Cancer Treatment"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "可在腫瘤團隊同意下輔助處理疼痛、麻刺與功能困擾；預防與療效證據仍有限，不可延誤劑量評估。",
+        "cannot_treat": "不能保證預防神經毒性，也不能取代腫瘤科的劑量調整。",
+        "precautions": "中性球低下、血小板低下、感染、皮膚破損或植入式管路附近避免針刺；感覺喪失處需防燙傷與出血。",
+        "co_management": "與腫瘤科、復健／物理治療及疼痛團隊共同管理並在每次化療前回報變化。",
+        "evidence": "unknown",
+        "source": "NCI — Nerve Problems (Peripheral Neuropathy) and Cancer Treatment",
+        "note": "未核實可支持病種療效宣稱的針灸臨床指引；此欄僅界定輔助範圍與共同照護。"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "With oncology agreement, may support pain, tingling, and functional symptoms; prevention and efficacy evidence remain limited and dose assessment must not be delayed.",
+        "cannot_treat": "Cannot guarantee prevention of neurotoxicity or replace oncology dose adjustment.",
+        "precautions": "Avoid needling with neutropenia, thrombocytopenia, infection, broken skin, or near implanted lines; protect insensate areas from burns and bleeding.",
+        "co_management": "Co-manage with oncology, rehabilitation/physical therapy, and pain teams, reporting changes before each chemotherapy cycle.",
+        "evidence": "unknown",
+        "source": "NCI — Nerve Problems (Peripheral Neuropathy) and Cancer Treatment",
+        "note": "No condition-specific acupuncture guideline supporting an efficacy claim was verified; this entry only defines adjunctive scope and co-management."
+      },
+      "sources": [
+        {
+          "authority": "NCI",
+          "title": "Nerve Problems (Peripheral Neuropathy) and Cancer Treatment",
+          "url": "https://www.cancer.gov/about-cancer/treatment/side-effects/nerve-problems",
+          "supports_fields": [
+            "summary",
+            "western_context",
+            "western_pathology",
+            "etiology",
+            "risk_factors",
+            "red_flags",
+            "acupuncture_scope_boundary",
+            "co_management"
+          ]
+        }
+      ],
+      "field_sources": {
+        "summary_zh": [
+          "https://www.cancer.gov/about-cancer/treatment/side-effects/nerve-problems"
+        ],
+        "summary_en": [
+          "https://www.cancer.gov/about-cancer/treatment/side-effects/nerve-problems"
+        ],
+        "western_context_zh": [
+          "https://www.cancer.gov/about-cancer/treatment/side-effects/nerve-problems"
+        ],
+        "western_context_en": [
+          "https://www.cancer.gov/about-cancer/treatment/side-effects/nerve-problems"
+        ],
+        "western_pathology_zh": [
+          "https://www.cancer.gov/about-cancer/treatment/side-effects/nerve-problems"
+        ],
+        "western_pathology_en": [
+          "https://www.cancer.gov/about-cancer/treatment/side-effects/nerve-problems"
+        ],
+        "etiology_zh": [
+          "https://www.cancer.gov/about-cancer/treatment/side-effects/nerve-problems"
+        ],
+        "etiology_en": [
+          "https://www.cancer.gov/about-cancer/treatment/side-effects/nerve-problems"
+        ],
+        "risk_factors_zh": [
+          "https://www.cancer.gov/about-cancer/treatment/side-effects/nerve-problems"
+        ],
+        "risk_factors_en": [
+          "https://www.cancer.gov/about-cancer/treatment/side-effects/nerve-problems"
+        ],
+        "red_flags_zh": [
+          "https://www.cancer.gov/about-cancer/treatment/side-effects/nerve-problems"
+        ],
+        "red_flags_en": [
+          "https://www.cancer.gov/about-cancer/treatment/side-effects/nerve-problems"
+        ],
+        "acupuncture_scope_zh": [
+          "https://www.cancer.gov/about-cancer/treatment/side-effects/nerve-problems"
+        ],
+        "acupuncture_scope_en": [
+          "https://www.cancer.gov/about-cancer/treatment/side-effects/nerve-problems"
+        ]
+      },
+      "structured_relation_seeds": [],
+      "crossrefs_auto_resolved": false,
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    }
+  ]
+}

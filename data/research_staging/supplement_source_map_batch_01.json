@@ -1,0 +1,453 @@
+{
+  "pack_id": "SUPPLEMENT_SOURCE_MAP_BATCH_01",
+  "created": "2026-08",
+  "project": "AcuTing OS",
+  "status": "research_staging_not_canonical",
+  "architecture_constraints": [
+    "Canonical namespace target is supp.* (never suppl.*).",
+    "Knowledge/research staging only; not Patient/Case/Visit data.",
+    "No PHI or patient-derived data.",
+    "No supplement observation auto-creates TCM disease or pattern.",
+    "Ingredient identity stays separate from commercial product/brand identity.",
+    "No canonical promotion before template, ID rules, taxonomy, ingestion contract and validators are locked.",
+    "Safety/interaction fields must be source-backed and distinguish unknown/not-reviewed from reviewed-and-none-found.",
+    "Clinical exposure recording references supp.* through the existing snapshot + append-only event model."
+  ],
+  "taxonomy_findings": [
+    "Most candidates fit the current 8 categories.",
+    "Melatonin does not fit naturally.",
+    "Glucosamine and chondroitin do not fit naturally.",
+    "Resolve taxonomy gaps before bulk generation."
+  ],
+  "sources": {
+    "NIH_ODS": {
+      "name": "NIH Office of Dietary Supplements — Dietary Supplement Fact Sheets",
+      "use": "Primary federal source for ingredient identity, intake/safety context, and medication-interaction sections when an ingredient fact sheet exists.",
+      "url": "https://ods.od.nih.gov/factsheets/list-all/"
+    },
+    "NIH_ODS_VITMIN": {
+      "name": "NIH ODS — Vitamin and Mineral Supplement Fact Sheets",
+      "use": "Primary federal source map for vitamins and minerals.",
+      "url": "https://ods.od.nih.gov/factsheets/list-VitaminsMinerals/"
+    },
+    "NIH_ODS_BOTANICAL": {
+      "name": "NIH ODS — Botanical Supplement Fact Sheets",
+      "use": "Federal source directory for botanicals, frequently routing to NCCIH.",
+      "url": "https://ods.od.nih.gov/factsheets/list-Botanicals/"
+    },
+    "NCCIH": {
+      "name": "NIH NCCIH — Dietary and Herbal Supplements",
+      "use": "Primary federal source for botanical/supplement safety, evidence summaries, and interaction cautions.",
+      "url": "https://www.nccih.nih.gov/health/dietary-and-herbal-supplements"
+    },
+    "FDA_SUPP": {
+      "name": "U.S. FDA — Dietary Supplements",
+      "use": "Regulatory/safety layer; FDA does not pre-approve supplements for safety/effectiveness. Use for alerts, unlawful ingredients, and post-market safety actions.",
+      "url": "https://www.fda.gov/food/dietary-supplements"
+    },
+    "FDA_INGREDIENT_ALERTS": {
+      "name": "U.S. FDA — Information on Select Dietary Supplement Ingredients and Other Substances",
+      "use": "Safety/enforcement lookup for selected ingredients and substances.",
+      "url": "https://www.fda.gov/food/dietary-supplements/information-select-dietary-supplement-ingredients-and-other-substances"
+    }
+  },
+  "records": [
+    {
+      "candidate_id": "supp.vitamin_a",
+      "name_en": "Vitamin A",
+      "name_zh": "維生素A",
+      "candidate_category": "vitamins",
+      "status": "research_candidate_not_canonical",
+      "source_targets": [
+        "NIH_ODS_VITMIN",
+        "FDA_SUPP"
+      ],
+      "notes": "Identity/category seed only; detailed safety/interaction/efficacy fields intentionally deferred."
+    },
+    {
+      "candidate_id": "supp.vitamin_b1_thiamin",
+      "name_en": "Thiamin (Vitamin B1)",
+      "name_zh": "硫胺素（維生素B1）",
+      "candidate_category": "vitamins",
+      "status": "research_candidate_not_canonical",
+      "source_targets": [
+        "NIH_ODS_VITMIN",
+        "FDA_SUPP"
+      ],
+      "notes": "Identity/category seed only; detailed safety/interaction/efficacy fields intentionally deferred."
+    },
+    {
+      "candidate_id": "supp.vitamin_b2_riboflavin",
+      "name_en": "Riboflavin (Vitamin B2)",
+      "name_zh": "核黃素（維生素B2）",
+      "candidate_category": "vitamins",
+      "status": "research_candidate_not_canonical",
+      "source_targets": [
+        "NIH_ODS_VITMIN",
+        "FDA_SUPP"
+      ],
+      "notes": "Identity/category seed only; detailed safety/interaction/efficacy fields intentionally deferred."
+    },
+    {
+      "candidate_id": "supp.vitamin_b3_niacin",
+      "name_en": "Niacin (Vitamin B3)",
+      "name_zh": "菸鹼酸／菸鹼醯胺（維生素B3）",
+      "candidate_category": "vitamins",
+      "status": "research_candidate_not_canonical",
+      "source_targets": [
+        "NIH_ODS_VITMIN",
+        "FDA_SUPP"
+      ],
+      "notes": "Identity/category seed only; detailed safety/interaction/efficacy fields intentionally deferred."
+    },
+    {
+      "candidate_id": "supp.vitamin_b6",
+      "name_en": "Vitamin B6",
+      "name_zh": "維生素B6",
+      "candidate_category": "vitamins",
+      "status": "research_candidate_not_canonical",
+      "source_targets": [
+        "NIH_ODS_VITMIN",
+        "FDA_SUPP"
+      ],
+      "notes": "Identity/category seed only; detailed safety/interaction/efficacy fields intentionally deferred."
+    },
+    {
+      "candidate_id": "supp.folate",
+      "name_en": "Folate / Folic Acid",
+      "name_zh": "葉酸／葉酸鹽",
+      "candidate_category": "vitamins",
+      "status": "research_candidate_not_canonical",
+      "source_targets": [
+        "NIH_ODS_VITMIN",
+        "FDA_SUPP"
+      ],
+      "notes": "Identity/category seed only; detailed safety/interaction/efficacy fields intentionally deferred."
+    },
+    {
+      "candidate_id": "supp.vitamin_b12",
+      "name_en": "Vitamin B12",
+      "name_zh": "維生素B12",
+      "candidate_category": "vitamins",
+      "status": "research_candidate_not_canonical",
+      "source_targets": [
+        "NIH_ODS_VITMIN",
+        "FDA_SUPP"
+      ],
+      "notes": "Identity/category seed only; detailed safety/interaction/efficacy fields intentionally deferred."
+    },
+    {
+      "candidate_id": "supp.vitamin_c",
+      "name_en": "Vitamin C",
+      "name_zh": "維生素C",
+      "candidate_category": "vitamins",
+      "status": "research_candidate_not_canonical",
+      "source_targets": [
+        "NIH_ODS_VITMIN",
+        "FDA_SUPP"
+      ],
+      "notes": "Identity/category seed only; detailed safety/interaction/efficacy fields intentionally deferred."
+    },
+    {
+      "candidate_id": "supp.vitamin_d3",
+      "name_en": "Vitamin D3 (Cholecalciferol)",
+      "name_zh": "維生素D3（膽鈣化醇）",
+      "candidate_category": "vitamins",
+      "status": "research_candidate_not_canonical",
+      "source_targets": [
+        "NIH_ODS_VITMIN",
+        "FDA_SUPP"
+      ],
+      "notes": "Identity/category seed only; detailed safety/interaction/efficacy fields intentionally deferred."
+    },
+    {
+      "candidate_id": "supp.vitamin_e",
+      "name_en": "Vitamin E",
+      "name_zh": "維生素E",
+      "candidate_category": "vitamins",
+      "status": "research_candidate_not_canonical",
+      "source_targets": [
+        "NIH_ODS_VITMIN",
+        "FDA_SUPP"
+      ],
+      "notes": "Identity/category seed only; detailed safety/interaction/efficacy fields intentionally deferred."
+    },
+    {
+      "candidate_id": "supp.vitamin_k",
+      "name_en": "Vitamin K",
+      "name_zh": "維生素K",
+      "candidate_category": "vitamins",
+      "status": "research_candidate_not_canonical",
+      "source_targets": [
+        "NIH_ODS_VITMIN",
+        "FDA_SUPP"
+      ],
+      "notes": "Identity/category seed only; detailed safety/interaction/efficacy fields intentionally deferred."
+    },
+    {
+      "candidate_id": "supp.calcium",
+      "name_en": "Calcium",
+      "name_zh": "鈣",
+      "candidate_category": "minerals",
+      "status": "research_candidate_not_canonical",
+      "source_targets": [
+        "NIH_ODS_VITMIN",
+        "FDA_SUPP"
+      ],
+      "notes": "Identity/category seed only; detailed safety/interaction/efficacy fields intentionally deferred."
+    },
+    {
+      "candidate_id": "supp.iron",
+      "name_en": "Iron",
+      "name_zh": "鐵",
+      "candidate_category": "minerals",
+      "status": "research_candidate_not_canonical",
+      "source_targets": [
+        "NIH_ODS_VITMIN",
+        "FDA_SUPP"
+      ],
+      "notes": "Identity/category seed only; detailed safety/interaction/efficacy fields intentionally deferred."
+    },
+    {
+      "candidate_id": "supp.magnesium",
+      "name_en": "Magnesium",
+      "name_zh": "鎂",
+      "candidate_category": "minerals",
+      "status": "research_candidate_not_canonical",
+      "source_targets": [
+        "NIH_ODS_VITMIN",
+        "FDA_SUPP"
+      ],
+      "notes": "Identity/category seed only; detailed safety/interaction/efficacy fields intentionally deferred."
+    },
+    {
+      "candidate_id": "supp.zinc",
+      "name_en": "Zinc",
+      "name_zh": "鋅",
+      "candidate_category": "minerals",
+      "status": "research_candidate_not_canonical",
+      "source_targets": [
+        "NIH_ODS_VITMIN",
+        "FDA_SUPP"
+      ],
+      "notes": "Identity/category seed only; detailed safety/interaction/efficacy fields intentionally deferred."
+    },
+    {
+      "candidate_id": "supp.selenium",
+      "name_en": "Selenium",
+      "name_zh": "硒",
+      "candidate_category": "minerals",
+      "status": "research_candidate_not_canonical",
+      "source_targets": [
+        "NIH_ODS_VITMIN",
+        "FDA_SUPP"
+      ],
+      "notes": "Identity/category seed only; detailed safety/interaction/efficacy fields intentionally deferred."
+    },
+    {
+      "candidate_id": "supp.iodine",
+      "name_en": "Iodine",
+      "name_zh": "碘",
+      "candidate_category": "minerals",
+      "status": "research_candidate_not_canonical",
+      "source_targets": [
+        "NIH_ODS_VITMIN",
+        "FDA_SUPP"
+      ],
+      "notes": "Identity/category seed only; detailed safety/interaction/efficacy fields intentionally deferred."
+    },
+    {
+      "candidate_id": "supp.omega_3_fatty_acids",
+      "name_en": "Omega-3 Fatty Acids",
+      "name_zh": "Omega-3 脂肪酸",
+      "candidate_category": "fatty_acids",
+      "status": "research_candidate_not_canonical",
+      "source_targets": [
+        "NIH_ODS",
+        "FDA_SUPP"
+      ],
+      "notes": "Identity/category seed only; detailed safety/interaction/efficacy fields intentionally deferred."
+    },
+    {
+      "candidate_id": "supp.coenzyme_q10",
+      "name_en": "Coenzyme Q10 (CoQ10)",
+      "name_zh": "輔酶Q10（CoQ10）",
+      "candidate_category": "antioxidants_coenzymes",
+      "status": "research_candidate_not_canonical",
+      "source_targets": [
+        "NIH_ODS",
+        "NCCIH",
+        "FDA_SUPP"
+      ],
+      "notes": "Identity/category seed only; detailed safety/interaction/efficacy fields intentionally deferred."
+    },
+    {
+      "candidate_id": "supp.creatine",
+      "name_en": "Creatine",
+      "name_zh": "肌酸",
+      "candidate_category": "amino_acids_performance",
+      "status": "research_candidate_not_canonical",
+      "source_targets": [
+        "NIH_ODS",
+        "FDA_SUPP"
+      ],
+      "notes": "Identity/category seed only; detailed safety/interaction/efficacy fields intentionally deferred."
+    },
+    {
+      "candidate_id": "supp.probiotics",
+      "name_en": "Probiotics",
+      "name_zh": "益生菌",
+      "candidate_category": "probiotics",
+      "status": "research_candidate_not_canonical",
+      "source_targets": [
+        "NIH_ODS",
+        "NCCIH",
+        "FDA_SUPP"
+      ],
+      "notes": "Identity/category seed only; detailed safety/interaction/efficacy fields intentionally deferred."
+    },
+    {
+      "candidate_id": "supp.turmeric_curcumin",
+      "name_en": "Turmeric / Curcumin",
+      "name_zh": "薑黃／薑黃素",
+      "candidate_category": "botanical_extracts",
+      "status": "research_candidate_not_canonical",
+      "source_targets": [
+        "NIH_ODS_BOTANICAL",
+        "NCCIH",
+        "FDA_SUPP"
+      ],
+      "notes": "Identity/category seed only; detailed safety/interaction/efficacy fields intentionally deferred."
+    },
+    {
+      "candidate_id": "supp.ginkgo",
+      "name_en": "Ginkgo",
+      "name_zh": "銀杏",
+      "candidate_category": "botanical_extracts",
+      "status": "research_candidate_not_canonical",
+      "source_targets": [
+        "NIH_ODS_BOTANICAL",
+        "NCCIH",
+        "FDA_SUPP"
+      ],
+      "notes": "Identity/category seed only; detailed safety/interaction/efficacy fields intentionally deferred."
+    },
+    {
+      "candidate_id": "supp.ginseng_asian",
+      "name_en": "Asian Ginseng (Panax ginseng)",
+      "name_zh": "亞洲人參／高麗參（Panax ginseng）",
+      "candidate_category": "botanical_extracts",
+      "status": "research_candidate_not_canonical",
+      "source_targets": [
+        "NIH_ODS_BOTANICAL",
+        "NCCIH",
+        "FDA_SUPP"
+      ],
+      "notes": "Identity/category seed only; detailed safety/interaction/efficacy fields intentionally deferred."
+    },
+    {
+      "candidate_id": "supp.echinacea",
+      "name_en": "Echinacea",
+      "name_zh": "紫錐菊",
+      "candidate_category": "botanical_extracts",
+      "status": "research_candidate_not_canonical",
+      "source_targets": [
+        "NIH_ODS_BOTANICAL",
+        "NCCIH",
+        "FDA_SUPP"
+      ],
+      "notes": "Identity/category seed only; detailed safety/interaction/efficacy fields intentionally deferred."
+    },
+    {
+      "candidate_id": "supp.garlic",
+      "name_en": "Garlic Supplement",
+      "name_zh": "大蒜補充劑",
+      "candidate_category": "botanical_extracts",
+      "status": "research_candidate_not_canonical",
+      "source_targets": [
+        "NIH_ODS_BOTANICAL",
+        "NCCIH",
+        "FDA_SUPP"
+      ],
+      "notes": "Identity/category seed only; detailed safety/interaction/efficacy fields intentionally deferred."
+    },
+    {
+      "candidate_id": "supp.st_johns_wort",
+      "name_en": "St. John's Wort",
+      "name_zh": "聖約翰草",
+      "candidate_category": "botanical_extracts",
+      "status": "research_candidate_not_canonical",
+      "source_targets": [
+        "NIH_ODS_BOTANICAL",
+        "NCCIH",
+        "FDA_SUPP",
+        "FDA_INGREDIENT_ALERTS"
+      ],
+      "notes": "Identity/category seed only; detailed safety/interaction/efficacy fields intentionally deferred."
+    },
+    {
+      "candidate_id": "supp.ashwagandha",
+      "name_en": "Ashwagandha",
+      "name_zh": "南非醉茄（Ashwagandha）",
+      "candidate_category": "botanical_extracts",
+      "status": "research_candidate_not_canonical",
+      "source_targets": [
+        "NIH_ODS_BOTANICAL",
+        "NCCIH",
+        "FDA_SUPP"
+      ],
+      "notes": "Identity/category seed only; detailed safety/interaction/efficacy fields intentionally deferred."
+    },
+    {
+      "candidate_id": "supp.melatonin",
+      "name_en": "Melatonin",
+      "name_zh": "褪黑激素",
+      "candidate_category": "UNRESOLVED_CATEGORY",
+      "status": "research_candidate_not_canonical",
+      "source_targets": [
+        "NIH_ODS",
+        "NCCIH",
+        "FDA_SUPP"
+      ],
+      "notes": "Category taxonomy gap; do not force-fit before taxonomy review."
+    },
+    {
+      "candidate_id": "supp.glucosamine",
+      "name_en": "Glucosamine",
+      "name_zh": "葡萄糖胺",
+      "candidate_category": "UNRESOLVED_CATEGORY",
+      "status": "research_candidate_not_canonical",
+      "source_targets": [
+        "NIH_ODS",
+        "NCCIH",
+        "FDA_SUPP"
+      ],
+      "notes": "Category taxonomy gap; do not force-fit before taxonomy review."
+    },
+    {
+      "candidate_id": "supp.chondroitin",
+      "name_en": "Chondroitin",
+      "name_zh": "軟骨素",
+      "candidate_category": "UNRESOLVED_CATEGORY",
+      "status": "research_candidate_not_canonical",
+      "source_targets": [
+        "NIH_ODS",
+        "NCCIH",
+        "FDA_SUPP"
+      ],
+      "notes": "Category taxonomy gap; do not force-fit before taxonomy review."
+    },
+    {
+      "candidate_id": "supp.multivitamin_mineral",
+      "name_en": "Multivitamin/mineral supplement",
+      "name_zh": "綜合維生素／礦物質補充劑",
+      "candidate_category": "multi_ingredient",
+      "status": "research_candidate_not_canonical",
+      "source_targets": [
+        "NIH_ODS",
+        "FDA_SUPP"
+      ],
+      "notes": "Identity/category seed only; detailed safety/interaction/efficacy fields intentionally deferred."
+    }
+  ]
+}

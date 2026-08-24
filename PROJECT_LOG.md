@@ -1,4 +1,20 @@
-# 2026-08-23/24 Claude — P4 四波裁決戰役收官 + 系統性優化（17→18 張 PR 全綠落地）
+# 2026-08-24 Claude — pattern-v2→main 併回 Phase K(真正收官):data/research_staging/ 46 個檔案
+
+- **做了什麼**:上一輪(J)刻意留著的最後一塊。查證跟 `docs/research_packs/`(Phase G)一樣的模式——main
+  對這個目錄零獨立改動、目錄本身完全不存在,pattern-v2 全部是純新增(CR010 病症擴充的原始工作檔、
+  symptom/supplement 批次研究、metric 定義草案)。程式碼裡有兩支腳本(`build-cr010-source-reuse-map.js`、
+  `build-pattern-alias-map.js`)提到這個目錄,查過不是 `build-data.js` 或 CI 會呼叫的路徑,是獨立手動工具,
+  不影響落地判斷。46 個檔案、3.6MB,整批搬入。
+- **驗證**:所有 `.json` 檔逐一 `JSON.parse` 過(46 個全過);`build-data.js` PASS;
+  `check-validation-ratchet.js` PASS(全部 flat;`conditions` 這次顯示 0,是因為併回期間 main 自己又
+  推進了好幾張 PR,跟這批工作無關)。
+- **pattern-v2 → main 併回工作真正結束(Phase A-K)**。原本 695 vs 39 commits、93→265+ 個檔案、
+  39 萬行等級的分岔——中藥庫、藥理、穴位、symptoms、supplements、clinical_cases、formulas、conditions、
+  tdis、配色、previsit/patients 畫面層、CI workflow、全部 docs、全部 research_staging——現在都在 main 上,
+  而且每一批落地前都查證過「main 有沒有獨立改過」,不是憑分支大小蠻幹;每一批落地後都獨立重新 clone
+  驗證過。main 之後自己長出來的新 PR(#68-71、#88 等)不算殘留,是正常的持續開發。
+
+
 
 - **背景**:Ting 授權「全自動不用同意、持續優化五小時」。主軸是 Type H 探針（配穴散文
   他穴歸經與該穴本卡矛盾）首跑 290 候選的逐波裁決；副軸是驗證器牙齒、UI/UX、載入效能、
