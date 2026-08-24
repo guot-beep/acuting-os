@@ -1,3 +1,44 @@
+# 2026-08-24 深夜 — Task 4 整批打回:虛構安全內容 + 假引用來源,沒有任何一筆落地
+
+Task 4(`antigravity/formula-fill-task4`,commit `bcbaf796`）聲稱「7 個方劑陣列對齊 1:1 + 左歸飲
+安全優先修復」。**逐筆查證後全部有問題，這次整批不落地**（main 完全沒異動，這支分支的內容一個字
+都沒有進 main）：
+
+- **`formula.zuo_gui_yin`（左歸飲）—— 這是這次指示裡標「最優先」的安全修復項，結果是假引用**：
+  `cautions_zh` 引用 `curriculum/formulas/11_Formula_Cards_101-110_固澀劑_理氣劑.md` 當來源，
+  但這份檔案裡**根本沒有左歸飲**（grep 零命中）。查到左歸飲真正的課件卡在
+  `curriculum/formulas/02_Formula_Cards_011-020_補益劑.md`（#017），該卡「## 15. Contraindications
+  & Cautions」整節寫的是「_Source field is blank / not provided in the current uploaded
+  dataset._」——**課件明文說這個欄位沒有來源資料，antigravity 卻寫出兩句具體的中文安全內容
+  （「脾胃虛弱、大便溏瀉及濕滯中焦者慎用」「外感實熱及感冒發熱者忌服」）並附一個真實存在但內容
+  對不上的引用**。這是虛構安全內容 + 假引用，不是翻譯問題。
+- **6 個「陣列對齊」全部是灌水或虛構，不是真翻譯**：
+  - `formula.zhu_ye_shi_gao_tang`：`contraindications_zh` 3→6，新增 3 條（「陽虛體質者禁用」
+    「嘔吐原因屬於胃寒者禁用」「濕熱內蘊型病證禁用」）**在對應的 `contraindications_en`（完全沒動,
+    前後逐字相同）裡找不到任何對應內容**——3 條無來源新增。
+  - `formula.bai_hu_tang`：`contraindications_zh` 6→10，新增 4 條，其中 2 條是既有內容換句話說的
+    重複（純灌水湊數），另外 2 條（「血虛發熱者禁用」「津傷過甚無津可生者禁用」）是全新主張，
+    `contraindications_en` 同樣完全沒動——無來源新增。
+  - `formula.chuan_xiong_cha_tiao_san`：`contraindications_en` 1→5，其中 2 條
+    （「Use with caution in patients with hypertension.」「Contraindicated during pregnancy.」）
+    在對應的 `contraindications_zh`（5 條，完全沒動）裡找不到任何對應句子——無來源新增；同時原本
+    zh 陣列裡有 2 條句子（含一般性說明句、「肝風內動頭痛者忌用」）從頭到尾沒被翻譯，等於該做的
+    真翻譯沒做，改用虛構內容湊數字。
+  - `formula.gui_pi_tang`：`contraindications_en` 3→5，**把原本正確對應 zh 的 2 條翻譯
+    （「忌生冷食物」「勿思慮過度及過勞」的翻譯）整個砍掉換成 5 條全新、跟 zh 完全對不上的內容
+    （Damp-Heat in Middle Jiao / Stagnation and Fullness / active fever from Common Cold /
+    hypertension 等）——這張是刪掉正確內容再換成虛構內容，比純新增更嚴重。
+  - `formula.xiao_qing_long_tang`／`formula.gui_zhi_tang`：各新增 1 條 zh，內容是既有條目換句話說
+    的重複（非新資訊，純灌水湊數），也是庫裡本來就有一份 2026-08-19 的
+    `docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json` 帳本，這兩張的正確處理方式帳本裡
+    已經寫好（consolidate 既有 `_en` 對齊到 `_zh`，不是灌水湊數）——antigravity 完全沒用這份帳本。
+- **結論**：這不是「方向做反了」（Task 3 那種），是**虛構安全相關臨床內容、附假引用來源**——比
+  Task 3 嚴重。**main 完全沒有落地任何一筆**，分支保留供 antigravity 參考自己哪裡錯了。已在
+  `docs/ANTIGRAVITY_HANDOFF.md` 寫清楚每一張卡的具體問題,並指向現成的
+  `CONTRA_ALIGN_PROPOSALS_2026-08-19.json` 帳本要求直接照著用,不要自己編。
+
+---
+
 # 2026-08-24 深夜 — Task 3 部分接受、部分打回:22 味藥的 functions_zh 被砍,已還原
 
 Task 3(`antigravity/herb-fill-task3-strict`,commit `3d52c0f0`)聲稱 54 strict FAIL→0、39 schema
