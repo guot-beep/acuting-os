@@ -66306,7 +66306,138 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "腰椎椎管狹窄症是指腰椎椎管、側隱窩或椎間孔因退化性變化(黃韌帶肥厚、椎間盤突出、小面關節增生、脊椎滑脫)而狹窄,壓迫馬尾神經或神經根,好發於50歲以上中老年人,典型表現為神經性跛行——站立或行走後出現下肢痠麻無力,前彎或坐下可緩解。",
+   "summary_en": "Lumbar spinal stenosis is narrowing of the lumbar spinal canal, lateral recess, or neural foramen — from degenerative changes such as ligamentum flavum hypertrophy, disc bulging, facet joint hypertrophy, or spondylolisthesis — that compresses the cauda equina or nerve roots. It most commonly affects adults over 50 and classically presents as neurogenic claudication: bilateral leg pain, numbness, or weakness that worsens with standing or walking and eases with forward flexion or sitting.",
+   "western_context_zh": "西醫處置先以保守治療為主,包含物理治療、姿勢調整衛教、口服消炎止痛藥物、必要時硬脊膜外類固醇注射;若保守治療數月無效或出現顯著神經功能缺損,轉介神經外科或骨科評估減壓手術(如椎板切除術)之適應症。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western management typically starts conservatively — physical therapy, posture and activity modification education, oral anti-inflammatory analgesics, and epidural steroid injection when indicated — with referral to neurosurgery or orthopedic spine surgery for consideration of decompressive surgery (e.g., laminectomy) if conservative care fails after several months or significant neurologic deficit develops. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "病理機轉主要為退化性脊椎病變導致椎管有效空間縮小:椎間盤退化、脫水塌陷使椎體間距減少,黃韌帶因反覆機械應力而肥厚摺疊,小面關節退化增生形成骨贅,三者共同壓迫馬尾神經束或神經根,並可能因站立/行走時腰椎前凸增加而使狹窄加劇(即神經性跛行機轉)。診斷以臨床病史(姿勢相關性下肢症狀)結合MRI影像確認椎管狹窄程度與壓迫節位,MRI為首選影像工具,嚴重程度常以椎管前後徑或硬脊膜囊橫截面積分級。",
+   "western_pathology_en": "The mechanism is degenerative narrowing of the available canal space: disc degeneration and height loss reduce intervertebral spacing, the ligamentum flavum thickens and buckles from repeated mechanical stress, and facet joint hypertrophy forms osteophytes — together compressing the cauda equina bundle or nerve roots. Standing or walking increases lumbar lordosis and further narrows the canal, which is the proposed mechanism behind neurogenic claudication. Diagnosis combines a posture-related leg-symptom history with MRI confirming the degree and level of canal narrowing; MRI is the imaging modality of choice, with severity commonly graded by anteroposterior canal diameter or dural sac cross-sectional area.",
+   "red_flags_zh": [
+    "急性尿滯留、大小便失禁或鞍區(會陰部)感覺喪失,需立即懷疑馬尾症候群並轉急診,屬外科急症",
+    "雙下肢快速進行性無力或步態突然惡化,需緊急神經影像評估排除嚴重神經壓迫",
+    "合併不明原因發燒、近期感染或免疫抑制病史,需排除硬脊膜外膿瘍或脊椎感染",
+    "合併不明原因體重減輕或已知癌症病史,需排除脊椎轉移性腫瘤"
+   ],
+   "red_flags_en": [
+    "Acute urinary retention, bowel/bladder incontinence, or saddle anesthesia requires immediate suspicion of cauda equina syndrome and emergency referral — a surgical emergency",
+    "Rapidly progressive bilateral leg weakness or sudden gait deterioration requires urgent neuroimaging to rule out severe neural compression",
+    "Unexplained fever, recent infection, or immunosuppression requires ruling out spinal epidural abscess or vertebral infection",
+    "Unexplained weight loss or known cancer history requires ruling out metastatic spinal tumor"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "年齡 > 50 歲",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Mayo Clinic: Spinal stenosis — Symptoms & causes"
+    },
+    {
+     "factor": "退化性椎間盤疾病或既往脊椎手術",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "PMC11906179: Lumbar Spinal Stenosis Pathophysiology, Biomechanics"
+    },
+    {
+     "factor": "肥胖",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Mayo Clinic: Spinal stenosis — Symptoms & causes"
+    },
+    {
+     "factor": "先天性椎管狹窄",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "PMC11906179: Lumbar Spinal Stenosis Pathophysiology, Biomechanics"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Age > 50",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Mayo Clinic: Spinal stenosis — Symptoms & causes"
+    },
+    {
+     "factor": "Degenerative disc disease or prior spine surgery",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "PMC11906179: Lumbar Spinal Stenosis Pathophysiology, Biomechanics"
+    },
+    {
+     "factor": "Obesity",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Mayo Clinic: Spinal stenosis — Symptoms & causes"
+    },
+    {
+     "factor": "Congenitally narrow spinal canal",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "PMC11906179: Lumbar Spinal Stenosis Pathophysiology, Biomechanics"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "可作為神經性跛行相關下背及下肢症狀之輔助止痛與功能改善選項",
+    "precautions": "出現紅旗症狀(馬尾症候群徵象、感染、腫瘤疑慮)時應優先轉診,不以一般疼痛處置延誤診治;脊椎手術後局部瘢痕組織下針需謹慎",
+    "co_management": "若病人正評估或已安排手術、硬脊膜外注射,建議與神經外科/骨科團隊聯絡確認治療時程,不建議自行停用開立藥物",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "May serve as an adjunct pain-relief and function-improvement option for neurogenic-claudication-related low back and leg symptoms",
+    "precautions": "When red-flag features (cauda equina signs, infection, tumor concern) are present, prioritize referral rather than routine pain management; use caution needling near post-surgical scar tissue",
+    "co_management": "If the patient is being evaluated for or has scheduled surgery or epidural injection, contact the neurosurgery/orthopedic team to coordinate — do not advise stopping prescribed medication independently",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.yao_tong",
+    "tdis.bi_zheng"
+   ],
+   "related_patterns": [
+    "pattern.kidney_deficiency",
+    "pattern.qi_stagnation_blood_stasis",
+    "pattern.kidney_yang_deficiency"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "Mayo Clinic: Spinal stenosis — Symptoms & causes (mayoclinic.org)"
+    ],
+    "summary_en": [
+     "Mayo Clinic: Spinal stenosis — Symptoms & causes (mayoclinic.org)"
+    ],
+    "western_context_zh": [
+     "Mayo Clinic: Spinal stenosis — Symptoms & causes; Johns Hopkins Medicine: Lumbar Spinal Stenosis"
+    ],
+    "western_context_en": [
+     "Mayo Clinic: Spinal stenosis — Symptoms & causes; Johns Hopkins Medicine: Lumbar Spinal Stenosis"
+    ],
+    "western_pathology_zh": [
+     "PMC11906179: Lumbar Spinal Stenosis: Pathophysiology, Biomechanics, and Innovations in Diagnosis and Management"
+    ],
+    "western_pathology_en": [
+     "PMC11906179: Lumbar Spinal Stenosis: Pathophysiology, Biomechanics, and Innovations in Diagnosis and Management"
+    ],
+    "red_flags_zh": [
+     "Legent Spine: Cauda Equina Syndrome Red Flags; PMC4080478: The Reliability of Red Flags in Spinal Cord Compression"
+    ],
+    "red_flags_en": [
+     "Legent Spine: Cauda Equina Syndrome Red Flags; PMC4080478: The Reliability of Red Flags in Spinal Cord Compression"
+    ],
+    "risk_factors_zh": [
+     "Mayo Clinic: Spinal stenosis — Symptoms & causes; PMC11906179"
+    ],
+    "risk_factors_en": [
+     "Mayo Clinic: Spinal stenosis — Symptoms & causes; PMC11906179"
+    ],
+    "acupuncture_scope_zh": [
+     "established biomedical/scope-of-practice knowledge, not source-verified for LSS specifically — flag for Ting to source-check"
+    ],
+    "acupuncture_scope_en": [
+     "established biomedical/scope-of-practice knowledge, not source-verified for LSS specifically — flag for Ting to source-check"
+    ]
+   }
   },
   {
    "id": "cond.pseudogout",
@@ -66315,10 +66446,152 @@
    "name_en": "Pseudogout (CPPD)",
    "category": "pain_msk",
    "icd_hint": "M11.2",
-   "aliases_zh": [],
-   "aliases_en": [],
+   "aliases_zh": [
+    "焦磷酸鈣沉積症",
+    "軟骨鈣化症"
+   ],
+   "aliases_en": [
+    "Calcium Pyrophosphate Deposition Disease (CPPD)",
+    "Chondrocalcinosis"
+   ],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "假性痛風是焦磷酸鈣沉積症(CPPD)的急性關節炎表現形式,因焦磷酸鈣結晶沉積於關節軟骨及周邊組織所致,好發於60歲以上長者,最常侵犯膝關節,表現為單一或少數關節突發紅腫熱痛,臨床外觀與痛風極為相似但致病結晶不同。",
+   "summary_en": "Pseudogout is the acute arthritic presentation of calcium pyrophosphate deposition (CPPD) disease, caused by calcium pyrophosphate crystal deposition in joint cartilage and periarticular tissue. It most commonly affects adults over 60, classically involving the knee, and presents as sudden red, hot, swollen pain in one or a few joints — clinically resembling gout but caused by a different crystal.",
+   "western_context_zh": "西醫確診依賴關節液抽吸並以偏光顯微鏡分析(可見菱形、弱陽性雙折射之焦磷酸鈣結晶),或以X光確認軟骨鈣化徵象;急性發作以非類固醇消炎藥、秋水仙素或關節內類固醇注射處置,反覆發作或55歲以下發病者應轉診評估潛在代謝性疾病(如副甲狀腺機能亢進、血色素沉積症、低血鎂症)。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western confirmation relies on joint fluid aspiration with polarized-light microscopy (showing rhomboid, weakly positive birefringent calcium pyrophosphate crystals) or radiographs demonstrating cartilage calcification (chondrocalcinosis). Acute flares are managed with NSAIDs, colchicine, or intra-articular steroid injection; recurrent disease or onset before age 55 warrants referral to evaluate for an underlying metabolic condition such as hyperparathyroidism, hemochromatosis, or hypomagnesemia. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "病理機轉為軟骨基質中焦磷酸鹽代謝失調(如ANKH轉運蛋白活性異常導致局部焦磷酸鹽濃度上升),促使焦磷酸鈣結晶於纖維軟骨及透明軟骨內形成;結晶自軟骨脫落進入關節腔後,經由類似痛風的NLRP3發炎小體路徑活化先天性免疫反應,引發急性關節炎。確診金標準為關節液分析找到特徵性菱形、弱陽性雙折射結晶(區別於痛風之針狀、強負性雙折射尿酸鈉結晶);影像學可見關節軟骨鈣化(chondrocalcinosis)輔助支持診斷。",
+   "western_pathology_en": "The mechanism involves dysregulated pyrophosphate metabolism in cartilage matrix (e.g., altered ANKH transporter activity raising local pyrophosphate concentration), promoting calcium pyrophosphate crystal formation within fibrocartilage and hyaline cartilage. When crystals shed into the joint space, they trigger an innate immune response via the NLRP3 inflammasome pathway, similar to gout, producing acute arthritis. The diagnostic gold standard is synovial fluid analysis identifying characteristic rhomboid, weakly positive birefringent crystals (distinct from the needle-shaped, strongly negative birefringent monosodium urate crystals of gout); imaging showing cartilage calcification (chondrocalcinosis) supports the diagnosis.",
+   "red_flags_zh": [
+    "單一關節急性紅腫熱痛合併發燒,尤其有人工關節、免疫抑制或近期侵入性處置病史者,須先以關節液穿刺排除感染性關節炎,屬醫療急症,不可逕自當作假性痛風處理",
+    "55歲以下發病之CPPD,應轉診篩檢潛在代謝性疾病(副甲狀腺機能亢進、血色素沉積症、低血鎂症、低磷酸酶症)",
+    "出現類似敗血症之高燒與白血球顯著上升合併關節症狀(「偽敗血症」表現),需緊急關節液抽吸與培養排除真正感染",
+    "頸椎周圍CPPD沉積(冠狀齒突症候群)引發急性頸痛合併發燒,臨床表現可能與腦膜炎或脊椎感染混淆,需影像學評估釐清"
+   ],
+   "red_flags_en": [
+    "Acute red, hot, swollen single joint with fever — especially in a patient with a joint prosthesis, immunosuppression, or recent invasive procedure — requires joint aspiration to rule out septic arthritis first; this is a medical emergency and should not be assumed to be pseudogout without exclusion",
+    "CPPD onset before age 55 should prompt referral to screen for an underlying metabolic condition (hyperparathyroidism, hemochromatosis, hypomagnesemia, hypophosphatasia)",
+    "A sepsis-mimicking presentation with high fever and marked leukocytosis alongside joint symptoms ('pseudo-septic' presentation) requires urgent joint aspiration and culture to rule out true infection",
+    "Cervical CPPD deposition (crowned dens syndrome) causing acute neck pain with fever can mimic meningitis or spinal infection and requires imaging work-up to clarify"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "年齡 > 60 歲",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Calcium Pyrophosphate Deposition Disease (NBK540151)"
+    },
+    {
+     "factor": "既往關節創傷或手術史",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Calcium Pyrophosphate Deposition Disease (NBK540151)"
+    },
+    {
+     "factor": "副甲狀腺機能亢進、血色素沉積症、低血鎂症等代謝性疾病",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Calcium Pyrophosphate Deposition Disease (NBK540151)"
+    },
+    {
+     "factor": "家族性CPPD(遺傳傾向)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Calcium Pyrophosphate Deposition Disease (NBK540151)"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Age > 60",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Calcium Pyrophosphate Deposition Disease (NBK540151)"
+    },
+    {
+     "factor": "Prior joint trauma or surgery",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Calcium Pyrophosphate Deposition Disease (NBK540151)"
+    },
+    {
+     "factor": "Metabolic conditions such as hyperparathyroidism, hemochromatosis, hypomagnesemia",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Calcium Pyrophosphate Deposition Disease (NBK540151)"
+    },
+    {
+     "factor": "Familial CPPD (hereditary predisposition)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Calcium Pyrophosphate Deposition Disease (NBK540151)"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "可作為CPPD慢性期或發作間期關節疼痛之輔助止痛選項,非急性發炎期之替代治療",
+    "precautions": "急性紅腫熱痛關節未排除感染前避免局部下針;凝血功能異常或使用抗凝血藥物者需評估出血風險",
+    "co_management": "病人正在使用秋水仙素、消炎止痛藥物或接受代謝性疾病評估者,任何症狀變化建議聯絡原開立醫師確認,不建議自行停藥",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "May serve as an adjunct pain-relief option during the chronic or inter-attack phase of CPPD, not a substitute for management of an acute inflammatory flare",
+    "precautions": "Avoid local needling of an acutely hot, red, swollen joint until infection has been excluded; assess bleeding risk in patients with coagulation abnormalities or on anticoagulants",
+    "co_management": "For patients using colchicine, anti-inflammatory medication, or undergoing metabolic disease work-up, any symptom change should prompt the patient to contact the prescribing physician — do not advise stopping medication independently",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.bi_zheng"
+   ],
+   "related_patterns": [
+    "pattern.damp_heat",
+    "pattern.phlegm",
+    "pattern.qi_stagnation_blood_stasis"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "StatPearls: Calcium Pyrophosphate Deposition Disease (NBK540151); Harvard Health: Pseudogout (CPPD)"
+    ],
+    "summary_en": [
+     "StatPearls: Calcium Pyrophosphate Deposition Disease (NBK540151); Harvard Health: Pseudogout (CPPD)"
+    ],
+    "western_context_zh": [
+     "StatPearls NBK540151; Arthritis Foundation: Gout or Pseudogout?"
+    ],
+    "western_context_en": [
+     "StatPearls NBK540151; Arthritis Foundation: Gout or Pseudogout?"
+    ],
+    "western_pathology_zh": [
+     "StatPearls NBK540151; Rheumatology Advisor: Calcium Pyrophosphate Deposition Disease (CPPD)"
+    ],
+    "western_pathology_en": [
+     "StatPearls NBK540151; Rheumatology Advisor: Calcium Pyrophosphate Deposition Disease (CPPD)"
+    ],
+    "red_flags_zh": [
+     "established biomedical knowledge (septic-arthritis exclusion, pseudo-septic presentation, crowned dens syndrome per PMC12877702 case literature), not individually source-verified line by line — flag for Ting to source-check"
+    ],
+    "red_flags_en": [
+     "established biomedical knowledge (septic-arthritis exclusion, pseudo-septic presentation, crowned dens syndrome per PMC12877702 case literature), not individually source-verified line by line — flag for Ting to source-check"
+    ],
+    "risk_factors_zh": [
+     "StatPearls NBK540151"
+    ],
+    "risk_factors_en": [
+     "StatPearls NBK540151"
+    ],
+    "aliases_zh": [
+     "StatPearls NBK540151: Calcium Pyrophosphate Deposition Disease"
+    ],
+    "aliases_en": [
+     "StatPearls NBK540151: Calcium Pyrophosphate Deposition Disease"
+    ],
+    "acupuncture_scope_zh": [
+     "clinical/scope-of-practice judgment — no guideline or RCT source found for acupuncture specifically in CPPD/pseudogout; evidence marked unknown"
+    ],
+    "acupuncture_scope_en": [
+     "clinical/scope-of-practice judgment — no guideline or RCT source found for acupuncture specifically in CPPD/pseudogout; evidence marked unknown"
+    ]
+   }
   },
   {
    "id": "cond.sarcopenia",
@@ -66330,7 +66603,138 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "肌少症是一種進行性、廣泛性的骨骼肌疾病,以肌肉量、肌力及身體功能表現同時下降為特徵,主要見於高齡族群,亦可因慢性疾病、營養不良或長期臥床等因素而提早發生,與跌倒、骨折、失能及死亡風險增加密切相關。",
+   "summary_en": "Sarcopenia is a progressive, generalized skeletal muscle disorder characterized by concurrent decline in muscle mass, muscle strength, and physical performance. It primarily affects older adults but can also develop earlier due to chronic disease, malnutrition, or prolonged inactivity, and is closely associated with increased risk of falls, fractures, disability, and mortality.",
+   "western_context_zh": "西醫處置以老年醫學整合評估為主,核心介入為漸進式阻力訓練及足量蛋白質攝取,並積極治療可能之次發性病因(如內分泌疾病、慢性器官衰竭、營養不良);以握力、步行速度及身體組成檢查(如DXA或生物電阻抗分析)定期監測,必要時轉介復健科或營養科擬定介入計畫。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western management centers on comprehensive geriatric assessment, with progressive resistance exercise training and adequate protein intake as the core interventions, alongside active treatment of possible secondary causes (endocrine disease, chronic organ failure, malnutrition). Grip strength, gait speed, and body composition testing (e.g., DXA or bioelectrical impedance analysis) are used for periodic monitoring, with referral to rehabilitation medicine or nutrition services for structured intervention planning when indicated. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "病理機轉涉及隨年齡增長之運動神經元數量減少及第二型(快縮)肌纖維優先流失、衛星細胞再生能力下降、蛋白質同化反應遲鈍(合成抵抗)、性腺激素與生長激素/類胰島素生長因子下降,以及慢性低度發炎(「發炎老化」)與粒線體功能異常等多重機轉共同作用。診斷依EWGSOP2演算法:先以SARC-F問卷等工具篩檢,再以握力或起立坐下測試評估肌力,肌力低下即為「可能肌少症」;進一步以DXA、生物電阻抗分析、CT或MRI確認肌肉量/品質下降則診斷為「確診肌少症」;若再合併步行速度、簡易身體功能量表(SPPB)或計時起立行走測試表現不佳,則歸類為「嚴重肌少症」。",
+   "western_pathology_en": "The mechanism involves age-related loss of motor neurons with preferential atrophy of type II (fast-twitch) muscle fibers, declining satellite cell regenerative capacity, anabolic resistance to protein intake, falling sex hormones and growth hormone/IGF-1, and chronic low-grade inflammation ('inflammaging') together with mitochondrial dysfunction. Diagnosis follows the EWGSOP2 algorithm: screening tools such as the SARC-F questionnaire are used first, followed by grip strength or chair-stand testing to assess muscle strength — low strength defines 'probable sarcopenia.' Confirmation requires demonstrating low muscle quantity/quality via DXA, bioelectrical impedance analysis, CT, or MRI ('confirmed sarcopenia'); poor performance on gait speed, the Short Physical Performance Battery, or the timed up-and-go test further classifies the case as 'severe sarcopenia.'",
+   "red_flags_zh": [
+    "數週內快速且無法解釋的肌肉量減少或無力惡化,不應逕自歸因於年齡相關肌少症,需排除惡性腫瘤、急性疾病或神經肌肉疾病",
+    "肌少症病人新發吞嚥困難或進食嗆咳,需篩檢肌少症性吞嚥障礙,有吸入性肺炎風險,應安排吞嚥功能評估",
+    "反覆跌倒或跌倒後無法自行起身,需緊急評估跌倒風險及骨折可能",
+    "肌無力呈進行性惡化並合併肌酸激酶等指標異常上升,應重新考慮診斷,排除肌炎等其他肌病而非逕自視為肌少症"
+   ],
+   "red_flags_en": [
+    "Rapid, unexplained muscle loss or worsening weakness over weeks should not be attributed to age-related sarcopenia by default and warrants work-up for malignancy, acute illness, or neuromuscular disease",
+    "New dysphagia or choking with meals in a sarcopenic patient should prompt screening for sarcopenic dysphagia given the risk of aspiration pneumonia, and warrants a swallowing evaluation",
+    "Recurrent falls, or a fall with inability to get up unassisted, requires urgent fall-risk and fracture assessment",
+    "Progressively worsening weakness with elevated creatine kinase or other abnormal markers should prompt reconsideration of the diagnosis and evaluation for myositis or another myopathy rather than assuming sarcopenia"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "年齡 > 60 歲",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Sarcopenia (NBK560813)"
+    },
+    {
+     "factor": "久坐不動/身體活動量不足",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "PMC9022416: Sarcopenia and associated factors according to EWGSOP2 criteria in nursing home residents"
+    },
+    {
+     "factor": "營養不良或蛋白質攝取不足",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "PMC9022416: Sarcopenia and associated factors according to EWGSOP2 criteria in nursing home residents"
+    },
+    {
+     "factor": "糖尿病等慢性疾病共病",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "PMC9022416: Sarcopenia and associated factors according to EWGSOP2 criteria in nursing home residents"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Age > 60",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Sarcopenia (NBK560813)"
+    },
+    {
+     "factor": "Sedentary behavior/insufficient physical activity",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "PMC9022416: Sarcopenia and associated factors according to EWGSOP2 criteria in nursing home residents"
+    },
+    {
+     "factor": "Malnutrition or inadequate protein intake",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "PMC9022416: Sarcopenia and associated factors according to EWGSOP2 criteria in nursing home residents"
+    },
+    {
+     "factor": "Chronic disease comorbidity such as diabetes",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "PMC9022416: Sarcopenia and associated factors according to EWGSOP2 criteria in nursing home residents"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "可作為肌少症相關肌肉痠痛不適之輔助舒緩選項,非肌肉量或肌力下降本身之治療手段",
+    "precautions": "體弱長者皮下組織薄、皮膚脆弱,下針及擺位時需留意壓瘡與跌倒風險",
+    "co_management": "病人若已接受結構化阻力訓練或營養介入計畫,建議協調治療時程配合而非取代,阻力訓練與蛋白質補充目前為實證上的第一線介入",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "May serve as an adjunct comfort option for muscle soreness/discomfort associated with sarcopenia, not a treatment for the underlying loss of muscle mass or strength",
+    "precautions": "Frail older adults have thin subcutaneous tissue and fragile skin — take care with needling and positioning given pressure-injury and fall risk",
+    "co_management": "If the patient is enrolled in a structured resistance-training or nutrition intervention program, coordinate timing rather than substitute for it — resistance exercise and protein supplementation are currently the evidence-based first-line interventions",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.xu_lao",
+    "tdis.wei_zheng"
+   ],
+   "related_patterns": [
+    "pattern.qi_blood_deficiency",
+    "pattern.spleen_qi_deficiency",
+    "pattern.kidney_deficiency"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "StatPearls: Sarcopenia (NBK560813); Age and Ageing: Sarcopenia — revised European consensus on definition and diagnosis (EWGSOP2)"
+    ],
+    "summary_en": [
+     "StatPearls: Sarcopenia (NBK560813); Age and Ageing: Sarcopenia — revised European consensus on definition and diagnosis (EWGSOP2)"
+    ],
+    "western_context_zh": [
+     "StatPearls NBK560813; Age and Ageing EWGSOP2 consensus"
+    ],
+    "western_context_en": [
+     "StatPearls NBK560813; Age and Ageing EWGSOP2 consensus"
+    ],
+    "western_pathology_zh": [
+     "Age and Ageing: EWGSOP2 consensus; StatPearls NBK560813"
+    ],
+    "western_pathology_en": [
+     "Age and Ageing: EWGSOP2 consensus; StatPearls NBK560813"
+    ],
+    "red_flags_zh": [
+     "PMC7284486: Association of Sarcopenic Dysphagia with Underlying Sarcopenia Following Hip Fracture Surgery; established biomedical knowledge for the malignancy/myositis-exclusion flags, not individually source-verified — flag for Ting to source-check"
+    ],
+    "red_flags_en": [
+     "PMC7284486: Association of Sarcopenic Dysphagia with Underlying Sarcopenia Following Hip Fracture Surgery; established biomedical knowledge for the malignancy/myositis-exclusion flags, not individually source-verified — flag for Ting to source-check"
+    ],
+    "risk_factors_zh": [
+     "PMC9022416: Sarcopenia and associated factors according to the EWGSOP2 criteria in older people living in nursing homes"
+    ],
+    "risk_factors_en": [
+     "PMC9022416: Sarcopenia and associated factors according to the EWGSOP2 criteria in older people living in nursing homes"
+    ],
+    "acupuncture_scope_zh": [
+     "clinical/scope-of-practice judgment — no guideline or RCT source found for acupuncture specifically in sarcopenia; evidence marked unknown"
+    ],
+    "acupuncture_scope_en": [
+     "clinical/scope-of-practice judgment — no guideline or RCT source found for acupuncture specifically in sarcopenia; evidence marked unknown"
+    ]
+   }
   },
   {
    "id": "cond.ankylosing_spondylitis",
@@ -66493,7 +66897,137 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "薦髂關節功能障礙是指薦髂關節因活動度異常(過動或活動不足)或排列不良所引起的下背及臀部疼痛,是下背痛常見卻常被忽略之病因,臨床表現易與腰椎病變混淆,診斷須依賴多項誘發測試組合並可以影像導引關節內注射確診。",
+   "summary_en": "Sacroiliac (SI) joint dysfunction refers to low back and buttock pain arising from abnormal joint motion (hyper- or hypomobility) or malalignment of the sacroiliac joint. It is a common but frequently overlooked cause of low back pain that is easily confused clinically with lumbar spine pathology, and diagnosis relies on a cluster of provocative tests, with a definitive diagnosis confirmed by an image-guided intra-articular joint block.",
+   "western_context_zh": "西醫處置先以保守治療為主,包含物理治療(骨盆穩定運動)、活動量調整、非類固醇消炎藥及薦髂關節穩定護具;保守治療無效時可考慮影像導引薦髂關節內類固醇注射兼具診斷與治療意義;頑固慢性病例轉介疼痛科或脊椎外科評估射頻消融或關節融合手術。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western management typically starts conservatively — physical therapy (pelvic stabilization exercises), activity modification, NSAIDs, and an SI belt. If conservative care fails, an image-guided intra-articular corticosteroid injection may be considered, serving both diagnostic and therapeutic purposes; refractory chronic cases are referred to pain management or spine surgery for consideration of radiofrequency ablation or joint fusion. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "薦髂關節活動度隨年齡增長而自然下降(軟骨變化自青春期即開始並持續終生),功能障礙可源自反覆剪力/旋轉應力(如懷孕相關韌帶鬆弛、雙下肢不等長、步態異常、既往腰椎融合術改變脊椎生物力學)或創傷,造成關節活動度過動或活動不足並使神經支配豐富之後側韌帶複合體局部發炎。診斷無單一確診測試,須依賴至少3項以上陽性誘發測試組合(大腿推擠測試、FABER測試、壓迫測試、牽拉測試、Gaenslen測試、薦骨推擠測試)且疼痛部位定位於L5以下(Fortin手指測試),並以透視導引薦髂關節內局部麻醉藥注射作為確診金標準。",
+   "western_pathology_en": "SI joint mobility naturally decreases with age (cartilaginous changes begin at puberty and continue throughout life). Dysfunction can arise from repetitive shear/rotational stress — pregnancy-related ligamentous laxity, leg-length discrepancy, gait abnormality, or prior lumbar fusion altering spinal biomechanics — or from trauma, producing joint hyper- or hypomobility and localized inflammation of the richly innervated posterior ligamentous complex. There is no single diagnostic test; diagnosis relies on a cluster of at least three positive provocative maneuvers (thigh thrust, FABER, compression, distraction, Gaenslen's, and sacral thrust tests) with pain localized below L5 (Fortin finger test), and is definitively confirmed by a fluoroscopy-guided intra-articular local anesthetic block.",
+   "red_flags_zh": [
+    "有明確創傷史合併疑似骨盆骨折,或新發大小便功能障礙/鞍區感覺喪失,需排除馬尾症候群或骨盆環骨折,屬急症",
+    "合併不明原因體重減輕、發燒或已知癌症病史,需排除感染(薦髂關節炎/骨髓炎)或轉移性腫瘤",
+    "疼痛呈持續性、夜間加劇且姿勢改變無法緩解,應重新考慮發炎性(脊椎關節病變/薦髂關節炎)或腫瘤性病因,而非單純機械性功能障礙",
+    "靜脈藥物濫用史或近期感染/免疫抑制狀態合併新發薦髂區疼痛及發燒,需排除感染性薦髂關節炎"
+   ],
+   "red_flags_en": [
+    "A clear trauma history with suspected pelvic fracture, or new bowel/bladder dysfunction or saddle anesthesia, requires ruling out cauda equina syndrome or a pelvic ring fracture — an emergency",
+    "Unexplained weight loss, fever, or a known cancer history requires ruling out infection (sacroiliitis/osteomyelitis) or metastatic tumor",
+    "Pain that is constant, worsens at night, and is not relieved by position change should prompt reconsideration of an inflammatory (spondyloarthropathy/sacroiliitis) or neoplastic cause rather than simple mechanical dysfunction",
+    "IV drug use history or recent infection/immunosuppression with new SI-region pain and fever requires ruling out septic sacroiliitis"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "懷孕/產後狀態",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "AAFP: Sacroiliac Joint Dysfunction — Diagnosis and Treatment"
+    },
+    {
+     "factor": "雙下肢不等長或步態異常",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "StatPearls: Sacroiliac Joint Pain (NBK470299)"
+    },
+    {
+     "factor": "既往腰椎融合手術",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Sacroiliac Joint Pain (NBK470299)"
+    },
+    {
+     "factor": "反覆單側負重運動(如長跑、單腳優勢運動)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Springer European Spine Journal: Sacroiliac joint dysfunction — pathophysiology, diagnosis, and treatment"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Pregnancy/postpartum state",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "AAFP: Sacroiliac Joint Dysfunction — Diagnosis and Treatment"
+    },
+    {
+     "factor": "Leg-length discrepancy or gait abnormality",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "StatPearls: Sacroiliac Joint Pain (NBK470299)"
+    },
+    {
+     "factor": "Prior lumbar spinal fusion surgery",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Sacroiliac Joint Pain (NBK470299)"
+    },
+    {
+     "factor": "Repetitive asymmetric-load sports (e.g., long-distance running, single-leg-dominant sports)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Springer European Spine Journal: Sacroiliac joint dysfunction — pathophysiology, diagnosis, and treatment"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "薦髂關節功能障礙相關疼痛及周邊肌筋膜緊繃為針灸常見輔助適應範圍,可作為物理治療之輔助選項",
+    "precautions": "治療前應先排除紅旗徵象病因,不應直接以機械性功能障礙處置疑似發炎性或腫瘤性疼痛;薦骨孔周邊深刺需格外謹慎",
+    "co_management": "若病人正接受影像導引注射或評估射頻消融/關節融合手術,建議與原治療專科團隊聯繫協調治療時程",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "SI-joint-dysfunction-related pain and surrounding myofascial tightness is a commonly cited adjunct indication for acupuncture alongside physical therapy",
+    "precautions": "Red-flag causes should be excluded before treating pain as mechanical dysfunction; pain that may actually be inflammatory or neoplastic should not be managed as simple SI dysfunction; use extra caution with deep needling near the sacral foramina",
+    "co_management": "If the patient is receiving image-guided injections or being evaluated for radiofrequency ablation/joint fusion, coordinate timing with the treating specialist team",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.yao_tong",
+    "tdis.bi_zheng"
+   ],
+   "related_patterns": [
+    "pattern.qi_stagnation_blood_stasis",
+    "pattern.kidney_deficiency"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "AAFP: Sacroiliac Joint Dysfunction — Diagnosis and Treatment; StatPearls: Sacroiliac Joint Pain (NBK470299)"
+    ],
+    "summary_en": [
+     "AAFP: Sacroiliac Joint Dysfunction — Diagnosis and Treatment; StatPearls: Sacroiliac Joint Pain (NBK470299)"
+    ],
+    "western_context_zh": [
+     "AAFP: Sacroiliac Joint Dysfunction — Diagnosis and Treatment"
+    ],
+    "western_context_en": [
+     "AAFP: Sacroiliac Joint Dysfunction — Diagnosis and Treatment"
+    ],
+    "western_pathology_zh": [
+     "StatPearls NBK470299; Springer European Spine Journal: Sacroiliac joint dysfunction — pathophysiology, diagnosis, and treatment; PMC9092105: Diagnostic Value of Clinical SI Joint Pain Provocation Tests"
+    ],
+    "western_pathology_en": [
+     "StatPearls NBK470299; Springer European Spine Journal: Sacroiliac joint dysfunction — pathophysiology, diagnosis, and treatment; PMC9092105: Diagnostic Value of Clinical SI Joint Pain Provocation Tests"
+    ],
+    "red_flags_zh": [
+     "StatPearls NBK470299 (red flags: trauma, unexplained weight loss, fever, bowel/bladder change, cancer, night pain, per AAFP/StatPearls consensus); established biomedical knowledge for septic sacroiliitis flag — flag for Ting to source-check"
+    ],
+    "red_flags_en": [
+     "StatPearls NBK470299 (red flags: trauma, unexplained weight loss, fever, bowel/bladder change, cancer, night pain, per AAFP/StatPearls consensus); established biomedical knowledge for septic sacroiliitis flag — flag for Ting to source-check"
+    ],
+    "risk_factors_zh": [
+     "AAFP: Sacroiliac Joint Dysfunction — Diagnosis and Treatment; StatPearls NBK470299"
+    ],
+    "risk_factors_en": [
+     "AAFP: Sacroiliac Joint Dysfunction — Diagnosis and Treatment; StatPearls NBK470299"
+    ],
+    "acupuncture_scope_zh": [
+     "BioMed Research International (Liu 2022): systematic review/meta-analysis of acupuncture therapies for SI joint malposition/pelvic girdle pain exists, but not a formal guideline — evidence conservatively marked unknown"
+    ],
+    "acupuncture_scope_en": [
+     "BioMed Research International (Liu 2022): systematic review/meta-analysis of acupuncture therapies for SI joint malposition/pelvic girdle pain exists, but not a formal guideline — evidence conservatively marked unknown"
+    ]
+   }
   },
   {
    "id": "cond.thoracic_outlet_syndrome",
@@ -66771,7 +67305,135 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "肩關節唇損傷是指加深盂肱關節窩並作為肱二頭肌長頭肌腱及盂肱韌帶附著處的纖維軟骨唇緣發生撕裂,依部位分為上盂唇前後撕裂(SLAP)及前下盂唇撕裂(Bankart,常合併肩關節脫位),可因急性創傷(跌倒手撐地、肩關節脫位)或過頭投擲等反覆微創傷所致。",
+   "summary_en": "A shoulder labral tear involves damage to the fibrocartilaginous labrum that deepens the glenoid socket and anchors the long head of the biceps tendon and glenohumeral ligaments. It is classified by location — superior labrum anterior-to-posterior (SLAP) tears, or anteroinferior (Bankart) tears, which often accompany shoulder dislocation. Causes include acute trauma (a fall onto an outstretched arm, shoulder dislocation) or repetitive microtrauma from overhead throwing.",
+   "western_context_zh": "西醫處置初期以物理治療為主,著重旋轉肌袖及肩胛穩定肌群訓練並調整活動量,疼痛明顯者可考慮類固醇關節內注射;MR關節攝影為主要診斷影像工具;若保守治療無效、出現機械性卡頓/鎖住症狀,或過頭運動員保守治療失敗,則轉介骨科評估關節鏡下唇部修補手術。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western management initially emphasizes physical therapy — rotator cuff and scapular stabilizer training with activity modification — and intra-articular steroid injection may be considered for significant pain; MR arthrography is the primary diagnostic imaging tool. Referral to orthopedics for arthroscopic labral repair is considered if conservative care fails, mechanical catching/locking symptoms develop, or an overhead athlete does not improve with conservative treatment. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "病理機轉因部位而異:上盂唇(SLAP)撕裂常見於投擲運動員,於揮臂後期外展外旋姿勢下,後上盂唇於肱骨大結節與盂唇間受到反覆夾擠(posterosuperior impingement),或因肱二頭肌長頭肌腱在極度外旋時對肌腱根部產生扭轉牽引力(「剝離機轉」,peel-back mechanism)而撕裂;亦可因跌倒手撐地或突然提拉重物之單次創傷造成急性撕裂。前下盂唇(Bankart)撕裂則常與肩關節前脫位同時發生。目前無單一理學檢查測試能確診SLAP撕裂,診斷仰賴病史機轉、多項誘發測試組合(如O'Brien測試、biceps load測試)及MR關節攝影,部分病例僅能於關節鏡手術中最終確診;影像上發現盂唇旁囊腫為SLAP撕裂之重要診斷線索。",
+   "western_pathology_en": "The mechanism differs by location. Superior labral (SLAP) tears are common in throwing athletes, arising from posterosuperior impingement of the labrum between the humeral head and glenoid during the late cocking phase of abduction-external rotation, or from a torsional traction force on the biceps tendon root during extreme external rotation (the 'peel-back' mechanism); SLAP tears can also occur acutely from a fall onto an outstretched arm or a sudden heavy lift. Anteroinferior (Bankart) tears typically occur together with anterior shoulder dislocation. No single physical exam maneuver reliably confirms a SLAP tear; diagnosis relies on the injury history, a combination of provocative tests (e.g., O'Brien's test, biceps load test), and MR arthrography, with some cases confirmed only at arthroscopy. A paralabral cyst on imaging is an important diagnostic clue for a SLAP tear.",
+   "red_flags_zh": [
+    "肩關節出現真正機械性卡住或無法活動(true locking),提示可能有移位之盂唇碎片,需緊急轉診骨科評估",
+    "唇部損傷合併肩關節脫位且遠端出現麻木或脈搏減弱等神經血管缺損徵象,需緊急評估合併之神經或血管損傷",
+    "快速進行性肩部肌肉無力或萎縮(如棘下肌),需考慮盂唇旁囊腫壓迫肩胛上神經之可能,應安排影像檢查並可能需手術轉診",
+    "持續疼痛合併明顯半脫位感/不穩定症狀,提示合併關節囊韌帶損傷,應轉診骨科評估手術穩定而非僅以一般疼痛處置"
+   ],
+   "red_flags_en": [
+    "True mechanical locking or inability to move the shoulder suggests a displaced labral fragment and requires urgent orthopedic evaluation",
+    "A labral tear associated with shoulder dislocation and distal numbness or a diminished pulse requires urgent evaluation for concurrent nerve or vascular injury",
+    "Rapidly progressive shoulder muscle weakness or atrophy (e.g., of the infraspinatus) should raise concern for suprascapular nerve compression from a paralabral cyst and warrants imaging with possible surgical referral",
+    "Persistent pain with a clear sense of subluxation/instability suggests an associated capsuloligamentous injury and warrants orthopedic referral for surgical stabilization evaluation rather than routine pain management alone"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "參與過頭投擲運動(如棒球、排球)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "StatPearls: Superior Labrum Anterior Posterior Lesions (NBK538284)"
+    },
+    {
+     "factor": "既往肩關節脫位病史",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Superior Labrum Anterior Posterior Lesions (NBK538284)"
+    },
+    {
+     "factor": "反覆過頭重複性提舉之職業/勞動",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Physiotutors: SLAP Lesion — Diagnosis & Treatment"
+    },
+    {
+     "factor": "年齡增長之退化性盂唇磨損",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "PMC5629079: Clinical Assessment of Physical Examination Maneuvers for SLAP Lesions"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Participation in overhead throwing sports (e.g., baseball, volleyball)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "StatPearls: Superior Labrum Anterior Posterior Lesions (NBK538284)"
+    },
+    {
+     "factor": "History of prior shoulder dislocation",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Superior Labrum Anterior Posterior Lesions (NBK538284)"
+    },
+    {
+     "factor": "Occupational/manual work involving repetitive overhead lifting",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Physiotutors: SLAP Lesion — Diagnosis & Treatment"
+    },
+    {
+     "factor": "Age-related degenerative labral fraying",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "PMC5629079: Clinical Assessment of Physical Examination Maneuvers for SLAP Lesions"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "可作為肩關節唇損傷保守復健期間之輔助止痛選項",
+    "precautions": "避免採取誘發機械性卡頓/鎖住之角度下針;術後修復處在骨科團隊確認可介入前應避免局部下針",
+    "co_management": "若病人正接受骨科評估手術修復或於物理治療結構化計畫中,建議聯絡/協調原團隊而非以針灸延誤應有之轉診",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "May serve as an adjunct pain-management option during conservative rehabilitation of a labral tear",
+    "precautions": "Avoid needling positions that provoke mechanical catching/locking; avoid needling directly over a post-surgical repair site until cleared by the surgical team",
+    "co_management": "If the patient is under orthopedic evaluation for possible surgical repair or in a structured physical therapy program, contact/coordinate with that team rather than allowing acupuncture to delay an appropriate referral",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.jin_shang"
+   ],
+   "related_patterns": [
+    "pattern.qi_stagnation_blood_stasis"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "StatPearls: Superior Labrum Anterior Posterior Lesions (NBK538284); Johns Hopkins Medicine: Shoulder Labrum Tear"
+    ],
+    "summary_en": [
+     "StatPearls: Superior Labrum Anterior Posterior Lesions (NBK538284); Johns Hopkins Medicine: Shoulder Labrum Tear"
+    ],
+    "western_context_zh": [
+     "HSS: SLAP Tear — Symptoms and Treatment; StatPearls NBK538284"
+    ],
+    "western_context_en": [
+     "HSS: SLAP Tear — Symptoms and Treatment; StatPearls NBK538284"
+    ],
+    "western_pathology_zh": [
+     "StatPearls NBK538284; PMC5629079: Clinical Assessment of Physical Examination Maneuvers for SLAP Lesions"
+    ],
+    "western_pathology_en": [
+     "StatPearls NBK538284; PMC5629079: Clinical Assessment of Physical Examination Maneuvers for SLAP Lesions"
+    ],
+    "red_flags_zh": [
+     "established biomedical knowledge (mechanical locking, neurovascular exclusion, suprascapular nerve/paralabral cyst per StatPearls NBK538284 and UpToDate SLAP summary), not individually source-verified line by line — flag for Ting to source-check"
+    ],
+    "red_flags_en": [
+     "established biomedical knowledge (mechanical locking, neurovascular exclusion, suprascapular nerve/paralabral cyst per StatPearls NBK538284 and UpToDate SLAP summary), not individually source-verified line by line — flag for Ting to source-check"
+    ],
+    "risk_factors_zh": [
+     "StatPearls NBK538284; PMC5629079"
+    ],
+    "risk_factors_en": [
+     "StatPearls NBK538284; PMC5629079"
+    ],
+    "acupuncture_scope_zh": [
+     "clinical/scope-of-practice judgment — no guideline or RCT source found for acupuncture specifically in labral tear; evidence marked unknown"
+    ],
+    "acupuncture_scope_en": [
+     "clinical/scope-of-practice judgment — no guideline or RCT source found for acupuncture specifically in labral tear; evidence marked unknown"
+    ]
+   }
   },
   {
    "id": "cond.tfcc_injury",
@@ -66922,7 +67584,140 @@
     "Jumper's Knee"
    ],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "髕腱病變(俗稱跳躍膝)是髕骨肌腱因反覆跳躍、急停等負荷所致的過度使用性肌腱病變,好發於籃球、排球等跳躍型運動員,典型表現為髕骨下緣局部壓痛及活動負荷相關疼痛,病理上為肌腱膠原纖維退化而非單純發炎。",
+   "summary_en": "Patellar tendinopathy (commonly called jumper's knee) is an overuse tendinopathy of the patellar tendon caused by repetitive jumping, landing, and deceleration loads, most common in jumping-sport athletes such as basketball and volleyball players. It classically presents as focal tenderness at the inferior pole of the patella with load-related pain, and pathologically reflects collagen degeneration rather than simple inflammation.",
+   "western_context_zh": "西醫處置以漸進式負荷訓練(如離心式股四頭肌訓練)為核心,搭配運動量調整、疼痛監測與物理治療,慢性頑固個案可能考慮體外震波治療或增生療法,保守治療數月無效時轉介運動醫學或骨科評估影像導引注射或手術清創。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western management centers on progressive loading rehabilitation (e.g., eccentric quadriceps training) alongside training-load modification, pain monitoring, and physical therapy; extracorporeal shockwave therapy or prolotherapy may be considered for chronic refractory cases, with referral to sports medicine or orthopedics for imaging-guided injection or surgical debridement if conservative care fails after several months. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "病理機轉為肌腱膠原纖維因反覆高負荷(尤其離心收縮)產生微小撕裂,超過肌腱自我修復能力,導致膠原纖維排列紊亂、黏液樣基質增生及纖維母細胞增殖(肌腱病變),而非典型發炎反應,好發於髕骨下極與肌腱交界處。診斷主要依臨床病史與理學檢查(髕骨下緣局部壓痛、單腳下蹲誘發疼痛),超音波或MRI可見肌腱增厚、局部低回音/訊號異常區域以輔助確診及分級。",
+   "western_pathology_en": "The mechanism involves microscopic tearing of tendon collagen fibers from repeated high loading (especially eccentric contraction) that outpaces the tendon's self-repair capacity, producing disorganized collagen alignment, mucoid ground-substance proliferation, and fibroblast proliferation (tendinosis) rather than classic inflammation — most often at the junction of the inferior patellar pole and the tendon. Diagnosis is primarily clinical (focal tenderness at the inferior patellar pole, pain reproduced by single-leg decline squat), with ultrasound or MRI showing tendon thickening and focal hypoechoic/signal-abnormal areas supporting confirmation and grading.",
+   "red_flags_zh": [
+    "突然感覺膝部「啪」一聲斷裂感合併無法伸膝或站立,需排除髕腱完全斷裂,屬急症",
+    "合併關節明顯腫脹、發熱、發紅及發燒,需排除感染性關節炎",
+    "外傷後劇烈腫脹瘀青合併無法負重,需影像排除骨折或韌帶合併損傷"
+   ],
+   "red_flags_en": [
+    "A sudden 'pop' with inability to extend the knee or bear weight requires ruling out complete patellar tendon rupture — an acute emergency",
+    "Marked joint swelling, warmth, redness, and fever require ruling out septic arthritis",
+    "Severe swelling and bruising after trauma with inability to bear weight requires imaging to rule out fracture or combined ligamentous injury"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "跳躍型運動參與",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "PMC10541843: Patellar tendinopathy overview of prevalence, risk factors"
+    },
+    {
+     "factor": "於硬地面訓練",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "PMC10541843: Patellar tendinopathy overview of prevalence, risk factors"
+    },
+    {
+     "factor": "訓練量過大或急遽增加",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "StatPearls: Patellar Tendinopathy (NBK532969)"
+    },
+    {
+     "factor": "股四頭肌及膕旁肌緊繃",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Mayo Clinic: Patellar tendinitis — Symptoms & causes"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Participation in jumping sports",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "PMC10541843: Patellar tendinopathy overview of prevalence, risk factors"
+    },
+    {
+     "factor": "Training on hard surfaces",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "PMC10541843: Patellar tendinopathy overview of prevalence, risk factors"
+    },
+    {
+     "factor": "Excessive or suddenly increased training volume",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "StatPearls: Patellar Tendinopathy (NBK532969)"
+    },
+    {
+     "factor": "Tight quadriceps and hamstrings",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Mayo Clinic: Patellar tendinitis — Symptoms & causes"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "可作為髕腱病變疼痛管理與功能訓練期間的輔助止痛選項",
+    "precautions": "肌腱完全斷裂或急性重度腫脹未排除前避免局部針刺;避免直接深刺已知病灶區域造成額外組織損傷",
+    "co_management": "若病人正接受物理治療或運動醫學團隊指導的漸進式負荷訓練,建議協調治療時程,不建議自行取代原訓練計畫",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "May serve as an adjunct pain-management option during patellar tendinopathy rehabilitation and progressive loading training",
+    "precautions": "Avoid local needling until complete tendon rupture or severe acute swelling has been ruled out; avoid direct deep needling into the known lesion site to prevent additional tissue injury",
+    "co_management": "If the patient is undergoing physical therapy or sports-medicine-guided progressive loading training, coordinate timing rather than substituting for the training plan",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.jin_shang"
+   ],
+   "related_patterns": [
+    "pattern.qi_stagnation_blood_stasis",
+    "pattern.liver_blood_deficiency"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "StatPearls: Patellar Tendinopathy (Jumper's Knee) (NBK532969)"
+    ],
+    "summary_en": [
+     "StatPearls: Patellar Tendinopathy (Jumper's Knee) (NBK532969)"
+    ],
+    "western_context_zh": [
+     "StatPearls NBK532969; PMC10541843: Patellar tendinopathy overview"
+    ],
+    "western_context_en": [
+     "StatPearls NBK532969; PMC10541843: Patellar tendinopathy overview"
+    ],
+    "western_pathology_zh": [
+     "StatPearls NBK532969; PMC10541843"
+    ],
+    "western_pathology_en": [
+     "StatPearls NBK532969; PMC10541843"
+    ],
+    "red_flags_zh": [
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "red_flags_en": [
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "risk_factors_zh": [
+     "PMC10541843; StatPearls NBK532969; Mayo Clinic patellar tendinitis"
+    ],
+    "risk_factors_en": [
+     "PMC10541843; StatPearls NBK532969; Mayo Clinic patellar tendinitis"
+    ],
+    "aliases_zh": [
+     "Mayo Clinic: Patellar tendinitis, also known as jumper's knee"
+    ],
+    "aliases_en": [
+     "Mayo Clinic: Patellar tendinitis, also known as jumper's knee"
+    ],
+    "acupuncture_scope_zh": [
+     "clinical/scope-of-practice judgment — no guideline or RCT source found for acupuncture specifically in patellar tendinopathy; evidence marked unknown"
+    ],
+    "acupuncture_scope_en": [
+     "clinical/scope-of-practice judgment — no guideline or RCT source found for acupuncture specifically in patellar tendinopathy; evidence marked unknown"
+    ]
+   }
   },
   {
    "id": "cond.shin_splints",
@@ -66931,10 +67726,150 @@
    "name_en": "Medial Tibial Stress Syndrome",
    "category": "pain_msk",
    "icd_hint": "M76.81",
-   "aliases_zh": [],
-   "aliases_en": [],
+   "aliases_zh": [
+    "夾脛症",
+    "內側脛骨壓力症候群"
+   ],
+   "aliases_en": [
+    "Shin Splints",
+    "Tibial Stress Syndrome"
+   ],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "脛前疼痛症候群(內側脛骨壓力症候群,俗稱夾脛症)是因反覆脛骨負荷(如跑步、跳躍、軍事訓練)導致脛骨後內側緣骨膜及骨骼過度負荷所引起的過度使用性運動傷害,好發於跑者及新兵,屬骨骼應力反應譜系中較輕微的一端,有別於真正的應力性骨折。",
+   "summary_en": "Medial tibial stress syndrome (MTSS, commonly called shin splints) is an overuse injury from repetitive tibial loading — running, jumping, military marching — causing bone-stress overload at the posteromedial tibial periosteum and cortex. It is common in runners and new military recruits and represents the milder end of the bone-stress-injury spectrum, distinct from a true stress fracture.",
+   "western_context_zh": "西醫處置以保守治療為主,包含活動量調整(相對休息、交叉訓練)、循序漸進的重返跑步計畫、鞋具及足部力學評估,必要時轉介物理治療進行小腿及髖部肌力訓練;若2–4週保守處置未改善或症狀持續加重,應轉介運動醫學評估是否為應力性骨折,並依臨床懷疑程度考慮X光、MRI或骨掃描等影像檢查。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western management is primarily conservative: activity/load modification (relative rest, cross-training), a graduated return-to-running program, footwear and lower-limb biomechanics assessment, and referral to physical therapy for calf and hip strengthening as needed. If conservative care over 2–4 weeks fails or symptoms progress, referral to sports medicine to evaluate for a stress fracture is warranted, with imaging (radiograph, MRI, or bone scan) considered based on clinical suspicion. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "病理機轉為反覆地面反作用力造成脛骨彎曲應力,加上脛後肌、比目魚肌及屈趾長肌等肌肉於骨膜附著處反覆牽拉,導致骨膜微創傷及局部骨骼重塑壓力反應,屬骨骼應力損傷連續光譜中尚未形成明顯骨折線之較輕階段。診斷主要依臨床表現:運動誘發之脛骨後內側緣瀰漫性壓痛(範圍常超過5公分)、活動後疼痛;若臨床懷疑應力性骨折以資鑑別,MRI或骨掃描可見骨膜水腫但無明確骨折線,有助區分兩者。",
+   "western_pathology_en": "The mechanism involves repetitive ground-reaction-force bending stress on the tibia combined with repetitive traction at the periosteal attachment sites of the posterior tibialis, soleus, and flexor digitorum longus, producing periosteal microtrauma and a localized bone-remodeling stress response — the milder end of the bone-stress-injury continuum, short of a discrete fracture line. Diagnosis is primarily clinical: exercise-induced, diffuse tenderness along the posteromedial tibial border (often spanning more than 5 cm) with pain that worsens with activity. When a stress fracture is suspected clinically, MRI or bone scan can show periosteal edema without a discrete fracture line, helping to differentiate the two conditions.",
+   "red_flags_zh": [
+    "局限於單一點的骨骼壓痛(可用單指精準定位)合併休息或夜間仍持續之疼痛,強烈提示脛骨應力性骨折而非單純脛前疼痛症候群,應安排影像學檢查",
+    "單腳小跳躍測試誘發劇烈局限性疼痛,提示可能為應力性骨折,應暫停負重活動待影像評估後再決定訓練計畫",
+    "運動誘發之緊繃疼痛合併麻木或蒼白,且停止活動後未緩解,需考慮慢性運動誘發室間隔症候群",
+    "小腿腫脹合併局部發熱、壓痛,尤其有久坐/長途旅行等危險因子時,需排除深部靜脈血栓,不應逕自歸因於過度使用性傷害"
+   ],
+   "red_flags_en": [
+    "Focal, pinpoint bony tenderness (localizable with a single finger) with pain that persists or worsens at rest or at night strongly suggests a tibial stress fracture rather than simple MTSS and warrants imaging",
+    "A single-leg hop test reproducing sharp, localized pain suggests a possible stress fracture; weight-bearing activity should be paused pending imaging before resuming a training plan",
+    "Exercise-induced tightness or pain with numbness or pallor that does not resolve after stopping activity should raise concern for chronic exertional compartment syndrome",
+    "Calf swelling with localized warmth and tenderness, especially with risk factors such as prolonged sitting or long-distance travel, requires ruling out deep vein thrombosis rather than assuming an overuse injury"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "女性",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Medial Tibial Stress Syndrome (NBK538479)"
+    },
+    {
+     "factor": "體重指數(BMI)偏高",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "PMC11958822: Medial Tibial Stress Syndrome — Scoping Review of Epidemiology, Biomechanics, and Risk Factors"
+    },
+    {
+     "factor": "足部過度旋前/舟狀骨下墜",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "StatPearls: Medial Tibial Stress Syndrome (NBK538479)"
+    },
+    {
+     "factor": "訓練量或訓練強度突然增加",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "PMC11958822: Medial Tibial Stress Syndrome — Scoping Review of Epidemiology, Biomechanics, and Risk Factors"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Female sex",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Medial Tibial Stress Syndrome (NBK538479)"
+    },
+    {
+     "factor": "Higher body mass index (BMI)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "PMC11958822: Medial Tibial Stress Syndrome — Scoping Review of Epidemiology, Biomechanics, and Risk Factors"
+    },
+    {
+     "factor": "Excessive foot overpronation/navicular drop",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "StatPearls: Medial Tibial Stress Syndrome (NBK538479)"
+    },
+    {
+     "factor": "Sudden increase in training volume or intensity",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "PMC11958822: Medial Tibial Stress Syndrome — Scoping Review of Epidemiology, Biomechanics, and Risk Factors"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "可作為脛前疼痛症候群活動量調整與復健期間之輔助止痛及恢復支持選項",
+    "precautions": "未排除應力性骨折前避免局部下針延誤適當休息與影像評估;急性腫脹瘀傷處避免深刺",
+    "co_management": "若病人正接受運動醫學或物理治療團隊指導之負荷調整計畫,建議協調治療時程,不建議自行取代原訓練計畫",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "May serve as an adjunct pain-relief and recovery-support option during activity modification and rehabilitation for MTSS",
+    "precautions": "Avoid local needling before a stress fracture has been excluded, to prevent delaying appropriate rest and imaging; avoid deep needling over acute swelling or bruising",
+    "co_management": "If the patient is following a sports-medicine- or physical-therapy-guided load-modification program, coordinate timing rather than substitute for the training plan",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.jin_shang"
+   ],
+   "related_patterns": [
+    "pattern.qi_stagnation_blood_stasis"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "StatPearls: Medial Tibial Stress Syndrome (NBK538479)"
+    ],
+    "summary_en": [
+     "StatPearls: Medial Tibial Stress Syndrome (NBK538479)"
+    ],
+    "western_context_zh": [
+     "StatPearls NBK538479; PMC11958822: Scoping Review of Epidemiology, Biomechanics, and Risk Factors"
+    ],
+    "western_context_en": [
+     "StatPearls NBK538479; PMC11958822: Scoping Review of Epidemiology, Biomechanics, and Risk Factors"
+    ],
+    "western_pathology_zh": [
+     "StatPearls NBK538479; PMC9937638: Shin Splint: A Review"
+    ],
+    "western_pathology_en": [
+     "StatPearls NBK538479; PMC9937638: Shin Splint: A Review"
+    ],
+    "red_flags_zh": [
+     "True Sports Physical Therapy / Michigan Foot Doctors clinical comparison of MTSS vs. tibial stress fracture (focal tenderness, night pain, hop test); established biomedical knowledge for the compartment-syndrome/DVT exclusion flags — flag for Ting to source-check"
+    ],
+    "red_flags_en": [
+     "True Sports Physical Therapy / Michigan Foot Doctors clinical comparison of MTSS vs. tibial stress fracture (focal tenderness, night pain, hop test); established biomedical knowledge for the compartment-syndrome/DVT exclusion flags — flag for Ting to source-check"
+    ],
+    "risk_factors_zh": [
+     "StatPearls NBK538479; PMC11958822"
+    ],
+    "risk_factors_en": [
+     "StatPearls NBK538479; PMC11958822"
+    ],
+    "aliases_zh": [
+     "StatPearls NBK538479: Medial Tibial Stress Syndrome (Shin Splints)"
+    ],
+    "aliases_en": [
+     "StatPearls NBK538479: Medial Tibial Stress Syndrome (Shin Splints)"
+    ],
+    "acupuncture_scope_zh": [
+     "clinical/scope-of-practice judgment — no guideline or RCT source found for acupuncture specifically in MTSS; evidence marked unknown"
+    ],
+    "acupuncture_scope_en": [
+     "clinical/scope-of-practice judgment — no guideline or RCT source found for acupuncture specifically in MTSS; evidence marked unknown"
+    ]
+   }
   },
   {
    "id": "cond.stress_fracture",
@@ -67094,7 +68029,137 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "全身性骨關節炎是原發性骨關節炎的一種臨床亞型,指同時或先後侵犯三個或三個以上關節群(常見包括遠端指間關節、近端指間關節、第一腕掌關節、頸椎、腰椎、髖、膝等)的退化性關節疾病,好發於中老年女性,以關節軟骨漸進性磨損、骨贅增生為特徵。",
+   "summary_en": "Generalized osteoarthritis (GOA) is a clinical subtype of primary osteoarthritis in which three or more joint groups — commonly the distal and proximal interphalangeal joints, first carpometacarpal joint, cervical and lumbar spine, hips, and knees — are affected simultaneously or sequentially. It most often develops in middle-aged and older women and is characterized by progressive cartilage breakdown and osteophyte formation.",
+   "western_context_zh": "西醫處置以症狀管理與功能維持為主,包含體重控制、關節保護衛教、物理治療與肌力訓練、必要時使用外用或口服非類固醇消炎藥,病程進展或單一關節症狀嚴重時轉介骨科評估是否需要關節置換手術,並定期以X光追蹤關節間隙變化。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western management centers on symptom control and functional preservation — weight management, joint-protection education, physical therapy and strengthening, topical or oral NSAIDs as needed — with referral to orthopedics for consideration of joint replacement when a single joint becomes severely symptomatic or disease progresses, and periodic radiographs tracking joint-space narrowing. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "病理機轉為軟骨細胞外基質(第二型膠原蛋白、蛋白聚醣)分解代謝大於合成代謝,導致關節軟骨逐漸磨損、軟骨下骨硬化與囊腫形成,並伴隨滑膜輕度發炎與邊緣骨贅增生;因多關節同時受累,推測與全身性易感因子(如遺傳、內分泌、軟骨代謝體質)有關,而非單純局部力學磨損。診斷主要依臨床表現(多關節疼痛、晨僵少於30分鐘、活動後緩解)並以X光確認邊緣骨贅、關節間隙狹窄、軟骨下骨硬化等特徵性變化,目前無統一的「全身性」分類診斷標準,多沿用個別關節骨關節炎診斷準則並計算受累關節數。",
+   "western_pathology_en": "The mechanism involves cartilage extracellular matrix (type II collagen, proteoglycans) breakdown outpacing repair, leading to progressive cartilage loss, subchondral bone sclerosis and cyst formation, mild synovial inflammation, and marginal osteophyte formation. Because multiple joints are affected concurrently, a systemic susceptibility (genetic predisposition, endocrine factors, cartilage metabolic constitution) is thought to contribute beyond simple local mechanical wear. Diagnosis is primarily clinical (multi-joint pain, morning stiffness under 30 minutes, relief with activity) confirmed by radiographs showing marginal osteophytes, joint-space narrowing, and subchondral sclerosis; there is no single unified classification standard for the \"generalized\" pattern, so clinicians typically apply individual-joint osteoarthritis criteria and count the number of joint groups involved.",
+   "red_flags_zh": [
+    "單一關節突然紅腫熱痛且伴發燒,需排除感染性關節炎或痛風急性發作",
+    "合併不明原因體重減輕、夜間痛、局部壓痛加劇,需排除惡性腫瘤骨轉移",
+    "手部關節出現快速侵蝕性變化或對稱性小關節腫脹合併晨僵超過1小時,需排除類風濕性關節炎等發炎性關節炎",
+    "頸椎骨關節炎合併上肢麻木無力、步態不穩或大小便功能改變,需立即評估頸髓病變"
+   ],
+   "red_flags_en": [
+    "Sudden red, hot, swollen single joint with fever requires ruling out septic arthritis or acute gout",
+    "Unexplained weight loss, night pain, or worsening localized tenderness requires ruling out bony metastasis",
+    "Rapidly erosive hand-joint changes or symmetric small-joint swelling with morning stiffness over 1 hour requires ruling out rheumatoid arthritis or another inflammatory arthritis",
+    "Cervical osteoarthritis with upper-limb numbness/weakness, gait instability, or bowel/bladder change requires urgent evaluation for cervical myelopathy"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "年齡 > 50 歲",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Primary Osteoarthritis (NBK557808)"
+    },
+    {
+     "factor": "女性",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Merck Manual: Osteoarthritis"
+    },
+    {
+     "factor": "肥胖/體重過重",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Merck Manual: Osteoarthritis"
+    },
+    {
+     "factor": "骨關節炎家族史",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Primary Osteoarthritis (NBK557808)"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Age > 50",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Primary Osteoarthritis (NBK557808)"
+    },
+    {
+     "factor": "Female sex",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Merck Manual: Osteoarthritis"
+    },
+    {
+     "factor": "Obesity/overweight",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Merck Manual: Osteoarthritis"
+    },
+    {
+     "factor": "Family history of osteoarthritis",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Primary Osteoarthritis (NBK557808)"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "可作為多關節骨關節炎疼痛與功能受限的輔助性止痛選項,膝關節骨關節炎有較多實證支持",
+    "precautions": "急性感染或紅腫熱痛關節、皮膚破損處避免局部下針;抗凝血治療者需評估出血風險",
+    "co_management": "若病人正在使用消炎止痛藥物或評估關節置換手術,建議與原開立醫師/骨科團隊聯絡確認治療計畫,不建議自行停藥",
+    "evidence": "guideline",
+    "source": "ACR/Arthritis Foundation OA guideline; OARSI (knee OA specifically, per AAFP 2020 summary)"
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "May serve as an adjunct pain-relief option for multi-joint osteoarthritis pain and functional limitation, with the strongest evidence specifically for knee osteoarthritis",
+    "precautions": "Avoid local needling over an acutely infected or hot/red/swollen joint or broken skin; assess bleeding risk in patients on anticoagulants",
+    "co_management": "If the patient is using anti-inflammatory medication or being evaluated for joint replacement, contact the prescribing physician/orthopedic team to coordinate care — do not advise stopping medication independently",
+    "evidence": "guideline",
+    "source": "ACR/Arthritis Foundation OA guideline; OARSI (knee OA specifically, per AAFP 2020 summary)"
+   },
+   "related_eastern_diseases": [
+    "tdis.bi_zheng"
+   ],
+   "related_patterns": [
+    "pattern.wind_damp_bi",
+    "pattern.kidney_deficiency",
+    "pattern.qi_stagnation_blood_stasis"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "StatPearls: Primary Osteoarthritis (NBK557808); Joint Academy: Generalized Osteoarthritis"
+    ],
+    "summary_en": [
+     "StatPearls: Primary Osteoarthritis (NBK557808); Joint Academy: Generalized Osteoarthritis"
+    ],
+    "western_context_zh": [
+     "Merck Manual Professional Edition: Osteoarthritis (OA)"
+    ],
+    "western_context_en": [
+     "Merck Manual Professional Edition: Osteoarthritis (OA)"
+    ],
+    "western_pathology_zh": [
+     "StatPearls: Primary Osteoarthritis (NBK557808); TeachMeSurgery: Osteoarthritis Pathophysiology"
+    ],
+    "western_pathology_en": [
+     "StatPearls: Primary Osteoarthritis (NBK557808); TeachMeSurgery: Osteoarthritis Pathophysiology"
+    ],
+    "red_flags_zh": [
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "red_flags_en": [
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "risk_factors_zh": [
+     "Merck Manual: Osteoarthritis; StatPearls NBK557808"
+    ],
+    "risk_factors_en": [
+     "Merck Manual: Osteoarthritis; StatPearls NBK557808"
+    ],
+    "acupuncture_scope_zh": [
+     "AAFP: Acupuncture for Knee Osteoarthritis (aafp.org/afp/2020/0801/p184); ACR/Arthritis Foundation OA guideline"
+    ],
+    "acupuncture_scope_en": [
+     "AAFP: Acupuncture for Knee Osteoarthritis (aafp.org/afp/2020/0801/p184); ACR/Arthritis Foundation OA guideline"
+    ]
+   }
   },
   {
    "id": "cond.psoriatic_arthritis",
@@ -67106,7 +68171,138 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "乾癬性關節炎是一種與乾癬皮膚病共存的慢性發炎性脊椎關節病變,約發生於20–30%乾癬病人,可侵犯周邊關節、中軸脊椎、附著點(肌腱韌帶附著骨骼處)及指甲,多數在皮膚乾癬發病後數年出現關節症狀,但少數病人關節症狀可先於皮膚表現。",
+   "summary_en": "Psoriatic arthritis (PsA) is a chronic inflammatory spondyloarthropathy that occurs alongside psoriasis, affecting roughly 20–30% of people with psoriasis. It can involve peripheral joints, the axial spine, entheses (where tendons/ligaments attach to bone), and the nails. Joint symptoms most often develop years after skin psoriasis onset, though in a minority of patients joint disease precedes the skin findings.",
+   "western_context_zh": "西醫處置由皮膚科與風濕免疫科共同照護,輕症以非類固醇消炎藥為主,中重度則使用傳統疾病調節抗風濕藥物(如methotrexate)或生物製劑(如TNF、IL-17、IL-23抑制劑);以CASPAR分類準則及影像學(X光、MRI)協助診斷與追蹤,並定期篩檢葡萄膜炎及發炎性腸道疾病等共病。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western management is typically co-managed by dermatology and rheumatology: NSAIDs for mild disease, and conventional disease-modifying antirheumatic drugs (e.g., methotrexate) or biologics (TNF, IL-17, or IL-23 inhibitors) for moderate-to-severe disease. The CASPAR classification criteria and imaging (radiographs, MRI) support diagnosis and monitoring, with periodic screening for comorbid uveitis and inflammatory bowel disease. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "病理機轉為Th17/IL-23軸驅動的免疫媒介發炎,侵犯滑膜、附著點及骨膜,造成骨質侵蝕與新骨形成並存的混合性影像變化(嚴重者可見「筆尖套筒」樣關節破壞),附著點炎與腱鞘炎合併可形成典型的「臘腸指」(dactylitis)。約95%病人類風濕因子及抗環瓜氨酸抗體呈陰性,ESR/CRP僅約40%病人上升,正常發炎指數不能排除診斷。診斷主要依CASPAR分類準則:須先有發炎性關節/脊椎/附著點疾病證據,再依乾癬病史或家族史、甲床病變、類風濕因子陰性、臘腸指病史、X光新骨形成等項目綜合計分達3分以上。",
+   "western_pathology_en": "The mechanism is Th17/IL-23-axis-driven immune-mediated inflammation involving the synovium, entheses, and periosteum, producing a mixed radiographic picture of bone erosion alongside new bone formation (severe cases show 'pencil-in-cup' joint destruction); combined enthesitis and tenosynovitis can produce the characteristic 'sausage digit' (dactylitis). Roughly 95% of patients test negative for rheumatoid factor and anti-CCP antibodies, and ESR/CRP is elevated in only about 40% of patients, so normal inflammatory markers do not exclude the diagnosis. Diagnosis relies primarily on the CASPAR classification criteria: evidence of inflammatory joint/spinal/entheseal disease is required, plus a composite score of 3 or more points from features such as current or personal/family history of psoriasis, nail dystrophy, negative rheumatoid factor, current or past dactylitis, and radiographic juxta-articular new bone formation.",
+   "red_flags_zh": [
+    "急性單側眼睛紅、痛合併畏光或視力改變,需考慮前葡萄膜炎,屬眼科急症,應同日轉診眼科評估",
+    "快速對稱性侵蝕性多關節炎合併發燒、體重下降等全身症狀,需考慮更嚴重之疾病活性或其他診斷,應緊急轉診風濕免疫科",
+    "手指快速進行性破壞變形(如「望遠鏡指」畸形),為關節破壞性乾癬性關節炎(arthritis mutilans)之表現,需緊急轉診以積極治療避免永久性殘疾",
+    "合併新發嚴重頸部疼痛或神經學症狀,需考慮中軸/寰樞椎受累可能,應安排影像學評估"
+   ],
+   "red_flags_en": [
+    "Acute unilateral red, painful eye with photophobia or vision change should raise concern for anterior uveitis — an ophthalmologic emergency requiring same-day referral",
+    "Rapid, symmetric, erosive polyarthritis with systemic features such as fever or weight loss suggests more aggressive disease activity or an alternative diagnosis and warrants urgent rheumatology referral",
+    "Rapidly progressive digital destruction and deformity (e.g., 'telescoping' fingers) indicates arthritis mutilans and requires urgent rheumatology referral for aggressive treatment to prevent permanent disability",
+    "New severe neck pain or neurologic symptoms should raise concern for axial or atlantoaxial involvement and warrants imaging evaluation"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "乾癬或乾癬性關節炎家族史",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Rheumatology Advisor: Psoriatic Arthritis"
+    },
+    {
+     "factor": "肥胖",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "StatPearls point-of-care: Psoriatic Arthritis"
+    },
+    {
+     "factor": "吸菸",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "StatPearls point-of-care: Psoriatic Arthritis"
+    },
+    {
+     "factor": "指甲乾癬病變",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Rheumatology Advisor: Psoriatic Arthritis"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Family history of psoriasis or psoriatic arthritis",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Rheumatology Advisor: Psoriatic Arthritis"
+    },
+    {
+     "factor": "Obesity",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "StatPearls point-of-care: Psoriatic Arthritis"
+    },
+    {
+     "factor": "Smoking",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "StatPearls point-of-care: Psoriatic Arthritis"
+    },
+    {
+     "factor": "Nail psoriasis involvement",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Rheumatology Advisor: Psoriatic Arthritis"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "可作為病情穩定期周邊關節疼痛及附著點不適之輔助舒緩選項,不影響疾病活性藥物治療",
+    "precautions": "避免於活動性乾癬皮疹處下針,以免柯氏現象(Koebner phenomenon)誘發新皮損;使用生物製劑等免疫抑制治療者,下針部位感染風險需特別留意衛生消毒",
+    "co_management": "病人正在使用疾病調節抗風濕藥物或生物製劑者,任何新發症狀或病情變化應聯絡風濕免疫科/皮膚科團隊確認,不建議自行停藥",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "May serve as an adjunct comfort option for peripheral joint pain and enthesitis-related discomfort during stable disease, without interfering with disease-activity medication",
+    "precautions": "Avoid needling active psoriatic plaques to reduce risk of the Koebner phenomenon triggering new skin lesions; patients on biologics or other immunosuppressive therapy warrant extra attention to needle-site hygiene given infection risk",
+    "co_management": "For patients on DMARDs or biologics, any new symptom or disease change should prompt the patient to contact the treating rheumatology/dermatology team — do not advise stopping medication independently",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.bi_zheng",
+    "tdis.bai_bi"
+   ],
+   "related_patterns": [
+    "pattern.damp_heat",
+    "pattern.blood_heat",
+    "pattern.qi_stagnation_blood_stasis"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "StatPearls point-of-care: Psoriatic Arthritis; Rheumatology Advisor: Psoriatic Arthritis"
+    ],
+    "summary_en": [
+     "StatPearls point-of-care: Psoriatic Arthritis; Rheumatology Advisor: Psoriatic Arthritis"
+    ],
+    "western_context_zh": [
+     "StatPearls point-of-care: Psoriatic Arthritis; NYU Langone Health: Diagnosing Psoriatic Arthritis"
+    ],
+    "western_context_en": [
+     "StatPearls point-of-care: Psoriatic Arthritis; NYU Langone Health: Diagnosing Psoriatic Arthritis"
+    ],
+    "western_pathology_zh": [
+     "StatPearls point-of-care: Psoriatic Arthritis; CASPAR classification criteria for psoriatic arthritis"
+    ],
+    "western_pathology_en": [
+     "StatPearls point-of-care: Psoriatic Arthritis; CASPAR classification criteria for psoriatic arthritis"
+    ],
+    "red_flags_zh": [
+     "PMC9843218: Uveitis in psoriatic arthritis — study of 406 patients and literature review; PMC11900441: Joint manifestations in IBD — red flags for early recognition"
+    ],
+    "red_flags_en": [
+     "PMC9843218: Uveitis in psoriatic arthritis — study of 406 patients and literature review; PMC11900441: Joint manifestations in IBD — red flags for early recognition"
+    ],
+    "risk_factors_zh": [
+     "StatPearls point-of-care: Psoriatic Arthritis; Rheumatology Advisor: Psoriatic Arthritis"
+    ],
+    "risk_factors_en": [
+     "StatPearls point-of-care: Psoriatic Arthritis; Rheumatology Advisor: Psoriatic Arthritis"
+    ],
+    "acupuncture_scope_zh": [
+     "clinical/scope-of-practice judgment — no guideline or RCT source found for acupuncture specifically in psoriatic arthritis; evidence marked unknown"
+    ],
+    "acupuncture_scope_en": [
+     "clinical/scope-of-practice judgment — no guideline or RCT source found for acupuncture specifically in psoriatic arthritis; evidence marked unknown"
+    ]
+   }
   },
   {
    "id": "cond.spondylolisthesis",
@@ -67397,7 +68593,135 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "肩關節不穩定是指肱骨頭於盂肱關節內產生過度異常移位,導致疼痛及/或半脫位、脫位或恐懼感,病理光譜從創傷性單方向不穩定(常合併Bankart唇部撕裂,即TUBS型)到非創傷性多方向不穩定(常合併關節囊鬆弛,即AMBRI型)不等;創傷性類型好發於年輕運動員,非創傷性類型可見於天生關節過度鬆弛者。",
+   "summary_en": "Shoulder instability refers to pathologic excessive translation of the humeral head within the glenohumeral joint, causing pain and/or subluxation, dislocation, or apprehension. It spans a spectrum from traumatic unidirectional instability (often with a Bankart labral tear — the 'TUBS' pattern) to atraumatic multidirectional instability (often with capsular laxity — the 'AMBRI' pattern). The traumatic type is most common in young athletes, while the atraumatic type is seen in people with constitutional joint hyperlaxity.",
+   "western_context_zh": "西醫處置以物理治療(旋轉肌袖及肩胛穩定肌群強化訓練)為第一線,尤以非創傷性類型為然;首次創傷性脫位病人會評估是否合併唇部或骨性損傷(常用MR關節攝影),年輕運動員因復發率高,可能考慮手術穩定;復健期間搭配活動量調整及支架保護。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western management uses physical therapy — rotator cuff and scapular stabilizer strengthening — as first-line care, particularly for the atraumatic type. First-time traumatic dislocations are evaluated for associated labral or bony injury (often with MR arthrography), and surgical stabilization may be considered in young athletes given their high recurrence risk; activity modification and bracing support the rehabilitation period. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "病理機轉依類型不同:創傷性不穩定因直接外力使肱骨頭向前下方過度移位,撕裂前下方盂唇(Bankart病灶)及/或牽拉延展關節囊韌帶複合體,嚴重時合併肱骨頭後外側壓迫性骨折(Hill-Sachs病灶);非創傷性不穩定則源自先天關節囊韌帶鬆弛或反覆過頭動作造成之微創傷,使關節囊冗餘鬆弛而無明確唇部結構性撕裂,常呈多方向性。診斷依病史(受傷機轉、不穩定方向、復發次數)、理學檢查(恐懼測試、復位測試、多方向鬆弛之sulcus sign)及MR關節攝影確認唇部與關節囊韌帶損傷細節。",
+   "western_pathology_en": "The mechanism differs by type. Traumatic instability results from direct force displacing the humeral head anteroinferiorly, tearing the anteroinferior labrum (Bankart lesion) and/or stretching the capsuloligamentous complex, sometimes with an accompanying posterolateral humeral head impaction fracture (Hill-Sachs lesion). Atraumatic instability arises from congenital capsuloligamentous laxity or repetitive microtrauma (e.g., overhead athletes) producing a redundant, lax capsule without a discrete structural labral tear, often multidirectional. Diagnosis relies on history (mechanism, direction, recurrence), physical examination (apprehension test, relocation test, sulcus sign for multidirectional laxity), and MR arthrography to characterize labral and capsuloligamentous injury.",
+   "red_flags_zh": [
+    "急性脫位合併患肢遠端脈搏減弱或消失、蒼白或冰冷,需考慮血管損傷,屬急症",
+    "復位後三角肌外側(「臂章區」)感覺喪失或無法主動外展肩關節,提示腋神經損傷,須完整記錄神經學檢查並安排追蹤",
+    "年輕病人無明確外傷機轉即反覆不穩定,尤其雙側發生者,需考慮全身性關節過動症或結締組織疾病(如Ehlers-Danlos症候群)之可能",
+    "急診無法成功復位或高度懷疑合併骨折脫位,需緊急轉診骨科"
+   ],
+   "red_flags_en": [
+    "Acute dislocation with diminished or absent distal pulse, pallor, or a cold limb requires evaluation for vascular injury — an emergency",
+    "Sensory loss over the lateral deltoid ('regimental badge' area) or inability to actively abduct the shoulder after reduction suggests axillary nerve injury and requires full neurologic documentation and follow-up",
+    "Recurrent instability in a young patient without a clear traumatic mechanism, especially if bilateral, should raise consideration of generalized joint hypermobility or a connective tissue disorder (e.g., Ehlers-Danlos syndrome)",
+    "Failure to reduce a dislocation in the emergency department, or high suspicion of an associated fracture-dislocation, requires urgent orthopedic referral"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "首次脫位年齡較輕(< 25歲)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Anterior Glenohumeral Joint Dislocation (NBK557862)"
+    },
+    {
+     "factor": "從事接觸性或過頭運動",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "SICOT-J: Current concepts in anterior glenohumeral instability"
+    },
+    {
+     "factor": "全身性關節韌帶鬆弛/結締組織疾病體質",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Springer: The Pathophysiology of Shoulder Instability"
+    },
+    {
+     "factor": "既往肩關節脫位病史",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Anterior Glenohumeral Joint Dislocation (NBK557862)"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Younger age at first dislocation (< 25)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Anterior Glenohumeral Joint Dislocation (NBK557862)"
+    },
+    {
+     "factor": "Participation in contact or overhead sports",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "SICOT-J: Current concepts in anterior glenohumeral instability"
+    },
+    {
+     "factor": "Generalized ligamentous laxity/connective tissue disorder",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Springer: The Pathophysiology of Shoulder Instability"
+    },
+    {
+     "factor": "History of prior shoulder dislocation",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Anterior Glenohumeral Joint Dislocation (NBK557862)"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "可作為肩關節不穩定復健期間疼痛及肌肉代償性緊繃之輔助舒緩選項,無法矯正結構性不穩定本身",
+    "precautions": "避免採取誘發恐懼/半脫位之極端角度擺位下針;近期手術修復部位在骨科團隊許可前避免局部下針",
+    "co_management": "病人正於骨科或物理治療團隊照護下進行不穩定復健或評估手術者,建議聯絡原團隊確認治療時程,不建議自行取代其開立之穩定化訓練計畫",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "May serve as an adjunct comfort option for pain and compensatory muscle tightness during rehabilitation of shoulder instability; it cannot correct the underlying structural instability",
+    "precautions": "Avoid positioning that provokes apprehension or subluxation during needling; avoid needling directly over a recent surgical repair site without clearance from the surgical team",
+    "co_management": "If the patient is under orthopedic or physical therapy care for instability rehabilitation or surgical planning, contact the treating team to coordinate — do not substitute for their prescribed stabilization exercise program",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.jin_shang"
+   ],
+   "related_patterns": [
+    "pattern.qi_stagnation_blood_stasis"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "StatPearls: Anterior Glenohumeral Joint Dislocation (NBK557862); Shoulder & Elbow Society: Classifications of Shoulder Instability"
+    ],
+    "summary_en": [
+     "StatPearls: Anterior Glenohumeral Joint Dislocation (NBK557862); Shoulder & Elbow Society: Classifications of Shoulder Instability"
+    ],
+    "western_context_zh": [
+     "Physiotutors: Shoulder Instability — Diagnosis & Treatment; StatPearls NBK557862"
+    ],
+    "western_context_en": [
+     "Physiotutors: Shoulder Instability — Diagnosis & Treatment; StatPearls NBK557862"
+    ],
+    "western_pathology_zh": [
+     "SICOT-J: Current concepts in anterior glenohumeral instability; StatPearls NBK557862"
+    ],
+    "western_pathology_en": [
+     "SICOT-J: Current concepts in anterior glenohumeral instability; StatPearls NBK557862"
+    ],
+    "red_flags_zh": [
+     "StatPearls: Anterior Glenohumeral Joint Dislocation (NBK557862) and Injury of axillary nerve literature (Wikipedia summary of sourced clinical findings); established biomedical knowledge for the hyperlaxity/EDS flag — flag for Ting to source-check"
+    ],
+    "red_flags_en": [
+     "StatPearls: Anterior Glenohumeral Joint Dislocation (NBK557862) and Injury of axillary nerve literature (Wikipedia summary of sourced clinical findings); established biomedical knowledge for the hyperlaxity/EDS flag — flag for Ting to source-check"
+    ],
+    "risk_factors_zh": [
+     "StatPearls NBK557862; SICOT-J: Current concepts in anterior glenohumeral instability"
+    ],
+    "risk_factors_en": [
+     "StatPearls NBK557862; SICOT-J: Current concepts in anterior glenohumeral instability"
+    ],
+    "acupuncture_scope_zh": [
+     "clinical/scope-of-practice judgment — no guideline or RCT source found for acupuncture specifically in shoulder instability; evidence marked unknown"
+    ],
+    "acupuncture_scope_en": [
+     "clinical/scope-of-practice judgment — no guideline or RCT source found for acupuncture specifically in shoulder instability; evidence marked unknown"
+    ]
+   }
   },
   {
    "id": "cond.cervicogenic_headache",
@@ -67864,7 +69188,126 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "肌炎泛指骨骼肌發炎所引起的疾病群,涵蓋自體免疫特發性發炎性肌病(如皮肌炎、多發性肌炎、免疫媒介壞死性肌病)及感染、藥物誘發等其他病因,共同特徵為漸進性對稱性近端肌無力(如上樓梯、舉手困難),常合併肌酸激酶(CK)上升。",
+   "summary_en": "Myositis broadly refers to inflammatory muscle disease, encompassing the autoimmune idiopathic inflammatory myopathies (dermatomyositis, polymyositis, immune-mediated necrotizing myopathy) as well as infectious or drug-induced causes. The shared clinical feature is progressive, symmetric proximal muscle weakness (difficulty climbing stairs or raising the arms), commonly with elevated creatine kinase (CK).",
+   "western_context_zh": "西醫確診後以風濕免疫科為主治,治療包含糖皮質素及免疫抑制劑,並依皮膚、肺部、吞嚥功能及惡性腫瘤篩檢結果調整照護計畫,需定期監測CK、肌力與肺功能。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Once diagnosed, care is typically led by rheumatology, using corticosteroids and immunosuppressants, with the care plan adjusted based on skin, pulmonary, swallowing function, and malignancy-screening findings; CK, muscle strength, and pulmonary function are monitored periodically. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "病理機轉因亞型而異:多發性肌炎以CD8+ T細胞及巨噬細胞浸潤肌內膜、直接攻擊表現MHC第一類分子的肌纖維為主;皮肌炎則以體液免疫媒介的補體活化攻擊肌內膜微血管,造成缺血性肌纖維萎縮並伴特徵性皮疹(如向陽疹、Gottron丘疹)。診斷依臨床肌無力型態、CK及其他肌酶上升、肌電圖呈肌源性變化、肌肉MRI水腫訊號,並以肌肉切片病理及肌炎特異性自體抗體(如anti-Jo-1、anti-Mi-2)確診分型。",
+   "western_pathology_en": "Pathophysiology differs by subtype: polymyositis involves CD8+ T-cell and macrophage infiltration of the endomysium directly attacking muscle fibers expressing MHC class I; dermatomyositis is humorally mediated, with complement activation attacking endomysial capillaries, causing ischemic muscle fiber atrophy along with characteristic rashes (heliotrope rash, Gottron's papules). Diagnosis is based on the pattern of weakness, elevated CK and other muscle enzymes, myopathic changes on EMG, edema on muscle MRI, and is confirmed by subtype with muscle biopsy pathology and myositis-specific autoantibodies (e.g., anti-Jo-1, anti-Mi-2).",
+   "red_flags_zh": [
+    "急性吞嚥困難或嗆咳,恐致吸入性肺炎,需立即評估吞嚥功能並轉診",
+    "呼吸急促、端坐呼吸或血氧下降,需排除間質性肺病急性惡化或呼吸肌無力導致的呼吸衰竭",
+    "快速進行性肌無力於數日內惡化,需排除橫紋肌溶解症或重症肌病",
+    "皮肌炎病人出現不明原因體重減輕或新發腫塊,需啟動惡性腫瘤篩檢(皮肌炎與癌症相關風險較高)"
+   ],
+   "red_flags_en": [
+    "Acute dysphagia or choking with food/liquids risks aspiration pneumonia and requires urgent swallowing assessment and referral",
+    "Shortness of breath, orthopnea, or falling oxygen saturation requires ruling out acute worsening of interstitial lung disease or respiratory muscle failure",
+    "Rapidly progressive weakness worsening over days requires ruling out rhabdomyolysis or a fulminant myopathic crisis",
+    "Unexplained weight loss or a new mass in a dermatomyositis patient should trigger malignancy screening (dermatomyositis carries an elevated cancer-association risk)"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "女性(皮肌炎)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Polymyositis (NBK563129)"
+    },
+    {
+     "factor": "特定HLA基因型",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "PMC9030619: Pathophysiological Mechanisms of Dermatomyositis"
+    },
+    {
+     "factor": "他汀類藥物使用(免疫媒介壞死性肌病)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "PMC9030619: Pathophysiological Mechanisms of Dermatomyositis"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Female sex (dermatomyositis)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Polymyositis (NBK563129)"
+    },
+    {
+     "factor": "Certain HLA genotypes",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "PMC9030619: Pathophysiological Mechanisms of Dermatomyositis"
+    },
+    {
+     "factor": "Statin use (immune-mediated necrotizing myopathy)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "PMC9030619: Pathophysiological Mechanisms of Dermatomyositis"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "可作為肌炎穩定期肌肉痠痛及活動度受限之輔助性舒緩選項,不影響疾病活性追蹤",
+    "precautions": "急性肌炎發作期、CK顯著上升或合併凝血功能異常(如高劑量類固醇使用中)避免深刺與大範圍瘀傷風險部位;皮肌炎皮疹處避免下針",
+    "co_management": "病人正在使用免疫抑制劑或類固醇治療者,任何症狀變化建議聯絡風濕免疫科醫師確認,不建議自行停藥或調整劑量",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "May serve as an adjunct comfort option for muscle soreness and activity limitation during the stable phase of myositis, without interfering with disease-activity monitoring",
+    "precautions": "Avoid deep needling and areas at bruising risk during acute flares, marked CK elevation, or coagulation changes (e.g., on high-dose steroids); avoid needling active dermatomyositis rash",
+    "co_management": "For patients on immunosuppressants or steroids, any symptom change should prompt the patient to contact the treating rheumatologist — do not advise stopping or adjusting medication independently",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.wei_zheng",
+    "tdis.bi_zheng"
+   ],
+   "related_patterns": [
+    "pattern.damp_heat",
+    "pattern.spleen_qi_deficiency",
+    "pattern.qi_blood_deficiency"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "StatPearls: Polymyositis (NBK563129)"
+    ],
+    "summary_en": [
+     "StatPearls: Polymyositis (NBK563129)"
+    ],
+    "western_context_zh": [
+     "StatPearls: Polymyositis (NBK563129); PMC9784142: ILD in PM/DM"
+    ],
+    "western_context_en": [
+     "StatPearls: Polymyositis (NBK563129); PMC9784142: ILD in PM/DM"
+    ],
+    "western_pathology_zh": [
+     "StatPearls: Polymyositis (NBK563129); PMC9030619: Pathophysiological Mechanisms and Treatment of Dermatomyositis and IMNM"
+    ],
+    "western_pathology_en": [
+     "StatPearls: Polymyositis (NBK563129); PMC9030619: Pathophysiological Mechanisms and Treatment of Dermatomyositis and IMNM"
+    ],
+    "red_flags_zh": [
+     "Springer Current Rheumatology Reports: Myositis Mimics — Recognizing Red Flags; PMC9845686: Dermatomyositis: A Cancer Red Flag; PMC9784142: ILD in PM/DM"
+    ],
+    "red_flags_en": [
+     "Springer Current Rheumatology Reports: Myositis Mimics — Recognizing Red Flags; PMC9845686: Dermatomyositis: A Cancer Red Flag; PMC9784142: ILD in PM/DM"
+    ],
+    "risk_factors_zh": [
+     "StatPearls NBK563129; PMC9030619"
+    ],
+    "risk_factors_en": [
+     "StatPearls NBK563129; PMC9030619"
+    ],
+    "acupuncture_scope_zh": [
+     "clinical/scope-of-practice judgment — no guideline or RCT source found for acupuncture specifically in myositis; evidence marked unknown"
+    ],
+    "acupuncture_scope_en": [
+     "clinical/scope-of-practice judgment — no guideline or RCT source found for acupuncture specifically in myositis; evidence marked unknown"
+    ]
+   }
   },
   {
    "id": "cond.polymyalgia_rheumatica",
@@ -67876,7 +69319,125 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "風濕性多肌痛症是一種好發於50歲以上中老年人(平均發病年齡約70歲)的發炎性風濕疾病,以雙側肩胛帶及髖部近端肌肉疼痛與晨僵為特徵,晨僵通常超過45分鐘,常合併紅血球沉降速率(ESR)及C反應蛋白(CRP)顯著上升,與巨細胞動脈炎(GCA)關係密切,兩者可同時或先後出現於同一病人。",
+   "summary_en": "Polymyalgia rheumatica (PMR) is an inflammatory rheumatic condition that typically affects adults over 50 (mean onset around age 70), characterized by bilateral shoulder- and hip-girdle pain and stiffness, with morning stiffness usually lasting more than 45 minutes and marked elevation of erythrocyte sedimentation rate (ESR) and C-reactive protein (CRP). It is closely linked to giant cell arteritis (GCA), which can occur concurrently or sequentially in the same patient.",
+   "western_context_zh": "西醫處置以低劑量口服糖皮質素(如prednisone 12.5–25mg/天)為第一線,典型病人於用藥數日內症狀顯著改善,常作為輔助診斷線索;之後緩慢減量,療程可長達1–2年,期間需監測ESR/CRP、骨密度及血糖等類固醇相關副作用,並於每次回診主動詢問巨細胞動脈炎相關症狀。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western management typically starts with low-dose oral glucocorticoids (e.g., prednisone 12.5–25 mg/day); a dramatic symptomatic improvement within days is characteristic and often used as a supportive diagnostic clue. Steroids are then tapered slowly, often over 1–2 years, with monitoring of ESR/CRP, bone density, and blood glucose for steroid-related effects, and active screening for giant cell arteritis symptoms at each follow-up. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "病理機轉為免疫媒介的肩峰下滑囊、三角肌下滑囊及股骨大轉子滑囊等關節周圍結構發炎(滑囊炎為主,非典型滑膜炎),並伴隨IL-6驅動的全身性發炎反應,確切自體抗原不明,與HLA-DR4等基因型有關聯。診斷主要依2012年EULAR/ACR暫行分類準則:年齡≥50歲、雙側肩部疼痛、CRP或ESR異常上升,再依晨僵時間、髖部受累、類風濕因子/抗環瓜氨酸抗體陰性、其他關節未受累等項目加分,超音波可見肩峰下滑囊炎等發炎徵象增加診斷特異性;目前無單一確診檢驗,診斷仍屬臨床綜合判斷並需排除其他疾病。",
+   "western_pathology_en": "The mechanism is immune-mediated inflammation of periarticular structures — subacromial, subdeltoid, and greater-trochanteric bursitis predominate over true synovitis — accompanied by IL-6-driven systemic inflammation; the precise autoantigen is unknown, and HLA-DR4 and related genotypes show an association. Diagnosis relies primarily on the 2012 EULAR/ACR provisional classification criteria: age ≥50, bilateral shoulder pain, and abnormal CRP or ESR, with additional points for morning stiffness duration, hip involvement, absence of rheumatoid factor/anti-CCP antibodies, and absence of other joint involvement; ultrasound findings such as subacromial bursitis increase diagnostic specificity. There is no single confirmatory laboratory test — diagnosis remains a clinical composite judgment after excluding mimics.",
+   "red_flags_zh": [
+    "出現顳側頭痛、頭皮壓痛、下頜咀嚼疲勞痛(下頜跛行)或視力模糊/短暫失明,需高度懷疑合併巨細胞動脈炎,屬眼科急症,應當日轉診評估以避免不可逆失明",
+    "伴隨與病程不成比例的高燒、體重明顯減輕或全身惡病質表現,需排除惡性腫瘤或感染等其他疾病偽裝成風濕性多肌痛症",
+    "出現真正的近端肌肉無力(而非單純疼痛)合併肌酸激酶(CK)上升,應重新考慮診斷,排除肌炎等其他肌病",
+    "以標準劑量類固醇治療數日至一週仍無明顯改善,應重新評估診斷是否正確,而非逕行加量"
+   ],
+   "red_flags_en": [
+    "New temporal headache, scalp tenderness, jaw claudication with chewing, or visual disturbance/transient vision loss should raise strong suspicion for concurrent giant cell arteritis — an ophthalmologic emergency requiring same-day evaluation to prevent irreversible blindness",
+    "Fever, weight loss, or systemic wasting out of proportion to the typical PMR picture should prompt work-up for malignancy or infection masquerading as PMR",
+    "True proximal muscle weakness (not just pain) with elevated creatine kinase should prompt reconsideration of the diagnosis and evaluation for myositis or another myopathy",
+    "Failure to show substantial improvement after several days to a week of standard-dose glucocorticoids should prompt diagnostic reassessment rather than simply escalating the dose"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "年齡 > 50 歲,且風險隨年齡增加而上升",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Polymyalgia Rheumatica (NBK537274)"
+    },
+    {
+     "factor": "女性",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Cleveland Clinic Journal of Medicine: Polymyalgia rheumatica — An updated review"
+    },
+    {
+     "factor": "北歐/斯堪地那維亞血統",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Polymyalgia Rheumatica (NBK537274)"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Age > 50, with risk increasing further with advancing age",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Polymyalgia Rheumatica (NBK537274)"
+    },
+    {
+     "factor": "Female sex",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Cleveland Clinic Journal of Medicine: Polymyalgia rheumatica — An updated review"
+    },
+    {
+     "factor": "Northern European/Scandinavian ancestry",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Polymyalgia Rheumatica (NBK537274)"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "可作為類固醇治療期間肩髖部肌肉痠痛與晨僵之輔助舒緩選項,非疾病本身之治療",
+    "precautions": "治療前務必先排除合併巨細胞動脈炎之可能;若病人於療程中出現新發頭痛、視力改變等症狀,應優先轉診而非繼續一般疼痛處置",
+    "co_management": "病人正在使用糖皮質素治療者,任何症狀變化或欲調整療程應聯絡原風濕免疫科醫師確認,不建議自行停藥(驟停恐致腎上腺功能不足)",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "May serve as an adjunct comfort option for shoulder/hip-girdle soreness and morning stiffness during glucocorticoid treatment, not a treatment for the underlying disease",
+    "precautions": "Concurrent giant cell arteritis must be excluded before treating symptoms as routine musculoskeletal pain; new headache or visual changes during a course of care should prompt referral rather than continued routine treatment",
+    "co_management": "For patients on glucocorticoid therapy, any symptom change or desire to adjust the regimen should prompt the patient to contact the treating rheumatologist — do not advise stopping steroids abruptly, which risks adrenal insufficiency",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.bi_zheng"
+   ],
+   "related_patterns": [
+    "pattern.qi_blood_deficiency",
+    "pattern.kidney_deficiency",
+    "pattern.wind_damp_bi"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "StatPearls: Polymyalgia Rheumatica (NBK537274); Cleveland Clinic Journal of Medicine: Polymyalgia rheumatica — An updated review"
+    ],
+    "summary_en": [
+     "StatPearls: Polymyalgia Rheumatica (NBK537274); Cleveland Clinic Journal of Medicine: Polymyalgia rheumatica — An updated review"
+    ],
+    "western_context_zh": [
+     "Mayo Clinic: Polymyalgia rheumatica — Diagnosis & treatment; StatPearls NBK537274"
+    ],
+    "western_context_en": [
+     "Mayo Clinic: Polymyalgia rheumatica — Diagnosis & treatment; StatPearls NBK537274"
+    ],
+    "western_pathology_zh": [
+     "StatPearls NBK537274; 2012 EULAR/ACR provisional classification criteria for PMR"
+    ],
+    "western_pathology_en": [
+     "StatPearls NBK537274; 2012 EULAR/ACR provisional classification criteria for PMR"
+    ],
+    "red_flags_zh": [
+     "established biomedical knowledge (GCA overlap with PMR is well documented in StatPearls NBK537274), not individually source-verified line by line — flag for Ting to source-check"
+    ],
+    "red_flags_en": [
+     "established biomedical knowledge (GCA overlap with PMR is well documented in StatPearls NBK537274), not individually source-verified line by line — flag for Ting to source-check"
+    ],
+    "risk_factors_zh": [
+     "StatPearls NBK537274; CCJM: Polymyalgia rheumatica — An updated review"
+    ],
+    "risk_factors_en": [
+     "StatPearls NBK537274; CCJM: Polymyalgia rheumatica — An updated review"
+    ],
+    "acupuncture_scope_zh": [
+     "clinical/scope-of-practice judgment — no guideline or RCT source found for acupuncture specifically in PMR; evidence marked unknown"
+    ],
+    "acupuncture_scope_en": [
+     "clinical/scope-of-practice judgment — no guideline or RCT source found for acupuncture specifically in PMR; evidence marked unknown"
+    ]
+   }
   },
   {
    "id": "cond.acute_gastroenteritis",
@@ -93329,7 +94890,138 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "應力性尿失禁是指在用力（咳嗽、打噴嚏、大笑、身體活動）時因腹內壓上升而不自主漏尿，是65歲以下女性最常見的尿失禁型態，估計影響26%至49%的女性；男性則常見於攝護腺手術後。",
+   "summary_en": "Stress urinary incontinence (SUI) is involuntary urine leakage occurring with effort — coughing, sneezing, laughing, or physical activity — that raises intra-abdominal pressure. It is the most common incontinence type in women under 65, estimated to affect between 26% and 49% of women, and in men most commonly follows prostate surgery.",
+   "western_context_zh": "由泌尿科或婦女泌尿科評估，透過病史、排尿日記、咳嗽測試（觀察漏尿與咳嗽同步性）與骨盆檢查診斷，必要時安排尿路動力學檢查；第一線保守治療為骨盆底肌訓練、體重控制與避免膀胱刺激物，中重度或保守治療無效者可評估尿道中段吊帶等手術選項。此處僅為文件對照用語，非治療指示。",
+   "western_context_en": "Evaluated by urology or urogynecology through history, a bladder diary, a cough stress test (observing leakage synchronous with cough), and pelvic examination, with multichannel urodynamic testing added when needed. First-line conservative management includes pelvic floor muscle training, weight management, and avoiding bladder irritants; moderate-to-severe or treatment-refractory cases may be evaluated for surgical options such as a midurethral sling. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "源於尿道支持結構與（或）尿道括約肌內在功能不足：骨盆底肌（提肛肌）與尿道周圍結締組織支持力減弱（常因陰道生產、老化、停經後雌激素下降、慢性用力如慢性咳嗽或便祕所致），使原本應協調收縮以維持尿道閉合壓的機制無法在腹內壓升高時有效防止漏尿；男性則最常見於攝護腺切除手術直接造成括約肌損傷。診斷屬臨床診斷，以咳嗽測試（咳嗽或Valsalva動作時同步觀察到漏尿）為核心，搭配排尿日記；若考慮手術，則加做多通道尿路動力學檢查。",
+   "western_pathology_en": "Arises from inadequate urethral support and/or intrinsic sphincteric deficiency: weakening of the pelvic floor musculature (levator ani) and periurethral connective tissue support — often from vaginal childbirth, aging, postmenopausal estrogen decline, or chronic straining such as chronic cough or constipation — impairs the coordinated urethral closure mechanism needed to prevent leakage when intra-abdominal pressure rises. In men, SUI most commonly follows prostatectomy due to direct sphincteric injury. Diagnosis is clinical, centered on a positive cough stress test (leakage observed synchronous with cough or Valsalva), supported by a bladder diary; multichannel urodynamic studies are added when surgery is being considered.",
+   "red_flags_zh": [
+    "合併血尿（無感染證據）需影像及膀胱鏡檢查排除腫瘤或其他病灶",
+    "合併新發神經學症狀（下肢無力、麻木、鞍區感覺喪失）需緊急評估馬尾症候群",
+    "男性攝護腺手術後出現大量持續滲漏需儘速轉診泌尿科評估括約肌功能",
+    "合併骨盆腔腫脹疼痛、發燒需排除感染或腫瘤佔位"
+   ],
+   "red_flags_en": [
+    "Hematuria without evidence of infection requires imaging and cystoscopy to exclude tumor or other pathology",
+    "New neurologic symptoms (lower-limb weakness, numbness, saddle anesthesia) require urgent evaluation for cauda equina syndrome",
+    "Significant persistent leakage in a man following prostate surgery warrants prompt urology referral to evaluate sphincteric function",
+    "Pelvic swelling, pain, and fever require evaluation to exclude infection or a mass lesion"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "陰道生產史（尤其創傷性或多次生產）",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Stress Urinary Incontinence (NBK539769)"
+    },
+    {
+     "factor": "肥胖",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "StatPearls: Stress Urinary Incontinence (NBK539769)"
+    },
+    {
+     "factor": "停經後雌激素下降",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Stress Urinary Incontinence (NBK539769)"
+    },
+    {
+     "factor": "慢性咳嗽（如吸菸相關）",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "StatPearls: Stress Urinary Incontinence (NBK539769)"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "History of vaginal childbirth (especially traumatic or multiple deliveries)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Stress Urinary Incontinence (NBK539769)"
+    },
+    {
+     "factor": "Obesity",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "StatPearls: Stress Urinary Incontinence (NBK539769)"
+    },
+    {
+     "factor": "Postmenopausal estrogen decline",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Stress Urinary Incontinence (NBK539769)"
+    },
+    {
+     "factor": "Chronic cough (e.g., smoking-related)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "StatPearls: Stress Urinary Incontinence (NBK539769)"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "可作為骨盆底肌訓練之輔助照護，支持整體排尿控制感與生活品質",
+    "precautions": "避免宣稱可治癒解剖性括約肌缺損或取代骨盆底肌訓練",
+    "co_management": "手術規劃相關決策應與負責之泌尿科／婦女泌尿科醫師確認，不取代骨盆底物理治療轉介",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "May offer adjunct support alongside pelvic floor muscle training, contributing to overall voiding control and quality of life",
+    "precautions": "Do not claim to cure anatomic sphincteric deficiency or substitute for pelvic floor muscle training",
+    "co_management": "Surgical planning decisions should be confirmed with the treating urologist/urogynecologist; does not replace referral to pelvic floor physical therapy",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.yi_niao"
+   ],
+   "related_patterns": [
+    "pattern.kidney_qi_not_firm",
+    "pattern.spleen_qi_sinking"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "NCBI StatPearls: Stress Urinary Incontinence (NBK539769)"
+    ],
+    "summary_en": [
+     "NCBI StatPearls: Stress Urinary Incontinence (NBK539769)"
+    ],
+    "western_context_zh": [
+     "Mayo Clinic Proceedings: Evaluation and Management of Female Stress Urinary Incontinence (retrieved 2026-08)"
+    ],
+    "western_context_en": [
+     "Mayo Clinic Proceedings: Evaluation and Management of Female Stress Urinary Incontinence (retrieved 2026-08)"
+    ],
+    "western_pathology_zh": [
+     "PMC8053188: The pathophysiology of stress urinary incontinence: a systematic review and meta-analysis (retrieved 2026-08)",
+     "NCBI StatPearls: Stress Urinary Incontinence (NBK539769)"
+    ],
+    "western_pathology_en": [
+     "PMC8053188: The pathophysiology of stress urinary incontinence: a systematic review and meta-analysis (retrieved 2026-08)",
+     "NCBI StatPearls: Stress Urinary Incontinence (NBK539769)"
+    ],
+    "red_flags_zh": [
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "red_flags_en": [
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "risk_factors_zh": [
+     "NCBI StatPearls: Stress Urinary Incontinence (NBK539769)"
+    ],
+    "risk_factors_en": [
+     "NCBI StatPearls: Stress Urinary Incontinence (NBK539769)"
+    ],
+    "acupuncture_scope_zh": [
+     "Clinical scope-of-practice reasoning; no acupuncture-specific guideline/RCT source found in this research pass"
+    ],
+    "acupuncture_scope_en": [
+     "Clinical scope-of-practice reasoning; no acupuncture-specific guideline/RCT source found in this research pass"
+    ]
+   }
   },
   {
    "id": "cond.urge_urinary_incontinence",
@@ -93499,7 +95191,140 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "混合型尿失禁是同時具有應力性尿失禁（用力、咳嗽、打噴嚏時漏尿）與急迫性尿失禁（伴隨強烈尿意而漏尿）兩種症狀的臨床表現，是65歲以上女性最常見的尿失禁型態，估計影響超過三分之一的年長女性。",
+   "summary_en": "Mixed urinary incontinence (MUI) is the combined presence of both stress incontinence (leakage with exertion, coughing, or sneezing) and urgency incontinence (leakage accompanied by a strong urge to void). It is the most common incontinence type in women over 65, estimated to affect more than one-third of older women.",
+   "western_context_zh": "由泌尿科或婦女泌尿科追蹤，透過排尿日記、殘尿量測量與症狀問卷區分主導症狀類型；初步處置以骨盆底肌訓練、體重控制與行為治療為主，再視主導成分加上抗膽鹼藥物/β3受體促效劑（急迫成分）或手術（如尿道中段吊帶，應力成分）。此處僅為文件對照用語，非治療指示。",
+   "western_context_en": "Followed by urology or urogynecology using a bladder diary, post-void residual measurement, and symptom questionnaires to identify the dominant component. Initial management centers on pelvic floor muscle training, weight management, and behavioral therapy, with anticholinergics/beta-3 agonists (for the urgency component) or surgery such as a midurethral sling (for the stress component) added based on which component predominates. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "病理機轉是兩套機制並存：應力性成分來自尿道支持結構與括約肌閉合壓不足（骨盆底肌無力、尿道過度活動），急迫性成分來自逼尿肌儲尿期不自主收縮（逼尿肌過動）。診斷以症狀問卷與排尿日記為基礎，搭配咳嗽測試觀察漏尿與咳嗽同步性，若考慮手術則加做尿路動力學檢查以釐清主導成分，因為治療其中一種成分有時會使另一成分症狀更明顯。",
+   "western_pathology_en": "Two mechanisms coexist: the stress component arises from inadequate urethral support and sphincteric closure pressure (pelvic floor weakness, urethral hypermobility), while the urgency component arises from involuntary detrusor contractions during bladder filling (detrusor overactivity). Diagnosis relies on symptom questionnaires and a bladder diary, with a cough stress test to confirm leakage synchronous with cough; urodynamic testing is added when surgery is being considered, since treating one component can sometimes unmask or worsen the other.",
+   "red_flags_zh": [
+    "無感染證據的血尿需排除膀胱腫瘤或上泌尿道病灶，應轉診影像及膀胱鏡檢查",
+    "新發下肢無力、麻木或鞍區感覺喪失合併排尿功能改變，需緊急評估馬尾症候群",
+    "尿失禁合併發燒、腰痛與膿尿，提示泌尿道感染或腎盂腎炎需及時治療",
+    "完全性尿滯留合併溢流性失禁需導尿並儘速轉診泌尿科，避免腎功能損傷"
+   ],
+   "red_flags_en": [
+    "Hematuria without evidence of infection warrants imaging and cystoscopy to exclude bladder tumor or upper tract pathology",
+    "New lower-limb weakness, numbness, or saddle anesthesia accompanying a change in voiding function requires urgent evaluation for cauda equina syndrome",
+    "Incontinence with fever, flank pain, and pyuria suggests urinary tract infection or pyelonephritis requiring prompt treatment",
+    "Complete urinary retention with overflow incontinence requires catheterization and prompt urology referral to prevent renal injury"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "年齡增長",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "LIDSEN: Mixed Urinary Incontinence: Diagnosis and Management"
+    },
+    {
+     "factor": "肥胖",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "IUGA committee opinion (PMC10908639)"
+    },
+    {
+     "factor": "陰道生產史（尤其多次生產）",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "IUGA committee opinion (PMC10908639)"
+    },
+    {
+     "factor": "停經後雌激素下降",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "LIDSEN: Mixed Urinary Incontinence: Diagnosis and Management"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Advancing age",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "LIDSEN: Mixed Urinary Incontinence: Diagnosis and Management"
+    },
+    {
+     "factor": "Obesity",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "IUGA committee opinion (PMC10908639)"
+    },
+    {
+     "factor": "Vaginal childbirth history (especially multiple deliveries)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "IUGA committee opinion (PMC10908639)"
+    },
+    {
+     "factor": "Postmenopausal estrogen decline",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "LIDSEN: Mixed Urinary Incontinence: Diagnosis and Management"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "可作為骨盆底肌訓練與行為治療之輔助照護，著重於整體排尿控制感與生活品質支持",
+    "precautions": "手術規劃前的主導成分判定屬泌尿科專業範疇，不宜以針灸療效取代該評估；避免宣稱可治癒解剖性括約肌缺損",
+    "co_management": "任何手術或藥物調整計畫應與負責之泌尿科／婦女泌尿科醫師確認，不取代骨盆底物理治療轉介",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "May serve as an adjunct alongside pelvic floor muscle training and behavioral therapy, supporting overall voiding control and quality of life",
+    "precautions": "Determining the dominant component before surgical planning is within urology's scope; do not claim acupuncture can substitute for that assessment or cure anatomic sphincteric deficiency",
+    "co_management": "Any surgical or medication plan should be confirmed with the treating urologist/urogynecologist; does not replace referral to pelvic floor physical therapy",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.yi_niao"
+   ],
+   "related_patterns": [
+    "pattern.kidney_qi_not_firm",
+    "pattern.spleen_qi_sinking"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "LIDSEN: Mixed Urinary Incontinence: Diagnosis and Management (lidsen.com, retrieved 2026-08)"
+    ],
+    "summary_en": [
+     "LIDSEN: Mixed Urinary Incontinence: Diagnosis and Management (lidsen.com, retrieved 2026-08)"
+    ],
+    "western_context_zh": [
+     "IUGA committee opinion: Management of mixed urinary incontinence (PMC10908639, retrieved 2026-08)"
+    ],
+    "western_context_en": [
+     "IUGA committee opinion: Management of mixed urinary incontinence (PMC10908639, retrieved 2026-08)"
+    ],
+    "western_pathology_zh": [
+     "StatPearls Point-of-Care: Mixed Urinary Incontinence (statpearls.com, retrieved 2026-08)",
+     "CUAJ: The management of mixed urinary incontinence in women (retrieved 2026-08)"
+    ],
+    "western_pathology_en": [
+     "StatPearls Point-of-Care: Mixed Urinary Incontinence (statpearls.com, retrieved 2026-08)",
+     "CUAJ: The management of mixed urinary incontinence in women (retrieved 2026-08)"
+    ],
+    "red_flags_zh": [
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "red_flags_en": [
+     "established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "risk_factors_zh": [
+     "LIDSEN: Mixed Urinary Incontinence: Diagnosis and Management (retrieved 2026-08)",
+     "IUGA committee opinion (PMC10908639, retrieved 2026-08)"
+    ],
+    "risk_factors_en": [
+     "LIDSEN: Mixed Urinary Incontinence: Diagnosis and Management (retrieved 2026-08)",
+     "IUGA committee opinion (PMC10908639, retrieved 2026-08)"
+    ],
+    "acupuncture_scope_zh": [
+     "Clinical scope-of-practice reasoning; no acupuncture-specific guideline/RCT source found in this research pass"
+    ],
+    "acupuncture_scope_en": [
+     "Clinical scope-of-practice reasoning; no acupuncture-specific guideline/RCT source found in this research pass"
+    ]
+   }
   },
   {
    "id": "cond.varicocele",
@@ -93650,7 +95475,142 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "早洩依國際性醫學會（ISSM）定義，為射精幾乎總是發生在陰道插入後約1分鐘內（原發型），或射精潛伏時間相較過去出現具臨床意義的縮短，通常降至約3分鐘以內（續發型），且患者無法延遲射精，並因此感到困擾、挫折或迴避性親密關係。",
+   "summary_en": "According to the International Society for Sexual Medicine (ISSM) definition, premature ejaculation is ejaculation that almost always occurs within about 1 minute of vaginal penetration (lifelong type), or a clinically significant reduction in latency compared to the patient's previous pattern, typically to about 3 minutes or less (acquired type), together with an inability to delay ejaculation and resulting distress, frustration, or avoidance of sexual intimacy.",
+   "western_context_zh": "由泌尿科、性醫學科或家醫科評估，透過重點性功能病史與經驗證問卷（如PEDT），並篩檢是否合併勃起功能障礙、慢性攝護腺炎／慢性骨盆疼痛症候群或甲狀腺功能異常；處置選項包含行為技巧（停止-開始法、擠壓法）、局部麻醉劑，或由處方醫師評估之off-label SSRI類藥物或需要時使用之藥物。此處僅為文件對照用語，非治療指示。",
+   "western_context_en": "Evaluated by urology, sexual medicine, or primary care through a focused sexual history and validated questionnaires (e.g., PEDT), with screening for coexisting erectile dysfunction, chronic prostatitis/chronic pelvic pain syndrome, or thyroid dysfunction. Management options include behavioral techniques (start-stop, squeeze), topical anesthetics, or prescriber-directed off-label SSRIs or on-demand medications. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "確切病理機轉尚未完全闡明，目前提出的機轉包括中樞血清素神經傳導改變（5-HT2C與5-HT1A受體敏感度失衡）降低射精閾值、遺傳體質（多見於原發型），續發型則常與勃起功能障礙、慢性攝護腺炎／慢性骨盆疼痛症候群、甲狀腺功能異常或心理因素（表現焦慮、伴侶關係壓力）共病相關。診斷屬臨床診斷，依ISSM準則並可估計或測量陰道內射精潛伏時間（IELT），配合驗證問卷；區分原發型與續發型有助於決定是否需篩檢勃起功能障礙、攝護腺炎或甲狀腺疾病。",
+   "western_pathology_en": "The precise pathophysiology is not fully understood. Proposed mechanisms include altered central serotonergic transmission (imbalanced 5-HT2C versus 5-HT1A receptor sensitivity) lowering the ejaculatory threshold, and genetic predisposition (more prominent in lifelong PE). Acquired PE is frequently associated with comorbid erectile dysfunction, chronic prostatitis/chronic pelvic pain syndrome, thyroid dysfunction, or psychological factors such as performance anxiety and relationship stress. Diagnosis is clinical, based on ISSM criteria together with an estimated or measured intravaginal ejaculatory latency time (IELT) and validated questionnaires; distinguishing lifelong from acquired PE guides whether screening for erectile dysfunction, prostatitis, or thyroid disease is warranted.",
+   "red_flags_zh": [
+    "合併排尿疼痛、頻尿或會陰部疼痛需評估慢性攝護腺炎／慢性骨盆疼痛症候群",
+    "合併勃起功能全面喪失或硬度明顯下降需評估心血管風險因子並轉診泌尿科",
+    "非自幼發生（續發型）合併明顯情緒低落或焦慮加重，需評估心理健康狀態並視需要轉介",
+    "合併不明原因體重變化、心悸、怕熱或怕冷等症狀需篩檢甲狀腺功能異常"
+   ],
+   "red_flags_en": [
+    "Accompanying dysuria, urinary frequency, or perineal pain warrants evaluation for chronic prostatitis/chronic pelvic pain syndrome",
+    "Accompanying global loss of erectile function or marked reduction in rigidity warrants cardiovascular risk assessment and urology referral",
+    "New-onset (acquired) PE with significant low mood or worsening anxiety warrants mental health evaluation and referral as needed",
+    "Accompanying unexplained weight change, palpitations, or heat/cold intolerance warrants screening for thyroid dysfunction"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "合併勃起功能障礙",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "PMC12195409: Prevalence of Sexual Dysfunction with CP/CPPS"
+    },
+    {
+     "factor": "慢性攝護腺炎／慢性骨盆疼痛症候群",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "PMC12195409: Prevalence of Sexual Dysfunction with CP/CPPS"
+    },
+    {
+     "factor": "甲狀腺功能異常",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "PMC6915345: Premature Ejaculation: Aetiology and Treatment Strategies"
+    },
+    {
+     "factor": "表現焦慮／伴侶關係壓力",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "PMC6915345: Premature Ejaculation: Aetiology and Treatment Strategies"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Comorbid erectile dysfunction",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "PMC12195409: Prevalence of Sexual Dysfunction with CP/CPPS"
+    },
+    {
+     "factor": "Chronic prostatitis/chronic pelvic pain syndrome",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "PMC12195409: Prevalence of Sexual Dysfunction with CP/CPPS"
+    },
+    {
+     "factor": "Thyroid dysfunction",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "PMC6915345: Premature Ejaculation: Aetiology and Treatment Strategies"
+    },
+    {
+     "factor": "Performance anxiety / relationship distress",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "PMC6915345: Premature Ejaculation: Aetiology and Treatment Strategies"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "可作為續發型早洩患者伴隨焦慮或骨盆底緊繃感之一般性輔助支持，非宣稱可延長射精潛伏時間或治癒本病",
+    "precautions": "應先確認是否合併勃起功能障礙、攝護腺炎或甲狀腺疾病等可處理之病因，避免僅以針灸處理而忽略潛在共病",
+    "co_management": "涉及SSRI等處方藥物使用時，應與開立處方之醫師協調，不建議病患自行調整用藥",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "May offer general supportive care for anxiety or pelvic floor tension associated with acquired PE; does not claim to prolong ejaculatory latency or cure the condition",
+    "precautions": "Screen first for treatable underlying contributors (erectile dysfunction, prostatitis, thyroid disease) rather than addressing symptoms with acupuncture alone",
+    "co_management": "Where SSRIs or other prescribed medications are involved, coordinate with the prescribing physician; do not advise the patient to adjust their medication independently",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.yang_wei",
+    "tdis.yi_jing"
+   ],
+   "related_patterns": [
+    "pattern.kidney_qi_not_firm",
+    "pattern.liver_qi_stagnation",
+    "pattern.damp_heat_lower_burner"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "ISSM: What Is Premature Ejaculation? (issm.info, retrieved 2026-08)"
+    ],
+    "summary_en": [
+     "ISSM: What Is Premature Ejaculation? (issm.info, retrieved 2026-08)"
+    ],
+    "western_context_zh": [
+     "Sexual Medicine (Oxford Academic): Update of the ISSM's Guidelines for the Diagnosis and Treatment of Premature Ejaculation (retrieved 2026-08)"
+    ],
+    "western_context_en": [
+     "Sexual Medicine (Oxford Academic): Update of the ISSM's Guidelines for the Diagnosis and Treatment of Premature Ejaculation (retrieved 2026-08)"
+    ],
+    "western_pathology_zh": [
+     "PMC6915345: Premature Ejaculation: Aetiology and Treatment Strategies (retrieved 2026-08)",
+     "ISSM: What Is Premature Ejaculation? (retrieved 2026-08)"
+    ],
+    "western_pathology_en": [
+     "PMC6915345: Premature Ejaculation: Aetiology and Treatment Strategies (retrieved 2026-08)",
+     "ISSM: What Is Premature Ejaculation? (retrieved 2026-08)"
+    ],
+    "red_flags_zh": [
+     "PMC12195409: Prevalence of Sexual Dysfunction with CP/CPPS (retrieved 2026-08); thyroid/mood flags: established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "red_flags_en": [
+     "PMC12195409: Prevalence of Sexual Dysfunction with CP/CPPS (retrieved 2026-08); thyroid/mood flags: established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "risk_factors_zh": [
+     "PMC12195409 (retrieved 2026-08)",
+     "PMC6915345 (retrieved 2026-08)"
+    ],
+    "risk_factors_en": [
+     "PMC12195409 (retrieved 2026-08)",
+     "PMC6915345 (retrieved 2026-08)"
+    ],
+    "acupuncture_scope_zh": [
+     "Clinical scope-of-practice reasoning; no acupuncture-specific guideline/RCT source found in this research pass"
+    ],
+    "acupuncture_scope_en": [
+     "Clinical scope-of-practice reasoning; no acupuncture-specific guideline/RCT source found in this research pass"
+    ]
+   }
   },
   {
    "id": "cond.acute_kidney_injury",
@@ -93773,10 +95733,132 @@
    "name_en": "Renal Cyst",
    "category": "uro_renal",
    "icd_hint": "N28.1",
-   "aliases_zh": [],
-   "aliases_en": [],
+   "aliases_zh": [
+    "單純性腎囊腫"
+   ],
+   "aliases_en": [
+    "Simple Renal Cyst"
+   ],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "腎囊腫（單純性腎囊腫）是常見的良性、充滿液體的腎臟結構性病灶，隨年齡增加盛行率升高（50歲以上成人可高達近半數有此發現），多為影像檢查時偶然發現，無症狀。依Bosniak分類系統評估影像特徵，第I級為典型良性單純囊腫，出現分隔、鈣化或實質性成分等非典型特徵則歸類為較高等級，需進一步評估。",
+   "summary_en": "A renal cyst (simple renal cyst) is a common, benign, fluid-filled structural lesion of the kidney whose prevalence rises with age (found in up to nearly half of adults over 50), typically discovered incidentally on imaging and asymptomatic. The Bosniak classification system grades cysts by imaging features: category I represents a classic benign simple cyst, while atypical features such as septations, calcification, or solid components place a lesion in a higher category requiring further evaluation.",
+   "western_context_zh": "由家醫科或泌尿科評估，若為影像偶然發現之單純性（Bosniak I級）囊腫，通常無需進一步追蹤或治療；體積較大有症狀或超音波顯示非典型特徵者，會加做電腦斷層或核磁共振進一步以Bosniak分類定性，第III-IV級病灶轉診泌尿科評估是否需手術。此處僅為文件對照用語，非治療指示。",
+   "western_context_en": "Evaluated by primary care or urology: an incidentally found simple (Bosniak I) cyst typically requires no further follow-up or treatment. Larger symptomatic cysts or those with atypical ultrasound features are further characterized with CT or MRI using the Bosniak classification, with category III-IV lesions referred to urology to evaluate the need for surgery. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "一般認為源自腎小管憩室隨時間逐漸擴張並與腎元脫離，內部充滿類似濾過液的液體，囊壁由單層扁平上皮構成；確切的生長機轉尚未完全明瞭，與老化及可能的腎小管缺血或阻塞有關。診斷主要以超音波為主，典型單純性囊腫（Bosniak I）表現為無回音、薄壁、邊界清楚的圓形病灶，並有後方回音增強、無內部回音或實質性成分、無顯影劑增強；若特徵不典型或屬複雜性囊腫，則以電腦斷層或核磁共振依Bosniak分類進一步評估惡性風險。",
+   "western_pathology_en": "Simple renal cysts are thought to arise from tubular diverticula that progressively dilate and detach from the nephron over time, filling with filtrate-like fluid, with a wall composed of a single layer of flattened epithelium; the precise growth mechanism is not fully understood but is associated with aging and possibly tubular ischemia or obstruction. Diagnosis is primarily by ultrasound: a classic simple (Bosniak I) cyst appears anechoic, thin-walled, and well-circumscribed with posterior acoustic enhancement, no internal echoes or solid components, and no contrast enhancement. Atypical or complex-appearing cysts are further characterized with CT or MRI using the Bosniak classification to estimate malignancy risk.",
+   "red_flags_zh": [
+    "囊腫合併分隔、鈣化、實質性成分或顯影劑增強（Bosniak III-IV特徵）需泌尿科評估是否有惡性可能",
+    "快速增大的腎囊腫或合併不明原因血尿、腰痛、體重減輕需進一步影像評估排除腎細胞癌",
+    "囊腫破裂或出血引起劇烈腰腹痛需急診評估",
+    "巨大囊腫壓迫造成尿路阻塞或反覆感染需泌尿科處理"
+   ],
+   "red_flags_en": [
+    "A cyst with septations, calcification, solid components, or contrast enhancement (Bosniak III-IV features) requires urologic evaluation for possible malignancy",
+    "A rapidly enlarging renal cyst, or one accompanied by unexplained hematuria, flank pain, or weight loss, requires further imaging to exclude renal cell carcinoma",
+    "Cyst rupture or hemorrhage causing severe flank/abdominal pain requires emergency evaluation",
+    "A large cyst causing urinary tract obstruction or recurrent infection requires urologic management"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "年齡增長",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "ScienceDirect: Simple and complex renal cysts in adults - Classification system"
+    },
+    {
+     "factor": "男性",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "ScienceDirect: Simple and complex renal cysts in adults - Classification system"
+    },
+    {
+     "factor": "高血壓",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "ScienceDirect: Simple and complex renal cysts in adults - Classification system"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Advancing age",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "ScienceDirect: Simple and complex renal cysts in adults - Classification system"
+    },
+    {
+     "factor": "Male sex",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "ScienceDirect: Simple and complex renal cysts in adults - Classification system"
+    },
+    {
+     "factor": "Hypertension",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "ScienceDirect: Simple and complex renal cysts in adults - Classification system"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "單純性良性囊腫通常無需治療；若囊腫已經影像確認為良性且患者有相關腰部不適，可作為一般性支持照護",
+    "precautions": "避免於已知腎囊腫部位進行深層腰背針刺",
+    "co_management": "應確認囊腫已由影像檢查歸類為良性（Bosniak I-II級）後再處理相關不適；非典型影像特徵應轉回泌尿科評估",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "Simple benign cysts typically require no treatment; if the cyst has been imaging-confirmed as benign and the patient has related flank discomfort, general supportive care may be offered",
+    "precautions": "Avoid deep flank/back needling directly over a known renal cyst",
+    "co_management": "Confirm the cyst has been radiologically classified as benign (Bosniak I-II) before addressing related discomfort; refer atypical imaging findings back to urology",
+    "evidence": "unknown",
+    "source": null
+   },
+   "field_sources": {
+    "summary_zh": [
+     "ScienceDirect: Simple and complex renal cysts in adults - Classification system for renal cystic masses (retrieved 2026-08)"
+    ],
+    "summary_en": [
+     "ScienceDirect: Simple and complex renal cysts in adults - Classification system for renal cystic masses (retrieved 2026-08)"
+    ],
+    "western_context_zh": [
+     "Radiology (RSNA): Bosniak Classification of Cystic Renal Masses, Version 2019 (retrieved 2026-08)"
+    ],
+    "western_context_en": [
+     "Radiology (RSNA): Bosniak Classification of Cystic Renal Masses, Version 2019 (retrieved 2026-08)"
+    ],
+    "western_pathology_zh": [
+     "ScienceDirect: Simple and complex renal cysts in adults - Classification system (retrieved 2026-08)",
+     "2 Minute Medicine: Bosniak classification system differentiates benign renal cysts from cystic carcinoma (retrieved 2026-08)"
+    ],
+    "western_pathology_en": [
+     "ScienceDirect: Simple and complex renal cysts in adults - Classification system (retrieved 2026-08)",
+     "2 Minute Medicine: Bosniak classification system differentiates benign renal cysts from cystic carcinoma (retrieved 2026-08)"
+    ],
+    "red_flags_zh": [
+     "Radiology (RSNA): Bosniak Classification of Cystic Renal Masses, Version 2019 (retrieved 2026-08)"
+    ],
+    "red_flags_en": [
+     "Radiology (RSNA): Bosniak Classification of Cystic Renal Masses, Version 2019 (retrieved 2026-08)"
+    ],
+    "risk_factors_zh": [
+     "ScienceDirect: Simple and complex renal cysts in adults - Classification system (retrieved 2026-08)"
+    ],
+    "risk_factors_en": [
+     "ScienceDirect: Simple and complex renal cysts in adults - Classification system (retrieved 2026-08)"
+    ],
+    "acupuncture_scope_zh": [
+     "Clinical scope-of-practice reasoning; no acupuncture-specific guideline/RCT source found in this research pass"
+    ],
+    "acupuncture_scope_en": [
+     "Clinical scope-of-practice reasoning; no acupuncture-specific guideline/RCT source found in this research pass"
+    ],
+    "aliases_zh": [
+     "ScienceDirect: Simple and complex renal cysts in adults - Classification system (retrieved 2026-08)"
+    ],
+    "aliases_en": [
+     "ScienceDirect: Simple and complex renal cysts in adults - Classification system (retrieved 2026-08)"
+    ]
+   }
   },
   {
    "id": "cond.polycystic_kidney_disease",
@@ -93785,10 +95867,155 @@
    "name_en": "Polycystic Kidney Disease",
    "category": "uro_renal",
    "icd_hint": "Q61.3",
-   "aliases_zh": [],
-   "aliases_en": [],
+   "aliases_zh": [
+    "自體顯性多囊腎"
+   ],
+   "aliases_en": [
+    "Autosomal Dominant Polycystic Kidney Disease (ADPKD)"
+   ],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "多囊腎最常見的型態為自體顯性多囊腎（ADPKD），是最常見的遺傳性腎臟疾病，因PKD1或PKD2基因突變導致腎臟持續形成多發性囊腫，腎臟逐漸增大並影響功能，常合併肝臟囊腫、高血壓，部分患者伴隨顱內動脈瘤風險。",
+   "summary_en": "The most common form of polycystic kidney disease is autosomal dominant polycystic kidney disease (ADPKD), the most common inherited kidney disorder, caused by mutations in PKD1 or PKD2 that lead to progressive formation of multiple renal cysts, kidney enlargement, and declining function, frequently accompanied by liver cysts, hypertension, and in some patients an increased risk of intracranial aneurysm.",
+   "western_context_zh": "由腎臟科長期追蹤，定期腎臟超音波或MRI評估腎臟體積（如以Mayo影像分類法評估身高校正後總腎體積），監測血壓與腎絲球過濾率，並提供遺傳諮詢；部分符合條件之患者可能經專科評估後使用tolvaptan延緩囊腫進展。此處僅為文件對照用語，非治療指示。",
+   "western_context_en": "Followed longitudinally by nephrology with periodic renal ultrasound or MRI to assess kidney volume (e.g., using the Mayo Imaging Classification of height-adjusted total kidney volume), blood pressure and eGFR monitoring, and genetic counseling; select patients may be evaluated by a specialist for tolvaptan to slow cyst progression. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "PKD1（多數病例）或PKD2基因突變使多囊蛋白1或多囊蛋白2功能異常，這兩種蛋白定位於腎小管上皮細胞的初級纖毛，是感應機械刺激以維持上皮分化狀態的重要結構；功能失調導致細胞異常增生與液體分泌，逐漸形成並擴大多發性囊腫，取代正常腎實質，也影響膽道上皮（形成肝囊腫）與血管平滑肌（增加顱內動脈瘤風險）。診斷結合家族史與腎臟超音波（依年齡制定統一診斷標準，如15-39歲有陽性家族史者以超音波發現總計3顆以上囊腫），無明確家族史或表現不典型者則考慮基因檢測。",
+   "western_pathology_en": "PKD1 mutations (the majority of cases) or PKD2 mutations produce dysfunctional polycystin-1 or polycystin-2, proteins localized to the primary cilia of renal tubular epithelial cells that normally act as mechanosensors maintaining differentiated epithelial function. This dysfunction drives abnormal cell proliferation and fluid secretion, leading to progressive formation and enlargement of multiple cysts that replace normal renal parenchyma; it also affects biliary epithelium (producing liver cysts) and vascular smooth muscle (raising intracranial aneurysm risk). Diagnosis combines family history with renal ultrasound using age-based unified criteria (e.g., ≥3 total cysts on ultrasound in a patient aged 15-39 with a positive family history); genetic testing is considered when family history is absent or presentation is atypical.",
+   "red_flags_zh": [
+    "突發劇烈腰腹痛合併發燒，需排除囊腫出血、感染或破裂，屬急症應儘速就醫",
+    "嚴重頭痛，尤其是「這輩子最劇烈」的爆裂性頭痛，需立即排除顱內動脈瘤破裂（蜘蛛膜下腔出血）",
+    "血壓急遽升高合併頭痛、視力模糊需視為高血壓急症",
+    "肉眼血尿持續不止或合併血塊阻塞需泌尿科評估"
+   ],
+   "red_flags_en": [
+    "Sudden severe flank or abdominal pain with fever requires evaluation for cyst hemorrhage, infection, or rupture, a medical emergency requiring prompt care",
+    "Severe headache, especially a sudden \"worst headache of life,\" requires immediate evaluation for intracranial aneurysm rupture (subarachnoid hemorrhage)",
+    "Rapidly rising blood pressure with headache or visual disturbance should be treated as a hypertensive emergency",
+    "Persistent gross hematuria or hematuria with clot obstruction requires urologic evaluation"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "多囊腎家族史",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Mayo Clinic Press: Polycystic Kidney Disease"
+    },
+    {
+     "factor": "高血壓",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Mayo Clinic Press: Polycystic Kidney Disease"
+    },
+    {
+     "factor": "PKD1基因型（相對PKD2進展較快）",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "PMC12050110: Diagnosis of ADPKD in a Patient With a Genotype-Phenotype Mismatch"
+    },
+    {
+     "factor": "高鈉飲食",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Mayo Clinic Press: Polycystic Kidney Disease"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Family history of polycystic kidney disease",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Mayo Clinic Press: Polycystic Kidney Disease"
+    },
+    {
+     "factor": "Hypertension",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Mayo Clinic Press: Polycystic Kidney Disease"
+    },
+    {
+     "factor": "PKD1 genotype (faster progression relative to PKD2)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "PMC12050110: Diagnosis of ADPKD in a Patient With a Genotype-Phenotype Mismatch"
+    },
+    {
+     "factor": "High sodium intake",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Mayo Clinic Press: Polycystic Kidney Disease"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "可作為疼痛、疲勞等症狀之輔助支持照護，不宣稱能減緩囊腫增大或改變腎功能病程",
+    "precautions": "因腎臟增大且囊腫組織相對脆弱，應避免深層或用力之腰腹部針刺，以降低出血風險",
+    "co_management": "應與負責之腎臟科醫師協調，尤其病患使用抗凝血藥物或即將接受侵入性檢查／手術時",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "May offer supportive adjunct care for pain or fatigue; does not claim to slow cyst growth or alter the course of renal function",
+    "precautions": "Given enlarged, relatively fragile cystic kidneys, avoid deep or vigorous flank/abdominal needling to reduce hemorrhage risk",
+    "co_management": "Coordinate with the treating nephrologist, especially if the patient is on anticoagulants or scheduled for an invasive procedure or surgery",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.ji_ju",
+    "tdis.yao_tong"
+   ],
+   "related_patterns": [
+    "pattern.kidney_yang_deficiency",
+    "pattern.blood_stasis",
+    "pattern.phlegm_damp"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "Mayo Clinic Press: Polycystic Kidney Disease (mcpress.mayoclinic.org, retrieved 2026-08)"
+    ],
+    "summary_en": [
+     "Mayo Clinic Press: Polycystic Kidney Disease (mcpress.mayoclinic.org, retrieved 2026-08)"
+    ],
+    "western_context_zh": [
+     "Mayo Clinic News Network: Autosomal Dominant Polycystic Kidney Disease - Early intervention and lifestyle crucial (retrieved 2026-08)"
+    ],
+    "western_context_en": [
+     "Mayo Clinic News Network: Autosomal Dominant Polycystic Kidney Disease - Early intervention and lifestyle crucial (retrieved 2026-08)"
+    ],
+    "western_pathology_zh": [
+     "PMC12050110: Diagnosis of ADPKD in a 66-Year-Old Patient With a Genotype-Phenotype Mismatch (retrieved 2026-08)",
+     "PMC9941465: Atypical Polycystic Kidney Disease as defined by Imaging (retrieved 2026-08)"
+    ],
+    "western_pathology_en": [
+     "PMC12050110: Diagnosis of ADPKD in a 66-Year-Old Patient With a Genotype-Phenotype Mismatch (retrieved 2026-08)",
+     "PMC9941465: Atypical Polycystic Kidney Disease as defined by Imaging (retrieved 2026-08)"
+    ],
+    "red_flags_zh": [
+     "Mayo Clinic Press: Polycystic Kidney Disease (retrieved 2026-08); intracranial aneurysm rate cited therein"
+    ],
+    "red_flags_en": [
+     "Mayo Clinic Press: Polycystic Kidney Disease (retrieved 2026-08); intracranial aneurysm rate cited therein"
+    ],
+    "risk_factors_zh": [
+     "Mayo Clinic Press: Polycystic Kidney Disease (retrieved 2026-08)",
+     "PMC12050110 (retrieved 2026-08)"
+    ],
+    "risk_factors_en": [
+     "Mayo Clinic Press: Polycystic Kidney Disease (retrieved 2026-08)",
+     "PMC12050110 (retrieved 2026-08)"
+    ],
+    "acupuncture_scope_zh": [
+     "Clinical scope-of-practice reasoning; no acupuncture-specific guideline/RCT source found in this research pass"
+    ],
+    "acupuncture_scope_en": [
+     "Clinical scope-of-practice reasoning; no acupuncture-specific guideline/RCT source found in this research pass"
+    ],
+    "aliases_zh": [
+     "Mayo Clinic Press: Polycystic Kidney Disease (retrieved 2026-08)"
+    ],
+    "aliases_en": [
+     "Mayo Clinic Press: Polycystic Kidney Disease (retrieved 2026-08)"
+    ]
+   }
   },
   {
    "id": "cond.glomerulonephritis",
@@ -93921,7 +96148,141 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "腎病症候群是由腎絲球病變引起的一組臨床表現，定義為大量蛋白尿（成人每日≥3.5克）合併低白蛋白血症、高血脂與明顯水腫。成因可為原發性腎絲球疾病（如兒童常見的微小病變腎病、成人常見的局部節段性腎絲球硬化症、膜性腎病變），或續發於糖尿病、紅斑性狼瘡、感染或藥物等系統性疾病。",
+   "summary_en": "Nephrotic syndrome is a clinical syndrome arising from glomerular disease, defined by heavy proteinuria (≥3.5 g/day in adults) accompanied by hypoalbuminemia, hyperlipidemia, and marked edema. Causes may be primary glomerular disease — minimal change disease (most common in children), focal segmental glomerulosclerosis, or membranous nephropathy (common in adults) — or secondary to systemic conditions such as diabetes, lupus, infection, or certain drugs.",
+   "western_context_zh": "由腎臟科追蹤，監測24小時尿蛋白或尿蛋白/肌酸酐比值、白蛋白、血脂與腎功能；一般處置包含利尿劑控制水腫、ACEI/ARB類藥物減少蛋白尿、必要時使用statin類藥物調整血脂，原發性腎絲球疾病依切片結果考慮類固醇或免疫抑制治療。此處僅為文件對照用語，非治療指示。",
+   "western_context_en": "Followed by nephrology with monitoring of 24-hour urine protein or urine protein-to-creatinine ratio, albumin, lipid panel, and renal function. General management includes diuretics for edema, ACE inhibitors/ARBs to reduce proteinuria, statins for dyslipidemia as needed, and — for primary glomerular disease — corticosteroids or immunosuppressive therapy guided by biopsy findings. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "根本機轉是腎絲球基底膜通透性異常增加（足細胞損傷、足突消失），使大量白蛋白經尿液流失，造成低白蛋白血症與血漿膠體滲透壓下降，加上腎臟鈉水滯留機轉活化，共同導致全身水腫；肝臟代償性增加脂蛋白合成則造成高血脂。診斷條件為大量蛋白尿、白蛋白低下、水腫與高血脂並存；除兒童首選類固醇試驗性治療外，多數病例需靠腎臟切片確認病理型態。",
+   "western_pathology_en": "The core mechanism is increased permeability of the glomerular basement membrane from podocyte injury and foot process effacement, causing massive urinary albumin loss with resulting hypoalbuminemia and reduced plasma oncotic pressure, compounded by intrarenal sodium and water retention that together produce generalized edema; compensatory hepatic lipoprotein synthesis drives the accompanying hyperlipidemia. Diagnostic criteria are the coexistence of heavy proteinuria, hypoalbuminemia, edema, and hyperlipidemia; aside from children (where a steroid trial is typically first-line, presuming minimal change disease), a renal biopsy is usually needed to determine the underlying histologic type.",
+   "red_flags_zh": [
+    "急性腎損傷徵象（少尿、血肌酸酐快速上升）需立即評估，可能為腎靜脈栓塞、急性腎小管壞死或原發疾病快速惡化",
+    "單側或雙側腰腹痛合併血尿需排除腎靜脈栓塞（本病常見的高凝血狀態併發症）",
+    "下肢腫脹合併呼吸困難或胸痛需排除深部靜脈栓塞或肺栓塞",
+    "發燒合併腹痛需排除自發性腹膜炎或敗血症，此族群因免疫球蛋白流失而感染風險升高"
+   ],
+   "red_flags_en": [
+    "Signs of acute kidney injury (oliguria, rapidly rising creatinine) require immediate evaluation for renal vein thrombosis, acute tubular necrosis, or rapid progression of the underlying disease",
+    "Unilateral or bilateral flank pain with hematuria warrants evaluation for renal vein thrombosis, a recognized hypercoagulable complication of this syndrome",
+    "Leg swelling with shortness of breath or chest pain requires evaluation for deep vein thrombosis or pulmonary embolism",
+    "Fever with abdominal pain warrants evaluation for spontaneous bacterial peritonitis or sepsis, as this population has elevated infection risk from immunoglobulin loss"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "糖尿病",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "StatPearls: Nephrotic Syndrome (NBK470444)"
+    },
+    {
+     "factor": "系統性紅斑性狼瘡",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Nephrotic Syndrome (NBK470444)"
+    },
+    {
+     "factor": "特定藥物使用（如NSAIDs等）",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "StatPearls: Nephrotic Syndrome (NBK470444)"
+    },
+    {
+     "factor": "肥胖",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "StatPearls: Nephrotic Syndrome (NBK470444)"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Diabetes mellitus",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "StatPearls: Nephrotic Syndrome (NBK470444)"
+    },
+    {
+     "factor": "Systemic lupus erythematosus",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Nephrotic Syndrome (NBK470444)"
+    },
+    {
+     "factor": "Certain medications (e.g. NSAIDs)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "StatPearls: Nephrotic Syndrome (NBK470444)"
+    },
+    {
+     "factor": "Obesity",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "StatPearls: Nephrotic Syndrome (NBK470444)"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "可作為疲勞、整體不適等症狀之輔助支持照護，不用於降低蛋白尿或治療水腫本身",
+    "precautions": "避免針刺明顯水腫或皮膚脆弱部位；免疫抑制治療期間感染風險升高，需加強清潔與感染徵象評估",
+    "co_management": "任何腎功能變化或懷疑血栓、感染等併發症，應立即聯繫負責之腎臟科醫師，勿自行調整病患用藥（含利尿劑、免疫抑制劑）",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "May offer general supportive care for fatigue or overall discomfort as an adjunct; not intended to reduce proteinuria or treat edema directly",
+    "precautions": "Avoid needling over visibly edematous or fragile skin; infection risk is elevated during immunosuppressive therapy, warranting heightened hygiene and monitoring for infection signs",
+    "co_management": "Any change in renal function or suspected thrombotic/infectious complication should be reported immediately to the treating nephrologist; never advise changes to the patient's medications (including diuretics or immunosuppressants)",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.shui_zhong"
+   ],
+   "related_patterns": [
+    "pattern.spleen_kidney_yang_deficiency",
+    "pattern.kidney_yang_deficiency_water_flooding",
+    "pattern.water_fluid_retention"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "NCBI StatPearls: Nephrotic Syndrome (NBK470444)"
+    ],
+    "summary_en": [
+     "NCBI StatPearls: Nephrotic Syndrome (NBK470444)"
+    ],
+    "western_context_zh": [
+     "Mayo Clinic: Nephrotic syndrome - Diagnosis & treatment (mayoclinic.org, retrieved 2026-08)"
+    ],
+    "western_context_en": [
+     "Mayo Clinic: Nephrotic syndrome - Diagnosis & treatment (mayoclinic.org, retrieved 2026-08)"
+    ],
+    "western_pathology_zh": [
+     "NCBI StatPearls: Nephrotic Syndrome (NBK470444)",
+     "Mayo Clinic: Nephrotic syndrome - Symptoms & causes (mayoclinic.org, retrieved 2026-08)"
+    ],
+    "western_pathology_en": [
+     "NCBI StatPearls: Nephrotic Syndrome (NBK470444)",
+     "Mayo Clinic: Nephrotic syndrome - Symptoms & causes (mayoclinic.org, retrieved 2026-08)"
+    ],
+    "red_flags_zh": [
+     "PMC6681356: Pathogenesis and Management of Acute Kidney Injury in Patients with Nephrotic Syndrome (retrieved 2026-08)",
+     "Methodist DeBakey Cardiovascular Journal: Venous Thrombosis in Nephrotic Syndrome (retrieved 2026-08)"
+    ],
+    "red_flags_en": [
+     "PMC6681356: Pathogenesis and Management of Acute Kidney Injury in Patients with Nephrotic Syndrome (retrieved 2026-08)",
+     "Methodist DeBakey Cardiovascular Journal: Venous Thrombosis in Nephrotic Syndrome (retrieved 2026-08)"
+    ],
+    "risk_factors_zh": [
+     "NCBI StatPearls: Nephrotic Syndrome (NBK470444)"
+    ],
+    "risk_factors_en": [
+     "NCBI StatPearls: Nephrotic Syndrome (NBK470444)"
+    ],
+    "acupuncture_scope_zh": [
+     "Clinical scope-of-practice reasoning; no acupuncture-specific guideline/RCT source found in this research pass"
+    ],
+    "acupuncture_scope_en": [
+     "Clinical scope-of-practice reasoning; no acupuncture-specific guideline/RCT source found in this research pass"
+    ]
+   }
   },
   {
    "id": "cond.proteinuria",
@@ -93933,7 +96294,142 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "蛋白尿是指尿液中蛋白質異常排出（成人每日超過150毫克），本身是一項檢驗發現而非單一疾病，成因光譜從良性、暫時性（如發燒、劇烈運動或年輕族群的姿勢性蛋白尿）到反映重要腎絲球、腎小管或溢流性（如多發性骨髓瘤）病理，其中每日超過3.5克稱為腎病症候群範圍蛋白尿。",
+   "summary_en": "Proteinuria refers to abnormal excretion of protein in the urine (over 150 mg/day in adults). It is a laboratory finding rather than a single disease, spanning a spectrum from benign, transient causes (fever, vigorous exercise, or orthostatic proteinuria in younger people) to a marker of significant glomerular, tubular, or overflow pathology (such as multiple myeloma); levels above 3.5 g/day are termed nephrotic-range proteinuria.",
+   "western_context_zh": "由家醫科或腎臟科評估，先以尿液試紙（主要偵測白蛋白）篩檢，異常者以尿蛋白/肌酸酐比值或24小時尿液收集定量確認，並重複檢測排除暫時性成因；持續性蛋白尿則進一步檢查腎功能、影像及依病因導向之血清學檢查（必要時安排腎臟切片）。此處僅為文件對照用語，非治療指示。",
+   "western_context_en": "Evaluated by primary care or nephrology, starting with dipstick screening (which primarily detects albumin), confirmed with a quantitative urine protein-to-creatinine ratio or 24-hour urine collection, and repeated to exclude transient causes. Persistent proteinuria prompts further work-up including renal function, imaging, and etiology-directed serologic testing, with renal biopsy reserved for select cases. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "蛋白尿的形成主要有三種機轉：腎絲球性（腎絲球濾過屏障通透性異常增加，如腎絲球腎炎、糖尿病腎病變）、腎小管性（腎小管對正常濾過之低分子量蛋白再吸收能力受損），以及溢流性（可濾過蛋白質產量過高超過腎小管正常再吸收能力，如多發性骨髓瘤的輕鏈蛋白）。診斷以試紙篩檢起始，確診需尿蛋白/肌酸酐比值或24小時尿液定量；持續性蛋白尿（間隔1-2週以上兩次以上檢測仍陽性）須進一步評估腎功能、影像學及病因導向血清學檢查，診斷不明或屬腎病症候群範圍者需考慮腎臟切片。",
+   "western_pathology_en": "Proteinuria arises through three main mechanisms: glomerular (increased permeability of the glomerular filtration barrier, e.g., glomerulonephritis, diabetic nephropathy), tubular (impaired tubular reabsorption of normally filtered low-molecular-weight proteins), and overflow (excess production of filterable proteins exceeding normal tubular reabsorptive capacity, e.g., light chains in multiple myeloma). Diagnosis begins with dipstick screening, confirmed with a urine protein-to-creatinine ratio or 24-hour urine quantification; persistent proteinuria (positive on two or more occasions 1-2 weeks apart) warrants further evaluation of renal function, imaging, and etiology-directed serologic testing, with renal biopsy considered when the diagnosis remains unclear or proteinuria is in the nephrotic range.",
+   "red_flags_zh": [
+    "大量蛋白尿達腎病症候群範圍合併全身水腫、低白蛋白血症需儘速轉診腎臟科",
+    "蛋白尿合併肉眼或顯微血尿、紅血球圓柱，提示活動性腎絲球腎炎，需儘快評估",
+    "蛋白尿合併急性腎功能惡化（肌酸酐快速上升）需緊急評估",
+    "中老年患者不明原因蛋白尿合併貧血、骨痛需篩檢漿細胞疾病（如多發性骨髓瘤）"
+   ],
+   "red_flags_en": [
+    "Heavy proteinuria reaching the nephrotic range with generalized edema and hypoalbuminemia requires prompt nephrology referral",
+    "Proteinuria with gross or microscopic hematuria or red cell casts suggests active glomerulonephritis requiring prompt evaluation",
+    "Proteinuria with acute worsening of renal function (rapidly rising creatinine) requires urgent evaluation",
+    "Unexplained proteinuria in an older patient with anemia or bone pain warrants screening for a plasma cell disorder such as multiple myeloma"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "糖尿病",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "AAFP: Proteinuria in Adults: A Diagnostic Approach"
+    },
+    {
+     "factor": "高血壓",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "AAFP: Proteinuria in Adults: A Diagnostic Approach"
+    },
+    {
+     "factor": "肥胖",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Medscape/emedicine: Proteinuria overview"
+    },
+    {
+     "factor": "非類固醇消炎止痛藥（NSAIDs）長期使用",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Merck Manual Professional Edition: Proteinuria"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Diabetes mellitus",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "AAFP: Proteinuria in Adults: A Diagnostic Approach"
+    },
+    {
+     "factor": "Hypertension",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "AAFP: Proteinuria in Adults: A Diagnostic Approach"
+    },
+    {
+     "factor": "Obesity",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Medscape/emedicine: Proteinuria overview"
+    },
+    {
+     "factor": "Long-term NSAID use",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Merck Manual Professional Edition: Proteinuria"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "無足夠實證支持針灸能降低蛋白尿數值；可作為疲勞等一般不適之支持性照護",
+    "precautions": "任何新發或持續性蛋白尿都應先由醫療評估確立病因，不宜以針灸處理症狀而延誤診斷",
+    "co_management": "蛋白尿數值變化或新增症狀，應轉知負責之腎臟科或家醫科醫師",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "There is insufficient evidence that acupuncture reduces proteinuria; it may offer general supportive care for associated fatigue",
+    "precautions": "Any new or persistent proteinuria should first be evaluated medically to establish the underlying cause; do not use acupuncture to address symptoms in a way that delays diagnosis",
+    "co_management": "Report any change in proteinuria level or new symptoms to the treating nephrologist or primary care physician",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.shui_zhong"
+   ],
+   "related_patterns": [
+    "pattern.spleen_qi_deficiency",
+    "pattern.kidney_qi_not_firm"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "Merck Manual Professional Edition: Proteinuria (merckmanuals.com, retrieved 2026-08)"
+    ],
+    "summary_en": [
+     "Merck Manual Professional Edition: Proteinuria (merckmanuals.com, retrieved 2026-08)"
+    ],
+    "western_context_zh": [
+     "AAFP: Proteinuria in Adults: A Diagnostic Approach (aafp.org, retrieved 2026-08)"
+    ],
+    "western_context_en": [
+     "AAFP: Proteinuria in Adults: A Diagnostic Approach (aafp.org, retrieved 2026-08)"
+    ],
+    "western_pathology_zh": [
+     "Medscape/emedicine: Proteinuria - Background, Pathophysiology, Etiology (retrieved 2026-08)",
+     "AAFP: Proteinuria in Adults: A Diagnostic Approach (retrieved 2026-08)"
+    ],
+    "western_pathology_en": [
+     "Medscape/emedicine: Proteinuria - Background, Pathophysiology, Etiology (retrieved 2026-08)",
+     "AAFP: Proteinuria in Adults: A Diagnostic Approach (retrieved 2026-08)"
+    ],
+    "red_flags_zh": [
+     "AAFP: Proteinuria in Adults: A Diagnostic Approach (retrieved 2026-08)",
+     "Merck Manual Professional Edition: Proteinuria (retrieved 2026-08)"
+    ],
+    "red_flags_en": [
+     "AAFP: Proteinuria in Adults: A Diagnostic Approach (retrieved 2026-08)",
+     "Merck Manual Professional Edition: Proteinuria (retrieved 2026-08)"
+    ],
+    "risk_factors_zh": [
+     "AAFP: Proteinuria in Adults: A Diagnostic Approach (retrieved 2026-08)",
+     "Merck Manual Professional Edition: Proteinuria (retrieved 2026-08)"
+    ],
+    "risk_factors_en": [
+     "AAFP: Proteinuria in Adults: A Diagnostic Approach (retrieved 2026-08)",
+     "Merck Manual Professional Edition: Proteinuria (retrieved 2026-08)"
+    ],
+    "acupuncture_scope_zh": [
+     "Clinical scope-of-practice reasoning; no acupuncture-specific guideline/RCT source found in this research pass"
+    ],
+    "acupuncture_scope_en": [
+     "Clinical scope-of-practice reasoning; no acupuncture-specific guideline/RCT source found in this research pass"
+    ]
+   }
   },
   {
    "id": "cond.hematuria",
@@ -94078,7 +96574,119 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "睪丸炎是單側或雙側睪丸的發炎反應，最常見病因為病毒感染（如腮腺炎病毒，好發於青春期後未接種疫苗男性，約三分之一腮腺炎患者併發睪丸炎），其次為細菌性感染由附睪炎延伸而來（附睪睪丸炎），常見於泌尿道感染或性傳染病病原。臨床表現為睪丸疼痛、腫脹、壓痛，可合併發燒與寒顫。",
+   "summary_en": "Orchitis is inflammation of one or both testicles, most commonly caused by viral infection (particularly mumps, occurring in roughly one-third of post-pubertal, unvaccinated men with mumps), or by bacterial infection extending from the epididymis (epididymo-orchitis), typically from urinary tract or sexually transmitted pathogens. It presents with testicular pain, swelling, tenderness, and may be accompanied by fever and chills.",
+   "western_context_zh": "由泌尿科或家醫科評估，透過病史、理學檢查、尿液分析與培養、性傳染病篩檢，並以陰囊超音波搭配都卜勒血流評估排除睪丸扭轉；細菌性睪丸炎依致病菌給予抗生素治療，病毒性睪丸炎以支持性照護為主（休息、止痛、陰囊托高）。此處僅為文件對照用語，非治療指示。",
+   "western_context_en": "Evaluated by urology or primary care via history, physical exam, urinalysis/culture, and STI screening, with scrotal Doppler ultrasound used to assess blood flow and exclude testicular torsion. Bacterial orchitis is treated with antibiotics targeted to the causative organism, while viral orchitis is managed supportively (rest, analgesia, scrotal support). Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "病毒性睪丸炎（如腮腺炎）經血行散播直接侵犯睪丸實質，造成間質水腫發炎，可能損傷生精小管；細菌性睪丸炎多繼發於附睪逆行感染（附睪睪丸炎），經輸精管上行，年長男性常見致病菌來自泌尿道感染，性活躍年輕男性則常見披衣菌或淋病雙球菌。診斷以臨床評估為主，配合尿液分析／培養與陰囊超音波都卜勒（血流增加，與睪丸扭轉之血流消失相反）以排除急症。",
+   "western_pathology_en": "Viral orchitis (e.g., mumps) spreads hematogenously to directly infect testicular parenchyma, causing interstitial edema and inflammation that can damage seminiferous tubules. Bacterial orchitis usually arises secondary to ascending infection from the epididymis (epididymo-orchitis) via the vas deferens — commonly urinary pathogens in older men, or Chlamydia/gonorrhea in sexually active younger men. Diagnosis is primarily clinical, supported by urinalysis/culture and scrotal Doppler ultrasound (showing increased blood flow, in contrast to the absent flow seen in testicular torsion), which helps exclude surgical emergencies.",
+   "red_flags_zh": [
+    "突發劇烈單側睪丸痛、睪丸上提及呈水平位，需立即排除睪丸扭轉，屬外科急症，延誤處理可能喪失睪丸",
+    "睪丸痛合併高燒、寒顫、全身狀況不佳需考慮膿瘍形成或敗血症，應轉診泌尿科評估",
+    "陰囊外傷後劇痛腫脹需排除睪丸破裂",
+    "青少年新發睪丸腫痛，尤其近期有腮腺腫大等腮腺炎病史者，應留意全身感染徵象並轉診評估"
+   ],
+   "red_flags_en": [
+    "Sudden, severe unilateral testicular pain with a high-riding, horizontally-lying testicle requires immediate evaluation to exclude testicular torsion, a surgical emergency in which delay can result in loss of the testicle",
+    "Testicular pain with high fever, chills, or systemic illness raises concern for abscess formation or sepsis and warrants urologic referral",
+    "Severe pain and swelling after scrotal trauma requires evaluation to exclude testicular rupture",
+    "New testicular swelling and pain in an adolescent, particularly with recent parotid swelling suggesting mumps, warrants attention to systemic infection signs and referral for evaluation"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "未接種腮腺炎疫苗",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Cleveland Clinic: Orchitis"
+    },
+    {
+     "factor": "無防護性行為／性傳染病暴露",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "AAFP: Epididymitis and Orchitis: An Overview"
+    },
+    {
+     "factor": "近期細菌性泌尿道感染或攝護腺炎",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "AAFP: Epididymitis and Orchitis: An Overview"
+    },
+    {
+     "factor": "近期泌尿道器械操作或導尿管留置",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "AAFP: Epididymitis and Orchitis: An Overview"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Lack of mumps vaccination",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Cleveland Clinic: Orchitis"
+    },
+    {
+     "factor": "Unprotected sexual activity / STI exposure",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "AAFP: Epididymitis and Orchitis: An Overview"
+    },
+    {
+     "factor": "Recent bacterial urinary tract infection or prostatitis",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "AAFP: Epididymitis and Orchitis: An Overview"
+    },
+    {
+     "factor": "Recent urinary instrumentation or indwelling catheter",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "AAFP: Epididymitis and Orchitis: An Overview"
+    }
+   ],
+   "related_patterns": [
+    "pattern.liver_gallbladder_damp_heat",
+    "pattern.damp_heat_lower_burner"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "Cleveland Clinic: Orchitis - Causes, Symptoms, Treatment & Prevention (my.clevelandclinic.org, retrieved 2026-08)"
+    ],
+    "summary_en": [
+     "Cleveland Clinic: Orchitis - Causes, Symptoms, Treatment & Prevention (my.clevelandclinic.org, retrieved 2026-08)"
+    ],
+    "western_context_zh": [
+     "AAFP: Epididymitis and Orchitis: An Overview (aafp.org, retrieved 2026-08)"
+    ],
+    "western_context_en": [
+     "AAFP: Epididymitis and Orchitis: An Overview (aafp.org, retrieved 2026-08)"
+    ],
+    "western_pathology_zh": [
+     "AAFP: Epididymitis and Orchitis: An Overview (aafp.org, retrieved 2026-08)",
+     "PubMed 22483426: The dilemma in the diagnosis of acute scrotum: clinical clues for differentiating between testicular torsion and epididymo-orchitis"
+    ],
+    "western_pathology_en": [
+     "AAFP: Epididymitis and Orchitis: An Overview (aafp.org, retrieved 2026-08)",
+     "PubMed 22483426: The dilemma in the diagnosis of acute scrotum: clinical clues for differentiating between testicular torsion and epididymo-orchitis"
+    ],
+    "red_flags_zh": [
+     "Cleveland Clinic: Orchitis (retrieved 2026-08)",
+     "PubMed 22483426 (retrieved 2026-08)"
+    ],
+    "red_flags_en": [
+     "Cleveland Clinic: Orchitis (retrieved 2026-08)",
+     "PubMed 22483426 (retrieved 2026-08)"
+    ],
+    "risk_factors_zh": [
+     "Cleveland Clinic: Orchitis (retrieved 2026-08)",
+     "AAFP: Epididymitis and Orchitis: An Overview (retrieved 2026-08)"
+    ],
+    "risk_factors_en": [
+     "Cleveland Clinic: Orchitis (retrieved 2026-08)",
+     "AAFP: Epididymitis and Orchitis: An Overview (retrieved 2026-08)"
+    ]
+   }
   },
   {
    "id": "cond.epididymitis",
@@ -94204,7 +96812,137 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "陰莖硬結症是一種因陰莖白膜異常傷口癒合而形成局部纖維化斑塊的後天性疾病，導致勃起時陰莖出現彎曲、變形，常合併疼痛與勃起功能障礙，好發於中老年男性，但年輕族群也可能發生。",
+   "summary_en": "Peyronie disease is an acquired disorder of abnormal wound healing in the penile tunica albuginea that produces a localized fibrotic plaque, resulting in penile curvature or deformity during erection, often accompanied by pain and erectile dysfunction. It is most common in middle-aged and older men, though it can occur in younger men as well.",
+   "western_context_zh": "由泌尿科診斷與追蹤，以病史、陰莖觸診配合動態陰莖彩色都卜勒超音波評估斑塊、彎曲角度與血管功能；急性期（症狀出現或持續變化的約12個月內）多先觀察或考慮口服／病灶內注射藥物，穩定期若影響功能則評估手術矯正。此處僅為文件對照用語，非治療指示。",
+   "western_context_en": "Diagnosed and followed by urology using history, penile palpation, and dynamic color duplex ultrasound to characterize the plaque, curvature, and vascular status. In the acute phase (roughly the first 12 months of onset or ongoing change), watchful observation or oral/intralesional agents are typically considered first; once the disease stabilizes, surgical correction is evaluated if function is significantly affected. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "被認為是陰莖白膜反覆微創傷後異常修復所致：急性期（症狀未滿約3個月）白膜結締組織內出現以淋巴球、漿細胞為主的發炎細胞浸潤；病程延長後轉為纖維化增生、膠原排列紊亂，部分甚至出現鈣化或骨化，形成無彈性的斑塊，使陰莖勃起時該處無法正常擴張而產生彎曲變形。診斷主要為臨床診斷，以病史與理學檢查為核心，配合動態彩色都卜勒超音波定位斑塊與鈣化，並常規篩檢糖尿病、心血管風險及其他纖維增生性疾病（如杜普伊特倫氏攣縮、足底筋膜纖維瘤病）。",
+   "western_pathology_en": "Thought to result from abnormal wound repair following repetitive microtrauma to the tunica albuginea: in the early phase (symptoms under roughly 3 months), an inflammatory infiltrate — predominantly lymphocytes and plasma cells — appears within the connective tissue. As the process continues, this transitions to fibrotic proliferation with disorganized collagen, sometimes with calcification or ossification, forming an inelastic plaque that prevents normal expansion of the affected tunica during erection, producing curvature or deformity. Diagnosis is primarily clinical, based on history and physical examination, supported by dynamic color duplex ultrasound to localize the plaque and any calcification; routine screening for diabetes, cardiovascular risk, and other fibroproliferative conditions (e.g., Dupuytren contracture, plantar fibromatosis) is recommended.",
+   "red_flags_zh": [
+    "突發劇痛合併「啪」聲響及迅速腫脹瘀青，提示陰莖骨折（白膜破裂），屬外科急症需立即就醫",
+    "勃起持續超過4小時且疼痛（缺血性異常勃起）為醫療急症，須立即急診處理",
+    "彎曲角度快速惡化合併新發劇痛，應儘速轉診泌尿科評估其他罕見病理（如陰莖腫瘤）",
+    "合併排尿困難或血尿需另外評估泌尿道其他病灶"
+   ],
+   "red_flags_en": [
+    "Sudden severe pain with an audible pop and rapid swelling/bruising suggests penile fracture (tunica albuginea rupture), a surgical emergency requiring immediate care",
+    "An erection lasting more than 4 hours with pain (ischemic priapism) is a medical emergency requiring immediate emergency treatment",
+    "Rapidly worsening curvature with new severe pain warrants prompt urology referral to evaluate for other rare pathology (e.g., penile tumor)",
+    "Accompanying difficulty urinating or hematuria warrants separate evaluation of other urinary tract pathology"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "糖尿病",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "StatPearls: Peyronie Disease (NBK560628)"
+    },
+    {
+     "factor": "陰莖外傷史（含性行為相關微創傷）",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "PMC11172383: Clinical Presentation of Peyronie's Disease"
+    },
+    {
+     "factor": "合併杜普伊特倫氏攣縮等纖維增生性疾病",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Peyronie Disease (NBK560628)"
+    },
+    {
+     "factor": "吸菸",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "StatPearls: Peyronie Disease (NBK560628)"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Diabetes mellitus",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "StatPearls: Peyronie Disease (NBK560628)"
+    },
+    {
+     "factor": "History of penile trauma (including sexual microtrauma)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "PMC11172383: Clinical Presentation of Peyronie's Disease"
+    },
+    {
+     "factor": "Coexisting fibroproliferative disease such as Dupuytren contracture",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Peyronie Disease (NBK560628)"
+    },
+    {
+     "factor": "Smoking",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "StatPearls: Peyronie Disease (NBK560628)"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "目前無足夠實證支持針灸能改善斑塊纖維化或彎曲角度；可作為伴隨焦慮或骨盆部位一般性不適之支持性照護",
+    "precautions": "避免直接針刺陰莖幹或斑塊部位；此為敏感解剖部位，屬需謹慎評估之執業範疇",
+    "co_management": "診斷與任何藥物／手術決策應由泌尿科醫師主導，針灸僅作協同性一般照護，不取代其評估",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "There is currently no adequate evidence that acupuncture improves plaque fibrosis or curvature; it may offer general supportive care for associated anxiety or general pelvic discomfort",
+    "precautions": "Avoid needling the penile shaft or plaque directly; this is a sensitive anatomical area requiring careful scope-of-practice judgment",
+    "co_management": "Diagnosis and any medical or surgical decision-making should be led by the treating urologist; acupuncture serves only as adjunctive general supportive care, not a substitute for that evaluation",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_patterns": [
+    "pattern.blood_stasis",
+    "pattern.phlegm_stasis_binding"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "NCBI StatPearls: Peyronie Disease (NBK560628)"
+    ],
+    "summary_en": [
+     "NCBI StatPearls: Peyronie Disease (NBK560628)"
+    ],
+    "western_context_zh": [
+     "PMC11172383: Clinical Presentation of Peyronie's Disease: A Retrospective Study of 564 Cases (retrieved 2026-08)"
+    ],
+    "western_context_en": [
+     "PMC11172383: Clinical Presentation of Peyronie's Disease: A Retrospective Study of 564 Cases (retrieved 2026-08)"
+    ],
+    "western_pathology_zh": [
+     "NCBI StatPearls: Peyronie Disease (NBK560628)",
+     "PMC4756926: The pathophysiology of Peyronie's disease: beyond the Smith's space"
+    ],
+    "western_pathology_en": [
+     "NCBI StatPearls: Peyronie Disease (NBK560628)",
+     "PMC4756926: The pathophysiology of Peyronie's disease: beyond the Smith's space"
+    ],
+    "red_flags_zh": [
+     "Ubie Doctor's Note: Painful Erections: Why Priapism is an Emergency (retrieved 2026-08) — flagged for Ting to source-check against AUA guideline"
+    ],
+    "red_flags_en": [
+     "Ubie Doctor's Note: Painful Erections: Why Priapism is an Emergency (retrieved 2026-08) — flagged for Ting to source-check against AUA guideline"
+    ],
+    "risk_factors_zh": [
+     "NCBI StatPearls: Peyronie Disease (NBK560628)",
+     "PMC11172383 (retrieved 2026-08)"
+    ],
+    "risk_factors_en": [
+     "NCBI StatPearls: Peyronie Disease (NBK560628)",
+     "PMC11172383 (retrieved 2026-08)"
+    ],
+    "acupuncture_scope_zh": [
+     "Clinical scope-of-practice reasoning; no acupuncture-specific guideline/RCT source found in this research pass"
+    ],
+    "acupuncture_scope_en": [
+     "Clinical scope-of-practice reasoning; no acupuncture-specific guideline/RCT source found in this research pass"
+    ]
+   }
   },
   {
    "id": "cond.hydrocele",
@@ -94938,7 +97676,139 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "神經性膀胱是指因中樞或周邊神經系統病變（如脊髓損傷、多發性硬化症、脊柱裂、糖尿病神經病變、腦中風、巴金森氏症）導致膀胱儲尿與排空控制異常的一組疾病，可表現為逼尿肌過動合併括約肌協同失調，或逼尿肌收縮無力合併尿滯留，視病灶位置而定。",
+   "summary_en": "Neurogenic bladder refers to a group of disorders in which central or peripheral nervous system pathology — such as spinal cord injury, multiple sclerosis, spina bifida, diabetic neuropathy, stroke, or Parkinson's disease — disrupts normal bladder storage and emptying control. Depending on lesion location, it can present as detrusor overactivity with sphincter dyssynergia, or as detrusor underactivity with urinary retention.",
+   "western_context_zh": "由泌尿科或復健科追蹤，定期以殘尿量測量、腎臟超音波（監測水腎）與血肌酸酐評估腎功能，合併水腎或腎病變者常安排膀胱鏡與尿路動力學／錄影尿路動力學檢查；管理方式包含間歇導尿、抗膽鹼藥物或β3受體促效劑、肉毒桿菌素膀胱注射與薦神經調節等，依病灶類型選擇。此處僅為文件對照用語，非治療指示。",
+   "western_context_en": "Followed by urology or rehabilitation medicine with periodic post-void residual measurement, renal ultrasound to screen for hydronephrosis, and serum creatinine to assess renal function; cystoscopy and urodynamic or video-urodynamic studies are added when hydronephrosis or nephropathy is present. Management options — chosen according to the lesion pattern — include intermittent catheterization, anticholinergics or beta-3 agonists, botulinum toxin bladder injection, and sacral neuromodulation. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "正常排尿需要大腦排尿中樞、脊髓與周邊神經、逼尿肌及尿道括約肌間的協調訊號傳遞。橋腦排尿中樞以上病灶（如中風）通常保留反射性排尿但喪失自主抑制；薦髓以上、橋腦以下的脊髓損傷常導致逼尿肌過動合併逼尿肌-括約肌協同失調，造成儲尿與排空壓力過高，增加膀胱輸尿管逆流與水腎風險；薦髓、馬尾或周邊神經（如糖尿病神經病變）病灶則常導致逼尿肌無反射與溢流性尿滯留。診斷依賴病史與神經學檢查，配合殘尿量、腎臟超音波、尿路動力學／錄影尿路動力學及必要時膀胱鏡評估。",
+   "western_pathology_en": "Normal voiding depends on coordinated signaling among the brain's pontine micturition center, the spinal cord and peripheral nerves, the detrusor muscle, and the urethral sphincter. Lesions above the pontine micturition center (e.g., stroke) typically preserve reflex voiding but impair voluntary inhibition. Suprasacral spinal cord lesions (e.g., spinal cord injury below the pons) commonly cause detrusor overactivity with detrusor-sphincter dyssynergia, producing high storage and voiding pressures that raise the risk of vesicoureteral reflux and hydronephrosis. Sacral cord, cauda equina, or peripheral nerve lesions (e.g., diabetic neuropathy) more often cause detrusor areflexia with overflow retention. Diagnosis relies on history and neurologic examination combined with post-void residual measurement, renal ultrasound, urodynamic/video-urodynamic testing, and cystoscopy when indicated.",
+   "red_flags_zh": [
+    "高壓性逼尿肌-括約肌協同失調合併反覆腎盂腎炎或影像上腎水腫，需儘速泌尿科評估以避免腎功能永久受損",
+    "脊髓損傷（尤其T6以上）患者出現劇烈頭痛、突發血壓飆高合併心搏過緩，須警覺自主神經反射亢進，屬醫療急症需立即排除膀胱過脹、阻塞等誘因並就醫",
+    "急性尿滯留合併發燒、腰痛需排除尿路感染併發腎盂腎炎或敗血症",
+    "新發下肢無力、麻木或鞍區感覺喪失合併排尿功能改變，需緊急神經影像評估馬尾症候群"
+   ],
+   "red_flags_en": [
+    "High-pressure detrusor-sphincter dyssynergia with recurrent pyelonephritis or imaging evidence of hydronephrosis requires prompt urologic evaluation to prevent permanent renal damage",
+    "In spinal cord injury patients (especially lesions at or above T6), severe headache with sudden hypertension and bradycardia should raise concern for autonomic dysreflexia, a medical emergency requiring immediate care and identification of the trigger (commonly bladder overdistension or obstruction)",
+    "Acute urinary retention with fever and flank pain requires evaluation for urinary tract infection complicated by pyelonephritis or sepsis",
+    "New lower-limb weakness, numbness, or saddle anesthesia accompanying a change in voiding function requires urgent neuro-imaging to evaluate for cauda equina syndrome"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "脊髓損傷病史",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Cleveland Clinic: Neurogenic Bladder"
+    },
+    {
+     "factor": "糖尿病（病程長或控制不良）",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Cleveland Clinic: Neurogenic Bladder"
+    },
+    {
+     "factor": "多發性硬化症",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Cleveland Clinic: Neurogenic Bladder"
+    },
+    {
+     "factor": "骨盆手術病史造成周邊神經損傷",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Cleveland Clinic: Neurogenic Bladder"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "History of spinal cord injury",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Cleveland Clinic: Neurogenic Bladder"
+    },
+    {
+     "factor": "Diabetes mellitus (long-standing or poorly controlled)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Cleveland Clinic: Neurogenic Bladder"
+    },
+    {
+     "factor": "Multiple sclerosis",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Cleveland Clinic: Neurogenic Bladder"
+    },
+    {
+     "factor": "Peripheral nerve damage from prior pelvic surgery",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Cleveland Clinic: Neurogenic Bladder"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "可作為排尿訓練與整體症狀舒適之輔助照護，不宣稱能恢復受損之神經功能",
+    "precautions": "薦髂區域針刺需留意患者感覺缺損風險（可能未能即時反映不適或損傷）與皮膚完整性；避免建議改變導尿排程",
+    "co_management": "應與負責之泌尿科／復健科醫師密切協調，尤其涉及間歇導尿排程或藥物調整時，不可自行建議變更",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "May offer supportive adjunct care for bladder training and general symptom comfort; does not claim to restore damaged neural function",
+    "precautions": "Sacral-area needling requires caution given possible sensory loss (which may mask discomfort or injury) and altered skin integrity; avoid advising changes to catheterization schedule",
+    "co_management": "Requires close coordination with the treating urologist/rehabilitation physician, especially regarding intermittent catheterization schedule or medication changes — never suggest changes independently",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.long_bi",
+    "tdis.yi_niao"
+   ],
+   "related_patterns": [
+    "pattern.kidney_qi_not_firm",
+    "pattern.kidney_yang_deficiency"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "Cleveland Clinic: Neurogenic Bladder - Causes, Symptoms & Management (my.clevelandclinic.org, retrieved 2026-08)"
+    ],
+    "summary_en": [
+     "Cleveland Clinic: Neurogenic Bladder - Causes, Symptoms & Management (my.clevelandclinic.org, retrieved 2026-08)"
+    ],
+    "western_context_zh": [
+     "Merck Manual Professional Edition: Neurogenic Bladder (merckmanuals.com, retrieved 2026-08)"
+    ],
+    "western_context_en": [
+     "Merck Manual Professional Edition: Neurogenic Bladder (merckmanuals.com, retrieved 2026-08)"
+    ],
+    "western_pathology_zh": [
+     "PMC9715349: Neurogenic Bladder: Epidemiology, Diagnosis, and Management (retrieved 2026-08)",
+     "PMC11896685: Neurogenic bladder pathophysiology, assessment and management after lumbar diseases (retrieved 2026-08)"
+    ],
+    "western_pathology_en": [
+     "PMC9715349: Neurogenic Bladder: Epidemiology, Diagnosis, and Management (retrieved 2026-08)",
+     "PMC11896685: Neurogenic bladder pathophysiology, assessment and management after lumbar diseases (retrieved 2026-08)"
+    ],
+    "red_flags_zh": [
+     "Merck Manual Professional Edition: Neurogenic Bladder (retrieved 2026-08); autonomic dysreflexia flag: established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "red_flags_en": [
+     "Merck Manual Professional Edition: Neurogenic Bladder (retrieved 2026-08); autonomic dysreflexia flag: established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "risk_factors_zh": [
+     "Cleveland Clinic: Neurogenic Bladder (retrieved 2026-08)"
+    ],
+    "risk_factors_en": [
+     "Cleveland Clinic: Neurogenic Bladder (retrieved 2026-08)"
+    ],
+    "acupuncture_scope_zh": [
+     "Clinical scope-of-practice reasoning; no acupuncture-specific guideline/RCT source found in this research pass"
+    ],
+    "acupuncture_scope_en": [
+     "Clinical scope-of-practice reasoning; no acupuncture-specific guideline/RCT source found in this research pass"
+    ]
+   }
   },
   {
    "id": "cond.chronic_scrotal_pain_syndrome",
@@ -95102,10 +97972,155 @@
    "name_en": "IgA Nephropathy",
    "category": "uro_renal",
    "icd_hint": "N02.8",
-   "aliases_zh": [],
-   "aliases_en": [],
+   "aliases_zh": [
+    "柏格氏病"
+   ],
+   "aliases_en": [
+    "Berger Disease"
+   ],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "IgA腎病變（又稱柏格氏病）是全球最常見的原發性腎絲球腎炎之一，因結構異常、低半乳糖化的IgA1抗體形成免疫複合物並沉積於腎絲球繫膜區，引發局部發炎與細胞增生。好發於20-40歲青壯年、男性略多，典型表現是上呼吸道感染或腸胃炎後1-2天內出現肉眼血尿（同步咽炎性血尿），也常以無症狀鏡下血尿合併不同程度蛋白尿被偶然發現。",
+   "summary_en": "IgA nephropathy (Berger disease) is one of the most common primary glomerulonephritides worldwide, caused by abnormally under-galactosylated IgA1 forming immune complexes that deposit in the glomerular mesangium and trigger local inflammation and cell proliferation. It typically affects young adults aged 20-40, slightly more often men, with the classic presentation being gross hematuria appearing 1-2 days after an upper respiratory or gastrointestinal infection (\"synpharyngitic hematuria\"), though it is also frequently found incidentally as asymptomatic microscopic hematuria with variable proteinuria.",
+   "western_context_zh": "通常由腎臟科長期追蹤，透過定期驗尿（尿蛋白/肌酸酐比值）、血壓與腎功能（肌酸酐、腎絲球過濾率）監測病程；治療依風險分層可能包括ACEI/ARB類藥物控制血壓與蛋白尿、必要時加用免疫抑制劑，並需要腎臟切片以確立診斷與病理分級。此處僅為文件對照用語，非治療指示。",
+   "western_context_en": "Typically followed longitudinally by nephrology with periodic urinalysis (urine protein-to-creatinine ratio), blood pressure checks, and renal function monitoring (creatinine, eGFR). Risk-stratified management may include ACE inhibitors/ARBs for blood pressure and proteinuria control, with immunosuppressive therapy added in select higher-risk cases; a kidney biopsy is required to establish the diagnosis and histologic grade. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "致病機轉核心為「四重打擊」假說：(1)血中異常低半乳糖化IgA1濃度上升 (2)產生對抗此異常IgA1的自體抗體 (3)兩者結合形成免疫複合物 (4)複合物沉積於腎絲球繫膜區並活化補體，引發發炎、繫膜細胞增生與進行性纖維化。確診需靠腎臟切片，病理下可見以IgA為主的免疫球蛋白沉積於繫膜區，並以Oxford分類（MEST-C評分）評估組織學嚴重度以輔助預後判斷。",
+   "western_pathology_en": "The core mechanism follows a proposed \"four-hit\" hypothesis: (1) elevated circulating galactose-deficient IgA1, (2) production of autoantibodies against this abnormal IgA1, (3) formation of immune complexes, and (4) mesangial deposition of these complexes with complement activation, driving inflammation, mesangial cell proliferation, and progressive fibrosis. Diagnosis requires a kidney biopsy showing dominant IgA deposition in the mesangium; the Oxford classification (MEST-C score) is used to grade histologic severity and inform prognosis.",
+   "red_flags_zh": [
+    "肉眼血尿合併明顯少尿或血肌酸酐急遽上升，需排除急性腎絲球腎炎急性惡化或新月體形成",
+    "12個月內腎絲球過濾率下降達25%以上，屬快速進展指標，需儘速轉診腎臟科",
+    "嚴重高血壓合併頭痛、視力模糊等高血壓急症徵象需立即就醫",
+    "大量蛋白尿合併全身水腫，提示達腎病症候群範圍蛋白尿，需儘快評估轉診"
+   ],
+   "red_flags_en": [
+    "Gross hematuria with marked oliguria or rapidly rising creatinine warrants urgent evaluation to exclude acute-on-chronic glomerulonephritis or crescentic transformation",
+    "A sustained eGFR decline of 25% or more within 12 months is a marker of accelerated progression requiring prompt nephrology referral",
+    "Severe hypertension with headache or visual disturbance suggests a hypertensive emergency requiring immediate care",
+    "Heavy proteinuria with generalized edema suggests nephrotic-range proteinuria requiring prompt evaluation and referral"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "年齡20-40歲青壯年發病",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NKF: IgA Nephropathy overview"
+    },
+    {
+     "factor": "男性",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NKF: IgA Nephropathy overview"
+    },
+    {
+     "factor": "持續性蛋白尿（>1克/日）",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "iatrox referral-criteria summary (NICE-based)"
+    },
+    {
+     "factor": "血壓控制不良",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "iatrox referral-criteria summary (NICE-based)"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Onset in young adulthood (age 20-40)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NKF: IgA Nephropathy overview"
+    },
+    {
+     "factor": "Male sex",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NKF: IgA Nephropathy overview"
+    },
+    {
+     "factor": "Persistent proteinuria (>1 g/day)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "iatrox referral-criteria summary (NICE-based)"
+    },
+    {
+     "factor": "Poorly controlled blood pressure",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "iatrox referral-criteria summary (NICE-based)"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "可作為一般疲勞、輕度水腫不適等症狀之輔助支持照護，非用於改變蛋白尿量或延緩腎功能惡化",
+    "precautions": "避免宣稱可降低蛋白尿或改善腎功能；病程活動期（肉眼血尿、急性腎功能惡化）應優先轉診，不宜以針灸取代醫療評估",
+    "co_management": "任何腎功能或蛋白尿數值變化，應聯繫負責追蹤之腎臟科醫師確認，勿自行調整病患用藥",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "May offer general supportive care for fatigue or mild edema-related discomfort as an adjunct; not intended to reduce proteinuria or alter renal function",
+    "precautions": "Do not claim acupuncture reduces proteinuria or improves renal function; active-phase presentations (gross hematuria, acute renal decline) should be referred promptly rather than managed with acupuncture alone",
+    "co_management": "Any change in renal function or proteinuria should be relayed to the treating nephrologist; never advise changes to the patient's prescribed medication",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.xue_zheng",
+    "tdis.shui_zhong"
+   ],
+   "related_patterns": [
+    "pattern.qi_yin_deficiency",
+    "pattern.kidney_yin_deficiency",
+    "pattern.blood_stasis"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "Mayo Clinic: IgA nephropathy (Berger disease) - Symptoms and causes (mayoclinic.org, retrieved 2026-08)"
+    ],
+    "summary_en": [
+     "Mayo Clinic: IgA nephropathy (Berger disease) - Symptoms and causes (mayoclinic.org, retrieved 2026-08)"
+    ],
+    "western_context_zh": [
+     "Mayo Clinic: IgA nephropathy - Diagnosis and treatment (mayoclinic.org, retrieved 2026-08)"
+    ],
+    "western_context_en": [
+     "Mayo Clinic: IgA nephropathy - Diagnosis and treatment (mayoclinic.org, retrieved 2026-08)"
+    ],
+    "western_pathology_zh": [
+     "National Kidney Foundation: IgA Nephropathy (IgAN) (kidney.org, retrieved 2026-08)",
+     "Mayo Clinic Press: IgA nephropathy test results explained (retrieved 2026-08)"
+    ],
+    "western_pathology_en": [
+     "National Kidney Foundation: IgA Nephropathy (IgAN) (kidney.org, retrieved 2026-08)",
+     "Mayo Clinic Press: IgA nephropathy test results explained (retrieved 2026-08)"
+    ],
+    "red_flags_zh": [
+     "iatrox: What Criteria Should I Use to Determine When to Refer a Patient With IgA Nephropathy (NICE-based referral criteria, retrieved 2026-08)"
+    ],
+    "red_flags_en": [
+     "iatrox: What Criteria Should I Use to Determine When to Refer a Patient With IgA Nephropathy (NICE-based referral criteria, retrieved 2026-08)"
+    ],
+    "risk_factors_zh": [
+     "National Kidney Foundation: IgA Nephropathy (IgAN) (kidney.org, retrieved 2026-08)",
+     "iatrox referral-criteria summary (retrieved 2026-08)"
+    ],
+    "risk_factors_en": [
+     "National Kidney Foundation: IgA Nephropathy (IgAN) (kidney.org, retrieved 2026-08)",
+     "iatrox referral-criteria summary (retrieved 2026-08)"
+    ],
+    "acupuncture_scope_zh": [
+     "Clinical scope-of-practice reasoning; no acupuncture-specific guideline/RCT source found in this research pass"
+    ],
+    "acupuncture_scope_en": [
+     "Clinical scope-of-practice reasoning; no acupuncture-specific guideline/RCT source found in this research pass"
+    ],
+    "aliases_zh": [
+     "Mayo Clinic: IgA nephropathy (Berger disease) (mayoclinic.org, retrieved 2026-08)"
+    ],
+    "aliases_en": [
+     "Mayo Clinic: IgA nephropathy (Berger disease) (mayoclinic.org, retrieved 2026-08)"
+    ]
+   }
   },
   {
    "id": "cond.spermatocele",
@@ -95117,7 +98132,124 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "副睪囊腫是一種良性、含精子成分的囊性腫塊，通常起源於副睪頭部，多為無症狀或以無痛性陰囊腫塊被發現，理學檢查與超音波可與陰囊水腫（睪丸周圍液體聚積）及睪丸腫瘤（實質性腫塊）作區別。",
+   "summary_en": "A spermatocele is a benign, sperm-containing cystic mass, usually arising from the head of the epididymis. It is often asymptomatic or discovered as a painless scrotal mass, and is distinguished from a hydrocele (fluid around the testis) and testicular tumor (a solid mass) on examination and ultrasound.",
+   "western_context_zh": "由家醫科或泌尿科評估，小型無症狀之副睪囊腫通常僅需定期理學檢查追蹤，無需治療；以陰囊超音波確認為囊性（非實質性）並排除其他病理，大型或有症狀者可考慮手術切除，但需告知病患手術可能因鄰近副睪管而影響生育力。此處僅為文件對照用語，非治療指示。",
+   "western_context_en": "Evaluated by primary care or urology: small, asymptomatic spermatoceles typically require only periodic clinical observation without treatment. Scrotal ultrasound confirms the cystic (non-solid) nature of the mass and excludes other pathology; surgical excision (spermatocelectomy) is reserved for large or symptomatic cases, with counseling that surgery may affect fertility given the proximity of the epididymal duct.",
+   "western_pathology_zh": "確切病因尚未完全明瞭，一般認為與副睪內小輸出管道阻塞或擴張形成滯留性囊腫有關，內含混濁、含精子成分之液體；母親孕期曾使用己烯雌酚（DES）的男性罹患風險較高。診斷以理學檢查為主，觸診發現一個獨立、平滑、可移動、位於睪丸上方或後方之腫塊，透光試驗呈陽性（光線可穿透，證實為液性囊腫）；若透光試驗不明確，則安排陰囊超音波以進一步確認並排除睪丸腫瘤等其他病因。",
+   "western_pathology_en": "The exact cause is not fully understood but is thought to relate to obstruction or dilation of one of the small efferent ductules within the epididymis, forming a retention cyst filled with cloudy, sperm-containing fluid; men whose mothers took diethylstilbestrol (DES) during pregnancy appear to have a higher risk. Diagnosis is primarily by physical examination, finding a discrete, smooth, mobile mass located above or posterior to the testis that transilluminates (light passes through, confirming a fluid-filled cyst); when transillumination is inconclusive, scrotal ultrasound is used to further characterize the mass and exclude a testicular tumor or other cause.",
+   "red_flags_zh": [
+    "觸診發現實質性（非透光）腫塊需立即轉診排除睪丸腫瘤",
+    "陰囊腫塊合併突發劇痛需排除睪丸扭轉等急症",
+    "腫塊快速增大或合併發燒、紅腫熱痛需排除感染或膿瘍",
+    "反覆或雙側發生合併不孕困擾，需評估是否影響精管通暢並轉診生殖泌尿科"
+   ],
+   "red_flags_en": [
+    "A solid (non-transilluminating) mass on palpation requires prompt referral to exclude testicular tumor",
+    "A scrotal mass with sudden severe pain requires evaluation to exclude testicular torsion or another surgical emergency",
+    "Rapid enlargement of the mass, or accompanying fever, redness, and warmth, requires evaluation for infection or abscess",
+    "Recurrent or bilateral spermatoceles with fertility concerns warrant evaluation of ductal patency and referral to reproductive urology"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "曾有副睪炎病史",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Mayo Clinic: Spermatocele - Symptoms & causes"
+    },
+    {
+     "factor": "母親孕期己烯雌酚（DES）暴露",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Mayo Clinic: Spermatocele - Symptoms & causes"
+    },
+    {
+     "factor": "年齡增長",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Cleveland Clinic: Spermatocele"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Prior history of epididymitis",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Mayo Clinic: Spermatocele - Symptoms & causes"
+    },
+    {
+     "factor": "Maternal diethylstilbestrol (DES) exposure during pregnancy",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Mayo Clinic: Spermatocele - Symptoms & causes"
+    },
+    {
+     "factor": "Advancing age",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Cleveland Clinic: Spermatocele"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "良性副睪囊腫通常無需治療；若已排除惡性並有相關局部不適，可作為一般性支持照護",
+    "precautions": "任何新發陰囊腫塊都須先由醫療評估確認良性後才考慮局部相關照護，避免直接針刺腫塊本身",
+    "co_management": "應轉診確認診斷，涉及生育力疑慮者應與泌尿科／生殖醫學醫師協調",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "A benign spermatocele typically requires no treatment; once malignancy has been excluded, general supportive care may be offered for related local discomfort",
+    "precautions": "Any new scrotal mass must first be medically evaluated as benign before considering any related local care; avoid needling the mass directly",
+    "co_management": "Refer to confirm the diagnosis; coordinate with urology/reproductive medicine when fertility concerns are involved",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_patterns": [
+    "pattern.phlegm_damp"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "Mayo Clinic: Spermatocele - Symptoms & causes (mayoclinic.org, retrieved 2026-08)"
+    ],
+    "summary_en": [
+     "Mayo Clinic: Spermatocele - Symptoms & causes (mayoclinic.org, retrieved 2026-08)"
+    ],
+    "western_context_zh": [
+     "Mayo Clinic: Spermatocele - Diagnosis & treatment (mayoclinic.org, retrieved 2026-08)"
+    ],
+    "western_context_en": [
+     "Mayo Clinic: Spermatocele - Diagnosis & treatment (mayoclinic.org, retrieved 2026-08)"
+    ],
+    "western_pathology_zh": [
+     "Mayo Clinic: Spermatocele - Symptoms & causes (retrieved 2026-08)",
+     "Mayo Clinic: Spermatocele - Diagnosis & treatment (retrieved 2026-08)"
+    ],
+    "western_pathology_en": [
+     "Mayo Clinic: Spermatocele - Symptoms & causes (retrieved 2026-08)",
+     "Mayo Clinic: Spermatocele - Diagnosis & treatment (retrieved 2026-08)"
+    ],
+    "red_flags_zh": [
+     "Mayo Clinic: Spermatocele - Diagnosis & treatment (retrieved 2026-08)"
+    ],
+    "red_flags_en": [
+     "Mayo Clinic: Spermatocele - Diagnosis & treatment (retrieved 2026-08)"
+    ],
+    "risk_factors_zh": [
+     "Mayo Clinic: Spermatocele - Symptoms & causes (retrieved 2026-08)",
+     "Cleveland Clinic: Spermatocele (retrieved 2026-08)"
+    ],
+    "risk_factors_en": [
+     "Mayo Clinic: Spermatocele - Symptoms & causes (retrieved 2026-08)",
+     "Cleveland Clinic: Spermatocele (retrieved 2026-08)"
+    ],
+    "acupuncture_scope_zh": [
+     "Clinical scope-of-practice reasoning; no acupuncture-specific guideline/RCT source found in this research pass"
+    ],
+    "acupuncture_scope_en": [
+     "Clinical scope-of-practice reasoning; no acupuncture-specific guideline/RCT source found in this research pass"
+    ]
+   }
   },
   {
    "id": "cond.testicular_torsion",
