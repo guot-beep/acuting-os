@@ -220,8 +220,44 @@ evidence_quote 這兩個欄位**必須是你真的打開那個檔案讀到的文
 2. `scripts/apply-formula-family.js` 你加了 `--ledger` 參數讓它可以指定不同帳本檔案，這個改動很好，
    保留了。
 
-**Task 5 到這裡先告一段落**——4 條 formula_family + 22 條 related_formulas 已經落地，如果之後還要
-繼續掃更多方劑家族，會再開新一輪指派。
+**Task 5 到這裡先告一段落**——4 條 formula_family + 22 條 related_formulas 已經落地。
+
+## 🔥 Task 6：接續方劑 `related_formulas`/`formula_family`/`exact_source_url` 缺口
+
+重新盤點過全庫最新覆蓋率：`formula_family` 44/223（20%，缺 179）、`related_formulas` 120/223
+（54%，缺 103）、`exact_source_url` 152/223（68%，缺 71）。中藥那邊 `related_formulas`（87%）/
+`safety_source_url`（74%）已經在 Task 2 判定到可驗證極限，**不用再回去挖**，這輪專心做方劑。
+
+**⚠️ 先讀這段，這是 Task 5 剛抓到的真實問題,不是重複警告**：Task 5 的 7 條 `formula_family` 提案
+有 3 條（葛根加半夏湯/附子瀉心湯/貞蓉丹）附了看起來很完整的 `evidence_file`+`evidence_quote`，
+但我把這三個方名在整個 `curriculum/` 目錄逐一 grep，**完全零命中**——內容本身多半是真實 TCM 知識
+（這些方名很多確實是經典方），但**這個 repo 的課件裡沒有記載**，你卻寫出具體引文。**這次繼續做
+formula_family，每一條 `evidence_quote` 寫完之後，自己務必用 grep 或搜尋工具在 `curriculum/`
+裡確認那段文字真的存在，找不到就整條不寫，不要因為「這是真的 TCM 常識」就先寫上去**——這個 repo
+要的是「這句話在哪個檔案的哪裡」，不是「這句話是不是真的」。
+
+**A. `formula_family`（缺 179，風險最高，照上面的規則做）**：掃
+`curriculum/formulas/09_Formula_Cards_*` 系列跟 `方剂学汇总` 系列，找命名慣例明顯（「XX湯加XX」
+「XX湯去XX」）或課件明確寫「本方為 XX 之加減」的方劑，產出新帳本
+`docs/research_packs/FORMULA_FAMILY_PROPOSALS_<今天日期>.json`，格式比照舊帳本。**每一條先自己
+grep 確認來源真的存在再寫進帳本**。查無明確加減關係就跳過，不要湊數。
+
+**B. `related_formulas`（缺 103，Task 5 這個做法是乾淨的，繼續用）**：找同主題/同作者/board exam
+常一起比較的方劑群組（比照血府逐瘀湯家族、Task 5 的小柴胡湯/五苓散/沙參麥門冬湯那幾組），用 `Set`
+併集加入，**絕對不刪除任一方現有的 related_formulas**。**這次來源引用要具體到檔名+章節/段落**（不要
+再寫「curriculum/formulas/ (Board exam...)」這種籠統寫法，Task 5 已經提醒過一次）。優先用資料庫
+既有的 `comparison_group` 欄位當線索（同 `comparison_group` 的方劑本來就有分組依據）。
+
+**C. `exact_source_url`（缺 71，做法跟中藥那批一樣）**：查到方劑在 CloudTCM 或 American Dragon 的
+實際頁面網址就填，查不到就留空，不要拿網站首頁湊數也不要編網址。
+
+**做完驗證**：`build-data.js` + `validate-formula-standard.js` + `validate-formula-quality-strict.js` +
+`validate-relations.js` + `check-validation-ratchet.js` + `validate-content-junk.js`，全部 PASS 才推
+（推到 `antigravity/formula-fill-task6` 獨立分支，不要推到 `main`，並在文件或 commit message 寫
+「已推到 XXX 分支,等驗收」）。記得補 `PROJECT_LOG.md` 條目，附這輪 A/B/C 三項各自的具體筆數。
+
+**驗收**：我會重新獨立 clone 驗證，**formula_family 的每一條 evidence_quote 我都會實際 grep 來源
+檔案核對**，過了才更新這份文件、清掉這條任務；沒過會寫清楚是哪一條有問題。
 
 ---
 
