@@ -7042,6 +7042,9 @@ function knowledgeRecordName(records, id) {
 function resolveFormulaName(id) {
   return knowledgeRecordName(globalThis.ACUTING_KNOWLEDGE?.formulas?.records, id);
 }
+function resolveHerbName(id) {
+  return knowledgeRecordName(globalThis.ACUTING_KNOWLEDGE?.herbs?.records, id);
+}
 function resolveModalityName(id) {
   return knowledgeRecordName(globalThis.ACUTING_KNOWLEDGE?.modalityVocabulary?.records, id);
 }
@@ -7336,12 +7339,14 @@ function getFilteredPatientRows() {
   rows.sort((a, b) => String(b.mostRecentVisit || "").localeCompare(String(a.mostRecentVisit || "")));
   const query = (patientSearch?.value || "").trim().toLowerCase();
   const filtered = query ? rows.filter((r) => String(r.patient.patientCode || "").toLowerCase().includes(query)) : rows;
-  return { rows: filtered, error: null, pendingCodes };
+  // totalRows = 未經搜尋過濾的病人數。空清單時要分辨「搜尋沒命中」與
+  // 「真的沒有病人」,就需要這個數字。
+  return { rows: filtered, error: null, pendingCodes, totalRows: rows.length };
 }
 
 function renderPatientsWorkspace() {
   if (!patientList || !patientDetail) return;   // section absent from this build — defensive, mirrors other optional-panel guards in this file
-  const { rows, error, pendingCodes } = getFilteredPatientRows();
+  const { rows, error, pendingCodes, totalRows } = getFilteredPatientRows();
   if (patientResultCount) patientResultCount.textContent = `${rows.length} patients`;
   if (error) {
     patientList.innerHTML = `<div class="case-empty">病人視圖讀取失敗<br>Patient view failed to load:<br>${escapeHtml(error)}</div>`;
@@ -7371,7 +7376,12 @@ function renderPatientsWorkspace() {
   if (!selectedPatientCode && rows.length) selectedPatientCode = rows[0].patient.patientCode;
   patientList.innerHTML = "";
   if (!rows.length) {
-    patientList.innerHTML = `<div class="case-empty">尚未有病人。<br>先在「病例 Cases」建立第一筆病例。</div>`;
+    // 與病例側同一條規則:「搜尋沒命中」與「真的沒有病人」必須分開講。
+    // 在病人頁搜一個打錯的 code 卻被告知這裡一個病人都沒有,那是假話。
+    const searching = (patientSearch?.value || "").trim();
+    patientList.innerHTML = searching
+      ? `<div class="case-empty">搜尋「${escapeHtml(searching)}」沒有符合的病人。<br>這個入口目前共 ${totalRows} 位,清空搜尋即可看到。</div>`
+      : `<div class="case-empty">尚未有病人。<br>先在「病例 Cases」建立第一筆病例。</div>`;
   } else {
     rows.forEach((row) => {
       const button = document.createElement("button");
@@ -7798,10 +7808,17 @@ function renderCaseSwimlanes(item, notesAsc) {
   }
 
   const aes = [];
-  notes.forEach((n) => (n.adverseEvents || []).forEach((a) => aes.push({ x: X(swimDateToNum(n.visitDate).t), sev: a.severity || "mild" })));
+  // 嚴重度下拉的預設就是空的「—」,所以「記了一列 AE、沒選嚴重度」是常態路徑
+  // (practice-audit 也備有「(未分級)」桶)。舊版把 "" 換成 "mild",於是
+  // 「未分級」與「輕度」在泳道上是同一個記號 —— 資料從來沒說過它是輕度。
+  // 未分級自成一類,樣式上也要看得出來(.sw-ae-ungraded)。
+  notes.forEach((n) => (n.adverseEvents || []).forEach((a) => aes.push({
+    x: X(swimDateToNum(n.visitDate).t),
+    sev: String(a.severity || "").trim() || "ungraded"
+  })));
   if (aes.length) {
     rows.push(`<text x="4" y="${y + 12}" class="sw-lane">AE</text>`);
-    aes.forEach((a) => rows.push(`<path d="M ${a.x} ${y + 3} l 5 9 h -10 z" class="sw-ae sw-ae-${escapeHtml(a.sev)}"/>`));
+    aes.forEach((a) => rows.push(`<path d="M ${a.x} ${y + 3} l 5 9 h -10 z" class="sw-ae sw-ae-${escapeHtml(a.sev)}"><title>${escapeHtml(a.sev === "ungraded" ? "不良事件(未分級)" : `不良事件(${a.sev})`)}</title></path>`));
     y += 22;
   }
 
@@ -7978,7 +7995,11 @@ function renderVisitBrief(item, notesDesc) {
     if (P.effectDurationDays !== "" && P.effectDurationDays !== undefined && P.effectDurationDays !== null) ltRows.push(["效果維持", `約 ${P.effectDurationDays} 天`]);
     if (P.advice) ltRows.push(["醫囑", P.advice.length > 60 ? P.advice.slice(0, 60) + "…" : P.advice]);
     const aeCount = (L.adverseEvents || []).length;
-    ltRows.push(["上次以來的不良事件", aeCount ? `本次記錄 ${aeCount} 筆` : "無"]);
+    // 空陣列 = 這一診沒有開過 AE 那一區,不是「問過了、沒有」。印一句肯定的
+    // 「無」等於替她回答了一個沒問過的安全問題。同一份程式碼在
+    // computeCareReadiness 早就寫下這條規則(「none recorded is
+    // indistinguishable from not-asked → partial, never ok」),這裡沒跟上。
+    ltRows.push(["上次以來的不良事件", aeCount ? `本次記錄 ${aeCount} 筆` : "未記錄(不等於沒有)"]);
     if (L.patientPerspective) ltRows.push(["病人今日優先事項", L.patientPerspective]);
     lastTreatmentHtml = `<div class="brief-last">
       <small class="brief-last-label">上次治療 Last treatment</small>
@@ -8588,9 +8609,15 @@ function renderSoapNoteCard(note) {
         <div><small>治法 Tx principle</small><span>${escapeHtml(note.treatmentPrinciple || "—")}</span></div>
       </div>` : ""}
       <div class="clinical-mini-grid">
-        <div><small>用穴 Points</small><span>${linkifyPointsUsed(note.pointsUsed)}</span></div>
-        <div><small>手法 Modalities</small><span>${escapeHtml([note.technique, note.modalities].filter(Boolean).join(" · ") || "未填")}</span></div>
-        <div><small>方藥 Formula / Herbs</small><span>${linkifyFormulaHerbs(note.formulaHerbs)}</span></div>
+        ${/* 自由文字沒填時退回結構化欄位 —— 用 picker 選了 SP6/ST36 卻沒有再
+             手打一次,這張卡過去會寫「用穴:未填」,而 acupointLinks 明明有值。
+             同一份程式碼在 Visit Brief 與泳道早就是這樣做的(見 renderVisitBrief
+             與 renderCaseSwimlanes),病歷卡沒跟上。「沿用上次治療」只填結構化
+             欄位,所以複診卡片幾乎必中。方藥同理:formulaLinks/herbLinks 是
+             id,先解析成名稱再顯示,不把內部 id 印在病歷卡上。 */""}
+        <div><small>用穴 Points</small><span>${linkifyPointsUsed(note.pointsUsed || (note.acupointLinks || []).join("、"))}</span></div>
+        <div><small>手法 Modalities</small><span>${escapeHtml([note.technique, note.modalities, ...(note.modalitiesPerformed || []).map(resolveModalityName)].filter(Boolean).join(" · ") || "未填")}</span></div>
+        <div><small>方藥 Formula / Herbs</small><span>${linkifyFormulaHerbs(note.formulaHerbs || [...(note.formulaLinks || []).map(resolveFormulaName), ...(note.herbLinks || []).map(resolveHerbName)].filter(Boolean).join("、"))}</span></div>
         <div><small>生命徵象 Vitals</small><span>${escapeHtml(note.vitals || "—")}</span></div>
         <div><small>療效 Outcomes</small><span>${escapeHtml(note.outcomes || "未填")}</span></div>
         ${formatNumericOutcomeMetrics(note).map(([label, val]) => `<div><small>${escapeHtml(label)}</small><span>${escapeHtml(val)}</span></div>`).join("")}

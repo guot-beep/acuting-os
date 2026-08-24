@@ -7693,6 +7693,9 @@ html { scroll-padding-top: 92px; }
 .sw-ev { fill: #4ade80; }
 .sw-ev.sw-coarse { fill: none; stroke: #4ade80; stroke-width: 1.5; }
 .sw-ae { fill: #fbbf24; } .sw-ae-severe { fill: #f87171; } .sw-ae-moderate { fill: #fb923c; }
+/* 未分級的不良事件:空心灰,一眼看得出「這一筆還沒有人判嚴重度」,
+   不與輕度(基底琥珀)混為一談。 */
+.sw-ae-ungraded { fill: transparent; stroke: #94a3b8; stroke-width: 1.5; }
 .sw-pattern-line { stroke: #a78bfa; stroke-width: 3; opacity: .5; }
 .sw-pattern-mark { fill: #a78bfa; }
 .sw-point-mark { fill: #38bdf8; }
