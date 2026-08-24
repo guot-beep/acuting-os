@@ -1056,7 +1056,11 @@
     <script defer src="app.js"></script>
     <script defer src="js/router.js"></script>
     <script defer src="js/knowledge.js"></script>    <script type="module">
-      /* module scripts 排在所有 defer script 之後執行——執行到這裡代表知識庫已掛好。 */
+      /* module scripts 排在所有 defer script 之後執行——執行到這裡代表所有
+         defer 都「被嘗試過」，不保證都成功（失敗的 defer 不會擋住後面的
+         script）。是否真的載到由 app.js 的 dataLoadGuard 判定並以紅 banner
+         點名；overlay 照樣收起——診間半途卡全螢幕 loading 比帶警示的可用
+         app 更糟。 */
       document.getElementById("bootOverlay")?.classList.add("done");
     </script>
 

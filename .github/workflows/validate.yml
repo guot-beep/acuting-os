@@ -131,6 +131,18 @@ jobs:
       - name: knowledge shards are lossless
         run: node scripts/validate-knowledge-parts.js
 
+      # P0 字型不阻塞的四條不變式（2026-08-24）：外部 @import 禁令、跨網域
+      # stylesheet 必須 media="print"、inline classic script 禁令、fonts.js
+      # 翻轉驅動完整性。同一機制（in-flight stylesheet 擋 script）已復發過
+      # 兩次（#80/#91），從註解升級成會 exit 1 的守衛。
+      - name: render-blocking invariants (fonts never freeze the app)
+        run: node scripts/validate-render-blocking.js
+
+      # build-site 先前只在 wrangler 部署時跑，CI 完全不執行——它的 ref-scan
+      # 守衛（STANDALONE 頁引用掃描、curriculum 隔離）不進 CI 等於沒有守衛。
+      - name: dist builds and ref-scan guards run
+        run: node scripts/build-site.js
+
       - name: app.js parses
         run: node --check app.js
 
