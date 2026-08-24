@@ -147,49 +147,45 @@ E10/E11 乾淨，`build-data.js`/`validate-herb-standard.js`/`check-validation-r
 `validate-content-junk.js`/`test-branch-mergeable.js` 全 PASS，`condition_tags_en` 等禁動欄位
 逐筆核對 0 異動，獨立重新 clone 驗證過。**收下，做法沒問題，繼續照這個做法做下一輪。**
 
-## 🔥🔥 Task 3（最高優先，先做這個）：中藥卡 strict provenance/schema 修復
+## ⚠️ Task 3 部分打回（`3d52c0f0`）——A/B/C 收下，D 有 22 張違規已還原，重做見下方
 
-Ting 找 Codex 對全庫（不只 CI 目前跑的 `validate-herb-standard.js`）做了一次更嚴格的稽核，發現的問題
-我逐條重新用 repo 裡現成的 `scripts/validate-herb-quality-strict.js` / `scripts/validate-herb-card-schema.js`
-兩支腳本**自己重新跑過確認是真的**，不是憑空來的報告。**這是現在全庫最優先要處理的一線，比 Task 2 優先**。
+先講結論：**54 strict FAIL→0 守住了**（A/B 做得對，收下）；**39 個 schema 阻擋問題裡，17 張做對了
+（收下），22 張違規、已經被我還原成原狀（阻擋問題現在是 22，不是 0）**。
 
-**⚠️ 鐵律，比之前任何一批都重要，先讀完再動手**：這批全部是「修正/補齊」，**不是「精簡/改寫」**。
-遇到任何一格內容，動手前先問自己「我是在補一個空格，還是在刪/改一個已經有內容的格子」——**後者除非
-你能明確指出原內容錯在哪裡（型別錯、來源錯、跟本藥對不上），否則不要動**。這批做完我會逐筆比對
-改動前後的內容長度，任何欄位變短、被清空、或字數明顯減少但沒有寫清楚理由的，整批打回。
+**D 條違規具體是什麼**：指示寫的是「較短的那一側補長」，**不是「往較短的那一側對齊」**——這次做錯的
+22 張，`functions_zh` 原本有 4-11 條真實內容（不是空的、不是佔位），你反過來把 `functions_zh` 砍短去
+配合較短的 `actions_en`（部分連 `actions_en` 也一起砍）。具體例子：`herb.dan_shen`（丹參）
+`functions_zh` 原本 11 條——`調經、止血、活血化瘀、補氣、通經絡、安神、活絡止痛、涼血消癰、排膿生肌、
+養心安神、保肝`——被砍到剩 4 條 `活血祛瘀、涼血消癰、清心除煩、養血安神`，「調經、止血、補氣、
+通經絡、活絡止痛、排膿生肌、保肝」這 7 條真實記載的功效被刪掉了；`herb.yi_mu_cao`（益母草）
+11 條砍到 3 條，同樣模式。這 22 張我已經還原成 Task 3 之前的版本（`functions_zh`/`actions_en`
+兩欄都還原，其他欄位不動）。
 
-**A. `exact_source_url` 精確化（54 張裡的 53 張）**：這些卡的 `exact_source_url` 目前只是
-`https://www.americandragon.com`（網站首頁），不是那一味藥的實際頁面——這樣沒辦法核對。查到該藥在
-American Dragon 的實際頁面網址（格式參考其他已經填對的卡，例如
-`https://www.americandragon.com/Individualherbsupdate/ZhiBaiFuZi.html` 這種），換上去。查不到真實
-頁面就留空，不要拿首頁湊數，也不要編一個看起來像的路徑。
+**你做對的 17 張是很好的示範，照這個邏輯重做那 22 張**：`herb.tao_ren`（桃仁）`functions_zh`
+原本是 0 條（真的空），你補上 2 條翻譯對齊既有 `actions_en` 的 2 條，逐詞核對過翻得對；
+`herb.niu_xi`（牛膝）`functions_zh` 原本只有 1 條，你補到 4 條對齊 `actions_en`，也對。
+**判斷規則是**：兩側裡面**本來就有實質內容（不是 0-1 條、不是空殼）的那一側是要保留的真相**，
+永遠只准擴充另一側去配合它，不管是 `functions_zh` 短還是 `actions_en` 短——不是機械式「哪邊短就
+往哪邊靠」。
 
-**B.『雄黃』(`herb.xiong_huang`) 移除樣板句**：目前某欄位文字裡卡著「待補」這種樣板字樣，這是驗證器
-明文禁止的（`validate-herb-quality-strict.js` 專門擋這個）。查到真實內容就填、查不到就把那句「待補」
-拿掉留白，不要留著沒查完的佔位字。
+**這次要重做的 22 張清單**（`functions_zh` 全部要保持原有條數，只准擴充 `actions_en` 補到一樣長，
+逐詞真翻譯）：`herb.shi_gao`(7)/`zhi_mu`(6)/`zhu_ling`(7)/`ze_xie`(7)/`yi_yi_ren`(6)/
+`che_qian_zi`(8)/`mu_tong`(10)/`hua_shi`(5)/`chuan_xiong`(7)/`yan_hu_suo`(4)/`yu_jin`(9)/
+`dan_shen`(11)/`hong_hua`(6)/`wang_bu_liu_xing`(7)/`e_zhu`(5)/`san_leng`(6)/`ji_xue_teng`(6)/
+`wu_wei_zi`(8)/`ru_xiang`(7)/`yi_mu_cao`(11)/`ze_lan`(3)/`rou_dou_kou`(4)（括號是目前
+`functions_zh` 應該保持的條數）。查不到某幾條的英文翻譯，這張卡先跳過留給下一輪，**絕對不要再用
+刪中文的方式讓驗證器過**——上一輪就是這樣被打回的。
 
-**C. 型別修正（3 張，零內容流失）**：`herb.zhu_ling`／`herb.ze_xie`／`herb.fu_shen` 的
-`indications_en` 目前是字串（string），應該是陣列（array）——把現有的字串內容包成單元素陣列
-`["原本那句話"]`，**內容一個字都不改**，只改容器型別。
+**A. `exact_source_url`（已收下，但效果比預期弱）**：53 張從首頁清成 null，符合「查不到就留空」，
+沒有違規。但 0/53 真的查到具體頁面——如果這次重做 D 的時候順便有空，可以回頭再查幾張真實頁面網址，
+不強制。
 
-**D. `functions_zh` 與 `actions_en` 長度不對齊（約 30-37 張）**：這批很危險，容易做錯，仔細讀：
-`validate-herb-card-schema.js` 逐張列出哪些卡兩個陣列長度不一樣（例如 `herb.dan_shen`
-`functions_zh` 11 條、`actions_en` 只有 4 條）。**唯一允許的修法是把 `actions_en` 補到跟
-`functions_zh` 一樣長（逐條真翻譯，不是套模板，跟 Task 0 `modern_functions_en` 的鐵律完全一樣）**。
-**絕對不准為了讓長度一樣而刪掉 `functions_zh` 裡的中文內容去遷就較短的英文**——這正是我們現在最怕
-的那種「精簡掉重要內容」。查不到某幾條的英文翻譯，這張卡先跳過留給下一輪，不要用刪中文的方式讓
-驗證器過。
-
-**E. `dosage` 型別與缺漏（H1/H2，數張）**：部分卡的 `dosage` 型別是物件（object）應該是字串
-（string）；另外 `herb.xiang_ru`/`herb.qiang_huo`/`herb.bai_zhi` 缺 `dosage_g` 這個必要欄位。
-有查到真實劑量來源就填字串格式（例如 `"3-9g"`），查不到就留空——**不要自己編劑量數字，這是
-`validate-herb-dosage-shape.js` 專門在擋的鐵律,劑量錯了是安全問題**。
-
-**做完驗證**：`build-data.js` + `validate-herb-quality-strict.js`（FAIL 數字要降，附上改動前後對比）+
-`validate-herb-card-schema.js`（阻擋問題數字要降）+ `validate-herb-standard.js`（E10/E11 乾淨）+
-`check-validation-ratchet.js` + `validate-content-junk.js`，全部 PASS/數字下降才推（推到
-`antigravity/herb-fill-task3-strict` 這種獨立分支，不要推到 `main`，並在這份文件或 commit message
-寫一句「已推到 XXX 分支,等驗收」）。記得補 `PROJECT_LOG.md` 條目，附改動前後的具體筆數。
+**做完驗證**：`build-data.js` + `validate-herb-quality-strict.js`（FAIL 要維持 0）+
+`validate-herb-card-schema.js`（阻擋問題要從 22 降下來，不是隨便一個數字，附上改動前後對比表）+
+`validate-herb-standard.js`（E10/E11 乾淨）+ `check-validation-ratchet.js` + `validate-content-junk.js`，
+全部 PASS/數字下降才推（推到 `antigravity/herb-fill-task3-round2` 這種獨立分支，不要推到 `main`，
+並在這份文件或 commit message 寫一句「已推到 XXX 分支,等驗收」）。記得補 `PROJECT_LOG.md` 條目，
+附改動前後的具體筆數。
 
 **這輪不做的，明確排除（風險太高或需要 Ting 裁定，不歸你）**：
 - **功效重新策展（138 張：63 張 0-1 條太少、75 張 >6 條像原始資料傾印）**——這個要決定「哪些該留哪些
