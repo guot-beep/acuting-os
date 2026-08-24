@@ -380,6 +380,11 @@
       ${pair.pair_meaning_zh ? `<p class="k-pair-meaning">${esc(pair.pair_meaning_zh)}</p>` : ""}
       ${pair.pair_meaning_en ? `<p class="k-pair-meaning-en">${esc(pair.pair_meaning_en)}</p>` : ""}
       ${pair.indication_zh ? `<p class="k-pair-line"><strong>主治</strong> ${esc(pair.indication_zh)}</p>` : ""}
+      ${/* 暗欄位接線:216/218 筆有 indication_en,但這張卡過去只讀 _zh ——
+            其中 37 筆只有英文,於是主治整行不見,資料明明在庫裡。
+            比照上面 pair_meaning 的作法,兩種語言各印一行:不做 fallback
+            假裝英文是中文,也不代為翻譯,有什麼就顯示什麼。 */""}
+      ${pair.indication_en ? `<p class="k-pair-line k-pair-line-en"><strong>Indication</strong> ${esc(pair.indication_en)}</p>` : ""}
       ${pair.caution_zh ? `<p class="k-pair-line k-pair-caution"><strong>注意</strong> ${esc(pair.caution_zh)}</p>` : ""}
       ${pair.teaching_note_zh ? `<p class="k-pair-line k-pair-teach"><strong>學習提示</strong> ${esc(pair.teaching_note_zh)}</p>` : ""}
     </article>`;

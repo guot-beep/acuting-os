@@ -6099,6 +6099,9 @@ button.k-modern-chip.is-active { outline: 2px solid var(--accent, #38bdf8); outl
 .k-pair-derived { font-size: 0.72rem; opacity: 0.7; font-style: italic; }
 .k-pair-meaning { margin: 0.25rem 0; line-height: 1.6; }
 .k-pair-meaning-en { margin: 0.15rem 0 0.4rem; font-size: 0.86rem; opacity: 0.8; line-height: 1.5; }
+/* 英文主治與中文主治同一層級,只是視覺上退一階(與 k-pair-meaning-en 同款)。
+   37 筆藥對只有英文主治,對它們來說這一行就是唯一的主治。 */
+.k-pair-line-en { opacity: 0.82; }
 .k-pair-line { margin: 0.2rem 0; font-size: 0.86rem; }
 .k-pair-caution { color: #b45309; }
 .k-pair-teach { padding-top: 0.35rem; border-top: 1px dashed var(--line, rgba(148,163,184,0.3)); }
