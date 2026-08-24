@@ -37,10 +37,10 @@ main 之後自己長出來的新 PR（那是正常的持續開發，不是併回
 
 ---
 
-## Task 1（如果還沒做完）：中藥卡語意品質稽核（唯讀，不寫 herb_canon_shortlist.json）
+## Task 1（`docs/audits/` 資料夾還不存在，看起來還沒開工）：中藥卡語意品質稽核（唯讀，不寫 herb_canon_shortlist.json）
 
-**範圍**：`main` 上現有 **358** 味中藥卡（`data/herbs/herb_canon_shortlist.json`，數字比昨天多了，因為
-併回了 pattern-v2 新增的 6 味），全部，不限分類。
+**範圍**：`main` 上現有 **363** 味中藥卡（`data/herbs/herb_canon_shortlist.json`，數字又比前幾天多了，
+併回工作全部結束後穩定在這個數字），全部，不限分類。
 
 **背景**：`validate-herb-standard.js` 剛加了 E10，能抓「整條中文完全沒翻譯、直接複製貼上」這種明顯錯誤
 （Batch 1 就是這種），但抓不到「翻了、但翻錯了」或「翻譯本身讀不通」這種語意層問題——那個只能靠人讀卡。
