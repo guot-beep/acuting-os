@@ -9000,7 +9000,90 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "definition_zh": "關格是由水腫、淋證、癃閉等病證久治不癒、脾腎衰敗、氣化不行所致，以小便不通（關）與嘔吐頻作（格）並見為主要特徵的危重病證，屬中醫內科危急重症之一。",
+   "definition_en": "Guan Ge (Block and Repulsion Disorder) is a critical TCM internal-medicine syndrome that develops from prolonged, poorly resolved edema, dribbling urinary block (Lin), or urinary retention (Long Bi), in which failing Spleen-Kidney function and disrupted Qi transformation produce the combination of urinary blockage (Guan, 關) and repeated vomiting (Ge, 格) — one of the gravest emergency patterns in TCM internal medicine.",
+   "etiology_zh": "多由水腫、淋證、癃閉等病證遷延日久，反覆發作，正氣日衰；亦可因勞倦內傷、外邪誘發、飲食失節損傷脾胃，或先天稟賦不足、腎氣素虛，致脾腎氣化功能衰竭。",
+   "etiology_en": "Most commonly arises from edema, Lin syndrome, or urinary retention that has persisted or recurred over a long period, progressively exhausting the correct Qi; it may also follow overexertion and internal damage, an external pathogen acting as a trigger, dietary irregularity injuring the Spleen and Stomach, or a constitutionally weak Kidney Qi, all leading to failure of Spleen-Kidney Qi transformation.",
+   "pathomechanism_zh": "脾腎兩虛，氣化無權，水濕濁毒不能下泄，內停三焦，一則膀胱氣化不利而小便閉阻不通（關），二則濁陰上逆、胃失和降而嘔惡頻作（格）；濁邪久留，上凌心肺則見心悸胸悶、喘促不能平臥，上蒙清竅則神昏譫妄，內動肝風則抽搐痙厥，為病情由脾腎衰敗向陰陽離決傳變的危重階段。",
+   "pathomechanism_en": "Combined Spleen-Kidney vacuity leaves Qi transformation powerless, so turbid dampness and toxin fail to descend and drain and instead lodge in the triple burner: Bladder Qi transformation is disrupted so urination is blocked (Guan, 關), while turbid Yin surges upward and the Stomach loses its downbearing function, producing repeated retching and vomiting (Ge, 格). Prolonged retention of turbid pathogen can invade the Heart and Lung, causing palpitations, chest oppression, and orthopnea; cloud the clear orifices, causing clouded consciousness and delirium; or stir internal Liver Wind, causing convulsions — marking progression from Spleen-Kidney failure toward the critical separation of Yin and Yang.",
+   "key_manifestations_zh": [
+    "小便不通或量極少",
+    "嘔吐頻作、噁心不止",
+    "面色晦滯、神疲乏力",
+    "浮腫",
+    "口中有尿味或穢濁氣味"
+   ],
+   "key_manifestations_en": [
+    "Absent or markedly scanty urination",
+    "Repeated vomiting and unremitting nausea",
+    "Dull, lusterless complexion with marked fatigue",
+    "Edema",
+    "A urine-like or foul odor to the breath"
+   ],
+   "associated_manifestations_zh": [
+    "頭痛頭暈",
+    "皮膚瘙癢",
+    "心悸胸悶",
+    "四肢厥冷或抽搐",
+    "嗜睡或神昏"
+   ],
+   "associated_manifestations_en": [
+    "Headache and dizziness",
+    "Itchy skin",
+    "Palpitations and chest oppression",
+    "Cold extremities or convulsions",
+    "Lethargy or clouded consciousness"
+   ],
+   "disease_location_zh": "病位在脾、腎、膀胱，涉及三焦、心、肝，病本在脾腎。",
+   "disease_location_en": "Disease location is the Spleen, Kidney, and Bladder, involving the Triple Burner, Heart, and Liver, with the root in Spleen-Kidney failure.",
+   "treatment_principle_zh": "以健脾益腎、化氣行水、和胃降濁為總則；濁邪壅盛者兼以泄濁解毒，出現神昏、抽搐等危候時當急則治標，配合現代醫學搶救措施。",
+   "treatment_principle_en": "The overall principle is to fortify the Spleen and boost the Kidney, transform Qi to move water, and harmonize the Stomach to downbear turbidity; when turbid pathogen is exuberant, add draining of turbidity and resolving of toxin; if clouded consciousness or convulsions appear, treat the branch as an emergency and integrate modern emergency medical management.",
+   "red_flags_zh": [
+    "關格患者出現持續無尿或嚴重少尿合併嘔吐不止、意識改變（嗜睡、躁動或昏迷），提示急性/慢性腎衰竭合併尿毒症腦病，應立即轉診急診安排透析評估，不可僅以中藥緩解嘔吐或延遲就醫",
+    "出現呼吸困難、端坐呼吸或不能平臥，提示可能合併肺水腫或心衰竭，需立即轉診急症處理",
+    "出現高血鉀相關症狀（肢體麻木無力、心律不整感）時屬危及生命的急症，應立即轉診"
+   ],
+   "red_flags_en": [
+    "A Guan Ge patient with persistent anuria or severe oliguria combined with unremitting vomiting and altered consciousness (lethargy, agitation, or coma) suggests acute or chronic renal failure with uremic encephalopathy — refer immediately for emergency evaluation and possible dialysis; do not rely on herbal treatment for the vomiting or delay medical care",
+    "Dyspnea, orthopnea, or inability to lie flat suggests possible pulmonary edema or heart failure and requires immediate emergency referral",
+    "Symptoms suggestive of hyperkalemia (limb numbness/weakness, palpitations/irregular heartbeat) are a life-threatening emergency requiring immediate referral"
+   ],
+   "related_patterns": [
+    "pattern.spleen_kidney_yang_deficiency",
+    "pattern.kidney_yang_deficiency_water_flooding",
+    "pattern.water_qi_attacking_heart",
+    "pattern.liver_wind"
+   ],
+   "field_sources": {
+    "definition_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "etiology_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "pathomechanism_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "key_manifestations_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "associated_manifestations_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "disease_location_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "treatment_principle_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "related_patterns": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "red_flags_zh": [
+     "Searched curriculum/ for 關格/Guan Ge/Block and Repulsion/renal failure/uremia — no dedicated disease content found; whitelist source (medlineplus/nih/cdc) not fetched. Flag written from established TCM/biomedical clinical knowledge (關格 historically corresponds to uremia/renal failure in TCM Internal Medicine textbooks), not curriculum or whitelist-verified — flag for Ting to source-check"
+    ]
+   }
   },
   {
    "id": "tdis.xue_zheng",
@@ -9011,7 +9094,91 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "definition_zh": "血證是因外感或內傷等多種病因，導致血液不循常道，或上溢於口鼻諸竅，或下泄於前後二陰，或滲出於肌膚，以出血為主要臨床表現的一類病證的總稱，包括鼻衄、齒衄、咳血、吐血、便血、尿血、紫斑等。",
+   "definition_en": "Xue Zheng (Blood Disorders) is a general term for a group of TCM disorders, caused by various external or internal etiologies, in which Blood fails to move within its normal vessels and instead escapes upward through the orifices of the mouth and nose, downward through the anterior or posterior yin, or out through the skin — presenting as bleeding as the defining clinical feature, and encompassing epistaxis, gum bleeding, hemoptysis, hematemesis, hematochezia, hematuria, and purpura.",
+   "etiology_zh": "外感風熱燥火之邪，燔灼脈絡；內傷飲食不節，蘊生濕熱，或情志過極，肝鬱化火，或勞倦久病，脾腎兩虛，氣不攝血；亦可因瘀血阻絡，血不循經而外溢。",
+   "etiology_en": "External contraction of Wind, Heat, Dryness, or Fire scorches the vessels; internally, dietary irregularity generates Damp-Heat, extreme emotions cause Liver constraint to transform into Fire, or overexertion and chronic illness cause combined Spleen-Kidney vacuity so that Qi can no longer contain the Blood; Blood may also escape the vessels because static Blood obstructs the network vessels.",
+   "pathomechanism_zh": "血證的基本病機不外火熱熏灼、迫血妄行與氣虛不攝、血溢脈外兩端：實證多因熱盛迫血，血隨火動而外溢；虛證多因氣虛不能統攝，血無所主而外溢；瘀血內阻者，脈絡受阻，血不歸經，亦可致出血反覆不止。各類出血因部位不同，病及臟腑各有側重——鼻衄、齒衄多責之肺胃肝火，咳血責之肺，吐血責之胃肝，便血責之腸胃，尿血責之腎與膀胱。出血量多者可致氣隨血脫，甚則亡陰亡陽之危候。",
+   "pathomechanism_en": "The core pathomechanism of Blood Disorders falls into two poles: Fire-Heat scorching the vessels and forcing Blood to move recklessly, or Qi vacuity failing to contain Blood so it has nothing to govern it and escapes the vessels; static Blood obstructing the network vessels can likewise prevent Blood from returning to its channels and cause recurrent bleeding. The organ implicated varies by bleeding site — epistaxis and gum bleeding are usually attributed to Lung, Stomach, or Liver Fire; hemoptysis to the Lung; hematemesis to the Stomach and Liver; hematochezia to the Intestines and Stomach; and hematuria to the Kidney and Bladder. Heavy blood loss can cause Qi to desert along with the Blood, in severe cases progressing to the critical pattern of Yin or Yang desertion.",
+   "key_manifestations_zh": [
+    "鼻衄或齒衄",
+    "咳血或吐血",
+    "便血或尿血",
+    "肌膚紫斑瘀點",
+    "出血量或多或少，反覆發作"
+   ],
+   "key_manifestations_en": [
+    "Epistaxis or gum bleeding",
+    "Hemoptysis or hematemesis",
+    "Hematochezia or hematuria",
+    "Purpura or petechiae on the skin",
+    "Bleeding of variable quantity that tends to recur"
+   ],
+   "associated_manifestations_zh": [
+    "面色蒼白或萎黃",
+    "頭暈心悸",
+    "神疲乏力",
+    "低熱或潮熱盜汗",
+    "脅肋刺痛（瘀血者）"
+   ],
+   "associated_manifestations_en": [
+    "Pale or sallow complexion",
+    "Dizziness and palpitations",
+    "Fatigue and lack of strength",
+    "Low-grade or tidal fever with night sweats",
+    "Stabbing hypochondriac pain (in Blood-stasis presentations)"
+   ],
+   "disease_location_zh": "病位涉及肺、胃、肝、脾、腎及膀胱、大小腸，因出血部位不同而異，病本多與脾（統血）、肝（藏血）、腎（藏精化血）相關。",
+   "disease_location_en": "Disease location varies with the bleeding site and involves the Lung, Stomach, Liver, Spleen, Kidney, Bladder, and Large/Small Intestine, with the root most often tied to the Spleen (which governs Blood), the Liver (which stores Blood), and the Kidney (which stores Essence that transforms into Blood).",
+   "treatment_principle_zh": "治療總則為治火、治氣、治血三者並重：實火當清熱瀉火、涼血止血，虛火當滋陰降火、寧絡止血；氣虛不攝者補氣攝血，氣隨血脫者急當益氣固脫；兼有瘀血者止血不忘化瘀，以防閉門留寇。",
+   "treatment_principle_en": "The overall treatment principle rests equally on treating Fire, treating Qi, and treating Blood: excess Fire is cleared and drained with Blood-cooling hemostasis, vacuity Fire is treated by enriching Yin and downbearing Fire while calming the network vessels, Qi vacuity failing to contain Blood is treated by boosting Qi to contain Blood, and Qi desertion following Blood loss demands urgent boosting of Qi to secure against desertion; where Blood stasis coexists, hemostasis must be combined with dispelling stasis so as not to trap the pathogen within.",
+   "red_flags_zh": [
+    "血證出現短時間內大量出血（如嘔血或便血呈鮮紅色、量多）合併頭暈、心悸、冷汗、血壓下降，提示低血容量性休克，應立即轉診急診，不可先行針灸或緩慢調理",
+    "反覆不明原因出血合併不明原因發熱、體重下降、多處瘀斑或淋巴結腫大，應轉診排除白血病、再生不良性貧血等血液系統疾病",
+    "中老年患者反覆黑便、便血或不明原因貧血，應轉診安排內視鏡檢查以排除消化道腫瘤"
+   ],
+   "red_flags_en": [
+    "Rapid, large-volume bleeding in Blood Disorders (e.g., bright-red hematemesis or hematochezia in large amounts) combined with dizziness, palpitations, cold sweat, or falling blood pressure suggests hypovolemic shock — refer for immediate emergency care rather than acupuncture or gradual regulation",
+    "Recurrent bleeding of unclear cause combined with unexplained fever, weight loss, widespread bruising, or lymphadenopathy should be referred to rule out leukemia, aplastic anemia, or another hematologic disease",
+    "Recurrent melena, hematochezia, or unexplained anemia in a middle-aged or older patient should be referred for endoscopic evaluation to rule out a gastrointestinal malignancy"
+   ],
+   "related_patterns": [
+    "pattern.blood_heat",
+    "pattern.yin_deficiency_fire_flaring",
+    "pattern.spleen_not_governing_blood",
+    "pattern.blood_stasis",
+    "pattern.qi_deficiency"
+   ],
+   "field_sources": {
+    "definition_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "etiology_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "pathomechanism_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "key_manifestations_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "associated_manifestations_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "disease_location_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "treatment_principle_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "related_patterns": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "red_flags_zh": [
+     "Searched curriculum/ for 血證/Xue Zheng/Blood Disorders/hemoptysis/hematemesis — found only gynecology-specific Beng Lou (uterine bleeding) content, not this general internal-medicine disease; whitelist source not fetched. Flags written from established TCM/biomedical clinical knowledge, not curriculum or whitelist-verified — flag for Ting to source-check"
+    ]
+   }
   },
   {
    "id": "tdis.tan_yin",
@@ -9022,7 +9189,91 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "definition_zh": "痰飲是體內水液輸布運化失常，停積於某一局部而形成的病證，廣義痰飲包括痰飲（狹義，停於腸胃）、懸飲（停於胸脅）、溢飲（溢於四肢肌膚）、支飲（停於胸肺）四類，以胸脅脘腹脹滿、咳喘、肢體浮腫、脈象弦滑等為主要表現。",
+   "definition_en": "Tan Yin (Phlegm-Fluid Retention) is a disorder in which the body's normal distribution and transformation of fluids fails and fluid accumulates locally; the broad category comprises four sub-types — Tan Yin proper (narrow sense, pooling in the stomach and intestines), Xuan Yin (pooling in the chest and hypochondrium), Yi Yin (overflowing into the limbs and skin), and Zhi Yin (pooling in the chest and Lung) — presenting mainly as distension and fullness of the chest, hypochondrium, and abdomen, cough and panting, limb edema, and a wiry-slippery pulse.",
+   "etiology_zh": "多因外感寒濕、飲食不當（嗜食生冷、飲水過量）、勞欲體虛，損傷脾肺腎三臟陽氣，導致水液運化輸布失職；素體陽虛、久病體弱者尤易罹患。",
+   "etiology_en": "Most often results from external contraction of Cold-Damp, dietary error (excessive raw/cold food or fluid intake), or overexertion and sexual taxation weakening the body — all of which damage the Yang Qi of the Spleen, Lung, and Kidney and impair fluid transformation and distribution; those with a constitutionally Yang-vacuous or chronically weakened body are especially prone.",
+   "pathomechanism_zh": "脾主運化水濕，肺主通調水道，腎主氣化行水，三臟陽氣不足，氣化失司，水液不歸正化，停聚為飲。飲停腸胃則為痰飲（狹義），脘腹脹滿、腸鳴瀝瀝有聲；飲停胸脅、阻遏氣機則為懸飲，胸脅脹痛、咳唾引痛；飲溢肢體肌膚則為溢飲，身體疼重、肢體浮腫；飲停胸肺、上迫心肺則為支飲，咳逆倚息、短氣不得臥。病久陽虛日甚，可見畏寒肢冷、心悸氣短等陽虛水泛之候。",
+   "pathomechanism_en": "The Spleen governs the transformation of water-damp, the Lung regulates the water passageways, and the Kidney governs Qi transformation to move water; when the Yang Qi of these three organs is insufficient, Qi transformation fails, fluids are not properly transformed, and they pool as Fluid Retention. Fluid pooling in the stomach and intestines is Tan Yin proper, with epigastric and abdominal distension and gurgling bowel sounds; fluid pooling in the chest and hypochondrium and obstructing Qi movement is Xuan Yin, with distending chest-hypochondriac pain worsened by coughing; fluid overflowing into the limbs and skin is Yi Yin, with heavy body aching and limb edema; fluid pooling in the chest and Lung, pressing upward on the Heart and Lung, is Zhi Yin, with cough and panting that forces the patient to sit upright and be unable to lie flat. As the disorder becomes chronic, Yang vacuity deepens and may present as aversion to cold, cold limbs, palpitations, and shortness of breath from Yang-vacuity water flooding.",
+   "key_manifestations_zh": [
+    "胸脅脘腹脹滿",
+    "咳嗽氣喘，咳吐清稀痰涎",
+    "肢體浮腫或身重疼痛",
+    "脘腹或腸間水聲漉漉",
+    "畏寒肢冷"
+   ],
+   "key_manifestations_en": [
+    "Distension and fullness of the chest, hypochondrium, and abdomen",
+    "Cough and panting with thin, clear phlegm-fluid expectoration",
+    "Limb edema or heavy, aching body",
+    "Gurgling water sounds in the epigastrium or intestines",
+    "Aversion to cold with cold limbs"
+   ],
+   "associated_manifestations_zh": [
+    "心悸短氣",
+    "頭暈目眩",
+    "口不渴或渴不欲飲",
+    "小便不利",
+    "舌苔白滑，脈弦滑"
+   ],
+   "associated_manifestations_en": [
+    "Palpitations and shortness of breath",
+    "Dizziness and blurred vision",
+    "Absence of thirst, or thirst without desire to drink",
+    "Difficult or scanty urination",
+    "White, slippery tongue coating with a wiry-slippery pulse"
+   ],
+   "disease_location_zh": "病位在肺、脾、腎三臟，尤以脾為主要病本，涉及胸、脅、腸胃、四肢肌膚等飲邪停聚之處。",
+   "disease_location_en": "Disease location is the Lung, Spleen, and Kidney, with the Spleen as the primary root, involving the chest, hypochondrium, stomach and intestines, and limbs and skin as the sites where the Fluid pathogen pools.",
+   "treatment_principle_zh": "以溫化為總則，《金匱要略》「病痰飲者，當以溫藥和之」為治療綱領；實者攻逐水飲、發汗利水，虛者溫脾補腎、化氣行水，標本兼顧。",
+   "treatment_principle_en": "Warming transformation is the overarching principle — the Jin Gui Yao Lue's dictum \"for Phlegm-Fluid disease, treat with warming medicinals to harmonize it\" guides treatment; excess presentations are treated by expelling and draining the Fluid pathogen via sweating and disinhibiting urination, while vacuity presentations are treated by warming the Spleen and supplementing the Kidney to transform Qi and move water, addressing both root and branch.",
+   "red_flags_zh": [
+    "支飲患者出現咳逆倚息、不能平臥、口唇發紺，提示可能合併心衰竭或大量肋膜（胸腔）積液，應立即轉診安排胸部影像及心臟功能評估，不可僅以溫化痰飲藥物處理",
+    "懸飲患者胸脅疼痛合併持續發熱、消瘦不止，應轉診排除肺結核、惡性肋膜積液等器質性疾病",
+    "出現全身重度浮腫合併尿量明顯減少，應轉診評估腎功能與心功能"
+   ],
+   "red_flags_en": [
+    "A Zhi Yin patient with cough and panting that forces sitting upright, inability to lie flat, and cyanotic lips suggests possible heart failure or a large pleural effusion — refer immediately for chest imaging and cardiac evaluation rather than relying on warming/transforming herbal treatment alone",
+    "A Xuan Yin patient with chest-hypochondriac pain combined with persistent fever and unremitting weight loss should be referred to rule out pulmonary tuberculosis or a malignant pleural effusion",
+    "Widespread severe edema combined with a marked drop in urine output should be referred for renal and cardiac function evaluation"
+   ],
+   "related_patterns": [
+    "pattern.water_fluid_retention",
+    "pattern.spleen_yang_deficiency",
+    "pattern.kidney_yang_deficiency",
+    "pattern.phlegm_damp",
+    "pattern.spleen_kidney_yang_deficiency"
+   ],
+   "field_sources": {
+    "definition_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "etiology_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "pathomechanism_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "key_manifestations_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "associated_manifestations_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "disease_location_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "treatment_principle_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "related_patterns": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "red_flags_zh": [
+     "Searched curriculum/ for 痰飲/Tan Yin/Phlegm-Fluid Retention/pleural effusion/heart failure — no dedicated disease content found; whitelist source not fetched. Flags written from established TCM/biomedical clinical knowledge (支飲/懸飲 correspond to heart failure/pleural effusion presentations), not curriculum or whitelist-verified — flag for Ting to source-check"
+    ]
+   }
   },
   {
    "id": "tdis.nei_shang_fa_re",
@@ -9033,7 +9284,93 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "definition_zh": "內傷發熱是因臟腑功能失調、氣血陰陽虧虛或氣鬱血瘀痰濕等病理產物內生，導致體溫升高或自覺發熱，但無外感表證可循的一類發熱病證，起病緩慢，病程較長，熱勢多見低熱，亦可高熱。",
+   "definition_en": "Nei Shang Fa Re (Internal Damage Fever) is a category of fever caused by disharmony of the organs, vacuity of Qi, Blood, Yin, or Yang, or internally generated pathological products such as Qi stagnation, Blood stasis, or Phlegm-Damp, producing an elevated body temperature or a subjective sensation of heat without any exterior pattern of external contraction — it typically has a gradual onset and a protracted course, most often presenting as low-grade fever, though high fever can occur.",
+   "etiology_zh": "多因飲食勞倦內傷脾胃，或久病失血、化源不足致氣血兩虛；情志不遂、肝氣鬱結，久鬱化火；飲食不節、脾失健運，痰濕內生，鬱而化熱；外傷、手術或久病入絡，瘀血內停，鬱而發熱；素體陰虛或熱病傷陰，陰虛陽亢。",
+   "etiology_en": "Most commonly results from dietary irregularity and overexertion damaging the Spleen and Stomach, or chronic illness and blood loss depleting the source of generation, causing combined Qi-Blood vacuity; unresolved emotional distress causing Liver Qi constraint that transforms into Fire over time; dietary irregularity impairing Spleen transportation so that Phlegm-Damp is generated internally and becomes constrained into Heat; trauma, surgery, or chronic illness entering the network vessels so that static Blood lodges internally and becomes constrained into fever; or a constitutionally Yin-vacuous body, or Yin damaged by febrile disease, leading to Yin vacuity with Yang hyperactivity.",
+   "pathomechanism_zh": "內傷發熱雖有氣鬱、血瘀、痰濕鬱熱之實，與氣虛、血虛、陰虛、陽虛之虛，病機均為臟腑陰陽氣血失和，鬱而化熱，或虛陽外浮所致的體內熱勢，與外感發熱之外邪襲表、正邪相爭者迥然不同。氣虛發熱責之脾肺氣虛，清陽不升，虛陽外越；血虛發熱責之血不濡養，虛熱內生；陰虛發熱責之陰液虧虛，虛火內熾；陽虛發熱責之陽氣虛衰，虛陽浮越於外，屬真寒假熱之候；氣鬱發熱責之肝失疏泄，氣鬱化火；血瘀發熱、痰濕發熱則責之瘀血、痰濕壅遏，鬱久化熱。病程遷延者，諸虛可相兼夾雜，虛實錯雜。",
+   "pathomechanism_en": "Although Internal Damage Fever includes excess presentations from constrained Qi stagnation, Blood stasis, or Phlegm-Damp turning into Heat as well as vacuity presentations of Qi, Blood, Yin, or Yang vacuity, the underlying mechanism in every case is disharmony of the organs' Yin, Yang, Qi, and Blood generating internal heat through constraint or vacuous Yang floating outward — fundamentally different from externally-contracted fever, in which a pathogen invades the exterior and correct Qi struggles against it. Qi-vacuity fever arises from Spleen-Lung Qi vacuity with clear Yang failing to ascend and vacuous Yang floating outward; Blood-vacuity fever arises from Blood failing to moisten, generating vacuity heat internally; Yin-vacuity fever arises from depleted Yin fluids allowing vacuity fire to blaze internally; Yang-vacuity fever arises from debilitated Yang Qi with vacuous Yang floating to the exterior, a pattern of true cold with false heat; Qi-constraint fever arises from Liver Qi losing its free-coursing function and constraining into Fire; and Blood-stasis or Phlegm-Damp fever arise from static Blood or Phlegm-Damp obstructing the vessels and becoming constrained into Heat over time. In a protracted course, several of these vacuities can coexist, producing a mixed vacuity-excess presentation.",
+   "key_manifestations_zh": [
+    "長期反覆低熱或自覺發熱",
+    "病程遷延，起病緩慢",
+    "無明顯惡寒、鼻塞流涕等外感表證",
+    "勞累後熱勢加重",
+    "伴見相應臟腑氣血陰陽虧虛徵象"
+   ],
+   "key_manifestations_en": [
+    "Chronic, recurrent low-grade fever or a subjective sensation of heat",
+    "A gradual onset and protracted course",
+    "No aversion to cold, nasal congestion, or other exterior pattern of external contraction",
+    "Fever worsening after exertion",
+    "Accompanying signs of the corresponding organ's Qi, Blood, Yin, or Yang vacuity"
+   ],
+   "associated_manifestations_zh": [
+    "神疲乏力，氣短懶言",
+    "面色少華或潮紅",
+    "五心煩熱、盜汗",
+    "脅肋脹悶，情志抑鬱",
+    "局部固定刺痛（血瘀者）"
+   ],
+   "associated_manifestations_en": [
+    "Fatigue, lack of strength, shortness of breath, and disinclination to speak",
+    "A lusterless complexion or malar flushing",
+    "Vexing heat in the five centers with night sweats",
+    "Distending oppression in the hypochondrium with emotional depression",
+    "Fixed, stabbing localized pain (in Blood-stasis presentations)"
+   ],
+   "disease_location_zh": "病位主要在脾、肝、腎，涉及肺、心，與氣血陰陽的臟腑生化功能失調密切相關。",
+   "disease_location_en": "Disease location is chiefly the Spleen, Liver, and Kidney, involving the Lung and Heart, and is closely tied to disharmony in the organs' generation and transformation of Qi, Blood, Yin, and Yang.",
+   "treatment_principle_zh": "以調理臟腑陰陽氣血為總則，虛者補其不足——氣虛者益氣健脾，血虛者補血養榮，陰虛者滋陰清熱，陽虛者溫補腎陽、引火歸元；實者瀉其有餘——氣鬱者疏肝解鬱，血瘀者活血化瘀，痰濕者化痰祛濕，均忌一味苦寒直折退熱。",
+   "treatment_principle_en": "The overall principle is to regulate the organs' Yin, Yang, Qi, and Blood: vacuity is treated by supplementing the deficiency — boosting Qi and fortifying the Spleen for Qi vacuity, nourishing Blood for Blood vacuity, enriching Yin and clearing heat for Yin vacuity, and warmly supplementing Kidney Yang to lead the fire back to its source for Yang vacuity; excess is treated by draining the surplus — coursing the Liver and resolving constraint for Qi stagnation, quickening the Blood and dispelling stasis for Blood stasis, and transforming Phlegm and dispelling Damp for Phlegm-Damp — in every case avoiding the mistake of using bitter-cold medicinals alone to forcibly suppress the fever.",
+   "red_flags_zh": [
+    "內傷發熱患者出現不明原因發熱超過2-3週，合併不明原因體重下降、夜間盜汗、淋巴結腫大或反覆感染，應轉診安排完整檢查（血液腫瘤標記、影像等）以排除惡性腫瘤、結核病或自體免疫疾病，不可僅以中醫虛熱論治拖延",
+    "發熱合併新出現的關節腫痛、皮疹、口腔潰瘍等多系統症狀，應轉診排除紅斑性狼瘡等結締組織病",
+    "長期低熱兒童或年長患者合併生長遲緩或反覆感染，應轉診兒科或內科進一步評估"
+   ],
+   "red_flags_en": [
+    "An Internal Damage Fever patient with unexplained fever persisting over 2-3 weeks, combined with unexplained weight loss, night sweats, lymphadenopathy, or recurrent infection, should be referred for full workup (tumor markers, imaging, etc.) to rule out malignancy, tuberculosis, or autoimmune disease — do not delay by treating solely as TCM vacuity heat",
+    "Fever combined with new joint swelling and pain, rash, or oral ulcers suggesting multi-system involvement should be referred to rule out lupus or another connective tissue disease",
+    "A child or older patient with chronic low-grade fever combined with growth delay or recurrent infection should be referred to pediatrics or internal medicine for further evaluation"
+   ],
+   "related_patterns": [
+    "pattern.qi_deficiency",
+    "pattern.blood_deficiency",
+    "pattern.yin_deficiency",
+    "pattern.yang_deficiency",
+    "pattern.liver_depression_transforming_fire",
+    "pattern.blood_stasis",
+    "pattern.phlegm_damp"
+   ],
+   "field_sources": {
+    "definition_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "etiology_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "pathomechanism_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "key_manifestations_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "associated_manifestations_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "disease_location_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "treatment_principle_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "related_patterns": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "red_flags_zh": [
+     "Searched curriculum/ for 內傷發熱/Internal Damage Fever/fever of unknown origin — no dedicated disease content found; whitelist source not fetched. Flags written from established TCM/biomedical clinical knowledge (persistent unexplained fever as a fever-of-unknown-origin workup trigger), not curriculum or whitelist-verified — flag for Ting to source-check"
+    ]
+   }
   },
   {
    "id": "tdis.jing_bing",
@@ -9044,7 +9381,92 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "definition_zh": "痙病是以項背强急、四肢抽搐，甚則角弓反張為主要臨床表現的病證，首見於《內經》及《金匱要略》，可由外感或內傷多種病因引起，病情有輕重緩急之分。",
+   "definition_en": "Jing Bing (Convulsion Disorder) is a disorder characterized mainly by stiffness and rigidity of the neck and back and limb convulsions, in severe cases with opisthotonos (arched-back rigidity); first described in the Nei Jing and Jin Gui Yao Lue, it can arise from a range of external or internal etiologies and varies in severity and acuity.",
+   "etiology_zh": "外因多為風寒濕邪侵襲太陽經脈，尤以汗出當風、產後或病後體虛感邪為多見；內因多為熱盛傷津，或久病陰血虧虛、筋脈失養，虛風內動，亦可因痰濁壅盛、阻滯經絡而發。",
+   "etiology_en": "The external cause is usually invasion of the Tai Yang channels by Wind-Cold-Damp, most often when sweating is followed by exposure to draft, or when the body is vacuous after childbirth or illness and susceptible to pathogenic invasion; the internal cause is usually exuberant Heat damaging fluids, or chronic illness depleting Yin-Blood so that the sinews and vessels lose nourishment and internal vacuity Wind stirs — it can also arise from exuberant Phlegm-turbidity obstructing the channels and network vessels.",
+   "pathomechanism_zh": "外感致痙者，風寒濕邪客於太陽經脈，經氣不利，筋脈拘急而項背强直——無汗者為剛痙，邪氣較盛、腠理閉塞；有汗者為柔痙，衛陽已虛、腠理疏鬆。內傷致痙者，或熱邪熾盛、灼傷津液、筋脈失濡而動風；或久病失血、陰血虧虛，筋脈失於濡養，虛風內動而抽搐；或痰濁內盛，壅塞經絡，亦可發為痙證。病情進一步發展，可因邪盛正衰、陰陽離決而見神昏、汗出如油等危候。",
+   "pathomechanism_en": "In externally-contracted convulsion, Wind-Cold-Damp lodges in the Tai Yang channels, obstructing channel Qi so the sinews and vessels contract and the neck and back become rigid — the type without sweating is Gang Jing (rigid convulsion, more severe pathogen with closed striae), and the type with sweating is Rou Jing (soft convulsion, with already-vacuous defensive Yang and loose striae). In internally-caused convulsion, either exuberant Heat scorches the fluids so the sinews and vessels lose moistening and Wind stirs, or chronic illness and blood loss deplete Yin-Blood so the sinews and vessels lose nourishment and internal vacuity Wind stirs, causing convulsions; exuberant internal Phlegm-turbidity obstructing the channels and network vessels can likewise produce convulsion. As the disorder progresses, exuberant pathogen against declining correct Qi can lead to the critical separation of Yin and Yang, manifesting as clouded consciousness and oily sweating.",
+   "key_manifestations_zh": [
+    "項背强急，轉側不利",
+    "四肢抽搐，甚則角弓反張",
+    "牙關緊閉",
+    "發熱或無熱",
+    "發作性，可反覆出現"
+   ],
+   "key_manifestations_en": [
+    "Stiffness and rigidity of the neck and back with difficulty turning",
+    "Limb convulsions, in severe cases with opisthotonos",
+    "Clenched jaw (trismus)",
+    "With or without fever",
+    "Paroxysmal, with a tendency to recur"
+   ],
+   "associated_manifestations_zh": [
+    "頭痛",
+    "汗出或無汗",
+    "口噤不能語",
+    "面色蒼白或潮紅",
+    "神識昏蒙（重症）"
+   ],
+   "associated_manifestations_en": [
+    "Headache",
+    "Sweating, or its absence",
+    "Locked jaw with inability to speak",
+    "Pale or flushed complexion",
+    "Clouded consciousness (in severe cases)"
+   ],
+   "disease_location_zh": "病位在筋脈，外感者在太陽經，內傷者與肝、脾、腎相關，肝主筋、腎藏精、脾生血，三臟精血虧虛皆可致筋脈失養。",
+   "disease_location_en": "Disease location is the sinews and vessels; externally-contracted cases involve the Tai Yang channel, while internally-caused cases are tied to the Liver, Spleen, and Kidney — the Liver governs the sinews, the Kidney stores Essence, and the Spleen generates Blood, and vacuity of Essence-Blood in any of the three can cause the sinews and vessels to lose nourishment.",
+   "treatment_principle_zh": "外感致痙者祛風散寒除濕、解肌舒筋，剛痙宜辛溫發汗，柔痙宜調和營衛；內傷致痙者，熱盛者清熱存津、熄風止痙，陰血虧虛者滋陰養血、柔肝熄風，痰濁壅盛者化痰通絡。",
+   "treatment_principle_en": "Externally-contracted convulsion is treated by dispelling Wind, scattering Cold, and eliminating Dampness while releasing the muscle layer and relaxing the sinews — Gang Jing calls for acrid-warm sweating, while Rou Jing calls for harmonizing the constructive and defensive; internally-caused convulsion is treated, for exuberant Heat, by clearing Heat and preserving fluids while extinguishing Wind and stopping convulsion, for Yin-Blood vacuity by enriching Yin and nourishing Blood while softening the Liver and extinguishing Wind, and for exuberant Phlegm-turbidity by transforming Phlegm and freeing the network vessels.",
+   "red_flags_zh": [
+    "痙病患者發作合併發熱、頸項强直、劇烈頭痛、意識改變（嗜睡、躁動或昏迷），應立即轉診急診以排除腦膜炎/腦炎，不可先行針灸或內服中藥延誤",
+    "有近期外傷傷口（尤其生鏽器械或動物咬傷）病史，合併牙關緊閉、吞嚥困難、肌肉持續性痙攣，應立即轉診排除破傷風",
+    "孕產婦出現抽搐合併高血壓、蛋白尿或水腫，應立即轉診排除子癇，屬產科急症",
+    "已知癲癇病史患者發作型態改變或發作頻率明顯增加，應轉診神經科重新評估"
+   ],
+   "red_flags_en": [
+    "A Jing Bing episode combined with fever, nuchal rigidity, severe headache, or altered consciousness (lethargy, agitation, or coma) should be referred immediately to emergency care to rule out meningitis/encephalitis — do not attempt acupuncture or oral herbal treatment first and delay care",
+    "A recent wound (especially from a rusty implement or animal bite) combined with trismus, difficulty swallowing, and sustained muscle spasm should be referred immediately to rule out tetanus",
+    "A pregnant or postpartum patient with convulsions combined with hypertension, proteinuria, or edema should be referred immediately to rule out eclampsia, an obstetric emergency",
+    "A patient with known epilepsy whose seizure pattern changes or frequency clearly increases should be referred to neurology for re-evaluation"
+   ],
+   "related_patterns": [
+    "pattern.tai_yang_cold_damage",
+    "pattern.tai_yang_wind_strike",
+    "pattern.liver_wind",
+    "pattern.blood_deficiency_wind_dryness"
+   ],
+   "field_sources": {
+    "definition_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "etiology_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "pathomechanism_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "key_manifestations_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "associated_manifestations_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "disease_location_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "treatment_principle_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "related_patterns": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "red_flags_zh": [
+     "Searched curriculum/ for 痙病/Jing Bing/Convulsion Disorder/meningitis/tetanus/eclampsia — no dedicated disease content found; whitelist source not fetched. Flags written from established TCM/biomedical clinical knowledge (opisthotonos/trismus presentations overlapping with meningitis, tetanus, eclampsia, epilepsy), not curriculum or whitelist-verified — flag for Ting to source-check"
+    ]
+   }
   },
   {
    "id": "tdis.shang_han",
@@ -9055,7 +9477,96 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "definition_zh": "傷寒是外感風寒之邪、循六經傳變的一類外感熱病的總稱，首載於《傷寒論》，以發熱、惡寒、脈浮等太陽表證起病，依邪正盛衰、病位深淺，循太陽、陽明、少陽、太陰、少陰、厥陰六經依次或越經傳變。",
+   "definition_en": "Shang Han (Cold Damage Disease) is a general term for a category of externally-contracted febrile disorders in which a Wind-Cold pathogen invades and progresses through the six channels, first systematized in the Shang Han Lun; it typically begins with the Tai Yang exterior pattern of fever, aversion to cold, and a floating pulse, then progresses — in sequence or by skipping a stage, depending on the relative strength of pathogen and correct Qi and the depth of disease location — through the Tai Yang, Yang Ming, Shao Yang, Tai Yin, Shao Yin, and Jue Yin channel stages.",
+   "etiology_zh": "外因為感受風寒之邪，由皮毛肌腠而入，首犯太陽經；內因為正氣強弱不同，決定邪氣傳變之淺深遲速——正氣充盛者邪郁於表，正氣虛弱或素有內傷者邪易內傳陽明、少陽，甚則直中三陰。",
+   "etiology_en": "The external cause is contraction of a Wind-Cold pathogen entering through the skin, body hair, and striae, first invading the Tai Yang channel; the internal cause is the relative strength of the correct Qi, which determines the depth and speed of the pathogen's progression — a robust correct Qi keeps the pathogen constrained at the exterior, while a vacuous correct Qi or pre-existing internal damage allows the pathogen to progress inward to Yang Ming or Shao Yang, or in severe cases to strike directly into the three Yin stages.",
+   "pathomechanism_zh": "風寒外襲太陽，衛陽被鬱，營衛失和，故惡寒發熱、頭項强痛、脈浮；若正不勝邪，邪傳陽明，化熱化燥，或見經證（壯熱、大汗、大渴、脈洪大），或見腑證（潮熱、譫語、腹滿硬痛、便秘）；邪傳少陽，樞機不利，則見寒熱往來、胸脅苦滿；邪傳三陰，正氣漸衰，太陰主脾陽不足而見腹滿吐利，少陰主心腎陽虛而見脈微欲寐或陰虛陽亢之心煩不眠，厥陰為陰盡陽生之樞，可見寒熱錯雜、厥熱勝復。六經傳變反映了邪正相爭中病位由表入裡、病性由陽轉陰的動態過程。",
+   "pathomechanism_en": "Wind-Cold invades the Tai Yang exterior, constraining defensive Yang and disharmonizing constructive and defensive Qi, producing aversion to cold with fever, headache and nuchal rigidity, and a floating pulse. If the correct Qi cannot overcome the pathogen, it progresses to Yang Ming and transforms into Heat and Dryness, presenting either as a channel pattern (high fever, profuse sweating, intense thirst, and a surging-large pulse) or a bowel pattern (tidal fever, delirious speech, hard and painful abdominal fullness, and constipation). If the pathogen progresses to Shao Yang, the pivot mechanism is impaired, producing alternating chills and fever with chest-hypochondriac fullness and discomfort. If the pathogen progresses into the three Yin stages as correct Qi gradually declines: Tai Yin, governed by Spleen Yang, presents with abdominal fullness and vomiting/diarrhea from insufficiency; Shao Yin, governed by Heart-Kidney Yang, presents either with a faint pulse and a wish only to sleep from Yang vacuity, or with vexation and insomnia from Yin vacuity with Yang hyperactivity; and Jue Yin, the pivot where Yin is exhausted and Yang is generated, can show mixed Cold-Heat and alternating reversal-and-fever. This six-channel progression reflects the dynamic process, within the struggle of pathogen against correct Qi, of disease location moving from exterior to interior and disease nature shifting from Yang to Yin.",
+   "key_manifestations_zh": [
+    "初起惡寒發熱、頭項强痛、脈浮",
+    "病程中依六經傳變呈現不同階段證候",
+    "可見壯熱、口渴、便秘或腹滿吐利等裡證",
+    "寒熱往來（邪傳少陽時）",
+    "脈象隨六經傳變而變化（浮、大、弦、微細等）"
+   ],
+   "key_manifestations_en": [
+    "Initial aversion to cold with fever, headache and nuchal rigidity, and a floating pulse",
+    "Different-stage patterns as the disease progresses through the six channels",
+    "Interior patterns such as high fever, thirst, constipation, or abdominal fullness with vomiting and diarrhea",
+    "Alternating chills and fever (when the pathogen progresses to Shao Yang)",
+    "A pulse that changes with the six-channel progression (floating, surging-large, wiry, faint-thin, and so on)"
+   ],
+   "associated_manifestations_zh": [
+    "無汗或汗出",
+    "身痛",
+    "胸脅苦滿",
+    "譫語或神昏（重症）",
+    "四肢厥冷（少陰、厥陰階段）"
+   ],
+   "associated_manifestations_en": [
+    "Absence of sweating, or sweating",
+    "Body aches",
+    "Chest-hypochondriac fullness and discomfort",
+    "Delirious speech or clouded consciousness (in severe cases)",
+    "Cold extremities (in the Shao Yin and Jue Yin stages)"
+   ],
+   "disease_location_zh": "病位循六經傳變，由表（太陽）入裡，涉及膀胱、胃、大腸、膽、脾、心、腎諸臟腑經脈。",
+   "disease_location_en": "Disease location follows the six-channel progression from the exterior (Tai Yang) into the interior, involving the channels and organs of the Bladder, Stomach, Large Intestine, Gallbladder, Spleen, Heart, and Kidney.",
+   "treatment_principle_zh": "以六經辨證為綱，隨證立法：太陽表證宜辛溫解表，陽明經證宜清熱生津、腑證宜通腑瀉熱，少陽證宜和解少陽，太陰證宜溫中健脾，少陰證宜溫補心腎或育陰清熱，厥陰證宜寒熱並調。",
+   "treatment_principle_en": "Treatment follows the six-channel pattern differentiation as its framework, with methods set according to the presenting pattern: the Tai Yang exterior pattern calls for acrid-warm exterior release; the Yang Ming channel pattern calls for clearing Heat and generating fluids, and its bowel pattern for freeing the bowels and draining Heat; the Shao Yang pattern calls for harmonizing Shao Yang; the Tai Yin pattern calls for warming the middle and fortifying the Spleen; the Shao Yin pattern calls for warmly supplementing Heart-Kidney Yang or nourishing Yin and clearing Heat; and the Jue Yin pattern calls for regulating Cold and Heat together.",
+   "red_flags_zh": [
+    "傷寒病程中出現持續高熱不退、意識改變（嗜睡、譫妄、昏迷）或呼吸急促，應立即轉診急診，考慮嚴重細菌感染（如肺炎、敗血症）需要抗生素治療，不可僅以中藥緩解",
+    "出現皮膚黏膜出血點、血壓下降、四肢厥冷等休克徵象，屬危及生命的急症，應立即轉診",
+    "病程中出現劇烈頭痛合併頸項强直、畏光，應立即轉診排除腦膜炎"
+   ],
+   "red_flags_en": [
+    "Persistent high fever, altered consciousness (lethargy, delirium, or coma), or rapid breathing during the course of Shang Han should prompt immediate emergency referral, considering a severe bacterial infection (e.g., pneumonia, sepsis) requiring antibiotic treatment rather than herbal treatment alone",
+    "Signs of shock — skin/mucosal petechiae, falling blood pressure, cold extremities — are a life-threatening emergency requiring immediate referral",
+    "Severe headache combined with nuchal rigidity and photophobia during the course of illness should prompt immediate referral to rule out meningitis"
+   ],
+   "related_patterns": [
+    "pattern.tai_yang_wind_strike",
+    "pattern.tai_yang_cold_damage",
+    "pattern.yang_ming_channel_heat",
+    "pattern.yang_ming_fu_organ_excess",
+    "pattern.shao_yang_pattern",
+    "pattern.tai_yin_deficiency_cold",
+    "pattern.shao_yin_cold_transformation",
+    "pattern.shao_yin_heat_transformation",
+    "pattern.jue_yin_mixed_cold_heat",
+    "pattern.tai_yang_water_accumulation"
+   ],
+   "field_sources": {
+    "definition_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "etiology_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "pathomechanism_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "key_manifestations_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "associated_manifestations_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "disease_location_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "treatment_principle_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "related_patterns": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》); six-channel pattern-id cross-reference from Shang Han Lun 六經辨證 framework, verified against pattern id list"
+    ],
+    "red_flags_zh": [
+     "Searched curriculum/ for 傷寒/Shang Han/Cold Damage Disease/sepsis/meningitis — no dedicated disease content found; whitelist source not fetched. Flags written from established TCM/biomedical clinical knowledge (severe febrile-disease presentations overlapping with bacterial sepsis/meningitis), not curriculum or whitelist-verified — flag for Ting to source-check"
+    ]
+   }
   },
   {
    "id": "tdis.wen_bing",
@@ -9066,7 +9577,90 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "definition_zh": "溫病是感受溫熱之邪所致的一類外感急性熱病的總稱，起病急、傳變快、易化燥傷陰，臨床以發熱為主症，依衛氣營血或三焦傳變規律呈現不同階段的證候。",
+   "definition_en": "Wen Bing (Warm-Heat Disease) is a general term for a category of acute externally-contracted febrile disorders caused by contraction of a Warm-Heat pathogen; onset is rapid, progression is fast, and the disease readily transforms into Dryness and damages Yin. Fever is the principal clinical symptom, with the pattern presentation shifting through stages according to the Wei-Qi-Ying-Xue or Triple Burner progression sequence.",
+   "etiology_zh": "外因為感受風熱、暑熱、濕熱、燥熱、溫毒、癘氣等溫熱性質的病邪，由口鼻或皮毛而入；內因與體質偏於陰虛陽盛、或素有伏熱有關，亦與四時氣候失常、癘氣流行等外部條件相關。",
+   "etiology_en": "The external cause is contraction of a pathogen of a Warm-Heat nature — Wind-Heat, Summerheat, Damp-Heat, Dryness-Heat, Warm toxin, or pestilential Qi — entering through the mouth, nose, or skin and hair; the internal cause is related to a constitution biased toward Yin vacuity with Yang exuberance, or a pre-existing latent Heat, and is also tied to external conditions such as abnormal seasonal climate or the prevalence of epidemic pestilential Qi.",
+   "pathomechanism_zh": "溫邪上受，首先犯肺，病起於衛分，見發熱微惡風寒、口微渴；衛分不解，順傳於氣，則見壯熱、不惡寒反惡熱、口渴引飲、汗多、脈洪大等陽明氣分熱盛之候；氣分不解，邪熱內陷心包或深入營分，則見身熱夜甚、心煩不寐、斑疹隱隱、舌絳；若邪熱深入血分，耗血動血，則見斑疹密布、多部位出血、神昏抽搐，病情危重。溫病傳變迅速，且極易傷陰耗液，故治療全程須時時顧護陰津。",
+   "pathomechanism_en": "The Warm pathogen is received from above and first attacks the Lung, so the disease begins in the Wei (defensive) stage, presenting with fever, slight aversion to wind-cold, and mild thirst. If unresolved at the Wei stage, it progresses forward to the Qi stage, presenting as exuberant Yang Ming Qi-stage Heat — high fever, aversion to heat rather than cold, intense thirst with a desire to drink, profuse sweating, and a surging-large pulse. If unresolved at the Qi stage, Heat pathogen can sink inward into the pericardium or penetrate deeper into the Ying (constructive) stage, presenting as fever worse at night, vexation and insomnia, faintly visible rashes, and a crimson tongue. If the Heat pathogen penetrates further into the Xue (Blood) stage, consuming Blood and stirring it recklessly, it presents as dense rashes, multi-site bleeding, and clouded consciousness with convulsions — a critical stage. Because Wen Bing progresses rapidly and readily damages Yin and depletes fluids, protecting Yin fluid must be attended to throughout the entire course of treatment.",
+   "key_manifestations_zh": [
+    "起病急、發熱明顯",
+    "傳變迅速，依衛氣營血或三焦順序或逆傳",
+    "口渴、舌質紅絳、脈數",
+    "病程中易見斑疹、出血傾向",
+    "易化燥傷陰，後期見陰傷諸候"
+   ],
+   "key_manifestations_en": [
+    "Acute onset with prominent fever",
+    "Rapid progression following the Wei-Qi-Ying-Xue or Triple Burner sequence, or reverse transmission",
+    "Thirst, a red-to-crimson tongue, and a rapid pulse",
+    "A tendency toward rashes and a bleeding diathesis during the course",
+    "A ready tendency to transform into Dryness and damage Yin, with signs of Yin damage in the later stage"
+   ],
+   "associated_manifestations_zh": [
+    "心煩不寐",
+    "汗出",
+    "咽喉腫痛（風熱犯肺初起）",
+    "神昏譫語（邪陷心包）",
+    "抽搐（熱極生風）"
+   ],
+   "associated_manifestations_en": [
+    "Vexation and insomnia",
+    "Sweating",
+    "Sore, swollen throat (in the initial Wind-Heat-attacking-Lung stage)",
+    "Clouded consciousness with delirious speech (when the pathogen sinks into the pericardium)",
+    "Convulsions (from extreme Heat generating Wind)"
+   ],
+   "disease_location_zh": "病位初在肺衛，依衛氣營血傳變，依次涉及肺、胃腸、心包、營血分，亦可依三焦傳變涉及上中下三焦臟腑。",
+   "disease_location_en": "Disease location begins at the Lung-Wei level, and following the Wei-Qi-Ying-Xue progression involves in turn the Lung, Stomach-Intestines, pericardium, and the Ying-Xue level; it may also progress according to the Triple Burner sequence, involving the organs of the upper, middle, and lower burners.",
+   "treatment_principle_zh": "以透邪外達、清熱存陰為總則，依衛氣營血分層論治：衛分宜辛涼透表，氣分宜清氣泄熱，營分宜清營透熱，血分宜涼血散血，全程注重顧護陰液。",
+   "treatment_principle_en": "The overall principle is to outthrust the pathogen and clear Heat while preserving Yin, treated in layers according to the Wei-Qi-Ying-Xue stage: the Wei stage calls for acrid-cool exterior outthrust, the Qi stage for clearing Qi-level Heat, the Ying stage for clearing the Ying level while outthrusting Heat, and the Xue stage for cooling and dispersing the Blood — protecting Yin fluid is emphasized throughout.",
+   "red_flags_zh": [
+    "溫病病程中出現神昏譫語、抽搐或皮膚瘀點瘀斑，提示邪入心包或血分，可能對應敗血症、腦炎、瀰漫性血管內凝血（DIC）等危重症，應立即轉診急診/加護病房，不可僅以中藥治療",
+    "出現持續高熱不退合併呼吸急促、血壓下降，應立即轉診評估感染性休克"
+   ],
+   "red_flags_en": [
+    "Clouded consciousness with delirious speech, convulsions, or skin petechiae/ecchymoses during the course of Wen Bing suggest pathogen invasion of the pericardium or Xue level, potentially corresponding to sepsis, encephalitis, or disseminated intravascular coagulation (DIC) — refer immediately to emergency/intensive care rather than relying on herbal treatment alone",
+    "Persistent high fever combined with rapid breathing and falling blood pressure should prompt immediate referral to evaluate for septic shock"
+   ],
+   "related_patterns": [
+    "pattern.wei_stage_wind_heat",
+    "pattern.qi_stage_heat",
+    "pattern.ying_stage_heat",
+    "pattern.xue_stage_heat",
+    "pattern.heat_entering_pericardium",
+    "pattern.san_jiao_damp_heat"
+   ],
+   "field_sources": {
+    "definition_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "etiology_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "pathomechanism_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "key_manifestations_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "associated_manifestations_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "disease_location_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "treatment_principle_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "related_patterns": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "red_flags_zh": [
+     "Searched curriculum/ for 溫病/Wen Bing/Warm-Heat Disease/sepsis/encephalitis/DIC — no dedicated disease content found; whitelist source not fetched. Flags written from established TCM/biomedical clinical knowledge (Ying/Xue-stage penetration overlapping with sepsis, encephalitis, DIC), not curriculum or whitelist-verified — flag for Ting to source-check"
+    ]
+   }
   },
   {
    "id": "tdis.shi_wen",
@@ -9077,7 +9671,87 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "definition_zh": "濕溫是感受濕熱病邪所致的一種外感熱病，多發於長夏雨濕季節，以身熱不揚、脘痞腹脹、身重肢倦、苔膩脈濡等濕熱交蒸表現為特徵，起病較緩，病勢纏綿，病程較長。",
+   "definition_en": "Shi Wen (Damp-Warmth Disease) is an externally-contracted febrile disorder caused by contraction of a Damp-Heat pathogen, occurring most often during the late-summer rainy season, and characterized by the steaming of Damp and Heat together — a fever that fails to rise despite its presence, epigastric stuffiness and abdominal distension, heavy limbs and body fatigue, a greasy tongue coating, and a soggy pulse; onset is comparatively gradual, the course is protracted and lingering, and the illness tends to be prolonged.",
+   "etiology_zh": "外因為長夏雨濕當令，感受濕熱病邪，由口鼻而入，內因多與脾胃素虛、運化失健、內濕素盛之體質有關，故濕熱之邪易與內濕相合，合邪為病。",
+   "etiology_en": "The external cause is contraction of a Damp-Heat pathogen during the late-summer rainy season, entering through the mouth and nose; the internal cause is usually related to a constitution with underlying Spleen-Stomach vacuity, impaired transportation-transformation, and exuberant internal Dampness, so that the external Damp-Heat pathogen readily combines with internal Dampness to produce the disease.",
+   "pathomechanism_zh": "濕熱病邪從口鼻而入，蘊結中焦脾胃，濕遏熱伏，故初起身熱不揚、頭重如裹、胸悶脘痞、苔白膩；濕熱蘊蒸日久，可從熱化而傷陰，或從濕化而傷陽，病勢纏綿反覆，與濕邪重濁黏滯之性有關，故熱勢起伏、病程遲緩，不同於一般溫病之傳變迅速。若濕熱化燥，深入營血，可見腸道出血、神昏等重症；若濕勝陽微，亦可見肢冷脈伏之寒化證候。",
+   "pathomechanism_en": "The Damp-Heat pathogen enters through the mouth and nose and becomes bound up in the middle burner Spleen-Stomach, with Dampness obstructing and Heat lying latent beneath it — hence the initial presentation of a fever that fails to rise despite its presence, a heavy, wrapped sensation in the head, chest oppression and epigastric stuffiness, and a white, greasy tongue coating. As the Damp-Heat steaming persists, the disease may transform toward Heat and damage Yin, or transform toward Dampness and damage Yang; its lingering, relapsing course reflects the heavy, turbid, sticky nature of the Damp pathogen, so the fever rises and falls and the course is slow — unlike the rapid progression of typical Wen Bing. If the Damp-Heat transforms into Dryness and penetrates deeply into the Ying-Xue level, it can present as intestinal bleeding and clouded consciousness, a severe stage; if Dampness overwhelms and Yang becomes faint, a Cold-transformation pattern with cold limbs and a hidden pulse can also appear.",
+   "key_manifestations_zh": [
+    "身熱不揚（午後熱甚，捫之灼手）",
+    "頭重如裹，身重肢倦",
+    "脘痞腹脹，胸悶納呆",
+    "苔白膩或黃膩，脈濡緩",
+    "病程遷延，纏綿反覆"
+   ],
+   "key_manifestations_en": [
+    "A fever that fails to rise despite its presence (worse in the afternoon, hot to the touch)",
+    "A heavy, wrapped sensation in the head with a heavy, fatigued body",
+    "Epigastric stuffiness and abdominal distension with chest oppression and poor appetite",
+    "A white or yellow greasy tongue coating with a soggy, moderate pulse",
+    "A protracted, lingering, relapsing course"
+   ],
+   "associated_manifestations_zh": [
+    "大便溏而不爽或便秘",
+    "小便短赤",
+    "口不渴或渴不多飲",
+    "身目發黃（濕熱發黃者）",
+    "神識呆滯（濕蒙清竅者）"
+   ],
+   "associated_manifestations_en": [
+    "Loose, unsatisfying stool or constipation",
+    "Short, reddish urination",
+    "Absence of thirst, or thirst without a strong desire to drink",
+    "Yellowing of the body and eyes (in Damp-Heat jaundice presentations)",
+    "Dull, sluggish mentation (when Dampness clouds the clear orifices)"
+   ],
+   "disease_location_zh": "病位主要在脾胃，涉及腸道、膽，病邪彌漫三焦，以中焦為病變中心。",
+   "disease_location_en": "Disease location is chiefly the Spleen and Stomach, involving the Intestines and Gallbladder; the pathogen pervades the Triple Burner with the middle burner as the center of the pathology.",
+   "treatment_principle_zh": "以清熱化濕為總則，依濕熱偏盛調整清熱與化濕之比重，濕重於熱者宜芳香化濕、淡滲利濕為主，熱重於濕者宜清熱為主佐以化濕，忌早用滋膩藥物以免助濕。",
+   "treatment_principle_en": "The overall principle is to clear Heat and transform Dampness, adjusting the balance between clearing Heat and transforming Dampness according to which predominates: when Dampness predominates over Heat, aromatic Damp-transforming and bland-percolating diuretic methods take priority; when Heat predominates over Dampness, clearing Heat takes priority supplemented by Damp transformation — in either case, rich, cloying tonics should be avoided early on, as they would reinforce the Dampness.",
+   "red_flags_zh": [
+    "濕溫病名在中醫內科學傳統上與腸傷寒（傷寒桿菌感染）臨床過程相似而常並提，若患者持續發熱一週以上合併腹部玫瑰疹、腸鳴音異常、血便或劇烈腹痛，應立即轉診排除腸傷寒併發腸出血或腸穿孔等外科急症",
+    "出現持續高熱不退合併意識模糊、抽搐，應立即轉診急診"
+   ],
+   "red_flags_en": [
+    "Shi Wen is traditionally associated in TCM Internal Medicine teaching with a clinical course resembling typhoid fever (Salmonella Typhi infection); a patient with fever persisting over a week combined with abdominal rose spots, abnormal bowel sounds, bloody stool, or severe abdominal pain should be referred immediately to rule out typhoid fever complicated by intestinal hemorrhage or perforation, a surgical emergency",
+    "Persistent high fever combined with confusion or convulsions should prompt immediate emergency referral"
+   ],
+   "related_patterns": [
+    "pattern.qi_stage_damp_heat",
+    "pattern.san_jiao_damp_heat",
+    "pattern.damp_heat_spleen_stomach"
+   ],
+   "field_sources": {
+    "definition_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "etiology_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "pathomechanism_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "key_manifestations_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "associated_manifestations_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "disease_location_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "treatment_principle_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "related_patterns": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "red_flags_zh": [
+     "Searched curriculum/ for 濕溫/Shi Wen/Damp-Warmth/typhoid fever — no dedicated disease content found; whitelist source not fetched. Flags written from established TCM/biomedical clinical knowledge (濕溫's traditional clinical correspondence to typhoid fever in TCM Internal Medicine textbooks), not curriculum or whitelist-verified — flag for Ting to source-check"
+    ]
+   }
   },
   {
    "id": "tdis.wen_yi",
@@ -9088,7 +9762,88 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "definition_zh": "瘟疫是感受疫毒戾氣所致、具有強烈傳染性和流行性的一類急性外感熱病的總稱，起病急驟，病情險惡，傳變迅速，且能在人群中相互傳染、造成流行，與一般溫病相比毒力更盛、傳染性更强。",
+   "definition_en": "Wen Yi (Epidemic Pestilence) is a general term for a category of acute, externally-contracted febrile disorders caused by contraction of pestilential toxic Qi (戾氣), marked by strong contagiousness and epidemic potential; onset is sudden, the condition is dangerous, progression is rapid, and the disease spreads readily from person to person to cause outbreaks — distinguished from ordinary Wen Bing by its greater toxic virulence and stronger contagiousness.",
+   "etiology_zh": "病因為感受疫毒戾氣，此氣異於一般六淫，具有特殊的致病性、傳染性與流行性，可經口鼻、皮膚等途徑侵入人體，發病與否及輕重與正氣強弱、疫氣毒力大小及環境衛生條件密切相關。",
+   "etiology_en": "The etiology is contraction of pestilential toxic Qi (戾氣), a pathogenic Qi distinct from the ordinary six excesses in that it carries a specific virulence, contagiousness, and epidemic potential; it can invade the body through the mouth, nose, skin, and other routes, and whether disease occurs, and its severity, is closely tied to the strength of the correct Qi, the virulence of the pestilential Qi, and environmental/sanitary conditions.",
+   "pathomechanism_zh": "疫毒戾氣侵入人體，傳變迅速，較一般溫病更易化火成毒，直陷營血或內閉心包，見高熱、神昏、斑疹、出血等危重證候；疫毒攻於某一臟腑則發為相應病證（如疫毒攻喉發為爛喉痧，疫毒犯脾胃發為濕熱疫等），病情進展迅猛，傳變不循衛氣營血常規次第，常見逆傳心包、內閉外脫並見。正氣充盛者病情較輕，正氣虛弱者易致邪毒內陷、迅速危殆。",
+   "pathomechanism_en": "Pestilential toxic Qi invades the body and progresses rapidly, more readily transforming into Fire and toxin than ordinary Wen Bing, and can sink directly into the Ying-Xue level or inwardly block the pericardium — presenting as high fever, clouded consciousness, rashes, and bleeding, all critical patterns. When the pestilential toxin attacks a specific organ, a corresponding disease results (for example, attack on the throat produces scarlatiniform sore throat, and attack on the Spleen-Stomach produces a Damp-Heat epidemic). Progression is swift and violent and does not necessarily follow the usual Wei-Qi-Ying-Xue sequence, often showing reverse transmission into the pericardium with simultaneous internal blockage and external desertion. A robust correct Qi produces a milder course, while a vacuous correct Qi allows the toxic pathogen to sink inward readily and the condition to become critical rapidly.",
+   "key_manifestations_zh": [
+    "起病急驟，傳染性强，可群發流行",
+    "高熱，病勢兇險",
+    "傳變迅速，易內陷營血或心包",
+    "可見斑疹、出血傾向",
+    "病情進展快，易見神昏、厥脫等危候"
+   ],
+   "key_manifestations_en": [
+    "Sudden onset, strong contagiousness, and potential for clustered outbreaks",
+    "High fever with a dangerous course",
+    "Rapid progression, readily sinking into the Ying-Xue level or the pericardium",
+    "Rashes and a tendency toward bleeding",
+    "Fast progression, readily producing clouded consciousness and collapse, both critical patterns"
+   ],
+   "associated_manifestations_zh": [
+    "咽喉腫爛（疫毒攻喉者）",
+    "肌膚斑疹密布",
+    "四肢厥冷、汗出如珠（內閉外脫者）",
+    "劇烈腹痛吐瀉（疫毒犯脾胃者）",
+    "全身乏力、精神萎靡"
+   ],
+   "associated_manifestations_en": [
+    "Ulcerated, swollen throat (when the pestilential toxin attacks the throat)",
+    "Dense rashes on the skin",
+    "Cold extremities with beaded sweating (in internal-blockage-with-external-desertion presentations)",
+    "Severe abdominal pain with vomiting and diarrhea (when the pestilential toxin attacks the Spleen-Stomach)",
+    "Generalized fatigue and listlessness"
+   ],
+   "disease_location_zh": "病位視疫毒攻犯部位而定，可在肺衛、腸胃、咽喉、營血、心包等，病勢兇險者常涉及多臟腑。",
+   "disease_location_en": "Disease location depends on where the pestilential toxin attacks, and can be the Lung-Wei level, Stomach-Intestines, throat, Ying-Xue level, or pericardium; in dangerous presentations, multiple organs are often involved.",
+   "treatment_principle_zh": "以清熱解毒、辟穢化濁為總則，早期宜盡快透邪解毒以截斷病勢，病情危重內閉外脫者當急則治標，開竅固脫，並須嚴格隔離防疫、配合現代醫學搶救。",
+   "treatment_principle_en": "The overall principle is to clear Heat and resolve toxin while dispelling foulness and transforming turbidity; in the early stage, prompt outthrust of the pathogen and toxin resolution is emphasized to cut short the disease course, while a critical presentation with internal blockage and external desertion demands urgent treatment of the branch — opening the orifices and securing against desertion — together with strict isolation for infection control and integration with modern emergency medical management.",
+   "red_flags_zh": [
+    "瘟疫本質對應現代具高度傳染性之急性傳染病（如流行性腦脊髓膜炎、猩紅熱、流感重症、新興傳染病等），患者若出現高熱不退、意識改變、皮膚瘀斑瘀點或休克徵象，屬危及生命的急症，應立即轉診急診並依法通報傳染病，不可僅以中藥治療或延誤隔離",
+    "出現群聚發病（同一家庭、社區短時間內多人出現相似症狀），應提高警覺並轉知當地衛生主管機關，以防疫情擴散"
+   ],
+   "red_flags_en": [
+    "Wen Yi corresponds in nature to modern acute infectious diseases with high contagiousness (e.g., epidemic meningitis, scarlet fever, severe influenza, or an emerging infectious disease); a patient with persistent high fever, altered consciousness, skin petechiae/ecchymoses, or signs of shock represents a life-threatening emergency — refer immediately to emergency care and report per applicable infectious-disease notification requirements; do not rely on herbal treatment alone or delay isolation",
+    "Clustered onset (multiple people in the same household or community developing similar symptoms within a short period) should raise alertness and be reported to the local public health authority to prevent further spread"
+   ],
+   "related_patterns": [
+    "pattern.heat_toxin_blazing",
+    "pattern.xue_stage_heat",
+    "pattern.heat_entering_pericardium",
+    "pattern.qi_stage_heat"
+   ],
+   "field_sources": {
+    "definition_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "etiology_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "pathomechanism_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "key_manifestations_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "associated_manifestations_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "disease_location_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "treatment_principle_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "related_patterns": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "red_flags_zh": [
+     "Searched curriculum/ for 瘟疫/Wen Yi/Epidemic Pestilence/infectious disease outbreak — no dedicated disease content found; whitelist source not fetched. Flags written from established TCM/biomedical clinical knowledge (瘟疫's correspondence to acute highly contagious infectious disease), not curriculum or whitelist-verified — flag for Ting to source-check"
+    ]
+   }
   },
   {
    "id": "tdis.zhong_shu",
@@ -9099,7 +9854,88 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "definition_zh": "中暑是夏季感受暑熱之邪，或暑濕、寒濕內侵，導致暑熱閉阻清竅或耗傷氣陰所致的急性病證，以突然發病、高熱、汗出或無汗、神昏或肢冷等為主要表現，病情輕重不一，重者可危及生命。",
+   "definition_en": "Zhong Shu (Summerheat Stroke) is an acute disorder occurring in summer, caused by contraction of a Summerheat pathogen, or by Summerheat-Dampness or Cold-Dampness invading internally, in which Summerheat obstructs the clear orifices or depletes Qi and Yin; it presents mainly with sudden onset, high fever, sweating or its absence, and clouded consciousness or cold extremities, ranging in severity from mild to life-threatening.",
+   "etiology_zh": "陽暑者多因夏季酷熱之時，烈日下勞作或久留高溫環境，暑熱之邪直中人體；陰暑者多因夏月貪涼飲冷，或久居陰濕之地，暑邪夾寒濕內侵；暑濕交蒸之地、體質虛弱、年老體衰或素有慢性病者尤易罹患。",
+   "etiology_en": "The Yang-Summerheat type usually arises from laboring under the scorching sun or prolonged exposure to a high-temperature environment during the height of summer, allowing the Summerheat pathogen to strike the body directly; the Yin-Summerheat type usually arises from excessive craving for cool and cold food and drink in summer, or from prolonged dwelling in a damp, shaded place, allowing the Summerheat pathogen combined with Cold-Dampness to invade internally. Those in hot, humid environments, the constitutionally weak, the elderly and infirm, and those with pre-existing chronic disease are especially susceptible.",
+   "pathomechanism_zh": "暑為陽邪，其性炎熱升散，最易耗氣傷津、擾亂心神。陽暑者暑熱直入陽明氣分，壅盛熏灼，故見壯熱、大汗、大渴、脈洪大；暑熱內閉心包、蒙蔽清竅，則見突然昏倒、不省人事，甚則抽搐，為暑厥、暑風危候。陰暑者暑濕夾寒，遏阻衛陽，故見惡寒發熱、頭痛身重、無汗、脘悶嘔惡，病勢較陽暑為緩。暑熱久稽，耗傷氣陰，可轉為氣陰兩傷之後期證候，見神疲乏力、汗多口渴、脈虛數。",
+   "pathomechanism_en": "Summerheat is a Yang pathogen, blazing hot and dispersing-ascending by nature, and most readily depletes Qi, damages fluids, and disturbs the spirit. In the Yang-Summerheat type, Summerheat directly enters the Yang Ming Qi level and steams and scorches exuberantly, producing high fever, profuse sweating, intense thirst, and a surging-large pulse; if Summerheat internally blocks the pericardium and clouds the clear orifices, sudden collapse with loss of consciousness occurs, in severe cases with convulsions — the critical patterns of Summerheat reversal and Summerheat Wind. In the Yin-Summerheat type, Summerheat combines with Cold-Dampness to constrain defensive Yang, producing aversion to cold with fever, headache, a heavy body, absence of sweating, and epigastric oppression with nausea — a milder course than Yang-Summerheat. Prolonged lingering Summerheat depletes Qi and Yin, and can transition to a later-stage pattern of combined Qi-Yin damage, with fatigue and lack of strength, profuse sweating with thirst, and a vacuous, rapid pulse.",
+   "key_manifestations_zh": [
+    "夏季突然發病",
+    "高熱、大汗或無汗",
+    "頭暈頭痛、心煩口渴",
+    "神疲乏力，重者神昏、抽搐",
+    "脈洪大或虛數"
+   ],
+   "key_manifestations_en": [
+    "Sudden onset during summer",
+    "High fever with profuse sweating, or its absence",
+    "Dizziness, headache, vexation, and thirst",
+    "Fatigue and lack of strength, with clouded consciousness or convulsions in severe cases",
+    "A surging-large pulse, or a vacuous, rapid pulse"
+   ],
+   "associated_manifestations_zh": [
+    "面赤氣粗",
+    "噁心嘔吐",
+    "肢體困重（暑濕者）",
+    "惡寒無汗（陰暑者）",
+    "四肢抽搐或厥冷（危重者）"
+   ],
+   "associated_manifestations_en": [
+    "Flushed face with coarse breathing",
+    "Nausea and vomiting",
+    "Heavy, encumbered limbs (in Summerheat-Damp presentations)",
+    "Aversion to cold without sweating (in Yin-Summerheat presentations)",
+    "Limb convulsions or cold extremities (in critical cases)"
+   ],
+   "disease_location_zh": "病位在心、胃，涉及肺、脾，重症可內閉心包、擾動肝風。",
+   "disease_location_en": "Disease location is the Heart and Stomach, involving the Lung and Spleen; in severe cases the pericardium may be internally blocked and Liver Wind stirred.",
+   "treatment_principle_zh": "以清暑為總則，陽暑宜清暑瀉熱、益氣生津，陰暑宜解表散寒、化濕和中，暑入心包、神昏抽搐者當急則治標，清心開竅、熄風鎮痙，並須立即物理降溫及補液等急救措施。",
+   "treatment_principle_en": "The overall principle is to clear Summerheat: Yang-Summerheat is treated by clearing Summerheat and draining Heat while boosting Qi and generating fluids; Yin-Summerheat is treated by releasing the exterior and scattering Cold while transforming Dampness and harmonizing the middle; when Summerheat enters the pericardium with clouded consciousness and convulsions, the branch must be treated urgently — clearing the Heart, opening the orifices, extinguishing Wind, and settling convulsion — together with immediate physical cooling and fluid resuscitation as emergency measures.",
+   "red_flags_zh": [
+    "中暑本身即屬西醫熱急症（heat stroke/heat exhaustion），患者出現體溫超過40°C、皮膚灼熱乾燥無汗、意識模糊或昏迷，屬熱射病（heat stroke），為危及生命之急症，應立即物理降溫並轉診急診搶救，不可僅以針灸或中藥處理而延誤降溫",
+    "出現持續嘔吐、抽搐或休克徵象（血壓下降、脈搏微弱），應立即轉診急診"
+   ],
+   "red_flags_en": [
+    "Zhong Shu itself corresponds to the biomedical heat emergencies of heat stroke and heat exhaustion; a patient with a body temperature above 40°C, hot dry skin without sweating, and confusion or coma has heat stroke, a life-threatening emergency — begin immediate physical cooling and refer for emergency resuscitation; do not rely on acupuncture or herbal treatment alone and delay cooling",
+    "Persistent vomiting, convulsions, or signs of shock (falling blood pressure, a weak/thready pulse) should prompt immediate emergency referral"
+   ],
+   "related_patterns": [
+    "pattern.summerheat_dampness",
+    "pattern.qi_stage_heat",
+    "pattern.qi_yin_deficiency",
+    "pattern.heat_entering_pericardium"
+   ],
+   "field_sources": {
+    "definition_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "etiology_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "pathomechanism_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "key_manifestations_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "associated_manifestations_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "disease_location_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "treatment_principle_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "related_patterns": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "red_flags_zh": [
+     "Searched curriculum/ for 中暑/Zhong Shu/heat stroke/heat exhaustion — no dedicated disease content found; whitelist source not fetched. Flags written from established TCM/biomedical clinical knowledge (中暑 IS the biomedical heat stroke/heat exhaustion emergency, a direct 1:1 disease correspondence), not curriculum or whitelist-verified — flag for Ting to source-check"
+    ]
+   }
   },
   {
    "id": "tdis.huo_luan",
@@ -9110,7 +9946,89 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "definition_zh": "霍亂是因感受濕濁穢氣或飲食不潔，清濁相干、揮霍撩亂於中焦腸胃，以突然發作、劇烈嘔吐與泄瀉並作為主要表現的急性病證，病勢急驟，重者可迅速耗傷津液、亡陰亡陽。",
+   "definition_en": "Huo Luan (Sudden Turmoil Disorder) is an acute disorder caused by contraction of turbid, foul Dampness Qi or unclean food and drink, in which the clear and turbid contend with each other in sudden turmoil within the middle burner Stomach and Intestines, presenting mainly as sudden-onset, severe simultaneous vomiting and diarrhea; the course is acute and severe cases can rapidly deplete fluids and progress to desertion of Yin or Yang.",
+   "etiology_zh": "多因夏秋之季感受濕濁穢氣，或恣食生冷不潔、腐敗變質之物，穢濁之邪直犯腸胃；素體脾胃虛弱、正氣不足者尤易感邪發病，病情輕重與感邪之淺深、體質强弱密切相關。",
+   "etiology_en": "Most commonly results from contraction of turbid, foul Dampness Qi during summer and autumn, or from indulgent consumption of raw, cold, unclean, spoiled, or contaminated food and drink, so that a foul-turbid pathogen directly attacks the Stomach and Intestines; those with an underlying vacuous Spleen-Stomach and insufficient correct Qi are especially susceptible, and severity correlates closely with the depth of the pathogenic invasion and the strength of the constitution.",
+   "pathomechanism_zh": "穢濁之邪直犯腸胃，清濁相干，升降失常，清氣不升則泄瀉，濁氣不降則嘔吐，故吐瀉並作、揮霍撩亂。屬寒濕者，寒濕內盛，中陽被遏，吐瀉物多清稀，伴腹痛喜溫；屬濕熱者，濕熱蘊結腸胃，吐瀉物多穢臭，伴發熱煩渴。吐瀉劇烈者，津液暴脫，筋脈失養而見轉筋（腓腸肌痙攣）；津液耗竭、陽氣隨之外脫，可見目陷肢冷、脈微欲絕之亡陰亡陽危候，病情發展迅速，須及時救治。",
+   "pathomechanism_en": "A foul-turbid pathogen directly attacks the Stomach and Intestines, causing the clear and turbid to contend with each other and disrupting the normal ascending-descending movement: failure of clear Qi to ascend produces diarrhea, and failure of turbid Qi to descend produces vomiting, hence the simultaneous vomiting and diarrhea in sudden turmoil. In the Cold-Damp type, exuberant internal Cold-Dampness constrains middle Yang, and the vomitus/stool tend to be thin and clear, accompanied by abdominal pain relieved by warmth; in the Damp-Heat type, Damp-Heat binds in the Stomach and Intestines, and the vomitus/stool tend to be foul-smelling, accompanied by fever and vexing thirst. In severe vomiting and diarrhea, fluids are abruptly lost and the sinews and vessels lose nourishment, producing muscle cramping (calf-muscle spasm); as fluids are exhausted, Yang Qi can desert along with them, producing the critical pattern of Yin-Yang desertion — sunken eyes, cold limbs, and a faint, nearly imperceptible pulse — a rapidly progressing condition requiring prompt emergency treatment.",
+   "key_manifestations_zh": [
+    "突然發作，吐瀉並作",
+    "上吐下瀉劇烈，揮霍撩亂",
+    "腹痛",
+    "可見轉筋（腓腸肌痙攣）",
+    "重者迅速出現津脫之象（目陷、肢冷、少尿）"
+   ],
+   "key_manifestations_en": [
+    "Sudden onset with simultaneous vomiting and diarrhea",
+    "Severe vomiting and diarrhea occurring in sudden turmoil",
+    "Abdominal pain",
+    "Possible muscle cramping (calf-muscle spasm)",
+    "Rapid appearance of fluid-desertion signs in severe cases (sunken eyes, cold limbs, scanty urine)"
+   ],
+   "associated_manifestations_zh": [
+    "發熱或畏寒",
+    "口渴",
+    "神疲肢軟",
+    "脈微弱或脈伏",
+    "甚則神昏（亡陰亡陽危候）"
+   ],
+   "associated_manifestations_en": [
+    "Fever or aversion to cold",
+    "Thirst",
+    "Fatigue with limp limbs",
+    "A faint, weak pulse, or an imperceptible pulse",
+    "In severe cases, clouded consciousness (a critical pattern of Yin-Yang desertion)"
+   ],
+   "disease_location_zh": "病位在脾胃、腸，病勢危重者可涉及心腎，津液暴脫、陽氣外亡則危及全身。",
+   "disease_location_en": "Disease location is the Spleen, Stomach, and Intestines; in critical cases it can involve the Heart and Kidney, and abrupt fluid loss with Yang Qi desertion endangers the entire body.",
+   "treatment_principle_zh": "以辟穢化濁、調理腸胃為總則，寒濕者溫中散寒化濕，濕熱者清熱化濕、辟穢泄濁；吐瀉劇烈、津液暴脫者當急則治標，益氣救陰、回陽固脫，並須及時補液糾正電解質紊亂。",
+   "treatment_principle_en": "The overall principle is to dispel foulness, transform turbidity, and regulate the Stomach and Intestines: the Cold-Damp type is treated by warming the middle, scattering Cold, and transforming Dampness; the Damp-Heat type by clearing Heat, transforming Dampness, and dispelling foulness while draining turbidity. When vomiting and diarrhea are severe with abrupt fluid loss, the branch must be treated urgently — boosting Qi, rescuing Yin, and restoring Yang to secure against desertion — together with prompt fluid resuscitation to correct electrolyte disturbance.",
+   "red_flags_zh": [
+    "霍亂患者出現劇烈嘔吐腹瀉合併眼窩凹陷、皮膚彈性差、意識模糊、脈搏微弱或測不到血壓，提示嚴重脫水或休克，屬危及生命之急症，應立即轉診急診並靜脈補液，不可僅以口服中藥處理",
+    "若懷疑食物中毒或飲用水污染引起之群聚性腹瀉，應通報當地衛生單位並轉診排除細菌性痢疾、真性霍亂（Vibrio cholerae感染）等法定傳染病",
+    "嬰幼兒或老年患者出現持續嘔吐腹瀉超過24小時、尿量明顯減少，應立即轉診評估脫水程度"
+   ],
+   "red_flags_en": [
+    "A Huo Luan patient with severe vomiting and diarrhea combined with sunken eyes, poor skin turgor, confusion, or a weak/unmeasurable pulse or blood pressure suggests severe dehydration or shock — a life-threatening emergency requiring immediate emergency referral and intravenous fluid resuscitation, not oral herbal treatment alone",
+    "Clustered diarrhea suspected to result from food poisoning or contaminated drinking water should be reported to the local health authority and referred to rule out bacterial dysentery or true cholera (Vibrio cholerae infection), both notifiable infectious diseases",
+    "An infant or elderly patient with vomiting and diarrhea persisting over 24 hours and a marked drop in urine output should be referred immediately to assess dehydration severity"
+   ],
+   "related_patterns": [
+    "pattern.cold_damp_encumbering_spleen",
+    "pattern.damp_heat_spleen_stomach",
+    "pattern.yang_deficiency"
+   ],
+   "field_sources": {
+    "definition_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "etiology_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "pathomechanism_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "key_manifestations_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "associated_manifestations_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "disease_location_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "treatment_principle_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "related_patterns": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "red_flags_zh": [
+     "Searched curriculum/ for 霍亂/Huo Luan/Sudden Turmoil Disorder/cholera/dehydration — no dedicated disease content found; whitelist source not fetched. Flags written from established TCM/biomedical clinical knowledge (severe dehydration/shock risk and the historical correspondence to cholera/severe gastroenteritis), not curriculum or whitelist-verified — flag for Ting to source-check"
+    ]
+   }
   },
   {
    "id": "tdis.ben_tun_qi",
@@ -9125,7 +10043,88 @@
     "Running Piglet Disorder"
    ],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "definition_zh": "奔豚氣是自覺有氣從少腹上沖胸咽，發作時痛苦驚恐，如豚之奔突，發作過後如常人的一種陣發性病證，首見於《金匱要略》，多與情志刺激或驚恐相關。",
+   "definition_en": "Ben Tun Qi (Running Piglet Qi) is a paroxysmal disorder, first described in the Jin Gui Yao Lue, in which the patient feels a surge of Qi rushing from the lower abdomen up to the chest and throat — like a piglet bolting — accompanied by intense distress and fright during the attack, with the patient returning to normal once it subsides; it is most often related to emotional stimulation or fright.",
+   "etiology_zh": "多因驚恐、暴怒等情志刺激，肝氣鬱結，鬱久化火，循衝脈上逆；或素體腎陽虛衰，復因寒邪內犯或汗後陽虛，下焦寒水之氣挾衝脈之氣上逆。",
+   "etiology_en": "Most commonly results from emotional stimulation such as fright or sudden rage causing Liver Qi constraint that transforms into Fire over time and rushes upward along the Chong vessel; or from a constitutionally weak Kidney Yang, further compounded by internal invasion of Cold pathogen or Yang vacuity following sweating, so that cold-water Qi in the Lower Burner surges upward together with Chong-vessel Qi.",
+   "pathomechanism_zh": "奔豚氣的核心病機在於衝脈之氣上逆。肝氣鬱結、鬱久化火者，肝火挾衝氣上沖，發作時氣從少腹上沖胸咽，伴煩躁易怒、往來寒熱；腎陽虛衰、寒水上泛者，下焦陰寒之氣夾衝脈之氣上逆，發作時氣從少腹上沖胸咽，伴腹痛、往來寒熱或畏寒肢冷。衝脈隸屬於肝腎，故本病與肝、腎二臟氣機失調關係最為密切，發作雖劇，發作過後多如常人。",
+   "pathomechanism_en": "The core pathomechanism of Running Piglet Qi is upward-rebelling Qi in the Chong vessel. In the Liver-constraint-transforming-Fire type, Liver Fire carries Chong-vessel Qi upward, so during an attack Qi rushes from the lower abdomen to the chest and throat, accompanied by vexation, irritability, and alternating chills and fever; in the Kidney-Yang-vacuity, cold-water-flooding type, Yin-cold Qi in the Lower Burner rises together with Chong-vessel Qi, so an attack brings the same upward rush accompanied by abdominal pain and alternating chills and fever, or aversion to cold with cold limbs. Because the Chong vessel is tied to both the Liver and Kidney, this disease is most closely bound to disharmony of Liver and Kidney Qi movement; although attacks are severe, the patient is usually asymptomatic between episodes.",
+   "key_manifestations_zh": [
+    "自覺氣從少腹上沖胸咽，陣發性發作",
+    "發作時痛苦驚恐難忍",
+    "發作過後如常人",
+    "反覆發作，可因情緒波動誘發",
+    "伴心悸、胸悶或往來寒熱"
+   ],
+   "key_manifestations_en": [
+    "A subjective sensation of Qi rushing from the lower abdomen up to the chest and throat, occurring in paroxysms",
+    "Intense distress and fright during an attack, difficult to bear",
+    "A return to normal once the attack subsides",
+    "Recurrent attacks, often triggered by emotional upset",
+    "Accompanying palpitations, chest oppression, or alternating chills and fever"
+   ],
+   "associated_manifestations_zh": [
+    "煩躁易怒或情志抑鬱",
+    "腹痛",
+    "畏寒肢冷（腎陽虛者）",
+    "汗出",
+    "咽部堵塞感"
+   ],
+   "associated_manifestations_en": [
+    "Vexation and irritability, or emotional depression",
+    "Abdominal pain",
+    "Aversion to cold with cold limbs (in Kidney-Yang-vacuity presentations)",
+    "Sweating",
+    "A sensation of blockage in the throat"
+   ],
+   "disease_location_zh": "病位在肝、腎，涉及衝脈，病變與肝失疏泄、腎陽不足、衝脈之氣上逆密切相關。",
+   "disease_location_en": "Disease location is the Liver and Kidney, involving the Chong vessel; the pathology is closely tied to the Liver losing its free-coursing function, Kidney Yang insufficiency, and upward-rebelling Chong-vessel Qi.",
+   "treatment_principle_zh": "以平沖降逆為總則，肝鬱化火者疏肝解鬱、清熱平沖，腎陽虛衰、寒水上逆者溫補腎陽、平沖降逆，並重視安神定志以緩解驚恐情志誘因。",
+   "treatment_principle_en": "The overall principle is to calm the Chong vessel and downbear the rebellious Qi: Liver-constraint-transforming-Fire presentations are treated by coursing the Liver, resolving constraint, clearing Heat, and calming the Chong Qi; Kidney-Yang-vacuity, cold-water-rebellion presentations are treated by warmly supplementing Kidney Yang while calming the Chong Qi and downbearing rebellion; in both, calming the Spirit and settling the emotions is emphasized to relieve the fright/emotional trigger.",
+   "red_flags_zh": [
+    "奔豚氣發作時合併明顯胸痛、冒冷汗、暈厥或心律不規則，應立即轉診評估心臟疾病（如心律不整、恐慌症合併心臟病），不可逕自判定為單純奔豚氣而延誤",
+    "發作時合併陣發性高血壓、劇烈頭痛、大汗淋漓，應轉診排除嗜鉻細胞瘤等內分泌疾病"
+   ],
+   "red_flags_en": [
+    "An episode of Running Piglet Qi combined with significant chest pain, cold sweating, syncope, or an irregular heartbeat should be referred immediately for cardiac evaluation (e.g., arrhythmia, or panic symptoms coexisting with cardiac disease) — do not assume simple Ben Tun Qi and delay care",
+    "An episode combined with paroxysmal severe hypertension, intense headache, and profuse sweating should be referred to rule out pheochromocytoma or another endocrine disorder"
+   ],
+   "related_patterns": [
+    "pattern.chong_mai_qi_rebellion",
+    "pattern.liver_qi_stagnation",
+    "pattern.liver_fire",
+    "pattern.kidney_yang_deficiency"
+   ],
+   "field_sources": {
+    "definition_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "etiology_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "pathomechanism_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "key_manifestations_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "associated_manifestations_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "disease_location_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "treatment_principle_zh": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "related_patterns": [
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+    ],
+    "red_flags_zh": [
+     "Searched curriculum/ for 奔豚氣/Running Piglet Qi/panic disorder/pheochromocytoma — no dedicated disease content found; whitelist source not fetched. Flags written from established TCM/biomedical clinical knowledge (paroxysmal surge presentations overlapping with arrhythmia/panic disorder/pheochromocytoma), not curriculum or whitelist-verified — flag for Ting to source-check"
+    ]
+   }
   },
   {
    "id": "tdis.jing_qi_yan_chang",
