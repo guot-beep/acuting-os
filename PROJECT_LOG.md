@@ -1,4 +1,17 @@
-# 2026-08-24 Claude — antigravity Batch 7 審核:通過,收下
+# 2026-08-24 Claude — antigravity Batch 8 審核:通過,收下
+
+- **背景**:antigravity 中途沒 token 卡住過一段時間,補充後接著做完 Batch 8。分支落在主線幾個效能/內容
+  PR(#97-99)之前,先確認那些 PR 沒碰 `herb_canon_shortlist.json`(零獨立改動),再把 batch8 實際動到的
+  35 筆套到現在的 main 上。
+- **抽查**:`herb.gou_teng`/`herb.zhu_sha`/`herb.suan_zao_ren` 逐詞翻譯正確;`herb.suan_zao_ren` 17 個
+  中文詞全部對應到各自不同的英文,沒有重複套模板。`herb.zhu_sha`(硃砂,礦物毒性藥)的來源欄位誠實標了
+  「數字待 Ting 以手邊藥典核對後升級」——沒查證的地方主動說沒查證，是對的做法。
+- **數字**:`modern_functions_en/zh` 309→320(+11);`contraindications_zh` 276→307(+31)。
+- **驗證**:`build-data.js` PASS;`validate-herb-standard.js` exit 0(E10/E11 都沒跳出來);
+  `check-validation-ratchet.js` PASS(新出現的 `encoding` 線是其他 PR #98/#99 帶進來的,flat,跟這批無關);
+  `validate-content-junk.js` PASS。
+
+
 
 - **範圍**:止血藥(20)+ 補虛藥·陰(18)+ 活血化瘀藥(24),實際動到 25 筆記錄(commit 宣稱 62,含未變動
   重疊不算)。這批分支直接長在 Batch 6 落地後的 main 上,沒有過期快照問題,不需要額外的重新套用。
