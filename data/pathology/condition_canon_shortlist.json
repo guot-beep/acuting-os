@@ -26883,10 +26883,157 @@
     "western_pathology_en": [
      "Rome 標準 — 功能性膽道疾病通說",
      "MedlinePlus — Gallbladder Diseases (https://medlineplus.gov/gallbladderdiseases.html)"
+    ],
+    "summary_zh": [
+     "Cleveland Clinic — Biliary Dyskinesia",
+     "NIDDK — DDICC Gallstone Disease Research Challenges Meeting"
+    ],
+    "summary_en": [
+     "Cleveland Clinic — Biliary Dyskinesia",
+     "NIDDK — DDICC Gallstone Disease Research Challenges Meeting"
+    ],
+    "western_context_zh": [
+     "Cleveland Clinic — Biliary Dyskinesia",
+     "Whittington Health NHS — HIDA Scan",
+     "Mid and South Essex NHS — Gallbladder scan (HIDA)",
+     "NIDDK — DDICC Gallstone Disease Research Challenges Meeting"
+    ],
+    "western_context_en": [
+     "Cleveland Clinic — Biliary Dyskinesia",
+     "Whittington Health NHS — HIDA Scan",
+     "Mid and South Essex NHS — Gallbladder scan (HIDA)",
+     "NIDDK — DDICC Gallstone Disease Research Challenges Meeting"
+    ],
+    "risk_factors_zh": [
+     "Cleveland Clinic — Biliary Dyskinesia"
+    ],
+    "risk_factors_en": [
+     "Cleveland Clinic — Biliary Dyskinesia"
+    ],
+    "red_flags_zh": [
+     "NIDDK — Symptoms & Causes of Gallstones",
+     "data/pathology/red_flag_registry.json"
+    ],
+    "red_flags_en": [
+     "NIDDK — Symptoms & Causes of Gallstones",
+     "data/pathology/red_flag_registry.json"
+    ],
+    "acupuncture_scope_zh": [
+     "AcuTing OS safety and scope policy; NIDDK urgent biliary boundary"
+    ],
+    "acupuncture_scope_en": [
+     "AcuTing OS safety and scope policy; NIDDK urgent biliary boundary"
     ]
    },
    "sources": [
-    "https://medlineplus.gov/gallbladderdiseases.html"
+    "https://medlineplus.gov/gallbladderdiseases.html",
+    "https://my.clevelandclinic.org/health/diseases/23932-biliary-dyskinesia",
+    "https://www.whittington.nhs.uk/document.ashx?id=2199",
+    "https://www.mse.nhs.uk/radiology-for-healthcare-professionals",
+    "https://www.niddk.nih.gov/health-information/digestive-diseases/gallstones/symptoms-causes",
+    "https://www.niddk.nih.gov/-/media/Files/Advisory-Coordinating-Committees/DDICC/DDICC_Meeting_Summary_Gallstone_Disease_508.pdf"
+   ],
+   "summary_zh": "膽道功能障礙／膽囊動力障礙是膽囊或膽道括約肌的功能與排空異常，可出現反覆右上腹或上腹膽源性疼痛、噁心及餐後不適，但沒有可解釋症狀的結石或其他機械性阻塞。它與膽結石、急性膽囊炎、膽管炎及胰臟炎不同，屬排除其他結構性疾病後才考慮的診斷。",
+   "summary_en": "Biliary dyskinesia or gallbladder dysfunction is impaired function or emptying of the gallbladder or biliary sphincter. It may cause recurrent right-upper-quadrant or epigastric biliary-type pain, nausea, and post-meal symptoms without a stone or other mechanical blockage that explains the presentation. It is distinct from gallstones, acute cholecystitis, cholangitis, and pancreatitis and is considered only after structural disease has been excluded.",
+   "western_context_zh": "評估先確認疼痛型態，再以病史、理學檢查、血液檢驗及腹部超音波排除結石、發炎、膽管阻塞、肝臟或胰臟疾病；在症狀相符且初步檢查未找到結構性原因時，HIDA 肝膽掃描可評估膽汁通行及膽囊功能。是否需要膽囊切除或括約肌相關處置須由胃腸肝膽科與外科依完整診斷判斷；NIDDK 專家會議亦記錄無結石膽道功能障礙手術適應證仍有爭議，因此不能只憑一次功能檢查或非典型腹痛下結論。",
+   "western_context_en": "Assessment first establishes whether the pain is biliary in character, then uses history, examination, blood tests, and abdominal ultrasound to exclude stones, inflammation, bile-duct obstruction, liver disease, and pancreatic disease. When symptoms fit but initial testing finds no structural explanation, a HIDA hepatobiliary scan can assess bile transit and gallbladder function. Gastroenterology and surgical teams must decide whether cholecystectomy or a sphincter-directed procedure is appropriate from the complete diagnostic picture. An NIDDK expert meeting also recorded continuing controversy over surgery for stone-free biliary dyskinesia, so neither a single function test nor atypical abdominal pain is sufficient by itself.",
+   "risk_factors_zh": [
+    {
+     "factor": "肥胖（僅為可能相關因子，尚未確立為膽道功能障礙的直接原因）",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Cleveland Clinic — Biliary Dyskinesia"
+    },
+    {
+     "factor": "糖尿病（僅為可能相關因子，特定高風險族群仍未明確）",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Cleveland Clinic — Biliary Dyskinesia"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Obesity (a possible association, not an established direct cause of biliary dyskinesia)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Cleveland Clinic — Biliary Dyskinesia"
+    },
+    {
+     "factor": "Diabetes (a possible association; a specific high-risk population has not been established)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Cleveland Clinic — Biliary Dyskinesia"
+    }
+   ],
+   "red_flags_zh": [
+    {
+     "finding": "發燒（包括低燒）、畏寒或黃疸（皮膚或眼白發黃）",
+     "urgency_level": "urgent",
+     "recommended_action": "立即接受醫療評估；若全身狀況惡化、意識改變或疼痛劇烈，啟動急診服務",
+     "rationale": "這些表現提示感染、持續膽道阻塞或肝胰併發症，不能歸為單純功能性疼痛",
+     "source": "NIDDK — Symptoms & Causes of Gallstones"
+    },
+    {
+     "finding": "上腹或右上腹痛持續數小時，或伴反覆嘔吐、茶色尿、灰白便",
+     "urgency_level": "urgent",
+     "recommended_action": "當日接受醫療評估以排除膽囊炎、膽管阻塞與胰臟炎",
+     "rationale": "功能性膽道疼痛與結石併發症的症狀可能重疊，持續症狀需要重新排除結構性疾病",
+     "source": "NIDDK — Symptoms & Causes of Gallstones"
+    },
+    {
+     "finding": "新出現胸痛、呼吸困難、昏厥或上腹痛合併大量出汗",
+     "urgency_level": "emergency",
+     "recommended_action": "立即啟動緊急醫療服務",
+     "rationale": "心肺急症可能以非典型上腹痛表現，不可先假定為膽囊功能障礙",
+     "source": "AcuTing OS safety differential; Cleveland Clinic — Biliary Dyskinesia diagnosis by exclusion"
+    }
+   ],
+   "red_flags_en": [
+    {
+     "finding": "Fever, including low-grade fever, chills, or jaundice of the skin or whites of the eyes",
+     "urgency_level": "urgent",
+     "recommended_action": "Obtain immediate medical assessment; activate emergency services if systemic condition worsens, consciousness changes, or pain is severe",
+     "rationale": "These findings may signal infection, persistent biliary obstruction, or a hepatopancreatic complication and must not be classified as uncomplicated functional pain",
+     "source": "NIDDK — Symptoms & Causes of Gallstones"
+    },
+    {
+     "finding": "Upper or right-upper abdominal pain lasting several hours, or pain with repeated vomiting, tea-colored urine, or pale stools",
+     "urgency_level": "urgent",
+     "recommended_action": "Obtain same-day medical assessment to exclude cholecystitis, bile-duct obstruction, and pancreatitis",
+     "rationale": "Functional biliary pain can overlap symptomatically with stone complications, and persistent symptoms require renewed exclusion of structural disease",
+     "source": "NIDDK — Symptoms & Causes of Gallstones"
+    },
+    {
+     "finding": "New chest pain, breathing difficulty, fainting, or upper abdominal pain with profuse sweating",
+     "urgency_level": "emergency",
+     "recommended_action": "Activate emergency medical services immediately",
+     "rationale": "Cardiopulmonary emergencies can present as atypical upper abdominal pain and must not first be attributed to gallbladder dysfunction",
+     "source": "AcuTing OS safety differential; Cleveland Clinic — Biliary Dyskinesia diagnosis by exclusion"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "僅在結石、感染、阻塞、肝胰疾病及其他急腹症已由醫療團隊排除，且診斷與處置計畫已確立後，可依個別證候考慮疼痛、噁心或消化不適的輔助照護",
+    "precautions": "發燒、黃疸、持續劇痛、反覆嘔吐或全身狀況惡化先走急症評估；不得以穴位壓痛、針後反應或症狀短暫緩解替代超音波、實驗室檢查或 HIDA 評估",
+    "co_management": "應與基層醫療、胃腸肝膽科及外科共同管理；不建議自行取消檢查、延後手術評估或改動處方藥",
+    "evidence": "unknown",
+    "note": "本欄只界定安全與共同照護範圍，不宣稱針灸可恢復膽囊射出功能、解除膽道阻塞或取代手術"
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "Only after the medical team has excluded stones, infection, obstruction, hepatopancreatic disease, and another acute abdomen, and after a diagnosis and management plan are established, may adjunctive care for pain, nausea, or digestive discomfort be considered according to the individual pattern",
+    "precautions": "Fever, jaundice, persistent severe pain, repeated vomiting, or systemic deterioration requires urgent assessment first. Point tenderness, response to needling, or temporary symptom relief must not replace ultrasound, laboratory testing, or HIDA assessment",
+    "co_management": "Co-manage with primary care, gastroenterology or hepatobiliary services, and surgery; do not advise canceling investigations, delaying surgical assessment, or changing prescribed medicines",
+    "evidence": "unknown",
+    "note": "This field defines safety and co-management boundaries and does not claim that acupuncture restores gallbladder ejection, relieves biliary obstruction, or replaces surgery"
+   },
+   "red_flag_refs": [
+    "rf.gallbladder_dysfunction.jaundice_fever_chills"
+   ],
+   "sign_symptom_ids": [
+    "sym.abdominal_pain",
+    "sym.nausea",
+    "sym.vomiting",
+    "sym.abdominal_bloating",
+    "sym.jaundice"
    ]
   },
   {
@@ -27253,8 +27400,183 @@
     ],
     "western_pathology_en": [
      "ERAS 學會 — 術後腸麻痺與加速康復通說"
+    ],
+    "summary_zh": [
+     "MedlinePlus — Intestinal obstruction and Ileus",
+     "Cambridge University Hospitals NHS — Colorectal enhanced recovery programme"
+    ],
+    "summary_en": [
+     "MedlinePlus — Intestinal obstruction and Ileus",
+     "Cambridge University Hospitals NHS — Colorectal enhanced recovery programme"
+    ],
+    "western_context_zh": [
+     "MedlinePlus — Intestinal obstruction and Ileus",
+     "Gloucestershire Hospitals NHS — Anterior resection",
+     "NIDDK — Abdominal Adhesions"
+    ],
+    "western_context_en": [
+     "MedlinePlus — Intestinal obstruction and Ileus",
+     "Gloucestershire Hospitals NHS — Anterior resection",
+     "NIDDK — Abdominal Adhesions"
+    ],
+    "risk_factors_zh": [
+     "MedlinePlus — Intestinal obstruction and Ileus"
+    ],
+    "risk_factors_en": [
+     "MedlinePlus — Intestinal obstruction and Ileus"
+    ],
+    "red_flags_zh": [
+     "MedlinePlus — Intestinal obstruction and Ileus",
+     "MedlinePlus — Intestinal Obstruction",
+     "NIDDK — Abdominal Adhesions",
+     "data/pathology/red_flag_registry.json"
+    ],
+    "red_flags_en": [
+     "MedlinePlus — Intestinal obstruction and Ileus",
+     "MedlinePlus — Intestinal Obstruction",
+     "NIDDK — Abdominal Adhesions",
+     "data/pathology/red_flag_registry.json"
+    ],
+    "acupuncture_scope_zh": [
+     "AcuTing OS safety and scope policy; surgical-team clearance boundary"
+    ],
+    "acupuncture_scope_en": [
+     "AcuTing OS safety and scope policy; surgical-team clearance boundary"
     ]
-   }
+   },
+   "sources": [
+    "https://medlineplus.gov/ency/article/000260.htm",
+    "https://medlineplus.gov/intestinalobstruction.html",
+    "https://www.niddk.nih.gov/health-information/digestive-diseases/abdominal-adhesions",
+    "https://www.cuh.nhs.uk/patient-information/colorectal-enhanced-recovery-programme/",
+    "https://www.gloshospitals.nhs.uk/your-visit/patient-information-leaflets/anterior-resection/"
+   ],
+   "summary_zh": "術後腸麻痺是手術後腸道蠕動暫時停止或明顯變慢、但沒有結構性堵塞的狀態，可造成腹脹、腹痛、噁心、嘔吐、便秘及無法排氣。它必須與術後沾黏、疝氣、扭轉或其他機械性腸阻塞及腹腔感染區分。",
+   "summary_en": "Postoperative ileus is a temporary arrest or marked slowing of intestinal motility after surgery without a structural blockage. It may cause abdominal distension, pain, nausea, vomiting, constipation, and inability to pass gas. It must be distinguished from postoperative adhesions, hernia, volvulus, another mechanical bowel obstruction, and intra-abdominal infection.",
+   "western_context_zh": "診斷與恢復進度由手術團隊依手術種類、腹部檢查、排氣排便、進食耐受、實驗室與必要影像綜合判斷；影像的重點之一是排除機械性阻塞。處理可能包括調整口服攝取、靜脈補液、止吐、胃管減壓、矯正電解質與檢視鴉片類藥物，是否需要手術取決於病因及缺血、穿孔或持續阻塞證據。患者不應自行進食、服瀉藥或停用止痛藥來測試腸道是否恢復。",
+   "western_context_en": "The surgical team judges diagnosis and recovery from the operation type, abdominal examination, passage of flatus and stool, oral tolerance, laboratory results, and imaging when needed; an important role of imaging is to exclude mechanical obstruction. Management may include adjusting oral intake, intravenous fluids, antiemetics, nasogastric decompression, electrolyte correction, and review of opioid medicines. Surgery depends on the cause and evidence of ischemia, perforation, or persistent obstruction. Patients should not test recovery by independently eating, taking laxatives, or stopping analgesics.",
+   "risk_factors_zh": [
+    {
+     "factor": "腹部手術與腸道操作",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "MedlinePlus — Intestinal obstruction and Ileus"
+    },
+    {
+     "factor": "鴉片類止痛藥或其他會減慢腸蠕動的藥物",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "MedlinePlus — Intestinal obstruction and Ileus"
+    },
+    {
+     "factor": "電解質或礦物質失衡",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "MedlinePlus — Intestinal obstruction and Ileus"
+    },
+    {
+     "factor": "腹腔感染或腸道血流降低",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "MedlinePlus — Intestinal obstruction and Ileus"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Abdominal surgery and bowel manipulation",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "MedlinePlus — Intestinal obstruction and Ileus"
+    },
+    {
+     "factor": "Opioid analgesics or other medicines that slow bowel motility",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "MedlinePlus — Intestinal obstruction and Ileus"
+    },
+    {
+     "factor": "Electrolyte or mineral imbalance",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "MedlinePlus — Intestinal obstruction and Ileus"
+    },
+    {
+     "factor": "Intra-abdominal infection or reduced intestinal blood flow",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "MedlinePlus — Intestinal obstruction and Ileus"
+    }
+   ],
+   "red_flags_zh": [
+    {
+     "finding": "無法排便或排氣、腹部持續膨脹，或持續嘔吐",
+     "urgency_level": "urgent",
+     "recommended_action": "立即聯絡手術團隊或接受急症評估",
+     "rationale": "這可能是持續腸麻痺或完全性機械阻塞；完全性腸阻塞屬醫療急症",
+     "source": "MedlinePlus — Intestinal obstruction and Ileus; Intestinal Obstruction"
+    },
+    {
+     "finding": "腹痛持續或加劇、出現腹部壓痛或僵硬、發燒、心跳加快或全身狀況惡化",
+     "urgency_level": "emergency",
+     "recommended_action": "立即啟動急診／手術評估",
+     "rationale": "需排除腸缺血、壞死、穿孔、腹膜炎或腹腔感染",
+     "source": "MedlinePlus — Intestinal obstruction and Ileus; NIDDK — Abdominal Adhesions"
+    },
+    {
+     "finding": "嘔吐物帶血或咖啡渣樣、呼吸困難、昏厥或意識改變",
+     "urgency_level": "emergency",
+     "recommended_action": "立即啟動緊急醫療服務",
+     "rationale": "可能存在消化道出血、吸入、休克或其他術後危急併發症",
+     "source": "AcuTing OS postoperative safety differential; MedlinePlus obstruction complications"
+    }
+   ],
+   "red_flags_en": [
+    {
+     "finding": "Inability to pass stool or gas, persistent abdominal swelling, or continued vomiting",
+     "urgency_level": "urgent",
+     "recommended_action": "Contact the surgical team immediately or obtain emergency assessment",
+     "rationale": "This may be persistent ileus or complete mechanical obstruction; complete bowel obstruction is a medical emergency",
+     "source": "MedlinePlus — Intestinal obstruction and Ileus; Intestinal Obstruction"
+    },
+    {
+     "finding": "Persistent or worsening abdominal pain, abdominal tenderness or rigidity, fever, rapid heart rate, or systemic deterioration",
+     "urgency_level": "emergency",
+     "recommended_action": "Activate emergency and surgical assessment immediately",
+     "rationale": "Intestinal ischemia, tissue death, perforation, peritonitis, or intra-abdominal infection must be excluded",
+     "source": "MedlinePlus — Intestinal obstruction and Ileus; NIDDK — Abdominal Adhesions"
+    },
+    {
+     "finding": "Blood or coffee-ground material in vomit, breathing difficulty, fainting, or altered consciousness",
+     "urgency_level": "emergency",
+     "recommended_action": "Activate emergency medical services immediately",
+     "rationale": "Gastrointestinal bleeding, aspiration, shock, or another critical postoperative complication is possible",
+     "source": "AcuTing OS postoperative safety differential; MedlinePlus obstruction complications"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "僅在手術團隊已確認病因、機械性阻塞與腹腔併發症已排除，且明確同意輔助照護時，才可依個別證候考慮術後症狀支持",
+    "precautions": "住院急性期、持續嘔吐、無法排氣排便、腹部膨脹、發燒或疼痛惡化均先由手術團隊處理；不得在手術區域、傷口、引流管或造口附近自行操作",
+    "co_management": "所有介入均須配合外科的飲食、補液、活動、胃管、止痛與藥物計畫；不建議自行加瀉藥、停鴉片類藥物、移除管路或提前進食",
+    "evidence": "unknown",
+    "note": "本欄只界定安全與術後共同照護範圍，不宣稱針灸可排除機械性阻塞、取代減壓或加速腸道恢復"
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "Adjunctive postoperative symptom support may be considered according to the individual pattern only when the surgical team has established the cause, excluded mechanical obstruction and intra-abdominal complications, and explicitly cleared adjunctive care",
+    "precautions": "The surgical team manages the acute inpatient phase, persistent vomiting, absent stool or gas, abdominal distension, fever, or worsening pain first. Do not independently treat near the operative field, wound, drains, or stoma",
+    "co_management": "All intervention must follow the surgical plan for diet, fluids, mobilization, nasogastric tubes, analgesia, and medicines. Do not advise independent laxatives, opioid cessation, tube removal, or early feeding",
+    "evidence": "unknown",
+    "note": "This field defines safety and postoperative co-management boundaries and does not claim that acupuncture excludes mechanical obstruction, replaces decompression, or accelerates bowel recovery"
+   },
+   "red_flag_refs": [
+    "rf.post_op_ileus.cannot_pass_stool_gas_swollen_abdomen"
+   ],
+   "sign_symptom_ids": [
+    "sym.abdominal_bloating",
+    "sym.abdominal_pain",
+    "sym.constipation",
+    "sym.nausea",
+    "sym.vomiting"
+   ]
   },
   {
    "id": "cond.food_sensitivity",
@@ -41857,7 +42179,12 @@
    "entity_type": "biomedical_condition",
    "sources": [
     "https://cloudtcm.com/disease/tcm/13850",
-    "https://medlineplus.gov/migraine.html"
+    "https://medlineplus.gov/migraine.html",
+    "https://www.hopkinsmedicine.org/health/conditions-and-diseases/vestibular-migraine",
+    "https://www.hopkinsmedicine.org/neurology-neurosurgery/specialty-areas/vestibular/dizzy-now",
+    "https://www.uhs.nhs.uk/Media/UHS-website-2019/Patientinformation/Audiology/Vestibular-migraine-2564-PIL.pdf",
+    "https://www.merseycare.nhs.uk/patient-leaflets/vestibular-migraines?back=2455&file=3810",
+    "https://medlineplus.gov/ency/article/000709.htm"
    ],
    "import_artifacts": [
     {
@@ -41890,6 +42217,52 @@
     "western_pathology_en": [
      "Bárány 學會/ICHD — 前庭性偏頭痛診斷要件通說",
      "MedlinePlus — Migraine (https://medlineplus.gov/migraine.html)"
+    ],
+    "summary_zh": [
+     "Johns Hopkins Medicine — Vestibular Migraine",
+     "University Hospital Southampton NHS — Vestibular Migraine",
+     "Mersey Care NHS — Vestibular Migraines"
+    ],
+    "summary_en": [
+     "Johns Hopkins Medicine — Vestibular Migraine",
+     "University Hospital Southampton NHS — Vestibular Migraine",
+     "Mersey Care NHS — Vestibular Migraines"
+    ],
+    "western_context_zh": [
+     "Johns Hopkins Medicine — Vestibular Migraine",
+     "Mersey Care NHS — Vestibular Migraines",
+     "Johns Hopkins Medicine — If You Are Experiencing Dizziness"
+    ],
+    "western_context_en": [
+     "Johns Hopkins Medicine — Vestibular Migraine",
+     "Mersey Care NHS — Vestibular Migraines",
+     "Johns Hopkins Medicine — If You Are Experiencing Dizziness"
+    ],
+    "risk_factors_zh": [
+     "Johns Hopkins Medicine — Vestibular Migraine",
+     "University Hospital Southampton NHS — Vestibular Migraine"
+    ],
+    "risk_factors_en": [
+     "Johns Hopkins Medicine — Vestibular Migraine",
+     "University Hospital Southampton NHS — Vestibular Migraine"
+    ],
+    "red_flags_zh": [
+     "MedlinePlus — Migraine",
+     "Johns Hopkins Medicine — If You Are Experiencing Dizziness",
+     "Johns Hopkins Medicine — Vestibular Migraine",
+     "data/pathology/red_flag_registry.json"
+    ],
+    "red_flags_en": [
+     "MedlinePlus — Migraine",
+     "Johns Hopkins Medicine — If You Are Experiencing Dizziness",
+     "Johns Hopkins Medicine — Vestibular Migraine",
+     "data/pathology/red_flag_registry.json"
+    ],
+    "acupuncture_scope_zh": [
+     "AcuTing OS safety and scope policy; Johns Hopkins stroke differential boundary"
+    ],
+    "acupuncture_scope_en": [
+     "AcuTing OS safety and scope policy; Johns Hopkins stroke differential boundary"
     ]
    },
    "acupoint_code_normalization": {
@@ -42040,7 +42413,147 @@
     "assessed": false,
     "no_source_found": false
    },
-   "etiology_en": ""
+   "etiology_en": "",
+   "summary_zh": "前庭性偏頭痛是一種以反覆眩暈、頭暈、失衡或動作敏感為主的偏頭痛相關疾病，可伴噁心、嘔吐、畏光、畏聲、視覺先兆或偏頭痛性頭痛，也可能在發作時完全沒有頭痛。診斷依發作病史與偏頭痛特徵綜合判斷，並排除良性陣發性位置性眩暈、梅尼爾氏症、短暫性腦缺血與中風等原因。",
+   "summary_en": "Vestibular migraine is a migraine-related disorder characterized mainly by recurrent vertigo, dizziness, imbalance, or motion sensitivity. Episodes may include nausea, vomiting, light or sound sensitivity, visual aura, or migraine-type headache, but headache may be entirely absent during an attack. Diagnosis integrates the episode history and migraine features while excluding causes such as BPPV, Ménière disease, transient ischemic attack, and stroke.",
+   "western_context_zh": "前庭性偏頭痛沒有單一確診檢驗；醫師依反覆前庭症狀、現在或過去的偏頭痛史及發作伴隨特徵作臨床診斷，並按病況安排神經學、耳科、聽力、前庭或影像評估以排除其他疾病。明顯或進行性聽力下降較支持內耳疾病，首次或型態突變的眩暈需先排除 TIA／中風。處理沿偏頭痛路徑，包括規律睡眠與進食、辨識個人誘因、運動與壓力管理，以及由醫師依發作頻率、嚴重度、共病與妊娠可能性選擇急性或預防性藥物；不宜長期自行使用前庭抑制藥。",
+   "western_context_en": "There is no single confirmatory test for vestibular migraine. Clinicians diagnose it from recurrent vestibular symptoms, current or past migraine history, and accompanying attack features, using neurologic, otologic, hearing, vestibular, or imaging assessment as appropriate to exclude other disorders. Significant or progressive hearing loss favors an inner-ear disorder, while a first or changed vertigo pattern requires assessment for TIA or stroke. Management follows a migraine pathway: regular sleep and meals, identification of individual triggers, exercise and stress management, and clinician-selected acute or preventive medicines based on attack frequency, severity, comorbidity, and pregnancy considerations. Long-term unsupervised vestibular-suppressant use is not appropriate.",
+   "risk_factors_zh": [
+    {
+     "factor": "現在或既往偏頭痛病史及家族性偏頭痛傾向",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Johns Hopkins Medicine — Vestibular Migraine"
+    },
+    {
+     "factor": "自幼動暈或明顯動作敏感",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Johns Hopkins Medicine — Vestibular Migraine"
+    },
+    {
+     "factor": "女性及月經週期相關的荷爾蒙變化",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Johns Hopkins Medicine — Vestibular Migraine; University Hospital Southampton NHS — Vestibular Migraine"
+    },
+    {
+     "factor": "睡眠不規律、漏餐、脫水或壓力可誘發易感者的發作，但不是疾病的確定病因",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Johns Hopkins Medicine — Vestibular Migraine; University Hospital Southampton NHS — Vestibular Migraine"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Current or previous migraine and a familial migraine tendency",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Johns Hopkins Medicine — Vestibular Migraine"
+    },
+    {
+     "factor": "Motion sickness or marked motion sensitivity since childhood",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Johns Hopkins Medicine — Vestibular Migraine"
+    },
+    {
+     "factor": "Female sex and menstrual-cycle-related hormonal change",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Johns Hopkins Medicine — Vestibular Migraine; University Hospital Southampton NHS — Vestibular Migraine"
+    },
+    {
+     "factor": "Irregular sleep, missed meals, dehydration, or stress can trigger episodes in a susceptible person but are not established causes of the disorder",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Johns Hopkins Medicine — Vestibular Migraine; University Hospital Southampton NHS — Vestibular Migraine"
+    }
+   ],
+   "red_flags_zh": [
+    {
+     "finding": "突發人生中最嚴重的頭痛，或頭痛在數秒至數分鐘內達高峰",
+     "urgency_level": "emergency",
+     "recommended_action": "立即啟動緊急醫療服務",
+     "rationale": "需排除蛛網膜下腔出血、腦血管事件或其他危急的繼發性頭痛",
+     "source": "MedlinePlus — Migraine; data/pathology/red_flag_registry.json"
+    },
+    {
+     "finding": "新發眩暈伴臉或肢體無力／麻木、說話含糊、複視、明顯步態不穩、無法站立或意識改變",
+     "urgency_level": "emergency",
+     "recommended_action": "立即啟動中風急救路徑",
+     "rationale": "後循環中風可與前庭性偏頭痛或內耳眩暈相似，不能靠症狀自行排除",
+     "source": "Johns Hopkins Medicine — If You Are Experiencing Dizziness"
+    },
+    {
+     "finding": "第一次發生持續數小時至數日的劇烈眩暈，伴反覆嘔吐或難以行走，即使沒有明顯神經症狀",
+     "urgency_level": "urgent",
+     "recommended_action": "立即接受急症評估，由具訓練的臨床人員檢查眼球運動與神經功能",
+     "rationale": "急性前庭症候群可能來自前庭神經炎，也可能是腦幹或小腦中風",
+     "source": "Johns Hopkins Medicine — If You Are Experiencing Dizziness"
+    },
+    {
+     "finding": "新出現或進行性單側聽力下降、耳部神經症狀，或眩暈型態與既往發作明顯不同",
+     "urgency_level": "urgent",
+     "recommended_action": "儘快安排耳鼻喉／神經科與聽力評估",
+     "rationale": "明顯聽力下降提示梅尼爾氏症或其他內耳疾病，型態改變亦需重新排除其他原因",
+     "source": "Johns Hopkins Medicine — Vestibular Migraine"
+    }
+   ],
+   "red_flags_en": [
+    {
+     "finding": "A sudden worst headache of life, or a headache reaching peak intensity within seconds to minutes",
+     "urgency_level": "emergency",
+     "recommended_action": "Activate emergency medical services immediately",
+     "rationale": "Subarachnoid hemorrhage, a cerebrovascular event, or another dangerous secondary headache must be excluded",
+     "source": "MedlinePlus — Migraine; data/pathology/red_flag_registry.json"
+    },
+    {
+     "finding": "New vertigo with facial or limb weakness or numbness, slurred speech, double vision, marked gait instability, inability to stand, or altered consciousness",
+     "urgency_level": "emergency",
+     "recommended_action": "Activate the emergency stroke pathway immediately",
+     "rationale": "Posterior-circulation stroke can resemble vestibular migraine or an inner-ear disorder and cannot be excluded by self-assessment",
+     "source": "Johns Hopkins Medicine — If You Are Experiencing Dizziness"
+    },
+    {
+     "finding": "A first episode of severe vertigo persisting for hours to days with repeated vomiting or difficulty walking, even without obvious neurologic symptoms",
+     "urgency_level": "urgent",
+     "recommended_action": "Obtain immediate emergency assessment including eye-movement and neurologic examination by a trained clinician",
+     "rationale": "An acute vestibular syndrome may be vestibular neuritis but can also be a brainstem or cerebellar stroke",
+     "source": "Johns Hopkins Medicine — If You Are Experiencing Dizziness"
+    },
+    {
+     "finding": "New or progressive unilateral hearing loss, otologic neurologic symptoms, or a vertigo pattern clearly different from prior attacks",
+     "urgency_level": "urgent",
+     "recommended_action": "Arrange prompt otolaryngology, neurology, and hearing assessment",
+     "rationale": "Significant hearing loss suggests Ménière disease or another inner-ear disorder, and a changed pattern requires renewed exclusion of other causes",
+     "source": "Johns Hopkins Medicine — Vestibular Migraine"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "僅在診斷已由醫療專業人員建立、急性腦血管與內耳急症已排除，且標準偏頭痛管理未被延誤時，可依個別證候考慮頭痛、噁心或慢性眩暈相關的輔助照護",
+    "precautions": "首次、最嚴重、型態改變或伴神經缺損的眩暈／頭痛先走急症路徑；治療期間注意跌倒風險，未穩定前不自行駕駛",
+    "co_management": "與基層醫療、神經科、耳鼻喉／聽力或前庭復健共同管理；偏頭痛預防藥、急性期藥物或前庭抑制藥的任何變更均由原處方者評估",
+    "evidence": "unknown",
+    "note": "本欄只界定安全與共同照護範圍，不宣稱針灸可確診前庭性偏頭痛、排除中風或取代偏頭痛標準治療"
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "Only after a qualified clinician has established the diagnosis, acute cerebrovascular and inner-ear emergencies have been excluded, and standard migraine management is not delayed may adjunctive care for headache, nausea, or chronic dizziness be considered according to the individual pattern",
+    "precautions": "A first, worst, changed, or neurologically complicated vertigo or headache episode requires an emergency pathway first. Address fall risk during care and avoid independent driving while unstable",
+    "co_management": "Co-manage with primary care, neurology, otolaryngology or audiology, and vestibular rehabilitation as appropriate. Any change to migraine preventive, acute, or vestibular-suppressant medicines must be assessed by the prescriber",
+    "evidence": "unknown",
+    "note": "This field defines safety and co-management boundaries and does not claim that acupuncture diagnoses vestibular migraine, excludes stroke, or replaces standard migraine care"
+   },
+   "red_flag_refs": [
+    "rf.migraine_vestibular.worst_headache_of_life"
+   ],
+   "sign_symptom_ids": [
+    "sym.vertigo",
+    "sym.dizziness",
+    "sym.headache",
+    "sym.nausea",
+    "sym.vomiting"
+   ]
   },
   {
    "id": "cond.eczema",
