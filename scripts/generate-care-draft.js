@@ -32,20 +32,17 @@ const CareDraft = require(path.join(__dirname, "..", "js", "care-draft.js"));
 // missing/unparseable is silently skipped; resolveLabel() falls back to the
 // raw id. This generator must still work on a fresh checkout that has not
 // run build-data.js.
+//
+// 載入一律走 scripts/lib/load-knowledge.js。這裡曾用「單一賦值 + 裸 JSON RHS」
+// 的正則自己解發射格式——分片改用 Object.assign 合流後那個正則會靜默解掛
+// （catch → null → 標籤全部退化成 raw id 而 exit 0）。發射格式只准 build-data
+// 與 lib 兩處知道。
 // ---------------------------------------------------------------------------
-function loadGeneratedGlobalAssignment(relPath) {
-  try {
-    const raw = fs.readFileSync(path.join(__dirname, "..", relPath), "utf8");
-    const jsonText = raw.replace(/^[^=]*=\s*/, "").replace(/;\s*$/, "");
-    return JSON.parse(jsonText);
-  } catch (e) {
-    return null;
-  }
-}
+const { loadKnowledge, loadGeneratedGlobal } = require(path.join(__dirname, "lib", "load-knowledge.js"));
 
 function buildLabelIndex() {
-  const K = loadGeneratedGlobalAssignment(path.join("data", "generated", "knowledge_data.js"));
-  const points = loadGeneratedGlobalAssignment(path.join("data", "generated", "points_361.js"));
+  const K = loadKnowledge();
+  const points = loadGeneratedGlobal(path.join("data", "generated", "points_361.js"), "ACUTING_POINTS_361");
   return CareDraft.buildLabelIndexFromKnowledge(K, points);
 }
 
@@ -101,6 +98,16 @@ function runSelfTest() {
   console.log("=== generate-care-draft.js self-test ===");
   const labelIdx = buildLabelIndex();
   const metricDefs = loadOutcomeMetricDefs();
+
+  // 知識片載入偵測器（2026-08-24）。歷史事故：載入層 catch → null → 標籤全部
+  // 退化成 raw id 而 exit 0。「labelIdx.size > 0」抓不到這個——K=null 時
+  // points_361 仍貢獻 361 筆。所以逐片點名一個 id：這三條斷言失敗 = 不是
+  // loadKnowledge() 壞了就是這幾個 id 被改名（它們被 no-loss 棘輪守著，
+  // 後者機率極低）。不要為了讓 CI 綠而刪這幾行——它們是那次事故的偵測器。
+  assert(labelIdx.has("formula.gui_zhi_tang"), "labelIdx 缺 formula.gui_zhi_tang（rx 片）— loadKnowledge() 回 null 或該片缺席？");
+  assert(labelIdx.has("pattern.lung_qi_deficiency"), "labelIdx 缺 pattern.lung_qi_deficiency（pat 片）");
+  assert(labelIdx.has("drug.warfarin"), "labelIdx 缺 drug.warfarin（ref 片）");
+  console.log(`PASS: knowledge label index loaded (${labelIdx.size} ids incl. rx/pat/ref shard probes)`);
 
   const fixtureFile = path.join(__dirname, "..", "data", "clinical_cases", "sample_export_fixture.json");
   const cases = loadCasesFile(fixtureFile);

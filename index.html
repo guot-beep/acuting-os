@@ -1028,7 +1028,19 @@
       .boot-reload { background: none; border: none; padding: 0; color: var(--accent-dark, #515f3e); text-decoration: underline; cursor: pointer; font: inherit; }
     </style>
 <script defer src="data/generated/app_data.js"></script>
-    <script defer src="data/generated/knowledge_data.js"></script>
+    <!-- 知識庫六分片（P1 快取粒度分包）：Object.assign 合流到同一個
+         globalThis.ACUTING_KNOWLEDGE，片與片之間順序無關——但六片全部
+         必須排在 app.js 與 js/knowledge.js 之前：js/knowledge.js 在 IIFE
+         頂端一次性捕捉 const K，晚到的鍵它永遠看不到（缺片時各線 `|| []`
+         會把空 grid 吞成無聲空白；app.js 的 dataLoadGuard 靠 core 片的
+         __expected 清單抓缺片）。重排這個區塊前先讀 scripts/build-data.js
+         的 KNOWLEDGE_PARTS 註解。 -->
+    <script defer src="data/generated/knowledge_core.js"></script>
+    <script defer src="data/generated/knowledge_ref.js"></script>
+    <script defer src="data/generated/knowledge_rx.js"></script>
+    <script defer src="data/generated/knowledge_mm.js"></script>
+    <script defer src="data/generated/knowledge_dx.js"></script>
+    <script defer src="data/generated/knowledge_pat.js"></script>
     <script defer src="data/generated/cloudtcm_map.js"></script>
     <script defer src="data/generated/points_361.js"></script>
     <script defer src="data/tung/point_index.js"></script>
