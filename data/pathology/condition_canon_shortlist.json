@@ -64586,7 +64586,131 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "急性腸胃炎是腸胃道因病毒(如諾羅病毒、輪狀病毒)、細菌(沙門氏菌、曲狀桿菌、大腸桿菌等)或其毒素引發的急性發炎反應,主要表現為急性腹瀉、噁心嘔吐、腹部絞痛及可能伴隨發燒,多數為自限性疾病,病程通常在1週內緩解,幼童及老年人較易因脫水而出現嚴重併發症。",
+   "summary_en": "Acute gastroenteritis is acute inflammation of the gastrointestinal tract caused by viruses (e.g., norovirus, rotavirus), bacteria (Salmonella, Campylobacter, E. coli, etc.), or their toxins, presenting mainly with acute diarrhea, nausea and vomiting, crampy abdominal pain, and possible fever. It is usually self-limiting and resolves within about a week, though young children and older adults are at greater risk of severe complications from dehydration.",
+   "western_context_zh": "西醫處理以支持性治療為主,包括口服或靜脈補液矯正脫水、電解質補充及症狀緩解,多數病毒性腸胃炎不需抗生素;持續發燒、血便或懷疑特定致病菌(如志賀氏菌、困難梭菌)時才考慮糞便檢驗與針對性抗生素治療。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western management is mainly supportive — oral or intravenous rehydration to correct dehydration, electrolyte replacement, and symptom relief; most viral gastroenteritis does not require antibiotics. Stool testing and targeted antibiotic therapy are considered only with persistent fever, bloody stool, or suspicion of a specific pathogen (e.g., Shigella, C. difficile). Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "致病機轉依病原體不同而異:病毒(諾羅病毒、輪狀病毒)主要破壞小腸絨毛上皮細胞造成滲透性腹瀉;產毒性細菌(金黃色葡萄球菌、仙人掌桿菌、產毒性大腸桿菌)分泌腸毒素刺激腸道細胞分泌氯離子及水分造成分泌性腹瀉;侵襲性細菌(沙門氏菌、志賀氏菌、曲狀桿菌)則直接侵犯腸黏膜造成發炎性腹瀉,可見黏液血便。診斷主要依臨床病史(飲食暴露、群聚發病、腹瀉性狀)及理學檢查評估脫水程度,持續症狀、血便或免疫低下族群才需糞便培養、糞便病毒/毒素檢測等進一步檢查。",
+   "western_pathology_en": "The mechanism varies by pathogen: viruses (norovirus, rotavirus) mainly damage small-intestinal villous epithelium, producing osmotic diarrhea; toxin-producing bacteria (Staphylococcus aureus, Bacillus cereus, enterotoxigenic E. coli) secrete enterotoxins that stimulate intestinal cells to secrete chloride and water, causing secretory diarrhea; invasive bacteria (Salmonella, Shigella, Campylobacter) directly invade the intestinal mucosa, producing inflammatory diarrhea that can include mucus and blood. Diagnosis relies mainly on clinical history (dietary exposure, clustered cases, stool characteristics) and physical exam to assess dehydration severity; stool culture, viral panels, or toxin testing are reserved for persistent symptoms, bloody stool, or immunocompromised patients.",
+   "red_flags_zh": [
+    "嚴重脫水徵象(意識改變、皮膚彈性差、少尿或無尿、心搏過速合併低血壓)須立即靜脈輸液並轉急診",
+    "血便、持續腹瀉超過7天或劇烈局部腹痛合併反彈痛需警覺外科急腹症或發炎性腸道疾病,應排除而非單純視為腸胃炎",
+    "第一型糖尿病、免疫低下或近期抗生素使用後腹瀉需警覺困難梭菌感染等特殊病原體並優先送醫評估"
+   ],
+   "red_flags_en": [
+    "Signs of severe dehydration (altered consciousness, poor skin turgor, oliguria/anuria, tachycardia with hypotension) require immediate IV fluids and emergency referral",
+    "Bloody stool, diarrhea lasting more than 7 days, or severe focal abdominal pain with rebound tenderness raise concern for a surgical abdomen or inflammatory bowel disease and should not simply be attributed to gastroenteritis",
+    "Diarrhea in someone with type 1 diabetes, immunocompromise, or recent antibiotic use raises concern for a specific pathogen such as C. difficile and should prompt priority medical evaluation"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "生食或未煮熟食物暴露",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "PMC: Acute gastroenteritis in adults"
+    },
+    {
+     "factor": "近期出國旅遊(旅行者腹瀉)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "PMC: Acute gastroenteritis in adults"
+    },
+    {
+     "factor": "免疫低下狀態",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "PMC: Acute gastroenteritis in adults"
+    },
+    {
+     "factor": "團體聚餐或機構群聚環境(如托兒所、療養院)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI Bookshelf: Diarrhoea and Vomiting Caused by Gastroenteritis"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Exposure to raw or undercooked food",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "PMC: Acute gastroenteritis in adults"
+    },
+    {
+     "factor": "Recent travel abroad (traveler's diarrhea)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "PMC: Acute gastroenteritis in adults"
+    },
+    {
+     "factor": "Immunocompromised status",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "PMC: Acute gastroenteritis in adults"
+    },
+    {
+     "factor": "Communal dining or institutional settings (e.g., daycare, nursing home)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI Bookshelf: Diarrhoea and Vomiting Caused by Gastroenteritis"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "部分臨床觀察將針灸(如足三里)作為腸胃道症狀輔助緩解手段,但急性感染性腸胃炎的主要處置仍是補液及必要時抗生素",
+    "precautions": "脫水或休克徵象者針灸非適當處置,應優先轉診急診補液;腹部劇痛未排除外科急症前應避免施針",
+    "co_management": "若病人出現持續發燒、血便或脫水徵象,應建議立即就醫評估,不以針灸延誤必要的補液或病原學檢查",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "Some clinical observations describe acupuncture (e.g., ST36) as adjunctive symptom relief for GI symptoms, but the primary management of acute infectious gastroenteritis remains rehydration and, when indicated, antibiotics",
+    "precautions": "Acupuncture is not appropriate for patients with dehydration or shock signs — refer for emergency rehydration first; avoid needling until a surgical abdomen has been excluded in severe abdominal pain",
+    "co_management": "If the patient develops persistent fever, bloody stool, or signs of dehydration, advise immediate medical evaluation rather than delaying necessary rehydration or pathogen testing with acupuncture",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.ou_tu",
+    "tdis.xie_xie"
+   ],
+   "related_patterns": [
+    "pattern.damp_heat_spleen_stomach",
+    "pattern.cold_damp_encumbering_spleen"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "PMC: Acute gastroenteritis in adults (PMC12404423, retrieved 2026-08)"
+    ],
+    "summary_en": [
+     "PMC: Acute gastroenteritis in adults (PMC12404423, retrieved 2026-08)"
+    ],
+    "western_context_zh": [
+     "AAFP: Gastroenteritis in Children (aafp.org, retrieved 2026-08)"
+    ],
+    "western_context_en": [
+     "AAFP: Gastroenteritis in Children (aafp.org, retrieved 2026-08)"
+    ],
+    "western_pathology_zh": [
+     "PMC: Acute gastroenteritis in adults (PMC12404423, retrieved 2026-08)"
+    ],
+    "western_pathology_en": [
+     "PMC: Acute gastroenteritis in adults (PMC12404423, retrieved 2026-08)"
+    ],
+    "red_flags_zh": [
+     "NCBI Bookshelf: Diarrhoea and Vomiting Caused by Gastroenteritis, Assessing dehydration and shock (NBK63845, retrieved 2026-08)"
+    ],
+    "red_flags_en": [
+     "NCBI Bookshelf: Diarrhoea and Vomiting Caused by Gastroenteritis, Assessing dehydration and shock (NBK63845, retrieved 2026-08)"
+    ],
+    "risk_factors_zh": [
+     "PMC: Acute gastroenteritis in adults (PMC12404423, retrieved 2026-08)",
+     "NCBI Bookshelf: Diarrhoea and Vomiting Caused by Gastroenteritis (NBK63845, retrieved 2026-08)"
+    ],
+    "risk_factors_en": [
+     "PMC: Acute gastroenteritis in adults (PMC12404423, retrieved 2026-08)",
+     "NCBI Bookshelf: Diarrhoea and Vomiting Caused by Gastroenteritis (NBK63845, retrieved 2026-08)"
+    ]
+   }
   },
   {
    "id": "cond.h_pylori_infection",
@@ -64610,7 +64734,129 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "急性膽囊炎是膽囊因膽結石阻塞膽囊管(約90-95%病例)或少數因膽泥、缺血等因素(無結石性膽囊炎)引發的急性發炎反應,典型表現為持續性右上腹或上腹痛、發燒及Murphy氏徵陽性,好發於中年女性、肥胖及多產婦女(俗稱「4F」:female女性、forty四十歲、fertile多產、fat肥胖)。",
+   "summary_en": "Acute cholecystitis is acute inflammation of the gallbladder, most often caused by a gallstone obstructing the cystic duct (roughly 90-95% of cases), with a minority due to biliary sludge or ischemia (acalculous cholecystitis); it classically presents with persistent right-upper-quadrant or epigastric pain, fever, and a positive Murphy's sign, and is most common in middle-aged, obese, multiparous women (the classic \"4F\" profile: female, forty, fertile, fat).",
+   "western_context_zh": "西醫處理依東京指引(Tokyo Guidelines)分級嚴重度,以靜脈輸液、抗生素及止痛支持治療為基礎,早期(發病72小時內)腹腔鏡膽囊切除術為多數病人的標準處置,高手術風險或無法立即手術者可先行經皮膽囊造瘻引流。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western management grades severity using the Tokyo Guidelines, with intravenous fluids, antibiotics, and analgesia as supportive care; early laparoscopic cholecystectomy (within 72 hours of onset) is the standard approach for most patients, while those at high surgical risk or unfit for immediate surgery may first undergo percutaneous cholecystostomy drainage. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "膽結石阻塞膽囊管後,膽汁滯留使膽囊內壓上升,黏膜受膽鹽刺激及缺血損傷引發發炎反應,若持續阻塞可續發細菌感染(常見大腸桿菌、克雷伯氏菌)、膽囊壁壞死甚至穿孔。診斷依東京指引綜合局部發炎徵象(Murphy氏徵陽性、右上腹壓痛或腫塊)、全身發炎反應(發燒、白血球升高、CRP上升)及影像學證據(腹部超音波見膽囊壁增厚>4mm、膽囊周圍積液、結石嵌頓)三大類指標,超音波為第一線影像檢查,診斷不明確時輔以電腦斷層或肝膽核醫掃描(HIDA scan)。",
+   "western_pathology_en": "When a gallstone obstructs the cystic duct, retained bile raises intraluminal pressure and the mucosa is injured by bile salt irritation and ischemia, triggering an inflammatory response; persistent obstruction can lead to secondary bacterial infection (commonly E. coli, Klebsiella), gallbladder wall necrosis, or perforation. Diagnosis per the Tokyo Guidelines integrates local signs of inflammation (positive Murphy's sign, right-upper-quadrant tenderness or mass), systemic inflammatory response (fever, leukocytosis, elevated CRP), and imaging findings (ultrasound showing gallbladder wall thickening >4mm, pericholecystic fluid, or an impacted stone); ultrasound is the first-line imaging study, with CT or hepatobiliary scintigraphy (HIDA scan) used when the diagnosis remains unclear.",
+   "red_flags_zh": [
+    "持續右上腹痛合併意識改變、低血壓或少尿等器官功能障礙徵象屬東京指引第三級(重度)膽囊炎,需立即急診處理甚至加護病房照護",
+    "合併黃疸、發燒與右上腹痛三聯徵(Charcot's triad)需警覺急性膽管炎而非單純膽囊炎,屬急症",
+    "劇烈腹痛突然緩解後轉為全腹壓痛及反彈痛需警覺膽囊穿孔併發腹膜炎"
+   ],
+   "red_flags_en": [
+    "Persistent right-upper-quadrant pain with altered consciousness, hypotension, or oliguria indicates Tokyo Guidelines Grade III (severe) cholecystitis with organ dysfunction, requiring immediate emergency and possibly ICU care",
+    "Fever, jaundice, and right-upper-quadrant pain together (Charcot's triad) raise concern for acute cholangitis rather than simple cholecystitis, an emergency",
+    "Severe pain that suddenly eases and is followed by diffuse abdominal tenderness with rebound raises concern for gallbladder perforation and peritonitis"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "肥胖",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "PMC: New diagnostic criteria and severity assessment of acute cholecystitis in revised Tokyo guidelines"
+    },
+    {
+     "factor": "女性且多產",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "PMC: New diagnostic criteria and severity assessment of acute cholecystitis in revised Tokyo guidelines"
+    },
+    {
+     "factor": "快速減重或長期禁食(全靜脈營養)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "PMC: New diagnostic criteria and severity assessment of acute cholecystitis in revised Tokyo guidelines"
+    },
+    {
+     "factor": "糖尿病",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "PMC: New diagnostic criteria and severity assessment of acute cholecystitis in revised Tokyo guidelines"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Obesity",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "PMC: New diagnostic criteria and severity assessment of acute cholecystitis in revised Tokyo guidelines"
+    },
+    {
+     "factor": "Female sex and multiparity",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "PMC: New diagnostic criteria and severity assessment of acute cholecystitis in revised Tokyo guidelines"
+    },
+    {
+     "factor": "Rapid weight loss or prolonged fasting/total parenteral nutrition",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "PMC: New diagnostic criteria and severity assessment of acute cholecystitis in revised Tokyo guidelines"
+    },
+    {
+     "factor": "Diabetes",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "PMC: New diagnostic criteria and severity assessment of acute cholecystitis in revised Tokyo guidelines"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "無實證支持針灸可治療急性膽囊炎本身或取代抗生素、手術治療",
+    "precautions": "急性期腹部劇痛未排除膽囊穿孔、膽管炎等急症前不應施針,應優先轉診急診",
+    "co_management": "若病人正接受抗生素治療或安排膽囊切除術,應請病人與原消化科/外科醫師保持聯繫確認治療進度",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "No evidence supports acupuncture treating acute cholecystitis itself or substituting for antibiotics or surgery",
+    "precautions": "Acupuncture should not be performed for severe acute abdominal pain until gallbladder perforation, cholangitis, or other emergencies have been excluded — refer to emergency care first",
+    "co_management": "If the patient is on antibiotic therapy or scheduled for cholecystectomy, direct them to stay in contact with the treating gastroenterologist/surgeon to confirm treatment progress",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.xie_tong",
+    "tdis.huang_dan"
+   ],
+   "related_patterns": [
+    "pattern.liver_gallbladder_damp_heat",
+    "pattern.qi_stagnation_blood_stasis"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "PMC: New diagnostic criteria and severity assessment of acute cholecystitis in revised Tokyo guidelines (PMC3429769, retrieved 2026-08)"
+    ],
+    "summary_en": [
+     "PMC: New diagnostic criteria and severity assessment of acute cholecystitis in revised Tokyo guidelines (PMC3429769, retrieved 2026-08)"
+    ],
+    "western_context_zh": [
+     "Wiley: Tokyo Guidelines 2018: diagnostic criteria and severity grading of acute cholecystitis (onlinelibrary.wiley.com, retrieved 2026-08)"
+    ],
+    "western_context_en": [
+     "Wiley: Tokyo Guidelines 2018: diagnostic criteria and severity grading of acute cholecystitis (onlinelibrary.wiley.com, retrieved 2026-08)"
+    ],
+    "western_pathology_zh": [
+     "PMC: New diagnostic criteria and severity assessment of acute cholecystitis in revised Tokyo guidelines (PMC3429769, retrieved 2026-08)"
+    ],
+    "western_pathology_en": [
+     "PMC: New diagnostic criteria and severity assessment of acute cholecystitis in revised Tokyo guidelines (PMC3429769, retrieved 2026-08)"
+    ],
+    "red_flags_zh": [
+     "PMC: New diagnostic criteria and severity assessment of acute cholecystitis in revised Tokyo guidelines (PMC3429769, retrieved 2026-08); Charcot's triad/perforation: established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "red_flags_en": [
+     "PMC: New diagnostic criteria and severity assessment of acute cholecystitis in revised Tokyo guidelines (PMC3429769, retrieved 2026-08); Charcot's triad/perforation: established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "risk_factors_zh": [
+     "PMC: New diagnostic criteria and severity assessment of acute cholecystitis in revised Tokyo guidelines (PMC3429769, retrieved 2026-08)"
+    ],
+    "risk_factors_en": [
+     "PMC: New diagnostic criteria and severity assessment of acute cholecystitis in revised Tokyo guidelines (PMC3429769, retrieved 2026-08)"
+    ]
+   }
   },
   {
    "id": "cond.chronic_pancreatitis",
@@ -65045,7 +65291,120 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "肛裂是肛管內襯的鱗狀上皮縱向撕裂傷,最常見於肛管後正中線(約90%病例),典型表現為排便時劇烈撕裂樣疼痛及少量鮮紅色便血,多因排出過硬或過大的糞便撐裂肛管黏膜所致,依病程分為急性(通常4-6週內癒合)與慢性(超過6-8週未癒合,常合併前哨痔或肛乳頭肥大)。",
+   "summary_en": "An anal fissure is a longitudinal tear in the squamous lining of the anal canal, most often located in the posterior midline (roughly 90% of cases), presenting classically with sharp, tearing pain during defecation and a small amount of bright-red blood; it is usually caused by passage of a hard or large stool stretching the anal mucosa beyond its capacity, and is classified as acute (typically healing within 4-6 weeks) or chronic (unhealed beyond 6-8 weeks, often with an accompanying sentinel skin tag or hypertrophied anal papilla).",
+   "western_context_zh": "西醫處理以打破「疼痛-痙攣-缺血」惡性循環為核心,第一線採高纖飲食、軟便劑及溫水坐浴等保守治療,慢性肛裂加上外用硝酸甘油或鈣離子通道阻斷劑軟膏降低內括約肌張力,保守治療失敗者考慮肉毒桿菌素注射或外科側方內括約肌切開術。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western management centers on breaking the \"pain–spasm–ischemia\" cycle: first-line conservative care includes a high-fiber diet, stool softeners, and warm sitz baths; chronic fissures add topical nitroglycerin or calcium-channel-blocker ointment to reduce internal sphincter tone, with botulinum toxin injection or surgical lateral internal sphincterotomy considered when conservative treatment fails. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "病理機轉為一個自我延續的惡性循環:硬便撐裂肛管黏膜後,裸露的內括約肌反射性痙攣收縮,痙攣使肛管局部血流(尤其後正中線,此處血液供應本就相對薄弱)進一步減少,缺血又阻礙傷口癒合並加劇下次排便時的疼痛與撕裂,如此循環使急性撕裂傷轉為經久不癒的慢性肛裂。診斷主要依病史及肛門視診確認縱向撕裂位置,典型急性肛裂不需常規肛門指診或內視鏡;若裂傷位置非正中線、多發或伴隨明顯腫塊則需進一步檢查排除其他病因。",
+   "western_pathology_en": "The pathophysiology is a self-perpetuating cycle: a hard stool tears the anal mucosa, exposing the internal sphincter, which reflexively spasms; the spasm further reduces local blood flow (especially at the posterior midline, which is already relatively poorly perfused), and the resulting ischemia impairs wound healing and worsens pain and tearing at the next bowel movement — perpetuating an acute tear into a non-healing chronic fissure. Diagnosis relies mainly on history and anal inspection to confirm the longitudinal tear's location; a typical acute midline fissure does not require routine digital rectal exam or endoscopy, while an off-midline, multiple, or markedly indurated fissure warrants further workup to exclude other causes.",
+   "red_flags_zh": [
+    "裂傷位置不在肛管前後正中線、呈多發性或形狀不規則,需警覺發炎性腸道疾病(克隆氏症)、性傳染病或惡性腫瘤等非典型病因,應轉診大腸直腸外科",
+    "合併明顯體重減輕、排便習慣改變或大量出血需排除大腸直腸惡性病變",
+    "免疫低下病人(如HIV感染)出現非典型肛裂需考慮伺機性感染"
+   ],
+   "red_flags_en": [
+    "A fissure that is off the anterior/posterior midline, multiple, or irregularly shaped raises concern for an atypical cause such as Crohn's disease, a sexually transmitted infection, or malignancy, and warrants colorectal referral",
+    "Significant weight loss, a change in bowel habits, or heavy bleeding should prompt evaluation to exclude colorectal malignancy",
+    "An atypical fissure in an immunocompromised patient (e.g., HIV infection) should raise consideration of an opportunistic infection"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "慢性便秘或排便用力",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "AAFP: Chronic Anal Fissures"
+    },
+    {
+     "factor": "低纖維飲食",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "AAFP: Chronic Anal Fissures"
+    },
+    {
+     "factor": "慢性腹瀉",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Merck Manual Professional: Anal Fissure"
+    },
+    {
+     "factor": "經陰道分娩",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Merck Manual Professional: Anal Fissure"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Chronic constipation or straining at stool",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "AAFP: Chronic Anal Fissures"
+    },
+    {
+     "factor": "Low-fiber diet",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "AAFP: Chronic Anal Fissures"
+    },
+    {
+     "factor": "Chronic diarrhea",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Merck Manual Professional: Anal Fissure"
+    },
+    {
+     "factor": "Vaginal childbirth",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Merck Manual Professional: Anal Fissure"
+    }
+   ],
+   "related_eastern_diseases": [
+    "tdis.zhi_chuang"
+   ],
+   "related_patterns": [
+    "pattern.large_intestine_fluid_deficiency",
+    "pattern.heat_constipation"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "AAFP: Chronic Anal Fissures (aafp.org, retrieved 2026-08)",
+     "Johns Hopkins Medicine: Anal Fissures (hopkinsmedicine.org, retrieved 2026-08)"
+    ],
+    "summary_en": [
+     "AAFP: Chronic Anal Fissures (aafp.org, retrieved 2026-08)",
+     "Johns Hopkins Medicine: Anal Fissures (hopkinsmedicine.org, retrieved 2026-08)"
+    ],
+    "western_context_zh": [
+     "AAFP: Chronic Anal Fissures (aafp.org, retrieved 2026-08)"
+    ],
+    "western_context_en": [
+     "AAFP: Chronic Anal Fissures (aafp.org, retrieved 2026-08)"
+    ],
+    "western_pathology_zh": [
+     "AAFP: Chronic Anal Fissures (aafp.org, retrieved 2026-08)",
+     "Merck Manual Professional Edition: Anal Fissure (merckmanuals.com, retrieved 2026-08)"
+    ],
+    "western_pathology_en": [
+     "AAFP: Chronic Anal Fissures (aafp.org, retrieved 2026-08)",
+     "Merck Manual Professional Edition: Anal Fissure (merckmanuals.com, retrieved 2026-08)"
+    ],
+    "red_flags_zh": [
+     "AAFP: Chronic Anal Fissures (aafp.org, retrieved 2026-08)"
+    ],
+    "red_flags_en": [
+     "AAFP: Chronic Anal Fissures (aafp.org, retrieved 2026-08)"
+    ],
+    "risk_factors_zh": [
+     "AAFP: Chronic Anal Fissures (aafp.org, retrieved 2026-08)",
+     "Merck Manual Professional Edition: Anal Fissure (merckmanuals.com, retrieved 2026-08)"
+    ],
+    "risk_factors_en": [
+     "AAFP: Chronic Anal Fissures (aafp.org, retrieved 2026-08)",
+     "Merck Manual Professional Edition: Anal Fissure (merckmanuals.com, retrieved 2026-08)"
+    ]
+   }
   },
   {
    "id": "cond.celiac_disease",
@@ -65710,7 +66069,106 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "賁門失弛緩症(食道弛緩不能症)是一種原發性食道運動障礙疾病,因食道下括約肌(LES)無法正常放鬆合併食道體部蠕動消失,造成固體及液體食物吞嚥困難、食物逆流、胸骨後悶痛及體重減輕,好發於25至60歲成人,男女發生率相近。",
+   "summary_en": "Achalasia is a primary esophageal motility disorder caused by failure of the lower esophageal sphincter (LES) to relax normally, combined with loss of esophageal body peristalsis, resulting in dysphagia to both solids and liquids, regurgitation of undigested food, retrosternal chest discomfort, and weight loss; it typically presents between ages 25 and 60 and affects men and women at similar rates.",
+   "western_context_zh": "西醫處理依高解析度食道測壓(HRM)分型的三種亞型選擇治療策略,包括氣球擴張術、經口內視鏡肌肉切開術(POEM)或腹腔鏡Heller肌肉切開術,藥物(硝酸鹽類、鈣離子通道阻斷劑)僅作為手術禁忌者的過渡緩解;確診後需長期追蹤食道癌變風險。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western management selects a treatment strategy based on the achalasia subtype defined by high-resolution manometry (HRM) — options include pneumatic balloon dilation, peroral endoscopic myotomy (POEM), or laparoscopic Heller myotomy; medications (nitrates, calcium channel blockers) serve only as a bridge for patients who are poor surgical candidates. Long-term surveillance for esophageal cancer risk is recommended after diagnosis. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "其病理機轉為食道肌間神經叢(Auerbach's plexus)中抑制性神經元(分泌一氧化氮及血管活性腸肽的神經節細胞)退化消失,導致下食道括約肌吞嚥時無法放鬆,同時食道體部正常蠕動波喪失,可能與自體免疫反應攻擊肌間神經叢有關(部分病例與病毒感染或遺傳易感性相關)。診斷黃金標準為高解析度食道測壓,依芝加哥分類(Chicago Classification)分為第一型(食道體部無蠕動壓力)、第二型(食道全長同步加壓)及第三型(痙攣性早期收縮),食道鋇劑攝影可見典型「鳥嘴狀」食道下段狹窄,上消化道內視鏡則用於排除偽賁門失弛緩症(腫瘤浸潤造成的類似表現)。",
+   "western_pathology_en": "The underlying pathology is degeneration and loss of inhibitory neurons (nitric-oxide- and vasoactive-intestinal-peptide-secreting ganglion cells) in the esophageal myenteric plexus (Auerbach's plexus), preventing the lower esophageal sphincter from relaxing with swallowing while normal esophageal body peristalsis is also lost — thought to involve an autoimmune attack on the myenteric plexus, with some cases linked to prior viral infection or genetic susceptibility. High-resolution manometry is the diagnostic gold standard, classifying achalasia by the Chicago Classification into Type I (absent contractility), Type II (panesophageal pressurization), and Type III (spastic premature contractions); barium esophagography classically shows a \"bird's beak\" narrowing of the distal esophagus, and upper endoscopy is used to exclude pseudoachalasia (a similar presentation caused by tumor infiltration).",
+   "red_flags_zh": [
+    "快速進展的吞嚥困難合併明顯體重減輕,尤其年齡較大者,須警覺偽賁門失弛緩症(腫瘤浸潤賁門)而非原發性疾病,應優先安排上消化道內視鏡",
+    "合併嘔血、黑便或吞嚥時劇痛需排除食道穿孔或出血等急症",
+    "反覆嗆咳、夜間吸入性肺炎反覆發作需評估吸入性肺炎風險並考慮住院處理"
+   ],
+   "red_flags_en": [
+    "Rapidly progressive dysphagia with substantial weight loss, especially in older patients, raises concern for pseudoachalasia (tumor infiltration at the cardia) rather than primary achalasia and should prompt upper endoscopy first",
+    "Hematemesis, melena, or severe pain on swallowing should prompt evaluation for esophageal perforation or bleeding as an emergency",
+    "Recurrent choking or repeated nocturnal aspiration pneumonia warrants assessment of aspiration risk and consideration of hospitalization"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "年齡介於25-60歲",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "PMC: Achalasia: Insights into Diagnostic and Therapeutic Advances"
+    },
+    {
+     "factor": "家族史或遺傳易感性(少見)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "PMC: Achalasia: Insights into Diagnostic and Therapeutic Advances"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Age between 25 and 60",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "PMC: Achalasia: Insights into Diagnostic and Therapeutic Advances"
+    },
+    {
+     "factor": "Family history or genetic susceptibility (uncommon)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "PMC: Achalasia: Insights into Diagnostic and Therapeutic Advances"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "少數小型研究探討針灸對食道動力及症狀緩解的輔助效果,但證據強度不足以支持作為主要治療",
+    "precautions": "確診依賴食道測壓與內視鏡,針灸不能替代這些檢查;吞嚥困難合併體重減輕未經內視鏡排除惡性病灶前應避免以針灸延誤診斷",
+    "co_management": "若病人正評估或已安排氣球擴張術、POEM或Heller肌肉切開術,應請病人與原消化科/外科醫師保持聯繫確認治療時程",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "A small number of studies have explored acupuncture as an adjunct for esophageal motility and symptom relief, but the evidence is not strong enough to support it as primary treatment",
+    "precautions": "Diagnosis relies on esophageal manometry and endoscopy, which acupuncture cannot replace; dysphagia with weight loss should not be managed with acupuncture before endoscopy has excluded a malignant lesion",
+    "co_management": "If the patient is being evaluated for or has scheduled pneumatic dilation, POEM, or Heller myotomy, direct them to stay in contact with the treating gastroenterologist/surgeon to confirm the treatment timeline",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.ye_ge"
+   ],
+   "related_patterns": [
+    "pattern.qi_stagnation_blood_stasis",
+    "pattern.phlegm_qi_binding"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "PMC: Achalasia: Insights into Diagnostic and Therapeutic Advances for an Ancient Disease (PMC6363376, retrieved 2026-08)"
+    ],
+    "summary_en": [
+     "PMC: Achalasia: Insights into Diagnostic and Therapeutic Advances for an Ancient Disease (PMC6363376, retrieved 2026-08)"
+    ],
+    "western_context_zh": [
+     "PMC: Esophageal Achalasia: Diagnostic Evaluation (PMC9174137, retrieved 2026-08)"
+    ],
+    "western_context_en": [
+     "PMC: Esophageal Achalasia: Diagnostic Evaluation (PMC9174137, retrieved 2026-08)"
+    ],
+    "western_pathology_zh": [
+     "PMC: Chicago Classification of Esophageal Motility Disorders: Lessons Learned (PMC5519653, retrieved 2026-08)",
+     "PMC: Achalasia: Insights into Diagnostic and Therapeutic Advances (PMC6363376, retrieved 2026-08)"
+    ],
+    "western_pathology_en": [
+     "PMC: Chicago Classification of Esophageal Motility Disorders: Lessons Learned (PMC5519653, retrieved 2026-08)",
+     "PMC: Achalasia: Insights into Diagnostic and Therapeutic Advances (PMC6363376, retrieved 2026-08)"
+    ],
+    "red_flags_zh": [
+     "Annals of Esophagus: Achalasia subtypes are front and center of the Chicago classification (aoe.amegroups.org, retrieved 2026-08); rest: established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "red_flags_en": [
+     "Annals of Esophagus: Achalasia subtypes are front and center of the Chicago classification (aoe.amegroups.org, retrieved 2026-08); rest: established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "risk_factors_zh": [
+     "PMC: Achalasia: Insights into Diagnostic and Therapeutic Advances (PMC6363376, retrieved 2026-08)"
+    ],
+    "risk_factors_en": [
+     "PMC: Achalasia: Insights into Diagnostic and Therapeutic Advances (PMC6363376, retrieved 2026-08)"
+    ]
+   }
   },
   {
    "id": "cond.hiatal_hernia",
@@ -65734,7 +66192,133 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "大腸息肉是大腸黏膜表面異常增生突起的組織,依組織學可分為腺瘤性息肉(管狀、絨毛狀或管絨毛狀腺瘤)、鋸齒狀息肉(增生性息肉、無蒂鋸齒狀病灶)及發炎性或錯構瘤性息肉,其中腺瘤性及鋸齒狀息肉具有癌前病變潛力,約佔所有結腸息肉的八成,多數病人無症狀,常於大腸鏡篩檢時偶然發現。",
+   "summary_en": "A colonic polyp is an abnormal growth of tissue projecting from the colonic mucosa. Histologically these are classified as adenomatous polyps (tubular, villous, or tubulovillous adenoma), serrated polyps (hyperplastic polyps, sessile serrated lesions), or inflammatory/hamartomatous polyps; adenomatous and serrated polyps carry premalignant potential and together account for roughly 80% of all colon polyps. Most patients are asymptomatic, and polyps are commonly found incidentally during screening colonoscopy.",
+   "western_context_zh": "西醫處理以大腸鏡篩檢發現息肉後行內視鏡切除並送病理化驗為標準流程,依息肉大小、數目、組織學分類及切除完整性決定後續追蹤大腸鏡間隔(通常3-10年不等);具高風險家族史或遺傳性息肉症候群者需提前並更頻繁篩檢。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western management follows a standard pathway of endoscopic removal and pathological analysis when a polyp is found on screening colonoscopy; the interval for subsequent surveillance colonoscopy (typically ranging from 3 to 10 years) is determined by the polyp's size, number, histology, and completeness of removal. Patients with a high-risk family history or a hereditary polyposis syndrome require earlier and more frequent screening. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "大多數散發性大腸癌遵循「腺瘤-癌」演進途徑(adenoma-carcinoma sequence),正常大腸黏膜經APC基因突變等一連串遺傳事件依序演變為早期腺瘤、進展期腺瘤,最終部分演變為侵襲性腺癌,此過程通常歷時十年以上;鋸齒狀息肉則透過另一條分子途徑(BRAF突變、CpG島甲基化表型)進展為癌,進展速度可能較快。診斷以大腸鏡直接觀察並切除送病理組織學確認分型(管狀/絨毛狀腺瘤依絨毛成分比例及分化不良程度評估惡性風險),篩檢建議自45-50歲開始定期大腸鏡檢查,高風險族群提前介入。",
+   "western_pathology_en": "Most sporadic colorectal cancers follow the adenoma-carcinoma sequence: normal colonic mucosa progresses through a series of genetic events (including APC gene mutation) to an early adenoma, then an advanced adenoma, with a subset eventually progressing to invasive adenocarcinoma — a process that typically takes over a decade. Serrated polyps instead progress to cancer via a distinct molecular pathway (BRAF mutation, CpG island methylator phenotype), which may progress more quickly. Diagnosis is by direct colonoscopic visualization with polypectomy and pathological confirmation of subtype (tubular vs. villous adenoma, graded by villous component and degree of dysplasia to estimate malignant potential); average-risk screening is recommended starting at ages 45-50, with earlier screening for high-risk individuals.",
+   "red_flags_zh": [
+    "息肉合併持續性直腸出血、缺鐵性貧血或排便習慣改變,需優先評估是否已有惡性病變而非單純息肉",
+    "大型息肉(通常>2公分)、絨毛狀組織學或高度分化不良於切除後有較高殘留或復發風險,須依指引縮短追蹤間隔",
+    "息肉病人合併多發性息肉(數十至數百顆)或有明確家族史需評估遺傳性息肉症候群(如家族性腺瘤性息肉症FAP、Lynch症候群),並轉診遺傳諮詢"
+   ],
+   "red_flags_en": [
+    "Persistent rectal bleeding, iron-deficiency anemia, or a change in bowel habits accompanying a polyp should prompt priority evaluation for possible malignancy rather than being attributed to the polyp alone",
+    "A large polyp (generally >2cm), villous histology, or high-grade dysplasia on removal carries a higher risk of residual or recurrent disease and warrants a shortened surveillance interval per guidelines",
+    "Multiple polyps (dozens to hundreds) or a strong family history should prompt evaluation for a hereditary polyposis syndrome (e.g., familial adenomatous polyposis, Lynch syndrome) and referral for genetic counseling"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "年齡達45-50歲以上",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "PMC: Risk factors for synchronous high-risk polyps in patients with colorectal cancer"
+    },
+    {
+     "factor": "大腸直腸癌或進展期腺瘤家族史",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "PMC: Risk factors for synchronous high-risk polyps in patients with colorectal cancer"
+    },
+    {
+     "factor": "發炎性腸道疾病病史",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Medscape: Colonic Polyps"
+    },
+    {
+     "factor": "吸菸與肥胖",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "PMC: Risk Factors for High-Risk Adenoma on the First Lifetime Colonoscopy"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Age 45-50 or older",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "PMC: Risk factors for synchronous high-risk polyps in patients with colorectal cancer"
+    },
+    {
+     "factor": "Family history of colorectal cancer or advanced adenoma",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "PMC: Risk factors for synchronous high-risk polyps in patients with colorectal cancer"
+    },
+    {
+     "factor": "History of inflammatory bowel disease",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Medscape: Colonic Polyps"
+    },
+    {
+     "factor": "Smoking and obesity",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "PMC: Risk Factors for High-Risk Adenoma on the First Lifetime Colonoscopy"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "無證據支持針灸可使息肉縮小或消除,息肉的根本處置為大腸鏡切除",
+    "precautions": "息肉診斷及切除需仰賴大腸鏡,針灸不能替代篩檢或病理化驗",
+    "co_management": "若病人已切除息肉並安排後續追蹤大腸鏡,應鼓勵病人依原消化科醫囑完成追蹤排程",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "No evidence supports acupuncture shrinking or eliminating polyps; definitive management is colonoscopic removal",
+    "precautions": "Diagnosis and removal of polyps depend on colonoscopy, which acupuncture cannot replace",
+    "co_management": "If the patient has had a polyp removed and has follow-up colonoscopy scheduled, encourage them to complete the surveillance schedule per the treating gastroenterologist's guidance",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.ji_ju"
+   ],
+   "related_patterns": [
+    "pattern.phlegm_damp",
+    "pattern.qi_stagnation_blood_stasis",
+    "pattern.spleen_qi_deficiency"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "Medscape: Colonic Polyps — Background, Pathophysiology, Etiology (emedicine.medscape.com, retrieved 2026-08)",
+     "Cleveland Clinic: Colon Polyps — Different Types & Cancer Risk (my.clevelandclinic.org, retrieved 2026-08)"
+    ],
+    "summary_en": [
+     "Medscape: Colonic Polyps — Background, Pathophysiology, Etiology (emedicine.medscape.com, retrieved 2026-08)",
+     "Cleveland Clinic: Colon Polyps — Different Types & Cancer Risk (my.clevelandclinic.org, retrieved 2026-08)"
+    ],
+    "western_context_zh": [
+     "Cleveland Clinic: Colon Polyps — Different Types & Cancer Risk (my.clevelandclinic.org, retrieved 2026-08)"
+    ],
+    "western_context_en": [
+     "Cleveland Clinic: Colon Polyps — Different Types & Cancer Risk (my.clevelandclinic.org, retrieved 2026-08)"
+    ],
+    "western_pathology_zh": [
+     "Medscape: Colonic Polyps — Background, Pathophysiology, Etiology (emedicine.medscape.com, retrieved 2026-08)"
+    ],
+    "western_pathology_en": [
+     "Medscape: Colonic Polyps — Background, Pathophysiology, Etiology (emedicine.medscape.com, retrieved 2026-08)"
+    ],
+    "red_flags_zh": [
+     "Cleveland Clinic: Colon Polyps — Different Types & Cancer Risk (my.clevelandclinic.org, retrieved 2026-08); FAP/Lynch surveillance framing: established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "red_flags_en": [
+     "Cleveland Clinic: Colon Polyps — Different Types & Cancer Risk (my.clevelandclinic.org, retrieved 2026-08); FAP/Lynch surveillance framing: established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "risk_factors_zh": [
+     "PMC: Risk factors for synchronous high-risk polyps in patients with colorectal cancer (PMC11228258, retrieved 2026-08)",
+     "PMC: Risk Factors for High-Risk Adenoma on the First Lifetime Colonoscopy (PMC8494773, retrieved 2026-08)"
+    ],
+    "risk_factors_en": [
+     "PMC: Risk factors for synchronous high-risk polyps in patients with colorectal cancer (PMC11228258, retrieved 2026-08)",
+     "PMC: Risk Factors for High-Risk Adenoma on the First Lifetime Colonoscopy (PMC8494773, retrieved 2026-08)"
+    ]
+   }
   },
   {
    "id": "cond.ischemic_colitis",
@@ -65782,7 +66366,129 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "肛門瘻管是肛門或直腸內襯與肛周皮膚之間形成的異常管道,九成以上源於肛門腺體感染(隱窩腺體阻塞化膿形成肛周膿瘍),膿瘍引流後在原發開口(肛竇)與續發開口(肛周皮膚)之間留下未癒合的管道,表現為肛周反覆腫痛、流膿或血性分泌物,少數與克隆氏症等發炎性腸道疾病相關。",
+   "summary_en": "An anal fistula is an abnormal tract connecting the anal or rectal lining to the perianal skin. Over 90% arise from a cryptoglandular infection — an obstructed and suppurating anal gland forming a perianal abscess — and once the abscess drains, an unhealed tract persists between the internal (crypt) opening and the external (perianal skin) opening. It presents with recurrent perianal swelling, pain, and purulent or blood-tinged drainage; a minority are associated with inflammatory bowel disease, particularly Crohn's disease.",
+   "western_context_zh": "西醫處理需先以理學檢查、肛門超音波或磁振造影確認瘻管路徑及與括約肌的關係,治療以外科手術(瘻管切開術、掛線法、括約肌保留手術等)為主,術式選擇需權衡根治與肛門括約肌功能保留;疑似克隆氏症相關瘻管者需轉診腸胃科評估生物製劑治療。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western management first uses physical exam, endoanal ultrasound, or MRI to map the fistula tract and its relationship to the sphincter; treatment is primarily surgical (fistulotomy, seton placement, sphincter-sparing procedures), with the approach chosen to balance cure against preservation of sphincter function. Fistulas suspected to be Crohn's-related are referred to gastroenterology for evaluation of biologic therapy. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "肛門腺體開口於齒狀線的肛竇內,腺體阻塞後細菌滋生形成局部膿瘍,膿瘍可沿括約肌間隙、經括約肌或括約肌上/外等不同路徑擴散並穿破皮膚引流,留下連接原發開口與皮膚開口的上皮化管道即為瘻管;Goodsall's law可概略預測外開口與內開口的相對位置關係。克隆氏症相關瘻管則源於腸壁全層肉芽腫性發炎向外穿透形成,與隱窩腺體感染機轉不同,常呈現多發性、複雜性瘻管且傷口癒合不良。診斷以肛門指診、內視鏡評估直腸黏膜,搭配肛門超音波或骨盆磁振造影確認瘻管走向及分支,以利手術規劃。",
+   "western_pathology_en": "The anal glands open into the anal crypts at the dentate line; when a gland becomes obstructed, bacteria proliferate and form a local abscess, which can spread along inter-, trans-, supra-, or extrasphincteric planes and rupture through the skin to drain — leaving behind an epithelialized tract connecting the internal (crypt) opening to the external (skin) opening, i.e., the fistula. Goodsall's law offers a rough guide to the relationship between external and internal openings. Crohn's-related fistulas instead arise from transmural granulomatous inflammation penetrating outward — a different mechanism from cryptoglandular infection — and tend to be multiple, complex, and poorly healing. Diagnosis uses digital rectal exam, endoscopy to assess the rectal mucosa, and endoanal ultrasound or pelvic MRI to map the tract and any branches for surgical planning.",
+   "red_flags_zh": [
+    "合併直腸出血、排便習慣改變、黏液便、裡急後重或明顯體重減輕,尤其40歲以下病人,需警覺克隆氏症等發炎性腸道疾病,應轉診腸胃科評估",
+    "肛周反覆膿瘍發作超過兩次以上或瘻管複雜多發,需高度懷疑克隆氏症",
+    "合併發燒、肛周劇烈腫痛擴散迅速需警覺壞死性筋膜炎(Fournier's壞疽)等致命急症,應立即送急診"
+   ],
+   "red_flags_en": [
+    "Rectal bleeding, altered bowel habits, mucus discharge, tenesmus, or significant weight loss — especially in patients under 40 — raise concern for inflammatory bowel disease such as Crohn's disease and warrant gastroenterology referral",
+    "More than two prior perianal abscess episodes, or a complex/multiple fistula, should raise strong suspicion for Crohn's disease",
+    "Fever with rapidly spreading, severe perianal swelling and pain raises concern for a life-threatening emergency such as necrotizing fasciitis (Fournier's gangrene) and requires immediate emergency care"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "肛周膿瘍病史",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Anorectal Fistula"
+    },
+    {
+     "factor": "克隆氏症或發炎性腸道疾病",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "PMC: Crohn's Disease-Associated and Cryptoglandular Fistulas: Differences and Similarities"
+    },
+    {
+     "factor": "糖尿病",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "StatPearls: Anorectal Fistula"
+    },
+    {
+     "factor": "吸菸",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "StatPearls: Anorectal Fistula"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "History of perianal abscess",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Anorectal Fistula"
+    },
+    {
+     "factor": "Crohn's disease or inflammatory bowel disease",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "PMC: Crohn's Disease-Associated and Cryptoglandular Fistulas: Differences and Similarities"
+    },
+    {
+     "factor": "Diabetes",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "StatPearls: Anorectal Fistula"
+    },
+    {
+     "factor": "Smoking",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "StatPearls: Anorectal Fistula"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "無證據支持針灸可使瘻管自行癒合,瘻管的根本處置為外科手術",
+    "precautions": "肛周局部感染活動期或膿瘍未引流前不應於患部周圍施針,以免加重感染擴散",
+    "co_management": "若病人正等待手術或懷疑克隆氏症相關瘻管,應請病人與原大腸直腸外科/腸胃科醫師保持聯繫,不以針灸替代必要的手術評估",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "No evidence supports acupuncture causing a fistula to heal on its own; definitive management of a fistula is surgical",
+    "precautions": "Do not needle around the perianal area during active local infection or before an abscess has been drained, to avoid worsening the spread of infection",
+    "co_management": "If the patient is awaiting surgery or a Crohn's-related fistula is suspected, direct them to stay in contact with the treating colorectal surgeon/gastroenterologist — acupuncture should not substitute for necessary surgical evaluation",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_patterns": [
+    "pattern.large_intestine_damp_heat",
+    "pattern.qi_blood_deficiency"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "StatPearls: Anorectal Fistula (NCBI Bookshelf NBK560657, retrieved 2026-08)"
+    ],
+    "summary_en": [
+     "StatPearls: Anorectal Fistula (NCBI Bookshelf NBK560657, retrieved 2026-08)"
+    ],
+    "western_context_zh": [
+     "PMC: Management of Anal Fistula with Crohn's Disease (PMC11772789, retrieved 2026-08)"
+    ],
+    "western_context_en": [
+     "PMC: Management of Anal Fistula with Crohn's Disease (PMC11772789, retrieved 2026-08)"
+    ],
+    "western_pathology_zh": [
+     "StatPearls: Anorectal Fistula (NCBI Bookshelf NBK560657, retrieved 2026-08)",
+     "PMC: Crohn's Disease-Associated and Cryptoglandular Fistulas: Differences and Similarities (PMC9860571, retrieved 2026-08)"
+    ],
+    "western_pathology_en": [
+     "StatPearls: Anorectal Fistula (NCBI Bookshelf NBK560657, retrieved 2026-08)",
+     "PMC: Crohn's Disease-Associated and Cryptoglandular Fistulas: Differences and Similarities (PMC9860571, retrieved 2026-08)"
+    ],
+    "red_flags_zh": [
+     "Oxford Academic: Diagnosing Crohn's disease in presumed cryptoglandular perianal fistulas — PREFAB Delphi consensus (academic.oup.com, retrieved 2026-08); Fournier's gangrene: established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "red_flags_en": [
+     "Oxford Academic: Diagnosing Crohn's disease in presumed cryptoglandular perianal fistulas — PREFAB Delphi consensus (academic.oup.com, retrieved 2026-08); Fournier's gangrene: established biomedical knowledge, not source-verified — flag for Ting to source-check"
+    ],
+    "risk_factors_zh": [
+     "StatPearls: Anorectal Fistula (NCBI Bookshelf NBK560657, retrieved 2026-08)",
+     "PMC: Crohn's Disease-Associated and Cryptoglandular Fistulas: Differences and Similarities (PMC9860571, retrieved 2026-08)"
+    ],
+    "risk_factors_en": [
+     "StatPearls: Anorectal Fistula (NCBI Bookshelf NBK560657, retrieved 2026-08)",
+     "PMC: Crohn's Disease-Associated and Cryptoglandular Fistulas: Differences and Similarities (PMC9860571, retrieved 2026-08)"
+    ]
+   }
   },
   {
    "id": "cond.chronic_hepatitis_b",
