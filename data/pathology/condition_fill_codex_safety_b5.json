@@ -1,0 +1,99 @@
+{
+  "dataset": "Codex condition safety fill B5 — emergency-card field provenance",
+  "policy": "Audits four already-populated emergency cards against multiple official government or national-health sources. Adds direct source URLs and field-level provenance only; does not overwrite canonical medical content.",
+  "created": "2026-08-24",
+  "fills": {
+    "cond.acute_angle_closure_glaucoma": {
+      "sources": [
+        "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/glaucoma/types-glaucoma",
+        "https://medlineplus.gov/lab-tests/glaucoma-tests/",
+        "https://www.moorfields.nhs.uk/for-patients/information-hub/narrow-angles"
+      ],
+      "field_sources": {
+        "summary_zh": ["National Eye Institute — Types of Glaucoma", "MedlinePlus — Glaucoma Tests"],
+        "summary_en": ["National Eye Institute — Types of Glaucoma", "MedlinePlus — Glaucoma Tests"],
+        "western_context_zh": ["National Eye Institute — Types of Glaucoma", "MedlinePlus — Glaucoma Tests", "Moorfields Eye Hospital NHS — Narrow Angles"],
+        "western_context_en": ["National Eye Institute — Types of Glaucoma", "MedlinePlus — Glaucoma Tests", "Moorfields Eye Hospital NHS — Narrow Angles"],
+        "western_pathology_zh": ["National Eye Institute — Types of Glaucoma", "MedlinePlus — Glaucoma Tests"],
+        "western_pathology_en": ["National Eye Institute — Types of Glaucoma", "MedlinePlus — Glaucoma Tests"],
+        "etiology_zh": ["National Eye Institute — Types of Glaucoma", "Moorfields Eye Hospital NHS — Narrow Angles"],
+        "etiology_en": ["National Eye Institute — Types of Glaucoma", "Moorfields Eye Hospital NHS — Narrow Angles"],
+        "risk_factors_zh": ["National Eye Institute — Types of Glaucoma", "Moorfields Eye Hospital NHS — Narrow Angles"],
+        "risk_factors_en": ["National Eye Institute — Types of Glaucoma", "Moorfields Eye Hospital NHS — Narrow Angles"],
+        "red_flags_zh": ["National Eye Institute — Types of Glaucoma", "MedlinePlus — Glaucoma Tests"],
+        "red_flags_en": ["National Eye Institute — Types of Glaucoma", "MedlinePlus — Glaucoma Tests"],
+        "acupuncture_scope_zh": ["AcuTing OS emergency-referral policy; National Eye Institute emergency boundary"],
+        "acupuncture_scope_en": ["AcuTing OS emergency-referral policy; National Eye Institute emergency boundary"]
+      }
+    },
+    "cond.cauda_equina_syndrome": {
+      "sources": [
+        "https://www.nbt.nhs.uk/our-services/a-z-services/neurosurgery/neurosurgery-patient-information/same-day-emergency-clinic-sdec-cauda-equina-syndrome-sec",
+        "https://www.gloshospitals.nhs.uk/media/documents/GIRFT_CES_Guidelines_2023_EJRRVj5.pdf",
+        "https://www.somersetft.nhs.uk/trauma-and-orthopaedics/trauma-and-orthopaedics/spinal-surgery-service/cauda-equina-syndrome/"
+      ],
+      "field_sources": {
+        "summary_zh": ["North Bristol NHS — Cauda Equina Syndrome Emergency Clinic", "NHS GIRFT — National Suspected Cauda Equina Syndrome Pathway"],
+        "summary_en": ["North Bristol NHS — Cauda Equina Syndrome Emergency Clinic", "NHS GIRFT — National Suspected Cauda Equina Syndrome Pathway"],
+        "western_context_zh": ["North Bristol NHS — Cauda Equina Syndrome Emergency Clinic", "NHS GIRFT — National Suspected Cauda Equina Syndrome Pathway", "Somerset NHS — Cauda Equina Syndrome"],
+        "western_context_en": ["North Bristol NHS — Cauda Equina Syndrome Emergency Clinic", "NHS GIRFT — National Suspected Cauda Equina Syndrome Pathway", "Somerset NHS — Cauda Equina Syndrome"],
+        "western_pathology_zh": ["North Bristol NHS — Cauda Equina Syndrome Emergency Clinic", "NHS GIRFT — National Suspected Cauda Equina Syndrome Pathway"],
+        "western_pathology_en": ["North Bristol NHS — Cauda Equina Syndrome Emergency Clinic", "NHS GIRFT — National Suspected Cauda Equina Syndrome Pathway"],
+        "etiology_zh": ["North Bristol NHS — Cauda Equina Syndrome Emergency Clinic", "NHS GIRFT — National Suspected Cauda Equina Syndrome Pathway"],
+        "etiology_en": ["North Bristol NHS — Cauda Equina Syndrome Emergency Clinic", "NHS GIRFT — National Suspected Cauda Equina Syndrome Pathway"],
+        "risk_factors_zh": ["North Bristol NHS — Cauda Equina Syndrome Emergency Clinic", "NHS GIRFT — National Suspected Cauda Equina Syndrome Pathway"],
+        "risk_factors_en": ["North Bristol NHS — Cauda Equina Syndrome Emergency Clinic", "NHS GIRFT — National Suspected Cauda Equina Syndrome Pathway"],
+        "red_flags_zh": ["North Bristol NHS — Cauda Equina Syndrome Emergency Clinic", "NHS GIRFT — National Suspected Cauda Equina Syndrome Pathway", "Somerset NHS — Cauda Equina Syndrome"],
+        "red_flags_en": ["North Bristol NHS — Cauda Equina Syndrome Emergency Clinic", "NHS GIRFT — National Suspected Cauda Equina Syndrome Pathway", "Somerset NHS — Cauda Equina Syndrome"],
+        "acupuncture_scope_zh": ["AcuTing OS emergency-referral policy; NHS emergency MRI and surgical pathway"],
+        "acupuncture_scope_en": ["AcuTing OS emergency-referral policy; NHS emergency MRI and surgical pathway"]
+      }
+    },
+    "cond.guillain_barre_syndrome": {
+      "sources": [
+        "https://medlineplus.gov/guillainbarresyndrome.html",
+        "https://medlineplus.gov/ency/article/000684.htm",
+        "https://www.nhs.uk/conditions/guillain-barre-syndrome/"
+      ],
+      "field_sources": {
+        "summary_zh": ["NINDS — Guillain-Barré Syndrome", "MedlinePlus — Guillain-Barré Syndrome", "NHS — Guillain-Barré Syndrome"],
+        "summary_en": ["NINDS — Guillain-Barré Syndrome", "MedlinePlus — Guillain-Barré Syndrome", "NHS — Guillain-Barré Syndrome"],
+        "western_context_zh": ["NINDS — Guillain-Barré Syndrome", "MedlinePlus Medical Encyclopedia — Guillain-Barré Syndrome", "NHS — Guillain-Barré Syndrome"],
+        "western_context_en": ["NINDS — Guillain-Barré Syndrome", "MedlinePlus Medical Encyclopedia — Guillain-Barré Syndrome", "NHS — Guillain-Barré Syndrome"],
+        "western_pathology_zh": ["NINDS — Guillain-Barré Syndrome", "MedlinePlus — Guillain-Barré Syndrome"],
+        "western_pathology_en": ["NINDS — Guillain-Barré Syndrome", "MedlinePlus — Guillain-Barré Syndrome"],
+        "etiology_zh": ["NINDS — Guillain-Barré Syndrome", "MedlinePlus — Guillain-Barré Syndrome"],
+        "etiology_en": ["NINDS — Guillain-Barré Syndrome", "MedlinePlus — Guillain-Barré Syndrome"],
+        "risk_factors_zh": ["NINDS — Guillain-Barré Syndrome", "MedlinePlus — Guillain-Barré Syndrome"],
+        "risk_factors_en": ["NINDS — Guillain-Barré Syndrome", "MedlinePlus — Guillain-Barré Syndrome"],
+        "red_flags_zh": ["NINDS — Guillain-Barré Syndrome", "MedlinePlus Medical Encyclopedia — Guillain-Barré Syndrome", "NHS — Guillain-Barré Syndrome"],
+        "red_flags_en": ["NINDS — Guillain-Barré Syndrome", "MedlinePlus Medical Encyclopedia — Guillain-Barré Syndrome", "NHS — Guillain-Barré Syndrome"],
+        "acupuncture_scope_zh": ["AcuTing OS emergency and rehabilitation scope policy; NINDS acute-care boundary"],
+        "acupuncture_scope_en": ["AcuTing OS emergency and rehabilitation scope policy; NINDS acute-care boundary"]
+      }
+    },
+    "cond.myasthenia_gravis": {
+      "sources": [
+        "https://medlineplus.gov/myastheniagravis.html",
+        "https://medlineplus.gov/lab-tests/myasthenia-gravis-tests/",
+        "https://www.nhs.uk/conditions/myasthenia-gravis/symptoms/"
+      ],
+      "field_sources": {
+        "summary_zh": ["NINDS — Myasthenia Gravis", "MedlinePlus — Myasthenia Gravis"],
+        "summary_en": ["NINDS — Myasthenia Gravis", "MedlinePlus — Myasthenia Gravis"],
+        "western_context_zh": ["NINDS — Myasthenia Gravis", "MedlinePlus — Myasthenia Gravis", "NHS — Myasthenia Gravis Symptoms"],
+        "western_context_en": ["NINDS — Myasthenia Gravis", "MedlinePlus — Myasthenia Gravis", "NHS — Myasthenia Gravis Symptoms"],
+        "western_pathology_zh": ["NINDS — Myasthenia Gravis", "MedlinePlus — Myasthenia Gravis"],
+        "western_pathology_en": ["NINDS — Myasthenia Gravis", "MedlinePlus — Myasthenia Gravis"],
+        "etiology_zh": ["NINDS — Myasthenia Gravis", "MedlinePlus — Myasthenia Gravis"],
+        "etiology_en": ["NINDS — Myasthenia Gravis", "MedlinePlus — Myasthenia Gravis"],
+        "risk_factors_zh": ["NINDS — Myasthenia Gravis", "MedlinePlus — Myasthenia Gravis Tests"],
+        "risk_factors_en": ["NINDS — Myasthenia Gravis", "MedlinePlus — Myasthenia Gravis Tests"],
+        "red_flags_zh": ["NINDS — Myasthenia Gravis", "MedlinePlus — Myasthenia Gravis Tests", "NHS — Myasthenia Gravis Symptoms"],
+        "red_flags_en": ["NINDS — Myasthenia Gravis", "MedlinePlus — Myasthenia Gravis Tests", "NHS — Myasthenia Gravis Symptoms"],
+        "acupuncture_scope_zh": ["AcuTing OS emergency and rehabilitation scope policy; NINDS myasthenic-crisis boundary"],
+        "acupuncture_scope_en": ["AcuTing OS emergency and rehabilitation scope policy; NINDS myasthenic-crisis boundary"]
+      }
+    }
+  }
+}
