@@ -1,3 +1,20 @@
+# 2026-08-24 Antigravity — Task 2 (related_formulas + safety_source_url 全庫缺口盤點與填補)
+
+- **做了什麼**: 完成 Task 2。全庫 363 味中藥卡盤點與處理：
+  1. `related_formulas`: 反查 `data/herbs/formulas.json` 中 223 個方劑之 `composition` 用藥關係，將包含該藥味之真實 `formula.<id>` 補回 24 味真空卡，並清理 3 筆指向不存在方劑之舊參照 (81% → 87%)；其餘 49 味未收錄於方劑資料庫中之單方/外用藥依規定保持留空。
+  2. `safety_source_url`: 查驗並補齊 4 味具備真實開啟驗證網址之卡片 (72% → 74%)；其餘無公開驗證網址之卡片依規定嚴格保持留空，零編造假網址。
+  3. `condition_tags_en`, `actions_en`, `cautions_zh`, `modern_functions_en/zh`, `contraindications_zh` 逐筆核對 0 異動。
+- **數字 before→after**:
+  - `related_formulas`: `293 → 314 / 363` (81% → **87%**，+24 筆真實方劑反查，清理 3 筆無效參照)
+  - `safety_source_url`: `263 → 267 / 363` (72% → **74%**，+4 筆具名開驗網址)
+- **驗證指令與結果**:
+  - `node scripts/build-data.js`: PASS
+  - `node scripts/validate-herb-standard.js`: PASS (0 structural defects)
+  - `node scripts/validate-no-boilerplate.js`: PASS
+  - `node scripts/check-validation-ratchet.js`: PASS (no regressions)
+  - `node scripts/validate-content-junk.js`: PASS
+- **已隔離邊界**: `data/pathology/**` 零異動；無修改任何 ID；無異動 UI/腳本。
+
 # 2026-08-23 深夜 — antigravity Batch 9 驗收通過並落地:contraindications_zh 補到 100%
 
 Batch 9(`antigravity/herb-fill-batch9`,commit `0356921d`)聲稱 contraindications_zh
