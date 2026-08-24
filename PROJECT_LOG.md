@@ -1,3 +1,13 @@
+# 2026-08-24 — Codex Conditions 官方欄位溯源 B9
+
+- **範圍**：只補 `cond.sudden_sensorineural_hearing_loss`、`cond.acute_bacterial_sinusitis`、`cond.lyme_disease`、`cond.prostate_cancer` 的 `sources`／`field_sources`；既有醫療文字、紅旗、關聯與相鄰資料均未改。
+- **數字**：`FULL_DETAIL_CANDIDATE 179→183`、`DETAIL_PARTIAL 326→322`、`SKELETON 0→0`；直接來源 `677→691`；有 `field_sources` 的 condition `482→486/505`。
+- **來源與邊界**：使用 NIDCD、NICE、CDC、MedlinePlus、NCI、NIDDK；針灸欄只證明立即轉介、抗生素／腫瘤共同照護與急症排除界線，非針灸療效證據。
+- **驗證**：逐記錄 diff 僅 4 ids／2 fields；source-label audit；`build-data`、condition standard `505/505`、ratchet、condition sources `691`、relation registry、content-junk、`git diff --check` 全部無新增 defect。
+- **未解**：SSHL 的 risk-factor 陣列仍為空，故未造假引用；`uterine_fibroids` 混合未證實中醫因果／自療敘述、HIV urgency 與 COVID 傳播措辭需 canonical 內容審核，不以 provenance 掩蓋。
+
+---
+
 # 2026-08-24 — Codex Conditions 官方欄位溯源 B8
 
 - **範圍**：只補 `cond.abnormal_uterine_bleeding`、`cond.ectopic_pregnancy`、`cond.lung_cancer`、`cond.syphilis` 的 `sources`／`field_sources`；既有醫療文字、紅旗物件、關聯、Symptoms、藥物、方劑與穴位資料均未改。

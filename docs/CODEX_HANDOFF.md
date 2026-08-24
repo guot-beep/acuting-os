@@ -1,5 +1,13 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-24] Codex Handoff — Conditions official provenance B9
+
+- **Exact ids / fields**: only `cond.sudden_sensorineural_hearing_loss`, `cond.acute_bacterial_sinusitis`, `cond.lyme_disease`, and `cond.prostate_cancer`; only `sources` and `field_sources`. Existing prose, red flags, relations, Symptoms, herb/formula/acupoint data were not changed.
+- **Official source sets**: NIDCD/NICE NG98 for SSHL; MedlinePlus/CDC/NICE NG79 for acute bacterial sinusitis; CDC clinical pages plus MedlinePlus meningitis urgency for Lyme disease; NCI/NIDDK/NICE NG234 for prostate cancer. Scope citations are referral/treatment/co-management boundaries, not acupuncture efficacy evidence.
+- **Measured delta**: maturity `179→183 FULL_DETAIL_CANDIDATE`, `326→322 DETAIL_PARTIAL`, `0→0 SKELETON`; direct source entries `677→691`; records with `field_sources` `482→486/505`; records with at least one source remain `245/505`.
+- **Validation**: record-level diff audit passed (`4 ids`, fields exactly `sources,field_sources`); field-source label audit passed; `build-data.js`; condition standard `505/505 clean`; ratchet; condition sources (`691`); relation registry; content junk; and `git diff --check` passed without a new defect.
+- **Explicit gaps / exclusions**: SSHL retains empty risk-factor arrays and therefore has 12 populated-field provenance keys rather than fabricated citations. `cond.uterine_fibroids` contains unsupported TCM causal/self-care prose, HIV urgency requires OI-specific sourcing, and COVID's “primarily droplets” wording needs canonical review before provenance can be added.
+
 ## [2026-08-24] Codex Handoff — Conditions official provenance B8
 
 - **Exact ids / fields**: only `cond.abnormal_uterine_bleeding`, `cond.ectopic_pregnancy`, `cond.lung_cancer`, and `cond.syphilis`; only `sources` and `field_sources`. No existing medical prose, inline red-flag object, relation, acupoint protocol, Symptoms, herb, or formula canonical data changed.
