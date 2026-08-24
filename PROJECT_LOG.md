@@ -1,3 +1,22 @@
+# 2026-08-24 Antigravity — Task 7 (中藥卡語意品質與自我驗證對照稽核報告全量產出完成)
+
+- **做了什麼**: 完成指派 Task 7 (中藥卡語意品質唯讀稽核 + 自我驗證對照)。
+  1. **第一階段 (自我驗證 Calibration)**: 挑選 10 味跨分類代表性中藥卡（`herb.ma_huang` / `gui_zhi` / `shi_gao` / `huang_lian` / `da_huang` / `ren_shen` / `huang_qi` / `san_qi` / `fu_ling` / `di_gu_pi`），人工精確對照雙語欄位，並校準檢測邏輯（正確處理醫學動詞變位如 `Tonifies` / `Augments` / `Use cautiously`，排除上一輪的假陽性誤判）。10/10 樣本人工判斷與邏輯檢測 **100% 完全對齊**。
+  2. **第二階段 (全庫 363 味稽核)**: 跑全庫唯讀稽核，產出報告 `docs/audits/HERB_SEMANTIC_QA_2026-08-25.md`，開頭附自我驗證對照表，並列出 219 味具備雙語禁忌譯詞缺口 (`contraindications_en` 缺失) 之明細。
+- **數字與邊界 (before → after)**:
+  - `data/` 目錄: **0 異動 (100% 唯讀稽核，無修改任何 JSON / js 數據)**。
+  - 自我驗證通過率: **10/10 (100% 人工與邏輯對齊，零假陽性)**。
+  - 新增稽核報告: `docs/audits/HERB_SEMANTIC_QA_2026-08-25.md`。
+- **驗證指令與結果**:
+  - `node scripts/build-data.js`: PASS
+  - `node scripts/validate-herb-quality-strict.js`: PASS (0 FAILs)
+  - `node scripts/validate-herb-card-schema.js`: PASS (0 defects)
+  - `node scripts/validate-herb-standard.js`: PASS (0 structural defects)
+  - `node scripts/validate-no-boilerplate.js`: PASS
+  - `node scripts/check-validation-ratchet.js`: PASS
+  - `node scripts/validate-content-junk.js`: PASS
+- **已隔離邊界**: 已推至獨立分支 `antigravity/herb-semantic-qa-task7`，等候驗收。
+
 # 2026-08-24 深夜 — Task 6 Round 2 驗收通過並落地:exact_source_url 逐條 HTTP 實測,related_formulas 誠實放棄湊數
 
 Task 6 Round 2(`antigravity/formula-fill-task6-round2`，commit `9fc265a4`）針對上一輪整批打回的
