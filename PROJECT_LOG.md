@@ -1,3 +1,32 @@
+# 2026-08-24 下午 — PR #107:還原 F-07 針灸處方(40 筆)+ 修 acupuncture_scope_zh.note 假警訊渲染 bug
+
+Ting 看到卡片顯示「這張卡有 2 個欄位是空的,因為原本的內容被移出了」,要求先移回來。查明兩個
+獨立問題,分開處理:
+
+- **F-07 全庫共用樣板還原(40/67 筆)**:`acupoint_protocols` 在 2026-08-12 因「足三里/合谷/
+  三陰交/中脘」在 67 張條件卡上逐字相同(匯入預設值,非本病處方)被封存清空。逐筆核對現況後
+  三分:16 筆後來已被真正逐病研究的處方取代、11 筆有 SOL B3/B4/B5 逐病證據評估(結論故意
+  留空)——這 27 筆不動,動了就是拿沒有證據的樣板蓋掉真正的研究結論;剩 40 筆完全沒人碰過,
+  依 Ting 指示還原 `acupoint_protocols` 為 `{name_zh,code}` 陣列,補
+  `acupoint_protocol_evidence.protocol_status:"unassessed"`(`CONDITION_CARD_TEMPLATE.md` §3.3
+  明文定義的既有狀態,專門標記 2026-08-15 前的匯入遺留,不是新造規則)。原始封存紀錄留在
+  `import_artifacts` 未動。
+- **js/knowledge.js 假警訊渲染 bug**:「內容被移出」橫幅用 `c[fieldOf(a)]` 平面查找
+  `import_artifacts.field`,但 20 張卡的 `field` 是點狀路徑 `"acupuncture_scope_zh.note"`——
+  平面查找永遠讀不到巢狀物件的值,不管實際內容是否存在都判定成空。核對樣本
+  `cond.menorrhagia`:note 欄位其實有完整的證據說明,不是空的,是這支函式沒查對地方。改用
+  `getPath` 逐層解析點狀路徑,20 筆假警訊全部消除。
+- **分支狀態**:`claude/os-system-optimization-review-mic7vw` 先前落後 origin/main 124 個
+  commit(上次落地在 P4 acupoint 探針之後),merge 追上後才做本次改動,期間又追了一次
+  Task 5 前的 16 個 commit——兩次 merge 都只有生成檔與 PROJECT_LOG.md(prepend 型日誌)出現
+  衝突,人工邏輯內容零衝突。
+- **驗證**:隔離驗證僅 40 筆 condition 記錄變動,record count 505→505,0 筆在 restore 名單外
+  被動到;`build-data.js`/`check-validation-ratchet.js`/`validate-condition-standard.js`/
+  `validate-relations.js`/`validate-acupoint-standard.js`/`validate-content-junk.js` 全 PASS
+  無退步。PR #107 CI 綠燈後 merge。
+
+---
+
 # 2026-08-24 深夜 — Task 5 部分接受:7 條新方劑家族裡 3 條引用來源查無此內容,已移除
 
 Task 5(`antigravity/formula-family-task5`，commit `8f95ae14`）產出新帳本
