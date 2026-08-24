@@ -1022,6 +1022,28 @@ Batch 9(`antigravity/herb-fill-batch9`,commit `0356921d`)聲稱 contraindication
   ③ 病例持久化三修+筆記匯出鈕;④ review_status 詞彙收斂(需 Ting 裁定 16 值語意);⑤ 361 雙鍵手術(整合後);
   ⑥ 紅旗 Ting 供源備援;⑦ encoding+樣板句上鎖;⑧ ICD 到期監測;⑨ draft 天花板+安全欄位級畢業;⑩ MAINTENANCE_CALENDAR+DEGRADED_MODE。
 
+# 2026-08-19 Claude — 5–20 年全系統檢測（唯讀稽核）:8 線並行調查,產出 SYSTEM_OPTIMIZATION_REVIEW_2026-08-19.md
+
+- **做了什麼**:Ting 指示「用專業醫生+專業系統人員思維檢測這個 OS,以未來 5-20 年使用哪裡可再優化」。8 條獨立唯讀調查線並行
+  (臨床安全/醫學知識/資料架構/應用工程/維運保全/法規執業/現況實測/完整性批判,510 次工具呼叫),互相不知情、各自實測,
+  批判者對 8 項最重跨線發現逐一抽查:全部 CONFIRMED、零 REFUTED。產出去重收斂報告 `SYSTEM_OPTIMIZATION_REVIEW_2026-08-19.md`
+  (TOP-10 優先行動 + 62 條發現全表 + 5 個跨面向根因 + 維護日曆草案 + 當晚 Clinical 併行協調狀態存證)。**未改動任何 data/**、
+  scripts/**、app 檔案;新增檔案僅報告一份 + 本條目。**
+- **關鍵實測數字**(每個可重現,指令在報告 §九):review_status 碎裂 16 種值(sourced_checked 272 > source_checked 131);
+  draft 增速 +303/11天 vs 臨床內容人審畢業 0(source_checked 51→131 增量全來自 ICD 匯入機器蓋章);tdis 紅旗 75/75 全空、
+  conditions 71/150 空;361 穴 field_sources.cautions_zh 361/361 同值蓋章(WHO SAPL 錯掛禁忌欄);cautions_en/cautionsEn
+  71 筆共存 100% 分歧(LI4 孕忌只在其中一份);safety_flags 256/294 不在詞彙表;方劑樣板句家族殘 281 欄位;
+  validate-encoding --summary-only 13,232(不在任何 gate);ICD 679/796 碼 effective_to=2026-09-30(剩 6 週),117 碼無版本;
+  方劑劑量 9/221、煎服法 3/221;症狀實體 3 筆;病→方 2,914 邊 37% 斷鏈(210 首缺席方=實測需求清單);
+  main 分支 protected:false(全部 92+ 分支)、單一 remote、git 全史 85 commits/11 天 vs PROJECT_LOG 56 sessions(洗掉物證);
+  app 病例儲存三個資料毀滅口(損壞歸零/quota 無承接/匯入整批覆蓋);穴位編輯 isUserEdited 零寫入點(存了也被丟);
+  dist 23.8MB/15 檔、knowledge_data.js 11.8MB;public_ready 0 筆但 acuting.com 公開管線已在治理外運轉。
+- **驗證**:調查全程唯讀;build-data 重跑後 data/generated 零 diff;結束時 git status 僅新增報告與本條目。
+  15 支驗證器重跑:12 PASS、3 FAIL(conditions 447=基線、tdis 75=基線、encoding 13,232 無 gate)。
+- **下一批(報告 TOP-10,前三為最急)**:① main 分支保護+required checks(Clinical 整合前);② 3-2-1 備份(第二遠端+bundle 冷備);
+  ③ 病例持久化三修+筆記匯出鈕;④ review_status 詞彙收斂(需 Ting 裁定 16 值語意);⑤ 361 雙鍵手術(整合後);
+  ⑥ 紅旗 Ting 供源備援;⑦ encoding+樣板句上鎖;⑧ ICD 到期監測;⑨ draft 天花板+安全欄位級畢業;⑩ MAINTENANCE_CALENDAR+DEGRADED_MODE。
+
 # 2026-08-19 Claude — 第二輪(PR #62):C10 假填重填 wave 1、加減表抽盡、方歌批3、瀉心湯善後
 
 - **做了什麼**:PR #60 合併後分支自 main 重建。瀉心湯身分裁定(Ting 授權):卡上為半夏瀉心湯內容(逐欄機器驗證與正卡逐字相同)→ 依方名重建為《金匱》瀉心湯(大黃黃連黃芩),原值逐字存 correction_note(已隨 #60 合併)。
