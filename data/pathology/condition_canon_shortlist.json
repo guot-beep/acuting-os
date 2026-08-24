@@ -61322,8 +61322,94 @@
    "western_pathology_en": "Acute dysfunction of cochlear/inner-ear sensory pathways produces rapid sensorineural threshold loss.",
    "western_context_zh": "臨床定位：屬於時間敏感的醫療急症，須立即與耳垢／積液造成的傳導性聽力損失及慢性聽力損失區分；與慢性耳鳴／感音神經性聽損（見 cond.hearing_loss）為不同臨床狀態，不應以慢性耳鳴常規處置延誤評估。\n\n臨床表現：常於睡醒時發現的單側突發聽力損失，可合併耳鳴、耳脹感及／或暈眩。\n\n重要特徵：時間敏感急症、多為單側、應於數天內完成聽力檢測、常考慮類固醇治療。\n\n診斷方法：先排除傳導性聽力損失，並進行純音聽力檢測；視情況加做影像／血液檢查尋找病因。\n\n鑑別診斷：耳垢阻塞、中耳炎、梅尼爾氏症、聽神經瘤、腦中風。\n\n西醫治療：適當個案常使用類固醇治療；找到病因時依病因處置。\n\n編碼備註：實際 ICD-10-CM 編碼須於個案登錄時依當年度 CDC/NCHS 版本核對。",
    "western_context_en": "Clinical definition: It must be distinguished promptly from conductive loss due to cerumen/fluid and from chronic hearing loss; this is a distinct clinical state from the chronic tinnitus/sensorineural hearing loss picture in cond.hearing_loss and should not be managed with routine chronic-tinnitus care that delays evaluation.\n\nClinical presentation: Sudden unilateral hearing loss, sometimes noticed on waking, with tinnitus, ear fullness and/or dizziness.\n\nKey features: time-sensitive emergency, often unilateral, audiometry within days, steroids commonly considered.\n\nDiagnostic approach: Rule out conductive loss and obtain pure-tone audiometry; additional imaging/labs seek underlying cause.\n\nDifferential diagnosis: cerumen impaction, otitis media, Ménière disease, vestibular schwannoma, stroke.\n\nWestern treatment: Corticosteroid treatment is commonly used when appropriate; cause-specific management if identified.\n\nCoding note: exact ICD-10-CM code selection requires the current fiscal-year CDC/NCHS review at the time of coding.",
-   "risk_factors_zh": [],
-   "risk_factors_en": [],
+   "risk_factors_zh": [
+    {
+     "factor": "年齡 > 60歲",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "PMC11097239 (2024)"
+    },
+    {
+     "factor": "高血壓",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "PMC11097239 (2024)"
+    },
+    {
+     "factor": "糖尿病",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "PubMed 19657186"
+    },
+    {
+     "factor": "血脂異常(高總膽固醇/低HDL)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "PMC8649383"
+    },
+    {
+     "factor": "吸菸",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "PubMed 22252719"
+    },
+    {
+     "factor": "心律不整(dysrhythmia)病史",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "PMC6594636"
+    },
+    {
+     "factor": "病毒感染史(如流感、疱疹病毒)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "CMAJ 2025 review, 197(3):E68"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Age > 60",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "PMC11097239 (2024)"
+    },
+    {
+     "factor": "Hypertension",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "PMC11097239 (2024)"
+    },
+    {
+     "factor": "Diabetes mellitus",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "PubMed 19657186"
+    },
+    {
+     "factor": "Dyslipidemia (high total cholesterol / low HDL)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "PMC8649383"
+    },
+    {
+     "factor": "Smoking",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "PubMed 22252719"
+    },
+    {
+     "factor": "History of cardiac dysrhythmia",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "PMC6594636"
+    },
+    {
+     "factor": "Recent viral infection (e.g., influenza, herpesviruses)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "CMAJ 2025 review, 197(3):E68"
+    }
+   ],
    "red_flags_zh": [
     {
      "finding": "突發單側聽力損失",
@@ -61387,7 +61473,23 @@
     "nih_nidcd_overview",
     "research_pack_batch_l_ent_ophthalmic_emergencies"
    ],
-   "source_status": "draft_pending_ting_review"
+   "source_status": "draft_pending_ting_review",
+   "field_sources": {
+    "risk_factors_zh": [
+     "Wu et al., 'The Impact of Cardiovascular Risk Factors on the Incidence, Severity, and Prognosis of SSHL: A Systematic Review', PMC11097239 (2024)",
+     "Capaccio et al., 'Systematic review and meta-analysis of the risk factors for sudden sensorineural hearing loss in adults', PubMed 22252719",
+     "'Risk of sudden sensorineural hearing loss in patients with dysrhythmia: A nationwide population-based cohort study', PMC6594636",
+     "Lin et al., dyslipidemia case-control study, PMC8649383",
+     "CMAJ 2025;197(3):E68, 'Sudden sensorineural hearing loss' review"
+    ],
+    "risk_factors_en": [
+     "Wu et al., 'The Impact of Cardiovascular Risk Factors on the Incidence, Severity, and Prognosis of SSHL: A Systematic Review', PMC11097239 (2024)",
+     "Capaccio et al., 'Systematic review and meta-analysis of the risk factors for sudden sensorineural hearing loss in adults', PubMed 22252719",
+     "'Risk of sudden sensorineural hearing loss in patients with dysrhythmia: A nationwide population-based cohort study', PMC6594636",
+     "Lin et al., dyslipidemia case-control study, PMC8649383",
+     "CMAJ 2025;197(3):E68, 'Sudden sensorineural hearing loss' review"
+    ]
+   }
   },
   {
    "id": "cond.acute_bacterial_sinusitis",
@@ -80419,8 +80521,212 @@
     ],
     "related_patterns": [
      "clinical judgment — dementia is commonly framed in TCM practice as kidney essence deficiency (marrow/brain deprivation) complicated by phlegm misting the heart orifices and/or blood stasis, varying by subtype"
+    ],
+    "risk_factors_zh": [
+     "Livingston et al., '2024 Lancet Commission on dementia prevention, intervention, and care', The Lancet 2024 (14 modifiable risk factors, ~45% population attributable fraction)",
+     "Alzheimer Europe, summary of 2024 Lancet Commission report"
+    ],
+    "risk_factors_en": [
+     "Livingston et al., '2024 Lancet Commission on dementia prevention, intervention, and care', The Lancet 2024 (14 modifiable risk factors, ~45% population attributable fraction)",
+     "Alzheimer Europe, summary of 2024 Lancet Commission report"
     ]
-   }
+   },
+   "risk_factors_zh": [
+    {
+     "factor": "年齡增長",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "2024 Lancet Commission (Livingston et al.)"
+    },
+    {
+     "factor": "APOE ε4 基因型 / 失智症家族史",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "2024 Lancet Commission (Livingston et al.)"
+    },
+    {
+     "factor": "教育程度較低(未完成中學)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "2024 Lancet Commission (Livingston et al.)"
+    },
+    {
+     "factor": "聽力損失未矯正",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "2024 Lancet Commission (Livingston et al.)"
+    },
+    {
+     "factor": "中年期高血壓",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "2024 Lancet Commission (Livingston et al.)"
+    },
+    {
+     "factor": "中年期肥胖(高BMI)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "2024 Lancet Commission (Livingston et al.)"
+    },
+    {
+     "factor": "糖尿病",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "2024 Lancet Commission (Livingston et al.)"
+    },
+    {
+     "factor": "吸菸",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "2024 Lancet Commission (Livingston et al.)"
+    },
+    {
+     "factor": "憂鬱症",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "2024 Lancet Commission (Livingston et al.)"
+    },
+    {
+     "factor": "社交孤立",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "2024 Lancet Commission (Livingston et al.)"
+    },
+    {
+     "factor": "身體活動不足",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "2024 Lancet Commission (Livingston et al.)"
+    },
+    {
+     "factor": "過量飲酒",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "2024 Lancet Commission (Livingston et al.)"
+    },
+    {
+     "factor": "頭部外傷病史(TBI)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "2024 Lancet Commission (Livingston et al.)"
+    },
+    {
+     "factor": "空氣污染暴露",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "2024 Lancet Commission (Livingston et al.)"
+    },
+    {
+     "factor": "40歲後高LDL膽固醇",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "2024 Lancet Commission (Livingston et al.)"
+    },
+    {
+     "factor": "視力損失未矯正",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "2024 Lancet Commission (Livingston et al.)"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Advancing age",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "2024 Lancet Commission (Livingston et al.)"
+    },
+    {
+     "factor": "APOE ε4 genotype / family history of dementia",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "2024 Lancet Commission (Livingston et al.)"
+    },
+    {
+     "factor": "Less education (did not complete secondary school)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "2024 Lancet Commission (Livingston et al.)"
+    },
+    {
+     "factor": "Untreated hearing loss",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "2024 Lancet Commission (Livingston et al.)"
+    },
+    {
+     "factor": "Midlife hypertension",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "2024 Lancet Commission (Livingston et al.)"
+    },
+    {
+     "factor": "Midlife obesity (high BMI)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "2024 Lancet Commission (Livingston et al.)"
+    },
+    {
+     "factor": "Diabetes mellitus",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "2024 Lancet Commission (Livingston et al.)"
+    },
+    {
+     "factor": "Smoking",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "2024 Lancet Commission (Livingston et al.)"
+    },
+    {
+     "factor": "Depression",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "2024 Lancet Commission (Livingston et al.)"
+    },
+    {
+     "factor": "Social isolation",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "2024 Lancet Commission (Livingston et al.)"
+    },
+    {
+     "factor": "Physical inactivity",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "2024 Lancet Commission (Livingston et al.)"
+    },
+    {
+     "factor": "Excessive alcohol consumption",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "2024 Lancet Commission (Livingston et al.)"
+    },
+    {
+     "factor": "History of traumatic brain injury (TBI)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "2024 Lancet Commission (Livingston et al.)"
+    },
+    {
+     "factor": "Air pollution exposure",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "2024 Lancet Commission (Livingston et al.)"
+    },
+    {
+     "factor": "High LDL cholesterol after age 40",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "2024 Lancet Commission (Livingston et al.)"
+    },
+    {
+     "factor": "Untreated vision loss",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "2024 Lancet Commission (Livingston et al.)"
+    }
+   ]
   },
   {
    "id": "cond.alzheimer_disease",
@@ -97063,7 +97369,27 @@
     "risk_factors_en": [
      "CDC STI Treatment Guidelines: Epididymitis (retrieved 2026-08)",
      "Merck Manual Professional Edition: Epididymitis (retrieved 2026-08)"
+    ],
+    "acupuncture_scope_zh": [
+     "Xu et al., 'The safety and efficacy of acupuncture for epididymitis: protocol for a systematic review', Medicine 2019 (PMC6344197)"
+    ],
+    "acupuncture_scope_en": [
+     "Xu et al., 'The safety and efficacy of acupuncture for epididymitis: protocol for a systematic review', Medicine 2019 (PMC6344197)"
     ]
+   },
+   "acupuncture_scope_zh": {
+    "can_treat": "可作為輔助療法,用於緩解慢性/亞急性副睪炎相關的疼痛、腫脹及不適,常與中藥合併使用",
+    "precautions": "急性副睪炎合併發燒、劇痛、化膿或懷疑睪丸扭轉時須立即轉診泌尿科,不可以針灸取代抗生素治療;現有研究多為小型試驗與系統性回顧計畫書,證據品質偏低",
+    "co_management": "抗生素療程進行中若考慮加入針灸,應諮詢原開立之泌尿科醫師,不可自行停用抗生素",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "May be used as adjunctive therapy for pain, swelling, and discomfort in chronic/subacute epididymitis, often combined with herbal medicine",
+    "precautions": "Acute epididymitis with fever, severe pain, suppuration, or suspected testicular torsion requires immediate urology referral — acupuncture must not replace antibiotic therapy; current evidence is limited to small trials and a systematic-review protocol with low certainty",
+    "co_management": "If considering adding acupuncture during an antibiotic course, patients should consult the prescribing urologist and must not stop antibiotics on their own",
+    "evidence": "unknown",
+    "source": null
    }
   },
   {
@@ -103064,7 +103390,29 @@
     "risk_factors_en": [
      "Johns Hopkins Medicine: Sjögren's Syndrome Symptoms (retrieved 2026-08)",
      "Merck Manual Professional: Sjögren Syndrome"
+    ],
+    "acupuncture_scope_zh": [
+     "Zhang et al., 'Efficacy and Safety of Acupuncture on Symptomatic Improvement in Primary Sjögren's Syndrome: A RCT', PMC9121854",
+     "Frontiers in Immunology 2026, narrative review of acupuncture mechanism/clinical application in Sjögren's syndrome"
+    ],
+    "acupuncture_scope_en": [
+     "Zhang et al., 'Efficacy and Safety of Acupuncture on Symptomatic Improvement in Primary Sjögren's Syndrome: A RCT', PMC9121854",
+     "Frontiers in Immunology 2026, narrative review of acupuncture mechanism/clinical application in Sjögren's syndrome"
     ]
+   },
+   "acupuncture_scope_zh": {
+    "can_treat": "可作為輔助療法,用於改善原發性乾燥症候群之口乾、眼乾及疲勞等症狀",
+    "precautions": "現有隨機對照試驗規模小、證據品質不一,系統性回顧指出證據尚不充分;針灸不能替代人工淚液、毛果芸香鹼(pilocarpine)等標準治療,亦不影響疾病本身之免疫病程",
+    "co_management": "使用毛果芸香鹼或羥氯奎寧等藥物期間如欲合併針灸,應諮詢原風濕免疫科醫師,不可自行停藥",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "May be used as adjunctive therapy to improve xerostomia, dry eyes, and fatigue in primary Sjögren syndrome",
+    "precautions": "Existing RCTs are small with inconsistent quality; systematic reviews describe the evidence as inadequate. Acupuncture cannot replace standard treatments (artificial tears, pilocarpine) and does not alter the underlying autoimmune disease course",
+    "co_management": "Patients on pilocarpine or hydroxychloroquine who wish to add acupuncture should consult their rheumatologist and must not stop medication on their own",
+    "evidence": "unknown",
+    "source": null
    }
   },
   {
@@ -103180,7 +103528,29 @@
     ],
     "risk_factors_en": [
      "Oxford Academic Rheumatology Advances in Practice: Scleroderma renal crisis - avoiding the diagnostic pitfalls (retrieved 2026-08)"
+    ],
+    "acupuncture_scope_zh": [
+     "Zhou et al., 'The use of acupuncture in patients with Raynaud's syndrome: a systematic review and meta-analysis of RCTs', J R Soc Med Cardiovasc Dis 2023 (PMC10115941)",
+     "Showalter et al., 'Complementary therapies for patients with systemic sclerosis', J Scleroderma Relat Disord 2019"
+    ],
+    "acupuncture_scope_en": [
+     "Zhou et al., 'The use of acupuncture in patients with Raynaud's syndrome: a systematic review and meta-analysis of RCTs', J R Soc Med Cardiovasc Dis 2023 (PMC10115941)",
+     "Showalter et al., 'Complementary therapies for patients with systemic sclerosis', J Scleroderma Relat Disord 2019"
     ]
+   },
+   "acupuncture_scope_zh": {
+    "can_treat": "可作為輔助療法,用於緩解硬皮症相關雷諾氏現象(Raynaud's phenomenon)之發作頻率與嚴重度",
+    "precautions": "系統性回顧(6項RCT,共272人)顯示針灸可能降低發作頻率,但納入研究整體偏誤風險高、樣本數小,證據確定性很低;不可用針灸取代鈣離子通道阻斷劑等標準血管擴張治療,亦無法逆轉硬皮症之皮膚/內臟纖維化病程;皮膚硬化及末梢循環不良處進針須格外注意感染與癒合不良風險",
+    "co_management": "服用鈣離子通道阻斷劑或免疫抑制劑期間如欲合併針灸,應諮詢原風濕免疫科醫師,不可自行停藥",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "May be used as adjunctive therapy to reduce the frequency and severity of Raynaud's phenomenon attacks associated with systemic sclerosis",
+    "precautions": "A systematic review (6 RCTs, 272 participants) suggested acupuncture may reduce attack frequency, but included studies carry high risk of bias, small sample sizes, and very low certainty evidence; acupuncture should not replace standard vasodilator therapy (e.g., calcium channel blockers) and cannot reverse the skin/visceral fibrosis of systemic sclerosis; needling over sclerotic skin or poorly perfused digits carries added risk of infection and delayed healing",
+    "co_management": "Patients on calcium channel blockers or immunosuppressants who wish to add acupuncture should consult their rheumatologist and must not stop medication on their own",
+    "evidence": "unknown",
+    "source": null
    }
   },
   {
@@ -103437,7 +103807,29 @@
     ],
     "risk_factors_en": [
      "Medscape: Polymyositis - Background, Etiology, Pathophysiology (retrieved 2026-08)"
+    ],
+    "acupuncture_scope_zh": [
+     "Hospital for Special Surgery (HSS), 'Acupuncture for Myositis: What You Should Know'",
+     "Myositis Association, 'Treating Myositis with Chinese Medicine' (Jeffrey Wang, DOM)"
+    ],
+    "acupuncture_scope_en": [
+     "Hospital for Special Surgery (HSS), 'Acupuncture for Myositis: What You Should Know'",
+     "Myositis Association, 'Treating Myositis with Chinese Medicine' (Jeffrey Wang, DOM)"
     ]
+   },
+   "acupuncture_scope_zh": {
+    "can_treat": "可作為輔助療法,用於緩解多發性肌炎相關的肌肉痠痛及協助一般症狀管理,目前缺乏針對疾病本身(肌力、發炎指數)療效的對照試驗證據",
+    "precautions": "針灸不能替代類固醇、免疫抑制劑等標準治療,亦無證據顯示可改善肌力或減緩疾病進展;出現嚴重肌無力或合併吞嚥/呼吸肌受累等急症徵象時應優先積極就醫,針灸僅能作為輔助;長期服用類固醇者皮膚較薄、易瘀傷,進針宜謹慎",
+    "co_management": "服用類固醇或免疫抑制劑期間如欲合併針灸,應諮詢原開立之風濕免疫科/神經科醫師,不可自行減量或停藥",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "May be used as adjunctive therapy for muscle pain and general symptom management in polymyositis; controlled-trial evidence for effects on the disease itself (muscle strength, inflammatory markers) is currently lacking",
+    "precautions": "Acupuncture cannot replace standard treatment (corticosteroids, immunosuppressants) and has no evidence of improving muscle strength or slowing disease progression; when severe weakness or respiratory/swallowing muscle involvement signals an emergency, prompt medical treatment takes priority and acupuncture is adjunctive only; patients on long-term steroids have thinner, easily bruised skin, requiring cautious needling",
+    "co_management": "Patients on corticosteroids or immunosuppressants who wish to add acupuncture should consult the prescribing rheumatologist/neurologist and must not reduce or stop medication on their own",
+    "evidence": "unknown",
+    "source": null
    }
   },
   {
@@ -103557,7 +103949,31 @@
     "risk_factors_en": [
      "Merck Manual Professional: Overview of Vasculitis (retrieved 2026-08)",
      "HSS: Vasculitis - Blood Vessel Symptoms, Causes, Treatments"
+    ],
+    "acupuncture_scope_zh": [
+     "'The Acupuncture Therapeutic Approach in Temporal Arteritis Vasculitis: A Case Report', ScienceDirect",
+     "'Acupuncture for rheumatoid vasculitis complicated by refractory foot ulcer: A case report', PMC10637421",
+     "Yin Yang House, 'Precautions and Contraindications within Acupuncture and Chinese Medicine' (WHO guideline summary)"
+    ],
+    "acupuncture_scope_en": [
+     "'The Acupuncture Therapeutic Approach in Temporal Arteritis Vasculitis: A Case Report', ScienceDirect",
+     "'Acupuncture for rheumatoid vasculitis complicated by refractory foot ulcer: A case report', PMC10637421",
+     "Yin Yang House, 'Precautions and Contraindications within Acupuncture and Chinese Medicine' (WHO guideline summary)"
     ]
+   },
+   "acupuncture_scope_zh": {
+    "can_treat": "可作為輔助療法,用於緩解部分血管炎(如顳動脈炎、類風濕血管炎)相關之疼痛及局部症狀,證據多來自個案報告",
+    "precautions": "血管炎急性期(如巨細胞動脈炎合併視力威脅、器官缺血)須立即以類固醇/免疫抑制劑治療,不可延誤就醫改以針灸處理;血管發炎脆弱處或潰瘍附近進針須避開病灶,凝血功能異常或服用抗凝血/抗血小板藥物者出血風險增加,須調整進針深度與手法;放血療法為禁忌",
+    "co_management": "服用類固醇或免疫抑制劑期間如欲合併針灸,應聯絡原開立醫師確認病情穩定,不可自行停藥",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "May be used as adjunctive therapy for pain and localized symptoms in some vasculitides (e.g., temporal arteritis, rheumatoid vasculitis), with evidence largely limited to case reports",
+    "precautions": "In the acute phase of vasculitis (e.g., giant cell arteritis with threatened vision, organ ischemia), immediate treatment with corticosteroids/immunosuppressants is required — acupuncture must not delay medical care; needling should avoid inflamed vessels or ulcerated areas, and patients with coagulopathy or on anticoagulant/antiplatelet drugs have increased bleeding risk requiring adjusted needling depth and technique; bloodletting is contraindicated",
+    "co_management": "Patients on corticosteroids or immunosuppressants who wish to add acupuncture should contact the prescribing physician to confirm disease stability and must not stop medication on their own",
+    "evidence": "unknown",
+    "source": null
    }
   },
   {
@@ -104274,7 +104690,29 @@
     "risk_factors_en": [
      "NORD: Mixed Connective Tissue Disease (retrieved 2026-08)",
      "Oxford Academic Rheumatology Advances in Practice: Scleroderma renal crisis"
+    ],
+    "acupuncture_scope_zh": [
+     "Darwyn Health, 'Alternative Therapies for Mixed Connective Tissue Disease: Exploring Complementary Approaches'",
+     "Rupa Health, 'Complementary and Integrative Medicine for The Treatment of Autoimmune Diseases'"
+    ],
+    "acupuncture_scope_en": [
+     "Darwyn Health, 'Alternative Therapies for Mixed Connective Tissue Disease: Exploring Complementary Approaches'",
+     "Rupa Health, 'Complementary and Integrative Medicine for The Treatment of Autoimmune Diseases'"
     ]
+   },
+   "acupuncture_scope_zh": {
+    "can_treat": "可作為輔助療法,用於緩解混合性結締組織病相關的疼痛、疲勞及雷諾氏現象等症狀,目前僅有少量個案分享及間接證據,缺乏針對此疾病之對照試驗",
+    "precautions": "針灸不能替代免疫抑制劑等標準治療,亦不影響疾病本身之免疫病程;病情不穩定(如出現肺高壓、腎危象等器官侵犯徵象)時應優先積極就醫,不可以針灸延誤治療",
+    "co_management": "服用免疫抑制劑期間如欲合併針灸,應諮詢原風濕免疫科醫師,不可自行停藥",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "May be used as adjunctive therapy for pain, fatigue, and Raynaud's phenomenon associated with mixed connective tissue disease; evidence is currently limited to a small number of anecdotal reports and indirect data, with no controlled trials specific to this disease",
+    "precautions": "Acupuncture cannot replace standard treatment (immunosuppressants) and does not alter the underlying autoimmune disease course; when disease is unstable (e.g., signs of pulmonary hypertension or renal crisis), prompt medical treatment takes priority and acupuncture must not delay it",
+    "co_management": "Patients on immunosuppressants who wish to add acupuncture should consult their rheumatologist and must not stop medication on their own",
+    "evidence": "unknown",
+    "source": null
    }
   },
   {
@@ -104539,7 +104977,31 @@
     "risk_factors_en": [
      "NORD: Polyarteritis Nodosa (retrieved 2026-08)",
      "Cleveland Clinic: Polyarteritis Nodosa (PAN) (retrieved 2026-08)"
+    ],
+    "acupuncture_scope_zh": [
+     "Cleveland Clinic, 'Polyarteritis Nodosa (PAN): Symptoms & Treatment'",
+     "'Acute Retroperitoneal Hemorrhage Due to Multi-Vessel Aneurysmal Bleeding As the Initial Manifestation of Polyarteritis Nodosa', PMC10590212",
+     "Vasculitis Foundation, 'Polyarteritis Nodosa'"
+    ],
+    "acupuncture_scope_en": [
+     "Cleveland Clinic, 'Polyarteritis Nodosa (PAN): Symptoms & Treatment'",
+     "'Acute Retroperitoneal Hemorrhage Due to Multi-Vessel Aneurysmal Bleeding As the Initial Manifestation of Polyarteritis Nodosa', PMC10590212",
+     "Vasculitis Foundation, 'Polyarteritis Nodosa'"
     ]
+   },
+   "acupuncture_scope_zh": {
+    "can_treat": "現有文獻未見針對結節性多動脈炎之針灸對照試驗,僅可能作為疼痛等症狀之輔助支持療法,證據極為有限",
+    "precautions": "結節性多動脈炎易併發中小動脈瘤及自發性出血(如腹腔、腹膜後出血),須避免任何增加出血風險之操作;進針前應確認病情穩定及有無凝血功能異常/抗凝血藥物使用,腹部及深部進針應格外謹慎;疾病活動期(器官缺血、動脈瘤破裂風險)須以免疫抑制治療為主,針灸僅可作輔助且不可延誤就醫",
+    "co_management": "服用類固醇或免疫抑制劑期間如欲合併針灸,應聯絡原開立醫師確認病情穩定,不可自行停藥",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "No controlled trials of acupuncture specific to polyarteritis nodosa were found in the literature; acupuncture may only serve as limited adjunctive support for symptoms such as pain, with very limited evidence",
+    "precautions": "Polyarteritis nodosa is prone to medium-vessel aneurysms and spontaneous hemorrhage (e.g., abdominal, retroperitoneal bleeding); any technique that increases bleeding risk should be avoided; before needling, confirm disease stability and check for coagulopathy or anticoagulant use — deep or abdominal needling requires extra caution; during active disease (organ ischemia, aneurysm rupture risk), immunosuppressive treatment must take priority and acupuncture is adjunctive only and must not delay medical care",
+    "co_management": "Patients on corticosteroids or immunosuppressants who wish to add acupuncture should contact the prescribing physician to confirm disease stability and must not stop medication on their own",
+    "evidence": "unknown",
+    "source": null
    }
   },
   {
@@ -105117,7 +105579,31 @@
     ],
     "risk_factors_en": [
      "PMC: Epidemiology, Staging, and Management of Multiple Myeloma (retrieved 2026-08)"
+    ],
+    "acupuncture_scope_zh": [
+     "ASCO Guideline Update 2020 (JCO 38:3325), Prevention and Management of CIPN",
+     "Han et al., 'Acupuncture combined with methylcobalamin for CIPN in multiple myeloma patients', PMC5223334",
+     "Bao et al., 'Acupuncture May Help to Prevent Chemotherapy-Induced Peripheral Neuropathy', The Oncologist 2023"
+    ],
+    "acupuncture_scope_en": [
+     "ASCO Guideline Update 2020 (JCO 38:3325), Prevention and Management of CIPN",
+     "Han et al., 'Acupuncture combined with methylcobalamin for CIPN in multiple myeloma patients', PMC5223334",
+     "Bao et al., 'Acupuncture May Help to Prevent Chemotherapy-Induced Peripheral Neuropathy', The Oncologist 2023"
     ]
+   },
+   "acupuncture_scope_zh": {
+    "can_treat": "有隨機對照試驗證據支持針灸可預防/緩解化療(如硼替佐米 bortezomib)所致周邊神經病變之疼痛與功能受限,ASCO 2020 治療指引將針灸列為已發生CIPN之可考慮選項(弱推薦);另有個案報告及可行性研究支持",
+    "precautions": "多發性骨髓瘤患者常有溶骨性病灶、病理性骨折風險及血小板低下/凝血異常,脊椎、肋骨等骨病灶處禁止直接進針或施以強力手法;骨髓抑制期間感染風險增加,須嚴格無菌操作;針灸僅能緩解神經病變等症狀,不能替代化療、標靶治療或幹細胞移植等疾病導向治療",
+    "co_management": "化療或標靶藥物治療期間如欲合併針灸,應諮詢原血液腫瘤科醫師,不可自行停藥或中斷療程",
+    "evidence": "guideline",
+    "source": "ASCO Guideline Update 2020 (JCO), 'Prevention and Management of Chemotherapy-Induced Peripheral Neuropathy in Survivors of Adult Cancers': acupuncture may be offered for established CIPN (weak recommendation)"
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "Randomized controlled trial evidence supports acupuncture for preventing/relieving pain and functional impairment from chemotherapy-induced peripheral neuropathy (e.g., bortezomib-induced); the 2020 ASCO guideline update lists acupuncture as an option for established CIPN (weak recommendation), with additional support from case reports and feasibility studies",
+    "precautions": "Multiple myeloma patients often have lytic bone lesions, pathologic fracture risk, and thrombocytopenia/coagulopathy — direct needling or forceful technique over spinal or rib lesions is prohibited; infection risk is elevated during myelosuppression, requiring strict aseptic technique; acupuncture only relieves symptoms such as neuropathy and cannot replace disease-directed treatment (chemotherapy, targeted therapy, stem cell transplant)",
+    "co_management": "Patients undergoing chemotherapy or targeted therapy who wish to add acupuncture should consult their hematologist-oncologist and must not stop medication or interrupt treatment on their own",
+    "evidence": "guideline",
+    "source": "ASCO Guideline Update 2020 (JCO), 'Prevention and Management of Chemotherapy-Induced Peripheral Neuropathy in Survivors of Adult Cancers': acupuncture may be offered for established CIPN (weak recommendation)"
    }
   },
   {
@@ -105502,7 +105988,29 @@
     "risk_factors_en": [
      "NCBI StatPearls: Sarcoidosis (NBK430687, retrieved 2026-08)",
      "PMC: A review of sarcoidosis etiology, diagnosis and treatment"
+    ],
+    "acupuncture_scope_zh": [
+     "Sarcoidosis Research Institute, 'Acupuncture' (complementary medicine overview)",
+     "Paul Christo MD, '4 Treatments for Chronic Pain from Sarcoidosis'"
+    ],
+    "acupuncture_scope_en": [
+     "Sarcoidosis Research Institute, 'Acupuncture' (complementary medicine overview)",
+     "Paul Christo MD, '4 Treatments for Chronic Pain from Sarcoidosis'"
     ]
+   },
+   "acupuncture_scope_zh": {
+    "can_treat": "可作為輔助療法,用於緩解類肉瘤病相關之肌肉痠痛、疲勞及部分呼吸道不適等症狀,目前缺乏對照試驗證據,證據多來自臨床經驗與患者自述",
+    "precautions": "針灸不能替代類固醇或免疫抑制劑等標準治療,亦不影響肉芽腫病變本身之病程;若出現心臟或神經系統類肉瘤病(可能致命)之徵象,須優先積極就醫,不可以針灸延誤診療",
+    "co_management": "服用類固醇或免疫抑制劑期間如欲合併針灸,應諮詢原胸腔科/風濕免疫科醫師,不可自行停藥或減量",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "May be used as adjunctive therapy for muscle aches, fatigue, and some respiratory discomfort associated with sarcoidosis; controlled-trial evidence is currently lacking, with support coming mainly from clinical experience and patient-reported outcomes",
+    "precautions": "Acupuncture cannot replace standard treatment (corticosteroids, immunosuppressants) and does not alter the underlying granulomatous disease course; if signs of cardiac or neurologic sarcoidosis (potentially life-threatening) appear, prompt medical evaluation takes priority and acupuncture must not delay diagnosis or treatment",
+    "co_management": "Patients on corticosteroids or immunosuppressants who wish to add acupuncture should consult their pulmonologist/rheumatologist and must not stop or reduce medication on their own",
+    "evidence": "unknown",
+    "source": null
    }
   },
   {
@@ -105754,7 +106262,31 @@
     ],
     "risk_factors_en": [
      "NCBI StatPearls: Lymphadenopathy (NBK513250, retrieved 2026-08)"
+    ],
+    "acupuncture_scope_zh": [
+     "Lawenda et al., 'Acupuncture: Could an ancient therapy be the latest advance in the treatment of lymphedema?', Cancer 2013",
+     "'Acupuncture in the Treatment of Upper-Limb Lymphedema: Results of a Pilot Study', PMC3738927",
+     "MSKCC systematic review, 'Can acupuncture be part of the treatment for breast cancer-related lymphedema?'"
+    ],
+    "acupuncture_scope_en": [
+     "Lawenda et al., 'Acupuncture: Could an ancient therapy be the latest advance in the treatment of lymphedema?', Cancer 2013",
+     "'Acupuncture in the Treatment of Upper-Limb Lymphedema: Results of a Pilot Study', PMC3738927",
+     "MSKCC systematic review, 'Can acupuncture be part of the treatment for breast cancer-related lymphedema?'"
     ]
+   },
+   "acupuncture_scope_zh": {
+    "can_treat": "淋巴結腫大本身屬於須先釐清病因(感染、腫瘤、自體免疫等)之徵象,而非獨立診斷;針灸無證據可治療淋巴結腫大之根本病因,僅可能作為已明確病因後之伴隨症狀(如局部痠痛、術後/癌症相關淋巴水腫)輔助處理",
+    "precautions": "不明原因淋巴結腫大(尤其伴隨體重下降、發燒、質地堅硬固定)須優先轉診釐清病因(如切片排除惡性腫瘤),不可以針灸取代必要檢查與診斷;現代臨床證據挑戰過去『患側肢體禁針』之傳統禁忌,多筆病例系列顯示於乳癌術後淋巴水腫肢體施針未見感染或惡化案例增加,但仍建議避開已腫大/發炎之淋巴結本身、傷口疤痕處,並於手術後3–6個月再考慮局部施針;懷疑惡性腫瘤或活動性感染時不應直接針刺病灶處",
+    "co_management": "若淋巴結腫大伴隨之慢性病(如自體免疫疾病)正在用藥治療,欲合併針灸應諮詢原開立醫師,不可自行停藥",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "Lymphadenopathy itself is a sign requiring cause clarification (infection, malignancy, autoimmune disease, etc.), not a standalone diagnosis; there is no evidence acupuncture treats the underlying cause of lymphadenopathy — it may only serve as adjunctive management of associated symptoms once a cause is identified (e.g., localized soreness, post-surgical/cancer-related lymphedema)",
+    "precautions": "Lymphadenopathy of unknown origin (especially with weight loss, fever, or a hard fixed node) requires prompt referral for diagnostic work-up (e.g., biopsy to exclude malignancy) — acupuncture must not substitute for necessary investigation; modern clinical evidence challenges the older blanket contraindication against needling an affected limb, with several case series finding no increase in infection or worsening lymphedema after acupuncture in post-breast-cancer-surgery arms, but needling should still avoid the swollen/inflamed node itself and surgical scars, and local needling is generally deferred 3-6 months post-surgery; needling directly over a suspected malignant or actively infected node should be avoided",
+    "co_management": "If lymphadenopathy is associated with a chronic condition (e.g., autoimmune disease) being actively managed with medication, patients who wish to add acupuncture should consult the prescribing physician and must not stop medication on their own",
+    "evidence": "unknown",
+    "source": null
    }
   },
   {
