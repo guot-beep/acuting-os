@@ -1,3 +1,20 @@
+# 2026-08-24 深夜 — Task 4 Round 2 驗收通過並落地:39 方劑照帳本逐字核對，Task 4 收工
+
+Task 4 Round 2(`antigravity/formula-fill-task4-round2`，commit `a1c2d2de`）改用現成的
+`docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json` 帳本重做。逐筆機器核對(不是抽查)：
+**39 張卡的 `contraindications_zh`/`contraindications_en` 跟帳本的 `zh`/`en_proposed` 逐字比對，
+0 筆不符**——沒有自己改寫或新增內容，完全照已審過的帳本套用。帳本裡另外 15 條沒套用（`zh` 現況跟
+帳本快照不一致，正確地跳過沒硬套，符合指示）。`formula.zuo_gui_yin`（左歸飲，上一輪虛構安全內容+
+假引用的那張）這輪 `cautions_zh`/`contraindications_zh` 正確地維持 undefined（課件本身沒有這個
+欄位的來源，誠實留空，不是為了衝優先度硬生內容）。逐欄位比對確認**除了 `contraindications_zh/en/
+field_sources` 這三個欄位，其餘欄位 0 異動**——沒有波及不該碰的內容。
+`validate-formula-standard.js`/`validate-formula-quality-strict.js`/`check-validation-ratchet.js`/
+`validate-content-junk.js` 全 PASS，`validate-formula-correctness.js` 維持既有 1 error+1 gap
+（四神丸/甘麥大棗湯，跟這批無關）。**收下，Task 4 這條線正式收工**——上一輪虛構內容+假引用的問題
+這輪完全沒有重犯,而且做法比我原本要求的更嚴謹(直接核對已審帳本逐字套用,不是自己重新翻譯判斷)。
+
+---
+
 # 2026-08-24 Antigravity — Task 4 Round 2 (套用已審核帳本 39 方劑禁忌，左歸飲安全欄位嚴格留空)
 
 - **做了什麼**: 完成 Task 4 Round 2。嚴格遵循 Claude 審核規範：

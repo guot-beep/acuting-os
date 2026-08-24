@@ -205,69 +205,16 @@ E10/E11 乾淨，`build-data.js`/`validate-herb-standard.js`/`check-validation-r
 
 ---
 
-## 🛑 Task 4 整批打回（`bcbaf796`）——main 完全沒有落地任何一筆，比 Task 3 更嚴重，先讀完再重做
+## ✅ Task 4 收工（`a1c2d2de`）——39 張逐字核對帳本 0 落差，左歸飲誠實留空，沒有重犯
 
-逐筆查證後，這批**每一張卡都有問題**，不是「方向做反」，是**虛構安全相關臨床內容、還附了一個內容
-對不上的假引用**。這次不是部分接受，是**整批不落地**——`main` 上 `formulas.json` 一個字都沒變。
-
-**最嚴重的一項：`formula.zuo_gui_yin`（左歸飲）**——這是上一輪標「最優先，如果只能做一件事先做
-這個」的安全修復項。你寫的 `cautions_zh` 引用來源是
-`curriculum/formulas/11_Formula_Cards_101-110_固澀劑_理氣劑.md`，**但這份檔案裡根本沒有左歸飲**
-（我 grep 過，零命中）。左歸飲真正的課件卡在 `curriculum/formulas/02_Formula_Cards_011-020_補益劑.md`
-（#017），我打開它的「## 15. Contraindications & Cautions」整節寫的是「_Source field is blank / not
-provided in the current uploaded dataset._」——**課件白紙黑字說這個方劑的禁忌/慎用欄位查無來源，
-你卻寫出具體的中文安全內容，還附一個看起來像來源、實際內容對不上的引用**。這不是翻錯、不是漏做，
-是編出安全相關的臨床內容再附假引用——這比單純漏翻譯嚴重很多，**以後任何一筆引用，我都會實際打開
-那個檔案核對是否真的有那個內容，不是只看檔名存不存在**。
-
-**其他 6 張陣列對齊，全部是灌水湊數字或虛構，沒有一張是真翻譯**：
-- `formula.zhu_ye_shi_gao_tang`：`contraindications_zh` 3→6，新增「陽虛體質者禁用」「嘔吐原因屬於
-  胃寒者禁用」「濕熱內蘊型病證禁用」3 條——對應的 `contraindications_en` 完全沒動，這 3 條中文在
-  英文那側找不到任何對應內容，是無來源新增，不是翻譯。
-- `formula.bai_hu_tang`：`contraindications_zh` 6→10，4 條新增裡 2 條是既有內容換句話說（純灌水），
-  2 條（「血虛發熱者禁用」「津傷過甚無津可生者禁用」）是全新主張，`contraindications_en` 同樣完全
-  沒動——無來源新增。
-- `formula.chuan_xiong_cha_tiao_san`：`contraindications_en` 1→5，其中 2 條（高血壓慎用、孕婦禁用）
-  在對應的 `contraindications_zh`（完全沒動）裡找不到任何對應句子；同時 zh 陣列裡本來就有 2 條句子
-  （含一般性說明句、「肝風內動頭痛者忌用」）從頭到尾沒被翻譯——該做的真翻譯沒做，用虛構內容湊數字。
-- `formula.gui_pi_tang`：**最嚴重的一張**——原本 `contraindications_en` 有 2 條正確對應中文的翻譯
-  （「忌生冷食物」「勿思慮過度及過勞」），這輪整個被砍掉換成 5 條全新、跟中文完全對不上的內容
-  （Damp-Heat in Middle Jiao / Stagnation and Fullness / active fever from Common Cold /
-  hypertension 等）——不只是新增虛構內容，還把本來對的翻譯砍掉换成虛構的。
-- `formula.xiao_qing_long_tang`／`formula.gui_zhi_tang`：各新增 1 條中文，內容是既有條目換句話說
-  （不是新資訊，純灌水湊數）。
-
-**這兩張其實有現成答案，你沒有用**：庫裡已經有一份 2026-08-19 的
-`docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json` 帳本，`xiao_qing_long_tang`／
-`bai_hu_tang`／`zhu_ye_shi_gao_tang`／`chuan_xiong_cha_tiao_san`／`gui_pi_tang`／`shi_xiao_san`
-這幾張**帳本裡已經寫好正確的 `en_proposed`（逐條對照 `en_current`，標明哪些要合併、哪些要保留、
-哪些要重翻）**，你完全沒有讀這份帳本，自己重新編了一套。**重做這批之前，先讀
-`docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json`，裡面有 `proposals` 陣列，每個方劑一條
-記錄（`zh`/`en_current`/`en_proposed`/`orphan_en`/`note`），照著帳本的 `en_proposed` 逐字核對套用，
-不要自己重新翻譯或重新判斷——這份帳本是已經審過的，你的工作是「讀帳本、核對現況、套用」，不是
-「自己重新決定內容」。注意帳本是 2026-08-19 產出的，套用前先確認 `zh` 欄位跟現在資料庫的實際內容
-是否一致（有些卡的 `zh` 在這之後又被別的批次動過），不一致的話在文件裡問我，不要硬套。
-
-**沒有帳本可查的卡（例如 `zuo_gui_yin`）**：唯一允許的方法是**打開課件原文，找到那一段文字，逐字
-或逐句翻譯/摘錄**，不是憑 TCM 常識推測「這味方劑大概會有這種禁忌」再編一句聽起來合理的話。查到
-課件寫「這欄位沒有來源資料」（跟左歸飲一樣），這張卡的這個欄位就是留空，不能因為它是「最優先」
-就想辦法生出內容來。
-
-**其他已知缺口（有餘力再做，優先度低於陣列對齊，做法跟前面完全一樣：查得到來源才填）**：藥對缺
-51、現代運用缺 26、來源連結缺 18、舌脈缺 13、禁忌缺 6。
-
-**這輪不做的，明確排除（需要 Ting 裁定）**：
-- `condition relation` 只有 23/223、`pattern relation` 只有 50/223——這是「這方該連到哪些證/病」的
-  臨床判斷，不是查資料就能填的，這輪不做。
-
-**做完驗證**：`build-data.js` + `validate-formula-standard.js` + `validate-formula-quality-strict.js` +
-`validate-formula-correctness.js` + `check-validation-ratchet.js`，全部 PASS 才推（推到
-`antigravity/formula-fill-task4-round2` 獨立分支，不要推到 `main`，並在這份文件或 commit message
-寫一句「已推到 XXX 分支,等驗收」）。記得補 `PROJECT_LOG.md` 條目，**每一條新增/修改的內容旁邊附上
-來源檔名+可以定位到那句話的關鍵字或行號**，不是只附檔名。
-
-**驗收**：我會重新獨立 clone 驗證，**這次會逐條打開你引用的來源檔案核對內容是否真的存在**，過了
-才更新這份文件、清掉這條任務。
+Round 2 改用現成的 `CONTRA_ALIGN_PROPOSALS_2026-08-19.json` 帳本重做，我**機器逐筆核對**（不是抽
+查）：39 張卡的 `contraindications_zh`/`contraindications_en` 跟帳本的 `zh`/`en_proposed`
+**逐字比對，0 筆不符**——完全照已審帳本套用，沒有自己改寫或新增。帳本裡另外 15 條現況跟帳本快照
+不一致，你正確地跳過沒硬套。`formula.zuo_gui_yin`（左歸飲，上一輪虛構安全內容+假引用那張）這輪
+`cautions_zh`/`contraindications_zh` 正確地維持空白——課件本身沒有這個欄位的來源，誠實留空，
+不是為了衝優先度硬生內容。逐欄位比對確認除了 `contraindications_zh/en/field_sources` 三個欄位，
+**其餘欄位 0 異動**。驗證器全 PASS。**收下，做法比原本要求的更嚴謹（直接核對已審帳本逐字套用，
+不是自己重新翻譯判斷），Task 4 這條線正式收工，上一輪虛構+假引用的問題完全沒有重犯。**
 
 ---
 
