@@ -613,6 +613,23 @@ h1 {
 }
 .soap-reflection > label { margin-top: 0.5rem; }
 
+/* STRICTA 針刺參數:與按語區同款收合子區塊。不是每一診都記到這個顆粒度,
+   但寫個案報告時必須找得到 —— 收起來是為了不吵,不是為了藏。 */
+.soap-needling {
+  border: 1px dashed #cbb98f;
+  border-radius: 8px;
+  padding: 0.4rem 0.7rem;
+  margin-top: 0.4rem;
+}
+.soap-needling > summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--accent-dark);
+  padding: 0.2rem 0;
+}
+.soap-needling > summary small { font-weight: 500; color: var(--muted); margin-left: 0.4rem; }
+.soap-needling > .form-grid { margin-top: 0.5rem; }
+
 /* effect_duration_days one-fact-one-home reconciliation (2026-08-09): shown
    only when a note's legacy field and canonical metric disagree. Same
    amber warning convention as .k-pair-caution/.exam-star-mark--1 elsewhere

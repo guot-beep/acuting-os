@@ -841,6 +841,32 @@
             <label class="wide">Acupoint record links<textarea name="acupointLinks" rows="2" placeholder="SP6, ST36, LR3, CV4"></textarea></label>
             <label>留針 Retention<input name="retentionMinutes" type="number" min="0" placeholder="25" /></label>
             <label>手法 Technique<input name="technique" placeholder="gentle regulation / tonify / reduce" /></label>
+            <!-- STRICTA 2010 item 2 的其餘五欄。資料契約(app.js normalizeSoapNote)
+                 早就有這五個欄位，但一直沒有輸入欄，於是 CARE 完整度徽章會永遠
+                 顯示缺這幾項而無處可填。收在 details 裡：不是每一診都需要記到這個
+                 顆粒度，但要寫個案報告時必須找得到。
+                 留空 = 沒有記錄，與「0 針」「未得氣」是不同的事實（D4）。 -->
+            <details class="soap-needling wide">
+              <summary>針刺參數 Needling parameters<small>選填；寫個案報告(STRICTA)時需要</small></summary>
+              <div class="form-grid">
+                <label>進針數 Needle count<input name="needleCount" type="number" min="0" placeholder="留空=未記錄" /></label>
+                <label>深度 Depth<input name="needleDepthText" placeholder="0.5–1.0 寸，隨穴而異" /></label>
+                <label>得氣 De qi<select name="deqiResponse">
+                  <option value="">—（未記錄）</option>
+                  <option value="obtained">得氣 Obtained</option>
+                  <option value="partial">部分得氣 Partial</option>
+                  <option value="not_obtained">未得氣 Not obtained</option>
+                  <option value="not_sought">未追求得氣 Not sought</option>
+                </select></label>
+                <label>刺激方式 Stimulation<select name="needleStimulation">
+                  <option value="">—（未記錄）</option>
+                  <option value="manual">手法 Manual</option>
+                  <option value="electro">電針 Electro</option>
+                  <option value="none">無 None</option>
+                </select></label>
+                <label class="wide">針具 Needle type<input name="needleTypeText" placeholder="0.25×40mm 不鏽鋼" /></label>
+              </div>
+            </details>
             <label class="wide">治療手法 Modalities<input name="modalities" placeholder="艾灸 moxa / 電針 e-stim / 拔罐 cupping / 刮痧 gua sha / 推拿 tuina" /></label>
             <!-- AVS v3 Phase C(§2.5/§7):結構化療法記錄 modality.* —— Checkout
                  的權威來源;上面的自由文字欄位保留不動,舊 note 靠文字推斷

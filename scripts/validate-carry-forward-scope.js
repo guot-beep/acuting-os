@@ -41,6 +41,9 @@ const ALLOWED = new Set([
   "retentionMinutes", "technique",     // 留針/手法
   "modalities", "modalitiesPerformed", // 處置
   "formulaLinks", "herbLinks", "formulaHerbs", "medicationLinks", "westernMeds", // 方藥
+  // STRICTA 針刺參數:這四項是「你打算怎麼扎」,屬於處置。
+  // deqiResponse 不在這裡 —— 它在 FORBIDDEN,因為得氣是針下去才知道的觀察。
+  "needleCount", "needleDepthText", "needleStimulation", "needleTypeText",
 ]);
 
 /* 絕不可沿用 —— 每一項都是「這一診才成立的事實或判斷」。 */
@@ -61,6 +64,7 @@ const FORBIDDEN = {
   adverseEvents: "不良事件:複製過來等於憑空捏造一次事件",
   patientPerspective: "病人觀點",
   vitals: "生命徵象",
+  deqiResponse: "得氣:針下去才知道的觀察,不是你打算做的事",
   tongueBody: "舌質", tongueCoating: "舌苔", pulse: "脈象",
   visitDate: "就診日期", visitNumber: "診次",
   lifestyleFactors: "生活型態量測",

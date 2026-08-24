@@ -744,6 +744,12 @@ const CARRY_FORWARD_FIELDS = [
   { key: "pointsUsed", label: "用穴(自由文字)" },
   { key: "retentionMinutes", label: "留針分鐘" },
   { key: "technique", label: "手法" },
+  // 針刺參數只帶「你打算怎麼扎」的四項。deqiResponse 刻意不在此 ——
+  // 得氣與否是這一診針下去才知道的觀察,沿用等於替今天填一個沒發生的事實。
+  { key: "needleCount", label: "進針數" },
+  { key: "needleDepthText", label: "深度" },
+  { key: "needleStimulation", label: "刺激方式" },
+  { key: "needleTypeText", label: "針具" },
   { key: "modalities", label: "處置(自由文字)" },
   { key: "formulaLinks", label: "方劑", link: true },
   { key: "herbLinks", label: "中藥", link: true },
@@ -9334,6 +9340,13 @@ function openSoapEditor(note = null) {
     acupointLinks: [],
     retentionMinutes: "",
     technique: "",
+    // 必須列在 fallback 裡:水合迴圈只走 data 的鍵,漏掉就會把上一筆 note 的
+    // 針刺參數留在表單上,變成下一個病人的紀錄。
+    needleCount: "",
+    needleDepthText: "",
+    deqiResponse: "",
+    needleStimulation: "",
+    needleTypeText: "",
     formulaHerbs: "",
     formulaLinks: [],
     herbLinks: [],
@@ -9674,6 +9687,14 @@ function saveSoapFromForm(event) {
     acupointLinks: splitList(data.acupointLinks),
     retentionMinutes: data.retentionMinutes,
     technique: data.technique.trim(),
+    // STRICTA 2a/2c/2d/2e/2g —— 契約早就有,表單到現在才長出欄位。
+    // 一律原樣交給 normalizeSoapNote 判空:留空 = 沒記錄,與「0 針」「未得氣」
+    // 是三件不同的事實(D4),這裡不得代為填 0 或猜測。
+    needleCount: data.needleCount,
+    needleDepthText: (data.needleDepthText || "").trim(),
+    deqiResponse: data.deqiResponse || "",
+    needleStimulation: data.needleStimulation || "",
+    needleTypeText: (data.needleTypeText || "").trim(),
     formulaHerbs: data.formulaHerbs.trim(),
     formulaLinks: splitList(data.formulaLinks),
     herbLinks: splitList(data.herbLinks),
