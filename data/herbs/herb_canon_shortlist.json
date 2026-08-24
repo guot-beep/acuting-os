@@ -26416,7 +26416,9 @@
           "analysis_zh": "Hepatoprotective Effect"
         }
       ],
-      "indications_en": "Edema, dysuria, diarrhea, and cloudy dysuria due to fluid and dampness retention.",
+      "indications_en": [
+        "Edema, dysuria, diarrhea, and cloudy dysuria due to fluid and dampness retention."
+      ],
       "safety_info": {
         "toxicity_zh": "無毒。淡滲利水，久服易傷陰津。",
         "contraindications_zh": [
@@ -26508,7 +26510,8 @@
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf"
         ],
         "modern_functions_en": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md",
-        "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
+        "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md",
+        "indications_en": "H3 shape fix 2026-08-24: was a bare string, wrapped as single-element array to match indications_zh's 1-item shape (no content change)."
       },
       "card_grade": "partial",
       "condition_tags_en": [
@@ -26837,7 +26840,10 @@
           "analysis_zh": "Anti-urolithiasis Effect"
         }
       ],
-      "indications_en": "Dysuria, edema, diarrhea, cloudy lin, leukorrhea, phlegm-fluid dizziness, and nocturnal emission due to Kidney fire.",
+      "indications_en": [
+        "Dysuria, edema, diarrhea, cloudy lin, leukorrhea, and phlegm-fluid dizziness.",
+        "Nocturnal emission and tidal fever with night sweats due to Kidney Yin deficiency with reckless Ministerial Fire."
+      ],
       "safety_info": {
         "toxicity_zh": "無毒。性寒利水，腎虛精滑無濕熱者慎用。",
         "contraindications_zh": [
@@ -26933,7 +26939,8 @@
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf"
         ],
         "modern_functions_en": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md",
-        "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
+        "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md",
+        "indications_en": "H3 fix 2026-08-24: was a single combined string missing 潮熱盜汗 (tidal fever with night sweats) from indications_zh's 2nd clause. Split into a 2-item array matching indications_zh's 2 items and expanded item 2 to faithfully translate the full zh content (腎陰不足、相火妄動之遺精、潮熱盜汗)."
       },
       "card_grade": "partial",
       "condition_tags_en": [
@@ -72066,7 +72073,10 @@
           "analysis_zh": "Mild Diuretic & Immune Modulation"
         }
       ],
-      "indications_en": "Heart-Mind restless with palpitations, insomnia, anxiety, and forgetfulness. Spleen deficiency with dampness.",
+      "indications_en": [
+        "Heart-Mind restless with palpitations, insomnia, anxiety, and forgetfulness.",
+        "Spleen deficiency with dampness, edema with abdominal distension, and dysuria."
+      ],
       "condition_tags_zh": [
         "心悸失眠多夢 (Palpitations & Insomnia)",
         "驚恐健忘 (Anxiety & Forgetfulness)",
@@ -72166,7 +72176,8 @@
         "exam_importance": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf"
         ],
-        "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
+        "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md",
+        "indications_en": "H3 fix 2026-08-24: was a single combined string that dropped indications_zh's 2nd clause's 水腫腹脹、小便不利 (edema, abdominal distension, dysuria) content. Split into a 2-item array matching indications_zh's 2 items and expanded item 2 to translate the full zh content."
       },
       "card_grade": "partial",
       "condition_tags_en": [
