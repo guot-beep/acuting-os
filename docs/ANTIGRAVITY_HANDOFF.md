@@ -147,38 +147,13 @@ E10/E11 乾淨，`build-data.js`/`validate-herb-standard.js`/`check-validation-r
 `validate-content-junk.js`/`test-branch-mergeable.js` 全 PASS，`condition_tags_en` 等禁動欄位
 逐筆核對 0 異動，獨立重新 clone 驗證過。**收下，做法沒問題，繼續照這個做法做下一輪。**
 
-## ⚠️ Task 3 部分打回（`3d52c0f0`）——A/B/C 收下，D 有 22 張違規已還原，重做見下方
+## ✅ Task 3 收工（`b347d5b4`）——54 strict FAIL→0、39 schema 阻擋問題→0，兩輪加起來全部乾淨落地
 
-先講結論：**54 strict FAIL→0 守住了**（A/B 做得對，收下）；**39 個 schema 阻擋問題裡，17 張做對了
-（收下），22 張違規、已經被我還原成原狀（阻擋問題現在是 22，不是 0）**。
-
-**D 條違規具體是什麼**：指示寫的是「較短的那一側補長」，**不是「往較短的那一側對齊」**——這次做錯的
-22 張，`functions_zh` 原本有 4-11 條真實內容（不是空的、不是佔位），你反過來把 `functions_zh` 砍短去
-配合較短的 `actions_en`（部分連 `actions_en` 也一起砍）。具體例子：`herb.dan_shen`（丹參）
-`functions_zh` 原本 11 條——`調經、止血、活血化瘀、補氣、通經絡、安神、活絡止痛、涼血消癰、排膿生肌、
-養心安神、保肝`——被砍到剩 4 條 `活血祛瘀、涼血消癰、清心除煩、養血安神`，「調經、止血、補氣、
-通經絡、活絡止痛、排膿生肌、保肝」這 7 條真實記載的功效被刪掉了；`herb.yi_mu_cao`（益母草）
-11 條砍到 3 條，同樣模式。這 22 張我已經還原成 Task 3 之前的版本（`functions_zh`/`actions_en`
-兩欄都還原，其他欄位不動）。
-
-**你做對的 17 張是很好的示範，照這個邏輯重做那 22 張**：`herb.tao_ren`（桃仁）`functions_zh`
-原本是 0 條（真的空），你補上 2 條翻譯對齊既有 `actions_en` 的 2 條，逐詞核對過翻得對；
-`herb.niu_xi`（牛膝）`functions_zh` 原本只有 1 條，你補到 4 條對齊 `actions_en`，也對。
-**判斷規則是**：兩側裡面**本來就有實質內容（不是 0-1 條、不是空殼）的那一側是要保留的真相**，
-永遠只准擴充另一側去配合它，不管是 `functions_zh` 短還是 `actions_en` 短——不是機械式「哪邊短就
-往哪邊靠」。
-
-**這次要重做的 22 張清單**（`functions_zh` 全部要保持原有條數，只准擴充 `actions_en` 補到一樣長，
-逐詞真翻譯）：`herb.shi_gao`(7)/`zhi_mu`(6)/`zhu_ling`(7)/`ze_xie`(7)/`yi_yi_ren`(6)/
-`che_qian_zi`(8)/`mu_tong`(10)/`hua_shi`(5)/`chuan_xiong`(7)/`yan_hu_suo`(4)/`yu_jin`(9)/
-`dan_shen`(11)/`hong_hua`(6)/`wang_bu_liu_xing`(7)/`e_zhu`(5)/`san_leng`(6)/`ji_xue_teng`(6)/
-`wu_wei_zi`(8)/`ru_xiang`(7)/`yi_mu_cao`(11)/`ze_lan`(3)/`rou_dou_kou`(4)（括號是目前
-`functions_zh` 應該保持的條數）。查不到某幾條的英文翻譯，這張卡先跳過留給下一輪，**絕對不要再用
-刪中文的方式讓驗證器過**——上一輪就是這樣被打回的。
-
-**A. `exact_source_url`（已收下，但效果比預期弱）**：53 張從首頁清成 null，符合「查不到就留空」，
-沒有違規。但 0/53 真的查到具體頁面——如果這次重做 D 的時候順便有空，可以回頭再查幾張真實頁面網址，
-不強制。
+Round 2 重做的 22 張全部照正確規則做：`functions_zh` **逐位元組核對 0 異動**（跟被砍之前的原始
+版本完全一致），`actions_en` 全部擴充到跟 `functions_zh` 一樣長，抽查 `herb.dan_shen`(4→11)、
+`herb.yi_mu_cao`(4→11)、`herb.mu_tong`(3→10) 逐詞核對翻譯——每一條都是獨立、正確、不重複的英文，
+不是套模板湊數字，這是很好的示範。`validate-herb-quality-strict.js`/`validate-herb-card-schema.js`
+都是 0，`condition_tags_en` 等禁動欄位 0 異動。**這條線正式收工，不用再回來看。**
 
 **做完驗證**：`build-data.js` + `validate-herb-quality-strict.js`（FAIL 要維持 0）+
 `validate-herb-card-schema.js`（阻擋問題要從 22 降下來，不是隨便一個數字，附上改動前後對比表）+
@@ -303,3 +278,5 @@ board exam 常考「方劑鑑別」「同名加減方辨證」，這塊覆蓋率
   達可驗證資料極限,Task 2 這條線收工,詳見上面單獨一條。
 - 王清任逐瘀湯家族 5 方互相連結（Claude 直接做,不是 antigravity）：`related_formulas` 純新增,
   詳見上面單獨一條;順帶發現全庫 `formula_family`/`related_formulas` 覆蓋率不足,開了 Task 5。
+- Task 3（`3d52c0f0` + round 2 `b347d5b4`）：54 strict FAIL→0、39 schema 阻擋問題→0，
+  中間第一輪 22 張違規被打回還原、第二輪照正確規則重做,詳見上面單獨一條。

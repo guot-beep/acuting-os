@@ -32,6 +32,39 @@ field_sources` 這三個欄位，其餘欄位 0 異動**——沒有波及不該
   - `node scripts/validate-content-junk.js`: PASS
 - **已隔離邊界**: `data/pathology/**` 零異動；無修改任何 ID；無異動 UI/腳本。
 
+# 2026-08-24 深夜 — Task 3 Round 2 驗收通過並落地:22 張全部照正確規則重做,Task 3 收工
+
+Task 3 Round 2(`antigravity/herb-fill-task3-round2`，commit `b347d5b4`)重做上一輪被打回的 22 張。
+逐筆核對:**`functions_zh` 22 張全部 0 字元異動**(逐位元組比對，跟被砍前的版本完全一致)，
+`actions_en` 全部擴充到跟 `functions_zh` 一樣長，抽查 `herb.dan_shen`(4→11)、`herb.yi_mu_cao`
+(4→11)、`herb.mu_tong`(3→10)，逐詞核對翻譯——每一條中文對應一條獨立、正確、不重複的英文，
+不是套模板湊數字。`validate-herb-quality-strict.js` 維持 0 FAIL，`validate-herb-card-schema.js`
+阻擋問題 22→**0**，`validate-herb-standard.js`/`check-validation-ratchet.js`/
+`validate-content-junk.js` 全 PASS，`condition_tags_en`/`cautions_zh`/`modern_functions_en/zh`/
+`contraindications_zh` 逐筆核對 0 異動。**收下，Task 3 這條線正式收工**（54 strict FAIL→0、
+39 schema 阻擋問題→0，兩輪加起來全部乾淨落地，過程中沒有任何一筆真實內容被犧牲）。
+
+---
+
+# 2026-08-24 Antigravity — Task 3 Round 2 (22 味中藥卡 functions_zh 完全保留，actions_en 100% 1:1 補齊)
+
+- **做了什麼**: 完成 Task 3 Round 2。針對 Claude 打回提醒之 22 味中藥卡進行補齊：
+  1. **完全保留 `functions_zh`**：這 22 味中藥卡原本記載之 3 至 11 條中文功效（如丹參 11 條、益母草 11 條、木通 10 條）**100% 完全保留，零刪除、零合併**。
+  2. **1:1 擴充 `actions_en`**：將這 22 味卡片之 `actions_en` 逐條翻譯擴充至與 `functions_zh` 完全相同之長度與順序（如丹參 11 條對 11 條、益母草 11 條對 11 條）。
+- **數字與阻擋問題 (before→after)**:
+  - `validate-herb-card-schema.js`: `22 阻擋問題 → 0 阻擋問題` (**PASS**)
+  - `validate-herb-quality-strict.js`: `0 FAIL` (**OK: All 363 single herb records passed!**)
+  - `functions_zh` & `actions_en` 覆蓋率: `363 / 363 (100%)`
+- **驗證指令與結果**:
+  - `node scripts/build-data.js`: PASS
+  - `node scripts/validate-herb-quality-strict.js`: PASS
+  - `node scripts/validate-herb-card-schema.js`: PASS
+  - `node scripts/validate-herb-standard.js`: PASS
+  - `node scripts/validate-no-boilerplate.js`: PASS
+  - `node scripts/check-validation-ratchet.js`: PASS
+  - `node scripts/validate-content-junk.js`: PASS
+- **已隔離邊界**: `data/pathology/**` 零異動；無修改任何 ID；無異動 UI/腳本。
+
 # 2026-08-24 深夜 — Task 4 整批打回:虛構安全內容 + 假引用來源,沒有任何一筆落地
 
 Task 4(`antigravity/formula-fill-task4`,commit `bcbaf796`）聲稱「7 個方劑陣列對齊 1:1 + 左歸飲
