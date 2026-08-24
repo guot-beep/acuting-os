@@ -1,0 +1,220 @@
+{
+  "source_commit": "aa170b9",
+  "queue_path": "data/research_staging/cr010_live/cr010_common300_detail_queue_live.json",
+  "maturity_path": "data/research_staging/cr010_live/cr010_condition_detail_maturity_live.json",
+  "reuse_map_path": "data/research_staging/cr010_live/cr010_source_reuse_map_live.json",
+  "live_counts_at_source_commit": {
+    "full_detail": 77,
+    "partial": 85,
+    "skeleton": 343,
+    "total": 505
+  },
+  "source_assets_scanned": 1106,
+  "selection_rule": "Continue after Batch 03 rank 15; take live DETAIL_PARTIAL ranks 16-30 in exact file order.",
+  "selected": [
+    {
+      "rank": 16,
+      "id": "cond.pid_chronic",
+      "name_en": "Chronic Pelvic Inflammatory Disease Sequelae",
+      "name_zh": "慢性骨盆腔炎後遺",
+      "live_score": 5,
+      "live_blockers": [
+        "missing_western_pathology",
+        "missing_etiology",
+        "missing_risk_factors",
+        "missing_sources",
+        "missing_field_sources",
+        "structured_relation_gap"
+      ]
+    },
+    {
+      "rank": 17,
+      "id": "cond.piriformis_syndrome",
+      "name_en": "Piriformis Syndrome",
+      "name_zh": "梨狀肌症候群",
+      "live_score": 5,
+      "live_blockers": [
+        "missing_western_pathology",
+        "missing_etiology",
+        "missing_risk_factors",
+        "missing_sources",
+        "missing_field_sources",
+        "structured_relation_gap"
+      ]
+    },
+    {
+      "rank": 18,
+      "id": "cond.pmdd",
+      "name_en": "Premenstrual Dysphoric Disorder",
+      "name_zh": "經前不悅症",
+      "live_score": 5,
+      "live_blockers": [
+        "missing_western_pathology",
+        "missing_etiology",
+        "missing_risk_factors",
+        "missing_sources",
+        "missing_field_sources",
+        "structured_relation_gap"
+      ]
+    },
+    {
+      "rank": 19,
+      "id": "cond.postpartum_hypolactation",
+      "name_en": "Postpartum Lactation Insufficiency",
+      "name_zh": "產後缺乳",
+      "live_score": 5,
+      "live_blockers": [
+        "missing_western_pathology",
+        "missing_etiology",
+        "missing_risk_factors",
+        "missing_sources",
+        "missing_field_sources",
+        "structured_relation_gap"
+      ]
+    },
+    {
+      "rank": 20,
+      "id": "cond.rotator_cuff",
+      "name_en": "Rotator Cuff Tendinopathy",
+      "name_zh": "旋轉肌袖肌腱病變",
+      "live_score": 5,
+      "live_blockers": [
+        "missing_western_pathology",
+        "missing_etiology",
+        "missing_risk_factors",
+        "missing_sources",
+        "missing_field_sources",
+        "structured_relation_gap"
+      ]
+    },
+    {
+      "rank": 21,
+      "id": "cond.secondary_dysmenorrhea",
+      "name_en": "Secondary Dysmenorrhea",
+      "name_zh": "繼發性痛經",
+      "live_score": 5,
+      "live_blockers": [
+        "missing_western_pathology",
+        "missing_etiology",
+        "missing_risk_factors",
+        "missing_sources",
+        "missing_field_sources",
+        "structured_relation_gap"
+      ]
+    },
+    {
+      "rank": 22,
+      "id": "cond.vulvovaginal_candidiasis",
+      "name_en": "Vulvovaginal Candidiasis",
+      "name_zh": "外陰陰道念珠菌症",
+      "live_score": 5,
+      "live_blockers": [
+        "missing_western_pathology",
+        "missing_etiology",
+        "missing_risk_factors",
+        "missing_sources",
+        "missing_field_sources",
+        "structured_relation_gap"
+      ]
+    },
+    {
+      "rank": 23,
+      "id": "cond.whiplash",
+      "name_en": "Whiplash-Associated Disorder",
+      "name_zh": "揮鞭樣損傷",
+      "live_score": 5,
+      "live_blockers": [
+        "missing_western_pathology",
+        "missing_etiology",
+        "missing_risk_factors",
+        "missing_sources",
+        "missing_field_sources",
+        "structured_relation_gap"
+      ]
+    },
+    {
+      "rank": 24,
+      "id": "cond.ankle_sprain",
+      "name_en": "Ankle Sprain",
+      "name_zh": "踝關節扭傷",
+      "live_score": 6,
+      "live_blockers": [
+        "missing_sources",
+        "missing_field_sources",
+        "structured_relation_gap"
+      ]
+    },
+    {
+      "rank": 25,
+      "id": "cond.chronic_pelvic_pain",
+      "name_en": "Chronic Pelvic Pain",
+      "name_zh": "慢性骨盆痛",
+      "live_score": 6,
+      "live_blockers": [
+        "missing_sources",
+        "missing_field_sources",
+        "structured_relation_gap"
+      ]
+    },
+    {
+      "rank": 26,
+      "id": "cond.cluster_headache",
+      "name_en": "Cluster Headache",
+      "name_zh": "叢集性頭痛",
+      "live_score": 6,
+      "live_blockers": [
+        "missing_sources",
+        "missing_field_sources",
+        "structured_relation_gap"
+      ]
+    },
+    {
+      "rank": 27,
+      "id": "cond.de_quervain_tenosynovitis",
+      "name_en": "De Quervain Tenosynovitis",
+      "name_zh": "狄奎凡氏腱鞘炎",
+      "live_score": 6,
+      "live_blockers": [
+        "missing_sources",
+        "missing_field_sources",
+        "structured_relation_gap"
+      ]
+    },
+    {
+      "rank": 28,
+      "id": "cond.female_infertility",
+      "name_en": "Female Infertility",
+      "name_zh": "女性不孕",
+      "live_score": 6,
+      "live_blockers": [
+        "missing_sources",
+        "missing_field_sources",
+        "structured_relation_gap"
+      ]
+    },
+    {
+      "rank": 29,
+      "id": "cond.male_infertility",
+      "name_en": "Male Infertility",
+      "name_zh": "男性不孕",
+      "live_score": 6,
+      "live_blockers": [
+        "missing_sources",
+        "missing_field_sources",
+        "structured_relation_gap"
+      ]
+    },
+    {
+      "rank": 30,
+      "id": "cond.myofascial_pain_syndrome",
+      "name_en": "Myofascial Pain Syndrome",
+      "name_zh": "肌筋膜疼痛症候群",
+      "live_score": 6,
+      "live_blockers": [
+        "missing_sources",
+        "missing_field_sources",
+        "structured_relation_gap"
+      ]
+    }
+  ]
+}

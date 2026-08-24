@@ -1,3 +1,15 @@
+# ⛔ SUPERSEDED FOR ACTIVE EXECUTION(2026-08-12)
+
+**這份排程不再是現行工作依據,只保留歷史。** 不要照它派工。
+現行 tactical plan = `docs/SPRINT_2026-08-12_BRIEF.md`(含 Validation
+Convergence / Exit Rule),現行優先序 = `docs/OPTIMIZATION_PLAN_2026-08.md`
+頂端那張表(Core Loop → Visit Brief → Timeline → Audit → Previsit → CHM-CARE)。
+
+下面「八月穴位方劑、九月病症、十月驗證、十一月病例」的世界已經被 Clinical V2
+sprint 取代;文件內部原本就多處自註數字作廢,不要再用它推算進度。
+
+---
+
 # 排期 2026-08 → 12(趕工版,可派給其他 AI)
 
 Ting 2026-07-29:「我這八月先把穴位卡優化跟方劑卡建立大概,然後呢?

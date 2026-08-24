@@ -2,7 +2,7 @@
  * router.js — workspace switcher for AcuTing OS.
  *
  * The page is organized into workspaces via section[data-workspace]:
- *   home | lookup | cases | quality | sources | learn
+ *   home | lookup | cases | patients | quality | sources | learn
  *
  * Rules:
  * - #ws/<name>            → activate that workspace, scroll to top.
@@ -15,7 +15,9 @@
  * This file deliberately does not touch app.js internals.
  */
 (function () {
-  const WORKSPACES = ["home", "acu", "channels", "formula", "herb", "condition", "comparison", "cases", "quality", "sources"];
+  // symptom 是白名單制的 —— 不在這個陣列裡的 hash 會被導回 home,所以新增
+  // workspace 一定要同時改這裡,否則 section 與 nav 都在、點了卻回首頁。
+  const WORKSPACES = ["home", "acu", "channels", "formula", "herb", "pharm", "symptom", "condition", "comparison", "cases", "patients", "quality", "sources"];
   const DEFAULT_WS = "home";
   const sections = Array.from(document.querySelectorAll("section[data-workspace]"));
   const navLinks = Array.from(document.querySelectorAll(".workspace-nav a[data-ws]"));
@@ -38,6 +40,15 @@
     navLinks.forEach((a) => {
       a.classList.toggle("active", a.getAttribute("data-ws") === ws);
     });
+    // a11y (2026-08-23): hashchange 後鍵盤/讀屏焦點仍停在舊的導覽連結上,
+    // 使用者會「看到」新內容但 Tab 起點還在別處。把焦點帶到新 workspace 的
+    // 第一個標題;tabindex=-1 讓標題可程式聚焦但不進 Tab 順序,
+    // preventScroll 保留既有的捲動行為不被 focus 搶走。
+    const heading = document.querySelector(`section[data-workspace="${ws}"] h2, section[data-workspace="${ws}"] h1`);
+    if (heading) {
+      if (!heading.hasAttribute("tabindex")) heading.setAttribute("tabindex", "-1");
+      try { heading.focus({ preventScroll: true }); } catch (e) { /* focus 失敗不致命 */ }
+    }
   }
 
   function workspaceForElement(el) {

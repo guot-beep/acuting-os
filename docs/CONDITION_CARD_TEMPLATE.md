@@ -149,8 +149,56 @@ Ting 原話:「可以整合入那個四套,不用單獨自己雲端中醫一套,
 | ~~`related_tcm_symptoms`~~ | 症狀 | **deprecated_but_temporarily_accepted** —— 見下 |
 | `herb_formulas` | `formula.*` | — |
 | `acupoint_protocols` | 穴位處方 | — |
+| `acupoint_protocol_evidence` | 穴位處方的證據等級與出處 | 見下 |
+| `acupoint_code_normalization` | 穴位代碼改寫的稽核紀錄(2026-08-15) | 見下 |
 | `medication_links` | 西藥(藥理層做完後接) | — |
 | `workflow_links` | 臨床流程 | — |
+
+> #### `acupoint_protocol_evidence`(2026-08-14 新增)
+>
+> **為什麼要有這個欄位。** `acupoint_protocols` 只存 `{name_zh, code}`,
+> 而 20 筆以下的清單在卡片上就是一排標籤,**沒有任何附註**。
+> 也就是說,「某一個試驗的固定方案、certainty not_graded、指引說證據不足」
+> 與「這個病的標準處方」在畫面上長得**一模一樣**。
+>
+> B3 精神／睡眠那批把問題逼出來了:PTSD 有 13 個穴,全部來自
+> 一個 combat-PTSD sham RCT,但 VA/DoD 2023 明講 acupuncture 證據不足、
+> 不是一線治療。裸清單會把它讀成處方。
+>
+> 所以穴位可以寫進 `acupoint_protocols`,但**必須同時寫這個欄位**,
+> 由 renderer 一起顯示。缺這個欄位而有穴位 = C14 缺陷。
+>
+> #### `unassessed`(2026-08-15 新增)
+>
+> 上面那些狀態都是**查證過之後的結論**。但庫裡有 73 張卡的穴位是早年匯入的,
+> **從來沒有人逐穴查過來源** —— 那既不是 `no_source`(查過、沒找到),
+> 也不是 `not_supported`(查過、結論負面)。硬套任何一個都是說謊。
+>
+> `unassessed` 就是這個狀態:**穴位在那裡,但沒有人評估過它的證據。**
+> 它必須在畫面上長得跟「查證過」的狀態明顯不同 —— 這是它存在的唯一理由。
+>
+> 這個狀態**只能往外走,不能往裡走**:新收集的批次不准用它,
+> 它專門標記 2026-08-15 之前的匯入遺留。逐張查證後改成真正的結論。
+>
+> ```json
+> "acupoint_protocol_evidence": {
+>   "protocol_status": "supported | limited | symptom_only | adjunct_only | postoperative_only | not_supported | no_source | unassessed",
+>   "point_rationale_zh": "整組取穴依據;不得超出來源",
+>   "point_rationale_en": null,
+>   "evidence_note_zh": "證據設計、對照組、量表與限制;查不到時寫檢索日期／資料庫／檢索詞",
+>   "treatment_parameters": { "manual_or_electroacupuncture": null, "frequency": null,
+>                             "session_duration": null, "treatment_course": null },
+>   "scope_conflict_note": null,
+>   "sources": [ { "source_id": "S1", "type": "...", "citation": "...", "url": "...",
+>                  "pmid_or_doi": "...", "modality": "...", "comparator": "...",
+>                  "certainty": "...", "finding_zh": "..." } ],
+>   "collected_by": "SOL B3 2026-08-14",
+>   "no_source_found": false
+> }
+> ```
+>
+> `protocol_status` 不是 `supported` 時,**畫面必須說出來** ——
+> 這是本欄位存在的唯一理由,不是裝飾。
 
 > #### `related_tcm_symptoms` 的過渡狀態(2026-08-06)
 >
@@ -189,6 +237,46 @@ Ting 原話:「可以整合入那個四套,不用單獨自己雲端中醫一套,
 gyn_fertility · pain_msk · gi · psych_sleep · respiratory · neuro
 derm · endo_metabolic · cardio · uro_renal · ent_eye · immune_misc
 ```
+
+### 3.5.5 `import_artifacts`(2026-08-11 新增 — 匯入垃圾的搬家目的地)
+
+C5/C10 清查發現大量臨床欄位裡裝的是 CloudTCM **部落格敘事文**(會員見證、
+廣告碼 `[@ad:1]`、樣板結尾句)或**整篇誤植**(heart_failure 裝著心律不整文)。
+這些是匯入殘渣,不是臨床內容 —— 但「只加深不刪除」照字面執行:
+
+- **搬,不刪**:垃圾文整段搬進 `import_artifacts` 陣列
+  (`{original_field, text, reason, moved_at}`),臨床欄位清出來。
+- 誤植文**先搬到正確卡**(該卡對應欄位或其 import_artifacts),再清原欄。
+- 清出的欄位:有源內容補上(R2),或誠實留空(空欄=誠實缺口,C4/C5 正常適用)。
+- **只准處理 ledger 逐筆列名的記錄**(COND_C5_LEDGER / COND_INGESTION_LEDGER),
+  不做通案自由裁量;每筆搬家記 ledger。
+- `import_artifacts` 永不渲染進導覽/內容區;僅 provenance。
+- **先確認正文在家卡上存在,才能在誤置卡上封存。** 家卡沒有 = 先把原文補到
+  家卡(它自己的欄位或它的 `import_artifacts`),順序不能反。
+- `import_artifacts` 與 `tcm_patterns` 同級:永不渲染、永不導覽、永不翻譯。
+  驗證器把它列入 approved(不觸發 C8),C5/C9/C10 一律不看它的內部。
+- 封存記錄**永不刪除**(D6 同樣適用於痕跡)。
+- **C13 檢查每一筆封存記錄的形狀**(2026-08-12 從 claude/vigilant-visvesvaraya
+  併入):有內容就必須說清楚「搬了什麼、從哪一欄、為什麼、什麼時候」。
+  下面兩套鍵名**任一套齊全即通過**,驗證器不做正規化。
+- **同一段文字不封存兩次。** 合併兩條線時,同一段原文若兩邊都封存過,只留一筆;
+  若那段文字在合併後仍活在 canonical 欄位裡,那筆封存記錄是**假的搬家紀錄**,
+  不要寫進去(檔案裡目前有一組看似重複、實則不同的:`cond.palpitations` 的
+  兩筆 765 字 —— 一筆是本卡原文,一筆是從 heart_failure 誤植處搬回的複本,
+  差一個 OCR 字,`reason` 有寫清楚,**那是兩份不同的痕跡,不是重複**)。
+
+> **⚠ 資料裡目前有兩套鍵名(2026-08-12 合併留下的,待 Ting 裁定統一)。**
+> 兩條線在同一天各自發明了這個欄位,鍵名不同但語意重疊:
+>
+> | 來源 | 鍵名 |
+> |---|---|
+> | codex/pattern-v2(本文規則) | `original_field` · `text` · `reason` · `moved_at`(+ `original_record`) |
+> | claude/confident-hugle-2cf3f3 | `field` · `text` · `reason` · `archived_at` · `belongs_to` · `source_url` |
+>
+> 合併時**兩套都原樣保留**(封存記錄不改寫、不刪除)。因為沒有任何程式讀
+> `import_artifacts`(只有 validator 的 approved 清單認得欄位名本身),混形
+> 不會壞掉任何東西。統一鍵名 = 改寫 provenance,要 Ting 點頭才做。
+> `belongs_to` / `source_url` 帶的資訊在上面那套沒有對應欄位,**不可直接丟棄**。
 
 ### 3.6 原始匯入(保留,但永不用於導覽)
 
@@ -251,6 +339,17 @@ source             出處
 ```
 
 `urgency_level` 是固定的五個值,不要發明新的。
+
+### C4 與骨架層(2026-08-11,Ting 骨架無上限裁定的配套)
+
+C4 的目的:**主張內容的卡不得缺安全資訊**。純骨架卡不主張內容,C4 不適用:
+
+- `review_status: "skeleton"` **且**無任何內容欄位(summary/etiology/
+  western_pathology/western_context/red_flags/risk_factors/acupuncture_scope
+  全部不存在)→ C4 跳過,改計入 **N4 skeleton-count**(note,不阻擋)。
+- 一旦加入**任何一個**內容欄位,C4 立即全力適用 —— 「有一段 summary 但沒
+  紅旗」正是 C4 要抓的狀態。
+- 骨架卡在 UI 上以 review_status 標示;它是索引位,不是內容卡。
 
 ---
 
@@ -344,7 +443,9 @@ node scripts/validate-condition-standard.js --json                 # 給腳本�
 
 錯誤碼:C1 身分 · C2 重複 id · **C3 entity_type** · **C4 red flags(安全)** ·
 C5/C9 雙語 · C6 證型連結解析 · C7 來源漂移 · C8 未經核准的欄位 ·
-N1 未提升的內嵌 blob(僅提示)。
+C10 逐字重複內容 · C11 risk_factors 形狀 · C12 acupuncture_scope 形狀 ·
+**C13 import_artifacts 形狀(§3.5.5)** ·
+N1 未提升的內嵌 blob · N2 已退役欄位仍在用 · N4 骨架索引位(皆僅提示)。
 
 **2026-08-05 基準線:150 筆、0 筆乾淨、631 個缺陷**
 (C3 150 · C5 300 · C4 95 · C7 85 · C9 1)。每一批做完,這些數字要下降。

@@ -170,7 +170,11 @@ const ABS_FORBID = /(?:本穴)?禁針|禁刺|嚴禁針刺|不可針/;
 const CONDITIONAL = /者|時|未閉|孕婦|妊娠|小兒|嬰幼兒|過飽|大者|感染|積液|慎/;
 const DEPTH = /(?:直刺|斜刺|平刺|橫刺)\s*[\d.．]+\s*[~～\-—]?\s*[\d.．]*\s*寸/g;
 function probeB(r) {
-  const blob = strings(r).join("\n");
+  // 2026-08-23：排除 classical_refs——HT2 的「禁刺」是《明堂》引文，與現代
+  // needling 給 0.5-1 寸是「正確的來源分離」不是卡內矛盾（P4 裁決確認的
+  // false-positive 類）。古典引文照錄原文本來就該與現代針法並存。
+  const rr = { ...r }; delete rr.classical_refs; delete rr.classicalRefs;
+  const blob = strings(rr).join("\n");
   if (!ABS_FORBID.test(blob)) return;
   const depths = new Set();
   for (const [fpath, s] of walk(r, "$")) {
@@ -180,7 +184,7 @@ function probeB(r) {
   }
   if (!depths.size) return;
   // 只在同一筆記錄裡「絕對禁針」語句不是孕婦條件式時才報
-  const absSent = strings(r).flatMap((s) => s.split(/[。\n]/))
+  const absSent = strings(rr).flatMap((s) => s.split(/[。\n]/))
     .filter((x) => ABS_FORBID.test(x) && !CONDITIONAL.test(x));
   if (!absSent.length) return;
   for (const d of depths) {
@@ -198,11 +202,11 @@ function probeB(r) {
 const CUN = /旁開\s*([\d.．]+)\s*寸/g;
 function probeC(r) {
   const byField = new Map();
+  const textOf = new Map();
   for (const [fpath, s] of walk(r, "$")) {
-    const field = fpath.split(".")[1] || "";
     const vals = new Set();
     for (const m of s.matchAll(CUN)) vals.add(m[1].replace("．", "."));
-    if (vals.size) byField.set(fpath, [...vals]);
+    if (vals.size) { byField.set(fpath, [...vals]); textOf.set(fpath, s); }
   }
   const anchor = [...byField.entries()].find(([p]) => /location_zh|cun_measurement/.test(p));
   if (!anchor) return;
@@ -211,11 +215,14 @@ function probeC(r) {
     if (fpath === anchor[0]) continue;
     const diff = vals.filter((v) => !anchorVals.has(v));
     if (!diff.length) continue;
+    // excerpt 必須是原檔逐字存在的一句 —— 合成的摘要既不可回驗，也不能拿來做取代。
+    const whole = textOf.get(fpath) || "";
+    const sentence = whole.split(/[。\n]/).find((x) => new RegExp("旁開\\s*" + diff[0].replace(".", "\\.") + "\\s*寸").test(x));
     add({
       type: "C", label: "cun_disagreement",
       code: r.code, chinese: r.chinese, field: fpath.split(".")[1] || "",
-      json_path: fpath, excerpt: `旁開 ${diff.join("/")} 寸`,
-      conflict: `${anchor[0]} 說旁開 ${[...anchorVals].join("/")} 寸`,
+      json_path: fpath, excerpt: (sentence !== undefined ? sentence : whole),
+      conflict: `本句寫旁開 ${diff.join("/")} 寸，但 ${anchor[0]} 說旁開 ${[...anchorVals].join("/")} 寸`,
     });
   }
 }
@@ -306,6 +313,106 @@ function probeG(r) {
   }
 }
 
+/**
+ * H 配穴散文描述「別的穴」，而該描述與那個穴自己的卡矛盾（2026-08-23）。
+ * A 探針的「最近穴名必須是本穴」規則正好把這一類濾掉——BL53 卡把殷門寫成
+ * 「骶骨裂孔旁開0.5寸屬督脈」就是它的設計盲區。名字對不到唯一穴（歧義）跳過。
+ */
+const H_CHANNEL = /(手太陰肺經|手陽明大腸經|足陽明胃經|足太陰脾經|手少陰心經|手太陽小腸經|足太陽膀胱經|足少陰腎經|手厥陰心包經|手少陽三焦經|足少陽膽經|足厥陰肝經|任脈|督脈|肺經|大腸經|胃經|脾經|心經|小腸經|膀胱經|腎經|心包經|三焦經|膽經|肝經)/;
+const H_SHORT = { "手太陰肺經":"肺經","手陽明大腸經":"大腸經","足陽明胃經":"胃經","足太陰脾經":"脾經","手少陰心經":"心經","手太陽小腸經":"小腸經","足太陽膀胱經":"膀胱經","足少陰腎經":"腎經","手厥陰心包經":"心包經","手少陽三焦經":"三焦經","足少陽膽經":"膽經","足厥陰肝經":"肝經" };
+const H_ABBR = {};  // 膽經 → 足少陽：point_identity 慣用的三字縮寫
+for (const [long, short] of Object.entries(H_SHORT)) H_ABBR[short] = long.slice(0, 3);
+
+/**
+ * 三類臟腑/穴類慣用語（wave-2 誤報大宗，2026-08-23 裁決實測）：句面經名與
+ * channel_zh 不同，但其實在說「臟腑對應」而非歸經。逐類拿目標穴本卡識別欄
+ * 逐字證實才跳過——證實不了的照樣舉報（厥陰俞寫成「肝經背俞穴」仍是錯）。
+ */
+function hIdentityText(t) {
+  const parts = [];
+  for (const k of ["point_identity_zh", "pointIdentityZh", "wushu_point", "other_names_zh", "exam_pearl", "examPearl", "name_intro_zh"]) {
+    const v = t[k];
+    if (Array.isArray(v)) parts.push(...v.filter((x) => typeof x === "string"));
+    else if (typeof v === "string") parts.push(v);
+  }
+  return parts;
+}
+function hIdiomVerified(target, claimed, after) {
+  const organ = claimed.replace(/經$/, "");
+  if (organ === claimed && !/^[任督]/.test(claimed)) return null; // 非經名（保險）
+  const idText = hIdentityText(target);
+  if (organ !== claimed && /^[之的]?募穴/.test(after)) {
+    if (idText.some((x) => new RegExp(organ + "[之的]?募").test(x))) return "募穴慣用語";
+  }
+  if (organ !== claimed && /^[之的]?背俞/.test(after)) {
+    if (idText.some((x) => new RegExp(organ + "[之的]?背俞").test(x))) return "背俞穴慣用語";
+  }
+  if (/^[^。；]{0,10}交會/.test(after)) {
+    const abbr = H_ABBR[claimed] || claimed;
+    if (idText.some((x) => /交會|之會/.test(x) && (x.includes(claimed) || x.includes(abbr)))) return "交會穴語境";
+  }
+  return null;
+}
+let hIdiomSkips = 0;
+function probeH(r) {
+  const own = fold(r.chinese || "");
+  for (const [fpath, s] of walk(r, "$")) {
+    if (/classical/.test(fpath)) continue;   // 古典引文照錄，同 B 的排除理由
+    for (const rawSent of s.split(/[。\n]/)) {
+      const sent = fold(rawSent);
+      // 位置式列舉：「A、B、C穴分別屬於X、Y、Z」逐位核對；通用匹配會把
+      // A 配到 X 以外的經名上（GV8 實例，wave-2 裁決）。
+      const pl = sent.match(/([一-鿿、]{2,30}?)穴?分別(?:屬於|屬|位於|是|為)([^。]*)/);
+      if (pl) {
+        const names = pl[1].split("、").map((x) => x.replace(/穴$/, "")).filter((x) => /^[一-鿿]{2,4}$/.test(x));
+        const cre = new RegExp(H_CHANNEL.source, "g");
+        const chans = []; let cm;
+        while ((cm = cre.exec(pl[2]))) chans.push(cm[0]);
+        if (names.length >= 2 && chans.length >= names.length) {
+          names.forEach((nm, i) => {
+            if (nm === own) return;
+            const cs = NAME_CODES.get(nm);
+            if (!cs || cs.size !== 1) return;
+            const tg = recs.find((x) => x.code === [...cs][0]);
+            if (!tg) return;
+            const cl = H_SHORT[chans[i]] || chans[i];
+            const ac = String(tg.channel_zh || tg.meridian || "").trim();
+            if (!ac || cl === ac) return;
+            add({
+              type: "H", label: "pairing_prose_wrong_channel",
+              code: r.code, chinese: r.chinese, field: fpath.split(".")[1] || "",
+              json_path: fpath, excerpt: rawSent.trim(),
+              conflict: `本卡位置式列舉說「${nm}…${chans[i]}」，但 ${tg.code} ${nm} 自己的卡是 ${ac}`,
+            });
+          });
+          continue; // 已逐位核對，不再走通用匹配
+        }
+      }
+      // gap 不准跨過另一個穴名或冒號——「中渚穴配伍: 通裏穴為手少陰心經」會把
+      // 通裏的經名錯位歸因給中渚（wave-3 實測 2 筆假回音）。
+      const m = sent.match(new RegExp("([一-鿿]{2,4})穴[^，,:：穴]{0,25}?(?:屬於|屬|為|位於|是)\\s*" + H_CHANNEL.source));
+      if (!m) continue;
+      const other = m[1];
+      if (other === own) continue;                       // 本穴自述歸 A 管
+      const codeset = NAME_CODES.get(other);
+      if (!codeset || codeset.size !== 1) continue;      // 對不到唯一穴 → 跳過
+      const target = recs.find((x) => x.code === [...codeset][0]);
+      if (!target) continue;
+      const claimed = H_SHORT[m[2]] || m[2];
+      const actual = String(target.channel_zh || target.meridian || "").trim();
+      if (!actual || claimed === actual) continue;       // 一致就不是矛盾
+      const idiom = hIdiomVerified(target, claimed, sent.slice(m.index + m[0].length));
+      if (idiom) { hIdiomSkips++; continue; }            // 本卡識別欄證實的慣用語
+      add({
+        type: "H", label: "pairing_prose_wrong_channel",
+        code: r.code, chinese: r.chinese, field: fpath.split(".")[1] || "",
+        json_path: fpath, excerpt: rawSent.trim(),
+        conflict: `本卡說「${other}穴…${m[2]}」，但 ${target.code} ${other} 自己的卡是 ${actual}`,
+      });
+    }
+  }
+}
+
 // ---------------------------------------------------------------- run
 
 const args = process.argv.slice(2);
@@ -321,6 +428,7 @@ for (const r of recs) {
   if (want("E")) probeE(r);
   if (want("F")) probeF(r);
   if (want("G")) probeG(r);
+  if (want("H")) probeH(r);
 }
 
 // ---------------------------------------------------------------- mirrors
@@ -406,17 +514,18 @@ if (args.includes("--json")) {
   fs.writeFileSync(out, JSON.stringify(seed, null, 2) + "\n");
   console.log(`seed written: ${out} (${seed.records.length} candidates across ${codes.length} points)`);
 } else {
+  if (hIdiomSkips && (!ONLY || ONLY.has("H"))) console.log(`（H 慣用語經本卡識別欄證實跳過 ${hIdiomSkips} 筆：募穴/背俞/交會）`);
   const byType = {};
   for (const f of findings) (byType[f.type] = byType[f.type] || []).push(f);
   const LABEL = {
     A: "經絡自述與 channel_zh 不符", B: "標禁針卻仍有刺深",
     C: "旁開寸數互相打架", D: "殘留 HTML 實體",
     E: "針法同音錯字", F: "穴名差一字（疑似錯字）",
-    G: "刺深是 0 寸（假數字）",
+    G: "刺深是 0 寸（假數字）", H: "配穴散文他穴歸經與該穴本卡矛盾",
   };
   console.log(`穴位卡內自相矛盾探針 — ${recs.length} 筆記錄，${findings.length} 個候選，${codes.length} 個穴位`);
   console.log("（候選 ≠ 結論。誤報是預期內的，逐條裁決由人做。）\n");
-  for (const t of "ABCDEFG") {
+  for (const t of "ABCDEFGH") {
     const list = byType[t] || [];
     console.log(`── ${t} ${LABEL[t]} — ${list.length} 個候選 / ${new Set(list.map((x) => x.code)).size} 穴`);
     for (const f of list) {

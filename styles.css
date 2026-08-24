@@ -1,27 +1,68 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;600;700&family=Noto+Sans+TC:wght@400;500;600;700&display=swap");
+/* 品牌字型不在這裡載。2026-08-24 之前這裡有一行 @import Google Fonts——
+   它讓 styles.css 在遠端 CSS 回來前一直 in-flight，而 Chromium 會讓
+   「所有 script 的執行」（含外部 defer）等 in-flight 的 render-blocking
+   stylesheet：字型服務慢/被牆/逾時的網路上整個 app 凍 12 秒（實測）。
+   字型現在由 index.html 以 preconnect + preload + media="print" 連結
+   + js/fonts.js 的載完後翻轉載入，永不進入阻塞路徑。
+   不變式：這個檔案永遠不准出現 @import 外部 URL。 */
 
+/* ==================================================================
+   Canonical design tokens — 唯一的 :root,改 palette 只改這裡。
+   (Consolidated 2026-08-11: this file used to have three competing
+   :root blocks — Atlas shell at top, clinical-workstation refresh
+   mid-file, Brand Theme v2 at the bottom. Per-property cascade meant
+   the LAST block, Brand Theme v2 品牌溫潤風 (2026-07-02), was what
+   actually rendered. These values ARE those rendered values, merged
+   with the nav tokens that only the Atlas-shell block declared —
+   zero visual change from the consolidation.)
+   ================================================================== */
 :root {
   color-scheme: light;
-  --ink: #202427;
-  --muted: #66717a;
-  --line: #d9e0e4;
-  --paper: #f3eddf;
-  --panel: #ffffff;
-  --accent: #0f7f7a;
-  --accent-dark: #0a5956;
-  --warn: #ad3f32;
-  --gold: #c89033;
-  --green-soft: #e8f4ef;
-  --blue-soft: #eaf1f7;
-  --shadow: 0 16px 50px rgba(23, 33, 38, 0.1);
-  /* Atlas shell (2026-07-25): deep-green + gold slide-out nav, warm parchment
-     page, serif display headings — tuned to the herbal-atlas look Ting likes. */
+  /* Brand Theme v2 — 品牌溫潤風: ivory / warm beige / sage /
+     deep brown / muted gold / soft terracotta. */
+  --ink: #33291f;
+  --muted: #786c5c;
+  --line: #e5dcc9;
+  --paper: #f6f1e7;
+  --panel: #fffdf8;
+  --accent: #6f7f58;
+  --accent-dark: #515f3e;
+  --warn: #a24f37;
+  /* --muted/--warn 為 2026-08-11 WCAG AA 對比度修正後的值。整併三個 :root
+     時它們原本只存在於後面那個(CSS later-wins)重複區塊裡,刪除該區塊會靜默
+     倒退無障礙修正,故於此保留。 */
+  --gold: #b98b44;
+  --plum: #9a6a55;
+  --clay: #b0563c;
+  --green-soft: #eef0e2;
+  --blue-soft: #f2ecdd;
+  --shadow: 0 14px 40px rgba(74, 60, 38, 0.1);
+  --shadow-soft: 0 4px 18px rgba(74, 60, 38, 0.07);
+  /* Atlas shell (2026-07-25): deep-green + gold slide-out nav. */
   --nav-bg: #16352f;
   --nav-bg-soft: #1d443c;
   --nav-ink: #f2ece0;
   --nav-line: #c89033;
-  --serif: "Noto Serif TC", Georgia, "Songti TC", "STSong", serif;
-  font-family: "Microsoft JhengHei", "Noto Sans TC", "Segoe UI", Arial, sans-serif;
+  --serif: "Noto Serif TC", "Songti TC", "STSong", "PMingLiU", Georgia, serif;
+  --sans: "Noto Sans TC", "PingFang TC", "Noto Sans CJK TC", "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+  font-family: var(--sans);
+
+  /* UI/UX polish batch (2026-08-11, Claude) — spacing scale + motion +
+     accessible focus-ring tokens. --gold itself stays untouched (it's a
+     decorative/border colour throughout); --ring and --gold-text are
+     darkened variants used only where gold sits under text or a focus
+     outline, because raw --gold measures ~2.7:1 on the live paper tone
+     (fails WCAG non-text 3:1 and text 4.5:1) — see PROJECT_LOG for the
+     contrast audit. */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2.5rem;
+  --ease: 160ms ease;
+  --ring: #ae8340;
+  --gold-text: #896732;
 }
 
 /* Serif display headings — the single biggest shift toward the atlas feel. */
@@ -50,6 +91,27 @@ input,
 select,
 textarea {
   font: inherit;
+}
+
+/* Keyboard focus — one visible ring for every interactive element that
+   doesn't already define its own (component rules further down still
+   win on specificity, so this is only the fallback/baseline). */
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+  border-radius: 4px;
+  transition: outline-offset var(--ease);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 button,
@@ -119,6 +181,7 @@ p {
 h1 {
   margin-bottom: 0;
   font-size: clamp(1.45rem, 2.6vw, 2.2rem);
+  line-height: 1.25;
 }
 
 .top-subtitle {
@@ -151,9 +214,9 @@ h1 {
 
 .os-dashboard {
   display: grid;
-  gap: 1rem;
+  gap: var(--space-4);
   grid-template-columns: minmax(240px, 0.85fr) minmax(320px, 1.8fr);
-  margin-bottom: 1rem;
+  margin-bottom: var(--space-4);
 }
 
 .os-intro,
@@ -557,6 +620,198 @@ h1 {
 }
 .soap-reflection > label { margin-top: 0.5rem; }
 
+/* effect_duration_days one-fact-one-home reconciliation (2026-08-09): shown
+   only when a note's legacy field and canonical metric disagree. Same
+   amber warning convention as .k-pair-caution/.exam-star-mark--1 elsewhere
+   in this file — deliberately not an error color, this blocks nothing. */
+.metric-conflict-warning { display: block; margin-top: 0.2rem; color: #b45309; font-weight: 600; }
+
+/* Outcome Tracking v1 (2026-08, CG8): Baseline/Today/Change/Trend, read-only,
+   case-level summary. Same light-palette convention as .clinical-mini-grid
+   above (this section has no dark-mode branch anywhere in this file — see
+   the note near the bottom of this file explaining why one was never added).
+   .outcome-tracking-wrap only exists so a case with several tracked metrics
+   scrolls horizontally on narrow screens instead of squeezing the table. */
+.outcome-tracking-wrap { overflow-x: auto; margin: 0.75rem 0; }
+.outcome-tracking-table { border-collapse: collapse; width: 100%; min-width: 480px; }
+.outcome-tracking-table th,
+.outcome-tracking-table td {
+  border-bottom: 1px solid #e0e6e5;
+  padding: 0.5rem 0.65rem;
+  text-align: left;
+  vertical-align: top;
+  font-size: 0.86rem;
+}
+.outcome-tracking-table thead th {
+  background: #f8faf9;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+.outcome-tracking-table tbody td:first-child { color: #20383b; font-weight: 700; }
+.outcome-tracking-table .direction-hint { display: block; color: var(--muted); font-size: 0.72rem; font-weight: 500; margin-top: 0.15rem; }
+/* 判讀狀態：跟數字放在一起，不然「-3」會被當成有臨床意義的變化來讀。
+   刻意不用紅綠——這不是好壞，是「這個數字能不能拿去對照文獻」。 */
+.outcome-tracking-table .interp-hint { display: block; font-size: 0.7rem; font-weight: 500; margin-top: 0.1rem; }
+.outcome-tracking-table .interp-sourced { color: var(--muted); }
+.outcome-tracking-table .interp-none { color: var(--muted); font-style: italic; }
+.outcome-tracking-table .interp-pending { color: var(--muted); opacity: 0.8; }
+/* 第二個軸(D20):正常範圍,不是改善閾值。跟上面同一套樸素風格，不要另外
+   配色暗示這是好消息或壞消息——它只是一個可查證的參考範圍。 */
+.outcome-tracking-table .interp-refrange { color: var(--muted); opacity: 0.8; }
+
+/* Phase D batch 1: Meds & Supplements ledger (agentExposures[]), case-level.
+   Same light-palette / .case-actions button conventions as Outcome Tracking
+   and .case-tag above — no dark-mode branch, matching this whole section. */
+.agent-exposure-list { display: grid; gap: 0.6rem; margin: 0.75rem 0; }
+.agent-exposure-row {
+  background: #f8faf9;
+  border: 1px solid #e0e6e5;
+  border-radius: 8px;
+  padding: 0.65rem 0.75rem;
+}
+.agent-exposure-head { align-items: center; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.agent-exposure-head strong { color: #20383b; font-size: 0.92rem; }
+.agent-exposure-type-chip {
+  background: #eef5f4;
+  border: 1px solid #d7e6e4;
+  border-radius: 999px;
+  color: var(--accent-dark);
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 0.18rem 0.5rem;
+}
+.agent-exposure-status { color: var(--muted); font-size: 0.78rem; margin-left: auto; }
+.agent-exposure-meta { color: var(--muted); display: flex; gap: 0.4rem; font-size: 0.82rem; margin-top: 0.3rem; }
+.agent-exposure-meta span { color: #344044; font-weight: 600; }
+/* 病歷裡的用藥安全提示。黑框警告不收在 details 裡 —— FDA 最高級別的警告
+   藏在要點開的地方,等於沒帶到病歷來。 */
+.agent-safety { margin-top: 0.45rem; }
+.agent-safety-boxed { border: 1px solid rgba(190,60,45,.45); border-left-width: 3px; border-radius: 6px; padding: 6px 10px; background: rgba(190,60,45,.06); }
+.agent-safety-boxed strong { display: block; font-size: .74rem; letter-spacing: .02em; color: #9c2f22; }
+.agent-safety-boxed p { margin: 3px 0 0; font-size: .8rem; line-height: 1.45; }
+/* 補充劑的交互作用註記:比黑框低一階,但同樣不收在 details —— 病人自己買的
+   東西加上他長期在吃的藥,正是最容易漏掉的那一類。 */
+.agent-safety-flagged { margin-top: 0.35rem; border: 1px solid rgba(180,120,20,.4); border-left-width: 3px; border-radius: 6px; padding: 6px 10px; background: rgba(180,120,20,.06); }
+.agent-safety-flagged strong { display: block; font-size: .74rem; letter-spacing: .02em; color: #8a5b0d; }
+.agent-safety-flagged p { margin: 3px 0 0; font-size: .78rem; line-height: 1.45; }
+.agent-safety-flag { display: inline-block; font-size: .68rem; padding: 0 6px; border-radius: 999px; border: 1px solid rgba(180,120,20,.5); color: #8a5b0d; }
+.agent-safety-flagged em { display: block; font-style: normal; font-size: .68rem; color: var(--muted); }
+.agent-safety-contra { margin-top: 0.35rem; font-size: .78rem; }
+.agent-safety-contra summary { cursor: pointer; color: var(--muted); }
+.agent-safety-contra ul { margin: 4px 0 0 1.1em; padding: 0; }
+.agent-safety-contra li { margin: 2px 0; }
+/* 「沒查過」跟「查過沒事」在畫面上必須分得出來,否則前者會被讀成後者。 */
+.agent-safety-unchecked small { color: var(--muted); font-size: .72rem; font-style: italic; }
+@media print { .agent-safety-contra[open] summary { list-style: none; } }
+.agent-exposure-actions { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.5rem; }
+.agent-exposure-actions button { padding: 0.4rem 0.6rem; font-size: 0.78rem; }
+.agent-exposure-timeline { margin-top: 0.5rem; font-size: 0.82rem; }
+.agent-exposure-timeline summary { color: var(--accent-dark); cursor: pointer; font-weight: 700; }
+.agent-exposure-timeline ul { margin: 0.4rem 0 0; padding-left: 1.1rem; display: grid; gap: 0.3rem; }
+.agent-exposure-timeline li { color: #344044; }
+.agent-exposure-timeline p { color: var(--muted); margin: 0.4rem 0 0; }
+
+/* Dry Clinic log #16: intake currentMeds free text shown verbatim below the
+   structured ledger above — deliberately smaller/muted so it never reads as
+   an equally-verified structured row (no invented structure over free text). */
+.agent-exposure-unstructured { margin-top: 0.75rem; padding-top: 0.6rem; border-top: 1px dashed #dfe4e2; }
+.agent-exposure-unstructured > small { color: var(--muted); font-size: 0.74rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.02em; }
+.agent-exposure-unstructured ul { margin: 0.35rem 0 0; padding-left: 1.1rem; display: grid; gap: 0.3rem; list-style: disc; }
+.agent-exposure-unstructured li { color: var(--muted); font-size: 0.82rem; }
+.agent-exposure-unstructured li strong { color: #344044; font-weight: 600; }
+
+/* Phase D batch 3: Environmental/toxicity exposures ledger
+   (environmentalExposures[]), case-level. Same light-palette row-card
+   convention as .agent-exposure-row above — kept as its own class family
+   (not reused) because the certainty chip needs its own color language:
+   suspected vs confirmed is a safety-relevant distinction, not just a type
+   label (SPRINT brief §5 — exposures are observations, not diagnoses). */
+.env-exposure-list { display: grid; gap: 0.6rem; margin: 0.75rem 0; }
+.env-exposure-row {
+  background: #f8faf9;
+  border: 1px solid #e0e6e5;
+  border-radius: 8px;
+  padding: 0.65rem 0.75rem;
+}
+.env-exposure-head { align-items: center; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.env-exposure-head strong { color: #20383b; font-size: 0.92rem; }
+.env-exposure-chip {
+  background: #eef5f4;
+  border: 1px solid #d7e6e4;
+  border-radius: 999px;
+  color: var(--accent-dark);
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 0.18rem 0.5rem;
+}
+.env-exposure-chip.certainty-confirmed { background: #fdecec; border-color: #f3c9c9; color: #a3312c; }
+.env-exposure-chip.certainty-suspected { background: #fff6e6; border-color: #f0dfb0; color: #8a6416; }
+.env-exposure-meta { color: var(--muted); display: flex; gap: 0.4rem; font-size: 0.82rem; margin-top: 0.3rem; }
+.env-exposure-meta span { color: #344044; font-weight: 600; }
+.env-exposure-actions { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.5rem; }
+.env-exposure-actions button { padding: 0.4rem 0.6rem; font-size: 0.78rem; }
+.env-exposure-timeline { margin-top: 0.5rem; font-size: 0.82rem; }
+.env-exposure-timeline summary { color: var(--accent-dark); cursor: pointer; font-weight: 700; }
+.env-exposure-timeline ul { margin: 0.4rem 0 0; padding-left: 1.1rem; display: grid; gap: 0.3rem; }
+.env-exposure-timeline li { color: #344044; }
+.env-exposure-timeline p { color: var(--muted); margin: 0.4rem 0 0; }
+
+/* Phase D batch 2: visit-level Lifestyle / Adverse events repeatable rows
+   inside the SOAP dialog (lifestyleFactors[] / adverseEvents[]). Same
+   light-palette row-card convention as .agent-exposure-row above — these
+   rows are DRAFT/editable in the form (append-only applies to exposure
+   EVENTS, not to visit rows being drafted, per SPRINT brief task 2). */
+.repeatable-rows { display: grid; gap: 0.6rem; margin: 0.5rem 0; }
+/* 鑑別診斷那一列的「已排除」是勾選框,不是輸入框 —— 沿用群組的直排會把
+   checkbox 拉成整欄寬。只有這一格改成橫排。 */
+.pattern-differential-row .pd-ruled { flex-direction: row; align-items: center; gap: 0.35rem; white-space: nowrap; }
+.pattern-differential-row .pd-ruled input { width: auto; }
+.lifestyle-factor-row,
+.adverse-event-row,
+.pattern-differential-row {
+  background: #f8faf9;
+  border: 1px solid #e0e6e5;
+  border-radius: 8px;
+  padding: 0.6rem 0.7rem;
+  display: grid;
+  gap: 0.4rem;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  align-items: end;
+}
+.lifestyle-factor-row label,
+.adverse-event-row label,
+.pattern-differential-row label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.72rem;
+  gap: 0.15rem;
+}
+.lifestyle-factor-row input,
+.lifestyle-factor-row select,
+.adverse-event-row input,
+.adverse-event-row select,
+.pattern-differential-row input,
+.pattern-differential-row select {
+  font-size: 0.82rem;
+  padding: 0.3rem 0.4rem;
+}
+.repeatable-row-remove {
+  align-self: end;
+  padding: 0.35rem 0.5rem;
+  font-size: 0.75rem;
+}
+.repeatable-rows-empty {
+  color: var(--muted);
+  font-size: 0.82rem;
+  margin: 0.3rem 0;
+}
+
+/* Saved lifestyle/AE rows on the SOAP note display card. */
+.lifestyle-ae-view { display: grid; gap: 0.5rem; margin-top: 0.5rem; }
+.lifestyle-ae-view ul { margin: 0.2rem 0 0; padding-left: 1.1rem; display: grid; gap: 0.25rem; }
+.lifestyle-ae-view li { color: #344044; font-size: 0.85rem; }
+
 /* LL1: rendered 按語 on a SOAP note card (only shown when filled) */
 .soap-reflection-view {
   margin-top: 0.5rem;
@@ -668,7 +923,16 @@ textarea {
   min-width: 0;
 }
 
+/* Comfortable tap target (web.dev accessible-tap-targets: 44px min) — scoped
+   away from checkbox/radio/range/color, whose native widgets must not be
+   stretched by min-height. */
+input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="color"]):not([type="file"]),
+select {
+  min-height: 44px;
+}
+
 textarea {
+  min-height: 88px;
   resize: vertical;
 }
 
@@ -999,7 +1263,14 @@ textarea {
   height: 24px;
   line-height: 1;
   padding: 0;
+  position: relative;
   width: 24px;
+}
+/* UI/UX P1#7: 手機 44px 熱區——視覺不變，用透明偽元素撐大點擊範圍。 */
+.active-filter-chip button::after {
+  content: "";
+  inset: -10px;
+  position: absolute;
 }
 
 .clear-all-filters {
@@ -1258,6 +1529,12 @@ footer {
   padding: 0 0.42rem;
   position: absolute;
   transform: translate(-50%, -50%);
+}
+/* UI/UX P1#7: 經絡圖穴位標記的 44px 熱區（視覺尺寸不變）。 */
+.model-point::after {
+  content: "";
+  inset: -9px -4px;
+  position: absolute;
 }
 
 .model-point::before {
@@ -2114,8 +2391,8 @@ dialog::backdrop {
 }
 
 .icon-btn {
-  width: 38px;
-  height: 38px;
+  width: 44px;
+  height: 44px;
   padding: 0;
   font-size: 1.6rem;
 }
@@ -2123,7 +2400,7 @@ dialog::backdrop {
 .form-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.75rem;
+  gap: var(--space-3);
 }
 
 label {
@@ -2144,9 +2421,9 @@ label {
   grid-column: 1 / -1;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.75rem;
+  gap: var(--space-3);
   margin: 0;
-  padding: 1rem 1rem 1.1rem;
+  padding: var(--space-4) var(--space-4) 1.1rem;
   border: 1px solid var(--line, rgba(148, 163, 184, 0.28));
   border-radius: 14px;
   background: rgba(148, 163, 184, 0.05);
@@ -2196,6 +2473,39 @@ label {
 
 .soap-outcome > legend .form-section-step {
   background: #34d399;
+}
+
+/* Initial-intake minimum dataset (2026-08-09): race/ethnicity + previous-
+   treatment multi-select checkboxes. `label` is `display:grid` globally
+   (stacks a wrapped control above its text), which reads fine for text
+   inputs but stacks a checkbox above its own label — this scopes an
+   inline-flex override to just these two groups. */
+.checkbox-group {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1rem;
+}
+
+.checkbox-group label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-weight: 500;
+  color: var(--text, inherit);
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: auto;
+  margin: 0;
+}
+
+.race-ethnicity-title {
+  grid-column: 1 / -1;
+  margin: 0 0 0.3rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--muted);
 }
 
 .dialog-actions {
@@ -2254,21 +2564,10 @@ footer {
   }
 }
 
-/* UI refresh: AcuTing OS clinical workstation */
-:root {
-  --ink: #1d2528;
-  --muted: #687276;
-  --line: #dfe6e3;
-  --paper: #f5f7f4;
-  --panel: #ffffff;
-  --accent: #0d6f69;
-  --accent-dark: #084c49;
-  --gold: #b9822f;
-  --plum: #7b506f;
-  --clay: #b7624f;
-  --shadow: 0 10px 28px rgba(25, 39, 42, 0.08);
-  --shadow-soft: 0 4px 16px rgba(25, 39, 42, 0.06);
-}
+/* UI refresh: AcuTing OS clinical workstation
+   (This section's :root token block was superseded by Brand Theme v2
+   and removed 2026-08-11 — tokens live only in the canonical :root at
+   the top of the file. The component rules below still apply.) */
 
 body {
   background:
@@ -2374,7 +2673,8 @@ button:hover,
 .os-intro h2,
 .section-heading h2 {
   color: #172629;
-  font-size: 1.14rem;
+  font-size: clamp(1.05rem, 1rem + 0.35vw, 1.32rem);
+  line-height: 1.3;
 }
 
 .os-modules {
@@ -2577,20 +2877,25 @@ button:hover,
 }
 
 .section-quicknav a {
-  background: #fff;
-  border: 1px solid #d7e6dc;
+  /* UI/UX P1#5 (2026-08-23): this selector was declared twice; the later block
+     re-declared background/color but NOT border, so the old-palette border
+     survived per-property cascade — the same per-property trap the :root
+     comment at the top of this file documents. Merged into one rule. */
+  background: #f2ecdd;
+  border: 1px solid var(--line);
   border-radius: 999px;
-  color: #315e40;
+  color: #5c503f;
   font-size: 0.82rem;
   font-weight: 900;
-  min-height: 32px;
+  min-height: 44px;
   padding: 0.36rem 0.68rem;
   text-decoration: none;
 }
 
 .section-quicknav a:hover {
-  background: #edf8f3;
-  border-color: rgba(13, 111, 105, 0.28);
+  background: var(--green-soft);
+  border-color: var(--accent-dark);
+  color: var(--accent-dark);
 }
 
 .inline-anchor {
@@ -2675,6 +2980,7 @@ button:hover,
 .billing-section {
   background: #fff;
   border-top: 4px solid #456f77;
+  scroll-margin-top: 96px; /* matches .search-panel/.case-workspace — sticky topbar clearance */
 }
 
 .billing-grid {
@@ -4204,29 +4510,11 @@ section[data-workspace][hidden] {
 
 /* ==================================================================
    AcuTing Brand Theme v2 — 品牌溫潤風 (appended 2026-07-02, Claude)
-   Palette: ivory / warm beige / sage / deep brown / muted gold /
-   soft terracotta. Overrides the cool teal theme above via cascade.
-   To revert: delete everything from this banner to end of file.
+   Component overrides for the warm-brand look (buttons, topbar, nav,
+   typography). The palette tokens this section used to declare were
+   consolidated into the canonical :root at the TOP of the file
+   (2026-08-11) — edit colors there, not here.
    ================================================================== */
-
-:root {
-  --ink: #33291f;
-  --muted: #7d7160;
-  --line: #e5dcc9;
-  --paper: #f6f1e7;
-  --panel: #fffdf8;
-  --accent: #6f7f58;
-  --accent-dark: #515f3e;
-  --warn: #b0563c;
-  --gold: #b98b44;
-  --plum: #9a6a55;
-  --clay: #b0563c;
-  --green-soft: #eef0e2;
-  --blue-soft: #f2ecdd;
-  --shadow: 0 14px 40px rgba(74, 60, 38, 0.1);
-  --shadow-soft: 0 4px 18px rgba(74, 60, 38, 0.07);
-  font-family: "Noto Sans TC", "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
-}
 
 body {
   background: linear-gradient(180deg, #f1ebdd 0, #f7f2e8 300px, var(--paper) 100%);
@@ -4240,7 +4528,7 @@ h1, h2, h3,
 .section-heading h2,
 .detail-card h2,
 .library-chip strong {
-  font-family: "Noto Serif TC", "Noto Sans TC", serif;
+  font-family: var(--serif);
   letter-spacing: 0.01em;
 }
 
@@ -4251,7 +4539,9 @@ h1, h2, h3,
 .section-heading h2 { color: #3a2f22; }
 
 .eyebrow {
-  color: var(--gold);
+  /* --gold-text not --gold: raw gold is ~2.7:1 on --paper (fails AA);
+     this darkened variant clears 4.5:1 for small bold caption text. */
+  color: var(--gold-text);
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -4304,9 +4594,16 @@ input, select, textarea {
   border-color: #ddd3bd;
   border-radius: 9px;
 }
+/* Consolidated focus state (2026-08-11): the two earlier input:focus rules
+   above left a mismatched teal box-shadow + sage border-color pair (each
+   only half-overridden the other via cascade). This is the one that wins
+   and now owns the full state — one gold ring, matching :focus-visible
+   elsewhere in the app. */
 input:focus, select:focus, textarea:focus {
-  border-color: rgba(111, 127, 88, 0.75);
-  outline-color: rgba(111, 127, 88, 0.35);
+  border-color: var(--ring);
+  outline: 2px solid var(--ring);
+  outline-offset: 1px;
+  box-shadow: none;
 }
 
 .case-toolbar, .search-row {
@@ -4349,7 +4646,7 @@ input:focus, select:focus, textarea:focus {
 
 .library-chip span,
 .library-card span,
-.formula-preview-card span { color: var(--gold); }
+.formula-preview-card span { color: var(--gold-text); }
 
 .library-chip.active {
   background: var(--green-soft);
@@ -4368,16 +4665,8 @@ input:focus, select:focus, textarea:focus {
   border-radius: 999px;
 }
 
-/* --- Section quicknav pills ----------------------------------------- */
-.section-quicknav a {
-  background: #f2ecdd;
-  border-radius: 999px;
-  color: #5c503f;
-}
-.section-quicknav a:hover {
-  background: var(--green-soft);
-  color: var(--accent-dark);
-}
+/* --- Section quicknav pills: merged into the primary rule above (P1#5) --- */
+/* .section-quicknav a:hover merged into the primary rule (P1#5) */
 
 /* --- Tables & dialogs ------------------------------------------------ */
 table, th, td { border-color: var(--line); }
@@ -4514,7 +4803,7 @@ a { color: var(--accent-dark); }
   justify-content: space-between;
 }
 .k-card header strong {
-  font-family: "Noto Serif TC", serif;
+  font-family: var(--serif);
   font-size: 1.02rem;
 }
 .k-card header strong small { color: var(--muted); font-weight: 400; }
@@ -4555,7 +4844,7 @@ a { color: var(--accent-dark); }
 }
 .k-pattern-card header strong {
   color: #3b2a1a;
-  font-family: "Noto Serif TC", serif;
+  font-family: var(--serif);
   font-size: 1.15rem;
 }
 .k-pattern-summary {
@@ -4715,7 +5004,7 @@ a { color: var(--accent-dark); }
 }
 .k-big-card-title {
   color: #2c1d11;
-  font-family: "Noto Serif TC", serif;
+  font-family: var(--serif);
   font-size: 1.65rem;
   font-weight: 700;
   margin: 0 0 0.25rem;
@@ -4945,6 +5234,29 @@ body[data-content-mode="english"] .i18n-zh {
   font-size: 0.82rem;
   font-style: italic;
 }
+
+/* 卡片引用格(2026-08-24 comparisons 卡源自動列):非鑑別點,淡色區隔 Ting 手寫格 */
+.k-cell-auto {
+  display: block;
+  color: var(--muted, #786c5c);
+  font-size: 0.92em;
+  position: relative;
+  padding-left: 1.4em;
+}
+.k-cell-auto::before {
+  content: "卡";
+  position: absolute;
+  left: 0;
+  top: 0.1em;
+  font-size: 0.72em;
+  line-height: 1.4;
+  padding: 0 0.25em;
+  border: 1px solid var(--line, #e5dcc9);
+  border-radius: 4px;
+  color: var(--muted, #786c5c);
+}
+.k-auto-legend { font-size: 0.78em; }
+
 .k-link-chip {
   background: #eef4ef;
   border: 1px solid #dce6dc;
@@ -5058,7 +5370,7 @@ body[data-content-mode="english"] .i18n-zh {
 }
 .k-detail-hero h2 {
   color: #fff;
-  font-family: "Noto Serif TC", serif;
+  font-family: var(--serif);
   font-size: 2.2rem;
   line-height: 1.15;
   margin: 0;
@@ -5129,7 +5441,7 @@ body[data-content-mode="english"] .i18n-zh {
 .k-detail-panel > h2 {
   border-bottom: 1px solid #ead7df;
   color: #8c4c70;
-  font-family: "Noto Serif TC", serif;
+  font-family: var(--serif);
   font-size: 1.28rem;
   margin: 0 0 0.85rem;
   padding-bottom: 0.5rem;
@@ -5149,7 +5461,7 @@ body[data-content-mode="english"] .i18n-zh {
 .k-detail-columns .k-detail-section + .k-detail-section { margin-top: 0; }
 .k-detail-section h3 {
   color: #244f43;
-  font-family: "Noto Serif TC", serif;
+  font-family: var(--serif);
   font-size: 1rem;
   margin: 0 0 0.55rem;
 }
@@ -5325,7 +5637,10 @@ body[data-content-mode="english"] .i18n-zh {
 .k-cloud-disease-categories button.is-active {
   background: var(--accent-dark);
   color: #fff;
-  outline: none;
+}
+.k-cloud-disease-categories button:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
 }
 .k-cloud-disease-toolbar {
   align-items: center;
@@ -5713,6 +6028,7 @@ button.k-modern-chip.is-active { outline: 2px solid var(--accent, #38bdf8); outl
   cursor: pointer;
   display: inline-flex;
   gap: 0.5rem;
+  min-height: 44px;
   font-weight: 700;
   padding: 0.55rem 1rem;
 }
@@ -5767,15 +6083,17 @@ body.nav-open .nav-panel { transform: none; }
 .nav-close {
   background: transparent; border: 0; color: var(--nav-ink);
   font-size: 1.6rem; line-height: 1; cursor: pointer; padding: 0 0.25rem;
+  min-width: 44px; min-height: 44px; /* tap target — glyph stays visual size */
+  display: inline-flex; align-items: center; justify-content: center;
 }
 .nav-close:hover { color: var(--nav-line); }
 
 .nav-panel__body { padding: 0.6rem 0.6rem 0; display: block; }
 
 .nav-home {
-  display: block; color: var(--nav-ink); text-decoration: none;
+  display: flex; align-items: center; color: var(--nav-ink); text-decoration: none;
   font-family: var(--serif); font-size: 1.05rem;
-  padding: 0.7rem 0.9rem; border-radius: 8px;
+  padding: 0.7rem 0.9rem; border-radius: 8px; min-height: 44px;
 }
 .nav-home:hover { background: var(--nav-bg-soft); }
 
@@ -5786,9 +6104,9 @@ body.nav-open .nav-panel { transform: none; }
   letter-spacing: 0.08em; text-transform: uppercase;
 }
 .nav-sub {
-  display: block; color: var(--nav-ink); text-decoration: none;
+  display: flex; align-items: center; color: var(--nav-ink); text-decoration: none;
   padding: 0.5rem 0.6rem; border-radius: 7px; font-size: 0.98rem;
-  opacity: 0.92;
+  opacity: 0.92; min-height: 44px;
 }
 .nav-sub:hover { background: var(--nav-bg-soft); opacity: 1; }
 .nav-panel .workspace-nav a.active { background: var(--nav-bg-soft); color: #fff; }
@@ -5834,7 +6152,8 @@ body.nav-open .nav-panel { transform: none; }
   padding: 0.55rem 0.6rem;
   font: inherit; color: var(--ink);
 }
-.gr-item:hover, .gr-item:focus-visible { background: var(--green-soft); outline: none; }
+.gr-item:hover, .gr-item:focus-visible { background: var(--green-soft); }
+.gr-item:focus-visible { outline: 2px solid var(--ring); outline-offset: -2px; }
 .gr-item__code {
   flex: 0 0 auto; min-width: 3.2rem;
   color: var(--accent-dark); font-weight: 800; font-size: 0.85rem;
@@ -6079,7 +6398,7 @@ html { scroll-padding-top: 92px; }
   font-weight: 800;
   font-size: 0.82rem;
   letter-spacing: 0.04em;
-  color: #16352f;
+  color: var(--nav-bg);
   opacity: 0.72;
 }
 .point-identity__chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
@@ -6088,8 +6407,8 @@ html { scroll-padding-top: 92px; }
   font-size: 0.86rem;
   padding: 0.22rem 0.6rem;
   border-radius: 999px;
-  background: #16352f;
-  color: #f3eddf;
+  background: var(--nav-bg);
+  color: var(--nav-ink);
 }
 /* A prohibition in the identity list is a warning, not a badge — ST17's
    「絕對禁針禁灸」 must never read like 「合穴」. */
@@ -6150,7 +6469,8 @@ html { scroll-padding-top: 92px; }
   border: 1px solid transparent;
   transition: transform 0.08s ease;
 }
-.point-tag:hover, .point-tag:focus-visible { transform: translateY(-1px); outline: none; }
+.point-tag:hover, .point-tag:focus-visible { transform: translateY(-1px); }
+.point-tag:focus-visible { outline: 2px solid var(--ring); outline-offset: 2px; }
 .point-tag--action { background: #e6f4ea; color: #14532d; border-color: #b7dfc4; }
 .point-tag--disease { background: #fdf0e3; color: #7c3f12; border-color: #f0cfa4; }
 
@@ -6228,7 +6548,7 @@ html { scroll-padding-top: 92px; }
   justify-content: space-between;
   gap: 0.75rem;
   padding: 0.6rem 0.85rem;
-  font-family: "Noto Serif TC", serif;
+  font-family: var(--serif);
 }
 .clinical-note__summary::-webkit-details-marker { display: none; }
 .clinical-note__summary:hover { background: #f9f3e2; }
@@ -6352,7 +6672,8 @@ html { scroll-padding-top: 92px; }
   border: 1px solid transparent;
   transition: transform 0.08s ease;
 }
-.point-link:hover, .point-link:focus-visible { transform: translateY(-1px); outline: none; }
+.point-link:hover, .point-link:focus-visible { transform: translateY(-1px); }
+.point-link:focus-visible { outline: 2px solid var(--ring); outline-offset: 2px; }
 .point-link--cond { background: #eef2fb; color: #1f3a68; border-color: #c4d2ec; display: inline-flex; align-items: baseline; gap: 0.35em; }
 .point-link--pat { background: #f6eef7; color: #5b2a66; border-color: #ddc4e3; display: inline-flex; align-items: baseline; gap: 0.35em; }
 .point-link .pl-en { font-size: 0.8rem; opacity: 0.82; font-weight: 500; }
@@ -6387,6 +6708,126 @@ html { scroll-padding-top: 92px; }
   border-radius: 6px;
   font-size: 0.86rem;
   line-height: 1.6;
+}
+
+/* 配穴理由:緊貼在穴位代碼下面,縮排讓人看得出它在解釋上面那一行。
+   考的是為什麼,不是取什麼。 */
+.k-point-rationale {
+  margin: 0.3rem 0 0.6rem 1.2rem;
+  padding-left: 0.6rem;
+  border-left: 2px solid rgba(167, 139, 250, 0.6);
+  font-size: 0.9em;
+  line-height: 1.65;
+  opacity: 0.95;
+}
+
+/* 針刺註記:對執業者而言,這是西藥卡上最切身的一塊 —— 它回答「這個病人能不能扎」。
+   用青色而不是紅色:它不是警告本身,是「先確認什麼再決定」。 */
+.k-acu-note {
+  margin: 0 0 0.85rem;
+  padding: 0.6rem 0.8rem;
+  border: 2px solid #0891b2;
+  border-radius: 6px;
+  background: rgba(8, 145, 178, 0.12);
+  line-height: 1.6;
+}
+.k-acu-note > strong { display: block; margin-bottom: 0.3rem; }
+
+/* 症狀卡:病人原話是診間第一個接觸到的東西,給它自己的視覺重量。 */
+.k-symptom-words {
+  margin: 0.5rem 0;
+  padding: 0.45rem 0.65rem;
+  border-left: 3px solid #a78bfa;
+  background: rgba(167, 139, 250, 0.1);
+  border-radius: 6px;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+.k-symptom-block { margin: 0.6rem 0; font-size: 0.86rem; }
+.k-symptom-block > strong { display: block; margin-bottom: 0.25rem; opacity: 0.85; }
+.k-symptom-block ul { margin: 0; padding-left: 1.15rem; line-height: 1.65; }
+.k-symptom-diff > li { margin-bottom: 0.4rem; }
+.k-symptom-diff small { opacity: 0.8; }
+
+/* 針灸範圍:precautions 先讀、且看得出是警示。can_treat 與 co_management 是
+   一般資訊,不搶那個紅。這個順序是刻意的 —— 讀的人要先知道什麼不能碰。 */
+.k-condition-scope {
+  margin: 0.6rem 0;
+  padding: 0.55rem 0.7rem;
+  border-left: 3px solid #38bdf8;
+  background: rgba(56, 189, 248, 0.07);
+  border-radius: 6px;
+  font-size: 0.86rem;
+  line-height: 1.6;
+}
+.k-condition-scope p { margin: 0.35rem 0 0; }
+.k-condition-scope small { display: block; margin-top: 0.4rem; opacity: 0.7; }
+.k-scope-precaution {
+  padding: 0.35rem 0.5rem;
+  border-radius: 4px;
+  background: rgba(220, 38, 38, 0.13);
+  border-left: 2px solid #dc2626;
+}
+
+/* 黑框警告是 FDA 最高級別的警告,視覺上必須勝過同卡上的任何東西 ——
+   它與一般「注意事項」的差別是「可能致死」與「請留意」的差別。 */
+.k-boxed-warning {
+  margin: 0 0 0.9rem;
+  padding: 0.7rem 0.85rem;
+  border: 2px solid #dc2626;
+  border-radius: 6px;
+  background: rgba(220, 38, 38, 0.12);
+  font-weight: 600;
+  line-height: 1.6;
+}
+.k-boxed-warning ul { margin: 0.4rem 0 0; padding-left: 1.1rem; font-weight: 500; }
+
+/* 「查過,沒有黑框警告」用中性灰藍,不要用紅 —— 它不是警告,是一則說明,
+   說明這片空白是查證的結果而不是漏查。 */
+.k-boxed-checked {
+  margin: 0 0 0.85rem;
+  padding: 0.55rem 0.75rem;
+  border-left: 3px solid #64748b;
+  background: rgba(100, 116, 139, 0.1);
+  border-radius: 6px;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+.k-boxed-checked > strong { display: block; margin-bottom: 0.25rem; }
+
+/* 「這個空白是清理的結果」。收合預設,因為它是解釋不是警告;但摘要那一行
+   要看得出來,否則空白仍然會被讀成「還沒做」。 */
+.k-removed-note {
+  margin: 0.5rem 0;
+  padding: 0.4rem 0.6rem;
+  border-left: 3px solid #b45309;
+  background: rgba(180, 83, 9, 0.08);
+  border-radius: 6px;
+  font-size: 0.84rem;
+}
+.k-removed-note summary { cursor: pointer; line-height: 1.5; }
+.k-removed-note ul { margin: 0.4rem 0 0; padding-left: 1.1rem; line-height: 1.6; }
+.k-removed-note small { opacity: 0.85; }
+
+/* 內容品質軸(兩軸 maturity 的第二軸)。與 .k-comp-suspect 同一種視覺語言:
+   左側色條 + 淡底,不搶標題。SAFETY_HOLD 用紅,DEFECT 用琥珀 —— 這兩者的差別
+   是「不能當臨床依據」與「有缺陷但不致傷人」,顏色要讓人一眼分得出來。 */
+.k-quality-banner {
+  margin: 0 0 0.6rem;
+  padding: 0.5rem 0.7rem;
+  border-radius: 6px;
+  font-size: 0.84rem;
+  line-height: 1.55;
+}
+.k-quality-banner small { opacity: 0.7; font-size: 0.92em; }
+.k-quality-safety_hold {
+  border-left: 3px solid #dc2626;
+  background: rgba(220, 38, 38, 0.14);
+  font-weight: 600;
+}
+.k-quality-defect {
+  border-left: 3px solid #b45309;
+  background: rgba(180, 83, 9, 0.1);
 }
 
 /* Source registry: Ting browses these sites constantly, so the title IS the
@@ -6482,6 +6923,7 @@ html { scroll-padding-top: 92px; }
   box-shadow: var(--shadow);
   margin-bottom: 1rem;
   padding: 1.25rem;
+  scroll-margin-top: 96px; /* matches .search-panel/.case-workspace — sticky topbar clearance */
 }
 
 .channels-quick-launcher {
@@ -6853,12 +7295,16 @@ html { scroll-padding-top: 92px; }
   display: inline-flex;
   align-items: center;
   gap: 0.3rem;
-  outline: none;
 }
 
 .subtab-btn:hover {
   background: #e8f4ef;
   border-color: #1f5b3d;
+}
+
+.subtab-btn:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
 }
 
 .subtab-btn.active {
@@ -6989,10 +7435,14 @@ html { scroll-padding-top: 92px; }
   font-weight: 600;
   white-space: nowrap;
 }
+/* 類別名要跟存進病歷的正典值一致(app.js OUTCOME_VERDICTS)。
+   先前寫成 kc-unchanged / kc-worse / kc-unclear,而程式送出的是
+   kc-no_change / kc-worsened / kc-lost_followup —— 四個裡三個對不上,
+   那三種判定永遠是沒有樣式的裸文字。改名而非新增,舊的三個沒有別處在用。 */
 .kc-improved { background: #e7f3ea; color: #2f6b45; }
-.kc-unchanged { background: #f0eee9; color: #6b6357; }
-.kc-worse { background: #f8e8e6; color: #96412f; }
-.kc-unclear { background: #f2eef7; color: #5f4c78; }
+.kc-no_change { background: #f0eee9; color: #6b6357; }
+.kc-worsened { background: #f8e8e6; color: #96412f; }
+.kc-lost_followup { background: #f2eef7; color: #5f4c78; }
 
 /* English-source drawer on a bilingual list. The 中文 is the card's content;
    the English source list supports it and must not out-weigh it, which is what
@@ -7069,3 +7519,199 @@ html { scroll-padding-top: 92px; }
 .k-red-flag-tier.is-tier-emergency { background: #fdecea; color: #b3261e; border-color: #f5c6c0; }
 .k-red-flag-tier.is-tier-urgent { background: #fff3e0; color: #a15c00; border-color: #f2ddb8; }
 .k-red-flag-tier.is-tier-routine { background: #eef2ee; color: #4a5f52; border-color: #d8e0d8; }
+
+/* P0.5 Visit Brief — 開診第一眼(OPTIMIZATION_PLAN P1 鏈桌面先行) */
+.visit-brief { border: 1px solid var(--line, #2a3242); border-radius: 10px; padding: 10px 12px; margin: 10px 0; background: rgba(80,140,255,.06); }
+.brief-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 6px 14px; margin-top: 6px; }
+.brief-row small { display: block; opacity: .7; }
+.brief-row.brief-good span { color: #4ade80; }
+.brief-row.brief-bad span { color: #f87171; }
+.brief-changes { margin-top: 8px; } .brief-changes small { opacity: .7; margin-right: 6px; }
+.brief-review { margin-top: 8px; color: #fbbf24; font-weight: 600; }
+
+/* 上次治療 Last treatment — 直向清單,長文字(醫囑、多穴)不會被 auto-fill 欄位擠壓 */
+.brief-last { margin-top: 8px; padding-top: 8px; border-top: 1px dashed var(--line, rgba(148,163,184,.25)); display: grid; gap: 4px; }
+.brief-last-label { display: block; opacity: .7; margin-bottom: 2px; }
+.brief-last .brief-row { display: flex; gap: 10px; }
+.brief-last .brief-row small { flex: 0 0 108px; opacity: .7; }
+.brief-last .brief-row span { flex: 1; }
+.brief-last-empty { margin-top: 8px; padding-top: 8px; border-top: 1px dashed var(--line, rgba(148,163,184,.25)); color: var(--muted); font-size: .85rem; }
+
+/* P2 Case Report Readiness (2026-08-11, CARE_READINESS_MAP_v0) */
+.care-readiness { margin: 14px 0; padding: 12px 14px; border: 1px solid rgba(148,163,184,.25); border-radius: 10px; background: rgba(148,163,184,.06); }
+.care-readiness-head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.care-readiness-head small { opacity: .6; }
+.care-badge { font-weight: 700; padding: 2px 10px; border-radius: 999px; font-size: .9em; }
+.care-badge-good { background: rgba(74,222,128,.15); color: #4ade80; }
+.care-badge-mid { background: rgba(251,191,36,.15); color: #fbbf24; }
+.care-badge-low { background: rgba(248,113,113,.15); color: #f87171; }
+.care-row { margin-top: 8px; display: flex; gap: 8px; align-items: baseline; }
+.care-row small { opacity: .7; white-space: nowrap; }
+
+/* Timeline swim-lanes (2026-08, SOL direction B) */
+/* 診務回顧 Practice Audit — 病例反過來告訴你該補哪些卡片。
+   刻意樸素:這是拿來讀數字的面板,不是儀表板。 */
+.practice-audit-panel { margin: 14px 0; padding: 14px 16px; border: 1px solid rgba(148,163,184,.25); border-radius: 10px; background: rgba(148,163,184,.05); }
+.practice-audit-panel h4 { margin: 14px 0 6px; font-size: .82rem; letter-spacing: .02em; color: var(--muted); font-weight: 600; }
+.practice-audit-panel h4:first-child { margin-top: 4px; }
+.pa-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin-top: 10px; }
+.pa-stat { padding: 8px 10px; border: 1px solid rgba(148,163,184,.2); border-radius: 8px; background: rgba(148,163,184,.06); }
+.pa-stat small { display: block; color: var(--muted); font-size: .7rem; }
+.pa-stat strong { display: block; font-size: 1.15rem; line-height: 1.4; }
+.pa-stat em { display: block; font-style: normal; color: var(--muted); font-size: .68rem; }
+.pa-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; margin-top: 6px; }
+.pa-list, .pa-used { list-style: none; margin: 0; padding: 0; }
+.pa-used { counter-reset: pa; }
+.pa-list li, .pa-used li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px; padding: 4px 0; border-bottom: 1px dashed rgba(148,163,184,.18); font-size: .82rem; }
+.pa-list li small, .pa-used li small { color: var(--muted); font-size: .72rem; margin-left: auto; }
+.pa-outcome li strong { font-variant-numeric: tabular-nums; }
+/* 判讀依據:有具名來源與沒有,要一眼分得出來。不用紅綠 —— 這不是好壞。 */
+.pa-basis { flex-basis: 100%; font-style: normal; font-size: .7rem; color: var(--muted); }
+.pa-basis-none { opacity: .85; font-style: italic; }
+.pa-basis-refrange { opacity: .85; }
+.pa-gap-kind { font-size: .68rem; padding: 1px 6px; border-radius: 999px; border: 1px solid rgba(148,163,184,.35); color: var(--muted); }
+.pa-gap-list li em { font-style: normal; font-size: .7rem; color: var(--muted); }
+/* 可以點開卡片的缺口。不能點的那些維持純文字 —— 長得像連結卻沒反應更糟。 */
+.pa-gap-open { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px; width: 100%; padding: 2px 4px; margin: -2px -4px; border: 0; border-radius: 6px; background: none; font: inherit; color: inherit; text-align: left; cursor: pointer; }
+.pa-gap-open:hover, .pa-gap-open:focus-visible { background: rgba(148,163,184,.14); }
+.pa-gap-open small { margin-left: auto; }
+.pa-empty { margin: 4px 0 0; color: var(--muted); font-size: .78rem; }
+.pa-notstated { margin-top: 14px; font-size: .76rem; color: var(--muted); }
+.pa-notstated summary { cursor: pointer; }
+.pa-notstated ul { margin: 6px 0 0 1.1em; padding: 0; }
+@media print { .practice-audit-panel { break-inside: avoid; } }
+
+.swimlane-panel { margin: 14px 0; padding: 12px 14px; border: 1px solid rgba(148,163,184,.25); border-radius: 10px; background: rgba(148,163,184,.05); }
+.swimlane-panel svg { width: 100%; height: auto; display: block; }
+.sw-axis { stroke: rgba(148,163,184,.5); stroke-width: 1; }
+.sw-t { fill: rgba(148,163,184,.9); font-size: 11px; }
+.sw-lane { fill: currentColor; font-size: 11px; opacity: .75; }
+.sw-line { fill: none; stroke: #60a5fa; stroke-width: 1.5; opacity: .8; }
+.sw-dot { fill: #60a5fa; }
+.sw-v { fill: currentColor; font-size: 10px; opacity: .85; }
+.sw-bar { fill: rgba(74,222,128,.35); }
+.sw-bar-stopped { fill: rgba(148,163,184,.3); }
+.sw-ev { fill: #4ade80; }
+.sw-ev.sw-coarse { fill: none; stroke: #4ade80; stroke-width: 1.5; }
+.sw-ae { fill: #fbbf24; } .sw-ae-severe { fill: #f87171; } .sw-ae-moderate { fill: #fb923c; }
+.sw-pattern-line { stroke: #a78bfa; stroke-width: 3; opacity: .5; }
+.sw-pattern-mark { fill: #a78bfa; }
+.sw-point-mark { fill: #38bdf8; }
+.sw-formula-mark { fill: #2dd4bf; }
+.sw-formula-mark-changed { fill: #f472b6; }
+.sw-formula-change { stroke: #f472b6; stroke-width: 1; stroke-dasharray: 3 2; opacity: .7; }
+
+/* Knowledge line coverage matrix (2026-08-11 quality-page honesty rebuild) */
+.kline-matrix { display: flex; flex-direction: column; gap: 6px; margin: 12px 0 20px; }
+.kline-row { display: grid; grid-template-columns: 110px 74px 1fr 110px minmax(120px, 1.2fr); gap: 12px; align-items: center; padding: 8px 12px; border: 1px solid rgba(148,163,184,.18); border-radius: 8px; background: rgba(148,163,184,.05); }
+.kline-name strong { display: block; font-size: .95em; }
+.kline-name small, .kline-nums small, .kline-pct small { opacity: .6; display: block; font-size: .75em; }
+.kline-count { font-weight: 700; font-size: 1.1em; }
+.kline-bar { height: 8px; border-radius: 999px; background: rgba(148,163,184,.15); overflow: hidden; }
+.kline-fill { height: 100%; border-radius: 999px; background: linear-gradient(90deg, #60a5fa, #4ade80); }
+.kline-pct { font-weight: 600; white-space: nowrap; }
+.kline-note { font-size: .8em; opacity: .75; }
+@media (max-width: 720px) { .kline-row { grid-template-columns: 1fr 1fr; } .kline-bar { grid-column: 1 / -1; } .kline-note { grid-column: 1 / -1; } }
+
+/* Home quick-access tiles (2026-08-11 homepage pass, atlas idiom) */
+.home-quick-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(132px, 1fr)); gap: 10px; margin-top: 18px; }
+.home-tile { display: flex; flex-direction: column; gap: 2px; padding: 12px 14px; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; text-decoration: none; color: var(--ink); box-shadow: 0 2px 10px rgba(23,33,38,.05); transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease; }
+.home-tile:hover, .home-tile:focus-visible { transform: translateY(-2px); border-color: var(--gold); box-shadow: 0 8px 22px rgba(23,33,38,.12); outline: none; }
+.home-tile small { color: var(--muted); font-size: .72em; letter-spacing: .06em; text-transform: uppercase; }
+.home-tile strong { font-family: var(--serif); font-size: 1.45em; line-height: 1.15; color: var(--accent-dark); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.home-tile span { color: var(--muted); font-size: .78em; }
+.home-tile--continue { grid-column: span 2; background: linear-gradient(135deg, var(--green-soft), var(--panel)); border-color: var(--accent); }
+.home-tile--continue strong { font-size: 1.15em; white-space: normal; }
+@media (prefers-reduced-motion: reduce) { .home-tile { transition: none; } .home-tile:hover { transform: none; } }
+
+/* SOAP cycle/fertility collapsible (2026-08-11 Ting fix) */
+.soap-cycle-section summary { cursor: pointer; font-weight: 600; padding: 4px 0; color: var(--accent-dark); }
+.soap-cycle-section summary small { font-weight: 400; color: var(--muted); margin-left: 8px; }
+.soap-cycle-section[open] summary { margin-bottom: 8px; }
+.soap-cycle-section .form-grid { margin: 0; }
+
+/* ==================  AVS v3 — Visit Checkout(2026-08-11)================== */
+.avs-badge { font-size: .68em; padding: 2px 8px; border-radius: 999px; letter-spacing: .04em; white-space: nowrap; }
+.avs-badge-draft { background: rgba(184, 134, 47, .14); color: var(--gold); border: 1px solid rgba(184, 134, 47, .4); }
+.avs-badge-final { background: rgba(15, 127, 122, .12); color: var(--accent-dark); border: 1px solid rgba(15, 127, 122, .35); }
+
+.avs-checkout-dialog { width: min(720px, 94vw); }
+#avsCheckoutBody { display: flex; flex-direction: column; gap: 14px; max-height: 72vh; overflow-y: auto; padding: 2px 2px 6px; }
+.avs-co-meta { color: var(--muted); font-size: .85em; }
+.avs-co-section { border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; background: var(--panel); }
+.avs-co-section h3 { margin: 0 0 8px; font-size: .95em; color: var(--accent-dark); font-family: var(--serif); }
+.avs-co-empty { color: var(--muted); font-size: .85em; margin: 4px 0; }
+.avs-co-note { color: var(--muted); font-size: .78em; margin: 8px 0 0; }
+.avs-co-warn { color: #9a6a12; background: rgba(184, 134, 47, .1); border: 1px solid rgba(184, 134, 47, .35); border-radius: 8px; padding: 6px 10px; font-size: .85em; }
+.avs-co-advice-row { border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; margin-bottom: 8px; }
+.avs-co-advice-row textarea { width: 100%; box-sizing: border-box; margin-top: 6px; line-height: 1.5; }
+.avs-co-advice-head { display: flex; align-items: flex-start; gap: 8px; flex-wrap: wrap; }
+.avs-co-advice-head input[type="checkbox"] { flex-shrink: 0; margin-top: 3px; }
+.avs-co-cat { font-size: .78em; color: var(--muted); background: rgba(148, 163, 184, .12); border-radius: 999px; padding: 2px 8px; }
+.avs-co-why-btn { font-size: .75em; margin-left: auto; }
+.avs-co-why { margin-top: 4px; color: var(--muted); }
+.avs-co-why small { display: block; margin-top: 2px; }
+.avs-co-sources a { color: inherit; }
+.avs-co-custom-row select { font-size: .85em; }
+.avs-co-med-table { width: 100%; border-collapse: collapse; font-size: .88em; }
+.avs-co-med-table td, .avs-co-med-table th { border: 1px solid var(--line); padding: 4px 8px; text-align: left; }
+.avs-co-watch-row { display: flex; gap: 8px; align-items: baseline; margin: 4px 0; }
+.avs-co-history-row { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 4px 0; font-size: .88em; }
+.avs-co-superseded { color: var(--muted); opacity: .68; }
+.avs-co-superseded .ghost { font-size: .92em; }
+.avs-co-final-time { color: var(--muted); font-size: .85em; }
+.avs-co-actions-row { display: flex; gap: 10px; flex-wrap: wrap; margin: 10px 0 4px; }
+
+@media (max-width: 720px) {
+  .avs-checkout-dialog { width: calc(100vw - 1rem); border-radius: 10px; }
+  .avs-checkout-dialog .dialog-head { padding: 12px 14px 0; }
+  #avsCheckoutBody { max-height: 78vh; padding: 2px 10px 10px; gap: 10px; }
+  .avs-co-section { padding: 10px 12px; }
+  .avs-co-actions-row,
+  .avs-checkout-dialog .dialog-actions { grid-template-columns: 1fr; display: grid; gap: 8px; }
+  .avs-checkout-dialog .dialog-actions span { display: none; }
+  .avs-checkout-dialog .dialog-actions button { width: 100%; }
+  .avs-co-history-row { flex-wrap: wrap; }
+  .avs-co-why-btn { margin-left: 0; }
+}
+
+/* FIX A (Dry Clinic #6) — caseDialog/soapDialog draft-recovery banner.
+   Inline, never window.confirm(); matches .backup-reminder-banner's warm-
+   amber "notice, not error" tone rather than .data-missing-banner's red. */
+.draft-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  background: #f5e6c8;
+  color: #5c4a1a;
+  border-bottom: 1px solid #d8c48f;
+  padding: 0.55rem 1rem;
+  font-size: 0.85rem;
+}
+.draft-banner button { font-size: 0.82rem; padding: 0.25rem 0.7rem; }
+
+/* FIX B (Dry Clinic #14) — submit-failure feedback: red outline on the
+   first :invalid field found on a blocked save, plus a message line near
+   the dialog's Save button (same red as .metric-conflict-warning's amber
+   sibling, but error-level rather than warning-level). */
+.field-invalid {
+  outline: 2px solid #c0392b;
+  outline-offset: 2px;
+}
+.save-error-msg {
+  color: #c0392b;
+  font-weight: 600;
+  padding: 0.3rem 1rem;
+  font-size: 0.85rem;
+}
+
+/* 證據等級與出處的說明句。比 can_treat/precautions 低一階,但必須看得見 ——
+   「這一條有 Cochrane 中等確定性」與「這一條專屬證據不足」的差別就在這裡。 */
+.k-scope-note {
+  margin: 0.4rem 0 0;
+  padding-left: 0.6rem;
+  border-left: 2px solid rgba(148, 163, 184, 0.6);
+  font-size: 0.95em;
+  opacity: 0.92;
+}

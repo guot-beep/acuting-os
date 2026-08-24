@@ -1,0 +1,211 @@
+{
+  "status": "RESEARCH STAGING / NOT CANONICAL",
+  "batch": "CR-009",
+  "relation_semantics": {
+    "measured_by": "The target metric is a reasonable direct longitudinal measurement for the symptom.",
+    "may_be_measured_by": "Useful only in relevant anatomy/context; not mandatory.",
+    "interaction_watch": "Prompts medication reconciliation/review; does not assert a deterministic adverse event.",
+    "administration_separation_watch": "Timing/absorption review candidate."
+  },
+  "forbidden_inferences": [
+    "No symptom-to-diagnosis auto-promotion.",
+    "No Western Condition-to-TCM Pattern equivalence.",
+    "No interaction-watch edge may be displayed as a proven patient-specific interaction without medication context."
+  ],
+  "symptom_metric_relations": [
+    {
+      "source_id": "sym.headache",
+      "relation": "measured_by",
+      "target_id": "metric.pain_score",
+      "strength": "direct_measurement_candidate"
+    },
+    {
+      "source_id": "sym.neck_pain",
+      "relation": "measured_by",
+      "target_id": "metric.pain_score",
+      "strength": "direct_measurement_candidate"
+    },
+    {
+      "source_id": "sym.neck_pain",
+      "relation": "may_be_measured_by",
+      "target_id": "metric.range_of_motion_deg",
+      "strength": "context_dependent"
+    },
+    {
+      "source_id": "sym.shoulder_pain",
+      "relation": "measured_by",
+      "target_id": "metric.pain_score",
+      "strength": "direct_measurement_candidate"
+    },
+    {
+      "source_id": "sym.shoulder_pain",
+      "relation": "may_be_measured_by",
+      "target_id": "metric.range_of_motion_deg",
+      "strength": "context_dependent"
+    },
+    {
+      "source_id": "sym.low_back_pain",
+      "relation": "measured_by",
+      "target_id": "metric.pain_score",
+      "strength": "direct_measurement_candidate"
+    },
+    {
+      "source_id": "sym.low_back_pain",
+      "relation": "may_be_measured_by",
+      "target_id": "metric.range_of_motion_deg",
+      "strength": "context_dependent"
+    },
+    {
+      "source_id": "sym.knee_pain",
+      "relation": "measured_by",
+      "target_id": "metric.pain_score",
+      "strength": "direct_measurement_candidate"
+    },
+    {
+      "source_id": "sym.knee_pain",
+      "relation": "may_be_measured_by",
+      "target_id": "metric.range_of_motion_deg",
+      "strength": "context_dependent"
+    },
+    {
+      "source_id": "sym.insomnia",
+      "relation": "measured_by",
+      "target_id": "metric.sleep_quality",
+      "strength": "direct_measurement_candidate"
+    },
+    {
+      "source_id": "sym.insomnia",
+      "relation": "measured_by",
+      "target_id": "metric.sleep_hours",
+      "strength": "direct_measurement_candidate"
+    },
+    {
+      "source_id": "sym.insomnia",
+      "relation": "measured_by",
+      "target_id": "metric.sleep_onset_minutes",
+      "strength": "direct_measurement_candidate"
+    },
+    {
+      "source_id": "sym.insomnia",
+      "relation": "measured_by",
+      "target_id": "metric.night_wakings",
+      "strength": "direct_measurement_candidate"
+    },
+    {
+      "source_id": "sym.fatigue",
+      "relation": "measured_by",
+      "target_id": "metric.fatigue_score",
+      "strength": "direct_measurement_candidate"
+    },
+    {
+      "source_id": "sym.constipation",
+      "relation": "measured_by",
+      "target_id": "metric.bowel_frequency",
+      "strength": "direct_measurement_candidate"
+    },
+    {
+      "source_id": "sym.constipation",
+      "relation": "may_be_measured_by",
+      "target_id": "metric.stool_form_bristol",
+      "strength": "context_dependent"
+    },
+    {
+      "source_id": "sym.diarrhea",
+      "relation": "may_be_measured_by",
+      "target_id": "metric.stool_form_bristol",
+      "strength": "context_dependent"
+    },
+    {
+      "source_id": "sym.hot_flash",
+      "relation": "measured_by",
+      "target_id": "metric.hot_flash_count_day",
+      "strength": "direct_measurement_candidate"
+    },
+    {
+      "source_id": "sym.dysmenorrhea",
+      "relation": "measured_by",
+      "target_id": "metric.pain_score",
+      "strength": "direct_measurement_candidate"
+    },
+    {
+      "source_id": "sym.epigastric_pain",
+      "relation": "measured_by",
+      "target_id": "metric.pain_score",
+      "strength": "direct_measurement_candidate"
+    }
+  ],
+  "supplement_medication_class_relations": [
+    {
+      "source_id": "supp.vitamin_k",
+      "relation": "interaction_watch",
+      "target_id": "drugclass.vitamin_k_antagonists",
+      "note": "Major management interaction; warfarin-class therapy requires consistent vitamin K intake and monitoring."
+    },
+    {
+      "source_id": "supp.st_johns_wort",
+      "relation": "interaction_watch",
+      "target_id": "drugclass.anticoagulants",
+      "note": "Can reduce warfarin effect via metabolic induction."
+    },
+    {
+      "source_id": "supp.st_johns_wort",
+      "relation": "interaction_watch",
+      "target_id": "drugclass.immunosuppressants",
+      "note": "Can markedly reduce cyclosporine exposure; high-priority interaction."
+    },
+    {
+      "source_id": "supp.st_johns_wort",
+      "relation": "interaction_watch",
+      "target_id": "drugclass.serotonergic_drugs",
+      "note": "Serotonin-related toxicity risk with serotonergic combinations."
+    },
+    {
+      "source_id": "supp.ashwagandha",
+      "relation": "interaction_watch",
+      "target_id": "drugclass.immunosuppressants",
+      "note": "NCCIH lists possible interaction with medicines that decrease immune response."
+    },
+    {
+      "source_id": "supp.ashwagandha",
+      "relation": "interaction_watch",
+      "target_id": "drugclass.thyroid_hormones",
+      "note": "NCCIH lists thyroid hormone medication interaction concern."
+    },
+    {
+      "source_id": "supp.iron",
+      "relation": "administration_separation_watch",
+      "target_id": "drugclass.thyroid_hormones",
+      "note": "Iron can impair levothyroxine absorption; dose separation is clinically important."
+    },
+    {
+      "source_id": "supp.calcium",
+      "relation": "administration_separation_watch",
+      "target_id": "drugclass.thyroid_hormones",
+      "note": "Calcium can impair levothyroxine absorption; dose separation is clinically important."
+    },
+    {
+      "source_id": "supp.garlic",
+      "relation": "interaction_watch",
+      "target_id": "drugclass.anticoagulants",
+      "note": "Bleeding risk may increase."
+    },
+    {
+      "source_id": "supp.vitamin_e",
+      "relation": "interaction_watch",
+      "target_id": "drugclass.anticoagulants",
+      "note": "High-dose vitamin E can increase bleeding tendency."
+    },
+    {
+      "source_id": "supp.ginkgo",
+      "relation": "interaction_watch",
+      "target_id": "drugclass.anticoagulants",
+      "note": "Bleeding-interaction concern."
+    },
+    {
+      "source_id": "supp.omega_3",
+      "relation": "interaction_watch",
+      "target_id": "drugclass.anticoagulants",
+      "note": "Dose-dependent bleeding review, especially at high doses."
+    }
+  ]
+}

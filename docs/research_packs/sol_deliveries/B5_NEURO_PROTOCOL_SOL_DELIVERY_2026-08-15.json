@@ -1,0 +1,1277 @@
+{
+  "task": "SOL B5 神經 8 張條件卡逐病重建針灸處方",
+  "research_date": "2026-08-15",
+  "repo": "github.com/guot-beep/acuting-os",
+  "branch": "codex/pattern-v2",
+  "repo_file": "data/pathology/condition_canon_shortlist.json",
+  "repo_blob_sha_checked": "67ecd9fddab5fdac233adc13679583dd97c696fd",
+  "write_policy": "read_only; no repo writes performed",
+  "interpretation_rules": [
+    "No points were added from model memory.",
+    "Scalp acupuncture was not converted into body-meridian codes.",
+    "Stroke motor, aphasia, dysphagia, shoulder pain and spasticity were treated as separate outcome domains.",
+    "Generic peripheral neuropathy was not allowed to borrow disease-specific protocols across etiologies.",
+    "Diabetic-foot sensory loss and heat injury safety was evaluated before adopting any heat/moxibustion practice.",
+    "Acute herpes zoster was not substituted for postherpetic neuralgia.",
+    "Parkinson/MS/essential-tremor symptom-scale improvements were not described as disease modification or permission to alter levodopa/DMT/other medications.",
+    "Sudden sensorineural hearing loss was treated as a time-sensitive ENT/audiology pathway, not a routine Meniere flare.",
+    "Negative/insufficient evidence is stored as not_supported or limited, not as no_source."
+  ],
+  "conditions": [
+    {
+      "condition_id": "cond.stroke_rehab",
+      "condition_name_zh": "中風後復健",
+      "condition_name_en": "Post-stroke rehabilitation",
+      "protocol_status": "adjunct_only",
+      "points": [
+        {
+          "code": "LI15",
+          "name_zh": "肩髃",
+          "role_zh": "亞急性中風上肢運動 RCT 固定患側穴",
+          "reason_zh": null,
+          "source_ids": [
+            "ST1"
+          ]
+        },
+        {
+          "code": "LI14",
+          "name_zh": "臂臑",
+          "role_zh": "亞急性中風上肢運動 RCT 固定患側穴",
+          "reason_zh": null,
+          "source_ids": [
+            "ST1"
+          ]
+        },
+        {
+          "code": "LI13",
+          "name_zh": "手五里",
+          "role_zh": "亞急性中風上肢運動 RCT 固定患側穴",
+          "reason_zh": null,
+          "source_ids": [
+            "ST1"
+          ]
+        },
+        {
+          "code": "LI11",
+          "name_zh": "曲池",
+          "role_zh": "亞急性中風上肢運動 RCT 固定患側穴",
+          "reason_zh": null,
+          "source_ids": [
+            "ST1"
+          ]
+        },
+        {
+          "code": "LI10",
+          "name_zh": "手三里",
+          "role_zh": "亞急性中風上肢運動 RCT 固定患側穴",
+          "reason_zh": null,
+          "source_ids": [
+            "ST1"
+          ]
+        },
+        {
+          "code": "TE5",
+          "name_zh": "外關",
+          "role_zh": "亞急性中風上肢運動 RCT 固定患側穴；來源使用 SJ5，依本庫正規化為 TE5",
+          "reason_zh": null,
+          "source_ids": [
+            "ST1"
+          ]
+        },
+        {
+          "code": "LI4",
+          "name_zh": "合谷",
+          "role_zh": "亞急性中風上肢運動 RCT 固定患側穴",
+          "reason_zh": null,
+          "source_ids": [
+            "ST1"
+          ]
+        }
+      ],
+      "point_rationale_zh": "正式 points 只收一項 2026 年亞急性缺血性中風上肢運動 RCT 的固定患側方案。失語、吞嚥、肩痛、痙攣各自是不同 outcome 與介入研究，不與這 7 穴拼成『中風通用處方』。",
+      "point_rationale_en": "Formal points are limited to the fixed affected-arm regimen from one 2026 RCT in subacute ischemic stroke motor rehabilitation. Aphasia, dysphagia, shoulder pain, and spasticity are separate outcomes and are not merged into a universal stroke prescription.",
+      "treatment_parameters": {
+        "manual_or_electroacupuncture": "electroacupuncture",
+        "frequency": "每日1次，每週6天",
+        "session_duration": "30分鐘",
+        "treatment_course": "3週，共18次；所有患者同時接受標準復健",
+        "timing_after_onset": "亞急性期；該 RCT 納入 onset 15 days–3 months",
+        "source_ids": [
+          "ST1"
+        ]
+      },
+      "scope_zh": "針灸在本卡只能作為既有中風復健的 adjunct。運動、失語、吞嚥、肩痛／半脫位與痙攣必須分項解讀；不能把任一症狀量表改善寫成『中風整體恢復』。新發中風症狀不屬 rehab 卡，先走急性中風急症路徑。",
+      "scope_conflict_note": null,
+      "evidence_note_zh": "2026-08-15 檢索 PubMed、PMC、AHA/ASA；檢索詞含「subacute stroke electroacupuncture upper limb randomized」「poststroke motor aphasia acupuncture sham」「poststroke dysphagia acupuncture meta-analysis」「acute ischemic stroke guideline 2026」。Motor：ST1 為 sham-controlled add-on RCT，FMA-UE 有組間優勢，MBI group×time 不顯著。Aphasia：ST2 WAB-AQ/CFCP 有組間改善。Dysphagia：ST3 的 SSA/VFSS/WST/SWAL-QOL 有統合改善，但安全資料仍不足。這些 outcome 不可合併成一個『有效率』。",
+      "condition_specific_cautions_zh": [
+        {
+          "text": "抗血小板／抗凝治療不得因針灸自行停藥；需核對出血風險、針刺位置與深度，並以局部壓迫等常規方式處理小量出血。",
+          "source_ids": [
+            "ST5"
+          ]
+        },
+        {
+          "text": "若出現新的 FAST/focal neurologic deficit，這是可能的急性中風而不是『復健波動』，優先 EMS/急性中風評估。",
+          "source_ids": [
+            "ST4"
+          ]
+        }
+      ],
+      "referral_red_flags_zh": [
+        {
+          "text": "任何新發臉歪、單側無力／麻木、言語障礙、視覺或平衡急變等疑似急性中風表現：立即走急性中風急症路徑，不先施針。",
+          "source_ids": [
+            "ST4"
+          ]
+        }
+      ],
+      "sensory_loss_safety_zh": [],
+      "sources": [
+        {
+          "source_id": "ST1",
+          "type": "rct",
+          "citation": "Li M, Zou W, Xie G, Li M, Zheng S, Li H. Electroacupuncture improves upper-limb motor function and modulates sensorimotor network connectivity in subacute stroke: a randomized controlled trial. Front Neurol. 2026;17:1780918.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42404112/",
+          "pmid_or_doi": "PMID 42404112; PMCID PMC13328037; DOI 10.3389/fneur.2026.1780918",
+          "covers": "50 位亞急性缺血性中風患者；onset 15 days–3 months；嚴重患側上肢運動障礙。所有人接受標準復健；EA vs sham EA。",
+          "modality": "electroacupuncture",
+          "comparator": "sham",
+          "supports": [
+            "efficacy",
+            "specific_points",
+            "treatment_parameters",
+            "scope"
+          ],
+          "primary_outcome_zh": "FMA-UE 上肢運動功能為核心臨床結果；MBI 為日常生活功能；治療 3 週。",
+          "finding_zh": "18 sessions/3 weeks、每日1次每週6天；EA+standard rehabilitation 相對 sham EA+standard rehabilitation 的 FMA-UE 改善較大；MBI group×time interaction 不顯著。固定患側上肢穴為 LI15、LI14、LI13、LI11、LI10、SJ5、LI4；repo 正規化 SJ5→TE5。",
+          "certainty": "not_graded"
+        },
+        {
+          "source_id": "ST2",
+          "type": "rct",
+          "citation": "Li B, Deng S, Zhuo B, et al. Effect of Acupuncture vs Sham Acupuncture on Patients With Poststroke Motor Aphasia: A Randomized Clinical Trial. JAMA Netw Open. 2024;7(1):e2352580.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/38252438/",
+          "pmid_or_doi": "PMID 38252438; PMCID PMC10804271; DOI 10.1001/jamanetworkopen.2023.52580",
+          "covers": "252 位 poststroke motor aphasia 成人；manual acupuncture vs sham；兩組均接受 language training 與 conventional treatment。",
+          "modality": "acupuncture",
+          "comparator": "sham",
+          "supports": [
+            "efficacy",
+            "scope",
+            "treatment_parameters"
+          ],
+          "primary_outcome_zh": "WAB Aphasia Quotient 與 Chinese Functional Communication Profile at 6 weeks；追蹤至 stroke onset 6 months。",
+          "finding_zh": "6週時 WAB-AQ 組間差 7.99、CFCP 23.51，之後到6個月仍有差異。這是『失語』分項 evidence，不可與 motor-rehab 穴位合併成一張萬用中風方。",
+          "certainty": "not_graded"
+        },
+        {
+          "source_id": "ST3",
+          "type": "systematic_review",
+          "citation": "Zhang J, Wu M, Li X, et al. Effect of Acupuncture on Dysphagia after Stroke: A Meta-Analysis and Trial Sequential Analysis of Randomized Controlled Trials. Cerebrovasc Dis. 2025;54(6):995-1015.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39965554/",
+          "pmid_or_doi": "PMID 39965554; DOI 10.1159/000544743",
+          "covers": "20 RCT、1,718 位 poststroke dysphagia 患者；多為 acupuncture + rehabilitation vs rehabilitation/control。",
+          "modality": "mixed",
+          "comparator": "usual_care",
+          "supports": [
+            "efficacy",
+            "scope"
+          ],
+          "primary_outcome_zh": "SSA、VFSS、Water Swallow Test、SWAL-QOL；短期吞嚥結果。",
+          "finding_zh": "Acupuncture combined with rehabilitation improved SSA (MD -3.64), VFSS (MD 1.49), WST (MD -0.72), SWAL-QOL (MD 16.56). Safety sample remained insufficient. 此 evidence 只支持 dysphagia 分項，不等於 motor recovery。",
+          "certainty": "low"
+        },
+        {
+          "source_id": "ST4",
+          "type": "guideline",
+          "citation": "Prabhakaran S, Gonzalez NR, Zachrison KS, et al. 2026 Guideline for the Early Management of Patients With Acute Ischemic Stroke: A Guideline From the American Heart Association/American Stroke Association. Stroke. 2026.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41582814/",
+          "pmid_or_doi": "PMID 41582814; DOI 10.1161/STR.0000000000000513",
+          "covers": "急性缺血性中風；prehospital evaluation、reperfusion eligibility、acute treatment、early in-hospital management。",
+          "modality": "unclear",
+          "comparator": "none",
+          "supports": [
+            "referral",
+            "caution",
+            "scope"
+          ],
+          "primary_outcome_zh": "急性中風處置與時間敏感 reperfusion；非針灸療效來源。",
+          "finding_zh": "新發 focal neurologic deficit/疑似急性中風需立即走急性中風系統；針灸不得延誤 thrombolysis/thrombectomy eligibility evaluation。",
+          "certainty": "high"
+        },
+        {
+          "source_id": "ST5",
+          "type": "systematic_review",
+          "citation": "McCulloch M, Nachat A, Schwartz J, Casella-Gordon V, Cook J. Acupuncture safety in patients receiving anticoagulants: a systematic review. Perm J. 2015;19(1):68-73.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/25432001/",
+          "pmid_or_doi": "PMID 25432001; PMCID PMC4315381; DOI 10.7812/TPP/14-057",
+          "covers": "384 名接受抗凝治療患者、3974 acupuncture treatments；安全性資料。",
+          "modality": "acupuncture",
+          "comparator": "none",
+          "supports": [
+            "caution"
+          ],
+          "primary_outcome_zh": "針刺相關 bleeding adverse events。",
+          "finding_zh": "3974次治療中報告1起 moderate bleeding event；作者結論是在適當 needling location/depth 下整體看似安全，但證據主要來自小型研究/病例資料。不能因此建議停抗血小板或抗凝藥。",
+          "certainty": "low"
+        }
+      ],
+      "no_source_found": false,
+      "unresolved": [
+        "未找到足以建立『中風患側感覺缺失時施灸／溫針』具體安全閾值的 stroke-specific guideline；不自行制定熱度、時間或針深。",
+        "ST2 有獨立 motor-aphasia 針灸 regimen，ST3 有 dysphagia evidence；為避免 renderer 把不同功能領域拼成標準方，未把它們的穴位混入正式 points。",
+        "本卡未把 hemorrhagic stroke 與 ischemic stroke 的 rehab evidence 視為完全等同；正式 7 穴方案來自 subacute ischemic stroke RCT。"
+      ]
+    },
+    {
+      "condition_id": "cond.peripheral_neuropathy",
+      "condition_name_zh": "周邊神經病變",
+      "condition_name_en": "Peripheral neuropathy",
+      "protocol_status": "not_supported",
+      "points": [],
+      "point_rationale_zh": "不建立傘狀病名的通用配穴。系統性回顧中的 neuropathy 病因包含糖尿病、Bell palsy、HIV、腕隧道、idiopathic 等，療效與方案不能跨病因互借；idiopathic neuropathy 本身證據不足。",
+      "point_rationale_en": "No etiology-independent point prescription is created. Trials pooled under peripheral neuropathy include diabetic, Bell palsy, HIV, carpal tunnel, idiopathic, and other etiologies; their regimens are not interchangeable.",
+      "treatment_parameters": {
+        "manual_or_electroacupuncture": null,
+        "frequency": null,
+        "session_duration": null,
+        "treatment_course": null,
+        "timing_after_onset": null,
+        "source_ids": []
+      },
+      "scope_zh": "Peripheral neuropathy 是傘狀名詞。必須先找病因與可逆因素；只有病因直接證據才可建立對應處方。急性進行性上行無力、呼吸或自主神經異常需排除 GBS，不能留在針灸門診觀察。",
+      "scope_conflict_note": null,
+      "evidence_note_zh": "2026-08-15 檢索 PubMed；檢索詞含「peripheral neuropathy acupuncture systematic review etiology」「Guillain-Barre guideline progressive weakness」。2017 SR 納入15 studies，涵蓋多種病因；作者只在部分 specific etiologies 看到訊號，對 idiopathic neuropathy 證據不足。故有來源但不支持 generic protocol，status=not_supported。",
+      "condition_specific_cautions_zh": [
+        {
+          "text": "傘狀 neuropathy 必須先確認病因；糖尿病、B12/營養、酒精/毒物、藥物、壓迫、免疫/發炎、感染與遺傳性病因不可用同一配穴邏輯取代診斷。",
+          "source_ids": [
+            "PN1"
+          ]
+        }
+      ],
+      "referral_red_flags_zh": [
+        {
+          "text": "急性或亞急性快速進展的對稱無力／上行性麻痺，尤其合併顱神經、呼吸功能或 autonomic dysfunction：應緊急神經科／急症評估 Guillain-Barré syndrome。",
+          "source_ids": [
+            "PN2"
+          ]
+        }
+      ],
+      "sensory_loss_safety_zh": [
+        {
+          "text": "若這張傘狀卡的實際病因是糖尿病且已有 loss of protective sensation，足部熱療與傷口風險應改依 diabetic-neuropathy/diabetic-foot 安全路徑；這條不能外推到所有 neuropathy 病因。",
+          "source_ids": [
+            "PN3"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "source_id": "PN1",
+          "type": "systematic_review",
+          "citation": "Dimitrova A, Murchison C, Oken B. Acupuncture for the Treatment of Peripheral Neuropathy: A Systematic Review and Meta-Analysis. J Altern Complement Med. 2017;23(3):164-179.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/28112552/",
+          "pmid_or_doi": "PMID 28112552; PMCID PMC5359694; DOI 10.1089/acm.2016.0155",
+          "covers": "15 studies；diabetes、Bell palsy、HIV、carpal tunnel、idiopathic 等多病因 peripheral neuropathy。",
+          "modality": "mixed",
+          "comparator": "unclear",
+          "supports": [
+            "efficacy",
+            "scope"
+          ],
+          "primary_outcome_zh": "症狀與 nerve-conduction outcomes；依病因異質。",
+          "finding_zh": "部分 specific etiologies 有訊號，但 regimens、controls、outcomes 異質；idiopathic neuropathy 證據不足。不能產生 generic peripheral-neuropathy prescription。",
+          "certainty": "low"
+        },
+        {
+          "source_id": "PN2",
+          "type": "guideline",
+          "citation": "van Doorn PA, Van den Bergh PYK, Hadden RDM, et al. European Academy of Neurology/Peripheral Nerve Society Guideline on diagnosis and treatment of Guillain-Barré syndrome. Eur J Neurol. 2023;30(12):3646-3674.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/37814552/",
+          "pmid_or_doi": "PMID 37814552; DOI 10.1111/ene.16073",
+          "covers": "GBS acute polyradiculoneuropathy；diagnosis、respiratory insufficiency/autonomic dysfunction、treatment、ICU risk。",
+          "modality": "unclear",
+          "comparator": "none",
+          "supports": [
+            "referral",
+            "caution"
+          ],
+          "primary_outcome_zh": "GBS diagnosis/treatment/prognosis；非針灸 outcome。",
+          "finding_zh": "GBS 可有 weakness、sensory disturbance、cranial nerve involvement、respiratory insufficiency、autonomic dysfunction；需要 evidence-based neurologic treatment/ICU triage。",
+          "certainty": "high"
+        },
+        {
+          "source_id": "PN3",
+          "type": "guideline",
+          "citation": "American Diabetes Association Professional Practice Committee. 12. Retinopathy, Neuropathy, and Foot Care: Standards of Care in Diabetes—2026. Diabetes Care. 2026;49(Suppl 1):S261-S276.",
+          "url": "https://diabetesjournals.org/care/article/49/Supplement_1/S261/163919/12-Retinopathy-Neuropathy-and-Foot-Care-Standards",
+          "pmid_or_doi": "PMID 41358886; DOI 10.2337/dc26-S012",
+          "covers": "僅 diabetes/DPN；本卡只用來標示『若病因為糖尿病』的條件性安全邊界。",
+          "modality": "unclear",
+          "comparator": "none",
+          "supports": [
+            "caution",
+            "referral"
+          ],
+          "primary_outcome_zh": "DPN/LOPS/foot ulcer risk與foot-care pathway。",
+          "finding_zh": "LOPS predisposes to unrecognized minor trauma and ulceration；糖尿病足需反覆 skin/neurologic/vascular inspection與高風險轉診。",
+          "certainty": "high"
+        }
+      ],
+      "no_source_found": false,
+      "unresolved": [
+        "未找到可對『所有病因 peripheral neuropathy』通用的針刺深度、熱療或 moxibustion 安全規則；不從 DPN 安全資料外推。",
+        "若要建配穴，應拆成病因卡（DPN、CIPN、entrapment、HIV 等）再逐病查源。"
+      ]
+    },
+    {
+      "condition_id": "cond.diabetic_neuropathy",
+      "condition_name_zh": "糖尿病神經病變",
+      "condition_name_en": "Diabetic peripheral neuropathy",
+      "protocol_status": "adjunct_only",
+      "points": [
+        {
+          "code": "ST34",
+          "name_zh": "梁丘",
+          "role_zh": "ACUDPN RCT mandatory bilateral point",
+          "reason_zh": null,
+          "source_ids": [
+            "DPN1"
+          ]
+        },
+        {
+          "code": "ST40",
+          "name_zh": "豐隆",
+          "role_zh": "ACUDPN RCT mandatory bilateral point",
+          "reason_zh": null,
+          "source_ids": [
+            "DPN1"
+          ]
+        },
+        {
+          "code": "SP6",
+          "name_zh": "三陰交",
+          "role_zh": "ACUDPN RCT mandatory bilateral point",
+          "reason_zh": null,
+          "source_ids": [
+            "DPN1"
+          ]
+        },
+        {
+          "code": "KI3",
+          "name_zh": "太谿",
+          "role_zh": "ACUDPN RCT mandatory bilateral point",
+          "reason_zh": null,
+          "source_ids": [
+            "DPN1"
+          ]
+        },
+        {
+          "code": "LR3",
+          "name_zh": "太衝",
+          "role_zh": "ACUDPN RCT mandatory bilateral point；來源作 LV3，依本庫正規化 LR3",
+          "reason_zh": null,
+          "source_ids": [
+            "DPN1"
+          ]
+        },
+        {
+          "code": "EX-LE10",
+          "name_zh": "八風",
+          "role_zh": "ACUDPN RCT mandatory extra-point group；雙足各四八風點",
+          "reason_zh": null,
+          "source_ids": [
+            "DPN1"
+          ]
+        }
+      ],
+      "point_rationale_zh": "只收 2023 ACUDPN RCT 的 mandatory bilateral regimen；optional add-on points 不寫入。該試驗比較 acupuncture + routine care 與 waitlist/routine care，故只能支持 adjunctive symptom management，不能取代 diabetes control、足部 surveillance 或 ulcer/PAD care。",
+      "point_rationale_en": "Only the mandatory bilateral regimen from the 2023 ACUDPN RCT is retained. Optional add-on points are excluded. Because the trial compared acupuncture plus routine care with waitlist/routine care, the regimen is adjunctive symptom management only.",
+      "treatment_parameters": {
+        "manual_or_electroacupuncture": "manual",
+        "frequency": "前4週建議每週2次，後4週每週1次",
+        "session_duration": "25分鐘",
+        "treatment_course": "8週，共12次",
+        "timing_after_onset": null,
+        "source_ids": [
+          "DPN1"
+        ]
+      },
+      "scope_zh": "可作為 DPN 疼痛／麻木等 complaints 的 adjunctive symptom care。現有 sham-controlled meta-analysis 對 pain 與 TCSS 有 low-certainty benefit，但不證明防 ulcer、恢復 protective sensation、降低截肢或改變糖尿病病程。",
+      "scope_conflict_note": null,
+      "evidence_note_zh": "2026-08-15 檢索 PubMed、J Clin Med full text、ADA 2026、NIDDK；檢索詞含「DPN acupuncture randomized mandatory points」「DPN acupuncture systematic review sham」「diabetic foot loss protective sensation heat burn」。2025 SR：14 RCT/1169，vs sham pain WMD -1.44 cm/10cm VAS，研究以 MID 1.5 cm 模型化 responder RD 45%，TCSS -1.22，certainty low。2023 ACUDPN RCT 為 waitlist/routine-care comparator，overall complaints VAS 組間差24.7/100mm。不能把 NCV 或 symptom score 改寫成疾病修飾。",
+      "condition_specific_cautions_zh": [
+        {
+          "text": "糖尿病/DPN 的主線仍包括 glycemic/diabetes management、DPN etiologic review 與 foot-care surveillance；針灸不取代這些管理。",
+          "source_ids": [
+            "DPN3"
+          ]
+        },
+        {
+          "text": "任何 open ulcer、unexplained swelling、erythema 或 increased skin temperature 應 urgent referral to foot-care specialist/interprofessional team；PAD symptoms/absent pulses 需 vascular assessment。",
+          "source_ids": [
+            "DPN3"
+          ]
+        }
+      ],
+      "referral_red_flags_zh": [
+        {
+          "text": "足部 open ulcer、感染疑慮、紅腫熱、疑 Charcot foot、PAD/ischemia 或無法癒合的傷口：先足病／血管／糖尿病團隊 urgent evaluation，不在病灶足部照常施針。",
+          "source_ids": [
+            "DPN3"
+          ]
+        },
+        {
+          "text": "DPN 表現若 acute/subacute、asymmetric、non-length-dependent 或以 motor weakness 為主，屬 atypical feature，應評估其他 neuropathy 病因／神經科轉診。",
+          "source_ids": [
+            "DPN3"
+          ]
+        }
+      ],
+      "sensory_loss_safety_zh": [
+        {
+          "text": "有 loss of protective sensation 的足部可能無法察覺 minor trauma；足部應在每次相關就診檢查皮膚與傷口，高風險足需要更密集 surveillance。",
+          "source_ids": [
+            "DPN3"
+          ]
+        },
+        {
+          "text": "糖尿病神經損傷可使病人被燙傷而不自知；NIDDK 明確建議避免 heating pad、hot-water bottle、heater/open fire 直接熱足。基於同一 thermal-injury 機制，AcuTing 不應把『感覺缺失足部施灸／溫針』當一般安全操作。",
+          "source_ids": [
+            "DPN4"
+          ]
+        },
+        {
+          "text": "ACUDPN trial 雖容許 cold feet 使用 heat source，但該研究並未建立 loss-of-protective-sensation 足部熱療安全性；此做法不應覆蓋現行 diabetic-foot heat-safety guidance。",
+          "source_ids": [
+            "DPN1",
+            "DPN4"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "source_id": "DPN1",
+          "type": "rct",
+          "citation": "Dietzel J, Habermann IV, Hörder S, et al. Acupuncture in Patients with Diabetic Peripheral Neuropathy-Related Complaints: A Randomized Controlled Clinical Trial. J Clin Med. 2023;12(6):2103.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/36983105/",
+          "pmid_or_doi": "PMID 36983105; PMCID PMC10055667; DOI 10.3390/jcm12062103",
+          "covers": "62 位 type 2 diabetes + lower-limb DPN symptoms；acupuncture vs waitlist/routine care。",
+          "modality": "acupuncture",
+          "comparator": "waitlist",
+          "supports": [
+            "efficacy",
+            "specific_points",
+            "treatment_parameters",
+            "scope"
+          ],
+          "primary_outcome_zh": "Primary overall DPN complaints VAS；secondary pain/NPSI/SF-12/DPNPI；8週治療並follow-up。",
+          "finding_zh": "12 sessions/8 weeks；mandatory bilateral ST34, ST40, SP6, KI3, LV3, four EX-LE-10 Bafeng。Overall complaints VAS 組間差24.7/100mm favor acupuncture；minor transient AEs。",
+          "certainty": "not_graded"
+        },
+        {
+          "source_id": "DPN2",
+          "type": "systematic_review",
+          "citation": "Acupuncture for the Management of Chronic Diabetic Peripheral Neuropathy: A Systematic Review and Meta-Analysis of Randomized Controlled Trials. 2025.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40220243/",
+          "pmid_or_doi": "PMID 40220243",
+          "covers": "14 RCT、1,169 DPN participants；含 sham/usual-care/active drug comparisons。",
+          "modality": "mixed",
+          "comparator": "sham",
+          "supports": [
+            "efficacy",
+            "scope"
+          ],
+          "primary_outcome_zh": "Pain VAS、TCSS、physical/mental function、adverse events。",
+          "finding_zh": "Low-certainty evidence: vs sham pain WMD -1.44 cm/10cm VAS；modeled RD for MID1.5cm 45%；TCSS -1.22；physical/mental function and AEs little/no difference。",
+          "certainty": "low"
+        },
+        {
+          "source_id": "DPN3",
+          "type": "guideline",
+          "citation": "American Diabetes Association Professional Practice Committee. 12. Retinopathy, Neuropathy, and Foot Care: Standards of Care in Diabetes—2026. Diabetes Care. 2026;49(Suppl 1):S261-S276.",
+          "url": "https://diabetesjournals.org/care/article/49/Supplement_1/S261/163919/12-Retinopathy-Neuropathy-and-Foot-Care-Standards",
+          "pmid_or_doi": "PMID 41358886; DOI 10.2337/dc26-S012",
+          "covers": "Diabetes/DPN screening、LOPS、foot ulcer/PAD risk、urgent foot referral。",
+          "modality": "unclear",
+          "comparator": "none",
+          "supports": [
+            "scope",
+            "caution",
+            "referral"
+          ],
+          "primary_outcome_zh": "LOPS、foot risk、ulcer/amputation prevention；非 acupuncture efficacy。",
+          "finding_zh": "Annual DPN/foot assessment；LOPS/prior ulcer需每次visit inspection；open ulcer/unexplained swelling/erythema/increased temperature urgent foot referral；評估 PAD 與 alternative neuropathy causes。",
+          "certainty": "high"
+        },
+        {
+          "source_id": "DPN4",
+          "type": "guideline",
+          "citation": "National Institute of Diabetes and Digestive and Kidney Diseases (NIDDK). Diabetes & Foot Problems.",
+          "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/preventing-problems/foot-problems",
+          "pmid_or_doi": null,
+          "covers": "Diabetes foot self-care；loss of sensation and thermal injury prevention。",
+          "modality": "unclear",
+          "comparator": "none",
+          "supports": [
+            "caution",
+            "referral"
+          ],
+          "primary_outcome_zh": "Foot injury prevention；非針灸 efficacy。",
+          "finding_zh": "Nerve damage may make burns unnoticed；avoid heating pads/hot-water bottles and direct heaters/open fire on feet。",
+          "certainty": "not_graded"
+        }
+      ],
+      "no_source_found": false,
+      "unresolved": [
+        "未找到 guideline 直接給出『DPN 足部針刺應禁針到哪個部位/幾公分』的數字界線；不自行創造距離。",
+        "EX-LE10 在本 repo extra-point generator 有正式代碼；來源寫 EX-LE-10，本交付依 repo 正規化成 EX-LE10。",
+        "2025 NMA 的 nerve-conduction velocity 是 surrogate；未用來宣稱降低 ulcer/amputation 或恢復 protective sensation。"
+      ]
+    },
+    {
+      "condition_id": "cond.postherpetic_neuralgia",
+      "condition_name_zh": "帶狀疱疹後神經痛",
+      "condition_name_en": "Postherpetic neuralgia",
+      "protocol_status": "limited",
+      "points": [
+        {
+          "code": "TE6",
+          "name_zh": "支溝",
+          "role_zh": "2026 PHN sham-controlled EA RCT 固定同側穴；來源 SJ6→本庫 TE6",
+          "reason_zh": null,
+          "source_ids": [
+            "PHN1"
+          ]
+        },
+        {
+          "code": "GB34",
+          "name_zh": "陽陵泉",
+          "role_zh": "2026 PHN sham-controlled EA RCT 固定同側穴",
+          "reason_zh": null,
+          "source_ids": [
+            "PHN1"
+          ]
+        },
+        {
+          "code": "ASHI",
+          "name_zh": "阿是穴",
+          "role_zh": "2026 PHN RCT 於疼痛區周圍每2–3cm布置之局部痛點",
+          "reason_zh": null,
+          "source_ids": [
+            "PHN1"
+          ]
+        }
+      ],
+      "point_rationale_zh": "直接採 2026 年 448 人、多中心 nonpenetrating-sham RCT 的 PHN regimen。平均疼痛組間差雖統計顯著，但 -0.53 分低於試驗預設 MID 1.5，因此只能標 limited，不能寫成臨床大幅止痛。",
+      "point_rationale_en": "The regimen comes directly from a 2026 multicenter nonpenetrating-sham RCT in PHN. The mean between-group pain difference was statistically significant but smaller than the prespecified 1.5-point MID, so status remains limited.",
+      "treatment_parameters": {
+        "manual_or_electroacupuncture": "electroacupuncture",
+        "frequency": "每週5次",
+        "session_duration": "30分鐘",
+        "treatment_course": "4週，共20次；另追蹤4週",
+        "timing_after_onset": "僅 PHN；不適用仍有活動性帶狀疱疹水疱的急性期",
+        "source_ids": [
+          "PHN1"
+        ]
+      },
+      "scope_zh": "可視為 PHN integrated pain-management 的 limited nonpharmacologic option；不把 acute herpes zoster 的 evidence 或處置搬進來。PHN 與仍有活動性 vesicular rash 的 acute zoster 必須分開。",
+      "scope_conflict_note": null,
+      "evidence_note_zh": "2026-08-15 檢索 PubMed/JAMA Neurology、CDC；檢索詞含「postherpetic neuralgia electroacupuncture sham 2026」「shingles antiviral 72 hours HZO disseminated」。PHN RCT n=448：NRS-11 change -1.52 vs -0.99，adjusted mean difference -0.53；30% responder 46.68% vs24.28%。平均差低於 prespecified MID1.5，故不把統計顯著寫成 clinically large mean improvement。",
+      "condition_specific_cautions_zh": [
+        {
+          "text": "PHN 本身定義為 rash onset 後疼痛持續超過90天；有 active vesicles 的病人仍在 acute herpes zoster pathway，不能直接套 PHN trial regimen。",
+          "source_ids": [
+            "PHN2"
+          ]
+        },
+        {
+          "text": "活動性帶狀疱疹 lesions 具有傳染性，直到乾燥結痂；應覆蓋病灶並避免接觸 vesicular fluid。PHN RCT 沒有驗證在 active blister 上／旁施針的安全性。",
+          "source_ids": [
+            "PHN2"
+          ]
+        },
+        {
+          "text": "免疫抑制者較易 severe/generalized/disseminated zoster；需降低以『普通 PHN』處理的門檻。",
+          "source_ids": [
+            "PHN2"
+          ]
+        }
+      ],
+      "referral_red_flags_zh": [
+        {
+          "text": "眼部/三叉神經眼支帶狀疱疹（HZO）、眼痛/視力改變：urgent medical/ophthalmic evaluation；CDC 強調 early antiviral treatment，尤其為防 corneal involvement/vision loss。",
+          "source_ids": [
+            "PHN2",
+            "PHN3"
+          ]
+        },
+        {
+          "text": "免疫抑制者出現廣泛皮疹、跨多皮節、神經/肺/肝症狀，需評估 disseminated zoster。",
+          "source_ids": [
+            "PHN2"
+          ]
+        },
+        {
+          "text": "急性 shingles 應儘早接受 antiviral medical treatment；CDC 指治療在 symptom onset 72 小時內最有效。",
+          "source_ids": [
+            "PHN3"
+          ]
+        }
+      ],
+      "sensory_loss_safety_zh": [],
+      "sources": [
+        {
+          "source_id": "PHN1",
+          "type": "rct",
+          "citation": "Chen L, Liu Q, Pei L, et al. Effect of Electroacupuncture on Postherpetic Neuralgia: A Randomized Clinical Trial. JAMA Neurol. 2026;83(7):667-676.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42189557/",
+          "pmid_or_doi": "PMID 42189557; PMCID PMC13213596; DOI 10.1001/jamaneurol.2026.1443",
+          "covers": "448 位45–75歲 PHN、NRS≥4；7家三級醫院；EA vs nonpenetrating sham EA。",
+          "modality": "electroacupuncture",
+          "comparator": "sham",
+          "supports": [
+            "efficacy",
+            "specific_points",
+            "treatment_parameters",
+            "scope"
+          ],
+          "primary_outcome_zh": "NRS-11 change at week4；30% responder；follow-up 4 weeks。",
+          "finding_zh": "Ipsilateral SJ6/TE6, GB34, Ashi around painful area；2Hz,1–5mA,30min,20 sessions/4w。Mean between-group NRS difference -0.53, below prespecified MID1.5；30% responder RD22.40%。",
+          "certainty": "not_graded"
+        },
+        {
+          "source_id": "PHN2",
+          "type": "guideline",
+          "citation": "Centers for Disease Control and Prevention. Clinical Features of Shingles (Herpes Zoster). 2024.",
+          "url": "https://www.cdc.gov/shingles/hcp/clinical-signs/index.html",
+          "pmid_or_doi": null,
+          "covers": "Acute herpes zoster、PHN、HZO、disseminated zoster、immunocompromised risk。",
+          "modality": "unclear",
+          "comparator": "none",
+          "supports": [
+            "scope",
+            "caution",
+            "referral"
+          ],
+          "primary_outcome_zh": "Clinical definition/complications；非 acupuncture outcome。",
+          "finding_zh": "PHN >90 days after rash onset；HZO may cause vision loss；disseminated disease is more likely in immunocompromised people。",
+          "certainty": "not_graded"
+        },
+        {
+          "source_id": "PHN3",
+          "type": "guideline",
+          "citation": "Centers for Disease Control and Prevention. Clinical Overview of Shingles (Herpes Zoster). 2024.",
+          "url": "https://www.cdc.gov/shingles/hcp/clinical-overview/index.html",
+          "pmid_or_doi": null,
+          "covers": "Acute shingles treatment and complications。",
+          "modality": "unclear",
+          "comparator": "none",
+          "supports": [
+            "caution",
+            "referral"
+          ],
+          "primary_outcome_zh": "Antiviral treatment timing；非 acupuncture outcome。",
+          "finding_zh": "CDC: diagnose/treat early; treatment most effective within72h of symptom onset, especially to prevent progressive corneal involvement and possible vision loss。",
+          "certainty": "not_graded"
+        }
+      ],
+      "no_source_found": false,
+      "unresolved": [
+        "未找到 guideline-level acupuncture source 指定 active vesicle 周邊『禁止針刺幾公分』；因此不創造 exclusion-zone 數字。安全處置採『active zoster ≠ PHN trial population，先走 acute-zoster pathway』。",
+        "PHN RCT 的 ASHI 屬來源明確的 painful-area local points；不得套到 active vesicular rash。"
+      ]
+    },
+    {
+      "condition_id": "cond.parkinsons",
+      "condition_name_zh": "帕金森氏症",
+      "condition_name_en": "Parkinson's disease",
+      "protocol_status": "symptom_only",
+      "points": [
+        {
+          "code": "BL62",
+          "name_zh": "申脈",
+          "role_zh": "PD-related insomnia RCT 固定穴",
+          "reason_zh": null,
+          "source_ids": [
+            "PD1"
+          ]
+        },
+        {
+          "code": "KI6",
+          "name_zh": "照海",
+          "role_zh": "PD-related insomnia RCT 固定穴",
+          "reason_zh": null,
+          "source_ids": [
+            "PD1"
+          ]
+        },
+        {
+          "code": "PC7",
+          "name_zh": "大陵",
+          "role_zh": "PD-related insomnia RCT 固定穴",
+          "reason_zh": null,
+          "source_ids": [
+            "PD1"
+          ]
+        },
+        {
+          "code": "HT7",
+          "name_zh": "神門",
+          "role_zh": "PD-related insomnia RCT 固定穴",
+          "reason_zh": null,
+          "source_ids": [
+            "PD1"
+          ]
+        },
+        {
+          "code": "EX-B2",
+          "name_zh": "夾脊",
+          "role_zh": "PD-related insomnia RCT 的 Jiaji segmental extra-point set",
+          "reason_zh": null,
+          "source_ids": [
+            "PD1"
+          ]
+        }
+      ],
+      "point_rationale_zh": "這套穴只支持 Parkinson disease-related insomnia 這個非運動症狀，不是 PD 本病或顫抖/僵硬的標準處方。研究期間 anti-PD medication 初始劑量維持不變。",
+      "point_rationale_en": "These points support only Parkinson disease-related insomnia as a non-motor symptom. They are not a standard regimen for Parkinson disease, tremor, rigidity, or disease modification. Baseline anti-PD medications were kept unchanged during the trial.",
+      "treatment_parameters": {
+        "manual_or_electroacupuncture": "manual",
+        "frequency": "每週3次",
+        "session_duration": "30分鐘；EX-B2 另採分段快速針刺、不留針",
+        "treatment_course": "4週，共12次；後續追蹤12週",
+        "timing_after_onset": null,
+        "source_ids": [
+          "PD1"
+        ]
+      },
+      "scope_zh": "僅 symptom_only：一項 sham RCT 支持 PD-related insomnia 的睡眠量表改善。這不等於改善/延緩神經退化，也不授權減少 levodopa 或其他 antiparkinsonian medication。",
+      "scope_conflict_note": null,
+      "evidence_note_zh": "2026-08-15 檢索 PubMed/PMC、NICE NG71；檢索詞含「Parkinson insomnia acupuncture sham PDSS」「Parkinson levodopa abrupt withdrawal orthostatic hypotension falls」。2025 RCT n=60：TA vs sham，PDSS 組間差21.4 points，效果延續到week16；primary 是睡眠量表，不是 disease progression。研究未提供可核對的 PDSS MCID，因此不寫 remission。",
+      "condition_specific_cautions_zh": [
+        {
+          "text": "不得自行停／減 levodopa 或其他 antiparkinsonian medication；NICE 明確警告 abrupt withdrawal 可能造成 acute akinesia 或 neuroleptic malignant syndrome，劑量變更應與 PD specialist 討論。",
+          "source_ids": [
+            "PD2"
+          ]
+        },
+        {
+          "text": "orthostatic hypotension 是 PD 重要跌倒/傷害來源；若頭暈、近暈厥或跌倒增加，需 review dopaminergic、antihypertensive、anticholinergic、antidepressant 等可能誘因。",
+          "source_ids": [
+            "PD2"
+          ]
+        }
+      ],
+      "referral_red_flags_zh": [
+        {
+          "text": "反覆暈厥、嚴重姿勢性低血壓、頻繁跌倒/受傷、新發嚴重 hallucination/delusion 或急性運動惡化，優先 PD/medical review，而不是把針灸加量。",
+          "source_ids": [
+            "PD2"
+          ]
+        }
+      ],
+      "sensory_loss_safety_zh": [],
+      "sources": [
+        {
+          "source_id": "PD1",
+          "type": "rct",
+          "citation": "Liu S, Li H, Zhang J, et al. Acupuncture versus sham acupuncture in the treatment of insomnia for patients with Parkinson's disease: a randomized controlled clinical trial. BMC Complement Med Ther. 2025;25(1):278.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40684211/",
+          "pmid_or_doi": "PMID 40684211; PMCID PMC12276649; DOI 10.1186/s12906-025-05009-3",
+          "covers": "60 eligible patients with Parkinson disease-related insomnia；true vs sham acupuncture；routine anti-PD medication continued。",
+          "modality": "acupuncture",
+          "comparator": "sham",
+          "supports": [
+            "efficacy",
+            "specific_points",
+            "treatment_parameters",
+            "scope",
+            "caution"
+          ],
+          "primary_outcome_zh": "Primary PDSS；PSQI、sleep latency/duration/efficiency；4-week treatment +12-week follow-up。",
+          "finding_zh": "BL62, KI6, PC7, HT7, EX-B2；30min,3/wk,12 sessions。PDSS between-group difference 21.4 points；sleep improvement persisted through week16。這是 insomnia outcome，不是 disease modification。",
+          "certainty": "not_graded"
+        },
+        {
+          "source_id": "PD2",
+          "type": "guideline",
+          "citation": "NICE. Parkinson's disease in adults. NICE guideline NG71. Recommendations.",
+          "url": "https://www.nice.org.uk/guidance/ng71/chapter/Recommendations",
+          "pmid_or_doi": null,
+          "covers": "Adult Parkinson disease diagnosis/management；levodopa, medication safety, orthostatic hypotension, non-motor symptoms。",
+          "modality": "unclear",
+          "comparator": "none",
+          "supports": [
+            "scope",
+            "caution",
+            "referral"
+          ],
+          "primary_outcome_zh": "Clinical guideline；非 acupuncture efficacy。",
+          "finding_zh": "Do not abruptly withdraw antiparkinsonian medicines；medicine adjustments only after specialist discussion where relevant；orthostatic hypotension requires medication review and contributes to falls/injuries。",
+          "certainty": "high"
+        }
+      ],
+      "no_source_found": false,
+      "unresolved": [
+        "本卡正式 points 只代表 PD-insomnia RCT；沒有用 sleep outcome 外推 motor symptom control。",
+        "EX-B2 在來源中是多個 segmental Jiaji points 的集合，不應把一個 code 解讀成只針一個位置。",
+        "研究提到 anti-insomnia medication proportions，但本交付不把任何藥物減少寫成 acupuncture 可減藥證據。"
+      ]
+    },
+    {
+      "condition_id": "cond.multiple_sclerosis",
+      "condition_name_zh": "多發性硬化症",
+      "condition_name_en": "Multiple sclerosis",
+      "protocol_status": "adjunct_only",
+      "points": [],
+      "point_rationale_zh": "不建立穴位。直接 RRMS fatigue RCT 是 acupuncture + amantadine + routine immunomodulators vs amantadine + routine care，且公開可核讀來源未提供完整逐穴清單；不得從二手頁或模型記憶補穴。",
+      "point_rationale_en": "No point prescription is created. The direct RRMS fatigue trial tested acupuncture as an add-on to amantadine and routine immunomodulators, and the publicly verifiable source does not provide a complete point list.",
+      "treatment_parameters": {
+        "manual_or_electroacupuncture": "acupuncture",
+        "frequency": "每週2–3次",
+        "session_duration": null,
+        "treatment_course": "4週，共10次",
+        "timing_after_onset": "RRMS remission stage；非 acute relapse intervention",
+        "source_ids": [
+          "MS1"
+        ]
+      },
+      "scope_zh": "只能作為 RRMS remission-stage fatigue 的短期 adjunct symptom care。不能取代 DMT、不能用 FSS 改善推論疾病進展變慢，疑似 relapse 必須回神經科/專科 MS pathway。",
+      "scope_conflict_note": null,
+      "evidence_note_zh": "2026-08-15 檢索 PubMed、NICE NG220；檢索詞含「RRMS fatigue acupuncture randomized amantadine」「multiple sclerosis acupuncture fatigue meta-analysis」「NICE MS heat fatigue relapse」。Direct RCT：FSS week4 MD -1.14、MSQOL-54 +9.09，兩組都持續 amantadine + routine immunomodulators；只支持短期 adjunct fatigue outcome。2024 meta-analysis 6 studies亦提示 fatigue reduction，但 protocol/outcome heterogeneous。",
+      "condition_specific_cautions_zh": [
+        {
+          "text": "MS-related fatigue 可被 heat 觸發；NICE 明確指出 heat 可能誘發／加重 fatigue。對已知 heat-sensitive/Uhthoff-like 症狀者，避免把 moxibustion、warm needling 或其他加熱療法當成預設選項；這是基於 heat sensitivity 的安全推論，不是 NICE 的針灸專屬禁忌。",
+          "source_ids": [
+            "MS2"
+          ]
+        },
+        {
+          "text": "疲勞不可一律歸因 MS；要評估 sleep problems、pain/spasticity/bladder dysfunction、medication effects、infection、anemia、thyroid dysfunction、anxiety/depression 等。",
+          "source_ids": [
+            "MS2"
+          ]
+        },
+        {
+          "text": "不得因 acupuncture response 自行減少或停用 disease-modifying therapy；DMT 與 relapse management 應由 MS specialist pathway處理。",
+          "source_ids": [
+            "MS2"
+          ]
+        }
+      ],
+      "referral_red_flags_zh": [
+        {
+          "text": "新 neurological symptom 或既有症狀惡化 >24h，且在先前至少1個月穩定後、無感染/其他原因，需評估 MS relapse；影響 usual tasks 的 relapse 應儘早並在 onset 14 days 內由專業團隊評估治療。",
+          "source_ids": [
+            "MS2"
+          ]
+        }
+      ],
+      "sensory_loss_safety_zh": [],
+      "sources": [
+        {
+          "source_id": "MS1",
+          "type": "rct",
+          "citation": "Khodaie F, Naser Moghadasi A, Kazemi AH, Zhao B. Effectiveness of acupuncture for fatigue in patients with relapsing-remitting multiple sclerosis: a randomized controlled trial. Acupunct Med. 2023;41(4):199-205.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/36722418/",
+          "pmid_or_doi": "PMID 36722418; DOI 10.1177/09645284221150824",
+          "covers": "60 RRMS patients in remission with fatigue；acupuncture+amantadine+routine immunomodulators vs amantadine+routine care。",
+          "modality": "acupuncture",
+          "comparator": "active_control(amantadine + routine immunomodulators)",
+          "supports": [
+            "efficacy",
+            "treatment_parameters",
+            "scope"
+          ],
+          "primary_outcome_zh": "Primary FSS at 2/4 weeks；secondary MSQOL-54 at4 weeks。",
+          "finding_zh": "At4w FSS MD -1.14 (95%CI -1.83,-0.45) and MSQOL-54 MD +9.09；no AEs. Short-term adjunct fatigue evidence only。",
+          "certainty": "not_graded"
+        },
+        {
+          "source_id": "MS2",
+          "type": "guideline",
+          "citation": "NICE. Multiple sclerosis in adults: management. NICE guideline NG220. Updated June 2026.",
+          "url": "https://www.nice.org.uk/guidance/ng220/chapter/Recommendations",
+          "pmid_or_doi": null,
+          "covers": "Adults with MS；fatigue, heat sensitivity, relapse recognition/treatment, DMT care。",
+          "modality": "unclear",
+          "comparator": "none",
+          "supports": [
+            "scope",
+            "caution",
+            "referral"
+          ],
+          "primary_outcome_zh": "Clinical management；not acupuncture efficacy。",
+          "finding_zh": "MS fatigue may be brought on by heat; assess alternative causes. Relapse is new/worsening symptoms >24h after ≥1 month stable without infection/other cause; clinically important relapse should be treated promptly, within14 days where appropriate。",
+          "certainty": "high"
+        },
+        {
+          "source_id": "MS3",
+          "type": "systematic_review",
+          "citation": "Assessment of acupuncture's effectiveness in mitigating fatigue among patients afflicted with multiple sclerosis: A systematic review and meta-analysis. 2024.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39260078/",
+          "pmid_or_doi": "PMID 39260078",
+          "covers": "6 studies (4 RCT +2 observational) of MS-related fatigue；heterogeneous acupuncture protocols/controls。",
+          "modality": "mixed",
+          "comparator": "unclear",
+          "supports": [
+            "efficacy",
+            "scope"
+          ],
+          "primary_outcome_zh": "Fatigue, QoL, disability。",
+          "finding_zh": "Pooled fatigue MD -0.92 and QoL SMD0.91; heterogeneity in protocols/outcomes/control conditions limits certainty and does not establish disease modification。",
+          "certainty": "low"
+        }
+      ],
+      "no_source_found": false,
+      "unresolved": [
+        "未找到 MS-specific acupuncture/moxibustion guideline 直接規定熱療溫度或施灸禁區；僅能根據 NICE heat sensitivity 作保守 inference，不能造數字。",
+        "未找到可公開核讀且完整列出 MS fatigue RCT 全部穴位的 primary source，因此 points 留空。",
+        "本 evidence 不涵蓋 progressive MS 的 disease modification，也不是 acute relapse treatment。"
+      ]
+    },
+    {
+      "condition_id": "cond.essential_tremor",
+      "condition_name_zh": "原發性顫抖症",
+      "condition_name_en": "Essential tremor",
+      "protocol_status": "limited",
+      "points": [],
+      "point_rationale_zh": "不建立固定穴。2010 RCT 摘要只列 GV20、EX-HN1、KI3『等』，穴表不完整；2026 NMA 混合 manual、scalp、EA、auricular、thread embedding 及藥物組合，不能從排名反推單一處方。",
+      "point_rationale_en": "No fixed point set is created. The 2010 RCT abstract lists GV20, EX-HN1 and KI3 'etc.' rather than a complete regimen, while the 2026 NMA mixes multiple acupuncture modalities and combination therapies.",
+      "treatment_parameters": {
+        "manual_or_electroacupuncture": null,
+        "frequency": null,
+        "session_duration": null,
+        "treatment_course": null,
+        "timing_after_onset": null,
+        "source_ids": []
+      },
+      "scope_zh": "現有 RCT/NMA 提示 tremor score 可能改善，但 methodological limitations 明顯，只能 limited symptom evidence。不得寫成延緩 ET 進展，也不得把 scalp acupuncture ranking 轉寫成經穴 code。",
+      "scope_conflict_note": null,
+      "evidence_note_zh": "2026-08-15 檢索 PubMed、Healthcare 2026、AAN；檢索詞含「essential tremor acupuncture network meta-analysis」「acupuncture propranolol essential tremor randomized」「AAN essential tremor guideline」。2026 NMA：20 RCT/1067，Tremor Six pooled MD -1.99；methodological problems 包括小樣本、lack of blinding、allocation concealment不足、China-only concentration。2010 RCT 60人為 acupuncture+propranolol vs propranolol，摘要穴位不完整，故不落 points。",
+      "condition_specific_cautions_zh": [
+        {
+          "text": "ET 的標準 established pharmacologic options 仍包括 propranolol/primidone 等；針灸資料不授權自行減藥或停藥。",
+          "source_ids": [
+            "ET2"
+          ]
+        },
+        {
+          "text": "ET 典型核心是 action tremor；若是突然出現、明顯單側或合併 weakness、ataxia、rigidity/bradykinesia 等其他神經徵象，不宜直接當作典型 ET，應做 neurological evaluation。",
+          "source_ids": [
+            "ET2"
+          ]
+        }
+      ],
+      "referral_red_flags_zh": [
+        {
+          "text": "突發顫抖、單側進行性顫抖或合併其他局灶/新神經徵象：轉神經科釐清 secondary tremor、parkinsonism、stroke/structural cause，而不是先建立 ET 針灸方案。",
+          "source_ids": [
+            "ET2"
+          ]
+        }
+      ],
+      "sensory_loss_safety_zh": [],
+      "sources": [
+        {
+          "source_id": "ET1",
+          "type": "systematic_review",
+          "citation": "Shi Q, Han J, Chen B, Gao S, Shen M. Comparative Efficacy of Acupuncture Therapy in Primary Essential Tremor: A Network Meta-Analysis and Systematic Review. Healthcare. 2026;14(6):803.",
+          "url": "https://www.mdpi.com/2227-9032/14/6/803",
+          "pmid_or_doi": "DOI 10.3390/healthcare14060803",
+          "covers": "20 RCT、1,067 primary essential tremor participants；manual, scalp, EA, auricular, catgut embedding and combinations。",
+          "modality": "mixed",
+          "comparator": "unclear",
+          "supports": [
+            "efficacy",
+            "scope"
+          ],
+          "primary_outcome_zh": "Response rate、Tremor Six Score、adverse events；treatment15d–3m。",
+          "finding_zh": "Tremor Six pooled MD -1.99; manual acupuncture ranked high for Tremor Six and scalp acupuncture for response rate, but studies small, blinding/allocation weak, sparse and geographically concentrated; evidence low–moderate。",
+          "certainty": "low"
+        },
+        {
+          "source_id": "ET2",
+          "type": "guideline",
+          "citation": "Zesiewicz TA, Elble RJ, Louis ED, et al. Evidence-based guideline update: treatment of essential tremor. Neurology. 2011;77(19):1752-1755.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/22013182/",
+          "pmid_or_doi": "PMID 22013182; PMCID PMC3208950; DOI 10.1212/WNL.0b013e318236f0fd",
+          "covers": "Essential tremor evidence-based medical treatment guideline。",
+          "modality": "unclear",
+          "comparator": "none",
+          "supports": [
+            "scope",
+            "caution",
+            "referral"
+          ],
+          "primary_outcome_zh": "Tremor treatment evidence；not acupuncture-specific outcome。",
+          "finding_zh": "Propranolol/primidone Level A; other pharmacologic/surgical options graded. Acupuncture is not established by this guideline as standard ET therapy。",
+          "certainty": "high"
+        },
+        {
+          "source_id": "ET3",
+          "type": "rct",
+          "citation": "Sui KM, Li X. Clinical observation on acupuncture combined with medication for treatment of essential tremor. Zhongguo Zhen Jiu. 2010;30(2):107-109.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/20214065/",
+          "pmid_or_doi": "PMID 20214065",
+          "covers": "60 ET patients；acupuncture+propranolol vs propranolol alone；30days。",
+          "modality": "acupuncture",
+          "comparator": "active_control(propranolol)",
+          "supports": [
+            "efficacy",
+            "scope"
+          ],
+          "primary_outcome_zh": "Tremor score and 'total effective rate' after30 days。",
+          "finding_zh": "Acupuncture+propranolol group had better tremor score/effective-rate than propranolol alone; abstract lists GV20, EX-HN1, KI3 'etc.' so full point set is unverifiable from allowed source and is not ingested。",
+          "certainty": "not_graded"
+        }
+      ],
+      "no_source_found": false,
+      "unresolved": [
+        "Alcohol responsiveness may occur in ET but is not treated here as a diagnostic test or treatment; no alcohol-use advice is generated from this card.",
+        "2010 RCT 穴位列表不完整（『etc.』），故即使有三個明確 code 也不建半套處方。",
+        "2026 NMA 的 scalp-acupuncture ranking 不等於一套可轉成 WHO body-point code 的處方。"
+      ]
+    },
+    {
+      "condition_id": "cond.menieres",
+      "condition_name_zh": "梅尼爾氏症",
+      "condition_name_en": "Ménière's disease",
+      "protocol_status": "limited",
+      "points": [],
+      "point_rationale_zh": "不建立固定穴。2024 systematic review 直接涵蓋 Ménière's disease，但六項 RCT 的 selected acupoints、session、technique 異質，且多為 acupuncture + western medicine vs western medicine；不能從 pooled effect 反推出標準穴位。",
+      "point_rationale_en": "No fixed point set is created. The 2024 systematic review directly covers Ménière's disease, but its six RCTs used heterogeneous acupoints, sessions and techniques, usually as add-ons to Western medication.",
+      "treatment_parameters": {
+        "manual_or_electroacupuncture": null,
+        "frequency": null,
+        "session_duration": null,
+        "treatment_course": null,
+        "timing_after_onset": null,
+        "source_ids": []
+      },
+      "scope_zh": "可標 limited adjunct symptom evidence，主要涉及 vertigo handicap、tinnitus、ear fullness 與 pure-tone audiometry。不得以『梅尼爾發作』解釋 sudden sensorineural hearing loss 而延誤 ENT/audiology time-sensitive pathway。",
+      "scope_conflict_note": null,
+      "evidence_note_zh": "2026-08-15 檢索 PubMed、Frontiers、AAO-HNS；檢索詞含「Meniere acupuncture systematic review 2024」「Meniere guideline」「sudden sensorineural hearing loss steroid two weeks」。2024 SR 6 RCT/494：efficacy rate RR1.20；DHI MD6.94（I²92%, very-low certainty）、THI6.52（I²95%, very-low）、ear-fullness VAS0.87（low）、pure-tone audiometry6.57（moderate）。研究全在中國、intervention heterogeneous，故不建立固定處方。",
+      "condition_specific_cautions_zh": [
+        {
+          "text": "Ménière disease 診斷需要典型 episodic vertigo、documented low-to-mid-frequency sensorineural hearing loss 與 fluctuating aural symptoms；BPPV、vestibular migraine、vestibular neuritis 等不能拿來替代其 evidence。",
+          "source_ids": [
+            "MD2"
+          ]
+        },
+        {
+          "text": "既有醫療管理常含 lifestyle/diet modification 與 medical/surgical options；針灸的低確定性 evidence 不應使病人停用既有處置。",
+          "source_ids": [
+            "MD2"
+          ]
+        }
+      ],
+      "referral_red_flags_zh": [
+        {
+          "text": "突然新發 sensorineural hearing loss 不要當成一般 Ménière fluctuation 等待針灸。AAO-HNS 建議盡快做 audiometry（14天內），可在 onset 2週內考慮 corticosteroids；未完全恢復者 2–6週有 intratympanic steroid salvage window。",
+          "source_ids": [
+            "MD3"
+          ]
+        },
+        {
+          "text": "sudden hearing loss 合併 focal neurologic findings、bilateral/recurrent sudden loss，或需排 retrocochlear pathology 時應走 ENT/audiology/neurologic work-up；SSNHL guideline 建議 MRI 或 ABR 評估 retrocochlear pathology。",
+          "source_ids": [
+            "MD3"
+          ]
+        }
+      ],
+      "sensory_loss_safety_zh": [],
+      "sources": [
+        {
+          "source_id": "MD1",
+          "type": "systematic_review",
+          "citation": "Tang M, Li Y, Lu M, et al. Efficacy and safety of acupuncture in the treatment of Meniere's disease: a systematic review and meta-analysis. Front Med (Lausanne). 2024;11:1463821.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39722819/",
+          "pmid_or_doi": "PMID 39722819; PMCID PMC11669254; DOI 10.3389/fmed.2024.1463821",
+          "covers": "6 RCT/494 diagnosed Ménière disease；acupuncture or acupuncture+Western medicine vs Western medicine；all studies China。",
+          "modality": "mixed",
+          "comparator": "active_control(Western medicine)",
+          "supports": [
+            "efficacy",
+            "scope"
+          ],
+          "primary_outcome_zh": "Efficacy rate、DHI、THI、ear-fullness VAS、pure-tone audiometry。",
+          "finding_zh": "RR1.20 for efficacy; DHI MD6.94, THI6.52, VAS0.87, PTA6.57. GRADE very-low to moderate depending outcome; acupoints/sessions/techniques heterogeneous and blinding/randomization weak。",
+          "certainty": "very_low"
+        },
+        {
+          "source_id": "MD2",
+          "type": "guideline",
+          "citation": "Basura GJ, Adams ME, Monfared A, et al. Clinical Practice Guideline: Ménière's Disease. Otolaryngol Head Neck Surg. 2020;162(2_suppl):S1-S55.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32267799/",
+          "pmid_or_doi": "PMID 32267799; DOI 10.1177/0194599820909438",
+          "covers": "Ménière disease diagnosis and evidence-based management。",
+          "modality": "unclear",
+          "comparator": "none",
+          "supports": [
+            "scope",
+            "caution",
+            "referral"
+          ],
+          "primary_outcome_zh": "Diagnostic criteria and management; not acupuncture efficacy。",
+          "finding_zh": "Defines attacks 20min–12h with documented low-/mid-frequency SNHL and fluctuating aural symptoms; management goals are vertigo, hearing/tinnitus/fullness and QoL, with lifestyle/medical/surgical options。",
+          "certainty": "high"
+        },
+        {
+          "source_id": "MD3",
+          "type": "guideline",
+          "citation": "Chandrasekhar SS, Tsai Do BS, Schwartz SR, et al. Clinical Practice Guideline: Sudden Hearing Loss (Update). Otolaryngol Head Neck Surg. 2019;161(1_suppl):S1-S45.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/31369359/",
+          "pmid_or_doi": "PMID 31369359; DOI 10.1177/0194599819859885",
+          "covers": "Adult sudden sensorineural hearing loss；diagnostic urgency, audiometry, steroids, retrocochlear evaluation。",
+          "modality": "unclear",
+          "comparator": "none",
+          "supports": [
+            "caution",
+            "referral"
+          ],
+          "primary_outcome_zh": "SSNHL diagnostic/treatment timing；not acupuncture outcome。",
+          "finding_zh": "Audiometry as soon as possible within14d; corticosteroids may be offered within2w; IT steroid salvage2–6w; MRI/ABR for retrocochlear pathology。",
+          "certainty": "high"
+        }
+      ],
+      "no_source_found": false,
+      "unresolved": [
+        "未從 2024 SR 取『高頻穴』拼成處方；review 本身強調 point/session/technique heterogeneity。",
+        "SSNHL steroid recommendation 是 option/offer language，不應改寫成每個 sudden hearing loss 都一定給 steroid；核心是 time-sensitive ENT/audiologic evaluation。",
+        "單側慢性 hearing loss + tinnitus 的 retrocochlear work-up 由 ENT/audiology 判定；本卡不自行給 MRI 門檻。"
+      ]
+    }
+  ],
+  "final_summary_table": [
+    {
+      "condition_id": "cond.stroke_rehab",
+      "protocol_status": "adjunct_only",
+      "points_count": 7,
+      "highest_source_level": "2026 AHA/ASA guideline + direct sham RCT + symptom-specific RCT/SR",
+      "modality": "electroacupuncture",
+      "comparator": "sham EA + standard rehabilitation",
+      "primary_outcome_followup": "FMA-UE over 3 weeks; aphasia and dysphagia reported separately",
+      "timing_after_onset": "subacute 15 days–3 months for formal point regimen",
+      "direct_diagnosis_evidence": true,
+      "sensory_loss_safety_collected": false,
+      "emergency_pathway_collected": true,
+      "conclusion": "Only one upper-limb motor regimen ingested; other stroke domains kept separate."
+    },
+    {
+      "condition_id": "cond.peripheral_neuropathy",
+      "protocol_status": "not_supported",
+      "points_count": 0,
+      "highest_source_level": "systematic review + GBS guideline",
+      "modality": "mixed",
+      "comparator": "heterogeneous",
+      "primary_outcome_followup": "etiology-dependent symptoms/nerve conduction",
+      "timing_after_onset": null,
+      "direct_diagnosis_evidence": false,
+      "sensory_loss_safety_collected": true,
+      "emergency_pathway_collected": true,
+      "conclusion": "Umbrella diagnosis too heterogeneous for one protocol; GBS pathway collected."
+    },
+    {
+      "condition_id": "cond.diabetic_neuropathy",
+      "protocol_status": "adjunct_only",
+      "points_count": 6,
+      "highest_source_level": "ADA 2026 guideline + SR + direct RCT",
+      "modality": "manual acupuncture",
+      "comparator": "waitlist/routine care in point RCT; sham in SR",
+      "primary_outcome_followup": "DPN complaints/pain; 8-week course plus follow-up",
+      "timing_after_onset": null,
+      "direct_diagnosis_evidence": true,
+      "sensory_loss_safety_collected": true,
+      "emergency_pathway_collected": true,
+      "conclusion": "Mandatory ACUDPN regimen only; diabetic-foot heat/ulcer safety overrides trial heat option."
+    },
+    {
+      "condition_id": "cond.postherpetic_neuralgia",
+      "protocol_status": "limited",
+      "points_count": 3,
+      "highest_source_level": "2026 multicenter sham RCT + CDC guidance",
+      "modality": "electroacupuncture",
+      "comparator": "nonpenetrating sham EA",
+      "primary_outcome_followup": "NRS-11 at 4 weeks + 4-week follow-up",
+      "timing_after_onset": "PHN only, not active zoster",
+      "direct_diagnosis_evidence": true,
+      "sensory_loss_safety_collected": false,
+      "emergency_pathway_collected": true,
+      "conclusion": "Mean pain difference statistically significant but below prespecified MID; HZO/acute zoster pathway collected."
+    },
+    {
+      "condition_id": "cond.parkinsons",
+      "protocol_status": "symptom_only",
+      "points_count": 5,
+      "highest_source_level": "NICE guideline + sham RCT",
+      "modality": "manual acupuncture",
+      "comparator": "sham",
+      "primary_outcome_followup": "PDSS; 4-week treatment, follow-up to week16",
+      "timing_after_onset": null,
+      "direct_diagnosis_evidence": true,
+      "sensory_loss_safety_collected": false,
+      "emergency_pathway_collected": false,
+      "conclusion": "Points apply only to PD-related insomnia; no disease-modification or levodopa claim."
+    },
+    {
+      "condition_id": "cond.multiple_sclerosis",
+      "protocol_status": "adjunct_only",
+      "points_count": 0,
+      "highest_source_level": "NICE 2026 guideline + RCT + SR",
+      "modality": "acupuncture",
+      "comparator": "amantadine + routine immunomodulators",
+      "primary_outcome_followup": "FSS and MSQOL-54 at 4 weeks",
+      "timing_after_onset": "RRMS remission stage only",
+      "direct_diagnosis_evidence": true,
+      "sensory_loss_safety_collected": false,
+      "emergency_pathway_collected": true,
+      "conclusion": "Short-term fatigue adjunct only; heat sensitivity and relapse pathway collected; no points without complete primary source list."
+    },
+    {
+      "condition_id": "cond.essential_tremor",
+      "protocol_status": "limited",
+      "points_count": 0,
+      "highest_source_level": "AAN guideline + 2026 network meta-analysis",
+      "modality": "mixed incl. scalp acupuncture",
+      "comparator": "heterogeneous",
+      "primary_outcome_followup": "Tremor Six / response, mostly short treatment courses",
+      "timing_after_onset": null,
+      "direct_diagnosis_evidence": true,
+      "sensory_loss_safety_collected": false,
+      "emergency_pathway_collected": false,
+      "conclusion": "Low-moderate evidence and mixed modalities; incomplete RCT point list prevents prescription."
+    },
+    {
+      "condition_id": "cond.menieres",
+      "protocol_status": "limited",
+      "points_count": 0,
+      "highest_source_level": "AAO-HNS guideline + direct SR",
+      "modality": "mixed",
+      "comparator": "Western medicine",
+      "primary_outcome_followup": "DHI/THI/ear fullness/PTA",
+      "timing_after_onset": null,
+      "direct_diagnosis_evidence": true,
+      "sensory_loss_safety_collected": false,
+      "emergency_pathway_collected": true,
+      "conclusion": "Direct but heterogeneous low-certainty evidence; SSNHL time window collected, no fixed points."
+    }
+  ],
+  "summary": {
+    "total_conditions": 8,
+    "supported": 0,
+    "limited": 3,
+    "symptom_only": 1,
+    "adjunct_only": 3,
+    "postoperative_only": 0,
+    "not_supported": 1,
+    "no_source": 0,
+    "conditions_with_points": 4,
+    "conditions_left_empty": 4,
+    "evidence_from_scalp_acupuncture_only": 0,
+    "conditions_with_sensory_loss_safety": 2,
+    "conditions_with_emergency_pathway": 5
+  }
+}

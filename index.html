@@ -4,6 +4,15 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>AcuTing OS</title>
+    <!-- 品牌字型：永不阻塞。preload 提前抓、media="print" 讓 stylesheet 不進
+         script-blocking 集合，js/fonts.js 在「載完之後」才翻成 all——被翻轉的
+         sheet 永遠不是 in-flight，不可能重演 #80/#91 的 12 秒凍結。
+         不變式：不准把 media="print" 改成 all、不准把 preload 改成 rel=stylesheet。 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;600;700&family=Noto+Sans+TC:wght@400;500;600;700&display=swap" />
+    <link id="brandFont" rel="stylesheet" media="print" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;600;700&family=Noto+Sans+TC:wght@400;500;600;700&display=swap" />
+    <script defer src="js/fonts.js"></script>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -29,6 +38,7 @@
           <a href="#ws/formula" data-ws="formula" class="nav-sub" data-mode-text data-bilingual="方劑 Formulas" data-english="Formulas">方劑 Formulas</a>
           <a href="#ws/herb" data-ws="herb" class="nav-sub" data-mode-text data-bilingual="中藥 Materia Medica" data-english="Materia Medica">中藥 Materia Medica</a>
           <a href="#ws/pharm" data-ws="pharm" class="nav-sub" data-mode-text data-bilingual="西藥 Pharmacology" data-english="Pharmacology">西藥 Pharmacology</a>
+          <a href="#ws/symptom" data-ws="symptom" class="nav-sub" data-mode-text data-bilingual="症狀問診 Symptoms" data-english="Symptoms">症狀問診 Symptoms</a>
           <a href="#ws/condition" data-ws="condition" class="nav-sub" data-mode-text data-bilingual="病症圖譜 Conditions" data-english="Conditions">病症圖譜 Conditions</a>
           <a href="#ws/comparison" data-ws="comparison" class="nav-sub" data-mode-text data-bilingual="辨證鑑別 Comparisons" data-english="Comparisons">辨證鑑別 Comparisons</a>
         </div>
@@ -36,6 +46,7 @@
         <div class="nav-group">
           <p class="nav-group__title" data-mode-text data-bilingual="臨床 Clinical" data-english="Clinical">臨床 Clinical</p>
           <a href="#ws/cases" data-ws="cases" class="nav-sub" data-mode-text data-bilingual="病例 Cases" data-english="Cases">病例 Cases</a>
+          <a href="#ws/patients" data-ws="patients" class="nav-sub" data-mode-text data-bilingual="病人 Patients" data-english="Patients">病人 Patients</a>
           <a href="#billingSection" class="nav-sub" data-mode-text data-bilingual="保險 Billing" data-english="Billing">保險 Billing</a>
         </div>
 
@@ -69,10 +80,11 @@
           <h2 data-mode-text data-bilingual="查資料、寫 SOAP、建立自己的臨床知識庫" data-english="Search, chart SOAP notes, and build your clinical knowledge base">查資料、寫 SOAP、建立自己的臨床知識庫</h2>
           <p data-mode-text data-bilingual="先從病例與穴位開始；之後把中西醫病症、方藥、西藥、交互作用、保險 coding training 串成可查詢的知識圖譜。" data-english="Start with cases and acupuncture points, then connect TCM and biomedical conditions, formulas, herbs, medications, interactions, and billing documentation into one searchable study graph.">先從病例與穴位開始；之後把中西醫病症、方藥、西藥、交互作用、保險 coding training 串成可查詢的知識圖譜。</p>
           <div class="hero-search">
-            <input id="homeSearch" type="search" autocomplete="off" placeholder="搜尋穴位、方劑、中藥、病症、病例… 例：SP6、四物、當歸、血虛" />
+            <input id="homeSearch" type="search" autocomplete="off" placeholder="搜尋穴位、方劑、中藥、病症、症狀、西藥… 例：SP6、四物、頭痛、warfarin" />
             <button id="homeSearchBtn" type="button" data-mode-text data-bilingual="搜尋" data-english="Search">搜尋</button>
           </div>
           <div id="globalResults" class="global-results" role="listbox" aria-label="搜尋結果" data-mode-aria-label data-bilingual-aria-label="搜尋結果" data-english-aria-label="Search results" hidden></div>
+          <nav id="homeQuickGrid" class="home-quick-grid" aria-label="快速入口"></nav>
         </div>
         <div class="home-art">
           <video class="home-art__video" poster="assets/home-acuting-watercolor.png" autoplay muted loop playsinline preload="metadata" aria-label="AcuTing OS watercolor video with acupuncture, herbal medicine, and classical Chinese medicine imagery">
@@ -90,9 +102,18 @@
           <div>
             <p class="eyebrow">Build Progress · 數據報告</p>
             <h2>製作進度與品質報告 / Build Progress Report</h2>
-            <p>全庫 <strong>361 個標準穴位已 100% 達成模板級完整度</strong>！本頁呈現系統各模組（穴位、中藥、方劑）的真實進度與品質驗證。數據與檢核結果每日由自動化校對腳本實時更新。</p>
+            <p>本頁所有數字<strong>由目前載入的知識庫即時計算</strong>——不是手寫宣稱。「有卡」不等於「有內容」,「有內容」不等於「已驗證」;下表誠實區分三者。</p>
           </div>
           <span class="data-pill" id="auditGeneratedOn">audit</span>
+        </div>
+        <div class="mini-heading">
+          <strong>全知識線覆蓋 / Knowledge lines(即時計算)</strong>
+          <span>記錄數 = 現在 bundle 裡真的有;有內容 = 關鍵欄位非空;狀態欄寫的是誠實現況。</span>
+        </div>
+        <div id="knowledgeLineMatrix" class="kline-matrix" aria-label="Knowledge line coverage"></div>
+        <div class="mini-heading">
+          <strong>穴位線細項 / Acupoint line detail</strong>
+          <span>以下為穴位線(361 標準 + 董氏 + 耳穴)的細部品質檢核。</span>
         </div>
         <div class="mini-heading">
           <strong>各層進度總表 / Framework · Made · Grade · Verified</strong>
@@ -437,6 +458,23 @@
         <div id="pharmRecords" class="k-records" aria-label="Pharmacology records"></div>
       </section>
 
+      <!-- 症狀 (2026-08-12):102 筆症狀卡先前完全沒有入口 —— 資料裡有問診面向、
+           病人原話、辨證鑑別,畫面上一個字都到不了。這一節就是那個入口。 -->
+      <section class="formula-section symptom-section" data-workspace="symptom" id="symptomSection" aria-label="症狀問診" data-mode-aria-label data-bilingual-aria-label="症狀問診" data-english-aria-label="Symptoms">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Symptoms</p>
+            <h2 data-mode-text data-bilingual="症狀 / Symptoms" data-english="Symptoms">症狀 / Symptoms</h2>
+            <p data-mode-text data-bilingual="病人怎麼講、要問哪幾個面向、同一個症狀怎麼分證型。問診面向附「為什麼要問」，鑑別欄連到證型卡。" data-english="How patients describe it, which dimensions to ask about, and how one symptom splits across patterns. Each inquiry dimension carries why it matters; differentiation links to the pattern cards.">病人怎麼講、要問哪幾個面向、同一個症狀怎麼分證型。問診面向附「為什麼要問」，鑑別欄連到證型卡。</p>
+          </div>
+        </div>
+        <div class="k-toolbar">
+          <input type="search" id="symptomFilter" placeholder="搜尋症狀、病人用語… 例：頭痛、脹痛、想吐" data-mode-placeholder data-bilingual-placeholder="搜尋症狀、病人用語… 例：頭痛、脹痛、想吐" data-english-placeholder="Search symptoms or patient words…">
+          <small id="symptomSummary"></small>
+        </div>
+        <div id="symptomRecords" class="k-records" aria-label="Symptom records"></div>
+      </section>
+
       <section class="formula-section comparison-section" data-workspace="comparison" id="comparisonSection" aria-label="辨證鑑別表" data-mode-aria-label data-bilingual-aria-label="辨證鑑別表" data-english-aria-label="Pattern comparison tables">
         <div class="section-heading">
           <div>
@@ -542,11 +580,15 @@
           <button id="newCaseBtn" type="button" data-mode-text data-bilingual="新增病例" data-english="New case">新增病例</button>
           <button id="newSoapBtn" class="ghost" type="button" data-mode-text data-bilingual="新增 SOAP" data-english="New SOAP">新增 SOAP</button>
           <button id="exportCasesBtn" class="ghost" type="button" data-mode-text data-bilingual="匯出病例" data-english="Export cases">匯出病例</button>
+          <button id="practiceAuditBtn" class="ghost" type="button" aria-pressed="false" aria-controls="practiceAuditPanel" data-mode-text data-bilingual="診務回顧 Practice Audit" data-english="Practice Audit">診務回顧 Practice Audit</button>
           <label class="ghost file-label">
             <span data-mode-text data-bilingual="匯入病例" data-english="Import cases">匯入病例</span>
             <input id="importCasesFile" type="file" accept="application/json" />
           </label>
         </div>
+        <!-- 診務回顧:病例反過來告訴你該補哪些卡片。預設收起,按工具列的按鈕展開。
+             資料全部來自本機已存在的病例,不另外儲存、不外送。 -->
+        <section class="practice-audit-panel" id="practiceAuditPanel" aria-label="診務回顧 Practice Audit" hidden></section>
         <div class="case-grid">
           <aside class="case-list-panel" id="caseListPanel">
             <div class="mini-head">
@@ -559,6 +601,38 @@
           <section class="case-detail-panel" id="caseDetail"></section>
         </div>
         <p class="note" data-mode-text data-bilingual="病例紀錄目前存於此瀏覽器本機。請使用 patient_code，避免輸入完整姓名、完整生日、電話、地址、保險資料等直接識別資訊。" data-english="Clinical case records are currently stored locally in this browser. Use patient_code and avoid full names, full birth dates, phone numbers, addresses, insurance details, or other directly identifying information.">病例紀錄目前存於此瀏覽器本機。請使用 patient_code，避免輸入完整姓名、完整生日、電話、地址、保險資料等直接識別資訊。</p>
+      </section>
+
+      <!-- Patient Longitudinal Workspace W1 (docs/PATIENT_WORKSPACE_DESIGN_v1.md).
+           Read-only view over getPatientsView() bridge — one row per
+           patientCode, joined back to clinicalCases by caseIds. No new
+           write path lives in this section. -->
+      <section class="case-workspace" data-workspace="patients" id="patientsWorkspace" aria-label="病人縱貫工作區 Patient Longitudinal Workspace">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Patient Longitudinal Workspace</p>
+            <h2 data-mode-text data-bilingual="病人總覽 / Patient Workspace" data-english="Patient Workspace">病人總覽 / Patient Workspace</h2>
+          </div>
+          <span class="data-pill" data-mode-text data-bilingual="唯讀衍生視圖" data-english="Read-only derived view">唯讀衍生視圖</span>
+        </div>
+        <nav class="section-quicknav" aria-label="Patient workspace quick navigation">
+          <a href="#patientListPanel">Patient List</a>
+          <a href="#patientDetail">Selected Patient</a>
+        </nav>
+        <div class="case-toolbar" id="patientToolbar">
+          <input id="patientSearch" type="search" placeholder="搜尋 patient code..." />
+        </div>
+        <div class="case-grid">
+          <aside class="case-list-panel" id="patientListPanel">
+            <div class="mini-head">
+              <strong data-mode-text data-bilingual="病人列表" data-english="Patient List">病人列表</strong>
+              <small id="patientResultCount">0 patients</small>
+            </div>
+            <div id="patientList" class="case-list"></div>
+          </aside>
+          <section class="case-detail-panel" id="patientDetail"></section>
+        </div>
+        <p class="note" data-mode-text data-bilingual="病人視圖只顯示 patient_code，不顯示任何姓名欄位；跨病例的資料落差（衝突/待審）原樣呈現，不代為判斷。" data-english="The patient view shows patient_code only — never a name field. Cross-case data conflicts and review flags are shown verbatim, never silently resolved.">病人視圖只顯示 patient_code，不顯示任何姓名欄位；跨病例的資料落差（衝突/待審）原樣呈現，不代為判斷。</p>
       </section>
 
     </main>
@@ -616,11 +690,13 @@
           <h2 id="caseDialogTitle" data-mode-text data-bilingual="新增病例" data-english="New Case">新增病例</h2>
           <button class="icon-btn" value="cancel" type="button" id="closeCaseDialog" aria-label="關閉" data-mode-aria-label data-bilingual-aria-label="關閉" data-english-aria-label="Close">×</button>
         </div>
+        <div id="caseDraftBanner" class="draft-banner" hidden></div>
         <div class="form-grid">
           <fieldset class="form-section">
             <legend><span class="form-section-step">1</span>身分 Identity</legend>
             <label>Patient code<input name="patientCode" required placeholder="P-2026-001" /></label>
             <label>病例標題 Case title<input name="caseTitle" required placeholder="PCOS fertility support" /></label>
+            <label>分類快選 Category quick-pick<select id="caseCategoryQuick"><option value="">—</option><option value="fertility">Fertility 生殖/助孕</option><option value="pain">Pain 疼痛</option><option value="digestive">Digestive 消化</option><option value="sleep">Sleep 睡眠</option><option value="stress_mood">Stress / mood 壓力/情緒</option><option value="respiratory">Respiratory 呼吸系統</option><option value="gynecology">Gynecology 婦科</option><option value="dermatology">Dermatology 皮膚</option><option value="internal_medicine">Internal medicine 內科</option><option value="general">General 一般</option><option value="__other__">Other / custom 其他</option></select></label>
             <label>分類 Category<input name="caseCategory" placeholder="fertility / pain / internal medicine" /></label>
             <label>狀態 Status<select name="status"><option value="active">active</option><option value="paused">paused</option><option value="closed">closed</option></select></label>
             <label>開始日期<input name="startDate" type="date" /></label>
@@ -629,18 +705,46 @@
           <fieldset class="form-section">
             <legend><span class="form-section-step">2</span>背景 Background<small>穩定不變的底子，通常只填一次</small></legend>
             <label>出生年月 Birth (year-month)<input name="birthYearMonth" type="month" min="1900-01" max="2100-12" /></label>
-            <label>性別 Sex<select name="sex"><option value="">—</option><option value="F">F 女</option><option value="M">M 男</option><option value="Other">Other</option></select></label>
+            <label>出生時性別 Sex at birth<select name="sex"><option value="">—</option><option value="F">F 女</option><option value="M">M 男</option><option value="Other">Other</option></select></label>
+            <label>性別認同 Gender identity（選填 optional）<select name="genderIdentity"><option value="">—</option><option value="woman">Woman 女性</option><option value="man">Man 男性</option><option value="nonbinary">Non-binary</option><option value="other">Other</option><option value="unknown">Unknown 不確定</option><option value="prefer_not_to_answer">Prefer not to answer 不願回答</option></select></label>
             <label>職業 Occupation<input name="occupation" placeholder="選填" /></label>
+            <label>過敏狀態 Allergy status<select name="allergyStatus"><option value="">—</option><option value="none">No known allergies 無已知過敏</option><option value="has">Has allergies 有過敏史</option><option value="unknown">Unknown 不確定</option></select></label>
             <label>過敏 Allergies<input name="allergies" placeholder="藥物 / 食物 / 暈針" /></label>
             <label class="wide">目前用藥 Current meds<input name="currentMeds" placeholder="西藥 / 補充品" /></label>
             <label class="wide">月經/婦科史 Menstrual &amp; OB-Gyn<textarea name="menstrualObHistory" rows="2" placeholder="初經、週期天數、經量/經色/血塊、經痛、LMP、孕產 G_P_、避孕方式"></textarea></label>
             <label class="wide">生活習慣 Lifestyle<textarea name="lifestyle" rows="2" placeholder="睡眠、飲食、壓力、運動、菸酒、咖啡因"></textarea></label>
+            <div class="wide">
+              <p class="race-ethnicity-title">種族/族裔 Race and/or ethnicity — 自填、可複選 self-reported, select all that apply</p>
+              <div id="raceEthnicityOptions" class="checkbox-group" role="group" aria-label="Race and/or ethnicity"></div>
+            </div>
+            <label class="wide">詳細身分認同（選填）Detailed identity / self-description (optional)<input name="raceEthnicityDetail" placeholder="e.g. Chinese, Taiwanese, Korean, Filipino, Mexican, Iranian…" /></label>
           </fieldset>
 
           <fieldset class="form-section">
             <legend><span class="form-section-step">3</span>主訴與病史 Presenting problem</legend>
             <label class="wide">主訴 Chief complaint<textarea name="chiefComplaint" rows="2" placeholder="主要不適 + 病程長短"></textarea></label>
+            <label>大約發病時間 Approx. onset<input name="onsetApprox" placeholder="YYYY / YYYY-MM / YYYY-MM-DD / unknown" /></label>
+            <label>病程 Chronicity<select name="chronicity"><option value="">—</option><option value="acute">Acute 急性</option><option value="subacute">Subacute 亞急性</option><option value="chronic">Chronic 慢性</option><option value="unknown">Unknown 不確定</option></select></label>
+            <label>病程型態 Course pattern<select name="coursePattern"><option value="">—</option><option value="continuous">Continuous 持續</option><option value="intermittent">Intermittent 間歇</option><option value="episodic">Episodic 陣發</option><option value="recurrent">Recurrent 反覆發作</option><option value="progressive">Progressive 漸進惡化</option><option value="improving">Improving 漸好轉</option><option value="stable">Stable 穩定</option><option value="unknown">Unknown 不確定</option></select></label>
+            <label>初診基準嚴重度（暫時欄位）Baseline severity 0–10 (transitional)<input name="baselineSeverity" type="number" min="0" max="10" step="1" placeholder="不適用可留空 leave blank if not applicable" /></label>
             <label class="wide">現病史 History of present illness<textarea name="historyPresent" rows="3" placeholder="發病時間、經過、誘因、加重/緩解因素、伴隨症狀"></textarea></label>
+            <div class="wide">
+              <p class="race-ethnicity-title">先前治療 Previous treatment tried for this complaint — 可複選 select all that apply</p>
+              <div class="checkbox-group" role="group" aria-label="Previous treatment tried">
+                <label><input type="checkbox" name="previousTreatment" value="acupuncture" />Acupuncture 針灸</label>
+                <label><input type="checkbox" name="previousTreatment" value="chinese_herbal_medicine" />Chinese herbal medicine 中藥</label>
+                <label><input type="checkbox" name="previousTreatment" value="medication" />Medication 西藥</label>
+                <label><input type="checkbox" name="previousTreatment" value="physical_therapy" />Physical therapy 物理治療</label>
+                <label><input type="checkbox" name="previousTreatment" value="chiropractic_manual_therapy" />Chiropractic / manual therapy 整脊/徒手治療</label>
+                <label><input type="checkbox" name="previousTreatment" value="massage_bodywork" />Massage / bodywork 按摩</label>
+                <label><input type="checkbox" name="previousTreatment" value="injection_procedure" />Injection / procedure 注射/處置</label>
+                <label><input type="checkbox" name="previousTreatment" value="surgery" />Surgery 手術</label>
+                <label><input type="checkbox" name="previousTreatment" value="other" />Other 其他</label>
+                <label><input type="checkbox" name="previousTreatment" value="none" />None 無</label>
+                <label><input type="checkbox" name="previousTreatment" value="unknown" />Unknown 不確定</label>
+              </div>
+            </div>
+            <label class="wide">先前治療備註 Previous treatment notes<textarea name="previousTreatmentNotes" rows="2" placeholder="例：物理治療 6 週、稍有改善後停滯"></textarea></label>
             <label class="wide">既往史 Past medical history<textarea name="pastHistory" rows="2" placeholder="慢性病、手術、家族史"></textarea></label>
           </fieldset>
 
@@ -658,6 +762,7 @@
             <label class="wide">摘要 Summary<textarea name="summary" rows="2"></textarea></label>
           </fieldset>
         </div>
+        <div id="caseSaveError" class="save-error-msg" hidden></div>
         <div class="dialog-actions">
           <button id="deleteCaseBtn" class="danger" type="button" data-mode-text data-bilingual="刪除病例" data-english="Delete case">刪除病例</button>
           <span></span>
@@ -673,20 +778,36 @@
           <h2 id="soapDialogTitle">新增 SOAP Note</h2>
           <button class="icon-btn" value="cancel" type="button" id="closeSoapDialog" aria-label="關閉" data-mode-aria-label data-bilingual-aria-label="關閉" data-english-aria-label="Close">×</button>
         </div>
+        <div id="soapDraftBanner" class="draft-banner" hidden></div>
         <div class="form-grid soap-form-grid">
+          <fieldset class="form-section soap-previous-visit">
+            <legend><span class="form-section-step">«</span>上次就診 Previous visit<small>參考用，不會自動帶入 reference only, never auto-filled or copied</small></legend>
+            <div id="previousVisitPanel" class="wide"></div>
+          </fieldset>
+
           <fieldset class="form-section">
             <legend><span class="form-section-step">1</span>就診脈絡 Visit context</legend>
             <label>Visit date<input name="visitDate" type="date" /></label>
             <label>Visit #<input name="visitNumber" type="number" min="1" /></label>
-            <label>Cycle day<input name="cycleDay" type="number" min="1" /></label>
-            <label>Cycle phase<input name="cyclePhase" placeholder="menses / follicular / ovulation / luteal" /></label>
-            <label>Fertility phase<input name="fertilityPhase" placeholder="follicular / ovulation induction / IVF" /></label>
-            <label>Workflow link<input name="workflowLink" placeholder="fertility.workflow.pcos_ovulation_induction" /></label>
           </fieldset>
+
+          <!-- 週期/生殖欄位(2026-08-11 Ting 指正):原本開頭就問且不分性別,
+               生育科時代遺留。改為選填收合區,男性病例由 app.js 整段隱藏。 -->
+          <details class="form-section soap-cycle-section" id="soapCycleSection">
+            <summary>週期/生殖 Cycle & fertility<small>選填,僅相關病例需要</small></summary>
+            <div class="form-grid">
+              <label>Cycle day<input name="cycleDay" type="number" min="1" /></label>
+              <label>Cycle phase<input name="cyclePhase" placeholder="menses / follicular / ovulation / luteal" /></label>
+              <label>Fertility phase<input name="fertilityPhase" placeholder="follicular / ovulation induction / IVF" /></label>
+              <label>Workflow link<input name="workflowLink" placeholder="fertility.workflow.pcos_ovulation_induction" /></label>
+            </div>
+          </details>
 
           <fieldset class="form-section soap-s">
             <legend><span class="form-section-step">S</span>Subjective 主觀<small>病人說的</small></legend>
+            <button type="button" class="ghost wide" id="pastePrevisitBtn" data-mode-text data-bilingual="貼上診前資料" data-english="Paste pre-visit intake">貼上診前資料 Paste pre-visit intake</button>
             <label class="wide soap-section">S - Subjective<textarea name="subjective" rows="5" placeholder="主訴、變化、疼痛、睡眠、情緒、消化、月經/不孕、西藥更新、red flags"></textarea></label>
+            <label class="wide">Symptom links<textarea name="symptomLinks" rows="2" placeholder="sym.headache, sym.insomnia"></textarea></label>
           </fieldset>
 
           <fieldset class="form-section soap-o">
@@ -701,11 +822,12 @@
           <fieldset class="form-section soap-a">
             <legend><span class="form-section-step">A</span>Assessment 辨證<small>四診合參與連結</small></legend>
             <label class="wide soap-section">A - Assessment 辨證<textarea name="assessment" rows="2" placeholder="四診合參、西醫診斷、安全判斷"></textarea></label>
-            <label class="wide">證型 TCM pattern（本次）<input name="tcmPattern" placeholder="肝鬱脾虛、腎陰虛…" /></label>
+            <label class="wide">主證型 Primary TCM pattern<small>搜尋選擇「一個」主證型 search, pick ONE</small><textarea name="tcmPatternPrimary" rows="1" placeholder="搜尋主證型…"></textarea></label>
+            <label class="wide">次證型 Secondary TCM pattern(s)<small>可複選 select zero or more</small><textarea name="tcmPatternSecondary" rows="2" placeholder="搜尋次證型，可複選…"></textarea></label>
+            <label class="wide">證型/病機記錄 TCM diagnosis notes<small>自由文字，沿用既有欄位、保留舊病歷內容 free text — same field as before, legacy content preserved</small><textarea name="tcmPattern" rows="2" placeholder="肝鬱脾虛、腎陰虛…（辨證脈絡、細節、舊資料）"></textarea></label>
             <label class="wide">病機 Pathomechanism<textarea name="pathomechanism" rows="2" placeholder="為什麼會這樣：如肝失疏泄，橫逆犯脾"></textarea></label>
-            <label class="wide">Western condition links<textarea name="westernConditionLinks" rows="2" placeholder="condition.pcos, condition.unexplained_infertility"></textarea></label>
-            <label class="wide">Eastern disease / pattern links<textarea name="easternDiseaseLinks" rows="2" placeholder="disease.infertility, disease.irregular_menstruation"></textarea></label>
-            <label class="wide">TCM pattern links<textarea name="tcmPatternLinks" rows="2" placeholder="pattern.kidney_deficiency, pattern.phlegm_damp"></textarea></label>
+            <label class="wide">Western condition links<textarea name="westernConditionLinks" rows="2" placeholder="cond.pcos, cond.female_infertility"></textarea></label>
+            <label class="wide">Eastern disease / pattern links<textarea name="easternDiseaseLinks" rows="2" placeholder="tdis.bu_yun, tdis.yue_jing_xian_qi"></textarea></label>
             <label class="wide">Safety flag links<textarea name="safetyFlagLinks" rows="2" placeholder="safety.possible_pregnancy, safety.anticoagulant_use"></textarea></label>
           </fieldset>
 
@@ -718,12 +840,31 @@
             <label>留針 Retention<input name="retentionMinutes" type="number" min="0" placeholder="25" /></label>
             <label>手法 Technique<input name="technique" placeholder="gentle regulation / tonify / reduce" /></label>
             <label class="wide">治療手法 Modalities<input name="modalities" placeholder="艾灸 moxa / 電針 e-stim / 拔罐 cupping / 刮痧 gua sha / 推拿 tuina" /></label>
+            <!-- AVS v3 Phase C(§2.5/§7):結構化療法記錄 modality.* —— Checkout
+                 的權威來源;上面的自由文字欄位保留不動,舊 note 靠文字推斷
+                 fallback。選項由 app.js 從 modalityVocabulary 渲染。 -->
+            <label class="wide">治療項目 Modalities performed<small>結構化勾選,AVS/Checkout 依此判斷今日療法 structured record — Checkout reads this; free text above is legacy fallback</small></label>
+            <div id="modalitiesPerformedOptions" class="checkbox-group wide" role="group" aria-label="Modalities performed"></div>
             <label class="wide">方劑/中藥 Formula &amp; herbs<textarea name="formulaHerbs" rows="2"></textarea></label>
             <label class="wide">Formula record links<textarea name="formulaLinks" rows="2" placeholder="formula.xiao_yao_san, formula.gui_pi_tang"></textarea></label>
+            <label class="wide">Herb record links<textarea name="herbLinks" rows="2" placeholder="herb.suan_zao_ren, herb.dang_gui"></textarea></label>
             <label class="wide">西藥背景 Western meds<textarea name="westernMeds" rows="2" placeholder="Letrozole CD3-7, progesterone support"></textarea></label>
-            <label class="wide">Medication record links<textarea name="medicationLinks" rows="2" placeholder="med.letrozole, med.progesterone"></textarea></label>
+            <label class="wide">Medication record links<textarea name="medicationLinks" rows="2" placeholder="drug.warfarin, drug.metoprolol"></textarea></label>
             <label class="wide">醫囑 Advice（生活/飲食/運動）<textarea name="advice" rows="2" placeholder="作息、飲食宜忌、運動、情緒調攝"></textarea></label>
             <label class="wide">下次計畫 Next follow-up<textarea name="followUp" rows="2"></textarea></label>
+            <label class="wide">轉介/督導問題 Referral / supervisor question<textarea name="referralOrSupervisorQuestion" rows="2" placeholder="需要轉介、或想問督導的問題"></textarea></label>
+          </fieldset>
+
+          <fieldset class="form-section soap-lifestyle">
+            <legend><span class="form-section-step">L</span>生活型態 Lifestyle<small>本次就診觀察值，不自動轉證型 observation only — never auto-converted to a TCM pattern/tdis (D17 §6)</small></legend>
+            <div id="lifestyleFactorRows" class="repeatable-rows wide"></div>
+            <button class="ghost" type="button" id="addLifestyleFactorRow">+ 新增因子 Add factor</button>
+          </fieldset>
+
+          <fieldset class="form-section soap-adverse-events">
+            <legend><span class="form-section-step">AE</span>不良反應 Adverse events<small>治療反應與耐受度</small></legend>
+            <div id="adverseEventRows" class="repeatable-rows wide"></div>
+            <button class="ghost" type="button" id="addAdverseEventRow">+ 新增事件 Add event</button>
           </fieldset>
 
           <fieldset class="form-section soap-outcome">
@@ -737,14 +878,26 @@
               <option value="lost_followup">失訪 Lost to follow-up</option>
             </select></label>
             <label class="wide">Outcome metric links<textarea name="outcomeMetricLinks" rows="2" placeholder="sleep_quality +2, pain_score 7->4, lining_mm 8"></textarea></label>
+            <div id="structuredOutcomeMetrics" style="display:contents"></div>
             <details class="soap-reflection wide">
               <summary>臨床推理 / 按語（選填）</summary>
               <label class="wide">鑑別考量 Differential considered<textarea name="differentialConsidered" rows="2" placeholder="這次還考慮了哪些證型/診斷、為什麼排除"></textarea></label>
+              <!-- 上面那欄是「為什麼」,這一區是「哪一個證型、排除了沒有」。
+                   只有結構化的這一份能被 usedIn 反查與月審統計拿去用;
+                   自由文字進不了任何統計。兩者不重複,不要合併。 -->
+              <div class="wide repeatable-rows-block">
+                <div class="mini-head">
+                  <strong data-mode-text data-bilingual="鑑別診斷(結構化)Differentials" data-english="Differentials (structured)">鑑別診斷(結構化)Differentials</strong>
+                  <button type="button" id="addPatternDifferentialRow" class="ghost" data-mode-text data-bilingual="+ 新增證型 Add pattern" data-english="+ Add pattern">+ 新增證型 Add pattern</button>
+                </div>
+                <div id="patternDifferentialRows" class="repeatable-rows"></div>
+              </div>
               <label class="wide">按語 Reflection<textarea name="reflection" rows="3" placeholder="學到什麼、什麼出乎意料、下次要留意什麼"></textarea></label>
               <label class="wide">若無效的下一步 If ineffective, next step<textarea name="ifIneffectivePlan" rows="2" placeholder="開方時就寫下可驗證的下一步，回診時檢查這個預測"></textarea></label>
             </details>
           </fieldset>
         </div>
+        <div id="soapSaveError" class="save-error-msg" hidden></div>
         <div class="dialog-actions">
           <button id="deleteSoapBtn" class="danger" type="button" data-mode-text data-bilingual="刪除 SOAP" data-english="Delete SOAP">刪除 SOAP</button>
           <span></span>
@@ -754,22 +907,162 @@
       </form>
     </dialog>
 
+    <!-- AVS v3(Visit Checkout Integration):結帳面板。內容全由 app.js 的
+         renderAvsCheckout() 渲染 —— draft 編輯、finalized 檢視、更正版本
+         都在同一個 dialog,狀態機在 js/avs.js。 -->
+    <dialog id="avsCheckoutDialog" class="avs-checkout-dialog">
+      <div class="dialog-head">
+        <h2 id="avsCheckoutTitle" data-mode-text data-bilingual="結帳 — 診後摘要 AVS" data-english="Checkout — After Visit Summary">結帳 — 診後摘要 AVS</h2>
+        <button class="icon-btn" type="button" id="closeAvsCheckout" aria-label="關閉" data-mode-aria-label data-bilingual-aria-label="關閉" data-english-aria-label="Close">×</button>
+      </div>
+      <div id="avsCheckoutBody"></div>
+    </dialog>
+
+    <dialog id="agentExposureDialog">
+      <form id="agentExposureForm" method="dialog">
+        <div class="dialog-head">
+          <h2 id="agentExposureDialogTitle" data-mode-text data-bilingual="新增用藥/補充劑" data-english="Add med / supplement">新增用藥/補充劑</h2>
+          <button class="icon-btn" value="cancel" type="button" id="closeAgentExposureDialog" aria-label="關閉" data-mode-aria-label data-bilingual-aria-label="關閉" data-english-aria-label="Close">×</button>
+        </div>
+        <div class="form-grid">
+          <fieldset class="form-section">
+            <legend>用藥/補充劑 Agent</legend>
+            <label>類型 Type<select name="agentType" required>
+              <option value="">—</option>
+              <option value="drug">藥 Drug</option>
+              <option value="supplement">補 Supplement</option>
+            </select></label>
+            <label>Agent ID（選填）<input name="agentId" placeholder="drug.* / supp.* 或留空" /></label>
+            <label class="wide">名稱 Name（無 Agent ID 時必填）<input name="nameText" placeholder="e.g. Magnesium glycinate" /></label>
+            <label>劑量 Dose<input name="doseText" placeholder="200 mg" /></label>
+            <label>頻率 Frequency<input name="frequencyText" placeholder="qd / bid / prn" /></label>
+            <label>開始（約）Start (approx)<input name="startApprox" type="month" /></label>
+            <!-- SOL item 2: 勾選 = intake 時已在用(initial_recorded,不謊報
+                 開始時間);不勾 = 真的此時開始用(started)。 -->
+            <label><input type="checkbox" name="alreadyInUse" value="1" /> 已在使用 Already in use（首次記錄,非新開始）</label>
+            <label>來源 Info source<select name="infoSource">
+              <option value="">—</option>
+              <option value="patient_reported">Patient reported 病人自述</option>
+              <option value="records">Records 病歷紀錄</option>
+            </select></label>
+            <label class="wide">備註 Note<textarea name="note" rows="2"></textarea></label>
+          </fieldset>
+        </div>
+        <div class="dialog-actions">
+          <span></span>
+          <button class="ghost" type="button" id="cancelAgentExposureBtn" data-mode-text data-bilingual="取消" data-english="Cancel">取消</button>
+          <button type="submit" data-mode-text data-bilingual="新增" data-english="Add">新增</button>
+        </div>
+      </form>
+    </dialog>
+
+    <!-- Phase D batch 3 (docs/SPRINT_2026-08-12_BRIEF.md Phase D task 3):
+         mirror of #agentExposureDialog above, over environmentalExposures[]
+         (D17 §5/§6). The exposureId <select> options are populated in app.js
+         (openEnvironmentalExposureEditor) from ACUTING_KNOWLEDGE.exposureVocabulary
+         — static markup here can't see that data at page load. -->
+    <dialog id="environmentalExposureDialog">
+      <form id="environmentalExposureForm" method="dialog">
+        <div class="dialog-head">
+          <h2 id="environmentalExposureDialogTitle" data-mode-text data-bilingual="新增環境/毒性暴露" data-english="Add environmental exposure">新增環境/毒性暴露</h2>
+          <button class="icon-btn" value="cancel" type="button" id="closeEnvironmentalExposureDialog" aria-label="關閉" data-mode-aria-label data-bilingual-aria-label="關閉" data-english-aria-label="Close">×</button>
+        </div>
+        <div class="form-grid">
+          <fieldset class="form-section">
+            <legend>環境/毒性暴露 Exposure</legend>
+            <label>暴露項目 Exposure<select name="exposureId" id="environmentalExposureSelect"><option value="">—</option></select></label>
+            <label class="wide" id="environmentalExposureNameTextWrap" hidden>名稱 Name（其他 Other 時必填）<input name="nameText" placeholder="e.g. Diesel exhaust" /></label>
+            <label>確定度 Certainty<select name="certainty">
+              <option value="suspected" selected>疑似 Suspected</option>
+              <option value="patient_reported">病人自述 Patient reported</option>
+              <option value="confirmed">已確認 Confirmed</option>
+            </select></label>
+            <label>狀態 Timing<select name="timing">
+              <option value="ongoing">持續中 Ongoing</option>
+              <option value="historical">過去 Historical</option>
+              <option value="unknown" selected>不確定 Unknown</option>
+            </select></label>
+            <label>開始（約）Start (approx)<input name="startApprox" type="month" /></label>
+            <label class="wide">情境 Context<textarea name="contextText" rows="2" placeholder="e.g. 住家附近工廠 / lives near a factory"></textarea></label>
+            <!-- Same intake-honesty rule as agentExposureDialog's 已在使用
+                 checkbox: checked = patient already had this exposure when we
+                 first learned of it (initial_recorded, doesn't fabricate an
+                 onset date); unchecked = exposure is newly starting now
+                 (started). -->
+            <label><input type="checkbox" name="alreadyExists" value="1" /> 已存在(首次記錄) Already present（首次記錄,非新開始）</label>
+            <label class="wide">備註 Note<textarea name="note" rows="2"></textarea></label>
+          </fieldset>
+        </div>
+        <div class="dialog-actions">
+          <span></span>
+          <button class="ghost" type="button" id="cancelEnvironmentalExposureBtn" data-mode-text data-bilingual="取消" data-english="Cancel">取消</button>
+          <button type="submit" data-mode-text data-bilingual="新增" data-english="Add">新增</button>
+        </div>
+      </form>
+    </dialog>
+
     <footer>
       <span data-mode-text data-bilingual="學習用途：本工具整理傳統中醫常見穴位與證型關聯，不能取代合格醫療人員診斷或治療。核心定位參考 WHO / 專業教材；英文網路對照參考 AcuPoints.org，中文網路對照參考雲端中醫穴道資料庫。" data-english="Study use only: this tool organizes common Traditional Chinese Medicine point and pattern relationships. It does not replace diagnosis or treatment by a qualified healthcare professional. Core locations should be checked against WHO-style standards and professional course materials; web sources support bilingual lookup and comparison."><strong>學習用途：</strong>本工具整理傳統中醫常見穴位與證型關聯，不能取代合格醫療人員診斷或治療。
       核心定位參考 WHO / 專業教材；英文網路對照參考 AcuPoints.org，中文網路對照參考雲端中醫穴道資料庫。</span>
     </footer>
 
-    <script src="data/generated/app_data.js"></script>
-    <script src="data/generated/knowledge_data.js"></script>
-    <script src="data/generated/cloudtcm_map.js"></script>
-    <script src="data/generated/points_361.js"></script>
-    <script src="data/tung/point_index.js"></script>
-    <script src="data/auricular/gb93_index.js"></script>
-    <script src="data/auricular/gb93_worklist.js"></script>
-    <script src="js/review.js"></script>
-    <script src="js/notes.js"></script>
-    <script src="app.js"></script>
-    <script src="js/router.js"></script>
-    <script src="js/knowledge.js"></script>
+    <div id="bootOverlay" aria-live="polite">
+      <div class="boot-card">
+        <span class="boot-spin" aria-hidden="true"></span>
+        <p><strong>知識庫載入中…</strong><br /><small>361 穴 · 223 方 · 363 藥 · 505 病症</small></p>
+        <p class="boot-fallback"><small>載入比平常久。請檢查網路後<button type="button" class="boot-reload" onclick="location.reload()">重新整理</button>。</small></p>
+      </div>
+    </div>
+    <style>
+      #bootOverlay { position: fixed; inset: 0; z-index: 9999; display: flex; align-items: center; justify-content: center; background: var(--paper, #f6f1e7); }
+      #bootOverlay .boot-card { text-align: center; color: var(--ink, #33291f); font-family: var(--serif, serif); }
+      #bootOverlay small { color: var(--muted, #786c5c); }
+      .boot-spin { display: inline-block; width: 28px; height: 28px; border: 3px solid var(--line, #e5dcc9); border-top-color: var(--accent, #6f7f58); border-radius: 50%; animation: bootspin 0.9s linear infinite; margin-bottom: 0.6rem; }
+      @keyframes bootspin { to { transform: rotate(360deg); } }
+      #bootOverlay.done { display: none; }
+      /* 防呆（純 CSS）：60 秒還沒載完，重新整理提示自己浮現。
+         用 classic inline script 做這件事會 parser-block 等待 in-flight
+         stylesheet（Google Fonts 掛掉時整頁卡死 13 秒——實測踩到）。 */
+      #bootOverlay .boot-fallback { margin-top: 0.8rem; font-size: 0.9rem; opacity: 0; animation: bootreveal 0.4s ease 60s forwards; }
+      @keyframes bootreveal { to { opacity: 1; } }
+      .boot-reload { background: none; border: none; padding: 0; color: var(--accent-dark, #515f3e); text-decoration: underline; cursor: pointer; font: inherit; }
+    </style>
+<script defer src="data/generated/app_data.js"></script>
+    <!-- 知識庫六分片（P1 快取粒度分包）：Object.assign 合流到同一個
+         globalThis.ACUTING_KNOWLEDGE，片與片之間順序無關——但六片全部
+         必須排在 app.js 與 js/knowledge.js 之前：js/knowledge.js 在 IIFE
+         頂端一次性捕捉 const K，晚到的鍵它永遠看不到（缺片時各線 `|| []`
+         會把空 grid 吞成無聲空白；app.js 的 dataLoadGuard 靠 core 片的
+         __expected 清單抓缺片）。重排這個區塊前先讀 scripts/build-data.js
+         的 KNOWLEDGE_PARTS 註解。 -->
+    <script defer src="data/generated/knowledge_core.js"></script>
+    <script defer src="data/generated/knowledge_ref.js"></script>
+    <script defer src="data/generated/knowledge_rx.js"></script>
+    <script defer src="data/generated/knowledge_mm.js"></script>
+    <script defer src="data/generated/knowledge_dx.js"></script>
+    <script defer src="data/generated/knowledge_pat.js"></script>
+    <script defer src="data/generated/cloudtcm_map.js"></script>
+    <script defer src="data/generated/points_361.js"></script>
+    <script defer src="data/tung/point_index.js"></script>
+    <script defer src="data/auricular/gb93_index.js"></script>
+    <script defer src="data/auricular/gb93_worklist.js"></script>
+    <script defer src="js/review.js"></script>
+    <script defer src="js/notes.js"></script>
+    <script defer src="js/clinical-store.js"></script>
+    <script defer src="js/avs.js"></script>
+    <script defer src="js/previsit-validator.js"></script>
+    <script defer src="js/practice-audit.js"></script>
+    <script defer src="js/care-draft.js"></script>
+    <script defer src="app.js"></script>
+    <script defer src="js/router.js"></script>
+    <script defer src="js/knowledge.js"></script>    <script type="module">
+      /* module scripts 排在所有 defer script 之後執行——執行到這裡代表所有
+         defer 都「被嘗試過」，不保證都成功（失敗的 defer 不會擋住後面的
+         script）。是否真的載到由 app.js 的 dataLoadGuard 判定並以紅 banner
+         點名；overlay 照樣收起——診間半途卡全螢幕 loading 比帶警示的可用
+         app 更糟。 */
+      document.getElementById("bootOverlay")?.classList.add("done");
+    </script>
+
   </body>
 </html>

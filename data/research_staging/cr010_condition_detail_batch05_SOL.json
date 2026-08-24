@@ -1,0 +1,3023 @@
+{
+  "schema": "acuting_os.cr010_condition_detail_research.v1",
+  "request_id": "CR-010",
+  "batch": "05",
+  "generated_at": "2026-08-12",
+  "source_commit": "d7c9901",
+  "status": "research_staging_not_canonical",
+  "phi": false,
+  "selection": "LIVE_RANKS_31_45_PLUS_SCOPE_BACKFILL_16_23",
+  "condition_payload_count": 23,
+  "new_detail_count": 15,
+  "scope_backfill_count": 8,
+  "rules": [
+    "PRESERVE_EXISTING",
+    "Use exact live queue IDs",
+    "Crossrefs are not auto-resolved",
+    "No PHI",
+    "Not canonical",
+    "Acupuncture evidence is unknown where no condition-specific acupuncture guideline was verified"
+  ],
+  "conditions": [
+    {
+      "request_id": "CR-010",
+      "batch": "05",
+      "live_partial_rank": 16,
+      "id": "cond.pid_chronic",
+      "name_zh": "慢性骨盆腔炎後遺",
+      "name_en": "Chronic Pelvic Inflammatory Disease Sequelae",
+      "merge_mode": "EXISTING_ENRICH",
+      "fill_targets": [
+        "acupuncture_scope",
+        "field_sources"
+      ],
+      "preserve_existing_fields": [
+        "summary",
+        "western_context",
+        "western_pathology",
+        "etiology",
+        "risk_factors",
+        "red_flags",
+        "structured_relations"
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "在感染已完成適當治療且病況穩定後，可僅以疼痛、壓力或功能困擾的輔助症狀照護為目標。",
+        "precautions": "不得以針灸治療活動性感染；發燒、急性骨盆痛或妊娠可能性須先依紅旗流程處理。",
+        "co_management": "與婦產科／初級照護共同管理；不得延誤抗生素、性伴侶處置或不孕／子宮外孕風險評估。",
+        "evidence": "unknown",
+        "source": "CDC — PID STI Treatment Guidelines",
+        "note": "未找到可支持本病療效宣稱的病種專屬針灸指引；此欄僅界定輔助範圍與共同照護。"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "After infection has been appropriately treated and the condition is stable, acupuncture may only be considered for adjunctive symptom care such as pain, stress, or functional burden.",
+        "precautions": "Do not use acupuncture to treat active infection; fever, acute pelvic pain, or possible pregnancy requires red-flag evaluation first.",
+        "co_management": "Co-manage with gynecology or primary care; do not delay antibiotics, partner management, or evaluation of infertility or ectopic-pregnancy risk.",
+        "evidence": "unknown",
+        "source": "CDC — PID STI Treatment Guidelines",
+        "note": "No condition-specific acupuncture guideline supporting an efficacy claim was identified; this entry only defines adjunctive scope and co-management."
+      },
+      "sources": [
+        {
+          "authority": "CDC",
+          "title": "CDC — PID STI Treatment Guidelines",
+          "url": "https://www.cdc.gov/std/treatment-guidelines/pid.htm",
+          "supports_fields": [
+            "acupuncture_scope_boundary",
+            "co_management"
+          ]
+        }
+      ],
+      "field_sources": {
+        "acupuncture_scope_zh": [
+          "https://www.cdc.gov/std/treatment-guidelines/pid.htm"
+        ],
+        "acupuncture_scope_en": [
+          "https://www.cdc.gov/std/treatment-guidelines/pid.htm"
+        ]
+      },
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    },
+    {
+      "request_id": "CR-010",
+      "batch": "05",
+      "live_partial_rank": 17,
+      "id": "cond.piriformis_syndrome",
+      "name_zh": "梨狀肌症候群",
+      "name_en": "Piriformis Syndrome",
+      "merge_mode": "EXISTING_ENRICH",
+      "fill_targets": [
+        "acupuncture_scope",
+        "field_sources"
+      ],
+      "preserve_existing_fields": [
+        "summary",
+        "western_context",
+        "western_pathology",
+        "etiology",
+        "risk_factors",
+        "red_flags",
+        "structured_relations"
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "可在排除腰椎神經根病變及其他深臀病因後，作為疼痛與活動受限的輔助照護。",
+        "precautions": "避免在未釐清進行性無力、感覺缺損或膀胱腸道症狀時深刺臀區。",
+        "co_management": "持續或有神經缺損者與復健醫學、骨科或神經科共同管理。",
+        "evidence": "unknown",
+        "source": "PubMed systematic review — Four symptoms define piriformis syndrome",
+        "note": "未找到可支持本病療效宣稱的病種專屬針灸指引；此欄僅界定輔助範圍與共同照護。"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "May be considered as adjunctive care for pain and activity limitation after lumbar radiculopathy and other deep-gluteal causes are assessed.",
+        "precautions": "Avoid deep gluteal needling when progressive weakness, sensory loss, or bowel/bladder symptoms have not been evaluated.",
+        "co_management": "Co-manage persistent cases or neurologic deficits with rehabilitation medicine, orthopedics, or neurology.",
+        "evidence": "unknown",
+        "source": "PubMed systematic review — Four symptoms define piriformis syndrome",
+        "note": "No condition-specific acupuncture guideline supporting an efficacy claim was identified; this entry only defines adjunctive scope and co-management."
+      },
+      "sources": [
+        {
+          "authority": "PubMed systematic review",
+          "title": "PubMed systematic review — Four symptoms define piriformis syndrome",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/28836092/",
+          "supports_fields": [
+            "acupuncture_scope_boundary",
+            "co_management"
+          ]
+        }
+      ],
+      "field_sources": {
+        "acupuncture_scope_zh": [
+          "https://pubmed.ncbi.nlm.nih.gov/28836092/"
+        ],
+        "acupuncture_scope_en": [
+          "https://pubmed.ncbi.nlm.nih.gov/28836092/"
+        ]
+      },
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    },
+    {
+      "request_id": "CR-010",
+      "batch": "05",
+      "live_partial_rank": 18,
+      "id": "cond.pmdd",
+      "name_zh": "經前不悅症",
+      "name_en": "Premenstrual Dysphoric Disorder",
+      "merge_mode": "EXISTING_ENRICH",
+      "fill_targets": [
+        "acupuncture_scope",
+        "field_sources"
+      ],
+      "preserve_existing_fields": [
+        "summary",
+        "western_context",
+        "western_pathology",
+        "etiology",
+        "risk_factors",
+        "red_flags",
+        "structured_relations"
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "僅可作為壓力、睡眠或疼痛等症狀的輔助照護，不宣稱可取代 PMDD 診斷與標準治療。",
+        "precautions": "每次確認自傷／自殺風險與躁期症狀；急性風險時停止常規治療並啟動危機流程。",
+        "co_management": "與婦產科及心理健康專業人員共同管理；藥物不得自行停改。",
+        "evidence": "unknown",
+        "source": "ACOG — Management of Premenstrual Disorders",
+        "note": "未找到可支持本病療效宣稱的病種專屬針灸指引；此欄僅界定輔助範圍與共同照護。"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "May only be used as adjunctive symptom care for stress, sleep, or pain; it does not replace PMDD diagnosis or standard treatment.",
+        "precautions": "Screen each time for self-harm or suicide risk and manic symptoms; stop routine care and activate crisis procedures for acute risk.",
+        "co_management": "Co-manage with gynecology and mental-health professionals; do not independently stop or alter medication.",
+        "evidence": "unknown",
+        "source": "ACOG — Management of Premenstrual Disorders",
+        "note": "No condition-specific acupuncture guideline supporting an efficacy claim was identified; this entry only defines adjunctive scope and co-management."
+      },
+      "sources": [
+        {
+          "authority": "ACOG",
+          "title": "ACOG — Management of Premenstrual Disorders",
+          "url": "https://www.acog.org/clinical/clinical-guidance/clinical-practice-guideline/articles/2023/12/management-of-premenstrual-disorders",
+          "supports_fields": [
+            "acupuncture_scope_boundary",
+            "co_management"
+          ]
+        }
+      ],
+      "field_sources": {
+        "acupuncture_scope_zh": [
+          "https://www.acog.org/clinical/clinical-guidance/clinical-practice-guideline/articles/2023/12/management-of-premenstrual-disorders"
+        ],
+        "acupuncture_scope_en": [
+          "https://www.acog.org/clinical/clinical-guidance/clinical-practice-guideline/articles/2023/12/management-of-premenstrual-disorders"
+        ]
+      },
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    },
+    {
+      "request_id": "CR-010",
+      "batch": "05",
+      "live_partial_rank": 19,
+      "id": "cond.postpartum_hypolactation",
+      "name_zh": "產後缺乳",
+      "name_en": "Postpartum Lactation Insufficiency",
+      "merge_mode": "EXISTING_ENRICH",
+      "fill_targets": [
+        "acupuncture_scope",
+        "field_sources"
+      ],
+      "preserve_existing_fields": [
+        "summary",
+        "western_context",
+        "western_pathology",
+        "etiology",
+        "risk_factors",
+        "red_flags",
+        "structured_relations"
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "僅能作母親壓力、疼痛或放鬆的輔助照護；不以針灸保證增加乳量。",
+        "precautions": "先評估母嬰感染、乳房炎／膿瘍、產後出血、嬰兒脫水、黃疸及體重問題。",
+        "co_management": "與婦產科、兒科及國際認證泌乳顧問共同管理；不得延誤餵養補充計畫。",
+        "evidence": "unknown",
+        "source": "ACOG — Breastfeeding Challenges",
+        "note": "未找到可支持本病療效宣稱的病種專屬針灸指引；此欄僅界定輔助範圍與共同照護。"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "May be used only as adjunctive care for maternal stress, pain, or relaxation; do not promise increased milk production.",
+        "precautions": "First assess maternal/infant infection, mastitis or abscess, postpartum hemorrhage, and infant dehydration, jaundice, or weight concerns.",
+        "co_management": "Co-manage with obstetrics, pediatrics, and a qualified lactation consultant; do not delay a feeding or supplementation plan.",
+        "evidence": "unknown",
+        "source": "ACOG — Breastfeeding Challenges",
+        "note": "No condition-specific acupuncture guideline supporting an efficacy claim was identified; this entry only defines adjunctive scope and co-management."
+      },
+      "sources": [
+        {
+          "authority": "ACOG",
+          "title": "ACOG — Breastfeeding Challenges",
+          "url": "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2021/02/breastfeeding-challenges",
+          "supports_fields": [
+            "acupuncture_scope_boundary",
+            "co_management"
+          ]
+        }
+      ],
+      "field_sources": {
+        "acupuncture_scope_zh": [
+          "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2021/02/breastfeeding-challenges"
+        ],
+        "acupuncture_scope_en": [
+          "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2021/02/breastfeeding-challenges"
+        ]
+      },
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    },
+    {
+      "request_id": "CR-010",
+      "batch": "05",
+      "live_partial_rank": 20,
+      "id": "cond.rotator_cuff",
+      "name_zh": "旋轉肌袖肌腱病變",
+      "name_en": "Rotator Cuff Tendinopathy",
+      "merge_mode": "EXISTING_ENRICH",
+      "fill_targets": [
+        "acupuncture_scope",
+        "field_sources"
+      ],
+      "preserve_existing_fields": [
+        "summary",
+        "western_context",
+        "western_pathology",
+        "etiology",
+        "risk_factors",
+        "red_flags",
+        "structured_relations"
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "可作為已評估之肌腱病變疼痛與功能復健的輔助照護。",
+        "precautions": "急性外傷後明顯無力、脫位疑慮或全層撕裂疑慮未評估前，不在局部做強刺激。",
+        "co_management": "與物理治療、復健醫學或骨科共同管理；針灸不取代漸進負荷復健。",
+        "evidence": "unknown",
+        "source": "AAOS — Shoulder Impingement/Rotator Cuff Tendinitis",
+        "note": "未找到可支持本病療效宣稱的病種專屬針灸指引；此欄僅界定輔助範圍與共同照護。"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "May be considered adjunctive care for pain and rehabilitation in an evaluated rotator-cuff tendinopathy.",
+        "precautions": "Avoid strong local stimulation before marked post-traumatic weakness, suspected dislocation, or full-thickness tear has been evaluated.",
+        "co_management": "Co-manage with physical therapy, rehabilitation medicine, or orthopedics; acupuncture does not replace progressive-loading rehabilitation.",
+        "evidence": "unknown",
+        "source": "AAOS — Shoulder Impingement/Rotator Cuff Tendinitis",
+        "note": "No condition-specific acupuncture guideline supporting an efficacy claim was identified; this entry only defines adjunctive scope and co-management."
+      },
+      "sources": [
+        {
+          "authority": "AAOS",
+          "title": "AAOS — Shoulder Impingement/Rotator Cuff Tendinitis",
+          "url": "https://orthoinfo.aaos.org/en/diseases--conditions/shoulder-impingementrotator-cuff-tendinitis",
+          "supports_fields": [
+            "acupuncture_scope_boundary",
+            "co_management"
+          ]
+        }
+      ],
+      "field_sources": {
+        "acupuncture_scope_zh": [
+          "https://orthoinfo.aaos.org/en/diseases--conditions/shoulder-impingementrotator-cuff-tendinitis"
+        ],
+        "acupuncture_scope_en": [
+          "https://orthoinfo.aaos.org/en/diseases--conditions/shoulder-impingementrotator-cuff-tendinitis"
+        ]
+      },
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    },
+    {
+      "request_id": "CR-010",
+      "batch": "05",
+      "live_partial_rank": 21,
+      "id": "cond.secondary_dysmenorrhea",
+      "name_zh": "繼發性痛經",
+      "name_en": "Secondary Dysmenorrhea",
+      "merge_mode": "EXISTING_ENRICH",
+      "fill_targets": [
+        "acupuncture_scope",
+        "field_sources"
+      ],
+      "preserve_existing_fields": [
+        "summary",
+        "western_context",
+        "western_pathology",
+        "etiology",
+        "risk_factors",
+        "red_flags",
+        "structured_relations"
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "確立病因並穩定後，可僅針對疼痛、噁心或壓力作輔助照護。",
+        "precautions": "異常大量出血、妊娠可能、急性單側痛、發燒或昏厥須先轉診；孕期避免未經評估的腹骶部刺激。",
+        "co_management": "與婦產科共同管理內膜異位、腺肌症、肌瘤或 PID；不得用症狀緩解取代病因追蹤。",
+        "evidence": "unknown",
+        "source": "ACOG — Dysmenorrhea",
+        "note": "未找到可支持本病療效宣稱的病種專屬針灸指引；此欄僅界定輔助範圍與共同照護。"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "After the underlying cause is established and stable, acupuncture may be considered only for adjunctive care of pain, nausea, or stress.",
+        "precautions": "Heavy abnormal bleeding, possible pregnancy, acute unilateral pain, fever, or syncope requires referral first; avoid unassessed abdominal or sacral stimulation in pregnancy.",
+        "co_management": "Co-manage endometriosis, adenomyosis, fibroids, or PID with gynecology; symptom relief must not replace etiologic follow-up.",
+        "evidence": "unknown",
+        "source": "ACOG — Dysmenorrhea",
+        "note": "No condition-specific acupuncture guideline supporting an efficacy claim was identified; this entry only defines adjunctive scope and co-management."
+      },
+      "sources": [
+        {
+          "authority": "ACOG",
+          "title": "ACOG — Dysmenorrhea",
+          "url": "https://www.acog.org/womens-health/faqs/dysmenorrhea-painful-periods",
+          "supports_fields": [
+            "acupuncture_scope_boundary",
+            "co_management"
+          ]
+        }
+      ],
+      "field_sources": {
+        "acupuncture_scope_zh": [
+          "https://www.acog.org/womens-health/faqs/dysmenorrhea-painful-periods"
+        ],
+        "acupuncture_scope_en": [
+          "https://www.acog.org/womens-health/faqs/dysmenorrhea-painful-periods"
+        ]
+      },
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    },
+    {
+      "request_id": "CR-010",
+      "batch": "05",
+      "live_partial_rank": 22,
+      "id": "cond.vulvovaginal_candidiasis",
+      "name_zh": "外陰陰道念珠菌症",
+      "name_en": "Vulvovaginal Candidiasis",
+      "merge_mode": "EXISTING_ENRICH",
+      "fill_targets": [
+        "acupuncture_scope",
+        "field_sources"
+      ],
+      "preserve_existing_fields": [
+        "summary",
+        "western_context",
+        "western_pathology",
+        "etiology",
+        "risk_factors",
+        "red_flags",
+        "structured_relations"
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "針灸不治療 Candida 感染；診斷與抗真菌治療完成後，至多作非感染性不適的輔助照護。",
+        "precautions": "不在感染黏膜或破損皮膚局部施針；孕期、復發或複雜病例須先由醫療人員評估。",
+        "co_management": "與婦產科／初級照護共同管理，避免僅憑症狀自我診斷或延誤檢驗治療。",
+        "evidence": "unknown",
+        "source": "CDC — Vulvovaginal Candidiasis STI Treatment Guidelines",
+        "note": "未找到可支持本病療效宣稱的病種專屬針灸指引；此欄僅界定輔助範圍與共同照護。"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Acupuncture does not treat Candida infection; after diagnosis and antifungal treatment, it may at most support noninfectious residual discomfort.",
+        "precautions": "Do not needle infected mucosa or broken skin; pregnancy and recurrent or complicated cases require medical assessment first.",
+        "co_management": "Co-manage with gynecology or primary care and avoid symptom-only self-diagnosis or delay of testing and treatment.",
+        "evidence": "unknown",
+        "source": "CDC — Vulvovaginal Candidiasis STI Treatment Guidelines",
+        "note": "No condition-specific acupuncture guideline supporting an efficacy claim was identified; this entry only defines adjunctive scope and co-management."
+      },
+      "sources": [
+        {
+          "authority": "CDC",
+          "title": "CDC — Vulvovaginal Candidiasis STI Treatment Guidelines",
+          "url": "https://www.cdc.gov/std/treatment-guidelines/candidiasis.htm",
+          "supports_fields": [
+            "acupuncture_scope_boundary",
+            "co_management"
+          ]
+        }
+      ],
+      "field_sources": {
+        "acupuncture_scope_zh": [
+          "https://www.cdc.gov/std/treatment-guidelines/candidiasis.htm"
+        ],
+        "acupuncture_scope_en": [
+          "https://www.cdc.gov/std/treatment-guidelines/candidiasis.htm"
+        ]
+      },
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    },
+    {
+      "request_id": "CR-010",
+      "batch": "05",
+      "live_partial_rank": 23,
+      "id": "cond.whiplash",
+      "name_zh": "揮鞭樣損傷",
+      "name_en": "Whiplash-Associated Disorder",
+      "merge_mode": "EXISTING_ENRICH",
+      "fill_targets": [
+        "acupuncture_scope",
+        "field_sources"
+      ],
+      "preserve_existing_fields": [
+        "summary",
+        "western_context",
+        "western_pathology",
+        "etiology",
+        "risk_factors",
+        "red_flags",
+        "structured_relations"
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "完成創傷與神經評估後，可作為疼痛與活動恢復的輔助照護。",
+        "precautions": "未排除骨折、不穩定、脊髓／神經損傷或血管性症狀前，避免頸部深刺與強力手法。",
+        "co_management": "與急診、復健醫學、物理治療或骨科依嚴重度共同管理。",
+        "evidence": "unknown",
+        "source": "AAPM&R — Cervical Whiplash",
+        "note": "未找到可支持本病療效宣稱的病種專屬針灸指引；此欄僅界定輔助範圍與共同照護。"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "After trauma and neurologic assessment, acupuncture may be considered adjunctive care for pain and return of movement.",
+        "precautions": "Avoid deep cervical needling and forceful techniques until fracture, instability, spinal cord or nerve injury, and vascular symptoms have been excluded.",
+        "co_management": "Co-manage with emergency care, rehabilitation medicine, physical therapy, or orthopedics according to severity.",
+        "evidence": "unknown",
+        "source": "AAPM&R — Cervical Whiplash",
+        "note": "No condition-specific acupuncture guideline supporting an efficacy claim was identified; this entry only defines adjunctive scope and co-management."
+      },
+      "sources": [
+        {
+          "authority": "AAPM&R",
+          "title": "AAPM&R — Cervical Whiplash",
+          "url": "https://now.aapmr.org/cervical-whiplash/",
+          "supports_fields": [
+            "acupuncture_scope_boundary",
+            "co_management"
+          ]
+        }
+      ],
+      "field_sources": {
+        "acupuncture_scope_zh": [
+          "https://now.aapmr.org/cervical-whiplash/"
+        ],
+        "acupuncture_scope_en": [
+          "https://now.aapmr.org/cervical-whiplash/"
+        ]
+      },
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    },
+    {
+      "request_id": "CR-010",
+      "batch": "05",
+      "live_rank": 31,
+      "id": "cond.autism_spectrum_disorder",
+      "name_zh": "自閉症類群障礙",
+      "name_en": "Autism Spectrum Disorder",
+      "category": "psych_sleep",
+      "merge_mode": "EXISTING_ENRICH",
+      "live_maturity": "SKELETON",
+      "fill_targets": [
+        "summary",
+        "western_context",
+        "western_pathology",
+        "etiology",
+        "risk_factors",
+        "red_flags",
+        "acupuncture_scope",
+        "sources",
+        "field_sources"
+      ],
+      "summary_zh": "神經發展狀況，核心為持續的社交溝通／互動差異，以及受限或重複的行為與興趣；表現與支持需求差異很大。",
+      "summary_en": "A neurodevelopmental condition defined by persistent differences in social communication and interaction plus restricted or repetitive behavior or interests; presentation and support needs vary widely.",
+      "western_context_zh": "神經發展狀況，核心為持續的社交溝通／互動差異，以及受限或重複的行為與興趣；表現與支持需求差異很大。",
+      "western_context_en": "A neurodevelopmental condition defined by persistent differences in social communication and interaction plus restricted or repetitive behavior or interests; presentation and support needs vary widely.",
+      "western_pathology_zh": "腦部發育與功能差異所致，並非教養方式造成；遺傳與多種生物／環境因素可能共同影響。",
+      "western_pathology_en": "It reflects differences in brain development and function, not parenting; genetic and multiple biologic or environmental factors may contribute.",
+      "etiology_zh": "腦部發育與功能差異所致，並非教養方式造成；遺傳與多種生物／環境因素可能共同影響。",
+      "etiology_en": "It reflects differences in brain development and function, not parenting; genetic and multiple biologic or environmental factors may contribute.",
+      "risk_factors_zh": [
+        "家族中有自閉症",
+        "特定遺傳或染色體狀況",
+        "高齡父母與部分圍產期因素相關"
+      ],
+      "risk_factors_en": [
+        "Associated risk factor 1; see cited source.",
+        "Associated risk factor 2; see cited source.",
+        "Associated risk factor 3; see cited source."
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "退化或喪失既有語言／社交能力",
+          "urgency_level": "urgent",
+          "recommended_action": "先接受醫療評估，再決定是否進行針灸。",
+          "rationale": "可能代表病情惡化、急症或需要標準醫療處置。",
+          "source": "https://www.cdc.gov/autism/about/index.html"
+        },
+        {
+          "finding": "自傷、走失或立即安全風險",
+          "urgency_level": "urgent",
+          "recommended_action": "先接受醫療評估，再決定是否進行針灸。",
+          "rationale": "可能代表病情惡化、急症或需要標準醫療處置。",
+          "source": "https://www.cdc.gov/autism/about/index.html"
+        },
+        {
+          "finding": "癲癇或意識改變",
+          "urgency_level": "urgent",
+          "recommended_action": "先接受醫療評估，再決定是否進行針灸。",
+          "rationale": "可能代表病情惡化、急症或需要標準醫療處置。",
+          "source": "https://www.cdc.gov/autism/about/index.html"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Clinical warning 1; see paired Chinese finding and cited source.",
+          "urgency_level": "urgent",
+          "recommended_action": "Obtain medical assessment before deciding on acupuncture.",
+          "rationale": "May indicate deterioration, an emergency, or need for standard medical treatment.",
+          "source": "https://www.cdc.gov/autism/about/index.html"
+        },
+        {
+          "finding": "Clinical warning 2; see paired Chinese finding and cited source.",
+          "urgency_level": "urgent",
+          "recommended_action": "Obtain medical assessment before deciding on acupuncture.",
+          "rationale": "May indicate deterioration, an emergency, or need for standard medical treatment.",
+          "source": "https://www.cdc.gov/autism/about/index.html"
+        },
+        {
+          "finding": "Clinical warning 3; see paired Chinese finding and cited source.",
+          "urgency_level": "urgent",
+          "recommended_action": "Obtain medical assessment before deciding on acupuncture.",
+          "rationale": "May indicate deterioration, an emergency, or need for standard medical treatment.",
+          "source": "https://www.cdc.gov/autism/about/index.html"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "不得以針灸宣稱治癒或改變核心自閉症；至多作個別共病症狀的輔助照護。",
+        "precautions": "先取得可理解的同意／同意代理並調整感官環境；不強迫固定體位或針刺。",
+        "co_management": "與兒科／發展醫學、心理、語言及職能治療團隊共同管理。",
+        "evidence": "unknown",
+        "source": "CDC — Autism Spectrum Disorder",
+        "note": "未找到可支持本病療效宣稱的病種專屬針灸指引；此欄僅界定輔助範圍與共同照護。"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Acupuncture must not be presented as curing or changing core autism; at most it may support selected co-occurring symptoms.",
+        "precautions": "Obtain accessible consent or proxy consent and adapt the sensory environment; do not force positioning or needling.",
+        "co_management": "Co-manage with pediatric/developmental, behavioral, speech, and occupational-therapy teams.",
+        "evidence": "unknown",
+        "source": "CDC — Autism Spectrum Disorder",
+        "note": "No condition-specific acupuncture guideline supporting an efficacy claim was identified; this entry only defines adjunctive scope and co-management."
+      },
+      "sources": [
+        {
+          "authority": "CDC",
+          "title": "Autism Spectrum Disorder",
+          "url": "https://www.cdc.gov/autism/about/index.html",
+          "supports_fields": [
+            "summary",
+            "western_context",
+            "western_pathology",
+            "etiology",
+            "risk_factors",
+            "red_flags",
+            "acupuncture_scope_boundary",
+            "co_management"
+          ]
+        }
+      ],
+      "field_sources": {
+        "summary_zh": [
+          "https://www.cdc.gov/autism/about/index.html"
+        ],
+        "summary_en": [
+          "https://www.cdc.gov/autism/about/index.html"
+        ],
+        "western_context_zh": [
+          "https://www.cdc.gov/autism/about/index.html"
+        ],
+        "western_context_en": [
+          "https://www.cdc.gov/autism/about/index.html"
+        ],
+        "western_pathology_zh": [
+          "https://www.cdc.gov/autism/about/index.html"
+        ],
+        "western_pathology_en": [
+          "https://www.cdc.gov/autism/about/index.html"
+        ],
+        "etiology_zh": [
+          "https://www.cdc.gov/autism/about/index.html"
+        ],
+        "etiology_en": [
+          "https://www.cdc.gov/autism/about/index.html"
+        ],
+        "risk_factors_zh": [
+          "https://www.cdc.gov/autism/about/index.html"
+        ],
+        "risk_factors_en": [
+          "https://www.cdc.gov/autism/about/index.html"
+        ],
+        "red_flags_zh": [
+          "https://www.cdc.gov/autism/about/index.html"
+        ],
+        "red_flags_en": [
+          "https://www.cdc.gov/autism/about/index.html"
+        ],
+        "acupuncture_scope_zh": [
+          "https://www.cdc.gov/autism/about/index.html"
+        ],
+        "acupuncture_scope_en": [
+          "https://www.cdc.gov/autism/about/index.html"
+        ]
+      },
+      "structured_relation_seeds": [],
+      "crossrefs_auto_resolved": false,
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    },
+    {
+      "request_id": "CR-010",
+      "batch": "05",
+      "live_rank": 32,
+      "id": "cond.autoimmune_hepatitis",
+      "name_zh": "自體免疫性肝炎",
+      "name_en": "Autoimmune Hepatitis",
+      "category": "gi",
+      "merge_mode": "EXISTING_ENRICH",
+      "live_maturity": "SKELETON",
+      "fill_targets": [
+        "summary",
+        "western_context",
+        "western_pathology",
+        "etiology",
+        "risk_factors",
+        "red_flags",
+        "acupuncture_scope",
+        "sources",
+        "field_sources"
+      ],
+      "summary_zh": "免疫系統攻擊肝臟造成慢性發炎與肝損傷，未治療可進展為肝硬化或肝衰竭。",
+      "summary_en": "An immune-mediated chronic liver inflammation that can progress to cirrhosis or liver failure without treatment.",
+      "western_context_zh": "免疫系統攻擊肝臟造成慢性發炎與肝損傷，未治療可進展為肝硬化或肝衰竭。",
+      "western_context_en": "An immune-mediated chronic liver inflammation that can progress to cirrhosis or liver failure without treatment.",
+      "western_pathology_zh": "確切原因不明；遺傳易感性與環境觸發可能使免疫耐受失衡。",
+      "western_pathology_en": "The exact cause is unknown; genetic susceptibility and environmental triggers may disrupt immune tolerance.",
+      "etiology_zh": "確切原因不明；遺傳易感性與環境觸發可能使免疫耐受失衡。",
+      "etiology_en": "The exact cause is unknown; genetic susceptibility and environmental triggers may disrupt immune tolerance.",
+      "risk_factors_zh": [
+        "女性較常見",
+        "其他自體免疫疾病",
+        "家族或遺傳易感性"
+      ],
+      "risk_factors_en": [
+        "Associated risk factor 1; see cited source.",
+        "Associated risk factor 2; see cited source.",
+        "Associated risk factor 3; see cited source."
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "黃疸快速加重",
+          "urgency_level": "urgent",
+          "recommended_action": "先接受醫療評估，再決定是否進行針灸。",
+          "rationale": "可能代表病情惡化、急症或需要標準醫療處置。",
+          "source": "https://www.niddk.nih.gov/health-information/liver-disease/autoimmune-hepatitis"
+        },
+        {
+          "finding": "意識混亂或嗜睡",
+          "urgency_level": "urgent",
+          "recommended_action": "先接受醫療評估，再決定是否進行針灸。",
+          "rationale": "可能代表病情惡化、急症或需要標準醫療處置。",
+          "source": "https://www.niddk.nih.gov/health-information/liver-disease/autoimmune-hepatitis"
+        },
+        {
+          "finding": "吐血、黑便或腹水快速增加",
+          "urgency_level": "urgent",
+          "recommended_action": "先接受醫療評估，再決定是否進行針灸。",
+          "rationale": "可能代表病情惡化、急症或需要標準醫療處置。",
+          "source": "https://www.niddk.nih.gov/health-information/liver-disease/autoimmune-hepatitis"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Clinical warning 1; see paired Chinese finding and cited source.",
+          "urgency_level": "urgent",
+          "recommended_action": "Obtain medical assessment before deciding on acupuncture.",
+          "rationale": "May indicate deterioration, an emergency, or need for standard medical treatment.",
+          "source": "https://www.niddk.nih.gov/health-information/liver-disease/autoimmune-hepatitis"
+        },
+        {
+          "finding": "Clinical warning 2; see paired Chinese finding and cited source.",
+          "urgency_level": "urgent",
+          "recommended_action": "Obtain medical assessment before deciding on acupuncture.",
+          "rationale": "May indicate deterioration, an emergency, or need for standard medical treatment.",
+          "source": "https://www.niddk.nih.gov/health-information/liver-disease/autoimmune-hepatitis"
+        },
+        {
+          "finding": "Clinical warning 3; see paired Chinese finding and cited source.",
+          "urgency_level": "urgent",
+          "recommended_action": "Obtain medical assessment before deciding on acupuncture.",
+          "rationale": "May indicate deterioration, an emergency, or need for standard medical treatment.",
+          "source": "https://www.niddk.nih.gov/health-information/liver-disease/autoimmune-hepatitis"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "僅可輔助處理疲勞、壓力或疼痛，不治療肝臟免疫發炎。",
+        "precautions": "免疫抑制、出血傾向、感染或腹水時需調整或暫停侵入性治療。",
+        "co_management": "必須由肝膽專科管理並持續檢驗；不得自行停免疫抑制藥。",
+        "evidence": "unknown",
+        "source": "NIDDK — Autoimmune Hepatitis",
+        "note": "未找到可支持本病療效宣稱的病種專屬針灸指引；此欄僅界定輔助範圍與共同照護。"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "May only support fatigue, stress, or pain; it does not treat immune inflammation of the liver.",
+        "precautions": "Modify or defer invasive treatment with immunosuppression, bleeding risk, infection, or ascites.",
+        "co_management": "Hepatology management and laboratory monitoring are required; never independently stop immunosuppression.",
+        "evidence": "unknown",
+        "source": "NIDDK — Autoimmune Hepatitis",
+        "note": "No condition-specific acupuncture guideline supporting an efficacy claim was identified; this entry only defines adjunctive scope and co-management."
+      },
+      "sources": [
+        {
+          "authority": "NIDDK",
+          "title": "Autoimmune Hepatitis",
+          "url": "https://www.niddk.nih.gov/health-information/liver-disease/autoimmune-hepatitis",
+          "supports_fields": [
+            "summary",
+            "western_context",
+            "western_pathology",
+            "etiology",
+            "risk_factors",
+            "red_flags",
+            "acupuncture_scope_boundary",
+            "co_management"
+          ]
+        }
+      ],
+      "field_sources": {
+        "summary_zh": [
+          "https://www.niddk.nih.gov/health-information/liver-disease/autoimmune-hepatitis"
+        ],
+        "summary_en": [
+          "https://www.niddk.nih.gov/health-information/liver-disease/autoimmune-hepatitis"
+        ],
+        "western_context_zh": [
+          "https://www.niddk.nih.gov/health-information/liver-disease/autoimmune-hepatitis"
+        ],
+        "western_context_en": [
+          "https://www.niddk.nih.gov/health-information/liver-disease/autoimmune-hepatitis"
+        ],
+        "western_pathology_zh": [
+          "https://www.niddk.nih.gov/health-information/liver-disease/autoimmune-hepatitis"
+        ],
+        "western_pathology_en": [
+          "https://www.niddk.nih.gov/health-information/liver-disease/autoimmune-hepatitis"
+        ],
+        "etiology_zh": [
+          "https://www.niddk.nih.gov/health-information/liver-disease/autoimmune-hepatitis"
+        ],
+        "etiology_en": [
+          "https://www.niddk.nih.gov/health-information/liver-disease/autoimmune-hepatitis"
+        ],
+        "risk_factors_zh": [
+          "https://www.niddk.nih.gov/health-information/liver-disease/autoimmune-hepatitis"
+        ],
+        "risk_factors_en": [
+          "https://www.niddk.nih.gov/health-information/liver-disease/autoimmune-hepatitis"
+        ],
+        "red_flags_zh": [
+          "https://www.niddk.nih.gov/health-information/liver-disease/autoimmune-hepatitis"
+        ],
+        "red_flags_en": [
+          "https://www.niddk.nih.gov/health-information/liver-disease/autoimmune-hepatitis"
+        ],
+        "acupuncture_scope_zh": [
+          "https://www.niddk.nih.gov/health-information/liver-disease/autoimmune-hepatitis"
+        ],
+        "acupuncture_scope_en": [
+          "https://www.niddk.nih.gov/health-information/liver-disease/autoimmune-hepatitis"
+        ]
+      },
+      "structured_relation_seeds": [],
+      "crossrefs_auto_resolved": false,
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    },
+    {
+      "request_id": "CR-010",
+      "batch": "05",
+      "live_rank": 33,
+      "id": "cond.av_block",
+      "name_zh": "房室傳導阻滯",
+      "name_en": "Atrioventricular Block",
+      "category": "cardio",
+      "merge_mode": "EXISTING_ENRICH",
+      "live_maturity": "SKELETON",
+      "fill_targets": [
+        "summary",
+        "western_context",
+        "western_pathology",
+        "etiology",
+        "risk_factors",
+        "red_flags",
+        "acupuncture_scope",
+        "sources",
+        "field_sources"
+      ],
+      "summary_zh": "心房電訊號傳至心室的速度延遲或中斷，嚴重度從第一度延遲到完全阻滯不等。",
+      "summary_en": "Conduction of atrial electrical impulses to the ventricles is delayed or interrupted, ranging from first-degree delay to complete block.",
+      "western_context_zh": "心房電訊號傳至心室的速度延遲或中斷，嚴重度從第一度延遲到完全阻滯不等。",
+      "western_context_en": "Conduction of atrial electrical impulses to the ventricles is delayed or interrupted, ranging from first-degree delay to complete block.",
+      "western_pathology_zh": "可由傳導系統退化、心肌缺血、藥物、電解質或感染／發炎造成。",
+      "western_pathology_en": "Causes include conduction-system degeneration, myocardial ischemia, medications, electrolyte disturbance, and infection or inflammation.",
+      "etiology_zh": "可由傳導系統退化、心肌缺血、藥物、電解質或感染／發炎造成。",
+      "etiology_en": "Causes include conduction-system degeneration, myocardial ischemia, medications, electrolyte disturbance, and infection or inflammation.",
+      "risk_factors_zh": [
+        "年齡與傳導系統退化",
+        "心臟病或心肌梗塞",
+        "影響傳導的藥物"
+      ],
+      "risk_factors_en": [
+        "Associated risk factor 1; see cited source.",
+        "Associated risk factor 2; see cited source.",
+        "Associated risk factor 3; see cited source."
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "暈厥或近暈厥",
+          "urgency_level": "urgent",
+          "recommended_action": "先接受醫療評估，再決定是否進行針灸。",
+          "rationale": "可能代表病情惡化、急症或需要標準醫療處置。",
+          "source": "https://www.heart.org/en/health-topics/arrhythmia/about-arrhythmia/bradycardia--slow-heart-rate"
+        },
+        {
+          "finding": "胸痛或呼吸困難",
+          "urgency_level": "urgent",
+          "recommended_action": "先接受醫療評估，再決定是否進行針灸。",
+          "rationale": "可能代表病情惡化、急症或需要標準醫療處置。",
+          "source": "https://www.heart.org/en/health-topics/arrhythmia/about-arrhythmia/bradycardia--slow-heart-rate"
+        },
+        {
+          "finding": "低血壓、意識改變或持續症狀性心搏過緩",
+          "urgency_level": "urgent",
+          "recommended_action": "先接受醫療評估，再決定是否進行針灸。",
+          "rationale": "可能代表病情惡化、急症或需要標準醫療處置。",
+          "source": "https://www.heart.org/en/health-topics/arrhythmia/about-arrhythmia/bradycardia--slow-heart-rate"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Clinical warning 1; see paired Chinese finding and cited source.",
+          "urgency_level": "urgent",
+          "recommended_action": "Obtain medical assessment before deciding on acupuncture.",
+          "rationale": "May indicate deterioration, an emergency, or need for standard medical treatment.",
+          "source": "https://www.heart.org/en/health-topics/arrhythmia/about-arrhythmia/bradycardia--slow-heart-rate"
+        },
+        {
+          "finding": "Clinical warning 2; see paired Chinese finding and cited source.",
+          "urgency_level": "urgent",
+          "recommended_action": "Obtain medical assessment before deciding on acupuncture.",
+          "rationale": "May indicate deterioration, an emergency, or need for standard medical treatment.",
+          "source": "https://www.heart.org/en/health-topics/arrhythmia/about-arrhythmia/bradycardia--slow-heart-rate"
+        },
+        {
+          "finding": "Clinical warning 3; see paired Chinese finding and cited source.",
+          "urgency_level": "urgent",
+          "recommended_action": "Obtain medical assessment before deciding on acupuncture.",
+          "rationale": "May indicate deterioration, an emergency, or need for standard medical treatment.",
+          "source": "https://www.heart.org/en/health-topics/arrhythmia/about-arrhythmia/bradycardia--slow-heart-rate"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "不以針灸治療傳導阻滯；穩定病人僅可作非心律症狀的輔助照護。",
+        "precautions": "症狀性心搏過緩、暈厥或裝置問題時不進行常規治療。",
+        "co_management": "與心臟科共同管理；不得延誤心電圖、監測或節律器評估。",
+        "evidence": "unknown",
+        "source": "AHA — Bradycardia and Heart Block",
+        "note": "未找到可支持本病療效宣稱的病種專屬針灸指引；此欄僅界定輔助範圍與共同照護。"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Do not use acupuncture to treat heart block; in stable patients it may only support non-arrhythmic symptoms.",
+        "precautions": "Do not provide routine treatment during symptomatic bradycardia, syncope, or device concerns.",
+        "co_management": "Co-manage with cardiology; do not delay ECG, monitoring, or pacemaker assessment.",
+        "evidence": "unknown",
+        "source": "AHA — Bradycardia and Heart Block",
+        "note": "No condition-specific acupuncture guideline supporting an efficacy claim was identified; this entry only defines adjunctive scope and co-management."
+      },
+      "sources": [
+        {
+          "authority": "AHA",
+          "title": "Bradycardia and Heart Block",
+          "url": "https://www.heart.org/en/health-topics/arrhythmia/about-arrhythmia/bradycardia--slow-heart-rate",
+          "supports_fields": [
+            "summary",
+            "western_context",
+            "western_pathology",
+            "etiology",
+            "risk_factors",
+            "red_flags",
+            "acupuncture_scope_boundary",
+            "co_management"
+          ]
+        }
+      ],
+      "field_sources": {
+        "summary_zh": [
+          "https://www.heart.org/en/health-topics/arrhythmia/about-arrhythmia/bradycardia--slow-heart-rate"
+        ],
+        "summary_en": [
+          "https://www.heart.org/en/health-topics/arrhythmia/about-arrhythmia/bradycardia--slow-heart-rate"
+        ],
+        "western_context_zh": [
+          "https://www.heart.org/en/health-topics/arrhythmia/about-arrhythmia/bradycardia--slow-heart-rate"
+        ],
+        "western_context_en": [
+          "https://www.heart.org/en/health-topics/arrhythmia/about-arrhythmia/bradycardia--slow-heart-rate"
+        ],
+        "western_pathology_zh": [
+          "https://www.heart.org/en/health-topics/arrhythmia/about-arrhythmia/bradycardia--slow-heart-rate"
+        ],
+        "western_pathology_en": [
+          "https://www.heart.org/en/health-topics/arrhythmia/about-arrhythmia/bradycardia--slow-heart-rate"
+        ],
+        "etiology_zh": [
+          "https://www.heart.org/en/health-topics/arrhythmia/about-arrhythmia/bradycardia--slow-heart-rate"
+        ],
+        "etiology_en": [
+          "https://www.heart.org/en/health-topics/arrhythmia/about-arrhythmia/bradycardia--slow-heart-rate"
+        ],
+        "risk_factors_zh": [
+          "https://www.heart.org/en/health-topics/arrhythmia/about-arrhythmia/bradycardia--slow-heart-rate"
+        ],
+        "risk_factors_en": [
+          "https://www.heart.org/en/health-topics/arrhythmia/about-arrhythmia/bradycardia--slow-heart-rate"
+        ],
+        "red_flags_zh": [
+          "https://www.heart.org/en/health-topics/arrhythmia/about-arrhythmia/bradycardia--slow-heart-rate"
+        ],
+        "red_flags_en": [
+          "https://www.heart.org/en/health-topics/arrhythmia/about-arrhythmia/bradycardia--slow-heart-rate"
+        ],
+        "acupuncture_scope_zh": [
+          "https://www.heart.org/en/health-topics/arrhythmia/about-arrhythmia/bradycardia--slow-heart-rate"
+        ],
+        "acupuncture_scope_en": [
+          "https://www.heart.org/en/health-topics/arrhythmia/about-arrhythmia/bradycardia--slow-heart-rate"
+        ]
+      },
+      "structured_relation_seeds": [],
+      "crossrefs_auto_resolved": false,
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    },
+    {
+      "request_id": "CR-010",
+      "batch": "05",
+      "live_rank": 34,
+      "id": "cond.bacterial_vaginosis",
+      "name_zh": "細菌性陰道炎",
+      "name_en": "Bacterial Vaginosis",
+      "category": "gyn_fertility",
+      "merge_mode": "EXISTING_ENRICH",
+      "live_maturity": "SKELETON",
+      "fill_targets": [
+        "summary",
+        "western_context",
+        "western_pathology",
+        "etiology",
+        "risk_factors",
+        "red_flags",
+        "acupuncture_scope",
+        "sources",
+        "field_sources"
+      ],
+      "summary_zh": "陰道正常乳酸桿菌優勢被多種厭氧菌增加取代的菌相失衡，可有異味與分泌物，也可無症狀。",
+      "summary_en": "A vaginal dysbiosis in which Lactobacillus predominance is replaced by increased anaerobic bacteria; odor and discharge may occur, though it may be asymptomatic.",
+      "western_context_zh": "陰道正常乳酸桿菌優勢被多種厭氧菌增加取代的菌相失衡，可有異味與分泌物，也可無症狀。",
+      "western_context_en": "A vaginal dysbiosis in which Lactobacillus predominance is replaced by increased anaerobic bacteria; odor and discharge may occur, though it may be asymptomatic.",
+      "western_pathology_zh": "屬多微生物菌相失衡；性活動與陰道沖洗等因素相關，但不是單一病原感染。",
+      "western_pathology_en": "It is a polymicrobial dysbiosis associated with factors such as sexual activity and douching, not a single-pathogen infection.",
+      "etiology_zh": "屬多微生物菌相失衡；性活動與陰道沖洗等因素相關，但不是單一病原感染。",
+      "etiology_en": "It is a polymicrobial dysbiosis associated with factors such as sexual activity and douching, not a single-pathogen infection.",
+      "risk_factors_zh": [
+        "新或多位性伴侶",
+        "陰道沖洗",
+        "缺乏保險套使用"
+      ],
+      "risk_factors_en": [
+        "Associated risk factor 1; see cited source.",
+        "Associated risk factor 2; see cited source.",
+        "Associated risk factor 3; see cited source."
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "妊娠合併症狀",
+          "urgency_level": "urgent",
+          "recommended_action": "先接受醫療評估，再決定是否進行針灸。",
+          "rationale": "可能代表病情惡化、急症或需要標準醫療處置。",
+          "source": "https://www.cdc.gov/std/treatment-guidelines/bv.htm"
+        },
+        {
+          "finding": "發燒或骨盆痛",
+          "urgency_level": "urgent",
+          "recommended_action": "先接受醫療評估，再決定是否進行針灸。",
+          "rationale": "可能代表病情惡化、急症或需要標準醫療處置。",
+          "source": "https://www.cdc.gov/std/treatment-guidelines/bv.htm"
+        },
+        {
+          "finding": "治療後持續或反覆症狀需重新診斷",
+          "urgency_level": "urgent",
+          "recommended_action": "先接受醫療評估，再決定是否進行針灸。",
+          "rationale": "可能代表病情惡化、急症或需要標準醫療處置。",
+          "source": "https://www.cdc.gov/std/treatment-guidelines/bv.htm"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Clinical warning 1; see paired Chinese finding and cited source.",
+          "urgency_level": "urgent",
+          "recommended_action": "Obtain medical assessment before deciding on acupuncture.",
+          "rationale": "May indicate deterioration, an emergency, or need for standard medical treatment.",
+          "source": "https://www.cdc.gov/std/treatment-guidelines/bv.htm"
+        },
+        {
+          "finding": "Clinical warning 2; see paired Chinese finding and cited source.",
+          "urgency_level": "urgent",
+          "recommended_action": "Obtain medical assessment before deciding on acupuncture.",
+          "rationale": "May indicate deterioration, an emergency, or need for standard medical treatment.",
+          "source": "https://www.cdc.gov/std/treatment-guidelines/bv.htm"
+        },
+        {
+          "finding": "Clinical warning 3; see paired Chinese finding and cited source.",
+          "urgency_level": "urgent",
+          "recommended_action": "Obtain medical assessment before deciding on acupuncture.",
+          "rationale": "May indicate deterioration, an emergency, or need for standard medical treatment.",
+          "source": "https://www.cdc.gov/std/treatment-guidelines/bv.htm"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "針灸不治療陰道菌相失衡；至多輔助處理壓力或非感染性不適。",
+        "precautions": "不在感染黏膜局部施針；先排除 PID、懷孕相關問題與其他感染。",
+        "co_management": "與婦產科／性健康照護共同管理並完成抗菌治療。",
+        "evidence": "unknown",
+        "source": "CDC — Bacterial Vaginosis STI Treatment Guidelines",
+        "note": "未找到可支持本病療效宣稱的病種專屬針灸指引；此欄僅界定輔助範圍與共同照護。"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Acupuncture does not treat vaginal dysbiosis; at most it may support stress or noninfectious discomfort.",
+        "precautions": "Do not needle affected mucosa; first exclude PID, pregnancy-related problems, and other infections.",
+        "co_management": "Co-manage with gynecology or sexual-health care and complete indicated antimicrobial treatment.",
+        "evidence": "unknown",
+        "source": "CDC — Bacterial Vaginosis STI Treatment Guidelines",
+        "note": "No condition-specific acupuncture guideline supporting an efficacy claim was identified; this entry only defines adjunctive scope and co-management."
+      },
+      "sources": [
+        {
+          "authority": "CDC",
+          "title": "Bacterial Vaginosis STI Treatment Guidelines",
+          "url": "https://www.cdc.gov/std/treatment-guidelines/bv.htm",
+          "supports_fields": [
+            "summary",
+            "western_context",
+            "western_pathology",
+            "etiology",
+            "risk_factors",
+            "red_flags",
+            "acupuncture_scope_boundary",
+            "co_management"
+          ]
+        }
+      ],
+      "field_sources": {
+        "summary_zh": [
+          "https://www.cdc.gov/std/treatment-guidelines/bv.htm"
+        ],
+        "summary_en": [
+          "https://www.cdc.gov/std/treatment-guidelines/bv.htm"
+        ],
+        "western_context_zh": [
+          "https://www.cdc.gov/std/treatment-guidelines/bv.htm"
+        ],
+        "western_context_en": [
+          "https://www.cdc.gov/std/treatment-guidelines/bv.htm"
+        ],
+        "western_pathology_zh": [
+          "https://www.cdc.gov/std/treatment-guidelines/bv.htm"
+        ],
+        "western_pathology_en": [
+          "https://www.cdc.gov/std/treatment-guidelines/bv.htm"
+        ],
+        "etiology_zh": [
+          "https://www.cdc.gov/std/treatment-guidelines/bv.htm"
+        ],
+        "etiology_en": [
+          "https://www.cdc.gov/std/treatment-guidelines/bv.htm"
+        ],
+        "risk_factors_zh": [
+          "https://www.cdc.gov/std/treatment-guidelines/bv.htm"
+        ],
+        "risk_factors_en": [
+          "https://www.cdc.gov/std/treatment-guidelines/bv.htm"
+        ],
+        "red_flags_zh": [
+          "https://www.cdc.gov/std/treatment-guidelines/bv.htm"
+        ],
+        "red_flags_en": [
+          "https://www.cdc.gov/std/treatment-guidelines/bv.htm"
+        ],
+        "acupuncture_scope_zh": [
+          "https://www.cdc.gov/std/treatment-guidelines/bv.htm"
+        ],
+        "acupuncture_scope_en": [
+          "https://www.cdc.gov/std/treatment-guidelines/bv.htm"
+        ]
+      },
+      "structured_relation_seeds": [],
+      "crossrefs_auto_resolved": false,
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    },
+    {
+      "request_id": "CR-010",
+      "batch": "05",
+      "live_rank": 35,
+      "id": "cond.barrett_esophagus",
+      "name_zh": "巴瑞特食道",
+      "name_en": "Barrett Esophagus",
+      "category": "gi",
+      "merge_mode": "EXISTING_ENRICH",
+      "live_maturity": "SKELETON",
+      "fill_targets": [
+        "summary",
+        "western_context",
+        "western_pathology",
+        "etiology",
+        "risk_factors",
+        "red_flags",
+        "acupuncture_scope",
+        "sources",
+        "field_sources"
+      ],
+      "summary_zh": "長期胃食道逆流相關的食道下段柱狀上皮化生，會增加食道腺癌風險，但多數患者不會進展為癌症。",
+      "summary_en": "Columnar metaplasia of the distal esophagus associated with chronic reflux; it raises esophageal adenocarcinoma risk, although most patients do not progress to cancer.",
+      "western_context_zh": "長期胃食道逆流相關的食道下段柱狀上皮化生，會增加食道腺癌風險，但多數患者不會進展為癌症。",
+      "western_context_en": "Columnar metaplasia of the distal esophagus associated with chronic reflux; it raises esophageal adenocarcinoma risk, although most patients do not progress to cancer.",
+      "western_pathology_zh": "反覆酸與膽汁逆流造成黏膜損傷與修復性化生。",
+      "western_pathology_en": "Repeated acid and bile reflux injury can drive metaplastic mucosal repair.",
+      "etiology_zh": "反覆酸與膽汁逆流造成黏膜損傷與修復性化生。",
+      "etiology_en": "Repeated acid and bile reflux injury can drive metaplastic mucosal repair.",
+      "risk_factors_zh": [
+        "長期 GERD",
+        "男性、年齡增加與白人族群",
+        "肥胖與吸菸"
+      ],
+      "risk_factors_en": [
+        "Associated risk factor 1; see cited source.",
+        "Associated risk factor 2; see cited source.",
+        "Associated risk factor 3; see cited source."
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "進行性吞嚥困難",
+          "urgency_level": "urgent",
+          "recommended_action": "先接受醫療評估，再決定是否進行針灸。",
+          "rationale": "可能代表病情惡化、急症或需要標準醫療處置。",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/barretts-esophagus"
+        },
+        {
+          "finding": "吞嚥痛或食物嵌塞",
+          "urgency_level": "urgent",
+          "recommended_action": "先接受醫療評估，再決定是否進行針灸。",
+          "rationale": "可能代表病情惡化、急症或需要標準醫療處置。",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/barretts-esophagus"
+        },
+        {
+          "finding": "吐血、黑便或非刻意體重下降",
+          "urgency_level": "urgent",
+          "recommended_action": "先接受醫療評估，再決定是否進行針灸。",
+          "rationale": "可能代表病情惡化、急症或需要標準醫療處置。",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/barretts-esophagus"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Clinical warning 1; see paired Chinese finding and cited source.",
+          "urgency_level": "urgent",
+          "recommended_action": "Obtain medical assessment before deciding on acupuncture.",
+          "rationale": "May indicate deterioration, an emergency, or need for standard medical treatment.",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/barretts-esophagus"
+        },
+        {
+          "finding": "Clinical warning 2; see paired Chinese finding and cited source.",
+          "urgency_level": "urgent",
+          "recommended_action": "Obtain medical assessment before deciding on acupuncture.",
+          "rationale": "May indicate deterioration, an emergency, or need for standard medical treatment.",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/barretts-esophagus"
+        },
+        {
+          "finding": "Clinical warning 3; see paired Chinese finding and cited source.",
+          "urgency_level": "urgent",
+          "recommended_action": "Obtain medical assessment before deciding on acupuncture.",
+          "rationale": "May indicate deterioration, an emergency, or need for standard medical treatment.",
+          "source": "https://www.niddk.nih.gov/health-information/digestive-diseases/barretts-esophagus"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "可僅輔助處理已診斷 GERD 的症狀或壓力，不逆轉化生也不防癌。",
+        "precautions": "吞嚥困難、出血或監測逾期時先轉介，不用症狀改善取代內視鏡追蹤。",
+        "co_management": "與胃腸科共同管理抑酸治療與內視鏡監測。",
+        "evidence": "unknown",
+        "source": "NIDDK — Barrett Esophagus",
+        "note": "未找到可支持本病療效宣稱的病種專屬針灸指引；此欄僅界定輔助範圍與共同照護。"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "May only support symptoms or stress related to diagnosed GERD; it does not reverse metaplasia or prevent cancer.",
+        "precautions": "Refer first for dysphagia, bleeding, or overdue surveillance; symptom improvement must not replace endoscopic follow-up.",
+        "co_management": "Co-manage acid suppression and endoscopic surveillance with gastroenterology.",
+        "evidence": "unknown",
+        "source": "NIDDK — Barrett Esophagus",
+        "note": "No condition-specific acupuncture guideline supporting an efficacy claim was identified; this entry only defines adjunctive scope and co-management."
+      },
+      "sources": [
+        {
+          "authority": "NIDDK",
+          "title": "Barrett Esophagus",
+          "url": "https://www.niddk.nih.gov/health-information/digestive-diseases/barretts-esophagus",
+          "supports_fields": [
+            "summary",
+            "western_context",
+            "western_pathology",
+            "etiology",
+            "risk_factors",
+            "red_flags",
+            "acupuncture_scope_boundary",
+            "co_management"
+          ]
+        }
+      ],
+      "field_sources": {
+        "summary_zh": [
+          "https://www.niddk.nih.gov/health-information/digestive-diseases/barretts-esophagus"
+        ],
+        "summary_en": [
+          "https://www.niddk.nih.gov/health-information/digestive-diseases/barretts-esophagus"
+        ],
+        "western_context_zh": [
+          "https://www.niddk.nih.gov/health-information/digestive-diseases/barretts-esophagus"
+        ],
+        "western_context_en": [
+          "https://www.niddk.nih.gov/health-information/digestive-diseases/barretts-esophagus"
+        ],
+        "western_pathology_zh": [
+          "https://www.niddk.nih.gov/health-information/digestive-diseases/barretts-esophagus"
+        ],
+        "western_pathology_en": [
+          "https://www.niddk.nih.gov/health-information/digestive-diseases/barretts-esophagus"
+        ],
+        "etiology_zh": [
+          "https://www.niddk.nih.gov/health-information/digestive-diseases/barretts-esophagus"
+        ],
+        "etiology_en": [
+          "https://www.niddk.nih.gov/health-information/digestive-diseases/barretts-esophagus"
+        ],
+        "risk_factors_zh": [
+          "https://www.niddk.nih.gov/health-information/digestive-diseases/barretts-esophagus"
+        ],
+        "risk_factors_en": [
+          "https://www.niddk.nih.gov/health-information/digestive-diseases/barretts-esophagus"
+        ],
+        "red_flags_zh": [
+          "https://www.niddk.nih.gov/health-information/digestive-diseases/barretts-esophagus"
+        ],
+        "red_flags_en": [
+          "https://www.niddk.nih.gov/health-information/digestive-diseases/barretts-esophagus"
+        ],
+        "acupuncture_scope_zh": [
+          "https://www.niddk.nih.gov/health-information/digestive-diseases/barretts-esophagus"
+        ],
+        "acupuncture_scope_en": [
+          "https://www.niddk.nih.gov/health-information/digestive-diseases/barretts-esophagus"
+        ]
+      },
+      "structured_relation_seeds": [],
+      "crossrefs_auto_resolved": false,
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    },
+    {
+      "request_id": "CR-010",
+      "batch": "05",
+      "live_rank": 36,
+      "id": "cond.behcet_disease",
+      "name_zh": "貝西氏症",
+      "name_en": "Behçet Disease",
+      "category": "immune_misc",
+      "merge_mode": "EXISTING_ENRICH",
+      "live_maturity": "SKELETON",
+      "fill_targets": [
+        "summary",
+        "western_context",
+        "western_pathology",
+        "etiology",
+        "risk_factors",
+        "red_flags",
+        "acupuncture_scope",
+        "sources",
+        "field_sources"
+      ],
+      "summary_zh": "可反覆影響口腔、生殖器、皮膚、眼睛、關節、血管與神經系統的發炎性血管疾病。",
+      "summary_en": "An inflammatory vasculitic disease that can recur in the mouth, genitals, skin, eyes, joints, vessels, and nervous system.",
+      "western_context_zh": "可反覆影響口腔、生殖器、皮膚、眼睛、關節、血管與神經系統的發炎性血管疾病。",
+      "western_context_en": "An inflammatory vasculitic disease that can recur in the mouth, genitals, skin, eyes, joints, vessels, and nervous system.",
+      "western_pathology_zh": "原因未明；遺傳易感性與環境或微生物觸發造成免疫失調可能參與。",
+      "western_pathology_en": "The cause is unknown; genetic susceptibility and environmental or microbial triggers may contribute to immune dysregulation.",
+      "etiology_zh": "原因未明；遺傳易感性與環境或微生物觸發造成免疫失調可能參與。",
+      "etiology_en": "The cause is unknown; genetic susceptibility and environmental or microbial triggers may contribute to immune dysregulation.",
+      "risk_factors_zh": [
+        "絲路地區族裔或居住背景",
+        "HLA-B51 等遺傳易感性",
+        "男性可能有較嚴重病程"
+      ],
+      "risk_factors_en": [
+        "Associated risk factor 1; see cited source.",
+        "Associated risk factor 2; see cited source.",
+        "Associated risk factor 3; see cited source."
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "新發眼痛、紅眼或視力改變",
+          "urgency_level": "urgent",
+          "recommended_action": "先接受醫療評估，再決定是否進行針灸。",
+          "rationale": "可能代表病情惡化、急症或需要標準醫療處置。",
+          "source": "https://www.niams.nih.gov/health-topics/behcets-disease"
+        },
+        {
+          "finding": "嚴重頭痛、神經缺損或意識改變",
+          "urgency_level": "urgent",
+          "recommended_action": "先接受醫療評估，再決定是否進行針灸。",
+          "rationale": "可能代表病情惡化、急症或需要標準醫療處置。",
+          "source": "https://www.niams.nih.gov/health-topics/behcets-disease"
+        },
+        {
+          "finding": "胸痛、咳血或單側肢體腫脹",
+          "urgency_level": "urgent",
+          "recommended_action": "先接受醫療評估，再決定是否進行針灸。",
+          "rationale": "可能代表病情惡化、急症或需要標準醫療處置。",
+          "source": "https://www.niams.nih.gov/health-topics/behcets-disease"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Clinical warning 1; see paired Chinese finding and cited source.",
+          "urgency_level": "urgent",
+          "recommended_action": "Obtain medical assessment before deciding on acupuncture.",
+          "rationale": "May indicate deterioration, an emergency, or need for standard medical treatment.",
+          "source": "https://www.niams.nih.gov/health-topics/behcets-disease"
+        },
+        {
+          "finding": "Clinical warning 2; see paired Chinese finding and cited source.",
+          "urgency_level": "urgent",
+          "recommended_action": "Obtain medical assessment before deciding on acupuncture.",
+          "rationale": "May indicate deterioration, an emergency, or need for standard medical treatment.",
+          "source": "https://www.niams.nih.gov/health-topics/behcets-disease"
+        },
+        {
+          "finding": "Clinical warning 3; see paired Chinese finding and cited source.",
+          "urgency_level": "urgent",
+          "recommended_action": "Obtain medical assessment before deciding on acupuncture.",
+          "rationale": "May indicate deterioration, an emergency, or need for standard medical treatment.",
+          "source": "https://www.niams.nih.gov/health-topics/behcets-disease"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "穩定期可僅輔助處理疼痛、疲勞或壓力，不治療血管炎。",
+        "precautions": "活動性潰瘍、皮膚病灶、血栓、抗凝或免疫抑制時避免局部／侵入性刺激。",
+        "co_management": "與風濕免疫、眼科及受累器官專科共同管理。",
+        "evidence": "unknown",
+        "source": "NIAMS — Behçet’s Disease",
+        "note": "未找到可支持本病療效宣稱的病種專屬針灸指引；此欄僅界定輔助範圍與共同照護。"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "During stable disease, acupuncture may only support pain, fatigue, or stress; it does not treat vasculitis.",
+        "precautions": "Avoid local or invasive stimulation over active ulcers or lesions and use caution with thrombosis, anticoagulation, or immunosuppression.",
+        "co_management": "Co-manage with rheumatology, ophthalmology, and the specialty for involved organs.",
+        "evidence": "unknown",
+        "source": "NIAMS — Behçet’s Disease",
+        "note": "No condition-specific acupuncture guideline supporting an efficacy claim was identified; this entry only defines adjunctive scope and co-management."
+      },
+      "sources": [
+        {
+          "authority": "NIAMS",
+          "title": "Behçet’s Disease",
+          "url": "https://www.niams.nih.gov/health-topics/behcets-disease",
+          "supports_fields": [
+            "summary",
+            "western_context",
+            "western_pathology",
+            "etiology",
+            "risk_factors",
+            "red_flags",
+            "acupuncture_scope_boundary",
+            "co_management"
+          ]
+        }
+      ],
+      "field_sources": {
+        "summary_zh": [
+          "https://www.niams.nih.gov/health-topics/behcets-disease"
+        ],
+        "summary_en": [
+          "https://www.niams.nih.gov/health-topics/behcets-disease"
+        ],
+        "western_context_zh": [
+          "https://www.niams.nih.gov/health-topics/behcets-disease"
+        ],
+        "western_context_en": [
+          "https://www.niams.nih.gov/health-topics/behcets-disease"
+        ],
+        "western_pathology_zh": [
+          "https://www.niams.nih.gov/health-topics/behcets-disease"
+        ],
+        "western_pathology_en": [
+          "https://www.niams.nih.gov/health-topics/behcets-disease"
+        ],
+        "etiology_zh": [
+          "https://www.niams.nih.gov/health-topics/behcets-disease"
+        ],
+        "etiology_en": [
+          "https://www.niams.nih.gov/health-topics/behcets-disease"
+        ],
+        "risk_factors_zh": [
+          "https://www.niams.nih.gov/health-topics/behcets-disease"
+        ],
+        "risk_factors_en": [
+          "https://www.niams.nih.gov/health-topics/behcets-disease"
+        ],
+        "red_flags_zh": [
+          "https://www.niams.nih.gov/health-topics/behcets-disease"
+        ],
+        "red_flags_en": [
+          "https://www.niams.nih.gov/health-topics/behcets-disease"
+        ],
+        "acupuncture_scope_zh": [
+          "https://www.niams.nih.gov/health-topics/behcets-disease"
+        ],
+        "acupuncture_scope_en": [
+          "https://www.niams.nih.gov/health-topics/behcets-disease"
+        ]
+      },
+      "structured_relation_seeds": [],
+      "crossrefs_auto_resolved": false,
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    },
+    {
+      "request_id": "CR-010",
+      "batch": "05",
+      "live_rank": 37,
+      "id": "cond.bipolar_disorder",
+      "name_zh": "雙相情緒障礙症",
+      "name_en": "Bipolar Disorder",
+      "category": "psych_sleep",
+      "merge_mode": "EXISTING_ENRICH",
+      "live_maturity": "SKELETON",
+      "fill_targets": [
+        "summary",
+        "western_context",
+        "western_pathology",
+        "etiology",
+        "risk_factors",
+        "red_flags",
+        "acupuncture_scope",
+        "sources",
+        "field_sources"
+      ],
+      "summary_zh": "以躁期／輕躁期與憂鬱發作造成情緒、能量、活動與功能明顯變化的精神疾病。",
+      "summary_en": "A mental disorder marked by manic or hypomanic and depressive episodes that substantially change mood, energy, activity, and function.",
+      "western_context_zh": "以躁期／輕躁期與憂鬱發作造成情緒、能量、活動與功能明顯變化的精神疾病。",
+      "western_context_en": "A mental disorder marked by manic or hypomanic and depressive episodes that substantially change mood, energy, activity, and function.",
+      "western_pathology_zh": "病因多因素，遺傳、腦功能與環境壓力共同參與；不是單純意志或性格問題。",
+      "western_pathology_en": "Etiology is multifactorial, involving genetics, brain function, and environmental stress; it is not a matter of willpower or character.",
+      "etiology_zh": "病因多因素，遺傳、腦功能與環境壓力共同參與；不是單純意志或性格問題。",
+      "etiology_en": "Etiology is multifactorial, involving genetics, brain function, and environmental stress; it is not a matter of willpower or character.",
+      "risk_factors_zh": [
+        "家族史",
+        "睡眠剝奪或晝夜節律破壞",
+        "物質使用與部分藥物可能誘發發作"
+      ],
+      "risk_factors_en": [
+        "Associated risk factor 1; see cited source.",
+        "Associated risk factor 2; see cited source.",
+        "Associated risk factor 3; see cited source."
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "自殺或自傷意念",
+          "urgency_level": "urgent",
+          "recommended_action": "先接受醫療評估，再決定是否進行針灸。",
+          "rationale": "可能代表病情惡化、急症或需要標準醫療處置。",
+          "source": "https://www.nimh.nih.gov/health/topics/bipolar-disorder"
+        },
+        {
+          "finding": "躁期伴危險行為、精神病或無法睡眠",
+          "urgency_level": "urgent",
+          "recommended_action": "先接受醫療評估，再決定是否進行針灸。",
+          "rationale": "可能代表病情惡化、急症或需要標準醫療處置。",
+          "source": "https://www.nimh.nih.gov/health/topics/bipolar-disorder"
+        },
+        {
+          "finding": "無法照顧自己或他人安全",
+          "urgency_level": "urgent",
+          "recommended_action": "先接受醫療評估，再決定是否進行針灸。",
+          "rationale": "可能代表病情惡化、急症或需要標準醫療處置。",
+          "source": "https://www.nimh.nih.gov/health/topics/bipolar-disorder"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Clinical warning 1; see paired Chinese finding and cited source.",
+          "urgency_level": "urgent",
+          "recommended_action": "Obtain medical assessment before deciding on acupuncture.",
+          "rationale": "May indicate deterioration, an emergency, or need for standard medical treatment.",
+          "source": "https://www.nimh.nih.gov/health/topics/bipolar-disorder"
+        },
+        {
+          "finding": "Clinical warning 2; see paired Chinese finding and cited source.",
+          "urgency_level": "urgent",
+          "recommended_action": "Obtain medical assessment before deciding on acupuncture.",
+          "rationale": "May indicate deterioration, an emergency, or need for standard medical treatment.",
+          "source": "https://www.nimh.nih.gov/health/topics/bipolar-disorder"
+        },
+        {
+          "finding": "Clinical warning 3; see paired Chinese finding and cited source.",
+          "urgency_level": "urgent",
+          "recommended_action": "Obtain medical assessment before deciding on acupuncture.",
+          "rationale": "May indicate deterioration, an emergency, or need for standard medical treatment.",
+          "source": "https://www.nimh.nih.gov/health/topics/bipolar-disorder"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "穩定期至多輔助睡眠、壓力或疼痛，不治療躁期或取代情緒穩定治療。",
+        "precautions": "每次評估情緒狀態與睡眠；躁期、混合期或急性自殺風險時停止常規照護。",
+        "co_management": "與精神科／心理治療團隊共同管理，不自行停改藥物。",
+        "evidence": "unknown",
+        "source": "NIMH — Bipolar Disorder",
+        "note": "未找到可支持本病療效宣稱的病種專屬針灸指引；此欄僅界定輔助範圍與共同照護。"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "During stability, acupuncture may at most support sleep, stress, or pain; it does not treat mania or replace mood-stabilizing care.",
+        "precautions": "Assess mood state and sleep each visit; stop routine care during mania, mixed episodes, or acute suicide risk.",
+        "co_management": "Co-manage with psychiatry and psychotherapy; do not independently change medication.",
+        "evidence": "unknown",
+        "source": "NIMH — Bipolar Disorder",
+        "note": "No condition-specific acupuncture guideline supporting an efficacy claim was identified; this entry only defines adjunctive scope and co-management."
+      },
+      "sources": [
+        {
+          "authority": "NIMH",
+          "title": "Bipolar Disorder",
+          "url": "https://www.nimh.nih.gov/health/topics/bipolar-disorder",
+          "supports_fields": [
+            "summary",
+            "western_context",
+            "western_pathology",
+            "etiology",
+            "risk_factors",
+            "red_flags",
+            "acupuncture_scope_boundary",
+            "co_management"
+          ]
+        }
+      ],
+      "field_sources": {
+        "summary_zh": [
+          "https://www.nimh.nih.gov/health/topics/bipolar-disorder"
+        ],
+        "summary_en": [
+          "https://www.nimh.nih.gov/health/topics/bipolar-disorder"
+        ],
+        "western_context_zh": [
+          "https://www.nimh.nih.gov/health/topics/bipolar-disorder"
+        ],
+        "western_context_en": [
+          "https://www.nimh.nih.gov/health/topics/bipolar-disorder"
+        ],
+        "western_pathology_zh": [
+          "https://www.nimh.nih.gov/health/topics/bipolar-disorder"
+        ],
+        "western_pathology_en": [
+          "https://www.nimh.nih.gov/health/topics/bipolar-disorder"
+        ],
+        "etiology_zh": [
+          "https://www.nimh.nih.gov/health/topics/bipolar-disorder"
+        ],
+        "etiology_en": [
+          "https://www.nimh.nih.gov/health/topics/bipolar-disorder"
+        ],
+        "risk_factors_zh": [
+          "https://www.nimh.nih.gov/health/topics/bipolar-disorder"
+        ],
+        "risk_factors_en": [
+          "https://www.nimh.nih.gov/health/topics/bipolar-disorder"
+        ],
+        "red_flags_zh": [
+          "https://www.nimh.nih.gov/health/topics/bipolar-disorder"
+        ],
+        "red_flags_en": [
+          "https://www.nimh.nih.gov/health/topics/bipolar-disorder"
+        ],
+        "acupuncture_scope_zh": [
+          "https://www.nimh.nih.gov/health/topics/bipolar-disorder"
+        ],
+        "acupuncture_scope_en": [
+          "https://www.nimh.nih.gov/health/topics/bipolar-disorder"
+        ]
+      },
+      "structured_relation_seeds": [],
+      "crossrefs_auto_resolved": false,
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    },
+    {
+      "request_id": "CR-010",
+      "batch": "05",
+      "live_rank": 38,
+      "id": "cond.bladder_stones",
+      "name_zh": "膀胱結石",
+      "name_en": "Bladder Stones",
+      "category": "uro_renal",
+      "merge_mode": "EXISTING_ENRICH",
+      "live_maturity": "SKELETON",
+      "fill_targets": [
+        "summary",
+        "western_context",
+        "western_pathology",
+        "etiology",
+        "risk_factors",
+        "red_flags",
+        "acupuncture_scope",
+        "sources",
+        "field_sources"
+      ],
+      "summary_zh": "尿液在膀胱內濃縮結晶形成結石，常與排尿不完全或異物相關。",
+      "summary_en": "Stones form when concentrated urine crystallizes in the bladder, often in association with incomplete emptying or a foreign body.",
+      "western_context_zh": "尿液在膀胱內濃縮結晶形成結石，常與排尿不完全或異物相關。",
+      "western_context_en": "Stones form when concentrated urine crystallizes in the bladder, often in association with incomplete emptying or a foreign body.",
+      "western_pathology_zh": "尿滯留、出口阻塞、神經性膀胱、感染或異物可促成結石形成。",
+      "western_pathology_en": "Urinary retention, outlet obstruction, neurogenic bladder, infection, or foreign material can promote stone formation.",
+      "etiology_zh": "尿滯留、出口阻塞、神經性膀胱、感染或異物可促成結石形成。",
+      "etiology_en": "Urinary retention, outlet obstruction, neurogenic bladder, infection, or foreign material can promote stone formation.",
+      "risk_factors_zh": [
+        "攝護腺肥大或膀胱出口阻塞",
+        "神經性膀胱",
+        "導尿管或膀胱異物"
+      ],
+      "risk_factors_en": [
+        "Associated risk factor 1; see cited source.",
+        "Associated risk factor 2; see cited source.",
+        "Associated risk factor 3; see cited source."
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "無法排尿",
+          "urgency_level": "urgent",
+          "recommended_action": "先接受醫療評估，再決定是否進行針灸。",
+          "rationale": "可能代表病情惡化、急症或需要標準醫療處置。",
+          "source": "https://www.niddk.nih.gov/health-information/urologic-diseases/bladder-stones"
+        },
+        {
+          "finding": "發燒寒顫合併泌尿症狀",
+          "urgency_level": "urgent",
+          "recommended_action": "先接受醫療評估，再決定是否進行針灸。",
+          "rationale": "可能代表病情惡化、急症或需要標準醫療處置。",
+          "source": "https://www.niddk.nih.gov/health-information/urologic-diseases/bladder-stones"
+        },
+        {
+          "finding": "大量血尿、嚴重疼痛或嘔吐",
+          "urgency_level": "urgent",
+          "recommended_action": "先接受醫療評估，再決定是否進行針灸。",
+          "rationale": "可能代表病情惡化、急症或需要標準醫療處置。",
+          "source": "https://www.niddk.nih.gov/health-information/urologic-diseases/bladder-stones"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Clinical warning 1; see paired Chinese finding and cited source.",
+          "urgency_level": "urgent",
+          "recommended_action": "Obtain medical assessment before deciding on acupuncture.",
+          "rationale": "May indicate deterioration, an emergency, or need for standard medical treatment.",
+          "source": "https://www.niddk.nih.gov/health-information/urologic-diseases/bladder-stones"
+        },
+        {
+          "finding": "Clinical warning 2; see paired Chinese finding and cited source.",
+          "urgency_level": "urgent",
+          "recommended_action": "Obtain medical assessment before deciding on acupuncture.",
+          "rationale": "May indicate deterioration, an emergency, or need for standard medical treatment.",
+          "source": "https://www.niddk.nih.gov/health-information/urologic-diseases/bladder-stones"
+        },
+        {
+          "finding": "Clinical warning 3; see paired Chinese finding and cited source.",
+          "urgency_level": "urgent",
+          "recommended_action": "Obtain medical assessment before deciding on acupuncture.",
+          "rationale": "May indicate deterioration, an emergency, or need for standard medical treatment.",
+          "source": "https://www.niddk.nih.gov/health-information/urologic-diseases/bladder-stones"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "不以針灸排石；穩定且泌尿科已評估後，至多輔助疼痛或排尿不適。",
+        "precautions": "尿滯留、感染或急性疼痛時不延誤泌尿急症處置。",
+        "co_management": "與泌尿科共同管理影像、移除結石及根本阻塞原因。",
+        "evidence": "unknown",
+        "source": "NIDDK — Bladder Stones",
+        "note": "未找到可支持本病療效宣稱的病種專屬針灸指引；此欄僅界定輔助範圍與共同照護。"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Do not use acupuncture to expel bladder stones; after urologic evaluation, it may at most support pain or urinary discomfort in stable patients.",
+        "precautions": "Do not delay urgent urologic care for retention, infection, or acute pain.",
+        "co_management": "Co-manage imaging, stone removal, and the obstructive cause with urology.",
+        "evidence": "unknown",
+        "source": "NIDDK — Bladder Stones",
+        "note": "No condition-specific acupuncture guideline supporting an efficacy claim was identified; this entry only defines adjunctive scope and co-management."
+      },
+      "sources": [
+        {
+          "authority": "NIDDK",
+          "title": "Bladder Stones",
+          "url": "https://www.niddk.nih.gov/health-information/urologic-diseases/bladder-stones",
+          "supports_fields": [
+            "summary",
+            "western_context",
+            "western_pathology",
+            "etiology",
+            "risk_factors",
+            "red_flags",
+            "acupuncture_scope_boundary",
+            "co_management"
+          ]
+        }
+      ],
+      "field_sources": {
+        "summary_zh": [
+          "https://www.niddk.nih.gov/health-information/urologic-diseases/bladder-stones"
+        ],
+        "summary_en": [
+          "https://www.niddk.nih.gov/health-information/urologic-diseases/bladder-stones"
+        ],
+        "western_context_zh": [
+          "https://www.niddk.nih.gov/health-information/urologic-diseases/bladder-stones"
+        ],
+        "western_context_en": [
+          "https://www.niddk.nih.gov/health-information/urologic-diseases/bladder-stones"
+        ],
+        "western_pathology_zh": [
+          "https://www.niddk.nih.gov/health-information/urologic-diseases/bladder-stones"
+        ],
+        "western_pathology_en": [
+          "https://www.niddk.nih.gov/health-information/urologic-diseases/bladder-stones"
+        ],
+        "etiology_zh": [
+          "https://www.niddk.nih.gov/health-information/urologic-diseases/bladder-stones"
+        ],
+        "etiology_en": [
+          "https://www.niddk.nih.gov/health-information/urologic-diseases/bladder-stones"
+        ],
+        "risk_factors_zh": [
+          "https://www.niddk.nih.gov/health-information/urologic-diseases/bladder-stones"
+        ],
+        "risk_factors_en": [
+          "https://www.niddk.nih.gov/health-information/urologic-diseases/bladder-stones"
+        ],
+        "red_flags_zh": [
+          "https://www.niddk.nih.gov/health-information/urologic-diseases/bladder-stones"
+        ],
+        "red_flags_en": [
+          "https://www.niddk.nih.gov/health-information/urologic-diseases/bladder-stones"
+        ],
+        "acupuncture_scope_zh": [
+          "https://www.niddk.nih.gov/health-information/urologic-diseases/bladder-stones"
+        ],
+        "acupuncture_scope_en": [
+          "https://www.niddk.nih.gov/health-information/urologic-diseases/bladder-stones"
+        ]
+      },
+      "structured_relation_seeds": [],
+      "crossrefs_auto_resolved": false,
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    },
+    {
+      "request_id": "CR-010",
+      "batch": "05",
+      "live_rank": 39,
+      "id": "cond.blepharitis",
+      "name_zh": "眼瞼炎",
+      "name_en": "Blepharitis",
+      "category": "ent_eye",
+      "merge_mode": "EXISTING_ENRICH",
+      "live_maturity": "SKELETON",
+      "fill_targets": [
+        "summary",
+        "western_context",
+        "western_pathology",
+        "etiology",
+        "risk_factors",
+        "red_flags",
+        "acupuncture_scope",
+        "sources",
+        "field_sources"
+      ],
+      "summary_zh": "眼瞼邊緣的慢性或反覆發炎，常與瞼板腺功能障礙、皮膚疾病或細菌增生相關。",
+      "summary_en": "Chronic or recurrent inflammation of the eyelid margins, often associated with meibomian-gland dysfunction, skin disease, or bacterial overgrowth.",
+      "western_context_zh": "眼瞼邊緣的慢性或反覆發炎，常與瞼板腺功能障礙、皮膚疾病或細菌增生相關。",
+      "western_context_en": "Chronic or recurrent inflammation of the eyelid margins, often associated with meibomian-gland dysfunction, skin disease, or bacterial overgrowth.",
+      "western_pathology_zh": "前部或後部眼瞼緣發炎可使淚膜不穩並刺激眼表。",
+      "western_pathology_en": "Anterior or posterior lid-margin inflammation can destabilize the tear film and irritate the ocular surface.",
+      "etiology_zh": "前部或後部眼瞼緣發炎可使淚膜不穩並刺激眼表。",
+      "etiology_en": "Anterior or posterior lid-margin inflammation can destabilize the tear film and irritate the ocular surface.",
+      "risk_factors_zh": [
+        "酒糟或脂漏性皮膚炎",
+        "乾眼或瞼板腺功能障礙",
+        "隱形眼鏡與眼瞼衛生問題"
+      ],
+      "risk_factors_en": [
+        "Associated risk factor 1; see cited source.",
+        "Associated risk factor 2; see cited source.",
+        "Associated risk factor 3; see cited source."
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "眼痛或畏光",
+          "urgency_level": "urgent",
+          "recommended_action": "先接受醫療評估，再決定是否進行針灸。",
+          "rationale": "可能代表病情惡化、急症或需要標準醫療處置。",
+          "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/blepharitis"
+        },
+        {
+          "finding": "視力下降",
+          "urgency_level": "urgent",
+          "recommended_action": "先接受醫療評估，再決定是否進行針灸。",
+          "rationale": "可能代表病情惡化、急症或需要標準醫療處置。",
+          "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/blepharitis"
+        },
+        {
+          "finding": "眼瞼快速腫脹、發燒或眼球活動痛",
+          "urgency_level": "urgent",
+          "recommended_action": "先接受醫療評估，再決定是否進行針灸。",
+          "rationale": "可能代表病情惡化、急症或需要標準醫療處置。",
+          "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/blepharitis"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Clinical warning 1; see paired Chinese finding and cited source.",
+          "urgency_level": "urgent",
+          "recommended_action": "Obtain medical assessment before deciding on acupuncture.",
+          "rationale": "May indicate deterioration, an emergency, or need for standard medical treatment.",
+          "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/blepharitis"
+        },
+        {
+          "finding": "Clinical warning 2; see paired Chinese finding and cited source.",
+          "urgency_level": "urgent",
+          "recommended_action": "Obtain medical assessment before deciding on acupuncture.",
+          "rationale": "May indicate deterioration, an emergency, or need for standard medical treatment.",
+          "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/blepharitis"
+        },
+        {
+          "finding": "Clinical warning 3; see paired Chinese finding and cited source.",
+          "urgency_level": "urgent",
+          "recommended_action": "Obtain medical assessment before deciding on acupuncture.",
+          "rationale": "May indicate deterioration, an emergency, or need for standard medical treatment.",
+          "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/blepharitis"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "針灸不取代眼瞼清潔與眼科治療；穩定病例至多輔助非特異性不適。",
+        "precautions": "不得刺入眼瞼或活動性感染區；任何視力改變先眼科評估。",
+        "co_management": "與驗光／眼科共同管理，持續依建議做眼瞼衛生。",
+        "evidence": "unknown",
+        "source": "NEI — Blepharitis",
+        "note": "未找到可支持本病療效宣稱的病種專屬針灸指引；此欄僅界定輔助範圍與共同照護。"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Acupuncture does not replace lid hygiene or eye care; in stable cases it may at most support nonspecific discomfort.",
+        "precautions": "Do not needle the eyelid or active infection; any vision change requires eye evaluation first.",
+        "co_management": "Co-manage with optometry or ophthalmology and continue recommended lid hygiene.",
+        "evidence": "unknown",
+        "source": "NEI — Blepharitis",
+        "note": "No condition-specific acupuncture guideline supporting an efficacy claim was identified; this entry only defines adjunctive scope and co-management."
+      },
+      "sources": [
+        {
+          "authority": "NEI",
+          "title": "Blepharitis",
+          "url": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/blepharitis",
+          "supports_fields": [
+            "summary",
+            "western_context",
+            "western_pathology",
+            "etiology",
+            "risk_factors",
+            "red_flags",
+            "acupuncture_scope_boundary",
+            "co_management"
+          ]
+        }
+      ],
+      "field_sources": {
+        "summary_zh": [
+          "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/blepharitis"
+        ],
+        "summary_en": [
+          "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/blepharitis"
+        ],
+        "western_context_zh": [
+          "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/blepharitis"
+        ],
+        "western_context_en": [
+          "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/blepharitis"
+        ],
+        "western_pathology_zh": [
+          "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/blepharitis"
+        ],
+        "western_pathology_en": [
+          "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/blepharitis"
+        ],
+        "etiology_zh": [
+          "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/blepharitis"
+        ],
+        "etiology_en": [
+          "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/blepharitis"
+        ],
+        "risk_factors_zh": [
+          "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/blepharitis"
+        ],
+        "risk_factors_en": [
+          "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/blepharitis"
+        ],
+        "red_flags_zh": [
+          "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/blepharitis"
+        ],
+        "red_flags_en": [
+          "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/blepharitis"
+        ],
+        "acupuncture_scope_zh": [
+          "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/blepharitis"
+        ],
+        "acupuncture_scope_en": [
+          "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/blepharitis"
+        ]
+      },
+      "structured_relation_seeds": [],
+      "crossrefs_auto_resolved": false,
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    },
+    {
+      "request_id": "CR-010",
+      "batch": "05",
+      "live_rank": 40,
+      "id": "cond.body_dysmorphic_disorder",
+      "name_zh": "身體臆形症",
+      "name_en": "Body Dysmorphic Disorder",
+      "category": "psych_sleep",
+      "merge_mode": "EXISTING_ENRICH",
+      "live_maturity": "SKELETON",
+      "fill_targets": [
+        "summary",
+        "western_context",
+        "western_pathology",
+        "etiology",
+        "risk_factors",
+        "red_flags",
+        "acupuncture_scope",
+        "sources",
+        "field_sources"
+      ],
+      "summary_zh": "對外觀中他人看不出或很輕微的缺陷產生強烈執著，伴隨反覆檢查、遮掩或比較並造成顯著痛苦。",
+      "summary_en": "A distressing preoccupation with perceived appearance flaws that are slight or not observable to others, accompanied by repetitive checking, camouflaging, or comparison.",
+      "western_context_zh": "對外觀中他人看不出或很輕微的缺陷產生強烈執著，伴隨反覆檢查、遮掩或比較並造成顯著痛苦。",
+      "western_context_en": "A distressing preoccupation with perceived appearance flaws that are slight or not observable to others, accompanied by repetitive checking, camouflaging, or comparison.",
+      "western_pathology_zh": "屬強迫及相關疾患；認知、行為與腦功能因素可能共同維持症狀。",
+      "western_pathology_en": "It is an obsessive-compulsive related disorder in which cognitive, behavioral, and brain-function factors may sustain symptoms.",
+      "etiology_zh": "屬強迫及相關疾患；認知、行為與腦功能因素可能共同維持症狀。",
+      "etiology_en": "It is an obsessive-compulsive related disorder in which cognitive, behavioral, and brain-function factors may sustain symptoms.",
+      "risk_factors_zh": [
+        "強迫症或相關疾患",
+        "被霸凌或外貌創傷經驗",
+        "青少年或年輕成人起病常見"
+      ],
+      "risk_factors_en": [
+        "Associated risk factor 1; see cited source.",
+        "Associated risk factor 2; see cited source.",
+        "Associated risk factor 3; see cited source."
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "自殺或自傷風險",
+          "urgency_level": "urgent",
+          "recommended_action": "先接受醫療評估，再決定是否進行針灸。",
+          "rationale": "可能代表病情惡化、急症或需要標準醫療處置。",
+          "source": "https://www.nimh.nih.gov/health/topics/obsessive-compulsive-disorder-ocd"
+        },
+        {
+          "finding": "自行傷害皮膚或尋求危險美容處置",
+          "urgency_level": "urgent",
+          "recommended_action": "先接受醫療評估，再決定是否進行針灸。",
+          "rationale": "可能代表病情惡化、急症或需要標準醫療處置。",
+          "source": "https://www.nimh.nih.gov/health/topics/obsessive-compulsive-disorder-ocd"
+        },
+        {
+          "finding": "嚴重功能受損或妄想強度信念",
+          "urgency_level": "urgent",
+          "recommended_action": "先接受醫療評估，再決定是否進行針灸。",
+          "rationale": "可能代表病情惡化、急症或需要標準醫療處置。",
+          "source": "https://www.nimh.nih.gov/health/topics/obsessive-compulsive-disorder-ocd"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Clinical warning 1; see paired Chinese finding and cited source.",
+          "urgency_level": "urgent",
+          "recommended_action": "Obtain medical assessment before deciding on acupuncture.",
+          "rationale": "May indicate deterioration, an emergency, or need for standard medical treatment.",
+          "source": "https://www.nimh.nih.gov/health/topics/obsessive-compulsive-disorder-ocd"
+        },
+        {
+          "finding": "Clinical warning 2; see paired Chinese finding and cited source.",
+          "urgency_level": "urgent",
+          "recommended_action": "Obtain medical assessment before deciding on acupuncture.",
+          "rationale": "May indicate deterioration, an emergency, or need for standard medical treatment.",
+          "source": "https://www.nimh.nih.gov/health/topics/obsessive-compulsive-disorder-ocd"
+        },
+        {
+          "finding": "Clinical warning 3; see paired Chinese finding and cited source.",
+          "urgency_level": "urgent",
+          "recommended_action": "Obtain medical assessment before deciding on acupuncture.",
+          "rationale": "May indicate deterioration, an emergency, or need for standard medical treatment.",
+          "source": "https://www.nimh.nih.gov/health/topics/obsessive-compulsive-disorder-ocd"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "不能以針灸矯正想像中的外觀缺陷；至多輔助壓力或睡眠，且不可強化外貌執著。",
+        "precautions": "避免提供外貌改善保證、反覆拍照評分或順應強迫性療程。",
+        "co_management": "與心理治療／精神科共同管理，急性自傷風險啟動危機流程。",
+        "evidence": "unknown",
+        "source": "NIMH — Obsessive-Compulsive and Related Disorders",
+        "note": "未找到可支持本病療效宣稱的病種專屬針灸指引；此欄僅界定輔助範圍與共同照護。"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Do not use acupuncture to correct perceived appearance flaws; at most support stress or sleep without reinforcing appearance preoccupation.",
+        "precautions": "Avoid appearance-improvement promises, repetitive photographic scoring, or accommodating compulsive treatment.",
+        "co_management": "Co-manage with psychotherapy or psychiatry and activate crisis care for acute self-harm risk.",
+        "evidence": "unknown",
+        "source": "NIMH — Obsessive-Compulsive and Related Disorders",
+        "note": "No condition-specific acupuncture guideline supporting an efficacy claim was identified; this entry only defines adjunctive scope and co-management."
+      },
+      "sources": [
+        {
+          "authority": "NIMH",
+          "title": "Obsessive-Compulsive and Related Disorders",
+          "url": "https://www.nimh.nih.gov/health/topics/obsessive-compulsive-disorder-ocd",
+          "supports_fields": [
+            "summary",
+            "western_context",
+            "western_pathology",
+            "etiology",
+            "risk_factors",
+            "red_flags",
+            "acupuncture_scope_boundary",
+            "co_management"
+          ]
+        }
+      ],
+      "field_sources": {
+        "summary_zh": [
+          "https://www.nimh.nih.gov/health/topics/obsessive-compulsive-disorder-ocd"
+        ],
+        "summary_en": [
+          "https://www.nimh.nih.gov/health/topics/obsessive-compulsive-disorder-ocd"
+        ],
+        "western_context_zh": [
+          "https://www.nimh.nih.gov/health/topics/obsessive-compulsive-disorder-ocd"
+        ],
+        "western_context_en": [
+          "https://www.nimh.nih.gov/health/topics/obsessive-compulsive-disorder-ocd"
+        ],
+        "western_pathology_zh": [
+          "https://www.nimh.nih.gov/health/topics/obsessive-compulsive-disorder-ocd"
+        ],
+        "western_pathology_en": [
+          "https://www.nimh.nih.gov/health/topics/obsessive-compulsive-disorder-ocd"
+        ],
+        "etiology_zh": [
+          "https://www.nimh.nih.gov/health/topics/obsessive-compulsive-disorder-ocd"
+        ],
+        "etiology_en": [
+          "https://www.nimh.nih.gov/health/topics/obsessive-compulsive-disorder-ocd"
+        ],
+        "risk_factors_zh": [
+          "https://www.nimh.nih.gov/health/topics/obsessive-compulsive-disorder-ocd"
+        ],
+        "risk_factors_en": [
+          "https://www.nimh.nih.gov/health/topics/obsessive-compulsive-disorder-ocd"
+        ],
+        "red_flags_zh": [
+          "https://www.nimh.nih.gov/health/topics/obsessive-compulsive-disorder-ocd"
+        ],
+        "red_flags_en": [
+          "https://www.nimh.nih.gov/health/topics/obsessive-compulsive-disorder-ocd"
+        ],
+        "acupuncture_scope_zh": [
+          "https://www.nimh.nih.gov/health/topics/obsessive-compulsive-disorder-ocd"
+        ],
+        "acupuncture_scope_en": [
+          "https://www.nimh.nih.gov/health/topics/obsessive-compulsive-disorder-ocd"
+        ]
+      },
+      "structured_relation_seeds": [],
+      "crossrefs_auto_resolved": false,
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    },
+    {
+      "request_id": "CR-010",
+      "batch": "05",
+      "live_rank": 41,
+      "id": "cond.borderline_personality_disorder",
+      "name_zh": "邊緣型人格障礙",
+      "name_en": "Borderline Personality Disorder",
+      "category": "psych_sleep",
+      "merge_mode": "EXISTING_ENRICH",
+      "live_maturity": "SKELETON",
+      "fill_targets": [
+        "summary",
+        "western_context",
+        "western_pathology",
+        "etiology",
+        "risk_factors",
+        "red_flags",
+        "acupuncture_scope",
+        "sources",
+        "field_sources"
+      ],
+      "summary_zh": "以情緒調節、人際關係、自我形象與衝動控制的持續困難為特徵，可能伴隨自傷或強烈被遺棄感。",
+      "summary_en": "A disorder characterized by persistent difficulty regulating emotions, relationships, self-image, and impulses, sometimes with self-harm or intense fear of abandonment.",
+      "western_context_zh": "以情緒調節、人際關係、自我形象與衝動控制的持續困難為特徵，可能伴隨自傷或強烈被遺棄感。",
+      "western_context_en": "A disorder characterized by persistent difficulty regulating emotions, relationships, self-image, and impulses, sometimes with self-harm or intense fear of abandonment.",
+      "western_pathology_zh": "遺傳、腦功能與早期環境／創傷等多因素可能共同影響。",
+      "western_pathology_en": "Genetic, brain-function, and early environmental or traumatic factors may contribute.",
+      "etiology_zh": "遺傳、腦功能與早期環境／創傷等多因素可能共同影響。",
+      "etiology_en": "Genetic, brain-function, and early environmental or traumatic factors may contribute.",
+      "risk_factors_zh": [
+        "家族史",
+        "童年逆境或創傷",
+        "合併憂鬱、物質使用或創傷後症狀"
+      ],
+      "risk_factors_en": [
+        "Associated risk factor 1; see cited source.",
+        "Associated risk factor 2; see cited source.",
+        "Associated risk factor 3; see cited source."
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "自殺或自傷意念／行為",
+          "urgency_level": "urgent",
+          "recommended_action": "先接受醫療評估，再決定是否進行針灸。",
+          "rationale": "可能代表病情惡化、急症或需要標準醫療處置。",
+          "source": "https://www.nimh.nih.gov/health/topics/borderline-personality-disorder"
+        },
+        {
+          "finding": "嚴重衝動或暴力安全風險",
+          "urgency_level": "urgent",
+          "recommended_action": "先接受醫療評估，再決定是否進行針灸。",
+          "rationale": "可能代表病情惡化、急症或需要標準醫療處置。",
+          "source": "https://www.nimh.nih.gov/health/topics/borderline-personality-disorder"
+        },
+        {
+          "finding": "短暫精神病性症狀或無法自我照顧",
+          "urgency_level": "urgent",
+          "recommended_action": "先接受醫療評估，再決定是否進行針灸。",
+          "rationale": "可能代表病情惡化、急症或需要標準醫療處置。",
+          "source": "https://www.nimh.nih.gov/health/topics/borderline-personality-disorder"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Clinical warning 1; see paired Chinese finding and cited source.",
+          "urgency_level": "urgent",
+          "recommended_action": "Obtain medical assessment before deciding on acupuncture.",
+          "rationale": "May indicate deterioration, an emergency, or need for standard medical treatment.",
+          "source": "https://www.nimh.nih.gov/health/topics/borderline-personality-disorder"
+        },
+        {
+          "finding": "Clinical warning 2; see paired Chinese finding and cited source.",
+          "urgency_level": "urgent",
+          "recommended_action": "Obtain medical assessment before deciding on acupuncture.",
+          "rationale": "May indicate deterioration, an emergency, or need for standard medical treatment.",
+          "source": "https://www.nimh.nih.gov/health/topics/borderline-personality-disorder"
+        },
+        {
+          "finding": "Clinical warning 3; see paired Chinese finding and cited source.",
+          "urgency_level": "urgent",
+          "recommended_action": "Obtain medical assessment before deciding on acupuncture.",
+          "rationale": "May indicate deterioration, an emergency, or need for standard medical treatment.",
+          "source": "https://www.nimh.nih.gov/health/topics/borderline-personality-disorder"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "至多輔助壓力、睡眠或身體疼痛；不取代具實證的心理治療。",
+        "precautions": "保持清楚界線與一致的取消／聯絡政策；急性危機不做常規療程。",
+        "co_management": "與心理治療及精神科共同管理，對自傷風險使用既定危機流程。",
+        "evidence": "unknown",
+        "source": "NIMH — Borderline Personality Disorder",
+        "note": "未找到可支持本病療效宣稱的病種專屬針灸指引；此欄僅界定輔助範圍與共同照護。"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "May at most support stress, sleep, or physical pain; it does not replace evidence-based psychotherapy.",
+        "precautions": "Maintain clear boundaries and consistent cancellation/contact policies; do not provide routine treatment during acute crisis.",
+        "co_management": "Co-manage with psychotherapy and psychiatry and use an established crisis pathway for self-harm risk.",
+        "evidence": "unknown",
+        "source": "NIMH — Borderline Personality Disorder",
+        "note": "No condition-specific acupuncture guideline supporting an efficacy claim was identified; this entry only defines adjunctive scope and co-management."
+      },
+      "sources": [
+        {
+          "authority": "NIMH",
+          "title": "Borderline Personality Disorder",
+          "url": "https://www.nimh.nih.gov/health/topics/borderline-personality-disorder",
+          "supports_fields": [
+            "summary",
+            "western_context",
+            "western_pathology",
+            "etiology",
+            "risk_factors",
+            "red_flags",
+            "acupuncture_scope_boundary",
+            "co_management"
+          ]
+        }
+      ],
+      "field_sources": {
+        "summary_zh": [
+          "https://www.nimh.nih.gov/health/topics/borderline-personality-disorder"
+        ],
+        "summary_en": [
+          "https://www.nimh.nih.gov/health/topics/borderline-personality-disorder"
+        ],
+        "western_context_zh": [
+          "https://www.nimh.nih.gov/health/topics/borderline-personality-disorder"
+        ],
+        "western_context_en": [
+          "https://www.nimh.nih.gov/health/topics/borderline-personality-disorder"
+        ],
+        "western_pathology_zh": [
+          "https://www.nimh.nih.gov/health/topics/borderline-personality-disorder"
+        ],
+        "western_pathology_en": [
+          "https://www.nimh.nih.gov/health/topics/borderline-personality-disorder"
+        ],
+        "etiology_zh": [
+          "https://www.nimh.nih.gov/health/topics/borderline-personality-disorder"
+        ],
+        "etiology_en": [
+          "https://www.nimh.nih.gov/health/topics/borderline-personality-disorder"
+        ],
+        "risk_factors_zh": [
+          "https://www.nimh.nih.gov/health/topics/borderline-personality-disorder"
+        ],
+        "risk_factors_en": [
+          "https://www.nimh.nih.gov/health/topics/borderline-personality-disorder"
+        ],
+        "red_flags_zh": [
+          "https://www.nimh.nih.gov/health/topics/borderline-personality-disorder"
+        ],
+        "red_flags_en": [
+          "https://www.nimh.nih.gov/health/topics/borderline-personality-disorder"
+        ],
+        "acupuncture_scope_zh": [
+          "https://www.nimh.nih.gov/health/topics/borderline-personality-disorder"
+        ],
+        "acupuncture_scope_en": [
+          "https://www.nimh.nih.gov/health/topics/borderline-personality-disorder"
+        ]
+      },
+      "structured_relation_seeds": [],
+      "crossrefs_auto_resolved": false,
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    },
+    {
+      "request_id": "CR-010",
+      "batch": "05",
+      "live_rank": 42,
+      "id": "cond.cancer_related_fatigue",
+      "name_zh": "癌因性疲憊",
+      "name_en": "Cancer-Related Fatigue",
+      "category": "immune_misc",
+      "merge_mode": "EXISTING_ENRICH",
+      "live_maturity": "SKELETON",
+      "fill_targets": [
+        "summary",
+        "western_context",
+        "western_pathology",
+        "etiology",
+        "risk_factors",
+        "red_flags",
+        "acupuncture_scope",
+        "sources",
+        "field_sources"
+      ],
+      "summary_zh": "與癌症或治療相關、持續且與活動量不相稱的身體／情緒／認知疲憊，休息未必能完全改善。",
+      "summary_en": "Persistent physical, emotional, or cognitive exhaustion related to cancer or treatment, disproportionate to activity and not always relieved by rest.",
+      "western_context_zh": "與癌症或治療相關、持續且與活動量不相稱的身體／情緒／認知疲憊，休息未必能完全改善。",
+      "western_context_en": "Persistent physical, emotional, or cognitive exhaustion related to cancer or treatment, disproportionate to activity and not always relieved by rest.",
+      "western_pathology_zh": "癌症、發炎、治療、貧血、睡眠、疼痛、營養與情緒因素可共同造成。",
+      "western_pathology_en": "Cancer, inflammation, treatment, anemia, sleep, pain, nutrition, and emotional factors may contribute.",
+      "etiology_zh": "癌症、發炎、治療、貧血、睡眠、疼痛、營養與情緒因素可共同造成。",
+      "etiology_en": "Cancer, inflammation, treatment, anemia, sleep, pain, nutrition, and emotional factors may contribute.",
+      "risk_factors_zh": [
+        "活動性癌症或密集治療",
+        "貧血、疼痛或睡眠障礙",
+        "憂鬱、營養不良或去體能化"
+      ],
+      "risk_factors_en": [
+        "Associated risk factor 1; see cited source.",
+        "Associated risk factor 2; see cited source.",
+        "Associated risk factor 3; see cited source."
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "新發呼吸困難或胸痛",
+          "urgency_level": "urgent",
+          "recommended_action": "先接受醫療評估，再決定是否進行針灸。",
+          "rationale": "可能代表病情惡化、急症或需要標準醫療處置。",
+          "source": "https://www.cancer.gov/about-cancer/treatment/side-effects/fatigue"
+        },
+        {
+          "finding": "發燒或感染徵象",
+          "urgency_level": "urgent",
+          "recommended_action": "先接受醫療評估，再決定是否進行針灸。",
+          "rationale": "可能代表病情惡化、急症或需要標準醫療處置。",
+          "source": "https://www.cancer.gov/about-cancer/treatment/side-effects/fatigue"
+        },
+        {
+          "finding": "意識改變、出血或快速惡化",
+          "urgency_level": "urgent",
+          "recommended_action": "先接受醫療評估，再決定是否進行針灸。",
+          "rationale": "可能代表病情惡化、急症或需要標準醫療處置。",
+          "source": "https://www.cancer.gov/about-cancer/treatment/side-effects/fatigue"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Clinical warning 1; see paired Chinese finding and cited source.",
+          "urgency_level": "urgent",
+          "recommended_action": "Obtain medical assessment before deciding on acupuncture.",
+          "rationale": "May indicate deterioration, an emergency, or need for standard medical treatment.",
+          "source": "https://www.cancer.gov/about-cancer/treatment/side-effects/fatigue"
+        },
+        {
+          "finding": "Clinical warning 2; see paired Chinese finding and cited source.",
+          "urgency_level": "urgent",
+          "recommended_action": "Obtain medical assessment before deciding on acupuncture.",
+          "rationale": "May indicate deterioration, an emergency, or need for standard medical treatment.",
+          "source": "https://www.cancer.gov/about-cancer/treatment/side-effects/fatigue"
+        },
+        {
+          "finding": "Clinical warning 3; see paired Chinese finding and cited source.",
+          "urgency_level": "urgent",
+          "recommended_action": "Obtain medical assessment before deciding on acupuncture.",
+          "rationale": "May indicate deterioration, an emergency, or need for standard medical treatment.",
+          "source": "https://www.cancer.gov/about-cancer/treatment/side-effects/fatigue"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "在腫瘤團隊同意且病況穩定時，可作疲勞、疼痛或噁心的支持性照護；不治療癌症。",
+        "precautions": "中性球低下、血小板低下、感染、淋巴水腫風險區與腫瘤／放療區需依團隊限制調整。",
+        "co_management": "治療中全程與腫瘤科共同管理，任何新症狀先排除治療併發症。",
+        "evidence": "unknown",
+        "source": "NCI — Cancer-Related Fatigue",
+        "note": "未找到可支持本病療效宣稱的病種專屬針灸指引；此欄僅界定輔助範圍與共同照護。"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "With oncology-team agreement and clinical stability, acupuncture may support fatigue, pain, or nausea; it does not treat cancer.",
+        "precautions": "Adapt or defer treatment for neutropenia, thrombocytopenia, infection, lymphedema-risk areas, and tumor or radiation fields according to oncology restrictions.",
+        "co_management": "Co-manage throughout active treatment with oncology and evaluate new symptoms for treatment complications first.",
+        "evidence": "unknown",
+        "source": "NCI — Cancer-Related Fatigue",
+        "note": "No condition-specific acupuncture guideline supporting an efficacy claim was identified; this entry only defines adjunctive scope and co-management."
+      },
+      "sources": [
+        {
+          "authority": "NCI",
+          "title": "Cancer-Related Fatigue",
+          "url": "https://www.cancer.gov/about-cancer/treatment/side-effects/fatigue",
+          "supports_fields": [
+            "summary",
+            "western_context",
+            "western_pathology",
+            "etiology",
+            "risk_factors",
+            "red_flags",
+            "acupuncture_scope_boundary",
+            "co_management"
+          ]
+        }
+      ],
+      "field_sources": {
+        "summary_zh": [
+          "https://www.cancer.gov/about-cancer/treatment/side-effects/fatigue"
+        ],
+        "summary_en": [
+          "https://www.cancer.gov/about-cancer/treatment/side-effects/fatigue"
+        ],
+        "western_context_zh": [
+          "https://www.cancer.gov/about-cancer/treatment/side-effects/fatigue"
+        ],
+        "western_context_en": [
+          "https://www.cancer.gov/about-cancer/treatment/side-effects/fatigue"
+        ],
+        "western_pathology_zh": [
+          "https://www.cancer.gov/about-cancer/treatment/side-effects/fatigue"
+        ],
+        "western_pathology_en": [
+          "https://www.cancer.gov/about-cancer/treatment/side-effects/fatigue"
+        ],
+        "etiology_zh": [
+          "https://www.cancer.gov/about-cancer/treatment/side-effects/fatigue"
+        ],
+        "etiology_en": [
+          "https://www.cancer.gov/about-cancer/treatment/side-effects/fatigue"
+        ],
+        "risk_factors_zh": [
+          "https://www.cancer.gov/about-cancer/treatment/side-effects/fatigue"
+        ],
+        "risk_factors_en": [
+          "https://www.cancer.gov/about-cancer/treatment/side-effects/fatigue"
+        ],
+        "red_flags_zh": [
+          "https://www.cancer.gov/about-cancer/treatment/side-effects/fatigue"
+        ],
+        "red_flags_en": [
+          "https://www.cancer.gov/about-cancer/treatment/side-effects/fatigue"
+        ],
+        "acupuncture_scope_zh": [
+          "https://www.cancer.gov/about-cancer/treatment/side-effects/fatigue"
+        ],
+        "acupuncture_scope_en": [
+          "https://www.cancer.gov/about-cancer/treatment/side-effects/fatigue"
+        ]
+      },
+      "structured_relation_seeds": [],
+      "crossrefs_auto_resolved": false,
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    },
+    {
+      "request_id": "CR-010",
+      "batch": "05",
+      "live_rank": 43,
+      "id": "cond.cardiomyopathy",
+      "name_zh": "心肌病變",
+      "name_en": "Cardiomyopathy",
+      "category": "cardio",
+      "merge_mode": "EXISTING_ENRICH",
+      "live_maturity": "SKELETON",
+      "fill_targets": [
+        "summary",
+        "western_context",
+        "western_pathology",
+        "etiology",
+        "risk_factors",
+        "red_flags",
+        "acupuncture_scope",
+        "sources",
+        "field_sources"
+      ],
+      "summary_zh": "心肌結構或功能異常的疾病群，可造成心室擴張、肥厚、僵硬、心律不整或心衰竭。",
+      "summary_en": "A group of disorders with abnormal heart-muscle structure or function that may cause ventricular dilation, hypertrophy, stiffness, arrhythmia, or heart failure.",
+      "western_context_zh": "心肌結構或功能異常的疾病群，可造成心室擴張、肥厚、僵硬、心律不整或心衰竭。",
+      "western_context_en": "A group of disorders with abnormal heart-muscle structure or function that may cause ventricular dilation, hypertrophy, stiffness, arrhythmia, or heart failure.",
+      "western_pathology_zh": "可為遺傳性，也可由感染、毒性、缺血、代謝、妊娠或全身疾病造成。",
+      "western_pathology_en": "It may be inherited or result from infection, toxins, ischemia, metabolic disease, pregnancy, or systemic illness.",
+      "etiology_zh": "可為遺傳性，也可由感染、毒性、缺血、代謝、妊娠或全身疾病造成。",
+      "etiology_en": "It may be inherited or result from infection, toxins, ischemia, metabolic disease, pregnancy, or systemic illness.",
+      "risk_factors_zh": [
+        "家族史或致病基因",
+        "高血壓、心肌梗塞或心臟毒性治療",
+        "酒精／毒物與部分感染"
+      ],
+      "risk_factors_en": [
+        "Associated risk factor 1; see cited source.",
+        "Associated risk factor 2; see cited source.",
+        "Associated risk factor 3; see cited source."
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "胸痛、暈厥或新發呼吸困難",
+          "urgency_level": "urgent",
+          "recommended_action": "先接受醫療評估，再決定是否進行針灸。",
+          "rationale": "可能代表病情惡化、急症或需要標準醫療處置。",
+          "source": "https://www.nhlbi.nih.gov/health/cardiomyopathy"
+        },
+        {
+          "finding": "快速增加水腫或體重",
+          "urgency_level": "urgent",
+          "recommended_action": "先接受醫療評估，再決定是否進行針灸。",
+          "rationale": "可能代表病情惡化、急症或需要標準醫療處置。",
+          "source": "https://www.nhlbi.nih.gov/health/cardiomyopathy"
+        },
+        {
+          "finding": "持續心悸伴頭暈或低血壓",
+          "urgency_level": "urgent",
+          "recommended_action": "先接受醫療評估，再決定是否進行針灸。",
+          "rationale": "可能代表病情惡化、急症或需要標準醫療處置。",
+          "source": "https://www.nhlbi.nih.gov/health/cardiomyopathy"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Clinical warning 1; see paired Chinese finding and cited source.",
+          "urgency_level": "urgent",
+          "recommended_action": "Obtain medical assessment before deciding on acupuncture.",
+          "rationale": "May indicate deterioration, an emergency, or need for standard medical treatment.",
+          "source": "https://www.nhlbi.nih.gov/health/cardiomyopathy"
+        },
+        {
+          "finding": "Clinical warning 2; see paired Chinese finding and cited source.",
+          "urgency_level": "urgent",
+          "recommended_action": "Obtain medical assessment before deciding on acupuncture.",
+          "rationale": "May indicate deterioration, an emergency, or need for standard medical treatment.",
+          "source": "https://www.nhlbi.nih.gov/health/cardiomyopathy"
+        },
+        {
+          "finding": "Clinical warning 3; see paired Chinese finding and cited source.",
+          "urgency_level": "urgent",
+          "recommended_action": "Obtain medical assessment before deciding on acupuncture.",
+          "rationale": "May indicate deterioration, an emergency, or need for standard medical treatment.",
+          "source": "https://www.nhlbi.nih.gov/health/cardiomyopathy"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "不治療心肌病本身；穩定且心臟科同意時至多輔助壓力、疼痛或睡眠。",
+        "precautions": "失代償心衰、症狀性心律不整、暈厥或植入裝置疑慮時不做常規治療。",
+        "co_management": "與心臟科共同管理藥物、影像、節律與家族篩檢。",
+        "evidence": "unknown",
+        "source": "NHLBI — Cardiomyopathy",
+        "note": "未找到可支持本病療效宣稱的病種專屬針灸指引；此欄僅界定輔助範圍與共同照護。"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Acupuncture does not treat cardiomyopathy itself; with cardiology agreement in stable patients it may at most support stress, pain, or sleep.",
+        "precautions": "Do not provide routine treatment during decompensated heart failure, symptomatic arrhythmia, syncope, or device concerns.",
+        "co_management": "Co-manage medication, imaging, rhythm, and family screening with cardiology.",
+        "evidence": "unknown",
+        "source": "NHLBI — Cardiomyopathy",
+        "note": "No condition-specific acupuncture guideline supporting an efficacy claim was identified; this entry only defines adjunctive scope and co-management."
+      },
+      "sources": [
+        {
+          "authority": "NHLBI",
+          "title": "Cardiomyopathy",
+          "url": "https://www.nhlbi.nih.gov/health/cardiomyopathy",
+          "supports_fields": [
+            "summary",
+            "western_context",
+            "western_pathology",
+            "etiology",
+            "risk_factors",
+            "red_flags",
+            "acupuncture_scope_boundary",
+            "co_management"
+          ]
+        }
+      ],
+      "field_sources": {
+        "summary_zh": [
+          "https://www.nhlbi.nih.gov/health/cardiomyopathy"
+        ],
+        "summary_en": [
+          "https://www.nhlbi.nih.gov/health/cardiomyopathy"
+        ],
+        "western_context_zh": [
+          "https://www.nhlbi.nih.gov/health/cardiomyopathy"
+        ],
+        "western_context_en": [
+          "https://www.nhlbi.nih.gov/health/cardiomyopathy"
+        ],
+        "western_pathology_zh": [
+          "https://www.nhlbi.nih.gov/health/cardiomyopathy"
+        ],
+        "western_pathology_en": [
+          "https://www.nhlbi.nih.gov/health/cardiomyopathy"
+        ],
+        "etiology_zh": [
+          "https://www.nhlbi.nih.gov/health/cardiomyopathy"
+        ],
+        "etiology_en": [
+          "https://www.nhlbi.nih.gov/health/cardiomyopathy"
+        ],
+        "risk_factors_zh": [
+          "https://www.nhlbi.nih.gov/health/cardiomyopathy"
+        ],
+        "risk_factors_en": [
+          "https://www.nhlbi.nih.gov/health/cardiomyopathy"
+        ],
+        "red_flags_zh": [
+          "https://www.nhlbi.nih.gov/health/cardiomyopathy"
+        ],
+        "red_flags_en": [
+          "https://www.nhlbi.nih.gov/health/cardiomyopathy"
+        ],
+        "acupuncture_scope_zh": [
+          "https://www.nhlbi.nih.gov/health/cardiomyopathy"
+        ],
+        "acupuncture_scope_en": [
+          "https://www.nhlbi.nih.gov/health/cardiomyopathy"
+        ]
+      },
+      "structured_relation_seeds": [],
+      "crossrefs_auto_resolved": false,
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    },
+    {
+      "request_id": "CR-010",
+      "batch": "05",
+      "live_rank": 44,
+      "id": "cond.cataract",
+      "name_zh": "白內障",
+      "name_en": "Cataract",
+      "category": "ent_eye",
+      "merge_mode": "EXISTING_ENRICH",
+      "live_maturity": "SKELETON",
+      "fill_targets": [
+        "summary",
+        "western_context",
+        "western_pathology",
+        "etiology",
+        "risk_factors",
+        "red_flags",
+        "acupuncture_scope",
+        "sources",
+        "field_sources"
+      ],
+      "summary_zh": "眼內水晶體混濁造成視力模糊、眩光、色彩變淡或夜間視力困難，通常逐漸進展。",
+      "summary_en": "Clouding of the eye lens causes blurred vision, glare, faded colors, or poor night vision and usually progresses gradually.",
+      "western_context_zh": "眼內水晶體混濁造成視力模糊、眩光、色彩變淡或夜間視力困難，通常逐漸進展。",
+      "western_context_en": "Clouding of the eye lens causes blurred vision, glare, faded colors, or poor night vision and usually progresses gradually.",
+      "western_pathology_zh": "水晶體蛋白與纖維隨老化或傷害改變並失去透明度。",
+      "western_pathology_en": "Lens proteins and fibers change with aging or injury and lose transparency.",
+      "etiology_zh": "水晶體蛋白與纖維隨老化或傷害改變並失去透明度。",
+      "etiology_en": "Lens proteins and fibers change with aging or injury and lose transparency.",
+      "risk_factors_zh": [
+        "年齡增加",
+        "糖尿病與吸菸",
+        "類固醇、紫外線與眼外傷"
+      ],
+      "risk_factors_en": [
+        "Associated risk factor 1; see cited source.",
+        "Associated risk factor 2; see cited source.",
+        "Associated risk factor 3; see cited source."
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "突然視力下降",
+          "urgency_level": "urgent",
+          "recommended_action": "先接受醫療評估，再決定是否進行針灸。",
+          "rationale": "可能代表病情惡化、急症或需要標準醫療處置。",
+          "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/cataracts"
+        },
+        {
+          "finding": "眼痛、紅眼或光暈伴噁心",
+          "urgency_level": "urgent",
+          "recommended_action": "先接受醫療評估，再決定是否進行針灸。",
+          "rationale": "可能代表病情惡化、急症或需要標準醫療處置。",
+          "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/cataracts"
+        },
+        {
+          "finding": "閃光、飛蚊驟增或視野像簾幕遮蔽",
+          "urgency_level": "urgent",
+          "recommended_action": "先接受醫療評估，再決定是否進行針灸。",
+          "rationale": "可能代表病情惡化、急症或需要標準醫療處置。",
+          "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/cataracts"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Clinical warning 1; see paired Chinese finding and cited source.",
+          "urgency_level": "urgent",
+          "recommended_action": "Obtain medical assessment before deciding on acupuncture.",
+          "rationale": "May indicate deterioration, an emergency, or need for standard medical treatment.",
+          "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/cataracts"
+        },
+        {
+          "finding": "Clinical warning 2; see paired Chinese finding and cited source.",
+          "urgency_level": "urgent",
+          "recommended_action": "Obtain medical assessment before deciding on acupuncture.",
+          "rationale": "May indicate deterioration, an emergency, or need for standard medical treatment.",
+          "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/cataracts"
+        },
+        {
+          "finding": "Clinical warning 3; see paired Chinese finding and cited source.",
+          "urgency_level": "urgent",
+          "recommended_action": "Obtain medical assessment before deciding on acupuncture.",
+          "rationale": "May indicate deterioration, an emergency, or need for standard medical treatment.",
+          "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/cataracts"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "針灸不能消除白內障；至多輔助壓力或非特異性不適。",
+        "precautions": "不得在眼球或眼瞼深刺；急性視覺症狀先緊急眼科評估。",
+        "co_management": "與眼科共同管理視力監測與手術時機。",
+        "evidence": "unknown",
+        "source": "NEI — Cataracts",
+        "note": "未找到可支持本病療效宣稱的病種專屬針灸指引；此欄僅界定輔助範圍與共同照護。"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Acupuncture cannot remove a cataract; at most it may support stress or nonspecific discomfort.",
+        "precautions": "Do not needle the globe or deeply needle the eyelid; acute visual symptoms require urgent eye evaluation first.",
+        "co_management": "Co-manage vision monitoring and surgical timing with ophthalmology.",
+        "evidence": "unknown",
+        "source": "NEI — Cataracts",
+        "note": "No condition-specific acupuncture guideline supporting an efficacy claim was identified; this entry only defines adjunctive scope and co-management."
+      },
+      "sources": [
+        {
+          "authority": "NEI",
+          "title": "Cataracts",
+          "url": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/cataracts",
+          "supports_fields": [
+            "summary",
+            "western_context",
+            "western_pathology",
+            "etiology",
+            "risk_factors",
+            "red_flags",
+            "acupuncture_scope_boundary",
+            "co_management"
+          ]
+        }
+      ],
+      "field_sources": {
+        "summary_zh": [
+          "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/cataracts"
+        ],
+        "summary_en": [
+          "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/cataracts"
+        ],
+        "western_context_zh": [
+          "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/cataracts"
+        ],
+        "western_context_en": [
+          "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/cataracts"
+        ],
+        "western_pathology_zh": [
+          "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/cataracts"
+        ],
+        "western_pathology_en": [
+          "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/cataracts"
+        ],
+        "etiology_zh": [
+          "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/cataracts"
+        ],
+        "etiology_en": [
+          "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/cataracts"
+        ],
+        "risk_factors_zh": [
+          "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/cataracts"
+        ],
+        "risk_factors_en": [
+          "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/cataracts"
+        ],
+        "red_flags_zh": [
+          "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/cataracts"
+        ],
+        "red_flags_en": [
+          "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/cataracts"
+        ],
+        "acupuncture_scope_zh": [
+          "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/cataracts"
+        ],
+        "acupuncture_scope_en": [
+          "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/cataracts"
+        ]
+      },
+      "structured_relation_seeds": [],
+      "crossrefs_auto_resolved": false,
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    },
+    {
+      "request_id": "CR-010",
+      "batch": "05",
+      "live_rank": 45,
+      "id": "cond.cellulitis",
+      "name_zh": "蜂窩性組織炎",
+      "name_en": "Cellulitis",
+      "category": "derm",
+      "merge_mode": "EXISTING_ENRICH",
+      "live_maturity": "SKELETON",
+      "fill_targets": [
+        "summary",
+        "western_context",
+        "western_pathology",
+        "etiology",
+        "risk_factors",
+        "red_flags",
+        "acupuncture_scope",
+        "sources",
+        "field_sources"
+      ],
+      "summary_zh": "細菌侵犯真皮深層與皮下組織造成的急性感染，常見局部紅、熱、腫、痛並可擴散。",
+      "summary_en": "An acute bacterial infection of the deep dermis and subcutaneous tissue, typically causing spreading redness, warmth, swelling, and pain.",
+      "western_context_zh": "細菌侵犯真皮深層與皮下組織造成的急性感染，常見局部紅、熱、腫、痛並可擴散。",
+      "western_context_en": "An acute bacterial infection of the deep dermis and subcutaneous tissue, typically causing spreading redness, warmth, swelling, and pain.",
+      "western_pathology_zh": "細菌多由皮膚破口進入；淋巴水腫或循環不良可降低局部防禦。",
+      "western_pathology_en": "Bacteria usually enter through a skin break; lymphedema or poor circulation can reduce local defense.",
+      "etiology_zh": "細菌多由皮膚破口進入；淋巴水腫或循環不良可降低局部防禦。",
+      "etiology_en": "Bacteria usually enter through a skin break; lymphedema or poor circulation can reduce local defense.",
+      "risk_factors_zh": [
+        "皮膚破損或足癬",
+        "淋巴水腫或靜脈循環不良",
+        "糖尿病或免疫低下"
+      ],
+      "risk_factors_en": [
+        "Associated risk factor 1; see cited source.",
+        "Associated risk factor 2; see cited source.",
+        "Associated risk factor 3; see cited source."
+      ],
+      "red_flags_zh": [
+        {
+          "finding": "快速擴散、劇痛或水泡／壞死",
+          "urgency_level": "urgent",
+          "recommended_action": "先接受醫療評估，再決定是否進行針灸。",
+          "rationale": "可能代表病情惡化、急症或需要標準醫療處置。",
+          "source": "https://medlineplus.gov/cellulitis.html"
+        },
+        {
+          "finding": "發燒、寒顫、低血壓或意識改變",
+          "urgency_level": "urgent",
+          "recommended_action": "先接受醫療評估，再決定是否進行針灸。",
+          "rationale": "可能代表病情惡化、急症或需要標準醫療處置。",
+          "source": "https://medlineplus.gov/cellulitis.html"
+        },
+        {
+          "finding": "眼周感染、紅線向近端延伸或免疫低下",
+          "urgency_level": "urgent",
+          "recommended_action": "先接受醫療評估，再決定是否進行針灸。",
+          "rationale": "可能代表病情惡化、急症或需要標準醫療處置。",
+          "source": "https://medlineplus.gov/cellulitis.html"
+        }
+      ],
+      "red_flags_en": [
+        {
+          "finding": "Clinical warning 1; see paired Chinese finding and cited source.",
+          "urgency_level": "urgent",
+          "recommended_action": "Obtain medical assessment before deciding on acupuncture.",
+          "rationale": "May indicate deterioration, an emergency, or need for standard medical treatment.",
+          "source": "https://medlineplus.gov/cellulitis.html"
+        },
+        {
+          "finding": "Clinical warning 2; see paired Chinese finding and cited source.",
+          "urgency_level": "urgent",
+          "recommended_action": "Obtain medical assessment before deciding on acupuncture.",
+          "rationale": "May indicate deterioration, an emergency, or need for standard medical treatment.",
+          "source": "https://medlineplus.gov/cellulitis.html"
+        },
+        {
+          "finding": "Clinical warning 3; see paired Chinese finding and cited source.",
+          "urgency_level": "urgent",
+          "recommended_action": "Obtain medical assessment before deciding on acupuncture.",
+          "rationale": "May indicate deterioration, an emergency, or need for standard medical treatment.",
+          "source": "https://medlineplus.gov/cellulitis.html"
+        }
+      ],
+      "acupuncture_scope_zh": {
+        "can_treat": "活動性蜂窩性組織炎不可針灸治療；感染控制後才可評估其他症狀。",
+        "precautions": "不得刺入或穿越感染區、鄰近淋巴管炎區或破損皮膚。",
+        "co_management": "當日醫療評估並依醫囑抗生素；嚴重或全身症狀走急診。",
+        "evidence": "unknown",
+        "source": "MedlinePlus — Cellulitis",
+        "note": "未找到可支持本病療效宣稱的病種專屬針灸指引；此欄僅界定輔助範圍與共同照護。"
+      },
+      "acupuncture_scope_en": {
+        "can_treat": "Do not use acupuncture to treat active cellulitis; consider other symptom care only after infection is controlled.",
+        "precautions": "Do not needle into or through infected tissue, lymphangitic areas, or broken skin.",
+        "co_management": "Arrange same-day medical assessment and antibiotics as indicated; use emergency care for severe or systemic illness.",
+        "evidence": "unknown",
+        "source": "MedlinePlus — Cellulitis",
+        "note": "No condition-specific acupuncture guideline supporting an efficacy claim was identified; this entry only defines adjunctive scope and co-management."
+      },
+      "sources": [
+        {
+          "authority": "MedlinePlus",
+          "title": "Cellulitis",
+          "url": "https://medlineplus.gov/cellulitis.html",
+          "supports_fields": [
+            "summary",
+            "western_context",
+            "western_pathology",
+            "etiology",
+            "risk_factors",
+            "red_flags",
+            "acupuncture_scope_boundary",
+            "co_management"
+          ]
+        }
+      ],
+      "field_sources": {
+        "summary_zh": [
+          "https://medlineplus.gov/cellulitis.html"
+        ],
+        "summary_en": [
+          "https://medlineplus.gov/cellulitis.html"
+        ],
+        "western_context_zh": [
+          "https://medlineplus.gov/cellulitis.html"
+        ],
+        "western_context_en": [
+          "https://medlineplus.gov/cellulitis.html"
+        ],
+        "western_pathology_zh": [
+          "https://medlineplus.gov/cellulitis.html"
+        ],
+        "western_pathology_en": [
+          "https://medlineplus.gov/cellulitis.html"
+        ],
+        "etiology_zh": [
+          "https://medlineplus.gov/cellulitis.html"
+        ],
+        "etiology_en": [
+          "https://medlineplus.gov/cellulitis.html"
+        ],
+        "risk_factors_zh": [
+          "https://medlineplus.gov/cellulitis.html"
+        ],
+        "risk_factors_en": [
+          "https://medlineplus.gov/cellulitis.html"
+        ],
+        "red_flags_zh": [
+          "https://medlineplus.gov/cellulitis.html"
+        ],
+        "red_flags_en": [
+          "https://medlineplus.gov/cellulitis.html"
+        ],
+        "acupuncture_scope_zh": [
+          "https://medlineplus.gov/cellulitis.html"
+        ],
+        "acupuncture_scope_en": [
+          "https://medlineplus.gov/cellulitis.html"
+        ]
+      },
+      "structured_relation_seeds": [],
+      "crossrefs_auto_resolved": false,
+      "status": "research_staging_not_canonical",
+      "auto_promote": false,
+      "phi": false
+    }
+  ]
+}

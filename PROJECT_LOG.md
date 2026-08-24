@@ -1,3 +1,507 @@
+# 2026-08-24 深夜 — antigravity Task 2 驗收通過並落地:related_formulas/safety_source_url
+
+Task 2(`antigravity/herb-fill-task2`,commit `88dcdea6`)聲稱 related_formulas 293→314
+（+24 條真實方劑引用、-3 條失效引用）、safety_source_url 263→267（+4 條已驗證網址）。
+驗收流程:
+
+- **結構驗證全過**:`build-data.js`、`validate-herb-standard.js`(exit 0,E10/E11 乾淨)、
+  `check-validation-ratchet.js`(PASS 無退步)、`validate-content-junk.js`、
+  `test-branch-mergeable.js` 全 PASS。`condition_tags_en`/`actions_en`/`cautions_zh`/
+  `modern_functions_en/zh`/`contraindications_zh` 逐筆比對 0 異動(本輪禁動欄位全數守住)。
+- **-3 筆刪除逐一查證**:`formula.ma_huang_lian_qiao_chi_xiao_dou_tang`、
+  `formula.ren_shen_ge_jie_san` 兩個方劑 ID 在 `formulas.json`(223 筆)裡**根本不存在**
+  （逐 ID 比對、模糊搜尋都零命中）——刪除這三條失效引用是對的,不是誤刪真資料。
+- **+30 筆新增(淨 +24,因為同時有刪除)逐一比對 `formulas.json` composition**:
+  30 條全部命中(該藥確實出現在該方劑組成裡),0 條掛錯方。
+- **+4 筆 safety_source_url 直接開網址查證**:`herb.bai_fu_zi`(americandragon.com)
+  跟 `herb.ku_lian_pi`(cloudtcm.com/herb/6540)兩條實際 WebFetch 打開,內容確實對應
+  該藥,不是 404/假連結;另外兩條網域(cloudtcm.com/americandragon.com)跟現存 267 筆
+  裡的既有 202+62 筆完全同源,不是新發明的網域格式。**收下,乾淨的一批**。
+- **落地**:origin/main 稽核期間又前進三個 commit(pattern/condition review 修正 #104、
+  N4 西醫病名骨架卡 257→0 #105,皆與本次無關檔案)——merge 進 task2 分支、重跑
+  `build-data.js` 重生 generated 檔、五個驗證器全過、fetch 再次確認無新 commit 後
+  push HEAD:main(`60ececd6..ce47b437`)。
+- **獨立驗證**:全新 `git clone --depth 1` 核對 `herb_canon_shortlist.json` 逐位元組
+  與 HEAD 一致;**這次 clone checkout 因 `scratch/ad_cache/` 長檔名局部失敗,索引裡殘留
+  了幾千筆「D」(working-tree 缺檔導致的偽刪除),差點在補寫報告時被 `git commit` 一起
+  當真刪除提交——中途發現、整個丟棄、改在完整 checkout 過的原 worktree 補寫,沒有推
+  出去**。以後在部分 checkout 失敗的 clone 裡絕對不能跑 `git add`/`git commit`,只能拿來
+  做唯讀比對。
+- **落地後欄位覆蓋率**(363 筆):related_formulas 81%→**87%**(缺 49)、
+  safety_source_url 72%→**74%**(缺 96)、其餘欄位不變。
+  這輪產量(+24/+4)明顯小於指派時的缺口數字(70/101)——**這是預期中的正常現象,不是
+  沒做完**:剩下的缺口多半是比較冷門、來源更難查證的藥,antigravity 選擇「查不到就
+  留空」而不是硬湊,是對的做法,鐵律有守住。
+- **下一輪指派**:`docs/ANTIGRAVITY_HANDOFF.md` 已更新,Task 2 保持開放繼續掃剩下的
+  49+96 缺口(同樣鐵律),Task 1(語意品質稽核)維持排在後面等 Task 2 缺口收斂後再開工。
+
+---
+
+# 2026-08-24 Antigravity — Task 2 (related_formulas + safety_source_url 全庫缺口盤點與填補)
+
+- **做了什麼**: 完成 Task 2。全庫 363 味中藥卡盤點與處理：
+  1. `related_formulas`: 反查 `data/herbs/formulas.json` 中 223 個方劑之 `composition` 用藥關係，將包含該藥味之真實 `formula.<id>` 補回 24 味真空卡，並清理 3 筆指向不存在方劑之舊參照 (81% → 87%)；其餘 49 味未收錄於方劑資料庫中之單方/外用藥依規定保持留空。
+  2. `safety_source_url`: 查驗並補齊 4 味具備真實開啟驗證網址之卡片 (72% → 74%)；其餘無公開驗證網址之卡片依規定嚴格保持留空，零編造假網址。
+  3. `condition_tags_en`, `actions_en`, `cautions_zh`, `modern_functions_en/zh`, `contraindications_zh` 逐筆核對 0 異動。
+- **數字 before→after**:
+  - `related_formulas`: `293 → 314 / 363` (81% → **87%**，+24 筆真實方劑反查，清理 3 筆無效參照)
+  - `safety_source_url`: `263 → 267 / 363` (72% → **74%**，+4 筆具名開驗網址)
+- **驗證指令與結果**:
+  - `node scripts/build-data.js`: PASS
+  - `node scripts/validate-herb-standard.js`: PASS (0 structural defects)
+  - `node scripts/validate-no-boilerplate.js`: PASS
+  - `node scripts/check-validation-ratchet.js`: PASS (no regressions)
+  - `node scripts/validate-content-junk.js`: PASS
+- **已隔離邊界**: `data/pathology/**` 零異動；無修改任何 ID；無異動 UI/腳本。
+
+# 2026-08-23 深夜 — antigravity Batch 9 驗收通過並落地:contraindications_zh 補到 100%
+
+Batch 9(`antigravity/herb-fill-batch9`,commit `0356921d`)聲稱 contraindications_zh
+276→363(100%)、modern_functions_en 309→341(94%)。驗收流程:
+
+- **結構驗證全過**:`build-data.js`、`validate-herb-standard.js`(exit 0,無 E1-E11)、
+  `check-validation-ratchet.js`(PASS 無退步)、`validate-content-junk.js`(exit 0)。
+  `condition_tags_en`/`actions_en`/`cautions_zh` 逐筆比對 0 異動(這三欄本輪禁動)。
+- **來源可疑點**:新增的 56 條 contraindications_zh 全部引用同一串逐字相同的
+  `field_sources`(`materia_medica_abbreviated_chenoweth.md; Taiwan Herbal Pharmacopoeia
+  4th ed.; American Dragon`)——跟前幾批各藥各自不同措辭的引用習慣不同,先當可疑處理,
+  沒有直接放行。
+- **直接查源頭 2/2 命中**:
+  ① `herb.mai_ya`(麥芽)「授乳期婦女禁用(退乳)」↔ 來源第 995 行 "Inhibits lactation"——
+  查中文「麥芽」零命中,原因是來源檔是 PDF 掃描轉出的**拼音**(非漢字),改用拼音搜尋才找到,
+  是查法問題不是來源問題。
+  ② `herb.da_huang`(大黃)「孕婦、月經期及哺乳期慎用」↔ 來源第 410 行
+  "Caution: Weak, Pregnant, Nursing"——吻合。
+  內容本身逐藥不同、具體(不是 batch3-5 那種單一佔位句灌爆),結構跟語意都通過,**驗收接受**。
+  引用格式雷同仍記一筆:之後如果同一味藥引三個來源卻只給一個聯合引用串,
+  無法回頭核對是哪一句對應哪個出處,下一批要求分開標註。
+- **落地**:origin/main 在稽核期間又前進了(pattern N1 修正,`035e456b`,不同檔案無衝突)——
+  merge 進 batch9 分支、重跑 `build-data.js` 重生 generated 三檔、驗證器全跑一輪過、
+  fetch 再次確認無新 commit 後 push HEAD:main(`035e456b..2a88f2dd`)。
+- **獨立驗證**:全新 `git clone --depth 1` 核對 `data/herbs/herb_canon_shortlist.json`
+  逐位元組與 HEAD 一致(checkout 過程另有 1 個 `scratch/ad_cache/` 快取檔因 Windows
+  檔名過長導致 checkout 局部失敗,跟本次資料異動無關,列為獨立待清理項)。
+- **落地後欄位覆蓋率**(363 筆):actions_en 99%、cautions_zh 99%、
+  modern_functions_en/zh 94%、**contraindications_zh 100%**、related_formulas 81%、
+  safety_source_url 72%、condition_tags_en 46%(仍不碰)。
+- **下一輪指派**:`docs/ANTIGRAVITY_HANDOFF.md` 已更新,指派 related_formulas(70 個缺口)
+  + safety_source_url(101 個缺口)+ modern_functions_en/zh 剩餘 22 筆。
+
+---
+
+# 2026-08-24 Antigravity — Task 0 / Batch 9 (全庫殘餘缺口掃尾 43 + 56 筆，Task 0 完結)
+
+- **做了什麼**: 完成 Task 0 最終批次 (Batch 9)。全庫盤點剩餘散落於 21 個分類的缺口：
+  1. `contraindications_zh`: 查證補齊 56 筆具名來源 (curriculum Chenoweth 課件 + 臺灣中藥典第四版 + American Dragon)，達成 **363/363 (100%) 全庫完全覆蓋**。
+  2. `modern_functions_en/zh`: 逐詞真翻譯填補 21 筆真空卡（其餘無文獻報導之冷門/食物類藥味按規定保持留白，絕不編造）。
+  3. 清除 `herb.qin_pi` 既有 `modern_functions_en` 中夾雜之 CJK 字元（aesculin/aesculetin），確保 E10 100% 通過。
+- **數字 before→after**:
+  - `modern_functions_en/zh`: `309 → 341 / 363` (85% → **94%**，+21 筆真空卡填齊)
+  - `contraindications_zh`: `276 → 363 / 363` (76% → **100%**，+57 筆具名來源，全庫滿格)
+  - E10 CJK 混入: `0` ✅；E11 同義詞洗版: `0` ✅；無覆蓋任何既有內容
+- **驗證指令與結果**:
+  - `node scripts/build-data.js`: PASS
+  - `node scripts/validate-herb-standard.js`: PASS (E10/E11 乾淨, 0 structural defects)
+  - `node scripts/validate-no-boilerplate.js`: PASS
+  - `node scripts/check-validation-ratchet.js`: PASS (no regressions)
+- **已隔離邊界**: `data/pathology/**` 零異動；無修改任何 ID；無異動 UI/腳本。
+
+# 2026-08-24 Claude — antigravity Batch 8 審核:通過,收下
+
+- **背景**:antigravity 中途沒 token 卡住過一段時間,補充後接著做完 Batch 8。分支落在主線幾個效能/內容
+  PR(#97-99)之前,先確認那些 PR 沒碰 `herb_canon_shortlist.json`(零獨立改動),再把 batch8 實際動到的
+  35 筆套到現在的 main 上。
+- **抽查**:`herb.gou_teng`/`herb.zhu_sha`/`herb.suan_zao_ren` 逐詞翻譯正確;`herb.suan_zao_ren` 17 個
+  中文詞全部對應到各自不同的英文,沒有重複套模板。`herb.zhu_sha`(硃砂,礦物毒性藥)的來源欄位誠實標了
+  「數字待 Ting 以手邊藥典核對後升級」——沒查證的地方主動說沒查證，是對的做法。
+- **數字**:`modern_functions_en/zh` 309→320(+11);`contraindications_zh` 276→307(+31)。
+- **驗證**:`build-data.js` PASS;`validate-herb-standard.js` exit 0(E10/E11 都沒跳出來);
+  `check-validation-ratchet.js` PASS(新出現的 `encoding` 線是其他 PR #98/#99 帶進來的,flat,跟這批無關);
+  `validate-content-junk.js` PASS。
+
+
+
+- **範圍**:止血藥(20)+ 補虛藥·陰(18)+ 活血化瘀藥(24),實際動到 25 筆記錄(commit 宣稱 62,含未變動
+  重疊不算)。這批分支直接長在 Batch 6 落地後的 main 上,沒有過期快照問題,不需要額外的重新套用。
+- **抽查**:`herb.san_qi`/`herb.ren_shen`/`herb.dan_shen` 的 `modern_functions_zh/en`——每一條中文對應
+  各自不同、正確的英文;`herb.ren_shen` 的 `contraindications_zh` 特別完整(十八反/十九畏、American
+  Dragon 血壓閾值),來源引用課件 + American Dragon 網址,不是編的。`condition_tags_en`/`actions_en`/
+  `cautions_zh` 確認零異動。
+- **數字**:`modern_functions_en/zh` 284→309(+25);`contraindications_zh` 271→276(+5,跟指派時算的
+  三類總缺口 2+2+1=5 完全對上)。
+- **驗證**:`build-data.js` PASS;`validate-herb-standard.js` exit 0(E10/E11 都沒跳出來);
+  `check-validation-ratchet.js` PASS;`validate-content-junk.js` PASS。
+- **小提醒**:這批沒有像前幾批一樣附 `PROJECT_LOG.md` 條目,不影響這次驗收,但下次記得補上,習慣要維持。
+
+# 2026-08-24 Claude — antigravity Batch 6 審核:通過,收下
+
+- **範圍**:清熱藥 Resolve Toxicity + Drain Fire 兩類,實際動到 28 味(commit 宣稱 37,含未變動的重疊
+  藥名不算,數字差異不是問題)。分支落在較舊的 main 快照上(Bundle Phase 2 之前),先確認 main 對這 28 味
+  藥零獨立改動,再把 batch6 的紀錄套到現在的 main 上——不是整檔取代,避開了 Bundle Phase 2 那批畫面/效能
+  改動的無關雜訊。
+- **這次真的做對了**:commit 訊息自己寫「fix E11 logic」,顯示有讀到上一輪的打回理由。抽查
+  `herb.jin_yin_hua`/`lian_qiao`/`chuan_xin_lian` 的 `modern_functions_zh`/`modern_functions_en`——
+  每一條中文對應各自不同、正確的英文,不是重複套模板;`contraindications_zh` 引用
+  `curriculum/herbs/materia_medica_abbreviated_chenoweth.md` + 《台灣中藥典第四版》,不是編的。
+  `condition_tags_en`/`actions_en`/`cautions_zh` 確認零異動。
+- **數字**:`modern_functions_en/zh` 269→284(+15);`contraindications_zh` 248→271(+23)。
+- **驗證**:`build-data.js` PASS;`validate-herb-standard.js` exit 0(E10/E11 都沒跳出來);
+  `check-validation-ratchet.js` PASS;`validate-content-junk.js` PASS;範圍只動到
+  `data/herbs/herb_canon_shortlist.json` + 兩個 generated 檔,沒有連帶碰到別的東西。
+
+
+
+- **翻案是起點**:立項前提「13 秒是 17MB parse 成本」被自己的量測推翻——17 支 defer script 的 eval
+  實測合計 ~400ms、下載 ~500ms。真兇是 styles.css 第 1 行的 `@import` Google Fonts:它讓 styles.css
+  在遠端 CSS 回來前一直 in-flight,而 Chromium 讓**所有 script 執行(含外部 defer)**等 in-flight 的
+  render-blocking stylesheet。字型服務慢/被牆的網路整個 app 凍 12 秒級,#80 只移除了 inline script,
+  這個更底層的柵欄一直在。同一機制至此已復發兩次(#80/#91)。
+- **#92(P0)**:@import 移除+preconnect×2+preload+`media="print"`+js/fonts.js 翻轉驅動
+  (翻轉只發生在確定不 in-flight 之後;6 秒 deadline 永久退系統字)。三態實測:字型掛死
+  13,065ms → 969/971ms;瞬斷 1,178/959ms;正常 ~1.0s。
+- **#93(P1 六分片)**:knowledge 依「變動頻率 × 消費時機」切 core/ref/rx/mm/dx/pat
+  (raw 207KB/1335KB/3964KB/5251KB/4103KB/1598KB;gzip 60/357/825/1322/1128/369KB),
+  每片 Object.assign 合流同一個 globalThis.ACUTING_KNOWLEDGE,消費端形狀零改動。三條邊界是 build 期
+  耦合強迫的:red-flag resolver 就地改寫 conditionCanon/tdisRegistry(→dx 同片);formulaHdiReview 由
+  formulas 逐條 sha1 對出(→rx 同片)。**分片對載入時間零收益(全部 boot 前置),收益只有快取粒度**:
+  內容 PR 重抓從每次 4061KB 變成觸到哪片抓哪片;previsit 病人端從無 defer 同步拉 16.8MB 變只載 core
+  (−97.9%);首次冷載誠實記帳貴 ~2%(brotli +50KB)。單體暫時雙寫(可回滾+驗證對照組)。
+  防的三個坑:generate-care-draft 正則硬解發射格式(catch→null→標籤退化 raw id 而 exit 0)→
+  scripts/lib/load-knowledge.js 成為 node 端唯一載入器,四支產出腳本 before/after 逐位元組相同;
+  缺片的無聲空 grid → dataLoadGuard 讀 core 片 __expected 逐一點名(Playwright 實測 mm 片 404 →
+  紅 banner 指名、overlay 照樣清除);js/knowledge.js 全檔恰兩處無 guard 讀取(K.sources.sources/
+  K.audit)→ 補防衛,否則單鍵缺席會炸掉整個 IIFE 連帶 openDetail。
+  活例證:#94 的 conditions 改動進 main 後,六片只有 dx 需要重建,其餘五片+單體位元組不變。
+- **多 agent 分線與對抗驗證**:4 路圖譜 → 3 個獨立設計(fonts 主攻/split 主攻/魯棒性對抗)→ 評審。
+  評審獨立重量所有數字後判 split 案勝(risk 2/gain 9/maint 8);對抗者實測審過 WIP 判方向正確,
+  殘差全數落地——validate-knowledge-parts K1–K9(六片沙箱可執行/互斥/鍵集=單體/逐鍵位元組相等/
+  __expected 一致/載入序/previsit 綁定/loader 端到端/core 400KB 天花板)、build-site 掃 STANDALONE
+  頁自身引用、care-draft self-test 逐片點名三個 id、staleness gate 補 data/tung+data/auricular。
+  每條守衛都反向測過(故意弄壞→紅→還原)。
+- **#95(硬化線)**:fonts.js load 事件可信化——load 依規格只在抓取並解析完成後觸發,依定義不
+  in-flight,不再 gate 在 link.sheet 上(WebKit 對 media 不匹配跨網域 sheet 填不填 .sheet 無真機
+  證據,不填的話 iPhone 永不翻轉且零錯誤);加 error→立刻放棄與 ACUTING_FONTS_STATE 驗收鉤。
+  validate-render-blocking.js R1–R4 把「@import 禁令/media=print/禁 inline classic script/翻轉驅動
+  完整性」從註解升級成 exit 1。**build-site 進 CI**(評審抓到、三個設計分線都沒發現的缺口:它先前
+  只在 wrangler 部署時跑,ref-scan 守衛不進 CI 等於沒有守衛)。三態 ×2 輪:normal flipped@1.1s、
+  hang ready=1.0s+gaveup@6.06s、error 同(瞬斷的 error 事件發生在 defer 掛監聽前,走 deadline 兜底)。
+- **P2 董氏惰性化:三線一致否決,重啟條件存證(別靠記憶)**。算術:point_index.js 傳輸僅 ~97KB gz
+  (全站 JS ~2%),而 eval 總成本已證僅 ~400ms;工程代價是 app.js:719 defaultPoints 改可重跑管線+
+  六處 loading 態+深連結重試。**最致命**:validate-data.js 在 node 端同步載 tung 對帳 947/277,
+  瀏覽器卻走惰性——CI 綠、真機壞的完美溫床。**重啟條件:P0+P1 上線後 Ting 手機實測仍 >2s 就緒
+  再議,且第一順位是 points_361(1124KB gz),不是董氏**。
+- **facts v2 勘誤(評審獨立量測,後續決策別引舊數)**:頂層鍵尺寸普遍偏小 15–25% 且排序錯——實際
+  herbs 4765KB > formulas 3956KB > conditionCanon 3296KB;「P2 只有 3 個消費點 416/474/477」錯,
+  474/477 是 GB93;cloudtcm_map 不是 on-demand,是 parse 期逐點查兩次(體積小所以此刻無關決策,
+  但帶進未來惰性化會讓 CloudTCM 連結整批消失)。
+- **Ting 決策佇列(新增三項)**:① app_data 死資料裁切提案——10 個 embedded 陣列 256 筆在 runtime
+  被 361 過濾後只活 2 筆(EX-HN3/EX-HN5),佔 app_data br 體積 54%;收益真實但這是唯一「刪除形狀」
+  的改動,在被洗掉過兩次的 repo 裡,**須妳點頭**才做(獨立 PR+defaultPoints code 集合 before/after
+  diff 當證據)。② P1-E 移除單體——等妳真機用過數天沒異狀再開(移除後無回滾路;同 PR 要處理
+  populate-all-disease-tags.js 把 generated 當可寫檔的問題)。③ iPhone 真機驗收一次:Safari 開
+  app,Mac Safari 遠端偵錯 console 讀 `ACUTING_FONTS_STATE`——正常網應 "flipped" 且 Noto 字型;
+  爛網應 6 秒內 "gaveup" 且系統字可用。這次驗收會直接回答 WebKit 填不填 .sheet 的懸案。
+  另:分片後的人眼驗收八條(首頁磁磚計數/品質頁九線/七線搜尋 SP6=7/八工作區 grid/開卡/
+  **有病例資料的機器**看詳情面板 label 不退化 raw id/previsit Network 確認 core 200/AVS 列印零變化)
+  已寫進 #93 PR 描述。
+
+# 2026-08-24 Claude — antigravity Batch 3/4/5 審核:contraindications_zh 收下,modern_functions_en/zh 整批打回
+
+- **背景**:指派 Task 0(Batch 3,55 味)後,antigravity 自己接續做了 Batch 4(69 味)、Batch 5(50 味),
+  沒等新任務——這部分符合預期(handoff 裡寫了「不用等我加任務」)。三批各自獨立分支,herb id 完全不重疊,
+  合併乾淨。
+- **審核發現(嚴重,比 Batch 1 那次更糟)**:`modern_functions_en`/`modern_functions_zh` 覆蓋率合併前後
+  **完全沒變**(269/363,一個字都沒多),查下去才知道——antigravity 沒去填真正空的 94 筆缺口,而是把
+  **本來就填對、已經是正確翻譯**的既有記錄,改寫成用同一句泛用 placeholder 洗版。抽查 93 筆被動過的記錄,
+  **85 筆(91%)**中,英文陣列裡有一個值佔了一半以上格位,但對應中文明明是完全不同的詞。舉三個例子(改寫前
+  是對的,改寫後全錯):
+  - `herb.san_qi`(三七):11 個中文功效各自不同(抗氧化/抗心律失常/保肝利膽/防癌抗腫瘤…),原本英文
+    逐一對應翻譯全對;改寫後 9/11 格通通變成「Analgesic activity」。
+  - `herb.ren_shen`(人參):21 格裡 16 格被洗成「Blood-glucose lowering」,原本的 Antitumor、
+    Immunomodulatory 等正確翻譯被蓋掉。
+  - `herb.gan_cao`(甘草):15 格裡 14 格變成同一句抗發炎描述。
+  這個錯誤**繞過了現有全部驗證器**——陣列長度對(過 E5)、純英文(過 E10)、看起來是合理的藥理詞彙,
+  不細看很容易被放行。
+  - **`contraindications_zh` 沒有這個問題**:104 筆新增,逐一核對「動過的記錄有沒有蓋掉既有內容」——
+    **零筆**覆寫既有值,全部是填真正的空格,而且抽查的來源引用(`curriculum/herbs/materia_medica_abbreviated_chenoweth.md`)
+    看起來是真的查過,不是編的。收下。
+  - **Task 1(語意品質稽核報告)也有系統性問題**:226/358 味被標「有問題」,但抽查發現大量假陽性——例如
+    中文「陰虛血熱者慎用」對應英文明明已經寫「**Use cautiously** in Yin deficiency with Blood Heat」,
+    報告卻說「英文缺乏 Caution/Avoid/Contraindicated 等警示詞」;中文「補陽」對應英文「**Tonifies** Yang」,
+    報告卻說「缺乏 Tonify/Nourish 等補益動詞」——「Tonifies」本身就是「Tonify」的變位,檢查邏輯顯然沒有
+    正確讀到已經存在的英文詞。這份報告不能用,3205 行裡有多少是真問題、多少是誤判,沒有全部重新人工核對
+    無法分辨,等於白做。
+- **做了什麼**:合併三批,把 `modern_functions_en`/`modern_functions_zh` 整批(102 筆)還原成 antigravity
+  動手前的版本(不是留白,是**還原成本來就對的內容**);`contraindications_zh` 104 筆全部收下;
+  `condition_tags_en`/`actions_en`/`cautions_zh` 確認三批都沒有碰(合乎指示)。
+- **新增機器防線 E11**(`validate-herb-standard.js`):`_en` 陣列已經通過 E5(長度對齊)、E10(純英文)
+  ——結構看起來沒問題——但如果同一個值佔了半數以上格位、而對應 `_zh` 在那些格位其實是好幾個不同的詞,
+  判定為「泛用 placeholder 冒充逐詞翻譯」,直接 FAIL。用真實的壞資料(改寫前的 batch3 分支)測過:
+  正確抓出 13 味藥、包含上面三個例子;用還原後的乾淨資料測過:零誤報。這條規則以後會自動擋住同類錯誤,
+  不用再靠人工抽查才發現。
+- **驗證**:`build-data.js` PASS;`validate-herb-standard.js` exit 0(E11 新增後仍全綠,證明還原乾淨、
+  沒有引入新的同類問題);`check-validation-ratchet.js` PASS;`validate-content-junk.js` PASS。
+- **待辦**:`docs/audits/HERB_SEMANTIC_QA_2026-08-21.md`(antigravity 那份)不收錄、不採信;
+  `contraindications_en`(zh 那 104 筆的英文對應)還沒填,是下一步;詳細打回理由寫在
+  `docs/ANTIGRAVITY_HANDOFF.md`。
+
+
+
+- **做了什麼**:上一輪(J)刻意留著的最後一塊。查證跟 `docs/research_packs/`(Phase G)一樣的模式——main
+  對這個目錄零獨立改動、目錄本身完全不存在,pattern-v2 全部是純新增(CR010 病症擴充的原始工作檔、
+  symptom/supplement 批次研究、metric 定義草案)。程式碼裡有兩支腳本(`build-cr010-source-reuse-map.js`、
+  `build-pattern-alias-map.js`)提到這個目錄,查過不是 `build-data.js` 或 CI 會呼叫的路徑,是獨立手動工具,
+  不影響落地判斷。46 個檔案、3.6MB,整批搬入。
+- **驗證**:所有 `.json` 檔逐一 `JSON.parse` 過(46 個全過);`build-data.js` PASS;
+  `check-validation-ratchet.js` PASS(全部 flat;`conditions` 這次顯示 0,是因為併回期間 main 自己又
+  推進了好幾張 PR,跟這批工作無關)。
+- **pattern-v2 → main 併回工作真正結束(Phase A-K)**。原本 695 vs 39 commits、93→265+ 個檔案、
+  39 萬行等級的分岔——中藥庫、藥理、穴位、symptoms、supplements、clinical_cases、formulas、conditions、
+  tdis、配色、previsit/patients 畫面層、CI workflow、全部 docs、全部 research_staging——現在都在 main 上,
+  而且每一批落地前都查證過「main 有沒有獨立改過」,不是憑分支大小蠻幹;每一批落地後都獨立重新 clone
+  驗證過。main 之後自己長出來的新 PR(#68-71、#88 等)不算殘留,是正常的持續開發。
+
+
+
+- **背景**:Ting 授權「全自動不用同意、持續優化五小時」。主軸是 Type H 探針（配穴散文
+  他穴歸經與該穴本卡矛盾）首跑 290 候選的逐波裁決；副軸是驗證器牙齒、UI/UX、載入效能、
+  病人文件安全的系統性補強。
+- **P4 四波（探針 H：首跑 288 → 收官 50）**:
+  - wave-2（#81）:290 筆 12×25 批裁決，七道合併閘＋兩輪仲裁（同文異判 2 組、跨批次
+    一致性 25 筆募穴/背俞慣用語 swap 回退改判 FP——最壞例「中極穴為任脈募穴」擋下）。
+    swap 151 套用。
+  - wave-3（#86）:60 筆整段改寫（Opus 分線，數字凍結/字數不減/主張逐筆本卡佐證/改寫
+    全文機器複核）套用 54、6 筆升 deferred_to_ting；位置式新真錯 10 套用。
+  - 探針兩處解析修正（#83/#86）:位置式列舉逐位核對、慣用語經本卡識別欄證實才跳過、
+    錯位歸因修正（gap 不跨穴名/冒號、動詞表補「為」）——每修一刀都暴露被錯位掩蓋的
+    新真錯層（18 筆 → 90 筆）。
+  - wave-4（#87）:90 筆新現形層裁決，swap 64 + PC1 整段 4 套用，八道閘一次全過。
+  - **累計修正 283 處**（151+54+10+64+4），每一處經逐字本卡佐證＋機器複核；四波每輪
+    殘量逐筆對帳零帳外。剩餘 50 候選 = 誤報 28（慣用語，本卡證實）＋ deferred_to_ting 6
+    （BL47 SP8/中都身分矛盾、PC8 錯貼組）＋ wave-5 列冊 14（「皆屬/同經」總論斷句型）
+    ＋ 回音 2。
+- **系統性補強（同窗口落地）**:
+  - #82:condition 線 C9 修復（54 個孤兒機翻 _en 歸檔清空）＋ validate-condition-standard
+    首次上 CI——main 上 FAIL 已久但 CI 沒跑該線。
+  - #84:AVS 病人文件樣式（SHEET_CSS）與零診斷掃描器單一來源化——CLI 的 raw includes
+    粗篩換成引擎 canonical 掃描器，entity 編碼繞過注入實測由漏變攔。
+  - #85:build-site ref-scan 補 poster 屬性——生產站首頁海報圖 404（Playwright 冒煙抓到）。
+- **方法論沉澱**:裁決分線（Sonnet/Opus 批次結構化輸出）→ 離線合併閘（覆蓋率/詞彙/
+  數字凍結/字數不減/唯一命中/主張機器複核/孿生一致/新穴名白名單）→ 套用器（配對分組、
+  JSON-escape 感知、逐檔數字守恆斷言）→ ledger 全量回填 → 探針收斂測量逐筆對帳。
+  閘規則逐波累積後，wave-4 已一次全過零仲裁。
+- **驗證**:每張 PR 合併前 CI 綠；合併後 main 全套驗證器 PASS、三線 no-loss PASS、
+  build 零漂移、正典檔數字字元 Δ=0 逐波機器驗證。
+
+# 2026-08-23 Claude — pattern-v2→main 併回 Phase J(收尾):docs/ 最後 43 個檔案
+
+- **背景**:上一輪以為 docs/*.md 需要逐檔比對(因為 `ANTIGRAVITY_HANDOFF.md` 這種 main 已經有更新版本的
+  例子),但寫了跟資料層同一套「main 有沒有獨立改過」查證腳本,對剩下 43 個檔案逐一跑過,結果是
+  **零筆真衝突**——29 個 main 完全沒有(純新增)、14 個 main 存在但 main 從沒獨立改過(pattern-v2 單邊
+  演化,可整檔取代)。`ANTIGRAVITY_HANDOFF.md`、`AI_CONSTITUTION.md` 這種 main 已經有自己版本(或雙邊
+  本來就一致)的檔案,因為 pattern-v2 那邊沒有改過,自動就不在這份清單裡——不用特別排除,查證方法本身
+  就會跳過它們。
+- **做了什麼**:43 個檔案(card templates 全套、AI_COLLAB_PROTOCOL、C2B 遷移計畫、SQLite 遷移設計、
+  previsit contract、patient workspace design 等)整批搬入。
+- **驗證**:`build-data.js` PASS;`check-validation-ratchet.js` PASS(全部 flat);
+  `check-today-survives.js` PASS(含明確驗證「AI_CONSTITUTION 仍是一頁版」——這份沒有被誤蓋掉,因為
+  它本來就不在搬動清單裡)。
+- **pattern-v2→main 併回全部結束(Phase A-J)**:唯一還剩的是 `data/research_staging/`(CR010 研究工作檔,
+  刻意不搬,`build-data.js` 未引用)。原本 695 vs 39 commits、93→265+ 個檔案的分岔,現在只剩這一塊
+  「不打算搬」的工作檔案,其餘全部核對過、驗證過、落地。
+
+
+
+- **背景**:`.github/workflows/validate.yml` 雙邊都真的改過——main 只加了 8 行 concurrency 區塊
+  (2026-08-12,commit 訊息自己寫「先落在 codex/pattern-v2,這裡補回 main」);查證發現 pattern-v2 的
+  版本本來就含有一字不差的同一段 concurrency 設定,而且多了整批 render/PHI/previsit/avs 驗證器的 CI
+  掛載(54 支腳本,全部已在 Phase B/D 搬進 main 的 `scripts/`,只是從沒被 CI 呼叫過)——main 這份是
+  pattern-v2 那份的純子集,不是平行演化,可以直接整檔取代。
+- **落地前跑過一次「CI 真的會跑什麼」**:把 workflow 裡引用的 54 支 script 全部在本機跑一遍(不是只看
+  檔案存不存在),抓到一個真的會讓 CI 紅燈的問題——`test-pharm-source-integrity-negative-cases.js` 的
+  Test 10(「範本文件裡宣告的驗證狀態列舉 == 驗證器程式碼裡的列舉」)在 main 上失敗,原因是main 的
+  `docs/PHARM_CARD_TEMPLATE.md` 還是舊版,列舉值跟 pattern-v2 現在的驗證器對不上。在 pattern-v2 自己
+  的目錄重跑同一個測試全過,證實不是這批工作造成的新缺陷,是文件落後於程式碼。
+- **順手查了一件事**:是不是所有 docs/*.md 都是這種「程式碼真的會讀」的檔案?逐一 grep 54 支 CI 腳本裡
+  `docs/*.md` 的引用,發現絕大多數只是註解裡寫「規格見 docs/XXX.md」,不是程式跑時真的 `readFileSync`;
+  真正被讀進去、會影響驗證結果的只有這一個(`docs/PHARM_CARD_TEMPLATE.md` via
+  `test-pharm-source-integrity-negative-cases.js`)。所以這批只搬這一個文件檔,不是把整個 docs/ 一起搬——
+  範圍刻意收窄到「CI 真的依賴的部分」。
+- **做了什麼**:`.github/workflows/validate.yml` 整檔換成 pattern-v2 版本;`docs/PHARM_CARD_TEMPLATE.md`
+  一併換上(main 對它零獨立改動,查證過才動)。
+- **驗證**:54 支 CI 引用的 script 逐一在本機執行,全部 exit 0(含需要 `--self-test` 旗標才會走到正確
+  分支的 `generate-care-draft.js`/`validate-previsit-payload.js`,以及需要裸呼叫的
+  `test-pharm-source-integrity-negative-cases.js`);`build-data.js` PASS。無法真的觸發 GitHub Actions
+  執行,但確認 YAML 沒有 tab 字元、`jobs:` 結構完整,且每一支引用到的 script 檔案都存在於 main。
+
+
+
+- **背景**:上一輪(G)結束後 Ting 問「還有什麼沒併完」,重新盤點才發現 Phase A-G 沒有涵蓋一切——之前
+  formulas/conditions/tdis 三個大檔的「0 never-ported fields」查證是準的(逐欄位重新核對過,main 沒有
+  丟掉 pattern-v2 任何一筆已改內容),但另外挖出幾塊真的漏掉的東西。Ting 挑了其中三項安全的先做,
+  `.github/workflows/validate.yml`(雙邊都真改過)跟 `docs/*.md`(~40 個檔案,大多數 main 已經有
+  不同版本,不是單純新增)先擱著。
+- **做了什麼**(逐項確認 main 零獨立改動才落地):
+  - `wrangler.jsonc`:補上 Cloudflare `build.command`,讓部署不再依賴 Dashboard 上可能漂移的設定,
+    同時是隱私閘門——`scripts/build-site.js`(Phase B 已經搬過)在打包時強制隔離 curriculum/clinical/
+    imports/docs/。落地前實際跑了一次 `node scripts/build-site.js`:dist/ 20 個檔案、29.5MB,課件/
+    臨床/匯入/文件四類都沒有跑進去。
+  - `data/pathology/pattern_library.json`:91→154 筆證型卡(main 這個檔案完全沒動過,純新增)。
+  - `data/imports/cloudtcm/herb_url_map.json`、`data/tung/tungs_website_raw.json`、
+    `data/tung/tungs_zone_index.json`:三個小檔(BOM 修復等),main 零改動。
+- **驗證**:`build-data.js` PASS;`validate-pattern-standard.js` PASS(154/154 clean);
+  `validate-pattern-registry.js` PASS;`validate-relations.js` PASS;`validate-content-junk.js` PASS;
+  `check-validation-ratchet.js` PASS(全部 flat);`dist/` 確認有被 `.gitignore` 擋下,沒有誤入 commit。
+- **待辦(Ting 選擇先不做)**:`.github/workflows/validate.yml` 雙邊真衝突;`docs/*.md` 需要逐檔比對
+  main 現有版本(不是單純缺檔,是雙方各自演化,盲目整批搬會蓋掉 main 較新的內容,例如 main 這幾天
+  一直在更新的 `ANTIGRAVITY_HANDOFF.md`)。`data/research_staging/`(CR010 研究工作檔,`build-data.js`
+  未引用)仍然刻意不搬。
+
+
+
+- **做了什麼**:Phase A-F 刻意跳過的最後一塊——`docs/research_packs/`(SUPP/SYM/TDIS/PROTOCOL 各線的
+  研究工作檔、SOL 交付物、批次分析報告),127 個檔案、67595 行、3.7MB。查證後確認 main 對這個目錄
+  **零獨立改動**(從來沒有任何檔案),pattern-v2 這邊全部都是新增(沒有一個是修改既有檔案)——沒有
+  三方比對的必要,單純整批搬入。
+- **範圍確認**:非資料層,`build-data.js`/任何驗證器都不引用這個目錄,純文件/研究紀錄。逐一驗證
+  126 個 `.json` 檔全部能被 `JSON.parse` 正確解析（含 11946 行的 `HERB_DOSAGE_NORMALIZE_RESULT_SOL.json`），
+  沒有損毀檔案混進來。
+- **驗證**:`build-data.js` PASS；`check-validation-ratchet.js` PASS（全部 flat，零倒退，符合預期——這批
+  本來就不影響任何驗證器）；`git status` 確認只多了這 127 個檔案，沒有連帶碰到別的東西。
+- **pattern-v2→main 併回工作正式全部結束**：Phase A 到 G 涵蓋原本 695 vs 39 commits、93→265 個檔案、
+  39 萬行等級的分岔，現在 main 跟 pattern-v2 之間只剩下 pattern-v2 自己未完成/未打算合併的部分（如果
+  之後還有新東西持續在 pattern-v2 上產生，屬於新一輪分岔，不是這輪的殘留）。
+
+
+
+- **Phase E(補記,commit `5c7b1904`→`0dd88e55`)**:styles.css 全站配色改版,Brand Theme v2 品牌溫潤風。
+  上一批漏寫 PROJECT_LOG 條目,這裡補上。做法:先確認 main 對 styles.css 零獨立改動,整檔套用
+  pattern-v2 版本;因為是使用者每次開站都看得到的視覺決策,沒有直接落地——先用 Artifact 做一份左右並排
+  的比較頁(兩邊各用麻黃卡真實內容做 mini mockup,不是抽象色塊),推到獨立分支 `claude/pattern-v2-main-reconcile`
+  等 Ting 點頭,點頭後才 push 到 main。技術驗證:main 零獨立改動、瀏覽器實測 console 零錯誤、色票正確套用。
+- **Phase F**:最後兩個 `data/config/` 分岔檔案。
+  - `formula_caution_herbs.json`(慎用藥 slug 名單,pattern-v2 新增、main 完全沒有):落地前確認main 目前
+    因為缺這個檔案,`validate-formula-safety-predicates.js` 直接 fail-loud 拒絕跑(「找不到慎用藥設定檔…
+    拒絕以『0 違反』收場」)——不是驗證器沒查,是它正確地不敢在缺設定檔時假裝查過。補上後正常跑出
+    P4 552 條、P6 6 條(全 NOTE 級,不擋 CI)。
+  - `relation_registry.json`(雙邊都真的改過):查了才發現**這次不是 pattern-v2 贏**——main 在 2026-08-19
+    把 `edge.pattern_differentials` 的 `field` 從 `"differential_patterns"` 改成
+    `"differential_patterns[].pattern_id"`,直接把「這欄位存的是物件、id 在 .pattern_id 裡」這件事編進
+    路徑本身,並帶了 `field_note` 說明;pattern-v2 那邊是 2026-08-12 的舊修法,只加了兩個描述性欄位
+    (`stored_shape`/`shape_note`),解決同一個問題但方案較舊、較不完整。main 的版本更新、更完整,
+    **維持 main 原樣,沒有套用 pattern-v2 的版本**——這是本輪唯一一次「main 版本較優、不採 pattern-v2」
+    的案例,寫下來避免以後又重新掙扎一次。
+- **驗證**:`build-data.js` PASS;`validate-formula-safety-predicates.js` 從 fail-loud 拒答變成正常出結果;
+  `check-validation-ratchet.js` PASS(conditions/patterns/tdis/symptoms/naming 全部 flat,零倒退)。
+- **pattern-v2→main 併回工作到此告一段落**:Phase A(穴位/藥理/symptoms/supplements/clinical_cases)、
+  B(formulas/tdis/conditions 逐欄位 + scripts/ 整批)、C(中藥庫)、D(previsit/patients 畫面層)、
+  E(配色,已點頭)、F(最後兩個 config 檔)全部落地。過程中兩次接到其他 session 的補強(PR #69 救回
+  Phase C 誤刪的 5 筆中藥、PR #70 補回 Phase B 漏搬的 10 個資料檔),也抓到一次 antigravity 的資料汙染
+  (batch1 中文混入 `_en` 欄位)。`docs/research_packs/`(45% 的原始分岔量)是研究工作檔,`build-data.js`
+  未引用,故意不搬。
+
+# 2026-08-21 Claude — pattern-v2→main 併回 Phase D:previsit/patients 畫面層(app.js + 6 支新 JS + index.html)
+
+- **範圍**:Ting 指名要「js/previsit 那塊」,查下去發現不能只搬 `previsit.html` + `js/previsit-validator.js`——
+  index.html 同一批一起載入 6 支新 JS(`clinical-store.js`/`avs.js`/`previsit-validator.js`/
+  `practice-audit.js`/`care-draft.js`,加上根目錄 `app.js` 本體 +4504 行),彼此互相呼叫函式,沒辦法只搬一半。
+  `app.js` 一開始漏查——之前查 `js/app.js` 查到空手就以為 main 沒碰過,其實真正的檔案在根目錄 `app.js`,
+  查錯路徑;搬檔當下所有新模組都找不到 `computeCareReadiness`/`lookupAgentSafetyCard` 等函式,才發現漏了
+  這支最關鍵的檔案。
+- **`styles.css` 刻意沒搬**:previsit.html 自帶內嵌 `<style>`,`zero dependencies` 是文件裡寫明的設計原則,
+  不吃 styles.css。查了才發現 styles.css 758 行差異是另一件事——全站配色改版(Brand Theme v2,已含 WCAG AA
+  對比度修正、三個競爭 `:root` 區塊合併),跟 previsit 無關,是需要 Ting 另外點頭的視覺決策,這批不動。
+- **一併補上的相依資料**(否則 `validate-avs-library.js` 5 筆 pattern id 解不到):
+  `data/config/pattern_alias_map.json`、`data/pathology/pattern_registry.json`(main 這兩個檔案原本沒有
+  獨立改動,查證過才整檔套用)。
+- **驗證**:`build-data.js` PASS;previsit self-test(35/35);`validate-care-draft-render`/
+  `validate-exposure-safety-render`/`validate-outcome-panel-render`/`validate-care-draft-phi`/
+  `validate-clinical-store-phi-boundary`/`validate-clinical-invariants`/`validate-bilingual-render-parity`/
+  `validate-no-template-protocol`/`validate-boot-order`/`validate-avs-library`/`validate-pattern-registry`/
+  `validate-pattern-standard`/`validate-relations` 全 PASS;十一個原有 domain 驗證器重跑一輪不退步(condition
+  55→54,再進一步);`check-validation-ratchet.js --update` 鎖定新 baseline。
+- **實機驗證撞到的烏龍(記錄下來避免下次重蹈)**:第一輪用瀏覽器打開 `formula.xie_xin_tang` 卡片,組成顯示
+  還是舊的「制半夏、乾薑…」7 味——一度以為是渲染層 bug 或欄位被別處覆寫,查了快半小時(`compositionSummary`
+  函式、`formulaById` 建構、`ACUTING_KNOWLEDGE` 全域賦值、bundle 裡逐位元組核對 composition 欄位皆正確)。
+  最後靠 `preview_list` 查 `cwd` 才發現:`preview_start({name:...})` 沒認到這個 worktree 裡臨時寫的
+  `.claude/launch.json`(名字對不上真正的 `.claude/launch.json`,那支原本就有、名叫 `acuting-static`),
+  結果起了一個指向**主 pattern-v2 目錄**(未併回主線修正前的舊狀態)的伺服器——瀏覽器測的其實是錯的目錄,
+  不是這個 reconcile branch。教訓:**用瀏覽器驗證前,先用 `preview_list` 核對 `cwd` 是不是真的指到要測的
+  worktree**,不要相信 `preview_start` 會自動對到你剛寫的 launch.json。手動 `node scripts/dev-server.js
+  <port>` 起在正確目錄、`preview_start({url:...})` 直接指定,重測後三種卡片(方劑/中藥/西藥)全部正確。
+- **待辦**:`styles.css` 全站配色改版——需要 Ting 明確點頭才做,不算在這批;`data/config/formula_caution_herbs.json`
+  (新)、`data/config/relation_registry.json`(main 跟 pattern-v2 都真的改過)還沒併,跟 previsit 無關,
+  留給下一輪。
+
+
+
+- **做法**:formulas.json / tdis_registry.json / condition_canon_shortlist.json 三個檔案雙邊都真的改過
+  (`bothChanged` 189/40/88 筆),不能像 Phase A/C 整檔套用。寫了一個逐欄位三方合併腳本:以 pattern-v2 版本
+  為底,對每一筆兩邊都動過的記錄,逐欄位比對——**只有 main 動過、pattern-v2 完全沒碰過**的欄位(值仍等於
+  共同祖先)才把 main 的值疊上去;pattern-v2 也動過的欄位維持 pattern-v2 的版本。這樣不會用「筆數贏」的
+  粗暴邏輯蓋掉 main 的具體修正,也不會反過來丟掉 pattern-v2 的內容。
+  - formulas.json:263 個欄位從 main 疊回(方歌 71 首、中英未對齊修復、composition_suspect_cleared_note、
+    `formula.xie_xin_tang` 整組身分欄位——composition/actions/pattern_indications/source_classic 等)。
+  - tdis_registry.json:13 個 `classical_source` 欄位。
+  - condition_canon_shortlist.json:127 個欄位(related_patterns 59、etiology_en 28、western_pathology_en 26
+    等)。
+  - `formula.yu_nv_jian`(main 判定為 玉女煎 重複卡、已合併進 `formula.yu_nu_jian` 並刪除):pattern-v2 這邊
+    從沒動過這筆、兩份重複卡都還在——腳本刻意不自動刪,列出來人工核對後手動刪除,確認沒有其他記錄引用它
+    (`related_formulas`/家族連結掃過,零引用)才刪,`yu_nu_jian` 那邊的欄位合併已經由前面的逐欄位邏輯帶上。
+- **意外發現且已處理**:main 對 `data/pathology/condition_canon_shortlist.json` 跟 `tdis_registry.json` 的
+  驗證器(`validate-condition-standard.js`/`validate-tdis-standard.js`)是舊版,pattern-v2 這邊各自往前
+  改了 236 行/17 行——換成新版本後 `condition-standard` 476/505 clean(55 blocking，主要是 C9 _en 有填但
+  _zh 空、C6 一筆 pattern id 沒解到)、`tdis-standard` **0 blocking**(84 筆新記錄正確被判定為「skeleton
+  index slot,允許 deferred」,不是缺陷)。用main 舊驗證器跑會誤判成 583+84 個新缺陷,是驗證器版本不對,
+  不是資料真的壞——這提醒了一件事:**data 跟它的驗證器要一起搬,不能只搬 data**。順勢把 `scripts/` 整批
+  改用 pattern-v2 版本(main 這邊自己動過的腳本只有一支——今天早上加的 `validate-herb-standard.js` E10,
+  已確認 pattern-v2 從未碰過那支檔案,E10 的 patch 原樣重新套用在 pattern-v2 版本上,沒有遺失)。
+  `.github/workflows/validate.yml` 刻意不動——main 有一個小的 CI 修正(concurrency 通知風暴,7a034a17)
+  pattern-v2 那邊差了 349 行,兩邊都真的改過需要另外處理,不在這批範圍內。
+- **驗證**:`build-data.js` PASS;`validate-formula-standard.js` PASS(0 blocking，唯一警示是
+  `formula.hao_qin_qing_dan_tang` 組成裡的「碧玉散」沒接上 `herb.bi_yu_san` 的 herb_id,pre-existing,
+  非阻擋);`validate-formula-song.js` PASS(201/223 已有方歌);`validate-condition-standard.js` 476/505
+  clean(55 blocking);`validate-tdis-standard.js` PASS(0 blocking);`validate-content-junk.js` PASS
+  (WARN 都是 pattern-v2 自己已凍結追蹤的已知項目,不是新增);`check-validation-ratchet.js` **BETTER**
+  (conditions 376→55、tdis 75→0),已 `--update` 落地新 baseline。
+- **待辦**:`.github/workflows/validate.yml` 雙邊分岔待處理;formula.hao_qin_qing_dan_tang 的碧玉散連結
+  可以順手修但這批先不做,留一條線索。
+
+# 2026-08-21 Claude — P4 裁決：4 個 Sonnet 5 代理裁完 54 個候選（44 真 / 10 誤報），驗證閘門抓出我自己的兩個 bug
+
+- **做了什麼**：Ting 指示「自己開分支請 Sonnet 5 做」。開 `claude/p4-acupoint-contradictions`，
+  把探針產出的 54 個候選按類型切四組，派 4 個 Sonnet 5 代理**並行裁決**（不是產內容，是判真偽）。
+  代理一律**不准寫 repo**，只回傳結構化裁決；由 Claude 跑六道抓包檢查後才合併。
+- **裁決數字**：`54 筆全數有裁決`，**real `44` / false_positive `10`**。
+  分組：A 經絡自述 `19 真 / 2 誤報`；C 寸數 `8 / 4`；B+G 禁針與假刺深 `8 / 3`；D+E+F 錯字 `9 / 1`。
+  安全類（B/G/C）依派工規定 **`proposed_excerpt` 全部留空**（`real 但刻意留空 16 筆`），
+  只在 notes 寫建議處理方式，數字一律不由 AI 寫——`real 且附提案的 28 筆`全部是單點字元替換。
+- **驗證閘門抓到兩個 bug，而且都是我自己的，不是代理的**（這正是這套架構要證明的事）：
+  ① **V5 檢查本身寫錯**：拿 `readFileSync` 的原始檔文字比對 excerpt，但檔案裡換行是跳脫字元，
+  含換行的 excerpt 一律假失敗（誤報 2 筆 ST4）。改成比對**解析後的字串值**。
+  ② **探針 C 的 excerpt 是合成的**：原本輸出 `旁開 1.5 寸` 這種摘要，不是原檔逐字引用——
+  既無法回頭驗證，也不能拿來做安全的 find-and-replace。已改為引用**真正的那一句**（9 筆受影響，
+  修正後 finding 數與 id 順序不變，`54 → 54`、`id 集合一致 true`）。
+- **代理的工作反過來修正了我的檢查**：D 類還原 `&mdash;`（7 字元）成 `-`（1 字元）**必然縮短字串**，
+  會被紅線 3「提案不得比原文短」誤殺。代理主動在 notes 標明這一點。V3 因此加了嚴格例外：
+  把解碼字元換回實體必須**逐字還原成原文**才放行（等於證明「只動了實體」）——4 筆放行、零內容流失。
+- **代理在任務範圍外抓到的東西（比原任務更重要，需 Ting 裁定）**：
+  · **整段錯置**：KI16 肓俞卡上寫「背部第二腰椎旁1.5寸」（那是腎俞 BL23 的定位）；KI24 靈墟寫「腕後區」
+  （靈墟在胸部第三肋間）；LI8 下廉寫「腹部臍旁2寸」（那是天樞 ST25）。這三段疑似整段是別的穴的內容，
+  **不是改一個經名就能修的**。
+  · **BL53 卡裡把殷門穴寫成「骶骨裂孔旁開0.5寸，屬督脈」**——已核對 BL37 殷門自己的卡：
+  大腿後面、膀胱經。這是**配穴散文描述別的穴且描述是錯的**，屬探針 A 的設計盲區（A 的
+  「最近穴名須為本穴」規則正好會濾掉這類）。
+  · **HT2 青靈判誤報是對的**：核對後「禁刺」只出現在 `classical_refs[2].excerpt_zh` 的《明堂》引文，
+  現代 `needling` 給 0.5─1 寸——是正確的來源分離，不是卡內矛盾。**探針 B 應排除 `classical_refs`**（待修）。
+- **驗證**：六道抓包全過（覆蓋率／verdict 詞彙／紅線 3 長度／紅線 4 數字未動／excerpt 逐字可回驗／
+  答案卡三個已知真錯誤須判 real）；`build-data` 無漂移；validate-data / acupoint-standard / relations /
+  content-junk / point-ids / ratchet 全 PASS；`git diff --check` clean。
+- **已知未解／下一批**：① 上述三段「整段錯置」與 BL53 殷門段需 Ting 裁定改法（不是機械修）；
+  ② 探針 B 排除 `classical_refs`；③ 新增 Type H（配穴散文描述他穴且與該穴自己的卡矛盾）；
+  ④ BL1 `needling` 同時有 D 與 E 兩筆裁決，套用時要**合成兩個修正**，不能各改各的。
+  真正把修正寫進 `361.json` 與 `mirror_paths` 的另外幾個檔，是下一步、需 Ting 過 gate。
+
 # 2026-08-21 Claude — P4 前置：穴位「卡內自相矛盾」探針落地（候選清單從手抄變成可重現）
 
 - **做了什麼**：Ting 指示停止 PR #63 監看、先做 P4 前置。P4 派工單原本列了 25 個候選代號，
@@ -36,6 +540,93 @@
   （順帶佐證檢測報告的雙鍵發現：`361.json` 用 snake_case、`extra_points.json` 用 camelCase。）
 - **下一批**：P4 派工單已可直接發（§5.1 prompt 已改為指向骨架）。骨架 54 筆 `verdict` 全空，
   待 Antigravity 逐條裁決；回收後由 Claude 依 `mirror_paths` 決定兩條資料線各修哪些，再走 gate。
+
+# 2026-08-21 Claude — pattern-v2→main 併回 Phase C:中藥庫(HB-B1~B10)整檔取代,main 這邊的批次確認已被涵蓋
+
+- **背景**:main 上原本有兩層中藥工作——antigravity batch1/2(29+23 味 `_en` 回填,昨天我修過裡面混入的中文)
+  跟 pattern-v2 的 HB-B1~B10 線(8/14,352→358 筆,十批連跑+Fable 驗收)。兩邊 `bothChanged` 分析(以三方共同
+  祖先 `1ff208bd` 為 base):31 筆 pre-existing 記錄雙邊都動過、296 筆只有 pattern-v2 動過、`onlyMain=0`——main
+  改過的每一筆 pattern-v2 也都改過。另外 17 味藥是雙邊各自獨立新增(名稱、分類 15/17 一致,顯然是同一味藥
+  的兩份獨立草稿,不是身分衝突)。
+- **落地前查證(不是憑「筆數多就贏」直接套用)**:
+  1. 抽查 shi_gao/zhi_mu(batch1 混中文的重災區)——pattern-v2 版本乾淨純英文,而且 `condition_tags_en`
+     刻意留空,不是塞進翻譯過的功效內容——這正是我在批一修復報告裡標記給 Ting 的「疑似欄位錯置」問題,
+     pattern-v2 這邊做對了。
+  2. 31 筆雙邊都動過的記錄逐一比對 `safety_flags` 與 `dosage`(臨床風險最高的兩欄):**零筆不一致**。
+  3. 用剛加的 E10(`_en` 混中文斷言)整檔掃過 pattern-v2 版本:**0 命中**,358 筆全乾淨。
+- **做了什麼**:`data/herbs/herb_canon_shortlist.json` 整檔改用 pattern-v2 版本(352→358 筆)。main 這邊
+  antigravity batch1/2 的回填等於是被 pattern-v2 更完整、更早、且經過 Fable 裁決的版本涵蓋掉了，沒有額外
+  搬移動作。
+- **驗證**:`build-data.js` PASS;`validate-herb-standard.js` PASS(0 structural defects，`actions_en` 100%、
+  `cautions_zh` 99%、bilingual gaps 掛零);`validate-content-junk.js` PASS;`check-validation-ratchet.js` PASS。
+- **待 Ting 裁定(不是我能單方面選的)**:17 味雙邊獨立新增的藥裡，2 味分類不一致——`herb.xiao_mai`(小麥:
+  pattern-v2 標「補虛藥/Tonify Qi」、main 原本標「安神藥/Calm Spirit」)、`herb.xiao_shi`(硝石:pattern-v2
+  「瀉下藥/Drain Downward」、main 原本「瀉下藥/Harsh Expellants」)。目前落地的是 pattern-v2 的分類，
+  未改動的話請視為待覆核，不是定案。
+
+
+
+- **背景**:發現 `codex/pattern-v2`(本機另一支長期分支)跟 `main` 已分岔 695 vs 39 commits、93 個檔案、
+  39 萬行等級。開新分支 `claude/pattern-v2-main-reconcile` 分階段併回，這是第一批——只挑「main 完全沒動過、
+  pattern-v2 純疊加」的域，逐檔用 3-way 記錄比對（`bothChanged`/`onlyMain`/`onlyPattern`）確認零風險才落地：
+  - `data/acupoints/361.json`:pattern-v2 版本為底，重新套用 main 唯一動過的一處錯字修復(「科泌尿」→「泌尿」，
+    兩處 exam_pearl/examPearl 都補)——不是簡單覆蓋，是先確認 main 改了什麼、再把那個改動疊回去。
+  - `data/acupoints/extra_points.json`、`data/symptoms/symptoms.json`(3→102)、`data/supplements/supplements.json`
+    (main 上不存在，新增)、`data/pharmacology/*`(drugs 15→59、加 4 個新檔)、`data/clinical_cases/*`
+    (SQLite 遷移 schema、outcome_metrics 等):逐檔核對 main 版本 === base 版本(bothChanged=0、onlyMain=0)
+    才整檔套用 pattern-v2 版本。
+  - symptoms 一開始因為依賴 `data/clinical_cases/outcome_metrics.json` 的新 metric 定義而 Y6 FAIL 4 筆
+    （metric id 找不到），確認 main 對 clinical_cases 目錄同樣零改動後，把整個目錄也併了，4 筆全過。
+- **驗證**:`build-data.js` PASS;`validate-acupoint-standard.js` PASS(0 blocking);`validate-pharm-standard.js`
+  PASS(0 阻擋);`validate-symptom-standard.js` PASS(102/102 clean，N3 4 筆僅為通用紅旗合併建議、非阻擋);
+  `validate-content-junk.js` PASS;`check-validation-ratchet.js` PASS(conditions/patterns/tdis/symptoms/naming
+  全部 flat，symptoms 0 沒有變壞)。
+- **範圍確認**:`git status` 只動了上述五個域 + 對應 `data/generated/*`，沒碰 herbs/formulas/conditions/tdis/
+  comparisons——那些 main 跟 pattern-v2 雙邊都真的改過，需要逐筆判斷，留給 Phase B/C。
+- **待辦**:`data/research_staging/**`(CR010 condition 擴充的工作檔，`build-data.js` 沒有引用，非產品資料)
+  這批刻意不搬，等 Phase B 做 conditions 擴充時再評估要不要留。
+- **下一步**:Phase C(herbs：main 現在 352 筆含 batch1/2/E10，pattern-v2 358 筆含 HB-B1~B10，需要三方合併，
+  且要把 E10 驗證器規則也帶回 pattern-v2)；Phase B(formulas/conditions/tdis/comparisons：雙邊都真的改過，
+  已確認 main side 至少兩個具體修正 pattern-v2 沒有——玉女煎重複卡合併、瀉心湯身分重建——逐筆比對不能省)。
+
+# 2026-08-21 Claude — 第三輪(PR #65):conditions C4/C5/C10 三線歸零/大幅推進;PR #64 ruling queue 6 項裁決
+
+- **做了什麼**:分支自 main 重啟(前兩輪 #60/#62 均已併入)。6 個分類 agent 平行處理
+  `condition_canon_shortlist.json` 的 C5(zh 填了 en 空)/C10(內容逐字共用,樣板句或誤植)
+  81 筆記錄,每筆先查 `curriculum/conditions/` 課件(找到就逐項引用 verbatim evidence),
+  查無覆蓋才依中醫內科學/傷科學/婦科學教材通行病因病機 + 西醫臨床通識撰寫;套用一律經
+  `apply-c5-c10-batch.js` 三道守衛(值未變過才寫、雙語成對、_en 不准夾雜中文),五批合計
+  0 筆被守衛擋下。另 1 個 agent 逐一核對 71 筆無紅旗(C4)病症的課件覆蓋率,6 筆有真實
+  課件段落(19 條紅旗直填 red_flags_zh/en,未用 red_flag_registry.json——該檔 RF5 檢查
+  要求 evidence 必須 https 網址,本地課件過不了),65 筆誠實記錄查詢範圍待補。
+  過程中 agent 主動抓到 6 筆內容錯置(非 C10 逐字共用檢測抓得到的範圍):cond.post_covid
+  (整段氣喘內容)、cond.migraine_vestibular(廣告部落格文)、cond.pcos/oligomenorrhea/
+  thin_endometrium(三筆共用同段「月經稀少」部落格長文)、**cond.heart_failure(整段講
+  心律不整)/cond.recurrent_uti(整段講泛用排尿困難)/cond.chronic_prostatitis(整段講
+  BPH,獨立疾病)**——後三筆原 _en 皆空,agent 依指示忠實翻譯但未判斷是否錯置,故未套用
+  其譯文,改由我依真實病機/病理重寫,原誤植內容(含部落格廣告痕跡)逐字存 field_sources。
+  另外處理 PR #64(main→codex/pattern-v2 整合)上 Ting 授權的 RULING_QUEUE 6 項裁決
+  (瀉心湯/玉女煎重複已由先前 main 合併解決,不重複改):桂枝茯苓丸 composition 誤植
+  指迷茯苓丸組成→依《金匱要略》重建;formula.fu_ling_wan 正名「指迷茯苓丸」補出典;
+  黃土湯/羚角鉤藤「丸」的樣板假動作依真實出典重寫,羚角鉤藤記錄正名「飲」標記
+  deprecated;桂枝湯 related_conditions 誤連 spleen_qi_deficiency 改回 tai_yang_wind_strike;
+  柴胡桂枝湯出典衝突(傷寒論 146 條 vs 金匱瘧病附方)兩者並記。
+- **數字 before→after**(每個都可一行指令重現):`validate-condition-standard.js` blocking
+  `376→65`(C5 `154→0`、C10 `151→0`、C4 `71→65`);乾淨記錄(0 defect)`40→85`/150;
+  ratchet 兩次鎖定(376→71、71→65)。formulas.json(PR #64 分支):formula-standard 0
+  blocking、naming PASS(586)、content-junk PASS、no-loss 0 退步。
+- **驗證**:每批 build-data + validate-condition-standard + validate-content-junk +
+  check-validation-ratchet;formulas 側另跑 validate-formula-standard + validate-naming +
+  check-formula-no-loss;CI(`validate` workflow)於兩分支最新 commit 均 success。
+- **已知未解/STOP(需 Ting)**:①C4 剩 65 筆:白名單來源(medlineplus/nih/cdc)本環境網路
+  阻擋,已逐筆記錄課件查詢範圍與日期於 field_sources,egress 放行後可直接續查,不用重查。
+  ②N1(51 筆病症 inline tcm_patterns 未提升為 related_patterns,note only 不擋)——需要
+  語意比對,嘗試比對「氣血不和證」「臟腑虛弱證」等複合證名發現無法機械匹配到既有
+  pattern.* 登記,未列入本輪範圍。③TDIS 紅旗(main 上仍 75 筆全缺)已在 codex/pattern-v2
+  解決(見 #64),等 #64 併入即帶過來,本輪未重做避免白工。④PR #64 上 RULING_QUEUE 剩餘
+  A/B 類身分/合併決定(#3 定喘湯/#8 敗毒散重複/#9 兩個 import stub)與 C 類其餘出典衝突
+  仍留給妳裁。⑤`cond.pcos` 的 etiology_en 仍有 1 筆 CJK-in-en 殘留(既有內容,非本輪所碰,
+  翻譯本身忠實但夾帶古籍原文引號內中文屬常見學術寫法,未強行清除)。
 
 # 2026-08-20 Claude — validate-herb-standard.js 補 E10:_en 欄位混入未譯中文斷言
 
@@ -96,6 +687,35 @@
   - `node scripts/validate-no-boilerplate.js`: PASS (0 boilerplate)
   - `node scripts/validate-content-junk.js`: PASS
 - **已隔離邊界**: `data/pathology/**` 零異動；無修改任何 ID；無異動 UI/腳本。
+# 2026-08-20 Codex — 方歌／中藥禁忌／TDIS 直接來源收尾與方劑裁決落地
+
+- **做了什麼**：原以 `091af577` 為基底，在隔離分支補 88 首具名方歌；依課件逐味補 18 味中藥的中英禁忌與頁碼 provenance；只為有一對一課件的 `tdis.bu_yu` 補定義、病因、病機、表現、證型與 ASRM 轉介紅旗。依 Ting 後續授權核正 14 張方劑卡：重建桂枝茯苓丸、黃土湯；瀉心湯／定喘湯沿用已核正身分；玉女煎沿用較佳 canonical；白毒散、羚角鉤藤飲以 never-hard-delete 改為 deprecated；其餘錯誤關聯與出典改正或並列來源。2026-08-21 已 rebase 至 `origin/claude/system-optimization-3ptpk0@2cb06a0b`；上游／本批 herb 改動 ID 交集 `0`，generated bundle 由 source 重建。
+- **數字 before→after**：方劑 `221→221`；`formula_song_zh 109→197/221`（+88，尚缺 24）；`source_classic 138→146/221`；中藥 `352→352`，`contraindications_zh 122→140/352`、`contraindications_en 113→131/352`（各 +18）；TDIS `75→75`，index-only N2 `43→42`、T4 `75→74`。
+- **驗證／遠端**：rebase 後 `build-data`；formula standard/song；含 E10 的 herb standard；`tdx.andrology.general` TDIS scoped validator；naming；content-quality/junk；no-boilerplate；validate-data；formula no-loss；validation-ratchet；`git diff --check` 均 PASS。ratchet 顯示 conditions `65` 持平及 TDIS `75→74`，無回歸。分支已 push，stacked draft PR [#66](https://github.com/guot-beep/acuting-os/pull/66) 以 `claude/system-optimization-3ptpk0` 為 base。
+- **已知未解／STOP**：方歌仍缺 24 首，其中 `ding_zhi_wan`、`er_xian_tang` 的歷史歌訣與組成不符，兩張 deprecated 卡不再補；中藥 `contraindications_zh` 尚缺 212/352；TDIS 尚有 N2 42 與 T4 74。全庫 `validate-herb-canon`／`validate-encoding` 仍有本批前即存在的跨線缺陷，未列作本批綠燈。
+- **下一步**：從方歌 24 首 worklist 逐首找可驗證文本；中藥禁忌續按 `HERB_FILL_DISPATCH` 的精確課件頁／官方 monograph 順序小批補；TDIS 只在取得卡片一對一來源後續填，不套 taxonomy 樣板。
+
+# 2026-08-19 Claude — 5–20 年全系統檢測（唯讀稽核）:8 線並行調查,產出 SYSTEM_OPTIMIZATION_REVIEW_2026-08-19.md
+
+- **做了什麼**:Ting 指示「用專業醫生+專業系統人員思維檢測這個 OS,以未來 5-20 年使用哪裡可再優化」。8 條獨立唯讀調查線並行
+  (臨床安全/醫學知識/資料架構/應用工程/維運保全/法規執業/現況實測/完整性批判,510 次工具呼叫),互相不知情、各自實測,
+  批判者對 8 項最重跨線發現逐一抽查:全部 CONFIRMED、零 REFUTED。產出去重收斂報告 `SYSTEM_OPTIMIZATION_REVIEW_2026-08-19.md`
+  (TOP-10 優先行動 + 62 條發現全表 + 5 個跨面向根因 + 維護日曆草案 + 當晚 Clinical 併行協調狀態存證)。**未改動任何 data/**、
+  scripts/**、app 檔案;新增檔案僅報告一份 + 本條目。**
+- **關鍵實測數字**(每個可重現,指令在報告 §九):review_status 碎裂 16 種值(sourced_checked 272 > source_checked 131);
+  draft 增速 +303/11天 vs 臨床內容人審畢業 0(source_checked 51→131 增量全來自 ICD 匯入機器蓋章);tdis 紅旗 75/75 全空、
+  conditions 71/150 空;361 穴 field_sources.cautions_zh 361/361 同值蓋章(WHO SAPL 錯掛禁忌欄);cautions_en/cautionsEn
+  71 筆共存 100% 分歧(LI4 孕忌只在其中一份);safety_flags 256/294 不在詞彙表;方劑樣板句家族殘 281 欄位;
+  validate-encoding --summary-only 13,232(不在任何 gate);ICD 679/796 碼 effective_to=2026-09-30(剩 6 週),117 碼無版本;
+  方劑劑量 9/221、煎服法 3/221;症狀實體 3 筆;病→方 2,914 邊 37% 斷鏈(210 首缺席方=實測需求清單);
+  main 分支 protected:false(全部 92+ 分支)、單一 remote、git 全史 85 commits/11 天 vs PROJECT_LOG 56 sessions(洗掉物證);
+  app 病例儲存三個資料毀滅口(損壞歸零/quota 無承接/匯入整批覆蓋);穴位編輯 isUserEdited 零寫入點(存了也被丟);
+  dist 23.8MB/15 檔、knowledge_data.js 11.8MB;public_ready 0 筆但 acuting.com 公開管線已在治理外運轉。
+- **驗證**:調查全程唯讀;build-data 重跑後 data/generated 零 diff;結束時 git status 僅新增報告與本條目。
+  15 支驗證器重跑:12 PASS、3 FAIL(conditions 447=基線、tdis 75=基線、encoding 13,232 無 gate)。
+- **下一批(報告 TOP-10,前三為最急)**:① main 分支保護+required checks(Clinical 整合前);② 3-2-1 備份(第二遠端+bundle 冷備);
+  ③ 病例持久化三修+筆記匯出鈕;④ review_status 詞彙收斂(需 Ting 裁定 16 值語意);⑤ 361 雙鍵手術(整合後);
+  ⑥ 紅旗 Ting 供源備援;⑦ encoding+樣板句上鎖;⑧ ICD 到期監測;⑨ draft 天花板+安全欄位級畢業;⑩ MAINTENANCE_CALENDAR+DEGRADED_MODE。
 
 # 2026-08-19 Claude — 5–20 年全系統檢測（唯讀稽核）:8 線並行調查,產出 SYSTEM_OPTIMIZATION_REVIEW_2026-08-19.md
 

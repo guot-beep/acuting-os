@@ -1,0 +1,1162 @@
+{
+  "schema": "acuting_os.cr010_condition_detail_research.v1",
+  "generated_at": "2026-08-11",
+  "repo": "guot-beep/acuting-os",
+  "target_branch": "codex/pattern-v2",
+  "batch": "02",
+  "condition_count": 15,
+  "status": "research_staging_not_canonical",
+  "priority_basis": {
+    "requested": "Fable live audit PARTIAL order",
+    "resolved": "NOT AVAILABLE TO SOL THROUGH GITHUB AT GENERATION TIME",
+    "repo_evidence": "Latest visible AI_WORK_HANDOFF reports cond.* 505 total, 209 content-layer + 296 skeleton, and CR-010 detail material still pending.",
+    "fallback": "Source-reuse-optimized prefetch from Common-300 candidates. Fable MUST exact-scan and re-order/filter against its local live PARTIAL audit before merge.",
+    "do_not_claim": "This file is not an exact reproduction of Fable's private/local partial ranking."
+  },
+  "merge_policy": [
+    "Exact-scan current canonical IDs/names/aliases before any merge.",
+    "Prefer PARTIAL existing cards from Fable live audit; skip items that are skeleton-only if the current CR-010 policy says partial-only for this batch.",
+    "Fill approved empty fields only; never overwrite richer content.",
+    "TCM text is differential research seed only and requires textbook/source review.",
+    "No Western condition = TCM disease/pattern equivalence.",
+    "Repo schema, DECISIONS, canonical source registries, and validators win."
+  ],
+  "conditions": [
+    {
+      "requested_match_name_zh": "支氣管擴張症",
+      "requested_match_name_en": "Bronchiectasis",
+      "suggested_canonical_id": "cond.bronchiectasis",
+      "category_hint": "respiratory",
+      "source_reuse_group": "NHLBI_pulmonary",
+      "overview_zh": "支氣管擴張症是支氣管長期異常擴張與氣道損傷的慢性肺部疾病，常形成黏液滯留、反覆感染與進一步氣道損傷的循環。",
+      "overview_en": "Bronchiectasis is a chronic lung disorder with permanently damaged and widened airways, promoting mucus retention, recurrent infection, and further airway injury.",
+      "biomedical_pathophysiology_zh": "氣道結構損傷使清除分泌物能力下降；黏液滯留、感染與發炎彼此促進，逐步加重氣道破壞。",
+      "biomedical_pathophysiology_en": "Structural airway injury impairs mucus clearance. Retained secretions, infection, and inflammation reinforce one another and can drive progressive airway damage.",
+      "diagnostic_signs_zh": [
+        "持續或每日咳嗽",
+        "大量痰液",
+        "反覆呼吸道感染或急性惡化",
+        "呼吸困難、喘鳴或胸痛",
+        "咳血需評估嚴重度與來源"
+      ],
+      "diagnostic_signs_en": [
+        "Persistent or daily cough",
+        "Large-volume sputum production",
+        "Recurrent respiratory infections or exacerbations",
+        "Dyspnea, wheeze, or chest pain",
+        "Hemoptysis requires assessment of severity and source"
+      ],
+      "diagnostic_tests_zh": [
+        "詳細病史與肺部檢查",
+        "胸部 CT 用於確認支氣管擴張",
+        "痰液培養或其他感染評估",
+        "肺功能檢查",
+        "依情況尋找免疫、感染、遺傳或其他原發原因"
+      ],
+      "diagnostic_tests_en": [
+        "Detailed history and lung examination",
+        "Chest CT to confirm bronchiectatic change",
+        "Sputum culture or other infection evaluation",
+        "Pulmonary function testing",
+        "Etiologic workup for immune, infectious, genetic, or other causes when indicated"
+      ],
+      "treatment_principles_zh": [
+        "治療原發原因與肺部感染",
+        "促進氣道清除與排痰",
+        "降低急性惡化與併發症",
+        "特定患者需氧療、介入或手術評估"
+      ],
+      "treatment_principles_en": [
+        "Treat underlying causes and pulmonary infections",
+        "Improve airway clearance and mucus removal",
+        "Reduce exacerbations and complications",
+        "Selected patients may require oxygen, procedures, or surgical evaluation"
+      ],
+      "tcm_pathogenesis_zh": "辨證研究種子：依咳嗽、痰量、胸悶、反覆感染與體質，可鑑別痰濕、痰熱、肺脾氣虛、肺陰不足等候選機轉；不與單一證型等同。",
+      "tcm_pathogenesis_en": "Differentiation seed only. Cough, sputum burden, chest symptoms, recurrent infection, and constitution may generate candidates involving phlegm-damp, phlegm-heat, Lung-Spleen qi deficiency, or Lung yin deficiency; no one-to-one equivalence.",
+      "refs": [
+        {
+          "title": "Bronchiectasis - Symptoms",
+          "url": "https://www.nhlbi.nih.gov/health/bronchiectasis/symptoms",
+          "authority": "NHLBI/NIH",
+          "supports": [
+            "signs",
+            "pathophysiology"
+          ]
+        },
+        {
+          "title": "Bronchiectasis - Diagnosis",
+          "url": "https://www.nhlbi.nih.gov/health/bronchiectasis/diagnosis",
+          "authority": "NHLBI/NIH",
+          "supports": [
+            "tests"
+          ]
+        },
+        {
+          "title": "Bronchiectasis - Treatment",
+          "url": "https://www.nhlbi.nih.gov/health/bronchiectasis/treatment",
+          "authority": "NHLBI/NIH",
+          "supports": [
+            "treatment"
+          ]
+        }
+      ],
+      "request_id": "CR-010",
+      "status": "research_staging_not_canonical",
+      "exact_repo_id_status": "needs_exact_scan_against_current_condition_canon",
+      "auto_promote": false,
+      "phi": false,
+      "source_checked_biomedical": true,
+      "tcm_source_status": "needs_textbook_source_review",
+      "live_partial_rank_status": "UNRESOLVED_REPORT_NOT_REPO_VISIBLE"
+    },
+    {
+      "requested_match_name_zh": "肺結核",
+      "requested_match_name_en": "Pulmonary tuberculosis / active tuberculosis disease",
+      "suggested_canonical_id": "cond.tuberculosis",
+      "category_hint": "respiratory",
+      "source_reuse_group": "CDC_respiratory_infectious",
+      "overview_zh": "結核病由結核分枝桿菌感染引起，活動性肺結核最常累及肺部並可經空氣傳播；潛伏感染與活動性疾病必須區分。",
+      "overview_en": "Tuberculosis is caused by Mycobacterium tuberculosis. Active pulmonary TB most often affects the lungs and can spread through the air; latent infection must be distinguished from active disease.",
+      "biomedical_pathophysiology_zh": "感染後可被免疫系統控制形成非活動性感染，也可能進展為活動性疾病；肺部病灶可造成組織破壞與傳染性呼吸道分泌物。",
+      "biomedical_pathophysiology_en": "After infection, immune control may produce inactive infection, or disease may progress to active TB. Pulmonary disease can cause tissue injury and infectious respiratory secretions.",
+      "diagnostic_signs_zh": [
+        "咳嗽持續約三週或更久",
+        "胸痛",
+        "咳痰或咳血",
+        "發燒、夜汗、體重下降、食慾差或疲倦"
+      ],
+      "diagnostic_signs_en": [
+        "Cough lasting about three weeks or longer",
+        "Chest pain",
+        "Sputum production or hemoptysis",
+        "Fever, night sweats, weight loss, poor appetite, or fatigue"
+      ],
+      "diagnostic_tests_zh": [
+        "TB 血液檢測或皮膚試驗評估感染",
+        "胸部 X 光",
+        "痰液抹片、核酸檢測與培養",
+        "藥物敏感性檢測以指導活動性 TB 治療"
+      ],
+      "diagnostic_tests_en": [
+        "TB blood test or skin test to assess infection",
+        "Chest radiography",
+        "Sputum smear, nucleic-acid testing, and culture",
+        "Drug-susceptibility testing to guide active TB treatment"
+      ],
+      "treatment_principles_zh": [
+        "活動性 TB 需依公共衛生與感染科規範完成多藥療程",
+        "確認並管理傳染風險",
+        "依藥物敏感性、共病與治療反應調整方案",
+        "潛伏感染另依風險評估治療"
+      ],
+      "treatment_principles_en": [
+        "Active TB requires a guideline-based multidrug regimen",
+        "Identify and manage infectiousness",
+        "Tailor therapy to susceptibility, comorbidity, and response",
+        "Latent infection is managed separately according to risk"
+      ],
+      "tcm_pathogenesis_zh": "辨證研究種子：結核感染不是中醫證型；若作傳統辨證，可依咳嗽、潮熱、盜汗、咳血、消瘦等實際表現再鑑別肺陰虛、陰虛火旺、氣陰兩虛等候選機轉。",
+      "tcm_pathogenesis_en": "Differentiation seed only. TB infection itself is not a TCM pattern. Findings such as cough, tidal fever, night sweating, hemoptysis, and wasting may generate candidates such as Lung yin deficiency, yin-deficiency heat, or qi-yin deficiency.",
+      "refs": [
+        {
+          "title": "Signs and Symptoms of Tuberculosis",
+          "url": "https://www.cdc.gov/tb/signs-symptoms/index.html",
+          "authority": "CDC",
+          "supports": [
+            "signs"
+          ]
+        },
+        {
+          "title": "Clinical Testing and Diagnosis for Tuberculosis",
+          "url": "https://www.cdc.gov/tb/hcp/testing-diagnosis/index.html",
+          "authority": "CDC",
+          "supports": [
+            "tests"
+          ]
+        },
+        {
+          "title": "Tuberculosis (TB)",
+          "url": "https://www.cdc.gov/tb/",
+          "authority": "CDC",
+          "supports": [
+            "overview",
+            "treatment"
+          ]
+        }
+      ],
+      "request_id": "CR-010",
+      "status": "research_staging_not_canonical",
+      "exact_repo_id_status": "needs_exact_scan_against_current_condition_canon",
+      "auto_promote": false,
+      "phi": false,
+      "source_checked_biomedical": true,
+      "tcm_source_status": "needs_textbook_source_review",
+      "live_partial_rank_status": "UNRESOLVED_REPORT_NOT_REPO_VISIBLE"
+    },
+    {
+      "requested_match_name_zh": "流行性感冒",
+      "requested_match_name_en": "Influenza",
+      "suggested_canonical_id": "cond.influenza",
+      "category_hint": "respiratory",
+      "source_reuse_group": "CDC_respiratory_infectious",
+      "overview_zh": "流行性感冒是由 influenza virus 引起的急性傳染性呼吸道疾病，典型症狀常突然發作。",
+      "overview_en": "Influenza is an acute contagious respiratory illness caused by influenza viruses, often with abrupt symptom onset.",
+      "biomedical_pathophysiology_zh": "病毒感染呼吸道上皮並誘發局部及全身免疫發炎反應；重症可併發病毒性或繼發性肺炎及其他器官併發症。",
+      "biomedical_pathophysiology_en": "Influenza viruses infect respiratory epithelium and trigger local and systemic inflammatory responses; severe illness may be complicated by viral or secondary pneumonia and other organ complications.",
+      "diagnostic_signs_zh": [
+        "突然發燒或畏寒",
+        "咳嗽、喉嚨痛、鼻症狀",
+        "肌肉痠痛、頭痛、疲倦",
+        "部分患者可沒有發燒"
+      ],
+      "diagnostic_signs_en": [
+        "Abrupt fever or chills",
+        "Cough, sore throat, and nasal symptoms",
+        "Myalgia, headache, and fatigue",
+        "Some patients may have no fever"
+      ],
+      "diagnostic_tests_zh": [
+        "門診可依流行病學與臨床表現診斷",
+        "需要確認或住院時使用病毒檢測",
+        "分子檢測通常較抗原檢測敏感"
+      ],
+      "diagnostic_tests_en": [
+        "Outpatient diagnosis may be clinical depending on epidemiology and presentation",
+        "Viral testing when confirmation will affect management or for hospitalized patients",
+        "Molecular assays are generally more sensitive than antigen tests"
+      ],
+      "treatment_principles_zh": [
+        "多數輕症以支持性照護為主",
+        "高風險、重症或住院患者及早評估抗病毒治療",
+        "監測肺炎、脫水或慢性病惡化",
+        "依現行 CDC/ACIP 指引預防與疫苗接種"
+      ],
+      "treatment_principles_en": [
+        "Supportive care for many mild cases",
+        "Early antiviral assessment for high-risk, severe, or hospitalized patients",
+        "Monitor for pneumonia, dehydration, or worsening chronic disease",
+        "Prevention and vaccination according to current CDC/ACIP guidance"
+      ],
+      "tcm_pathogenesis_zh": "辨證研究種子：流感病毒診斷不直接決定證型；應依惡寒、發熱、無汗或有汗、咽痛、咳嗽、口渴、舌脈等區分風寒、風熱、濕邪或其他外感候選證型。",
+      "tcm_pathogenesis_en": "Differentiation seed only. Influenza virologic diagnosis does not determine the TCM pattern; exterior cold, exterior heat, damp-related, or other candidates depend on actual symptoms, tongue, pulse, and disease course.",
+      "refs": [
+        {
+          "title": "Clinical Signs and Symptoms of Influenza",
+          "url": "https://www.cdc.gov/flu/hcp/clinical-signs/index.html",
+          "authority": "CDC",
+          "supports": [
+            "signs"
+          ]
+        },
+        {
+          "title": "Diagnosis for Flu",
+          "url": "https://www.cdc.gov/flu/testing/index.html",
+          "authority": "CDC",
+          "supports": [
+            "tests"
+          ]
+        },
+        {
+          "title": "Treatment of Flu",
+          "url": "https://www.cdc.gov/flu/treatment/",
+          "authority": "CDC",
+          "supports": [
+            "treatment"
+          ]
+        }
+      ],
+      "request_id": "CR-010",
+      "status": "research_staging_not_canonical",
+      "exact_repo_id_status": "needs_exact_scan_against_current_condition_canon",
+      "auto_promote": false,
+      "phi": false,
+      "source_checked_biomedical": true,
+      "tcm_source_status": "needs_textbook_source_review",
+      "live_partial_rank_status": "UNRESOLVED_REPORT_NOT_REPO_VISIBLE"
+    },
+    {
+      "requested_match_name_zh": "呼吸道融合病毒感染",
+      "requested_match_name_en": "Respiratory syncytial virus (RSV) infection",
+      "suggested_canonical_id": "cond.rsv_infection",
+      "category_hint": "respiratory",
+      "source_reuse_group": "CDC_respiratory_infectious",
+      "overview_zh": "RSV 是常見呼吸道病毒，通常造成類感冒症狀，但嬰幼兒、高齡者與特定高風險成人可能發展為嚴重下呼吸道疾病。",
+      "overview_en": "RSV is a common respiratory virus that usually causes cold-like illness but can cause severe lower-respiratory disease in infants, older adults, and people with certain risk factors.",
+      "biomedical_pathophysiology_zh": "病毒感染呼吸道，可造成上呼吸道疾病，也可向下發展為細支氣管炎或肺炎，並可能誘發既有氣喘、COPD 或心衰竭惡化。",
+      "biomedical_pathophysiology_en": "RSV infects the respiratory tract, causing upper-respiratory illness or progressing to bronchiolitis or pneumonia, and can exacerbate conditions such as asthma, COPD, or heart failure.",
+      "diagnostic_signs_zh": [
+        "流鼻水、鼻塞、咳嗽、打噴嚏",
+        "發燒、喘鳴、食慾下降",
+        "高風險成人可能呼吸困難或出現肺炎",
+        "嬰兒可僅有活動下降、易怒或呼吸困難"
+      ],
+      "diagnostic_signs_en": [
+        "Rhinorrhea, congestion, cough, and sneezing",
+        "Fever, wheezing, and decreased appetite",
+        "High-risk adults may develop dyspnea or pneumonia",
+        "Infants may show decreased activity, irritability, or breathing difficulty"
+      ],
+      "diagnostic_tests_zh": [
+        "症狀缺乏特異性",
+        "NAAT/PCR 可高敏感度確認 RSV",
+        "抗原檢測亦可使用但通常敏感度較低"
+      ],
+      "diagnostic_tests_en": [
+        "Clinical symptoms are nonspecific",
+        "NAAT/PCR can sensitively confirm RSV",
+        "Antigen testing is also available but generally less sensitive"
+      ],
+      "treatment_principles_zh": [
+        "多數感染以支持性照護為主",
+        "維持水分並處理發燒或疼痛",
+        "嚴重呼吸困難或脫水需升級照護",
+        "高風險族群預防依現行 CDC 免疫建議"
+      ],
+      "treatment_principles_en": [
+        "Supportive care for most infections",
+        "Maintain hydration and manage fever or discomfort",
+        "Escalate care for severe breathing difficulty or dehydration",
+        "Prevention in risk groups follows current CDC immunization guidance"
+      ],
+      "tcm_pathogenesis_zh": "辨證研究種子：RSV 不是固定證型；依鼻塞、咳嗽、喘、痰、發熱、食慾與舌脈區分外感、痰熱、痰濕、肺脾氣虛等候選機轉。",
+      "tcm_pathogenesis_en": "Differentiation seed only. RSV is not a fixed TCM pattern; exterior, phlegm-heat, phlegm-damp, or Lung-Spleen qi-deficiency candidates depend on the actual presentation.",
+      "refs": [
+        {
+          "title": "Symptoms and Care of RSV",
+          "url": "https://www.cdc.gov/rsv/symptoms/index.html",
+          "authority": "CDC",
+          "supports": [
+            "signs",
+            "treatment"
+          ]
+        },
+        {
+          "title": "Diagnostic Testing for RSV",
+          "url": "https://www.cdc.gov/rsv/hcp/clinical-overview/diagnostic-testing.html",
+          "authority": "CDC",
+          "supports": [
+            "tests"
+          ]
+        },
+        {
+          "title": "Clinical Overview of RSV",
+          "url": "https://www.cdc.gov/rsv/hcp/clinical-overview/",
+          "authority": "CDC",
+          "supports": [
+            "overview"
+          ]
+        }
+      ],
+      "request_id": "CR-010",
+      "status": "research_staging_not_canonical",
+      "exact_repo_id_status": "needs_exact_scan_against_current_condition_canon",
+      "auto_promote": false,
+      "phi": false,
+      "source_checked_biomedical": true,
+      "tcm_source_status": "needs_textbook_source_review",
+      "live_partial_rank_status": "UNRESOLVED_REPORT_NOT_REPO_VISIBLE"
+    },
+    {
+      "requested_match_name_zh": "肺高壓",
+      "requested_match_name_en": "Pulmonary hypertension",
+      "suggested_canonical_id": "cond.pulmonary_hypertension",
+      "category_hint": "respiratory",
+      "source_reuse_group": "NHLBI_pulmonary",
+      "overview_zh": "肺高壓是肺血管壓力異常升高的一組疾病，可增加右心負荷並最終造成右心功能受損。",
+      "overview_en": "Pulmonary hypertension is a group of disorders characterized by abnormally elevated pressure in pulmonary blood vessels, increasing right-heart workload and potentially causing right-heart dysfunction.",
+      "biomedical_pathophysiology_zh": "不同病因可透過肺動脈病變、左心疾病、肺病／缺氧、慢性血栓或多重機轉增加肺血管阻力與壓力。",
+      "biomedical_pathophysiology_en": "Pulmonary vascular disease, left-heart disease, lung disease/hypoxia, chronic thromboembolic obstruction, or multifactorial mechanisms can raise pulmonary vascular resistance and pressure.",
+      "diagnostic_signs_zh": [
+        "活動時呼吸困難",
+        "疲倦與無力",
+        "胸痛",
+        "頭暈或暈厥",
+        "腿部或腹部水腫",
+        "咳血屬高警訊表現"
+      ],
+      "diagnostic_signs_en": [
+        "Exertional dyspnea",
+        "Fatigue and weakness",
+        "Chest pain",
+        "Lightheadedness or syncope",
+        "Leg or abdominal edema",
+        "Hemoptysis is a concerning feature"
+      ],
+      "diagnostic_tests_zh": [
+        "心臟超音波作初步評估",
+        "右心導管為確診與血流動力學分類的重要工具",
+        "心電圖、胸部影像、肺功能與血液檢查",
+        "依病因評估慢性血栓、左心或肺部疾病"
+      ],
+      "diagnostic_tests_en": [
+        "Echocardiography for initial assessment",
+        "Right-heart catheterization is central to confirmation and hemodynamic classification",
+        "ECG, chest imaging, pulmonary function, and blood tests",
+        "Etiologic evaluation for chronic thromboembolism, left-heart, or lung disease"
+      ],
+      "treatment_principles_zh": [
+        "治療取決於肺高壓類型與病因",
+        "特定 PAH 使用肺血管標靶藥物",
+        "依情況使用氧療、利尿或其他支持療法",
+        "慢性血栓型可考慮手術或介入治療",
+        "進展性或重症需專科追蹤"
+      ],
+      "treatment_principles_en": [
+        "Treatment depends on PH group and cause",
+        "Targeted pulmonary-vascular therapy for selected PAH",
+        "Oxygen, diuretics, or other supportive therapies as indicated",
+        "Surgery or intervention for selected chronic thromboembolic disease",
+        "Specialist follow-up for progressive or severe disease"
+      ],
+      "tcm_pathogenesis_zh": "辨證研究種子：肺高壓不可由「肺氣虛」直接替代；喘促、胸悶、心悸、水腫、紫紺等可依實際表現鑑別肺氣虛、心肺氣虛、痰飲、水濕、瘀血等候選機轉。",
+      "tcm_pathogenesis_en": "Differentiation seed only. Pulmonary hypertension is not equivalent to Lung qi deficiency. Dyspnea, chest oppression, palpitations, edema, or cyanosis may generate candidates involving Lung qi deficiency, Heart-Lung qi deficiency, phlegm-fluid, water retention, or stasis.",
+      "refs": [
+        {
+          "title": "Pulmonary Hypertension - What Is",
+          "url": "https://www.nhlbi.nih.gov/health/pulmonary-hypertension",
+          "authority": "NHLBI/NIH",
+          "supports": [
+            "overview"
+          ]
+        },
+        {
+          "title": "Pulmonary Hypertension - Diagnosis",
+          "url": "https://www.nhlbi.nih.gov/health/pulmonary-hypertension/diagnosis",
+          "authority": "NHLBI/NIH",
+          "supports": [
+            "tests"
+          ]
+        },
+        {
+          "title": "Pulmonary Hypertension - Treatment",
+          "url": "https://www.nhlbi.nih.gov/health/pulmonary-hypertension/treatment",
+          "authority": "NHLBI/NIH",
+          "supports": [
+            "treatment"
+          ]
+        }
+      ],
+      "request_id": "CR-010",
+      "status": "research_staging_not_canonical",
+      "exact_repo_id_status": "needs_exact_scan_against_current_condition_canon",
+      "auto_promote": false,
+      "phi": false,
+      "source_checked_biomedical": true,
+      "tcm_source_status": "needs_textbook_source_review",
+      "live_partial_rank_status": "UNRESOLVED_REPORT_NOT_REPO_VISIBLE"
+    },
+    {
+      "requested_match_name_zh": "緊張型頭痛",
+      "requested_match_name_en": "Tension-type headache",
+      "suggested_canonical_id": "cond.tension_type_headache",
+      "category_hint": "neuro",
+      "source_reuse_group": "NINDS_neuro",
+      "overview_zh": "緊張型頭痛是常見原發性頭痛類型，典型為雙側、壓迫或緊箍感的輕至中度頭痛，通常不因一般日常活動明顯加劇。",
+      "overview_en": "Tension-type headache is a common primary headache disorder, typically producing bilateral pressing or tightening pain of mild-to-moderate intensity that is not markedly aggravated by routine activity.",
+      "biomedical_pathophysiology_zh": "其機轉並非單一原因；周邊肌筋膜痛覺輸入與中樞疼痛處理改變在不同患者與慢性化過程中的比重可能不同。",
+      "biomedical_pathophysiology_en": "No single mechanism explains all cases; peripheral myofascial nociceptive input and altered central pain processing may contribute differently across patients and chronicity.",
+      "diagnostic_signs_zh": [
+        "雙側壓迫或緊箍感",
+        "輕至中度疼痛",
+        "通常不因走路或一般活動明顯加重",
+        "可有頭皮、頸肩肌肉壓痛",
+        "需排除突然爆發、神經缺損或感染等次發性紅旗"
+      ],
+      "diagnostic_signs_en": [
+        "Bilateral pressing or tightening quality",
+        "Mild-to-moderate pain",
+        "Usually not markedly worsened by routine activity",
+        "Scalp or neck/shoulder tenderness may occur",
+        "Exclude thunderclap onset, neurologic deficit, infection, and other secondary red flags"
+      ],
+      "diagnostic_tests_zh": [
+        "主要依病史與神經學檢查",
+        "典型原發性頭痛通常不需特定影像",
+        "出現紅旗或非典型表現時依情況安排影像／其他檢查"
+      ],
+      "diagnostic_tests_en": [
+        "Diagnosis is primarily clinical using history and neurologic examination",
+        "Typical primary headache does not routinely require dedicated imaging",
+        "Imaging or other testing is guided by red flags or atypical features"
+      ],
+      "treatment_principles_zh": [
+        "急性發作以適當止痛策略處理",
+        "避免止痛藥過度使用",
+        "頻繁或慢性者可考慮預防策略",
+        "處理睡眠、壓力、頸肩肌筋膜與其他誘發因素"
+      ],
+      "treatment_principles_en": [
+        "Use appropriate acute analgesic strategies",
+        "Avoid medication overuse",
+        "Consider preventive strategies for frequent or chronic headache",
+        "Address sleep, stress, cervical/myofascial, and other triggers"
+      ],
+      "tcm_pathogenesis_zh": "辨證研究種子：頭痛病名與證型分開；依痛位、痛性、誘因、舌脈可鑑別風邪、肝陽、痰濕、血瘀、氣血不足等多種候選證型。",
+      "tcm_pathogenesis_en": "Differentiation seed only. Headache as a disease is separate from pattern diagnosis; location, quality, triggers, tongue, and pulse may generate wind, Liver-yang, phlegm-damp, blood-stasis, or qi-blood deficiency candidates.",
+      "refs": [
+        {
+          "title": "Headache",
+          "url": "https://www.ninds.nih.gov/node/667",
+          "authority": "NINDS/NIH",
+          "supports": [
+            "overview",
+            "secondary-red-flags",
+            "mechanism"
+          ]
+        }
+      ],
+      "request_id": "CR-010",
+      "status": "research_staging_not_canonical",
+      "exact_repo_id_status": "needs_exact_scan_against_current_condition_canon",
+      "auto_promote": false,
+      "phi": false,
+      "source_checked_biomedical": true,
+      "tcm_source_status": "needs_textbook_source_review",
+      "live_partial_rank_status": "UNRESOLVED_REPORT_NOT_REPO_VISIBLE"
+    },
+    {
+      "requested_match_name_zh": "三叉神經痛",
+      "requested_match_name_en": "Trigeminal neuralgia",
+      "suggested_canonical_id": "cond.trigeminal_neuralgia",
+      "category_hint": "neuro",
+      "source_reuse_group": "NINDS_neuro",
+      "overview_zh": "三叉神經痛是三叉神經分布區出現反覆、短暫、劇烈電擊樣或刺痛樣顏面痛的神經病理性疼痛疾病。",
+      "overview_en": "Trigeminal neuralgia is a neuropathic pain disorder causing recurrent brief attacks of severe electric-shock-like or stabbing facial pain in trigeminal nerve distributions.",
+      "biomedical_pathophysiology_zh": "經典型常與神經根受血管壓迫及髓鞘受損相關，也可能繼發於多發性硬化症、腫瘤或其他結構性病變。",
+      "biomedical_pathophysiology_en": "Classical TN is often associated with vascular compression and focal demyelination of the trigeminal root; secondary TN may occur with multiple sclerosis, tumors, or other structural lesions.",
+      "diagnostic_signs_zh": [
+        "單側突發電擊樣顏面痛",
+        "發作短暫且反覆",
+        "觸摸、刷牙、咀嚼、說話或冷風可誘發",
+        "出現持續麻木、雙側症狀或其他神經缺損時需評估次發原因"
+      ],
+      "diagnostic_signs_en": [
+        "Sudden unilateral electric-shock-like facial pain",
+        "Brief recurrent attacks",
+        "Touch, tooth brushing, chewing, talking, or cold air may trigger attacks",
+        "Persistent numbness, bilateral symptoms, or other neurologic deficits warrant evaluation for secondary causes"
+      ],
+      "diagnostic_tests_zh": [
+        "病史與神經學檢查",
+        "MRI 用於尋找血管壓迫、腫瘤、多發性硬化等可能原因",
+        "非典型病例依臨床需要擴大檢查"
+      ],
+      "diagnostic_tests_en": [
+        "Clinical history and neurologic examination",
+        "MRI to assess vascular compression, tumors, multiple sclerosis, or other causes",
+        "Broader evaluation for atypical presentations as indicated"
+      ],
+      "treatment_principles_zh": [
+        "以神經病理性疼痛藥物為主要初始治療",
+        "監測療效與副作用",
+        "藥物無效或不能耐受時考慮神經外科／介入選項",
+        "持續追蹤是否有次發病因"
+      ],
+      "treatment_principles_en": [
+        "Neuropathic-pain medication is the usual initial strategy",
+        "Monitor efficacy and adverse effects",
+        "Consider neurosurgical or procedural options when medication fails or is not tolerated",
+        "Continue evaluation for secondary causes when clinically indicated"
+      ],
+      "tcm_pathogenesis_zh": "辨證研究種子：面痛可依灼熱、冷痛、刺痛、誘因與舌脈鑑別風寒、風熱、胃火、肝火、痰瘀或氣血不足等候選機轉；不把三叉神經痛固定成單一證型。",
+      "tcm_pathogenesis_en": "Differentiation seed only. Facial pain quality, triggers, heat/cold features, tongue, and pulse may support wind-cold, wind-heat, Stomach fire, Liver fire, phlegm-stasis, or qi-blood deficiency candidates; no fixed equivalence.",
+      "refs": [
+        {
+          "title": "Trigeminal Neuralgia",
+          "url": "https://www.ninds.nih.gov/health-information/disorders/trigeminal-neuralgia",
+          "authority": "NINDS/NIH",
+          "supports": [
+            "overview",
+            "signs",
+            "diagnosis",
+            "treatment"
+          ]
+        }
+      ],
+      "request_id": "CR-010",
+      "status": "research_staging_not_canonical",
+      "exact_repo_id_status": "needs_exact_scan_against_current_condition_canon",
+      "auto_promote": false,
+      "phi": false,
+      "source_checked_biomedical": true,
+      "tcm_source_status": "needs_textbook_source_review",
+      "live_partial_rank_status": "UNRESOLVED_REPORT_NOT_REPO_VISIBLE"
+    },
+    {
+      "requested_match_name_zh": "貝爾氏麻痺",
+      "requested_match_name_en": "Bell's palsy",
+      "suggested_canonical_id": "cond.bells_palsy",
+      "category_hint": "neuro",
+      "source_reuse_group": "NINDS_neuro",
+      "overview_zh": "貝爾氏麻痺是急性周邊型顏面神經麻痺，造成單側上、下臉部肌肉突然無力或癱瘓，診斷前需排除其他原因。",
+      "overview_en": "Bell's palsy is an acute peripheral facial nerve palsy causing sudden unilateral weakness or paralysis of both upper and lower facial muscles after other causes are excluded.",
+      "biomedical_pathophysiology_zh": "推測與顏面神經發炎與腫脹有關，可在狹窄骨性通道中造成神經壓迫與傳導功能障礙；確切誘因常無法確認。",
+      "biomedical_pathophysiology_en": "Inflammation and swelling of the facial nerve are thought to contribute, producing compression within its bony canal and impaired conduction; the exact trigger is often uncertain.",
+      "diagnostic_signs_zh": [
+        "單側額頭、眼瞼與口角均出現急性無力",
+        "閉眼不全",
+        "味覺或聲音敏感度可改變",
+        "若額頭保留、肢體無力、失語或其他中樞神經徵象需立即鑑別中風等原因"
+      ],
+      "diagnostic_signs_en": [
+        "Acute unilateral weakness involving forehead, eyelid, and mouth",
+        "Incomplete eye closure",
+        "Taste change or sound sensitivity may occur",
+        "Forehead sparing, limb weakness, aphasia, or other central neurologic signs require urgent evaluation for stroke and other causes"
+      ],
+      "diagnostic_tests_zh": [
+        "主要依臨床表現與神經學檢查",
+        "多數典型病例不需常規影像或實驗室檢查",
+        "漸進性、反覆或非典型顏面麻痺需進一步檢查其他原因"
+      ],
+      "diagnostic_tests_en": [
+        "Diagnosis is primarily clinical with neurologic examination",
+        "Routine imaging or laboratory testing is usually unnecessary in typical cases",
+        "Progressive, recurrent, or atypical palsy warrants evaluation for alternate causes"
+      ],
+      "treatment_principles_zh": [
+        "早期常規治療以 corticosteroid 為核心",
+        "保護無法完全閉合的眼睛",
+        "依個案考慮其他治療與復健",
+        "若恢復不如預期或病程非典型需再評估"
+      ],
+      "treatment_principles_en": [
+        "Early standard treatment centers on corticosteroid therapy",
+        "Protect the eye when closure is incomplete",
+        "Consider additional therapy and rehabilitation case by case",
+        "Reassess if recovery is atypical or incomplete"
+      ],
+      "tcm_pathogenesis_zh": "辨證研究種子：周邊面癱可依急性外感、肌肉鬆弛、疼痛、舌脈等鑑別風邪入絡、風寒、風熱、痰瘀阻絡、氣血不足等候選機轉。",
+      "tcm_pathogenesis_en": "Differentiation seed only. Acute peripheral facial palsy may generate candidates involving wind entering the collaterals, wind-cold, wind-heat, phlegm/stasis obstructing collaterals, or qi-blood deficiency according to actual findings.",
+      "refs": [
+        {
+          "title": "Bell's Palsy",
+          "url": "https://www.ninds.nih.gov/health-information/disorders/bells-palsy",
+          "authority": "NINDS/NIH",
+          "supports": [
+            "overview",
+            "diagnosis",
+            "treatment"
+          ]
+        }
+      ],
+      "request_id": "CR-010",
+      "status": "research_staging_not_canonical",
+      "exact_repo_id_status": "needs_exact_scan_against_current_condition_canon",
+      "auto_promote": false,
+      "phi": false,
+      "source_checked_biomedical": true,
+      "tcm_source_status": "needs_textbook_source_review",
+      "live_partial_rank_status": "UNRESOLVED_REPORT_NOT_REPO_VISIBLE"
+    },
+    {
+      "requested_match_name_zh": "腕隧道症候群",
+      "requested_match_name_en": "Carpal tunnel syndrome",
+      "suggested_canonical_id": "cond.carpal_tunnel_syndrome",
+      "category_hint": "neuro",
+      "source_reuse_group": "NINDS_neuro",
+      "overview_zh": "腕隧道症候群是正中神經在手腕腕隧道內受到壓迫所造成的常見單神經病變。",
+      "overview_en": "Carpal tunnel syndrome is a common mononeuropathy caused by compression of the median nerve within the carpal tunnel at the wrist.",
+      "biomedical_pathophysiology_zh": "腕隧道內壓力增加壓迫正中神經，導致感覺與運動纖維功能受損；重複負荷、解剖因素與多種全身疾病可增加風險。",
+      "biomedical_pathophysiology_en": "Raised pressure within the carpal tunnel compresses the median nerve and impairs sensory and motor fibers; repetitive loading, anatomy, and systemic conditions can increase risk.",
+      "diagnostic_signs_zh": [
+        "拇指、食指、中指及無名指橈側麻木刺痛",
+        "夜間症狀常明顯",
+        "手部無力或容易掉東西",
+        "嚴重或長期病例可見魚際肌萎縮"
+      ],
+      "diagnostic_signs_en": [
+        "Numbness or tingling in median-nerve digits",
+        "Symptoms often worse at night",
+        "Hand weakness or dropping objects",
+        "Thenar atrophy may occur in severe or longstanding disease"
+      ],
+      "diagnostic_tests_zh": [
+        "病史與神經／肌骨檢查",
+        "神經傳導檢查與 EMG 可協助確認與分級",
+        "超音波可在部分情況評估正中神經與腕隧道",
+        "需鑑別頸椎神經根病變與其他神經病變"
+      ],
+      "diagnostic_tests_en": [
+        "History and neurologic/musculoskeletal examination",
+        "Nerve-conduction studies and EMG can confirm and grade disease",
+        "Ultrasound may assess the median nerve and tunnel in selected cases",
+        "Differentiate cervical radiculopathy and other neuropathies"
+      ],
+      "treatment_principles_zh": [
+        "減少誘發負荷並使用中立位手腕護具",
+        "視嚴重度考慮藥物或注射",
+        "持續神經缺損、肌萎縮或保守治療失敗時考慮減壓手術"
+      ],
+      "treatment_principles_en": [
+        "Reduce provoking load and use neutral-position wrist splinting",
+        "Consider medication or injection according to severity",
+        "Consider decompression surgery for persistent neurologic deficit, atrophy, or failed conservative care"
+      ],
+      "tcm_pathogenesis_zh": "辨證研究種子：腕部麻痛不等同單一痹證；可依疼痛、麻木、腫脹、寒熱、外傷與舌脈鑑別氣滯血瘀、痰濕、風寒濕痹或氣血不足等候選機轉。",
+      "tcm_pathogenesis_en": "Differentiation seed only. Wrist paresthesia and pain are not equivalent to one Bi pattern; qi stagnation/blood stasis, phlegm-damp, wind-cold-damp obstruction, or qi-blood deficiency candidates depend on actual findings.",
+      "refs": [
+        {
+          "title": "Peripheral Neuropathy",
+          "url": "https://www.ninds.nih.gov/health-information/disorders/peripheral-neuropathy",
+          "authority": "NINDS/NIH",
+          "supports": [
+            "neuropathy framework",
+            "carpal-tunnel management context"
+          ]
+        }
+      ],
+      "request_id": "CR-010",
+      "status": "research_staging_not_canonical",
+      "exact_repo_id_status": "needs_exact_scan_against_current_condition_canon",
+      "auto_promote": false,
+      "phi": false,
+      "source_checked_biomedical": true,
+      "tcm_source_status": "needs_textbook_source_review",
+      "live_partial_rank_status": "UNRESOLVED_REPORT_NOT_REPO_VISIBLE"
+    },
+    {
+      "requested_match_name_zh": "周邊神經病變",
+      "requested_match_name_en": "Peripheral neuropathy",
+      "suggested_canonical_id": "cond.peripheral_neuropathy",
+      "category_hint": "neuro",
+      "source_reuse_group": "NINDS_neuro",
+      "overview_zh": "周邊神經病變是周邊神經系統受損的一大類疾病，可影響感覺、運動與自主神經功能。",
+      "overview_en": "Peripheral neuropathy describes disorders involving damage to the peripheral nervous system and may affect sensory, motor, and autonomic function.",
+      "biomedical_pathophysiology_zh": "軸突、髓鞘或神經元受損會造成訊號傳遞缺失、異常放電或錯誤傳遞；原因可包括糖尿病、營養缺乏、毒物、藥物、免疫、感染、遺傳或壓迫。",
+      "biomedical_pathophysiology_en": "Axonal, myelin, or neuronal injury can produce signal loss, ectopic firing, or distorted transmission. Causes include diabetes, nutritional deficiency, toxins, medications, immune disease, infection, inherited disorders, and compression.",
+      "diagnostic_signs_zh": [
+        "麻木、刺痛、灼痛或電擊樣疼痛",
+        "感覺下降或位置覺受損",
+        "肌肉無力、抽筋或萎縮",
+        "自主神經病變可出現出汗、血壓或腸胃異常"
+      ],
+      "diagnostic_signs_en": [
+        "Numbness, tingling, burning, or electric pain",
+        "Reduced sensation or proprioception",
+        "Weakness, cramps, or atrophy",
+        "Autonomic neuropathy may affect sweating, blood pressure, or GI function"
+      ],
+      "diagnostic_tests_zh": [
+        "病史與完整神經學檢查",
+        "血液檢查尋找代謝、營養、感染或免疫原因",
+        "神經傳導檢查與 EMG",
+        "依病型使用影像、遺傳、自主神經或小纖維檢查"
+      ],
+      "diagnostic_tests_en": [
+        "History and complete neurologic examination",
+        "Blood testing for metabolic, nutritional, infectious, or immune causes",
+        "Nerve-conduction studies and EMG",
+        "Imaging, genetic, autonomic, or small-fiber testing according to phenotype"
+      ],
+      "treatment_principles_zh": [
+        "治療可逆原發原因",
+        "保護感覺下降肢體並預防跌倒／傷口",
+        "依神經病理性疼痛選擇症狀治療",
+        "免疫性或壓迫性病因依特定機轉處理"
+      ],
+      "treatment_principles_en": [
+        "Treat reversible underlying causes",
+        "Protect insensate limbs and prevent falls or injury",
+        "Use symptom-directed therapy for neuropathic pain",
+        "Treat immune or compressive etiologies according to mechanism"
+      ],
+      "tcm_pathogenesis_zh": "辨證研究種子：麻木、灼痛、無力可來自不同證機；依病程與舌脈鑑別氣血不足、瘀血阻絡、痰濕、濕熱、肝腎不足等候選機轉。",
+      "tcm_pathogenesis_en": "Differentiation seed only. Numbness, burning pain, and weakness can arise from different pattern mechanisms; candidates may include qi-blood deficiency, blood stasis obstructing collaterals, phlegm-damp, damp-heat, or Liver-Kidney deficiency.",
+      "refs": [
+        {
+          "title": "Peripheral Neuropathy",
+          "url": "https://www.ninds.nih.gov/health-information/disorders/peripheral-neuropathy",
+          "authority": "NINDS/NIH",
+          "supports": [
+            "overview",
+            "signs",
+            "tests",
+            "treatment"
+          ]
+        }
+      ],
+      "request_id": "CR-010",
+      "status": "research_staging_not_canonical",
+      "exact_repo_id_status": "needs_exact_scan_against_current_condition_canon",
+      "auto_promote": false,
+      "phi": false,
+      "source_checked_biomedical": true,
+      "tcm_source_status": "needs_textbook_source_review",
+      "live_partial_rank_status": "UNRESOLVED_REPORT_NOT_REPO_VISIBLE"
+    },
+    {
+      "requested_match_name_zh": "癲癇",
+      "requested_match_name_en": "Epilepsy",
+      "suggested_canonical_id": "cond.epilepsy",
+      "category_hint": "neuro",
+      "source_reuse_group": "NINDS_neuro",
+      "overview_zh": "癲癇是一組以反覆非誘發性癲癇發作為特徵的神經系統疾病，需區分單次急性誘發性發作與癲癇。",
+      "overview_en": "Epilepsy is a group of neurologic disorders characterized by recurrent unprovoked seizures and must be distinguished from a single acute provoked seizure.",
+      "biomedical_pathophysiology_zh": "腦神經網路異常同步或過度放電造成發作；病因可為遺傳、結構性、代謝、免疫、感染或未知。",
+      "biomedical_pathophysiology_en": "Seizures result from abnormal excessive or synchronous neuronal network activity. Etiologies may be genetic, structural, metabolic, immune, infectious, or unknown.",
+      "diagnostic_signs_zh": [
+        "發作型態依受影響腦網路不同而異",
+        "可有意識改變、抽搐、感覺或行為異常",
+        "發作後可能混亂或疲倦",
+        "首次發作需排除低血糖、感染、中毒、腦中風等急性誘因"
+      ],
+      "diagnostic_signs_en": [
+        "Seizure manifestations vary by involved networks",
+        "Altered awareness, convulsions, sensory, or behavioral phenomena may occur",
+        "Postictal confusion or fatigue may occur",
+        "First seizure requires evaluation for acute causes such as hypoglycemia, infection, toxicity, or stroke"
+      ],
+      "diagnostic_tests_zh": [
+        "詳細發作病史與目擊者描述",
+        "神經學檢查",
+        "EEG",
+        "腦部 MRI/其他影像",
+        "依情況血液、代謝、遺傳或其他檢查"
+      ],
+      "diagnostic_tests_en": [
+        "Detailed seizure history and witness accounts",
+        "Neurologic examination",
+        "EEG",
+        "Brain MRI or other imaging",
+        "Blood, metabolic, genetic, or other tests as indicated"
+      ],
+      "treatment_principles_zh": [
+        "依發作型態與個人因素選擇抗癲癇藥",
+        "強調規律服藥與安全教育",
+        "藥物難治型評估手術、神經刺激或其他專科治療",
+        "處理可逆誘因與共病"
+      ],
+      "treatment_principles_en": [
+        "Choose antiseizure medication according to seizure type and patient factors",
+        "Support adherence and seizure-safety education",
+        "Evaluate surgery, neurostimulation, or other specialty therapy for drug-resistant epilepsy",
+        "Treat reversible triggers and comorbidities"
+      ],
+      "tcm_pathogenesis_zh": "辨證研究種子：癲癇病名與中醫「癇病」可有臨床重疊但不自動等同；每次病例仍需依痰、風、火、瘀、虛等表現做證型鑑別。",
+      "tcm_pathogenesis_en": "Differentiation seed only. Biomedical epilepsy may overlap clinically with the traditional disease category of xian disorder but is not automatically identical; phlegm, wind, fire, stasis, and deficiency candidates require case-level differentiation.",
+      "refs": [
+        {
+          "title": "Epilepsy and Seizures",
+          "url": "https://www.ninds.nih.gov/node/647",
+          "authority": "NINDS/NIH",
+          "supports": [
+            "overview",
+            "tests",
+            "treatment"
+          ]
+        }
+      ],
+      "request_id": "CR-010",
+      "status": "research_staging_not_canonical",
+      "exact_repo_id_status": "needs_exact_scan_against_current_condition_canon",
+      "auto_promote": false,
+      "phi": false,
+      "source_checked_biomedical": true,
+      "tcm_source_status": "needs_textbook_source_review",
+      "live_partial_rank_status": "UNRESOLVED_REPORT_NOT_REPO_VISIBLE"
+    },
+    {
+      "requested_match_name_zh": "良性陣發性姿勢性眩暈",
+      "requested_match_name_en": "Benign paroxysmal positional vertigo (BPPV)",
+      "suggested_canonical_id": "cond.bppv",
+      "category_hint": "ent_eye",
+      "source_reuse_group": "NIDCD_vestibular",
+      "overview_zh": "BPPV 是常見周邊前庭疾病，由特定頭位改變誘發短暫而強烈的旋轉性眩暈。",
+      "overview_en": "BPPV is a common peripheral vestibular disorder causing brief, intense vertigo triggered by specific changes in head position.",
+      "biomedical_pathophysiology_zh": "耳石自橢圓囊脫落進入半規管後，頭位改變造成異常內淋巴動力與錯誤前庭訊號，產生眩暈與位置性眼震。",
+      "biomedical_pathophysiology_en": "Dislodged otoconia enter a semicircular canal, so head movement creates abnormal endolymphatic forces and erroneous vestibular signals, producing vertigo and positional nystagmus.",
+      "diagnostic_signs_zh": [
+        "特定頭位誘發短暫旋轉感",
+        "翻身、抬頭或低頭常是誘因",
+        "發作間可接近正常",
+        "持續性神經缺損、嚴重步態異常、複視或新發頭痛需排除中樞原因"
+      ],
+      "diagnostic_signs_en": [
+        "Brief spinning triggered by specific head positions",
+        "Rolling in bed, looking up, or bending may trigger attacks",
+        "Near-normal intervals between attacks are common",
+        "Persistent neurologic deficit, severe gait abnormality, diplopia, or new headache requires evaluation for central causes"
+      ],
+      "diagnostic_tests_zh": [
+        "病史與位置誘發檢查",
+        "Dix-Hallpike 等測試依疑似半規管選用",
+        "觀察典型位置性眼震",
+        "非典型或有神經紅旗時進一步神經／影像評估"
+      ],
+      "diagnostic_tests_en": [
+        "History and positional provocation testing",
+        "Dix-Hallpike or other maneuvers according to suspected canal",
+        "Observe characteristic positional nystagmus",
+        "Further neurologic or imaging evaluation for atypical presentations or red flags"
+      ],
+      "treatment_principles_zh": [
+        "以耳石復位術為主要治療，如 Epley maneuver",
+        "必要時重複復位",
+        "處理跌倒風險與短期活動安全",
+        "症狀型態改變時重新評估診斷"
+      ],
+      "treatment_principles_en": [
+        "Canalith-repositioning maneuvers such as the Epley maneuver are primary treatment",
+        "Repeat repositioning when needed",
+        "Address fall risk and short-term activity safety",
+        "Reassess if the symptom pattern changes"
+      ],
+      "tcm_pathogenesis_zh": "辨證研究種子：BPPV 是特定前庭診斷，不能直接等同「痰濕眩暈」；可依頭重、噁心、疲倦、舌脈等再鑑別痰濕、痰飲、氣血不足或肝陽等候選證型。",
+      "tcm_pathogenesis_en": "Differentiation seed only. BPPV is a specific vestibular diagnosis and is not equivalent to 'phlegm-damp vertigo.' Candidate patterns depend on the full presentation.",
+      "refs": [
+        {
+          "title": "Balance Disorders",
+          "url": "https://www.nidcd.nih.gov/health/balance-disorders",
+          "authority": "NIDCD/NIH",
+          "supports": [
+            "overview",
+            "mechanism",
+            "diagnosis",
+            "treatment"
+          ]
+        },
+        {
+          "title": "BPPV glossary",
+          "url": "https://www.nidcd.nih.gov/glossary/benign-paroxysmal-positional-vertigo-bppv",
+          "authority": "NIDCD/NIH",
+          "supports": [
+            "definition"
+          ]
+        },
+        {
+          "title": "Epley maneuver",
+          "url": "https://www.nidcd.nih.gov/glossary/epley-maneuver",
+          "authority": "NIDCD/NIH",
+          "supports": [
+            "treatment"
+          ]
+        }
+      ],
+      "request_id": "CR-010",
+      "status": "research_staging_not_canonical",
+      "exact_repo_id_status": "needs_exact_scan_against_current_condition_canon",
+      "auto_promote": false,
+      "phi": false,
+      "source_checked_biomedical": true,
+      "tcm_source_status": "needs_textbook_source_review",
+      "live_partial_rank_status": "UNRESOLVED_REPORT_NOT_REPO_VISIBLE"
+    },
+    {
+      "requested_match_name_zh": "梅尼爾氏症",
+      "requested_match_name_en": "Ménière's disease",
+      "suggested_canonical_id": "cond.menieres_disease",
+      "category_hint": "ent_eye",
+      "source_reuse_group": "NIDCD_vestibular",
+      "overview_zh": "梅尼爾氏症是內耳疾病，典型結合反覆自發性眩暈、波動性聽力下降、耳鳴與耳悶脹感。",
+      "overview_en": "Ménière's disease is an inner-ear disorder characterized by recurrent spontaneous vertigo with fluctuating hearing loss, tinnitus, and aural fullness.",
+      "biomedical_pathophysiology_zh": "內耳內淋巴積聚（endolymphatic hydrops）與正常聽覺、平衡訊號失調相關，但造成水腫的根本原因常不明。",
+      "biomedical_pathophysiology_en": "Endolymphatic hydrops is associated with disruption of normal hearing and balance signaling, although the underlying cause of the fluid disturbance is often unknown.",
+      "diagnostic_signs_zh": [
+        "反覆自發性眩暈發作",
+        "低至中頻聽力下降",
+        "耳鳴",
+        "患耳脹滿感",
+        "需排除其他前庭與神經疾病"
+      ],
+      "diagnostic_signs_en": [
+        "Recurrent spontaneous vertigo attacks",
+        "Low- to mid-frequency hearing loss",
+        "Tinnitus",
+        "Aural fullness in the affected ear",
+        "Exclude other vestibular and neurologic disorders"
+      ],
+      "diagnostic_tests_zh": [
+        "完整耳科與神經病史",
+        "聽力檢查",
+        "依診斷標準確認眩暈持續時間與波動性耳症狀",
+        "MRI/CT 可在特定情況排除其他病因"
+      ],
+      "diagnostic_tests_en": [
+        "Detailed otologic and neurologic history",
+        "Audiometry",
+        "Apply diagnostic criteria including vertigo duration and fluctuating aural symptoms",
+        "MRI/CT in selected cases to exclude alternate causes"
+      ],
+      "treatment_principles_zh": [
+        "目前無根治方法，目標是降低眩暈與維持功能",
+        "生活與飲食調整可作為部分患者的管理策略",
+        "症狀藥物、鼓室內治療或其他專科治療依嚴重度選用",
+        "難治重症可考慮手術性選項"
+      ],
+      "treatment_principles_en": [
+        "There is no cure; management aims to reduce vertigo and preserve function",
+        "Lifestyle and dietary changes may be part of management",
+        "Symptomatic medication, intratympanic therapy, or other specialist treatments depend on severity",
+        "Surgical options may be considered for refractory severe disease"
+      ],
+      "tcm_pathogenesis_zh": "辨證研究種子：梅尼爾氏症與眩暈證型不一一等同；依耳鳴、頭重、噁心、痰、情緒、疲倦、舌脈可鑑別痰濕、痰飲、肝陽、肝火、氣血不足或腎虛等候選機轉。",
+      "tcm_pathogenesis_en": "Differentiation seed only. Ménière's disease is not equivalent to one vertigo pattern; phlegm-damp, fluid retention, Liver yang/fire, qi-blood deficiency, or Kidney-deficiency candidates depend on the full presentation.",
+      "refs": [
+        {
+          "title": "Ménière's Disease",
+          "url": "https://www.nidcd.nih.gov/health/menieres-disease",
+          "authority": "NIDCD/NIH",
+          "supports": [
+            "overview",
+            "mechanism",
+            "diagnosis",
+            "treatment"
+          ]
+        }
+      ],
+      "request_id": "CR-010",
+      "status": "research_staging_not_canonical",
+      "exact_repo_id_status": "needs_exact_scan_against_current_condition_canon",
+      "auto_promote": false,
+      "phi": false,
+      "source_checked_biomedical": true,
+      "tcm_source_status": "needs_textbook_source_review",
+      "live_partial_rank_status": "UNRESOLVED_REPORT_NOT_REPO_VISIBLE"
+    },
+    {
+      "requested_match_name_zh": "不寧腿症候群",
+      "requested_match_name_en": "Restless legs syndrome",
+      "suggested_canonical_id": "cond.restless_legs_syndrome",
+      "category_hint": "neuro",
+      "source_reuse_group": "NINDS_neuro",
+      "overview_zh": "不寧腿症候群是以休息時出現難以抗拒的移動腿部衝動與不適感為核心、活動後暫時改善且夜間較重的神經／睡眠相關疾病。",
+      "overview_en": "Restless legs syndrome is a neurologic and sleep-related disorder marked by an irresistible urge to move the legs with unpleasant sensations at rest, temporary relief with movement, and evening/night predominance.",
+      "biomedical_pathophysiology_zh": "病因未完全釐清，腦內鐵代謝與多巴胺相關神經迴路可能參與；鐵缺乏、腎衰竭、妊娠、周邊神經病變及某些藥物可相關或加重症狀。",
+      "biomedical_pathophysiology_en": "The mechanism is incompletely understood; brain iron regulation and dopaminergic circuitry may contribute. Iron deficiency, renal failure, pregnancy, neuropathy, and certain medications can be associated with or worsen symptoms.",
+      "diagnostic_signs_zh": [
+        "休息時出現移動腿部的強烈衝動",
+        "伴隨爬行、拉扯、痠痛或其他不適感",
+        "活動可暫時緩解",
+        "傍晚或夜間較明顯",
+        "常干擾入睡與睡眠維持"
+      ],
+      "diagnostic_signs_en": [
+        "Strong urge to move the legs at rest",
+        "Creeping, pulling, aching, or other unpleasant sensations",
+        "Temporary relief with movement",
+        "Evening or nighttime predominance",
+        "Common interference with sleep initiation or maintenance"
+      ],
+      "diagnostic_tests_zh": [
+        "主要為臨床診斷，沒有單一確診檢驗",
+        "評估病史、藥物與家族史",
+        "血液檢查評估鐵狀態、腎功能或其他可逆原因",
+        "必要時鑑別睡眠呼吸中止、周邊神經病變等"
+      ],
+      "diagnostic_tests_en": [
+        "Primarily a clinical diagnosis without one confirmatory test",
+        "Review symptoms, medications, and family history",
+        "Blood testing for iron status, kidney disease, or other reversible factors",
+        "Differentiate sleep apnea, neuropathy, and mimics when appropriate"
+      ],
+      "treatment_principles_zh": [
+        "先處理鐵缺乏與可逆誘因",
+        "規律睡眠、適度運動並減少可能惡化因素",
+        "中重度症狀依個案選擇藥物或裝置治療",
+        "長期多巴胺類治療需注意 augmentation"
+      ],
+      "treatment_principles_en": [
+        "Correct iron deficiency and other reversible contributors first",
+        "Support regular sleep, moderate activity, and reduction of aggravating factors",
+        "Use medication or device therapy for moderate-to-severe symptoms as appropriate",
+        "Monitor for augmentation with long-term dopaminergic treatment"
+      ],
+      "tcm_pathogenesis_zh": "辨證研究種子：腿部躁動與不適可依夜間加重、麻木、抽動、疼痛及全身狀態鑑別血虛、陰虛、瘀血、痰濕或肝腎不足等候選機轉。",
+      "tcm_pathogenesis_en": "Differentiation seed only. Night-predominant leg restlessness, paresthesia, twitching, pain, and systemic findings may support blood deficiency, yin deficiency, blood stasis, phlegm-damp, or Liver-Kidney deficiency candidates.",
+      "refs": [
+        {
+          "title": "Restless Legs Syndrome",
+          "url": "https://www.ninds.nih.gov/health-information/disorders/restless-legs-syndrome",
+          "authority": "NINDS/NIH",
+          "supports": [
+            "overview",
+            "signs",
+            "tests",
+            "treatment"
+          ]
+        }
+      ],
+      "request_id": "CR-010",
+      "status": "research_staging_not_canonical",
+      "exact_repo_id_status": "needs_exact_scan_against_current_condition_canon",
+      "auto_promote": false,
+      "phi": false,
+      "source_checked_biomedical": true,
+      "tcm_source_status": "needs_textbook_source_review",
+      "live_partial_rank_status": "UNRESOLVED_REPORT_NOT_REPO_VISIBLE"
+    },
+    {
+      "request_id": "CR-010",
+      "status": "research_staging_not_canonical",
+      "exact_repo_id_status": "needs_exact_scan_against_current_condition_canon",
+      "auto_promote": false,
+      "phi": false,
+      "source_checked_biomedical": true,
+      "tcm_source_status": "needs_textbook_source_review",
+      "live_partial_rank_status": "UNRESOLVED_REPORT_NOT_REPO_VISIBLE",
+      "requested_match_name_zh": "前庭神經炎",
+      "requested_match_name_en": "Vestibular neuritis",
+      "suggested_canonical_id": "cond.vestibular_neuritis",
+      "category_hint": "ent_eye",
+      "source_reuse_group": "NIDCD_vestibular",
+      "overview_zh": "前庭神經炎是急性周邊前庭症候群的重要原因，典型造成持續性眩暈、噁心與步態不穩，但通常沒有新的聽力下降。",
+      "overview_en": "Vestibular neuritis is an important cause of acute peripheral vestibular syndrome, typically producing sustained vertigo, nausea, and gait imbalance without new hearing loss.",
+      "biomedical_pathophysiology_zh": "推測為前庭神經急性功能障礙，常被認為與發炎或感染後機轉相關；需與腦幹／小腦中風等中樞急症鑑別。",
+      "biomedical_pathophysiology_en": "It reflects acute vestibular nerve dysfunction, often considered inflammatory or post-infectious; central emergencies such as brainstem or cerebellar stroke must be distinguished.",
+      "diagnostic_signs_zh": [
+        "突然出現持續數小時至數天的旋轉性眩暈",
+        "噁心、嘔吐與步態不穩",
+        "頭動會使症狀惡化但不是僅特定姿勢短暫誘發",
+        "新的聽力下降提示其他診斷",
+        "局灶神經缺損或嚴重中樞徵象需急查中風"
+      ],
+      "diagnostic_signs_en": [
+        "Sudden sustained vertigo lasting hours to days",
+        "Nausea, vomiting, and gait imbalance",
+        "Head motion worsens symptoms but attacks are not limited to brief positional triggers",
+        "New hearing loss suggests an alternate diagnosis",
+        "Focal neurologic signs or central features require urgent stroke evaluation"
+      ],
+      "diagnostic_tests_zh": [
+        "完整神經與前庭檢查",
+        "眼震與頭脈衝等床邊檢查需由受訓臨床人員解讀",
+        "非典型或有中樞紅旗時安排腦部影像",
+        "必要時做聽力檢查協助鑑別"
+      ],
+      "diagnostic_tests_en": [
+        "Complete neurologic and vestibular examination",
+        "Bedside nystagmus/head-impulse findings require trained interpretation",
+        "Brain imaging for atypical or central red-flag presentations",
+        "Audiometry when needed to clarify the differential"
+      ],
+      "treatment_principles_zh": [
+        "急性期支持性處理噁心與眩暈",
+        "避免長期使用前庭抑制藥造成代償延遲",
+        "早期依耐受度進行前庭復健",
+        "診斷不確定或有中樞紅旗時優先急症評估"
+      ],
+      "treatment_principles_en": [
+        "Supportively manage acute nausea and vertigo",
+        "Avoid prolonged vestibular suppression that can delay compensation",
+        "Begin vestibular rehabilitation as tolerated",
+        "Prioritize urgent evaluation when diagnosis is uncertain or central red flags are present"
+      ],
+      "tcm_pathogenesis_zh": "辨證研究種子：急性持續性眩暈不可直接視為痰濕；必須先排除中樞急症，再依噁心、頭重、口渴、寒熱、舌脈等鑑別痰飲、痰濕、風邪、肝陽等候選機轉。",
+      "tcm_pathogenesis_en": "Differentiation seed only. Acute sustained vertigo must not be assumed to be phlegm-damp; central emergencies come first, then TCM candidates depend on the full presentation.",
+      "refs": [
+        {
+          "title": "Balance Disorders",
+          "url": "https://www.nidcd.nih.gov/health/balance-disorders",
+          "authority": "NIDCD/NIH",
+          "supports": [
+            "vestibular framework",
+            "differential",
+            "treatment principles"
+          ]
+        }
+      ]
+    }
+  ]
+}

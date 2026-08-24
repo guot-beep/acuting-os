@@ -1,0 +1,791 @@
+{
+ "generated": "2026-08-19",
+ "note": "出典提案僅來自 curriculum/ 具名課件;查不到的一律 not_found,未用模型記憶補。curriculum 全域 grep 無「方歌」,故 formula_song_zh 全為 null。source_classic 中文書名為課件內拼音書名之轉寫,原始拼音保留在 evidence_quote 供核對。formula.du_qi_wan_import_stub 與 formula.fu_yuan_huo_xue_tang_import_stub 為匯入重複殘根,列入 not_found 未提案。",
+ "proposals": [
+  {
+   "formula_id": "formula.xiang_su_san",
+   "name_zh": "香蘇散",
+   "pinyin": "Xiang Su San",
+   "source_classic": "《太平惠民和劑局方》",
+   "evidence_file": "curriculum/formulas/08_Formula_Cards_071-080_解表劑.md",
+   "evidence_quote": "# 071. 香蘇散 · Xiang Su San — Classical / course source: Tai Ping Hui Min He Ji Ju Fang",
+   "formula_song_zh": null,
+   "conflict": null,
+   "also_recorded_in": [
+    "curriculum/formulas/Herbal Formulations Comprehensive.docx.md:625"
+   ]
+  },
+  {
+   "formula_id": "formula.chai_ge_jie_ji_tang",
+   "name_zh": "柴葛解肌湯",
+   "pinyin": "Chai Ge Jie Ji Tang",
+   "source_classic": "《傷寒六書》",
+   "evidence_file": "curriculum/formulas/Herbal Formulations Comprehensive.docx.md",
+   "evidence_quote": "Chai Ge Jie Ji Tang 柴葛解肌汤 (Bupleurum And Kudzu Decoction To Release The Muscle Layer ) ... Source: Shang Han Liu Shu [Zh",
+   "formula_song_zh": null,
+   "conflict": null
+  },
+  {
+   "formula_id": "formula.sheng_ma_ge_gen_tang",
+   "name_zh": "升麻葛根湯",
+   "pinyin": "Sheng Ma Ge Gen Tang",
+   "source_classic": "《小兒藥證直訣》",
+   "evidence_file": "curriculum/formulas/Herbal Formulations Comprehensive.docx.md",
+   "evidence_quote": "Sheng Ma Ge Gen Tang (Cimicigfuga [Black Cohosh] And Kudzu Decoction) ... Source: Xiao Er Yao Zheng Zhi Jue",
+   "formula_song_zh": null,
+   "conflict": null
+  },
+  {
+   "formula_id": "formula.ren_shen_bai_du_san",
+   "name_zh": "人參敗毒散",
+   "pinyin": "Ren Shen Bai Du San",
+   "source_classic": "《小兒藥證直訣》",
+   "evidence_file": "curriculum/formulas/08_Formula_Cards_071-080_解表劑.md",
+   "evidence_quote": "# 077. 敗毒散 · Ren Shen Bai Du San — Classical / course source: Xiao Er Yao Zheng Zhi Jue",
+   "formula_song_zh": null,
+   "conflict": null,
+   "also_recorded_in": [
+    "curriculum/formulas/Herbal Formulations Comprehensive.docx.md:978"
+   ]
+  },
+  {
+   "formula_id": "formula.liang_ge_san",
+   "name_zh": "涼膈散",
+   "pinyin": "Liang Ge San",
+   "source_classic": "《太平惠民和劑局方》",
+   "evidence_file": "curriculum/formulas/04_Formula_Cards_031-040_清熱劑.md",
+   "evidence_quote": "# 032. 涼膈散 · Liang Ge San — Classical / course source: Tai Ping Hui Min He Ji Ju Fang",
+   "formula_song_zh": null,
+   "conflict": null,
+   "also_recorded_in": [
+    "curriculum/formulas/Herbal Formulations Comprehensive.docx.md:2246"
+   ]
+  },
+  {
+   "formula_id": "formula.qing_ying_tang",
+   "name_zh": "清營湯",
+   "pinyin": "Qing Ying Tang",
+   "source_classic": "《溫病條辨》",
+   "evidence_file": "curriculum/formulas/03_Formula_Cards_021-030_補益劑_清熱劑.md",
+   "evidence_quote": "# 029. 清營湯 · Qing Ying Tang — Classical / course source: Wen Bing Tiao Bian",
+   "formula_song_zh": null,
+   "conflict": null,
+   "also_recorded_in": [
+    "curriculum/formulas/Herbal Formulations Comprehensive.docx.md:2013"
+   ]
+  },
+  {
+   "formula_id": "formula.xi_jiao_di_huang_tang",
+   "name_zh": "犀角地黃湯",
+   "pinyin": "Xi Jiao Di Huang Tang",
+   "source_classic": "《千金要方》",
+   "evidence_file": "curriculum/formulas/03_Formula_Cards_021-030_補益劑_清熱劑.md",
+   "evidence_quote": "# 030. 犀角地黃湯 · Xi Jiao Di Huang Tang — Classical / course source: Qian Jin Yao Fang",
+   "formula_song_zh": null,
+   "conflict": null,
+   "also_recorded_in": [
+    "curriculum/formulas/20_Formula_Cards_191-201_未分類-考點與補充劑.md:2429",
+    "curriculum/formulas/Herbal Formulations Comprehensive.docx.md:2071"
+   ]
+  },
+  {
+   "formula_id": "formula.xie_bai_san",
+   "name_zh": "瀉白散",
+   "pinyin": "Xie Bai San",
+   "source_classic": "《小兒藥證直訣》",
+   "evidence_file": "curriculum/formulas/04_Formula_Cards_031-040_清熱劑.md",
+   "evidence_quote": "# 036. 瀉白散 · Xie Bai San — Classical / course source: Xiao Er Yao Zheng Zhi Jue",
+   "formula_song_zh": null,
+   "conflict": null,
+   "also_recorded_in": [
+    "curriculum/formulas/Herbal Formulations Comprehensive.docx.md:2564"
+   ]
+  },
+  {
+   "formula_id": "formula.yu_nv_jian",
+   "name_zh": "玉女煎",
+   "pinyin": "Yu Nv Jian",
+   "source_classic": "《景岳全書》",
+   "evidence_file": "curriculum/formulas/04_Formula_Cards_031-040_清熱劑.md",
+   "evidence_quote": "# 038. 玉女煎 · Yu Nu Jian — Classical / course source: Jing Yue Quan Shu",
+   "formula_song_zh": null,
+   "conflict": null,
+   "also_recorded_in": [
+    "curriculum/formulas/Herbal Formulations Comprehensive.docx.md:2669"
+   ]
+  },
+  {
+   "formula_id": "formula.shao_yao_tang",
+   "name_zh": "芍藥湯",
+   "pinyin": "Shao Yao Tang",
+   "source_classic": "《素問病機氣宜保命集》",
+   "evidence_file": "curriculum/formulas/04_Formula_Cards_031-040_清熱劑.md",
+   "evidence_quote": "# 039. 芍藥湯 · Shao Yao Tang — Classical / course source: Su Wen Bing Ji Qi Yi Bao Ming Ji",
+   "formula_song_zh": null,
+   "conflict": null,
+   "also_recorded_in": [
+    "curriculum/formulas/Herbal Formulations Comprehensive.docx.md:2714"
+   ]
+  },
+  {
+   "formula_id": "formula.bai_tou_weng_tang",
+   "name_zh": "白頭翁湯",
+   "pinyin": "Bai Tou Weng Tang",
+   "source_classic": "《傷寒論》",
+   "evidence_file": "curriculum/formulas/04_Formula_Cards_031-040_清熱劑.md",
+   "evidence_quote": "# 040. 白頭翁湯 · Bai Tou Weng Tang — Classical / course source: Shang Han Lun [White Haired Old Guy Decoction]",
+   "formula_song_zh": null,
+   "conflict": null,
+   "also_recorded_in": [
+    "curriculum/formulas/Herbal Formulations Comprehensive.docx.md:2771"
+   ]
+  },
+  {
+   "formula_id": "formula.qing_gu_san",
+   "name_zh": "清骨散",
+   "pinyin": "Qing Gu San",
+   "source_classic": "《證治準繩》",
+   "evidence_file": "curriculum/formulas/05_Formula_Cards_041-050_清熱劑_祛濕劑.md",
+   "evidence_quote": "# 042. 清骨散 · Qing Gu San — Classical / course source: Zheng Zhi Zhun Sheng",
+   "formula_song_zh": null,
+   "conflict": null,
+   "also_recorded_in": [
+    "curriculum/formulas/Herbal Formulations Comprehensive.docx.md:2852"
+   ]
+  },
+  {
+   "formula_id": "formula.dang_gui_liu_huang_tang",
+   "name_zh": "當歸六黃湯",
+   "pinyin": "Dang Gui Liu Huang Tang",
+   "source_classic": "《蘭室秘藏》",
+   "evidence_file": "curriculum/formulas/05_Formula_Cards_041-050_清熱劑_祛濕劑.md",
+   "evidence_quote": "# 043. 當歸六黃湯 · Dang Gui Liu Huang Tang — Classical / course source: Lan Shi Mi Cang",
+   "formula_song_zh": null,
+   "conflict": null,
+   "also_recorded_in": [
+    "curriculum/formulas/Herbal Formulations Comprehensive.docx.md:2885"
+   ]
+  },
+  {
+   "formula_id": "formula.liu_yi_san",
+   "name_zh": "六一散",
+   "pinyin": "Liu Yi San",
+   "source_classic": "《傷寒直格》",
+   "evidence_file": "curriculum/formulas/Herbal Formulations Comprehensive.docx.md",
+   "evidence_quote": "Liu Yi San [六一散] (Six-To-One Powder) Source: Shang Han Zhi Ge",
+   "formula_song_zh": null,
+   "conflict": null
+  },
+  {
+   "formula_id": "formula.qing_wen_bai_du_yin",
+   "name_zh": "清瘟敗毒飲",
+   "pinyin": "Qing Wen Bai Du Yin",
+   "source_classic": "《疫疹一得》",
+   "evidence_file": "curriculum/formulas/Herbal Formulations Comprehensive.docx.md",
+   "evidence_quote": "Qing Wen Bai Du Yin [清瘟败毒饮] (Clear Epidemics And Overcome Toxin Decoction) Source: Yi Zhen Yi De",
+   "formula_song_zh": null,
+   "conflict": null
+  },
+  {
+   "formula_id": "formula.ji_chuan_jian",
+   "name_zh": "濟川煎",
+   "pinyin": "Ji Chuan Jian",
+   "source_classic": "《景岳全書》",
+   "evidence_file": "curriculum/formulas/Herbal Formulations Comprehensive.docx.md",
+   "evidence_quote": "Ji Chuan Jian (Benefit The River Flow Decoction) ... Source: Jing Yue Quan Shu",
+   "formula_song_zh": null,
+   "conflict": null
+  },
+  {
+   "formula_id": "formula.li_zhong_wan",
+   "name_zh": "理中丸",
+   "pinyin": "Li Zhong Wan",
+   "source_classic": "《傷寒論》",
+   "evidence_file": "curriculum/formulas/14_Formula_Cards_131-140_溫裡劑_治風劑.md",
+   "evidence_quote": "# 131. 理中丸 · Li Zhong Wan — Classical / course source: Shang Han Lun",
+   "formula_song_zh": null,
+   "conflict": null,
+   "also_recorded_in": [
+    "curriculum/formulas/Herbal Formulations Comprehensive.docx.md:3092"
+   ]
+  },
+  {
+   "formula_id": "formula.xiang_sha_liu_jun_zi_tang",
+   "name_zh": "香砂六君子湯",
+   "pinyin": "Xiang Sha Liu Jun Zi Tang",
+   "source_classic": "《張氏醫通》",
+   "evidence_file": "curriculum/formulas/01_Formula_Cards_001-010_補益劑.md",
+   "evidence_quote": "# 003. 香砂六君子湯 · Xiang Sha Liu Jun Zi Tang — Classical / course source: Zhang Shi Yi Tong (as listed in course related-fo",
+   "formula_song_zh": null,
+   "conflict": null
+  },
+  {
+   "formula_id": "formula.sheng_mai_san",
+   "name_zh": "生脈散",
+   "pinyin": "Sheng Mai San",
+   "source_classic": "《內外傷辨惑論》",
+   "evidence_file": "curriculum/formulas/01_Formula_Cards_001-010_補益劑.md",
+   "evidence_quote": "# 007. 生脈散 · Sheng Mai San — Classical / course source: Nei Wai Shang Bian Huo Lun",
+   "formula_song_zh": null,
+   "conflict": null,
+   "also_recorded_in": [
+    "curriculum/formulas/Herbal Formulations Comprehensive.docx.md:3705"
+   ]
+  },
+  {
+   "formula_id": "formula.ren_shen_yang_rong_tang",
+   "name_zh": "人參養榮湯",
+   "pinyin": "Ren Shen Yang Rong Tang",
+   "source_classic": "《太平惠民和劑局方》",
+   "evidence_file": "curriculum/formulas/01_Formula_Cards_001-010_補益劑.md",
+   "evidence_quote": "# 008. 人參養榮湯 · Ren Shen Yang Rong Tang — Classical / course source: Course related entry says “Tai Ping Hui Min He Ji Ju",
+   "formula_song_zh": null,
+   "conflict": "課件原文寫「Tai Ping Hui Min He Ji Ju Tang」且卡片註明 wording preserved; not silently corrected。提案值按局方正名轉寫,是否採用請 Ting 裁定。"
+  },
+  {
+   "formula_id": "formula.jiao_ai_tang",
+   "name_zh": "膠艾湯",
+   "pinyin": "Jiao Ai Tang",
+   "source_classic": "《金匱要略》",
+   "evidence_file": "curriculum/formulas/01_Formula_Cards_001-010_補益劑.md",
+   "evidence_quote": "# 010. 膠艾湯 · Jiao Ai Tang — Classical / course source: Jin Gui Yao Lue (listed in the Si Wu Tang related-formula table o",
+   "formula_song_zh": null,
+   "conflict": null
+  },
+  {
+   "formula_id": "formula.shen_qi_wan",
+   "name_zh": "腎氣丸",
+   "pinyin": "Shen Qi Wan",
+   "source_classic": "《金匱要略》",
+   "evidence_file": "curriculum/formulas/03_Formula_Cards_021-030_補益劑_清熱劑.md",
+   "evidence_quote": "# 022. 腎氣丸 · Shen Qi Wan — Classical / course source: Jin Gui Yao Lue",
+   "formula_song_zh": null,
+   "conflict": null
+  },
+  {
+   "formula_id": "formula.jin_gui_shen_qi_wan",
+   "name_zh": "金匱腎氣丸",
+   "pinyin": "Jin Gui Shen Qi Wan",
+   "source_classic": "《金匱要略》",
+   "evidence_file": "curriculum/formulas/03_Formula_Cards_021-030_補益劑_清熱劑.md",
+   "evidence_quote": "# 023. 金匱腎氣丸 · Jin Gui Shen Qi Wan — Classical / course source: Jin Gui Yao Lue",
+   "formula_song_zh": null,
+   "conflict": null,
+   "also_recorded_in": [
+    "curriculum/formulas/Herbal Formulations Comprehensive.docx.md:4135"
+   ]
+  },
+  {
+   "formula_id": "formula.mu_li_san",
+   "name_zh": "牡蠣散",
+   "pinyin": "Mu Li San",
+   "source_classic": "《太平惠民和劑局方》",
+   "evidence_file": "curriculum/formulas/10_Formula_Cards_091-100_理血劑_固澀劑.md",
+   "evidence_quote": "# 097. 牡蠣散 · Mu Li San — Classical / course source: Tai Ping Hui Min He Ji Ju Fang",
+   "formula_song_zh": null,
+   "conflict": null,
+   "also_recorded_in": [
+    "curriculum/formulas/Herbal Formulations Comprehensive.docx.md:5501"
+   ]
+  },
+  {
+   "formula_id": "formula.si_shen_wan",
+   "name_zh": "四神丸",
+   "pinyin": "Si Shen Wan",
+   "source_classic": "《證治準繩》",
+   "evidence_file": "curriculum/formulas/10_Formula_Cards_091-100_理血劑_固澀劑.md",
+   "evidence_quote": "# 100. 四神丸 · Si Shen Wan — Classical / course source: Zheng Zhi Zhun Sheng",
+   "formula_song_zh": null,
+   "conflict": null,
+   "also_recorded_in": [
+    "curriculum/formulas/Herbal Formulations Comprehensive.docx.md:5548"
+   ]
+  },
+  {
+   "formula_id": "formula.jin_suo_gu_jing_wan",
+   "name_zh": "金鎖固精丸",
+   "pinyin": "Jin Suo Gu Jing Wan",
+   "source_classic": "《醫方集解》",
+   "evidence_file": "curriculum/formulas/11_Formula_Cards_101-110_固澀劑_理氣劑.md",
+   "evidence_quote": "# 102. 金鎖固精丸 · Jin Suo Gu Jing Wan — Classical / course source: Yi Fang Ji Jie",
+   "formula_song_zh": null,
+   "conflict": null,
+   "also_recorded_in": [
+    "curriculum/formulas/Herbal Formulations Comprehensive.docx.md:5746"
+   ]
+  },
+  {
+   "formula_id": "formula.suo_quan_wan",
+   "name_zh": "縮泉丸",
+   "pinyin": "Suo Quan Wan",
+   "source_classic": "《婦人良方》",
+   "evidence_file": "curriculum/formulas/Herbal Formulations Comprehensive.docx.md",
+   "evidence_quote": "Suo quan wan [缩泉丸] (shut the sluice pill) source: fu ren liang fang",
+   "formula_song_zh": null,
+   "conflict": null
+  },
+  {
+   "formula_id": "formula.ju_pi_zhu_ru_tang",
+   "name_zh": "橘皮竹茹湯",
+   "pinyin": "Ju Pi Zhu Ru Tang",
+   "source_classic": "《金匱要略》",
+   "evidence_file": "curriculum/formulas/Herbal Formulations Comprehensive.docx.md",
+   "evidence_quote": "Ju (Chen) Pi Zhu Ru Tang [橘皮竹茹汤] (Tangerine Peel And Bamboo Shavings Decoction) Source: Jin Gui Yao Lue",
+   "formula_song_zh": null,
+   "conflict": null
+  },
+  {
+   "formula_id": "formula.er_miao_san",
+   "name_zh": "二妙散",
+   "pinyin": "Er Miao San",
+   "source_classic": "《丹溪心法》",
+   "evidence_file": "curriculum/formulas/06_Formula_Cards_051-060_祛濕劑.md",
+   "evidence_quote": "# 058. 二妙散 · Er Miao San — Classical / course source: Dan Xi Xin Fa",
+   "formula_song_zh": null,
+   "conflict": null,
+   "also_recorded_in": [
+    "curriculum/formulas/Herbal Formulations Comprehensive.docx.md:7785"
+   ]
+  },
+  {
+   "formula_id": "formula.ling_gui_zhu_gan_tang",
+   "name_zh": "苓桂朮甘湯",
+   "pinyin": "Ling Gui Zhu Gan Tang",
+   "source_classic": "《傷寒論》",
+   "evidence_file": "curriculum/formulas/Herbal Formulations Comprehensive.docx.md",
+   "evidence_quote": "Ling Gui Zhu Gan Tang [苓桂术甘汤] (Poria, Cinnamon Twig, Atractylodis Macrocephalae, & Licorice Decoction) Source: Shang Han",
+   "formula_song_zh": null,
+   "conflict": null
+  },
+  {
+   "formula_id": "formula.qing_qi_hua_tan_wan",
+   "name_zh": "清氣化痰丸",
+   "pinyin": "Qing Qi Hua Tan Wan",
+   "source_classic": "《醫方考》",
+   "evidence_file": "curriculum/formulas/16_Formula_Cards_151-160_祛痰劑_治燥劑.md",
+   "evidence_quote": "# 151. 清氣化痰丸 · Qing Qi Hua Tan Wan — Classical / course source: Yi Fang Kao",
+   "formula_song_zh": null,
+   "conflict": null,
+   "also_recorded_in": [
+    "curriculum/formulas/Herbal Formulations Comprehensive.docx.md:8436"
+   ]
+  },
+  {
+   "formula_id": "formula.san_zi_yang_qin_tang",
+   "name_zh": "三子養親湯",
+   "pinyin": "San Zi Yang Qin Tang",
+   "source_classic": "《韓氏醫通》",
+   "evidence_file": "curriculum/formulas/16_Formula_Cards_151-160_祛痰劑_治燥劑.md",
+   "evidence_quote": "# 153. 三子養親湯 · San Zi Yang Qin Tang — Classical / course source: Han Shi Yi Tong",
+   "formula_song_zh": null,
+   "conflict": null,
+   "also_recorded_in": [
+    "curriculum/formulas/Herbal Formulations Comprehensive.docx.md:8610"
+   ]
+  },
+  {
+   "formula_id": "formula.zhen_gan_xi_feng_tang",
+   "name_zh": "鎮肝熄風湯",
+   "pinyin": "Zhen Gan Xi Feng Tang",
+   "source_classic": "《醫學衷中參西錄》",
+   "evidence_file": "curriculum/formulas/15_Formula_Cards_141-150_治風劑_祛痰劑.md",
+   "evidence_quote": "# 142. 鎮肝熄風湯 · Zhen Gan Xi Feng Tang — Classical / course source: Yi Xue Zhong Zhong Can Xi Lu",
+   "formula_song_zh": null,
+   "conflict": null,
+   "also_recorded_in": [
+    "curriculum/formulas/Herbal Formulations Comprehensive.docx.md:7327"
+   ]
+  },
+  {
+   "formula_id": "formula.xiao_huo_luo_dan",
+   "name_zh": "小活絡丹",
+   "pinyin": "Xiao Huo Luo Dan",
+   "source_classic": "《太平惠民和劑局方》",
+   "evidence_file": "curriculum/formulas/15_Formula_Cards_141-150_治風劑_祛痰劑.md",
+   "evidence_quote": "# 143. 小活絡丹 · Xiao Huo Luo Dan — Classical / course source: Tai Ping Hui Min He Ji Ju Fang",
+   "formula_song_zh": null,
+   "conflict": null,
+   "also_recorded_in": [
+    "curriculum/formulas/Herbal Formulations Comprehensive.docx.md:7185"
+   ]
+  },
+  {
+   "formula_id": "formula.sang_xing_tang",
+   "name_zh": "桑杏湯",
+   "pinyin": "Sang Xing Tang",
+   "source_classic": "《溫病條辨》",
+   "evidence_file": "curriculum/formulas/16_Formula_Cards_151-160_祛痰劑_治燥劑.md",
+   "evidence_quote": "# 154. 桑杏湯 · Sang Xing Tang — Classical / course source: Wen Bing Tiao Bian",
+   "formula_song_zh": null,
+   "conflict": null,
+   "also_recorded_in": [
+    "curriculum/formulas/Herbal Formulations Comprehensive.docx.md:7427"
+   ]
+  },
+  {
+   "formula_id": "formula.zhi_sou_san",
+   "name_zh": "止嗽散",
+   "pinyin": "Zhi Sou San",
+   "source_classic": "《醫學心悟》",
+   "evidence_file": "curriculum/formulas/16_Formula_Cards_151-160_祛痰劑_治燥劑.md",
+   "evidence_quote": "# 156. 止嗽散 · Zhi Sou San — Classical / course source: Yi Xue Xin Wu",
+   "formula_song_zh": null,
+   "conflict": null,
+   "also_recorded_in": [
+    "curriculum/formulas/Herbal Formulations Comprehensive.docx.md:8658"
+   ]
+  },
+  {
+   "formula_id": "formula.zi_xue_dan",
+   "name_zh": "紫雪丹",
+   "pinyin": "Zi Xue Dan",
+   "source_classic": "《外台秘要》",
+   "evidence_file": "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md",
+   "evidence_quote": "# 167. 紫雪丹 · Zi Xue Dan — Classical / course source: Wai Tai Bi Yao",
+   "formula_song_zh": null,
+   "conflict": null,
+   "also_recorded_in": [
+    "curriculum/formulas/Herbal Formulations Comprehensive.docx.md:5212"
+   ]
+  },
+  {
+   "formula_id": "formula.bai_du_san",
+   "name_zh": "敗毒散",
+   "pinyin": "Bai Du San",
+   "source_classic": "《小兒藥證直訣》",
+   "evidence_file": "curriculum/formulas/08_Formula_Cards_071-080_解表劑.md",
+   "evidence_quote": "# 077. 敗毒散 · Ren Shen Bai Du San — Classical / course source: Xiao Er Yao Zheng Zhi Jue",
+   "formula_song_zh": null,
+   "conflict": "注意:資料庫另有 formula.ren_shen_bai_du_san,兩筆記錄對應同一張卡片 077(敗毒散 · Ren Shen Bai Du San);出典證據相同,是否為重複記錄請 Ting 裁定。"
+  },
+  {
+   "formula_id": "formula.huang_tu_tang",
+   "name_zh": "黃土湯",
+   "pinyin": "Huang Tu Tang",
+   "source_classic": "《金匱要略》",
+   "evidence_file": "curriculum/formulas/Herbal Formulations Comprehensive.docx.md",
+   "evidence_quote": "Huang Tu Tang [黄土汤] (Yellow Earth Decoction) Source: Jin Gui Yao Lue",
+   "formula_song_zh": null,
+   "conflict": null
+  },
+  {
+   "formula_id": "formula.su_he_xiang_wan",
+   "name_zh": "蘇合香丸",
+   "pinyin": "Su He Xiang Wan",
+   "source_classic": "《太平惠民和劑局方》",
+   "evidence_file": "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md",
+   "evidence_quote": "# 169. 蘇合香丸 · Su He Xiang Wan — Classical / course source: Tai Ping Hui Min He Ji Ju Fang 苏合香丸 (16 Wei) [Xiang = Aromati",
+   "formula_song_zh": null,
+   "conflict": null,
+   "also_recorded_in": [
+    "curriculum/formulas/Herbal Formulations Comprehensive.docx.md:5334"
+   ]
+  },
+  {
+   "formula_id": "formula.da_bu_yin_wan",
+   "name_zh": "大补阴丸",
+   "pinyin": "Da Bu Yin Wan",
+   "source_classic": "《丹溪心法》",
+   "evidence_file": "curriculum/formulas/18_Formula_Cards_171-180_消食劑_癰瘍劑_驅蟲劑_未分類-考點與補充劑.md",
+   "evidence_quote": "# 175. 大补阴丸 · Da Bu Yin Wan — Classical / course source: Dan Xi Xin Fa",
+   "formula_song_zh": null,
+   "conflict": null,
+   "also_recorded_in": [
+    "curriculum/formulas/Herbal Formulations Comprehensive.docx.md:4403"
+   ]
+  },
+  {
+   "formula_id": "formula.dan_shen_yin",
+   "name_zh": "丹參飲",
+   "pinyin": "Dan Shen Yin",
+   "source_classic": "《時方歌括》",
+   "evidence_file": "curriculum/formulas/10_Formula_Cards_091-100_理血劑_固澀劑.md",
+   "evidence_quote": "# 092. 丹參飲 · Dan Shen Yin — Classical / course source: Shi Fang Ge Kuo",
+   "formula_song_zh": null,
+   "conflict": null,
+   "also_recorded_in": [
+    "curriculum/formulas/18_Formula_Cards_171-180_消食劑_癰瘍劑_驅蟲劑_未分類-考點與補充劑.md:2437",
+    "curriculum/formulas/Herbal Formulations Comprehensive.docx.md:6485"
+   ]
+  },
+  {
+   "formula_id": "formula.er_zhi_wan",
+   "name_zh": "二至丸",
+   "pinyin": "Er Zhi Wan",
+   "source_classic": "《醫方集解》",
+   "evidence_file": "curriculum/formulas/19_Formula_Cards_181-190_未分類-考點與補充劑.md",
+   "evidence_quote": "# 184. 二至丸 · Er Zhi Wan — Classical / course source: Yi Fang Ji Jie",
+   "formula_song_zh": null,
+   "conflict": null,
+   "also_recorded_in": [
+    "curriculum/formulas/Herbal Formulations Comprehensive.docx.md:4523"
+   ]
+  },
+  {
+   "formula_id": "formula.fang_feng_tong_sheng_san",
+   "name_zh": "防风通圣散",
+   "pinyin": "Fang Feng Tong Sheng San",
+   "source_classic": "《黃帝素問宣明論方》",
+   "evidence_file": "curriculum/formulas/19_Formula_Cards_181-190_未分類-考點與補充劑.md",
+   "evidence_quote": "# 185. 防风通圣散 · Fang Feng Tong Sheng San — Classical / course source: Huang Di Su Wen Xuan Ming Lun Fang",
+   "formula_song_zh": null,
+   "conflict": null,
+   "also_recorded_in": [
+    "curriculum/formulas/Herbal Formulations Comprehensive.docx.md:3329"
+   ]
+  },
+  {
+   "formula_id": "formula.fu_yuan_huo_xue_tang",
+   "name_zh": "復元活血湯",
+   "pinyin": "Fu Yuan Huo Xue Tang",
+   "source_classic": "《醫學發明》",
+   "evidence_file": "curriculum/formulas/Herbal Formulations Comprehensive.docx.md",
+   "evidence_quote": "Fu yuan huo xue tang [复元活血汤] (revive health by invigorating Blood decoction) source: yi xue fa ming",
+   "formula_song_zh": null,
+   "conflict": null
+  },
+  {
+   "formula_id": "formula.gu_jing_wan",
+   "name_zh": "固经丸",
+   "pinyin": "Gu Jing Wan",
+   "source_classic": "《醫學入門》",
+   "evidence_file": "curriculum/formulas/19_Formula_Cards_181-190_未分類-考點與補充劑.md",
+   "evidence_quote": "# 188. 固经丸 · Gu Jing Wan — Classical / course source: Yi Xue Ru Men",
+   "formula_song_zh": null,
+   "conflict": null,
+   "also_recorded_in": [
+    "curriculum/formulas/Herbal Formulations Comprehensive.docx.md:5617"
+   ]
+  },
+  {
+   "formula_id": "formula.nuan_gan_jian",
+   "name_zh": "暖肝煎",
+   "pinyin": "Nuan Gan Jian",
+   "source_classic": "《景岳全書》",
+   "evidence_file": "curriculum/formulas/12_Formula_Cards_111-120_理氣劑_瀉下劑.md",
+   "evidence_quote": "# 113. 暖肝煎 · Nuan Gan Jian — Classical / course source: Jing Yue Quan Shu",
+   "formula_song_zh": null,
+   "conflict": null,
+   "also_recorded_in": [
+    "curriculum/formulas/20_Formula_Cards_191-201_未分類-考點與補充劑.md:664",
+    "curriculum/formulas/Herbal Formulations Comprehensive.docx.md:6019"
+   ]
+  },
+  {
+   "formula_id": "formula.qiang_huo_sheng_shi_tang",
+   "name_zh": "羌活胜湿汤",
+   "pinyin": "Qiang Huo Sheng Shi Tang",
+   "source_classic": "《內外傷辨惑論》",
+   "evidence_file": "curriculum/formulas/20_Formula_Cards_191-201_未分類-考點與補充劑.md",
+   "evidence_quote": "# 194. 羌活胜湿汤 · Qiang Huo Sheng Shi Tang — Classical / course source: Nei Wai Shang Bian Huo Lun",
+   "formula_song_zh": null,
+   "conflict": null,
+   "also_recorded_in": [
+    "curriculum/formulas/Herbal Formulations Comprehensive.docx.md:8143"
+   ]
+  },
+  {
+   "formula_id": "formula.wu_pi_san",
+   "name_zh": "五皮散",
+   "pinyin": "Wu Pi San",
+   "source_classic": "《中藏經》",
+   "evidence_file": "curriculum/formulas/20_Formula_Cards_191-201_未分類-考點與補充劑.md",
+   "evidence_quote": "# 197. 五皮散 · Wu Pi San — Classical / course source: Zhong Zang Jin",
+   "formula_song_zh": null,
+   "conflict": null,
+   "also_recorded_in": [
+    "curriculum/formulas/Herbal Formulations Comprehensive.docx.md:8032"
+   ]
+  },
+  {
+   "formula_id": "formula.xi_jiao_di_huang_wan",
+   "name_zh": "犀角地黃丸",
+   "pinyin": "Xi Jiao Di Huang Wan",
+   "source_classic": "《千金要方》",
+   "evidence_file": "curriculum/formulas/20_Formula_Cards_191-201_未分類-考點與補充劑.md",
+   "evidence_quote": "# 198. 犀角地黄丸 · Xi Jiao Di Huang Tang — Classical / course source: Qian Jin Yao Fang",
+   "formula_song_zh": null,
+   "conflict": null
+  },
+  {
+   "formula_id": "formula.gua_lou_xie_bai_bai_jiu_tang",
+   "name_zh": "瓜蔞薤白白酒湯",
+   "pinyin": "Gua Lou Xie Bai Bai Jiu Tang",
+   "source_classic": "《金匱要略》",
+   "evidence_file": "curriculum/formulas/11_Formula_Cards_101-110_固澀劑_理氣劑.md",
+   "evidence_quote": "# 108. 瓜蔞薤白白酒湯 · Gua Lou Xie Bai Bai Jiu Tang — Classical / course source: Jin Gui Yao Lue",
+   "formula_song_zh": null,
+   "conflict": null,
+   "also_recorded_in": [
+    "curriculum/formulas/Herbal Formulations Comprehensive.docx.md:5922"
+   ]
+  },
+  {
+   "formula_id": "formula.hou_po_wen_zhong_tang",
+   "name_zh": "厚朴溫中湯",
+   "pinyin": "Hou Po Wen Zhong Tang",
+   "source_classic": "《內外傷辨惑論》",
+   "evidence_file": "curriculum/formulas/12_Formula_Cards_111-120_理氣劑_瀉下劑.md",
+   "evidence_quote": "# 111. 厚朴溫中湯 · Hou Po Wen Zhong Tang — Classical / course source: Nei Wai Shang Bian Huo Lun",
+   "formula_song_zh": null,
+   "conflict": null,
+   "also_recorded_in": [
+    "curriculum/formulas/Herbal Formulations Comprehensive.docx.md:5954"
+   ]
+  },
+  {
+   "formula_id": "formula.da_xian_xiong_tang",
+   "name_zh": "大陷胸湯",
+   "pinyin": "Da Xian Xiong Tang",
+   "source_classic": "《傷寒論》",
+   "evidence_file": "curriculum/formulas/Herbal Formulations Comprehensive.docx.md",
+   "evidence_quote": "Da Xian Xiong Tang (Major Sinking Into The Chest Decoction) ... Source: Shang Han Lun",
+   "formula_song_zh": null,
+   "conflict": null
+  },
+  {
+   "formula_id": "formula.da_huang_fu_zi_tang",
+   "name_zh": "大黃附子湯",
+   "pinyin": "Da Huang Fu Zi Tang",
+   "source_classic": "《金匱要略》",
+   "evidence_file": "curriculum/formulas/12_Formula_Cards_111-120_理氣劑_瀉下劑.md",
+   "evidence_quote": "# 120. 大黃附子湯 · Da Huang Fu Zi Tang — Classical / course source: Jin Gui Yao Lue",
+   "formula_song_zh": null,
+   "conflict": null,
+   "also_recorded_in": [
+    "curriculum/formulas/Herbal Formulations Comprehensive.docx.md:1274"
+   ]
+  },
+  {
+   "formula_id": "formula.hao_qin_qing_dan_tang",
+   "name_zh": "蒿芩清膽湯",
+   "pinyin": "Hao Qin Qing Dan Tang",
+   "source_classic": "《重訂通俗傷寒論》",
+   "evidence_file": "curriculum/formulas/13_Formula_Cards_121-130_瀉下劑_和解劑.md",
+   "evidence_quote": "# 125. 蒿芩清膽湯 · Hao Qin Qing Dan Tang — Classical / course source: Chong Ding Tong Su Shang Han Lun",
+   "formula_song_zh": null,
+   "conflict": null,
+   "also_recorded_in": [
+    "curriculum/formulas/Herbal Formulations Comprehensive.docx.md:1521"
+   ]
+  },
+  {
+   "formula_id": "formula.fu_ling_wan",
+   "name_zh": "茯苓丸",
+   "pinyin": "Fu Ling Wan",
+   "source_classic": "《金匱要略》",
+   "evidence_file": "curriculum/formulas/15_Formula_Cards_141-150_治風劑_祛痰劑.md",
+   "evidence_quote": "# 149. 茯苓丸 · Fu Ling Wan — Classical / course source: Jin Gui Yao Lue",
+   "formula_song_zh": null,
+   "conflict": null
+  },
+  {
+   "formula_id": "formula.zhu_sha_an_shen_wan",
+   "name_zh": "朱砂安神丸",
+   "pinyin": "Zhu Sha An Shen Wan",
+   "source_classic": "《醫學發明》",
+   "evidence_file": "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md",
+   "evidence_quote": "# 161. 朱砂安神丸 · Zhu Sha An Shen Wan — Classical / course source: Yi Xue Fa Ming",
+   "formula_song_zh": null,
+   "conflict": null,
+   "also_recorded_in": [
+    "curriculum/formulas/Herbal Formulations Comprehensive.docx.md:4911"
+   ]
+  },
+  {
+   "formula_id": "formula.shen_su_yin",
+   "name_zh": "參蘇飲",
+   "pinyin": "Shen Su Yin",
+   "source_classic": "《和劑局方》",
+   "evidence_file": "curriculum/formulas/Herbal Formulations Comprehensive.docx.md",
+   "evidence_quote": "Shen Su Yin (He Ji Ju Fang) Ren Shen, Jie Geng, Qian Hu, Fu Ling, Exterior w-c and internal damp-phlegm in weak persons",
+   "formula_song_zh": null,
+   "conflict": null
+  },
+  {
+   "formula_id": "formula.wen_pi_tang",
+   "name_zh": "溫脾湯",
+   "pinyin": "Wen Pi Tang",
+   "source_classic": "《千金要方》",
+   "evidence_file": "curriculum/formulas/Herbal Formulations Comprehensive.docx.md",
+   "evidence_quote": "Wen Pi Tang (Qian Jin Yao Fang) Minus Xi Xin; SP Yang Xu causing cold accumulation, constipation",
+   "formula_song_zh": null,
+   "conflict": null
+  },
+  {
+   "formula_id": "formula.chai_hu_gui_zhi_tang",
+   "name_zh": "柴胡桂枝湯",
+   "pinyin": "Chai Hu Gui Zhi Tang",
+   "source_classic": "《金匱要略》",
+   "evidence_file": "curriculum/formulas/Herbal Formulations Comprehensive.docx.md",
+   "evidence_quote": "New formulas Based on xiao chai hu tang … Chai Hu Gui Zhi Tang (Jin Gui Yao Lue) Add Gui Zhi, Bai Shao — Shao Yang sx wh",
+   "formula_song_zh": null,
+   "conflict": null
+  }
+ ],
+ "not_found": [
+  "formula.jing_fang_bai_du_san",
+  "formula.cang_er_zi_san",
+  "formula.jia_jian_wei_rui_tang",
+  "formula.xie_xin_tang",
+  "formula.wu_wei_xiao_du_yin",
+  "formula.zeng_ye_cheng_qi_tang",
+  "formula.da_huang_mu_dan_tang",
+  "formula.run_chang_wan",
+  "formula.fu_zi_li_zhong_wan",
+  "formula.huang_qi_jian_zhong_tang",
+  "formula.shen_fu_tang",
+  "formula.shi_quan_da_bu_tang",
+  "formula.taishan_pan_shi_san",
+  "formula.zuo_gui_yin",
+  "formula.you_gui_yin",
+  "formula.qi_ju_di_huang_wan",
+  "formula.zhi_bai_di_huang_wan",
+  "formula.zhen_ren_yang_zang_tang",
+  "formula.sang_piao_xiao_san",
+  "formula.shou_tai_wan",
+  "formula.chai_hu_shu_gan_san",
+  "formula.gua_lou_xie_bai_ban_xia_tang",
+  "formula.ge_xia_zhu_yu_tang",
+  "formula.shao_fu_zhu_yu_tang",
+  "formula.shen_tong_zhu_yu_tang",
+  "formula.si_miao_wan",
+  "formula.shi_pi_yin",
+  "formula.sha_shen_mai_men_dong_tang",
+  "formula.yang_he_tang",
+  "formula.da_ding_feng_zhu",
+  "formula.lian_po_yin",
+  "formula.shi_pi_san",
+  "formula.zhi_shi_xie_bai_gui_zhi_tang",
+  "formula.bu_fei_tang",
+  "formula.da_qing_long_tang",
+  "formula.dang_gui_shao_yao_san",
+  "formula.dang_gui_yin_zi",
+  "formula.ding_zhi_wan",
+  "formula.du_qi_wan",
+  "formula.er_xian_tang",
+  "formula.gui_zhi_shao_yao_zhi_mu_tang",
+  "formula.jin_ling_zi_san",
+  "formula.liang_fu_wan",
+  "formula.ling_jiao_gou_teng_yin",
+  "formula.shao_yao_gan_cao_tang",
+  "formula.tian_tai_wu_yao_san",
+  "formula.xiao_ji_yin_zi",
+  "formula.xie_huang_san",
+  "formula.zeng_ye_tang",
+  "formula.wei_jing_tang",
+  "formula.xian_fang_huo_ming_yin",
+  "formula.si_miao_yong_an_tang",
+  "formula.dang_gui_nian_tong_tang",
+  "formula.san_miao_wan",
+  "formula.zai_zao_san",
+  "formula.cong_chi_tang",
+  "formula.tong_qiao_huo_xue_tang",
+  "formula.jiu_xian_san",
+  "formula.tao_hua_tang",
+  "formula.zhen_zhu_mu_wan",
+  "formula.ci_zhu_wan",
+  "formula.du_qi_wan_import_stub",
+  "formula.fu_yuan_huo_xue_tang_import_stub"
+ ]
+}

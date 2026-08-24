@@ -1,0 +1,184 @@
+[
+  {
+    "id": "cond.menorrhagia",
+    "points": [],
+    "point_rationale_zh": null,
+    "point_rationale_en": null,
+    "sources": [],
+    "evidence_note_zh": "未找到符合本任務來源標準、直接涵蓋月經過多 N92.0 且可核對具體穴位的系統性回顧、指引或原始試驗。原發性痛經或異常子宮出血的資料不可直接代替月經過多處方。",
+    "condition_specific_cautions_zh": "建立任何輔助處方前應先排除妊娠、嚴重貧血、凝血異常及需婦科處置的結構性病因。",
+    "no_source_found": true
+  },
+  {
+    "id": "cond.amenorrhea",
+    "points": [],
+    "point_rationale_zh": null,
+    "point_rationale_en": null,
+    "sources": [],
+    "evidence_note_zh": "未找到可支持繼發性閉經 N91.1 固定穴組的合格直接來源。PCOS 月經頻率研究、排卵障礙研究及單一病例不能代表病因多樣的繼發性閉經。",
+    "condition_specific_cautions_zh": "開始任何治療前須先驗孕，並評估甲狀腺、泌乳素、下視丘性閉經、PCOS、卵巢功能不全及解剖性病因。",
+    "no_source_found": true
+  },
+  {
+    "id": "cond.secondary_dysmenorrhea",
+    "points": [],
+    "point_rationale_zh": null,
+    "point_rationale_en": null,
+    "sources": [
+      {
+        "type": "systematic_review",
+        "citation": "Giese N, et al. Acupuncture for endometriosis: a systematic review and meta-analysis. Integr Med Res. 2023.",
+        "url": "https://www.sciencedirect.com/science/article/pii/S2213422023000823",
+        "covers": "子宮內膜異位症相關月經痛與骨盆痛，不涵蓋所有繼發性痛經病因",
+        "finding": "相對非特異性針刺，月經痛結果有中等確定性訊號；其他骨盆痛結果多為低或極低確定性。來源未提供可作為通用處方的單一固定穴組。"
+      },
+      {
+        "type": "systematic_review",
+        "citation": "Xu Y, et al. Effects of acupuncture for the treatment of endometriosis-related pain: a systematic review and meta-analysis. PLoS One. 2017;12:e0186616.",
+        "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0186616",
+        "covers": "子宮內膜異位症相關痛經",
+        "finding": "可能減輕痛經，但試驗數少且盲法與品質受限。"
+      }
+    ],
+    "evidence_note_zh": "現有直接證據主要針對子宮內膜異位症相關痛經，不能擴張到腺肌症、肌瘤、感染或其他繼發性痛經；回顧沒有形成可核對的通用固定穴組，因此 points 留空。",
+    "condition_specific_cautions_zh": "應先確認繼發性病因；新發或進行性疼痛、異常出血、發熱、妊娠可能或急腹症需婦科評估。",
+    "no_source_found": false
+  },
+  {
+    "id": "cond.pmdd",
+    "points": [
+      {"code": "SP6", "name_zh": "三陰交", "role_zh": "PMS/PMDD 針灸研究中最常使用的穴位之一；屬研究文獻頻率，不是指引指定首選"},
+      {"code": "LR3", "name_zh": "太衝", "role_zh": "PMS/PMDD 研究中常用穴位之一"},
+      {"code": "CV4", "name_zh": "關元", "role_zh": "PMS/PMDD 研究中常用穴位之一"}
+    ],
+    "point_rationale_zh": "這三穴來自 PMS 針灸研究的穴位使用頻率整理，不代表已有 PMDD 專屬標準處方。",
+    "point_rationale_en": "These points were among the most frequently used in acupuncture studies of PMS; they do not constitute a validated PMDD-specific standard prescription.",
+    "sources": [
+      {
+        "type": "systematic_review",
+        "citation": "Armour M, et al. Acupuncture and acupressure for premenstrual syndrome. Cochrane Database Syst Rev. 2018;CD005290.",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6513602/",
+        "covers": "PMS；部分研究不等同 DSM 定義的 PMDD",
+        "finding": "低品質證據提示可能改善 PMS 症狀，研究異質性與偏倚限制結論。"
+      },
+      {
+        "type": "systematic_review",
+        "citation": "Zhang J, et al. Acupuncture for premenstrual syndrome at different intervention times: a systematic review and meta-analysis. 2019.",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6614973/",
+        "covers": "PMS 針灸研究；回顧明列常用穴為 SP6、LR3、RN4",
+        "finding": "提供穴位頻率，但不能證明該三穴為 PMDD 通用處方。"
+      }
+    ],
+    "evidence_note_zh": "證據主要來自 PMS，PMDD 專屬樣本有限；僅能作為輔助既有精神科／婦科治療的研究型方案。",
+    "condition_specific_cautions_zh": "每週期先確認懷孕可能；如可能懷孕，不應機械沿用含 LI4／SP6 的研究方案。出現自傷或自殺意念須立即依精神健康急症流程處理。",
+    "no_source_found": false
+  },
+  {
+    "id": "cond.menopause_syndrome",
+    "points": [],
+    "point_rationale_zh": null,
+    "point_rationale_en": null,
+    "sources": [
+      {
+        "type": "systematic_review",
+        "citation": "Cho SH, Whang WW. Acupuncture for vasomotor menopausal symptoms: a systematic review. Menopause. 2009.",
+        "url": "https://www.ncbi.nlm.nih.gov/books/NBK76776/",
+        "covers": "更年期血管舒縮症狀",
+        "finding": "相對假針或荷爾蒙治療沒有一致有效證據。"
+      },
+      {
+        "type": "rct",
+        "citation": "Lund KS, et al. Efficacy of a standardised acupuncture approach for women with bothersome menopausal symptoms: a pragmatic randomised study in primary care (ACOM). BMJ Open. 2019;9:e023637.",
+        "url": "https://bmjopen.bmj.com/content/9/1/e023637",
+        "covers": "中重度更年期症狀的短期務實試驗",
+        "finding": "短期標準化針灸相對無治療可改善部分症狀；不能證明相對假針的特異效果。"
+      }
+    ],
+    "evidence_note_zh": "療效依對照組而異；相對無治療可有短期改善，但相對假針未顯示一致特異效果。來源不足以建立單一通用穴組。",
+    "condition_specific_cautions_zh": "異常停經後出血必須先接受婦科評估，不得作為一般更年期症狀直接針治。",
+    "no_source_found": false
+  },
+  {
+    "id": "cond.diminished_ovarian_reserve",
+    "points": [],
+    "point_rationale_zh": null,
+    "point_rationale_en": null,
+    "sources": [
+      {
+        "type": "systematic_review",
+        "citation": "Lin G, et al. Clinical efficacy of acupuncture for diminished ovarian reserve: a systematic review and meta-analysis. Front Endocrinol. 2023;14:1136121. PMID: 37600702.",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/37600702/",
+        "covers": "DOR 患者的卵巢儲備替代指標",
+        "finding": "可能改善 FSH、FSH/LH、AFC、AMH，但異質性高，需更嚴格試驗；不能視為已改善活產。"
+      },
+      {
+        "type": "trial_protocol",
+        "citation": "Xu H, et al. Effect of acupuncture for diminished ovarian reserve: a randomized controlled trial protocol. 2021.",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8527724/",
+        "covers": "DOR 的 12 週針灸對 sham protocol",
+        "finding": "可支持存在直接 DOR 試驗方案，但 protocol 本身不提供療效結論。"
+      }
+    ],
+    "evidence_note_zh": "目前證據主要是卵巢儲備替代指標，尚不足以建立通用固定處方或宣稱改善懷孕／活產；本交付不從多個異質試驗拼接穴組。",
+    "condition_specific_cautions_zh": "每週期確認懷孕可能；針灸不得延誤生殖內分泌評估或把有限卵巢儲備描述為可逆。",
+    "no_source_found": false
+  },
+  {
+    "id": "cond.pid_chronic",
+    "points": [],
+    "point_rationale_zh": null,
+    "point_rationale_en": null,
+    "sources": [
+      {
+        "type": "systematic_review",
+        "citation": "Yi L, et al. Acupuncture therapies for relieving pain in pelvic inflammatory disease: a systematic review and meta-analysis. PLoS One. 2024;19:e0292166.",
+        "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0292166",
+        "covers": "PID 相關腹部及腰骶疼痛；包含不同針灸相關介入",
+        "finding": "可能減少疼痛，但介入與研究品質異質，不能形成單一固定穴組。"
+      },
+      {
+        "type": "systematic_review",
+        "citation": "Cheng Y, et al. Acupuncture for chronic pelvic inflammatory disease: a systematic review protocol/review. 2018.",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5895379/",
+        "covers": "慢性 PID／慢性骨盆炎症與疼痛",
+        "finding": "研究品質與複合治療造成高度限制。"
+      }
+    ],
+    "evidence_note_zh": "可支持疼痛輔助的低確定性 scope，但不能從複合介入回顧建立固定針灸處方。",
+    "condition_specific_cautions_zh": "發熱、急性下腹痛、宮頸舉痛、妊娠可能或疑似膿瘍須立即依急性 PID／急腹症處理；針灸不能替代抗生素。",
+    "no_source_found": false
+  },
+  {
+    "id": "cond.vulvovaginal_candidiasis",
+    "points": [],
+    "point_rationale_zh": null,
+    "point_rationale_en": null,
+    "sources": [],
+    "evidence_note_zh": "檢索所得具體穴位主要來自診所網站、個案或中藥合併療法，不符合派工單來源標準；未找到可建立 VVC 針灸處方的合格直接試驗或回顧。",
+    "condition_specific_cautions_zh": "應以檢驗及標準抗黴菌治療為主；反覆發作須評估糖尿病、免疫抑制、抗生素暴露及非念珠菌病因。",
+    "no_source_found": true
+  },
+  {
+    "id": "cond.postpartum_hypolactation",
+    "points": [
+      {"code": "CV17", "name_zh": "膻中", "role_zh": "19 個 RCT 系統性回顧中最常使用的穴位之一"},
+      {"code": "SI1", "name_zh": "少澤", "role_zh": "19 個 RCT 系統性回顧中最常使用的穴位之一"},
+      {"code": "ST18", "name_zh": "乳根", "role_zh": "19 個 RCT 系統性回顧中最常使用的穴位之一"},
+      {"code": "ST36", "name_zh": "足三里", "role_zh": "19 個 RCT 系統性回顧中最常使用的穴位之一"}
+    ],
+    "point_rationale_zh": "CV17、SI1、ST18、ST36 是系統性回顧依 STRICTA 抽取後報告的最常用穴位；這是跨試驗頻率摘要，不等同已驗證的唯一標準方。",
+    "point_rationale_en": "CV17, SI1, ST18, and ST36 were the most frequently used points across the included RCTs; this frequency summary is not a validated single standard prescription.",
+    "sources": [
+      {
+        "type": "systematic_review",
+        "citation": "Bao QN, et al. Efficacy and safety of acupuncture for postpartum hypogalactia: a systematic review and meta-analysis of randomized controlled trials. PLoS One. 2024;19:e0303948. PMID: 38843204.",
+        "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0303948",
+        "covers": "產後缺乳；19 個 RCT、2,400 人，排除乳腺炎與乳房膿瘍",
+        "finding": "可能提高泌乳素、泌乳量與純母乳率，但全部 outcome 證據確定性為 critically low；最常用穴為 CV17、SI1、ST18、ST36。"
+      }
+    ],
+    "evidence_note_zh": "可建立研究來源支持的候選穴組，但證據為 critically low、試驗高度異質且多數有偏倚疑慮，不能保證泌乳效果。",
+    "condition_specific_cautions_zh": "先評估含乳姿勢、餵奶頻率、嬰兒體重與脫水、母體出血／內分泌因素；乳房紅腫熱痛、發熱或疑似膿瘍不得只以針灸處理。產後情境不適用備孕卡的 LI4／SP6 孕期限制。",
+    "no_source_found": false
+  }
+]
