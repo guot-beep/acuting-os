@@ -100184,7 +100184,8 @@
         "cautions_en": "curriculum/herbs/臺灣中藥典第四版英文版.md",
         "modern_functions_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md",
         "modern_functions_en": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md",
-        "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md; Taiwan Herbal Pharmacopoeia 4th ed.; American Dragon (americandragon.com)"
+        "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md; Taiwan Herbal Pharmacopoeia 4th ed.; American Dragon (americandragon.com)",
+        "related_formulas": "data/herbs/formulas.json (reverse composition lookup)"
       },
       "actions_en": [
         "Clears heat and relieves summerheat",
@@ -100211,7 +100212,9 @@
       "contraindications_zh": [
         "孕婦慎用。"
       ],
-      "related_formulas": []
+      "related_formulas": [
+        "formula.hao_qin_qing_dan_tang"
+      ]
     },
     {
       "review_status": "draft",

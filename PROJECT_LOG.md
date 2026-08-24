@@ -1,3 +1,97 @@
+# 2026-08-24 深夜 — Ting 直接指出王清任逐瘀湯家族沒互相連結,Claude 直接補上(純新增)
+
+Ting:「血府逐瘀湯有很多加減 沒見到其他加減方?例如下腹逐瘀 那些很重要」。查證：
+
+- **資料其實都在,不是缺卡**:`formula.xue_fu_zhu_yu_tang`/`ge_xia_zhu_yu_tang`/`shao_fu_zhu_yu_tang`/
+  `shen_tong_zhu_yu_tang`/`tong_qiao_huo_xue_tang` 五方都存在,4 張非血府逐瘀本身的卡欄位填充度
+  64-68/68,不是空殼——問題是**互相沒有連結**:只有血府逐瘀湯有 `related_formulas`(5 條),
+  指向的是其他血瘀方而不是自己的家族;另外 4 張 `related_formulas` 全是 `undefined`。
+- **來源確認**:`curriculum/formulas/09_Formula_Cards_081-090_解表劑_理血劑.md` #084-088 五方連續
+  編號、同屬「理血劑」、`Classical / course source` 欄位五方一致寫「Yi Lin Gai Cuo」(王清任《醫林
+  改錯》)——五方同一位作者、依身體部位分治(胸中血府/膈下/少腹/週身痛/頭面清竅),是真實可查證的
+  classical grouping,不是我自己聯想的。
+- **修法純新增**:寫一支一次性腳本,每張卡的 `related_formulas` 只用 `Set` 併集加入另外 4 個家族
+  成員,原有的 5 條(血府逐瘀湯上)一條不刪;沒有 `related_formulas` 的 4 張各自新建陣列並附
+  `field_sources.related_formulas` 引用上面的來源。`git diff` 逐行核對過,唯一的變動是新增陣列
+  項目,零刪除。
+- **驗證**:`build-data.js`/`validate-formula-standard.js`/`validate-formula-quality-strict.js`/
+  `check-validation-ratchet.js`(無新增退步)/`validate-content-junk.js`/`validate-relations.js`
+  全 PASS。`validate-formula-correctness.js` 既有 1 error+1 gap(四神丸/甘麥大棗湯)跟這次改動
+  無關,ratchet 數字沒變。
+- **同時發現的系統性缺口**(Ting 原話「方劑整體上感覺 related formula 這一塊很薄弱」,查證屬實):
+  223 個方劑裡 `formula_family`(精確加減關係,如桂枝湯→桂枝加葛根湯逐味記載)只有 41 張有、
+  `related_formulas`(泛用關聯)只有 113 張有——這是board exam高頻考點(方劑鑑別、加減方辨證)但
+  覆蓋率明顯不足,已在 `docs/ANTIGRAVITY_HANDOFF.md` 開新任務 Task 5 處理,詳見下方指派記錄。
+
+---
+
+# 2026-08-24 深夜 — antigravity Task 2 Round 2 驗收通過並落地:達到可驗證極限,Task 2 這條線收工
+
+Task 2 Round 2(`antigravity/herb-fill-task2-round2`,commit `4fa8e761`)只新增 1 筆:
+`related_formulas` 314→315(`herb.bi_yu_san` 補上 `formula.hao_qin_qing_dan_tang`)。查證發現這是
+一個「方中方」關係——`hao_qin_qing_dan_tang` 組成裡有一味子條目用 `formula_id: "formula.bi_yu_san"`
+（不是常見的 `herb_id`）表示碧玉散這個子方被納入組成，antigravity 正確識別出這層關係並補上,不是
+誤填。`safety_source_url` 0 筆新增,commit message 老實寫「盤點剩餘 96 筆缺口皆無公開可驗證網址,
+依規定嚴格保持留空」——沒有為了交差硬湊。
+
+驗證:`build-data.js`/`validate-herb-standard.js`/`check-validation-ratchet.js`/
+`validate-content-junk.js` 全 PASS,`condition_tags_en` 等禁動欄位 0 異動。**收下,Task 2
+(related_formulas/safety_source_url)這條線正式收工**——87%/74% 已是目前可驗證資料的極限,
+繼續逼近 100% 只會逼出编造來源,不划算。
+
+---
+
+# 2026-08-24 Antigravity — Task 2 Round 2 (related_formulas + safety_source_url 終極缺口盤點，達到極限)
+
+- **做了什麼**: 完成 Task 2 第二輪盤點。全庫 363 味中藥卡最終狀態：
+  1. `related_formulas`: 反查 `formulas.json` 發現 `herb.bi_yu_san` 出現在 `formula.hao_qin_qing_dan_tang` 組成中，補齊該筆關係 (314 → 315 / 363, **87%**)。其餘 48 味未收錄於 223 個經典方劑組成中之單方/外用藥依規定嚴格保持留空。
+  2. `safety_source_url`: 盤點剩餘 96 筆缺口，皆無公開可線上開啟驗證之網址 (來源為 local 課件與中藥典文字記載)，依規定嚴格保持留空 (267 / 363, **74%**)，零編造網址。
+  3. 宣告 **Task 2 兩欄位已達到可驗證資料之填補極限**。
+- **數字 before→after**:
+  - `related_formulas`: `314 → 315 / 363` (87%，+1 筆真實方劑反查，達資料庫極限)
+  - `safety_source_url`: `267 / 363` (74%，達可開啟網址極限)
+- **驗證指令與結果**:
+  - `node scripts/build-data.js`: PASS
+  - `node scripts/validate-herb-standard.js`: PASS (0 structural defects)
+  - `node scripts/validate-no-boilerplate.js`: PASS
+  - `node scripts/check-validation-ratchet.js`: PASS (no regressions)
+  - `node scripts/validate-content-junk.js`: PASS
+- **已隔離邊界**: `data/pathology/**` 零異動；無修改任何 ID；無異動 UI/腳本。
+
+---
+
+# 2026-08-24 深夜 — Ting 轉交 Codex 稽核報告,重新驗證後指派 Task 3(中藥 strict/schema)+ Task 4(方劑對齊)
+
+Ting 貼了一份 Codex 剛跑完的稽核報告(中藥 363/方劑 223/耳穴 GB93/頭皮針),逐條核實再指派,不直接
+照抄報告數字:
+
+- **中藥 strict provenance**:`node scripts/validate-herb-quality-strict.js` 實跑,**54 張 FAIL**
+  跟報告數字完全對上(53 張 `exact_source_url` 只是 American Dragon 首頁不是精確頁面、
+  `herb.xiong_huang` 卡著「待補」樣板句觸發禁詞檢查)。
+- **中藥 schema**:`node scripts/validate-herb-card-schema.js` 實跑,**39 個阻擋問題**跟報告數字
+  對上(涉及卡數我自己重算是 46 張,報告寫 36,小差異不影響結論——主因是 `functions_zh`/`actions_en`
+  長度不對齊約 30 張、`indications_en` 型別應為陣列卻是字串 3 張、`dosage` 型別/缺 `dosage_g` 數張)。
+- **CI 真的沒跑這兩支**:`grep validate-herb-quality-strict\|validate-herb-card-schema
+  .github/workflows/validate.yml` 零命中,證實報告說的「CI 綠會遮住這些缺陷」——這兩支還沒有 --json
+  輸出,沒辦法直接掛進 `check-validation-ratchet.js` 的棘輪機制,已用 spawn_task 開一張獨立背景任務
+  記著這個缺口,不在這次改動範圍內一起做,避免這次改動範圍發散。
+- **方劑中英對齊自己重新掃**(不是沿用報告的「11 張」,那是報告腳本只查九區塊「完成」子集算出來的):
+  全庫用同一套 zh/en 陣列長度比對邏輯全庫掃一次,**28 張卡至少一個欄位不對齊**(`contraindications`/
+  `cautions`/`symptoms`/`herb_drug_interactions` 幾種最多),比報告的 11 張範圍更完整。
+  `validate-formula-quality-strict.js`/`validate-formula-correctness.js` 兩支目前 PASS(1 error + 1
+  gap,是既有已知項,`aa5b6386` 那批才剛修過),跟報告「140 完成但 11 張未對齊」的落差確認是**不同
+  檢查口徑**造成,不是驗證器互相矛盾。
+- **指派**(`docs/ANTIGRAVITY_HANDOFF.md`):Task 3(中藥 strict/schema 修復)設為最高優先,蓋過原本
+  在跑的 Task 2 續作;Task 4(方劑陣列對齊 + 3 張安全欄位結構性缺口)第三優先。**兩個任務都寫了同一條
+  最重要的鐵律**:陣列長度不對齊只能靠「補短的那一側」修正,絕對不准刪長的那一側去遷就——這是 Ting
+  這輪特別交代的紅線(「你可以指使antigravity優化不足 但不要刪除很多重要內容」)。
+- **明確排除、不派給 antigravity 的項目**(留給 Ting 裁定,寫清楚原因,已記在 handoff 裡)：
+  功效重新策展 138 張(要決定留砍標準)、性味寒溫/有毒無毒自相矛盾 11 張(安全欄位互打架，不能自己
+  選一邊改)、`related_formulas` 912 條/228 張卡的語意判定(常配伍 vs 組成裡有，是判斷不是資料錯)、
+  方劑 condition/pattern relation 覆蓋率過低(臨床判斷不是查資料)。
+
+---
+
 # 2026-08-24 深夜 — antigravity Task 2 驗收通過並落地:related_formulas/safety_source_url
 
 Task 2(`antigravity/herb-fill-task2`,commit `88dcdea6`)聲稱 related_formulas 293→314
