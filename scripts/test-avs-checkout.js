@@ -321,5 +321,43 @@ console.log("Codex regression — MED-1 invariant hardening");
   assert(wrap([{ ...fin, id: "avs.x5", version: 1, status: "superseded" }, { ...fin, id: "avs.x6", version: 2 }]).ok === true, "legal v1-superseded/v2-finalized sequence passes");
 }
 
+// ---- 回歸鎖 — SOAP 內部下次計畫不得自動流進病人文件 ------------------------
+// 起因(dry clinic #12):buildDraftSnapshot 曾寫 followUpSnapshot = note.followUp,
+// 於是 SOAP 裡的內部盤算(「若入睡仍 >60 分鐘,考慮加梔子豉湯思路」)預設就會
+// 印在病人拿走的那張紙上,只靠醫師記得在 checkout 手動刪掉。與 preselect:false
+// 同一條規矩:病人文件裡的每一句都必須是醫師明確放進去的。
+// 這裡用「一眼認得出是內部推理」的 fixture,而不是無害的「兩週後回診」——
+// 後者就算漏出去也看不出問題,測了等於沒測。
+console.log("回歸鎖 #12 — SOAP followUp 不自動進病人文件");
+{
+  const INTERNAL = "若入睡仍 >60 分鐘,考慮加梔子豉湯思路;下次評估是否轉溫膽湯";
+  const kase = makeCase();
+  const note = makeNote({ modalitiesPerformed: ["modality.acupuncture"], followUp: INTERNAL });
+  const d = draftFor(kase, note);
+
+  assert(d.followUpSnapshot === "", "draft 的 followUpSnapshot 預設為空(不預填 note.followUp)");
+  assert(!JSON.stringify(d).includes("梔子豉湯"), "內部推理完全不在 draft snapshot 任何欄位裡");
+
+  // 病人 HTML:未經醫師填寫 → 整段「下次回診」不該出現內部文字
+  const htmlBlank = AVS.renderPatientHtml(d, { visitDate: note.visitDate });
+  assert(!htmlBlank.includes("梔子豉湯"), "病人文件不含內部推理");
+  assert(!htmlBlank.includes("回診安排:"), "回診欄空白時不印這一段(不留半句殘影)");
+
+  // 醫師明確填寫 → 才會出現,且出現的是醫師寫的那句,不是 SOAP 原文
+  const chosen = { ...d, followUpSnapshot: "兩週後回診" };
+  const htmlChosen = AVS.renderPatientHtml(chosen, { visitDate: note.visitDate });
+  assert(htmlChosen.includes("回診安排:兩週後回診"), "醫師填了才印,且印的是醫師寫的那句");
+  assert(!htmlChosen.includes("梔子豉湯"), "醫師填寫後仍不會夾帶 SOAP 原文");
+
+  // 定稿 → 歷史文件同樣不得夾帶
+  const fin = AVS.finalizeSnapshot(AVS.upsertDraft([], chosen), chosen.id, "2026-01-15T18:00:00Z")[0];
+  assert(!JSON.stringify(fin).includes("梔子豉湯"), "定稿歷史不含內部推理");
+
+  // 更正版本從 finalized 深拷貝 —— 也不該把內部文字「補」回來
+  const corr = AVS.createCorrectionDraft([fin], "2026-01-16T09:00:00Z");
+  assert(!JSON.stringify(corr).includes("梔子豉湯"), "更正草稿不會把 SOAP 原文補回來");
+  assert(corr.followUpSnapshot === "兩週後回診", "更正草稿保留醫師定稿過的回診文字");
+}
+
 console.log(`\n${pass} passed, ${fail} failed`);
 process.exit(fail ? 1 : 0);

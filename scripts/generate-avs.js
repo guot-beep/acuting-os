@@ -109,7 +109,12 @@ ${sec("lifestyle", "作息與生活建議", (byCat("lifestyle").length || note.a
 ${sec("diet", "飲食建議", (byCat("diet").length || note.avsDiet) ? (byCat("diet").length ? "<ul>" + byCat("diet").map((a) => "<li>" + esc(a) + "</li>").join("") + "</ul>" : "") + (note.avsDiet ? "<p>" + esc(note.avsDiet) + "</p>" : "") : "")}
 ${sec("exercise", "活動與運動建議", note.avsExercise ? `<p>${esc(note.avsExercise)}</p>` : "")}
 ${sec("safety", "什麼情況請盡快與我們聯絡或就醫", `<ul><li>症狀明顯加重、或出現新的劇烈疼痛</li><li>發燒、持續頭暈、異常出血或瘀腫擴大</li><li>服用調理品後噁心、皮疹或任何過敏反應</li>${note.avsSafety ? `<li>${esc(note.avsSafety)}</li>` : ""}</ul>`)}
-${sec("followup", "下次回診與自我觀察", `${note.followUp ? `<p>回診安排:${esc(note.followUp)}</p>` : ""}${prompts.length ? `<p>這段期間請留意:</p><ul>${prompts.map((p) => `<li>${esc(p)}</li>`).join("")}</ul>` : ""}`)}
+${/* 回診段只讀 note.avsFollowUp —— 與本檔其餘欄位(avsSummary/avsLifestyle/
+    avsDiet/avsExercise/avsSafety)同一條 avs* 慣例:病人文件只印「寫給病人看的
+    欄位」。舊版這裡讀的是 note.followUp,那是 SOAP 的內部下次計畫(「若無效改
+    梔子豉湯思路」這類),等於預設把醫師的盤算印給病人。沒有 avsFollowUp 時這段
+    留白,不 fallback 回內部欄位 —— 寧可少印一句,不可多洩一句。 */""}
+${sec("followup", "下次回診與自我觀察", `${note.avsFollowUp ? `<p>回診安排:${esc(note.avsFollowUp)}</p>` : ""}${prompts.length ? `<p>這段期間請留意:</p><ul>${prompts.map((p) => `<li>${esc(p)}</li>`).join("")}</ul>` : ""}`)}
 <div style="margin-top:18px;display:flex;justify-content:space-between;font-size:.9em;align-items:flex-end"><div>醫師:${esc(CLINIC.practitioner_zh || "")}＿＿＿＿＿＿</div><div style="text-align:right;color:#66717a">預約電話:${esc(CLINIC.phone || "")}<br>${esc(CLINIC.website || "")}</div></div>
 <div class="footer">本文件為衛教與照護指示,非診斷證明,不適用於保險申報。如有疑問請聯絡診所。</div>
 </div></body></html>`;

@@ -9720,6 +9720,16 @@ function renderAvsCheckout() {
         </div>
         <textarea data-avs-custom-text="${i}" rows="2" placeholder="病人語言,不放診斷詞與內部代碼">${escapeHtml(a.text_zh)}</textarea>
       </div>`).join("");
+    // SOAP「下次計畫」是內部盤算,引擎已不再預填進病人文件(js/avs.js
+    // buildDraftSnapshot)。這裡把原文並排顯示成醫師端參考 + 一鍵沿用:
+    // 要照抄只多一次點擊,但預設不外流,且沿用時原文就在眼前可先修掉。
+    const internalFollowUp = String(note.followUp || "").trim();
+    const internalFollowUpHtml = internalFollowUp
+      ? `<div class="avs-co-why">
+          <small>SOAP 下次計畫(僅醫師端,不會自動進病人文件):${escapeHtml(internalFollowUp)}</small>
+          <button class="ghost avs-co-why-btn" type="button" id="avsFollowUpCopyBtn">沿用這段 Use this</button>
+        </div>`
+      : "";
     body.innerHTML = `
       <div class="avs-co-meta">Visit ${escapeHtml(note.visitDate || "")} · ${escapeHtml(kase.patientCode || "")} · 草稿 v${escapeHtml(String(d.version))}${finalized ? ` (更正 v${escapeHtml(String(finalized.version))})` : ""}</div>
       <section class="avs-co-section">
@@ -9742,7 +9752,8 @@ function renderAvsCheckout() {
       </section>
       <section class="avs-co-section">
         <h3>5 · 回診 Follow-up</h3>
-        <input type="text" data-avs-followup value="${escapeAttribute(d.followUpSnapshot)}" placeholder="例:兩週後回診" />
+        <input type="text" data-avs-followup value="${escapeAttribute(d.followUpSnapshot)}" placeholder="例:兩週後回診(留空則病人文件不印這一段)" />
+        ${internalFollowUpHtml}
       </section>
       <section class="avs-co-section">
         <h3>6 · 自我觀察 What to watch</h3>
@@ -9806,6 +9817,17 @@ function wireAvsCheckoutEvents() {
     avsWorkingDraft.clinicianAddedAdvice.splice(Number(btn.dataset.avsCustomRemove), 1);
     renderAvsCheckout();
   }));
+
+  // 「沿用」= 醫師看著原文明確決定要給病人的那一次點擊。複製進可編輯欄位
+  // (不是直接定稿),所以沿用後仍可當場刪掉內部推理再定稿。
+  const followUpCopyBtn = body.querySelector("#avsFollowUpCopyBtn");
+  if (followUpCopyBtn) followUpCopyBtn.addEventListener("click", () => {
+    const input = body.querySelector("[data-avs-followup]");
+    if (!input) return;
+    input.value = String(note.followUp || "").trim();
+    collectAvsDraftFromDom();
+    input.focus();
+  });
 
   const regenBtn = body.querySelector("#avsRegenBtn");
   if (regenBtn) regenBtn.addEventListener("click", () => {

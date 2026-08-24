@@ -178,7 +178,13 @@
       })),
       clinicianAddedAdvice: [],
       medicationInstructionsSnapshot: medRows,
-      followUpSnapshot: note.followUp || "",
+      // 回診安排刻意「不」預填 note.followUp。SOAP 的「下次計畫」是醫師的內部
+      // 盤算(「若入睡仍 >60 分鐘,考慮加梔子豉湯思路」這類),預填等於預設把
+      // 它印給病人,只靠醫師記得刪掉 —— 那不是防線。與 preselect:false 同一條
+      // 規矩:病人文件裡的每一句話都必須是醫師在 checkout 明確放進去的。
+      // checkout UI 仍把內部計畫並排顯示成醫師端參考,並提供一鍵沿用
+      // (app.js renderAvsCheckout §5),所以「照抄」只多一次點擊,不多一次打字。
+      followUpSnapshot: "",
       patientObservationPromptsSnapshot: prompts,
       clinicProfileSnapshot: {
         clinic_name_zh: (clinic && clinic.clinic_name_zh) || "",
