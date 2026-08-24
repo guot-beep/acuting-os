@@ -19628,6 +19628,629 @@
       "source_type": "source_assisted_draft_pending_ting_verification",
       "review_status": "draft",
       "authored_by": "model_draft"
+    },
+    {
+      "id": "sym.vaginal_dryness",
+      "name_zh": "陰道乾澀",
+      "name_en": "Vaginal dryness",
+      "pinyin": "yin dao gan se",
+      "pinyin_toned": "yīn dào gān sè",
+      "taxonomy_ids": [
+        "sym.female"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported",
+        "examiner_observed"
+      ],
+      "primary_mode": "patient_reported",
+      "aliases_en": [
+        "Vulvovaginal dryness",
+        "Vaginal atrophy symptom",
+        "Genitourinary syndrome of menopause (dryness)"
+      ],
+      "aliases_zh": [
+        "陰道乾燥",
+        "外陰陰道乾澀",
+        "下體乾澀"
+      ],
+      "definition_en": "Dryness, tightness, burning, or friction discomfort of the vaginal and vulvar mucosa from reduced lubrication, often with pain during intercourse. A presenting complaint, not a diagnosis — the same vaginal dryness can sit under postmenopausal estrogen decline (genitourinary syndrome of menopause / vaginal atrophy), lactation-related estrogen suppression, anti-estrogen medication, or Sjögren's syndrome in biomedicine, or under the TCM categories of Kidney Yin deficiency, Liver Blood deficiency, or Chong-Ren essence-blood insufficiency failing to moisten the lower burner.",
+      "definition_zh": "陰道及外陰部黏膜濕潤度下降所產生的乾燥、緊繃、灼熱或摩擦不適感,常伴性交疼痛。是主訴而非診斷——同一個陰道乾澀,西醫可見於停經後雌激素低下(停經泌尿生殖症候群／陰道萎縮)、哺乳期雌激素抑制、抗雌激素藥物治療、修格蘭氏症候群等,中醫則多屬腎陰虛、肝血虛、衝任精血虧虛,精血津液不能濡養下焦所致。",
+      "patient_words_en": "\"It's really dry down there, sex hurts\", \"there's hardly any lubrication left, everything feels like friction\", \"it itches and stings, especially during intercourse\", \"it started after menopause and keeps getting worse every year\", \"it feels tight and uncomfortable even just sitting\"",
+      "patient_words_zh": "「下面很乾,同房會痛」「好像都沒有分泌物了,摩擦感很重」「會癢又刺痛,尤其是行房的時候」「停經後就變這樣,一年比一年嚴重」「緊緊繃繃的,坐久也不舒服」",
+      "clinical_attributes": {
+        "location": {
+          "applicable": false
+        },
+        "quality": {
+          "applicable": true,
+          "vocabulary": "symptom_quality",
+          "diagnostic_note_zh": "灼(灼熱感)提示陰虛內熱,是腎陰虛證的辨證重點;若乾澀而無明顯灼熱等熱象,多屬肝血虛、衝任精血虧虛或氣血兩虛,精血津液不足以濡潤下焦"
+        },
+        "laterality": {
+          "applicable": false
+        },
+        "timing": {
+          "applicable": true,
+          "vocabulary": "symptom_timing"
+        },
+        "severity": {
+          "applicable": false,
+          "why": "實例值,屬病例層(§8)"
+        },
+        "duration": {
+          "applicable": false,
+          "why": "實例值,屬病例層(§8)"
+        }
+      },
+      "inquiry_en": [
+        {
+          "dimension": "Triggers",
+          "why": "Determines whether the dryness is physiologic (menopause/lactation), medication-induced, or autoimmune — the management path differs completely"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Whether there is bleeding — especially postmenopausal or postcoital bleeding — is the single most important red-flag sign here; a positive finding requires prompt gynecologic referral to rule out endometrial or cervical pathology rather than being attributed to simple dryness. Also assess for dry eyes, dry mouth, and joint pain, which determine whether referral to rheumatology (to rule out autoimmune disease) or dermatology (to rule out vulvar skin disease) is needed"
+        },
+        {
+          "dimension": "Timing",
+          "why": "A continuous, progressive course usually reflects sustained postmenopausal estrogen decline; cyclical fluctuation suggests ovarian function has not yet fully declined"
+        },
+        {
+          "dimension": "Degree",
+          "why": "Determines how aggressively to treat, and is the most direct patient-reported outcome for tracking response"
+        },
+        {
+          "dimension": "Relief",
+          "why": "Whether relief occurs helps distinguish simple mucosal dryness from a case complicated by infection or another pathology"
+        },
+        {
+          "dimension": "Course",
+          "why": "New, persistent dryness in a young premenopausal patient warrants evaluation for premature ovarian insufficiency, not an assumption of normal aging"
+        }
+      ],
+      "inquiry_zh": [
+        {
+          "dimension": "誘因",
+          "why": "決定乾澀是生理性(停經／哺乳)、藥物誘發、還是自體免疫所致,處置方向完全不同"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "有無出血(特別是停經後或性交後出血)是本症最重要的紅旗徵象,陽性應優先轉診婦科排除子宮內膜或子宮頸病變,而非逕自歸因於單純乾澀;另需留意有無眼乾、口乾、關節痛等全身伴隨症,以判斷是否需轉診風濕免疫科排除自體免疫疾病,或轉診皮膚科排除外陰皮膚病變"
+        },
+        {
+          "dimension": "時間",
+          "why": "持續進行性多屬停經雌激素持續低下;週期性波動則提示卵巢功能尚未完全衰退"
+        },
+        {
+          "dimension": "程度",
+          "why": "決定治療積極度,也是追蹤療效時最直接的病人自評指標"
+        },
+        {
+          "dimension": "緩解",
+          "why": "有效與否可反推病因是單純黏膜乾燥,還是合併感染或其他病理"
+        },
+        {
+          "dimension": "病程",
+          "why": "停經前年輕患者新發且持續的乾澀,需考慮卵巢功能早衰,不可逕自歸因於老化"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Genital dryness with a burning sensation, tidal fever and night sweats",
+          "points_to": [
+            "pattern.kidney_yin_deficiency"
+          ],
+          "distinguishing": "Genital dryness with a mild burning sensation or pain on intercourse, usually around menopause, with tidal fever and night sweats worse in the afternoon or at night, five-center heat, sore weak low back and knees, dizziness and tinnitus, and a red tongue with scant coating — Tiangui approaching exhaustion, Kidney Yin insufficient to nourish the uterus and vulva; the most common pattern behind this symptom"
+        },
+        {
+          "variant": "Genital dryness without heat signs, dizziness, pale nails and lips",
+          "points_to": [
+            "pattern.liver_blood_deficiency"
+          ],
+          "distinguishing": "Genital dryness without a marked burning sensation or other heat signs, with dizziness, blurred vision, a pale or sallow complexion, pale brittle nails, and scanty pale menstruation — usually following postpartum hemorrhage, chronic blood loss, or emotional strain depleting Liver Blood, leaving the uterine vessels and vulva without moisture"
+        },
+        {
+          "variant": "Genital dryness with progressively scanty menses or amenorrhea, infertility",
+          "points_to": [
+            "pattern.chong_ren_deficiency"
+          ],
+          "distinguishing": "Genital dryness together with progressively scanty menstruation or amenorrhea and difficulty conceiving, with sore weak low back and knees and dizziness with tinnitus — seen with premature ovarian insufficiency, repeated pregnancy termination, or multiple pregnancies depleting essence-blood, leaving the Chong-Ren vessels and uterus undernourished; distinguished from plain Kidney Yin deficiency by leading involvement of the whole reproductive axis (menses and fertility), not just local dryness with heat signs"
+        },
+        {
+          "variant": "Genital dryness with fatigue, sallow complexion, palpitations and insomnia",
+          "points_to": [
+            "pattern.qi_blood_deficiency"
+          ],
+          "distinguishing": "Genital dryness without prominent heat signs, dominated instead by mental fatigue, shortness of breath and reluctance to speak, a pale or sallow complexion, palpitations, insomnia, and poor appetite — seen in chronic illness, after chemotherapy, or in frail elderly patients; combined Qi and Blood deficiency depletes fluids, essence, and blood alike, leaving the lower burner without nourishment"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "陰道乾澀灼熱,潮熱盜汗,五心煩熱",
+          "points_to": [
+            "pattern.kidney_yin_deficiency"
+          ],
+          "distinguishing": "多見於停經前後,陰部乾澀伴輕度灼熱感或性交疼痛,同時有午後或夜間潮熱盜汗、五心煩熱、腰膝痠軟、頭暈耳鳴,舌紅少苔——天癸將竭、腎陰不足,精血無以下榮胞宮陰戶,為本症最常見的證型"
+        },
+        {
+          "variant": "陰道乾澀但無明顯熱象,頭暈眼花,爪甲唇色淡白",
+          "points_to": [
+            "pattern.liver_blood_deficiency"
+          ],
+          "distinguishing": "陰部乾澀,但少有灼熱或潮熱等熱象,兼頭暈眼花、視物模糊、面色蒼白或萎黃、爪甲不榮、月經量少色淡,常見於產後失血過多、慢性失血或情志耗傷肝血之後,血虛不能濡潤胞脈陰戶所致"
+        },
+        {
+          "variant": "陰道乾澀合併月經量進行性減少或閉經,不易受孕",
+          "points_to": [
+            "pattern.chong_ren_deficiency"
+          ],
+          "distinguishing": "陰道乾澀合併月經量進行性減少甚至閉經、不易受孕,兼腰膝痠軟、頭暈耳鳴,多見於卵巢功能早衰、反覆人工流產或多產耗傷精血者,衝任二脈失於濡養、胞宮失養所致——與單純腎陰虛的差異在於本證以生殖軸功能全面衰退(經、孕)為主症,非僅局部乾澀熱象"
+        },
+        {
+          "variant": "陰道乾澀,神疲乏力,面色萎黃,心悸失眠",
+          "points_to": [
+            "pattern.qi_blood_deficiency"
+          ],
+          "distinguishing": "陰道乾澀但熱象不顯,以神疲乏力、氣短懶言、面色淡白或萎黃、心悸失眠、食慾不振為主,常見於慢性病、化療後或高齡體弱者,氣血兩虛、化源不足,津液精血俱乏,無以濡養下焦"
+        }
+      ],
+      "red_flags_en": [
+        "Vaginal dryness with postmenopausal or postcoital bleeding → gynecologic evaluation needed first to rule out endometrial or cervical pathology",
+        "Vulvar skin changes — white patches, thickening or thinning, fissuring, or a non-healing ulcer → rule out lichen sclerosus or vulvar (pre)malignancy; refer to gynecology or dermatology",
+        "Vaginal dryness with dry eyes, dry mouth, and joint pain → consider Sjögren's syndrome or another autoimmune disease; refer to rheumatology",
+        "Dryness clearly tied to an aromatase inhibitor, anti-estrogen therapy (e.g. for breast cancer), or another medication and severely affecting quality of life → discuss with the prescriber; do not stop the medication independently",
+        "Fever, purulent or foul-smelling discharge, or severe pain → rule out infection, seek prompt medical care",
+        "New persistent vaginal dryness in a young premenopausal patient, with menstrual irregularity or amenorrhea → evaluate for premature ovarian insufficiency"
+      ],
+      "red_flags_zh": [
+        "陰道乾澀合併停經後出血或性交後出血 → 需優先婦科評估,排除子宮內膜或子宮頸病變",
+        "外陰皮膚出現白斑、增厚或變薄、皸裂或潰瘍不癒 → 需排除外陰硬化性苔癬或外陰癌前病變,轉診婦科或皮膚科",
+        "陰道乾澀合併眼乾、口乾、關節痛 → 需考慮修格蘭氏症候群等自體免疫疾病,轉診風濕免疫科評估",
+        "明確與芳香酶抑制劑、抗雌激素治療(如乳癌治療用藥)或其他藥物相關,且嚴重影響生活品質 → 應與處方醫師討論,不可自行停藥",
+        "合併發燒、化膿或惡臭分泌物、劇烈疼痛 → 需排除感染,儘速就醫",
+        "停經前年輕患者新發持續性陰道乾澀,合併月經紊亂或停經 → 需評估卵巢功能早衰"
+      ],
+      "safety_flags": [
+        "dryness_review",
+        "medication_review",
+        "autoimmune_review",
+        "bleeding_review"
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "NAMS 2020 — The 2020 genitourinary syndrome of menopause position statement of The North American Menopause Society",
+        "ACOG Practice Bulletin No. 141 — Management of Menopausal Symptoms",
+        "NICE NG12 — Suspected cancer: recognition and referral(停經後出血轉診準則)",
+        "British Association of Dermatologists — Guidelines for the management of lichen sclerosus 2018",
+        "2016 ACR-EULAR Classification Criteria for Primary Sjögren's Syndrome"
+      ],
+      "sources": [
+        "NAMS 2020 — The 2020 genitourinary syndrome of menopause position statement of The North American Menopause Society(GSM 定義與紅旗)",
+        "ACOG Practice Bulletin No. 141 — Management of Menopausal Symptoms(病因與臨床處置)",
+        "NICE NG12 — Suspected cancer: recognition and referral(停經後出血轉診準則)",
+        "British Association of Dermatologists — Guidelines for the management of lichen sclerosus 2018(外陰皮膚紅旗)",
+        "2016 ACR-EULAR Classification Criteria for Primary Sjögren's Syndrome(自體免疫紅旗)",
+        "中醫婦科學 通行教材 —— 絕經前後諸證篇、陰癢篇(腎陰虛、肝血虛、衝任虛損、氣血兩虛分證)",
+        "本 repo 既有卡片:pattern_library 各證型 key_signs_zh;sym.hot_flash、sym.dry_eyes、sym.vaginal_discharge 格式與內容參照"
+      ],
+      "supporting_measurements": [],
+      "field_sources": {
+        "definition_zh/en": "NAMS 2020 genitourinary syndrome of menopause 位置聲明對陰道乾澀／GSM 的定義 + 中醫婦科學 絕經前後諸證篇一般描述",
+        "inquiry_zh/en": "ACOG Practice Bulletin No. 141 病因分類(生理性／藥物性)+ 2016 ACR-EULAR 分類準則(自體免疫性病因)+ NICE NG12 停經後出血轉診準則;dimension 詞彙依 docs/SYMPTOM_CARD_TEMPLATE.md §6.4 固定詞彙表收斂,出血相關內容併入「伴隨症」",
+        "differentiation_zh/en": "中醫婦科學 絕經前後諸證／衝任病機篇分證 + 本 repo pattern_library 對應證型 key_signs_zh/tongue_zh/pulse_zh 逐條核對",
+        "red_flags_zh/en": "NICE NG12(停經後出血轉診準則)+ British Association of Dermatologists 2018(外陰皮膚硬化性苔癬紅旗)+ 2016 ACR-EULAR 分類準則(自體免疫紅旗)+ NAMS 2020(藥物性／感染性紅旗)",
+        "supporting_measurements": "刻意留空——目前 27 個 outcome metrics 無對應陰道乾澀量化項",
+        "clinical_attributes.quality": "data/config/symptom_quality.json 收錄 burning/灼;本卡 differentiation 以灼熱有無區分腎陰虛與肝血虛/衝任虛損/氣血兩虛三證,故 quality 應為 applicable:true 而非 false"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "sym.unsteady_gait",
+      "name_zh": "步態不穩",
+      "name_en": "Unsteady gait",
+      "pinyin": "bu tai bu wen",
+      "pinyin_toned": "bù tài bù wěn",
+      "aliases_zh": [
+        "走路不穩",
+        "步履蹣跚",
+        "行走不穩"
+      ],
+      "aliases_en": [
+        "Gait instability",
+        "Unsteady walking",
+        "Wobbly gait"
+      ],
+      "taxonomy_ids": [
+        "sym.general_limb"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported",
+        "examiner_observed"
+      ],
+      "primary_mode": "examiner_observed",
+      "definition_zh": "行走時身體搖晃、東倒西歪，雙腳難以穩定支撐，或步伐明顯偏向一側、呈寬基底步態，病人常自覺隨時可能跌倒、需要扶靠支撐物才敢行走。這是一個主訴兼可觀察的體徵，不是診斷——步態不穩是前庭病變、小腦性共濟失調、本體感覺喪失(周邊神經病變、脊髓病變)、巴金森氏症、姿位性低血壓、藥物副作用(鎮靜安眠藥、降壓藥)乃至急性腦血管病變等多種病因共同的最終表現路徑，臨床上必須先問清楚是哪一種型態，才能決定評估與轉診的方向。",
+      "definition_en": "A gait that sways, staggers, veers to one side, or is broad-based, with poor balance while walking — the patient often feels they might fall at any moment and needs to hold onto something to walk safely. Both a presenting complaint and an observable sign, not a diagnosis — unsteady gait is the common final pathway for a wide range of causes: vestibular dysfunction, cerebellar ataxia, loss of proprioception (peripheral neuropathy, spinal cord disease), Parkinsonism, orthostatic hypotension, medication side effects (sedatives, antihypertensives), or acute cerebrovascular disease. Sorting out which pattern is present is the first step before deciding how to work it up or refer.",
+      "patient_words_zh": "「走路東倒西歪，好像隨時會跌倒」「腳步踩不穩，像踩在棉花上」「走一走會偏向一邊」「需要扶著牆或家具才敢走」「晚上或閉著眼睛更容易不穩」「站起來那一下天旋地轉，走路就晃」",
+      "patient_words_en": "\"I stagger when I walk, like I'm about to fall\", \"my steps feel unsteady, like walking on cotton\", \"I drift to one side when I walk\", \"I need to hold onto the wall or furniture to feel safe walking\", \"it's worse at night or with my eyes closed\", \"the room spins when I stand up, then I wobble when I walk\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": false
+        },
+        "quality": {
+          "applicable": false
+        },
+        "laterality": {
+          "applicable": true,
+          "vocabulary": "symptom_laterality"
+        },
+        "timing": {
+          "applicable": true,
+          "vocabulary": "symptom_timing"
+        },
+        "severity": {
+          "applicable": false,
+          "why": "實例值，屬病例層（§8）"
+        },
+        "duration": {
+          "applicable": false,
+          "why": "實例值，屬病例層（§8）"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "部位",
+          "why": "單側偏斜、跛行或拖曳步態多提示單側中樞(小腦、大腦半球)或周邊神經病灶；雙側對稱的寬基底步態多見於周邊神經病變或雙側前庭功能減退"
+        },
+        {
+          "dimension": "誘因",
+          "why": "閉眼或暗處加重提示本體感覺或前庭代償不足；站起瞬間加重提示姿位性低血壓；特定藥物(鎮靜安眠藥、降壓藥、酒精)常是可逆病因"
+        },
+        {
+          "dimension": "時間",
+          "why": "夜間或用藥後加重提示藥物相關；晨起站立時加重需考慮姿位性低血壓"
+        },
+        {
+          "dimension": "緩解",
+          "why": "需扶物或倚賴視覺才能走穩，提示本體感覺或前庭代償依賴；閉眼後明顯惡化即陽性 Romberg 徵"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "眩暈、複視、言語不清、單側肢體無力麻木 → 立即啟動中風流程；尿失禁與認知功能減退 → 提示常壓性腦積水；靜止性震顫與肌強直 → 提示巴金森氏症"
+        },
+        {
+          "dimension": "病程",
+          "why": "急性突發須優先排除腦血管病變；緩慢漸進多見於周邊神經病變、退化性疾病或藥物累積效應；跌倒史與跌倒頻率決定是否啟動跌倒風險評估"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Location",
+          "why": "Unilateral veering, limping, or a dragging gait suggests a one-sided central (cerebellar/hemispheric) or peripheral lesion; a symmetric wide-based gait suggests peripheral neuropathy or bilateral vestibular loss"
+        },
+        {
+          "dimension": "Triggers",
+          "why": "Worse with eyes closed or in the dark suggests impaired proprioception or vestibular compensation; worse immediately on standing suggests orthostatic hypotension; specific medications (sedatives, antihypertensives, alcohol) are often a reversible cause"
+        },
+        {
+          "dimension": "Timing",
+          "why": "Worse at night or after taking medication suggests a drug-related cause; worse on waking raises orthostatic hypotension"
+        },
+        {
+          "dimension": "Relief",
+          "why": "Needing to hold onto something or rely on vision to walk safely suggests dependence on proprioceptive or vestibular compensation; marked worsening with eyes closed is a positive Romberg sign"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Vertigo, double vision, slurred speech, or one-sided limb weakness/numbness → start the stroke pathway immediately; urinary incontinence with cognitive decline → suggests normal pressure hydrocephalus; resting tremor with rigidity → suggests parkinsonism"
+        },
+        {
+          "dimension": "Course",
+          "why": "Acute sudden onset should first rule out cerebrovascular disease; slow gradual onset is more typical of peripheral neuropathy, degenerative disease, or cumulative medication effect; fall history and frequency determine whether a falls-risk assessment should be triggered"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "步態浮虛不穩，兼頭暈耳鳴、腰膝痠軟",
+          "points_to": [
+            "pattern.kidney_essence_deficiency"
+          ],
+          "distinguishing": "步態緩慢虛浮、如踩棉絮，兼頭暈耳鳴、健忘、腰膝痠軟、齒搖髮脫，多見於年長或久病者，腦為髓海，髓海不足則步履不正"
+        },
+        {
+          "variant": "步態遲緩不穩，兼頭暈耳鳴、腰膝痠軟、五心煩熱",
+          "points_to": [
+            "pattern.liver_kidney_yin_deficiency"
+          ],
+          "distinguishing": "步態遲緩、動作徐緩，兼眩暈耳鳴、眼乾或視物模糊、腰膝痠軟、五心煩熱或低熱、盜汗、咽乾，舌紅少苔或無苔，脈細數可兼弦——多見於年長或久病，肝腎陰虛、筋脈失於濡養故步履遲滯不穩；與腎精不足證(無明顯熱象)不同，肝腎陰虛以五心煩熱、盜汗等虛熱之象為辨"
+        },
+        {
+          "variant": "步態不穩，兼神疲乏力、氣短懶言",
+          "points_to": [
+            "pattern.qi_blood_deficiency"
+          ],
+          "distinguishing": "步態虛軟無力，勞累後加重，休息可稍緩，兼神疲乏力、氣短懶言、面色淡白或萎黃、心悸"
+        },
+        {
+          "variant": "步態沉重不穩，頭重如裹，兼胸悶痰多",
+          "points_to": [
+            "pattern.phlegm_damp"
+          ],
+          "distinguishing": "步態沉重不穩，兼頭暈昏沉如裹、胸悶脘痞、痰多、身重困倦，陰雨天加重"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Weak, floating unsteady gait with dizziness, tinnitus, low back/knee weakness",
+          "points_to": [
+            "pattern.kidney_essence_deficiency"
+          ],
+          "distinguishing": "Slow, floating gait as if walking on cotton, with dizziness, tinnitus, forgetfulness, weak aching low back and knees, loosening teeth and hair loss — usually elderly or chronic illness; the brain is the 'sea of marrow', so essence deficiency leaves the gait unsteady"
+        },
+        {
+          "variant": "Slow, sluggish unsteady gait with dizziness, tinnitus, and low back/knee soreness",
+          "points_to": [
+            "pattern.liver_kidney_yin_deficiency"
+          ],
+          "distinguishing": "Slow, sluggish gait with dizziness, tinnitus, dry or blurred eyes, sore weak low back and knees, five-center Heat or low-grade fever, night sweats, and dry throat; tongue red with little or no coating, pulse thin and rapid, possibly wiry — typically in the elderly or with chronic illness, as Liver-Kidney Yin deficiency leaves the sinews unnourished and the gait grows sluggish and unsteady; distinguished from Kidney Essence Deficiency (no heat signs) by these deficiency-Heat features"
+        },
+        {
+          "variant": "Weak unsteady gait with fatigue and shortness of breath",
+          "points_to": [
+            "pattern.qi_blood_deficiency"
+          ],
+          "distinguishing": "Weak, unsteady gait worse after exertion and somewhat relieved by rest, with fatigue, shortness of breath, reluctance to speak, pale or sallow complexion, palpitations"
+        },
+        {
+          "variant": "Heavy unsteady gait with a muzzy heavy head and chest fullness",
+          "points_to": [
+            "pattern.phlegm_damp"
+          ],
+          "distinguishing": "Heavy, unsteady gait with a muzzy heaviness in the head as if wrapped, chest and epigastric fullness, copious phlegm, heavy tired limbs, worse in damp weather"
+        }
+      ],
+      "red_flags_zh": [
+        "突然出現步態不穩、平衡或協調喪失，尤其合併臉部下垂、單側手臂無力、言語不清或視覺改變 → 依 BE-FAST 原則視為中風，立即送急診",
+        "步態不穩合併眩暈、噁心嘔吐、複視或嚴重頭痛，且為突然發作 → 小腦掌管平衡與協調，此組合提示小腦或後循環中風，需緊急神經學評估",
+        "老年人新發或惡化的步態不穩，或有跌倒史／跌倒風險徵象 → 建議依跌倒風險準則(如 NICE NG249)進行多面向跌倒風險評估",
+        "步態不穩合併尿失禁與認知功能減退(步態異常常是三主徵中最早、最主要的表現) → 提示常壓性腦積水，屬潛在可逆病因，惟即使符合完整三主徵，分流手術後也並非人人能完全恢復，建議神經影像評估"
+      ],
+      "red_flags_en": [
+        "Sudden onset of unsteady gait with loss of balance or coordination, especially with facial drooping, one-sided arm weakness, slurred speech, or vision change → treat as stroke per the BE-FAST protocol, seek emergency care immediately",
+        "Unsteady gait with vertigo, nausea/vomiting, double vision, or severe headache, especially with sudden onset → the cerebellum governs balance and coordination, so this combination suggests cerebellar or posterior-circulation stroke and needs urgent neurological evaluation",
+        "New or worsening unsteady gait in an older adult, or a history of falls / fall-risk signs → recommend a multifactorial falls-risk assessment per falls guidance such as NICE NG249",
+        "Unsteady gait with urinary incontinence and cognitive decline (gait disturbance is usually the earliest and most dominant of the three) → suggests normal pressure hydrocephalus, a potentially reversible cause — even among patients with the full triad, shunting does not fully resolve symptoms in everyone — recommend neuroimaging evaluation"
+      ],
+      "safety_flags": [
+        "neurologic_red_flags"
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "American Stroke Association, \"B.E. F.A.S.T. Experience: Balance Loss\", https://www.stroke.org/en/be-fast-experience/balance-loss, retrieved 2026-08-24",
+        "NICE guideline NG249, \"Falls: assessment and prevention in older people and in people 50 and over at higher risk\" (2025, replaces CG161), https://www.nice.org.uk/guidance/ng249, retrieved 2026-08-24",
+        "PMC, \"The Triad of Idiopathic Normal-Pressure Hydrocephalus: A Clinical Practice Case Report\", https://pmc.ncbi.nlm.nih.gov/articles/PMC3074332/, retrieved 2026-08-24"
+      ],
+      "supporting_measurements": [],
+      "sources": [
+        "American Stroke Association, B.E. F.A.S.T. Experience: Balance Loss (https://www.stroke.org/en/be-fast-experience/balance-loss, retrieved 2026-08-24)(紅旗：急性中風平衡徵象)",
+        "NICE guideline NG249, Falls: assessment and prevention in older people and in people 50 and over at higher risk (https://www.nice.org.uk/guidance/ng249, retrieved 2026-08-24)(紅旗：跌倒風險評估；2025 年發布，取代 2013 年版 CG161)",
+        "PMC, The Triad of Idiopathic Normal-Pressure Hydrocephalus: A Clinical Practice Case Report (https://pmc.ncbi.nlm.nih.gov/articles/PMC3074332/, retrieved 2026-08-24)(紅旗：常壓性腦積水三主徵，完整三主徵患者術後改善比例並非100%)",
+        "中醫內科學／中醫診斷學 通行教材 —— 眩暈、痿證、顫證篇步態相關證型鑑別(腎精不足、肝腎陰虛、氣血兩虛、痰濕內蘊)",
+        "本 repo 既有卡片：sym.dizziness · sym.vertigo · sym.tremor · sym.bradykinesia · pattern_library 各證型 key_signs_zh/tongue_zh/pulse_zh(逐一核對內容後選用，非逐卡複製；sym.vertigo、sym.bradykinesia 現仍指向已依 DECISIONS.md D16 停用、應併入 pattern.liver_wind 的 pattern.liver_wind_stirring，尚未遷移，本卡不宣稱與其一致)；步態遲緩兼虛熱一項改採 pattern.liver_kidney_yin_deficiency，與 sym.tremor 既有變體、本 repo cond.parkinsons etiology_zh 所列常見證型『肝腎陰虛』相符"
+      ],
+      "field_sources": {
+        "definition_zh/en": "一般臨床對 gait instability/unsteady gait 的定義(前庭、小腦、本體感覺、巴金森氏症、姿位性低血壓、藥物等多重病因架構) + 中醫內科學 眩暈／痿證 步態相關描述",
+        "clinical_attributes.laterality/timing": "單側 vs 雙側對稱的臨床區辨、姿位性低血壓與 Romberg 徵(暗處/閉眼加重)為一般神經學檢查常識架構",
+        "differentiation_zh/en": "中醫內科學 眩暈／痿證／顫證步態相關證型 + 本 repo 既有卡片 sym.dizziness、sym.vertigo、sym.tremor、sym.bradykinesia 之證型對照庫(逐一核對內容後選用，各卡實際採用的證型 id 並不完全一致——例如 sym.vertigo、sym.bradykinesia 現仍指向已依 DECISIONS.md D16 停用、應併入 pattern.liver_wind 的 pattern.liver_wind_stirring，尚未遷移，本卡不宣稱與其一致，僅取可核對的內容為參考)；原第2條擬指向 pattern.liver_wind 描述慢性步態遲緩兼震顫的巴金森氏症型態，但實查 pattern_library.json，pattern.liver_wind 自身 key_signs_zh(眩暈欲仆、肢體震顫、抽搐、言語不利甚則卒然昏仆)、tongue_zh(舌紅)、pulse_zh(脈弦有力)描述的是肝陽化風之急性中風前兆實熱證，與慢性退化性步態不符，故改指 pattern.liver_kidney_yin_deficiency——該證型自身 key_signs_zh(眩暈耳鳴/眼乾或視物模糊/腰膝痠軟/五心煩熱或低熱/盜汗/咽乾)、tongue_zh(舌紅，少苔或無苔)、pulse_zh(脈細數，可兼弦)可支持步態遲緩兼虛熱之描述，且與 sym.tremor 既有變體(震顫緩慢細微，兼腰膝痠軟、健忘、五心煩熱，多見於年長或久病)、本 repo cond.parkinsons etiology_zh 所列常見證型『肝腎陰虛』相符；急性中風偏癱情境已在 red_flags 明確列出，避免鑑別表與紅旗表互相打架",
+        "red_flags_zh/en": "American Stroke Association B.E. F.A.S.T.(急性中風平衡徵象，2026-08-24 查證) + NICE guideline NG249(跌倒風險評估，2025 年發布，取代 2013 年版 CG161，2026-08-24 查證) + PMC 常壓性腦積水三主徵案例報告(2026-08-24 查證；該報告指出完整三主徵患者術後改善比例約61.2%，非人人可逆，故 red_flags 措辭已加註限定語)",
+        "supporting_measurements": "刻意留空 —— 現有 27 個 outcome metrics 無步態速度／平衡評分／跌倒次數對應量化項"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "sym.hematemesis",
+      "name_zh": "吐血",
+      "name_en": "Hematemesis",
+      "pinyin": "tu xue",
+      "pinyin_toned": "tù xuè",
+      "aliases_zh": [
+        "嘔血"
+      ],
+      "aliases_en": [
+        "Vomiting blood"
+      ],
+      "taxonomy_ids": [
+        "sym.dietary_gastrointestinal"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported",
+        "examiner_observed"
+      ],
+      "primary_mode": "patient_reported",
+      "definition_zh": "血液經口嘔吐而出，多混有胃內容物，是上消化道出血最典型的表現之一。血色與性狀反映出血速度與在胃內停留的時間——鮮紅色、質地較稀者多為活動性大出血；暗紅色、混有食物殘渣、呈咖啡渣樣者，提示血液已與胃酸作用形成正鐵血紅素，出血速度較緩或已趨緩。西醫將吐血列為需立即評估的警示症狀，常見於消化性潰瘍、食道或胃靜脈曲張破裂、胃黏膜病變等；需與咳血（血液來自下呼吸道，經咳嗽而出）及口鼻咽喉出血後吞入再吐出者鑑別來源。中醫將本症歸入「血證」範疇，依血色、性狀與兼證辨其寒熱虛實。",
+      "definition_en": "Blood expelled through the mouth by vomiting, usually mixed with stomach contents — one of the classic presentations of upper gastrointestinal bleeding. The color and character of the blood reflect the rate of bleeding and how long it has sat in the stomach: bright red, thinner blood usually indicates active, brisk bleeding; dark red or coffee-ground vomitus, mixed with food residue, indicates the blood has reacted with gastric acid to form acid hematin, suggesting slower or recently-stopped bleeding. Biomedicine lists hematemesis as a warning symptom requiring immediate evaluation, commonly seen in peptic ulcer disease, ruptured esophageal or gastric varices, and gastric mucosal lesions; it must be distinguished from hemoptysis (blood from the lower respiratory tract, expelled by coughing) and from blood that was swallowed after a nose/mouth/throat bleed and then vomited back up. TCM places this symptom under the \"Blood Disorders\" (血證) category, differentiating cold/heat/deficiency/excess by the blood's color, character, and accompanying signs.",
+      "patient_words_zh": "「吐出來的是紅色的」「吐了一大口血」「吐的東西像咖啡渣」「吐出來混著食物，顏色暗暗的」「吐到胃在抽痛」",
+      "patient_words_en": "\"What came up was red\", \"I threw up a mouthful of blood\", \"it looked like coffee grounds\", \"there was dark stuff mixed with food in it\", \"my stomach was cramping while I was throwing it up\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": false
+        },
+        "quality": {
+          "applicable": false
+        },
+        "laterality": {
+          "applicable": false
+        },
+        "timing": {
+          "applicable": true,
+          "vocabulary": "symptom_timing"
+        },
+        "severity": {
+          "applicable": false,
+          "why": "實例值，屬病例層（§8）"
+        },
+        "duration": {
+          "applicable": false,
+          "why": "實例值，屬病例層（§8）"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "性質",
+          "why": "血色鮮紅、質稀多為活動性大出血；暗紅或咖啡渣樣、質稠夾食物殘渣，提示血液已與胃酸作用一段時間，出血速度較緩——是判斷出血是否仍在進行、危急程度的第一問"
+        },
+        {
+          "dimension": "時間",
+          "why": "空腹時或夜間發作提示消化性潰瘍；長期飲酒者急性大量發作、無明顯誘因，需優先考慮食道或胃靜脈曲張破裂"
+        },
+        {
+          "dimension": "誘因",
+          "why": "飲酒、辛辣飲食、非類固醇消炎止痛藥（NSAID）或抗凝血劑使用史、劇烈嘔吐或乾嘔之後（提示 Mallory-Weiss 撕裂）、已知肝硬化或潰瘍病史，都直接指向不同的出血來源"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "頭暈、心悸、冷汗、心跳加快提示低血容量性休克，紅旗都掛在這一問；隨後解黑便（柏油便）可確認上消化道持續出血；胸骨後灼熱痛或吞嚥困難則指向食道來源"
+        },
+        {
+          "dimension": "病程",
+          "why": "首次發作與慢性潰瘍或肝硬化靜脈曲張反覆出血的評估與轉診急迫性完全不同——這一問決定要不要立即送急診"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Quality",
+          "why": "Bright red, thin blood usually means active brisk bleeding; dark red or coffee-ground, thicker vomitus mixed with food residue suggests the blood has reacted with gastric acid over time and bleeding has slowed — the first question for judging whether bleeding is ongoing and how urgent it is"
+        },
+        {
+          "dimension": "Timing",
+          "why": "Onset on an empty stomach or at night points toward peptic ulcer disease; a sudden large-volume episode with no clear trigger in someone with a history of heavy drinking should raise concern for ruptured esophageal or gastric varices"
+        },
+        {
+          "dimension": "Triggers",
+          "why": "Alcohol, spicy food, NSAID or anticoagulant use, occurring right after forceful vomiting or retching (suggesting a Mallory-Weiss tear), known cirrhosis or ulcer history — each points toward a different bleeding source"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Dizziness, palpitations, cold sweating, and tachycardia suggest hypovolemic shock — most red flags hang off this question; passing black tarry stool (melena) afterward confirms ongoing upper GI bleeding; retrosternal burning pain or dysphagia points toward an esophageal source"
+        },
+        {
+          "dimension": "Course",
+          "why": "A first-ever episode versus recurrent bleeding from a known chronic ulcer or cirrhotic varices differ completely in urgency and referral — this question decides whether to send the patient to the emergency department immediately"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "血色鮮紅或紫紅，質稠，口臭便秘，口渴喜冷飲",
+          "points_to": [
+            "pattern.stomach_heat"
+          ],
+          "distinguishing": "吐血色紅或紫紅、質地黏稠，常夾食物殘渣，伴隨胃脘灼痛拒按、消穀善飢、口臭、牙齦腫痛或出血、口渴喜冷飲、大便秘結或色黑；舌紅苔黃，脈滑數——多因嗜食辛辣肥甘或飲酒，胃熱熾盛，熱盛動血，迫血妄行"
+        },
+        {
+          "variant": "血色紫紅，隨情緒波動而發，兼脅痛、口苦",
+          "points_to": [
+            "pattern.liver_fire_invading_stomach"
+          ],
+          "distinguishing": "吐血多在情緒激動、暴怒後發作或加重，血色紫紅或鮮紅；兼脘脅灼痛、痛勢急迫，泛酸嘈雜、口苦口乾，急躁易怒，或見嘔吐酸苦水；舌紅苔黃，脈弦數——肝鬱化火，橫逆犯胃，肝胃氣火上逆所致"
+        },
+        {
+          "variant": "血色紫暗夾血塊，胃脘刺痛拒按，痛有定處",
+          "points_to": [
+            "pattern.blood_stasis"
+          ],
+          "distinguishing": "吐血色紫暗，夾雜血塊，胃脘刺痛，痛處固定拒按，常見於久病胃疾、外傷或反覆發作病史，舌質紫暗或有瘀斑，瘀血內阻、血不循經"
+        },
+        {
+          "variant": "血色暗淡質稀，反覆發作，兼神疲乏力、其他部位出血傾向",
+          "points_to": [
+            "pattern.spleen_not_governing_blood"
+          ],
+          "distinguishing": "吐血色暗淡、質地清稀，反覆發作，量或多或少，常兼其他部位出血傾向（如鼻衄、皮下瘀斑），兼神疲乏力、氣短懶言、食少便溏、頭暈心悸；舌淡，脈細弱——脾氣虛弱，統攝血液功能失職，血不循經而外溢"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Bright or purplish-red blood, thick in consistency, bad breath and constipation, thirst for cold drinks",
+          "points_to": [
+            "pattern.stomach_heat"
+          ],
+          "distinguishing": "Red or purplish-red, thick, sticky vomited blood, often mixed with food residue, with burning epigastric pain worse for pressure, excessive hunger, bad breath, swollen or bleeding gums, thirst for cold drinks, and constipation or black stool; red tongue with yellow coating, slippery rapid pulse — usually from a diet heavy in spicy, rich food or alcohol; blazing Stomach Heat forces Blood to move recklessly"
+        },
+        {
+          "variant": "Purplish-red blood, triggered by emotional upset, with rib-side pain and a bitter taste",
+          "points_to": [
+            "pattern.liver_fire_invading_stomach"
+          ],
+          "distinguishing": "Hematemesis that occurs or worsens with anger or emotional agitation, purplish-red or bright red blood; with burning epigastric/flank pain of acute onset, acid regurgitation and stomach discomfort, a bitter and dry mouth, irritability, and possibly vomiting of sour, bitter fluid; red tongue with yellow coating, wiry rapid pulse — Liver Qi stagnation transforming into Fire and invading the Stomach horizontally, the combined Liver-Stomach Qi and Fire rebelling upward"
+        },
+        {
+          "variant": "Dark purplish blood with clots, stabbing fixed epigastric pain worse for pressure",
+          "points_to": [
+            "pattern.blood_stasis"
+          ],
+          "distinguishing": "Dark purplish vomited blood mixed with clots, fixed stabbing epigastric pain worse for pressure, often with a history of chronic gastric disease, trauma, or recurrent episodes; dusky purple tongue or with stasis spots — Blood Stasis obstructing internally, blood failing to move within its vessels"
+        },
+        {
+          "variant": "Pale, thin blood, recurrent, with fatigue and bleeding tendencies at other sites",
+          "points_to": [
+            "pattern.spleen_not_governing_blood"
+          ],
+          "distinguishing": "Pale, dilute vomited blood, recurring in variable amounts, often with bleeding tendencies at other sites (such as nosebleeds or subcutaneous purpura), with fatigue, shortness of breath and reluctance to speak, poor appetite and loose stool, dizziness and palpitations; pale tongue, thready weak pulse — Spleen Qi too weak to govern Blood, allowing Blood to escape outside its normal pathways"
+        }
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "sources": [
+        "ACG Clinical Guideline: Upper Gastrointestinal and Ulcer Bleeding (Laine L, Barkun AN, Saltzman JR, et al., Am J Gastroenterol. 2021;116(5):899-917)",
+        "NICE Guideline [CG141]: Acute upper gastrointestinal bleeding in over 16s: management",
+        "MedlinePlus: Vomiting blood（https://medlineplus.gov/ency/article/003118.htm）",
+        "中醫內科學／中醫診斷學 通行教材 —— 血證篇，吐血辨證分型（胃熱熾盛・肝火犯胃・瘀血內阻・脾不統血）",
+        "本 repo 既有卡片：sym.hemoptysis · sym.vomiting · sym.bloody_stool · pattern_library 各證型 key_signs_zh 對照"
+      ],
+      "field_sources": {
+        "definition_zh/en": "MedlinePlus Vomiting blood 條目（西醫定義與常見病因分類）+ 中醫內科學 血證 吐血章節一般描述",
+        "inquiry_zh/en 性質": "中醫內科學 吐血 血色與胃酸作用機轉（正鐵血紅素/咖啡渣樣）描述 + ACG Clinical Guideline 2021 對活動性出血判斷之討論",
+        "inquiry_zh/en 誘因": "ACG Clinical Guideline 2021 危險因子（NSAID、抗凝血劑、肝硬化、飲酒、劇烈嘔吐後撕裂）+ 中醫內科學 吐血病因",
+        "differentiation_zh/en": "中醫內科學 血證 吐血分證（胃熱熾盛．肝火犯胃．瘀血內阻．脾不統血）+ 本 repo pattern_library 各證型 key_signs_zh/tongue_zh/pulse_zh/mechanism_zh 逐條核對（本輪修訂已重新核對並改寫，移除 pattern_library 無記載之描述，如「目赤」「舌苔膩」）",
+        "red_flags_zh/en": "ACG Clinical Guideline 2021 + NICE CG141 急性上消化道出血處置準則 + MedlinePlus Vomiting blood 條目",
+        "supporting_measurements": "刻意留空 —— 現有 metric.* 清單無出血量/血紅素相關量化項"
+      },
+      "red_flags_zh": [
+        "吐血合併心跳加快、血壓下降、冒冷汗、意識改變 → 低血容量性休克徵象，需立即急診處置與輸液復甦",
+        "鮮紅色血液、量大且持續不止 → 提示活動性大出血，死亡率高，需緊急內視鏡止血評估",
+        "已知肝硬化病史者發生吐血 → 高度懷疑食道或胃靜脈曲張破裂出血，屬內科急症",
+        "吐血合併解黑便（柏油便） → 確認上消化道出血，需評估出血總量與是否持續",
+        "服用抗凝血劑、抗血小板藥物，或近期大量使用非類固醇消炎止痛藥（NSAID）者發生吐血 → 出血風險高，需立即醫療評估",
+        "劇烈嘔吐或乾嘔之後才出現吐血（尤其大量飲酒後） → 需考慮 Mallory-Weiss 撕裂傷",
+        "高齡、合併心血管疾病或腎功能不全者發生吐血 → 死亡風險顯著提高，應優先評估轉診"
+      ],
+      "red_flags_en": [
+        "Hematemesis with tachycardia, hypotension, cold sweating, or altered consciousness → signs of hypovolemic shock; requires immediate emergency management and fluid resuscitation",
+        "Bright red blood, large volume, and ongoing bleeding → suggests active major hemorrhage with high mortality; requires urgent endoscopic evaluation for hemostasis",
+        "Hematemesis in a patient with known cirrhosis → high suspicion for ruptured esophageal or gastric varices, a medical emergency",
+        "Hematemesis followed by melena (black, tarry stool) → confirms upper GI bleeding; assess total blood loss and whether bleeding is ongoing",
+        "Hematemesis in someone on anticoagulants, antiplatelet agents, or recent heavy NSAID use → high bleeding risk, requires immediate medical evaluation",
+        "Hematemesis appearing only after forceful vomiting or retching (especially after heavy alcohol use) → consider a Mallory-Weiss tear",
+        "Hematemesis in an elderly patient or one with cardiovascular disease or renal impairment → significantly higher mortality risk; prioritize evaluation and referral"
+      ],
+      "safety_flags": [
+        "gi_red_flags",
+        "active_bleeding_medical_review"
+      ],
+      "safety_review_sources": [
+        "ACG Clinical Guideline: Upper Gastrointestinal and Ulcer Bleeding (Laine L, Barkun AN, Saltzman JR, et al., Am J Gastroenterol. 2021;116(5):899-917)",
+        "NICE Guideline [CG141]: Acute upper gastrointestinal bleeding in over 16s: management",
+        "MedlinePlus: Vomiting blood (https://medlineplus.gov/ency/article/003118.htm)"
+      ],
+      "supporting_measurements": [],
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     }
   ]
 }
