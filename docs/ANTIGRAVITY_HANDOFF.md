@@ -108,24 +108,35 @@ Dragon 網址。`modern_functions_en/zh` 284→309、`contraindications_zh` 271�
 對上）。E10/E11 乾淨，三個驗證器全 PASS，獨立重新 clone 驗證過。**小提醒**：這批沒附 `PROJECT_LOG.md`
 條目，下次記得補上。繼續照這個做法做下一批。
 
-## 🔥 Task 0（優先，做這個）：Batch 8 — 平肝息風藥 + 化痰止咳平喘藥（止咳平喘）+ 安神藥 + 補虛藥·陽，51 味
+## ✅ Batch 8 通過，收下了（`7454b0bf`）
 
-**範圍**（先跑 `node scripts/validate-herb-standard.js --category "<分類>"` 自己核對數字，Batch 7 落地後
-重新算過，可能又變動了）：
-- 平肝息風藥 / Extinguish Wind（12 味，`modern_functions_en/zh` 缺 3、`contraindications_zh` 缺 9）
-- 化痰止咳平喘藥 / Stop Cough and Wheeze（9 味，缺 2 / 缺 9）
-- 安神藥 / Calm Spirit（12 味，缺 5 / 缺 6）
-- 補虛藥 / Tonify Yang（18 味，缺 1 / 缺 7）
+中途你沒 token 卡住過，補上後接著做完，做法沒有跑掉。抽查 `gou_teng`/`zhu_sha`/`suan_zao_ren`——
+`suan_zao_ren` 17 個詞全部逐一對應正確；`zhu_sha`（礦物毒性藥）的來源欄位老實寫「數字待 Ting 核對」，
+沒有假裝查證過，這個誠實習慣很好，繼續保持。`modern_functions_en/zh` 309→320、`contraindications_zh`
+276→307。E10/E11 乾淨，三個驗證器全 PASS，獨立重新 clone 驗證過。
 
-這批 `contraindications_zh` 缺口比 `modern_functions` 大，兩個都要顧，不要只做其中一個。
+## 🔥 Task 0（優先，做這個，這是這條線最後一批）：Batch 9 — 掃剩下全部分類，43 + 56 缺口
+
+**範圍**：`modern_functions_en/zh` 全庫只剩 **43 筆缺口**、`contraindications_zh` 只剩 **56 筆缺口**，
+散在 21 個分類裡，都不大（最大的分類 `利水滲濕藥`/`收澀藥` 各缺 7 筆 `modern_functions`）。這批不分類別，
+**直接跑 `node scripts/validate-herb-standard.js --worklist` 把兩個欄位還缺的藥全部列出來，一次掃完**，
+不用像前幾批分類處理。做完這批，這兩個欄位在全庫等於填滿（能填的都填了，查無來源的本來就該留空）。
 
 **欄位跟鐵律跟前幾次完全一樣**：只填 `modern_functions_en/zh`（成對，逐詞真翻譯，不是套模板）、
-`contraindications_zh`（有來源才寫）。不要碰 `condition_tags_en`/`actions_en`/`cautions_zh`。做完自己跑
-`build-data.js` + `validate-herb-standard.js`（E10/E11 都要乾淨）+ `check-validation-ratchet.js`，三個
-都 PASS 才推，記得補 `PROJECT_LOG.md` 條目。
+`contraindications_zh`（有來源才寫，查無來源就留白，不要用「大概是這樣」的猜測湊數——這是最後一批，
+剩下的多半是比較冷門的藥，來源比前幾批更難找，遇到查無來源的藥不要硬填）。不要碰
+`condition_tags_en`/`actions_en`/`cautions_zh`。做完自己跑 `build-data.js` +
+`validate-herb-standard.js`（E10/E11 都要乾淨）+ `check-validation-ratchet.js`，三個都 PASS 才推，
+記得補 `PROJECT_LOG.md` 條目。
+
+**來源清單（Batch 3 講過，這裡重複一次，不要漏）**：`curriculum/herbs/`（課件，含
+`materia_medica_abbreviated_chenoweth.md`）、Bensky、CloudTCM、American Dragon
+（`americandragon.com`）、《台灣中藥典》、《中華人民共和國藥典》——你前幾批引用的都在這個範圍內，
+繼續用這些。查不到就是查不到，不要換一個沒查證過的網站硬湊一個來源欄位出來，寧可留空。
 
 **驗收**：我會重新獨立 clone 驗證，過了才更新這份文件、清掉這條任務；沒過我會寫清楚是哪一味藥哪個欄位
-的問題。
+的問題。這批做完後，我會重新盤點整個中藥庫還有哪些欄位值得繼續（`related_formulas`/`safety_source_url`
+之類），到時候再指派下一輪。
 
 ---
 
