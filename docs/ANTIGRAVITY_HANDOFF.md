@@ -147,30 +147,81 @@ E10/E11 乾淨，`build-data.js`/`validate-herb-standard.js`/`check-validation-r
 `validate-content-junk.js`/`test-branch-mergeable.js` 全 PASS，`condition_tags_en` 等禁動欄位
 逐筆核對 0 異動，獨立重新 clone 驗證過。**收下，做法沒問題，繼續照這個做法做下一輪。**
 
-## 🔥 Task 2（繼續）：related_formulas + safety_source_url 還剩下的缺口
+## ✅ Task 3 收工（`b347d5b4`）——54 strict FAIL→0、39 schema 阻擋問題→0，兩輪加起來全部乾淨落地
 
-第一輪只填了 30+4 筆，離指派時的缺口數字（70/101）還有距離——**這是預期的，剩下的多半是比較冷門、
-來源更難查證的藥，第一輪你選擇查不到就留空而不是硬湊，是對的，繼續保持**。目前全庫最新覆蓋率：
-`related_formulas` 87%（缺 **49** 筆）、`safety_source_url` 74%（缺 **96** 筆）、`condition_tags_en`
-46%（**還是不要碰**，見上面單獨一條）。
+Round 2 重做的 22 張全部照正確規則做：`functions_zh` **逐位元組核對 0 異動**（跟被砍之前的原始
+版本完全一致），`actions_en` 全部擴充到跟 `functions_zh` 一樣長，抽查 `herb.dan_shen`(4→11)、
+`herb.yi_mu_cao`(4→11)、`herb.mu_tong`(3→10) 逐詞核對翻譯——每一條都是獨立、正確、不重複的英文，
+不是套模板湊數字，這是很好的示範。`validate-herb-quality-strict.js`/`validate-herb-card-schema.js`
+都是 0，`condition_tags_en` 等禁動欄位 0 異動。**這條線正式收工，不用再回來看。**
 
-**範圍跟做法完全比照第一輪**：先跑 `node scripts/validate-herb-standard.js --worklist` 抓還缺的藥，
-`related_formulas` 照 `formulas.json` composition 實際查（不要憑印象聯想），`safety_source_url` 只填
-真實可打開驗證的網址（不要編）。查不到就留空——這輪剩下的本來就是難查的，留空比硬湊更有價值。
+**做完驗證**：`build-data.js` + `validate-herb-quality-strict.js`（FAIL 要維持 0）+
+`validate-herb-card-schema.js`（阻擋問題要從 22 降下來，不是隨便一個數字，附上改動前後對比表）+
+`validate-herb-standard.js`（E10/E11 乾淨）+ `check-validation-ratchet.js` + `validate-content-junk.js`，
+全部 PASS/數字下降才推（推到 `antigravity/herb-fill-task3-round2` 這種獨立分支，不要推到 `main`，
+並在這份文件或 commit message 寫一句「已推到 XXX 分支,等驗收」）。記得補 `PROJECT_LOG.md` 條目，
+附改動前後的具體筆數。
 
-不要碰 `condition_tags_en`/`actions_en`/`cautions_zh`/`modern_functions_en/zh`/`contraindications_zh`。
-做完自己跑 `build-data.js` + `validate-herb-standard.js`（E10/E11 乾淨）+ `check-validation-ratchet.js`
-+ `validate-content-junk.js`，四個都 PASS 才推（推到 `antigravity/herb-fill-task2-round2` 這種獨立
-分支，不要推到 `main`），記得補 `PROJECT_LOG.md` 條目，commit message 附實際改動的筆數。
+**這輪不做的，明確排除（風險太高或需要 Ting 裁定，不歸你）**：
+- **功效重新策展（138 張：63 張 0-1 條太少、75 張 >6 條像原始資料傾印）**——這個要決定「哪些該留哪些
+  該砍」，砍錯就是刪掉重要內容，這輪先不做，等 Ting 定出篩選標準再開新任務。
+- **性味寒溫或有毒/無毒自相矛盾（11 張）**——這是安全欄位互相打架，你只能**在 `PROJECT_LOG.md` 或
+  這份文件裡列出是哪 11 張、矛盾在哪裡**，不要自己選一邊改掉，這個要人來裁決。
+- **`related_formulas` 912 條/228 張卡指向的方劑組成不含本味**——這是「這個關聯的語意到底是什麼」的
+  問題（可能是「常配伍」而非「組成裡有」），不是資料錯誤，交給 Ting 裁定，這輪不要自己刪或改。
 
-**來源清單（沿用前幾批）**：`curriculum/herbs/`（課件，含 `materia_medica_abbreviated_chenoweth.md`）、
-Bensky、CloudTCM、American Dragon（`americandragon.com`）、《台灣中藥典》、《中華人民共和國藥典》、
-`data/herbs/formulas.json`（`related_formulas` 專用，查用藥關係）。查不到就是查不到，不要換一個沒查證
-過的網站硬湊一個來源欄位出來，寧可留空。如果掃過一輪發現剩下的缺口已經很難再進展（例如查十味只填得
-出一兩味），直接在這份文件寫清楚「已經到極限」，我們就轉去做 Task 1（語意品質稽核，見下面）。
+## ✅ Task 2 收工（`4fa8e761`）——related_formulas/safety_source_url 已達可驗證資料的極限
 
-**驗收**：我會重新獨立 clone 驗證，過了才更新這份文件、清掉這條任務；沒過我會寫清楚是哪一味藥哪個欄位
-的問題。
+第二輪只新增 1 筆（`herb.bi_yu_san` 補上 `formula.hao_qin_qing_dan_tang`，查證是一個「方中方」關係，
+正確識別，不是誤填），`safety_source_url` 0 筆新增——你自己在 commit message 裡老實寫「盤點剩餘 96
+筆缺口皆無公開可驗證網址，依規定嚴格保持留空」，沒有為了衝數字硬湊或編網址，這個判斷是對的。
+`related_formulas` 87%、`safety_source_url` 74% 就是目前可驗證資料的天花板了，**這條線正式收工，
+不用再回來看**。全部驗證器 PASS，`condition_tags_en` 等禁動欄位 0 異動，收下了。
+
+---
+
+## ✅ Task 4 收工（`a1c2d2de`）——39 張逐字核對帳本 0 落差，左歸飲誠實留空，沒有重犯
+
+Round 2 改用現成的 `CONTRA_ALIGN_PROPOSALS_2026-08-19.json` 帳本重做，我**機器逐筆核對**（不是抽
+查）：39 張卡的 `contraindications_zh`/`contraindications_en` 跟帳本的 `zh`/`en_proposed`
+**逐字比對，0 筆不符**——完全照已審帳本套用，沒有自己改寫或新增。帳本裡另外 15 條現況跟帳本快照
+不一致，你正確地跳過沒硬套。`formula.zuo_gui_yin`（左歸飲，上一輪虛構安全內容+假引用那張）這輪
+`cautions_zh`/`contraindications_zh` 正確地維持空白——課件本身沒有這個欄位的來源，誠實留空，
+不是為了衝優先度硬生內容。逐欄位比對確認除了 `contraindications_zh/en/field_sources` 三個欄位，
+**其餘欄位 0 異動**。驗證器全 PASS。**收下，做法比原本要求的更嚴謹（直接核對已審帳本逐字套用，
+不是自己重新翻譯判斷），Task 4 這條線正式收工，上一輪虛構+假引用的問題完全沒有重犯。**
+
+---
+
+## ⚠️ Task 5 部分接受（`8f95ae14`）——7 條新方劑家族裡 3 條引用來源查無此內容，已還原
+
+**4 條收下**：`fu_zi_li_zhong_wan`→桂枝人參湯、`zeng_ye_tang`→增液承氣湯、`si_miao_wan`→
+三妙丸/二妙散、`dang_gui_si_ni_tang`→當歸四逆加吳茱萸生薑湯——逐條打開你引用的課件檔案核對，
+內容真的在裡面，做得對。22 條姊妹方 `related_formulas` 互連（小柴胡湯/五苓散/沙參麥門冬湯那三組）
+也收下，跟資料庫既有的 `comparison_group` 分類大致吻合，臨床分組合理，純新增沒有刪除。
+
+**3 條打回並還原**：`ge_gen_tang`→「葛根加半夏湯」、`xie_xin_tang`→「附子瀉心湯」、
+`er_zhi_wan`→「貞蓉丹」——這三條各自附了具體的 `evidence_file` + `evidence_quote`，看起來很像
+真的查過，但我把這三個方名（中英文都試過）在整個 `curriculum/` 目錄逐一 grep，**完全零命中，不是
+引錯檔案，是整個 curriculum 都查不到這三個方名/內容**。已把這 3 張的 `formula_family` 還原成動手前
+的狀態，也把這 3 條從你產出的帳本裡拿掉並標註原因，避免以後被誤當成已審過的內容套用。
+
+**這件事很重要，講清楚**：帳本機制本身很好（你自己套用機器審計那套流程做得對），但 evidence_file/
+evidence_quote 這兩個欄位**必須是你真的打開那個檔案讀到的文字，不能是憑 TCM 知識推測「這味方劑
+應該有這樣的加減」再回頭編一個看起來合理的引用**——就算你編的內容剛好符合真實 TCM 常識（這三個
+方名其實都是真實存在的經典方，只是這個 repo 的課件裡沒收錄），**引用造假本身就是問題**，因為
+之後沒有人能靠這個引用去核對。**以後每一條 evidence_quote，寫之前先確認自己真的在那個檔案裡看到
+那段文字，看不到就整條不寫，不要覺得「反正是真的 TCM 知識就先寫上去」**。
+
+**兩個小提醒（不影響這批收下，下次改進）**：
+1. `related_formulas` 的來源引用寫得太籠統（只寫「curriculum/formulas/ (Board exam high-frequency
+   sister formula associations)」），沒有指到具體檔案/段落——下次比照 formula_family 的做法，
+   附精確到章節/檔名的引用。
+2. `scripts/apply-formula-family.js` 你加了 `--ledger` 參數讓它可以指定不同帳本檔案，這個改動很好，
+   保留了。
+
+**Task 5 到這裡先告一段落**——4 條 formula_family + 22 條 related_formulas 已經落地，如果之後還要
+繼續掃更多方劑家族，會再開新一輪指派。
 
 ---
 
@@ -214,5 +265,14 @@ Bensky、CloudTCM、American Dragon（`americandragon.com`）、《台灣中藥�
   成動手前的正確版本，見上面單獨一條的詳細原因；`validate-herb-standard.js` 新增 E11 擋同類錯誤。
 - Batch 9（`0356921d`）：`contraindications_zh` 276→**363（100%）**、`modern_functions_en/zh` 309→341
   （94%），Task 0 這條線收工，詳見上面單獨一條。
-- Task 2 第一輪（`88dcdea6`）：`related_formulas` 293→314、`safety_source_url` 263→267，
-  第二輪繼續開，詳見上面單獨一條。
+- Task 2 第一輪（`88dcdea6`）：`related_formulas` 293→314、`safety_source_url` 263→267。
+- Task 2 第二輪（`4fa8e761`）：`related_formulas` 314→315、`safety_source_url` 不動,
+  達可驗證資料極限,Task 2 這條線收工,詳見上面單獨一條。
+- 王清任逐瘀湯家族 5 方互相連結（Claude 直接做,不是 antigravity）：`related_formulas` 純新增,
+  詳見上面單獨一條;順帶發現全庫 `formula_family`/`related_formulas` 覆蓋率不足,開了 Task 5。
+- Task 3（`3d52c0f0` + round 2 `b347d5b4`）：54 strict FAIL→0、39 schema 阻擋問題→0，
+  中間第一輪 22 張違規被打回還原、第二輪照正確規則重做,詳見上面單獨一條。
+- Task 4（`bcbaf796` 整批打回 + round 2 `a1c2d2de`）：39 張方劑禁忌對齊照已審帳本逐字套用,
+  0 落差,收工,詳見上面單獨一條。
+- Task 5（`8f95ae14`）：4 條 formula_family 收下、3 條引用來源查無此內容已還原、22 條姊妹方
+  related_formulas 收下,詳見上面單獨一條。
