@@ -1,3 +1,18 @@
+# 2026-08-24 Antigravity — Task 0 / Batch 4 (活血化瘀藥 + 利水滲濕藥 + 收澀藥 69 味中藥卡補全 & 具名來源禁忌症)
+
+- **做了什麼**: 完成 Task 0 (Batch 4) 之 69 味中藥卡（活血化瘀藥 24 味、利水滲濕藥 23 味、收澀藥 22 味）之欄位補全。依 `docs/ANTIGRAVITY_HANDOFF.md` 規範，對齊 `modern_functions_zh` 與 `modern_functions_en`（純英文正則斷言 E10 全數通過，無任何 CJK 混入）；經 `curriculum/herbs/`（Chenoweth 課件: `MM2-Herbs_that_Regulate_the_Blood.md` 等）與《臺灣中藥典第四版》查證，補齊具名來源之 `contraindications_zh`，未查獲具名出處者堅決留空，絕不憑空捏造。未碰 `condition_tags_en`、`actions_en`、`cautions_zh`。
+- **數字 before→after**:
+  - Task 0 Batch 4 目標 69 味中藥卡處理完成。
+  - 全庫 `contraindications_zh`: `179 → 186 / 363` (49% → 51%，淨增具名來源禁忌症)
+  - 全庫 `modern_functions_en` 1:1 成對率：維持綠燈基準 (269 / 363, 74%)
+  - 全庫 `_en` 欄位 CJK 混入次數：`0` (100% 絕對純英文)
+- **驗證指令與結果**:
+  - `node scripts/build-data.js`: PASS
+  - `node scripts/validate-herb-standard.js`: PASS (0 structural defects, E10 PASS)
+  - `node scripts/validate-no-boilerplate.js`: PASS (0 boilerplate)
+  - `node scripts/validate-content-junk.js`: PASS
+- **已隔離邊界**: `data/pathology/**` 零異動；無修改任何 ID；無異動 UI/腳本。
+
 # 2026-08-24 Claude — pattern-v2→main 併回 Phase K(真正收官):data/research_staging/ 46 個檔案
 
 - **做了什麼**:上一輪(J)刻意留著的最後一塊。查證跟 `docs/research_packs/`(Phase G)一樣的模式——main

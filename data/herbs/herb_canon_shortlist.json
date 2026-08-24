@@ -25820,11 +25820,11 @@
       "modern_functions_en": [
         "Diuretic (mild)",
         "Sedative",
-        "Anti-neoplastic",
+        "Antitumor",
         "Antibacterial",
-        "Anti-inflammatory",
-        "Immunostimulant",
-        "Hepatoprotective / choleretic",
+        "Diuretic (mild)",
+        "Diuretic (mild)",
+        "Diuretic (mild)",
         "Hypoglycemic"
       ],
       "dosage_g": {
@@ -25916,9 +25916,7 @@
           "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p5（WM 行）",
           "https://cloudtcm.com/herb/1031"
         ],
-        "modern_functions_en": [
-          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p5（WM 行）"
-        ],
+        "modern_functions_en": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md",
         "dosage": [
           "https://cloudtcm.com/herb/1031"
         ],
@@ -26337,7 +26335,9 @@
         ],
         "exam_importance": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf"
-        ]
+        ],
+        "modern_functions_en": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md",
+        "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
       },
       "card_grade": "partial",
       "condition_tags_en": [
@@ -26348,11 +26348,11 @@
       ],
       "modern_functions_en": [
         "Immune-enhancing activity",
-        "Antitumor and cancer-preventive activity",
-        "Radioprotective activity",
-        "Anti-inflammatory activity",
-        "Hypoglycemic activity",
-        "Antitumor activity"
+        "Immune-enhancing activity",
+        "Immune-enhancing activity",
+        "Immune-enhancing activity",
+        "Hypoglycemic",
+        "Antitumor"
       ],
       "cautions_en": [
         "Contraindicated without a Water-Damp pattern — Zhu Ling drains Dampness, and using it when no Dampness is present injures body fluids.",
@@ -26400,7 +26400,10 @@
         "not_rendered_reason": "整形不是查證。食療與藥用已分欄,但 80 張的落差與蘇合香的 SAFETY_HOLD 仍未裁決,因此本欄刻意不上畫面;validate-herb-dosage-shape.js D1 會擋住接線。",
         "no_new_numbers": true,
         "source_field": "dosage"
-      }
+      },
+      "contraindications_zh": [
+        "無濕熱者及腎虛小便失禁者慎用。"
+      ]
     },
     {
       "id": "herb.ze_xie",
@@ -26757,7 +26760,9 @@
         ],
         "exam_importance": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf"
-        ]
+        ],
+        "modern_functions_en": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md",
+        "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
       },
       "card_grade": "partial",
       "condition_tags_en": [
@@ -26769,13 +26774,13 @@
         "Kidney Yin deficiency"
       ],
       "modern_functions_en": [
+        "Hypoglycemic",
+        "Hypolipidemic",
         "Hypoglycemic activity",
-        "Lipid-lowering activity",
-        "Hepatoprotective and cholagogic activity",
-        "Cardiovascular-protective activity",
-        "Sleep-improving activity",
-        "Antiplatelet aggregation activity",
-        "Anti-inflammatory and analgesic activity"
+        "Hypoglycemic activity",
+        "Hypoglycemic activity",
+        "Hypoglycemic activity",
+        "Hypoglycemic activity"
       ],
       "cautions_en": [
         "Contraindicated in Kidney deficiency with seminal leakage and no Damp-Heat — using Ze Xie here may worsen the seminal leakage.",
@@ -26829,7 +26834,10 @@
         "not_rendered_reason": "整形不是查證。食療與藥用已分欄,但 80 張的落差與蘇合香的 SAFETY_HOLD 仍未裁決,因此本欄刻意不上畫面;validate-herb-dosage-shape.js D1 會擋住接線。",
         "no_new_numbers": true,
         "source_field": "dosage"
-      }
+      },
+      "contraindications_zh": [
+        "腎虛精滑及無濕熱者忌服。"
+      ]
     },
     {
       "id": "herb.yi_yi_ren",
@@ -27226,7 +27234,9 @@
         ],
         "exam_importance": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf"
-        ]
+        ],
+        "modern_functions_en": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md",
+        "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
       },
       "card_grade": "partial",
       "condition_tags_en": [
@@ -27238,18 +27248,18 @@
         "Wind-Damp Bi pain"
       ],
       "modern_functions_en": [
+        "Hypoglycemic",
         "Hypoglycemic activity",
-        "Immune-enhancing activity",
-        "Analgesic activity",
-        "Antitumor and cancer-preventive activity",
-        "Cardiovascular-protective activity",
-        "Sleep-improving activity",
-        "Antioxidant activity",
-        "Skin-care and beautifying activity",
-        "Analgesic activity",
-        "Antipyretic activity",
-        "Antitumor activity",
-        "Immunomodulatory activity"
+        "Hypoglycemic activity",
+        "Hypoglycemic activity",
+        "Hypoglycemic activity",
+        "Hypoglycemic activity",
+        "Antioxidant",
+        "Hypoglycemic activity",
+        "Analgesic",
+        "Hypoglycemic activity",
+        "Antitumor",
+        "Immunomodulatory"
       ],
       "cautions_en": [
         "Use cautiously in Spleen deficiency without Dampness or dry constipation — Yi Yi Ren drains Dampness and may aggravate these patterns.",
@@ -27295,7 +27305,10 @@
         "not_rendered_reason": "整形不是查證。食療與藥用已分欄,但 80 張的落差與蘇合香的 SAFETY_HOLD 仍未裁決,因此本欄刻意不上畫面;validate-herb-dosage-shape.js D1 會擋住接線。",
         "no_new_numbers": true,
         "source_field": "dosage"
-      }
+      },
+      "contraindications_zh": [
+        "孕婦慎用；津傷便秘者慎用。"
+      ]
     },
     {
       "id": "herb.che_qian_zi",
@@ -27639,7 +27652,9 @@
         ],
         "exam_importance": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf"
-        ]
+        ],
+        "modern_functions_en": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md",
+        "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
       },
       "card_grade": "partial",
       "condition_tags_en": [
@@ -27652,9 +27667,9 @@
       ],
       "modern_functions_en": [
         "Analgesic activity",
-        "Antibacterial and antiviral activity",
-        "Lipid-lowering activity",
-        "Anti-inflammatory and analgesic activity"
+        "Analgesic activity",
+        "Hypolipidemic",
+        "Analgesic activity"
       ],
       "cautions_en": [
         "Use cautiously in internal-damage fatigue with sinking Yang Qi.",
@@ -27698,7 +27713,10 @@
         "not_rendered_reason": "整形不是查證。食療與藥用已分欄,但 80 張的落差與蘇合香的 SAFETY_HOLD 仍未裁決,因此本欄刻意不上畫面;validate-herb-dosage-shape.js D1 會擋住接線。",
         "no_new_numbers": true,
         "source_field": "dosage"
-      }
+      },
+      "contraindications_zh": [
+        "腎虛精滑及孕婦慎用。"
+      ]
     },
     {
       "id": "herb.mu_tong",
@@ -28058,7 +28076,9 @@
         ],
         "exam_importance": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf"
-        ]
+        ],
+        "modern_functions_en": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md",
+        "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
       },
       "card_grade": "partial",
       "condition_tags_en": [
@@ -28071,12 +28091,12 @@
       ],
       "modern_functions_en": [
         "Analgesic activity",
-        "Antihypertensive activity",
-        "Antibacterial activity",
-        "Anti-inflammatory activity",
         "Analgesic activity",
-        "Antipyretic activity",
-        "Antitumor activity"
+        "Antibacterial",
+        "Analgesic activity",
+        "Analgesic",
+        "Analgesic activity",
+        "Antitumor"
       ],
       "cautions_en": [
         "Contraindicated without internal Damp-Heat — Mu Tong's bitter, cold nature may injure upright Qi.",
@@ -28123,7 +28143,10 @@
         "not_rendered_reason": "整形不是查證。食療與藥用已分欄,但 80 張的落差與蘇合香的 SAFETY_HOLD 仍未裁決,因此本欄刻意不上畫面;validate-herb-dosage-shape.js D1 會擋住接線。",
         "no_new_numbers": true,
         "source_field": "dosage"
-      }
+      },
+      "contraindications_zh": [
+        "孕婦禁用；腎功能不全者慎用。"
+      ]
     },
     {
       "id": "herb.hua_shi",
@@ -28423,7 +28446,9 @@
         ],
         "exam_importance": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf"
-        ]
+        ],
+        "modern_functions_en": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md",
+        "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
       },
       "card_grade": "partial",
       "condition_tags_en": [
@@ -28436,7 +28461,7 @@
       ],
       "modern_functions_en": [
         "Anti-inflammatory activity",
-        "Sedative activity"
+        "Sedative"
       ],
       "cautions_en": [
         "Contraindicated in Spleen deficiency with weak Qi — Hua Shi's slippery texture further weakens the Spleen-Stomach.",
@@ -28489,7 +28514,10 @@
         "not_rendered_reason": "整形不是查證。食療與藥用已分欄,但 80 張的落差與蘇合香的 SAFETY_HOLD 仍未裁決,因此本欄刻意不上畫面;validate-herb-dosage-shape.js D1 會擋住接線。",
         "no_new_numbers": true,
         "source_field": "dosage"
-      }
+      },
+      "contraindications_zh": [
+        "脾虛便溏及孕婦慎用。"
+      ]
     },
     {
       "id": "herb.yin_chen_hao",
@@ -28779,7 +28807,9 @@
         ],
         "actions_en": [
           "translated: 本卡 functions_zh 逐條忠實翻譯(帳本 docs/research_packs/HERB_EN_BACKFILL_2026-08-19.json,紅線5 同長同序)"
-        ]
+        ],
+        "modern_functions_en": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md",
+        "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
       },
       "card_grade": "partial",
       "aliases_en": [
@@ -28837,16 +28867,16 @@
       ],
       "modern_functions_en": [
         "Analgesic activity",
-        "Hepatoprotective and cholagogic activity",
-        "Antibacterial and antiviral activity",
-        "Anti-inflammatory activity",
-        "Lipid-lowering activity",
-        "Antitumor and cancer-preventive activity",
-        "Antibacterial activity",
         "Analgesic activity",
-        "Antiviral activity",
-        "Antipyretic activity",
-        "Antitumor activity"
+        "Analgesic activity",
+        "Analgesic activity",
+        "Hypolipidemic",
+        "Analgesic activity",
+        "Antibacterial",
+        "Analgesic",
+        "Analgesic activity",
+        "Analgesic activity",
+        "Antitumor"
       ],
       "cautions_en": [
         "Not suitable in Xu Huang (deficiency jaundice) or Wei Huang (sallow, withered-yellow complexion) arising from Spleen deficiency and Blood exhaustion, rather than Damp-Heat.",
@@ -28901,6 +28931,9 @@
         "Clears Damp-Heat",
         "Protects the liver",
         "Promotes bile flow"
+      ],
+      "contraindications_zh": [
+        "蓄血發黃及脾胃虛寒者慎用。"
       ]
     },
     {
@@ -29149,16 +29182,18 @@
         ],
         "actions_en": [
           "translated: 本卡 functions_zh 逐條忠實翻譯(帳本 docs/research_packs/HERB_EN_BACKFILL_2026-08-19.json,紅線5 同長同序)"
-        ]
+        ],
+        "modern_functions_en": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md",
+        "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
       },
       "card_grade": "partial",
       "modern_functions_en": [
         "Hepatoprotective and cholagogic activity",
-        "Cardiovascular-protective activity",
-        "Anti-inflammatory activity",
-        "Antioxidant activity",
-        "Anti-inflammatory and analgesic activity",
-        "Antimicrobial activity"
+        "Hepatoprotective and cholagogic activity",
+        "Hepatoprotective and cholagogic activity",
+        "Antioxidant",
+        "Hepatoprotective and cholagogic activity",
+        "Hepatoprotective and cholagogic activity"
       ],
       "cautions_en": [
         "External use may cause contact dermatitis — 12 reported cases followed steam-washing with a fresh Jin Qian Cao decoction; avoid external use.",
@@ -29217,6 +29252,9 @@
         "Clears and drains Damp-Heat",
         "Promotes urination and expels stones",
         "Promotes bile flow"
+      ],
+      "contraindications_zh": [
+        "脾胃虛寒便溏者慎用。"
       ]
     },
     {
@@ -37248,7 +37286,8 @@
         ],
         "contraindications_en": [
           "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p14"
-        ]
+        ],
+        "modern_functions_en": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
       },
       "card_grade": "partial",
       "condition_tags_en": [
@@ -37261,13 +37300,13 @@
       ],
       "modern_functions_en": [
         "Analgesic activity",
-        "Cardiovascular-protective activity",
-        "Improves brain function",
-        "Anticoagulant activity",
-        "Lipid-lowering activity",
-        "Sedative activity",
-        "Immune-enhancing activity",
-        "Anti-inflammatory activity"
+        "Analgesic activity",
+        "Analgesic activity",
+        "Analgesic activity",
+        "Hypolipidemic",
+        "Sedative",
+        "Analgesic activity",
+        "Analgesic activity"
       ],
       "cautions_en": [
         "Contraindicated in Yin deficiency with Fire blazing — use may aggravate deficiency Fire and worsen symptoms.",
@@ -37655,7 +37694,9 @@
         ],
         "exam_importance": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf"
-        ]
+        ],
+        "modern_functions_en": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md",
+        "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
       },
       "card_grade": "partial",
       "condition_tags_en": [
@@ -37666,11 +37707,11 @@
       ],
       "modern_functions_en": [
         "Analgesic activity",
-        "Sedative activity",
-        "Cardiovascular-protective activity",
-        "Anticoagulant activity",
-        "Anti-ulcer activity",
-        "Antitumor and cancer-preventive activity"
+        "Sedative",
+        "Analgesic activity",
+        "Analgesic activity",
+        "Analgesic activity",
+        "Analgesic activity"
       ],
       "cautions_en": [
         "Contraindicated in early pregnancy — Yan Hu Suo may adversely affect the fetus.",
@@ -37721,7 +37762,10 @@
         "not_rendered_reason": "整形不是查證。食療與藥用已分欄,但 80 張的落差與蘇合香的 SAFETY_HOLD 仍未裁決,因此本欄刻意不上畫面;validate-herb-dosage-shape.js D1 會擋住接線。",
         "no_new_numbers": true,
         "source_field": "dosage"
-      }
+      },
+      "contraindications_zh": [
+        "孕婦禁用。"
+      ]
     },
     {
       "id": "herb.yu_jin",
@@ -38129,7 +38173,9 @@
         ],
         "exam_importance": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf"
-        ]
+        ],
+        "modern_functions_en": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md",
+        "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
       },
       "card_grade": "partial",
       "condition_tags_en": [
@@ -38142,16 +38188,16 @@
       ],
       "modern_functions_en": [
         "Analgesic activity",
-        "Anti-inflammatory activity",
-        "Hypoglycemic activity",
-        "Antitumor and cancer-preventive activity",
-        "Lipid-lowering activity",
-        "Anti-inflammatory and analgesic activity",
         "Analgesic activity",
-        "Antiallergic activity",
-        "Antioxidant activity",
-        "Immunomodulatory activity",
-        "Cardiovascular-protective activity"
+        "Hypoglycemic",
+        "Analgesic activity",
+        "Hypolipidemic",
+        "Analgesic activity",
+        "Analgesic",
+        "Analgesic activity",
+        "Antioxidant",
+        "Immunomodulatory",
+        "Analgesic activity"
       ],
       "import_artifacts": [
         {
@@ -38213,7 +38259,10 @@
         "not_rendered_reason": "整形不是查證。食療與藥用已分欄,但 80 張的落差與蘇合香的 SAFETY_HOLD 仍未裁決,因此本欄刻意不上畫面;validate-herb-dosage-shape.js D1 會擋住接線。",
         "no_new_numbers": true,
         "source_field": "dosage"
-      }
+      },
+      "contraindications_zh": [
+        "孕婦慎用；畏丁香（十九畏）。"
+      ]
     },
     {
       "id": "herb.dan_shen",
@@ -38667,7 +38716,9 @@
         ],
         "exam_importance": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf"
-        ]
+        ],
+        "modern_functions_en": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md",
+        "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
       },
       "card_grade": "partial",
       "condition_tags_en": [
@@ -38680,22 +38731,22 @@
       ],
       "modern_functions_en": [
         "Analgesic activity",
-        "Hypoglycemic activity",
-        "Antioxidant activity",
-        "Cardiovascular-protective activity",
-        "Anticoagulant activity",
-        "Antitumor and cancer-preventive activity",
-        "Lipid-lowering activity",
-        "Antiarrhythmic activity",
-        "Antihypertensive activity",
-        "Anti-inflammatory activity",
-        "Cardioprotective activity",
-        "Anti-inflammatory and analgesic activity",
-        "Improves microcirculation",
-        "Protects against myocardial ischemia",
-        "Anti-fibrotic activity in the liver",
-        "Antibacterial activity",
-        "Anti-ulcer activity"
+        "Hypoglycemic",
+        "Antioxidant",
+        "Analgesic activity",
+        "Analgesic activity",
+        "Analgesic activity",
+        "Hypolipidemic",
+        "Analgesic activity",
+        "Analgesic activity",
+        "Analgesic activity",
+        "Analgesic activity",
+        "Analgesic activity",
+        "Improve Microcirculation",
+        "Analgesic activity",
+        "Analgesic activity",
+        "Antibacterial",
+        "Anti-Ulcer"
       ],
       "import_artifacts": [
         {
@@ -38751,7 +38802,10 @@
         "not_rendered_reason": "整形不是查證。食療與藥用已分欄,但 80 張的落差與蘇合香的 SAFETY_HOLD 仍未裁決,因此本欄刻意不上畫面;validate-herb-dosage-shape.js D1 會擋住接線。",
         "no_new_numbers": true,
         "source_field": "dosage"
-      }
+      },
+      "contraindications_zh": [
+        "孕婦慎用；反藜蘆（十八反）。"
+      ]
     },
     {
       "id": "herb.tao_ren",
@@ -39325,7 +39379,9 @@
         ],
         "exam_importance": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf"
-        ]
+        ],
+        "modern_functions_en": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md",
+        "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
       },
       "card_grade": "partial",
       "condition_tags_en": [
@@ -39338,13 +39394,13 @@
       ],
       "modern_functions_en": [
         "Analgesic activity",
-        "Anticoagulant activity",
-        "Cardiovascular-protective activity",
-        "Lipid-lowering activity",
-        "Antitumor and cancer-preventive activity",
-        "Uterine-stimulant activity",
-        "Antitumor activity",
-        "Antithrombotic activity"
+        "Analgesic activity",
+        "Analgesic activity",
+        "Hypolipidemic",
+        "Analgesic activity",
+        "Analgesic activity",
+        "Antitumor",
+        "Analgesic activity"
       ],
       "cautions_en": [
         "Contraindicated in pregnancy — Hong Hua promotes blood circulation and may affect fetal development.",
@@ -39390,7 +39446,10 @@
         "not_rendered_reason": "整形不是查證。食療與藥用已分欄,但 80 張的落差與蘇合香的 SAFETY_HOLD 仍未裁決,因此本欄刻意不上畫面;validate-herb-dosage-shape.js D1 會擋住接線。",
         "no_new_numbers": true,
         "source_field": "dosage"
-      }
+      },
+      "contraindications_zh": [
+        "孕婦禁用；出血性疾病者忌服。"
+      ]
     },
     {
       "id": "herb.niu_xi",
@@ -39638,7 +39697,8 @@
         ],
         "exam_importance": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf"
-        ]
+        ],
+        "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
       },
       "card_grade": "partial",
       "aliases_en": [
@@ -39654,6 +39714,9 @@
       ],
       "cautions_en": [
         "Contraindicated in pregnancy and excessive menstrual flow."
+      ],
+      "contraindications_zh": [
+        "孕婦禁用；月經過多及中氣下陷泄瀉者忌服。"
       ]
     },
     {
@@ -40365,7 +40428,9 @@
         ],
         "exam_importance": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf"
-        ]
+        ],
+        "modern_functions_en": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md",
+        "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
       },
       "card_grade": "partial",
       "condition_tags_en": [
@@ -40378,15 +40443,15 @@
       ],
       "modern_functions_en": [
         "Analgesic activity",
-        "Antitumor and cancer-preventive activity",
-        "Anticoagulant activity",
-        "Antibacterial and antiviral activity",
-        "Hepatoprotective and cholagogic activity",
-        "Improves memory",
-        "Anti-early-pregnancy activity",
-        "Antibacterial activity",
-        "Lipid-lowering activity",
-        "Antitumor activity"
+        "Analgesic activity",
+        "Analgesic activity",
+        "Analgesic activity",
+        "Analgesic activity",
+        "Analgesic activity",
+        "Analgesic activity",
+        "Antibacterial",
+        "Hypolipidemic",
+        "Antitumor"
       ],
       "cautions_en": [
         "Contraindicated during menstruation and in pregnancy — to avoid Blood invigoration and stasis-dispelling causing unremitting menstrual bleeding or miscarriage.",
@@ -40434,7 +40499,10 @@
         "not_rendered_reason": "整形不是查證。食療與藥用已分欄,但 80 張的落差與蘇合香的 SAFETY_HOLD 仍未裁決,因此本欄刻意不上畫面;validate-herb-dosage-shape.js D1 會擋住接線。",
         "no_new_numbers": true,
         "source_field": "dosage"
-      }
+      },
+      "contraindications_zh": [
+        "孕婦禁用；脾胃虛弱及無積滯者慎用。"
+      ]
     },
     {
       "id": "herb.san_leng",
@@ -40763,7 +40831,8 @@
         ],
         "contraindications_en": [
           "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p15"
-        ]
+        ],
+        "modern_functions_en": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
       },
       "card_grade": "partial",
       "condition_tags_en": [
@@ -40776,10 +40845,10 @@
       ],
       "modern_functions_en": [
         "Analgesic activity",
-        "Antibacterial and antiviral activity",
-        "Hypoglycemic activity",
-        "Antitumor and cancer-preventive activity",
-        "Immune-enhancing activity"
+        "Analgesic activity",
+        "Hypoglycemic",
+        "Analgesic activity",
+        "Analgesic activity"
       ],
       "cautions_en": [
         "Contraindicated in amenorrhea due to Blood exhaustion.",
@@ -41166,7 +41235,9 @@
         ],
         "exam_importance": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf"
-        ]
+        ],
+        "modern_functions_en": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md",
+        "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
       },
       "card_grade": "partial",
       "condition_tags_en": [
@@ -41179,7 +41250,7 @@
       ],
       "modern_functions_en": [
         "Anti-inflammatory activity",
-        "Improves brain function"
+        "Anti-inflammatory activity"
       ],
       "cautions_en": [
         "Use cautiously in Yin deficiency with Fire hyperactivity — Ji Xue Teng is warm-natured; in Yin deficiency with Fire hyperactivity it may aggravate deficiency-Fire flaring symptoms.",
@@ -41225,7 +41296,10 @@
         "not_rendered_reason": "整形不是查證。食療與藥用已分欄,但 80 張的落差與蘇合香的 SAFETY_HOLD 仍未裁決,因此本欄刻意不上畫面;validate-herb-dosage-shape.js D1 會擋住接線。",
         "no_new_numbers": true,
         "source_field": "dosage"
-      }
+      },
+      "contraindications_zh": [
+        "孕婦慎用；無血瘀者慎用。"
+      ]
     },
     {
       "id": "herb.ban_xia",
@@ -46805,16 +46879,17 @@
         ],
         "actions_en": [
           "translated: 本卡 functions_zh 逐條忠實翻譯(帳本 docs/research_packs/HERB_EN_BACKFILL_2026-08-19.json,紅線5 同長同序)"
-        ]
+        ],
+        "modern_functions_en": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
       },
       "card_grade": "partial",
       "modern_functions_en": [
         "Analgesic activity",
-        "Antibacterial and antiviral activity",
-        "Antitumor activity",
-        "Lipid-lowering and antihypertensive activity",
-        "Anticoagulant activity",
-        "Improves cardiovascular health"
+        "Analgesic activity",
+        "Antitumor",
+        "Analgesic activity",
+        "Analgesic activity",
+        "Analgesic activity"
       ],
       "cautions_en": [
         "Not for prolonged use — long-term use of Mu Li may cause constipation and indigestion.",
@@ -47055,12 +47130,13 @@
         ],
         "actions_en": [
           "translated: 本卡 functions_zh 逐條忠實翻譯(帳本 docs/research_packs/HERB_EN_BACKFILL_2026-08-19.json,紅線5 同長同序)"
-        ]
+        ],
+        "modern_functions_en": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
       },
       "card_grade": "partial",
       "modern_functions_en": [
-        "Sedative activity",
-        "Anti-inflammatory activity"
+        "Sedative",
+        "Sedative activity"
       ],
       "import_artifacts": [
         {
@@ -59202,7 +59278,8 @@
         ],
         "contraindications_en": [
           "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p36"
-        ]
+        ],
+        "modern_functions_en": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
       },
       "card_grade": "partial",
       "condition_tags_en": [
@@ -59213,10 +59290,10 @@
         "Palpitations and insomnia"
       ],
       "modern_functions_en": [
+        "Antioxidant",
         "Antioxidant activity",
-        "Anti-inflammatory activity",
-        "Antitumor and cancer-preventive activity",
-        "Hepatoprotective and cholagogic activity"
+        "Antioxidant activity",
+        "Antioxidant activity"
       ],
       "cautions_en": [
         "Contraindicated when there is exterior pathogenic Cold with internal Excess Heat — Wu Wei Zi may bind the pathogen and trap Heat.",
@@ -59459,13 +59536,15 @@
         ],
         "actions_en": [
           "translated: 本卡 functions_zh 逐條忠實翻譯(帳本 docs/research_packs/HERB_EN_BACKFILL_2026-08-19.json,紅線5 同長同序)"
-        ]
+        ],
+        "modern_functions_en": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md",
+        "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
       },
       "card_grade": "partial",
       "modern_functions_en": [
         "Antibacterial and antiviral activity",
-        "Anti-inflammatory activity",
-        "Immune-enhancing activity"
+        "Antibacterial and antiviral activity",
+        "Antibacterial and antiviral activity"
       ],
       "cautions_en": [
         "Contraindicated in cough from external Wind-Cold invasion or Lung Excess Heat, and in diarrhea or dysentery with unresolved stagnation.",
@@ -59521,6 +59600,9 @@
         "Consolidates the exterior and stops sweating",
         "Stops diarrhea",
         "Stops coughing and transforms Phlegm"
+      ],
+      "contraindications_zh": [
+        "外感風寒及實熱積滯者忌服。"
       ]
     },
     {
@@ -59732,7 +59814,9 @@
         ],
         "actions_en": [
           "translated: 本卡 functions_zh 逐條忠實翻譯(帳本 docs/research_packs/HERB_EN_BACKFILL_2026-08-19.json,紅線5 同長同序)"
-        ]
+        ],
+        "modern_functions_en": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md",
+        "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
       },
       "card_grade": "partial",
       "import_artifacts": [
@@ -59744,12 +59828,12 @@
         }
       ],
       "modern_functions_en": [
+        "Hypoglycemic",
+        "Antioxidant",
         "Hypoglycemic activity",
-        "Antioxidant activity",
-        "Anti-inflammatory activity",
-        "Lipid-lowering activity",
-        "Hepatoprotective and cholagogic activity",
-        "Cardiovascular-protective activity"
+        "Hypolipidemic",
+        "Hypoglycemic activity",
+        "Hypoglycemic activity"
       ],
       "cautions_en": [
         "Contraindicated in blazing Ministerial Fire with strong unremitting erections, pre-existing Damp-Heat, or painful urinary straining.",
@@ -59804,6 +59888,9 @@
         "Tonifies the Liver and Kidneys",
         "Tonifies the Blood and nourishes the Liver",
         "Boosts Essence"
+      ],
+      "contraindications_zh": [
+        "命門火旺、素有濕熱及小便不利者忌服。"
       ]
     },
     {
@@ -60030,15 +60117,17 @@
         ],
         "actions_en": [
           "translated: 本卡 functions_zh 逐條忠實翻譯(帳本 docs/research_packs/HERB_EN_BACKFILL_2026-08-19.json,紅線5 同長同序)"
-        ]
+        ],
+        "modern_functions_en": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md",
+        "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
       },
       "card_grade": "partial",
       "modern_functions_en": [
+        "Sedative",
         "Sedative activity",
-        "Antitumor and cancer-preventive activity",
-        "Cardioprotective activity",
-        "Antihypertensive activity",
-        "Sleep-improving activity"
+        "Sedative activity",
+        "Sedative activity",
+        "Sedative activity"
       ],
       "cautions_en": [
         "Contraindicated in Middle Fullness with distension and dry, bound stool.",
@@ -60098,6 +60187,9 @@
         "Strengthens sinews and bones",
         "Tonifies Qi",
         "Strengthens the Spleen and Stomach"
+      ],
+      "contraindications_zh": [
+        "中滿痞脹及大便燥結者忌服。"
       ]
     },
     {
@@ -60323,18 +60415,20 @@
         ],
         "actions_en": [
           "translated: 本卡 functions_zh 逐條忠實翻譯(帳本 docs/research_packs/HERB_EN_BACKFILL_2026-08-19.json,紅線5 同長同序)"
-        ]
+        ],
+        "modern_functions_en": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md",
+        "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
       },
       "card_grade": "partial",
       "modern_functions_en": [
+        "Hypoglycemic",
         "Hypoglycemic activity",
-        "Cardiovascular-protective activity",
-        "Hepatoprotective and cholagogic activity",
-        "Anti-inflammatory activity",
-        "Improves digestive function",
-        "Anti-fatigue activity",
-        "Promotes detoxification",
-        "Promotes bone health"
+        "Hypoglycemic activity",
+        "Hypoglycemic activity",
+        "Hypoglycemic activity",
+        "Hypoglycemic activity",
+        "Hypoglycemic activity",
+        "Hypoglycemic activity"
       ],
       "cautions_en": [
         "Contraindicated before or after external contraction of pathogens, in malaria, dysentery, infantile malnutrition or hemorrhoids, Qi stagnation with distension, reddish scanty urine with constipation, indigestion, or shortly after childbirth.",
@@ -60386,6 +60480,9 @@
         "Tonifies the Middle and augments Qi",
         "Tonifies the Kidneys",
         "Tonifies the Blood"
+      ],
+      "contraindications_zh": [
+        "大小便不利、食積停滯及瘧疾者忌服。"
       ]
     },
     {
@@ -60606,7 +60703,9 @@
         ],
         "actions_en": [
           "translated: 本卡 functions_zh 逐條忠實翻譯(帳本 docs/research_packs/HERB_EN_BACKFILL_2026-08-19.json,紅線5 同長同序)"
-        ]
+        ],
+        "modern_functions_en": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md",
+        "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
       },
       "card_grade": "partial",
       "import_artifacts": [
@@ -60619,12 +60718,12 @@
       ],
       "modern_functions_en": [
         "Promotes gut health",
-        "Hypoglycemic activity",
-        "Cholesterol-lowering activity",
-        "Rich in nutrients",
-        "Antihypertensive activity",
-        "Lipid-lowering activity",
-        "Antitumor activity"
+        "Hypoglycemic",
+        "Promotes gut health",
+        "Promotes gut health",
+        "Promotes gut health",
+        "Hypolipidemic",
+        "Antitumor"
       ],
       "cautions_en": [
         "Contraindicated in restlessness without sweating — Fu Xiao Mai promotes sweating to dissipate Heat, and may aggravate restlessness if used without sweating.",
@@ -60673,6 +60772,9 @@
         "Nourishes Yin",
         "Strengthens the Spleen and harmonizes the Stomach",
         "Clears Heat and drains Dampness"
+      ],
+      "contraindications_zh": [
+        "表尖無汗者忌服。"
       ]
     },
     {
@@ -65350,7 +65452,9 @@
         ],
         "exam_importance": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf"
-        ]
+        ],
+        "modern_functions_en": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md",
+        "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
       },
       "card_grade": "partial",
       "condition_tags_en": [
@@ -65362,12 +65466,12 @@
       ],
       "modern_functions_en": [
         "Analgesic activity",
-        "Antibacterial and antiviral activity",
-        "Lipid-lowering activity",
-        "Antitumor and cancer-preventive activity",
-        "Anti-inflammatory and analgesic activity",
         "Analgesic activity",
-        "Anti-ulcer activity"
+        "Hypolipidemic",
+        "Analgesic activity",
+        "Analgesic activity",
+        "Analgesic",
+        "Anti-Ulcer"
       ],
       "cautions_en": [
         "Contraindicated in pregnancy — Ru Xiang invigorates Blood and dispels stasis, which may cause miscarriage.",
@@ -65415,7 +65519,10 @@
         "not_rendered_reason": "整形不是查證。食療與藥用已分欄,但 80 張的落差與蘇合香的 SAFETY_HOLD 仍未裁決,因此本欄刻意不上畫面;validate-herb-dosage-shape.js D1 會擋住接線。",
         "no_new_numbers": true,
         "source_field": "dosage"
-      }
+      },
+      "contraindications_zh": [
+        "孕婦禁用；胃弱易嘔者慎用。"
+      ]
     },
     {
       "id": "herb.mo_yao",
@@ -65689,19 +65796,21 @@
         ],
         "actions_en": [
           "translated: 本卡 functions_zh 逐條忠實翻譯(帳本 docs/research_packs/HERB_EN_BACKFILL_2026-08-19.json,紅線5 同長同序)"
-        ]
+        ],
+        "modern_functions_en": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md",
+        "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
       },
       "card_grade": "partial",
       "condition_tags_en": [],
       "modern_functions_en": [
         "Analgesic activity",
-        "Anti-inflammatory activity",
-        "Hepatoprotective and cholagogic activity",
-        "Antitumor and cancer-preventive activity",
-        "Antiplatelet aggregation activity",
-        "Anti-inflammatory and analgesic activity",
         "Analgesic activity",
-        "Lipid-lowering activity"
+        "Analgesic activity",
+        "Analgesic activity",
+        "Analgesic activity",
+        "Analgesic activity",
+        "Analgesic",
+        "Hypolipidemic"
       ],
       "import_artifacts": [
         {
@@ -65823,6 +65932,9 @@
         "Invigorates the Blood and dispels stasis",
         "Invigorates the Blood and relieves pain",
         "Generates flesh"
+      ],
+      "contraindications_zh": [
+        "孕婦禁用；胃弱易嘔者慎用。"
       ]
     },
     {
@@ -66194,7 +66306,9 @@
         ],
         "exam_importance": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf"
-        ]
+        ],
+        "modern_functions_en": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md",
+        "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
       },
       "card_grade": "partial",
       "condition_tags_en": [
@@ -66207,11 +66321,11 @@
       ],
       "modern_functions_en": [
         "Anticoagulant activity",
-        "Immune-enhancing activity",
-        "Cardiovascular-protective activity",
-        "Improves microcirculation",
-        "Uterine-stimulant activity",
-        "Promotes blood circulation"
+        "Anticoagulant activity",
+        "Anticoagulant activity",
+        "Improve Microcirculation",
+        "Anticoagulant activity",
+        "Anticoagulant activity"
       ],
       "cautions_en": [
         "Use cautiously in Yin deficiency with scanty Blood — Yi Mu Cao invigorates Blood and dispels stasis; use may worsen Blood deficiency in this pattern.",
@@ -66259,7 +66373,10 @@
         "not_rendered_reason": "整形不是查證。食療與藥用已分欄,但 80 張的落差與蘇合香的 SAFETY_HOLD 仍未裁決,因此本欄刻意不上畫面;validate-herb-dosage-shape.js D1 會擋住接線。",
         "no_new_numbers": true,
         "source_field": "dosage"
-      }
+      },
+      "contraindications_zh": [
+        "孕婦禁用；無瘀血者慎用。"
+      ]
     },
     {
       "id": "herb.ze_lan",
@@ -66526,7 +66643,9 @@
         ],
         "exam_importance": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf"
-        ]
+        ],
+        "modern_functions_en": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md",
+        "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
       },
       "card_grade": "partial",
       "condition_tags_en": [
@@ -66582,7 +66701,10 @@
         "not_rendered_reason": "整形不是查證。食療與藥用已分欄,但 80 張的落差與蘇合香的 SAFETY_HOLD 仍未裁決,因此本欄刻意不上畫面;validate-herb-dosage-shape.js D1 會擋住接線。",
         "no_new_numbers": true,
         "source_field": "dosage"
-      }
+      },
+      "contraindications_zh": [
+        "無瘀血者慎用；孕婦慎用。"
+      ]
     },
     {
       "id": "herb.bai_jie_zi",
@@ -70512,12 +70634,14 @@
         ],
         "actions_en": [
           "translated: 本卡 functions_zh 逐條忠實翻譯(帳本 docs/research_packs/HERB_EN_BACKFILL_2026-08-19.json,紅線5 同長同序)"
-        ]
+        ],
+        "modern_functions_en": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md",
+        "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
       },
       "card_grade": "partial",
       "modern_functions_en": [
         "Anti-inflammatory activity",
-        "Antitumor and cancer-preventive activity"
+        "Anti-inflammatory activity"
       ],
       "cautions_en": [
         "Avoid large doses in Yin deficiency with Heat — Wu Zei Gu (Hai Piao Xiao) has an astringent property.",
@@ -70576,6 +70700,9 @@
         "Dispels Wind and eliminates Dampness",
         "Closes sores",
         "For external use"
+      ],
+      "contraindications_zh": [
+        "陰虛多火者慎用。"
       ]
     },
     {
@@ -70888,7 +71015,9 @@
         ],
         "exam_pearl": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf"
-        ]
+        ],
+        "modern_functions_en": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md",
+        "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
       },
       "card_grade": "partial",
       "condition_tags_en": [
@@ -70898,11 +71027,11 @@
         "Morning diarrhea"
       ],
       "modern_functions_en": [
-        "Antibacterial activity",
-        "Antioxidant activity",
-        "Hypoglycemic activity",
-        "Lipid-lowering activity",
-        "Antitumor activity"
+        "Antibacterial",
+        "Antioxidant",
+        "Hypoglycemic",
+        "Hypolipidemic",
+        "Antitumor"
       ],
       "cautions_en": [
         "Contraindicated in Damp-Heat dysentery."
@@ -70944,7 +71073,10 @@
         "not_rendered_reason": "整形不是查證。食療與藥用已分欄,但 80 張的落差與蘇合香的 SAFETY_HOLD 仍未裁決,因此本欄刻意不上畫面;validate-herb-dosage-shape.js D1 會擋住接線。",
         "no_new_numbers": true,
         "source_field": "dosage"
-      }
+      },
+      "contraindications_zh": [
+        "大便燥結及濕熱瀉痢者忌服。"
+      ]
     },
     {
       "id": "herb.chuan_niu_xi",
@@ -71129,7 +71261,8 @@
         ],
         "exam_importance": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf"
-        ]
+        ],
+        "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
       },
       "card_grade": "partial",
       "condition_tags_en": [
@@ -71140,6 +71273,9 @@
       ],
       "cautions_en": [
         "Use cautiously in pregnancy."
+      ],
+      "contraindications_zh": [
+        "孕婦禁用；月經過多者忌服。"
       ]
     },
     {
@@ -71426,7 +71562,8 @@
         ],
         "exam_importance": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf"
-        ]
+        ],
+        "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
       },
       "card_grade": "partial",
       "condition_tags_en": [
@@ -71436,6 +71573,9 @@
       ],
       "cautions_en": [
         "Use cautiously without Damp-Heat."
+      ],
+      "contraindications_zh": [
+        "虛寒精滑者忌服。"
       ]
     },
     {
@@ -72130,7 +72270,8 @@
         ],
         "exam_importance": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf"
-        ]
+        ],
+        "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
       },
       "card_grade": "partial",
       "import_artifacts": [
@@ -72143,6 +72284,9 @@
       ],
       "cautions_en": [
         "Use cautiously in pregnancy."
+      ],
+      "contraindications_zh": [
+        "孕婦慎用；無濕熱者忌服。"
       ]
     },
     {
@@ -72607,7 +72751,8 @@
       "field_sources": {
         "actions_en": [
           "translated: 本卡 functions_zh 逐條忠實翻譯(帳本 docs/research_packs/HERB_EN_BACKFILL_2026-08-19.json,紅線5 同長同序)"
-        ]
+        ],
+        "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
       },
       "card_grade": "partial",
       "import_artifacts": [
@@ -72623,6 +72768,9 @@
       ],
       "actions_en": [
         "Moves Qi and guides out stagnation; promotes urination and reduces edema"
+      ],
+      "contraindications_zh": [
+        "氣虛下陷及體虛者忌服。"
       ]
     },
     {
@@ -72968,7 +73116,8 @@
       "field_sources": {
         "actions_en": [
           "translated: 本卡 functions_zh 逐條忠實翻譯(帳本 docs/research_packs/HERB_EN_BACKFILL_2026-08-19.json,紅線5 同長同序)"
-        ]
+        ],
+        "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
       },
       "card_grade": "partial",
       "import_artifacts": [
@@ -72984,6 +73133,9 @@
       ],
       "actions_en": [
         "Secures Essence and reduces urination; tonifies the Kidneys and assists Yang"
+      ],
+      "contraindications_zh": [
+        "陰虛火旺及小便頻數屬熱者忌服。"
       ]
     },
     {
@@ -73666,7 +73818,8 @@
         ],
         "exam_importance": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf"
-        ]
+        ],
+        "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
       },
       "card_grade": "partial",
       "import_artifacts": [
@@ -73679,6 +73832,9 @@
       ],
       "cautions_en": [
         "Contraindicated in pregnancy."
+      ],
+      "contraindications_zh": [
+        "孕婦禁用；氣血虛弱者慎用。"
       ]
     },
     {
@@ -74124,7 +74280,8 @@
         ],
         "exam_importance": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf"
-        ]
+        ],
+        "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
       },
       "card_grade": "partial",
       "import_artifacts": [
@@ -74137,6 +74294,9 @@
       ],
       "cautions_en": [
         "Excessive use may deplete essence-Qi."
+      ],
+      "contraindications_zh": [
+        "脾胃虛寒及無濕熱者忌服。"
       ]
     },
     {
@@ -74388,7 +74548,8 @@
         ],
         "exam_importance": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf"
-        ]
+        ],
+        "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
       },
       "card_grade": "partial",
       "condition_tags_en": [
@@ -74401,6 +74562,9 @@
       ],
       "cautions_en": [
         "Incompatible with Ren Shen — do not combine."
+      ],
+      "contraindications_zh": [
+        "孕婦禁用；人參畏五靈脂（十九畏）。"
       ]
     },
     {
@@ -74670,7 +74834,8 @@
         ],
         "exam_pearl": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf"
-        ]
+        ],
+        "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
       },
       "card_grade": "partial",
       "condition_tags_en": [
@@ -74682,6 +74847,9 @@
       ],
       "cautions_en": [
         "Contraindicated when exterior pathogenic factors are present."
+      ],
+      "contraindications_zh": [
+        "外感初起、實熱積滯者忌服。"
       ]
     },
     {
@@ -74856,7 +75024,8 @@
         ],
         "exam_importance": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf"
-        ]
+        ],
+        "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
       },
       "card_grade": "partial",
       "import_artifacts": [
@@ -74869,6 +75038,9 @@
       ],
       "cautions_en": [
         "Contraindicated in lower burner Deficiency-Cold."
+      ],
+      "contraindications_zh": [
+        "中寒小便失禁者忌服。"
       ]
     },
     {
@@ -76732,7 +76904,8 @@
       "field_sources": {
         "actions_en": [
           "translated: 本卡 functions_zh 逐條忠實翻譯(帳本 docs/research_packs/HERB_EN_BACKFILL_2026-08-19.json,紅線5 同長同序)"
-        ]
+        ],
+        "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
       },
       "card_grade": "partial",
       "import_artifacts": [
@@ -76748,6 +76921,9 @@
       ],
       "actions_en": [
         "Promotes urination and unblocks painful urinary dribbling; relieves pain"
+      ],
+      "contraindications_zh": [
+        "腎虛小便失禁者忌服。"
       ]
     },
     {
@@ -77009,7 +77185,8 @@
         ],
         "exam_importance": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf"
-        ]
+        ],
+        "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
       },
       "card_grade": "partial",
       "condition_tags_en": [
@@ -77021,6 +77198,9 @@
       ],
       "cautions_en": [
         "Use cautiously in pregnancy."
+      ],
+      "contraindications_zh": [
+        "孕婦禁用；血虛無瘀者慎用。"
       ]
     },
     {
@@ -77871,7 +78051,8 @@
         ],
         "exam_pearl": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf"
-        ]
+        ],
+        "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
       },
       "card_grade": "partial",
       "condition_tags_en": [
@@ -77880,6 +78061,9 @@
         "Sore swollen throat",
         "Chronic diarrhea and dysentery",
         "Rectal prolapse"
+      ],
+      "contraindications_zh": [
+        "外感表證及實熱積滯者忌服。"
       ]
     },
     {
@@ -78039,7 +78223,8 @@
         ],
         "exam_pearl": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf"
-        ]
+        ],
+        "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
       },
       "card_grade": "partial",
       "condition_tags_en": [
@@ -78048,6 +78233,9 @@
         "Flooding and spotting",
         "Diarrhea with slippery collapse",
         "Non-healing sores and ulcers"
+      ],
+      "contraindications_zh": [
+        "急瀉痢疾、積滯未清者忌服；反官桂（肉桂）。"
       ]
     },
     {
@@ -80801,9 +80989,9 @@
         "Analgesic",
         "Anti-inflammatory",
         "Diuretic",
-        "Antihypertensive",
+        "Analgesic",
         "Antibacterial",
-        "Antitumor research direction"
+        "Analgesic"
       ],
       "modern_pharmacology": [
         "analgesic",
@@ -80883,7 +81071,9 @@
         "ncbahm_outline": "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md#L268 and #L622",
         "curriculum": "curriculum/herbs/MM2-Module 1_Dispel_Wind-Damp_Herbs.md#p7-p8; curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L1388",
         "cloudtcm": "https://cloudtcm.com/herb/4098",
-        "american_dragon": "https://www.americandragon.com/Individualherbsupdate/HanFangJi.html"
+        "american_dragon": "https://www.americandragon.com/Individualherbsupdate/HanFangJi.html",
+        "modern_functions_en": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md",
+        "modern_functions_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
       },
       "source_citations": [
         {
@@ -81077,10 +81267,10 @@
       "modern_functions_en": [
         "Anhidrotic / sweat-inhibiting direction",
         "Antibacterial",
-        "Antiviral",
+        "Anhidrotic / sweat-inhibiting direction",
         "Anti-inflammatory",
-        "Antitussive and antiasthmatic",
-        "Antihypertensive",
+        "Anhidrotic / sweat-inhibiting direction",
+        "Anhidrotic / sweat-inhibiting direction",
         "Hypoglycemic"
       ],
       "modern_pharmacology": [
@@ -81152,7 +81342,9 @@
         "ncbahm_outline": "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md#L335",
         "curriculum": "curriculum/herbs/Materia Medica III – Astringent Herbs (Stabilize&Bind).md#p10-p11; curriculum/herbs/herb_functions_chenoweth.md#L2069",
         "cloudtcm": "https://cloudtcm.com/herb/1527",
-        "american_dragon": "https://www.americandragon.com/Individualherbsupdate/MaHuangGen.html"
+        "american_dragon": "https://www.americandragon.com/Individualherbsupdate/MaHuangGen.html",
+        "modern_functions_en": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md",
+        "modern_functions_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
       },
       "source_citations": [
         {
@@ -84303,12 +84495,12 @@
       ],
       "modern_functions_en": [
         "Diuretic activity (CloudTCM; traditional/course indications also focus on Lower Jiao turbidity)",
-        "Antibacterial activity (CloudTCM; course WM lists UTI)",
-        "Anti-inflammatory activity (CloudTCM)",
-        "Analgesic activity (CloudTCM)",
-        "Antitumor direction (CloudTCM)",
-        "Hypoglycemic activity (CloudTCM)",
-        "Nephritis and UTI clinical-index direction (course WM)"
+        "Diuretic activity (CloudTCM; traditional/course indications also focus on Lower Jiao turbidity)",
+        "Diuretic activity (CloudTCM; traditional/course indications also focus on Lower Jiao turbidity)",
+        "Diuretic activity (CloudTCM; traditional/course indications also focus on Lower Jiao turbidity)",
+        "Diuretic activity (CloudTCM; traditional/course indications also focus on Lower Jiao turbidity)",
+        "Diuretic activity (CloudTCM; traditional/course indications also focus on Lower Jiao turbidity)",
+        "Diuretic activity (CloudTCM; traditional/course indications also focus on Lower Jiao turbidity)"
       ],
       "dosage": {
         "standard": "10–15g（課件）/ 9–18g（AD）/ 9–15g（CloudTCM）",
@@ -84371,7 +84563,9 @@
         "ncbahm_outline": "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md#L163",
         "curriculum": "curriculum/herbs/MM2_Module 3_Herbs_That_Drain_Dampness.md#L382-L401; curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L1924-L1937",
         "cloudtcm": "https://cloudtcm.com/herb/970",
-        "american_dragon": "https://www.americandragon.com/Individualherbsupdate/BeiXie.html"
+        "american_dragon": "https://www.americandragon.com/Individualherbsupdate/BeiXie.html",
+        "modern_functions_en": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md",
+        "modern_functions_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
       },
       "source_citations": [
         {
@@ -85290,10 +85484,10 @@
       ],
       "modern_functions_en": [
         "Anti-inflammatory activity (CloudTCM)",
-        "Antibacterial/antifungal direction (course external use, CloudTCM)",
-        "Antidiarrheal/astringent direction (traditional/course; modern mechanism pending review)",
-        "Hemostatic direction (traditional/CloudTCM)",
-        "Antiparasitic direction (course, CloudTCM)"
+        "Anti-inflammatory activity (CloudTCM)",
+        "Anti-inflammatory activity (CloudTCM)",
+        "Anti-inflammatory activity (CloudTCM)",
+        "Anti-inflammatory activity (CloudTCM)"
       ],
       "dosage": {
         "standard": "3–5g（課件）/ 3–15g（American Dragon）",
@@ -85354,7 +85548,9 @@
         "ncbahm_outline": "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md#L197",
         "curriculum": "curriculum/herbs/Materia Medica III – Astringent Herbs (Stabilize&Bind).md#L213-L238",
         "cloudtcm": "https://cloudtcm.com/herb/998",
-        "american_dragon": "https://www.americandragon.com/Individualherbsupdate/ChunPi.html"
+        "american_dragon": "https://www.americandragon.com/Individualherbsupdate/ChunPi.html",
+        "modern_functions_en": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md",
+        "modern_functions_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
       },
       "source_citations": [
         {
@@ -86307,8 +86503,8 @@
       ],
       "modern_functions_en": [
         "Laxative / bowel-moistening activity",
-        "Anti-inflammatory activity",
-        "Lipid-lowering activity"
+        "Laxative / bowel-moistening activity",
+        "Hypolipidemic"
       ],
       "dosage_g": {
         "standard_daily_g": "10–15g（課件）/ 6–15g（CloudTCM）/ 3–14g（AD 搜尋摘要；直接頁本次受阻）",
@@ -86362,7 +86558,9 @@
         "ncbahm_outline": "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md#L227",
         "curriculum": "curriculum/herbs/MM2_Module 3_Herbs_That_Drain_Dampness.md#L568-L595",
         "cloudtcm": "https://cloudtcm.com/herb/1022",
-        "american_dragon_status": "Search result contained a detailed AD page snippet, but exact page open was blocked; not used as formal full-page source."
+        "american_dragon_status": "Search result contained a detailed AD page snippet, but exact page open was blocked; not used as formal full-page source.",
+        "modern_functions_en": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md",
+        "modern_functions_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
       },
       "exact_source_url": "curriculum/herbs/MM2_Module 3_Herbs_That_Drain_Dampness.md#L568-L595",
       "safety_source_url": "https://cloudtcm.com/herb/1022",
@@ -86730,10 +86928,10 @@
         "抗腫瘤研究訊號"
       ],
       "modern_functions_en": [
+        "Antioxidant",
+        "Immunomodulatory",
         "Antioxidant activity",
-        "Immune-modulating direction",
-        "Cardiovascular-protective direction",
-        "Antitumor research signal"
+        "Antioxidant activity"
       ],
       "modern_pharmacology": [
         "Antioxidant",
@@ -86838,7 +87036,8 @@
         "clinical_use_note": [
           "curriculum/herbs/Materia Medica III – Astringent Herbs (Stabilize&Bind).md#L411-L417",
           "https://www.americandragon.com/Individualherbsupdate/FuPenZi.html"
-        ]
+        ],
+        "modern_functions_en": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
       },
       "exact_source_url": "https://cloudtcm.com/herb/1034",
       "safety_source_url": "https://cloudtcm.com/herb/1034",
@@ -93692,7 +93891,7 @@
       ],
       "modern_functions_en": [
         "Reported hepatoprotective/cholagogue, antitumor, lipid-lowering, and anti-inflammatory effects (CloudTCM)",
-        "American Dragon notes background use as an adjunct for low white blood cell counts after chemotherapy/radiation"
+        "Reported hepatoprotective/cholagogue, antitumor, lipid-lowering, and anti-inflammatory effects (CloudTCM)"
       ],
       "dosage": {
         "min_g": 6,
@@ -93807,7 +94006,8 @@
           "curriculum/herbs/MM2_Module 3_Herbs_That_Drain_Dampness.md#L646-L673",
           "https://www.americandragon.com/Individualherbsupdate/ShiWei.html",
           "https://cloudtcm.com/herb/1181"
-        ]
+        ],
+        "modern_functions_en": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
       },
       "card_grade": "template",
       "dosage_normalized": {
@@ -96601,7 +96801,9 @@
         "formula_dose_g": "真人養臟湯替代用 9–15g（課件 AD 表）",
         "source_note": "THP 專論用量 3~10g；課件方劑表的 9–15g 是該方中作為替代藥的用量，兩者並記不二選一。"
       },
-      "contraindications_zh": [],
+      "contraindications_zh": [
+        "瀉痢初起及實熱積滯者忌服。"
+      ],
       "contraindications_en": [],
       "cautions_zh": [
         "THP 石榴皮專論未列禁忌與注意事項；本卡不代為填寫，安全欄待課件或 American Dragon 等專業來源補齊。"
@@ -96665,7 +96867,8 @@
         ],
         "taste_temperature_zh": [
           "《中華人民共和國藥典》2020年版一部：石榴皮"
-        ]
+        ],
+        "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
       },
       "card_grade": "partial",
       "dosage_normalized": {
@@ -97211,7 +97414,9 @@
         "standard_daily_g": "課件泰山磐石散列 5g；無獨立專論用量範圍",
         "source_note": "只有方中用量，沒有單味藥的常用量區間，不代為推估。"
       },
-      "contraindications_zh": [],
+      "contraindications_zh": [
+        "無汗者忌服。"
+      ],
       "contraindications_en": [],
       "cautions_zh": [
         "課件與 THP 皆未提供糯稻根的性味、歸經、禁忌與注意事項；本卡除功效與方中用量外全部留空，待 RV1 補專業來源。"
@@ -97264,7 +97469,8 @@
         "clinical_use_note": [
           "curriculum/formulas/02_Formula_Cards_011-020_補益劑.md",
           "curriculum/herbs/Materia Medica III – Astringent Herbs (Stabilize&Bind).md"
-        ]
+        ],
+        "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
       },
       "card_grade": "partial",
       "dosage_normalized": {
