@@ -55449,6 +55449,9 @@
     ],
     "acupuncture_scope_en": [
      "AcuTing OS Disease Knowledge Research Pack — Batch D Emergency/Vascular (compiled from NINDS/NHLBI clinical materials)"
+    ],
+    "herb_formulas": [
+     "中醫內科學「中風先兆」辨證論治對應方劑(肝陽上亢/風痰上擾/瘀血阻絡/氣虛血瘀等證型)。TIA屬醫療警訊事件,急性期首要為西醫緊急評估(ABCD2分數、頸動脈與腦部影像、抗血小板/statin治療)以防進展為完成性中風;此處方劑僅適用於急性期評估處置後之體質調理與二級預防,非急性期主要治療。未列入 acupoint_protocols:檢索後未找到專門針對TIA本身(而非中風後遺症)之針灸點位系統性回顧或RCT證據,且急性期以立即轉診神經科為優先,不宜以針灸延誤評估,故誠實留空而非勉強列出中風後遺症的通用配穴。"
     ]
    },
    "source_type": "sourced_research_pack",
@@ -55457,7 +55460,13 @@
     "ncbahm_biomedicine_appendix_a",
     "research_pack_batch_d_emergency_vascular"
    ],
-   "source_status": "draft_pending_ting_review"
+   "source_status": "draft_pending_ting_review",
+   "herb_formulas": [
+    "天麻鉤藤飲",
+    "半夏白朮天麻湯",
+    "血府逐瘀湯",
+    "補陽還五湯"
+   ]
   },
   {
    "id": "cond.giant_cell_arteritis",
@@ -57357,7 +57366,76 @@
     ],
     "acupuncture_scope_en": [
      "AcuTing OS Disease Knowledge Research Pack — Batch F Respiratory/Renal/Sleep"
+    ],
+    "herb_formulas": [
+     "中醫內科學「腎勞/慢性腎衰」辨證論治對應方劑(肝腎陰虛/脾腎陽虛/陽虛水泛/脾腎兩虛便秘/陰陽兩虛等證型)"
     ]
+   },
+   "herb_formulas": [
+    "六味地黃丸",
+    "金匱腎氣丸",
+    "真武湯",
+    "濟川煎",
+    "二仙汤",
+    "防己黃耆湯"
+   ],
+   "acupoint_protocols": [
+    {
+     "name_zh": "腎俞",
+     "code": "BL23"
+    },
+    {
+     "name_zh": "太谿",
+     "code": "KI3"
+    },
+    {
+     "name_zh": "關元",
+     "code": "CV4"
+    },
+    {
+     "name_zh": "三陰交",
+     "code": "SP6"
+    },
+    {
+     "name_zh": "足三里",
+     "code": "ST36"
+    },
+    {
+     "name_zh": "曲池",
+     "code": "LI11"
+    },
+    {
+     "name_zh": "合谷",
+     "code": "LI4"
+    }
+   ],
+   "acupoint_protocol_evidence": {
+    "protocol_status": "limited",
+    "point_rationale_zh": "腎俞、太谿、關元培補腎元、助氣化;三陰交健脾益腎;足三里、曲池、合谷為納入研究中最常見之配穴組合,兼調理氣血與局部循環之意。",
+    "point_rationale_en": null,
+    "evidence_note_zh": "系統性回顧與統合分析(發表於Renal Failure期刊,2024年,納入約24篇RCT、共1494名慢性腎臟病患者)顯示,相較於假針或常規治療,針刺與腎功能改善(估計腎絲球過濾率eGFR提升約5.1–15.5%)及尿毒搔癢症狀減輕(約54.7–60.2%)相關,最常用穴位為曲池(LI11)、足三里(ST36)、合谷(LI4)。惟納入研究多數僅追蹤2個月以內之短期效果、樣本量偏小、異質性高,長期療效與安全性證據不足,故列為 limited 而非 supported。針刺不可取代腎臟科常規治療(血壓/血糖控制、飲食管理、必要時透析評估)。",
+    "treatment_parameters": {
+     "manual_or_electroacupuncture": "manual acupuncture(多數納入研究)",
+     "frequency": null,
+     "session_duration": null,
+     "treatment_course": "多數研究療程小於2個月"
+    },
+    "scope_conflict_note": null,
+    "sources": [
+     {
+      "source_id": "S1",
+      "type": "systematic_review",
+      "citation": "Therapeutic effects of acupuncture therapy for kidney function and common symptoms in patients with chronic kidney disease: a systematic review and meta-analysis. Renal Failure. 2024;46(1).",
+      "url": "https://doi.org/10.1080/0886022X.2023.2301504",
+      "pmid_or_doi": "PMID: 38189090; DOI: 10.1080/0886022X.2023.2301504",
+      "modality": "manual acupuncture",
+      "comparator": "假針/常規治療",
+      "certainty": "low-moderate(短期追蹤、異質性高)",
+      "finding_zh": "24篇RCT、1494名CKD患者:針刺與eGFR提升及尿毒搔癢減輕相關,但研究品質與追蹤時間有限。"
+     }
+    ],
+    "collected_by": "pilot batch 2026-08-24",
+    "no_source_found": false
    }
   },
   {
@@ -57586,7 +57664,68 @@
     ],
     "acupuncture_scope_en": [
      "AcuTing OS Disease Knowledge Research Pack — Batch F Respiratory/Renal/Sleep"
+    ],
+    "herb_formulas": [
+     "中醫內科學「石淋」辨證論治對應方劑(濕熱蘊結/氣滯血瘀/腎氣虧虛等證型)"
     ]
+   },
+   "herb_formulas": [
+    "八正散",
+    "龍膽瀉肝湯",
+    "金鈴子散",
+    "豬苓湯",
+    "六味地黃丸",
+    "腎氣丸"
+   ],
+   "acupoint_protocols": [
+    {
+     "name_zh": "腎俞",
+     "code": "BL23"
+    },
+    {
+     "name_zh": "三陰交",
+     "code": "SP6"
+    },
+    {
+     "name_zh": "太谿",
+     "code": "KI3"
+    },
+    {
+     "name_zh": "足三里",
+     "code": "ST36"
+    },
+    {
+     "name_zh": "太衝",
+     "code": "LR3"
+    }
+   ],
+   "acupoint_protocol_evidence": {
+    "protocol_status": "limited",
+    "point_rationale_zh": "腎俞、太谿溫補腎氣、助氣化排石;三陰交為肝脾腎三經交會穴,善治淋證疼痛;足三里、太衝理氣止痛,協助緩解輸尿管痙攣性絞痛。",
+    "point_rationale_en": null,
+    "evidence_note_zh": "系統性回顧與統合分析(Qu et al. 2022, Evidence-Based Complementary and Alternative Medicine)針對成人泌尿道結石引起之急性腎絞痛,顯示手針止痛效果與常規止痛藥物(如NSAIDs)相當,起效較快、不良反應較少;惟納入試驗數量少、多數品質偏低(高偏誤風險),證據等級仍屬有限(limited)。針灸僅可作為急診/門診止痛之輔助或替代選項之一,不可取代必要的影像學評估(如CT/超音波)與泌尿科處置(如結石大小/位置評估、是否需要體外震波碎石或手術)。",
+    "treatment_parameters": {
+     "manual_or_electroacupuncture": "manual acupuncture",
+     "frequency": null,
+     "session_duration": null,
+     "treatment_course": "急性腎絞痛發作時單次或短期治療為主"
+    },
+    "scope_conflict_note": null,
+    "sources": [
+     {
+      "source_id": "S1",
+      "type": "systematic_review",
+      "citation": "Qu Z, Wang T, Tu J, Yao W, Pei X, Jia L, Cao Y, Liu C. Efficacy and Safety of Acupuncture in Renal Colic Caused by Urinary Calculi in Adults: A Systematic Review and Meta-Analysis. Evidence-Based Complementary and Alternative Medicine. 2022:7140038.",
+      "url": "https://doi.org/10.1155/2022/7140038",
+      "pmid_or_doi": "PMID: 35832526; DOI: 10.1155/2022/7140038",
+      "modality": "manual acupuncture",
+      "comparator": "常規止痛藥物(如NSAIDs/解痙劑)",
+      "certainty": "low(納入試驗數量少、偏誤風險高)",
+      "finding_zh": "手針對急性腎絞痛止痛效果與藥物相當,起效較快、不良反應較少,但證據品質低,試驗數量有限。"
+     }
+    ],
+    "collected_by": "pilot batch 2026-08-24",
+    "no_source_found": false
    }
   },
   {
@@ -58132,7 +58271,20 @@
     "ncbahm_biomedicine_appendix_a",
     "research_pack_batch_f_respiratory_renal_sleep"
    ],
-   "source_status": "draft_pending_ting_review"
+   "source_status": "draft_pending_ting_review",
+   "herb_formulas": [
+    "銀翹散",
+    "麻杏石甘湯",
+    "清氣化痰丸",
+    "葦莖湯",
+    "沙參麥門冬湯",
+    "生脈散"
+   ],
+   "field_sources": {
+    "herb_formulas": [
+     "中醫內科學「肺炎喘嗽/肺熱病」辨證論治對應方劑(風熱犯肺初起/痰熱閉肺/熱毒瘀阻肺絡傾向/恢復期肺陰虧虛與氣陰兩傷)。未列入 acupoint_protocols:以關鍵字「pneumonia acupuncture systematic review」「community-acquired pneumonia acupuncture RCT fever」檢索,僅找到中風相關性肺炎、COPD急性惡化輔助針灸,以及兒童捏脊(推拿)之相關研究,未查得針對一般肺炎本身(而非中風併發或COPD急性惡化)之針灸系統性回顧或RCT,故誠實留空而非借用鄰近病症證據勉強列出配穴。"
+    ]
+   }
   },
   {
    "id": "cond.epilepsy",
@@ -58352,12 +58504,84 @@
     ],
     "acupuncture_scope_en": [
      "AcuTing OS Disease Knowledge Research Pack — Batch G Neurology"
+    ],
+    "herb_formulas": [
+     "中醫內科學「癇病」辨證論治對應方劑(痰濁內蘊/痰熱擾神/心脾兩虛/肝腎陰虛/風陽妄動等證型;磁朱丸為傳統鎮心安神、治癲癇驚悸之經典方)"
     ]
    },
    "sign_symptom_ids": [
     "sym.altered_consciousness",
     "sym.fatigue"
-   ]
+   ],
+   "herb_formulas": [
+    "溫膽湯",
+    "六味地黃丸",
+    "歸脾湯",
+    "磁朱丸",
+    "天麻鉤藤飲"
+   ],
+   "acupoint_protocols": [
+    {
+     "name_zh": "百會",
+     "code": "GV20"
+    },
+    {
+     "name_zh": "水溝",
+     "code": "GV26"
+    },
+    {
+     "name_zh": "內關",
+     "code": "PC6"
+    },
+    {
+     "name_zh": "神門",
+     "code": "HT7"
+    },
+    {
+     "name_zh": "太衝",
+     "code": "LR3"
+    },
+    {
+     "name_zh": "豐隆",
+     "code": "ST40"
+    },
+    {
+     "name_zh": "三陰交",
+     "code": "SP6"
+    },
+    {
+     "name_zh": "大椎",
+     "code": "GV14"
+    }
+   ],
+   "acupoint_protocol_evidence": {
+    "protocol_status": "not_supported",
+    "point_rationale_zh": "臨床試驗常見之醒腦開竅、豁痰熄風配穴:百會、水溝醒神開竅;內關、神門寧心安神;太衝、豐隆平肝熄風化痰;三陰交滋陰;大椎瀉熱。此為文獻中實際受試之配穴組合,非本表推薦之有效方案。",
+    "point_rationale_en": null,
+    "evidence_note_zh": "Cochrane系統性回顧(Cheuk DKL, Wong V, 2014,納入17篇RCT、共1538名患者)顯示:與對照治療相比,針刺並未能有效降低癲癇發作頻率(5篇試驗);針刺併用中藥與單用中藥相比,亦未能有效達到滿意發作控制(發作頻率減少≥50%)。所有納入試驗皆屬高偏誤風險,證據品質低,無法確認針刺對癲癇是否有效或安全。故列為 not_supported,並保留文獻中實際使用之配穴供臨床脈絡參考。",
+    "treatment_parameters": {
+     "manual_or_electroacupuncture": null,
+     "frequency": null,
+     "session_duration": null,
+     "treatment_course": null
+    },
+    "scope_conflict_note": "針刺不可取代抗癲癇藥物治療,不應用於替代或延誤正規神經科診療與藥物調整。",
+    "sources": [
+     {
+      "source_id": "S1",
+      "type": "systematic_review",
+      "citation": "Cheuk DKL, Wong V. Acupuncture for epilepsy. Cochrane Database of Systematic Reviews. 2014;(5):CD005062.",
+      "url": "https://doi.org/10.1002/14651858.CD005062.pub4",
+      "pmid_or_doi": "PMID: 24801225; DOI: 10.1002/14651858.CD005062.pub4",
+      "modality": "manual acupuncture ± 併用中藥",
+      "comparator": "無治療/常規抗癲癇藥物/假針",
+      "certainty": "low(納入試驗整體偏誤風險高)",
+      "finding_zh": "針刺未能有效降低癲癇發作頻率;針刺併用中藥亦未能有效達到滿意發作控制,證據品質低,結論不確定。"
+     }
+    ],
+    "collected_by": "pilot batch 2026-08-24",
+    "no_source_found": false
+   }
   },
   {
    "id": "cond.guillain_barre_syndrome",
@@ -58836,7 +59060,73 @@
     "ncbahm_biomedicine_appendix_a",
     "research_pack_batch_h_gi_liver"
    ],
-   "source_status": "draft_pending_ting_review"
+   "source_status": "draft_pending_ting_review",
+   "herb_formulas": [
+    "大黃牡丹湯",
+    "復元活血湯"
+   ],
+   "field_sources": {
+    "herb_formulas": [
+     "大黃牡丹湯為中醫「腸癰」經典方,現代中國文獻多用於病情輕微/早期未穿孔案例之輔助或替代治療選項;復元活血湯用於術後瘀阻疼痛之恢復期調理。闌尾炎屬外科急症,手術(闌尾切除術)仍為標準且首要治療,中藥僅能作為手術前後之輔助,不可替代或延誤手術評估,故僅列2首明確標註為輔助/恢復用方劑,不列出完整內科方劑清單。"
+    ]
+   },
+   "acupoint_protocols": [
+    {
+     "name_zh": "足三里",
+     "code": "ST36"
+    },
+    {
+     "name_zh": "內關",
+     "code": "PC6"
+    },
+    {
+     "name_zh": "合谷",
+     "code": "LI4"
+    },
+    {
+     "name_zh": "天樞",
+     "code": "ST25"
+    }
+   ],
+   "acupoint_protocol_evidence": {
+    "protocol_status": "postoperative_only",
+    "point_rationale_zh": "足三里、天樞健運脾胃、促進腸道蠕動恢復;內關和胃降逆止嘔;合谷鎮痛。此組穴僅用於腹腔鏡闌尾切除術後之腸胃功能恢復與疼痛/噁心輔助緩解,並非治療闌尾炎本身。",
+    "point_rationale_en": null,
+    "evidence_note_zh": "闌尾炎屬外科急症,診斷確立後手術(闌尾切除術)仍為標準且首要治療,針灸不具有治療闌尾炎本身之角色。檢索僅找到術後輔助相關證據:(1) AcuLap三臂隨機對照試驗研究計畫(Meng et al. 2015, Trials)設計以電針足三里等穴促進腹腔鏡闌尾切除術後排氣、減輕疼痛,對照假針與空白對照組,但檢索範圍內僅查得研究計畫論文,未查得正式結果數據;(2) 一篇回顧性臨床研究顯示雷射針灸輔助術後腸胃功能恢復,較早排氣排便、疼痛分數較低、併發症較少,但為回顧性設計、非隨機對照。整體證據等級低,僅列為術後輔助(postoperative_only),不涉及闌尾炎急性期本身之治療;闌尾炎確診或高度懷疑時仍須以外科評估與手術為首要且緊急處置,不可以針灸替代或延誤手術時機。",
+    "treatment_parameters": {
+     "manual_or_electroacupuncture": "electroacupuncture(AcuLap研究計畫)/ laser acupuncture(回顧性研究)",
+     "frequency": null,
+     "session_duration": null,
+     "treatment_course": "術後急性恢復期(數日內)"
+    },
+    "scope_conflict_note": "針灸僅適用於闌尾切除術後之腸胃功能恢復與症狀輔助緩解,絕非闌尾炎急性期之替代治療;疑似闌尾炎應立即轉外科評估。",
+    "sources": [
+     {
+      "source_id": "S1",
+      "type": "rct_protocol",
+      "citation": "Meng ZQ, et al. Electroacupuncture for postoperative pain and gastrointestinal motility after laparoscopic appendectomy (AcuLap): study protocol for a randomized controlled trial. Trials. 2015;16:451.",
+      "url": "https://doi.org/10.1186/s13063-015-0981-x",
+      "pmid_or_doi": "PMID: 26466590; DOI: 10.1186/s13063-015-0981-x",
+      "modality": "electroacupuncture",
+      "comparator": "假電針/空白對照",
+      "certainty": "very low(僅查得研究計畫論文,未查得正式結果論文)",
+      "finding_zh": "研究計畫階段,主要結果為術後首次排氣時間;檢索範圍內未查得最終結果數據。"
+     },
+     {
+      "source_id": "S2",
+      "type": "retrospective_study",
+      "citation": "Impact of laser acupuncture on gastrointestinal function recovery in patients after acute appendicitis surgery: a retrospective clinical study.",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12188549/",
+      "pmid_or_doi": "PMC12188549",
+      "modality": "laser acupuncture",
+      "comparator": "標準術後照護",
+      "certainty": "low(回顧性研究,非隨機對照)",
+      "finding_zh": "雷射針灸輔助組較早排氣排便、疼痛分數較低、併發症較少,但屬回顧性設計,證據等級有限。"
+     }
+    ],
+    "collected_by": "pilot batch 2026-08-24",
+    "no_source_found": false
+   }
   },
   {
    "id": "cond.acute_pancreatitis",
@@ -59046,7 +59336,62 @@
     ],
     "acupuncture_scope_en": [
      "AcuTing OS Disease Knowledge Research Pack — Batch H GI/Liver"
+    ],
+    "herb_formulas": [
+     "中國臨床常見以大柴胡湯/清胰湯類方為基礎之中藥輔助療法用於急性胰臟炎(肝膽濕熱/腑實證,大承氣湯用於腑實便秘/腸阻塞傾向),多作為西醫禁食、輸液、重症監護等標準治療之輔助,不可取代急性期之外科/消化科處置,故僅列4首明確作為輔助之方劑,不列完整內科方劑清單。"
     ]
+   },
+   "herb_formulas": [
+    "大柴胡湯",
+    "茵陳蒿湯",
+    "龍膽瀉肝湯",
+    "大承氣湯"
+   ],
+   "acupoint_protocols": [
+    {
+     "name_zh": "足三里",
+     "code": "ST36"
+    },
+    {
+     "name_zh": "支溝",
+     "code": "TE6"
+    },
+    {
+     "name_zh": "內關",
+     "code": "PC6"
+    },
+    {
+     "name_zh": "合谷",
+     "code": "LI4"
+    }
+   ],
+   "acupoint_protocol_evidence": {
+    "protocol_status": "adjunct_only",
+    "point_rationale_zh": "足三里、支溝為文獻中實證電針配穴,通調腸腑、緩解麻痺性腸阻塞相關腹脹腹痛;內關和胃降逆止嘔;合谷鎮痛。此組穴僅作為急性胰臟炎合併麻痺性腸阻塞之輔助症狀緩解,並非治療胰臟炎本身。",
+    "point_rationale_en": null,
+    "evidence_note_zh": "隨機對照試驗(Li J et al. 2016,發表於中國針灸期刊)納入140名重症急性胰臟炎合併麻痺性腸阻塞患者,電針足三里(ST36)+支溝(TE6),每日一次、每次30分鐘、連續5天,相較常規治療組,顯著降低腹脹與腹痛評分。惟此為單一中文期刊RCT,雖樣本具一定規模(n=140),但缺乏獨立系統性回顧或國際多中心重複驗證,故列為輔助(adjunct_only)而非'supported'。此療法僅用於緩解腸阻塞相關腹脹腹痛等症狀,急性胰臟炎本身(尤其重症/壞死性胰臟炎)仍須以西醫禁食、輸液、疼痛控制、監測器官功能,必要時外科/內視鏡介入為主要且緊急治療,針灸不可取代或延誤上述處置。",
+    "treatment_parameters": {
+     "manual_or_electroacupuncture": "electroacupuncture",
+     "frequency": "每日一次",
+     "session_duration": "30分鐘",
+     "treatment_course": "連續5天"
+    },
+    "scope_conflict_note": "針灸僅為重症急性胰臟炎合併腸阻塞之輔助症狀緩解手段,絕非胰臟炎本身之治療,必須在西醫重症團隊監控下進行,不可替代或延誤標準治療。",
+    "sources": [
+     {
+      "source_id": "S1",
+      "type": "rct",
+      "citation": "Li J, Zhao Y, Wen Q, Xue Q, Lv J, Li N. Electroacupuncture for severe acute pancreatitis accompanied with paralytic ileus: a randomized controlled trial. Zhongguo Zhen Jiu (Chinese Acupuncture & Moxibustion). 2016;36(11):1126-1130.",
+      "url": "https://doi.org/10.13703/j.0255-2930.2016.11.002",
+      "pmid_or_doi": "PMID: 29231293; DOI: 10.13703/j.0255-2930.2016.11.002",
+      "modality": "electroacupuncture",
+      "comparator": "常規治療組(未加電針)",
+      "certainty": "low-moderate(單一RCT,n=140,未經獨立系統性回顧驗證)",
+      "finding_zh": "電針足三里+支溝顯著減輕重症急性胰臟炎合併麻痺性腸阻塞患者之腹脹與腹痛評分。"
+     }
+    ],
+    "collected_by": "pilot batch 2026-08-24",
+    "no_source_found": false
    }
   },
   {
