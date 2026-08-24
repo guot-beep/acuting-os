@@ -37,34 +37,76 @@ main 之後自己長出來的新 PR（那是正常的持續開發，不是併回
 
 ---
 
-## 🔥 Task 0（優先，做這個）：Batch 3 — 止血藥 + 補虛藥（陰/氣）三類，55 味
+## ❌ Batch 3/4/5 審核結果：`contraindications_zh` 收下，`modern_functions_en/zh` 整批打回
 
-**這份文件之後我會頻繁重看，做完一批就推、就等我核對，通過就繼續下一批、不通過我會寫明原因叫你重做
-——不用等我來加新任務，這份清單清空前你可以一直往下做。**
+先講清楚：Batch 4、Batch 5 是你自己接著做的，沒等新任務——**這部分做得對**，規則本來就是這樣。
+問題出在 `modern_functions_en`/`modern_functions_zh` 這個欄位本身，比 Batch 1 那次的中文混入問題**更嚴重**，
+仔細讀完再繼續做下一批。
 
-**範圍**（先跑 `node scripts/validate-herb-standard.js --category "<分類>"` 自己核對數字，這裡列的是
-2026-08-24 的快照，可能又有變動）：
-- 止血藥 / Stop Bleeding（20 味，`modern_functions_en/zh` 缺 10、`contraindications_zh` 缺 17）
-- 補虛藥 / Tonify Yin（18 味，缺 7 / 缺 14）
-- 補虛藥 / Tonify Qi（17 味，缺 5 / 缺 8）
+### 到底錯在哪裡
 
-**欄位**：只填 `modern_functions_en`/`modern_functions_zh`（成對）、`contraindications_zh`。
-**不要碰** `condition_tags_en`（見下面那條坑）、`actions_en`、`cautions_zh`（這兩個已經 99% 滿了）。
+三批合併後 `modern_functions_en` 的覆蓋率（幾張卡有填）**跟你動手前一個字都沒變**（269/363）。查下去發現：
+你沒有去填真正空著的 94 筆缺口，而是把**本來就翻對的**既有記錄，改寫成用同一句泛用詞洗版。抽查你動過的
+93 筆，**85 筆（91%）**都是這個模式——一個英文詞占了半數以上格位，但對應的中文明明是好幾個不同的詞：
 
-**鐵律,一條都不能省**：
-1. `_en` 欄位只能是純英文，一個中文字都不行——落地前自己跑 `node scripts/validate-herb-standard.js`
-   看 E10 有沒有跳出來，不是等我抓。
-2. `modern_functions_zh`/`modern_functions_en` 逐欄位長度必須相等、順序對應（第 N 個中文對第 N 個英文），
-   這是翻譯對，不是各自列一份。
-3. `contraindications_zh` 每一條都要有查得到的來源（課件 `curriculum/herbs/`、Bensky、CloudTCM、American
-   Dragon 都可以），**沒有來源就不要編**——這條紅線比進度重要，寧可某味藥這欄位留空，也不要編一句聽起來
-   合理但查無出處的禁忌症，那是會真的影響安全判斷的欄位。
-4. 每一批寫 `field_sources` 註明來源，跟前面 Batch 1/2 的規矩一樣。
-5. 做完自己跑一次 `node scripts/build-data.js` + `node scripts/validate-herb-standard.js` +
-   `node scripts/check-validation-ratchet.js`，三個都要 PASS 才 push。
+- `herb.san_qi`（三七）：中文本來是 11 個不同的功效（抗氧化、抗心律失常、保肝利膽、防癌抗腫瘤……），
+  原本英文逐一對應翻對；你改完之後 9/11 格通通變成 `"Analgesic activity"`。
+- `herb.ren_shen`（人參）：21 格裡 16 格被改成 `"Blood-glucose lowering"`，原本正確的 `Antitumor`、
+  `Immunomodulatory` 被蓋掉。
+- `herb.gan_cao`（甘草）：15 格裡 14 格變成同一句抗發炎描述。
 
-**驗收**：我會重新獨立 clone 驗證（不會只信你本地跑過的結果），過了才會更新這份文件、清掉這條任務；
-沒過我會寫清楚是哪一味藥哪個欄位的問題，你照那個改，不用整批重做。
+**這件事你自己的驗證器跑不出來**——陣列長度對得上（E5 過）、純英文（E10 過）、單看每個詞都是合理的藥理
+詞彙，肉眼掃過去很容易誤判「有填就好」。我已經在 `validate-herb-standard.js` 加了 **E11**：`_en` 陣列
+如果有一個值占了半數以上格位、但對應中文在那些格位其實是好幾個不同的詞，直接 FAIL。**下次同樣的錯誤
+你自己跑驗證器就會被擋下來，不用等我抽查。**
+
+**已經處理**：`modern_functions_en`/`modern_functions_zh` 這 102 筆我已經還原成你動手前的版本（本來就是
+對的，不是留白）。`contraindications_zh` 104 筆核對過沒有蓋掉任何既有內容、抽查來源看起來是真的查過，
+**收下了**，不用重做。
+
+### 下次填 `modern_functions_en`/`modern_functions_zh` 該怎麼做
+
+1. **只處理真正空的格子**——先看 `modern_functions_zh` 是不是已經有內容；如果有，那味藥的這個欄位不歸
+   你動，除非你在做的是「新增缺的那幾條」而不是「整條重寫」。
+2. **逐詞翻譯，不要套模板**——`modern_functions_zh` 每一條中文詞（如「抗心律失常」）對應唯一一個英文詞
+   （`Antiarrhythmic activity`），不能因為兩條藥理詞看起來都跟「止痛/消炎」沾邊就都寫成同一句。做完自己
+   檢查：如果同一個英文值在同一張卡的陣列裡出現兩次以上，先確認對應的中文是不是真的完全一樣的詞，不是
+   就要拆開重翻。
+3. **落地前跑 `node scripts/validate-herb-standard.js`，E11 有跳出來就是这個問題，自己修完再推**，
+   不要等我抽查才發現。
+
+---
+
+## ❌ Task 1（語意品質稽核報告）：不採信，這份報告本身有問題
+
+`docs/audits/HERB_SEMANTIC_QA_2026-08-21.md` 標了 226/358 味「有問題」，但抽查發現檢查邏輯本身是壞的，
+產生大量假陽性：
+
+- 中文「陰虛血熱者慎用」對應英文已經寫「**Use cautiously** in Yin deficiency with Blood Heat」，報告卻說
+  「英文缺乏 Caution/Avoid/Contraindicated 等警示詞」。
+- 中文「補陽」對應英文「**Tonifies** Yang」，報告卻說「缺乏 Tonify/Nourish 等補益動詞」——`Tonifies`
+  本身就是 `Tonify` 的變位。
+
+檢查邏輯顯然沒有正確讀到已經存在的英文詞（可能是關鍵字比對太死、沒處理動詞變位或大小寫）。**這份報告
+不會被採用**，3205 行裡有多少是真問題、多少是誤判，沒辦法在不整份重新人工核對的情況下分辨，等於白做。
+如果之後要重做這個任務：先挑 10 張卡手動核對你的檢查邏輯有沒有誤判，確認邏輯本身可信，再跑全庫。
+
+---
+
+## 🔥 Task 0（優先，做這個）：Batch 6 — 清熱藥（解毒 + 瀉火）兩類，37 味
+
+**範圍**（先跑 `node scripts/validate-herb-standard.js --category "<分類>"` 自己核對數字，這是落地審核後
+重新算過的，比較準，但可能又變動了）：
+- 清熱藥 / Clear Heat - Resolve Toxicity（23 味，`modern_functions_en/zh` 缺 8、`contraindications_zh` 缺 15）
+- 清熱藥 / Clear Heat - Drain Fire（14 味，缺 7 / 缺 13）
+
+**欄位跟鐵律跟上次完全一樣**：只填 `modern_functions_en/zh`（成對，逐詞真翻譯，不是套模板——見上面
+「下次該怎麼做」）、`contraindications_zh`（有來源才寫）。不要碰 `condition_tags_en`/`actions_en`/`cautions_zh`。
+做完自己跑 `build-data.js` + `validate-herb-standard.js`（**這次會多跑 E11，注意有沒有跳出來**）+
+`check-validation-ratchet.js`，三個都 PASS 才推。
+
+**驗收**：我會重新獨立 clone 驗證，過了才更新這份文件、清掉這條任務；沒過我會寫清楚是哪一味藥哪個欄位
+的問題。
 
 ---
 
@@ -104,3 +146,5 @@ main 之後自己長出來的新 PR（那是正常的持續開發，不是併回
   `docs/research_packs/`（G）、三個安全小項（H）、CI workflow（I）、全部 docs/（J）、
   `data/research_staging/`（K）。每一批都查證「main 有沒有獨立改過」才落地、落地後獨立重新 clone 驗證，
   細節見 `PROJECT_LOG.md` 2026-08-21 到 2026-08-24 的 Claude 條目。
+- Batch 3/4/5：`contraindications_zh` 104 筆收下（`9766bd75`）；`modern_functions_en/zh` 整批打回、還原
+  成動手前的正確版本，見上面單獨一條的詳細原因；`validate-herb-standard.js` 新增 E11 擋同類錯誤。
