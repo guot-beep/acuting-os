@@ -115,28 +115,50 @@ Dragon 網址。`modern_functions_en/zh` 284→309、`contraindications_zh` 271�
 沒有假裝查證過，這個誠實習慣很好，繼續保持。`modern_functions_en/zh` 309→320、`contraindications_zh`
 276→307。E10/E11 乾淨，三個驗證器全 PASS，獨立重新 clone 驗證過。
 
-## 🔥 Task 0（優先，做這個，這是這條線最後一批）：Batch 9 — 掃剩下全部分類，43 + 56 缺口
+## ✅ Batch 9 通過，收下了（`0356921d`）——Task 0 這條線正式收工
 
-**範圍**：`modern_functions_en/zh` 全庫只剩 **43 筆缺口**、`contraindications_zh` 只剩 **56 筆缺口**，
-散在 21 個分類裡，都不大（最大的分類 `利水滲濕藥`/`收澀藥` 各缺 7 筆 `modern_functions`）。這批不分類別，
-**直接跑 `node scripts/validate-herb-standard.js --worklist` 把兩個欄位還缺的藥全部列出來，一次掃完**，
-不用像前幾批分類處理。做完這批，這兩個欄位在全庫等於填滿（能填的都填了，查無來源的本來就該留空）。
+`contraindications_zh` 56 筆全部有 `field_sources`，`modern_functions_en/zh` 94%（341/363）。查證重點：
+56 筆新增的 `contraindications_zh` **全部引用同一串逐字相同的來源**（跟前幾批各藥各自不同措辭不一樣），
+先當可疑處理，直接查了 2 味藥的來源原文：`herb.mai_ya`（麥芽）「授乳期婦女禁用」對上來源第 995 行
+"Inhibits lactation"；`herb.da_huang`（大黃）「孕婦、月經期及哺乳期慎用」對上第 410 行 "Caution: Weak,
+Pregnant, Nursing"——都吻合，內容本身逐藥不同、具體，不是 batch3-5 那種佔位句灌爆。E10/E11 乾淨，
+`build-data.js`/`validate-herb-standard.js`/`check-validation-ratchet.js`/`validate-content-junk.js`
+四個都 PASS，`condition_tags_en`/`actions_en`/`cautions_zh` 逐筆核對 0 異動，獨立重新 clone 驗證過。
+**收下，但下次記一件事**：如果同一味藥的引用是三個來源合併成一串，之後沒辦法回頭核對哪一句對應哪個
+出處——下一批如果又要引用多個來源，請針對該藥實際查到的那一個/兩個來寫，不要每筆都貼同一串固定文字，
+就算三個來源都真的查過也一樣，寫法上要看得出「這句話是從哪一個查到的」。
 
-**欄位跟鐵律跟前幾次完全一樣**：只填 `modern_functions_en/zh`（成對，逐詞真翻譯，不是套模板）、
-`contraindications_zh`（有來源才寫，查無來源就留白，不要用「大概是這樣」的猜測湊數——這是最後一批，
-剩下的多半是比較冷門的藥，來源比前幾批更難找，遇到查無來源的藥不要硬填）。不要碰
-`condition_tags_en`/`actions_en`/`cautions_zh`。做完自己跑 `build-data.js` +
-`validate-herb-standard.js`（E10/E11 都要乾淨）+ `check-validation-ratchet.js`，三個都 PASS 才推，
-記得補 `PROJECT_LOG.md` 條目。
+## 🔥 Task 2（優先，做這個）：related_formulas + safety_source_url 全庫掃缺口
 
-**來源清單（Batch 3 講過，這裡重複一次，不要漏）**：`curriculum/herbs/`（課件，含
-`materia_medica_abbreviated_chenoweth.md`）、Bensky、CloudTCM、American Dragon
-（`americandragon.com`）、《台灣中藥典》、《中華人民共和國藥典》——你前幾批引用的都在這個範圍內，
-繼續用這些。查不到就是查不到，不要換一個沒查證過的網站硬湊一個來源欄位出來，寧可留空。
+Task 0（`modern_functions_en/zh` + `contraindications_zh`）已經收工，全庫 363 味最新覆蓋率：
+`actions_en` 99%、`cautions_zh` 99%、`modern_functions_en/zh` 94%、`contraindications_zh` **100%**、
+`related_formulas` 81%（缺 70 筆）、`safety_source_url` 72%（缺 101 筆）、`condition_tags_en` 46%
+（**還是不要碰**，見上面單獨一條）。
+
+**範圍**：`related_formulas`（缺 70 筆）+ `safety_source_url`（缺 101 筆），全庫不分類別，一樣先跑
+`node scripts/validate-herb-standard.js --worklist` 把兩個欄位還缺的藥列出來。
+
+**`related_formulas` 怎麼填**：這味藥出現在哪些方劑（`data/herbs/formulas.json`）的組成裡，
+**照方劑資料庫裡實際存在的用藥關係填，不要自己憑印象聯想**——用 `formulas.json` 裡
+`composition`/`herbs` 欄位反查這味藥被哪些 `formula.<id>` 用到，填那些 `formula.<id>`，不是自己編一個
+聽起來合理的方名。查不到就留空。
+
+**`safety_source_url` 怎麼填**：只填真實存在、可以打開驗證的網址（American Dragon、公開的藥典線上版、
+NCBAHM 考綱 PDF 之類），**不要編一個看起來像的網址**——這個欄位之後可能會被拿來做連結，假網址比空白
+更糟。查不到真實可驗證的網址就留空，不要用查無來源的猜測湊數。
+
+不要碰 `condition_tags_en`/`actions_en`/`cautions_zh`/`modern_functions_en/zh`/`contraindications_zh`
+（這幾個已經滿了或本輪不動）。做完自己跑 `build-data.js` + `validate-herb-standard.js`（E10/E11 乾淨）+
+`check-validation-ratchet.js` + `validate-content-junk.js`，四個都 PASS 才推，記得補 `PROJECT_LOG.md`
+條目，commit message 附實際改動的筆數（跟指派時的缺口數字要對得上）。
+
+**來源清單（沿用前幾批）**：`curriculum/herbs/`（課件，含 `materia_medica_abbreviated_chenoweth.md`）、
+Bensky、CloudTCM、American Dragon（`americandragon.com`）、《台灣中藥典》、《中華人民共和國藥典》、
+`data/herbs/formulas.json`（`related_formulas` 專用，查用藥關係）。查不到就是查不到，不要換一個沒查證
+過的網站硬湊一個來源欄位出來，寧可留空。
 
 **驗收**：我會重新獨立 clone 驗證，過了才更新這份文件、清掉這條任務；沒過我會寫清楚是哪一味藥哪個欄位
-的問題。這批做完後，我會重新盤點整個中藥庫還有哪些欄位值得繼續（`related_formulas`/`safety_source_url`
-之類），到時候再指派下一輪。
+的問題。
 
 ---
 
@@ -178,3 +200,5 @@ Dragon 網址。`modern_functions_en/zh` 284→309、`contraindications_zh` 271�
   細節見 `PROJECT_LOG.md` 2026-08-21 到 2026-08-24 的 Claude 條目。
 - Batch 3/4/5：`contraindications_zh` 104 筆收下（`9766bd75`）；`modern_functions_en/zh` 整批打回、還原
   成動手前的正確版本，見上面單獨一條的詳細原因；`validate-herb-standard.js` 新增 E11 擋同類錯誤。
+- Batch 9（`0356921d`）：`contraindications_zh` 276→**363（100%）**、`modern_functions_en/zh` 309→341
+  （94%），Task 0 這條線收工，詳見上面單獨一條。

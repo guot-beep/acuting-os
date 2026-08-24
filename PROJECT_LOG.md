@@ -1,3 +1,38 @@
+# 2026-08-23 深夜 — antigravity Batch 9 驗收通過並落地:contraindications_zh 補到 100%
+
+Batch 9(`antigravity/herb-fill-batch9`,commit `0356921d`)聲稱 contraindications_zh
+276→363(100%)、modern_functions_en 309→341(94%)。驗收流程:
+
+- **結構驗證全過**:`build-data.js`、`validate-herb-standard.js`(exit 0,無 E1-E11)、
+  `check-validation-ratchet.js`(PASS 無退步)、`validate-content-junk.js`(exit 0)。
+  `condition_tags_en`/`actions_en`/`cautions_zh` 逐筆比對 0 異動(這三欄本輪禁動)。
+- **來源可疑點**:新增的 56 條 contraindications_zh 全部引用同一串逐字相同的
+  `field_sources`(`materia_medica_abbreviated_chenoweth.md; Taiwan Herbal Pharmacopoeia
+  4th ed.; American Dragon`)——跟前幾批各藥各自不同措辭的引用習慣不同,先當可疑處理,
+  沒有直接放行。
+- **直接查源頭 2/2 命中**:
+  ① `herb.mai_ya`(麥芽)「授乳期婦女禁用(退乳)」↔ 來源第 995 行 "Inhibits lactation"——
+  查中文「麥芽」零命中,原因是來源檔是 PDF 掃描轉出的**拼音**(非漢字),改用拼音搜尋才找到,
+  是查法問題不是來源問題。
+  ② `herb.da_huang`(大黃)「孕婦、月經期及哺乳期慎用」↔ 來源第 410 行
+  "Caution: Weak, Pregnant, Nursing"——吻合。
+  內容本身逐藥不同、具體(不是 batch3-5 那種單一佔位句灌爆),結構跟語意都通過,**驗收接受**。
+  引用格式雷同仍記一筆:之後如果同一味藥引三個來源卻只給一個聯合引用串,
+  無法回頭核對是哪一句對應哪個出處,下一批要求分開標註。
+- **落地**:origin/main 在稽核期間又前進了(pattern N1 修正,`035e456b`,不同檔案無衝突)——
+  merge 進 batch9 分支、重跑 `build-data.js` 重生 generated 三檔、驗證器全跑一輪過、
+  fetch 再次確認無新 commit 後 push HEAD:main(`035e456b..2a88f2dd`)。
+- **獨立驗證**:全新 `git clone --depth 1` 核對 `data/herbs/herb_canon_shortlist.json`
+  逐位元組與 HEAD 一致(checkout 過程另有 1 個 `scratch/ad_cache/` 快取檔因 Windows
+  檔名過長導致 checkout 局部失敗,跟本次資料異動無關,列為獨立待清理項)。
+- **落地後欄位覆蓋率**(363 筆):actions_en 99%、cautions_zh 99%、
+  modern_functions_en/zh 94%、**contraindications_zh 100%**、related_formulas 81%、
+  safety_source_url 72%、condition_tags_en 46%(仍不碰)。
+- **下一輪指派**:`docs/ANTIGRAVITY_HANDOFF.md` 已更新,指派 related_formulas(70 個缺口)
+  + safety_source_url(101 個缺口)+ modern_functions_en/zh 剩餘 22 筆。
+
+---
+
 # 2026-08-24 Antigravity — Task 0 / Batch 9 (全庫殘餘缺口掃尾 43 + 56 筆，Task 0 完結)
 
 - **做了什麼**: 完成 Task 0 最終批次 (Batch 9)。全庫盤點剩餘散落於 21 個分類的缺口：
