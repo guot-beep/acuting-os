@@ -4,6 +4,15 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>AcuTing OS</title>
+    <!-- 品牌字型：永不阻塞。preload 提前抓、media="print" 讓 stylesheet 不進
+         script-blocking 集合，js/fonts.js 在「載完之後」才翻成 all——被翻轉的
+         sheet 永遠不是 in-flight，不可能重演 #80/#91 的 12 秒凍結。
+         不變式：不准把 media="print" 改成 all、不准把 preload 改成 rel=stylesheet。 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;600;700&family=Noto+Sans+TC:wght@400;500;600;700&display=swap" />
+    <link id="brandFont" rel="stylesheet" media="print" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;600;700&family=Noto+Sans+TC:wght@400;500;600;700&display=swap" />
+    <script defer src="js/fonts.js"></script>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -1019,7 +1028,19 @@
       .boot-reload { background: none; border: none; padding: 0; color: var(--accent-dark, #515f3e); text-decoration: underline; cursor: pointer; font: inherit; }
     </style>
 <script defer src="data/generated/app_data.js"></script>
-    <script defer src="data/generated/knowledge_data.js"></script>
+    <!-- 知識庫六分片（P1 快取粒度分包）：Object.assign 合流到同一個
+         globalThis.ACUTING_KNOWLEDGE，片與片之間順序無關——但六片全部
+         必須排在 app.js 與 js/knowledge.js 之前：js/knowledge.js 在 IIFE
+         頂端一次性捕捉 const K，晚到的鍵它永遠看不到（缺片時各線 `|| []`
+         會把空 grid 吞成無聲空白；app.js 的 dataLoadGuard 靠 core 片的
+         __expected 清單抓缺片）。重排這個區塊前先讀 scripts/build-data.js
+         的 KNOWLEDGE_PARTS 註解。 -->
+    <script defer src="data/generated/knowledge_core.js"></script>
+    <script defer src="data/generated/knowledge_ref.js"></script>
+    <script defer src="data/generated/knowledge_rx.js"></script>
+    <script defer src="data/generated/knowledge_mm.js"></script>
+    <script defer src="data/generated/knowledge_dx.js"></script>
+    <script defer src="data/generated/knowledge_pat.js"></script>
     <script defer src="data/generated/cloudtcm_map.js"></script>
     <script defer src="data/generated/points_361.js"></script>
     <script defer src="data/tung/point_index.js"></script>
@@ -1035,7 +1056,11 @@
     <script defer src="app.js"></script>
     <script defer src="js/router.js"></script>
     <script defer src="js/knowledge.js"></script>    <script type="module">
-      /* module scripts 排在所有 defer script 之後執行——執行到這裡代表知識庫已掛好。 */
+      /* module scripts 排在所有 defer script 之後執行——執行到這裡代表所有
+         defer 都「被嘗試過」，不保證都成功（失敗的 defer 不會擋住後面的
+         script）。是否真的載到由 app.js 的 dataLoadGuard 判定並以紅 banner
+         點名；overlay 照樣收起——診間半途卡全螢幕 loading 比帶警示的可用
+         app 更糟。 */
       document.getElementById("bootOverlay")?.classList.add("done");
     </script>
 

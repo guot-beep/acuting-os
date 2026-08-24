@@ -115,13 +115,33 @@ jobs:
         run: node scripts/build-data.js
 
       # If build-data changed a generated file, the PR is missing a rebuild.
+      # data/tung 與 data/auricular 也在範圍內（2026-08-24）：build-data 會寫
+      # 那裡的三顆 JS twin（point_index.js / gb93_index.js / gb93_worklist.js），
+      # 先前 gate 只看 data/generated，twin 可以相對 JSON 正本過期而 CI 全綠。
       - name: generated data is committed and current
         run: |
-          if ! git diff --quiet -- data/generated data/quality; then
-            echo "::error::data/generated or data/quality is stale — run 'node scripts/build-content-quality-overlay.js && node scripts/build-data.js' and commit the result."
-            git --no-pager diff --stat -- data/generated data/quality
+          if ! git diff --quiet -- data/generated data/quality data/tung data/auricular; then
+            echo "::error::generated data is stale — run 'node scripts/build-content-quality-overlay.js && node scripts/build-data.js' and commit the result."
+            git --no-pager diff --stat -- data/generated data/quality data/tung data/auricular
             exit 1
           fi
+
+      # P1 分包（2026-08-24）：六片 Object.assign 合流必須逐鍵位元組等於單體
+      # （單體暫時雙寫當對照組；P1-E 移除單體後這支降級為分片自洽證明）。
+      - name: knowledge shards are lossless
+        run: node scripts/validate-knowledge-parts.js
+
+      # P0 字型不阻塞的四條不變式（2026-08-24）：外部 @import 禁令、跨網域
+      # stylesheet 必須 media="print"、inline classic script 禁令、fonts.js
+      # 翻轉驅動完整性。同一機制（in-flight stylesheet 擋 script）已復發過
+      # 兩次（#80/#91），從註解升級成會 exit 1 的守衛。
+      - name: render-blocking invariants (fonts never freeze the app)
+        run: node scripts/validate-render-blocking.js
+
+      # build-site 先前只在 wrangler 部署時跑，CI 完全不執行——它的 ref-scan
+      # 守衛（STANDALONE 頁引用掃描、curriculum 隔離）不進 CI 等於沒有守衛。
+      - name: dist builds and ref-scan guards run
+        run: node scripts/build-site.js
 
       - name: app.js parses
         run: node --check app.js

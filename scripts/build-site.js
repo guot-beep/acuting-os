@@ -21,17 +21,23 @@ const ROOT = path.join(__dirname, "..");
 const OUT = path.join(ROOT, "dist");
 const ENTRY = "index.html";
 
-const html = fs.readFileSync(path.join(ROOT, ENTRY), "utf8");
-const refs = [...html.matchAll(/(?:src|href|poster)="([^"]+)"/g)]
-  .map((m) => m[1])
-  .filter((u) => !/^(https?:)?\/\//.test(u) && !u.startsWith("#") && !u.startsWith("data:") && !u.startsWith("javascript:") && !u.startsWith("mailto:"));
-
 // previsit.html is a self-contained page deliberately NOT referenced by
 // index.html — the ref-scan alone would leave it out of dist/, and with
 // wrangler's single-page-application fallback a patient opening the previsit
 // link would silently get the ENTIRE clinical workstation instead of a 404.
 // (UI/UX P1#1, 2026-08-23.)
 const STANDALONE = ["previsit.html"];
+
+// ref-scan 掃 ENTRY ＋每個 STANDALONE 頁自身（2026-08-24）：previsit 引用的
+// knowledge_core.js 先前會進 dist 純粹因為 index.html 也剛好引用同一顆——
+// 哪天 previsit 改引別片，dist 就少檔，而 wrangler 的 SPA fallback 會把 404
+// 變成 200 + index.html 的 HTML，<script> 拿到 HTML 是 SyntaxError，previsit
+// 靜默退回 FALLBACK_PROMPTS，沒有任何錯誤。掃每一頁自己的引用，缺檔就不可能。
+const scanRefs = (page) =>
+  [...fs.readFileSync(path.join(ROOT, page), "utf8").matchAll(/(?:src|href|poster)="([^"]+)"/g)]
+    .map((m) => m[1])
+    .filter((u) => !/^(https?:)?\/\//.test(u) && !u.startsWith("#") && !u.startsWith("data:") && !u.startsWith("javascript:") && !u.startsWith("mailto:"));
+const refs = [ENTRY, ...STANDALONE].flatMap(scanRefs);
 const files = [...new Set([ENTRY, ...STANDALONE, ...refs])];
 
 /* The "curriculum/ stays behind" promise in the header was never enforced — it

@@ -133,7 +133,14 @@ const documentStub = {
   body: makeDomStub()
 };
 
-new Function(fs.readFileSync(path.join(ROOT, "data/generated/knowledge_data.js"), "utf8"))();
+// 分片載入走共用 lib；js/knowledge.js 稍後在本行程 eval，讀的是真 globalThis，
+// 所以把合流結果掛上去。讀不到 = 大聲失敗（維持原本 ENOENT 的響度），
+// 絕不讓這支變成 vacuous pass。
+{
+  const K = require("./lib/load-knowledge.js").loadKnowledge();
+  if (!K) { console.error("validate-condition-sources: 知識分片載入失敗 — 先跑 node scripts/build-data.js"); process.exit(1); }
+  globalThis.ACUTING_KNOWLEDGE = K;
+}
 // js/knowledge.js reads `contentMode` as a free variable — in the real app it
 // is `let contentMode = ...` at the top level of app.js, which in a browser
 // becomes a global lexical binding shared with sibling <script> tags like

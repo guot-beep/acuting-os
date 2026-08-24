@@ -205,8 +205,8 @@ const OUTCOME_INTERPRETATION_BADGES = {
 // only, never alert() — a config typo is a developer-facing bug to catch in
 // QA, not something a clinician using the app should ever see a popup
 // about. Runs once, synchronously, immediately after the array above:
-// index.html loads data/generated/knowledge_data.js (which sets
-// globalThis.ACUTING_KNOWLEDGE) before app.js, so getOutcomeMetricDef has
+// index.html loads the six knowledge shards knowledge_{core,ref,rx,mm,dx,pat}.js
+// (which merge into globalThis.ACUTING_KNOWLEDGE) before app.js, so getOutcomeMetricDef has
 // real data to check against from the very first line of this file — no
 // deferral to page-load events needed. A correctly-configured array (the
 // only state this repo should ever ship) produces zero console output.
@@ -232,6 +232,18 @@ if ((globalThis.ACUTING_KNOWLEDGE?.outcomeMetrics?.records || []).length > 0) {
   const missing = [];
   if (!globalThis.ACUTING_APP_DATA) missing.push("data/generated/app_data.js");
   if (!globalThis.ACUTING_POINTS_361) missing.push("data/generated/points_361.js");
+  // 知識分片（P1）：單片缺席時 ACUTING_KNOWLEDGE 仍存在，各渲染線的 `|| []`
+  // 會把缺片吞成「沒有錯誤的空 grid」——這裡把靜默劣化變回大聲失敗。
+  // __expected 清單由 build-data 寫進 core 片（單一出處，不會與這裡漂移）；
+  // core 自己缺席時先只報 core——它是最上游，其他片的登記簿就在它身上。
+  const kParts = globalThis.ACUTING_KNOWLEDGE_PARTS;
+  if (!kParts || !Array.isArray(kParts.__expected)) {
+    missing.push("data/generated/knowledge_core.js");
+  } else {
+    for (const name of kParts.__expected) {
+      if (!kParts[name]) missing.push("data/generated/knowledge_" + name + ".js");
+    }
+  }
   if (!missing.length) return;
   const banner = document.createElement("div");
   banner.className = "data-missing-banner";

@@ -31,9 +31,8 @@ let ADVICE = [], CLINIC = {};
 try { ADVICE = JSON.parse(fs.readFileSync(path.join(__dirname, "..", "data/config/avs_advice_library.json"), "utf8")).records || []; } catch {}
 try { CLINIC = JSON.parse(fs.readFileSync(path.join(__dirname, "..", "data/config/clinic_profile.json"), "utf8")); } catch {}
 
-// 知識庫(方劑/補充劑病人名):bundle 可載則用,不可載誠實略過
-let K = null;
-try { const g = {}; (new Function("globalThis", fs.readFileSync(path.join(__dirname, "..", "data/generated/knowledge_data.js"), "utf8") + ";"))(g); K = g.ACUTING_KNOWLEDGE; } catch { K = null; }
+// 知識庫(方劑/補充劑病人名):bundle 可載則用,不可載誠實略過(分片走共用 lib)
+const K = require("./lib/load-knowledge.js").loadKnowledge();
 const nameOf = (id) => {
   if (!K) return null;
   const pools = [K.formulas, K.supplementRecords, K.pharmDrugs, K.medications];

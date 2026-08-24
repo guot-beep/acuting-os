@@ -17,6 +17,11 @@
  *   E7 a template-grade record has no contraindications_zh (禁忌症)
  *   E8 a template-grade record's functions_zh is outside 2-6 curated actions
  *   E9 two records share the same id (variant-character duplicates)
+ *   E11 an _en tag array is index-aligned and pure English (passes E5/E10)
+ *      but one value dominates positions whose paired _zh values are
+ *      actually distinct — a generic placeholder standing in for real
+ *      per-term translation. Found 2026-08-24: antigravity batch3-5
+ *      overwrote 85/93 already-correct modern_functions_en arrays this way.
  *   E10 an _en field holds an item that is CJK with no Latin letters at all —
  *      copy-pasted from the _zh source instead of translated. Found 2026-08-20:
  *      batch1 herb fill validated 100% green while condition_tags_en /
@@ -169,6 +174,29 @@ for (const r of recs) {
     if (en.length && en.length !== zh.length) {
       flag(r, `E5 ${enF} 與 ${zhF} 長度不符 (${en.length} vs ${zh.length})`);
       errors.push(`E5 ${id}: ${enF} (${en.length}) is not index-aligned with ${zhF} (${zh.length}) — English would land on the wrong tag`);
+    }
+    if (en.length === zh.length && zh.length >= 3) {
+      // E11 (2026-08-24): batch3-5 overwrote 85/93 already-correct
+      // modern_functions_en arrays with one generic placeholder repeated —
+      // e.g. 三七's 11 DISTINCT zh terms (抗氧化/抗心律失常/保肝利膽/...)
+      // all became "Analgesic activity". E5 (length) and E10 (CJK) both
+      // passed — the array LOOKS structurally fine. The tell is: the zh
+      // side has real variety but one en value dominates positions whose
+      // zh values differ from each other, i.e. distinct concepts collapsed
+      // into one guess. A genuinely repetitive herb (the same real action
+      // named twice) has matching zh repetition at those positions too —
+      // that case is NOT flagged.
+      const counts = new Map();
+      en.forEach((v) => counts.set(v, (counts.get(v) || 0) + 1));
+      const [topVal, topCount] = [...counts.entries()].sort((a, b) => b[1] - a[1])[0];
+      if (topCount >= Math.ceil(en.length / 2)) {
+        const zhAtTop = en.map((v, i) => (v === topVal ? zh[i] : null)).filter(Boolean);
+        const distinctZhAtTop = new Set(zhAtTop).size;
+        if (distinctZhAtTop >= Math.min(3, topCount)) {
+          flag(r, `E11 ${enF} 被單一值「${topVal}」佔掉 ${topCount}/${en.length} 格,但對應 ${zhF} 有 ${distinctZhAtTop} 個不同詞`);
+          errors.push(`E11 ${id}: ${enF} has "${topVal}" repeated ${topCount}/${en.length} times but the paired ${zhF} values at those positions are ${distinctZhAtTop} distinct terms — looks like a generic placeholder replaced real per-term translation, not a genuinely repeated action`);
+        }
+      }
     }
     if (zh.length && !en.length) {
       missingEn[enF] = (missingEn[enF] || 0) + 1;

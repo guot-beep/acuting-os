@@ -46,7 +46,7 @@
     padding: 0;
     background: var(--paper);
     color: var(--ink);
-    font-family: "Microsoft JhengHei", "Noto Sans TC", "Segoe UI", Arial, sans-serif;
+    font-family: "Noto Sans TC", "PingFang TC", "Noto Sans CJK TC", "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
     font-size: 17px;
     line-height: 1.5;
   }
@@ -328,7 +328,10 @@
   <p class="footnote">本頁不會儲存任何資料，也不會連線到任何伺服器。This page stores nothing and never contacts any server.</p>
 </main>
 
-<script src="data/generated/knowledge_data.js"></script>
+<!-- 病人端只讀 outcomeMetrics 的六條 prompt——載 core 片（~0.2MB）就夠，
+     不用整顆知識庫（P1 分包前這裡同步拉 16MB，是全站最貴的一行）。
+     outcomeMetrics 永遠住 core 片：見 scripts/build-data.js KNOWLEDGE_PARTS。 -->
+<script src="data/generated/knowledge_core.js"></script>
 <script>
 (function () {
   "use strict";

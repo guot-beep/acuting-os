@@ -1,6 +1,9 @@
 /**
- * knowledge.js — renders real records from data/generated/knowledge_data.js
- * into the Formula, Condition, Sources, and Quality sections.
+ * knowledge.js — renders real records from the knowledge shards
+ * (data/generated/knowledge_{core,ref,rx,mm,dx,pat}.js) into the Formula,
+ * Condition, Sources, and Quality sections. The shards merge into ONE
+ * globalThis.ACUTING_KNOWLEDGE and `const K` below captures it once at eval —
+ * every shard <script> must stay ahead of this file in index.html.
  *
  * Source of truth: data/herbs/formulas.json, data/pathology/conditions.json,
  * data/sources/source_registry.json, data/audits/missing_report.json.
@@ -428,7 +431,7 @@
   if (!K) {
     ["formulaRecords", "herbRecords", "pharmRecords", "comparisonRecords", "conditionRecords", "sourceRegistry", "auditFileStrip"].forEach((id) => {
       const host = el(id);
-      if (host) host.innerHTML = '<p class="k-missing">⚠ knowledge_data.js 未載入（請確認檔案已同步後 Ctrl+F5）。</p>';
+      if (host) host.innerHTML = '<p class="k-missing">⚠ 知識分片（data/generated/knowledge_*.js）未載入（請確認檔案已同步後 Ctrl+F5）。</p>';
     });
     return;
   }
@@ -3663,7 +3666,7 @@
   // ---- Source registry -------------------------------------------------------
   const srcHost = el("sourceRegistry");
   if (srcHost) {
-    const sources = K.sources.sources || [];
+    const sources = (K.sources && K.sources.sources) || [];
     srcHost.innerHTML = `
       <div class="mini-heading">
         <strong>${esc(modeText(`Source Registry / 來源登記（${sources.length}）`, `Source Registry (${sources.length})`))}</strong>
@@ -3694,7 +3697,9 @@
   // ---- Quality: audit file summary -------------------------------------------
   const auditHost = el("auditFileStrip");
   if (auditHost) {
-    const a = K.audit;
+    // 分片後單鍵缺席不准把整個 IIFE 炸掉（openDetail 註冊在檔尾，這裡 throw
+    // 會讓全站搜尋開卡靜默失效）——與其他 K.* 讀取同款防衛。
+    const a = K.audit || {};
     const worst = Object.entries(a.channels || {})
       .filter(([, v]) => v.missing_count > 0)
       .sort((x, y) => y[1].missing_count - x[1].missing_count)
@@ -3703,7 +3708,7 @@
       .join(" · ");
     auditHost.innerHTML = `
       <div class="mini-heading">
-        <strong>Audit File / 缺漏稽核（${esc(a.generated_on)}）</strong>
+        <strong>Audit File / 缺漏稽核（${esc(a.generated_on || "")}）</strong>
         <span>來源：data/audits/missing_report.json</span>
       </div>
       <p class="k-meta">標準經穴 ${a.total_present}/${a.total_expected}，缺 ${a.total_missing}。${esc(worst)}</p>
