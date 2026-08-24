@@ -689,8 +689,11 @@
           <button class="icon-btn" value="cancel" type="button" id="closeCaseDialog" aria-label="關閉" data-mode-aria-label data-bilingual-aria-label="關閉" data-english-aria-label="Close">×</button>
         </div>
         <div id="caseDraftBanner" class="draft-banner" hidden></div>
+        <!-- 分區導航：晶片由 app.js 從表單自身的 .form-section 長出來（data-nav-label），
+             所以之後增刪區塊不必兩邊改。長表單在手機上要一路捲到底，這是唯一的解法。 -->
+        <nav id="caseSectionNav" class="section-jump" aria-label="病例表單分區導航"></nav>
         <div class="form-grid">
-          <fieldset class="form-section">
+          <fieldset class="form-section" data-nav-label="身分">
             <legend><span class="form-section-step">1</span>身分 Identity</legend>
             <label>Patient code<input name="patientCode" required placeholder="P-2026-001" /></label>
             <label>病例標題 Case title<input name="caseTitle" required placeholder="PCOS fertility support" /></label>
@@ -700,7 +703,7 @@
             <label>開始日期<input name="startDate" type="date" /></label>
           </fieldset>
 
-          <fieldset class="form-section">
+          <fieldset class="form-section" data-nav-label="背景">
             <legend><span class="form-section-step">2</span>背景 Background<small>穩定不變的底子，通常只填一次</small></legend>
             <label>出生年月 Birth (year-month)<input name="birthYearMonth" type="month" min="1900-01" max="2100-12" /></label>
             <label>出生時性別 Sex at birth<select name="sex"><option value="">—</option><option value="F">F 女</option><option value="M">M 男</option><option value="Other">Other</option></select></label>
@@ -718,7 +721,7 @@
             <label class="wide">詳細身分認同（選填）Detailed identity / self-description (optional)<input name="raceEthnicityDetail" placeholder="e.g. Chinese, Taiwanese, Korean, Filipino, Mexican, Iranian…" /></label>
           </fieldset>
 
-          <fieldset class="form-section">
+          <fieldset class="form-section" data-nav-label="主訴">
             <legend><span class="form-section-step">3</span>主訴與病史 Presenting problem</legend>
             <label class="wide">主訴 Chief complaint<textarea name="chiefComplaint" rows="2" placeholder="主要不適 + 病程長短"></textarea></label>
             <label>大約發病時間 Approx. onset<input name="onsetApprox" placeholder="YYYY / YYYY-MM / YYYY-MM-DD / unknown" /></label>
@@ -746,7 +749,7 @@
             <label class="wide">既往史 Past medical history<textarea name="pastHistory" rows="2" placeholder="慢性病、手術、家族史"></textarea></label>
           </fieldset>
 
-          <fieldset class="form-section">
+          <fieldset class="form-section" data-nav-label="診斷">
             <legend><span class="form-section-step">4</span>診斷與證型 Diagnosis &amp; patterns</legend>
             <label class="wide">西醫病名 Western conditions<textarea name="westernConditions" rows="2" placeholder="PCOS, unexplained infertility"></textarea></label>
             <label class="wide">中醫病名 Eastern diseases<textarea name="easternDiseases" rows="2" placeholder="不孕、月經後期"></textarea></label>
@@ -754,7 +757,7 @@
             <label class="wide">安全提醒 Safety flags<textarea name="safetyFlags" rows="2" placeholder="possible pregnancy, anticoagulant use, heavy bleeding, needle syncope"></textarea></label>
           </fieldset>
 
-          <fieldset class="form-section">
+          <fieldset class="form-section" data-nav-label="目標">
             <legend><span class="form-section-step">5</span>目標與摘要 Goal &amp; summary</legend>
             <label class="wide">就診目標 Goals（病人想改善什麼）<input name="goals" placeholder="想改善睡眠 / 助孕 / 減痛…" /></label>
             <label class="wide">摘要 Summary<textarea name="summary" rows="2"></textarea></label>
@@ -777,13 +780,14 @@
           <button class="icon-btn" value="cancel" type="button" id="closeSoapDialog" aria-label="關閉" data-mode-aria-label data-bilingual-aria-label="關閉" data-english-aria-label="Close">×</button>
         </div>
         <div id="soapDraftBanner" class="draft-banner" hidden></div>
+        <nav id="soapSectionNav" class="section-jump" aria-label="SOAP 表單分區導航"></nav>
         <div class="form-grid soap-form-grid">
-          <fieldset class="form-section soap-previous-visit">
+          <fieldset class="form-section soap-previous-visit" data-nav-label="上次">
             <legend><span class="form-section-step">«</span>上次就診 Previous visit<small>參考用，不會自動帶入 reference only, never auto-filled or copied</small></legend>
             <div id="previousVisitPanel" class="wide"></div>
           </fieldset>
 
-          <fieldset class="form-section">
+          <fieldset class="form-section" data-nav-label="脈絡">
             <legend><span class="form-section-step">1</span>就診脈絡 Visit context</legend>
             <label>Visit date<input name="visitDate" type="date" /></label>
             <label>Visit #<input name="visitNumber" type="number" min="1" /></label>
@@ -791,7 +795,7 @@
 
           <!-- 週期/生殖欄位(2026-08-11 Ting 指正):原本開頭就問且不分性別,
                生育科時代遺留。改為選填收合區,男性病例由 app.js 整段隱藏。 -->
-          <details class="form-section soap-cycle-section" id="soapCycleSection">
+          <details class="form-section soap-cycle-section" id="soapCycleSection" data-nav-label="週期">
             <summary>週期/生殖 Cycle & fertility<small>選填,僅相關病例需要</small></summary>
             <div class="form-grid">
               <label>Cycle day<input name="cycleDay" type="number" min="1" /></label>
@@ -801,14 +805,14 @@
             </div>
           </details>
 
-          <fieldset class="form-section soap-s">
+          <fieldset class="form-section soap-s" data-nav-label="S 主觀">
             <legend><span class="form-section-step">S</span>Subjective 主觀<small>病人說的</small></legend>
             <button type="button" class="ghost wide" id="pastePrevisitBtn" data-mode-text data-bilingual="貼上診前資料" data-english="Paste pre-visit intake">貼上診前資料 Paste pre-visit intake</button>
             <label class="wide soap-section">S - Subjective<textarea name="subjective" rows="5" placeholder="主訴、變化、疼痛、睡眠、情緒、消化、月經/不孕、西藥更新、red flags"></textarea></label>
             <label class="wide">Symptom links<textarea name="symptomLinks" rows="2" placeholder="sym.headache, sym.insomnia"></textarea></label>
           </fieldset>
 
-          <fieldset class="form-section soap-o">
+          <fieldset class="form-section soap-o" data-nav-label="O 客觀">
             <legend><span class="form-section-step">O</span>Objective 客觀<small>你看到、摸到的</small></legend>
             <label class="wide soap-section">O - Objective 望聞切<textarea name="objective" rows="3" placeholder="神色形態、望診、觸診、ROM、生命徵象、labs/imaging"></textarea></label>
             <label>舌質 Tongue body<input name="tongueBody" placeholder="淡紅 / 紅 / 淡白 / 紫暗；胖大 / 齒痕 / 裂紋" /></label>
@@ -817,7 +821,7 @@
             <label class="wide">生命徵象 Vitals<input name="vitals" placeholder="BP 120/80、HR 72、身高/體重、體溫（選填）" /></label>
           </fieldset>
 
-          <fieldset class="form-section soap-a">
+          <fieldset class="form-section soap-a" data-nav-label="A 辨證">
             <legend><span class="form-section-step">A</span>Assessment 辨證<small>四診合參與連結</small></legend>
             <label class="wide soap-section">A - Assessment 辨證<textarea name="assessment" rows="2" placeholder="四診合參、西醫診斷、安全判斷"></textarea></label>
             <label class="wide">主證型 Primary TCM pattern<small>搜尋選擇「一個」主證型 search, pick ONE</small><textarea name="tcmPatternPrimary" rows="1" placeholder="搜尋主證型…"></textarea></label>
@@ -829,7 +833,7 @@
             <label class="wide">Safety flag links<textarea name="safetyFlagLinks" rows="2" placeholder="safety.possible_pregnancy, safety.anticoagulant_use"></textarea></label>
           </fieldset>
 
-          <fieldset class="form-section soap-p">
+          <fieldset class="form-section soap-p" data-nav-label="P 治法">
             <legend><span class="form-section-step">P</span>Plan 治法處方<small>這次做了什麼、交代什麼</small></legend>
             <label class="wide soap-section">P - Plan 治法處方<textarea name="plan" rows="3" placeholder="整體治療計畫、homecare"></textarea></label>
             <label class="wide">治法 Treatment principle<input name="treatmentPrinciple" placeholder="疏肝健脾、滋陰降火…" /></label>
@@ -853,19 +857,19 @@
             <label class="wide">轉介/督導問題 Referral / supervisor question<textarea name="referralOrSupervisorQuestion" rows="2" placeholder="需要轉介、或想問督導的問題"></textarea></label>
           </fieldset>
 
-          <fieldset class="form-section soap-lifestyle">
+          <fieldset class="form-section soap-lifestyle" data-nav-label="生活">
             <legend><span class="form-section-step">L</span>生活型態 Lifestyle<small>本次就診觀察值，不自動轉證型 observation only — never auto-converted to a TCM pattern/tdis (D17 §6)</small></legend>
             <div id="lifestyleFactorRows" class="repeatable-rows wide"></div>
             <button class="ghost" type="button" id="addLifestyleFactorRow">+ 新增因子 Add factor</button>
           </fieldset>
 
-          <fieldset class="form-section soap-adverse-events">
+          <fieldset class="form-section soap-adverse-events" data-nav-label="不良反應">
             <legend><span class="form-section-step">AE</span>不良反應 Adverse events<small>治療反應與耐受度</small></legend>
             <div id="adverseEventRows" class="repeatable-rows wide"></div>
             <button class="ghost" type="button" id="addAdverseEventRow">+ 新增事件 Add event</button>
           </fieldset>
 
-          <fieldset class="form-section soap-outcome">
+          <fieldset class="form-section soap-outcome" data-nav-label="成效">
             <legend><span class="form-section-step">✓</span>成效與反思 Outcome &amp; reflection<small>回診時回填，學習迴路靠這段</small></legend>
             <label class="wide">Outcomes / changes<textarea name="outcomes" rows="2" placeholder="sleep +2, pain 7→4, LH positive, lining 8mm"></textarea></label>
             <label>成效判定 Outcome verdict<select name="outcomeVerdict">

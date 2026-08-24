@@ -858,6 +858,8 @@ const caseDialog = document.querySelector("#caseDialog");
 const caseForm = document.querySelector("#caseForm");
 const soapDialog = document.querySelector("#soapDialog");
 const soapForm = document.querySelector("#soapForm");
+const caseSectionNav = document.querySelector("#caseSectionNav");
+const soapSectionNav = document.querySelector("#soapSectionNav");
 // FIX A draft banner + FIX B submit-failure message line (both optional —
 // hidden by default in the markup, wired up further down).
 const caseDraftBanner = document.querySelector("#caseDraftBanner");
@@ -8844,7 +8846,10 @@ function openCaseEditor(item = null) {
   } else {
     renderDraftBanner(caseDraftBanner, null);
   }
+  renderFormSectionNav(caseForm, caseSectionNav);
   caseDialog.showModal();
+  // 首次標記必須在 showModal 之後 —— 之前對話框沒有版面,量不到位置。
+  if (caseForm.sectionNavMark) caseForm.sectionNavMark();
 }
 
 // Initial-intake Phase 2 (2026-08-09) — Category quick-pick ----------------
@@ -8912,6 +8917,95 @@ function renderRaceEthnicityOptions() {
 // whose value is in `values`; every other box in the group is explicitly
 // unchecked so re-opening the dialog on a different case never leaks a
 // previous case's selections into the group.
+/* 長表單分區導航(dry clinic #4)。SOAP 對話框內容高約 8500px、病例約 5250px ——
+ * 在手機上等於一路捲到底找欄位,而病人之間只有幾分鐘。
+ *
+ * 晶片從表單自身長出來(讀 .form-section 的 data-nav-label),所以之後增刪區塊
+ * 不必兩邊改;沒有 data-nav-label 就退回步驟標記(«/1/S/O/…),不會漏畫晶片。
+ * hidden 的區塊不畫 —— 男性病例整段隱藏的週期區不該出現在導航裡,而那個
+ * hidden 狀態是開啟對話框當下才決定的,所以每次開啟都要重畫。 */
+function renderFormSectionNav(form, nav) {
+  if (!form || !nav) return;
+  const sections = Array.from(form.querySelectorAll(".form-section")).filter((el) => !el.hidden);
+  // 三區以下捲兩下就到底,導航只會佔走本來就不夠的垂直空間。
+  if (sections.length < 3) { nav.hidden = true; nav.innerHTML = ""; return; }
+  nav.hidden = false;
+  nav.innerHTML = "";
+  const scroller = form.closest("dialog") || form;
+  const chipBySectionId = new Map();
+  const smooth = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  sections.forEach((section, i) => {
+    if (!section.id) section.id = `${form.id}-section-${i}`;
+    const stepText = (section.querySelector(".form-section-step") || {}).textContent || "";
+    const label = (section.dataset.navLabel || stepText).trim() || String(i + 1);
+    const chip = document.createElement("button");
+    chip.type = "button";   // 表單是 method="dialog",漏了 type 會直接送出
+    chip.className = "section-jump-chip";
+    chip.textContent = label;
+    chip.addEventListener("click", () => {
+      // 收合中的 details 先展開,否則跳過去只看到一行標題,像是壞掉。
+      if (section.tagName === "DETAILS") section.open = true;
+      section.scrollIntoView({ behavior: smooth ? "smooth" : "auto", block: "start" });
+    });
+    nav.appendChild(chip);
+    chipBySectionId.set(section.id, chip);
+  });
+
+  /* 捲動追蹤:標出目前所在的區塊。
+   *
+   * 這裡刻意**不用** IntersectionObserver。IO 在文件未被渲染時不送通知
+   * (規範如此),而 modal dialog + 隱藏分頁正好是那個情況 —— 結果是一個
+   * 「看起來寫對了、但驗不出來」的功能。改用 rAF 節流的 scroll 監聽:每幀
+   * 最多量一次,而且量得到、測得出來。十來個 rect 讀取集中在一次版面更新裡,
+   * 沒有讀寫交錯,成本可以接受。 */
+  const markCurrent = () => {
+    // 對話框還沒 showModal 時是 display:none,所有 rect 都是 0 —— 那會讓下面
+    // 的比較對每一區都成立,於是永遠標到最後一區。量不到就不猜。
+    if (!scroller.clientHeight) return;
+    const top = scroller.getBoundingClientRect().top;
+    // 目前所在 = 最後一個「頂端已經捲過導航底線」的區塊;都還沒捲到就取第一個。
+    const line = 72;   // 約等於吸頂導航的高度
+    let current = sections[0];
+    for (const s of sections) {
+      if (s.getBoundingClientRect().top - top <= line) current = s;
+      else break;
+    }
+    // 捲到底時直接標最後一區:最後幾區的頂端永遠捲不到導航線以上
+    // (可捲距離只有 scrollHeight - clientHeight),不特判的話它們永遠亮不起來。
+    if (scroller.scrollTop + scroller.clientHeight >= scroller.scrollHeight - 4) {
+      current = sections[sections.length - 1];
+    }
+    chipBySectionId.forEach((chip, id) => {
+      const isCurrent = current && id === current.id;
+      chip.classList.toggle("active", !!isCurrent);
+      if (isCurrent) chip.setAttribute("aria-current", "true");
+      else chip.removeAttribute("aria-current");
+    });
+  };
+
+  /* 節流用時間而非 requestAnimationFrame:rAF 在文件未被渲染時不會回呼,
+   * 於是這條路徑會變成「寫了但驗不出來」—— 跟上面不用 IO 是同一個理由。
+   * 前緣先跑一次(捲動當下就更新),後緣補一次(停下來時落在正確的一區)。 */
+  if (form.sectionNavCleanup) form.sectionNavCleanup();
+  const THROTTLE_MS = 80;
+  let lastRun = 0;
+  let trailing = 0;
+  const runMark = () => { trailing = 0; lastRun = Date.now(); markCurrent(); };
+  const onScroll = () => {
+    const since = Date.now() - lastRun;
+    if (since >= THROTTLE_MS) { runMark(); return; }
+    if (!trailing) trailing = setTimeout(runMark, THROTTLE_MS - since);
+  };
+  scroller.addEventListener("scroll", onScroll, { passive: true });
+  form.sectionNavCleanup = () => {
+    scroller.removeEventListener("scroll", onScroll);
+    if (trailing) { clearTimeout(trailing); trailing = 0; }
+  };
+  form.sectionNavMark = markCurrent;   // 測試與開啟當下的首次標記共用同一條路徑
+  markCurrent();
+}
+
 function setCheckboxGroup(form, name, values) {
   const wanted = new Set((values || []).map(String));
   form.querySelectorAll(`input[type="checkbox"][name="${name}"]`).forEach((cb) => {
@@ -9323,7 +9417,11 @@ function openSoapEditor(note = null) {
   } else {
     renderDraftBanner(soapDraftBanner, null);
   }
+  // 週期區的 hidden 在上面依 sex 決定,導航必須在那之後畫,否則男性病例的
+  // 導航會出現一個跳不到任何地方的「週期」晶片。
+  renderFormSectionNav(soapForm, soapSectionNav);
   soapDialog.showModal();
+  if (soapForm.sectionNavMark) soapForm.sectionNavMark();
 }
 
 // P1 pre-visit intake paste-import (docs/P1_PREVISIT_INTAKE_CONTRACT_v0.md
