@@ -5227,6 +5227,29 @@ body[data-content-mode="english"] .i18n-zh {
   font-size: 0.82rem;
   font-style: italic;
 }
+
+/* 卡片引用格(2026-08-24 comparisons 卡源自動列):非鑑別點,淡色區隔 Ting 手寫格 */
+.k-cell-auto {
+  display: block;
+  color: var(--muted, #786c5c);
+  font-size: 0.92em;
+  position: relative;
+  padding-left: 1.4em;
+}
+.k-cell-auto::before {
+  content: "卡";
+  position: absolute;
+  left: 0;
+  top: 0.1em;
+  font-size: 0.72em;
+  line-height: 1.4;
+  padding: 0 0.25em;
+  border: 1px solid var(--line, #e5dcc9);
+  border-radius: 4px;
+  color: var(--muted, #786c5c);
+}
+.k-auto-legend { font-size: 0.78em; }
+
 .k-link-chip {
   background: #eef4ef;
   border: 1px solid #dce6dc;

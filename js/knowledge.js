@@ -2535,7 +2535,55 @@
     };
     (((K.patternLibrary || {}).records) || []).forEach(addPatternLabel);
     (((K.conditions || {}).tcm_patterns) || []).forEach(addPatternLabel);
+    // formula_comparison 的 compares 是 formula.* id——之前落到 patternLabel 的
+    // fallback,欄頭直接印裸 id。方劑名也要能解析。
+    const formulaById = new Map((((K.formulas || {}).records) || []).map((f) => [f.id, f]));
+    formulaById.forEach((f, id) => {
+      patternLabels.set(id, [f.name_zh, f.pinyin || f.name_en].filter(Boolean).join(" / "));
+    });
     const patternLabel = (id) => patternLabels.get(id) || id;
+    const patternById = new Map((((K.patternLibrary || {}).records) || []).map((r) => [r.id, r]));
+
+    /* 卡源自動列（2026-08-24）:cells 是 Ting 專屬(模板 §0),但 32 張方劑表
+       空殼多年——渲染層直接引用各方劑/證型「本卡」欄位補上淡色參考格,
+       資料檔一字不動、非鑑別點、逐格可溯源到該卡。Ting 填了的格永遠優先。 */
+    const AUTO_DIM_FORMULA = {
+      "組成差異": (f) => (f.composition || [])
+        .filter((c) => !c.is_alternate)
+        .map((c) => (c.name_zh || c.herb_zh || "") + (c.role_zh ? "(" + c.role_zh + ")" : ""))
+        .filter(Boolean).join("、"),
+      "功效側重": (f) => (f.actions_zh || []).join(";"),
+      "主治": (f) => (f.pattern_indications_zh || []).join(";"),
+      "舌": (f) => String(f.tongue_zh || "").trim(),
+      "脈": (f) => String(f.pulse_zh || "").trim(),
+    };
+    const AUTO_DIM_PATTERN = {
+      "Chief pattern cue / 主辨證線索": (r) => (r.key_signs_zh || []).join("、"),
+      "Treatment principle / 治法": (r) => String(r.treatment_principle_zh || "").trim(),
+    };
+    const autoCell = (record, compareId, dimension) => {
+      if (record.type === "formula_comparison") {
+        const f = formulaById.get(compareId);
+        const fn = AUTO_DIM_FORMULA[dimension];
+        if (!f || !fn) return "";
+        if (dimension === "辨證要點") return "";
+        let text = fn(f) || "";
+        return text;
+      }
+      const pr = patternById.get(compareId);
+      const fn = AUTO_DIM_PATTERN[dimension];
+      return pr && fn ? (fn(pr) || "") : "";
+    };
+    // 方劑卡自帶的鑑別句(differentiator_zh):只在對象也在同一張表時引用
+    const cardDifferentiators = (record, compareId) => {
+      if (record.type !== "formula_comparison") return "";
+      const f = formulaById.get(compareId);
+      const peers = new Set(record.compares || []);
+      return ((f && f.comparisons) || [])
+        .filter((c) => c && peers.has(c.with) && String(c.differentiator_zh || "").trim())
+        .map((c) => "vs " + (c.name_zh || c.with) + ":" + c.differentiator_zh)
+        .join("\n");
+    };
     const conditionLabels = new Map();
     (((K.conditions || {}).records) || []).forEach((record) => {
       if (!record || !record.id) return;
@@ -2562,9 +2610,16 @@
       return totals;
     }, { filled: 0, total: 0, emptyTables: 0, partialTables: 0, completeTables: 0 });
     const pendingCells = Math.max(0, comparisonTotals.total - comparisonTotals.filled);
-    const cellText = (value) => {
-      const text = String(value || "").trim();
-      return text ? esc(text) : '<span class="k-empty-cell">待 Ting 填寫</span>';
+    const cellText = (record, compareId, dimension) => {
+      const owned = String(((record.cells || {})[compareId] || {})[dimension] || "").trim();
+      if (owned) return esc(owned);
+      const auto = String(autoCell(record, compareId, dimension) || "").trim();
+      const diff = dimension === "辨證要點" ? cardDifferentiators(record, compareId) : "";
+      if (auto || diff) {
+        const body = [auto, diff].filter(Boolean).map((t) => esc(t)).join("<br>");
+        return '<span class="k-cell-auto" title="卡片引用:自動彙整自本卡欄位,非鑑別點">' + body + "</span>";
+      }
+      return '<span class="k-empty-cell">待 Ting 填寫</span>';
     };
     const renderComparisons = (list) => list.map((record) => {
       const compares = record.compares || [];
@@ -2594,11 +2649,12 @@
                 ${dimensions.map((dimension) => `
                   <tr>
                     <th>${esc(dimension)}</th>
-                    ${compares.map((id) => `<td>${cellText((record.cells || {})[id] && (record.cells || {})[id][dimension])}</td>`).join("")}
+                    ${compares.map((id) => `<td>${cellText(record, id, dimension)}</td>`).join("")}
                   </tr>`).join("")}
               </tbody>
             </table>
           </div>
+          <p class="k-meta k-auto-legend">淡色格=卡片引用(自動彙整自各方劑/證型本卡,非鑑別點);鑑別點僅 Ting 填寫(模板 §0)</p>
           ${record.notes_zh ? `<p class="k-meta">${esc(record.notes_zh)}</p>` : ""}
         </article>`;
     }).join("");

@@ -37,7 +37,38 @@ main 之後自己長出來的新 PR（那是正常的持續開發，不是併回
 
 ---
 
-## Task 1（`docs/audits/` 資料夾還不存在，看起來還沒開工）：中藥卡語意品質稽核（唯讀，不寫 herb_canon_shortlist.json）
+## 🔥 Task 0（優先，做這個）：Batch 3 — 止血藥 + 補虛藥（陰/氣）三類，55 味
+
+**這份文件之後我會頻繁重看，做完一批就推、就等我核對，通過就繼續下一批、不通過我會寫明原因叫你重做
+——不用等我來加新任務，這份清單清空前你可以一直往下做。**
+
+**範圍**（先跑 `node scripts/validate-herb-standard.js --category "<分類>"` 自己核對數字，這裡列的是
+2026-08-24 的快照，可能又有變動）：
+- 止血藥 / Stop Bleeding（20 味，`modern_functions_en/zh` 缺 10、`contraindications_zh` 缺 17）
+- 補虛藥 / Tonify Yin（18 味，缺 7 / 缺 14）
+- 補虛藥 / Tonify Qi（17 味，缺 5 / 缺 8）
+
+**欄位**：只填 `modern_functions_en`/`modern_functions_zh`（成對）、`contraindications_zh`。
+**不要碰** `condition_tags_en`（見下面那條坑）、`actions_en`、`cautions_zh`（這兩個已經 99% 滿了）。
+
+**鐵律,一條都不能省**：
+1. `_en` 欄位只能是純英文，一個中文字都不行——落地前自己跑 `node scripts/validate-herb-standard.js`
+   看 E10 有沒有跳出來，不是等我抓。
+2. `modern_functions_zh`/`modern_functions_en` 逐欄位長度必須相等、順序對應（第 N 個中文對第 N 個英文），
+   這是翻譯對，不是各自列一份。
+3. `contraindications_zh` 每一條都要有查得到的來源（課件 `curriculum/herbs/`、Bensky、CloudTCM、American
+   Dragon 都可以），**沒有來源就不要編**——這條紅線比進度重要，寧可某味藥這欄位留空，也不要編一句聽起來
+   合理但查無出處的禁忌症，那是會真的影響安全判斷的欄位。
+4. 每一批寫 `field_sources` 註明來源，跟前面 Batch 1/2 的規矩一樣。
+5. 做完自己跑一次 `node scripts/build-data.js` + `node scripts/validate-herb-standard.js` +
+   `node scripts/check-validation-ratchet.js`，三個都要 PASS 才 push。
+
+**驗收**：我會重新獨立 clone 驗證（不會只信你本地跑過的結果），過了才會更新這份文件、清掉這條任務；
+沒過我會寫清楚是哪一味藥哪個欄位的問題，你照那個改，不用整批重做。
+
+---
+
+## Task 1（`docs/audits/` 資料夾還不存在，看起來還沒開工，Task 0 做完再看這個）：中藥卡語意品質稽核（唯讀，不寫 herb_canon_shortlist.json）
 
 **範圍**：`main` 上現有 **363** 味中藥卡（`data/herbs/herb_canon_shortlist.json`，數字又比前幾天多了，
 併回工作全部結束後穩定在這個數字），全部，不限分類。
