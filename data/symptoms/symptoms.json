@@ -20251,6 +20251,1202 @@
       "source_type": "source_assisted_draft_pending_ting_verification",
       "review_status": "draft",
       "authored_by": "model_draft"
+    },
+    {
+      "id": "sym.ear_pain",
+      "name_zh": "耳痛",
+      "name_en": "Ear Pain (Otalgia)",
+      "pinyin": "er tong",
+      "pinyin_toned": "ěr tòng",
+      "aliases_zh": [
+        "耳朵痛",
+        "耳道疼痛",
+        "耳部脹痛"
+      ],
+      "aliases_en": [
+        "Otalgia",
+        "Earache",
+        "Ear ache"
+      ],
+      "taxonomy_ids": [
+        "sym.pain",
+        "sym.head_face_eye"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported"
+      ],
+      "primary_mode": "patient_reported",
+      "definition_zh": "耳部（耳廓、外耳道、中耳或耳周組織）的疼痛感，可以是耳源性（外耳道發炎、中耳感染、耳廓癤腫），也可以是非耳源性 —— 顳顎關節、咽喉、牙齒等鄰近構造經共同神經支配轉移而來的「轉移性耳痛」。它是主訴，不是診斷 —— 同一個「耳痛」可能對應外耳道炎、中耳炎，也可能是完全不同部位病變的轉移痛，所以卡片記錄的是「該問什麼、指向哪裡」，不是結論。",
+      "definition_en": "Pain felt in or around the ear (pinna, external canal, middle ear or surrounding tissue). It may be otogenic (external canal infection, middle-ear infection, furuncle of the pinna) or referred — pain transmitted from the TMJ, throat, teeth or other structures that share the ear's nerve supply. It is a presenting complaint, not a diagnosis — the same otalgia may reflect external- or middle-ear infection, or be referred pain from an entirely different site, so this card records what to ask and what it points toward, not a conclusion.",
+      "patient_words_zh": "「耳朵裡面刺痛」「一跳一跳地痛」「按耳朵前面那塊會痛」「耳朵脹脹悶悶的，還會痛」「一咬東西耳朵就痛」「痛到整個那邊頭都痛」「耳朵裡好像有東西頂著在痛」",
+      "patient_words_en": "\"Sharp pain deep in my ear\", \"throbbing pain\", \"it hurts when I push in front of my ear\", \"feels blocked and achy, and it hurts\", \"hurts when I chew\", \"the pain goes into that whole side of my head\", \"feels like something's pressing on it from inside\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": true,
+          "vocabulary": "symptom_taxonomy"
+        },
+        "quality": {
+          "applicable": true,
+          "vocabulary": "symptom_quality",
+          "diagnostic_note_zh": "跳痛、銳痛多屬風熱外襲或化膿；脹痛拒按、牽拉耳廓或壓耳屏加劇多屬肝膽濕熱或肝火上炎；隱痛反覆纏綿多屬腎陰虧虛、虛火上炎"
+        },
+        "laterality": {
+          "applicable": true,
+          "vocabulary": "symptom_laterality"
+        },
+        "timing": {
+          "applicable": true,
+          "vocabulary": "symptom_timing"
+        },
+        "severity": {
+          "applicable": false,
+          "why": "實例值，屬病例層（§8）"
+        },
+        "duration": {
+          "applicable": false,
+          "why": "實例值，屬病例層（§8）"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "部位",
+          "why": "耳廓、耳道、耳深部或耳後乳突區，單側或雙側 —— 部位直接影響是否懷疑外耳、中耳或乳突病變"
+        },
+        {
+          "dimension": "性質",
+          "why": "跳痛、脹痛、刺痛、隱痛分屬不同病機，是本症最有辨證重量的一問"
+        },
+        {
+          "dimension": "時間",
+          "why": "急性新發或反覆發作，夜間是否加重"
+        },
+        {
+          "dimension": "誘因",
+          "why": "感冒後、游泳戲水後、挖耳掏耳後、咀嚼張口或咬合時加重，都指向不同機轉"
+        },
+        {
+          "dimension": "緩解",
+          "why": "按之減輕屬虛、拒按屬實，牽拉耳廓或壓耳屏誘發疼痛提示外耳道病變而非中耳"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "發熱、耳漏（膿或水樣分泌物）、聽力下降、眩暈、耳鳴提示耳源性；若耳部檢查正常，需追問吞嚥困難、吞嚥疼痛、聲音沙啞、頸部腫塊，進入轉移性耳痛的紅旗流程"
+        },
+        {
+          "dimension": "病程",
+          "why": "急性劇痛與長期反覆的處置完全不同 —— 這一問決定要不要先轉診耳鼻喉科"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Location",
+          "why": "Pinna, canal, deep ear, or the postauricular mastoid region, one side or both — location drives whether external ear, middle ear or mastoid disease is suspected"
+        },
+        {
+          "dimension": "Quality",
+          "why": "Throbbing, distending, stabbing and dull each map to a different mechanism — the highest-yield question on this symptom"
+        },
+        {
+          "dimension": "Timing",
+          "why": "New acute onset versus recurrent episodes, and whether it is worse at night"
+        },
+        {
+          "dimension": "Triggers",
+          "why": "Onset after a cold, after swimming or water exposure, after cleaning/probing the ear canal, or worse with chewing/jaw opening each point somewhere different"
+        },
+        {
+          "dimension": "Relief",
+          "why": "Better for pressure = deficiency, worse for pressure = excess; pain provoked by pulling the pinna or pressing the tragus suggests external-canal disease rather than middle-ear disease"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Fever, ear discharge (purulent or watery), hearing loss, vertigo or tinnitus suggest an otogenic cause; if the ear exam is normal, ask about dysphagia, odynophagia, hoarseness or a neck lump — this enters the referred-otalgia red-flag pathway"
+        },
+        {
+          "dimension": "Course",
+          "why": "A new severe episode and a long-standing recurrent one are handled completely differently — this question decides whether to refer to ENT first"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "耳道紅腫，起病較急，牽拉耳廓或壓耳屏疼痛加劇",
+          "points_to": [
+            "pattern.wind_heat"
+          ],
+          "distinguishing": "起病急，多在感冒後出現，兼發熱重、惡寒較輕、咽紅咽痛、微汗，舌尖紅苔薄，脈浮數"
+        },
+        {
+          "variant": "耳痛劇烈拒按，耳道紅腫流膿或黃水",
+          "points_to": [
+            "pattern.liver_gallbladder_damp_heat"
+          ],
+          "distinguishing": "耳內或耳道紅腫，疼痛拒按，耳漏黃臭，兼口苦、脅肋脹痛，舌紅苔黃膩，脈弦滑數"
+        },
+        {
+          "variant": "耳脹痛連及頭部，急躁易怒，耳鳴如潮",
+          "points_to": [
+            "pattern.liver_fire"
+          ],
+          "distinguishing": "耳脹痛或如潮鳴痛，兼頭痛目赤、急躁易怒、口苦咽乾，舌紅苔黃，脈弦數"
+        },
+        {
+          "variant": "耳內隱痛，反覆發作，兼眩暈耳鳴",
+          "points_to": [
+            "pattern.kidney_yin_deficiency"
+          ],
+          "distinguishing": "耳內隱隱作痛，纏綿反覆，兼眩暈耳鳴、腰膝痠軟、五心煩熱、盜汗，舌紅少苔，脈細數"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Red, swollen ear canal, fairly acute onset, worse with pulling the pinna or pressing the tragus",
+          "points_to": [
+            "pattern.wind_heat"
+          ],
+          "distinguishing": "Abrupt onset, often following a cold, with pronounced fever and only mild aversion to cold, red sore throat, slight sweating, red tongue tip with thin coating, floating rapid pulse"
+        },
+        {
+          "variant": "Severe pain worse for pressure, red swollen canal with purulent or yellow watery discharge",
+          "points_to": [
+            "pattern.liver_gallbladder_damp_heat"
+          ],
+          "distinguishing": "Redness and swelling in or around the canal, pain worse for pressure, foul-smelling yellow discharge, with a bitter taste and distending rib-side pain, red tongue with yellow greasy coating, wiry slippery rapid pulse"
+        },
+        {
+          "variant": "Distending ear pain extending into the head, irritability, tide-like roaring tinnitus",
+          "points_to": [
+            "pattern.liver_fire"
+          ],
+          "distinguishing": "Distending or roaring/throbbing ear pain, with headache and red eyes, irritability, bitter taste and dry throat, red tongue with yellow coating, wiry rapid pulse"
+        },
+        {
+          "variant": "Dull lingering ear pain, recurrent, with dizziness and tinnitus",
+          "points_to": [
+            "pattern.kidney_yin_deficiency"
+          ],
+          "distinguishing": "A vague, lingering ache inside the ear that keeps recurring, with dizziness and tinnitus, weak aching low back and knees, five-center heat and night sweats, red tongue with little coating, thin rapid pulse"
+        }
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "StatPearls — Otalgia (NCBI Bookshelf, NIH)",
+        "Merck Manual Professional Edition — Malignant External Otitis",
+        "ENTtoday — \"Doctor, My Ear Hurts\": Diagnosing Referred Otalgia",
+        "Cleveland Clinic — Ramsay Hunt Syndrome (Herpes Zoster Oticus)"
+      ],
+      "safety_flags": [
+        "neurologic_red_flags"
+      ],
+      "red_flags_zh": [
+        "耳痛合併耳後（乳突區）紅腫、壓痛，或耳廓外推移位 → 警覺乳突炎，需儘速轉診耳鼻喉科評估",
+        "劇烈耳痛合併耳漏，對一般外耳道炎治療反應不佳，尤其糖尿病、免疫低下或年長患者 → 警覺惡性（壞死性）外耳道炎，需儘速影像評估",
+        "耳痛合併耳廓或耳道水泡疹、同側面部無力或歪斜 → 警覺 Ramsay Hunt 症候群（帶狀疱疹性耳炎），需及早使用抗病毒藥物，延誤治療影響預後",
+        "耳痛合併新發面癱、意識改變、頸項僵硬或其他局部神經功能缺損 → 警覺顱內併發症，需立即就醫",
+        "成人單側耳痛持續數週、耳部檢查正常，尤其合併吞嚥困難、吞嚥疼痛、聲音沙啞或頸部腫塊 → 屬轉移性耳痛，需轉診耳鼻喉科檢查咽喉部以排除頭頸部惡性腫瘤"
+      ],
+      "red_flags_en": [
+        "Ear pain with postauricular (mastoid) erythema, tenderness, or a protruding/displaced pinna → possible mastoiditis, refer to ENT promptly",
+        "Severe ear pain with otorrhea that fails to respond to standard otitis externa treatment, especially in a diabetic, immunocompromised, or elderly patient → possible malignant (necrotizing) otitis externa, needs prompt imaging and referral",
+        "Ear pain with vesicles on the auricle or in the canal plus ipsilateral facial weakness → possible Ramsay Hunt syndrome (herpes zoster oticus); early antiviral treatment matters, delay worsens outcome",
+        "Ear pain with new facial weakness, altered consciousness, neck stiffness, or another focal neurological deficit → possible intracranial complication, seek emergency care",
+        "Unexplained unilateral ear pain persisting for weeks in an adult with a normal ear exam, especially with dysphagia, odynophagia, hoarseness, or a neck lump → referred otalgia; refer to ENT to examine the throat and exclude head-and-neck malignancy"
+      ],
+      "sources": [
+        "StatPearls — Otalgia (NCBI Bookshelf, NIH)（耳痛病因分類與評估）",
+        "Merck Manual Professional Edition — Malignant External Otitis（惡性外耳道炎紅旗）",
+        "ENTtoday — \"Doctor, My Ear Hurts\": Diagnosing Referred Otalgia（轉移性耳痛紅旗）",
+        "Cleveland Clinic — Ramsay Hunt Syndrome (Herpes Zoster Oticus)（帶狀疱疹性耳炎紅旗）",
+        "中醫內科學／中醫診斷學 通行教材內容 —— 耳痛之風熱、肝膽濕熱、肝火上炎、腎陰虛辨證",
+        "本 repo 既有卡片：pattern_library 各證型 key_signs_zh／tongue_zh／pulse_zh 對照"
+      ],
+      "field_sources": {
+        "definition_zh/en": "StatPearls — Otalgia（耳源性與轉移性耳痛的分類界定）",
+        "inquiry_zh/en 伴隨症": "ENTtoday — Diagnosing Referred Otalgia（吞嚥困難／吞嚥疼痛／聲音沙啞／頸部腫塊作為轉移性耳痛的追問要點）",
+        "differentiation_zh/en": "中醫診斷學 疼痛性質辨證 + 本 repo pattern_library 各證型 key_signs_zh 對照",
+        "red_flags_zh/en": "StatPearls — Otalgia；Merck Manual — Malignant External Otitis；ENTtoday — Diagnosing Referred Otalgia；Cleveland Clinic — Ramsay Hunt Syndrome"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "sym.fecal_incontinence",
+      "name_zh": "大便失禁",
+      "name_en": "Fecal incontinence",
+      "pinyin": "da bian shi jin",
+      "pinyin_toned": "dà biàn shī jìn",
+      "aliases_zh": [
+        "肛門失禁",
+        "排便失禁",
+        "大便滑脫"
+      ],
+      "aliases_en": [
+        "Anal incontinence",
+        "Bowel incontinence",
+        "Accidental bowel leakage"
+      ],
+      "taxonomy_ids": [
+        "sym.urinary_bowel"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported",
+        "examiner_observed"
+      ],
+      "primary_mode": "patient_reported",
+      "definition_zh": "大便失禁指對排氣、稀便或成形糞便失去自主控制，非自願地從肛門漏出。可能是完全性（完全無便意也無法自控）或部分性（僅在腹瀉、用力、咳嗽等情境下發生，或僅漏出氣體與少量稀便）。它是一個症狀，不是診斷——背後成因橫跨神經、肌肉（肛門括約肌）、腸道多個系統，卡片記錄的是「該問什麼、指向哪裡」，不是結論。與便溏（糞便性狀改變）、腹瀉（排便次數與含水量改變）不同，本症的核心是「控制能力」的喪失。",
+      "definition_en": "Fecal incontinence is the involuntary loss of control over the passage of flatus, liquid stool, or formed stool from the anus. It may be complete (no sensation of urge and no control at all) or partial (leakage only in certain situations — diarrhea, straining, coughing — or limited to flatus and small amounts of liquid stool). It is a presenting symptom, not a diagnosis — the underlying mechanism spans neurological, muscular (anal sphincter), and bowel systems, so this card records what to ask and what it points toward, not a conclusion. Unlike loose stool (a change in stool consistency) or diarrhea (a change in frequency/water content), the core of this symptom is loss of control itself.",
+      "patient_words_zh": "「來不及跑廁所，褲子就髒了」「放屁的時候大便也跟著出來」「我自己都不知道大便什麼時候漏出來的」「一咳嗽或一用力就漏出來」「肚子一絞痛就忍不住」「內褲上常常有一點點大便的痕跡」",
+      "patient_words_en": "\"I don't make it to the bathroom in time and soil myself\", \"stool comes out when I pass gas\", \"I don't even feel it happening\", \"it leaks when I cough or strain\", \"once the cramp hits I can't hold it\", \"there's often a little stool on my underwear\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": false,
+          "why": "固定於肛門直腸部位，非多部位症狀"
+        },
+        "quality": {
+          "applicable": false,
+          "why": "symptom_quality 為疼痛性質詞彙，不適用；本症核心是失禁的完全性/部分性與誘發情境（腹瀉、用力、咳嗽），不是疼痛性質分類"
+        },
+        "laterality": {
+          "applicable": false,
+          "why": "肛門為正中構造，無側性"
+        },
+        "timing": {
+          "applicable": true,
+          "vocabulary": "symptom_timing",
+          "diagnostic_note_zh": "夜間睡眠中發生，提示肛門括約肌基礎張力不足；僅白天活動中或強烈便意來不及如廁時發生，提示急迫性失禁"
+        },
+        "severity": {
+          "applicable": false,
+          "why": "實例值，屬病例層（§8）"
+        },
+        "duration": {
+          "applicable": false,
+          "why": "實例值，屬病例層（§8）"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "程度",
+          "why": "完全性（完全喪失便意與控制，糞便不自覺流出）或部分性（僅氣體或稀便失禁、或僅在強烈便意來不及如廁時發生），是嚴重度分級與治療方向的關鍵問題"
+        },
+        {
+          "dimension": "誘因",
+          "why": "腹瀉發作時、用力排便、咳嗽或打噴嚏時漏出；分娩史（產鉗、會陰嚴重撕裂）、肛門直腸手術史、骨盆放射治療史、慢性便秘合併溢出性失禁"
+        },
+        {
+          "dimension": "時間",
+          "why": "主要發生於夜間睡眠中，提示肛門括約肌基礎張力不足；僅白天活動或如廁前來不及，提示急迫性失禁"
+        },
+        {
+          "dimension": "緩解",
+          "why": "飲食調整（增加膳食纖維、避免誘發食物）、止瀉藥物、骨盆底肌／括約肌訓練是否能改善，有助判斷是功能性還是結構性問題"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "鞍區（會陰部）感覺喪失、下肢無力或麻木、新發尿失禁或尿滯留 → 立即進紅旗流程（疑馬尾症候群）；合併便血、不明原因體重減輕、排便習慣改變 → 需排除大腸病灶；合併記憶力減退、認知功能下降 → 提示中樞性病因"
+        },
+        {
+          "dimension": "病程",
+          "why": "產後新發多與產科肛門括約肌損傷有關；長期慢性存在常見於神經退化性疾病或糖尿病周邊神經病變；急性新發合併神經症狀需優先排除脊髓或馬尾病變，不可逕自歸因於單純腸胃問題"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Severity",
+          "why": "Complete (no urge or control at all, stool passes unnoticed) versus partial (leakage only of flatus or liquid stool, or only when urge outpaces the time to reach a toilet) — the key severity question that guides management"
+        },
+        {
+          "dimension": "Triggers",
+          "why": "Leakage during a diarrhea episode, with straining, coughing or sneezing; obstetric history (forceps delivery, severe perineal tear), anorectal surgery, pelvic radiotherapy, or chronic constipation with overflow incontinence"
+        },
+        {
+          "dimension": "Timing",
+          "why": "Mainly during sleep suggests inadequate baseline sphincter tone; only during daytime activity or when unable to reach a toilet in time suggests urge incontinence"
+        },
+        {
+          "dimension": "Relief",
+          "why": "Whether dietary change (fiber, avoiding trigger foods), antidiarrheal medication, or pelvic floor/sphincter training improves it — helps distinguish a functional from a structural problem"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Saddle (perineal) sensory loss, new leg weakness or numbness, new urinary incontinence or retention → enter the red-flag pathway immediately (suspected cauda equina syndrome); accompanying blood in stool, unintentional weight loss, or a change in bowel habit → warrants workup for a colonic lesion; accompanying memory loss or cognitive decline → suggests a central cause"
+        },
+        {
+          "dimension": "Course",
+          "why": "New onset postpartum often reflects obstetric anal sphincter injury; long-standing chronic incontinence is common with neurodegenerative disease or diabetic peripheral neuropathy; acute new onset with neurological symptoms must first rule out spinal cord or cauda equina disease rather than being attributed to a simple bowel problem"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "大便不自覺滑出，肛門墜脹或脫肛，勞則加重",
+          "points_to": [
+            "pattern.spleen_qi_sinking"
+          ],
+          "distinguishing": "大便滑脫難禁，兼脘腹墜脹、肛門下墜或脫肛、氣短乏力，勞累或久瀉後加重，屬中氣下陷、升舉無力"
+        },
+        {
+          "variant": "黎明前腸鳴即瀉，瀉出隨即失禁，畏寒肢冷",
+          "points_to": [
+            "pattern.spleen_kidney_yang_deficiency"
+          ],
+          "distinguishing": "每於黎明前臍腹作痛、腸鳴即瀉，瀉下清稀夾未消化食物，來不及如廁而失禁，兼畏寒肢冷、腰膝痠冷，即五更瀉合併失禁"
+        },
+        {
+          "variant": "大便滑脫不禁，兼小便頻數清長或遺尿",
+          "points_to": [
+            "pattern.kidney_qi_not_firm"
+          ],
+          "distinguishing": "下焦氣虛，二陰失約，大便滑脫不禁，常與小便頻數清長、遺尿並見，多見於年老體衰或久病"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Stool leaks out unnoticed, with anal dragging or prolapse, worse with exertion",
+          "points_to": [
+            "pattern.spleen_qi_sinking"
+          ],
+          "distinguishing": "Stool slips out uncontrolled, with epigastric/abdominal dragging fullness, anal heaviness or rectal prolapse, shortness of breath and low energy, worse after exertion or prolonged diarrhea — sinking of the middle qi, unable to hold things up"
+        },
+        {
+          "variant": "Pre-dawn bowel sounds and diarrhea with leakage before reaching the toilet, cold aversion and cold limbs",
+          "points_to": [
+            "pattern.spleen_kidney_yang_deficiency"
+          ],
+          "distinguishing": "Periumbilical pain and loud bowel sounds before dawn, diarrhea with undigested food, leakage occurs before reaching the toilet, with cold aversion, cold limbs, cold aching low back and knees — 'fifth-watch diarrhea' complicated by incontinence"
+        },
+        {
+          "variant": "Stool slips out uncontrolled, with frequent clear urination or enuresis",
+          "points_to": [
+            "pattern.kidney_qi_not_firm"
+          ],
+          "distinguishing": "Lower-jiao qi deficiency with loss of restraint at both lower orifices; stool slips out uncontrolled, often accompanied by frequent clear urination or enuresis, most common in the elderly or after chronic illness"
+        }
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "Systematic review of the diagnostic accuracy of red flags for cauda equina syndrome (bowel/bladder incontinence, saddle/perineal sensory loss, reduced anal sphincter tone) — ScienceDirect, retrieved 2026-08-24",
+        "NCBI Bookshelf, \"Suspected cancer: recognition and referral\" (NICE-aligned colorectal cancer red flags: change in bowel habit, unexplained weight loss, rectal bleeding), retrieved 2026-08-24"
+      ],
+      "safety_flags": [
+        "neurologic_red_flags",
+        "gi_red_flags"
+      ],
+      "red_flags_zh": [
+        "急性新發大便失禁，合併鞍區（會陰、肛門周圍）感覺喪失、雙側下肢無力或麻木、新發尿失禁或尿滯留 → 立即懷疑馬尾症候群，需緊急影像評估（MRI）與外科會診",
+        "理學檢查發現肛門括約肌張力明顯減弱或消失 → 神經性病灶的客觀徵象，需優先評估馬尾或脊髓病變",
+        "大便失禁合併近期背痛加劇、脊椎外傷史，或近期接受脊椎手術／硬脊膜外注射 → 需緊急排除脊髓或馬尾壓迫",
+        "中高齡出現新發排便習慣改變（含失禁）合併不明原因體重減輕、便血或缺鐵性貧血 → 應依大腸病灶警示徵象準則安排大腸鏡評估",
+        "合併意識混亂或新發認知功能急遽下降 → 需評估中樞神經系統病因，不可逕自歸因於單純年老退化"
+      ],
+      "red_flags_en": [
+        "Acute new-onset fecal incontinence with saddle (perineal/perianal) sensory loss, bilateral leg weakness or numbness, and new urinary incontinence or retention → suspect cauda equina syndrome immediately, needs urgent imaging (MRI) and surgical consultation",
+        "Examination finding of markedly reduced or absent anal sphincter tone → an objective sign of a neurological lesion, prioritize evaluation for cauda equina or spinal cord disease",
+        "Fecal incontinence with recent worsening back pain, a history of spinal trauma, or recent spinal surgery/epidural injection → needs urgent evaluation to rule out spinal cord or cauda equina compression",
+        "New-onset change in bowel habit (including incontinence) in a middle-aged or older patient with unexplained weight loss, blood in stool, or iron-deficiency anemia → should prompt colonoscopy per colorectal red-flag referral criteria",
+        "Accompanying confusion or a rapid new decline in cognitive function → needs evaluation for a central nervous system cause rather than being attributed to ordinary aging"
+      ],
+      "sources": [
+        "Systematic review of red-flag diagnostic accuracy for cauda equina syndrome — bowel/bladder incontinence, saddle anesthesia, reduced anal tone (ScienceDirect, retrieved 2026-08-24)",
+        "NCBI Bookshelf, \"Suspected cancer: recognition and referral\" — colorectal cancer red flags (retrieved 2026-08-24)",
+        "中醫內科學／中醫診斷學 通行教材 —— 泄瀉（脾腎陽虛／五更瀉）、脫肛（中氣下陷）、遺尿（腎氣不固）相關證型論述",
+        "本 repo 既有卡片：sym.diarrhea · sym.rectal_prolapse · sym.tenesmus · pattern_library 各證型 key_signs_zh"
+      ],
+      "field_sources": {
+        "definition_zh/en": "一般臨床對 fecal incontinence 完全性/部分性的界定 + 中醫「大便滑脫」概念，並與 sym.loose_stool／sym.diarrhea 明確區隔（控制能力 vs 性狀/次數）",
+        "red_flags_zh/en": "Cauda equina syndrome 紅旗系統性回顧（腸道/膀胱失禁、鞍區感覺喪失、肛門張力減弱）+ NCBI Bookshelf 疑似大腸癌轉診準則，皆 retrieved 2026-08-24",
+        "differentiation_zh/en": "中醫內科學 泄瀉／脫肛／遺尿分證 + 本 repo pattern_library 對應證型 key_signs_zh 對照（pattern.spleen_qi_sinking · pattern.spleen_kidney_yang_deficiency · pattern.kidney_qi_not_firm）"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "sym.hoarseness",
+      "name_zh": "聲音嘶啞",
+      "name_en": "Hoarseness",
+      "pinyin": "sheng yin si ya",
+      "pinyin_toned": "shēng yīn sī yǎ",
+      "aliases_zh": [
+        "聲音沙啞",
+        "聲啞",
+        "音啞",
+        "喉嚨沙啞"
+      ],
+      "aliases_en": [
+        "Raspy voice",
+        "Hoarse voice",
+        "Dysphonia",
+        "Husky voice"
+      ],
+      "taxonomy_ids": [
+        "sym.head_face_nose"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported",
+        "examiner_observed"
+      ],
+      "primary_mode": "patient_reported",
+      "definition_zh": "聲音因喉部（含聲帶）病變、神經功能異常或單純用聲過度，而變得粗糙、氣息聲重、音調改變或音量減弱，講話費力甚至一時發不出聲；是主訴或體徵，不是診斷 —— 從單純感冒、用聲過度到聲帶病變、甲狀腺或神經系統疾病都可能出現，卡片記錄的是「該問什麼、指向哪裡」，不是結論。",
+      "definition_en": "A change in voice quality — rough, breathy, strained, pitch-altered, or reduced in volume, sometimes with effortful or briefly absent phonation — arising from disease or dysfunction of the larynx (including the vocal folds), its nerve supply, or simple vocal overuse. It is a presenting complaint or sign, not a diagnosis: the same hoarseness ranges from a common cold to vocal fold lesions, thyroid disease, or neurological disease, so this card records what to ask and what it points toward, not a conclusion.",
+      "patient_words_zh": "「聲音啞掉了」「講話聲音怪怪的」「喉嚨卡卡的，講不太出來」「聲音一直沒好，拖了好幾個禮拜」「講話會累，講一下就沒力」「早上起來聲音特別啞」「唱歌高音上不去」",
+      "patient_words_en": "\"My voice went hoarse\", \"my voice just sounds off\", \"my throat feels stuck, I can't get the words out clearly\", \"it's been off for weeks and won't clear up\", \"talking wears me out fast\", \"my voice is worst first thing in the morning\", \"I can't hit the high notes anymore\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": false,
+          "why": "聲音嘶啞是整體發聲改變，不是可定位於身體某處的體徵，不使用部位詞彙"
+        },
+        "quality": {
+          "applicable": false,
+          "why": "symptom_quality 詞彙表（脹/刺/隱/空等）是為疼痛性質設計的受控詞彙，未涵蓋氣息聲、粗糙、完全失聲等音質變化；音質差異改在 differentiation 以文字描述，不套用此詞彙表"
+        },
+        "laterality": {
+          "applicable": false,
+          "why": "聲音嘶啞不分側"
+        },
+        "timing": {
+          "applicable": true,
+          "vocabulary": "symptom_timing"
+        },
+        "severity": {
+          "applicable": false,
+          "why": "實例值，屬病例層（§8）"
+        },
+        "duration": {
+          "applicable": false,
+          "why": "實例值，屬病例層（§8）"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "性質",
+          "why": "氣息聲、粗糙、音調改變或完全失聲各指向不同機轉；外感初起多見粗嘎，久病陰虛多見氣弱嘶啞"
+        },
+        {
+          "dimension": "時間",
+          "why": "晨起明顯或講話後加重提示用聲過度；持續性與間歇性、是否漸進惡化，都影響下一步判斷"
+        },
+        {
+          "dimension": "誘因",
+          "why": "感冒、過度用聲（教師、業務、歌手）、抽菸、胃食道逆流、環境刺激物、近期頭頸胸腔手術或插管史"
+        },
+        {
+          "dimension": "緩解",
+          "why": "休聲（噤聲休息）是否改善提示功能性用聲過度；持續不緩解則提示器質性病變"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "咽痛、咳嗽、吞嚥困難或疼痛、單側耳痛、呼吸喘鳴、頸部腫塊、不明原因體重減輕 —— 這些伴隨症把問診導向紅旗流程"
+        },
+        {
+          "dimension": "病程",
+          "why": "聲音嘶啞持續超過 4 週未緩解、或 45 歲以上不明原因持續嘶啞，是決定要不要先轉診喉鏡檢查的關鍵一問"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Quality",
+          "why": "Breathy, rough, pitch-altered or completely absent voice point to different mechanisms; a rough hoarse voice with acute external contraction differs from the weak strained voice of chronic Yin deficiency"
+        },
+        {
+          "dimension": "Timing",
+          "why": "Worse on waking or after talking suggests vocal overuse; whether it is continuous, intermittent, or progressively worsening shapes the next step"
+        },
+        {
+          "dimension": "Triggers",
+          "why": "A cold, vocal overuse (teachers, sales staff, singers), smoking, gastro-oesophageal reflux, environmental irritants, or recent head/neck/chest surgery or intubation"
+        },
+        {
+          "dimension": "Relief",
+          "why": "Whether voice rest improves it points toward functional overuse; failure to improve with rest points toward a structural lesion"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Sore throat, cough, dysphagia or odynophagia, unilateral ear pain, stridor, a neck mass, or unexplained weight loss — these accompanying signs route the inquiry into the red-flag pathway"
+        },
+        {
+          "dimension": "Course",
+          "why": "Hoarseness persisting beyond 4 weeks without improving, or unexplained persistent hoarseness in someone 45 or older, is the key question in deciding whether to refer for laryngoscopy first"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "突發聲嘶，兼惡寒無汗，痰白清稀",
+          "points_to": [
+            "pattern.wind_cold_invading_lung"
+          ],
+          "distinguishing": "起病急，聲音嘶啞隨感冒新起，惡寒重、發熱輕、無汗，咳嗽痰白清稀，鼻塞流清涕，苔薄白，脈浮緊"
+        },
+        {
+          "variant": "聲嘶伴咽喉腫痛，痰黃",
+          "points_to": [
+            "pattern.wind_heat_invading_lung"
+          ],
+          "distinguishing": "聲音嘶啞或不揚，發熱重、惡寒輕，咽喉腫痛，咳嗽痰黃，口渴，舌尖紅苔薄黃，脈浮數"
+        },
+        {
+          "variant": "聲嘶日久，乾咳少痰，咽乾",
+          "points_to": [
+            "pattern.lung_yin_deficiency"
+          ],
+          "distinguishing": "聲音嘶啞漸進、日久不癒，乾咳少痰，咽喉乾燥不適，午後潮熱、夜間盜汗，舌質紅少苔少津，脈細數"
+        },
+        {
+          "variant": "聲嘶日久，兼腰膝痠軟，或痰中帶血",
+          "points_to": [
+            "pattern.lung_kidney_yin_deficiency"
+          ],
+          "distinguishing": "聲音嘶啞日久不癒，乾咳少痰或痰中帶血，兼腰膝痠軟、潮熱盜汗，舌紅少苔，脈細數 —— 較單純肺陰虛更兼腎虛徵象，多見於久病或年長者"
+        },
+        {
+          "variant": "聲音低弱，講話費力，非粗嘎嘶啞",
+          "points_to": [
+            "pattern.lung_spleen_qi_deficiency"
+          ],
+          "distinguishing": "聲音低弱而非粗糙嘶啞，講話容易疲累、氣短，兼食慾不振、大便稀軟、疲倦乏力、易感冒"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Sudden hoarseness with chills, no sweating, thin white phlegm",
+          "points_to": [
+            "pattern.wind_cold_invading_lung"
+          ],
+          "distinguishing": "Abrupt onset, hoarseness appearing with a fresh cold; pronounced chills with mild fever, no sweating, cough with thin white phlegm, nasal congestion with clear discharge; thin white tongue coating, floating tight pulse"
+        },
+        {
+          "variant": "Hoarseness with sore swollen throat, yellow phlegm",
+          "points_to": [
+            "pattern.wind_heat_invading_lung"
+          ],
+          "distinguishing": "Hoarse or muffled voice, pronounced fever with mild chills, sore swollen throat, cough with yellow phlegm, thirst; red tongue tip with thin yellow coating, floating rapid pulse"
+        },
+        {
+          "variant": "Longstanding hoarseness, dry cough with scant phlegm, dry throat",
+          "points_to": [
+            "pattern.lung_yin_deficiency"
+          ],
+          "distinguishing": "Gradual, longstanding hoarseness, dry cough with scant phlegm, dry throat discomfort, afternoon tidal fever and night sweats; red tongue with little coating and scant fluid, thin rapid pulse"
+        },
+        {
+          "variant": "Longstanding hoarseness with weak aching low back and knees, or blood-tinged sputum",
+          "points_to": [
+            "pattern.lung_kidney_yin_deficiency"
+          ],
+          "distinguishing": "Longstanding hoarseness, dry cough with scant phlegm or blood-tinged sputum, with weak aching low back and knees, tidal fever and night sweats; red tongue with little coating, thin rapid pulse — carries Kidney-deficiency signs beyond simple Lung Yin deficiency, typically chronic illness or older patients"
+        },
+        {
+          "variant": "Low weak voice, effortful speech, not rough or grating",
+          "points_to": [
+            "pattern.lung_spleen_qi_deficiency"
+          ],
+          "distinguishing": "Voice low and weak rather than rough or hoarse, speech is effortful and tiring with shortness of breath, with poor appetite, loose stools, fatigue and frequent colds"
+        }
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "AAO-HNSF Clinical Practice Guideline: Hoarseness (Dysphonia) (Update) — Stachler RJ et al., Otolaryngology–Head and Neck Surgery, 2018",
+        "NICE guideline NG12 — Suspected cancer: recognition and referral (laryngeal cancer section)"
+      ],
+      "safety_flags": [
+        "respiratory_red_flags"
+      ],
+      "red_flags_zh": [
+        "聲音嘶啞持續超過 4 週未緩解或未改善 → 建議喉鏡檢查（AAO-HNSF 2018 更新版聲音嘶啞指引，將先前允許觀察的 3 個月縮短為 4 週）",
+        "45 歲以上出現不明原因、持續性聲音嘶啞，尤其合併吸菸或重度飲酒史 → 建議依 NICE NG12 疑似癌症轉診指引，緊急轉診評估是否為喉癌",
+        "聲音嘶啞合併呼吸困難或喘鳴（stridor）→ 立即評估呼吸道，不要等待",
+        "聲音嘶啞合併頸部腫塊、吞嚥困難、吞嚥疼痛、單側耳痛、不明原因體重減輕或痰中帶血 → 轉診耳鼻喉科排除頭頸部惡性腫瘤",
+        "近期頭頸部或胸腔手術、或氣管內插管病史後新發聲音嘶啞 → 評估喉返神經損傷或聲帶麻痺",
+        "職業用聲者（教師、業務、歌手、政治人物）聲音持續改變 → 建議及早轉診喉鏡評估，避免聲帶病變延誤"
+      ],
+      "red_flags_en": [
+        "Hoarseness persisting more than 4 weeks without resolving or improving → laryngoscopy is indicated (AAO-HNSF's 2018 update to the hoarseness/dysphonia guideline shortened the prior 3-month observation window to 4 weeks)",
+        "Unexplained, persistent hoarseness in someone aged 45 or over, especially with a smoking or heavy alcohol history → urgent referral to evaluate for laryngeal cancer per NICE NG12 suspected-cancer referral criteria",
+        "Hoarseness with breathing difficulty or stridor → assess the airway immediately, do not wait",
+        "Hoarseness with a neck mass, dysphagia, odynophagia, unilateral ear pain, unexplained weight loss, or blood-tinged sputum → refer to ENT to rule out head and neck malignancy",
+        "New hoarseness after recent head/neck/chest surgery or endotracheal intubation → assess for recurrent laryngeal nerve injury or vocal fold paralysis",
+        "Persistent voice change in a professional voice user (teacher, sales staff, singer, politician) → refer early for laryngoscopy to avoid delayed diagnosis of a vocal fold lesion"
+      ],
+      "sources": [
+        "AAO-HNSF Clinical Practice Guideline: Hoarseness (Dysphonia) (Update) — Stachler RJ et al., Otolaryngology–Head and Neck Surgery, 2018（就診時機、4 週喉鏡評估門檻、警示症狀清單）",
+        "NICE guideline NG12 — Suspected cancer: recognition and referral（45 歲以上不明原因持續聲音嘶啞的緊急轉診準則）",
+        "中醫內科學／中醫診斷學 通行教材內容 —— 音啞、失音的辨證（金實不鳴：外感、痰阻；金破不鳴：肺陰虛、肺腎陰虛、肺脾氣虛）",
+        "本 repo 既有卡片：pattern_library 各證型 key_signs_zh/tongue_zh/pulse_zh 對照（肺陰虛、肺腎陰虛已將聲音嘶啞列為 key_signs）"
+      ],
+      "field_sources": {
+        "definition_zh/en": "AAO-HNSF Hoarseness (Dysphonia) guideline 對 dysphonia 的界定 + 中醫內科學 音啞章節",
+        "red_flags_zh/en": "AAO-HNSF 2018 更新版 hoarseness guideline（4 週喉鏡門檻、警示症狀清單：近期頭頸胸腔手術或插管、呼吸窘迫或喘鳴、頸部腫塊、吸菸史、職業用聲者）+ NICE NG12 疑似癌症轉診指引（45 歲以上持續嘶啞）",
+        "differentiation_zh/en": "中醫診斷學 音啞辨證 + 本 repo pattern_library.json：pattern.lung_yin_deficiency 與 pattern.lung_kidney_yin_deficiency 的 key_signs_zh 已直接列出「聲音嘶啞」，其餘證型依其 key_signs_zh/tongue_zh/pulse_zh 對照撰寫"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "sym.mouth_ulcers",
+      "name_zh": "口腔潰瘍",
+      "name_en": "Mouth Ulcer (Recurrent Aphthous Ulcer)",
+      "pinyin": "kou qiang kui yang",
+      "pinyin_toned": "kǒu qiāng kuì yáng",
+      "aliases_zh": [
+        "口瘡",
+        "口舌生瘡",
+        "嘴破",
+        "復發性口瘡"
+      ],
+      "aliases_en": [
+        "Aphthous ulcer",
+        "Canker sore",
+        "Recurrent aphthous stomatitis",
+        "Oral ulcer"
+      ],
+      "taxonomy_ids": [
+        "sym.head_face_nose",
+        "sym.pain"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported",
+        "examiner_observed"
+      ],
+      "primary_mode": "patient_reported",
+      "definition_zh": "口腔黏膜（頰內、唇內、舌緣、齒齦頰溝、軟腭等處）反覆出現的圓形或卵圓形淺表潰瘍，中央凹陷覆黃白色偽膜、周圍紅暈，通常有疼痛感，觸碰或進食辛辣、酸性食物時加劇。單一潰瘍多在一到兩週內自行癒合，但整體病程常反覆發作。這是主訴／局部所見，不是診斷 —— 同樣的口腔潰瘍可以是單純的復發性阿弗他潰瘍，也可能是系統性疾病（如貝西氏病、發炎性腸道疾病、血液系統疾病）在口腔的表現之一，所以卡片記錄的是「該問什麼、指向哪裡」，不是結論。",
+      "definition_en": "Recurrent round or oval shallow ulcers on the oral mucosa (buccal mucosa, inner lip, tongue margin, gingivobuccal sulcus, soft palate), each with a yellow-white pseudomembranous base and a red halo, usually painful and worse with touch or spicy/acidic food. A single ulcer typically heals within about one to two weeks, but the overall course often recurs. This is a presenting complaint / local finding, not a diagnosis — the same mouth ulcer can be simple recurrent aphthous stomatitis or an oral manifestation of a systemic condition (e.g. Behçet's disease, inflammatory bowel disease, a haematological disorder), so this card records what to ask and what it points toward, not a conclusion.",
+      "patient_words_zh": "「嘴巴裡破了一個洞，一碰就痛」「吃辣的、酸的都會刺痛」「這裡老是破，好了又長」「刷牙一直磨到它」「破得很深，講話、吃飯都會磨到」「嘴巴裡先長一個小水泡，破了才開始痛」",
+      "patient_words_en": "\"There's a hole inside my mouth that hurts whenever I touch it\", \"anything spicy or sour stings it\", \"it keeps coming back in the same spot, heals, then comes back\", \"my toothbrush keeps catching on it\", \"it's deep enough that talking and eating both rub against it\", \"it starts as a little blister, and once it breaks open that's when it starts to hurt\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": true,
+          "vocabulary": "symptom_taxonomy"
+        },
+        "quality": {
+          "applicable": true,
+          "vocabulary": "symptom_quality",
+          "diagnostic_note_zh": "灼痛明顯屬心脾積熱或胃火 · 隱痛、痛勢輕微屬陰虛或脾虛"
+        },
+        "laterality": {
+          "applicable": true,
+          "vocabulary": "symptom_laterality"
+        },
+        "timing": {
+          "applicable": true,
+          "vocabulary": "symptom_timing"
+        },
+        "severity": {
+          "applicable": false,
+          "why": "實例值，屬病例層（§8）"
+        },
+        "duration": {
+          "applicable": false,
+          "why": "實例值，屬病例層（§8）"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "部位",
+          "why": "潰瘍發生於頰內、唇內、舌緣、齒齦頰溝或軟腭，部位不同對日常刺激（咀嚼、假牙摩擦）的影響也不同"
+        },
+        {
+          "dimension": "性質",
+          "why": "灼痛明顯多屬心脾積熱或胃火；隱痛、痛勢輕微多屬陰虛或脾虛，是本症最有辨證重量的一問"
+        },
+        {
+          "dimension": "時間",
+          "why": "反覆發作的間隔與好發時機（如經前、熬夜後）提示不同病機"
+        },
+        {
+          "dimension": "誘因",
+          "why": "辛辣燥熱飲食、熬夜、情緒緊張、經期、局部外傷（咬傷、假牙摩擦）常為誘發因素"
+        },
+        {
+          "dimension": "緩解",
+          "why": "冷飲、冰敷可暫緩灼痛多屬熱；病程遷延、勞累後加重多屬虛"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "是否合併生殖器潰瘍、眼部發炎、皮膚病灶，或不明原因體重減輕、慢性腹瀉等腸胃症狀，決定是否需要轉診排除系統性疾病"
+        },
+        {
+          "dimension": "病程",
+          "why": "單一潰瘍是否已超過三週未癒，或是否持續增大、變硬、轉為無痛，是判斷要不要轉診排除口腔癌的關鍵一問"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Location",
+          "why": "Ulcers may occur on the buccal mucosa, inner lip, tongue margin, gingivobuccal sulcus or soft palate; the site affects how much everyday triggers such as chewing or denture friction aggravate it"
+        },
+        {
+          "dimension": "Quality",
+          "why": "Marked burning pain often points to Heart-Spleen accumulated heat or Stomach fire; dull or mild pain often points to yin deficiency or Spleen deficiency — the highest-yield question on this symptom"
+        },
+        {
+          "dimension": "Timing",
+          "why": "The interval between recurrences and any typical trigger timing (e.g. premenstrual, after a late night) point toward different mechanisms"
+        },
+        {
+          "dimension": "Triggers",
+          "why": "Spicy/hot food, staying up late, emotional stress, menstruation, and local trauma (biting, denture rubbing) are common triggers"
+        },
+        {
+          "dimension": "Relief",
+          "why": "Temporary relief from cold drinks or ice usually suggests heat; a protracted course that worsens with exertion usually suggests deficiency"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Whether genital ulcers, eye inflammation, skin lesions, or GI symptoms such as unexplained weight loss and chronic diarrhoea accompany the ulcers decides whether referral to rule out a systemic disease is needed"
+        },
+        {
+          "dimension": "Course",
+          "why": "Whether a single ulcer has persisted beyond three weeks without healing, or is growing, hardening, or becoming painless, is the key question for deciding whether to refer to rule out oral cancer"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "潰瘍色紅、灼痛明顯，周圍紅腫",
+          "points_to": [
+            "pattern.heart_stomach_fire"
+          ],
+          "distinguishing": "口舌生瘡、潰瘍反覆發作，灼痛明顯，口渴喜冷飲、口臭，心煩失眠、小便短赤，兼牙齦腫痛，舌尖紅赤或舌紅苔黃厚，脈滑數或洪數"
+        },
+        {
+          "variant": "潰瘍瘡面較小、色淡紅，灼痛不甚，反覆遷延難癒",
+          "points_to": [
+            "pattern.yin_deficiency_fire_flaring"
+          ],
+          "distinguishing": "潰瘍疼痛較輕、遷延難癒，多在下午或夜間較明顯，兼五心煩熱、潮熱盜汗、顴紅、咽乾口燥、腰膝痠軟，舌紅少苔或無苔，脈細數"
+        },
+        {
+          "variant": "潰瘍色淡、周圍不紅腫，疼痛輕微、反覆發作",
+          "points_to": [
+            "pattern.spleen_deficiency_damp_encumbrance"
+          ],
+          "distinguishing": "潰瘍色淡、周圍不紅腫，疼痛較輕，兼食少納呆、大便溏薄黏滯、肢體困重、倦怠嗜臥、頭重如裹，舌淡胖邊有齒痕苔白膩，脈濡緩"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Red ulcer with marked burning pain and surrounding redness/swelling",
+          "points_to": [
+            "pattern.heart_stomach_fire"
+          ],
+          "distinguishing": "Recurrent oral/tongue ulcers with marked burning pain, thirst with preference for cold drinks, bad breath, restlessness and insomnia, dark scanty urine, and swollen painful gums; tongue tip red or red with a thick yellow coating; slippery-rapid or surging-rapid pulse"
+        },
+        {
+          "variant": "Small, pale-red ulcer with mild burning pain, protracted and slow to heal",
+          "points_to": [
+            "pattern.yin_deficiency_fire_flaring"
+          ],
+          "distinguishing": "Mild pain that lingers and heals slowly, often more noticeable in the afternoon or at night, with five-centre heat, tidal fever and night sweats, malar flushing, dry throat and mouth, and weak aching low back and knees; tongue red with little or no coating; thin-rapid pulse"
+        },
+        {
+          "variant": "Pale ulcer without surrounding redness/swelling, mild pain, recurrent",
+          "points_to": [
+            "pattern.spleen_deficiency_damp_encumbrance"
+          ],
+          "distinguishing": "Pale ulcer, minimal surrounding redness, mild pain, with poor appetite, loose sticky stools, heavy tired limbs, lethargy and drowsiness, and a muzzy heavy-headed feeling; tongue pale and swollen with tooth marks and a greasy white coating; soft-moderate pulse"
+        }
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "NICE NG12 — Suspected cancer: recognition and referral (oral cavity ulceration lasting more than 3 weeks as an urgent-referral criterion)",
+        "StatPearls — Recurrent Aphthous Stomatitis (NCBI Bookshelf)"
+      ],
+      "safety_flags": [],
+      "red_flags_zh": [
+        "單一潰瘍持續超過三週未癒，或潰瘍持續增大、邊緣變硬、基底不平、轉為無痛 → 依 NICE NG12 建議轉診以排除口腔癌，有嚼檳榔、吸菸、飲酒史者風險更高",
+        "反覆口腔潰瘍合併生殖器潰瘍、眼部發炎（如葡萄膜炎）或皮膚病灶 → 需考慮貝西氏病（Behçet's disease），轉診風濕免疫科評估",
+        "反覆口腔潰瘍合併不明原因體重減輕、慢性腹瀉、腹痛等腸胃症狀 → 需考慮發炎性腸道疾病（如克隆氏症）或乳糜瀉，轉診檢查",
+        "潰瘍範圍廣泛、疼痛劇烈，合併發燒或全身不適，尤其免疫功能低下者 → 需排除病毒性（如疱疹性齒齦口腔炎）或藥物引起的重症口腔潰瘍，應儘速就醫",
+        "新發或明顯惡化的口腔潰瘍，發生於已知惡性腫瘤病史、正接受免疫抑制治療或愛滋感染者 → 轉診評估"
+      ],
+      "red_flags_en": [
+        "A single ulcer persisting beyond three weeks without healing, or one that keeps growing, hardening at the edge, developing an irregular base, or becoming painless → per NICE NG12, refer to rule out oral cancer, especially in patients with a history of betel-nut chewing, smoking or alcohol use",
+        "Recurrent oral ulcers together with genital ulcers, eye inflammation (e.g. uveitis) or skin lesions → consider Behçet's disease and refer to rheumatology for evaluation",
+        "Recurrent oral ulcers with unexplained weight loss, chronic diarrhoea or abdominal pain → consider inflammatory bowel disease (e.g. Crohn's disease) or coeliac disease and refer for work-up",
+        "Widespread, severely painful ulcers with fever or systemic illness, especially in an immunocompromised patient → rule out viral causes (e.g. herpetic gingivostomatitis) or severe drug-induced ulceration and seek prompt medical care",
+        "New or clearly worsening oral ulcers in someone with a known malignancy, on immunosuppressive therapy, or with HIV infection → refer for assessment"
+      ],
+      "sources": [
+        "NICE NG12 — Suspected cancer: recognition and referral（口腔潰瘍持續超過三週為緊急轉診準則）",
+        "StatPearls — Recurrent Aphthous Stomatitis (NCBI Bookshelf, StatPearls Publishing)",
+        "British Dental Journal — Impact of haematologic deficiencies on recurrent aphthous ulceration: a meta-analysis",
+        "中醫內科學／中醫診斷學 通行教材 —— 口瘡的心脾積熱、陰虛火旺、脾虛濕困辨證",
+        "本 repo 既有卡片：data/pathology/pattern_library.json 各證型 key_signs_zh 對照（pattern.heart_stomach_fire · pattern.yin_deficiency_fire_flaring · pattern.spleen_deficiency_damp_encumbrance）"
+      ],
+      "field_sources": {
+        "definition_zh/en": "StatPearls — Recurrent Aphthous Stomatitis 對阿弗他潰瘍臨床特徵與癒合病程（約一到兩週）的描述",
+        "differentiation_zh/en": "中醫內科學／中醫診斷學 口瘡辨證（心脾積熱、陰虛火旺、脾虛濕困）+ 本 repo pattern_library 各證型 key_signs_zh／tongue_zh／pulse_zh 對照",
+        "red_flags_zh/en（口腔癌轉診）": "NICE NG12 — Suspected cancer: recognition and referral，口腔潰瘍 >3 週未癒為緊急轉診準則",
+        "red_flags_zh/en（貝西氏病／腸道疾病關聯）": "StatPearls — Recurrent Aphthous Stomatitis；PubMed 文獻對復發性阿弗他潰瘍作為貝西氏病診斷準則之一的描述"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "sym.photophobia",
+      "name_zh": "畏光",
+      "name_en": "Photophobia",
+      "pinyin": "wei guang",
+      "pinyin_toned": "wèi guāng",
+      "aliases_zh": [
+        "羞明",
+        "怕光",
+        "對光敏感"
+      ],
+      "aliases_en": [
+        "Light sensitivity",
+        "Light intolerance",
+        "Photic sensitivity"
+      ],
+      "taxonomy_ids": [
+        "sym.eye"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported",
+        "examiner_observed"
+      ],
+      "primary_mode": "patient_reported",
+      "definition_zh": "對光線異常敏感，曝露於一般光線甚至日常亮度下即感到眼部不適、刺痛或疼痛，常伴隨想瞇眼、閉眼或迴避光源的反射動作，也可合併流淚、眨眼增加。是主訴／體徵，不是診斷——同一個畏光可以出現在眼科局部病變（角膜、葡萄膜、結膜）、神經科疾病（偏頭痛、腦膜炎）、藥物反應，也可以是中醫的肝火上炎、肝陰虛、風熱外襲。",
+      "definition_en": "An abnormal sensitivity to light in which ordinary or everyday brightness provokes eye discomfort, stinging, or pain, often with a reflexive urge to squint, close the eyes, or turn away from the light source, sometimes with increased tearing or blinking. It is a presenting complaint/sign, not a diagnosis — the same photophobia can sit under local ocular disease (cornea, uvea, conjunctiva), neurological disease (migraine, meningitis), a medication reaction, or the TCM categories of Liver Fire flaming upward, Liver Yin deficiency, or external Wind-Heat.",
+      "patient_words_zh": "「一出太陽眼睛就睜不開」「螢幕太亮受不了，一直想閉眼睛」「燈光刺眼，還會流眼淚」「白天出門一定要戴墨鏡，不然頭會痛」「連手機的光都覺得刺眼」「眼睛見光就痛，只想躲進暗的地方」",
+      "patient_words_en": "\"I can't open my eyes in the sun\", \"the screen's too bright, I keep wanting to shut my eyes\", \"the light stings and makes my eyes water\", \"I have to wear sunglasses outside or I get a headache\", \"even my phone screen feels too bright\", \"light hurts the moment it hits my eyes, I just want to hide somewhere dark\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": true,
+          "vocabulary": "symptom_taxonomy"
+        },
+        "quality": {
+          "applicable": false,
+          "why": "symptom_quality 為疼痛性質詞彙，不適用"
+        },
+        "laterality": {
+          "applicable": true,
+          "vocabulary": "symptom_laterality",
+          "diagnostic_note_zh": "單眼畏光合併眼痛紅腫多指向局部眼科病變；雙眼畏光合併頭痛、發熱則指向偏頭痛或全身性／神經科病因"
+        },
+        "timing": {
+          "applicable": true,
+          "vocabulary": "symptom_timing"
+        },
+        "severity": {
+          "applicable": false,
+          "why": "實例值，屬病例層（§8）"
+        },
+        "duration": {
+          "applicable": false,
+          "why": "實例值，屬病例層（§8）"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "部位",
+          "why": "單眼或雙眼意義不同——單眼畏光合併眼痛紅腫需優先考慮角膜、葡萄膜等局部眼科病變；雙眼畏光合併頭痛、發熱需考慮偏頭痛或腦膜炎等全身性病因"
+        },
+        {
+          "dimension": "病程",
+          "why": "急性突發需優先排除眼科急症與腦膜炎等急症；慢性反覆多見於偏頭痛或慢性眼表疾病，緊急程度完全不同"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "發熱、頸項僵硬、劇烈頭痛提示腦膜炎／腦炎；單眼眼痛、眼紅、視力模糊提示角膜或葡萄膜病變；噁心、單側搏動性頭痛提示偏頭痛——本症最有紅旗重量的一問"
+        },
+        {
+          "dimension": "誘因",
+          "why": "近期眼藥水（散瞳劑）使用、隱形眼鏡配戴、外傷或化學物質接觸、螢幕用眼過度、感冒／上呼吸道感染前驅、情緒波動或熬夜"
+        },
+        {
+          "dimension": "緩解",
+          "why": "暗室安靜休息是否緩解提示偏頭痛；人工淚液或閉眼是否緩解提示眼表病變而非中樞病因"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Location",
+          "why": "One eye versus both eyes carries different meaning — unilateral photophobia with eye pain and redness points to local ocular disease (cornea, uvea); bilateral photophobia with headache and fever points to migraine or a systemic/neurologic cause"
+        },
+        {
+          "dimension": "Course",
+          "why": "Acute sudden onset needs an eye emergency and meningitis ruled out first; chronic recurrent photophobia is more often migraine or chronic ocular surface disease — the urgency differs completely"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Fever, neck stiffness and severe headache suggest meningitis/encephalitis; unilateral eye pain, redness and blurred vision suggest corneal or uveal disease; nausea and unilateral throbbing headache suggest migraine — the highest-yield question here"
+        },
+        {
+          "dimension": "Triggers",
+          "why": "Recent mydriatic eye drops, contact lens wear, trauma or chemical exposure, excessive screen use, a preceding cold/upper respiratory infection, emotional stress or late nights"
+        },
+        {
+          "dimension": "Relief",
+          "why": "Relief in a dark quiet room suggests migraine; relief with artificial tears or eye closure suggests an ocular-surface rather than central cause"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "畏光劇烈，兼目赤腫痛、頭痛如裂、口苦",
+          "points_to": [
+            "pattern.liver_fire"
+          ],
+          "distinguishing": "畏光明顯，兼頭痛目赤、口苦咽乾、耳鳴如潮、急躁易怒，多在情緒波動或熬夜後突然加重，舌紅苔黃、脈弦數"
+        },
+        {
+          "variant": "畏光較輕但反覆，兼目乾澀或視物模糊、腰膝痠軟",
+          "points_to": [
+            "pattern.liver_kidney_yin_deficiency"
+          ],
+          "distinguishing": "畏光程度不重但持續存在，兼眼乾或視物模糊、腰膝痠軟、五心煩熱或低熱、盜汗、咽乾，病程較長，勞累後加重"
+        },
+        {
+          "variant": "畏光新起，兼發熱、咽痛、眼紅乾澀",
+          "points_to": [
+            "pattern.wind_heat"
+          ],
+          "distinguishing": "畏光為新發，兼發熱重、惡寒較輕、咽紅咽痛、眼紅乾澀、口渴，多見於外感初起，苔薄黃、脈浮數"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Marked photophobia with red swollen eyes, splitting headache, bitter taste",
+          "points_to": [
+            "pattern.liver_fire"
+          ],
+          "distinguishing": "Marked photophobia with headache and red eyes, bitter taste and dry throat, tinnitus like roaring tides, irritability, often flaring suddenly after emotional upset or a late night; red tongue with yellow coating, wiry rapid pulse"
+        },
+        {
+          "variant": "Mild but persistent photophobia with dry/blurred eyes and weak aching low back and knees",
+          "points_to": [
+            "pattern.liver_kidney_yin_deficiency"
+          ],
+          "distinguishing": "Photophobia is not severe but persistent, with dry or blurred eyes, weak aching low back and knees, five-center heat or low-grade fever, night sweats, dry throat; long-standing, worse with exertion"
+        },
+        {
+          "variant": "New-onset photophobia with fever, sore throat, red dry eyes",
+          "points_to": [
+            "pattern.wind_heat"
+          ],
+          "distinguishing": "Newly appeared photophobia with fever more prominent than chills, a red sore throat, red dry eyes, thirst; typical of early external Wind-Heat invasion; thin yellow coating, floating rapid pulse"
+        }
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "CDC — About Meningitis, 'Symptoms / When to seek emergency care' (已用於本 repo rf.neck_pain_stiff.legacy01 / rf.tension_headache.legacy02)",
+        "Cleveland Clinic — Photophobia (Light Sensitivity): Symptoms, Causes & Treatment",
+        "MedlinePlus eye injury guidance"
+      ],
+      "safety_flags": [
+        "neurologic_red_flags"
+      ],
+      "red_flags_zh": [
+        "畏光合併發熱、頸項僵硬、劇烈頭痛 → 需緊急評估腦膜炎／腦炎",
+        "突發、數秒內達最劇烈強度的「霹靂性」頭痛合併畏光 → 排除蛛網膜下腔出血",
+        "單眼劇痛、眼紅合併明顯畏光與視力模糊 → 需緊急眼科評估，排除葡萄膜炎、急性隅角閉鎖性青光眼",
+        "外傷、化學物質接觸或配戴隱形眼鏡後突發劇痛畏光 → 需緊急眼科評估角膜損傷／感染",
+        "畏光合併意識改變、抽搐或新發神經功能缺損 → 需立即神經科評估"
+      ],
+      "red_flags_en": [
+        "Photophobia with fever, neck stiffness and severe headache → urgent evaluation for meningitis/encephalitis",
+        "Sudden \"thunderclap\" headache reaching maximal intensity within seconds, together with photophobia → rule out subarachnoid haemorrhage",
+        "Severe pain and redness in one eye with marked photophobia and blurred vision → urgent ophthalmologic evaluation to rule out uveitis or acute angle-closure glaucoma",
+        "Sudden severe pain and photophobia after trauma, chemical exposure, or contact lens wear → urgent ophthalmologic evaluation for corneal injury/infection",
+        "Photophobia with altered consciousness, seizure, or a new focal neurological deficit → immediate neurological evaluation"
+      ],
+      "supporting_measurements": [],
+      "sources": [
+        "CDC — About Meningitis（https://www.cdc.gov/meningitis/about/index.html）：fever, headache, stiff neck, photophobia（本 repo 既有卡片已引用同一來源）",
+        "Cleveland Clinic 患者衛教 — Photophobia (Light Sensitivity)",
+        "MedlinePlus eye injury guidance（角膜損傷／急性眼科紅旗）",
+        "中醫眼科學 —— 畏光（羞明）肝火、肝腎陰虛、風熱分證",
+        "本 repo 既有卡片：sym.dry_eyes · sym.blurred_vision · sym.headache · pattern_library 各證型 key_signs_zh"
+      ],
+      "field_sources": {
+        "definition_zh/en": "Cleveland Clinic photophobia 患者衛教 + 中醫眼科學 畏光（羞明）一般描述",
+        "inquiry_zh/en": "臨床問診常規（單眼／雙眼、伴隨紅旗症狀）+ 中醫眼科學誘因辨證",
+        "differentiation_zh/en": "中醫眼科學 畏光（羞明）分證 + 本 repo pattern_library 對應證型（pattern.liver_fire / pattern.liver_kidney_yin_deficiency / pattern.wind_heat）key_signs_zh 對照",
+        "red_flags_zh/en": "CDC meningitis guidance（本 repo rf.neck_pain_stiff.legacy01 / rf.tension_headache.legacy02 同一來源）+ MedlinePlus eye injury guidance + 一般臨床對蛛網膜下腔出血／葡萄膜炎／隅角閉鎖性青光眼之公認急症描述",
+        "supporting_measurements": "刻意留空 —— 目前 outcome metrics 無對應畏光量化項"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "sym.snoring",
+      "name_zh": "打鼾",
+      "name_en": "Snoring",
+      "pinyin": "da han",
+      "pinyin_toned": "dǎ hān",
+      "aliases_zh": [
+        "打呼",
+        "打呼嚕",
+        "鼾聲",
+        "鼾眠",
+        "鼻鼾"
+      ],
+      "aliases_en": [
+        "Snoring",
+        "Loud snoring",
+        "Snoring sound",
+        "Nocturnal snoring",
+        "Nasal snoring"
+      ],
+      "taxonomy_ids": [
+        "sym.chest_respiratory",
+        "sym.head_face_nose"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported"
+      ],
+      "primary_mode": "patient_reported",
+      "definition_zh": "睡眠時因上呼吸道(鼻咽、口咽或喉部)軟組織隨呼吸氣流振動而發出的粗重呼吸聲，通常由病人自覺或同睡者告知後才就診。單純打鼾（不伴呼吸暫停或明顯白天嗜睡）多屬良性；但打鼾是阻塞性睡眠呼吸中止症最常見的臨床線索，若合併他人目擊的呼吸暫停、喘氣或嗆咳，則可能是氣道阻塞性疾病的表現，不是單一診斷。",
+      "definition_en": "A rough, low-pitched sound produced when soft tissue in the upper airway (nasopharynx, oropharynx or larynx) vibrates with the breath during sleep; it typically comes to clinical attention because the patient notices it or a bed partner reports it. Simple snoring without witnessed breathing pauses or significant daytime sleepiness is usually benign, but snoring is the most common clinical clue to obstructive sleep apnea — when it is accompanied by witnessed apneas, gasping or choking, it may signal an obstructive airway disorder rather than being a diagnosis in itself.",
+      "patient_words_zh": "「我太太說我鼾聲很大，隔壁房都聽得到」「聽說我睡到一半會突然沒聲音，然後很大聲喘一口氣」「早上起來喉嚨很乾、頭悶悶脹脹的」「白天很想睡，開車有時候會恍神」「只有平躺才會打呼，側睡比較不會」「感冒鼻塞那幾天特別大聲」",
+      "patient_words_en": "\"My wife says I snore so loud she can hear it from the next room\", \"apparently I go quiet for a bit and then gasp really loudly\", \"I wake up with a dry throat and a heavy, stuffy head\", \"I'm sleepy all day, I've even zoned out while driving\", \"I only snore lying on my back, it's better on my side\", \"it's much louder when my nose is blocked from a cold\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": false,
+          "why": "非部位性症狀（上呼吸道整體聲響）"
+        },
+        "quality": {
+          "applicable": false,
+          "why": "非疼痛性質症狀"
+        },
+        "laterality": {
+          "applicable": false,
+          "why": "不適用側性"
+        },
+        "timing": {
+          "applicable": true,
+          "vocabulary": "symptom_timing"
+        },
+        "severity": {
+          "applicable": false,
+          "why": "實例值，屬病例層（§8）"
+        },
+        "duration": {
+          "applicable": false,
+          "why": "實例值，屬病例層（§8）"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "程度",
+          "why": "鼾聲是否大到吵醒同床者、隔牆可聞，是病人自覺與他人主訴嚴重度落差最大的一項"
+        },
+        {
+          "dimension": "誘因",
+          "why": "飲酒、鎮靜安眠藥、仰臥姿勢、鼻塞、體重增加皆會加重打鼾"
+        },
+        {
+          "dimension": "時間",
+          "why": "只在平躺時出現提示姿勢相關；感冒鼻塞期間加重提示鼻道阻力；長年逐漸加重提示體重或軟組織變化"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "他人目擊的呼吸暫停、喘氣或嗆咳，以及白天嗜睡、晨起頭痛口乾，是判斷是否進入睡眠呼吸中止症評估流程的關鍵"
+        },
+        {
+          "dimension": "病程",
+          "why": "長期穩定的鼾聲與近期新發、進行性加重或單側的鼾聲/鼻塞，處置方向不同——後者需考慮結構性病灶"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Severity",
+          "why": "Whether the snoring is loud enough to wake a bed partner or carry through a wall is often where the patient's own sense of severity diverges most from what others report"
+        },
+        {
+          "dimension": "Triggers",
+          "why": "Alcohol, sedative-hypnotics, supine posture, nasal congestion and weight gain all worsen snoring"
+        },
+        {
+          "dimension": "Timing",
+          "why": "Snoring only when supine suggests a positional component; worse during a cold points to nasal resistance; a long, gradual increase suggests weight or soft-tissue change"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Witnessed apneas, gasping or choking, plus daytime sleepiness, morning headache and dry mouth, are the key signs that move this into the sleep apnea evaluation pathway"
+        },
+        {
+          "dimension": "Course",
+          "why": "Long-standing stable snoring is handled differently from new-onset, progressively worsening, or one-sided snoring/nasal obstruction — the latter raises concern for a structural lesion"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "鼾聲響亮粗重，形體肥胖",
+          "points_to": [
+            "pattern.phlegm_damp"
+          ],
+          "distinguishing": "鼾聲響亮如雷，形體肥胖，胸悶脘痞，痰多，身重困倦，晨起頭暈頭重"
+        },
+        {
+          "variant": "鼾聲低弱，時斷時續",
+          "points_to": [
+            "pattern.spleen_qi_deficiency"
+          ],
+          "distinguishing": "鼾聲較低弱不揚，食少腹脹，大便溏薄，倦怠乏力，面色萎黃，稍勞更甚"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Loud, heavy snoring with obesity",
+          "points_to": [
+            "pattern.phlegm_damp"
+          ],
+          "distinguishing": "Thunderous, heavy snoring in a person of stocky/overweight build, with chest and epigastric fullness, copious phlegm, heavy tired limbs, and morning dizziness or a muzzy head"
+        },
+        {
+          "variant": "Weak, intermittent snoring",
+          "points_to": [
+            "pattern.spleen_qi_deficiency"
+          ],
+          "distinguishing": "Soft, faint snoring, with poor appetite and abdominal distension, loose stools, fatigue, a sallow complexion, worse with even mild exertion"
+        }
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "STOP-Bang questionnaire (Chung F et al., Anesthesiology 2008;108:812-21)",
+        "AASM Clinical Practice Guideline for Diagnostic Testing for Adult Obstructive Sleep Apnea (Kapur VK et al., J Clin Sleep Med 2017;13(3):479-504)",
+        "AAP Clinical Practice Guideline: Diagnosis and Management of Childhood Obstructive Sleep Apnea Syndrome (Marcus CL et al., Pediatrics 2012;130(3):576-584)"
+      ],
+      "safety_flags": [
+        "respiratory_red_flags"
+      ],
+      "red_flags_zh": [
+        "同睡者目擊鼾聲中斷後接大聲喘氣、嗆咳或呼吸暫停 → 阻塞性睡眠呼吸中止症的核心警示徵象，建議轉診睡眠評估",
+        "打鼾合併明顯白天嗜睡（如開車、談話中不自主入睡）→ 提示睡眠呼吸中止症風險，需進一步評估",
+        "打鼾合併肥胖、頸圍粗大、年齡50歲以上、男性、高血壓等多項危險因子並存（STOP-Bang 型篩檢分數偏高）→ 中重度睡眠呼吸中止症風險上升，宜安排睡眠檢查",
+        "兒童打鼾合併生長遲滯、注意力或行為問題、明顯呼吸費力（如胸壁凹陷）→ 建議轉診評估兒童阻塞性睡眠呼吸中止症",
+        "新發、單側或進行性加重且與體重、姿勢無關的鼾聲或鼻塞 → 需排除鼻咽部結構性病灶，不宜逕自視為單純打鼾"
+      ],
+      "red_flags_en": [
+        "Bed partner witnesses the snoring stop and then hears loud gasping, choking or breathing pauses → a core warning sign of obstructive sleep apnea, refer for sleep evaluation",
+        "Snoring with significant daytime sleepiness (e.g. dozing off while driving or mid-conversation) → suggests sleep apnea risk and warrants further assessment",
+        "Snoring together with several risk factors — obesity, large neck circumference, age over 50, male sex, hypertension (a high STOP-Bang-type score) → higher probability of moderate-to-severe obstructive sleep apnea, arrange a sleep study",
+        "Childhood snoring with growth faltering, attention or behavioral problems, or visible increased work of breathing (e.g. chest wall retractions) → refer for evaluation of pediatric obstructive sleep apnea",
+        "New-onset, one-sided, or progressively worsening snoring/nasal obstruction unrelated to weight or position → rule out a structural nasopharyngeal lesion rather than assuming simple snoring"
+      ],
+      "sources": [
+        "STOP-Bang questionnaire (Chung F et al., Anesthesiology 2008;108:812-21)",
+        "AASM Clinical Practice Guideline for Diagnostic Testing for Adult Obstructive Sleep Apnea (Kapur VK et al., J Clin Sleep Med 2017;13(3):479-504)",
+        "AAP Clinical Practice Guideline: Diagnosis and Management of Childhood Obstructive Sleep Apnea Syndrome (Marcus CL et al., Pediatrics 2012;130(3):576-584)",
+        "中醫內科學／中醫診斷學 通行教材內容 —— 鼾眠、痰濕證的辨證",
+        "本 repo 既有卡片：pattern_library.json — pattern.phlegm_damp、pattern.spleen_qi_deficiency 的 key_signs_zh"
+      ],
+      "field_sources": {
+        "definition_zh/en": "AASM 2017 診斷指引對打鼾與阻塞性睡眠呼吸中止症關係的界定",
+        "red_flags_zh/en": "STOP-Bang (Chung F et al. 2008)、AASM 2017 成人指引、AAP 2012 兒童指引",
+        "differentiation_zh/en": "中醫內科學 鼾眠／痰濕辨證 + 本 repo pattern_library 各證型 key_signs_zh 對照"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     }
   ]
 }
