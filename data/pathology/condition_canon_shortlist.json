@@ -77110,7 +77110,137 @@
     "Cerebral Infarction"
    ],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "急性缺血性腦中風是指腦部特定血管供應區域因血流阻斷(通常由血栓或栓子造成)導致腦組織急性缺氧壞死,佔所有腦中風約八成以上,臨床特徵為突發性、局灶性神經功能缺損(如單側肢體無力、言語障礙、臉部歪斜),症狀出現的時間點是治療決策的核心依據。",
+   "summary_en": "Acute ischemic stroke is the sudden onset of focal neurological deficit caused by interruption of blood flow to a specific vascular territory of the brain — usually from thrombosis or embolism — leading to acute tissue hypoxia and infarction; it accounts for more than 80% of all strokes. The hallmark presentation is sudden, focal neurologic deficit (e.g., unilateral limb weakness, speech difficulty, facial droop), and the precise time of symptom onset is central to treatment decisions.",
+   "western_context_zh": "西醫將急性缺血性腦中風列為時間敏感的醫療急症,以FAST(臉部下垂、手臂無力、言語障礙、儘速就醫)等簡易量表提高民眾與第一線人員辨識度,到院後以非顯影電腦斷層優先排除出血性腦中風,並依症狀發生時間評估是否符合靜脈血栓溶解劑或機械取栓治療條件,後續由神經科主導次級預防(控制血壓、血脂、血糖、抗血小板或抗凝治療)與復健團隊介入。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western medicine treats acute ischemic stroke as a time-sensitive emergency; simple screening tools such as FAST (Face drooping, Arm weakness, Speech difficulty, Time to call emergency services) help the public and first responders recognize it quickly. On arrival, non-contrast CT is used first to rule out hemorrhagic stroke, and eligibility for intravenous thrombolysis or mechanical thrombectomy is assessed based on time since symptom onset; neurology then leads secondary prevention (blood pressure, lipid, and glucose control, antiplatelet or anticoagulant therapy) with rehabilitation team involvement. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "缺血性腦中風的成因多為心因性栓塞(如心房顫動、瓣膜性心臟病產生的血栓脫落)或動脈粥狀硬化性栓塞(顱外頸動脈或椎動脈斑塊剝落),阻塞遠端腦血管後,受供應區域腦組織因缺氧在數分鐘內開始出現不可逆的缺血核心(infarct core),周圍則存在血流部分減少但仍可能挽救的「半影區」(penumbra),此為靜脈血栓溶解與機械取栓等再灌流治療的病理基礎。診斷仰賴神經學檢查(如NIHSS評分)搭配非顯影電腦斷層優先排除出血,必要時以電腦斷層血管攝影或核磁共振進一步定位阻塞血管與評估半影區範圍。",
+   "western_pathology_en": "Ischemic stroke is most often caused by cardioembolism (e.g., a thrombus dislodging in atrial fibrillation or valvular heart disease) or atherosclerotic artery-to-artery embolism (plaque rupture in the extracranial carotid or vertebral arteries); once a downstream cerebral vessel is occluded, the supplied brain tissue begins developing an irreversible ischemic core within minutes, surrounded by a \"penumbra\" of tissue with reduced but still potentially salvageable blood flow — this penumbra is the pathologic rationale for reperfusion therapies such as intravenous thrombolysis and mechanical thrombectomy. Diagnosis relies on neurologic examination (e.g., NIHSS scoring) combined with non-contrast CT to first exclude hemorrhage, with CT angiography or MRI used as needed to localize the occluded vessel and estimate the size of the penumbra.",
+   "red_flags_zh": [
+    "任何突發性單側肢體無力、臉部歪斜或言語障礙都應視為疑似腦中風,立即撥打緊急醫療並記錄症狀開始時間,勿等待症狀自行緩解",
+    "症狀出現後儘早送醫是關鍵,靜脈血栓溶解劑治療窗通常在症狀出現後3-4.5小時內,延誤將喪失再灌流治療機會",
+    "意識程度急速惡化、劇烈頭痛或嘔吐需警覺出血性轉化或顱內壓升高,屬神經外科急症",
+    "症狀在治療後或病程中忽然惡化(如原本穩定後再度惡化)需立即重新評估,可能為出血性轉化或腦水腫",
+    "短暫發作後完全緩解的局灶性神經症狀(疑似短暫性腦缺血發作)仍需視為腦中風高風險警訊,儘速就醫評估"
+   ],
+   "red_flags_en": [
+    "Any sudden unilateral limb weakness, facial droop, or speech difficulty should be treated as suspected stroke — call emergency services immediately and note the exact time symptoms began; do not wait to see if they resolve",
+    "Getting to a hospital as early as possible is critical, since the window for intravenous thrombolysis is generally within about 3 to 4.5 hours of symptom onset — delay forfeits the chance for reperfusion therapy",
+    "Rapidly declining consciousness, severe headache, or vomiting should raise concern for hemorrhagic transformation or rising intracranial pressure, a neurosurgical emergency",
+    "Sudden worsening of symptoms after initial stabilization or during the hospital course needs immediate reassessment, as it may indicate hemorrhagic transformation or cerebral edema",
+    "Focal neurologic symptoms that resolve completely after a brief episode (suspected transient ischemic attack) are still a high-risk warning sign for stroke and warrant prompt medical evaluation"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "心房顫動",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Ischemic Stroke (NBK499997)"
+    },
+    {
+     "factor": "高血壓",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Ischemic Stroke (NBK499997)"
+    },
+    {
+     "factor": "糖尿病",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Ischemic Stroke (NBK499997)"
+    },
+    {
+     "factor": "吸菸",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Ischemic Stroke (NBK499997)"
+    },
+    {
+     "factor": "年齡增長",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: Ischemic Stroke (NBK499997)"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Atrial fibrillation",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Ischemic Stroke (NBK499997)"
+    },
+    {
+     "factor": "Hypertension",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Ischemic Stroke (NBK499997)"
+    },
+    {
+     "factor": "Diabetes mellitus",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Ischemic Stroke (NBK499997)"
+    },
+    {
+     "factor": "Smoking",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Ischemic Stroke (NBK499997)"
+    },
+    {
+     "factor": "Advancing age",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: Ischemic Stroke (NBK499997)"
+    }
+   ],
+   "related_eastern_diseases": [
+    "tdis.zhong_feng"
+   ],
+   "related_patterns": [
+    "pattern.liver_wind",
+    "pattern.liver_yang_rising",
+    "pattern.phlegm_heat_obstructing_heart_orifices",
+    "pattern.qi_deficiency",
+    "pattern.blood_stasis"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "NCBI StatPearls: Ischemic Stroke (NBK499997, retrieved 2026-08)"
+    ],
+    "summary_en": [
+     "NCBI StatPearls: Ischemic Stroke (NBK499997, retrieved 2026-08)"
+    ],
+    "western_context_zh": [
+     "PMC: Diagnosis and management of acute ischemic stroke: speed is critical",
+     "droracle.ai: What is the tPA window for ischemic stroke?"
+    ],
+    "western_context_en": [
+     "PMC: Diagnosis and management of acute ischemic stroke: speed is critical",
+     "droracle.ai: What is the tPA window for ischemic stroke?"
+    ],
+    "western_pathology_zh": [
+     "NCBI StatPearls: Ischemic Stroke (NBK499997, retrieved 2026-08)"
+    ],
+    "western_pathology_en": [
+     "NCBI StatPearls: Ischemic Stroke (NBK499997, retrieved 2026-08)"
+    ],
+    "red_flags_zh": [
+     "PMC: Diagnosis and management of acute ischemic stroke: speed is critical",
+     "droracle.ai: What is the recommended time window for thrombolysis (tPA) in acute ischemic stroke?"
+    ],
+    "red_flags_en": [
+     "PMC: Diagnosis and management of acute ischemic stroke: speed is critical",
+     "droracle.ai: What is the recommended time window for thrombolysis (tPA) in acute ischemic stroke?"
+    ],
+    "risk_factors_zh": [
+     "NCBI StatPearls: Ischemic Stroke (NBK499997, retrieved 2026-08)"
+    ],
+    "risk_factors_en": [
+     "NCBI StatPearls: Ischemic Stroke (NBK499997, retrieved 2026-08)"
+    ]
+   }
   },
   {
    "id": "cond.intracerebral_hemorrhage",
@@ -97294,7 +97424,114 @@
     "Sicca Syndrome"
    ],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "修格連氏症候群(乾燥症候群)是一種慢性自體免疫疾病,免疫系統攻擊淚腺、唾液腺等外分泌腺體,造成腺體功能低下與典型的乾眼、口乾(sicca症候群),可單獨發生(原發性)或伴隨其他自體免疫疾病如類風濕性關節炎、紅斑性狼瘡出現(續發性)。好發於中年女性,病程可從局部腺體症狀進展為全身性表現,少數病人長期病程中淋巴瘤風險上升。",
+   "summary_en": "Sjögren syndrome is a chronic autoimmune disease in which the immune system attacks exocrine glands, particularly the lacrimal and salivary glands, causing glandular dysfunction and the characteristic dry eyes and dry mouth (sicca syndrome). It occurs either alone (primary) or alongside another autoimmune disease such as rheumatoid arthritis or lupus (secondary). It predominantly affects middle-aged women; the disease course can progress from localized glandular symptoms to systemic involvement, and a minority of patients have an elevated long-term risk of lymphoma.",
+   "western_context_zh": "西醫以口眼乾燥症狀持續三個月以上、客觀檢測(Schirmer氏淚液分泌試驗、唾液流量測定)、血清抗Ro/SSA與抗La/SSB抗體及小唾液腺切片病理綜合判斷確立診斷(採美國歐洲共識分類標準),並定期監測是否出現全身性侵犯(關節、肺、腎、周邊神經)與淋巴瘤警訊(如持續腮腺腫大)。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Diagnosis combines at least 3 months of ocular/oral dryness symptoms, objective testing (Schirmer's test, salivary flow measurement), serum anti-Ro/SSA and anti-La/SSB antibodies, and minor salivary gland biopsy findings, following classification criteria such as the American-European Consensus Group criteria; patients are monitored periodically for systemic involvement (joints, lungs, kidneys, peripheral nerves) and for lymphoma warning signs (e.g., persistent parotid enlargement). Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "病理機轉為淋巴球(主要為T細胞,亦有B細胞)浸潤外分泌腺體(以唾液腺、淚腺為主),破壞腺體正常結構並抑制分泌功能,造成口乾、眼乾;部分病人體內B細胞持續活化,長期可能形成單株B細胞增生,是續發黏膜相關淋巴組織(MALT)淋巴瘤風險上升的病理基礎。診斷須整合主觀症狀、淚液/唾液分泌客觀測試、自體抗體(抗Ro/SSA、抗La/SSB)及小唾液腺組織切片顯示的局灶性淋巴球浸潤(focus score)。",
+   "western_pathology_en": "The pathologic mechanism is lymphocytic infiltration (predominantly T cells, with B cells also present) of exocrine glands — primarily salivary and lacrimal glands — disrupting normal glandular architecture and suppressing secretory function, producing dry mouth and dry eyes. In some patients, ongoing B-cell activation can progress to a monoclonal B-cell population, the pathologic basis for an increased risk of mucosa-associated lymphoid tissue (MALT) lymphoma over time. Diagnosis integrates subjective symptoms, objective tear/saliva flow testing, autoantibodies (anti-Ro/SSA, anti-La/SSB), and minor salivary gland biopsy showing focal lymphocytic infiltration (focus score).",
+   "red_flags_zh": [
+    "單側或持續擴大的腮腺/唾液腺腫大需警覺淋巴瘤轉化的可能,建議及早轉診評估",
+    "眼睛劇痛、畏光或視力快速下降需排除角膜潰瘍或嚴重角結膜炎併發症",
+    "新發肢體無力、麻木或感覺異常需評估周邊神經病變或中樞神經侵犯",
+    "紫斑、皮疹合併低補體血症需警覺合併冷凝球蛋白血症性血管炎",
+    "帶有抗Ro/SSA抗體的孕婦,胎兒需監測先天性心臟傳導阻滯風險"
+   ],
+   "red_flags_en": [
+    "Unilateral or progressively enlarging parotid/salivary gland swelling should raise concern for possible lymphomatous transformation and prompts early referral",
+    "Severe eye pain, photophobia, or rapidly worsening vision should be evaluated for corneal ulceration or severe keratoconjunctivitis complications",
+    "New limb weakness, numbness, or sensory changes should be evaluated for peripheral neuropathy or central nervous system involvement",
+    "Purpura or rash with low complement levels should raise concern for associated cryoglobulinemic vasculitis",
+    "In a pregnant patient who is anti-Ro/SSA antibody positive, the fetus should be monitored for the risk of congenital heart block"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "女性",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Johns Hopkins Medicine: Sjögren's Syndrome Symptoms"
+    },
+    {
+     "factor": "中年或停經前後發病",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Johns Hopkins Medicine: Sjögren's Syndrome Symptoms"
+    },
+    {
+     "factor": "併發其他自體免疫疾病(類風濕性關節炎、紅斑性狼瘡)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Merck Manual Professional: Sjögren Syndrome"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Female sex",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Johns Hopkins Medicine: Sjögren's Syndrome Symptoms"
+    },
+    {
+     "factor": "Onset around middle age or perimenopause",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Johns Hopkins Medicine: Sjögren's Syndrome Symptoms"
+    },
+    {
+     "factor": "Coexisting autoimmune disease (rheumatoid arthritis, lupus)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Merck Manual Professional: Sjögren Syndrome"
+    }
+   ],
+   "related_patterns": [
+    "pattern.yin_deficiency",
+    "pattern.liver_kidney_yin_deficiency",
+    "pattern.qi_yin_deficiency"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "Johns Hopkins Medicine: Sjögren's Syndrome Symptoms (retrieved 2026-08)",
+     "PMC: Sjögren's Syndrome - Epidemiology, Classification Criteria, Molecular Pathogenesis, Diagnosis, and Treatment"
+    ],
+    "summary_en": [
+     "Johns Hopkins Medicine: Sjögren's Syndrome Symptoms (retrieved 2026-08)",
+     "PMC: Sjögren's Syndrome - Epidemiology, Classification Criteria, Molecular Pathogenesis, Diagnosis, and Treatment"
+    ],
+    "western_context_zh": [
+     "PMC: Sjögren's Syndrome - Epidemiology, Classification Criteria, Molecular Pathogenesis, Diagnosis, and Treatment",
+     "Merck Manual Professional: Sjögren Syndrome"
+    ],
+    "western_context_en": [
+     "PMC: Sjögren's Syndrome - Epidemiology, Classification Criteria, Molecular Pathogenesis, Diagnosis, and Treatment",
+     "Merck Manual Professional: Sjögren Syndrome"
+    ],
+    "western_pathology_zh": [
+     "Medscape: Sjogren Syndrome - Background, Etiology, Pathophysiology",
+     "PMC: Unraveling the Pathophysiology of Sjogren Syndrome-Associated Dry Eye Disease"
+    ],
+    "western_pathology_en": [
+     "Medscape: Sjogren Syndrome - Background, Etiology, Pathophysiology",
+     "PMC: Unraveling the Pathophysiology of Sjogren Syndrome-Associated Dry Eye Disease"
+    ],
+    "red_flags_zh": [
+     "Merck Manual Professional: Sjögren Syndrome",
+     "Johns Hopkins Medicine: Sjögren's Syndrome Symptoms"
+    ],
+    "red_flags_en": [
+     "Merck Manual Professional: Sjögren Syndrome",
+     "Johns Hopkins Medicine: Sjögren's Syndrome Symptoms"
+    ],
+    "risk_factors_zh": [
+     "Johns Hopkins Medicine: Sjögren's Syndrome Symptoms (retrieved 2026-08)",
+     "Merck Manual Professional: Sjögren Syndrome"
+    ],
+    "risk_factors_en": [
+     "Johns Hopkins Medicine: Sjögren's Syndrome Symptoms (retrieved 2026-08)",
+     "Merck Manual Professional: Sjögren Syndrome"
+    ]
+   }
   },
   {
    "id": "cond.systemic_sclerosis",
@@ -97306,7 +97543,111 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "全身性硬皮症(硬皮症)是一種以皮膚與內臟器官纖維化、血管病變為特徵的慢性自體免疫疾病,依皮膚硬化範圍分為局限型與瀰漫型兩大亞型。雷諾氏現象幾乎是所有病人共有且常為最早出現的症狀,病程可進展至肺臟(間質性肺病、肺動脈高壓)、腸胃道(蠕動障礙)、心臟與腎臟等多重器官受累。",
+   "summary_en": "Systemic sclerosis (scleroderma) is a chronic autoimmune disease characterized by skin and internal-organ fibrosis together with vasculopathy, subdivided by the extent of skin thickening into limited cutaneous and diffuse cutaneous subtypes. Raynaud's phenomenon is nearly universal and is often the earliest symptom; the disease can progress to involve the lungs (interstitial lung disease, pulmonary arterial hypertension), gastrointestinal tract (dysmotility), heart, and kidneys.",
+   "western_context_zh": "西醫由風濕免疫科主導,透過抗核抗體篩檢後進一步分型(如抗著絲點抗體多見於局限型,抗拓樸異構酶I抗體多見於瀰漫型且與肺纖維化相關),並定期以肺功能檢查、心臟超音波、血壓與腎功能監測早期發現肺動脈高壓與腎危象等重大器官併發症,治療依受累器官選擇血管擴張劑、免疫調節劑或針對性抗纖維化藥物。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Rheumatology leads management; ANA screening is followed by subtype-specific antibody testing (e.g., anti-centromere antibody more common in limited disease, anti-topoisomerase I more common in diffuse disease and associated with pulmonary fibrosis), with periodic pulmonary function tests, echocardiography, blood pressure, and renal function monitoring to catch major organ complications such as pulmonary arterial hypertension and renal crisis early; treatment is organ-directed, using vasodilators, immunomodulators, or targeted antifibrotic agents as indicated. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "病理機轉核心為三重過程:血管內皮細胞損傷引發微血管病變、免疫系統異常活化產生自體抗體與發炎浸潤,以及纖維母細胞過度活化導致膠原蛋白異常沉積,三者交互作用造成皮膚增厚與內臟器官纖維化。診斷結合臨床皮膚硬化範圍評估、特異性自體抗體(抗著絲點、抗拓樸異構酶I、抗RNA聚合酶III)及甲皺微血管鏡檢查(顯示微血管稀疏、擴張等硬皮症特徵性變化)。",
+   "western_pathology_en": "The core pathology involves three interacting processes: vascular endothelial injury producing microvasculopathy, aberrant immune activation generating autoantibodies and inflammatory infiltration, and excessive fibroblast activation causing abnormal collagen deposition — together producing skin thickening and internal-organ fibrosis. Diagnosis combines clinical assessment of the extent of skin sclerosis, subtype-specific autoantibodies (anti-centromere, anti-topoisomerase I, anti-RNA polymerase III), and nailfold capillaroscopy showing the characteristic capillary rarefaction and dilation of scleroderma.",
+   "red_flags_zh": [
+    "急性血壓飆升合併頭痛、視力模糊、少尿需立即排除硬皮症腎危象,屬內科急症,延誤處置可能致命",
+    "新發進行性呼吸困難需優先排除肺動脈高壓或間質性肺病急性惡化",
+    "雷諾氏現象合併指尖潰瘍持續不癒、發黑需評估嚴重周邊缺血甚至壞疽風險",
+    "胸痛、心悸或暈厥需評估心包膜炎、心律不整等心臟受累",
+    "嚴重胃食道逆流合併吞嚥困難、體重下降需評估腸胃道嚴重蠕動障礙或吸入性肺炎風險"
+   ],
+   "red_flags_en": [
+    "Acute severe hypertension with headache, blurred vision, or reduced urine output should be treated as scleroderma renal crisis — a medical emergency where delay can be fatal",
+    "New progressive dyspnea should prompt urgent evaluation for pulmonary arterial hypertension or acute worsening of interstitial lung disease",
+    "Raynaud's phenomenon with a persistently non-healing or blackening digital ulcer should be evaluated for severe peripheral ischemia and gangrene risk",
+    "Chest pain, palpitations, or syncope should be evaluated for cardiac involvement such as pericarditis or arrhythmia",
+    "Severe reflux with dysphagia and weight loss should be evaluated for severe GI dysmotility or aspiration risk"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "女性",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "PMC: Neurological, cardiac, musculoskeletal, and renal manifestations of scleroderma"
+    },
+    {
+     "factor": "抗RNA聚合酶III抗體陽性(提高腎危象風險)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Oxford Academic Rheumatology Advances in Practice: Scleroderma renal crisis - avoiding the diagnostic pitfalls"
+    },
+    {
+     "factor": "早期瀰漫型硬皮症合併近期高劑量類固醇使用(提高腎危象風險)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Oxford Academic Rheumatology Advances in Practice: Scleroderma renal crisis - avoiding the diagnostic pitfalls"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Female sex",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "PMC: Neurological, cardiac, musculoskeletal, and renal manifestations of scleroderma"
+    },
+    {
+     "factor": "Anti-RNA polymerase III antibody positivity (raises renal crisis risk)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Oxford Academic Rheumatology Advances in Practice: Scleroderma renal crisis - avoiding the diagnostic pitfalls"
+    },
+    {
+     "factor": "Early diffuse disease with recent high-dose corticosteroid use (raises renal crisis risk)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Oxford Academic Rheumatology Advances in Practice: Scleroderma renal crisis - avoiding the diagnostic pitfalls"
+    }
+   ],
+   "related_eastern_diseases": [
+    "tdis.bi_zheng"
+   ],
+   "related_patterns": [
+    "pattern.blood_stasis",
+    "pattern.qi_stagnation_blood_stasis",
+    "pattern.yang_deficiency"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "PMC: Neurological, cardiac, musculoskeletal, and renal manifestations of scleroderma (retrieved 2026-08)"
+    ],
+    "summary_en": [
+     "PMC: Neurological, cardiac, musculoskeletal, and renal manifestations of scleroderma (retrieved 2026-08)"
+    ],
+    "western_context_zh": [
+     "PMC: Neurological, cardiac, musculoskeletal, and renal manifestations of scleroderma (retrieved 2026-08)"
+    ],
+    "western_context_en": [
+     "PMC: Neurological, cardiac, musculoskeletal, and renal manifestations of scleroderma (retrieved 2026-08)"
+    ],
+    "western_pathology_zh": [
+     "PMC: Neurological, cardiac, musculoskeletal, and renal manifestations of scleroderma",
+     "PMC: Scleroderma Renal Crisis: A Pathology Perspective"
+    ],
+    "western_pathology_en": [
+     "PMC: Neurological, cardiac, musculoskeletal, and renal manifestations of scleroderma",
+     "PMC: Scleroderma Renal Crisis: A Pathology Perspective"
+    ],
+    "red_flags_zh": [
+     "Oxford Academic Rheumatology Advances in Practice: Scleroderma renal crisis - avoiding the diagnostic pitfalls",
+     "Nature Reviews Nephrology: Scleroderma renal crisis and renal involvement in systemic sclerosis"
+    ],
+    "red_flags_en": [
+     "Oxford Academic Rheumatology Advances in Practice: Scleroderma renal crisis - avoiding the diagnostic pitfalls",
+     "Nature Reviews Nephrology: Scleroderma renal crisis and renal involvement in systemic sclerosis"
+    ],
+    "risk_factors_zh": [
+     "Oxford Academic Rheumatology Advances in Practice: Scleroderma renal crisis - avoiding the diagnostic pitfalls (retrieved 2026-08)"
+    ],
+    "risk_factors_en": [
+     "Oxford Academic Rheumatology Advances in Practice: Scleroderma renal crisis - avoiding the diagnostic pitfalls (retrieved 2026-08)"
+    ]
+   }
   },
   {
    "id": "cond.dermatomyositis",
@@ -97330,7 +97671,116 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "多發性肌炎是一種自體免疫性發炎性肌病,以CD8+毒殺型T細胞攻擊骨骼肌纖維為核心機轉,典型表現為數週至數月內逐漸進展的對稱性近端肌肉無力(上臂、大腿、頸屈肌),常合併吞嚥困難,較少侵犯皮膚(與皮肌炎的主要區別)。好發於成年人,女性略多,可單獨發生或與其他結締組織病、惡性腫瘤並存。",
+   "summary_en": "Polymyositis is an autoimmune inflammatory myopathy in which CD8+ cytotoxic T cells attack skeletal muscle fibers, producing symmetric proximal muscle weakness (upper arms, thighs, neck flexors) that typically progresses over weeks to months; dysphagia is common, and — unlike dermatomyositis — skin involvement is minimal or absent. It occurs in adults, is somewhat more common in women, and can occur alone or alongside other connective tissue disease or, less commonly, malignancy.",
+   "western_context_zh": "西醫以肌酸激酶(CK)等肌肉酵素、肌電圖與肌肉切片(顯示CD8+T細胞浸潤健康肌纖維)確立診斷,並依年齡與臨床表現篩檢潛在惡性腫瘤與間質性肺病,治療以高劑量類固醇起始搭配類固醇節省劑(如methotrexate、azathioprine),並由復健科協助維持肌力與吞嚥安全。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Diagnosis relies on muscle enzymes (e.g., creatine kinase), electromyography, and muscle biopsy showing CD8+ T-cell infiltration of otherwise-viable muscle fibers; age- and presentation-appropriate malignancy and interstitial lung disease screening are part of work-up, and treatment typically starts with high-dose corticosteroids plus a steroid-sparing agent (e.g., methotrexate, azathioprine), with rehabilitation support to maintain strength and swallowing safety. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "病理機轉為不明原因誘發自體免疫活化,CD8+毒殺型T細胞與巨噬細胞辨識表現於肌纖維表面異常上調的第一型主要組織相容性複合體(MHC-I)抗原,直接侵入並破壞健康肌內膜肌纖維,造成肌纖維壞死與再生並存的組織學特徵。診斷需符合臨床(對稱性近端無力)、肌酸激酶顯著上升、肌電圖呈肌源性變化及肌肉切片病理特徵等多數項目,並與皮肌炎、包涵體肌炎等其他發炎性肌病做鑑別。",
+   "western_pathology_en": "The pathologic mechanism is autoimmune activation of unclear trigger in which CD8+ cytotoxic T cells and macrophages recognize abnormally upregulated MHC class I antigen on the surface of muscle fibers, directly invading and destroying otherwise-healthy endomysial fibers, producing the histologic picture of coexisting necrosis and regeneration. Diagnosis requires meeting most of several criteria — symmetric proximal weakness, markedly elevated creatine kinase, myopathic changes on electromyography, and characteristic muscle biopsy findings — while distinguishing polymyositis from dermatomyositis and inclusion body myositis.",
+   "red_flags_zh": [
+    "吞嚥困難合併嗆咳或反覆肺炎需優先評估吸入性肺炎風險,可能需調整飲食質地或轉診耳鼻喉科/腸胃科",
+    "急性呼吸困難合併呼吸肌無力需警覺呼吸衰竭,屬急症",
+    "合併乾咳、進行性呼吸困難需排除間質性肺病或抗合成酶症候群",
+    "新發胸痛、心悸或下肢水腫需評估心肌炎等心臟受累",
+    "中年後新發肌炎症狀者需篩檢潛在惡性腫瘤,因肌炎可為腫瘤伴生症候群的表現"
+   ],
+   "red_flags_en": [
+    "Dysphagia with coughing on swallowing or recurrent pneumonia should prompt urgent evaluation for aspiration risk, possibly needing diet texture modification or ENT/GI referral",
+    "Acute shortness of breath with respiratory muscle weakness raises concern for respiratory failure and is an emergency",
+    "New dry cough with progressive dyspnea should be evaluated for interstitial lung disease or antisynthetase syndrome",
+    "New chest pain, palpitations, or leg swelling should be evaluated for cardiac involvement such as myocarditis",
+    "New-onset myositis symptoms in a middle-aged or older adult should prompt malignancy screening, as myositis can be a paraneoplastic presentation"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "特定HLA基因型(HLA-A1、B8、DR3)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Medscape: Polymyositis - Background, Etiology, Pathophysiology"
+    },
+    {
+     "factor": "併發其他結締組織病",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Medscape: Polymyositis - Background, Etiology, Pathophysiology"
+    },
+    {
+     "factor": "女性",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Cleveland Clinic: Polymyositis"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Certain HLA haplotypes (HLA-A1, B8, DR3)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Medscape: Polymyositis - Background, Etiology, Pathophysiology"
+    },
+    {
+     "factor": "Coexisting connective tissue disease",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Medscape: Polymyositis - Background, Etiology, Pathophysiology"
+    },
+    {
+     "factor": "Female sex",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Cleveland Clinic: Polymyositis"
+    }
+   ],
+   "related_eastern_diseases": [
+    "tdis.wei_zheng"
+   ],
+   "related_patterns": [
+    "pattern.qi_blood_deficiency",
+    "pattern.spleen_qi_deficiency",
+    "pattern.liver_kidney_yin_deficiency",
+    "pattern.damp_heat"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "Cleveland Clinic: Polymyositis (retrieved 2026-08)",
+     "Medscape: Polymyositis - Background, Etiology, Pathophysiology"
+    ],
+    "summary_en": [
+     "Cleveland Clinic: Polymyositis (retrieved 2026-08)",
+     "Medscape: Polymyositis - Background, Etiology, Pathophysiology"
+    ],
+    "western_context_zh": [
+     "Medscape: Polymyositis Workup",
+     "Cleveland Clinic: Polymyositis"
+    ],
+    "western_context_en": [
+     "Medscape: Polymyositis Workup",
+     "Cleveland Clinic: Polymyositis"
+    ],
+    "western_pathology_zh": [
+     "Medscape: Polymyositis - Background, Etiology, Pathophysiology",
+     "ScienceDirect: The diagnosis and classification of polymyositis"
+    ],
+    "western_pathology_en": [
+     "Medscape: Polymyositis - Background, Etiology, Pathophysiology",
+     "ScienceDirect: The diagnosis and classification of polymyositis"
+    ],
+    "red_flags_zh": [
+     "Medscape: Polymyositis Clinical Presentation",
+     "PMC: Rapidly Progressive Polymyositis With Vasculitis"
+    ],
+    "red_flags_en": [
+     "Medscape: Polymyositis Clinical Presentation",
+     "PMC: Rapidly Progressive Polymyositis With Vasculitis"
+    ],
+    "risk_factors_zh": [
+     "Medscape: Polymyositis - Background, Etiology, Pathophysiology (retrieved 2026-08)"
+    ],
+    "risk_factors_en": [
+     "Medscape: Polymyositis - Background, Etiology, Pathophysiology (retrieved 2026-08)"
+    ]
+   }
   },
   {
    "id": "cond.vasculitis_unspecified",
@@ -97342,7 +97792,115 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "血管炎泛指一群以血管壁發炎為共同病理特徵的異質性疾病,依受累血管口徑分為大血管(如巨細胞動脈炎)、中血管(如結節性多動脈炎)與小血管(如ANCA相關血管炎)三大類,「未特定型血管炎」用於臨床表現符合血管炎但尚未能歸類至特定亞型時的暫時性診斷。臨床表現依受累血管大小與部位差異極大,可從局部皮膚紫斑到危及生命的多重器官衰竭。",
+   "summary_en": "Vasculitis refers to a heterogeneous group of diseases sharing the common pathology of blood vessel wall inflammation, classified by the caliber of vessel involved into large-vessel (e.g., giant cell arteritis), medium-vessel (e.g., polyarteritis nodosa), and small-vessel (e.g., ANCA-associated vasculitis) categories; \"unspecified vasculitis\" is used as a provisional diagnosis when the clinical picture is consistent with vasculitis but cannot yet be classified into a specific subtype. Presentation varies widely with the size and location of vessels involved, ranging from localized skin purpura to life-threatening multi-organ failure.",
+   "western_context_zh": "西醫依疑似受累血管口徑安排對應檢查(如ANCA、補體、免疫複合體篩檢,受累器官切片,或大血管者安排血管超音波/電腦斷層血管攝影),以全血球計數、發炎指數(ESR/CRP)、腎功能及尿液分析評估器官受累程度,依嚴重度與亞型選擇類固醇合併免疫抑制劑治療。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Work-up is directed by the suspected vessel caliber (ANCA, complement, and immune-complex testing; biopsy of an affected tissue; or vascular ultrasound/CT angiography for suspected large-vessel disease), with CBC, inflammatory markers (ESR/CRP), renal function, and urinalysis used to gauge organ involvement; treatment with corticosteroids plus immunosuppressants is selected by severity and eventual subtype. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "血管炎的共同病理機轉是免疫系統(自體抗體、免疫複合體沉積或T細胞介導的發炎反應)攻擊血管壁,造成血管壁發炎、纖維素樣壞死,進而導致管腔狹窄(缺血)、血栓形成或管壁脆弱破裂(出血、動脈瘤),依受累血管大小呈現不同器官症狀組合。診斷須整合臨床表現組合、發炎與自體抗體標記、受累組織切片病理,並依血管大小分類系統嘗試歸類至特定亞型;若初步證據不足以歸類,則暫以「未特定型血管炎」處理並持續追蹤。",
+   "western_pathology_en": "The shared pathologic mechanism across vasculitides is immune-mediated attack on the vessel wall — autoantibodies, immune-complex deposition, or T-cell-mediated inflammation — causing wall inflammation and fibrinoid necrosis that leads to luminal narrowing (ischemia), thrombosis, or wall weakening with rupture (hemorrhage, aneurysm), producing organ-symptom combinations that vary with vessel size. Diagnosis integrates the clinical symptom pattern, inflammatory and autoantibody markers, and biopsy of an affected tissue, attempting classification into a specific subtype using a vessel-size-based system; when initial evidence is insufficient to classify, \"unspecified vasculitis\" is used provisionally with continued follow-up.",
+   "red_flags_zh": [
+    "突發劇烈頭痛、視力喪失或下顎跛行(尤其50歲以上)需立即排除巨細胞動脈炎,延誤治療可能導致永久失明",
+    "咳血合併肉眼血尿需優先排除肺腎症候群(如ANCA相關血管炎引起的肺泡出血合併急速進行性腎絲球腎炎),屬急重症",
+    "新發足下垂或單一肢體突發無力麻木需評估周邊神經缺血(多發性單神經炎)",
+    "突發劇烈腹痛需排除腸繫膜血管缺血",
+    "胸痛或呼吸困難需立即就醫評估心臟或肺血管受累"
+   ],
+   "red_flags_en": [
+    "Sudden severe headache, vision loss, or jaw claudication (especially in someone over 50) should prompt immediate evaluation for giant cell arteritis, as delayed treatment can cause permanent blindness",
+    "Coughing up blood with visible blood in the urine should raise urgent concern for a pulmonary-renal syndrome (e.g., alveolar hemorrhage with rapidly progressive glomerulonephritis in ANCA-associated vasculitis) — a critical emergency",
+    "New foot drop or sudden weakness/numbness in a single limb should be evaluated for peripheral nerve ischemia (mononeuritis multiplex)",
+    "Sudden severe abdominal pain should be evaluated for mesenteric vascular ischemia",
+    "Chest pain or shortness of breath needs immediate medical evaluation for cardiac or pulmonary vascular involvement"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "特定年齡族群(依亞型而異,如巨細胞動脈炎好發50歲以上)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Merck Manual Professional: Overview of Vasculitis"
+    },
+    {
+     "factor": "吸菸",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "HSS: Vasculitis - Blood Vessel Symptoms, Causes, Treatments"
+    },
+    {
+     "factor": "B型或C型肝炎病毒感染(與部分亞型相關)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Merck Manual Professional: Overview of Vasculitis"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Certain age groups depending on subtype (e.g., giant cell arteritis typically over age 50)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Merck Manual Professional: Overview of Vasculitis"
+    },
+    {
+     "factor": "Smoking",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "HSS: Vasculitis - Blood Vessel Symptoms, Causes, Treatments"
+    },
+    {
+     "factor": "Hepatitis B or C virus infection (associated with certain subtypes)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "Merck Manual Professional: Overview of Vasculitis"
+    }
+   ],
+   "related_eastern_diseases": [
+    "tdis.bi_zheng",
+    "tdis.xue_zheng"
+   ],
+   "related_patterns": [
+    "pattern.blood_heat",
+    "pattern.heat_toxin_blazing",
+    "pattern.blood_stasis",
+    "pattern.damp_heat"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "Merck Manual Professional: Overview of Vasculitis (retrieved 2026-08)"
+    ],
+    "summary_en": [
+     "Merck Manual Professional: Overview of Vasculitis (retrieved 2026-08)"
+    ],
+    "western_context_zh": [
+     "Merck Manual Professional: Overview of Vasculitis (retrieved 2026-08)",
+     "Cleveland Clinic: Vasculitis - Symptoms, Types & Treatment"
+    ],
+    "western_context_en": [
+     "Merck Manual Professional: Overview of Vasculitis (retrieved 2026-08)",
+     "Cleveland Clinic: Vasculitis - Symptoms, Types & Treatment"
+    ],
+    "western_pathology_zh": [
+     "Merck Manual Professional: Overview of Vasculitis (retrieved 2026-08)"
+    ],
+    "western_pathology_en": [
+     "Merck Manual Professional: Overview of Vasculitis (retrieved 2026-08)"
+    ],
+    "red_flags_zh": [
+     "HSS: Vasculitis - Blood Vessel Symptoms, Causes, Treatments",
+     "PMC: Vasculitic emergencies in the intensive care unit"
+    ],
+    "red_flags_en": [
+     "HSS: Vasculitis - Blood Vessel Symptoms, Causes, Treatments",
+     "PMC: Vasculitic emergencies in the intensive care unit"
+    ],
+    "risk_factors_zh": [
+     "Merck Manual Professional: Overview of Vasculitis (retrieved 2026-08)",
+     "HSS: Vasculitis - Blood Vessel Symptoms, Causes, Treatments"
+    ],
+    "risk_factors_en": [
+     "Merck Manual Professional: Overview of Vasculitis (retrieved 2026-08)",
+     "HSS: Vasculitis - Blood Vessel Symptoms, Causes, Treatments"
+    ]
+   }
   },
   {
    "id": "cond.antiphospholipid_syndrome",
@@ -97697,7 +98255,127 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "放射線治療後遺症泛指癌症患者接受放射治療後,因周邊正常組織累積輻射劑量而產生的遲發性副作用,通常在治療結束數月至數年後才顯現,與急性放療反應(治療期間或剛結束時的黏膜炎、皮膚炎)不同。常見型態包括受照射器官的纖維化與萎縮(如放射性肺纖維化)、血管損傷造成的慢性缺血、腸道/膀胱黏膜損傷(放射性腸炎、膀胱炎)及受照射部位長期增加的續發性惡性腫瘤風險。",
+   "summary_en": "Radiation therapy sequelae refers to delayed adverse effects that develop in normal tissue surrounding a cancer treatment field after it accumulates radiation dose; these typically appear months to years after treatment ends, distinct from acute radiation reactions (mucositis, dermatitis during or shortly after treatment). Common patterns include fibrosis and atrophy of the irradiated organ (e.g., radiation-induced pulmonary fibrosis), chronic ischemia from vascular injury, mucosal injury of the bowel or bladder (radiation proctitis, cystitis), and a long-term increased risk of a secondary malignancy arising within the irradiated field.",
+   "western_context_zh": "西醫依受照射部位安排長期追蹤(如胸部放療後定期肺功能與影像檢查、骨盆放療後追蹤腸道與泌尿道症狀),並將症狀嚴重度分級以決定是否需介入(局部治療、內視鏡止血、高壓氧治療慢性放射性組織損傷等),任何新發或加劇的局部症狀均需先排除腫瘤復發或續發性惡性腫瘤。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Follow-up is organized by irradiated site (e.g., periodic pulmonary function tests and imaging after chest radiation, monitoring of bowel/urinary symptoms after pelvic radiation), with severity grading guiding whether intervention (topical therapy, endoscopic hemostasis, hyperbaric oxygen for chronic radiation tissue injury, etc.) is needed; any new or worsening local symptom must first be evaluated to rule out tumor recurrence or a secondary malignancy in the field. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "電離輻射造成微血管內皮細胞損傷與慢性缺血,並活化轉化生長因子-β(TGF-β)等纖維化路徑,導致膠原蛋白異常沉積、組織纖維化與微血管稀疏,受累器官逐漸失去正常彈性與功能(如肺部纖維化限制通氣、腸道纖維化造成狹窄)。後遺症的嚴重程度與總輻射劑量、單次分次劑量、照射體積及合併化療等因素相關,診斷需結合放療病史、受累器官影像/內視鏡表現,並須與腫瘤復發或新發惡性腫瘤做鑑別。",
+   "western_pathology_en": "Ionizing radiation injures microvascular endothelium causing chronic ischemia, and activates fibrotic pathways such as TGF-β signaling, leading to abnormal collagen deposition, tissue fibrosis, and microvascular rarefaction; the affected organ progressively loses normal elasticity and function (e.g., pulmonary fibrosis restricting ventilation, bowel fibrosis causing stricture). Severity correlates with total radiation dose, dose per fraction, treated volume, and concurrent chemotherapy; diagnosis combines radiation history with imaging or endoscopic findings in the affected organ, and must be distinguished from tumor recurrence or a new secondary malignancy.",
+   "red_flags_zh": [
+    "照射部位出現新的腫塊、潰瘍不癒合或原有症狀性質改變,需優先排除腫瘤復發或續發性惡性腫瘤而非單純視為放療後遺症",
+    "放射性腸炎合併持續或大量便血、劇烈腹痛需儘速評估腸道穿孔或嚴重出血",
+    "放射性膀胱炎合併大量血尿或無法排尿需視為泌尿科急症",
+    "胸部放療後新發進行性呼吸困難需評估放射性肺纖維化惡化或心臟受累",
+    "照射脊椎附近部位者出現肢體無力、感覺異常需排除罕見的放射性脊髓病變"
+   ],
+   "red_flags_en": [
+    "A new mass, non-healing ulcer, or a change in character of existing symptoms within the irradiated field should first be evaluated for tumor recurrence or secondary malignancy, not simply assumed to be a late radiation effect",
+    "Radiation proctitis with persistent or heavy rectal bleeding or severe abdominal pain needs urgent evaluation for perforation or major hemorrhage",
+    "Radiation cystitis with gross hematuria or inability to urinate should be treated as a urologic emergency",
+    "New progressive dyspnea after chest radiotherapy should be evaluated for worsening radiation-induced pulmonary fibrosis or cardiac involvement",
+    "Limb weakness or sensory changes in someone irradiated near the spine should be evaluated to rule out the rare complication of radiation myelopathy"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "較高總輻射劑量或單次分次劑量",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Adverse Effects of Radiation Therapy (NBK563259)"
+    },
+    {
+     "factor": "合併化學治療",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Adverse Effects of Radiation Therapy (NBK563259)"
+    },
+    {
+     "factor": "吸菸(影響組織修復與續發腫瘤風險)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "StatPearls: Adverse Effects of Radiation Therapy (NBK563259)"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Higher total radiation dose or dose per fraction",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Adverse Effects of Radiation Therapy (NBK563259)"
+    },
+    {
+     "factor": "Concurrent chemotherapy",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "StatPearls: Adverse Effects of Radiation Therapy (NBK563259)"
+    },
+    {
+     "factor": "Smoking (affects tissue repair and secondary malignancy risk)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "StatPearls: Adverse Effects of Radiation Therapy (NBK563259)"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "可作為放療後纖維化相關局部緊繃、活動度受限、疲勞或周邊神經症狀的輔助緩解,不能逆轉組織纖維化或降低續發性惡性腫瘤風險。",
+    "precautions": "避免直接針刺放療後皮膚脆弱、血循不良或潰瘍部位,以降低感染與延遲癒合風險;新發或性質改變的局部症狀應先排除腫瘤復發再介入。",
+    "co_management": "應與原腫瘤科醫師確認目前追蹤狀態與是否有復發疑慮,不建議患者以針灸延後必要的影像或內視鏡追蹤。",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "May help relieve local tightness, limited mobility, fatigue, or peripheral nerve symptoms related to post-radiation fibrosis; it cannot reverse tissue fibrosis or reduce secondary malignancy risk.",
+    "precautions": "Avoid needling directly over skin in the radiation field that is fragile, poorly perfused, or ulcerated, to reduce infection and delayed-healing risk; a new or changed local symptom should be evaluated for tumor recurrence before intervention.",
+    "co_management": "Coordinate with the treating oncologist on current surveillance status and any concern for recurrence; patients should not use acupuncture as a reason to delay necessary imaging or endoscopic follow-up.",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.xu_lao"
+   ],
+   "related_patterns": [
+    "pattern.qi_yin_deficiency",
+    "pattern.blood_stasis",
+    "pattern.yin_deficiency"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "NCBI StatPearls: Adverse Effects of Radiation Therapy (NBK563259, retrieved 2026-08)"
+    ],
+    "summary_en": [
+     "NCBI StatPearls: Adverse Effects of Radiation Therapy (NBK563259, retrieved 2026-08)"
+    ],
+    "western_context_zh": [
+     "NCBI StatPearls: Radiation Proctitis (NBK559295)",
+     "AME Medical Journal: Clinical management of radiation cystitis - a narrative review"
+    ],
+    "western_context_en": [
+     "NCBI StatPearls: Radiation Proctitis (NBK559295)",
+     "AME Medical Journal: Clinical management of radiation cystitis - a narrative review"
+    ],
+    "western_pathology_zh": [
+     "ScienceDirect: Late radiation-related fibrosis - pathogenesis, manifestations, and current management",
+     "NCBI StatPearls: Adverse Effects of Radiation Therapy (NBK563259)"
+    ],
+    "western_pathology_en": [
+     "ScienceDirect: Late radiation-related fibrosis - pathogenesis, manifestations, and current management",
+     "NCBI StatPearls: Adverse Effects of Radiation Therapy (NBK563259)"
+    ],
+    "red_flags_zh": [
+     "NCBI StatPearls: Radiation Proctitis (NBK559295)",
+     "PMC: Risk of Secondary Malignancies After Pelvic Radiation"
+    ],
+    "red_flags_en": [
+     "NCBI StatPearls: Radiation Proctitis (NBK559295)",
+     "PMC: Risk of Secondary Malignancies After Pelvic Radiation"
+    ],
+    "risk_factors_zh": [
+     "NCBI StatPearls: Adverse Effects of Radiation Therapy (NBK563259, retrieved 2026-08)"
+    ],
+    "risk_factors_en": [
+     "NCBI StatPearls: Adverse Effects of Radiation Therapy (NBK563259, retrieved 2026-08)"
+    ]
+   }
   },
   {
    "id": "cond.mixed_connective_tissue_disease",
@@ -97709,7 +98387,115 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "混合性結締組織病(MCTD)是一種罕見的自體免疫重疊症候群,同時具有全身性紅斑性狼瘡、硬皮症與多發性肌炎的部分臨床特徵,血清中可測得高效價抗U1核糖核蛋白(U1-RNP)抗體為其定義性標誌。好發於女性,常於青少年至中年發病,初期表現常以雷諾氏現象、手指腫脹與多關節痛為主,病程可能歷時數年才逐漸浮現出完整的重疊特徵。",
+   "summary_en": "Mixed connective tissue disease (MCTD) is a rare autoimmune overlap syndrome combining features of systemic lupus erythematosus, systemic sclerosis, and polymyositis, defined by high-titer anti-U1 ribonucleoprotein (U1-RNP) antibodies. It predominantly affects women, often with onset in adolescence to middle age; early presentation is typically Raynaud's phenomenon, swollen (\"puffy\") fingers, and polyarthralgia, with the full overlap picture sometimes taking years to emerge.",
+   "western_context_zh": "西醫以風濕免疫科為主要照護單位,透過ANA、抗U1-RNP抗體、其他自體抗體篩檢排除單一疾病特異性抗體陽性以輔助診斷,並定期以肺功能檢查、心臟超音波監測是否進展為肺動脈高壓,依受累器官選擇類固醇、免疫調節劑或血管擴張劑。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Rheumatology is the primary managing specialty; diagnosis is supported by ANA and anti-U1-RNP antibody testing along with excluding antibodies specific to other single connective tissue diseases, and patients are monitored periodically with pulmonary function tests and echocardiography to screen for progression to pulmonary arterial hypertension, with corticosteroids, immunomodulators, or vasodilators chosen according to which organs are involved. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "MCTD的核心病理機轉是免疫系統對U1-RNP複合體產生自體抗體與T細胞反應,導致血管內皮損傷、平滑肌增生與結締組織纖維化,病變可侵犯皮膚、關節、食道(食道蠕動低下)、肺(間質性肺病、肺動脈高壓)與心臟。診斷採組合式標準(如Alarcón-Segovia或Kasukawa準則),需符合特定臨床表現組合並排除其他單一結締組織病特異性抗體陽性。",
+   "western_pathology_en": "The core pathophysiology of MCTD is autoantibody and T-cell reactivity against the U1-RNP complex, driving vascular endothelial injury, smooth-muscle proliferation, and connective-tissue fibrosis that can involve skin, joints, esophagus (hypomotility), lungs (interstitial lung disease, pulmonary arterial hypertension), and heart. Diagnosis uses combination criteria sets (e.g., Alarcón-Segovia or Kasukawa criteria) requiring a defined cluster of clinical features while excluding antibodies specific to other single connective tissue diseases.",
+   "red_flags_zh": [
+    "新發進行性呼吸困難、運動耐受度下降需優先排除肺動脈高壓,為MCTD最主要的死亡原因",
+    "雷諾氏現象合併指尖潰瘍、皮膚變黑或劇痛需警覺周邊血管嚴重缺血",
+    "急性血壓飆升合併頭痛、視力模糊、腎功能急遽惡化需排除類似硬皮症的腎危象",
+    "胸痛、心悸或暈厥需評估心包膜炎、心肌炎或心律不整等心臟侵犯",
+    "吞嚥困難合併嗆咳需評估食道嚴重蠕動障礙造成的吸入性肺炎風險"
+   ],
+   "red_flags_en": [
+    "New progressive dyspnea or declining exercise tolerance should prompt evaluation for pulmonary arterial hypertension — the leading cause of death in MCTD",
+    "Raynaud's phenomenon with digital ulceration, blackening, or severe pain suggests critical peripheral ischemia",
+    "Acute severe hypertension with headache, blurred vision, and rapidly worsening renal function should raise concern for a scleroderma-like renal crisis",
+    "Chest pain, palpitations, or syncope warrant evaluation for pericarditis, myocarditis, or arrhythmia from cardiac involvement",
+    "Dysphagia with coughing on swallowing should be evaluated for severe esophageal dysmotility and aspiration risk"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "女性",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NORD: Mixed Connective Tissue Disease"
+    },
+    {
+     "factor": "青少年至中年發病",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NORD: Mixed Connective Tissue Disease"
+    },
+    {
+     "factor": "抗RNA聚合酶III等特定自體抗體或早期瀰漫型病程(於相關結締組織病中提高腎危象風險)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Rheumatology Advances in Practice: Scleroderma renal crisis"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Female sex",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NORD: Mixed Connective Tissue Disease"
+    },
+    {
+     "factor": "Onset in adolescence to middle age",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NORD: Mixed Connective Tissue Disease"
+    },
+    {
+     "factor": "Certain autoantibodies (e.g., anti-RNA polymerase III) or early diffuse disease course (raises renal-crisis-type risk in related connective tissue disease)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Rheumatology Advances in Practice: Scleroderma renal crisis"
+    }
+   ],
+   "related_eastern_diseases": [
+    "tdis.bi_zheng"
+   ],
+   "related_patterns": [
+    "pattern.qi_blood_deficiency",
+    "pattern.liver_kidney_yin_deficiency",
+    "pattern.blood_stasis"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "NORD: Mixed Connective Tissue Disease (retrieved 2026-08)",
+     "Mayo Clinic: Mixed connective tissue disease - Symptoms and causes"
+    ],
+    "summary_en": [
+     "NORD: Mixed Connective Tissue Disease (retrieved 2026-08)",
+     "Mayo Clinic: Mixed connective tissue disease - Symptoms and causes"
+    ],
+    "western_context_zh": [
+     "Merck Manual Professional: Mixed Connective Tissue Disease (MCTD)"
+    ],
+    "western_context_en": [
+     "Merck Manual Professional: Mixed Connective Tissue Disease (MCTD)"
+    ],
+    "western_pathology_zh": [
+     "Cleveland Clinic: Mixed Connective Tissue Disease (MCTD)",
+     "Merck Manual Professional: Mixed Connective Tissue Disease (MCTD)"
+    ],
+    "western_pathology_en": [
+     "Cleveland Clinic: Mixed Connective Tissue Disease (MCTD)",
+     "Merck Manual Professional: Mixed Connective Tissue Disease (MCTD)"
+    ],
+    "red_flags_zh": [
+     "PMC: In-depth characterization of pulmonary arterial hypertension in MCTD - French national multicentre study",
+     "PubMed: Clinical course, prognosis, and causes of death in MCTD"
+    ],
+    "red_flags_en": [
+     "PMC: In-depth characterization of pulmonary arterial hypertension in MCTD - French national multicentre study",
+     "PubMed: Clinical course, prognosis, and causes of death in MCTD"
+    ],
+    "risk_factors_zh": [
+     "NORD: Mixed Connective Tissue Disease (retrieved 2026-08)",
+     "Oxford Academic Rheumatology Advances in Practice: Scleroderma renal crisis"
+    ],
+    "risk_factors_en": [
+     "NORD: Mixed Connective Tissue Disease (retrieved 2026-08)",
+     "Oxford Academic Rheumatology Advances in Practice: Scleroderma renal crisis"
+    ]
+   }
   },
   {
    "id": "cond.kawasaki_disease",
@@ -97733,7 +98519,115 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "結節性多動脈炎(PAN)是一種罕見的壞死性血管炎,主要侵犯中型肌肉動脈(偶爾波及小動脈),典型不侵犯肺臟與腎絲球微血管,病理特徵為節段性、跳躍性血管壁全層壞死性發炎,好發於腎臟、皮膚、關節、肌肉、周邊神經與胃腸道,可與B型肝炎病毒感染相關。全身性症狀如發燒、體重減輕、肌肉關節痠痛常見,嚴重時可致內臟缺血或動脈瘤破裂。",
+   "summary_en": "Polyarteritis nodosa (PAN) is a rare necrotizing vasculitis that predominantly affects medium-sized muscular arteries (occasionally small arteries), classically sparing the lungs and glomerular capillaries; pathology shows segmental, \"skip-lesion\" transmural necrotizing inflammation of the vessel wall. It commonly involves the kidneys, skin, joints, muscles, peripheral nerves, and gastrointestinal tract, and can be associated with hepatitis B virus infection. Systemic symptoms — fever, weight loss, myalgia, arthralgia — are common, and severe disease can cause visceral ischemia or aneurysm rupture.",
+   "western_context_zh": "西醫由風濕免疫科主導,以受累組織(皮膚、腓腸神經、腎臟)切片或內臟血管攝影顯示動脈瘤或狹窄確立診斷,並篩檢B型肝炎病毒感染以判斷病因分型,治療以類固醇合併免疫抑制劑(如環磷醯胺)為主,若與B肝相關則需搭配抗病毒治療。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Rheumatology leads management; diagnosis is confirmed by biopsy of an involved tissue (skin, sural nerve, kidney) or by visceral angiography showing microaneurysms or stenoses, with hepatitis B testing to determine etiologic subtype; treatment is corticosteroids combined with immunosuppressants (e.g., cyclophosphamide), plus antiviral therapy when hepatitis B–associated. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "PAN的核心機轉是免疫複合體沉積或直接免疫反應引發中型動脈壁全層發炎與纖維素樣壞死,破壞血管壁結構導致管腔狹窄、血栓形成或動脈瘤形成,病灶呈節段性分布(健康與病變血管交替出現)。缺血造成的臨床表現包括周邊神經缺血(多發性單神經炎)、腸繫膜缺血(腹痛)、腎血管性高血壓與皮膚livedo reticularis(網狀青斑),確診需依賴組織切片顯示壞死性血管炎或血管攝影顯示典型的微動脈瘤。",
+   "western_pathology_en": "The core mechanism in PAN is immune-complex deposition or direct immune-mediated injury causing transmural inflammation and fibrinoid necrosis of medium-sized artery walls, disrupting vessel structure and causing luminal narrowing, thrombosis, or aneurysm formation; lesions are segmental, with diseased segments interspersed among normal vessel. Ischemia from this process produces peripheral nerve ischemia (mononeuritis multiplex), mesenteric ischemia (abdominal pain), renovascular hypertension, and livedo reticularis of the skin. Diagnosis relies on tissue biopsy showing necrotizing vasculitis or angiography showing the characteristic microaneurysms.",
+   "red_flags_zh": [
+    "突發劇烈腹痛需優先排除腸繫膜缺血或腸穿孔,屬外科急症",
+    "單一肢體突發麻木無力(多發性單神經炎型態)需儘速評估周邊神經缺血",
+    "急速惡化的高血壓合併腎功能下降需警覺腎血管受累",
+    "皮膚出現快速擴大的潰瘍、壞死或指端缺血變黑需儘速轉診",
+    "合併已知B型肝炎感染且症狀急遽惡化者需同時評估病毒活性與血管炎活性"
+   ],
+   "red_flags_en": [
+    "Sudden severe abdominal pain should prompt urgent evaluation for mesenteric ischemia or bowel perforation — a surgical emergency",
+    "Sudden numbness or weakness in a single limb (mononeuritis multiplex pattern) needs prompt evaluation for peripheral nerve ischemia",
+    "Rapidly worsening hypertension with declining kidney function should raise concern for renal vascular involvement",
+    "Rapidly expanding skin ulceration, necrosis, or blackening of digits needs urgent referral",
+    "In a patient with known hepatitis B infection and rapid clinical worsening, both viral activity and vasculitis activity should be assessed together"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "B型肝炎病毒感染",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NORD: Polyarteritis Nodosa"
+    },
+    {
+     "factor": "男性",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Cleveland Clinic: Polyarteritis Nodosa (PAN)"
+    },
+    {
+     "factor": "好發年齡40-60歲",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Cleveland Clinic: Polyarteritis Nodosa (PAN)"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Hepatitis B virus infection",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NORD: Polyarteritis Nodosa"
+    },
+    {
+     "factor": "Male sex",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Cleveland Clinic: Polyarteritis Nodosa (PAN)"
+    },
+    {
+     "factor": "Typical onset age 40-60",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Cleveland Clinic: Polyarteritis Nodosa (PAN)"
+    }
+   ],
+   "related_eastern_diseases": [
+    "tdis.bi_zheng"
+   ],
+   "related_patterns": [
+    "pattern.blood_heat",
+    "pattern.blood_stasis",
+    "pattern.heat_toxin_blazing"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "Cleveland Clinic: Polyarteritis Nodosa (PAN) (retrieved 2026-08)",
+     "NORD: Polyarteritis Nodosa (retrieved 2026-08)"
+    ],
+    "summary_en": [
+     "Cleveland Clinic: Polyarteritis Nodosa (PAN) (retrieved 2026-08)",
+     "NORD: Polyarteritis Nodosa (retrieved 2026-08)"
+    ],
+    "western_context_zh": [
+     "Merck Manual Professional: Polyarteritis Nodosa (PAN)"
+    ],
+    "western_context_en": [
+     "Merck Manual Professional: Polyarteritis Nodosa (PAN)"
+    ],
+    "western_pathology_zh": [
+     "NORD: Polyarteritis Nodosa (retrieved 2026-08)",
+     "Merck Manual Professional: Polyarteritis Nodosa (PAN)"
+    ],
+    "western_pathology_en": [
+     "NORD: Polyarteritis Nodosa (retrieved 2026-08)",
+     "Merck Manual Professional: Polyarteritis Nodosa (PAN)"
+    ],
+    "red_flags_zh": [
+     "NORD: Polyarteritis Nodosa (retrieved 2026-08)",
+     "PMC: Necrosis of the small intestine leading to a diagnosis of polyarteritis nodosa - case report"
+    ],
+    "red_flags_en": [
+     "NORD: Polyarteritis Nodosa (retrieved 2026-08)",
+     "PMC: Necrosis of the small intestine leading to a diagnosis of polyarteritis nodosa - case report"
+    ],
+    "risk_factors_zh": [
+     "NORD: Polyarteritis Nodosa (retrieved 2026-08)",
+     "Cleveland Clinic: Polyarteritis Nodosa (PAN) (retrieved 2026-08)"
+    ],
+    "risk_factors_en": [
+     "NORD: Polyarteritis Nodosa (retrieved 2026-08)",
+     "Cleveland Clinic: Polyarteritis Nodosa (PAN) (retrieved 2026-08)"
+    ]
+   }
   },
   {
    "id": "cond.behcet_disease",
@@ -97914,7 +98808,124 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "淋巴瘤是源自淋巴球(B細胞、T細胞或自然殺手細胞)的惡性腫瘤,依組織型態分為何杰金氏淋巴瘤(以Reed-Sternberg細胞為特徵)與非何杰金氏淋巴瘤兩大類,後者更常見且異質性高。典型表現為無痛性、進行性腫大的淋巴結(頸部、腋下、鼠蹊部),部分病人合併發燒、夜間盜汗、體重減輕等全身性B型症狀,亦可侵犯淋巴結外器官如骨髓、脾臟或胃腸道。",
+   "summary_en": "Lymphoma is a malignancy arising from lymphocytes (B cells, T cells, or natural killer cells), histologically divided into Hodgkin lymphoma (defined by Reed-Sternberg cells) and the more common, biologically heterogeneous non-Hodgkin lymphoma. The classic presentation is painless, progressively enlarging lymphadenopathy (neck, axilla, groin); some patients also have systemic \"B symptoms\" — fever, night sweats, weight loss — and extranodal involvement of the bone marrow, spleen, or gastrointestinal tract can occur.",
+   "western_context_zh": "西醫確診需病理切片(整顆淋巴結切除優於細針抽吸)搭配免疫組織化學染色分型,並以電腦斷層、正子攝影與骨髓檢查分期,治療依亞型選擇化學治療、標靶/免疫治療或放射治療,治療後需長期血液腫瘤科追蹤監測復發與遲發性副作用。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Diagnosis requires tissue biopsy (excisional lymph node biopsy preferred over fine-needle aspiration) with immunohistochemical subtyping, followed by CT/PET imaging and bone marrow evaluation for staging; treatment is chemotherapy, targeted/immunotherapy, and/or radiation depending on subtype, with long-term hematology-oncology follow-up for relapse and late treatment effects. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "淋巴瘤源於淋巴球在成熟或分化過程中發生基因突變或染色體易位(如濾泡型淋巴瘤常見t(14;18)),導致細胞脫離正常凋亡調控而異常增生,並在淋巴結、脾臟或淋巴結外組織中形成腫瘤團塊。何杰金氏淋巴瘤的病理特徵是在發炎背景細胞中散布多核巨大Reed-Sternberg細胞;非何杰金氏淋巴瘤則依細胞來源與生長速度分為惰性(如濾泡型)與侵襲性(如瀰漫性大B細胞淋巴瘤)。",
+   "western_pathology_en": "Lymphoma arises when a genetic mutation or chromosomal translocation occurs during lymphocyte maturation or differentiation (e.g., the t(14;18) translocation common in follicular lymphoma), allowing the cell to escape normal apoptotic regulation and proliferate abnormally, forming tumor masses in lymph nodes, spleen, or extranodal tissue. Hodgkin lymphoma is pathologically defined by scattered multinucleated Reed-Sternberg cells within an inflammatory background; non-Hodgkin lymphoma is classified by cell of origin and growth rate into indolent (e.g., follicular) and aggressive (e.g., diffuse large B-cell lymphoma) subtypes.",
+   "red_flags_zh": [
+    "頸胸交界處淋巴結腫大合併臉頸部腫脹、頸靜脈怒張、呼吸困難需立即排除上腔靜脈症候群",
+    "發燒、夜間盜汗、無法解釋的體重減輕(B型症狀)合併持續腫大淋巴結應儘速轉診血液腫瘤科",
+    "背痛合併下肢無力、麻木或大小便功能改變需排除脊髓壓迫,屬腫瘤急症",
+    "開始化療後出現噁心、肌肉抽搐、心律不整或尿量減少需警覺腫瘤溶解症候群,屬代謝急症",
+    "化療後持續高燒、發冷合併白血球低下需視為嗜中性球低下發燒,立即就醫"
+   ],
+   "red_flags_en": [
+    "Lymphadenopathy at the thoracic inlet with facial/neck swelling, jugular venous distension, or shortness of breath should raise immediate concern for superior vena cava syndrome",
+    "Persistent enlarging nodes with fever, night sweats, and unintentional weight loss (B symptoms) warrant prompt referral to hematology-oncology",
+    "Back pain with new leg weakness, numbness, or bowel/bladder changes should raise concern for spinal cord compression, an oncologic emergency",
+    "After chemotherapy begins, nausea, muscle cramps, arrhythmia, or reduced urine output can signal tumor lysis syndrome, a metabolic emergency",
+    "Persistent high fever with low white blood cell count after chemotherapy should be treated as neutropenic fever and requires immediate medical care"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "免疫功能低下(器官移植後、HIV感染)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Mayo Clinic: Non-Hodgkin lymphoma - Symptoms and causes"
+    },
+    {
+     "factor": "EB病毒(EBV)等特定病毒感染史",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Mayo Clinic: Non-Hodgkin lymphoma - Symptoms and causes"
+    },
+    {
+     "factor": "淋巴瘤家族史",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Mayo Clinic: Non-Hodgkin lymphoma - Symptoms and causes"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Immunosuppression (post-transplant, HIV infection)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Mayo Clinic: Non-Hodgkin lymphoma - Symptoms and causes"
+    },
+    {
+     "factor": "History of certain viral infections (e.g., Epstein-Barr virus)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Mayo Clinic: Non-Hodgkin lymphoma - Symptoms and causes"
+    },
+    {
+     "factor": "Family history of lymphoma",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "Mayo Clinic: Non-Hodgkin lymphoma - Symptoms and causes"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "可作為淋巴瘤病人在化療/放療期間輔助緩解噁心、疲勞、周邊神經病變等症狀,不能治療淋巴瘤本身或替代腫瘤專科治療。",
+    "precautions": "避免在腫大淋巴結或放療照射部位直接針刺;化療後白血球低下期間應嚴格消毒並評估感染風險,必要時避免侵入性針灸。",
+    "co_management": "所有針灸介入應與患者的血液腫瘤科醫師確認治療階段與血球數值,不建議患者自行調整或停止化療、標靶或類固醇藥物。",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "May be used as adjunct support for chemotherapy/radiotherapy-related nausea, fatigue, or peripheral neuropathy in lymphoma patients; it cannot treat lymphoma itself or replace oncology specialty care.",
+    "precautions": "Avoid needling directly over enlarged nodes or a radiation field; during chemotherapy-induced low white cell counts, strict sterile technique is required and invasive acupuncture may need to be avoided given infection risk.",
+    "co_management": "All acupuncture intervention should be coordinated with the patient's hematology-oncology physician regarding treatment stage and blood counts; patients should not be advised to adjust or stop chemotherapy, targeted therapy, or corticosteroids on their own.",
+    "evidence": "unknown",
+    "source": null
+   },
+   "related_eastern_diseases": [
+    "tdis.luo_li",
+    "tdis.ji_ju"
+   ],
+   "related_patterns": [
+    "pattern.phlegm_qi_binding",
+    "pattern.phlegm_stasis_binding",
+    "pattern.qi_stagnation_blood_stasis"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "Mayo Clinic: Non-Hodgkin lymphoma - Symptoms and causes (retrieved 2026-08)"
+    ],
+    "summary_en": [
+     "Mayo Clinic: Non-Hodgkin lymphoma - Symptoms and causes (retrieved 2026-08)"
+    ],
+    "western_context_zh": [
+     "Mayo Clinic: Non-Hodgkin lymphoma - Diagnosis and treatment (retrieved 2026-08)"
+    ],
+    "western_context_en": [
+     "Mayo Clinic: Non-Hodgkin lymphoma - Diagnosis and treatment (retrieved 2026-08)"
+    ],
+    "western_pathology_zh": [
+     "Mayo Clinic: Hodgkin vs. non-Hodgkin lymphoma FAQ (retrieved 2026-08)"
+    ],
+    "western_pathology_en": [
+     "Mayo Clinic: Hodgkin vs. non-Hodgkin lymphoma FAQ (retrieved 2026-08)"
+    ],
+    "red_flags_zh": [
+     "AAFP: Oncologic Emergencies: Recognition and Initial Management (2018)",
+     "PMC: Emergency Management of Diffuse Large B-cell Lymphoma - SVC syndrome case"
+    ],
+    "red_flags_en": [
+     "AAFP: Oncologic Emergencies: Recognition and Initial Management (2018)",
+     "PMC: Emergency Management of Diffuse Large B-cell Lymphoma - SVC syndrome case"
+    ],
+    "risk_factors_zh": [
+     "Mayo Clinic: Non-Hodgkin lymphoma - Symptoms and causes (retrieved 2026-08)"
+    ],
+    "risk_factors_en": [
+     "Mayo Clinic: Non-Hodgkin lymphoma - Symptoms and causes (retrieved 2026-08)"
+    ]
+   }
   },
   {
    "id": "cond.leukemia",
@@ -97938,7 +98949,126 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "多發性骨髓瘤是一種源自骨髓中漿細胞的血液惡性腫瘤,異常漿細胞株增生並分泌單株免疫球蛋白(M蛋白),造成骨骼破壞、腎功能損傷、貧血與高血鈣等典型器官損傷。好發於中老年人(多數診斷年齡65歲以上),常見表現為持續性骨頭疼痛(尤其脊椎、肋骨)、反覆感染與不明原因貧血或腎功能惡化。",
+   "summary_en": "Multiple myeloma is a hematologic malignancy of bone-marrow plasma cells in which an abnormal clonal population proliferates and secretes a monoclonal immunoglobulin (M protein), causing the characteristic end-organ damage pattern of bone destruction, renal impairment, anemia, and hypercalcemia. It predominantly affects older adults (most diagnosed after age 65) and commonly presents with persistent bone pain (especially spine and ribs), recurrent infections, or unexplained anemia or worsening kidney function.",
+   "western_context_zh": "西醫由血液腫瘤科主導,以血清/尿液蛋白電泳、游離輕鏈比值、骨髓切片與全身影像(全身MRI或PET-CT優於傳統骨骼X光)確立診斷與分期,並定期監測腎功能、血鈣與血球數值以評估器官損傷,治療依風險分層選擇蛋白酶體抑制劑、免疫調節劑、單株抗體或自體幹細胞移植。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Hematology-oncology leads management; diagnosis and staging use serum/urine protein electrophoresis, free light chain ratio, bone marrow biopsy, and whole-body imaging (whole-body MRI or PET-CT preferred over conventional skeletal survey), with periodic monitoring of renal function, calcium, and blood counts to track end-organ damage; treatment is risk-stratified and may include proteasome inhibitors, immunomodulatory drugs, monoclonal antibodies, or autologous stem cell transplant. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "惡性漿細胞株在骨髓微環境中增生,分泌破骨細胞活化因子(如RANKL)並抑制成骨細胞活性,造成瀰漫性溶骨性病灶與病理性骨折;同時大量單株輕鏈蛋白經腎小管代謝造成管型腎病變,並置換正常造血組織導致貧血。診斷採國際骨髓瘤工作組(IMWG)標準,以骨髓漿細胞比例≥10%或漿細胞瘤合併CRAB表現(高血鈣、腎功能不全、貧血、骨病灶)或SLiM生物標記(漿細胞≥60%、游離輕鏈比≥100、MRI≥2處局部病灶)確立診斷。",
+   "western_pathology_en": "A malignant plasma cell clone proliferates within the bone marrow microenvironment, secreting osteoclast-activating factors (e.g., RANKL) while suppressing osteoblast activity, producing diffuse lytic bone lesions and pathologic fractures; large amounts of monoclonal light chain protein processed through renal tubules cause myeloma cast nephropathy, and marrow replacement by tumor cells leads to anemia. Diagnosis follows International Myeloma Working Group (IMWG) criteria: ≥10% clonal bone marrow plasma cells or a plasmacytoma plus either CRAB features (hypercalcemia, renal insufficiency, anemia, bone lesions) or SLiM biomarkers (≥60% plasma cells, involved/uninvolved free light chain ratio ≥100, or ≥2 focal lesions on MRI).",
+   "red_flags_zh": [
+    "背痛突然加劇合併下肢無力、麻木或大小便失禁需立即排除脊髓壓迫,屬急症",
+    "意識混亂、視力模糊、黏膜出血合併嚴重貧血或蛋白數值極高需警覺高黏滯症候群,屬血液腫瘤急症",
+    "噁心嘔吐、多尿多渴、意識改變合併已知高血鈣需視為高血鈣危象",
+    "急性腎功能惡化(少尿或無尿)合併已知M蛋白升高需優先排除管型腎病變",
+    "持續高燒合併白血球低下需視為嗜中性球低下發燒,立即就醫評估感染"
+   ],
+   "red_flags_en": [
+    "Sudden worsening back pain with new leg weakness, numbness, or bowel/bladder incontinence should prompt immediate evaluation for spinal cord compression",
+    "Confusion, blurred vision, or mucosal bleeding with severe anemia or a very high protein level should raise concern for hyperviscosity syndrome, a hematologic emergency",
+    "Nausea, vomiting, excessive thirst/urination, or altered mental status in a patient with known hypercalcemia should be treated as a hypercalcemic crisis",
+    "Acute worsening renal function (reduced or no urine output) with a known elevated M protein should raise concern for myeloma cast nephropathy",
+    "Persistent high fever with low white blood cell count should be treated as neutropenic fever and needs immediate medical evaluation"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "年齡65歲以上",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "PMC: Epidemiology, Staging, and Management of Multiple Myeloma"
+    },
+    {
+     "factor": "已知有未明意義單株球蛋白血症(MGUS)或無症狀性骨髓瘤病史",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "WebSearch summary: multiple myeloma risk factors"
+    },
+    {
+     "factor": "肥胖",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "WebSearch summary: multiple myeloma risk factors"
+    },
+    {
+     "factor": "骨髓瘤或MGUS家族史",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "WebSearch summary: multiple myeloma risk factors"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Age over 65",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "PMC: Epidemiology, Staging, and Management of Multiple Myeloma"
+    },
+    {
+     "factor": "Known monoclonal gammopathy of undetermined significance (MGUS) or smoldering myeloma",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "WebSearch summary: multiple myeloma risk factors"
+    },
+    {
+     "factor": "Obesity",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "WebSearch summary: multiple myeloma risk factors"
+    },
+    {
+     "factor": "Family history of myeloma or MGUS",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "WebSearch summary: multiple myeloma risk factors"
+    }
+   ],
+   "related_eastern_diseases": [
+    "tdis.xu_lao",
+    "tdis.yao_tong"
+   ],
+   "related_patterns": [
+    "pattern.kidney_deficiency",
+    "pattern.qi_blood_deficiency",
+    "pattern.blood_stasis"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "International Myeloma Foundation: IMWG criteria for the diagnosis of multiple myeloma (retrieved 2026-08)",
+     "NCBI StatPearls: Multiple Myeloma (NBK534764)"
+    ],
+    "summary_en": [
+     "International Myeloma Foundation: IMWG criteria for the diagnosis of multiple myeloma (retrieved 2026-08)",
+     "NCBI StatPearls: Multiple Myeloma (NBK534764)"
+    ],
+    "western_context_zh": [
+     "International Myeloma Foundation: Multiple Myeloma Diagnostic Criteria",
+     "NCBI StatPearls: Multiple Myeloma (NBK534764)"
+    ],
+    "western_context_en": [
+     "International Myeloma Foundation: Multiple Myeloma Diagnostic Criteria",
+     "NCBI StatPearls: Multiple Myeloma (NBK534764)"
+    ],
+    "western_pathology_zh": [
+     "International Myeloma Foundation: IMWG criteria for the diagnosis of multiple myeloma (retrieved 2026-08)"
+    ],
+    "western_pathology_en": [
+     "International Myeloma Foundation: IMWG criteria for the diagnosis of multiple myeloma (retrieved 2026-08)"
+    ],
+    "red_flags_zh": [
+     "ScienceDirect: Management of acute spinal cord compression in multiple myeloma",
+     "Cancer Nursing Today: Recognizing Hyperviscosity Syndrome in Multiple Myeloma"
+    ],
+    "red_flags_en": [
+     "ScienceDirect: Management of acute spinal cord compression in multiple myeloma",
+     "Cancer Nursing Today: Recognizing Hyperviscosity Syndrome in Multiple Myeloma"
+    ],
+    "risk_factors_zh": [
+     "PMC: Epidemiology, Staging, and Management of Multiple Myeloma (retrieved 2026-08)"
+    ],
+    "risk_factors_en": [
+     "PMC: Epidemiology, Staging, and Management of Multiple Myeloma (retrieved 2026-08)"
+    ]
+   }
   },
   {
    "id": "cond.infectious_mononucleosis",
@@ -97980,7 +99110,117 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "類肉瘤病是一種病因不明的多系統肉芽腫性疾病,特徵為受累器官中形成非乾酪性肉芽腫,最常侵犯肺臟與胸腔淋巴結,亦可波及皮膚、眼睛、心臟、神經系統等幾乎任何器官。臨床表現差異極大,從偶然影像發現的無症狀個案到進行性器官功能障礙皆可能出現,常見全身症狀包括疲勞、發燒與不明原因體重減輕。",
+   "summary_en": "Sarcoidosis is a multisystem granulomatous disease of unknown cause, characterized by non-caseating granulomas forming in affected organs — most commonly the lungs and intrathoracic lymph nodes, though skin, eyes, heart, nervous system, and virtually any organ can be involved. Clinical presentation ranges widely, from an asymptomatic finding on incidental imaging to progressive organ dysfunction; common systemic symptoms include fatigue, fever, and unexplained weight loss.",
+   "western_context_zh": "西醫以胸腔影像(胸部X光/電腦斷層典型呈雙側肺門淋巴結腫大)、受累組織切片顯示非乾酪性肉芽腫,並排除感染(如結核病)與其他肉芽腫性疾病後確立診斷,依受累器官安排定期肺功能、心電圖/心臟影像與眼科檢查追蹤,無症狀或輕症者可先觀察,器官功能受威脅時才啟動類固醇或免疫調節治療。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Diagnosis combines chest imaging (chest X-ray/CT classically showing bilateral hilar lymphadenopathy), biopsy of an affected tissue showing non-caseating granulomas, and exclusion of infection (e.g., tuberculosis) and other granulomatous diseases; follow-up is organized by organ involved (periodic pulmonary function tests, ECG/cardiac imaging, ophthalmology exam), and asymptomatic or mild disease may simply be observed, with corticosteroids or immunomodulators reserved for threatened organ function. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "病理機轉為遺傳易感個體暴露於特定環境或微生物抗原後,誘發CD4+ T輔助細胞過度活化與巨噬細胞聚集,形成邊界清楚、由類上皮細胞與多核巨細胞組成的非乾酪性肉芽腫,可壓迫或破壞周邊正常組織結構。肺部是最常受累的器官,典型影像分期(0-4期)依肺門淋巴結腫大與肺實質纖維化程度區分;因缺乏單一特異性檢驗,診斷須綜合臨床、影像與組織病理表現,並排除結核病等感染性肉芽腫病因。",
+   "western_pathology_en": "The pathologic mechanism involves genetically susceptible individuals developing excessive CD4+ T-helper cell activation and macrophage aggregation after exposure to an unidentified environmental or microbial antigen, forming well-demarcated non-caseating granulomas composed of epithelioid cells and multinucleated giant cells that can compress or disrupt surrounding normal tissue architecture. The lungs are most commonly affected, with a classic radiographic staging system (stage 0-4) based on the degree of hilar lymphadenopathy and pulmonary parenchymal fibrosis; because no single specific test exists, diagnosis requires integrating clinical, radiographic, and histopathologic findings while excluding infectious granulomatous causes such as tuberculosis.",
+   "red_flags_zh": [
+    "心悸、暈厥或不明原因心律不整需優先排除心臟類肉瘤病,可能引發致命性心律不整或猝死",
+    "新發神經學症狀(顏面神經麻痺、視力改變、癲癇)需排除神經類肉瘤病侵犯中樞神經系統",
+    "視力模糊、眼紅眼痛需儘速轉診眼科排除葡萄膜炎,延遲治療可能導致失明",
+    "進行性呼吸困難惡化超出原有肺部分期預期,需排除肺動脈高壓或重疊感染",
+    "高血鈣相關症狀(多尿、意識改變、腎結石)需監測,因類肉瘤病肉芽腫可異常活化維生素D"
+   ],
+   "red_flags_en": [
+    "Palpitations, syncope, or unexplained arrhythmia should prompt urgent evaluation for cardiac sarcoidosis, which can cause fatal arrhythmia or sudden death",
+    "New neurologic symptoms (facial palsy, vision changes, seizures) should be evaluated for neurosarcoidosis involving the central nervous system",
+    "Blurred vision or eye redness/pain needs prompt ophthalmology referral to rule out uveitis, as delayed treatment can lead to vision loss",
+    "Progressive dyspnea worse than expected for the known pulmonary stage should raise concern for pulmonary hypertension or superimposed infection",
+    "Symptoms of hypercalcemia (polyuria, altered mental status, kidney stones) should be monitored, as sarcoid granulomas can abnormally activate vitamin D"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "好發年齡20-40歲",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: Sarcoidosis (NBK430687)"
+    },
+    {
+     "factor": "類肉瘤病家族史",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: Sarcoidosis (NBK430687)"
+    },
+    {
+     "factor": "特定職業性粉塵/無機微粒暴露",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "PMC: A review of sarcoidosis etiology, diagnosis and treatment"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Typical onset age 20-40",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: Sarcoidosis (NBK430687)"
+    },
+    {
+     "factor": "Family history of sarcoidosis",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: Sarcoidosis (NBK430687)"
+    },
+    {
+     "factor": "Certain occupational dust/inorganic particle exposure",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "PMC: A review of sarcoidosis etiology, diagnosis and treatment"
+    }
+   ],
+   "related_eastern_diseases": [
+    "tdis.luo_li"
+   ],
+   "related_patterns": [
+    "pattern.phlegm_damp",
+    "pattern.phlegm_qi_binding",
+    "pattern.lung_qi_deficiency"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "NCBI StatPearls: Sarcoidosis (NBK430687, retrieved 2026-08)",
+     "Mayo Clinic: Sarcoidosis - Symptoms and causes"
+    ],
+    "summary_en": [
+     "NCBI StatPearls: Sarcoidosis (NBK430687, retrieved 2026-08)",
+     "Mayo Clinic: Sarcoidosis - Symptoms and causes"
+    ],
+    "western_context_zh": [
+     "Mayo Clinic: Sarcoidosis - Diagnosis and treatment",
+     "NCBI StatPearls: Sarcoidosis (NBK430687)"
+    ],
+    "western_context_en": [
+     "Mayo Clinic: Sarcoidosis - Diagnosis and treatment",
+     "NCBI StatPearls: Sarcoidosis (NBK430687)"
+    ],
+    "western_pathology_zh": [
+     "NCBI StatPearls: Sarcoidosis (NBK430687, retrieved 2026-08)",
+     "PMC: A review of sarcoidosis etiology, diagnosis and treatment"
+    ],
+    "western_pathology_en": [
+     "NCBI StatPearls: Sarcoidosis (NBK430687, retrieved 2026-08)",
+     "PMC: A review of sarcoidosis etiology, diagnosis and treatment"
+    ],
+    "red_flags_zh": [
+     "NCBI StatPearls: Cardiac Sarcoidosis (NBK578192)",
+     "European Heart Journal: Cardiac sarcoidosis - phenotypes, diagnosis, treatment, and prognosis"
+    ],
+    "red_flags_en": [
+     "NCBI StatPearls: Cardiac Sarcoidosis (NBK578192)",
+     "European Heart Journal: Cardiac sarcoidosis - phenotypes, diagnosis, treatment, and prognosis"
+    ],
+    "risk_factors_zh": [
+     "NCBI StatPearls: Sarcoidosis (NBK430687, retrieved 2026-08)",
+     "PMC: A review of sarcoidosis etiology, diagnosis and treatment"
+    ],
+    "risk_factors_en": [
+     "NCBI StatPearls: Sarcoidosis (NBK430687, retrieved 2026-08)",
+     "PMC: A review of sarcoidosis etiology, diagnosis and treatment"
+    ]
+   }
   },
   {
    "id": "cond.amyloidosis",
@@ -98004,7 +99244,111 @@
    "aliases_zh": [],
    "aliases_en": [],
    "review_status": "skeleton",
-   "authored_by": "model_draft"
+   "authored_by": "model_draft",
+   "summary_zh": "淋巴結腫大是指單一或多處淋巴結因發炎、感染、腫瘤浸潤或全身性疾病而異常腫大(通常大於1公分,依部位而異),本身是一種臨床徵象而非單一疾病,常見誘因包括上呼吸道感染、局部皮膚/牙齒感染、自體免疫疾病與惡性腫瘤(淋巴瘤、轉移癌、白血病)。多數病例(尤其年輕、局部、伴明顯感染史者)為良性反應性腫大,可於數週內自行消退。",
+   "summary_en": "Lymphadenopathy is abnormal enlargement of one or more lymph nodes (generally greater than about 1 cm, threshold varies by site) due to inflammation, infection, tumor infiltration, or systemic disease; it is a clinical sign rather than a single disease. Common triggers include upper respiratory infection, local skin/dental infection, autoimmune disease, and malignancy (lymphoma, metastatic cancer, leukemia). Most cases, especially in younger patients with a localized node and a clear antecedent infection, are benign reactive enlargement that resolves within weeks.",
+   "western_context_zh": "西醫處理著重問診(病程、伴隨全身症狀、旅遊/動物接觸史)、觸診(大小、質地、活動度、部位)與觀察期,無警示徵象且短期內縮小者可先觀察4週;持續增大、質硬固定或伴全身症狀者安排影像、血液檢查與淋巴結切片以排除惡性腫瘤或全身性疾病。此處僅為文件對照用語,非治療指示。",
+   "western_context_en": "Western management centers on history (duration, associated systemic symptoms, travel/animal exposure), palpation (size, consistency, mobility, location), and a period of observation — nodes without alarm features that are shrinking can be watched for up to about 4 weeks; persistent growth, hard/fixed nodes, or systemic symptoms prompt imaging, blood work, and lymph node biopsy to rule out malignancy or systemic disease. Documentation context only, not a treatment instruction.",
+   "western_pathology_zh": "淋巴結是免疫系統的過濾站,病原體、抗原或腫瘤細胞引流至局部淋巴結時,B/T淋巴球增生、巨噬細胞聚集或腫瘤細胞浸潤,造成淋巴結體積增大;依機轉可分為反應性增生(感染/發炎)、腫瘤性(原發淋巴瘤或轉移)與肉芽腫性(結核、類肉瘤病)。診斷上依部位分為局部性與全身性(≥2個非鄰近部位),並結合大小、質地(軟/硬)、活動度(可推動/固定)、有無壓痛作為良性惡性的判別依據,必要時以超音波導引細針或核心針切片取得組織診斷。",
+   "western_pathology_en": "Lymph nodes filter regional lymphatic drainage; when pathogens, antigens, or tumor cells drain into a node, B/T-lymphocyte proliferation, macrophage accumulation, or tumor infiltration causes nodal enlargement. Mechanistically this is grouped into reactive hyperplasia (infection/inflammation), neoplastic (primary lymphoma or metastasis), and granulomatous (tuberculosis, sarcoidosis) causes. Clinically, lymphadenopathy is classified as localized versus generalized (≥2 non-contiguous regions), and size, consistency (soft vs. hard), mobility (mobile vs. fixed), and tenderness help distinguish benign from concerning nodes; ultrasound-guided fine-needle or core-needle biopsy provides tissue diagnosis when needed.",
+   "red_flags_zh": [
+    "淋巴結質地堅硬、固定於周圍組織且無壓痛,尤其合併長期菸酒史者需優先排除惡性腫瘤",
+    "鎖骨上淋巴結腫大(不論大小)幾乎都需要進一步檢查,可能提示胸腔或腹腔內惡性腫瘤",
+    "腫大合併不明原因發燒、夜間盜汗、體重減輕(B型症狀)需及早轉診血液腫瘤科排除淋巴瘤或白血病",
+    "單一淋巴結腫大合併快速在數天內明顯增大或伴局部紅腫熱痛化膿,需考慮急性化膿性淋巴結炎並儘早處置",
+    "全身性淋巴結腫大合併肝脾腫大或血球數異常需儘速轉診排除血液系統惡性疾病"
+   ],
+   "red_flags_en": [
+    "A hard, fixed, non-tender node — especially with a long smoking/alcohol history — should prompt urgent evaluation for malignancy",
+    "Supraclavicular lymphadenopathy of any size warrants further work-up, as it can signal an intrathoracic or intra-abdominal malignancy",
+    "Enlargement with unexplained fever, night sweats, and weight loss (B symptoms) should be referred promptly to hematology-oncology to rule out lymphoma or leukemia",
+    "A single node that enlarges rapidly over days with local redness, warmth, pain, or fluctuance suggests acute suppurative lymphadenitis and needs prompt treatment",
+    "Generalized lymphadenopathy with hepatosplenomegaly or abnormal blood counts should be referred urgently to rule out a hematologic malignancy"
+   ],
+   "risk_factors_zh": [
+    {
+     "factor": "近期上呼吸道、皮膚或牙齒局部感染",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Lymphadenopathy (NBK513250)"
+    },
+    {
+     "factor": "年齡40歲以上新發淋巴結腫大(惡性機率上升)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: Lymphadenopathy (NBK513250)"
+    },
+    {
+     "factor": "長期吸菸與過量飲酒",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Lymphadenopathy (NBK513250)"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Recent regional infection (upper respiratory, skin, dental)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Lymphadenopathy (NBK513250)"
+    },
+    {
+     "factor": "Age over 40 with new-onset lymphadenopathy (higher malignancy probability)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NCBI StatPearls: Lymphadenopathy (NBK513250)"
+    },
+    {
+     "factor": "Long-term heavy smoking and alcohol use",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NCBI StatPearls: Lymphadenopathy (NBK513250)"
+    }
+   ],
+   "related_eastern_diseases": [
+    "tdis.luo_li"
+   ],
+   "related_patterns": [
+    "pattern.phlegm_qi_binding",
+    "pattern.phlegm_stasis_binding",
+    "pattern.liver_qi_stagnation"
+   ],
+   "field_sources": {
+    "summary_zh": [
+     "NCBI StatPearls: Lymphadenopathy (NBK513250, retrieved 2026-08)"
+    ],
+    "summary_en": [
+     "NCBI StatPearls: Lymphadenopathy (NBK513250, retrieved 2026-08)"
+    ],
+    "western_context_zh": [
+     "NCBI StatPearls: Lymphadenopathy (NBK513250, retrieved 2026-08)"
+    ],
+    "western_context_en": [
+     "NCBI StatPearls: Lymphadenopathy (NBK513250, retrieved 2026-08)"
+    ],
+    "western_pathology_zh": [
+     "NCBI StatPearls: Lymphadenopathy (NBK513250, retrieved 2026-08)",
+     "MSD Manual Professional: Lymphadenopathy"
+    ],
+    "western_pathology_en": [
+     "NCBI StatPearls: Lymphadenopathy (NBK513250, retrieved 2026-08)",
+     "MSD Manual Professional: Lymphadenopathy"
+    ],
+    "red_flags_zh": [
+     "NCBI StatPearls: Lymphadenopathy (NBK513250, retrieved 2026-08)",
+     "GPonline: Cervical lymphadenopathy - red flag symptoms"
+    ],
+    "red_flags_en": [
+     "NCBI StatPearls: Lymphadenopathy (NBK513250, retrieved 2026-08)",
+     "GPonline: Cervical lymphadenopathy - red flag symptoms"
+    ],
+    "risk_factors_zh": [
+     "NCBI StatPearls: Lymphadenopathy (NBK513250, retrieved 2026-08)"
+    ],
+    "risk_factors_en": [
+     "NCBI StatPearls: Lymphadenopathy (NBK513250, retrieved 2026-08)"
+    ]
+   }
   },
   {
    "id": "cond.hereditary_angioedema",
