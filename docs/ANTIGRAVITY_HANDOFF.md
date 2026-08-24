@@ -129,6 +129,11 @@ Dragon 網址。`modern_functions_en/zh` 284→309、`contraindications_zh` 271�
 `validate-herb-standard.js`（E10/E11 都要乾淨）+ `check-validation-ratchet.js`，三個都 PASS 才推，
 記得補 `PROJECT_LOG.md` 條目。
 
+**來源清單（Batch 3 講過，這裡重複一次，不要漏）**：`curriculum/herbs/`（課件，含
+`materia_medica_abbreviated_chenoweth.md`）、Bensky、CloudTCM、American Dragon
+（`americandragon.com`）、《台灣中藥典》、《中華人民共和國藥典》——你前幾批引用的都在這個範圍內，
+繼續用這些。查不到就是查不到，不要換一個沒查證過的網站硬湊一個來源欄位出來，寧可留空。
+
 **驗收**：我會重新獨立 clone 驗證，過了才更新這份文件、清掉這條任務；沒過我會寫清楚是哪一味藥哪個欄位
 的問題。這批做完後，我會重新盤點整個中藥庫還有哪些欄位值得繼續（`related_formulas`/`safety_source_url`
 之類），到時候再指派下一輪。
