@@ -1,3 +1,30 @@
+# 2026-08-25 — 症狀卡擴充 round 4 完成:round-1 剩餘 17 張再修訂,8 張通過覆核(114→122)
+
+上次對話中斷時這個 workflow(round 4,修 round-1 最後剩下的 17 張被打回候選)其實只跑到一半——
+13/17 修訂稿寫完,但**全部卡在還沒做對抗性覆核**就被中斷,journal.jsonl 核對確認 0 張真正驗證過。
+用 `resumeFromRunId` 接回同一個 run:已完成的 13 張修訂直接吃快取不重跑,17/17 補齊修訂並跑完覆核,
+**8/17 通過(47%)**——對比 round 2(0/20)、round 3(3/21≈14%),這輪套用「查不到就刪、不要憑印象
+編」的修訂總原則後產出明顯回升。9 張被拒的理由都是具體、可查證的問題(非模糊/過嚴):日期造假
+(AUA guideline「amended 2020」查無實據)、taxonomy_id 錯置(乳房腫塊歸到胸部呼吸類)、
+differentiation 嫁接本庫沒記載的細節(痛瀉要方「瀉後痛減」換部位套到脅悶)、field_sources 聲稱
+已核對但實際查無實據等——覆核抓到的都是真缺陷,不是誤殺。
+
+- 套用:`node apply-symptom-batch.js`(既有機制,mechanical gate:id 格式/碰撞、taxonomy/safety_flag/
+  metric id 有效性、differentiation points_to 存在性、雙語陣列長度對齊全部再查一次,8 張全過)
+- 眼睛讀過 8 張新卡(CLAUDE.md 規則 2:PASS 不等於沒有損失)——內容具體、有病人語感引語、
+  differentiation 對應真實 pattern_library 證型,非樣板句
+- `node scripts/build-data.js`:symptoms 114→122
+- `validate-symptom-standard.js`:PASS,122/122 clean(N3 一則非阻塞提示:2 張卡共用同一句吞嚥
+  困難紅旗描述,建議之後收進 generic_red_flag_map.json,不影響本次)
+- `validate-content-junk.js` / `validate-relations.js` / `check-validation-ratchet.js`:PASS,
+  無退步(既有的 condition_canon_shortlist.json 亂碼警訊、formula 劑量共用警訊皆為既有、非本次引入)
+
+症狀卡進度:122/~200。9 張被拒的候選(erectile_dysfunction/breast_lump/hair_loss/five_center_heat/
+anxiety/dysphagia/snoring/halitosis/alternating_bowel_habit)修訂稿與覆核意見留在 scratchpad
+(`symptom-batch-r4-results.json`),之後若要再修可以照 issues 清單逐條處理,不必從頭來過。
+
+---
+
 # 2026-08-25 — AVS 結帳新增「複製文字 Copy for email」按鈕(Ting 要求 email 可直接貼上)
 
 Ting 確認自動寄送是三五年後的事、她要手動用自己 email 寄,但要求輸出「直接可以剪貼貼上直接寄送」——
