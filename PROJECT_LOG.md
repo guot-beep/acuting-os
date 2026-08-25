@@ -1,3 +1,13 @@
+# 2026-08-24 — Codex Conditions 皮膚感染與免疫病因補強 B27
+
+- **範圍**：只補 `cond.herpes_simplex`、`cond.tinea_cruris`、`cond.tinea_capitis`、`cond.lichen_planus`、`cond.pityriasis_rosea` 尚缺的 `etiology_zh/en`，追加直接來源與 provenance；未覆蓋既有摘要、pathology、risk、red flags、scope 或關聯。
+- **數字**：`FULL_DETAIL_CANDIDATE 248→253`、`DETAIL_PARTIAL 257→252`、`SKELETON 0→0`，距 300 尚 `47`；直接來源 `849→859`、有來源記錄 `299→304`；空白 etiology `225→220`。
+- **來源與邊界**：使用 WHO、NIH/NLM MedlinePlus、NHS；9 個唯一內容頁皆 HTTP 200。分清 HSV 初次感染、無症狀脫落與復發 trigger；tinea 的菌源、傳播與解剖部位；lichen planus 的未知起因、免疫機轉與 lichenoid mimic；pityriasis rosea 的病毒假說仍非定論。
+- **驗證**：dry-run/apply `20 operations / 5 ids / skipped 0 / missing 0`；逐欄 equality、逐記錄邊界、`build-data`、condition standard `505/505 clean`、ratchet、sources `859`、relation registry、content-junk、maturity audit、`git diff --check` 均無新增 defect。
+- **未解**：本批只補病因，未改既有部分非官方 risk/red-flag provenance；8 個 frozen control-character 警告與 formula generic dosage 警告屬其他工作線且未增加。
+
+---
+
 # 2026-08-24 — Codex Conditions 膀胱控制官方病因補強 B26
 
 - **範圍**：只補 `cond.overactive_bladder`、`cond.stress_urinary_incontinence`、`cond.urge_urinary_incontinence`、`cond.mixed_urinary_incontinence`、`cond.neurogenic_bladder` 空白的 `etiology_zh/en`，追加直接來源與 provenance；未覆蓋既有正文、安全欄、scope 或相鄰資料。

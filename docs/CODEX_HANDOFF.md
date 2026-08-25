@@ -1,5 +1,13 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-24] Codex Handoff — Conditions official dermatology infection etiology B27
+
+- **Exact ids / fields**: only `cond.herpes_simplex`, `cond.tinea_cruris`, `cond.tinea_capitis`, `cond.lichen_planus`, and `cond.pityriasis_rosea`; filled absent bilingual etiology and appended direct sources plus etiology provenance. No existing narrative, safety field, scope, relation, id, or adjacent dataset was overwritten.
+- **Official sources**: WHO, NIH/NLM MedlinePlus, and NHS; nine unique content URLs returned HTTP 200 and every record cross-references two pages.
+- **Clinical distinctions**: primary HSV acquisition versus asymptomatic shedding and recurrence triggers; dermatophyte source/transmission versus anatomic tinea label; unknown lichen-planus initiation versus immune mechanism and lichenoid mimics; and pityriasis-rosea viral hypotheses versus established causation.
+- **Measured delta**: maturity `248→253 FULL_DETAIL_CANDIDATE`, `257→252 DETAIL_PARTIAL`, `0→0 SKELETON`, leaving `47` slots to 300; source entries `849→859`, sourced records `299→304`; empty etiology `225→220`.
+- **Validation**: dry-run/apply `20 operations / 5 ids / skipped 0 / missing 0`; exact equality and record-boundary diff; `build-data.js`; condition standard `505/505 clean`; ratchet; condition sources (`859`); relation registry; content junk; maturity audit; and `git diff --check` passed.
+
 ## [2026-08-24] Codex Handoff — Conditions official bladder-control etiology B26
 
 - **Exact ids / fields**: only `cond.overactive_bladder`, `cond.stress_urinary_incontinence`, `cond.urge_urinary_incontinence`, `cond.mixed_urinary_incontinence`, and `cond.neurogenic_bladder`; filled empty bilingual etiology and appended direct sources plus etiology provenance. Existing pathology, risks, red flags, scope, relations, and adjacent datasets were not changed.

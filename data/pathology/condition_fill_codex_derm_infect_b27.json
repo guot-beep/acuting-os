@@ -1,0 +1,67 @@
+{
+  "dataset": "Codex Conditions official dermatology infection etiology B27",
+  "policy": "Fill only currently absent bilingual etiology fields for five dermatologic Conditions. Preserve all existing summaries, pathology, risks, red flags, acupuncture scope, relations, and provenance; append two direct government or NHS sources per record. Distinguish infection from immune disease, transmission from recurrence triggers, and uncertain hypotheses from established causes.",
+  "created": "2026-08-24",
+  "fills": {
+    "cond.herpes_simplex": {
+      "etiology_zh": "單純疱疹由 herpes simplex virus type 1（HSV-1）或 type 2（HSV-2）感染造成。HSV-1 多經唾液、口腔周圍皮膚或病灶接觸取得，常造成口唇感染；HSV-2 主要經性接觸傳播，但兩型都可感染口腔或生殖器，口交可將 HSV-1 傳至生殖器。傳播可來自水疱、潰瘍、唾液、黏膜分泌物或無可見病灶時的病毒脫落，因此「沒有症狀」不等於沒有傳染性。病毒在初次皮膚或黏膜感染後沿感覺神經進入神經節並終生潛伏，日後再活化造成復發；發燒、紫外線、壓力、月經或免疫抑制可與復發相關，但不是原始感染來源。HSV-1 與 HSV-2 的解剖分布是傾向而非絕對規則，亦不能只憑病灶位置判定病毒型別。新生兒感染多在分娩時接觸產道病毒取得，少數可於妊娠期或產後密切接觸傳播；這與成人反覆口唇或生殖器疱疹的自然史須分開評估。",
+      "etiology_en": "Herpes simplex is caused by infection with herpes simplex virus type 1 (HSV-1) or type 2 (HSV-2). HSV-1 is commonly acquired through saliva, oral-area skin, or lesion contact and often causes oral disease; HSV-2 is mainly sexually transmitted, but either type can infect oral or genital sites, and oral sex can transmit HSV-1 to the genitals. Transmission can occur through vesicles, ulcers, saliva, mucosal fluids, or viral shedding when no lesion is visible, so absence of symptoms does not mean absence of infectiousness. After primary skin or mucosal infection, virus travels along sensory nerves and establishes lifelong latency in ganglia; later reactivation produces recurrence. Fever, ultraviolet exposure, stress, menstruation, or immunosuppression may be associated with reactivation but are not the source of the original infection. The usual HSV-1 and HSV-2 anatomic patterns are tendencies, not absolute rules, and site alone cannot establish viral type. Neonatal infection is most often acquired through exposure to virus during delivery, with less common antenatal or postnatal transmission, and requires separate risk assessment from recurrent adult oral or genital disease.",
+      "sources": [
+        "https://www.who.int/news-room/fact-sheets/detail/herpes-simplex-virus",
+        "https://medlineplus.gov/ency/article/000857.htm"
+      ],
+      "field_sources": {
+        "etiology_zh": ["WHO: Herpes simplex virus — HSV-1/HSV-2 cause, oral/genital contact routes, asymptomatic shedding, lifelong infection and neonatal transmission boundary (updated 2025-05-30); NIH/NLM MedlinePlus: Genital herpes — viral types, skin/fluid transmission including absent lesions, lifelong latency and recurrence (reviewed 2025-07-20)"],
+        "etiology_en": ["WHO: Herpes simplex virus — HSV-1/HSV-2 cause, oral/genital contact routes, asymptomatic shedding, lifelong infection and neonatal transmission boundary (updated 2025-05-30); NIH/NLM MedlinePlus: Genital herpes — viral types, skin/fluid transmission including absent lesions, lifelong latency and recurrence (reviewed 2025-07-20)"]
+      }
+    },
+    "cond.tinea_cruris": {
+      "etiology_zh": "股癬是 dermatophyte 黴菌侵犯鼠蹊、大腿內側或臀部表皮角質層所致，名稱描述感染部位，不代表獨立菌種。感染可由與患者直接皮膚接觸、共用未清洗衣物或毛巾、接觸帶菌表面取得，也常由同一人的足癬或甲癬經手、衣物或抓搔自體接種至鼠蹊。溫暖潮濕的皮膚皺褶、持續出汗、緊身或不透氣衣物與摩擦使局部屏障受損並利於黴菌生長；這些是促進因素，不是感染源。典型 dermatophyte 股癬多由鼠蹊皺褶向大腿擴展，通常不以陰囊為中心；若陰囊明顯受累、病灶潮濕且有衛星丘疹，應考慮 Candida 等其他診斷。股癬與 erythrasma、inverse psoriasis、intertrigo 或 contact dermatitis 可相似，外觀或治療反應不典型時應以 KOH、培養或其他真菌檢驗確認，而不能把所有鼠蹊紅疹都歸因於黴菌。",
+      "etiology_en": "Tinea cruris is dermatophyte mold infection of the keratinized epidermis of the groin, medial thighs, or buttocks; the name identifies an anatomic site rather than a unique fungal species. Infection may be acquired by direct skin contact, shared unwashed clothing or towels, or contaminated surfaces, and commonly reaches the groin by autoinoculation from the same person's tinea pedis or onychomycosis through hands, clothing, or scratching. Warm moist folds, prolonged sweating, tight or nonbreathable clothing, and friction disrupt the local barrier and favor fungal growth; they are enabling factors, not the infectious source. Typical dermatophyte tinea cruris spreads from the crural fold onto the thigh and usually is not centered on the scrotum. Prominent scrotal involvement, moist lesions, or satellite papules should prompt consideration of Candida or another diagnosis. Erythrasma, inverse psoriasis, intertrigo, and contact dermatitis can resemble it, so atypical morphology or treatment failure warrants KOH, culture, or another fungal test rather than labeling every groin rash as fungal.",
+      "sources": [
+        "https://medlineplus.gov/ency/article/000876.htm",
+        "https://www.nhs.uk/conditions/ringworm/"
+      ],
+      "field_sources": {
+        "etiology_zh": ["NIH/NLM MedlinePlus: Jock itch — fungal cause, warm-moist and friction context, spread from feet, direct contact and clothing transmission (reviewed 2025-03-20); NHS: Ringworm — fungal cause and person, animal, object and less common soil transmission, including groin site label (reviewed 2023-02-10)"],
+        "etiology_en": ["NIH/NLM MedlinePlus: Jock itch — fungal cause, warm-moist and friction context, spread from feet, direct contact and clothing transmission (reviewed 2025-03-20); NHS: Ringworm — fungal cause and person, animal, object and less common soil transmission, including groin site label (reviewed 2023-02-10)"]
+      }
+    },
+    "cond.tinea_capitis": {
+      "etiology_zh": "頭癬是 dermatophyte 黴菌感染頭皮角質層、毛囊與毛幹所致，常見菌屬包括 Trichophyton 與 Microsporum；不同地區的優勢菌種不同，不能把單一菌種當成全球固定病因。真菌以 keratin 為營養並可在毛幹內或外生長，造成鱗屑、斷髮與局部禿髮。感染可由患者或無明顯症狀帶菌者直接接觸傳播，也可經共用梳子、帽子、枕套、毛巾或理髮器具，或由感染的貓、犬等動物取得。兒童較常見，群居、密切接觸與潮濕環境促進傳播，但衛生狀況本身不能證明來源。Kerion 是宿主對感染的強烈發炎反應，不是另一種細菌性膿瘍；不過破損皮膚仍可能合併細菌感染。頭皮脫屑與掉髮也可能來自 alopecia areata、seborrheic dermatitis、psoriasis 或 traction，因此應以拔取毛髮／皮屑的 KOH、培養或適當分子檢測確認病因。",
+      "etiology_en": "Tinea capitis is dermatophyte mold infection of scalp stratum corneum, follicles, and hair shafts, most often involving Trichophyton or Microsporum species. The predominant species varies by geography, so one organism should not be presented as the universal cause. Fungi use keratin and may grow within or around the hair shaft, producing scale, breakage, and patchy alopecia. Transmission occurs through direct contact with an affected or sometimes asymptomatic carrier, shared combs, hats, pillowcases, towels, or barber equipment, and contact with infected cats, dogs, or other animals. Childhood, close-contact or crowded settings, and moisture facilitate transmission, but hygiene status alone does not establish the source. A kerion is an intense host inflammatory response to the fungal infection rather than a separate bacterial abscess, although disrupted skin can develop secondary bacterial infection. Scalp scale and hair loss also occur with alopecia areata, seborrheic dermatitis, psoriasis, or traction, so plucked-hair or scale KOH, culture, or an appropriate molecular test should confirm the cause.",
+      "sources": [
+        "https://medlineplus.gov/ency/article/000878.htm",
+        "https://www.nhs.uk/conditions/ringworm/"
+      ],
+      "field_sources": {
+        "etiology_zh": ["NIH/NLM MedlinePlus: Ringworm of the scalp — dermatophyte cause, hair/skin keratin, child predominance, direct and fomite spread (reviewed 2024-10-13); NHS: Ringworm — scalp tinea site, fungal cause and person, animal, object and soil transmission (reviewed 2023-02-10)"],
+        "etiology_en": ["NIH/NLM MedlinePlus: Ringworm of the scalp — dermatophyte cause, hair/skin keratin, child predominance, direct and fomite spread (reviewed 2024-10-13); NHS: Ringworm — scalp tinea site, fungal cause and person, animal, object and soil transmission (reviewed 2023-02-10)"]
+      }
+    },
+    "cond.lichen_planus": {
+      "etiology_zh": "扁平苔癬的確切起始原因尚未確定；現有證據支持細胞媒介免疫反應錯誤攻擊皮膚或黏膜基底層 keratinocytes，而不是感染或可傳染疾病。口腔與皮膚型可共享此免疫機轉，但不同解剖部位的病程與併發症不完全相同。部分藥物、金屬或牙科材料可造成外觀與組織學相似的 lichenoid reaction，停用或移除誘因後可能改善；這類反應應與 idiopathic lichen planus 分開記錄。Hepatitis C 與扁平苔癬在部分族群有統計相關，強度受地區與研究設計影響，不能據此認定每一病例由 HCV 直接造成，也不能僅因扁平苔癬就診斷 HCV。壓力可與症狀或 flare 同時出現，但不是已證實的單一病因。診斷通常依臨床型態，非典型、糜爛、持續或疑有 dysplasia 的口腔／生殖器病灶需 biopsy，以區分真正扁平苔癬、藥物性 lichenoid eruption、接觸反應、感染與癌前或惡性病變。",
+      "etiology_en": "The initiating cause of lichen planus remains unknown. Evidence supports a cell-mediated immune response directed against basal-layer keratinocytes in skin or mucosa rather than an infection or contagious disease. Oral and cutaneous forms may share this immune mechanism, although natural history and complications differ by anatomic site. Selected medicines, metals, or dental materials can cause clinically and histologically similar lichenoid reactions that may improve after removal of the trigger; these should be recorded separately from idiopathic lichen planus. Hepatitis C has a statistical association with lichen planus in some populations, but its strength varies by geography and study design. The association does not establish that HCV directly caused every case, nor does lichen planus alone diagnose HCV. Stress may coincide with symptoms or flares but is not a proven single cause. Diagnosis is usually clinical, while atypical, erosive, persistent, or dysplasia-suspicious oral or genital disease requires biopsy to distinguish true lichen planus from drug-related lichenoid eruption, contact reaction, infection, and premalignant or malignant disease.",
+      "sources": [
+        "https://medlineplus.gov/ency/article/000867.htm",
+        "https://www.nhs.uk/conditions/lichen-planus/"
+      ],
+      "field_sources": {
+        "etiology_zh": ["NIH/NLM MedlinePlus: Lichen planus — unknown cause, possible immune or allergic reaction, medicine/chemical and hepatitis C associations (reviewed 2024-10-13); NHS: Lichen planus — noncontagious boundary, multisite presentation and lichenoid differential context (reviewed 2023-02-15)"],
+        "etiology_en": ["NIH/NLM MedlinePlus: Lichen planus — unknown cause, possible immune or allergic reaction, medicine/chemical and hepatitis C associations (reviewed 2024-10-13); NHS: Lichen planus — noncontagious boundary, multisite presentation and lichenoid differential context (reviewed 2023-02-15)"]
+      }
+    },
+    "cond.pityriasis_rosea": {
+      "etiology_zh": "玫瑰糠疹的確切病因仍未知。其自限性病程與部分群聚觀察使病毒觸發假說受到研究，HHV-6／HHV-7 再活化曾被提出，但現有資料不足以把特定病毒列為每一病例的已證實病因；它也不是 herpes simplex infection。玫瑰糠疹通常不被視為可由人傳人的疾病，即使同住者偶有同期發病也不能證明直接傳染。少數藥物可引起 pityriasis-rosea-like eruption，常缺乏典型先驅斑、病程較持久或分布不同，應另作藥物反應評估。典型病程常先有單一 herald patch，數日到兩週後出現沿皮紋分布的較小病灶；若掌蹠、黏膜明顯受累、全身症狀突出、無典型演進或超過約三個月不退，應重新考慮 secondary syphilis、tinea、藥疹、psoriasis 等，而不是以「病毒疹」概括。懷孕並非病因，但妊娠早期新發皮疹需要產科與皮膚科評估。",
+      "etiology_en": "The exact cause of pityriasis rosea remains unknown. Its self-limited course and some clustering observations have prompted viral-trigger hypotheses, including reactivation of HHV-6 or HHV-7, but current evidence does not establish a specific virus as the cause of every case; it is not herpes simplex infection. Pityriasis rosea is generally not considered transmissible from person to person, and occasional concurrent household cases do not prove direct contagion. A small number of medicines can produce a pityriasis-rosea-like eruption, often without a classic herald patch or with a more persistent or different distribution, and should be assessed as a drug reaction. Typical disease begins with one herald patch followed days to two weeks later by smaller lesions along skin cleavage lines. Marked palm, sole, or mucosal involvement, prominent systemic illness, absence of the characteristic evolution, or persistence beyond about three months should prompt reconsideration of secondary syphilis, tinea, drug eruption, psoriasis, or another diagnosis rather than a nonspecific “viral rash” label. Pregnancy is not a cause, but a new eruption in early pregnancy requires obstetric and dermatologic assessment.",
+      "sources": [
+        "https://www.nhs.uk/conditions/pityriasis-rosea/",
+        "https://medlineplus.gov/ency/article/000871.htm"
+      ],
+      "field_sources": {
+        "etiology_zh": ["NHS: Pityriasis rosea — exact cause unknown, possible viral association, noncontagious boundary, diagnostic mimics and pregnancy caution (reviewed 2023-09-07); NIH/NLM MedlinePlus: Pityriasis rosea — suspected viral cause, seasonal context, household non-transmission and clinical evolution (reviewed 2024-10-09)"],
+        "etiology_en": ["NHS: Pityriasis rosea — exact cause unknown, possible viral association, noncontagious boundary, diagnostic mimics and pregnancy caution (reviewed 2023-09-07); NIH/NLM MedlinePlus: Pityriasis rosea — suspected viral cause, seasonal context, household non-transmission and clinical evolution (reviewed 2024-10-09)"]
+      }
+    }
+  }
+}
