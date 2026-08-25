@@ -649,6 +649,13 @@ h1 {
   font-weight: 700;
 }
 .outcome-tracking-table tbody td:first-child { color: #20383b; font-weight: 700; }
+/* Change/Trend 上色(2026-08-25,dry run 現場發現):箭頭本身還是「原始數字
+   動向」,不因這個上色而改變意義——上色是額外疊加的判讀層,顏色跟
+   .brief-good/.brief-bad(P0.5 Visit Brief)同一套色碼,兩個面板視覺一致。
+   direction_good 是 individualized/contextual/未標註的 metric 不上色
+   (outcomeChangeGoodness 回傳 null → 沒有 class),不替這類 metric 下判斷。*/
+.outcome-tracking-table td.outcome-good { color: #4ade80; }
+.outcome-tracking-table td.outcome-bad { color: #f87171; }
 .outcome-tracking-table .direction-hint { display: block; color: var(--muted); font-size: 0.72rem; font-weight: 500; margin-top: 0.15rem; }
 /* 判讀狀態：跟數字放在一起，不然「-3」會被當成有臨床意義的變化來讀。
    刻意不用紅綠——這不是好壞，是「這個數字能不能拿去對照文獻」。 */

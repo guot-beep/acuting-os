@@ -109,6 +109,7 @@ try {
     grabConstBlock("OUTCOME_INTERPRETATION_BADGES"),
     grabFunction("shortCitation"),
     grabFunction("getOutcomeMetricDef"),
+    grabFunction("outcomeChangeGoodness"),
     grabFunction("renderOutcomeTrackingPanel"),
   ].join("\n"), sandbox);
   html = sandbox.renderOutcomeTrackingPanel({

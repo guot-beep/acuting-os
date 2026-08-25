@@ -309,11 +309,18 @@ ul{margin:4px 0;padding-left:20px}
     const medTable = meds.length
       ? `<table><tr><th>名稱</th><th>用量</th><th>頻率</th></tr>${meds.map((r) => `<tr><td>${esc(r.name)}</td><td>${esc(r.dose)}</td><td>${esc(r.freq)}</td></tr>`).join("")}${byCat("herb_caution").map((t) => `<tr><td colspan="3" class="note">${esc(t)}</td></tr>`).join("")}</table>`
       : "";
+    // 2026-08-25(dry run 現場發現,Ting 原話「這個不用填入,因為那個有洩漏
+    // 病人太多細節」):以前這裡還會把 patientObservationPromptsSnapshot
+    // (睡眠時數/壓力/情緒/精神體力這類自我追蹤問題)接在後面,混進「什麼情況
+    // 請盡快與我們聯絡或就醫」這個緊急就醫清單——讀起來像是「睡不好就要
+    // 盡快就醫」,語意不對,而且把診所在追蹤病人哪些身心指標整份印給病人
+    // 帶走的紙本,等於外洩追蹤細節。這些追蹤提示題面本來就有自己在結帳
+    // 畫面（app.js §6「自我觀察 What to watch」）的專屬區塊給醫師參考,
+    // 不該再重複出現在病人帶走的文件裡——拿掉,不搬去別的段落。
     const watch = [
       "症狀明顯加重、或出現新的劇烈疼痛",
       "發燒、持續頭暈、異常出血或瘀腫擴大",
-      "服用調理品後噁心、皮疹或任何過敏反應",
-      ...(snapshot.patientObservationPromptsSnapshot || [])
+      "服用調理品後噁心、皮疹或任何過敏反應"
     ];
     // 頁首聯絡列:地址/電話有值才印(誠實顯示「(待填」佔位,不特判隱藏——
     // 診所自己決定何時填真實值)。舊 snapshot 沒有 address 鍵時視為空字串。
@@ -350,11 +357,12 @@ ${sec("下次回診", snapshot.followUpSnapshot ? `<p>回診安排:${esc(snapsho
     const advice = [...(snapshot.renderedAdvice || []).filter((a) => a.selected !== false), ...(snapshot.clinicianAddedAdvice || [])];
     const byCat = (...cats) => advice.filter((a) => cats.includes(a.category)).map((a) => a.text_zh).filter((t) => String(t || "").trim());
     const meds = snapshot.medicationInstructionsSnapshot || [];
+    // 2026-08-25:同 renderPatientHtml 的理由,自我觀察追蹤提示不併入緊急
+    // 就醫清單,見上面 renderPatientHtml 裡的完整說明。
     const watch = [
       "症狀明顯加重、或出現新的劇烈疼痛",
       "發燒、持續頭暈、異常出血或瘀腫擴大",
-      "服用調理品後噁心、皮疹或任何過敏反應",
-      ...(snapshot.patientObservationPromptsSnapshot || [])
+      "服用調理品後噁心、皮疹或任何過敏反應"
     ];
     const headerContact = [clinic.address, clinic.phone].filter((v) => String(v || "").trim()).join("　·　");
     const bookingNote = String(clinic.booking_note_zh || "").trim();

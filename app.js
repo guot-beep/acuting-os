@@ -147,7 +147,11 @@ const NUMERIC_OUTCOME_METRIC_CONFIG = [
   //     outcome_metrics.json; this config makes no higher/lower-is-better
   //     claim, and formatNumericOutcomeMetrics below must not either.
   { metricId: "metric.bloating", min: 0, max: 10, integer: true },
-  { metricId: "metric.sleep_onset_minutes", min: 0, max: null, integer: true },
+  // placeholderHint (2026-08-25, dry run finding): 病人講「大概一小時」是
+  // 常態,填分鐘數的欄位單獨看很容易讓人愣一下要不要自己換算。這裡直接把
+  // 換算寫進佔位字,不改欄位本身(還是分鐘、還是整數)——不引入新的輸入
+  // 格式或解析邏輯,純粹是提示文字,風險最低的修法。
+  { metricId: "metric.sleep_onset_minutes", min: 0, max: null, integer: true, placeholderHint: "分鐘數,例如1小時填60、半小時填30" },
   { metricId: "metric.night_wakings", min: 0, max: null, integer: true },
   { metricId: "metric.bowel_frequency", min: 0, max: null, integer: true },
   // Academic-readiness batch (2026-08, pre-9/01 freeze): PGIC — the
@@ -159,6 +163,25 @@ const NUMERIC_OUTCOME_METRIC_CONFIG = [
   // introduces category "global" (IMMPACT's own domain name for this
   // instrument class).
   { metricId: "metric.pgic", min: 1, max: 7, integer: true },
+];
+
+// SOAP 開新診時帶入上一診的白名單(2026-08-25,Ting 要求)。跟上面
+// NUMERIC_OUTCOME_METRIC_CONFIG 同一個 TDZ 理由,不能宣告在 openSoapEditor
+// 附近——render() 在檔案最上面同步跑,若使用者一開頁就有已選病例,呼叫鏈
+// 可能在這個檔案後段的 const 初始化之前就先摸到它。
+//
+// 只有「治療計畫」類欄位,絕不含觀察/療效類欄位。新增欄位時先問:這是
+// 「醫師打算怎麼治」還是「這次觀察/量到什麼」?前者才准列入。
+// scripts/test-avs-checkout.js 沒有涵蓋這支(非 AVS 引擎),下面清單本身
+// 就是唯一防線——刻意寫成外顯陣列方便下次修改時一眼看穿範圍。
+const SOAP_CARRY_FORWARD_FIELDS = [
+  "tcmPattern", "tcmPatternSelections", "tcmPatternLinks", "pathomechanism", "treatmentPrinciple",
+  "pointsUsed", "acupointLinks", "retentionMinutes", "technique",
+  "formulaHerbs", "formulaLinks", "herbLinks",
+  "westernMeds", "medicationLinks",
+  "modalities", "modalitiesPerformed",
+  "westernConditionLinks", "easternDiseaseLinks", "safetyFlagLinks",
+  "followUp"
 ];
 
 // Outcome Tracking v1 direction-hint labels (2026-08, CG8). Declared here —
@@ -6022,7 +6045,7 @@ function renderNumericOutcomeMetricInputs(note) {
       cfg.max != null ? `max="${cfg.max}"` : "",
       `step="${cfg.integer ? "1" : "any"}"`,
       `value="${resolved.hasValue ? escapeAttribute(String(resolved.value)) : ""}"`,
-      `placeholder="未測量可留空 leave blank if not measured"`,
+      `placeholder="${escapeAttribute(cfg.placeholderHint ? `${cfg.placeholderHint}（未測量可留空 leave blank if not measured）` : "未測量可留空 leave blank if not measured")}"`,
     ].filter(Boolean).join(" ");
     const conflictWarning = resolved.conflict
       ? `<small class="metric-conflict-warning">⚠ 與舊欄位不一致：舊值 ${escapeHtml(String(resolved.legacyValue))}，目前顯示新值 ${escapeHtml(String(resolved.value))}（儲存後舊欄位會清除）。Conflicts with the legacy field — old ${escapeHtml(String(resolved.legacyValue))}, showing new ${escapeHtml(String(resolved.value))}.</small>`
@@ -6135,11 +6158,20 @@ function formatNumericOutcomeMetrics(note) {
 //
 // Trend is the CG8 first-phase contract exactly: ↑/↓/→ per consecutive
 // transition in the MEASURED sequence only (unmeasured visits are skipped
-// when building that sequence, never given a fabricated arrow), no color,
-// no "improved/worsened" wording — direction_good varies per metric
-// (increase/decrease/individualized/contextual) and some are explicitly
-// individualized (bowel_frequency), so an arrow here is describing numeric
-// movement only, not a verdict.
+// when building that sequence, never given a fabricated arrow) — the ARROW
+// itself still means nothing but raw numeric movement, never "improved/
+// worsened" wording, because direction_good varies per metric and some are
+// explicitly individualized (bowel_frequency): an arrow can't honestly claim
+// a verdict for those.
+//
+// 2026-08-25(dry run,Ting 現場發現):Baseline/Today/Change/Trend 這張表混
+// 了「遞增為好」跟「遞減為好」的 metric 在同一欄,箭頭上上下下但意義不一致,
+// 一眼掃過去看不出「這是變好還是變壞」。加 outcomeChangeGoodness() 只替
+// Change/Trend 的顯示上色(綠=朝 direction_good 那個方向動、紅=反方向、
+// 無色=direction_good 是 individualized/contextual/未標註,系統本來就不該
+// 替這類 metric 下判斷)——箭頭本身的「原始數字動向」意義不變,顏色是額外
+// 疊加的判讀層,跟 renderVisitBrief 的 brief-good/brief-bad 用同一套色碼,
+// 兩個面板視覺一致。
 function computeOutcomeTrackingRows(item) {
   const chronological = [...(item.soapNotes || [])].sort((a, b) => {
     const dateCompare = String(a.visitDate || "").localeCompare(String(b.visitDate || ""));
@@ -6188,6 +6220,19 @@ function computeOutcomeTrackingRows(item) {
 
     return { cfg, baseline, today, change, trend };
   }).filter(Boolean);
+}
+
+// change 是 (today - baseline)。true=朝 direction_good 那個方向動(好事)、
+// false=反方向(壞事)、null=direction_good 是 individualized/contextual/
+// 未標註,或 change 本身是 null(沒有兩個測量點可比)——這三種都不下判斷,
+// 顯示端一律不上色。跟 renderVisitBrief 裡內嵌的同款邏輯是同一個判斷式,
+// 這裡抽成獨立函式給 Outcome Tracking 面板重用,兩處不會各自長出一套微妙
+// 不同的判斷(例如一邊用 >= 一邊用 >)。
+function outcomeChangeGoodness(def, change) {
+  if (change == null || !def) return null;
+  if (def.direction_good === "decrease") return change < 0;
+  if (def.direction_good === "increase") return change > 0;
+  return null;
 }
 
 function renderOutcomeTrackingPanel(item) {
@@ -6247,12 +6292,14 @@ function renderOutcomeTrackingPanel(item) {
               const rrText = rr.text_zh || rr.text_en || "";
               refRangeHint = `<small class="interp-hint interp-refrange" title="${escapeHtml(rrText)}${rr.scope ? "\n適用範圍：" + escapeHtml(rr.scope) : ""}">參考範圍：${escapeHtml(shortCitation(rr.source.name))}</small>`;
             }
+            const goodness = outcomeChangeGoodness(def, row.change);
+            const goodnessCls = goodness === true ? "outcome-good" : goodness === false ? "outcome-bad" : "";
             return `<tr>
               <td>${escapeHtml(outcomeMetricPanelLabel(row.cfg.metricId))}${directionHint}${interpHint}${refRangeHint}</td>
               <td>${escapeHtml(fmt(row.cfg, row.baseline))}</td>
               <td>${escapeHtml(fmt(row.cfg, row.today))}</td>
-              <td>${escapeHtml(fmtChange(row.change))}</td>
-              <td>${escapeHtml(row.trend || "—")}</td>
+              <td class="${goodnessCls}">${escapeHtml(fmtChange(row.change))}</td>
+              <td class="${goodnessCls}">${escapeHtml(row.trend || "—")}</td>
             </tr>`;
           }).join("")}
         </tbody>
@@ -6761,11 +6808,11 @@ function promptAgentExposureAction(exposureId, eventType) {
   if (!exposure) return;
   const event = { eventType };
   if (eventType === "dose_changed") {
-    const value = prompt("新劑量 New dose", exposure.doseText || "");
+    const value = prompt("新劑量 New dose（例:200mg,或中藥 3克・科學中藥/水藥/丸藥）", exposure.doseText || "");
     if (value === null) return;
     event.doseText = value.trim();
   } else if (eventType === "frequency_changed") {
-    const value = prompt("新頻率 New frequency", exposure.frequencyText || "");
+    const value = prompt("新頻率 New frequency（例:qd/bid,或中藥 飯後・一天三次）", exposure.frequencyText || "");
     if (value === null) return;
     event.frequencyText = value.trim();
   } else if (eventType === "stopped") {
@@ -9038,9 +9085,18 @@ function deleteCurrentCase() {
 }
 
 // Last Visit at a Glance (2026-08-09, docs/SOAP_FOLLOWUP_TRACKING_AUDIT.md
-// §9 ranked item #3) — read-only reference only, never a data source. No new
-// storage: derived entirely from the case's existing soapNotes each time the
-// dialog opens.
+// §9 ranked item #3) — originally read-only reference only, never a data
+// source (see the panel below). No new storage: derived entirely from the
+// case's existing soapNotes each time the dialog opens.
+//
+// 2026-08-25(dry run,Ting 明確要求「帶入上一次看診的內容」推翻原本 reference-
+// only 設計):新增 SOAP_CARRY_FORWARD_FIELDS(下面)——只白名單「治療計畫」
+// 類欄位(證型/治法/穴位/方劑/手法),絕不含 S/O/A/P、舌脈、療效判定/指標、
+// 不良反應這類「這次觀察到的事實」欄位。原因跟這份文件當初刻意選 reference-
+// only 一樣:把上次的舌脈/療效判定當「這次」的值悄悄帶入,等於沒有真的重新
+// 觀察卻記錄成觀察到了(牴觸 D4「粗化,絕不寫假的臨床事實」的精神)。治療計畫
+// 類欄位不同——沿用上次的證型/穴方當這次的起草,再讓醫師確認/修改,是正常
+// 臨床流程,不是捏造。
 //
 // Ordering matches renderClinicalCaseDetail's own sort (visitDate then
 // visitNumber) so "previous" here means the same thing the SOAP Timeline
@@ -9102,6 +9158,18 @@ function renderPreviousVisitPanel(note) {
   ).join("")}</div>`;
 }
 
+// 回傳 prevNote 裡白名單欄位的淺拷貝(陣列另外複製,絕不共用參照——editingSoap
+// 存檔時不能不小心改到上一筆 note 的陣列)。只給「開新 SOAP、且這個 case 已有
+// 上一診」的情況用;編輯既有 note 一律不呼叫這支(見呼叫端判斷)。
+function soapCarryForwardFields(prevNote) {
+  const out = {};
+  for (const key of SOAP_CARRY_FORWARD_FIELDS) {
+    const v = prevNote[key];
+    out[key] = Array.isArray(v) ? v.map((x) => (x && typeof x === "object") ? { ...x } : x) : v;
+  }
+  return out;
+}
+
 function openSoapEditor(note = null) {
   const activeCase = clinicalCases.find((item) => item.id === selectedCaseId);
   if (!activeCase) {
@@ -9111,7 +9179,8 @@ function openSoapEditor(note = null) {
   editingSoapId = note?.id || null;
   document.querySelector("#soapDialogTitle").textContent = note ? "編輯 SOAP Note" : `新增 SOAP - ${activeCase.patientCode}`;
   deleteSoapBtn.hidden = !note;
-  renderPreviousVisitPanel(findPreviousSoapNote(activeCase.soapNotes, editingSoapId));
+  const previousNote = findPreviousSoapNote(activeCase.soapNotes, editingSoapId);
+  renderPreviousVisitPanel(previousNote);
   // 週期/生殖區(2026-08-11 Ting 指正):sex at birth = M 整段隱藏 —— 但
   // 若編輯中的舊 note 已有值,仍顯示且展開(已存在的資料絕不隱形,D4)。
   // F / Other / 未填(不假設)保留,預設收合;有值必展開。
@@ -9170,7 +9239,11 @@ function openSoapEditor(note = null) {
     ifIneffectivePlan: "",
     modalitiesPerformed: []
   };
-  const data = { ...fallback, ...(note || {}) };
+  // 2026-08-25:只有「開新 SOAP(note 為 null)且這個 case 有上一診」才帶入
+  // 治療計畫白名單欄位;編輯既有 note 時 carryForward 恆為 {},最後
+  // ...(note||{}) 一定覆蓋掉,不會動到已存檔的內容。
+  const carryForward = (!note && previousNote) ? soapCarryForwardFields(previousNote) : {};
+  const data = { ...fallback, ...carryForward, ...(note || {}) };
   // AVS v3 Phase C:modality.* checkbox 群組先渲染再水合(與 case form 的
   // raceEthnicity 同款作法)—— checkbox 群組不能走下面的 .value 泛用迴圈。
   renderModalitiesPerformedOptions();
