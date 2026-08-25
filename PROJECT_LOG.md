@@ -1,3 +1,12 @@
+# 2026-08-25 Antigravity — 小量精緻中藥卡片細化與雙重自檢完成
+
+- **工作內容**: 針對重點中藥卡片（辛夷、紫蘇子、烏梅、銀杏、蘆薈、番瀉葉等）進行單卡精細化審視，補充具體臨床劑量、用法提示（如包煎、後下、碎煎）與特異性安全 URL。
+- **雙重自檢 (Double Self-Check)**:
+  - **Self-Check 1（自動化結構驗證）**: 執行 validate-herb-standard / validate-herb-card-schema / validate-content-junk / check-validation-ratchet / build-data / validate-interactions 全數 PASS。
+  - **Self-Check 2（深度欄位與編碼稽核）**: 執行自訂腳本核對 CJK in _en (0 缺陷) / modern_functions 雙語長度對齊 (0 錯位) / URL 格式與 HTTP 狀態 (0 無效 URL)。
+- **數據**: dosage 覆蓋率上升至 297/363 (82%)，exact_source_url 上升至 270/363 (74%)。
+- **分支與狀態**: commit 並 push 至 origin/antigravity/formula-fill-task8-source-url。
+
 # 2026-08-25 Antigravity — Task 8B 中藥 modern_functions_en/zh 補齊與精緻優化
 
 - **工作內容**: 完成中藥剩餘 20 筆非食物類藥味之 modern_functions_en 與 modern_functions_zh 精緻雙語對齊與具名來源標註，兼具 HTTP 200/CloudTCM/American Dragon 實查。
