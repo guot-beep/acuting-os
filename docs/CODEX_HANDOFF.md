@@ -1,5 +1,13 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-24] Codex Handoff — Conditions official respiratory etiology B23
+
+- **Exact ids / fields**: only `cond.bronchiectasis`, `cond.interstitial_lung_disease`, `cond.idiopathic_pulmonary_fibrosis`, `cond.hypersensitivity_pneumonitis`, and `cond.emphysema`; filled empty bilingual etiology and appended direct sources plus etiology provenance. Existing pathology, risks, red flags, scope, relations, and adjacent datasets were not changed.
+- **Official sources**: NIH/NHLBI, NIH/NLM MedlinePlus, CDC/NIOSH, and NHS; all ten actual content URLs returned HTTP 200.
+- **Clinical distinctions**: bronchiectasis initiating cause versus its later infection–inflammation cycle; ILD umbrella versus a specific diagnosis; UIP pattern versus IPF; HP exposure/sensitization versus proof of disease; and emphysema versus the full COPD category.
+- **Measured delta**: maturity `231→235 FULL_DETAIL_CANDIDATE`, `274→270 DETAIL_PARTIAL`, `0→0 SKELETON`, leaving `65` slots to 300; source entries `809→819`, sourced records `281→285`; empty etiology `245→240`. Bronchiectasis already had sources and met part of the threshold, so five fills produced a net maturity gain of four.
+- **Validation**: dry-run/apply `20 operations / 5 ids / skipped 0 / missing 0`; exact equality and record-boundary diff; `build-data.js`; condition standard `505/505 clean`; ratchet; condition sources (`819`); relation registry; content junk; maturity audit; and `git diff --check` passed.
+
 ## [2026-08-24] Codex Handoff — Conditions official endocrine and nutrition etiology B22
 
 - **Exact ids / fields**: only `cond.hyperparathyroidism`, `cond.hypoparathyroidism`, `cond.vitamin_d_deficiency`, `cond.vitamin_b12_deficiency`, and `cond.iron_deficiency_anemia`; filled empty bilingual etiology and appended direct sources plus etiology provenance. Existing pathology, risks, red flags, scope, relations, and adjacent datasets were not changed.

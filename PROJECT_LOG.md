@@ -1,3 +1,13 @@
+# 2026-08-24 — Codex Conditions 呼吸系統官方病因補強 B23
+
+- **範圍**：只補 `cond.bronchiectasis`、`cond.interstitial_lung_disease`、`cond.idiopathic_pulmonary_fibrosis`、`cond.hypersensitivity_pneumonitis`、`cond.emphysema` 原本空白的 `etiology_zh/en`，追加直接來源及 etiology provenance；未覆蓋既有 pathology、risk factors、red flags、scope、relations，亦未碰相鄰資料線。
+- **數字**：`FULL_DETAIL_CANDIDATE 231→235`、`DETAIL_PARTIAL 274→270`、`SKELETON 0→0`，距 300 尚 `65`；直接來源 `809→819`、有來源記錄 `281→285`；空白 etiology `245→240`。Bronchiectasis 原已具來源與達部分門檻，故 5 筆填充淨增 4 筆成熟候選。
+- **來源與邊界**：使用 NIH/NHLBI、NIH/NLM MedlinePlus、CDC/NIOSH 與 NHS，10 個內容頁皆 HTTP 200。區分 bronchiectasis 起因與後續惡性循環、ILD umbrella 與具體病因、UIP 與 IPF、HP 暴露／致敏與確診，以及 emphysema 與全部 COPD。
+- **驗證**：dry-run/apply `20 operations / 5 ids / skipped 0 / missing 0`；逐欄 equality、逐記錄變更邊界、`build-data`、condition standard `505/505 clean`、ratchet、sources `819`、relation registry、content-junk、maturity audit 與 `git diff --check` 均無新增 defect。
+- **未解**：空白 etiology 尚 `240`；HP 的抗原常無法辨識，positive specific IgG 只代表暴露／致敏，不應單獨視為病因證明；IPF 仍必須先排除已知暴露、藥物和自體免疫原因。
+
+---
+
 # 2026-08-24 — Codex Conditions 內分泌／營養官方病因補強 B22
 
 - **範圍**：只補 `cond.hyperparathyroidism`、`cond.hypoparathyroidism`、`cond.vitamin_d_deficiency`、`cond.vitamin_b12_deficiency`、`cond.iron_deficiency_anemia` 原本空白的 `etiology_zh/en`，並追加直接來源與 etiology provenance；未覆蓋既有 pathology、risk factors、red flags、acupuncture scope、relations，也未碰 Symptoms／中藥／方劑／穴位資料。
