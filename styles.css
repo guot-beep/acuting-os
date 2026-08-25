@@ -6702,6 +6702,9 @@ html { scroll-padding-top: 92px; }
 }
 .clinical-note__delete:hover { background: #fbeeee; }
 .clinical-note__status { font-size: 0.82rem; color: #4a7a4a; }
+/* 寫入失敗的狀態必須跟「已儲存」長得完全不一樣 —— 同樣是綠字小標的話,
+   一眼掃過去會以為存好了。這一行講的是「你的字還沒進去」。 */
+.clinical-note__status.is-error { color: #8a1f1f; font-weight: 700; line-height: 1.5; }
 .clinical-note__meta { font-size: 0.76rem; color: #9a8c6a; margin: 0.45rem 0 0; }
 
 /* Named source chips. The sources block used to print raw URLs as plain text

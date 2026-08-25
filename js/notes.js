@@ -42,19 +42,48 @@
     })[ch]);
   }
 
+  /* 唯讀鎖:讀不到就不准寫。
+   *
+   * 舊版讀取失敗時 console.warn 後回傳空 store,於是每張卡顯示「尚未記錄」,
+   * 而下一次 setNote → writeStore 會把整份**還救得回來的原始位元組**永久蓋掉。
+   * clinical-store.js 明文禁止這一招並記著真實事故(2026-08-11 演練),
+   * 臨床筆記層當時沒有套用同一條規則。
+   *
+   * 現在:壞掉 = 進唯讀,寫入路徑一律拒絕,並且畫面上說得出原因。
+   * 錯誤訊息不轉述 parser 內容 —— JSON.parse 的訊息會內嵌一段原始輸入,
+   * 而這一份原始輸入是臨床筆記(同 clinical-store 的 PHI 邊界規則)。 */
+  let storeLocked = null;   // null = 正常;字串 = 唯讀原因
+
   function readStore() {
+    const raw = localStorage.getItem(STORE_KEY);
+    if (raw === null || raw === "") { storeLocked = null; return { version: STORE_VERSION, notes: {} }; }
+    let parsed;
     try {
-      const raw = JSON.parse(localStorage.getItem(STORE_KEY) || "null");
-      if (raw && raw.notes) return raw;
-    } catch (err) {
-      console.warn("[notes] unreadable note store, starting fresh", err);
+      parsed = JSON.parse(raw);
+    } catch {
+      storeLocked = `筆記庫無法解析(${raw.length} 個字元,內容不轉述)。已進入唯讀保護:在修好之前不會寫入,以免蓋掉還救得回來的原始資料。`;
+      return { version: STORE_VERSION, notes: {}, __locked: true };
     }
-    return { version: STORE_VERSION, notes: {} };
+    if (!parsed || typeof parsed !== "object" || !parsed.notes || typeof parsed.notes !== "object") {
+      storeLocked = "筆記庫存在但形狀不對(缺少 notes)。已進入唯讀保護,不會寫入。";
+      return { version: STORE_VERSION, notes: {}, __locked: true };
+    }
+    storeLocked = null;
+    return parsed;
   }
 
   function writeStore(store) {
-    localStorage.setItem(STORE_KEY, JSON.stringify(store));
+    if (store && store.__locked) throw new Error(storeLocked || "筆記庫唯讀保護中");
+    try {
+      localStorage.setItem(STORE_KEY, JSON.stringify(store));
+    } catch (err) {
+      // 配額滿 / 無痕模式:過去這個例外會從 click handler 拋出去,
+      // 「已儲存」那行永遠跑不到 —— 使用者看到的是「按了沒反應」。
+      throw new Error(`筆記寫入失敗,資料尚未儲存:${err && err.message ? err.message : err}`);
+    }
   }
+
+  function storeLockReason() { return storeLocked; }
 
   const keyOf = (kind, id) => `${kind}:${id}`;
 
@@ -158,6 +187,20 @@
       const status = root.querySelector("[data-note-status]");
       const en = isEnglish();
 
+      // 存/刪都可能失敗(唯讀鎖、配額滿)。失敗時絕不顯示「已儲存」——
+      // 那句話比沒有回饋更糟,她會以為寫進去了。
+      const runWrite = (fn, okText) => {
+        try {
+          fn();
+          if (status) { status.textContent = okText; status.classList.remove("is-error"); }
+          return true;
+        } catch (err) {
+          if (status) { status.textContent = String(err && err.message ? err.message : err); status.classList.add("is-error"); }
+          else alert(String(err && err.message ? err.message : err));
+          return false;
+        }
+      };
+
       if (event.target.closest("[data-note-save]")) {
         // Read the name off the panel itself. It used to look for an ancestor
         // carrying the attribute, found none, and fell back to the raw id — so
@@ -165,17 +208,15 @@
         // Huang", which matters because the export is the only place the notes
         // are read outside the card.
         const displayName = root.dataset.noteDisplayName || "";
-        setNote(kind, id, input?.value || "", displayName);
-        if (status) status.textContent = en ? "Saved" : "已儲存";
+        if (!runWrite(() => setNote(kind, id, input?.value || "", displayName), en ? "Saved" : "已儲存")) return;
         root.querySelector(".clinical-note__badge")?.classList.remove("is-empty");
         document.dispatchEvent(new CustomEvent("acuting:note-saved", { detail: { kind, id } }));
         return;
       }
 
       if (event.target.closest("[data-note-delete]")) {
-        setNote(kind, id, "");
+        if (!runWrite(() => setNote(kind, id, ""), en ? "Deleted" : "已刪除")) return;
         if (input) input.value = "";
-        if (status) status.textContent = en ? "Deleted" : "已刪除";
         document.dispatchEvent(new CustomEvent("acuting:note-saved", { detail: { kind, id } }));
       }
     });
@@ -242,7 +283,9 @@
     allNotes,
     exportNotes,
     importNotes,
-    count: () => Object.keys(readStore().notes).length
+    count: () => Object.keys(readStore().notes).length,
+    // 唯讀原因(null = 正常)。呼叫端可據此在畫面上說明為何不能寫。
+    lockReason: () => { readStore(); return storeLockReason(); }
   };
 
   if (document.readyState === "loading") {
