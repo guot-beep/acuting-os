@@ -1,0 +1,55 @@
+{
+  "dataset": "Codex Conditions official rheumatology etiology B14",
+  "policy": "Fill only currently empty bilingual etiology fields for four systemic musculoskeletal or rheumatologic Conditions. Preserve existing canonical pathology, red flags, scope, relations, and provenance; append direct government-health sources. State uncertainty explicitly and distinguish predisposition, trigger, association, and established mechanism.",
+  "created": "2026-08-24",
+  "fills": {
+    "cond.fibromyalgia": {
+      "etiology_zh": "纖維肌痛症的確切病因尚不明，現有資料支持多因素模型，而非單一肌肉損傷或局部發炎。患者可出現中樞神經痛覺訊號處理改變與疼痛敏感度上升，但這描述的是已觀察到的機轉，不等於已確認起始原因。家族聚集提示遺傳易感性，疾病、疼痛狀態、感染、手術、身體創傷或重大心理壓力有時在發病前出現；這些只能視為可能誘因或相關因素，且許多患者沒有可辨識的觸發事件。焦慮或憂鬱可共存並影響症狀負擔，不應簡化為「心理因素造成疼痛」。",
+      "etiology_en": "The exact cause of fibromyalgia is unknown, and current evidence supports a multifactorial model rather than a single muscle injury or local inflammatory lesion. Altered central processing of pain signals and increased pain sensitivity are observed mechanisms, not proof of one initiating cause. Familial clustering suggests genetic susceptibility, while illness or another painful disorder, infection, surgery, physical trauma, or major psychological stress may precede onset in some people. These are possible triggers or associations, and many patients have no identifiable trigger. Anxiety or depression may coexist and influence symptom burden but should not be reduced to the cause of the pain.",
+      "sources": [
+        "https://www.niams.nih.gov/health-topics/fibromyalgia",
+        "https://www.nhs.uk/conditions/fibromyalgia/causes/"
+      ],
+      "field_sources": {
+        "etiology_zh": ["NIAMS: Fibromyalgia — altered pain signaling, genetic susceptibility, and possible environmental triggers (last reviewed 2024-05); NHS: Fibromyalgia — Causes (last reviewed 2022-10-12)"],
+        "etiology_en": ["NIAMS: Fibromyalgia — altered pain signaling, genetic susceptibility, and possible environmental triggers (last reviewed 2024-05); NHS: Fibromyalgia — Causes (last reviewed 2022-10-12)"]
+      }
+    },
+    "cond.ankylosing_spondylitis": {
+      "etiology_zh": "僵直性脊椎炎的起始病因尚未確定，研究支持遺傳易感性與尚未明確的環境因素共同參與，繼而出現薦髂關節、脊椎關節與附著點的免疫介導性發炎。HLA-B27 是最重要的已知遺傳關聯，但它既非充分條件也非必要條件：多數帶有 HLA-B27 的人不會發病，少數患者也不帶此變異。因此 HLA-B27 不能單獨解釋病因或作為確診依據，其他基因與環境觸發因素仍在研究中。",
+      "etiology_en": "The initiating cause of ankylosing spondylitis remains unknown. Evidence supports an interaction between genetic susceptibility and incompletely defined environmental factors, followed by immune-mediated inflammation at the sacroiliac joints, spinal joints, and entheses. HLA-B27 is the strongest known genetic association, but it is neither sufficient nor required: most people who carry it never develop the disease, and some affected people do not carry it. HLA-B27 therefore cannot by itself explain etiology or establish the diagnosis, and additional genes and environmental triggers remain under study.",
+      "sources": [
+        "https://www.niams.nih.gov/health-topics/ankylosing-spondylitis",
+        "https://www.nhs.uk/conditions/ankylosing-spondylitis/causes/"
+      ],
+      "field_sources": {
+        "etiology_zh": ["NIAMS: Ankylosing Spondylitis — gene-environment model and HLA-B27 limits (retrieved 2026-08); NHS: Ankylosing spondylitis — Causes (last reviewed 2023-01-05)"],
+        "etiology_en": ["NIAMS: Ankylosing Spondylitis — gene-environment model and HLA-B27 limits (retrieved 2026-08); NHS: Ankylosing spondylitis — Causes (last reviewed 2023-01-05)"]
+      }
+    },
+    "cond.psoriatic_arthritis": {
+      "etiology_zh": "乾癬性關節炎是免疫介導性發炎疾病；免疫系統為何在特定乾癬患者中過度活化仍未完全釐清。遺傳易感性與環境因素共同參與：家族史及若干基因變異與風險相關，而肥胖、感染、關節或骨骼受傷及壓力可能觸發發病。多數患者先有乾癬，但只有部分乾癬患者發展為關節炎，少數人的關節症狀可早於皮膚表現；因此不能把皮膚乾癬本身當作充分病因。",
+      "etiology_en": "Psoriatic arthritis is an immune-mediated inflammatory disease, but why immune activity becomes dysregulated in a particular person with psoriasis is not fully understood. Genetic susceptibility and environmental factors interact: family history and several gene variants are associated with risk, while obesity, infection, joint or bone injury, and stress may trigger onset. Most affected people have psoriasis first, but only a subset of people with psoriasis develop arthritis, and joint symptoms can precede skin disease in a minority; psoriasis alone is therefore not a sufficient cause.",
+      "sources": [
+        "https://www.niams.nih.gov/health-topics/psoriatic-arthritis",
+        "https://www.nhs.uk/conditions/psoriatic-arthritis/"
+      ],
+      "field_sources": {
+        "etiology_zh": ["NIAMS: Psoriatic Arthritis — immune mediation, genetic factors, and possible environmental triggers (last reviewed 2024-08); NHS: Psoriatic arthritis — causes (retrieved 2026-08)"],
+        "etiology_en": ["NIAMS: Psoriatic Arthritis — immune mediation, genetic factors, and possible environmental triggers (last reviewed 2024-08); NHS: Psoriatic arthritis — causes (retrieved 2026-08)"]
+      }
+    },
+    "cond.polymyalgia_rheumatica": {
+      "etiology_zh": "風濕性多肌痛症由發炎造成，但引發發炎的上游原因仍未知。研究曾發現某些基因變異關聯，但不同族群的結果並不一致；疾病幾乎只見於 50 歲以上者，顯示老化相關的免疫或組織變化可能參與。遺傳與環境因素的組合被認為較符合現有證據，但尚無單一感染、暴露或基因被證實為直接病因。它與巨細胞動脈炎密切相關，可同時或先後出現，但兩者的共同觸發機轉仍未確定。",
+      "etiology_en": "Polymyalgia rheumatica is driven by inflammation, but the upstream trigger is unknown. Associations with certain gene variants have been reported but have not been consistent across populations, and the near-exclusive occurrence after age 50 suggests that age-related immune or tissue changes may contribute. A combination of genetic and environmental factors best reflects current evidence, but no single infection, exposure, or gene is established as the direct cause. PMR is closely linked with giant cell arteritis and the disorders may occur together or sequentially, although their shared trigger remains uncertain.",
+      "sources": [
+        "https://www.niams.nih.gov/health-topics/polymyalgia-rheumatica-giant-cell-arteritis",
+        "https://www.nhs.uk/conditions/polymyalgia-rheumatica/"
+      ],
+      "field_sources": {
+        "etiology_zh": ["NIAMS: Polymyalgia Rheumatica and Giant Cell Arteritis — inflammation, inconsistent genetic links, and age contribution (last reviewed 2022-02); NHS: Polymyalgia rheumatica — genetic and environmental model (last reviewed 2023-04-23)"],
+        "etiology_en": ["NIAMS: Polymyalgia Rheumatica and Giant Cell Arteritis — inflammation, inconsistent genetic links, and age contribution (last reviewed 2022-02); NHS: Polymyalgia rheumatica — genetic and environmental model (last reviewed 2023-04-23)"]
+      }
+    }
+  }
+}

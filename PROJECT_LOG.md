@@ -4405,3 +4405,10 @@ Current repo state as of this log:
 - **來源與內容邊界**：使用 NIAMS、AAOS OrthoInfo、NHS 與 HSS，7 個實際內容 URL 皆 HTTP 200；stress fracture 區分 fatigue 與 insufficiency 機轉，spondylolisthesis 區分峽部型、退化型與少見病因，並明示影像狹窄不等於有症狀。
 - **驗證**：dry-run／apply 均為 `16 operations / 4 ids / skipped 0 / missing 0`；逐欄 equality、逐記錄 diff 僅 4 ids／4 expected keys；`build-data`、condition standard `505/505`、ratchet、sources `730`、relation registry、content-junk、maturity audit、`git diff --check` 均無新增 defect。
 - **未解**：etiology 仍缺 `284` 張；本批只補原空白病因與其直接來源，沒有把既有 red flags、scope 或舊 provenance 視為重新核准。
+# 2026-08-24 — Codex Conditions 風濕官方病因補強 B14
+
+- **範圍**：只補 `cond.fibromyalgia`、`cond.ankylosing_spondylitis`、`cond.psoriatic_arthritis`、`cond.polymyalgia_rheumatica` 原本空白的 `etiology_zh/en`，並合併直達來源與 etiology provenance；未改既有 pathology、risk factors、red flags、acupuncture scope、relations 或 Symptoms／中藥／方劑／穴位 canonical data。
+- **數字**：`FULL_DETAIL_CANDIDATE 198→201`、`DETAIL_PARTIAL 307→304`、`SKELETON 0→0`，距 300 張尚差 `99`；來源項目 `730→738`、有來源記錄 `249→252`；全庫 etiology 空白 `284→280`。四卡現場 audit 均為 score 12、所有 present/hard gates true；其中 fibromyalgia 在本批前已達分數門檻，故整體成熟度淨增 3 而非 4。
+- **來源與內容邊界**：使用 NIAMS 與 NHS，8 個實際內容 URL 皆 HTTP 200；纖維肌痛不歸咎為心理因素，HLA-B27 不表述為充分或必要病因，PsA 區分乾癬關聯與充分病因，PMR 明示基因關聯跨族群不一致。
+- **驗證**：dry-run／apply 均為 `16 operations / 4 ids / skipped 0 / missing 0`；逐欄 equality、逐記錄 diff 僅 4 ids／4 expected keys；`build-data`、condition standard `505/505`、ratchet、sources `738`、relation registry、content-junk、maturity audit、`git diff --check` 均無新增 defect。
+- **未解**：etiology 仍缺 `280` 張；本批未把既有 red flags、scope 或舊 provenance 視為重新核准，纖維肌痛原本指向空白 etiology 的 CloudTCM provenance 仍保留並另加官方來源，未做覆蓋性清理。

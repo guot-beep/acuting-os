@@ -1,5 +1,13 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-24] Codex Handoff — Conditions official rheumatology etiology B14
+
+- **Exact ids / fields**: only `cond.fibromyalgia`, `cond.ankylosing_spondylitis`, `cond.psoriatic_arthritis`, and `cond.polymyalgia_rheumatica`; filled empty bilingual etiology and appended direct sources plus etiology provenance. Existing pathology, risk factors, red flags, acupuncture scope, relations, and adjacent datasets were not changed.
+- **Official source sets**: NIAMS + NHS for every card; all eight actual content URLs returned HTTP 200.
+- **Clinical distinctions**: fibromyalgia is not reduced to psychological causation; HLA-B27 is neither sufficient nor necessary for AS; psoriasis alone is not a sufficient cause of PsA; PMR genetic associations are described as inconsistent across populations and no single trigger is claimed.
+- **Measured delta**: maturity `198→201 FULL_DETAIL_CANDIDATE`, `307→304 DETAIL_PARTIAL`, `0→0 SKELETON`, leaving `99` slots to 300; source entries `730→738`, sourced records `249→252`; empty etiology `284→280`. All four target records now audit at score 12 with every present and hard-gate flag true; one was already above the maturity score threshold before etiology fill, hence the net +3.
+- **Validation**: dry-run/apply `16 operations / 4 ids / skipped 0 / missing 0`; exact equality and record-boundary diff; `build-data.js`; condition standard `505/505 clean`; ratchet; condition sources (`738`); relation registry; content junk; maturity audit; and `git diff --check` passed.
+
 ## [2026-08-24] Codex Handoff — Conditions official MSK etiology B13
 
 - **Exact ids / fields**: only `cond.lumbar_spinal_stenosis`, `cond.stress_fracture`, `cond.spondylolisthesis`, and `cond.spondylolysis`; filled empty bilingual etiology, appended direct sources, and merged etiology provenance through the repository's non-overwrite fill tool. Existing pathology, risk factors, red flags, acupuncture scope, relations, and adjacent datasets were not changed.
