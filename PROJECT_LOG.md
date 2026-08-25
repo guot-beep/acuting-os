@@ -1,10 +1,50 @@
-# 2026-08-25 Antigravity � Task 8C ?? exact_source_url ?? (HTTP ????)
+# 2026-08-25 深夜 — Task 8C 驗收通過並落地:方劑 exact_source_url 補齊,94%→97%(附一則編碼異常提醒)
 
-- **????**: ? 13 ??? `exact_source_url` ????,???? American Dragon URL ??? HTTP ????????????????
-- **??**: ?? `Herb Formulas copy/<CamelCase>.html` ????,HTTP 200 ???,404/ERROR ??,?????
-- **?? (before ? after)**: `exact_source_url` (formulas): 210/223 (94%) ? **217/223 (97%)**;?? **7** ?;????? **6** ? (Li Zhong Wan, Jin Gui Shen Qi Wan, Chai Hu Shu Gan San, Zhen Gan Xi Feng Tang, Xi Jiao Di Huang Wan, Xian Fang Huo Ming Yin)
-- **??**: build-data / validate-herb-quality-strict / validate-herb-card-schema / validate-herb-standard / validate-no-boilerplate / check-validation-ratchet / validate-content-junk: ? PASS
-- **????**: `antigravity/formula-fill-task8-source-url` � ????
+Task 8C(`antigravity/formula-fill-task8-source-url`，commit `128da48e`）延續同一套 HTTP 驗證方法補
+方劑 `exact_source_url`：210→**217/223（97%）**，新增 7 筆。我全數用 WebFetch 實際打開驗證，7/7
+都是真實對應的方劑頁面（含一條「實脾散」對到頁面主名「實脾飲」，查過該頁本身列出兩個名稱互通，
+不是掛錯方）。逐欄位比對確認除了 `exact_source_url`/`field_sources`，其餘欄位 0 異動。
+`validate-formula-standard.js`/`validate-formula-quality-strict.js`/`check-validation-ratchet.js`/
+`validate-content-junk.js` 全 PASS。**收下**，但兩點記錄一下：
+1. 這 7 筆裡有 2 筆是補在 `review_status: deprecated` 的 `_import_stub`（匯入重複殘根）卡上——不是
+   錯誤，只是這種卡本來就要被淘汰，花力氣補欄位價值不高，下次可以先跳過 `deprecated` 的卡。
+2. **antigravity 這次自己寫的 commit/PROJECT_LOG 報告文字整段編碼壞掉**（中文字元變成逐字元的
+   `?`，例如「Antigravity — Task 8C」變成「Antigravity ? Task 8C」，用 `xxd` 核對過是真的
+   壞了不是顯示問題）——好在只影響她自己那份報告文字，**`data/herbs/formulas.json` 本身的中文
+   內容完全沒事**（跟改動前的 `?` 字元數一致，逐筆核對過內容可讀）。這份壞掉的報告已捨棄，改用
+   這一條取代；如果之後她自己寫的報告又出現這種亂碼，代表她那邊寫檔案時的編碼設定有問題，值得
+   她自己排查一下。
+
+---
+
+# 2026-08-25 深夜 — Task 8A 驗收通過並落地:中藥 safety_source_url HTTP 逐條驗證真的有效,74%→96%
+
+Task 8A(`antigravity/herb-fill-task8-safety-url`，commit `5366046a`）延續 Task 6 Round 2 證實有效的
+HTTP 驗證方法,套用到中藥 `safety_source_url`——這個欄位 Task 2 曾經判定「已到可驗證極限」，但那是
+用命名慣例猜測的舊方法判的，換成真的逐條 HTTP 驗證後**證明還有大量空間**：267→**347/363（96%）**，
+新增 80 筆，我隨機抽 6 條用 WebFetch 實際打開，6/6 都是真實對應的藥頁。逐欄位比對確認除了
+`safety_source_url`/`field_sources`，其餘欄位 0 異動。驗證器全 PASS。**收下**。
+
+---
+
+# 2026-08-25 Antigravity — Task 8A 中藥 safety_source_url 補齊 (HTTP 實測驗證)
+
+- **做了什麼**: 對 96 筆缺少 `safety_source_url` 的中藥卡，逐條建構 American Dragon URL 並實際發送 HTTP 請求確認回應狀態碼。
+- **方法**: 照 Task 6 方劑網址驗證同一套方式 (HEAD/GET 請求)，PinYin → CamelCase 組成 `https://www.americandragon.com/Individualherbsupdate/<CamelCase>.html`，HTTP 200 才寫入，404/ERROR 留空，不猜不補。
+- **數字 (before → after)**:
+  - `safety_source_url`: 267/363 (74%) → **347/363 (96%)**
+  - 新增筆數: **80** 筆 (American Dragon 實測 200 OK)
+  - 未找到留空: **16** 筆 (Fu Shen, Huai Hua, Yin Xing, Zong Lu Tan, Hua Ju Hong, Bai Jiu, Huang Jiu, Zhu Ji Sui, Jiu, Bi Yu San, Xiao Mai, Pao Jiang, Gui Ban Jiao, Long Chi, Cha Ye, Yin Bo)
+- **驗證指令與結果**:
+  - `node scripts/build-data.js`: PASS
+  - `node scripts/validate-herb-quality-strict.js`: PASS (0 FAILs)
+  - `node scripts/validate-herb-card-schema.js`: PASS (0 defects)
+  - `node scripts/validate-herb-standard.js`: PASS (0 structural defects)
+  - `node scripts/validate-no-boilerplate.js`: PASS
+  - `node scripts/check-validation-ratchet.js`: PASS (no regressions)
+  - `node scripts/validate-content-junk.js`: PASS
+- **已推分支**: `antigravity/herb-fill-task8-safety-url` — 等候驗收
+
 # 2026-08-25 — 症狀卡擴充 round 4 完成:round-1 剩餘 17 張再修訂,8 張通過覆核(114→122)
 
 上次對話中斷時這個 workflow(round 4,修 round-1 最後剩下的 17 張被打回候選)其實只跑到一半——
