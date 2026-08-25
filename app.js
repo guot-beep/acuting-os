@@ -6649,6 +6649,41 @@ function supplementSafetyNotes(card) {
   return { flagged, rest };
 }
 
+/* 西藥卡(med.*)的安全欄位是**第三種形狀**,渲染器過去一種都沒讀到。
+ *
+ * 藥物卡走 boxed_warning / contraindications,補充劑卡走 key_safety_notes,
+ * 而 data/medications/western_medications.json 的 12 張卡走的是
+ * major_contraindications_en / common_adverse_effects_en /
+ * herb_interaction_watch_en / acupuncture_caution_en /
+ * pregnancy_lactation_note_en —— 一個都不在上面兩組裡。
+ *
+ * 後果:lookupAgentSafetyCard 對 med.* 回傳 checked:true,四個清單全空,
+ * renderAgentExposureSafety 直接 return "" —— 整段不畫,也不畫「未做安全檢查」。
+ * 依這個函式自己的語意,那等於告訴醫師「查過了,沒有」。實測 12/12 張卡都有
+ * herb_interaction_watch_en 與 acupuncture_caution_en,也就是 12 張全中:
+ * 低劑量阿斯匹靈那句「Flag blood-moving herbs/formulas and bleeding risk」
+ * 與「Document bruising, bleeding, anticoagulant/antiplatelet use」一個字都
+ * 沒出現過。
+ *
+ * acupuncture_caution_en 排最前面 —— 它講的就是「對這個病人下針要注意什麼」,
+ * 對一個進診所的學生而言那是最可行動的一句。文字逐字來自卡片,不改寫不摘要。 */
+function medicationSafetyNotes(card) {
+  const flagged = [], rest = [];
+  const push = (bucket, label, value) => {
+    const items = Array.isArray(value) ? value : [value];
+    for (const v of items) {
+      const text = String(v || "").trim();
+      if (text) bucket.push({ text, flags: [label], source: "" });
+    }
+  };
+  push(flagged, "針刺注意 acupuncture", card && card.acupuncture_caution_en);
+  push(flagged, "中藥交互作用 herb interaction", card && card.herb_interaction_watch_en);
+  push(rest, "禁忌 contraindication", card && card.major_contraindications_en);
+  push(rest, "常見不良反應 adverse effects", card && card.common_adverse_effects_en);
+  push(rest, "孕哺 pregnancy/lactation", card && card.pregnancy_lactation_note_en);
+  return { flagged, rest };
+}
+
 function renderAgentExposureSafety(exposure) {
   const found = lookupAgentSafetyCard(exposure.agentId);
   if (!found.checked) {
@@ -6656,7 +6691,10 @@ function renderAgentExposureSafety(exposure) {
   }
   const boxed = safetyFieldList(found.card, "boxed_warning_zh", "boxed_warning_en");
   const contra = safetyFieldList(found.card, "contraindications_zh", "contraindications_en");
-  const notes = supplementSafetyNotes(found.card);
+  const supp = supplementSafetyNotes(found.card);
+  const med = medicationSafetyNotes(found.card);
+  // 三種卡片形狀的備註併成同一組(來源不同,可行動性判準相同)
+  const notes = { flagged: [...supp.flagged, ...med.flagged], rest: [...supp.rest, ...med.rest] };
   if (!boxed.length && !contra.length && !notes.flagged.length && !notes.rest.length) return "";
   const parts = [];
   // 黑框警告直接展開:FDA 最高級別的警告不該藏在要點開的地方
@@ -6685,7 +6723,9 @@ function renderAgentExposureRow(exposure) {
   const timeline = store ? store.getExposureTimeline(exposure) : [...(exposure.events || [])];
   const typeLabel = AGENT_EXPOSURE_TYPE_LABELS[exposure.agentType] || "—";
   const statusLabel = AGENT_EXPOSURE_STATUS_LABELS[exposure.status] || (exposure.status || "—");
-  const title = exposure.nameText || exposure.agentId || "未命名 Unnamed";
+  // 名稱優先序:自由文字 → 知識庫卡片名 → id。med.* 的名字在 generic_name_en,
+  // 少了 avsAgentNameOf 這一段,病歷上會印出 med.low_dose_aspirin 這種內部代碼。
+  const title = exposure.nameText || avsAgentNameOf(exposure.agentId) || exposure.agentId || "未命名 Unnamed";
   const doseFreq = [exposure.doseText, exposure.frequencyText].filter(Boolean).join(" · ") || "—";
   return `
     <div class="agent-exposure-row">
@@ -7037,7 +7077,8 @@ function formatPatternSelections(selections) {
 function knowledgeRecordName(records, id) {
   if (!id) return id;
   const rec = (records || []).find((r) => r.id === id);
-  return rec ? (rec.name_zh || rec.name_en || id) : id;
+  // generic_name_en 是西藥卡(med.*)唯一的名稱欄位;沒有它就會退回印出 id。
+  return rec ? (rec.name_zh || rec.name_en || rec.generic_name_en || id) : id;
 }
 function resolveFormulaName(id) {
   return knowledgeRecordName(globalThis.ACUTING_KNOWLEDGE?.formulas?.records, id);
@@ -7482,7 +7523,7 @@ function renderPatientAgentLedgerHtml(cases) {
   const rows = [...groups.values()].map((entries) => {
     const first = entries[0].exposure;
     const typeLabel = AGENT_EXPOSURE_TYPE_LABELS[first.agentType] || "—";
-    const title = first.nameText || first.agentId || "未命名 Unnamed";
+    const title = first.nameText || avsAgentNameOf(first.agentId) || first.agentId || "未命名 Unnamed";
     const anyCurrent = entries.some((en) => en.exposure.status === "current" || en.exposure.status === "prn");
     const sources = entries.map((en) => {
       const label = AGENT_EXPOSURE_STATUS_LABELS[en.exposure.status] || en.exposure.status || "—";
@@ -9943,7 +9984,9 @@ function avsAgentNameOf(agentId) {
   const k = globalThis.ACUTING_KNOWLEDGE || {};
   for (const pool of [k.formulas, k.supplementRecords, k.pharmDrugs, k.medications]) {
     const rec = ((pool && pool.records) || []).find((r) => r.id === agentId);
-    if (rec) return rec.name_zh || rec.name_en || null;
+    // med.* 的 12 張卡沒有 name_zh/name_en,名字在 generic_name_en ——
+    // 少了這一段,每一筆西藥都會因為「解析不到名稱」而被踢出病人文件。
+    if (rec) return rec.name_zh || rec.name_en || rec.generic_name_en || null;
   }
   return null;
 }

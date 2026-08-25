@@ -45,6 +45,10 @@ const CONTRA_A = "活動性出血";
 const CONTRA_B = "懷孕（除機械瓣膜外）";
 const NOTE_FLAGGED = "High-dose omega-3 can increase bleeding-time laboratory effects; anticoagulant users need review.";
 const NOTE_PLAIN = "No characteristic thyroid-drug interaction.";
+// 逐字取自 data/medications/western_medications.json 的 med.low_dose_aspirin
+const MED_HERB_WATCH = "Flag blood-moving herbs/formulas and bleeding risk for review.";
+const MED_ACU_CAUTION = "Document bruising, bleeding, anticoagulant/antiplatelet use, procedure timing, and prescribing instructions.";
+const MED_PREGNANCY = "Requires prescribing clinician guidance.";
 
 const KNOWLEDGE = {
   pharmDrugs: {
@@ -70,7 +74,25 @@ const KNOWLEDGE = {
       },
     ],
   },
-  medications: { records: [] },
+  /* 第三種欄位形狀。data/medications/western_medications.json 的 12 張卡既沒有
+   * boxed_warning/contraindications(藥物形狀),也沒有 key_safety_notes
+   * (補充劑形狀)—— 它們用的是 acupuncture_caution_en / herb_interaction_watch_en
+   * 這一組。渲染器一種都沒讀到,於是 lookupAgentSafetyCard 回 checked:true、
+   * 四個清單全空、直接 return "" —— 整段不畫,依這個函式自己的語意就是
+   * 「查過了,沒有」。實測 12/12 張卡都有這兩個欄位,也就是**每一張西藥卡**
+   * 都在說謊。這組 fixture 讓它不會再被打開。 */
+  medications: {
+    records: [
+      { id: "med.fixture_clean", generic_name_en: "Fixture Clean" },
+      {
+        id: "med.fixture_aspirin",
+        generic_name_en: "Low-dose aspirin",
+        herb_interaction_watch_en: MED_HERB_WATCH,
+        acupuncture_caution_en: MED_ACU_CAUTION,
+        pregnancy_lactation_note_en: MED_PREGNANCY,
+      },
+    ],
+  },
 };
 
 const sandbox = {
@@ -89,6 +111,7 @@ try {
     grabFunction("lookupAgentSafetyCard"),
     grabFunction("safetyFieldList"),
     grabFunction("supplementSafetyNotes"),
+    grabFunction("medicationSafetyNotes"),
     grabFunction("renderAgentExposureSafety"),
   ].join("\n"), sandbox);
   render = (agentId) => sandbox.renderAgentExposureSafety({ agentId, nameText: "測試" });
@@ -109,6 +132,8 @@ const unknownHtml = render("drug.does_not_exist");
 const noIdHtml = render("");
 const suppHtml = render("supp.fixture");
 const flaggedSuppHtml = render("supp.fixture_flagged");
+const medHtml = render("med.fixture_aspirin");
+const medCleanHtml = render("med.fixture_clean");
 
 const checks = [
   ["黑框警告的文字有出現", () => boxedHtml.includes(BOXED_ZH)],
@@ -139,6 +164,18 @@ const checks = [
   ["沒有標記的備註收在 details,不跟可行動的那條搶注意力", () =>
     flaggedSuppHtml.includes(NOTE_PLAIN) && !visibleWithoutClicking(flaggedSuppHtml).includes(NOTE_PLAIN)],
   ["「沒查過」與「查過沒事」的輸出不相同", () => unknownHtml !== cleanHtml && noIdHtml !== cleanHtml],
+  // 以下五條守第三種欄位形狀(med.* 的 acupuncture_caution / herb_interaction_watch)
+  ["med.* 的針刺注意有被讀到", () => medHtml.includes(MED_ACU_CAUTION)],
+  ["med.* 的中藥交互作用有被讀到", () => medHtml.includes(MED_HERB_WATCH)],
+  ["針刺注意不用點開就看得到(對下針的人最可行動的一句)", () =>
+    visibleWithoutClicking(medHtml).includes(MED_ACU_CAUTION)],
+  ["孕哺備註收在 details,不跟可行動的兩條搶注意力", () =>
+    medHtml.includes(MED_PREGNANCY) && !visibleWithoutClicking(medHtml).includes(MED_PREGNANCY)],
+  ["med.* 文字逐字來自卡片(渲染層沒有改寫或摘要)", () => {
+    const block = (medHtml.match(/<div class="agent-safety-flagged">[\s\S]*?<\/div>/) || [""])[0];
+    return block.includes(MED_ACU_CAUTION) && block.includes(MED_HERB_WATCH);
+  }],
+  ["沒有安全欄位的 med.* 才回空字串(那才是真的『查過了,沒有』)", () => medCleanHtml === ""],
 ];
 
 /* 第四種壞法,不是行為而是覆蓋率:app 有不只一個地方會列用藥。
