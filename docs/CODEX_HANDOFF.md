@@ -1,5 +1,13 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-24] Codex Handoff — Conditions official degenerative-inflammatory etiology B17
+
+- **Exact ids / fields**: only `cond.pseudogout`, `cond.sarcopenia`, `cond.generalized_osteoarthritis`, and `cond.myositis`; filled empty bilingual etiology and appended direct sources plus etiology provenance. Existing pathology, risks, red flags, scope, relations, and adjacent datasets were not changed.
+- **Official/professional sources**: NCBI/PMC, NIAMS, and University Hospitals Bristol NHS; all eight actual content URLs returned HTTP 200.
+- **Clinical distinctions**: CPPD is separated from urate gout; sarcopenia is not dismissed as inevitable normal aging and is separated from cachexia; OA is a whole-joint disease rather than simple wear; myositis is an etiologically heterogeneous family requiring subtype diagnosis.
+- **Measured delta**: maturity `207→211 FULL_DETAIL_CANDIDATE`, `298→294 DETAIL_PARTIAL`, `0→0 SKELETON`, leaving `89` slots to 300; source entries `751→759`, sourced records `257→261`; empty etiology `274→270`.
+- **Validation**: dry-run/apply `16 operations / 4 ids / skipped 0 / missing 0`; exact equality and record-boundary diff; `build-data.js`; condition standard `505/505 clean`; ratchet; condition sources (`759`); relation registry; content junk; maturity audit; and `git diff --check` passed.
+
 ## [2026-08-24] Codex Handoff — Conditions neurovascular safety B16
 
 - **Exact ids / fields**: `cond.thoracic_outlet_syndrome` received empty bilingual etiology and acupuncture scope; `cond.cluster_headache` received empty bilingual etiology, risk factors, and acupuncture scope. Sources/provenance were appended; existing pathology, red flags, relations, and the legacy 48-point list were not changed.

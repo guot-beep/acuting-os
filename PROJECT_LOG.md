@@ -4426,3 +4426,10 @@ Current repo state as of this log:
 - **來源與安全邊界**：使用 NHS、Cambridge University Hospitals 與 NICE，5 個入庫內容 URL 皆 HTTP 200；TOS 明示鎖骨上下與腋窩的神經血管／肺尖風險及血栓、缺血、肺栓塞急症；cluster 明示 first-bout imaging、氧氣／非口服 triptan、verapamil 專科路徑，並把既有 48 穴清單定義為未驗證 legacy，不外推 NICE 對其他頭痛類型的針灸建議。
 - **驗證**：dry-run／apply 均為 `14 operations / 2 ids / skipped 0 / missing 0`；逐欄 equality、scope enum、雙語 risk alignment、逐記錄 boundary diff；`build-data`、condition standard `505/505`、ratchet、sources `751`、relation registry、content-junk、maturity audit、`git diff --check` 均無新增 defect。
 - **未解**：兩卡既有 red flags 與其他舊 provenance 未在本批重新核准；cluster legacy 48 穴仍保留在原欄位並維持 `unassessed`，需未來 protocol rebuild 才能逐穴升級。
+# 2026-08-24 — Codex Conditions 退化／發炎官方病因補強 B17
+
+- **範圍**：只補 `cond.pseudogout`、`cond.sarcopenia`、`cond.generalized_osteoarthritis`、`cond.myositis` 原本空白的 `etiology_zh/en`，並合併直達來源與 etiology provenance；未改既有 pathology、risk factors、red flags、acupuncture scope、relations 或 Symptoms／中藥／方劑／穴位 canonical data。
+- **數字**：`FULL_DETAIL_CANDIDATE 207→211`、`DETAIL_PARTIAL 298→294`、`SKELETON 0→0`，距 300 張尚差 `89`；來源項目 `751→759`、有來源記錄 `257→261`；全庫 etiology 空白 `274→270`。
+- **來源與鑑別**：使用 NCBI/PMC、NIAMS 與 University Hospitals Bristol NHS，8 個實際內容 URL 皆 HTTP 200；CPPD 與尿酸痛風分開、肌少症不視為不可避免正常老化、OA 不簡化成磨損、myositis 明示為異質性疾病家族而非單一病因。
+- **驗證**：dry-run／apply 均為 `16 operations / 4 ids / skipped 0 / missing 0`；逐欄 equality、逐記錄 diff 僅 4 ids／4 expected keys；`build-data`、condition standard `505/505`、ratchet、sources `759`、relation registry、content-junk、maturity audit、`git diff --check` 均無新增 defect。
+- **未解**：etiology 仍缺 `270` 張；本批未重新核准四卡既有 red flags、scope 或舊 provenance，myositis 後續臨床使用仍須先確定具體亞型。
