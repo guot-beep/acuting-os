@@ -1,5 +1,13 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-25] Codex Handoff — TDIS definition and safety boundary T1
+
+- **Exact ids / fields**: only `tdis.ye_ge`, `tdis.jing_long`, `tdis.zhen_yan`, `tdis.tian_xing_chi_yan`, and `tdis.lu_feng_nei_zhang`; changed `review_status`, bilingual definitions, bilingual structured red flags, record sources, field provenance, and `source_type`. No id, taxonomy, etiology, pathomechanism, treatment principle, pattern link, formula, or point content changed.
+- **Course and official sources**: matching AcuTing curriculum files plus NHS, NIH/NCI, NIH/NIDDK, NIH/NEI, and Moorfields Eye Hospital; all ten direct URLs returned HTTP 200 on 2026-08-25.
+- **Clinical distinctions**: removed one-to-one TCM/biomedical equivalence; documented the boundaries of dysphagia causes, LUTS causes, stye/chalazion/cellulitis, epidemic conjunctivitis versus other red-eye causes, and acute versus chronic glaucoma presentations.
+- **Measured delta**: TDIS records `159→159`; records with sources `75→80`; structured bilingual red flags `75→80`; skeleton `84→79`; draft `75→80`; blocking defects `0→0` and N1 note `1→1`.
+- **Validation / next non-duplicate batch**: exact five-id/eight-field boundary, bilingual red-flag shape and urgency enums, `validate-tdis-standard 159/159 clean`, `build-data`, canonical/generated equality, relations, ratchet, relation registry, content junk, URL reachability, and `git diff --check` passed. Next reserved ids are `tdis.xian_bing`, `tdis.jue_zheng`, `tdis.jing_bing`, `tdis.huo_luan`, and `tdis.nue_ji`; other agents should not duplicate these five while T2 is active.
+
 ## [2026-08-25] Codex Handoff — Conditions official eye etiology B31
 
 - **Exact ids / fields**: only `cond.vitreous_floaters`, `cond.ocular_hypertension`, `cond.amblyopia`, `cond.strabismus`, and `cond.dacryocystitis`; filled absent bilingual etiology and appended direct sources plus provenance. Existing narrative, safety content, scope, relations, ids, and adjacent datasets were preserved.
