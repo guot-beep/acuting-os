@@ -8535,10 +8535,10 @@
    "taxonomy_id": "tdx.internal_medicine.spleen_stomach_gastrointestinal",
    "aliases_zh": [],
    "aliases_en": [],
-   "review_status": "skeleton",
+   "review_status": "draft",
    "authored_by": "model_draft",
-   "definition_zh": "噎膈是以吞嚥食物梗噎不順、飲食難下，或食入即吐為主要表現的病證。噎指吞嚥時哽噎不順，膈指胸膈阻塞、飲食不下，噎輕膈重，噎可為膈之始，兩者常互為因果而合稱噎膈，相當於西醫食道癌、賁門失弛緩症等以吞嚥困難為主要表現的疾病。",
-   "definition_en": "Ye Ge (Dysphagia-Occlusion) is characterized by food catching or sticking on swallowing, difficulty getting food down, or vomiting immediately after eating. Ye (choking/dysphagia) refers to a sensation of food catching on swallowing, while Ge (occlusion) refers to blockage in the chest with food unable to descend; Ye is the milder form and Ge the more severe, and Ye often precedes Ge as an early stage, so the two are grouped under the combined name Ye Ge. The disorder corresponds to Western conditions presenting with dysphagia, such as esophageal cancer and achalasia.",
+   "definition_zh": "噎膈是以吞嚥食物梗噎不順、飲食難下，或食入即吐為主要表現的中醫病名。噎指吞嚥時哽噎不順，膈指胸膈阻塞、飲食不下；噎較輕、膈較重，噎可為膈之始，故合稱噎膈。其症狀範圍可與賁門失弛緩症、食道狹窄、嚴重食道炎或食道惡性腫瘤等多種西醫病因重疊，但不能由「噎膈」直接推定其中任何一項診斷。",
+   "definition_en": "Ye Ge (Dysphagia-Occlusion) is a TCM disease name characterized by food catching or sticking during swallowing, difficulty getting food down, or immediate post-prandial regurgitation. Ye denotes milder catching during swallowing and Ge more severe obstruction in the chest with failure of food to descend; Ye may precede Ge, hence the combined name. Its manifestations can overlap with achalasia, esophageal stricture, severe esophagitis, or esophageal malignancy, but the TCM label does not establish any one biomedical diagnosis.",
    "etiology_zh": "憂思惱怒、情志失調，致肝氣鬱結、氣鬱化火；酒食不節、嗜食辛香燥熱或粗糙食物，損傷脾胃；年老腎虛，或久病傷及陰津；此外瘀血、痰濁互結亦為重要病理因素。",
    "etiology_en": "Worry, brooding, and anger causing emotional disharmony lead to Liver Qi stagnation, which can transform into Fire. Unrestrained drinking and eating, or a diet heavy in spicy, aromatic, dry-hot, or coarse food damages the Spleen and Stomach. Advanced age with Kidney vacuity, or chronic illness damaging Yin fluids, are also causes; in addition, blood stasis binding with Phlegm-turbidity is an important pathological factor.",
    "pathomechanism_zh": "情志、飲食、年老、久病等因素導致氣、痰、瘀交阻於食道胃脘，通降失常，食管狹窄，發為噎膈。初起多因肝鬱氣滯、痰氣交阻，病屬氣分，尚可及時緩解；病久氣鬱化火，灼傷津液，痰瘀互結，食道乾澀狹窄，病及血分，漸至陰津枯槁、氣血兩虧，甚則陰損及陽，脾腎陽衰，病情由輕轉重，由可治轉為難治。",
@@ -8576,12 +8576,36 @@
    "treatment_principle_zh": "早期以理氣、化痰、消瘀為主，兼以潤燥；後期陰津枯槁、氣血虧虛者以滋陰養血、益氣為主，不可過用辛香燥熱、破氣攻伐之品，以免更傷津液。",
    "treatment_principle_en": "In the early stage, treatment focuses on regulating Qi, resolving Phlegm, and dispersing stasis, combined with moistening dryness. In the late stage, when Yin fluids are exhausted and Qi-Blood are deficient, treatment focuses on nourishing Yin, nourishing Blood, and boosting Qi; pungent, aromatic, dry-hot, or harshly Qi-breaking, attacking substances should not be overused, so as not to further damage the fluids.",
    "red_flags_zh": [
-    "噎膈患者出現吞嚥困難合併不明原因體重減輕，應視為紅旗徵象，立即轉診腸胃科安排內視鏡檢查，以排除食道癌，不可僅以中藥治療延誤診斷",
-    "噎膈患者吞嚥困難進行性加重、出現吞嚥疼痛（非僅哽噎感），或嘔吐物帶血，應立即轉診，考慮食道惡性腫瘤或嚴重食道炎之可能"
+    {
+     "finding": "吞嚥困難合併非刻意體重減輕、吞嚥疼痛或胸骨後疼痛",
+     "urgency_level": "urgent",
+     "recommended_action": "儘速轉介腸胃科或相關專科評估吞嚥障礙病因",
+     "rationale": "食道癌可表現為吞嚥困難、吞嚥疼痛、體重減輕或胸骨後疼痛；噎膈病名不能取代病因檢查",
+     "source": "AcuTing curriculum/conditions/Esophagus.md, Clinical Manifestations and High-Yield Summary; NCI, Symptoms of Esophageal Cancer (https://www.cancer.gov/types/esophageal/symptoms), accessed 2026-08-25"
+    },
+    {
+     "finding": "進食或飲水時反覆咳嗽、嗆咳、濕濁嗓音、呼吸急促，或反覆胸部感染",
+     "urgency_level": "same_day",
+     "recommended_action": "當日聯絡醫療人員評估吞嚥安全與 aspiration 風險",
+     "rationale": "吞嚥障礙可使食物或液體進入氣道，造成窒息或吸入性肺炎，不能只按痰氣交阻處理",
+     "source": "NHS, Dysphagia (swallowing problems) (https://www.nhs.uk/symptoms/swallowing-problems-dysphagia/), accessed 2026-08-25"
+    }
    ],
    "red_flags_en": [
-    "A Ye Ge patient with dysphagia plus unexplained weight loss should be treated as a red flag and referred immediately to gastroenterology for endoscopy to rule out esophageal cancer — herbal treatment alone must not delay this diagnosis",
-    "A Ye Ge patient whose dysphagia is progressively worsening, who develops odynophagia (pain on swallowing, not just a catching sensation), or who vomits blood-streaked material should be referred immediately, with esophageal malignancy or severe esophagitis considered"
+    {
+     "finding": "Dysphagia with unintentional weight loss, odynophagia, or retrosternal pain",
+     "urgency_level": "urgent",
+     "recommended_action": "Arrange prompt gastroenterology or other appropriate specialist assessment of the swallowing disorder",
+     "rationale": "Esophageal cancer can present with difficult or painful swallowing, weight loss, or pain behind the breastbone; the TCM label Ye Ge cannot replace etiologic investigation",
+     "source": "AcuTing curriculum/conditions/Esophagus.md, Clinical Manifestations and High-Yield Summary; NCI, Symptoms of Esophageal Cancer (https://www.cancer.gov/types/esophageal/symptoms), accessed 2026-08-25"
+    },
+    {
+     "finding": "Repeated coughing or choking, a wet gurgling voice, shortness of breath during eating or drinking, or recurrent chest infections",
+     "urgency_level": "same_day",
+     "recommended_action": "Contact a health professional the same day for swallowing-safety and aspiration-risk assessment",
+     "rationale": "Dysphagia can allow food or liquid into the airway and lead to choking or aspiration pneumonia; it should not be managed solely as Phlegm-Qi binding",
+     "source": "NHS, Dysphagia (swallowing problems) (https://www.nhs.uk/symptoms/swallowing-problems-dysphagia/), accessed 2026-08-25"
+    }
    ],
    "related_patterns": [
     "pattern.phlegm_qi_binding",
@@ -8589,9 +8613,17 @@
     "pattern.stomach_yin_deficiency",
     "pattern.spleen_kidney_yang_deficiency"
    ],
+   "sources": [
+    "curriculum/conditions/Esophagus.md#Clinical Manifestations",
+    "https://www.nhs.uk/symptoms/swallowing-problems-dysphagia/",
+    "https://www.cancer.gov/types/esophageal/symptoms"
+   ],
    "field_sources": {
     "definition_zh": [
-     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》); AcuTing curriculum/conditions/Esophagus.md, TCM Integration and Clinical Manifestations; NHS Dysphagia and NCI Esophageal Cancer Symptoms for the non-equivalence boundary (accessed 2026-08-25)"
+    ],
+    "definition_en": [
+     "English paired rendering of definition_zh; same sources and non-equivalence boundary"
     ],
     "etiology_zh": [
      "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
@@ -8615,9 +8647,13 @@
      "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
     ],
     "red_flags_zh": [
-     "AcuTing curriculum/conditions/Esophagus.md (NCCAOM GI system notes: Dysphagia + weight loss = red flag → refer immediately; rule out esophageal adenocarcinoma/SCC)"
+     "AcuTing curriculum/conditions/Esophagus.md, Clinical Manifestations and High-Yield Summary; NHS Dysphagia; NCI Esophageal Cancer Symptoms (accessed 2026-08-25)"
+    ],
+    "red_flags_en": [
+     "English paired rendering of the same two structured safety entries; same sources"
     ]
-   }
+   },
+   "source_type": "course_handout_plus_official_biomedical_safety"
   },
   {
    "id": "tdis.li_ji",
@@ -14340,10 +14376,10 @@
    "taxonomy_id": "tdx.andrology.general",
    "aliases_zh": [],
    "aliases_en": [],
-   "review_status": "skeleton",
+   "review_status": "draft",
    "authored_by": "model_draft",
-   "definition_zh": "精癃是以中老年男性小便頻數、尿線變細、排尿費力、點滴不盡，甚則小便閉塞不通為主要表現，伴前列腺增生腫大的病證，相當於西醫學的良性前列腺增生症（BPH）。",
-   "definition_en": "Prostatic Blockage (Jing Long) is a disorder of aging men characterized by urinary frequency, a weakened urinary stream, straining to void, and dribbling incomplete emptying, in severe cases progressing to complete urinary blockage, accompanied by prostatic enlargement; it corresponds to benign prostatic hyperplasia (BPH) in biomedicine.",
+   "definition_zh": "精癃是以中老年男性小便頻數、夜尿、尿線變細、排尿費力、點滴不盡，甚則小便閉塞不通為主要表現的中醫病名。其臨床範圍與良性前列腺增生（BPH）所致 lower urinary tract symptoms 重疊最密切，但排尿症狀亦可源自膀胱疾病、尿路感染、前列腺炎、藥物或腫瘤；前列腺大小與症狀嚴重度也不一定一致，故不能把精癃與 BPH 作一對一等同。",
+   "definition_en": "Jing Long (Prostatic Blockage) is a TCM disease name for urinary frequency, nocturia, a weak stream, straining, terminal dribbling, incomplete emptying, and in severe cases complete urinary blockage in middle-aged or older men. It overlaps most closely with lower urinary tract symptoms associated with benign prostatic hyperplasia (BPH), but similar symptoms can arise from bladder disease, urinary infection, prostatitis, medicines, or malignancy, and prostate size does not consistently track symptom severity. Jing Long therefore must not be treated as one-to-one equivalence with BPH.",
    "etiology_zh": "多因年老腎氣漸衰，腎陽不足，氣化無力；或因下焦濕熱蘊結，阻滯尿道；或因肝鬱氣滯，疏泄失常；或因瘀血內阻，精道不通；或因中氣不足，脾虛下陷，膀胱氣化失司。",
    "etiology_en": "Most often due to gradual decline of Kidney Qi with advancing age and insufficient Kidney Yang, leaving Qi transformation powerless; or to Damp-Heat brewing in the lower burner and obstructing the urethra; or to Liver-Qi stagnation with disordered free-coursing; or to internal Blood stasis obstructing the seminal pathway; or to insufficient central Qi with Spleen deficiency and sinking, impairing Bladder Qi transformation.",
    "pathomechanism_zh": "本病病位在膀胱與精室（前列腺），與腎、脾、肝三臟功能失調密切相關。腎陽虛衰，氣化無力，膀胱開闔失司，則小便艱澀、餘瀝不盡；下焦濕熱蘊結，阻滯尿道，則小便灼熱澀痛、點滴不暢；肝氣鬱結，疏泄失常，氣機不利，亦可致小便不暢、煩躁易怒；瘀血內停，精道阻滯，則小便滴瀝、會陰刺痛、舌質紫黯；中氣下陷，脾失健運，膀胱氣化無權，則小便頻數、少腹墜脹。病程日久，諸證可相互轉化或兼夾，若濕熱瘀阻、氣化嚴重障礙，可致小便閉塞不通（癃閉危候），甚則腎氣衰敗、水濕內停而見水腫、關格。",
@@ -14379,16 +14415,50 @@
    "treatment_principle_zh": "腎陽虛衰者溫補腎陽、化氣行水；濕熱下注者清熱利濕、通利小便；肝鬱氣滯者疏肝理氣、通利水道；瘀血阻滯者活血化瘀、通竅利尿；中氣下陷者補中益氣、升陽舉陷。",
    "treatment_principle_en": "For Kidney-Yang vacuity, warmly supplement Kidney Yang and transform Qi to move water; for Damp-Heat pouring downward, clear Heat, disinhibit Dampness, and free urination; for Liver-Qi stagnation, course the Liver, regulate Qi, and open the water pathway; for Blood-stasis obstruction, invigorate the Blood, dispel stasis, and open the orifice to disinhibit urination; for sinking central Qi, supplement the center, boost Qi, and raise Yang to lift the sunken organ.",
    "red_flags_zh": [
-    "精癃患者若出現小便完全閉塞不通、少腹脹滿疼痛，為癃閉危候，須立即導尿並轉診泌尿科處理，不可延誤，以免發展為急性腎損傷。",
-    "精癃患者若反覆發熱惡寒、小便灼熱刺痛，提示可能併發尿路感染或急性前列腺炎，須及時轉診西醫評估、抗感染治療。",
-    "精癃患者若見肉眼血尿，不可單純以中藥、針灸處理，須轉診泌尿科排除前列腺或膀胱腫瘤等器質性病變。",
-    "精癃病程日久若出現食慾不振、噁心嘔吐、下肢浮腫、少尿等症，須警惕阻塞性腎病所致腎功能衰竭，應立即轉診評估腎功能。"
+    {
+     "finding": "完全無法排尿，尤其伴下腹或尿路劇烈脹痛",
+     "urgency_level": "emergency",
+     "recommended_action": "立即急診或緊急泌尿科處置，不以針灸或中藥延後解除 urinary retention",
+     "rationale": "急性尿滯留可造成膀胱過度擴張及腎臟併發症，醫療團隊可能需要立即引流減壓",
+     "source": "AcuTing curriculum/conditions/1.1 BPH - handouts on canvas.docx#p1; NIDDK, Enlarged Prostate (Benign Prostatic Hyperplasia) (https://www.niddk.nih.gov/health-information/urologic-diseases/prostate-problems/enlarged-prostate-benign-prostatic-hyperplasia), accessed 2026-08-25"
+    },
+    {
+     "finding": "排尿疼痛、頻急並合併發燒或寒顫",
+     "urgency_level": "same_day",
+     "recommended_action": "當日接受醫療評估，以排除 urinary tract infection 或 prostatitis",
+     "rationale": "發燒寒顫合併下尿路症狀可能代表感染，不是單純精癃證型加重",
+     "source": "NIDDK, Prostate Problems (https://www.niddk.nih.gov/health-information/urologic-diseases/prostate-problems), accessed 2026-08-25"
+    },
+    {
+     "finding": "肉眼血尿",
+     "urgency_level": "urgent",
+     "recommended_action": "儘速接受泌尿科或適當醫療評估，不以 BPH 或血瘀證自行解釋",
+     "rationale": "血尿可見於 BPH 併發症，也可來自感染、結石、膀胱或前列腺疾病，必須查明來源",
+     "source": "NIDDK, Enlarged Prostate (Benign Prostatic Hyperplasia); NIDDK, Prostate Problems (accessed 2026-08-25)"
+    }
    ],
    "red_flags_en": [
-    "If Prostatic Blockage progresses to complete urinary blockage with distending lower-abdominal pain, this is the critical Long-Bi presentation — catheterize immediately and refer to urology without delay to prevent acute kidney injury.",
-    "If the patient has recurrent fever with chills and burning, stabbing urination, concurrent urinary tract infection or acute prostatitis should be suspected — refer promptly for biomedical evaluation and antibiotic treatment.",
-    "Gross (visible) hematuria should not be managed with herbs or acupuncture alone — refer to urology to rule out prostate or bladder malignancy or other organic pathology.",
-    "If, over a prolonged course, the patient develops poor appetite, nausea and vomiting, lower-limb edema, and reduced urine output, obstructive nephropathy with renal failure should be suspected — refer immediately for renal function evaluation."
+    {
+     "finding": "Complete inability to urinate, especially with severe lower-abdominal or urinary-tract distension and pain",
+     "urgency_level": "emergency",
+     "recommended_action": "Seek emergency or urgent urologic care immediately; do not delay relief of urinary retention with acupuncture or herbs",
+     "rationale": "Acute urinary retention can overdistend the bladder and cause renal complications, and the medical team may need immediate drainage and decompression",
+     "source": "AcuTing curriculum/conditions/1.1 BPH - handouts on canvas.docx#p1; NIDDK, Enlarged Prostate (Benign Prostatic Hyperplasia) (https://www.niddk.nih.gov/health-information/urologic-diseases/prostate-problems/enlarged-prostate-benign-prostatic-hyperplasia), accessed 2026-08-25"
+    },
+    {
+     "finding": "Painful, frequent, urgent urination with fever or chills",
+     "urgency_level": "same_day",
+     "recommended_action": "Obtain same-day medical assessment for urinary tract infection or prostatitis",
+     "rationale": "Fever and chills with lower urinary symptoms may represent infection rather than a simple worsening of a Jing Long pattern",
+     "source": "NIDDK, Prostate Problems (https://www.niddk.nih.gov/health-information/urologic-diseases/prostate-problems), accessed 2026-08-25"
+    },
+    {
+     "finding": "Visible blood in the urine",
+     "urgency_level": "urgent",
+     "recommended_action": "Arrange prompt urologic or other appropriate medical evaluation; do not attribute it automatically to BPH or Blood stasis",
+     "rationale": "Hematuria can complicate BPH but can also arise from infection, stones, bladder disease, or prostate disease and requires an identified source",
+     "source": "NIDDK, Enlarged Prostate (Benign Prostatic Hyperplasia); NIDDK, Prostate Problems (accessed 2026-08-25)"
+    }
    ],
    "related_patterns": [
     "pattern.damp_heat_lower_burner",
@@ -14399,9 +14469,17 @@
     "pattern.spleen_qi_sinking",
     "pattern.spleen_yang_deficiency"
    ],
+   "sources": [
+    "curriculum/conditions/1.1 BPH - handouts on canvas.docx#p1-2",
+    "https://www.niddk.nih.gov/health-information/urologic-diseases/prostate-problems/enlarged-prostate-benign-prostatic-hyperplasia",
+    "https://www.niddk.nih.gov/health-information/urologic-diseases/prostate-problems"
+   ],
    "field_sources": {
     "definition_zh": [
-     "TCM 中醫男科學 textbook standard (統編教材《中醫男科學》)"
+     "TCM 中醫男科學 textbook standard; AcuTing curriculum/conditions/1.1 BPH - handouts on canvas.docx#p1; NIDDK Enlarged Prostate and Prostate Problems for the LUTS differential and non-equivalence boundary (accessed 2026-08-25)"
+    ],
+    "definition_en": [
+     "English paired rendering of definition_zh; same sources and non-equivalence boundary"
     ],
     "etiology_zh": [
      "TCM 中醫男科學 textbook standard (統編教材《中醫男科學》)"
@@ -14422,9 +14500,13 @@
      "TCM 中醫男科學 textbook standard (統編教材《中醫男科學》)"
     ],
     "red_flags_zh": [
-     "curriculum/conditions/1.1 BPH - handouts on canvas.docx#p1 (Bastyr AOM Therapeutics handout lists severe BPH complications: backflow causing bladder/kidney infection, complete blockage of urine flow, kidney failure, and hematuria as a common symptom), cross-referenced with established biomedical knowledge on BPH complications (acute urinary retention, obstructive AKI, UTI/prostatitis, prostate malignancy differential) — the biomedical cross-reference is not whitelist-source-verified, flag for Ting to source-check"
+     "AcuTing curriculum/conditions/1.1 BPH - handouts on canvas.docx#p1; NIDDK Enlarged Prostate and Prostate Problems (accessed 2026-08-25)"
+    ],
+    "red_flags_en": [
+     "English paired rendering of the same three structured safety entries; same sources"
     ]
-   }
+   },
+   "source_type": "course_handout_plus_official_biomedical_safety"
   },
   {
    "id": "tdis.hou_bi",
@@ -15078,17 +15160,17 @@
    }
   },
   {
-   "id": "tdis.zhen_yan",
+  "id": "tdis.zhen_yan",
    "name_zh": "針眼",
    "pinyin": "Zhenyan",
    "name_en": "Stye",
    "taxonomy_id": "tdx.ophthalmology.general",
    "aliases_zh": [],
    "aliases_en": [],
-   "review_status": "skeleton",
+   "review_status": "draft",
    "authored_by": "model_draft",
-   "definition_zh": "針眼是發生於眼瞼邊緣，以局部紅腫熱痛、形成硬結，甚則化膿為主要表現的眼瞼腺體急性化膿性疾病，相當於現代醫學的瞼腺炎（麥粒腫）。",
-   "definition_en": "Zhen Yan (Stye) is an acute suppurative disease of the eyelid glands, occurring at the lid margin and presenting mainly with localized redness, swelling, heat, and pain, forming a hard nodule that may progress to suppuration; it corresponds to hordeolum (stye) in Western medicine.",
+   "definition_zh": "針眼是發生於眼瞼邊緣，以局部紅、腫、熱、痛及硬結，甚則化膿為主要表現的中醫眼病名。其表現與瞼腺炎（hordeolum／stye）重疊最密切，但無痛、持久的眼瞼結節或瀰漫性眼瞼紅腫可能屬霰粒腫、蜂窩性組織炎或其他眼瞼病變，不能只憑「針眼」病名定診。",
+   "definition_en": "Zhen Yan is a TCM eyelid disease name characterized by localized redness, swelling, heat, pain, and a firm nodule at the lid margin that may suppurate. Its presentation overlaps most closely with a hordeolum (stye), but a persistent painless nodule or diffuse eyelid inflammation may represent a chalazion, cellulitis, or another eyelid disorder and cannot be diagnosed from the TCM disease name alone.",
    "etiology_zh": "外因多為風熱之邪客於眼瞼；內因多見脾胃蘊熱，或心火上炎，常因飲食辛辣肥甘、用眼疲勞或衛生不佳而誘發，體質偏熱者易反覆發作。",
    "etiology_en": "The external cause is usually Wind-Heat lodging in the eyelid; the internal cause is often accumulated Spleen-Stomach heat, or Heart fire flaring upward, commonly triggered by spicy/greasy food, eye fatigue, or poor hygiene — those with a heat-prone constitution are prone to recurrence.",
    "pathomechanism_zh": "風熱之邪客於眼瞼（瞼屬脾），與內熱相合，壅滯局部氣血，故見紅腫硬結、觸痛；熱毒熾盛則腐肉成膿，膿成則自潰外泄，腫消痛止；素體脾胃積熱或心火偏旺者，易反覆發作，纏綿難癒。",
@@ -15120,21 +15202,67 @@
    "treatment_principle_zh": "以清熱解毒、消腫散結為主；化膿期佐以透膿；體虛易反覆發作者兼調理脾胃。",
    "treatment_principle_en": "The main principle is clearing heat, resolving toxicity, reducing swelling, and dispersing the nodule; venting the pus is added during suppuration; for those prone to recurrence from underlying deficiency, regulating the Spleen and Stomach is added.",
    "red_flags_zh": [
-    "眼瞼腫脹範圍擴散超出瞼緣，波及整個眼眶，合併眼球突出、眼球轉動疼痛、視力下降或發燒，應懷疑眶隔前蜂窩性組織炎或眶內蜂窩性組織炎，屬急症，須立即轉診眼科或急診，不可僅以針灸/中藥處理",
-    "同一部位反覆出現、經治療未消退、且無明顯疼痛的病灶（尤其中老年人），應轉診排除瞼板腺癌等罕見惡性腫瘤"
+    {
+     "finding": "眼瞼非常疼痛或明顯腫脹、視力受影響、膿液流出，或紅腫感染向眼部或眼瞼周圍擴散",
+     "urgency_level": "same_day",
+     "recommended_action": "當日接受眼科或適當醫療評估；若視力明顯下降或全身狀況不佳，直接急診",
+     "rationale": "這些表現超出單純局限性針眼，需排除擴散性感染或其他可能危及視力的眼病",
+     "source": "NHS, Stye (https://www.nhs.uk/conditions/stye/), accessed 2026-08-25; Moorfields Eye Hospital, Stye (https://www.moorfields.nhs.uk/for-health-professionals/common-eye-condition-management/stye), accessed 2026-08-25"
+    },
+    {
+     "finding": "眼瞼紅、熱、壓痛範圍持續擴大，並伴發燒或全身不適",
+     "urgency_level": "same_day",
+     "recommended_action": "當日轉介醫療評估是否為 spreading eyelid cellulitis，不以針灸或中藥延後抗感染處置",
+     "rationale": "Moorfields 將擴散性眼瞼 cellulitis 列為需要系統性抗生素處理的情況；它不是一般局限性 stye 的同義詞",
+     "source": "Moorfields Eye Hospital, Stye (https://www.moorfields.nhs.uk/for-health-professionals/common-eye-condition-management/stye), accessed 2026-08-25"
+    },
+    {
+     "finding": "病灶數週仍未改善或反覆出現",
+     "urgency_level": "routine",
+     "recommended_action": "安排基層醫療或眼科重新評估診斷與處置",
+     "rationale": "持久或反覆的眼瞼結節未必是單純針眼，需要重新區分霰粒腫或其他眼瞼病變",
+     "source": "NHS, Stye (https://www.nhs.uk/conditions/stye/), accessed 2026-08-25"
+    }
    ],
    "red_flags_en": [
-    "Eyelid swelling that extends beyond the lid margin to involve the whole orbit, with proptosis, pain on eye movement, decreased vision, or fever, should raise suspicion for preseptal or orbital cellulitis — an emergency requiring immediate ophthalmology or emergency department referral, not management with acupuncture/herbs alone",
-    "A lesion recurring at the same site, failing to resolve with treatment, and relatively painless (especially in an older adult) warrants referral to rule out a rare malignancy such as meibomian gland (sebaceous) carcinoma"
+    {
+     "finding": "A very painful or markedly swollen eyelid, affected vision, pus drainage, or redness and infection spreading around the eye or eyelid",
+     "urgency_level": "same_day",
+     "recommended_action": "Obtain same-day ophthalmic or appropriate medical assessment; use emergency care if vision is substantially reduced or the patient is systemically unwell",
+     "rationale": "These findings extend beyond a localized uncomplicated stye and require exclusion of spreading infection or another vision-threatening eye disorder",
+     "source": "NHS, Stye (https://www.nhs.uk/conditions/stye/), accessed 2026-08-25; Moorfields Eye Hospital, Stye (https://www.moorfields.nhs.uk/for-health-professionals/common-eye-condition-management/stye), accessed 2026-08-25"
+    },
+    {
+     "finding": "Increasingly diffuse red, hot, tender eyelid swelling with fever or systemic illness",
+     "urgency_level": "same_day",
+     "recommended_action": "Arrange same-day medical assessment for spreading eyelid cellulitis; do not delay antimicrobial evaluation with acupuncture or herbs",
+     "rationale": "Moorfields identifies spreading lid cellulitis as requiring systemic antibiotic management; it is not synonymous with a localized uncomplicated stye",
+     "source": "Moorfields Eye Hospital, Stye (https://www.moorfields.nhs.uk/for-health-professionals/common-eye-condition-management/stye), accessed 2026-08-25"
+    },
+    {
+     "finding": "A lesion that has not improved after several weeks or keeps recurring",
+     "urgency_level": "routine",
+     "recommended_action": "Arrange primary-care or ophthalmic reassessment of the diagnosis and management",
+     "rationale": "A persistent or recurrent eyelid lump may not be a simple stye and should be reassessed for a chalazion or another eyelid lesion",
+     "source": "NHS, Stye (https://www.nhs.uk/conditions/stye/), accessed 2026-08-25"
+    }
    ],
    "related_patterns": [
     "pattern.wind_heat",
     "pattern.stomach_heat",
     "pattern.heart_fire"
    ],
+   "sources": [
+    "curriculum/conditions/STY.DOC#p1",
+    "https://www.nhs.uk/conditions/stye/",
+    "https://www.moorfields.nhs.uk/for-health-professionals/common-eye-condition-management/stye"
+   ],
    "field_sources": {
     "definition_zh": [
-     "TCM Ophthalmology textbook standard (統編教材《中醫眼科學》); cross-checked against curriculum/conditions/STY.DOC#p1 (Bastyr AOM Therapeutics notes on Lid Abscess/Stye)"
+     "TCM Ophthalmology textbook standard (統編教材《中醫眼科學》); curriculum/conditions/STY.DOC#p1; NHS Stye and Moorfields Stye for the differential and non-equivalence boundary (accessed 2026-08-25)"
+    ],
+    "definition_en": [
+     "English paired rendering of definition_zh; same sources and non-equivalence boundary"
     ],
     "etiology_zh": [
      "TCM Ophthalmology textbook standard (統編教材《中醫眼科學》); cross-checked against curriculum/conditions/STY.DOC#p1 (Bastyr AOM Therapeutics notes on Lid Abscess/Stye)"
@@ -15158,22 +15286,26 @@
      "TCM Ophthalmology textbook standard (統編教材《中醫眼科學》); cross-checked against curriculum/conditions/STY.DOC#p1 (Bastyr AOM Therapeutics notes on Lid Abscess/Stye)"
     ],
     "red_flags_zh": [
-     "established TCM/biomedical clinical knowledge, not curriculum or whitelist-verified — flag for Ting to source-check; curriculum/conditions/STY.DOC#p1 was checked and covers Western drainage/antibiotic-drop treatment but does not itself state these emergency red flags"
+     "NHS Stye; Moorfields Eye Hospital Stye (accessed 2026-08-25)"
+    ],
+    "red_flags_en": [
+     "English paired rendering of the same three structured safety entries; same sources"
     ]
-   }
+   },
+   "source_type": "course_handout_plus_official_biomedical_safety"
   },
   {
-   "id": "tdis.tian_xing_chi_yan",
+  "id": "tdis.tian_xing_chi_yan",
    "name_zh": "天行赤眼",
    "pinyin": "Tianxing Chiyan",
    "name_en": "Epidemic Conjunctivitis",
    "taxonomy_id": "tdx.ophthalmology.general",
    "aliases_zh": [],
    "aliases_en": [],
-   "review_status": "skeleton",
+   "review_status": "draft",
    "authored_by": "model_draft",
-   "definition_zh": "天行赤眼是感受天行癘氣（時邪疫毒）所致，以起病急驟、白睛紅赤腫脹、眵淚黏稠、傳染性強、易於流行為特徵的外障眼病，相當於現代醫學之流行性（病毒性）結膜炎。",
-   "definition_en": "Tian Xing Chi Yan (Epidemic Conjunctivitis) is an external eye disease caused by contracting an epidemic pestilential toxin, characterized by sudden onset, redness and swelling of the conjunctiva (\"white of the eye\"), copious sticky discharge and tearing, strong contagiousness, and a tendency to occur in outbreaks; it corresponds to epidemic (viral) conjunctivitis in Western medicine.",
+   "definition_zh": "天行赤眼是感受天行癘氣（時邪疫毒），以起病急驟、白睛紅赤腫脹、眵淚增多、傳染性強且易流行為特徵的中醫外障眼病名。其典型群聚性表現與流行性病毒性結膜炎重疊最密切，但紅眼也可源自細菌或過敏性結膜炎、角膜炎、葡萄膜炎或急性青光眼，不能只憑本病名判定病原或排除危及視力的病因。",
+   "definition_en": "Tian Xing Chi Yan is a TCM external-eye disease name attributed to an epidemic pestilential influence and characterized by abrupt conjunctival redness and swelling, increased discharge and tearing, marked contagiousness, and outbreak tendency. Its typical clustered presentation overlaps most closely with epidemic viral conjunctivitis, but a red eye can also arise from bacterial or allergic conjunctivitis, keratitis, uveitis, or acute glaucoma; the TCM name alone does not establish the pathogen or exclude a vision-threatening cause.",
    "etiology_zh": "感受時行癘氣（風熱時毒），多發於夏秋季節，經接觸傳播（手、毛巾、器物）；素體肝膽或肺經蘊熱者更易發病，且病情較重。",
    "etiology_en": "Caused by contracting an epidemic pestilential Wind-Heat toxin, most common in summer and autumn, and spread by contact (hands, towels, shared objects); those with a constitutional predisposition to accumulated Liver-Gallbladder or Lung-channel heat are more susceptible and tend to develop a more severe presentation.",
    "pathomechanism_zh": "天行癘氣毒邪由外侵襲白睛（結膜）之絡，邪毒熾盛，壅滯氣血，故見白睛暴赤腫脹、眵淚驟增、羞明流淚；毒邪熾熱灼傷血絡，甚則白睛下見片狀出血；因其為癘氣所致，故傳染迅速，易在人群中流行。",
@@ -15209,25 +15341,67 @@
    "treatment_principle_zh": "以疏風清熱解毒為主，重症佐以涼血；並應注意隔離消毒以防傳染。",
    "treatment_principle_en": "The main principle is dispersing Wind, clearing heat, and resolving toxicity, with cooling the Blood added in severe cases; isolation and disinfection measures should also be observed to prevent spread.",
    "red_flags_zh": [
-    "眼紅合併視力明顯下降、角膜出現白色混濁點或潰瘍、畏光程度與結膜炎不成比例，應立即轉診眼科排除角膜炎/角膜潰瘍，此類病灶可能危及視力，不可僅按結膜炎處理",
-    "配戴隱形眼鏡者出現紅眼合併疼痛，感染性角膜炎風險較高，應儘速轉診眼科",
-    "單眼劇烈眼痛、視力模糊、瞳孔異常、虹視合併紅眼，應排除急性閉角型青光眼偽裝成結膜炎的可能，須測量眼壓",
-    "新生兒出現眼睛紅腫、膿性分泌物，有淋菌性/披衣菌感染導致角膜損傷甚至失明的風險，應立即轉診處理"
+    {
+     "finding": "紅眼伴眼痛、明顯畏光、視力改變或眼睛極紅",
+     "urgency_level": "same_day",
+     "recommended_action": "當日接受眼科或緊急醫療評估，不按一般傳染性結膜炎自行處理",
+     "rationale": "NHS 將眼痛、畏光、視力改變與極紅列為需要緊急評估的紅旗，因為可能代表更嚴重的眼病",
+     "source": "NHS, Conjunctivitis (https://www.nhs.uk/conditions/conjunctivitis/), accessed 2026-08-25"
+    },
+    {
+     "finding": "隱形眼鏡配戴者出現紅眼，尤其伴眼痛，或近期有角膜刮傷",
+     "urgency_level": "same_day",
+     "recommended_action": "停止配戴隱形眼鏡並於當日接受眼科評估",
+     "rationale": "NEI 指出隱形眼鏡配戴或近期角膜刮傷會增加特定嚴重結膜感染或角膜相關併發症的風險",
+     "source": "National Eye Institute, Pink Eye (https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/pink-eye), accessed 2026-08-25"
+    },
+    {
+     "finding": "未滿 30 天的新生兒出現紅眼、黏性分泌物或眼瞼腫脹",
+     "urgency_level": "same_day",
+     "recommended_action": "當日由醫療專業人員評估，不等待一般居家照護反應",
+     "rationale": "NHS 明確要求未滿 30 天嬰兒出現紅黏眼症狀需緊急評估；新生兒結膜感染的病因與處置不同於一般成人紅眼",
+     "source": "NHS, Conjunctivitis (https://www.nhs.uk/conditions/conjunctivitis/), accessed 2026-08-25; National Eye Institute, Pink Eye (https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/pink-eye), accessed 2026-08-25"
+    }
    ],
    "red_flags_en": [
-    "Red eye with markedly reduced vision, a white corneal opacity or ulcer, or photophobia disproportionate to the degree of conjunctival injection warrants immediate ophthalmology referral to rule out keratitis/corneal ulcer, which can be vision-threatening and should not be managed as simple conjunctivitis",
-    "A contact lens wearer presenting with a red, painful eye carries a higher risk of infectious keratitis and should be referred to ophthalmology promptly",
-    "Severe unilateral eye pain, blurred vision, an abnormal pupil, or halos around lights accompanying a red eye should raise suspicion for acute angle-closure glaucoma masquerading as conjunctivitis — intraocular pressure should be measured",
-    "A neonate with red, swollen eyes and purulent discharge (ophthalmia neonatorum) carries a risk of gonococcal/chlamydial corneal damage and even blindness, and should be referred for immediate treatment"
+    {
+     "finding": "A red eye with eye pain, marked light sensitivity, a change in vision, or very intense redness",
+     "urgency_level": "same_day",
+     "recommended_action": "Obtain same-day ophthalmic or urgent medical assessment rather than self-managing it as uncomplicated infectious conjunctivitis",
+     "rationale": "NHS lists eye pain, photophobia, vision change, and very red eyes as warning signs requiring urgent assessment because they may indicate a more serious eye disorder",
+     "source": "NHS, Conjunctivitis (https://www.nhs.uk/conditions/conjunctivitis/), accessed 2026-08-25"
+    },
+    {
+     "finding": "Red eye in a contact-lens wearer, especially with pain, or following a recent corneal scratch",
+     "urgency_level": "same_day",
+     "recommended_action": "Stop contact-lens use and obtain same-day ophthalmic assessment",
+     "rationale": "NEI identifies contact-lens wear and a recent corneal scratch as factors associated with particular serious conjunctival infections or corneal complications",
+     "source": "National Eye Institute, Pink Eye (https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/pink-eye), accessed 2026-08-25"
+    },
+    {
+     "finding": "A baby younger than 30 days with a red or sticky eye or eyelid swelling",
+     "urgency_level": "same_day",
+     "recommended_action": "Arrange same-day assessment by a medical professional rather than waiting for routine home care to work",
+     "rationale": "NHS explicitly calls for urgent assessment of red or sticky eyes in infants under 30 days; neonatal conjunctival infection has different causes and management from routine adult red eye",
+     "source": "NHS, Conjunctivitis (https://www.nhs.uk/conditions/conjunctivitis/), accessed 2026-08-25; National Eye Institute, Pink Eye (https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/pink-eye), accessed 2026-08-25"
+    }
    ],
    "related_patterns": [
     "pattern.wind_heat",
     "pattern.liver_fire",
     "pattern.heat_toxin_blazing"
    ],
+   "sources": [
+    "curriculum/conditions/CONJUNC.DOC#p1",
+    "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/pink-eye",
+    "https://www.nhs.uk/conditions/conjunctivitis/"
+   ],
    "field_sources": {
     "definition_zh": [
-     "TCM Ophthalmology textbook standard (統編教材《中醫眼科學》); cross-checked against curriculum/conditions/CONJUNC.DOC#p1 (Bastyr AOM Therapeutics notes on Conjunctivitis)"
+     "TCM Ophthalmology textbook standard (統編教材《中醫眼科學》); curriculum/conditions/CONJUNC.DOC#p1; NEI Pink Eye and NHS Conjunctivitis for the differential and non-equivalence boundary (accessed 2026-08-25)"
+    ],
+    "definition_en": [
+     "English paired rendering of definition_zh; same sources and non-equivalence boundary"
     ],
     "etiology_zh": [
      "TCM Ophthalmology textbook standard (統編教材《中醫眼科學》); cross-checked against curriculum/conditions/CONJUNC.DOC#p1 (Bastyr AOM Therapeutics notes on Conjunctivitis)"
@@ -15251,9 +15425,13 @@
      "TCM Ophthalmology textbook standard (統編教材《中醫眼科學》); cross-checked against curriculum/conditions/CONJUNC.DOC#p1 (Bastyr AOM Therapeutics notes on Conjunctivitis)"
     ],
     "red_flags_zh": [
-     "established TCM/biomedical clinical knowledge, not curriculum or whitelist-verified — flag for Ting to source-check; curriculum/conditions/CONJUNC.DOC#p1 was checked and covers epidemiology/treatment but does not itself state these vision-threatening red flags"
+     "NHS Conjunctivitis; National Eye Institute Pink Eye (accessed 2026-08-25)"
+    ],
+    "red_flags_en": [
+     "English paired rendering of the same three structured safety entries; same sources"
     ]
-   }
+   },
+   "source_type": "course_handout_plus_official_biomedical_safety"
   },
   {
    "id": "tdis.bai_se_zheng",
@@ -15345,17 +15523,17 @@
    }
   },
   {
-   "id": "tdis.lu_feng_nei_zhang",
+  "id": "tdis.lu_feng_nei_zhang",
    "name_zh": "綠風內障",
    "pinyin": "Lufeng Neizhang",
    "name_en": "Glaucoma (TCM)",
    "taxonomy_id": "tdx.ophthalmology.general",
    "aliases_zh": [],
    "aliases_en": [],
-   "review_status": "skeleton",
+   "review_status": "draft",
    "authored_by": "model_draft",
-   "definition_zh": "綠風內障是以起病急驟、眼珠劇痛、視力驟降、瞳神散大、瞳色淡綠、眼珠變硬如石為特徵的急重眼病，相當於現代醫學的急性閉角型青光眼；病勢緩慢者相當於慢性閉角型/原發性青光眼。",
-   "definition_en": "Lu Feng Nei Zhang (\"Green-Wind Internal Obstruction\") is an acute, severe eye disease characterized by sudden onset, severe eye pain, marked vision loss, a dilated pupil, a greenish cast to the pupil, and a rock-hard globe on palpation; it most closely corresponds to acute angle-closure glaucoma in Western medicine, while its slower-onset form corresponds to chronic angle-closure/primary glaucoma.",
+   "definition_zh": "綠風內障是以起病急驟、眼珠劇痛、視力驟降、瞳神散大、瞳色淡綠及眼珠變硬為典型表現的中醫急重眼病名；其急性表現與急性閉角型青光眼高度重疊。慢性 glaucoma 可無痛且先出現周邊視野損失，與典型急性綠風內障表現不同，不能把所有 glaucoma 類型直接等同於本病名，也不能用中醫辨病取代眼壓、視神經與視野評估。",
+   "definition_en": "Lu Feng Nei Zhang is an acute severe TCM eye-disease name classically characterized by abrupt intense eye pain, marked visual decline, a dilated pupil with a greenish cast, and a firm globe; this acute presentation overlaps strongly with acute angle-closure glaucoma. Chronic glaucoma may be painless and begin with peripheral visual-field loss, unlike the typical acute presentation, so not every glaucoma type is equivalent to this TCM disease name and TCM differentiation cannot replace intraocular-pressure, optic-nerve, and visual-field assessment.",
    "etiology_zh": "多因情志鬱怒，肝氣鬱結化火，肝火上攻於目；或脾虛生痰，痰濕蘊久化火，痰火上擾清竅；或素體肝腎陰虧，虛火上炎，耗傷目中津液；發作常因情緒激動、疲勞、久處暗室（瞳孔散大）而誘發。",
    "etiology_en": "Commonly caused by emotional depression and anger leading to Liver Qi stagnation that transforms into fire, which attacks the eye; or Spleen deficiency generating Phlegm that, over time, transforms into fire and disturbs the eye's clear orifice; or an underlying Liver-Kidney Yin deficiency with deficient fire flaring upward, consuming the eye's fluids. Attacks are often triggered by emotional upset, fatigue, or prolonged time in a dark environment (pupil dilation).",
    "pathomechanism_zh": "肝火（因氣鬱化火）或痰火（因脾虛生痰化火）循肝經上攻於目，氣血津液壅滯，眼中神水運行通路驟然閉塞，故見眼珠劇痛連及頭部、眼壓驟升、眼珠變硬如石、視力急劇下降，瞳神因氣血壅滯而散大固定、色現淡綠；久病或肝腎陰虧者，虛火漸耗目中精氣，病勢較緩但持續損害視神經，終致視野漸損，若拖延不治，可致失明。",
@@ -15389,25 +15567,53 @@
    "treatment_principle_zh": "急則清熱瀉火、平肝息風以急降眼壓為第一要務，須立即配合西醫降眼壓治療及必要時手術；緩解後依證滋陰降火或健脾化痰以固本。",
    "treatment_principle_en": "In the acute attack, the first priority is clearing heat, draining fire, calming the Liver, and extinguishing Wind to urgently lower intraocular pressure, in immediate combination with Western pressure-lowering treatment and surgery when necessary; once the acute attack has resolved, nourishing Yin and lowering fire, or fortifying the Spleen and transforming Phlegm, is used according to the pattern to secure the root.",
    "red_flags_zh": [
-    "突發劇烈眼痛、視力驟降、瞳孔散大固定、虹視（視燈光有光暈）、眼球結膜混合充血、眼壓升高眼珠變硬——此為綠風內障急性發作（急性閉角型青光眼），屬眼科急症，須即刻轉診眼科或急診降眼壓治療，切勿僅以針灸/中藥拖延就醫，以免數小時內視神經不可逆損傷、失明",
-    "眼痛合併噁心嘔吐、頭痛，若誤診為腸胃疾患或偏頭痛而延誤降眼壓治療，可導致永久性視力喪失，應主動測量眼壓以資鑑別",
-    "單眼急性發作後，對側眼有相同機轉發作的風險，應提醒患者對側眼一旦出現類似症狀（眼痛、虹視、視力模糊），同樣須立即就醫視為急症",
-    "慢性隱伏型（視野漸進性缺損、無明顯眼痛）仍須定期測量眼壓與視野檢查，不可僅憑症狀輕微而輕忽延誤，以免不知不覺中喪失視力"
+    {
+     "finding": "突發劇烈眼痛、紅眼、視力模糊或虹視，並伴噁心、嘔吐或頭痛",
+     "urgency_level": "emergency",
+     "recommended_action": "立即急診或緊急眼科評估與降眼壓處置，不以針灸或中藥延後就醫",
+     "rationale": "NEI 與 NHS 均將此組表現列為 angle-closure glaucoma 的醫療急症；眼內引流突然受阻可迅速造成不可逆視力損害",
+     "source": "National Eye Institute, Types of Glaucoma (https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/glaucoma/types-glaucoma), accessed 2026-08-25; NHS, Glaucoma (https://www.nhs.uk/conditions/glaucoma/), accessed 2026-08-25"
+    },
+    {
+     "finding": "周邊視野逐漸縮小或出現無痛、漸進性視力變化",
+     "urgency_level": "urgent",
+     "recommended_action": "儘速安排完整眼科檢查，包括眼壓、視神經與視野評估",
+     "rationale": "部分 glaucoma 進展緩慢且早期沒有明顯症狀；沒有眼痛不能排除持續性視神經損害",
+     "source": "National Eye Institute, Types of Glaucoma (https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/glaucoma/types-glaucoma), accessed 2026-08-25; NHS, Glaucoma (https://www.nhs.uk/conditions/glaucoma/), accessed 2026-08-25"
+    }
    ],
    "red_flags_en": [
-    "Sudden severe eye pain, marked vision loss, a fixed dilated pupil, halos around lights, mixed conjunctival injection, and an elevated, rock-hard intraocular pressure together indicate an acute attack of Lu Feng Nei Zhang (acute angle-closure glaucoma) — an ophthalmic emergency requiring immediate ophthalmology or emergency department referral for pressure-lowering treatment; do not delay care by treating with acupuncture/herbs alone, as irreversible optic nerve damage and blindness can occur within hours",
-    "Eye pain with nausea, vomiting, and headache can be mistaken for a gastrointestinal illness or migraine, delaying pressure-lowering treatment and causing permanent vision loss — intraocular pressure should be actively checked to differentiate",
-    "After a unilateral acute attack, the fellow eye carries a real risk of the same mechanism triggering an attack — patients should be told that similar symptoms (eye pain, halos, blurred vision) in the other eye must also be treated as an emergency",
-    "The chronic, insidious form (progressive visual field loss with little pain) still requires regular intraocular pressure and visual field monitoring — mild symptoms should never lead to complacency, since vision can be lost gradually and unnoticed"
+    {
+     "finding": "Sudden intense eye pain, a red eye, blurred vision or halos, with nausea, vomiting, or headache",
+     "urgency_level": "emergency",
+     "recommended_action": "Seek immediate emergency or urgent ophthalmic assessment and pressure-lowering care; do not delay care with acupuncture or herbs",
+     "rationale": "NEI and NHS identify this symptom cluster as a medical emergency of angle-closure glaucoma; sudden obstruction of intraocular drainage can rapidly cause irreversible visual loss",
+     "source": "National Eye Institute, Types of Glaucoma (https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/glaucoma/types-glaucoma), accessed 2026-08-25; NHS, Glaucoma (https://www.nhs.uk/conditions/glaucoma/), accessed 2026-08-25"
+    },
+    {
+     "finding": "Gradual loss of peripheral vision or painless progressive visual change",
+     "urgency_level": "urgent",
+     "recommended_action": "Arrange prompt comprehensive eye assessment, including intraocular pressure, optic-nerve, and visual-field evaluation",
+     "rationale": "Some glaucoma types progress slowly and may have no early symptoms; absence of pain does not exclude ongoing optic-nerve injury",
+     "source": "National Eye Institute, Types of Glaucoma (https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/glaucoma/types-glaucoma), accessed 2026-08-25; NHS, Glaucoma (https://www.nhs.uk/conditions/glaucoma/), accessed 2026-08-25"
+    }
    ],
    "related_patterns": [
     "pattern.liver_qi_stagnation",
     "pattern.liver_fire",
     "pattern.liver_kidney_yin_deficiency"
    ],
+   "sources": [
+    "curriculum/conditions/glaucoma.doc#p1",
+    "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/glaucoma/types-glaucoma",
+    "https://www.nhs.uk/conditions/glaucoma/"
+   ],
    "field_sources": {
     "definition_zh": [
-     "TCM Ophthalmology textbook standard (統編教材《中醫眼科學》); cross-checked against curriculum/conditions/glaucoma.doc#p1 (Bastyr AOM Therapeutics notes on Glaucoma / 青風內障)"
+     "TCM Ophthalmology textbook standard (統編教材《中醫眼科學》); curriculum/conditions/glaucoma.doc#p1 (course heading uses 青風內障); NEI Types of Glaucoma and NHS Glaucoma for the acute/chronic distinction and non-equivalence boundary (accessed 2026-08-25)"
+    ],
+    "definition_en": [
+     "English paired rendering of definition_zh; same sources and non-equivalence boundary"
     ],
     "etiology_zh": [
      "TCM Ophthalmology textbook standard (統編教材《中醫眼科學》); cross-checked against curriculum/conditions/glaucoma.doc#p1 (Bastyr AOM Therapeutics notes on Glaucoma / 青風內障)"
@@ -15431,9 +15637,13 @@
      "TCM Ophthalmology textbook standard (統編教材《中醫眼科學》); cross-checked against curriculum/conditions/glaucoma.doc#p1 (Bastyr AOM Therapeutics notes on Glaucoma / 青風內障)"
     ],
     "red_flags_zh": [
-     "curriculum/conditions/glaucoma.doc#p1 explicitly states that acute closed-angle glaucoma is a medical emergency and that untreated elevated pressure causes optic nerve atrophy and blindness; elaborated with established TCM/biomedical clinical knowledge (same-attack-timeframe urgency, fellow-eye risk, chronic monitoring) — flag for Ting to source-check the elaborated specifics beyond what the curriculum doc itself states"
+     "curriculum/conditions/glaucoma.doc#p1; National Eye Institute Types of Glaucoma; NHS Glaucoma (accessed 2026-08-25)"
+    ],
+    "red_flags_en": [
+     "English paired rendering of the same two structured safety entries; same sources"
     ]
-   }
+   },
+   "source_type": "course_handout_plus_official_biomedical_safety"
   },
   {
    "id": "tdis.yuan_yi_nei_zhang",

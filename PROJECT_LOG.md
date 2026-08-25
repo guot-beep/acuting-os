@@ -1,3 +1,13 @@
+# 2026-08-25 — Codex TDIS 中醫病名定義與安全邊界補強 T1
+
+- **範圍**：只改 `tdis.ye_ge`、`tdis.jing_long`、`tdis.zhen_yan`、`tdis.tian_xing_chi_yan`、`tdis.lu_feng_nei_zhang` 的 `review_status`、雙語 definition、雙語 red flags、sources 與 field provenance；未改 id、taxonomy、病因病機、治法、證型關聯、方劑或穴位。
+- **數字**：TDIS records `159→159`；具 record-level sources `75→80`；structured bilingual red flags `75→80`；`review_status` skeleton `84→79`、draft `75→80`；TDIS validator blocking defects `0→0`、N1 note `1→1`。
+- **來源與邊界**：5 張均使用 repo 課件加 NHS／NIH（NCI、NIDDK、NEI）／Moorfields 官方內容；10 個直接 URL 於 2026-08-25 GET 均為 HTTP 200。移除「中醫病名＝單一西醫診斷」措辭，明示噎膈、精癃、針眼、天行赤眼、綠風內障各自的 overlap 與 differential boundary。
+- **驗證**：只變更上述 5 ids 與 8 個允許欄位；中英 red flags 結構及筆數對稱，urgency enum 合法；`validate-tdis-standard 159/159 clean`、`build-data`、canonical/generated equality、relations、ratchet、relation registry、content-junk、10 URL reachability 與 `git diff --check` 均無新增 blocking defect。
+- **未解／下一步**：既有 TDIS 尚有 `79` 張 skeleton、`79` 張無 record-level sources，且 `1` 張缺 related_patterns 的 N1 note；下一批先處理已收集官方急症來源的 `tdis.xian_bing`、`tdis.jue_zheng`、`tdis.jing_bing`、`tdis.huo_luan`、`tdis.nue_ji`，但無直接課件支持的中醫病因病機不提升為 source-checked。
+
+---
+
 # 2026-08-25 — Codex Conditions 耳鼻眼科官方病因補強 B30
 
 - **範圍**：只補 `cond.otitis_externa`、`cond.conjunctivitis`、`cond.hordeolum`、`cond.age_related_macular_degeneration`、`cond.allergic_conjunctivitis` 尚缺的 `etiology_zh/en`，追加直接來源與 provenance；未覆蓋既有正文、安全欄、scope、relations 或 ids。
