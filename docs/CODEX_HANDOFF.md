@@ -1,5 +1,13 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-24] Codex Handoff — Conditions official renal and urinary etiology B24
+
+- **Exact ids / fields**: only `cond.acute_kidney_injury`, `cond.glomerulonephritis`, `cond.nephrotic_syndrome`, `cond.hydronephrosis`, and `cond.ureteral_stones`; filled empty bilingual etiology and appended direct sources plus etiology provenance. Existing pathology, risks, red flags, scope, relations, and adjacent datasets were not changed.
+- **Official sources**: NIH/NIDDK, NIH/NLM MedlinePlus, NHS, and NCBI; all ten actual content URLs returned HTTP 200.
+- **Clinical distinctions**: prerenal/intrinsic/postrenal AKI; immune-complex, anti-GBM and pauci-immune GN; nephrotic syndrome versus tissue diagnosis; hydronephrosis versus its obstructive or nonobstructive cause; and ureteral location versus stone composition. Infection with obstruction remains an explicit emergency.
+- **Measured delta**: maturity `235→239 FULL_DETAIL_CANDIDATE`, `270→266 DETAIL_PARTIAL`, `0→0 SKELETON`, leaving `61` slots to 300; source entries `819→829`, sourced records `285→290`; empty etiology `240→235`. AKI still lacks acupuncture scope, so five fills produced a net maturity gain of four.
+- **Validation**: dry-run/apply `20 operations / 5 ids / skipped 0 / missing 0`; exact equality and record-boundary diff; `build-data.js`; condition standard `505/505 clean`; ratchet; condition sources (`829`); relation registry; content junk; maturity audit; and `git diff --check` passed.
+
 ## [2026-08-24] Codex Handoff — Conditions official respiratory etiology B23
 
 - **Exact ids / fields**: only `cond.bronchiectasis`, `cond.interstitial_lung_disease`, `cond.idiopathic_pulmonary_fibrosis`, `cond.hypersensitivity_pneumonitis`, and `cond.emphysema`; filled empty bilingual etiology and appended direct sources plus etiology provenance. Existing pathology, risks, red flags, scope, relations, and adjacent datasets were not changed.

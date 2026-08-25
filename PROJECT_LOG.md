@@ -1,3 +1,13 @@
+# 2026-08-24 — Codex Conditions 腎臟／泌尿官方病因補強 B24
+
+- **範圍**：只補 `cond.acute_kidney_injury`、`cond.glomerulonephritis`、`cond.nephrotic_syndrome`、`cond.hydronephrosis`、`cond.ureteral_stones` 原本空白的 `etiology_zh/en`，追加來源及逐欄 provenance；未覆蓋既有正文、安全欄、scope 或相鄰資料。
+- **數字**：`FULL_DETAIL_CANDIDATE 235→239`、`DETAIL_PARTIAL 270→266`、`SKELETON 0→0`，距 300 尚 `61`；直接來源 `819→829`、有來源記錄 `285→290`；空白 etiology `240→235`。AKI 尚缺 acupuncture scope，故本批 5 筆淨增 4 筆成熟候選。
+- **來源與邊界**：使用 NIH/NIDDK、NIH/NLM MedlinePlus、NHS 與 NCBI，10 個內容頁皆 HTTP 200。區分 AKI 腎前／腎實質／腎後、GN 免疫機轉、nephrotic syndrome 與組織診斷、hydronephrosis 與其阻塞病因、輸尿管位置與結石成分；明示 infected obstruction 為急症。
+- **驗證**：dry-run/apply `20 operations / 5 ids / skipped 0 / missing 0`；逐欄 equality、逐記錄邊界、`build-data`、condition standard `505/505 clean`、ratchet、sources `829`、relation registry、content-junk、maturity audit、`git diff --check` 均無新增 defect。
+- **未解**：空白 etiology 尚 `235`；AKI 的 acupuncture scope 無可直接支持的官方證據，本批未以臆測補欄；nephrotic syndrome 仍須由病因檢查／切片區分，不能由蛋白尿量反推病理。
+
+---
+
 # 2026-08-24 — Codex Conditions 呼吸系統官方病因補強 B23
 
 - **範圍**：只補 `cond.bronchiectasis`、`cond.interstitial_lung_disease`、`cond.idiopathic_pulmonary_fibrosis`、`cond.hypersensitivity_pneumonitis`、`cond.emphysema` 原本空白的 `etiology_zh/en`，追加直接來源及 etiology provenance；未覆蓋既有 pathology、risk factors、red flags、scope、relations，亦未碰相鄰資料線。
