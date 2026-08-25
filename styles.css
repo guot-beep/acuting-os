@@ -2440,6 +2440,21 @@ label {
   margin-top: 0.35rem;
 }
 
+/* 中藥服用細節組合小工具(2026-08-25,Ting 要求)——劑型/時機/次數三格
+   一列,窄螢幕自動收成一欄(minmax(0,1fr) 本來就會這樣折)。 */
+.agent-herb-detail-row {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-3);
+}
+.form-hint {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--muted);
+  margin: -0.2rem 0 0.2rem;
+}
+
 .form-section > legend {
   grid-column: 1 / -1;
   display: flex;
