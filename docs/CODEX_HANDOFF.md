@@ -1,5 +1,13 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-24] Codex Handoff — Conditions official shoulder-knee etiology B15
+
+- **Exact ids / fields**: only `cond.shoulder_instability`, `cond.subacromial_impingement`, `cond.shoulder_labral_tear`, and `cond.patellar_tendinopathy`; filled empty bilingual etiology and appended direct sources plus etiology provenance. Existing pathology, risks, red flags, scope, relations, and adjacent datasets were not changed.
+- **Official/professional sources**: AAOS OrthoInfo, HSS, NHS, Oxford University Hospitals NHS, and NHS Dorset; all eight actual content URLs returned HTTP 200.
+- **Clinical distinctions**: instability separates trauma, repetitive microtrauma, and constitutional laxity; labral injury separates SLAP, Bankart, and age-related fraying; subacromial pain is not reduced to one bony-pinch mechanism; patellar tendinopathy uses a load-capacity model rather than simple acute inflammation.
+- **Measured delta**: maturity `201→205 FULL_DETAIL_CANDIDATE`, `304→300 DETAIL_PARTIAL`, `0→0 SKELETON`, leaving `95` slots to 300; source entries `738→746`, sourced records `252→256`; empty etiology `280→276`.
+- **Validation**: dry-run/apply `16 operations / 4 ids / skipped 0 / missing 0`; exact equality and record-boundary diff; `build-data.js`; condition standard `505/505 clean`; ratchet; condition sources (`746`); relation registry; content junk; maturity audit; and `git diff --check` passed.
+
 ## [2026-08-24] Codex Handoff — Conditions official rheumatology etiology B14
 
 - **Exact ids / fields**: only `cond.fibromyalgia`, `cond.ankylosing_spondylitis`, `cond.psoriatic_arthritis`, and `cond.polymyalgia_rheumatica`; filled empty bilingual etiology and appended direct sources plus etiology provenance. Existing pathology, risk factors, red flags, acupuncture scope, relations, and adjacent datasets were not changed.

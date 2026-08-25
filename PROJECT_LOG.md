@@ -4412,3 +4412,10 @@ Current repo state as of this log:
 - **來源與內容邊界**：使用 NIAMS 與 NHS，8 個實際內容 URL 皆 HTTP 200；纖維肌痛不歸咎為心理因素，HLA-B27 不表述為充分或必要病因，PsA 區分乾癬關聯與充分病因，PMR 明示基因關聯跨族群不一致。
 - **驗證**：dry-run／apply 均為 `16 operations / 4 ids / skipped 0 / missing 0`；逐欄 equality、逐記錄 diff 僅 4 ids／4 expected keys；`build-data`、condition standard `505/505`、ratchet、sources `738`、relation registry、content-junk、maturity audit、`git diff --check` 均無新增 defect。
 - **未解**：etiology 仍缺 `280` 張；本批未把既有 red flags、scope 或舊 provenance 視為重新核准，纖維肌痛原本指向空白 etiology 的 CloudTCM provenance 仍保留並另加官方來源，未做覆蓋性清理。
+# 2026-08-24 — Codex Conditions 肩膝官方病因補強 B15
+
+- **範圍**：只補 `cond.shoulder_instability`、`cond.subacromial_impingement`、`cond.shoulder_labral_tear`、`cond.patellar_tendinopathy` 原本空白的 `etiology_zh/en`，並合併直達來源與 etiology provenance；未改既有 pathology、risk factors、red flags、acupuncture scope、relations 或 Symptoms／中藥／方劑／穴位 canonical data。
+- **數字**：`FULL_DETAIL_CANDIDATE 201→205`、`DETAIL_PARTIAL 304→300`、`SKELETON 0→0`，距 300 張尚差 `95`；來源項目 `738→746`、有來源記錄 `252→256`；全庫 etiology 空白 `280→276`。
+- **來源與內容邊界**：使用 AAOS OrthoInfo、HSS、NHS、Oxford University Hospitals NHS 與 NHS Dorset，8 個實際內容 URL 皆 HTTP 200；肩不穩分創傷／微創傷／先天鬆弛，labral tear 分 SLAP／Bankart／退化磨損，subacromial pain 不歸因於單一骨性夾擠，髕腱病採 load-capacity 模型而非單純急性發炎。
+- **驗證**：dry-run／apply 均為 `16 operations / 4 ids / skipped 0 / missing 0`；逐欄 equality、逐記錄 diff 僅 4 ids／4 expected keys；`build-data`、condition standard `505/505`、ratchet、sources `746`、relation registry、content-junk、maturity audit、`git diff --check` 均無新增 defect。
+- **未解**：etiology 仍缺 `276` 張；影像上的 labral、subacromial 或 tendon 結構變化仍須與症狀及臨床檢查對照，本批未覆蓋既有 red flags 或 scope。
