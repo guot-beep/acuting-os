@@ -61,7 +61,12 @@
   function inferModalitiesFromText(note) {
     const found = new Set();
     if ((note.acupointLinks || []).length || note.pointsUsed) found.add("modality.acupuncture");
-    const t = [note.technique, note.plan, note.objective, note.modalities].filter(Boolean).join(" ");
+    /* 不讀 note.plan。它的欄位說明是「整體治療計畫、homecare」(index.html),
+     * 本質包含**還沒做的事** —— P 欄寫「居家可自行艾灸關元」或「下次考慮加拔罐」,
+     * 推斷就會把艾灸/拔罐當成今天做過,印進病人文件的〈今天做了什麼〉。
+     * 推斷的目的是補救 legacy note 沒有結構化勾選,來源必須限縮在「已發生」
+     * 的欄位:手法、客觀所見、處置自由文字。 */
+    const t = [note.technique, note.objective, note.modalities].filter(Boolean).join(" ");
     if (/電針|e-?stim|electro/i.test(t)) found.add("modality.electroacupuncture");
     if (/拔罐|cupping/i.test(t)) found.add("modality.cupping");
     if (/刮痧|gua\s?sha/i.test(t)) found.add("modality.gua_sha");

@@ -416,5 +416,31 @@ console.log("回歸鎖 — 病人文件的四條界線");
   assert(!AVS.renderPatientHtml(d2, {}).includes("這段期間請幫我留意這幾件事"), "沒有追蹤指標時不印空的自我觀察段");
 }
 
+// ---- 回歸鎖 — 推斷只讀「已發生」的欄位,不讀計畫 --------------------------
+console.log("回歸鎖 — 不從『計畫』推斷出『今天做了什麼』");
+{
+  const kase = makeCase();
+  // 沒有結構化勾選 → 走 legacy 推斷。P 欄寫的是還沒做的事。
+  const planOnly = makeNote({
+    modalitiesPerformed: [],
+    acupointLinks: ["ST36"],
+    plan: "居家可自行艾灸關元;下次考慮加拔罐",
+    technique: "", objective: "", modalities: ""
+  });
+  const d = draftFor(kase, planOnly);
+  assert(d.modalitySource === "inferred", "沒有結構化勾選時走推斷(前提成立,不是空跑)");
+  assert(d.todayCare.includes("針刺"), "有用穴 → 針刺仍推斷得出來");
+  assert(!d.todayCare.some((x) => /灸/.test(x)), "P 欄的『居家可自行艾灸』不算今天做過");
+  assert(!d.todayCare.some((x) => /罐/.test(x)), "P 欄的『下次考慮加拔罐』不算今天做過");
+  const html = AVS.renderPatientHtml(d, { visitDate: planOnly.visitDate });
+  assert(!/艾灸|拔罐/.test(html.slice(html.indexOf("今天做了什麼"), html.indexOf("今天做了什麼") + 200)),
+    "病人文件的〈今天做了什麼〉不含只出現在計畫裡的療法");
+
+  // 對照:真的做過(寫在手法/處置欄)仍要推斷得出來,不能因為收緊而漏掉
+  const reallyDid = makeNote({ modalitiesPerformed: [], acupointLinks: ["ST36"], modalities: "針刺加艾灸" });
+  const d2 = draftFor(kase, reallyDid);
+  assert(d2.todayCare.some((x) => /灸/.test(x)), "寫在『處置』欄的艾灸仍然推斷得出來");
+}
+
 console.log(`\n${pass} passed, ${fail} failed`);
 process.exit(fail ? 1 : 0);

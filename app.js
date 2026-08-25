@@ -230,12 +230,24 @@ if ((globalThis.ACUTING_KNOWLEDGE?.outcomeMetrics?.records || []).length > 0) {
 // silently degrading to placeholder-only content.
 (function dataLoadGuard() {
   const missing = [];
-  if (!globalThis.ACUTING_APP_DATA) missing.push("data/generated/app_data.js");
-  if (!globalThis.ACUTING_POINTS_361) missing.push("data/generated/points_361.js");
+  // 逐檔說出「少了它會怎樣」—— 一句籠統的「穴位內容會大量缺失」套在
+  // knowledge_data.js 上是錯的(它裝的是方劑/中藥/證型/建議庫),
+  // 而錯的診斷會讓人往錯的方向找。
+  if (!globalThis.ACUTING_APP_DATA) missing.push("data/generated/app_data.js(介面設定與經絡索引)");
+  if (!globalThis.ACUTING_POINTS_361) missing.push("data/generated/points_361.js(361 經穴內容)");
+  /* knowledge_data.js 過去不在名單裡,而它是獨立的 <script> —— 它 404 時
+   * (就是這個 guard 自己註解說的「檔案未同步」情境)app 照常運作,但臨床
+   * 路徑至少有兩處把「沒載入」讀成「沒問題」:
+   *   診務回顧的知識缺口只在 knowledge truthy 時計算,否則 [] → 面板印出
+   *   「目前用到的方劑與證型卡片都已有來源」,那是一句肯定的假話;
+   *   AVS 的四個 ?.records || [] 讓建議庫變空 → checkout 顯示「沒有符合的
+   *   建議」,而真相是規則庫沒載入。
+   * 缺了就要跟其他兩個一樣大聲。 */
+  if (!globalThis.ACUTING_KNOWLEDGE) missing.push("data/generated/knowledge_data.js(方劑/中藥/證型/病名與診後建議庫;缺了它,診務回顧會誤報「都已有來源」)");
   if (!missing.length) return;
   const banner = document.createElement("div");
   banner.className = "data-missing-banner";
-  banner.textContent = `⚠ 資料檔未載入：${missing.join("、")} 沒有被讀到，穴位內容會大量缺失。請確認專案檔案已完整同步到本機後按 Ctrl+F5 重新整理。`;
+  banner.textContent = `⚠ 資料檔未載入:${missing.join("、")}。在修好之前,畫面上的「沒有問題」可能只是「沒有資料」。請確認專案檔案已完整同步到本機後按 Ctrl+F5 重新整理。`;
   document.body.prepend(banner);
 })();
 
@@ -7390,10 +7402,16 @@ function patientNeedsReview(patient) {
   return !!((patient.needsReview && patient.needsReview.length) || Object.keys(patient.conflicts || {}).length);
 }
 
+/* 發表同意的跨 case 彙整。
+ * 舊版 filter(Boolean) 把「未詢問」("")整個丟掉,於是同一位病人 case A 已同意、
+ * case B 沒問過 → vals = ["granted"] → 頭卡顯示「已同意 Granted」。
+ * normalizeClinicalCase 特別註明 "" = never asked、consent is NEVER fabricated,
+ * 這裡把它吃掉了。發表同意是研究倫理的門檻,少算一筆等於替病人點頭。
+ * 「未詢問」在這裡是一個**值**,不是缺值。 */
 function patientConsentSummary(cases) {
-  const vals = [...new Set(cases.map((c) => c.publicationConsent || "").filter(Boolean))];
-  if (!vals.length) return "未詢問 Not asked";
-  const label = (v) => CONSENT_LABELS[v] || v;
+  if (!cases.length) return "未詢問 Not asked";
+  const label = (v) => (v ? (CONSENT_LABELS[v] || v) : "未詢問 Not asked");
+  const vals = [...new Set(cases.map((c) => String(c.publicationConsent || "").trim()))];
   if (vals.length === 1) return label(vals[0]);
   return `跨 case 不一致 Mixed: ${vals.map(label).join(" / ")}`;
 }
