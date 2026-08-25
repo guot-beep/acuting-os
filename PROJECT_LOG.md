@@ -1,3 +1,13 @@
+# 2026-08-24 — Codex Conditions 內分泌／營養官方病因補強 B22
+
+- **範圍**：只補 `cond.hyperparathyroidism`、`cond.hypoparathyroidism`、`cond.vitamin_d_deficiency`、`cond.vitamin_b12_deficiency`、`cond.iron_deficiency_anemia` 原本空白的 `etiology_zh/en`，並追加直接來源與 etiology provenance；未覆蓋既有 pathology、risk factors、red flags、acupuncture scope、relations，也未碰 Symptoms／中藥／方劑／穴位資料。
+- **數字**：`FULL_DETAIL_CANDIDATE 226→231`、`DETAIL_PARTIAL 279→274`、`SKELETON 0→0`，距 300 尚 `69`；直接來源 `799→809`、有來源記錄 `276→281`；空白 etiology `250→245`。
+- **來源與邊界**：使用 NIH/NIDDK、NIH/NLM MedlinePlus、NIH/NHLBI 與 NHS，10 個實際內容頁皆 HTTP 200。明確區分原發／繼發／第三期副甲狀腺亢進、真正低副甲狀腺與 PTH 阻抗、維生素供應／吸收／活化障礙、B12 飲食與內在因子／迴腸原因，以及絕對缺鐵與發炎性功能性鐵限制。
+- **驗證**：dry-run/apply `20 operations / 5 ids / skipped 0 / missing 0`；逐欄 equality、逐記錄變更邊界、`build-data`、condition standard `505/505 clean`、ratchet、sources `809`、relation registry、content-junk、maturity audit 與 `git diff --check` 均無新增 defect。
+- **未解**：仍有 `245` 筆空白 etiology、`69` 個 detail slots 才達 300；既有維生素 D 摘要的固定檢驗切點未在本批覆蓋，因不同權威定義並不一致，應另開 canonical review 才能修改。
+
+---
+
 # 2026-08-24 — Codex Conditions 肌骨官方內容補強 B12
 
 - **範圍**：只補 `cond.de_quervain`、`cond.ankle_sprain`、`cond.myofascial_pain` 原本空白的 `western_pathology_*`、`etiology_*`、`risk_factors_*`、`acupuncture_scope_*`；以 non-overwrite fill 工具合併來源，未改既有摘要、red flags、relations 或 Symptoms／中藥／方劑／穴位 canonical data。

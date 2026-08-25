@@ -1,5 +1,13 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-24] Codex Handoff — Conditions official endocrine and nutrition etiology B22
+
+- **Exact ids / fields**: only `cond.hyperparathyroidism`, `cond.hypoparathyroidism`, `cond.vitamin_d_deficiency`, `cond.vitamin_b12_deficiency`, and `cond.iron_deficiency_anemia`; filled empty bilingual etiology and appended direct sources plus etiology provenance. Existing pathology, risks, red flags, scope, relations, and adjacent datasets were not changed.
+- **Official sources**: NIH/NIDDK, NIH/NLM MedlinePlus, NIH/NHLBI, and NHS; all ten actual content URLs returned HTTP 200.
+- **Clinical distinctions**: primary, secondary, and tertiary hyperparathyroidism are separated; true PTH deficiency is separated from PTH resistance; vitamin D supply, absorption, and activation failure remain distinct; B12 dietary deficiency is separated from intrinsic-factor, ileal, medicine, and exposure mechanisms; absolute iron depletion is separated from inflammation-related functional iron restriction.
+- **Measured delta**: maturity `226→231 FULL_DETAIL_CANDIDATE`, `279→274 DETAIL_PARTIAL`, `0→0 SKELETON`, leaving `69` slots to 300; source entries `799→809`, sourced records `276→281`; empty etiology `250→245`.
+- **Validation**: dry-run/apply `20 operations / 5 ids / skipped 0 / missing 0`; exact equality and record-boundary diff; `build-data.js`; condition standard `505/505 clean`; ratchet; condition sources (`809`); relation registry; content junk; maturity audit; and `git diff --check` passed.
+
 ## [2026-08-24] Codex Handoff — Conditions official neurologic etiology B21
 
 - **Exact ids / fields**: only `cond.bppv`, `cond.vestibular_neuritis`, `cond.alzheimer_disease`, `cond.als`, and `cond.huntington_disease`; filled empty bilingual etiology and appended direct sources plus etiology provenance. Existing pathology, risks, red flags, scope, relations, and adjacent datasets were not changed.
