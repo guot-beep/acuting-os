@@ -4442,3 +4442,12 @@ Current repo state as of this log:
 - **未解**：Conditions 仍有 western pathology／etiology／risk factors／acupuncture scope 空白 `17／265／44／69`；既有 content-junk frozen warnings 屬其他工作線，本批未碰。
 
 ---
+# 2026-08-24 — Codex Conditions 消化系統官方病因補強 B19
+
+- **範圍**：只補 `cond.acute_gastroenteritis`、`cond.acute_cholecystitis`、`cond.diverticular_disease`、`cond.celiac_disease`、`cond.lactose_intolerance` 原本空白的 `etiology_zh/en`，並加入 direct sources 與逐欄位 provenance；未改既有 pathology、risk factors、red flags、scope、relations 或其他資料線。
+- **數字**：`FULL_DETAIL_CANDIDATE 216→218`、`DETAIL_PARTIAL 289→287`、`SKELETON 0→0`，距 300 尚 `82`；直接來源 `769→779`、有 direct source 的 records `266→268`；空白 etiology `265→260`。三張原已達分數門檻／已有來源，故 5 筆填補的 maturity 淨增為 2。
+- **來源與臨床邊界**：使用 NIH/NIDDK、CDC、NHS、NCBI StatPearls；10 個內容頁皆 HTTP 200。明確分開感染／預成毒素、膽囊管／總膽管阻塞、憩室形成／憩室炎、乳糜瀉／小麥過敏、乳糖吸收不良／牛奶蛋白過敏。
+- **驗證**：dry-run/apply `20 operations / 5 ids / skipped 0 / missing 0`；exact equality 與 record-boundary diff（僅 5 ids、4 預期欄位）PASS；`build-data`、condition standard `505/505`、ratchet、condition sources `779`、relation registry、content-junk、maturity audit、`git diff --check` 均無新增 defect。
+- **未解**：Conditions 仍有 western pathology／etiology／risk factors／acupuncture scope 空白 `17／260／44／69`；既有 acute cholecystitis 摘要的「4F」簡化敘述未獲授權覆蓋，本批未把 provenance 當作替舊文字背書。
+
+---

@@ -1,5 +1,13 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-24] Codex Handoff — Conditions official gastrointestinal etiology B19
+
+- **Exact ids / fields**: only `cond.acute_gastroenteritis`, `cond.acute_cholecystitis`, `cond.diverticular_disease`, `cond.celiac_disease`, and `cond.lactose_intolerance`; filled empty bilingual etiology and appended direct sources plus etiology provenance. Existing pathology, risks, red flags, scope, relations, and adjacent datasets were not changed.
+- **Official sources**: NIH/NIDDK, CDC, NHS, and NCBI StatPearls; all ten actual content URLs returned HTTP 200.
+- **Clinical distinctions**: infection versus preformed toxin, cystic-duct versus common-bile-duct obstruction, diverticulum formation versus diverticulitis, celiac disease versus wheat allergy, and lactose malabsorption versus milk-protein allergy are explicitly separated.
+- **Measured delta**: maturity `216→218 FULL_DETAIL_CANDIDATE`, `289→287 DETAIL_PARTIAL`, `0→0 SKELETON`, leaving `82` slots to 300; source entries `769→779`, sourced records `266→268`; empty etiology `265→260`. Three target records were already above the score/source thresholds, so five etiology fills yielded a net maturity increase of two.
+- **Validation**: dry-run/apply `20 operations / 5 ids / skipped 0 / missing 0`; exact equality and record-boundary diff; `build-data.js`; condition standard `505/505 clean`; ratchet; condition sources (`779`); relation registry; content junk; maturity audit; and `git diff --check` passed.
+
 ## [2026-08-24] Codex Handoff — Conditions official remaining MSK etiology B18
 
 - **Exact ids / fields**: only `cond.si_joint_dysfunction`, `cond.tfcc_injury`, `cond.shin_splints`, `cond.costochondritis`, and `cond.coccydynia`; filled empty bilingual etiology and appended direct sources plus etiology provenance. Existing pathology, risks, red flags, scope, relations, and adjacent datasets were not changed.
