@@ -252,6 +252,26 @@ console.log("Extra — renderPatientText copy-for-email output");
   assert(AVS.checkPatientOutputSafety(dirtyText, kase).includes("pattern."), "diagnosis id in plain-text draft output is caught by safety check");
 }
 
+// ---- 附加 — 自我觀察提示不進緊急就醫清單(2026-08-25,dry run 現場發現)-----
+// Ting 原話:「這個不用填入,因為那個有洩漏病人太多細節」——睡眠時數/壓力/
+// 情緒/精神體力這類自我追蹤問題,以前會被接進「什麼情況請盡快與我們聯絡或
+// 就醫」清單,讀起來像紅旗、也把追蹤細節印給病人帶走。兩個渲染器都要鎖住。
+console.log("Extra — self-observation prompts never appear in the urgent-care watch list");
+{
+  const kase = makeCase();
+  const note = makeNote({ modalitiesPerformed: ["modality.acupuncture"] });
+  const d = draftFor(kase, note);
+  d.patientObservationPromptsSnapshot = ["睡眠時數:平均一晚睡幾小時?", "壓力:最近感覺壓力有多大?"];
+  const snaps = AVS.finalizeSnapshot(AVS.upsertDraft(note.avsSnapshots, d), d.id, "2026-01-15T18:00:00Z");
+  const fin = AVS.latestFinalized(snaps);
+  const html = AVS.renderPatientHtml(fin, { visitDate: note.visitDate });
+  const text = AVS.renderPatientText(fin, { visitDate: note.visitDate });
+  assert(!html.includes("睡眠時數"), "renderPatientHtml never prints self-observation prompts");
+  assert(!text.includes("睡眠時數"), "renderPatientText never prints self-observation prompts");
+  assert(html.includes("服用調理品後噁心"), "renderPatientHtml still prints the fixed urgent-care red flags");
+  assert(text.includes("服用調理品後噁心"), "renderPatientText still prints the fixed urgent-care red flags");
+}
+
 // ---- Codex NO-GO 迴歸(2026-08-12 audit HIGH-1/HIGH-3/MED-1 的反例)---------
 console.log("Codex regression — HIGH-3 canonical scanner probes");
 {

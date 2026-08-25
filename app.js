@@ -6765,11 +6765,11 @@ function promptAgentExposureAction(exposureId, eventType) {
   if (!exposure) return;
   const event = { eventType };
   if (eventType === "dose_changed") {
-    const value = prompt("新劑量 New dose", exposure.doseText || "");
+    const value = prompt("新劑量 New dose（例:200mg,或中藥 3克・科學中藥/水藥/丸藥）", exposure.doseText || "");
     if (value === null) return;
     event.doseText = value.trim();
   } else if (eventType === "frequency_changed") {
-    const value = prompt("新頻率 New frequency", exposure.frequencyText || "");
+    const value = prompt("新頻率 New frequency（例:qd/bid,或中藥 飯後・一天三次）", exposure.frequencyText || "");
     if (value === null) return;
     event.frequencyText = value.trim();
   } else if (eventType === "stopped") {
