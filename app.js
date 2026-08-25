@@ -8340,11 +8340,20 @@ function enhanceLinkField(form, fieldName, buildOptions, opts = {}) {
     const m = menu._matches || [];
     // Dry Clinic log #2 (every-visit friction): full keyboard flow so a
     // clinical typing session never has to reach for the mouse. Arrow keys
-    // wrap around the currently rendered options; Enter picks the active
-    // option or, if none highlighted yet, the first match; Escape closes
-    // just the menu — it must not fall through to the <dialog>'s native
-    // Escape-to-close (stopPropagation), and only when the menu is actually
-    // open (an Escape with no menu showing should close the dialog as usual).
+    // wrap around the currently rendered options; Escape closes just the
+    // menu — it must not fall through to the <dialog>'s native Escape-to-
+    // close (stopPropagation), and only when the menu is actually open (an
+    // Escape with no menu showing should close the dialog as usual).
+    //
+    // 2026-08-25(dry run 現場發現,Ting 原話:「當我記錄上去沒有的conditions
+    // 時他會亂跳一個症狀」)——舊版 Enter 在沒有手動高亮時預設吃 m[0](第一個
+    // 模糊比對到的候選)。q 是子字串比對(terms.includes(q)),打一個清單裡
+    // 沒有的詞常常還是會模糊命中好幾筆不相關的東西——打完直接按 Enter(她的
+    // 打字習慣)就悄悄選進一個完全不是她要打的項目,而且畫面上看起來像是
+    // 「有記錄」,實際記的是錯的。改成:只有「候選剛好剩一筆」(打的字已經
+    // 唯一鎖定,Enter=確認沒有歧義)或「已經用方向鍵手動高亮」這兩種情況才會
+    // 選——候選有兩筆以上又沒有手動高亮時,Enter 不做任何事,逼她自己選或
+    // 打精確一點,絕不用猜的塞一筆進病歷。
     if (e.key === "ArrowDown") {
       e.preventDefault();
       if (m.length) activeIndex = (activeIndex + 1) % m.length;
@@ -8354,7 +8363,14 @@ function enhanceLinkField(form, fieldName, buildOptions, opts = {}) {
       if (m.length) activeIndex = (activeIndex - 1 + m.length) % m.length;
       renderMenu();
     } else if (e.key === "Enter") {
-      if (m.length) { e.preventDefault(); addValue(m[activeIndex >= 0 ? activeIndex : 0].value); }
+      if (activeIndex >= 0 && m[activeIndex]) {
+        e.preventDefault();
+        addValue(m[activeIndex].value);
+      } else if (m.length === 1) {
+        e.preventDefault();
+        addValue(m[0].value);
+      }
+      // m.length >= 2 且沒有手動高亮:刻意不做任何事(見上面說明)。
     } else if (e.key === "Escape") {
       if (!menu.hidden) {
         e.preventDefault();
