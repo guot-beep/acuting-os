@@ -165,6 +165,25 @@ const NUMERIC_OUTCOME_METRIC_CONFIG = [
   { metricId: "metric.pgic", min: 1, max: 7, integer: true },
 ];
 
+// SOAP 開新診時帶入上一診的白名單(2026-08-25,Ting 要求)。跟上面
+// NUMERIC_OUTCOME_METRIC_CONFIG 同一個 TDZ 理由,不能宣告在 openSoapEditor
+// 附近——render() 在檔案最上面同步跑,若使用者一開頁就有已選病例,呼叫鏈
+// 可能在這個檔案後段的 const 初始化之前就先摸到它。
+//
+// 只有「治療計畫」類欄位,絕不含觀察/療效類欄位。新增欄位時先問:這是
+// 「醫師打算怎麼治」還是「這次觀察/量到什麼」?前者才准列入。
+// scripts/test-avs-checkout.js 沒有涵蓋這支(非 AVS 引擎),下面清單本身
+// 就是唯一防線——刻意寫成外顯陣列方便下次修改時一眼看穿範圍。
+const SOAP_CARRY_FORWARD_FIELDS = [
+  "tcmPattern", "tcmPatternSelections", "tcmPatternLinks", "pathomechanism", "treatmentPrinciple",
+  "pointsUsed", "acupointLinks", "retentionMinutes", "technique",
+  "formulaHerbs", "formulaLinks", "herbLinks",
+  "westernMeds", "medicationLinks",
+  "modalities", "modalitiesPerformed",
+  "westernConditionLinks", "easternDiseaseLinks", "safetyFlagLinks",
+  "followUp"
+];
+
 // Outcome Tracking v1 direction-hint labels (2026-08, CG8). Declared here —
 // not beside renderOutcomeTrackingPanel further down — for the same TDZ
 // reason NUMERIC_OUTCOME_METRIC_CONFIG lives up here instead of near the
@@ -9138,20 +9157,6 @@ function renderPreviousVisitPanel(note) {
     `<div><small>${escapeHtml(label)}</small><span>${escapeHtml(value)}</span></div>`
   ).join("")}</div>`;
 }
-
-// 2026-08-25 白名單——只有「治療計畫」類欄位,絕不含觀察/療效類欄位。新增
-// 欄位時先問:這是「醫師打算怎麼治」還是「這次觀察/量到什麼」?前者才准列入。
-// scripts/test-avs-checkout.js 沒有涵蓋這支(非 AVS 引擎),下面 assertNever
-// 風格的清單本身就是唯一防線——刻意寫成外顯陣列方便下次修改時一眼看穿範圍。
-const SOAP_CARRY_FORWARD_FIELDS = [
-  "tcmPattern", "tcmPatternSelections", "tcmPatternLinks", "pathomechanism", "treatmentPrinciple",
-  "pointsUsed", "acupointLinks", "retentionMinutes", "technique",
-  "formulaHerbs", "formulaLinks", "herbLinks",
-  "westernMeds", "medicationLinks",
-  "modalities", "modalitiesPerformed",
-  "westernConditionLinks", "easternDiseaseLinks", "safetyFlagLinks",
-  "followUp"
-];
 
 // 回傳 prevNote 裡白名單欄位的淺拷貝(陣列另外複製,絕不共用參照——editingSoap
 // 存檔時不能不小心改到上一筆 note 的陣列)。只給「開新 SOAP、且這個 case 已有
