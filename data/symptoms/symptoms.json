@@ -21447,6 +21447,1219 @@
       "source_type": "source_assisted_draft_pending_ting_verification",
       "review_status": "draft",
       "authored_by": "model_draft"
+    },
+    {
+      "id": "sym.bad_breath",
+      "name_zh": "口臭",
+      "name_en": "Bad breath",
+      "pinyin": "kou chou",
+      "pinyin_toned": "kǒu chòu",
+      "aliases_zh": [
+        "口氣重",
+        "嘴巴有異味",
+        "口氣不好"
+      ],
+      "aliases_en": [
+        "Halitosis",
+        "Oral malodor",
+        "Foul breath"
+      ],
+      "taxonomy_ids": [
+        "sym.head_face_nose",
+        "sym.dietary_gastrointestinal"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported",
+        "examiner_observed"
+      ],
+      "primary_mode": "patient_reported",
+      "definition_zh": "口中或呼出氣息帶有令人不悅的異味，本人自覺或被他人（家人、同事、醫者）指出。來源可能在口腔本身（牙周病、齲齒、舌苔、口乾、義齒清潔不良），也可能來自鼻咽（鼻竇炎、扁桃腺結石）或反映腸胃／全身性因素。是主訴，不是診斷 —— 需先排除口腔局部原因，才進入辨證。",
+      "definition_en": "An unpleasant odor from the mouth or exhaled breath, noticed by the patient or pointed out by someone else (family, colleague, clinician). It may originate in the mouth itself (periodontal disease, caries, tongue coating, dry mouth, poorly cleaned dentures), in the nose/throat (sinusitis, tonsillar stones), or reflect gastrointestinal or systemic causes. A presenting complaint, not a diagnosis — local oral causes should be screened for before pattern differentiation.",
+      "patient_words_zh": "「我朋友說我有口臭」「早上起來嘴巴特別臭」「刷牙、漱口都沒用，還是有味道」「講話的時候會不好意思，怕別人聞到」「嘴巴一直乾乾苦苦的，好像有味道」",
+      "patient_words_en": "\"My friend told me I have bad breath\", \"My mouth smells especially bad first thing in the morning\", \"I brush and rinse but the smell won't go away\", \"I get self-conscious talking to people, worried they'll smell it\", \"My mouth feels dry and off-tasting, like there's an odor\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": true,
+          "vocabulary": "symptom_taxonomy"
+        },
+        "quality": {
+          "applicable": false,
+          "why": "symptom_quality 為疼痛性質詞彙，不適用；本症為氣味異常，非疼痛"
+        },
+        "laterality": {
+          "applicable": false,
+          "why": "口腔／呼吸整體氣味異常，無側性"
+        },
+        "timing": {
+          "applicable": true,
+          "vocabulary": "symptom_timing",
+          "diagnostic_note_zh": "晨起明顯、進食後改善多屬生理性（睡眠時唾液分泌減少）；全天持續且伴胃腸症狀多提示胃熱或食積"
+        },
+        "severity": {
+          "applicable": false,
+          "why": "實例值，屬病例層（§8）"
+        },
+        "duration": {
+          "applicable": false,
+          "why": "實例值，屬病例層（§8）"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "部位",
+          "why": "氣味來源在口腔本身（牙周、齲齒、舌苔）、鼻咽（鼻竇炎、鼻涕倒流、扁桃腺結石）或腸胃/全身，決定轉診方向與辨證方向完全不同"
+        },
+        {
+          "dimension": "誘因",
+          "why": "空腹／晨起、特定食物（大蒜、洋蔥）、抽菸飲酒、口乾相關用藥、鼻竇或扁桃腺病史"
+        },
+        {
+          "dimension": "緩解",
+          "why": "刷牙、潔牙、清潔舌苔、多喝水後是否改善——有改善多提示口腔局部因素，改善有限則需往腸胃或全身方向問"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "牙齦腫痛出血、舌苔厚膩提示口腔局部或胃熱食積；口渴喜冷飲、消穀善飢、大便乾結提示胃熱／腸腑燥熱；口舌生瘡反覆、心煩失眠提示心胃火盛"
+        },
+        {
+          "dimension": "病程",
+          "why": "長期反覆多與口腔衛生、慢性鼻竇或消化道習慣有關；新發合併全身症狀（明顯口渴、體重下降、意識改變）需考慮系統性疾病並優先處理原發問題"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Location",
+          "why": "Whether the odor's source is the mouth itself (periodontal disease, caries, tongue coating), the nose/throat (sinusitis, postnasal drip, tonsillar stones), or the GI tract/systemic — this determines the referral and differentiation direction"
+        },
+        {
+          "dimension": "Triggers",
+          "why": "Fasting/on waking, specific foods (garlic, onion), smoking and alcohol, dry-mouth-inducing medications, sinus or tonsil history"
+        },
+        {
+          "dimension": "Relief",
+          "why": "Whether brushing, dental cleaning, tongue-cleaning, or drinking more water improves it — improvement points to a local oral cause; limited improvement pushes the inquiry toward GI or systemic causes"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Swollen/bleeding gums and a thick tongue coating suggest a local oral cause or Stomach Heat/food stagnation; thirst for cold drinks, excessive hunger and dry hard stool suggest Stomach Heat or bowel Dryness-Heat; recurring mouth ulcers with restlessness and insomnia suggest Heart-Stomach Fire"
+        },
+        {
+          "dimension": "Course",
+          "why": "Long-standing recurrent odor is usually tied to oral hygiene, chronic sinus issues or dietary habit; new onset with systemic signs (marked thirst, weight loss, altered consciousness) raises concern for a systemic disease and that should be addressed first"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "口臭穢濁，口渴喜冷飲，牙齦腫痛，消穀善飢",
+          "points_to": [
+            "pattern.stomach_heat"
+          ],
+          "distinguishing": "口臭明顯而穢濁，兼胃脘灼痛、消穀善飢、牙齦腫痛、大便秘結，舌紅苔黃，脈滑數"
+        },
+        {
+          "variant": "噯氣酸腐，脘腹脹滿，厭食，大便酸臭",
+          "points_to": [
+            "pattern.food_stagnation"
+          ],
+          "distinguishing": "口臭以噯氣時發出酸腐氣味為特徵，兼脘腹脹滿、噯腐吞酸、厭食、大便酸臭，苔厚膩，脈滑"
+        },
+        {
+          "variant": "口臭伴口舌生瘡反覆發作，心煩失眠",
+          "points_to": [
+            "pattern.heart_stomach_fire"
+          ],
+          "distinguishing": "口臭兼口舌生瘡、潰瘍反覆發作，心煩失眠、小便短赤、牙齦腫痛，舌尖紅赤或舌紅苔黃厚，脈滑數或洪數"
+        },
+        {
+          "variant": "口乾口臭伴大便乾結，腹脹拒按",
+          "points_to": [
+            "pattern.heat_constipation"
+          ],
+          "distinguishing": "口乾口臭與大便乾結如羊屎同見，腹脹腹痛拒按，面紅身熱，舌紅苔黃燥，脈滑數"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Foul, turbid bad breath with thirst for cold drinks, swollen painful gums, excessive hunger",
+          "points_to": [
+            "pattern.stomach_heat"
+          ],
+          "distinguishing": "Pronounced, foul bad breath with burning epigastric pain, excessive hunger, swollen painful gums and constipation; red tongue with yellow coating, slippery rapid pulse"
+        },
+        {
+          "variant": "Sour, rotten-smelling belching with epigastric/abdominal fullness, aversion to food, sour-smelling stool",
+          "points_to": [
+            "pattern.food_stagnation"
+          ],
+          "distinguishing": "The bad breath is characterized by a sour, rotten odor released with belching, together with epigastric/abdominal fullness, foul belching and acid regurgitation, aversion to food, and sour-smelling stool; thick greasy tongue coating, slippery pulse"
+        },
+        {
+          "variant": "Bad breath with recurring mouth/tongue ulcers, restlessness and insomnia",
+          "points_to": [
+            "pattern.heart_stomach_fire"
+          ],
+          "distinguishing": "Bad breath with recurring mouth and tongue ulcers, restlessness and insomnia, scanty dark urine, swollen painful gums; red tip of the tongue or red tongue with thick yellow coating, slippery-rapid or surging-rapid pulse"
+        },
+        {
+          "variant": "Dry mouth and bad breath with dry hard stool, distending abdominal pain worse with pressure",
+          "points_to": [
+            "pattern.heat_constipation"
+          ],
+          "distinguishing": "Dry mouth and bad breath together with stool as dry and hard as sheep's droppings, distending abdominal pain worse with pressure, red face and body heat; red tongue with dry yellow coating, slippery rapid pulse"
+        }
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "Mayo Clinic — Bad breath: Symptoms and causes (https://www.mayoclinic.org/diseases-conditions/bad-breath/symptoms-causes/syc-20350922)",
+        "Cleveland Clinic — Halitosis (Bad Breath) (https://my.clevelandclinic.org/health/diseases/17771-bad-breath-halitosis)",
+        "Cleveland Clinic — Fetor Hepaticus: When Bad Breath Is More Than Bad Breath (https://my.clevelandclinic.org/health/symptoms/fetor-hepaticus)",
+        "中醫內科學／中醫診斷學 通行教材 —— 口臭篇"
+      ],
+      "safety_flags": [
+        "urgent_red_flag_review"
+      ],
+      "red_flags_zh": [
+        "呼氣帶明顯果香／指甲油（丙酮）氣味 → 提示糖尿病酮酸血症，屬醫療急症，需立即就醫評估",
+        "呼氣帶氨味／魚腥味（尿毒性口臭）→ 提示尿毒症／腎衰竭，需儘速轉診評估腎功能",
+        "呼氣帶特殊甜味、類似大蒜或腐蛋的異味（肝臭 fetor hepaticus）→ 提示晚期肝衰竭，屬嚴重徵象，需立即就醫"
+      ],
+      "red_flags_en": [
+        "Fruity or nail-polish-remover (acetone) breath odor → suggests diabetic ketoacidosis, a medical emergency requiring immediate evaluation",
+        "Ammonia- or fish-like breath odor (uremic fetor) → suggests uremia/kidney failure, refer promptly for renal function evaluation",
+        "Sweet, garlicky/rotten-egg breath odor (fetor hepaticus) → suggests advanced liver failure, a serious sign requiring care right away"
+      ],
+      "supporting_measurements": [],
+      "sources": [
+        "Mayo Clinic — Bad breath: Symptoms and causes（https://www.mayoclinic.org/diseases-conditions/bad-breath/symptoms-causes/syc-20350922）",
+        "Cleveland Clinic — Halitosis (Bad Breath)（https://my.clevelandclinic.org/health/diseases/17771-bad-breath-halitosis）",
+        "Cleveland Clinic — Fetor Hepaticus: When Bad Breath Is More Than Bad Breath（https://my.clevelandclinic.org/health/symptoms/fetor-hepaticus）",
+        "University of Maryland Medical System Health Hub — What Does It Mean If You Have Fruity Breath?（https://health.umms.org/diabetes-endocrinology/what-does-it-mean-if-you-have-fruity-breath/）",
+        "Fresenius Kidney Care — Ammonia Breath & Chronic Kidney Disease, CKD（https://www.freseniuskidneycare.com/thrive-central/ammonia-breath）",
+        "中醫內科學／中醫診斷學 通行教材內容 —— 口臭的胃熱、食積、心胃火盛、腸腑燥熱辨證",
+        "本 repo 既有卡片：pattern_library 各證型 key_signs_zh（pattern.stomach_heat · pattern.food_stagnation · pattern.heart_stomach_fire · pattern.heat_constipation）"
+      ],
+      "field_sources": {
+        "definition_zh/en": "Mayo Clinic / Cleveland Clinic 對 halitosis 的一般定義與局部/全身病因分類 + 中醫內科學 口臭一般描述",
+        "differentiation_zh/en": "中醫內科學 口臭辨證 + 本 repo pattern_library 各證型 key_signs_zh 對照（pattern.stomach_heat, pattern.food_stagnation, pattern.heart_stomach_fire, pattern.heat_constipation）；食滯胃脘一項的用詞已收斂至 pattern.food_stagnation 實際 key_signs_zh（脘腹脹滿／噯腐吞酸／厭食／大便酸臭）範圍內，不另外主張呼氣本身持續帶酸味",
+        "safety_review_status": "初版誤判為 no_specific_red_flags_identified；覆核後確認呼氣氣味的『性質』本身即是三個真實、有名稱、可查證的症狀層級紅旗（而非僅是原發病的紅旗）：(1) 果香／丙酮味 = 糖尿病酮酸血症的典型早期徵象；(2) 氨味／魚腥味（uremic fetor）= 尿毒症的公認徵象；(3) fetor hepaticus（甜腥、蒜味或腐蛋味）= Cleveland Clinic 明確列為需立即就醫的晚期肝衰竭徵象。三者皆已以 WebSearch 逐一查證，非引用審核者摘要。故改列 specific_red_flags_present，並列出對應 red_flags_zh/en 與來源；safety_flags 另加 urgent_red_flag_review 作為通用『需緊急評估』的第二層標記"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "sym.bruxism",
+      "name_zh": "磨牙",
+      "name_en": "Bruxism (Teeth Grinding)",
+      "pinyin": "mo ya",
+      "pinyin_toned": "mó yá",
+      "aliases_zh": [
+        "磨牙症",
+        "咬牙",
+        "夜間磨牙",
+        "睡眠磨牙"
+      ],
+      "aliases_en": [
+        "Teeth grinding",
+        "Jaw clenching",
+        "Nocturnal bruxism",
+        "Sleep bruxism"
+      ],
+      "taxonomy_ids": [
+        "sym.head_face_nose"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported",
+        "examiner_observed"
+      ],
+      "primary_mode": "examiner_observed",
+      "definition_zh": "磨牙是指睡眠中或清醒時，不自主地上下牙齒摩擦或緊咬的重複性咀嚼肌動作，可能伴隨可聞的磨牙聲，也可能全程無聲。分為睡眠磨牙與清醒磨牙兩型：前者是睡眠中的肌肉活動，在健康人身上也可發生；國際共識聲明（Lobbezoo 等，2018）指出，單純的睡眠磨牙本身不應被視為一種疾病，而後者則多與情緒緊張、專注時的無意識咬牙有關。長期磨牙可造成牙齒磨損、破裂，並使顳顎關節與咀嚼肌長期負荷過度。",
+      "definition_en": "Bruxism is repetitive, involuntary jaw-muscle activity involving clenching or grinding of the teeth, occurring during sleep or while awake, which may or may not produce an audible grinding sound. It is divided into sleep bruxism and awake bruxism: sleep bruxism is jaw-muscle activity during sleep that can occur in otherwise healthy people — the international consensus statement (Lobbezoo et al., 2018) holds that sleep bruxism by itself should not be regarded as a disorder — while awake bruxism is more closely tied to stress, anxiety, or unconscious jaw clenching during concentration. Sustained bruxism can wear or crack the teeth and place chronic load on the temporomandibular joint and jaw muscles.",
+      "patient_words_zh": "「家人說我睡覺磨牙磨得很大聲」「早上起來下巴很痠、太陽穴也會痛」「感覺牙齒越磨越短」「緊張的時候會不自覺咬緊牙關」「枕邊人說我半夜咬牙咬得很用力」",
+      "patient_words_en": "\"My family says I grind my teeth really loudly at night\", \"I wake up with a sore jaw and my temples hurt\", \"My teeth feel like they're getting shorter\", \"When I'm stressed I catch myself clenching my jaw\", \"My partner says I grind hard in my sleep\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": false,
+          "why": "已由 taxonomy_ids 定位於「頭面(鼻口喉)症狀」(sym.head_face_nose)，無需再細分部位"
+        },
+        "quality": {
+          "applicable": false,
+          "why": "symptom_quality 為疼痛性質詞彙，不適用"
+        },
+        "laterality": {
+          "applicable": false,
+          "why": "磨牙為雙側咀嚼肌同動作，無側性意義"
+        },
+        "timing": {
+          "applicable": true,
+          "vocabulary": "symptom_timing",
+          "diagnostic_note_zh": "夜間睡眠中發生屬睡眠磨牙(sleep bruxism)，多在淺睡期出現；清醒時發生多與情緒緊張、專注咬牙有關(awake bruxism)，兩者機轉與伴隨情形不同"
+        },
+        "severity": {
+          "applicable": false,
+          "why": "實例值，屬病例層（§8）"
+        },
+        "duration": {
+          "applicable": false,
+          "why": "實例值，屬病例層（§8）"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "時間",
+          "why": "夜間睡眠中磨牙(睡眠磨牙)與清醒時咬牙(清醒磨牙)機轉不同，前者多在淺睡期出現，後者常與專注、緊張時段相關"
+        },
+        {
+          "dimension": "誘因",
+          "why": "情緒壓力、焦慮、咖啡因、酒精、吸菸與部分藥物(如選擇性血清素回收抑制劑)皆可能誘發或加重磨牙"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "晨起下顎痠痛、顳部頭痛、牙齒敏感或可見磨損提示磨牙已造成負荷；打鼾、目睹呼吸暫停、白天嗜睡則需一併評估睡眠呼吸障礙"
+        },
+        {
+          "dimension": "病程",
+          "why": "新發磨牙需留意是否與近期新增藥物或生活壓力事件相關；長期反覆者則著重牙科與顳顎關節的累積性影響"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Timing",
+          "why": "Sleep bruxism during nocturnal sleep and awake bruxism during wakefulness differ in mechanism — the former often occurs in light sleep stages, the latter clusters around periods of concentration or tension"
+        },
+        {
+          "dimension": "Triggers",
+          "why": "Emotional stress, anxiety, caffeine, alcohol, smoking and certain medications (e.g. SSRIs) can trigger or worsen bruxism"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Morning jaw soreness, temporal headache, tooth sensitivity or visible wear indicate a meaningful mechanical load; snoring, witnessed breathing pauses or daytime sleepiness warrant screening for sleep-disordered breathing"
+        },
+        {
+          "dimension": "Course",
+          "why": "New-onset bruxism should prompt a review of recently started medications or acute stress; long-standing recurrent bruxism shifts the focus to cumulative dental and TMJ effects"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "磨牙聲響有力，兼口臭、牙齦腫痛、便秘",
+          "points_to": [
+            "pattern.stomach_heat"
+          ],
+          "distinguishing": "磨牙動作有力、聲響清晰，兼見口臭、牙齦紅腫疼痛、消穀善飢、大便秘結，舌紅苔黃，脈滑數"
+        },
+        {
+          "variant": "磨牙隨情緒緊張焦慮加重，兼脅肋脹悶",
+          "points_to": [
+            "pattern.liver_qi_stagnation"
+          ],
+          "distinguishing": "磨牙在壓力大、情緒抑鬱或焦慮時明顯加重，兼胸脅脹悶、善太息、咽中如有異物感，舌苔薄白，脈弦"
+        },
+        {
+          "variant": "磨牙伴脘腹脹滿、噯腐、不欲飲食",
+          "points_to": [
+            "pattern.food_stagnation"
+          ],
+          "distinguishing": "磨牙多見於飲食積滯之後，兼脘腹脹滿、噯氣酸腐、厭食，大便酸臭，舌苔厚膩，脈滑；兒童尤為常見"
+        },
+        {
+          "variant": "磨牙日久，兼五心煩熱、少寐多夢",
+          "points_to": [
+            "pattern.yin_deficiency"
+          ],
+          "distinguishing": "磨牙病程較長，兼五心煩熱、潮熱盜汗、口燥咽乾、少寐多夢，舌紅少苔，脈細數"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Forceful, audible grinding with halitosis and tender swollen gums",
+          "points_to": [
+            "pattern.stomach_heat"
+          ],
+          "distinguishing": "Forceful grinding with an audible sound, accompanied by bad breath, red, swollen and tender gums, excessive hunger, and constipation; red tongue with yellow coating, slippery rapid pulse"
+        },
+        {
+          "variant": "Grinding worsens with emotional stress or anxiety, with hypochondriac distension",
+          "points_to": [
+            "pattern.liver_qi_stagnation"
+          ],
+          "distinguishing": "Grinding intensifies during stress, low mood or anxiety, with chest and hypochondriac distension, frequent sighing, and a sensation of something stuck in the throat; thin white tongue coating, wiry pulse"
+        },
+        {
+          "variant": "Grinding with epigastric fullness, sour belching and poor appetite",
+          "points_to": [
+            "pattern.food_stagnation"
+          ],
+          "distinguishing": "Grinding often follows a bout of dietary excess, with epigastric and abdominal fullness, sour-smelling belching, poor appetite, and foul-smelling stool; thick greasy tongue coating, slippery pulse — especially common in children"
+        },
+        {
+          "variant": "Long-standing grinding with five-center heat and disturbed sleep",
+          "points_to": [
+            "pattern.yin_deficiency"
+          ],
+          "distinguishing": "A longer-standing pattern of grinding, with five-center heat, tidal fever with night sweats, dry mouth and throat, and restless dream-disturbed sleep; red tongue with little coating, thin rapid pulse"
+        }
+      ],
+      "safety_review_status": "no_specific_red_flags_identified",
+      "safety_review_sources": [
+        "Mayo Clinic, \"Teeth grinding (bruxism) — Symptoms and causes\", https://www.mayoclinic.org/diseases-conditions/bruxism/symptoms-causes/syc-20356095, retrieved 2026-08-24 — lists dental wear/fracture and temporomandibular joint dysfunction as the main complications; no acute or emergent red flag is described",
+        "Lobbezoo F, Ahlberg J, Raphael KG, et al. \"International consensus on the assessment of bruxism: Report of a work in progress.\" J Oral Rehabil. 2018;45(11):837-844 — this international expert-consensus statement, not ICSD-3-TR's own classification text, is the source for the framing that sleep bruxism can occur in otherwise healthy individuals and should not by itself be regarded as a disorder; ICSD-3-TR (AASM, 2023) itself still lists sleep bruxism as a named diagnosis with its own diagnostic criteria under Sleep-Related Movement Disorders"
+      ],
+      "safety_flags": [],
+      "red_flags_zh": [],
+      "red_flags_en": [],
+      "sources": [
+        "Lobbezoo F, Ahlberg J, Raphael KG, et al. International consensus on the assessment of bruxism: Report of a work in progress. J Oral Rehabil. 2018;45(11):837-844.",
+        "International Classification of Sleep Disorders, 3rd Edition, Text Revision (ICSD-3-TR). American Academy of Sleep Medicine, 2023 — sleep bruxism diagnostic criteria.",
+        "Mayo Clinic, \"Teeth grinding (bruxism) — Symptoms and causes\", https://www.mayoclinic.org/diseases-conditions/bruxism/symptoms-causes/syc-20356095, retrieved 2026-08-24.",
+        "中醫內科學／中醫兒科學 通行教材內容 —— 磨牙之胃熱、食積、肝鬱、陰虛辨證",
+        "本 repo 既有卡片：pattern_library 各證型 key_signs_zh／tongue_zh／pulse_zh 對照"
+      ],
+      "field_sources": {
+        "definition_zh/en": "International consensus definition of bruxism (Lobbezoo et al. 2018) — including the 'not itself a disorder' framing for sleep bruxism in otherwise healthy individuals — plus ICSD-3-TR (AASM 2023) for the sleep bruxism diagnostic-entity framing",
+        "inquiry_zh/en 伴隨症": "OSA-bruxism association is included as a screening question only (evidence on the association is mixed per recent meta-analyses), not asserted as a causal or diagnostic claim",
+        "differentiation_zh/en": "中醫內科學／中醫兒科學 磨牙辨證(胃熱、食積、肝鬱、陰虛)內容 + 本 repo pattern_library 各證型 key_signs_zh／tongue_zh／pulse_zh 對照，逐條核對一致",
+        "safety_review_sources": "Mayo Clinic patient-facing complications list + Lobbezoo et al. 2018 international consensus framing of sleep bruxism as occurring in otherwise-healthy individuals and not itself a disorder — checked and found no disease-specific acute red flag for bruxism itself"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "sym.five_center_heat",
+      "name_zh": "五心煩熱",
+      "name_en": "Five-center heat",
+      "pinyin": "wu xin fan re",
+      "pinyin_toned": "wǔ xīn fán rè",
+      "aliases_zh": [
+        "手足心熱",
+        "五心熱",
+        "掌心足心熱"
+      ],
+      "aliases_en": [
+        "Heat in the palms and soles",
+        "Five-palm heat",
+        "Hot palms and soles"
+      ],
+      "taxonomy_ids": [
+        "sym.general_limb"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported"
+      ],
+      "primary_mode": "patient_reported",
+      "definition_zh": "病人自覺兩手心、兩足心與胸中發熱、煩躁不安，合稱「五心」，是一個持續或反覆存在的主觀熱感，不一定伴隨體表可測得的體溫升高，也不一定伴隨出汗或面部潮紅。這一點是它與潮熱（陣發性、常伴汗出與面赤、數分鐘內緩解的發作）和盜汗（睡中汗出、醒則汗止）最根本的差別——潮熱與盜汗是「事件」，五心煩熱是持續存在的「感覺」，三者常同時出現在同一個陰虛病人身上，但各自是獨立的觀察項。西醫確有描述相近現象的命名詞彙——「灼足症候群」（burning feet syndrome，又稱 Grierson-Gopalan syndrome），指足底反覆或持續的灼熱感，可延伸至足踝、小腿；神經科文獻亦有「burning hands and feet」一詞，描述手足同時灼熱，常見於小纖維神經病變等情況。但其範圍與中醫「五心煩熱」不完全重疊：西醫命名詞彙以足部為核心，較少把「兩掌心、兩足心、胸中」三處合併描述為單一症狀，且臨床上多伴隨感覺過敏、血管舒縮性排汗等可觀察徵象，指向周邊神經或血管病因的鑑別方向；中醫「五心煩熱」則以純粹主觀熱感為特徵，不要求客觀神經或血管徵象，且在陰虛證的臟腑辨證（腎陰虛、肝陰虛、虛火上炎等）中是核心、高頻使用的辨證依據，臨床份量遠大於其在西醫文獻中相對邊緣的位置。故本卡 tradition 標為 both。",
+      "definition_en": "The patient's own sense of heat and restlessness in both palms, both soles, and the chest — the \"five centers\" — as a persistent or recurring subjective sensation, not necessarily accompanied by a measurable rise in surface temperature, sweating, or facial flushing. This is what separates it most fundamentally from a hot flash (a paroxysmal episode, usually with sweating and flushing, resolving within minutes) and from night sweats (sweating during sleep that stops on waking): hot flashes and night sweats are events, five-center heat is a standing sensation. All three commonly occur together in the same Yin-deficient patient but are independent observations. Biomedicine does have a named term for a closely related phenomenon — burning feet syndrome, also called Grierson-Gopalan syndrome, a recurring or persistent burning sensation in the soles that can extend to the ankles or lower legs; neurology literature also uses \"burning hands and feet\" for simultaneous burning in both hands and feet, commonly seen with small-fiber neuropathy and related conditions. Its scope does not fully overlap with five-center heat, though: the biomedical term centers on the feet and rarely groups palms, soles and chest together as one symptom, and it is typically accompanied by observable findings such as hyperesthesia or vasomotor sweating that point toward a peripheral-nerve or vascular differential; five-center heat, by contrast, is characterized by a purely subjective heat sensation without a requirement for objective neurological or vascular findings, and it functions as a core, high-frequency diagnostic marker within TCM's Yin-deficiency pattern differentiation (Kidney Yin deficiency, Liver Yin deficiency, deficiency-fire flaring, etc.) — carrying far more clinical weight there than its comparatively marginal position in the biomedical literature. This is why this card's tradition is marked both.",
+      "patient_words_zh": "「手心腳心熱熱的，像裡面有火」「晚上睡覺手腳要伸到被子外面才舒服」「不是流汗，就是覺得裡面在發燙，煩得很」「胸口悶悶的又有點發熱，坐立不安」「不算發燒，可是就是覺得心裡手心腳心都熱」",
+      "patient_words_en": "\"My palms and soles feel hot, like there's a fire inside\", \"at night I have to stick my hands and feet out from under the covers to feel comfortable\", \"I'm not sweating, I just feel hot inside and it's unsettling\", \"my chest feels stuffy and a bit hot, I can't sit still\", \"it's not really a fever, but my palms, soles and chest all feel warm\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": false,
+          "why": "『五心』（兩掌心、兩足心、胸中）由症狀名稱本身固定，不隨病例變動；symptom_taxonomy 詞彙表也無法表達到掌心/足心這一層級的細節。熱感是否局限於五心或擴及他處，屬伴隨症問診範疇，不設為獨立部位軸"
+        },
+        "quality": {
+          "applicable": false,
+          "why": "symptom_quality 為疼痛性質詞彙（脹/刺/隱/重等），不適用於本症的熱感描述"
+        },
+        "laterality": {
+          "applicable": false,
+          "why": "雙側對稱固定分布（兩掌心、兩足心），無側性辨證意義"
+        },
+        "timing": {
+          "applicable": true,
+          "vocabulary": "symptom_timing",
+          "diagnostic_note_zh": "午後或夜間加重、纏綿持續多屬陰虛常態；若晝夜不分、幾近持續，程度較重，提示虛火已較顯著"
+        },
+        "severity": {
+          "applicable": false,
+          "why": "實例值，屬病例層（§8）"
+        },
+        "duration": {
+          "applicable": false,
+          "why": "實例值，屬病例層（§8）"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "部位",
+          "why": "五心是否全見，或僅見掌心/足心；若熱感擴及全身或僅局限單一肢體，需考慮甲狀腺機能亢進、周邊神經病變等非陰虛病因，不宜逕自歸入本症"
+        },
+        {
+          "dimension": "時間",
+          "why": "午後或夜間加重是陰虛的典型時間分布；若晝夜不分持續存在、程度較重，提示虛火較顯"
+        },
+        {
+          "dimension": "誘因",
+          "why": "熬夜、房勞過度、情緒化火、熱病後期津液未復，是陰液耗傷、五心煩熱加重的常見誘因"
+        },
+        {
+          "dimension": "緩解",
+          "why": "靜臥、避熱、充分休息是否可減輕，有助判斷陰虛程度與是否兼夾虛火上炎"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "腰膝痠軟耳鳴提示腎陰虛；兩目乾澀脅肋隱痛提示肝陰虛；失眠心煩顴紅提示陰虛火旺已較顯著；若兼發熱、體重下降、心悸怕熱，則應優先排除甲狀腺機能亢進等系統性病因，而非逕自歸為單純陰虛"
+        },
+        {
+          "dimension": "病程",
+          "why": "久病傷陰、慢性反覆者多為陰虛本症；短期內新發且合併其他全身症狀者，應優先評估系統性疾病，不宜逕自歸為虛熱"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Location",
+          "why": "Whether all five centers are involved, or only the palms/soles; if the heat sensation spreads over the whole body or is confined to a single limb, hyperthyroidism or peripheral neuropathy should be considered rather than assuming this symptom by default"
+        },
+        {
+          "dimension": "Timing",
+          "why": "Worse in the afternoon or at night is the typical timing pattern of Yin deficiency; if present continuously day and night and more intense, it suggests more prominent deficiency-fire"
+        },
+        {
+          "dimension": "Triggers",
+          "why": "Staying up late, excessive sexual activity, emotional fire, and unrecovered fluids after a febrile illness are common triggers for worsening Yin depletion and five-center heat"
+        },
+        {
+          "dimension": "Relief",
+          "why": "Whether lying still, avoiding heat, or adequate rest reduces it helps gauge the degree of Yin deficiency and whether deficiency-fire is flaring upward"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Sore low back/knees and tinnitus point to Kidney Yin deficiency; dry gritty eyes and dull hypochondriac pain point to Liver Yin deficiency; insomnia, restlessness and malar flushing suggest more prominent deficiency-fire; fever, weight loss, palpitations or heat intolerance should prompt ruling out hyperthyroidism or other systemic disease before attributing this to simple Yin deficiency"
+        },
+        {
+          "dimension": "Course",
+          "why": "Chronic, recurring five-center heat is usually the underlying Yin-deficiency pattern itself; new onset over a short period combined with other systemic symptoms should first be worked up for systemic disease rather than attributed to deficiency-heat by default"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "五心煩熱，腰膝痠軟，眩暈耳鳴健忘",
+          "points_to": [
+            "pattern.kidney_yin_deficiency"
+          ],
+          "distinguishing": "五心煩熱伴腰膝痠軟無力、眩暈耳鳴、健忘，或遺精、經少，舌紅少苔或無苔少津，脈細數尺脈尤甚，多見於久病或年長者腎陰虧虛"
+        },
+        {
+          "variant": "五心煩熱，兩目乾澀，脅肋隱痛，眩暈",
+          "points_to": [
+            "pattern.liver_yin_deficiency"
+          ],
+          "distinguishing": "五心煩熱兼兩目乾澀、脅肋隱痛、眩暈，或視物模糊、咽乾口渴、盜汗，舌紅少苔，脈弦細數，多因情志化火或久病暗耗肝陰"
+        },
+        {
+          "variant": "五心煩熱或低熱，眩暈耳鳴，眼乾或視物模糊，腰膝痠軟",
+          "points_to": [
+            "pattern.liver_kidney_yin_deficiency"
+          ],
+          "distinguishing": "五心煩熱或低熱，兼眩暈耳鳴、眼乾或視物模糊、腰膝痠軟、盜汗、咽乾，舌紅少苔或無苔，脈細數可兼弦，屬肝腎陰液俱虧，較單一臟腑陰虛表現更全面"
+        },
+        {
+          "variant": "五心煩熱較重，幾近持續，顴紅，失眠多夢，心煩不寧",
+          "points_to": [
+            "pattern.yin_deficiency_fire_flaring"
+          ],
+          "distinguishing": "五心煩熱程度較單純陰虛更顯著、更持續，兼顴紅、咽乾口燥、失眠多夢、心煩不寧、腰膝痠軟，舌紅少苔或無苔甚或有裂紋，脈細數，屬陰虛進一步發展、虛火明顯的階段"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Five-center heat with sore weak low back and knees, dizziness, tinnitus and forgetfulness",
+          "points_to": [
+            "pattern.kidney_yin_deficiency"
+          ],
+          "distinguishing": "Five-center heat with sore, weak low back and knees, dizziness, tinnitus and forgetfulness, or spermatorrhea/scanty menses; red tongue with scanty or absent coating and little fluid, thin rapid pulse especially at the Chi (Kidney) position — usually chronic illness or an older patient with depleted Kidney Yin"
+        },
+        {
+          "variant": "Five-center heat with dry gritty eyes, dull hypochondriac pain and dizziness",
+          "points_to": [
+            "pattern.liver_yin_deficiency"
+          ],
+          "distinguishing": "Five-center heat with dry gritty eyes, dull hypochondriac pain and dizziness, possibly blurred vision, dry throat and thirst, night sweats; red tongue with little coating, thready wiry rapid pulse — often from emotional fire or chronic illness quietly consuming Liver Yin"
+        },
+        {
+          "variant": "Five-center heat or low-grade fever with dizziness and tinnitus, dry or blurred eyes, sore weak low back and knees",
+          "points_to": [
+            "pattern.liver_kidney_yin_deficiency"
+          ],
+          "distinguishing": "Five-center heat or low-grade fever with dizziness and tinnitus, dry or blurred eyes, sore weak low back and knees, night sweats and dry throat; red tongue with little or no coating, thready rapid pulse possibly wiry — combined Liver-Kidney Yin depletion, broader than either organ's Yin deficiency alone"
+        },
+        {
+          "variant": "More pronounced, nearly continuous five-center heat, malar flushing, insomnia with excessive dreaming, restlessness",
+          "points_to": [
+            "pattern.yin_deficiency_fire_flaring"
+          ],
+          "distinguishing": "Five-center heat that is more pronounced and more constant than in simple Yin deficiency, with malar flushing, dry throat and mouth, insomnia with excessive dreaming, restlessness, and sore weak low back and knees; red tongue with scanty or absent coating sometimes cracked, thin rapid pulse — a more advanced stage of Yin deficiency with prominent deficiency-fire"
+        }
+      ],
+      "safety_review_status": "no_specific_red_flags_identified",
+      "safety_review_sources": [
+        "中醫內科學／中醫診斷學 通行教材內容 —— 陰虛證五心煩熱的定義與臟腑辨證",
+        "本 repo data/pathology/pattern_library.json：pattern.yin_deficiency、pattern.kidney_yin_deficiency、pattern.liver_yin_deficiency、pattern.liver_kidney_yin_deficiency、pattern.yin_deficiency_fire_flaring 的 key_signs／mechanism——確認五心煩熱是這一系列陰虛證型共有、非特異性的表現，不是任一證型獨有的警示徵象",
+        "WebSearch 查核（2026-08-24）：西醫『灼足症候群』（burning feet syndrome / Grierson-Gopalan syndrome）文獻本身未將此列為獨立紅旗症狀清單項目，其常見病因（糖尿病周邊神經病變、B12 缺乏、酒精性神經病變、尿毒症等）屬鑑別診斷方向，而非本症本身共有的警示徵象；紅斑性肢痛症、甲狀腺機能亢進亦同屬鑑別方向而非紅旗",
+        "本 repo 既有卡片 sym.hot_flash、sym.night_sweats 的安全審查已涵蓋陣發性潮紅與夜間盜汗相關的甲狀腺／結核／淋巴瘤紅旗——五心煩熱常與兩者同時出現，但本身不是這些紅旗清單的獨立來源"
+      ],
+      "safety_flags": [],
+      "red_flags_zh": [],
+      "red_flags_en": [],
+      "sources": [
+        "中醫內科學／中醫診斷學 通行教材內容 —— 陰虛證五心煩熱的定義、臟腑辨證與鑑別",
+        "本 repo data/pathology/pattern_library.json：pattern.kidney_yin_deficiency · pattern.liver_yin_deficiency · pattern.liver_kidney_yin_deficiency · pattern.yin_deficiency_fire_flaring 的 key_signs_zh/en、tongue_zh/en、pulse_zh/en、mechanism_zh/en",
+        "本 repo 既有卡片 data/symptoms/symptoms.json：sym.hot_flash、sym.night_sweats（其 differentiation_zh 已使用『五心煩熱』一詞描述腎陰虛／陰虛變證，本卡與之區隔為獨立觀察項並互相參照）",
+        "WebSearch 背景查核（2026-08-24）：Me & Qi — \"Heat Sensation In Palms\" / \"Five Palm Heat\" (https://www.meandqi.com/tcm-education-center/symptoms-list/five_palm_heat)，用於確認中醫本症的臨床定義與慣用描述",
+        "WebSearch 查核（2026-08-24）：Cleveland Clinic — \"Burning Feet (Grierson-Gopalan) Syndrome\" (https://my.clevelandclinic.org/health/symptoms/17773-burning-feet-syndrome)；Wikipedia — \"Burning feet syndrome\" (https://en.wikipedia.org/wiki/Burning_feet_syndrome)；用於確認西醫確有命名詞彙描述足部灼熱這一現象",
+        "WebSearch 查核（2026-08-24）：Neurology 期刊 \"Clinical Reasoning: Burning hands and feet\" (https://www.neurology.org/doi/10.1212/WNL.0000000000001559)；PubMed \"Neurological manifestations in chronic mountain sickness: the burning feet-burning hands syndrome\" (https://pubmed.ncbi.nlm.nih.gov/10990502/)；用於確認神經科文獻亦以『burning hands and feet』描述手足同時灼熱的現象，並釐清其與五心煩熱在範圍上的異同"
+      ],
+      "field_sources": {
+        "definition_zh/en": "中醫內科學／中醫診斷學 通行教材對陰虛證五心煩熱的定義；WebSearch 查核確認西醫對相近現象確有命名詞彙（burning feet syndrome / Grierson-Gopalan syndrome，以及神經科文獻的 burning hands and feet），但範圍以足部為核心、多伴客觀神經或血管徵象，與中醫『五心煩熱』的純主觀、掌心足心胸中三合一描述不完全重疊，據此將 tradition 標為 both",
+        "differentiation_zh/en": "本 repo pattern_library.json 各證型 key_signs_zh/en、tongue_zh/en、pulse_zh/en 對照",
+        "safety_review": "見 safety_review_sources 逐條列出的來源"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "sym.hair_loss",
+      "name_zh": "落髮",
+      "name_en": "Hair loss",
+      "pinyin": "luo fa",
+      "pinyin_toned": "luòfà",
+      "aliases_zh": [
+        "脫髮",
+        "掉髮",
+        "頭髮稀疏",
+        "禿頭"
+      ],
+      "aliases_en": [
+        "Alopecia",
+        "Hair shedding",
+        "Hair thinning",
+        "Balding"
+      ],
+      "taxonomy_ids": [
+        "sym.skin"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported",
+        "examiner_observed"
+      ],
+      "primary_mode": "examiner_observed",
+      "definition_zh": "頭皮毛髮較平常明顯減少或脫落，可能表現為瀰漫性稀疏、局部邊界清楚的圓形斑塊，或髮際線後退。它是一個外觀與病史層面的觀察，不是診斷——同樣的落髮外觀底下可能是雄性禿、圓禿、休止期脫髮、甲狀腺疾病或營養缺乏等完全不同的病因，卡片記錄的是「該問什麼、觀察什麼」，不是結論。",
+      "definition_en": "A noticeable decrease in scalp hair density, or an area of hair shedding, beyond what is normal for the person — diffuse thinning, one or more sharply demarcated round bald patches, or a receding hairline. It is an observation of appearance and history, not a diagnosis — the same visible hair loss can sit under androgenetic alopecia, alopecia areata, telogen effluvium, thyroid disease or nutritional deficiency, so this card records what to ask and observe, not a conclusion.",
+      "patient_words_zh": "「洗頭時掉一大把」「梳子上都是頭髮」「頭頂越來越看得到頭皮」「額頭的髮線後退了」「一塊一塊禿掉，自己都嚇到」「頭髮變細變軟，感覺快沒了」",
+      "patient_words_en": "\"A whole handful comes out when I wash my hair\", \"My comb is covered in hair\", \"I can see more scalp on top now\", \"My hairline has moved back\", \"It fell out in a round patch, it scared me\", \"My hair's gotten thin and soft, like it's disappearing\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": true,
+          "vocabulary": "symptom_taxonomy"
+        },
+        "quality": {
+          "applicable": false,
+          "why": "symptom_quality 為疼痛性質詞彙，不適用；落髮的辨證關鍵在毛髮外觀（稀疏變細／成把脫落／邊界清楚的圓形斑塊）與頭皮本身狀態（乾燥搔癢／油膩瘙癢／紅腫灼熱），該軸不在此詞彙表"
+        },
+        "laterality": {
+          "applicable": true,
+          "vocabulary": "symptom_laterality",
+          "diagnostic_note_zh": "單一或多發邊界清楚的局部圓形斑塊多見於圓禿；雙側對稱瀰漫性稀疏多見於雄性禿或全身性病因（甲狀腺、營養、休止期脫髮等）"
+        },
+        "timing": {
+          "applicable": true,
+          "vocabulary": "symptom_timing",
+          "diagnostic_note_zh": "持續漸進多屬雄性禿；陣發／突發性成片脫落多屬圓禿或休止期脫髮"
+        },
+        "severity": {
+          "applicable": false,
+          "why": "實例值，屬病例層（§8）"
+        },
+        "duration": {
+          "applicable": false,
+          "why": "實例值，屬病例層（§8）"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "部位",
+          "why": "瀰漫全頭或局部圓形斑塊——前額髮際線後退、頭頂稀疏提示雄性禿；單一或多發邊界清楚的圓形脫髮區提示圓禿"
+        },
+        {
+          "dimension": "性質",
+          "why": "是逐漸變細稀疏，還是成把明顯脫落；頭皮本身乾燥脫屑、油膩瘙癢或紅腫灼熱，決定辨證方向"
+        },
+        {
+          "dimension": "時間",
+          "why": "是否在感冒高燒、手術、生產或劇烈精神壓力後約二至三個月開始明顯掉髮，提示休止期脫髮"
+        },
+        {
+          "dimension": "程度",
+          "why": "每日掉髮量是否明顯增加（洗頭、梳頭時成把脫落），脫髮範圍是否持續擴大"
+        },
+        {
+          "dimension": "誘因",
+          "why": "家族禿頭史、近期節食或營養不良、產後、重大疾病或手術、長期焦慮壓力、頻繁染燙拉扯頭髮、特定藥物（如化療藥、抗凝血劑、A酸類）"
+        },
+        {
+          "dimension": "緩解",
+          "why": "誘因移除或壓力緩解後掉髮是否停止；頭皮搔癢、油膩是否隨清潔習慣或飲食調整而改善"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "月經紊亂、怕冷或怕熱、心悸、體重明顯改變、指甲變脆、皮膚乾燥；女性合併多毛、痤瘡；兒童合併頭皮紅腫脫屑"
+        },
+        {
+          "dimension": "病程",
+          "why": "數週內快速進展的局部脫髮，與數年緩慢漸進的瀰漫性稀疏，處置與轉診急迫性完全不同"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Location",
+          "why": "Diffuse across the whole scalp versus a localized round patch — a receding frontal hairline or thinning crown suggests an androgenetic pattern; one or more sharply demarcated round bald patches suggest alopecia areata"
+        },
+        {
+          "dimension": "Quality",
+          "why": "Whether hair is gradually thinning and finer, or coming out in visible clumps; whether the scalp itself is dry and flaking, oily and itchy, or red and burning steers the differentiation"
+        },
+        {
+          "dimension": "Timing",
+          "why": "Whether marked shedding began roughly two to three months after a fever, surgery, childbirth or major emotional stress — this pattern points to telogen effluvium"
+        },
+        {
+          "dimension": "Severity",
+          "why": "Whether daily hair loss is clearly increased (clumps coming out when washing or combing), and whether the bald area is still expanding"
+        },
+        {
+          "dimension": "Triggers",
+          "why": "Family history of pattern baldness, recent crash dieting or malnutrition, postpartum state, major illness or surgery, chronic anxiety or stress, frequent dyeing/perming or hair-pulling styling, specific medications (chemotherapy, anticoagulants, retinoids)"
+        },
+        {
+          "dimension": "Relief",
+          "why": "Whether shedding stops once the trigger resolves or stress eases; whether scalp itching or oiliness improves with a change in washing habits or diet"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Menstrual irregularity, cold or heat intolerance, palpitations, marked weight change, brittle nails, dry skin; hirsutism or acne in women; scalp redness and scaling in children"
+        },
+        {
+          "dimension": "Course",
+          "why": "Rapidly progressive localized hair loss over weeks versus slow diffuse thinning over years call for very different management and referral urgency"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "頭髮乾枯稀疏，頭皮乾燥搔癢，病程遷延反覆",
+          "points_to": [
+            "pattern.blood_deficiency_wind_dryness"
+          ],
+          "distinguishing": "毛髮失血液濡養而枯槁易斷，頭皮乾燥脫屑、瘙癢明顯，病程遷延反覆發作，兼面色萎黃、頭暈眼花"
+        },
+        {
+          "variant": "頭髮日漸稀疏早白，伴齒搖健忘",
+          "points_to": [
+            "pattern.kidney_essence_deficiency"
+          ],
+          "distinguishing": "毛髮由精血所化，精不足則髮失所養而漸禿早白，兼健忘、腰膝痠軟、齒搖，多見於年長或久病者"
+        },
+        {
+          "variant": "頭皮油膩，頭髮油亮易斷脫落",
+          "points_to": [
+            "pattern.damp_heat_spleen_stomach"
+          ],
+          "distinguishing": "濕熱上蒸，頭皮油膩瘙癢、頭髮易斷易脫，兼口苦口黏、脘腹痞悶、大便黏滯不爽"
+        },
+        {
+          "variant": "病後或產後頭髮大量脫落",
+          "points_to": [
+            "pattern.qi_blood_deficiency"
+          ],
+          "distinguishing": "氣血兩虛，髮失所養而大量脫落，兼神疲乏力、面色淡白或萎黃、心悸失眠"
+        },
+        {
+          "variant": "情緒抑鬱後突發邊界清楚的圓形禿斑",
+          "points_to": [
+            "pattern.liver_qi_stagnation"
+          ],
+          "distinguishing": "肝鬱氣滯，氣血不能上榮頭皮而突發局限性脫髮，兼情志抑鬱、胸脅脹悶、善太息"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Dry, thinning hair with a dry, itchy scalp, a protracted and relapsing course",
+          "points_to": [
+            "pattern.blood_deficiency_wind_dryness"
+          ],
+          "distinguishing": "Hair lacking nourishment from blood becomes dry and brittle; the scalp is dry, flaking and markedly itchy, with a protracted, relapsing course, and a sallow complexion with dizziness and blurred vision"
+        },
+        {
+          "variant": "Gradually thinning, prematurely greying hair with loose teeth and forgetfulness",
+          "points_to": [
+            "pattern.kidney_essence_deficiency"
+          ],
+          "distinguishing": "Hair is formed from essence and blood; when essence is depleted the hair loses its nourishment and thins and greys early, with forgetfulness, weak aching low back and knees, and loosening teeth — usually seen in older or chronically ill patients"
+        },
+        {
+          "variant": "Oily scalp with greasy, easily-broken, shedding hair",
+          "points_to": [
+            "pattern.damp_heat_spleen_stomach"
+          ],
+          "distinguishing": "Damp-heat steaming upward makes the scalp oily and itchy with hair that breaks and sheds easily, together with a bitter, sticky taste in the mouth, epigastric fullness, and sticky, unsatisfying stool"
+        },
+        {
+          "variant": "Heavy hair shedding after an illness or childbirth",
+          "points_to": [
+            "pattern.qi_blood_deficiency"
+          ],
+          "distinguishing": "Qi and blood are both depleted so the hair loses its nourishment and sheds heavily, with fatigue, a pale or sallow complexion, and palpitations with poor sleep"
+        },
+        {
+          "variant": "A sudden, sharply demarcated round bald patch after emotional distress",
+          "points_to": [
+            "pattern.liver_qi_stagnation"
+          ],
+          "distinguishing": "Liver qi stagnation prevents qi and blood from reaching the scalp, producing a sudden localized patch of hair loss, with emotional depression, chest and rib-side distension, and frequent sighing"
+        }
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "Dakkak M, Forde KM, Lanney H. Hair Loss: Diagnosis and Treatment. Am Fam Physician. 2024;110(3):243-250 (PMID 39283847) — 瘢痕性禿髮以毛囊口消失為判斷依據、休止期脫髮誘發事件後約三個月開始明顯掉髮",
+        "Chronological association between alopecia areata and autoimmune thyroid diseases: a systematic review and meta-analysis (PubMed 31197884) — 圓禿與甲狀腺自體抗體（非已確診甲狀腺疾病本身）盛行率較高相關，證據不支持對單純圓禿常規篩檢甲狀腺功能，僅在合併其他甲狀腺症狀時評估較合理",
+        "中醫外科學／中醫皮膚科學 通行教材 —— 油風（脫髮）辨證分型"
+      ],
+      "safety_flags": [],
+      "red_flags_zh": [
+        "頭皮伴隨紅腫、脫屑、疼痛灼熱，毛囊口消失（毛孔看不到）→ 提示瘢痕性禿髮，毛囊一旦被破壞即不可逆，需儘早轉診皮膚科",
+        "數週內出現邊界清楚的圓形或橢圓形禿斑、頭皮外觀正常（無疤痕、無明顯紅腫）→ 提示圓禿；圓禿與甲狀腺自體抗體（如甲狀腺過氧化物酶抗體）盛行率較高相關，但與臨床已確診甲狀腺疾病本身的關聯證據較弱——若同時有怕冷／怕熱、心悸、體重明顯改變等甲狀腺相關症狀，評估甲狀腺功能才合理；單純圓禿本身不建議常規甲狀腺篩檢",
+        "落髮合併不明原因體重減輕、發燒、關節痛、皮疹（尤其顴部或日曬部位紅斑）→ 需排除全身性紅斑狼瘡等結締組織病",
+        "女性落髮合併月經紊亂、明顯痤瘡、多毛、聲音低沉等雄性化徵象 → 需評估高雄激素狀態",
+        "兒童頭皮局部脫髮伴斷髮、頭皮屑、搔癢 → 需排除頭癬（黴菌感染）",
+        "兒童或青少年脫髮區形狀不規則、髮長參差不齊 → 提示拔毛癖，需一併評估心理狀態"
+      ],
+      "red_flags_en": [
+        "Scalp redness, scaling, pain or burning with loss of visible follicular openings → suggests scarring (cicatricial) alopecia; once follicles are destroyed the loss is permanent, refer to dermatology promptly",
+        "A sharply demarcated round or oval bald patch appearing over weeks with an otherwise normal (non-scarred, non-inflamed) scalp → suggests alopecia areata, which is associated with a higher prevalence of thyroid autoantibodies (e.g. anti-TPO); the evidence for an association with diagnosed thyroid disease itself is weaker — thyroid function testing is reasonable when other thyroid symptoms are also present (cold/heat intolerance, palpitations, marked weight change), not as a routine screen for isolated alopecia areata alone",
+        "Hair loss with unexplained weight loss, fever, joint pain, or a rash (especially a malar or sun-exposed distribution) → raises concern for systemic lupus erythematosus or another connective-tissue disease",
+        "Hair loss in a woman with menstrual irregularity, marked acne, hirsutism, or voice deepening → warrants evaluation for an androgen-excess state",
+        "Localized scalp hair loss in a child with broken hair shafts, scaling and itching → rule out tinea capitis (fungal infection)",
+        "Irregularly shaped patches with hairs of uneven length in a child or adolescent → suggests trichotillomania; a psychological assessment should accompany the physical exam"
+      ],
+      "sources": [
+        "Dakkak M, Forde KM, Lanney H. Hair Loss: Diagnosis and Treatment. Am Fam Physician. 2024;110(3):243-250（PMID 39283847）—— 瘢痕性禿髮毛囊口消失徵象、休止期脫髮約三個月時間延遲",
+        "Chronological association between alopecia areata and autoimmune thyroid diseases: A systematic review and meta-analysis (PubMed 31197884)（圓禿與甲狀腺自體抗體相關性，非與已確診甲狀腺疾病相關）",
+        "中醫外科學／中醫皮膚科學 通行教材內容 —— 油風（脫髮）辨證分型",
+        "本 repo 既有 pattern_library 各證型 key_signs_zh 對照"
+      ],
+      "field_sources": {
+        "definition_zh/en": "皮膚科學對脫髮的一般描述 + 中醫外科學／皮膚科學 油風定義",
+        "inquiry_zh/en": "中醫皮膚科學 油風辨證問診項目 + 一般皮膚科病史採集常規項目（誘發事件、家族史、藥物史）",
+        "differentiation_zh/en": "中醫外科學／中醫皮膚科學 脫髮辨證分型 + 本 repo pattern_library 各證型 key_signs_zh 對照",
+        "red_flags_zh/en": "見 sources 各條個別出處（瘢痕性禿髮徵象與休止期脫髮時序見 AFP 2024 Dakkak et al.；圓禿與甲狀腺自體抗體之關聯見 PubMed 31197884，已依其原文限定為抗體而非確診疾病、且不建議單純圓禿常規篩檢；紅斑狼瘡、雄性化徵象、頭癬與拔毛癖為一般皮膚科／兒科臨床常識）"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "sym.nocturnal_emission",
+      "name_zh": "遺精",
+      "name_en": "Nocturnal Emission",
+      "pinyin": "yi jing",
+      "pinyin_toned": "yí jīng",
+      "aliases_zh": [
+        "夢遺",
+        "滑精"
+      ],
+      "aliases_en": [
+        "Wet dream (dream-associated emission)",
+        "Spermatorrhea (emission without dreams)"
+      ],
+      "taxonomy_ids": [
+        "sym.male"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported"
+      ],
+      "primary_mode": "patient_reported",
+      "definition_zh": "男性在非性交狀態下精液自行泄出，可發生於睡夢中（夢遺）或清醒、無夢甚至無自覺時（滑精）。它是主訴，不是診斷——青春期後偶發（大致每月一至二次、無伴隨不適）屬正常生理現象；但過於頻繁（如每週數次）、伴隨明顯不適，或發生於已有規律性生活者，則可能指向西醫的內分泌、泌尿生殖道問題或中醫的臟腑失調，本卡記錄的是「該問什麼、指向哪裡」，不是結論。",
+      "definition_en": "Involuntary loss of semen outside of sexual intercourse, occurring either during sleep with dreams (nocturnal emission / \"wet dream\") or without dreams and sometimes without awareness while awake (spermatorrhea). It is a presenting complaint, not a diagnosis — occasional occurrence after puberty (roughly one to two times a month, without distress) is a normal physiological event; frequent occurrence (e.g. several times a week), occurrence alongside troubling accompanying signs, or occurrence in someone with a regular sex life may instead point toward a biomedical endocrine or genitourinary problem or a TCM zang-fu disharmony. This card records what to ask and what it points toward, not a conclusion.",
+      "patient_words_zh": "「最近常常夢遺，一個禮拜好幾次」「不是做那件事也會流出來」「白天坐著也會滑出來，自己都不知道」「會不會是腎虛」「很尷尬，不知道要不要看醫生」「以前一個月一次，現在變得很頻繁」",
+      "patient_words_en": "\"I've been having wet dreams a lot lately, several times a week\", \"It just comes out even when I haven't done anything\", \"It leaks out during the day and I don't even notice\", \"Is this a kidney problem?\", \"It's embarrassing, I don't know if I should see a doctor about it\", \"It used to be once a month, now it's much more often\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": true,
+          "vocabulary": "symptom_taxonomy"
+        },
+        "quality": {
+          "applicable": false,
+          "why": "遺精是精液泄出的事件，不是一種痛感或悶脹感，controlled vocabulary（脹/刺/隱/空/灼等14 值）描述的是疼痛性質，套用在遺精上不成立；有夢/無夢與清醒/睡夢的區別改在 inquiry 的「性質」問診中處理，不進這個受控詞彙"
+        },
+        "laterality": {
+          "applicable": false,
+          "why": "遺精不具側性（無左右之分），symptom_laterality 詞彙表不適用"
+        },
+        "timing": {
+          "applicable": true,
+          "vocabulary": "symptom_timing"
+        },
+        "severity": {
+          "applicable": false,
+          "why": "實例值，屬病例層（§8）"
+        },
+        "duration": {
+          "applicable": false,
+          "why": "實例值，屬病例層（§8）"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "時間",
+          "why": "發生的間隔／頻率是判斷是否偏離生理範圍最重要的一問——每月一至二次通常屬生理性；間隔縮短為每週數次或愈趨頻繁，則提示可能已轉為病理性"
+        },
+        {
+          "dimension": "性質",
+          "why": "睡夢中發生（夢遺）或清醒無夢時發生（滑精）分屬不同病機——夢遺多責之心腎不交或陰虛，滑精多責之腎氣不固"
+        },
+        {
+          "dimension": "誘因",
+          "why": "禁慾時間長短、性刺激、熬夜、飲酒、情緒波動、如廁久蹲等會影響發生頻率，需與病理性遺精區分"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "腰膝痠軟、耳鳴、五心煩熱、盜汗提示腎陰虛；心煩失眠、心悸健忘提示心腎不交；畏寒、小便清長、精液清稀提示腎氣不固；若伴血精、排尿灼痛或發熱，指向感染而非單純遺精"
+        },
+        {
+          "dimension": "緩解",
+          "why": "作息規律、情緒穩定後減少提示功能性；持續不減或漸加重提示需進一步評估"
+        },
+        {
+          "dimension": "病程",
+          "why": "青春期新發、偶發者多為生理性；成年後長期反覆或近期由偶發轉為頻繁者，處置方向不同"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Timing",
+          "why": "The interval between occurrences / how often it occurs is the single most important question for judging whether this has moved outside the normal range — roughly one to two times a month is usually physiological, while an interval shortening to several times a week or an increasing trend suggests it may have become pathological"
+        },
+        {
+          "dimension": "Quality",
+          "why": "Occurring during a dream (nocturnal emission) versus occurring without a dream while awake (spermatorrhea) implicate different mechanisms — dream-associated emission is more often attributed to Heart-Kidney disharmony or Yin deficiency, dreamless emission to Kidney Qi failing to secure"
+        },
+        {
+          "dimension": "Triggers",
+          "why": "Length of abstinence, sexual stimulation, staying up late, alcohol, emotional swings, or prolonged straining on the toilet can all affect frequency and must be distinguished from a pathological pattern"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Sore weak low back/knees, tinnitus, five-center heat and night sweats suggest Kidney Yin deficiency; vexation, insomnia, palpitations and poor memory suggest Heart-Kidney disharmony; cold intolerance, clear frequent urination and thin semen suggest Kidney Qi Not Firm; blood in the emission, burning on urination, or fever point toward infection rather than simple spermatorrhea"
+        },
+        {
+          "dimension": "Relief",
+          "why": "Improvement with regular routine and calmer mood suggests a functional pattern; no improvement or a worsening trend warrants further evaluation"
+        },
+        {
+          "dimension": "Course",
+          "why": "New, occasional occurrence around puberty is usually physiological; long-standing recurrence in adulthood, or a recent shift from occasional to frequent, changes the approach"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "夢遺，兼心煩失眠、心悸健忘、潮熱盜汗",
+          "points_to": [
+            "pattern.heart_kidney_not_communicating"
+          ],
+          "distinguishing": "遺精發生於睡夢中，伴明顯心煩失眠、心悸健忘、腰膝痠軟、潮熱盜汗，甚則口舌生瘡；病機重心在心，非單純腎系表現"
+        },
+        {
+          "variant": "遺精頻作，兼腰膝痠軟、頭暈耳鳴、五心煩熱、盜汗，無明顯心煩失眠",
+          "points_to": [
+            "pattern.kidney_yin_deficiency"
+          ],
+          "distinguishing": "以腎陰虧虛的本臟見症為主——腰膝痠軟、眩暈耳鳴、五心煩熱、盜汗，舌紅少苔、脈細數；心悸失眠等心系表現不突出或不明顯"
+        },
+        {
+          "variant": "滑精（無夢而遺，甚或清醒時精液自流），精液清稀，兼小便頻數清長、畏寒",
+          "points_to": [
+            "pattern.kidney_qi_not_firm"
+          ],
+          "distinguishing": "遺精不因夢而作，甚至白天精液自流不覺，兼小便頻數清長或遺尿、腰膝痠軟，舌淡、脈沉弱，無明顯熱象，與夢遺、陰虛遺精的虛熱表現相反"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Dream-associated emission with vexation, insomnia, palpitations, poor memory, tidal fever and night sweats",
+          "points_to": [
+            "pattern.heart_kidney_not_communicating"
+          ],
+          "distinguishing": "Emission occurs during dreams, with prominent vexation and insomnia, palpitations and poor memory, sore weak low back/knees, tidal fever and night sweats, sometimes mouth/tongue ulcers; the mechanism centers on the Heart, not on Kidney signs alone"
+        },
+        {
+          "variant": "Frequent emission with sore weak low back/knees, dizziness/tinnitus, five-center heat and night sweats, without prominent vexation or insomnia",
+          "points_to": [
+            "pattern.kidney_yin_deficiency"
+          ],
+          "distinguishing": "Dominated by Kidney Yin deficiency's own signs — sore weak low back/knees, dizziness, tinnitus, five-center heat, night sweats, red tongue with scanty coating, thready rapid pulse; Heart-system signs such as palpitations and insomnia are not prominent"
+        },
+        {
+          "variant": "Spermatorrhea without dreams (sometimes leaking unnoticed while awake), thin/watery semen, with frequent clear urination and cold intolerance",
+          "points_to": [
+            "pattern.kidney_qi_not_firm"
+          ],
+          "distinguishing": "Emission is not dream-triggered, may leak even during the day without awareness, with frequent clear urination or enuresis and sore weak low back/knees, pale tongue, deep weak pulse, and no heat signs — the opposite of the deficiency-heat picture in dream-associated or Yin-deficiency emission"
+        }
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "Mayo Clinic — Blood in semen: When to see a doctor",
+        "Sexual Medicine Reviews — \"Nocturnal emissions or wet dreams: modern evidence from a systematic scoping review\" (2026, PMID 41665964)",
+        "中醫內科學／中醫診斷學 通行教材（遺精章節）"
+      ],
+      "safety_flags": [],
+      "red_flags_zh": [
+        "遺精夾帶血絲或呈粉紅／鏽紅色（血精），尤其反覆發生或年齡 40 歲以上者 → 需轉診泌尿科評估攝護腺炎、精囊發炎或其他病因，非單純以遺精論治",
+        "遺精合併排尿灼熱刺痛、頻尿或發燒 → 提示泌尿生殖道感染（尿道炎、攝護腺炎），需就醫評估而非逕行溫補固澀",
+        "遺精合併持續骨盆或會陰疼痛、血尿，或有攝護腺疾病家族史／病史 → 需泌尿科評估"
+      ],
+      "red_flags_en": [
+        "Blood-tinged, pink or rust-colored emission (hematospermia), especially if recurrent or in a man 40 or older → refer for urological evaluation of prostatitis, seminal vesiculitis or other cause rather than treating as simple spermatorrhea",
+        "Emission accompanied by burning or painful urination, urinary frequency, or fever → suggests a genitourinary infection (urethritis, prostatitis) requiring medical evaluation rather than tonifying/astringent treatment alone",
+        "Emission accompanied by persistent pelvic or perineal pain, blood in the urine, or a personal/family history of prostate disease → warrants urological evaluation"
+      ],
+      "sources": [
+        "Mayo Clinic — Blood in semen: When to see a doctor",
+        "Sexual Medicine Reviews — \"Nocturnal emissions or wet dreams: modern evidence from a systematic scoping review\" (2026, PMID 41665964)",
+        "中醫內科學／中醫診斷學 通行教材 —— 遺精之夢遺／滑精辨證",
+        "本 repo 既有卡片：pattern_library 各證型（腎陰虛・腎氣不固・心腎不交）key_signs_zh／supporting_signs_zh 對照"
+      ],
+      "field_sources": {
+        "definition_zh/en": "Sexual Medicine Reviews 系統性回顧（生理性遺精之流行病學）+ 中醫內科學 遺精章節（夢遺／滑精之病名界定）",
+        "patient_words_zh/en": "臨床常見主訴慣用語，非教科書轉寫",
+        "inquiry_zh/en 時間": "Sexual Medicine Reviews 系統性回顧 + ybsite.org 通俗醫學資料所引之生理性頻率概述（每月一至二次），配合中醫內科學對遺精病理頻率之描述交叉核對",
+        "differentiation_zh/en": "中醫內科學／中醫診斷學 遺精辨證 + 本 repo pattern_library 各證型 key_signs_zh／supporting_signs_zh 對照（pattern.kidney_yin_deficiency・pattern.kidney_qi_not_firm・pattern.heart_kidney_not_communicating）",
+        "red_flags_zh/en": "Mayo Clinic — Blood in semen: When to see a doctor（血精、感染徵象之轉診準則）"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "sym.pelvic_pain",
+      "name_zh": "慢性骨盆疼痛",
+      "name_en": "Chronic Pelvic Pain",
+      "pinyin": "man xing gu pen teng tong",
+      "pinyin_toned": "màn xìng gǔ pén téng tòng",
+      "aliases_zh": [
+        "慢性骨盆腔疼痛",
+        "非週期性骨盆疼痛",
+        "骨盆腔慢性疼痛",
+        "下腹持續疼痛（六個月以上）"
+      ],
+      "aliases_en": [
+        "Chronic pelvic pain syndrome",
+        "Non-cyclic pelvic pain",
+        "Long-standing pelvic pain",
+        "Persistent lower abdominal pain (≥ 6 months)"
+      ],
+      "taxonomy_ids": [
+        "sym.pain",
+        "sym.female"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported"
+      ],
+      "primary_mode": "patient_reported",
+      "definition_zh": "骨盆腔或下腹部的持續性或非週期性疼痛，病程達六個月以上，其發作型態不隨月經週期時序變化——不因經前、經期或經後而有固定對應關係。疼痛部位常涉及下腹臍下、腰薦部或臀部，嚴重度足以影響日常功能或促使就醫。這與痛經（sym.dysmenorrhea）不同：痛經的疼痛型態與月經週期時序固定對應（經前、經期或經後發作）；本症狀描述的是不隨週期起伏、且已持續半年以上的疼痛，常見於慢性骨盆腔發炎後遺症、術後或發炎後沾黏、子宮內膜異位症或子宮肌腺症的非週期性疼痛表現、間質性膀胱炎、大腸激躁症等婦科與非婦科病因並存、常需跨科鑑別的情境，亦有相當比例查無單一可解釋之病理。是主訴而非診斷。",
+      "definition_en": "Continuous or noncyclic pain in the pelvis or lower abdomen that has persisted six months or longer, whose pattern shows no fixed relationship to menstrual cycle timing — it is not consistently tied to the interval before, during, or after menses. The pain often localizes to the lower abdomen at or below the umbilicus, the lumbosacral back, or the buttocks, and is severe enough to affect daily function or prompt medical care. This is distinct from dysmenorrhea (sym.dysmenorrhea), whose pain pattern is fixed to cycle timing (onset before, during, or after menses); this symptom describes pain that does not track the cycle and has lasted six months or more, commonly seen with sequelae of chronic pelvic inflammatory disease, post-surgical or post-infectious adhesions, the noncyclic pain of endometriosis or adenomyosis, interstitial cystitis, irritable bowel syndrome, and other overlapping gynecologic and non-gynecologic causes that often require cross-specialty differentiation; in a substantial proportion of cases no single explanatory pathology is found. A presenting complaint, not a diagnosis.",
+      "patient_words_zh": "「骨盆一直悶悶的痛，跟月經沒關係」「不是經期也會痛，已經好幾個月了」「下腹一直脹脹痛痛的，斷斷續續半年多了」「行房的時候會痛」「痛的位置說不清楚，反正整個下面都不舒服」",
+      "patient_words_en": "\"My pelvis just aches, and it's not tied to my period\", \"it hurts even when I'm not on my period — it's been months now\", \"a dull, on-and-off ache down there for over six months\", \"it hurts during sex\", \"I can't really point to where it is — the whole area just feels off\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": true,
+          "vocabulary": "symptom_taxonomy"
+        },
+        "quality": {
+          "applicable": true,
+          "vocabulary": "symptom_quality",
+          "diagnostic_note_zh": "脹痛遇情緒加重屬氣滯 · 刺痛拒按屬血瘀 · 墜痛帶下黃稠屬濕熱 · 隱痛喜按屬虛"
+        },
+        "laterality": {
+          "applicable": true,
+          "vocabulary": "symptom_laterality"
+        },
+        "timing": {
+          "applicable": true,
+          "vocabulary": "symptom_timing"
+        },
+        "severity": {
+          "applicable": false,
+          "why": "實例值，屬病例層（§8）"
+        },
+        "duration": {
+          "applicable": false,
+          "why": "實例值，屬病例層（§8）"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "部位",
+          "why": "正中或單側，單側需考慮附件（卵巢、輸卵管）病變之可能；是否放射至腰薦或大腿內側"
+        },
+        {
+          "dimension": "性質",
+          "why": "脹痛、刺痛、墜痛、隱痛分屬不同病機，也提示發炎、沾黏或虛損等不同方向"
+        },
+        {
+          "dimension": "時間",
+          "why": "是否與月經週期無固定對應（不因經前、經期、經後而有固定型態）是本症與痛經的關鍵區分點；持續性或間歇性"
+        },
+        {
+          "dimension": "誘因",
+          "why": "性交後、久坐久站、排便排尿時、勞累或情緒波動後是否誘發或加重"
+        },
+        {
+          "dimension": "緩解",
+          "why": "熱敷、休息、排便後是否緩解，按之減輕屬虛、拒按屬實"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "異常陰道分泌物、發熱、不正常出血、排尿排便症狀、性交疼痛——紅旗多掛在這一問"
+        },
+        {
+          "dimension": "病程",
+          "why": "本症狀定義要求疼痛已持續六個月以上；新發劇烈疼痛與此慢性型態處置方向完全不同，新發劇痛需優先排除急症（可能是慢性病程上疊加的急性事件）"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Location",
+          "why": "Midline versus one-sided — one-sided pain raises the possibility of adnexal (ovarian, tubal) pathology; whether it radiates to the low back/sacrum or inner thigh"
+        },
+        {
+          "dimension": "Quality",
+          "why": "Distending, stabbing, dragging or dull pain map to different mechanisms and also point toward inflammation, adhesions or deficiency"
+        },
+        {
+          "dimension": "Timing",
+          "why": "Whether the pain has no fixed relationship to menstrual cycle timing (not consistently tied to before/during/after menses) is the key distinction from dysmenorrhea; continuous versus intermittent"
+        },
+        {
+          "dimension": "Triggers",
+          "why": "Whether intercourse, prolonged sitting or standing, bowel movements, urination, exertion or emotional stress provoke or worsen it"
+        },
+        {
+          "dimension": "Relief",
+          "why": "Whether heat, rest, or defecation relieves it; better for pressure suggests deficiency, worse for pressure suggests excess"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Abnormal vaginal discharge, fever, abnormal bleeding, urinary or bowel symptoms, pain with intercourse — most red flags hang off this question"
+        },
+        {
+          "dimension": "Course",
+          "why": "This symptom's definition requires pain persisting six months or longer; a new, severe pain is managed completely differently from this chronic pattern — new severe pain needs an acute emergency ruled out first (it may be an acute event superimposed on the chronic course)"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "脹痛與刺痛並見，痛處固定拒按，情緒不遂時加重",
+          "points_to": [
+            "pattern.qi_stagnation_blood_stasis"
+          ],
+          "distinguishing": "脹痛與刺痛並見，痛處固定拒按，情志不舒時加重，經行夾血塊，舌暗或有瘀點，脈弦澀，多見於病程遷延、已見沾黏或子宮內膜異位症傾向者"
+        },
+        {
+          "variant": "刺痛固定拒按，或觸及包塊，夜間痛甚",
+          "points_to": [
+            "pattern.blood_stasis"
+          ],
+          "distinguishing": "痛處固定不移、拒按，夜間痛甚，或觸及腫塊，唇舌紫暗，多見於盆腔沾黏或子宮內膜異位症之慢性期"
+        },
+        {
+          "variant": "下腹墜痛，帶下黃稠臭穢",
+          "points_to": [
+            "pattern.damp_heat_lower_burner"
+          ],
+          "distinguishing": "下腹墜痛，帶下量多色黃質稠有異味，小便頻急澀痛、尿黃赤，多見於慢性骨盆腔發炎"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Distending pain together with stabbing pain, fixed and worse for pressure, worse with emotional distress",
+          "points_to": [
+            "pattern.qi_stagnation_blood_stasis"
+          ],
+          "distinguishing": "Distending pain together with stabbing pain, fixed in location and worse for pressure, worse with emotional distress, clots in the menstrual flow, dusky tongue or petechiae, wiry-choppy pulse; often seen in a protracted course with developing adhesions or an endometriosis tendency"
+        },
+        {
+          "variant": "Fixed stabbing pain, worse for pressure, or a palpable mass, worse at night",
+          "points_to": [
+            "pattern.blood_stasis"
+          ],
+          "distinguishing": "Fixed, unmoving, worse for pressure and worse at night, sometimes with a palpable mass, dusky lips and tongue; often seen in the chronic phase of pelvic adhesions or endometriosis"
+        },
+        {
+          "variant": "Dragging lower abdominal pain, thick foul-smelling yellow discharge",
+          "points_to": [
+            "pattern.damp_heat_lower_burner"
+          ],
+          "distinguishing": "Dragging pain in the lower abdomen with copious, thick, foul-smelling yellow vaginal discharge, urgent and painful urination, dark yellow urine; often seen with chronic pelvic inflammatory disease"
+        }
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "ACOG Practice Bulletin No. 218 — Chronic Pelvic Pain (Obstetrics & Gynecology, 2020)",
+        "ACOG Practice Bulletin No. 193 — Tubal Ectopic Pregnancy (Obstetrics & Gynecology, 2018)",
+        "CDC Sexually Transmitted Infections Treatment Guidelines, 2021 — Pelvic Inflammatory Disease",
+        "AAFP — Acute Appendicitis: Efficient Diagnosis and Management (American Family Physician, 2018)",
+        "ACOG Practice Bulletin No. 174 — Evaluation and Management of Adnexal Masses (2016, reaffirmed 2021)",
+        "UpToDate — Ovarian and fallopian tube torsion (clinical review)",
+        "SAEM/CDEM M4 curriculum — Ovarian Torsion (emergency medicine teaching resource)"
+      ],
+      "safety_flags": [],
+      "red_flags_zh": [
+        "骨盆疼痛合併懷孕可能（停經、驗孕陽性或未避孕性行為）→ 需優先排除子宮外孕，屬婦科急症",
+        "突發劇烈單側骨盆疼痛，合併噁心嘔吐 → 排除卵巢（附件）扭轉，需緊急超音波評估",
+        "骨盆疼痛合併發熱、異常陰道分泌物 → 排除骨盆腔發炎或輸卵管卵巢膿瘍",
+        "骨盆疼痛合併反彈痛、肌肉防衛，或疼痛轉移至右下腹並伴噁心厭食 → 排除闌尾炎等外科急腹症",
+        "骨盆疼痛合併血尿、血便、不明原因體重減輕、早飽感或反覆嘔吐 → 需進一步評估以排除腸胃道或泌尿道病變",
+        "停經後新發骨盆疼痛，或觸及骨盆腫塊 → 需排除婦科惡性腫瘤"
+      ],
+      "red_flags_en": [
+        "Pelvic pain with possible pregnancy (missed period, positive pregnancy test, or unprotected intercourse) → rule out ectopic pregnancy first, a gynecologic emergency",
+        "Sudden severe one-sided pelvic pain with nausea and vomiting → rule out ovarian (adnexal) torsion, needs urgent ultrasound evaluation",
+        "Pelvic pain with fever and abnormal vaginal discharge → rule out pelvic inflammatory disease or tubo-ovarian abscess",
+        "Pelvic pain with rebound tenderness, guarding, or pain migrating to the right lower quadrant with nausea and loss of appetite → rule out appendicitis or another surgical acute abdomen",
+        "Pelvic pain with hematuria, hematochezia, unexplained weight loss, early satiety, or recurrent vomiting → warrants further evaluation to rule out gastrointestinal or urinary tract pathology",
+        "New-onset pelvic pain after menopause, or a palpable pelvic mass → needs evaluation to rule out gynecologic malignancy"
+      ],
+      "supporting_measurements": [
+        "metric.pain_score"
+      ],
+      "sources": [
+        "ACOG Practice Bulletin No. 218 — Chronic Pelvic Pain (Obstetrics & Gynecology, 2020)（定義：非週期性、≥6個月、部位、嚴重度判準；GI/GU 警示症狀紅旗）",
+        "ACOG Practice Bulletin No. 193 — Tubal Ectopic Pregnancy (Obstetrics & Gynecology, 2018)（子宮外孕紅旗）",
+        "CDC Sexually Transmitted Infections Treatment Guidelines, 2021 — Pelvic Inflammatory Disease（骨盆腔發炎／輸卵管卵巢膿瘍紅旗）",
+        "AAFP — Acute Appendicitis: Efficient Diagnosis and Management (American Family Physician, 2018)（闌尾炎紅旗）",
+        "ACOG Practice Bulletin No. 174 — Evaluation and Management of Adnexal Masses (2016, reaffirmed 2021)（停經後骨盆腫塊／惡性腫瘤紅旗）",
+        "UpToDate — Ovarian and fallopian tube torsion（卵巢扭轉臨床表現）",
+        "SAEM/CDEM M4 curriculum — Ovarian Torsion（急診教學資源，扭轉臨床特徵）",
+        "中醫婦科學／中醫內科學 通行教材 —— 少腹痛、腹痛篇 氣滯血瘀、濕熱分證",
+        "本 repo 既有卡片：sym.dysmenorrhea（週期時序與病程長短區分依據）· pattern_library 各證型 key_signs_zh"
+      ],
+      "field_sources": {
+        "definition_zh/en": "ACOG Practice Bulletin No. 218 對 chronic pelvic pain 的定義（非週期性、病程 ≥ 6 個月、下腹臍下/腰薦/臀部、嚴重度足以影響功能或促使就醫），對照本 repo 既有 sym.dysmenorrhea 定義做週期時序＋病程長短雙重區分。誠實揭露：PB218 本身將定義限定於「非週期性疼痛且無法完全以已知病理解釋」，明言子宮內膜異位症、子宮肌腺症、附件病變等由 ACOG 其他專篇處理；本卡定義只取用 PB218「非週期性 + ≥6個月」兩個判準做為與痛經卡的區隔依據，病因清單（子宮內膜異位症慢性期、沾黏、間質性膀胱炎、大腸激躁症等）屬一般慢性骨盆痛鑑別診斷之常見清單，非宣稱 PB218 本身涵蓋這些病因的完整處置——此點若 Ting 認為需要進一步收窄病因清單或另尋更廣泛涵蓋此清單的來源，請視為待確認事項",
+        "inquiry_zh/en": "中醫婦科學 少腹痛／腹痛問診要點 + ACOG PB218 對非婦科病因（腸胃、泌尿）鑑別提示",
+        "differentiation_zh/en": "中醫婦科學／中醫內科學 少腹痛 氣滯血瘀、濕熱分證 + 本 repo pattern_library 各證型 key_signs_zh 對照。與 sym.dysmenorrhea 之重疊已從 2/3 條收斂為 1/3 條（僅 pattern.blood_stasis 共用，並以慢性固定不移 vs. 經期夾塊描述做區分）",
+        "red_flags_zh/en": "逐條標名：子宮外孕 → ACOG PB193；卵巢扭轉 → UpToDate + SAEM/CDEM；骨盆腔發炎／輸卵管卵巢膿瘍 → CDC STI Treatment Guidelines 2021 PID 篇；闌尾炎 → AAFP 2018 Acute Appendicitis review；腸胃/泌尿警示症狀 → ACOG PB218；停經後骨盆腫塊／惡性腫瘤 → ACOG PB174",
+        "supporting_measurements": "data/clinical_cases/outcome_metrics.json — metric.pain_score（既有通用 0-10 NRS 疼痛量表，未新增）"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     }
   ]
 }
