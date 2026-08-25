@@ -4451,3 +4451,12 @@ Current repo state as of this log:
 - **未解**：Conditions 仍有 western pathology／etiology／risk factors／acupuncture scope 空白 `17／260／44／69`；既有 acute cholecystitis 摘要的「4F」簡化敘述未獲授權覆蓋，本批未把 provenance 當作替舊文字背書。
 
 ---
+# 2026-08-24 — Codex Conditions 心血管官方病因補強 B20
+
+- **範圍**：只補 `cond.atrial_fibrillation`、`cond.myocarditis`、`cond.pericarditis`、`cond.peripheral_arterial_disease`、`cond.atherosclerosis` 原本空白的 `etiology_zh/en`，加入 direct sources 與 provenance；未改既有 pathology、risk factors、red flags、scope、relations 或其他資料線。
+- **數字**：`FULL_DETAIL_CANDIDATE 218→223`、`DETAIL_PARTIAL 287→282`、`SKELETON 0→0`，距 300 尚 `77`；直接來源 `779→789`、有 direct source 的 records `268→273`；空白 etiology `260→255`。
+- **來源與臨床邊界**：使用 NIH/NHLBI 與 NHS，10 個內容頁皆 HTTP 200；AF 分開基質／觸發／血栓風險，心肌炎與心包炎保留感染與免疫等多病因，PAD 分開慢性粥狀硬化與急性肢體缺血，atherosclerosis 分開穩定狹窄與斑塊破裂血栓。
+- **驗證**：dry-run/apply `20 operations / 5 ids / skipped 0 / missing 0`；exact equality 與 record-boundary diff（僅 5 ids、4 預期欄位）PASS；`build-data`、condition standard `505/505`、ratchet、condition sources `789`、relation registry、content-junk、maturity audit、`git diff --check` 均無新增 defect。
+- **未解**：Conditions 仍有 western pathology／etiology／risk factors／acupuncture scope 空白 `17／255／44／69`；既有 myocarditis／pericarditis 摘要中的病因簡化未獲授權覆蓋，本批新增正文不等於替舊敘述背書。
+
+---

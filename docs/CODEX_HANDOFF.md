@@ -1,5 +1,13 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-24] Codex Handoff — Conditions official cardiovascular etiology B20
+
+- **Exact ids / fields**: only `cond.atrial_fibrillation`, `cond.myocarditis`, `cond.pericarditis`, `cond.peripheral_arterial_disease`, and `cond.atherosclerosis`; filled empty bilingual etiology and appended direct sources plus etiology provenance. Existing pathology, risks, red flags, scope, relations, and adjacent datasets were not changed.
+- **Official sources**: NIH/NHLBI and NHS; all ten actual content URLs returned HTTP 200.
+- **Clinical distinctions**: AF substrate versus trigger versus thromboembolic risk; infectious versus immune-mediated myocarditis/pericarditis; chronic atherosclerotic PAD versus acute limb ischemia; and stable narrowing versus acute plaque thrombosis are kept separate.
+- **Measured delta**: maturity `218→223 FULL_DETAIL_CANDIDATE`, `287→282 DETAIL_PARTIAL`, `0→0 SKELETON`, leaving `77` slots to 300; source entries `779→789`, sourced records `268→273`; empty etiology `260→255`.
+- **Validation**: dry-run/apply `20 operations / 5 ids / skipped 0 / missing 0`; exact equality and record-boundary diff; `build-data.js`; condition standard `505/505 clean`; ratchet; condition sources (`789`); relation registry; content junk; maturity audit; and `git diff --check` passed.
+
 ## [2026-08-24] Codex Handoff — Conditions official gastrointestinal etiology B19
 
 - **Exact ids / fields**: only `cond.acute_gastroenteritis`, `cond.acute_cholecystitis`, `cond.diverticular_disease`, `cond.celiac_disease`, and `cond.lactose_intolerance`; filled empty bilingual etiology and appended direct sources plus etiology provenance. Existing pathology, risks, red flags, scope, relations, and adjacent datasets were not changed.

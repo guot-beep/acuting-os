@@ -1,0 +1,67 @@
+{
+  "dataset": "Codex Conditions official cardiovascular etiology B20",
+  "policy": "Fill only currently empty bilingual etiology fields for five cardiovascular Conditions. Preserve existing pathology, risks, red flags, acupuncture scope, relations, and provenance; append direct government sources. Separate causes from triggers and risk factors, and preserve emergency distinctions between chronic substrate and acute decompensation.",
+  "created": "2026-08-24",
+  "fills": {
+    "cond.atrial_fibrillation": {
+      "etiology_zh": "心房顫動通常需要能維持顫動的心房基質與啟動發作的異常電性觸發共同作用。高血壓、冠狀動脈疾病、心臟衰竭、瓣膜病、心肌病、老化及心房擴張可造成纖維化、發炎、壁面伸展與傳導不均；肺靜脈附近的早期搏動或折返電路則常觸發發作。甲狀腺功能亢進、睡眠呼吸中止、肥胖、慢性腎臟或肺病、感染，以及心胸手術後狀態可促成結構或電生理改變。大量飲酒、興奮劑、急性疾病或電解質異常可誘發某次發作，但『誘因』不一定是持續性心房顫動的唯一病因；部分患者即使完整評估仍找不到明顯原因。AF 本身又會造成電性與結構重塑，使之更容易持續。需區分 AF 的形成原因與中風風險因子；診斷 AF 並不自動證明已形成血栓。",
+      "etiology_en": "Atrial fibrillation usually reflects an interaction between an atrial substrate that can sustain fibrillation and abnormal electrical triggers that initiate an episode. Hypertension, coronary disease, heart failure, valve disease, cardiomyopathy, aging, and atrial enlargement can produce fibrosis, inflammation, stretch, and nonuniform conduction; premature activity near the pulmonary veins or re-entry circuits commonly triggers episodes. Hyperthyroidism, sleep apnea, obesity, chronic kidney or lung disease, infection, and the period after cardiothoracic surgery may promote structural or electrophysiologic change. Heavy alcohol exposure, stimulants, acute illness, or electrolyte disturbance can precipitate an episode, but a “trigger” is not necessarily the sole cause of persistent AF, and no obvious cause is found in some patients after evaluation. AF itself then drives electrical and structural remodeling that makes recurrence and persistence more likely. Causes of AF must also be separated from factors used to estimate thromboembolic risk; an AF diagnosis does not by itself prove that a clot is already present.",
+      "sources": [
+        "https://www.nhlbi.nih.gov/health/atrial-fibrillation/causes",
+        "https://www.nhs.uk/conditions/atrial-fibrillation/"
+      ],
+      "field_sources": {
+        "etiology_zh": ["NIH/NHLBI: Atrial Fibrillation Causes and Risk Factors — tissue substrate, electrical triggers, medical, genetic, lifestyle and postoperative contributors (updated 2022-11-30); NHS: Atrial fibrillation — electrical-system, heart, thyroid, kidney, medicine and lifestyle causes (retrieved 2026-08)"],
+        "etiology_en": ["NIH/NHLBI: Atrial Fibrillation Causes and Risk Factors — tissue substrate, electrical triggers, medical, genetic, lifestyle and postoperative contributors (updated 2022-11-30); NHS: Atrial fibrillation — electrical-system, heart, thyroid, kidney, medicine and lifestyle causes (retrieved 2026-08)"]
+      }
+    },
+    "cond.myocarditis": {
+      "etiology_zh": "心肌炎是心肌發炎性損傷的病理診斷，而不是單一病毒病。感染性病因包括多種病毒，較少見者為細菌、真菌與寄生蟲；心肌傷害可來自病原直接感染、宿主免疫反應，或兩者先後作用。非感染性病因包括自體免疫或全身性發炎疾病、嗜酸性球／過敏反應、巨細胞心肌炎、藥物與毒物，以及少數癌症免疫治療或疫苗相關免疫反應；輻射與其他心肌損傷也可呈現類似表型。即使有近期病毒症狀，也不能只靠時間關聯確定特定病原，且不少病例最終仍屬原因不明。不同病因可造成局灶或瀰漫性心肌細胞損傷、傳導系統受累、心律不整與收縮功能下降；嚴重度不與前驅感染症狀強弱平行。心肌炎也須與急性冠心症、壓力型心肌病及遺傳性／其他心肌病區分。",
+      "etiology_en": "Myocarditis is an inflammatory injury pattern of heart muscle, not a single viral disease. Infectious etiologies include many viruses and, less often, bacteria, fungi, and parasites; myocardial damage may reflect direct infection, the host immune response, or both in sequence. Noninfectious etiologies include autoimmune or systemic inflammatory disease, eosinophilic or hypersensitivity reactions, giant-cell myocarditis, medicines and toxins, and uncommon immune reactions associated with cancer immunotherapy or vaccination; radiation and other myocardial injury can produce overlapping phenotypes. A recent viral syndrome does not by timing alone identify a specific pathogen, and many cases remain etiologically unclassified after evaluation. Different causes may produce focal or diffuse myocyte injury, conduction-system involvement, arrhythmia, and impaired contraction, and severity does not reliably track the intensity of the preceding infection. Myocarditis must also be distinguished from acute coronary syndrome, stress cardiomyopathy, and inherited or other cardiomyopathies.",
+      "sources": [
+        "https://www.nhlbi.nih.gov/health/heart-inflammation/causes",
+        "https://www.nhlbi.nih.gov/health/heart-inflammation/myocarditis"
+      ],
+      "field_sources": {
+        "etiology_zh": ["NIH/NHLBI: Heart Inflammation Causes and Risk Factors — infectious, autoimmune, medicine, toxin, cancer-treatment and rare vaccine-associated pathways (updated 2023-10-10); NIH/NHLBI: Myocarditis — variable cause-dependent presentation and need for etiologic evaluation (updated 2023-10-10)"],
+        "etiology_en": ["NIH/NHLBI: Heart Inflammation Causes and Risk Factors — infectious, autoimmune, medicine, toxin, cancer-treatment and rare vaccine-associated pathways (updated 2023-10-10); NIH/NHLBI: Myocarditis — variable cause-dependent presentation and need for etiologic evaluation (updated 2023-10-10)"]
+      }
+    },
+    "cond.pericarditis": {
+      "etiology_zh": "急性心包炎常為特發性或推定病毒感染後發炎；只有在臨床與檢驗支持時才應指定特定病原。其他感染病因包括細菌（某些地區須特別考慮結核）、真菌與寄生蟲。非感染性病因包括 lupus、類風濕性關節炎等自體免疫疾病，心肌梗塞後或心臟手術／胸部創傷後免疫反應，晚期腎功能衰竭的尿毒性心包炎，癌症直接侵犯或轉移、放射治療，以及藥物反應。心肌同時受累稱 myopericarditis／perimyocarditis，與單純心包炎的活動限制及風險不同。復發性心包炎常涉及持續或重新活化的自體發炎機轉，不代表每次復發都是新感染。病因會改變治療與預後，因此高燒、免疫低下、外傷、抗凝治療、大量積液或治療無反應時，不宜只標記為一般病毒性心包炎。",
+      "etiology_en": "Acute pericarditis is often idiopathic or presumed post-viral inflammation; a specific pathogen should be assigned only when the clinical and laboratory evidence supports it. Other infectious causes include bacteria—tuberculosis is important in some settings—fungi, and parasites. Noninfectious etiologies include autoimmune disease such as lupus or rheumatoid arthritis; immune injury after myocardial infarction, cardiac surgery, or chest trauma; uremic pericarditis in advanced kidney failure; direct or metastatic cancer; radiation; and medication reactions. Concurrent myocardial involvement is termed myopericarditis or perimyocarditis and carries activity and risk implications different from isolated pericarditis. Recurrent pericarditis often involves persistent or reactivated autoinflammatory pathways and does not mean each recurrence is a new infection. Because etiology changes treatment and prognosis, high fever, immunosuppression, trauma, anticoagulant use, a large effusion, or failure to improve should not be dismissed as routine viral pericarditis.",
+      "sources": [
+        "https://www.nhlbi.nih.gov/health/heart-inflammation/pericarditis",
+        "https://www.nhs.uk/conditions/pericarditis/"
+      ],
+      "field_sources": {
+        "etiology_zh": ["NIH/NHLBI: Pericarditis and Heart Inflammation Causes — infectious, autoimmune, medicine and systemic etiologies plus tamponade boundary (updated 2023-10-10); NHS: Pericarditis — common viral or uncertain cause and serious chest-pain distinction (retrieved 2026-08)"],
+        "etiology_en": ["NIH/NHLBI: Pericarditis and Heart Inflammation Causes — infectious, autoimmune, medicine and systemic etiologies plus tamponade boundary (updated 2023-10-10); NHS: Pericarditis — common viral or uncertain cause and serious chest-pain distinction (retrieved 2026-08)"]
+      }
+    },
+    "cond.peripheral_arterial_disease": {
+      "etiology_zh": "下肢周邊動脈疾病最常由動脈粥狀硬化造成：含脂質、膽固醇、發炎細胞、纖維組織與鈣的斑塊在動脈壁累積，使管腔逐漸狹窄或閉塞。吸菸、糖尿病、高 LDL、高血壓與慢性腎臟病會促進內皮損傷及斑塊進展，但它們是促成因素，不應被描述為單一機械性阻塞。較少見的慢性 PAD 病因包括血管炎、纖維肌發育不良、血栓傾向、放射或外傷後狹窄，以及其他非粥狀硬化性動脈病。慢性狹窄造成運動時供氧不足與間歇性跛行，進展時可出現靜息痛、潰瘍或壞疽。突然發生的動脈栓塞、斑塊血栓形成或急性原位血栓可造成急性肢體缺血；這是時間敏感的血管急症，不是慢性 PAD 自然『痛得比較嚴重』而已。PAD 也代表全身性動脈粥狀硬化負荷，不能只當局部腿部疾病。",
+      "etiology_en": "Lower-extremity peripheral artery disease is most often caused by atherosclerosis: plaque containing lipid, cholesterol, inflammatory cells, fibrous tissue, and calcium accumulates in arterial walls and progressively narrows or occludes the lumen. Smoking, diabetes, high LDL cholesterol, hypertension, and chronic kidney disease promote endothelial injury and plaque progression, but they are contributors rather than single mechanical obstructions. Less common chronic PAD etiologies include vasculitis, fibromuscular dysplasia, thrombotic disorders, radiation- or trauma-related stenosis, and other nonatherosclerotic arteriopathies. Chronic narrowing produces exercise-related oxygen mismatch and claudication and may progress to rest pain, ulceration, or gangrene. A sudden embolus, plaque thrombosis, or acute in-situ thrombosis can instead cause acute limb ischemia; this is a time-critical vascular emergency, not merely a more painful stage of chronic PAD. PAD also signals systemic atherosclerotic burden and should not be treated as an isolated leg disorder.",
+      "sources": [
+        "https://www.nhlbi.nih.gov/health/peripheral-artery-disease/causes",
+        "https://www.nhs.uk/conditions/peripheral-arterial-disease-pad/"
+      ],
+      "field_sources": {
+        "etiology_zh": ["NIH/NHLBI: Peripheral Artery Disease Causes and Risk Factors — atherosclerotic mechanism and nonatherosclerotic vascular contributors (retrieved 2026-08); NHS: Peripheral arterial disease — lower-limb atheroma, progressive flow restriction and systemic cardiovascular context (reviewed 2026-04-10)"],
+        "etiology_en": ["NIH/NHLBI: Peripheral Artery Disease Causes and Risk Factors — atherosclerotic mechanism and nonatherosclerotic vascular contributors (retrieved 2026-08); NHS: Peripheral arterial disease — lower-limb atheroma, progressive flow restriction and systemic cardiovascular context (reviewed 2026-04-10)"]
+      }
+    },
+    "cond.atherosclerosis": {
+      "etiology_zh": "動脈粥狀硬化是慢性脂質滯留與免疫發炎共同驅動的動脈壁疾病，而不是脂肪被動『黏』在正常血管上。循環中的 apoB-containing lipoproteins（以 LDL 為主）滯留在動脈內膜並發生修飾，會活化內皮、單核球／巨噬細胞與其他免疫反應；巨噬細胞吞噬脂質形成泡沫細胞，平滑肌遷移與基質生成形成纖維帽及壞死核心。高 LDL 是核心致病暴露，吸菸、高血壓、糖尿病、慢性腎臟病、肥胖與全身性發炎會加速內皮功能失調、脂質沉積或斑塊不穩定；年齡與遺傳（如家族性高膽固醇血症、lipoprotein(a)）改變終生累積風險。穩定斑塊可逐步造成血流受限，發炎且薄帽的斑塊也可能突然破裂或糜爛並形成血栓，引發心肌梗塞或缺血性中風。動脈粥狀硬化是 arteriosclerosis 的特定亞型，不能與所有非粥狀硬化性動脈硬化混為一談。",
+      "etiology_en": "Atherosclerosis is a chronic arterial-wall disease driven jointly by retained lipid and immune inflammation, not fat passively “sticking” to an otherwise normal vessel. Circulating apoB-containing lipoproteins, particularly LDL, become retained and modified in the arterial intima, activating endothelium, monocytes and macrophages, and other immune pathways. Macrophage lipid uptake produces foam cells, while smooth-muscle migration and matrix formation contribute to a fibrous cap over a lipid-rich necrotic core. High LDL is a central causal exposure; smoking, hypertension, diabetes, chronic kidney disease, obesity, and systemic inflammation accelerate endothelial dysfunction, lipid deposition, or plaque instability, while age and inherited factors such as familial hypercholesterolemia and lipoprotein(a) shape cumulative lifetime risk. Stable plaques may progressively limit flow, whereas an inflamed thin-cap plaque can rupture or erode and form an acute thrombus, causing myocardial infarction or ischemic stroke. Atherosclerosis is a specific subtype of arteriosclerosis and should not be conflated with every nonatherosclerotic form of arterial stiffening.",
+      "sources": [
+        "https://www.nhlbi.nih.gov/science/experimental-atherosclerosis",
+        "https://www.nhs.uk/conditions/atherosclerosis/"
+      ],
+      "field_sources": {
+        "etiology_zh": ["NIH/NHLBI Laboratory of Experimental Atherosclerosis — circulating LDL retention, macrophage foam cells and plaque biology (retrieved 2026-08); NHS: Atherosclerosis — arterial fatty-deposit narrowing and major risk contributors (reviewed 2026-07-29)"],
+        "etiology_en": ["NIH/NHLBI Laboratory of Experimental Atherosclerosis — circulating LDL retention, macrophage foam cells and plaque biology (retrieved 2026-08); NHS: Atherosclerosis — arterial fatty-deposit narrowing and major risk contributors (reviewed 2026-07-29)"]
+      }
+    }
+  }
+}
