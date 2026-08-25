@@ -1,3 +1,13 @@
+# 2026-08-24 — Codex Conditions 腎臟病因與徵象邊界補強 B29
+
+- **範圍**：只補 `cond.renal_cyst`、`cond.polycystic_kidney_disease`、`cond.iga_nephropathy`、`cond.proteinuria`、`cond.hematuria` 尚缺的 `etiology_zh/en`，追加直接來源與 provenance；未覆蓋既有正文、安全欄、scope、relations 或 ids。
+- **數字**：`FULL_DETAIL_CANDIDATE 258→263`、`DETAIL_PARTIAL 247→242`、`SKELETON 0→0`，距 300 尚 `37`；直接來源 `869→879`、有來源記錄 `309→314`；空白 etiology `215→210`。
+- **來源與邊界**：使用 NIH/NIDDK、NIH/NLM MedlinePlus、NHS 與 NHS Genomics，10 個唯一頁皆 HTTP 200。分清 simple cyst、遺傳 PKD 與 acquired cystic disease；IgA immune-complex disease 與感染 trigger；proteinuria／hematuria 是 finding 而非單一診斷。
+- **驗證**：dry-run/apply `20 operations / 5 ids / skipped 0 / missing 0`；逐欄 equality、逐記錄邊界、`build-data`、condition standard `505/505 clean`、ratchet、sources `879`、relation registry、content-junk、maturity audit、`git diff --check` 均無新增 defect。
+- **未解**：本批未改既有 red flags、risk 或 scope；8 個 frozen control-character 與 formula generic dosage 警告屬其他線且未增加。
+
+---
+
 # 2026-08-24 — Codex Conditions 內分泌代謝官方病因補強 B28
 
 - **範圍**：只補 `cond.gestational_diabetes`、`cond.diabetes_insipidus`、`cond.familial_hypercholesterolemia`、`cond.subacute_thyroiditis`、`cond.hyperuricemia` 尚缺的 `etiology_zh/en`，追加直接來源與 provenance；未覆蓋任何既有正文、安全欄、scope、relation 或 id。

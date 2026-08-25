@@ -1,5 +1,13 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-24] Codex Handoff — Conditions official renal etiology B29
+
+- **Exact ids / fields**: only `cond.renal_cyst`, `cond.polycystic_kidney_disease`, `cond.iga_nephropathy`, `cond.proteinuria`, and `cond.hematuria`; filled absent bilingual etiology and appended direct sources plus provenance. Existing safety content, scope, relations, ids, and adjacent datasets were preserved.
+- **Official sources**: NIH/NIDDK, NIH/NLM MedlinePlus, NHS, and NHS Genomics; ten unique content URLs returned HTTP 200 and every record cross-references two pages.
+- **Clinical distinctions**: simple cyst versus inherited PKD and acquired cystic disease; IgA immune-complex disease versus mucosal infection trigger; proteinuria and hematuria as findings with glomerular, tubular, overflow, postrenal, urologic, and mimic pathways rather than one diagnosis.
+- **Measured delta**: maturity `258→263 FULL_DETAIL_CANDIDATE`, `247→242 DETAIL_PARTIAL`, `0→0 SKELETON`, leaving `37` slots to 300; source entries `869→879`, sourced records `309→314`; empty etiology `215→210`.
+- **Validation**: dry-run/apply `20 operations / 5 ids / skipped 0 / missing 0`; exact equality and record-boundary diff; `build-data.js`; condition standard `505/505 clean`; ratchet; condition sources (`879`); relation registry; content junk; maturity audit; and `git diff --check` passed.
+
 ## [2026-08-24] Codex Handoff — Conditions official endocrine-metabolic etiology B28
 
 - **Exact ids / fields**: only `cond.gestational_diabetes`, `cond.diabetes_insipidus`, `cond.familial_hypercholesterolemia`, `cond.subacute_thyroiditis`, and `cond.hyperuricemia`; filled absent bilingual etiology and appended direct sources plus provenance. Existing content, safety fields, scope, relations, ids, and adjacent datasets were preserved.
