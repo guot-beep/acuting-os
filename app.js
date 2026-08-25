@@ -747,6 +747,39 @@ const ADVERSE_EVENT_INTERVENTION_LABELS = { acupuncture: "針刺 Acupuncture", c
 const ADVERSE_EVENT_SEVERITY_LABELS = { mild: "輕度 Mild", moderate: "中度 Moderate", severe: "重度 Severe" };
 const ADVERSE_EVENT_RESOLUTION_LABELS = { resolved: "已緩解 Resolved", resolving: "緩解中 Resolving", ongoing: "持續中 Ongoing", unknown: "不確定 Unknown" };
 const CONSENT_LABELS = { granted: "已同意 Granted", declined: "婉拒 Declined", pending: "待決 Pending" };
+/* 沿用上次治療的白名單(必須在初始 render() 之前宣告 —— 見上面
+ * AGENT_EXPOSURE_TYPE_LABELS 註解的 boot-order 教訓)。
+ * 鐵則:只列「今天要做的處置」。S/O/A/P、療效、證型、治則、醫囑、下次計畫
+ * 一律不得加入 —— 把上一診的觀察複製成今天的紀錄就是捏造病歷。這條線由
+ * scripts/validate-carry-forward-scope.js 機器守著。
+ *
+ * 方藥(方劑/中藥/西藥)刻意不在這裡 —— 見下面 CARRY_FORWARD_HERB_FIELDS 的
+ * 說明,跟穴位不是同一種風險,不能用同一顆一鍵按鈕無差別帶入。 */
+const CARRY_FORWARD_FIELDS = [
+  { key: "acupointLinks", label: "用穴", link: true },
+  { key: "pointsUsed", label: "用穴(自由文字)" },
+  { key: "retentionMinutes", label: "留針分鐘" },
+  { key: "technique", label: "手法" },
+  { key: "modalities", label: "處置(自由文字)" },
+];
+/* 方藥/西藥的沿用機制刻意獨立於上面那顆按鈕之外(2026-08-25,Ting 覆核
+ * codex/pattern-v2 原案時的裁示):穴位帶錯了,最壞是這次治療沒有精準複製
+ * 上次的穴方——當場可調整。方藥帶錯了,風險是把「上次的處方」原封不動搬進
+ * 一個可能已經改變的用藥/妊娠/安全狀態(病人可能上週開始服用新的西藥、可能
+ * 剛驗出懷孕、可能新增了安全旗標,而這些未必已經反映在病例的其他欄位裡)——
+ * 一鍵無差別帶入等於讓機制替她跳過這次理應重新覆核的安全判斷。
+ * 所以方藥/西藥必須:①與穴位分開一個按鈕(分區確認)、②預設不勾選,且要求
+ * 先勾選一句明確的安全確認句才能按下去(不是預設帶入再讓她事後刪)——見
+ * renderPreviousVisitPanel 的 #carryForwardHerbConfirm/#carryForwardHerbBtn。
+ * medicationLinks/westernMeds 目前沒有 UI 入口用到這個白名單(尚未實作西藥
+ * 沿用),但先放進「需要 opt-in」的分類,免得日後有人直接加進上面的
+ * CARRY_FORWARD_FIELDS 就繞過了這條安全線——scripts/validate-carry-forward-scope.js
+ * 會擋。 */
+const CARRY_FORWARD_HERB_FIELDS = [
+  { key: "formulaLinks", label: "方劑", link: true },
+  { key: "herbLinks", label: "中藥", link: true },
+  { key: "formulaHerbs", label: "方藥(自由文字)" },
+];
 const AVS_CATEGORY_LABELS = {
   aftercare: "治療後注意",
   lifestyle: "作息生活",
@@ -9070,6 +9103,63 @@ function truncateText(text, maxLen) {
   return s.length > maxLen ? s.slice(0, maxLen).trim() + "…" : s;
 }
 
+/* 沿用上次治療 —— 複診最大的速度缺口:同一個病人同一組處方,過去每次都要
+ * 從 picker 重挑 7-8 個穴。
+ *
+ * 鐵則一:只帶「今天要做的處置」,不帶任何判斷與所見。
+ *   S/O/A/P、療效與判定、證型、治則、醫囑、下次計畫、不良事件一律不碰 ——
+ *   把上一診的觀察複製成今天的紀錄就是捏造病歷,那比多打幾個字嚴重得多。
+ *   證型與治則刻意排除:它們是每一診要重新確認的判斷,預填等於替她下診斷。
+ * 鐵則二:只填目前空著的欄位,已經打過的一個字都不覆寫(只加深,不刪除)。
+ * 鐵則三:逐欄回報填了什麼、跳過什麼 —— 沉默的批次動作最容易讓人以為
+ *   「都帶進來了」,然後漏掉那個因為已有內容而被跳過的欄位。
+ *
+ * carryForwardFields 是共用核心,carryForwardTreatment(穴位/處置,一鍵)與
+ * carryForwardHerbs(方藥,需先勾選安全確認才能呼叫到——見
+ * renderPreviousVisitPanel)各自只餵自己的白名單進來,兩邊都不直接碰
+ * prev.subjective 之類的禁令欄位。 */
+function carryForwardFields(prev, fields) {
+  const filled = [], skipped = [];
+  for (const f of fields) {
+    const raw = prev[f.key];
+    const vals = Array.isArray(raw) ? raw.filter(Boolean) : String(raw ?? "").trim();
+    if (Array.isArray(vals) ? !vals.length : !vals) continue;   // 上次也沒填 → 沒東西可帶
+    const ctrl = f.link ? linkPickerControllers[f.key] : null;
+    if (ctrl) {
+      if (ctrl.getValues().length) { skipped.push(f.label); continue; }
+      ctrl.setValues(vals);
+      filled.push(`${f.label} ${vals.length} 項`);
+    } else {
+      const el = soapForm.elements[f.key];
+      if (!el) continue;
+      if (String(el.value || "").trim()) { skipped.push(f.label); continue; }
+      el.value = vals;
+      filled.push(f.label);
+    }
+  }
+  return { filled, skipped };
+}
+
+function carryForwardTreatment(prev) {
+  const { filled, skipped } = carryForwardFields(prev, CARRY_FORWARD_FIELDS);
+  // 處置 checkbox 群組:沒有現成 getter,直接讀 DOM 判斷是否已有勾選。
+  const mods = (prev.modalitiesPerformed || []).filter(Boolean);
+  if (mods.length) {
+    const boxes = [...soapForm.querySelectorAll('input[type="checkbox"][name="modalitiesPerformed"]')];
+    if (boxes.some((cb) => cb.checked)) skipped.push("處置");
+    else { setCheckboxGroup(soapForm, "modalitiesPerformed", mods); filled.push(`處置 ${mods.length} 項`); }
+  }
+  return { filled, skipped };
+}
+
+/* 方藥沿用 —— 刻意是獨立函式、獨立入口,不掛在上面那顆一鍵按鈕裡。
+ * 呼叫端(renderPreviousVisitPanel)必須先讓使用者勾選安全確認句、按鈕才會
+ * 從 disabled 變成可按,這支本身不重複做確認檢查(confirm 是 UI 層的責任)——
+ * 它只負責「真的只帶方藥、不覆寫」,邏輯與 carryForwardTreatment 對等。 */
+function carryForwardHerbs(prev) {
+  return carryForwardFields(prev, CARRY_FORWARD_HERB_FIELDS);
+}
+
 // Compact, read-only. Deliberately does NOT render the whole previous SOAP —
 // only the fields worth glancing at before writing today's note. Every row
 // except "Visit" is omitted when empty, so a sparse previous visit renders a
@@ -9097,9 +9187,63 @@ function renderPreviousVisitPanel(note) {
     ["醫囑 Advice", truncateText(note.advice, 60)],
     ["下次計畫 Follow-up", truncateText(note.followUp, 60)],
   ].filter(([, value]) => value);
+  const hasTreatment = CARRY_FORWARD_FIELDS.some((f) => {
+    const raw = note[f.key];
+    return Array.isArray(raw) ? raw.filter(Boolean).length > 0 : String(raw ?? "").trim() !== "";
+  }) || (note.modalitiesPerformed || []).filter(Boolean).length > 0;
+  const hasHerbs = CARRY_FORWARD_HERB_FIELDS.some((f) => {
+    const raw = note[f.key];
+    return Array.isArray(raw) ? raw.filter(Boolean).length > 0 : String(raw ?? "").trim() !== "";
+  });
   container.innerHTML = `<div class="clinical-mini-grid">${cells.map(([label, value]) =>
     `<div><small>${escapeHtml(label)}</small><span>${escapeHtml(value)}</span></div>`
-  ).join("")}</div>`;
+  ).join("")}</div>
+  ${hasTreatment ? `<div class="carry-forward">
+    <button class="ghost" type="button" id="carryForwardBtn">沿用上次治療 Carry forward treatment</button>
+    <small>只帶用穴／留針／手法／處置,且只填目前空著的欄位。證型、治則、S/O/A/P、療效與醫囑不會帶過來 —— 那些是今天要重新判斷的。方藥另有獨立確認流程,見下方。</small>
+    <p class="carry-forward-result" id="carryForwardResult" hidden></p>
+  </div>` : ""}
+  ${hasHerbs ? `<div class="carry-forward carry-forward-herbs">
+    <p class="carry-forward-herb-warning">⚠ 方藥沿用風險較高,不與穴位共用同一顆按鈕:上次的方劑／中藥可能已不適用於病人「現在」的用藥、妊娠或安全狀態 —— 新增西藥交互作用、剛驗出懷孕、新增安全旗標,都可能發生在兩診之間而未必已經反映在病例其他欄位裡。請先當面核對再勾選確認。</p>
+    <label class="carry-forward-herb-confirm">
+      <input type="checkbox" id="carryForwardHerbConfirm" />
+      已核對:病人用藥、妊娠與安全狀態較上次無新變化,可沿用上次方藥
+    </label>
+    <button class="ghost" type="button" id="carryForwardHerbBtn" disabled>沿用上次方藥 Carry forward herbs/formula</button>
+    <small>只帶方劑／中藥／方藥自由文字,且只填目前空著的欄位。</small>
+    <p class="carry-forward-result" id="carryForwardHerbResult" hidden></p>
+  </div>` : ""}`;
+  const btn = container.querySelector("#carryForwardBtn");
+  if (btn) btn.addEventListener("click", () => {
+    const { filled, skipped } = carryForwardTreatment(note);
+    const out = container.querySelector("#carryForwardResult");
+    if (!out) return;
+    out.hidden = false;
+    // 逐項講清楚。「已有內容,未覆寫」必須點名到欄位 —— 只說「部分跳過」
+    // 等於要她自己回頭一欄一欄找。
+    out.textContent = [
+      filled.length ? `已帶入:${filled.join("、")}` : "沒有帶入任何欄位",
+      skipped.length ? `已有內容未覆寫:${skipped.join("、")}(要沿用請先清空該欄)` : ""
+    ].filter(Boolean).join(" · ");
+  });
+  const herbConfirm = container.querySelector("#carryForwardHerbConfirm");
+  const herbBtn = container.querySelector("#carryForwardHerbBtn");
+  if (herbConfirm && herbBtn) {
+    herbConfirm.addEventListener("change", () => { herbBtn.disabled = !herbConfirm.checked; });
+    herbBtn.addEventListener("click", () => {
+      // disabled 屬性已經擋掉大部分情況,這裡是 defense-in-depth:就算按鈕
+      // 因為某種方式仍被觸發,沒勾確認句就不執行帶入。
+      if (!herbConfirm.checked) return;
+      const { filled, skipped } = carryForwardHerbs(note);
+      const out = container.querySelector("#carryForwardHerbResult");
+      if (!out) return;
+      out.hidden = false;
+      out.textContent = [
+        filled.length ? `已帶入:${filled.join("、")}` : "沒有帶入任何欄位",
+        skipped.length ? `已有內容未覆寫:${skipped.join("、")}(要沿用請先清空該欄)` : ""
+      ].filter(Boolean).join(" · ");
+    });
+  }
 }
 
 function openSoapEditor(note = null) {

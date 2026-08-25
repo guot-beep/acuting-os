@@ -4698,6 +4698,63 @@ a { color: var(--accent-dark); }
   z-index: 999;
 }
 
+/* 沿用上次治療:按鈕 + 規則說明 + 逐項結果。說明句與按鈕同區塊,因為
+   「它到底帶了什麼、沒帶什麼」必須在按下去之前就看得到。 */
+.carry-forward {
+  margin-top: 0.7rem;
+  padding-top: 0.7rem;
+  border-top: 1px dashed var(--line, rgba(0, 0, 0, .15));
+  display: grid;
+  gap: 0.35rem;
+  justify-items: start;
+}
+
+.carry-forward small { color: var(--muted); font-size: 0.78rem; line-height: 1.5; }
+
+.carry-forward-result {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #7a5410;
+  background: rgba(184, 134, 47, .12);
+  border-radius: 6px;
+  padding: 0.4rem 0.6rem;
+}
+
+.carry-forward-result[hidden] { display: none; }
+
+/* 方藥沿用:與穴位那顆按鈕刻意分開一個視覺區塊(分區確認),用比 .carry-forward
+   更強的警示色階,而且按鈕預設 disabled——必須先勾選安全確認句才能按下去。 */
+.carry-forward-herbs {
+  border-top-color: rgba(176, 86, 60, .35);
+}
+
+.carry-forward-herb-warning {
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.55;
+  color: #8a3d24;
+  background: rgba(176, 86, 60, .1);
+  border: 1px solid rgba(176, 86, 60, .3);
+  border-radius: 6px;
+  padding: 0.5rem 0.7rem;
+}
+
+.carry-forward-herb-confirm {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  line-height: 1.4;
+  cursor: pointer;
+}
+
+.carry-forward-herb-confirm input[type="checkbox"] { margin-top: 0.15rem; }
+
+.carry-forward-herbs button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 /* CS1: clinical-cases backup reminder (localStorage-only until H2 store) */
 .backup-reminder-banner {
   background: #8a6d1f;

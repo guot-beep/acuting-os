@@ -229,6 +229,9 @@ jobs:
       - name: CARE draft generator self-test (CLI/browser shared compute)
         run: node scripts/generate-care-draft.js --self-test
 
+      - name: Carry-forward scope (treatment only, never observations; herbs/meds require opt-in confirm)
+        run: node scripts/validate-carry-forward-scope.js
+
       - name: bilingual render parity (no _en field left off the screen)
         run: node scripts/validate-bilingual-render-parity.js
 
