@@ -1,5 +1,13 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-24] Codex Handoff — Conditions official bladder-control etiology B26
+
+- **Exact ids / fields**: only `cond.overactive_bladder`, `cond.stress_urinary_incontinence`, `cond.urge_urinary_incontinence`, `cond.mixed_urinary_incontinence`, and `cond.neurogenic_bladder`; filled empty bilingual etiology and appended direct sources plus etiology provenance. Existing pathology, risks, red flags, scope, relations, and adjacent datasets were not changed.
+- **Official sources**: NIH/NIDDK, NIH/NLM MedlinePlus, and NHS; five unique content URLs returned HTTP 200 and each record cross-references two pages.
+- **Clinical distinctions**: OAB syndrome versus urodynamic detrusor overactivity; stress versus urgency mechanisms; mixed coexistence rather than a third disease; and neurologic lesion level versus actual bladder pressure and emptying risk. Secondary infection, obstruction, retention, fistula, stone, tumor, and polyuria remain separate.
+- **Measured delta**: maturity `244→248 FULL_DETAIL_CANDIDATE`, `261→257 DETAIL_PARTIAL`, `0→0 SKELETON`, leaving `52` slots to 300; source entries `839→849`, sourced records `295→299`; empty etiology `230→225`. OAB already had a source and still lacks other detail fields, so five fills produced a net maturity gain of four.
+- **Validation**: dry-run/apply `20 operations / 5 ids / skipped 0 / missing 0`; exact equality and record-boundary diff; `build-data.js`; condition standard `505/505 clean`; ratchet; condition sources (`849`); relation registry; content junk; maturity audit; and `git diff --check` passed.
+
 ## [2026-08-24] Codex Handoff — Conditions official dermatology etiology B25
 
 - **Exact ids / fields**: only `cond.contact_dermatitis`, `cond.seborrheic_dermatitis`, `cond.vitiligo`, `cond.tinea_corporis`, and `cond.tinea_pedis`; filled empty bilingual etiology and appended direct sources plus etiology provenance. Existing pathology, risks, red flags, scope, relations, and adjacent datasets were not changed.

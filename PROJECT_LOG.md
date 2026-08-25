@@ -1,3 +1,13 @@
+# 2026-08-24 — Codex Conditions 膀胱控制官方病因補強 B26
+
+- **範圍**：只補 `cond.overactive_bladder`、`cond.stress_urinary_incontinence`、`cond.urge_urinary_incontinence`、`cond.mixed_urinary_incontinence`、`cond.neurogenic_bladder` 空白的 `etiology_zh/en`，追加直接來源與 provenance；未覆蓋既有正文、安全欄、scope 或相鄰資料。
+- **數字**：`FULL_DETAIL_CANDIDATE 244→248`、`DETAIL_PARTIAL 261→257`、`SKELETON 0→0`，距 300 尚 `52`；直接來源 `839→849`、有來源記錄 `295→299`；空白 etiology `230→225`。OAB 原已具來源但仍缺其他 detail 欄，故本批淨增 4 筆成熟候選。
+- **來源與邊界**：使用 NIH/NIDDK、NIH/NLM MedlinePlus 與 NHS，5 個唯一內容頁皆 HTTP 200（各卡交叉引用 2 頁）。分清 OAB syndrome 與 detrusor overactivity、stress 與 urgency 機轉、mixed 共存而非第三種病，以及 neurogenic lesion level 與實際尿動力學風險。
+- **驗證**：dry-run/apply `20 operations / 5 ids / skipped 0 / missing 0`；逐欄 equality、逐記錄邊界、`build-data`、condition standard `505/505 clean`、ratchet、sources `849`、relation registry、content-junk、maturity audit、`git diff --check` 均無新增 defect。
+- **未解**：OAB 尚缺 western pathology、risk factors 與 acupuncture scope；未用不具名或間接證據補滿。任何新發血尿、疼痛、發燒、retention 或神經缺損仍需先查 secondary cause。
+
+---
+
 # 2026-08-24 — Codex Conditions 皮膚科官方病因補強 B25
 
 - **範圍**：只補 `cond.contact_dermatitis`、`cond.seborrheic_dermatitis`、`cond.vitiligo`、`cond.tinea_corporis`、`cond.tinea_pedis` 原本空白的 `etiology_zh/en`，追加直接來源與 etiology provenance；未覆蓋既有正文、安全欄、scope、relations 或其他資料集。

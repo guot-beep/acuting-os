@@ -51496,7 +51496,7 @@
     "pattern.spleen_stomach_yang_deficiency"
    ],
    "review_status": "draft",
-   "etiology_zh": "",
+   "etiology_zh": "膀胱過動症（OAB）是以尿急為核心、常伴頻尿與夜尿，且可有或沒有急迫性尿失禁的臨床症候群；定義前提是沒有能充分解釋症狀的尿路感染或其他明顯病理。它不是單一病因，也不等同尿路動力學的 detrusor overactivity：部分 OAB 患者檢查不到儲尿期逼尿肌不自主收縮，反之檢查到收縮者也不一定主訴典型 OAB。可能機轉包括大腦／脊髓抑制控制下降、膀胱傳入感覺增敏、尿路上皮訊號改變、逼尿肌肌源性興奮與老化相關神經肌肉改變；多數無明確單一原因。中風、Parkinson disease、multiple sclerosis、脊髓病變等可造成 neurogenic OAB；膀胱出口阻塞亦可引起肌肉重塑與次發性 overactivity。UTI、膀胱結石或腫瘤、糖尿病／高血糖造成多尿、心衰竭液體移轉、便祕、過量液體／咖啡因及利尿藥可模仿或加重症狀，需先辨識而不能直接標成 idiopathic OAB。",
    "western_pathology_zh": "",
    "tcm_patterns": [
     {
@@ -51858,7 +51858,9 @@
    "source_type": "sourced_cloudtcm_record",
    "entity_type": "biomedical_condition",
    "sources": [
-    "https://cloudtcm.com/disease/tcm/28507"
+    "https://cloudtcm.com/disease/tcm/28507",
+    "https://www.niddk.nih.gov/health-information/urologic-diseases/bladder-control-problems/definition-facts",
+    "https://www.nhs.uk/conditions/urinary-incontinence/symptoms/"
    ],
    "import_artifacts": [
     {
@@ -51894,6 +51896,12 @@
     ],
     "red_flags_en": [
      "AUA/ICS 膀胱過動症評估通說"
+    ],
+    "etiology_zh": [
+     "NIH/NIDDK: Bladder Control Problems Definition and Facts — urgency incontinence/OAB symptom definition, nerve-muscle coordination and mixed-type distinction (retrieved 2026-08); NHS: Urinary incontinence symptoms — OAB urgency, frequency and nocturia with or without urge leakage (reviewed 2023-03-07)"
+    ],
+    "etiology_en": [
+     "NIH/NIDDK: Bladder Control Problems Definition and Facts — urgency incontinence/OAB symptom definition, nerve-muscle coordination and mixed-type distinction (retrieved 2026-08); NHS: Urinary incontinence symptoms — OAB urgency, frequency and nocturia with or without urge leakage (reviewed 2023-03-07)"
     ]
    },
    "acupoint_code_normalization": {
@@ -52031,7 +52039,7 @@
     "no_source_found": false
    },
    "western_pathology_en": "",
-   "etiology_en": ""
+   "etiology_en": "Overactive bladder (OAB) is a clinical syndrome centered on urinary urgency, usually with frequency and nocturia, with or without urgency urinary incontinence, in the absence of urinary infection or another obvious pathology that adequately explains the symptoms. It is not one etiology and is not synonymous with urodynamic detrusor overactivity: some people with OAB have no involuntary storage contraction on testing, and some with a demonstrated contraction do not report classic OAB. Proposed mechanisms include loss of central inhibition, sensitized bladder afferents, altered urothelial signaling, myogenic detrusor excitability, and age-related neuromuscular change; most cases have no single identified cause. Stroke, Parkinson disease, multiple sclerosis, or spinal disease can produce neurogenic OAB, while bladder-outlet obstruction may drive muscular remodeling and secondary overactivity. UTI, bladder stone or tumor, diabetes or hyperglycemic polyuria, heart-failure fluid shifts, constipation, excessive fluid or caffeine, and diuretics can mimic or worsen the syndrome and should be identified rather than automatically labeled idiopathic OAB."
   },
   {
    "id": "cond.urinary_retention",
@@ -101799,8 +101807,20 @@
     ],
     "acupuncture_scope_en": [
      "Clinical scope-of-practice reasoning; no acupuncture-specific guideline/RCT source found in this research pass"
+    ],
+    "etiology_zh": [
+     "NIH/NIDDK: Bladder Control Problems Symptoms and Causes — pelvic-floor weakening from pregnancy/childbirth and prostate-treatment nerve or sphincter injury (reviewed 2021-07); NHS: Causes of urinary incontinence — pelvic support and urethral sphincter failure, childbirth, obesity, surgery, neurologic and connective-tissue contributors (reviewed 2023-03-07)"
+    ],
+    "etiology_en": [
+     "NIH/NIDDK: Bladder Control Problems Symptoms and Causes — pelvic-floor weakening from pregnancy/childbirth and prostate-treatment nerve or sphincter injury (reviewed 2021-07); NHS: Causes of urinary incontinence — pelvic support and urethral sphincter failure, childbirth, obesity, surgery, neurologic and connective-tissue contributors (reviewed 2023-03-07)"
     ]
-   }
+   },
+   "etiology_zh": "壓力性尿失禁發生於咳嗽、打噴嚏、運動或提重等腹壓突然上升時，膀胱壓超過尿道閉鎖能力。主要機轉可並存：骨盆底、endopelvic fascia 與陰道前壁支持減弱，使 bladder neck／urethra 過度活動而無法有效傳遞腹壓；或 intrinsic sphincter deficiency，使尿道本身的黏膜與括約肌閉鎖壓不足。妊娠與陰道生產可伸展或傷害肌肉、結締組織和 pudendal nerve；肥胖、慢性咳嗽、便祕與反覆重度用力增加長期腹壓負荷。老化、pelvic organ prolapse、Ehlers-Danlos 等結締組織疾病及骨盆手術也會降低支持。男性常見於 radical prostatectomy、放射或其他攝護腺治療後的括約肌／神經損傷。它與心理「壓力」無關，也應和 urgency leakage、overflow retention、fistula 或短期 UTI-induced leakage 分開；症狀可同時受多種機轉影響。",
+   "etiology_en": "Stress urinary incontinence occurs when a sudden rise in abdominal and bladder pressure during coughing, sneezing, exercise, or lifting exceeds urethral closure capacity. Two mechanisms often coexist. Weakness of pelvic floor, endopelvic fascia, and anterior vaginal support permits bladder-neck or urethral hypermobility and inefficient pressure transmission; intrinsic sphincter deficiency reduces closure from the urethral mucosa and sphincter itself. Pregnancy and vaginal birth can stretch or injure muscle, connective tissue, and the pudendal nerve. Obesity, chronic cough, constipation, and repeated heavy straining increase long-term pressure load. Aging, pelvic-organ prolapse, connective-tissue disease such as Ehlers-Danlos syndrome, and pelvic surgery can further reduce support. In men, sphincter or nerve injury after radical prostatectomy, radiation, or other prostate treatment is a common pathway. The term is unrelated to psychological stress and should be separated from urgency leakage, overflow retention, fistula, and temporary UTI-associated leakage; more than one mechanism can contribute in the same person.",
+   "sources": [
+    "https://www.niddk.nih.gov/health-information/urologic-diseases/bladder-control-problems/symptoms-causes",
+    "https://www.nhs.uk/conditions/urinary-incontinence/causes/"
+   ]
   },
   {
    "id": "cond.urge_urinary_incontinence",
@@ -101943,6 +101963,12 @@
     ],
     "acupuncture_scope_en": [
      "No specific guideline/RCT citation verified in search for this card — evidence marked unknown per protocol"
+    ],
+    "etiology_zh": [
+     "NIH/NIDDK: Bladder Control Problems Symptoms and Causes — nervous-system, infection, constipation, diabetes, obstruction, lifestyle and medicine contributors (reviewed 2021-07); NHS: Causes of urinary incontinence — detrusor overactivity, neurologic disease, infection, stones, constipation and other secondary causes (reviewed 2023-03-07)"
+    ],
+    "etiology_en": [
+     "NIH/NIDDK: Bladder Control Problems Symptoms and Causes — nervous-system, infection, constipation, diabetes, obstruction, lifestyle and medicine contributors (reviewed 2021-07); NHS: Causes of urinary incontinence — detrusor overactivity, neurologic disease, infection, stones, constipation and other secondary causes (reviewed 2023-03-07)"
     ]
    },
    "acupuncture_scope_zh": {
@@ -101958,7 +101984,13 @@
     "co_management": "For patients on antimuscarinics or beta-3 agonists, coordinate any adjunctive acupuncture plan with the prescribing physician — never advise the patient to stop medication independently.",
     "evidence": "unknown",
     "source": null
-   }
+   },
+   "etiology_zh": "急迫性尿失禁描述強烈、難以延遲的尿急伴隨或緊接著漏尿；它常是 OAB 的一部分，但「急迫性尿失禁」是症狀型態，不是已確定的單一病因。常見功能機轉是儲尿期 detrusor 無法被充分抑制而產生不自主收縮，但尿動力學不一定在每位患者重現。神經性原因包括中風、Parkinson disease、multiple sclerosis、dementia、脊髓或周邊神經損傷；非神經性／idiopathic 病例可能涉及膀胱傳入感覺、尿路上皮、肌源性興奮與老化變化。出口阻塞、長期不完全排空也可使逼尿肌重塑並產生 urgency。UTI、膀胱炎症、結石或腫瘤、便祕、陰道／尿道萎縮、過量咖啡因或酒精、利尿藥及高血糖多尿可引起短期或可逆的急尿與漏尿。突然新發、血尿、疼痛、發燒、尿滯留或神經缺損時，應先找 secondary cause，不能只當作年齡相關 OAB。",
+   "etiology_en": "Urgency urinary incontinence describes leakage accompanied by or immediately following a compelling urge that is difficult to defer. It commonly occurs within OAB, but it is a symptom pattern rather than one established etiology. A frequent functional mechanism is inadequate suppression of the detrusor during storage with involuntary contraction, although urodynamic testing does not reproduce this in every patient. Neurogenic causes include stroke, Parkinson disease, multiple sclerosis, dementia, and spinal or peripheral nerve injury. Nonneurogenic or idiopathic disease may involve altered bladder afferent sensation, urothelial signaling, myogenic excitability, and age-related change. Outlet obstruction or chronic incomplete emptying can also remodel the detrusor and provoke urgency. UTI, bladder inflammation, stone or tumor, constipation, vaginal or urethral atrophy, excess caffeine or alcohol, diuretics, and hyperglycemic polyuria can cause transient or reversible urgency and leakage. Sudden onset, hematuria, pain, fever, retention, or a neurologic deficit requires evaluation for a secondary cause rather than attribution to age-related OAB alone.",
+   "sources": [
+    "https://www.niddk.nih.gov/health-information/urologic-diseases/bladder-control-problems/symptoms-causes",
+    "https://www.nhs.uk/conditions/urinary-incontinence/causes/"
+   ]
   },
   {
    "id": "cond.mixed_urinary_incontinence",
@@ -102102,8 +102134,20 @@
     ],
     "acupuncture_scope_en": [
      "Clinical scope-of-practice reasoning; no acupuncture-specific guideline/RCT source found in this research pass"
+    ],
+    "etiology_zh": [
+     "NIH/NIDDK: Bladder Control Problems Definition and Facts — mixed incontinence as simultaneous urgency and stress incontinence (retrieved 2026-08); NHS: Urinary incontinence symptoms — stress, urgency, overflow and mixed symptom boundaries (reviewed 2023-03-07)"
+    ],
+    "etiology_en": [
+     "NIH/NIDDK: Bladder Control Problems Definition and Facts — mixed incontinence as simultaneous urgency and stress incontinence (retrieved 2026-08); NHS: Urinary incontinence symptoms — stress, urgency, overflow and mixed symptom boundaries (reviewed 2023-03-07)"
     ]
-   }
+   },
+   "etiology_zh": "混合型尿失禁不是第三種獨立病理，而是同一人同時具有 stress 與 urgency urinary incontinence 的症狀與機轉。Stress 成分來自骨盆底／尿道支持不足、urethral hypermobility 或 intrinsic sphincter deficiency，使腹壓上升時漏尿；urgency 成分涉及 OAB 路徑、膀胱感覺增敏或 detrusor overactivity。妊娠與陰道生產、肥胖、老化、慢性咳嗽、停經相關泌尿生殖變化、pelvic organ prolapse、骨盆或攝護腺手術，以及神經系統疾病可用不同方式增加其中一個或兩個成分。病人可能以一型明顯為主，比例也會隨膀胱充盈、活動、感染、便祕、液體與藥物改變；因此「兩種症狀都有」不能證明兩套尿動力學異常同等嚴重。診斷前仍需排除 UTI、retention／overflow、fistula、結石、腫瘤與功能性來不及如廁，並依最困擾且可重現的成分規劃治療。",
+   "etiology_en": "Mixed urinary incontinence is not a third independent pathology. It is coexistence of stress and urgency urinary incontinence symptoms and mechanisms in one person. The stress component arises from deficient pelvic or urethral support, urethral hypermobility, or intrinsic sphincter deficiency, causing leakage when abdominal pressure rises. The urgency component involves OAB pathways, sensitized bladder sensation, or detrusor overactivity. Pregnancy and vaginal birth, obesity, aging, chronic cough, menopause-related genitourinary change, pelvic-organ prolapse, pelvic or prostate surgery, and neurologic disease can increase one or both components through different pathways. One type may predominate, and the balance can change with bladder volume, activity, infection, constipation, fluid intake, or medicines. Reporting both symptom sets does not prove equally severe urodynamic abnormalities. Evaluation still excludes UTI, retention with overflow, fistula, stone, tumor, and functional inability to reach a toilet, then identifies the most bothersome and reproducible component to guide treatment.",
+   "sources": [
+    "https://www.niddk.nih.gov/health-information/urologic-diseases/bladder-control-problems/definition-facts",
+    "https://www.nhs.uk/conditions/urinary-incontinence/symptoms/"
+   ]
   },
   {
    "id": "cond.varicocele",
@@ -104646,8 +104690,20 @@
     ],
     "acupuncture_scope_en": [
      "Clinical scope-of-practice reasoning; no acupuncture-specific guideline/RCT source found in this research pass"
+    ],
+    "etiology_zh": [
+     "NIH/NLM MedlinePlus: Neurogenic bladder — disrupted brain/spinal/peripheral nerve control, major neurologic diseases, diabetes, spinal and pelvic-surgery causes (reviewed 2024-05-01); NIH/NIDDK: Bladder Control Problems Symptoms and Causes — bladder-brain-sphincter signaling and neurologic injury contributors (reviewed 2021-07)"
+    ],
+    "etiology_en": [
+     "NIH/NLM MedlinePlus: Neurogenic bladder — disrupted brain/spinal/peripheral nerve control, major neurologic diseases, diabetes, spinal and pelvic-surgery causes (reviewed 2024-05-01); NIH/NIDDK: Bladder Control Problems Symptoms and Causes — bladder-brain-sphincter signaling and neurologic injury contributors (reviewed 2021-07)"
     ]
-   }
+   },
+   "etiology_zh": "神經性膀胱是腦、脊髓、神經根或周邊／自主神經病變破壞膀胱感覺、逼尿肌收縮與括約肌協調的結果。常見原因包括 spinal cord injury、spina bifida、multiple sclerosis、stroke、Parkinson disease、腦或脊髓腫瘤，以及長期糖尿病或其他 neuropathy、椎間盤／spinal stenosis 與骨盆手術神經損傷。病灶位置和完整度影響型態，但不能只憑診斷名稱預測：suprapontine lesions 常造成儲尿抑制下降；suprasacral spinal lesions 可出現 detrusor overactivity 與 detrusor-sphincter dyssynergia；sacral、cauda equina 或周邊神經損傷較常造成感覺下降、收縮無力與 retention。急性脊髓損傷早期 spinal shock 的低反射型態之後也可能改變。高壓儲尿／排尿、殘尿與 reflux 會造成 UTI、結石、hydronephrosis 及腎損傷，因此症狀輕不代表低風險。糖尿病、藥物、出口阻塞或便祕可同時影響膀胱，需與神經病灶共同評估，而非把所有漏尿或滯留都歸為 neurogenic。",
+   "etiology_en": "Neurogenic bladder results when disease or injury of the brain, spinal cord, nerve roots, or peripheral/autonomic nerves disrupts bladder sensation, detrusor contraction, or sphincter coordination. Common causes include spinal cord injury, spina bifida, multiple sclerosis, stroke, Parkinson disease, brain or spinal tumors, long-standing diabetic or other neuropathy, disk disease or spinal stenosis, and pelvic-surgical nerve injury. Lesion level and completeness influence the pattern but a diagnosis alone cannot predict it. Suprapontine lesions often reduce storage inhibition; suprasacral spinal lesions can cause detrusor overactivity with detrusor–sphincter dyssynergia; and sacral, cauda-equina, or peripheral nerve injury more often reduces sensation and contraction, producing retention. The low-reflex spinal-shock phase after acute cord injury may later evolve. High-pressure storage or voiding, residual urine, and reflux can cause UTI, stones, hydronephrosis, and renal injury, so mild symptoms do not guarantee low risk. Diabetes, medicines, outlet obstruction, and constipation may simultaneously affect bladder function and should be assessed alongside the neurologic lesion rather than labeling all leakage or retention as neurogenic.",
+   "sources": [
+    "https://medlineplus.gov/ency/article/000754.htm",
+    "https://www.niddk.nih.gov/health-information/urologic-diseases/bladder-control-problems/symptoms-causes"
+   ]
   },
   {
    "id": "cond.chronic_scrotal_pain_syndrome",
