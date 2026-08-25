@@ -2,8 +2,9 @@
   "dataset": "localStorage (acuting-clinical-cases-v1) -> data/clinical_cases/schema.sql field mapping",
   "status": "design_only__migration_script_NOT_implemented",
   "created": "2026-08-06",
-  "updated": "2026-08",
+  "updated": "2026-08-24",
   "changelog": [
+    "2026-08-24: Ting resolved all 3 unresolved_needs_ting decisions. (1) case.allergies -> new case_intake_baseline.allergies column (dedicated, not merged into red_flags — allergy history is not automatically an urgent warning). (2) soap.tongueBody / soap.tongueCoating -> new visits.tongue_body_zh / visits.tongue_coating_zh columns (stay split, matching the app UI's two separate inputs; legacy tongue_zh/tongue_en untouched). (3) soap.outcomeMetricLinks -> confirmed notes-only fallback (no fabricated metric row); the real standardized/statistics-ready mechanism is the existing outcomeMetrics -> visit_outcomes pipeline, which already uses a 0-10 scale for subjective metrics and real clinical units for objective ones. schema.sql updated in the same commit with the 3 new additive columns (allergies, tongue_body_zh/en, tongue_coating_zh/en). counts.by_status recomputed below.",
     "2026-08: added outcomeMetrics (the structured {metricId, valueNumber} layer, 63f0896/eda9819/a1348b5) and rewrote effectDurationDays now that 1a3a426 made it a migration-source-only fallback for it. Clarified outcomeMetricLinks's entry to distinguish it from outcomeMetrics (easy to confuse by name, opposite semantics). No runtime behavior changed by this edit — documentation only, per Ting's request. Everything else in this file is untouched and may already be stale for other fields added since this file's own `created` date above — see known_gaps_not_covered_by_this_pass below, out of scope for this pass, not silently claimed as covered.",
     "2026-08: D17 tables landed in schema.sql (case_agent_exposures, case_environmental_exposures, visit_lifestyle_factors, visit_adverse_events, visit_pattern_differentials) plus visit_tcm_patterns.role/confidence and visit_outcomes.related_sym_id. localStorage-side keys are NOT yet written by the app — see planned_mappings_d17. Mapping entries move from planned to real when the B2 contract lands in normalizeCase/normalizeSoapNote.",
     "2026-08: B-1 audit fix — case_exposure_events append-only history table; agentExposures[].events[] / environmentalExposures[].events[] added to the localStorage contract.",
@@ -24,10 +25,10 @@
     "validation": "every destination table.column is asserted to exist in schema.sql before this file is written"
   },
   "counts": {
-    "total_fields": 81,
+    "total_fields": 87,
     "by_status": {
-      "mapped": 75,
-      "unresolved_needs_ting": 4,
+      "mapped": 85,
+      "unresolved_needs_ting": 0,
       "no_destination_yet": 2
     }
   },
@@ -257,11 +258,11 @@
     {
       "source_scope": "case",
       "source_field": "allergies",
-      "destination": "(UNRESOLVED)",
-      "transformation": "There is no allergies column. Merging into red_flags was proposed and REJECTED by Ting (2026-08).",
-      "nullable": null,
-      "data_loss_risk": "high",
-      "status": "unresolved_needs_ting"
+      "destination": "case_intake_baseline.allergies",
+      "transformation": "RENAME. Dedicated column, additive (2026-08 schema.sql change). Ting confirmed 2026-08: allergy history is a past-medical fact, not automatically an urgent red flag (many chronic allergies are mild) — it must never share the red_flags column. Paired with cases.allergy_status (coarse none/has/unknown); the two are not auto-reconciled.",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped"
     },
     {
       "source_scope": "case",
@@ -428,20 +429,20 @@
     {
       "source_scope": "soap",
       "source_field": "tongueBody",
-      "destination": "(UNRESOLVED)",
-      "transformation": "Merging tongueBody + tongueCoating into visits.tongue_zh was proposed and REJECTED by Ting (2026-08). TCM_CASE_SPEC lists 舌質 and 舌苔 as two separate 最重要 fields.",
-      "nullable": null,
-      "data_loss_risk": "high",
-      "status": "unresolved_needs_ting"
+      "destination": "visits.tongue_body_zh",
+      "transformation": "RENAME. Dedicated column, additive (2026-08 schema.sql change). Ting confirmed 2026-08: tongue body and tongue coating stay two separate columns, matching the app UI's two separate inputs (index.html tongueBody/tongueCoating) and TCM_CASE_SPEC's own treatment of them as distinct fields. Legacy visits.tongue_zh/tongue_en are untouched and NOT written by this field — no re-merge.",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped"
     },
     {
       "source_scope": "soap",
       "source_field": "tongueCoating",
-      "destination": "(UNRESOLVED)",
-      "transformation": "See tongueBody. The two must not collapse into one column.",
-      "nullable": null,
-      "data_loss_risk": "high",
-      "status": "unresolved_needs_ting"
+      "destination": "visits.tongue_coating_zh",
+      "transformation": "RENAME. Dedicated column, additive (2026-08 schema.sql change). See tongueBody entry — same 2026-08 decision, same reasoning.",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped"
     },
     {
       "source_scope": "soap",
@@ -725,11 +726,11 @@
     {
       "source_scope": "soap",
       "source_field": "outcomeMetricLinks",
-      "destination": "(UNRESOLVED)",
-      "transformation": "These are metric ids with NO recorded values — free text, e.g. \"pain_score 7->4\" as a string inside one textarea, not a list of real measurements. Writing them as visit_outcomes rows was proposed and REJECTED by Ting (2026-08): a row with metric_name and null value reads as a measured outcome that was never measured. NOT to be confused with the separate outcomeMetrics field below (added 2026-08) — similar name, opposite semantics: outcomeMetrics holds REAL {metricId, valueNumber} pairs and IS mapped below; this field is still exactly what it always was, unresolved narrative that this batch left untouched on purpose.",
-      "nullable": null,
-      "data_loss_risk": "high",
-      "status": "unresolved_needs_ting"
+      "destination": "visit_outcomes.notes (legacy narrative only — no metric_name/value_number row)",
+      "transformation": "Free text -> one row's notes field, no structured metric row. Ting confirmed 2026-08: the real, statistics-ready mechanism is the separate outcomeMetrics field (already mapped below to visit_outcomes with real {metricId, valueNumber} pairs, mostly on outcome_metrics.json's existing 0-10 scale for subjective measures, real clinical units — mm/days/count — for objective ones). outcomeMetricLinks (ids selected but never given a value) must not be written as a visit_outcomes row with metric_name set and value_number NULL — that reads as 'measured, result missing' when the truth is 'never measured'. This was already this file's recommended default (§6 of MIGRATION_LOCALSTORAGE_TO_SQLITE.md); 2026-08 confirms it as the decision rather than an open question.",
+      "nullable": true,
+      "data_loss_risk": "low",
+      "status": "mapped"
     },
     {
       "source_scope": "soap",

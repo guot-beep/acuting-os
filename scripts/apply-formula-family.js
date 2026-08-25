@@ -18,7 +18,8 @@ const path = require("path");
 const ROOT = path.join(__dirname, "..");
 const APPLY = process.argv.includes("--apply");
 
-const LEDGER_REL = "docs/research_packs/FORMULA_FAMILY_PROPOSALS_2026-08-19.json";
+const ledgerArgIdx = process.argv.indexOf("--ledger");
+const LEDGER_REL = ledgerArgIdx !== -1 ? process.argv[ledgerArgIdx + 1] : "docs/research_packs/FORMULA_FAMILY_PROPOSALS_2026-08-19.json";
 const ledger = JSON.parse(fs.readFileSync(path.join(ROOT, LEDGER_REL), "utf8"));
 const fdoc = JSON.parse(fs.readFileSync(path.join(ROOT, "data/herbs/formulas.json"), "utf8"));
 const formulas = fdoc.records || Object.values(fdoc).find(Array.isArray);

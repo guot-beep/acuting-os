@@ -220,6 +220,33 @@ console.log("Extra — banned-token interception on patient output");
   assert(threw2, "finalize on an already-finalized snapshot throws (immutability)");
 }
 
+// ---- 附加 — renderPatientText(2026-08-25,Ting 要求 email 可直接貼上)-------
+console.log("Extra — renderPatientText copy-for-email output");
+{
+  const kase = makeCase();
+  const note = makeNote({ modalitiesPerformed: ["modality.cupping", "modality.acupuncture"] });
+  const d = draftFor(kase, note);
+  d.clinicianAddedAdvice.push({ category: "lifestyle", text_zh: "睡前熱敷肩頸十分鐘。" });
+  d.followUpSnapshot = "兩週後回診";
+  const snaps = AVS.finalizeSnapshot(AVS.upsertDraft(note.avsSnapshots, d), d.id, "2026-01-15T18:00:00Z");
+  const fin = AVS.latestFinalized(snaps);
+  const text = AVS.renderPatientText(fin, { visitDate: note.visitDate });
+  assert(typeof text === "string" && text.length > 0, "renderPatientText returns non-empty string");
+  assert(!/<[a-z][\s\S]*>/i.test(text), "output has no HTML tags (plain text, paste-ready)");
+  assert(text.includes("睡前熱敷肩頸十分鐘"), "clinician-added advice text present");
+  assert(text.includes("兩週後回診"), "follow-up snapshot present");
+  assert(text.includes(note.visitDate), "visit date present");
+  const banned = AVS.checkPatientOutputSafety(text, kase);
+  assert(banned.length === 0, `plain-text output has zero internal ids/banned tokens (found: ${banned.join(",") || "none"})`);
+  assert(!text.includes("P-TEST-999"), "patientCode absent from plain-text patient output");
+
+  // 同一份 findBannedTokens 掃描器對純文字一樣有效(沒有 tag 可剝,不影響命中)。
+  const dirty = draftFor(kase, note);
+  dirty.clinicianAddedAdvice.push({ category: "lifestyle", text_zh: "此建議誤植內部代碼 pattern.liver_qi_stagnation 於病人文字。" });
+  const dirtyText = AVS.renderPatientText(dirty, { visitDate: note.visitDate });
+  assert(AVS.checkPatientOutputSafety(dirtyText, kase).includes("pattern."), "diagnosis id in plain-text draft output is caught by safety check");
+}
+
 // ---- Codex NO-GO 迴歸(2026-08-12 audit HIGH-1/HIGH-3/MED-1 的反例)---------
 console.log("Codex regression — HIGH-3 canonical scanner probes");
 {
