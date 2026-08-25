@@ -178,7 +178,14 @@
       })),
       clinicianAddedAdvice: [],
       medicationInstructionsSnapshot: medRows,
-      followUpSnapshot: note.followUp || "",
+      // 2026-08-25(DRY_CLINIC_LOG.md #12,dry run 2026-08-11 抓到、兩週未修):
+      // 舊版這裡是 note.followUp || "" —— 直接把 SOAP「回診」欄位的原文帶進
+      // 病人文件草稿。那格是醫師寫給自己看的臨床規劃欄(dry run 實測案例:
+      // 「若入睡持續 >60 分鐘,考慮加梔子豉湯思路或調整穴方」整句照印給病人,
+      // 含方名、含「若無效就改方」的內部判斷),結帳畫面上雖可編輯,但沒有
+      // 預設值時反而更安全 —— 空白逼醫師自己打一句病人看得懂的話,不會有
+      // 「忘記把內部判斷刪掉」這種漏改風險。畫面另外加了警示文字(app.js)。
+      followUpSnapshot: "",
       patientObservationPromptsSnapshot: prompts,
       clinicProfileSnapshot: {
         clinic_name_zh: (clinic && clinic.clinic_name_zh) || "",

@@ -79,6 +79,11 @@ console.log("Scenario A — routine acupuncture, no flags");
   assert(!ruleIds(d).includes("avs.anticoagulant_precautions"), "no anticoagulant candidate");
   assert(!ruleIds(d).includes("avs.cancer_tx_precautions"), "deprecated cancer rule never matches (active:false)");
   assert(d.todayCare.includes("針刺"), "todayCare carries plain-zh modality name");
+  // 2026-08-25(DRY_CLINIC_LOG.md #12 迴歸鎖定):note.followUp 是醫師寫給自己
+  // 看的臨床規劃欄(這個 fixture 故意帶了值,見 makeNote() 的 followUp:
+  // "兩週後回診"),draft 建立時絕不可自動帶進病人文件草稿 —— 空白逼醫師自己
+  // 打一句病人看得懂的話,不會有「忘記把內部判斷刪掉」的漏改風險。
+  assert(d.followUpSnapshot === "", "followUpSnapshot starts empty even when note.followUp has clinician-internal text (no silent carryover)");
 }
 
 // ---- Scenario B — cupping + anticoagulant ----------------------------------

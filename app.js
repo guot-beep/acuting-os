@@ -9823,6 +9823,9 @@ function renderAvsCheckout() {
       </section>
       <section class="avs-co-section">
         <h3>5 · 回診 Follow-up</h3>
+        <p class="avs-co-note">⚠ 這格文字會原文印在病人文件上——只寫病人看得懂的回診安排(例:兩週後回診),
+          不要放臨床判斷、方名或「若無效就改方」這類只給自己看的內部規劃(SOAP 的回診欄位不會自動帶進來,
+          就是為了避免這個)。</p>
         <input type="text" data-avs-followup value="${escapeAttribute(d.followUpSnapshot)}" placeholder="例:兩週後回診" />
       </section>
       <section class="avs-co-section">
