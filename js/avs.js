@@ -331,6 +331,80 @@ ${sec("下次回診", snapshot.followUpSnapshot ? `<p>回診安排:${esc(snapsho
 </div></body></html>`;
   }
 
+  /* 純文字版(2026-08-25,Ting 要求:「出來的表格是直接可以剪貼貼上直接
+   * 寄送的」)。內容與 renderPatientHtml 同一份 snapshot、同樣的欄位取捨
+   * (todayCare/byCat/medicationInstructionsSnapshot/watch/followUpSnapshot),
+   * 只是排版換成 email 純文字慣用的「【小標】+ 條列」,不需要 esc()
+   * (純文字沒有 HTML 注入面,不經瀏覽器解析)。checkPatientOutputSafety
+   * 對純文字一樣有效 —— findBannedTokens 只是字串掃描,不依賴有沒有 tag。 */
+  function renderPatientText(snapshot, opts) {
+    const clinic = snapshot.clinicProfileSnapshot || {};
+    const visitDate = (opts && opts.visitDate) || "";
+    const advice = [...(snapshot.renderedAdvice || []).filter((a) => a.selected !== false), ...(snapshot.clinicianAddedAdvice || [])];
+    const byCat = (...cats) => advice.filter((a) => cats.includes(a.category)).map((a) => a.text_zh).filter((t) => String(t || "").trim());
+    const meds = snapshot.medicationInstructionsSnapshot || [];
+    const watch = [
+      "症狀明顯加重、或出現新的劇烈疼痛",
+      "發燒、持續頭暈、異常出血或瘀腫擴大",
+      "服用調理品後噁心、皮疹或任何過敏反應",
+      ...(snapshot.patientObservationPromptsSnapshot || [])
+    ];
+    const headerContact = [clinic.address, clinic.phone].filter((v) => String(v || "").trim()).join("　·　");
+    const bookingNote = String(clinic.booking_note_zh || "").trim();
+
+    const lines = [];
+    const push = (s) => lines.push(s === undefined ? "" : s);
+    const section = (title, items) => {
+      if (!items || !items.length) return;
+      push(`【${title}】`);
+      items.forEach((it) => push(`・${it}`));
+      push();
+    };
+
+    if (String(clinic.clinic_name_zh || "").trim()) push(clinic.clinic_name_zh);
+    if (headerContact) push(headerContact);
+    push();
+    push("診後照護指示");
+    push(`日期:${visitDate}${Number(snapshot.version) > 1 ? `(更正版 v${snapshot.version})` : ""}`);
+    push();
+
+    if ((snapshot.todayCare || []).length) {
+      push("【今天做了什麼】");
+      push(`${snapshot.todayCare.join("、")}。`);
+      push();
+    }
+
+    section("居家照護計畫", byCat("aftercare", "lifestyle", "diet", "exercise"));
+
+    if (meds.length) {
+      push("【調理品怎麼吃】");
+      meds.forEach((r) => push(`・${r.name}　${r.dose}　${r.freq}`));
+      byCat("herb_caution").forEach((t) => push(`　※ ${t}`));
+      push();
+    }
+
+    section("特別注意", byCat("special"));
+    section("什麼情況請盡快與我們聯絡或就醫", watch);
+
+    if (String(snapshot.followUpSnapshot || "").trim()) {
+      push("【下次回診】");
+      push(`回診安排:${snapshot.followUpSnapshot}`);
+      push();
+    }
+
+    push(`醫師:${clinic.practitioner_zh || ""}`);
+    if (String(clinic.phone || "").trim()) push(`預約電話:${clinic.phone}`);
+    if (String(clinic.website || "").trim()) push(clinic.website);
+    push();
+    push("本文件為衛教與照護指示,非診斷證明,不適用於保險申報。如有疑問請聯絡診所。");
+    if (bookingNote) push(bookingNote);
+
+    // 尾端不留多餘空行堆疊:trim 掉開頭/結尾的空字串,中段保留(段落間距)。
+    while (lines.length && lines[0] === "") lines.shift();
+    while (lines.length && lines[lines.length - 1] === "") lines.pop();
+    return lines.join("\n");
+  }
+
   /* 零診斷自檢(§2.2/§12;Codex NO-GO HIGH-3 修復版):
    * 舊版是大小寫敏感的 raw-HTML includes,可被 `PATTERN.`、`icd-10`、
    * HTML-escaped patientCode、跨 tag 拆字繞過。修復 = canonical 掃描器:
@@ -492,6 +566,7 @@ ${sec("下次回診", snapshot.followUpSnapshot ? `<p>回診安排:${esc(snapsho
     finalizeSnapshot,
     createCorrectionDraft,
     renderPatientHtml,
+    renderPatientText,
     SHEET_CSS,
     canonicalizeForScan,
     findBannedTokens,
