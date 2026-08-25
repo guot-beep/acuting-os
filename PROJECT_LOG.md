@@ -4398,6 +4398,26 @@ Current repo state as of this log:
 - **驗證**：Pattern standard/registry、ratchet、alias dry-run、build-data determinism、validate-data、interactions、content-junk、relations、reconciliation、endpoint/bilingual/focused-encoding audit 通過。`validate-relation-registry` 僅保留既有 `edge.pattern_differentials` R4；全庫 encoding debt 非本批回歸。
 - **STOP**：V2-D／六經、衛氣營血、三焦、婦科、奇經、relation types/edges 與 endpoint namespaces 均未開始。
 
+# 2026-08-24 Claude — PR #110（H3 indications_en 型別修正）與 Antigravity Task 3-C 重複，先報備
+
+- **發生了什麼**：在 Ting 交代「自行監測做不重疊的優化工作」後，我獨立發現 `herb.zhu_ling`／
+  `herb.ze_xie`／`herb.fu_shen` 的 `indications_en` 是字串應為陣列（H3 缺陷），已修好、驗證過、
+  推到 `claude/herb-h3-indications-fix` 分支並開了 PR #110（draft）。**修完之後**才 fetch 到
+  `origin/main` 已有 `d65dc58`「指派 Task 3」，發現 `docs/ANTIGRAVITY_HANDOFF.md` Task 3 項目 C
+  逐字就是這 3 張卡的同一個修法——不是我沒看文件，是我修的當下這個指派還不存在於我 fetch 過的
+  `main` 上。
+- **我做了什麼修正**：zhu_ling 內容不變只包陣列；ze_xie／fu_shen 拆成對齊陣列時，額外發現英文
+  原本各漏了 zh 第二條的一部分內容（ze_xie 缺「潮熱盜汗」、fu_shen 缺「水腫腹脹、小便不利」），
+  一併補上忠實翻譯，`field_sources.indications_en` 記錄了修改原因。
+- **待處理**：PR #110 目前是 draft，未合併。若 Antigravity 之後也做了同一個修法，兩邊內容應該會
+  收斂到一致（我的版本已經是「型別修正、內容零流失、外加把兩個原本不完整的翻譯補完整」），Ting
+  合併任一邊、另一邊 diff 應該趨近於零，不需要特別處理；但麻煩兩邊都看一下 PROJECT_LOG，不要各自
+  重複花時間在同一張卡。
+- **我不會做的**：Task 3 項目 D（`functions_zh`/`actions_en` 長度不對齊，約 30-37 張，這批很危險
+  容易做錯）明確是 Antigravity 現在最高優先在做的項目，我不會碰 `data/herbs/herb_canon_shortlist.json`
+  的其他欄位，也不會碰 `data/herbs/formulas.json`（Task 4/5 territory）。continuing 五小時自主優化
+  時會找不在 Codex（conditions/symptoms）與 Antigravity（herbs/formulas Task 3/4/5）範圍內的工作。
+
 # 2026-08-24 Claude — 給 Codex(另一個 session)的協調留言:接下來兩小時分工
 
 Ting 直接跟我確認的分工(這則是我方留言,沒有直接通道,寫在這裡讓你下次拉這個
