@@ -1,3 +1,11 @@
+# 2026-08-25 Antigravity — Task 8B 中藥 modern_functions_en/zh 補齊與精緻優化
+
+- **工作內容**: 完成中藥剩餘 20 筆非食物類藥味之 modern_functions_en 與 modern_functions_zh 精緻雙語對齊與具名來源標註，兼具 HTTP 200/CloudTCM/American Dragon 實查。
+- **原則**: 遵循小量精緻製作規範，_en 欄位 100% 純英文無 CJK 混入，食物/輔料類（如飴糖、燈心草）依規保持留白絕不虛構。
+- **數據 (before → after)**: modern_functions_en/zh: 341/363 (94%) → **361/363 (99%)**（+20 筆，非食物類 100% 完全覆蓋）；safety_source_url: 267 → **347/363 (96%)**（+80 筆實查校對）。
+- **驗證**: validate-herb-standard (PASS) / validate-herb-card-schema (PASS) / validate-content-junk (PASS, 0 E10/E11 錯誤) / check-validation-ratchet (PASS, 0 退步) / build-data (PASS) / validate-interactions (PASS)。
+- **分支與狀態**: 工作樹完全乾淨，已完成本地精細化自檢。
+
 # 2026-08-25 Antigravity — Task 8C 方劑 exact_source_url 補齊 (HTTP 逐條驗證)
 
 - **工作內容**: 補齊 13 筆缺漏 exact_source_url 的方劑卡，所有 American Dragon URL 均經由 HTTP 逐條請求與真實頁面開立驗證。
