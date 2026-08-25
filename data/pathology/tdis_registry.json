@@ -8339,7 +8339,7 @@
    }
   },
   {
-   "id": "tdis.xian_bing",
+  "id": "tdis.xian_bing",
    "name_zh": "癇病",
    "pinyin": "Xianbing",
    "name_en": "Epilepsy",
@@ -8350,10 +8350,10 @@
    "aliases_en": [
     "Seizure Disorder"
    ],
-   "review_status": "skeleton",
+   "review_status": "draft",
    "authored_by": "model_draft",
-   "definition_zh": "癇病是一種發作性神志異常的疾病，以突然仆倒、昏不知人、口吐涎沫、兩目上視、四肢抽搐，或伴異常叫聲，發過即如常人為特徵，具反覆發作性，相當於西醫癲癇。",
-   "definition_en": "Xian Bing (Epilepsy) is a paroxysmal disorder of consciousness characterized by sudden collapse with loss of awareness, frothing at the mouth, upward-staring eyes, and limb convulsions, sometimes with an abnormal cry, followed by a return to normal once the episode passes; it is recurrent in nature and corresponds to Western epilepsy.",
+   "definition_zh": "癇病是以反覆發作的神志異常、突然仆倒、抽搐或短暫失神，發作後可逐漸恢復為特徵的中醫病名。其表現可與多種 epileptic seizure 類型重疊，但單次抽搐、急性症狀性發作、抽搐性暈厥、低血糖、感染或其他神經急症，不能只憑「癇病」直接診斷為 epilepsy。",
+   "definition_en": "Xian Bing is a TCM disease category characterized by recurrent paroxysmal disturbances of awareness, sudden collapse, convulsive movements, or brief lapses of responsiveness, with recovery after the episode. Its manifestations can overlap with several epileptic seizure types, but a single convulsion, an acute symptomatic seizure, convulsive syncope, hypoglycemia, infection, or another neurologic emergency cannot be diagnosed as epilepsy from the TCM label alone.",
    "etiology_zh": "先天因素包括胎中受驚、稟賦異常；後天因素包括七情失調、飲食不節、痰濁內生、腦部外傷，以及久病體虛、勞倦過度等，皆可誘發本病。",
    "etiology_en": "Congenital factors include fright sustained in utero and an inherited constitutional abnormality. Acquired factors include emotional disturbance, dietary irregularity generating internal Phlegm-turbidity, head trauma, and a weakened constitution from prolonged illness or overexertion — any of which can trigger the disease.",
    "pathomechanism_zh": "主要病機為痰、火、瘀、虛擾亂神明，肝風內動。多因臟腑功能失調，痰濁內生，遇驚恐、勞累、飲食不節等誘因，痰隨氣逆，蒙蔽清竅，引動肝風，發為癇病。反覆發作耗傷正氣，可致心脾兩虛、肝腎陰虛，發作愈頻則正氣愈虛，形成虛實夾雜、反覆難癒之勢。",
@@ -8389,12 +8389,36 @@
    "treatment_principle_zh": "平時以治本為主，豁痰熄風、健脾化痰、補益肝腎、養心安神；發作期以治標為主，豁痰開竅、熄風定癇。",
    "treatment_principle_en": "Between episodes, treatment focuses on the root — resolving Phlegm, extinguishing Wind, fortifying the Spleen to transform Phlegm, and tonifying the Liver and Kidney while nourishing the Heart to calm the spirit. During an episode, treatment focuses on the branch — resolving Phlegm to open the orifices and extinguishing Wind to settle the seizure.",
    "red_flags_zh": [
-    "癇病患者若單次發作持續五分鐘以上不緩解，或連續發作未恢復意識（癲癇重積狀態），應立即撥打緊急號碼送醫，不可僅候其自行緩解——有生命危險",
-    "首次癲癇發作、發作型態明顯改變，或發作伴發熱、頭痛、頸強直，應轉診神經科，以排除顱內感染、腫瘤或外傷等器質性病因"
+    {
+     "finding": "單次抽搐持續超過 5 分鐘，或接連發作且期間未恢復意識",
+     "urgency_level": "emergency",
+     "recommended_action": "立即啟動緊急醫療服務；移開危險物、讓患者側臥，不壓制肢體且不把物品放入口中",
+     "rationale": "持續或反覆發作可能危及生命，需要緊急醫療處置",
+     "source": "CDC, First Aid for Seizures (https://www.cdc.gov/epilepsy/first-aid-for-seizures/index.html), accessed 2026-08-25"
+    },
+    {
+     "finding": "首次抽搐，或發作後呼吸困難、無法正常甦醒、嚴重受傷、在水中發作，或患者正值妊娠",
+     "urgency_level": "emergency",
+     "recommended_action": "立即啟動緊急醫療服務，不以針灸或中藥延後急診評估",
+     "rationale": "首次或複雜性發作需要立即排除急性神經、代謝、外傷或產科原因",
+     "source": "CDC, First Aid for Seizures (https://www.cdc.gov/epilepsy/first-aid-for-seizures/index.html), accessed 2026-08-25"
+    }
    ],
    "red_flags_en": [
-    "A Xian Bing patient whose single seizure lasts longer than five minutes without stopping, or who has repeated seizures without regaining consciousness between them (status epilepticus), should be sent for emergency care immediately by calling emergency services rather than waiting for spontaneous resolution — this is life-threatening",
-    "A first-ever seizure, a marked change in seizure pattern, or a seizure accompanied by fever, headache, or neck stiffness should be referred to neurology to rule out an intracranial infection, tumor, or trauma as the underlying organic cause"
+    {
+     "finding": "A seizure lasting longer than 5 minutes, or repeated seizures without recovery of consciousness between episodes",
+     "urgency_level": "emergency",
+     "recommended_action": "Activate emergency medical services immediately; clear nearby hazards, place the person on their side, do not restrain them, and do not put anything in their mouth",
+     "rationale": "A prolonged or recurrent seizure can be life-threatening and requires emergency medical care",
+     "source": "CDC, First Aid for Seizures (https://www.cdc.gov/epilepsy/first-aid-for-seizures/index.html), accessed 2026-08-25"
+    },
+    {
+     "finding": "A first-ever seizure, difficulty breathing or waking afterward, serious injury, a seizure in water, or a seizure during pregnancy",
+     "urgency_level": "emergency",
+     "recommended_action": "Activate emergency medical services immediately; do not delay emergency assessment for acupuncture or herbal treatment",
+     "rationale": "A first or complicated seizure requires immediate evaluation for acute neurologic, metabolic, traumatic, or obstetric causes",
+     "source": "CDC, First Aid for Seizures (https://www.cdc.gov/epilepsy/first-aid-for-seizures/index.html), accessed 2026-08-25"
+    }
    ],
    "related_patterns": [
     "pattern.wind_phlegm",
@@ -8403,9 +8427,17 @@
     "pattern.liver_kidney_yin_deficiency",
     "pattern.phlegm_heat_obstructing_heart_orifices"
    ],
+   "sources": [
+    "curriculum/conditions/TCM Pathology 1 & 2 notes.pdf#p16 (Four Wind Differentiation; contextual only)",
+    "https://www.cdc.gov/epilepsy/about/index.html",
+    "https://www.cdc.gov/epilepsy/first-aid-for-seizures/index.html"
+   ],
    "field_sources": {
     "definition_zh": [
-     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+     "Existing TCM Internal Medicine textbook-standard wording, revised for non-equivalence; CDC Epilepsy Basics supports the recurrent-seizure biomedical boundary (accessed 2026-08-25). No page-specific TCM textbook citation is available in the current repo."
+    ],
+    "definition_en": [
+     "English paired rendering of definition_zh; same scope and source limitation"
     ],
     "etiology_zh": [
      "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
@@ -8429,22 +8461,26 @@
      "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
     ],
     "red_flags_zh": [
-     "established TCM/biomedical clinical knowledge, not curriculum or whitelist-verified — flag for Ting to source-check"
+     "CDC First Aid for Seizures (accessed 2026-08-25)"
+    ],
+    "red_flags_en": [
+     "English paired rendering of the same two structured safety entries; same source"
     ]
-   }
+   },
+   "source_type": "course_context_plus_official_biomedical_safety"
   },
   {
-   "id": "tdis.jue_zheng",
+  "id": "tdis.jue_zheng",
    "name_zh": "厥證",
    "pinyin": "Juezheng",
    "name_en": "Reversal (Syncope) Disorder",
    "taxonomy_id": "tdx.internal_medicine.cardiovascular_neuropsychiatric_disorders",
    "aliases_zh": [],
    "aliases_en": [],
-   "review_status": "skeleton",
+   "review_status": "draft",
    "authored_by": "model_draft",
-   "definition_zh": "厥證是以突然昏倒、不省人事、四肢厥冷，多在移時之間甦醒為主要表現的病證；輕者昏厥時間短暫，發作後如常人，重者可一厥不醒而致死亡，相當於西醫暈厥、休克早期等表現。",
-   "definition_en": "Jue Zheng (Reversal / Syncope Disorder) is characterized by sudden collapse with loss of consciousness and cold extremities, usually followed by recovery within a short interval; in mild cases the loss of consciousness is brief and the patient returns to normal afterward, while in severe cases the patient may fail to revive and die. It corresponds to Western syncope and the early presentation of shock.",
+   "definition_zh": "厥證是以突然昏倒、不省人事，常伴四肢厥冷，並可能短時間甦醒為主要表現的中醫病證。其表現可與 syncope 重疊，也可能涵蓋休克、心律失常、低血糖、癲癇或腦血管事件等不同急症；因此不能直接等同於良性暈厥或「休克早期」。",
+   "definition_en": "Jue Zheng is a TCM disease category centered on sudden collapse and transient loss of consciousness, often with cold extremities and possible short-interval recovery. It can overlap with syncope but may also encompass shock, arrhythmia, hypoglycemia, seizure, or cerebrovascular events; it must not be equated automatically with benign fainting or an early stage of shock.",
    "etiology_zh": "情志內傷（暴怒、大驚、大恐）、體虛勞倦、亡血失津、飲食不節（暴飲暴食或飢餓過度）、外邪侵襲等，皆可致氣機逆亂而發病。",
    "etiology_en": "Emotional damage (sudden rage, great fright, or extreme fear), a weak constitution and overexertion, severe blood loss or fluid depletion, dietary irregularity (overeating or excessive hunger), and invasion by external pathogens can all cause Qi mechanism derangement and precipitate the disease.",
    "pathomechanism_zh": "陰陽失調，氣機逆亂，升降乖戾，氣血一時不能上達於腦，清竅失養，發為厥證。臨床常見氣厥（實證因暴怒氣逆，虛證因大驚猝恐致氣虛下陷）、血厥（實證因肝陽暴張、血菀於上，虛證因大出血氣隨血脫）、痰厥（痰濁上蒙清竅）、食厥（食滯中焦、氣機壅塞）等類型，基本病機皆為氣機突然逆亂，阻滯清竅。",
@@ -8480,14 +8516,50 @@
    "treatment_principle_zh": "醒神回厥為急治之法：虛證益氣、回陽、養血、生津以固脫，實證開竅、順氣、化痰、消食以通閉；蘇醒後再辨證調治其本。",
    "treatment_principle_en": "Reviving the spirit and reversing the collapse is the urgent treatment method: vacuity types are treated by boosting Qi, restoring Yang, nourishing Blood, or generating fluids to arrest collapse; excess types are treated by opening the orifices, rectifying Qi, resolving Phlegm, or dispersing food stagnation to relieve the block. Once the patient revives, the underlying pattern is then treated according to its root.",
    "red_flags_zh": [
-    "厥證患者甦醒後出現單側肢體癱瘓、言語不清或口角歪斜，應立即轉診，不可先行針灸治療——需排除中風／短暫性腦缺血發作",
-    "厥證患者昏厥前有心悸、胸痛，或有心臟病史，昏厥反覆發作，應懷疑心因性昏厥（心律不整、主動脈狹窄等），需轉診心臟科心電圖評估，不可僅以厥證論治而延誤致命性心律不整的診斷",
-    "有糖尿病病史的厥證患者，應優先排除低血糖昏厥，儘速監測血糖，必要時立即補糖急救"
+    {
+     "finding": "昏倒後無正常呼吸、短時間內仍無法喚醒，或甦醒後未完全恢復並有言語、視覺或單側肢體異常",
+     "urgency_level": "emergency",
+     "recommended_action": "立即啟動緊急醫療服務；無正常呼吸時依急救指示處理，不先行針灸或中藥治療",
+     "rationale": "需立即排除心搏停止、持續意識障礙、中風或其他急性神經事件",
+     "source": "NHS, Fainting (https://www.nhs.uk/symptoms/fainting/), accessed 2026-08-25"
+    },
+    {
+     "finding": "昏厥伴胸痛、劇烈或不規則心悸，或發生於運動中或平臥時",
+     "urgency_level": "emergency",
+     "recommended_action": "立即啟動緊急醫療服務並接受心血管評估",
+     "rationale": "這些特徵可能提示具生命危險的心因性昏厥或心律失常",
+     "source": "NHS, Fainting (https://www.nhs.uk/symptoms/fainting/), accessed 2026-08-25"
+    },
+    {
+     "finding": "首次昏厥、反覆昏厥，或近期發作型態與伴隨症狀改變，但目前沒有 emergency 特徵",
+     "urgency_level": "urgent",
+     "recommended_action": "儘快接受醫療評估以確定原因；評估前避免駕駛及高處或水域活動",
+     "rationale": "昏厥可能源於脫水、藥物、低血糖、心臟或神經問題，不能只依中醫病名判定原因",
+     "source": "MedlinePlus, Fainting (https://medlineplus.gov/ency/article/003092.htm), accessed 2026-08-25"
+    }
    ],
    "red_flags_en": [
-    "A Jue Zheng patient who, upon regaining consciousness, shows unilateral limb weakness, slurred speech, or facial droop should be referred immediately rather than treated first with acupuncture — stroke or a transient ischemic attack must be ruled out",
-    "A Jue Zheng patient with palpitations or chest pain before the syncope, a history of heart disease, or recurrent episodes should be suspected of cardiogenic syncope (arrhythmia, aortic stenosis, etc.) and referred to cardiology for ECG evaluation rather than being treated as simple Jue Zheng, which risks delaying diagnosis of a potentially fatal arrhythmia",
-    "A Jue Zheng patient with a history of diabetes should first be evaluated for hypoglycemic syncope — check blood glucose promptly and give emergency glucose if indicated"
+    {
+     "finding": "No normal breathing after collapse, inability to awaken promptly, or incomplete recovery with impaired speech, vision, or unilateral movement",
+     "urgency_level": "emergency",
+     "recommended_action": "Activate emergency medical services immediately; follow resuscitation instructions if normal breathing is absent and do not delay care for acupuncture or herbal treatment",
+     "rationale": "Cardiac arrest, persistent altered consciousness, stroke, or another acute neurologic event must be excluded immediately",
+     "source": "NHS, Fainting (https://www.nhs.uk/symptoms/fainting/), accessed 2026-08-25"
+    },
+    {
+     "finding": "Syncope with chest pain or a pounding or irregular heartbeat, or occurring during exercise or while lying down",
+     "urgency_level": "emergency",
+     "recommended_action": "Activate emergency medical services immediately and obtain cardiovascular assessment",
+     "rationale": "These features can indicate potentially life-threatening cardiogenic syncope or arrhythmia",
+     "source": "NHS, Fainting (https://www.nhs.uk/symptoms/fainting/), accessed 2026-08-25"
+    },
+    {
+     "finding": "First-ever fainting, recurrent fainting, or a new change in the pattern or associated symptoms without current emergency features",
+     "urgency_level": "urgent",
+     "recommended_action": "Arrange prompt medical evaluation to determine the cause; avoid driving and activities at height or around water until assessed",
+     "rationale": "Fainting may result from dehydration, medication effects, hypoglycemia, cardiac disease, or neurologic disease and cannot be attributed from the TCM label alone",
+     "source": "MedlinePlus, Fainting (https://medlineplus.gov/ency/article/003092.htm), accessed 2026-08-25"
+    }
    ],
    "related_patterns": [
     "pattern.liver_qi_stagnation",
@@ -8497,9 +8569,17 @@
     "pattern.phlegm",
     "pattern.food_stagnation"
    ],
+   "sources": [
+    "curriculum/conditions/TCM Pathology 1 & 2 notes.pdf#p3,p23 (Qi rebelling and shock differentiation; contextual only)",
+    "https://www.nhs.uk/symptoms/fainting/",
+    "https://medlineplus.gov/ency/article/003092.htm"
+   ],
    "field_sources": {
     "definition_zh": [
-     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+     "Existing TCM Internal Medicine textbook-standard wording; curriculum/conditions/TCM Pathology 1 & 2 notes.pdf#p3,p23 supplies limited Qi-rebellion/shock context; NHS and MedlinePlus support the non-equivalence boundary (accessed 2026-08-25). No page-specific TCM disease citation is available in the current repo."
+    ],
+    "definition_en": [
+     "English paired rendering of definition_zh; same scope and source limitation"
     ],
     "etiology_zh": [
      "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
@@ -8523,9 +8603,13 @@
      "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
     ],
     "red_flags_zh": [
-     "established TCM/biomedical clinical knowledge, not curriculum or whitelist-verified — flag for Ting to source-check"
+     "NHS Fainting; MedlinePlus Fainting (accessed 2026-08-25)"
+    ],
+    "red_flags_en": [
+     "English paired rendering of the same three structured safety entries; same sources"
     ]
-   }
+   },
+   "source_type": "course_context_plus_official_biomedical_safety"
   },
   {
    "id": "tdis.ye_ge",
@@ -8936,17 +9020,17 @@
    }
   },
   {
-   "id": "tdis.nue_ji",
+  "id": "tdis.nue_ji",
    "name_zh": "瘧疾",
    "pinyin": "Nueji",
    "name_en": "Malaria Disorder",
    "taxonomy_id": "tdx.internal_medicine.liver_gallbladder_disorders",
    "aliases_zh": [],
    "aliases_en": [],
-   "review_status": "skeleton",
+   "review_status": "draft",
    "authored_by": "model_draft",
-   "definition_zh": "瘧疾是感受瘧邪，因寒熱之氣相搏，以寒戰壯熱、休作有時、汗出而解為主要臨床特徵的一種傳染性疾病，多發於夏秋季節及瘧疾流行地區，相當於西醫瘧疾。",
-   "definition_en": "Nue Ji (Malaria Disorder) is an infectious disease caused by invasion of a malarial pathogen, in which Cold and Heat contend with one another, producing shivering chills alternating with high fever that recur at regular intervals and resolve with sweating; it occurs mainly in summer and autumn and in malaria-endemic regions, and corresponds to Western malaria.",
+   "definition_zh": "瘧疾在中醫病名系統中以反覆寒戰、發熱、汗出及休作有時為典型特徵，其古典涵義與現代 malaria 高度重疊，但不能只依週期性寒熱建立等同關係。現代 malaria 是 Plasmodium 寄生蟲感染，症狀可以不典型；反覆寒熱也可由其他感染或炎症引起，須依旅遊或居住暴露史與寄生蟲檢測確診。",
+   "definition_en": "Nue Ji is a TCM disease category classically characterized by recurrent chills, fever, sweating, and episodic remission. It overlaps strongly with modern malaria but must not be equated solely from periodic fever. Biomedical malaria is a Plasmodium infection and may lack a classic periodic pattern, while recurrent chills and fever can arise from other infections or inflammatory disorders; exposure history and parasite-based testing are required.",
    "etiology_zh": "外因為感染瘧邪（古稱瘧氣、瘴毒），多因夏秋之季感受山嵐瘴氣或經蚊蟲叮咬傳染而得；內因為正氣不足、營衛失調、脾胃虛弱之人易感邪發病；病久不癒或反覆發作可耗傷氣血、損及肝脾，轉為瘧母。",
    "etiology_en": "The external cause is infection with a malarial pathogen (traditionally termed Nue Qi or miasmic toxin), usually contracted in summer and autumn through exposure to mountain miasma or through mosquito bite transmission. The internal cause is a person of deficient correct Qi, disharmonized nutritive-defensive Qi, or weak Spleen-Stomach, who is more susceptible to the pathogen. Prolonged illness or repeated episodes deplete Qi and Blood and damage the Liver and Spleen, converting into a Malarial Mass (Nue Mu).",
    "pathomechanism_zh": "瘧邪侵入人體，伏於半表半裡，入與陰爭則寒，出與陽爭則熱，邪正相爭，故見寒熱往來、休作有時；瘧邪與痰濕相結，伏藏膜原，故發作呈週期性。反覆發作，耗傷氣血，損及脾胃，病久氣血虧虛，或痰濕與瘀血凝結於脅下，形成癥瘕痞塊，稱為瘧母；若感受瘴毒疫癘之邪、邪盛正虛，可內陷心包，出現高熱不退、神昏譫語、抽搐等危重之候（疫毒瘧／瘴瘧）。",
@@ -8982,14 +9066,36 @@
    "treatment_principle_zh": "以祛邪截瘧為治療原則，結合病邪偏盛及正氣強弱，分別配合和解表裡、清熱、溫化寒濕等法；久瘧氣血虧虛者兼補氣養血，瘧母形成者兼活血化瘀、軟堅散結；疫毒瘧邪陷心包者急以清熱解毒、開竅熄風救治。",
    "treatment_principle_en": "The treatment principle is to expel the pathogen and interrupt the malarial episodes, combined according to the predominant pathogen and the strength of correct Qi with methods such as harmonizing exterior and interior, clearing Heat, or warmly transforming Cold-Damp. Long-standing malaria with Qi-Blood deficiency is treated with added Qi and Blood tonification; a formed Malarial Mass is treated with added blood-moving and mass-dispersing methods; the Epidemic-Toxin pattern with the pathogen sunk into the pericardium requires urgent treatment to clear Heat, resolve toxin, open the orifices, and extinguish Wind.",
    "red_flags_zh": [
-    "瘧疾患者出現持續高熱不退、意識障礙或抽搐（疫毒瘧／瘴瘧），應懷疑腦型瘧疾，屬致命性急症，應立即送醫急救並使用抗瘧藥物治療，不可僅以中藥治療",
-    "瘧疾為法定傳染病，確診或高度疑似個案應通報衛生單位並接受西醫規範抗瘧藥物治療，中醫治療不可取代",
-    "瘧疾患者出現黃疸、少尿或意識改變，提示重症瘧疾合併器官衰竭，需立即轉診加護病房"
+    {
+     "finding": "曾在 malaria 流行地區旅遊或居住，之後出現發熱、寒戰、頭痛或類流感症狀，即使發熱沒有典型週期",
+     "urgency_level": "urgent",
+     "recommended_action": "儘快接受醫療評估與寄生蟲檢測，主動告知旅遊地點與日期；不以中醫辨證或退熱反應排除 malaria",
+     "rationale": "早期 malaria 症狀可輕微且不特異，延遲診斷可能進展為重症",
+     "source": "CDC, Symptoms of Malaria (https://www.cdc.gov/malaria/symptoms/index.html), accessed 2026-08-25"
+    },
+    {
+     "finding": "疑似或確診 malaria 出現意識受損、多次抽搐、呼吸困難、深色或血尿、黃疸或異常出血",
+     "urgency_level": "emergency",
+     "recommended_action": "立即送急診並告知可能 malaria 暴露，不以針灸或中藥延誤抗瘧及器官支持治療",
+     "rationale": "WHO 將這些列為 severe malaria 表現，可迅速危及生命",
+     "source": "WHO, Malaria (https://www.who.int/news-room/fact-sheets/detail/malaria), accessed 2026-08-25"
+    }
    ],
    "red_flags_en": [
-    "A Nue Ji patient with persistent high fever, altered consciousness, or convulsions (the Epidemic-Toxin / Miasmic Malaria pattern) should be suspected of cerebral malaria, a fatal emergency requiring immediate emergency care and antimalarial drug treatment — TCM treatment alone cannot substitute for this",
-    "Malaria is a notifiable infectious disease; a confirmed or strongly suspected case must be reported to public health authorities and treated with standard Western antimalarial medication, which TCM treatment cannot replace",
-    "A Nue Ji patient with jaundice, low urine output, or altered consciousness suggests severe malaria with organ failure and should be referred immediately to intensive care"
+    {
+     "finding": "Fever, chills, headache, or a flu-like illness after travel to or residence in a malaria-endemic area, even without a classic periodic fever pattern",
+     "urgency_level": "urgent",
+     "recommended_action": "Obtain prompt medical evaluation and parasite-based testing and report the locations and dates of travel; do not exclude malaria from the TCM pattern or response to fever reduction",
+     "rationale": "Early malaria symptoms may be mild and nonspecific, and delayed diagnosis can allow progression to severe disease",
+     "source": "CDC, Symptoms of Malaria (https://www.cdc.gov/malaria/symptoms/index.html), accessed 2026-08-25"
+    },
+    {
+     "finding": "Suspected or confirmed malaria with impaired consciousness, multiple convulsions, difficulty breathing, dark or bloody urine, jaundice, or abnormal bleeding",
+     "urgency_level": "emergency",
+     "recommended_action": "Transfer immediately to emergency care and communicate the possible malaria exposure; do not delay antimalarial and organ-supportive treatment for acupuncture or herbal treatment",
+     "rationale": "WHO identifies these as manifestations of severe malaria that can rapidly become life-threatening",
+     "source": "WHO, Malaria (https://www.who.int/news-room/fact-sheets/detail/malaria), accessed 2026-08-25"
+    }
    ],
    "related_patterns": [
     "pattern.shao_yang_pattern",
@@ -8997,9 +9103,17 @@
     "pattern.qi_blood_deficiency",
     "pattern.phlegm_stasis_binding"
    ],
+   "sources": [
+    "curriculum/conditions/TCM Pathology 1 & 2 notes.pdf#p16 (malaria mentioned only as a hemolytic-jaundice example; not a complete Nue Ji chapter)",
+    "https://www.who.int/news-room/fact-sheets/detail/malaria",
+    "https://www.cdc.gov/malaria/symptoms/index.html"
+   ],
    "field_sources": {
     "definition_zh": [
-     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+     "Existing TCM Internal Medicine textbook-standard wording; WHO Malaria and CDC Malaria Symptoms support the Plasmodium/exposure/testing non-equivalence boundary (accessed 2026-08-25). The repo curriculum only mentions malaria tangentially and does not provide a complete page-specific Nue Ji chapter."
+    ],
+    "definition_en": [
+     "English paired rendering of definition_zh; same scope and source limitation"
     ],
     "etiology_zh": [
      "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
@@ -9023,9 +9137,13 @@
      "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
     ],
     "red_flags_zh": [
-     "established TCM/biomedical clinical knowledge, not curriculum or whitelist-verified — flag for Ting to source-check"
+     "WHO Malaria; CDC Symptoms of Malaria (accessed 2026-08-25)"
+    ],
+    "red_flags_en": [
+     "English paired rendering of the same two structured safety entries; same sources"
     ]
-   }
+   },
+   "source_type": "course_context_plus_official_biomedical_safety"
   },
   {
    "id": "tdis.guan_ge",
@@ -9409,17 +9527,17 @@
    }
   },
   {
-   "id": "tdis.jing_bing",
+  "id": "tdis.jing_bing",
    "name_zh": "痙病",
    "pinyin": "Jingbing",
    "name_en": "Convulsion Disorder",
    "taxonomy_id": "tdx.internal_medicine.channel_limb_neuromuscular",
    "aliases_zh": [],
    "aliases_en": [],
-   "review_status": "skeleton",
+   "review_status": "draft",
    "authored_by": "model_draft",
-   "definition_zh": "痙病是以項背强急、四肢抽搐，甚則角弓反張為主要臨床表現的病證，首見於《內經》及《金匱要略》，可由外感或內傷多種病因引起，病情有輕重緩急之分。",
-   "definition_en": "Jing Bing (Convulsion Disorder) is a disorder characterized mainly by stiffness and rigidity of the neck and back and limb convulsions, in severe cases with opisthotonos (arched-back rigidity); first described in the Nei Jing and Jin Gui Yao Lue, it can arise from a range of external or internal etiologies and varies in severity and acuity.",
+   "definition_zh": "痙病是以項背強急、筋脈拘攣、四肢抽搐，甚則角弓反張為主的中醫病證。這組表現不是單一現代疾病，可與腦膜炎或腦炎、破傷風、epileptic seizure、代謝異常及其他中樞神經或全身性急症重疊，必須依發熱、意識狀態、傷口史及神經學表現另行鑑別。",
+   "definition_en": "Jing Bing is a TCM disease category characterized by neck and back rigidity, sinew contraction, limb spasms or convulsions, and in severe cases opisthotonos. It is not a single biomedical diagnosis and can overlap with meningitis or encephalitis, tetanus, epileptic seizures, metabolic disturbances, and other neurologic or systemic emergencies; fever, mental status, wound history, and neurologic findings require separate assessment.",
    "etiology_zh": "外因多為風寒濕邪侵襲太陽經脈，尤以汗出當風、產後或病後體虛感邪為多見；內因多為熱盛傷津，或久病陰血虧虛、筋脈失養，虛風內動，亦可因痰濁壅盛、阻滯經絡而發。",
    "etiology_en": "The external cause is usually invasion of the Tai Yang channels by Wind-Cold-Damp, most often when sweating is followed by exposure to draft, or when the body is vacuous after childbirth or illness and susceptible to pathogenic invasion; the internal cause is usually exuberant Heat damaging fluids, or chronic illness depleting Yin-Blood so that the sinews and vessels lose nourishment and internal vacuity Wind stirs — it can also arise from exuberant Phlegm-turbidity obstructing the channels and network vessels.",
    "pathomechanism_zh": "外感致痙者，風寒濕邪客於太陽經脈，經氣不利，筋脈拘急而項背强直——無汗者為剛痙，邪氣較盛、腠理閉塞；有汗者為柔痙，衛陽已虛、腠理疏鬆。內傷致痙者，或熱邪熾盛、灼傷津液、筋脈失濡而動風；或久病失血、陰血虧虛，筋脈失於濡養，虛風內動而抽搐；或痰濁內盛，壅塞經絡，亦可發為痙證。病情進一步發展，可因邪盛正衰、陰陽離決而見神昏、汗出如油等危候。",
@@ -9457,16 +9575,50 @@
    "treatment_principle_zh": "外感致痙者祛風散寒除濕、解肌舒筋，剛痙宜辛溫發汗，柔痙宜調和營衛；內傷致痙者，熱盛者清熱存津、熄風止痙，陰血虧虛者滋陰養血、柔肝熄風，痰濁壅盛者化痰通絡。",
    "treatment_principle_en": "Externally-contracted convulsion is treated by dispelling Wind, scattering Cold, and eliminating Dampness while releasing the muscle layer and relaxing the sinews — Gang Jing calls for acrid-warm sweating, while Rou Jing calls for harmonizing the constructive and defensive; internally-caused convulsion is treated, for exuberant Heat, by clearing Heat and preserving fluids while extinguishing Wind and stopping convulsion, for Yin-Blood vacuity by enriching Yin and nourishing Blood while softening the Liver and extinguishing Wind, and for exuberant Phlegm-turbidity by transforming Phlegm and freeing the network vessels.",
    "red_flags_zh": [
-    "痙病患者發作合併發熱、頸項强直、劇烈頭痛、意識改變（嗜睡、躁動或昏迷），應立即轉診急診以排除腦膜炎/腦炎，不可先行針灸或內服中藥延誤",
-    "有近期外傷傷口（尤其生鏽器械或動物咬傷）病史，合併牙關緊閉、吞嚥困難、肌肉持續性痙攣，應立即轉診排除破傷風",
-    "孕產婦出現抽搐合併高血壓、蛋白尿或水腫，應立即轉診排除子癇，屬產科急症",
-    "已知癲癇病史患者發作型態改變或發作頻率明顯增加，應轉診神經科重新評估"
+    {
+     "finding": "抽搐或項背強直伴發熱、劇烈頭痛、畏光、嘔吐或意識混亂",
+     "urgency_level": "emergency",
+     "recommended_action": "立即送急診評估腦膜炎、腦炎或其他中樞神經感染，不先行針灸或內服中藥",
+     "rationale": "CDC 將細菌性腦膜炎列為醫療急症，需儘速診斷與治療",
+     "source": "CDC, About Meningitis (https://www.cdc.gov/meningitis/about/index.html), accessed 2026-08-25"
+    },
+    {
+     "finding": "牙關緊閉、吞嚥困難、全身痛性僵硬或刺激誘發痙攣，尤其伴近期深部或污染傷口",
+     "urgency_level": "emergency",
+     "recommended_action": "立即送急診或啟動緊急醫療服務，告知傷口及疫苗史",
+     "rationale": "這些表現可能為破傷風；破傷風需立即住院處理且可能造成呼吸併發症",
+     "source": "CDC, About Tetanus (https://www.cdc.gov/tetanus/about/index.html), accessed 2026-08-25"
+    },
+    {
+     "finding": "妊娠期間出現首次或原因不明的抽搐",
+     "urgency_level": "emergency",
+     "recommended_action": "立即啟動緊急醫療服務並接受產科急症評估",
+     "rationale": "CDC seizure first-aid guidance 將妊娠期間發作列為需要緊急醫療協助的情況",
+     "source": "CDC, First Aid for Seizures (https://www.cdc.gov/epilepsy/first-aid-for-seizures/index.html), accessed 2026-08-25"
+    }
    ],
    "red_flags_en": [
-    "A Jing Bing episode combined with fever, nuchal rigidity, severe headache, or altered consciousness (lethargy, agitation, or coma) should be referred immediately to emergency care to rule out meningitis/encephalitis — do not attempt acupuncture or oral herbal treatment first and delay care",
-    "A recent wound (especially from a rusty implement or animal bite) combined with trismus, difficulty swallowing, and sustained muscle spasm should be referred immediately to rule out tetanus",
-    "A pregnant or postpartum patient with convulsions combined with hypertension, proteinuria, or edema should be referred immediately to rule out eclampsia, an obstetric emergency",
-    "A patient with known epilepsy whose seizure pattern changes or frequency clearly increases should be referred to neurology for re-evaluation"
+    {
+     "finding": "Convulsion or neck and back rigidity with fever, severe headache, photophobia, vomiting, or confusion",
+     "urgency_level": "emergency",
+     "recommended_action": "Send immediately for emergency evaluation of meningitis, encephalitis, or another central nervous system infection; do not delay care for acupuncture or oral herbal treatment",
+     "rationale": "CDC identifies bacterial meningitis as a medical emergency requiring rapid diagnosis and treatment",
+     "source": "CDC, About Meningitis (https://www.cdc.gov/meningitis/about/index.html), accessed 2026-08-25"
+    },
+    {
+     "finding": "Lockjaw, difficulty swallowing, generalized painful stiffness, or stimulus-triggered spasms, particularly after a recent deep or contaminated wound",
+     "urgency_level": "emergency",
+     "recommended_action": "Send to emergency care or activate emergency medical services immediately and communicate the wound and vaccination history",
+     "rationale": "These findings may indicate tetanus, which requires immediate hospital treatment and can cause respiratory complications",
+     "source": "CDC, About Tetanus (https://www.cdc.gov/tetanus/about/index.html), accessed 2026-08-25"
+    },
+    {
+     "finding": "A first or otherwise unexplained seizure during pregnancy",
+     "urgency_level": "emergency",
+     "recommended_action": "Activate emergency medical services immediately for obstetric emergency assessment",
+     "rationale": "CDC seizure first-aid guidance lists a seizure during pregnancy as requiring emergency medical help",
+     "source": "CDC, First Aid for Seizures (https://www.cdc.gov/epilepsy/first-aid-for-seizures/index.html), accessed 2026-08-25"
+    }
    ],
    "related_patterns": [
     "pattern.tai_yang_cold_damage",
@@ -9474,9 +9626,18 @@
     "pattern.liver_wind",
     "pattern.blood_deficiency_wind_dryness"
    ],
+   "sources": [
+    "curriculum/conditions/TCM Pathology 1 & 2 notes.pdf#p4,p16 (convulsion and internal-Wind context; not a complete Jing Bing chapter)",
+    "https://www.cdc.gov/meningitis/about/index.html",
+    "https://www.cdc.gov/tetanus/about/index.html",
+    "https://www.cdc.gov/epilepsy/first-aid-for-seizures/index.html"
+   ],
    "field_sources": {
     "definition_zh": [
-     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+     "Existing TCM Internal Medicine textbook-standard wording; curriculum/conditions/TCM Pathology 1 & 2 notes.pdf#p4,p16 supports convulsion/internal-Wind context only; CDC Meningitis and Tetanus support biomedical differential boundaries (accessed 2026-08-25). No complete page-specific Jing Bing chapter is present in the repo."
+    ],
+    "definition_en": [
+     "English paired rendering of definition_zh; same scope and source limitation"
     ],
     "etiology_zh": [
      "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
@@ -9500,9 +9661,13 @@
      "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
     ],
     "red_flags_zh": [
-     "Searched curriculum/ for 痙病/Jing Bing/Convulsion Disorder/meningitis/tetanus/eclampsia — no dedicated disease content found; whitelist source not fetched. Flags written from established TCM/biomedical clinical knowledge (opisthotonos/trismus presentations overlapping with meningitis, tetanus, eclampsia, epilepsy), not curriculum or whitelist-verified — flag for Ting to source-check"
+     "CDC About Meningitis; CDC About Tetanus; CDC First Aid for Seizures (accessed 2026-08-25)"
+    ],
+    "red_flags_en": [
+     "English paired rendering of the same three structured safety entries; same sources"
     ]
-   }
+   },
+   "source_type": "course_context_plus_official_biomedical_safety"
   },
   {
    "id": "tdis.shang_han",
@@ -9974,17 +10139,17 @@
    }
   },
   {
-   "id": "tdis.huo_luan",
+  "id": "tdis.huo_luan",
    "name_zh": "霍亂",
    "pinyin": "Huoluan",
    "name_en": "Sudden Turmoil Disorder",
    "taxonomy_id": "tdx.internal_medicine.externally_contracted_febrile",
    "aliases_zh": [],
    "aliases_en": [],
-   "review_status": "skeleton",
+   "review_status": "draft",
    "authored_by": "model_draft",
-   "definition_zh": "霍亂是因感受濕濁穢氣或飲食不潔，清濁相干、揮霍撩亂於中焦腸胃，以突然發作、劇烈嘔吐與泄瀉並作為主要表現的急性病證，病勢急驟，重者可迅速耗傷津液、亡陰亡陽。",
-   "definition_en": "Huo Luan (Sudden Turmoil Disorder) is an acute disorder caused by contraction of turbid, foul Dampness Qi or unclean food and drink, in which the clear and turbid contend with each other in sudden turmoil within the middle burner Stomach and Intestines, presenting mainly as sudden-onset, severe simultaneous vomiting and diarrhea; the course is acute and severe cases can rapidly deplete fluids and progress to desertion of Yin or Yang.",
+   "definition_zh": "霍亂在中醫語境中是以急驟吐瀉並作、腹痛，重者轉筋及津液暴脫為特徵的急性病證，歷史涵蓋範圍大於現代細菌性 cholera。其表現可與感染性腸胃炎、食物中毒及其他急性吐瀉疾病重疊；只有依流行病學與實驗室評估才能診斷 Vibrio cholerae 感染。",
+   "definition_en": "Huo Luan is a TCM acute disease category characterized by sudden simultaneous vomiting and diarrhea, abdominal pain, and in severe cases muscle cramping and abrupt fluid depletion. Its historical scope is broader than modern bacterial cholera and can overlap with infectious gastroenteritis, foodborne illness, and other acute vomiting-diarrhea syndromes; Vibrio cholerae infection requires epidemiologic and laboratory assessment.",
    "etiology_zh": "多因夏秋之季感受濕濁穢氣，或恣食生冷不潔、腐敗變質之物，穢濁之邪直犯腸胃；素體脾胃虛弱、正氣不足者尤易感邪發病，病情輕重與感邪之淺深、體質强弱密切相關。",
    "etiology_en": "Most commonly results from contraction of turbid, foul Dampness Qi during summer and autumn, or from indulgent consumption of raw, cold, unclean, spoiled, or contaminated food and drink, so that a foul-turbid pathogen directly attacks the Stomach and Intestines; those with an underlying vacuous Spleen-Stomach and insufficient correct Qi are especially susceptible, and severity correlates closely with the depth of the pathogenic invasion and the strength of the constitution.",
    "pathomechanism_zh": "穢濁之邪直犯腸胃，清濁相干，升降失常，清氣不升則泄瀉，濁氣不降則嘔吐，故吐瀉並作、揮霍撩亂。屬寒濕者，寒濕內盛，中陽被遏，吐瀉物多清稀，伴腹痛喜溫；屬濕熱者，濕熱蘊結腸胃，吐瀉物多穢臭，伴發熱煩渴。吐瀉劇烈者，津液暴脫，筋脈失養而見轉筋（腓腸肌痙攣）；津液耗竭、陽氣隨之外脫，可見目陷肢冷、脈微欲絕之亡陰亡陽危候，病情發展迅速，須及時救治。",
@@ -10022,23 +10187,67 @@
    "treatment_principle_zh": "以辟穢化濁、調理腸胃為總則，寒濕者溫中散寒化濕，濕熱者清熱化濕、辟穢泄濁；吐瀉劇烈、津液暴脫者當急則治標，益氣救陰、回陽固脫，並須及時補液糾正電解質紊亂。",
    "treatment_principle_en": "The overall principle is to dispel foulness, transform turbidity, and regulate the Stomach and Intestines: the Cold-Damp type is treated by warming the middle, scattering Cold, and transforming Dampness; the Damp-Heat type by clearing Heat, transforming Dampness, and dispelling foulness while draining turbidity. When vomiting and diarrhea are severe with abrupt fluid loss, the branch must be treated urgently — boosting Qi, rescuing Yin, and restoring Yang to secure against desertion — together with prompt fluid resuscitation to correct electrolyte disturbance.",
    "red_flags_zh": [
-    "霍亂患者出現劇烈嘔吐腹瀉合併眼窩凹陷、皮膚彈性差、意識模糊、脈搏微弱或測不到血壓，提示嚴重脫水或休克，屬危及生命之急症，應立即轉診急診並靜脈補液，不可僅以口服中藥處理",
-    "若懷疑食物中毒或飲用水污染引起之群聚性腹瀉，應通報當地衛生單位並轉診排除細菌性痢疾、真性霍亂（Vibrio cholerae感染）等法定傳染病",
-    "嬰幼兒或老年患者出現持續嘔吐腹瀉超過24小時、尿量明顯減少，應立即轉診評估脫水程度"
+    {
+     "finding": "急性大量水樣腹瀉或持續吐瀉，伴低血壓、心跳加快、皮膚彈性下降、黏膜乾燥、意識混亂或昏迷",
+     "urgency_level": "emergency",
+     "recommended_action": "立即送急診或適當 cholera treatment facility；途中依醫療指示補液，不以口服中藥延誤轉送",
+     "rationale": "這些徵象提示嚴重脫水、低血容量性休克或器官損害，可迅速致命",
+     "source": "CDC, Signs and Symptoms of Cholera (https://www.cdc.gov/cholera/signs-symptoms/index.html), accessed 2026-08-25"
+    },
+    {
+     "finding": "流行地區或疑似受污染飲水、食物暴露後出現急性水樣腹瀉，或同一群體出現多名相似患者",
+     "urgency_level": "same_day",
+     "recommended_action": "當日接受醫療及公共衛生評估，依所在地規定檢測與通報，並採取安全飲水與手部衛生措施",
+     "rationale": "可能涉及可快速傳播的 cholera outbreak；症狀不能單獨確診，但延遲監測與補液會增加個人及群體風險",
+     "source": "WHO, Cholera (https://www.who.int/news-room/fact-sheets/detail/cholera), accessed 2026-08-25"
+    },
+    {
+     "finding": "吐瀉患者無法飲用或保留液體，或尿量顯著下降",
+     "urgency_level": "urgent",
+     "recommended_action": "儘速前往醫療機構評估脫水與補液需求；若同時出現低血壓、意識改變或極度虛弱則按 emergency 處理",
+     "rationale": "持續液體流失或無法口服補液可進展為嚴重脫水、腎衰竭及休克",
+     "source": "WHO, Cholera (https://www.who.int/news-room/fact-sheets/detail/cholera), accessed 2026-08-25; CDC, Signs and Symptoms of Cholera (https://www.cdc.gov/cholera/signs-symptoms/index.html), accessed 2026-08-25"
+    }
    ],
    "red_flags_en": [
-    "A Huo Luan patient with severe vomiting and diarrhea combined with sunken eyes, poor skin turgor, confusion, or a weak/unmeasurable pulse or blood pressure suggests severe dehydration or shock — a life-threatening emergency requiring immediate emergency referral and intravenous fluid resuscitation, not oral herbal treatment alone",
-    "Clustered diarrhea suspected to result from food poisoning or contaminated drinking water should be reported to the local health authority and referred to rule out bacterial dysentery or true cholera (Vibrio cholerae infection), both notifiable infectious diseases",
-    "An infant or elderly patient with vomiting and diarrhea persisting over 24 hours and a marked drop in urine output should be referred immediately to assess dehydration severity"
+    {
+     "finding": "Acute profuse watery diarrhea or persistent vomiting and diarrhea with low blood pressure, rapid heart rate, loss of skin elasticity, dry mucous membranes, confusion, or coma",
+     "urgency_level": "emergency",
+     "recommended_action": "Transfer immediately to emergency care or an appropriate cholera treatment facility; begin rehydration as medically directed during transfer and do not delay referral for oral herbal treatment",
+     "rationale": "These findings indicate severe dehydration, hypovolemic shock, or organ injury and can become fatal rapidly",
+     "source": "CDC, Signs and Symptoms of Cholera (https://www.cdc.gov/cholera/signs-symptoms/index.html), accessed 2026-08-25"
+    },
+    {
+     "finding": "Acute watery diarrhea after exposure to potentially contaminated food or water in an affected area, or multiple similar cases within the same group",
+     "urgency_level": "same_day",
+     "recommended_action": "Obtain same-day medical and public-health assessment, follow local testing and reporting requirements, and reinforce safe-water and hand-hygiene measures",
+     "rationale": "This may represent a rapidly spreading cholera outbreak; symptoms alone do not confirm the diagnosis, but delayed surveillance and rehydration increase individual and community risk",
+     "source": "WHO, Cholera (https://www.who.int/news-room/fact-sheets/detail/cholera), accessed 2026-08-25"
+    },
+    {
+     "finding": "Inability to drink or retain fluids during vomiting and diarrhea, or a marked decrease in urine output",
+     "urgency_level": "urgent",
+     "recommended_action": "Seek prompt medical assessment of dehydration and rehydration needs; escalate to emergency care if hypotension, altered consciousness, or profound weakness develops",
+     "rationale": "Ongoing fluid loss or inability to rehydrate orally can progress to severe dehydration, kidney failure, and shock",
+     "source": "WHO, Cholera (https://www.who.int/news-room/fact-sheets/detail/cholera), accessed 2026-08-25; CDC, Signs and Symptoms of Cholera (https://www.cdc.gov/cholera/signs-symptoms/index.html), accessed 2026-08-25"
+    }
    ],
    "related_patterns": [
     "pattern.cold_damp_encumbering_spleen",
     "pattern.damp_heat_spleen_stomach",
     "pattern.yang_deficiency"
    ],
+   "sources": [
+    "curriculum/conditions/4. Vomiting - handout on Canvas.docx and curriculum/conditions/7. Diarrhea - handouts on Canvas.docx (vomiting/diarrhea differential and dehydration context; not a complete Huo Luan chapter)",
+    "https://www.who.int/news-room/fact-sheets/detail/cholera",
+    "https://www.cdc.gov/cholera/signs-symptoms/index.html"
+   ],
    "field_sources": {
     "definition_zh": [
-     "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
+     "Existing TCM Internal Medicine textbook-standard wording; AcuTing vomiting/diarrhea handouts support acute GI differential context; WHO Cholera and CDC Cholera Symptoms support the historical-versus-biomedical non-equivalence boundary (accessed 2026-08-25). No complete page-specific Huo Luan chapter is present in the repo."
+    ],
+    "definition_en": [
+     "English paired rendering of definition_zh; same scope and source limitation"
     ],
     "etiology_zh": [
      "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
@@ -10062,9 +10271,13 @@
      "TCM Internal Medicine textbook standard (統編教材《中醫內科學》)"
     ],
     "red_flags_zh": [
-     "Searched curriculum/ for 霍亂/Huo Luan/Sudden Turmoil Disorder/cholera/dehydration — no dedicated disease content found; whitelist source not fetched. Flags written from established TCM/biomedical clinical knowledge (severe dehydration/shock risk and the historical correspondence to cholera/severe gastroenteritis), not curriculum or whitelist-verified — flag for Ting to source-check"
+     "WHO Cholera; CDC Signs and Symptoms of Cholera (accessed 2026-08-25)"
+    ],
+    "red_flags_en": [
+     "English paired rendering of the same three structured safety entries; same sources"
     ]
-   }
+   },
+   "source_type": "course_context_plus_official_biomedical_safety"
   },
   {
    "id": "tdis.ben_tun_qi",

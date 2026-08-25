@@ -1,3 +1,13 @@
+# 2026-08-25 — Codex TDIS 高風險急症辨病與安全邊界補強 T2
+
+- **範圍**：只改 `tdis.xian_bing`、`tdis.jue_zheng`、`tdis.jing_bing`、`tdis.huo_luan`、`tdis.nue_ji` 的 `review_status`、雙語 definition、雙語 structured red flags、sources、field provenance 與 `source_type`；未改 id、taxonomy、既有中醫病因病機、治法、證型、方劑或穴位。
+- **數字**：TDIS records `159→159`；具 record-level sources `80→85`；structured bilingual red flags `80→85`；skeleton `79→74`、draft `80→85`；validator blocking defects `0→0`、N1 note `1→1`。
+- **來源與邊界**：使用現有課件的有限 contextual evidence，並以 CDC、WHO、NHS、NIH/NLM MedlinePlus 補 biomedical differential 與 safety；10 個唯一官方 URL 於 2026-08-25 GET 均 HTTP 200。明確區分癇病／單次急性抽搐、厥證／良性暈厥或休克、痙病／多種神經急症、中醫霍亂／Vibrio cholerae infection、中醫瘧疾／檢驗確診 malaria。
+- **驗證**：只變更上述 5 ids 與 8 個允許欄位；中英 red flags 結構與筆數對稱、urgency enum 合法；`validate-tdis-standard 159/159 clean`、`build-data`、canonical/generated equality、relations、ratchet、relation registry、content-junk、10 URL reachability 與 `git diff --check` 均無新增 blocking defect。
+- **未解／下一步**：repo 無這 5 病名的完整課件章節，故 provenance 明示 contextual only，未把既有中醫病因病機宣稱為 page-verified。下一階段依 Ting 指示，從最常見臨床／考試病名開始擴充至約 200；新增前以 handoff 與 registry exact-id/alias 去重。
+
+---
+
 # 2026-08-25 — Codex TDIS 中醫病名定義與安全邊界補強 T1
 
 - **範圍**：只改 `tdis.ye_ge`、`tdis.jing_long`、`tdis.zhen_yan`、`tdis.tian_xing_chi_yan`、`tdis.lu_feng_nei_zhang` 的 `review_status`、雙語 definition、雙語 red flags、sources 與 field provenance；未改 id、taxonomy、病因病機、治法、證型關聯、方劑或穴位。

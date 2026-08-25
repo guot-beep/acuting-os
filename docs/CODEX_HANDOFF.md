@@ -1,5 +1,13 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-25] Codex Handoff — TDIS acute high-risk boundary T2
+
+- **Exact ids / fields**: only `tdis.xian_bing`, `tdis.jue_zheng`, `tdis.jing_bing`, `tdis.huo_luan`, and `tdis.nue_ji`; changed `review_status`, bilingual definitions, bilingual structured red flags, record sources, field provenance, and `source_type`. TCM etiology, pathomechanism, treatment principles, pattern links, formulas, and points were preserved.
+- **Evidence boundary**: AcuTing curriculum supplied contextual material only, not complete disease chapters; CDC, WHO, NHS, and NIH/NLM MedlinePlus supplied biomedical differential and safety evidence. All ten unique direct URLs returned HTTP 200 on 2026-08-25.
+- **Measured delta**: TDIS records `159→159`; records with sources `80→85`; structured bilingual red flags `80→85`; skeleton `79→74`; draft `80→85`; blocking defects `0→0`, N1 note `1→1`.
+- **Validation**: exact five-id/eight-field boundary, paired bilingual red-flag structure and urgency enums, `validate-tdis-standard 159/159 clean`, `build-data`, canonical/generated equality, relations, ratchet, relation registry, content junk, URL reachability, and `git diff --check` passed.
+- **Duplication guard / next phase**: T2 owns the five ids above and they should not be re-authored by another agent. Expansion toward approximately 200 TDIS records now prioritizes common clinical/exam diseases; every proposed id and alias must be checked against `tdis_registry.json`, `PROJECT_LOG.md`, and this handoff before authoring. No T3 ids are reserved until the prioritized inventory is reviewed.
+
 ## [2026-08-25] Codex Handoff — TDIS definition and safety boundary T1
 
 - **Exact ids / fields**: only `tdis.ye_ge`, `tdis.jing_long`, `tdis.zhen_yan`, `tdis.tian_xing_chi_yan`, and `tdis.lu_feng_nei_zhang`; changed `review_status`, bilingual definitions, bilingual structured red flags, record sources, field provenance, and `source_type`. No id, taxonomy, etiology, pathomechanism, treatment principle, pattern link, formula, or point content changed.
