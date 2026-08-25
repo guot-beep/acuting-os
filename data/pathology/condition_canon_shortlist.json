@@ -21777,7 +21777,7 @@
     "standard_neurology_reference"
    ],
    "authored_by": "model_draft",
-   "etiology_zh": "",
+   "etiology_zh": "叢發性頭痛的確切起始病因尚未明確。發作常在一天固定時段、夜間或特定季節成群出現，支持下視丘生理時鐘參與；疼痛與同側流淚、鼻塞等表現則涉及三叉神經—顱自律神經反射系統的活化。這些是目前的神經生物學機轉模型，不代表已找到單一原因。酒精、吸菸、強烈氣味或運動可在部分患者的叢集期誘發一次發作，但「誘因」不等於造成疾病本身。它屬原發性頭痛；首次叢集樣發作或型態改變仍須排除模仿此表現的次發性顱內或血管病因。",
    "western_pathology_zh": "叢發性頭痛是三叉自律神經頭痛家族的代表:重度單側眼眶、眶上或顳部疼痛,單次十五分鐘至三小時(未治療時之通說時長),伴同側顱自律神經徵——結膜充血流淚、鼻塞流涕、眼瞼水腫下垂、瞳孔縮小——與坐立不安、來回踱步;偏頭痛患者靜臥避動,此病患者躁動難安,是床邊鑑別的一條軸。「叢集」節律是它的生物學簽名:叢集期內每日近乎定時發作(常在入睡後),叢集期本身常隨季節而至——晝夜與年節律一致指向下視丘起搏,發作期功能影像所見的同側下視丘活化為此提供了機轉錨點;下游是三叉神經-顱自律神經反射弧的過度放電。男性較多、吸菸者比例高;叢集期內酒精立即誘發、間歇期則否——誘因的「期依賴性」本身就是下視丘週期的旁證。急性處置以高流量氧氣與皮下曲坦類為實證主軸(屬治療層);首次發作或型態改變者,須排除垂體病灶與頸動脈剝離等續發原因。",
    "tcm_patterns": [
     {
@@ -22311,7 +22311,10 @@
    "sources": [
     "https://cloudtcm.com/disease/tcm/28716",
     "IHS / ICHD-3 — 3.1 Cluster headache: https://ichd-3.org/3-trigeminal-autonomic-cephalalgias/3-1-cluster-headache/",
-    "https://medlineplus.gov/headache.html"
+    "https://medlineplus.gov/headache.html",
+    "https://www.nhs.uk/conditions/cluster-headaches/",
+    "https://www.nhs.uk/medicines/sumatriptan/common-questions-about-sumatriptan/",
+    "https://www.nice.org.uk/guidance/cg150/chapter/recommendations"
    ],
    "red_flag_refs": [
     "rf.cluster_headache.legacy01",
@@ -22354,6 +22357,24 @@
     ],
     "red_flags_en": [
      "IHS / ICHD-3 — 3.1 Cluster headache"
+    ],
+    "etiology_zh": [
+     "NHS: Cluster headaches — unknown cause, timing, demographic associations, and triggers (last reviewed 2023-08-18); NICE CG150 — cluster headache classification and first-bout imaging pathway (updated 2025-06-03)"
+    ],
+    "etiology_en": [
+     "NHS: Cluster headaches — unknown cause, timing, demographic associations, and triggers (last reviewed 2023-08-18); NICE CG150 — cluster headache classification and first-bout imaging pathway (updated 2025-06-03)"
+    ],
+    "risk_factors_zh": [
+     "NHS: Cluster headaches — sex, typical age, close-family association, and smoking trigger; NHS: Common questions about sumatriptan — smoking association (last reviewed 2022-12-08)"
+    ],
+    "risk_factors_en": [
+     "NHS: Cluster headaches — sex, typical age, close-family association, and smoking trigger; NHS: Common questions about sumatriptan — smoking association (last reviewed 2022-12-08)"
+    ],
+    "acupuncture_scope_zh": [
+     "NICE CG150 (updated 2025-06-03) recommends oxygen/triptan and verapamil pathways for cluster headache, while acupuncture recommendations are attached to other headache types; no cluster-specific acupuncture efficacy or needling parameters are established."
+    ],
+    "acupuncture_scope_en": [
+     "NICE CG150 (updated 2025-06-03) recommends oxygen/triptan and verapamil pathways for cluster headache, while acupuncture recommendations are attached to other headache types; no cluster-specific acupuncture efficacy or needling parameters are established."
     ]
    },
    "sign_symptom_ids": [
@@ -22568,7 +22589,73 @@
     "assessed": false,
     "no_source_found": false
    },
-   "etiology_en": ""
+   "etiology_en": "The initiating cause of cluster headache is unknown. Attacks often recur at a fixed time of day, during sleep, or in seasonal bouts, supporting involvement of the hypothalamic biological clock; the pain and ipsilateral tearing or nasal symptoms involve activation of the trigeminal–cranial autonomic reflex system. These are current neurobiological mechanism models, not a single proven cause. Alcohol, smoking, strong odors, or exercise can trigger an attack in some people during a cluster bout, but a trigger is not the cause of the disorder itself. Cluster headache is classified as primary, while a first cluster-like bout or changed pattern still requires exclusion of secondary intracranial or vascular mimics.",
+   "risk_factors_zh": [
+    {
+     "factor": "男性（流行病學關聯；女性可能被漏診或誤診）",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NHS: Cluster headaches; NICE CG150"
+    },
+    {
+     "factor": "常於 30–49 歲開始（任何年齡仍可能發病）",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NHS: Cluster headaches"
+    },
+    {
+     "factor": "一等親有叢發性頭痛",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NHS: Cluster headaches"
+    },
+    {
+     "factor": "吸菸或吸菸史（相關性，不證明因果；戒菸未必終止既有發作）",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NHS: Cluster headaches; NHS: Common questions about sumatriptan"
+    }
+   ],
+   "risk_factors_en": [
+    {
+     "factor": "Male sex (epidemiologic association; women may be underdiagnosed or misdiagnosed)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NHS: Cluster headaches; NICE CG150"
+    },
+    {
+     "factor": "Typical onset in the 30s or 40s (onset remains possible at any age)",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NHS: Cluster headaches"
+    },
+    {
+     "factor": "A first-degree relative with cluster headache",
+     "direction": "increases",
+     "modifiable": false,
+     "source": "NHS: Cluster headaches"
+    },
+    {
+     "factor": "Smoking or smoking history (association, not proof of causation; cessation may not stop established attacks)",
+     "direction": "increases",
+     "modifiable": true,
+     "source": "NHS: Cluster headaches; NHS: Common questions about sumatriptan"
+    }
+   ],
+   "acupuncture_scope_zh": {
+    "can_treat": "NICE 對慢性緊張型頭痛與部分偏頭痛列有針灸建議，但在叢發性頭痛章節建議的是急性氧氣及皮下／鼻用 triptan、預防性 verapamil 與專科照護，未建立針灸治療叢發性頭痛的建議。因此本卡既有 48 穴 legacy 清單不能視為經驗證處方；若使用針灸，只能在神經科診斷與標準治療之外作未確證的輔助，絕不能延誤急性中止治療。",
+    "precautions": "首次叢集樣發作應與頭痛專長醫師或神經科討論神經影像；霹靂性頭痛、持續神經缺損、視力改變、發燒頸僵或外傷後惡化需先走急症評估。NHS／NICE 頁面沒有提供頭面或頸部針刺深度與角度，本卡不由診斷名稱或 legacy 穴位清單推導安全參數。",
+    "co_management": "急性發作應依醫療計畫取得氧氣及適當途徑 triptan；預防性 verapamil 需要熟悉用藥者及心電圖監測建議。對 verapamil 無反應、診斷不典型、懷孕期間需要治療，或疼痛造成重大功能與心理危機者，應儘速由神經科／頭痛專科共同處理。",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "NICE makes acupuncture recommendations for chronic tension-type headache and selected migraine situations, but its cluster-headache section recommends acute oxygen and subcutaneous or nasal triptan, preventive verapamil, and specialist care; it does not establish an acupuncture recommendation for cluster headache. The card's legacy list of 48 points is therefore not a validated prescription. Acupuncture, if used at all, is an unproven adjunct outside neurologic diagnosis and standard care and must never delay acute abortive treatment.",
+    "precautions": "For a first cluster-like bout, NICE advises discussing neuroimaging with a headache specialist or neurologist. Thunderclap onset, persistent neurological deficit, visual change, fever with neck stiffness, or worsening after trauma requires emergency evaluation first. The NHS and NICE pages provide no facial, scalp, or neck needling depth or angle, so this card derives no safety parameters from the diagnosis or legacy point list.",
+    "co_management": "Acute attacks require access to prescribed oxygen and an appropriate-route triptan plan. Preventive verapamil requires a clinician familiar with its use and ECG-monitoring advice. Nonresponse to verapamil, atypical diagnosis, treatment during pregnancy, or pain causing major functional or psychological crisis warrants prompt neurology or headache-specialist co-management.",
+    "evidence": "unknown",
+    "source": null
+   }
   },
   {
    "id": "cond.gout",
@@ -73245,8 +73332,40 @@
     ],
     "risk_factors_en": [
      "StatPearls: Thoracic Outlet Syndrome (NBK557450, retrieved 2026-08)"
+    ],
+    "etiology_zh": [
+     "NHS: Thoracic outlet syndrome — causes and subtype-relevant urgent features (retrieved 2026-08); Cambridge University Hospitals: TOS and cervical/first rib anatomy (approved 2025-12-19)"
+    ],
+    "etiology_en": [
+     "NHS: Thoracic outlet syndrome — causes and subtype-relevant urgent features (retrieved 2026-08); Cambridge University Hospitals: TOS and cervical/first rib anatomy (approved 2025-12-19)"
+    ],
+    "acupuncture_scope_zh": [
+     "NHS and Cambridge University Hospitals define physiotherapy, vascular, surgical, and emergency pathways and high-risk local anatomy; neither source establishes acupuncture efficacy or needling parameters for TOS."
+    ],
+    "acupuncture_scope_en": [
+     "NHS and Cambridge University Hospitals define physiotherapy, vascular, surgical, and emergency pathways and high-risk local anatomy; neither source establishes acupuncture efficacy or needling parameters for TOS."
     ]
-   }
+   },
+   "etiology_zh": "胸廓出口症候群源於臂神經叢、鎖骨下靜脈或鎖骨下動脈通過鎖骨與第一肋附近的狹窄空間時受到壓迫。先天性頸肋、異常第一肋或纖維索帶可縮小空間，但這些變異常無症狀，只有實際造成神經血管壓迫才構成病因。後天因素包括頸胸部外傷後瘢痕或結構改變、不良姿勢、反覆過頭動作，以及斜角肌或胸帶肌群增大；乳房較大、懷孕或顯著增肌也可能改變空間與負荷。依受壓結構分為神經性、靜脈性與動脈性，不同亞型的機轉與急迫性不同，不能只靠誘發姿勢或單一解剖變異確診。",
+   "etiology_en": "Thoracic outlet syndrome results when the brachial plexus, subclavian vein, or subclavian artery is compressed as it traverses the confined space near the clavicle and first rib. A congenital cervical rib, abnormal first rib, or fibrous band may narrow that space, but these variants are often asymptomatic and are causal only when they produce neurovascular compression. Acquired contributors include scarring or structural change after neck or chest trauma, poor posture, repetitive overhead activity, and enlarged scalene or shoulder-girdle muscles; large breasts, pregnancy, or marked muscle gain may also alter space and load. Neurogenic, venous, and arterial subtypes involve different structures and urgency, so a provocative position or one anatomic variant alone does not establish the diagnosis.",
+   "acupuncture_scope_zh": {
+    "can_treat": "所選 NHS 與 Cambridge University Hospitals 來源支持依亞型採物理治療、藥物、血栓處置或手術減壓，並未建立針灸可解除臂神經叢或鎖骨下血管的機械性壓迫、溶解血栓或恢復缺血灌流。若在完成亞型與血管風險評估後使用，只能作為疼痛照護的輔助，不能取代復健或血管／周邊神經專科處置。",
+    "precautions": "鎖骨上、鎖骨下與腋窩區鄰近臂神經叢、鎖骨下血管及肺尖；所選官方頁面沒有提供局部針刺深度或角度，因此本卡不推導任何進針參數。單側手臂急性腫脹、發紅發熱或變色，手部蒼白冰冷或脈搏減弱，以及突發呼吸困難、胸痛或咳血，都應先按血栓、缺血或肺栓塞急症處理，不應先行局部針刺。",
+    "co_management": "疑似神經性 TOS 應由熟悉此病的醫師與物理治療師評估；疑似靜脈或動脈型需緊急血管影像與血管外科路徑。進行性肌萎縮、明顯無力、反覆血栓或保守治療無效者，應與神經科、周邊神經或血管外科共同照護。",
+    "evidence": "unknown",
+    "source": null
+   },
+   "acupuncture_scope_en": {
+    "can_treat": "The selected NHS and Cambridge University Hospitals sources support subtype-specific physiotherapy, medicines, thrombosis care, or surgical decompression; they do not establish that acupuncture releases mechanical brachial-plexus or subclavian-vessel compression, dissolves a clot, or restores ischemic perfusion. If used after subtype and vascular-risk assessment, it can only be an adjunct for pain and must not replace rehabilitation or vascular/peripheral-nerve care.",
+    "precautions": "The supraclavicular, infraclavicular, and axillary regions lie near the brachial plexus, subclavian vessels, and lung apex. The official pages provide no local needling depth or angle, so this card infers none. Acute unilateral arm swelling, redness, warmth or discoloration; a pale cold hand or reduced pulse; or sudden dyspnea, chest pain, or hemoptysis requires urgent thrombosis, ischemia, or pulmonary-embolism evaluation before any local needling.",
+    "co_management": "Suspected neurogenic TOS should be assessed by a clinician and physiotherapist familiar with the disorder. Suspected venous or arterial disease requires urgent vascular imaging and a vascular-surgery pathway. Progressive atrophy or weakness, recurrent thrombosis, or failure of conservative care warrants neurology, peripheral-nerve, or vascular co-management.",
+    "evidence": "unknown",
+    "source": null
+   },
+   "sources": [
+    "https://www.nhs.uk/conditions/thoracic-outlet-syndrome/",
+    "https://www.cuh.nhs.uk/patient-information/patient-information-on-thoracic-outlet-syndrome-and-cervical-or-first-rib-removal/"
+   ]
   },
   {
    "id": "cond.subacromial_impingement",

@@ -4419,3 +4419,10 @@ Current repo state as of this log:
 - **來源與內容邊界**：使用 AAOS OrthoInfo、HSS、NHS、Oxford University Hospitals NHS 與 NHS Dorset，8 個實際內容 URL 皆 HTTP 200；肩不穩分創傷／微創傷／先天鬆弛，labral tear 分 SLAP／Bankart／退化磨損，subacromial pain 不歸因於單一骨性夾擠，髕腱病採 load-capacity 模型而非單純急性發炎。
 - **驗證**：dry-run／apply 均為 `16 operations / 4 ids / skipped 0 / missing 0`；逐欄 equality、逐記錄 diff 僅 4 ids／4 expected keys；`build-data`、condition standard `505/505`、ratchet、sources `746`、relation registry、content-junk、maturity audit、`git diff --check` 均無新增 defect。
 - **未解**：etiology 仍缺 `276` 張；影像上的 labral、subacromial 或 tendon 結構變化仍須與症狀及臨床檢查對照，本批未覆蓋既有 red flags 或 scope。
+# 2026-08-24 — Codex Conditions 神經血管安全補強 B16
+
+- **範圍**：只補 `cond.thoracic_outlet_syndrome` 的空白雙語 etiology／acupuncture scope，以及 `cond.cluster_headache` 的空白雙語 etiology／risk factors／acupuncture scope；合併直達來源與 provenance，未改既有 pathology、red flags、relations、legacy point list 或 Symptoms／中藥／方劑／穴位 canonical data。
+- **數字**：`FULL_DETAIL_CANDIDATE 205→207`、`DETAIL_PARTIAL 300→298`、`SKELETON 0→0`，距 300 張尚差 `93`；來源項目 `746→751`、有來源記錄 `256→257`；etiology／risk factors／acupuncture scope 空白由 `276／45／71` 降至 `274／44／69`。
+- **來源與安全邊界**：使用 NHS、Cambridge University Hospitals 與 NICE，5 個入庫內容 URL 皆 HTTP 200；TOS 明示鎖骨上下與腋窩的神經血管／肺尖風險及血栓、缺血、肺栓塞急症；cluster 明示 first-bout imaging、氧氣／非口服 triptan、verapamil 專科路徑，並把既有 48 穴清單定義為未驗證 legacy，不外推 NICE 對其他頭痛類型的針灸建議。
+- **驗證**：dry-run／apply 均為 `14 operations / 2 ids / skipped 0 / missing 0`；逐欄 equality、scope enum、雙語 risk alignment、逐記錄 boundary diff；`build-data`、condition standard `505/505`、ratchet、sources `751`、relation registry、content-junk、maturity audit、`git diff --check` 均無新增 defect。
+- **未解**：兩卡既有 red flags 與其他舊 provenance 未在本批重新核准；cluster legacy 48 穴仍保留在原欄位並維持 `unassessed`，需未來 protocol rebuild 才能逐穴升級。

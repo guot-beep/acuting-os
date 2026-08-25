@@ -1,5 +1,13 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-24] Codex Handoff — Conditions neurovascular safety B16
+
+- **Exact ids / fields**: `cond.thoracic_outlet_syndrome` received empty bilingual etiology and acupuncture scope; `cond.cluster_headache` received empty bilingual etiology, risk factors, and acupuncture scope. Sources/provenance were appended; existing pathology, red flags, relations, and the legacy 48-point list were not changed.
+- **Official sources**: NHS, Cambridge University Hospitals, and NICE; all five stored content URLs returned HTTP 200.
+- **Safety boundaries**: TOS now separates neurogenic, venous, and arterial pathways and flags clot, ischemia, pulmonary-embolism, lung-apex, and local neurovascular risks without inventing needling parameters. Cluster headache now distinguishes disease risk from attack triggers, requires first-bout imaging discussion, preserves oxygen/non-oral triptan and verapamil specialist pathways, and explicitly marks the legacy point list unvalidated.
+- **Measured delta**: maturity `205→207 FULL_DETAIL_CANDIDATE`, `300→298 DETAIL_PARTIAL`, `0→0 SKELETON`, leaving `93` slots to 300; source entries `746→751`, sourced records `256→257`; empty etiology/risk/scope `276/45/71→274/44/69`.
+- **Validation**: dry-run/apply `14 operations / 2 ids / skipped 0 / missing 0`; exact equality, scope-enum and bilingual-risk checks, record-boundary diff; `build-data.js`; condition standard `505/505 clean`; ratchet; condition sources (`751`); relation registry; content junk; maturity audit; and `git diff --check` passed.
+
 ## [2026-08-24] Codex Handoff — Conditions official shoulder-knee etiology B15
 
 - **Exact ids / fields**: only `cond.shoulder_instability`, `cond.subacromial_impingement`, `cond.shoulder_labral_tear`, and `cond.patellar_tendinopathy`; filled empty bilingual etiology and appended direct sources plus etiology provenance. Existing pathology, risks, red flags, scope, relations, and adjacent datasets were not changed.
