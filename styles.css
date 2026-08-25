@@ -4792,6 +4792,18 @@ a { color: var(--accent-dark); }
 .link-picker-option:hover,
 .link-picker-option.active { background: #f2ead7; }
 .link-picker-option small { color: #8a7d5c; }
+.link-picker-gap-option {
+  border-top: 1px dashed #ddd3bd;
+  color: #8a6d1f;
+  font-size: 0.85rem;
+  font-style: italic;
+}
+.link-picker-gap-option:hover { background: #fbf3e0; }
+.link-picker-gap-option.logged {
+  color: #2f9e5c;
+  font-style: normal;
+  cursor: default;
+}
 
 .k-records { margin-top: 1rem; }
 

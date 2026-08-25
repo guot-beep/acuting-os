@@ -227,6 +227,26 @@ const OUTCOME_INTERPRETATION_BADGES = {
   source_pending: { text: "判讀來源待補", cls: "interp-pending" },
 };
 
+// Knowledge-gap logging(2026-08-25,Ting 要求「給 picker 加自由輸入後路,
+// 缺口另外收集」)。同一個 TDZ 理由不能宣告在 enhanceLinkField 附近——
+// 說明見該函式上方 readKnowledgeGaps 前的完整註解。
+const KNOWLEDGE_GAP_STORAGE_KEY = "acuting-knowledge-gaps-v1";
+const KNOWLEDGE_GAP_FIELD_LABELS = {
+  symptomLinks: "症狀 Symptom",
+  westernConditionLinks: "西醫病名 Western condition",
+  easternDiseaseLinks: "中醫病名 Eastern disease",
+  formulaLinks: "方劑 Formula",
+  medicationLinks: "西藥/藥物 Medication",
+  acupointLinks: "穴位 Acupoint",
+  safetyFlagLinks: "安全警示 Safety flag",
+  herbLinks: "單味中藥 Herb",
+  tcmPatternPrimary: "主要證型 TCM pattern（主證）",
+  tcmPatternSecondary: "次要證型 TCM pattern（次證）",
+  westernConditions: "西醫病名 Western condition",
+  easternDiseases: "中醫病名 Eastern disease",
+  tcmPatterns: "證型 TCM pattern",
+};
+
 // Config-integrity self-check (2026-08, docs/OUTCOME_METRICS_SEMANTIC_AUDIT_V2.md
 // §7 — "worthwhile before more metrics," recommended there, implemented
 // here alongside this batch's new entries as suggested). Catches a
@@ -8223,6 +8243,80 @@ function herbPickerOptions() {
 //   excludeValues  fn returning ids to hide from this field's own search
 //                  results — used so the secondary picker can't offer
 //                  whatever the primary picker currently holds.
+// ---- Knowledge-gap logging ----------------------------------------------
+// Dry Clinic 現場需求(2026-08-25,Ting 原話:「給 picker 加『其他/自由輸入』
+// 後路,先讓妳記得下來,缺口另外收集」)。設計原則:絕對不把自由文字塞進
+// symptomLinks/westernConditionLinks 這類欄位——下游 AVS/報表/驗證器都假設
+// 這些欄位只裝 canonical id,塞自由文字會讓整條 pipeline 炸掉或悄悄失真。
+// 改成獨立的「記錄缺口」動作,只寫進這台裝置的 localStorage,完全不碰任何
+// 病歷欄位、不送出任何網路請求。
+//
+// D7 邊界:這是她瀏覽器本機的資料,雲端 session 讀不到——不會自動變成每週
+// 補卡的輸入,要她自己在 F12 console 呼叫 AcuTingKnowledgeGaps.exportText()
+// 匯出、貼給 Claude,才會進到補卡流程(跟既有 inventory-workflow-links.js
+// 的匯出模式一致,她已經熟悉這個操作)。
+// KNOWLEDGE_GAP_STORAGE_KEY / KNOWLEDGE_GAP_FIELD_LABELS 宣告在檔頭
+// boot-order 區(跟 SOAP_CARRY_FORWARD_FIELDS 那組同一個 TDZ 理由)。
+function readKnowledgeGaps() {
+  try {
+    const raw = window.localStorage?.getItem?.(KNOWLEDGE_GAP_STORAGE_KEY);
+    const parsed = raw ? JSON.parse(raw) : [];
+    return Array.isArray(parsed) ? parsed : [];
+  } catch (err) {
+    return [];
+  }
+}
+
+function writeKnowledgeGaps(list) {
+  try {
+    window.localStorage?.setItem?.(KNOWLEDGE_GAP_STORAGE_KEY, JSON.stringify(list));
+  } catch (err) {
+    // 存不進去(無痕模式/容量滿)就算了——這只是輔助記錄,不是病歷資料,
+    // 不值得為了它中斷看診流程。
+  }
+}
+
+function logKnowledgeGap(fieldName, queryText) {
+  const q = String(queryText || "").trim();
+  if (!q) return;
+  const list = readKnowledgeGaps();
+  const existing = list.find((g) => g.fieldName === fieldName && g.query === q);
+  const now = new Date().toISOString();
+  if (existing) {
+    existing.count = (existing.count || 1) + 1;
+    existing.lastLoggedAt = now;
+  } else {
+    list.push({
+      fieldName,
+      fieldLabel: KNOWLEDGE_GAP_FIELD_LABELS[fieldName] || fieldName,
+      query: q,
+      count: 1,
+      firstLoggedAt: now,
+      lastLoggedAt: now,
+    });
+  }
+  writeKnowledgeGaps(list);
+}
+
+function knowledgeGapExportText() {
+  const list = readKnowledgeGaps();
+  if (!list.length) return "(目前沒有記錄任何缺口)";
+  const sorted = [...list].sort((a, b) =>
+    (a.fieldLabel || "").localeCompare(b.fieldLabel || "", "zh-Hant") || b.count - a.count
+  );
+  return sorted
+    .map((g) => `[${g.fieldLabel}] ${g.query} ×${g.count}（最後 ${g.lastLoggedAt}）`)
+    .join("\n");
+}
+
+if (typeof window !== "undefined") {
+  window.AcuTingKnowledgeGaps = {
+    list: readKnowledgeGaps,
+    clear() { writeKnowledgeGaps([]); },
+    exportText: knowledgeGapExportText,
+  };
+}
+
 function enhanceLinkField(form, fieldName, buildOptions, opts = {}) {
   const textarea = form?.elements?.[fieldName];
   if (!textarea || textarea.dataset.pickerReady) return;
@@ -8313,7 +8407,7 @@ function enhanceLinkField(form, fieldName, buildOptions, opts = {}) {
     const matches = !q ? [] : options
       .filter((o) => !chosen.has(o.value) && !excluded.has(o.value) && (o.terms.includes(q) || o.terms.replace(/\s+/g, "").includes(qCompact)))
       .slice(0, 8);
-    if (!matches.length) { closeMenu(); return; }
+    if (!q) { closeMenu(); return; }
     menu.innerHTML = "";
     matches.forEach((o, i) => {
       const el = document.createElement("div");
@@ -8328,6 +8422,24 @@ function enhanceLinkField(form, fieldName, buildOptions, opts = {}) {
       el.addEventListener("mousedown", (e) => { e.preventDefault(); addValue(o.value); });
       menu.appendChild(el);
     });
+    // 2026-08-25(Ting 要求「給 picker 加自由輸入後路,缺口另外收集」)——只要
+    // 有打字,不管上面比對到幾筆,選單最下面永遠多一列「記錄缺口」。這一列
+    // 刻意不放進 menu._matches:方向鍵/Enter 完全碰不到它,只能滑鼠/觸控點
+    // (跟上面每個真選項同一個 mousedown 手法),不會跟剛修好的 Enter 邏輯
+    // 打架,也不會被誤觸發成「選了一個不存在的值」。
+    const gapRow = document.createElement("div");
+    gapRow.className = "link-picker-option link-picker-gap-option";
+    gapRow.setAttribute("role", "option");
+    gapRow.setAttribute("aria-selected", "false");
+    const rawQuery = input.value.trim();
+    gapRow.textContent = `找不到「${rawQuery}」？記錄缺口 Can't find it? Log the gap`;
+    gapRow.addEventListener("mousedown", (e) => {
+      e.preventDefault();
+      logKnowledgeGap(fieldName, rawQuery);
+      gapRow.textContent = "已記錄缺口 ✓ 可以繼續輸入或關閉";
+      gapRow.classList.add("logged");
+    });
+    menu.appendChild(gapRow);
     menu.hidden = false;
     menu._matches = matches;
     input.setAttribute("aria-expanded", "true");
