@@ -1,3 +1,21 @@
+# 2026-08-25 Antigravity — Task 8A 中藥 safety_source_url 補齊 (HTTP 實測驗證)
+
+- **做了什麼**: 對 96 筆缺少 `safety_source_url` 的中藥卡，逐條建構 American Dragon URL 並實際發送 HTTP 請求確認回應狀態碼。
+- **方法**: 照 Task 6 方劑網址驗證同一套方式 (HEAD/GET 請求)，PinYin → CamelCase 組成 `https://www.americandragon.com/Individualherbsupdate/<CamelCase>.html`，HTTP 200 才寫入，404/ERROR 留空，不猜不補。
+- **數字 (before → after)**:
+  - `safety_source_url`: 267/363 (74%) → **347/363 (96%)**
+  - 新增筆數: **80** 筆 (American Dragon 實測 200 OK)
+  - 未找到留空: **16** 筆 (Fu Shen, Huai Hua, Yin Xing, Zong Lu Tan, Hua Ju Hong, Bai Jiu, Huang Jiu, Zhu Ji Sui, Jiu, Bi Yu San, Xiao Mai, Pao Jiang, Gui Ban Jiao, Long Chi, Cha Ye, Yin Bo)
+- **驗證指令與結果**:
+  - `node scripts/build-data.js`: PASS
+  - `node scripts/validate-herb-quality-strict.js`: PASS (0 FAILs)
+  - `node scripts/validate-herb-card-schema.js`: PASS (0 defects)
+  - `node scripts/validate-herb-standard.js`: PASS (0 structural defects)
+  - `node scripts/validate-no-boilerplate.js`: PASS
+  - `node scripts/check-validation-ratchet.js`: PASS (no regressions)
+  - `node scripts/validate-content-junk.js`: PASS
+- **已推分支**: `antigravity/herb-fill-task8-safety-url` — 等候驗收
+
 # 2026-08-25 — 症狀卡擴充 round 4 完成:round-1 剩餘 17 張再修訂,8 張通過覆核(114→122)
 
 上次對話中斷時這個 workflow(round 4,修 round-1 最後剩下的 17 張被打回候選)其實只跑到一半——
