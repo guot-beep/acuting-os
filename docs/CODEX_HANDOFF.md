@@ -1,5 +1,13 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-24] Codex Handoff — Conditions official neurologic etiology B21
+
+- **Exact ids / fields**: only `cond.bppv`, `cond.vestibular_neuritis`, `cond.alzheimer_disease`, `cond.als`, and `cond.huntington_disease`; filled empty bilingual etiology and appended direct sources plus etiology provenance. Existing pathology, risks, red flags, scope, relations, and adjacent datasets were not changed.
+- **Official sources**: NIH/NIDCD, NIH/NLM MedlinePlus, NCBI, NHS, and University Hospitals Sussex NHS; all ten actual content URLs returned HTTP 200.
+- **Clinical distinctions**: BPPV mechanism is separated from continuous or central vertigo; vestibular-neuritis viral causation remains presumed; APOE ε4 is susceptibility rather than diagnosis; sporadic ALS remains etiologically unresolved; Huntington repeat ranges, penetrance, inheritance, and counseling boundaries are explicit.
+- **Measured delta**: maturity `223→226 FULL_DETAIL_CANDIDATE`, `282→279 DETAIL_PARTIAL`, `0→0 SKELETON`, leaving `74` slots to 300; source entries `789→799`, sourced records `273→276`; empty etiology `255→250`. Two target records already met score/source thresholds, so five fills yielded a net maturity increase of three.
+- **Validation**: dry-run/apply `20 operations / 5 ids / skipped 0 / missing 0`; exact equality and record-boundary diff; `build-data.js`; condition standard `505/505 clean`; ratchet; condition sources (`799`); relation registry; content junk; maturity audit; and `git diff --check` passed.
+
 ## [2026-08-24] Codex Handoff — Conditions official cardiovascular etiology B20
 
 - **Exact ids / fields**: only `cond.atrial_fibrillation`, `cond.myocarditis`, `cond.pericarditis`, `cond.peripheral_arterial_disease`, and `cond.atherosclerosis`; filled empty bilingual etiology and appended direct sources plus etiology provenance. Existing pathology, risks, red flags, scope, relations, and adjacent datasets were not changed.

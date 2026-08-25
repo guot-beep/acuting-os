@@ -4460,3 +4460,12 @@ Current repo state as of this log:
 - **未解**：Conditions 仍有 western pathology／etiology／risk factors／acupuncture scope 空白 `17／255／44／69`；既有 myocarditis／pericarditis 摘要中的病因簡化未獲授權覆蓋，本批新增正文不等於替舊敘述背書。
 
 ---
+# 2026-08-24 — Codex Conditions 神經官方病因補強 B21
+
+- **範圍**：只補 `cond.bppv`、`cond.vestibular_neuritis`、`cond.alzheimer_disease`、`cond.als`、`cond.huntington_disease` 原本空白的 `etiology_zh/en`，加入 direct sources 與 provenance；未改既有 pathology、risk factors、red flags、scope、relations 或其他資料線。
+- **數字**：`FULL_DETAIL_CANDIDATE 223→226`、`DETAIL_PARTIAL 282→279`、`SKELETON 0→0`，距 300 尚 `74`；直接來源 `789→799`、有 direct source 的 records `273→276`；空白 etiology `255→250`。BPPV 與 vestibular neuritis 原已有來源／分數，故 5 筆填補的 maturity 淨增為 3。
+- **來源與臨床邊界**：使用 NIH/NIDCD、NIH/NLM MedlinePlus、NCBI、NHS 與 University Hospitals Sussex NHS；10 個內容頁皆 HTTP 200。前庭神經炎病毒病因標為推測，APOE ε4 不作確定診斷，ALS 保留 sporadic 未知病因，Huntington repeat／penetrance／遺傳諮詢界線明列。
+- **驗證**：dry-run/apply `20 operations / 5 ids / skipped 0 / missing 0`；exact equality 與 record-boundary diff（僅 5 ids、4 預期欄位）PASS；`build-data`、condition standard `505/505`、ratchet、condition sources `799`、relation registry、content-junk、maturity audit、`git diff --check` 均無新增 defect。
+- **未解**：Conditions 仍有 western pathology／etiology／risk factors／acupuncture scope 空白 `17／250／44／69`；既有卡片內未經本批覆核的針灸與預後敘述未被新增 provenance 背書。
+
+---

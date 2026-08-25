@@ -86905,8 +86905,20 @@
     ],
     "related_patterns": [
      "clinical judgment — TCM practice commonly frames AD-type memory/cognitive decline as kidney essence deficiency (marrow/brain deprivation) with phlegm misting the heart/mind orifices"
+    ],
+    "etiology_zh": [
+     "NIH/NLM MedlinePlus Genetics: Alzheimer's disease — multifactorial late-onset disease, APOE risk, APP/PSEN1/PSEN2 familial causes and Down-syndrome link (retrieved 2026-08); NHS: Causes of Alzheimer's disease — amyloid/tau pathology, age, family, vascular and lifestyle contributors (reviewed 2024-07-04)"
+    ],
+    "etiology_en": [
+     "NIH/NLM MedlinePlus Genetics: Alzheimer's disease — multifactorial late-onset disease, APOE risk, APP/PSEN1/PSEN2 familial causes and Down-syndrome link (retrieved 2026-08); NHS: Causes of Alzheimer's disease — amyloid/tau pathology, age, family, vascular and lifestyle contributors (reviewed 2024-07-04)"
     ]
-   }
+   },
+   "etiology_zh": "多數晚發型阿茲海默症沒有單一原因，而是年齡相關腦部變化、遺傳易感、血管與代謝健康、生活及環境暴露長期交互作用的結果。細胞外 amyloid-β 斑塊、細胞內異常 tau 神經纖維糾結、突觸失能、神經發炎與神經元流失是核心病理，但在一般患者中何者先啟動及彼此因果鏈仍未完全釐清。APOE ε4 會提高晚發型風險並常使發病較早，但不是致病性診斷：攜帶者可能終生不發病，未攜帶者也會得病。少數早發家族型由 APP、PSEN1 或 PSEN2 的高外顯率致病變異造成，採體染色體顯性遺傳；Down syndrome 因第 21 號染色體上的 APP 劑量增加而有較高風險。高齡是最大已知風險因子，但 Alzheimer 並非正常老化；診斷也須排除其他神經退化、血管性、藥物、代謝與可逆性認知障礙原因。",
+   "etiology_en": "Most late-onset Alzheimer disease has no single cause. It likely emerges from long-term interaction among age-related brain change, genetic susceptibility, vascular and metabolic health, lifestyle, and environmental exposures. Extracellular amyloid-β plaques, intracellular abnormal tau tangles, synaptic failure, neuroinflammation, and neuronal loss are central pathologic features, but the initiating sequence and causal relationships in typical patients are not fully resolved. APOE ε4 increases late-onset risk and often shifts onset earlier, but it is not a deterministic diagnostic variant: carriers may never develop Alzheimer disease, and noncarriers can develop it. A small minority of early-onset familial cases are caused by highly penetrant pathogenic variants in APP, PSEN1, or PSEN2 with autosomal-dominant inheritance; people with Down syndrome have increased risk partly through increased APP dosage on chromosome 21. Older age is the largest known risk factor, but Alzheimer disease is not normal aging, and evaluation must still consider other neurodegenerative, vascular, medication-related, metabolic, and potentially reversible causes of cognitive decline.",
+   "sources": [
+    "https://medlineplus.gov/genetics/condition/alzheimers-disease/",
+    "https://www.nhs.uk/conditions/alzheimers-disease/causes/"
+   ]
   },
   {
    "id": "cond.bppv",
@@ -87071,7 +87083,9 @@
     "NIDCD/NIH — BPPV glossary: https://www.nidcd.nih.gov/glossary/benign-paroxysmal-positional-vertigo-bppv",
     "NIDCD/NIH — Epley maneuver: https://www.nidcd.nih.gov/glossary/epley-maneuver",
     "NIH/NCBI — Risk Factors for the Occurrence of BPPV: Systematic Review and Meta-Analysis (PMC): https://pmc.ncbi.nlm.nih.gov/articles/PMC7324663/",
-    "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/"
+    "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/",
+    "https://www.nidcd.nih.gov/health/balance-disorders",
+    "https://www.uhsussex.nhs.uk/resources/bppv-benign-paroxysmal-positional-vertigo/"
    ],
    "field_sources": {
     "summary_zh": [
@@ -87109,6 +87123,12 @@
     ],
     "acupuncture_scope_en": [
      "AcuTing OS Disease Knowledge Research Pack — CR-010 Batch 02"
+    ],
+    "etiology_zh": [
+     "NIH/NIDCD: Balance Disorders — displaced otoconia, semicircular-canal/cupula mechanism, aging and head-injury causes (retrieved 2026-08); University Hospitals Sussex NHS: BPPV — positional crystal displacement and common precipitating contexts (retrieved 2026-08)"
+    ],
+    "etiology_en": [
+     "NIH/NIDCD: Balance Disorders — displaced otoconia, semicircular-canal/cupula mechanism, aging and head-injury causes (retrieved 2026-08); University Hospitals Sussex NHS: BPPV — positional crystal displacement and common precipitating contexts (retrieved 2026-08)"
     ]
    },
    "content_source": [
@@ -87116,7 +87136,9 @@
     "research_pack_cr010_batch02"
    ],
    "source_status": "draft_pending_ting_review",
-   "source_type": "sourced_research_pack"
+   "source_type": "sourced_research_pack",
+   "etiology_zh": "BPPV 的直接機轉是橢圓囊耳石膜上的碳酸鈣耳石脫落後進入半規管。最常見的 canalithiasis 是游離耳石隨頭位移動而產生異常內淋巴流；較少見的 cupulolithiasis 則是耳石附著於壺腹嵴，使其對重力異常敏感。受累管別與機轉決定特定頭位誘發的短暫眩暈與眼震方向。多數病例無法找到單一誘因，年齡相關耳石膜退變、頭部外傷、前庭神經炎或其他內耳病後、耳部手術及長期臥床可促使耳石脫落或進入半規管；骨質疏鬆與低維生素 D 與發生或復發有關聯，但不能據此斷言是每例的直接病因。BPPV 不會合理解釋持續數小時至數天的自發眩暈、新發聽力下降或局灶神經缺損，這些表現應轉向其他周邊或中樞診斷。",
+   "etiology_en": "The immediate mechanism of BPPV is displacement of calcium-carbonate otoconia from the utricular macula into a semicircular canal. In the common canalithiasis form, free particles move with head position and create abnormal endolymph flow; in less common cupulolithiasis, particles adhere to the cupula and make it abnormally gravity-sensitive. The involved canal and mechanism determine the provoking positions, brief vertigo, and direction of positional nystagmus. Most cases have no single identifiable precipitant. Age-related otolithic-membrane change, head trauma, prior vestibular neuritis or other inner-ear disease, otologic surgery, and prolonged bed rest can promote detachment or canal entry. Osteoporosis and low vitamin D are associated with occurrence or recurrence but should not be presented as the direct cause of every case. BPPV does not adequately explain hours-to-days of spontaneous continuous vertigo, new hearing loss, or focal neurologic deficits; those findings require consideration of other peripheral or central diagnoses."
   },
   {
    "id": "cond.vestibular_neuritis",
@@ -87233,7 +87255,9 @@
    "sources": [
     "NIDCD/NIH — Balance Disorders: https://www.nidcd.nih.gov/health/balance-disorders",
     "NIH/NCBI — Vestibular Neuronitis (StatPearls): https://www.ncbi.nlm.nih.gov/books/NBK549866/",
-    "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/"
+    "CDC/NCHS ICD-10-CM: https://www.cdc.gov/nchs/icd/icd-10-cm/",
+    "https://www.ncbi.nlm.nih.gov/books/NBK549866/",
+    "https://www.nhs.uk/conditions/labyrinthitis/"
    ],
    "field_sources": {
     "summary_zh": [
@@ -87271,6 +87295,12 @@
     ],
     "acupuncture_scope_en": [
      "AcuTing OS Disease Knowledge Research Pack — CR-010 Batch 02"
+    ],
+    "etiology_zh": [
+     "NCBI StatPearls: Vestibular Neuronitis — presumed viral, proposed immune/vascular mechanisms, superior-division pattern and exclusion of stroke (retrieved 2026-08); NHS: Labyrinthitis and vestibular neuritis — typical viral association and hearing-loss distinction (retrieved 2026-08)"
+    ],
+    "etiology_en": [
+     "NCBI StatPearls: Vestibular Neuronitis — presumed viral, proposed immune/vascular mechanisms, superior-division pattern and exclusion of stroke (retrieved 2026-08); NHS: Labyrinthitis and vestibular neuritis — typical viral association and hearing-loss distinction (retrieved 2026-08)"
     ]
    },
    "content_source": [
@@ -87278,7 +87308,9 @@
     "research_pack_cr010_batch02"
    ],
    "source_status": "draft_pending_ting_review",
-   "source_type": "sourced_research_pack"
+   "source_type": "sourced_research_pack",
+   "etiology_zh": "前庭神經炎被認為是第八腦神經之前庭支發生急性單側功能障礙，常用模型為感染後或病毒再活化引起的發炎，但特定病毒通常沒有被直接證實，因此應標記為推測性病因；免疫介導與微血管缺血也屬研究中的替代機轉。病變多偏向上前庭神經分支，造成兩側靜息放電不對稱與急性持續性眩暈，之後依靠周邊恢復與中樞前庭代償逐步改善。典型前庭神經炎不傷及耳蝸功能，因此新發單側聽力下降或耳鳴更支持迷路炎、突發性感音神經性聽損或其他耳科病因。它是排除診斷；腦幹／小腦梗塞或出血可產生相似的急性前庭症候群，不能因近期感冒史就推定為良性病毒性神經炎。HINTS 僅應由受過訓練者在適當的持續性急性前庭症候群情境使用。",
+   "etiology_en": "Vestibular neuritis is understood as an acute unilateral dysfunction of the vestibular division of cranial nerve VIII. A post-infectious inflammatory process or viral reactivation is the prevailing model, but a specific virus is usually not directly demonstrated and should therefore be labeled a presumed rather than proven etiology; immune-mediated and microvascular mechanisms have also been proposed. The superior vestibular division is often preferentially affected, creating asymmetric resting vestibular tone and continuous acute vertigo, followed by gradual improvement through peripheral recovery and central compensation. Typical vestibular neuritis spares cochlear function, so new unilateral hearing loss or tinnitus favors labyrinthitis, sudden sensorineural hearing loss, or another otologic cause. It remains a diagnosis of exclusion: brainstem or cerebellar infarction and hemorrhage can produce a similar acute vestibular syndrome, and a recent cold does not prove benign viral neuritis. HINTS is appropriate only in the correct continuous acute vestibular syndrome and when performed by a trained examiner."
   },
   {
    "id": "cond.acute_ischemic_stroke",
@@ -88498,8 +88530,20 @@
     ],
     "related_patterns": [
      "clinical judgment — 痿證 due to motor neuron loss is commonly framed in TCM practice as qi deficiency and kidney essence deficiency failing to nourish sinews/muscle"
+    ],
+    "etiology_zh": [
+     "NIH/NLM MedlinePlus Genetics: Amyotrophic lateral sclerosis — sporadic/familial proportions, major genes and uncertain multifactorial sporadic cause (retrieved 2026-08); NHS: Motor neurone disease — motor-neuron failure, mostly unclear multifactorial cause and family-history context (reviewed 2025-02-19)"
+    ],
+    "etiology_en": [
+     "NIH/NLM MedlinePlus Genetics: Amyotrophic lateral sclerosis — sporadic/familial proportions, major genes and uncertain multifactorial sporadic cause (retrieved 2026-08); NHS: Motor neurone disease — motor-neuron failure, mostly unclear multifactorial cause and family-history context (reviewed 2025-02-19)"
     ]
-   }
+   },
+   "etiology_zh": "ALS 的絕大多數病例為散發性，沒有明顯家族史且起始原因仍不明；約 5%–10% 為家族型。C9orf72 repeat expansion、SOD1、TARDBP、FUS 等多種基因可直接致病或提高易感性，且沒有家族史並不能完全排除致病變異、低外顯率或小家系。散發型很可能涉及多基因易感、年齡相關細胞損傷與尚未確定的環境因素共同作用，但目前沒有一項一般飲食、職業或生活方式可解釋大多數病例。不同基因與散發型可能匯聚到 RNA 處理、蛋白質穩態與聚集、核質運輸、粒線體與氧化壓力、軸突運輸、神經發炎與 glutamate 興奮毒性等路徑；這些是相互作用機轉，不代表每位患者都有相同的起始缺陷。ALS 是臨床與電生理支持、排除 mimic 後的疾病診斷，不能把單一肌束顫動、抽筋或無力自動歸因於 ALS。",
+   "etiology_en": "Most ALS is sporadic, with no apparent family history and no identified initiating cause; approximately 5% to 10% is familial. C9orf72 repeat expansion and pathogenic variants in SOD1, TARDBP, FUS, and other genes can cause disease or increase susceptibility, and absence of family history does not completely exclude a pathogenic variant, reduced penetrance, or a small family. Sporadic ALS probably reflects interaction among polygenic susceptibility, age-related cellular injury, and environmental factors that remain uncertain, but no ordinary diet, occupation, or lifestyle exposure explains most cases. Genetic and sporadic forms may converge on disrupted RNA processing, protein homeostasis and aggregation, nucleocytoplasmic transport, mitochondrial and oxidative stress, axonal transport, neuroinflammation, and glutamate excitotoxicity. These are interacting pathways, not proof that every person has the same initiating defect. ALS is a disease diagnosis supported by clinical and electrophysiologic findings after excluding mimics; isolated fasciculation, cramp, or weakness should not automatically be attributed to ALS.",
+   "sources": [
+    "https://medlineplus.gov/genetics/condition/amyotrophic-lateral-sclerosis/",
+    "https://www.nhs.uk/conditions/motor-neurone-disease/"
+   ]
   },
   {
    "id": "cond.huntington_disease",
@@ -88635,8 +88679,20 @@
     ],
     "related_patterns": [
      "clinical judgment — choreiform movement with cognitive decline is commonly framed in TCM practice as internal liver wind arising from kidney essence deficiency (marrow deprivation)"
+    ],
+    "etiology_zh": [
+     "NIH/NLM MedlinePlus Genetics: Huntington's disease — HTT CAG expansion, repeat ranges, penetrance, anticipation and autosomal-dominant inheritance (retrieved 2026-08); NHS: Huntington's disease — inherited altered gene, 50% transmission and specialist testing/counseling context (retrieved 2026-08)"
+    ],
+    "etiology_en": [
+     "NIH/NLM MedlinePlus Genetics: Huntington's disease — HTT CAG expansion, repeat ranges, penetrance, anticipation and autosomal-dominant inheritance (retrieved 2026-08); NHS: Huntington's disease — inherited altered gene, 50% transmission and specialist testing/counseling context (retrieved 2026-08)"
     ]
-   }
+   },
+   "etiology_zh": "Huntington disease 的根本病因是 HTT 基因 CAG 三核苷酸重複序列擴增，造成帶有過長 polyglutamine 區段的 mutant huntingtin，進而干擾轉錄、蛋白質恆定、軸突運輸、粒線體與突觸功能，並使紋狀體及皮質神經元逐步退化。它通常採體染色體顯性遺傳，帶有致病 allele 的父母每次懷孕傳給子女的機率為 50%；少數個案可因家系未被辨識或 repeat 在傳遞時擴增而看似沒有患病父母。一般 ≤26 repeats 為正常範圍，27–35 為 intermediate allele：本人通常不發病但下一代可能擴增；36–39 為 reduced penetrance，可能發病也可能不發病；≥40 通常具完全外顯率。repeat 越長平均發病越早，但不能精確預測個人的起病日或所有症狀；生殖細胞與體細胞 repeat 不穩定、其他修飾基因也會改變表現。預測性基因檢測牽涉重大心理與家庭影響，應在專業遺傳諮詢與知情選擇下進行。",
+   "etiology_en": "Huntington disease is caused by expansion of the CAG trinucleotide repeat in HTT. The expanded allele produces mutant huntingtin with an elongated polyglutamine tract, disrupting transcription, protein homeostasis, axonal transport, mitochondrial and synaptic function and ultimately driving progressive striatal and cortical neurodegeneration. It is usually autosomal dominant: an affected parent has a 50% chance of transmitting the pathogenic allele in each pregnancy. A case may rarely appear to lack an affected parent because the family history was unrecognized or a repeat expanded during transmission. In general, 26 or fewer repeats are normal; 27–35 is an intermediate allele that does not usually cause disease in the carrier but may expand in the next generation; 36–39 has reduced penetrance; and 40 or more is usually fully penetrant. Longer repeats are associated on average with earlier onset but cannot precisely predict an individual's onset date or full phenotype. Germline and somatic repeat instability and other genetic modifiers also influence expression. Predictive testing has major psychological and family implications and belongs within specialist genetic counseling and informed choice.",
+   "sources": [
+    "https://medlineplus.gov/genetics/condition/huntingtons-disease/",
+    "https://www.nhs.uk/conditions/huntingtons-disease/"
+   ]
   },
   {
    "id": "cond.cerebral_palsy",
