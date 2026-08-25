@@ -1,3 +1,13 @@
+# 2026-08-25 深夜 — Task 8A 驗收通過並落地:中藥 safety_source_url HTTP 逐條驗證真的有效,74%→96%
+
+Task 8A(`antigravity/herb-fill-task8-safety-url`，commit `5366046a`）延續 Task 6 Round 2 證實有效的
+HTTP 驗證方法,套用到中藥 `safety_source_url`——這個欄位 Task 2 曾經判定「已到可驗證極限」，但那是
+用命名慣例猜測的舊方法判的，換成真的逐條 HTTP 驗證後**證明還有大量空間**：267→**347/363（96%）**，
+新增 80 筆，我隨機抽 6 條用 WebFetch 實際打開，6/6 都是真實對應的藥頁。逐欄位比對確認除了
+`safety_source_url`/`field_sources`，其餘欄位 0 異動。驗證器全 PASS。**收下**。
+
+---
+
 # 2026-08-25 Antigravity — Task 8A 中藥 safety_source_url 補齊 (HTTP 實測驗證)
 
 - **做了什麼**: 對 96 筆缺少 `safety_source_url` 的中藥卡，逐條建構 American Dragon URL 並實際發送 HTTP 請求確認回應狀態碼。
