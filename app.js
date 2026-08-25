@@ -6139,11 +6139,20 @@ function formatNumericOutcomeMetrics(note) {
 //
 // Trend is the CG8 first-phase contract exactly: ↑/↓/→ per consecutive
 // transition in the MEASURED sequence only (unmeasured visits are skipped
-// when building that sequence, never given a fabricated arrow), no color,
-// no "improved/worsened" wording — direction_good varies per metric
-// (increase/decrease/individualized/contextual) and some are explicitly
-// individualized (bowel_frequency), so an arrow here is describing numeric
-// movement only, not a verdict.
+// when building that sequence, never given a fabricated arrow) — the ARROW
+// itself still means nothing but raw numeric movement, never "improved/
+// worsened" wording, because direction_good varies per metric and some are
+// explicitly individualized (bowel_frequency): an arrow can't honestly claim
+// a verdict for those.
+//
+// 2026-08-25(dry run,Ting 現場發現):Baseline/Today/Change/Trend 這張表混
+// 了「遞增為好」跟「遞減為好」的 metric 在同一欄,箭頭上上下下但意義不一致,
+// 一眼掃過去看不出「這是變好還是變壞」。加 outcomeChangeGoodness() 只替
+// Change/Trend 的顯示上色(綠=朝 direction_good 那個方向動、紅=反方向、
+// 無色=direction_good 是 individualized/contextual/未標註,系統本來就不該
+// 替這類 metric 下判斷)——箭頭本身的「原始數字動向」意義不變,顏色是額外
+// 疊加的判讀層,跟 renderVisitBrief 的 brief-good/brief-bad 用同一套色碼,
+// 兩個面板視覺一致。
 function computeOutcomeTrackingRows(item) {
   const chronological = [...(item.soapNotes || [])].sort((a, b) => {
     const dateCompare = String(a.visitDate || "").localeCompare(String(b.visitDate || ""));
@@ -6192,6 +6201,19 @@ function computeOutcomeTrackingRows(item) {
 
     return { cfg, baseline, today, change, trend };
   }).filter(Boolean);
+}
+
+// change 是 (today - baseline)。true=朝 direction_good 那個方向動(好事)、
+// false=反方向(壞事)、null=direction_good 是 individualized/contextual/
+// 未標註,或 change 本身是 null(沒有兩個測量點可比)——這三種都不下判斷,
+// 顯示端一律不上色。跟 renderVisitBrief 裡內嵌的同款邏輯是同一個判斷式,
+// 這裡抽成獨立函式給 Outcome Tracking 面板重用,兩處不會各自長出一套微妙
+// 不同的判斷(例如一邊用 >= 一邊用 >)。
+function outcomeChangeGoodness(def, change) {
+  if (change == null || !def) return null;
+  if (def.direction_good === "decrease") return change < 0;
+  if (def.direction_good === "increase") return change > 0;
+  return null;
 }
 
 function renderOutcomeTrackingPanel(item) {
@@ -6251,12 +6273,14 @@ function renderOutcomeTrackingPanel(item) {
               const rrText = rr.text_zh || rr.text_en || "";
               refRangeHint = `<small class="interp-hint interp-refrange" title="${escapeHtml(rrText)}${rr.scope ? "\n適用範圍：" + escapeHtml(rr.scope) : ""}">參考範圍：${escapeHtml(shortCitation(rr.source.name))}</small>`;
             }
+            const goodness = outcomeChangeGoodness(def, row.change);
+            const goodnessCls = goodness === true ? "outcome-good" : goodness === false ? "outcome-bad" : "";
             return `<tr>
               <td>${escapeHtml(outcomeMetricPanelLabel(row.cfg.metricId))}${directionHint}${interpHint}${refRangeHint}</td>
               <td>${escapeHtml(fmt(row.cfg, row.baseline))}</td>
               <td>${escapeHtml(fmt(row.cfg, row.today))}</td>
-              <td>${escapeHtml(fmtChange(row.change))}</td>
-              <td>${escapeHtml(row.trend || "—")}</td>
+              <td class="${goodnessCls}">${escapeHtml(fmtChange(row.change))}</td>
+              <td class="${goodnessCls}">${escapeHtml(row.trend || "—")}</td>
             </tr>`;
           }).join("")}
         </tbody>
