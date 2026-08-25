@@ -1,3 +1,10 @@
+# 2026-08-25 Antigravity � Task 8C ?? exact_source_url ?? (HTTP ????)
+
+- **????**: ? 13 ??? `exact_source_url` ????,???? American Dragon URL ??? HTTP ????????????????
+- **??**: ?? `Herb Formulas copy/<CamelCase>.html` ????,HTTP 200 ???,404/ERROR ??,?????
+- **?? (before ? after)**: `exact_source_url` (formulas): 210/223 (94%) ? **217/223 (97%)**;?? **7** ?;????? **6** ? (Li Zhong Wan, Jin Gui Shen Qi Wan, Chai Hu Shu Gan San, Zhen Gan Xi Feng Tang, Xi Jiao Di Huang Wan, Xian Fang Huo Ming Yin)
+- **??**: build-data / validate-herb-quality-strict / validate-herb-card-schema / validate-herb-standard / validate-no-boilerplate / check-validation-ratchet / validate-content-junk: ? PASS
+- **????**: `antigravity/formula-fill-task8-source-url` � ????
 # 2026-08-25 — 症狀卡擴充 round 4 完成:round-1 剩餘 17 張再修訂,8 張通過覆核(114→122)
 
 上次對話中斷時這個 workflow(round 4,修 round-1 最後剩下的 17 張被打回候選)其實只跑到一半——
