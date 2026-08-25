@@ -802,7 +802,102 @@ const CASE_CATEGORY_QUICK_VALUES = new Set([
 // Initial-intake minimum dataset (2026-08-09): "" (not yet answered) and the
 // literal word "unknown" (asked, not known) are kept distinct on purpose —
 // both are legitimate, neither is a format error. D4: coarsen, never falsify.
-const ONSET_APPROX_RE = /^(\d{4}(-\d{2}(-\d{2})?)?|unknown)$/i;
+//
+// 2026-08-24(Ting 提出):只收絕對日期在門診是行不通的。病人講的是
+// 「大概五年」「十年以上」「從小就有」—— 那些既不是日期,chronicity(急性/
+// 慢性)也裝不下「多久了」。舊格式全部保留,額外收:
+//   P<n>Y / P<n>M / P<n>W / P<n>D    約 n 年/月/週/天前(ISO 8601 duration)
+//   後綴 +                            以上(P10Y+ = 十年以上)
+//   congenital                        天生 / 出生即有
+// **期間絕不換算成日期**:今天記「約五年」不等於 2021 —— 那會把病人給的
+// 模糊精度偽裝成年份精度,正是 D4 禁止的事。存期間就是存期間。
+// 期間的數字從 1 起跳:P0Y(「零年前」)沒有意義,收下來只會變成一筆看起來
+// 有值、實際上什麼都沒說的紀錄。
+const ONSET_APPROX_RE = /^(\d{4}(-\d{2}(-\d{2})?)?|unknown|congenital|P[1-9]\d{0,2}[YMWD]\+?)$/i;
+
+// 病人真的會講的說法 → 正規形式。她照自然語言打,欄位下方即時顯示會存成什麼,
+// 所以不會有「系統猜錯了但她不知道」的情況。
+const ONSET_CJK_NUMERALS = { 一: 1, 二: 2, 兩: 2, 三: 3, 四: 4, 五: 5, 六: 6, 七: 7, 八: 8, 九: 9, 十: 10 };
+const ONSET_UNIT_MAP = {
+  年: "Y", y: "Y", yr: "Y", yrs: "Y", year: "Y", years: "Y",
+  個月: "M", 月份: "M", mo: "M", mos: "M", month: "M", months: "M",
+  週: "W", 周: "W", 星期: "W", w: "W", wk: "W", wks: "W", week: "W", weeks: "W",
+  天: "D", 日: "D", d: "D", day: "D", days: "D",
+};
+/* 把病人的說法解析成正規形式。
+ * 回傳 { ok, value, display } 或 { ok:false, error }。
+ * 原則:看不懂就說看不懂,絕不猜 —— 「6月」到底是六月還是六個月,
+ * 猜錯會讓一個慢性病變成急性病,寧可要求她多打一個字。 */
+function parseOnsetApprox(raw) {
+  const input = String(raw || "").trim();
+  if (!input) return { ok: true, value: "", display: "" };
+
+  // 已經是正規形式(含舊資料)就原樣通過
+  if (ONSET_APPROX_RE.test(input)) {
+    const v = /^P/i.test(input) ? input.toUpperCase() : input.toLowerCase() === "unknown" ? "unknown"
+      : input.toLowerCase() === "congenital" ? "congenital" : input;
+    return { ok: true, value: v, display: formatOnsetApprox(v) };
+  }
+
+  const s = input.replace(/\s+/g, "").toLowerCase();
+
+  if (/^(天生|先天|出生就有|出生即有|從小|從小就有|自幼|sincebirth|frombirth|congenital)$/.test(s)) {
+    return { ok: true, value: "congenital", display: formatOnsetApprox("congenital") };
+  }
+  if (/^(不確定|不知道|不清楚|忘了|記不得|notsure|dontknow|unknown)$/.test(s)) {
+    return { ok: true, value: "unknown", display: formatOnsetApprox("unknown") };
+  }
+  if (/^(約|大約|大概|差不多)?半年(前|多|以上)?$/.test(s)) {
+    const more = /(多|以上)$/.test(s);
+    return { ok: true, value: `P6M${more ? "+" : ""}`, display: formatOnsetApprox(`P6M${more ? "+" : ""}`) };
+  }
+
+  // 「6月」單獨出現是歧義的:六月 vs 六個月。不猜,要求她講清楚。
+  if (/^\d{1,2}月$/.test(s)) {
+    return { ok: false, error: `「${input}」看不出是「六月這個月份」還是「六個月」。請寫「${s.replace("月", "")}個月」,或寫成年月(例:2026-06)。` };
+  }
+
+  // [約/大約/超過/>] 數字 單位 [前/以上/多/+]
+  const m = s.match(/^(約|大約|大概|差不多|超過|超过|>|多於|多于)?([0-9]+|[一二兩三四五六七八九十])(年|個月|月份|週|周|星期|天|日|y|yr|yrs|year|years|mo|mos|month|months|w|wk|wks|week|weeks|d|day|days)(前|以上|多|\+)?$/);
+  if (m) {
+    const [, lead, numRaw, unitRaw, tail] = m;
+    const n = /^[0-9]+$/.test(numRaw) ? Number(numRaw) : ONSET_CJK_NUMERALS[numRaw];
+    const unit = ONSET_UNIT_MAP[unitRaw];
+    if (!n || !unit) return { ok: false, error: `「${input}」解析不出數量或單位。` };
+    if (n > 999) return { ok: false, error: `「${input}」的數字過大,請確認。` };
+    const more = /^(超過|超过|>|多於|多于)$/.test(lead || "") || /^(以上|多|\+)$/.test(tail || "");
+    const value = `P${n}${unit}${more ? "+" : ""}`;
+    return { ok: true, value, display: formatOnsetApprox(value) };
+  }
+
+  return { ok: false, error: `「${input}」無法辨識。可以寫:年月日(2020 / 2020-03 / 2020-03-15)、多久前(5年 / 半年 / 6個月 / 3週 / 10天 / 10年以上)、天生、不確定。` };
+}
+
+const ONSET_UNIT_LABEL = { Y: "年", M: "個月", W: "週", D: "天" };
+// 病例卡顯示用(值來自 index.html 的兩個 select)。unknown 是「問過不確定」,
+// 與空白(還沒問)不同,所以它有自己的字。
+const CHRONICITY_LABELS = { acute: "急性", subacute: "亞急性", chronic: "慢性", unknown: "病程不確定" };
+const COURSE_PATTERN_LABELS = {
+  continuous: "持續", intermittent: "間歇", episodic: "陣發", recurrent: "反覆發作",
+  progressive: "漸進惡化", improving: "漸好轉", stable: "穩定", unknown: "型態不確定",
+};
+
+/* 正規形式 → 人看得懂的字。**不換算成年份** —— 「約 5 年」就是「約 5 年」,
+ * 印成「≈2021」會把模糊精度偽裝成年份精度。 */
+function formatOnsetApprox(value) {
+  const v = String(value || "").trim();
+  if (!v) return "";
+  if (v === "unknown") return "問過,病人不確定";
+  if (v === "congenital") return "天生 / 出生即有";
+  const m = v.match(/^P(\d{1,3})([YMWD])(\+)?$/i);
+  if (m) {
+    const [, n, unit, more] = m;
+    const u = ONSET_UNIT_LABEL[unit.toUpperCase()];
+    return more ? `${n} ${u}以上` : `約 ${n} ${u}前`;
+  }
+  return v;   // 絕對日期原樣顯示
+}
+
 /* 臨床反思六問(CG9)的題目與欄位對映。同上,必須在初始 render() 之前宣告
  * —— renderCaseReflection 在首次 render 就會執行。順序即畫面順序。 */
 const CASE_REFLECTION_QUESTIONS = [
@@ -1390,6 +1485,26 @@ soapForm.addEventListener("submit", saveSoapFromForm);
 // FIX A — throttled draft autosave (see wireDraftAutosave near openCaseEditor/
 // openSoapEditor for the read/restore/clear side of this).
 wireDraftAutosave(caseForm, CASE_DRAFT_KEY, () => editingCaseId || "new", caseDraftBanner);
+
+/* 發病時間的即時解讀。存檔前就看得到系統會怎麼理解這句話 ——
+ * 「按了儲存才跳錯誤」在門診是很貴的:她已經在講下一件事了。 */
+function updateOnsetApproxHint() {
+  const input = caseForm?.elements?.onsetApprox;
+  const hint = document.querySelector("#onsetApproxHint");
+  if (!input || !hint) return;
+  const raw = String(input.value || "").trim();
+  if (!raw) { hint.textContent = ""; hint.className = "onset-hint"; return; }
+  const parsed = parseOnsetApprox(raw);
+  if (parsed.ok) {
+    // 原字就是正規形式時不必再說一次「會存成」,只顯示解讀
+    hint.textContent = parsed.value === raw ? `→ ${parsed.display}` : `→ ${parsed.display}(存成 ${parsed.value})`;
+    hint.className = "onset-hint is-ok";
+  } else {
+    hint.textContent = parsed.error;
+    hint.className = "onset-hint is-error";
+  }
+}
+caseForm?.elements?.onsetApprox?.addEventListener("input", updateOnsetApproxHint);
 wireDraftAutosave(soapForm, SOAP_DRAFT_KEY, () => `${selectedCaseId || ""}:${editingSoapId || "new"}`, soapDraftBanner);
 // FIX B — native "invalid" event fires (capture phase; it does not bubble)
 // on every :invalid field when the browser blocks an attempted submit. We
@@ -8186,6 +8301,14 @@ function renderClinicalCaseDetail(item) {
       <div><small>主訴 Chief complaint</small><span>${escapeHtml(item.chiefComplaint || "尚未填寫")}</span></div>
       <div><small>基本 Demographics</small><span>${escapeHtml([item.sex, (item.birthYearMonth || (item.birthYear ? String(item.birthYear) : "")), item.occupation].filter(Boolean).join(" · ") || "—")}</span></div>
       <div><small>目前主證型 Working pattern</small><span>${escapeHtml(item.tcmPatterns.join("、") || "尚未辨證")}</span></div>
+      ${/* 發病時間 / 病程 / 病程型態 過去是三個暗欄位:表單填得進去,病例卡
+           上一個字都不顯示。三者合成一行「病程 Course」—— 分開三格會把一行
+           資訊攤成三格「—」,而它們本來就是一起讀的。 */""}
+      <div><small>病程 Course</small><span>${escapeHtml([
+        formatOnsetApprox(item.onsetApprox),
+        CHRONICITY_LABELS[item.chronicity] || item.chronicity,
+        COURSE_PATTERN_LABELS[item.coursePattern] || item.coursePattern,
+      ].filter(Boolean).join(" · ") || "—")}</span></div>
       <div><small>就診目標 Goals</small><span>${escapeHtml(item.goals || "—")}</span></div>
       <div><small>現病史 HPI</small><span>${escapeHtml(item.historyPresent || "—")}</span></div>
       <div><small>既往史 PMH</small><span>${escapeHtml(item.pastHistory || "—")}</span></div>
@@ -9054,6 +9177,7 @@ function openCaseEditor(item = null) {
   } else {
     renderDraftBanner(caseDraftBanner, null);
   }
+  updateOnsetApproxHint();   // 水合之後才知道欄位裡是什麼,提示要跟著重算
   renderFormSectionNav(caseForm, caseSectionNav);
   caseDialog.showModal();
   // 首次標記必須在 showModal 之後 —— 之前對話框沒有版面,量不到位置。
@@ -9221,11 +9345,15 @@ function saveCaseFromForm(event) {
   const raceEthnicity = formData.getAll("raceEthnicity");
   const previousTreatment = formData.getAll("previousTreatment");
 
-  const onsetApprox = (data.onsetApprox || "").trim();
-  if (onsetApprox && !ONSET_APPROX_RE.test(onsetApprox)) {
-    alert("大約發病時間格式須為 YYYY、YYYY-MM、YYYY-MM-DD 或 unknown（可留空）。");
+  // 解析而非只驗證:她可以打「五年」「半年」「從小」,存下去的是正規形式。
+  // 存的是 parsed.value,不是她打的原字 —— 欄位下方一直顯示會存成什麼,
+  // 所以不會有「系統改了她的字而她不知道」的情況。
+  const onsetParsed = parseOnsetApprox(data.onsetApprox);
+  if (!onsetParsed.ok) {
+    alert(`大約發病時間:${onsetParsed.error}`);
     return;
   }
+  const onsetApprox = onsetParsed.value;
   const baselineSeverityRaw = (data.baselineSeverity || "").trim();
   if (baselineSeverityRaw && (!/^\d+$/.test(baselineSeverityRaw) || Number(baselineSeverityRaw) < 0 || Number(baselineSeverityRaw) > 10)) {
     alert("初診基準嚴重度須為 0–10 的整數（可留空）。");

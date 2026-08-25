@@ -150,7 +150,7 @@
       "source_scope": "case",
       "source_field": "onsetApprox",
       "destination": "cases.onset_approx",
-      "transformation": "as-is. Coarse \"YYYY\" / \"YYYY-MM\" / \"YYYY-MM-DD\" / literal \"unknown\" string, D4 coarsen-never-falsify — never a fabricated day.",
+      "transformation": "as-is 字串,四種形狀:(1) 絕對 \"YYYY\" / \"YYYY-MM\" / \"YYYY-MM-DD\";(2) 期間 ISO 8601 duration \"P<n>Y|M|W|D\",後綴 \"+\" 表示以上(P10Y+ = 十年以上);(3) 字面 \"congenital\" = 天生 / 出生即有;(4) 字面 \"unknown\" = 問過但不確定(與 \"\" 未問過不同)。D4 coarsen-never-falsify —— 期間**絕不**換算成日期:記「約五年」不得存成某個年份,那會把病人給的模糊精度偽裝成年份精度。2026 年 8 月由 Ting 提出擴充(門診裡病人講的是「大概五年」「從小就有」);舊的絕對日期值一律仍然合法,無需遷移。文法由 scripts/validate-onset-approx.js 守著。",
       "nullable": true,
       "data_loss_risk": "none",
       "status": "mapped"

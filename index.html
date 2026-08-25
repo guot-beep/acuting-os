@@ -724,7 +724,13 @@
           <fieldset class="form-section" data-nav-label="主訴">
             <legend><span class="form-section-step">3</span>主訴與病史 Presenting problem</legend>
             <label class="wide">主訴 Chief complaint<textarea name="chiefComplaint" rows="2" placeholder="主要不適 + 病程長短"></textarea></label>
-            <label>大約發病時間 Approx. onset<input name="onsetApprox" placeholder="YYYY / YYYY-MM / YYYY-MM-DD / unknown" /></label>
+            <!-- 2026-08-24：只收絕對日期在門診行不通，病人講的是「大概五年」
+                 「從小就有」。輸入照自然語言打，下方即時顯示會存成什麼 ——
+                 系統不會改了她的字而她不知道，也不會把期間偷偷換算成年份。 -->
+            <label>大約發病時間 Approx. onset
+              <input name="onsetApprox" placeholder="5年 / 半年 / 10年以上 / 天生 / 2020-03 / 不確定" autocomplete="off" />
+              <small class="onset-hint" id="onsetApproxHint" aria-live="polite"></small>
+            </label>
             <label>病程 Chronicity<select name="chronicity"><option value="">—</option><option value="acute">Acute 急性</option><option value="subacute">Subacute 亞急性</option><option value="chronic">Chronic 慢性</option><option value="unknown">Unknown 不確定</option></select></label>
             <label>病程型態 Course pattern<select name="coursePattern"><option value="">—</option><option value="continuous">Continuous 持續</option><option value="intermittent">Intermittent 間歇</option><option value="episodic">Episodic 陣發</option><option value="recurrent">Recurrent 反覆發作</option><option value="progressive">Progressive 漸進惡化</option><option value="improving">Improving 漸好轉</option><option value="stable">Stable 穩定</option><option value="unknown">Unknown 不確定</option></select></label>
             <label>初診基準嚴重度（暫時欄位）Baseline severity 0–10 (transitional)<input name="baselineSeverity" type="number" min="0" max="10" step="1" placeholder="不適用可留空 leave blank if not applicable" /></label>

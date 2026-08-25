@@ -199,6 +199,9 @@ jobs:
       - name: Carry-forward scope (treatment only — never observations)
         run: node scripts/validate-carry-forward-scope.js
 
+      - name: Onset grammar (durations accepted, ambiguity never guessed)
+        run: node scripts/validate-onset-approx.js
+
       - name: bilingual render parity (no _en field left off the screen)
         run: node scripts/validate-bilingual-render-parity.js
 

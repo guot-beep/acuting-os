@@ -6706,6 +6706,13 @@ html { scroll-padding-top: 92px; }
    一眼掃過去會以為存好了。這一行講的是「你的字還沒進去」。 */
 .clinical-note__status.is-error { color: #8a1f1f; font-weight: 700; line-height: 1.5; }
 
+/* 發病時間的即時解讀。存檔前就看得到系統會怎麼理解這句話 —— 綠色 = 讀懂了,
+   紅色 = 看不懂(而且會說出可以怎麼寫)。留空時整行不佔高度。 */
+.onset-hint { display: block; margin-top: 0.25rem; font-size: 0.76rem; line-height: 1.5; }
+.onset-hint:empty { display: none; }
+.onset-hint.is-ok { color: #2f6b4f; }
+.onset-hint.is-error { color: #8a1f1f; }
+
 /* 自動存檔失敗:借用草稿橫幅的位置,但必須一眼看得出這不是「找到草稿」那種
    中性提示 —— 它講的是「現在關掉就救不回來」。 */
 .draft-banner.draft-banner-error {
