@@ -4559,3 +4559,12 @@ Current repo state as of this log:
 - **未解**：Conditions 仍有 western pathology／etiology／risk factors／acupuncture scope 空白 `17／250／44／69`；既有卡片內未經本批覆核的針灸與預後敘述未被新增 provenance 背書。
 
 ---
+# 2026-08-25 — Codex Conditions 眼科官方病因補強 B31
+
+- **範圍**：只補 `cond.vitreous_floaters`、`cond.ocular_hypertension`、`cond.amblyopia`、`cond.strabismus`、`cond.dacryocystitis` 尚缺的 `etiology_zh/en`，追加直接來源與逐欄 provenance；未覆蓋既有正文、安全欄、scope、relations、ids 或其他資料線。
+- **數字**：`FULL_DETAIL_CANDIDATE 268→273`、`DETAIL_PARTIAL 237→232`、`SKELETON 0→0`，距 300 尚 `27`；直接來源 `889→899`、有來源記錄 `319→324`；空白 etiology `205→200`。
+- **來源與邊界**：使用 NIH/NEI、NIH/NLM MedlinePlus、NHS、Guy's and St Thomas' NHS 與 Moorfields Eye Hospital NHS；10 個直接內容頁皆 HTTP 200。分清穩定老化飛蚊／急性 retinal warning、眼壓過高／glaucoma／acute angle closure、弱視／斜視、真斜視／假性斜視，以及單純流淚／阻塞／感染性淚囊炎。
+- **驗證**：來源狀態；dry-run/apply `20 operations / 5 ids / skipped 0 / missing 0`；fill 與 canonical/generated 逐欄 equality、逐記錄 boundary diff；`build-data`、condition standard `505/505 clean`、ratchet、sources `899`、relation registry、content-junk、maturity audit、`git diff --check` 均無新增 defect。
+- **未解**：本批未改既有 summary、red flags、risk 或 scope；8 個 frozen control-character 與 formula generic dosage 警告屬其他線且未增加。下一批依 Ting 指示轉入 Conditions 內中醫病名內容，須先依 `CONDITION_CARD_TEMPLATE` 與 condition-fill skill 重建稽核基線。
+
+---

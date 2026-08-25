@@ -1,5 +1,13 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-25] Codex Handoff — Conditions official eye etiology B31
+
+- **Exact ids / fields**: only `cond.vitreous_floaters`, `cond.ocular_hypertension`, `cond.amblyopia`, `cond.strabismus`, and `cond.dacryocystitis`; filled absent bilingual etiology and appended direct sources plus provenance. Existing narrative, safety content, scope, relations, ids, and adjacent datasets were preserved.
+- **Official sources**: NIH/NEI, NIH/NLM MedlinePlus, NHS, Guy's and St Thomas' NHS, and Moorfields Eye Hospital NHS; all ten direct content URLs returned HTTP 200 and every record cross-references two pages.
+- **Clinical distinctions**: stable age-related floaters versus acute retinal warning symptoms; ocular hypertension versus glaucomatous damage and acute angle closure; amblyopia versus strabismus; true versus pseudo-strabismus; and obstructive epiphora versus infected lacrimal-sac disease.
+- **Measured delta**: maturity `268→273 FULL_DETAIL_CANDIDATE`, `237→232 DETAIL_PARTIAL`, `0→0 SKELETON`, leaving `27` slots to 300; source entries `889→899`, sourced records `319→324`; empty etiology `205→200`.
+- **Validation**: source URL status; dry-run/apply `20 operations / 5 ids / skipped 0 / missing 0`; exact fill and canonical/generated equality; record-boundary diff; `build-data.js`; condition standard `505/505 clean`; ratchet; condition sources (`899`); relation registry; content junk; maturity audit; and `git diff --check` passed.
+
 ## [2026-08-25] Codex Handoff — Conditions official ENT/eye etiology B30
 
 - **Exact ids / fields**: only `cond.otitis_externa`, `cond.conjunctivitis`, `cond.hordeolum`, `cond.age_related_macular_degeneration`, and `cond.allergic_conjunctivitis`; filled absent bilingual etiology and appended direct sources plus provenance. Existing safety content, scope, relations, ids, and adjacent datasets were preserved.
