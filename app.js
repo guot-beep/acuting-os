@@ -9640,6 +9640,17 @@ function saveSoapFromForm(event) {
   clearDraft(SOAP_DRAFT_KEY);   // FIX A: draft is only useful until a real save lands
   soapDialog.close();
   render();
+  // 2026-08-25(dry run 現場發現:「我之後的 soap 就找不到結帳按鈕了」)——
+  // 結帳按鈕在每張 SOAP 卡片自己的標題列裡(跟編輯鈕並排),存檔關閉對話框
+  // 後使用者要自己在整條 timeline 裡找到剛剛那張卡才看得到。跟 CS5(timeline
+  // 節點點擊→ 捲動+閃爍那張卡)同一套機制,存檔後自動對剛存的這張卡做一次,
+  // 讓結帳按鈕直接出現在使用者眼前,不用自己找。
+  const savedCard = document.getElementById(`soap-${nextNote.id}`);
+  if (savedCard) {
+    savedCard.scrollIntoView({ behavior: "smooth", block: "center" });
+    savedCard.classList.add("soap-note-flash");
+    setTimeout(() => savedCard.classList.remove("soap-note-flash"), 1200);
+  }
 }
 
 function deleteCurrentSoap() {
