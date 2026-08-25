@@ -285,7 +285,8 @@
       <h2>治療後不適 Reactions after treatment</h2>
       <p class="card-sub">是否有任何不舒服，例如瘀青、暈眩、疲累加重? Any discomfort — e.g. bruising, dizziness, feeling more tired?</p>
       <div class="toggle-row" role="group" aria-label="AE self report">
-        <button type="button" class="toggle-btn" id="aeNoBtn" aria-pressed="true">否 No</button>
+        <!-- 兩顆都不預先按下：預設「否」等於替病人回答一個安全問題。 -->
+        <button type="button" class="toggle-btn" id="aeNoBtn" aria-pressed="false">否 No</button>
         <button type="button" class="toggle-btn" id="aeYesBtn" aria-pressed="false">是 Yes</button>
       </div>
       <label class="field" id="aeTextWrap" hidden>
@@ -298,7 +299,7 @@
       <h2>藥物 / 保健品變動 Medication / supplement changes</h2>
       <p class="card-sub">是否有新增、停用或改變劑量? Any new, stopped, or changed-dose medications or supplements?</p>
       <div class="toggle-row" role="group" aria-label="Exposure change self report">
-        <button type="button" class="toggle-btn" id="expNoBtn" aria-pressed="true">否 No</button>
+        <button type="button" class="toggle-btn" id="expNoBtn" aria-pressed="false">否 No</button>
         <button type="button" class="toggle-btn" id="expYesBtn" aria-pressed="false">是 Yes</button>
       </div>
       <label class="field" id="expTextWrap" hidden>
@@ -424,18 +425,27 @@
   // ---------------------------------------------------------------------
   // 2. Toggle groups (AE self-report / exposure self-report)
   // ---------------------------------------------------------------------
+  /* 三態,不是兩態。舊版初始就把「否」設成 aria-pressed=true,於是病人完全
+   * 沒碰這一題,payload 照樣帶出「沒有不良反應」——「病人回答沒有」與
+   * 「病人根本沒看到這一題」產生逐位元相同的 payload,而這一題問的是安全。
+   * 現在初始兩顆都不按,回傳 "yes" / "no" / ""(未回答)。
+   * 不強迫作答:病人有權不答,系統要做的是誠實回報「未答」,由醫師當面問。 */
   function wireToggle(yesBtnId, noBtnId, wrapId) {
     var yesBtn = document.getElementById(yesBtnId);
     var noBtn = document.getElementById(noBtnId);
     var wrap = document.getElementById(wrapId);
-    function setState(isYes) {
-      yesBtn.setAttribute("aria-pressed", isYes ? "true" : "false");
-      noBtn.setAttribute("aria-pressed", isYes ? "false" : "true");
-      wrap.hidden = !isYes;
+    function setState(ans) {
+      yesBtn.setAttribute("aria-pressed", ans === "yes" ? "true" : "false");
+      noBtn.setAttribute("aria-pressed", ans === "no" ? "true" : "false");
+      wrap.hidden = ans !== "yes";
     }
-    yesBtn.addEventListener("click", function () { setState(true); });
-    noBtn.addEventListener("click", function () { setState(false); });
-    return function isYes() { return yesBtn.getAttribute("aria-pressed") === "true"; };
+    yesBtn.addEventListener("click", function () { setState("yes"); });
+    noBtn.addEventListener("click", function () { setState("no"); });
+    return function answer() {
+      if (yesBtn.getAttribute("aria-pressed") === "true") return "yes";
+      if (noBtn.getAttribute("aria-pressed") === "true") return "no";
+      return "";
+    };
   }
 
   // ---------------------------------------------------------------------
@@ -722,8 +732,8 @@
       document.body.insertBefore(banner, document.body.firstChild);
     }
 
-    var aeIsYes = wireToggle("aeYesBtn", "aeNoBtn", "aeTextWrap");
-    var expIsYes = wireToggle("expYesBtn", "expNoBtn", "expTextWrap");
+    var aeAnswer = wireToggle("aeYesBtn", "aeNoBtn", "aeTextWrap");
+    var expAnswer = wireToggle("expYesBtn", "expNoBtn", "expTextWrap");
 
     var form = document.getElementById("previsitForm");
     var outputSection = document.getElementById("outputSection");
@@ -789,13 +799,18 @@
         metrics: metrics,
         subjectiveText: document.getElementById("subjectiveText").value.trim(),
         patientPerspective: document.getElementById("patientPerspective").value.trim(),
+        // answered 是獨立欄位而非把 any 改成三態:any 的布林契約已經被
+        // previsit-validator 的 R-9 規則守著(字串 "false" 曾經變成 true)。
+        // any:false + answered:false = 沒回答;any:false + answered:true = 回答「否」。
         aeSelfReport: {
-          any: aeIsYes(),
-          text: aeIsYes() ? document.getElementById("aeText").value.trim() : ""
+          any: aeAnswer() === "yes",
+          answered: aeAnswer() !== "",
+          text: aeAnswer() === "yes" ? document.getElementById("aeText").value.trim() : ""
         },
         exposureSelfReport: {
-          any: expIsYes(),
-          text: expIsYes() ? document.getElementById("expText").value.trim() : ""
+          any: expAnswer() === "yes",
+          answered: expAnswer() !== "",
+          text: expAnswer() === "yes" ? document.getElementById("expText").value.trim() : ""
         }
       };
 

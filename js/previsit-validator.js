@@ -334,6 +334,8 @@
       if (o === undefined || o === null) continue;
       if (typeof o !== "object" || Array.isArray(o)) { errors.push(`${rep} 必須是物件。${rep} must be an object.`); continue; }
       if (o.any !== undefined && typeof o.any !== "boolean") errors.push(`${rep}.any 必須是 true/false(實際型別 ${typeof o.any})。${rep}.any must be a boolean.`);
+      // answered 與 any 同一條型別鐵則。缺席合法(舊 payload),見下方轉換。
+      if (o.answered !== undefined && typeof o.answered !== "boolean") errors.push(`${rep}.answered 必須是 true/false(實際型別 ${typeof o.answered})。${rep}.answered must be a boolean.`);
     }
     const subjectiveText = textField(data.subjectiveText, MAX_PROSE_CHARS, "subjectiveText");
     const patientPerspective = textField(data.patientPerspective, MAX_PROSE_CHARS, "patientPerspective");
@@ -354,12 +356,16 @@
         metrics: checkedMetrics,
         subjectiveText,
         patientPerspective,
+        /* answered 缺席 → false,也就是「無法判斷病人是否回答過」。
+         * 舊 payload 的 any:false 本來就分不出「回答了否」與「沒回答」
+         * (那正是這個欄位要修的缺陷),所以讀成「未回答」是唯一誠實的解讀 ——
+         * 寧可讓醫師當面再問一次,也不要替病人確認一個沒問過的安全問題。 */
         aeSelfReport: (data.aeSelfReport && typeof data.aeSelfReport === "object" && !Array.isArray(data.aeSelfReport))
-          ? { any: data.aeSelfReport.any === true, text: aeText }
-          : { any: false, text: "" },
+          ? { any: data.aeSelfReport.any === true, answered: data.aeSelfReport.answered === true, text: aeText }
+          : { any: false, answered: false, text: "" },
         exposureSelfReport: (data.exposureSelfReport && typeof data.exposureSelfReport === "object" && !Array.isArray(data.exposureSelfReport))
-          ? { any: data.exposureSelfReport.any === true, text: expText }
-          : { any: false, text: "" }
+          ? { any: data.exposureSelfReport.any === true, answered: data.exposureSelfReport.answered === true, text: expText }
+          : { any: false, answered: false, text: "" }
       }
     };
   }

@@ -291,7 +291,9 @@ function selfTestFixtures() {
       { name: "bad29_variation_selector_in_patientCode", payload: bad29VariationSelectorInPatientCode },
       { name: "bad30_hour_24_normalises_to_next_day", payload: bad30Hour24 },
       { name: "bad31_string_false_coerced_to_true", payload: bad31StringFalseFlag },
-      { name: "bad32_object_prose_silently_dropped", payload: bad32ObjectProse }
+      { name: "bad32_object_prose_silently_dropped", payload: bad32ObjectProse },
+      // answered 與 any 同一條型別鐵則:這兩題問的是安全,型別錯就是資料錯。
+      { name: "bad33_string_answered_flag", payload: { ...good2, aeSelfReport: { any: false, answered: "true", text: "" } } }
     ]
   };
 }

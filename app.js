@@ -9633,8 +9633,18 @@ function pastePrevisitImport() {
   // field, rather than silently dropped.
   const extraBlocks = [];
   if (data.subjectiveText) extraBlocks.push(`[診前自填 Pre-visit self-report] ${data.subjectiveText}`);
-  if (data.aeSelfReport.any) extraBlocks.push(`[診前自報：不良反應 Pre-visit AE self-report] ${data.aeSelfReport.text || "（未描述 no description given）"}`);
-  if (data.exposureSelfReport.any) extraBlocks.push(`[診前自報：藥物/補品變動 Pre-visit medication/supplement change] ${data.exposureSelfReport.text || "（未描述 no description given）"}`);
+  /* 三種答案都要留下痕跡。舊版只在 any 為 true 時寫,於是「病人回答沒有」
+   * 與「病人沒回答這一題」在醫師端是逐位元相同的空白 —— 而這兩題問的是安全。
+   * 「未回答」要明說,好讓她當面補問;「回答沒有」也要寫,那是一筆陰性所見,
+   * 不是沒有資料。 */
+  const selfReportLine = (rep, label) => {
+    if (!rep) return `[診前自報：${label}] 未回答(此欄無法判斷,請當面確認)`;
+    if (rep.any) return `[診前自報：${label}] 是 — ${rep.text || "（未描述 no description given）"}`;
+    if (rep.answered) return `[診前自報：${label}] 病人回答：否`;
+    return `[診前自報：${label}] 未回答(病人未作答,請當面確認)`;
+  };
+  extraBlocks.push(selfReportLine(data.aeSelfReport, "不良反應 AE"));
+  extraBlocks.push(selfReportLine(data.exposureSelfReport, "藥物/補品變動 Medication change"));
   if (extraBlocks.length && soapForm.elements.subjective) {
     const existing = soapForm.elements.subjective.value.trim();
     soapForm.elements.subjective.value = extraBlocks.join("\n") + (existing ? `\n\n${existing}` : "");
