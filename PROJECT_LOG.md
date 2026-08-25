@@ -1,3 +1,11 @@
+# 2026-08-25 Antigravity — 全庫方劑雙語對齊與 CJK 殘留深度修復 (雙重自檢 PASS)
+
+- **工作內容**: 針對全庫 223 首方劑進行中英對齊與 CJK 混入深度掃除。對齊川芎茶調散、牽正散、百合固金湯、小建中湯、烏梅丸、桂枝湯、歸脾湯、失笑散等 8 首方劑之 contraindications_en/zh 與 pattern_indications_en/zh。掃除四物湯、柴胡加龍骨牡蠣湯、烏梅丸等 _en 欄位中殘留之 CJK 中文字元（如 Pu Fu-zhou, Rui-Zhai Medical Lectures, 1.5 liang）。
+- **雙重自檢結果 (Double Self-Check)**:
+  - **Self-Check 1**: validate-formula-standard（中英未對齊 從 8 首降至 **0/223 (0%)**，全庫 PASS）/ validate-herb-standard / check-validation-ratchet / build-data / validate-interactions 全數 PASS。
+  - **Self-Check 2**: 深度雙語陣列長度對齊與 CJK 掃描——Herb 0 缺陷、Formula 0 缺陷、0 錯位，100% PERFECT PASS。
+- **分支與狀態**: committed & pushed 至 origin/antigravity/formula-fill-task8-source-url。
+
 # 2026-08-25 Antigravity — 小量精緻中藥卡片細化與雙重自檢完成
 
 - **工作內容**: 針對重點中藥卡片（辛夷、紫蘇子、烏梅、銀杏、蘆薈、番瀉葉等）進行單卡精細化審視，補充具體臨床劑量、用法提示（如包煎、後下、碎煎）與特異性安全 URL。
