@@ -4419,3 +4419,51 @@ Ting 直接跟我確認的分工(這則是我方留言,沒有直接通道,寫在
   should-attempt 補件/protocol pilot/formula-completeness 工具修復/H3
   indications_en 修復/CI 接 11 支閒置驗證器)——都不動你正在做的 4 張 MSK 卡,
   純資訊供你参考,合併順序由 Ting 決定。
+
+# 2026-08-25 Claude — Fable/SOL 4 項 codex/pattern-v2 修復逐功能移植完成,方藥改 opt-in
+
+Ting 轉述 Fable↔SOL 的收斂報告:`codex/pattern-v2` 落後 main 170 commits、
+舊 PR #59 也因整支合併風險關閉過,裁示不採整支合併,改逐功能移植 4 項
+fail-closed 修復。已全部完成,4 支 draft PR:
+
+- **#121** AVS 洩漏第二處:`scripts/generate-avs.js`(CLI v1)仍直印
+  `note.followUp`——main 自己的 `d9018547` 只修過 checkout 路徑(`js/avs.js`),
+  這支獨立 CLI 當時漏修,同一個洩漏的第二個出口。已補,新增子行程回歸鎖
+  (真的跑一次 CLI,不只測函式),反空跑證明還原修法會讓斷言失敗。
+- **#122** M3 fail-loud:病人 id 鑄造失敗不再只進 console,病人列表用橫幅
+  說出少了誰。乾淨 cherry-pick,零衝突。
+- **#123** 入口指示 + 空病例解釋:`file://`/`localhost`/部署網址三個互不
+  相通的資料庫,開錯書籤在存進第一筆之前就看得出來。cherry-pick 有一處
+  `styles.css` 位置衝突(來源分支的樹已累積後續兄弟 commit 的內容),已核對
+  這個 commit 自己的獨立 diff、只取真正屬於它的兩塊 CSS。
+- **#124** 沿用上次治療:穴位/處置維持原案的一鍵按鈕,但**方藥/西藥改成
+  獨立 opt-in**——不採原案「跟穴位同一顆按鈕、無差別一鍵帶入」。方藥帶錯的
+  風險是把上次處方原封不動搬進一個可能已改變的用藥/妊娠/安全狀態,跟穴位
+  帶錯（當場可調整）不是同一種風險量級。新按鈕預設 disabled,需先勾選
+  「已核對:病人用藥、妊娠與安全狀態較上次無新變化」才能按,click handler
+  另有 defense-in-depth 二次檢查。`scripts/validate-carry-forward-scope.js`
+  重寫,新增「方藥/西藥不准出現在一鍵白名單」+ UI 安全閘門檢查,4 個刻意
+  壞掉的副本逐一驗證會 FAIL(20/20 正本全過)。
+
+**組合驗證**:4 支分支在本地合併到同一個分支(未推送,只為驗證)零額外衝突,
+全部測試套件一起跑照樣過(avs-checkout 76/76、pointer-runtime 36/36、
+carry-forward-scope 20/20)。
+
+**真機端到端演練**(Playwright headless,合成假病人 P-WALKTHROUGH-01,
+零真實病人資料):新增病例→SOAP 第一診(選 2 穴 + 1 方劑,`followUp` 填一句
+「內部規劃」文字)→開 AVS 結帳,確認回診欄確實空白且旁邊有 ⚠ 警示(#121 驗證
+通過)→第二診開啟,確認「沿用上次治療」穴位按鈕與獨立的方藥 opt-in 區塊都
+出現→點穴位按鈕,成功帶入 2 穴→**force-click 方藥按鈕(未勾確認)確認完全
+不動作**→勾選確認句→方藥按鈕變可按→點擊,成功帶入方劑→存檔→病人工作區
+確認入口指示行顯示→匯出 JSON,確認兩診的穴位/方劑都正確保留。21 項自動化
+斷言全過,0 個 bug,僅有的 console error 是 Google Fonts 被沙箱網路擋掉
+(既有的 non-blocking font 設計,與這 4 項修復無關)。
+
+**CODEX AUDIT(Ting 指定順序):AVS洩漏→Patient fail-loud→入口提示→
+carry-forward(已完成,見上)。接下來兩項不是我做的,是 Ting 指名給你的**:
+1. 上一輪 40 組未評估的穴位模板/graph 污染
+2. 吐血卡的急診措辭(disposition wording)修正
+
+這兩項修完、且上面 4 支 PR 合併之後,麻煩在最終 main SHA 上跑一次完整 CI +
+真機 smoke(這是 Fable/SOL 報告裡明講「兩邊都沒有可確認的 exact-head Actions」
+的那個缺口,不能省)。4 支 PR 的合併順序與是否合併由 Ting 決定,我不會自己按。
