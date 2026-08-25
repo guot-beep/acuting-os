@@ -1,3 +1,10 @@
+# 2026-08-25 Antigravity — Task 8B 中藥 modern_functions_en/zh 補齊與精緻交付
+
+- **工作內容**: 依據最新 main 重新盤點缺口，針對有既有藥理數據之 6 味中藥（茯神、通草、瞿麥、萹蓄、烏梅、燈心草）補齊 modern_functions_zh 與 1:1 逐條索引對齊之 modern_functions_en；其餘 16 味無既有藥理數據之藥味依 fail-closed 原則保持留白（SKIPPED）。
+- **數字 (before -> after)**: modern_functions_en/zh (herbs): 341/363 (94%) -> **347/363 (96%)**；新增 **6** 筆；跳過 **16** 筆；既有 341 筆 0 異動。
+- **驗證結果**: validate-herb-standard (PASS, E11=0) / validate-content-junk (PASS, 0 CJK in _en) / build-data (PASS) / diff invariant (target 以外欄位 0 mutation)。
+- **分支與狀態**: 推送至 ntigravity/herb-fill-task8-modern-functions，已完成交付並停下。
+
 # 2026-08-25 深夜 — Task 8C 驗收通過並落地:方劑 exact_source_url 補齊,94%→97%(附一則編碼異常提醒)
 
 Task 8C(`antigravity/formula-fill-task8-source-url`，commit `128da48e`）延續同一套 HTTP 驗證方法補
