@@ -170,11 +170,19 @@ const NUMERIC_OUTCOME_METRIC_CONFIG = [
 // 附近——render() 在檔案最上面同步跑,若使用者一開頁就有已選病例,呼叫鏈
 // 可能在這個檔案後段的 const 初始化之前就先摸到它。
 //
-// 只有「治療計畫」類欄位,絕不含觀察/療效類欄位。新增欄位時先問:這是
-// 「醫師打算怎麼治」還是「這次觀察/量到什麼」?前者才准列入。
+// 新增欄位時先問:這是「醫師打算怎麼治」還是「這次觀察/量到什麼」?前者
+// 直接列入 SOAP_CARRY_FORWARD_FIELDS。後者原則上不列入(見下面 SOAP_
+// CARRY_FORWARD_TEXT_MARKED_FIELDS 的例外與理由)。
 // scripts/test-avs-checkout.js 沒有涵蓋這支(非 AVS 引擎),下面清單本身
 // 就是唯一防線——刻意寫成外顯陣列方便下次修改時一眼看穿範圍。
 const SOAP_CARRY_FORWARD_FIELDS = [
+  // 2026-08-25 second round(Ting 明確要求,見 soapCarryForwardFields 上方
+  // 說明):S/O/A/P 這四格本來是「這次觀察到什麼」的欄位,原則上不該帶入
+  // 上次內容(牴觸 D4)。但 Ting 用 AskUserQuestion 確認後選的是「自動帶入,
+  // 但清楚標示沿用上次、請確認」——不是取消這個顧慮,是換一種方式處理它:
+  // 帶入時強制加一段看得到的標記文字(SOAP_CARRY_FORWARD_MARKER),病歷上
+  // 永遠留下「這段是沿用的」的痕跡,不會被誤讀成當場重新問診/評估的結果。
+  "subjective", "objective", "assessment", "plan",
   "tcmPattern", "tcmPatternSelections", "tcmPatternLinks", "pathomechanism", "treatmentPrinciple",
   "pointsUsed", "acupointLinks", "retentionMinutes", "technique",
   "formulaHerbs", "formulaLinks", "herbLinks",
@@ -183,6 +191,13 @@ const SOAP_CARRY_FORWARD_FIELDS = [
   "westernConditionLinks", "easternDiseaseLinks", "safetyFlagLinks",
   "followUp"
 ];
+
+// 上面四格(S/O/A/P)帶入時要加的可見標記——絕不安靜複製。病人代碼/病歷
+// 內容本身無 PHI 疑慮(這段只在瀏覽器記憶體/病例物件裡,不送出、不記錄),
+// 純粹是給「簽這張病歷的人」看的痕跡。刻意雙語、刻意用中括號包住,跟正常
+// 診療文字有視覺區隔,選取刪除也方便。
+const SOAP_CARRY_FORWARD_MARKER = "〔沿用上次內容,請確認並修改 Carried forward from last visit — please review and edit〕\n";
+const SOAP_CARRY_FORWARD_TEXT_MARKED_FIELDS = new Set(["subjective", "objective", "assessment", "plan"]);
 
 // Outcome Tracking v1 direction-hint labels (2026-08, CG8). Declared here —
 // not beside renderOutcomeTrackingPanel further down — for the same TDZ
@@ -9090,13 +9105,19 @@ function deleteCurrentCase() {
 // case's existing soapNotes each time the dialog opens.
 //
 // 2026-08-25(dry run,Ting 明確要求「帶入上一次看診的內容」推翻原本 reference-
-// only 設計):新增 SOAP_CARRY_FORWARD_FIELDS(下面)——只白名單「治療計畫」
-// 類欄位(證型/治法/穴位/方劑/手法),絕不含 S/O/A/P、舌脈、療效判定/指標、
-// 不良反應這類「這次觀察到的事實」欄位。原因跟這份文件當初刻意選 reference-
-// only 一樣:把上次的舌脈/療效判定當「這次」的值悄悄帶入,等於沒有真的重新
-// 觀察卻記錄成觀察到了(牴觸 D4「粗化,絕不寫假的臨床事實」的精神)。治療計畫
-// 類欄位不同——沿用上次的證型/穴方當這次的起草,再讓醫師確認/修改,是正常
-// 臨床流程,不是捏造。
+// only 設計):新增 SOAP_CARRY_FORWARD_FIELDS(下面)——第一輪只白名單「治療
+// 計畫」類欄位(證型/治法/穴位/方劑/手法)。原因跟這份文件當初刻意選
+// reference-only 一樣:把上次的值當「這次」的悄悄帶入,等於沒有真的重新
+// 觀察卻記錄成觀察到了(牴觸 D4「粗化,絕不寫假的臨床事實」的精神)。
+//
+// 同日第二輪,Ting 追問 S/O/A/P 能不能也帶入(她的原話:「這個系統半正式,
+// 這樣方便我作業不要一直太多手動填寫……我有點之前的內容好對這個病人有
+// 概念」)。用 AskUserQuestion 攤開風險後,Ting 選的是「自動帶入,但清楚
+// 標示沿用上次、請確認」——不是取消上面那個顧慮,是換一種方式處理:S/O/A/P
+// 現在也在白名單裡,但帶入時強制加 SOAP_CARRY_FORWARD_MARKER(可見的中英文
+// 標記),病歷上永遠留下「這段是沿用的」的痕跡,不會被誤讀成當場重新問診/
+// 評估的結果。舌脈/療效判定/指標依然不帶入——這幾格是醫師「這次量到什麼」
+// 而不是「這次記得什麼」,標記解決不了同一個問題,維持原判斷。
 //
 // Ordering matches renderClinicalCaseDetail's own sort (visitDate then
 // visitNumber) so "previous" here means the same thing the SOAP Timeline
@@ -9165,6 +9186,14 @@ function soapCarryForwardFields(prevNote) {
   const out = {};
   for (const key of SOAP_CARRY_FORWARD_FIELDS) {
     const v = prevNote[key];
+    // S/O/A/P:上次是空的就不加標記(沒有東西好「沿用」);有內容才加,
+    // 標記永遠在最前面,選取刪除或整段貼上覆蓋(例如貼 Heidi 轉錄結果)
+    // 都會自然把它帶走,不需要額外的「清除標記」步驟。
+    if (SOAP_CARRY_FORWARD_TEXT_MARKED_FIELDS.has(key)) {
+      const text = String(v || "").trim();
+      out[key] = text ? SOAP_CARRY_FORWARD_MARKER + text : "";
+      continue;
+    }
     out[key] = Array.isArray(v) ? v.map((x) => (x && typeof x === "object") ? { ...x } : x) : v;
   }
   return out;
