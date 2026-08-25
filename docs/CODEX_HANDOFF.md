@@ -1,5 +1,13 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-24] Codex Handoff — Conditions official remaining MSK etiology B18
+
+- **Exact ids / fields**: only `cond.si_joint_dysfunction`, `cond.tfcc_injury`, `cond.shin_splints`, `cond.costochondritis`, and `cond.coccydynia`; filled empty bilingual etiology and appended direct sources plus etiology provenance. Existing pathology, risks, red flags, scope, relations, and adjacent datasets were not changed.
+- **Official/professional sources**: AAFP, NCBI StatPearls, NHS, and Gloucestershire Hospitals NHS; all ten actual content URLs returned HTTP 200.
+- **Clinical distinctions**: SI-joint dysfunction and coccydynia remain heterogeneous pain diagnoses rather than presumed single displacements; TFCC imaging changes may be asymptomatic; MTSS is a tibial stress continuum rather than simple muscle inflammation; reproducible costochondral tenderness does not exclude dangerous chest pain.
+- **Measured delta**: maturity `211→216 FULL_DETAIL_CANDIDATE`, `294→289 DETAIL_PARTIAL`, `0→0 SKELETON`, leaving `84` slots to 300; source entries `759→769`, sourced records `261→266`; empty etiology `270→265`.
+- **Validation**: dry-run/apply `20 operations / 5 ids / skipped 0 / missing 0`; exact equality and record-boundary diff; `build-data.js`; condition standard `505/505 clean`; ratchet; condition sources (`769`); relation registry; content junk; maturity audit; and `git diff --check` passed.
+
 ## [2026-08-24] Codex Handoff — Conditions official degenerative-inflammatory etiology B17
 
 - **Exact ids / fields**: only `cond.pseudogout`, `cond.sarcopenia`, `cond.generalized_osteoarthritis`, and `cond.myositis`; filled empty bilingual etiology and appended direct sources plus etiology provenance. Existing pathology, risks, red flags, scope, relations, and adjacent datasets were not changed.

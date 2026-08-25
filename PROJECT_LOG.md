@@ -4433,3 +4433,12 @@ Current repo state as of this log:
 - **來源與鑑別**：使用 NCBI/PMC、NIAMS 與 University Hospitals Bristol NHS，8 個實際內容 URL 皆 HTTP 200；CPPD 與尿酸痛風分開、肌少症不視為不可避免正常老化、OA 不簡化成磨損、myositis 明示為異質性疾病家族而非單一病因。
 - **驗證**：dry-run／apply 均為 `16 operations / 4 ids / skipped 0 / missing 0`；逐欄 equality、逐記錄 diff 僅 4 ids／4 expected keys；`build-data`、condition standard `505/505`、ratchet、sources `759`、relation registry、content-junk、maturity audit、`git diff --check` 均無新增 defect。
 - **未解**：etiology 仍缺 `270` 張；本批未重新核准四卡既有 red flags、scope 或舊 provenance，myositis 後續臨床使用仍須先確定具體亞型。
+# 2026-08-24 — Codex Conditions 剩餘肌骨官方病因補強 B18
+
+- **範圍**：只補 `cond.si_joint_dysfunction`、`cond.tfcc_injury`、`cond.shin_splints`、`cond.costochondritis`、`cond.coccydynia` 原本空白的 `etiology_zh/en`，並透過 non-overwrite fill 加入來源與逐欄位 provenance；未改既有 pathology、risk factors、red flags、acupuncture scope、relations 或 Symptoms／中藥／方劑／穴位 canonical data。
+- **數字**：`FULL_DETAIL_CANDIDATE 211→216`、`DETAIL_PARTIAL 294→289`、`SKELETON 0→0`，距 300 尚 `84`；直接來源 `759→769`、有 direct source 的 records `261→266`；空白 etiology `270→265`。
+- **來源與臨床邊界**：使用 AAFP、NCBI StatPearls、NHS 與 Gloucestershire Hospitals NHS，10 個實際內容頁皆 HTTP 200；薦髂關節與尾骨痛保留多病因／排除診斷定位，TFCC 不以無症狀 MRI 退變作因果，MTSS 不簡化成肌肉炎，肋軟骨炎不因可重現壓痛而跳過危險胸痛鑑別。
+- **驗證**：dry-run/apply `20 operations / 5 ids / skipped 0 / missing 0`；exact equality 與 record-boundary diff（僅 5 ids、4 預期欄位）PASS；`build-data`、condition standard `505/505`、ratchet、condition sources `769`、relation registry、content-junk、maturity audit、`git diff --check` 均無新增 defect。
+- **未解**：Conditions 仍有 western pathology／etiology／risk factors／acupuncture scope 空白 `17／265／44／69`；既有 content-junk frozen warnings 屬其他工作線，本批未碰。
+
+---
