@@ -86,6 +86,27 @@ console.log("Scenario A — routine acupuncture, no flags");
   assert(d.followUpSnapshot === "", "followUpSnapshot starts empty even when note.followUp has clinician-internal text (no silent carryover)");
 }
 
+// ---- 附加 — 只在 SOAP 表單勾方藥/西藥,沒開獨立「用藥與補充劑」帳(2026-08-25
+// dry run 現場發現:「我有開中藥 我的診後照顧指示裡面沒有中藥的指示」)-------
+console.log("Extra — formula/medication linked only via the SOAP form's own picker (no separate ledger entry)");
+{
+  const kase = makeCase();   // agentExposures: [] —— 沒有另外開「用藥與補充劑」對話框
+  const note = makeNote({ modalitiesPerformed: ["modality.acupuncture"], formulaLinks: ["formula.gui_zhi_tang"] });
+  const nameOfAgent = (id) => (id === "formula.gui_zhi_tang" ? "桂枝湯" : null);
+  const d = AVS.buildDraftSnapshot({ kase, note, library: LIBRARY, clinic: CLINIC, modalityVocabulary: MODALITY_VOCAB, outcomeMetricDefs: [], nameOfAgent });
+  assert(d.medicationInstructionsSnapshot.length === 1, "formula picked in the SOAP form's own picker shows up in the med table even with an empty agentExposures ledger");
+  assert(d.medicationInstructionsSnapshot[0].name === "桂枝湯", "resolved via nameOfAgent since the ledger has no nameText for it");
+  assert(d.medicationInstructionsSnapshot[0].dose === "依醫囑", "no doseText captured at the visit level — falls back to the SAME 依醫囑 default the ledger path already uses, not a new empty-string path");
+  assert(ruleIds(d).includes("avs.herb_general"), "hasActiveHerbs correctly true — the herb safety-caution rule fires too, not just the med table");
+
+  // 用藥帳(agentExposures)裡已經有這個 id 的話,用藥帳的真實 doseText 優先,
+  // 不被 SOAP 表單這邊的空白覆蓋,也不會重複出現兩列。
+  const kaseWithLedger = makeCase({ agentExposures: [{ agentId: "formula.gui_zhi_tang", nameText: "桂枝湯（帳上）", doseText: "6克", frequencyText: "一天三次", status: "current" }] });
+  const dLedger = AVS.buildDraftSnapshot({ kase: kaseWithLedger, note, library: LIBRARY, clinic: CLINIC, modalityVocabulary: MODALITY_VOCAB, outcomeMetricDefs: [], nameOfAgent });
+  assert(dLedger.medicationInstructionsSnapshot.length === 1, "same agentId in both the ledger and the SOAP form's formulaLinks is not duplicated");
+  assert(dLedger.medicationInstructionsSnapshot[0].dose === "6克", "ledger's real doseText wins over the visit-only fallback");
+}
+
 // ---- Scenario B — cupping + anticoagulant ----------------------------------
 console.log("Scenario B — cupping + anticoagulant flag");
 {

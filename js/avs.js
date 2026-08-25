@@ -113,7 +113,24 @@
    * 「發明」診斷 —— 只讀已結構化的欄位(§2.5)。 */
   function buildMatchContext(kase, note) {
     const resolved = resolveModalities(note);
-    const activeMeds = (kase.agentExposures || []).filter((e) => !/stopped|past/i.test(String(e.status || "")));
+    const ledgerMeds = (kase.agentExposures || []).filter((e) => !/stopped|past/i.test(String(e.status || "")));
+    // 2026-08-25(dry run 現場發現:「我有開中藥 我的診後照顧指示裡面沒有
+    // 中藥的指示」)——舊版只讀 case 層 agentExposures(獨立的「用藥與補充劑」
+    // 對話框),SOAP 表單自己的「方藥 Formula」/「西藥」picker
+    // (note.formulaLinks/medicationLinks)完全沒有併進來。醫師在 SOAP 表單
+    // 勾了方劑,直覺會預期 AVS 看得到——不知道還要另外開那個獨立對話框
+    // 補一筆才會出現。補上:用藥帳裡沒有的、但這次 note.formulaLinks/
+    // medicationLinks 有勾選的 id,額外併入,doseText/frequencyText 留空,
+    // 交給下面 medRows 既有的「依醫囑」fallback 處理(不是新發明的空字串
+    // 邏輯)。用藥帳裡已經有的 id(agentId 相符)不重複併入,用藥帳的
+    // doseText/frequencyText 優先——那才是真的填過劑量的資料。
+    const ledgerAgentIds = new Set(ledgerMeds.map((e) => e.agentId).filter(Boolean));
+    const visitOnlyIds = [...new Set([...(note.formulaLinks || []), ...(note.medicationLinks || [])])]
+      .filter((id) => id && !ledgerAgentIds.has(id));
+    const activeMeds = [
+      ...ledgerMeds,
+      ...visitOnlyIds.map((id) => ({ agentId: id, nameText: "", doseText: "", frequencyText: "", status: "current" }))
+    ];
     return {
       patterns: new Set((note.tcmPatternSelections || []).map((x) => x.patternId)),
       conditions: new Set([...(kase.westernConditions || []), ...(kase.easternDiseases || []), ...(note.westernConditionLinks || []), ...(note.easternDiseaseLinks || [])]),
