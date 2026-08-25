@@ -9714,6 +9714,32 @@ function avsRenderChecked(snapshot, kase, note) {
   return html;
 }
 
+// 複製文字用:同一份自檢邏輯套在純文字版(2026-08-25,Ting 要求 email 可直接貼上)。
+function avsRenderTextChecked(snapshot, kase, note) {
+  const text = AcuTingAVS.renderPatientText(snapshot, { visitDate: note.visitDate || "" });
+  const banned = AcuTingAVS.checkPatientOutputSafety(text, kase);
+  if (banned.length) {
+    alert("SAFETY ABORT:病人輸出含內部代碼/禁用詞,已中止輸出。\n命中:" + banned.join(", ") + "\n請檢查建議文字或自訂指示內容。");
+    return null;
+  }
+  return text;
+}
+
+// 複製到剪貼簿,失敗(權限/非 https/舊瀏覽器)就退回 prompt() 讓使用者自己
+// 全選複製 —— 跟 copyPointLink() 同一套後備邏輯,但 prompt 用 textarea 風格
+// 多行文字時 alert 會被截斷/擠成一行,prompt 至少能選取。
+function copyTextToClipboard(text, onDone) {
+  if (navigator.clipboard?.writeText) {
+    navigator.clipboard.writeText(text).then(() => onDone(true)).catch(() => {
+      prompt("瀏覽器阻擋自動複製,請手動全選複製:", text);
+      onDone(false);
+    });
+    return;
+  }
+  prompt("瀏覽器不支援自動複製,請手動全選複製:", text);
+  onDone(false);
+}
+
 function renderAvsCheckout() {
   const body = document.querySelector("#avsCheckoutBody");
   const { kase, note } = avsCheckoutContext();
@@ -9740,6 +9766,7 @@ function renderAvsCheckout() {
         <div class="avs-co-actions-row">
           <button type="button" data-avs-view="${escapeAttribute(finalized.id)}">檢視 View</button>
           <button type="button" data-avs-print="${escapeAttribute(finalized.id)}">列印 / 存 PDF</button>
+          <button type="button" data-avs-copy-text="${escapeAttribute(finalized.id)}">複製文字 Copy for email</button>
           <button class="ghost" type="button" id="avsCorrectionBtn">建立更正版本 Create correction</button>
         </div>
         <p class="avs-co-note">定稿文件不可修改;更正會建立 v${escapeHtml(String((Number(finalized.version) || 1) + 1))} 草稿,定稿後舊版標記為 superseded、永久保留可讀。</p>
@@ -9833,6 +9860,18 @@ function wireAvsCheckoutEvents() {
     if (!snap) return;
     const html = avsRenderChecked(snap, kase, note);
     if (html) avsOpenWindow(html, true);
+  }));
+  body.querySelectorAll("[data-avs-copy-text]").forEach((btn) => btn.addEventListener("click", () => {
+    const snap = snaps.find((s) => s.id === btn.dataset.avsCopyText);
+    if (!snap) return;
+    const text = avsRenderTextChecked(snap, kase, note);
+    if (!text) return;
+    const original = btn.textContent;
+    copyTextToClipboard(text, (copied) => {
+      if (!copied) return;   // prompt() 後備已經讓使用者自己複製,不用再覆蓋按鈕文字
+      btn.textContent = contentMode === "english" ? "Copied" : "已複製,可貼上 email";
+      setTimeout(() => { btn.textContent = original; }, 1500);
+    });
   }));
   body.querySelectorAll("[data-avs-why]").forEach((btn) => btn.addEventListener("click", () => {
     const panel = body.querySelector(`[data-avs-why-panel="${btn.dataset.avsWhy}"]`);

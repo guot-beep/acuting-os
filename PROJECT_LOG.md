@@ -1,3 +1,16 @@
+# 2026-08-25 — AVS 結帳新增「複製文字 Copy for email」按鈕(Ting 要求 email 可直接貼上)
+
+Ting 確認自動寄送是三五年後的事、她要手動用自己 email 寄,但要求輸出「直接可以剪貼貼上直接寄送」——
+既有的列印/存 PDF 是 HTML 排版,不適合貼進 email 內文。新增 `AcuTingAVS.renderPatientText()`
+(`js/avs.js`),與 `renderPatientHtml` 讀同一份 finalized snapshot、同樣的欄位取捨(今天做了什麼/
+居家照護/調理品/特別注意/自我觀察/回診),排成純文字「【小標】+ 條列」。同一套 `checkPatientOutputSafety`
+零診斷自檢在純文字上一樣有效(字串掃描,不依賴 tag)——新增測試證實(`scripts/test-avs-checkout.js`
++8 斷言,71/71 全過)。UI 按鈕掛在既有「列印/存 PDF」旁,`navigator.clipboard` 失敗時退回
+`prompt()` 手動全選(跟既有 `copyPointLink` 同套後備邏輯)。`validate-content-junk`/
+`check-validation-ratchet` 皆 PASS,無 data/ 異動。
+
+---
+
 # 2026-08-24 深夜 — Task 7 不採用:自我驗證通過但驗證的不是這次要抓的問題,報告零語意層發現
 
 Task 7(`antigravity/herb-semantic-qa-task7`，commit `afd3a69f`）交回
