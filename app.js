@@ -147,7 +147,11 @@ const NUMERIC_OUTCOME_METRIC_CONFIG = [
   //     outcome_metrics.json; this config makes no higher/lower-is-better
   //     claim, and formatNumericOutcomeMetrics below must not either.
   { metricId: "metric.bloating", min: 0, max: 10, integer: true },
-  { metricId: "metric.sleep_onset_minutes", min: 0, max: null, integer: true },
+  // placeholderHint (2026-08-25, dry run finding): 病人講「大概一小時」是
+  // 常態,填分鐘數的欄位單獨看很容易讓人愣一下要不要自己換算。這裡直接把
+  // 換算寫進佔位字,不改欄位本身(還是分鐘、還是整數)——不引入新的輸入
+  // 格式或解析邏輯,純粹是提示文字,風險最低的修法。
+  { metricId: "metric.sleep_onset_minutes", min: 0, max: null, integer: true, placeholderHint: "分鐘數,例如1小時填60、半小時填30" },
   { metricId: "metric.night_wakings", min: 0, max: null, integer: true },
   { metricId: "metric.bowel_frequency", min: 0, max: null, integer: true },
   // Academic-readiness batch (2026-08, pre-9/01 freeze): PGIC — the
@@ -6022,7 +6026,7 @@ function renderNumericOutcomeMetricInputs(note) {
       cfg.max != null ? `max="${cfg.max}"` : "",
       `step="${cfg.integer ? "1" : "any"}"`,
       `value="${resolved.hasValue ? escapeAttribute(String(resolved.value)) : ""}"`,
-      `placeholder="未測量可留空 leave blank if not measured"`,
+      `placeholder="${escapeAttribute(cfg.placeholderHint ? `${cfg.placeholderHint}（未測量可留空 leave blank if not measured）` : "未測量可留空 leave blank if not measured")}"`,
     ].filter(Boolean).join(" ");
     const conflictWarning = resolved.conflict
       ? `<small class="metric-conflict-warning">⚠ 與舊欄位不一致：舊值 ${escapeHtml(String(resolved.legacyValue))}，目前顯示新值 ${escapeHtml(String(resolved.value))}（儲存後舊欄位會清除）。Conflicts with the legacy field — old ${escapeHtml(String(resolved.legacyValue))}, showing new ${escapeHtml(String(resolved.value))}.</small>`
