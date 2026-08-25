@@ -1,0 +1,67 @@
+{
+  "dataset": "Codex Conditions official ENT eye etiology B30",
+  "policy": "Fill only currently absent bilingual etiology fields for five ENT or eye Conditions. Preserve existing narrative, safety fields, acupuncture scope, relations, and provenance; append two direct NIH, NLM, NHS, or NCBI sources per record. Distinguish infection, allergy, irritation, aging degeneration, and complication pathways.",
+  "created": "2026-08-25",
+  "fills": {
+    "cond.otitis_externa": {
+      "etiology_zh": "外耳道炎是外耳道皮膚的發炎，可為感染性或非感染性。急性 diffuse otitis externa 多在水分滯留、濕熱或局部微創傷破壞 cerumen 的酸性保護層與上皮屏障後，讓 Pseudomonas aeruginosa、Staphylococcus aureus 等細菌過度生長；真菌所占比例較小。游泳、棉花棒／抓搔、耳塞、助聽器或異物是促進屏障受損與濕氣滯留的因素，而水本身不是病原體。慢性或反覆型也可由 eczema、psoriasis、seborrheic dermatitis 或接觸性過敏維持，不能把所有病例都當成單純細菌感染。它位於 external canal，與 tympanic membrane 後方的 otitis media 不同。糖尿病或免疫低下者出現劇痛、granulation、顱神經症狀或感染向外擴展時，須警覺 necrotizing otitis externa；這是侵襲性併發症，不是癌症。",
+      "etiology_en": "Otitis externa is inflammation of external-auditory-canal skin and may be infectious or noninfectious. Acute diffuse disease most often develops when retained water, humidity, or local microtrauma disrupts the acidic cerumen layer and epithelial barrier, permitting overgrowth of bacteria such as Pseudomonas aeruginosa or Staphylococcus aureus; fungi account for a smaller share. Swimming, cotton swabs or scratching, ear plugs, hearing aids, and foreign bodies promote barrier injury or moisture retention, while water itself is not the pathogen. Chronic or recurrent disease may be maintained by eczema, psoriasis, seborrheic dermatitis, or contact allergy, so not every case is simply bacterial infection. Disease is in the external canal and differs from otitis media behind the tympanic membrane. Severe disproportionate pain, granulation, cranial-nerve findings, or extension beyond the canal in a person with diabetes or immunosuppression raises concern for necrotizing otitis externa, an invasive complication rather than cancer.",
+      "sources": [
+        "https://medlineplus.gov/ency/article/000622.htm",
+        "https://www.ncbi.nlm.nih.gov/books/NBK556055/"
+      ],
+      "field_sources": {
+        "etiology_zh": ["NIH/NLM MedlinePlus: Swimmer's ear — bacterial/fungal, moisture, trauma and chronic dermatologic causes (reviewed 2024-07-16); NCBI Bookshelf: Otitis Externa — barrier disruption, loss of cerumen, increased pH, common pathogens and noninfectious associations (updated 2023)"],
+        "etiology_en": ["NIH/NLM MedlinePlus: Swimmer's ear — bacterial/fungal, moisture, trauma and chronic dermatologic causes (reviewed 2024-07-16); NCBI Bookshelf: Otitis Externa — barrier disruption, loss of cerumen, increased pH, common pathogens and noninfectious associations (updated 2023)"]
+      }
+    },
+    "cond.conjunctivitis": {
+      "etiology_zh": "結膜炎是 conjunctiva 的發炎總稱，不是一個單一病原診斷。感染型以病毒最常見，尤其 adenovirus，也可由 Staphylococcus aureus、Streptococcus pneumoniae、Haemophilus influenzae 等細菌造成；較少見的 gonococcal／chlamydial、新生兒或 herpes infection 具有不同風險與處置。感染型可經手部、分泌物、飛沫或被污染物品傳播。非感染型包括 pollen、dust mite、mold、animal dander 等引發的 allergic conjunctivitis，以及 contact lens、solution、chlorine、cosmetics、煙霧或 dust 的 irritant reaction。過敏型是免疫反應且不具傳染性；刺激型通常在移除刺激物後緩解。疼痛、畏光、視力下降、角膜混濁或 contact-lens wearer 的紅眼不應僅以一般 conjunctivitis 解釋，需排除 keratitis、uveitis 或 acute glaucoma。",
+      "etiology_en": "Conjunctivitis denotes inflammation of the conjunctiva rather than one pathogen-specific diagnosis. Infectious disease is most often viral, especially adenovirus, but can be caused by bacteria such as Staphylococcus aureus, Streptococcus pneumoniae, or Haemophilus influenzae. Gonococcal, chlamydial, neonatal, and herpes infections are less common and have different risks and management. Infectious conjunctivitis spreads through hands, secretions, droplets, or contaminated objects. Noninfectious pathways include allergy to pollen, dust mite, mold, or animal dander and irritation from contact lenses or solution, chlorine, cosmetics, smoke, or dust. Allergic disease is immune mediated and not contagious; irritant disease usually improves when exposure is removed. Pain, photophobia, reduced vision, corneal opacity, or a red eye in a contact-lens wearer should not be attributed automatically to routine conjunctivitis because keratitis, uveitis, or acute glaucoma must be excluded.",
+      "sources": [
+        "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/pink-eye/causes-pink-eye",
+        "https://www.nhs.uk/conditions/conjunctivitis/"
+      ],
+      "field_sources": {
+        "etiology_zh": ["NIH/NEI: Causes of Pink Eye — viral, bacterial, allergic and irritant pathways, common organisms and contagiousness (updated 2019-07-08); NHS: Conjunctivitis — infection versus allergy and treatment-cause boundary (reviewed 2024-04-23)"],
+        "etiology_en": ["NIH/NEI: Causes of Pink Eye — viral, bacterial, allergic and irritant pathways, common organisms and contagiousness (updated 2019-07-08); NHS: Conjunctivitis — infection versus allergy and treatment-cause boundary (reviewed 2024-04-23)"]
+      }
+    },
+    "cond.hordeolum": {
+      "etiology_zh": "Hordeolum（麥粒腫／stye）是 eyelash follicle 或 eyelid oil gland 的急性局部感染與膿瘍，常由原本存在皮膚或鼻腔的 Staphylococcus 經手部或局部接觸進入阻塞腺體。External hordeolum 多涉及睫毛 follicle 或 Zeis／Moll gland；internal hordeolum 位於 meibomian gland，通常較深且疼痛。慢性 blepharitis、meibomian gland dysfunction、rosacea、反覆揉眼、未卸妝或受污染 cosmetics 可增加阻塞與感染機會，但不是每次發作都能找到單一行為來源。它應與 chalazion 區分：chalazion 是阻塞後的無菌性 lipogranulomatous inflammation，通常較不痛，雖可由 stye 後續形成。反覆出現在同一位置、出血、睫毛脫落或不癒合的腫塊需要重新評估，以免把 eyelid tumor 當成 stye。",
+      "etiology_en": "A hordeolum (stye) is an acute localized infection and abscess of an eyelash follicle or eyelid oil gland, commonly caused when Staphylococcus from skin or the nose enters a blocked gland through hand or local contact. An external hordeolum usually involves an eyelash follicle or a Zeis or Moll gland; an internal hordeolum arises in a meibomian gland and is generally deeper and more painful. Chronic blepharitis, meibomian-gland dysfunction, rosacea, repeated eye rubbing, retained makeup, or contaminated cosmetics increase obstruction and infection risk, but one specific behavior is not identifiable in every episode. It should be distinguished from a chalazion, a usually less painful sterile lipogranulomatous response to gland obstruction, although a chalazion can follow a stye. A recurrent lesion in the same site, bleeding, lash loss, or failure to heal requires reassessment so an eyelid tumor is not mislabeled as a stye.",
+      "sources": [
+        "https://medlineplus.gov/ency/article/001009.htm",
+        "https://www.nhs.uk/conditions/stye/"
+      ],
+      "field_sources": {
+        "etiology_zh": ["NIH/NLM MedlinePlus: Eyelid bump — blocked oil gland, bacterial growth, blepharitis/Demodex association and chalazion distinction (reviewed 2024-07-09); NHS: Stye — bacterial follicle or gland infection and blepharitis/rosacea risk (reviewed 2024-04-18)"],
+        "etiology_en": ["NIH/NLM MedlinePlus: Eyelid bump — blocked oil gland, bacterial growth, blepharitis/Demodex association and chalazion distinction (reviewed 2024-07-09); NHS: Stye — bacterial follicle or gland infection and blepharitis/rosacea risk (reviewed 2024-04-18)"]
+      }
+    },
+    "cond.age_related_macular_degeneration": {
+      "etiology_zh": "年齡相關性黃斑部退化（AMD）的起始原因並非單一且仍未完全確定，是 aging、遺傳易感、complement／慢性發炎、氧化壓力與生活／血管因素共同影響 macula 的疾病。Dry／atrophic AMD 以 drusen、retinal pigment epithelium 與 photoreceptor 漸進受損及晚期 geographic atrophy 為主；wet／neovascular AMD 則由異常 choroidal blood vessels 在 macula 下生長、滲漏或出血，屬 late AMD 且可快速損害中央視力。年齡、家族史與特定 complement-related variants 增加易感性；吸菸是重要可改變風險，hypertension、肥胖與飲食等為相關或進展因素，但不能把任何單一因素寫成充分病因。AMD 影響 central vision，通常保留 peripheral vision，不等同完全 blindness；突然直線變彎、中央暗點或快速視力變化提示 neovascular conversion，需緊急眼科評估。",
+      "etiology_en": "Age-related macular degeneration (AMD) has no single fully established initiating cause. It reflects interaction among aging, genetic susceptibility, complement and chronic inflammatory pathways, oxidative stress, and lifestyle or vascular factors affecting the macula. Dry or atrophic AMD involves drusen, progressive retinal-pigment-epithelium and photoreceptor injury, and in late disease geographic atrophy. Wet or neovascular AMD results from abnormal choroidal vessels growing beneath the macula and leaking or bleeding; it is a late form that can damage central vision rapidly. Age, family history, and selected complement-related variants increase susceptibility. Smoking is an important modifiable risk, while hypertension, obesity, and dietary patterns are associated or progression factors rather than individually sufficient causes. AMD affects central vision and usually spares peripheral vision, so it is not synonymous with complete blindness. New distortion of straight lines, a central scotoma, or rapid visual change suggests neovascular conversion and requires urgent ophthalmic assessment.",
+      "sources": [
+        "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/age-related-macular-degeneration",
+        "https://www.nhs.uk/conditions/age-related-macular-degeneration-amd/"
+      ],
+      "field_sources": {
+        "etiology_zh": ["NIH/NEI: Age-Related Macular Degeneration — aging macular damage, dry versus wet mechanisms, family history and smoking risks (updated 2020); NHS: AMD — unknown multifactorial cause and aging, smoking, blood pressure, weight and family-history associations (reviewed 2025-01-22)"],
+        "etiology_en": ["NIH/NEI: Age-Related Macular Degeneration — aging macular damage, dry versus wet mechanisms, family history and smoking risks (updated 2020); NHS: AMD — unknown multifactorial cause and aging, smoking, blood pressure, weight and family-history associations (reviewed 2025-01-22)"]
+      }
+    },
+    "cond.allergic_conjunctivitis": {
+      "etiology_zh": "過敏性結膜炎是 allergen 接觸 conjunctiva 後引起的 type I hypersensitivity；已致敏者的 IgE-linked mast cells 釋放 histamine 與其他 mediators，使血管擴張、結膜水腫、搔癢與流淚。Seasonal 型常由 tree、grass 或 weed pollen 觸發，perennial 型常與 dust mites、animal dander 或 mold 相關；個人 allergen 因地區與季節而異。Atopy、allergic rhinitis、asthma 或家族過敏史增加易感性，但不是單一直接暴露的替代證據。Vernal 與 atopic keratoconjunctivitis 是較嚴重、可涉及 cornea 的慢性 subtype；contact-lens／giant papillary conjunctivitis 兼具 mechanical 與 immune factors，不能全部套用單純花粉過敏。此病不具傳染性，與 adenoviral 或 bacterial conjunctivitis 不同；明顯疼痛、畏光或視力下降提示 corneal involvement 或其他診斷，需眼科評估。",
+      "etiology_en": "Allergic conjunctivitis is a type I hypersensitivity response after an allergen contacts the conjunctiva. In a sensitized person, IgE-linked mast cells release histamine and other mediators, producing vasodilation, conjunctival edema, itching, and tearing. Seasonal disease is commonly triggered by tree, grass, or weed pollen, while perennial disease is often related to dust mites, animal dander, or mold; the relevant allergen varies by location and season. Atopy, allergic rhinitis, asthma, or family allergy history increases susceptibility but does not substitute for identifying an exposure. Vernal and atopic keratoconjunctivitis are more severe chronic subtypes that can involve the cornea. Contact-lens or giant-papillary conjunctivitis includes mechanical and immune factors and should not be reduced to pollen allergy. Allergic conjunctivitis is not contagious and differs from adenoviral or bacterial conjunctivitis. Marked pain, photophobia, or reduced vision suggests corneal involvement or another diagnosis and warrants ophthalmic assessment.",
+      "sources": [
+        "https://medlineplus.gov/ency/article/001031.htm",
+        "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/pink-eye/causes-pink-eye"
+      ],
+      "field_sources": {
+        "etiology_zh": ["NIH/NLM MedlinePlus: Allergic conjunctivitis — allergen exposure, histamine mechanism, seasonal/perennial triggers and noninfectious boundary (reviewed 2024-07-22); NIH/NEI: Causes of Pink Eye — pollen, mite, mold and dander allergens plus noncontagious distinction (updated 2019-07-08)"],
+        "etiology_en": ["NIH/NLM MedlinePlus: Allergic conjunctivitis — allergen exposure, histamine mechanism, seasonal/perennial triggers and noninfectious boundary (reviewed 2024-07-22); NIH/NEI: Causes of Pink Eye — pollen, mite, mold and dander allergens plus noncontagious distinction (updated 2019-07-08)"]
+      }
+    }
+  }
+}

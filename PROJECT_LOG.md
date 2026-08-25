@@ -1,3 +1,13 @@
+# 2026-08-25 — Codex Conditions 耳鼻眼科官方病因補強 B30
+
+- **範圍**：只補 `cond.otitis_externa`、`cond.conjunctivitis`、`cond.hordeolum`、`cond.age_related_macular_degeneration`、`cond.allergic_conjunctivitis` 尚缺的 `etiology_zh/en`，追加直接來源與 provenance；未覆蓋既有正文、安全欄、scope、relations 或 ids。
+- **數字**：`FULL_DETAIL_CANDIDATE 263→268`、`DETAIL_PARTIAL 242→237`、`SKELETON 0→0`，距 300 尚 `32`；直接來源 `879→889`、有來源記錄 `314→319`；空白 etiology `210→205`。
+- **來源與邊界**：使用 NIH/NEI、NIH/NLM MedlinePlus、NHS 與 NCBI Bookshelf，9 個唯一頁皆 HTTP 200。分清外耳道感染／皮膚炎、infectious/allergic/irritant conjunctivitis、hordeolum/chalazion，以及 dry/wet AMD。
+- **驗證**：dry-run/apply `20 operations / 5 ids / skipped 0 / missing 0`；逐欄 equality、逐記錄邊界、`build-data`、condition standard `505/505 clean`、ratchet、sources `889`、relation registry、content-junk、maturity audit、`git diff --check` 均無新增 defect。
+- **未解**：本批未改既有 red flags、risk 或 scope；8 個 frozen control-character 與 formula generic dosage 警告屬其他線且未增加。
+
+---
+
 # 2026-08-24 — Codex Conditions 腎臟病因與徵象邊界補強 B29
 
 - **範圍**：只補 `cond.renal_cyst`、`cond.polycystic_kidney_disease`、`cond.iga_nephropathy`、`cond.proteinuria`、`cond.hematuria` 尚缺的 `etiology_zh/en`，追加直接來源與 provenance；未覆蓋既有正文、安全欄、scope、relations 或 ids。

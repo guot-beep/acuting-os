@@ -1,5 +1,13 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-25] Codex Handoff — Conditions official ENT/eye etiology B30
+
+- **Exact ids / fields**: only `cond.otitis_externa`, `cond.conjunctivitis`, `cond.hordeolum`, `cond.age_related_macular_degeneration`, and `cond.allergic_conjunctivitis`; filled absent bilingual etiology and appended direct sources plus provenance. Existing safety content, scope, relations, ids, and adjacent datasets were preserved.
+- **Official sources**: NIH/NEI, NIH/NLM MedlinePlus, NHS, and NCBI Bookshelf; nine unique content URLs returned HTTP 200 and every record cross-references two pages.
+- **Clinical distinctions**: external-canal infection versus chronic dermatologic inflammation; infectious, allergic, and irritant conjunctivitis; hordeolum versus sterile chalazion; and dry atrophic versus wet neovascular AMD.
+- **Measured delta**: maturity `263→268 FULL_DETAIL_CANDIDATE`, `242→237 DETAIL_PARTIAL`, `0→0 SKELETON`, leaving `32` slots to 300; source entries `879→889`, sourced records `314→319`; empty etiology `210→205`.
+- **Validation**: dry-run/apply `20 operations / 5 ids / skipped 0 / missing 0`; exact equality and record-boundary diff; `build-data.js`; condition standard `505/505 clean`; ratchet; condition sources (`889`); relation registry; content junk; maturity audit; and `git diff --check` passed.
+
 ## [2026-08-24] Codex Handoff — Conditions official renal etiology B29
 
 - **Exact ids / fields**: only `cond.renal_cyst`, `cond.polycystic_kidney_disease`, `cond.iga_nephropathy`, `cond.proteinuria`, and `cond.hematuria`; filled absent bilingual etiology and appended direct sources plus provenance. Existing safety content, scope, relations, ids, and adjacent datasets were preserved.
