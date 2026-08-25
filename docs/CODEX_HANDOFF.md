@@ -1,5 +1,12 @@
 # AcuTing OS - Agent Handoff Log
 
+## [ACTIVE 2026-08-25] Codex reservation — TDIS common-disease expansion T3
+
+- **Reserved new permanent ids**: `tdis.xin_shuai` (心衰), `tdis.chi_dai` (癡呆), `tdis.yue_jing_xian_hou_wu_ding_qi` (月經先後無定期), `tdis.jing_duan_fu_lai` (經斷復來), and `tdis.jing_zhuo` (精濁). Other agents should not create or alias these five while this reservation is active.
+- **Selection rule**: all five are common clinical or exam disease units, have no exact `name_zh`/`aliases_zh` match in the 159-record registry, and avoid the unresolved umbrella-versus-child boundary candidates (`zhen_xin_tong`, `tong_feng`, `wang_bi`, `tai_huang`, `bao_long`).
+- **Required evidence before authoring**: use matching AcuTing course files when present, identify the exact limitation of any contextual-only course material, add at least two official biomedical sources for overlap/differential/red flags, and do not infer TCM etiology or pathomechanism from biomedical sources.
+- **Planned record boundary**: append five `review_status:"draft"` TDIS records only; no existing record, id, taxonomy schema, pattern registry, symptom record, formula, herb, or acupoint may be overwritten. Reservation becomes a measured handoff after validation and push.
+
 ## [2026-08-25] Codex Handoff — TDIS acute high-risk boundary T2
 
 - **Exact ids / fields**: only `tdis.xian_bing`, `tdis.jue_zheng`, `tdis.jing_bing`, `tdis.huo_luan`, and `tdis.nue_ji`; changed `review_status`, bilingual definitions, bilingual structured red flags, record sources, field provenance, and `source_type`. TCM etiology, pathomechanism, treatment principles, pattern links, formulas, and points were preserved.
