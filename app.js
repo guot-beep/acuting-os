@@ -9042,9 +9042,18 @@ function deleteCurrentCase() {
 }
 
 // Last Visit at a Glance (2026-08-09, docs/SOAP_FOLLOWUP_TRACKING_AUDIT.md
-// §9 ranked item #3) — read-only reference only, never a data source. No new
-// storage: derived entirely from the case's existing soapNotes each time the
-// dialog opens.
+// §9 ranked item #3) — originally read-only reference only, never a data
+// source (see the panel below). No new storage: derived entirely from the
+// case's existing soapNotes each time the dialog opens.
+//
+// 2026-08-25(dry run,Ting 明確要求「帶入上一次看診的內容」推翻原本 reference-
+// only 設計):新增 SOAP_CARRY_FORWARD_FIELDS(下面)——只白名單「治療計畫」
+// 類欄位(證型/治法/穴位/方劑/手法),絕不含 S/O/A/P、舌脈、療效判定/指標、
+// 不良反應這類「這次觀察到的事實」欄位。原因跟這份文件當初刻意選 reference-
+// only 一樣:把上次的舌脈/療效判定當「這次」的值悄悄帶入,等於沒有真的重新
+// 觀察卻記錄成觀察到了(牴觸 D4「粗化,絕不寫假的臨床事實」的精神)。治療計畫
+// 類欄位不同——沿用上次的證型/穴方當這次的起草,再讓醫師確認/修改,是正常
+// 臨床流程,不是捏造。
 //
 // Ordering matches renderClinicalCaseDetail's own sort (visitDate then
 // visitNumber) so "previous" here means the same thing the SOAP Timeline
@@ -9106,6 +9115,32 @@ function renderPreviousVisitPanel(note) {
   ).join("")}</div>`;
 }
 
+// 2026-08-25 白名單——只有「治療計畫」類欄位,絕不含觀察/療效類欄位。新增
+// 欄位時先問:這是「醫師打算怎麼治」還是「這次觀察/量到什麼」?前者才准列入。
+// scripts/test-avs-checkout.js 沒有涵蓋這支(非 AVS 引擎),下面 assertNever
+// 風格的清單本身就是唯一防線——刻意寫成外顯陣列方便下次修改時一眼看穿範圍。
+const SOAP_CARRY_FORWARD_FIELDS = [
+  "tcmPattern", "tcmPatternSelections", "tcmPatternLinks", "pathomechanism", "treatmentPrinciple",
+  "pointsUsed", "acupointLinks", "retentionMinutes", "technique",
+  "formulaHerbs", "formulaLinks", "herbLinks",
+  "westernMeds", "medicationLinks",
+  "modalities", "modalitiesPerformed",
+  "westernConditionLinks", "easternDiseaseLinks", "safetyFlagLinks",
+  "followUp"
+];
+
+// 回傳 prevNote 裡白名單欄位的淺拷貝(陣列另外複製,絕不共用參照——editingSoap
+// 存檔時不能不小心改到上一筆 note 的陣列)。只給「開新 SOAP、且這個 case 已有
+// 上一診」的情況用;編輯既有 note 一律不呼叫這支(見呼叫端判斷)。
+function soapCarryForwardFields(prevNote) {
+  const out = {};
+  for (const key of SOAP_CARRY_FORWARD_FIELDS) {
+    const v = prevNote[key];
+    out[key] = Array.isArray(v) ? v.map((x) => (x && typeof x === "object") ? { ...x } : x) : v;
+  }
+  return out;
+}
+
 function openSoapEditor(note = null) {
   const activeCase = clinicalCases.find((item) => item.id === selectedCaseId);
   if (!activeCase) {
@@ -9115,7 +9150,8 @@ function openSoapEditor(note = null) {
   editingSoapId = note?.id || null;
   document.querySelector("#soapDialogTitle").textContent = note ? "編輯 SOAP Note" : `新增 SOAP - ${activeCase.patientCode}`;
   deleteSoapBtn.hidden = !note;
-  renderPreviousVisitPanel(findPreviousSoapNote(activeCase.soapNotes, editingSoapId));
+  const previousNote = findPreviousSoapNote(activeCase.soapNotes, editingSoapId);
+  renderPreviousVisitPanel(previousNote);
   // 週期/生殖區(2026-08-11 Ting 指正):sex at birth = M 整段隱藏 —— 但
   // 若編輯中的舊 note 已有值,仍顯示且展開(已存在的資料絕不隱形,D4)。
   // F / Other / 未填(不假設)保留,預設收合;有值必展開。
@@ -9174,7 +9210,11 @@ function openSoapEditor(note = null) {
     ifIneffectivePlan: "",
     modalitiesPerformed: []
   };
-  const data = { ...fallback, ...(note || {}) };
+  // 2026-08-25:只有「開新 SOAP(note 為 null)且這個 case 有上一診」才帶入
+  // 治療計畫白名單欄位;編輯既有 note 時 carryForward 恆為 {},最後
+  // ...(note||{}) 一定覆蓋掉,不會動到已存檔的內容。
+  const carryForward = (!note && previousNote) ? soapCarryForwardFields(previousNote) : {};
+  const data = { ...fallback, ...carryForward, ...(note || {}) };
   // AVS v3 Phase C:modality.* checkbox 群組先渲染再水合(與 case form 的
   // raceEthnicity 同款作法)—— checkbox 群組不能走下面的 .value 泛用迴圈。
   renderModalitiesPerformedOptions();
