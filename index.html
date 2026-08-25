@@ -935,6 +935,42 @@
             <label>Agent ID（選填）<input name="agentId" placeholder="drug.* / supp.* 或留空" /></label>
             <label class="wide">名稱 Name（無 Agent ID 時必填）<input name="nameText" placeholder="e.g. Magnesium glycinate" /></label>
             <label>劑量 Dose<input name="doseText" placeholder="200 mg,或中藥例:3克・科學中藥" /></label>
+            <!-- 2026-08-25(Ting 要求):中藥劑型/服用時機/一天幾次,常見組合
+                 用下拉選,不用每次手打。這三格是「組合小工具」,不是新的
+                 資料欄位——選了之後由 app.js 組成文字寫進上面既有的
+                 frequencyText,選完仍可手動再改那格文字,不會被鎖死。 -->
+            <label class="wide">中藥服用細節（選填,會自動組進上面「頻率」欄）TCM administration details (optional, composes into Frequency above)</label>
+            <div class="agent-herb-detail-row">
+              <label>劑型 Form<select name="herbFormType">
+                <option value="">—</option>
+                <option value="科學中藥 granules">科學中藥 Granules</option>
+                <option value="水藥 decoction">水藥 Decoction</option>
+                <option value="丸藥 pills">丸藥 Pills</option>
+                <option value="藥膏 paste">藥膏 Paste</option>
+                <option value="藥酒 tincture">藥酒 Tincture</option>
+                <option value="貼布 patch">貼布 Patch</option>
+                <option value="泡腳包 foot-soak">泡腳包 Foot-soak</option>
+                <option value="其他">其他 Other</option>
+              </select></label>
+              <label>服用時機 Timing<select name="herbMealTiming">
+                <option value="">—</option>
+                <option value="飯前 before meals">飯前 Before meals</option>
+                <option value="飯後 after meals">飯後 After meals</option>
+                <option value="睡前 before bed">睡前 Before bed</option>
+                <option value="不拘 anytime">不拘 Anytime</option>
+              </select></label>
+              <label>一天幾次 Times/day<input name="herbTimesPerDay" type="number" min="1" max="6" /></label>
+            </div>
+            <label class="wide"><input type="checkbox" name="herbSeparateFromWestern" value="1" />
+              同時有服用西藥,需標註間隔 Also taking Western medication, note the interval
+            </label>
+            <p class="wide form-hint">
+              一般建議中藥與西藥間隔至少 1 小時服用,以減少腸胃道吸收互相干擾——這是台灣醫院衛教常見建議
+              （例:高雄榮民總醫院中醫部),不是保證排除所有交互作用的固定安全標準,特定藥物組合請另外諮詢藥師。
+              General practice guidance in Taiwan is to separate TCM herbs from Western drugs by at least 1 hour
+              to reduce GI-absorption interference — not a guarantee against every interaction; ask a pharmacist
+              about specific drug combinations.
+            </p>
             <label>頻率 Frequency<input name="frequencyText" placeholder="qd / bid / prn,或中藥例:飯後・一天三次" /></label>
             <label>開始（約）Start (approx)<input name="startApprox" type="month" /></label>
             <!-- SOL item 2: 勾選 = intake 時已在用(initial_recorded,不謊報

@@ -1302,6 +1302,33 @@ document.querySelectorAll("[data-directory-topic-link]").forEach((link) => {
     render();
   });
 });
+// 2026-08-25(Ting 要求):劑型/服用時機/一天幾次/西藥間隔 這幾個下拉/勾選
+// 純粹是「組合小工具」,不寫進資料本身——選了之後組成一句話寫進既有的
+// frequencyText,存檔只看 frequencyText(saveAgentExposureFromForm 白名單
+// 讀取,這幾個新欄位本來就不會被讀到,不需要另外擋)。組完之後 frequencyText
+// 仍是普通輸入框,可以手動再改,不會被鎖死。三格都沒選就不動 frequencyText,
+// 不要清空使用者已經手打的內容。
+function composeHerbFrequencyText() {
+  const form = agentExposureForm;
+  if (!form) return;
+  const formType = form.elements.herbFormType?.value || "";
+  const timing = form.elements.herbMealTiming?.value || "";
+  const timesPerDay = (form.elements.herbTimesPerDay?.value || "").trim();
+  const separateFromWestern = form.elements.herbSeparateFromWestern?.checked;
+  const zhOnly = (v) => v.split(" ")[0];   // select value 是「飯後 after meals」這種中英合一格式,只取中文那半組句子
+  const parts = [];
+  if (timesPerDay) parts.push(`一天${timesPerDay}次`);
+  if (timing) parts.push(zhOnly(timing));
+  if (formType) parts.push(zhOnly(formType));
+  if (separateFromWestern) parts.push("與西藥間隔至少1小時");
+  if (!parts.length) return;
+  const freqInput = form.elements.frequencyText;
+  if (freqInput) freqInput.value = parts.join("・");
+}
+["herbFormType", "herbMealTiming", "herbTimesPerDay", "herbSeparateFromWestern"].forEach((name) => {
+  agentExposureForm.elements[name]?.addEventListener("change", composeHerbFrequencyText);
+});
+
 document.querySelector("#newCaseBtn").addEventListener("click", () => openCaseEditor());
 document.querySelector("#newSoapBtn").addEventListener("click", () => openSoapEditor());
 document.querySelector("#patientNewCaseLink")?.addEventListener("click", (event) => {
