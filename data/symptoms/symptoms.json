@@ -20251,6 +20251,1812 @@
       "source_type": "source_assisted_draft_pending_ting_verification",
       "review_status": "draft",
       "authored_by": "model_draft"
+    },
+    {
+      "id": "sym.urinary_incontinence",
+      "name_zh": "尿失禁",
+      "name_en": "Urinary incontinence",
+      "pinyin": "niao shi jin",
+      "pinyin_toned": "niào shī jìn",
+      "taxonomy_ids": [
+        "sym.urinary_bowel"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported"
+      ],
+      "primary_mode": "patient_reported",
+      "aliases_en": [
+        "Involuntary urine leakage",
+        "Loss of bladder control"
+      ],
+      "aliases_zh": [
+        "小便不禁",
+        "漏尿"
+      ],
+      "definition_en": "Involuntary loss of bladder control, with urine escaping without conscious intent — a few drops with coughing, laughing, sneezing or straining (stress type); leakage after a sudden strong urge arrives before the toilet is reached (urge type); or a constant unnoticed dribble (overflow type). A presenting complaint, not a diagnosis — biomedicine subdivides it by mechanism into stress, urge, overflow, functional and mixed incontinence, while TCM places it under 小便不禁 (waking-state loss of urinary control) — a distinct category from 遺尿, bedwetting that occurs during sleep and is noticed only on waking — usually attributed to the Kidney and Spleen failing to secure (固攝) the Bladder.",
+      "definition_zh": "膀胱排尿失去意識控制，尿液不自主流出——可以是咳嗽、大笑、打噴嚏或用力時滲出少量（壓力性），也可以是突然強烈尿意驟起、來不及走到廁所前就漏出（急迫性），或完全無感覺、持續點滴滲漏（充溢性）。是主訴，不是診斷——西醫依機轉分壓力性、急迫性、充溢性、功能性與混合性；中醫則歸入「小便不禁」範疇——特指清醒狀態下小便不能自主控制而滲出，與睡眠中不自覺遺出、醒後方覺的「遺尿」屬不同病證，多責之於腎、脾對膀胱的固攝失司。",
+      "patient_words_en": "\"I leak when I cough or laugh\", \"it comes out before I even reach the toilet\", \"my underwear is often damp, I need to wear a pad\", \"I don't feel it at all, it just comes out\", \"I leak a bit when I sneeze or lift something heavy\"",
+      "patient_words_zh": "「咳嗽、大笑就會漏尿」「還沒走到廁所就滲出來了」「內褲常常濕濕的，要墊護墊」「完全沒感覺，尿自己就流出來了」「打噴嚏或提重物會漏一點」",
+      "clinical_attributes": {
+        "location": {
+          "applicable": false
+        },
+        "quality": {
+          "applicable": false
+        },
+        "laterality": {
+          "applicable": false
+        },
+        "timing": {
+          "applicable": true,
+          "vocabulary": "symptom_timing"
+        },
+        "severity": {
+          "applicable": false,
+          "why": "實例值，屬病例層（§8）"
+        },
+        "duration": {
+          "applicable": false,
+          "why": "實例值，屬病例層（§8）"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "誘因",
+          "why": "咳嗽、大笑、提重物等腹壓增加時滲出少量，或無明顯誘因持續滴流，兩種誘發型態分別指向壓力性與充溢性，是本症最有辨證與分型意義的一問"
+        },
+        {
+          "dimension": "誘因",
+          "why": "產次與生產方式（自然產／器械助產）、停經狀態、攝護腺手術史、慢性咳嗽、肥胖、長期便秘用力——骨盆底與神經結構性危險因子"
+        },
+        {
+          "dimension": "程度",
+          "why": "一天發生次數、需要護墊的程度、對日常活動與社交的影響——決定嚴重度分級與治療優先"
+        },
+        {
+          "dimension": "時間",
+          "why": "日間為主或夜間也發生；夜間持續滴流較日間單純誘發性漏尿更提示腎陽虛較重"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "頻尿、尿急、排尿灼熱刺痛提示感染；下腹墜脹或自覺有物脫出提示合併骨盆器官脫垂；腰膝痠軟畏寒提示腎虛方向"
+        },
+        {
+          "dimension": "病程",
+          "why": "新發突然、產後持續未恢復、或隨年齡漸進加重——處置方向不同；新發合併下肢無力或鞍區麻木需優先排除神經病灶"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Triggers",
+          "why": "Leakage of a small amount with increased abdominal pressure (cough, laugh, lift) versus continuous dribbling with no clear trigger — the two patterns point to stress versus overflow types, the single highest-yield question here"
+        },
+        {
+          "dimension": "Triggers",
+          "why": "Parity and delivery mode (vaginal vs. instrumental), menopausal status, prostate surgery history, chronic cough, obesity, chronic constipation with straining — structural and neurologic risk factors for the pelvic floor"
+        },
+        {
+          "dimension": "Degree",
+          "why": "Episodes per day, degree of pad use, and impact on daily activity and social life — determines severity grading and treatment priority"
+        },
+        {
+          "dimension": "Timing",
+          "why": "Mostly daytime versus also occurring at night; a constant nighttime dribble points more strongly to Kidney Yang deficiency than simple trigger-induced daytime leakage"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Frequency, urgency, burning pain on urination suggest infection; lower-abdominal dragging or a sense of something protruding suggests concurrent pelvic organ prolapse; sore low back/knees with cold aversion points toward Kidney deficiency"
+        },
+        {
+          "dimension": "Course",
+          "why": "Sudden new onset, unresolved since childbirth, or gradual worsening with age call for different management; new onset with leg weakness or saddle numbness needs a neurologic cause ruled out first"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "咳嗽、大笑、用力則漏尿，量少",
+          "points_to": [
+            "pattern.kidney_qi_not_firm"
+          ],
+          "distinguishing": "腹壓增加時（咳嗽、大笑、提重物）滲出少量尿液，平時無明顯尿急，兼腰膝痠軟、耳鳴或聽力減退，多見於產後或年長女性"
+        },
+        {
+          "variant": "小便清長頻多，滴瀝不禁，畏寒肢冷",
+          "points_to": [
+            "pattern.kidney_yang_deficiency"
+          ],
+          "distinguishing": "尿失禁兼小便清長量多、畏寒肢冷、腰膝痠冷、下肢水腫，病程較久，滲漏程度較重，靜臥亦可發生"
+        },
+        {
+          "variant": "尿意驟急、來不及如廁而漏尿",
+          "points_to": [
+            "pattern.bladder_damp_heat"
+          ],
+          "distinguishing": "先有強烈尿意突然而起，來不及走到廁所即漏出，兼小便頻數急迫、灼熱疼痛、尿色黃赤短少，病勢較急"
+        },
+        {
+          "variant": "久站久蹲或勞累後漏尿加重，伴下墜感",
+          "points_to": [
+            "pattern.spleen_qi_sinking"
+          ],
+          "distinguishing": "漏尿隨勞累、久站或臟器下垂（子宮／膀胱脫垂）加重，兼氣短乏力、少氣懶言、脘腹或會陰墜脹感"
+        },
+        {
+          "variant": "小便點滴不淨、量少而頻，排尿無力，下腹發涼",
+          "points_to": [
+            "pattern.bladder_deficiency_cold"
+          ],
+          "distinguishing": "以膀胱本身氣化虛弱為主：小便清長而頻、夜尿、點滴失禁、排尿無力，下腹局部發涼；與腎陽虛不同之處在於通常不兼腰膝痠冷、性慾減退等全身溫煦不足之象，病位偏重膀胱局部氣化而非全身腎陽虧虛"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Leakage with coughing, laughing or straining, small volume",
+          "points_to": [
+            "pattern.kidney_qi_not_firm"
+          ],
+          "distinguishing": "Small-volume leakage with increased abdominal pressure (coughing, laughing, lifting), no marked urgency otherwise, with weak aching low back and knees and tinnitus or hearing decline — common postpartum or in older women"
+        },
+        {
+          "variant": "Clear, copious, dribbling incontinence with marked cold aversion",
+          "points_to": [
+            "pattern.kidney_yang_deficiency"
+          ],
+          "distinguishing": "Incontinence with clear, copious urine, pronounced cold aversion and cold limbs, cold aching low back and knees, and edema of the lower limbs — longer-standing, heavier leakage, can occur even at rest"
+        },
+        {
+          "variant": "Sudden urge with leakage before reaching the toilet",
+          "points_to": [
+            "pattern.bladder_damp_heat"
+          ],
+          "distinguishing": "A strong urge arrives suddenly and leakage occurs before reaching the toilet, with frequent, urgent, burning painful urination and dark, scanty urine — a more acute presentation"
+        },
+        {
+          "variant": "Leakage worse with prolonged standing/squatting or exertion, with a dragging sensation",
+          "points_to": [
+            "pattern.spleen_qi_sinking"
+          ],
+          "distinguishing": "Leakage worse with exertion, prolonged standing, or organ prolapse (uterine/bladder prolapse), with shortness of breath, low energy, and a dragging sensation in the lower abdomen or perineum"
+        },
+        {
+          "variant": "Dribbling, scanty and frequent urination with a weak stream and a cold lower abdomen",
+          "points_to": [
+            "pattern.bladder_deficiency_cold"
+          ],
+          "distinguishing": "Centers on weak Bladder Qi transformation itself: frequent clear urine, nocturia, dribbling incontinence, and weak urination, with localized lower-abdominal cold; differs from Kidney Yang Deficiency in usually lacking the systemic cold-aching low back/knees or reduced libido — the pathology is localized to Bladder transformation rather than diffuse Kidney Yang deficiency"
+        }
+      ],
+      "red_flags_zh": [
+        "尿失禁合併鞍區（會陰、肛門周圍）感覺喪失、雙下肢無力或大便失禁 → 提示馬尾症候群，需立即轉診急症處置",
+        "持續點滴狀漏尿合併下腹脹滿、可觸及脹大膀胱 → 提示尿瀦留合併充溢性尿失禁，需儘速導尿處置",
+        "新發尿失禁合併明顯血尿、原因不明體重下降，或停經後合併骨盆腫塊感 → 需泌尿／婦科評估排除惡性腫瘤",
+        "尿失禁合併發熱、腰痛、尿急尿痛 → 需評估泌尿道感染或腎盂腎炎",
+        "中風、脊髓損傷或其他神經系統疾病後新發急性尿失禁，合併意識或肢體功能改變 → 需神經科緊急評估"
+      ],
+      "red_flags_en": [
+        "Incontinence with saddle (perineal/perianal) sensory loss, bilateral leg weakness, or fecal incontinence → suggests cauda equina syndrome, refer for emergency care immediately",
+        "Continuous dribbling incontinence with lower-abdominal fullness and a palpably distended bladder → suggests urinary retention with overflow incontinence, prompt catheterization needed",
+        "New-onset incontinence with visible hematuria, unexplained weight loss, or a pelvic mass sensation after menopause → urology/gynecology evaluation to rule out malignancy",
+        "Incontinence with fever, flank pain, urinary urgency and burning → evaluate for urinary tract infection or pyelonephritis",
+        "New acute incontinence after stroke, spinal cord injury, or other neurologic disease, with altered consciousness or limb function → urgent neurologic evaluation needed"
+      ],
+      "safety_flags": [
+        "neurologic_red_flags",
+        "prolapse_context_review"
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "NICE NG123 — Urinary incontinence and pelvic organ prolapse in women: management (scope: women only; published 2 Apr 2019, content last updated 24 Jun 2019. A 2021-02-03 exceptional surveillance review — triggered by the IMMDS 'First Do No Harm' report on pelvic mesh — concluded the guideline did not need updating; this was a surveillance decision, not a content revision.)",
+        "Gardner A, Gardner E, Morley T. Cauda equina syndrome: a review of the current clinical and medico-legal position. Eur Spine J. 2011;20(5):690-697.",
+        "MedlinePlus: Urinary incontinence (https://medlineplus.gov/urinaryincontinence.html)"
+      ],
+      "sources": [
+        "NICE NG123 — Urinary incontinence and pelvic organ prolapse in women: management（限女性族群使用；2019/4/2 發布，2019/6/24 最後一次內容更新。2021/2/3 因應 IMMDS《First Do No Harm》骨盆網膜報告啟動例外監測審查，結論為「不更新指引內容」，並非指引改版）",
+        "Gardner A, Gardner E, Morley T. Cauda equina syndrome: a review of the current clinical and medico-legal position. Eur Spine J. 2011（馬尾症候群紅旗準則）",
+        "MedlinePlus: Urinary incontinence（https://medlineplus.gov/urinaryincontinence.html）",
+        "中醫診斷學 問診章節（排尿異常：小便不禁——特指清醒狀態下不能自禁，與睡中遺尿為不同病證）；腎氣不固、腎陽虛、膀胱濕熱、脾氣下陷、膀胱虛寒等證型散見中醫內科學各篇（如淋證、遺精、泄瀉、脫肛）通用辨證架構",
+        "本 repo 既有卡片：sym.urinary_urgency · sym.urinary_frequency · sym.nocturia · sym.rectal_prolapse · pattern_library 各證型 key_signs_zh"
+      ],
+      "supporting_measurements": [],
+      "field_sources": {
+        "definition_zh/en": "NICE NG123（原指引族群範圍限定女性；此處僅借用其壓力性/急迫性/充溢性/功能性/混合性分型架構，此為泌尿科通行分類方式，不限性別）+ 中醫診斷學 問診章節對「小便不禁」之定義（清醒狀態下不能自主控制小便，與睡眠中不自覺排出、醒後方覺之「遺尿」為不同病證，不宜並列混用）",
+        "differentiation_zh/en": "腎氣不固、腎陽虛、膀胱濕熱、脾氣下陷（中氣下陷）、膀胱虛寒等證型散見中醫內科學各篇通用辨證架構 + 本 repo pattern_library 對應證型 key_signs_zh/supporting_signs_zh 逐條核對（2026-08-24 覆核：修正腎氣不固誤植腎陽虛招牌症狀「夜尿頻多」、腎陽虛誤植查無實據之「面色㿠白」、膀胱濕熱誤植查無實據之「口苦口渴」，並將原掛於腎精不足〔該證型本身不含任何排尿相關記載〕之變體改掛 pattern.bladder_deficiency_cold）",
+        "red_flags_zh/en": "Gardner A, Gardner E, Morley T. Eur Spine J 2011（馬尾症候群紅旗，不分性別）+ NICE NG123（指引族群限定女性；本卡僅援用其「停經後血尿／骨盆腫塊感」轉診準則一條，不涉及男性病人）+ 尿瀦留、泌尿道感染等紅旗屬泌尿科通用臨床常識，比照本 repo 既有 sym.dysuria／sym.urinary_frequency 寫法，非專屬 NG123 內容",
+        "supporting_measurements": "刻意留空——目前 outcome_metrics.json 的 metric.* 清單無對應之漏尿次數／護墊使用量化項",
+        "inquiry_zh/en": "NG123 之產科史/骨盆手術史/嚴重度分級等問診重點，源自其限定女性族群之病史採集架構；攝護腺手術史等男性相關危險因子問診為泌尿科通用臨床常識另行補充，非出自 NG123 + 中醫診斷學 問診章節常規（部位/誘因/時間/伴隨症/病程）整理"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "aliases_en": [
+        "Bedwetting",
+        "Nocturnal enuresis",
+        "Nighttime wetting"
+      ],
+      "aliases_zh": [
+        "尿床",
+        "夜間遺尿",
+        "睡中遺尿"
+      ],
+      "clinical_attributes": {
+        "location": {
+          "applicable": false
+        },
+        "quality": {
+          "applicable": false
+        },
+        "laterality": {
+          "applicable": false
+        },
+        "timing": {
+          "applicable": true,
+          "vocabulary": "symptom_timing"
+        },
+        "severity": {
+          "applicable": false,
+          "why": "實例值，屬病例層（§8）"
+        },
+        "duration": {
+          "applicable": false,
+          "why": "實例值，屬病例層（§8）"
+        }
+      },
+      "definition_en": "Involuntary urination during sleep that recurs beyond the age bladder control is conventionally expected (age 5), most often at night — commonly called \"bedwetting.\" When daytime bladder control is otherwise normal it is termed monosymptomatic; when daytime leakage, urgency or frequency coexist, it is non-monosymptomatic. It is further classified as primary (never achieved a sustained dry period of 6 months or more) or secondary (relapse after being reliably dry for ≥6 months), which point toward different causes and management. In TCM it is termed 遺尿, most often attributed to disordered qi transformation and consolidation in the Lung, Spleen and Kidney, with Kidney Qi failing to secure as the core mechanism.",
+      "definition_zh": "睡眠中不自覺地將尿液排出，通常發生在已達到可自主控制排尿年齡（習慣以滿 5 歲為界）之後仍反覆出現，以夜間最常見，俗稱「尿床」；白天清醒時膀胱控制正常者稱為單一症狀型，若日間也有滲漏、尿急或尿頻則屬合併型。臨床上再分為原發性（自出生以來從未有連續 6 個月以上的乾爽期）與續發性（已穩定乾爽 ≥6 個月後又復發），兩者的病因與處置方向不同。中醫稱之為「遺尿」，多責之肺、脾、腎三臟氣化與固攝功能失常，尤以腎氣不固為核心病機。",
+      "differentiation_en": [
+        {
+          "variant": "Nighttime wetting, clear copious urine, pale complexion, cold limbs and aversion to cold, sore low back and knees",
+          "points_to": [
+            "pattern.kidney_qi_not_firm"
+          ],
+          "distinguishing": "Involuntary wetting during sleep, sometimes several times a night, with clear high-volume urine, pale complexion, cold aversion and cold limbs, sore aching low back and knees; pale tongue, deep, weak pulse — usually a child with constitutional Kidney Qi insufficiency"
+        },
+        {
+          "variant": "Recurrent bedwetting, fatigue, poor appetite, loose stool, spontaneous sweating and frequent colds",
+          "points_to": [
+            "pattern.lung_spleen_qi_deficiency"
+          ],
+          "distinguishing": "Recurrent bedwetting with fatigue, poor appetite, loose stool, spontaneous sweating and frequent colds, sometimes with a weak cough, shortness of breath or low voice; typically a child weakened by illness or with underlying Lung-Spleen Qi deficiency"
+        },
+        {
+          "variant": "Wetting with dark, strong-smelling urine and irritability",
+          "points_to": [
+            "pattern.liver_gallbladder_damp_heat"
+          ],
+          "distinguishing": "Bedwetting with dark, strong-smelling urine and irritability; red tongue with yellow, greasy coating, wiry, slippery, rapid pulse — Damp-Heat from the Liver channel disturbing the Bladder"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "睡中遺尿，尿清量多，面色蒼白，肢冷畏寒，腰膝痠軟",
+          "points_to": [
+            "pattern.kidney_qi_not_firm"
+          ],
+          "distinguishing": "夜間睡中不覺遺尿，甚則一夜數次，尿清而量多，兼面色蒼白、畏寒肢冷、腰膝痠軟，舌淡，脈沉弱，多見於先天稟賦不足或腎氣未充的幼兒"
+        },
+        {
+          "variant": "遺尿反覆，神疲乏力，食少便溏，自汗易感冒",
+          "points_to": [
+            "pattern.lung_spleen_qi_deficiency"
+          ],
+          "distinguishing": "遺尿反覆發作，兼神疲乏力、食欲不振、便溏、自汗、易感冒，或見咳嗽無力、氣短、聲音低弱，多見於病後體弱或平素肺脾氣虛的兒童"
+        },
+        {
+          "variant": "遺尿尿黃味臊，性急躁擾",
+          "points_to": [
+            "pattern.liver_gallbladder_damp_heat"
+          ],
+          "distinguishing": "遺尿而尿色黃、氣味臊臭，兼性情急躁，舌紅苔黃膩，脈弦滑數，屬肝經濕熱下擾膀胱"
+        }
+      ],
+      "field_sources": {
+        "definition_zh/en": "本 repo tdis.yi_niao definition_zh/en 一般描述 + ICCS(Austin et al. 2014)對 monosymptomatic/non-monosymptomatic、primary/secondary enuresis 的定義框架",
+        "inquiry_zh/en": "ICCS standardization document 對單一症狀型／合併型遺尿的區分準則（唯一準則為是否合併日間下泌尿道症狀，與濕床頻率、單次尿量無關）+ NICE CG111 病史評估要點（誘因、伴隨下泌尿道症狀、病程分類）；「程度」/「Degree」一項的濕床夜數與單次尿量僅作為追蹤治療反應的基準值，不作為 MNE/NMNE 分型準則——此點已與「時間」/「Timing」一項的分型準則陳述對齊，避免同卡兩處對同一分類標準給出衝突說法",
+        "differentiation_zh/en": "本 repo tdis.yi_niao key_manifestations_zh 三型描述（面色蒼白、肢冷畏寒、腰膝痠軟——腎氣不固；神疲乏力、食欲不振、自汗——肺脾氣虛；尿黃、尿味臊臭、性情急躁——肝經濕熱）+ pattern_library.json 逐項核對：kidney_qi_not_firm 的 tongue_zh／pulse_zh 為「舌淡」／「脈沉弱」，逐字採用（原稿誤加「遲」，經核對後刪除），腰膝痠軟另見於其 supporting_signs_zh；liver_gallbladder_damp_heat 的 tongue_zh／pulse_zh 為「舌紅苔黃膩」／「脈弦滑數」，逐字採用，尿黃短赤另見於其 supporting_signs_zh，但其 key_signs_zh（脅肋脹痛、口苦、身目發黃、陰部濕癢或帶下黃臭）屬肝膽濕熱本證表現、與遺尿的尿色或情緒症狀無直接對應，故該變體不再寫「夜寐不安、齘齒磨牙、唇紅口渴」——此三項於 pattern_library 與 tdis.yi_niao 兩份來源皆查無依據，僅保留尿黃味臊、性情急躁（tdis.yi_niao 肝經濕熱項所載）與舌脈（pattern_library 所載）；lung_spleen_qi_deficiency 該筆紀錄 key_signs_zh 為「咳嗽無力或氣短、聲音低弱、食慾不振、便溏、疲倦乏力、易感冒」、未列 tongue_zh／pulse_zh／supporting_signs_zh 欄位，該變體逐字採用其中與遺尿相關者（食欲不振、便溏、疲倦乏力、易感冒、咳嗽無力或氣短、聲音低弱），不寫舌脈；自汗一項另見於 tdis.yi_niao 肺脾氣虛項所載；原稿『尿頻而量少』一句經核對 pattern_library 與 tdis.yi_niao 兩份來源皆查無排尿量或頻率描述，已刪除並以上述可查證項目取代",
+        "red_flags_zh/en": "MedlinePlus Frequent or urgent urination（已用於 tdis.yi_niao 的紅旗來源，本卡沿用）+ ICCS(Austin 2014)與 NICE CG111 對續發性遺尿、日間下泌尿道症狀、阻塞性睡眠呼吸中止症、脊髓栓系徵象的評估與轉診準則；NICE CG111 並將長期便秘合併大便失禁列為膀胱腸道功能失調（bladder-bowel dysfunction）之常見共病、建議優先治療便秘，與真正指向脊髓管缺損的神經徵象（下肢無力、步態異常、薦椎皮膚異常）分開陳述，避免混為一談",
+        "safety_flags": "neurologic_red_flags 對應脊髓栓系／隱性脊柱裂徵象；infection_review 對應尿路感染／腎盂腎炎方向的紅旗",
+        "supporting_measurements": "刻意留空 —— data/clinical_cases/outcome_metrics.json 現有量表無對應「濕床夜數／週」或排尿事件量化項"
+      },
+      "id": "sym.enuresis",
+      "inquiry_en": [
+        {
+          "dimension": "Timing",
+          "why": "Whether wetting occurs only during nighttime sleep or also while awake during the day — daytime symptoms alongside nighttime wetting (non-monosymptomatic) point toward bladder dysfunction and must be evaluated and managed separately from isolated nocturnal enuresis (monosymptomatic)"
+        },
+        {
+          "dimension": "Triggers",
+          "why": "Evening fluid intake and sugary/caffeinated drinks, chronic constipation, family history (whether either parent wet the bed as a child), recent life stressors (starting school, a new sibling, family disruption)"
+        },
+        {
+          "dimension": "Degree",
+          "why": "Wet nights per week (nightly versus a few times a week) and whether each episode soaks the whole bed or only a small amount — this sets the baseline for tracking response to treatment"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Daytime urgency and frequency, holding maneuvers, painful voiding or a weak stream, polydipsia and polyuria, snoring and witnessed apneas, longstanding constipation or soiling, leg weakness or gait abnormality — most red flags hang off this question"
+        },
+        {
+          "dimension": "Course",
+          "why": "Primary (never achieved a sustained dry period of 6 months or more) versus secondary (relapse after being reliably dry for ≥6 months) — secondary enuresis needs organic or psychosocial causes ruled out first; age of onset and whether the child has passed age 5 also affect whether intervention is warranted"
+        }
+      ],
+      "inquiry_zh": [
+        {
+          "dimension": "時間",
+          "why": "遺尿僅發生於夜間睡眠中，或白天清醒時也有滲漏——日間症狀合併出現（合併型／非單一症狀型）提示膀胱功能異常，需與單純夜間遺尿（單一症狀型）分開評估與處置"
+        },
+        {
+          "dimension": "誘因",
+          "why": "睡前飲水量與含糖／含咖啡因飲料、慢性便秘、家族史（父母幼時是否也曾遺尿）、近期生活壓力事件（如入學、手足出生、家庭變故）"
+        },
+        {
+          "dimension": "程度",
+          "why": "每週濕床夜數（每晚 vs 每週數次）與每次尿量是浸濕整床或僅少量——這是追蹤治療反應的基準"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "白天尿急尿頻、憋尿姿勢（蹲踞夾腿）、解尿疼痛或尿線細弱、多飲多尿、打鼾與睡眠呼吸暫停、長期便秘或大便失禁、下肢無力或步態異常——多數紅旗都掛在這一問"
+        },
+        {
+          "dimension": "病程",
+          "why": "原發性（自出生以來從未有連續 6 個月以上的乾爽期）或續發性（已穩定乾爽 ≥6 個月後又復發）——續發性需優先排查器質性或心理社會病因；起病年齡與是否已滿 5 歲也影響是否需要介入"
+        }
+      ],
+      "name_en": "Enuresis (bedwetting)",
+      "name_zh": "遺尿",
+      "observation_modes": [
+        "patient_reported"
+      ],
+      "patient_words_en": "\"He's already 6 and still wets the bed\", \"Almost every night the sheets are wet\", \"She's completely fine all day, but the moment she falls asleep she wets\", \"He'd stopped wetting the bed and now it's started again\", \"I can't wake him up to go to the toilet\", \"She doesn't even know it happened\"",
+      "patient_words_zh": "「孩子已經 6 歲了還會尿床」「幾乎每天晚上床單都是濕的」「白天都好好的，可是一睡著就會尿出來」「本來已經不會尿床了，最近又開始」「叫不醒他起來尿尿」「他自己也不知道怎麼會尿出來的」",
+      "pinyin": "yi niao",
+      "pinyin_toned": "yí niào",
+      "primary_mode": "patient_reported",
+      "red_flags_en": [
+        "Secondary enuresis — bedwetting restarting after ≥6 months of reliable dryness — requires ruling out urinary tract infection, diabetes, and psychosocial stress or abuse before treating it as primary enuresis",
+        "Daytime incontinence, frequency, urgency, holding maneuvers (squatting, leg-crossing), straining to void, or a weak urine stream → suggests coexisting daytime lower urinary tract dysfunction; refer for evaluation",
+        "Marked thirst, increased appetite or fluid intake, fatigue, or unexplained weight loss → evaluate for diabetes",
+        "Fever, back or flank pain, vomiting or shaking chills, or bloody/cloudy urine → seek prompt medical evaluation for urinary tract infection or pyelonephritis",
+        "Loud snoring, mouth breathing, witnessed apneas, or daytime sleepiness → evaluate for obstructive sleep apnea; enuresis often improves once it is treated",
+        "Leg weakness, gait abnormality, or a sacral skin dimple or abnormal tuft of hair → rule out tethered cord syndrome and other forms of spinal dysraphism",
+        "Longstanding constipation with fecal soiling, without accompanying neurologic signs → usually reflects bladder-bowel dysfunction, a common enuresis comorbidity; treat the constipation first. Constipation and soiling alone do not independently indicate spinal dysraphism — evaluate for tethered cord only when they coexist with leg weakness, gait abnormality, or a sacral skin marker"
+      ],
+      "red_flags_zh": [
+        "續發性遺尿——已穩定乾爽 6 個月以上又重新開始尿床——需優先排查尿路感染、糖尿病、心理社會壓力或受虐等病因，不可逕以原發性遺尿處理",
+        "合併白天尿失禁、頻尿、急尿、憋尿姿勢（蹲踞夾腿）、解尿費力或尿線細弱 → 提示合併日間下泌尿道功能障礙，需轉診評估",
+        "合併明顯口渴、食慾與飲水量增加、疲倦或不明原因體重下降 → 需評估糖尿病",
+        "合併發燒、腰背或側腹疼痛、嘔吐或發抖畏寒，或尿液帶血、混濁 → 需儘速就醫評估泌尿道感染或腎盂腎炎",
+        "合併響亮打鼾、張口呼吸、觀察到呼吸暫停或日間嗜睡 → 評估阻塞性睡眠呼吸中止症，矯正後遺尿常隨之改善",
+        "合併下肢無力、步態異常、薦椎部位皮膚凹陷或異常毛叢 → 需排除脊髓栓系症候群等神經管缺損",
+        "長期便秘合併大便失禁，且無下肢神經徵象 → 多屬功能性膀胱腸道功能失調（bladder-bowel dysfunction），為遺尿常見共病，建議先處理便秘；便秘與大便失禁本身不足以獨立提示脊髓管缺損，唯有同時合併下肢無力、步態異常或薦椎皮膚異常時，才需一併評估神經管缺損"
+      ],
+      "safety_flags": [
+        "neurologic_red_flags",
+        "infection_review"
+      ],
+      "safety_review_sources": [
+        "MedlinePlus: Frequent or urgent urination (medlineplus.gov/ency/article/003140.htm)",
+        "Austin PF, et al. The standardization of terminology of lower urinary tract function in children and adolescents: update report from the standardization committee of the International Children's Continence Society (ICCS). J Urol. 2014;191(6):1863-1865",
+        "NICE Clinical Guideline CG111 — Nocturnal enuresis: the management of bedwetting in children and young people (National Institute for Health and Care Excellence)",
+        "本 repo 既有卡片：tdis.yi_niao"
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "sources": [
+        "MedlinePlus: Frequent or urgent urination（medlineplus.gov/ency/article/003140.htm）",
+        "Austin PF, et al. The standardization of terminology of lower urinary tract function in children and adolescents: ICCS update report. J Urol. 2014;191(6):1863-1865（原發性／續發性、單一症狀型／合併型遺尿的定義框架與評估紅旗）",
+        "NICE Clinical Guideline CG111 — Nocturnal enuresis: the management of bedwetting in children and young people",
+        "中醫兒科學／中醫內科學 通行教材 —— 遺尿篇（腎氣不固・肺脾氣虛・肝經濕熱三型辨證）",
+        "本 repo 既有卡片：tdis.yi_niao（definition／key_manifestations／red_flags）· pattern_library kidney_qi_not_firm／lung_spleen_qi_deficiency／liver_gallbladder_damp_heat 各證型 key_signs_zh／tongue_zh／pulse_zh"
+      ],
+      "supporting_measurements": [],
+      "taxonomy_ids": [
+        "sym.urinary_bowel"
+      ],
+      "tradition": "both",
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "sym.spermatorrhea",
+      "name_zh": "遺精",
+      "name_en": "Spermatorrhea (involuntary emission)",
+      "pinyin": "yi jing",
+      "pinyin_toned": "yí jīng",
+      "aliases_zh": [
+        "夢遺",
+        "滑精",
+        "夢泄",
+        "精自出"
+      ],
+      "aliases_en": [
+        "Nocturnal emission",
+        "Wet dream",
+        "Seminal emission",
+        "Involuntary seminal discharge"
+      ],
+      "taxonomy_ids": [
+        "sym.male"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported"
+      ],
+      "primary_mode": "patient_reported",
+      "definition_zh": "非因性交而精液自行泄出。傳統上分兩類：「夢遺」指睡眠中因夢境（常帶情慾內容）而遺精,醒後方覺;「滑精」指無夢而遺,甚至清醒、非性興奮狀態下精液仍自行滑出,反映精關不固的程度更重。健康男性偶爾夜間遺精(尤其較長時間禁慾之後)屬生理現象,不代表病態;當發生頻率明顯增加(如每週兩次以上)、伴隨全身症狀,或造成困擾與焦慮、影響生活時,才成為需要辨證的主訴。本卡記錄的是「該問什麼、指向哪裡」,不是結論。",
+      "definition_en": "Involuntary discharge of semen not associated with sexual intercourse. Traditionally divided into two patterns: \"dream emission\" (夢遺), occurring during sleep in association with a dream — often erotic — and noticed only on waking; and \"slippery emission\" (滑精), occurring without a dream and sometimes even while fully awake and without sexual arousal, reflecting a more marked failure to secure the essence. Occasional nocturnal emission in healthy men, especially after a period of abstinence, is a normal physiological event, not pathology. It becomes a presenting complaint worth differentiating when its frequency rises markedly (for example, more than twice a week), when it is accompanied by systemic signs, or when it causes distress, anxiety, or disruption to daily life. This card records what to ask and what it points toward, not a conclusion.",
+      "patient_words_zh": "「睡著的時候自己流出來了,醒來才發現」「做了那種夢,醒來內褲濕的」「沒做夢也會滑出來,一個禮拜好幾次」「白天沒有性興奮,精液也會自己流出來」「覺得很虛,腰痠腿軟,好像被掏空一樣」「很怕是不是腎虧,愈想愈焦慮」",
+      "patient_words_en": "\"It just happens while I'm asleep — I only notice when I wake up\", \"I had that kind of dream and woke up with wet underwear\", \"It happens without any dream now, several times a week\", \"Sometimes it just leaks out during the day, without any arousal\", \"I feel drained, my lower back and legs ache, like something's been emptied out of me\", \"I keep worrying I have weak kidneys, and the more I think about it, the more anxious I get\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": false
+        },
+        "quality": {
+          "applicable": false
+        },
+        "laterality": {
+          "applicable": false
+        },
+        "timing": {
+          "applicable": true,
+          "vocabulary": "symptom_timing"
+        },
+        "severity": {
+          "applicable": false,
+          "why": "實例值，屬病例層（§8）"
+        },
+        "duration": {
+          "applicable": false,
+          "why": "實例值，屬病例層（§8）"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "時間",
+          "why": "夢遺（睡中因夢而遺，醒後方覺）與滑精（無夢而遺，甚至清醒或不因性興奮而精自滑出）是遺精辨證的第一道分野——夢遺多屬心腎不交或相火妄動，無夢滑精多屬腎虛不固，程度較重"
+        },
+        {
+          "dimension": "程度",
+          "why": "每週發生頻率是判斷生理性夜遺（尤其禁慾期間偶發）與病理性遺精的關鍵；頻率愈高、病程愈久，愈提示腎氣不固或腎精虧虛等虛證"
+        },
+        {
+          "dimension": "誘因",
+          "why": "情緒惱怒、思慮勞心、酒色房事過度、熬夜、飲食肥甘厚味各有指向——惱怒多見肝火，思慮勞心多見心腎不交，房勞過度多見腎虛不固，肥甘厚味多見濕熱下注"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "心煩少寐、心悸健忘提示心腎不交；急躁易怒、口苦提示肝火；小便黃赤澀痛、陰部潮濕提示濕熱下注；腰膝痠冷、精神萎靡提示腎陽虛衰；五心煩熱、盜汗顴紅提示陰虛火旺"
+        },
+        {
+          "dimension": "緩解",
+          "why": "作息規律、情緒平穩後發作減少，提示以誘因為主的功能性遺精；持續不減、甚則清醒滑出，則提示精關不固，虛損程度較重"
+        },
+        {
+          "dimension": "病程",
+          "why": "新發且短暫多與情緒或作息急性變化有關；長期反覆（數月以上）則多屬臟腑虛損，處置與預後截然不同，也決定要不要先排除血精、糖尿病等器質性因素"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Timing",
+          "why": "Whether emission occurs with a dream during sleep (noticed only on waking) or without a dream — even while awake and without arousal — is the first branch point: dream-associated emission points toward Heart-Kidney disharmony or reckless ministerial fire, dreamless slippery emission toward a more marked failure of Kidney qi to secure the essence"
+        },
+        {
+          "dimension": "Degree",
+          "why": "Episodes per week distinguish normal physiological emission (especially after prolonged abstinence) from a pathological pattern; higher frequency and longer duration point toward Kidney qi or Kidney essence deficiency"
+        },
+        {
+          "dimension": "Triggers",
+          "why": "Anger, overthinking and mental strain, excessive drinking and sexual activity, staying up late, and a rich greasy diet each point somewhere — anger toward Liver fire, overthinking toward Heart-Kidney disharmony, sexual excess toward Kidney failing to secure, rich food toward Damp-Heat"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Restlessness with poor sleep and palpitations suggest Heart-Kidney disharmony; irritability and a bitter taste suggest Liver fire; dark burning urination and genital dampness suggest Damp-Heat pouring downward; cold aching low back and lassitude suggest Kidney Yang deficiency; vexing heat in the five centers, night sweats and malar flush suggest Yin deficiency with effulgent fire"
+        },
+        {
+          "dimension": "Relief",
+          "why": "Fewer episodes with a regular routine and calmer mood suggest a mainly trigger-driven, functional pattern; persistence, or emission occurring even while fully awake, suggests a more significant failure of Kidney qi to secure the essence"
+        },
+        {
+          "dimension": "Course",
+          "why": "A new, brief episode tied to an acute change in mood or routine differs sharply in management and prognosis from a pattern recurring for months, which usually reflects deeper organ deficiency — and also decides whether to rule out hematospermia, diabetes or other organic causes first"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "夢遺，心煩少寐",
+          "points_to": [
+            "pattern.heart_kidney_not_communicating"
+          ],
+          "distinguishing": "多因思慮勞心，睡中因夢（常帶情慾內容）而遺精，醒後方覺，兼心煩少寐、心悸健忘、腰膝痠軟，舌紅少苔，脈細數"
+        },
+        {
+          "variant": "遺精，急躁易怒，口苦目赤",
+          "points_to": [
+            "pattern.liver_fire"
+          ],
+          "distinguishing": "情緒惱怒或惱怒後遺精加重，兼頭痛目赤、急躁易怒、口苦咽乾、耳鳴如潮，舌紅苔黃，脈弦數"
+        },
+        {
+          "variant": "遺精，尿澀陰癢",
+          "points_to": [
+            "pattern.damp_heat_lower_burner"
+          ],
+          "distinguishing": "遺精頻作，小便頻急澀痛、尿黃赤，陰部濕癢不爽，或兼少腹脹滿不適、腰痛或發熱，舌紅苔黃膩，脈滑數"
+        },
+        {
+          "variant": "無夢而遺，甚則清醒滑出",
+          "points_to": [
+            "pattern.kidney_qi_not_firm"
+          ],
+          "distinguishing": "不因夢境，甚至清醒或稍用力時精自滑出，兼小便頻數清長、腰膝痠軟、耳鳴或聽力下降，舌淡，脈沉弱"
+        },
+        {
+          "variant": "遺精，五心煩熱，盜汗顴紅",
+          "points_to": [
+            "pattern.yin_deficiency_fire_flaring"
+          ],
+          "distinguishing": "遺精，兼五心煩熱、潮熱盜汗，顴紅、咽乾口燥，失眠多夢、心煩不寧，腰膝痠軟；舌紅少苔或無苔，或有裂紋，脈細數"
+        },
+        {
+          "variant": "遺精，勞倦即發，心悸食少",
+          "points_to": [
+            "pattern.heart_spleen_deficiency"
+          ],
+          "distinguishing": "每因思慮勞倦而遺精加重，兼心悸失眠、多夢健忘、食少倦怠、面色萎黃，舌淡苔薄白，脈細弱"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Dream emission with restlessness and poor sleep",
+          "points_to": [
+            "pattern.heart_kidney_not_communicating"
+          ],
+          "distinguishing": "Usually from overthinking and mental strain; emission occurs during sleep with a dream (often erotic) and is noticed only on waking, with restlessness, poor sleep, palpitations, forgetfulness and an aching weak low back; red tongue with scanty coating, thin rapid pulse"
+        },
+        {
+          "variant": "Emission with irritability, bitter taste and red eyes",
+          "points_to": [
+            "pattern.liver_fire"
+          ],
+          "distinguishing": "Worse with anger or emotional upset, with headache, red eyes, irritability, a bitter dry mouth and tinnitus like a rushing tide; red tongue with yellow coating, wiry rapid pulse"
+        },
+        {
+          "variant": "Emission with burning urination and genital itching",
+          "points_to": [
+            "pattern.damp_heat_lower_burner"
+          ],
+          "distinguishing": "Frequent emission with frequent, urgent, painful urination and dark yellow urine, with damp itching discomfort in the genital region, sometimes accompanied by suprapubic fullness or low-back pain/fever; red tongue with yellow greasy coating, slippery rapid pulse"
+        },
+        {
+          "variant": "Dreamless emission, slipping out even while fully awake",
+          "points_to": [
+            "pattern.kidney_qi_not_firm"
+          ],
+          "distinguishing": "Not tied to dreaming — semen may slip out while awake or with slight exertion, with frequent clear urination, an aching weak low back, and tinnitus or hearing decline; pale tongue, deep weak pulse"
+        },
+        {
+          "variant": "Emission with vexing heat, night sweats and malar flush",
+          "points_to": [
+            "pattern.yin_deficiency_fire_flaring"
+          ],
+          "distinguishing": "Emission with vexing heat in the five centers and tidal fever with night sweats, malar flushing with a dry throat and mouth, insomnia with excessive dreaming and restlessness, and an aching weak low back; red tongue with scanty or absent coating, sometimes cracked, thin rapid pulse"
+        },
+        {
+          "variant": "Emission worse with exertion, palpitations and poor appetite",
+          "points_to": [
+            "pattern.heart_spleen_deficiency"
+          ],
+          "distinguishing": "Worse whenever the patient overthinks or overexerts, with palpitations, poor sleep, excessive dreaming, forgetfulness, poor appetite, fatigue and a sallow complexion; pale tongue with thin white coating, thin weak pulse"
+        }
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "AAFP — Evaluation and Treatment of Hematospermia (Am Fam Physician. 2009;80(12):1421-1427)",
+        "Medscape — Hematospermia Clinical Presentation and Workup (emedicine.medscape.com/article/457632)",
+        "Desai A, et al. — Understanding and treating ejaculatory dysfunction in men with diabetes mellitus. Andrology. 2023 (onlinelibrary.wiley.com/doi/10.1111/andr.13262) —— 糖尿病自主神經病變致逆行射精之機轉",
+        "American Psychiatric Association, DSM-5 — Glossary of Cultural Concepts of Distress, Dhat syndrome 詞條（腎虧／Shenkui 為其跨文化對應描述，並非該詞彙表獨立列出的詞條）",
+        "Sumathipala A, Siribaddana SH, Bhugra D. Culture-bound syndromes: the story of dhat syndrome. Br J Psychiatry. 2004;184:200-209（Dhat syndrome 與中國「腎虧／shen-k'uei」之跨文化對應說明）"
+      ],
+      "safety_flags": [
+        "infection_review",
+        "blood_sugar_review",
+        "psychiatric_red_flags"
+      ],
+      "red_flags_zh": [
+        "精液帶血（血精）→ 需泌尿科評估，排除攝護腺／精囊發炎、感染或病變；40 歲以上、持續超過約 10 次射精未消退，或合併其他危險因子者尤須轉診",
+        "合併發燒、會陰或下腹疼痛、頻尿與排尿灼熱感 → 提示攝護腺炎或泌尿道感染，需醫療評估",
+        "若主訴其實是精液量減少、射精時幾乎無精液排出，或性高潮後尿液混濁（而非典型遺精所指的自行滑出增多），同時合併多尿、多飲、體重下降 → 應考慮糖尿病自主神經病變所致逆行射精（精液逆流入膀胱，並非外流增多），而非遺精本身，需篩檢血糖並視需要轉介泌尿科評估",
+        "因遺精產生過度焦慮、恐慌、反覆檢查身體，或深信精液流失將嚴重耗損生命力而影響生活功能 → 屬於跨文化精神醫學所描述的精液流失焦慮症候群，與 DSM-5《文化痛苦概念詞彙表》收錄的 Dhat 症候群（印度民俗診斷，指因精液經尿液、夢遺或手淫流失而生的顯著焦慮與慮病）同屬一類；中國/台灣情境下常稱「腎虧」，但腎虧本身並非該詞彙表獨立列出的九個詞條之一，需心理衛教與適度轉介，避免被單純當作腎虛耗竭處理而加重焦慮"
+      ],
+      "red_flags_en": [
+        "Blood in the ejaculate (hematospermia) → warrants urologic evaluation to rule out prostatic/seminal vesicle inflammation, infection or neoplasm; refer especially if the patient is 40 or older, if it persists beyond roughly 10 ejaculations, or if other risk factors are present",
+        "Fever, perineal or lower abdominal pain, or frequent burning urination accompanying the emissions → suggests prostatitis or urinary tract infection and needs medical evaluation",
+        "If the actual complaint is reduced ejaculate volume, little to no semen expelled at orgasm, or cloudy urine after orgasm (rather than the increased involuntary leakage that defines true spermatorrhea), together with polyuria, polydipsia and weight loss → consider diabetic autonomic neuropathy causing retrograde ejaculation (semen flowing backward into the bladder, not increased outward leakage) rather than true spermatorrhea; screen blood glucose and refer to urology as indicated",
+        "Marked health anxiety, panic, compulsive body-checking, or a conviction that semen loss is severely depleting one's life force, with functional impairment → recognized in cross-cultural psychiatry as a semen-loss anxiety syndrome in the same family as Dhat syndrome, the South Asian folk diagnosis that is one of the nine entries in the DSM-5 Glossary of Cultural Concepts of Distress (the Chinese-context presentation is often called 'shenkui', though shenkui is not itself one of those nine entries); needs psychoeducation and, where indicated, referral rather than being treated purely as Kidney-essence depletion, which can deepen the anxiety"
+      ],
+      "supporting_measurements": [],
+      "sources": [
+        "中醫內科學 通行教材 —— 遺精病因病機與辨證分型（心腎不交・濕熱下注・腎虛不固・相火妄動／肝鬱化火）",
+        "中醫診斷學 通行教材 —— 遺精辨證要點",
+        "AAFP — Evaluation and Treatment of Hematospermia (Am Fam Physician. 2009;80(12):1421-1427)",
+        "Medscape — Hematospermia Clinical Presentation and Workup (emedicine.medscape.com/article/457632)",
+        "Desai A, et al. — Understanding and treating ejaculatory dysfunction in men with diabetes mellitus. Andrology. 2023 (onlinelibrary.wiley.com/doi/10.1111/andr.13262)",
+        "American Psychiatric Association, DSM-5 — Glossary of Cultural Concepts of Distress, Dhat syndrome 詞條（腎虧／Shenkui 為其跨文化對應描述，並非該詞彙表獨立列出的詞條）",
+        "Sumathipala A, Siribaddana SH, Bhugra D. Culture-bound syndromes: the story of dhat syndrome. Br J Psychiatry. 2004;184:200-209",
+        "本 repo 既有卡片：data/pathology/pattern_library.json 各證型 key_signs_zh 對照（心腎不交・肝火上炎・下焦濕熱・腎氣不固・陰虛火旺・心脾兩虛）"
+      ],
+      "field_sources": {
+        "definition_zh/en": "中醫內科學 遺精章節（夢遺／滑精之定義與程度區分）+ 一般泌尿醫學對生理性夜間遺精之描述",
+        "inquiry_zh/en": "中醫內科學 遺精病因病機（思慮勞心、房勞過度、肝鬱化火、飲食濕熱等誘因，與夢/無夢之辨）",
+        "differentiation_zh/en": "中醫內科學／中醫診斷學 遺精辨證分型（心腎不交・肝火・濕熱下注・腎虛不固・陰虛火旺・心脾兩虛）+ 本 repo data/pathology/pattern_library.json 各證型 key_signs_zh／tongue_zh／pulse_zh 對照（訂正原稿將「五心煩熱，顴紅」誤配 pattern.kidney_yin_deficiency（其 key_signs_zh 並無顴紅）之錯誤，改配 key_signs_zh 逐項相符的 pattern.yin_deficiency_fire_flaring；並訂正 pattern.kidney_qi_not_firm 一條誤引屬於 pattern.kidney_yang_deficiency 專屬症狀「畏寒肢冷」之錯誤，改列該證自身 supporting_signs_zh「耳鳴或聽力下降」；另訂正 pattern.damp_heat_lower_burner 一條誤植「口苦而膩」之錯誤——該證 key_signs_zh／supporting_signs_zh 並無口苦，且 pattern_library.json 此證自身的 differential_patterns 明文以「口苦」作為與 pattern.liver_gallbladder_damp_heat（上中焦）區分的特徵，不屬下焦濕熱，改列該證自身 key_signs_zh「小便頻急澀痛」與 supporting_signs_zh「少腹脹滿不適、腰痛或發熱」）",
+        "red_flags_zh/en": "AAFP Hematospermia guideline (Am Fam Physician 2009) + Medscape Hematospermia Workup + Desai et al., Andrology 2023（糖尿病自主神經病變致逆行射精機轉，訂正原稿「精液滯留或滑精」之錯誤因果方向）+ DSM-5 Glossary of Cultural Concepts of Distress, Dhat syndrome 詞條 + Sumathipala et al., Br J Psychiatry 2004（訂正原稿誤稱腎虧為 DSM-5 獨立詞條之錯誤，改為腎虧與 Dhat syndrome 之跨文化對應說明；並補上英文版遺漏的「九個詞條」之數，經 WebSearch 覆核 DSM-5 Cultural Concepts of Distress 詞彙表確為九項，含 dhat syndrome）",
+        "safety_flags": "對應通用 safety_flag_vocabulary 既有分類（infection_review／blood_sugar_review／psychiatric_red_flags），未新增詞彙"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "aliases_en": [
+        "Nonpuerperal galactorrhea",
+        "Inappropriate lactation",
+        "Pathologic milky nipple discharge"
+      ],
+      "aliases_zh": [
+        "非哺乳期乳汁分泌",
+        "病理性泌乳",
+        "乳汁不當外溢"
+      ],
+      "clinical_attributes": {
+        "location": {
+          "applicable": false
+        },
+        "quality": {
+          "applicable": false,
+          "diagnostic_note_zh": "symptom_quality 詞彙表為疼痛性質用詞(脹痛/刺痛等),不適用於乳汁分泌物之性狀描述;乳汁清稀/黏稠、色白/淡黃仍是本症辨證核心(見 inquiry_zh「性質」與全部 5 條 differentiation),僅因詞彙表本身不涵蓋分泌物性狀而標示不適用,非此維度不重要"
+        },
+        "laterality": {
+          "applicable": true,
+          "vocabulary": "symptom_laterality"
+        },
+        "timing": {
+          "applicable": true,
+          "vocabulary": "symptom_timing"
+        },
+        "severity": {
+          "applicable": false,
+          "why": "實例值,屬病例層(§8)"
+        },
+        "duration": {
+          "applicable": false,
+          "why": "實例值,屬病例層(§8)"
+        }
+      },
+      "definition_en": "Milky-to-pale-yellow nipple discharge that persists or recurs from one or both breasts outside pregnancy and outside (or well beyond — typically more than six months to a year past) an active breastfeeding period, leaking spontaneously onto clothing or expressed on palpation, usually from multiple duct openings at once. It is a presenting complaint/sign, not a diagnosis: the most common mechanism is hyperprolactinemia (a pituitary adenoma or other lesion compressing the pituitary stalk, numerous medications, hypothyroidism, or chronic kidney disease driving unchecked prolactin secretion), while TCM understands the same phenomenon mainly through disordered free-coursing by the Liver, containment by the Spleen, and storage by the Kidney/Chong-Ren. This card records what to ask and what it points toward, not a conclusion.",
+      "definition_zh": "在非妊娠、非哺乳期(或已離乳超過半年至一年以上)的狀態下,單側或雙側乳頭仍持續或反覆出現白色至淡黃色的乳汁樣分泌物——可自然滲出沾濕衣物,亦可經擠壓乳房而現,通常由多個乳管孔道同時滲出。它是主訴/徵象,不是診斷——最常見的機轉是高泌乳素血症(腦下垂體腫瘤或其他病灶壓迫垂體柄、多種藥物、甲狀腺功能低下、慢性腎功能不全等使泌乳素分泌失控所致),中醫則多從肝之疏泄、脾之統攝與腎(衝任)之閉藏三方面失常來認識同一現象。卡片記錄的是「該問什麼、指向哪裡」,不是結論。",
+      "differentiation_en": [
+        {
+          "variant": "Thin, scanty discharge, no breast distension",
+          "points_to": [
+            "pattern.qi_blood_deficiency"
+          ],
+          "distinguishing": "Milk seeps out spontaneously outside lactation, scant and watery, the breast soft without distension and yielding little even on expression, with fatigue, shortness of breath, reluctance to speak, poor appetite, loose stool, a pale or sallow complexion, and scanty pale menstrual flow, the tongue pale and the pulse thin and weak — typically in postpartum depletion or an underlying Qi-Blood deficiency"
+        },
+        {
+          "variant": "Breast distension and pain, copious thick discharge, tracking emotion",
+          "points_to": [
+            "pattern.liver_qi_stagnation"
+          ],
+          "distinguishing": "The breast feels full and painful, discharge is copious and thick, clearly worse with emotional upset or premenstrually, with chest and flank distension, frequent sighing, and an irregular cycle — a thin white tongue coating and a wiry pulse"
+        },
+        {
+          "variant": "Thick yellowish discharge, irritability and bitter taste — Liver depression transforming into fire",
+          "points_to": [
+            "pattern.liver_depression_transforming_fire"
+          ],
+          "distinguishing": "Copious thick, yellowish discharge with breast pain worse for pressure, irritability, a bitter taste, dry throat, a flushed face, constipation and dark urine, a red tongue with a thin yellow coating and a wiry rapid pulse — Liver-Qi stagnation that has transformed into fire, forcing milk to leak out"
+        },
+        {
+          "variant": "Scanty thick discharge, hot flashes and night sweats — Liver-Kidney Yin deficiency",
+          "points_to": [
+            "pattern.liver_kidney_yin_deficiency"
+          ],
+          "distinguishing": "Thick but scanty discharge, with hot flashes and night sweats, vexing heat in the five centers, weak aching low back and knees, dizziness and tinnitus, scanty menses or amenorrhea, a red tongue with little or no coating and a thin rapid pulse that may also be wiry — Liver-Kidney Yin depletion with empty fire disturbing above and forcing milk out"
+        },
+        {
+          "variant": "Thin clear discharge, cold intolerance and cold low back — Spleen-Kidney Yang deficiency",
+          "points_to": [
+            "pattern.spleen_kidney_yang_deficiency"
+          ],
+          "distinguishing": "Scant, thin, clear discharge with cold intolerance and cold limbs, cold aching low back and knees, a delayed scanty cycle or amenorrhea, reduced libido, loose stool, a pale, swollen tongue with a white, slippery coating and a deep, slow, forceless pulse — Spleen-Kidney Yang deficiency, the Chong-Ren failing to be warmed and secured"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "乳汁清稀,量少不脹",
+          "points_to": [
+            "pattern.qi_blood_deficiency"
+          ],
+          "distinguishing": "非哺乳期乳汁自然滲出,量少質稀如水,乳房柔軟不脹,擠壓亦難盈掌,兼神疲乏力、氣短懶言、食少便溏、面色淡白或萎黃、月經量少色淡,舌淡,脈細弱,多見於產後失於調攝或素體氣血兩虛者"
+        },
+        {
+          "variant": "乳房脹痛,乳汁量多質稠,隨情志波動",
+          "points_to": [
+            "pattern.liver_qi_stagnation"
+          ],
+          "distinguishing": "乳房脹滿疼痛,乳汁量多質稠,情緒波動或月經前明顯加重,伴胸脅脹悶、善太息、月經先後不定期,舌苔薄白,脈弦"
+        },
+        {
+          "variant": "乳汁質稠色黃,心煩口苦——肝鬱化火",
+          "points_to": [
+            "pattern.liver_depression_transforming_fire"
+          ],
+          "distinguishing": "乳汁量多質稠色偏黃,乳房脹痛拒按,心煩易怒,口苦咽乾,面紅目赤,便秘尿黃,舌紅苔薄黃,脈弦數,為肝鬱日久化火,迫乳外溢"
+        },
+        {
+          "variant": "乳汁量少質稠,潮熱盜汗——肝腎陰虛",
+          "points_to": [
+            "pattern.liver_kidney_yin_deficiency"
+          ],
+          "distinguishing": "乳汁質稠而量少,伴潮熱盜汗、五心煩熱、腰膝痠軟、頭暈耳鳴、月經量少或閉經,舌紅少苔或無苔,脈細數可兼弦,為肝腎陰虧、虛火上擾迫乳"
+        },
+        {
+          "variant": "乳汁清稀,畏寒腰冷——脾腎陽虛",
+          "points_to": [
+            "pattern.spleen_kidney_yang_deficiency"
+          ],
+          "distinguishing": "乳汁清稀量少,畏寒肢冷,腰膝痠冷,月經後期量少甚或閉經,性慾減退,大便溏薄,舌淡胖苔白滑,脈沉遲無力,為脾腎陽虛、衝任失於溫煦固攝"
+        }
+      ],
+      "field_sources": {
+        "definition_zh/en": "Huang & Molitch (Am Fam Physician 2012) 對 galactorrhea 的定義(非哺乳期、多孔道、可自然或擠壓而出) + 中醫婦科學 乳汁自出篇一般描述",
+        "differentiation_zh/en": "中醫婦科學 乳汁自出篇 氣血虛弱、肝經鬱熱分證 + 中醫婦科學／中西醫結合婦產科學 高催乳素血症相關證治(肝鬱化火、肝腎陰虛、脾腎陽虛) + 本 repo pattern_library 對應證型 key_signs_zh/tongue_zh/pulse_zh 逐一核對",
+        "red_flags_zh/en": "Huang & Molitch 2012(單側單孔血性分泌物、乳房腫塊) + Endocrine Society 2011 Melmed et al.(垂體腫瘤視野缺損、藥物性病因)",
+        "supporting_measurements": "刻意留空 —— 目前 27 個 outcome metrics 無對應溢乳量化項(參照 sym.vaginal_discharge、sym.breast_tenderness 先例)"
+      },
+      "id": "sym.galactorrhea",
+      "inquiry_en": [
+        {
+          "dimension": "Triggers",
+          "why": "Recent childbirth or breastfeeding needs to be ruled out first as physiologically delayed weaning; antipsychotics, prokinetics (e.g. metoclopramide), oral contraceptives, antihypertensives (e.g. verapamil) and opioids can all raise prolactin — the most common and most reversible cause, and it decides whether medication review comes first"
+        },
+        {
+          "dimension": "Location",
+          "why": "Bilateral, diffuse, multiple-duct leaking usually points to true galactorrhea (hyperprolactinemia); unilateral, single-duct discharge — especially if bloody — needs intraductal papilloma or breast cancer ruled out first"
+        },
+        {
+          "dimension": "Quality",
+          "why": "Milky white or pale yellow, thin or thick, sorts the TCM excess/deficiency and cold/heat category; a bloody or serous discharge falls outside this symptom and belongs to a different red-flag pathway"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Scanty menses, delayed cycles, amenorrhea or infertility often coexist with hyperprolactinemia and affect how urgently to work it up; in TCM it points to whether the Chong-Ren and Kidney Qi are sufficient"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "New headache with a visual field defect — especially bitemporal hemianopia — suggests a pituitary macroadenoma compressing the optic chiasm; this is the single most important red flag and warrants prompt imaging"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Irritability and depression point toward Liver-Qi stagnation transforming into fire; hot flashes and night sweats point toward Yin deficiency with empty fire; cold intolerance and cold, aching low back and knees point toward Spleen-Kidney Yang deficiency — this shapes the treatment direction"
+        },
+        {
+          "dimension": "Course",
+          "why": "New onset with other signs of pituitary compression needs prompt referral; a long-standing, stable, recurring course can start with medication review, thyroid testing and pattern-based treatment"
+        }
+      ],
+      "inquiry_zh": [
+        {
+          "dimension": "誘因",
+          "why": "近期生產哺乳史需先排除生理性延遲退乳;抗精神病藥、腸胃促動劑(如 metoclopramide)、避孕藥、降血壓藥(如 verapamil)、鴉片類藥物皆可誘發泌乳素升高,是最常見且可逆的病因,決定是否先調整用藥"
+        },
+        {
+          "dimension": "部位",
+          "why": "雙側多孔瀰漫滲出多屬真性溢乳(高泌乳素血症);單側單一孔道的分泌物,尤其合併血性,需優先排除乳管內乳突瘤或乳癌"
+        },
+        {
+          "dimension": "性質",
+          "why": "乳汁樣白色或淡黃、質地清稀或黏稠,決定中醫虛實寒熱歸類;若為血性或漿液性,則脫離本症範疇,屬另一組紅旗"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "月經量少、經期延後、閉經或不孕常與高泌乳素血症並存,關係到評估的急迫性;中醫則指向衝任、腎氣是否充盛"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "新發頭痛合併視野缺損(尤其雙顳側偏盲)提示腦下垂體巨腺瘤壓迫視交叉,是本症最重要的紅旗,需儘速影像評估"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "情緒抑鬱易怒指向肝鬱化火;潮熱盜汗、五心煩熱指向陰虛火旺;畏寒肢冷、腰膝痠冷指向脾腎陽虛,決定治療方向"
+        },
+        {
+          "dimension": "病程",
+          "why": "新發合併其他垂體壓迫症狀者需儘速轉診;長期穩定反覆者可先從藥物審視、甲狀腺功能與證型調理著手"
+        }
+      ],
+      "name_en": "Galactorrhea (inappropriate milk discharge)",
+      "name_zh": "溢乳",
+      "observation_modes": [
+        "patient_reported",
+        "examiner_observed"
+      ],
+      "patient_words_en": "\"My bra keeps getting a wet patch and I'm not nursing\", \"White stuff comes out when I squeeze the nipple\", \"It leaks from both sides, not just one\", \"My child weaned ages ago — why is there still milk\", \"It seeps out just from my clothes rubbing against it, it's embarrassing\", \"I've never had a baby — why would I have milk\"",
+      "patient_words_zh": "「內衣常常濕一塊,我又沒在餵奶」「一擠乳頭就有白白的東西跑出來」「兩邊都會滲,不是只有一邊」「小孩早就斷奶了,怎麼還一直有」「乳頭碰到衣服就會滲出來,很尷尬」「我沒生過小孩,怎麼會有奶水」",
+      "pinyin": "yi ru",
+      "pinyin_toned": "yì rǔ",
+      "primary_mode": "patient_reported",
+      "red_flags_en": [
+        "Headache with a visual field defect (especially bitemporal hemianopia) or double vision → suggests a pituitary macroadenoma compressing the optic chiasm; prompt neuroimaging is needed",
+        "Unilateral, single-duct bloody or serous discharge → atypical for galactorrhea; intraductal papilloma or breast cancer must be ruled out first",
+        "A new breast lump, skin dimpling, or nipple retraction accompanying the discharge → imaging evaluation to rule out breast cancer",
+        "Galactorrhea in a male → carries a higher likelihood of a pathologic cause such as a prolactin-secreting pituitary tumor; prolactin testing and imaging should be routine",
+        "Galactorrhea with complete cessation of menses, infertility, or a marked drop in libido → suggests hyperprolactinemia affecting the gonadal axis; check prolactin and thyroid function and consider referral",
+        "Galactorrhea appearing during treatment with a known prolactin-raising medication (antipsychotics, metoclopramide, methyldopa, verapamil, opioids) → review the medication first, but do not stop it unilaterally — discuss with the prescriber"
+      ],
+      "red_flags_zh": [
+        "頭痛合併視野缺損(尤其雙顳側偏盲)、複視 → 提示腦下垂體巨腺瘤壓迫視交叉,需儘速神經影像評估",
+        "單側、單一乳管孔道的血性或漿液性分泌物 → 非典型溢乳,需優先排除乳管內乳突瘤或乳癌",
+        "合併新發乳房腫塊、皮膚凹陷或乳頭凹陷 → 需影像評估排除乳癌",
+        "男性出現溢乳 → 罹患垂體泌乳素瘤等病理性病因的機率較高,應常規檢查泌乳素與影像",
+        "溢乳合併月經完全停止、不孕或性慾明顯下降 → 提示高泌乳素血症影響性腺軸,需檢驗泌乳素、甲狀腺功能並評估轉診",
+        "服用已知會升高泌乳素的藥物(抗精神病藥、metoclopramide、methyldopa、verapamil、鴉片類)期間出現溢乳 → 先審視用藥,勿逕行停藥,應與原處方醫師討論"
+      ],
+      "safety_flags": [
+        "neurologic_red_flags",
+        "urgent_red_flag_review"
+      ],
+      "safety_review_sources": [
+        "Huang W, Molitch ME. Evaluation and Management of Galactorrhea. American Family Physician. 2012;85(11):1073-1080.",
+        "Melmed S, Casanueva FF, Hoffman AR, et al. Diagnosis and Treatment of Hyperprolactinemia: An Endocrine Society Clinical Practice Guideline. J Clin Endocrinol Metab. 2011;96(2):273-288."
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "sources": [
+        "Huang W, Molitch ME. Evaluation and Management of Galactorrhea. American Family Physician. 2012;85(11):1073-1080.(西醫評估架構與紅旗)",
+        "Melmed S, Casanueva FF, Hoffman AR, et al. Diagnosis and Treatment of Hyperprolactinemia: An Endocrine Society Clinical Practice Guideline. J Clin Endocrinol Metab. 2011;96(2):273-288.(藥物性病因、垂體腫瘤評估路徑)",
+        "中醫婦科學 通行教材 —— 乳汁自出篇(氣血虛弱、肝經鬱熱分證)及高催乳素血症相關證治章節(肝鬱化火、肝腎陰虛、脾腎陽虛分證)",
+        "本 repo 既有卡片:sym.breast_tenderness、sym.vaginal_discharge 格式參照;pattern_library 各證型 key_signs_zh/tongue_zh/pulse_zh"
+      ],
+      "taxonomy_ids": [
+        "sym.female",
+        "sym.male"
+      ],
+      "tradition": "both",
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "aliases_en": [
+        "Dysphonia",
+        "Hoarse voice",
+        "Raspy voice",
+        "Voice loss"
+      ],
+      "aliases_zh": [
+        "聲啞",
+        "喉嚨啞掉",
+        "講話聲音變粗",
+        "失聲"
+      ],
+      "clinical_attributes": {
+        "location": {
+          "applicable": false
+        },
+        "quality": {
+          "applicable": false,
+          "diagnostic_note_zh": "symptom_quality 為疼痛性質詞彙，聲音嘶啞的性質軸(粗啞、氣息聲、音調降低、失聲)不在其中"
+        },
+        "laterality": {
+          "applicable": false
+        },
+        "timing": {
+          "applicable": true,
+          "vocabulary": "symptom_timing"
+        },
+        "severity": {
+          "applicable": false,
+          "why": "實例值,屬病例層(§8)"
+        },
+        "duration": {
+          "applicable": false,
+          "why": "實例值,屬病例層(§8)"
+        }
+      },
+      "definition_en": "A change in vocal quality — a voice that becomes rough, low, breathy or strained, ranging from mild roughness to complete voice loss (aphonia). It is a presenting complaint, not a diagnosis: laryngitis, vocal fold nodules or polyps, vocal fold paralysis, laryngeal cancer, gastroesophageal reflux, hypothyroidism and simple vocal overuse can all present as hoarseness, and TCM groups it under \"喉喑\" (laryngeal muteness) or \"音啞\" (voice loss) — so this card records what to ask and what it points toward, not a conclusion.",
+      "definition_zh": "聲音的音質改變——變粗、變低、變啞、帶氣息聲,甚至完全發不出聲音,程度從輕微沙啞到全失音不等。這是主訴,不是診斷:喉炎、聲帶結節/息肉、聲帶麻痺、喉癌、胃食道逆流、甲狀腺功能低下、單純用聲過度都可能表現為聲音嘶啞,中醫則統稱「喉喑」或「音啞」,所以卡片記錄的是「該問什麼、指向哪裡」,不是結論。",
+      "differentiation_en": [
+        {
+          "variant": "New-onset hoarseness with chills, fever, itchy throat and cough",
+          "points_to": [
+            "pattern.wind_cold_invading_lung"
+          ],
+          "distinguishing": "Abrupt onset, voice turns rough or fails to project, with nasal congestion and clear discharge, aversion to cold without sweating, itchy throat and cough — typical of early external contraction"
+        },
+        {
+          "variant": "Hoarseness with a sore, swollen throat, yellow sputum and thirst",
+          "points_to": [
+            "pattern.wind_heat_invading_lung"
+          ],
+          "distinguishing": "Hoarseness with a red, swollen, painful throat, thick yellow sputum, fever and thirst; relatively rapid onset"
+        },
+        {
+          "variant": "Long-standing hoarseness, worse in the afternoon, dry throat with flushed cheekbones",
+          "points_to": [
+            "pattern.lung_kidney_yin_deficiency"
+          ],
+          "distinguishing": "Recurring, lingering hoarseness that worsens in the afternoon or at night, with dry mouth and throat, flushed cheekbones and night sweats, weak aching low back and knees — often chronic, perimenopausal, or from vocal overuse"
+        },
+        {
+          "variant": "Hoarseness with effortful, breathless speech, fatigue, worse with exertion",
+          "points_to": [
+            "pattern.lung_spleen_qi_deficiency"
+          ],
+          "distinguishing": "A low, weak voice that fails to carry, speech that is effortful and cannot be sustained before turning hoarse, with shortness of breath, disinclination to speak, poor appetite, loose stool, fatigue and weakness, and frequent colds; slightly better with rest"
+        },
+        {
+          "variant": "Long-standing unresolved hoarseness with a hard, immovable local mass or nodule in the throat, sticky phlegm hard to clear",
+          "points_to": [
+            "pattern.phlegm_stasis_binding"
+          ],
+          "distinguishing": "Long-standing, lingering hoarseness with a palpable or laryngoscopically visible local mass or nodule in the throat (e.g. the vocal folds) that is hard and fixed in place — such as vocal fold nodules or polyps — with copious sticky phlegm that is difficult to clear, a dusky-purple tongue with stasis macules and a greasy coating, and a wiry-choppy or slippery-choppy pulse"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "聲音嘶啞新起,惡寒發熱,咽癢咳嗽",
+          "points_to": [
+            "pattern.wind_cold_invading_lung"
+          ],
+          "distinguishing": "起病急驟,聲音變粗或不揚,兼鼻塞流清涕、惡寒無汗、咽癢咳嗽,多見於外感初起"
+        },
+        {
+          "variant": "聲音嘶啞,咽喉腫痛,痰黃口渴",
+          "points_to": [
+            "pattern.wind_heat_invading_lung"
+          ],
+          "distinguishing": "聲嘶伴咽喉紅腫疼痛、咳痰黃稠、發熱口渴,起病較急"
+        },
+        {
+          "variant": "聲音嘶啞日久,午後咽乾顴紅",
+          "points_to": [
+            "pattern.lung_kidney_yin_deficiency"
+          ],
+          "distinguishing": "聲嘶反覆纏綿,午後或夜間加重,兼咽乾口燥、顴紅盜汗、腰膝痠軟,多見久病、更年期或用聲過度者"
+        },
+        {
+          "variant": "聲音嘶啞,講話費力氣短,倦怠乏力,遇勞加重",
+          "points_to": [
+            "pattern.lung_spleen_qi_deficiency"
+          ],
+          "distinguishing": "聲音低弱不揚,言語費力、講不久即啞,兼氣短懶言、食慾不振、便溏、疲倦乏力、易感冒,休息後略減"
+        },
+        {
+          "variant": "聲音嘶啞日久不癒,喉部觸及或喉鏡下可見質硬不移之腫塊或結節,痰黏難咯",
+          "points_to": [
+            "pattern.phlegm_stasis_binding"
+          ],
+          "distinguishing": "聲嘶纏綿日久,喉部(如聲帶)觸診或喉鏡下可見質硬不移之局部腫塊或結節(如聲帶結節、息肉等器質性病變),痰多黏膩、咯之不爽,舌質紫暗或有瘀斑、苔膩,脈弦澀或滑澀"
+        }
+      ],
+      "field_sources": {
+        "definition_zh/en": "AAO-HNS guideline 對 hoarseness/dysphonia 的定義 + 中醫喉科學 喉喑/音啞篇一般描述",
+        "clinical_attributes.timing": "中醫喉科學 急喉喑/慢喉喑 時間辨證 + 反流性喉炎晨起加重之臨床觀察,詳見 inquiry_zh「時間」一問",
+        "differentiation_zh/en": "中醫內科學/中醫喉科學 喉喑分證 + 本 repo pattern_library 對應證型 key_signs_zh/tongue_zh/pulse_zh 對照(第5條「痰瘀互結」已依 pattern_library 該證型實際 key_signs_zh「局部腫塊或結節，質硬不移」「痰多黏膩」及其 tongue_zh/pulse_zh 改寫,聲帶結節/息肉為此一般性局部腫塊病機於喉部的臨床實例,非該證型條目本身逐字提及)",
+        "red_flags_zh/en": "AAO-HNS Clinical Practice Guideline: Hoarseness (Dysphonia) 2018 轉診/警示準則",
+        "supporting_measurements": "刻意留空 —— 本輪已直接讀取 data/clinical_cases/outcome_metrics.json 逐筆核對,records 現有 27 項 outcome metrics(如 pain_score、sleep_quality、fatigue_score、pgic 等),無任何一項為聲音/嗓音相關量化指標"
+      },
+      "id": "sym.hoarseness",
+      "inquiry_en": [
+        {
+          "dimension": "Quality",
+          "why": "A rough/hoarse voice, a breathy quality with air escaping, lowered pitch, or complete voice loss map to different mechanisms; persistent roughness that does not vary with how much the patient talks raises concern for an organic lesion (nodule, polyp, vocal fold paralysis)"
+        },
+        {
+          "dimension": "Timing",
+          "why": "Worse on waking and easing once up and moving often points to nighttime reflux; a voice that worsens the more the patient talks and toward evening suggests Lung-Spleen Qi deficiency; a long-standing recurring course needs further workup"
+        },
+        {
+          "dimension": "Triggers",
+          "why": "A cold or external contraction, vocal overuse (teachers, sales, singers), smoking and alcohol, gastroesophageal reflux, dry environments or chemical irritants, and depressed mood"
+        },
+        {
+          "dimension": "Relief",
+          "why": "Whether resting the voice restores it is the key divider between functional and organic causes; improvement with moisture suggests fluid or Lung Yin deficiency; if the patient has already tried acid-suppressing medication on their own, ask whether it helped — as history only: hoarseness should not be diagnosed as reflux laryngitis from symptoms or drug response alone, and laryngoscopic evaluation of the vocal folds remains the reference standard"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "A lump-in-throat sensation, sore throat, difficulty swallowing or breathing, a neck mass, unexplained weight loss, hemoptysis — most red flags hang off this question"
+        },
+        {
+          "dimension": "Course",
+          "why": "Acute (usually under 3 weeks, from external contraction or simple overuse) versus chronic (over 3 weeks) are managed very differently; laryngoscopic visualization of the vocal folds is indicated once hoarseness persists or fails to improve beyond 4 weeks (see red flags; per the AAO-HNS 2018 guideline)"
+        }
+      ],
+      "inquiry_zh": [
+        {
+          "dimension": "性質",
+          "why": "粗啞、氣息聲(漏氣感)、音調降低、完全失聲分屬不同病機;持續性粗啞且不隨用聲多寡增減者,需優先考慮器質性病變(結節、息肉、聲帶麻痺)"
+        },
+        {
+          "dimension": "時間",
+          "why": "晨起聲啞明顯、稍活動後改善多提示夜間胃酸逆流;言語漸多漸啞、傍晚加重多屬肺脾氣虛;長期反覆不癒需另查病因"
+        },
+        {
+          "dimension": "誘因",
+          "why": "感冒外感、用聲過度(教師、業務、歌手)、抽菸飲酒、胃食道逆流、環境乾燥或化學刺激、情緒抑鬱"
+        },
+        {
+          "dimension": "緩解",
+          "why": "休息聲帶後是否恢復,是功能性與器質性的重要分野;得潤則減提示津虧或肺陰虛;若病人已自行嘗試制酸劑,可詢問症狀是否因此改善,僅作病史參考——聲音嘶啞不宜僅憑症狀或藥物反應診斷逆流性喉炎,仍應以喉鏡檢查評估聲帶為準"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "咽喉異物感、咽痛、吞嚥或呼吸困難、頸部腫塊、不明原因體重減輕、咯血——紅旗多掛在這一問"
+        },
+        {
+          "dimension": "病程",
+          "why": "急性(通常小於3週,多屬外感或單純用聲過度)與慢性(逾3週)處置完全不同;持續或未改善超過4週建議直接喉鏡評估聲帶(見紅旗,依AAO-HNS 2018 guideline)"
+        }
+      ],
+      "name_en": "Hoarseness",
+      "name_zh": "聲音嘶啞",
+      "observation_modes": [
+        "patient_reported",
+        "examiner_observed"
+      ],
+      "patient_words_en": "\"My voice is gone\", \"it's really raspy when I talk\", \"my voice has gotten rough and low\", \"I run out of voice after a few sentences\", \"something feels stuck in my throat, I can't get the sound out\", \"I woke up with no voice at all\"",
+      "patient_words_zh": "「聲音啞掉了」「講話變得很沙啞」「聲音變粗、變低」「講沒兩句就沒力氣,講不下去」「喉嚨卡卡的,聲音發不出來」「早上起來完全沒聲音」",
+      "pinyin": "sheng yin si ya",
+      "pinyin_toned": "shēng yīn sī yǎ",
+      "primary_mode": "patient_reported",
+      "red_flags_en": [
+        "Hoarseness persisting or failing to improve beyond 4 weeks → laryngoscopic visualization of the vocal folds is recommended, especially in smokers and heavy drinkers (if a serious underlying cause such as malignancy is suspected, evaluate immediately regardless of duration)",
+        "Hoarseness with breathing difficulty or stridor → an airway emergency requiring immediate management",
+        "Hoarseness with dysphagia, odynophagia, a palpable neck mass, or unexplained weight loss → rule out laryngeal or esophageal malignancy",
+        "Hoarseness with hemoptysis → needs ENT evaluation",
+        "New hoarseness after recent neck/chest surgery, intubation, or anesthesia → rule out recurrent laryngeal nerve injury or vocal fold paralysis",
+        "In children, acute hoarseness with stridor, inspiratory distress, or drooling → raises concern for croup or epiglottitis and needs immediate emergency care"
+      ],
+      "red_flags_zh": [
+        "聲音嘶啞持續或未改善超過4週 → 建議喉鏡直接評估聲帶,尤其吸菸、飲酒者(若懷疑惡性腫瘤等嚴重病因,不論病程長短皆應立即評估,不受此時限限制)",
+        "聲嘶合併呼吸困難、喘鳴(stridor) → 屬呼吸道急症,需立即處理",
+        "聲嘶合併吞嚥困難、吞嚥疼痛、頸部可觸及腫塊或不明原因體重減輕 → 排除喉部或食道惡性腫瘤",
+        "聲嘶合併咯血 → 需耳鼻喉科評估",
+        "近期頸部/胸部手術、氣管插管或麻醉史後新發聲嘶 → 排除喉返神經損傷或聲帶麻痺",
+        "兒童急性聲嘶合併喘鳴、吸氣性呼吸困難、流涎 → 需警覺哮吼(croup)或會厭炎等急症,立即送醫"
+      ],
+      "safety_flags": [
+        "respiratory_red_flags"
+      ],
+      "safety_review_sources": [
+        "AAO-HNS Clinical Practice Guideline: Hoarseness (Dysphonia) (Update) — Stachler RJ, Francis DO, Schwartz SR, et al., Otolaryngology–Head and Neck Surgery, 2018;158(1_suppl):S1-S42"
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "sources": [
+        "AAO-HNS Clinical Practice Guideline: Hoarseness (Dysphonia) (Update), Otolaryngology–Head and Neck Surgery 2018;158(1_suppl):S1-S42(定義、紅旗、轉診時機)",
+        "中醫內科學/中醫耳鼻喉科學 通行教材 —— 喉喑(音啞)急喉喑/慢喉喑分證:風寒襲肺、風熱犯肺、肺腎陰虛、肺脾氣虛、痰瘀互結",
+        "本 repo 既有卡片:pattern_library 各證型 key_signs_zh 對照;sym.cough 卡片格式參照"
+      ],
+      "supporting_measurements": [],
+      "taxonomy_ids": [
+        "sym.head_face_nose",
+        "sym.chest_respiratory"
+      ],
+      "tradition": "both",
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "sym.bruxism",
+      "name_zh": "磨牙",
+      "name_en": "Bruxism (teeth grinding)",
+      "pinyin": "mo ya",
+      "pinyin_toned": "mó yá",
+      "taxonomy_ids": [
+        "sym.head_face_nose",
+        "sym.mental_emotional"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported",
+        "examiner_observed"
+      ],
+      "primary_mode": "examiner_observed",
+      "aliases_en": [
+        "Teeth grinding",
+        "Tooth grinding / clenching",
+        "Sleep bruxism",
+        "Awake bruxism (jaw clenching)"
+      ],
+      "aliases_zh": [
+        "齘齒",
+        "咬牙",
+        "睡眠磨牙",
+        "清醒磨牙(緊咬牙關)"
+      ],
+      "definition_en": "Bruxism (traditionally called 齘齒 in Chinese medicine) is repetitive, non-functional grinding or clenching of the teeth, occurring during sleep or while awake — which form is more common varies across the populations studied. With sleep bruxism, the patient is usually unaware of it — it is typically first noticed when a bed partner hears the grinding, or when a dentist finds abnormal tooth wear on examination. Awake bruxism is mostly unconscious, prolonged jaw clenching during the day, which the patient can usually feel. It is a behavioural/motor finding, not a diagnosis — it can sit behind stress and anxiety, sleep disorders, or medication side effects, while in TCM it is most often linked to Stomach Heat with food stagnation, Liver Depression transforming into Fire, Heart-Spleen deficiency, or Heart-Kidney disharmony.",
+      "definition_zh": "磨牙(西醫稱 bruxism,中醫古稱「齘齒」)指非功能性的牙齒磨動或緊咬牙關,可發生於睡眠中,也可發生於清醒時,兩者何者較常見依研究族群而異。睡眠磨牙時患者本人往往不自知,多由同床者聽見磨牙聲、或由牙科於檢查中發現齒面異常磨損而被發現;清醒磨牙則以白天無意識地長時間咬緊牙關為主,患者通常能自己察覺。它是一個行為/動作表現,不是診斷 —— 背後可以是壓力焦慮、睡眠障礙、藥物副作用,中醫則多與胃熱食積、肝鬱化火、心脾兩虛或心腎不交等證型相關。",
+      "patient_words_en": "\"I wake up with a sore jaw and pain at my temples\", \"my partner says I grind my teeth all night and it keeps them awake\", \"my teeth feel shorter and more sensitive lately\", \"whenever I get stressed during the day I catch myself clenching my jaw\", \"my dentist said my teeth are badly worn down\", \"the muscles on both sides of my face feel swollen and sore when I press on them\"",
+      "patient_words_zh": "「早上起來下巴很痠、太陽穴會痛」「伴侶說我睡覺一直磨牙,吵到他睡不著」「牙齒最近感覺變短、變敏感」「白天一緊張就會不自覺咬緊牙關」「牙醫說我牙齒磨損得很嚴重」「臉頰兩側肌肉腫腫的,按了會痠」",
+      "clinical_attributes": {
+        "location": {
+          "applicable": false
+        },
+        "quality": {
+          "applicable": false
+        },
+        "laterality": {
+          "applicable": false
+        },
+        "timing": {
+          "applicable": true,
+          "vocabulary": "symptom_timing"
+        },
+        "severity": {
+          "applicable": false,
+          "why": "實例值，屬病例層（§8）"
+        },
+        "duration": {
+          "applicable": false,
+          "why": "實例值，屬病例層（§8）"
+        }
+      },
+      "inquiry_en": [
+        {
+          "dimension": "Timing",
+          "why": "Night-time (sleep) bruxism is often unnoticed by the patient and only found via a bed partner or a dental exam; daytime (awake) bruxism is mostly an unconscious habit that the patient can nonetheless sometimes catch themselves doing — the two have different causes and management"
+        },
+        {
+          "dimension": "Triggers",
+          "why": "Stress and anxiety, caffeine/alcohol/tobacco, a recently started SSRI or a stimulant drug, and snoring with sleep apnea are the most common reversible triggers — identifying one often points directly to management"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Morning jaw soreness or tightness, temporal headache, masseter hypertrophy, tooth sensitivity or wear, and TMJ clicking or limited opening show the grinding is already causing structural damage and needs dental involvement; loud snoring with daytime sleepiness should prompt screening for sleep apnea"
+        },
+        {
+          "dimension": "Course",
+          "why": "Bruxism in children is often physiological and resolves with tooth eruption; new-onset bruxism in an adult, especially after starting a new medication or a stressful life event, calls for a check of whether the trigger is reversible"
+        },
+        {
+          "dimension": "Relief",
+          "why": "Whether stress reduction, cutting caffeine/alcohol, or a night guard improves things helps determine whether the grinding is mainly behavioural/stress-driven, or whether an underlying sleep-apnea or medication cause needs addressing"
+        }
+      ],
+      "inquiry_zh": [
+        {
+          "dimension": "時間",
+          "why": "夜間磨牙(睡眠性)患者本人常不自知,需靠同床者或牙科檢查才發現;白天磨牙(清醒性)則以緊咬牙關為主,患者能自覺,兩者病因與處置方向不同"
+        },
+        {
+          "dimension": "誘因",
+          "why": "壓力焦慮、咖啡因/酒精/菸草、近期開始服用 SSRI 或興奮劑類藥物、打鼾與睡眠呼吸中止,是磨牙最常見的可逆病因,問清楚往往能直接指向處置方向"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "晨起下巴痠痛或緊繃、顳部頭痛、咬肌肥大、牙齒敏感或磨損、顳顎關節彈響或張口受限,提示磨牙已造成結構性影響,需牙科介入;伴隨大聲打鼾、日間嗜睡則需排除睡眠呼吸中止"
+        },
+        {
+          "dimension": "病程",
+          "why": "兒童磨牙多隨換牙自行緩解、多屬生理性;成人新發磨牙,尤其在開始服用新藥物或壓力事件之後,則需檢視誘因是否可逆"
+        },
+        {
+          "dimension": "緩解",
+          "why": "減壓、限制咖啡因與酒精、使用咬合板後是否減輕,能協助判斷磨牙是行為性/壓力性為主,還是需要處理潛在的睡眠呼吸中止或藥物因素"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Forceful grinding with a distended, bloated abdomen and sour belching",
+          "points_to": [
+            "pattern.food_stagnation"
+          ],
+          "distinguishing": "Loud, forceful grinding with a distended abdomen that is tender to pressure, foul belching and acid regurgitation, aversion to food, and foul-smelling stool, with a thick greasy tongue coating and a slippery pulse — typically in children who overeat or adults after a bout of overindulgence"
+        },
+        {
+          "variant": "Heavy, persistent grinding with swollen gums and thirst for cold drinks",
+          "points_to": [
+            "pattern.stomach_heat"
+          ],
+          "distinguishing": "Heavy, persistent grinding with swollen painful gums, thirst with a preference for cold drinks, excessive hunger, constipation and dark urine — typically in those who favour spicy, fried food"
+        },
+        {
+          "variant": "Daytime clenching with night grinding worsening under stress, irritable and bitter-mouthed",
+          "points_to": [
+            "pattern.liver_depression_transforming_fire"
+          ],
+          "distinguishing": "Unconscious daytime jaw clenching with night grinding that worsens around stressful events, with irritability and a quick temper, burning distending pain in the chest/hypochondrium, bitter taste and dry throat, headache with red eyes — typically in those under chronic stress or suppressed emotion"
+        },
+        {
+          "variant": "Light, intermittent grinding with palpitations, fatigue and poor appetite",
+          "points_to": [
+            "pattern.heart_spleen_deficiency"
+          ],
+          "distinguishing": "Light, intermittent grinding that is more noticeable after mental or physical overexertion, with palpitations and poor sleep, vivid dreams and forgetfulness, poor appetite and fatigue, a sallow complexion — typically in those who overthink or are weakened by chronic illness"
+        },
+        {
+          "variant": "Night grinding with vexation and insomnia, tidal fever, night sweats and weak low back/knees",
+          "points_to": [
+            "pattern.heart_kidney_not_communicating"
+          ],
+          "distinguishing": "Night grinding with vexation, insomnia, palpitations and poor memory, plus tidal fever, night sweats, five-centre heat, dry mouth and throat, and sore, weak low back and knees, with a red tongue with scanty coating and a fine rapid pulse — typically in menopause or from long-term sleep deprivation depleting yin"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "磨牙聲響有力，脘腹脹滿噯腐吞酸",
+          "points_to": [
+            "pattern.food_stagnation"
+          ],
+          "distinguishing": "磨牙聲響清脆有力，伴脘腹脹滿拒按、噯腐吞酸、厭食，大便酸臭，舌苔厚膩、脈滑，多見於小兒飲食不知節制或成人暴飲暴食之後"
+        },
+        {
+          "variant": "磨牙聲重持續，牙齦腫痛口渴喜冷飲",
+          "points_to": [
+            "pattern.stomach_heat"
+          ],
+          "distinguishing": "磨牙聲重而持續，兼牙齦腫痛、口渴喜冷飲、消穀善飢、便秘尿黃，多見於嗜食辛辣油炸者"
+        },
+        {
+          "variant": "白天緊咬夜間磨牙加劇，急躁易怒口苦",
+          "points_to": [
+            "pattern.liver_depression_transforming_fire"
+          ],
+          "distinguishing": "白天不自覺緊咬牙關，夜間磨牙隨壓力事件加劇，兼急躁易怒、胸脅脹痛灼熱、口苦咽乾、頭痛目赤，多見於長期壓力或情緒壓抑者"
+        },
+        {
+          "variant": "磨牙聲輕微時作時止，心悸神疲食少",
+          "points_to": [
+            "pattern.heart_spleen_deficiency"
+          ],
+          "distinguishing": "磨牙聲音輕微、時作時止，勞心勞累後明顯，兼心悸失眠、多夢健忘、食少倦怠、面色萎黃，多見於思慮過度或久病體虛者"
+        },
+        {
+          "variant": "夜間磨牙心煩失眠，潮熱盜汗腰膝痠軟",
+          "points_to": [
+            "pattern.heart_kidney_not_communicating"
+          ],
+          "distinguishing": "夜間磨牙伴心煩失眠、心悸健忘，兼潮熱盜汗、五心煩熱、口乾咽燥、腰膝痠軟，舌紅少苔、脈細數，多見於更年期或長期熬夜傷陰者"
+        }
+      ],
+      "red_flags_en": [
+        "Bruxism with agitation, tachycardia, hyperthermia, myoclonus or hyperreflexia — especially after recent use, or combined use, of a serotonergic drug (e.g. an SSRI) or a stimulant such as MDMA → rule out serotonin syndrome immediately; this is a medical emergency",
+        "New bruxism or jaw clenching (trismus) within hours to days of starting or increasing the dose of an antipsychotic (a dopamine-blocking drug), together with oculogyric crisis, torticollis, or other sustained muscle spasm → suggests acute dystonia; needs prompt medical attention",
+        "New bruxism appearing after months to years of ongoing antipsychotic treatment, with tongue protrusion, grimacing, or other involuntary orofacial movements → suggests tardive dyskinesia; needs medication review and referral to neurology or the prescribing clinician",
+        "Bruxism with loud snoring, witnessed apnoeas, or daytime sleepiness → evaluate for obstructive sleep apnea"
+      ],
+      "red_flags_zh": [
+        "磨牙合併躁動不安、心搏過速、高熱、肌陣攣或反射亢進，尤其發生在近期使用/合併使用血清素類藥物(如 SSRI)或 MDMA 等興奮劑之後 → 需立即排除血清素症候群，屬醫療急症",
+        "開始服用或調高抗精神病藥物(多巴胺阻斷劑)劑量後數小時至數天內新發磨牙或牙關緊咬(trismus)，合併動眼危象、痙攣性斜頸等持續性肌肉痙攣 → 提示急性肌張力不全，需儘速就醫處置",
+        "長期(數月至數年)服用抗精神病藥物後新發磨牙，合併吐舌、扮鬼臉等口顏面不自主動作 → 提示遲發性運動障礙，需藥物審查並轉診神經科或原處方醫師",
+        "磨牙合併大聲打鼾、目睹呼吸暫停、日間嗜睡 → 需評估阻塞性睡眠呼吸中止症"
+      ],
+      "safety_flags": [
+        "medication_review",
+        "neurologic_red_flags",
+        "respiratory_red_flags"
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "Lobbezoo F, Ahlberg J, Raphael KG, et al. — International consensus on the assessment of bruxism: Report of a work in progress. J Oral Rehabil. 2018",
+        "ICSD-3 — International Classification of Sleep Disorders, 3rd edition, American Academy of Sleep Medicine",
+        "Boyer EW, Shannon M. — The Serotonin Syndrome. N Engl J Med. 2005;352(11):1112-1120",
+        "StatPearls — Dystonic Reactions. NCBI Bookshelf, StatPearls Publishing (NBK531466)",
+        "StatPearls — Tardive Dyskinesia. NCBI Bookshelf, StatPearls Publishing (NBK448207)"
+      ],
+      "supporting_measurements": [
+        "metric.sleep_quality",
+        "metric.stress_level",
+        "metric.pain_score"
+      ],
+      "sources": [
+        "Lobbezoo F, Ahlberg J, Raphael KG, et al. — International consensus on the assessment of bruxism: Report of a work in progress. J Oral Rehabil. 2018（睡眠性磨牙與清醒性磨牙之定義與分類）",
+        "ICSD-3 — International Classification of Sleep Disorders, 3rd edition, American Academy of Sleep Medicine（睡眠磨牙列為睡眠相關動作障礙，並與阻塞性睡眠呼吸中止症共病）",
+        "Boyer EW, Shannon M. — The Serotonin Syndrome. N Engl J Med. 2005;352(11):1112-1120（血清素症候群的肌陣攣、反射亢進、躁動、高熱等診斷特徵）",
+        "StatPearls — Dystonic Reactions. NCBI Bookshelf, StatPearls Publishing（抗精神病藥物引發急性肌張力不全之起病時間為數小時至數天內）",
+        "StatPearls — Tardive Dyskinesia. NCBI Bookshelf, StatPearls Publishing（遲發性運動障礙之起病時間為長期用藥數月至數年後）",
+        "中醫內科學／中醫診斷學 通行教材內容 —— 齘齒(磨牙)之胃熱食積、肝鬱化火、心脾兩虛、心腎不交辨證",
+        "本 repo 既有卡片：pattern_library 各證型 key_signs_zh 對照（食滯胃脘・胃熱熾盛・肝鬱化火・心脾兩虛・心腎不交）",
+        "data/config/symptom_taxonomy.json — cloudtcm.disease_entry.14066『睡眠時磨牙』候選條目（分類依據）"
+      ],
+      "field_sources": {
+        "definition_zh/en": "Lobbezoo et al. 2018 國際共識對 sleep bruxism／awake bruxism 的定義 + 中醫診斷學／中醫症狀鑒別診斷學 對「齘齒」症狀的基本界定（齘齒屬內科雜病項下的症狀鑒別詞條，非中醫內科學獨立病證專篇）",
+        "observation_modes/primary_mode": "ICSD-3 睡眠磨牙診斷準則(可由同床者報告磨牙聲，或由牙科檢查發現齒面磨損確立，患者本人常不自知)",
+        "inquiry_zh/en": "Lobbezoo et al. 2018 對磨牙誘因(壓力、物質使用)的描述 + ICSD-3 對睡眠呼吸中止共病的說明",
+        "differentiation_zh/en": "中醫內科學／中醫診斷學 齘齒辨證 + 本 repo pattern_library 各證型 key_signs_zh 對照(食滯胃脘・胃熱熾盛・肝鬱化火・心脾兩虛・心腎不交)",
+        "red_flags_zh/en": "Boyer & Shannon 2005 NEJM 血清素症候群 + StatPearls《Dystonic Reactions》／《Tardive Dyskinesia》條目(以起病時間區分急性肌張力不全與遲發性運動障礙) + ICSD-3 睡眠呼吸中止共病",
+        "supporting_measurements": "data/clinical_cases/outcome_metrics.json — metric.sleep_quality／metric.stress_level／metric.pain_score（既有，未新增）"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "sym.morning_stiffness",
+      "name_zh": "晨僵",
+      "name_en": "Morning stiffness",
+      "pinyin": "chen jiang",
+      "pinyin_toned": "chén jiāng",
+      "aliases_zh": [
+        "晨間關節僵硬",
+        "起床後關節不靈活",
+        "關節膠著現象"
+      ],
+      "aliases_en": [
+        "Morning joint stiffness",
+        "AM stiffness",
+        "Gel phenomenon"
+      ],
+      "taxonomy_ids": [
+        "sym.general_limb",
+        "sym.back_lumbar"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported",
+        "examiner_observed"
+      ],
+      "primary_mode": "patient_reported",
+      "definition_zh": "起床後或長時間靜止不動後,關節與周圍肌肉出現僵硬、緊繃、屈伸不靈活的感覺,需要活動一段時間才逐漸鬆開緩解(俗稱「膠著現象」)。它是一個以時間定義的臨床體徵,僵硬持續的分鐘/小時數本身就有辨病意義:晨僵至少1小時曾是1987年版 ACR 類風濕性關節炎分類準則的條目之一,現行2010年 ACR/EULAR 分類準則已改用關節侵犯、血清學、急性期反應物、症狀持續週數的計分制,不再將晨僵列為正式計分項目,但臨床上仍常用以評估疾病活動度;晨僵超過45分鐘則是2012年 EULAR/ACR 風濕性多肌痛(PMR)臨時分類準則中的正式計分條目(2分);中軸型脊椎關節炎(axSpA,涵蓋僵直性脊椎炎與尚未出現放射學薦髂關節炎變化的非放射學型)之發炎性下背痛 ASAS 準則5項參數本身並未直接列出「晨僵」,而是以「運動後改善」「休息無法緩解」呈現與晨僵相近的活動緩解型態。與較廣義的「肢體僵硬」(sym.limb_stiffness,涵蓋帕金森氏症肌強直等非時間相關的僵硬型態)不同,晨僵特指與起床或靜止相關、隨活動而漸緩解的僵硬,是本卡聚焦的範圍。",
+      "definition_en": "Stiffness, tightness or restricted ease of movement in a joint and its surrounding muscles on waking or after prolonged immobility, which gradually loosens with movement (the 'gel phenomenon'). It is a time-defined clinical sign — the number of minutes or hours it lasts carries diagnostic weight in its own right: morning stiffness lasting at least 1 hour was an item in the 1987 ACR classification criteria for rheumatoid arthritis, while the current 2010 ACR/EULAR criteria instead use a point system based on joint involvement, serology, acute-phase reactants and duration of symptoms, and no longer score morning stiffness as a separate item, though it remains a commonly used bedside indicator of disease activity. Morning stiffness lasting more than 45 minutes is a formally scored item (2 points) in the 2012 EULAR/ACR provisional classification criteria for polymyalgia rheumatica. The five named parameters of the ASAS criteria for inflammatory back pain — used to screen for axial spondyloarthritis (axSpA), a spectrum spanning ankylosing spondylitis and non-radiographic axSpA that has not yet developed radiographic sacroiliitis — do not include 'morning stiffness' itself, but 'improvement with exercise' and 'no improvement with rest' capture a closely related activity-relieved pattern. It differs from the broader sym.limb_stiffness (which also covers non-time-dependent stiffness such as Parkinsonian rigidity) in being specifically the waking- or immobility-related, activity-relieved pattern that this card focuses on.",
+      "patient_words_zh": "「早上起床手指伸不直,要動一動才會鬆」「像生鏽的門軸,活動後才順」「起床後全身僵硬,要半小時以上才能活動自如」「久坐之後站不起來,要撐一下才行」「肩膀早上抬不起來,過中午就好多了」「手指晨起腫脹僵硬,握拳握不緊」",
+      "patient_words_en": "\"My fingers won't straighten when I wake up, I have to move them before they loosen\", \"Like a rusty hinge that only moves smoothly once I've worked it\", \"I'm stiff all over when I get up, it takes more than half an hour before I can move normally\", \"After sitting a long time I can't stand up right away, I have to push myself up\", \"I can't lift my shoulder in the morning but it's much better by midday\", \"My fingers are swollen and stiff on waking, I can't make a proper fist\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": true,
+          "vocabulary": "symptom_taxonomy"
+        },
+        "quality": {
+          "applicable": true,
+          "vocabulary": "symptom_quality",
+          "diagnostic_note_zh": "重屬濕困 · 酸屬虛損或濕滯 · 冷屬寒凝 · 掣屬筋脈失養 · 麻屬氣血不榮"
+        },
+        "laterality": {
+          "applicable": true,
+          "vocabulary": "symptom_laterality"
+        },
+        "timing": {
+          "applicable": true,
+          "vocabulary": "symptom_timing"
+        },
+        "severity": {
+          "applicable": false,
+          "why": "實例值,屬病例層(§8)"
+        },
+        "duration": {
+          "applicable": false,
+          "why": "實例值,屬病例層(§8)"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "部位",
+          "why": "對稱性小關節(手指、腕)晨僵提示類風濕性關節炎;脊椎與薦髂關節晨僵提示中軸型脊椎關節炎(axSpA,含尚未出現放射學變化的非放射學型);單一負重關節(膝、髖)提示退化性關節炎;肩頸髖等近端大關節提示風濕性多肌痛"
+        },
+        {
+          "dimension": "性質",
+          "why": "僵硬拘緊、動彈不得多屬氣血痺阻;重著不利、屈伸如裹屬濕;痠軟乏力屬虛;麻木不仁屬血虛生風,性質描述常與部位、兼證合參"
+        },
+        {
+          "dimension": "時間",
+          "why": "起床後僵硬持續多久是本症最關鍵的一問:不到30分鐘多屬機械性或退化性關節炎,超過1小時高度提示發炎性關節炎,持續時間與發炎活動度成正比"
+        },
+        {
+          "dimension": "誘因",
+          "why": "久坐久臥不動後加重(膠著現象)提示發炎性關節病;遇冷遇濕加重提示中醫寒濕;過度使用或近期外傷提示機械性問題"
+        },
+        {
+          "dimension": "緩解",
+          "why": "活動後逐漸鬆開、越動越舒是發炎性關節病的特徵;休息反而加重支持發炎性而非機械性;得溫則減屬寒證,遇熱反劇屬熱證"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "關節腫脹發紅發熱提示活動性發炎;全身疲憊、不明原因體重減輕或低熱提示全身性疾病;顳側頭痛、下頷咀嚼疲勞痛、視力改變是不可忽略的伴隨症"
+        },
+        {
+          "dimension": "病程",
+          "why": "新發僵硬與數月數年反覆發作處置不同;是否有乾癬、腸炎、葡萄膜炎或僵直性脊椎炎家族史提示脊椎關節病;40歲以下發炎性下背痛好發於年輕族群"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Location",
+          "why": "Symmetric small-joint (finger, wrist) morning stiffness suggests rheumatoid arthritis; spine and sacroiliac stiffness suggests axial spondyloarthritis (axSpA), including non-radiographic axSpA that has not yet shown radiographic changes; a single weight-bearing joint (knee, hip) suggests osteoarthritis; proximal girdle joints (shoulders, neck, hips) suggest polymyalgia rheumatica"
+        },
+        {
+          "dimension": "Quality",
+          "why": "Tight, rigid and hard to move usually reflects obstruction of qi and blood in the channels; heavy, as-if-wrapped restriction reflects Dampness; soreness and weakness reflects deficiency; numbness reflects Blood deficiency generating Wind — quality is best read together with location and accompanying signs"
+        },
+        {
+          "dimension": "Timing",
+          "why": "How long the stiffness lasts after waking is the single most decisive question for this symptom: under 30 minutes usually points to a mechanical or degenerative problem, over an hour strongly suggests inflammatory arthritis; duration tracks inflammatory activity"
+        },
+        {
+          "dimension": "Triggers",
+          "why": "Worse after prolonged sitting or lying still (the gel phenomenon) suggests inflammatory arthropathy; worse in cold, damp weather suggests TCM cold-damp; overuse or recent trauma suggests a mechanical problem"
+        },
+        {
+          "dimension": "Relief",
+          "why": "Gradual loosening and improvement with movement is characteristic of inflammatory arthropathy; worsening rather than improving with rest supports an inflammatory rather than mechanical cause; better with warmth suggests a cold pattern, worse with heat suggests a heat pattern"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Joint swelling, redness and warmth suggest active inflammation; generalized fatigue, unexplained weight loss or low-grade fever suggest systemic disease; temporal headache, jaw claudication and visual changes are accompanying signs that must not be overlooked"
+        },
+        {
+          "dimension": "Course",
+          "why": "New-onset stiffness versus a pattern recurring over months to years calls for different management; a history of psoriasis, inflammatory bowel disease, uveitis, or a family history of ankylosing spondylitis suggests a spondyloarthropathy; inflammatory back pain typically begins before age 40"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "晨僵冷痛,遇寒濕加重,得溫則減",
+          "points_to": [
+            "pattern.wind_cold_damp_bi"
+          ],
+          "distinguishing": "關節屈伸不利,遇陰雨寒冷加重,得溫則減,患處不紅不熱,苔白膩"
+        },
+        {
+          "variant": "晨僵伴關節紅腫灼熱",
+          "points_to": [
+            "pattern.heat_bi"
+          ],
+          "distinguishing": "關節紅腫灼痛,晨僵明顯但活動後未必全消,可伴發熱口渴,舌紅苔黃"
+        },
+        {
+          "variant": "腰膝晨僵痠冷,畏寒肢冷,夜尿頻多",
+          "points_to": [
+            "pattern.kidney_yang_deficiency"
+          ],
+          "distinguishing": "晨起腰膝僵硬痠冷明顯,活動後稍減,兼畏寒肢冷、性慾減退、夜尿頻多或五更泄瀉,舌質淡胖苔白滑,脈沉細無力,尺部尤甚"
+        },
+        {
+          "variant": "晨僵較輕但纏綿,神疲乏力,勞則加重",
+          "points_to": [
+            "pattern.qi_blood_deficiency"
+          ],
+          "distinguishing": "僵硬感較輕但持續,活動後易疲勞不能持久,兼神疲乏力、面色淡白或萎黃、心悸,舌淡,脈細弱"
+        },
+        {
+          "variant": "晨僵日久,關節腫大變形,肢體麻木",
+          "points_to": [
+            "pattern.phlegm_stasis_binding"
+          ],
+          "distinguishing": "關節腫大變形、痛處固定,局部可觸及結節質硬不移,晨僵持續時間長,兼肢體麻木或屈伸不利,舌質紫暗或有瘀斑、苔膩,脈弦澀或滑澀"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Cold, painful morning stiffness, worse in cold/damp weather, better with warmth",
+          "points_to": [
+            "pattern.wind_cold_damp_bi"
+          ],
+          "distinguishing": "Joints hard to bend and extend, worse in cold, damp or rainy weather, eased by warmth, affected areas not red or hot, white greasy tongue coating"
+        },
+        {
+          "variant": "Morning stiffness with red, swollen, burning joints",
+          "points_to": [
+            "pattern.heat_bi"
+          ],
+          "distinguishing": "Red, swollen, burning joint pain; morning stiffness prominent but not fully relieved by movement; may have fever and thirst, red tongue with yellow coating"
+        },
+        {
+          "variant": "Low back/knee morning stiffness with cold soreness, aversion to cold with cold limbs, and frequent nocturia",
+          "points_to": [
+            "pattern.kidney_yang_deficiency"
+          ],
+          "distinguishing": "Cold, aching stiffness of the low back and knees prominent on waking, easing somewhat with activity, with aversion to cold, cold limbs, reduced libido, frequent nocturia or early-morning diarrhea, pale swollen tongue with white slippery coating, deep fine weak pulse especially faint at the chi position"
+        },
+        {
+          "variant": "Mild but lingering stiffness with fatigue, worse with exertion",
+          "points_to": [
+            "pattern.qi_blood_deficiency"
+          ],
+          "distinguishing": "Mild but persistent stiffness, tires easily and cannot sustain activity, with fatigue, pale or sallow complexion, palpitations, pale tongue, thready weak pulse"
+        },
+        {
+          "variant": "Long-standing stiffness with swollen, deformed joints and numbness",
+          "points_to": [
+            "pattern.phlegm_stasis_binding"
+          ],
+          "distinguishing": "Swollen, deformed joints with fixed pain, palpable hard, immovable local nodules, prolonged morning stiffness, limb numbness or difficulty bending/extending, dusky or purplish tongue with possible stasis spots and greasy coating, wiry-choppy or slippery-choppy pulse"
+        }
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "Arnett FC et al., The American Rheumatism Association 1987 revised criteria for the classification of rheumatoid arthritis, Arthritis & Rheumatism 1988",
+        "ACR/EULAR 2010 Rheumatoid Arthritis Classification Criteria (Aletaha D et al., Arthritis & Rheumatism 2010)",
+        "ASAS criteria for inflammatory back pain (Sieper J et al., Annals of the Rheumatic Diseases 2009)",
+        "2012 EULAR/ACR provisional classification criteria for polymyalgia rheumatica (Dasgupta B et al., Annals of the Rheumatic Diseases 2012)",
+        "BSR and BHPR guidelines for the management of polymyalgia rheumatica (Dasgupta B et al., Rheumatology 2010)"
+      ],
+      "safety_flags": [
+        "autoimmune_review",
+        "urgent_red_flag_review"
+      ],
+      "red_flags_zh": [
+        "晨僵持續超過1小時,尤以對稱性小關節(手指、腕)為主,活動後緩解 → 高度提示類風濕性關節炎(晨僵至少1小時為1987年舊版 ACR 分類準則條目之一,現行2010年 ACR/EULAR 準則雖已不再單獨計入晨僵,此臨床型態仍是重要警示),應轉診風濕免疫科評估",
+        "40歲以下,下背/薦髂區晨僵超過30分鐘,活動後改善、休息反而加重 → 提示發炎性下背痛型態(此活動後改善、休息加重的型態呼應 ASAS 發炎性下背痛準則5項參數中的『運動後改善』『休息無法緩解』兩項,晨僵本身並非準則列名條目),應評估是否符合 ASAS 準則以排除中軸型脊椎關節炎(axSpA,含僵直性脊椎炎與非放射學型)",
+        "晨僵合併肩頸髖等近端肌肉痠痛(風濕性多肌痛表現),若同時出現顳側頭痛、下頷咀嚼疲勞痛、視力模糊或視野缺損 → 立即懷疑巨細胞動脈炎,為風濕科/眼科急症,延誤治療有永久失明風險",
+        "單一關節急性紅腫熱痛合併發熱 → 需排除化膿性關節炎,為骨科/感染科急症,須立即轉診,不可等待晨僵病史發展完整",
+        "合併不明原因體重減輕、持續低熱或夜間盜汗 → 排除全身性發炎疾病或惡性腫瘤,需完整檢查"
+      ],
+      "red_flags_en": [
+        "Morning stiffness lasting over an hour, predominantly in symmetric small joints (fingers, wrists), easing with activity → strongly suggests rheumatoid arthritis (morning stiffness of at least 1 hour was an item in the older 1987 ACR classification criteria; the current 2010 ACR/EULAR criteria no longer score it as a separate item, but this pattern remains an important clinical warning sign); refer for rheumatology assessment",
+        "In a person under 40, low back/sacroiliac stiffness lasting over 30 minutes that improves with activity and worsens with rest → suggests an inflammatory back pain pattern (this activity-improved, rest-worsened pattern echoes two of the ASAS inflammatory back pain criteria's five named parameters — 'improvement with exercise' and 'no improvement with rest' — though morning stiffness itself is not one of the named items); evaluate against the ASAS criteria to rule out axial spondyloarthritis (axSpA), including both ankylosing spondylitis and non-radiographic axSpA",
+        "Morning stiffness with proximal shoulder/hip girdle aching (a polymyalgia rheumatica presentation), together with temporal headache, jaw claudication, visual blurring or visual field loss → suspect giant cell arteritis immediately; this is a rheumatology/ophthalmology emergency, and delayed treatment risks permanent vision loss",
+        "Acute red, hot, swollen single joint with fever → rule out septic arthritis, an orthopedic/infectious-disease emergency requiring immediate referral — do not wait to fully characterize the morning-stiffness history",
+        "Unexplained weight loss, persistent low-grade fever or night sweats → rule out systemic inflammatory disease or malignancy; full work-up required"
+      ],
+      "supporting_measurements": [
+        "metric.range_of_motion_deg"
+      ],
+      "sources": [
+        "Arnett FC et al., The American Rheumatism Association 1987 revised criteria for the classification of rheumatoid arthritis, Arthritis & Rheumatism 1988 — 晨僵至少1小時為條目之一(舊版準則,現行2010年 ACR/EULAR 準則已不再採計晨僵)",
+        "ACR/EULAR 2010 Rheumatoid Arthritis Classification Criteria (Aletaha D et al., Arthritis & Rheumatism 2010) — 現行RA分類計分準則,採關節侵犯、血清學、急性期反應物、症狀持續週數計分,不含晨僵條目",
+        "ASAS criteria for inflammatory back pain (Sieper J et al., Annals of the Rheumatic Diseases 2009) — 用於篩檢中軸型脊椎關節炎(axSpA,含僵直性脊椎炎與非放射學型);5項參數未直接列『晨僵』,以『運動後改善』『休息無法緩解』呈現相近的活動緩解型態",
+        "2012 EULAR/ACR provisional classification criteria for polymyalgia rheumatica (Dasgupta B et al., Annals of the Rheumatic Diseases 2012) — 晨僵超過45分鐘為正式計分條目(2分)",
+        "BSR and BHPR guidelines for the management of polymyalgia rheumatica (Dasgupta B et al., Rheumatology 2010) — PMR 治療與照護指引,含 PMR 與巨細胞動脈炎共病之紅旗提醒(非分類準則論文)",
+        "NHS, Rheumatoid arthritis - Symptoms, https://www.nhs.uk/conditions/rheumatoid-arthritis/symptoms/",
+        "中醫內科學／中醫診斷學 通行教材 —— 痺症(風寒濕痺、熱痺)辨證內容",
+        "本 repo 既有卡片:sym.limb_stiffness(肢體僵硬,較廣義,含帕金森氏症肌強直)· pattern_library 各證型 key_signs_zh/tongue_zh/pulse_zh"
+      ],
+      "field_sources": {
+        "definition_zh/en": "1987年舊版 ACR RA 分類準則(晨僵至少1小時為條目之一,現行2010年 ACR/EULAR 新版已不再採計)+ 2012年 EULAR/ACR PMR 臨時分類準則(晨僵超過45分鐘為正式計分條目)+ ASAS 發炎性下背痛準則(5項參數不含『晨僵』,以『運動後改善』相近呈現);並與 sym.limb_stiffness 既有定義比對以劃清兩卡範圍。本輪 WebSearch 查證 ASAS 發炎性下背痛準則(Sieper 2009)與後續 axSpA 分類準則之建立目的與適用範圍,確認其涵蓋僵直性脊椎炎與尚未達放射學薦髂關節炎變化的非放射學型病人,而非僅限僵直性脊椎炎;故將 definition_zh/en、inquiry_zh/en(部位維度)、red_flags_zh/en、sources 中原窄化為『僵直性脊椎炎』的措辭統一改為『中軸型脊椎關節炎(axSpA)』",
+        "inquiry_zh/en 時間": "1987年舊版 ACR RA 準則(晨僵至少1小時)+ 2012年 EULAR/ACR PMR 準則(晨僵超過45分鐘)+ ASAS 發炎性下背痛準則概念(運動後改善、休息無法緩解,臨床上常搭配晨僵超過30分鐘作為問診提示,但非準則列名條目)之時間閾值,詳見 definition_zh/en 的準則沿革說明",
+        "differentiation_zh/en": "中醫內科學／中醫診斷學 痺症辨證(風寒濕痺、熱痺)+ 本 repo pattern_library 各證型 key_signs_zh/tongue_zh/pulse_zh 逐條核對(Read pattern_library.json 實際內容後修訂:移除 pattern.kidney_yang_deficiency key_signs_zh 不支持的脊背/薦髂特定部位主張、移除 pattern.wind_cold_damp_bi key_signs_zh 未列的『得按』手法描述、移除5條中西醫病程分期用語缺乏 pattern_library 或列出來源支持的部分,改以各證型自身 key_signs_zh/tongue_zh/pulse_zh 內容補實;本輪重新 Read pattern_library.json 核對5個 pattern id 之 key_signs_zh/tongue_zh/pulse_zh,與現有 distinguishing 描述一致,未再修改)",
+        "red_flags_zh/en": "BSR/BHPR 風濕性多肌痛指引(GCA 共病警示)+ 1987年 ACR、2010年 ACR/EULAR、2012年 EULAR/ACR PMR、ASAS 分類準則 + NHS RA 症狀頁;red_flags[1] 排除範圍措辭同步由『僵直性脊椎炎』修正為『中軸型脊椎關節炎(axSpA,含僵直性脊椎炎與非放射學型)』,理由見 definition_zh/en 說明",
+        "supporting_measurements": "data/clinical_cases/outcome_metrics.json —— metric.range_of_motion_deg(既有,未新增)"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
+    },
+    {
+      "id": "sym.low_libido",
+      "name_zh": "性慾減退",
+      "name_en": "Low libido",
+      "pinyin": "xing yu jian tui",
+      "pinyin_toned": "xìng yù jiǎn tuì",
+      "aliases_zh": [
+        "性慾低下",
+        "性冷感",
+        "慾望減退",
+        "性趣缺缺"
+      ],
+      "aliases_en": [
+        "Decreased libido",
+        "Diminished sexual desire",
+        "Low sex drive",
+        "Hypoactive sexual desire"
+      ],
+      "taxonomy_ids": [
+        "sym.male",
+        "sym.female",
+        "sym.mental_emotional"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported"
+      ],
+      "primary_mode": "patient_reported",
+      "definition_zh": "對性活動的興趣、渴望或衝動，持續或反覆地較個人原有基準或該年齡層與關係階段的常態明顯降低，包括主動性慾念減少、對性刺激反應遲鈍、性幻想或性相關念頭減少，並造成當事人或伴侶困擾。可見於男性與女性，是主訴而非診斷——同一個「性慾減退」可對應到荷爾蒙、藥物、慢性病、心理與關係等多重西醫病因，也可能出現在多個中醫證型之下，卡片記錄的是「該問什麼、指向哪裡」，不是結論。",
+      "definition_en": "A persistent or recurrent decrease — relative to a person's own baseline or to what is typical for their age and relationship stage — in interest in, desire for, or drive toward sexual activity, including reduced spontaneous desire, blunted response to sexual cues, and fewer sexual thoughts or fantasies, causing distress to the person or their partner. It occurs in both men and women and is a presenting complaint, not a diagnosis: the same \"low libido\" can trace back to hormonal, pharmacological, chronic-disease, psychological or relational causes in biomedicine, and to several different TCM patterns; this card records what to ask and what it points toward, not a conclusion.",
+      "patient_words_zh": "「都提不起興趣」「性趣缺缺」「好像開關被關掉了」「不是不愛對方，就是沒有慾望」「以前會主動，現在完全沒感覺」「連想都不會想」「配偶說我很久沒興趣了」",
+      "patient_words_en": "\"I just don't feel like it anymore\", \"No interest at all\", \"It's like a switch got turned off\", \"It's not that I don't love my partner, I just have no desire\", \"I used to initiate, now I feel nothing\", \"It doesn't even cross my mind\", \"My partner says I haven't been interested in a long time\"",
+      "clinical_attributes": {
+        "location": {
+          "applicable": false
+        },
+        "quality": {
+          "applicable": false
+        },
+        "laterality": {
+          "applicable": false
+        },
+        "timing": {
+          "applicable": true,
+          "vocabulary": "symptom_timing"
+        },
+        "severity": {
+          "applicable": false,
+          "why": "實例值，屬病例層（§8）"
+        },
+        "duration": {
+          "applicable": false,
+          "why": "實例值，屬病例層（§8）"
+        }
+      },
+      "inquiry_zh": [
+        {
+          "dimension": "時間",
+          "why": "是否與特定生理週期或情境相關，如停經前後、產後、特定用藥期間；抑或不分時地皆持續低落，兩者分別指向不同機轉"
+        },
+        {
+          "dimension": "程度",
+          "why": "完全無性念頭與仍有念頭但反應遲鈍，臨床意義不同；是否僅慾念下降，或合併勃起／潤滑等生理反應障礙，決定要不要先排查器質性病因"
+        },
+        {
+          "dimension": "誘因",
+          "why": "荷爾蒙變化（停經、產後、甲狀腺功能異常）、藥物（抗憂鬱藥、降血壓藥、荷爾蒙避孕藥）、慢性病（糖尿病、腎病）、情緒（憂鬱、焦慮、壓力）、關係衝突、過度勞累"
+        },
+        {
+          "dimension": "緩解",
+          "why": "壓力減輕或休假後是否改善（提示心因性）、更換或停用可疑藥物後是否改善（提示藥物性）、更換伴侶或情境是否不同（提示情境性而非器質性）"
+        },
+        {
+          "dimension": "伴隨症",
+          "why": "腰膝痠軟畏寒提示腎陽虛；耳鳴健忘提示腎精不足；胸脅脹悶易怒提示肝鬱；神疲失眠心悸提示心脾兩虛；情緒持續低落或自殺意念則進入紅旗流程"
+        },
+        {
+          "dimension": "病程",
+          "why": "從年輕時即持續偏低（原發性）與曾經正常、後天新發（續發性）處置方向不同；所有情境下皆低（全面性）與僅特定伴侶／情境下低（情境性）提示心理關係因素而非生理病因"
+        }
+      ],
+      "inquiry_en": [
+        {
+          "dimension": "Timing",
+          "why": "Whether it tracks a specific physiological window or context — perimenopause, postpartum, a particular medication course — versus being persistently low regardless of time or setting points to different mechanisms"
+        },
+        {
+          "dimension": "Severity",
+          "why": "A complete absence of sexual thoughts versus reduced but present desire with blunted response carries different weight; whether only desire is reduced, or arousal/lubrication is also impaired, decides whether to prioritise an organic workup"
+        },
+        {
+          "dimension": "Triggers",
+          "why": "Hormonal change (menopause, postpartum, thyroid dysfunction), medication (antidepressants, antihypertensives, hormonal contraception), chronic disease (diabetes, kidney disease), mood (depression, anxiety, stress), relationship conflict, overexertion"
+        },
+        {
+          "dimension": "Relief",
+          "why": "Improvement after reduced stress or time off suggests a psychological cause; improvement after stopping or switching a suspect medication suggests a pharmacological cause; a change with a new partner or setting suggests a situational rather than organic cause"
+        },
+        {
+          "dimension": "Accompanying signs",
+          "why": "Weak aching low back and knees with cold intolerance suggests Kidney Yang deficiency; tinnitus and forgetfulness suggest Kidney essence deficiency; chest/hypochondriac fullness and irritability suggest Liver stagnation; fatigue, insomnia and palpitations suggest Heart-Spleen deficiency; persistent low mood or suicidal ideation enters the red-flag pathway"
+        },
+        {
+          "dimension": "Course",
+          "why": "Low desire present since young adulthood (primary/lifelong) versus previously normal desire that declined later (secondary/acquired) is managed differently; low across every context (generalized) versus low only with a particular partner or setting (situational) points toward psychological or relational rather than organic causes"
+        }
+      ],
+      "differentiation_zh": [
+        {
+          "variant": "性慾減退，陽痿或性冷淡，腰膝痠冷，畏寒肢冷",
+          "points_to": [
+            "pattern.kidney_yang_deficiency"
+          ],
+          "distinguishing": "性慾明顯減退，男子可兼陽痿、女子可兼性交淡漠或陰冷，腰膝痠軟冷痛，畏寒肢冷，夜尿頻多或小便清長，精神萎靡，面色㿠白，舌淡胖苔白，脈沉細無力，多見於年高、久病或房勞過度"
+        },
+        {
+          "variant": "性慾減退，兼耳鳴健忘、腰膝痠軟、髮脫齒搖",
+          "points_to": [
+            "pattern.kidney_essence_deficiency"
+          ],
+          "distinguishing": "性慾減退兼生殖機能減退（男子精少精冷、女子經量稀少甚至閉經），伴耳鳴健忘、腰膝痠軟、齒搖髮脫、動作遲緩，多見於先天稟賦不足或年高精虧，起病緩慢"
+        },
+        {
+          "variant": "性慾減退隨情緒波動加重，胸脅脹悶，善太息",
+          "points_to": [
+            "pattern.liver_qi_stagnation"
+          ],
+          "distinguishing": "性慾減退明顯與情緒、壓力或伴侶關係相關，兼胸脅脹悶、善太息、情緒抑鬱或急躁易怒，女子可兼月經不調、經前乳房脹痛，脈弦"
+        },
+        {
+          "variant": "性慾減退，神疲乏力，失眠多夢，心悸健忘",
+          "points_to": [
+            "pattern.heart_spleen_deficiency"
+          ],
+          "distinguishing": "性慾減退兼神疲乏力、失眠多夢、心悸健忘、食少便溏、面色萎黃，多因思慮勞倦過度或久病耗傷心脾氣血"
+        },
+        {
+          "variant": "性慾減退，兼陰部潮濕搔癢或帶下黃稠，口苦，小便黃赤",
+          "points_to": [
+            "pattern.liver_gallbladder_damp_heat"
+          ],
+          "distinguishing": "性慾減退因濕熱蘊阻下焦而非精血虧虛，兼陰部潮濕搔癢或陰囊潮濕（男）、帶下量多色黃質稠（女）、口苦、小便黃赤、舌苔黃膩，病程可短可長"
+        },
+        {
+          "variant": "性慾減退，兼心煩失眠、五心煩熱、腰膝痠軟、盜汗",
+          "points_to": [
+            "pattern.heart_kidney_not_communicating"
+          ],
+          "distinguishing": "性慾減退兼心煩不寐、多夢易醒、五心煩熱、腰膝痠軟、盜汗，男子可兼遺精，舌紅少苔，脈細數，多見於熬夜、思慮過度或久病傷陰之人"
+        }
+      ],
+      "differentiation_en": [
+        {
+          "variant": "Low libido with impotence or sexual indifference, cold aching low back and knees",
+          "points_to": [
+            "pattern.kidney_yang_deficiency"
+          ],
+          "distinguishing": "Marked loss of desire; men may also have erectile dysfunction, women sexual indifference or vaginal coldness; cold aching low back and knees, cold intolerance and cold limbs, frequent night urination or long clear urination, listlessness, pale puffy complexion, pale swollen tongue with white coating, deep thin weak pulse; common with older age, chronic illness or sexual overexertion"
+        },
+        {
+          "variant": "Low libido with tinnitus, forgetfulness, weak aching low back and knees, loosening teeth and hair loss",
+          "points_to": [
+            "pattern.kidney_essence_deficiency"
+          ],
+          "distinguishing": "Low libido together with declining reproductive function (scanty, cold semen in men; scanty menses or amenorrhea in women), tinnitus, forgetfulness, weak aching low back and knees, loosening teeth, hair loss and slowed movement; usually congenital insufficiency or age-related essence depletion, gradual onset"
+        },
+        {
+          "variant": "Low libido that worsens with emotional swings, chest and hypochondriac fullness, frequent sighing",
+          "points_to": [
+            "pattern.liver_qi_stagnation"
+          ],
+          "distinguishing": "Low libido clearly tracking mood, stress or relationship strain, with chest and hypochondriac fullness, frequent sighing, depressed mood or irritability; women may also have irregular menses and premenstrual breast tenderness; wiry pulse"
+        },
+        {
+          "variant": "Low libido with fatigue, insomnia with dream-disturbed sleep, palpitations and forgetfulness",
+          "points_to": [
+            "pattern.heart_spleen_deficiency"
+          ],
+          "distinguishing": "Low libido with fatigue, insomnia with dream-disturbed sleep, palpitations, forgetfulness, poor appetite, loose stool, sallow complexion; usually from excessive overthinking, overwork, or chronic illness depleting Heart-Spleen qi and blood"
+        },
+        {
+          "variant": "Low libido with genital dampness and itching or thick yellow discharge, bitter taste, dark urine",
+          "points_to": [
+            "pattern.liver_gallbladder_damp_heat"
+          ],
+          "distinguishing": "Low libido from damp-heat obstructing the lower burner rather than essence-blood depletion, with genital dampness and itching or scrotal moisture (men), profuse thick yellow vaginal discharge (women), bitter taste, dark scanty urine, greasy yellow tongue coating; course may be short or long"
+        },
+        {
+          "variant": "Low libido with restlessness, insomnia, five-palm heat, weak aching low back and knees, night sweats",
+          "points_to": [
+            "pattern.heart_kidney_not_communicating"
+          ],
+          "distinguishing": "Low libido with restlessness and insomnia, frequent waking with dreams, five-palm heat, weak aching low back and knees, night sweats; men may also have spontaneous seminal emission; red tongue with scanty coating, thin rapid pulse; common with chronic sleep deprivation, overthinking or yin-damaging chronic illness"
+        }
+      ],
+      "safety_review_status": "specific_red_flags_present",
+      "safety_review_sources": [
+        "Melmed S, Casanueva FF, Hoffman AR, et al. Diagnosis and Treatment of Hyperprolactinemia: An Endocrine Society Clinical Practice Guideline. J Clin Endocrinol Metab. 2011;96(2):273-288.",
+        "Bhasin S, Brito JP, Cunningham GR, et al. Testosterone Therapy in Men With Hypogonadism: An Endocrine Society Clinical Practice Guideline. J Clin Endocrinol Metab. 2018;103(5):1715-1744.",
+        "Serretti A, Chiesa A. Treatment-Emergent Sexual Dysfunction Related to Antidepressants: A Meta-Analysis. J Clin Psychopharmacol. 2009;29(3):259-266.",
+        "DSM-5-TR — Major Depressive Disorder 診斷準則；Male Hypoactive Sexual Desire Disorder／Female Sexual Interest/Arousal Disorder 診斷準則"
+      ],
+      "safety_flags": [
+        "psychiatric_red_flags",
+        "medication_review",
+        "neurologic_red_flags",
+        "urgent_red_flag_review"
+      ],
+      "red_flags_zh": [
+        "新發性慾減退合併頭痛、視野缺損，或非哺乳期溢乳（男女皆可能）→ 提示高泌乳素血症或腦垂體腫瘤，需內分泌評估與影像學檢查",
+        "性慾減退合併情緒持續低落、對日常活動全面失去興趣、自殺意念或計畫 → 符合重鬱症警訊，需立即精神科評估",
+        "新使用或調整抗憂鬱藥（尤其 SSRI／SNRI）、抗雄性素藥物、荷爾蒙避孕藥或部分降血壓藥後出現明顯性慾減退 → 藥物相關，建議與處方醫師討論調整劑量或替代方案，不宜自行停藥",
+        "性慾減退合併不明原因體重減輕、持續倦怠、多尿多飲，或停經年齡外的月經停止 → 提示甲狀腺功能異常、糖尿病或性腺功能低下等系統性內分泌疾病，需進一步檢查"
+      ],
+      "red_flags_en": [
+        "New-onset low libido with headache, visual field loss, or non-lactational galactorrhea (possible in both sexes) → suggests hyperprolactinemia or a pituitary tumor; needs endocrine evaluation and imaging",
+        "Low libido with persistent low mood, loss of interest across daily activities, or suicidal ideation/plan → meets depression red-flag criteria; needs immediate psychiatric evaluation",
+        "Marked low libido after starting or adjusting an antidepressant (especially SSRI/SNRI), an anti-androgen, hormonal contraception, or certain antihypertensives → medication-related; discuss dose adjustment or alternatives with the prescriber rather than stopping on one's own",
+        "Low libido with unexplained weight loss, persistent fatigue, polyuria/polydipsia, or cessation of menses outside the expected menopausal age → suggests a systemic endocrine cause (thyroid dysfunction, diabetes, hypogonadism) requiring further workup"
+      ],
+      "sources": [
+        "Melmed S, Casanueva FF, Hoffman AR, et al. Diagnosis and Treatment of Hyperprolactinemia: An Endocrine Society Clinical Practice Guideline. J Clin Endocrinol Metab. 2011;96(2):273-288.（紅旗：高泌乳素血症／腦垂體腫瘤）",
+        "Bhasin S, Brito JP, Cunningham GR, et al. Testosterone Therapy in Men With Hypogonadism: An Endocrine Society Clinical Practice Guideline. J Clin Endocrinol Metab. 2018;103(5):1715-1744.（性慾減退作為性腺功能低下症狀之一）",
+        "Serretti A, Chiesa A. Treatment-Emergent Sexual Dysfunction Related to Antidepressants: A Meta-Analysis. J Clin Psychopharmacol. 2009;29(3):259-266.（藥物性性慾減退）",
+        "DSM-5-TR — Diagnostic and Statistical Manual of Mental Disorders, 5th ed., Text Revision（Major Depressive Disorder 與 Male Hypoactive Sexual Desire Disorder／Female Sexual Interest/Arousal Disorder 診斷準則）",
+        "中醫男科學／中醫婦科學 通行教材內容 —— 性慾減退辨證（腎陽虛、腎精不足、肝氣鬱結、心脾兩虛、肝膽濕熱、心腎不交）",
+        "本 repo 既有卡片：pattern_library 各證型 key_signs_zh 對照"
+      ],
+      "field_sources": {
+        "definition_zh/en": "DSM-5-TR Male Hypoactive Sexual Desire Disorder／Female Sexual Interest/Arousal Disorder 診斷框架 + 中醫男科學／婦科學 對「性慾減退」的界定",
+        "inquiry_zh/en": "臨床性功能問診常規（病程原發／續發、全面性／情境性、誘因、伴隨內分泌與情緒症狀）+ 中醫男科學／婦科學問診要點",
+        "differentiation_zh/en": "中醫男科學／婦科學 性慾減退相關分證 + 本 repo pattern_library 各證型 key_signs_zh 對照（六個 pattern id 與其 distinguishing 描述已逐一核對 pattern_library.json 的 key_signs_zh/tongue_zh/pulse_zh：kidney_yang_deficiency 的 key_signs_zh 本身即列有「性慾減退」；其餘五證的連結為中醫男科學／婦科學教材對此症狀的延伸辨證，非 pattern_library 自身宣稱）",
+        "red_flags_zh/en": "Melmed et al. 2011（高泌乳素血症）· Bhasin et al. 2018（性腺功能低下）· Serretti & Chiesa 2009（抗憂鬱藥性功能副作用）· DSM-5-TR 憂鬱症診斷準則",
+        "safety_flags": "psychiatric_red_flags 對應重鬱症／自殺意念風險；medication_review 依 safety_flag_vocabulary.json 定義為「藥物交互作用審核」（kind: interaction，非病因分類），用於提醒治療前檢視病人正在服用、可能影響性慾的藥物（如 SSRI／SNRI、抗雄性素、荷爾蒙避孕藥、部分降血壓藥）；neurologic_red_flags 對應高泌乳素血症／腦垂體腫瘤之頭痛、視野缺損等神經科警示徵象；urgent_red_flag_review 對應體重減輕、多尿多飲等系統性內分泌警示徵象（此項紅旗在既有 7 個 kind:red_flag 旗標中無更精確對應者，故以此涵蓋）",
+        "supporting_measurements": "刻意留空 —— 已核對 data/clinical_cases/outcome_metrics.json，現有 27 個 metric.* 記錄中無對應性慾／性功能量化項"
+      },
+      "source_type": "source_assisted_draft_pending_ting_verification",
+      "review_status": "draft",
+      "authored_by": "model_draft"
     }
   ]
 }
