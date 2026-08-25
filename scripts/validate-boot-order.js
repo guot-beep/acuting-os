@@ -40,7 +40,11 @@ if (renderLine === -1) {
 
 const offenders = [];
 lines.forEach((line, i) => {
-  const m = line.match(/^const ([A-Z][A-Z0-9_]+) = [{[]/);
+  /* 2026-08-24 放寬:原本只比對 `= {` 與 `= [`,於是字串、正則、new Set(…)
+   * 這幾種宣告完全漏網 —— 但 TDZ 不看右邊是什麼字面值,它們一樣會炸。
+   * 實測當時有 4 個漏網(REPEATABLE_ROW_OTHER_VALUE 就是其一,而生活型態列
+   * 的渲染路徑會用到它)。改成比對任何 `const 大寫名 = `。 */
+  const m = line.match(/^const ([A-Z][A-Z0-9_]+) = /);
   if (m && i + 1 > renderLine) offenders.push({ name: m[1], line: i + 1 });
 });
 

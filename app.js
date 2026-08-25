@@ -735,6 +735,62 @@ const ADVERSE_EVENT_INTERVENTION_LABELS = { acupuncture: "針刺 Acupuncture", c
 const ADVERSE_EVENT_SEVERITY_LABELS = { mild: "輕度 Mild", moderate: "中度 Moderate", severe: "重度 Severe" };
 const ADVERSE_EVENT_RESOLUTION_LABELS = { resolved: "已緩解 Resolved", resolving: "緩解中 Resolving", ongoing: "持續中 Ongoing", unknown: "不確定 Unknown" };
 const CONSENT_LABELS = { granted: "已同意 Granted", declined: "婉拒 Declined", pending: "待決 Pending" };
+// Phase D batch 2 (docs/SPRINT_2026-08-12_BRIEF.md task 2): visit-level
+// Lifestyle / Adverse events repeatable rows inside the SOAP dialog, writing
+// note.lifestyleFactors[] / note.adverseEvents[] (D17 §6/§4 shapes owned by
+// normalizeSoapNote — this section only builds/reads the DOM rows, the
+// normalizer still enforces the actual field shapes on save). Rows are
+// DRAFT/editable/removable before save — the append-only rule applies to
+// case-level exposure EVENTS (applyExposureChange), never to these visit
+// rows. No code path here may turn a life.*/adverse_event.* selection into a
+// pattern/tdis id (D17 §6 hard rule) — these functions only read/write the
+// vocab id and free text the practitioner picked.
+const REPEATABLE_ROW_OTHER_VALUE = "__other__";
+// FIX A (Dry Clinic #6) — form draft autosave for caseDialog/soapDialog ----
+// UI convenience only: lives entirely under CASE_DRAFT_KEY/SOAP_DRAFT_KEY
+// (never CASE_STORAGE_KEY), never read by persistClinicalCases/
+// loadClinicalCases, and never touched by export/import — those all stay
+// scoped to `clinicalCases`, which a draft never becomes part of.
+//
+// serializeFormDraft/restoreFormDraft round-trip every NAMED form element
+// via FormData: plain text/number/select/textarea fields, checkbox groups
+// (raceEthnicity, previousTreatment, modalitiesPerformed — restored via the
+// existing setCheckboxGroup helper), and every link-picker's HIDDEN
+// textarea (westernConditions, tcmPatternLinks, safetyFlagLinks, etc. —
+// enhanceLinkField's setValues keeps that textarea's value in sync with the
+// chips, and `hidden` does not exclude an element from FormData). Restoring
+// those textareas' values and then re-running each controller's `sync()`
+// rebuilds the chip UI through the SAME render path used on dialog open —
+// full chip restore, not just plain fields.
+//
+// 2026-08-24 更正:此處原本記著「兩個可重複列不還原,Acceptable」。
+// 它們的列確實不在 FormData 裡(data-role 而非 name),但那是理由不是藉口 ——
+// 見下方 serializeFormDraft 的註解:現在用 collect*/render* 這對現成函式
+// 存進保留鍵 DRAFT_ROWS_KEY 並重建,兩段都會回來。
+/* 上面那段「Documented boundary」曾經把兩個可重複列判為 Acceptable 不還原。
+ * 不能接受:橫幅只寫「找到未儲存草稿 — 還原 / 捨棄」,按下還原之後其他欄位
+ * 都回來了,**唯獨已填的不良事件列不見,而且沒有任何提示**。使用者無從分辨
+ * 「我當時沒填 AE」與「AE 被還原機制丟掉了」,而丟的是安全資料。
+ *
+ * 這兩個列有現成的讀取器(collect*Rows)與渲染器(render*Rows),所以真的
+ * 存得起來,不必只加一句警告。存在保留鍵底下 —— 底線開頭不會與任何欄位
+ * name 相撞,restoreFormDraft 的泛用迴圈也會自然跳過(form.elements 找不到)。
+ * 只有實際含有這兩個容器的表單(SOAP)才會帶,病例表單不受影響。 */
+const DRAFT_ROWS_KEY = "__repeatableRows";
+// Initial-intake Phase 2 (2026-08-09) — Category quick-pick ----------------
+// docs/CASE_SOAP_FLOW_REVIEW.md's 10 recommended routing tags. This is an
+// ASSIST control only: the stored field is still caseForm.elements.caseCategory
+// (plain text, unchanged shape/schema). Picking a quick option writes into
+// that text field; picking "Other / custom" or typing directly leaves it as
+// free text — old/uncommon categories are never lost or forced into the list.
+const CASE_CATEGORY_QUICK_VALUES = new Set([
+  "fertility", "pain", "digestive", "sleep", "stress_mood",
+  "respiratory", "gynecology", "dermatology", "internal_medicine", "general",
+]);
+// Initial-intake minimum dataset (2026-08-09): "" (not yet answered) and the
+// literal word "unknown" (asked, not known) are kept distinct on purpose —
+// both are legitimate, neither is a format error. D4: coarsen, never falsify.
+const ONSET_APPROX_RE = /^(\d{4}(-\d{2}(-\d{2})?)?|unknown)$/i;
 /* 臨床反思六問(CG9)的題目與欄位對映。同上,必須在初始 render() 之前宣告
  * —— renderCaseReflection 在首次 render 就會執行。順序即畫面順序。 */
 const CASE_REFLECTION_QUESTIONS = [
@@ -1321,8 +1377,8 @@ caseForm.addEventListener("submit", saveCaseFromForm);
 soapForm.addEventListener("submit", saveSoapFromForm);
 // FIX A — throttled draft autosave (see wireDraftAutosave near openCaseEditor/
 // openSoapEditor for the read/restore/clear side of this).
-wireDraftAutosave(caseForm, CASE_DRAFT_KEY, () => editingCaseId || "new");
-wireDraftAutosave(soapForm, SOAP_DRAFT_KEY, () => `${selectedCaseId || ""}:${editingSoapId || "new"}`);
+wireDraftAutosave(caseForm, CASE_DRAFT_KEY, () => editingCaseId || "new", caseDraftBanner);
+wireDraftAutosave(soapForm, SOAP_DRAFT_KEY, () => `${selectedCaseId || ""}:${editingSoapId || "new"}`, soapDraftBanner);
 // FIX B — native "invalid" event fires (capture phase; it does not bubble)
 // on every :invalid field when the browser blocks an attempted submit. We
 // only surface the FIRST one so the message/scroll doesn't thrash across
@@ -6301,17 +6357,7 @@ function renderOutcomeTrackingPanel(item) {
 // 時開機即崩。AVS v3 驗證走查時實測抓到,非新引入。)
 // (宣告已前移至檔頭 —— 見 AGENT_EXPOSURE_TYPE_LABELS 註解,TDZ 修正)
 
-// Phase D batch 2 (docs/SPRINT_2026-08-12_BRIEF.md task 2): visit-level
-// Lifestyle / Adverse events repeatable rows inside the SOAP dialog, writing
-// note.lifestyleFactors[] / note.adverseEvents[] (D17 §6/§4 shapes owned by
-// normalizeSoapNote — this section only builds/reads the DOM rows, the
-// normalizer still enforces the actual field shapes on save). Rows are
-// DRAFT/editable/removable before save — the append-only rule applies to
-// case-level exposure EVENTS (applyExposureChange), never to these visit
-// rows. No code path here may turn a life.*/adverse_event.* selection into a
-// pattern/tdis id (D17 §6 hard rule) — these functions only read/write the
-// vocab id and free text the practitioner picked.
-const REPEATABLE_ROW_OTHER_VALUE = "__other__";
+// (REPEATABLE_ROW_OTHER_VALUE 宣告已前移至檔頭 boot-order 區 —— 見 AGENT_EXPOSURE_TYPE_LABELS 註解)
 // (宣告已前移至檔頭 boot-order 區 —— 見 AGENT_EXPOSURE_TYPE_LABELS 註解)
 // (宣告已前移至檔頭 boot-order 區 —— 見 AGENT_EXPOSURE_TYPE_LABELS 註解)
 // (宣告已前移至檔頭 boot-order 區 —— 見 AGENT_EXPOSURE_TYPE_LABELS 註解)
@@ -8740,36 +8786,19 @@ function selectPoint(code) {
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-// FIX A (Dry Clinic #6) — form draft autosave for caseDialog/soapDialog ----
-// UI convenience only: lives entirely under CASE_DRAFT_KEY/SOAP_DRAFT_KEY
-// (never CASE_STORAGE_KEY), never read by persistClinicalCases/
-// loadClinicalCases, and never touched by export/import — those all stay
-// scoped to `clinicalCases`, which a draft never becomes part of.
-//
-// serializeFormDraft/restoreFormDraft round-trip every NAMED form element
-// via FormData: plain text/number/select/textarea fields, checkbox groups
-// (raceEthnicity, previousTreatment, modalitiesPerformed — restored via the
-// existing setCheckboxGroup helper), and every link-picker's HIDDEN
-// textarea (westernConditions, tcmPatternLinks, safetyFlagLinks, etc. —
-// enhanceLinkField's setValues keeps that textarea's value in sync with the
-// chips, and `hidden` does not exclude an element from FormData). Restoring
-// those textareas' values and then re-running each controller's `sync()`
-// rebuilds the chip UI through the SAME render path used on dialog open —
-// full chip restore, not just plain fields.
-//
-// Documented boundary: the two repeatable row widgets (#lifestyleFactorRows
-// / #adverseEventRows) are NOT restored. Their rows are built from
-// `<div data-role="...">` elements with no `name` attribute by design (read
-// via collectLifestyleFactorRows/collectAdverseEventRows querying
-// data-role directly — see wireRepeatableRowContainer above), so they never
-// appear in `new FormData(form)` in the first place. A restored draft
-// leaves those two sections empty; every other field (including all chip
-// pickers and every numeric outcome metric input) is fully covered.
+// (DRAFT_ROWS_KEY 宣告已前移至檔頭 boot-order 區 —— 見 AGENT_EXPOSURE_TYPE_LABELS 註解)
+
 function serializeFormDraft(form) {
   const fields = {};
   new FormData(form).forEach((value, key) => {
     (fields[key] || (fields[key] = [])).push(String(value));
   });
+  if (form.querySelector("#lifestyleFactorRows") || form.querySelector("#adverseEventRows")) {
+    fields[DRAFT_ROWS_KEY] = [JSON.stringify({
+      lifestyleFactors: collectLifestyleFactorRows(),
+      adverseEvents: collectAdverseEventRows()
+    })];
+  }
   return fields;
 }
 
@@ -8795,6 +8824,18 @@ function restoreFormDraft(form, fields) {
       el.value = values[0] ?? "";
     }
   });
+  // 可重複列(生活型態 / 不良事件)走自己的渲染器重建。壞掉的草稿不當機:
+  // 解析失敗就維持現狀,不要因為救不回這兩段而讓整個還原失敗。
+  const rowsRaw = (fields || {})[DRAFT_ROWS_KEY];
+  if (rowsRaw && rowsRaw[0]) {
+    try {
+      const rows = JSON.parse(rowsRaw[0]);
+      if (Array.isArray(rows.lifestyleFactors)) renderLifestyleFactorRows(rows.lifestyleFactors);
+      if (Array.isArray(rows.adverseEvents)) renderAdverseEventRows(rows.adverseEvents);
+    } catch (e) {
+      console.error("draft restore: repeatable rows unreadable", e);
+    }
+  }
 }
 
 function readDraft(key) {
@@ -8809,6 +8850,11 @@ function readDraft(key) {
   }
 }
 
+/* 自動存檔失敗過去只有 console.error。無痕模式的 setItem 一律拋例外,
+ * 額度被病例吃滿也會拋 —— 她打了 20 分鐘 SOAP、每一次自動存檔都失敗、
+ * 畫面上零提示;誤關對話框後回來,還原橫幅不會出現,而那看起來就跟
+ * 「本來就沒有草稿」一模一樣。
+ * 回傳成功與否,由呼叫端掛到畫面上;絕不假裝存過了。 */
 function writeDraft(key, context, form) {
   try {
     localStorage.setItem(key, JSON.stringify({
@@ -8816,8 +8862,10 @@ function writeDraft(key, context, form) {
       savedAt: new Date().toISOString(),
       fields: serializeFormDraft(form)
     }));
+    return { ok: true };
   } catch (e) {
     console.error(`draft autosave failed (${key}):`, e);
+    return { ok: false, message: String((e && e.message) || e) };
   }
 }
 
@@ -8830,13 +8878,22 @@ function clearDraft(key) {
 // it elapses. Re-arms on the next input after that. getContext() is called
 // at write time (not bind time) so it always reflects whichever case/SOAP
 // note is currently open in the dialog.
-function wireDraftAutosave(form, key, getContext) {
+function wireDraftAutosave(form, key, getContext, bannerEl) {
   let timer = null;
+  let warned = false;   // 只警告一次,不要每秒重畫同一句
   form.addEventListener("input", () => {
     if (timer) return;
     timer = setTimeout(() => {
       timer = null;
-      writeDraft(key, getContext(), form);
+      const res = writeDraft(key, getContext(), form);
+      if (res.ok) { warned = false; return; }
+      if (warned || !bannerEl) return;
+      warned = true;
+      // 這條橫幅講的是「誤關對話框就救不回來」,所以它必須在她還在打字時
+      // 就出現,而不是等到關掉之後才發現沒有草稿可還原。
+      bannerEl.hidden = false;
+      bannerEl.classList.add("draft-banner-error");
+      bannerEl.textContent = `⚠ 自動存檔失敗,這份草稿沒有備份 —— 現在關掉對話框就救不回來了。請先按「儲存」。(${res.message})`;
     }, 1000);
   });
 }
@@ -8850,6 +8907,9 @@ function formatDraftTimestamp(iso) {
 // what log #14/#6 are both reacting against). Pass draft: null to hide it.
 function renderDraftBanner(bannerEl, draft, onRestore, onDiscard) {
   if (!bannerEl) return;
+  // 自動存檔失敗的警告會借用同一個元素,重畫時要把錯誤樣式清掉,
+  // 否則正常的「找到草稿」也會頂著紅框。
+  bannerEl.classList.remove("draft-banner-error");
   if (!draft) {
     bannerEl.hidden = true;
     bannerEl.innerHTML = "";
@@ -8982,16 +9042,7 @@ function openCaseEditor(item = null) {
   if (caseForm.sectionNavMark) caseForm.sectionNavMark();
 }
 
-// Initial-intake Phase 2 (2026-08-09) — Category quick-pick ----------------
-// docs/CASE_SOAP_FLOW_REVIEW.md's 10 recommended routing tags. This is an
-// ASSIST control only: the stored field is still caseForm.elements.caseCategory
-// (plain text, unchanged shape/schema). Picking a quick option writes into
-// that text field; picking "Other / custom" or typing directly leaves it as
-// free text — old/uncommon categories are never lost or forced into the list.
-const CASE_CATEGORY_QUICK_VALUES = new Set([
-  "fertility", "pain", "digestive", "sleep", "stress_mood",
-  "respiratory", "gynecology", "dermatology", "internal_medicine", "general",
-]);
+// (CASE_CATEGORY_QUICK_VALUES 宣告已前移至檔頭 boot-order 區 —— 見 AGENT_EXPOSURE_TYPE_LABELS 註解)
 
 function syncCaseCategoryQuickPick(currentCaseCategory) {
   const quick = document.querySelector("#caseCategoryQuick");
@@ -9143,10 +9194,7 @@ function setCheckboxGroup(form, name, values) {
   });
 }
 
-// Initial-intake minimum dataset (2026-08-09): "" (not yet answered) and the
-// literal word "unknown" (asked, not known) are kept distinct on purpose —
-// both are legitimate, neither is a format error. D4: coarsen, never falsify.
-const ONSET_APPROX_RE = /^(\d{4}(-\d{2}(-\d{2})?)?|unknown)$/i;
+// (ONSET_APPROX_RE 宣告已前移至檔頭 boot-order 區 —— 見 AGENT_EXPOSURE_TYPE_LABELS 註解)
 
 function saveCaseFromForm(event) {
   event.preventDefault();
