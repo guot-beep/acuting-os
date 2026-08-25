@@ -12284,7 +12284,8 @@
         "Cardiotonic, improves microcirculation",
         "Broad-spectrum antimicrobial"
       ],
-      "formula_song": "清營湯治熱傳營，身熱夜甚神不寧，\n角地銀翹玄連竹，丹麥清熱更護陰。"
+      "formula_song": "清營湯治熱傳營，身熱夜甚神不寧，\n角地銀翹玄連竹，丹麥清熱更護陰。",
+      "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/QingYingTang.html"
     },
     {
       "id": "formula.xi_jiao_di_huang_tang",
@@ -12947,7 +12948,8 @@
         "Protects vascular endothelium, reduces capillary fragility",
         "Potent anti-inflammatory, anti-endotoxin, hepatoprotective",
         "Anticonvulsant, central nervous system sedative"
-      ]
+      ],
+      "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/XiJiaoDiHuangTang.html"
     },
     {
       "id": "formula.huang_lian_e_jiao_tang",
@@ -23975,7 +23977,10 @@
       "comparison_group": "shaoyang_harmonize",
       "related_formulas": [
         "formula.da_chai_hu_tang",
-        "formula.ban_xia_xie_xin_tang"
+        "formula.ban_xia_xie_xin_tang",
+        "formula.xiao_yao_san",
+        "formula.tong_xie_yao_fang",
+        "formula.chai_hu_shu_gan_san"
       ],
       "clinical_use_note": "",
       "source_classic": "《傷寒雜病論》",
@@ -24153,6 +24158,9 @@
         ],
         "pattern_indications_en": [
           "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 3 條 / pattern_indications_en 4 條(不同來源並行),對齊為 6 組;原條目逐字保留,補齊側為對側之翻譯"
+        ],
+        "related_formulas": [
+          "curriculum/formulas/ (Board exam high-frequency sister formula associations)"
         ]
       },
       "cloudtcm_id": 43,
@@ -26332,7 +26340,8 @@
         "formula.jia_wei_xiao_yao_san",
         "formula.tong_xie_yao_fang",
         "formula.yue_ju_wan",
-        "formula.chai_hu_shu_gan_san"
+        "formula.chai_hu_shu_gan_san",
+        "formula.xiao_chai_hu_tang"
       ],
       "clinical_use_note": "",
       "source_classic": "《太平惠民和劑局方》",
@@ -26506,6 +26515,9 @@
         ],
         "pattern_indications_en": [
           "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 3 條 / pattern_indications_en 7 條(不同來源並行),對齊為 8 組;原條目逐字保留,補齊側為對側之翻譯"
+        ],
+        "related_formulas": [
+          "curriculum/formulas/ (Board exam high-frequency sister formula associations)"
         ]
       },
       "cloudtcm_id": 219,
@@ -28376,7 +28388,8 @@
         "formula.xiao_yao_san",
         "formula.jia_wei_xiao_yao_san",
         "formula.yue_ju_wan",
-        "formula.chai_hu_shu_gan_san"
+        "formula.chai_hu_shu_gan_san",
+        "formula.xiao_chai_hu_tang"
       ],
       "clinical_use_note": "",
       "nccaom_high_yield": true,
@@ -28675,6 +28688,9 @@
         ],
         "formula_song": [
           "《湯頭歌訣》(汪昂,含通行加減歌)或方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+        ],
+        "related_formulas": [
+          "curriculum/formulas/ (Board exam high-frequency sister formula associations)"
         ]
       },
       "cloudtcm_id": 563,
@@ -30919,6 +30935,9 @@
         ],
         "formula_song": [
           "《湯頭歌訣》(汪昂,含通行加減歌)或方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+        ],
+        "formula_family": [
+          "curriculum/formulas/14_Formula_Cards_131-140_溫裡劑_治風劑.md(Fu Zi Li Zhong Wan card, Section 17 Modifications;帳本 docs/research_packs/FORMULA_FAMILY_PROPOSALS_2026-08-24.json,劑量逐字審計)"
         ]
       },
       "clinical_classification_zh": "臨床常用專病處方",
@@ -31368,7 +31387,18 @@
         "Promotes fluid metabolism, improves renal function"
       ],
       "composition_suspect_cleared_note": "2026-08-19 核對附子理中丸五味(附子、人參、白朮、乾薑、炙甘草)俱在,旗標清除",
-      "formula_song": "理中湯主理中鄉，甘草人參朮黑薑，\n嘔利腹痛陰寒盛，或加附子總回陽。"
+      "formula_song": "理中湯主理中鄉，甘草人參朮黑薑，\n嘔利腹痛陰寒盛，或加附子總回陽。",
+      "formula_family": [
+        {
+          "relation": "加",
+          "name_zh": "桂枝人參湯",
+          "change": [
+            "+桂枝"
+          ],
+          "indication_zh": "脾胃虛寒兼表證未解者",
+          "source": "curriculum/formulas/14_Formula_Cards_131-140_溫裡劑_治風劑.md"
+        }
+      ]
     },
     {
       "id": "formula.xiao_jian_zhong_tang",
@@ -42087,7 +42117,8 @@
         "Enhances hypoxia tolerance, anti-shock",
         "Regulates blood pressure, boosts immunity"
       ],
-      "formula_song": "生脈麥味與人參，保肺清心治暑淫，\n氣少汗多兼口渴，病危脈絕急煎斟。"
+      "formula_song": "生脈麥味與人參，保肺清心治暑淫，\n氣少汗多兼口渴，病危脈絕急煎斟。",
+      "exact_source_url": "https://americandragon.com/Herb%20Formulas%20copy/ShengMaiSan.html"
     },
     {
       "id": "formula.ren_shen_yang_rong_tang",
@@ -58006,7 +58037,8 @@
         "Potent astringent sweating reduction (regulates sweat gland secretion)",
         "Sedative, anxiolytic, cardiac protective",
         "Enhances immunity, improves autonomic regulation"
-      ]
+      ],
+      "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/MuLiSan.html"
     },
     {
       "id": "formula.zhen_ren_yang_zang_tang",
@@ -58546,7 +58578,8 @@
         "Broad-spectrum antibacterial, anti-inflammatory, analgesic",
         "Enhances intestinal water/electrolyte reabsorption"
       ],
-      "formula_song": "真人養臟訶粟殼，肉蔻當歸桂木香，\n朮芍參甘為澀劑，脫肛久痢早煎嘗。"
+      "formula_song": "真人養臟訶粟殼，肉蔻當歸桂木香，\n朮芍參甘為澀劑，脫肛久痢早煎嘗。",
+      "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/ZhenRenYangZangTang.html"
     },
     {
       "id": "formula.si_shen_wan",
@@ -59005,7 +59038,8 @@
         "Inhibits abnormal smooth muscle spasm, analgesic",
         "Regulates intestinal microbiota balance"
       ],
-      "formula_song": "四神故紙吳茱萸，肉蔻五味四般須，\n大棗生薑同煎合，五更腎瀉火衰扶。"
+      "formula_song": "四神故紙吳茱萸，肉蔻五味四般須，\n大棗生薑同煎合，五更腎瀉火衰扶。",
+      "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/SiShenWan.html"
     },
     {
       "id": "formula.jin_suo_gu_jing_wan",
@@ -63174,7 +63208,8 @@
         "formula.xiao_yao_san",
         "formula.jia_wei_xiao_yao_san",
         "formula.tong_xie_yao_fang",
-        "formula.yue_ju_wan"
+        "formula.yue_ju_wan",
+        "formula.xiao_chai_hu_tang"
       ],
       "clinical_use_note": "",
       "nccaom_high_yield": true,
@@ -63542,6 +63577,9 @@
         ],
         "formula_song": [
           "《湯頭歌訣》(汪昂,含通行加減歌)或方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+        ],
+        "related_formulas": [
+          "curriculum/formulas/ (Board exam high-frequency sister formula associations)"
         ]
       },
       "ad_syndromes_en": [
@@ -73384,7 +73422,9 @@
         "formula.zhu_ling_tang",
         "formula.fang_ji_huang_qi_tang",
         "formula.zhen_wu_tang",
-        "formula.shi_pi_san"
+        "formula.shi_pi_san",
+        "formula.ling_gui_zhu_gan_tang",
+        "formula.shi_pi_yin"
       ],
       "clinical_use_note": "",
       "nccaom_high_yield": true,
@@ -73835,6 +73875,9 @@
         ],
         "formula_song": [
           "《湯頭歌訣》(汪昂)通行本/方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+        ],
+        "related_formulas": [
+          "curriculum/formulas/ (Board exam high-frequency sister formula associations)"
         ]
       },
       "cloudtcm_id": 50,
@@ -74366,7 +74409,9 @@
         "formula.wu_ling_san",
         "formula.fang_ji_huang_qi_tang",
         "formula.zhen_wu_tang",
-        "formula.shi_pi_san"
+        "formula.shi_pi_san",
+        "formula.ling_gui_zhu_gan_tang",
+        "formula.shi_pi_yin"
       ],
       "clinical_use_note": "",
       "nccaom_high_yield": true,
@@ -74733,6 +74778,9 @@
         ],
         "formula_song": [
           "《湯頭歌訣》(汪昂)通行本/方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+        ],
+        "related_formulas": [
+          "curriculum/formulas/ (Board exam high-frequency sister formula associations)"
         ]
       },
       "cloudtcm_id": 273,
@@ -76246,6 +76294,9 @@
         ],
         "source_classic": [
           "https://cloudtcm.com/formula/20077(「相同名稱方劑:四妙丸,出處:《成方便讀》卷三。組成:二妙丸加牛膝、苡仁。主治:痿證」;帳本 docs/research_packs/SOURCE_CLASSIC_WEB_PROPOSALS_2026-08-19.json)"
+        ],
+        "formula_family": [
+          "curriculum/formulas/06_Formula_Cards_051-060_祛濕劑.md(Si Miao Wan card, Section 17 Modifications;帳本 docs/research_packs/FORMULA_FAMILY_PROPOSALS_2026-08-24.json,劑量逐字審計)"
         ]
       },
       "clinical_classification_zh": "臨床常用專病處方",
@@ -76487,6 +76538,27 @@
         "Anti-inflammatory, analgesic, significantly reduces joint swelling",
         "Diuretic, promotes uric acid and toxin excretion",
         "Antibacterial, antiallergic"
+      ],
+      "formula_family": [
+        {
+          "relation": "減",
+          "name_zh": "三妙丸",
+          "change": [
+            "-薏苡仁"
+          ],
+          "indication_zh": "濕熱下注肢體痿痺，膝脛紅腫痛者",
+          "source": "curriculum/formulas/06_Formula_Cards_051-060_祛濕劑.md"
+        },
+        {
+          "relation": "減",
+          "name_zh": "二妙散",
+          "change": [
+            "-薏苡仁",
+            "-牛膝"
+          ],
+          "indication_zh": "濕熱下注筋骨疼痛，足膝紅腫者",
+          "source": "curriculum/formulas/06_Formula_Cards_051-060_祛濕劑.md"
+        }
       ]
     },
     {
@@ -77825,6 +77897,9 @@
         ],
         "contraindications_en": [
           "translated: 本卡 contraindications_zh 逐條忠實翻譯(紅線5 同長同序,強度不升降)"
+        ],
+        "related_formulas": [
+          "curriculum/formulas/ (Board exam high-frequency sister formula associations)"
         ]
       },
       "clinical_classification_zh": "臨床常用專病處方",
@@ -77869,6 +77944,11 @@
         "Protects glomerular filtration, reduces proteinuria",
         "Promotes intestinal fluid absorption & microcirculation",
         "Regulates protein metabolism"
+      ],
+      "related_formulas": [
+        "formula.wu_ling_san",
+        "formula.zhu_ling_tang",
+        "formula.ling_gui_zhu_gan_tang"
       ]
     },
     {
@@ -79940,6 +80020,9 @@
         ],
         "contraindications_en": [
           "translated: 本卡 contraindications_zh 逐條忠實翻譯(紅線5 同長同序,強度不升降)"
+        ],
+        "related_formulas": [
+          "curriculum/formulas/ (Board exam high-frequency sister formula associations)"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/151",
@@ -79988,6 +80071,11 @@
         "Cardiotonic, improves cardiac function & myocardial perfusion",
         "Relieves bronchial smooth muscle spasm, antiasthmatic",
         "Improves inner ear microcirculation (relieves vertigo)"
+      ],
+      "related_formulas": [
+        "formula.wu_ling_san",
+        "formula.zhu_ling_tang",
+        "formula.shi_pi_yin"
       ]
     },
     {
@@ -83018,7 +83106,8 @@
         "Antibacterial, anti-inflammatory, antipyretic",
         "Antiasthmatic, relieves bronchial smooth muscle spasm",
         "Inhibits respiratory secretion accumulation"
-      ]
+      ],
+      "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/QingQiHuaTanWan.html"
     },
     {
       "id": "formula.xiao_xian_xiong_tang",
@@ -88850,6 +88939,9 @@
         ],
         "pattern_indications_en": [
           "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 1 條 / pattern_indications_en 3 條(不同來源並行),對齊為 3 組;原條目逐字保留,補齊側為對側之翻譯"
+        ],
+        "related_formulas": [
+          "curriculum/formulas/ (Board exam high-frequency sister formula associations)"
         ]
       },
       "clinical_classification_zh": "臨床常用專病處方",
@@ -89148,7 +89240,12 @@
         "Protects cellular mucosa, anti-inflammatory",
         "Modulates immune function"
       ],
-      "composition_suspect_cleared_note": "2026-08-19 核對《溫病條辨》沙參麥冬湯七味俱在,旗標清除"
+      "composition_suspect_cleared_note": "2026-08-19 核對《溫病條辨》沙參麥冬湯七味俱在,旗標清除",
+      "related_formulas": [
+        "formula.bai_he_gu_jin_tang",
+        "formula.mai_men_dong_tang",
+        "formula.qing_zao_jiu_fei_tang"
+      ]
     },
     {
       "id": "formula.zhi_sou_san",
@@ -94253,7 +94350,8 @@
         "Antipyretic, analgesic, anti-inflammatory",
         "Enhances immune defense against pathogens",
         "Expectorant, antitussive, diuretic"
-      ]
+      ],
+      "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/RenShenBaiDuSan.html"
     },
     {
       "id": "formula.bai_he_gu_jin_tang",
@@ -94274,7 +94372,8 @@
       "related_formulas": [
         "formula.xing_su_san",
         "formula.qing_zao_jiu_fei_tang",
-        "formula.mai_men_dong_tang"
+        "formula.mai_men_dong_tang",
+        "formula.sha_shen_mai_men_dong_tang"
       ],
       "clinical_use_note": "",
       "nccaom_high_yield": true,
@@ -94691,6 +94790,9 @@
         ],
         "formula_song": [
           "《湯頭歌訣》(汪昂)通行本/方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+        ],
+        "related_formulas": [
+          "curriculum/formulas/ (Board exam high-frequency sister formula associations)"
         ]
       },
       "cloudtcm_id": 106,
@@ -95691,7 +95793,8 @@
         "Supplements electrolytes and trace elements (Ca, Zn)",
         "Neuroprotective, improves neurotransmitter function",
         "Nourishes Yin, generates fluids, modulates immunity"
-      ]
+      ],
+      "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/DaDingFengZhu.html"
     },
     {
       "id": "formula.ding_chuan_tang",
@@ -99274,7 +99377,8 @@
         "Heat-clearing, damp-draining, and detoxifying actions",
         "Anti-inflammatory, reduces GI mucosal congestion and edema",
         "Promotes digestive fluid secretion"
-      ]
+      ],
+      "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/LianPoYin.html"
     },
     {
       "id": "formula.ling_jiao_gou_teng_tang",
@@ -100790,7 +100894,8 @@
       "related_formulas": [
         "formula.xing_su_san",
         "formula.qing_zao_jiu_fei_tang",
-        "formula.bai_he_gu_jin_tang"
+        "formula.bai_he_gu_jin_tang",
+        "formula.sha_shen_mai_men_dong_tang"
       ],
       "clinical_use_note": "",
       "nccaom_high_yield": true,
@@ -101173,6 +101278,9 @@
         ],
         "contraindications_en": [
           "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 4 條(不同來源並行),對齊為 4 組;原條目逐字保留,補齊側為對側之翻譯"
+        ],
+        "related_formulas": [
+          "curriculum/formulas/ (Board exam high-frequency sister formula associations)"
         ]
       },
       "cloudtcm_id": 221,
@@ -102642,7 +102750,8 @@
       "related_formulas": [
         "formula.xing_su_san",
         "formula.mai_men_dong_tang",
-        "formula.bai_he_gu_jin_tang"
+        "formula.bai_he_gu_jin_tang",
+        "formula.sha_shen_mai_men_dong_tang"
       ],
       "clinical_use_note": "",
       "nccaom_high_yield": true,
@@ -103115,6 +103224,9 @@
         ],
         "pattern_indications_en": [
           "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 1 條 / pattern_indications_en 5 條(不同來源並行),對齊為 5 組;原條目逐字保留,補齊側為對側之翻譯"
+        ],
+        "related_formulas": [
+          "curriculum/formulas/ (Board exam high-frequency sister formula associations)"
         ]
       },
       "cloudtcm_id": 216,
@@ -106208,7 +106320,8 @@
         "Improves myocardial ischemia, reduces myocardial damage size",
         "Promotes brain resuscitation, anti-shock",
         "Analgesic, antispasmodic"
-      ]
+      ],
+      "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/SuHeXiangWan.html"
     },
     {
       "id": "formula.tao_he_cheng_qi_tang",
@@ -110352,7 +110465,8 @@
         "Potent antispasmodic, moves Qi and stops pain",
         "Promotes GI and thoracic Qi flow",
         "Anticoagulant, antithrombotic"
-      ]
+      ],
+      "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/ZhiShiXieBaiGuiZhiTang.html"
     },
     {
       "id": "formula.zuo_jin_wan",
@@ -111182,7 +111296,8 @@
         "Antitussive, antiasthmatic, improves pulmonary ventilation",
         "Anti-fatigue, modulates immunity"
       ],
-      "correction_note": "2026-08-20 同名異方釐清：依本卡人參、黃耆、熟地黃、五味子、紫菀、桑白皮六味組成，初出採《永類鈐方》，並列《醫方集解》傳載；不採《婦人良方》同名異方。"
+      "correction_note": "2026-08-20 同名異方釐清：依本卡人參、黃耆、熟地黃、五味子、紫菀、桑白皮六味組成，初出採《永類鈐方》，並列《醫方集解》傳載；不採《婦人良方》同名異方。",
+      "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/BuFeiTang.html"
     },
     {
       "id": "formula.da_bu_yin_wan",
@@ -111629,7 +111744,8 @@
         "Potent purging of Minister Fire, nourishes Yin & purges Fire",
         "Regulates HPT/HPG axis",
         "Hypoglycemic, anti-inflammatory, renal protective"
-      ]
+      ],
+      "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/DaBuYinWan.html"
     },
     {
       "id": "formula.da_jian_zhong_tang",
@@ -112001,7 +112117,8 @@
         "Potent relief of severe GI smooth muscle spasm, analgesic",
         "Significantly promotes intestinal peristalsis, relieves obstruction",
         "Improves GI wall microcirculation, warms middle Jiao"
-      ]
+      ],
+      "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/DaJianZhongTang.html"
     },
     {
       "id": "formula.da_qing_long_tang",
@@ -112369,7 +112486,8 @@
         "Potent diaphoretic exterior releasing & antipyretic",
         "Diffuses Lung, calms wheezing, antispasmodic",
         "Anti-inflammatory, antiviral"
-      ]
+      ],
+      "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/DaQingLongTang.html"
     },
     {
       "id": "formula.dan_shen_yin",
@@ -112692,7 +112810,8 @@
         "Potent coronary arterial dilation, improves myocardial perfusion",
         "Antispasmodic, analgesic, improves GI microcirculation",
         "Anticoagulant, antithrombotic"
-      ]
+      ],
+      "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/DanShenYin.html"
     },
     {
       "id": "formula.dang_gui_shao_yao_san",
@@ -113044,7 +113163,8 @@
         "Regulates uterine smooth muscle, potent analgesic & antispasmodic",
         "Diuretic edema reduction, improves hemorheology",
         "Hepatoprotective, strengthens Spleen, regulates sex hormones"
-      ]
+      ],
+      "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/DangGuiShaoYaoSan.html"
     },
     {
       "id": "formula.dang_gui_yin_zi",
@@ -113450,7 +113570,8 @@
         "Potent antiallergic, antipruritic, anti-inflammatory",
         "Promotes skin microcirculation and sebaceous gland secretion",
         "Promotes skin barrier repair"
-      ]
+      ],
+      "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/DangGuiYinZi.html"
     },
     {
       "id": "formula.ding_zhi_wan",
@@ -113773,7 +113894,8 @@
         "Regulates central monoamine neurotransmitters",
         "Improves memory and cognitive function"
       ],
-      "correction_note": "2026-08-20 同名異方釐清：依本卡人參、茯苓、石菖蒲、遠志四味組成，採《太平惠民和劑局方》定志丸，並記其原型為《備急千金要方》開心散；其他含茯神、朱砂等同名版本不併入本卡。"
+      "correction_note": "2026-08-20 同名異方釐清：依本卡人參、茯苓、石菖蒲、遠志四味組成，採《太平惠民和劑局方》定志丸，並記其原型為《備急千金要方》開心散；其他含茯神、朱砂等同名版本不併入本卡。",
+      "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/DingZhiWan.html"
     },
     {
       "id": "formula.du_qi_wan",
@@ -114149,7 +114271,8 @@
         "Potent Qi reception & antiasthmatic, improves pulmonary ventilation",
         "Nourishes Kidney Yin, renal protective",
         "Regulates endocrine & anti-fatigue"
-      ]
+      ],
+      "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/DuQiWan.html"
     },
     {
       "id": "formula.er_xian_tang",
@@ -114557,7 +114680,8 @@
         "Regulates neurotransmitters, anxiolytic & antidepressant",
         "Protects bone density, anti-osteoporosis"
       ],
-      "correction_note": "2026-08-20 同名異方釐清：本卡六味（仙茅、淫羊藿、巴戟天、當歸、黃柏、知母）為20世紀上海方，見《婦產科學》與《中醫方劑臨床手冊》；《壽世保元》二味同名方組成不同，不歸入本卡。"
+      "correction_note": "2026-08-20 同名異方釐清：本卡六味（仙茅、淫羊藿、巴戟天、當歸、黃柏、知母）為20世紀上海方，見《婦產科學》與《中醫方劑臨床手冊》；《壽世保元》二味同名方組成不同，不歸入本卡。",
+      "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/ErXianTang.html"
     },
     {
       "id": "formula.er_zhi_wan",
@@ -114866,7 +114990,8 @@
         "Hepatoprotective, anti-hepatic fibrosis, elevates platelets",
         "Antioxidant, anti-aging, promotes dark hair",
         "Modulates immunity, improves microcirculation"
-      ]
+      ],
+      "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/ErZhiWan.html"
     },
     {
       "id": "formula.fang_feng_tong_sheng_san",
@@ -115657,7 +115782,8 @@
         "Promotes bowel unblocking, purges heat",
         "Antiallergic, anti-inflammatory, anti-obesity (lipid metabolism)",
         "Antihypertensive, improves microcirculation"
-      ]
+      ],
+      "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/FangFengTongShengSan.html"
     },
     {
       "id": "formula.fu_yuan_huo_xue_tang",
@@ -116083,7 +116209,8 @@
         "Potent analgesic, blood invigorating, stasis dispelling, anti-edema",
         "Accelerates hematoma and stasis absorption",
         "Improves local microcirculation and tissue repair"
-      ]
+      ],
+      "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/FuYuanHuoXueTang.html"
     },
     {
       "id": "formula.ge_gen_huang_qin_huang_lian_tang",
@@ -116543,7 +116670,8 @@
         "Broad-spectrum antibacterial & antiviral (Shigella, E. coli)",
         "Potent antidiarrheal, relieves intestinal smooth muscle spasm",
         "Antipyretic, anti-inflammatory, anti-endotoxin"
-      ]
+      ],
+      "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/GeGenHuangQinHuangLianTang.html"
     },
     {
       "id": "formula.gu_jing_wan",
@@ -116891,7 +117019,8 @@
         "Potent hemostatic (promotes coagulation, constricts uterine vessels)",
         "Regulates sex hormones, inhibits endometrial hyperplasia",
         "Anti-inflammatory, clears heat, protects endometrium"
-      ]
+      ],
+      "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/GuJingWan.html"
     },
     {
       "id": "formula.gui_zhi_shao_yao_zhi_mu_tang",
@@ -117308,7 +117437,8 @@
         "Potent anti-inflammatory, analgesic, anti-edema",
         "Inhibits osteoclasts, protects cartilage & bone",
         "Modulates immunity, improves blood microcirculation"
-      ]
+      ],
+      "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/GuiZhiShaoYaoZhiMuTang.html"
     },
     {
       "id": "formula.jin_ling_zi_san",
@@ -117512,7 +117642,8 @@
         "Potent analgesic, antispasmodic (relieves GI & biliary smooth muscle spasm)",
         "Hepatoprotective, choleretic",
         "Inhibits gastric acid hypersecretion"
-      ]
+      ],
+      "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/JinLingZiSan.html"
     },
     {
       "id": "formula.liang_fu_wan",
@@ -117815,7 +117946,8 @@
         "Inhibits gastric acid hypersecretion, anti-ulcer",
         "Improves gastric mucosal microcirculation"
       ],
-      "correction_note": "【2026-08-23 組成還原】pattern-v2 併回（Phase B）時本方組成被截短（3→2 味），由 2cb06a0b 逐位元組還原完整組成。check-formula-no-loss 抓到的退步。"
+      "correction_note": "【2026-08-23 組成還原】pattern-v2 併回（Phase B）時本方組成被截短（3→2 味），由 2cb06a0b 逐位元組還原完整組成。check-formula-no-loss 抓到的退步。",
+      "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/LiangFuWan.html"
     },
     {
       "id": "formula.ling_jiao_gou_teng_yin",
@@ -118516,7 +118648,8 @@
         "Potent channel warming & cold dispelling, antispasmodic & analgesic",
         "Improves local spermatic cord & testicular blood flow",
         "Reduces inguinal and scrotal swelling & pain"
-      ]
+      ],
+      "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/NuanGanJian.html"
     },
     {
       "id": "formula.qiang_huo_sheng_shi_tang",
@@ -118957,7 +119090,8 @@
         "Potent analgesic & antispasmodic (relieves neck/back muscle spasm)",
         "Antipyretic, anti-inflammatory",
         "Promotes local muscle and skeletal blood circulation"
-      ]
+      ],
+      "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/QiangHuoShengShiTang.html"
     },
     {
       "id": "formula.shao_yao_gan_cao_tang",
@@ -119515,7 +119649,8 @@
         "Potent antispasmodic & analgesic (skeletal & smooth muscle dual spasmolysant)",
         "Regulates skeletal muscle excitability & electrolyte balance",
         "Anti-inflammatory, sedative, neuroprotective"
-      ]
+      ],
+      "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/ShaoYaoGanCaoTang.html"
     },
     {
       "id": "formula.tian_tai_wu_yao_san",
@@ -119898,7 +120033,8 @@
         "Potent antispasmodic & analgesic, dispels cold & moves Qi",
         "Improves spermatic cord & testicular microcirculation",
         "Promotes hernia edema absorption"
-      ]
+      ],
+      "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/TianTaiWuYaoSan.html"
     },
     {
       "id": "formula.wu_pi_san",
@@ -120237,7 +120373,8 @@
         "Mild diuretic edema reduction without injuring antipathogenic Qi",
         "Promotes interstitial fluid reabsorption",
         "Regulates GI smooth muscle tone, eliminates distention"
-      ]
+      ],
+      "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/WuPiSan.html"
     },
     {
       "id": "formula.xi_jiao_di_huang_wan",
@@ -121205,7 +121342,8 @@
         "Broad-spectrum antibacterial (uropathogens)",
         "Antispasmodic, analgesic, diuretic strangury unblocking",
         "Protects renal mucosa"
-      ]
+      ],
+      "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/XiaoJiYinZi.html"
     },
     {
       "id": "formula.xie_huang_san",
@@ -121487,7 +121625,8 @@
         "Potent purging of lurking Spleen/Stomach fire, promotes oral mucosal repair",
         "Antibacterial, anti-inflammatory, analgesic",
         "Inhibits halitosis pathogens"
-      ]
+      ],
+      "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/XieHuangSan.html"
     },
     {
       "id": "formula.zeng_ye_tang",
@@ -121591,7 +121730,18 @@
       "contraindications_en": [
         "Use only for constipation caused by Heat and Dryness severely damaging Yin and Body Fluids."
       ],
-      "formula_family": [],
+      "formula_family": [
+        {
+          "relation": "加",
+          "name_zh": "增液承氣湯",
+          "change": [
+            "+大黃",
+            "+芒硝"
+          ],
+          "indication_zh": "熱結陰虧，燥屎不行，大便秘結者",
+          "source": "curriculum/formulas/12_Formula_Cards_111-120_理氣劑_瀉下劑.md"
+        }
+      ],
       "review_status": "draft",
       "source_type": "board_outline_skeleton",
       "needs_fill": "骨架記錄：僅有考綱的官方方名。組成、君臣佐使、功效、主治、禁忌全部待從 curriculum/formulas 補齊，不可憑方名推測。",
@@ -121627,6 +121777,9 @@
         ],
         "pattern_indications_en": [
           "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 2 條 / pattern_indications_en 3 條(不同來源並行),對齊為 3 組;原條目逐字保留,補齊側為對側之翻譯"
+        ],
+        "formula_family": [
+          "curriculum/formulas/12_Formula_Cards_111-120_理氣劑_瀉下劑.md(Zeng Ye Tang card, Section 17 Modifications;帳本 docs/research_packs/FORMULA_FAMILY_PROPOSALS_2026-08-24.json,劑量逐字審計)"
         ]
       },
       "ad_syndromes_en": [
@@ -121813,7 +121966,8 @@
         "Potent Yin nourishment & fluid generation, softens stool, promotes peristalsis",
         "Increases intestinal water retention (Add Water to Float the Boat strategy)",
         "Protects intestinal mucosa, regulates gut microbiota"
-      ]
+      ],
+      "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/ZengYeTang.html"
     },
     {
       "id": "formula.wei_jing_tang",
@@ -122090,7 +122244,8 @@
       "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 1 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：桃仁（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。",
       "source_classic": "《外台秘要》",
       "formula_song": "葦莖湯方出千金，桃仁薏苡冬瓜仁，\n瘀熱在肺成癰毒，熱瀉瘀消病自寧。",
-      "formula_song_zh": "葦莖湯方出千金，桃仁薏苡冬瓜仁，\n瘀熱在肺成癰毒，熱瀉瘀消病自寧。"
+      "formula_song_zh": "葦莖湯方出千金，桃仁薏苡冬瓜仁，\n瘀熱在肺成癰毒，熱瀉瘀消病自寧。",
+      "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/WeiJingTang.html"
     },
     {
       "id": "formula.xian_fang_huo_ming_yin",
@@ -122876,7 +123031,8 @@
         "寒證、氣虛或血虛者禁用",
         "服用本方期間，宜避免搔抓患部"
       ],
-      "source_classic": "《驗方新編》"
+      "source_classic": "《驗方新編》",
+      "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/SiMiaoYongAnTang.html"
     },
     {
       "id": "formula.dang_gui_nian_tong_tang",
@@ -123550,7 +123706,8 @@
         "服用本方期間，宜避免辛辣、油膩食物"
       ],
       "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 2 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：羌活（in_formula_zh、actions_zh、role_reason_zh）、茵陳蒿（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。\n【2026-08-12 紅線五：組成 _zh 拉丁拼寫改中文】第6味 name_zh「Dang Gui Shen」→「當歸身」；第11味 name_zh「Jiu Chao Ku Shen」→「酒炒苦參」；第12味 name_zh「Chao Huang Qin」→「炒黃芩」；第13味 name_zh「Jiu Xi Zhi Mu」→「酒洗知母」。拼音原值仍在各列 pinyin 欄；中文名依該列 herb_id 於 herb_canon_shortlist 的中文名＋原拼寫的炮製前綴／部位後綴（炒、酒炒、制、穗、梢…）對照填入。\n【2026-08-12 樣板句清除 — 錯置的甘草功效（變體）】以下 1 味藥的所列欄位原值逐字同為「和中健脾，調和諸藥。」（原文保存於此）：酒炒苦參（actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。",
-      "source_classic": "《醫學啟源》"
+      "source_classic": "《醫學啟源》",
+      "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/DangGuiNianTongTang.html"
     },
     {
       "id": "formula.san_miao_wan",
@@ -123820,7 +123977,8 @@
       "source_classic": "《醫學正傳》",
       "contraindications_zh": [
         "服用期間忌食辛辣等刺激性食物，忌煙酒，調暢情志，定時起居。"
-      ]
+      ],
+      "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/SanMiaoWan.html"
     },
     {
       "id": "formula.shen_su_yin",
@@ -124287,7 +124445,8 @@
         "不同醫家對參蘇飲的配伍和應用有所差異，應結合具體病情和醫家經驗，辨證施治。",
         "對於實熱證、陰虛火旺者，不宜使用參蘇飲。",
         "服藥期間應注意飲食清淡，避免辛辣刺激之物。"
-      ]
+      ],
+      "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/ShenSuYin.html"
     },
     {
       "id": "formula.zai_zao_san",
@@ -124679,7 +124838,8 @@
         "再造散主要針對的是陽虛外感，如果不是陽虛體質，或者外感的不是風寒，則不宜使用。",
         "方中附子、細辛等藥物有一定的毒性，需要經過炮制，並在醫生指導下使用。",
         "服用再造散期間，應注意飲食清淡，避免生冷、油膩之物，以利於藥效的發揮。"
-      ]
+      ],
+      "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/ZaiZaoSan.html"
     },
     {
       "id": "formula.cong_chi_tang",
@@ -124829,7 +124989,8 @@
         "蔥豉湯不宜與辛辣、油膩的食物同服，以免影響藥效。",
         "蔥豉湯不宜與其他感冒藥同服，以免藥物相互影響，加重副作用。",
         "孕婦、哺乳期婦女、兒童、老人應在醫生指導下服用蔥豉湯。"
-      ]
+      ],
+      "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/CongChiTang.html"
     },
     {
       "id": "formula.tong_qiao_huo_xue_tang",
@@ -125296,7 +125457,8 @@
         "formula.ge_xia_zhu_yu_tang",
         "formula.shao_fu_zhu_yu_tang",
         "formula.shen_tong_zhu_yu_tang"
-      ]
+      ],
+      "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/TongQiaoHuoXueTang.html"
     },
     {
       "id": "formula.jiu_xian_san",
@@ -125722,7 +125884,8 @@
         "有表證者禁用"
       ],
       "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 1 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：烏梅（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。\n【2026-08-12 紅線五：組成 _zh 拉丁拼寫改中文】第2味 herb_zh「Mi Zhi Ying Su Ke」→「蜜炙罌粟殼」、name_zh「Mi Zhi Ying Su Ke」→「蜜炙罌粟殼」。拼音原值仍在各列 pinyin 欄；中文名依該列 herb_id 於 herb_canon_shortlist 的中文名＋原拼寫的炮製前綴／部位後綴（炒、酒炒、制、穗、梢…）對照填入。",
-      "source_classic": "《衛生寶鑒》"
+      "source_classic": "《衛生寶鑒》",
+      "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/JiuXianSan.html"
     },
     {
       "id": "formula.tao_hua_tang",
@@ -125960,7 +126123,8 @@
         "因濕熱所致痢疾者禁用"
       ],
       "correction_note": "【2026-08-12 紅線五：組成 _zh 拉丁拼寫改中文】第3味 herb_zh「Geng Mi」→「粳米」、name_zh「Geng Mi」→「粳米」。拼音原值仍在各列 pinyin 欄；中文名依該列 herb_id 於 herb_canon_shortlist 的中文名＋原拼寫的炮製前綴／部位後綴（炒、酒炒、制、穗、梢…）對照填入。",
-      "source_classic": "《傷寒論》"
+      "source_classic": "《傷寒論》",
+      "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/TaoHuaTang.html"
     },
     {
       "id": "formula.gua_lou_xie_bai_bai_jiu_tang",
@@ -126302,7 +126466,8 @@
       "modifications_en": [
         "Severe Qi stagnation with Blood stasis → add Dan Shen, Dang Gui, Tao Ren, Hong Hua, Pu Huang, Chi Shao, Zhi Shi, Hou Po, Qing Pi and Ru Xiang",
         "Severe phlegm blockage → add Ban Xia, Tian Nan Xing, Shi Chang Pu and Yu Jin"
-      ]
+      ],
+      "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/GuaLouXieBaiBaiJiuTang.html"
     },
     {
       "id": "formula.hou_po_wen_zhong_tang",
@@ -126625,7 +126790,8 @@
         "兼氣虛或胃陰虛之腹脹、腹痛者禁用。"
       ],
       "correction_note": "【2026-08-12 紅線五：組成 _zh 拉丁拼寫改中文】第1味 herb_zh「Jiang Hou Po」→「薑厚朴」、name_zh「Jiang Hou Po」→「薑厚朴」；第4味 herb_zh「(Hua Ju Hong)」→「(化橘紅)」、name_zh「(Hua Ju Hong)」→「(化橘紅)」。拼音原值仍在各列 pinyin 欄；中文名依該列 herb_id 於 herb_canon_shortlist 的中文名＋原拼寫的炮製前綴／部位後綴（炒、酒炒、制、穗、梢…）對照填入。",
-      "source_classic": "《內外傷辨惑論》"
+      "source_classic": "《內外傷辨惑論》",
+      "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/HouPoWenZhongTang.html"
     },
     {
       "id": "formula.da_xian_xiong_tang",
@@ -126858,7 +127024,8 @@
         "孕婦禁用",
         "體虛者禁用"
       ],
-      "source_classic": "《傷寒論》"
+      "source_classic": "《傷寒論》",
+      "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/DaXianXiongTang.html"
     },
     {
       "id": "formula.da_huang_fu_zi_tang",
@@ -127227,7 +127394,8 @@
         "Severe accumulation with distension → add Zhi Shi and Hou Po",
         "Severe pains → add Gui Zhi and Bai Shao",
         "Nausea and vomiting → add Ban Xia, Chen Pi and Huang Lian"
-      ]
+      ],
+      "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/DaHuangFuZiTang.html"
     },
     {
       "id": "formula.wen_pi_tang",
@@ -127520,7 +127688,8 @@
       "contraindications_zh": [
         "因裡熱結滯傷津所致便秘者禁用"
       ],
-      "source_classic": "《千金要方》"
+      "source_classic": "《千金要方》",
+      "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/WenPiTang.html"
     },
     {
       "id": "formula.hao_qin_qing_dan_tang",
@@ -127967,7 +128136,8 @@
         "Severe damp and phlegm → add Huo Xiang and Yi Yi Ren",
         "Thick greasy tongue coating with fullness in the chest and diaphragm → add Hou Po and Huo Xiang",
         "Difficult urination → add Ze Xie, Che Qian Zi and Tong Cao"
-      ]
+      ],
+      "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/HaoQinQingDanTang.html"
     },
     {
       "id": "formula.fu_ling_wan",
@@ -128180,7 +128350,8 @@
       "source_classic": "《是齋百一選方》引《全生指迷方》",
       "source_urls": [
         "https://www.cnpharm.com/c/2022-03-28/821547.shtml"
-      ]
+      ],
+      "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/FuLingWan.html"
     },
     {
       "id": "formula.zhu_sha_an_shen_wan",
@@ -128530,7 +128701,8 @@
         "Greasy tongue coating with chest stifling sensation → add Gua Lou, Zhu Ru and Ban Xia",
         "Red tongue, rapid pulse and a heat sensation in the chest → add Zhi Zi and Lian Zi",
         "Severe insomnia → add Yuan Zhi, Fu Shen and Lian Zi Xin"
-      ]
+      ],
+      "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/ZhuShaAnShenWan.html"
     },
     {
       "id": "formula.zhen_zhu_mu_wan",
@@ -128864,7 +129036,8 @@
       "source_classic": "《普濟本事方》",
       "source_urls": [
         "https://www.zysj.com.cn/zhongyaofang/zhenzhumuwan/index.html"
-      ]
+      ],
+      "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/ZhenZhuMuWan.html"
     },
     {
       "id": "formula.ci_zhu_wan",
@@ -129156,7 +129329,8 @@
         "孕婦禁用",
         "孩童或老年患者禁用"
       ],
-      "source_classic": "《備急千金要方》"
+      "source_classic": "《備急千金要方》",
+      "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/CiZhuWan.html"
     },
     {
       "id": "formula.du_qi_wan_import_stub",

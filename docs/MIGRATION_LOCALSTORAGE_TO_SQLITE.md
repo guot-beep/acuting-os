@@ -57,12 +57,15 @@ schema.sql 是**正規化的**:`patients` → `cases` → `visits` → `soap_not
 
 ---
 
-## §3 三個未決議題 —— 遷移作者不可自行決定
+## §3 三個未決議題 —— 已於 2026-08-24 由 Ting 定案
 
-`status: unresolved_needs_ting`。這三項各自都有一個「看起來合理」的做法,
-而那個做法都會**摧毀或捏造臨床意義**。Ting 於 2026-08-06 逐項否決。
+`status: unresolved_needs_ting` → **已全數 `mapped`**(見
+`data/clinical_cases/localstorage_sqlite_mapping.json` 2026-08-24 changelog)。
+這三項各自都有一個「看起來合理」的做法,而那個做法都會**摧毀或捏造臨床
+意義**——Ting 於 2026-08-06 先否決了那個做法,2026-08-24 再定案真正的目的地。
+以下保留原始否決理由(歷史記錄),並附上定案結果。
 
-### 3.1 舌質 + 舌苔 不可併成 `visits.tongue_zh`(2 個欄位)
+### 3.1 舌質 + 舌苔 不可併成 `visits.tongue_zh`(2 個欄位)—— ✅ 已定案:分開
 
 ```
 tongueBody    舌質(淡紅/紅/淡白/紫暗…胖大/齒痕/裂紋)
@@ -75,18 +78,23 @@ visits.tongue_zh   一欄
 併成一欄等於把當初補的那一刀退回去,而且**不可逆** ——
 「淡紅胖大 · 黃膩」拆不回「舌質」與「舌苔」,因為分隔符不是資料。
 
-**需要的決定:** `visits` 是否新增 `tongue_body_zh` / `tongue_coating_zh`
-(additive,不受 9/01 影響),或明確接受合併並記錄理由。
+**定案(2026-08-24):** `visits` 新增 `tongue_body_zh` / `tongue_body_en` /
+`tongue_coating_zh` / `tongue_coating_en`(additive,已入 `schema.sql`)。
+既有 `tongue_zh`/`tongue_en` 不動、不從這兩個來源欄位覆寫,避免無中生有
+把兩個值黏回一欄。
 
-### 3.2 `allergies` 不可併入 `case_intake_baseline.red_flags`
+### 3.2 `allergies` 不可併入 `case_intake_baseline.red_flags` —— ✅ 已定案:獨立欄位
 
 過敏史是**病史事實**;紅旗是**需要立即處理的警訊**。
 「對青黴素過敏」放進紅旗欄,會讓紅旗欄同時裝著「該注意的既往事實」與
 「現在要轉診的徵象」,而**下游任何以紅旗為條件的邏輯都會誤判**。
 
-**需要的決定:** `case_intake_baseline` 是否新增 `allergies` 欄位。
+**定案(2026-08-24,Ting 原話):**「過敏不一定 red flag,要達到一定程度,
+慢性過敏很多都輕微」——`case_intake_baseline` 新增獨立 `allergies` 欄位
+(additive,已入 `schema.sql`),與既有 `cases.allergy_status`(粗粒度
+none/has/unknown)配對,兩者不自動互推。
 
-### 3.3 `outcomeMetricLinks` 沒有值,不可寫成 `visit_outcomes` 列
+### 3.3 `outcomeMetricLinks` 沒有值,不可寫成 `visit_outcomes` 列 —— ✅ 已定案:維持 notes-only,真正的統計走 outcomeMetrics
 
 ```
 outcomeMetricLinks: ["metric.pain_score", "metric.sleep_quality"]
@@ -99,8 +107,13 @@ visit_outcomes(metric_name="metric.pain_score", value_number=NULL)
 **metric_name 有值而 value 為 NULL,讀起來是「量了但結果是空的」——
 而真相是「選了這個指標,從來沒填數字」。** 這兩件事在趨勢圖上長得一樣。
 
-**需要的決定:** 這些 id 是「打算追蹤的指標」還是「量過的結果」?
-若是前者,它需要自己的家(可能是 `cases` 層的追蹤清單),不是 `visit_outcomes`。
+**定案(2026-08-24,Ting 原話):**「這個就是 10 去算,統一標準,你設定欄位
+方便以後統計,很重要」——真正做統計用的欄位不是這個,是已經存在、已經
+mapped 的 `outcomeMetrics`(`{metricId, valueNumber}` 結構化配對,
+`data/clinical_cases/outcome_metrics.json` 22 項指標裡多數主觀量表已是
+0-10 制;客觀量測(mm/天數/次數)保留真實臨床單位,不強行統一成 0-10 —
+那樣會失真)。`outcomeMetricLinks` 本身維持這份文件原本建議的 fallback:
+只進 `visit_outcomes.notes` 當敘事文字,不生成假的 metric 列。
 
 ---
 
@@ -147,14 +160,25 @@ app 存**單一語言的自由文字**,schema 是 `_zh` / `_en` 成對。
 
 ## §7 腳本開始寫之前必須先有的東西
 
-1. §3 三個未決議題的裁定
-2. `scripts/inventory-workflow-links.js` 的執行結果
-3. §6 十三項的「列印核對」機制設計
-4. 一份可回滾的測試資料集 —— **絕不可拿真實 case 做第一次執行**(D12)
+1. ✅ §3 三個未決議題的裁定 —— 2026-08-24 Ting 定案(見 §3 上方)
+2. ⬜ `scripts/inventory-workflow-links.js` 的執行結果 —— **只能 Ting 本人跑**,
+   這支是瀏覽器主控台腳本,讀的是 Ting 電腦本機 localStorage 的真實資料,
+   不在 git 裡(D7),任何 AI session 都碰不到
+3. ✅ §6 十項中風險轉換的「列印核對」機制設計 —— 2026-08-24 落地:
+   `scripts/migrate-clinical-case-print-verify.js`(唯讀 dry-run,不寫入任何
+   東西;逐案例逐看診印出每個中風險欄位實際會怎麼寫、哪些結構化 id 對不到
+   canon、哪些欄位有真實值卻沒有 schema 目的地)
+4. ✅ 一份可回滾的測試資料集 —— 2026-08-24 落地:
+   `scripts/fixtures/clinical_case_migration_test_set.json`(2 個假案例,
+   刻意包含壞掉的 id 測試偵測邏輯,`node scripts/migrate-clinical-case-print-verify.js --fixture` 可直接跑)
 
 四項全部是 additive 或文件工作,不受 9/01 凍結影響。
 9/01 真正鎖住的是**既有欄位的型態變更**(例如 §3.1 把 `tongue_zh` 拆成兩欄,
 那要遷移腳本)。
+
+**剩下唯一擋著真正寫遷移腳本的是第 2 項** —— 需要 Ting 在自己電腦開著
+真實資料的 app 頁面,按 F12 貼上 `scripts/inventory-workflow-links.js` 執行,
+把輸出(只有 workflowLink 的 id 值,不含病歷內容)貼回來。
 
 ## Phase C 補記(2026-08-12)— repository seam 已落地,遷移面縮到兩個函式
 

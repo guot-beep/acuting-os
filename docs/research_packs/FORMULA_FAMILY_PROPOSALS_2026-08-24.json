@@ -1,0 +1,90 @@
+{
+  "generated": "2026-08-24",
+  "note": "Task 5: formula_family 提案第二波。依據 curriculum/formulas/ 課件與經典方劑加減紀錄對齊。 [2026-08-24 Claude 審核:3 條(葛根加半夏湯/附子瀉心湯/貞蓉丹)引用來源查無此內容,已移除,見 PROJECT_LOG]",
+  "family_proposals": [
+    {
+      "base_formula_id": "formula.fu_zi_li_zhong_wan",
+      "base_name_zh": "附子理中丸",
+      "entries": [
+        {
+          "relation": "加",
+          "name_zh": "桂枝人參湯",
+          "change": [
+            "+桂枝"
+          ],
+          "indication_zh": "脾胃虛寒兼表證未解者",
+          "source": "curriculum/formulas/14_Formula_Cards_131-140_溫裡劑_治風劑.md"
+        }
+      ],
+      "evidence_file": "curriculum/formulas/14_Formula_Cards_131-140_溫裡劑_治風劑.md",
+      "evidence": "Fu Zi Li Zhong Wan card, Section 17 Modifications",
+      "evidence_quote": "Gui Zhi Ren Shen Tang: Plus Gui Zhi for Spleen Yang deficiency cold with exterior cold symptoms."
+    },
+    {
+      "base_formula_id": "formula.zeng_ye_tang",
+      "base_name_zh": "增液湯",
+      "entries": [
+        {
+          "relation": "加",
+          "name_zh": "增液承氣湯",
+          "change": [
+            "+大黃",
+            "+芒硝"
+          ],
+          "indication_zh": "熱結陰虧，燥屎不行，大便秘結者",
+          "source": "curriculum/formulas/12_Formula_Cards_111-120_理氣劑_瀉下劑.md"
+        }
+      ],
+      "evidence_file": "curriculum/formulas/12_Formula_Cards_111-120_理氣劑_瀉下劑.md",
+      "evidence": "Zeng Ye Tang card, Section 17 Modifications",
+      "evidence_quote": "Zeng Ye Cheng Qi Tang: Plus Da Huang, Mang Xiao for severe constipation due to dryness and heat accumulation."
+    },
+    {
+      "base_formula_id": "formula.si_miao_wan",
+      "base_name_zh": "四妙丸",
+      "entries": [
+        {
+          "relation": "減",
+          "name_zh": "三妙丸",
+          "change": [
+            "-薏苡仁"
+          ],
+          "indication_zh": "濕熱下注肢體痿痺，膝脛紅腫痛者",
+          "source": "curriculum/formulas/06_Formula_Cards_051-060_祛濕劑.md"
+        },
+        {
+          "relation": "減",
+          "name_zh": "二妙散",
+          "change": [
+            "-薏苡仁",
+            "-牛膝"
+          ],
+          "indication_zh": "濕熱下注筋骨疼痛，足膝紅腫者",
+          "source": "curriculum/formulas/06_Formula_Cards_051-060_祛濕劑.md"
+        }
+      ],
+      "evidence_file": "curriculum/formulas/06_Formula_Cards_051-060_祛濕劑.md",
+      "evidence": "Si Miao Wan card, Section 17 Modifications",
+      "evidence_quote": "San Miao Wan (Minus Yi Yi Ren) and Er Miao San (Minus Yi Yi Ren, Niu Xi) for Damp-Heat lower body symptoms."
+    },
+    {
+      "base_formula_id": "formula.dang_gui_si_ni_tang",
+      "base_name_zh": "當歸四逆湯",
+      "entries": [
+        {
+          "relation": "加",
+          "name_zh": "當歸四逆加吳茱萸生薑湯",
+          "change": [
+            "+吳茱萸",
+            "+生薑"
+          ],
+          "indication_zh": "血虛寒厥兼胃寒嘔吐或腹痛者",
+          "source": "curriculum/formulas/14_Formula_Cards_131-140_溫裡劑_治風劑.md"
+        }
+      ],
+      "evidence_file": "curriculum/formulas/14_Formula_Cards_131-140_溫裡劑_治風劑.md",
+      "evidence": "Dang Gui Si Ni Tang card, Section 17 Modifications",
+      "evidence_quote": "Dang Gui Si Ni Jia Wu Zhu Yu Sheng Jiang Tang: Plus Wu Zhu Yu, Sheng Jiang for blood deficiency cold extremities with Stomach cold."
+    }
+  ]
+}

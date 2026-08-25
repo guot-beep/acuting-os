@@ -164,6 +164,13 @@ CREATE TABLE IF NOT EXISTS case_intake_baseline (
   lifestyle_notes TEXT,
   labs_and_imaging_summary TEXT,
   red_flags TEXT,
+  -- 2026-08-24 Ting 裁定:過敏史不可併入 red_flags(不是每個過敏都達到需要
+  -- 立即處理的門檻——很多慢性過敏是輕微的,跟紅旗「現在要轉診」的語意不同)。
+  -- app 端(index.html #caseForm name="allergies")已經是獨立欄位,schema
+  -- 之前漏補這個對應——這是補齊既有 UI 欄位的家,不是新發明的資料。
+  -- 配對既有的 cases.allergy_status(none/has/unknown 粗粒度狀態);兩者不
+  -- 自動互推(粗粒度狀態不因這欄空白就推論成 none,D4 精神)。
+  allergies TEXT,
   consent_scope TEXT,
   FOREIGN KEY (case_id) REFERENCES cases(id)
 );
@@ -211,6 +218,19 @@ CREATE TABLE IF NOT EXISTS visits (
   fertility_phase TEXT,
   subjective_changes TEXT,
   objective_notes TEXT,
+  -- tongue_zh/tongue_en 保留(既有欄位,只加深不刪除)。2026-08-24 Ting 裁定:
+  -- 舌質(舌色/形態)與舌苔(苔色/苔質)不可合併成一欄——app 端
+  -- (index.html #caseForm name="tongueBody" / name="tongueCoating")本來就
+  -- 是兩個獨立輸入,docs/TCM_CASE_SPEC.md 也把兩者列為分開的「最重要」欄位;
+  -- 併成一欄會讓「淡紅胖大．黃膩」這種資料永遠拆不回舌質/舌苔(分隔符不是
+  -- 資料)。新增下面四欄接住這兩個既有 UI 欄位的真實資料;遷移時只填 _zh
+  -- (app 來源是單一語言自由文字,_en 留 NULL,比照本表其餘 _zh/_en 成對欄位
+  -- 的既有慣例)。tongue_zh/tongue_en 對這兩個新欄位而言是遷移前就存在的
+  -- 舊欄位,不從 tongueBody/tongueCoating 覆寫,避免無中生有把兩個值黏在一起。
+  tongue_body_zh TEXT,
+  tongue_body_en TEXT,
+  tongue_coating_zh TEXT,
+  tongue_coating_en TEXT,
   tongue_zh TEXT,
   tongue_en TEXT,
   pulse_zh TEXT,
