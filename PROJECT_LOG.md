@@ -1,3 +1,13 @@
+# 2026-08-24 — Codex Conditions 皮膚科官方病因補強 B25
+
+- **範圍**：只補 `cond.contact_dermatitis`、`cond.seborrheic_dermatitis`、`cond.vitiligo`、`cond.tinea_corporis`、`cond.tinea_pedis` 原本空白的 `etiology_zh/en`，追加直接來源與 etiology provenance；未覆蓋既有正文、安全欄、scope、relations 或其他資料集。
+- **數字**：`FULL_DETAIL_CANDIDATE 239→244`、`DETAIL_PARTIAL 266→261`、`SKELETON 0→0`，距 300 尚 `56`；直接來源 `829→839`、有來源記錄 `290→295`；空白 etiology `235→230`。
+- **來源與邊界**：使用 NIH/NIAMS、NIH/NLM MedlinePlus、CDC、NHS 與 NCBI，10 個內容頁皆 HTTP 200。分清刺激性與過敏性 contact dermatitis、Malassezia 共生關聯與真菌感染、非節段型與節段型 vitiligo，以及 tinea 的部位命名／傳染途徑／鑑別。
+- **驗證**：dry-run/apply `20 operations / 5 ids / skipped 0 / missing 0`；逐欄 equality、逐記錄邊界、`build-data`、condition standard `505/505 clean`、ratchet、sources `839`、relation registry、content-junk、maturity audit 與 `git diff --check` 均無新增 defect。
+- **未解**：空白 etiology 尚 `230`；脂漏性皮膚炎病因仍屬多因子且未完全確立，不應將正常共生的 Malassezia 單獨標成感染；環狀 rash 或足部脫屑不應未檢驗即一律視為 tinea。
+
+---
+
 # 2026-08-24 — Codex Conditions 腎臟／泌尿官方病因補強 B24
 
 - **範圍**：只補 `cond.acute_kidney_injury`、`cond.glomerulonephritis`、`cond.nephrotic_syndrome`、`cond.hydronephrosis`、`cond.ureteral_stones` 原本空白的 `etiology_zh/en`，追加來源及逐欄 provenance；未覆蓋既有正文、安全欄、scope 或相鄰資料。

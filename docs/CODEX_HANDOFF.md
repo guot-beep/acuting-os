@@ -1,5 +1,13 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-24] Codex Handoff — Conditions official dermatology etiology B25
+
+- **Exact ids / fields**: only `cond.contact_dermatitis`, `cond.seborrheic_dermatitis`, `cond.vitiligo`, `cond.tinea_corporis`, and `cond.tinea_pedis`; filled empty bilingual etiology and appended direct sources plus etiology provenance. Existing pathology, risks, red flags, scope, relations, and adjacent datasets were not changed.
+- **Official sources**: NIH/NIAMS, NIH/NLM MedlinePlus, CDC, NHS, and NCBI; all ten actual content URLs returned HTTP 200.
+- **Clinical distinctions**: irritant injury versus delayed contact allergy; commensal Malassezia association versus fungal infection; nonsegmental versus segmental vitiligo; and tinea anatomic labels, transmission reservoirs, mimics, and testing boundaries.
+- **Measured delta**: maturity `239→244 FULL_DETAIL_CANDIDATE`, `266→261 DETAIL_PARTIAL`, `0→0 SKELETON`, leaving `56` slots to 300; source entries `829→839`, sourced records `290→295`; empty etiology `235→230`.
+- **Validation**: dry-run/apply `20 operations / 5 ids / skipped 0 / missing 0`; exact equality and record-boundary diff; `build-data.js`; condition standard `505/505 clean`; ratchet; condition sources (`839`); relation registry; content junk; maturity audit; and `git diff --check` passed.
+
 ## [2026-08-24] Codex Handoff — Conditions official renal and urinary etiology B24
 
 - **Exact ids / fields**: only `cond.acute_kidney_injury`, `cond.glomerulonephritis`, `cond.nephrotic_syndrome`, `cond.hydronephrosis`, and `cond.ureteral_stones`; filled empty bilingual etiology and appended direct sources plus etiology provenance. Existing pathology, risks, red flags, scope, relations, and adjacent datasets were not changed.
