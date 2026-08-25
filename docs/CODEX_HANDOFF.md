@@ -1,5 +1,13 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-24] Codex Handoff — Conditions official endocrine-metabolic etiology B28
+
+- **Exact ids / fields**: only `cond.gestational_diabetes`, `cond.diabetes_insipidus`, `cond.familial_hypercholesterolemia`, `cond.subacute_thyroiditis`, and `cond.hyperuricemia`; filled absent bilingual etiology and appended direct sources plus provenance. Existing content, safety fields, scope, relations, ids, and adjacent datasets were preserved.
+- **Official sources**: NIH/NIDDK, NIH/NLM MedlinePlus, NHS, and NHS Genomics/Trust; ten unique content URLs returned HTTP 200 and every record cross-references two pages.
+- **Clinical distinctions**: gestational versus pre-existing overt diabetes; four diabetes-insipidus mechanisms; inherited FH versus secondary high LDL; post-viral destructive thyroiditis versus Graves or bacterial infection; and asymptomatic hyperuricemia versus crystal-proven gout.
+- **Measured delta**: maturity `253→258 FULL_DETAIL_CANDIDATE`, `252→247 DETAIL_PARTIAL`, `0→0 SKELETON`, leaving `42` slots to 300; source entries `859→869`, sourced records `304→309`; empty etiology `220→215`.
+- **Validation**: dry-run/apply `20 operations / 5 ids / skipped 0 / missing 0`; exact equality and record-boundary diff; `build-data.js`; condition standard `505/505 clean`; ratchet; condition sources (`869`); relation registry; content junk; maturity audit; and `git diff --check` passed.
+
 ## [2026-08-24] Codex Handoff — Conditions official dermatology infection etiology B27
 
 - **Exact ids / fields**: only `cond.herpes_simplex`, `cond.tinea_cruris`, `cond.tinea_capitis`, `cond.lichen_planus`, and `cond.pityriasis_rosea`; filled absent bilingual etiology and appended direct sources plus etiology provenance. No existing narrative, safety field, scope, relation, id, or adjacent dataset was overwritten.

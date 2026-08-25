@@ -1,3 +1,13 @@
+# 2026-08-24 — Codex Conditions 內分泌代謝官方病因補強 B28
+
+- **範圍**：只補 `cond.gestational_diabetes`、`cond.diabetes_insipidus`、`cond.familial_hypercholesterolemia`、`cond.subacute_thyroiditis`、`cond.hyperuricemia` 尚缺的 `etiology_zh/en`，追加直接來源與 provenance；未覆蓋任何既有正文、安全欄、scope、relation 或 id。
+- **數字**：`FULL_DETAIL_CANDIDATE 253→258`、`DETAIL_PARTIAL 252→247`、`SKELETON 0→0`，距 300 尚 `42`；直接來源 `859→869`、有來源記錄 `304→309`；空白 etiology `220→215`。
+- **來源與邊界**：使用 NIH/NIDDK、NIH/NLM MedlinePlus、NHS 與 NHS Genomics/Trust，10 個唯一頁皆 HTTP 200。分清 gestational diabetes 與孕前 overt diabetes、DI 四型、FH 遺傳與 secondary high LDL、post-viral destructive thyroiditis，以及 asymptomatic hyperuricemia 與 gout。
+- **驗證**：dry-run/apply `20 operations / 5 ids / skipped 0 / missing 0`；逐欄 equality、逐記錄邊界、`build-data`、condition standard `505/505 clean`、ratchet、sources `869`、relation registry、content-junk、maturity audit、`git diff --check` 均無新增 defect。
+- **未解**：本批未改既有 red flags、risk 或 scope；8 個 frozen control-character 與 formula generic dosage 警告屬其他工作線且未增加。
+
+---
+
 # 2026-08-24 — Codex Conditions 皮膚感染與免疫病因補強 B27
 
 - **範圍**：只補 `cond.herpes_simplex`、`cond.tinea_cruris`、`cond.tinea_capitis`、`cond.lichen_planus`、`cond.pityriasis_rosea` 尚缺的 `etiology_zh/en`，追加直接來源與 provenance；未覆蓋既有摘要、pathology、risk、red flags、scope 或關聯。
