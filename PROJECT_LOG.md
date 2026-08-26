@@ -1,3 +1,20 @@
+# 2026-08-25 Antigravity — Task 9A Round 2 (Herb + Formula Provenance Transport Integrity Read-Only Audit)
+
+- **工作內容**: 執行中藥 (363 筆) 與方劑 (223 筆) 全庫來源傳輸完整性唯讀審計 Round 2。
+  - 修正 URL 與路徑 Tokenizer：納入 8 項 Parser 回歸測試 (100% PASS)，正確保留 URL 內合法括號 (如 DaoChi(Re-Aligned).html)、精確剝離 URL 尾端中英文註解、精確提取句子內嵌之 repo-relative 檔案路徑 token，徹底消除 Round 1 因將整句敘述當作 path 造成的假陽性 (LOCAL_MISSING 從 2,843 降至 1,223 處真實缺失，唯一路徑數從 303 收斂至 68)。
+  - 實發 HTTP 探測全庫 1,260 條唯一 URL，嚴格維持正典與生成檔 0 異動。
+- **審計結果數據**:
+  - 掃描記錄: Herbs 363 / Formulas 223 (共 586 筆)
+  - 探測唯一 URL: 1,260 條 (Herbs 711 / Formulas 552)
+  - URL 引用總數: 7,715 處
+  - HTTP 狀態: OK_200: 1,086 / REDIRECT_TO_200: 3 / DEAD_4XX: 94 / SERVER_5XX: 73 / TIMEOUT: 2 / Network Errors: 0
+  - 本地檔案引用: LOCAL_EXISTS: 3,620 / LOCAL_MISSING: 1,223 (共 4,843 處引用，68 條唯一路徑)
+  - Malformed URLs: 0
+- **產出檔案**: `scripts/audit-source-transport-integrity.js` / `docs/audits/SOURCE_TRANSPORT_INTEGRITY_2026-08-25.md` / `data/audits/source_transport_integrity_2026-08-25.json`。
+- **分支與狀態**: 推送至 `antigravity/task9a-source-integrity-audit-round2`，任務交付並停下。
+
+---
+
 # 2026-08-25 深夜 — Task 8C 驗收通過並落地:方劑 exact_source_url 補齊,94%→97%(附一則編碼異常提醒)
 
 Task 8C(`antigravity/formula-fill-task8-source-url`，commit `128da48e`）延續同一套 HTTP 驗證方法補
