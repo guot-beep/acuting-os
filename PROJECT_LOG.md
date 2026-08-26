@@ -1,3 +1,13 @@
+# 2026-08-25 — Codex Conditions 心肺病因／官方來源補齊 B35
+
+- **範圍**：精確修改 `cond.pleural_effusion`、`cond.atrial_flutter`、`cond.premature_ventricular_contractions`、`cond.paroxysmal_svt`、`cond.aortic_stenosis`；只補雙語 etiology、record sources 與對應 field provenance。既有 summary、western context/pathology、red flags、risk factors、acupuncture scope、relations、方劑與穴位未覆寫。
+- **數字**：`FULL_DETAIL_CANDIDATE 287→292`、`DETAIL_PARTIAL 218→213`、`SKELETON 0→0`，距首批 300 張完整卡尚 `8`；五卡均 `10→12/12`；全庫缺 etiology `193→188`；condition source entries `935→946`、有 record source 的卡 `328→333`。
+- **來源／臨床區分**：NIH/NLM MedlinePlus 與 NIH/NHLBI；9 個唯一直接 URL 均 HTTP 200。病因分別涵蓋胸腔積液的漏出／滲出機轉、心房撲動折返與心房疤痕背景、PVC 的異位放電／結構性與可逆誘因、PSVT 的房室結或副傳導路徑折返，以及主動脈瓣狹窄的鈣化、先天雙葉瓣、風濕熱與放射治療背景。
+- **驗證**：只變更 5 個指定 id、每卡 4 個允許的 top-level 欄位群，其他 500 卡逐記錄不變；condition standard `505/505 clean`、build-data、relations、relation registry、ratchet、content-junk、URL reachability、maturity audit、generated data 與 `git diff --check` 均無新增 blocking defect。
+- **未解／下一步**：既有 imported formula／acupoint 與 acupuncture scope 的證據等級未提升；現有 31 張 inline `tcm_patterns` 對 related patterns 的 N1、8 個 frozen control characters 與 generic formula dosage warning 均為既有跨線待辦，未因本批增加。
+
+---
+
 # 2026-08-25 — Codex Conditions 高風險心肺病因／感染邊界 B34
 
 - **範圍**：精確修改 `cond.aortic_dissection`、`cond.infective_endocarditis`、`cond.orthostatic_hypotension`、`cond.pertussis`、`cond.pulmonary_hypertension`；五卡補雙語 etiology，前四卡補 record sources，僅百日咳補原空白 acupuncture scope，並補相應 field provenance。既有 scope、red flags、risk factors、pathology、relations、方劑與穴位未覆寫。

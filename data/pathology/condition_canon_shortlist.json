@@ -85926,6 +85926,12 @@
   },
   {
    "id": "cond.pleural_effusion",
+   "etiology_zh": "胸腔積液是胸膜腔液體生成超過吸收的結果。漏出液常由血管靜水壓升高或血漿膠體滲透壓下降造成，以心臟衰竭最常見，亦可見於肝硬化或腎臟疾病；滲出液則常由感染或其他發炎、惡性腫瘤、肺部損傷，以及血管或淋巴管阻塞所致。",
+   "etiology_en": "Pleural effusion results when pleural-fluid formation exceeds absorption. Transudates usually reflect increased vascular hydrostatic pressure or reduced plasma oncotic pressure, most commonly from heart failure and also from cirrhosis or kidney disease; exudates commonly result from infection or other inflammation, malignancy, lung injury, or obstruction of blood or lymphatic vessels.",
+   "sources": [
+    "https://medlineplus.gov/ency/article/000086.htm",
+    "https://medlineplus.gov/lab-tests/pleural-fluid-analysis/"
+   ],
    "entity_type": "biomedical_condition",
    "name_zh": "胸腔積液",
    "name_en": "Pleural Effusion",
@@ -86020,6 +86026,14 @@
     "pattern.phlegm_damp"
    ],
    "field_sources": {
+    "etiology_zh": [
+     "https://medlineplus.gov/ency/article/000086.htm",
+     "https://medlineplus.gov/lab-tests/pleural-fluid-analysis/"
+    ],
+    "etiology_en": [
+     "https://medlineplus.gov/ency/article/000086.htm",
+     "https://medlineplus.gov/lab-tests/pleural-fluid-analysis/"
+    ],
     "summary_zh": [
      "StatPearls: Pleural Effusion (NBK448189, retrieved 2026-08)"
     ],
@@ -98986,6 +99000,12 @@
   },
   {
    "id": "cond.atrial_flutter",
+   "etiology_zh": "心房撲動源於心房內快速而規律的異常電訊號，通常由可持續循環的折返電路造成；心房疤痕或受損組織可形成或維持此電路。高齡、冠狀動脈疾病、心肌梗塞或心臟手術、心臟衰竭或心臟擴大、瓣膜疾病、高血壓、甲狀腺功能亢進、心包炎與病態竇房結症候群等均可能構成病因背景，部分患者則無法確認單一原因。",
+   "etiology_en": "Atrial flutter arises from rapid, organized abnormal atrial electrical activity, usually maintained by a re-entrant circuit; atrial scar or damaged tissue can create or sustain that circuit. Etiologic settings include older age, coronary disease, myocardial infarction or cardiac surgery, heart failure or chamber enlargement, valvular disease, hypertension, hyperthyroidism, pericarditis, and sick sinus syndrome, although no single cause is identified in some patients.",
+   "sources": [
+    "https://www.medlineplus.gov/ency/article/000184.htm",
+    "https://www.nhlbi.nih.gov/health/arrhythmias/types"
+   ],
    "entity_type": "biomedical_condition",
    "name_zh": "心房撲動",
    "name_en": "Atrial Flutter",
@@ -99087,6 +99107,14 @@
     "pattern.heart_blood_stasis"
    ],
    "field_sources": {
+    "etiology_zh": [
+     "https://www.medlineplus.gov/ency/article/000184.htm",
+     "https://www.nhlbi.nih.gov/health/arrhythmias/types"
+    ],
+    "etiology_en": [
+     "https://www.medlineplus.gov/ency/article/000184.htm",
+     "https://www.nhlbi.nih.gov/health/arrhythmias/types"
+    ],
     "summary_zh": [
      "NCBI StatPearls: Atrial Flutter (NBK540985)"
     ],
@@ -100004,6 +100032,12 @@
   },
   {
    "id": "cond.premature_ventricular_contractions",
+   "etiology_zh": "心室早期收縮由心室內異位電活動提前觸發；許多偶發個案沒有明確病因。可見於低血鉀等電解質異常、心肌缺血、心臟擴大或其他結構性心臟病，並可被吸菸、酒精、咖啡因、興奮劑、壓力或睡眠不足等因素誘發或加重。",
+   "etiology_en": "Premature ventricular contractions are early beats triggered by ectopic electrical activity in a ventricle, and many occasional cases have no clear cause. They may occur with electrolyte abnormalities such as hypokalemia, myocardial ischemia, cardiac enlargement or other structural heart disease, and can be triggered or worsened by smoking, alcohol, caffeine, stimulants, stress, or sleep deprivation.",
+   "sources": [
+    "https://medlineplus.gov/ency/article/001100.htm",
+    "https://www.nhlbi.nih.gov/health/arrhythmias/causes"
+   ],
    "entity_type": "biomedical_condition",
    "name_zh": "心室早期收縮",
    "name_en": "Premature Ventricular Contractions",
@@ -100094,6 +100128,14 @@
     "pattern.phlegm_fire_disturbing_heart"
    ],
    "field_sources": {
+    "etiology_zh": [
+     "https://medlineplus.gov/ency/article/001100.htm",
+     "https://www.nhlbi.nih.gov/health/arrhythmias/causes"
+    ],
+    "etiology_en": [
+     "https://medlineplus.gov/ency/article/001100.htm",
+     "https://www.nhlbi.nih.gov/health/arrhythmias/causes"
+    ],
     "summary_zh": [
      "Mayo Clinic: Premature ventricular contractions (PVCs) - Symptoms & causes"
     ],
@@ -100134,6 +100176,13 @@
   },
   {
    "id": "cond.paroxysmal_svt",
+   "etiology_zh": "陣發性上心室頻脈源於心室以上的異常電訊號，常由房室結或副傳導路徑中的折返電路造成；Wolff-Parkinson-White 症候群是重要相關原因，地高辛濃度過高亦可能誘發。酒精、咖啡因、吸菸與非法興奮劑可增加發作風險，但部分個案沒有可確認的單一誘因。",
+   "etiology_en": "Paroxysmal supraventricular tachycardia arises from abnormal electrical activity above the ventricles, commonly through a re-entrant circuit involving the AV node or an accessory pathway. Wolff-Parkinson-White syndrome is an important associated cause, and excessive digoxin can provoke episodes. Alcohol, caffeine, smoking, and illicit stimulants can increase episode risk, although some cases have no single identifiable trigger.",
+   "sources": [
+    "https://medlineplus.gov/ency/article/000183.htm",
+    "https://www.nhlbi.nih.gov/health/arrhythmias/types",
+    "https://www.nhlbi.nih.gov/health/arrhythmias/causes"
+   ],
    "entity_type": "biomedical_condition",
    "name_zh": "陣發性上心室頻脈",
    "name_en": "Paroxysmal Supraventricular Tachycardia",
@@ -100224,6 +100273,16 @@
     "pattern.liver_qi_stagnation"
    ],
    "field_sources": {
+    "etiology_zh": [
+     "https://medlineplus.gov/ency/article/000183.htm",
+     "https://www.nhlbi.nih.gov/health/arrhythmias/types",
+     "https://www.nhlbi.nih.gov/health/arrhythmias/causes"
+    ],
+    "etiology_en": [
+     "https://medlineplus.gov/ency/article/000183.htm",
+     "https://www.nhlbi.nih.gov/health/arrhythmias/types",
+     "https://www.nhlbi.nih.gov/health/arrhythmias/causes"
+    ],
     "summary_zh": [
      "StatPearls: Supraventricular Tachycardia (NBK441972)"
     ],
@@ -102238,6 +102297,12 @@
   },
   {
    "id": "cond.aortic_stenosis",
+   "etiology_zh": "主動脈瓣狹窄可在出生時即存在，但成人最常見的是隨年齡進展的瓣葉鈣化。先天性雙葉主動脈瓣會使鈣化與狹窄較早出現；其他病因包括風濕熱後瓣膜損傷，較少見者包括胸部放射治療後的瓣膜增厚與狹窄。",
+   "etiology_en": "Aortic stenosis may be congenital, but in adults it most commonly develops through progressive age-related calcification of the valve leaflets. A congenital bicuspid aortic valve predisposes to earlier calcification and narrowing; other causes include valve injury after rheumatic fever and, less commonly, valve thickening and narrowing after chest radiation therapy.",
+   "sources": [
+    "https://medlineplus.gov/ency/article/000178.htm",
+    "https://www.nhlbi.nih.gov/health/heart-valve-diseases/causes"
+   ],
    "entity_type": "biomedical_condition",
    "name_zh": "主動脈瓣狹窄",
    "name_en": "Aortic Stenosis",
@@ -102340,6 +102405,14 @@
     "pattern.qi_stagnation_blood_stasis"
    ],
    "field_sources": {
+    "etiology_zh": [
+     "https://medlineplus.gov/ency/article/000178.htm",
+     "https://www.nhlbi.nih.gov/health/heart-valve-diseases/causes"
+    ],
+    "etiology_en": [
+     "https://medlineplus.gov/ency/article/000178.htm",
+     "https://www.nhlbi.nih.gov/health/heart-valve-diseases/causes"
+    ],
     "summary_zh": [
      "NCBI StatPearls: Aortic Stenosis (NBK557628)"
     ],

@@ -1,5 +1,13 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-25] Codex Handoff — Conditions cardiopulmonary etiology/official sources B35
+
+- **Exact ids / fields**: `cond.pleural_effusion`, `cond.atrial_flutter`, `cond.premature_ventricular_contractions`, `cond.paroxysmal_svt`, and `cond.aortic_stenosis`; filled only bilingual etiology, record-level sources, and corresponding field provenance. Existing summary, western context/pathology, red flags, risk factors, acupuncture scope, relations, formulas, and acupoints were preserved.
+- **Measured delta**: maturity `287→292 FULL_DETAIL_CANDIDATE`, `218→213 DETAIL_PARTIAL`, `0→0 SKELETON`, leaving 8 slots to the first 300 detailed cards; all five scores `10→12/12`; missing etiology `193→188`; condition source entries `935→946`, records with record-level sources `328→333`.
+- **Evidence / distinctions**: NIH/NLM MedlinePlus and NIH/NHLBI; all nine unique direct URLs returned HTTP 200. Etiologies distinguish transudative/exudative pleural fluid mechanisms, atrial-flutter re-entry and atrial scar settings, PVC ectopy with structural/reversible triggers, AV-node/accessory-pathway PSVT re-entry, and calcific/congenital/rheumatic/radiation-associated aortic stenosis.
+- **Validation**: only the five exact ids and four allowed top-level field groups per card changed; the other 500 records remained equal. Condition standard `505/505 clean`, build-data, relations, relation registry, validation ratchet, content junk, URL reachability, maturity audit, generated-data rebuild, and `git diff --check` produced no new blocking defect.
+- **Explicit unresolved / next line**: existing imported formula/acupoint protocols and acupuncture evidence levels were not promoted. The 31 pre-existing inline-pattern N1 notes, eight frozen control characters, and generic formula dosage warning are unchanged cross-line items.
+
 ## [2026-08-25] Codex Handoff — Conditions high-risk cardiopulmonary etiologies/infection boundary B34
 
 - **Exact ids / fields**: `cond.aortic_dissection`, `cond.infective_endocarditis`, `cond.orthostatic_hypotension`, `cond.pertussis`, and `cond.pulmonary_hypertension`; filled bilingual etiology on all five, record sources on the first four, the previously empty acupuncture scope only on pertussis, and corresponding field provenance. Existing scope, red flags, risk factors, pathology, relations, formulas, and acupoints were preserved.
