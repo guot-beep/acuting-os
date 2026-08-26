@@ -1,3 +1,21 @@
+## ✅ Task 10A Round 2：Legacy Namespace & Retired-ID Integrity Inventory（已完成結案）
+
+- **類型**: READ-ONLY Precision Measurement Inventory Audit（零主觀臨床/語意裁定，全庫 0 異動）
+- **分支**: `antigravity/task10a-legacy-namespace-retired-id-audit-round2`
+- **產出**: `scripts/audit-legacy-namespace-retired-id.js` / `data/audits/legacy_namespace_retired_id_2026-08-25.json` / `docs/audits/LEGACY_NAMESPACE_RETIRED_ID_2026-08-25.md`
+- **核心數據 (SSOT 直出)**:
+  - 命名空間分類: D11 正典診斷 **4** 個、舊診斷候選 **4** 個、非診斷實體 **29** 個、暫存與分類體系 **4** 個
+  - 舊診斷候選 ID: **164** 個獨立 ID（總出現 **712** 次，結構化關聯引用 **222** 處）
+  - Active → Deprecated 實質引用邊: **34** 處（已嚴格排除 `id`/`code` 宣告欄位）
+  - Active → Import Stub 實質引用邊: **0** 處
+  - `herb.qian_cao_gen`: deprecated 標註，Active 引用數 = 0（乾淨隔離，無臆測替換）
+  - UI 重複宇宙: 2 處 `MULTIPLE_NAMESPACES_RENDERED_AS_SAME_ENTITY_TYPE`（`js/knowledge.js`）
+  - 待裁定對照候選: **154** 個
+  - 回歸測試: 8/8 負控回歸測試全部 PASS
+  - 變更安全性: canonical/generated/workflow/relation diff = 0 bytes, C0 controls = 0, replacement chars = 0
+
+---
+
 # Antigravity Task Queue — 每次來先讀這份，做完更新這份
 
 這份是「現在該做什麼」，不是報告。報告照舊寫回 `PROJECT_LOG.md` 置頂（`docs/HERB_FILL_DISPATCH.md` 的慣例）。

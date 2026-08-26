@@ -1,3 +1,18 @@
+# 2026-08-25 Antigravity — Task 10A Round 2 (Precision Remediation: Legacy Namespace & Retired-ID Inventory)
+
+- **工作內容**: 執行 Task 10A Round 2 精準量測修正與嚴格關聯欄位掃描（`scripts/audit-legacy-namespace-retired-id.js`）。
+  - 零異動不變量：`data/**` 正典、`data/generated/*` 生成檔、`.github/workflows/*` CI 配置 Byte-for-byte 0 異動。
+  - 關聯/引用欄位嚴格限定（修復虛假邊）：明確排除記錄識別與宣告欄位（`id`、`code`、`name_zh`、`name_en`、`aliases`、`url` 等），引用邊僅限結構化關聯欄位（如 `composition`、`related_formulas`、`differential_patterns`、`compares`、`points_to` 等）。
+  - 命名空間分類精準重構：將 token 區分為 `D11_CANONICAL_DIAGNOSTIC` (4)、`LEGACY_DIAGNOSTIC_CANDIDATE` (4)、`NON_DIAGNOSTIC_ENTITY_NAMESPACE` (29)、`STAGING_AND_TAXONOMY_NAMESPACE` (4)、`CODE_SYSTEM` (ICD-10) 與 `NON_ID_DOTTED_TOKEN` (數值/測量/版本/副檔名)，不再將非 ID 標記混入實體命名空間。
+  - 獨立領域角色標記：將 `med.*` (藥理暫存)、`rf.*` (紅旗註冊)、`xwalk.*` (病名對照側翼)、`tdx.*` (中醫病名分類) 分別依領域角色分類，不再統稱「Legacy Diagnostic」。
+  - 移除臆測替換映射：`replacement_id_if_explicitly_declared` 嚴格限定僅來自記錄本身宣告（如 `replacement_id`/`canonical_id`）或 DECISIONS.md D16 鎖定之替換決策；無明確正典宣告者統一為 `null`（如 `herb.qian_cao_gen` 為 `null`，Active 引用數為 0，乾淨隔離）。
+  - 精確數據重算：舊診斷候選 ID **164** 個（總出現 **712** 次，實質關聯引用 **222** 處）；Active → Deprecated 實質引用邊 **34** 處；Active → Import Stub 邊 **0** 處；UI 重複宇宙 **2** 處；待人工裁定候選 **154** 個。
+  - 負控回歸測試：8/8 測試（包含實質 production 執行之 `MULTIPLE_CANDIDATES` 測試、宣告 ID 排除負控、損毀 JSON 拋錯等）100% PASS。
+- **產出檔案**: `scripts/audit-legacy-namespace-retired-id.js` / `data/audits/legacy_namespace_retired_id_2026-08-25.json` / `docs/audits/LEGACY_NAMESPACE_RETIRED_ID_2026-08-25.md`。
+- **分支與狀態**: `antigravity/task10a-legacy-namespace-retired-id-audit-round2`，已完成交付並 STOP。
+
+---
+
 # 2026-08-25 深夜 — Task 8C 驗收通過並落地:方劑 exact_source_url 補齊,94%→97%(附一則編碼異常提醒)
 
 Task 8C(`antigravity/formula-fill-task8-source-url`，commit `128da48e`）延續同一套 HTTP 驗證方法補
