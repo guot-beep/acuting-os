@@ -262,33 +262,24 @@ missing on 219 record(s)」完全一樣——這份報告沒有提供任何新�
 
 ---
 
-## 🔥 Task 8：機械式缺口續填（Claude 到 2026-08-26 週三下午才會來驗收，這段時間先做這三項）
+## ⏳ Task 9B：中藥 + 方劑 重複/棄用/殘根/孤立引用盤點（待驗收）
 
-Claude 這段時間暫停巡檢，Ting 會直接把這份指示貼給你、你持續做，等 Claude 週三下午回來再驗收落地。
-**照優先順序做，每做完一項就推一個獨立分支**（不要推到 `main`），三項都做完或時間用完就停。
-
-**A.（最優先）中藥 `safety_source_url`（缺 96 筆，267/363）**：這個欄位之前判定過「已到極限」，
-但那是用「照網址命名慣例猜」的舊方法判的——**Task 6 用 HTTP 200 實測驗證方劑網址,證明這個方法真的
-有效**（68%→94%，逐條打開驗證，抓到死鏈就留空）。這次中藥欄位用同一套方法重做：對每一味還缺的藥，
-查 CloudTCM 或 American Dragon 上是不是真的有這味藥的頁面，**每一條網址寫進去之前自己實際打開／
-用工具發送請求確認回應是 200 而不是 404**，確認不到真實頁面就留空，不要用命名規律硬猜。推到
-`antigravity/herb-fill-task8-safety-url` 分支。
-
-**B. 中藥 `modern_functions_en`（缺 22 筆，341/363）**：跟 Task 3 Round 2 同一套規則——只補真正
-空的格子，`modern_functions_zh` 每一條中文詞逐一對應翻成一個獨立英文詞，不要套模板、不要為了對齊
-長度砍中文。查不到某幾條的翻譯就跳過那張卡。推到 `antigravity/herb-fill-task8-modern-functions`
-分支。
-
-**C. 方劑 `exact_source_url`（缺 13 筆，210/223）**：跟 A 同樣的 HTTP 實測方法，補剩下的方劑網址
-缺口。推到 `antigravity/formula-fill-task8-source-url` 分支。
-
-**不要做**：`related_formulas`/`formula_family`(這兩個現在改由 Claude 直接判斷,不指派給你了)、
-`condition_tags_en`(維持不要碰)、任何需要「判斷這個引用是否支持這個主張」的工作(查無來源就留空,
-不要推測)。
-
-**每項做完**都跑 `build-data.js` + 對應的 `validate-*-standard.js`/`validate-*-quality-strict.js` +
-`check-validation-ratchet.js` + `validate-content-junk.js`，全部 PASS 才推，並補 `PROJECT_LOG.md`
-條目附改動筆數。Claude 週三下午會依照一貫的流程逐條查證（含實際打開你寫的網址、抽查來源）才落地。
+- **類型**: READ-ONLY Canonical Integrity Inventory（正典與生成檔 0 異動）
+- **分支**: `antigravity/task9b-canonical-duplicate-orphan-audit`
+- **產出**: `scripts/audit-canonical-duplicates-orphans.js` / `docs/audits/CANONICAL_DUPLICATE_ORPHAN_AUDIT_2026-08-25.md` / `data/audits/canonical_duplicate_orphan_audit_2026-08-25.json`
+- **核心數據 (SSOT 直出)**:
+  - 掃描記錄: Herbs 363 / Formulas 223 (共 586 筆)
+  - Deprecated 記錄: 8 筆（Herbs 4 筆, Formulas 4 筆；其中 1 筆 `formula.bai_du_san` 仍有 4 處主方引用 `DEPRECATED_BUT_REFERENCED`，其餘 7 筆為 `UNREFERENCED_DEPRECATED`）
+  - Import Stub 記錄: 2 筆（皆在 Formulas，對應 active 主方）
+  - 重複 ID 群組 (Exact / Case / WS): 0 / 0 / 0
+  - 名稱衝突 (Exact / Normalized): 3 組 / 1 組
+  - 別名衝突: 26 組
+  - 潛在重複啟發判定 (`POSSIBLE_DUPLICATE`): 2 組（皆為 `_import_stub` 與 active 主方對應）
+  - 結構化引用掃描: 3,784 處
+  - `TARGET_EXISTS_ACTIVE`: 3,775 處
+  - `TARGET_EXISTS_DEPRECATED`: 4 處
+  - `TARGET_MISSING` (Orphan references): 5 處（`formula_family` 加減方缺口）
+  - Highest-Risk Candidates 待檢修清單: 8 項已完整列於報告，未自行執行任何刪除、合併或修改。
 
 ---
 

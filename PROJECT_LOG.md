@@ -1,3 +1,17 @@
+# 2026-08-25 Antigravity — Task 9B (Canonical Duplicate / Stub / Deprecated / Orphan Inventory)
+
+- **工作內容**: 執行中藥 (363 筆) 與方劑 (223 筆) 全庫重複、棄用、殘根與跨庫孤立引用 (Orphan References) 唯讀盤點。
+  - 正典資料零變更：data/herbs/herb_canon_shortlist.json、data/herbs/formulas.json 與生成檔案 Byte-for-byte 0 異動。
+  - 棄用與殘根盤點：全庫共 8 筆 deprecated 記錄（Herbs: 4 筆，Formulas: 4 筆；含 2 筆 _import_stub）。其中 formula.bai_du_san 仍被 4 筆主方引用，標註為 DEPRECATED_BUT_REFERENCED；其餘 7 筆皆為 UNREFERENCED_DEPRECATED。
+  - 重複 ID 審計：Exact duplicate ID: 0 組、Case-only collision: 0 組、Whitespace-normalized collision: 0 組。
+  - 名稱與別名衝突：Exact English Name 衝突 3 組（如 Stephania Root、Rhinoceros Horn and Rehmannia Decoction 等同名異物/劑型差異）；Normalized English Name 衝突 1 組；Alias 衝突共 26 組。
+  - 潛在重複 Heuristic (POSSIBLE_DUPLICATE)：2 組（formula.du_qi_wan 與 formula.fu_yuan_huo_xue_tang 各有 1 筆 _import_stub 殘根對應正典主卡）。
+  - 跨庫結構化引用與 Orphan 審計：全庫掃描 3784 處結構化引用，TARGET_EXISTS_ACTIVE: 3775 處、TARGET_EXISTS_DEPRECATED: 4 處、TARGET_MISSING (Orphan References): 5 處（皆為 formula_family 指向未建卡之加減方/變形方）。
+- **產出檔案**: scripts/audit-canonical-duplicates-orphans.js / docs/audits/CANONICAL_DUPLICATE_ORPHAN_AUDIT_2026-08-25.md / data/audits/canonical_duplicate_orphan_audit_2026-08-25.json。
+- **分支與狀態**: 推送至 antigravity/task9b-canonical-duplicate-orphan-audit，任務交付並停下。
+
+---
+
 # 2026-08-25 深夜 — Task 8C 驗收通過並落地:方劑 exact_source_url 補齊,94%→97%(附一則編碼異常提醒)
 
 Task 8C(`antigravity/formula-fill-task8-source-url`，commit `128da48e`）延續同一套 HTTP 驗證方法補
