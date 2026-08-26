@@ -23,10 +23,15 @@ const REGISTRY = path.join(ROOT, 'data/pathology/pattern_registry.json');
 
 // Floors as of 2026-07-31. Raise deliberately; never lower to make a run pass.
 const MIN_RECORDS = 59;
-const MIN_CATEGORIES = 10;
+// D24 (2026-08-26): the ten family heads were promoted level=category →
+// level=pattern (their clinical cards are real diagnoses). The taxonomy axis
+// SURVIVES the promotion — what this file guards is no longer "10 records
+// with level=category" but "10 family heads that still carry members". A
+// promotion must never quietly dissolve the two-axis structure.
+const MIN_FAMILY_HEADS = 10;
 const MIN_WITH_SYSTEM = 48;
 const MIN_WITH_MEMBER_OF = 31;
-const REQUIRED_CATEGORIES = [
+const REQUIRED_FAMILY_HEADS = [
   'pattern.kidney_deficiency', 'pattern.blood_deficiency', 'pattern.qi_deficiency',
   'pattern.yin_deficiency', 'pattern.yang_deficiency',
   'pattern.fire', 'pattern.heat', 'pattern.damp_heat', 'pattern.phlegm', 'pattern.wind_external',
@@ -35,7 +40,7 @@ const REQUIRED_CATEGORIES = [
 function main() {
   const records = JSON.parse(fs.readFileSync(REGISTRY, 'utf8')).records || [];
   const ids = new Set(records.map((r) => r.id));
-  const categories = records.filter((r) => r.level === 'category');
+  const familyHeads = records.filter((r) => (r.members || []).length);
   const withSystem = records.filter((r) => r.system);
   const withMemberOf = records.filter((r) => (r.member_of || []).length);
 
@@ -45,17 +50,17 @@ function main() {
   };
 
   floor('證型筆數', records.length, MIN_RECORDS, '登錄檔疑似被舊版腳本覆蓋');
-  floor('上位分類數', categories.length, MIN_CATEGORIES, '分類結構遺失');
+  floor('家族父節點數', familyHeads.length, MIN_FAMILY_HEADS, '兩軸家族結構遺失');
   floor('有 system 的筆數', withSystem.length, MIN_WITH_SYSTEM, '辨證體系維度遺失');
   floor('有 member_of 的筆數', withMemberOf.length, MIN_WITH_MEMBER_OF, '兩軸歸屬遺失');
 
-  REQUIRED_CATEGORIES.forEach((id) => {
-    if (!ids.has(id)) defects.push(`P2 缺少上位分類 ${id}`);
-    else if (!categories.some((c) => c.id === id)) defects.push(`P2 ${id} 存在但 level 不是 category`);
+  REQUIRED_FAMILY_HEADS.forEach((id) => {
+    if (!ids.has(id)) defects.push(`P2 缺少家族父節點 ${id}`);
+    else if (!familyHeads.some((c) => c.id === id)) defects.push(`P2 ${id} 存在但 members 空了 —— D24 升格保留家族結構,不得順手拆掉`);
   });
 
   // P3 — every membership must resolve, in both directions
-  categories.forEach((c) => (c.members || []).forEach((m) => {
+  familyHeads.forEach((c) => (c.members || []).forEach((m) => {
     if (!ids.has(m)) defects.push(`P3 ${c.id} 的成員 ${m} 不存在`);
   }));
   records.forEach((r) => (r.member_of || []).forEach((p) => {
@@ -73,7 +78,7 @@ function main() {
 
   console.log('===== 證型登錄檔結構檢查 =====\n');
   console.log(`證型筆數        ${records.length}  (下限 ${MIN_RECORDS})`);
-  console.log(`上位分類        ${categories.length}  (下限 ${MIN_CATEGORIES})`);
+  console.log(`家族父節點      ${familyHeads.length}  (下限 ${MIN_FAMILY_HEADS})`);
   console.log(`有辨證體系      ${withSystem.length}  (下限 ${MIN_WITH_SYSTEM})`);
   console.log(`有兩軸歸屬      ${withMemberOf.length}  (下限 ${MIN_WITH_MEMBER_OF})`);
   console.log(`待補中文名      ${records.filter((r) => r.needs_name_zh).length}`);
@@ -82,10 +87,10 @@ function main() {
   if (defects.length) {
     console.log(`\n❌ ${defects.length} 個問題:\n`);
     defects.forEach((d) => console.log('  ' + d));
-    console.log('\n若是被舊版腳本覆蓋,修法:');
-    console.log('  git checkout origin/main -- scripts/build-pattern-registry.js');
-    console.log('  # 把新增的 NAME_ZH 條目加進 main 版,不要覆蓋整個檔案');
-    console.log('  node scripts/build-pattern-registry.js --write');
+    console.log('\n⚠️ 不要跑 build-pattern-registry.js --write 來「修復」——');
+    console.log('   實測(2026-08-26)它已落後手工維護的登錄檔:重生成會毀掉 38 筆');
+    console.log('   V2 記錄與 171 個欄位。builder 與登錄檔的和解是一個獨立工作項;');
+    console.log('   在那之前,修法是手工編輯 pattern_registry.json 並讓本驗證器通過。');
     process.exitCode = 1;
   } else {
     console.log('\nvalidate-pattern-registry: PASS');

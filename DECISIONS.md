@@ -813,3 +813,23 @@ PASS(composition 查無藥材維持 1 味次 `formula.huang_tu_tang` 的「灶�
   (如 LUFS 等排卵功能異常但有排卵者)—— 屆時另立 cond 卡並分流引用,
   不回頭改本裁定。
 
+## D24 — 十個家族父節點升格 level=pattern(升格保留家族結構) · LOCKED(2026-08-26,Ting:「D19照建議辦 10個升level=pattern」)
+
+- **What**:氣虛/血虛/陰虛/陽虛/熱/火/濕熱/痰/外風/腎虛 十個 registry 節點
+  自 `level: "category"` 升為 `level: "pattern"`。依 D19 凍結條款第 1 點,
+  這是明載的 V2 重分類,不是 V1 的靜默修改。
+- **Why**:V1 凍結時這十個只是分類節點;其後 V2 工作為它們建了完整臨床卡
+  (治則/主方/主穴俱在)。「氣虛」在臨床上既是可獨立下的辨證結論,也是
+  脾氣虛/肺氣虛/心氣虛的上位家族 —— 資料模型現在如實反映雙重角色。
+- **升格保留家族結構**:members/classified_by(臟腑軸/病性軸)與 66 筆
+  member_of 邊原樣保留;validate-pattern-registry 的守護對象從
+  「10 筆 level=category」改為「10 個家族父節點必須仍帶 members」——
+  升格不得被順手拆成扁平清單。category_note_zh 改述雙重角色。
+- **順帶發現(獨立工作項,已開 task)**:build-pattern-registry.js 已落後
+  手工維護的登錄檔 —— 重生成會毀 38 筆 V2 記錄與 171 個欄位。validator 的
+  修復指引已自「重跑 builder」改為明確警告;builder 與登錄檔的所有權和解
+  另案處理,不在本裁定範圍。
+- **Reconsider only if**:未來認定某個家族父節點在臨床上確實不可獨立作為
+  辨證結論(卡片內容經審查被判定為拼裝)—— 屆時該節點單獨降回 category
+  並記錄新決定,不整批回退。
+

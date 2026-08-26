@@ -279,10 +279,13 @@ function main() {
 
     const cat = CATEGORIES[id];
     if (cat) {
-      rec.level = 'category';
+      // D24(Ting 裁定 2026-08-26):十個家族父節點升 level=pattern —— 它們的
+      // 臨床卡(治則/主方/主穴)俱在,可獨立作為辨證結論;members/classified_by
+      // 兩軸家族結構原樣保留,鑑別卡標題與家族瀏覽照舊。
+      rec.level = 'pattern';
       rec.classified_by = cat.axis;              // zang_fu 臟腑軸 / bing_xing 病性軸
       rec.members = cat.members;
-      rec.category_note_zh = '上位分類。底下各證型是不同的證,彼此需要鑑別——本 id 適合作為鑑別卡的標題,不適合單獨作為辨證結論。';
+      rec.category_note_zh = '家族父節點(D24 升格,2026-08-26):本證型可獨立作為辨證結論——十張臨床卡(治則/主方/主穴)俱在;同時仍是底下更具體證型的上位家族,鑑別卡標題與家族瀏覽照舊。下轄各證彼此仍需鑑別。';
     } else {
       rec.level = 'pattern';
       const parents = MEMBER_OF.get(id);
