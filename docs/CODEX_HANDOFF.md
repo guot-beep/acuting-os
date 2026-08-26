@@ -1,5 +1,13 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-25] Codex Handoff — Conditions common cardiovascular/lymphatic etiologies B36
+
+- **Exact ids / fields**: `cond.sick_sinus_syndrome`, `cond.hypertensive_heart_disease`, `cond.mitral_valve_prolapse`, `cond.superficial_thrombophlebitis`, and `cond.lymphedema`; filled only bilingual etiology, record-level sources, and matching field provenance. Existing prose, safety fields, acupuncture scope, relations, formulas, and acupoints were preserved.
+- **Measured delta**: maturity `292→297 FULL_DETAIL_CANDIDATE`, `213→208 DETAIL_PARTIAL`, `0→0 SKELETON`, leaving three slots to the first 300 detailed cards; all five scores `10→12/12`; missing etiology `188→183`; condition source entries `946→957`, records with record-level sources `333→338`.
+- **Evidence / distinctions**: NIH/NLM MedlinePlus, NIH/NHLBI, and NIH/NCI; all 11 unique direct URLs returned HTTP 200. Distinguished age-related/medicine/surgical/rare genetic sinus-node dysfunction, chronic hypertensive remodeling, congenital/familial/connective-tissue MVP settings, local-injury and hypercoagulable superficial thrombophlebitis, and primary versus secondary lymphedema.
+- **Validation**: only the five exact ids and four allowed top-level field groups per card changed; the other 500 records remained equal. Condition standard `505/505 clean`, build-data, relations, relation registry, validation ratchet, content junk, URL reachability, generated-data rebuild, per-card score check, and `git diff --check` produced no new blocking defect.
+- **Explicit unresolved / next line**: existing acupuncture-scope and imported-protocol evidence levels were not promoted. Select three high-value respiratory etiology/source gaps next; reaching 300 is a maturity milestone, not Ting RV1 medical-content approval.
+
 ## [2026-08-25] Codex Handoff — Conditions cardiopulmonary etiology/official sources B35
 
 - **Exact ids / fields**: `cond.pleural_effusion`, `cond.atrial_flutter`, `cond.premature_ventricular_contractions`, `cond.paroxysmal_svt`, and `cond.aortic_stenosis`; filled only bilingual etiology, record-level sources, and corresponding field provenance. Existing summary, western context/pathology, red flags, risk factors, acupuncture scope, relations, formulas, and acupoints were preserved.

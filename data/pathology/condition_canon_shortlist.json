@@ -99157,6 +99157,12 @@
   },
   {
    "id": "cond.sick_sinus_syndrome",
+   "etiology_zh": "病態竇房結症候群源於竇房結產生或傳出電訊號的功能受損。多數老年病例與傳導系統隨年齡纖維化有關；其他病因包括缺氧、發炎、心臟疾病、心臟手術造成的竇房結損傷，以及某些抗心律不整或降血壓藥物。少數家族性病例與 SCN5A、HCN4 等離子通道基因變異相關，亦有部分個案病因不明。",
+   "etiology_en": "Sick sinus syndrome results from impaired generation or transmission of electrical signals by the sinoatrial node. Most cases in older adults are associated with age-related fibrosis of the conduction system; other causes include hypoxia, inflammation, heart disease, surgical injury to the SA node, and certain antiarrhythmic or blood-pressure medicines. Rare familial cases involve ion-channel gene variants such as SCN5A or HCN4, and some cases remain unexplained.",
+   "sources": [
+    "https://medlineplus.gov/genetics/condition/sick-sinus-syndrome/",
+    "https://www.nhlbi.nih.gov/health/conduction-disorders"
+   ],
    "entity_type": "biomedical_condition",
    "name_zh": "病態竇房結症候群",
    "name_en": "Sick Sinus Syndrome",
@@ -99236,6 +99242,14 @@
     "pattern.qi_deficiency"
    ],
    "field_sources": {
+    "etiology_zh": [
+     "https://medlineplus.gov/genetics/condition/sick-sinus-syndrome/",
+     "https://www.nhlbi.nih.gov/health/conduction-disorders"
+    ],
+    "etiology_en": [
+     "https://medlineplus.gov/genetics/condition/sick-sinus-syndrome/",
+     "https://www.nhlbi.nih.gov/health/conduction-disorders"
+    ],
     "summary_zh": [
      "StatPearls: Sick Sinus Syndrome (NBK470599)"
     ],
@@ -100323,6 +100337,12 @@
   },
   {
    "id": "cond.hypertensive_heart_disease",
+   "etiology_zh": "高血壓性心臟病由長期血壓升高使左心室持續對抗較高動脈壓而形成。心肌先代償性增厚，久而久之可能因供氧不足與僵硬度增加而出現舒張功能障礙，之後亦可擴大、收縮功能下降並進展為心臟衰竭；高血壓造成的血管壁增厚與粥樣硬化風險亦增加心肌梗塞和中風機會。",
+   "etiology_en": "Hypertensive heart disease develops when long-standing high blood pressure forces the left ventricle to pump against persistently elevated arterial pressure. The myocardium initially thickens as compensation, then may become oxygen-limited and stiff with diastolic dysfunction, later dilating or losing systolic function and progressing to heart failure; hypertension-related vascular thickening and atherosclerotic risk also increase myocardial infarction and stroke risk.",
+   "sources": [
+    "https://medlineplus.gov/ency/article/000163.htm",
+    "https://medlineplus.gov/ency/article/000468.htm"
+   ],
    "entity_type": "biomedical_condition",
    "name_zh": "高血壓性心臟病",
    "name_en": "Hypertensive Heart Disease",
@@ -100439,6 +100459,14 @@
     "pattern.phlegm_damp"
    ],
    "field_sources": {
+    "etiology_zh": [
+     "https://medlineplus.gov/ency/article/000163.htm",
+     "https://medlineplus.gov/ency/article/000468.htm"
+    ],
+    "etiology_en": [
+     "https://medlineplus.gov/ency/article/000163.htm",
+     "https://medlineplus.gov/ency/article/000468.htm"
+    ],
     "summary_zh": [
      "NCBI StatPearls: Hypertensive Heart Disease (NBK539800)"
     ],
@@ -100799,6 +100827,13 @@
   },
   {
    "id": "cond.mitral_valve_prolapse",
+   "etiology_zh": "二尖瓣脫垂是二尖瓣瓣葉組織鬆弛或形態異常，使心室收縮時瓣葉向左心房膨出。多數病例可能先天存在並有家族聚集，但確切原因常不明；年齡相關瓣膜變化、風濕熱、Marfan 或 Ehlers-Danlos 等結締組織疾病，以及部分骨骼肌疾病亦會增加發生可能。",
+   "etiology_en": "Mitral valve prolapse occurs when lax or abnormally formed mitral leaflets billow into the left atrium during ventricular contraction. Many cases appear congenital and cluster in families, although the exact cause is often unknown; age-related valve changes, rheumatic fever, connective-tissue disorders such as Marfan or Ehlers-Danlos syndrome, and some musculoskeletal disorders also increase susceptibility.",
+   "sources": [
+    "https://medlineplus.gov/ency/article/000180.htm",
+    "https://medlineplus.gov/mitralvalveprolapse.html",
+    "https://www.nhlbi.nih.gov/health/heart-valve-diseases/causes"
+   ],
    "entity_type": "biomedical_condition",
    "name_zh": "二尖瓣脫垂",
    "name_en": "Mitral Valve Prolapse",
@@ -100892,6 +100927,16 @@
     "pattern.heart_yin_deficiency"
    ],
    "field_sources": {
+    "etiology_zh": [
+     "https://medlineplus.gov/ency/article/000180.htm",
+     "https://medlineplus.gov/mitralvalveprolapse.html",
+     "https://www.nhlbi.nih.gov/health/heart-valve-diseases/causes"
+    ],
+    "etiology_en": [
+     "https://medlineplus.gov/ency/article/000180.htm",
+     "https://medlineplus.gov/mitralvalveprolapse.html",
+     "https://www.nhlbi.nih.gov/health/heart-valve-diseases/causes"
+    ],
     "summary_zh": [
      "Mayo Clinic: Mitral valve prolapse — Symptoms and causes (mayoclinic.org, retrieved 2026-08)"
     ],
@@ -100936,6 +100981,11 @@
   },
   {
    "id": "cond.superficial_thrombophlebitis",
+   "etiology_zh": "血栓性淺靜脈炎是皮下淺靜脈內形成血栓並伴隨靜脈壁發炎。常在靜脈受傷、靜脈注射或留置導管後發生，也可與靜脈曲張、長期不活動、妊娠、雌激素避孕藥、感染、癌症、肝病或遺傳／後天高凝狀態有關；部分高風險患者可在沒有明顯局部誘因下出現。",
+   "etiology_en": "Superficial thrombophlebitis is thrombus formation with inflammation in a vein just beneath the skin. It often follows local venous injury, intravenous medication, or an indwelling catheter, and may also be associated with varicose veins, prolonged immobility, pregnancy, estrogen-containing contraceptives, infection, cancer, liver disease, or inherited/acquired hypercoagulability; some high-risk patients develop it without an obvious local trigger.",
+   "sources": [
+    "https://medlineplus.gov/ency/article/000199.htm"
+   ],
    "entity_type": "biomedical_condition",
    "name_zh": "血栓性淺靜脈炎",
    "name_en": "Superficial Thrombophlebitis",
@@ -101034,6 +101084,12 @@
     "pattern.damp_heat"
    ],
    "field_sources": {
+    "etiology_zh": [
+     "https://medlineplus.gov/ency/article/000199.htm"
+    ],
+    "etiology_en": [
+     "https://medlineplus.gov/ency/article/000199.htm"
+    ],
     "summary_zh": [
      "Cleveland Clinic: Superficial Thrombophlebitis - Symptoms & Causes"
     ],
@@ -101074,6 +101130,13 @@
   },
   {
    "id": "cond.lymphedema",
+   "etiology_zh": "淋巴水腫由淋巴管或淋巴結缺失、受損或阻塞，使富含蛋白質的淋巴液無法正常回流並滯留於軟組織。原發性淋巴水腫源於先天或遺傳性淋巴系統發育異常；繼發性常見於淋巴結手術、放射治療、腫瘤阻塞、外傷、感染（包括絲蟲病）或反覆蜂窩性組織炎之後。",
+   "etiology_en": "Lymphedema results when absent, damaged, or obstructed lymph vessels or nodes prevent normal return of protein-rich lymph, allowing it to accumulate in soft tissue. Primary lymphedema reflects congenital or inherited lymphatic-development abnormalities; secondary lymphedema commonly follows lymph-node surgery, radiation, tumor obstruction, trauma, infection including filariasis, or recurrent cellulitis.",
+   "sources": [
+    "https://medlineplus.gov/lymphedema.html",
+    "https://medlineplus.gov/ency/article/001117.htm",
+    "https://www.cancer.gov/about-cancer/treatment/side-effects/lymphedema"
+   ],
    "entity_type": "biomedical_condition",
    "name_zh": "淋巴水腫",
    "name_en": "Lymphedema",
@@ -101176,6 +101239,16 @@
     "pattern.water_fluid_retention"
    ],
    "field_sources": {
+    "etiology_zh": [
+     "https://medlineplus.gov/lymphedema.html",
+     "https://medlineplus.gov/ency/article/001117.htm",
+     "https://www.cancer.gov/about-cancer/treatment/side-effects/lymphedema"
+    ],
+    "etiology_en": [
+     "https://medlineplus.gov/lymphedema.html",
+     "https://medlineplus.gov/ency/article/001117.htm",
+     "https://www.cancer.gov/about-cancer/treatment/side-effects/lymphedema"
+    ],
     "summary_zh": [
      "Mayo Clinic: Lymphedema — Symptoms and causes (mayoclinic.org, retrieved 2026-08)"
     ],

@@ -1,3 +1,13 @@
+# 2026-08-25 — Codex Conditions 常見心血管／淋巴病因 B36
+
+- **範圍**：精確修改 `cond.sick_sinus_syndrome`、`cond.hypertensive_heart_disease`、`cond.mitral_valve_prolapse`、`cond.superficial_thrombophlebitis`、`cond.lymphedema`；只補雙語 etiology、record sources 與對應 field provenance，既有正文、安全欄、scope、relations、方劑與穴位未覆寫。
+- **數字**：`FULL_DETAIL_CANDIDATE 292→297`、`DETAIL_PARTIAL 213→208`、`SKELETON 0→0`，距首批 300 張完整卡尚 `3`；五卡均 `10→12/12`；全庫缺 etiology `188→183`；condition source entries `946→957`、有 record source 的卡 `333→338`。
+- **來源／臨床區分**：NIH/NLM MedlinePlus、NIH/NHLBI 與 NIH/NCI；11 個唯一直接 URL 均 HTTP 200。內容區分竇房結老化纖維化／藥物／手術／少數遺傳原因、長期高血壓心肌重塑、二尖瓣脫垂的先天家族與結締組織背景、淺靜脈血栓炎的局部傷害與高凝風險，以及原發／繼發性淋巴水腫。
+- **驗證**：只變更 5 個指定 id、每卡 4 個允許的 top-level 欄位群，其他 500 卡逐記錄不變；condition standard `505/505 clean`、build-data、relations、relation registry、ratchet、content-junk、URL reachability、generated data、逐卡 score 與 `git diff --check` 均無新增 blocking defect。
+- **未解／下一步**：本批沒有提升既有 acupuncture scope 或 imported protocol 的證據等級；下一小批選 3 張高價值呼吸系統病因缺口，使 full-detail 候選達首批 300，但 300 是內容成熟度里程碑，不代表醫療內容已完成 Ting RV1。
+
+---
+
 # 2026-08-25 — Codex Conditions 心肺病因／官方來源補齊 B35
 
 - **範圍**：精確修改 `cond.pleural_effusion`、`cond.atrial_flutter`、`cond.premature_ventricular_contractions`、`cond.paroxysmal_svt`、`cond.aortic_stenosis`；只補雙語 etiology、record sources 與對應 field provenance。既有 summary、western context/pathology、red flags、risk factors、acupuncture scope、relations、方劑與穴位未覆寫。
