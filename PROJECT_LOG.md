@@ -1,3 +1,23 @@
+# 2026-08-25 Antigravity — Task 9D Round 2 (Integration Fidelity / False-Green Remediation)
+
+- **工作內容**: 執行 AcuTing OS 統一預檢安全門閥 `scripts/antigravity-preflight.js` Round 2 忠實度收斂與假綠/假改善修復。
+  - 正典與生成資料零變更：`data/**` canonicals、`data/generated/*` 生成檔、`.github/workflows/*` CI 配置 Byte-for-byte 0 異動。
+  - 真正重用成熟審計邏輯：
+    - Task 9B 完整語意重用：保留 exact/whitespace/case ID 碰撞、名稱碰撞、別名碰撞、5 個 `formula_family` TARGET_MISSING 孤立引用（不產生假改善 5->0）。
+    - Task 9A 來源解析器重用：保留 anti-bare-tail 不變量與多格式路徑解析，單位嚴格對齊 `local_missing_reference_count` (617) 與 `unique_missing_local_paths` (5)。
+    - Task 9C 生成覆蓋重用：保留 7+1 領域同步檢驗（`herbs`, `formulas`, `acupoints`, `symptoms`, `conditions`, `pharmacology`, `supplements`, `single_herbs`），`GENERATED_DUPLICATE_ID` 嚴格 Hard FAIL。
+    - Deep Mode 真實 HTTP 探測：支援 `--deep` 執行實際網路狀態驗證（`OK_200`, `REDIRECT_TO_200`, `DEAD_4XX`, `SERVER_5XX`, `TIMEOUT`, `OTHER_HTTP_STATUS`）；Fast Mode 標記 `HTTP_NOT_RUN_IN_FAST_MODE`，不假造測量值。
+  - 真正可執行的負控回歸測試：12 項合成負控測試（含真正呼叫實際 canonical scanner、git uncommitted diff、generated comparator、baseline loader、hygiene scanner、identity-aware ratchet 回歸與改善檢驗）12/12 PASS。
+  - 識別碼感知 (Identity-Aware) 技術債棘輪：
+    - 追蹤 stable identities（12 支孤立驗證器路徑、1 個重建差異檔、5 個孤立引用 edge identities、5 個缺失本地路徑、95 個 dead URLs）。
+    - 新識別碼出現即判 `REGRESSION`（即便總數不變或減少）；舊識別碼移除判 `IMPROVEMENT`；相同識別碼判 `KNOWN_DEBT_PASS`。
+  - 預設 100% 唯讀：預設執行不修改任何 tracked files（包括 run snapshot），僅在顯式傳入 `--write-report` 時產出 tracked report。
+  - 實測結果：Fast Mode 判定 **`PASS WITH WARNINGS`**（Hard Failures: 0, Regressions: 0, Known Warnings: 6, Improvements: 0），符合進入人工/語意驗收標準。
+- **產出檔案**: `scripts/antigravity-preflight.js` / `scripts/lib/*` / `data/audits/antigravity_preflight_baseline.json` / `data/audits/antigravity_preflight_run.json` / `docs/audits/ANTIGRAVITY_PREFLIGHT_2026-08-25.md`。
+- **分支與狀態**: 推送至 `antigravity/task9d-unified-preflight-round2`，任務交付並停下。
+
+---
+
 # 2026-08-25 深夜 — Task 8C 驗收通過並落地:方劑 exact_source_url 補齊,94%→97%(附一則編碼異常提醒)
 
 Task 8C(`antigravity/formula-fill-task8-source-url`，commit `128da48e`）延續同一套 HTTP 驗證方法補
