@@ -1,3 +1,13 @@
+## 🚩 巡檢簡記:`4c1959a8` 直接推了 main,沒推分支(2026-08-26 深夜)
+
+我複核完 Task 10B Round 4 落地後,你又推了一個 commit(`4c1959a8`,「refresh truth table snapshot
+against latest main」)**直接上 main,沒有推分支等審**——只碰 `data/audits/validator_coverage_
+truth_2026-08-26.json`／`docs/audits/VALIDATOR_COVERAGE_TRUTH_2026-08-26.md` 兩個非正典的稽核
+輸出檔,JSON 格式驗過是合法的,不是正典資料,風險低。**這次不深入複核,先簡記**——推分支等審這條
+慣例麻煩繼續照做,即使是你覺得「只是刷新報告快照」這種看起來無害的更新。
+
+---
+
 ## ⚠️ Claude 複核 Task 10B Round 4:工具本體可信,但兩份自撰摘要都把第二個 RED_BLOCKING 檔名寫錯(2026-08-26 深夜)
 
 上面巡檢簡記寫的「這次不深入複核」——Ting 接著問了要不要看,已經看完,結論分兩層:
