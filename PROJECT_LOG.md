@@ -1,3 +1,18 @@
+# 2026-08-26 Antigravity — Task 10B Round 4 (Retired-Guard False-Positive Elimination & Rebase on Latest Main)
+
+- **做了什麼**: 完成 Task 10B Round 4 退役 ID 守衛偽陽性排除與最新 main rebase（`scripts/audit-validator-coverage-truth.js`）：修正 `findActiveRetiredIdGuards()` 探索邏輯，強制驗證 5 大具因果關聯之行為，成功排除僅檢查單表記錄狀態之 `validate-avs-library.js`，並確認全庫主要廣義守衛唯一解析為 `scripts/validate-retired-id-references.js` (DIRECT_CI)。分支基底對齊最新 `origin/main` (`7f786a02`)，`check-branch-mergeable` 驗證為 GREEN。
+- **數字統計**:
+  - 全庫腳本 368 支；納管驗證/測試/稽核/報告 97 支。
+  - CI 調用真實狀態：CI_INVOKED 57 支、TRANSITIVE_CI 8 支、ORPHAN_BLOCKING_VALIDATOR 13 支、INFORMATIONAL_CI_STEP 5 支、MANUAL_ONLY 287 支。
+  - 獨立執行狀態分類：GREEN_BLOCKING 63 支、RED_BLOCKING 2 支 (`validate-herb-canon.js`, `validate-points-data.js`)、RED_TESTS 0 支、REHEARSAL_REQUIRES_ARGS 1 支、RED_REPORTS 1 支、SKIPPED_UNSAFE 12 支。
+  - 四大專項問題即時派生：A (`GUARD_FOUND`, Primary Guard: `scripts/validate-retired-id-references.js`, DIRECT_CI)、B (`GUARD_FOUND`, Primary Guard: `scripts/validate-retired-id-references.js`)、C (`GUARD_SCOPE_PARTIAL`)、D (`GUARD_FOUND`, Primary Guard: `scripts/validate-retired-id-references.js`)。
+  - D1–D25 決策地圖：直接動態解析 `DECISIONS.md` 現有 25 項標題與雙向程式碼守衛。
+- **驗證結果**: 12/12 負控與生產發現回歸測試 100% PASS（走實體生產發現函式）；生產資料 0 異動。
+- **已知未解**: 13 支阻擋驗證器未進 CI；4 個 NOTE tier 步驟無法 fail closed；main 目前存在 15 項名稱/別名衝突待 clinical/content 裁定。
+- **下一步**: 推送至 `antigravity/task10b-validator-coverage-truth-round4`，等待 Ting / 團隊依據動態真相表進行架構決策。
+
+---
+
 # 2026-08-26 深夜 — 防己/木通兩組安全警語補齊:查證兩組品種辨識沒有把毒性品種標成安全,純新增警語
 
 Ting 要求先查證命名衝突裡風險最高的兩組（防己/漢防己、木通/川木通），查完是好消息：**兩組現有的
