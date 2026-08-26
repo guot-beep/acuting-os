@@ -833,3 +833,29 @@ PASS(composition 查無藥材維持 1 味次 `formula.huang_tu_tang` 的「灶�
   辨證結論(卡片內容經審查被判定為拼裝)—— 屆時該節點單獨降回 category
   並記錄新決定,不整批回退。
 
+## D25 — pattern_registry 所有權翻轉:登錄檔為正本,builder 降級 · LOCKED(2026-08-26,Ting 授權二選一「追上 builder 或翻轉所有權」,Claude 判定翻轉)
+
+- **What**:`data/pathology/pattern_registry.json` 正式宣告為**手工維護的
+  source of truth**,不再是生成檔。`build-pattern-registry.js` 降級為增量
+  偵測工具:預設 report(懸空引用/掃不到的 id/引用計數漂移);`--append`
+  只補「已引用但未登錄」的骨架記錄,既有記錄零改動;`--write` 拒絕執行並
+  說明原因(留著讓肌肉記憶 fail loud)。validate-pattern-registry.js 檔頭
+  改述所有權,地板自 59/10/48/31 升到 **151/10/151/53** 鎖住現況。
+  pattern_overlay.json(舊流程的補充層,三個 map 從未被填)標記停用,
+  原 policy 指示跑 `--write` 已成危險指令,一併改寫。
+- **Why(dry-run 量化,MEASURED TREE: claude/stoic-herschel-f697a7 @ 3486cef0)**:
+  重生成會把 151 筆縮成 113——毀 38 筆 V2 記錄(淋證四型、肺腎陰虛、
+  六經/衛氣營血/奇經八脈擴充等,自帶 442 個欄位)、刪既存記錄上 171 個
+  欄位(system×43、registration_note_zh×52、used_by_cases×16、legacy_ids 等)、
+  改壞 159 個值(52 筆人工核實的 name_zh 會被清空、9 個家族 members 縮水、
+  spleen_constriction 的 system 被腳本的臟腑 regex 誤判回 zang_fu——
+  登錄檔手工修正為 liu_jing)。選 A(讓腳本追上)等於把人工查證成果複製
+  成腳本裡的 JS 常數表:資料存兩份,必再漂移——2026-07-31 事故(59 筆
+  變 50)的根因正是「腳本表落後於真相」。B 承認現實:資料歸資料檔。
+- **D24 不回退**:十家族父節點 level=pattern 與 members/classified_by 兩軸
+  結構原樣保留,由 validator 的 REQUIRED_FAMILY_HEADS 與升高後的地板持續
+  守護;builder 已無整檔寫入能力,結構上不可能再回退 D24。
+- **Reconsider only if**:未來登錄檔需要大規模機械重構(如 schema 遷移)
+  ——屆時寫一次性遷移腳本走 ledger→apply 模式(出帳本、人工核、apply 落庫),
+  不恢復常駐生成器。
+

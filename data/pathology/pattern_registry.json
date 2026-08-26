@@ -1,7 +1,8 @@
 {
   "dataset": "pattern_registry",
-  "policy": "證型 id 的唯一登錄檔。name_zh 空白代表尚未由可靠來源確認——不要用音譯或推測填補（COMPARISON_CARD_TEMPLATE §0 同精神）。新增證型必須先在此登記,再被 conditions 或 comparisons 引用。",
+  "policy": "證型 id 的唯一登錄檔。name_zh 空白代表尚未由可靠來源確認——不要用音譯或推測填補（COMPARISON_CARD_TEMPLATE §0 同精神）。新增證型必須先在此登記,再被 conditions 或 comparisons 引用。所有權(D25,2026-08-26):本檔為手工維護的 source of truth,不是生成檔——直接編輯本檔,改完跑 node scripts/validate-pattern-registry.js;build-pattern-registry.js 只作增量偵測與 --append 補缺漏,不重生成。",
   "created": "2026-07-31",
+  "ownership": "hand_maintained_source_of_truth_since_2026-08-26_D25",
   "records": [
     {
       "id": "pattern.blood_deficiency",

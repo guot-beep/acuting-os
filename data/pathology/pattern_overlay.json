@@ -1,8 +1,9 @@
 {
   "dataset": "pattern_overlay",
-  "policy": "Agent 可編輯的證型補充層。build-pattern-registry.js 會讀這個檔並套用,所以要補中文名或辨證體系請改這裡,不要改腳本。pattern_registry.json 是生成檔,腳本才是來源——改到舊版腳本再跑 --write,會把整個三維結構覆蓋掉(2026-07-31 發生過:59 筆變 50 筆,10 個上位分類全消失)。本檔只新增,不刪除既有條目;查不到就不要填,留空是誠實。",
+  "policy": "已停用(D25,2026-08-26)。本檔是舊生成流程的補充層,三個 map 從未被填過。所有權已翻轉:pattern_registry.json 現在是手工維護的 source of truth,要補中文名或辨證體系請直接編輯 pattern_registry.json,改完跑 node scripts/validate-pattern-registry.js。build-pattern-registry.js 已降級為增量偵測工具(--write 會拒絕執行),不再讀本檔。本檔保留作歷史紀錄,不要往裡面填東西。",
   "created": "2026-07-31",
-  "usage": "填完跑 node scripts/build-pattern-registry.js --write,再跑 node scripts/validate-pattern-registry.js 確認 PASS。",
+  "deprecated": "2026-08-26",
+  "usage": "無(見 policy)。",
   "name_zh": {},
   "system": {},
   "field_sources": {}
