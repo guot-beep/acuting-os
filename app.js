@@ -10229,6 +10229,48 @@ function wireAvsCheckoutEvents() {
   });
 }
 
+// D12(2026-08-26,凍結前最後窗口): v1 匯出過去是裸 clinicalCases 陣列 ——
+// 檔案裡沒有任何版本標記,格式只活在「檔名」上,而檔名使用者改一下就沒了。
+// 9/01 起匯出格式 additive-only(D12),所以信封現在落地:schema_version 寫進
+// 檔案內容,與 v2 staging envelope 已有的 schema_version: 2 同一套判別方式。
+// 匯入端永遠接受裸陣列 —— 今天以前的每一份備份都是那個形狀。
+function v1ExportEnvelope(cases) {
+  return {
+    schema_version: 1,
+    exported_at: new Date().toISOString(),
+    case_count: cases.length,
+    cases,
+  };
+}
+
+// 匯入檔的 v1 形狀判定(v2 信封在呼叫端先被接走,到不了這裡)。
+// 回傳病例陣列;認不得的形狀丟 userFacing 錯誤 —— 訊息只描述形狀,
+// 絕不轉述內容(SOL R-13:JSON 內容不得進 alert/console)。
+function unwrapV1CasesPayload(parsed) {
+  if (Array.isArray(parsed)) return parsed;                    // 舊裸陣列備份,永久支援
+  if (parsed && typeof parsed === "object") {
+    if (parsed.schema_version === 1) {
+      if (Array.isArray(parsed.cases)) return parsed.cases;    // D12 信封
+      const e = new Error("匯入被拒絕:schema_version:1 信封的 cases 不是陣列 —— 檔案可能被編輯壞了,未進行任何寫入。");
+      e.userFacing = true;
+      throw e;
+    }
+    if (parsed.schema_version === 2) {
+      // 防禦:v2 信封只該由上游的 v2 分支處理;走到這裡代表它的 cases
+      // 欄位缺失或非陣列(上游條件沒接住),不能靜默當 v1 解讀。
+      const e = new Error("匯入被拒絕:這看起來是 v2 備份但形狀不完整(cases 缺失或非陣列)。未進行任何寫入。");
+      e.userFacing = true;
+      throw e;
+    }
+    const e = new Error(`匯入被拒絕:認不得的物件形狀(schema_version=${JSON.stringify(parsed.schema_version)})。合法形狀:病例陣列、schema_version:1 匯出信封、schema_version:2 備份。未進行任何寫入。`);
+    e.userFacing = true;
+    throw e;
+  }
+  const e = new Error("匯入被拒絕:檔案內容不是陣列也不是物件。未進行任何寫入。");
+  e.userFacing = true;
+  throw e;
+}
+
 function exportClinicalCases() {
   // Codex C2B-R4 finding (P3.3): after the C2b pointer switch the world is
   // {patients + cases + all V2 rows}, and an export that only serializes
@@ -10262,7 +10304,7 @@ function exportClinicalCases() {
     }
     payload = staging;
   } else {
-    payload = clinicalCases;
+    payload = v1ExportEnvelope(clinicalCases);
   }
   const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
   const url = URL.createObjectURL(blob);
@@ -10391,7 +10433,9 @@ function importClinicalCases(event) {
         });
         return;
       }
-      if (!Array.isArray(imported)) throw new Error("Clinical cases JSON must be an array");
+      // D12:裸陣列(舊備份)與 schema_version:1 信封(新匯出)都在這裡收斂
+      // 成病例陣列;其他形狀 fail loud,訊息只講形狀不轉述內容。
+      imported = unwrapV1CasesPayload(imported);
       const incoming = imported.map(normalizeClinicalCase);
       // Codex spec §4.5: import 在 persist 前先驗不變量,不以 silent
       // inference 修掉衝突 —— 規則與 CI 同一份(store.checkClinicalInvariants)。
@@ -10422,7 +10466,7 @@ function importClinicalCases(event) {
           `⚠️ Restore 會以匯入檔完整取代現有 ${clinicalCases.length} 個病例。\n\n目前資料會先自動下載一份備份。確定要覆蓋?`
         );
         if (!really) return;
-        const backupBlob = new Blob([JSON.stringify(clinicalCases, null, 2)], { type: "application/json" });
+        const backupBlob = new Blob([JSON.stringify(v1ExportEnvelope(clinicalCases), null, 2)], { type: "application/json" });
         const a = document.createElement("a");
         a.href = URL.createObjectURL(backupBlob);
         a.download = `acuting-cases-pre-restore-${new Date().toISOString().slice(0, 19).replace(/[:T]/g, "-")}.json`;
@@ -10439,8 +10483,11 @@ function importClinicalCases(event) {
         return;
       }
       render();
-    } catch {
-      alert("匯入失敗：請確認 JSON 是 AcuTing Clinical Cases 陣列格式。");
+    } catch (e) {
+      // userFacing = unwrapV1CasesPayload 的形狀錯誤,訊息安全(只講形狀)。
+      // 其他例外(含 JSON.parse 的 SyntaxError,V8 會內嵌原始輸入片段)一律
+      // 用固定訊息 —— 病歷內容不得進 alert(SOL R-13)。
+      alert(e && e.userFacing ? e.message : "匯入失敗：請確認檔案是 AcuTing 匯出的病例備份(陣列或 schema_version:1 信封)。");
     } finally {
       event.target.value = "";
     }

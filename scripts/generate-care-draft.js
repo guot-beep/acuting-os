@@ -59,7 +59,7 @@ function loadOutcomeMetricDefs() {
 function loadCasesFile(file) {
   const raw = fs.readFileSync(file, "utf8");
   let parsed = JSON.parse(raw);
-  if (parsed && !Array.isArray(parsed) && Array.isArray(parsed.cases)) parsed = parsed.cases; // v2 envelope
+  if (parsed && !Array.isArray(parsed) && Array.isArray(parsed.cases)) parsed = parsed.cases; // v1(D12)/v2 export envelope
   if (!Array.isArray(parsed)) throw new Error(`${file}: not a v1 array nor a v2 envelope with .cases`);
   return parsed;
 }

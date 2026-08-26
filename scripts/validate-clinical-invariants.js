@@ -48,6 +48,9 @@ function checkCase(c) {
 
 function loadCases(file) {
   const parsed = JSON.parse(fs.readFileSync(file, "utf8"));
+  // D12 匯出信封(schema_version:1/2)裝的是 .cases;單一病例物件與舊裸陣列
+  // 維持原判定。sample_export_fixture.json 自 2026-08-26 起是信封形狀。
+  if (parsed && !Array.isArray(parsed) && Array.isArray(parsed.cases)) return parsed.cases;
   return Array.isArray(parsed) ? parsed : [parsed];
 }
 
