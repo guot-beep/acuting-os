@@ -1,9 +1,9 @@
 {
   "meta": {
-    "generated_at": "2026-08-26T23:18:31.961Z",
+    "generated_at": "2026-08-26T23:42:43.388Z",
     "repository": "github.com/guot-beep/acuting-os",
-    "head_sha": "f111815ed1df9eef49332db188c72cbf2e959be8",
-    "base_sha": "7f786a023e154bede24ceb282f240553ca7ffcad",
+    "head_sha": "37cdbe67ee7d5d9e0e7a6483e283d3265a124d80",
+    "base_sha": "37cdbe67ee7d5d9e0e7a6483e283d3265a124d80",
     "total_scripts_in_repo": 368,
     "total_scoped_validators_and_tests": 97
   },
@@ -436,6 +436,26 @@
       "direct_or_transitive_ci": "NONE",
       "coverage_status": "NO_EXPLICIT_MECHANICAL_MAPPING_FOUND",
       "enforcement_evidence": "No explicit mechanical guard script referenced or active in codebase"
+    },
+    {
+      "decision": "D26",
+      "title": "同名/近名異物藥材:承認混淆地帶,方劑層標最優選",
+      "status": "LOCKED(2026-08-26,Ting:「竹葉≈淡竹葉 有些是通 有些不通 但是是單獨中藥 中醫有很多就是有混淆地帶 卻是有時候可以通用 但有最優選」)",
+      "referenced_script": null,
+      "script_exists": false,
+      "direct_or_transitive_ci": "NONE",
+      "coverage_status": "NO_EXPLICIT_MECHANICAL_MAPPING_FOUND",
+      "enforcement_evidence": "No explicit mechanical guard script referenced or active in codebase"
+    },
+    {
+      "decision": "D27",
+      "title": "formula_correctness 兩筆結案:藥引旗標與君藥補標",
+      "status": "LOCKED(2026-08-26,Ting 對兩題各選 A:「a a」)",
+      "referenced_script": null,
+      "script_exists": false,
+      "direct_or_transitive_ci": "NONE",
+      "coverage_status": "NO_EXPLICIT_MECHANICAL_MAPPING_FOUND",
+      "enforcement_evidence": "No explicit mechanical guard script referenced or active in codebase"
     }
   ],
   "guard_gaps": [
@@ -495,7 +515,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": null,
-      "runtime_ms": 1108,
+      "runtime_ms": 1608,
       "stdout_summary": "dark fields — 有內容但渲染程式沒有引用   361 經穴  (361 筆) — 畫面沒有引用的欄位:1    【導覽詞彙 —— 是篩選軸,不是卡片內容】1       action_tags                         339 筆有值  奇穴  (72 筆) — 畫面沒有引用的欄位:3",
       "stderr_summary": ""
     },
@@ -547,8 +567,8 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": null,
-      "runtime_ms": 606,
-      "stdout_summary": "PASS — origin/main(7f786a02)已在 HEAD 的歷史裡 —— fast-forward,不可能衝突。",
+      "runtime_ms": 434,
+      "stdout_summary": "PASS — HEAD 就是 origin/main,無需比對。",
       "stderr_summary": ""
     },
     {
@@ -586,7 +606,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": null,
-      "runtime_ms": 216,
+      "runtime_ms": 228,
       "stdout_summary": "ok   72 extra-point ids   ok   app.js reads contraindications into cautions   ok   pattern v1.0 migration   ok   add-point-ids and validate-point-ids read the",
       "stderr_summary": ""
     },
@@ -599,7 +619,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": null,
-      "runtime_ms": 6219,
+      "runtime_ms": 6810,
       "stdout_summary": "validation ratchet — defect counts vs committed baseline    flat     conditions   0   flat     patterns     0   flat     tdis         0   flat     symptoms",
       "stderr_summary": ""
     },
@@ -612,7 +632,7 @@
       "exit_code": 2,
       "status": "REHEARSAL_REQUIRES_ARGS",
       "defect_count": null,
-      "runtime_ms": 200,
+      "runtime_ms": 191,
       "stdout_summary": "usage: node scripts/rehearse-c2b.js <raw.json> [--adjudications <adj.json>]",
       "stderr_summary": ""
     },
@@ -625,7 +645,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": null,
-      "runtime_ms": 217,
+      "runtime_ms": 215,
       "stdout_summary": "PASS switched to v2 PASS runtime_revision present PASS pending patient minted PASS runtime-era restore accepted (was rejected pre-gate-D) PASS classified runtim",
       "stderr_summary": ""
     },
@@ -677,7 +697,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": null,
-      "runtime_ms": 160,
+      "runtime_ms": 236,
       "stdout_summary": "{   \"source\": {     \"url\": \"https://cloudtcm.com/disease/tcm\",     \"rows_on_site\": 205,     \"records_after_merge\": 190,     \"snapshot\": \"2026-07-22\",     \"merge",
       "stderr_summary": ""
     },
@@ -703,7 +723,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": null,
-      "runtime_ms": 325,
+      "runtime_ms": 398,
       "stdout_summary": "=== NCBAHM BIO blueprint coverage === blueprint: ncbahm_bio_2026  effective 2026-09-01 canon: 508 conditions, 447 with content  Autoimmune  4/5 Cardiovascular",
       "stderr_summary": ""
     },
@@ -716,7 +736,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": null,
-      "runtime_ms": 359,
+      "runtime_ms": 351,
       "stdout_summary": "方劑 223 首 —— 九個卡片區塊全到位者為「完成」  完成（不用再動）  144 接近（差 1–2 項）  70 待建（差 3 項以上） 9  ── 完成 ──  未分類 / 考點與補充劑 大补阴丸  都氣丸  二仙汤  二至丸  防风通圣散  固经丸  暖肝煎  羌活胜湿汤   和解劑 小柴胡湯  大柴胡湯  逍",
       "stderr_summary": ""
     },
@@ -729,7 +749,7 @@
       "exit_code": 1,
       "status": "RED_REPORTS",
       "defect_count": null,
-      "runtime_ms": 284,
+      "runtime_ms": 305,
       "stdout_summary": "",
       "stderr_summary": "C:\\Projects\\acuting-antigravity\\scripts\\report-formula-content-gaps.js:57   throw new Error(   ^  Error: Unexpected formula scope: 223 total / 204 populated"
     },
@@ -742,7 +762,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": null,
-      "runtime_ms": 373,
+      "runtime_ms": 407,
       "stdout_summary": "{   \"T\": [],   \"S\": [],   \"X\": [     {       \"id\": \"herb.wu_zei_gu\",       \"name\": \"烏賊骨\",       \"other\": \"海螵蛸\",       \"otherCount\": 8,       \"selfCount\": 0",
       "stderr_summary": ""
     },
@@ -755,7 +775,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": null,
-      "runtime_ms": 151,
+      "runtime_ms": 178,
       "stdout_summary": "===== 藥理範圍覆蓋 =====  範圍總數    85 種 已建卡      49  層級       總數    planned skeleton course_f label_ve ting_rev P1       10          0        0        0       10",
       "stderr_summary": ""
     },
@@ -768,7 +788,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": null,
-      "runtime_ms": 184,
+      "runtime_ms": 3715,
       "stdout_summary": "Scenario A — routine acupuncture, no flags   ✓ modality source is structured   ✓ acupuncture aftercare candidate present   ✓ no oncology candidate   ✓ no antico",
       "stderr_summary": ""
     },
@@ -794,7 +814,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": null,
-      "runtime_ms": 191,
+      "runtime_ms": 246,
       "stdout_summary": "PASS 裸陣列(舊備份)原樣通過 PASS v1ExportEnvelope → unwrap round-trip PASS schema_version:1 但 cases 非陣列 PASS v2 形狀不完整落到 v1 路徑 PASS 未知 schema_version PASS 無版本欄位的物件 PASS 字串",
       "stderr_summary": ""
     },
@@ -807,7 +827,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": null,
-      "runtime_ms": 393,
+      "runtime_ms": 319,
       "stdout_summary": "HerbFuntion_JSON: undefined HerbTagAnalysisCH_JSON: undefined BD_Analysis sample:  MetaDescription sample:",
       "stderr_summary": ""
     },
@@ -820,7 +840,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": null,
-      "runtime_ms": 177,
+      "runtime_ms": 137,
       "stdout_summary": "✓ 一開始沒有任何缺口   ✓ 記錄後多一筆   ✓ 欄位名記對了   ✓ 查詢文字記對了(不是被改寫過的版本)   ✓ 有中文欄位標籤(不是裸的 fieldName)   ✓ count 從 1 開始   ✓ 有時間戳   ✓ 真的寫進 localStorage(key 正確)   ✓ 寫進去的內容 round-",
       "stderr_summary": ""
     },
@@ -833,7 +853,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": null,
-      "runtime_ms": 171,
+      "runtime_ms": 128,
       "stdout_summary": "測試目標:C:\\Projects\\acuting-antigravity\\app.js  情境 A — pointer=v2、store 缺失(應鎖唯讀,v1 零寫入)   PASS — load 不回傳 v1 內容(不得把凍結的回滾錨當現況)   PASS — load 後 clinicalStoreIntegrit",
       "stderr_summary": ""
     },
@@ -872,7 +892,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": null,
-      "runtime_ms": 157,
+      "runtime_ms": 133,
       "stdout_summary": "PASS v1 load unchanged PASS v1 save unchanged PASS v1 mode never touches staging PASS v2 load reads envelope.cases PASS v2 save never writes v1 (frozen rollback",
       "stderr_summary": "syncPendingPatients: patient id collision for code \"PZ\" vs existing \"OTHER\" — minting refused, code left pending"
     },
@@ -885,7 +905,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": null,
-      "runtime_ms": 150,
+      "runtime_ms": 156,
       "stdout_summary": "PASS — 病人數   PASS — 病例數   PASS — 就診數   PASS — 最早/最晚就診   PASS — 回診率(2/3)   PASS — 單次就診病例   PASS — verdict 覆蓋(6/8)   PASS — 有 outcome 數值的就診(7/8)   PASS — 不良事件就診",
       "stderr_summary": ""
     },
@@ -898,7 +918,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": null,
-      "runtime_ms": 251,
+      "runtime_ms": 215,
       "stdout_summary": "acupoint source conflicts — 361 穴    NOTE  APB-2    21  中文禁灸而英文寫 Moxibustion applicable   NOTE  APB-4a    4  中文卡自相矛盾:針法寫直刺,自己的禁忌欄寫嚴禁直刺   NOTE  APB-4b    1  中文禁直",
       "stderr_summary": ""
     },
@@ -911,7 +931,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": null,
-      "runtime_ms": 257,
+      "runtime_ms": 238,
       "stdout_summary": "validate-acupoint-standard: 361 points (361 template-grade)    中英未對齊 misaligned pairs      0   缺英文陣列 missing _en arrays     0   功效 2-8 條 curated               3",
       "stderr_summary": ""
     },
@@ -924,7 +944,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": null,
-      "runtime_ms": 240,
+      "runtime_ms": 196,
       "stdout_summary": "avs_advice_library: 13 records (12 active, 1 retired)   patterns resolvable against 151 registry ids; conditions against 508; modalities against 11; safety toke",
       "stderr_summary": ""
     },
@@ -950,7 +970,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": null,
-      "runtime_ms": 588,
+      "runtime_ms": 559,
       "stdout_summary": "bilingual render parity — 中文有顯示、英文沒有的欄位    BLOCK 361 經穴      0 個英文缺口   BLOCK 奇穴          0 個英文缺口   BLOCK 方劑          0 個英文缺口   BLOCK 中藥          0 個英文缺口   BLOCK",
       "stderr_summary": ""
     },
@@ -963,8 +983,8 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": null,
-      "runtime_ms": 208,
-      "stdout_summary": "validate-boot-order: initial render() at app.js:1469   top-level UPPER_CASE const declarations after it: 0 PASS — no top-level constant is declared after the fi",
+      "runtime_ms": 149,
+      "stdout_summary": "validate-boot-order: initial render() at app.js:1474   top-level UPPER_CASE const declarations after it: 0 PASS — no top-level constant is declared after the fi",
       "stderr_summary": ""
     },
     {
@@ -976,7 +996,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": null,
-      "runtime_ms": 177,
+      "runtime_ms": 162,
       "stdout_summary": "CARE draft PHI boundary  — 1. patientCode / caseTitle 不得離開系統 —   PASS — patientCode 不出現在草稿的任何地方(含 HTML 註解)   PASS — caseTitle 不出現在草稿的任何地方   PASS — 下載檔名不含 caseTi",
       "stderr_summary": ""
     },
@@ -989,7 +1009,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": null,
-      "runtime_ms": 147,
+      "runtime_ms": 235,
       "stdout_summary": "PASS — 面板有畫出來(readiness.max > 0)   PASS — 按鈕存在   PASS — 按鈕的 case id 正確   PASS — downloadCareDraft 沒有拋錯   PASS — 真的產生了一個 Blob(下載被觸發)   PASS — Blob 類型是 markdown",
       "stderr_summary": ""
     },
@@ -1002,7 +1022,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": null,
-      "runtime_ms": 422,
+      "runtime_ms": 416,
       "stdout_summary": "===== 臨床病例層檢查 =====  受檢檔案        10  (gitignored 的 local/private/exports 不掃) 檢查的引用      2 詞彙表          conditions:508 · patterns:151 · formulas:223 · herbs:363",
       "stderr_summary": ""
     },
@@ -1015,7 +1035,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": null,
-      "runtime_ms": 152,
+      "runtime_ms": 119,
       "stdout_summary": "sample_export_fixture.json sample_deidentified_case.json case_template.json checked: 3 cases · 3 pattern selections · 2 exposures · 5 events · 3 lifestyle rows",
       "stderr_summary": ""
     },
@@ -1028,7 +1048,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": null,
-      "runtime_ms": 155,
+      "runtime_ms": 136,
       "stdout_summary": "clinical-store PHI boundary    未包裝的 JSON.parse   0   行為檢查失敗          0  PASS — no blocking defects.",
       "stderr_summary": ""
     },
@@ -1041,7 +1061,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": null,
-      "runtime_ms": 204,
+      "runtime_ms": 177,
       "stdout_summary": "CloudTCM vocabulary validation passed. [   {     \"file\": \"data/pathology/cloudtcm_disease_categories.json\",     \"records\": 14,     \"unique_ids\": 14,     \"biling",
       "stderr_summary": ""
     },
@@ -1054,7 +1074,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": null,
-      "runtime_ms": 333,
+      "runtime_ms": 404,
       "stdout_summary": "===== 辨證鑑別卡驗證 =====  鑑別卡總數      43   證型鑑別      11   方劑鑑別      32   已由 Ting 填寫  9  C8 方劑鑑別群組  30 個可建卡,已建 30,缺 0  validate-comparison-standard: PASS",
       "stderr_summary": ""
     },
@@ -1067,7 +1087,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": null,
-      "runtime_ms": 2338,
+      "runtime_ms": 893,
       "stdout_summary": "- CloudTCM disease directory: SKIPPED (feature dissolved per js/knowledge.js; see comment above — retire-vs-fix decision needed) Condition source validation PAS",
       "stderr_summary": ""
     },
@@ -1080,7 +1100,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": 0,
-      "runtime_ms": 259,
+      "runtime_ms": 248,
       "stdout_summary": "{   \"file\": \"data/pathology/condition_canon_shortlist.json\",   \"scope\": \"all\",   \"records\": 508,   \"clean\": 508,   \"defects\": 0,   \"by_code\": {},   \"notes\": 35",
       "stderr_summary": ""
     },
@@ -1093,7 +1113,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": null,
-      "runtime_ms": 858,
+      "runtime_ms": 638,
       "stdout_summary": "validate-content-junk: PASS — no scraped header tokens, no encoding anomalies in _zh fields.",
       "stderr_summary": "validate-content-junk: WARN — 8 known control character(s) at/below the frozen baseline of 8 (owned by another line, not blocking here):   data/acupoints/361.js"
     },
@@ -1106,7 +1126,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": null,
-      "runtime_ms": 572,
+      "runtime_ms": 483,
       "stdout_summary": "=== acupoints — 361 records — data/acupoints/361.json === field                     empty  filler  shared  notZh  thin    GOOD  quality functions_zh",
       "stderr_summary": ""
     },
@@ -1119,7 +1139,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": 0,
-      "runtime_ms": 163,
+      "runtime_ms": 120,
       "stdout_summary": "⚠ XW7: 679 versioned entries expire within 42 days (earliest 2026-09-30).   Six-week runway is open — dispatch the FY2027 delta (docs/ANTIGRAVITY_DISPATCH_2026-",
       "stderr_summary": ""
     },
@@ -1132,7 +1152,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": null,
-      "runtime_ms": 695,
+      "runtime_ms": 661,
       "stdout_summary": "OK: all 361 records from 361.json are present in runtime OK: no duplicate point codes OK: all 361 runtime records keep nameZh/location/needling non-empty and fa",
       "stderr_summary": ""
     },
@@ -1145,7 +1165,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": 2915,
-      "runtime_ms": 2362,
+      "runtime_ms": 2513,
       "stdout_summary": "{\"defects\":2915,\"by_code\":{\"chinese_field_without_cjk\":1814,\"replacement_character\":1100,\"question_mark_only\":1},\"by_file\":{\"data/acupoints/361.json\":362,\"data/",
       "stderr_summary": ""
     },
@@ -1158,7 +1178,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": null,
-      "runtime_ms": 156,
+      "runtime_ms": 126,
       "stdout_summary": "PASS — 每個用藥列都帶安全提示(2 個列表 / 2 個呼叫點)   PASS — 黑框警告的文字有出現   PASS — 黑框警告不用點開就看得到(不在 <details> 裡)   PASS — 黑框警告的文字逐字來自卡片(渲染層沒有改寫)   PASS — 禁忌有帶出來,且十筆不會全部攤開洗版(收在 <d",
       "stderr_summary": ""
     },
@@ -1171,7 +1191,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": null,
-      "runtime_ms": 149,
+      "runtime_ms": 127,
       "stdout_summary": "validate-extra-point-standard   records                 72   records with issues     22/72   mojibake suspected      0/72   missing measurable method 0/72   mis",
       "stderr_summary": ""
     },
@@ -1184,7 +1204,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": null,
-      "runtime_ms": 2585,
+      "runtime_ms": 2853,
       "stdout_summary": "{   \"stats\": {     \"json_files_seen\": 636,     \"json_files_parsed\": 636,     \"parse_failures\": 0,     \"collections\": 388,     \"collections_nested\": 110,     \"re",
       "stderr_summary": ""
     },
@@ -1197,7 +1217,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": null,
-      "runtime_ms": 202,
+      "runtime_ms": 240,
       "stdout_summary": "{   \"eligible_records\": 212,   \"exact_duplicate_pairs\": 3,   \"exact_duplicate_unresolved\": 2,   \"near_duplicate_pairs\": 0,   \"allowlisted_pairs\": 0,   \"pairs\":",
       "stderr_summary": ""
     },
@@ -1209,9 +1229,9 @@
       "safe_to_execute_read_only": true,
       "exit_code": 0,
       "status": "GREEN",
-      "defect_count": 2,
-      "runtime_ms": 301,
-      "stdout_summary": "{\"defects\":2,\"by_code\":{\"wrong-herb-count\":1,\"no-chief\":1}}",
+      "defect_count": 0,
+      "runtime_ms": 343,
+      "stdout_summary": "{\"defects\":0,\"by_code\":{}}",
       "stderr_summary": ""
     },
     {
@@ -1222,9 +1242,9 @@
       "safe_to_execute_read_only": true,
       "exit_code": 0,
       "status": "GREEN",
-      "defect_count": 1,
-      "runtime_ms": 300,
-      "stdout_summary": "{\"defects\":1,\"by_code\":{\"unresolved_pinyin_or_herb_id\":1}}",
+      "defect_count": 0,
+      "runtime_ms": 265,
+      "stdout_summary": "{\"defects\":0,\"by_code\":{\"unresolved_pinyin_or_herb_id\":0}}",
       "stderr_summary": ""
     },
     {
@@ -1236,7 +1256,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": null,
-      "runtime_ms": 223,
+      "runtime_ms": 198,
       "stdout_summary": "formula herb-drug interaction review    資料裡的敘述        26   已審且內容未變      26   未審                0   審後被改動          0   允許進畫面          1  formula.xiao_chai_hu_tan",
       "stderr_summary": ""
     },
@@ -1249,7 +1269,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": null,
-      "runtime_ms": 227,
+      "runtime_ms": 180,
       "stdout_summary": "=== Running Strict Formula Quality & Provenance Validator === Checked 223 formula records (Sourced exact CloudTCM records: 151). OK: All 223 formula records pas",
       "stderr_summary": ""
     },
@@ -1262,7 +1282,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": null,
-      "runtime_ms": 228,
+      "runtime_ms": 184,
       "stdout_summary": "{   \"stats\": {     \"records\": 223,     \"with_composition\": 221,     \"public_safe_true\": 39,     \"caution_cards\": 70,     \"garbled_actions_cards_librarywide\": 4,",
       "stderr_summary": ""
     },
@@ -1275,7 +1295,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": null,
-      "runtime_ms": 228,
+      "runtime_ms": 194,
       "stdout_summary": "===== 方歌欄位檢查 =====  方劑總數      223 已有方歌      201   其中註明出處  43 尚無方歌      22  validate-formula-song: PASS — 已填的方歌格式都正確。",
       "stderr_summary": ""
     },
@@ -1288,7 +1308,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": null,
-      "runtime_ms": 374,
+      "runtime_ms": 359,
       "stdout_summary": "validate-formula-standard: 223 formulas (216 template-grade)    有組成 composition        221/223   有君臣佐使                221/223   有加減變化                98/223   有出",
       "stderr_summary": ""
     },
@@ -1301,7 +1321,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": 0,
-      "runtime_ms": 207,
+      "runtime_ms": 196,
       "stdout_summary": "gyn legacy migration: 96/96 flags · 83 supported / 13 not_found · 142 evidence entries · 0 defects",
       "stderr_summary": ""
     },
@@ -1314,7 +1334,7 @@
       "exit_code": 1,
       "status": "RED_BLOCKING_VALIDATOR",
       "defect_count": null,
-      "runtime_ms": 269,
+      "runtime_ms": 245,
       "stdout_summary": "",
       "stderr_summary": "Herb canon validation warnings: - herb.tao_ren: channels_entered is empty - herb.tao_ren: modern_use_tags is empty - herb.chuan_niu_xi: channels_entered is empt"
     },
@@ -1327,7 +1347,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": null,
-      "runtime_ms": 218,
+      "runtime_ms": 198,
       "stdout_summary": "===== 中藥卡結構檢查 =====  中藥卡總數      363 參考卡          herb.gan_cao (68 個欄位) 阻擋問題        0 欄位缺漏/型別歧異 384  (舊庫既有,報告不擋) 欄位覆蓋 <50%   24  --- 欄位缺漏（報告,多為舊卡）前 10 ---   H2 h",
       "stderr_summary": ""
     },
@@ -1340,7 +1360,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": null,
-      "runtime_ms": 131,
+      "runtime_ms": 120,
       "stdout_summary": "ok    D1 接線會被抓到   ok    D1 連 dosage_normalized 也擋(不是只擋 dosage)   ok    D1 讀 dosage_g 是允許的(不誤擋正常路徑)   ok    D1 錨點消失會被抓到(不允許空跑通過)   ok    D2 新形狀會被抓到   ok    D3",
       "stderr_summary": ""
     },
@@ -1353,7 +1373,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": null,
-      "runtime_ms": 325,
+      "runtime_ms": 273,
       "stdout_summary": "{   \"records\": 363,   \"counts\": {     \"HB-4\": 913,     \"HB-5\": 15,     \"HB-6\": 11,     \"HB-8\": 46,     \"HB-9\": 0,     \"HB-10\": 7,     \"HB-11\": 182,     \"HB-12\":",
       "stderr_summary": ""
     },
@@ -1366,7 +1386,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": null,
-      "runtime_ms": 263,
+      "runtime_ms": 238,
       "stdout_summary": "=== Running Strict Single Herb Quality & Provenance Validator === Checked 363 herb records (Sourced exact CloudTCM records: 194). OK: All 363 single herb record",
       "stderr_summary": ""
     },
@@ -1379,7 +1399,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": null,
-      "runtime_ms": 252,
+      "runtime_ms": 185,
       "stdout_summary": "validate-herb-standard: 363 records  Coverage vs canonical record (docs/HERB_RECORD_STANDARD.md):   name_zh                   363/363  100%   name_en",
       "stderr_summary": ""
     },
@@ -1392,7 +1412,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": null,
-      "runtime_ms": 331,
+      "runtime_ms": 215,
       "stdout_summary": "Herbal link validation passed: 10 draft formula relationship records.",
       "stderr_summary": ""
     },
@@ -1405,8 +1425,8 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": null,
-      "runtime_ms": 136,
-      "stdout_summary": "Interaction audit passed. {   \"internalHashLinks\": 15,   \"ids\": 154,   \"directoryTopicShortcuts\": [],   \"patientCaseActions\": [     \"patientNewCaseLink\",     \"p",
+      "runtime_ms": 110,
+      "stdout_summary": "Interaction audit passed. {   \"internalHashLinks\": 15,   \"ids\": 156,   \"directoryTopicShortcuts\": [],   \"patientCaseActions\": [     \"patientNewCaseLink\",     \"p",
       "stderr_summary": ""
     },
     {
@@ -1418,7 +1438,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": null,
-      "runtime_ms": 2558,
+      "runtime_ms": 2344,
       "stdout_summary": "OK: 6 片載入，合計 47 鍵 OK: 鍵集相等（47 鍵） OK: 全部 47 鍵逐位元組等於單體 OK: __expected 清單與分片一致（core, ref, rx, mm, dx, pat） OK: K6 載入序——六片全部在 app.js 之前，app.js 在 js/knowledge.js 之前",
       "stderr_summary": ""
     },
@@ -1431,7 +1451,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": null,
-      "runtime_ms": 149,
+      "runtime_ms": 109,
       "stdout_summary": "validate-metric-interpretation: 27 metrics   sourced                  10   no_published_threshold   17  PASS — 三態契約成立,沒有無來源的數字閾值。",
       "stderr_summary": ""
     },
@@ -1444,7 +1464,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": null,
-      "runtime_ms": 306,
+      "runtime_ms": 266,
       "stdout_summary": "Naming validation passed (586 records; D3 homonym rule).",
       "stderr_summary": ""
     },
@@ -1457,7 +1477,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": null,
-      "runtime_ms": 228,
+      "runtime_ms": 215,
       "stdout_summary": "✅ Mandatory check passed: 0 boilerplate or placeholder strings found in all 201 formulas.",
       "stderr_summary": ""
     },
@@ -1470,7 +1490,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": null,
-      "runtime_ms": 205,
+      "runtime_ms": 174,
       "stdout_summary": "template protocol guard    條件卡           508   仍為共用樣板     0  PASS — no blocking defects.",
       "stderr_summary": ""
     },
@@ -1483,7 +1503,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": null,
-      "runtime_ms": 163,
+      "runtime_ms": 121,
       "stdout_summary": "PASS — sourced 要顯示可查證的短引用   PASS — no_published_threshold 要明說沒有閾值   PASS — source_pending 要明說來源待補   PASS — 未標註的不畫 badge(空白好過假結論)   PASS — 未標註的仍要出現在表格裡(不能被整列吃掉",
       "stderr_summary": ""
     },
@@ -1496,7 +1516,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": null,
-      "runtime_ms": 135,
+      "runtime_ms": 108,
       "stdout_summary": "===== 證型登錄檔結構檢查 =====  證型筆數        151  (下限 151) 家族父節點      10  (下限 10) 有辨證體系      151  (下限 151) 有兩軸歸屬      53  (下限 53) 待補中文名      0 待補辨證體系    0  validate-patte",
       "stderr_summary": ""
     },
@@ -1509,7 +1529,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": 0,
-      "runtime_ms": 233,
+      "runtime_ms": 190,
       "stdout_summary": "{   \"file\": \"data/pathology/pattern_library.json\",   \"scope\": \"all\",   \"records\": 154,   \"clean\": 154,   \"defects\": 0,   \"by_code\": {},   \"notes\": {     \"N1\": 3",
       "stderr_summary": ""
     },
@@ -1522,7 +1542,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": null,
-      "runtime_ms": 502,
+      "runtime_ms": 356,
       "stdout_summary": "===== 藥理層檢查 =====  drugs      59 筆 classes    48 筆 targets    38 筆 systems    7 筆  ===== PHARMACOLOGY FOUNDATION GRAPH AUDIT ===== systems total:",
       "stderr_summary": ""
     },
@@ -1535,7 +1555,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": null,
-      "runtime_ms": 305,
+      "runtime_ms": 206,
       "stdout_summary": "Point category validation passed. 129 distinct points tagged; five_shu_element on 60.",
       "stderr_summary": ""
     },
@@ -1548,7 +1568,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": null,
-      "runtime_ms": 324,
+      "runtime_ms": 269,
       "stdout_summary": "Point id validation passed. distinct ids by namespace: {\"standard\":361,\"ex\":72,\"tung\":277,\"ear\":215} | total: 925",
       "stderr_summary": ""
     },
@@ -1561,7 +1581,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": null,
-      "runtime_ms": 237,
+      "runtime_ms": 139,
       "stdout_summary": "[parity] app wrapper executed on 35 fixtures, 35 delegated calls, 0 verdict mismatches PASS [control] U+0085 NEL stripped from patient text PASS [control] U+0",
       "stderr_summary": ""
     },
@@ -1574,7 +1594,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": null,
-      "runtime_ms": 161,
+      "runtime_ms": 160,
       "stdout_summary": "ok    沒有 evidence 就不輸出   ok    status 不在字典裡就不輸出(不亂編標籤)   ok    not_supported 會印出「現有證據不支持」   ok    evidence_note_zh 會上畫面   ok    scope_conflict_note 會上畫面   ok",
       "stderr_summary": ""
     },
@@ -1587,7 +1607,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": 0,
-      "runtime_ms": 257,
+      "runtime_ms": 205,
       "stdout_summary": "red_flag_registry: 226 records · 79 entities covered · 0 defects",
       "stderr_summary": ""
     },
@@ -1600,7 +1620,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": 0,
-      "runtime_ms": 903,
+      "runtime_ms": 644,
       "stdout_summary": "red-flag runtime: 55 wired cards · 191 refs · ledger 151/40/0 · authored-only fallback 24 · 0 defects",
       "stderr_summary": ""
     },
@@ -1613,7 +1633,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": 0,
-      "runtime_ms": 245,
+      "runtime_ms": 191,
       "stdout_summary": "red-flag wiring: 55 wired cards · 191 refs (151 supported / 40 not_found / 0 pending) · 0 defects",
       "stderr_summary": ""
     },
@@ -1626,7 +1646,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": null,
-      "runtime_ms": 673,
+      "runtime_ms": 614,
       "stdout_summary": "{   \"file\": \"data/config/relation_registry.json\",   \"edges\": 14,   \"errors\": 0,   \"by_code\": {},   \"notes\": {     \"N2\": 10,     \"N3\": 1,     \"N1\": 3   } }",
       "stderr_summary": ""
     },
@@ -1639,7 +1659,7 @@
       "exit_code": 1,
       "status": "RED_BLOCKING_VALIDATOR",
       "defect_count": null,
-      "runtime_ms": 485,
+      "runtime_ms": 468,
       "stdout_summary": "",
       "stderr_summary": "Relation validation warnings: - data/interop/condition_crosswalk.json.records[7].icd10: \"N91.3\" disagrees with canon icd_hint \"N91.5\" - data/interop/condition_c"
     },
@@ -1652,7 +1672,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": null,
-      "runtime_ms": 343,
+      "runtime_ms": 280,
       "stdout_summary": "OK: R1 0 個 css 檔無外部 @import OK: R2 跨網域 stylesheet 全部 media=\"print\" OK: R3 index.html 無 inline classic script OK: R4 fonts.js 翻轉驅動完整（load+error 監聽、單一受控翻轉點） valid",
       "stderr_summary": ""
     },
@@ -1665,7 +1685,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": 0,
-      "runtime_ms": 1819,
+      "runtime_ms": 1780,
       "stdout_summary": "{\"defects\":0,\"by_code\":{}}",
       "stderr_summary": ""
     },
@@ -1678,7 +1698,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": 0,
-      "runtime_ms": 496,
+      "runtime_ms": 499,
       "stdout_summary": "review-status vocab: 1956 record-level values checked · 2 pinned exceptions · 0 defects   （2 筆歷史單例釘在 KNOWN_EXCEPTIONS，待 Ting 裁定歸位） PASS — record 級 review_status",
       "stderr_summary": ""
     },
@@ -1691,7 +1711,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": 0,
-      "runtime_ms": 138,
+      "runtime_ms": 111,
       "stdout_summary": "checked 36 supp records · categories 8 PASS — 0 defects, 0 warning(s)",
       "stderr_summary": ""
     },
@@ -1704,7 +1724,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": 0,
-      "runtime_ms": 180,
+      "runtime_ms": 154,
       "stdout_summary": "{   \"file\": \"data/symptoms/symptoms.json\",   \"scope\": \"all\",   \"records\": 124,   \"clean\": 124,   \"defects\": 0,   \"by_code\": {},   \"notes\": {     \"N3\": 4,     \"N",
       "stderr_summary": ""
     },
@@ -1717,7 +1737,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": 0,
-      "runtime_ms": 263,
+      "runtime_ms": 217,
       "stdout_summary": "{   \"file\": \"data/pathology/tdis_registry.json\",   \"scope\": \"all\",   \"records\": 160,   \"clean\": 160,   \"defects\": 0,   \"by_code\": {},   \"notes\": {     \"N1\": 2,",
       "stderr_summary": ""
     },
@@ -1730,7 +1750,7 @@
       "exit_code": 0,
       "status": "GREEN",
       "defect_count": null,
-      "runtime_ms": 186,
+      "runtime_ms": 188,
       "stdout_summary": "PASS pain trajectory 8→7→5→4→3 — 8→7→5→4→3 PASS sleep trajectory 5→7 — 5→5.5→6→6.5→7 PASS exposure timeline 3 events, dose history recoverable PASS current snap",
       "stderr_summary": ""
     }
@@ -5509,7 +5529,8 @@
       "domain": [
         "ACUPOINT",
         "ENCODING_HYGIENE",
-        "GENERATED"
+        "GENERATED",
+        "RUNTIME_RENDER"
       ],
       "direct_ci": false,
       "transitive_ci": false,
@@ -10664,6 +10685,10 @@
         {
           "code": "R9",
           "description": "A: pointer 讀取例外 → load"
+        },
+        {
+          "code": "M3",
+          "description": "getPendingPatientCodes 的三態契約 -------------------------------"
         }
       ]
     },
@@ -11571,7 +11596,12 @@
       "exit_behavior_mechanism": "literal exit(1)",
       "ci_status": "TRANSITIVE_CI",
       "workflow_steps": [],
-      "invariants": []
+      "invariants": [
+        {
+          "code": "D26",
+          "description": "銀翹散 Zhu Ye 案已結——竹葉與"
+        }
+      ]
     },
     {
       "script": "scripts/validate-formula-hdi-review.js",
