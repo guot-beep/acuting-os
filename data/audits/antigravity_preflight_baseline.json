@@ -1,0 +1,15 @@
+{
+  "_version": "1.0.0",
+  "_description": "AcuTing OS Unified Preflight Debt Ratchet Baseline (Task 9D)",
+  "updated_at": "2026-08-25T22:00:00.000Z",
+  "reasons": [
+    "2026-08-25: Task 9D initial unified preflight baseline calibration from accepted 9A/9B/9C audits"
+  ],
+  "debt_ceilings": {
+    "orphan_blocking_validators": 12,
+    "rebuild_differs_artifacts": 1,
+    "orphan_target_missing_references": 5,
+    "local_missing_sources": 617,
+    "dead_http_links": 95
+  }
+}

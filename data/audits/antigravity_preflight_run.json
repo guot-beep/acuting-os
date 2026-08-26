@@ -1,0 +1,980 @@
+{
+  "preflight_version": "1.0.0",
+  "executed_at": "2026-08-26T05:14:42.296Z",
+  "summary": {
+    "overall_status": "PASS WITH WARNINGS",
+    "mode": "FAST (Deterministic local only)",
+    "base_ref": "origin/main",
+    "hard_failures_count": 0,
+    "regressions_count": 0,
+    "known_warnings_count": 3,
+    "improvements_count": 2,
+    "hard_failures": [],
+    "regressions": [],
+    "warnings": [
+      "Existing known debt within ceiling for orphan_blocking_validators: 12",
+      "Existing known debt within ceiling for rebuild_differs_artifacts: 1",
+      "Existing known debt within ceiling for dead_http_links: 95"
+    ],
+    "improvements": [
+      "Debt reduced for orphan_target_missing_references: 5 -> 0",
+      "Debt reduced for local_missing_sources: 617 -> 20"
+    ]
+  },
+  "reports": {
+    "mutation_scope": {
+      "passed": true,
+      "baseRef": "origin/main",
+      "totalChangedFiles": 0,
+      "canonicalChangesCount": 0,
+      "generatedChangesCount": 0,
+      "workflowChangesCount": 0,
+      "classifications": [],
+      "hardFailures": [],
+      "warnings": []
+    },
+    "canonical_integrity": {
+      "passed": true,
+      "hardFailures": [],
+      "exactDuplicateCount": 0,
+      "whitespaceCollisionCount": 0,
+      "caseCollisionCount": 0,
+      "deprecatedRecordCount": 8,
+      "importStubCount": 0,
+      "orphanReferencesCount": 0,
+      "orphanReferences": []
+    },
+    "generated_sync": {
+      "passed": true,
+      "results": [
+        {
+          "layer": "herbs",
+          "status": "SYNC_OK",
+          "missingInGenerated": [],
+          "extraInGenerated": [],
+          "duplicatesInGenerated": []
+        },
+        {
+          "layer": "formulas",
+          "status": "SYNC_OK",
+          "missingInGenerated": [],
+          "extraInGenerated": [],
+          "duplicatesInGenerated": []
+        },
+        {
+          "layer": "acupoints_361",
+          "status": "SYNC_OK",
+          "missingInGenerated": [],
+          "extraInGenerated": [],
+          "duplicatesInGenerated": []
+        }
+      ],
+      "hardFailures": []
+    },
+    "deterministic_rebuild": {
+      "passed": true,
+      "comparisons": [
+        {
+          "artifact": "data/generated/app_data.js",
+          "status": "REBUILD_IDENTICAL",
+          "committedBytes": 1357538,
+          "rebuiltBytes": 1357538
+        },
+        {
+          "artifact": "data/generated/cloudtcm_map.js",
+          "status": "REBUILD_IDENTICAL",
+          "committedBytes": 11806,
+          "rebuiltBytes": 11806
+        },
+        {
+          "artifact": "data/generated/points_361.js",
+          "status": "REBUILD_IDENTICAL",
+          "committedBytes": 6217301,
+          "rebuiltBytes": 6217301
+        },
+        {
+          "artifact": "data/generated/knowledge_core.js",
+          "status": "REBUILD_IDENTICAL",
+          "committedBytes": 212850,
+          "rebuiltBytes": 212850
+        },
+        {
+          "artifact": "data/generated/knowledge_ref.js",
+          "status": "REBUILD_IDENTICAL",
+          "committedBytes": 1367454,
+          "rebuiltBytes": 1367454
+        },
+        {
+          "artifact": "data/generated/knowledge_rx.js",
+          "status": "REBUILD_IDENTICAL",
+          "committedBytes": 4036018,
+          "rebuiltBytes": 4036018
+        },
+        {
+          "artifact": "data/generated/knowledge_mm.js",
+          "status": "REBUILD_IDENTICAL",
+          "committedBytes": 5435063,
+          "rebuiltBytes": 5435063
+        },
+        {
+          "artifact": "data/generated/knowledge_dx.js",
+          "status": "REBUILD_IDENTICAL",
+          "committedBytes": 6940660,
+          "rebuiltBytes": 6940660
+        },
+        {
+          "artifact": "data/generated/knowledge_pat.js",
+          "status": "REBUILD_IDENTICAL",
+          "committedBytes": 1952818,
+          "rebuiltBytes": 1952818
+        },
+        {
+          "artifact": "data/generated/knowledge_data.js",
+          "status": "REBUILD_IDENTICAL",
+          "committedBytes": 19942163,
+          "rebuiltBytes": 19942163
+        },
+        {
+          "artifact": "data/tung/point_index.js",
+          "status": "REBUILD_IDENTICAL",
+          "committedBytes": 1213318,
+          "rebuiltBytes": 1213318
+        },
+        {
+          "artifact": "data/auricular/gb93_index.js",
+          "status": "REBUILD_IDENTICAL",
+          "committedBytes": 6213,
+          "rebuiltBytes": 6213
+        },
+        {
+          "artifact": "data/auricular/gb93_worklist.js",
+          "status": "REBUILD_IDENTICAL",
+          "committedBytes": 3120,
+          "rebuiltBytes": 3120
+        },
+        {
+          "artifact": "data/quality/content_quality.json",
+          "status": "REBUILD_IDENTICAL",
+          "committedBytes": 28866,
+          "rebuiltBytes": 28866
+        },
+        {
+          "artifact": "data/generated/entity_registry.json",
+          "status": "REBUILD_DIFFERS",
+          "committedBytes": 1496023,
+          "rebuiltBytes": 2693002
+        }
+      ],
+      "hardFailures": []
+    },
+    "validator_ci": {
+      "catalog": [
+        {
+          "scriptFile": "scripts/audit-cr010-condition-detail-maturity.js",
+          "taxonomy": "AUDIT",
+          "ciStatus": "MANUAL_ONLY",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/audit-dark-fields.js",
+          "taxonomy": "AUDIT",
+          "ciStatus": "MANUAL_ONLY",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/audit-herb-cloudtcm-layer.js",
+          "taxonomy": "AUDIT",
+          "ciStatus": "MANUAL_ONLY",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/check-branch-mergeable.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "CI_INVOKED",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/check-canon-no-loss.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "CI_INVOKED",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/check-formula-no-loss.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "CI_INVOKED",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/check-today-survives.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "ORPHAN_VALIDATOR",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/check-validation-ratchet.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "CI_INVOKED",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/rehearse-c2b.js",
+          "taxonomy": "REHEARSAL_DASHBOARD",
+          "ciStatus": "MANUAL_ONLY",
+          "ciTier": "INFORMATIONAL_CI_STEP",
+          "falseGreenClassification": "INFORMATIONAL_STEP"
+        },
+        {
+          "scriptFile": "scripts/rehearse-runtime-restore.js",
+          "taxonomy": "REHEARSAL_DASHBOARD",
+          "ciStatus": "CI_INVOKED",
+          "ciTier": "INFORMATIONAL_CI_STEP",
+          "falseGreenClassification": "INFORMATIONAL_STEP"
+        },
+        {
+          "scriptFile": "scripts/report-361-encoding-findings.js",
+          "taxonomy": "REPORT",
+          "ciStatus": "MANUAL_ONLY",
+          "ciTier": "INFORMATIONAL_CI_STEP",
+          "falseGreenClassification": "INFORMATIONAL_STEP"
+        },
+        {
+          "scriptFile": "scripts/report-acupoint-content-gaps.js",
+          "taxonomy": "REPORT",
+          "ciStatus": "MANUAL_ONLY",
+          "ciTier": "INFORMATIONAL_CI_STEP",
+          "falseGreenClassification": "INFORMATIONAL_STEP"
+        },
+        {
+          "scriptFile": "scripts/report-acupoint-contradictions.js",
+          "taxonomy": "REPORT",
+          "ciStatus": "MANUAL_ONLY",
+          "ciTier": "INFORMATIONAL_CI_STEP",
+          "falseGreenClassification": "INFORMATIONAL_STEP"
+        },
+        {
+          "scriptFile": "scripts/report-cloudtcm-buildout.js",
+          "taxonomy": "REPORT",
+          "ciStatus": "MANUAL_ONLY",
+          "ciTier": "INFORMATIONAL_CI_STEP",
+          "falseGreenClassification": "INFORMATIONAL_STEP"
+        },
+        {
+          "scriptFile": "scripts/report-comparison-fill.js",
+          "taxonomy": "REPORT",
+          "ciStatus": "MANUAL_ONLY",
+          "ciTier": "INFORMATIONAL_CI_STEP",
+          "falseGreenClassification": "INFORMATIONAL_STEP"
+        },
+        {
+          "scriptFile": "scripts/report-exam-coverage.js",
+          "taxonomy": "REPORT",
+          "ciStatus": "MANUAL_ONLY",
+          "ciTier": "INFORMATIONAL_CI_STEP",
+          "falseGreenClassification": "INFORMATIONAL_STEP"
+        },
+        {
+          "scriptFile": "scripts/report-formula-completeness.js",
+          "taxonomy": "REPORT",
+          "ciStatus": "MANUAL_ONLY",
+          "ciTier": "INFORMATIONAL_CI_STEP",
+          "falseGreenClassification": "INFORMATIONAL_STEP"
+        },
+        {
+          "scriptFile": "scripts/report-formula-content-gaps.js",
+          "taxonomy": "REPORT",
+          "ciStatus": "MANUAL_ONLY",
+          "ciTier": "INFORMATIONAL_CI_STEP",
+          "falseGreenClassification": "INFORMATIONAL_STEP"
+        },
+        {
+          "scriptFile": "scripts/report-herb-caution-conflicts.js",
+          "taxonomy": "REPORT",
+          "ciStatus": "MANUAL_ONLY",
+          "ciTier": "INFORMATIONAL_CI_STEP",
+          "falseGreenClassification": "INFORMATIONAL_STEP"
+        },
+        {
+          "scriptFile": "scripts/report-pharm-coverage.js",
+          "taxonomy": "REPORT",
+          "ciStatus": "CI_INVOKED",
+          "ciTier": "INFORMATIONAL_CI_STEP",
+          "falseGreenClassification": "INFORMATIONAL_STEP"
+        },
+        {
+          "scriptFile": "scripts/test-avs-checkout.js",
+          "taxonomy": "TEST",
+          "ciStatus": "CI_INVOKED",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/test-branch-mergeable.js",
+          "taxonomy": "TEST",
+          "ciStatus": "CI_INVOKED",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/test-herb-cloudtcm-fetch.js",
+          "taxonomy": "TEST",
+          "ciStatus": "MANUAL_ONLY",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/test-knowledge-gap-logging.js",
+          "taxonomy": "TEST",
+          "ciStatus": "MANUAL_ONLY",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/test-m1-fallback-failclosed.js",
+          "taxonomy": "TEST",
+          "ciStatus": "CI_INVOKED",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/test-pharm-negative-cases.js",
+          "taxonomy": "TEST",
+          "ciStatus": "CI_INVOKED",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/test-pharm-source-integrity-negative-cases.js",
+          "taxonomy": "TEST",
+          "ciStatus": "CI_INVOKED",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/test-pointer-runtime.js",
+          "taxonomy": "TEST",
+          "ciStatus": "CI_INVOKED",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/test-practice-audit.js",
+          "taxonomy": "TEST",
+          "ciStatus": "MANUAL_ONLY",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-acupoint-source-conflicts.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "CI_INVOKED",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-acupoint-standard.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "CI_INVOKED",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-avs-library.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "CI_INVOKED",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-b123-legacy-migration.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "CI_INVOKED",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-bilingual-render-parity.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "CI_INVOKED",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-boot-order.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "CI_INVOKED",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-care-draft-phi.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "CI_INVOKED",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-care-draft-render.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "CI_INVOKED",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-clinical-case-standard.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "CI_INVOKED",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-clinical-invariants.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "CI_INVOKED",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-clinical-store-phi-boundary.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "CI_INVOKED",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-cloudtcm-vocabularies.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "ORPHAN_VALIDATOR",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-comparison-standard.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "CI_INVOKED",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-condition-sources.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "ORPHAN_VALIDATOR",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-condition-standard.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "CI_INVOKED",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-content-junk.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "CI_INVOKED",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-content-quality.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "ORPHAN_VALIDATOR",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-crosswalk-mappings.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "CI_INVOKED",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-data.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "CI_INVOKED",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-encoding.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "CI_INVOKED",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-exposure-safety-render.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "CI_INVOKED",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-extra-point-standard.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "CI_INVOKED",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-field-shape-consistency.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "CI_INVOKED",
+          "ciTier": "INFORMATIONAL_CI_STEP",
+          "falseGreenClassification": "INFORMATIONAL_STEP"
+        },
+        {
+          "scriptFile": "scripts/validate-formula-composition-signatures.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "CI_INVOKED",
+          "ciTier": "INFORMATIONAL_CI_STEP",
+          "falseGreenClassification": "INFORMATIONAL_STEP"
+        },
+        {
+          "scriptFile": "scripts/validate-formula-correctness.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "CI_INVOKED",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-formula-dose-staging.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "CI_INVOKED",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-formula-hdi-review.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "CI_INVOKED",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-formula-quality-strict.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "ORPHAN_VALIDATOR",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-formula-safety-predicates.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "CI_INVOKED",
+          "ciTier": "INFORMATIONAL_CI_STEP",
+          "falseGreenClassification": "INFORMATIONAL_STEP"
+        },
+        {
+          "scriptFile": "scripts/validate-formula-song.js",
+          "taxonomy": "NONBLOCKING_VALIDATOR",
+          "ciStatus": "MANUAL_ONLY",
+          "ciTier": "INFORMATIONAL_CI_STEP",
+          "falseGreenClassification": "INFORMATIONAL_STEP"
+        },
+        {
+          "scriptFile": "scripts/validate-formula-standard.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "CI_INVOKED",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-gyn-legacy-migration.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "CI_INVOKED",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-herb-canon.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "ORPHAN_VALIDATOR",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-herb-card-schema.js",
+          "taxonomy": "NONBLOCKING_VALIDATOR",
+          "ciStatus": "MANUAL_ONLY",
+          "ciTier": "INFORMATIONAL_CI_STEP",
+          "falseGreenClassification": "INFORMATIONAL_STEP"
+        },
+        {
+          "scriptFile": "scripts/validate-herb-dosage-shape.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "CI_INVOKED",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-herb-integrity-predicates.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "CI_INVOKED",
+          "ciTier": "INFORMATIONAL_CI_STEP",
+          "falseGreenClassification": "INFORMATIONAL_STEP"
+        },
+        {
+          "scriptFile": "scripts/validate-herb-quality-strict.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "ORPHAN_VALIDATOR",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-herb-standard.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "CI_INVOKED",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-herbal-links.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "ORPHAN_VALIDATOR",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-interactions.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "CI_INVOKED",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-knowledge-parts.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "CI_INVOKED",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-metric-interpretation.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "CI_INVOKED",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-naming.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "CI_INVOKED",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-no-boilerplate.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "ORPHAN_VALIDATOR",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-no-template-protocol.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "CI_INVOKED",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-outcome-panel-render.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "CI_INVOKED",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-pattern-registry.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "ORPHAN_VALIDATOR",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-pattern-standard.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "CI_INVOKED",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-pharm-standard.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "CI_INVOKED",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-point-categories.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "ORPHAN_VALIDATOR",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-point-ids.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "CI_INVOKED",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-previsit-payload.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "CI_INVOKED",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-protocol-evidence-render.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "CI_INVOKED",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-red-flag-registry.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "CI_INVOKED",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-red-flag-runtime.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "CI_INVOKED",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-red-flag-wiring.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "CI_INVOKED",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-relation-registry.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "CI_INVOKED",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-relations.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "CI_INVOKED",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-render-blocking.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "CI_INVOKED",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-review-status-vocab.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "CI_INVOKED",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-supp-standard.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "ORPHAN_VALIDATOR",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-symptom-standard.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "CI_INVOKED",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-tdis-standard.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "CI_INVOKED",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/walkthrough-phase-e.js",
+          "taxonomy": "REHEARSAL_DASHBOARD",
+          "ciStatus": "CI_INVOKED",
+          "ciTier": "INFORMATIONAL_CI_STEP",
+          "falseGreenClassification": "INFORMATIONAL_STEP"
+        }
+      ],
+      "orphanBlockingValidators": [
+        {
+          "scriptFile": "scripts/check-today-survives.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "ORPHAN_VALIDATOR",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-cloudtcm-vocabularies.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "ORPHAN_VALIDATOR",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-condition-sources.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "ORPHAN_VALIDATOR",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-content-quality.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "ORPHAN_VALIDATOR",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-formula-quality-strict.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "ORPHAN_VALIDATOR",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-herb-canon.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "ORPHAN_VALIDATOR",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-herb-quality-strict.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "ORPHAN_VALIDATOR",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-herbal-links.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "ORPHAN_VALIDATOR",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-no-boilerplate.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "ORPHAN_VALIDATOR",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-pattern-registry.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "ORPHAN_VALIDATOR",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-point-categories.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "ORPHAN_VALIDATOR",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        },
+        {
+          "scriptFile": "scripts/validate-supp-standard.js",
+          "taxonomy": "BLOCKING_VALIDATOR",
+          "ciStatus": "ORPHAN_VALIDATOR",
+          "ciTier": "BLOCKING_CI_STEP",
+          "falseGreenClassification": "FAIL_CLOSED"
+        }
+      ],
+      "possibleFalseGreenSteps": []
+    },
+    "source_integrity": {
+      "isDeep": false,
+      "totalLocalPathsScanned": 98,
+      "localExistingCount": 78,
+      "localMissingCount": 20,
+      "localMissingSamples": [
+        "curriculum/herbs/MM2-Module 1_Dispel_Wind-Damp_Herbs.md#p7-p8; curriculum/herbs/materia_medica_abbreviated_chenoweth.md",
+        "curriculum/herbs/Materia Medica III-Wind-extinguishing Herbs.md#p12-p13; curriculum/herbs/pinyin_latin_herb_list.md",
+        "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L287-L293; curriculum/herbs/pinyin_latin_herb_list.md",
+        "curriculum/herbs/MM2-Module 1_Dispel_Wind-Damp_Herbs.md#L305-L330; curriculum/herbs/materia_medica_abbreviated_chenoweth.md",
+        "curriculum/herbs/Materia Medica III-Topical & Expel Parasite Herbs.md#L184-L220; curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L8773-L8795; curriculum/herbs/pinyin_latin_herb_list.md",
+        "curriculum/herbs/Materia Medica III - Yang Tonics Full.md#L231-L253; curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L6175-L6199; curriculum/herbs/pinyin_latin_herb_list.md",
+        "curriculum/herbs/06 -Clear Heat Eliminate Toxins Herbs-New.md#L758-L778; curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L848-L867; curriculum/herbs/pinyin_latin_herb_list.md",
+        "curriculum/herbs/06 -Clear Heat Eliminate Toxins Herbs-New.md#L272-L299; curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L872-L881; curriculum/herbs/pinyin_latin_herb_list.md",
+        "curriculum/herbs/Materia Medica III-Herbs that Transform Phlegm.md#L280-L303; curriculum/herbs/pinyin_latin_herb_list.md",
+        "curriculum/herbs/06 -Clear Heat Eliminate Toxins Herbs-New.md#L762-L786; curriculum/herbs/pinyin_latin_herb_list.md"
+      ],
+      "totalHttpUrlsScanned": 936,
+      "httpResults": null
+    },
+    "baseline_comparison": {
+      "baseline_path": "data/audits/antigravity_preflight_baseline.json",
+      "current_metrics": {
+        "orphan_blocking_validators": 12,
+        "rebuild_differs_artifacts": 1,
+        "orphan_target_missing_references": 0,
+        "local_missing_sources": 20,
+        "dead_http_links": 95
+      },
+      "ratchet_evaluation": {
+        "passed": true,
+        "regressions": [],
+        "improvements": [
+          {
+            "metric": "orphan_target_missing_references",
+            "ceiling": 5,
+            "current": 0,
+            "delta": 5,
+            "detail": "Debt reduced for orphan_target_missing_references: 5 -> 0"
+          },
+          {
+            "metric": "local_missing_sources",
+            "ceiling": 617,
+            "current": 20,
+            "delta": 597,
+            "detail": "Debt reduced for local_missing_sources: 617 -> 20"
+          }
+        ],
+        "knownWarnings": [
+          {
+            "metric": "orphan_blocking_validators",
+            "count": 12,
+            "detail": "Existing known debt within ceiling for orphan_blocking_validators: 12"
+          },
+          {
+            "metric": "rebuild_differs_artifacts",
+            "count": 1,
+            "detail": "Existing known debt within ceiling for rebuild_differs_artifacts: 1"
+          },
+          {
+            "metric": "dead_http_links",
+            "count": 95,
+            "detail": "Existing known debt within ceiling for dead_http_links: 95"
+          }
+        ]
+      }
+    }
+  }
+}

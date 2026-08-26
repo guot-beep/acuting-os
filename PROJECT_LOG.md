@@ -1,3 +1,21 @@
+# 2026-08-25 Antigravity — Task 9D (Unified Preflight / AI Change Safety Gate)
+
+- **工作內容**: 建立 AcuTing OS 統一預檢安全門閥 `scripts/antigravity-preflight.js` 與模組化檢查架構。
+  - 正典與生成資料零變更：`data/**` canonicals、`data/generated/*` 生成檔、`.github/workflows/*` CI 配置 Byte-for-byte 0 異動。
+  - 負控與回歸測試：內建 12 項啟動回歸測試（含未預期變更、stale generated、missing/extra ID、duplicate ID、false-green、informational step、baseline debt unchanged/increase/decrease、malformed JSON、hygiene 檢查）12/12 PASS。
+  - 預檢雙層模式支援：
+    - Fast Mode (`node scripts/antigravity-preflight.js`): 確定性無網路秒級檢查，涵蓋 Git mutation scope、canonical/generated sync、duplicate/orphan integrity、validator/CI integrity、hygiene 與 sandbox 確定性重建。
+    - Deep Mode (`node scripts/antigravity-preflight.js --deep`): 包含外部 HTTP 傳輸狀態檢查。
+    - JSON Mode (`node scripts/antigravity-preflight.js --json`): 提供機器可讀結構化 JSON 輸出與 run snapshot。
+  - 既有技術債棘輪基線 (`data/audits/antigravity_preflight_baseline.json`):
+    - 追蹤已知 12 支孤立驗證器、1 個重建差異檔 (`entity_registry.json`)、5 個孤立引用、617 個 local missing 及 95 個 dead HTTP 連結。
+    - 既有債務未增加時判定為 `PASS WITH WARNINGS` (退出碼 0)，避免永久假紅燈；債務增加直接 `FAIL`；手動 rebaseline 須附帶 `--reason`。
+  - 實測結果：Fast Mode 判定 **`PASS WITH WARNINGS`**（Hard Failures: 0 筆、Regressions: 0 筆、Improvements: 2 筆、Known Warnings: 3 筆），符合進入人工審查標準。
+- **產出檔案**: `scripts/antigravity-preflight.js` / `scripts/lib/*` / `data/audits/antigravity_preflight_baseline.json` / `data/audits/antigravity_preflight_run.json` / `docs/audits/ANTIGRAVITY_PREFLIGHT_2026-08-25.md`。
+- **分支與狀態**: 推送至 `antigravity/task9d-unified-preflight`，任務交付並停下。
+
+---
+
 # 2026-08-25 深夜 — Task 8C 驗收通過並落地:方劑 exact_source_url 補齊,94%→97%(附一則編碼異常提醒)
 
 Task 8C(`antigravity/formula-fill-task8-source-url`，commit `128da48e`）延續同一套 HTTP 驗證方法補
