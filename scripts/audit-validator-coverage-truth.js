@@ -75,6 +75,19 @@ function extractInvariants(scriptName, code) {
   return invariants;
 }
 
+// ── Execution Safety Guard ───────────────────────────────────────────────────
+function isSafeToExecuteReadOnly(scriptRel, code) {
+  // A script is unsafe if it unconditionally writes canonical production data or mutates files
+  const unconditionalCanonicalWrite = /fs\.writeFileSync\s*\(\s*path\.join\([^)]*data\/(?:herbs|pathology|clinical_cases|acupoints)/.test(code);
+  const dangerousCommand = /git\s+(?:commit|push|rebase|reset\s+--hard)/.test(code);
+  const requiresMutationFlags = /process\.argv\.includes\(['"]--(?:fix|migrate|apply|rebaseline)['"]\)/.test(code);
+
+  if (unconditionalCanonicalWrite || dangerousCommand) {
+    return false;
+  }
+  return true;
+}
+
 // ── CI Workflow Parser ───────────────────────────────────────────────────────
 function parseCiWorkflows(root = ROOT) {
   const workflowPath = path.join(root, '.github/workflows/validate.yml');
@@ -191,8 +204,19 @@ function executeScriptReadOnly(root, scriptRel, timeoutMs = 15000) {
   const effectiveTimeout = scriptRel === 'scripts/test-branch-mergeable.js' ? 45000 : timeoutMs;
   const fullPath = path.join(root, scriptRel);
   const code = fs.readFileSync(fullPath, 'utf8');
-  const args = getScriptArgs(scriptRel, code);
 
+  if (!isSafeToExecuteReadOnly(scriptRel, code)) {
+    return {
+      exitCode: null,
+      status: 'NOT_SAFE_TO_EXECUTE_READ_ONLY',
+      runtimeMs: 0,
+      defectCount: null,
+      stdoutSummary: 'Execution skipped: script writes or mutates data',
+      stderrSummary: ''
+    };
+  }
+
+  const args = getScriptArgs(scriptRel, code);
   const t0 = Date.now();
   let exitCode = 0;
   let stdout = '';
@@ -256,223 +280,186 @@ const DECISION_ENTRIES = [
   {
     decision_id: 'D1',
     title: 'IDs are opaque, immutable, decoupled from display',
-    locked_status: 'LOCKED',
-    explicit_enforcement_claim: 'check-canon-no-loss.js asserts canonical id sets do not shrink; validate-relations.js validates target ids',
+    enforcement_evidence: 'check-canon-no-loss.js asserts canonical id sets do not shrink; validate-relations.js validates target ids',
     referenced_script: 'scripts/check-canon-no-loss.js',
     coverage_status: 'ENFORCED_IN_CI'
   },
   {
     decision_id: 'D2',
     title: 'Namespace the non-standard point families (ex.*, tung.*, ear.*)',
-    locked_status: 'LOCKED',
-    explicit_enforcement_claim: 'scripts/add-point-ids.js, scripts/validate-point-ids.js',
+    enforcement_evidence: 'scripts/add-point-ids.js, scripts/validate-point-ids.js',
     referenced_script: 'scripts/validate-point-ids.js',
     coverage_status: 'ENFORCED_IN_CI'
   },
   {
     decision_id: 'D3',
     title: 'Formula/herb homonym disambiguation rule (__<source>)',
-    locked_status: 'LOCKED',
-    explicit_enforcement_claim: 'scripts/validate-naming.js fails build on homonyms without double underscore or unlisted source',
+    enforcement_evidence: 'scripts/validate-naming.js fails build on homonyms without double underscore or unlisted source',
     referenced_script: 'scripts/validate-naming.js',
     coverage_status: 'ENFORCED_IN_CI'
   },
   {
     decision_id: 'D4',
     title: 'De-identification is a habit, not just a schema (patient_code, no DOB, free-text discipline)',
-    locked_status: 'LOCKED',
-    explicit_enforcement_claim: 'schema.sql format, validate-clinical-case-standard.js PHI regex; free-text discipline is a habit, not enforceable in code',
+    enforcement_evidence: 'schema.sql format, validate-clinical-case-standard.js PHI regex; free-text discipline is a habit, not enforceable in code',
     referenced_script: 'scripts/validate-clinical-case-standard.js',
-    coverage_status: 'PARTIALLY_ENFORCED'
+    coverage_status: 'DOCUMENTED_NON_MACHINE_ENFORCEABLE'
   },
   {
     decision_id: 'D5',
     title: 'Schema cardinality: choose MANY when in doubt (junction tables)',
-    locked_status: 'LOCKED',
-    explicit_enforcement_claim: 'data/clinical_cases/schema.sql junction tables, validate-clinical-invariants.js',
+    enforcement_evidence: 'data/clinical_cases/schema.sql junction tables, validate-clinical-invariants.js',
     referenced_script: 'scripts/validate-clinical-invariants.js',
     coverage_status: 'ENFORCED_IN_CI'
   },
   {
     decision_id: 'D6',
     title: 'Knowledge records are never hard-deleted (review_status=deprecated, manifest)',
-    locked_status: 'LOCKED',
-    explicit_enforcement_claim: 'point_id_manifest.json, validate-point-ids.js, check-canon-no-loss.js',
+    enforcement_evidence: 'point_id_manifest.json, validate-point-ids.js, check-canon-no-loss.js',
     referenced_script: 'scripts/check-canon-no-loss.js',
     coverage_status: 'ENFORCED_IN_CI'
   },
   {
     decision_id: 'D7',
     title: 'Storage split: JSON knowledge (git) + SQLite clinical (gitignored)',
-    locked_status: 'LOCKED',
-    explicit_enforcement_claim: 'clinical-data-never-committed CI job (git ls-files check)',
+    enforcement_evidence: 'clinical-data-never-committed CI job (git ls-files check)',
     referenced_script: '.github/workflows/validate.yml',
     coverage_status: 'ENFORCED_IN_CI'
   },
   {
     decision_id: 'D8',
     title: 'Specialty is a cross-cutting domain TAG, never a container',
-    locked_status: 'LOCKED',
-    explicit_enforcement_claim: 'domain field in card templates, verified by card validators',
+    enforcement_evidence: 'domain field in card templates, verified by card validators',
     referenced_script: 'scripts/validate-condition-standard.js',
     coverage_status: 'ENFORCED_IN_CI'
   },
   {
     decision_id: 'D9',
     title: 'Clinical usage stats: runtime by default, never a field inside canonical record',
-    locked_status: 'LOCKED',
-    explicit_enforcement_claim: 'Prohibited inside canonical records; card validators reject unapproved fields',
+    enforcement_evidence: 'Prohibited inside canonical records; card validators reject unapproved fields',
     referenced_script: 'scripts/validate-condition-standard.js',
     coverage_status: 'ENFORCED_IN_CI'
   },
   {
     decision_id: 'D10',
     title: 'One pattern namespace: pattern.<english_slug> (retire pat.*)',
-    locked_status: 'LOCKED',
-    explicit_enforcement_claim: 'validate-condition-standard.js C6 flags pat.*, validate-pattern-standard.js P3',
+    enforcement_evidence: 'validate-condition-standard.js C6 flags pat.*, validate-pattern-standard.js P3',
     referenced_script: 'scripts/validate-condition-standard.js',
     coverage_status: 'ENFORCED_IN_CI'
   },
   {
     decision_id: 'D11',
     title: 'Four canonical diagnostic namespaces (cond.*, tdis.*, pattern.*, sym.*)',
-    locked_status: 'LOCKED',
-    explicit_enforcement_claim: 'validate-condition-standard.js C3, validate-tdis-standard.js, validate-pattern-standard.js, validate-symptom-standard.js',
+    enforcement_evidence: 'validate-condition-standard.js C3, validate-tdis-standard.js, validate-pattern-standard.js, validate-symptom-standard.js; validate-relations.js enforces western_condition/eastern_disease in legacy graph',
     referenced_script: 'scripts/validate-condition-standard.js',
-    coverage_status: 'ENFORCED_IN_CI'
+    coverage_status: 'PARTIAL'
   },
   {
     decision_id: 'D12',
     title: 'Clinical-layer stability contract: additive-only from 2026-09-01',
-    locked_status: 'LOCKED',
-    explicit_enforcement_claim: 'Additive-only policy gate from 2026-09-01; schema verified by validate-clinical-case-standard.js',
+    enforcement_evidence: 'Additive-only policy gate from 2026-09-01; schema verified by validate-clinical-case-standard.js',
     referenced_script: 'scripts/validate-clinical-case-standard.js',
-    coverage_status: 'PARTIALLY_ENFORCED'
+    coverage_status: 'PARTIAL'
   },
   {
     decision_id: 'D13',
     title: 'Every graph edge is stored on one side and derived on the other',
-    locked_status: 'LOCKED',
-    explicit_enforcement_claim: 'data/config/relation_registry.json, scripts/validate-relation-registry.js',
+    enforcement_evidence: 'data/config/relation_registry.json, scripts/validate-relation-registry.js',
     referenced_script: 'scripts/validate-relation-registry.js',
     coverage_status: 'ENFORCED_IN_CI'
   },
   {
     decision_id: 'D14',
     title: 'Every namespace is built the same four ways (Vocab, Template, Validator, Staging)',
-    locked_status: 'LOCKED',
-    explicit_enforcement_claim: 'Ratchet layers in CI for conditions, patterns, tdis, symptoms',
+    enforcement_evidence: 'Ratchet layers in CI for conditions, patterns, tdis, symptoms',
     referenced_script: 'scripts/check-validation-ratchet.js',
     coverage_status: 'ENFORCED_IN_CI'
   },
   {
     decision_id: 'D15',
     title: 'drug.* is the medication namespace (migrate med.*)',
-    locked_status: 'LOCKED',
-    explicit_enforcement_claim: 'validate-pharm-standard.js, data/config/medication_alias_map.json',
+    enforcement_evidence: 'validate-pharm-standard.js, data/config/medication_alias_map.json',
     referenced_script: 'scripts/validate-pharm-standard.js',
-    coverage_status: 'PARTIALLY_ENFORCED'
+    coverage_status: 'PARTIAL'
   },
   {
     decision_id: 'D16',
     title: 'Three duplicate-import Pattern IDs retired into canonical counterparts',
-    locked_status: 'LOCKED',
-    explicit_enforcement_claim: 'insomnia_heart_kidney_disharmony, liver_fire_flaring, liver_wind_stirring retired with review_status=deprecated',
+    enforcement_evidence: 'insomnia_heart_kidney_disharmony, liver_fire_flaring, liver_wind_stirring retired with review_status=deprecated; no mechanical guard checking active incoming references',
     referenced_script: 'scripts/validate-pattern-standard.js',
-    coverage_status: 'NO_MECHANICAL_GUARD_FOUND'
+    coverage_status: 'NO_EXPLICIT_MECHANICAL_MAPPING_FOUND'
   },
   {
     decision_id: 'D17',
     title: 'Architecture Decision D17',
-    locked_status: 'NOT_DOCUMENTED',
-    explicit_enforcement_claim: 'None',
+    enforcement_evidence: 'No decision documented',
     referenced_script: null,
-    coverage_status: 'NO_MECHANICAL_GUARD_FOUND'
+    coverage_status: 'NO_EXPLICIT_MECHANICAL_MAPPING_FOUND'
   },
   {
     decision_id: 'D18',
     title: 'Architecture Decision D18',
-    locked_status: 'NOT_DOCUMENTED',
-    explicit_enforcement_claim: 'None',
+    enforcement_evidence: 'No decision documented',
     referenced_script: null,
-    coverage_status: 'NO_MECHANICAL_GUARD_FOUND'
+    coverage_status: 'NO_EXPLICIT_MECHANICAL_MAPPING_FOUND'
   },
   {
     decision_id: 'D19',
     title: 'Architecture Decision D19',
-    locked_status: 'NOT_DOCUMENTED',
-    explicit_enforcement_claim: 'None',
+    enforcement_evidence: 'No decision documented',
     referenced_script: null,
-    coverage_status: 'NO_MECHANICAL_GUARD_FOUND'
+    coverage_status: 'NO_EXPLICIT_MECHANICAL_MAPPING_FOUND'
   },
   {
     decision_id: 'D20',
     title: 'Architecture Decision D20',
-    locked_status: 'NOT_DOCUMENTED',
-    explicit_enforcement_claim: 'None',
+    enforcement_evidence: 'No decision documented',
     referenced_script: null,
-    coverage_status: 'NO_MECHANICAL_GUARD_FOUND'
+    coverage_status: 'NO_EXPLICIT_MECHANICAL_MAPPING_FOUND'
   },
   {
     decision_id: 'D21',
     title: 'Architecture Decision D21',
-    locked_status: 'NOT_DOCUMENTED',
-    explicit_enforcement_claim: 'None',
+    enforcement_evidence: 'No decision documented',
     referenced_script: null,
-    coverage_status: 'NO_MECHANICAL_GUARD_FOUND'
+    coverage_status: 'NO_EXPLICIT_MECHANICAL_MAPPING_FOUND'
   }
 ];
 
 // ── Special Questions ────────────────────────────────────────────────────────
 function auditSpecialQuestions(root = ROOT) {
   return {
-    F1_active_to_deprecated_references: {
-      question: 'Task10A found 34 active -> deprecated edges. Does any validator catch active relation -> deprecated target?',
-      guard_status: 'GUARD_ABSENT',
-      guard_found: false,
-      covering_validators: [],
-      root_cause_evidence: 'validate-relations.js, validate-condition-standard.js, validate-formula-standard.js, and validate-pattern-standard.js all collect lookup ID sets from target files without filtering by review_status. If the target record exists in data files, reference check returns true unconditionally.',
-      ci_status: 'NO_GUARD'
+    A_active_to_deprecated_references: {
+      question: 'Task10A found 34 active -> deprecated edges. Does existing code have a generalized guard?',
+      guard_result: 'GUARD_NOT_FOUND',
+      guard_exists: false,
+      scope: 'NONE',
+      direct_or_transitive_ci: 'NONE',
+      evidence: 'validate-relations.js, validate-condition-standard.js, validate-formula-standard.js, and validate-pattern-standard.js all collect target lookup sets without filtering by review_status. If the target record exists in data files, reference check passes unconditionally.'
     },
-    F2_d16_three_retired_patterns: {
-      question: 'D16 three retired patterns (pattern.insomnia_heart_kidney_disharmony, pattern.liver_fire_flaring, pattern.liver_wind_stirring): Is there a guard preventing active references, and is it in CI?',
-      guard_status: 'GUARD_ABSENT',
-      guard_found: false,
-      covering_validators: [],
-      root_cause_evidence: 'The 3 retired patterns exist in pattern_library.json with review_status="deprecated". validate-condition-standard.js C6 populates patternIds from all records in pattern_library.json, thus permitting active conditions to link to them without defect.',
-      ci_status: 'NOT_ENFORCED_IN_CI'
+    B_d16_three_retired_patterns: {
+      question: 'D16 three retired patterns (pattern.insomnia_heart_kidney_disharmony, pattern.liver_fire_flaring, pattern.liver_wind_stirring): guard exists? scope? direct/transitive CI? current behavior?',
+      guard_result: 'GUARD_NOT_FOUND',
+      guard_exists: false,
+      scope: 'NONE',
+      direct_or_transitive_ci: 'NONE',
+      current_behavior: 'The 3 retired patterns exist in pattern_library.json with review_status="deprecated". validate-condition-standard.js C6 populates patternIds from all records in pattern_library.json, thus permitting active conditions to link to them without defect.'
     },
-    F3_d11_legacy_diagnostic_namespaces: {
-      question: 'D11 legacy relation namespaces (western_condition.*, eastern_disease.*, pat.*, symptom.*): What does current guard cover, and what is its CI status?',
-      guard_status: 'PARTIALLY_ENFORCED',
-      guard_found: true,
-      covering_validators: [
-        {
-          script: 'scripts/validate-condition-standard.js',
-          ci_status: 'CI_INVOKED',
-          behavior: 'C6 explicitly flags pat.* in condition related_patterns (D10). C3 enforces entity_type agreement on cond.*.'
-        },
-        {
-          script: 'scripts/validate-pattern-standard.js',
-          ci_status: 'TRANSITIVE_CI',
-          behavior: 'P3 explicitly flags pat.* in pattern records.'
-        },
-        {
-          script: 'scripts/validate-relations.js',
-          ci_status: 'CI_INVOKED',
-          behavior: 'Enforces western_condition.* and eastern_disease.* in legacy graph files (conditions.json) rather than migrating them.'
-        }
-      ],
-      root_cause_evidence: 'Modern canon files (condition_canon_shortlist.json, pattern_library.json) are guarded against pat.*, but legacy graph files are enforced to keep legacy prefixes by validate-relations.js in CI.',
-      ci_status: 'PARTIALLY_ENFORCED'
+    C_d11_legacy_diagnostic_namespaces: {
+      question: 'D11 legacy relation namespaces (western_condition.*, eastern_disease.*, pat.*, symptom.*): guard scope and CI coverage?',
+      guard_result: 'GUARD_SCOPE_PARTIAL',
+      guard_exists: true,
+      scope: 'PARTIAL_SCOPE',
+      direct_or_transitive_ci: 'CI_INVOKED / TRANSITIVE_CI',
+      current_behavior: 'validate-condition-standard.js (CI_INVOKED) C6 explicitly flags pat.* in condition related_patterns. validate-pattern-standard.js (TRANSITIVE_CI) P3 explicitly flags pat.* in pattern records. validate-relations.js (CI_INVOKED) mechanically enforces western_condition.* and eastern_disease.* in legacy graph files (conditions.json).'
     },
-    F4_retired_herb_formula_ids: {
-      question: 'Is there a generalized guard for active herb/formula relations pointing to deprecated herb/formula targets?',
-      guard_status: 'GUARD_ABSENT',
-      guard_found: false,
-      covering_validators: [],
-      root_cause_evidence: 'validate-formula-standard.js F12 verifies composition herb_id against herb_canon_shortlist IDs without checking review_status="deprecated". validate-herb-standard.js does not check incoming composition links.',
-      ci_status: 'NO_GUARD'
+    D_deprecated_herb_formula_targets: {
+      question: 'Does a generalized active relation -> deprecated herb/formula target guard exist?',
+      guard_result: 'GUARD_NOT_FOUND',
+      guard_exists: false,
+      scope: 'NONE',
+      direct_or_transitive_ci: 'NONE',
+      current_behavior: 'validate-formula-standard.js F12 verifies composition herb_id against herb_canon_shortlist IDs without checking review_status="deprecated". validate-herb-standard.js does not check incoming composition links.'
     }
   };
 }
@@ -531,7 +518,7 @@ const GUARD_GAPS = [
     gap_id: 'GAP-07',
     decision_or_known_invariant: 'D4 Clinical Free-Text De-Identification Discipline',
     current_guard: 'validate-clinical-case-standard.js for tracked clinical JSON; free-text notes are unmonitored by code',
-    ci_status: 'PARTIALLY_ENFORCED',
+    ci_status: 'DOCUMENTED_NON_MACHINE_ENFORCEABLE',
     evidence: 'DECISIONS.md D4 explicitly documents: "Free-text discipline is a habit, not enforceable in code".',
     gap_type: 'DOCUMENTED_NON_MACHINE_ENFORCEABLE'
   }
@@ -555,6 +542,7 @@ function runFullAudit(root = ROOT) {
     const taxonomy = classifyValidatorType(f, code);
     const domains = classifyDomains(f, code);
     const invariants = extractInvariants(f, code);
+    const safeReadOnly = isSafeToExecuteReadOnly(scriptRel, code);
 
     const isDirect = directMap.has(scriptRel);
     const isTransitive = transitiveMap.has(scriptRel);
@@ -586,16 +574,19 @@ function runFullAudit(root = ROOT) {
 
     const item = {
       script: scriptRel,
-      taxonomy,
+      type: taxonomy,
+      domain: domains,
+      direct_ci: isDirect,
+      transitive_ci: isTransitive,
+      invoked_by: isTransitive ? transitiveMap.get(scriptRel) : (isDirect ? '.github/workflows/validate.yml' : null),
       fail_closed: control.hasExitNonZero,
+      safe_to_execute_read_only: safeReadOnly,
+      current_exit_code_if_executed: null,
+      current_status: 'UNEXECUTED',
       report_only: control.classification === 'POSSIBLE_FALSE_GREEN',
       exit_behavior_mechanism: exitBehavior,
       ci_status: ciStatus,
-      direct_ci_invocation: isDirect,
-      transitive_ci_invocation: isTransitive,
-      invoked_by: isTransitive ? transitiveMap.get(scriptRel) : (isDirect ? '.github/workflows/validate.yml' : null),
       workflow_steps: stepList.map(s => s.stepName),
-      domains,
       invariants
     };
 
@@ -609,11 +600,15 @@ function runFullAudit(root = ROOT) {
   const executionTable = [];
   for (const item of blockingValidators) {
     const execRes = executeScriptReadOnly(root, item.script);
+    item.current_exit_code_if_executed = execRes.exitCode;
+    item.current_status = execRes.status;
+
     executionTable.push({
       script: item.script,
-      taxonomy: item.taxonomy,
+      type: item.type,
       ci_status: item.ci_status,
       fail_closed: item.fail_closed,
+      safe_to_execute_read_only: item.safe_to_execute_read_only,
       exit_code: execRes.exitCode,
       status: execRes.status,
       defect_count: execRes.defectCount,
@@ -626,19 +621,21 @@ function runFullAudit(root = ROOT) {
   // Build D1–D21 map with runtime info
   const dMap = DECISION_ENTRIES.map(d => {
     let scriptExists = false;
-    let ciStatus = 'NO_SCRIPT_REFERENCED';
+    let directOrTransitiveCi = 'NONE';
     let runtimeResult = null;
 
     if (d.referenced_script) {
       if (d.referenced_script.startsWith('.github')) {
         scriptExists = fs.existsSync(path.join(root, d.referenced_script));
-        ciStatus = 'CI_INVOKED';
+        directOrTransitiveCi = 'DIRECT_CI';
         runtimeResult = 'PASS';
       } else {
         scriptExists = fs.existsSync(path.join(root, d.referenced_script));
         const invItem = inventory.find(i => i.script === d.referenced_script);
         if (invItem) {
-          ciStatus = invItem.ci_status;
+          if (invItem.direct_ci) directOrTransitiveCi = 'DIRECT_CI';
+          else if (invItem.transitive_ci) directOrTransitiveCi = 'TRANSITIVE_CI';
+          else directOrTransitiveCi = 'MANUAL_ONLY';
         }
         const execItem = executionTable.find(e => e.script === d.referenced_script);
         if (execItem) {
@@ -648,9 +645,13 @@ function runFullAudit(root = ROOT) {
     }
 
     return {
-      ...d,
+      decision: d.decision_id,
+      title: d.title,
+      enforcement_evidence: d.enforcement_evidence,
+      referenced_script: d.referenced_script,
       script_exists: scriptExists,
-      ci_status: ciStatus,
+      direct_or_transitive_ci: directOrTransitiveCi,
+      coverage_status: d.coverage_status,
       current_repo_result: runtimeResult
     };
   });
@@ -661,14 +662,19 @@ function runFullAudit(root = ROOT) {
     meta: {
       generated_at: new Date().toISOString(),
       repository: 'github.com/guot-beep/acuting-os',
+      base_sha: '4e4cc88851974206aec3f248bbc3ae2bfb48e956',
       total_scripts_in_repo: allScriptFiles.length,
       total_scoped_validators_and_tests: blockingValidators.length
     },
     counts: {
-      taxonomy: inventory.reduce((acc, i) => { acc[i.taxonomy] = (acc[i.taxonomy] || 0) + 1; return acc; }, {}),
+      taxonomy: inventory.reduce((acc, i) => { acc[i.type] = (acc[i.type] || 0) + 1; return acc; }, {}),
       ci_status: inventory.reduce((acc, i) => { acc[i.ci_status] = (acc[i.ci_status] || 0) + 1; return acc; }, {}),
       execution_status: executionTable.reduce((acc, e) => { acc[e.status] = (acc[e.status] || 0) + 1; return acc; }, {}),
-      orphan_blocking_validators_count: inventory.filter(i => i.ci_status === 'ORPHAN_BLOCKING_VALIDATOR').length
+      blocking_validators_count: inventory.filter(i => i.type === 'BLOCKING_VALIDATOR').length,
+      orphan_blocking_validators_count: inventory.filter(i => i.ci_status === 'ORPHAN_BLOCKING_VALIDATOR').length,
+      direct_ci_count: inventory.filter(i => i.direct_ci && i.ci_status === 'CI_INVOKED').length,
+      transitive_ci_count: inventory.filter(i => i.transitive_ci).length,
+      red_validators_count: executionTable.filter(e => e.status === 'RED').length
     },
     orphan_blocking_validators: inventory.filter(i => i.ci_status === 'ORPHAN_BLOCKING_VALIDATOR').map(i => i.script),
     special_questions: specialQuestions,
@@ -685,6 +691,7 @@ function generateMarkdownReport(data) {
   lines.push('# AcuTing OS — Validator Coverage Truth Table & Guard Gap Inventory');
   lines.push('');
   lines.push(`> **Audit Date**: 2026-08-26  `);
+  lines.push(`> **Base SHA**: \`${data.meta.base_sha}\`  `);
   lines.push(`> **Repository**: [AcuTing OS](https://github.com/guot-beep/acuting-os)  `);
   lines.push(`> **Nature**: READ-ONLY deterministic architectural guard audit  `);
   lines.push('');
@@ -699,43 +706,44 @@ function generateMarkdownReport(data) {
     lines.push(`  - \`${k}\`: ${v}`);
   });
   lines.push(`- **CI 納管狀態 (CI Invocation Truth)**：`);
-  lines.push(`  - \`CI_INVOKED\` (直接在 CI 阻擋): ${data.counts.ci_status.CI_INVOKED || 0}`);
-  lines.push(`  - \`TRANSITIVE_CI\` (透過 Ratchet 等傳遞調用): ${data.counts.ci_status.TRANSITIVE_CI || 0}`);
+  lines.push(`  - \`CI_INVOKED\` (直接在 CI 阻擋): **${data.counts.direct_ci_count}**`);
+  lines.push(`  - \`TRANSITIVE_CI\` (透過 Ratchet 等傳遞調用): **${data.counts.transitive_ci_count}**`);
   lines.push(`  - \`ORPHAN_BLOCKING_VALIDATOR\` (具 Fail-Closed 阻擋力但未進 CI): **${data.counts.orphan_blocking_validators_count}**`);
   lines.push(`  - \`INFORMATIONAL_CI_STEP\` (在 CI 中作為報告/NOTE tier 執行): ${data.counts.ci_status.INFORMATIONAL_CI_STEP || 0}`);
   lines.push(`  - \`MANUAL_ONLY\` (手動工具/輔助腳本): ${data.counts.ci_status.MANUAL_ONLY || 0}`);
+  lines.push(`- **RED Validators (現況執行未通過)**：**${data.counts.red_validators_count}** 支`);
   lines.push('');
   lines.push('---');
   lines.push('');
   lines.push('## 四大核心專項問題回答（Special Invariant Questions）');
   lines.push('');
   
-  const q1 = data.special_questions.F1_active_to_deprecated_references;
-  lines.push(`### 1. Task 10A 盤點之 34 條 Active $\\rightarrow$ Deprecated 引用，目前是否有 Validator 會擋？`);
-  lines.push(`- **判定結論**：**\`${q1.guard_status}\`** (守衛完全缺失)`);
-  lines.push(`- **機制查證**：${q1.root_cause_evidence}`);
+  const q1 = data.special_questions.A_active_to_deprecated_references;
+  lines.push(`### A. Task 10A 盤點之 34 條 Active $\\rightarrow$ Deprecated 引用，目前是否有 Generalized Guard？`);
+  lines.push(`- **判定結論**：**\`${q1.guard_result}\`**`);
+  lines.push(`- **Guard Exists**: \`${q1.guard_exists}\` · **Scope**: \`${q1.scope}\` · **CI**: \`${q1.direct_or_transitive_ci}\``);
+  lines.push(`- **機制佐證**：${q1.evidence}`);
   lines.push('');
 
-  const q2 = data.special_questions.F2_d16_three_retired_patterns;
-  lines.push(`### 2. D16 三個退役 Pattern（\`insomnia_heart_kidney_disharmony\`, \`liver_fire_flaring\`, \`liver_wind_stirring\`）是否有防線？是否進 CI？`);
-  lines.push(`- **判定結論**：**\`${q2.guard_status}\`** (守衛完全缺失，未進 CI 阻擋)`);
-  lines.push(`- **機制查證**：${q2.root_cause_evidence}`);
+  const q2 = data.special_questions.B_d16_three_retired_patterns;
+  lines.push(`### B. D16 三個退役 Pattern（\`insomnia_heart_kidney_disharmony\`, \`liver_fire_flaring\`, \`liver_wind_stirring\`）是否有防線？是否進 CI？現況行為？`);
+  lines.push(`- **判定結論**：**\`${q2.guard_result}\`**`);
+  lines.push(`- **Guard Exists**: \`${q2.guard_exists}\` · **Scope**: \`${q2.scope}\` · **CI**: \`${q2.direct_or_transitive_ci}\``);
+  lines.push(`- **現況行為**：${q2.current_behavior}`);
   lines.push('');
 
-  const q3 = data.special_questions.F3_d11_legacy_diagnostic_namespaces;
-  lines.push(`### 3. D11 舊命名空間（\`western_condition.*\`, \`eastern_disease.*\`, \`pat.*\`, \`symptom.*\`）守護現況與 CI 狀態？`);
-  lines.push(`- **判定結論**：**\`${q3.guard_status}\`** (分割守護 / 存在反向鎖定)`);
-  lines.push(`- **機制查證**：${q3.root_cause_evidence}`);
-  lines.push('- **各 Validator 實況**：');
-  q3.covering_validators.forEach(v => {
-    lines.push(`  - \`${v.script}\` (\`${v.ci_status}\`): ${v.behavior}`);
-  });
+  const q3 = data.special_questions.C_d11_legacy_diagnostic_namespaces;
+  lines.push(`### C. D11 舊命名空間（\`western_condition.*\`, \`eastern_disease.*\`, \`pat.*\`, \`symptom.*\`）守護現況與 CI 狀態？`);
+  lines.push(`- **判定結論**：**\`${q3.guard_result}\`**`);
+  lines.push(`- **Guard Exists**: \`${q3.guard_exists}\` · **Scope**: \`${q3.scope}\` · **CI**: \`${q3.direct_or_transitive_ci}\``);
+  lines.push(`- **現況行為**：${q3.current_behavior}`);
   lines.push('');
 
-  const q4 = data.special_questions.F4_retired_herb_formula_ids;
-  lines.push(`### 4. 退役 Herb / Formula ID 是否有廣義防線防止 Active 關聯引用？`);
-  lines.push(`- **判定結論**：**\`${q4.guard_status}\`** (守衛完全缺失)`);
-  lines.push(`- **機制查證**：${q4.root_cause_evidence}`);
+  const q4 = data.special_questions.D_deprecated_herb_formula_targets;
+  lines.push(`### D. 退役 Herb / Formula ID 是否有廣義防線防止 Active 關聯引用？`);
+  lines.push(`- **判定結論**：**\`${q4.guard_result}\`**`);
+  lines.push(`- **Guard Exists**: \`${q4.guard_exists}\` · **Scope**: \`${q4.scope}\` · **CI**: \`${q4.direct_or_transitive_ci}\``);
+  lines.push(`- **現況行為**：${q4.current_behavior}`);
   lines.push('');
   lines.push('---');
   lines.push('');
@@ -751,10 +759,10 @@ function generateMarkdownReport(data) {
   lines.push('');
   lines.push('## DECISIONS.md (D1–D21) 架構決策執行守護地圖');
   lines.push('');
-  lines.push('| 決策 | 標題 | 鎖定狀態 | 參照腳本 | 腳本存在 | CI 狀態 | 現況結果 | 守衛評級 |');
+  lines.push('| 決策 | 標題 | 參照腳本 | 腳本存在 | CI 調用 | 現況結果 | 守衛評級 | 佐證說明 |');
   lines.push('|---|---|---|---|---|---|---|---|');
   data.decision_guard_map.forEach(d => {
-    lines.push(`| **${d.decision_id}** | ${d.title} | \`${d.locked_status}\` | \`${d.referenced_script || 'N/A'}\` | ${d.script_exists ? '✅' : '❌'} | \`${d.ci_status}\` | \`${d.current_repo_result || 'N/A'}\` | \`${d.coverage_status}\` |`);
+    lines.push(`| **${d.decision}** | ${d.title} | \`${d.referenced_script || 'N/A'}\` | ${d.script_exists ? '✅' : '❌'} | \`${d.direct_or_transitive_ci}\` | \`${d.current_repo_result || 'N/A'}\` | \`${d.coverage_status}\` | ${d.enforcement_evidence} |`);
   });
   lines.push('');
   lines.push('---');
@@ -771,11 +779,11 @@ function generateMarkdownReport(data) {
   lines.push('');
   lines.push('## 驗證器執行與紅綠真相表（Execution & Red/Green Truth Table）');
   lines.push('');
-  lines.push('| 腳本名稱 | 分類 | CI 狀態 | Fail-Closed | 退出碼 | 狀態 | 耗時 (ms) | 缺陷數 | 輸出摘要 |');
-  lines.push('|---|---|---|---|---|---|---|---|---|');
+  lines.push('| 腳本名稱 | 分類 | CI 狀態 | Fail-Closed | 安全讀取 | 退出碼 | 狀態 | 耗時 (ms) | 缺陷數 | 輸出摘要 |');
+  lines.push('|---|---|---|---|---|---|---|---|---|---|');
   data.execution_truth_table.forEach(e => {
     const statusIcon = e.status === 'GREEN' ? '🟢 GREEN' : (e.status === 'RED' ? '🔴 RED' : '⚠️ ' + e.status);
-    lines.push(`| \`${e.script}\` | \`${e.taxonomy}\` | \`${e.ci_status}\` | ${e.fail_closed ? 'YES' : 'NO'} | \`${e.exit_code}\` | ${statusIcon} | ${e.runtime_ms} | ${e.defect_count !== null ? e.defect_count : '-'} | \`${e.stdout_summary.replace(/\|/g, '/') || e.stderr_summary.replace(/\|/g, '/') || 'None'}\` |`);
+    lines.push(`| \`${e.script}\` | \`${e.type}\` | \`${e.ci_status}\` | ${e.fail_closed ? 'YES' : 'NO'} | ${e.safe_to_execute_read_only ? 'YES' : 'NO'} | \`${e.exit_code}\` | ${statusIcon} | ${e.runtime_ms} | ${e.defect_count !== null ? e.defect_count : '-'} | \`${e.stdout_summary.replace(/\|/g, '/') || e.stderr_summary.replace(/\|/g, '/') || 'None'}\` |`);
   });
   lines.push('');
 
@@ -818,7 +826,7 @@ function runSelfTest() {
   assert('Blocking validator absent from CI workflows classified as ORPHAN_BLOCKING_VALIDATOR',
     fakeCiStatus === 'ORPHAN_BLOCKING_VALIDATOR');
 
-  // 3. Report script in CI -> INFORMATIONAL_CI_STEP
+  // 3. Report script in CI -> INFORMATIONAL_CI_STEP (not blocking)
   const fakeReportCode = `console.log("Summary report"); process.exit(0);`;
   const taxReport = classifyValidatorType('report-fake.js', fakeReportCode);
   const isDirectReport = true;
@@ -845,7 +853,7 @@ function runSelfTest() {
   assert('Validator exiting 0 unconditionally classified as classification=POSSIBLE_FALSE_GREEN / hasExitNonZero=false',
     ctrlFalseGreen.classification === 'POSSIBLE_FALSE_GREEN' && !ctrlFalseGreen.hasExitNonZero);
 
-  // 6. DECISIONS item referencing non-existent script
+  // 6. DECISIONS explicit script reference but file missing
   const nonExistent = { referenced_script: 'scripts/non-existent-validator.js' };
   const exists = fs.existsSync(path.join(ROOT, nonExistent.referenced_script));
   assert('Decision referencing missing script correctly detected as script_exists=false',
@@ -853,13 +861,13 @@ function runSelfTest() {
 
   // 7. Documented non-machine-enforceable decision (e.g. D4 free text)
   const d4 = DECISION_ENTRIES.find(d => d.decision_id === 'D4');
-  assert('D4 free-text discipline correctly recognized as PARTIALLY_ENFORCED with habit exception',
-    d4 && d4.coverage_status === 'PARTIALLY_ENFORCED' && d4.explicit_enforcement_claim.includes('habit'));
+  assert('D4 free-text discipline correctly recognized as DOCUMENTED_NON_MACHINE_ENFORCEABLE',
+    d4 && d4.coverage_status === 'DOCUMENTED_NON_MACHINE_ENFORCEABLE' && d4.enforcement_evidence.includes('habit'));
 
   // 8. Active -> deprecated reference guard absence confirmed
   const sq = auditSpecialQuestions();
-  assert('F1 active -> deprecated reference guard verified as GUARD_ABSENT / NO_GUARD',
-    sq.F1_active_to_deprecated_references.guard_status === 'GUARD_ABSENT' && sq.F1_active_to_deprecated_references.guard_found === false);
+  assert('A active -> deprecated reference guard verified as GUARD_NOT_FOUND',
+    sq.A_active_to_deprecated_references.guard_result === 'GUARD_NOT_FOUND' && sq.A_active_to_deprecated_references.guard_exists === false);
 
   console.log(`\nSelf-Test Complete: ${passed}/${total} fixtures passed.`);
   if (passed !== total) process.exit(1);
@@ -895,15 +903,16 @@ function main() {
     console.log('================================================================================\n');
     console.log(`Total Scripts in Repository:        ${data.meta.total_scripts_in_repo}`);
     console.log(`Total Scoped Validators/Audits:     ${data.meta.total_scoped_validators_and_tests}`);
+    console.log(`Blocking Validators Count:          ${data.counts.blocking_validators_count}`);
     console.log(`Orphan Blocking Validators (No CI): ${data.counts.orphan_blocking_validators_count}`);
-    console.log(`Directly CI-Invoked Validators:     ${data.counts.ci_status.CI_INVOKED || 0}`);
-    console.log(`Transitive CI Validators:           ${data.counts.ci_status.TRANSITIVE_CI || 0}`);
-    console.log(`Informational CI Steps:             ${data.counts.ci_status.INFORMATIONAL_CI_STEP || 0}`);
+    console.log(`Directly CI-Invoked Validators:     ${data.counts.direct_ci_count}`);
+    console.log(`Transitive CI Validators:           ${data.counts.transitive_ci_count}`);
+    console.log(`RED Validators Count:               ${data.counts.red_validators_count}`);
     console.log('\n--- Special Questions ---');
-    console.log(`1. Active -> Deprecated Refs Guard: ${data.special_questions.F1_active_to_deprecated_references.guard_status}`);
-    console.log(`2. D16 3 Retired Patterns Guard:    ${data.special_questions.F2_d16_three_retired_patterns.guard_status}`);
-    console.log(`3. D11 Legacy Namespaces Guard:     ${data.special_questions.F3_d11_legacy_diagnostic_namespaces.guard_status}`);
-    console.log(`4. Retired Herb/Formula ID Guard:   ${data.special_questions.F4_retired_herb_formula_ids.guard_status}`);
+    console.log(`A. Active -> Deprecated Refs Guard: ${data.special_questions.A_active_to_deprecated_references.guard_result}`);
+    console.log(`B. D16 3 Retired Patterns Guard:    ${data.special_questions.B_d16_three_retired_patterns.guard_result}`);
+    console.log(`C. D11 Legacy Namespaces Guard:     ${data.special_questions.C_d11_legacy_diagnostic_namespaces.guard_result}`);
+    console.log(`D. Retired Herb/Formula ID Guard:   ${data.special_questions.D_deprecated_herb_formula_targets.guard_result}`);
     console.log('\n--------------------------------------------------------------------------------');
     console.log('STATUS: READ-ONLY AUDIT COMPLETE. Safe for architectural decision.');
     console.log('================================================================================\n');
@@ -918,6 +927,7 @@ module.exports = {
   DOMAIN_RULES,
   classifyDomains,
   extractInvariants,
+  isSafeToExecuteReadOnly,
   parseCiWorkflows,
   parseRatchetInvocations,
   executeScriptReadOnly,

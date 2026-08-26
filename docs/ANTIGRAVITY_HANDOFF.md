@@ -7,20 +7,21 @@
   - 結構化資料庫: `data/audits/validator_coverage_truth_2026-08-26.json`
   - 完整真相表報告: `docs/audits/VALIDATOR_COVERAGE_TRUTH_2026-08-26.md`
 - **核心數據 (SSOT 直出)**:
+  - Base SHA: `4e4cc88851974206aec3f248bbc3ae2bfb48e956`
   - 全庫腳本總數: **366** 支
   - 納管驗證/測試/稽核/報告腳本: **95** 支
   - 分類 (Taxonomy): BLOCKING_VALIDATOR 66 · NONBLOCKING_VALIDATOR 2 · TEST 9 · AUDIT 5 · REPORT 10 · REHEARSAL_DASHBOARD 3 · UTILITY_OTHER 271
   - CI 調用真相:
     - `CI_INVOKED` (直接在 CI 阻擋): **55** 支
-    - `TRANSITIVE_CI` (透過 Ratchet 傳遞調用): **6** 支
+    - `TRANSITIVE_CI` (透過 Ratchet 傳遞調用): **8** 支
     - `ORPHAN_BLOCKING_VALIDATOR` (具 Fail-Closed 阻擋力但未進 CI): **13** 支
     - `INFORMATIONAL_CI_STEP` (在 CI 中作為報告/NOTE tier 執行): **5** 支
     - `MANUAL_ONLY` (手動工具/輔助腳本): **287** 支
   - 四大專項問題判定:
-    - **F1** (34 條 Active $\rightarrow$ Deprecated 引用): `GUARD_ABSENT` (無任何 validator 過濾 `review_status === "deprecated"`)
-    - **F2** (D16 3 個退役 Pattern): `GUARD_ABSENT` (`validate-condition-standard.js` C6 解析集包含全部 `pattern_library.json` 記錄，不擋 deprecated)
-    - **F3** (D11 舊命名空間): `PARTIALLY_ENFORCED` (卡片層擋 `pat.*`，但 `validate-relations.js` 在 CI 中強制反向鎖定 `western_condition.*`/`eastern_disease.*`)
-    - **F4** (退役 Herb / Formula ID 關聯): `GUARD_ABSENT` (`validate-formula-standard.js` F12 接受 deprecated herb ID)
+    - **A** (34 條 Active $\rightarrow$ Deprecated 引用): `GUARD_NOT_FOUND` (無任何 validator 過濾 `review_status === "deprecated"`)
+    - **B** (D16 3 個退役 Pattern): `GUARD_NOT_FOUND` (`validate-condition-standard.js` C6 解析集包含全部 `pattern_library.json` 記錄，不擋 deprecated)
+    - **C** (D11 舊命名空間): `GUARD_SCOPE_PARTIAL` (卡片層擋 `pat.*`，但 `validate-relations.js` 在 CI 中強制反向鎖定 `western_condition.*`/`eastern_disease.*`)
+    - **D** (退役 Herb / Formula ID 關聯): `GUARD_NOT_FOUND` (`validate-formula-standard.js` F12 接受 deprecated herb ID)
   - 守衛缺口清冊: 標記 7 大缺口 (`GAP-01` 至 `GAP-07`)
   - DECISIONS 守護地圖: 覆蓋 D1–D21（14 個 LOCKED 決策皆有對應 script 或 CI 機制標定）
   - 回歸測試: 8/8 合成負控測試 100% PASS
