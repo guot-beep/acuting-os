@@ -1,9 +1,56 @@
-## 🚩 巡檢簡記:`antigravity/task10b-validator-coverage-truth-round1~4` 尚未審(2026-08-26 深夜)
+## ⚠️ Claude 複核 Task 10B Round 4:工具本體可信,但兩份自撰摘要都把第二個 RED_BLOCKING 檔名寫錯(2026-08-26 深夜)
 
-巡檢時發現你自己又開了一條沒人指派的新線——`task10b-validator-coverage-truth` 已經推到 round 4
-(`9be2b086`,分支上,沒推 main,推分支這點做對了)。這不在任何已指派的任務清單裡,是自我擴大範圍的
-判斷/稽核型工作,跟 Task 9/10A 同一個模式。**先簡記,這次巡檢不深入複核**——沒有阻擋任何東西,
-只是讓妳知道這條線存在、還沒人看過,之後要不要花時間複核由 Ting 決定。
+上面巡檢簡記寫的「這次不深入複核」——Ting 接著問了要不要看,已經看完,結論分兩層:
+
+**✅ 工具本體、完整報告、原始 JSON 三者互相一致,獨立重跑數字全對得上**(368/97/67/13/57/8 支等),
+自帶 `--self-test` 12/12 fixture 獨立重跑也全過,`git show --stat` 確認零生產資料異動,只碰新工具
+腳本跟新報告檔。
+
+**❌ 但下面這則自己寫的摘要,跟 `PROJECT_LOG.md` 對應那則,都把 `RED_BLOCKING` 的第二筆寫成
+`validate-points-data.js`——這個檔案在 repo 歷史上從來不存在過**。完整報告表格跟原始 JSON 都正確
+寫的是 `scripts/validate-relations.js`,已直接訂正下方摘要,不退回重做。**順帶確認 `validate-
+relations.js` 現在真的是紅燈、而且是 CI_INVOKED(阻擋型)**——這是目前 main 上一個真實存在、
+會被 CI 擋下的失敗,不是這次複核才發現的假警報,要不要現在處理留給 Ting 決定,詳見 PROJECT_LOG
+對應條目。
+
+---
+
+## ✅ Task 10B Round 4：Validator Coverage Truth Table & Guard Gap Inventory（已完成）
+
+- **類型**: READ-ONLY Connected Behavioral Architectural Guard Audit（0 production mutation, 0 CI workflow changes, 0 debt repairs）
+- **分支**: `antigravity/task10b-validator-coverage-truth-round4` (Rebased on latest main `7f786a02`)
+- **主要產出**:
+  - 核心動態稽核腳本: `scripts/audit-validator-coverage-truth.js`
+  - 結構化資料庫: `data/audits/validator_coverage_truth_2026-08-26.json`
+  - 完整真相表報告: `docs/audits/VALIDATOR_COVERAGE_TRUTH_2026-08-26.md`
+- **核心數據 (SSOT 直出)**:
+  - Base SHA: `7f786a023e154bede24ceb282f240553ca7ffcad` (git 動態衍生)
+  - Head SHA: `f111815ed1df9eef49332db188c72cbf2e959be8` (git 動態衍生)
+  - 全庫腳本總數: **368** 支
+  - 納管驗證/測試/稽核/報告腳本: **97** 支
+  - 分類 (Taxonomy): BLOCKING_VALIDATOR 67 · NONBLOCKING_VALIDATOR 2 · TEST 10 · AUDIT 5 · REPORT 10 · REHEARSAL_DASHBOARD 3 · UTILITY_OTHER 271
+  - CI 調用真相 (CI Invocation Truth):
+    - `CI_INVOKED` (直接在 CI 阻擋): **57** 支 (`validate-retired-id-references.js` 自動識別為 DIRECT_CI)
+    - `TRANSITIVE_CI` (透過 Ratchet 傳遞調用): **8** 支
+    - `ORPHAN_BLOCKING_VALIDATOR` (具 Fail-Closed 阻擋力但未進 CI): **13** 支
+    - `INFORMATIONAL_CI_STEP` (在 CI 中作為報告/NOTE tier 執行): **5** 支
+    - `MANUAL_ONLY` (手動工具/輔助腳本): **287** 支
+  - 獨立執行狀態分類 (Execution Breakdown):
+    - `GREEN_BLOCKING_VALIDATORS`: **63** 支
+    - `RED_BLOCKING_VALIDATORS`: **2** 支 (`validate-herb-canon.js`, `validate-relations.js`)
+      [Claude 訂正 2026-08-26：原文寫的是 `validate-points-data.js`，這個檔名從未存在過，見上方複核條目]
+    - `RED_TESTS`: **0** 支 (所有單元測試全綠通過)
+    - `REHEARSAL_REQUIRES_ARGS`: **1** 支 (`rehearse-c2b.js`)
+    - `RED_REPORTS`: **1** 支 (`report-formula-content-gaps.js`)
+    - `SKIPPED_UNSAFE`: **12** 支 (透過路徑/變數靜態寫入分析成功攔截略過，0 檔案寫入)
+  - 四大專項問題即時行為派生判定 (Eliminated AVS False Positive):
+    - **A** (34 條 Active $\rightarrow$ Deprecated 引用): `GUARD_FOUND` (Primary Guard: `scripts/validate-retired-id-references.js`，DIRECT_CI)
+    - **B** (D16 3 個退役 Pattern): `GUARD_FOUND` (Primary Guard: `scripts/validate-retired-id-references.js`，DIRECT_CI)
+    - **C** (D11 舊命名空間): `GUARD_SCOPE_PARTIAL` (卡片層擋 `pat.*`，但 `validate-relations.js` 在 CI 中強制反向鎖定 `western_condition.*`/`eastern_disease.*`)
+    - **D** (退役 Herb / Formula ID 關聯): `GUARD_FOUND` (Primary Guard: `scripts/validate-retired-id-references.js`，DIRECT_CI)
+  - D1–D25 決策動態地圖: 解析 `DECISIONS.md` 現存 25 個標題，D8 確認無目錄層級強制驗證器
+  - 回歸測試: 12/12 負控與動態發現測試 100% PASS（走實體生產發現函式，包含 AVS 偽陽性負控與真實 repo 解析斷言）
+  - 分支合併狀態: `check-branch-mergeable origin/main` -> **GREEN (PASS)**
 
 ---
 

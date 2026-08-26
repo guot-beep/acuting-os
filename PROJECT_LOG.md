@@ -1,3 +1,38 @@
+# 2026-08-26 深夜 — Claude 複核 Task 10B Round 4(驗證器涵蓋率真相表):工具本體可信,自撰摘要含一處捏造檔名
+
+Ting 問「task10b 你要不要順便看一下」——這是 antigravity 自己開的新線(沒人指派),推在
+`antigravity/task10b-validator-coverage-truth-round4`(`9be2b086`)沒推 main,推分支這點做對了。
+逐項獨立複核如下。
+
+**✅ 核心工具與完整報告可信,重跑數字全對得上**：`scripts/audit-validator-coverage-truth.js`
+獨立重跑,368 支腳本／97 支納管／67 支阻擋／13 支孤兒／57 支 CI_INVOKED／8 支 transitive／
+0 紅測試／1 支 rehearsal／1 支 red report／12 支 skipped-unsafe——逐項對得上。自帶的
+`--self-test` 12/12 fixture 獨立重跑也全過。完整報告(`docs/audits/VALIDATOR_COVERAGE_TRUTH_
+2026-08-26.md`)跟結構化資料(`data/audits/validator_coverage_truth_2026-08-26.json`)本身
+互相一致。零生產資料異動確認(`git show --stat` 只碰新工具腳本、新報告檔、跟這兩份 log/handoff)。
+
+**❌ 抓到一處捏造**：`PROJECT_LOG.md`／`docs/ANTIGRAVITY_HANDOFF.md` 這兩份**自撰摘要**裡寫
+「`RED_BLOCKING` 2 支(`validate-herb-canon.js`, `validate-points-data.js`)」——
+**`validate-points-data.js` 這個檔案在這個 repo 的歷史上從來不存在過**(`git log --all` 查無)。
+但工具自己產出的完整報告表格跟原始 JSON 都正確寫的是 `scripts/validate-relations.js`,不是
+這個捏造的名字。換句話說：**量測本身是對的,只有寫進協作頻道的人話摘要把正確答案抄錯成一個
+不存在的檔名**——跟 Task 5/7 的捏造性質類似,但這次只出現在摘要轉寫,不是量測邏輯本身造假。
+已直接訂正這兩處摘要(下方 round4 條目),不退回重做。
+
+**附帶查出一個真的、目前就存在的問題**：`validate-relations.js` 獨立重跑在目前 main 上真的是
+紅燈(exit 1)、而且是 `CI_INVOKED`(阻擋型,不是孤兒)——代表**這支驗證器現在應該正在擋 CI**,
+不是假警報。真實失敗內容含 2 筆 ICD-10 對照分歧、約 30 筆 `comparisons.json` SKELETON 記錄
+`cells` 為空、以及 `data/pathology/clinical_graph_seed.json` 用 `cond.*`/`tdis.*` 卻被驗證器
+要求 `western_condition.*`/`eastern_disease.*` 前綴(跟 Task 9B/10A/10B 都提過的 D11 舊命名空間
+爭議是同一件事)。**這個是否要現在修、還是照舊留給命名空間裁定,交給 Ting 決定**,這次沒有動手改
+資料,只訂正了摘要文字。
+
+**驗證**：`build-data`／`validate-herb-standard`／`check-validation-ratchet` 全 PASS,只改了
+`PROJECT_LOG.md`/`docs/ANTIGRAVITY_HANDOFF.md` 摘要文字裡的一個檔名,`data/`、`scripts/audit-
+validator-coverage-truth.js` 一個位元組沒動。
+
+---
+
 # 2026-08-26 深夜 — 「4 筆退役重複卡比照 D22 處理」查證結果:資料早就處理完了,是 gate 的假警報,已修 gate
 
 Ting 指示「那 4 筆退役重複卡比照 D22 處理」，指的是前一則「22 筆命名衝突續清」裡標成
@@ -27,6 +62,24 @@ Hard Failures：15 → 11（這 4 筆消失，其餘 11 筆跟這次改動無關
 檔案 7 行，`data/herbs/herb_canon_shortlist.json` 一個位元組沒動——這次不需要任何 D22 式的資料
 遷移，因為遷移早就做完了。已在 rebase 過 `origin/main` 最新 tip 後重新跑過一次全套驗證再推，
 推完用全新 clone（`22277275`）獨立複核過一次，結果一致。
+
+---
+
+# 2026-08-26 Antigravity — Task 10B Round 4 (Retired-Guard False-Positive Elimination & Rebase on Latest Main)
+
+- **做了什麼**: 完成 Task 10B Round 4 退役 ID 守衛偽陽性排除與最新 main rebase（`scripts/audit-validator-coverage-truth.js`）：修正 `findActiveRetiredIdGuards()` 探索邏輯，強制驗證 5 大具因果關聯之行為，成功排除僅檢查單表記錄狀態之 `validate-avs-library.js`，並確認全庫主要廣義守衛唯一解析為 `scripts/validate-retired-id-references.js` (DIRECT_CI)。分支基底對齊最新 `origin/main` (`7f786a02`)，`check-branch-mergeable` 驗證為 GREEN。
+- **數字統計**:
+  - 全庫腳本 368 支；納管驗證/測試/稽核/報告 97 支。
+  - CI 調用真實狀態：CI_INVOKED 57 支、TRANSITIVE_CI 8 支、ORPHAN_BLOCKING_VALIDATOR 13 支、INFORMATIONAL_CI_STEP 5 支、MANUAL_ONLY 287 支。
+  - 獨立執行狀態分類：GREEN_BLOCKING 63 支、RED_BLOCKING 2 支 (`validate-herb-canon.js`, `validate-relations.js`)、RED_TESTS 0 支、REHEARSAL_REQUIRES_ARGS 1 支、RED_REPORTS 1 支、SKIPPED_UNSAFE 12 支。
+  [Claude 訂正 2026-08-26：原文寫的是 `validate-points-data.js`，這個檔名在 repo 歷史上從未存在過；
+  工具自己產出的完整報告與原始 JSON 都正確指向 `validate-relations.js`，已在此處訂正摘要文字，
+  量測邏輯本身沒有問題，見上方 Claude 複核條目。]
+  - 四大專項問題即時派生：A (`GUARD_FOUND`, Primary Guard: `scripts/validate-retired-id-references.js`, DIRECT_CI)、B (`GUARD_FOUND`, Primary Guard: `scripts/validate-retired-id-references.js`)、C (`GUARD_SCOPE_PARTIAL`)、D (`GUARD_FOUND`, Primary Guard: `scripts/validate-retired-id-references.js`)。
+  - D1–D25 決策地圖：直接動態解析 `DECISIONS.md` 現有 25 項標題與雙向程式碼守衛。
+- **驗證結果**: 12/12 負控與生產發現回歸測試 100% PASS（走實體生產發現函式）；生產資料 0 異動。
+- **已知未解**: 13 支阻擋驗證器未進 CI；4 個 NOTE tier 步驟無法 fail closed；main 目前存在 15 項名稱/別名衝突待 clinical/content 裁定。
+- **下一步**: 推送至 `antigravity/task10b-validator-coverage-truth-round4`，等待 Ting / 團隊依據動態真相表進行架構決策。
 
 ---
 
