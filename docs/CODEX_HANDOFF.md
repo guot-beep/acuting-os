@@ -1,5 +1,13 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-25] Codex Handoff — Conditions common respiratory/peripheral vascular Biomedicine B33
+
+- **Exact ids / fields**: `cond.common_cold`, `cond.chronic_sinusitis`, `cond.post_viral_cough`, `cond.varicose_veins`, and `cond.poor_circulation`; filled bilingual summary, western context, structured risk factors, acupuncture scope, record sources, and field provenance. Existing etiology, western pathology, red flags, TCM patterns, formulas, acupoints, ids, schema, and the other 500 records were preserved.
+- **Measured delta**: maturity `278→283 FULL_DETAIL_CANDIDATE`, `227→222 DETAIL_PARTIAL`, `0→0 SKELETON`; all five scores `7→12/12`; missing summary/context/risk `39→34`, scope `64→59`; condition source entries `916→926`.
+- **Evidence / clinical distinctions**: CDC, NIH/NLM MedlinePlus, NIH/NHLBI, NHS, and NCBI/PMC (CMAJ); all 12 direct URLs returned HTTP 200. Explicitly separated common cold from flu/COVID/RSV, chronic sinusitis from automatic bacterial labeling, postinfectious cough from other 3–8-week cough causes, and nonspecific “poor circulation” from arterial, venous, neurologic, and other etiologies; included DVT/PE, acute limb ischemia, and orbital/intracranial referral boundaries.
+- **Validation**: each target changed exactly ten allowed fields (`50/50` total); all 500 other records remained equal; bilingual risk parity and per-record source containment passed; condition standard `505/505 clean`, build-data, relations, relation registry, validation ratchet, content junk, URL reachability, generated-data rebuild, and `git diff --check` produced no new blocking defect.
+- **Explicit unresolved / next line**: imported formula/acupoint lists remain `protocol_status:"unassessed"`. A non-duplicate next batch should source the remaining high-value cardiac/pulmonary etiology gaps such as `cond.aortic_dissection`, `cond.infective_endocarditis`, `cond.orthostatic_hypotension`, `cond.pertussis`, and `cond.pulmonary_hypertension`, without touching Claude's study-system UI.
+
 ## [2026-08-25] Codex Handoff — Conditions cardiac/pulmonary Biomedicine B32
 
 - **Exact ids / fields**: `cond.hypotension`, `cond.palpitations`, `cond.cad`, `cond.copd`, and `cond.chronic_cough`; filled bilingual summary, western context, structured risk factors, and acupuncture scope. Only the previously empty bilingual etiology and western pathology fields on hypotension/palpitations were additionally filled. Existing red flags, TCM patterns, formulas, acupoints, ids, schema, and other records were preserved.

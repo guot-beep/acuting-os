@@ -1,3 +1,13 @@
+# 2026-08-25 — Codex Conditions 常見呼吸／周邊血管 Biomedicine 完整化 B33
+
+- **範圍**：只補 `cond.common_cold`、`cond.chronic_sinusitis`、`cond.post_viral_cough`、`cond.varicose_veins`、`cond.poor_circulation` 的雙語 summary、western context、結構化 risk factors、acupuncture scope、sources 與 field provenance；既有 etiology、western pathology、red flags、TCM patterns、方劑、穴位、ids 與 schema 未改。
+- **數字**：`FULL_DETAIL_CANDIDATE 278→283`、`DETAIL_PARTIAL 227→222`、`SKELETON 0→0`，五卡 score 均 `7→12/12`；全庫缺 summary/context/risk `39→34`、缺 scope `64→59`；condition source entries `916→926`。
+- **來源／臨床邊界**：CDC、NIH/NLM MedlinePlus、NIH/NHLBI、NHS 與 NCBI/PMC（CMAJ）；12 個直接 URL 均 HTTP 200。區分普通感冒與 flu/COVID/RSV、慢性鼻竇炎與單純細菌感染、感染後咳嗽與其他 3–8 週咳嗽、「循環不良」症狀與 PAD／靜脈／非血管病因，並納入 DVT/PE、急性肢體缺血、眼眶／顱內併發症轉診界線。
+- **驗證**：五卡各精確 10 個允許欄位、合計 `50/50`，其他 500 卡逐記錄不變；risk bilingual parity 與 sources containment 通過；condition standard `505/505 clean`、build-data、relations、relation registry、ratchet、content-junk、URL reachability、generated data 與 `git diff --check` 無新增 blocking defect。
+- **未解／下一步**：既有 imported formula／acupoint 清單仍維持 `protocol_status:"unassessed"`；下一批轉入仍缺 etiology 的高價值心肺卡，優先 `aortic_dissection`、`infective_endocarditis`、`orthostatic_hypotension`、`pertussis`、`pulmonary_hypertension`，逐卡用官方來源，不改 Claude 溫習系統。
+
+---
+
 # 2026-08-25 — Codex Conditions 心肺／臨床 Biomedicine 完整化 B32
 
 - **範圍**：只補 `cond.hypotension`、`cond.palpitations`、`cond.cad`、`cond.copd`、`cond.chronic_cough` 的雙語摘要、western context、結構化 risk factors、acupuncture scope；另只對原為空白的低血壓／心悸雙語 etiology 與 western pathology 補值。既有 red flags、TCM patterns、方劑、穴位、ids、schema 未改。

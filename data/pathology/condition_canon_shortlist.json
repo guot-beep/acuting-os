@@ -35075,10 +35075,42 @@
    }
   },
   {
-   "id": "cond.common_cold",
-   "name_en": "Common Cold / URI",
-   "name_zh": "感冒／上呼吸道感染",
-   "category": "respiratory",
+  "id": "cond.common_cold",
+  "name_en": "Common Cold / URI",
+  "name_zh": "感冒／上呼吸道感染",
+  "summary_zh": "普通感冒是由多種呼吸道病毒引起的上呼吸道感染，常見鼻塞流涕、噴嚏、咽痛與咳嗽，通常病程短且可自行緩解。流感、COVID-19 與 RSV 可呈現相似早期症狀，但並非普通感冒，於高風險者或症狀較重時須及時檢測與評估。",
+  "summary_en": "The common cold is an upper respiratory infection caused by many different respiratory viruses, commonly producing congestion, rhinorrhea, sneezing, sore throat, and cough, with a short, usually self-limited course. Influenza, COVID-19, and RSV may begin with similar symptoms but are not common colds and warrant timely testing and assessment in high-risk or more severely ill patients.",
+  "western_context_zh": "多數病例採休息、補充水分與依年齡／共病安全使用的症狀緩解措施；抗生素對病毒性普通感冒無效。需檢視高風險身分及流感／COVID-19 的早期抗病毒時效，並在呼吸困難、脫水、症狀反覆惡化或久不改善時就醫。此處僅為文件對照用語，非治療指示。",
+  "western_context_en": "Most cases are managed with rest, fluids, and age- and comorbidity-appropriate symptom relief; antibiotics do not treat a viral common cold. Review risk status and the time-sensitive antiviral window for influenza or COVID-19, and seek medical care for breathing difficulty, dehydration, relapse/worsening, or failure to improve. This is documentation context, not a treatment directive.",
+  "risk_factors_zh": [
+    {"factor": "近距離接觸有呼吸道症狀者或其飛沫", "direction": "increases", "modifiable": true, "source": "https://www.cdc.gov/common-cold/about/"},
+    {"factor": "接觸受污染表面後觸摸眼、鼻或口", "direction": "increases", "modifiable": true, "source": "https://www.cdc.gov/common-cold/about/"},
+    {"factor": "幼兒期（兒童平均感冒次數較成人多）", "direction": "increases", "modifiable": false, "source": "https://www.cdc.gov/common-cold/about/"},
+    {"factor": "嬰幼兒、高齡、免疫功能低下或既有心肺疾病（增加嚴重呼吸道病毒疾病／共病惡化風險）", "direction": "increases", "modifiable": false, "source": "https://www.cdc.gov/common-cold/about/"}
+  ],
+  "risk_factors_en": [
+    {"factor": "Close contact with a person who has respiratory symptoms or their droplets", "direction": "increases", "modifiable": true, "source": "https://www.cdc.gov/common-cold/about/"},
+    {"factor": "Touching the eyes, nose, or mouth after contact with a contaminated surface", "direction": "increases", "modifiable": true, "source": "https://www.cdc.gov/common-cold/about/"},
+    {"factor": "Childhood (children average more colds than adults)", "direction": "increases", "modifiable": false, "source": "https://www.cdc.gov/common-cold/about/"},
+    {"factor": "Infancy, older age, immunocompromise, or underlying cardiac/pulmonary disease (higher risk of severe respiratory viral illness or comorbidity exacerbation)", "direction": "increases", "modifiable": false, "source": "https://www.cdc.gov/common-cold/about/"}
+  ],
+  "acupuncture_scope_zh": {
+    "can_treat": "僅可在病況輕且穩定、無紅旗時，作為鼻塞、咽部不適或全身痠痛等症狀的輔助照護；不能宣稱清除病毒、縮短傳染期或取代流感／COVID-19 檢測與抗病毒評估。",
+    "precautions": "呼吸困難、呼吸急促、脫水、意識改變、持續高熱、症狀改善後再惡化，或高風險者出現流感／COVID-19 樣症狀時不施行常規針灸，先行醫療評估。",
+    "co_management": "與基層醫療協作；含減充血劑、止咳藥或退燒止痛藥之使用須依年齡、孕期與共病向醫師／藥師諮詢，處方藥停用或調整須聯絡原處方醫師。",
+    "evidence": "unknown",
+    "source": "https://www.cdc.gov/common-cold/treatment/index.html",
+    "note": "本批未取得普通感冒之病種特異針灸療效指引；此欄僅界定症狀輔助、鑑別與轉診邊界。"
+  },
+  "acupuncture_scope_en": {
+    "can_treat": "Only in mild, stable illness without red flags may acupuncture be considered adjunctively for congestion, throat discomfort, or body aches; it must not be claimed to clear the virus, shorten infectiousness, or replace influenza/COVID-19 testing and antiviral assessment.",
+    "precautions": "Do not provide routine acupuncture for dyspnea, tachypnea, dehydration, altered consciousness, persistent high fever, improvement followed by worsening, or influenza/COVID-like illness in a high-risk patient; obtain medical assessment first.",
+    "co_management": "Coordinate with primary care. Consult a physician or pharmacist about decongestants, cough medicines, or antipyretic/analgesic use according to age, pregnancy, and comorbidity; contact the prescriber before stopping or adjusting a prescription.",
+    "evidence": "unknown",
+    "source": "https://www.cdc.gov/common-cold/treatment/index.html",
+    "note": "No condition-specific acupuncture efficacy guideline for the common cold was collected in this batch; this field defines symptom-support, differential, and referral boundaries only."
+  },
+  "category": "respiratory",
    "icd_hint": "J00",
    "related_eastern_diseases": [
     "tdis.gan_mao"
@@ -35180,12 +35212,22 @@
     "red_flags_zh": [
      "CDC 上呼吸道感染照護通說（double worsening)"
     ],
-    "red_flags_en": [
-     "CDC 上呼吸道感染照護通說（double worsening)"
-    ]
-   },
-   "sources": [
-    "https://medlineplus.gov/commoncold.html"
+   "red_flags_en": [
+    "CDC 上呼吸道感染照護通說（double worsening)"
+   ],
+   "summary_zh": ["https://www.cdc.gov/common-cold/about/"],
+   "summary_en": ["https://www.cdc.gov/common-cold/about/"],
+   "western_context_zh": ["https://www.cdc.gov/common-cold/treatment/index.html"],
+   "western_context_en": ["https://www.cdc.gov/common-cold/treatment/index.html"],
+   "risk_factors_zh": ["https://www.cdc.gov/common-cold/about/"],
+   "risk_factors_en": ["https://www.cdc.gov/common-cold/about/"],
+   "acupuncture_scope_zh": ["https://www.cdc.gov/common-cold/treatment/index.html"],
+   "acupuncture_scope_en": ["https://www.cdc.gov/common-cold/treatment/index.html"]
+  },
+  "sources": [
+   "https://medlineplus.gov/commoncold.html",
+   "https://www.cdc.gov/common-cold/about/",
+   "https://www.cdc.gov/common-cold/treatment/index.html"
    ],
    "red_flags_zh": [
     "呼吸困難、胸痛、血氧下降 → 肺炎排除（急症）",
@@ -35761,10 +35803,42 @@
    }
   },
   {
-   "id": "cond.chronic_sinusitis",
-   "name_en": "Chronic Sinusitis",
-   "name_zh": "慢性鼻竇炎",
-   "category": "respiratory",
+  "id": "cond.chronic_sinusitis",
+  "name_en": "Chronic Sinusitis",
+  "name_zh": "慢性鼻竇炎",
+  "summary_zh": "慢性鼻竇炎是鼻腔與鼻竇黏膜持續發炎超過 12 週的疾病，可見鼻塞、膿性鼻涕／鼻後滴流、嗅覺下降及臉部壓迫感；感染可能參與，但過敏、鼻息肉、結構阻塞、纖毛功能或免疫問題亦可維持發炎，不能把所有慢性病例當作細菌感染。",
+  "summary_en": "Chronic sinusitis is persistent inflammation of the nasal and paranasal sinus mucosa lasting more than 12 weeks, with congestion, purulent drainage/postnasal drip, reduced smell, and facial pressure among possible features. Infection may contribute, but allergy, nasal polyps, structural obstruction, ciliary dysfunction, or immune problems can sustain inflammation, so chronic disease should not automatically be labeled bacterial.",
+  "western_context_zh": "確認症狀持續時間並檢查鼻腔；依嚴重度與疑似原因考慮鼻內類固醇、生理鹽水沖洗、過敏處置或耳鼻喉科評估，反覆／難治者可能需內視鏡或影像。抗生素與手術均須有個別適應症，臉痛亦需與偏頭痛、牙源性或神經性疼痛鑑別。此處僅為文件對照用語，非治療指示。",
+  "western_context_en": "Confirm symptom duration and examine the nasal cavity. Depending on severity and suspected cause, care may include intranasal corticosteroids, saline irrigation, allergy management, or ENT assessment; recurrent or refractory disease may require endoscopy or imaging. Antibiotics and surgery each require an individual indication, and facial pain must be differentiated from migraine, dental, or neuropathic pain. This is documentation context, not a treatment directive.",
+  "risk_factors_zh": [
+    {"factor": "過敏性鼻炎或花粉症", "direction": "increases", "modifiable": true, "source": "https://medlineplus.gov/ency/article/000647.htm"},
+    {"factor": "鼻中隔偏曲、骨刺、鼻息肉或腺樣體肥大造成鼻竇引流阻塞", "direction": "increases", "modifiable": false, "source": "https://medlineplus.gov/ency/article/000647.htm"},
+    {"factor": "吸菸或持續性氣道刺激物暴露", "direction": "increases", "modifiable": true, "source": "https://medlineplus.gov/ency/article/000647.htm"},
+    {"factor": "囊性纖維化、纖毛功能障礙或免疫功能低下", "direction": "increases", "modifiable": false, "source": "https://medlineplus.gov/ency/article/000647.htm"}
+  ],
+  "risk_factors_en": [
+    {"factor": "Allergic rhinitis or hay fever", "direction": "increases", "modifiable": true, "source": "https://medlineplus.gov/ency/article/000647.htm"},
+    {"factor": "Blocked sinus drainage from a deviated septum, bony spur, nasal polyps, or enlarged adenoids", "direction": "increases", "modifiable": false, "source": "https://medlineplus.gov/ency/article/000647.htm"},
+    {"factor": "Smoking or ongoing airway-irritant exposure", "direction": "increases", "modifiable": true, "source": "https://medlineplus.gov/ency/article/000647.htm"},
+    {"factor": "Cystic fibrosis, impaired ciliary function, or immunocompromise", "direction": "increases", "modifiable": false, "source": "https://medlineplus.gov/ency/article/000647.htm"}
+  ],
+  "acupuncture_scope_zh": {
+    "can_treat": "病因與結構問題已評估、病況穩定且無眼眶／神經紅旗時，可將針灸定位為鼻塞、臉部壓迫或伴隨頭痛的輔助照護；不能宣稱清除感染、縮小息肉或打通阻塞。",
+    "precautions": "眼周腫痛、視力改變、眼球活動痛／受限、劇烈頭痛、頸部僵硬、意識改變、高熱或快速惡化時不施行常規針灸，立即評估眼眶或顱內併發症。",
+    "co_management": "與基層醫療／耳鼻喉科協作，追蹤症狀週期、嗅覺、過敏與內視鏡／影像結果；鼻內類固醇、抗生素或其他處方藥的停用／調整須先聯絡並諮詢原處方醫師。",
+    "evidence": "unknown",
+    "source": "https://medlineplus.gov/sinusitis.html",
+    "note": "本批未取得慢性鼻竇炎之病種特異針灸療效指引；此欄僅界定穩定期輔助與眼眶／顱內轉診邊界。"
+  },
+  "acupuncture_scope_en": {
+    "can_treat": "After etiologic and structural assessment, in stable disease without orbital or neurologic red flags, acupuncture may be framed as adjunctive support for congestion, facial pressure, or associated headache; it must not be claimed to eradicate infection, shrink polyps, or open an obstruction.",
+    "precautions": "Do not provide routine acupuncture for periorbital swelling/pain, visual change, painful or restricted eye movement, severe headache, neck stiffness, altered consciousness, high fever, or rapid deterioration; urgently assess for orbital or intracranial complications.",
+    "co_management": "Coordinate with primary care or ENT and track symptom duration, smell, allergy, and endoscopy/imaging results; contact and consult the prescriber before stopping or adjusting intranasal corticosteroids, antibiotics, or other prescriptions.",
+    "evidence": "unknown",
+    "source": "https://medlineplus.gov/sinusitis.html",
+    "note": "No condition-specific acupuncture efficacy guideline for chronic sinusitis was collected in this batch; this field defines stable adjunctive and orbital/intracranial referral boundaries only."
+  },
+  "category": "respiratory",
    "icd_hint": "J32",
    "related_eastern_diseases": [
     "tdis.bi_yuan"
@@ -35863,12 +35937,21 @@
     "red_flags_zh": [
      "EPOS/AAO-HNS 鼻竇炎併發症紅旗通說"
     ],
-    "red_flags_en": [
-     "EPOS/AAO-HNS 鼻竇炎併發症紅旗通說"
-    ]
-   },
-   "sources": [
-    "https://medlineplus.gov/sinusitis.html"
+   "red_flags_en": [
+    "EPOS/AAO-HNS 鼻竇炎併發症紅旗通說"
+   ],
+   "summary_zh": ["https://medlineplus.gov/sinusitis.html", "https://medlineplus.gov/ency/article/000647.htm"],
+   "summary_en": ["https://medlineplus.gov/sinusitis.html", "https://medlineplus.gov/ency/article/000647.htm"],
+   "western_context_zh": ["https://medlineplus.gov/sinusitis.html"],
+   "western_context_en": ["https://medlineplus.gov/sinusitis.html"],
+   "risk_factors_zh": ["https://medlineplus.gov/ency/article/000647.htm"],
+   "risk_factors_en": ["https://medlineplus.gov/ency/article/000647.htm"],
+   "acupuncture_scope_zh": ["https://medlineplus.gov/sinusitis.html"],
+   "acupuncture_scope_en": ["https://medlineplus.gov/sinusitis.html"]
+  },
+  "sources": [
+   "https://medlineplus.gov/sinusitis.html",
+   "https://medlineplus.gov/ency/article/000647.htm"
    ],
    "red_flags_zh": [
     "眶周紅腫、視力改變、複視、眼球突出 → 眼眶併發症（急症）",
@@ -36747,6 +36830,70 @@
     "pattern.phlegm_stasis_binding"
    ],
   "review_status": "draft",
+  "summary_zh": "慢性鼻竇炎是鼻腔與鼻竇黏膜持續發炎超過 12 週的疾病，可見鼻塞、膿性鼻涕／鼻後滴流、嗅覺下降及臉部壓迫感；感染可能參與，但過敏、鼻息肉、結構阻塞、纖毛功能或免疫問題亦可維持發炎，不能把所有慢性病例當作細菌感染。",
+  "summary_en": "Chronic sinusitis is persistent inflammation of the nasal and paranasal sinus mucosa lasting more than 12 weeks, with congestion, purulent drainage/postnasal drip, reduced smell, and facial pressure among possible features. Infection may contribute, but allergy, nasal polyps, structural obstruction, ciliary dysfunction, or immune problems can sustain inflammation, so chronic disease should not automatically be labeled bacterial.",
+  "western_context_zh": "確認症狀持續時間並檢查鼻腔；依嚴重度與疑似原因考慮鼻內類固醇、生理鹽水沖洗、過敏處置或耳鼻喉科評估，反覆／難治者可能需內視鏡或影像。抗生素與手術均須有個別適應症，臉痛亦需與偏頭痛、牙源性或神經性疼痛鑑別。此處僅為文件對照用語，非治療指示。",
+  "western_context_en": "Confirm symptom duration and examine the nasal cavity. Depending on severity and suspected cause, care may include intranasal corticosteroids, saline irrigation, allergy management, or ENT assessment; recurrent or refractory disease may require endoscopy or imaging. Antibiotics and surgery each require an individual indication, and facial pain must be differentiated from migraine, dental, or neuropathic pain. This is documentation context, not a treatment directive.",
+  "risk_factors_zh": [
+    {"factor": "過敏性鼻炎或花粉症", "direction": "increases", "modifiable": true, "source": "https://medlineplus.gov/ency/article/000647.htm"},
+    {"factor": "鼻中隔偏曲、骨刺、鼻息肉或腺樣體肥大造成鼻竇引流阻塞", "direction": "increases", "modifiable": false, "source": "https://medlineplus.gov/ency/article/000647.htm"},
+    {"factor": "吸菸或持續性氣道刺激物暴露", "direction": "increases", "modifiable": true, "source": "https://medlineplus.gov/ency/article/000647.htm"},
+    {"factor": "囊性纖維化、纖毛功能障礙或免疫功能低下", "direction": "increases", "modifiable": false, "source": "https://medlineplus.gov/ency/article/000647.htm"}
+  ],
+  "risk_factors_en": [
+    {"factor": "Allergic rhinitis or hay fever", "direction": "increases", "modifiable": true, "source": "https://medlineplus.gov/ency/article/000647.htm"},
+    {"factor": "Blocked sinus drainage from a deviated septum, bony spur, nasal polyps, or enlarged adenoids", "direction": "increases", "modifiable": false, "source": "https://medlineplus.gov/ency/article/000647.htm"},
+    {"factor": "Smoking or ongoing airway-irritant exposure", "direction": "increases", "modifiable": true, "source": "https://medlineplus.gov/ency/article/000647.htm"},
+    {"factor": "Cystic fibrosis, impaired ciliary function, or immunocompromise", "direction": "increases", "modifiable": false, "source": "https://medlineplus.gov/ency/article/000647.htm"}
+  ],
+  "acupuncture_scope_zh": {
+    "can_treat": "病因與結構問題已評估、病況穩定且無眼眶／神經紅旗時，可將針灸定位為鼻塞、臉部壓迫或伴隨頭痛的輔助照護；不能宣稱清除感染、縮小息肉或打通阻塞。",
+    "precautions": "眼周腫痛、視力改變、眼球活動痛／受限、劇烈頭痛、頸部僵硬、意識改變、高熱或快速惡化時不施行常規針灸，立即評估眼眶或顱內併發症。",
+    "co_management": "與基層醫療／耳鼻喉科協作，追蹤症狀週期、嗅覺、過敏與內視鏡／影像結果；鼻內類固醇、抗生素或其他處方藥的停用／調整須先聯絡並諮詢原處方醫師。",
+    "evidence": "unknown",
+    "source": "https://medlineplus.gov/sinusitis.html",
+    "note": "本批未取得慢性鼻竇炎之病種特異針灸療效指引；此欄僅界定穩定期輔助與眼眶／顱內轉診邊界。"
+  },
+  "acupuncture_scope_en": {
+    "can_treat": "After etiologic and structural assessment, in stable disease without orbital or neurologic red flags, acupuncture may be framed as adjunctive support for congestion, facial pressure, or associated headache; it must not be claimed to eradicate infection, shrink polyps, or open an obstruction.",
+    "precautions": "Do not provide routine acupuncture for periorbital swelling/pain, visual change, painful or restricted eye movement, severe headache, neck stiffness, altered consciousness, high fever, or rapid deterioration; urgently assess for orbital or intracranial complications.",
+    "co_management": "Coordinate with primary care or ENT and track symptom duration, smell, allergy, and endoscopy/imaging results; contact and consult the prescriber before stopping or adjusting intranasal corticosteroids, antibiotics, or other prescriptions.",
+    "evidence": "unknown",
+    "source": "https://medlineplus.gov/sinusitis.html",
+    "note": "No condition-specific acupuncture efficacy guideline for chronic sinusitis was collected in this batch; this field defines stable adjunctive and orbital/intracranial referral boundaries only."
+  },
+  "summary_zh": "普通感冒是由多種呼吸道病毒引起的上呼吸道感染，常見鼻塞流涕、噴嚏、咽痛與咳嗽，通常病程短且可自行緩解。流感、COVID-19 與 RSV 可呈現相似早期症狀，但並非普通感冒，於高風險者或症狀較重時須及時檢測與評估。",
+  "summary_en": "The common cold is an upper respiratory infection caused by many different respiratory viruses, commonly producing congestion, rhinorrhea, sneezing, sore throat, and cough, with a short, usually self-limited course. Influenza, COVID-19, and RSV may begin with similar symptoms but are not common colds and warrant timely testing and assessment in high-risk or more severely ill patients.",
+  "western_context_zh": "多數病例採休息、補充水分與依年齡／共病安全使用的症狀緩解措施；抗生素對病毒性普通感冒無效。需檢視高風險身分及流感／COVID-19 的早期抗病毒時效，並在呼吸困難、脫水、症狀反覆惡化或久不改善時就醫。此處僅為文件對照用語，非治療指示。",
+  "western_context_en": "Most cases are managed with rest, fluids, and age- and comorbidity-appropriate symptom relief; antibiotics do not treat a viral common cold. Review risk status and the time-sensitive antiviral window for influenza or COVID-19, and seek medical care for breathing difficulty, dehydration, relapse/worsening, or failure to improve. This is documentation context, not a treatment directive.",
+  "risk_factors_zh": [
+    {"factor": "近距離接觸有呼吸道症狀者或其飛沫", "direction": "increases", "modifiable": true, "source": "https://www.cdc.gov/common-cold/about/"},
+    {"factor": "接觸受污染表面後觸摸眼、鼻或口", "direction": "increases", "modifiable": true, "source": "https://www.cdc.gov/common-cold/about/"},
+    {"factor": "幼兒期（兒童平均感冒次數較成人多）", "direction": "increases", "modifiable": false, "source": "https://www.cdc.gov/common-cold/about/"},
+    {"factor": "嬰幼兒、高齡、免疫功能低下或既有心肺疾病（增加嚴重呼吸道病毒疾病／共病惡化風險）", "direction": "increases", "modifiable": false, "source": "https://www.cdc.gov/common-cold/about/"}
+  ],
+  "risk_factors_en": [
+    {"factor": "Close contact with a person who has respiratory symptoms or their droplets", "direction": "increases", "modifiable": true, "source": "https://www.cdc.gov/common-cold/about/"},
+    {"factor": "Touching the eyes, nose, or mouth after contact with a contaminated surface", "direction": "increases", "modifiable": true, "source": "https://www.cdc.gov/common-cold/about/"},
+    {"factor": "Childhood (children average more colds than adults)", "direction": "increases", "modifiable": false, "source": "https://www.cdc.gov/common-cold/about/"},
+    {"factor": "Infancy, older age, immunocompromise, or underlying cardiac/pulmonary disease (higher risk of severe respiratory viral illness or comorbidity exacerbation)", "direction": "increases", "modifiable": false, "source": "https://www.cdc.gov/common-cold/about/"}
+  ],
+  "acupuncture_scope_zh": {
+    "can_treat": "僅可在病況輕且穩定、無紅旗時，作為鼻塞、咽部不適或全身痠痛等症狀的輔助照護；不能宣稱清除病毒、縮短傳染期或取代流感／COVID-19 檢測與抗病毒評估。",
+    "precautions": "呼吸困難、呼吸急促、脫水、意識改變、持續高熱、症狀改善後再惡化，或高風險者出現流感／COVID-19 樣症狀時不施行常規針灸，先行醫療評估。",
+    "co_management": "與基層醫療協作；含減充血劑、止咳藥或退燒止痛藥之使用須依年齡、孕期與共病向醫師／藥師諮詢，處方藥停用或調整須聯絡原處方醫師。",
+    "evidence": "unknown",
+    "source": "https://www.cdc.gov/common-cold/treatment/index.html",
+    "note": "本批未取得普通感冒之病種特異針灸療效指引；此欄僅界定症狀輔助、鑑別與轉診邊界。"
+  },
+  "acupuncture_scope_en": {
+    "can_treat": "Only in mild, stable illness without red flags may acupuncture be considered adjunctively for congestion, throat discomfort, or body aches; it must not be claimed to clear the virus, shorten infectiousness, or replace influenza/COVID-19 testing and antiviral assessment.",
+    "precautions": "Do not provide routine acupuncture for dyspnea, tachypnea, dehydration, altered consciousness, persistent high fever, improvement followed by worsening, or influenza/COVID-like illness in a high-risk patient; obtain medical assessment first.",
+    "co_management": "Coordinate with primary care. Consult a physician or pharmacist about decongestants, cough medicines, or antipyretic/analgesic use according to age, pregnancy, and comorbidity; contact the prescriber before stopping or adjusting a prescription.",
+    "evidence": "unknown",
+    "source": "https://www.cdc.gov/common-cold/treatment/index.html",
+    "note": "No condition-specific acupuncture efficacy guideline for the common cold was collected in this batch; this field defines symptom-support, differential, and referral boundaries only."
+  },
   "summary_zh": "慢性阻塞性肺病（COPD）是因氣道與肺泡受損造成持續、通常進行性的氣流受限，臨床可同時具有慢性支氣管炎與肺氣腫特徵。常見症狀為活動時呼吸困難、慢性咳嗽與痰量增加；急性惡化可迅速造成低氧與呼吸衰竭。",
   "summary_en": "Chronic obstructive pulmonary disease (COPD) is persistent, usually progressive airflow limitation caused by damage to the airways and alveoli, often with overlapping chronic bronchitis and emphysema features. Common symptoms are exertional dyspnea, chronic cough, and increased sputum; exacerbations can rapidly cause hypoxemia and respiratory failure.",
   "western_context_zh": "診斷以症狀、暴露史與肺量計確認氣流阻塞；照護重點包括戒菸、避免暴露、疫苗、依分級使用吸入型支氣管擴張劑／其他藥物、肺復健及個人化急性惡化計畫。氧療須依醫療評估，急性呼吸窘迫不屬門診輔助處置範圍。此處僅為文件對照用語，非治療指示。",
@@ -38306,10 +38453,42 @@
    }
   },
   {
-   "id": "cond.post_viral_cough",
-   "name_en": "Post-Viral Cough",
-   "name_zh": "感染後咳嗽",
-   "category": "respiratory",
+  "id": "cond.post_viral_cough",
+  "name_en": "Post-Viral Cough",
+  "name_zh": "感染後咳嗽",
+  "summary_zh": "感染後咳嗽是急性呼吸道感染後持續 3–8 週的亞急性咳嗽，可能涉及暫時性氣道發炎、支氣管高反應、黏液增加與纖毛清除下降。它是排除性臨床診斷：須有先前感染，且無令人擔心的檢查發現，並排除氣喘、COPD、胃食道逆流、ACE 抑制劑及其他咳嗽原因。",
+  "summary_en": "Postinfectious cough is a subacute cough lasting 3–8 weeks after an acute respiratory infection, potentially involving transient airway inflammation, bronchial hyperresponsiveness, increased mucus, and impaired mucociliary clearance. It is a diagnosis of exclusion: a preceding infection and absence of concerning examination findings are required, while asthma, COPD, gastroesophageal reflux, ACE-inhibitor use, and other causes must be considered.",
+  "western_context_zh": "多數感染後咳嗽具自限性，應先確認時間軸、用藥與紅旗，避免不必要的抗生素；咳嗽超過 8 週、反覆惡化或出現異常檢查時，轉入慢性咳嗽鑑別並依線索安排胸部影像或肺功能檢查。此處僅為文件對照用語，非治療指示。",
+  "western_context_en": "Most postinfectious cough is self-limited. First confirm the timeline, medication exposure, and red flags, and avoid unnecessary antibiotics. Cough beyond 8 weeks, recurrent worsening, or abnormal findings should enter a chronic-cough differential with chest imaging or pulmonary testing as indicated. This is documentation context, not a treatment directive.",
+  "risk_factors_zh": [
+    {"factor": "近期急性呼吸道感染（本病必要的時間背景）", "direction": "increases", "modifiable": false, "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10861265/"},
+    {"factor": "感染後支氣管高反應、黏液增加與纖毛清除下降", "direction": "increases", "modifiable": false, "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10861265/"},
+    {"factor": "持續吸菸或粉塵、煙霧等氣道刺激暴露", "direction": "increases", "modifiable": true, "source": "https://medlineplus.gov/cough.html"},
+    {"factor": "氣喘、COPD、胃食道逆流或 ACE 抑制劑使用（增加持續咳嗽可能性，亦是需排除的替代病因）", "direction": "increases", "modifiable": false, "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10861265/"}
+  ],
+  "risk_factors_en": [
+    {"factor": "A recent acute respiratory infection (the required temporal context)", "direction": "increases", "modifiable": false, "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10861265/"},
+    {"factor": "Postinfectious bronchial hyperresponsiveness, increased mucus, and impaired mucociliary clearance", "direction": "increases", "modifiable": false, "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10861265/"},
+    {"factor": "Continued smoking or exposure to dust, fumes, or other airway irritants", "direction": "increases", "modifiable": true, "source": "https://medlineplus.gov/cough.html"},
+    {"factor": "Asthma, COPD, gastroesophageal reflux, or ACE-inhibitor use (raises the likelihood of persistent cough and represents an alternative cause to exclude)", "direction": "increases", "modifiable": false, "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10861265/"}
+  ],
+  "acupuncture_scope_zh": {
+    "can_treat": "僅在感染急性期已過、病況穩定、紅旗與重要替代病因已評估時，可作為咳嗽相關不適的輔助照護；不能以治療反應證實『感染後咳嗽』或取代必要檢查。",
+    "precautions": "咳血、呼吸困難、胸痛、吞嚥困難、全身症狀顯著、反覆肺炎、聲音嘶啞或咳嗽超過 8 週時，不以常規針灸延後胸部影像、肺功能或專科評估。",
+    "co_management": "與基層醫療／胸腔科協作，記錄感染與咳嗽時間軸、用藥及檢查；ACE 抑制劑或其他處方藥的停用／調整須先聯絡並諮詢原處方醫師。",
+    "evidence": "unknown",
+    "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10861265/",
+    "note": "本批未取得感染後咳嗽之病種特異針灸療效指引；此欄僅界定排除性診斷、追蹤與轉診邊界。"
+  },
+  "acupuncture_scope_en": {
+    "can_treat": "Only after the acute infection has passed, the patient is stable, and red flags and important alternative causes have been assessed may acupuncture be used adjunctively for cough-related discomfort; treatment response cannot establish the diagnosis or replace indicated testing.",
+    "precautions": "For hemoptysis, dyspnea, chest pain, dysphagia, prominent systemic symptoms, recurrent pneumonia, hoarseness, or cough beyond 8 weeks, do not let routine acupuncture delay chest imaging, pulmonary testing, or specialist assessment.",
+    "co_management": "Coordinate with primary care or pulmonology and document the infection/cough timeline, medicines, and investigations; contact and consult the prescriber before stopping or adjusting an ACE inhibitor or other prescription.",
+    "evidence": "unknown",
+    "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10861265/",
+    "note": "No condition-specific acupuncture efficacy guideline for postinfectious cough was collected in this batch; this field defines diagnosis-of-exclusion, follow-up, and referral boundaries only."
+  },
+  "category": "respiratory",
    "icd_hint": "R05.1",
    "related_eastern_diseases": [
     "tdis.ke_sou"
@@ -38842,9 +39021,10 @@
    "fetched_at": "2026-07-23T07:45:09.423Z",
    "source_type": "sourced_cloudtcm_record",
    "entity_type": "biomedical_condition",
-   "sources": [
-    "https://cloudtcm.com/disease/tcm/28283",
-    "https://medlineplus.gov/cough.html"
+  "sources": [
+   "https://cloudtcm.com/disease/tcm/28283",
+   "https://medlineplus.gov/cough.html",
+   "https://pmc.ncbi.nlm.nih.gov/articles/PMC10861265/"
    ],
    "import_artifacts": [
     {
@@ -38884,10 +39064,18 @@
     "red_flags_zh": [
      "ACCP 亞急性咳嗽通說；百日咳通報為公衛通說"
     ],
-    "red_flags_en": [
-     "ACCP 亞急性咳嗽通說；百日咳通報為公衛通說"
-    ]
-   },
+   "red_flags_en": [
+    "ACCP 亞急性咳嗽通說；百日咳通報為公衛通說"
+   ],
+   "summary_zh": ["https://pmc.ncbi.nlm.nih.gov/articles/PMC10861265/"],
+   "summary_en": ["https://pmc.ncbi.nlm.nih.gov/articles/PMC10861265/"],
+   "western_context_zh": ["https://pmc.ncbi.nlm.nih.gov/articles/PMC10861265/", "https://medlineplus.gov/cough.html"],
+   "western_context_en": ["https://pmc.ncbi.nlm.nih.gov/articles/PMC10861265/", "https://medlineplus.gov/cough.html"],
+   "risk_factors_zh": ["https://pmc.ncbi.nlm.nih.gov/articles/PMC10861265/", "https://medlineplus.gov/cough.html"],
+   "risk_factors_en": ["https://pmc.ncbi.nlm.nih.gov/articles/PMC10861265/", "https://medlineplus.gov/cough.html"],
+   "acupuncture_scope_zh": ["https://pmc.ncbi.nlm.nih.gov/articles/PMC10861265/"],
+   "acupuncture_scope_en": ["https://pmc.ncbi.nlm.nih.gov/articles/PMC10861265/"]
+  },
    "red_flags_zh": [
     "咳嗽超過八週 → 轉入慢性咳嗽鑑別流程，勿再等待自癒",
     "陣發性嗆咳伴吸氣哮鳴或咳後嘔吐 → 百日咳，通報與家戶預防",
@@ -48598,6 +48786,38 @@
     "pattern.spleen_qi_deficiency"
    ],
   "review_status": "draft",
+  "summary_zh": "感染後咳嗽是急性呼吸道感染後持續 3–8 週的亞急性咳嗽，可能涉及暫時性氣道發炎、支氣管高反應、黏液增加與纖毛清除下降。它是排除性臨床診斷：須有先前感染，且無令人擔心的檢查發現，並排除氣喘、COPD、胃食道逆流、ACE 抑制劑及其他咳嗽原因。",
+  "summary_en": "Postinfectious cough is a subacute cough lasting 3–8 weeks after an acute respiratory infection, potentially involving transient airway inflammation, bronchial hyperresponsiveness, increased mucus, and impaired mucociliary clearance. It is a diagnosis of exclusion: a preceding infection and absence of concerning examination findings are required, while asthma, COPD, gastroesophageal reflux, ACE-inhibitor use, and other causes must be considered.",
+  "western_context_zh": "多數感染後咳嗽具自限性，應先確認時間軸、用藥與紅旗，避免不必要的抗生素；咳嗽超過 8 週、反覆惡化或出現異常檢查時，轉入慢性咳嗽鑑別並依線索安排胸部影像或肺功能檢查。此處僅為文件對照用語，非治療指示。",
+  "western_context_en": "Most postinfectious cough is self-limited. First confirm the timeline, medication exposure, and red flags, and avoid unnecessary antibiotics. Cough beyond 8 weeks, recurrent worsening, or abnormal findings should enter a chronic-cough differential with chest imaging or pulmonary testing as indicated. This is documentation context, not a treatment directive.",
+  "risk_factors_zh": [
+    {"factor": "近期急性呼吸道感染（本病必要的時間背景）", "direction": "increases", "modifiable": false, "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10861265/"},
+    {"factor": "感染後支氣管高反應、黏液增加與纖毛清除下降", "direction": "increases", "modifiable": false, "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10861265/"},
+    {"factor": "持續吸菸或粉塵、煙霧等氣道刺激暴露", "direction": "increases", "modifiable": true, "source": "https://medlineplus.gov/cough.html"},
+    {"factor": "氣喘、COPD、胃食道逆流或 ACE 抑制劑使用（增加持續咳嗽可能性，亦是需排除的替代病因）", "direction": "increases", "modifiable": false, "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10861265/"}
+  ],
+  "risk_factors_en": [
+    {"factor": "A recent acute respiratory infection (the required temporal context)", "direction": "increases", "modifiable": false, "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10861265/"},
+    {"factor": "Postinfectious bronchial hyperresponsiveness, increased mucus, and impaired mucociliary clearance", "direction": "increases", "modifiable": false, "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10861265/"},
+    {"factor": "Continued smoking or exposure to dust, fumes, or other airway irritants", "direction": "increases", "modifiable": true, "source": "https://medlineplus.gov/cough.html"},
+    {"factor": "Asthma, COPD, gastroesophageal reflux, or ACE-inhibitor use (raises the likelihood of persistent cough and represents an alternative cause to exclude)", "direction": "increases", "modifiable": false, "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10861265/"}
+  ],
+  "acupuncture_scope_zh": {
+    "can_treat": "僅在感染急性期已過、病況穩定、紅旗與重要替代病因已評估時，可作為咳嗽相關不適的輔助照護；不能以治療反應證實『感染後咳嗽』或取代必要檢查。",
+    "precautions": "咳血、呼吸困難、胸痛、吞嚥困難、全身症狀顯著、反覆肺炎、聲音嘶啞或咳嗽超過 8 週時，不以常規針灸延後胸部影像、肺功能或專科評估。",
+    "co_management": "與基層醫療／胸腔科協作，記錄感染與咳嗽時間軸、用藥及檢查；ACE 抑制劑或其他處方藥的停用／調整須先聯絡並諮詢原處方醫師。",
+    "evidence": "unknown",
+    "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10861265/",
+    "note": "本批未取得感染後咳嗽之病種特異針灸療效指引；此欄僅界定排除性診斷、追蹤與轉診邊界。"
+  },
+  "acupuncture_scope_en": {
+    "can_treat": "Only after the acute infection has passed, the patient is stable, and red flags and important alternative causes have been assessed may acupuncture be used adjunctively for cough-related discomfort; treatment response cannot establish the diagnosis or replace indicated testing.",
+    "precautions": "For hemoptysis, dyspnea, chest pain, dysphagia, prominent systemic symptoms, recurrent pneumonia, hoarseness, or cough beyond 8 weeks, do not let routine acupuncture delay chest imaging, pulmonary testing, or specialist assessment.",
+    "co_management": "Coordinate with primary care or pulmonology and document the infection/cough timeline, medicines, and investigations; contact and consult the prescriber before stopping or adjusting an ACE inhibitor or other prescription.",
+    "evidence": "unknown",
+    "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10861265/",
+    "note": "No condition-specific acupuncture efficacy guideline for postinfectious cough was collected in this batch; this field defines diagnosis-of-exclusion, follow-up, and referral boundaries only."
+  },
   "summary_zh": "低血壓是血壓偏低的量測與臨床情境，不必然代表單一疾病；無症狀者可能不需處置，但若伴頭暈、視物模糊、虛弱、暈厥或跌倒，應評估姿勢變化、脫水、出血、藥物及心臟、內分泌或自主神經原因。急性低血壓合併休克徵象屬急症。",
   "summary_en": "Hypotension is a blood-pressure finding and clinical context rather than a single disease. It may require no treatment when asymptomatic, but dizziness, blurred vision, weakness, syncope, or falls warrant assessment for postural change, dehydration, bleeding, medication effects, and cardiac, endocrine, or autonomic causes. Acute hypotension with signs of shock is an emergency.",
   "western_context_zh": "先確認症狀、臥位與站立血壓、近期水分或失血情況及完整用藥，再依線索安排心電圖、血液檢查或心臟／自主神經評估。處置針對病因；任何藥物調整均由原處方醫師決定。此處僅為文件對照用語，非治療指示。",
@@ -50780,7 +51000,7 @@
    }
   },
   {
-   "id": "cond.varicose_veins",
+  "id": "cond.varicose_veins",
    "name_en": "Varicose Veins / Venous Insufficiency (context)",
    "name_zh": "靜脈曲張（文件情境）",
    "category": "cardio",
@@ -50793,7 +51013,39 @@
     "pattern.blood_stasis",
     "pattern.phlegm_damp"
    ],
-   "review_status": "draft",
+  "review_status": "draft",
+  "summary_zh": "靜脈曲張是表淺靜脈因靜脈瓣膜功能不全與血液逆流而擴張、扭曲，最常見於下肢。可無症狀，也可造成沉重、痠痛、搔癢、水腫或皮膚變化；與蜘蛛網狀靜脈不同，亦不能用外觀排除深部靜脈血栓。",
+  "summary_en": "Varicose veins are dilated, tortuous superficial veins caused by venous-valve dysfunction and reflux, most often in the legs. They may be asymptomatic or cause heaviness, aching, itching, edema, or skin change. They differ from spider veins, and appearance alone cannot exclude deep-vein thrombosis.",
+  "western_context_zh": "臨床評估症狀、皮膚、潰瘍、出血與血栓線索；需介入者通常以 duplex ultrasound 確認逆流與規劃治療。照護可包含活動、抬腿、體重管理、特定情況下壓力治療，以及血管專科評估消融、硬化或手術；壓力襪並非在未排除嚴重動脈疾病前自行套用。此處僅為文件對照用語，非治療指示。",
+  "western_context_en": "Clinical assessment reviews symptoms, skin, ulceration, bleeding, and thrombotic clues; duplex ultrasound is generally used when intervention is being considered to confirm reflux and plan treatment. Care may include activity, leg elevation, weight management, selected compression, and vascular assessment for ablation, sclerotherapy, or surgery. Compression should not be self-initiated when significant arterial disease has not been excluded. This is documentation context, not a treatment directive.",
+  "risk_factors_zh": [
+    {"factor": "年齡增加", "direction": "increases", "modifiable": false, "source": "https://www.nhs.uk/conditions/varicose-veins/"},
+    {"factor": "懷孕與女性性別", "direction": "increases", "modifiable": false, "source": "https://www.nhs.uk/conditions/varicose-veins/"},
+    {"factor": "過重、長時間站立或久坐", "direction": "increases", "modifiable": true, "source": "https://www.nhs.uk/conditions/varicose-veins/"},
+    {"factor": "靜脈曲張家族史或既往深部靜脈血栓", "direction": "increases", "modifiable": false, "source": "https://www.nhs.uk/conditions/varicose-veins/"}
+  ],
+  "risk_factors_en": [
+    {"factor": "Increasing age", "direction": "increases", "modifiable": false, "source": "https://www.nhs.uk/conditions/varicose-veins/"},
+    {"factor": "Pregnancy and female sex", "direction": "increases", "modifiable": false, "source": "https://www.nhs.uk/conditions/varicose-veins/"},
+    {"factor": "Overweight and prolonged standing or sitting", "direction": "increases", "modifiable": true, "source": "https://www.nhs.uk/conditions/varicose-veins/"},
+    {"factor": "Family history of varicose veins or prior deep-vein thrombosis", "direction": "increases", "modifiable": false, "source": "https://www.nhs.uk/conditions/varicose-veins/"}
+  ],
+  "acupuncture_scope_zh": {
+    "can_treat": "僅在血管病因已評估、病況穩定且無血栓／出血／潰瘍急症時，可作為痠脹或伴隨肌肉不適的輔助照護；不能修復靜脈瓣膜、消除逆流或取代血管治療。",
+    "precautions": "不得直接針刺明顯曲張靜脈、發炎硬索、潰瘍、感染或出血區；單側突然腫痛、發紅發熱、呼吸困難／胸痛或活動性出血時停止常規處置並緊急評估 DVT／肺栓塞或失血。",
+    "co_management": "與基層醫療／血管專科協作，記錄皮膚、潰瘍、出血與 duplex ultrasound 結果；壓力治療、抗凝血或其他處方的停用／調整須先聯絡並諮詢原處方醫師。",
+    "evidence": "unknown",
+    "source": "https://www.nhs.uk/conditions/varicose-veins/",
+    "note": "本批未取得靜脈曲張之病種特異針灸療效指引；此欄僅界定穩定期症狀輔助與血管轉診邊界。"
+  },
+  "acupuncture_scope_en": {
+    "can_treat": "Only after vascular causes have been assessed, the condition is stable, and no thrombotic, bleeding, or ulcer emergency is present may acupuncture be considered adjunctively for aching/heaviness or associated muscular discomfort; it cannot repair venous valves, eliminate reflux, or replace vascular treatment.",
+    "precautions": "Do not needle directly into visibly varicose veins, inflamed cords, ulcers, infection, or bleeding areas. Stop routine care and urgently assess for DVT/pulmonary embolism or blood loss when there is sudden unilateral swelling/pain, redness/warmth, dyspnea/chest pain, or active bleeding.",
+    "co_management": "Coordinate with primary care or vascular specialists and document skin, ulcer, bleeding, and duplex-ultrasound findings; contact and consult the prescriber before stopping or adjusting compression therapy, anticoagulation, or another prescription.",
+    "evidence": "unknown",
+    "source": "https://www.nhs.uk/conditions/varicose-veins/",
+    "note": "No condition-specific acupuncture efficacy guideline for varicose veins was collected in this batch; this field defines stable symptom support and vascular referral boundaries only."
+  },
    "etiology_zh": "中醫「筋瘤」——《外科正宗》:「筋瘤者,堅而色紫,壘壘青筋,盤曲甚者,結若蚯蚓。」盤曲如蚯蚓之描述,與曲張靜脈之形一字不差。病機:久站負重,勞倦傷氣——氣虛下陷,無力帥血上行,血行遲緩,滯於下肢絡脈;氣滯血瘀,脈絡擴張迂曲,結成筋瘤;妊娠胎氣壓迫,血行受阻,同理成之。久病之變:瘀久化熱,或濕熱下注——局部紅腫熱痛(血栓性淺靜脈炎之象);瘀阻肌膚,失於榮養——色素沉著、肌膚甲錯,潰而成「臁瘡」(小腿潰瘍),瘡口經久難斂,正是氣虛血瘀之互為因果。治以益氣活血、化瘀通絡為軸,濕熱者清利,臁瘡者益氣托瘡生肌;抬腿、束縛(彈性襪之理)、動則氣行——保守處置之理,兩醫學互通。",
    "western_pathology_zh": "靜脈曲張是下肢淺靜脈系統的瓣膜功能不全:靜脈瓣膜關閉不全→血液逆流→靜脈高壓→管壁擴張迂曲,而擴張又使瓣葉更難對合——自我強化的環;管壁本身的細胞外基質重塑(膠原與彈性纖維比例改變)是易感基礎。危險因子:家族史(最強)、久站職業、妊娠(孕酮鬆弛管壁+子宮壓迫回流+血容量增加)、肥胖、年齡。它是慢性靜脈疾病譜的一段:毛細血管擴張→曲張靜脈→水腫→皮膚變化(色素沉著、脂性硬皮症、白色萎縮)→靜脈性潰瘍(內踝好發)——皮膚變化是「該積極處理」的分界;併發症尚有血栓性淺靜脈炎與曲張破裂出血。長時間靜脈高壓的傳導主要走深淺交通支——評估靠都卜勒超音波定逆流位置。彈性襪與腿部肌肉幫浦運動是保守基石;熱消融取代大隱靜脈剝離為介入主流。",
    "tcm_patterns": [
@@ -50882,12 +51134,21 @@
     "red_flags_zh": [
      "SVS/AVF 慢性靜脈疾病紅旗通說"
     ],
-    "red_flags_en": [
-     "SVS/AVF 慢性靜脈疾病紅旗通說"
-    ]
-   },
-   "sources": [
-    "https://medlineplus.gov/varicoseveins.html"
+   "red_flags_en": [
+    "SVS/AVF 慢性靜脈疾病紅旗通說"
+   ],
+   "summary_zh": ["https://www.nhs.uk/conditions/varicose-veins/", "https://medlineplus.gov/varicoseveins.html"],
+   "summary_en": ["https://www.nhs.uk/conditions/varicose-veins/", "https://medlineplus.gov/varicoseveins.html"],
+   "western_context_zh": ["https://www.nhs.uk/conditions/varicose-veins/"],
+   "western_context_en": ["https://www.nhs.uk/conditions/varicose-veins/"],
+   "risk_factors_zh": ["https://www.nhs.uk/conditions/varicose-veins/"],
+   "risk_factors_en": ["https://www.nhs.uk/conditions/varicose-veins/"],
+   "acupuncture_scope_zh": ["https://www.nhs.uk/conditions/varicose-veins/"],
+   "acupuncture_scope_en": ["https://www.nhs.uk/conditions/varicose-veins/"]
+  },
+  "sources": [
+   "https://medlineplus.gov/varicoseveins.html",
+   "https://www.nhs.uk/conditions/varicose-veins/"
    ],
    "red_flags_zh": [
     "突發單側小腿腫痛 → 深部靜脈血栓排除（急症）",
@@ -50920,7 +51181,7 @@
    }
   },
   {
-   "id": "cond.poor_circulation",
+  "id": "cond.poor_circulation",
    "name_en": "Poor Peripheral Circulation (context)",
    "name_zh": "末梢循環不良（文件情境）",
    "category": "cardio",
@@ -50933,7 +51194,39 @@
     "pattern.qi_blood_deficiency",
     "pattern.blood_stasis"
    ],
-   "review_status": "draft",
+  "review_status": "draft",
+  "summary_zh": "「周邊循環不良」是症狀性描述，不是單一診斷。肢體冰冷、麻木、變色、走路疼痛或傷口不癒合可能來自周邊動脈疾病，也可能是靜脈功能不全、神經病變、心輸出量不足或其他原因；必須先分辨動脈、靜脈與非血管性病因。",
+  "summary_en": "“Poor peripheral circulation” is a symptom description, not a single diagnosis. Coldness, numbness, color change, exertional limb pain, or nonhealing wounds may reflect peripheral artery disease but can also arise from venous insufficiency, neuropathy, low cardiac output, or other causes. Arterial, venous, and nonvascular etiologies must be distinguished first.",
+  "western_context_zh": "問診與檢查需記錄運動誘發／休息緩解、單側或雙側、脈搏、皮膚溫度與顏色、水腫及傷口；疑似動脈疾病常以 ankle-brachial index 為初步檢查，再依需要安排超音波或血管影像。治療針對確診病因，並同步處理心血管危險。此處僅為文件對照用語，非治療指示。",
+  "western_context_en": "History and examination should document exertional versus positional symptoms, laterality, pulses, skin temperature/color, edema, and wounds. When arterial disease is suspected, the ankle-brachial index is commonly the first test, followed as needed by ultrasound or vascular imaging. Treatment targets the confirmed cause while cardiovascular risk is managed in parallel. This is documentation context, not a treatment directive.",
+  "risk_factors_zh": [
+    {"factor": "吸菸或二手菸暴露（周邊動脈疾病主要危險因子）", "direction": "increases", "modifiable": true, "source": "https://www.nhlbi.nih.gov/health/peripheral-artery-disease/causes"},
+    {"factor": "糖尿病、高血壓、血脂異常、慢性腎病或肥胖", "direction": "increases", "modifiable": true, "source": "https://www.nhlbi.nih.gov/health/peripheral-artery-disease/causes"},
+    {"factor": "年齡增加或周邊動脈疾病／心臟病／中風家族史", "direction": "increases", "modifiable": false, "source": "https://www.nhlbi.nih.gov/health/peripheral-artery-disease/causes"},
+    {"factor": "久站久坐、過重、懷孕或既往 DVT（增加靜脈功能不全可能性）", "direction": "increases", "modifiable": true, "source": "https://www.nhs.uk/conditions/varicose-veins/"}
+  ],
+  "risk_factors_en": [
+    {"factor": "Smoking or secondhand-smoke exposure (a major peripheral artery disease risk factor)", "direction": "increases", "modifiable": true, "source": "https://www.nhlbi.nih.gov/health/peripheral-artery-disease/causes"},
+    {"factor": "Diabetes, hypertension, dyslipidemia, chronic kidney disease, or obesity", "direction": "increases", "modifiable": true, "source": "https://www.nhlbi.nih.gov/health/peripheral-artery-disease/causes"},
+    {"factor": "Increasing age or family history of PAD, heart disease, or stroke", "direction": "increases", "modifiable": false, "source": "https://www.nhlbi.nih.gov/health/peripheral-artery-disease/causes"},
+    {"factor": "Prolonged standing/sitting, overweight, pregnancy, or prior DVT (higher likelihood of venous insufficiency)", "direction": "increases", "modifiable": true, "source": "https://www.nhs.uk/conditions/varicose-veins/"}
+  ],
+  "acupuncture_scope_zh": {
+    "can_treat": "只有在循環不良的病因已明確、肢體灌流穩定且醫療計畫已建立時，才能把針灸定位為疼痛或伴隨肌肉緊張的輔助照護；不能用皮膚變暖或症狀短暫改善推定血管已暢通。",
+    "precautions": "突然出現肢體劇痛、蒼白／發紺、冰冷、脈搏消失、感覺或運動障礙，或休息痛、壞疽、感染性不癒合傷口時不施行常規針灸，立即血管急症評估。",
+    "co_management": "與基層醫療／血管專科協作，保留 ABI、血管影像、足部傷口與心血管危險因子紀錄；抗血小板、抗凝血、降脂或其他處方藥的停用／調整須先聯絡並諮詢原處方醫師。",
+    "evidence": "unknown",
+    "source": "https://www.nhlbi.nih.gov/health/peripheral-artery-disease/diagnosis",
+    "note": "本批未取得『周邊循環不良』之病種特異針灸療效指引；此欄僅界定先診斷、穩定期輔助與急性肢體缺血邊界。"
+  },
+  "acupuncture_scope_en": {
+    "can_treat": "Only after the cause of poor circulation is defined, limb perfusion is stable, and a medical plan is established may acupuncture be framed as adjunctive support for pain or associated muscle tension; warmer skin or transient symptom improvement does not establish vascular patency.",
+    "precautions": "Do not provide routine acupuncture for sudden severe limb pain, pallor/cyanosis, coldness, absent pulse, sensory or motor loss, or for rest pain, gangrene, or an infected nonhealing wound; obtain immediate vascular emergency assessment.",
+    "co_management": "Coordinate with primary care or vascular specialists and retain ABI, vascular-imaging, foot-wound, and cardiovascular-risk records; contact and consult the prescriber before stopping or adjusting antiplatelet, anticoagulant, lipid-lowering, or other prescription therapy.",
+    "evidence": "unknown",
+    "source": "https://www.nhlbi.nih.gov/health/peripheral-artery-disease/diagnosis",
+    "note": "No condition-specific acupuncture efficacy guideline for 'poor peripheral circulation' was collected in this batch; this field defines diagnosis-first, stable adjunctive, and acute-limb-ischemia boundaries only."
+  },
    "etiology_zh": "中醫依「血痺」「四末不溫」論,而以辨證拆解諸型,恰與鑑別清單同構:陽虛失煦——素體陽虛,溫煦不及,四末冰冷、得溫則舒、畏寒踡臥(甲低與體質性肢冷之象);氣虛血弱——氣不帥血,血不榮末,冷而蒼白、倦怠脈弱(貧血之象);寒凝血瘀——寒客脈絡,血行凝澀,冷痛並見、膚色紫黯、行走則痠痛加重(動脈缺血跛行之象,「不通則痛」);氣滯——情志而發,時冷時溫(痙攣之象)。「四末者,諸陽之末」——陽氣血液所以不達,或因虛(陽虛氣虛)、或因阻(寒凝瘀滯),虛實之辨即治法之分:虛者溫陽益氣養血,阻者溫經散寒活血;而「行走痠痛、趾端紫黑不退」屬脫疽之漸(嚴重肢體缺血),古人已知其能致「脫」——急轉血管科,非灸熨可任。",
    "western_pathology_zh": "「末梢循環不良」是主訴不是診斷——手腳冰冷、麻木、發白發紫、間歇性痠痛的背後,是一張必須拆開的鑑別清單:動脈性——周邊動脈疾病(粥樣硬化致下肢供血不足:間歇性跛行、患肢抬高蒼白下垂潮紅、足背脈搏減弱,踝肱指數是床邊定量工具;它同時標記全身動脈粥樣硬化,心腦血管風險同級上調);血管痙攣性——雷諾氏現象(指端三相變色,另卡詳述);靜脈性——功能不全之沉重腫脹;神經性——周邊神經病變的「冷感」實為感覺異常,血流可正常;此外,甲狀腺功能低下、貧血、藥物(β 阻斷劑)、單純體質性肢冷(年輕女性常見,檢查全陰性)各占一席。分流的第一步是動脈危險分層:年長、吸菸、糖尿病者先查脈搏與踝肱指數——跛行病史比「冰冷」本身更具警示價值;運動訓練是周邊動脈疾病證據最強的保守治療,與「怕冷少動」的直覺相反。",
    "tcm_patterns": [
@@ -51022,12 +51315,25 @@
     "red_flags_zh": [
      "AHA 周邊動脈疾病警訊通說（CLI、急性栓塞）"
     ],
-    "red_flags_en": [
-     "AHA 周邊動脈疾病警訊通說（CLI、急性栓塞）"
-    ]
-   },
-   "sources": [
-    "https://medlineplus.gov/peripheralarterialdisease.html"
+   "red_flags_en": [
+    "AHA 周邊動脈疾病警訊通說（CLI、急性栓塞）"
+   ],
+   "summary_zh": ["https://www.nhlbi.nih.gov/health/peripheral-artery-disease/symptoms", "https://www.nhlbi.nih.gov/health/peripheral-artery-disease/diagnosis"],
+   "summary_en": ["https://www.nhlbi.nih.gov/health/peripheral-artery-disease/symptoms", "https://www.nhlbi.nih.gov/health/peripheral-artery-disease/diagnosis"],
+   "western_context_zh": ["https://www.nhlbi.nih.gov/health/peripheral-artery-disease/diagnosis", "https://www.nhlbi.nih.gov/health/peripheral-artery-disease/treatment"],
+   "western_context_en": ["https://www.nhlbi.nih.gov/health/peripheral-artery-disease/diagnosis", "https://www.nhlbi.nih.gov/health/peripheral-artery-disease/treatment"],
+   "risk_factors_zh": ["https://www.nhlbi.nih.gov/health/peripheral-artery-disease/causes", "https://www.nhs.uk/conditions/varicose-veins/"],
+   "risk_factors_en": ["https://www.nhlbi.nih.gov/health/peripheral-artery-disease/causes", "https://www.nhs.uk/conditions/varicose-veins/"],
+   "acupuncture_scope_zh": ["https://www.nhlbi.nih.gov/health/peripheral-artery-disease/diagnosis", "https://www.nhlbi.nih.gov/health/peripheral-artery-disease/symptoms"],
+   "acupuncture_scope_en": ["https://www.nhlbi.nih.gov/health/peripheral-artery-disease/diagnosis", "https://www.nhlbi.nih.gov/health/peripheral-artery-disease/symptoms"]
+  },
+  "sources": [
+   "https://medlineplus.gov/peripheralarterialdisease.html",
+   "https://www.nhlbi.nih.gov/health/peripheral-artery-disease/causes",
+   "https://www.nhlbi.nih.gov/health/peripheral-artery-disease/diagnosis",
+   "https://www.nhlbi.nih.gov/health/peripheral-artery-disease/symptoms",
+   "https://www.nhlbi.nih.gov/health/peripheral-artery-disease/treatment",
+   "https://www.nhs.uk/conditions/varicose-veins/"
    ],
    "red_flags_zh": [
     "間歇性跛行（行走定距離痠痛、休息緩解） → 踝肱指數檢查——周邊動脈疾病同時標記全身動脈硬化",
