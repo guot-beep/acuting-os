@@ -182,7 +182,11 @@ Case 清單帶 readiness 徽章(63%/11%)、跨 case 警訊聚合(2 條,原樣呈
   `note.followUp` 帶進 `followUpSnapshot`——那格是醫師寫給自己看的臨床規劃
   文字,舊版直接照印給病人,含方名與「若無效就改方」的內部判斷。改成草稿
   一律空白起手,逼醫師自己打一句病人看得懂的話;結帳畫面該欄位旁加了
-  ⚠ 警示文字。`scripts/test-avs-checkout.js` 新增迴歸鎖定斷言。)
+  ⚠ 警示文字。`scripts/test-avs-checkout.js` 新增迴歸鎖定斷言。**同日補第二處**:
+  `scripts/generate-avs.js`(CLI v1)自己組 HTML、不經過 `AVS.renderPatientHtml`,
+  是獨立程式碼路徑,原本也直讀 `note.followUp`,同一個洩漏、當時漏修。改讀
+  `note.avsFollowUp`,與同檔其餘 `avs*` 慣例一致;新增子行程回歸鎖(真的跑一次
+  CLI,不只測函式),已驗證還原修法會讓新斷言失敗、確認不是空跑。)
 - ⏳ 未正式關閉:#13(AVS v3 驗證——現行 `renderPatientHtml`/`renderPatientText`
   確實都有「中藥/營養品」渲染段,但沒有拿當初那個 repro 案例重跑過,不算正式
   驗證通過,誰要關閉這條請實際跑一次再劃掉)、#4 對話框分區導航(可後補)。
