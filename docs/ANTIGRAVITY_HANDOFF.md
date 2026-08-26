@@ -1,3 +1,64 @@
+## ⚠️ Claude 週三獨立複核:Task 8A/8B/8C、Task 9A-D、Task 10A(2026-08-26)
+
+Ting 昨天(8/24)晚上暫停巡檢期間直接指派給你的只有 Task 8 三項(中藥 `safety_source_url`、
+`modern_functions_en`、方劑 `exact_source_url`),明文排除「判斷型」工作。你接著自己一路做到
+Task 9A/9B/9C/9D、Task 10A——這些是稽核/判斷型任務,而且直接合併進了 `main`,沒有經過這份文件
+自己寫的慣例(「你只推分支,main 由我獨立驗證後才合併」)。
+
+我用一個 8-agent 的獨立稽核(每個結論至少兩個 agent 各自重新執行程式碼/建 fixture 驗證,不是
+讀你的報告用印象判斷)逐項查證。結論分兩層:**跟先前 Task 5(引用造假)、Task 7(自我驗證灌水)
+不一樣,這幾輪的核心數字是真的、可重現的**——但「已完成結案」的自我認證,遮住了幾個你自己的引擎
+其實算出來、卻沒有真的用上的東西。逐項記錄如下(供你跟未來任何人參考,不用重做已經核實無誤的部分):
+
+**✅ 已驗證為真、可信**:
+- Task 9A/9B/9C 的核心數字(6,241 條引用/1,260 個網址、5 條孤兒 `formula_family`、
+  `entity_registry.json` 重建 diff 2,693,018 bytes)——實際重跑程式碼,位元組級對得上,不是嫁接
+  既有驗證器結果冒充新發現。
+- Task 10A 的 11 個核心數字(164 個舊 ID/712 次出現/222 處關聯/34 處有效引用邊等)——同樣重跑
+  可重現,7 個抽查的 ID 逐一核對過。`herb.qian_cao_gen` 0 引用確認為真。8/8 回歸測試是真的、會過。
+- Task 8C 方劑 `exact_source_url` 新增的 7 個網址——用本機快取逐一核對,確實是真的、對得上的頁面。
+
+**❌ 已修復(這次直接動手,見下方 commit)**:
+1. **別名/大小寫/名稱衝突算出來但從沒接進判定失敗**——`preflight-canonical.js` 的
+   `auditCanonicalIntegrity()` 只把「完全重複 ID」跟「空白字元衝突」接進 `hardFailures`,
+   case collision、alias collision(`aliasToMultiple`/`aliasCollidesWithCanon`)、name collision
+   (exact/normalized 中英文名稱衝突)全部只計算、回傳,卻從未真的讓 `passed` 變成 `false`——
+   等於這個模組自己文件開頭列的檢查項目(第 7、10 行)有一半是「有算但沒用」的死邏輯。
+   兩個 agent 各自造了一隻假藥(別名撞真藥 `herb.ma_huang` 的名字)重現,`passed: true` 都出來了。
+   **已修復並接進 `hardFailures`**;`aliasSelfDuplicates`(藥自己把本名列成別名,無害)改放進新增的
+   `warnings` 欄位,不擋。修完後對現有真實資料重跑,浮出 **22 筆**真的衝突(例如
+   `herb.fang_ji`/`herb.han_fang_ji` 共用英文名 "Stephania Root"、`烏頭` 這個別名同時指向
+   `herb.chuan_wu`/`herb.cao_wu` 兩種毒性藥材)——**這 22 筆本身是不是資料錯誤、要怎麼修,
+   我沒有處理,留給下一輪判斷型任務,不要自己動手改**。13/13 自我測試修完後仍全過。
+2. **`data/audits/antigravity_preflight_run.json` 把 git 原始狀態碼(`"??"` 代表未追蹤)原封不動
+   存進報告,被既有的亂碼偵測(專抓「翻譯壞掉變問號」)誤判成 128 筆內容毀損,拖累
+   `check-validation-ratchet.js` 出現一筆沒人事先看過的退步(encoding 2915→3043)**。根因在
+   `preflight-git.js`——已改成把 git 狀態碼翻成人看得懂的字("untracked"/"modified"/"renamed (NN%
+   similar)" 等),對這份文件本身現有的 64 筆快照做了一次性同步修正。修完 ratchet 恢復
+   `PASS`(encoding 回到基線 2915,無退步)。
+
+**⚠️ 已記錄但這次沒動手修的(範圍超出這次授權,留給下一輪)**:
+- Git 掃描的三個 git 指令(`preflight-git.js`)全部用空 catch 吞掉錯誤——base ref 抓不到時會
+  「靜默回報 0 個檔案變動」而不是失敗,這是目前整個 gate 裡唯一會抓 `app.js`/`index.html`/
+  workflow 檔案被動過的檢查,失效時完全沒有備援。兩個 agent 各自重現。
+- `auditValidatorTaxonomyAndCI`(Task 9C)判斷「這支驗證器有沒有被 CI 呼叫」用字串比對而非真的
+  呼叫關係,可以被騙——現場已證實 `validate-herb-card-schema.js` 是真的孤兒卻被誤判成非阻擋,
+  導致「12 個孤兒阻擋型驗證器」這個數字低估了。workflow 裡的多行 `run: |` 區塊也偵測不到。
+- Task 10A 的 34 筆「有效引用邊」裡有 4 筆(~12%)重複算了 `formula_canon_shortlist.json`——
+  這份檔案自己開頭就寫「草稿候選清單,不含正式內容,等 Ting 審」,不該當正式引用算兩次。
+- **Task 8B(中藥現代藥理英譯 341→347)其實沒有真的併進 main**——分支還在,沒合併,`main` 上
+  現在還是 341/363,PROJECT_LOG 裡也沒有「驗收通過並落地」的記錄。**不要以為這條已經做完。**
+- 80 筆中藥 `safety_source_url` 裡只有 27 筆是真的新查證,其餘 53 筆只是複製既有欄位——而且這個
+  複核環境完全擋掉對外連線,雄黃/朱砂/穿山甲/犀角/罌粟殼/青木香/金箔這幾味**有毒/管制藥材**的
+  網址完全沒有人真的打開驗證過。**這幾筆要優先安排真的可以連網的環境驗證,不要當作已查證。**
+
+**以後派工提醒**:上面「已修復」兩項證明你自己的判斷型/稽核型工作(Task 9B/9D 那條線)一樣會漏掉
+真正該擋的東西——跟 Task 5/6/7 同一個模式(機械式做得穩,判斷型/稽核型容易漏)。這條線之後如果
+要繼續派給你,範圍要縮到「跑固定演算法、輸出固定格式」這種,「這個分類/這個判定合不合理」還是
+由我來看。
+
+---
+
 ## ✅ Task 10A Round 2：Legacy Namespace & Retired-ID Integrity Inventory（已完成結案）
 
 - **類型**: READ-ONLY Precision Measurement Inventory Audit（零主觀臨床/語意裁定，全庫 0 異動）

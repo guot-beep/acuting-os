@@ -246,6 +246,9 @@ async function runPreflight(options = {}) {
   if (!canonicalAudit.passed) {
     canonicalAudit.hardFailures.forEach(f => hardFailures.push(f));
   }
+  if (canonicalAudit.warnings) {
+    canonicalAudit.warnings.forEach(w => warnings.push(w));
+  }
 
   // 4. Generated Data Sync, Sandbox Rebuild & Dependency Graph Gate (Task 9C)
   const genSync = auditGeneratedSync(ROOT);
