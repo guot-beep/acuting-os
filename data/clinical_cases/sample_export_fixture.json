@@ -1,79 +1,185 @@
-[
-  {
-    "id": "case.fixture_invariants_a",
-    "patientCode": "FAKE-FIXTURE-A",
-    "caseTitle": "Invariants CI fixture (fictional patient, app-export shape)",
-    "sex": "F",
-    "birthYearMonth": "1985-04",
-    "occupation": "fixture",
-    "agentExposures": [
-      {
-        "id": "agentexp.fixture.mg",
-        "agentType": "supplement",
-        "agentId": "supp.magnesium",
-        "nameText": "Magnesium glycinate",
-        "doseText": "400 mg",
-        "frequencyText": "nightly",
-        "status": "stopped",
-        "changeSinceLast": "stopped",
-        "infoSource": "patient_reported",
-        "events": [
-          { "id": "expevt.fixture.1", "eventType": "initial_recorded", "doseText": "200 mg", "frequencyText": "nightly", "status": "current", "effectiveApprox": "2026-03", "note": "already in use at intake" },
-          { "id": "expevt.fixture.2", "eventType": "dose_changed", "doseText": "400 mg", "visitId": "soap.fixture.v2" },
-          { "id": "expevt.fixture.3", "eventType": "stopped", "status": "stopped", "visitId": "soap.fixture.v3", "note": "GI upset" }
-        ]
-      }
-    ],
-    "environmentalExposures": [
-      {
-        "id": "envexp.fixture.mold",
-        "exposureId": "exposure.mold",
-        "nameText": "bathroom mold",
-        "certainty": "confirmed",
-        "timing": "ongoing",
-        "events": [
-          { "id": "expevt.fixture.e1", "eventType": "started", "certainty": "suspected" },
-          { "id": "expevt.fixture.e2", "eventType": "certainty_changed", "certainty": "confirmed", "note": "inspection report, month precision only" }
-        ]
-      }
-    ],
-    "soapNotes": [
-      {
-        "id": "soap.fixture.v1",
-        "visitDate": "2026-03-15",
-        "visitNumber": 1,
-        "tcmPatternSelections": [
-          { "patternId": "pattern.liver_qi_stagnation", "isPrimary": true, "role": "primary", "confidence": "working", "note": "" },
-          { "patternId": "pattern.spleen_qi_deficiency", "isPrimary": false, "role": "secondary", "confidence": "", "note": "" }
-        ],
-        "patternDifferentials": [
-          { "patternId": "pattern.heart_blood_deficiency", "ruledOut": true, "note": "no palpitations" }
-        ],
-        "lifestyleFactors": [
-          { "id": "lifefac.fixture.1", "factorId": "life.caffeine.coffee", "nameText": "", "valueNumber": 3, "unit": "cups/day", "valueText": "", "frequencyText": "", "changeSinceLast": "", "notes": "" },
-          { "id": "lifefac.fixture.2", "factorId": "life.sleep.short_duration", "nameText": "", "valueNumber": 5.5, "unit": "h/night", "valueText": "", "frequencyText": "", "changeSinceLast": "", "notes": "" }
-        ],
-        "adverseEvents": [
-          { "id": "advevt.fixture.1", "eventId": "adverse_event.bruising", "nameText": "", "interventionType": "acupuncture", "modalityId": "modality.acupuncture", "interventionRefId": "", "severity": "mild", "onsetText": "same day", "status": "patient_reported", "resolutionStatus": "resolved", "resolvedDate": "", "notes": "" }
-        ],
-        "outcomeMetrics": [
-          { "metricId": "metric.pain_score", "valueNumber": 8, "relatedSymId": "sym.headache" }
-        ]
-      },
-      {
-        "id": "soap.fixture.v2",
-        "visitDate": "2026-03-29",
-        "visitNumber": 2,
-        "tcmPatternSelections": [
-          { "patternId": "pattern.liver_qi_stagnation", "isPrimary": true, "role": "primary", "confidence": "probable", "note": "" }
-        ],
-        "lifestyleFactors": [
-          { "id": "lifefac.fixture.3", "factorId": "life.caffeine.coffee", "nameText": "", "valueNumber": 2, "unit": "cups/day", "valueText": "", "frequencyText": "", "changeSinceLast": "unchanged", "notes": "" }
-        ],
-        "outcomeMetrics": [
-          { "metricId": "metric.pain_score", "valueNumber": 5, "relatedSymId": "sym.headache" }
-        ]
-      }
-    ]
-  }
-]
+{
+  "schema_version": 1,
+  "exported_at": "2026-08-26T00:00:00Z",
+  "case_count": 1,
+  "cases": [
+    {
+      "id": "case.fixture_invariants_a",
+      "patientCode": "FAKE-FIXTURE-A",
+      "caseTitle": "Invariants CI fixture (fictional patient, app-export shape)",
+      "sex": "F",
+      "birthYearMonth": "1985-04",
+      "occupation": "fixture",
+      "agentExposures": [
+        {
+          "id": "agentexp.fixture.mg",
+          "agentType": "supplement",
+          "agentId": "supp.magnesium",
+          "nameText": "Magnesium glycinate",
+          "doseText": "400 mg",
+          "frequencyText": "nightly",
+          "status": "stopped",
+          "changeSinceLast": "stopped",
+          "infoSource": "patient_reported",
+          "events": [
+            {
+              "id": "expevt.fixture.1",
+              "eventType": "initial_recorded",
+              "doseText": "200 mg",
+              "frequencyText": "nightly",
+              "status": "current",
+              "effectiveApprox": "2026-03",
+              "note": "already in use at intake"
+            },
+            {
+              "id": "expevt.fixture.2",
+              "eventType": "dose_changed",
+              "doseText": "400 mg",
+              "visitId": "soap.fixture.v2"
+            },
+            {
+              "id": "expevt.fixture.3",
+              "eventType": "stopped",
+              "status": "stopped",
+              "visitId": "soap.fixture.v3",
+              "note": "GI upset"
+            }
+          ]
+        }
+      ],
+      "environmentalExposures": [
+        {
+          "id": "envexp.fixture.mold",
+          "exposureId": "exposure.mold",
+          "nameText": "bathroom mold",
+          "certainty": "confirmed",
+          "timing": "ongoing",
+          "events": [
+            {
+              "id": "expevt.fixture.e1",
+              "eventType": "started",
+              "certainty": "suspected"
+            },
+            {
+              "id": "expevt.fixture.e2",
+              "eventType": "certainty_changed",
+              "certainty": "confirmed",
+              "note": "inspection report, month precision only"
+            }
+          ]
+        }
+      ],
+      "soapNotes": [
+        {
+          "id": "soap.fixture.v1",
+          "visitDate": "2026-03-15",
+          "visitNumber": 1,
+          "tcmPatternSelections": [
+            {
+              "patternId": "pattern.liver_qi_stagnation",
+              "isPrimary": true,
+              "role": "primary",
+              "confidence": "working",
+              "note": ""
+            },
+            {
+              "patternId": "pattern.spleen_qi_deficiency",
+              "isPrimary": false,
+              "role": "secondary",
+              "confidence": "",
+              "note": ""
+            }
+          ],
+          "patternDifferentials": [
+            {
+              "patternId": "pattern.heart_blood_deficiency",
+              "ruledOut": true,
+              "note": "no palpitations"
+            }
+          ],
+          "lifestyleFactors": [
+            {
+              "id": "lifefac.fixture.1",
+              "factorId": "life.caffeine.coffee",
+              "nameText": "",
+              "valueNumber": 3,
+              "unit": "cups/day",
+              "valueText": "",
+              "frequencyText": "",
+              "changeSinceLast": "",
+              "notes": ""
+            },
+            {
+              "id": "lifefac.fixture.2",
+              "factorId": "life.sleep.short_duration",
+              "nameText": "",
+              "valueNumber": 5.5,
+              "unit": "h/night",
+              "valueText": "",
+              "frequencyText": "",
+              "changeSinceLast": "",
+              "notes": ""
+            }
+          ],
+          "adverseEvents": [
+            {
+              "id": "advevt.fixture.1",
+              "eventId": "adverse_event.bruising",
+              "nameText": "",
+              "interventionType": "acupuncture",
+              "modalityId": "modality.acupuncture",
+              "interventionRefId": "",
+              "severity": "mild",
+              "onsetText": "same day",
+              "status": "patient_reported",
+              "resolutionStatus": "resolved",
+              "resolvedDate": "",
+              "notes": ""
+            }
+          ],
+          "outcomeMetrics": [
+            {
+              "metricId": "metric.pain_score",
+              "valueNumber": 8,
+              "relatedSymId": "sym.headache"
+            }
+          ]
+        },
+        {
+          "id": "soap.fixture.v2",
+          "visitDate": "2026-03-29",
+          "visitNumber": 2,
+          "tcmPatternSelections": [
+            {
+              "patternId": "pattern.liver_qi_stagnation",
+              "isPrimary": true,
+              "role": "primary",
+              "confidence": "probable",
+              "note": ""
+            }
+          ],
+          "lifestyleFactors": [
+            {
+              "id": "lifefac.fixture.3",
+              "factorId": "life.caffeine.coffee",
+              "nameText": "",
+              "valueNumber": 2,
+              "unit": "cups/day",
+              "valueText": "",
+              "frequencyText": "",
+              "changeSinceLast": "unchanged",
+              "notes": ""
+            }
+          ],
+          "outcomeMetrics": [
+            {
+              "metricId": "metric.pain_score",
+              "valueNumber": 5,
+              "relatedSymId": "sym.headache"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

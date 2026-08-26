@@ -19,7 +19,12 @@
    3 herbs) and 二陳湯 (two aged herbs, more than 2) do NOT encode a count and
    are deliberately excluded — a naive number-parser would produce false alarms.
 
-   Usage: node scripts/validate-formula-correctness.js [--verbose]
+   is_alternate 條目（括號替代註記，如「(黨參)」對人參）與 review_status=deprecated
+   的退役記錄不算進任何結構檢查——見 2026-08-24 修法：is_alternate 有 js/knowledge.js
+   既有精確排除先例，deprecated 有 validate-formula-composition-signatures.js /
+   validate-relations.js 既有豁免先例；兩者都不是資料錯，是這支驗證器少排除的。
+
+   Usage: node scripts/validate-formula-correctness.js [--verbose] [--json]
 */
 
 const fs = require("fs");
@@ -27,6 +32,7 @@ const path = require("path");
 
 const ROOT = path.join(__dirname, "..");
 const VERBOSE = process.argv.includes("--verbose");
+const AS_JSON = process.argv.includes("--json");
 
 const load = (p) => {
   const j = JSON.parse(fs.readFileSync(path.join(ROOT, p), "utf8"));
@@ -67,6 +73,11 @@ const add = (sev, formula, kind, detail) =>
   issues.push({ sev, id: formula.id, name: formula.name_zh || formula.id, kind, detail });
 
 for (const f of formulas) {
+  // 退役記錄不進結構檢查（DECISIONS D6：退役走 review_status=deprecated，
+  // 組成保持留白正是退役狀態的一部分——不是缺漏，見
+  // validate-formula-composition-signatures.js / validate-relations.js 同款豁免）。
+  if (f.review_status === "deprecated") continue;
+
   const comp = f.composition || [];
 
   if (!comp.length) { add("GAP", f, "no-composition", "組成完全空白"); continue; }
@@ -88,14 +99,29 @@ for (const f of formulas) {
   const hasChief = comp.some((c) => /君/.test(String(c.role_zh || "")) || /chief/i.test(String(c.role_en || "")));
   if (!hasChief) add("GAP", f, "no-chief", "組成無君藥標註");
 
-  // 5 — the check that would have caught a wrong 六一散
+  // 5 — the check that would have caught a wrong 六一散.
+  // is_alternate 條目（如「(黨參)」對人參的替代註記）不算進名稱編碼的味數——
+  // js/knowledge.js:2555 的比較表渲染已經用同一個排除規則；100% 的括號記法
+  // 條目（83 例）都帶著這個欄位。四君子湯「4 味」與八珍湯「8 味」原本因為
+  // 這條替代註記被誤判成 5/9 味——不是資料錯，是這支驗證器沒排除替代項。
+  const realCount = comp.filter((c) => !c.is_alternate).length;
   const expect = NAME_COUNT[String(f.name_zh || "").trim()];
-  if (expect && comp.length !== expect) {
-    add("ERROR", f, "wrong-herb-count", `方名表示 ${expect} 味，實際 ${comp.length} 味`);
+  if (expect && realCount !== expect) {
+    add("ERROR", f, "wrong-herb-count", `方名表示 ${expect} 味，實際 ${realCount} 味（不含替代註記）`);
   }
 }
 
 const bySev = { ERROR: issues.filter((i) => i.sev === "ERROR"), GAP: issues.filter((i) => i.sev === "GAP") };
+
+if (AS_JSON) {
+  const byCode = {};
+  for (const i of issues) (byCode[i.kind] = byCode[i.kind] || []).push(i);
+  console.log(JSON.stringify({
+    defects: issues.length,
+    by_code: Object.fromEntries(Object.entries(byCode).map(([k, v]) => [k, v.length])),
+  }));
+  process.exit(0);
+}
 
 console.log(`\nformulas checked: ${formulas.length}   herb canon: ${herbs.length}\n`);
 console.log(`ERRORS (likely wrong data): ${bySev.ERROR.length}`);

@@ -471,12 +471,13 @@
       ]
     },
     {
-      "id": "pat.damp_heat",
+      "id": "pattern.damp_heat",
       "name_zh": "濕熱證",
       "name_en": "Damp-Heat",
       "type": "pattern",
       "aliases": [
-        "damp_heat_context"
+        "damp_heat_context",
+        "pat.damp_heat"
       ]
     },
     {
@@ -490,32 +491,35 @@
       ]
     },
     {
-      "id": "pat.phlegm",
+      "id": "pattern.phlegm",
       "name_zh": "痰證",
       "name_en": "Phlegm",
       "type": "pattern",
       "aliases": [
         "phlegm",
-        "phlegm_context"
+        "phlegm_context",
+        "pat.phlegm"
       ]
     },
     {
-      "id": "pat.blood_stasis",
+      "id": "pattern.blood_stasis",
       "name_zh": "血瘀證",
       "name_en": "Blood Stasis",
       "type": "pattern",
       "aliases": [
         "blood_stasis_context",
-        "blood_stasis_pain"
+        "blood_stasis_pain",
+        "pat.blood_stasis"
       ]
     },
     {
-      "id": "pat.blood_deficiency",
+      "id": "pattern.blood_deficiency",
       "name_zh": "血虛證",
       "name_en": "Blood Deficiency",
       "type": "pattern",
       "aliases": [
-        "blood_deficiency_context"
+        "blood_deficiency_context",
+        "pat.blood_deficiency"
       ]
     },
     {
@@ -530,12 +534,13 @@
       ]
     },
     {
-      "id": "pat.yang_deficiency",
+      "id": "pattern.yang_deficiency",
       "name_zh": "陽虛證",
       "name_en": "Yang Deficiency",
       "type": "pattern",
       "aliases": [
-        "yang_deficiency_context"
+        "yang_deficiency_context",
+        "pat.yang_deficiency"
       ]
     },
     {

@@ -178,8 +178,15 @@ Case 清單帶 readiness 徽章(63%/11%)、跨 case 警訊聚合(2 條,原樣呈
   DEPLOY_CLOUDFLARE.md 加「單一入口網址+開診前先匯出」SOP。
 - ✅ **#8 日期時區**:visit/start date 預設改本地日曆日(localDateISO),
   晚診不再預設成明天;實測於本地 08-11 晚(UTC 已 08-12)顯示正確。
-- ⏳ 未動:#12 followUp 洩漏(AVS,建議 AVS v3 線接)、#13(AVS v3 驗證)、
-  #4 對話框分區導航(可後補)。9/5 必修僅剩 #12。
+- ✅ **#12 followUp 洩漏**(2026-08-25 修:`buildDraftSnapshot` 不再自動把
+  `note.followUp` 帶進 `followUpSnapshot`——那格是醫師寫給自己看的臨床規劃
+  文字,舊版直接照印給病人,含方名與「若無效就改方」的內部判斷。改成草稿
+  一律空白起手,逼醫師自己打一句病人看得懂的話;結帳畫面該欄位旁加了
+  ⚠ 警示文字。`scripts/test-avs-checkout.js` 新增迴歸鎖定斷言。)
+- ⏳ 未正式關閉:#13(AVS v3 驗證——現行 `renderPatientHtml`/`renderPatientText`
+  確實都有「中藥/營養品」渲染段,但沒有拿當初那個 repro 案例重跑過,不算正式
+  驗證通過,誰要關閉這條請實際跑一次再劃掉)、#4 對話框分區導航(可後補)。
+  9/5(現改 9/2)必修清得只剩 #13 待正式驗證。
 
 ## 結論(給 Ting 的排序建議)
 

@@ -123,7 +123,24 @@
      * 或任何打錯的值都會被當成使用中 —— 而病人跨 case 總帳與病例的 current
      * 清單用的是肯定式,同一筆資料兩個相反結論,說得比較大聲的那個(病人文件)
      * 還印給了病人。病人文件只印確定使用中的;被排除的由 checkout 明說。 */
-    const activeMeds = (kase.agentExposures || []).filter((e) => e.status === "current" || e.status === "prn");
+    const ledgerMeds = (kase.agentExposures || []).filter((e) => e.status === "current" || e.status === "prn");
+    // 2026-08-25(dry run 現場發現:「我有開中藥 我的診後照顧指示裡面沒有
+    // 中藥的指示」)——舊版只讀 case 層 agentExposures(獨立的「用藥與補充劑」
+    // 對話框),SOAP 表單自己的「方藥 Formula」/「西藥」picker
+    // (note.formulaLinks/medicationLinks)完全沒有併進來。醫師在 SOAP 表單
+    // 勾了方劑,直覺會預期 AVS 看得到——不知道還要另外開那個獨立對話框
+    // 補一筆才會出現。補上:用藥帳裡沒有的、但這次 note.formulaLinks/
+    // medicationLinks 有勾選的 id,額外併入,doseText/frequencyText 留空,
+    // 劑量與帳本路徑同規則:留空就是留空(見下方 medRows 註解),不生出
+    // 「依醫囑」。用藥帳裡已經有的 id(agentId 相符)不重複併入,用藥帳的
+    // doseText/frequencyText 優先——那才是真的填過劑量的資料。
+    const ledgerAgentIds = new Set(ledgerMeds.map((e) => e.agentId).filter(Boolean));
+    const visitOnlyIds = [...new Set([...(note.formulaLinks || []), ...(note.medicationLinks || [])])]
+      .filter((id) => id && !ledgerAgentIds.has(id));
+    const activeMeds = [
+      ...ledgerMeds,
+      ...visitOnlyIds.map((id) => ({ agentId: id, nameText: "", doseText: "", frequencyText: "", status: "current" }))
+    ];
     return {
       patterns: new Set((note.tcmPatternSelections || []).map((x) => x.patternId)),
       conditions: new Set([...(kase.westernConditions || []), ...(kase.easternDiseases || []), ...(note.westernConditionLinks || []), ...(note.easternDiseaseLinks || [])]),
@@ -279,6 +296,39 @@
   /* ---- 病人輸出(§10)---------------------------------------------------- */
   const esc = (s) => String(s || "").replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]));
 
+  /* 病人文件的共用樣式 —— 單一來源。此 CSS 走 window.open + document.write
+   * 且 autoPrint 是固定 300ms setTimeout：任何 webfont 請求都會與列印時點
+   * 賽跑、可能印出半套字——這裡永遠只用系統字，不准加 webfont。
+   * generate-avs.js（CLI v1）與
+   * renderPatientHtml（app 端）共用這一份：2026-08-23 色票同步時兩邊
+   * 都要手改的教訓（cautionsEn 雙鍵同病根），從此只改這裡。 */
+  const SHEET_CSS = `body{font-family:"Microsoft JhengHei","Noto Sans TC",sans-serif;background:#f6f1e7;color:#33291f;margin:0;padding:24px;line-height:1.7}
+.sheet{max-width:640px;margin:0 auto;background:#fff;border:1px solid #e5dcc9;border-radius:12px;padding:28px 32px;box-shadow:0 8px 30px rgba(23,33,38,.08)}
+.clinic-header{text-align:center;margin-bottom:6px}
+.clinic-header .clinic-name{font-family:"Noto Serif TC",serif;font-size:1.2em;color:#16352f}
+.clinic-header .clinic-contact{font-size:.82em;color:#786c5c;margin-top:2px}
+h1{font-family:"Noto Serif TC",serif;font-size:1.5em;color:#515f3e;border-bottom:2px solid #b98b44;padding-bottom:8px;margin:0 0 4px}
+.date{color:#786c5c;font-size:.9em;margin-bottom:16px}
+h2{font-family:"Noto Serif TC",serif;font-size:1.05em;color:#16352f;margin:18px 0 6px}
+table{width:100%;border-collapse:collapse;font-size:.95em}
+td,th{border:1px solid #e5e0d4;padding:6px 10px;text-align:left}
+th{background:#f7f3e8}
+td.note{font-size:.85em;color:#786c5c}
+ul{margin:4px 0;padding-left:20px}
+.footer{margin-top:22px;padding-top:10px;border-top:1px dashed #b98b44;font-size:.78em;color:#786c5c}
+.footer .booking-note{margin-top:4px}
+.version{font-size:.72em;color:#9aa4ab;text-align:right}
+@media print{
+  @page{size:A4;margin:15mm}
+  body{background:#fff;padding:0}
+  .sheet{max-width:100%;border:0;border-radius:0;box-shadow:none;padding:0}
+  section{break-inside:avoid;page-break-inside:avoid}
+  table{page-break-inside:avoid}
+  tr{page-break-inside:avoid}
+  td,th{border:1px solid #999}
+  .footer{break-inside:avoid}
+}`;
+
   function renderPatientHtml(snapshot, opts) {
     const clinic = snapshot.clinicProfileSnapshot || {};
     const visitDate = (opts && opts.visitDate) || "";
@@ -294,48 +344,23 @@
     /* 紅旗與自我觀察是兩件事,不能合成一份清單。
      * patientObservationPromptsSnapshot 來自 outcome_metrics 的 patient_prompt_zh
      * ——「上次月經到這次月經開始,間隔大約幾天?」這類**追蹤題目**;
-     * checkout 上的標題也是「自我觀察 What to watch」。舊版把它併進
-     * 「什麼情況請盡快與我們聯絡或就醫」,於是病人讀到的是「出現這個情況請
-     * 盡快就醫」。追蹤睡眠、排便、經期的病例每一份文件都會中。 */
+     * 舊版把它併進「什麼情況請盡快與我們聯絡或就醫」,於是病人讀到的是
+     * 「出現這個情況請盡快就醫」,語意不對,而且把診所在追蹤病人哪些身心
+     * 指標整份印給病人帶走,等於外洩追蹤細節(2026-08-25 dry run,Ting 原話
+     * 「這個不用填入,因為那個有洩漏病人太多細節」)。追蹤提示題面只留在
+     * 結帳畫面(app.js §6「自我觀察 What to watch」)給醫師參考,
+     * 不再出現在病人帶走的文件裡——拿掉,不搬去別的段落。 */
     const urgent = [
       "症狀明顯加重、或出現新的劇烈疼痛",
       "發燒、持續頭暈、異常出血或瘀腫擴大",
       "服用調理品後噁心、皮疹或任何過敏反應"
     ];
-    const observe = snapshot.patientObservationPromptsSnapshot || [];
     // 頁首聯絡列:地址/電話有值才印(誠實顯示「(待填」佔位,不特判隱藏——
     // 診所自己決定何時填真實值)。舊 snapshot 沒有 address 鍵時視為空字串。
     const headerContact = [clinic.address, clinic.phone].filter((v) => String(v || "").trim()).map(esc).join("　·　");
     const bookingNote = String(clinic.booking_note_zh || "").trim();
     return `<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>診後照護指示</title><style>
-body{font-family:"Microsoft JhengHei","Noto Sans TC",sans-serif;background:#f3eddf;color:#202427;margin:0;padding:24px;line-height:1.7}
-.sheet{max-width:640px;margin:0 auto;background:#fff;border:1px solid #d9e0e4;border-radius:12px;padding:28px 32px;box-shadow:0 8px 30px rgba(23,33,38,.08)}
-.clinic-header{text-align:center;margin-bottom:6px}
-.clinic-header .clinic-name{font-family:"Noto Serif TC",serif;font-size:1.2em;color:#16352f}
-.clinic-header .clinic-contact{font-size:.82em;color:#66717a;margin-top:2px}
-h1{font-family:"Noto Serif TC",serif;font-size:1.5em;color:#0a5956;border-bottom:2px solid #c89033;padding-bottom:8px;margin:0 0 4px}
-.date{color:#66717a;font-size:.9em;margin-bottom:16px}
-h2{font-family:"Noto Serif TC",serif;font-size:1.05em;color:#16352f;margin:18px 0 6px}
-table{width:100%;border-collapse:collapse;font-size:.95em}
-td,th{border:1px solid #e5e0d4;padding:6px 10px;text-align:left}
-th{background:#f7f3e8}
-td.note{font-size:.85em;color:#66717a}
-ul{margin:4px 0;padding-left:20px}
-.footer{margin-top:22px;padding-top:10px;border-top:1px dashed #c89033;font-size:.78em;color:#66717a}
-.footer .booking-note{margin-top:4px}
-.version{font-size:.72em;color:#9aa4ab;text-align:right}
-@media print{
-  @page{size:A4;margin:15mm}
-  body{background:#fff;padding:0}
-  .sheet{max-width:100%;border:0;border-radius:0;box-shadow:none;padding:0}
-  section{break-inside:avoid;page-break-inside:avoid}
-  table{page-break-inside:avoid}
-  tr{page-break-inside:avoid}
-  td,th{border:1px solid #999}
-  .footer{break-inside:avoid}
-}
-</style></head><body><div class="sheet">
+<title>診後照護指示</title><style>${SHEET_CSS}</style></head><body><div class="sheet">
 <div class="clinic-header">
 <div class="clinic-name">${esc(clinic.clinic_name_zh)}</div>
 ${headerContact ? `<div class="clinic-contact">${headerContact}</div>` : ""}
@@ -347,11 +372,85 @@ ${sec("居家照護計畫", ul(byCat("aftercare", "lifestyle", "diet", "exercise
 ${sec("調理品怎麼吃", medTable)}
 ${sec("特別注意", ul(byCat("special")))}
 ${sec("什麼情況請盡快與我們聯絡或就醫", ul(urgent))}
-${sec("這段期間請幫我留意這幾件事", observe.length ? `<p>下次回診時我會問到,先記在心裡就好 —— 這些不是警訊。</p>${ul(observe)}` : "")}
 ${sec("下次回診", snapshot.followUpSnapshot ? `<p>回診安排:${esc(snapshot.followUpSnapshot)}</p>` : "")}
-<div style="margin-top:18px;display:flex;justify-content:space-between;font-size:.9em;align-items:flex-end"><div>醫師:${esc(clinic.practitioner_zh)}＿＿＿＿＿＿</div><div style="text-align:right;color:#66717a">預約電話:${esc(clinic.phone)}<br>${esc(clinic.website)}</div></div>
+<div style="margin-top:18px;display:flex;justify-content:space-between;font-size:.9em;align-items:flex-end"><div>醫師:${esc(clinic.practitioner_zh)}＿＿＿＿＿＿</div><div style="text-align:right;color:#786c5c">預約電話:${esc(clinic.phone)}<br>${esc(clinic.website)}</div></div>
 <div class="footer">本文件為衛教與照護指示,非診斷證明,不適用於保險申報。如有疑問請聯絡診所。${bookingNote ? `<div class="booking-note">${esc(bookingNote)}</div>` : ""}</div>
 </div></body></html>`;
+  }
+
+  /* 純文字版(2026-08-25,Ting 要求:「出來的表格是直接可以剪貼貼上直接
+   * 寄送的」)。內容與 renderPatientHtml 同一份 snapshot、同樣的欄位取捨
+   * (todayCare/byCat/medicationInstructionsSnapshot/watch/followUpSnapshot),
+   * 只是排版換成 email 純文字慣用的「【小標】+ 條列」,不需要 esc()
+   * (純文字沒有 HTML 注入面,不經瀏覽器解析)。checkPatientOutputSafety
+   * 對純文字一樣有效 —— findBannedTokens 只是字串掃描,不依賴有沒有 tag。 */
+  function renderPatientText(snapshot, opts) {
+    const clinic = snapshot.clinicProfileSnapshot || {};
+    const visitDate = (opts && opts.visitDate) || "";
+    const advice = [...(snapshot.renderedAdvice || []).filter((a) => a.selected !== false), ...(snapshot.clinicianAddedAdvice || [])];
+    const byCat = (...cats) => advice.filter((a) => cats.includes(a.category)).map((a) => a.text_zh).filter((t) => String(t || "").trim());
+    const meds = snapshot.medicationInstructionsSnapshot || [];
+    // 2026-08-25:同 renderPatientHtml 的理由,自我觀察追蹤提示不併入緊急
+    // 就醫清單,見上面 renderPatientHtml 裡的完整說明。
+    const watch = [
+      "症狀明顯加重、或出現新的劇烈疼痛",
+      "發燒、持續頭暈、異常出血或瘀腫擴大",
+      "服用調理品後噁心、皮疹或任何過敏反應"
+    ];
+    const headerContact = [clinic.address, clinic.phone].filter((v) => String(v || "").trim()).join("　·　");
+    const bookingNote = String(clinic.booking_note_zh || "").trim();
+
+    const lines = [];
+    const push = (s) => lines.push(s === undefined ? "" : s);
+    const section = (title, items) => {
+      if (!items || !items.length) return;
+      push(`【${title}】`);
+      items.forEach((it) => push(`・${it}`));
+      push();
+    };
+
+    if (String(clinic.clinic_name_zh || "").trim()) push(clinic.clinic_name_zh);
+    if (headerContact) push(headerContact);
+    push();
+    push("診後照護指示");
+    push(`日期:${visitDate}${Number(snapshot.version) > 1 ? `(更正版 v${snapshot.version})` : ""}`);
+    push();
+
+    if ((snapshot.todayCare || []).length) {
+      push("【今天做了什麼】");
+      push(`${snapshot.todayCare.join("、")}。`);
+      push();
+    }
+
+    section("居家照護計畫", byCat("aftercare", "lifestyle", "diet", "exercise"));
+
+    if (meds.length) {
+      push("【調理品怎麼吃】");
+      meds.forEach((r) => push(`・${r.name}　${r.dose}　${r.freq}`));
+      byCat("herb_caution").forEach((t) => push(`　※ ${t}`));
+      push();
+    }
+
+    section("特別注意", byCat("special"));
+    section("什麼情況請盡快與我們聯絡或就醫", watch);
+
+    if (String(snapshot.followUpSnapshot || "").trim()) {
+      push("【下次回診】");
+      push(`回診安排:${snapshot.followUpSnapshot}`);
+      push();
+    }
+
+    push(`醫師:${clinic.practitioner_zh || ""}`);
+    if (String(clinic.phone || "").trim()) push(`預約電話:${clinic.phone}`);
+    if (String(clinic.website || "").trim()) push(clinic.website);
+    push();
+    push("本文件為衛教與照護指示,非診斷證明,不適用於保險申報。如有疑問請聯絡診所。");
+    if (bookingNote) push(bookingNote);
+
+    // 尾端不留多餘空行堆疊:trim 掉開頭/結尾的空字串,中段保留(段落間距)。
+    while (lines.length && lines[0] === "") lines.shift();
+    while (lines.length && lines[lines.length - 1] === "") lines.pop();
+    return lines.join("\n");
   }
 
   /* 零診斷自檢(§2.2/§12;Codex NO-GO HIGH-3 修復版):
@@ -515,6 +614,8 @@ ${sec("下次回診", snapshot.followUpSnapshot ? `<p>回診安排:${esc(snapsho
     finalizeSnapshot,
     createCorrectionDraft,
     renderPatientHtml,
+    renderPatientText,
+    SHEET_CSS,
     canonicalizeForScan,
     findBannedTokens,
     checkPatientOutputSafety,

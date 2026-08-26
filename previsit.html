@@ -2,7 +2,7 @@
 <html lang="zh-Hant">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>診前資料 Pre-Visit Intake</title>
 <!--
   P1 pre-visit intake page — implements docs/P1_PREVISIT_INTAKE_CONTRACT_v0.md.
@@ -25,15 +25,15 @@
      parchment page, deep-green/gold accents, serif headings). Not a shared
      stylesheet include on purpose: this file has zero dependencies. */
   :root {
-    --ink: #202427;
-    --muted: #66717a;
-    --line: #d9e0e4;
-    --paper: #f3eddf;
-    --panel: #ffffff;
-    --accent: #0f7f7a;
-    --accent-dark: #0a5956;
-    --warn: #ad3f32;
-    --gold: #c89033;
+    --ink: #33291f;
+    --muted: #786c5c;
+    --line: #e5dcc9;
+    --paper: #f6f1e7;
+    --panel: #fffdf8;
+    --accent: #6f7f58;
+    --accent-dark: #515f3e;
+    --warn: #a24f37;
+    --gold: #b98b44;
     --nav-bg: #16352f;
     --nav-bg-soft: #1d443c;
     --nav-ink: #f2ece0;
@@ -46,7 +46,7 @@
     padding: 0;
     background: var(--paper);
     color: var(--ink);
-    font-family: "Microsoft JhengHei", "Noto Sans TC", "Segoe UI", Arial, sans-serif;
+    font-family: "Noto Sans TC", "PingFang TC", "Noto Sans CJK TC", "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
     font-size: 17px;
     line-height: 1.5;
   }
@@ -314,7 +314,7 @@
   <div class="card" id="outputSection">
     <h2>完成 Done</h2>
     <p class="card-sub">請於<strong>診所現場</strong>出示下方 QR 碼讓醫師掃描。QR 掃不了時,才在醫師面前按「複製」直接交付。<br />Show the QR code below to your practitioner <strong>in the clinic</strong>. Only if the QR cannot be scanned, press Copy and hand it over in person.</p>
-    <p class="card-sub" style="color:#8a1f1f"><strong>⚠️ 內容含健康資料</strong>——請勿透過簡訊、Email、LINE、Messenger 等一般通訊軟體傳送。<br /><strong>This contains health information</strong> — do not send it by SMS, email, or messaging apps.</p>
+    <p class="card-sub" style="color:var(--warn)"><strong>⚠️ 內容含健康資料</strong>——請勿透過簡訊、Email、LINE、Messenger 等一般通訊軟體傳送。<br /><strong>This contains health information</strong> — do not send it by SMS, email, or messaging apps.</p>
     <button type="button" class="secondary" id="copyBtn">複製內容 Copy</button>
     <div id="copyStatus" aria-live="polite"></div>
     <div id="qrWrap"><canvas id="qrCanvas"></canvas></div>
@@ -329,7 +329,10 @@
   <p class="footnote">本頁不會儲存任何資料，也不會連線到任何伺服器。This page stores nothing and never contacts any server.</p>
 </main>
 
-<script src="data/generated/knowledge_data.js"></script>
+<!-- 病人端只讀 outcomeMetrics 的六條 prompt——載 core 片（~0.2MB）就夠，
+     不用整顆知識庫（P1 分包前這裡同步拉 16MB，是全站最貴的一行）。
+     outcomeMetrics 永遠住 core 片：見 scripts/build-data.js KNOWLEDGE_PARTS。 -->
+<script src="data/generated/knowledge_core.js"></script>
 <script>
 (function () {
   "use strict";

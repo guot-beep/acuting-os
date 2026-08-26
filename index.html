@@ -4,6 +4,15 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>AcuTing OS</title>
+    <!-- 品牌字型：永不阻塞。preload 提前抓、media="print" 讓 stylesheet 不進
+         script-blocking 集合，js/fonts.js 在「載完之後」才翻成 all——被翻轉的
+         sheet 永遠不是 in-flight，不可能重演 #80/#91 的 12 秒凍結。
+         不變式：不准把 media="print" 改成 all、不准把 preload 改成 rel=stylesheet。 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;600;700&family=Noto+Sans+TC:wght@400;500;600;700&display=swap" />
+    <link id="brandFont" rel="stylesheet" media="print" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;600;700&family=Noto+Sans+TC:wght@400;500;600;700&display=swap" />
+    <script defer src="js/fonts.js"></script>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -71,7 +80,7 @@
           <h2 data-mode-text data-bilingual="查資料、寫 SOAP、建立自己的臨床知識庫" data-english="Search, chart SOAP notes, and build your clinical knowledge base">查資料、寫 SOAP、建立自己的臨床知識庫</h2>
           <p data-mode-text data-bilingual="先從病例與穴位開始；之後把中西醫病症、方藥、西藥、交互作用、保險 coding training 串成可查詢的知識圖譜。" data-english="Start with cases and acupuncture points, then connect TCM and biomedical conditions, formulas, herbs, medications, interactions, and billing documentation into one searchable study graph.">先從病例與穴位開始；之後把中西醫病症、方藥、西藥、交互作用、保險 coding training 串成可查詢的知識圖譜。</p>
           <div class="hero-search">
-            <input id="homeSearch" type="search" autocomplete="off" placeholder="搜尋穴位、方劑、中藥、病症、病例… 例：SP6、四物、當歸、血虛" />
+            <input id="homeSearch" type="search" autocomplete="off" placeholder="搜尋穴位、方劑、中藥、病症、症狀、西藥… 例：SP6、四物、頭痛、warfarin" />
             <button id="homeSearchBtn" type="button" data-mode-text data-bilingual="搜尋" data-english="Search">搜尋</button>
           </div>
           <div id="globalResults" class="global-results" role="listbox" aria-label="搜尋結果" data-mode-aria-label data-bilingual-aria-label="搜尋結果" data-english-aria-label="Search results" hidden></div>
@@ -804,7 +813,7 @@
         <nav id="soapSectionNav" class="section-jump" aria-label="SOAP 表單分區導航"></nav>
         <div class="form-grid soap-form-grid">
           <fieldset class="form-section soap-previous-visit" data-nav-label="上次">
-            <legend><span class="form-section-step">«</span>上次就診 Previous visit<small>參考用，不會自動帶入 reference only, never auto-filled or copied</small></legend>
+            <legend><span class="form-section-step">«</span>上次就診 Previous visit<small>若有上次紀錄,S/O/A/P 與治療計畫(證型/穴位/方劑等)會帶入下方草稿可編輯——S/O/A/P 開頭會標「沿用上次內容」,請確認或直接貼上新紀錄覆蓋;舌脈/療效判定與指標永遠空白 if a previous visit exists, S/O/A/P and treatment-plan fields below are pre-filled as an editable draft — S/O/A/P are marked "carried forward" at the top, review or paste over them; tongue/pulse and outcome verdict/metrics always start blank</small></legend>
             <div id="previousVisitPanel" class="wide"></div>
           </fieldset>
 
@@ -983,8 +992,44 @@
             </select></label>
             <label>Agent ID（選填）<input name="agentId" placeholder="drug.* / supp.* 或留空" /></label>
             <label class="wide">名稱 Name（無 Agent ID 時必填）<input name="nameText" placeholder="e.g. Magnesium glycinate" /></label>
-            <label>劑量 Dose<input name="doseText" placeholder="200 mg" /></label>
-            <label>頻率 Frequency<input name="frequencyText" placeholder="qd / bid / prn" /></label>
+            <label>劑量 Dose<input name="doseText" placeholder="200 mg,或中藥例:3克・科學中藥" /></label>
+            <!-- 2026-08-25(Ting 要求):中藥劑型/服用時機/一天幾次,常見組合
+                 用下拉選,不用每次手打。這三格是「組合小工具」,不是新的
+                 資料欄位——選了之後由 app.js 組成文字寫進上面既有的
+                 frequencyText,選完仍可手動再改那格文字,不會被鎖死。 -->
+            <label class="wide">中藥服用細節（選填,會自動組進上面「頻率」欄）TCM administration details (optional, composes into Frequency above)</label>
+            <div class="agent-herb-detail-row">
+              <label>劑型 Form<select name="herbFormType">
+                <option value="">—</option>
+                <option value="科學中藥 granules">科學中藥 Granules</option>
+                <option value="水藥 decoction">水藥 Decoction</option>
+                <option value="丸藥 pills">丸藥 Pills</option>
+                <option value="藥膏 paste">藥膏 Paste</option>
+                <option value="藥酒 tincture">藥酒 Tincture</option>
+                <option value="貼布 patch">貼布 Patch</option>
+                <option value="泡腳包 foot-soak">泡腳包 Foot-soak</option>
+                <option value="其他">其他 Other</option>
+              </select></label>
+              <label>服用時機 Timing<select name="herbMealTiming">
+                <option value="">—</option>
+                <option value="飯前 before meals">飯前 Before meals</option>
+                <option value="飯後 after meals">飯後 After meals</option>
+                <option value="睡前 before bed">睡前 Before bed</option>
+                <option value="不拘 anytime">不拘 Anytime</option>
+              </select></label>
+              <label>一天幾次 Times/day<input name="herbTimesPerDay" type="number" min="1" max="6" /></label>
+            </div>
+            <label class="wide"><input type="checkbox" name="herbSeparateFromWestern" value="1" />
+              同時有服用西藥,需標註間隔 Also taking Western medication, note the interval
+            </label>
+            <p class="wide form-hint">
+              一般建議中藥與西藥間隔至少 1 小時服用,以減少腸胃道吸收互相干擾——這是台灣醫院衛教常見建議
+              （例:高雄榮民總醫院中醫部),不是保證排除所有交互作用的固定安全標準,特定藥物組合請另外諮詢藥師。
+              General practice guidance in Taiwan is to separate TCM herbs from Western drugs by at least 1 hour
+              to reduce GI-absorption interference — not a guarantee against every interaction; ask a pharmacist
+              about specific drug combinations.
+            </p>
+            <label>頻率 Frequency<input name="frequencyText" placeholder="qd / bid / prn,或中藥例:飯後・一天三次" /></label>
             <label>開始（約）Start (approx)<input name="startApprox" type="month" /></label>
             <!-- SOL item 2: 勾選 = intake 時已在用(initial_recorded,不謊報
                  開始時間);不勾 = 真的此時開始用(started)。 -->
@@ -1055,22 +1100,63 @@
       核心定位參考 WHO / 專業教材；英文網路對照參考 AcuPoints.org，中文網路對照參考雲端中醫穴道資料庫。</span>
     </footer>
 
-    <script src="data/generated/app_data.js"></script>
-    <script src="data/generated/knowledge_data.js"></script>
-    <script src="data/generated/cloudtcm_map.js"></script>
-    <script src="data/generated/points_361.js"></script>
-    <script src="data/tung/point_index.js"></script>
-    <script src="data/auricular/gb93_index.js"></script>
-    <script src="data/auricular/gb93_worklist.js"></script>
-    <script src="js/review.js"></script>
-    <script src="js/notes.js"></script>
-    <script src="js/clinical-store.js"></script>
-    <script src="js/avs.js"></script>
-    <script src="js/previsit-validator.js"></script>
-    <script src="js/practice-audit.js"></script>
-    <script src="js/care-draft.js"></script>
-    <script src="app.js"></script>
-    <script src="js/router.js"></script>
-    <script src="js/knowledge.js"></script>
+    <div id="bootOverlay" aria-live="polite">
+      <div class="boot-card">
+        <span class="boot-spin" aria-hidden="true"></span>
+        <p><strong>知識庫載入中…</strong><br /><small>361 穴 · 223 方 · 363 藥 · 505 病症</small></p>
+        <p class="boot-fallback"><small>載入比平常久。請檢查網路後<button type="button" class="boot-reload" onclick="location.reload()">重新整理</button>。</small></p>
+      </div>
+    </div>
+    <style>
+      #bootOverlay { position: fixed; inset: 0; z-index: 9999; display: flex; align-items: center; justify-content: center; background: var(--paper, #f6f1e7); }
+      #bootOverlay .boot-card { text-align: center; color: var(--ink, #33291f); font-family: var(--serif, serif); }
+      #bootOverlay small { color: var(--muted, #786c5c); }
+      .boot-spin { display: inline-block; width: 28px; height: 28px; border: 3px solid var(--line, #e5dcc9); border-top-color: var(--accent, #6f7f58); border-radius: 50%; animation: bootspin 0.9s linear infinite; margin-bottom: 0.6rem; }
+      @keyframes bootspin { to { transform: rotate(360deg); } }
+      #bootOverlay.done { display: none; }
+      /* 防呆（純 CSS）：60 秒還沒載完，重新整理提示自己浮現。
+         用 classic inline script 做這件事會 parser-block 等待 in-flight
+         stylesheet（Google Fonts 掛掉時整頁卡死 13 秒——實測踩到）。 */
+      #bootOverlay .boot-fallback { margin-top: 0.8rem; font-size: 0.9rem; opacity: 0; animation: bootreveal 0.4s ease 60s forwards; }
+      @keyframes bootreveal { to { opacity: 1; } }
+      .boot-reload { background: none; border: none; padding: 0; color: var(--accent-dark, #515f3e); text-decoration: underline; cursor: pointer; font: inherit; }
+    </style>
+<script defer src="data/generated/app_data.js"></script>
+    <!-- 知識庫六分片（P1 快取粒度分包）：Object.assign 合流到同一個
+         globalThis.ACUTING_KNOWLEDGE，片與片之間順序無關——但六片全部
+         必須排在 app.js 與 js/knowledge.js 之前：js/knowledge.js 在 IIFE
+         頂端一次性捕捉 const K，晚到的鍵它永遠看不到（缺片時各線 `|| []`
+         會把空 grid 吞成無聲空白；app.js 的 dataLoadGuard 靠 core 片的
+         __expected 清單抓缺片）。重排這個區塊前先讀 scripts/build-data.js
+         的 KNOWLEDGE_PARTS 註解。 -->
+    <script defer src="data/generated/knowledge_core.js"></script>
+    <script defer src="data/generated/knowledge_ref.js"></script>
+    <script defer src="data/generated/knowledge_rx.js"></script>
+    <script defer src="data/generated/knowledge_mm.js"></script>
+    <script defer src="data/generated/knowledge_dx.js"></script>
+    <script defer src="data/generated/knowledge_pat.js"></script>
+    <script defer src="data/generated/cloudtcm_map.js"></script>
+    <script defer src="data/generated/points_361.js"></script>
+    <script defer src="data/tung/point_index.js"></script>
+    <script defer src="data/auricular/gb93_index.js"></script>
+    <script defer src="data/auricular/gb93_worklist.js"></script>
+    <script defer src="js/review.js"></script>
+    <script defer src="js/notes.js"></script>
+    <script defer src="js/clinical-store.js"></script>
+    <script defer src="js/avs.js"></script>
+    <script defer src="js/previsit-validator.js"></script>
+    <script defer src="js/practice-audit.js"></script>
+    <script defer src="js/care-draft.js"></script>
+    <script defer src="app.js"></script>
+    <script defer src="js/router.js"></script>
+    <script defer src="js/knowledge.js"></script>    <script type="module">
+      /* module scripts 排在所有 defer script 之後執行——執行到這裡代表所有
+         defer 都「被嘗試過」，不保證都成功（失敗的 defer 不會擋住後面的
+         script）。是否真的載到由 app.js 的 dataLoadGuard 判定並以紅 banner
+         點名；overlay 照樣收起——診間半途卡全螢幕 loading 比帶警示的可用
+         app 更糟。 */
+      document.getElementById("bootOverlay")?.classList.add("done");
+    </script>
+
   </body>
 </html>

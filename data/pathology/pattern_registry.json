@@ -1,7 +1,8 @@
 {
   "dataset": "pattern_registry",
-  "policy": "證型 id 的唯一登錄檔。name_zh 空白代表尚未由可靠來源確認——不要用音譯或推測填補（COMPARISON_CARD_TEMPLATE §0 同精神）。新增證型必須先在此登記,再被 conditions 或 comparisons 引用。",
+  "policy": "證型 id 的唯一登錄檔。name_zh 空白代表尚未由可靠來源確認——不要用音譯或推測填補（COMPARISON_CARD_TEMPLATE §0 同精神）。新增證型必須先在此登記,再被 conditions 或 comparisons 引用。所有權(D25,2026-08-26):本檔為手工維護的 source of truth,不是生成檔——直接編輯本檔,改完跑 node scripts/validate-pattern-registry.js;build-pattern-registry.js 只作增量偵測與 --append 補缺漏,不重生成。",
   "created": "2026-07-31",
+  "ownership": "hand_maintained_source_of_truth_since_2026-08-26_D25",
   "records": [
     {
       "id": "pattern.blood_deficiency",
@@ -11,14 +12,14 @@
       "used_by_comparisons": 1,
       "review_status": "draft",
       "source_type": "derived_from_usage",
-      "level": "category",
+      "level": "pattern",
       "classified_by": "bing_xing",
       "members": [
         "pattern.liver_blood_deficiency",
         "pattern.heart_blood_deficiency",
         "pattern.heart_liver_blood_deficiency"
       ],
-      "category_note_zh": "上位分類。底下各證型是不同的證,彼此需要鑑別——本 id 適合作為鑑別卡的標題,不適合單獨作為辨證結論。",
+      "category_note_zh": "家族父節點(D24 升格,2026-08-26):本證型可獨立作為辨證結論——十張臨床卡(治則/主方/主穴)俱在;同時仍是底下更具體證型的上位家族,鑑別卡標題與家族瀏覽照舊。下轄各證彼此仍需鑑別。",
       "system": "qi_xue_jin_ye",
       "system_zh": "氣血津液辨證"
     },
@@ -86,7 +87,7 @@
       "used_by_comparisons": 0,
       "review_status": "draft",
       "source_type": "derived_from_usage",
-      "level": "category",
+      "level": "pattern",
       "classified_by": "bing_xing",
       "members": [
         "pattern.damp_heat_lower_burner",
@@ -95,7 +96,7 @@
         "pattern.large_intestine_damp_heat",
         "pattern.bladder_damp_heat"
       ],
-      "category_note_zh": "上位分類。底下各證型是不同的證,彼此需要鑑別——本 id 適合作為鑑別卡的標題,不適合單獨作為辨證結論。",
+      "category_note_zh": "家族父節點(D24 升格,2026-08-26):本證型可獨立作為辨證結論——十張臨床卡(治則/主方/主穴)俱在;同時仍是底下更具體證型的上位家族,鑑別卡標題與家族瀏覽照舊。下轄各證彼此仍需鑑別。",
       "system": "bing_yin",
       "system_zh": "病因辨證"
     },
@@ -137,7 +138,7 @@
       "used_by_comparisons": 0,
       "review_status": "draft",
       "source_type": "derived_from_usage",
-      "level": "category",
+      "level": "pattern",
       "classified_by": "bing_xing",
       "members": [
         "pattern.liver_fire",
@@ -146,7 +147,7 @@
         "pattern.phlegm_fire_disturbing_heart",
         "pattern.liver_fire_scorching_lung"
       ],
-      "category_note_zh": "上位分類。底下各證型是不同的證,彼此需要鑑別——本 id 適合作為鑑別卡的標題,不適合單獨作為辨證結論。",
+      "category_note_zh": "家族父節點(D24 升格,2026-08-26):本證型可獨立作為辨證結論——十張臨床卡(治則/主方/主穴)俱在;同時仍是底下更具體證型的上位家族,鑑別卡標題與家族瀏覽照舊。下轄各證彼此仍需鑑別。",
       "system": "ba_gang",
       "system_zh": "八綱辨證"
     },
@@ -281,7 +282,7 @@
       "used_by_comparisons": 0,
       "review_status": "draft",
       "source_type": "derived_from_usage",
-      "level": "category",
+      "level": "pattern",
       "classified_by": "bing_xing",
       "members": [
         "pattern.blood_heat",
@@ -294,7 +295,7 @@
         "pattern.bladder_damp_heat",
         "pattern.liver_fire_scorching_lung"
       ],
-      "category_note_zh": "上位分類。底下各證型是不同的證,彼此需要鑑別——本 id 適合作為鑑別卡的標題,不適合單獨作為辨證結論。",
+      "category_note_zh": "家族父節點(D24 升格,2026-08-26):本證型可獨立作為辨證結論——十張臨床卡(治則/主方/主穴)俱在;同時仍是底下更具體證型的上位家族,鑑別卡標題與家族瀏覽照舊。下轄各證彼此仍需鑑別。",
       "system": "ba_gang",
       "system_zh": "八綱辨證"
     },
@@ -318,7 +319,7 @@
       "used_by_comparisons": 8,
       "review_status": "draft",
       "source_type": "derived_from_usage",
-      "level": "category",
+      "level": "pattern",
       "classified_by": "zang_fu",
       "members": [
         "pattern.kidney_yang_deficiency",
@@ -332,7 +333,7 @@
         "pattern.liver_kidney_yin_deficiency",
         "pattern.heart_kidney_yin_deficiency"
       ],
-      "category_note_zh": "上位分類。底下各證型是不同的證,彼此需要鑑別——本 id 適合作為鑑別卡的標題,不適合單獨作為辨證結論。",
+      "category_note_zh": "家族父節點(D24 升格,2026-08-26):本證型可獨立作為辨證結論——十張臨床卡(治則/主方/主穴)俱在;同時仍是底下更具體證型的上位家族,鑑別卡標題與家族瀏覽照舊。下轄各證彼此仍需鑑別。",
       "system": "zang_fu",
       "system_zh": "臟腑辨證"
     },
@@ -576,7 +577,7 @@
       "used_by_comparisons": 0,
       "review_status": "draft",
       "source_type": "derived_from_usage",
-      "level": "category",
+      "level": "pattern",
       "classified_by": "bing_xing",
       "members": [
         "pattern.phlegm_damp",
@@ -588,7 +589,7 @@
         "pattern.cold_phlegm_obstructing_lung",
         "pattern.wind_phlegm"
       ],
-      "category_note_zh": "上位分類。底下各證型是不同的證,彼此需要鑑別——本 id 適合作為鑑別卡的標題,不適合單獨作為辨證結論。",
+      "category_note_zh": "家族父節點(D24 升格,2026-08-26):本證型可獨立作為辨證結論——十張臨床卡(治則/主方/主穴)俱在;同時仍是底下更具體證型的上位家族,鑑別卡標題與家族瀏覽照舊。下轄各證彼此仍需鑑別。",
       "system": "qi_xue_jin_ye",
       "system_zh": "氣血津液辨證"
     },
@@ -672,7 +673,7 @@
       "used_by_comparisons": 0,
       "review_status": "draft",
       "source_type": "derived_from_usage",
-      "level": "category",
+      "level": "pattern",
       "classified_by": "bing_xing",
       "members": [
         "pattern.spleen_qi_deficiency",
@@ -686,7 +687,7 @@
         "pattern.lung_kidney_qi_deficiency",
         "pattern.heart_gallbladder_qi_deficiency"
       ],
-      "category_note_zh": "上位分類。底下各證型是不同的證,彼此需要鑑別——本 id 適合作為鑑別卡的標題,不適合單獨作為辨證結論。",
+      "category_note_zh": "家族父節點(D24 升格,2026-08-26):本證型可獨立作為辨證結論——十張臨床卡(治則/主方/主穴)俱在;同時仍是底下更具體證型的上位家族,鑑別卡標題與家族瀏覽照舊。下轄各證彼此仍需鑑別。",
       "system": "qi_xue_jin_ye",
       "system_zh": "氣血津液辨證"
     },
@@ -852,7 +853,7 @@
       "used_by_comparisons": 0,
       "review_status": "draft",
       "source_type": "derived_from_usage",
-      "level": "category",
+      "level": "pattern",
       "classified_by": "bing_xing",
       "members": [
         "pattern.wind_cold",
@@ -860,7 +861,7 @@
         "pattern.wind_cold_invading_lung",
         "pattern.wind_heat_invading_lung"
       ],
-      "category_note_zh": "上位分類。底下各證型是不同的證,彼此需要鑑別——本 id 適合作為鑑別卡的標題,不適合單獨作為辨證結論。",
+      "category_note_zh": "家族父節點(D24 升格,2026-08-26):本證型可獨立作為辨證結論——十張臨床卡(治則/主方/主穴)俱在;同時仍是底下更具體證型的上位家族,鑑別卡標題與家族瀏覽照舊。下轄各證彼此仍需鑑別。",
       "system": "bing_yin",
       "system_zh": "病因辨證"
     },
@@ -887,7 +888,7 @@
       "used_by_comparisons": 0,
       "review_status": "draft",
       "source_type": "derived_from_usage",
-      "level": "category",
+      "level": "pattern",
       "classified_by": "bing_xing",
       "members": [
         "pattern.kidney_yang_deficiency",
@@ -896,7 +897,7 @@
         "pattern.spleen_kidney_yang_deficiency",
         "pattern.kidney_yang_deficiency_water_flooding"
       ],
-      "category_note_zh": "上位分類。底下各證型是不同的證,彼此需要鑑別——本 id 適合作為鑑別卡的標題,不適合單獨作為辨證結論。",
+      "category_note_zh": "家族父節點(D24 升格,2026-08-26):本證型可獨立作為辨證結論——十張臨床卡(治則/主方/主穴)俱在;同時仍是底下更具體證型的上位家族,鑑別卡標題與家族瀏覽照舊。下轄各證彼此仍需鑑別。",
       "system": "ba_gang",
       "system_zh": "八綱辨證"
     },
@@ -908,7 +909,7 @@
       "used_by_comparisons": 0,
       "review_status": "draft",
       "source_type": "derived_from_usage",
-      "level": "category",
+      "level": "pattern",
       "classified_by": "bing_xing",
       "members": [
         "pattern.kidney_yin_deficiency",
@@ -919,7 +920,7 @@
         "pattern.liver_kidney_yin_deficiency",
         "pattern.heart_kidney_yin_deficiency"
       ],
-      "category_note_zh": "上位分類。底下各證型是不同的證,彼此需要鑑別——本 id 適合作為鑑別卡的標題,不適合單獨作為辨證結論。",
+      "category_note_zh": "家族父節點(D24 升格,2026-08-26):本證型可獨立作為辨證結論——十張臨床卡(治則/主方/主穴)俱在;同時仍是底下更具體證型的上位家族,鑑別卡標題與家族瀏覽照舊。下轄各證彼此仍需鑑別。",
       "system": "ba_gang",
       "system_zh": "八綱辨證"
     },

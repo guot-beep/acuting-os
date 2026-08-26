@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
+const AS_JSON = process.argv.includes("--json");
 const root = path.resolve(__dirname, "..");
 const stagingPath = path.join(root, "data", "imports", "formula_doses", "formula_dose_staging.json");
 const formulasPath = path.join(root, "data", "herbs", "formulas.json");
@@ -41,6 +42,16 @@ for (const [recordIndex, record] of (staging.records || []).entries()) {
   const canonicalPinyin = new Set(
     (canonicalFormula?.composition || []).map((component) => String(component.pinyin || "").toLowerCase())
   );
+  // 加工法會改變 pinyin 但不換藥（如 formula.xiao_chai_hu_tang 的組成寫
+  // "Zhi Ban Xia" 制半夏，staging 逐字轉錄來源只寫 "Ban Xia"，herb_id 兩邊
+  // 都是 herb.ban_xia）——這種情況 herb_id 已經是可信連結（staging 逐筆自己
+  // 填的，不是本次新增），純 pinyin 字串比對會誤判成查無此藥。herb_id 為
+  // null（dose_status=..._herb_id_pending）的條目不受影響，仍然照舊被抓——
+  // 那才是真正待解的連結（如 Zhu Ye／竹葉 vs 該方組成的 Dan Zhu Ye／淡竹葉，
+  // 兩者是藥典裡不同的藥，需要人工核對來源後才能定案）。
+  const canonicalHerbIds = new Set(
+    (canonicalFormula?.composition || []).map((component) => component.herb_id).filter(Boolean)
+  );
 
   for (const [componentIndex, component] of (record.composition_doses || []).entries()) {
     const componentPrefix = `${prefix}.composition_doses[${componentIndex}]`;
@@ -48,7 +59,9 @@ for (const [recordIndex, record] of (staging.records || []).entries()) {
     if (!component.pinyin || !component.name_zh || !component.dose_status) {
       errors.push(`${componentPrefix} requires pinyin, name_zh, and dose_status`);
     }
-    if (canonicalFormula && !canonicalPinyin.has(String(component.pinyin || "").toLowerCase())) {
+    const pinyinMatches = canonicalPinyin.has(String(component.pinyin || "").toLowerCase());
+    const herbIdMatches = component.herb_id && canonicalHerbIds.has(component.herb_id);
+    if (canonicalFormula && !pinyinMatches && !herbIdMatches) {
       errors.push(`${componentPrefix}.pinyin is not present in ${record.formula_id}: ${component.pinyin}`);
     }
     if (component.herb_id && !herbIds.has(component.herb_id)) {
@@ -86,6 +99,14 @@ for (const [recordIndex, record] of (staging.records || []).entries()) {
 
 if (granuleServingCount > 0) {
   errors.push("This first staging batch must not contain granule serving grams without reviewed label evidence");
+}
+
+if (AS_JSON) {
+  // 這個資料集只有 5 筆、每則錯誤都是獨立字串，不值得為棘輪另建一套 code
+  // 分類——unresolved_pinyin_or_herb_id 目前唯一的殘留是 herb_id 明確標成
+  // pending 的條目（見上方 herb_id 匹配放行的註解），真正待 Ting 核對來源。
+  console.log(JSON.stringify({ defects: errors.length, by_code: { unresolved_pinyin_or_herb_id: errors.length } }));
+  process.exit(0);
 }
 
 if (errors.length) {

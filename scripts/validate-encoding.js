@@ -15,6 +15,10 @@ function listJsonFiles(dir) {
   for (const entry of entries) {
     const fullPath = path.join(dir, entry.name);
     if (entry.isDirectory()) {
+      // audits = merge/驗證帳本(JSON key 本身常是檔案路徑或 en 對照,不是內容);
+      // imports = 匯入暫存,不上畫面。兩者的命中全是誤報,見
+      // docs/UNWIRED_VALIDATORS_2026-08-24.md —— 內容缺陷要在 canonical 檔抓。
+      if (dir === DATA_ROOT && (entry.name === "audits" || entry.name === "imports")) continue;
       files.push(...listJsonFiles(fullPath));
     } else if (entry.isFile() && entry.name.endsWith(".json")) {
       files.push(fullPath);
@@ -134,6 +138,13 @@ function main() {
       return counts;
     }, {})
   };
+
+  // --json：給 check-validation-ratchet 用的機器可讀輸出（defects/by_code），
+  // 讓這個缺陷類有天花板可守——它一度有 13,201 筆而完全沒有 gate。
+  if (process.argv.includes("--json")) {
+    console.log(JSON.stringify({ defects: issues.length, by_code: summary.by_type, by_file: summary.by_file }));
+    return;
+  }
 
   if (issues.length > 0) {
     console.error("Encoding validation failed.");

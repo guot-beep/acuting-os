@@ -1,6 +1,9 @@
 /**
- * knowledge.js — renders real records from data/generated/knowledge_data.js
- * into the Formula, Condition, Sources, and Quality sections.
+ * knowledge.js — renders real records from the knowledge shards
+ * (data/generated/knowledge_{core,ref,rx,mm,dx,pat}.js) into the Formula,
+ * Condition, Sources, and Quality sections. The shards merge into ONE
+ * globalThis.ACUTING_KNOWLEDGE and `const K` below captures it once at eval —
+ * every shard <script> must stay ahead of this file in index.html.
  *
  * Source of truth: data/herbs/formulas.json, data/pathology/conditions.json,
  * data/sources/source_registry.json, data/audits/missing_report.json.
@@ -433,7 +436,7 @@
   if (!K) {
     ["formulaRecords", "herbRecords", "pharmRecords", "comparisonRecords", "conditionRecords", "sourceRegistry", "auditFileStrip"].forEach((id) => {
       const host = el(id);
-      if (host) host.innerHTML = '<p class="k-missing">⚠ knowledge_data.js 未載入（請確認檔案已同步後 Ctrl+F5）。</p>';
+      if (host) host.innerHTML = '<p class="k-missing">⚠ 知識分片（data/generated/knowledge_*.js）未載入（請確認檔案已同步後 Ctrl+F5）。</p>';
     });
     return;
   }
@@ -2047,9 +2050,13 @@
 
   function openKnowledgeDetail(kind, id) {
     // pharm 先前不在這裡,所以「查看西藥卡」按鈕按了靜靜什麼都不做。
+    // 2026-08-23:未知 kind 原本靜默 fallback 到 herb 查表——日後照現有
+    // pattern 幫病症/症狀加關聯按鈕,會做出按了沒反應、console 也無跡可循
+    // 的死連結。改成明確分派,未知 kind 出聲。
     const record = kind === "formula" ? formulaById.get(id)
       : kind === "pharm" ? pharmDrugs.find((d) => d.id === id)
-      : herbById.get(id);
+      : kind === "herb" ? herbById.get(id)
+      : (console.warn(`openKnowledgeDetail: unsupported kind "${kind}" (id=${id})`), null);
     if (!record) return;
     const dialog = ensureDetailDialog();
     const panels = kind === "formula" ? formulaPanels(record)
@@ -2536,7 +2543,55 @@
     };
     (((K.patternLibrary || {}).records) || []).forEach(addPatternLabel);
     (((K.conditions || {}).tcm_patterns) || []).forEach(addPatternLabel);
+    // formula_comparison 的 compares 是 formula.* id——之前落到 patternLabel 的
+    // fallback,欄頭直接印裸 id。方劑名也要能解析。
+    const formulaById = new Map((((K.formulas || {}).records) || []).map((f) => [f.id, f]));
+    formulaById.forEach((f, id) => {
+      patternLabels.set(id, [f.name_zh, f.pinyin || f.name_en].filter(Boolean).join(" / "));
+    });
     const patternLabel = (id) => patternLabels.get(id) || id;
+    const patternById = new Map((((K.patternLibrary || {}).records) || []).map((r) => [r.id, r]));
+
+    /* 卡源自動列（2026-08-24）:cells 是 Ting 專屬(模板 §0),但 32 張方劑表
+       空殼多年——渲染層直接引用各方劑/證型「本卡」欄位補上淡色參考格,
+       資料檔一字不動、非鑑別點、逐格可溯源到該卡。Ting 填了的格永遠優先。 */
+    const AUTO_DIM_FORMULA = {
+      "組成差異": (f) => (f.composition || [])
+        .filter((c) => !c.is_alternate)
+        .map((c) => (c.name_zh || c.herb_zh || "") + (c.role_zh ? "(" + c.role_zh + ")" : ""))
+        .filter(Boolean).join("、"),
+      "功效側重": (f) => (f.actions_zh || []).join(";"),
+      "主治": (f) => (f.pattern_indications_zh || []).join(";"),
+      "舌": (f) => String(f.tongue_zh || "").trim(),
+      "脈": (f) => String(f.pulse_zh || "").trim(),
+    };
+    const AUTO_DIM_PATTERN = {
+      "Chief pattern cue / 主辨證線索": (r) => (r.key_signs_zh || []).join("、"),
+      "Treatment principle / 治法": (r) => String(r.treatment_principle_zh || "").trim(),
+    };
+    const autoCell = (record, compareId, dimension) => {
+      if (record.type === "formula_comparison") {
+        const f = formulaById.get(compareId);
+        const fn = AUTO_DIM_FORMULA[dimension];
+        if (!f || !fn) return "";
+        if (dimension === "辨證要點") return "";
+        let text = fn(f) || "";
+        return text;
+      }
+      const pr = patternById.get(compareId);
+      const fn = AUTO_DIM_PATTERN[dimension];
+      return pr && fn ? (fn(pr) || "") : "";
+    };
+    // 方劑卡自帶的鑑別句(differentiator_zh):只在對象也在同一張表時引用
+    const cardDifferentiators = (record, compareId) => {
+      if (record.type !== "formula_comparison") return "";
+      const f = formulaById.get(compareId);
+      const peers = new Set(record.compares || []);
+      return ((f && f.comparisons) || [])
+        .filter((c) => c && peers.has(c.with) && String(c.differentiator_zh || "").trim())
+        .map((c) => "vs " + (c.name_zh || c.with) + ":" + c.differentiator_zh)
+        .join("\n");
+    };
     const conditionLabels = new Map();
     (((K.conditions || {}).records) || []).forEach((record) => {
       if (!record || !record.id) return;
@@ -2563,9 +2618,16 @@
       return totals;
     }, { filled: 0, total: 0, emptyTables: 0, partialTables: 0, completeTables: 0 });
     const pendingCells = Math.max(0, comparisonTotals.total - comparisonTotals.filled);
-    const cellText = (value) => {
-      const text = String(value || "").trim();
-      return text ? esc(text) : '<span class="k-empty-cell">待 Ting 填寫</span>';
+    const cellText = (record, compareId, dimension) => {
+      const owned = String(((record.cells || {})[compareId] || {})[dimension] || "").trim();
+      if (owned) return esc(owned);
+      const auto = String(autoCell(record, compareId, dimension) || "").trim();
+      const diff = dimension === "辨證要點" ? cardDifferentiators(record, compareId) : "";
+      if (auto || diff) {
+        const body = [auto, diff].filter(Boolean).map((t) => esc(t)).join("<br>");
+        return '<span class="k-cell-auto" title="卡片引用:自動彙整自本卡欄位,非鑑別點">' + body + "</span>";
+      }
+      return '<span class="k-empty-cell">待 Ting 填寫</span>';
     };
     const renderComparisons = (list) => list.map((record) => {
       const compares = record.compares || [];
@@ -2595,11 +2657,12 @@
                 ${dimensions.map((dimension) => `
                   <tr>
                     <th>${esc(dimension)}</th>
-                    ${compares.map((id) => `<td>${cellText((record.cells || {})[id] && (record.cells || {})[id][dimension])}</td>`).join("")}
+                    ${compares.map((id) => `<td>${cellText(record, id, dimension)}</td>`).join("")}
                   </tr>`).join("")}
               </tbody>
             </table>
           </div>
+          <p class="k-meta k-auto-legend">淡色格=卡片引用(自動彙整自各方劑/證型本卡,非鑑別點);鑑別點僅 Ting 填寫(模板 §0)</p>
           ${record.notes_zh ? `<p class="k-meta">${esc(record.notes_zh)}</p>` : ""}
         </article>`;
     }).join("");
@@ -3338,14 +3401,24 @@
        *   {original_field, text, reason, moved_at}  ← 較早的批次
        * 只讀 field 會漏掉後者 —— 而胎位不正卡正是後者,也就是這個提示最該出現的
        * 那一張(它的處方欄被清空,原本是孕期禁忌的合谷＋三陰交組合)。
-       * 兩種都讀,並在下面把形狀不一致回報給 Ting。 */
+       * 兩種都讀,並在下面把形狀不一致回報給 Ting。
+     *
+     * 2026-08-24 修正:field 有時是點狀路徑(如 "acupuncture_scope_zh.note",
+     * 20 張卡都是這個名字),但 c[fieldOf(a)] 是平面查找,永遠讀不到巢狀物件
+     * 裡的值 —— 等於這 20 張卡不管 note 欄位實際有沒有內容都會被判定成
+     * 「空」。查過 cond.menorrhagia 的樣本:note 欄位其實有完整的證據說明,
+     * 不是空的,是這支函式沒查對地方。改用 getPath 逐層解析點狀路徑。 */
       const fieldOf = (a) => (a && (a.field || a.original_field)) || "";
-      const arts = (c.import_artifacts || []).filter((a) => fieldOf(a) && !String(c[fieldOf(a)] || "").trim());
+      const getPath = (obj, keyPath) => keyPath.split(".").reduce(
+        (o, k) => (o && typeof o === "object" ? o[k] : undefined), obj
+      );
+      const arts = (c.import_artifacts || []).filter((a) => fieldOf(a) && !String(getPath(c, fieldOf(a)) || "").trim());
       if (!arts.length) return "";
       const LABEL = {
         western_pathology_zh: "西醫病理", western_pathology_en: "西醫病理(英)",
         etiology_zh: "病因", etiology_en: "病因(英)",
         acupoint_protocols: "針灸處方", herb_formulas: "方劑", aliases_zh: "別名",
+        "acupuncture_scope_zh.note": "針灸範圍備註", "acupuncture_scope_en.note": "針灸範圍備註(英)",
       };
       const rows = arts.map((a) => {
         const name = LABEL[fieldOf(a)] || fieldOf(a);
@@ -3608,7 +3681,7 @@
   // ---- Source registry -------------------------------------------------------
   const srcHost = el("sourceRegistry");
   if (srcHost) {
-    const sources = K.sources.sources || [];
+    const sources = (K.sources && K.sources.sources) || [];
     srcHost.innerHTML = `
       <div class="mini-heading">
         <strong>${esc(modeText(`Source Registry / 來源登記（${sources.length}）`, `Source Registry (${sources.length})`))}</strong>
@@ -3639,7 +3712,9 @@
   // ---- Quality: audit file summary -------------------------------------------
   const auditHost = el("auditFileStrip");
   if (auditHost) {
-    const a = K.audit;
+    // 分片後單鍵缺席不准把整個 IIFE 炸掉（openDetail 註冊在檔尾，這裡 throw
+    // 會讓全站搜尋開卡靜默失效）——與其他 K.* 讀取同款防衛。
+    const a = K.audit || {};
     const worst = Object.entries(a.channels || {})
       .filter(([, v]) => v.missing_count > 0)
       .sort((x, y) => y[1].missing_count - x[1].missing_count)
@@ -3648,7 +3723,7 @@
       .join(" · ");
     auditHost.innerHTML = `
       <div class="mini-heading">
-        <strong>Audit File / 缺漏稽核（${esc(a.generated_on)}）</strong>
+        <strong>Audit File / 缺漏稽核（${esc(a.generated_on || "")}）</strong>
         <span>來源：data/audits/missing_report.json</span>
       </div>
       <p class="k-meta">標準經穴 ${a.total_present}/${a.total_expected}，缺 ${a.total_missing}。${esc(worst)}</p>

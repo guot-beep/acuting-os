@@ -617,6 +617,93 @@ integrity from "caught after the fact" into physically-impossible-to-break,
 and it is what makes recording every practice case low-friction enough to
 actually sustain for three years. Then: "copy from last visit" pre-fill.
 
+## D17 — Clinical Data Capture V2 namespaces and model rules  · LOCKED (2026-08-10, Ting, final low-token checkpoint)
+
+Context: `docs/CLINICAL_DATA_CAPTURE_V2_DIRECTION_2026-08-10.md` (direction) and
+`docs/CLINICAL_LAYERS_RECONCILIATION_2026-08-10.md` (repo reconciliation).
+
+1. **New canonical namespaces** — exactly `supp.*` (supplements — **NOT `suppl.*`**,
+   overriding the V2 direction doc's §6 spelling), `life.*` (lifestyle factors),
+   `exposure.*` (environmental/toxic exposures), `adverse_event.*`, `modality.*`.
+   Examples: `supp.vitamin_d3`, `supp.coq10`, `supp.magnesium`, `supp.creatine`.
+   No variants (`suppl.*`, `supplement.*`, `ae.*`) — the namespace IS the type (D11).
+2. **Medications** — reconfirms D15: new identities are `drug.*`; `med.*` records are
+   NEVER destructively deleted — legacy/migration aliases toward `drug.*` via
+   `medication_alias_map.json`. Migration gate: after it, new real Clinical Visits
+   must not create new `med.*` references.
+3. **`sym.*` and `metric.*` are NOT competing namespaces.** `sym.*` = symptom/clinical
+   finding; `metric.*` = measurement instrument or tracked value.
+   (sym.headache ↔ metric.pain_score; sym.insomnia ↔ metric.sleep_quality +
+   metric.sleep_duration_hours.) Visit observations must let a symptom/finding
+   optionally link to one or more measurements. Never collapse one into the other.
+   This resolves the sym_id fork flagged in `data/clinical_cases/schema.sql`.
+4. **Visit TCM pattern roles** — MVP supports `primary` | `secondary`; schema stays
+   future-compatible with `root` | `branch` (reserved, not blocked). Visit pattern
+   records eventually support `confidence`.
+5. **One coherent exposure timeline** — Patient/Case baseline exposure and Visit-level
+   changes belong to ONE longitudinal model that can reconstruct the timeline
+   (baseline coffee 3 cups/day + Visit #4 "changed to 1 cup/day"). Applies to
+   `drug.*`, `supp.*`, `life.*`, `exposure.*`. Never two disconnected systems.
+6. **Observation ≠ interpretation** — lifestyle/exposure data is observed behavior;
+   it never auto-converts into a TCM diagnosis or pattern, and suspected exposure
+   never becomes confirmed poisoning. Pattern conclusions are entered only by the
+   practitioner at Case/Visit level.
+- **Reconsider only if:** never merge the namespaces or auto-diagnose; naming spelling
+  is final once the first `supp.*` record is issued (D1).
+
+## D19 — TCM Pattern V1 frozen  · LOCKED (2026-08-08, Ting approved after the ChatGPT canonical review)
+
+> 編號註記(2026-08-12 整合時):本決定原記為 D17,與同編號的
+> 「D17 Clinical Data Capture V2 namespaces」(2026-08-10)撞號 —— 後者已被
+> 四份文件以 D17 §5/§6 引用,故保留其編號,本決定改列 D19。決定內容未更動。
+> 舊引用「D17 TCM Pattern V1 frozen」= 現 D19。
+
+- **What:** the `pattern.*` namespace's V1 completion pass (per
+  `docs/PATTERN_CARD_TEMPLATE.md`, run against every canonical Pattern) is
+  done. Frozen state, verified programmatically at freeze time:
+
+  | | Count |
+  |---|---|
+  | Registry total (`pattern_registry.json`) | 69 |
+  | — taxonomy/category nodes (`level:"category"`) | 10 |
+  | — canonical clinical ids (`level:"pattern"`) | 59 |
+  | Library total (`pattern_library.json`, raw) | 62 |
+  | — active canonical Pattern cards | 59 |
+  | — deprecated historical import records (D16) | 3 |
+  | Active library ids resolving exactly once to a registry clinical id | 59/59 |
+  | Active library − registry clinical | 0 |
+  | Registry clinical − active library | 0 |
+
+  `validate-pattern-standard`: 62/62 records clean, 0 blocking defects.
+  `validate-pattern-registry`: PASS. `validate-content-junk`: PASS.
+  `check-validation-ratchet`: PASS, no regressions (patterns 220 → 0 over the
+  V1 project).
+- **Canonical completion baseline commit:** `c8a5ea7` — "Pattern V1: build the
+  3 final canonical cards -- stomach_fire, wind_cold, wind_heat -- 59/59
+  active identity reconciled." Anyone auditing "what did V1 actually ship"
+  diffs against this commit.
+- **What "frozen" means going forward:**
+  1. New Pattern work is **V2 expansion**, not a silent V1 edit. A new
+     `pattern.*` id, a reclassification of an existing one, or a schema
+     change to `docs/PATTERN_CARD_TEMPLATE.md` all count as V2 and should say
+     so in the commit message — they do not retroactively change what V1 was.
+  2. No canonical V1 id is renamed, merged, redirected, or deleted without an
+     explicit migration decision recorded here (same standard as D1/D6/D10).
+  3. The 3 deprecated records from D16 (`pattern.insomnia_heart_kidney_disharmony`,
+     `pattern.liver_fire_flaring`, `pattern.liver_wind_stirring`) stay
+     `review_status: "deprecated"` in `pattern_library.json` — not deleted,
+     not un-deprecated without a new decision.
+  4. The 10 records still missing `differential_patterns` (`N1`, non-blocking)
+     are a known, accepted V1 gap — fill them only when a real source
+     supports a real distinguishing comparison, never by inventing one to
+     close the count.
+  5. The duplicated `cmp.insomnia_patterns` block in `data/knowledge/comparisons.json`
+     (flagged during the D16 reference audit) is explicitly **out of scope**
+     of this freeze — a separate, unapproved cleanup item.
+- **Reconsider only if:** a future canonical review finds a genuine identity
+  defect in the frozen 59 (a real duplicate, a real classification error) —
+  fix via a dated decision here, the same process D16 used, not a silent edit.
+
 ## D18 — SQLite 時程正式修訂 · LOCKED(Ting 裁定接受,2026-08-11)
 
 **背景**:上方「One semester before clinic」段將 localStorage→SQLite 遷移
@@ -636,8 +723,9 @@ fail-loud 持久層 + v2 export + Git 外備份已覆蓋單機單人期的資料
 (3) mapping 檔的維護讓延後不增加未來遷移成本。
 
 **Ting 裁定(2026-08-11)**:✅ 接受修訂 —— 9/5 前不做 SQLite;條件觸發制生效(病例 ≥50 / 多裝置需求 / 容量壓力,任一即啟動)。
-
----
+> **更正(2026-08-26,Ting)**:實際進診所日為 **9/2**,非 9/5。本條與全庫
+> 各處「9/5 前不做 SQLite」讀作「9/2 前不做」;條件觸發制不變。D12 的
+> 9/01 additive-only 凍結仍在進診所之前,不受影響。
 
 ## D20 — Outcome metric 的判讀分兩個軸,不是一個 · LOCKED(2026-08-13,Ting:「兩個軸留著」)
 
@@ -754,3 +842,106 @@ PASS(composition 查無藥材維持 1 味次 `formula.huang_tu_tang` 的「灶�
 **只有在這種情況下重新考慮**:未來查到 `herb.sha_shen` 或其他退役記錄其實
 帶有南沙參專屬臨床內容 —— 那時是取消 deprecated、另立南沙參正典卡,不是
 回頭改寫已合併的內容。
+
+## D22 — 敗毒散(formula.bai_du_san)併入人參敗毒散,為同方 · LOCKED(2026-08-26,Ting:「敗毒散照 D3 併入人參敗毒散 基線降 0」)
+
+- **What**:`formula.bai_du_san`(敗毒散)與 `formula.ren_shen_bai_du_san`
+  (人參敗毒散,《太平惠民和劑局方》)為同方 —— 兩卡組成 13 味一致。
+  退役卡維持 `review_status: "deprecated"` 並補上 deprecated_note_zh
+  (它先前被標 deprecated 卻無 note、無 DECISIONS 記錄,正是
+  validate-retired-id-references 基線那 10 筆的成因);
+  `formula_canon_shortlist.json` 的同 id active 副本一併標 deprecated。
+- **機制沿用 D16/D21**:additive-only 合併 —— 正典 21 個空欄位自退役卡
+  遷入(ba_fa/cautions/clinical_manifestations/treats/modern_applications/
+  雙軌 track/THP 編號等),遷移欄位的 field_sources 一併帶過,正典原有
+  內容零覆蓋。全庫引用改指向:formulas.json 與 formula_canon_shortlist
+  各 4 筆 related_formulas(風寒解表五方 clique)、
+  `cmp.exterior_wind_cold` compares 1 筆。
+- **順帶修正**:遷入的 treats_zh/modern_applications_zh 有 6 個純英文詞
+  (退役卡上的既有缺陷,搬進 active 卡被 encoding ratchet 擋下 +13)——
+  已補標準中文(瘡瘍初起/風濕/眼疾/神經痛/虛弱/滑囊炎),英文原文
+  保留在平行 _en 欄位;THP 編號補「臺灣中藥典」前綴。
+- **驗證**:validate-retired-id-references 0 殘留,ratchet 基線 10 → 0;
+  formula-standard/content-junk/herb-standard PASS。
+- **Reconsider only if**:未來查到 `formula.bai_du_san` 卡曾承載
+  「非人參敗毒散」的獨立方義(如荊防敗毒散被誤併)—— 屆時取消 deprecated
+  另立正典,不回頭改寫已合併內容(D16 同款條款)。
+
+## D23 — Legacy 診斷 id 歸位:五點裁定與執行 · LOCKED(2026-08-26,Ting:「D11照建議辦 C3併入本病卡 C4撤下 不孕全部bu_yun 月經不調建總稱卡 腰痠另立」)
+
+- **裁定**(對 docs/D11_LEGACY_NAMESPACE_ADJUDICATION_2026-08-26.md 五桶):
+  1. C3 四個 `_context` → 併入本病卡(endometriosis_context→cond.endometriosis、
+     male_factor_context→cond.male_infertility、recurrent_pregnancy_loss_context→
+     cond.recurrent_pregnancy_loss;ovulatory_factor_context→cond.anovulation,
+     排卵因素之本病即排卵障礙,執行時定)。
+  2. C4 三個治療階段(ivf_cycle/embryo_transfer/luteal_support)**不是診斷**,
+     自知識層 relation 欄位撤下;`source_condition_id` 等出處欄位保留(§0)。
+  3. `eastern_disease.infertility`(44 refs)全部 → `tdis.bu_yun`(女科語境;
+     男性因素由 male_factor→cond.male_infertility 另行承載)。
+  4. 建 `tdis.yue_jing_bu_tiao` 月經不調**總稱卡**(中醫婦科學正當病名;
+     與先期/後期/過多/過少/延長五張專卡並存)。
+  5. `sym.lumbar_soreness` 腰痠**另立**,不併入 sym.low_back_pain —— 痠≠痛。
+- **執行(同日)**:六張 skeleton 骨架卡(cond.anovulation/
+  cond.unexplained_infertility/cond.insulin_resistance/tdis.yue_jing_bu_tiao/
+  sym.facial_redness/sym.lumbar_soreness,全部 review_status="skeleton" 或
+  needs_safety_review,零內容宣稱,內容歸 fill 線);知識層 60+ 處引用重導、
+  去重;C4 陣列移除。staging(pathology/conditions.json、
+  condition_graph_expansion、clinical_cases 種子)照 D15 med.* 前例**保留原樣**
+  ——那是出處層,D11 允許。
+- **vocab 對齊**:modern_application_vocabulary 五個零引用概念 id
+  pat.→pattern. 對齊正典(舊 id 進 aliases);`pat.dampness`/
+  `pat.cold_deficiency`/`pat.bi_syndrome` 三個無正典雙胞胎**留旗標不強配**
+  ——其中 bi_syndrome(痹證)本是病非證,正典應為 tdis.bi_zheng,待 fill 線
+  處理該 vocab 條目的 type 歸屬。
+- **B 桶 CJK ~39 筆**(361.json 等的 pat.<中文>):交 fill 線走
+  build-pattern-alias-map.js 擴充,對不到的留 pending,不強配。
+- **Reconsider only if**:未來 ovulatory factor 需要與 anovulation 分立
+  (如 LUFS 等排卵功能異常但有排卵者)—— 屆時另立 cond 卡並分流引用,
+  不回頭改本裁定。
+
+## D24 — 十個家族父節點升格 level=pattern(升格保留家族結構) · LOCKED(2026-08-26,Ting:「D19照建議辦 10個升level=pattern」)
+
+- **What**:氣虛/血虛/陰虛/陽虛/熱/火/濕熱/痰/外風/腎虛 十個 registry 節點
+  自 `level: "category"` 升為 `level: "pattern"`。依 D19 凍結條款第 1 點,
+  這是明載的 V2 重分類,不是 V1 的靜默修改。
+- **Why**:V1 凍結時這十個只是分類節點;其後 V2 工作為它們建了完整臨床卡
+  (治則/主方/主穴俱在)。「氣虛」在臨床上既是可獨立下的辨證結論,也是
+  脾氣虛/肺氣虛/心氣虛的上位家族 —— 資料模型現在如實反映雙重角色。
+- **升格保留家族結構**:members/classified_by(臟腑軸/病性軸)與 66 筆
+  member_of 邊原樣保留;validate-pattern-registry 的守護對象從
+  「10 筆 level=category」改為「10 個家族父節點必須仍帶 members」——
+  升格不得被順手拆成扁平清單。category_note_zh 改述雙重角色。
+- **順帶發現(獨立工作項,已開 task)**:build-pattern-registry.js 已落後
+  手工維護的登錄檔 —— 重生成會毀 38 筆 V2 記錄與 171 個欄位。validator 的
+  修復指引已自「重跑 builder」改為明確警告;builder 與登錄檔的所有權和解
+  另案處理,不在本裁定範圍。
+- **Reconsider only if**:未來認定某個家族父節點在臨床上確實不可獨立作為
+  辨證結論(卡片內容經審查被判定為拼裝)—— 屆時該節點單獨降回 category
+  並記錄新決定,不整批回退。
+
+## D25 — pattern_registry 所有權翻轉:登錄檔為正本,builder 降級 · LOCKED(2026-08-26,Ting 授權二選一「追上 builder 或翻轉所有權」,Claude 判定翻轉)
+
+- **What**:`data/pathology/pattern_registry.json` 正式宣告為**手工維護的
+  source of truth**,不再是生成檔。`build-pattern-registry.js` 降級為增量
+  偵測工具:預設 report(懸空引用/掃不到的 id/引用計數漂移);`--append`
+  只補「已引用但未登錄」的骨架記錄,既有記錄零改動;`--write` 拒絕執行並
+  說明原因(留著讓肌肉記憶 fail loud)。validate-pattern-registry.js 檔頭
+  改述所有權,地板自 59/10/48/31 升到 **151/10/151/53** 鎖住現況。
+  pattern_overlay.json(舊流程的補充層,三個 map 從未被填)標記停用,
+  原 policy 指示跑 `--write` 已成危險指令,一併改寫。
+- **Why(dry-run 量化,MEASURED TREE: claude/stoic-herschel-f697a7 @ 3486cef0)**:
+  重生成會把 151 筆縮成 113——毀 38 筆 V2 記錄(淋證四型、肺腎陰虛、
+  六經/衛氣營血/奇經八脈擴充等,自帶 442 個欄位)、刪既存記錄上 171 個
+  欄位(system×43、registration_note_zh×52、used_by_cases×16、legacy_ids 等)、
+  改壞 159 個值(52 筆人工核實的 name_zh 會被清空、9 個家族 members 縮水、
+  spleen_constriction 的 system 被腳本的臟腑 regex 誤判回 zang_fu——
+  登錄檔手工修正為 liu_jing)。選 A(讓腳本追上)等於把人工查證成果複製
+  成腳本裡的 JS 常數表:資料存兩份,必再漂移——2026-07-31 事故(59 筆
+  變 50)的根因正是「腳本表落後於真相」。B 承認現實:資料歸資料檔。
+- **D24 不回退**:十家族父節點 level=pattern 與 members/classified_by 兩軸
+  結構原樣保留,由 validator 的 REQUIRED_FAMILY_HEADS 與升高後的地板持續
+  守護;builder 已無整檔寫入能力,結構上不可能再回退 D24。
+- **Reconsider only if**:未來登錄檔需要大規模機械重構(如 schema 遷移)
+  ——屆時寫一次性遷移腳本走 ledger→apply 模式(出帳本、人工核、apply 落庫),
+  不恢復常駐生成器。
+

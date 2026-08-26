@@ -31,9 +31,8 @@ let ADVICE = [], CLINIC = {};
 try { ADVICE = JSON.parse(fs.readFileSync(path.join(__dirname, "..", "data/config/avs_advice_library.json"), "utf8")).records || []; } catch {}
 try { CLINIC = JSON.parse(fs.readFileSync(path.join(__dirname, "..", "data/config/clinic_profile.json"), "utf8")); } catch {}
 
-// 知識庫(方劑/補充劑病人名):bundle 可載則用,不可載誠實略過
-let K = null;
-try { const g = {}; (new Function("globalThis", fs.readFileSync(path.join(__dirname, "..", "data/generated/knowledge_data.js"), "utf8") + ";"))(g); K = g.ACUTING_KNOWLEDGE; } catch { K = null; }
+// 知識庫(方劑/補充劑病人名):bundle 可載則用,不可載誠實略過(分片走共用 lib)
+const K = require("./lib/load-knowledge.js").loadKnowledge();
 const nameOf = (id) => {
   if (!K) return null;
   const pools = [K.formulas, K.supplementRecords, K.pharmDrugs, K.medications];
@@ -84,25 +83,13 @@ const esc = (s) => String(s || "").replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<"
 const sec = (key, title, bodyHtml) => (skip.has(key) || !bodyHtml) ? "" : `<section><h2>${title}</h2>${bodyHtml}</section>`;
 
 const html = `<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>診後照護指示</title><style>
-body{font-family:"Microsoft JhengHei","Noto Sans TC",sans-serif;background:#f3eddf;color:#202427;margin:0;padding:24px;line-height:1.7}
-.sheet{max-width:640px;margin:0 auto;background:#fff;border:1px solid #d9e0e4;border-radius:12px;padding:28px 32px;box-shadow:0 8px 30px rgba(23,33,38,.08)}
-h1{font-family:"Noto Serif TC",serif;font-size:1.5em;color:#0a5956;border-bottom:2px solid #c89033;padding-bottom:8px;margin:0 0 4px}
-.date{color:#66717a;font-size:.9em;margin-bottom:16px}
-h2{font-family:"Noto Serif TC",serif;font-size:1.05em;color:#16352f;margin:18px 0 6px}
-table{width:100%;border-collapse:collapse;font-size:.95em}
-td,th{border:1px solid #e5e0d4;padding:6px 10px;text-align:left}
-th{background:#f7f3e8}
-ul{margin:4px 0;padding-left:20px}
-.footer{margin-top:22px;padding-top:10px;border-top:1px dashed #c89033;font-size:.78em;color:#66717a}
-@media print{body{background:#fff;padding:0}.sheet{border:0;box-shadow:none}}
-</style></head><body><div class="sheet">
+<title>診後照護指示</title><style>${AVS.SHEET_CSS}</style></head><body><div class="sheet">
 <div style="text-align:center;margin-bottom:6px"><div style="font-family:'Noto Serif TC',serif;font-size:1.2em;color:#16352f">${esc(CLINIC.clinic_name_zh || "")}</div></div>
 <h1>診後照護指示</h1>
 <div class="date">日期:${esc(note.visitDate)}</div>
 ${sec("today", "今天做了什麼", didToday.length ? `<p>${didToday.map(esc).join("、")}。</p>` : "")}
 ${sec("summary", "近況小結", note.avsSummary ? `<p>${esc(note.avsSummary)}</p>` : "")}
-${sec("herbs", "調理品怎麼吃", medRows.length ? `<table><tr><th>名稱</th><th>用量</th><th>頻率</th></tr>${medRows.map((r) => `<tr><td>${esc(r.name)}</td><td>${esc(r.dose)}</td><td>${esc(r.freq)}</td></tr>`).join("")}</table><p style="font-size:.85em;color:#66717a">${esc(byCat("herb_caution").join(" ") || "請依本次提供的方式使用中藥或營養品;若同時使用處方藥或其他長期用藥,請讓醫療團隊知道,不要自行停藥或更改劑量;有任何不適先暫停並聯絡我們。")}</p>` : "")}
+${sec("herbs", "調理品怎麼吃", medRows.length ? `<table><tr><th>名稱</th><th>用量</th><th>頻率</th></tr>${medRows.map((r) => `<tr><td>${esc(r.name)}</td><td>${esc(r.dose)}</td><td>${esc(r.freq)}</td></tr>`).join("")}</table><p style="font-size:.85em;color:#786c5c">${esc(byCat("herb_caution").join(" ") || "請依本次提供的方式使用中藥或營養品;若同時使用處方藥或其他長期用藥,請讓醫療團隊知道,不要自行停藥或更改劑量;有任何不適先暫停並聯絡我們。")}</p>` : "")}
 ${sec("aftercare", "今日治療後注意事項", byCat("aftercare").length ? "<ul>" + byCat("aftercare").map((a) => "<li>" + esc(a) + "</li>").join("") + "</ul>" : "")}
 ${sec("special", "特別注意", byCat("special").length ? "<ul>" + byCat("special").map((a) => "<li>" + esc(a) + "</li>").join("") + "</ul>" : "")}
 ${sec("lifestyle", "作息與生活建議", (byCat("lifestyle").length || note.avsLifestyle) ? (byCat("lifestyle").length ? "<ul>" + byCat("lifestyle").map((a) => "<li>" + esc(a) + "</li>").join("") + "</ul>" : "") + (note.avsLifestyle ? "<p>" + esc(note.avsLifestyle) + "</p>" : "") : "")}
@@ -119,9 +106,11 @@ ${sec("followup", "下次回診與自我觀察", `${note.avsFollowUp ? `<p>回�
 <div class="footer">本文件為衛教與照護指示,非診斷證明,不適用於保險申報。如有疑問請聯絡診所。</div>
 </div></body></html>`;
 
-// 零診斷自檢:輸出不得含病名/證型/代碼類詞彙(粗篩 + patientCode)
-const banned = [kase.patientCode, "ICD", "CPT", "cond.", "pattern.", "tdis.", "safety.", "modality.", "metric."].filter(Boolean);
-for (const b of banned) if (html.includes(b)) { console.error(`SAFETY ABORT: output contains banned token "${b}"`); process.exit(1); }
+// 零診斷自檢:委派引擎的 canonical 掃描器(entity 解碼到定點+剝 tag 雙視圖
+// +邊界比對)。v1-v3 的 raw includes 粗篩可被編碼/拆字繞過——正是引擎在
+// Codex NO-GO HIGH-3 修過的洞,CLI 不該留一把弱的尺。
+const bannedHits = AVS.checkPatientOutputSafety(html, kase);
+if (bannedHits.length) { console.error(`SAFETY ABORT: output contains banned token(s): ${bannedHits.join(", ")}`); process.exit(1); }
 
 const out = arg("--out");
 if (out) { fs.writeFileSync(out, html); console.log("AVS written:", out); }

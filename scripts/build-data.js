@@ -55,6 +55,39 @@ const payload = {};
 for (const [name, rel] of Object.entries(SOURCES)) {
   payload[name] = readJson(rel);
 }
+// 死資料裁切（2026-08-24，Ting 同意）。這十個 embedded 陣列共 256 筆記錄裡，
+// 有 254 筆的 code 屬於 361 標準經穴——app.js:717-719 在 runtime 用
+// `.filter((point) => !standard361Codes.has(point.code))` 把它們全部丟掉，
+// 只留 2 筆（EX-HN3 印堂、EX-HN5 太陽）。也就是說瀏覽器每次都下載並解析
+// 1.3MB 的資料，只為了在啟動時把 99.2% 丟進垃圾桶（app.js:713-715 的註解
+// 本來就寫明「embedded 陣列留著只為了貢獻 361 範圍之外的記錄」）。
+// 這裡在發射前先套用同一個述詞（361.json 的 code 集合；adapt361Record 以
+// `code: record.code` 原樣透傳，兩邊述詞逐字相同），app.js 一行都不用改——
+// 它那條 runtime filter 保留當防禦，變成 no-op。
+//
+// 這是「刪除形狀」的改動，界線寫清楚：source JSON（data/acupoints/embedded/*.json）
+// 一個字都沒動，退役的記錄仍在版控裡；被裁掉的只有**產出檔**中 runtime 已證明
+// 會丟棄的部分。證據見 PR：defaultPoints 的 code 集合與完整記錄內容 before/after
+// 逐字元相同。
+{
+  const standard361Codes = new Set(readJson("data/acupoints/361.json").map((r) => r.code));
+  const EMBEDDED_POINT_KEYS = [
+    "starterPoints", "professionalPoints",
+    "lungMeridianExpansion", "largeIntestineMeridianExpansion", "stomachMeridianExpansion",
+    "spleenMeridianExpansion", "heartMeridianExpansion", "smallIntestineMeridianExpansion",
+    "bladderMeridianExpansion", "kidneyMeridianExpansion",
+  ];
+  let dropped = 0, kept = 0;
+  for (const key of EMBEDDED_POINT_KEYS) {
+    const before = payload[key] || [];
+    const after = before.filter((point) => !standard361Codes.has(point && point.code));
+    dropped += before.length - after.length;
+    kept += after.length;
+    payload[key] = after;
+  }
+  console.log(`Embedded point arrays: dropped ${dropped} records already rendered by the 361 layer, kept ${kept}`);
+}
+
 const i18n = readJson(I18N_SOURCE);
 Object.assign(payload, i18n);
 payload.uiConfig = readJson(UI_CONFIG_SOURCE);
@@ -264,7 +297,80 @@ for (const r of regRecords) {
   }
   (knowledge.tdisRegistry.records || []).forEach(mergeUnwired);
 }
-// Deterministic banner — see the app_data.js note above.
+// ---- Knowledge shard emission（P1 快取粒度分包，2026-08-24）------------------
+// knowledge 依「變動頻率 × 消費時機」切成六片，每片以 Object.assign 合流到
+// 同一個 globalThis.ACUTING_KNOWLEDGE 物件實例——消費端讀到的形狀零改動。
+// 載入順序無關（合流可交換），但六片都必須排在 app.js 與 js/knowledge.js
+// 之前：js/knowledge.js:10 在 IIFE 頂端一次性捕捉 const K，晚到的鍵它永遠看不到。
+// 三條切片邊界是 build 期耦合強迫的，不能拆開：
+//   (1) redFlagRegistry 的 resolver 就地改寫 conditionCanon/tdisRegistry → 三鍵同在 dx；
+//   (2) formulaHdiReview.verified_texts 由 formulas 逐條 sha1 對出 → 兩鍵同在 rx；
+//   (3) 其餘按 git 共變分群（近 150 個內容 commit 重放實測：88% 只落單一分片）。
+// 新鍵沒進表 → 自動落 core 並警告，絕不讓鍵消失。注意 core 是 previsit.html
+// （病人端）唯一載入的片，大鍵掉進去會讓那頁暴肥——警告出現就把鍵歸對位。
+const KNOWLEDGE_PARTS = {
+  core: [
+    "sources", "audit", "contentQuality", "relationRegistry", "symptomTaxonomy",
+    "outcomeMetrics", "safetyFlags", "modernApplicationVocabulary",
+    "comparisonGroupVocabulary", "safetyFlagVocabulary", "conditionCategoryVocabulary",
+    "tcmDiseaseTaxonomy", "patternFamilyVocabulary", "formulaActionGroups",
+    "demographicVocabulary", "supplementCategoryVocabulary", "lifestyleFactorVocabulary",
+    "exposureVocabulary", "adverseEventVocabulary", "modalityVocabulary",
+    "avsAdviceLibrary", "clinicProfile",
+  ],
+  ref: [
+    "channelsAndCharts", "pharmDrugs", "pharmDrugClasses", "pharmDrugTargets",
+    "pharmDrugSystems", "supplementRecords", "medications",
+    "cloudtcmDiseaseEntries", "cloudtcmDiseaseCategories", "cloudtcmRefMap",
+  ],
+  rx: ["formulas", "formulaHdiReview"],
+  mm: ["herbs", "herbPairs", "herbPairRelations", "herbUrlMap"],
+  dx: ["conditionCanon", "tdisRegistry", "redFlagRegistry", "conditions"],
+  pat: ["patternLibrary", "patternRegistry", "tcmPatternCanon", "symptoms", "comparisons"],
+};
+{
+  // 分片表守衛：兩兩互斥、每個鍵都真的存在；沒被分派的鍵落 core（只加深不刪除）。
+  const assigned = new Map();
+  for (const [part, keys] of Object.entries(KNOWLEDGE_PARTS)) {
+    for (const k of keys) {
+      if (assigned.has(k)) throw new Error(`build-data: knowledge key "${k}" assigned to both "${assigned.get(k)}" and "${part}"`);
+      if (!(k in knowledge)) throw new Error(`build-data: KNOWLEDGE_PARTS lists unknown knowledge key "${k}"`);
+      assigned.set(k, part);
+    }
+  }
+  for (const k of Object.keys(knowledge)) {
+    if (!assigned.has(k)) {
+      console.warn(`build-data: WARNING — knowledge key "${k}" is not in KNOWLEDGE_PARTS; landing in core. previsit.html 只載 core，請把它歸進正確的片。`);
+      KNOWLEDGE_PARTS.core.push(k);
+      assigned.set(k, "core");
+    }
+  }
+}
+const KNOWLEDGE_PART_NAMES = Object.keys(KNOWLEDGE_PARTS);
+for (const [part, keys] of Object.entries(KNOWLEDGE_PARTS)) {
+  const slice = {};
+  for (const k of keys) slice[k] = knowledge[k];
+  const sliceJson = JSON.stringify(slice);
+  const d = digest(sliceJson);
+  // 第二個 statement 把「這片載到了」記在獨立的 ACUTING_KNOWLEDGE_PARTS 上
+  // （不塞進知識物件本身，避免污染 Object.keys 走訪）。core 片額外帶
+  // __expected 清單，app.js 的 dataLoadGuard 逐一比對抓缺片——清單只寫在
+  // 這裡一處，兩邊不可能漂移。
+  const meta = part === "core" ? { __expected: KNOWLEDGE_PART_NAMES, [part]: d } : { [part]: d };
+  const body =
+    "globalThis.ACUTING_KNOWLEDGE = Object.assign(globalThis.ACUTING_KNOWLEDGE || {}, " + sliceJson + ");\n" +
+    "globalThis.ACUTING_KNOWLEDGE_PARTS = Object.assign(globalThis.ACUTING_KNOWLEDGE_PARTS || {}, " + JSON.stringify(meta) + ");\n";
+  const banner = `// GENERATED FILE - DO NOT EDIT.
+// Built by scripts/build-data.js · knowledge shard "${part}" · content ${d}
+// 六片 Object.assign 合流到同一個 globalThis.ACUTING_KNOWLEDGE；載入順序無關，
+// 但全部必須排在 app.js 與 js/knowledge.js 之前。Source of truth: data/**.json
+`;
+  fs.writeFileSync(path.join(ROOT, `data/generated/knowledge_${part}.js`), banner + body);
+  console.log(`Built data/generated/knowledge_${part}.js (${keys.length} keys, ${(sliceJson.length / 1048576).toFixed(2)}MB)`);
+}
+
+// 單體暫時繼續雙寫，讓分片 PR 全程可回滾；確認上線正常後由獨立 PR 移除
+// （P1-E）。Deterministic banner — see the app_data.js note above.
 const kBody = "globalThis.ACUTING_KNOWLEDGE = " + JSON.stringify(knowledge) + ";\n";
 const kBanner = `// GENERATED FILE - DO NOT EDIT.
 // Built by scripts/build-data.js · content ${digest(kBody)}

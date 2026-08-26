@@ -22,10 +22,9 @@ let parsed = JSON.parse(fs.readFileSync(file, "utf8"));
 if (parsed && !Array.isArray(parsed) && Array.isArray(parsed.cases)) parsed = parsed.cases;
 const cases = parsed;
 
-// ---- bundle ----
-const g = {};
-(new Function("globalThis", fs.readFileSync("data/generated/knowledge_data.js", "utf8") + ";"))(g);
-const K = g.ACUTING_KNOWLEDGE || {};
+// ---- bundle（分片載入走共用 lib；讀不到 = 大聲失敗，維持原本 ENOENT 的響度） ----
+const K = require("./lib/load-knowledge.js").loadKnowledge();
+if (!K) { console.error("evidence-debt: 知識分片載入失敗 — 先跑 node scripts/build-data.js"); process.exit(1); }
 const recsOf = (k) => (K[k] && K[k].records) || (Array.isArray(K[k]) ? K[k] : []);
 
 // 每個 namespace:去哪個 section 找卡、哪些欄位算「關鍵證據欄」。

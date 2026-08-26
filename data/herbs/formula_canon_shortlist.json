@@ -24,7 +24,7 @@
         "formula.ma_huang_tang",
         "formula.jiu_wei_qiang_huo_tang",
         "formula.xiao_qing_long_tang",
-        "formula.bai_du_san"
+        "formula.ren_shen_bai_du_san"
       ],
       "comparison_group": "exterior_wind_cold",
       "clinical_use_note": "Draft search/study context only; not a treatment claim. Verify English exam layer against Bensky before source_checked.",
@@ -50,7 +50,7 @@
         "formula.gui_zhi_tang",
         "formula.jiu_wei_qiang_huo_tang",
         "formula.xiao_qing_long_tang",
-        "formula.bai_du_san"
+        "formula.ren_shen_bai_du_san"
       ],
       "comparison_group": "exterior_wind_cold",
       "clinical_use_note": "Draft search/study context only; not a treatment claim. Verify English exam layer against Bensky before source_checked.",
@@ -71,7 +71,7 @@
         "formula.gui_zhi_tang",
         "formula.ma_huang_tang",
         "formula.xiao_qing_long_tang",
-        "formula.bai_du_san"
+        "formula.ren_shen_bai_du_san"
       ],
       "comparison_group": "exterior_wind_cold",
       "clinical_use_note": "",
@@ -91,7 +91,7 @@
         "formula.gui_zhi_tang",
         "formula.ma_huang_tang",
         "formula.jiu_wei_qiang_huo_tang",
-        "formula.bai_du_san"
+        "formula.ren_shen_bai_du_san"
       ],
       "comparison_group": "exterior_wind_cold",
       "clinical_use_note": "",
@@ -170,7 +170,7 @@
       "pinyin": "Bai Du San",
       "category": "解表劑 / Release the Exterior",
       "source_hint": "Bensky F&S: Release the Exterior; expanded NCCAOM candidate",
-      "review_status": "draft",
+      "review_status": "deprecated",
       "modern_clinical_use_tags": [],
       "related_conditions": [],
       "related_formulas": [
@@ -182,7 +182,8 @@
       "comparison_group": "exterior_wind_cold",
       "clinical_use_note": "",
       "id": "formula.bai_du_san",
-      "tier": "core"
+      "tier": "core",
+      "deprecated_note_zh": "敗毒散與人參敗毒散為同方(《太平惠民和劑局方》,組成 13 味一致)。D22(Ting 裁定 2026-08-26):本卡退役併入 formula.ren_shen_bai_du_san,21 個獨有內容欄位已 additive 遷入正典,全庫引用已改指向。本卡保留不刪(D6)。"
     },
     {
       "name_zh": "白虎湯",
@@ -582,8 +583,8 @@
         "irregular_menstruation"
       ],
       "related_conditions": [
-        "western_condition.unexplained_infertility",
-        "eastern_disease.irregular_menstruation",
+        "cond.unexplained_infertility",
+        "tdis.yue_jing_bu_tiao",
         "pattern.liver_qi_stagnation",
         "pattern.spleen_qi_deficiency"
       ],
@@ -615,7 +616,7 @@
         "irregular_menstruation"
       ],
       "related_conditions": [
-        "eastern_disease.irregular_menstruation",
+        "tdis.yue_jing_bu_tiao",
         "pattern.liver_qi_stagnation"
       ],
       "related_formulas": [
@@ -1007,9 +1008,9 @@
         "fatigue"
       ],
       "related_conditions": [
-        "eastern_disease.irregular_menstruation",
-        "eastern_disease.amenorrhea",
-        "eastern_disease.infertility",
+        "tdis.yue_jing_bu_tiao",
+        "tdis.bi_jing",
+        "tdis.bu_yun",
         "pattern.blood_deficiency"
       ],
       "related_formulas": [
@@ -1055,7 +1056,7 @@
       "related_conditions": [
         "pattern.spleen_qi_deficiency",
         "pattern.blood_deficiency",
-        "western_condition.unexplained_infertility"
+        "cond.unexplained_infertility"
       ],
       "related_formulas": [
         "formula.ba_zhen_tang",
@@ -1083,7 +1084,7 @@
       "related_conditions": [
         "pattern.spleen_qi_deficiency",
         "pattern.blood_deficiency",
-        "western_condition.unexplained_infertility"
+        "cond.unexplained_infertility"
       ],
       "related_formulas": [
         "formula.gui_pi_tang",
@@ -1130,8 +1131,8 @@
       "related_conditions": [
         "pattern.kidney_deficiency",
         "pattern.yin_deficiency",
-        "western_condition.diminished_ovarian_reserve",
-        "western_condition.unexplained_infertility"
+        "cond.diminished_ovarian_reserve",
+        "cond.unexplained_infertility"
       ],
       "related_formulas": [
         "formula.zuo_gui_wan",
@@ -1195,7 +1196,7 @@
       ],
       "related_conditions": [
         "pattern.kidney_deficiency",
-        "western_condition.unexplained_infertility"
+        "cond.unexplained_infertility"
       ],
       "related_formulas": [
         "formula.you_gui_wan"
@@ -1641,7 +1642,7 @@
       ],
       "related_conditions": [
         "pattern.blood_stasis",
-        "eastern_disease.dysmenorrhea"
+        "tdis.tong_jing"
       ],
       "related_formulas": [
         "formula.tao_he_cheng_qi_tang",
@@ -1692,10 +1693,10 @@
         "cold_pain_context"
       ],
       "related_conditions": [
-        "eastern_disease.dysmenorrhea",
-        "eastern_disease.infertility",
-        "eastern_disease.amenorrhea",
-        "eastern_disease.irregular_menstruation",
+        "tdis.tong_jing",
+        "tdis.bu_yun",
+        "tdis.bi_jing",
+        "tdis.yue_jing_bu_tiao",
         "pattern.blood_stasis",
         "pattern.blood_deficiency"
       ],
@@ -1781,9 +1782,9 @@
         "blood_stasis_pain"
       ],
       "related_conditions": [
-        "eastern_disease.dysmenorrhea",
-        "eastern_disease.amenorrhea",
-        "eastern_disease.irregular_menstruation",
+        "tdis.tong_jing",
+        "tdis.bi_jing",
+        "tdis.yue_jing_bu_tiao",
         "pattern.blood_stasis",
         "pattern.blood_deficiency"
       ],

@@ -79,6 +79,32 @@ console.log("Scenario A — routine acupuncture, no flags");
   assert(!ruleIds(d).includes("avs.anticoagulant_precautions"), "no anticoagulant candidate");
   assert(!ruleIds(d).includes("avs.cancer_tx_precautions"), "deprecated cancer rule never matches (active:false)");
   assert(d.todayCare.includes("針刺"), "todayCare carries plain-zh modality name");
+  // 2026-08-25(DRY_CLINIC_LOG.md #12 迴歸鎖定):note.followUp 是醫師寫給自己
+  // 看的臨床規劃欄(這個 fixture 故意帶了值,見 makeNote() 的 followUp:
+  // "兩週後回診"),draft 建立時絕不可自動帶進病人文件草稿 —— 空白逼醫師自己
+  // 打一句病人看得懂的話,不會有「忘記把內部判斷刪掉」的漏改風險。
+  assert(d.followUpSnapshot === "", "followUpSnapshot starts empty even when note.followUp has clinician-internal text (no silent carryover)");
+}
+
+// ---- 附加 — 只在 SOAP 表單勾方藥/西藥,沒開獨立「用藥與補充劑」帳(2026-08-25
+// dry run 現場發現:「我有開中藥 我的診後照顧指示裡面沒有中藥的指示」)-------
+console.log("Extra — formula/medication linked only via the SOAP form's own picker (no separate ledger entry)");
+{
+  const kase = makeCase();   // agentExposures: [] —— 沒有另外開「用藥與補充劑」對話框
+  const note = makeNote({ modalitiesPerformed: ["modality.acupuncture"], formulaLinks: ["formula.gui_zhi_tang"] });
+  const nameOfAgent = (id) => (id === "formula.gui_zhi_tang" ? "桂枝湯" : null);
+  const d = AVS.buildDraftSnapshot({ kase, note, library: LIBRARY, clinic: CLINIC, modalityVocabulary: MODALITY_VOCAB, outcomeMetricDefs: [], nameOfAgent });
+  assert(d.medicationInstructionsSnapshot.length === 1, "formula picked in the SOAP form's own picker shows up in the med table even with an empty agentExposures ledger");
+  assert(d.medicationInstructionsSnapshot[0].name === "桂枝湯", "resolved via nameOfAgent since the ledger has no nameText for it");
+  assert(d.medicationInstructionsSnapshot[0].dose === "", "no doseText captured at the visit level — stays empty exactly like the ledger path (劑量留空就是留空,不生出「依醫囑」), not a new divergent path");
+  assert(ruleIds(d).includes("avs.herb_general"), "hasActiveHerbs correctly true — the herb safety-caution rule fires too, not just the med table");
+
+  // 用藥帳(agentExposures)裡已經有這個 id 的話,用藥帳的真實 doseText 優先,
+  // 不被 SOAP 表單這邊的空白覆蓋,也不會重複出現兩列。
+  const kaseWithLedger = makeCase({ agentExposures: [{ agentId: "formula.gui_zhi_tang", nameText: "桂枝湯（帳上）", doseText: "6克", frequencyText: "一天三次", status: "current" }] });
+  const dLedger = AVS.buildDraftSnapshot({ kase: kaseWithLedger, note, library: LIBRARY, clinic: CLINIC, modalityVocabulary: MODALITY_VOCAB, outcomeMetricDefs: [], nameOfAgent });
+  assert(dLedger.medicationInstructionsSnapshot.length === 1, "same agentId in both the ledger and the SOAP form's formulaLinks is not duplicated");
+  assert(dLedger.medicationInstructionsSnapshot[0].dose === "6克", "ledger's real doseText wins over the visit-only fallback");
 }
 
 // ---- Scenario B — cupping + anticoagulant ----------------------------------
@@ -218,6 +244,53 @@ console.log("Extra — banned-token interception on patient output");
   let threw2 = false;
   try { AVS.finalizeSnapshot(snaps, d2.id); } catch (e) { threw2 = true; }
   assert(threw2, "finalize on an already-finalized snapshot throws (immutability)");
+}
+
+// ---- 附加 — renderPatientText(2026-08-25,Ting 要求 email 可直接貼上)-------
+console.log("Extra — renderPatientText copy-for-email output");
+{
+  const kase = makeCase();
+  const note = makeNote({ modalitiesPerformed: ["modality.cupping", "modality.acupuncture"] });
+  const d = draftFor(kase, note);
+  d.clinicianAddedAdvice.push({ category: "lifestyle", text_zh: "睡前熱敷肩頸十分鐘。" });
+  d.followUpSnapshot = "兩週後回診";
+  const snaps = AVS.finalizeSnapshot(AVS.upsertDraft(note.avsSnapshots, d), d.id, "2026-01-15T18:00:00Z");
+  const fin = AVS.latestFinalized(snaps);
+  const text = AVS.renderPatientText(fin, { visitDate: note.visitDate });
+  assert(typeof text === "string" && text.length > 0, "renderPatientText returns non-empty string");
+  assert(!/<[a-z][\s\S]*>/i.test(text), "output has no HTML tags (plain text, paste-ready)");
+  assert(text.includes("睡前熱敷肩頸十分鐘"), "clinician-added advice text present");
+  assert(text.includes("兩週後回診"), "follow-up snapshot present");
+  assert(text.includes(note.visitDate), "visit date present");
+  const banned = AVS.checkPatientOutputSafety(text, kase);
+  assert(banned.length === 0, `plain-text output has zero internal ids/banned tokens (found: ${banned.join(",") || "none"})`);
+  assert(!text.includes("P-TEST-999"), "patientCode absent from plain-text patient output");
+
+  // 同一份 findBannedTokens 掃描器對純文字一樣有效(沒有 tag 可剝,不影響命中)。
+  const dirty = draftFor(kase, note);
+  dirty.clinicianAddedAdvice.push({ category: "lifestyle", text_zh: "此建議誤植內部代碼 pattern.liver_qi_stagnation 於病人文字。" });
+  const dirtyText = AVS.renderPatientText(dirty, { visitDate: note.visitDate });
+  assert(AVS.checkPatientOutputSafety(dirtyText, kase).includes("pattern."), "diagnosis id in plain-text draft output is caught by safety check");
+}
+
+// ---- 附加 — 自我觀察提示不進緊急就醫清單(2026-08-25,dry run 現場發現)-----
+// Ting 原話:「這個不用填入,因為那個有洩漏病人太多細節」——睡眠時數/壓力/
+// 情緒/精神體力這類自我追蹤問題,以前會被接進「什麼情況請盡快與我們聯絡或
+// 就醫」清單,讀起來像紅旗、也把追蹤細節印給病人帶走。兩個渲染器都要鎖住。
+console.log("Extra — self-observation prompts never appear in the urgent-care watch list");
+{
+  const kase = makeCase();
+  const note = makeNote({ modalitiesPerformed: ["modality.acupuncture"] });
+  const d = draftFor(kase, note);
+  d.patientObservationPromptsSnapshot = ["睡眠時數:平均一晚睡幾小時?", "壓力:最近感覺壓力有多大?"];
+  const snaps = AVS.finalizeSnapshot(AVS.upsertDraft(note.avsSnapshots, d), d.id, "2026-01-15T18:00:00Z");
+  const fin = AVS.latestFinalized(snaps);
+  const html = AVS.renderPatientHtml(fin, { visitDate: note.visitDate });
+  const text = AVS.renderPatientText(fin, { visitDate: note.visitDate });
+  assert(!html.includes("睡眠時數"), "renderPatientHtml never prints self-observation prompts");
+  assert(!text.includes("睡眠時數"), "renderPatientText never prints self-observation prompts");
+  assert(html.includes("服用調理品後噁心"), "renderPatientHtml still prints the fixed urgent-care red flags");
+  assert(text.includes("服用調理品後噁心"), "renderPatientText still prints the fixed urgent-care red flags");
 }
 
 // ---- Codex NO-GO 迴歸(2026-08-12 audit HIGH-1/HIGH-3/MED-1 的反例)---------
@@ -399,21 +472,12 @@ console.log("回歸鎖 — 病人文件的四條界線");
   assert(!html.includes("does_not_exist_anywhere"), "解析不到名稱時不把 agent id 印給病人");
   assert(d.medicationInstructionsSnapshot.length === 1, "只有名稱解析得出、且確定使用中的那一筆進表格");
 
-  // (4) 追蹤題面不得混進「請盡快就醫」清單
+  // (4) 追蹤題面完全不進病人文件(2026-08-25 Ting 裁示:「不用填入,洩漏病人
+  // 太多細節」「拿掉,不搬去別的段落」)。題面只留在結帳畫面給醫師參考。
   const urgentIdx = html.indexOf("什麼情況請盡快與我們聯絡或就醫");
-  const observeIdx = html.indexOf("這段期間請幫我留意這幾件事");
-  const promptIdx = html.indexOf(METRIC_PROMPT);
-  assert(urgentIdx > -1 && observeIdx > -1, "紅旗與自我觀察是兩個獨立段落");
-  assert(promptIdx > -1, "追蹤題面仍有印出來(不是靠刪掉來解決)");
-  assert(promptIdx > observeIdx, "追蹤題面落在『自我觀察』段,不在『請盡快就醫』段");
-  assert(html.slice(urgentIdx, observeIdx).indexOf(METRIC_PROMPT) === -1, "『請盡快就醫』段裡沒有任何追蹤題面");
-
-  // 沒有追蹤指標的病例不該憑空長出一個空段落
-  const bare = makeCase();
-  const bareNote = makeNote({ modalitiesPerformed: ["modality.acupuncture"] });
-  bare.soapNotes = [bareNote];
-  const d2 = AVS.buildDraftSnapshot({ kase: bare, note: bareNote, library: LIBRARY, clinic: CLINIC, modalityVocabulary: MODALITY_VOCAB, outcomeMetricDefs: metricDefs });
-  assert(!AVS.renderPatientHtml(d2, {}).includes("這段期間請幫我留意這幾件事"), "沒有追蹤指標時不印空的自我觀察段");
+  assert(urgentIdx > -1, "紅旗(緊急就醫)段仍在");
+  assert(html.indexOf(METRIC_PROMPT) === -1, "追蹤題面不出現在病人文件的任何段落");
+  assert(!html.includes("這段期間請幫我留意這幾件事"), "『自我觀察』段整段拿掉,不是搬去別的段落");
 }
 
 // ---- 回歸鎖 — 推斷只讀「已發生」的欄位,不讀計畫 --------------------------

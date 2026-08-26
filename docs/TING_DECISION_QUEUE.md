@@ -8,6 +8,37 @@
 
 ---
 
+## M. Pattern V2 整合遺留(2026-08-26 大合併,codex/pattern-v2 → main)
+
+兩線各跑過一輪內容填充,逐欄位三方裁定時取捨規則已記錄
+(裁定報告在合併 commit 訊息;輸掉的一方全文可自 codex/pattern-v2
+分支歷史取回,git 不會忘)。三件需要你確認:
+
+### M1 · gui_zhi_fu_ling_wan 的組成劑量:兩線哲學分歧
+
+- 分支版:`dose_g: "各等分(原文未給克數,見 source_classic)"` —— 守
+  「原文沒給就不編」(validate-herb-dosage-shape 的精神)
+- main 版:`9-12g` 現代調劑量,in_formula_en 敘述也更完整
+- **暫取分支版(不編造)。** 若 main 的 9-12g 有 Bensky 或藥典來源,
+  裁定後可改回 main 版並補 field_sources。
+
+### M2 · 三張 condition 卡的長內容被較短的 main 版取代
+
+`cond.asthma`(etiology 1972/2457 字元 → 189/1043)、
+`cond.chronic_cough`(etiology_en 18814 → 963!)。分支版疑似課件整段
+傾倒進欄位(18k 字元不是卡片欄位的長相);main 版是 C10 樣板句換真內容
+那條審計線的產出。**已取 main。** 若分支版其實是你要的課件深度內容,
+它應該進 curriculum/ 或 research pack,不是塞在卡片欄位裡。
+
+### M3 · 病人文件「自我觀察」段照 08-25 裁示整段拿掉
+
+分支曾把追蹤題面移成病人文件的獨立段落(「這些不是警訊」);你 08-25
+dry run 的裁示是「不用填入,洩漏病人太多細節」「拿掉,不搬去別的段落」。
+**已照裁示整段移除**,題面只留在結帳畫面給醫師參考。此項只是告知,
+若當初裁示另有範圍,說一聲就改回。
+
+---
+
 ## A. 臨床安全類(建議優先)
 
 ### A0b · 方劑的「中西藥交互作用」欄從來沒有被畫面讀過(要不要打開,我沒有自己決定)
@@ -279,6 +310,102 @@ grep -c "herb_drug_interactions" js/knowledge.js app.js   # 0 和 0
 **你要決定的**:(a) 照上面三段走;(b) 只做 17 張毒藥卡,其餘等 9/5 之後;
 (c) 其他排法。**這會決定接下來數十小時的工作方向,所以我沒有自己動手。**
 來源:`docs/research_packs/HERB_CLOUDTCM_LAYER_SCAN.md`。
+
+### A14 · 玉屏風散的君藥「黃耆」只以替代註記形式存在(比較表已經在漏顯示它)
+**問題**:`formula.yu_ping_feng_san` 全部組成只有 3 條:`(蜜炙黃耆)`(`is_alternate:true`)、
+白朮、防風。全庫**唯一**一張「君藥的唯一標記就掛在 `is_alternate` 條目上」的卡
+(用 `node -e` 掃過全部 223 方,見下方指令)——正常的替代註記(如四君子湯的
+`(黨參)`)旁邊都有一條**非替代**的正牌君藥;這張沒有。
+**已有的下游後果**:玉屏風散在 `cmp.qi_tonify` 比較表裡,#89 上的自動列渲染
+(`js/knowledge.js` `AUTO_DIM_FORMULA["組成差異"]`)依既定規則排除 `is_alternate`
+條目——所以那張表現在自動生成的「組成差異」欄**只顯示白朮、防風,黃耆(這帖方
+存在的理由)不會出現**。這不是我這次改的,是既有排除規則撞上這筆本來就不完整的資料。
+**我沒有動這筆資料**:補一條真正的黃耆條目(非替代、標君)需要判斷這是原始資料
+遺漏(該加回黃耆)還是註記打錯(`is_alternate` 該拿掉),兩種修法都在動組成結構,
+我不確定該選哪個。
+**重現**:`node -e 'const j=require("./data/herbs/formulas.json");for(const r of j.records){const c=r.composition||[];const chiefs=c.filter(x=>/君/.test(x.role_zh||""));if(chiefs.length&&!chiefs.some(x=>!x.is_alternate))console.log(r.name_zh)}'`
+
+### A15 · 四神丸:方名寫「四」,組成 6 味(生薑、大棗是否該排除在名稱計數外)
+**問題**:`validate-formula-correctness.js`(2026-08-24 修過誤判後仍在報)標記
+`formula.si_shen_wan` 方名編碼 4 味,實際組成 6 味:補骨脂、吳茱萸、肉豆蔻、
+五味子、生薑、大棗——後兩者不是替代註記(`is_alternate:false`)。
+**我的猜測、沒有寫進資料**:傳統方論常把生薑、大棗視為此方的「藥引/水煎輔料」
+（如《內科摘要》原方「生薑八兩切片,大棗百枚,水煮姜棗」煮湯製丸,不計入「四神」
+之數),但這是我的印象,不是這個 repo 裡任何來源文件說的,不敢當正式判定寫回去。
+**選項**:(a) 若判定屬實,幫 comp 加一個結構欄位(例如 `counts_toward_name:false`)
+標這兩味,比照 `is_alternate` 排除進計數;(b) 查到來源證實/推翻後我再動;
+(c) 維持現狀,方名編碼表本身就是「人工核實過」的清單(見腳本內註解),也可能是
+清單本身該把四神丸拿掉。
+
+### A16 · 甘麥大棗湯:組成無君藥標註
+**問題**:`formula.gan_mai_da_zao_tang` 四味(甘草、小麥、(浮小麥)替代、大棗)
+role_zh 全部是臣/佐,沒有一味標君。《金匱要略》原方是否明確定過君藥,各家說法
+不盡相同(有的以小麥為君,有的以甘草為君)——這是需要查證的方論判斷,我沒有
+自己補上。
+
+### A17 · 銀翹散劑量待補檔:「Zhu Ye」竹葉 vs 該方組成「Dan Zhu Ye」淡竹葉是否同一味藥
+**背景**:`data/imports/formula_doses/formula_dose_staging.json`(僅 5 筆,
+`status:staging_only`、`review_status:draft`,還沒上任何畫面)是從 HKBU 機構典藏
+逐字轉錄的劑量草稿。`formula.yin_qiao_san` 那筆的第 5 味逐字轉錄成「竹葉」
+(pinyin: Zhu Ye),`herb_id` 明確標 `null`、`dose_status:
+source_transcribed_herb_id_pending`——轉錄的人自己就標了「尚待核對」。
+**問題**:`herb.zhu_ye`(竹葉)與 `herb.dan_zhu_ye`(淡竹葉)是藥典裡**不同的兩味藥**
+(禾本科竹葉 vs 淡竹葉/Lophatherum),而銀翹散現有組成用的是「Dan Zhu Ye」。
+兩者藥性相近、古方常混用,但究竟這筆劑量來源(HKBU 掃描頁)寫的是哪一味,
+需要對照原始掃描頁核實,我不會用相近性猜。
+**同一批的另一筆(小柴胡湯「Ban Xia」vs 組成「Zhi Ban Xia」)已經確認是同一味藥**
+(`herb_id` 兩邊都是 `herb.ban_xia`,只是生/製的加工法命名差異)——已修掉驗證器
+對這種情況的誤判,不影響這筆。這筆是唯一還留著的,因為 `herb_id` 本來就是空的。
+**來源**:https://sys01.lib.hkbu.edu.hk/cmed/cmfid/detail.php?id=F00008&lang=chs
+
+### A18 · Codex review 抓到 #100/#101/#102(2026-08-24 這批 N1/N2/N5 收尾)的四個未修項目
+獨立的 Codex 對這三個 PR(已合併)做了逐行 diff review,8 條裡 4 條我已核實後直接
+修掉(見下方「已修」);剩下 4 條需要編輯判斷,不是我能自己定案的,列在這裡。
+**逐條複核方法**:對照本庫既有資料(361.json point_facts、方劑卡自身禁忌欄、
+pattern_library 卡片自身 mechanism_zh)重新驗證,不是只信 review 的字面。
+
+**已修(在同一個 PR,附證據)**:
+- 小腸實熱 `typical_points` 的 `BL39` → `ST39`(361.json 逐點明載 BL39 是三焦下合穴、
+  ST39 才是小腸下合穴)
+- 暑濕證 `typical_formulas` 移除 `formula.huo_xiang_zheng_qi_san`(該方卡自身
+  `contraindications_zh`/`cautions_zh` 明載「濕熱證見口渴、咽乾、舌苔黃膩者禁用」,
+  與暑濕證自身 tongue_zh/pulse_zh 幾乎逐字相符——同庫互相矛盾)。改成誠實留空,
+  不臆測替代方。
+- 肝陽上亢→肝風內動的鑑別文字範圍修正(原文把「肝陽上亢是肝風內動前驅證」寫成
+  普遍關係;本庫 `pattern.liver_wind` 卡自身 `mechanism_zh` 已明載肝風內動另有
+  熱極生風/血虛生風路徑,與肝陽化風無關——限定為肝陽化風這條路徑)
+- 痰蒙心竅鑑別的英文譯詞「withdrawal-type psychosis」/「manic-type psychosis」
+  改為「dian pattern」/「kuang pattern」+ 現象描述,避免與生醫 psychosis 分類混淆
+- 兩筆 `field_sources.aliases_zh`(月經不調、聽力損失)把整句英文審核備註改回
+  中文出典格式
+
+**需要 Ting 判斷(未動):**
+
+- **field_sources 系統性缺實體出典**:#101/#102 共 **53 筆** `field_sources` 用
+  「中醫診斷學/方劑學統編教材通行對應,2026-08-24 撰寫」這句樣板當來源,沒有書名、
+  版本、章節或頁碼——這是模型自述撰寫依據,不是可查證的出典。內容本身讀起來多是
+  標準教材級 TCM 知識(如痰蒙心竅 vs 痰火擾心的鑑別,我複核過是準確的),但「讀起來
+  對」不等於「有出典」。**要不要要求逐筆補實體書目/課件錨點,還是這類「教材通說」
+  允許用集合性樣板句(不掛單一頁碼)當作一種正式的 source 類型?這是這個庫 sourcing
+  政策的邊界問題,不是我能自己定的。**
+- **`typical_formulas` 的「查無理想方,誠實替代」是否可接受**:#101 已揭露(非隱藏)
+  兩個替代選擇——心膽氣虛/膽氣虛因庫內無安神定志丸/十味溫膽湯而改連酸棗仁湯/
+  溫膽湯;風寒濕痹因庫內無蠲痹湯/羌活勝濕湯而改連獨活寄生湯(慢性夾虛證,偏離
+  新感實證的典型用方)。這是**有揭露、有記錄**的選擇,不是隱藏錯誤,但仍是「功能
+  相近」而非「臨床上就是這個證的代表方」。**要不要接受這種揭露式替代,還是應該
+  對這 2 筆(以及未來同類情況)一律改成誠實留空、等對應方卡建好再連?**
+- **`pattern.phlegm_misting_heart` 只有 1 個 `differential_patterns`**:
+  `docs/PATTERN_CARD_TEMPLATE.md` 明文要求「每個證型至少列 2 個」,這張只有 1 個
+  (痰火擾心)。英譯已修(見上),但補第二個易混淆證型(如痰濁蒙蔽、中風閉證)需要
+  新寫鑑別內容,我沒有自己加——那是新增臨床論述,不是修正既有錯誤。
+- **`cond.female_infertility` 的《景岳全書》出典是否該恢復**:#100 的 N5 結案把
+  這段出典從此卡移到 `cond.irregular_menstruation`,理由是文字「衝任受損、腎氣
+  日消、輕則或早或遲、重則漸成枯閉」的字面病名是月經先後無定期,不含「不孕」二字。
+  但這段話的病機鏈(衝任受損→腎氣漸衰→漸成枯閉)本身就是中醫論不孕最經典的路徑
+  之一,不是所有出典都必須直接寫出病名才算數,一份出典可以同時支持多張卡。
+  **這是怎麼讀一段古文的學術判斷,不是我能取代妳(或真正懂古籍的人)的地方**——
+  要維持現狀(留在月經不調)、恢復成雙卡並存的 cross-reference,還是其他讀法,
+  需要妳(或委託的來源核實)裁定,不能只靠 N5 的字面命中規則自動判。
 
 ## B. Schema / 結構裁定
 

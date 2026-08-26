@@ -1,6 +1,6 @@
 {
   "note": "Defect-count ceiling per layer. CI fails if any count rises. Only ever lower this file — see scripts/check-validation-ratchet.js.",
-  "updated_at": "2026-08-19",
+  "updated_at": "2026-08-26",
   "rebaseline_history": [
     {
       "date": "2026-08-05",
@@ -13,14 +13,16 @@
     {
       "date": "2026-08-06",
       "reason": "symptoms namespace joins the ratchet: template + validator shipped 2026-08-06, completing D14 for all four namespaces"
+    },
+    {
+      "date": "2026-08-26",
+      "reason": "validate-encoding 排除 data/audits+data/imports(誤報群,見 UNWIRED_VALIDATORS_2026-08-24)"
     }
   ],
   "layers": {
     "conditions": {
-      "defects": 52,
-      "by_code": {
-        "C9": 52
-      },
+      "defects": 0,
+      "by_code": {},
       "doc": "docs/CONDITION_CARD_TEMPLATE.md"
     },
     "patterns": {
@@ -41,6 +43,30 @@
     "naming": {
       "defects": 0,
       "doc": "DECISIONS.md D3"
+    },
+    "encoding": {
+      "defects": 1817,
+      "by_code": {
+        "chinese_field_without_cjk": 1814,
+        "replacement_character": 2,
+        "question_mark_only": 1
+      },
+      "doc": "data/audits/en_zh_term_crosswalk.json"
+    },
+    "formula_correctness": {
+      "defects": 2,
+      "by_code": {
+        "wrong-herb-count": 1,
+        "no-chief": 1
+      },
+      "doc": "scripts/validate-formula-correctness.js"
+    },
+    "formula_dose_staging": {
+      "defects": 1,
+      "by_code": {
+        "unresolved_pinyin_or_herb_id": 1
+      },
+      "doc": "data/imports/formula_doses/formula_dose_staging.json"
     }
   }
 }

@@ -84,6 +84,45 @@ const RATCHETED = [
     detail: () => null,
     doc: "DECISIONS.md D3",
   },
+  {
+    key: "encoding",
+    script: "scripts/validate-encoding.js",
+    args: ["--json"],
+    extract: (out) => JSON.parse(out).defects,
+    detail: (out) => JSON.parse(out).by_code,
+    // 2026-08-24 加入：中文欄位裝英文（chinese_field_without_cjk）與匯入殘留的
+    // 置換字元，一度 13,201 筆而完全沒有 gate ——「Ting 在中文欄看到英文」是
+    // 每天都看得到的內容缺陷，卻能無聲增長。方劑主治／現代運用回填後入棘輪。
+    doc: "data/audits/en_zh_term_crosswalk.json",
+  },
+  {
+    key: "formula_correctness",
+    script: "scripts/validate-formula-correctness.js",
+    args: ["--json"],
+    extract: (out) => JSON.parse(out).defects,
+    detail: (out) => JSON.parse(out).by_code,
+    // 2026-08-24：修掉兩個驗證器誤判（is_alternate 替代註記與 deprecated 退役
+    // 記錄本不該算進結構檢查）後，剩 2 筆真缺陷需要 TCM 判斷才能結案（四神丸
+    // 名稱編碼 4 味 vs 實際 6 味的藥引歸類；甘麥大棗湯無君藥標註）——留給 Ting。
+    doc: "scripts/validate-formula-correctness.js",
+  },
+  {
+    key: "formula_dose_staging",
+    script: "scripts/validate-formula-dose-staging.js",
+    args: ["--json"],
+    extract: (out) => JSON.parse(out).defects,
+    detail: (out) => JSON.parse(out).by_code,
+    // 2026-08-24：修掉一個驗證器誤判（加工法改了 pinyin 但 herb_id 兩邊一致
+    // 時不該算查無此藥）後，剩 1 筆真待解：銀翹散的「Zhu Ye／竹葉」與該方
+    // 組成寫的「Dan Zhu Ye／淡竹葉」是藥典裡不同的兩味藥，herb_id 明確標成
+    // pending——需要人工核對 HKBU 來源掃描頁後才能定案，不是我能猜的。
+    doc: "data/imports/formula_doses/formula_dose_staging.json",
+  },
+  // retired_id_references sat here one day (2026-08-26, ceiling 10) while the
+  // D21 herb_pairs residue and D16 pattern re-references were redirected and
+  // Ting ruled on 敗毒散→人參敗毒散 (D22). Baseline hit 0 the same day — it
+  // graduated into the blocking `green` job in validate.yml, like point_ids.
+  //
   // point_ids sat here temporarily (ceiling 72) while the extra-point line
   // backfilled the D2 ids. Done 2026-08-06 — it graduated into the blocking
   // `green` job in .github/workflows/validate.yml. That is the intended life

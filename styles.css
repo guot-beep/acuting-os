@@ -1,4 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;600;700&family=Noto+Sans+TC:wght@400;500;600;700&display=swap");
+/* 品牌字型不在這裡載。2026-08-24 之前這裡有一行 @import Google Fonts——
+   它讓 styles.css 在遠端 CSS 回來前一直 in-flight，而 Chromium 會讓
+   「所有 script 的執行」（含外部 defer）等 in-flight 的 render-blocking
+   stylesheet：字型服務慢/被牆/逾時的網路上整個 app 凍 12 秒（實測）。
+   字型現在由 index.html 以 preconnect + preload + media="print" 連結
+   + js/fonts.js 的載完後翻轉載入，永不進入阻塞路徑。
+   不變式：這個檔案永遠不准出現 @import 外部 URL。 */
 
 /* ==================================================================
    Canonical design tokens — 唯一的 :root,改 palette 只改這裡。
@@ -37,8 +43,9 @@
   --nav-bg-soft: #1d443c;
   --nav-ink: #f2ece0;
   --nav-line: #c89033;
-  --serif: "Noto Serif TC", Georgia, "Songti TC", "STSong", serif;
-  font-family: "Noto Sans TC", "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+  --serif: "Noto Serif TC", "Songti TC", "STSong", "PMingLiU", Georgia, serif;
+  --sans: "Noto Sans TC", "PingFang TC", "Noto Sans CJK TC", "Microsoft JhengHei", "Segoe UI", Arial, sans-serif;
+  font-family: var(--sans);
 
   /* UI/UX polish batch (2026-08-11, Claude) — spacing scale + motion +
      accessible focus-ring tokens. --gold itself stays untouched (it's a
@@ -669,6 +676,13 @@ h1 {
   font-weight: 700;
 }
 .outcome-tracking-table tbody td:first-child { color: #20383b; font-weight: 700; }
+/* Change/Trend 上色(2026-08-25,dry run 現場發現):箭頭本身還是「原始數字
+   動向」,不因這個上色而改變意義——上色是額外疊加的判讀層,顏色跟
+   .brief-good/.brief-bad(P0.5 Visit Brief)同一套色碼,兩個面板視覺一致。
+   direction_good 是 individualized/contextual/未標註的 metric 不上色
+   (outcomeChangeGoodness 回傳 null → 沒有 class),不替這類 metric 下判斷。*/
+.outcome-tracking-table td.outcome-good { color: #4ade80; }
+.outcome-tracking-table td.outcome-bad { color: #f87171; }
 .outcome-tracking-table .direction-hint { display: block; color: var(--muted); font-size: 0.72rem; font-weight: 500; margin-top: 0.15rem; }
 /* 判讀狀態：跟數字放在一起，不然「-3」會被當成有臨床意義的變化來讀。
    刻意不用紅綠——這不是好壞，是「這個數字能不能拿去對照文獻」。 */
@@ -1283,7 +1297,14 @@ textarea {
   height: 24px;
   line-height: 1;
   padding: 0;
+  position: relative;
   width: 24px;
+}
+/* UI/UX P1#7: 手機 44px 熱區——視覺不變，用透明偽元素撐大點擊範圍。 */
+.active-filter-chip button::after {
+  content: "";
+  inset: -10px;
+  position: absolute;
 }
 
 .clear-all-filters {
@@ -1542,6 +1563,12 @@ footer {
   padding: 0 0.42rem;
   position: absolute;
   transform: translate(-50%, -50%);
+}
+/* UI/UX P1#7: 經絡圖穴位標記的 44px 熱區（視覺尺寸不變）。 */
+.model-point::after {
+  content: "";
+  inset: -9px -4px;
+  position: absolute;
 }
 
 .model-point::before {
@@ -2487,6 +2514,21 @@ label {
   margin-top: 0.35rem;
 }
 
+/* 中藥服用細節組合小工具(2026-08-25,Ting 要求)——劑型/時機/次數三格
+   一列,窄螢幕自動收成一欄(minmax(0,1fr) 本來就會這樣折)。 */
+.agent-herb-detail-row {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-3);
+}
+.form-hint {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--muted);
+  margin: -0.2rem 0 0.2rem;
+}
+
 .form-section > legend {
   grid-column: 1 / -1;
   display: flex;
@@ -2931,20 +2973,25 @@ button:hover,
 }
 
 .section-quicknav a {
-  background: #fff;
-  border: 1px solid #d7e6dc;
+  /* UI/UX P1#5 (2026-08-23): this selector was declared twice; the later block
+     re-declared background/color but NOT border, so the old-palette border
+     survived per-property cascade — the same per-property trap the :root
+     comment at the top of this file documents. Merged into one rule. */
+  background: #f2ecdd;
+  border: 1px solid var(--line);
   border-radius: 999px;
-  color: #315e40;
+  color: #5c503f;
   font-size: 0.82rem;
   font-weight: 900;
-  min-height: 32px;
+  min-height: 44px;
   padding: 0.36rem 0.68rem;
   text-decoration: none;
 }
 
 .section-quicknav a:hover {
-  background: #edf8f3;
-  border-color: rgba(13, 111, 105, 0.28);
+  background: var(--green-soft);
+  border-color: var(--accent-dark);
+  color: var(--accent-dark);
 }
 
 .inline-anchor {
@@ -4577,7 +4624,7 @@ h1, h2, h3,
 .section-heading h2,
 .detail-card h2,
 .library-chip strong {
-  font-family: "Noto Serif TC", "Noto Sans TC", serif;
+  font-family: var(--serif);
   letter-spacing: 0.01em;
 }
 
@@ -4714,16 +4761,8 @@ input:focus, select:focus, textarea:focus {
   border-radius: 999px;
 }
 
-/* --- Section quicknav pills ----------------------------------------- */
-.section-quicknav a {
-  background: #f2ecdd;
-  border-radius: 999px;
-  color: #5c503f;
-}
-.section-quicknav a:hover {
-  background: var(--green-soft);
-  color: var(--accent-dark);
-}
+/* --- Section quicknav pills: merged into the primary rule above (P1#5) --- */
+/* .section-quicknav a:hover merged into the primary rule (P1#5) */
 
 /* --- Tables & dialogs ------------------------------------------------ */
 table, th, td { border-color: var(--line); }
@@ -4889,6 +4928,18 @@ a { color: var(--accent-dark); }
 .link-picker-option:hover,
 .link-picker-option.active { background: #f2ead7; }
 .link-picker-option small { color: #8a7d5c; }
+.link-picker-gap-option {
+  border-top: 1px dashed #ddd3bd;
+  color: #8a6d1f;
+  font-size: 0.85rem;
+  font-style: italic;
+}
+.link-picker-gap-option:hover { background: #fbf3e0; }
+.link-picker-gap-option.logged {
+  color: #2f9e5c;
+  font-style: normal;
+  cursor: default;
+}
 
 .k-records { margin-top: 1rem; }
 
@@ -4922,7 +4973,7 @@ a { color: var(--accent-dark); }
   justify-content: space-between;
 }
 .k-card header strong {
-  font-family: "Noto Serif TC", serif;
+  font-family: var(--serif);
   font-size: 1.02rem;
 }
 .k-card header strong small { color: var(--muted); font-weight: 400; }
@@ -4963,7 +5014,7 @@ a { color: var(--accent-dark); }
 }
 .k-pattern-card header strong {
   color: #3b2a1a;
-  font-family: "Noto Serif TC", serif;
+  font-family: var(--serif);
   font-size: 1.15rem;
 }
 .k-pattern-summary {
@@ -5123,7 +5174,7 @@ a { color: var(--accent-dark); }
 }
 .k-big-card-title {
   color: #2c1d11;
-  font-family: "Noto Serif TC", serif;
+  font-family: var(--serif);
   font-size: 1.65rem;
   font-weight: 700;
   margin: 0 0 0.25rem;
@@ -5353,6 +5404,29 @@ body[data-content-mode="english"] .i18n-zh {
   font-size: 0.82rem;
   font-style: italic;
 }
+
+/* 卡片引用格(2026-08-24 comparisons 卡源自動列):非鑑別點,淡色區隔 Ting 手寫格 */
+.k-cell-auto {
+  display: block;
+  color: var(--muted, #786c5c);
+  font-size: 0.92em;
+  position: relative;
+  padding-left: 1.4em;
+}
+.k-cell-auto::before {
+  content: "卡";
+  position: absolute;
+  left: 0;
+  top: 0.1em;
+  font-size: 0.72em;
+  line-height: 1.4;
+  padding: 0 0.25em;
+  border: 1px solid var(--line, #e5dcc9);
+  border-radius: 4px;
+  color: var(--muted, #786c5c);
+}
+.k-auto-legend { font-size: 0.78em; }
+
 .k-link-chip {
   background: #eef4ef;
   border: 1px solid #dce6dc;
@@ -5466,7 +5540,7 @@ body[data-content-mode="english"] .i18n-zh {
 }
 .k-detail-hero h2 {
   color: #fff;
-  font-family: "Noto Serif TC", serif;
+  font-family: var(--serif);
   font-size: 2.2rem;
   line-height: 1.15;
   margin: 0;
@@ -5537,7 +5611,7 @@ body[data-content-mode="english"] .i18n-zh {
 .k-detail-panel > h2 {
   border-bottom: 1px solid #ead7df;
   color: #8c4c70;
-  font-family: "Noto Serif TC", serif;
+  font-family: var(--serif);
   font-size: 1.28rem;
   margin: 0 0 0.85rem;
   padding-bottom: 0.5rem;
@@ -5557,7 +5631,7 @@ body[data-content-mode="english"] .i18n-zh {
 .k-detail-columns .k-detail-section + .k-detail-section { margin-top: 0; }
 .k-detail-section h3 {
   color: #244f43;
-  font-family: "Noto Serif TC", serif;
+  font-family: var(--serif);
   font-size: 1rem;
   margin: 0 0 0.55rem;
 }
@@ -6497,7 +6571,7 @@ html { scroll-padding-top: 92px; }
   font-weight: 800;
   font-size: 0.82rem;
   letter-spacing: 0.04em;
-  color: #16352f;
+  color: var(--nav-bg);
   opacity: 0.72;
 }
 .point-identity__chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
@@ -6506,8 +6580,8 @@ html { scroll-padding-top: 92px; }
   font-size: 0.86rem;
   padding: 0.22rem 0.6rem;
   border-radius: 999px;
-  background: #16352f;
-  color: #f3eddf;
+  background: var(--nav-bg);
+  color: var(--nav-ink);
 }
 /* A prohibition in the identity list is a warning, not a badge — ST17's
    「絕對禁針禁灸」 must never read like 「合穴」. */
@@ -6647,7 +6721,7 @@ html { scroll-padding-top: 92px; }
   justify-content: space-between;
   gap: 0.75rem;
   padding: 0.6rem 0.85rem;
-  font-family: "Noto Serif TC", serif;
+  font-family: var(--serif);
 }
 .clinical-note__summary::-webkit-details-marker { display: none; }
 .clinical-note__summary:hover { background: #f9f3e2; }

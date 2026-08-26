@@ -7,7 +7,7 @@
   },
   "western_conditions": [
     {
-      "id": "western_condition.pcos",
+      "id": "cond.pcos",
       "name_en": "Polycystic Ovary Syndrome",
       "name_zh": "多囊卵巢症候群",
       "category": "reproductive_endocrinology",
@@ -18,7 +18,7 @@
       "red_flags_en": "Heavy abnormal bleeding, possible pregnancy, severe pelvic pain, rapid weight change, or metabolic abnormalities require medical evaluation."
     },
     {
-      "id": "western_condition.unexplained_infertility",
+      "id": "cond.unexplained_infertility",
       "name_en": "Unexplained Infertility",
       "name_zh": "不明原因不孕",
       "category": "reproductive_medicine",
@@ -29,21 +29,21 @@
   ],
   "eastern_diseases": [
     {
-      "id": "eastern_disease.infertility",
+      "id": "tdis.bu_yun",
       "name_zh": "不孕",
       "pinyin": "Bu Yun",
       "name_en": "Infertility",
       "classical_category": "gynecology"
     },
     {
-      "id": "eastern_disease.delayed_menstruation",
+      "id": "tdis.yue_jing_hou_qi",
       "name_zh": "月經後期",
       "pinyin": "Yue Jing Hou Qi",
       "name_en": "Delayed Menstruation",
       "classical_category": "gynecology"
     },
     {
-      "id": "eastern_disease.amenorrhea",
+      "id": "tdis.bi_jing",
       "name_zh": "閉經",
       "pinyin": "Bi Jing",
       "name_en": "Amenorrhea",
@@ -114,39 +114,39 @@
   "links": {
     "western_to_eastern": [
       {
-        "western_condition_id": "western_condition.pcos",
-        "eastern_disease_id": "eastern_disease.infertility",
+        "western_condition_id": "cond.pcos",
+        "eastern_disease_id": "tdis.bu_yun",
         "relationship_type": "may_present_as"
       },
       {
-        "western_condition_id": "western_condition.pcos",
-        "eastern_disease_id": "eastern_disease.delayed_menstruation",
+        "western_condition_id": "cond.pcos",
+        "eastern_disease_id": "tdis.yue_jing_hou_qi",
         "relationship_type": "may_present_as"
       },
       {
-        "western_condition_id": "western_condition.pcos",
-        "eastern_disease_id": "eastern_disease.amenorrhea",
+        "western_condition_id": "cond.pcos",
+        "eastern_disease_id": "tdis.bi_jing",
         "relationship_type": "may_present_as"
       }
     ],
     "western_to_patterns": [
       {
-        "western_condition_id": "western_condition.pcos",
+        "western_condition_id": "cond.pcos",
         "pattern_id": "pattern.phlegm_damp_obstruction",
         "relevance": "common"
       },
       {
-        "western_condition_id": "western_condition.pcos",
+        "western_condition_id": "cond.pcos",
         "pattern_id": "pattern.kidney_deficiency",
         "relevance": "common"
       },
       {
-        "western_condition_id": "western_condition.pcos",
+        "western_condition_id": "cond.pcos",
         "pattern_id": "pattern.liver_qi_stagnation",
         "relevance": "possible"
       },
       {
-        "western_condition_id": "western_condition.pcos",
+        "western_condition_id": "cond.pcos",
         "pattern_id": "pattern.blood_stasis",
         "relevance": "possible"
       }

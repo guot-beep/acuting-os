@@ -147,7 +147,11 @@ const NUMERIC_OUTCOME_METRIC_CONFIG = [
   //     outcome_metrics.json; this config makes no higher/lower-is-better
   //     claim, and formatNumericOutcomeMetrics below must not either.
   { metricId: "metric.bloating", min: 0, max: 10, integer: true },
-  { metricId: "metric.sleep_onset_minutes", min: 0, max: null, integer: true },
+  // placeholderHint (2026-08-25, dry run finding): 病人講「大概一小時」是
+  // 常態,填分鐘數的欄位單獨看很容易讓人愣一下要不要自己換算。這裡直接把
+  // 換算寫進佔位字,不改欄位本身(還是分鐘、還是整數)——不引入新的輸入
+  // 格式或解析邏輯,純粹是提示文字,風險最低的修法。
+  { metricId: "metric.sleep_onset_minutes", min: 0, max: null, integer: true, placeholderHint: "分鐘數,例如1小時填60、半小時填30" },
   { metricId: "metric.night_wakings", min: 0, max: null, integer: true },
   { metricId: "metric.bowel_frequency", min: 0, max: null, integer: true },
   // Academic-readiness batch (2026-08, pre-9/01 freeze): PGIC — the
@@ -160,6 +164,40 @@ const NUMERIC_OUTCOME_METRIC_CONFIG = [
   // instrument class).
   { metricId: "metric.pgic", min: 1, max: 7, integer: true },
 ];
+
+// SOAP 開新診時帶入上一診的白名單(2026-08-25,Ting 要求)。跟上面
+// NUMERIC_OUTCOME_METRIC_CONFIG 同一個 TDZ 理由,不能宣告在 openSoapEditor
+// 附近——render() 在檔案最上面同步跑,若使用者一開頁就有已選病例,呼叫鏈
+// 可能在這個檔案後段的 const 初始化之前就先摸到它。
+//
+// 新增欄位時先問:這是「醫師打算怎麼治」還是「這次觀察/量到什麼」?前者
+// 直接列入 SOAP_CARRY_FORWARD_FIELDS。後者原則上不列入(見下面 SOAP_
+// CARRY_FORWARD_TEXT_MARKED_FIELDS 的例外與理由)。
+// scripts/test-avs-checkout.js 沒有涵蓋這支(非 AVS 引擎),下面清單本身
+// 就是唯一防線——刻意寫成外顯陣列方便下次修改時一眼看穿範圍。
+const SOAP_CARRY_FORWARD_FIELDS = [
+  // 2026-08-25 second round(Ting 明確要求,見 soapCarryForwardFields 上方
+  // 說明):S/O/A/P 這四格本來是「這次觀察到什麼」的欄位,原則上不該帶入
+  // 上次內容(牴觸 D4)。但 Ting 用 AskUserQuestion 確認後選的是「自動帶入,
+  // 但清楚標示沿用上次、請確認」——不是取消這個顧慮,是換一種方式處理它:
+  // 帶入時強制加一段看得到的標記文字(SOAP_CARRY_FORWARD_MARKER),病歷上
+  // 永遠留下「這段是沿用的」的痕跡,不會被誤讀成當場重新問診/評估的結果。
+  "subjective", "objective", "assessment", "plan",
+  "tcmPattern", "tcmPatternSelections", "tcmPatternLinks", "pathomechanism", "treatmentPrinciple",
+  "pointsUsed", "acupointLinks", "retentionMinutes", "technique",
+  "formulaHerbs", "formulaLinks", "herbLinks",
+  "westernMeds", "medicationLinks",
+  "modalities", "modalitiesPerformed",
+  "westernConditionLinks", "easternDiseaseLinks", "safetyFlagLinks",
+  "followUp"
+];
+
+// 上面四格(S/O/A/P)帶入時要加的可見標記——絕不安靜複製。病人代碼/病歷
+// 內容本身無 PHI 疑慮(這段只在瀏覽器記憶體/病例物件裡,不送出、不記錄),
+// 純粹是給「簽這張病歷的人」看的痕跡。刻意雙語、刻意用中括號包住,跟正常
+// 診療文字有視覺區隔,選取刪除也方便。
+const SOAP_CARRY_FORWARD_MARKER = "〔沿用上次內容,請確認並修改 Carried forward from last visit — please review and edit〕\n";
+const SOAP_CARRY_FORWARD_TEXT_MARKED_FIELDS = new Set(["subjective", "objective", "assessment", "plan"]);
 
 // Outcome Tracking v1 direction-hint labels (2026-08, CG8). Declared here —
 // not beside renderOutcomeTrackingPanel further down — for the same TDZ
@@ -189,6 +227,26 @@ const OUTCOME_INTERPRETATION_BADGES = {
   source_pending: { text: "判讀來源待補", cls: "interp-pending" },
 };
 
+// Knowledge-gap logging(2026-08-25,Ting 要求「給 picker 加自由輸入後路,
+// 缺口另外收集」)。同一個 TDZ 理由不能宣告在 enhanceLinkField 附近——
+// 說明見該函式上方 readKnowledgeGaps 前的完整註解。
+const KNOWLEDGE_GAP_STORAGE_KEY = "acuting-knowledge-gaps-v1";
+const KNOWLEDGE_GAP_FIELD_LABELS = {
+  symptomLinks: "症狀 Symptom",
+  westernConditionLinks: "西醫病名 Western condition",
+  easternDiseaseLinks: "中醫病名 Eastern disease",
+  formulaLinks: "方劑 Formula",
+  medicationLinks: "西藥/藥物 Medication",
+  acupointLinks: "穴位 Acupoint",
+  safetyFlagLinks: "安全警示 Safety flag",
+  herbLinks: "單味中藥 Herb",
+  tcmPatternPrimary: "主要證型 TCM pattern（主證）",
+  tcmPatternSecondary: "次要證型 TCM pattern（次證）",
+  westernConditions: "西醫病名 Western condition",
+  easternDiseases: "中醫病名 Eastern disease",
+  tcmPatterns: "證型 TCM pattern",
+};
+
 // Config-integrity self-check (2026-08, docs/OUTCOME_METRICS_SEMANTIC_AUDIT_V2.md
 // §7 — "worthwhile before more metrics," recommended there, implemented
 // here alongside this batch's new entries as suggested). Catches a
@@ -205,8 +263,8 @@ const OUTCOME_INTERPRETATION_BADGES = {
 // only, never alert() — a config typo is a developer-facing bug to catch in
 // QA, not something a clinician using the app should ever see a popup
 // about. Runs once, synchronously, immediately after the array above:
-// index.html loads data/generated/knowledge_data.js (which sets
-// globalThis.ACUTING_KNOWLEDGE) before app.js, so getOutcomeMetricDef has
+// index.html loads the six knowledge shards knowledge_{core,ref,rx,mm,dx,pat}.js
+// (which merge into globalThis.ACUTING_KNOWLEDGE) before app.js, so getOutcomeMetricDef has
 // real data to check against from the very first line of this file — no
 // deferral to page-load events needed. A correctly-configured array (the
 // only state this repo should ever ship) produces zero console output.
@@ -230,20 +288,20 @@ if ((globalThis.ACUTING_KNOWLEDGE?.outcomeMetrics?.records || []).length > 0) {
 // silently degrading to placeholder-only content.
 (function dataLoadGuard() {
   const missing = [];
-  // 逐檔說出「少了它會怎樣」—— 一句籠統的「穴位內容會大量缺失」套在
-  // knowledge_data.js 上是錯的(它裝的是方劑/中藥/證型/建議庫),
-  // 而錯的診斷會讓人往錯的方向找。
-  if (!globalThis.ACUTING_APP_DATA) missing.push("data/generated/app_data.js(介面設定與經絡索引)");
-  if (!globalThis.ACUTING_POINTS_361) missing.push("data/generated/points_361.js(361 經穴內容)");
-  /* knowledge_data.js 過去不在名單裡,而它是獨立的 <script> —— 它 404 時
-   * (就是這個 guard 自己註解說的「檔案未同步」情境)app 照常運作,但臨床
-   * 路徑至少有兩處把「沒載入」讀成「沒問題」:
-   *   診務回顧的知識缺口只在 knowledge truthy 時計算,否則 [] → 面板印出
-   *   「目前用到的方劑與證型卡片都已有來源」,那是一句肯定的假話;
-   *   AVS 的四個 ?.records || [] 讓建議庫變空 → checkout 顯示「沒有符合的
-   *   建議」,而真相是規則庫沒載入。
-   * 缺了就要跟其他兩個一樣大聲。 */
-  if (!globalThis.ACUTING_KNOWLEDGE) missing.push("data/generated/knowledge_data.js(方劑/中藥/證型/病名與診後建議庫;缺了它,診務回顧會誤報「都已有來源」)");
+  if (!globalThis.ACUTING_APP_DATA) missing.push("data/generated/app_data.js");
+  if (!globalThis.ACUTING_POINTS_361) missing.push("data/generated/points_361.js");
+  // 知識分片（P1）：單片缺席時 ACUTING_KNOWLEDGE 仍存在，各渲染線的 `|| []`
+  // 會把缺片吞成「沒有錯誤的空 grid」——這裡把靜默劣化變回大聲失敗。
+  // __expected 清單由 build-data 寫進 core 片（單一出處，不會與這裡漂移）；
+  // core 自己缺席時先只報 core——它是最上游，其他片的登記簿就在它身上。
+  const kParts = globalThis.ACUTING_KNOWLEDGE_PARTS;
+  if (!kParts || !Array.isArray(kParts.__expected)) {
+    missing.push("data/generated/knowledge_core.js");
+  } else {
+    for (const name of kParts.__expected) {
+      if (!kParts[name]) missing.push("data/generated/knowledge_" + name + ".js");
+    }
+  }
   if (!missing.length) return;
   const banner = document.createElement("div");
   banner.className = "data-missing-banner";
@@ -1204,6 +1262,15 @@ function unifiedSearch(rawQuery) {
       txt(c.tcm_patterns)]),
     cases: pick(clinicalCases, (c) => [c.patientCode, c.caseTitle, c.chiefComplaint,
       txt(c.westernConditions), txt(c.tcmPatterns)]),
+    // UI/UX P1#6 (2026-08-23): symptoms / pharm drugs / comparison tables each
+    // have their own workspace but were unreachable from the home search —
+    // typing 「頭痛」 or a drug name said "not found" while the card existed.
+    symptoms: pick(knowledgeRecords("symptoms"), (s) => [s.name_zh, s.name_en, s.pinyin, s.id,
+      txt(s.aliases_zh), txt(s.aliases_en)]),
+    pharmDrugs: pick(knowledgeRecords("pharmDrugs"), (d) => [d.name_zh, d.name_en, d.id,
+      txt(d.brand_names_en), d.mechanism_zh, d.mechanism_en]),
+    comparisons: pick(knowledgeRecords("comparisons"), (c) => [c.title_zh, c.title_en, c.id,
+      txt(c.compares)]),
   };
 }
 
@@ -1273,11 +1340,20 @@ function renderGlobalResults(rawQuery) {
   group(modeText("病例 Cases", "Cases"), res.cases, (c) =>
     grItem("case", modeText("病例", "Case"), c.patientCode || "", `${c.caseTitle || c.patientCode || ""}`,
       c.chiefComplaint || "", { code: c.patientCode || "" }));
+  group(modeText("症狀 Symptoms", "Symptoms"), res.symptoms, (sy) =>
+    grItem("symptom", modeText("症狀", "Symptom"), "", `${sy.name_zh || sy.name_en || sy.id}`,
+      [sy.name_en, sy.pinyin].filter(Boolean).join(" · "), { id: sy.id, name: sy.name_zh || sy.name_en || "" }));
+  group(modeText("西藥 Drugs", "Drugs"), res.pharmDrugs, (d) =>
+    grItem("pharm", modeText("西藥", "Drug"), "", `${d.name_zh || d.name_en || d.id}`,
+      [d.name_en, txt(d.brand_names_en)].filter(Boolean).join(" · "), { id: d.id }));
+  group(modeText("辨證鑑別 Comparisons", "Comparisons"), res.comparisons, (cp) =>
+    grItem("comparison", modeText("鑑別", "Compare"), "", `${cp.title_zh || cp.title_en || cp.id}`,
+      cp.title_en || "", { id: cp.id }));
 
   if (!groups.length) {
     globalResultsEl.innerHTML = `<p class="gr-empty">${escapeHtml(modeText(
-      `找不到「${rawQuery.trim()}」相關的穴位、方劑、中藥、病症或病例。`,
-      `No acupoints, formulas, herbs, conditions, or cases found for “${rawQuery.trim()}”.`
+      `找不到「${rawQuery.trim()}」相關的穴位、方劑、中藥、病症、病例、症狀、西藥或鑑別表。`,
+      `No acupoints, formulas, herbs, conditions, cases, symptoms, drugs, or comparison tables found for “${rawQuery.trim()}”.`
     ))}</p>`;
   } else {
     globalResultsEl.innerHTML = groups.join("");
@@ -1354,6 +1430,28 @@ function openGlobalResult(btn) {
   if (kind === "case") {
     if (caseSearch) { caseSearch.value = btn.dataset.code || ""; renderClinicalCases(); }
     goToSection("caseWorkspace");
+    return;
+  }
+  if (kind === "pharm") {
+    if (openKnowledgeRecord(kind, btn.dataset.id)) return;   // api.openDetail 已支援 pharm
+    goToSection("pharmSection");
+    return;
+  }
+  if (kind === "symptom") {
+    // 症狀區有自己的過濾框:帶著名字過去,清單直接收斂到那一筆。
+    goToSection("symptomSection");
+    requestAnimationFrame(() => {
+      const f = document.getElementById("symptomFilter");
+      if (f) { f.value = btn.dataset.name || ""; f.dispatchEvent(new Event("input", { bubbles: true })); }
+    });
+    return;
+  }
+  if (kind === "comparison") {
+    goToSection("comparisonSection");
+    requestAnimationFrame(() => {
+      const card = document.querySelector(`[data-record-id="${(window.CSS && CSS.escape) ? CSS.escape(btn.dataset.id) : btn.dataset.id}"]`);
+      if (card) { card.scrollIntoView({ behavior: "smooth", block: "center" }); card.classList.add("gr-flash"); setTimeout(() => card.classList.remove("gr-flash"), 1600); }
+    });
   }
 }
 
@@ -1413,6 +1511,33 @@ document.querySelectorAll("[data-directory-topic-link]").forEach((link) => {
     render();
   });
 });
+// 2026-08-25(Ting 要求):劑型/服用時機/一天幾次/西藥間隔 這幾個下拉/勾選
+// 純粹是「組合小工具」,不寫進資料本身——選了之後組成一句話寫進既有的
+// frequencyText,存檔只看 frequencyText(saveAgentExposureFromForm 白名單
+// 讀取,這幾個新欄位本來就不會被讀到,不需要另外擋)。組完之後 frequencyText
+// 仍是普通輸入框,可以手動再改,不會被鎖死。三格都沒選就不動 frequencyText,
+// 不要清空使用者已經手打的內容。
+function composeHerbFrequencyText() {
+  const form = agentExposureForm;
+  if (!form) return;
+  const formType = form.elements.herbFormType?.value || "";
+  const timing = form.elements.herbMealTiming?.value || "";
+  const timesPerDay = (form.elements.herbTimesPerDay?.value || "").trim();
+  const separateFromWestern = form.elements.herbSeparateFromWestern?.checked;
+  const zhOnly = (v) => v.split(" ")[0];   // select value 是「飯後 after meals」這種中英合一格式,只取中文那半組句子
+  const parts = [];
+  if (timesPerDay) parts.push(`一天${timesPerDay}次`);
+  if (timing) parts.push(zhOnly(timing));
+  if (formType) parts.push(zhOnly(formType));
+  if (separateFromWestern) parts.push("與西藥間隔至少1小時");
+  if (!parts.length) return;
+  const freqInput = form.elements.frequencyText;
+  if (freqInput) freqInput.value = parts.join("・");
+}
+["herbFormType", "herbMealTiming", "herbTimesPerDay", "herbSeparateFromWestern"].forEach((name) => {
+  agentExposureForm.elements[name]?.addEventListener("change", composeHerbFrequencyText);
+});
+
 document.querySelector("#newCaseBtn").addEventListener("click", () => openCaseEditor());
 document.querySelector("#newSoapBtn").addEventListener("click", () => openSoapEditor());
 document.querySelector("#patientNewCaseLink")?.addEventListener("click", (event) => {
@@ -4389,7 +4514,9 @@ function renderDetail(point) {
           ${visualLinksSection(point)}
         ` : `
           ${studySection(contentMode === "english" ? "Location & Point Finding" : "定位・取穴・解剖", pointLocationArticle(point), "location")}
-          ${studySection(contentMode === "english" ? "Needling, Moxibustion & Safety" : "針法・艾灸・安全", needlingArticle(point), "needle", true)}
+          ${/* 2026-08-23 UI/UX P1#2: 361 穴中 85 筆 cautions 含「禁」（禁灸 56、絕對禁 9、禁刺 4）——
+             安全內容不收合，比照藥物卡「黑框警告直接展開」的先例（見 renderDrugDetail 的註解）。 */ ""}
+          ${studySection(contentMode === "english" ? "Needling, Moxibustion & Safety" : "針法・艾灸・安全", needlingArticle(point), "needle")}
           ${window.AcuTingNotes ? window.AcuTingNotes.panel("point", point.code, `${point.code} ${point.nameZh || point.nameEn || ""}`.trim()) : ""}
           ${pointIdentitySection(point)}
           ${examPearlSection(point)}
@@ -6232,7 +6359,7 @@ function renderNumericOutcomeMetricInputs(note) {
       cfg.max != null ? `max="${cfg.max}"` : "",
       `step="${cfg.integer ? "1" : "any"}"`,
       `value="${resolved.hasValue ? escapeAttribute(String(resolved.value)) : ""}"`,
-      `placeholder="未測量可留空 leave blank if not measured"`,
+      `placeholder="${escapeAttribute(cfg.placeholderHint ? `${cfg.placeholderHint}（未測量可留空 leave blank if not measured）` : "未測量可留空 leave blank if not measured")}"`,
     ].filter(Boolean).join(" ");
     const conflictWarning = resolved.conflict
       ? `<small class="metric-conflict-warning">⚠ 與舊欄位不一致：舊值 ${escapeHtml(String(resolved.legacyValue))}，目前顯示新值 ${escapeHtml(String(resolved.value))}（儲存後舊欄位會清除）。Conflicts with the legacy field — old ${escapeHtml(String(resolved.legacyValue))}, showing new ${escapeHtml(String(resolved.value))}.</small>`
@@ -6345,11 +6472,20 @@ function formatNumericOutcomeMetrics(note) {
 //
 // Trend is the CG8 first-phase contract exactly: ↑/↓/→ per consecutive
 // transition in the MEASURED sequence only (unmeasured visits are skipped
-// when building that sequence, never given a fabricated arrow), no color,
-// no "improved/worsened" wording — direction_good varies per metric
-// (increase/decrease/individualized/contextual) and some are explicitly
-// individualized (bowel_frequency), so an arrow here is describing numeric
-// movement only, not a verdict.
+// when building that sequence, never given a fabricated arrow) — the ARROW
+// itself still means nothing but raw numeric movement, never "improved/
+// worsened" wording, because direction_good varies per metric and some are
+// explicitly individualized (bowel_frequency): an arrow can't honestly claim
+// a verdict for those.
+//
+// 2026-08-25(dry run,Ting 現場發現):Baseline/Today/Change/Trend 這張表混
+// 了「遞增為好」跟「遞減為好」的 metric 在同一欄,箭頭上上下下但意義不一致,
+// 一眼掃過去看不出「這是變好還是變壞」。加 outcomeChangeGoodness() 只替
+// Change/Trend 的顯示上色(綠=朝 direction_good 那個方向動、紅=反方向、
+// 無色=direction_good 是 individualized/contextual/未標註,系統本來就不該
+// 替這類 metric 下判斷)——箭頭本身的「原始數字動向」意義不變,顏色是額外
+// 疊加的判讀層,跟 renderVisitBrief 的 brief-good/brief-bad 用同一套色碼,
+// 兩個面板視覺一致。
 function computeOutcomeTrackingRows(item) {
   const chronological = [...(item.soapNotes || [])].sort((a, b) => {
     const dateCompare = String(a.visitDate || "").localeCompare(String(b.visitDate || ""));
@@ -6398,6 +6534,19 @@ function computeOutcomeTrackingRows(item) {
 
     return { cfg, baseline, today, change, trend };
   }).filter(Boolean);
+}
+
+// change 是 (today - baseline)。true=朝 direction_good 那個方向動(好事)、
+// false=反方向(壞事)、null=direction_good 是 individualized/contextual/
+// 未標註,或 change 本身是 null(沒有兩個測量點可比)——這三種都不下判斷,
+// 顯示端一律不上色。跟 renderVisitBrief 裡內嵌的同款邏輯是同一個判斷式,
+// 這裡抽成獨立函式給 Outcome Tracking 面板重用,兩處不會各自長出一套微妙
+// 不同的判斷(例如一邊用 >= 一邊用 >)。
+function outcomeChangeGoodness(def, change) {
+  if (change == null || !def) return null;
+  if (def.direction_good === "decrease") return change < 0;
+  if (def.direction_good === "increase") return change > 0;
+  return null;
 }
 
 function renderOutcomeTrackingPanel(item) {
@@ -6457,12 +6606,14 @@ function renderOutcomeTrackingPanel(item) {
               const rrText = rr.text_zh || rr.text_en || "";
               refRangeHint = `<small class="interp-hint interp-refrange" title="${escapeHtml(rrText)}${rr.scope ? "\n適用範圍：" + escapeHtml(rr.scope) : ""}">參考範圍：${escapeHtml(shortCitation(rr.source.name))}</small>`;
             }
+            const goodness = outcomeChangeGoodness(def, row.change);
+            const goodnessCls = goodness === true ? "outcome-good" : goodness === false ? "outcome-bad" : "";
             return `<tr>
               <td>${escapeHtml(outcomeMetricPanelLabel(row.cfg.metricId))}${directionHint}${interpHint}${refRangeHint}</td>
               <td>${escapeHtml(fmt(row.cfg, row.baseline))}</td>
               <td>${escapeHtml(fmt(row.cfg, row.today))}</td>
-              <td>${escapeHtml(fmtChange(row.change))}</td>
-              <td>${escapeHtml(row.trend || "—")}</td>
+              <td class="${goodnessCls}">${escapeHtml(fmtChange(row.change))}</td>
+              <td class="${goodnessCls}">${escapeHtml(row.trend || "—")}</td>
             </tr>`;
           }).join("")}
         </tbody>
@@ -7001,11 +7152,11 @@ function promptAgentExposureAction(exposureId, eventType) {
   if (!exposure) return;
   const event = { eventType };
   if (eventType === "dose_changed") {
-    const value = prompt("新劑量 New dose", exposure.doseText || "");
+    const value = prompt("新劑量 New dose（例:200mg,或中藥 3克・科學中藥/水藥/丸藥）", exposure.doseText || "");
     if (value === null) return;
     event.doseText = value.trim();
   } else if (eventType === "frequency_changed") {
-    const value = prompt("新頻率 New frequency", exposure.frequencyText || "");
+    const value = prompt("新頻率 New frequency（例:qd/bid,或中藥 飯後・一天三次）", exposure.frequencyText || "");
     if (value === null) return;
     event.frequencyText = value.trim();
   } else if (eventType === "stopped") {
@@ -8463,6 +8614,80 @@ function herbPickerOptions() {
 //   excludeValues  fn returning ids to hide from this field's own search
 //                  results — used so the secondary picker can't offer
 //                  whatever the primary picker currently holds.
+// ---- Knowledge-gap logging ----------------------------------------------
+// Dry Clinic 現場需求(2026-08-25,Ting 原話:「給 picker 加『其他/自由輸入』
+// 後路,先讓妳記得下來,缺口另外收集」)。設計原則:絕對不把自由文字塞進
+// symptomLinks/westernConditionLinks 這類欄位——下游 AVS/報表/驗證器都假設
+// 這些欄位只裝 canonical id,塞自由文字會讓整條 pipeline 炸掉或悄悄失真。
+// 改成獨立的「記錄缺口」動作,只寫進這台裝置的 localStorage,完全不碰任何
+// 病歷欄位、不送出任何網路請求。
+//
+// D7 邊界:這是她瀏覽器本機的資料,雲端 session 讀不到——不會自動變成每週
+// 補卡的輸入,要她自己在 F12 console 呼叫 AcuTingKnowledgeGaps.exportText()
+// 匯出、貼給 Claude,才會進到補卡流程(跟既有 inventory-workflow-links.js
+// 的匯出模式一致,她已經熟悉這個操作)。
+// KNOWLEDGE_GAP_STORAGE_KEY / KNOWLEDGE_GAP_FIELD_LABELS 宣告在檔頭
+// boot-order 區(跟 SOAP_CARRY_FORWARD_FIELDS 那組同一個 TDZ 理由)。
+function readKnowledgeGaps() {
+  try {
+    const raw = window.localStorage?.getItem?.(KNOWLEDGE_GAP_STORAGE_KEY);
+    const parsed = raw ? JSON.parse(raw) : [];
+    return Array.isArray(parsed) ? parsed : [];
+  } catch (err) {
+    return [];
+  }
+}
+
+function writeKnowledgeGaps(list) {
+  try {
+    window.localStorage?.setItem?.(KNOWLEDGE_GAP_STORAGE_KEY, JSON.stringify(list));
+  } catch (err) {
+    // 存不進去(無痕模式/容量滿)就算了——這只是輔助記錄,不是病歷資料,
+    // 不值得為了它中斷看診流程。
+  }
+}
+
+function logKnowledgeGap(fieldName, queryText) {
+  const q = String(queryText || "").trim();
+  if (!q) return;
+  const list = readKnowledgeGaps();
+  const existing = list.find((g) => g.fieldName === fieldName && g.query === q);
+  const now = new Date().toISOString();
+  if (existing) {
+    existing.count = (existing.count || 1) + 1;
+    existing.lastLoggedAt = now;
+  } else {
+    list.push({
+      fieldName,
+      fieldLabel: KNOWLEDGE_GAP_FIELD_LABELS[fieldName] || fieldName,
+      query: q,
+      count: 1,
+      firstLoggedAt: now,
+      lastLoggedAt: now,
+    });
+  }
+  writeKnowledgeGaps(list);
+}
+
+function knowledgeGapExportText() {
+  const list = readKnowledgeGaps();
+  if (!list.length) return "(目前沒有記錄任何缺口)";
+  const sorted = [...list].sort((a, b) =>
+    (a.fieldLabel || "").localeCompare(b.fieldLabel || "", "zh-Hant") || b.count - a.count
+  );
+  return sorted
+    .map((g) => `[${g.fieldLabel}] ${g.query} ×${g.count}（最後 ${g.lastLoggedAt}）`)
+    .join("\n");
+}
+
+if (typeof window !== "undefined") {
+  window.AcuTingKnowledgeGaps = {
+    list: readKnowledgeGaps,
+    clear() { writeKnowledgeGaps([]); },
+    exportText: knowledgeGapExportText,
+  };
+}
+
 function enhanceLinkField(form, fieldName, buildOptions, opts = {}) {
   const textarea = form?.elements?.[fieldName];
   if (!textarea || textarea.dataset.pickerReady) return;
@@ -8553,7 +8778,7 @@ function enhanceLinkField(form, fieldName, buildOptions, opts = {}) {
     const matches = !q ? [] : options
       .filter((o) => !chosen.has(o.value) && !excluded.has(o.value) && (o.terms.includes(q) || o.terms.replace(/\s+/g, "").includes(qCompact)))
       .slice(0, 8);
-    if (!matches.length) { closeMenu(); return; }
+    if (!q) { closeMenu(); return; }
     menu.innerHTML = "";
     matches.forEach((o, i) => {
       const el = document.createElement("div");
@@ -8568,6 +8793,24 @@ function enhanceLinkField(form, fieldName, buildOptions, opts = {}) {
       el.addEventListener("mousedown", (e) => { e.preventDefault(); addValue(o.value); });
       menu.appendChild(el);
     });
+    // 2026-08-25(Ting 要求「給 picker 加自由輸入後路,缺口另外收集」)——只要
+    // 有打字,不管上面比對到幾筆,選單最下面永遠多一列「記錄缺口」。這一列
+    // 刻意不放進 menu._matches:方向鍵/Enter 完全碰不到它,只能滑鼠/觸控點
+    // (跟上面每個真選項同一個 mousedown 手法),不會跟剛修好的 Enter 邏輯
+    // 打架,也不會被誤觸發成「選了一個不存在的值」。
+    const gapRow = document.createElement("div");
+    gapRow.className = "link-picker-option link-picker-gap-option";
+    gapRow.setAttribute("role", "option");
+    gapRow.setAttribute("aria-selected", "false");
+    const rawQuery = input.value.trim();
+    gapRow.textContent = `找不到「${rawQuery}」？記錄缺口 Can't find it? Log the gap`;
+    gapRow.addEventListener("mousedown", (e) => {
+      e.preventDefault();
+      logKnowledgeGap(fieldName, rawQuery);
+      gapRow.textContent = "已記錄缺口 ✓ 可以繼續輸入或關閉";
+      gapRow.classList.add("logged");
+    });
+    menu.appendChild(gapRow);
     menu.hidden = false;
     menu._matches = matches;
     input.setAttribute("aria-expanded", "true");
@@ -8580,11 +8823,20 @@ function enhanceLinkField(form, fieldName, buildOptions, opts = {}) {
     const m = menu._matches || [];
     // Dry Clinic log #2 (every-visit friction): full keyboard flow so a
     // clinical typing session never has to reach for the mouse. Arrow keys
-    // wrap around the currently rendered options; Enter picks the active
-    // option or, if none highlighted yet, the first match; Escape closes
-    // just the menu — it must not fall through to the <dialog>'s native
-    // Escape-to-close (stopPropagation), and only when the menu is actually
-    // open (an Escape with no menu showing should close the dialog as usual).
+    // wrap around the currently rendered options; Escape closes just the
+    // menu — it must not fall through to the <dialog>'s native Escape-to-
+    // close (stopPropagation), and only when the menu is actually open (an
+    // Escape with no menu showing should close the dialog as usual).
+    //
+    // 2026-08-25(dry run 現場發現,Ting 原話:「當我記錄上去沒有的conditions
+    // 時他會亂跳一個症狀」)——舊版 Enter 在沒有手動高亮時預設吃 m[0](第一個
+    // 模糊比對到的候選)。q 是子字串比對(terms.includes(q)),打一個清單裡
+    // 沒有的詞常常還是會模糊命中好幾筆不相關的東西——打完直接按 Enter(她的
+    // 打字習慣)就悄悄選進一個完全不是她要打的項目,而且畫面上看起來像是
+    // 「有記錄」,實際記的是錯的。改成:只有「候選剛好剩一筆」(打的字已經
+    // 唯一鎖定,Enter=確認沒有歧義)或「已經用方向鍵手動高亮」這兩種情況才會
+    // 選——候選有兩筆以上又沒有手動高亮時,Enter 不做任何事,逼她自己選或
+    // 打精確一點,絕不用猜的塞一筆進病歷。
     if (e.key === "ArrowDown") {
       e.preventDefault();
       if (m.length) activeIndex = (activeIndex + 1) % m.length;
@@ -8594,7 +8846,14 @@ function enhanceLinkField(form, fieldName, buildOptions, opts = {}) {
       if (m.length) activeIndex = (activeIndex - 1 + m.length) % m.length;
       renderMenu();
     } else if (e.key === "Enter") {
-      if (m.length) { e.preventDefault(); addValue(m[activeIndex >= 0 ? activeIndex : 0].value); }
+      if (activeIndex >= 0 && m[activeIndex]) {
+        e.preventDefault();
+        addValue(m[activeIndex].value);
+      } else if (m.length === 1) {
+        e.preventDefault();
+        addValue(m[0].value);
+      }
+      // m.length >= 2 且沒有手動高亮:刻意不做任何事(見上面說明)。
     } else if (e.key === "Escape") {
       if (!menu.hidden) {
         e.preventDefault();
@@ -9488,9 +9747,24 @@ function deleteCurrentCase() {
 }
 
 // Last Visit at a Glance (2026-08-09, docs/SOAP_FOLLOWUP_TRACKING_AUDIT.md
-// §9 ranked item #3) — read-only reference only, never a data source. No new
-// storage: derived entirely from the case's existing soapNotes each time the
-// dialog opens.
+// §9 ranked item #3) — originally read-only reference only, never a data
+// source (see the panel below). No new storage: derived entirely from the
+// case's existing soapNotes each time the dialog opens.
+//
+// 2026-08-25(dry run,Ting 明確要求「帶入上一次看診的內容」推翻原本 reference-
+// only 設計):新增 SOAP_CARRY_FORWARD_FIELDS(下面)——第一輪只白名單「治療
+// 計畫」類欄位(證型/治法/穴位/方劑/手法)。原因跟這份文件當初刻意選
+// reference-only 一樣:把上次的值當「這次」的悄悄帶入,等於沒有真的重新
+// 觀察卻記錄成觀察到了(牴觸 D4「粗化,絕不寫假的臨床事實」的精神)。
+//
+// 同日第二輪,Ting 追問 S/O/A/P 能不能也帶入(她的原話:「這個系統半正式,
+// 這樣方便我作業不要一直太多手動填寫……我有點之前的內容好對這個病人有
+// 概念」)。用 AskUserQuestion 攤開風險後,Ting 選的是「自動帶入,但清楚
+// 標示沿用上次、請確認」——不是取消上面那個顧慮,是換一種方式處理:S/O/A/P
+// 現在也在白名單裡,但帶入時強制加 SOAP_CARRY_FORWARD_MARKER(可見的中英文
+// 標記),病歷上永遠留下「這段是沿用的」的痕跡,不會被誤讀成當場重新問診/
+// 評估的結果。舌脈/療效判定/指標依然不帶入——這幾格是醫師「這次量到什麼」
+// 而不是「這次記得什麼」,標記解決不了同一個問題,維持原判斷。
 //
 // Ordering matches renderClinicalCaseDetail's own sort (visitDate then
 // visitNumber) so "previous" here means the same thing the SOAP Timeline
@@ -9617,6 +9891,26 @@ function renderPreviousVisitPanel(note) {
   });
 }
 
+// 回傳 prevNote 裡白名單欄位的淺拷貝(陣列另外複製,絕不共用參照——editingSoap
+// 存檔時不能不小心改到上一筆 note 的陣列)。只給「開新 SOAP、且這個 case 已有
+// 上一診」的情況用;編輯既有 note 一律不呼叫這支(見呼叫端判斷)。
+function soapCarryForwardFields(prevNote) {
+  const out = {};
+  for (const key of SOAP_CARRY_FORWARD_FIELDS) {
+    const v = prevNote[key];
+    // S/O/A/P:上次是空的就不加標記(沒有東西好「沿用」);有內容才加,
+    // 標記永遠在最前面,選取刪除或整段貼上覆蓋(例如貼 Heidi 轉錄結果)
+    // 都會自然把它帶走,不需要額外的「清除標記」步驟。
+    if (SOAP_CARRY_FORWARD_TEXT_MARKED_FIELDS.has(key)) {
+      const text = String(v || "").trim();
+      out[key] = text ? SOAP_CARRY_FORWARD_MARKER + text : "";
+      continue;
+    }
+    out[key] = Array.isArray(v) ? v.map((x) => (x && typeof x === "object") ? { ...x } : x) : v;
+  }
+  return out;
+}
+
 function openSoapEditor(note = null) {
   const activeCase = clinicalCases.find((item) => item.id === selectedCaseId);
   if (!activeCase) {
@@ -9626,7 +9920,8 @@ function openSoapEditor(note = null) {
   editingSoapId = note?.id || null;
   document.querySelector("#soapDialogTitle").textContent = note ? "編輯 SOAP Note" : `新增 SOAP - ${activeCase.patientCode}`;
   deleteSoapBtn.hidden = !note;
-  renderPreviousVisitPanel(findPreviousSoapNote(activeCase.soapNotes, editingSoapId));
+  const previousNote = findPreviousSoapNote(activeCase.soapNotes, editingSoapId);
+  renderPreviousVisitPanel(previousNote);
   // 週期/生殖區(2026-08-11 Ting 指正):sex at birth = M 整段隱藏 —— 但
   // 若編輯中的舊 note 已有值,仍顯示且展開(已存在的資料絕不隱形,D4)。
   // F / Other / 未填(不假設)保留,預設收合;有值必展開。
@@ -9692,7 +9987,11 @@ function openSoapEditor(note = null) {
     ifIneffectivePlan: "",
     modalitiesPerformed: []
   };
-  const data = { ...fallback, ...(note || {}) };
+  // 2026-08-25:只有「開新 SOAP(note 為 null)且這個 case 有上一診」才帶入
+  // 治療計畫白名單欄位;編輯既有 note 時 carryForward 恆為 {},最後
+  // ...(note||{}) 一定覆蓋掉,不會動到已存檔的內容。
+  const carryForward = (!note && previousNote) ? soapCarryForwardFields(previousNote) : {};
+  const data = { ...fallback, ...carryForward, ...(note || {}) };
   // AVS v3 Phase C:modality.* checkbox 群組先渲染再水合(與 case form 的
   // raceEthnicity 同款作法)—— checkbox 群組不能走下面的 .value 泛用迴圈。
   renderModalitiesPerformedOptions();
@@ -10082,6 +10381,17 @@ function saveSoapFromForm(event) {
   clearDraft(SOAP_DRAFT_KEY);   // FIX A: draft is only useful until a real save lands
   soapDialog.close();
   render();
+  // 2026-08-25(dry run 現場發現:「我之後的 soap 就找不到結帳按鈕了」)——
+  // 結帳按鈕在每張 SOAP 卡片自己的標題列裡(跟編輯鈕並排),存檔關閉對話框
+  // 後使用者要自己在整條 timeline 裡找到剛剛那張卡才看得到。跟 CS5(timeline
+  // 節點點擊→ 捲動+閃爍那張卡)同一套機制,存檔後自動對剛存的這張卡做一次,
+  // 讓結帳按鈕直接出現在使用者眼前,不用自己找。
+  const savedCard = document.getElementById(`soap-${nextNote.id}`);
+  if (savedCard) {
+    savedCard.scrollIntoView({ behavior: "smooth", block: "center" });
+    savedCard.classList.add("soap-note-flash");
+    setTimeout(() => savedCard.classList.remove("soap-note-flash"), 1200);
+  }
 }
 
 function deleteCurrentSoap() {
@@ -10288,6 +10598,32 @@ function avsRenderChecked(snapshot, kase, note) {
   return html;
 }
 
+// 複製文字用:同一份自檢邏輯套在純文字版(2026-08-25,Ting 要求 email 可直接貼上)。
+function avsRenderTextChecked(snapshot, kase, note) {
+  const text = AcuTingAVS.renderPatientText(snapshot, { visitDate: note.visitDate || "" });
+  const banned = AcuTingAVS.checkPatientOutputSafety(text, kase);
+  if (banned.length) {
+    alert("SAFETY ABORT:病人輸出含內部代碼/禁用詞,已中止輸出。\n命中:" + banned.join(", ") + "\n請檢查建議文字或自訂指示內容。");
+    return null;
+  }
+  return text;
+}
+
+// 複製到剪貼簿,失敗(權限/非 https/舊瀏覽器)就退回 prompt() 讓使用者自己
+// 全選複製 —— 跟 copyPointLink() 同一套後備邏輯,但 prompt 用 textarea 風格
+// 多行文字時 alert 會被截斷/擠成一行,prompt 至少能選取。
+function copyTextToClipboard(text, onDone) {
+  if (navigator.clipboard?.writeText) {
+    navigator.clipboard.writeText(text).then(() => onDone(true)).catch(() => {
+      prompt("瀏覽器阻擋自動複製,請手動全選複製:", text);
+      onDone(false);
+    });
+    return;
+  }
+  prompt("瀏覽器不支援自動複製,請手動全選複製:", text);
+  onDone(false);
+}
+
 function renderAvsCheckout() {
   const body = document.querySelector("#avsCheckoutBody");
   const { kase, note } = avsCheckoutContext();
@@ -10314,6 +10650,7 @@ function renderAvsCheckout() {
         <div class="avs-co-actions-row">
           <button type="button" data-avs-view="${escapeAttribute(finalized.id)}">檢視 View</button>
           <button type="button" data-avs-print="${escapeAttribute(finalized.id)}">列印 / 存 PDF</button>
+          <button type="button" data-avs-copy-text="${escapeAttribute(finalized.id)}">複製文字 Copy for email</button>
           <button class="ghost" type="button" id="avsCorrectionBtn">建立更正版本 Create correction</button>
         </div>
         <p class="avs-co-note">定稿文件不可修改;更正會建立 v${escapeHtml(String((Number(finalized.version) || 1) + 1))} 草稿,定稿後舊版標記為 superseded、永久保留可讀。</p>
@@ -10381,6 +10718,9 @@ function renderAvsCheckout() {
       </section>
       <section class="avs-co-section">
         <h3>5 · 回診 Follow-up</h3>
+        <p class="avs-co-note">⚠ 這格文字會原文印在病人文件上——只寫病人看得懂的回診安排(例:兩週後回診),
+          不要放臨床判斷、方名或「若無效就改方」這類只給自己看的內部規劃(SOAP 的回診欄位不會自動帶進來,
+          就是為了避免這個)。</p>
         <input type="text" data-avs-followup value="${escapeAttribute(d.followUpSnapshot)}" placeholder="例:兩週後回診(留空則病人文件不印這一段)" />
         ${internalFollowUpHtml}
       </section>
@@ -10419,6 +10759,18 @@ function wireAvsCheckoutEvents() {
     if (!snap) return;
     const html = avsRenderChecked(snap, kase, note);
     if (html) avsOpenWindow(html, true);
+  }));
+  body.querySelectorAll("[data-avs-copy-text]").forEach((btn) => btn.addEventListener("click", () => {
+    const snap = snaps.find((s) => s.id === btn.dataset.avsCopyText);
+    if (!snap) return;
+    const text = avsRenderTextChecked(snap, kase, note);
+    if (!text) return;
+    const original = btn.textContent;
+    copyTextToClipboard(text, (copied) => {
+      if (!copied) return;   // prompt() 後備已經讓使用者自己複製,不用再覆蓋按鈕文字
+      btn.textContent = contentMode === "english" ? "Copied" : "已複製,可貼上 email";
+      setTimeout(() => { btn.textContent = original; }, 1500);
+    });
   }));
   body.querySelectorAll("[data-avs-why]").forEach((btn) => btn.addEventListener("click", () => {
     const panel = body.querySelector(`[data-avs-why-panel="${btn.dataset.avsWhy}"]`);
@@ -10516,6 +10868,48 @@ function wireAvsCheckoutEvents() {
   });
 }
 
+// D12(2026-08-26,凍結前最後窗口): v1 匯出過去是裸 clinicalCases 陣列 ——
+// 檔案裡沒有任何版本標記,格式只活在「檔名」上,而檔名使用者改一下就沒了。
+// 9/01 起匯出格式 additive-only(D12),所以信封現在落地:schema_version 寫進
+// 檔案內容,與 v2 staging envelope 已有的 schema_version: 2 同一套判別方式。
+// 匯入端永遠接受裸陣列 —— 今天以前的每一份備份都是那個形狀。
+function v1ExportEnvelope(cases) {
+  return {
+    schema_version: 1,
+    exported_at: new Date().toISOString(),
+    case_count: cases.length,
+    cases,
+  };
+}
+
+// 匯入檔的 v1 形狀判定(v2 信封在呼叫端先被接走,到不了這裡)。
+// 回傳病例陣列;認不得的形狀丟 userFacing 錯誤 —— 訊息只描述形狀,
+// 絕不轉述內容(SOL R-13:JSON 內容不得進 alert/console)。
+function unwrapV1CasesPayload(parsed) {
+  if (Array.isArray(parsed)) return parsed;                    // 舊裸陣列備份,永久支援
+  if (parsed && typeof parsed === "object") {
+    if (parsed.schema_version === 1) {
+      if (Array.isArray(parsed.cases)) return parsed.cases;    // D12 信封
+      const e = new Error("匯入被拒絕:schema_version:1 信封的 cases 不是陣列 —— 檔案可能被編輯壞了,未進行任何寫入。");
+      e.userFacing = true;
+      throw e;
+    }
+    if (parsed.schema_version === 2) {
+      // 防禦:v2 信封只該由上游的 v2 分支處理;走到這裡代表它的 cases
+      // 欄位缺失或非陣列(上游條件沒接住),不能靜默當 v1 解讀。
+      const e = new Error("匯入被拒絕:這看起來是 v2 備份但形狀不完整(cases 缺失或非陣列)。未進行任何寫入。");
+      e.userFacing = true;
+      throw e;
+    }
+    const e = new Error(`匯入被拒絕:認不得的物件形狀(schema_version=${JSON.stringify(parsed.schema_version)})。合法形狀:病例陣列、schema_version:1 匯出信封、schema_version:2 備份。未進行任何寫入。`);
+    e.userFacing = true;
+    throw e;
+  }
+  const e = new Error("匯入被拒絕:檔案內容不是陣列也不是物件。未進行任何寫入。");
+  e.userFacing = true;
+  throw e;
+}
+
 function exportClinicalCases() {
   // Codex C2B-R4 finding (P3.3): after the C2b pointer switch the world is
   // {patients + cases + all V2 rows}, and an export that only serializes
@@ -10549,7 +10943,7 @@ function exportClinicalCases() {
     }
     payload = staging;
   } else {
-    payload = clinicalCases;
+    payload = v1ExportEnvelope(clinicalCases);
   }
   const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
   const url = URL.createObjectURL(blob);
@@ -10678,7 +11072,9 @@ function importClinicalCases(event) {
         });
         return;
       }
-      if (!Array.isArray(imported)) throw new Error("Clinical cases JSON must be an array");
+      // D12:裸陣列(舊備份)與 schema_version:1 信封(新匯出)都在這裡收斂
+      // 成病例陣列;其他形狀 fail loud,訊息只講形狀不轉述內容。
+      imported = unwrapV1CasesPayload(imported);
       const incoming = imported.map(normalizeClinicalCase);
       // Codex spec §4.5: import 在 persist 前先驗不變量,不以 silent
       // inference 修掉衝突 —— 規則與 CI 同一份(store.checkClinicalInvariants)。
@@ -10709,7 +11105,7 @@ function importClinicalCases(event) {
           `⚠️ Restore 會以匯入檔完整取代現有 ${clinicalCases.length} 個病例。\n\n目前資料會先自動下載一份備份。確定要覆蓋?`
         );
         if (!really) return;
-        const backupBlob = new Blob([JSON.stringify(clinicalCases, null, 2)], { type: "application/json" });
+        const backupBlob = new Blob([JSON.stringify(v1ExportEnvelope(clinicalCases), null, 2)], { type: "application/json" });
         const a = document.createElement("a");
         a.href = URL.createObjectURL(backupBlob);
         a.download = `acuting-cases-pre-restore-${new Date().toISOString().slice(0, 19).replace(/[:T]/g, "-")}.json`;
@@ -10726,8 +11122,11 @@ function importClinicalCases(event) {
         return;
       }
       render();
-    } catch {
-      alert("匯入失敗：請確認 JSON 是 AcuTing Clinical Cases 陣列格式。");
+    } catch (e) {
+      // userFacing = unwrapV1CasesPayload 的形狀錯誤,訊息安全(只講形狀)。
+      // 其他例外(含 JSON.parse 的 SyntaxError,V8 會內嵌原始輸入片段)一律
+      // 用固定訊息 —— 病歷內容不得進 alert(SOL R-13)。
+      alert(e && e.userFacing ? e.message : "匯入失敗：請確認檔案是 AcuTing 匯出的病例備份(陣列或 schema_version:1 信封)。");
     } finally {
       event.target.value = "";
     }

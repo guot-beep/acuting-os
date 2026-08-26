@@ -115,13 +115,33 @@ jobs:
         run: node scripts/build-data.js
 
       # If build-data changed a generated file, the PR is missing a rebuild.
+      # data/tung 與 data/auricular 也在範圍內（2026-08-24）：build-data 會寫
+      # 那裡的三顆 JS twin（point_index.js / gb93_index.js / gb93_worklist.js），
+      # 先前 gate 只看 data/generated，twin 可以相對 JSON 正本過期而 CI 全綠。
       - name: generated data is committed and current
         run: |
-          if ! git diff --quiet -- data/generated data/quality; then
-            echo "::error::data/generated or data/quality is stale — run 'node scripts/build-content-quality-overlay.js && node scripts/build-data.js' and commit the result."
-            git --no-pager diff --stat -- data/generated data/quality
+          if ! git diff --quiet -- data/generated data/quality data/tung data/auricular; then
+            echo "::error::generated data is stale — run 'node scripts/build-content-quality-overlay.js && node scripts/build-data.js' and commit the result."
+            git --no-pager diff --stat -- data/generated data/quality data/tung data/auricular
             exit 1
           fi
+
+      # P1 分包（2026-08-24）：六片 Object.assign 合流必須逐鍵位元組等於單體
+      # （單體暫時雙寫當對照組；P1-E 移除單體後這支降級為分片自洽證明）。
+      - name: knowledge shards are lossless
+        run: node scripts/validate-knowledge-parts.js
+
+      # P0 字型不阻塞的四條不變式（2026-08-24）：外部 @import 禁令、跨網域
+      # stylesheet 必須 media="print"、inline classic script 禁令、fonts.js
+      # 翻轉驅動完整性。同一機制（in-flight stylesheet 擋 script）已復發過
+      # 兩次（#80/#91），從註解升級成會 exit 1 的守衛。
+      - name: render-blocking invariants (fonts never freeze the app)
+        run: node scripts/validate-render-blocking.js
+
+      # build-site 先前只在 wrangler 部署時跑，CI 完全不執行——它的 ref-scan
+      # 守衛（STANDALONE 頁引用掃描、curriculum 隔離）不進 CI 等於沒有守衛。
+      - name: dist builds and ref-scan guards run
+        run: node scripts/build-site.js
 
       - name: app.js parses
         run: node --check app.js
@@ -133,6 +153,16 @@ jobs:
 
       - name: referential integrity
         run: node scripts/validate-relations.js
+
+      # 2026-08-22: Phase C 的整檔取代帶走了 5 筆中藥而全綠——「淨增」蓋住了刪除。
+      # 這一步守七個 canonical 檔的 id 集合不准縮；退役走 --retire 留痕，不是刪除。
+      - name: canonical id sets may not shrink
+        run: node scripts/check-canon-no-loss.js
+
+      # 2026-08-23: 信任欄位的受控詞彙鎖——review_status 曾碎裂成 16 種值
+      # （拼錯的 sourced_checked ×272 比正確的還多）。收斂完成後由這一步守住。
+      - name: review_status controlled vocabulary
+        run: node scripts/validate-review-status-vocab.js
 
       # Graduated from the ratchet 2026-08-06: the 72 extra-point D2 ids were
       # backfilled (add-point-ids.js), validate-point-ids is green, so it now
@@ -171,6 +201,9 @@ jobs:
         
       - name: acupoint card standard
         run: node scripts/validate-acupoint-standard.js
+
+      - name: condition card standard
+        run: node scripts/validate-condition-standard.js
 
       - name: acupoint source conflicts (APB-2 / APB-4)
         run: node scripts/validate-acupoint-source-conflicts.js
@@ -399,12 +432,23 @@ jobs:
       - name: Phase E longitudinal walkthrough (storage round-trip)
         run: node scripts/walkthrough-phase-e.js
 
+      # 2026-08-26 自棘輪畢業(基線 10→0 同日):退役 id 不得被 active 記錄
+      # 引用。D21 的「零殘留」宣稱腐化過一次,這支 gate 讓它不能再腐化。
+      - name: retired ids are never referenced by active records
+        run: node scripts/validate-retired-id-references.js
+
       # pointer 三態與還原演練:P4 的另外兩項驗收標準(31/31、65/65)。
       - name: pointer runtime three-state contract
         run: node scripts/test-pointer-runtime.js
 
       - name: runtime restore rehearsal
         run: node scripts/rehearse-runtime-restore.js
+
+      # D12(2026-08-26):v1 匯出信封契約 —— 匯出必經 v1ExportEnvelope、
+      # 匯入收斂三種形狀(裸陣列/1號信封/2號信封)、其他形狀 fail loud 且
+      # 錯誤訊息不轉述檔案內容。含裸匯出回歸的靜態斷言。
+      - name: D12 export envelope contract
+        run: node scripts/test-export-envelope-shapes.js
 
       # M1(C2b audit E5,2026-08-14):pointer=v2 且 store 模組缺失時
       # fallback 必須 fail-closed(讀鎖定、寫零)。20 條負控,含回歸保護。
