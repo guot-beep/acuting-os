@@ -1,3 +1,13 @@
+# 2026-08-25 — Codex Conditions 肺部感染／結節病因 B38
+
+- **範圍**：精確修改 `cond.lung_abscess`、`cond.mycoplasma_pneumonia`、`cond.solitary_pulmonary_nodule`；只補雙語 etiology、record sources 與對應 field provenance。既有正文、安全欄、acupuncture scope、relations、方劑與穴位未覆寫；未為肺結節硬接不確定的中醫 relation。
+- **數字**：`FULL_DETAIL_CANDIDATE 300→303`、`DETAIL_PARTIAL 205→202`、`SKELETON 0→0`；肺膿瘍與黴漿菌肺炎 `10→12/12`，肺結節 `9→11/12`；全庫缺 etiology `180→177`；condition source entries `963→968`、有 record source 的卡 `341→344`。
+- **來源／臨床區分**：NIH/NLM NCBI Bookshelf、PMC、CDC 與 MedlinePlus；5 個唯一直接 URL 均 HTTP 200。內容區分肺膿瘍的吸入、氣道阻塞與血行播散；黴漿菌飛沫傳播、無細胞壁與上皮黏附；肺結節作為影像學表現，涵蓋感染後肉芽腫／瘢痕及原發肺癌等不同病因。
+- **驗證**：只變更 3 個指定 id、每卡 4 個允許的 top-level 欄位群，其他 502 卡逐記錄不變；condition standard `505/505 clean`、build-data、relations、relation registry、ratchet、content-junk、URL reachability、generated data、逐卡 score 與 `git diff --check` 均無新增 blocking defect。
+- **未解／下一步**：`cond.solitary_pulmonary_nodule` 缺 structured relation，故為 `11/12`；在未有可靠 TCM mapping 前保持空白比猜測安全。仍有 `202` 張 partial／`177` 張病因缺口；下一批可續做咳嗽變異型氣喘、過度換氣、睡眠低通氣等，但需優先找疾病特異來源。
+
+---
+
 # 2026-08-25 — Codex Conditions 呼吸病因／首批 300 張里程碑 B37
 
 - **範圍**：精確修改 `cond.pneumoconiosis`、`cond.pleurisy`、`cond.latent_tuberculosis_infection`；只補雙語 etiology、record sources 與對應 field provenance。既有正文、安全欄、acupuncture scope、relations、方劑與穴位未覆寫。

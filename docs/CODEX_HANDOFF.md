@@ -1,5 +1,13 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-25] Codex Handoff — Conditions pulmonary infection/nodule etiologies B38
+
+- **Exact ids / fields**: `cond.lung_abscess`, `cond.mycoplasma_pneumonia`, and `cond.solitary_pulmonary_nodule`; filled only bilingual etiology, record-level sources, and matching field provenance. Existing prose, safety fields, acupuncture scope, relations, formulas, and acupoints were preserved; no uncertain TCM relation was invented for the pulmonary nodule.
+- **Measured delta**: maturity `300→303 FULL_DETAIL_CANDIDATE`, `205→202 DETAIL_PARTIAL`, `0→0 SKELETON`; lung abscess and mycoplasma pneumonia `10→12/12`, solitary pulmonary nodule `9→11/12`; missing etiology `180→177`; condition source entries `963→968`, records with record-level sources `341→344`.
+- **Evidence / distinctions**: NIH/NLM NCBI Bookshelf, PMC, CDC, and MedlinePlus; all five unique direct URLs returned HTTP 200. Distinguished aspiration/obstruction/hematogenous lung abscess mechanisms, droplet transmission plus wall-less epithelial-adherent M. pneumoniae, and benign granuloma/scar versus primary lung-cancer etiologies for an imaging-defined nodule.
+- **Validation**: only the three exact ids and four allowed top-level field groups per card changed; the other 502 records remained equal. Condition standard `505/505 clean`, build-data, relations, relation registry, validation ratchet, content junk, URL reachability, generated-data rebuild, per-card score check, and `git diff --check` produced no new blocking defect.
+- **Explicit unresolved / next line**: `cond.solitary_pulmonary_nodule` remains 11/12 because no reliable structured relation is present; leave blank rather than infer. There remain 202 partial records and 177 etiology gaps; next respiratory candidates need disease-specific sources before fill.
+
 ## [2026-08-25] Codex Handoff — Conditions respiratory etiology / first-300 maturity milestone B37
 
 - **Exact ids / fields**: `cond.pneumoconiosis`, `cond.pleurisy`, and `cond.latent_tuberculosis_infection`; filled only bilingual etiology, record-level sources, and matching field provenance. Existing prose, safety fields, acupuncture scope, relations, formulas, and acupoints were preserved.
