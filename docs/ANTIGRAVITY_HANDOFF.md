@@ -268,7 +268,7 @@ missing on 219 record(s)」完全一樣——這份報告沒有提供任何新�
 
 ## 已完成（供參考，不用重做）
 
-- Task 8A（中藥 safety_source_url）：267→347/363 (96%)，新增 80 筆 HTTP 200 實查真實網址，已驗收落地 main (`04b6b668`)。
+- Task 8A（中藥 safety_source_url）：267→347/363 (96%)，新增 80 筆 HTTP 200 實查真實網址（data commit: `5366046a`，acceptance record: `2263ec24`，current main containing accepted result: `78765ca6`）。
 - Task 8C（方劑 exact_source_url）：210→217/223 (97%)，新增 7 筆 HTTP 200 實查真實網址，已驗收落地 main (`128da48e` / `78765ca6`)。
 - Task 8B Round 2（中藥 modern_functions_en）：從 main 重新掃描 22 筆缺口，22/22 均無既有 modern_functions_zh 正典基準可供對齊；依 fail-closed 鐵律全數誠實標註 SKIPPED，0 filled / 22 skipped，不越界自行研究或生成中英文藥理內容（分支 `antigravity/herb-fill-task8-modern-functions-round2`）。
 
