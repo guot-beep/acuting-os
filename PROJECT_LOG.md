@@ -1,3 +1,37 @@
+# 2026-08-26 深夜 — Claude 處理 preflight gate 抓到的 22 筆命名衝突之「D 組」(方劑劑型英文名撞名)
+
+Ting 要求先處理 22 筆裡風險最低的「D 組」(3 對方劑英文名撞名)。逐一查證,發現只有 1 對是真的
+資料錯誤,另外 2 對其實不該動：
+
+- **`si_shen_wan`(四神丸）／`si_miao_wan`（四妙丸）——真的錯,已修**：`si_miao_wan` 的
+  `name_en` 原本是「Four Miracle Pill」跟 `si_shen_wan` 撞名，查了 4 份 American Dragon 課件
+  （`06_Formula_Cards_051-060_祛濕劑.md`／`AD_Selected_Formulas_Name_Herbs_Actions.md`／
+  `American_Dragon_201_Formulas_Name_Actions_Syndromes.md`／
+  `American_Dragon_201_Formulas_Name_Treats_Contraindications_Interactions.md`）四處一致寫
+  「FOUR MARVEL PILL」，改成 **「Four Marvel Pill」**，跟 `si_shen_wan` 的「Four Miracle Pill」
+  真正區分開來。跑過 preflight gate 確認這條衝突消失。
+- **`xi_jiao_di_huang_tang`（湯）／`xi_jiao_di_huang_wan`（丸）——不是錯,沒動**：查了
+  `NCBAHM_2026_AD_181_Formulas_Name_Actions_Syndromes.md`，來源本身就把 Wan 版標成「NCBAHM
+  English name: Rhinoceros Horn and Rehmannia Decoction」，還特別註記「American Dragon presents
+  this formula as 'Xi Jiao Di Huang Tang'」——來源自己承認這兩個名字指的實質是同一件事,不是資料
+  打錯。保持原狀,不強行改成 Pill。
+- **`ling_jiao_gou_teng_tang`／`ling_jiao_gou_teng_yin`——不是命名問題,是退役重複卡**：
+  `ling_jiao_gou_teng_yin` 的 `review_status` 已經是 `deprecated`，組成跟 Tang 版完全相同，
+  `exact_source_url` 甚至直接指向 Tang 版的頁面——這是跟你剛做的 D22（敗毒散併入人參敗毒散）同一種
+  情況，該做的是合併/退役處理，不是改英文名。**留給你裁定**，不自己動手合併。
+
+**順手發現一個既有的資料瑕疵，跟這次修改無關**：跑 preflight 的 hygiene 檢查這次多冒出一條
+「`data/generated/knowledge_data.js` 含 U+FFFD 替代字元」——查證過**這個字元在我改動之前就已經在
+`main` 上**（`origin/main` 的 knowledge_data.js 本來就有 1 處，來源看起來是某段課件文字裡的
+「©2013」或「–2013」在早期 PDF 匯入時被壞掉），只是這個新的 hygiene 檢查是第一次真的跑起來抓到它，
+不是我這次改動造成的。這條留給下一輪處理，這次不動。
+
+**驗證**：`build-data.js`/`validate-formula-standard.js`/`validate-formula-quality-strict.js`/
+`check-validation-ratchet.js`/`validate-content-junk.js` 全 PASS，只動了 `si_miao_wan` 的
+`name_en`/`field_sources`，其餘欄位 0 異動。
+
+---
+
 # 2026-08-26 深夜 — Task 8B 結案:round 1 其實是自行生成雙語藥理內容(無源),round 2 誠實撤回,淨變動 0
 
 Task 8B(中藥 `modern_functions_en`)有兩輪：round 1(`68b984db`)聲稱 341→347，round 2
