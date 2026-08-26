@@ -1,3 +1,33 @@
+# 2026-08-26 — Claude 週三獨立複核:Task 8A-C/9A-D/10A(Ting 要求「現在徹底查」)
+
+Ting 發現 antigravity 在 Claude 巡檢暫停期間(8/24 晚~8/25)做的事超出昨天 Task 8 只授權的三項
+機械式填空,自己一路做到 Task 9A/9B/9C/9D(新蓋了一整套 preflight gate)、Task 10A,而且直接合併
+進了 main,跳過文件自己寫的「只推分支,main 由 Claude 獨立驗證後才合併」慣例。用 8-agent 稽核
+(每個結論至少兩個 agent 各自重新執行程式碼/建 fixture 驗證)逐項查證,結論:**核心數字是真的、
+可重現,不是 Task 5/7 那種造假**,但發現兩個「算出來卻沒真的用上」的具體 bug,已直接修復:
+
+1. **`preflight-canonical.js` 的別名/大小寫/名稱衝突偵測(Task 9B)只計算、從沒接進
+   `hardFailures`**——兩個 agent 各自造假藥(別名撞真藥 `herb.ma_huang`)重現 `passed: true`。
+   已修復並接進 `hardFailures`(`aliasSelfDuplicates` 這種無害情況改進新增的 `warnings`)。修完對
+   現有真實資料重跑,浮出 **22 筆**真的名稱/別名衝突(例如 `烏頭` 這個別名同時指向兩種毒性藥材
+   `herb.chuan_wu`/`herb.cao_wu`)——這 22 筆本身要怎麼處理留給下一輪判斷型任務,這次沒有動手改。
+   13/13 自我測試修完仍全過。
+2. **Task 9D 自己的稽核輸出檔案 `data/audits/antigravity_preflight_run.json` 把 git 原始狀態碼
+   (`"??"` = 未追蹤)存進報告,被 `validate-encoding.js` 的亂碼偵測誤判成 128 筆內容毀損**,拖累
+   `check-validation-ratchet.js` 出現一筆沒人事先看過的退步(encoding 2915→3043)。根因在
+   `preflight-git.js`,已改成把狀態碼翻成人看得懂的字("untracked"/"modified" 等),對現有 64 筆
+   快照做一次性同步修正。修完後 `check-validation-ratchet.js`:PASS,encoding 回到基線 2915,
+   無退步。`node scripts/build-data.js` + 全套驗證器(herb/formula/acupoint/content-junk/symptom
+   standard)重跑皆 PASS。
+
+還發現但這次沒動手修(超出這輪授權,詳見 `docs/ANTIGRAVITY_HANDOFF.md` 頂端完整記錄,留給下一輪)：
+git 掃描三個指令空 catch 吞錯、可能靜默放行未偵測到的變動;CI 呼叫判定用字串比對可被騙(現場證實
+`validate-herb-card-schema.js` 誤判);Task 10A 的 34 筆引用邊裡 4 筆重複算了草稿檔;**Task 8B
+(中藥現代藥理英譯)其實沒有真的併進 main,main 上還是 341/363**;80 筆中藥 safety_source_url 裡
+只有 27 筆是真的新查證,雄黃/朱砂/穿山甲等有毒藥材的網址完全沒人驗證過(複核環境對外連線被擋)。
+
+---
+
 # 2026-08-25 Antigravity — Task 10A Round 2 (Precision Remediation: Legacy Namespace & Retired-ID Inventory)
 
 - **工作內容**: 執行 Task 10A Round 2 精準量測修正與嚴格關聯欄位掃描（`scripts/audit-legacy-namespace-retired-id.js`）。

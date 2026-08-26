@@ -351,14 +351,47 @@ function auditCanonicalIntegrity(options = {}) {
   if (formulaCollisions.wsCollisions.length > 0) {
     formulaCollisions.wsCollisions.forEach(c => hardFailures.push(`Whitespace collision in formulas: ${c.rawId1} vs ${c.rawId2}`));
   }
+  // 2026-08-26 fix (independent audit of Task 9D, see docs/ANTIGRAVITY_HANDOFF.md):
+  // caseCollisions was computed above but never checked here — a herb/formula ID
+  // differing only by letter case is exactly the kind of silent-misroute risk this
+  // module's own docstring (line 7, CASE_NORMALIZED_ID_COLLISION) says it covers.
+  if (herbCollisions.caseCollisions.length > 0) {
+    herbCollisions.caseCollisions.forEach(c => hardFailures.push(`Case collision in herbs: ${c.rawId1} vs ${c.rawId2}`));
+  }
+  if (formulaCollisions.caseCollisions.length > 0) {
+    formulaCollisions.caseCollisions.forEach(c => hardFailures.push(`Case collision in formulas: ${c.rawId1} vs ${c.rawId2}`));
+  }
 
   // 2. Name Collisions
   const herbNameCollisions = auditNameCollisions(herbs, 'herb');
   const formulaNameCollisions = auditNameCollisions(formulas, 'formula');
+  // 2026-08-26 fix: same gap as above — two DIFFERENT records sharing the exact
+  // same (or same-after-normalization) canonical name is a genuine identity
+  // collision (a name-based lookup would silently resolve to the wrong record),
+  // not just an inventory item. Was computed and returned in the report but never
+  // reached hardFailures, so a real collision would not have failed the gate.
+  [herbNameCollisions, formulaNameCollisions].forEach((nc) => {
+    nc.exactZhCollisions.forEach(c => hardFailures.push(`Exact Chinese name collision (${c.entityType}): "${c.name_zh}" shared by ${c.recordIds.join(', ')}`));
+    nc.exactEnCollisions.forEach(c => hardFailures.push(`Exact English name collision (${c.entityType}): "${c.name_en}" shared by ${c.recordIds.join(', ')}`));
+    nc.normZhCollisions.forEach(c => hardFailures.push(`Normalized Chinese name collision (${c.entityType}): ${c.rawNames.join(' / ')} shared by ${c.recordIds.join(', ')}`));
+    nc.normEnCollisions.forEach(c => hardFailures.push(`Normalized English name collision (${c.entityType}): ${c.rawNames.join(' / ')} shared by ${c.recordIds.join(', ')}`));
+  });
 
   // 3. Alias Collisions
   const herbAliasCollisions = auditAliasCollisions(herbs, 'herb');
   const formulaAliasCollisions = auditAliasCollisions(formulas, 'formula');
+  // 2026-08-26 fix: same gap — an alias resolving to 2+ different records
+  // (ALIAS_TO_MULTIPLE_CANONICAL) or shadowing another record's canonical name
+  // (ALIAS_COLLIDES_WITH_CANONICAL_NAME) is exactly the ambiguous-lookup risk
+  // this module's docstring (line 10) says it covers; aliasSelfDuplicates (a
+  // record listing its own name as its own alias) is harmless redundancy, not a
+  // collision, so it stays informational only — surfaced via `warnings` below
+  // instead of failing the gate.
+  [herbAliasCollisions, formulaAliasCollisions].forEach((ac) => {
+    ac.aliasToMultiple.forEach(c => hardFailures.push(`Alias "${c.alias}" (${c.entityType}) resolves to multiple records: ${c.recordIds.join(', ')}`));
+    ac.aliasCollidesWithCanon.forEach(c => hardFailures.push(`Alias "${c.alias}" (${c.entityType}) on ${c.referencingRecordIds.join(', ')} collides with ${c.canonicalOwnerId}'s canonical name`));
+    ac.aliasSelfDuplicates.forEach(c => warnings.push(`${c.recordId} (${c.entityType}) lists its own canonical name "${c.alias}" as an alias — harmless but redundant`));
+  });
 
   // 4. Possible Duplicates (Warning / Inventory Only)
   const herbPossibleDuplicates = findPossibleDuplicates(herbs, 'herb');
@@ -523,6 +556,7 @@ function auditCanonicalIntegrity(options = {}) {
   return {
     passed: hardFailures.length === 0,
     hardFailures,
+    warnings,
     exactDuplicateCount: herbCollisions.exactDups.length + formulaCollisions.exactDups.length,
     whitespaceCollisionCount: herbCollisions.wsCollisions.length + formulaCollisions.wsCollisions.length,
     caseCollisionCount: herbCollisions.caseCollisions.length + formulaCollisions.caseCollisions.length,

@@ -81,6 +81,32 @@ function parseGitStatusZ(buffer) {
   return entries;
 }
 
+const GIT_STATUS_LABELS = { M: 'modified', A: 'added', D: 'deleted', R: 'renamed', C: 'copied', U: 'unmerged', T: 'type-changed' };
+
+// 2026-08-26 fix (independent audit of Task 9D, see docs/ANTIGRAVITY_HANDOFF.md):
+// this used to store git's raw porcelain codes verbatim (e.g. "??" for
+// untracked) in changedFiles[].status. Nothing in this file or its caller
+// branches on the exact code string (confirmed: classification below is
+// entirely file-path-based), so translating it here is safe — and it fixes a
+// real side effect: scripts/validate-encoding.js's mojibake heuristic treats
+// any bare "??" string as a sign of corrupted/untranslated Chinese text, so
+// every run of this tool that touched an untracked file poisoned
+// data/audits/antigravity_preflight_run.json with false "encoding defect"
+// hits (2915->3043 in check-validation-ratchet.js, entirely from this cause).
+function describeGitStatus(rawStatus) {
+  const raw = String(rawStatus || '').trim();
+  if (!raw) return 'unknown';
+  if (raw === '??') return 'untracked';
+  if (raw === '!!') return 'ignored';
+  const simMatch = raw.match(/^([RC])(\d+)$/);
+  if (simMatch) return `${GIT_STATUS_LABELS[simMatch[1]]} (${simMatch[2]}% similar)`;
+  if (/^[MADRCUT]{1,2}$/.test(raw)) {
+    const labels = [...new Set(raw.split('').map((ch) => GIT_STATUS_LABELS[ch] || ch))];
+    return labels.join('+');
+  }
+  return `unrecognized-git-status(${raw})`;
+}
+
 function analyzeGitMutationScope(baseRef = 'origin/main', options = {}) {
   const root = options.root || path.resolve(__dirname, '../..');
   const allowlist = options.allowlist || [];
@@ -129,7 +155,7 @@ function analyzeGitMutationScope(baseRef = 'origin/main', options = {}) {
 
   const changedFiles = [];
   for (const [filePath, status] of changedFilesMap.entries()) {
-    changedFiles.push({ filePath, status });
+    changedFiles.push({ filePath, status: describeGitStatus(status) });
   }
 
   const canonicalChanges = changedFiles.filter(f => f.filePath.startsWith('data/') && !f.filePath.startsWith('data/generated/') && !f.filePath.startsWith('data/audits/'));
