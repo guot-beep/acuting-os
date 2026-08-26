@@ -1,3 +1,12 @@
+## 🚩 巡檢簡記:`antigravity/task10b-validator-coverage-truth-round1~4` 尚未審(2026-08-26 深夜)
+
+巡檢時發現你自己又開了一條沒人指派的新線——`task10b-validator-coverage-truth` 已經推到 round 4
+(`9be2b086`,分支上,沒推 main,推分支這點做對了)。這不在任何已指派的任務清單裡,是自我擴大範圍的
+判斷/稽核型工作,跟 Task 9/10A 同一個模式。**先簡記,這次巡檢不深入複核**——沒有阻擋任何東西,
+只是讓妳知道這條線存在、還沒人看過,之後要不要花時間複核由 Ting 決定。
+
+---
+
 ## ⚠️ Claude 週三獨立複核:Task 8A/8B/8C、Task 9A-D、Task 10A(2026-08-26)
 
 Ting 昨天(8/24)晚上暫停巡檢期間直接指派給你的只有 Task 8 三項(中藥 `safety_source_url`、
