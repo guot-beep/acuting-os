@@ -1,3 +1,16 @@
+# 2026-08-26 Antigravity — Task 10C (Clinical Export / Import Contract Audit)
+
+- **做了什麼**: 完成 Task 10C 臨床病歷匯出/匯入/還原契約唯讀稽核（`scripts/audit-clinical-export-contract.js`）：檢驗 `app.js`、`js/clinical-store.js`、`scripts/test-export-envelope-shapes.js`、`data/clinical_cases/schema.sql`，建立 Producer $\rightarrow$ Consumer 契約矩陣，回答 14 大機械性問題，並以 10 組合成隔離回歸測試驗證現行行為。
+- **數字統計**:
+  - 識別 7 個 Export/Backup Producers 與 7 個 Import/Restore Consumers；建立 6 組核心契約配對矩陣。
+  - 舊裸陣列相容性：VERIFIED（永久相容）；未知未來版本 Fail-Closed：VERIFIED（直接 loud error 拒收）；寫入前保護：VERIFIED（全檢驗通過才 persist/swap）；PHI 安全：VERIFIED（錯誤訊息長度不轉述內容）。
+  - 未知外加欄位保留：NOT_ENFORCED（v1 normalizer 白名單過濾）；`case_count` 檢驗：NOT_ENFORCED（僅具資訊性）；D12 條款強制性：PARTIAL（CI 已驗信封與不變量，2026-09-01 Additive 單向門待生效）。
+- **驗證結果**: 10/10 回歸測試 100% PASS（直通真實生產函式）；生產資料 0 異動。
+- **已知未解**: v1 normalizer 重新構造物件時會剔除未在白名單之擴充欄位；`schema_version: 1` 之 `case_count` 尚未加入解包長度一致性強制校驗。
+- **下一步**: 推送至 `antigravity/task10c-clinical-export-contract`，等待 Ting / 團隊審閱，不開始 Task 10D。
+
+---
+
 # 2026-08-26 深夜 — Claude 複核 Task 10B Round 4(驗證器涵蓋率真相表):工具本體可信,自撰摘要含一處捏造檔名
 
 Ting 問「task10b 你要不要順便看一下」——這是 antigravity 自己開的新線(沒人指派),推在

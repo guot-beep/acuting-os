@@ -1,3 +1,29 @@
+## ✅ Task 10C：Clinical Export / Import Contract Audit（已完成）
+
+- **類型**: READ-ONLY Clinical Backup/Restore Contract & Boundary Audit（0 production mutation, 0 CI workflow changes, 0 debt repairs）
+- **分支**: `antigravity/task10c-clinical-export-contract`
+- **主要產出**:
+  - 核心稽核腳本: `scripts/audit-clinical-export-contract.js`
+  - 結構化資料庫: `data/audits/clinical_export_contract_2026-08-26.json`
+  - 完整契約報告: `docs/audits/CLINICAL_EXPORT_CONTRACT_2026-08-26.md`
+- **核心數據 (SSOT 直出)**:
+  - Base SHA: `4c1959a835ad98eac4d78e557dfdde652ae030fb` (git 動態衍生)
+  - Head SHA: `4c1959a835ad98eac4d78e557dfdde652ae030fb` (git 動態衍生)
+  - Clinical Export Producers: **7** 個 (P1-P7)
+  - Import/Restore Consumers: **7** 個 (C1-C7)
+  - 契約矩陣配對: **6** 組 (全覆蓋 v1/v2/migration 生命週期)
+  - 舊裸陣列相容性: `VERIFIED` (`unwrapV1CasesPayload` 永久支援)
+  - 未知未來版本防護: `VERIFIED` (`schema_version: 3+` loud rejection)
+  - 寫入前防護 (Fail-Before-Write): `VERIFIED` (無副作用中止)
+  - 錯誤訊息 PHI 防護: `VERIFIED` (長度/結構診斷，絕不轉述內容)
+  - 未知外加欄位保留: `NOT_ENFORCED` (v1 normalizer 白名單過濾)
+  - Case Count 校驗: `NOT_ENFORCED` (資訊性欄位)
+  - 重複 Case ID 處理: `VERIFIED` (v1 merge last-wins, v2 / migration 拒收)
+  - D12 架構強制狀態: `PARTIAL` (CI 已鎖定信封與不變量，2026-09-01 Additive-Only 生效)
+  - 回歸測試: 10/10 隔離合成測試 100% PASS（直通真實生產函式）
+
+---
+
 ## 🚩 巡檢簡記:`4c1959a8` 直接推了 main,沒推分支(2026-08-26 深夜)
 
 我複核完 Task 10B Round 4 落地後,你又推了一個 commit(`4c1959a8`,「refresh truth table snapshot
