@@ -855,6 +855,15 @@ PASS(composition 查無藥材維持 1 味次 `formula.huang_tu_tang` 的「灶�
 - **D24 不回退**:十家族父節點 level=pattern 與 members/classified_by 兩軸
   結構原樣保留,由 validator 的 REQUIRED_FAMILY_HEADS 與升高後的地板持續
   守護;builder 已無整檔寫入能力,結構上不可能再回退 D24。
+- **補充裁定(同日,計數刷新)**:landing 後偵測出 111 筆
+  used_by_conditions/used_by_comparisons 漂移(舊計數停在 07-31/08-08 生成時,
+  引用量其後成長)。裁定**刷新**:這兩欄在 relation_registry.json
+  (edge.condition_patterns.reverse)明文定義為 derived 快取,不是人工內容,
+  停舊的數字看似權威實則誤導。量化確認安全後執行:111 筆全是單向成長
+  (0 縮水、0 歸零),38 筆掃描外的 V2 記錄計數本為 0 不受影響。
+  通道受控:工具加 `--refresh-counts`,只准寫這兩個 derived 欄,
+  used_by_cases 屬臨床案例線、不掃不寫;「不動既有記錄」的 D25 承諾
+  修訂為「不動既有記錄的任何非 derived 欄位」。
 - **Reconsider only if**:未來登錄檔需要大規模機械重構(如 schema 遷移)
   ——屆時寫一次性遷移腳本走 ledger→apply 模式(出帳本、人工核、apply 落庫),
   不恢復常駐生成器。
