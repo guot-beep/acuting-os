@@ -1,3 +1,18 @@
+# 2026-08-25 Antigravity — Task 10A (Legacy Namespace & Retired-ID Integrity Inventory)
+
+- **工作內容**: 執行 AcuTing OS Legacy Namespace / Retired-ID 完整現況盤點與機械對照稽核 `scripts/audit-legacy-namespace-retired-id.js`。
+  - 正典與生成資料零變更：`data/**` canonicals、`data/generated/*` 生成檔、`.github/workflows/*` CI 配置 Byte-for-byte 0 異動。
+  - 全庫命名空間普查：共發現 **465** 個命名空間，其中 D11 正典診斷命名空間 **4** 個（`cond.*`、`tdis.*`、`pattern.*`、`sym.*`），Non-D11 命名空間 **461** 個。
+  - 診斷側舊命名空間盤點：共發現 **465** 個舊診斷 ID（涵蓋 `western_condition.*`、`eastern_disease.*`、`med.*`、`pat.*`、`symptom.*`、`tdx.*`、`rf.*`、`xwalk.*`），共 **2023** 處引用。
+  - 機械對照（Twin / Crosswalk）盤點：標記 `EXACT_CROSSWALK_EXISTS`、`EXACT_CANONICAL_TWIN_EXISTS`、`MECHANICAL_NAME_CANDIDATE_ONLY`、`MULTIPLE_CANDIDATES`、`NO_CANDIDATE_FOUND`，不進行任何主觀語意或臨床對齊。
+  - 退役/廢棄 ID 引用風險：全庫盤點出 12 筆 `deprecated` / `import_stub` 記錄（包含 `herb.qian_cao_gen` 0 筆引用之孤立狀態），現存 Active → Deprecated 引用邊共 **35** 處，Active → Import Stub 引用邊共 **0** 處。
+  - UI 重複命名空間宇宙：在 `js/knowledge.js` 發現 2 處 `MULTIPLE_NAMESPACES_RENDERED_AS_SAME_ENTITY_TYPE`（`western_condition`/`cond` 渲染為西醫病名，`eastern_disease`/`tdis` 渲染為中醫病名）。
+  - 負控回歸測試：8/8 測試（D11 正典判定、舊診斷盤點、Active→Deprecated 偵測、Active→Stub 偵測、精確 Crosswalk 判定、多候選判定、無候選判定、損毀 JSON 拋錯）100% PASS。
+- **產出檔案**: `scripts/audit-legacy-namespace-retired-id.js` / `data/audits/legacy_namespace_retired_id_2026-08-25.json` / `docs/audits/LEGACY_NAMESPACE_RETIRED_ID_2026-08-25.md`。
+- **分支與狀態**: 推送至 `antigravity/task10a-legacy-namespace-retired-id-audit`，Task 10A 正式結案並停下，等待 SOL / Claude 人工架構裁定。
+
+---
+
 # 2026-08-25 深夜 — Task 8C 驗收通過並落地:方劑 exact_source_url 補齊,94%→97%(附一則編碼異常提醒)
 
 Task 8C(`antigravity/formula-fill-task8-source-url`，commit `128da48e`）延續同一套 HTTP 驗證方法補
