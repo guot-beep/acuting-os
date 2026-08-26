@@ -426,6 +426,11 @@ jobs:
       - name: Phase E longitudinal walkthrough (storage round-trip)
         run: node scripts/walkthrough-phase-e.js
 
+      # 2026-08-26 自棘輪畢業(基線 10→0 同日):退役 id 不得被 active 記錄
+      # 引用。D21 的「零殘留」宣稱腐化過一次,這支 gate 讓它不能再腐化。
+      - name: retired ids are never referenced by active records
+        run: node scripts/validate-retired-id-references.js
+
       # pointer 三態與還原演練:P4 的另外兩項驗收標準(31/31、65/65)。
       - name: pointer runtime three-state contract
         run: node scripts/test-pointer-runtime.js
