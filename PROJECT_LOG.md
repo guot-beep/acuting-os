@@ -1,3 +1,40 @@
+# 2026-08-26 深夜 — 防己/木通兩組安全警語補齊:查證兩組品種辨識沒有把毒性品種標成安全,純新增警語
+
+Ting 要求先查證命名衝突裡風險最高的兩組（防己/漢防己、木通/川木通），查完是好消息：**兩組現有的
+品種鑑定本身沒有把有毒品種標成安全來源**——問題是兩張「薄卡」（`herb.fang_ji`/`herb.mu_tong`）
+的安全警語完整度遠不如姊妹卡（`herb.han_fang_ji`/`herb.chuan_mu_tong`）：
+
+- `herb.han_fang_ji` 已經有拉丁學名(`Stephaniae tetrandrae Radix`，正確對應安全的漢防己/粉防己
+  來源)、`species_confusion`/`aristolochic_acid_risk` 安全標記、明確禁忌「廣防己/木防己含馬兜鈴酸
+  之品種禁用」；但 `herb.fang_ji`(防己，泛稱)完全沒有拉丁學名，馬兜鈴酸警語只在禁忌清單最後帶過。
+- `herb.chuan_mu_tong` 已經有拉丁學名(`Clematidis Armandii Caulis`，安全來源)、明確警語「關木通
+  (Guan Mu Tong)非川木通」；但 `herb.mu_tong`(木通，泛稱)完全沒提到關木通這個歷史上最常被混充的
+  有毒品種——這個反而更需要補，因為歷史中毒案例商家標示用的就是「木通」這個泛稱。
+
+**已補（純新增，比照已核實的姊妹卡內容，不改動任何既有欄位）**：
+- `herb.fang_ji`：新增 `pharmaceutical_latin: Stephaniae tetrandrae Radix / Radix Stephaniae
+  Tetrandrae`（比照 han_fang_ji）；`safety_flags` 新增 `species_confusion`/`aristolochic_acid_risk`；
+  `cautions_zh`/`cautions_en` 各新增一條品種辨識警語（比照 han_fang_ji 已核實的內容,中英同步新增,
+  維持索引對齊）。
+- `herb.mu_tong`：新增 `pharmaceutical_latin: Akebiae Caulis`（`curriculum/herbs/Pinyin & Latin
+  Herb List.md`／`curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md`
+  核實）；`safety_flags` 新增 `species_confusion_aristolochic_acid_risk`；`cautions_zh`/
+  `cautions_en` 各新增一條「關木通非木通」警語（比照 chuan_mu_tong 已核實的內容,中英同步新增）。
+
+**過程中自己抓到一次索引不對齊**：第一版只加了 `cautions_zh` 沒同步加 `cautions_en`，
+`validate-herb-standard.js` 的 E5 立刻抓到（`fang_ji: 13 vs 12`、`mu_tong: 7 vs 6`）——補上對應
+英文翻譯後重跑全過，這正是這個專案整季一直在防的那種「只加中文不加對應英文」錯位，這次是我自己
+的改動觸發，自己抓到自己修正。
+
+**未動的部分**：`fang_ji`/`han_fang_ji` 跟 `mu_tong`/`chuan_mu_tong` 的英文名撞名本身沒有處理——
+這牽涉「這兩張卡要不要合併成一張」的決定，留給 Ting。
+
+**驗證**：`build-data.js`/`validate-herb-standard.js`/`validate-herb-quality-strict.js`/
+`check-validation-ratchet.js`/`validate-content-junk.js` 全 PASS，只動了 `herb.fang_ji`/
+`herb.mu_tong` 兩張卡，逐欄位核對沒有任何欄位變短，純新增。
+
+---
+
 # 2026-08-26 深夜 — 22 筆命名衝突續清:7 筆錯置別名安全移除,剩 13 筆分類待裁定
 
 D 組(3 筆)處理完之後繼續看剩下 18 筆。逐一核對每一對的 `review_status`/`aliases_zh`/`aliases_en`

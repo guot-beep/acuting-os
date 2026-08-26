@@ -22607,7 +22607,9 @@
       ],
       "safety_flags": [
         "kidney_disease_review",
-        "pregnancy_review"
+        "pregnancy_review",
+        "species_confusion",
+        "aristolochic_acid_risk"
       ],
       "clinical_use_note": "防己是中藥，別名:石蟾蜍,粉防己,漢防己,載君行,解離,級防己,石解,瓜防已,長根金少年犯, 功效:行水，瀉下焦濕熱。治水腫臌脹，濕熱腳氣，手足攣痛，癬疥瘡腫。《本經》：「主風寒溫瘧，熱氣諸癇。除邪，利大小便。」",
       "modern_use_tags": [
@@ -22710,7 +22712,8 @@
         "慢性腎臟病患者忌用：防己中某些成分會增加腎臟負擔，加重慢性腎臟病。",
         "高血壓患者忌用：防己能降血壓，與降壓藥物同用可能會導致血壓過低。",
         "消化不良者忌用：防己某些成分可能會加重消化不良症狀。",
-        "過敏體質者忌用：防己具有一定毒性，過敏體質者服用後容易過敏。 注意：馬兜鈴科植物（如廣防己、異葉馬兜鈴）含馬兜鈴酸，具腎毒性及致癌風險，使用須嚴格遵循專業指導。"
+        "過敏體質者忌用：防己具有一定毒性，過敏體質者服用後容易過敏。 注意：馬兜鈴科植物（如廣防己、異葉馬兜鈴）含馬兜鈴酸，具腎毒性及致癌風險，使用須嚴格遵循專業指導。",
+        "辨漢防己與木防己/廣防己：不能只看「防己」二字替代，需確認品種與安全性，尤其避免馬兜鈴酸來源（比照 herb.han_fang_ji 已核實的警語）。"
       ],
       "safety_source_url": "https://cloudtcm.com/herb/4057",
       "safety_fetched_at": "2026-07-23T07:25:11.232Z",
@@ -22849,13 +22852,17 @@
           "https://cloudtcm.com/herb/4057"
         ],
         "cautions_zh": [
-          "https://cloudtcm.com/herb/4057"
+          "https://cloudtcm.com/herb/4057",
+          "比照 herb.han_fang_ji 已核實之品種辨識警語"
         ],
         "actions_en": [
           "translated: 本卡 functions_zh 逐條忠實翻譯(帳本 docs/research_packs/HERB_EN_BACKFILL_2026-08-19.json,紅線5 同長同序)"
         ],
         "modern_functions_en": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md",
-        "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
+        "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md",
+        "pharmaceutical_latin": [
+          "比照 herb.han_fang_ji 已核實之 Stephaniae tetrandrae Radix"
+        ]
       },
       "card_grade": "partial",
       "import_artifacts": [
@@ -22892,7 +22899,8 @@
         "Contraindicated in chronic kidney disease — certain components of Fang Ji increase renal burden and can aggravate chronic kidney disease.",
         "Contraindicated in hypertension — Fang Ji lowers blood pressure, and combined use with antihypertensive medication may cause excessive hypotension.",
         "Contraindicated in indigestion — certain components of Fang Ji may aggravate indigestion.",
-        "Contraindicated in allergy-prone individuals — Fang Ji has some toxicity and can readily trigger allergic reactions. Note: Aristolochiaceae species (such as Guang Fang Ji and Aristolochia manshuriensis) contain aristolochic acid, which carries nephrotoxic and carcinogenic risk — use must strictly follow professional guidance."
+        "Contraindicated in allergy-prone individuals — Fang Ji has some toxicity and can readily trigger allergic reactions. Note: Aristolochiaceae species (such as Guang Fang Ji and Aristolochia manshuriensis) contain aristolochic acid, which carries nephrotoxic and carcinogenic risk — use must strictly follow professional guidance.",
+        "Distinguish Han Fang Ji from Mu Fang Ji/Guang Fang Ji: do not substitute based on the name \"Fang Ji\" alone — confirm species and safety, especially avoiding aristolochic-acid-containing sources (mirrored from the verified caution on herb.han_fang_ji)."
       ],
       "dosage_normalized": {
         "original_shape": "json_string",
@@ -22944,7 +22952,8 @@
       ],
       "contraindications_zh": [
         "陰虛津傷及脾胃虛弱者慎用。"
-      ]
+      ],
+      "pharmaceutical_latin": "Stephaniae tetrandrae Radix / Radix Stephaniae Tetrandrae"
     },
     {
       "id": "herb.sang_ji_sheng",
@@ -27965,7 +27974,8 @@
         "pregnancy_review",
         "kidney_disease_review",
         "toxicity_review",
-        "dose_preparation_review"
+        "dose_preparation_review",
+        "species_confusion_aristolochic_acid_risk"
       ],
       "clinical_use_note": "木通為木通科植物木通的乾燥藤莖。主產於江蘇、浙江、安徽、江西、湖北、湖南、四川、貴州、雲南等地。夏、秋二季採收，除去枝葉及粗皮，切片，曬乾。\n木通味苦、辛，性寒。歸肺、大腸、膀胱經。具有利尿通淋、清熱解毒、消腫止痛的功效。\n主治\n熱淋澀痛：可與滑石、車前子、甘草等同用。\n水腫脹滿：可與澤瀉、茯苓、豬苓等同用。\n肺熱咳嗽：可與桑白皮、杏仁、甘草等同用。\n癰腫瘡毒：可與金銀花、連翹、蒲公英等同用。\n現代研究\n木通具有利尿、降血壓、抗菌、抗炎、鎮痛、解熱、抗腫瘤等作用。\n利尿：木通能增加尿量、排尿次數，對急性腎炎、慢性腎炎、心源性水腫、肝硬化腹水等有一定療效。\n降血壓：木通能降低血壓，對高血壓有一定的治療作用。\n抗菌：木通對多種細菌有抑制作用，如金黃色葡萄球菌、大腸桿菌、綠膿桿菌等。\n抗炎：木通能抑制炎症反應，對急性炎症有一定的治療作用。\n鎮痛：木通有一定的鎮痛作用，對神經性疼痛、胃痛、關節痛等有一定的療效。\n解熱：木通能降低體溫，對發熱有一定的治療作用。\n抗腫瘤：木通有一定的抗腫瘤作用，對肺癌、肝癌、胃癌等有一定的治療作用。",
       "modern_use_tags": [
@@ -28052,7 +28062,8 @@
         "氣弱者忌服：木通性寒涼，氣弱者服用，可能損耗陽氣。",
         "精滑者忌服：木通可能導致遺精，精滑者服用，症狀可能加重。",
         "溲頻者忌服：木通利尿，溲頻者服用，可能加重尿頻。",
-        "孕婦忌服：木通活血通經，孕婦服用，可能導致流產。"
+        "孕婦忌服：木通活血通經，孕婦服用，可能導致流產。",
+        "關木通（Guan Mu Tong，馬兜鈴科 Aristolochia manshuriensis）非木通（本卡指木通科 Akebia）；歷史上曾被混充導致腎病變案例，腎功能不全者禁用混充品（比照 herb.chuan_mu_tong 已核實的警語）。"
       ],
       "safety_source_url": "https://cloudtcm.com/herb/1123",
       "safety_fetched_at": "2026-07-23T07:25:15.295Z",
@@ -28278,13 +28289,17 @@
           "https://cloudtcm.com/herb/1123"
         ],
         "cautions_zh": [
-          "https://cloudtcm.com/herb/1123"
+          "https://cloudtcm.com/herb/1123",
+          "比照 herb.chuan_mu_tong 已核實之關木通辨識警語"
         ],
         "exam_importance": [
           "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf"
         ],
         "modern_functions_en": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md",
-        "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
+        "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md",
+        "pharmaceutical_latin": [
+          "curriculum/herbs/Pinyin & Latin Herb List.md; curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md"
+        ]
       },
       "card_grade": "partial",
       "condition_tags_en": [
@@ -28310,7 +28325,8 @@
         "Contraindicated in Qi weakness — its cold nature may deplete Yang Qi.",
         "Contraindicated in Spermatorrhea — may aggravate seminal leakage.",
         "Contraindicated in urinary frequency — its diuretic action may worsen the frequency.",
-        "Contraindicated in pregnancy — its blood-invigorating, menstruation-promoting action may cause miscarriage."
+        "Contraindicated in pregnancy — its blood-invigorating, menstruation-promoting action may cause miscarriage.",
+        "Guan Mu Tong (Aristolochia manshuriensis, family Aristolochiaceae) is NOT Mu Tong (this card refers to Akebia, family Lardizabalaceae); historical substitution has caused documented cases of nephropathy — those with impaired renal function must avoid substituted products (mirrored from the verified caution on herb.chuan_mu_tong)."
       ],
       "dosage_normalized": {
         "original_shape": "json_string",
@@ -28352,7 +28368,8 @@
       },
       "contraindications_zh": [
         "孕婦禁用；腎功能不全者慎用。"
-      ]
+      ],
+      "pharmaceutical_latin": "Akebiae Caulis"
     },
     {
       "id": "herb.hua_shi",
