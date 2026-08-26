@@ -1,3 +1,13 @@
+# 2026-08-26 — Codex Conditions 睡眠低通氣病因 B41
+
+- **範圍**：精確修改 `cond.sleep_related_hypoventilation`；只補雙語 etiology、record sources 與對應 field provenance，既有摘要、病理、risk/red flags、acupuncture scope、中醫 relations、方劑與穴位未覆寫。
+- **數字**：該卡 `10→12/12`；`FULL_DETAIL_CANDIDATE 309→310`、`DETAIL_PARTIAL 196→195`、`SKELETON 0→0`；全庫缺 etiology `170→169`、缺 sources `155→154`；source entries `982→984`、有 record source 的卡 `350→351`。
+- **來源／臨床區分**：NIH/NLM PMC 的慢性／睡眠低通氣綜述與 sleep-related breathing disorders review；2 個直接 URL 均 HTTP 200。內容依 ICSD 病因群區分中樞驅動不足、神經肌肉執行失敗與肺／胸廓／肥胖機械負荷，並說明為何常先在睡眠期顯現。
+- **驗證**：只變更 1 個指定 id 的 4 個允許欄位群，其他 504 卡逐記錄不變；condition standard `505/505 clean`、build-data、relations、relation registry、ratchet、content-junk、URL reachability、generated data 與 `git diff --check` 均無新增 blocking defect。
+- **未解／下一步**：本批沒有覆寫既有 `droracle.ai` western-context provenance 或未逐條核實的 red-flag provenance；兩者留待另行 source-upgrade gate。仍有 `195` 張 partial／`169` 張病因缺口；下一批轉做常見 GI 病因。
+
+---
+
 # 2026-08-26 — Codex Conditions 呼吸病因 B40
 
 - **範圍**：精確修改 `cond.rsv_infection`、`cond.cough_variant_asthma`、`cond.hyperventilation_syndrome`；只補雙語 etiology、record sources 與對應 field provenance。RSV 沿用並增補既有 CDC/NCBI sources；既有正文、安全欄、acupuncture scope、中醫 relations、方劑與穴位未覆寫。

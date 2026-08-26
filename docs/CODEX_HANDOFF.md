@@ -1,5 +1,13 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-26] Codex Handoff — Conditions sleep-related hypoventilation etiology B41
+
+- **Exact ids / fields**: `cond.sleep_related_hypoventilation`; filled only bilingual etiology, record-level sources, and matching field provenance. Existing summary, pathology, risk/red flags, acupuncture scope, TCM relations, formulas, and acupoints were preserved.
+- **Measured delta**: card score `10→12/12`; maturity `309→310 FULL_DETAIL_CANDIDATE`, `196→195 DETAIL_PARTIAL`, `0→0 SKELETON`; missing etiology `170→169`, missing sources `155→154`; source entries `982→984`, sourced records `350→351`.
+- **Evidence / distinctions**: two NIH/NLM PMC reviews, both direct URLs HTTP 200. Etiology distinguishes impaired central drive, failed neuromuscular execution, and pulmonary/chest-wall/obesity loading, plus why limited ventilatory reserve often manifests first during sleep.
+- **Validation**: only one exact id and four allowed field groups changed; the other 504 records remained equal. Condition standard `505/505 clean`, build-data, relations, relation registry, validation ratchet, content junk, URL reachability, generated-data rebuild, and `git diff --check` produced no new blocking defect.
+- **Explicit unresolved / next line**: existing `droracle.ai` western-context provenance and red-flag provenance not verified item-by-item were not overwritten; handle them later as an explicit source-upgrade gate. There remain 195 partial records and 169 etiology gaps; next batch targets common GI etiologies.
+
 ## [2026-08-26] Codex Handoff — Conditions respiratory etiologies B40
 
 - **Exact ids / fields**: `cond.rsv_infection`, `cond.cough_variant_asthma`, and `cond.hyperventilation_syndrome`; filled bilingual etiology, record-level sources, and matching field provenance only. RSV preserved and extended its existing CDC/NCBI source list; existing prose, safety fields, acupuncture scope, TCM relations, formulas, and acupoints were preserved.
