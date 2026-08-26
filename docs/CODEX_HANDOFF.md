@@ -1,5 +1,13 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-26] Codex Handoff — Conditions anorectal/colonic etiologies B43
+
+- **Exact ids / fields**: `cond.anal_fissure`, `cond.colonic_polyp`, `cond.ischemic_colitis`, `cond.rectal_prolapse`, `cond.perianal_abscess`, and `cond.anal_fistula`; filled only bilingual etiology, record-level sources, and matching field provenance. Existing safety fields, acupuncture scope, TCM relations, formulas, and acupoints were preserved.
+- **Measured delta**: all six cards `10→12/12`; maturity `312→318 FULL_DETAIL_CANDIDATE`, `193→187 DETAIL_PARTIAL`, `0→0 SKELETON`; missing etiology `164→158`, missing sources `149→143`; source entries `994→1006`, sourced records `356→362`.
+- **Evidence / distinctions**: NIH/NLM NCBI Bookshelf, MedlinePlus, ACG, and ASCRS; all eleven unique direct URLs returned HTTP 200. Distinguished primary/secondary fissures, sporadic/inherited polyp settings, low-flow/occlusive colon ischemia, adult/pediatric prolapse backgrounds, and cryptoglandular versus Crohn-related abscess/fistula mechanisms.
+- **Validation**: only six exact ids and four allowed field groups changed; the other 499 records remained equal. Condition standard `505/505 clean`, build-data, relations, relation registry, validation ratchet, content junk, URL reachability, generated-data rebuild, per-card score comparison, and `git diff --check` produced no new blocking defect.
+- **Explicit unresolved / next line**: `FULL_DETAIL_CANDIDATE` is schema maturity only, not Ting RV1 approval or item-level approval of existing acupuncture-scope/red-flag provenance. There remain 187 partial records and 158 etiology gaps; continue common hepatobiliary/pancreatic Conditions.
+
 ## [2026-08-26] Codex Handoff — Conditions common GI etiologies B42
 
 - **Exact ids / fields**: `cond.h_pylori_infection`, `cond.crohn_disease`, `cond.ulcerative_colitis`, `cond.achalasia`, and `cond.gastroparesis`; filled only bilingual etiology, record-level sources, and matching field provenance. Existing summaries, pathology, safety fields, TCM relations, formulas, and acupoints were preserved.

@@ -1,3 +1,13 @@
+# 2026-08-26 — Codex Conditions 肛直腸／結腸病因 B43
+
+- **範圍**：精確修改 `cond.anal_fissure`、`cond.colonic_polyp`、`cond.ischemic_colitis`、`cond.rectal_prolapse`、`cond.perianal_abscess`、`cond.anal_fistula`；只補雙語 etiology、record sources 與對應 field provenance，既有安全欄位、acupuncture scope、TCM relations、方劑與穴位未覆寫。
+- **數字**：6 卡均 `10→12/12`；`FULL_DETAIL_CANDIDATE 312→318`、`DETAIL_PARTIAL 193→187`、`SKELETON 0→0`；全庫缺 etiology `164→158`、缺 sources `149→143`；source entries `994→1006`、有 record source 的卡 `356→362`。
+- **來源／臨床區分**：NIH/NLM NCBI Bookshelf、MedlinePlus、American College of Gastroenterology、American Society of Colon and Rectal Surgeons；11 個唯一直接 URL 均 HTTP 200。內容明確區分原發與 secondary fissure、散發與遺傳性息肉、低灌流與阻塞性結腸缺血、成人與兒童直腸脫垂背景，以及 cryptoglandular 與 Crohn-related abscess/fistula。
+- **驗證**：只變更 6 個指定 id 的 4 個允許欄位群，其他 499 卡逐記錄不變；condition standard `505/505 clean`、build-data、relations、relation registry、ratchet、content-junk、URL reachability、generated data、逐卡 score 與 `git diff --check` 均無新增 blocking defect。
+- **未解／下一步**：`FULL_DETAIL_CANDIDATE` 只表示 schema 成熟度，不代表 Ting RV1 或既有 acupuncture-scope／red-flag provenance 已逐條核准；仍有 `187` 張 partial／`158` 張病因缺口，下一批續做常見肝膽胰 Conditions。
+
+---
+
 # 2026-08-26 — Codex Conditions 常見 GI 病因 B42
 
 - **範圍**：精確修改 `cond.h_pylori_infection`、`cond.crohn_disease`、`cond.ulcerative_colitis`、`cond.achalasia`、`cond.gastroparesis`；只補雙語 etiology、record sources 與對應 field provenance，既有摘要、病理、安全欄位、中醫 relations、方劑與穴位未覆寫。
