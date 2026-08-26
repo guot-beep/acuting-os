@@ -1,5 +1,13 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-25] Codex Handoff — Conditions respiratory etiology / first-300 maturity milestone B37
+
+- **Exact ids / fields**: `cond.pneumoconiosis`, `cond.pleurisy`, and `cond.latent_tuberculosis_infection`; filled only bilingual etiology, record-level sources, and matching field provenance. Existing prose, safety fields, acupuncture scope, relations, formulas, and acupoints were preserved.
+- **Measured delta**: maturity `297→300 FULL_DETAIL_CANDIDATE`, `208→205 DETAIL_PARTIAL`, `0→0 SKELETON`; all three scores `10→12/12`; missing etiology `183→180`; condition source entries `957→963`, records with record-level sources `338→341`.
+- **Evidence / distinctions**: CDC/NIOSH, CDC Tuberculosis, and NIH/NLM MedlinePlus; all six unique direct URLs returned HTTP 200. Distinguished occupational-dust pneumoconiosis types, pleurisy as a manifestation requiring infectious/embolic/autoimmune etiologic evaluation, and inhalation/granuloma containment/noninfectiousness/reactivation in latent TB infection.
+- **Validation**: only the three exact ids and four allowed top-level field groups per card changed; the other 502 records remained equal. Condition standard `505/505 clean`, build-data, relations, relation registry, validation ratchet, content junk, URL reachability, generated-data rebuild, per-card score check, and `git diff --check` produced no new blocking defect.
+- **Explicit unresolved / next line**: 300 is a schema-maturity milestone only, not Ting RV1 approval or validation of imported formula/acupoint protocols. There remain 205 partial records and 180 etiology gaps; continue common respiratory cards without duplicating this batch.
+
 ## [2026-08-25] Codex Handoff — Conditions common cardiovascular/lymphatic etiologies B36
 
 - **Exact ids / fields**: `cond.sick_sinus_syndrome`, `cond.hypertensive_heart_disease`, `cond.mitral_valve_prolapse`, `cond.superficial_thrombophlebitis`, and `cond.lymphedema`; filled only bilingual etiology, record-level sources, and matching field provenance. Existing prose, safety fields, acupuncture scope, relations, formulas, and acupoints were preserved.

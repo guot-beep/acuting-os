@@ -85783,6 +85783,12 @@
   },
   {
    "id": "cond.pneumoconiosis",
+   "etiology_zh": "塵肺症是一組因吸入特定粉塵後肺組織反應而形成的職業性肺病，主要病因是工作場所的長期或高濃度暴露。重要類型包括吸入石棉纖維所致石綿肺、吸入結晶型二氧化矽所致矽肺，以及吸入煤礦粉塵所致煤工塵肺；鋁、石墨、鐵、滑石等其他粉塵亦可造成相應塵肺，部分高強度矽塵暴露可在較短時間內快速進展。",
+   "etiology_en": "Pneumoconioses are occupational lung diseases caused by the lung's reaction to inhaled dust, chiefly from sustained or intense workplace exposure. Major forms include asbestosis from asbestos fibers, silicosis from respirable crystalline silica, and coal workers' pneumoconiosis from coal mine dust; other dusts such as aluminum, graphite, iron, and talc can cause additional forms, and high-intensity silica exposure may produce rapidly progressive disease over a shorter interval.",
+   "sources": [
+    "https://www.cdc.gov/niosh/pneumoconioses/about/index.html",
+    "https://www.cdc.gov/niosh/bulletin/2021/respiratory-health.html"
+   ],
    "entity_type": "biomedical_condition",
    "name_zh": "塵肺症",
    "name_en": "Pneumoconiosis",
@@ -85878,6 +85884,14 @@
     "pattern.qi_stagnation_blood_stasis"
    ],
    "field_sources": {
+    "etiology_zh": [
+     "https://www.cdc.gov/niosh/pneumoconioses/about/index.html",
+     "https://www.cdc.gov/niosh/bulletin/2021/respiratory-health.html"
+    ],
+    "etiology_en": [
+     "https://www.cdc.gov/niosh/pneumoconioses/about/index.html",
+     "https://www.cdc.gov/niosh/bulletin/2021/respiratory-health.html"
+    ],
     "summary_zh": [
      "StatPearls: Pneumoconiosis (NBK555902, retrieved 2026-08)"
     ],
@@ -86086,6 +86100,12 @@
   },
   {
    "id": "cond.pleurisy",
+   "etiology_zh": "肋膜炎是壁層或臟層胸膜的發炎反應，最常伴隨病毒感染、肺炎或結核等肺部感染。其他病因包括肺栓塞、胸部外傷或肋骨骨折、惡性腫瘤，以及類風濕性關節炎、全身性紅斑狼瘡與鐮狀細胞疾病等全身性疾病；因此『胸膜性疼痛』是需追查病因的表現，而非單一病原診斷。",
+   "etiology_en": "Pleurisy is inflammation of the visceral or parietal pleura, most often accompanying pulmonary infection such as a viral infection, pneumonia, or tuberculosis. Other causes include pulmonary embolism, chest trauma or rib fracture, malignancy, and systemic disorders such as rheumatoid arthritis, systemic lupus erythematosus, and sickle cell disease; pleuritic pain is therefore a manifestation requiring etiologic evaluation, not a single-pathogen diagnosis.",
+   "sources": [
+    "https://medlineplus.gov/ency/article/001371.htm",
+    "https://medlineplus.gov/pleuraldisorders.html"
+   ],
    "entity_type": "biomedical_condition",
    "name_zh": "肋膜炎",
    "name_en": "Pleurisy",
@@ -86169,6 +86189,14 @@
     "pattern.phlegm_heat_in_lung"
    ],
    "field_sources": {
+    "etiology_zh": [
+     "https://medlineplus.gov/ency/article/001371.htm",
+     "https://medlineplus.gov/pleuraldisorders.html"
+    ],
+    "etiology_en": [
+     "https://medlineplus.gov/ency/article/001371.htm",
+     "https://medlineplus.gov/pleuraldisorders.html"
+    ],
     "summary_zh": [
      "StatPearls: Pleurisy (NBK558958, retrieved 2026-08)"
     ],
@@ -87186,6 +87214,12 @@
   },
   {
    "id": "cond.latent_tuberculosis_infection",
+   "etiology_zh": "潛伏結核感染始於吸入結核分枝桿菌，菌體到達肺泡後，少數可經血流散布至淋巴結、肺、腎、腦或骨等處。通常在感染後 2–8 週，巨噬細胞與其他免疫細胞形成肉芽腫將活菌包圍並抑制其增殖，形成無症狀且不具傳染性的潛伏狀態；若免疫控制日後減弱，菌體可再活化並進展為結核病。",
+   "etiology_en": "Latent tuberculosis infection begins when inhaled Mycobacterium tuberculosis bacilli reach the alveoli; a small number may disseminate through the bloodstream to lymph nodes, lungs, kidneys, brain, or bone. Usually within 2–8 weeks, macrophages and other immune cells form granulomas that contain living bacilli and suppress replication, producing an asymptomatic, noncontagious latent state; if immune control later weakens, the organisms can reactivate and progress to TB disease.",
+   "sources": [
+    "https://www.cdc.gov/tb/about/inactive-tuberculosis.html",
+    "https://www.cdc.gov/tb/hcp/clinical-overview/latent-tuberculosis-infection.html"
+   ],
    "entity_type": "biomedical_condition",
    "name_zh": "潛伏結核感染",
    "name_en": "Latent Tuberculosis Infection",
@@ -87271,6 +87305,14 @@
     "tdis.fei_lao"
    ],
    "field_sources": {
+    "etiology_zh": [
+     "https://www.cdc.gov/tb/about/inactive-tuberculosis.html",
+     "https://www.cdc.gov/tb/hcp/clinical-overview/latent-tuberculosis-infection.html"
+    ],
+    "etiology_en": [
+     "https://www.cdc.gov/tb/about/inactive-tuberculosis.html",
+     "https://www.cdc.gov/tb/hcp/clinical-overview/latent-tuberculosis-infection.html"
+    ],
     "summary_zh": [
      "PMC: Diagnosis for Latent Tuberculosis Infection: New Alternatives"
     ],

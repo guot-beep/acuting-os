@@ -1,3 +1,13 @@
+# 2026-08-25 — Codex Conditions 呼吸病因／首批 300 張里程碑 B37
+
+- **範圍**：精確修改 `cond.pneumoconiosis`、`cond.pleurisy`、`cond.latent_tuberculosis_infection`；只補雙語 etiology、record sources 與對應 field provenance。既有正文、安全欄、acupuncture scope、relations、方劑與穴位未覆寫。
+- **數字**：`FULL_DETAIL_CANDIDATE 297→300`、`DETAIL_PARTIAL 208→205`、`SKELETON 0→0`；三卡均 `10→12/12`；全庫缺 etiology `183→180`；condition source entries `957→963`、有 record source 的卡 `338→341`。
+- **來源／臨床區分**：CDC/NIOSH、CDC Tuberculosis 與 NIH/NLM MedlinePlus；6 個唯一直接 URL 均 HTTP 200。內容區分不同職業粉塵所致塵肺、肋膜炎作為需追查感染／栓塞／自體免疫等病因的表現，以及潛伏結核的吸入、肉芽腫侷限、無傳染性與可能再活化機轉。
+- **驗證**：只變更 3 個指定 id、每卡 4 個允許的 top-level 欄位群，其他 502 卡逐記錄不變；condition standard `505/505 clean`、build-data、relations、relation registry、ratchet、content-junk、URL reachability、generated data、逐卡 score 與 `git diff --check` 均無新增 blocking defect。
+- **未解／下一步**：首批 300 只代表 schema 內容成熟度門檻；未取代 Ting RV1、未證實 imported formula／acupoint protocols，且仍有 `205` 張 partial／`180` 張病因缺口。下一批續做常見呼吸系統卡，不重複本批。
+
+---
+
 # 2026-08-25 — Codex Conditions 常見心血管／淋巴病因 B36
 
 - **範圍**：精確修改 `cond.sick_sinus_syndrome`、`cond.hypertensive_heart_disease`、`cond.mitral_valve_prolapse`、`cond.superficial_thrombophlebitis`、`cond.lymphedema`；只補雙語 etiology、record sources 與對應 field provenance，既有正文、安全欄、scope、relations、方劑與穴位未覆寫。
