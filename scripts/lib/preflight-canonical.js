@@ -115,6 +115,13 @@ function auditAliasCollisions(records, entityType) {
     const id = (r.id || r.code || '').trim();
     const nZh = (r.name_zh || '').trim();
     const nEn = (r.name_en || '').trim();
+    // A properly-documented retirement (review_status: deprecated + a deprecated_note_zh
+    // audit trail, e.g. D21) legitimately lets the surviving sibling record adopt the
+    // retired record's old name as an alias — that is the merge working as designed, not
+    // a naming collision. Only exempt fully-documented retirements; an undocumented
+    // deprecated record still counts as canonical so it keeps getting flagged.
+    const isDocumentedRetirement = r.review_status === 'deprecated' && !!(r.deprecated_note_zh || '').trim();
+    if (isDocumentedRetirement) return;
     if (nZh) canonNamesZh.set(nZh, id);
     if (nEn) canonNamesEn.set(nEn.toLowerCase(), id);
   });
