@@ -1,3 +1,13 @@
+# 2026-08-26 — Codex Conditions 常見心臟病因 B39
+
+- **範圍**：精確修改 `cond.left_ventricular_hypertrophy`、`cond.vasovagal_syncope`、`cond.takotsubo_cardiomyopathy`、`cond.mitral_regurgitation`；只補雙語 etiology、record sources 與對應 field provenance。既有摘要、病理、安全欄、acupuncture scope、中醫 disease/pattern relations、方劑與穴位未覆寫。
+- **數字**：`FULL_DETAIL_CANDIDATE 303→307`、`DETAIL_PARTIAL 202→198`、`SKELETON 0→0`；四卡均 `10→12/12`；全庫缺 etiology `177→173`、缺 record sources `161→157`；condition source entries `968→976`、有 record source 的卡 `344→348`。
+- **來源／臨床區分**：NIH/NLM NCBI Bookshelf、PMC、NHLBI 與 MedlinePlus；8 個唯一直接 URL 均 HTTP 200。區分左心室肥厚的壓力／容積／遺傳／生理性來源、血管迷走神經反射中的未明病因與自主神經機轉、Takotsubo 的多因素假說，以及二尖瓣逆流的原發器質性與續發功能性原因。
+- **驗證**：只變更 4 個指定 id、每卡 4 個允許的 top-level 欄位群，其他 501 卡逐記錄不變；condition standard `505/505 clean`、build-data、relations、relation registry、ratchet、content-junk、8 URL reachability、generated data 與 `git diff --check` 均無新增 blocking defect。
+- **未解／下一步**：病因不確定處保留明確措辭；未提升既有 acupuncture scope 或 imported protocol 的證據等級。仍有 `198` 張 partial／`173` 張病因缺口；下一批可續做有疾病特異官方來源的呼吸 Conditions。
+
+---
+
 # 2026-08-25 — Codex Conditions 肺部感染／結節病因 B38
 
 - **範圍**：精確修改 `cond.lung_abscess`、`cond.mycoplasma_pneumonia`、`cond.solitary_pulmonary_nodule`；只補雙語 etiology、record sources 與對應 field provenance。既有正文、安全欄、acupuncture scope、relations、方劑與穴位未覆寫；未為肺結節硬接不確定的中醫 relation。

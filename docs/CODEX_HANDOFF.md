@@ -1,5 +1,13 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-26] Codex Handoff — Conditions common cardiac etiologies B39
+
+- **Exact ids / fields**: `cond.left_ventricular_hypertrophy`, `cond.vasovagal_syncope`, `cond.takotsubo_cardiomyopathy`, and `cond.mitral_regurgitation`; filled only bilingual etiology, record-level sources, and matching field provenance. Existing summaries, pathology, safety fields, acupuncture scope, TCM disease/pattern relations, formulas, and acupoints were preserved.
+- **Measured delta**: maturity `303→307 FULL_DETAIL_CANDIDATE`, `202→198 DETAIL_PARTIAL`, `0→0 SKELETON`; all four scores `10→12/12`; missing etiology `177→173`, missing record sources `161→157`; condition source entries `968→976`, records with record-level sources `344→348`.
+- **Evidence / distinctions**: NIH/NLM NCBI Bookshelf, PMC, NHLBI, and MedlinePlus; all eight unique direct URLs returned HTTP 200. Distinguished pressure/volume/genetic/physiologic LVH, uncertain etiology versus autonomic reflex mechanism in vasovagal syncope, multifactorial takotsubo hypotheses, and primary organic versus secondary functional mitral regurgitation.
+- **Validation**: only the four exact ids and four allowed top-level field groups per card changed; the other 501 records remained equal. Condition standard `505/505 clean`, build-data, relations, relation registry, validation ratchet, content junk, eight-URL reachability, generated-data rebuild, and `git diff --check` produced no new blocking defect.
+- **Explicit unresolved / next line**: uncertainty is retained where causation remains unsettled; existing acupuncture-scope and imported-protocol evidence levels were not promoted. There remain 198 partial records and 173 etiology gaps; continue respiratory Conditions only where disease-specific official sources are available.
+
 ## [2026-08-25] Codex Handoff — Conditions pulmonary infection/nodule etiologies B38
 
 - **Exact ids / fields**: `cond.lung_abscess`, `cond.mycoplasma_pneumonia`, and `cond.solitary_pulmonary_nodule`; filled only bilingual etiology, record-level sources, and matching field provenance. Existing prose, safety fields, acupuncture scope, relations, formulas, and acupoints were preserved; no uncertain TCM relation was invented for the pulmonary nodule.
