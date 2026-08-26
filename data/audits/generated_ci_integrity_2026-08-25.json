@@ -1,0 +1,1913 @@
+{
+  "audit_date": "2026-08-25",
+  "audit_round": "Round 3",
+  "audit_name": "Generated Data, Build, Validator & CI Integrity Audit (Task 9C Round 3)",
+  "scope": {
+    "canonical_domains": [
+      "herbs",
+      "formulas",
+      "conditions / pathology",
+      "patterns / tdis",
+      "acupoints",
+      "symptoms",
+      "supplements",
+      "medications / pharmacology",
+      "clinical_cases",
+      "bastyr",
+      "billing",
+      "exams"
+    ],
+    "workflow_files": [
+      ".github/workflows/validate.yml"
+    ],
+    "script_directory": "scripts/"
+  },
+  "summary": {
+    "canonicalDomainsScanned": 12,
+    "canonicalDomainsWithGeneratedLayer": 8,
+    "canonicalDomainsNoGeneratedLayer": 4,
+    "generatedArtifactsScanned": 15,
+    "syncOkCount": 7,
+    "syncNotDirectlyComparableCount": 1,
+    "missingCanonicalIdsCount": 0,
+    "extraGeneratedIdsCount": 0,
+    "rebuildIdenticalCount": 14,
+    "rebuildDiffersCount": 1,
+    "directRuntimeLoadedCount": 12,
+    "transitivelyBundledCount": 1,
+    "generatedButUnusedCount": 2,
+    "siteExpectsMissingCount": 0,
+    "totalValidatorsFound": 94,
+    "blockingValidatorsCount": 66,
+    "nonblockingValidatorsCount": 2,
+    "testScriptsCount": 9,
+    "auditScriptsCount": 4,
+    "reportScriptsCount": 10,
+    "rehearsalDashboardCount": 3,
+    "ciInvokedValidatorsCount": 63,
+    "orphanValidatorsCount": 12,
+    "manualOnlyScriptsCount": 19,
+    "failClosedValidatorsCount": 75,
+    "informationalCiStepsCount": 7,
+    "truePossibleFalseGreenBlockingStepsCount": 0,
+    "highestRiskFindingsCount": 14
+  },
+  "inventories": {
+    "canonical_domains": [
+      {
+        "domain": "herbs",
+        "canonicalFiles": [
+          {
+            "path": "data/herbs/herb_canon_shortlist.json",
+            "idField": "id",
+            "recordCount": 363,
+            "entityType": "herb"
+          },
+          {
+            "path": "data/herbs/herb_pairs.json",
+            "idField": "id",
+            "recordCount": 143,
+            "entityType": "herb_pair"
+          },
+          {
+            "path": "data/herbs/single_herbs.json",
+            "idField": "code",
+            "recordCount": 340,
+            "entityType": "single_herb"
+          }
+        ],
+        "generatedArtifacts": [
+          "data/generated/knowledge_mm.js",
+          "data/generated/knowledge_data.js"
+        ],
+        "generatorScript": "scripts/build-data.js",
+        "hasGeneratedLayer": true
+      },
+      {
+        "domain": "formulas",
+        "canonicalFiles": [
+          {
+            "path": "data/herbs/formulas.json",
+            "idField": "id",
+            "recordCount": 223,
+            "entityType": "formula"
+          },
+          {
+            "path": "data/herbs/formula_safety_flags.json",
+            "idField": "formula_id",
+            "recordCount": 17,
+            "entityType": "formula_safety_flag"
+          }
+        ],
+        "generatedArtifacts": [
+          "data/generated/knowledge_rx.js",
+          "data/generated/knowledge_core.js",
+          "data/generated/knowledge_data.js"
+        ],
+        "generatorScript": "scripts/build-data.js",
+        "hasGeneratedLayer": true
+      },
+      {
+        "domain": "conditions / pathology",
+        "canonicalFiles": [
+          {
+            "path": "data/pathology/conditions.json",
+            "idField": "id",
+            "recordCount": 12,
+            "entityType": "condition"
+          },
+          {
+            "path": "data/pathology/condition_canon_shortlist.json",
+            "idField": "id",
+            "recordCount": 92,
+            "entityType": "condition_canon"
+          },
+          {
+            "path": "data/pathology/red_flag_registry.json",
+            "idField": "id",
+            "recordCount": 132,
+            "entityType": "red_flag"
+          },
+          {
+            "path": "data/pathology/cloudtcm_disease_categories.json",
+            "idField": "id",
+            "recordCount": 34,
+            "entityType": "cloudtcm_disease_category"
+          },
+          {
+            "path": "data/pathology/cloudtcm_disease_entries.json",
+            "idField": "id",
+            "recordCount": 281,
+            "entityType": "cloudtcm_disease_entry"
+          }
+        ],
+        "generatedArtifacts": [
+          "data/generated/knowledge_dx.js",
+          "data/generated/knowledge_ref.js",
+          "data/generated/knowledge_data.js"
+        ],
+        "generatorScript": "scripts/build-data.js",
+        "hasGeneratedLayer": true
+      },
+      {
+        "domain": "patterns / tdis",
+        "canonicalFiles": [
+          {
+            "path": "data/pathology/pattern_library.json",
+            "idField": "id",
+            "recordCount": 50,
+            "entityType": "pattern_library"
+          },
+          {
+            "path": "data/pathology/pattern_registry.json",
+            "idField": "id",
+            "recordCount": 63,
+            "entityType": "pattern_registry"
+          },
+          {
+            "path": "data/pathology/tdis_registry.json",
+            "idField": "id",
+            "recordCount": 14,
+            "entityType": "tdis"
+          },
+          {
+            "path": "data/config/tcm_pattern_canon.json",
+            "idField": "id",
+            "recordCount": 144,
+            "entityType": "pattern_canon"
+          },
+          {
+            "path": "data/config/tcm_disease_taxonomy.json",
+            "idField": "id",
+            "recordCount": 45,
+            "entityType": "disease_taxonomy"
+          },
+          {
+            "path": "data/config/pattern_family_vocabulary.json",
+            "idField": "id",
+            "recordCount": 22,
+            "entityType": "pattern_family"
+          }
+        ],
+        "generatedArtifacts": [
+          "data/generated/knowledge_pat.js",
+          "data/generated/knowledge_dx.js",
+          "data/generated/knowledge_core.js",
+          "data/generated/knowledge_data.js"
+        ],
+        "generatorScript": "scripts/build-data.js",
+        "hasGeneratedLayer": true
+      },
+      {
+        "domain": "acupoints",
+        "canonicalFiles": [
+          {
+            "path": "data/acupoints/361.json",
+            "idField": "code",
+            "recordCount": 361,
+            "entityType": "point_361"
+          },
+          {
+            "path": "data/acupoints/extra_points.json",
+            "idField": "id",
+            "recordCount": 72,
+            "entityType": "extra_point"
+          },
+          {
+            "path": "data/scalp/scalp_points_full.json",
+            "idField": "code",
+            "recordCount": 22,
+            "entityType": "scalp_point"
+          },
+          {
+            "path": "data/auricular/embedded/auricular_points.json",
+            "idField": "code",
+            "recordCount": 203,
+            "entityType": "auricular_point"
+          },
+          {
+            "path": "data/sources/cloudtcm_point_map.json",
+            "idField": "code",
+            "recordCount": 361,
+            "entityType": "cloudtcm_point"
+          },
+          {
+            "path": "data/tung/point_index.json",
+            "idField": "code",
+            "recordCount": 190,
+            "entityType": "tung_point"
+          },
+          {
+            "path": "data/auricular/gb93_index.json",
+            "idField": "code",
+            "recordCount": 91,
+            "entityType": "gb93_point"
+          },
+          {
+            "path": "data/auricular/gb93_worklist.json",
+            "idField": "code",
+            "recordCount": 46,
+            "entityType": "gb93_worklist"
+          }
+        ],
+        "generatedArtifacts": [
+          "data/generated/points_361.js",
+          "data/generated/app_data.js",
+          "data/generated/cloudtcm_map.js",
+          "data/tung/point_index.js",
+          "data/auricular/gb93_index.js",
+          "data/auricular/gb93_worklist.js"
+        ],
+        "generatorScript": "scripts/build-data.js",
+        "hasGeneratedLayer": true
+      },
+      {
+        "domain": "symptoms",
+        "canonicalFiles": [
+          {
+            "path": "data/symptoms/symptoms.json",
+            "idField": "id",
+            "recordCount": 122,
+            "entityType": "symptom"
+          },
+          {
+            "path": "data/config/symptom_taxonomy.json",
+            "idField": "id",
+            "recordCount": 10,
+            "entityType": "symptom_taxonomy"
+          }
+        ],
+        "generatedArtifacts": [
+          "data/generated/knowledge_pat.js",
+          "data/generated/knowledge_core.js",
+          "data/generated/knowledge_data.js"
+        ],
+        "generatorScript": "scripts/build-data.js",
+        "hasGeneratedLayer": true
+      },
+      {
+        "domain": "supplements",
+        "canonicalFiles": [
+          {
+            "path": "data/supplements/supplements.json",
+            "idField": "id",
+            "recordCount": 15,
+            "entityType": "supplement"
+          },
+          {
+            "path": "data/config/supplement_category_vocabulary.json",
+            "idField": "id",
+            "recordCount": 8,
+            "entityType": "supplement_category"
+          }
+        ],
+        "generatedArtifacts": [
+          "data/generated/knowledge_ref.js",
+          "data/generated/knowledge_core.js",
+          "data/generated/knowledge_data.js"
+        ],
+        "generatorScript": "scripts/build-data.js",
+        "hasGeneratedLayer": true
+      },
+      {
+        "domain": "medications / pharmacology",
+        "canonicalFiles": [
+          {
+            "path": "data/medications/western_medications.json",
+            "idField": "id",
+            "recordCount": 18,
+            "entityType": "medication"
+          },
+          {
+            "path": "data/pharmacology/drugs.json",
+            "idField": "id",
+            "recordCount": 85,
+            "entityType": "drug"
+          },
+          {
+            "path": "data/pharmacology/drug_classes.json",
+            "idField": "id",
+            "recordCount": 48,
+            "entityType": "drug_class"
+          },
+          {
+            "path": "data/pharmacology/drug_targets.json",
+            "idField": "id",
+            "recordCount": 38,
+            "entityType": "drug_target"
+          },
+          {
+            "path": "data/pharmacology/drug_systems.json",
+            "idField": "id",
+            "recordCount": 7,
+            "entityType": "drug_system"
+          }
+        ],
+        "generatedArtifacts": [
+          "data/generated/knowledge_ref.js",
+          "data/generated/knowledge_data.js"
+        ],
+        "generatorScript": "scripts/build-data.js",
+        "hasGeneratedLayer": true
+      },
+      {
+        "domain": "clinical_cases",
+        "canonicalFiles": [
+          {
+            "path": "data/clinical_cases/sample_deidentified_cases.json",
+            "idField": "case_id",
+            "recordCount": 3,
+            "entityType": "clinical_case"
+          },
+          {
+            "path": "data/clinical_cases/outcome_metrics.json",
+            "idField": "metric_id",
+            "recordCount": 22,
+            "entityType": "outcome_metric"
+          }
+        ],
+        "generatedArtifacts": [],
+        "generatorScript": null,
+        "hasGeneratedLayer": false,
+        "layerStatus": "NO_GENERATED_LAYER"
+      },
+      {
+        "domain": "bastyr",
+        "canonicalFiles": [
+          {
+            "path": "data/bastyr/notes.json",
+            "idField": "id",
+            "recordCount": 1,
+            "entityType": "bastyr_note"
+          }
+        ],
+        "generatedArtifacts": [],
+        "generatorScript": null,
+        "hasGeneratedLayer": false,
+        "layerStatus": "NO_GENERATED_LAYER"
+      },
+      {
+        "domain": "billing",
+        "canonicalFiles": [
+          {
+            "path": "data/billing/billing_training_template.json",
+            "idField": "id",
+            "recordCount": 1,
+            "entityType": "billing_template"
+          },
+          {
+            "path": "data/billing/documentation_requirements_seed.json",
+            "idField": "id",
+            "recordCount": 1,
+            "entityType": "doc_requirement"
+          }
+        ],
+        "generatedArtifacts": [],
+        "generatorScript": null,
+        "hasGeneratedLayer": false,
+        "layerStatus": "NO_GENERATED_LAYER"
+      },
+      {
+        "domain": "exams",
+        "canonicalFiles": [
+          {
+            "path": "data/exams/ncbahm_bio_2026.json",
+            "idField": "id",
+            "recordCount": 1,
+            "entityType": "exam_seed"
+          }
+        ],
+        "generatedArtifacts": [],
+        "generatorScript": null,
+        "hasGeneratedLayer": false,
+        "layerStatus": "NO_GENERATED_LAYER"
+      }
+    ],
+    "sync_audit": [
+      {
+        "canonicalFile": "data/herbs/herb_canon_shortlist.json",
+        "generatedArtifact": "data/generated/knowledge_mm.js",
+        "canonicalCount": 363,
+        "generatedCount": 363,
+        "missingIdsInGenerated": [],
+        "extraIdsInGenerated": [],
+        "duplicatesInGenerated": [],
+        "status": "SYNC_OK"
+      },
+      {
+        "canonicalFile": "data/herbs/formulas.json",
+        "generatedArtifact": "data/generated/knowledge_rx.js",
+        "canonicalCount": 223,
+        "generatedCount": 223,
+        "missingIdsInGenerated": [],
+        "extraIdsInGenerated": [],
+        "duplicatesInGenerated": [],
+        "status": "SYNC_OK"
+      },
+      {
+        "canonicalFile": "data/acupoints/361.json",
+        "generatedArtifact": "data/generated/points_361.js",
+        "canonicalCount": 361,
+        "generatedCount": 361,
+        "missingIdsInGenerated": [],
+        "extraIdsInGenerated": [],
+        "duplicatesInGenerated": [],
+        "status": "SYNC_OK"
+      },
+      {
+        "canonicalFile": "data/symptoms/symptoms.json",
+        "generatedArtifact": "data/generated/knowledge_pat.js",
+        "canonicalCount": 122,
+        "generatedCount": 122,
+        "missingIdsInGenerated": [],
+        "extraIdsInGenerated": [],
+        "duplicatesInGenerated": [],
+        "status": "SYNC_OK"
+      },
+      {
+        "canonicalFile": "data/pathology/condition_canon_shortlist.json",
+        "generatedArtifact": "data/generated/knowledge_dx.js",
+        "canonicalCount": 505,
+        "generatedCount": 505,
+        "missingIdsInGenerated": [],
+        "extraIdsInGenerated": [],
+        "duplicatesInGenerated": [],
+        "status": "SYNC_OK"
+      },
+      {
+        "canonicalFile": "data/pharmacology/drugs.json",
+        "generatedArtifact": "data/generated/knowledge_ref.js",
+        "canonicalCount": 59,
+        "generatedCount": 59,
+        "missingIdsInGenerated": [],
+        "extraIdsInGenerated": [],
+        "duplicatesInGenerated": [],
+        "status": "SYNC_OK"
+      },
+      {
+        "canonicalFile": "data/supplements/supplements.json",
+        "generatedArtifact": "data/generated/knowledge_ref.js",
+        "canonicalCount": 36,
+        "generatedCount": 36,
+        "missingIdsInGenerated": [],
+        "extraIdsInGenerated": [],
+        "duplicatesInGenerated": [],
+        "status": "SYNC_OK"
+      },
+      {
+        "canonicalFile": "data/herbs/single_herbs.json",
+        "generatedArtifact": "data/generated/knowledge_mm.js",
+        "canonicalCount": 340,
+        "generatedCount": 340,
+        "missingIdsInGenerated": [],
+        "extraIdsInGenerated": [],
+        "duplicatesInGenerated": [],
+        "status": "SYNC_NOT_DIRECTLY_COMPARABLE"
+      }
+    ],
+    "rebuild_comparisons": [
+      {
+        "artifact": "data/generated/app_data.js",
+        "generator": "scripts/build-data.js",
+        "status": "REBUILD_IDENTICAL",
+        "committedBytes": 1357538,
+        "rebuiltBytes": 1357538,
+        "detail": "100% byte-for-byte identical"
+      },
+      {
+        "artifact": "data/generated/cloudtcm_map.js",
+        "generator": "scripts/build-data.js",
+        "status": "REBUILD_IDENTICAL",
+        "committedBytes": 11806,
+        "rebuiltBytes": 11806,
+        "detail": "100% byte-for-byte identical"
+      },
+      {
+        "artifact": "data/generated/knowledge_core.js",
+        "generator": "scripts/build-data.js",
+        "status": "REBUILD_IDENTICAL",
+        "committedBytes": 212850,
+        "rebuiltBytes": 212850,
+        "detail": "100% byte-for-byte identical"
+      },
+      {
+        "artifact": "data/generated/knowledge_data.js",
+        "generator": "scripts/build-data.js",
+        "status": "REBUILD_IDENTICAL",
+        "committedBytes": 19942163,
+        "rebuiltBytes": 19942163,
+        "detail": "100% byte-for-byte identical"
+      },
+      {
+        "artifact": "data/generated/knowledge_dx.js",
+        "generator": "scripts/build-data.js",
+        "status": "REBUILD_IDENTICAL",
+        "committedBytes": 6940660,
+        "rebuiltBytes": 6940660,
+        "detail": "100% byte-for-byte identical"
+      },
+      {
+        "artifact": "data/generated/knowledge_mm.js",
+        "generator": "scripts/build-data.js",
+        "status": "REBUILD_IDENTICAL",
+        "committedBytes": 5435063,
+        "rebuiltBytes": 5435063,
+        "detail": "100% byte-for-byte identical"
+      },
+      {
+        "artifact": "data/generated/knowledge_pat.js",
+        "generator": "scripts/build-data.js",
+        "status": "REBUILD_IDENTICAL",
+        "committedBytes": 1952818,
+        "rebuiltBytes": 1952818,
+        "detail": "100% byte-for-byte identical"
+      },
+      {
+        "artifact": "data/generated/knowledge_ref.js",
+        "generator": "scripts/build-data.js",
+        "status": "REBUILD_IDENTICAL",
+        "committedBytes": 1367454,
+        "rebuiltBytes": 1367454,
+        "detail": "100% byte-for-byte identical"
+      },
+      {
+        "artifact": "data/generated/knowledge_rx.js",
+        "generator": "scripts/build-data.js",
+        "status": "REBUILD_IDENTICAL",
+        "committedBytes": 4036018,
+        "rebuiltBytes": 4036018,
+        "detail": "100% byte-for-byte identical"
+      },
+      {
+        "artifact": "data/generated/points_361.js",
+        "generator": "scripts/build-data.js",
+        "status": "REBUILD_IDENTICAL",
+        "committedBytes": 6217301,
+        "rebuiltBytes": 6217301,
+        "detail": "100% byte-for-byte identical"
+      },
+      {
+        "artifact": "data/tung/point_index.js",
+        "generator": "scripts/build-data.js",
+        "status": "REBUILD_IDENTICAL",
+        "committedBytes": 1213318,
+        "rebuiltBytes": 1213318,
+        "detail": "100% byte-for-byte identical"
+      },
+      {
+        "artifact": "data/auricular/gb93_index.js",
+        "generator": "scripts/build-data.js",
+        "status": "REBUILD_IDENTICAL",
+        "committedBytes": 6213,
+        "rebuiltBytes": 6213,
+        "detail": "100% byte-for-byte identical"
+      },
+      {
+        "artifact": "data/auricular/gb93_worklist.js",
+        "generator": "scripts/build-data.js",
+        "status": "REBUILD_IDENTICAL",
+        "committedBytes": 3120,
+        "rebuiltBytes": 3120,
+        "detail": "100% byte-for-byte identical"
+      },
+      {
+        "artifact": "data/quality/content_quality.json",
+        "generator": "scripts/build-content-quality-overlay.js",
+        "status": "REBUILD_IDENTICAL",
+        "committedBytes": 28866,
+        "rebuiltBytes": 28866,
+        "detail": "100% byte-for-byte identical"
+      },
+      {
+        "artifact": "data/generated/entity_registry.json",
+        "generator": "scripts/build-entity-registry.js",
+        "status": "REBUILD_DIFFERS",
+        "committedBytes": 1496023,
+        "rebuiltBytes": 2693002,
+        "differenceType": "CONTENT_DIFFERS",
+        "detail": "Byte size differs: committed 1496023 vs rebuilt 2693002; entity_count changed from 4621 to 7323"
+      }
+    ],
+    "site_consumption": [
+      {
+        "artifact": "data/generated/app_data.js",
+        "artifactType": "BUNDLE_OUTPUT",
+        "status": "DIRECT_RUNTIME_LOADED",
+        "directLoadedBy": [
+          "index.html"
+        ],
+        "detail": "Loaded directly in HTML runtime (<script src=\"data/generated/app_data.js\">)"
+      },
+      {
+        "artifact": "data/generated/cloudtcm_map.js",
+        "artifactType": "BUNDLE_OUTPUT",
+        "status": "DIRECT_RUNTIME_LOADED",
+        "directLoadedBy": [
+          "index.html"
+        ],
+        "detail": "Loaded directly in HTML runtime (<script src=\"data/generated/cloudtcm_map.js\">)"
+      },
+      {
+        "artifact": "data/generated/points_361.js",
+        "artifactType": "BUNDLE_OUTPUT",
+        "status": "DIRECT_RUNTIME_LOADED",
+        "directLoadedBy": [
+          "index.html"
+        ],
+        "detail": "Loaded directly in HTML runtime (<script src=\"data/generated/points_361.js\">)"
+      },
+      {
+        "artifact": "data/generated/knowledge_core.js",
+        "artifactType": "BUNDLE_SHARD",
+        "status": "DIRECT_RUNTIME_LOADED",
+        "directLoadedBy": [
+          "index.html",
+          "previsit.html"
+        ],
+        "detail": "Loaded directly in HTML runtime (<script src=\"data/generated/knowledge_core.js\">)"
+      },
+      {
+        "artifact": "data/generated/knowledge_ref.js",
+        "artifactType": "BUNDLE_SHARD",
+        "status": "DIRECT_RUNTIME_LOADED",
+        "directLoadedBy": [
+          "index.html"
+        ],
+        "detail": "Loaded directly in HTML runtime (<script src=\"data/generated/knowledge_ref.js\">)"
+      },
+      {
+        "artifact": "data/generated/knowledge_rx.js",
+        "artifactType": "BUNDLE_SHARD",
+        "status": "DIRECT_RUNTIME_LOADED",
+        "directLoadedBy": [
+          "index.html"
+        ],
+        "detail": "Loaded directly in HTML runtime (<script src=\"data/generated/knowledge_rx.js\">)"
+      },
+      {
+        "artifact": "data/generated/knowledge_mm.js",
+        "artifactType": "BUNDLE_SHARD",
+        "status": "DIRECT_RUNTIME_LOADED",
+        "directLoadedBy": [
+          "index.html"
+        ],
+        "detail": "Loaded directly in HTML runtime (<script src=\"data/generated/knowledge_mm.js\">)"
+      },
+      {
+        "artifact": "data/generated/knowledge_dx.js",
+        "artifactType": "BUNDLE_SHARD",
+        "status": "DIRECT_RUNTIME_LOADED",
+        "directLoadedBy": [
+          "index.html"
+        ],
+        "detail": "Loaded directly in HTML runtime (<script src=\"data/generated/knowledge_dx.js\">)"
+      },
+      {
+        "artifact": "data/generated/knowledge_pat.js",
+        "artifactType": "BUNDLE_SHARD",
+        "status": "DIRECT_RUNTIME_LOADED",
+        "directLoadedBy": [
+          "index.html"
+        ],
+        "detail": "Loaded directly in HTML runtime (<script src=\"data/generated/knowledge_pat.js\">)"
+      },
+      {
+        "artifact": "data/tung/point_index.js",
+        "artifactType": "JS_TWIN",
+        "status": "DIRECT_RUNTIME_LOADED",
+        "directLoadedBy": [
+          "index.html"
+        ],
+        "detail": "Loaded directly in HTML runtime (<script src=\"data/tung/point_index.js\">)"
+      },
+      {
+        "artifact": "data/auricular/gb93_index.js",
+        "artifactType": "JS_TWIN",
+        "status": "DIRECT_RUNTIME_LOADED",
+        "directLoadedBy": [
+          "index.html"
+        ],
+        "detail": "Loaded directly in HTML runtime (<script src=\"data/auricular/gb93_index.js\">)"
+      },
+      {
+        "artifact": "data/auricular/gb93_worklist.js",
+        "artifactType": "JS_TWIN",
+        "status": "DIRECT_RUNTIME_LOADED",
+        "directLoadedBy": [
+          "index.html"
+        ],
+        "detail": "Loaded directly in HTML runtime (<script src=\"data/auricular/gb93_worklist.js\">)"
+      },
+      {
+        "artifact": "data/quality/content_quality.json",
+        "artifactType": "QUALITY_OVERLAY",
+        "status": "TRANSITIVELY_BUNDLED_AND_LOADED",
+        "directLoadedBy": [],
+        "detail": "Read by scripts/build-data.js and bundled into data/generated/knowledge_core.js, which is loaded at runtime"
+      },
+      {
+        "artifact": "data/generated/knowledge_data.js",
+        "artifactType": "MONOLITHIC_ROLLBACK_TWIN",
+        "status": "GENERATED_BUT_UNUSED",
+        "directLoadedBy": [],
+        "detail": "Generated build artifact; not directly loaded by runtime nor bundled into loaded output"
+      },
+      {
+        "artifact": "data/generated/entity_registry.json",
+        "artifactType": "REGISTRY_EXPORT",
+        "status": "GENERATED_BUT_UNUSED",
+        "directLoadedBy": [],
+        "detail": "Generated build artifact; not directly loaded by runtime nor bundled into loaded output"
+      }
+    ],
+    "validator_inventory": [
+      {
+        "scriptFile": "scripts/audit-cr010-condition-detail-maturity.js",
+        "taxonomy": "AUDIT",
+        "domain": "conditions/pathology",
+        "hasExitNonZero": true,
+        "ciStatus": "MANUAL_ONLY",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "NONE",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/audit-dark-fields.js",
+        "taxonomy": "AUDIT",
+        "domain": "general",
+        "hasExitNonZero": false,
+        "ciStatus": "MANUAL_ONLY",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "NONE",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": [
+          "No non-zero exit pattern (process.exit, process.exitCode, or throw) found"
+        ]
+      },
+      {
+        "scriptFile": "scripts/audit-generated-ci-integrity.js",
+        "taxonomy": "AUDIT",
+        "domain": "general",
+        "hasExitNonZero": true,
+        "ciStatus": "MANUAL_ONLY",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "NONE",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": [
+          "Contains catch block that swallows error without rethrowing or setting non-zero exit code"
+        ]
+      },
+      {
+        "scriptFile": "scripts/audit-herb-cloudtcm-layer.js",
+        "taxonomy": "AUDIT",
+        "domain": "herbs",
+        "hasExitNonZero": false,
+        "ciStatus": "MANUAL_ONLY",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "NONE",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": [
+          "No non-zero exit pattern (process.exit, process.exitCode, or throw) found"
+        ]
+      },
+      {
+        "scriptFile": "scripts/check-branch-mergeable.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "infrastructure/integrity",
+        "hasExitNonZero": true,
+        "ciStatus": "CI_INVOKED",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "CHILD_AGGREGATOR_CLOSURE",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/check-canon-no-loss.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "general",
+        "hasExitNonZero": true,
+        "ciStatus": "CI_INVOKED",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "DIRECT_WORKFLOW_STEP",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/check-formula-no-loss.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "formulas",
+        "hasExitNonZero": true,
+        "ciStatus": "CI_INVOKED",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "CHILD_AGGREGATOR_CLOSURE",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/check-today-survives.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "general",
+        "hasExitNonZero": true,
+        "ciStatus": "ORPHAN_VALIDATOR",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "NONE",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/check-validation-ratchet.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "infrastructure/integrity",
+        "hasExitNonZero": true,
+        "ciStatus": "CI_INVOKED",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "DIRECT_WORKFLOW_STEP",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/rehearse-c2b.js",
+        "taxonomy": "REHEARSAL_DASHBOARD",
+        "domain": "general",
+        "hasExitNonZero": true,
+        "ciStatus": "MANUAL_ONLY",
+        "ciTier": "INFORMATIONAL_CI_STEP",
+        "invocationMode": "NONE",
+        "falseGreenClassification": "INFORMATIONAL_STEP",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/rehearse-runtime-restore.js",
+        "taxonomy": "REHEARSAL_DASHBOARD",
+        "domain": "general",
+        "hasExitNonZero": true,
+        "ciStatus": "CI_INVOKED",
+        "ciTier": "INFORMATIONAL_CI_STEP",
+        "invocationMode": "DIRECT_WORKFLOW_STEP",
+        "falseGreenClassification": "INFORMATIONAL_STEP",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/report-361-encoding-findings.js",
+        "taxonomy": "REPORT",
+        "domain": "acupoints",
+        "hasExitNonZero": false,
+        "ciStatus": "MANUAL_ONLY",
+        "ciTier": "INFORMATIONAL_CI_STEP",
+        "invocationMode": "NONE",
+        "falseGreenClassification": "INFORMATIONAL_STEP",
+        "falseGreenNotes": [
+          "No non-zero exit pattern (process.exit, process.exitCode, or throw) found"
+        ]
+      },
+      {
+        "scriptFile": "scripts/report-acupoint-content-gaps.js",
+        "taxonomy": "REPORT",
+        "domain": "acupoints",
+        "hasExitNonZero": false,
+        "ciStatus": "MANUAL_ONLY",
+        "ciTier": "INFORMATIONAL_CI_STEP",
+        "invocationMode": "NONE",
+        "falseGreenClassification": "INFORMATIONAL_STEP",
+        "falseGreenNotes": [
+          "No non-zero exit pattern (process.exit, process.exitCode, or throw) found"
+        ]
+      },
+      {
+        "scriptFile": "scripts/report-acupoint-contradictions.js",
+        "taxonomy": "REPORT",
+        "domain": "acupoints",
+        "hasExitNonZero": true,
+        "ciStatus": "MANUAL_ONLY",
+        "ciTier": "INFORMATIONAL_CI_STEP",
+        "invocationMode": "NONE",
+        "falseGreenClassification": "INFORMATIONAL_STEP",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/report-cloudtcm-buildout.js",
+        "taxonomy": "REPORT",
+        "domain": "cloudtcm",
+        "hasExitNonZero": false,
+        "ciStatus": "MANUAL_ONLY",
+        "ciTier": "INFORMATIONAL_CI_STEP",
+        "invocationMode": "NONE",
+        "falseGreenClassification": "INFORMATIONAL_STEP",
+        "falseGreenNotes": [
+          "No non-zero exit pattern (process.exit, process.exitCode, or throw) found"
+        ]
+      },
+      {
+        "scriptFile": "scripts/report-comparison-fill.js",
+        "taxonomy": "REPORT",
+        "domain": "general",
+        "hasExitNonZero": false,
+        "ciStatus": "MANUAL_ONLY",
+        "ciTier": "INFORMATIONAL_CI_STEP",
+        "invocationMode": "NONE",
+        "falseGreenClassification": "INFORMATIONAL_STEP",
+        "falseGreenNotes": [
+          "No non-zero exit pattern (process.exit, process.exitCode, or throw) found"
+        ]
+      },
+      {
+        "scriptFile": "scripts/report-exam-coverage.js",
+        "taxonomy": "REPORT",
+        "domain": "general",
+        "hasExitNonZero": false,
+        "ciStatus": "MANUAL_ONLY",
+        "ciTier": "INFORMATIONAL_CI_STEP",
+        "invocationMode": "NONE",
+        "falseGreenClassification": "INFORMATIONAL_STEP",
+        "falseGreenNotes": [
+          "No non-zero exit pattern (process.exit, process.exitCode, or throw) found"
+        ]
+      },
+      {
+        "scriptFile": "scripts/report-formula-completeness.js",
+        "taxonomy": "REPORT",
+        "domain": "formulas",
+        "hasExitNonZero": false,
+        "ciStatus": "MANUAL_ONLY",
+        "ciTier": "INFORMATIONAL_CI_STEP",
+        "invocationMode": "NONE",
+        "falseGreenClassification": "INFORMATIONAL_STEP",
+        "falseGreenNotes": [
+          "No non-zero exit pattern (process.exit, process.exitCode, or throw) found"
+        ]
+      },
+      {
+        "scriptFile": "scripts/report-formula-content-gaps.js",
+        "taxonomy": "REPORT",
+        "domain": "formulas",
+        "hasExitNonZero": true,
+        "ciStatus": "MANUAL_ONLY",
+        "ciTier": "INFORMATIONAL_CI_STEP",
+        "invocationMode": "NONE",
+        "falseGreenClassification": "INFORMATIONAL_STEP",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/report-herb-caution-conflicts.js",
+        "taxonomy": "REPORT",
+        "domain": "herbs",
+        "hasExitNonZero": false,
+        "ciStatus": "MANUAL_ONLY",
+        "ciTier": "INFORMATIONAL_CI_STEP",
+        "invocationMode": "NONE",
+        "falseGreenClassification": "INFORMATIONAL_STEP",
+        "falseGreenNotes": [
+          "No non-zero exit pattern (process.exit, process.exitCode, or throw) found"
+        ]
+      },
+      {
+        "scriptFile": "scripts/report-pharm-coverage.js",
+        "taxonomy": "REPORT",
+        "domain": "pharmacology",
+        "hasExitNonZero": false,
+        "ciStatus": "CI_INVOKED",
+        "ciTier": "INFORMATIONAL_CI_STEP",
+        "invocationMode": "DIRECT_WORKFLOW_STEP",
+        "falseGreenClassification": "INFORMATIONAL_STEP",
+        "falseGreenNotes": [
+          "No non-zero exit pattern (process.exit, process.exitCode, or throw) found"
+        ]
+      },
+      {
+        "scriptFile": "scripts/test-avs-checkout.js",
+        "taxonomy": "TEST",
+        "domain": "clinical",
+        "hasExitNonZero": true,
+        "ciStatus": "CI_INVOKED",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "DIRECT_WORKFLOW_STEP",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/test-branch-mergeable.js",
+        "taxonomy": "TEST",
+        "domain": "infrastructure/integrity",
+        "hasExitNonZero": true,
+        "ciStatus": "CI_INVOKED",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "DIRECT_WORKFLOW_STEP",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/test-herb-cloudtcm-fetch.js",
+        "taxonomy": "TEST",
+        "domain": "herbs",
+        "hasExitNonZero": false,
+        "ciStatus": "MANUAL_ONLY",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "NONE",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": [
+          "No non-zero exit pattern (process.exit, process.exitCode, or throw) found"
+        ]
+      },
+      {
+        "scriptFile": "scripts/test-knowledge-gap-logging.js",
+        "taxonomy": "TEST",
+        "domain": "general",
+        "hasExitNonZero": true,
+        "ciStatus": "MANUAL_ONLY",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "NONE",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/test-m1-fallback-failclosed.js",
+        "taxonomy": "TEST",
+        "domain": "general",
+        "hasExitNonZero": true,
+        "ciStatus": "CI_INVOKED",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "DIRECT_WORKFLOW_STEP",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/test-pharm-negative-cases.js",
+        "taxonomy": "TEST",
+        "domain": "pharmacology",
+        "hasExitNonZero": true,
+        "ciStatus": "CI_INVOKED",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "DIRECT_WORKFLOW_STEP",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/test-pharm-source-integrity-negative-cases.js",
+        "taxonomy": "TEST",
+        "domain": "pharmacology",
+        "hasExitNonZero": true,
+        "ciStatus": "CI_INVOKED",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "DIRECT_WORKFLOW_STEP",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/test-pointer-runtime.js",
+        "taxonomy": "TEST",
+        "domain": "acupoints",
+        "hasExitNonZero": true,
+        "ciStatus": "CI_INVOKED",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "DIRECT_WORKFLOW_STEP",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/test-practice-audit.js",
+        "taxonomy": "TEST",
+        "domain": "clinical",
+        "hasExitNonZero": true,
+        "ciStatus": "MANUAL_ONLY",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "NONE",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/validate-acupoint-source-conflicts.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "acupoints",
+        "hasExitNonZero": true,
+        "ciStatus": "CI_INVOKED",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "DIRECT_WORKFLOW_STEP",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/validate-acupoint-standard.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "acupoints",
+        "hasExitNonZero": true,
+        "ciStatus": "CI_INVOKED",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "DIRECT_WORKFLOW_STEP",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/validate-avs-library.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "clinical",
+        "hasExitNonZero": true,
+        "ciStatus": "CI_INVOKED",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "DIRECT_WORKFLOW_STEP",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/validate-b123-legacy-migration.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "general",
+        "hasExitNonZero": true,
+        "ciStatus": "CI_INVOKED",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "DIRECT_WORKFLOW_STEP",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/validate-bilingual-render-parity.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "presentation/runtime",
+        "hasExitNonZero": true,
+        "ciStatus": "CI_INVOKED",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "DIRECT_WORKFLOW_STEP",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/validate-boot-order.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "presentation/runtime",
+        "hasExitNonZero": true,
+        "ciStatus": "CI_INVOKED",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "DIRECT_WORKFLOW_STEP",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/validate-care-draft-phi.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "clinical",
+        "hasExitNonZero": true,
+        "ciStatus": "CI_INVOKED",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "DIRECT_WORKFLOW_STEP",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/validate-care-draft-render.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "clinical",
+        "hasExitNonZero": true,
+        "ciStatus": "CI_INVOKED",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "DIRECT_WORKFLOW_STEP",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/validate-clinical-case-standard.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "clinical",
+        "hasExitNonZero": true,
+        "ciStatus": "CI_INVOKED",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "DIRECT_WORKFLOW_STEP",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/validate-clinical-invariants.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "clinical",
+        "hasExitNonZero": true,
+        "ciStatus": "CI_INVOKED",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "DIRECT_WORKFLOW_STEP",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/validate-clinical-store-phi-boundary.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "clinical",
+        "hasExitNonZero": true,
+        "ciStatus": "CI_INVOKED",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "DIRECT_WORKFLOW_STEP",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/validate-cloudtcm-vocabularies.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "cloudtcm",
+        "hasExitNonZero": true,
+        "ciStatus": "ORPHAN_VALIDATOR",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "NONE",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/validate-comparison-standard.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "general",
+        "hasExitNonZero": true,
+        "ciStatus": "CI_INVOKED",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "DIRECT_WORKFLOW_STEP",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/validate-condition-sources.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "conditions/pathology",
+        "hasExitNonZero": true,
+        "ciStatus": "ORPHAN_VALIDATOR",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "NONE",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/validate-condition-standard.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "conditions/pathology",
+        "hasExitNonZero": true,
+        "ciStatus": "CI_INVOKED",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "DIRECT_WORKFLOW_STEP",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/validate-content-junk.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "infrastructure/integrity",
+        "hasExitNonZero": true,
+        "ciStatus": "CI_INVOKED",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "DIRECT_WORKFLOW_STEP",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/validate-content-quality.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "general",
+        "hasExitNonZero": true,
+        "ciStatus": "ORPHAN_VALIDATOR",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "NONE",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/validate-crosswalk-mappings.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "conditions/pathology",
+        "hasExitNonZero": true,
+        "ciStatus": "CI_INVOKED",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "DIRECT_WORKFLOW_STEP",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/validate-data.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "general",
+        "hasExitNonZero": true,
+        "ciStatus": "CI_INVOKED",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "DIRECT_WORKFLOW_STEP",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/validate-encoding.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "infrastructure/integrity",
+        "hasExitNonZero": true,
+        "ciStatus": "CI_INVOKED",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "RATCHET_AGGREGATOR",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/validate-exposure-safety-render.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "presentation/runtime",
+        "hasExitNonZero": true,
+        "ciStatus": "CI_INVOKED",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "DIRECT_WORKFLOW_STEP",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/validate-extra-point-standard.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "acupoints",
+        "hasExitNonZero": true,
+        "ciStatus": "CI_INVOKED",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "DIRECT_WORKFLOW_STEP",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/validate-field-shape-consistency.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "general",
+        "hasExitNonZero": true,
+        "ciStatus": "CI_INVOKED",
+        "ciTier": "INFORMATIONAL_CI_STEP",
+        "invocationMode": "DIRECT_WORKFLOW_STEP",
+        "falseGreenClassification": "INFORMATIONAL_STEP",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/validate-formula-composition-signatures.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "formulas",
+        "hasExitNonZero": true,
+        "ciStatus": "CI_INVOKED",
+        "ciTier": "INFORMATIONAL_CI_STEP",
+        "invocationMode": "DIRECT_WORKFLOW_STEP",
+        "falseGreenClassification": "INFORMATIONAL_STEP",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/validate-formula-correctness.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "formulas",
+        "hasExitNonZero": true,
+        "ciStatus": "CI_INVOKED",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "RATCHET_AGGREGATOR",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/validate-formula-dose-staging.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "formulas",
+        "hasExitNonZero": true,
+        "ciStatus": "CI_INVOKED",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "RATCHET_AGGREGATOR",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/validate-formula-hdi-review.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "formulas",
+        "hasExitNonZero": true,
+        "ciStatus": "CI_INVOKED",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "DIRECT_WORKFLOW_STEP",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/validate-formula-quality-strict.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "formulas",
+        "hasExitNonZero": true,
+        "ciStatus": "ORPHAN_VALIDATOR",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "NONE",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/validate-formula-safety-predicates.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "formulas",
+        "hasExitNonZero": true,
+        "ciStatus": "CI_INVOKED",
+        "ciTier": "INFORMATIONAL_CI_STEP",
+        "invocationMode": "DIRECT_WORKFLOW_STEP",
+        "falseGreenClassification": "INFORMATIONAL_STEP",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/validate-formula-song.js",
+        "taxonomy": "NONBLOCKING_VALIDATOR",
+        "domain": "formulas",
+        "hasExitNonZero": false,
+        "ciStatus": "MANUAL_ONLY",
+        "ciTier": "INFORMATIONAL_CI_STEP",
+        "invocationMode": "NONE",
+        "falseGreenClassification": "INFORMATIONAL_STEP",
+        "falseGreenNotes": [
+          "No non-zero exit pattern (process.exit, process.exitCode, or throw) found"
+        ]
+      },
+      {
+        "scriptFile": "scripts/validate-formula-standard.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "formulas",
+        "hasExitNonZero": true,
+        "ciStatus": "CI_INVOKED",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "DIRECT_WORKFLOW_STEP",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/validate-gyn-legacy-migration.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "general",
+        "hasExitNonZero": true,
+        "ciStatus": "CI_INVOKED",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "DIRECT_WORKFLOW_STEP",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/validate-herb-canon.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "herbs",
+        "hasExitNonZero": true,
+        "ciStatus": "ORPHAN_VALIDATOR",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "NONE",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/validate-herb-card-schema.js",
+        "taxonomy": "NONBLOCKING_VALIDATOR",
+        "domain": "herbs",
+        "hasExitNonZero": true,
+        "ciStatus": "MANUAL_ONLY",
+        "ciTier": "INFORMATIONAL_CI_STEP",
+        "invocationMode": "NONE",
+        "falseGreenClassification": "INFORMATIONAL_STEP",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/validate-herb-dosage-shape.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "herbs",
+        "hasExitNonZero": true,
+        "ciStatus": "CI_INVOKED",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "DIRECT_WORKFLOW_STEP",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/validate-herb-integrity-predicates.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "herbs",
+        "hasExitNonZero": true,
+        "ciStatus": "CI_INVOKED",
+        "ciTier": "INFORMATIONAL_CI_STEP",
+        "invocationMode": "DIRECT_WORKFLOW_STEP",
+        "falseGreenClassification": "INFORMATIONAL_STEP",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/validate-herb-quality-strict.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "herbs",
+        "hasExitNonZero": true,
+        "ciStatus": "ORPHAN_VALIDATOR",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "NONE",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/validate-herb-standard.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "herbs",
+        "hasExitNonZero": true,
+        "ciStatus": "CI_INVOKED",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "DIRECT_WORKFLOW_STEP",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/validate-herbal-links.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "herbs",
+        "hasExitNonZero": true,
+        "ciStatus": "ORPHAN_VALIDATOR",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "NONE",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/validate-interactions.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "presentation/runtime",
+        "hasExitNonZero": true,
+        "ciStatus": "CI_INVOKED",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "DIRECT_WORKFLOW_STEP",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/validate-knowledge-parts.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "general",
+        "hasExitNonZero": true,
+        "ciStatus": "CI_INVOKED",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "DIRECT_WORKFLOW_STEP",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/validate-metric-interpretation.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "presentation/runtime",
+        "hasExitNonZero": true,
+        "ciStatus": "CI_INVOKED",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "DIRECT_WORKFLOW_STEP",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/validate-naming.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "infrastructure/integrity",
+        "hasExitNonZero": true,
+        "ciStatus": "CI_INVOKED",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "RATCHET_AGGREGATOR",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/validate-no-boilerplate.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "general",
+        "hasExitNonZero": true,
+        "ciStatus": "ORPHAN_VALIDATOR",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "NONE",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/validate-no-template-protocol.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "general",
+        "hasExitNonZero": true,
+        "ciStatus": "CI_INVOKED",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "DIRECT_WORKFLOW_STEP",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/validate-outcome-panel-render.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "presentation/runtime",
+        "hasExitNonZero": true,
+        "ciStatus": "CI_INVOKED",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "DIRECT_WORKFLOW_STEP",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/validate-pattern-registry.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "patterns/tdis",
+        "hasExitNonZero": true,
+        "ciStatus": "ORPHAN_VALIDATOR",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "NONE",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/validate-pattern-standard.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "patterns/tdis",
+        "hasExitNonZero": true,
+        "ciStatus": "CI_INVOKED",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "RATCHET_AGGREGATOR",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/validate-pharm-standard.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "pharmacology",
+        "hasExitNonZero": true,
+        "ciStatus": "CI_INVOKED",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "DIRECT_WORKFLOW_STEP",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/validate-point-categories.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "acupoints",
+        "hasExitNonZero": true,
+        "ciStatus": "ORPHAN_VALIDATOR",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "NONE",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/validate-point-ids.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "acupoints",
+        "hasExitNonZero": true,
+        "ciStatus": "CI_INVOKED",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "DIRECT_WORKFLOW_STEP",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/validate-previsit-payload.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "general",
+        "hasExitNonZero": true,
+        "ciStatus": "CI_INVOKED",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "DIRECT_WORKFLOW_STEP",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/validate-protocol-evidence-render.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "presentation/runtime",
+        "hasExitNonZero": true,
+        "ciStatus": "CI_INVOKED",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "DIRECT_WORKFLOW_STEP",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/validate-red-flag-registry.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "conditions/pathology",
+        "hasExitNonZero": true,
+        "ciStatus": "CI_INVOKED",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "DIRECT_WORKFLOW_STEP",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/validate-red-flag-runtime.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "conditions/pathology",
+        "hasExitNonZero": true,
+        "ciStatus": "CI_INVOKED",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "DIRECT_WORKFLOW_STEP",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/validate-red-flag-wiring.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "conditions/pathology",
+        "hasExitNonZero": true,
+        "ciStatus": "CI_INVOKED",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "DIRECT_WORKFLOW_STEP",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/validate-relation-registry.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "general",
+        "hasExitNonZero": true,
+        "ciStatus": "CI_INVOKED",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "DIRECT_WORKFLOW_STEP",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/validate-relations.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "general",
+        "hasExitNonZero": true,
+        "ciStatus": "CI_INVOKED",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "DIRECT_WORKFLOW_STEP",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/validate-render-blocking.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "presentation/runtime",
+        "hasExitNonZero": true,
+        "ciStatus": "CI_INVOKED",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "DIRECT_WORKFLOW_STEP",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/validate-review-status-vocab.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "general",
+        "hasExitNonZero": true,
+        "ciStatus": "CI_INVOKED",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "DIRECT_WORKFLOW_STEP",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/validate-supp-standard.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "supplements",
+        "hasExitNonZero": true,
+        "ciStatus": "ORPHAN_VALIDATOR",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "NONE",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/validate-symptom-standard.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "symptoms",
+        "hasExitNonZero": true,
+        "ciStatus": "CI_INVOKED",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "DIRECT_WORKFLOW_STEP",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/validate-tdis-standard.js",
+        "taxonomy": "BLOCKING_VALIDATOR",
+        "domain": "patterns/tdis",
+        "hasExitNonZero": true,
+        "ciStatus": "CI_INVOKED",
+        "ciTier": "BLOCKING_CI_STEP",
+        "invocationMode": "RATCHET_AGGREGATOR",
+        "falseGreenClassification": "FAIL_CLOSED",
+        "falseGreenNotes": []
+      },
+      {
+        "scriptFile": "scripts/walkthrough-phase-e.js",
+        "taxonomy": "REHEARSAL_DASHBOARD",
+        "domain": "general",
+        "hasExitNonZero": true,
+        "ciStatus": "CI_INVOKED",
+        "ciTier": "INFORMATIONAL_CI_STEP",
+        "invocationMode": "DIRECT_WORKFLOW_STEP",
+        "falseGreenClassification": "INFORMATIONAL_STEP",
+        "falseGreenNotes": []
+      }
+    ],
+    "highest_risk_findings": [
+      {
+        "riskType": "REBUILD_DIFFERS",
+        "severity": "HIGH",
+        "target": "data/generated/entity_registry.json",
+        "generator": "scripts/build-entity-registry.js",
+        "detail": "Committed artifact differs from fresh deterministic rebuild (Byte size differs: committed 1496023 vs rebuilt 2693002; entity_count changed from 4621 to 7323)."
+      },
+      {
+        "riskType": "GENERATED_BUT_UNUSED",
+        "severity": "MEDIUM",
+        "target": "data/generated/entity_registry.json",
+        "detail": "Generated file is committed in data/generated/ but not loaded by runtime HTML or bundled into loaded shards."
+      },
+      {
+        "riskType": "ORPHAN_VALIDATOR",
+        "severity": "MEDIUM",
+        "target": "scripts/check-today-survives.js",
+        "detail": "Blocking validator exists in scripts/ with non-zero exit capabilities but is missing from CI workflows."
+      },
+      {
+        "riskType": "ORPHAN_VALIDATOR",
+        "severity": "MEDIUM",
+        "target": "scripts/validate-cloudtcm-vocabularies.js",
+        "detail": "Blocking validator exists in scripts/ with non-zero exit capabilities but is missing from CI workflows."
+      },
+      {
+        "riskType": "ORPHAN_VALIDATOR",
+        "severity": "MEDIUM",
+        "target": "scripts/validate-condition-sources.js",
+        "detail": "Blocking validator exists in scripts/ with non-zero exit capabilities but is missing from CI workflows."
+      },
+      {
+        "riskType": "ORPHAN_VALIDATOR",
+        "severity": "MEDIUM",
+        "target": "scripts/validate-content-quality.js",
+        "detail": "Blocking validator exists in scripts/ with non-zero exit capabilities but is missing from CI workflows."
+      },
+      {
+        "riskType": "ORPHAN_VALIDATOR",
+        "severity": "MEDIUM",
+        "target": "scripts/validate-formula-quality-strict.js",
+        "detail": "Blocking validator exists in scripts/ with non-zero exit capabilities but is missing from CI workflows."
+      },
+      {
+        "riskType": "ORPHAN_VALIDATOR",
+        "severity": "MEDIUM",
+        "target": "scripts/validate-herb-canon.js",
+        "detail": "Blocking validator exists in scripts/ with non-zero exit capabilities but is missing from CI workflows."
+      },
+      {
+        "riskType": "ORPHAN_VALIDATOR",
+        "severity": "MEDIUM",
+        "target": "scripts/validate-herb-quality-strict.js",
+        "detail": "Blocking validator exists in scripts/ with non-zero exit capabilities but is missing from CI workflows."
+      },
+      {
+        "riskType": "ORPHAN_VALIDATOR",
+        "severity": "MEDIUM",
+        "target": "scripts/validate-herbal-links.js",
+        "detail": "Blocking validator exists in scripts/ with non-zero exit capabilities but is missing from CI workflows."
+      },
+      {
+        "riskType": "ORPHAN_VALIDATOR",
+        "severity": "MEDIUM",
+        "target": "scripts/validate-no-boilerplate.js",
+        "detail": "Blocking validator exists in scripts/ with non-zero exit capabilities but is missing from CI workflows."
+      },
+      {
+        "riskType": "ORPHAN_VALIDATOR",
+        "severity": "MEDIUM",
+        "target": "scripts/validate-pattern-registry.js",
+        "detail": "Blocking validator exists in scripts/ with non-zero exit capabilities but is missing from CI workflows."
+      },
+      {
+        "riskType": "ORPHAN_VALIDATOR",
+        "severity": "MEDIUM",
+        "target": "scripts/validate-point-categories.js",
+        "detail": "Blocking validator exists in scripts/ with non-zero exit capabilities but is missing from CI workflows."
+      },
+      {
+        "riskType": "ORPHAN_VALIDATOR",
+        "severity": "MEDIUM",
+        "target": "scripts/validate-supp-standard.js",
+        "detail": "Blocking validator exists in scripts/ with non-zero exit capabilities but is missing from CI workflows."
+      }
+    ]
+  }
+}

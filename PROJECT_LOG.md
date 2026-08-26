@@ -1,3 +1,25 @@
+# 2026-08-25 Antigravity — Task 9C Round 3 (Generated Data / Build / Validator / CI Integrity Audit)
+
+- **工作內容**: 執行 AcuTing OS 全鏈路（Canonical Data → Generated Artifacts → Site Entrypoints → Validators → CI Workflows）唯讀架構審計 Round 3 終局收斂。
+  - 正典與生成資料零變更：`data/**` canonicals、`data/generated/*` 生成檔、`.github/workflows/*` CI 配置 Byte-for-byte 0 異動。
+  - 負控與回歸測試：11 項啟動回歸測試（含 ID mismatch、extra ID、BLOCKING/NONBLOCKING/AUDIT 分類、literal/ternary/exitCode/throw 控制流、合成依賴圖 fixture、live validators 判定）100% PASS。
+  - 領域與生成層盤點：掃描 12 個 canonical domains（8 個具生成層、4 個標記為 `NO_GENERATED_LAYER`）。
+  - 生成同步與沙盒重建成效：
+    - 掃描 15 個 generated artifacts。
+    - 核心領域 ID 同步率 100%（7 筆 `SYNC_OK`、1 筆 `SYNC_NOT_DIRECTLY_COMPARABLE`、Missing Canonical IDs: 0 筆、Extra Generated IDs: 0 筆）。
+    - 沙盒確定性重建：14 個檔案 100% Byte-for-byte 完全一致；1 個檔案存在差異（`data/generated/entity_registry.json`，自 2026-07-22 未重建，實體數 4,621 vs 重建 7,323）。
+    - 一般化消費圖譜（無 hardcode）：12 個直接由 HTML 載入（`DIRECT_RUNTIME_LOADED`）；1 個由建置腳本讀取並打包進 runtime bundle（`TRANSITIVELY_BUNDLED_AND_LOADED`，即 `content_quality.json` 打包入 `knowledge_core.js`）；2 個生成但未被站點使用（`GENERATED_BUT_UNUSED`，含雙寫回滾對照單體 `knowledge_data.js` 與 `entity_registry.json`）；缺檔引數: 0。
+  - 確定性驗證器分類與 CI 覆蓋審計：
+    - 全庫共 94 支腳本（66 支阻擋驗證器 `BLOCKING_VALIDATOR`、2 支非阻擋驗證器 `NONBLOCKING_VALIDATOR`、9 支測試、4 支審計、10 支報告、3 支演練/儀表板）。
+    - CI 遞迴閉包實際呼叫: **63 支**（其中 75 支為 Fail-Closed 阻擋步驟，7 支為 NOTE tier/dashboard 資訊步驟）。
+    - 孤立阻擋驗證器 (Orphan Blocking Validators): **12 支**（僅計入未進 CI 之真正 `BLOCKING_VALIDATOR`；`validate-formula-song.js` 等非阻擋腳本正確歸類為手動報告）。
+    - 手動專用腳本 (Manual-Only Scripts): **19 支**（非阻擋驗證器、審計、報告與演練腳本）。
+    - 真正潛在假綠阻擋步驟 (True False-Green Blocking Steps): **0 支**（CI 內所有阻擋步驟均具備非零退出路徑）。
+- **產出檔案**: `scripts/audit-generated-ci-integrity.js` / `docs/audits/GENERATED_CI_INTEGRITY_2026-08-25.md` / `data/audits/generated_ci_integrity_2026-08-25.json`。
+- **分支與狀態**: 推送至 `antigravity/task9c-generated-ci-integrity-audit-round3`，任務交付並停下。
+
+---
+
 # 2026-08-25 深夜 — Task 8C 驗收通過並落地:方劑 exact_source_url 補齊,94%→97%(附一則編碼異常提醒)
 
 Task 8C(`antigravity/formula-fill-task8-source-url`，commit `128da48e`）延續同一套 HTTP 驗證方法補
