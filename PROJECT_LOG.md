@@ -1,3 +1,24 @@
+# 2026-08-25 Antigravity — Task 9D Round 3 (Final Integration Fidelity & Complete Engine Reuse)
+
+- **工作內容**: 執行 AcuTing OS 統一預檢安全門閥 `scripts/antigravity-preflight.js` Round 3 最終忠實度收斂。
+  - 正典與生成資料零變更：`data/**` canonicals、`data/generated/*` 生成檔、`.github/workflows/*` CI 配置 Byte-for-byte 0 異動。
+  - 完整重用 Task 9B 引擎：
+    - 完整運行 exact/normalized 中英文名稱碰撞、別名碰撞（alias to multiple, alias collides with canonical, alias self-duplicate）與 possible duplicate 啟發式盤點。
+    - 保留 5 個 `formula_family` TARGET_MISSING 孤立引用（0 假改善）。
+  - 完整重用 Task 9A 來源解析器與欄位清單：
+    - 精確重現 accepted Task 9A 數值：6,241 local references、5,624 LOCAL_EXISTS、617 LOCAL_MISSING、1,260 unique HTTP URLs、6 unique missing paths。
+    - Fast Mode 標記 `HTTP_NOT_RUN_IN_FAST_MODE`，Deep Mode 支援真實 HTTP 傳輸驗證。
+  - 恢復 Task 9C 運行時依賴圖（Runtime Consumption Graph）：
+    - 完整解析 `index.html` 與 `previsit.html`，區分 `DIRECT_RUNTIME_LOADED`、`TRANSITIVELY_BUNDLED_AND_LOADED`（如 `content_quality.json`）與 `GENERATED_BUT_UNUSED`。
+    - 缺失站點載入檔案（`SITE_EXPECTS_MISSING_FILE`）嚴格 Hard FAIL。
+  - 基線更新 Fail-Closed 保證：`--update-baseline` 遇到損毀基線時嚴格拋錯中斷，不靜默覆蓋。
+  - 真正可執行的負控回歸測試：13 項合成負控測試（含 alias collision、transitive dependency、malformed baseline rebaseline fail-closed、uncommitted diff 等）13/13 PASS。
+  - 實測結果：Fast Mode 判定 **`PASS WITH WARNINGS`**（Hard Failures: 0, Regressions: 0, Known Warnings: 6, Improvements: 0），符合進入人工/語意驗收標準。
+- **產出檔案**: `scripts/antigravity-preflight.js` / `scripts/lib/*` / `data/audits/antigravity_preflight_baseline.json` / `data/audits/antigravity_preflight_run.json` / `docs/audits/ANTIGRAVITY_PREFLIGHT_2026-08-25.md`。
+- **分支與狀態**: 推送至 `antigravity/task9d-unified-preflight-round3`，任務交付並停下。
+
+---
+
 # 2026-08-25 深夜 — Task 8C 驗收通過並落地:方劑 exact_source_url 補齊,94%→97%(附一則編碼異常提醒)
 
 Task 8C(`antigravity/formula-fill-task8-source-url`，commit `128da48e`）延續同一套 HTTP 驗證方法補
