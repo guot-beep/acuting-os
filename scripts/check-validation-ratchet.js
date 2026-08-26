@@ -127,10 +127,8 @@ const RATCHETED = [
     // 2026-08-26 加入:D21 記載「四退役 id 零殘留」但 herb_pairs 仍有 2 筆、
     // D16 三個退役 pattern 被之後的 tdis/symptom 批次引用了 23 次 —— 一次性
     // 驗證沒有 gate 撐著就會腐化。上述 25 筆已按 D16/D21 既有裁定表重導。
-    // 基線剩 10 = formula.bai_du_san:它被標 deprecated 卻無 deprecated_note、
-    // 無 DECISIONS 記錄,且 formula_canon_shortlist 還有同 id 的 active 副本
-    // (records[7])——敗毒散是否併入人參敗毒散是方劑同一性裁定,留給 Ting;
-    // 裁定後重導這 10 筆、把基線降到 0,然後照 point_ids 的前例畢業進 green。
+    // 2026-08-26 D22(Ting 裁定):敗毒散確認併入人參敗毒散,10 筆已重導、
+    // 21 個獨有欄位 additive 遷入正典,基線 0。可照 point_ids 前例畢業進 green。
     doc: "DECISIONS.md D16/D21",
   },
   // point_ids sat here temporarily (ceiling 72) while the extra-point line

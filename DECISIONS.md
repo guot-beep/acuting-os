@@ -530,3 +530,253 @@ NEVER hand-typed (type 逍遙 / xiaoyao / XYS → pick → store
 integrity from "caught after the fact" into physically-impossible-to-break,
 and it is what makes recording every practice case low-friction enough to
 actually sustain for three years. Then: "copy from last visit" pre-fill.
+
+## D17 — Clinical Data Capture V2 namespaces and model rules  · LOCKED (2026-08-10, Ting, final low-token checkpoint)
+
+Context: `docs/CLINICAL_DATA_CAPTURE_V2_DIRECTION_2026-08-10.md` (direction) and
+`docs/CLINICAL_LAYERS_RECONCILIATION_2026-08-10.md` (repo reconciliation).
+
+1. **New canonical namespaces** — exactly `supp.*` (supplements — **NOT `suppl.*`**,
+   overriding the V2 direction doc's §6 spelling), `life.*` (lifestyle factors),
+   `exposure.*` (environmental/toxic exposures), `adverse_event.*`, `modality.*`.
+   Examples: `supp.vitamin_d3`, `supp.coq10`, `supp.magnesium`, `supp.creatine`.
+   No variants (`suppl.*`, `supplement.*`, `ae.*`) — the namespace IS the type (D11).
+2. **Medications** — reconfirms D15: new identities are `drug.*`; `med.*` records are
+   NEVER destructively deleted — legacy/migration aliases toward `drug.*` via
+   `medication_alias_map.json`. Migration gate: after it, new real Clinical Visits
+   must not create new `med.*` references.
+3. **`sym.*` and `metric.*` are NOT competing namespaces.** `sym.*` = symptom/clinical
+   finding; `metric.*` = measurement instrument or tracked value.
+   (sym.headache ↔ metric.pain_score; sym.insomnia ↔ metric.sleep_quality +
+   metric.sleep_duration_hours.) Visit observations must let a symptom/finding
+   optionally link to one or more measurements. Never collapse one into the other.
+   This resolves the sym_id fork flagged in `data/clinical_cases/schema.sql`.
+4. **Visit TCM pattern roles** — MVP supports `primary` | `secondary`; schema stays
+   future-compatible with `root` | `branch` (reserved, not blocked). Visit pattern
+   records eventually support `confidence`.
+5. **One coherent exposure timeline** — Patient/Case baseline exposure and Visit-level
+   changes belong to ONE longitudinal model that can reconstruct the timeline
+   (baseline coffee 3 cups/day + Visit #4 "changed to 1 cup/day"). Applies to
+   `drug.*`, `supp.*`, `life.*`, `exposure.*`. Never two disconnected systems.
+6. **Observation ≠ interpretation** — lifestyle/exposure data is observed behavior;
+   it never auto-converts into a TCM diagnosis or pattern, and suspected exposure
+   never becomes confirmed poisoning. Pattern conclusions are entered only by the
+   practitioner at Case/Visit level.
+- **Reconsider only if:** never merge the namespaces or auto-diagnose; naming spelling
+  is final once the first `supp.*` record is issued (D1).
+
+## D19 — TCM Pattern V1 frozen  · LOCKED (2026-08-08, Ting approved after the ChatGPT canonical review)
+
+> 編號註記(2026-08-12 整合時):本決定原記為 D17,與同編號的
+> 「D17 Clinical Data Capture V2 namespaces」(2026-08-10)撞號 —— 後者已被
+> 四份文件以 D17 §5/§6 引用,故保留其編號,本決定改列 D19。決定內容未更動。
+> 舊引用「D17 TCM Pattern V1 frozen」= 現 D19。
+
+- **What:** the `pattern.*` namespace's V1 completion pass (per
+  `docs/PATTERN_CARD_TEMPLATE.md`, run against every canonical Pattern) is
+  done. Frozen state, verified programmatically at freeze time:
+
+  | | Count |
+  |---|---|
+  | Registry total (`pattern_registry.json`) | 69 |
+  | — taxonomy/category nodes (`level:"category"`) | 10 |
+  | — canonical clinical ids (`level:"pattern"`) | 59 |
+  | Library total (`pattern_library.json`, raw) | 62 |
+  | — active canonical Pattern cards | 59 |
+  | — deprecated historical import records (D16) | 3 |
+  | Active library ids resolving exactly once to a registry clinical id | 59/59 |
+  | Active library − registry clinical | 0 |
+  | Registry clinical − active library | 0 |
+
+  `validate-pattern-standard`: 62/62 records clean, 0 blocking defects.
+  `validate-pattern-registry`: PASS. `validate-content-junk`: PASS.
+  `check-validation-ratchet`: PASS, no regressions (patterns 220 → 0 over the
+  V1 project).
+- **Canonical completion baseline commit:** `c8a5ea7` — "Pattern V1: build the
+  3 final canonical cards -- stomach_fire, wind_cold, wind_heat -- 59/59
+  active identity reconciled." Anyone auditing "what did V1 actually ship"
+  diffs against this commit.
+- **What "frozen" means going forward:**
+  1. New Pattern work is **V2 expansion**, not a silent V1 edit. A new
+     `pattern.*` id, a reclassification of an existing one, or a schema
+     change to `docs/PATTERN_CARD_TEMPLATE.md` all count as V2 and should say
+     so in the commit message — they do not retroactively change what V1 was.
+  2. No canonical V1 id is renamed, merged, redirected, or deleted without an
+     explicit migration decision recorded here (same standard as D1/D6/D10).
+  3. The 3 deprecated records from D16 (`pattern.insomnia_heart_kidney_disharmony`,
+     `pattern.liver_fire_flaring`, `pattern.liver_wind_stirring`) stay
+     `review_status: "deprecated"` in `pattern_library.json` — not deleted,
+     not un-deprecated without a new decision.
+  4. The 10 records still missing `differential_patterns` (`N1`, non-blocking)
+     are a known, accepted V1 gap — fill them only when a real source
+     supports a real distinguishing comparison, never by inventing one to
+     close the count.
+  5. The duplicated `cmp.insomnia_patterns` block in `data/knowledge/comparisons.json`
+     (flagged during the D16 reference audit) is explicitly **out of scope**
+     of this freeze — a separate, unapproved cleanup item.
+- **Reconsider only if:** a future canonical review finds a genuine identity
+  defect in the frozen 59 (a real duplicate, a real classification error) —
+  fix via a dated decision here, the same process D16 used, not a silent edit.
+
+## D18 — SQLite 時程正式修訂 · LOCKED(Ting 裁定接受,2026-08-11)
+
+**背景**:上方「One semester before clinic」段將 localStorage→SQLite 遷移
+deadline 訂在開診前假期。實際 2026-08 的工程順序是:C2b Patient 遷移鏈
+(8 輪審計)+ 可逆 export/import + 每日備份紀律優先;SQLite 未動。
+三年藍圖(2026-08-11)把 SQLite 排在 12-24m。INDEPENDENT_AUDIT_2026-08-11
+正確指出:這是對本檔既有決策的**未記錄偏離**。本條就是那份記錄。
+
+**提案**:正式修訂為 —— 9/5 前不做 SQLite;條件觸發制:病例量 ≥50、或
+多裝置需求出現、或 localStorage 容量壓力實測浮現,三者任一即啟動遷移
+(照 C2b 同款 plan→shadow→verify→pointer→rollback 流程;
+localstorage_sqlite_mapping.json 持續逐欄維護是本提案的前提紀律)。
+
+**理由**:(1) 開診前最後三週的風險預算應花在已知高風險面(C2b runtime
+契約、日常寫入路徑防護),不是引入新儲存引擎;(2) localStorage +
+fail-loud 持久層 + v2 export + Git 外備份已覆蓋單機單人期的資料安全;
+(3) mapping 檔的維護讓延後不增加未來遷移成本。
+
+**Ting 裁定(2026-08-11)**:✅ 接受修訂 —— 9/5 前不做 SQLite;條件觸發制生效(病例 ≥50 / 多裝置需求 / 容量壓力,任一即啟動)。
+> **更正(2026-08-26,Ting)**:實際進診所日為 **9/2**,非 9/5。本條與全庫
+> 各處「9/5 前不做 SQLite」讀作「9/2 前不做」;條件觸發制不變。D12 的
+> 9/01 additive-only 凍結仍在進診所之前,不受影響。
+
+## D20 — Outcome metric 的判讀分兩個軸,不是一個 · LOCKED(2026-08-13,Ting:「兩個軸留著」)
+
+**鎖住什麼**:`data/clinical_cases/outcome_metrics.json` 的每一筆記錄,對
+「這個數字怎麼判讀」保留**兩個彼此獨立**的欄位群,任何人不得把它們合併回一個:
+
+| 欄位 | 只回答這個問題 |
+|---|---|
+| `interpretation_status` + `source` + `interpretation_en` | **變化多少算臨床有意義**(MCID)有沒有具名來源 |
+| `reference_range{ text_zh, text_en, scope, source }` | **什麼算正常** / 診斷依據 / 證據標準 |
+| `instrument_source` | **量表本身**的出處 |
+
+`interpretation_status` 維持三態:`sourced` / `no_published_threshold` /
+`source_pending`,而且它**只**描述第一列那個問題。
+
+**為什麼**:2026-08-13 SOL 查證 17 筆待辦時,建議把 13 筆標成 `sourced`。
+照做會出事,而它自己的結論就是證據 —— `cycle_length` 是「FIGO 24–38 天正常
+**有來源**,但沒有 change-from-baseline MCID」。兩個不同的問題被壓進同一個
+欄位,而 `scripts/validate-metric-interpretation.js` 正是靠這個欄位決定
+**這筆記錄能不能寫數字**。一旦標成 `sourced`,守門就失效,下一個人寫
+「週期縮短 5 天算改善」不會有任何東西擋。
+
+SOL 自己列的四條防呆註記,全部是同一種失敗:情境限定的切點被抄成全域規則。
+內膜 ≤7 mm(IVF 預後,辨別力很弱)、卵泡尺寸(自然週期 vs 促排完全不同)、
+Rome IV <3 次/週(是多項診斷條件之一)、潮熱 50%(病人層級)vs FDA 2/day
+(組間療效門檻)。
+
+**這條的一般形式,值得記住**:*一個用來守門的欄位,一旦同時回答兩個問題,
+守門就失效。* 不是資料不整齊的問題,是規則被繞過的問題。
+
+**repo 現況(2026-08-13)**:27 筆 —— `sourced` 10 / `no_published_threshold`
+17 / `source_pending` 0。7 筆帶 `reference_range`,`scope` 全部非空。
+3 筆的量表出處已從 `source` 分流到 `instrument_source`。
+validator 強制:`reference_range` 必須有自己的 `source`;**文字裡有數字就
+必須有 `scope`**;非 `sourced` 的記錄不得在 `source` 放東西。
+負面對照 4/4 擋住,含「內膜 8 mm 以上即適合著床」。
+
+**只有在這種情況下重新考慮**:出現第三種判讀問題,而它既不是「改善幅度」
+也不是「正常範圍」—— 那時是**再加一個軸**,不是把現有兩個合併。
+合併的代價是守門失效,那是不可逆的:錯的閾值一旦寫進病歷判讀畫面,
+後面看到的人會把它當標準。
+
+## D21 — 四組中藥重複匯入卡退役(deprecated,非刪除),合併進正典藥典名 · LOCKED(2026-08-14,SOL 鑑定 + Ting 裁定「四組照建議 沙參方案A」)
+
+**機制沿用 D16**(pattern 線的 dedup migration):additive-only 合併進正典
+記錄,退役卡 `review_status` 改 `"deprecated"` 並加一句 `deprecated_note_zh`
+說明,整筆留在 `herb_canon_shortlist.json`(D6 不硬刪),全庫引用改指向正典
+id,退役 id 本身不變(D1)。herb 線資料形狀與 pattern 線不同(無
+`differential_patterns` 互斥欄、無現成 `deprecated_note_zh` 欄位),故新增
+該欄位進 `docs/HERB_CARD_TEMPLATE.md` §3.6,`validate-herb-standard.js`
+沒有 pattern 線那種 APPROVED 欄位白名單,不需要額外註冊。
+
+**四組**(SOL 鑑定重複,Ting 裁定逐組執行):
+
+| 退役 id(留檔) | 正典 id(藥典名) | 共同藥材 |
+|---|---|---|
+| `herb.qian_cao_gen` | `herb.qian_cao` | 茜草 Rubiae Radix et Rhizoma |
+| `herb.han_lian_cao` | `herb.mo_han_lian` | 墨旱蓮 Ecliptae Herba |
+| `herb.wu_zei_gu` | `herb.hai_piao_xiao` | 海螵蛸 Sepiae Endoconcha |
+| `herb.sha_shen`（方案 A） | `herb.bei_sha_shen` | 北沙參 Glehnia littoralis |
+
+- **茜草組**:正典本已較完整,只把「茜草根」併入 `aliases_zh`、
+  「順天堂藥材」併入 `study_tags`;退役卡的裸網域 source_urls 未帶新事實,
+  未遷移。
+- **墨旱蓮組(反向案例)**:退役卡 `herb.han_lian_cao` 內容反而比正典
+  `herb.mo_han_lian` 完整(functions_zh/modern_functions_zh+_en/
+  modern_functions_detail_zh/clinical_use_note/dosage/safety_flags/
+  related_formulas/field_sources 皆缺或較短)。**archive-before-replace**:
+  正典原本較短的 functions_zh/cautions_zh/_en/source_urls/exact_source_url
+  先寫進正典自己的 `import_artifacts`,再用退役卡的較完整版本取代;「旱蓮草」
+  「金陵草」「蓮子草」併入 `aliases_zh`。這是本次唯一一組「新 id 是正典、
+  舊 id 內容較完整」的反向案例,merge 方向不是機械地「保留正典所有欄位」,
+  而是逐欄比較長短。
+- **海螵蛸組**:退役卡獨有的 `related_formulas`(3 個,正典原欄位是空的)
+  與 `modern_functions_detail_zh`(2 則完整分析,正典原無此欄)遷入;
+  歸經兩源不合(退役卡:脾經、腎經;正典採用 AD+課件版:腎經、肝經、胃經)
+  依「兩源不合就並記」加註在正典 `tcm_properties.source_note_zh`,未覆蓋
+  主欄位。「烏賊骨」「墨魚骨」正典 aliases_zh 已有,確認無需再加。
+- **沙參組(方案 A,特別條款)**:retire 前逐欄檢查 `herb.sha_shen` 有無
+  南沙參(Adenophora)專屬內容 —— **檢查結果:沒有**,功效/主治/禁忌皆為
+  `herb.bei_sha_shen` 既有內容子集,故未另立南沙參封存記錄。
+  `name_en: "Glehniae / Adenophorae Radix"`(北/南沙參拉丁學名混寫)
+  依裁定明確排除,未遷入,`herb.bei_sha_shen` 維持自身 `"Glehnia Root"`。
+  「沙參」併入 `aliases_zh`。`related_formulas` 僅遷移
+  `formula.sha_shen_mai_men_dong_tang`(其 composition 確實列
+  `herb_id: "herb.sha_shen"`,可查證);退役卡另列的
+  `formula.bai_he_gu_jin_tang`、`formula.mai_men_dong_tang` 經核對兩方劑
+  composition 皆未列沙參,判定未查證,未遷移。
+
+**全庫引用改指向**(退役 id → 正典 id,共 9 處):
+
+| 檔案 | 處數 | 明細 |
+|---|---|---|
+| `data/herbs/formulas.json`(composition `herb_id`) | 5 | `formula.shi_hui_san`、`formula.gu_chong_tang`(茜草根→茜草 ×2)；`formula.er_zhi_wan`(旱蓮草→墨旱蓮)；`formula.yi_guan_jian`、`formula.sha_shen_mai_men_dong_tang`(沙參→北沙參 ×2) |
+| `data/herbs/herb_pairs.json`(`pairs[].herbs[]`) | 2 | `pair.han_lian_cao__nu_zhen_zi`、`pair.mai_men_dong__sha_shen` |
+| `data/imports/cloudtcm/herb_url_map.json`(`entries[].herb_id`) | 2 | 旱蓮草→墨旱蓮(cloudtcm_id 1320)、烏賊骨→海螵蛸(cloudtcm_id 1058) |
+
+`herb.wu_zei_gu` 在 `formulas.json`/`herb_pairs.json` 內原本零引用(全庫掃描
+確認)。退役卡的 `id` 欄位本身不改(僅存在於它自己的記錄裡,D1)。
+
+**未動的**:`data/knowledge/comparisons.json`、`data/config/relation_registry.json`
+全庫掃描零命中,未觸碰。`herb.nan_sha_shen`(南沙參)在 `herb_pairs.json`
+一筆藥對裡被引用,但**從未存在**於 `herb_canon_shortlist.json`——這是
+本次審查發現的既有缺口,與本決定的四組合併無關,不在此次範圍內處理,
+記錄於此供之後建卡。
+
+**驗證(2026-08-14)**:`validate-herb-standard.js` 358 筆 PASS、0 structural
+defect(合併前後記錄數不變,D6 不硬刪);`validate-formula-standard.js`
+PASS(composition 查無藥材維持 1 味次 `formula.huang_tu_tang` 的「灶心土」,
+與本次四組合併無關,合併前後不變);`check-validation-ratchet.js` PASS 無
+新增缺陷;`validate-content-junk.js` 既有 baseline 警告不變。全庫退役 id
+殘留掃描:四個退役 id 除自己記錄的 `id` 欄位外,`data/**` 零殘留。
+
+**只有在這種情況下重新考慮**:未來查到 `herb.sha_shen` 或其他退役記錄其實
+帶有南沙參專屬臨床內容 —— 那時是取消 deprecated、另立南沙參正典卡,不是
+回頭改寫已合併的內容。
+
+## D22 — 敗毒散(formula.bai_du_san)併入人參敗毒散,為同方 · LOCKED(2026-08-26,Ting:「敗毒散照 D3 併入人參敗毒散 基線降 0」)
+
+- **What**:`formula.bai_du_san`(敗毒散)與 `formula.ren_shen_bai_du_san`
+  (人參敗毒散,《太平惠民和劑局方》)為同方 —— 兩卡組成 13 味一致。
+  退役卡維持 `review_status: "deprecated"` 並補上 deprecated_note_zh
+  (它先前被標 deprecated 卻無 note、無 DECISIONS 記錄,正是
+  validate-retired-id-references 基線那 10 筆的成因);
+  `formula_canon_shortlist.json` 的同 id active 副本一併標 deprecated。
+- **機制沿用 D16/D21**:additive-only 合併 —— 正典 21 個空欄位自退役卡
+  遷入(ba_fa/cautions/clinical_manifestations/treats/modern_applications/
+  雙軌 track/THP 編號等),遷移欄位的 field_sources 一併帶過,正典原有
+  內容零覆蓋。全庫引用改指向:formulas.json 與 formula_canon_shortlist
+  各 4 筆 related_formulas(風寒解表五方 clique)、
+  `cmp.exterior_wind_cold` compares 1 筆。
+- **順帶修正**:遷入的 treats_zh/modern_applications_zh 有 6 個純英文詞
+  (退役卡上的既有缺陷,搬進 active 卡被 encoding ratchet 擋下 +13)——
+  已補標準中文(瘡瘍初起/風濕/眼疾/神經痛/虛弱/滑囊炎),英文原文
+  保留在平行 _en 欄位;THP 編號補「臺灣中藥典」前綴。
+- **驗證**:validate-retired-id-references 0 殘留,ratchet 基線 10 → 0;
+  formula-standard/content-junk/herb-standard PASS。
+- **Reconsider only if**:未來查到 `formula.bai_du_san` 卡曾承載
+  「非人參敗毒散」的獨立方義(如荊防敗毒散被誤併)—— 屆時取消 deprecated
+  另立正典,不回頭改寫已合併內容(D16 同款條款)。
