@@ -125,5 +125,33 @@ const fakeSha = async (s) => Buffer.from(s).toString("hex").padEnd(64, "0");
   const envB = JSON.parse(b.kv.get(S.STAGING_KEY));
   assert.strictEqual(envB.cases[0].patientId, null); ok("R9-C4: blank code forces patientId=null");
 
-  console.log(`\nPOINTER RUNTIME TEST: ${pass}/${pass} PASS (18 base + 12 R9 counterexamples)`);
+  // ---- M3: getPendingPatientCodes 的三態契約 -------------------------------
+  // 這個出口存在的唯一理由是讓「病例存好了但病人列表少人」講得出話。因此它
+  // 最不能做的事就是在讀不到 envelope 時安靜地回 [] —— 那會把「佇列壞了」
+  // 渲染成「佇列是乾淨的」,正是它要消滅的那種靜默失敗。
+  b = fakeBackend({ "acuting-clinical-cases-v1": JSON.stringify(CASES) });
+  S.setBackend(b);
+  assert.deepStrictEqual(S.getPendingPatientCodes(), []); ok("M3: v1 世界回空陣列(事實,不是猜測)");
+
+  b = fakeBackend({ [S.POINTER_KEY]: "v2", [S.STAGING_KEY]: JSON.stringify({
+    schema_version: 2, journal: {}, patients: [], cases: [], pending_patient_codes: ["PX", "PY"] }) });
+  S.setBackend(b);
+  assert.deepStrictEqual(S.getPendingPatientCodes(), ["PX", "PY"]); ok("M3: v2 回報佇列內容");
+
+  // 回傳的是複本 —— 呼叫端亂改不得污染 envelope(UI 會拿去 map/sort)
+  const snapshotCodes = S.getPendingPatientCodes();
+  snapshotCodes.push("INJECTED");
+  assert.deepStrictEqual(S.getPendingPatientCodes(), ["PX", "PY"]); ok("M3: 回傳複本,呼叫端改不到 envelope");
+
+  // envelope 毀損 → 必須 throw,不得回 []
+  b = fakeBackend({ [S.POINTER_KEY]: "v2", [S.STAGING_KEY]: "{ this is not json" });
+  S.setBackend(b);
+  assert.throws(() => S.getPendingPatientCodes()); ok("M3: envelope 毀損時 throw,絕不假裝佇列乾淨");
+
+  // envelope 整個不見 → 同樣 throw
+  b = fakeBackend({ [S.POINTER_KEY]: "v2" });
+  S.setBackend(b);
+  assert.throws(() => S.getPendingPatientCodes()); ok("M3: envelope 缺失時 throw,絕不假裝佇列乾淨");
+
+  console.log(`\nPOINTER RUNTIME TEST: ${pass}/${pass} PASS (18 base + 12 R9 counterexamples + 5 M3)`);
 })().catch((e) => { console.error("FAIL", e); process.exit(1); });

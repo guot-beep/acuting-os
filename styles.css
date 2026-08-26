@@ -4720,6 +4720,23 @@ a { color: var(--accent-dark); }
   z-index: 999;
 }
 
+/* M3: 病人 id 尚未鑄造的可見橫幅。刻意用警示色而非灰階說明色 —— 它報的是
+   「病人列表現在是不完整的」,不是一則提示。[hidden] 要明寫,否則下面的
+   display 會蓋掉 hidden 屬性,橫幅會在佇列乾淨時照樣現身。 */
+.patient-sync-banner {
+  background: rgba(184, 134, 47, .12);
+  border: 1px solid rgba(184, 134, 47, .4);
+  border-radius: 8px;
+  color: #7a5410;
+  padding: 0.65rem 0.9rem;
+  margin-bottom: 0.8rem;
+  font-size: 0.88rem;
+  display: grid;
+  gap: 0.25rem;
+}
+
+.patient-sync-banner[hidden] { display: none; }
+
 /* CS1: clinical-cases backup reminder (localStorage-only until H2 store) */
 .backup-reminder-banner {
   background: #8a6d1f;

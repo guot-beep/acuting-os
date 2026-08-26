@@ -622,6 +622,9 @@
         <div class="case-toolbar" id="patientToolbar">
           <input id="patientSearch" type="search" placeholder="搜尋 patient code..." />
         </div>
+        <!-- M3：病人 id 鑄造是 async，失敗過去只進 console。這條橫幅讓「病例存好了
+             但病人列表少人」講得出原因，而不是跟「還沒建過病人」長成同一個樣子。 -->
+        <div id="patientSyncBanner" class="patient-sync-banner" role="status" hidden></div>
         <div class="case-grid">
           <aside class="case-list-panel" id="patientListPanel">
             <div class="mini-head">
