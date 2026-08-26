@@ -1,3 +1,20 @@
+# 2026-08-25 Antigravity — Task 9A Round 4 (Herb + Formula Provenance Transport Integrity Read-Only Audit)
+
+- **工作內容**: 執行中藥 (363 筆) 與方劑 (223 筆) 全庫來源傳輸完整性唯讀審計 Round 4。
+  - 重構 Local Path Tokenizer：納入 17 項回歸測試套件 (100% PASS)，以前綴掃描 (curriculum/, docs/, data/, scripts/) 搭配副檔名與磁碟存在性自動長度消歧義，支援括號、&、多重小數點檔名 (.doc.md)、逗號、Unicode 標點 (–) 及中文檔名，並嚴格落實 Anti-Bare-Tail 不變量（禁止回退成 bare tail filename）。全庫 LOCAL_MISSING 精確收斂至 617 處真實缺失（唯一缺失檔案路徑僅 6 條）。
+  - HTTP 分類閉合保證：落實 OTHER_HTTP_STATUS，嚴格驗證 sum(all classifications) === uniqueHttpUrls (1260/1260，100% 閉合)。
+  - 單一事實來源 (SSOT)：報告與 handoff 數據全數由 generated JSON 直出。
+- **審計結果數據**:
+  - 掃描記錄: Herbs 363 / Formulas 223 (共 586 筆)
+  - 探測唯一 URL: 1260 條 (Herbs 711 / Formulas 552)
+  - URL 引用總數: 7715 處
+  - HTTP 狀態: OK_200: 1081 / REDIRECT_TO_200: 3 / DEAD_4XX: 95 / SERVER_5XX: 73 / TIMEOUT: 6 / OTHER_HTTP_STATUS: 2 / Network Errors: 0
+  - 本地檔案引用: LOCAL_EXISTS: 5624 / LOCAL_MISSING: 617 (共 6241 處引用，99 條唯一路徑，真實缺失路徑 6 條)
+  - Malformed URLs: 0
+- **產出檔案**: scripts/audit-source-transport-integrity.js / docs/audits/SOURCE_TRANSPORT_INTEGRITY_2026-08-25.md / data/audits/source_transport_integrity_2026-08-25.json。
+- **分支與狀態**: 推送至 antigravity/task9a-source-integrity-audit-round4，任務交付並停下。
+
+---
 # 2026-08-25 深夜 — Task 8C 驗收通過並落地:方劑 exact_source_url 補齊,94%→97%(附一則編碼異常提醒)
 
 Task 8C(`antigravity/formula-fill-task8-source-url`，commit `128da48e`）延續同一套 HTTP 驗證方法補

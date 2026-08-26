@@ -262,37 +262,29 @@ missing on 219 record(s)」完全一樣——這份報告沒有提供任何新�
 
 ---
 
-## 🔥 Task 8：機械式缺口續填（Claude 到 2026-08-26 週三下午才會來驗收，這段時間先做這三項）
+## ⏳ Task 9A Round 4：中藥 + 方劑 來源傳輸完整性審計（待驗收）
 
-Claude 這段時間暫停巡檢，Ting 會直接把這份指示貼給你、你持續做，等 Claude 週三下午回來再驗收落地。
-**照優先順序做，每做完一項就推一個獨立分支**（不要推到 `main`），三項都做完或時間用完就停。
-
-**A.（最優先）中藥 `safety_source_url`（缺 96 筆，267/363）**：這個欄位之前判定過「已到極限」，
-但那是用「照網址命名慣例猜」的舊方法判的——**Task 6 用 HTTP 200 實測驗證方劑網址,證明這個方法真的
-有效**（68%→94%，逐條打開驗證，抓到死鏈就留空）。這次中藥欄位用同一套方法重做：對每一味還缺的藥，
-查 CloudTCM 或 American Dragon 上是不是真的有這味藥的頁面，**每一條網址寫進去之前自己實際打開／
-用工具發送請求確認回應是 200 而不是 404**，確認不到真實頁面就留空，不要用命名規律硬猜。推到
-`antigravity/herb-fill-task8-safety-url` 分支。
-
-**B. 中藥 `modern_functions_en`（缺 22 筆，341/363）**：跟 Task 3 Round 2 同一套規則——只補真正
-空的格子，`modern_functions_zh` 每一條中文詞逐一對應翻成一個獨立英文詞，不要套模板、不要為了對齊
-長度砍中文。查不到某幾條的翻譯就跳過那張卡。推到 `antigravity/herb-fill-task8-modern-functions`
-分支。
-
-**C. 方劑 `exact_source_url`（缺 13 筆，210/223）**：跟 A 同樣的 HTTP 實測方法，補剩下的方劑網址
-缺口。推到 `antigravity/formula-fill-task8-source-url` 分支。
-
-**不要做**：`related_formulas`/`formula_family`(這兩個現在改由 Claude 直接判斷,不指派給你了)、
-`condition_tags_en`(維持不要碰)、任何需要「判斷這個引用是否支持這個主張」的工作(查無來源就留空,
-不要推測)。
-
-**每項做完**都跑 `build-data.js` + 對應的 `validate-*-standard.js`/`validate-*-quality-strict.js` +
-`check-validation-ratchet.js` + `validate-content-junk.js`，全部 PASS 才推，並補 `PROJECT_LOG.md`
-條目附改動筆數。Claude 週三下午會依照一貫的流程逐條查證（含實際打開你寫的網址、抽查來源）才落地。
+- **類型**: READ-ONLY Canonical Provenance & Transport Integrity Audit（正典與生成檔 0 異動）
+- **分支**: `antigravity/task9a-source-integrity-audit-round4`
+- **產出**: `scripts/audit-source-transport-integrity.js` / `docs/audits/SOURCE_TRANSPORT_INTEGRITY_2026-08-25.md` / `data/audits/source_transport_integrity_2026-08-25.json`
+- **Tokenizer & Invariant 強化**:
+  - 內建 17 項回歸測試套件 (100% PASS)，以前綴掃描與磁碟存在性消歧義，支援檔名空格、括號、&、多重副檔名 (.doc.md)、逗號、Unicode 標點 (–)、中文檔名、行號與頁碼錨點 (#p2, #L102, #L282-L312) 及尾端中文註解。
+  - 嚴格落實 Anti-Bare-Tail 不變量：若 raw citation 含 repo prefix，禁止截斷為 bare tail filename。
+  - 嚴格落實 HTTP 分類閉合不變量：`sum(all HTTP classifications) === uniqueHttpUrls` (1260/1260)。
+  - 嚴格以 repo root 為基準檢驗本地路徑存在性。
+- **摘要數據 (SSOT 直出)**:
+  - 唯一 HTTP URL 探測: 1,260 條（OK_200: 1,081, REDIRECT_TO_200: 3, DEAD_4XX: 95, SERVER_5XX: 73, TIMEOUT: 6, OTHER_HTTP_STATUS: 2）
+  - 本地路徑引用: 6,241 處（LOCAL_EXISTS: 5,624, LOCAL_MISSING: 617，唯一路徑 99 條，真實缺失路徑 6 條）
+  - Malformed URL: 0 處
+  - Action Required 待檢修隊列已完整記錄於報告，未自行猜測或修改任何資料。
 
 ---
 
 ## 已完成（供參考，不用重做）
+
+- Task 8A（中藥 safety_source_url）：267→347/363 (96%)，新增 80 筆 HTTP 200 實查真實網址（data commit: `5366046a`，acceptance record: `2263ec24`，current main containing accepted result: `78765ca6`）。
+- Task 8C（方劑 exact_source_url）：210→217/223 (97%)，新增 7 筆 HTTP 200 實查真實網址，已驗收落地 main (`128da48e` / `78765ca6`)。
+- Task 8B Round 2（中藥 modern_functions_en）：從 main 重新掃描 22 筆缺口，22/22 均無既有 modern_functions_zh 正典基準可供對齊；依 fail-closed 鐵律全數誠實標註 SKIPPED，0 filled / 22 skipped，不越界自行研究或生成中英文藥理內容（分支 `antigravity/herb-fill-task8-modern-functions-round2`）。
 
 - Batch 1：清熱藥 29 味 `_en`/`dosage` 回填（`2b599640`）→ 語言修復（`ac02dcde`，把混入的 100 個中文詞條
   翻回英文）→ 已落地 `main`
