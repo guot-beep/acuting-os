@@ -1,11 +1,12 @@
 # AcuTing OS - Agent Handoff Log
 
-## [ACTIVE 2026-08-25] Codex reservation — TDIS common-disease expansion T3
+## [2026-08-25] Codex Handoff — TDIS common clinical/exam expansion T3
 
-- **Reserved new permanent ids**: `tdis.xin_shuai` (心衰), `tdis.chi_dai` (癡呆), `tdis.yue_jing_xian_hou_wu_ding_qi` (月經先後無定期), `tdis.jing_duan_fu_lai` (經斷復來), and `tdis.jing_zhuo` (精濁). Other agents should not create or alias these five while this reservation is active.
-- **Selection rule**: all five are common clinical or exam disease units, have no exact `name_zh`/`aliases_zh` match in the 159-record registry, and avoid the unresolved umbrella-versus-child boundary candidates (`zhen_xin_tong`, `tong_feng`, `wang_bi`, `tai_huang`, `bao_long`).
-- **Required evidence before authoring**: use matching AcuTing course files when present, identify the exact limitation of any contextual-only course material, add at least two official biomedical sources for overlap/differential/red flags, and do not infer TCM etiology or pathomechanism from biomedical sources.
-- **Planned record boundary**: append five `review_status:"draft"` TDIS records only; no existing record, id, taxonomy schema, pattern registry, symptom record, formula, herb, or acupoint may be overwritten. Reservation becomes a measured handoff after validation and push.
+- **Exact new ids**: appended `tdis.xin_shuai`, `tdis.chi_dai`, `tdis.yue_jing_xian_hou_wu_ding_qi`, `tdis.jing_duan_fu_lai`, and `tdis.jing_zhuo` as `review_status:"draft"`; no existing TDIS record, schema, Symptom, pattern, formula, herb, or acupoint was overwritten.
+- **Measured delta**: records `159→164`; records with sources `85→90`; structured bilingual red flags `85→90`; records with `related_patterns` `158→163`; records with `related_conditions` `0→5`; existing-record changes `0`.
+- **Evidence / clinical boundary**: local course files plus Beijing Municipal Health Commission, Beijing University of Chinese Medicine, Guangxi University of Chinese Medicine, NIH, CDC, NHS, and MedlinePlus. All 16 unique direct URLs returned HTTP 200 on 2026-08-25. Each card distinguishes the TCM disease unit from biomedical diagnosis and includes clinic-relevant referral or emergency triage.
+- **Validation**: exact five-id append boundary, bilingual array parity, paired structured-red-flag shape, and all pattern/condition/differential ids passed; `validate-tdis-standard 164/164 clean`, build-data, relations, relation registry, validation ratchet, content junk, URL reachability, and `git diff --check` produced no new blocking defect.
+- **Explicit review note / next line**: `tdis.chi_dai` maps 痰濁阻竅 to the nearest existing `pattern.phlegm_misting_heart`; keep this draft mapping visible for Ting RV1. Next content batch should prioritize high-gap cardiac/pulmonary `cond.*` Biomedicine fields without touching Claude's study-system UI files.
 
 ## [2026-08-25] Codex Handoff — TDIS acute high-risk boundary T2
 

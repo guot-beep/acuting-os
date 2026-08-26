@@ -1,3 +1,13 @@
+# 2026-08-25 — Codex TDIS 常見臨床／考試病名擴充 T3
+
+- **範圍**：新增 `tdis.xin_shuai`、`tdis.chi_dai`、`tdis.yue_jing_xian_hou_wu_ding_qi`、`tdis.jing_duan_fu_lai`、`tdis.jing_zhuo` 五張 draft 卡；既有 159 張記錄、schema、Symptoms、patterns、方劑與穴位未改。
+- **數字**：TDIS `159→164`；具來源 `85→90`；structured bilingual red flags `85→90`；具 `related_patterns` `158→163`；新增 `related_conditions` 連結 `0→5`；既有記錄內容變更 `0`。
+- **來源／臨床邊界**：本地課件 + 北京市衛健委／北京中醫藥大學／廣西中醫藥大學 + NIH、CDC、NHS、MedlinePlus；16 個唯一直接 URL 於 2026-08-25 GET 均 HTTP 200。每卡明示 TCM disease 與 biomedical diagnosis 不作一對一等同，並納入診所轉診與急症邊界。
+- **驗證**：新增 id `5/5` 唯一、舊記錄 `159/159` byte-equivalent、雙語陣列／structured red flags 對稱、關聯 id 全解析；`validate-tdis-standard 164/164 clean`、build-data、relations、relation registry、ratchet、content-junk 與 `git diff --check` 無新增 blocking defect。
+- **未解／下一步**：`tdis.chi_dai` 的「痰濁阻竅」暫映射到最接近的 `pattern.phlegm_misting_heart`，保留 draft 待 RV1；下一批轉回臨床高缺口 `Conditions`，優先心臟／肺部與 Biomedicine 欄位，避開 Claude 的溫習系統檔案。
+
+---
+
 # 2026-08-25 — Codex TDIS 高風險急症辨病與安全邊界補強 T2
 
 - **範圍**：只改 `tdis.xian_bing`、`tdis.jue_zheng`、`tdis.jing_bing`、`tdis.huo_luan`、`tdis.nue_ji` 的 `review_status`、雙語 definition、雙語 structured red flags、sources、field provenance 與 `source_type`；未改 id、taxonomy、既有中醫病因病機、治法、證型、方劑或穴位。

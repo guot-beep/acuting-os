@@ -16038,6 +16038,604 @@
      "established TCM/biomedical clinical knowledge, not curriculum or whitelist-verified — flag for Ting to source-check; searched curriculum/ for 牙宣/periodontal disease, no matches found"
     ]
    }
+  },
+  {
+   "id": "tdis.xin_shuai",
+   "name_zh": "心衰",
+   "pinyin": "Xinshuai",
+   "name_en": "Heart Debility (TCM Disease)",
+   "taxonomy_id": "tdx.internal_medicine.cardiovascular_neuropsychiatric_disorders",
+   "aliases_zh": [],
+   "aliases_en": [],
+   "review_status": "draft",
+   "authored_by": "model_draft",
+   "definition_zh": "心衰是以氣短喘促、心悸、疲乏，活動或平臥時加重，並可伴尿少、水腫等為主要表現的中醫心系病證。其臨床表現可與現代醫學心力衰竭重疊，但不能由中醫病名直接確立心力衰竭的類型、病因或嚴重度。",
+   "definition_en": "Xin Shuai is a TCM Heart-system disease characterized by breathlessness, palpitations, and fatigue that may worsen with exertion or lying flat, sometimes accompanied by reduced urination and edema. Its manifestations may overlap with biomedical heart failure, but the TCM disease name does not establish the type, cause, or severity of heart failure.",
+   "etiology_zh": "先天稟賦不足、久病耗傷、過度勞倦，或既有心系疾病日久，均可損傷心氣、心陽；病程中又可形成瘀血、痰濁與水飲。",
+   "etiology_en": "Constitutional weakness, prolonged illness, overexertion, or longstanding Heart-system disease may damage Heart Qi and Heart Yang; Blood stasis, Phlegm-turbidity, and Water-rheum may subsequently develop.",
+   "pathomechanism_zh": "以心氣、心陽虧虛為本，推動血行與氣化水液無力；瘀血、水飲、痰濁為標，可上凌心肺或外溢肌膚，形成氣短、心悸、喘不得臥及水腫。",
+   "pathomechanism_en": "The root is deficiency of Heart Qi and Heart Yang, weakening the propulsion of Blood and transformation of fluids. Blood stasis, Water-rheum, and Phlegm-turbidity form the branch, potentially affecting the Heart and Lung or overflowing into the tissues, producing breathlessness, palpitations, orthopnea, and edema.",
+   "key_manifestations_zh": [
+    "活動後或平臥時氣短、喘促",
+    "心悸或自覺心律不整",
+    "疲乏、無力",
+    "足踝或下肢水腫",
+    "夜間喘促或須墊高頭部方能入睡"
+   ],
+   "key_manifestations_en": [
+    "Breathlessness with exertion or while lying flat",
+    "Palpitations or awareness of an irregular heartbeat",
+    "Fatigue and weakness",
+    "Swelling of the ankles or lower limbs",
+    "Nocturnal breathlessness or needing the head elevated to sleep"
+   ],
+   "associated_manifestations_zh": [
+    "咳嗽或咳吐泡沫痰",
+    "尿量減少或夜尿增多",
+    "面色淡白、肢冷、頭暈或欲暈",
+    "嚴重時神識昏蒙或紫紺"
+   ],
+   "associated_manifestations_en": [
+    "Cough or frothy sputum",
+    "Reduced urine output or increased nocturia",
+    "Pallor, cold limbs, dizziness, or faintness",
+    "Mental clouding or cyanosis in severe presentations"
+   ],
+   "disease_location_zh": "病位以心為主，涉及血脈及水液代謝，並可累及肺、脾、腎。",
+   "disease_location_en": "The primary location is the Heart, involving the vessels and fluid metabolism, with possible involvement of the Lung, Spleen, and Kidney.",
+   "treatment_principle_zh": "辨證益氣溫陽；兼瘀者活血通脈，兼水飲者利水化飲，兼痰濁者化痰。急性失代償不得以中醫處置延誤急救。",
+   "treatment_principle_en": "Tonify Qi and warm Yang according to pattern; invigorate Blood when stasis is present, promote fluid drainage when Water-rheum predominates, and transform Phlegm when turbidity is present. TCM care must not delay emergency treatment of acute decompensation.",
+   "red_flags_zh": [
+    {
+     "finding": "嚴重呼吸困難、喘到無法說完整句子，唇膚蒼白或青紫，或昏倒後反應異常",
+     "urgency_level": "emergency",
+     "recommended_action": "立即啟動緊急醫療服務並送急診",
+     "rationale": "可能為急性心衰失代償、嚴重低氧或循環衰竭",
+     "source": "NHS, Heart failure (https://www.nhs.uk/conditions/heart-failure/), accessed 2026-08-25"
+    },
+    {
+     "finding": "新出現平臥呼吸困難、咳粉紅泡沫痰或短期突然體重增加",
+     "urgency_level": "same_day",
+     "recommended_action": "當日接受緊急醫療評估",
+     "rationale": "提示肺部液體積聚或心衰急性惡化",
+     "source": "NHS, Heart failure (https://www.nhs.uk/conditions/heart-failure/), accessed 2026-08-25"
+    },
+    {
+     "finding": "持續新發活動後氣短、異常疲乏或足踝水腫",
+     "urgency_level": "routine",
+     "recommended_action": "安排醫療評估，不以心衰中醫病名自行確診",
+     "rationale": "症狀並不具特異性，需評估心臟、肺部及其他病因",
+     "source": "NHLBI, Heart Failure — What Is Heart Failure? (https://www.nhlbi.nih.gov/health/heart-failure), accessed 2026-08-25"
+    }
+   ],
+   "red_flags_en": [
+    {
+     "finding": "Severe difficulty breathing, inability to speak in full sentences, pale or blue lips or skin, or collapse with abnormal responsiveness",
+     "urgency_level": "emergency",
+     "recommended_action": "Activate emergency medical services and obtain emergency department care immediately",
+     "rationale": "May represent acute decompensated heart failure, severe hypoxia, or circulatory failure",
+     "source": "NHS, Heart failure (https://www.nhs.uk/conditions/heart-failure/), accessed 2026-08-25"
+    },
+    {
+     "finding": "New orthopnea, pink frothy sputum, or sudden weight gain",
+     "urgency_level": "same_day",
+     "recommended_action": "Obtain same-day urgent medical assessment",
+     "rationale": "May indicate pulmonary fluid accumulation or worsening heart failure",
+     "source": "NHS, Heart failure (https://www.nhs.uk/conditions/heart-failure/), accessed 2026-08-25"
+    },
+    {
+     "finding": "Persistent new exertional breathlessness, unusual fatigue, or ankle swelling",
+     "urgency_level": "routine",
+     "recommended_action": "Arrange clinical assessment rather than self-diagnosing Xin Shuai or heart failure",
+     "rationale": "The symptoms are nonspecific and require evaluation for cardiac, pulmonary, and other causes",
+     "source": "NHLBI, Heart Failure — What Is Heart Failure? (https://www.nhlbi.nih.gov/health/heart-failure), accessed 2026-08-25"
+    }
+   ],
+   "related_patterns": [
+    "pattern.heart_qi_deficiency",
+    "pattern.heart_yang_deficiency",
+    "pattern.water_qi_attacking_heart"
+   ],
+   "related_conditions": [
+    "cond.heart_failure"
+   ],
+   "sources": [
+    "curriculum/conditions/TCM Pathology 1 & 2 notes.md#p.23-24",
+    "curriculum/conditions/1 Palpitation.md (Heart Qi Deficiency, Heart Yang Deficiency, Pathogenic Water Attacking Heart; extracted Markdown has no page markers)",
+    "https://wjw.beijing.gov.cn/bmfw_20143/jkzs/jbzs/202503/t20250325_4044545.html",
+    "https://www.nhlbi.nih.gov/health/heart-failure",
+    "https://www.nhs.uk/conditions/heart-failure/"
+   ],
+   "field_sources": {
+    "definition_zh": [
+     "北京市衛生健康委員會《古方新用治心衰》, lines on TCM manifestations and root-deficiency/branch-excess model; NHLBI and NHS for the biomedical non-equivalence boundary (accessed 2026-08-25)"
+    ],
+    "etiology_zh": [
+     "北京市衛生健康委員會《古方新用治心衰》 and curriculum/conditions/TCM Pathology 1 & 2 notes.md#p.23-24 (accessed/reviewed 2026-08-25)"
+    ],
+    "pathomechanism_zh": [
+     "北京市衛生健康委員會《古方新用治心衰》; curriculum/conditions/1 Palpitation.md (contextual course evidence; no page markers)"
+    ],
+    "key_manifestations_zh": [
+     "北京市衛生健康委員會《古方新用治心衰》; NHS Heart failure (accessed 2026-08-25)"
+    ],
+    "related_patterns": [
+     "curriculum/conditions/TCM Pathology 1 & 2 notes.md#p.23-24 and curriculum/conditions/1 Palpitation.md"
+    ],
+    "red_flags_zh": [
+     "NHS Heart failure and NHLBI Heart Failure — What Is Heart Failure? (accessed 2026-08-25)"
+    ]
+   },
+   "source_type": "course_plus_government_tcm_plus_official_biomedical"
+  },
+  {
+   "id": "tdis.chi_dai",
+   "name_zh": "癡呆",
+   "pinyin": "Chidai",
+   "name_en": "Cognitive Decline (TCM Disease)",
+   "taxonomy_id": "tdx.internal_medicine.cardiovascular_neuropsychiatric_disorders",
+   "aliases_zh": [],
+   "aliases_en": [],
+   "review_status": "draft",
+   "authored_by": "model_draft",
+   "definition_zh": "癡呆是以神情呆滯、反應遲鈍、記憶及理解判斷能力逐漸減退，並影響日常生活能力為主要特徵的中醫病證。它不等同 Alzheimer disease、vascular dementia 或其他單一失智症病因。",
+   "definition_en": "Chi Dai is a TCM disease characterized by mental dullness, slowed responses, progressive decline in memory, comprehension, or judgment, and impairment of everyday functioning. It is not equivalent to Alzheimer disease, vascular dementia, or any single biomedical dementia etiology.",
+   "etiology_zh": "年老或久病可耗傷腎精、使髓海失充；痰濁與瘀血亦可形成並阻滯清竅、腦絡。具體病因仍須隨中醫證候及現代醫學病因分別評估。",
+   "etiology_en": "Aging or chronic illness may consume Kidney Essence and leave the Sea of Marrow insufficient; Phlegm-turbidity and Blood stasis may also obstruct the clear orifices and brain collaterals. The individual TCM pattern and biomedical cause must still be assessed separately.",
+   "pathomechanism_zh": "多呈本虛標實：腎精虧虛、髓海不足為本，痰濁阻竅或瘀血阻絡為標，使腦髓失養、神機失用。",
+   "pathomechanism_en": "The disorder commonly combines root deficiency and branch excess: Kidney Essence and the Sea of Marrow are deficient, while Phlegm-turbidity or Blood stasis obstructs the orifices or collaterals, leaving the brain undernourished and mental function impaired.",
+   "key_manifestations_zh": [
+    "記憶力進行性減退",
+    "神情呆滯、反應遲鈍",
+    "理解、計算、判斷或定向能力下降",
+    "言語減少或表達困難",
+    "熟悉的日常活動逐漸需要協助"
+   ],
+   "key_manifestations_en": [
+    "Progressive memory decline",
+    "Dull expression and slowed responses",
+    "Reduced comprehension, calculation, judgment, or orientation",
+    "Reduced speech or difficulty expressing oneself",
+    "Increasing assistance needed with familiar daily activities"
+   ],
+   "associated_manifestations_zh": [
+    "頭暈或耳鳴",
+    "腰膝痠軟",
+    "肢體麻木或動作不靈",
+    "可隨病因出現情緒、人格或行為改變"
+   ],
+   "associated_manifestations_en": [
+    "Dizziness or tinnitus",
+    "Soreness and weakness of the lower back and knees",
+    "Limb numbness or reduced motor dexterity",
+    "Mood, personality, or behavioral change may occur depending on cause"
+   ],
+   "disease_location_zh": "病位在腦與清竅，根本常涉及腎精，並可與心、脾及痰瘀相關。",
+   "disease_location_en": "The disease location is the brain and clear orifices; the root commonly involves Kidney Essence, with possible involvement of the Heart, Spleen, Phlegm, and Blood stasis.",
+   "treatment_principle_zh": "辨證補腎益精、填髓益智；痰濁者化痰開竅，瘀阻者活血通絡。治療原則不可取代失智症病因診斷、用藥檢視與安全評估。",
+   "treatment_principle_en": "According to pattern, tonify the Kidney, enrich Essence, replenish Marrow, and support cognition; transform Phlegm and open the orifices for Phlegm obstruction, or invigorate Blood and free the collaterals for stasis. These principles do not replace etiologic dementia assessment, medication review, or safety evaluation.",
+   "red_flags_zh": [
+    {
+     "finding": "突發意識混亂，或突然出現單側無力、言語不清、視力或平衡異常",
+     "urgency_level": "emergency",
+     "recommended_action": "立即啟動緊急醫療服務；即使症狀自行消失亦不得等待",
+     "rationale": "突發認知改變不是典型慢性癡呆進程，須排除中風或其他急症",
+     "source": "CDC, Signs and Symptoms of Stroke (https://www.cdc.gov/stroke/signs-symptoms/index.html), accessed 2026-08-25"
+    },
+    {
+     "finding": "記憶、語言、判斷或熟悉活動能力持續下降並開始影響日常生活",
+     "urgency_level": "routine",
+     "recommended_action": "安排基層醫療、神經科或記憶門診完整評估",
+     "rationale": "失智不是正常老化，且多種可處理因素可造成類似表現",
+     "source": "MedlinePlus, Dementia (https://medlineplus.gov/dementia.html), accessed 2026-08-25"
+    }
+   ],
+   "red_flags_en": [
+    {
+     "finding": "Sudden confusion or sudden unilateral weakness, speech difficulty, visual change, or loss of balance",
+     "urgency_level": "emergency",
+     "recommended_action": "Activate emergency medical services immediately, even if symptoms improve or resolve",
+     "rationale": "Sudden cognitive change is not a typical chronic dementia course and may indicate stroke or another emergency",
+     "source": "CDC, Signs and Symptoms of Stroke (https://www.cdc.gov/stroke/signs-symptoms/index.html), accessed 2026-08-25"
+    },
+    {
+     "finding": "Persistent decline in memory, language, judgment, or familiar activities that begins to affect daily life",
+     "urgency_level": "routine",
+     "recommended_action": "Arrange primary-care, neurology, or memory-clinic assessment",
+     "rationale": "Dementia is not normal aging, and several manageable conditions may cause similar symptoms",
+     "source": "MedlinePlus, Dementia (https://medlineplus.gov/dementia.html), accessed 2026-08-25"
+    }
+   ],
+   "related_patterns": [
+    "pattern.kidney_essence_deficiency",
+    "pattern.phlegm_misting_heart",
+    "pattern.blood_stasis"
+   ],
+   "related_conditions": [
+    "cond.dementia",
+    "cond.alzheimer_disease"
+   ],
+   "differential_diseases": [
+    "tdis.jian_wang"
+   ],
+   "sources": [
+    "curriculum/conditions/TCM Pathology 1 & 2 notes.md#p.22,27 (contextual Heart/Kidney evidence; not a dedicated Chi Dai lecture)",
+    "https://wjw.beijing.gov.cn/bmfw_20143/jkzs/jksh/202306/t20230627_3147644.html",
+    "https://medlineplus.gov/dementia.html",
+    "https://www.cdc.gov/stroke/signs-symptoms/index.html"
+   ],
+   "field_sources": {
+    "definition_zh": [
+     "北京市衛生健康委員會／中國中醫科學院廣安門醫院《老年認知障礙的中醫辨證治療》; MedlinePlus Dementia for the daily-function and non-equivalence boundary (accessed 2026-08-25)"
+    ],
+    "etiology_zh": [
+     "北京市衛生健康委員會／中國中醫科學院廣安門醫院, common Chi Dai mechanisms and patterns (accessed 2026-08-25)"
+    ],
+    "pathomechanism_zh": [
+     "北京市衛生健康委員會／中國中醫科學院廣安門醫院, shared mechanisms of Kidney-Essence deficiency, Phlegm obstruction, and Blood stasis (accessed 2026-08-25)"
+    ],
+    "key_manifestations_zh": [
+     "北京市衛生健康委員會／中國中醫科學院廣安門醫院; MedlinePlus Dementia (accessed 2026-08-25)"
+    ],
+    "related_patterns": [
+     "北京市衛生健康委員會／中國中醫科學院廣安門醫院; pattern.phlegm_misting_heart is the nearest existing registry mapping to 痰濁阻竅 and remains draft-reviewable"
+    ],
+    "red_flags_zh": [
+     "CDC Signs and Symptoms of Stroke; MedlinePlus Dementia (accessed 2026-08-25)"
+    ]
+   },
+   "source_type": "government_tcm_plus_official_biomedical"
+  },
+  {
+   "id": "tdis.yue_jing_xian_hou_wu_ding_qi",
+   "name_zh": "月經先後無定期",
+   "pinyin": "Yuejing Xianhou Wudingqi",
+   "name_en": "Alternating Early and Delayed Menstruation",
+   "taxonomy_id": "tdx.gynecology_obstetrics.menstrual_disorders",
+   "aliases_zh": [],
+   "aliases_en": [],
+   "review_status": "draft",
+   "authored_by": "model_draft",
+   "definition_zh": "月經先後無定期是以月經週期時而提前、時而延後，反覆失去固定規律為主要特徵的月經病。它不等同所有 irregular periods、異常子宮出血、PCOS 或甲狀腺疾病。",
+   "definition_en": "Yue Jing Xian Hou Wu Ding Qi is a menstrual disorder characterized by recurrent alternation between earlier and later menstrual onset without a stable cycle pattern. It is not equivalent to all irregular periods, abnormal uterine bleeding, PCOS, or thyroid disease.",
+   "etiology_zh": "主要見於肝氣鬱結或腎氣虧虛。肝失疏泄使氣血失調；腎氣不足則封藏與開闔失司，均可使衝任、血海失去週期規律。",
+   "etiology_en": "The principal etiologies are Liver Qi stagnation and Kidney deficiency. Impaired Liver coursing disrupts Qi-Blood regulation, while deficient Kidney Qi impairs storage and release; either may disturb the periodic regulation of the Chong, Ren, and Blood Sea.",
+   "pathomechanism_zh": "肝氣鬱結可使氣血失調、血海蓄溢失常；腎氣虧虛則衝任失固、胞宮開闔失司，遂致月經或先或後。",
+   "pathomechanism_en": "Liver Qi constraint can disrupt Qi-Blood regulation and the filling and discharge of the Blood Sea; deficient Kidney Qi fails to secure the Chong and Ren and regulate uterine opening and closing, causing menstruation to arrive either early or late.",
+   "key_manifestations_zh": [
+    "月經週期時而提前",
+    "月經週期時而延後",
+    "提前與延後交替反覆，週期長短無固定規律"
+   ],
+   "key_manifestations_en": [
+    "Menstrual cycles that are sometimes early",
+    "Menstrual cycles that are sometimes delayed",
+    "Repeated alternation between early and delayed onset without a stable cycle length"
+   ],
+   "disease_location_zh": "病位在胞宮、血海及衝任，主要與肝、腎相關。",
+   "disease_location_en": "The disease location involves the Uterus, Blood Sea, Chong, and Ren vessels, primarily related to the Liver and Kidney.",
+   "treatment_principle_zh": "調經並調理衝任；肝鬱者疏肝理氣，腎虛者補腎調經。先排除妊娠及需醫療處理的出血或內分泌病因。",
+   "treatment_principle_en": "Regulate menstruation and harmonize the Chong and Ren vessels; soothe the Liver and regulate Qi for Liver constraint, or tonify the Kidney and regulate menstruation for Kidney deficiency. First exclude pregnancy and bleeding or endocrine causes requiring medical care.",
+   "red_flags_zh": [
+    {
+     "finding": "月經延遲或不規則並可能懷孕，且合併突發劇烈腹部或骨盆痛、肩痛、虛弱、頭暈或昏厥",
+     "urgency_level": "emergency",
+     "recommended_action": "立即急診評估",
+     "rationale": "須排除異位妊娠破裂及內出血",
+     "source": "MedlinePlus, Ectopic Pregnancy (https://medlineplus.gov/ectopicpregnancy.html), accessed 2026-08-25"
+    },
+    {
+     "finding": "連續二至三小時每小時浸透一片衛生棉或棉條，或出血加重並出現虛弱、頭暈",
+     "urgency_level": "same_day",
+     "recommended_action": "立即聯絡醫療人員；若暈厥、嚴重虛弱或狀況不穩則啟動緊急醫療服務",
+     "rationale": "可能為急性大量失血並需評估貧血或循環不穩",
+     "source": "MedlinePlus Medical Encyclopedia, Vaginal or uterine bleeding (https://www.medlineplus.gov/ency/article/007496.htm), accessed 2026-08-25"
+    },
+    {
+     "finding": "月經規律明顯改變、經期超過七天、經間出血，或不規則月經合併不孕困擾",
+     "urgency_level": "routine",
+     "recommended_action": "安排婦科或基層醫療評估",
+     "rationale": "需排除妊娠、排卵障礙、甲狀腺問題、結構性病變等",
+     "source": "NHS, Irregular periods (https://www.nhs.uk/symptoms/irregular-periods/), accessed 2026-08-25"
+    }
+   ],
+   "red_flags_en": [
+    {
+     "finding": "Delayed or irregular menstruation with possible pregnancy plus sudden severe abdominal or pelvic pain, shoulder pain, weakness, dizziness, or fainting",
+     "urgency_level": "emergency",
+     "recommended_action": "Seek emergency assessment immediately",
+     "rationale": "A ruptured ectopic pregnancy and internal bleeding must be excluded",
+     "source": "MedlinePlus, Ectopic Pregnancy (https://medlineplus.gov/ectopicpregnancy.html), accessed 2026-08-25"
+    },
+    {
+     "finding": "Soaking one pad or tampon per hour for two to three hours, or worsening bleeding with weakness or dizziness",
+     "urgency_level": "same_day",
+     "recommended_action": "Contact a clinician immediately; activate emergency medical services for fainting, severe weakness, or instability",
+     "rationale": "This may represent acute heavy blood loss requiring evaluation for anemia or circulatory compromise",
+     "source": "MedlinePlus Medical Encyclopedia, Vaginal or uterine bleeding (https://www.medlineplus.gov/ency/article/007496.htm), accessed 2026-08-25"
+    },
+    {
+     "finding": "A major change in menstrual pattern, bleeding lasting more than seven days, intermenstrual bleeding, or irregular periods with difficulty conceiving",
+     "urgency_level": "routine",
+     "recommended_action": "Arrange gynecologic or primary-care assessment",
+     "rationale": "Pregnancy, ovulatory disorders, thyroid disease, and structural causes may require assessment",
+     "source": "NHS, Irregular periods (https://www.nhs.uk/symptoms/irregular-periods/), accessed 2026-08-25"
+    }
+   ],
+   "related_patterns": [
+    "pattern.liver_qi_stagnation",
+    "pattern.kidney_deficiency"
+   ],
+   "related_conditions": [
+    "cond.irregular_menstruation"
+   ],
+   "differential_diseases": [
+    "tdis.yue_jing_xian_qi",
+    "tdis.yue_jing_hou_qi",
+    "tdis.beng_lou"
+   ],
+   "sources": [
+    "curriculum/conditions/IRREGU_1.md (Irregular Menstruation; extracted Markdown has no page markers)",
+    "https://jxjyxb.bucm.edu.cn/BZYAttachs/courseware/zhenjiuxue/c4/c4_1b.htm",
+    "https://www.nhs.uk/symptoms/irregular-periods/",
+    "https://medlineplus.gov/ectopicpregnancy.html",
+    "https://www.medlineplus.gov/ency/article/007496.htm"
+   ],
+   "field_sources": {
+    "definition_zh": [
+     "curriculum/conditions/IRREGU_1.md and 北京中醫藥大學繼續教育學院月經不調課件 (reviewed/accessed 2026-08-25)"
+    ],
+    "etiology_zh": [
+     "curriculum/conditions/IRREGU_1.md; 北京中醫藥大學繼續教育學院月經不調課件 supports Liver/Kidney, Chong-Ren, and Blood-Sea framework (reviewed/accessed 2026-08-25)"
+    ],
+    "related_patterns": [
+     "curriculum/conditions/IRREGU_1.md; only the two locally explicit core patterns were mapped"
+    ],
+    "red_flags_zh": [
+     "MedlinePlus Ectopic Pregnancy; MedlinePlus Vaginal or uterine bleeding; NHS Irregular periods (accessed 2026-08-25)"
+    ]
+   },
+   "source_type": "course_plus_university_tcm_plus_official_biomedical"
+  },
+  {
+   "id": "tdis.jing_duan_fu_lai",
+   "name_zh": "經斷復來",
+   "pinyin": "Jingduan Fulai",
+   "name_en": "Return of Bleeding After Menstrual Cessation",
+   "taxonomy_id": "tdx.gynecology_obstetrics.menstrual_disorders",
+   "aliases_zh": [],
+   "aliases_en": [],
+   "review_status": "draft",
+   "authored_by": "model_draft",
+   "definition_zh": "經斷復來是指婦女月經因絕經停止後，又再次出現陰道出血、點滴出血或血性分泌物的中醫病證。它不能直接等同某一西醫病因，更不能等同癌症；但任何絕經後出血均須先完成現代婦科評估。",
+   "definition_en": "Jing Duan Fu Lai denotes renewed vaginal bleeding, spotting, or blood-stained discharge after menstruation has ceased with menopause. It is not equivalent to any single biomedical cause or to cancer, but every episode of postmenopausal bleeding requires biomedical evaluation.",
+   "etiology_zh": "可見氣虛、陰虛或血熱；絕經期腎氣漸衰、衝任空虛為背景，若脾腎氣虛、陰虛生熱或血熱擾動血海，均可使衝任失於固攝。",
+   "etiology_en": "Etiologic patterns include Qi deficiency, Yin deficiency, and Blood Heat. Declining Kidney Qi and depletion of the Chong and Ren around menopause form the background; Spleen-Kidney Qi deficiency, Heat arising from Yin deficiency, or Blood Heat disturbing the Blood Sea may prevent the Chong and Ren from securing Blood.",
+   "pathomechanism_zh": "腎氣漸衰、衝任失養為其生理背景；氣虛失攝、陰虛生熱或血熱擾動血海，皆可使衝任不能固攝，致經斷後復見出血。",
+   "pathomechanism_en": "Declining Kidney Qi and depletion of the Chong and Ren form the physiologic background. Failure of deficient Qi to contain Blood, Heat arising from Yin deficiency, or Blood Heat disturbing the Blood Sea may prevent the Chong and Ren from securing Blood, leading to renewed bleeding after menopause.",
+   "key_manifestations_zh": [
+    "絕經後再次出現陰道出血",
+    "少量點滴或粉紅、褐色血性分泌物",
+    "可僅發生一次，也可反覆出現"
+   ],
+   "key_manifestations_en": [
+    "Renewed vaginal bleeding after menopause",
+    "Scant spotting or pink or brown blood-stained discharge",
+    "May occur once or recur"
+   ],
+   "disease_location_zh": "病位在胞宮、血海與衝任，與腎、脾及血分相關。",
+   "disease_location_en": "The disease location involves the Uterus, Blood Sea, Chong, and Ren vessels, with relationships to the Kidney, Spleen, and Blood level.",
+   "treatment_principle_zh": "在完成必要婦科排查後，辨證固攝衝任、止血；氣虛者益氣攝血，陰虛者養陰清熱，血熱者清熱涼血。",
+   "treatment_principle_en": "After appropriate gynecologic evaluation, secure the Chong and Ren and stop bleeding according to pattern: tonify Qi and contain Blood for Qi deficiency, nourish Yin and clear Heat for Yin deficiency, or clear Heat and cool Blood for Blood Heat.",
+   "red_flags_zh": [
+    {
+     "finding": "絕經一年後任何陰道出血，即使只有一次、少量點滴、粉紅或褐色分泌物",
+     "urgency_level": "urgent",
+     "recommended_action": "儘快聯絡婦科或基層醫師安排檢查，不先以中醫分型延後評估",
+     "rationale": "多數病因並非癌症，但須排除子宮內膜增生、子宮內膜癌及其他器質性病變",
+     "source": "NHS, Postmenopausal bleeding (https://www.nhs.uk/symptoms/post-menopausal-bleeding/), accessed 2026-08-25"
+    },
+    {
+     "finding": "大量出血並伴虛弱、頭暈、暈厥、胸痛或呼吸困難",
+     "urgency_level": "emergency",
+     "recommended_action": "立即啟動緊急醫療服務並送急診",
+     "rationale": "可能為急性失血、嚴重貧血或循環不穩",
+     "source": "MedlinePlus Medical Encyclopedia, Vaginal or uterine bleeding (https://www.medlineplus.gov/ency/article/007496.htm), accessed 2026-08-25"
+    }
+   ],
+   "red_flags_en": [
+    {
+     "finding": "Any vaginal bleeding one year after the last menstrual period, even a single episode, scant spotting, or pink or brown discharge",
+     "urgency_level": "urgent",
+     "recommended_action": "Contact a gynecologic or primary-care clinician promptly and do not delay evaluation for TCM pattern treatment",
+     "rationale": "Most causes are not cancer, but endometrial hyperplasia, endometrial cancer, and other structural causes must be excluded",
+     "source": "NHS, Postmenopausal bleeding (https://www.nhs.uk/symptoms/post-menopausal-bleeding/), accessed 2026-08-25"
+    },
+    {
+     "finding": "Heavy bleeding with weakness, dizziness, fainting, chest pain, or shortness of breath",
+     "urgency_level": "emergency",
+     "recommended_action": "Activate emergency medical services and obtain emergency department care immediately",
+     "rationale": "This may represent acute blood loss, severe anemia, or circulatory compromise",
+     "source": "MedlinePlus Medical Encyclopedia, Vaginal or uterine bleeding (https://www.medlineplus.gov/ency/article/007496.htm), accessed 2026-08-25"
+    }
+   ],
+   "related_patterns": [
+    "pattern.qi_deficiency",
+    "pattern.kidney_yin_deficiency",
+    "pattern.blood_heat"
+   ],
+   "related_conditions": [
+    "cond.postmenopausal_bleeding"
+   ],
+   "differential_diseases": [
+    "tdis.beng_lou",
+    "tdis.jing_duan_qian_hou"
+   ],
+   "sources": [
+    "curriculum/conditions/U_BLEED.md and curriculum/conditions/MENOP.md (contextual mechanisms; neither is a dedicated Jing Duan Fu Lai lecture)",
+    "https://jxjyxb.bucm.edu.cn/ibucm/zhengwen/update/dg-zyfk-z.htm",
+    "https://www.nhs.uk/symptoms/post-menopausal-bleeding/",
+    "https://www.medlineplus.gov/ency/article/007496.htm"
+   ],
+   "field_sources": {
+    "definition_zh": [
+     "北京中醫藥大學《中醫婦科學》教學大綱 lists 經斷復來 as a distinct disease; NHS Postmenopausal bleeding supplies the biomedical evaluation boundary (accessed 2026-08-25)"
+    ],
+    "etiology_zh": [
+     "北京中醫藥大學《中醫婦科學》教學大綱 lists Qi deficiency, Yin deficiency, and Blood Heat; curriculum/conditions/MENOP.md supplies contextual Kidney/Chong-Ren background"
+    ],
+    "pathomechanism_zh": [
+     "北京中醫藥大學《中醫婦科學》教學大綱 plus contextual curriculum/conditions/U_BLEED.md and MENOP.md; no dedicated local lecture"
+    ],
+    "related_patterns": [
+     "北京中醫藥大學《中醫婦科學》教學大綱; mapped to existing registry ids"
+    ],
+    "red_flags_zh": [
+     "NHS Postmenopausal bleeding; MedlinePlus Vaginal or uterine bleeding (accessed 2026-08-25)"
+    ]
+   },
+   "source_type": "course_context_plus_university_tcm_plus_official_biomedical"
+  },
+  {
+   "id": "tdis.jing_zhuo",
+   "name_zh": "精濁",
+   "pinyin": "Jingzhuo",
+   "name_en": "Turbid Seminal or Urethral Discharge (TCM Disease)",
+   "taxonomy_id": "tdx.andrology.general",
+   "aliases_zh": [],
+   "aliases_en": [],
+   "review_status": "draft",
+   "authored_by": "model_draft",
+   "definition_zh": "精濁是以尿道口反覆流出白濁、泔樣或糊狀分泌物，並可伴莖中不適、盆腔疼痛、排尿或射精異常為主要表現的中醫男科病證；尿液本身未必混濁。它可與慢性前列腺炎或慢性骨盆疼痛症候群重疊，但不等同所有 prostatitis、UTI、STI、BPH 或精液異常。",
+   "definition_en": "Jing Zhuo is a TCM andrologic disease characterized by recurrent whitish, turbid, rice-water-like, or pasty discharge from the urethral meatus, potentially accompanied by urethral discomfort, pelvic pain, urinary symptoms, or ejaculatory disturbance; the urine itself need not be cloudy. It may overlap with chronic prostatitis or chronic pelvic pain syndrome but is not equivalent to all prostatitis, UTI, STI, BPH, or semen abnormalities.",
+   "etiology_zh": "飲食失節或外感濕熱可使濕熱下注；情志不遂可致肝氣鬱滯；病久可見氣滯血瘀。年老、久病或勞傷亦可損及脾腎、腎精，使濁邪留戀。",
+   "etiology_en": "Improper diet or externally contracted Damp-Heat may produce Damp-Heat sinking into the Lower Burner; emotional constraint may cause Liver Qi stagnation, and chronic disease may develop into Qi stagnation and Blood stasis. Aging, prolonged illness, or taxation may weaken the Spleen, Kidney, and Kidney Essence, allowing turbidity to persist.",
+   "pathomechanism_zh": "濕熱濁邪下注精室、阻滯下焦，或肝鬱氣滯、瘀血內阻，使精道不利；日久脾腎虧虛，分清泌濁及固攝精微失職，遂見白濁反覆。",
+   "pathomechanism_en": "Damp-Heat and turbidity descend into the Essence Chamber and obstruct the Lower Burner, while Liver Qi constraint or Blood stasis may impede the seminal pathways. With chronicity, Spleen-Kidney deficiency impairs the separation of clear from turbid and the securing of Essence, allowing recurrent turbid discharge.",
+   "key_manifestations_zh": [
+    "尿道口反覆出現白濁、泔樣或糊狀分泌物",
+    "莖中疼痛、灼熱或搔癢不適",
+    "射精疼痛或精液黏稠、混濁",
+    "會陰、下腹、腹股溝或腰骶部疼痛不適"
+   ],
+   "key_manifestations_en": [
+    "Recurrent whitish, turbid, rice-water-like, or pasty urethral discharge",
+    "Urethral or penile pain, burning, or itching",
+    "Painful ejaculation or thick or turbid semen",
+    "Perineal, lower-abdominal, groin, or lumbosacral discomfort"
+   ],
+   "associated_manifestations_zh": [
+    "尿頻、尿急、尿痛或尿流不暢",
+    "性功能或射精相關不適",
+    "久病者可見疲乏、腰膝痠軟"
+   ],
+   "associated_manifestations_en": [
+    "Urinary frequency, urgency, dysuria, or weak or interrupted stream",
+    "Sexual or ejaculatory discomfort",
+    "Fatigue and lumbar-knee weakness in chronic deficiency presentations"
+   ],
+   "disease_location_zh": "病位在下焦與精室，涉及腎、膀胱、肝、脾及精道。",
+   "disease_location_en": "The disease location is the Lower Burner and Essence Chamber, involving the Kidney, Bladder, Liver, Spleen, and seminal pathways.",
+   "treatment_principle_zh": "濕熱者清熱利濕、分清泄濁；肝鬱者疏肝理氣；瘀阻者活血通絡；久病脾腎不足者健脾補腎、固攝精微。感染、尿瀦留或急性陰囊疼痛須先處理現代醫學急症。",
+   "treatment_principle_en": "Clear Heat, drain Dampness, and separate turbidity for Damp-Heat; soothe the Liver and regulate Qi for constraint; invigorate Blood and free the collaterals for stasis; strengthen the Spleen and Kidney and secure Essence in chronic deficiency. Infection, urinary retention, or acute scrotal pain requires biomedical triage first.",
+   "red_flags_zh": [
+    {
+     "finding": "完全無法排尿",
+     "urgency_level": "same_day",
+     "recommended_action": "立即接受急診或當日緊急醫療評估",
+     "rationale": "急性尿瀦留可造成膀胱與腎臟損害並需立即處理",
+     "source": "NIDDK, Prostatitis: Inflammation of the Prostate (https://www.niddk.nih.gov/health-information/urologic-diseases/prostate-problems/prostatitis-inflammation-prostate), accessed 2026-08-25"
+    },
+    {
+     "finding": "尿痛、尿頻或尿急合併發熱或寒顫",
+     "urgency_level": "same_day",
+     "recommended_action": "當日緊急醫療評估",
+     "rationale": "可能為急性細菌性前列腺炎或上行感染",
+     "source": "NIDDK, Prostatitis: Inflammation of the Prostate (https://www.niddk.nih.gov/health-information/urologic-diseases/prostate-problems/prostatitis-inflammation-prostate), accessed 2026-08-25"
+    },
+    {
+     "finding": "感染症狀合併突發意識混亂、言語不清、嚴重呼吸困難或唇舌青灰",
+     "urgency_level": "emergency",
+     "recommended_action": "立即啟動緊急醫療服務",
+     "rationale": "可能為嚴重感染或敗血症",
+     "source": "NHS, Sepsis (https://www.nhs.uk/conditions/sepsis/), accessed 2026-08-25"
+    },
+    {
+     "finding": "突發劇烈睪丸疼痛，尤其合併噁心、嘔吐、腹痛，或休息後仍持續",
+     "urgency_level": "emergency",
+     "recommended_action": "立即急診",
+     "rationale": "須排除睪丸扭轉等需緊急處理的陰囊急症",
+     "source": "NHS, Testicle pain (https://www.nhs.uk/symptoms/testicle-pain/), accessed 2026-08-25"
+    }
+   ],
+   "red_flags_en": [
+    {
+     "finding": "Complete inability to urinate",
+     "urgency_level": "same_day",
+     "recommended_action": "Obtain immediate same-day urgent or emergency assessment",
+     "rationale": "Acute urinary retention can damage the bladder and kidneys and requires prompt treatment",
+     "source": "NIDDK, Prostatitis: Inflammation of the Prostate (https://www.niddk.nih.gov/health-information/urologic-diseases/prostate-problems/prostatitis-inflammation-prostate), accessed 2026-08-25"
+    },
+    {
+     "finding": "Painful, frequent, or urgent urination accompanied by fever or chills",
+     "urgency_level": "same_day",
+     "recommended_action": "Obtain same-day urgent medical assessment",
+     "rationale": "This may indicate acute bacterial prostatitis or an ascending infection",
+     "source": "NIDDK, Prostatitis: Inflammation of the Prostate (https://www.niddk.nih.gov/health-information/urologic-diseases/prostate-problems/prostatitis-inflammation-prostate), accessed 2026-08-25"
+    },
+    {
+     "finding": "Infectious symptoms with sudden confusion, slurred speech, severe breathing difficulty, or blue or grey lips or tongue",
+     "urgency_level": "emergency",
+     "recommended_action": "Activate emergency medical services immediately",
+     "rationale": "This may indicate severe infection or sepsis",
+     "source": "NHS, Sepsis (https://www.nhs.uk/conditions/sepsis/), accessed 2026-08-25"
+    },
+    {
+     "finding": "Sudden severe testicular pain, particularly with nausea, vomiting, abdominal pain, or pain persisting at rest",
+     "urgency_level": "emergency",
+     "recommended_action": "Seek emergency department care immediately",
+     "rationale": "Testicular torsion and other time-sensitive scrotal emergencies must be excluded",
+     "source": "NHS, Testicle pain (https://www.nhs.uk/symptoms/testicle-pain/), accessed 2026-08-25"
+    }
+   ],
+   "related_patterns": [
+    "pattern.damp_heat_lower_burner",
+    "pattern.liver_qi_stagnation",
+    "pattern.kidney_essence_deficiency"
+   ],
+   "related_conditions": [
+    "cond.chronic_prostatitis"
+   ],
+   "differential_diseases": [
+    "tdis.lin_zheng",
+    "tdis.jing_long",
+    "tdis.yi_jing"
+   ],
+   "sources": [
+    "curriculum/conditions/1.1 BPH - handouts on canvas.md, 1.2 Lin syndrome - handouts on canvas.md, MM2-Lin Syndrome-Overview.md#p.2-3, and 2.1 Male Infertility - handouts on canvas.md (contextual only; no dedicated Jing Zhuo lecture)",
+    "https://www.gxtcmu.edu.cn/dylc/jysjs/zywkx/jxyhygl2/zywkx1/jxdg5/content_49693",
+    "https://www.niddk.nih.gov/health-information/urologic-diseases/prostate-problems/prostatitis-inflammation-prostate",
+    "https://www.nhs.uk/conditions/sepsis/",
+    "https://www.nhs.uk/symptoms/testicle-pain/"
+   ],
+   "field_sources": {
+    "definition_zh": [
+     "廣西中醫藥大學《中醫外科學》課程教學質量標準 establishes 精濁 as a distinct disease unit; local BPH/Lin/male-infertility materials are contextual, not disease-equivalent; NIDDK supports prostatitis overlap and non-equivalence boundary (accessed 2026-08-25)"
+    ],
+    "etiology_zh": [
+     "廣西中醫藥大學《中醫外科學》課程 context plus local related-course materials; no dedicated local Jing Zhuo lecture, so this remains draft"
+    ],
+    "pathomechanism_zh": [
+     "Local Lin syndrome and male infertility materials provide contextual Damp-Heat, Spleen-Kidney deficiency, Liver Qi stagnation, and Blood stasis mechanisms; not asserted as one-to-one disease equivalence"
+    ],
+    "related_patterns": [
+     "Contextual local course mapping to existing pattern ids; reviewer confirmation remains required"
+    ],
+    "red_flags_zh": [
+     "NIDDK Prostatitis; NHS Sepsis; NHS Testicle pain (accessed 2026-08-25)"
+    ]
+   },
+   "source_type": "course_context_plus_university_tcm_plus_official_biomedical"
   }
  ]
 }
