@@ -22057,6 +22057,48 @@
       "source_type": "source_assisted_draft_pending_ting_verification",
       "review_status": "draft",
       "authored_by": "model_draft"
+    },
+    {
+      "id": "sym.facial_redness",
+      "name_zh": "面赤",
+      "name_en": "Facial redness",
+      "pinyin": "Mian Chi",
+      "aliases_zh": [],
+      "aliases_en": [],
+      "taxonomy_ids": [
+        "sym.head_face_eye"
+      ],
+      "tradition": "tcm",
+      "observation_modes": [
+        "examiner_observed"
+      ],
+      "primary_mode": "examiner_observed",
+      "definition_zh": "",
+      "definition_en": "",
+      "review_status": "draft",
+      "authored_by": "claude_d23_skeleton",
+      "safety_review_status": "needs_safety_review"
+    },
+    {
+      "id": "sym.lumbar_soreness",
+      "name_zh": "腰痠",
+      "name_en": "Lumbar soreness",
+      "pinyin": "Yao Suan",
+      "aliases_zh": [],
+      "aliases_en": [],
+      "taxonomy_ids": [
+        "sym.back_lumbar"
+      ],
+      "tradition": "both",
+      "observation_modes": [
+        "patient_reported"
+      ],
+      "primary_mode": "patient_reported",
+      "definition_zh": "",
+      "definition_en": "",
+      "review_status": "draft",
+      "authored_by": "claude_d23_skeleton",
+      "safety_review_status": "needs_safety_review"
     }
   ]
 }

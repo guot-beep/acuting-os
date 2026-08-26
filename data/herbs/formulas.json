@@ -26478,8 +26478,8 @@
         "蠱證"
       ],
       "related_conditions": [
-        "western_condition.unexplained_infertility",
-        "eastern_disease.irregular_menstruation",
+        "cond.unexplained_infertility",
+        "tdis.yue_jing_bu_tiao",
         "pattern.liver_qi_stagnation",
         "pattern.spleen_qi_deficiency"
       ],
@@ -27744,7 +27744,7 @@
         "脾虛肝鬱發熱證"
       ],
       "related_conditions": [
-        "eastern_disease.irregular_menstruation",
+        "tdis.yue_jing_bu_tiao",
         "pattern.liver_qi_stagnation"
       ],
       "source_status": "bensky_review_pending_chinese_source_draft",
@@ -43466,9 +43466,9 @@
         "衝任虛損證"
       ],
       "related_conditions": [
-        "eastern_disease.irregular_menstruation",
-        "eastern_disease.amenorrhea",
-        "eastern_disease.infertility",
+        "tdis.yue_jing_bu_tiao",
+        "tdis.bi_jing",
+        "tdis.bu_yun",
         "pattern.blood_deficiency"
       ],
       "source_status": "bensky_review_pending_chinese_source_draft",
@@ -44421,9 +44421,9 @@
         "漏血澀少、淋漓不盡，間有瘀塊（《婦科冰鑑》）"
       ],
       "related_conditions": [
-        "eastern_disease.dysmenorrhea",
-        "eastern_disease.amenorrhea",
-        "eastern_disease.irregular_menstruation",
+        "tdis.tong_jing",
+        "tdis.bi_jing",
+        "tdis.yue_jing_bu_tiao",
         "pattern.blood_stasis",
         "pattern.blood_deficiency"
       ],
@@ -46048,7 +46048,7 @@
       "related_conditions": [
         "pattern.spleen_qi_deficiency",
         "pattern.blood_deficiency",
-        "western_condition.unexplained_infertility"
+        "cond.unexplained_infertility"
       ],
       "source_status": "bensky_review_pending_chinese_source_draft",
       "english_exam_track": {
@@ -48455,8 +48455,8 @@
       "related_conditions": [
         "pattern.kidney_deficiency",
         "pattern.yin_deficiency",
-        "western_condition.diminished_ovarian_reserve",
-        "western_condition.unexplained_infertility"
+        "cond.diminished_ovarian_reserve",
+        "cond.unexplained_infertility"
       ],
       "source_status": "bensky_review_pending_chinese_source_draft",
       "english_exam_track": {
@@ -55257,7 +55257,7 @@
       ],
       "related_conditions": [
         "pattern.kidney_deficiency",
-        "western_condition.unexplained_infertility"
+        "cond.unexplained_infertility"
       ],
       "source_status": "bensky_review_pending_chinese_source_draft",
       "english_exam_track": {
@@ -66528,7 +66528,7 @@
       ],
       "related_conditions": [
         "pattern.blood_stasis",
-        "eastern_disease.dysmenorrhea"
+        "tdis.tong_jing"
       ],
       "source_status": "bensky_review_pending_chinese_source_draft",
       "english_exam_track": {
@@ -69539,10 +69539,10 @@
         "沖任虛寒兼有瘀血證"
       ],
       "related_conditions": [
-        "eastern_disease.dysmenorrhea",
-        "eastern_disease.infertility",
-        "eastern_disease.amenorrhea",
-        "eastern_disease.irregular_menstruation",
+        "tdis.tong_jing",
+        "tdis.bu_yun",
+        "tdis.bi_jing",
+        "tdis.yue_jing_bu_tiao",
         "pattern.blood_stasis",
         "pattern.blood_deficiency"
       ],
@@ -92947,7 +92947,7 @@
       "related_conditions": [
         "pattern.spleen_qi_deficiency",
         "pattern.blood_deficiency",
-        "western_condition.unexplained_infertility"
+        "cond.unexplained_infertility"
       ],
       "source_status": "bensky_review_pending_chinese_source_draft",
       "english_exam_track": {

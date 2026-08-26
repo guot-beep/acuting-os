@@ -583,8 +583,8 @@
         "irregular_menstruation"
       ],
       "related_conditions": [
-        "western_condition.unexplained_infertility",
-        "eastern_disease.irregular_menstruation",
+        "cond.unexplained_infertility",
+        "tdis.yue_jing_bu_tiao",
         "pattern.liver_qi_stagnation",
         "pattern.spleen_qi_deficiency"
       ],
@@ -616,7 +616,7 @@
         "irregular_menstruation"
       ],
       "related_conditions": [
-        "eastern_disease.irregular_menstruation",
+        "tdis.yue_jing_bu_tiao",
         "pattern.liver_qi_stagnation"
       ],
       "related_formulas": [
@@ -1008,9 +1008,9 @@
         "fatigue"
       ],
       "related_conditions": [
-        "eastern_disease.irregular_menstruation",
-        "eastern_disease.amenorrhea",
-        "eastern_disease.infertility",
+        "tdis.yue_jing_bu_tiao",
+        "tdis.bi_jing",
+        "tdis.bu_yun",
         "pattern.blood_deficiency"
       ],
       "related_formulas": [
@@ -1056,7 +1056,7 @@
       "related_conditions": [
         "pattern.spleen_qi_deficiency",
         "pattern.blood_deficiency",
-        "western_condition.unexplained_infertility"
+        "cond.unexplained_infertility"
       ],
       "related_formulas": [
         "formula.ba_zhen_tang",
@@ -1084,7 +1084,7 @@
       "related_conditions": [
         "pattern.spleen_qi_deficiency",
         "pattern.blood_deficiency",
-        "western_condition.unexplained_infertility"
+        "cond.unexplained_infertility"
       ],
       "related_formulas": [
         "formula.gui_pi_tang",
@@ -1131,8 +1131,8 @@
       "related_conditions": [
         "pattern.kidney_deficiency",
         "pattern.yin_deficiency",
-        "western_condition.diminished_ovarian_reserve",
-        "western_condition.unexplained_infertility"
+        "cond.diminished_ovarian_reserve",
+        "cond.unexplained_infertility"
       ],
       "related_formulas": [
         "formula.zuo_gui_wan",
@@ -1196,7 +1196,7 @@
       ],
       "related_conditions": [
         "pattern.kidney_deficiency",
-        "western_condition.unexplained_infertility"
+        "cond.unexplained_infertility"
       ],
       "related_formulas": [
         "formula.you_gui_wan"
@@ -1642,7 +1642,7 @@
       ],
       "related_conditions": [
         "pattern.blood_stasis",
-        "eastern_disease.dysmenorrhea"
+        "tdis.tong_jing"
       ],
       "related_formulas": [
         "formula.tao_he_cheng_qi_tang",
@@ -1693,10 +1693,10 @@
         "cold_pain_context"
       ],
       "related_conditions": [
-        "eastern_disease.dysmenorrhea",
-        "eastern_disease.infertility",
-        "eastern_disease.amenorrhea",
-        "eastern_disease.irregular_menstruation",
+        "tdis.tong_jing",
+        "tdis.bu_yun",
+        "tdis.bi_jing",
+        "tdis.yue_jing_bu_tiao",
         "pattern.blood_stasis",
         "pattern.blood_deficiency"
       ],
@@ -1782,9 +1782,9 @@
         "blood_stasis_pain"
       ],
       "related_conditions": [
-        "eastern_disease.dysmenorrhea",
-        "eastern_disease.amenorrhea",
-        "eastern_disease.irregular_menstruation",
+        "tdis.tong_jing",
+        "tdis.bi_jing",
+        "tdis.yue_jing_bu_tiao",
         "pattern.blood_stasis",
         "pattern.blood_deficiency"
       ],

@@ -73,7 +73,7 @@
    "type": "comparison",
    "title_zh": "PCOS 常見證型鑑別骨架",
    "title_en": "PCOS - pattern differentiation draft",
-   "source_condition_id": "western_condition.pcos",
+   "source_condition_id": "cond.pcos",
    "seed_basis": "Source-assisted draft approved by Ting: PCOS biomedical context from NIH/NICHD, OASH WomensHealth, and MedlinePlus; TCM pattern discriminator language from Ting's Notion/Bastyr diagnosis and pathology notes. Draft study comparison only; not medical advice.",
    "compares": [
     "pattern.phlegm_damp",
@@ -149,7 +149,7 @@
    "type": "comparison",
    "title_zh": "不明原因不孕常見證型鑑別骨架",
    "title_en": "Unexplained infertility - pattern differentiation draft",
-   "source_condition_id": "western_condition.unexplained_infertility",
+   "source_condition_id": "cond.unexplained_infertility",
    "seed_basis": "Source-assisted draft approved by Ting: infertility biomedical context from NIH/NICHD, MedlinePlus, and WomensHealth.gov; TCM pattern discriminator language from Ting's Notion/Bastyr gynecology, diagnosis, and pathology notes. Draft study comparison only; not medical advice.",
    "compares": [
     "pattern.kidney_deficiency",
@@ -218,7 +218,7 @@
    "type": "comparison",
    "title_zh": "排卵因素常見證型鑑別骨架",
    "title_en": "Ovulatory factor context - pattern differentiation draft",
-   "source_condition_id": "western_condition.ovulatory_factor_context",
+   "source_condition_id": "cond.anovulation",
    "seed_basis": "Source-assisted draft approved by Ting: ovulatory-factor biomedical context from NICHD, ACOG, and ASRM/ReproductiveFacts; TCM pattern discriminator language from Ting's Notion/Bastyr menstruation, Zang-Fu, and formula notes, cross-checked against accepted PCOS/anovulation LL3 drafts. Draft study comparison only; not medical advice.",
    "compares": [
     "pattern.kidney_deficiency",
@@ -428,7 +428,7 @@
    "type": "comparison",
    "title_zh": "無排卵常見證型鑑別骨架",
    "title_en": "Anovulation - pattern differentiation draft",
-   "source_condition_id": "western_condition.anovulation",
+   "source_condition_id": "cond.anovulation",
    "seed_basis": "Source-assisted draft approved by Ting: ovulation/anovulation biomedical context from NIH/NICHD and WomensHealth.gov; TCM pattern discriminator language from Ting's Notion/Bastyr gynecology, irregular menstruation, uterus, Zang-Fu, and Liver pathology notes. Draft study comparison only; not medical advice.",
    "compares": [
     "pattern.kidney_deficiency",
@@ -488,7 +488,7 @@
    "type": "comparison",
    "title_zh": "子宮內膜異位症相關情境證型鑑別骨架",
    "title_en": "Endometriosis context - pattern differentiation draft",
-   "source_condition_id": "western_condition.endometriosis_context",
+   "source_condition_id": "cond.endometriosis",
    "seed_basis": "Source-assisted draft approved by Ting: biomedical context from WHO/ACOG/NICHD; TCM pattern discriminators from Ting's Notion/Bastyr gynecology, Qi-Blood, clinical-skills, and formula notes. Draft study comparison only; not medical advice.",
    "compares": [
     "pattern.blood_stasis",
@@ -547,7 +547,7 @@
    "type": "comparison",
    "title_zh": "反覆流產相關情境證型鑑別骨架",
    "title_en": "Recurrent pregnancy loss context - pattern differentiation skeleton",
-   "source_condition_id": "western_condition.recurrent_pregnancy_loss_context",
+   "source_condition_id": "cond.recurrent_pregnancy_loss",
    "seed_basis": "Existing related_tcm_patterns in data/pathology/conditions.json; discriminator cells intentionally empty for Ting/source-based filling.",
    "compares": [
     "pattern.kidney_deficiency",
@@ -589,7 +589,7 @@
    "type": "comparison",
    "title_zh": "胰島素阻抗相關情境證型鑑別骨架",
    "title_en": "Insulin resistance context - pattern differentiation draft",
-   "source_condition_id": "western_condition.insulin_resistance",
+   "source_condition_id": "cond.insulin_resistance",
    "seed_basis": "Source-assisted draft approved by Ting: biomedical context from NIDDK/CDC; TCM pattern discriminators from Ting's Notion/Bastyr Spleen-Stomach, Zang-Fu, and Qi-Fluid notes. Draft study comparison only; not medical advice.",
    "compares": [
     "pattern.phlegm_damp",
@@ -1578,7 +1578,7 @@
    "type": "comparison",
    "title_zh": "PCOS 常見證型鑑別骨架",
    "title_en": "PCOS - pattern differentiation draft",
-   "source_condition_id": "western_condition.pcos",
+   "source_condition_id": "cond.pcos",
    "seed_basis": "Source-assisted draft approved by Ting: PCOS biomedical context from NIH/NICHD, OASH WomensHealth, and MedlinePlus; TCM pattern discriminator language from Ting's Notion/Bastyr diagnosis and pathology notes. Draft study comparison only; not medical advice.",
    "compares": [
     "pattern.phlegm_damp",
@@ -1653,7 +1653,7 @@
    "type": "comparison",
    "title_zh": "不明原因不孕常見證型鑑別骨架",
    "title_en": "Unexplained infertility - pattern differentiation draft",
-   "source_condition_id": "western_condition.unexplained_infertility",
+   "source_condition_id": "cond.unexplained_infertility",
    "seed_basis": "Source-assisted draft approved by Ting: infertility biomedical context from NIH/NICHD, MedlinePlus, and WomensHealth.gov; TCM pattern discriminator language from Ting's Notion/Bastyr gynecology, diagnosis, and pathology notes. Draft study comparison only; not medical advice.",
    "compares": [
     "pattern.kidney_deficiency",
@@ -1721,7 +1721,7 @@
    "type": "comparison",
    "title_zh": "排卵因素常見證型鑑別骨架",
    "title_en": "Ovulatory factor context - pattern differentiation draft",
-   "source_condition_id": "western_condition.ovulatory_factor_context",
+   "source_condition_id": "cond.anovulation",
    "seed_basis": "Source-assisted draft approved by Ting: ovulatory-factor biomedical context from NICHD, ACOG, and ASRM/ReproductiveFacts; TCM pattern discriminator language from Ting's Notion/Bastyr menstruation, Zang-Fu, and formula notes, cross-checked against accepted PCOS/anovulation LL3 drafts. Draft study comparison only; not medical advice.",
    "compares": [
     "pattern.kidney_deficiency",
@@ -1928,7 +1928,7 @@
    "type": "comparison",
    "title_zh": "無排卵常見證型鑑別骨架",
    "title_en": "Anovulation - pattern differentiation draft",
-   "source_condition_id": "western_condition.anovulation",
+   "source_condition_id": "cond.anovulation",
    "seed_basis": "Source-assisted draft approved by Ting: ovulation/anovulation biomedical context from NIH/NICHD and WomensHealth.gov; TCM pattern discriminator language from Ting's Notion/Bastyr gynecology, irregular menstruation, uterus, Zang-Fu, and Liver pathology notes. Draft study comparison only; not medical advice.",
    "compares": [
     "pattern.kidney_deficiency",
@@ -1987,7 +1987,7 @@
    "type": "comparison",
    "title_zh": "子宮內膜異位症相關情境證型鑑別骨架",
    "title_en": "Endometriosis context - pattern differentiation draft",
-   "source_condition_id": "western_condition.endometriosis_context",
+   "source_condition_id": "cond.endometriosis",
    "seed_basis": "Source-assisted draft approved by Ting: biomedical context from WHO/ACOG/NICHD; TCM pattern discriminators from Ting's Notion/Bastyr gynecology, Qi-Blood, clinical-skills, and formula notes. Draft study comparison only; not medical advice.",
    "compares": [
     "pattern.blood_stasis",
@@ -2045,7 +2045,7 @@
    "type": "comparison",
    "title_zh": "反覆流產相關情境證型鑑別骨架",
    "title_en": "Recurrent pregnancy loss context - pattern differentiation skeleton",
-   "source_condition_id": "western_condition.recurrent_pregnancy_loss_context",
+   "source_condition_id": "cond.recurrent_pregnancy_loss",
    "seed_basis": "Existing related_tcm_patterns in data/pathology/conditions.json; discriminator cells intentionally empty for Ting/source-based filling.",
    "compares": [
     "pattern.kidney_deficiency",
@@ -2087,7 +2087,7 @@
    "type": "comparison",
    "title_zh": "胰島素阻抗相關情境證型鑑別骨架",
    "title_en": "Insulin resistance context - pattern differentiation draft",
-   "source_condition_id": "western_condition.insulin_resistance",
+   "source_condition_id": "cond.insulin_resistance",
    "seed_basis": "Source-assisted draft approved by Ting: biomedical context from NIDDK/CDC; TCM pattern discriminators from Ting's Notion/Bastyr Spleen-Stomach, Zang-Fu, and Qi-Fluid notes. Draft study comparison only; not medical advice.",
    "compares": [
     "pattern.phlegm_damp",

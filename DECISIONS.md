@@ -780,3 +780,36 @@ PASS(composition 查無藥材維持 1 味次 `formula.huang_tu_tang` 的「灶�
 - **Reconsider only if**:未來查到 `formula.bai_du_san` 卡曾承載
   「非人參敗毒散」的獨立方義(如荊防敗毒散被誤併)—— 屆時取消 deprecated
   另立正典,不回頭改寫已合併內容(D16 同款條款)。
+
+## D23 — Legacy 診斷 id 歸位:五點裁定與執行 · LOCKED(2026-08-26,Ting:「D11照建議辦 C3併入本病卡 C4撤下 不孕全部bu_yun 月經不調建總稱卡 腰痠另立」)
+
+- **裁定**(對 docs/D11_LEGACY_NAMESPACE_ADJUDICATION_2026-08-26.md 五桶):
+  1. C3 四個 `_context` → 併入本病卡(endometriosis_context→cond.endometriosis、
+     male_factor_context→cond.male_infertility、recurrent_pregnancy_loss_context→
+     cond.recurrent_pregnancy_loss;ovulatory_factor_context→cond.anovulation,
+     排卵因素之本病即排卵障礙,執行時定)。
+  2. C4 三個治療階段(ivf_cycle/embryo_transfer/luteal_support)**不是診斷**,
+     自知識層 relation 欄位撤下;`source_condition_id` 等出處欄位保留(§0)。
+  3. `eastern_disease.infertility`(44 refs)全部 → `tdis.bu_yun`(女科語境;
+     男性因素由 male_factor→cond.male_infertility 另行承載)。
+  4. 建 `tdis.yue_jing_bu_tiao` 月經不調**總稱卡**(中醫婦科學正當病名;
+     與先期/後期/過多/過少/延長五張專卡並存)。
+  5. `sym.lumbar_soreness` 腰痠**另立**,不併入 sym.low_back_pain —— 痠≠痛。
+- **執行(同日)**:六張 skeleton 骨架卡(cond.anovulation/
+  cond.unexplained_infertility/cond.insulin_resistance/tdis.yue_jing_bu_tiao/
+  sym.facial_redness/sym.lumbar_soreness,全部 review_status="skeleton" 或
+  needs_safety_review,零內容宣稱,內容歸 fill 線);知識層 60+ 處引用重導、
+  去重;C4 陣列移除。staging(pathology/conditions.json、
+  condition_graph_expansion、clinical_cases 種子)照 D15 med.* 前例**保留原樣**
+  ——那是出處層,D11 允許。
+- **vocab 對齊**:modern_application_vocabulary 五個零引用概念 id
+  pat.→pattern. 對齊正典(舊 id 進 aliases);`pat.dampness`/
+  `pat.cold_deficiency`/`pat.bi_syndrome` 三個無正典雙胞胎**留旗標不強配**
+  ——其中 bi_syndrome(痹證)本是病非證,正典應為 tdis.bi_zheng,待 fill 線
+  處理該 vocab 條目的 type 歸屬。
+- **B 桶 CJK ~39 筆**(361.json 等的 pat.<中文>):交 fill 線走
+  build-pattern-alias-map.js 擴充,對不到的留 pending,不強配。
+- **Reconsider only if**:未來 ovulatory factor 需要與 anovulation 分立
+  (如 LUFS 等排卵功能異常但有排卵者)—— 屆時另立 cond 卡並分流引用,
+  不回頭改本裁定。
+
