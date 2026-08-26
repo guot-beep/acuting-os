@@ -904,6 +904,7 @@ const homeSearch = document.querySelector("#homeSearch");
 const caseList = document.querySelector("#caseList");
 const caseDetail = document.querySelector("#caseDetail");
 const caseResultCount = document.querySelector("#caseResultCount");
+const caseEntryPoint = document.querySelector("#caseEntryPoint");
 const patientSearch = document.querySelector("#patientSearch");
 const patientList = document.querySelector("#patientList");
 const patientSyncBanner = document.querySelector("#patientSyncBanner");
@@ -1764,6 +1765,18 @@ let clinicalStoreIntegrityError = null;
   el.textContent = "⚠️ 你正以 127.0.0.1 開啟本系統 — 這裡的病人資料庫與 localhost 的互不相通。臨床紀錄請一律使用同一個網址(建議 localhost),否則資料會分裂在兩邊。";
   document.body.prepend(el);
 })();
+
+/* Dry Clinic #7 續:三個入口 = 三個互不相通的病歷庫(file:// / localhost /
+ * 部署網址)。localStorage 綁 origin,所以 app 在結構上**看不到**另一個入口
+ * 的資料 —— 正因為看不到,它更不該讓空清單看起來像「你還沒記過病人」。
+ * 開錯書籤那一刻的畫面,和真的還沒建檔的畫面,現在必須長得不一樣。
+ *
+ * file:// 沒有 origin(location.origin 是 "null"),所以改用完整路徑 ——
+ * 路徑正是分辨「哪一份 checkout」的唯一線索,不截斷。 */
+function entryPointLabel() {
+  if (location.protocol === "file:") return `file:// 本機檔案 · ${decodeURIComponent(location.pathname)}`;
+  return location.origin;
+}
 
 // Dry Clinic #8:日期一律用「本地日曆日」。toISOString() 是 UTC,晚上開診
 // 時 visit/start date 會預設成明天(演練實測 08-11 晚顯示 08-12)。
@@ -7218,10 +7231,20 @@ function renderClinicalCases() {
   if (selectedCaseId && !clinicalCases.some((item) => item.id === selectedCaseId)) selectedCaseId = clinicalCases[0]?.id || "";
   if (!selectedCaseId && filtered.length) selectedCaseId = filtered[0].id;
   caseResultCount.textContent = `${filtered.length} cases`;
+  if (caseEntryPoint) caseEntryPoint.textContent = `病歷資料庫入口:${entryPointLabel()} —— 換網址開啟會看到另一個(互不相通的)資料庫。`;
   caseList.innerHTML = "";
 
   if (!filtered.length) {
-    caseList.innerHTML = `<div class="case-empty">尚未有病例。<br>先用 patient_code 建立第一筆。</div>`;
+    // 兩種「空」必須分開講:真的沒有病例 vs 搜尋沒命中。過去兩種都印
+    // 「尚未有病例」—— 打了搜尋字串卻被告知一筆都沒有,那是假話。
+    caseList.innerHTML = clinicalCases.length
+      ? `<div class="case-empty">搜尋沒有符合的病例。<br>這個入口目前共 ${clinicalCases.length} 筆,清空搜尋即可看到。</div>`
+      : `<div class="case-empty case-empty-entry">
+          <strong>這個入口目前有 0 筆病例</strong>
+          <div class="entry-point-line">目前入口:${escapeHtml(entryPointLabel())}</div>
+          <p>病歷存在瀏覽器裡,而且<strong>綁定開啟網址</strong>。file://、localhost、部署網址是三個互不相通的資料庫。如果你之前記過病例,很可能是開錯入口 —— 資料還在原來那個,沒有消失。</p>
+          <p>請改用你上次用的那個網址開啟;確定是第一次使用,就用 patient_code 建立第一筆。</p>
+        </div>`;
   } else {
     filtered.forEach((item) => {
       const button = document.createElement("button");
