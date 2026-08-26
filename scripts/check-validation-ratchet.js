@@ -118,6 +118,21 @@ const RATCHETED = [
     // pending——需要人工核對 HKBU 來源掃描頁後才能定案，不是我能猜的。
     doc: "data/imports/formula_doses/formula_dose_staging.json",
   },
+  {
+    key: "retired_id_references",
+    script: "scripts/validate-retired-id-references.js",
+    args: ["--json"],
+    extract: (out) => JSON.parse(out).defects,
+    detail: (out) => JSON.parse(out).by_code,
+    // 2026-08-26 加入:D21 記載「四退役 id 零殘留」但 herb_pairs 仍有 2 筆、
+    // D16 三個退役 pattern 被之後的 tdis/symptom 批次引用了 23 次 —— 一次性
+    // 驗證沒有 gate 撐著就會腐化。上述 25 筆已按 D16/D21 既有裁定表重導。
+    // 基線剩 10 = formula.bai_du_san:它被標 deprecated 卻無 deprecated_note、
+    // 無 DECISIONS 記錄,且 formula_canon_shortlist 還有同 id 的 active 副本
+    // (records[7])——敗毒散是否併入人參敗毒散是方劑同一性裁定,留給 Ting;
+    // 裁定後重導這 10 筆、把基線降到 0,然後照 point_ids 的前例畢業進 green。
+    doc: "DECISIONS.md D16/D21",
+  },
   // point_ids sat here temporarily (ceiling 72) while the extra-point line
   // backfilled the D2 ids. Done 2026-08-06 — it graduated into the blocking
   // `green` job in .github/workflows/validate.yml. That is the intended life

@@ -1,6 +1,6 @@
 {
   "note": "Defect-count ceiling per layer. CI fails if any count rises. Only ever lower this file — see scripts/check-validation-ratchet.js.",
-  "updated_at": "2026-08-24",
+  "updated_at": "2026-08-26",
   "rebaseline_history": [
     {
       "date": "2026-08-05",
@@ -63,6 +63,13 @@
         "unresolved_pinyin_or_herb_id": 1
       },
       "doc": "data/imports/formula_doses/formula_dose_staging.json"
+    },
+    "retired_id_references": {
+      "defects": 10,
+      "by_code": {
+        "formula.bai_du_san": 10
+      },
+      "doc": "DECISIONS.md D16/D21"
     }
   }
 }
