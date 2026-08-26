@@ -1,3 +1,13 @@
+# 2026-08-26 — Codex Conditions 呼吸病因 B40
+
+- **範圍**：精確修改 `cond.rsv_infection`、`cond.cough_variant_asthma`、`cond.hyperventilation_syndrome`；只補雙語 etiology、record sources 與對應 field provenance。RSV 沿用並增補既有 CDC/NCBI sources；既有正文、安全欄、acupuncture scope、中醫 relations、方劑與穴位未覆寫。
+- **數字**：`FULL_DETAIL_CANDIDATE 307→309`、`DETAIL_PARTIAL 198→196`、`SKELETON 0→0`；RSV `11→12/12` 且原已達 full gate，CVA/HVS 均 `10→12/12`；全庫缺 etiology `173→170`、缺 sources `157→155`；source entries `976→982`、有 record source 的卡 `348→350`。
+- **來源／臨床區分**：CDC、NIH/NLM NCBI Bookshelf 與 NHLBI/NAEPP Expert Panel；7 個唯一直接 URL 均 HTTP 200。內容區分 RSV 病毒傳播與小氣道阻塞機轉、CVA 作為須有氣喘證據的表型，以及 HVS 作為排除器質性與繼發性過度換氣後才成立的 dysfunctional breathing syndrome。
+- **驗證**：只變更 3 個指定 id 與允許欄位，其他 502 卡逐記錄不變；condition standard `505/505 clean`、build-data、relations、relation registry、ratchet、content-junk、7 URL reachability、generated data 與 `git diff --check` 均無新增 blocking defect。
+- **未解／下一步**：未把慢性咳嗽直接等同 CVA，也未把急促呼吸直接歸因焦慮；兩者仍需 biomedical differential。仍有 `196` 張 partial／`170` 張病因缺口；下一批可補睡眠低通氣或轉向高價值 GI cards，但須維持疾病特異來源。
+
+---
+
 # 2026-08-26 — Codex Conditions 常見心臟病因 B39
 
 - **範圍**：精確修改 `cond.left_ventricular_hypertrophy`、`cond.vasovagal_syncope`、`cond.takotsubo_cardiomyopathy`、`cond.mitral_regurgitation`；只補雙語 etiology、record sources 與對應 field provenance。既有摘要、病理、安全欄、acupuncture scope、中醫 disease/pattern relations、方劑與穴位未覆寫。

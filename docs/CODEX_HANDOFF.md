@@ -1,5 +1,13 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-26] Codex Handoff — Conditions respiratory etiologies B40
+
+- **Exact ids / fields**: `cond.rsv_infection`, `cond.cough_variant_asthma`, and `cond.hyperventilation_syndrome`; filled bilingual etiology, record-level sources, and matching field provenance only. RSV preserved and extended its existing CDC/NCBI source list; existing prose, safety fields, acupuncture scope, TCM relations, formulas, and acupoints were preserved.
+- **Measured delta**: maturity `307→309 FULL_DETAIL_CANDIDATE`, `198→196 DETAIL_PARTIAL`, `0→0 SKELETON`; RSV `11→12/12` while already passing the full gate, CVA and HVS each `10→12/12`; missing etiology `173→170`, missing sources `157→155`; source entries `976→982`, sourced records `348→350`.
+- **Evidence / distinctions**: CDC, NIH/NLM NCBI Bookshelf, and the NHLBI/NAEPP Expert Panel; all seven unique direct URLs returned HTTP 200. Distinguished RSV transmission and small-airway obstruction, CVA as an asthma phenotype requiring asthma evidence, and HVS as dysfunctional breathing diagnosed only after organic and secondary hyperventilation causes are excluded.
+- **Validation**: only the three exact ids and allowed field groups changed; the other 502 records remained equal. Condition standard `505/505 clean`, build-data, relations, relation registry, validation ratchet, content junk, seven-URL reachability, generated-data rebuild, and `git diff --check` produced no new blocking defect.
+- **Explicit unresolved / next line**: chronic cough was not equated automatically with CVA, and tachypnea was not attributed automatically to anxiety; both retain biomedical differential requirements. There remain 196 partial records and 170 etiology gaps; next use disease-specific sources for sleep hypoventilation or high-value GI cards.
+
 ## [2026-08-26] Codex Handoff — Conditions common cardiac etiologies B39
 
 - **Exact ids / fields**: `cond.left_ventricular_hypertrophy`, `cond.vasovagal_syncope`, `cond.takotsubo_cardiomyopathy`, and `cond.mitral_regurgitation`; filled only bilingual etiology, record-level sources, and matching field provenance. Existing summaries, pathology, safety fields, acupuncture scope, TCM disease/pattern relations, formulas, and acupoints were preserved.
