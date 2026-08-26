@@ -1,3 +1,24 @@
+# 2026-08-25 Antigravity — Task 9C (Generated Data / Build / Validator / CI Integrity Audit)
+
+- **工作內容**: 執行 AcuTing OS 全鏈路（Canonical Data → Generated Artifacts → Site Entrypoints → Validators → CI Workflows）唯讀架構審計。
+  - 正典與生成資料零變更：`data/**` canonicals、`data/generated/*` 生成檔、`.github/workflows/*` CI 配置 Byte-for-byte 0 異動。
+  - 負控回歸測試：內建 4 項啟動負控回歸測試（ID mismatch / extra ID / orphan validator / false-green validator）100% PASS。
+  - 領域與生成層盤點：掃描 12 個 canonical domains（8 個具生成層、4 個標記為 `NO_GENERATED_LAYER`）。
+  - 生成同步與沙盒重建成效：
+    - 掃描 15 個 generated artifacts。
+    - 核心領域 ID 同步率 100%（missing canonical IDs: 0 筆、extra generated IDs: 0 筆）。
+    - 沙盒確定性重建：14 個檔案 100% Byte-for-byte 完全一致；1 個檔案存在差異（`data/generated/entity_registry.json`，自 2026-07-22 未重建，實體數 4,621 vs 重建 7,323）。
+    - 網站消費層：12 個檔案由 `index.html` / `previsit.html` 透過 `<script>` 載入；3 個生成檔未被網站直接載入（含 `entity_registry.json` 與雙寫回滾對照之單體 `knowledge_data.js`）；缺檔引數: 0。
+  - 驗證器與 CI 覆蓋審計：
+    - 全庫共 94 支驗證器/檢查器腳本。
+    - CI 實際呼叫 (涵蓋 direct workflow step、`check-validation-ratchet.js` 棘輪與 caller runner): **63 支**。
+    - 孤立驗證器 (Orphan Validators): **31 支**（存在於 `scripts/` 但未被 CI 或 aggregator 呼叫）。
+    - 潛在 False-Green 統計: 27 支（含 NOTE tier、dashboard 與依賴外層解析 defect count 之腳本）。
+- **產出檔案**: `scripts/audit-generated-ci-integrity.js` / `docs/audits/GENERATED_CI_INTEGRITY_2026-08-25.md` / `data/audits/generated_ci_integrity_2026-08-25.json`。
+- **分支與狀態**: 推送至 `antigravity/task9c-generated-ci-integrity-audit`，任務交付並停下。
+
+---
+
 # 2026-08-25 深夜 — Task 8C 驗收通過並落地:方劑 exact_source_url 補齊,94%→97%(附一則編碼異常提醒)
 
 Task 8C(`antigravity/formula-fill-task8-source-url`，commit `128da48e`）延續同一套 HTTP 驗證方法補

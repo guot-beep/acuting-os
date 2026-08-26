@@ -262,33 +262,20 @@ missing on 219 record(s)」完全一樣——這份報告沒有提供任何新�
 
 ---
 
-## 🔥 Task 8：機械式缺口續填（Claude 到 2026-08-26 週三下午才會來驗收，這段時間先做這三項）
+## ⏳ Task 9C：Generated Data / Build / Validator / CI Integrity Audit（待驗收）
 
-Claude 這段時間暫停巡檢，Ting 會直接把這份指示貼給你、你持續做，等 Claude 週三下午回來再驗收落地。
-**照優先順序做，每做完一項就推一個獨立分支**（不要推到 `main`），三項都做完或時間用完就停。
-
-**A.（最優先）中藥 `safety_source_url`（缺 96 筆，267/363）**：這個欄位之前判定過「已到極限」，
-但那是用「照網址命名慣例猜」的舊方法判的——**Task 6 用 HTTP 200 實測驗證方劑網址,證明這個方法真的
-有效**（68%→94%，逐條打開驗證，抓到死鏈就留空）。這次中藥欄位用同一套方法重做：對每一味還缺的藥，
-查 CloudTCM 或 American Dragon 上是不是真的有這味藥的頁面，**每一條網址寫進去之前自己實際打開／
-用工具發送請求確認回應是 200 而不是 404**，確認不到真實頁面就留空，不要用命名規律硬猜。推到
-`antigravity/herb-fill-task8-safety-url` 分支。
-
-**B. 中藥 `modern_functions_en`（缺 22 筆，341/363）**：跟 Task 3 Round 2 同一套規則——只補真正
-空的格子，`modern_functions_zh` 每一條中文詞逐一對應翻成一個獨立英文詞，不要套模板、不要為了對齊
-長度砍中文。查不到某幾條的翻譯就跳過那張卡。推到 `antigravity/herb-fill-task8-modern-functions`
-分支。
-
-**C. 方劑 `exact_source_url`（缺 13 筆，210/223）**：跟 A 同樣的 HTTP 實測方法，補剩下的方劑網址
-缺口。推到 `antigravity/formula-fill-task8-source-url` 分支。
-
-**不要做**：`related_formulas`/`formula_family`(這兩個現在改由 Claude 直接判斷,不指派給你了)、
-`condition_tags_en`(維持不要碰)、任何需要「判斷這個引用是否支持這個主張」的工作(查無來源就留空,
-不要推測)。
-
-**每項做完**都跑 `build-data.js` + 對應的 `validate-*-standard.js`/`validate-*-quality-strict.js` +
-`check-validation-ratchet.js` + `validate-content-junk.js`，全部 PASS 才推，並補 `PROJECT_LOG.md`
-條目附改動筆數。Claude 週三下午會依照一貫的流程逐條查證（含實際打開你寫的網址、抽查來源）才落地。
+- **類型**: READ-ONLY Deterministic Infrastructure Audit（全庫 0 異動，僅盤點與驗證）
+- **分支**: `antigravity/task9c-generated-ci-integrity-audit`
+- **產出**: `scripts/audit-generated-ci-integrity.js` / `docs/audits/GENERATED_CI_INTEGRITY_2026-08-25.md` / `data/audits/generated_ci_integrity_2026-08-25.json`
+- **核心數據 (SSOT 直出)**:
+  - 負控回歸測試: 4/4 PASS
+  - Canonical Domains: 12 個（8 個 active 生成層, 4 個 `NO_GENERATED_LAYER`）
+  - Generated Artifacts: 15 個（14 個重建 100% Byte-Identical, 1 個 `entity_registry.json` 重建 Differs）
+  - Canonical-to-Generated ID Sync: 100% PASS（0 missing canonical IDs, 0 extra generated IDs）
+  - 網站消費審計: 12 個由站點載入, 3 個 `GENERATED_BUT_UNUSED`, 0 個 `SITE_EXPECTS_MISSING_FILE`
+  - 驗證器盤點: 全庫 94 支（CI 呼叫: **63 支**, 孤立未進 CI: **31 支**）
+  - CI 假綠控制流審計: 67 支 Fail-Closed, 27 支 Possible False-Green (含 NOTE tier/dashboard)
+  - 最高風險待檢修清單: 36 項已完整列於報告，未自行執行任何修改。
 
 ---
 
