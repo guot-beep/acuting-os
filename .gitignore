@@ -37,6 +37,8 @@ patient_exports/
 case_exports/
 *.bak
 *.tmp
+# 暫存工作目錄(*.tmp 只擋副檔名,擋不到 tmp/ 這種目錄)
+tmp/
 
 # Keep personal clinical data out of GitHub.
 data/clinical_cases/local/
