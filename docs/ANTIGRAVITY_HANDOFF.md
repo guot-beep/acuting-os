@@ -1,3 +1,39 @@
+## ✅ Task 10A Round 2：Legacy Namespace & Retired-ID Integrity Inventory（已完成結案）
+
+- **類型**: READ-ONLY Precision Measurement Inventory Audit（零主觀臨床/語意裁定，全庫 0 異動）
+- **分支**: `antigravity/task10a-legacy-namespace-retired-id-audit-round2`
+- **產出**: `scripts/audit-legacy-namespace-retired-id.js` / `data/audits/legacy_namespace_retired_id_2026-08-25.json` / `docs/audits/LEGACY_NAMESPACE_RETIRED_ID_2026-08-25.md`
+- **核心數據 (SSOT 直出)**:
+  - 命名空間分類: D11 正典診斷 **4** 個、舊診斷候選 **4** 個、非診斷實體 **29** 個、暫存與分類體系 **4** 個
+  - 舊診斷候選 ID: **164** 個獨立 ID（總出現 **712** 次，結構化關聯引用 **222** 處）
+  - Active → Deprecated 實質引用邊: **34** 處（已嚴格排除 `id`/`code` 宣告欄位）
+  - Active → Import Stub 實質引用邊: **0** 處
+  - `herb.qian_cao_gen`: deprecated 標註，Active 引用數 = 0（乾淨隔離，無臆測替換）
+  - UI 重複宇宙: 2 處 `MULTIPLE_NAMESPACES_RENDERED_AS_SAME_ENTITY_TYPE`（`js/knowledge.js`）
+  - 待裁定對照候選: **154** 個
+  - 回歸測試: 8/8 負控回歸測試全部 PASS
+  - 變更安全性: canonical/generated/workflow/relation diff = 0 bytes, C0 controls = 0, replacement chars = 0
+
+
+---
+
+## ✅ Task 9D Round 4：Unified Preflight / AI Change Safety Gate（已完成結案）
+
+- **類型**: READ-ONLY Unified Repository Safety Gate（零 canonical/generated/workflow 異動）
+- **主要產出**:
+  - 核心 Gate: `scripts/antigravity-preflight.js`
+  - 模組: `scripts/lib/preflight-canonical.js`, `preflight-generated-ci.js`, `preflight-git.js`, `preflight-hygiene.js`, `preflight-ratchet.js`, `preflight-sources.js`
+  - 帳本基線: `data/audits/antigravity_preflight_baseline.json`
+- **核心能力**:
+  - 全廣義依賴圖模型（Generalized Edge-based Graph: Input -> Builder -> Output -> Consumer）
+  - 泛型傳遞載入判定（TRANSITIVELY_BUNDLED_AND_LOADED, DIRECT_RUNTIME_LOADED, GENERATED_BUT_UNUSED）
+  - 缺失依賴硬失敗（SITE_EXPECTS_MISSING_FILE -> Hard Fail）
+  - Task 9A (6,241 參照/1,260 URLs), Task 9B (5 orphan refs/重名/別名衝突), Task 9C (7+1 generated sync/validator taxonomy/sandbox rebuild) 完整整合
+  - 債務 Ratchet 防回退機制與 Fail-closed Rebaseline 判定
+  - 13/13 負控回歸測試 100% 通過
+
+---
+
 # Antigravity Task Queue — 每次來先讀這份，做完更新這份
 
 這份是「現在該做什麼」，不是報告。報告照舊寫回 `PROJECT_LOG.md` 置頂（`docs/HERB_FILL_DISPATCH.md` 的慣例）。
