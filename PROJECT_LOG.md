@@ -1,3 +1,35 @@
+# 2026-08-26 深夜 — 「4 筆退役重複卡比照 D22 處理」查證結果:資料早就處理完了,是 gate 的假警報,已修 gate
+
+Ting 指示「那 4 筆退役重複卡比照 D22 處理」，指的是前一則「22 筆命名衝突續清」裡標成
+「⏸️ 留給 Ting 確認」的那 4 對：`mo_han_lian`/`han_lian_cao`、`hai_piao_xiao`/`wu_zei_gu`、
+`qian_cao`/`qian_cao_gen`、`bei_sha_shen`/`sha_shen`。查了才發現**那則記錄的框架本身是錯的**——
+這 4 對不是「還沒處理、等裁定」，是**早在 2026-08-14 就已經照 D21（SOL 鑑定四組中藥重複卡 +
+Ting 裁定「四組照建議、沙參方案 A」）完整處理過了**：4 張退役卡各自都有完整的 `deprecated_note_zh`，
+逐條記載遷移了什麼欄位、刻意不遷移什麼欄位（含理由）、以及正名已經併入哪張正典卡的 `aliases_zh`
+——跟 D22（敗毒散）是同一套手法，只是早兩週做的。
+
+**真正的問題是新蓋的 preflight gate（Task 9B `preflight-canonical.js`）不認得已經正確退役的紀錄**：
+`auditAliasCollisions()` 建「正典名稱」對照表時，不管一張卡是不是 `deprecated`，一律把它的
+`name_zh`/`name_en` 當成活的正典名稱在用。於是退役卡自己的舊名字（依然存在於它自己身上）跟
+正典卡依 D21 裁定合法吸收進來的別名「互撞」，被判成新的命名衝突——4 對全部命中，逐一核對
+`review_status`/`deprecated_note_zh` 確認每一對「正典名稱擁有者」都剛好是退役那一邊，不是巧合。
+
+**修法**：在 `scripts/lib/preflight-canonical.js` 建正典名稱對照表時，跳過「`review_status`
+為 `deprecated` 且 `deprecated_note_zh` 非空」的記錄——只豁免有完整稽核紀錄的退役卡，沒有
+`deprecated_note_zh` 的退役卡（等於沒交代清楚）依然會被抓。驗證沒有豁免過頭：`fang_ji`/
+`han_fang_ji`、`mu_tong`/`chuan_mu_tong` 這兩組（兩邊都是 active、還沒有 Ting 裁定）改完之後
+依然正確觸發。
+
+Hard Failures：15 → 11（這 4 筆消失，其餘 11 筆跟這次改動無關，含既有的 fang_ji/mu_tong 併卡
+懸案、米酒/烏頭別名歧義、方劑劑型撞名，留待下一輪）。全套驗證器（`build-data`／
+`validate-herb-standard`／`validate-formula-standard`／`check-validation-ratchet`／
+`validate-content-junk`／`test-branch-mergeable`）PASS，只改了 `preflight-canonical.js` 一個
+檔案 7 行，`data/herbs/herb_canon_shortlist.json` 一個位元組沒動——這次不需要任何 D22 式的資料
+遷移，因為遷移早就做完了。已在 rebase 過 `origin/main` 最新 tip 後重新跑過一次全套驗證再推，
+推完用全新 clone（`22277275`）獨立複核過一次，結果一致。
+
+---
+
 # 2026-08-26 深夜 — 防己/木通兩組安全警語補齊:查證兩組品種辨識沒有把毒性品種標成安全,純新增警語
 
 Ting 要求先查證命名衝突裡風險最高的兩組（防己/漢防己、木通/川木通），查完是好消息：**兩組現有的
