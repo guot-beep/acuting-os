@@ -203,6 +203,14 @@ treatment-plan 或 graph 工作都是好消息——見附錄 A。
 
 ## 4. 執行面：CI 覆蓋（這裡的分支差異最危險）
 
+> **更正（2026-08-26）**：本節初版把「經由 `check-validation-ratchet.js` 間接
+> 進 CI」的 validator 全算成未接線——ratchet 本身在 CI 裡，註冊進它的
+> RATCHETED 表就等於接線。conditions／patterns／tdis／symptoms／naming／
+> encoding／formula_correctness／formula_dose_staging 八層其實**都有 gate**，
+> 且前五層基線為 0。量測腳本已修（`ciLabel` 會標 `yes (via ratchet)`），
+> main 上重跑的正確數字是 **58/74 (78%) 已接、16 支未接**，未接的集中在
+> herb／formula quality 線。下方初版文字保留作歷史，數字以重跑為準。
+
 | | main | codex |
 |---|---|---|
 | validator / test 腳本 | 72 | 70 |

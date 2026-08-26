@@ -84,9 +84,25 @@ const CI_SCRIPTS = new Set();
       for (const m of txt.matchAll(/node\s+scripts\/([\w.-]+\.js)/g)) CI_SCRIPTS.add(m[1]);
     }
   }
+  // 2026-08-26 correction: validators registered in check-validation-ratchet's
+  // RATCHETED table run in CI THROUGH the ratchet — grepping workflows for
+  // direct `node scripts/...` calls misses that indirection, and this audit's
+  // first run wrongly reported conditions/patterns/tdis/symptoms/naming as
+  // unenforced when all five were ratcheted at baseline 0.
+  const ratchet = path.join(ROOT, "scripts", "check-validation-ratchet.js");
+  if (CI_SCRIPTS.has("check-validation-ratchet.js") && fs.existsSync(ratchet)) {
+    const txt = fs.readFileSync(ratchet, "utf8");
+    for (const m of txt.matchAll(/script:\s*"scripts\/([\w.-]+\.js)"/g)) CI_SCRIPTS.add(m[1] + " (via ratchet)");
+  }
 }
 function ciHas(name) {
-  return Boolean(name) && CI_SCRIPTS.has(name);
+  return Boolean(name) && (CI_SCRIPTS.has(name) || CI_SCRIPTS.has(name + " (via ratchet)"));
+}
+function ciLabel(name) {
+  if (!name) return "NO";
+  if (CI_SCRIPTS.has(name)) return "yes";
+  if (CI_SCRIPTS.has(name + " (via ratchet)")) return "yes (via ratchet)";
+  return "NO";
 }
 
 // ---------------------------------------------------------------- load core
@@ -197,7 +213,7 @@ say();
     ["canonical records carrying an `id`", totalIds],
     ["ids containing CJK characters (must be 0)", cjkIds + (cjkSamples.length ? ` — e.g. ${cjkSamples.join(", ")}` : "")],
     ["point id manifest present", manifest ? `yes (${manifestIds} ids)` : "MISSING"],
-    ["validate-point-ids.js in CI", ciHas("validate-point-ids.js") ? "yes" : "NO"],
+    ["validate-point-ids.js in CI", ciLabel("validate-point-ids.js")],
   ], cjkIds === 0
     ? "no measurable violation in canonical files"
     : "CJK in an id is D10 rule 2 — an encoding bug waiting to happen");
@@ -239,7 +255,7 @@ say();
     ["same id in TWO source files (expected — one point, two catalogues)", crossFile.size],
     ["same id twice WITHIN one file (a real collision)", sameFile.size],
     ...Object.entries(pre).map(([k, v]) => [`  prefix ${k}`, v]),
-    ["validate-point-ids.js in CI", ciHas("validate-point-ids.js") ? "yes" : "NO"],
+    ["validate-point-ids.js in CI", ciLabel("validate-point-ids.js")],
   ]);
 }
 
@@ -266,7 +282,7 @@ say();
     ["herbs", h.total],
     ["  name_zh shared by >1 herb", h.collided],
     ["  of those, NOT `__`-qualified", h.unqualified.length],
-    ["validate-naming.js in CI", ciHas("validate-naming.js") ? "yes" : "NO — the rule is unenforced"],
+    ["validate-naming.js in CI", ciLabel("validate-naming.js")],
   ], samples.length ? ["unqualified collisions: " + samples.join(" · ")] : null);
 }
 
@@ -328,7 +344,7 @@ function readText(rel) {
     ["point ids in manifest", manifestIds.size],
     ["manifest ids missing from live data (hard delete)", vanished.length],
     ...Object.entries(dep).map(([ns, n]) => [`deprecated records in ${ns}`, n]),
-    ["validate-point-ids.js in CI (enforces manifest)", ciHas("validate-point-ids.js") ? "yes" : "NO"],
+    ["validate-point-ids.js in CI (enforces manifest)", ciLabel("validate-point-ids.js")],
   ], vanished.length ? `vanished sample: ${vanished.slice(0, 3).join(", ")}` : null);
 }
 
@@ -426,7 +442,7 @@ function readText(rel) {
     ["  resolving in registry ∪ library", pct(linkResolved, linkTotal)],
     ["conditions still carrying raw tcm_patterns blobs", pct(condWithBlobs, COND.length)],
     ["  raw blobs not yet lifted into a pattern id", blobTotal],
-    ["validate-condition-standard.js (C6 enforces this) in CI", ciHas("validate-condition-standard.js") ? "yes" : "NO — C6 is unenforced"],
+    ["validate-condition-standard.js (C6 enforces this) in CI", ciLabel("validate-condition-standard.js")],
   ]);
 }
 
@@ -682,8 +698,8 @@ function readText(rel) {
     ["active library cards NOT registered at all", unregistered.length],
     ["active library cards registered as level=category", categoryCards.length],
     ["registry-clinical ids with no active library card", orphanReg.length],
-    ["validate-pattern-standard.js in CI", ciHas("validate-pattern-standard.js") ? "yes" : "NO"],
-    ["validate-pattern-registry.js in CI", ciHas("validate-pattern-registry.js") ? "yes" : "NO"],
+    ["validate-pattern-standard.js in CI", ciLabel("validate-pattern-standard.js")],
+    ["validate-pattern-registry.js in CI", ciLabel("validate-pattern-registry.js")],
   ], [
     unregistered.length
       ? `UNREGISTERED (a real D10 defect): ${unregistered.slice(0, 3).map((p) => p.id).join(", ")}`
@@ -784,7 +800,7 @@ function countIds(rel) {
     ["  reference_range without its own source", rangeNoSource],
     ["  numeric reference_range without scope", rangeNoScope],
     ["records carrying instrument_source", withInstrument],
-    ["validate-metric-interpretation.js in CI", ciHas("validate-metric-interpretation.js") ? "yes" : "NO"],
+    ["validate-metric-interpretation.js in CI", ciLabel("validate-metric-interpretation.js")],
   ], "a gate field that answers two questions stops gating — this is the one decision whose whole point is the validator");
 }
 
@@ -822,7 +838,7 @@ function countIds(rel) {
     ...rows,
     ["retired-id references left outside their own record", residue.length],
     ...residue.slice(0, 6).map((r) => ["  " + r, ""]),
-    ["validate-herb-standard.js in CI", ciHas("validate-herb-standard.js") ? "yes" : "NO"],
+    ["validate-herb-standard.js in CI", ciLabel("validate-herb-standard.js")],
   ]);
 }
 
@@ -830,8 +846,8 @@ function countIds(rel) {
 {
   const all = fs.readdirSync(path.join(ROOT, "scripts"))
     .filter((f) => /^(validate|test)-.*\.js$/.test(f));
-  const inCi = all.filter((f) => CI_SCRIPTS.has(f));
-  const notInCi = all.filter((f) => !CI_SCRIPTS.has(f));
+  const inCi = all.filter((f) => ciHas(f));
+  const notInCi = all.filter((f) => !ciHas(f));
   record("CI", "Enforcement coverage (not a decision — the thing that keeps them true)", [
     ["validator/test scripts on disk", all.length],
     ["wired into .github/workflows", pct(inCi.length, all.length)],
