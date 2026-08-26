@@ -1,5 +1,13 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-25] Codex Handoff — Conditions high-risk cardiopulmonary etiologies/infection boundary B34
+
+- **Exact ids / fields**: `cond.aortic_dissection`, `cond.infective_endocarditis`, `cond.orthostatic_hypotension`, `cond.pertussis`, and `cond.pulmonary_hypertension`; filled bilingual etiology on all five, record sources on the first four, the previously empty acupuncture scope only on pertussis, and corresponding field provenance. Existing scope, red flags, risk factors, pathology, relations, formulas, and acupoints were preserved.
+- **Measured delta**: maturity `283→287 FULL_DETAIL_CANDIDATE`, `222→218 DETAIL_PARTIAL`, `0→0 SKELETON`; card scores respectively `9→11`, `10→12`, `10→12`, `8→12`, and `11→12`; missing etiology `198→193`, missing scope `59→58`; condition source entries `926→935`, records with record-level sources `324→328`.
+- **Evidence / clinical distinctions**: NIH/NLM MedlinePlus, NIH/NHLBI, and CDC; all 10 direct URLs returned HTTP 200. Distinguished structural aortic emergency, bloodstream pathogen plus valve/device risks in infective endocarditis, neurogenic versus non-neurogenic orthostatic hypotension, contagious pertussis with infant apnea risk, and the five etiologic groups of pulmonary hypertension.
+- **Validation**: 21 allowed field groups changed and the other 500 records remained equal; condition standard `505/505 clean`, build-data, relations, relation registry, validation ratchet, content junk, URL reachability, generated-data rebuild, and `git diff --check` produced no new blocking defect.
+- **Explicit unresolved / next line**: `cond.aortic_dissection` remains partial at score 11. The existing PC6/electroacupuncture scope on `cond.orthostatic_hypotension` explicitly lacks verified primary-source provenance and remains for Ting RV1; no acupuncture-evidence status was promoted.
+
 ## [2026-08-25] Codex Handoff — Conditions common respiratory/peripheral vascular Biomedicine B33
 
 - **Exact ids / fields**: `cond.common_cold`, `cond.chronic_sinusitis`, `cond.post_viral_cough`, `cond.varicose_veins`, and `cond.poor_circulation`; filled bilingual summary, western context, structured risk factors, acupuncture scope, record sources, and field provenance. Existing etiology, western pathology, red flags, TCM patterns, formulas, acupoints, ids, schema, and the other 500 records were preserved.

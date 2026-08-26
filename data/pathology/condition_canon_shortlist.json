@@ -84838,11 +84838,35 @@
    ]
   },
   {
-   "id": "cond.pertussis",
-   "entity_type": "biomedical_condition",
-   "name_zh": "百日咳",
-   "name_en": "Pertussis",
-   "category": "respiratory",
+  "id": "cond.pertussis",
+  "entity_type": "biomedical_condition",
+  "name_zh": "百日咳",
+  "name_en": "Pertussis",
+  "etiology_zh": "百日咳由 Bordetella pertussis 感染引起，主要經感染者的呼吸道、口腔或鼻腔分泌物傳播。細菌附著於呼吸道上皮纖毛並產生毒素，使纖毛功能受抑、呼吸道發炎及分泌物清除受阻，形成由卡他期進展至陣發性咳嗽期的病程。",
+  "etiology_en": "Pertussis is caused by infection with Bordetella pertussis and is transmitted mainly by respiratory, oral, or nasal secretions from an infected person. The bacteria attach to respiratory epithelial cilia and produce toxins that impair ciliary function, inflame the respiratory tract, and interfere with secretion clearance, producing progression from the catarrhal stage to paroxysmal cough.",
+  "sources": [
+   "https://www.cdc.gov/pinkbook/hcp/table-of-contents/chapter-16-pertussis.html",
+   "https://www.cdc.gov/infection-control/hcp/healthcare-personnel-epidemiology-control/pertussis.html",
+   "https://www.cdc.gov/pertussis/signs-symptoms/index.html",
+   "https://www.cdc.gov/pertussis/hcp/clinical-care/"
+  ],
+  "acupuncture_scope_zh": {
+   "can_treat": "百日咳是具傳染性的細菌性疾病；針灸不能清除病原、縮短傳染期或取代抗生素、檢驗與接觸者處置。僅在病人完成適當感染管制、病況穩定且醫療計畫已建立後，才可考慮咳嗽相關不適的輔助照護。",
+   "precautions": "嬰兒呼吸暫停、發紺或餵食困難，以及任何年齡的呼吸困難、持續缺氧、抽搐、意識改變或肺炎徵象時不施行常規針灸，立即緊急醫療評估。",
+   "co_management": "與基層醫療／兒科及公衛單位協作，確認檢驗、抗生素時機、隔離／傳染期與高風險接觸者預防；抗生素或其他處方藥的停用／調整須先聯絡並諮詢原處方醫師。",
+   "evidence": "unknown",
+   "source": "https://www.cdc.gov/pertussis/hcp/clinical-care/",
+   "note": "本批未取得百日咳之病種特異針灸療效指引；此欄僅界定感染管制、醫療治療與輔助照護邊界。"
+  },
+  "acupuncture_scope_en": {
+   "can_treat": "Pertussis is a contagious bacterial disease. Acupuncture cannot eradicate the pathogen, shorten contagiousness, or replace antibiotics, testing, and contact management. Only after appropriate infection-control measures, clinical stability, and a medical plan are established may adjunctive support for cough-related discomfort be considered.",
+   "precautions": "Do not provide routine acupuncture for apnea, cyanosis, or feeding difficulty in an infant, or for dyspnea, persistent hypoxemia, seizure, altered consciousness, or signs of pneumonia at any age; obtain emergency medical assessment.",
+   "co_management": "Coordinate with primary care/pediatrics and public health to confirm testing, antibiotic timing, isolation/contagious period, and prophylaxis for high-risk contacts; contact and consult the prescriber before stopping or adjusting antibiotics or another prescription.",
+   "evidence": "unknown",
+   "source": "https://www.cdc.gov/pertussis/hcp/clinical-care/",
+   "note": "No condition-specific acupuncture efficacy guideline for pertussis was collected in this batch; this field defines infection-control, medical-treatment, and adjunctive-care boundaries only."
+  },
+  "category": "respiratory",
    "icd_hint": "A37.90",
    "aliases_zh": [
     "百日嗽"
@@ -84957,9 +84981,25 @@
     "aliases_zh": [
      "Common usage — colloquial Chinese/English synonym"
     ],
-    "aliases_en": [
-     "Common usage — colloquial Chinese/English synonym"
-    ]
+   "aliases_en": [
+    "Common usage — colloquial Chinese/English synonym"
+   ],
+   "etiology_zh": [
+    "https://www.cdc.gov/pinkbook/hcp/table-of-contents/chapter-16-pertussis.html",
+    "https://www.cdc.gov/infection-control/hcp/healthcare-personnel-epidemiology-control/pertussis.html"
+   ],
+   "etiology_en": [
+    "https://www.cdc.gov/pinkbook/hcp/table-of-contents/chapter-16-pertussis.html",
+    "https://www.cdc.gov/infection-control/hcp/healthcare-personnel-epidemiology-control/pertussis.html"
+   ],
+   "acupuncture_scope_zh": [
+    "https://www.cdc.gov/pertussis/signs-symptoms/index.html",
+    "https://www.cdc.gov/pertussis/hcp/clinical-care/"
+   ],
+   "acupuncture_scope_en": [
+    "https://www.cdc.gov/pertussis/signs-symptoms/index.html",
+    "https://www.cdc.gov/pertussis/hcp/clinical-care/"
+   ]
    }
   },
   {
@@ -85183,11 +85223,13 @@
    "source_type": "sourced_research_pack"
   },
   {
-   "id": "cond.pulmonary_hypertension",
-   "entity_type": "biomedical_condition",
-   "name_zh": "肺動脈高壓",
-   "name_en": "Pulmonary Hypertension",
-   "category": "respiratory",
+  "id": "cond.pulmonary_hypertension",
+  "entity_type": "biomedical_condition",
+  "name_zh": "肺動脈高壓",
+  "name_en": "Pulmonary Hypertension",
+  "etiology_zh": "肺高壓是多病因血流動力學狀態，不應只視為單一肺動脈疾病。病因分組包括肺動脈高壓（可為特發性、遺傳性或藥物／疾病相關）、左心疾病、慢性肺病或低氧、慢性血栓栓塞／肺動脈阻塞，以及機轉不明或多重因素。病因不同會直接改變治療，須由心肺專科完成分型。",
+  "etiology_en": "Pulmonary hypertension is a multicausal hemodynamic state, not a single pulmonary-artery disease. Etiologic groups include pulmonary arterial hypertension (idiopathic, heritable, or associated with medicines/other disease), left-heart disease, chronic lung disease or hypoxia, chronic thromboembolism/pulmonary-artery obstruction, and unclear or multifactorial mechanisms. Because treatment depends on the cause, classification belongs with cardiopulmonary specialists.",
+  "category": "respiratory",
    "icd_hint": "I27.20",
    "aliases_zh": [],
    "aliases_en": [],
@@ -85402,9 +85444,15 @@
     "acupuncture_scope_zh": [
      "AcuTing OS Disease Knowledge Research Pack — CR-010 Batch 02"
     ],
-    "acupuncture_scope_en": [
-     "AcuTing OS Disease Knowledge Research Pack — CR-010 Batch 02"
-    ]
+   "acupuncture_scope_en": [
+    "AcuTing OS Disease Knowledge Research Pack — CR-010 Batch 02"
+   ],
+   "etiology_zh": [
+    "NHLBI — Pulmonary Hypertension - Causes and Risk Factors: https://www.nhlbi.nih.gov/health/pulmonary-hypertension/causes"
+   ],
+   "etiology_en": [
+    "NHLBI — Pulmonary Hypertension - Causes and Risk Factors: https://www.nhlbi.nih.gov/health/pulmonary-hypertension/causes"
+   ]
    },
    "content_source": [
     "nhlbi_overview",
@@ -99484,11 +99532,17 @@
    ]
   },
   {
-   "id": "cond.infective_endocarditis",
-   "entity_type": "biomedical_condition",
-   "name_zh": "感染性心內膜炎",
-   "name_en": "Infective Endocarditis",
-   "category": "cardio",
+  "id": "cond.infective_endocarditis",
+  "entity_type": "biomedical_condition",
+  "name_zh": "感染性心內膜炎",
+  "name_en": "Infective Endocarditis",
+  "etiology_zh": "感染性心內膜炎多由細菌、較少由真菌進入血流後，附著於受損或異常的心內膜、心瓣膜或心內裝置並形成感染。瓣膜病、先天性心臟病、人工瓣膜／節律裝置、既往心內膜炎、注射藥物、長期中心靜脈導管、口腔衛生不佳及免疫功能低下會提高風險。",
+  "etiology_en": "Infective endocarditis usually results when bacteria, or less often fungi, enter the bloodstream and attach to damaged or abnormal endocardium, heart valves, or intracardiac devices. Valve disease, congenital heart disease, prosthetic valves or rhythm devices, prior endocarditis, injection drug use, long-term central venous access, poor oral health, and immunocompromise increase risk.",
+  "sources": [
+   "https://medlineplus.gov/endocarditis.html",
+   "https://medlineplus.gov/ency/article/001098.htm"
+  ],
+  "category": "cardio",
    "icd_hint": "I33.0",
    "aliases_zh": [
     "細菌性心內膜炎"
@@ -99625,9 +99679,17 @@
     "acupuncture_scope_zh": [
      "Clinical judgment — scope-of-practice inference; no acupuncture-specific guideline/RCT source found"
     ],
-    "acupuncture_scope_en": [
-     "Clinical judgment — scope-of-practice inference; no acupuncture-specific guideline/RCT source found"
-    ]
+   "acupuncture_scope_en": [
+    "Clinical judgment — scope-of-practice inference; no acupuncture-specific guideline/RCT source found"
+   ],
+   "etiology_zh": [
+    "https://medlineplus.gov/endocarditis.html",
+    "https://medlineplus.gov/ency/article/001098.htm"
+   ],
+   "etiology_en": [
+    "https://medlineplus.gov/endocarditis.html",
+    "https://medlineplus.gov/ency/article/001098.htm"
+   ]
    }
   },
   {
@@ -100359,11 +100421,16 @@
    }
   },
   {
-   "id": "cond.aortic_dissection",
-   "entity_type": "biomedical_condition",
-   "name_zh": "主動脈剝離",
-   "name_en": "Aortic Dissection",
-   "category": "cardio",
+  "id": "cond.aortic_dissection",
+  "entity_type": "biomedical_condition",
+  "name_zh": "主動脈剝離",
+  "name_en": "Aortic Dissection",
+  "etiology_zh": "主動脈剝離始於主動脈內膜撕裂或壁層受損，使血液進入中膜並沿壁層分離。長期高血壓、年齡增加與粥樣硬化是常見背景；雙葉主動脈瓣、主動脈縮窄、Marfan／Ehlers-Danlos 等結締組織疾病、胸部鈍傷、心臟或主動脈手術／介入、妊娠與動脈炎亦可增加風險。",
+  "etiology_en": "Aortic dissection begins with an intimal tear or injury to the aortic wall that allows blood to enter the media and separate the wall layers. Chronic hypertension, increasing age, and atherosclerosis are common backgrounds; bicuspid aortic valve, coarctation, connective-tissue disorders such as Marfan or Ehlers-Danlos syndrome, blunt chest trauma, cardiac/aortic procedures, pregnancy, and arteritis can also increase risk.",
+  "sources": [
+   "https://www.medlineplus.gov/ency/article/000181.htm"
+  ],
+  "category": "cardio",
    "icd_hint": "I71.00",
    "aliases_zh": [],
    "aliases_en": [],
@@ -100491,9 +100558,15 @@
     "acupuncture_scope_zh": [
      "Clinical judgment — scope-of-practice inference; no acupuncture-specific guideline/RCT source found"
     ],
-    "acupuncture_scope_en": [
-     "Clinical judgment — scope-of-practice inference; no acupuncture-specific guideline/RCT source found"
-    ]
+   "acupuncture_scope_en": [
+    "Clinical judgment — scope-of-practice inference; no acupuncture-specific guideline/RCT source found"
+   ],
+   "etiology_zh": [
+    "https://www.medlineplus.gov/ency/article/000181.htm"
+   ],
+   "etiology_en": [
+    "https://www.medlineplus.gov/ency/article/000181.htm"
+   ]
    }
   },
   {
@@ -101718,11 +101791,17 @@
    ]
   },
   {
-   "id": "cond.orthostatic_hypotension",
-   "entity_type": "biomedical_condition",
-   "name_zh": "姿勢性低血壓",
-   "name_en": "Orthostatic Hypotension",
-   "category": "cardio",
+  "id": "cond.orthostatic_hypotension",
+  "entity_type": "biomedical_condition",
+  "name_zh": "姿勢性低血壓",
+  "name_en": "Orthostatic Hypotension",
+  "etiology_zh": "姿勢性低血壓源於站立後重力性血液下移時，心率與血管收縮等代償不足。神經性類型由自主神經功能障礙造成，可見於 Parkinson disease、多系統萎縮、Lewy body dementia、糖尿病自主神經病變等；非神經性類型常與低血容量、心臟病、高齡、酒精或血管擴張劑、利尿劑、部分抗精神病／抗憂鬱藥等有關。",
+  "etiology_en": "Orthostatic hypotension results when compensatory heart-rate and vasoconstrictor responses are insufficient after gravity shifts blood downward on standing. Neurogenic forms reflect autonomic dysfunction and may accompany Parkinson disease, multiple system atrophy, dementia with Lewy bodies, or diabetic autonomic neuropathy. Non-neurogenic forms commonly relate to low blood volume, heart disease, advanced age, alcohol, vasodilators, diuretics, or some antipsychotic/antidepressant medicines.",
+  "sources": [
+   "https://medlineplus.gov/genetics/condition/orthostatic-hypotension/",
+   "https://www.nhlbi.nih.gov/health/low-blood-pressure"
+  ],
+  "category": "cardio",
    "icd_hint": "I95.1",
    "aliases_zh": [],
    "aliases_en": [],
@@ -101841,9 +101920,17 @@
     "acupuncture_scope_zh": [
      "Search-aggregated preliminary reports of electroacupuncture at PC6 for orthostatic intolerance — not a verified primary source, flag for Ting to source-check"
     ],
-    "acupuncture_scope_en": [
-     "Search-aggregated preliminary reports of electroacupuncture at PC6 for orthostatic intolerance — not a verified primary source, flag for Ting to source-check"
-    ]
+   "acupuncture_scope_en": [
+    "Search-aggregated preliminary reports of electroacupuncture at PC6 for orthostatic intolerance — not a verified primary source, flag for Ting to source-check"
+   ],
+   "etiology_zh": [
+    "https://medlineplus.gov/genetics/condition/orthostatic-hypotension/",
+    "https://www.nhlbi.nih.gov/health/low-blood-pressure"
+   ],
+   "etiology_en": [
+    "https://medlineplus.gov/genetics/condition/orthostatic-hypotension/",
+    "https://www.nhlbi.nih.gov/health/low-blood-pressure"
+   ]
    },
    "acupuncture_scope_zh": {
     "can_treat": "初步研究提示針刺內關（PC6）等穴位可能有助改善部分患者姿勢性不耐受症狀，可作為輔助支持，但證據仍屬初步",

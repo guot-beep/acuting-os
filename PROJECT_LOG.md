@@ -1,3 +1,13 @@
+# 2026-08-25 — Codex Conditions 高風險心肺病因／感染邊界 B34
+
+- **範圍**：精確修改 `cond.aortic_dissection`、`cond.infective_endocarditis`、`cond.orthostatic_hypotension`、`cond.pertussis`、`cond.pulmonary_hypertension`；五卡補雙語 etiology，前四卡補 record sources，僅百日咳補原空白 acupuncture scope，並補相應 field provenance。既有 scope、red flags、risk factors、pathology、relations、方劑與穴位未覆寫。
+- **數字**：`FULL_DETAIL_CANDIDATE 283→287`、`DETAIL_PARTIAL 222→218`、`SKELETON 0→0`；卡片分數依序 `9→11`、`10→12`、`10→12`、`8→12`、`11→12`；全庫缺 etiology `198→193`、缺 scope `59→58`；condition source entries `926→935`、有 record source 的卡 `324→328`。
+- **來源／臨床邊界**：NIH/NLM MedlinePlus、NIH/NHLBI 與 CDC；10 個直接 URL 均 HTTP 200。區分主動脈剝離的結構性急症、感染性心內膜炎的血流病原與瓣膜／裝置風險、神經源性與非神經源性體位性低血壓、百日咳的傳染性與嬰兒呼吸暫停，以及肺高壓的五組病因。
+- **驗證**：共 `21` 個允許欄位群變更、其餘 500 卡逐記錄不變；condition standard `505/505 clean`、build-data、relations、relation registry、ratchet、content-junk、URL reachability、generated data 與 `git diff --check` 均無新增 blocking defect。
+- **未解／下一步**：`aortic_dissection` 目前分數 11，仍屬 partial；`orthostatic_hypotension` 既有 PC6／電針 scope 的 provenance 明載未完成 primary-source verification，保留供 Ting RV1，未提升任何針灸療效證據等級。
+
+---
+
 # 2026-08-25 — Codex Conditions 常見呼吸／周邊血管 Biomedicine 完整化 B33
 
 - **範圍**：只補 `cond.common_cold`、`cond.chronic_sinusitis`、`cond.post_viral_cough`、`cond.varicose_veins`、`cond.poor_circulation` 的雙語 summary、western context、結構化 risk factors、acupuncture scope、sources 與 field provenance；既有 etiology、western pathology、red flags、TCM patterns、方劑、穴位、ids 與 schema 未改。
