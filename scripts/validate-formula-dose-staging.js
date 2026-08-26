@@ -47,8 +47,8 @@ for (const [recordIndex, record] of (staging.records || []).entries()) {
   // 都是 herb.ban_xia）——這種情況 herb_id 已經是可信連結（staging 逐筆自己
   // 填的，不是本次新增），純 pinyin 字串比對會誤判成查無此藥。herb_id 為
   // null（dose_status=..._herb_id_pending）的條目不受影響，仍然照舊被抓——
-  // 那才是真正待解的連結（如 Zhu Ye／竹葉 vs 該方組成的 Dan Zhu Ye／淡竹葉，
-  // 兩者是藥典裡不同的藥，需要人工核對來源後才能定案）。
+  // 那才是真正待解的連結。(2026-08-26 D26:銀翹散 Zhu Ye 案已結——竹葉與
+  // 淡竹葉是兩味藥,正典以淡竹葉為最優選、竹葉列 is_alternate,staging 列忠實轉錄。)
   const canonicalHerbIds = new Set(
     (canonicalFormula?.composition || []).map((component) => component.herb_id).filter(Boolean)
   );

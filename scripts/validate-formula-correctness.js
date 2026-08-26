@@ -104,7 +104,10 @@ for (const f of formulas) {
   // js/knowledge.js:2555 的比較表渲染已經用同一個排除規則；100% 的括號記法
   // 條目（83 例）都帶著這個欄位。四君子湯「4 味」與八珍湯「8 味」原本因為
   // 這條替代註記被誤判成 5/9 味——不是資料錯，是這支驗證器沒排除替代項。
-  const realCount = comp.filter((c) => !c.is_alternate).length;
+  // D27(2026-08-26):is_guide 藥引列同樣不計入方名味數——四神丸的薑棗是
+  // 製備藥引,方名「四神」只指本體四味。藥引仍在 composition 裡(保留
+  // herb 連結與交互檢查),只是不參與這條計數。
+  const realCount = comp.filter((c) => !c.is_alternate && !c.is_guide).length;
   const expect = NAME_COUNT[String(f.name_zh || "").trim()];
   if (expect && realCount !== expect) {
     add("ERROR", f, "wrong-herb-count", `方名表示 ${expect} 味，實際 ${realCount} 味（不含替代註記）`);
