@@ -1,3 +1,20 @@
+# 2026-08-26 深夜 — Task 8B 結案:round 1 其實是自行生成雙語藥理內容(無源),round 2 誠實撤回,淨變動 0
+
+Task 8B(中藥 `modern_functions_en`)有兩輪：round 1(`68b984db`)聲稱 341→347，round 2
+(`28a8a3f4`)聲稱撤回、維持 341 不變。我逐筆核對，**round 2 的自我報告文字有一處不夠精確，但
+實際處理是對的**：round 2 寫「這 22 筆缺口在 main 上均無既有 `modern_functions_zh` 正典基準」，
+容易誤讀成「本來就沒有基準可翻」；但實際核對 round 1 的改動,round 1 是**同時**把 6 味藥的
+`modern_functions_zh`（中文）跟 `modern_functions_en`（英文）**從無到有一起生出來**——換句話說
+round 1 自己先無中生有寫了一份「中文基準」，再翻譯成英文，兩邊都是自己編的，不是翻譯任務要求的
+「只翻既有中文」。round 2 抓到這個違規，**把 zh 跟 en 兩個欄位都撤回成 undefined**，不是只撤英文
+——逐筆核對 `herb.fu_shen`/`tong_cao`/`qu_mai`/`bian_xu`/`wu_mei`/`deng_xin_cao` 這 6 張卡，兩輪
+之後現在都是 `undefined`，跟 Task 8B 開始前的狀態完全一致。**round 2 的 `herb_canon_shortlist.json`
+逐位元組核對跟目前 main 上的版本完全相同——沒有東西要落地，這條線本來就沒有動過 main**。
+`modern_functions_en` 維持 **341/363（94%）**，缺口 22 筆維持開放，之後如果要填,必須是真的先在
+課件裡找到中文藥理內容、逐詞翻譯,不是自己研究生成。
+
+---
+
 # 2026-08-26 — Claude 週三獨立複核:Task 8A-C/9A-D/10A(Ting 要求「現在徹底查」)
 
 Ting 發現 antigravity 在 Claude 巡檢暫停期間(8/24 晚~8/25)做的事超出昨天 Task 8 只授權的三項
