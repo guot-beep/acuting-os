@@ -1,3 +1,18 @@
+# 2026-08-25 Antigravity — Task 9D Round 4 (Final Closure & Generalized Dependency Graph)
+
+- **工作內容**: 執行 AcuTing OS 統一預檢安全門閥 `scripts/antigravity-preflight.js` Task 9D Round 4 最終結案。
+  - 正典與生成資料零變更：`data/**` canonicals、`data/generated/*` 生成檔、`.github/workflows/*` CI 配置 Byte-for-byte 0 異動。
+  - 恢復完全泛化之運行時與構建依賴圖（Generalized Dependency Graph）：
+    - 以純資料結構表示依賴邊 `{ input, builder, output }`，不硬編碼任何生產產物名稱。
+    - 泛化分類器 (`classifyArtifactConsumption`) 純粹經由圖遍歷自動推導 `content_quality.json` 為 `TRANSITIVELY_BUNDLED_AND_LOADED`、`knowledge_data.js` 與 `entity_registry.json` 為 `GENERATED_BUT_UNUSED`。
+    - 負控測試加入非生產產物合成依賴測試（`data/fixture.json` -> `scripts/build-bundle.js` -> `data/generated/bundle.js` -> runtime HTML），100% 呼叫泛化分類器驗證為 `TRANSITIVELY_BUNDLED_AND_LOADED`。
+  - 完整保留 9A (6241 local refs, 1260 URLs, 6 missing paths)、9B (全名稱/別名碰撞、5 個 `formula_family` 孤立引用)、9C (7+1 領域同步、沙盒重建)、識別碼感知技術債棘輪與基線更新 Fail-Closed 保證。
+  - 實測結果：Fast Mode 判定 **`PASS WITH WARNINGS`**（Hard Failures: 0, Regressions: 0, Known Warnings: 6, Improvements: 0），符合進入人工/語意驗收標準。
+- **產出檔案**: `scripts/antigravity-preflight.js` / `scripts/lib/*` / `data/audits/antigravity_preflight_baseline.json` / `data/audits/antigravity_preflight_run.json` / `docs/audits/ANTIGRAVITY_PREFLIGHT_2026-08-25.md`。
+- **分支與狀態**: 推送至 `antigravity/task9d-unified-preflight-round4`，Task 9D 正式結案並停下。
+
+---
+
 # 2026-08-25 深夜 — Task 8C 驗收通過並落地:方劑 exact_source_url 補齊,94%→97%(附一則編碼異常提醒)
 
 Task 8C(`antigravity/formula-fill-task8-source-url`，commit `128da48e`）延續同一套 HTTP 驗證方法補
