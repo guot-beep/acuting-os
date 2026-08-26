@@ -17,6 +17,8 @@
 "use strict";
 const path = require("path");
 const fs = require("fs");
+const os = require("os");
+const { execFileSync } = require("child_process");
 
 const root = path.join(__dirname, "..");
 const readJson = (p) => JSON.parse(fs.readFileSync(path.join(root, p), "utf8"));
@@ -504,6 +506,53 @@ console.log("回歸鎖 — 不從『計畫』推斷出『今天做了什麼』")
   const reallyDid = makeNote({ modalitiesPerformed: [], acupointLinks: ["ST36"], modalities: "針刺加艾灸" });
   const d2 = draftFor(kase, reallyDid);
   assert(d2.todayCare.some((x) => /灸/.test(x)), "寫在『處置』欄的艾灸仍然推斷得出來");
+}
+
+// ---- 回歸鎖 — CLI v1(scripts/generate-avs.js)同一個洩漏的第二處 -----------
+// 940b3c83(codex/pattern-v2)修過 js/avs.js 的 checkout 路徑後才發現這支獨立
+// CLI 腳本讀的是同一個 note.followUp,是同一個洩漏的第二個出口;main 自己的
+// d9018547 只補了 checkout UI 那一條,這支 CLI 當時漏修。用子行程真的跑一次
+// generate-avs.js,而不是只測 js/avs.js 的匯出函式 —— 這支腳本自己組 HTML
+// 字串,不經過 AVS.renderPatientHtml,兩邊測過的路徑實際上是分開的程式碼。
+console.log("回歸鎖 — CLI v1(generate-avs.js)followUp 不自動進病人文件");
+{
+  const INTERNAL = "若入睡仍超過六十分鐘,考慮加梔子豉湯思路";
+  const tmpFile = path.join(os.tmpdir(), `avs-cli-fixture-${Date.now()}.json`);
+  const fixtureCase = {
+    id: "case.test.cli-fixture",
+    patientCode: "P-TEST-CLI-999",
+    westernConditions: [],
+    easternDiseases: [],
+    safetyFlags: [],
+    agentExposures: [],
+    soapNotes: [
+      {
+        id: "soap.test.cli-blank",
+        visitDate: "2026-01-15",
+        modalitiesPerformed: ["modality.acupuncture"],
+        followUp: INTERNAL,
+        outcomeMetrics: []
+      }
+    ]
+  };
+  fs.writeFileSync(tmpFile, JSON.stringify([fixtureCase]));
+  try {
+    const genScript = path.join(root, "scripts", "generate-avs.js");
+
+    // note.avsFollowUp 未填 → 回診段留白,不帶內部推理
+    const htmlBlank = execFileSync("node", [genScript, tmpFile, "--case", "case.test.cli-fixture"], { encoding: "utf8" });
+    assert(!htmlBlank.includes("梔子豉湯"), "CLI v1 病人文件不含 SOAP 內部推理");
+    assert(!htmlBlank.includes("回診安排:"), "CLI v1 回診欄空白時不印這一段");
+
+    // 醫師明確填了 avsFollowUp → 才印,且印的是那句,不是 SOAP 原文
+    fixtureCase.soapNotes[0].avsFollowUp = "兩週後回診";
+    fs.writeFileSync(tmpFile, JSON.stringify([fixtureCase]));
+    const htmlChosen = execFileSync("node", [genScript, tmpFile, "--case", "case.test.cli-fixture"], { encoding: "utf8" });
+    assert(htmlChosen.includes("回診安排:兩週後回診"), "CLI v1 醫師填了 avsFollowUp 才印,印的是醫師那句");
+    assert(!htmlChosen.includes("梔子豉湯"), "CLI v1 填了 avsFollowUp 後仍不夾帶 SOAP 原文");
+  } finally {
+    try { fs.unlinkSync(tmpFile); } catch {}
+  }
 }
 
 console.log(`\n${pass} passed, ${fail} failed`);

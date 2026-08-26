@@ -26,6 +26,15 @@
  *              Existing records are never touched. name_zh ships empty with
  *              needs_name_zh=true — inventing a 證型 name is still exactly
  *              the guess that later reads as authoritative.
+ *   --refresh-counts
+ *              update used_by_conditions / used_by_comparisons on existing
+ *              records to the fresh scan (D25 supplement, 2026-08-26). These
+ *              two fields are DERIVED caches by definition
+ *              (data/config/relation_registry.json edge.condition_patterns),
+ *              so refreshing them is not "touching hand content" — it is the
+ *              one mutation this tool is still allowed on existing records,
+ *              and it must never write any other field. used_by_cases comes
+ *              from the clinical-case line and is NOT scanned or written here.
  *   --write    refuses, loudly. Kept so old muscle memory fails with an
  *              explanation instead of a wiped registry.
  *
@@ -58,6 +67,7 @@ function main() {
     return;
   }
   const append = process.argv.includes('--append');
+  const refresh = process.argv.includes('--refresh-counts');
 
   const conditions = arr(JSON.parse(fs.readFileSync(CONDITIONS, 'utf8')), 'records');
   const comparisons = arr(JSON.parse(fs.readFileSync(COMPARISONS, 'utf8')), 'records');
@@ -104,17 +114,41 @@ function main() {
       console.log(`  ${r.id.padEnd(46)} cond ${r.used_by_conditions || 0}→${u.conditions.length} / cmp ${r.used_by_comparisons || 0}→${u.comparisons.length}`);
     });
     if (drift.length > 15) console.log(`  … 其餘 ${drift.length - 15} 筆`);
+    if (!refresh) console.log('  (--refresh-counts 可只刷新這兩個 derived 計數欄,不碰其他欄位。)');
+  }
+
+  let dirty = false;
+
+  if (refresh && drift.length) {
+    drift.forEach((r) => {
+      const u = use.get(r.id) || { conditions: [], comparisons: [] };
+      r.used_by_conditions = u.conditions.length;
+      r.used_by_comparisons = u.comparisons.length;
+    });
+    dirty = true;
+    console.log(`\n--refresh-counts:已更新 ${drift.length} 筆的 used_by_conditions / used_by_comparisons(僅此兩欄,其他欄位零改動)。`);
+  } else if (refresh) {
+    console.log('\n--refresh-counts:計數無漂移,無事可做。');
   }
 
   if (!missing.length) {
     console.log('\n無懸空引用。' + (append ? '(--append 無事可做)' : ''));
-    return;
-  }
-  if (!append) {
-    console.log('\n(偵測模式:未寫入。加 --append 只補上面缺漏的骨架,不動既有記錄。)');
-    return;
+  } else if (!append) {
+    console.log('\n(偵測模式:懸空引用未寫入。加 --append 只補上面缺漏的骨架,不動既有記錄。)');
   }
 
+  if (missing.length && append) {
+    appendSkeletons(missing, use, records);
+    dirty = true;
+  }
+
+  if (dirty) {
+    fs.writeFileSync(REGISTRY, JSON.stringify(registryDoc, null, 2) + '\n');
+    console.log(`\n已寫入 ${REGISTRY}。接著跑 node scripts/validate-pattern-registry.js。`);
+  }
+}
+
+function appendSkeletons(missing, use, records) {
   missing.forEach((id) => {
     const u = use.get(id);
     records.push({
@@ -131,9 +165,7 @@ function main() {
       registration_note_zh: '由 build-pattern-registry.js --append 增量登記(D25):id 已在病症/鑑別卡中被引用但未登錄。中文名與辨證體系待人工查證,不得音譯或推測。',
     });
   });
-  fs.writeFileSync(REGISTRY, JSON.stringify(registryDoc, null, 2) + '\n');
-  console.log(`\n已 append ${missing.length} 筆骨架至 ${REGISTRY}(既有記錄零改動)。`);
-  console.log('接著跑 node scripts/validate-pattern-registry.js。');
+  console.log(`\n--append:已補 ${missing.length} 筆骨架(既有記錄零改動)。`);
 }
 
 main();

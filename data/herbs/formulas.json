@@ -3173,6 +3173,25 @@
      "role_zh": "佐"
     },
     {
+     "herb_id": "herb.zhu_ye",
+     "herb_zh": "(竹葉)",
+     "name_zh": "(竹葉)",
+     "herb_en": "(Fol. Bambusae)",
+     "name_en": "(Fol. Bambusae)",
+     "pinyin": "Zhu Ye",
+     "pinyin_toned": "Zhu Ye",
+     "pharmaceutical_latin": "Fol. Bambusae",
+     "dose_g": "3-10g",
+     "decoction_reference_g": "3-10g",
+     "in_formula_zh": "替代藥材。《溫病條辨》原文作竹葉四錢(HKBU F00008 掃描頁同);與淡竹葉為兩味不同藥材,部分語境可通用,本卡採現代教材用法以淡竹葉為本方最優選(D26)。",
+     "in_formula_en": "Alternate. The Wen Bing Tiao Bian original (and the HKBU F00008 scan) writes Zhu Ye 4 qian; Zhu Ye and Dan Zhu Ye are distinct pharmacopeial herbs, partially interchangeable — this card follows the modern-text optimum, Dan Zhu Ye (D26).",
+     "actions_zh": "替代藥材。",
+     "actions_en": "May substitute for Dan Zhu Ye per classical text.",
+     "role_reason_zh": "替代藥材。",
+     "is_alternate": true,
+     "role_zh": "佐"
+    },
+    {
      "herb_id": "herb.jing_jie",
      "herb_zh": "荊芥",
      "name_zh": "荊芥",
@@ -59004,9 +59023,10 @@
      "actions_en": "Warms Middle and disperses Cold; harmonizes digestive tract.",
      "in_formula_zh": "解表散寒，溫中止嘔，化痰止咳。",
      "actions_zh": "解表散寒，溫中止嘔，化痰止咳。",
-     "role_reason_zh": "解表散寒，溫中止嘔，化痰止咳。",
+     "role_reason_zh": "藥引(古法薑棗煮湯、棗肉和丸的製備用藥),非方名「四神」所指的本體四味(D27)。",
      "is_alternate": false,
-     "role_zh": "佐"
+     "role_zh": "使",
+     "is_guide": true
     },
     {
      "herb_id": "herb.da_zao",
@@ -59023,9 +59043,10 @@
      "actions_en": "Strengthens Spleen/Qi and harmonizes.",
      "in_formula_zh": "補中益氣，養血安神，調和營衛。",
      "actions_zh": "補中益氣，養血安神，調和營衛。",
-     "role_reason_zh": "補中益氣，養血安神，調和營衛。",
+     "role_reason_zh": "藥引(古法薑棗煮湯、棗肉和丸的製備用藥),非方名「四神」所指的本體四味(D27)。",
      "is_alternate": false,
-     "role_zh": "佐"
+     "role_zh": "使",
+     "is_guide": true
     }
    ],
    "pattern_indications_en": [
@@ -59317,7 +59338,7 @@
    "ba_fa_zh": "課件未指派單一八法；依本方功效與證型判讀",
    "course_level_en": "Formulations 2 — 1st group: Detailed Knowledge",
    "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/SiShenWan.html",
-   "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 1 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：肉豆蔻（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。",
+   "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 1 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：肉豆蔻（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。\n【2026-08-26 D27】生薑、大棗標 is_guide 藥引旗標並歸「使」:方名四神=補骨脂/肉豆蔻/吳茱萸/五味子,薑棗為製備藥引。裁定:Ting(選項A)。",
    "source_classic": "《證治準繩》",
    "formula_song_zh": "四神骨脂吳茱萸，肉蔻除油五味具，\n大棗生薑同煎合，五更腎泄最相宜。",
    "exam_pearl": "【考綱重點】五更瀉（晨起腹瀉、脾腎陽虛）第一要方。補骨脂（君，溫補命門火）；肉豆蔻（臣，溫脾澀腸）；吳茱萸（佐，溫肝胃散寒）；五味子（佐使，酸溫收斂）；薑棗（和中）。二神丸（補骨脂肉豆蔻）合五味子散。NCBAHM 2026 CH Outline p.20。",
@@ -62044,7 +62065,7 @@
      "in_formula_en": "Nourishes Heart Qi and reduces irritability/restlessness/insomnia; AD combines with Gan Cao/Da Zao for emotional instability.",
      "actions_en": "Nourishes Heart Qi and reduces irritability/restlessness/insomnia; AD combines with Gan Cao/Da Zao for emotional instability.",
      "is_alternate": false,
-     "role_zh": "臣"
+     "role_zh": "君"
     },
     {
      "herb_id": "herb.fu_xiao_mai",
@@ -62059,11 +62080,11 @@
      "decoction_reference_g": "9-60g",
      "in_formula_en": "AD lists as a substitute for Xiao Mai in some sources.",
      "actions_en": "AD lists as a substitute for Xiao Mai in some sources.",
-     "in_formula_zh": "替代藥材。",
+     "in_formula_zh": "替代藥材(小麥之代用,自汗盜汗傾向時常用)。",
      "actions_zh": "替代藥材。",
      "role_reason_zh": "替代藥材。",
      "is_alternate": true,
-     "role_zh": "佐"
+     "role_zh": "君"
     },
     {
      "herb_id": "herb.da_zao",
@@ -62082,7 +62103,7 @@
      "actions_zh": "補中益氣，養血安神，調和營衛。",
      "role_reason_zh": "補中益氣，養血安神，調和營衛。",
      "is_alternate": false,
-     "role_zh": "佐"
+     "role_zh": "佐使"
     }
    ],
    "pattern_indications_en": [
@@ -62594,7 +62615,7 @@
    "ba_fa_zh": "課件未指派單一八法；依本方功效與證型判讀",
    "course_level_en": "Formulations 1 — 1st group: Detailed Knowledge / Most Important + Formulations 2 — 1st group: Detailed Knowledge",
    "taiwan_pharmacopeia_zh": "Yes (THP p.135)",
-   "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 1 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：Xiao Mai（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。\n【2026-08-12 紅線五：組成 _zh 拉丁拼寫改中文】第2味 herb_zh「Xiao Mai」→「小麥」、name_zh「Xiao Mai」→「小麥」。拼音原值仍在各列 pinyin 欄；中文名依該列 herb_id 於 herb_canon_shortlist 的中文名＋原拼寫的炮製前綴／部位後綴（炒、酒炒、制、穗、梢…）對照填入。",
+   "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 1 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：Xiao Mai（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。\n【2026-08-12 紅線五：組成 _zh 拉丁拼寫改中文】第2味 herb_zh「Xiao Mai」→「小麥」、name_zh「Xiao Mai」→「小麥」。拼音原值仍在各列 pinyin 欄；中文名依該列 herb_id 於 herb_canon_shortlist 的中文名＋原拼寫的炮製前綴／部位後綴（炒、酒炒、制、穗、梢…）對照填入。\n【2026-08-26 D27】君臣佐使補標:君小麥、臣甘草、佐使大棗(統編《方劑學》安神劑;Bensky F&S 同以小麥為君);浮小麥原列獨立一列,改標 is_alternate 替代列。裁定:Ting(選項A)。",
    "formula_song_zh": "婦人臟燥欲悲傷。如有神靈太息長。\n小麥一升三兩草。十枚大棗力相當。",
    "formula_song_source_zh": "出自陳修園《金匱方歌括》",
    "exam_pearl": "【考綱重點】臟燥（悲傷欲哭、呵欠頻作）首選名方（張仲景《金匱要略》名方）。炙甘草（甘溫補脾和中緩急）；浮小麥（養心氣陰）；大棗（補脾胃生津液）。三藥皆食藥兩用，甘平柔和、養心安神。NCBAHM 2026 CH Outline p.19。",

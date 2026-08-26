@@ -54,17 +54,14 @@
       "doc": "data/audits/en_zh_term_crosswalk.json"
     },
     "formula_correctness": {
-      "defects": 2,
-      "by_code": {
-        "wrong-herb-count": 1,
-        "no-chief": 1
-      },
+      "defects": 0,
+      "by_code": {},
       "doc": "scripts/validate-formula-correctness.js"
     },
     "formula_dose_staging": {
-      "defects": 1,
+      "defects": 0,
       "by_code": {
-        "unresolved_pinyin_or_herb_id": 1
+        "unresolved_pinyin_or_herb_id": 0
       },
       "doc": "data/imports/formula_doses/formula_dose_staging.json"
     }
