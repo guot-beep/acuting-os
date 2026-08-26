@@ -1,3 +1,27 @@
+# 2026-08-25 Antigravity — Task 9B Round 2 (Canonical Duplicate / Stub / Deprecated / Orphan Inventory)
+
+- **工作內容**: 執行中藥 (363 筆) 與方劑 (223 筆) 重複/棄用/殘根/孤立引用盤點工具 Round 2 升級與完整重跑。
+  - 正則與消歧義修復：修復正規表達式字元類別，實作精確之 EXACT_ID_DUPLICATE、CASE_NORMALIZED_ID_COLLISION 與 WHITESPACE_NORMALIZED_ID_COLLISION 判定；啟動時內建 6 項回歸測試套件 (100% PASS)。
+  - 損毀 JSON 嚴格防護：引入 loadJsonStrict()，遇到 malformed JSON 即刻拋錯中斷 (Audit Fail)，杜絕產生 partial-success 假報告。
+  - 引用來源狀態細分：細分來源狀態（active / deprecated / import_stub），精確區分 incomingActiveReferencesCount，僅當存在活躍來源引用時判定為 DEPRECATED_BUT_REFERENCED_BY_ACTIVE。
+  - 盤點結果數據 (SSOT 直出)：
+    - 掃描記錄: Herbs 363 / Formulas 223 (共 586 筆)
+    - Deprecated 記錄: 8 筆（Herbs 4 筆, Formulas 4 筆；其中 formula.bai_du_san 仍有 4 處活躍主方引用 DEPRECATED_BUT_REFERENCED_BY_ACTIVE，其餘 7 筆為 UNREFERENCED_DEPRECATED）
+    - Import Stub 記錄: 2 筆（_import_stub 皆在 Formulas）
+    - 重複 ID 群組 (Exact / Case / WS): 0 / 0 / 0
+    - 名稱衝突 (Exact En / Normalized En): 3 組 / 1 組
+    - 別名衝突: 26 組
+    - 潛在重複啟發判定 (POSSIBLE_DUPLICATE): 2 組（皆為 _import_stub 與 active 主方對應）
+    - 結構化引用掃描: 3784 處
+    - TARGET_EXISTS_ACTIVE: 3775 處
+    - TARGET_EXISTS_DEPRECATED: 4 處
+    - TARGET_MISSING (Orphan references): 5 處（formula_family 加減方缺口）
+    - Highest-Risk Candidates 清單: 8 項已完整列於報告。
+- **產出檔案**: scripts/audit-canonical-duplicates-orphans.js / docs/audits/CANONICAL_DUPLICATE_ORPHAN_AUDIT_2026-08-25.md / data/audits/canonical_duplicate_orphan_audit_2026-08-25.json。
+- **分支與狀態**: 推送至 antigravity/task9b-canonical-duplicate-orphan-audit-round2，任務交付並停下。
+
+---
+
 # 2026-08-25 深夜 — Task 8C 驗收通過並落地:方劑 exact_source_url 補齊,94%→97%(附一則編碼異常提醒)
 
 Task 8C(`antigravity/formula-fill-task8-source-url`，commit `128da48e`）延續同一套 HTTP 驗證方法補

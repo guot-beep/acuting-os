@@ -1,0 +1,748 @@
+{
+  "audit_date": "2026-08-25",
+  "audit_round": "Round 2",
+  "audit_name": "Canonical Duplicate, Deprecated, Stub & Orphan Reference Inventory (Task 9B Round 2)",
+  "scope": {
+    "canonical_herbs": "data/herbs/herb_canon_shortlist.json",
+    "canonical_formulas": "data/herbs/formulas.json",
+    "reference_registries_scanned": [
+      "data/pathology/condition_canon_shortlist.json",
+      "data/pathology/conditions.json",
+      "data/pathology/pattern_registry.json",
+      "data/pathology/pattern_library.json",
+      "data/pathology/tdis_registry.json",
+      "data/knowledge/comparisons.json",
+      "data/supplements/supplements.json",
+      "data/medications/western_medications.json",
+      "data/pharmacology/drugs.json",
+      "data/acupoints/361.json"
+    ]
+  },
+  "summary": {
+    "herbs": {
+      "recordsScanned": 363,
+      "deprecatedCount": 4,
+      "importStubCount": 0,
+      "duplicateIdExactGroups": 0,
+      "duplicateIdCaseGroups": 0,
+      "duplicateIdWhitespaceGroups": 0,
+      "exactChineseNameCollisionGroups": 0,
+      "exactEnglishNameCollisionGroups": 1,
+      "normalizedNameCollisionGroups": 0,
+      "aliasToMultipleCanonicalGroups": 3,
+      "aliasCollidesWithCanonicalNameGroups": 15,
+      "aliasSelfDuplicateGroups": 8,
+      "possibleDuplicateGroups": 0,
+      "orphanReferencesTargetMissing": 0,
+      "referencesToDeprecatedTargets": 0,
+      "referencesToImportStubs": 0,
+      "deprecatedReferencedByActiveCount": 0
+    },
+    "formulas": {
+      "recordsScanned": 223,
+      "deprecatedCount": 4,
+      "importStubCount": 2,
+      "duplicateIdExactGroups": 0,
+      "duplicateIdCaseGroups": 0,
+      "duplicateIdWhitespaceGroups": 0,
+      "exactChineseNameCollisionGroups": 0,
+      "exactEnglishNameCollisionGroups": 2,
+      "normalizedNameCollisionGroups": 1,
+      "aliasToMultipleCanonicalGroups": 0,
+      "aliasCollidesWithCanonicalNameGroups": 0,
+      "aliasSelfDuplicateGroups": 0,
+      "possibleDuplicateGroups": 2,
+      "orphanReferencesTargetMissing": 5,
+      "referencesToDeprecatedTargets": 4,
+      "referencesToImportStubs": 0,
+      "deprecatedReferencedByActiveCount": 1
+    },
+    "overall": {
+      "totalRecordsScanned": 586,
+      "totalDeprecatedCount": 8,
+      "totalImportStubCount": 2,
+      "totalDuplicateIdGroups": 0,
+      "totalExactNameCollisionGroups": 3,
+      "totalNormalizedNameCollisionGroups": 1,
+      "totalAliasCollisionGroups": 26,
+      "totalPossibleDuplicateGroups": 2,
+      "totalStructuredReferencesScanned": 3784,
+      "totalTargetExistsActive": 3775,
+      "totalTargetExistsDeprecated": 4,
+      "totalTargetExistsImportStub": 0,
+      "totalTargetMissingOrphans": 5,
+      "totalDeprecatedButReferencedByActive": 1,
+      "highestRiskCandidatesCount": 8
+    }
+  },
+  "inventories": {
+    "deprecated_records": {
+      "herbs": [
+        {
+          "recordId": "herb.han_lian_cao",
+          "entityType": "herb",
+          "name_zh": "旱蓮草",
+          "name_en": "Eclipta",
+          "review_status": "deprecated",
+          "reason": "Marked deprecated in canonical record",
+          "incomingReferencesCount": 0,
+          "incomingActiveReferencesCount": 0,
+          "incomingDeprecatedReferencesCount": 0,
+          "incomingImportStubReferencesCount": 0,
+          "isReferencedByActive": false,
+          "riskClassification": "UNREFERENCED_DEPRECATED",
+          "referencingRecords": []
+        },
+        {
+          "recordId": "herb.wu_zei_gu",
+          "entityType": "herb",
+          "name_zh": "烏賊骨",
+          "name_en": "Cuttlebone",
+          "review_status": "deprecated",
+          "reason": "Marked deprecated in canonical record",
+          "incomingReferencesCount": 0,
+          "incomingActiveReferencesCount": 0,
+          "incomingDeprecatedReferencesCount": 0,
+          "incomingImportStubReferencesCount": 0,
+          "isReferencedByActive": false,
+          "riskClassification": "UNREFERENCED_DEPRECATED",
+          "referencingRecords": []
+        },
+        {
+          "recordId": "herb.sha_shen",
+          "entityType": "herb",
+          "name_zh": "沙參",
+          "name_en": "Glehniae / Adenophorae Radix",
+          "review_status": "deprecated",
+          "reason": "Marked deprecated in canonical record",
+          "incomingReferencesCount": 0,
+          "incomingActiveReferencesCount": 0,
+          "incomingDeprecatedReferencesCount": 0,
+          "incomingImportStubReferencesCount": 0,
+          "isReferencedByActive": false,
+          "riskClassification": "UNREFERENCED_DEPRECATED",
+          "referencingRecords": []
+        },
+        {
+          "recordId": "herb.qian_cao_gen",
+          "entityType": "herb",
+          "name_zh": "茜草根",
+          "name_en": "Rubiae Radix et Rhizoma",
+          "review_status": "deprecated",
+          "reason": "Marked deprecated in canonical record",
+          "incomingReferencesCount": 0,
+          "incomingActiveReferencesCount": 0,
+          "incomingDeprecatedReferencesCount": 0,
+          "incomingImportStubReferencesCount": 0,
+          "isReferencedByActive": false,
+          "riskClassification": "UNREFERENCED_DEPRECATED",
+          "referencingRecords": []
+        }
+      ],
+      "formulas": [
+        {
+          "recordId": "formula.bai_du_san",
+          "entityType": "formula",
+          "name_zh": "敗毒散",
+          "name_en": "Overcome Pathogenic Influences Powder",
+          "review_status": "deprecated",
+          "reason": "Marked deprecated in canonical record",
+          "incomingReferencesCount": 4,
+          "incomingActiveReferencesCount": 4,
+          "incomingDeprecatedReferencesCount": 0,
+          "incomingImportStubReferencesCount": 0,
+          "isReferencedByActive": true,
+          "riskClassification": "DEPRECATED_BUT_REFERENCED_BY_ACTIVE",
+          "referencingRecords": [
+            {
+              "sourceFile": "data/herbs/formulas.json",
+              "sourceRecordId": "formula.gui_zhi_tang",
+              "sourceStatus": "active",
+              "fieldPath": "related_formulas[3]"
+            },
+            {
+              "sourceFile": "data/herbs/formulas.json",
+              "sourceRecordId": "formula.ma_huang_tang",
+              "sourceStatus": "active",
+              "fieldPath": "related_formulas[3]"
+            },
+            {
+              "sourceFile": "data/herbs/formulas.json",
+              "sourceRecordId": "formula.xiao_qing_long_tang",
+              "sourceStatus": "active",
+              "fieldPath": "related_formulas[3]"
+            },
+            {
+              "sourceFile": "data/herbs/formulas.json",
+              "sourceRecordId": "formula.jiu_wei_qiang_huo_tang",
+              "sourceStatus": "active",
+              "fieldPath": "related_formulas[3]"
+            }
+          ]
+        },
+        {
+          "recordId": "formula.ling_jiao_gou_teng_yin",
+          "entityType": "formula",
+          "name_zh": "羚角鉤藤丸",
+          "name_en": "Antelope Horn and Uncaria Decoction",
+          "review_status": "deprecated",
+          "reason": "Marked deprecated in canonical record",
+          "incomingReferencesCount": 0,
+          "incomingActiveReferencesCount": 0,
+          "incomingDeprecatedReferencesCount": 0,
+          "incomingImportStubReferencesCount": 0,
+          "isReferencedByActive": false,
+          "riskClassification": "UNREFERENCED_DEPRECATED",
+          "referencingRecords": []
+        },
+        {
+          "recordId": "formula.du_qi_wan_import_stub",
+          "entityType": "formula",
+          "name_zh": "都氣丸(匯入重複殘根)",
+          "name_en": "Du Qi Wan",
+          "review_status": "deprecated",
+          "reason": "Marked deprecated in canonical record",
+          "incomingReferencesCount": 0,
+          "incomingActiveReferencesCount": 0,
+          "incomingDeprecatedReferencesCount": 0,
+          "incomingImportStubReferencesCount": 0,
+          "isReferencedByActive": false,
+          "riskClassification": "UNREFERENCED_DEPRECATED",
+          "referencingRecords": []
+        },
+        {
+          "recordId": "formula.fu_yuan_huo_xue_tang_import_stub",
+          "entityType": "formula",
+          "name_zh": "復元活血湯(匯入重複殘根)",
+          "name_en": "Fu Yuan Huo Xue Tang",
+          "review_status": "deprecated",
+          "reason": "Marked deprecated in canonical record",
+          "incomingReferencesCount": 0,
+          "incomingActiveReferencesCount": 0,
+          "incomingDeprecatedReferencesCount": 0,
+          "incomingImportStubReferencesCount": 0,
+          "isReferencedByActive": false,
+          "riskClassification": "UNREFERENCED_DEPRECATED",
+          "referencingRecords": []
+        }
+      ]
+    },
+    "import_stubs": {
+      "herbs": [],
+      "formulas": [
+        {
+          "recordId": "formula.du_qi_wan_import_stub",
+          "entityType": "formula",
+          "name_zh": "都氣丸(匯入重複殘根)",
+          "name_en": "Du Qi Wan",
+          "review_status": "deprecated",
+          "reason": "Import stub / duplicate stub record",
+          "incomingReferencesCount": 0,
+          "incomingActiveReferencesCount": 0,
+          "incomingDeprecatedReferencesCount": 0,
+          "incomingImportStubReferencesCount": 0,
+          "isReferencedByActive": false,
+          "riskClassification": "UNREFERENCED_DEPRECATED",
+          "referencingRecords": []
+        },
+        {
+          "recordId": "formula.fu_yuan_huo_xue_tang_import_stub",
+          "entityType": "formula",
+          "name_zh": "復元活血湯(匯入重複殘根)",
+          "name_en": "Fu Yuan Huo Xue Tang",
+          "review_status": "deprecated",
+          "reason": "Import stub / duplicate stub record",
+          "incomingReferencesCount": 0,
+          "incomingActiveReferencesCount": 0,
+          "incomingDeprecatedReferencesCount": 0,
+          "incomingImportStubReferencesCount": 0,
+          "isReferencedByActive": false,
+          "riskClassification": "UNREFERENCED_DEPRECATED",
+          "referencingRecords": []
+        }
+      ]
+    },
+    "duplicate_ids": {
+      "herbs": [],
+      "formulas": []
+    },
+    "name_collisions": {
+      "herbs": {
+        "exactZhCollisions": [],
+        "exactEnCollisions": [
+          {
+            "name_en": "Stephania Root",
+            "recordIds": [
+              "herb.fang_ji",
+              "herb.han_fang_ji"
+            ],
+            "entityType": "herb"
+          }
+        ],
+        "normZhCollisions": [],
+        "normEnCollisions": []
+      },
+      "formulas": {
+        "exactZhCollisions": [],
+        "exactEnCollisions": [
+          {
+            "name_en": "Rhinoceros Horn and Rehmannia Decoction",
+            "recordIds": [
+              "formula.xi_jiao_di_huang_tang",
+              "formula.xi_jiao_di_huang_wan"
+            ],
+            "entityType": "formula"
+          },
+          {
+            "name_en": "Antelope Horn and Uncaria Decoction",
+            "recordIds": [
+              "formula.ling_jiao_gou_teng_tang",
+              "formula.ling_jiao_gou_teng_yin"
+            ],
+            "entityType": "formula"
+          }
+        ],
+        "normZhCollisions": [],
+        "normEnCollisions": [
+          {
+            "normalized_en": "fourmiraclepill",
+            "rawNames": [
+              "Four-Miracle Pill",
+              "Four Miracle Pill"
+            ],
+            "recordIds": [
+              "formula.si_shen_wan",
+              "formula.si_miao_wan"
+            ],
+            "entityType": "formula"
+          }
+        ]
+      }
+    },
+    "alias_collisions": {
+      "herbs": {
+        "aliasToMultiple": [
+          {
+            "alias": "烏頭",
+            "entityType": "herb",
+            "recordIds": [
+              "herb.chuan_wu",
+              "herb.cao_wu"
+            ]
+          },
+          {
+            "alias": "Phaseolus",
+            "entityType": "herb",
+            "recordIds": [
+              "herb.chi_xiao_dou",
+              "herb.lu_dou"
+            ]
+          },
+          {
+            "alias": "米酒",
+            "entityType": "herb",
+            "recordIds": [
+              "herb.bai_jiu",
+              "herb.jiu"
+            ]
+          }
+        ],
+        "aliasCollidesWithCanon": [
+          {
+            "alias": "沙參",
+            "entityType": "herb",
+            "canonicalOwnerId": "herb.sha_shen",
+            "referencingRecordIds": [
+              "herb.bei_sha_shen"
+            ]
+          },
+          {
+            "alias": "茜草根",
+            "entityType": "herb",
+            "canonicalOwnerId": "herb.qian_cao_gen",
+            "referencingRecordIds": [
+              "herb.qian_cao"
+            ]
+          },
+          {
+            "alias": "旱蓮草",
+            "entityType": "herb",
+            "canonicalOwnerId": "herb.han_lian_cao",
+            "referencingRecordIds": [
+              "herb.mo_han_lian"
+            ]
+          },
+          {
+            "alias": "防己",
+            "entityType": "herb",
+            "canonicalOwnerId": "herb.fang_ji",
+            "referencingRecordIds": [
+              "herb.han_fang_ji"
+            ]
+          },
+          {
+            "alias": "銀杏",
+            "entityType": "herb",
+            "canonicalOwnerId": "herb.yin_xing",
+            "referencingRecordIds": [
+              "herb.bai_guo"
+            ]
+          },
+          {
+            "alias": "Ginkgo Semen",
+            "entityType": "herb",
+            "canonicalOwnerId": "herb.yin_xing",
+            "referencingRecordIds": [
+              "herb.bai_guo"
+            ]
+          },
+          {
+            "alias": "木通",
+            "entityType": "herb",
+            "canonicalOwnerId": "herb.mu_tong",
+            "referencingRecordIds": [
+              "herb.chuan_mu_tong"
+            ]
+          },
+          {
+            "alias": "烏賊骨",
+            "entityType": "herb",
+            "canonicalOwnerId": "herb.wu_zei_gu",
+            "referencingRecordIds": [
+              "herb.hai_piao_xiao"
+            ]
+          },
+          {
+            "alias": "槐花",
+            "entityType": "herb",
+            "canonicalOwnerId": "herb.huai_hua",
+            "referencingRecordIds": [
+              "herb.huai_mi"
+            ]
+          },
+          {
+            "alias": "棕櫚皮",
+            "entityType": "herb",
+            "canonicalOwnerId": "herb.zong_lu_pi",
+            "referencingRecordIds": [
+              "herb.zong_lu_tan"
+            ]
+          },
+          {
+            "alias": "茶葉",
+            "entityType": "herb",
+            "canonicalOwnerId": "herb.cha_ye",
+            "referencingRecordIds": [
+              "herb.lu_cha"
+            ]
+          },
+          {
+            "alias": "棕櫚炭",
+            "entityType": "herb",
+            "canonicalOwnerId": "herb.zong_lu_tan",
+            "referencingRecordIds": [
+              "herb.zong_lu_pi"
+            ]
+          },
+          {
+            "alias": "白酒",
+            "entityType": "herb",
+            "canonicalOwnerId": "herb.bai_jiu",
+            "referencingRecordIds": [
+              "herb.jiu"
+            ]
+          },
+          {
+            "alias": "黃酒",
+            "entityType": "herb",
+            "canonicalOwnerId": "herb.huang_jiu",
+            "referencingRecordIds": [
+              "herb.jiu"
+            ]
+          },
+          {
+            "alias": "綠茶",
+            "entityType": "herb",
+            "canonicalOwnerId": "herb.lu_cha",
+            "referencingRecordIds": [
+              "herb.cha_ye"
+            ]
+          }
+        ],
+        "aliasSelfDuplicates": [
+          {
+            "recordId": "herb.bai_ji_li",
+            "entityType": "herb",
+            "alias": "Puncture-vine fruit",
+            "canonicalName": "Puncture-vine Fruit"
+          },
+          {
+            "recordId": "herb.wu_gong",
+            "entityType": "herb",
+            "alias": "Centipede",
+            "canonicalName": "Centipede"
+          },
+          {
+            "recordId": "herb.ma_huang_gen",
+            "entityType": "herb",
+            "alias": "Ephedra root",
+            "canonicalName": "Ephedra Root"
+          },
+          {
+            "recordId": "herb.gua_lou_ren",
+            "entityType": "herb",
+            "alias": "栝樓仁",
+            "canonicalName": "栝樓仁"
+          },
+          {
+            "recordId": "herb.hai_piao_xiao",
+            "entityType": "herb",
+            "alias": "Cuttlefish Bone",
+            "canonicalName": "Cuttlefish Bone"
+          },
+          {
+            "recordId": "herb.hu_jiao",
+            "entityType": "herb",
+            "alias": "Black Pepper",
+            "canonicalName": "Black Pepper"
+          },
+          {
+            "recordId": "herb.jing_mi",
+            "entityType": "herb",
+            "alias": "Nonglutinous Rice",
+            "canonicalName": "Nonglutinous Rice"
+          },
+          {
+            "recordId": "herb.lu_dou",
+            "entityType": "herb",
+            "alias": "Mung Bean",
+            "canonicalName": "Mung Bean"
+          }
+        ]
+      },
+      "formulas": {
+        "aliasToMultiple": [],
+        "aliasCollidesWithCanon": [],
+        "aliasSelfDuplicates": []
+      }
+    },
+    "possible_duplicates": {
+      "herbs": [],
+      "formulas": [
+        {
+          "recordIds": [
+            "formula.du_qi_wan",
+            "formula.du_qi_wan_import_stub"
+          ],
+          "entityType": "formula",
+          "names": [
+            {
+              "id": "formula.du_qi_wan",
+              "name_zh": "都氣丸",
+              "name_en": "Capital Qi Pill"
+            },
+            {
+              "id": "formula.du_qi_wan_import_stub",
+              "name_zh": "都氣丸(匯入重複殘根)",
+              "name_en": "Du Qi Wan"
+            }
+          ],
+          "exactMatchingEvidence": "Import stub (formula.du_qi_wan_import_stub) matches active canonical record (formula.du_qi_wan)",
+          "whyFlagged": "IMPORT_STUB_CORRESPONDENCE"
+        },
+        {
+          "recordIds": [
+            "formula.fu_yuan_huo_xue_tang",
+            "formula.fu_yuan_huo_xue_tang_import_stub"
+          ],
+          "entityType": "formula",
+          "names": [
+            {
+              "id": "formula.fu_yuan_huo_xue_tang",
+              "name_zh": "復元活血湯",
+              "name_en": "Revive Health by Invigorating the Blood Decoction"
+            },
+            {
+              "id": "formula.fu_yuan_huo_xue_tang_import_stub",
+              "name_zh": "復元活血湯(匯入重複殘根)",
+              "name_en": "Fu Yuan Huo Xue Tang"
+            }
+          ],
+          "exactMatchingEvidence": "Import stub (formula.fu_yuan_huo_xue_tang_import_stub) matches active canonical record (formula.fu_yuan_huo_xue_tang)",
+          "whyFlagged": "IMPORT_STUB_CORRESPONDENCE"
+        }
+      ]
+    },
+    "orphan_references": [
+      {
+        "sourceFile": "data/herbs/formulas.json",
+        "sourceRecordId": "formula.gui_zhi_tang",
+        "sourceStatus": "active",
+        "fieldPath": "formula_family[0]",
+        "referencedId": "formula.gui_zhi_jia_ge_gen_tang",
+        "refEntityType": "formula",
+        "targetClassification": "TARGET_MISSING",
+        "targetRecordNameZh": null
+      },
+      {
+        "sourceFile": "data/herbs/formulas.json",
+        "sourceRecordId": "formula.xiao_qing_long_tang",
+        "sourceStatus": "active",
+        "fieldPath": "formula_family[0]",
+        "referencedId": "formula.xiao_qing_long_jia_shi_gao_tang",
+        "refEntityType": "formula",
+        "targetClassification": "TARGET_MISSING",
+        "targetRecordNameZh": null
+      },
+      {
+        "sourceFile": "data/herbs/formulas.json",
+        "sourceRecordId": "formula.bai_hu_tang",
+        "sourceStatus": "active",
+        "fieldPath": "formula_family[0]",
+        "referencedId": "formula.bai_hu_jia_ren_shen_tang",
+        "refEntityType": "formula",
+        "targetClassification": "TARGET_MISSING",
+        "targetRecordNameZh": null
+      },
+      {
+        "sourceFile": "data/herbs/formulas.json",
+        "sourceRecordId": "formula.bai_hu_tang",
+        "sourceStatus": "active",
+        "fieldPath": "formula_family[1]",
+        "referencedId": "formula.bai_hu_jia_gui_zhi_tang",
+        "refEntityType": "formula",
+        "targetClassification": "TARGET_MISSING",
+        "targetRecordNameZh": null
+      },
+      {
+        "sourceFile": "data/herbs/formulas.json",
+        "sourceRecordId": "formula.bai_hu_tang",
+        "sourceStatus": "active",
+        "fieldPath": "formula_family[2]",
+        "referencedId": "formula.bai_hu_jia_cang_zhu_tang",
+        "refEntityType": "formula",
+        "targetClassification": "TARGET_MISSING",
+        "targetRecordNameZh": null
+      }
+    ],
+    "deprecated_references": [
+      {
+        "sourceFile": "data/herbs/formulas.json",
+        "sourceRecordId": "formula.gui_zhi_tang",
+        "sourceStatus": "active",
+        "fieldPath": "related_formulas[3]",
+        "referencedId": "formula.bai_du_san",
+        "refEntityType": "formula",
+        "targetClassification": "TARGET_EXISTS_DEPRECATED",
+        "targetRecordNameZh": "敗毒散"
+      },
+      {
+        "sourceFile": "data/herbs/formulas.json",
+        "sourceRecordId": "formula.ma_huang_tang",
+        "sourceStatus": "active",
+        "fieldPath": "related_formulas[3]",
+        "referencedId": "formula.bai_du_san",
+        "refEntityType": "formula",
+        "targetClassification": "TARGET_EXISTS_DEPRECATED",
+        "targetRecordNameZh": "敗毒散"
+      },
+      {
+        "sourceFile": "data/herbs/formulas.json",
+        "sourceRecordId": "formula.xiao_qing_long_tang",
+        "sourceStatus": "active",
+        "fieldPath": "related_formulas[3]",
+        "referencedId": "formula.bai_du_san",
+        "refEntityType": "formula",
+        "targetClassification": "TARGET_EXISTS_DEPRECATED",
+        "targetRecordNameZh": "敗毒散"
+      },
+      {
+        "sourceFile": "data/herbs/formulas.json",
+        "sourceRecordId": "formula.jiu_wei_qiang_huo_tang",
+        "sourceStatus": "active",
+        "fieldPath": "related_formulas[3]",
+        "referencedId": "formula.bai_du_san",
+        "refEntityType": "formula",
+        "targetClassification": "TARGET_EXISTS_DEPRECATED",
+        "targetRecordNameZh": "敗毒散"
+      }
+    ],
+    "import_stub_references": [],
+    "highest_risk_cleanup_candidates": [
+      {
+        "riskType": "IMPORT_STUB_MATCHING_ACTIVE_RECORD",
+        "severity": "HIGH",
+        "recordIds": [
+          "formula.du_qi_wan",
+          "formula.du_qi_wan_import_stub"
+        ],
+        "entityType": "formula",
+        "detail": "Import stub (formula.du_qi_wan_import_stub) matches active canonical record (formula.du_qi_wan)"
+      },
+      {
+        "riskType": "IMPORT_STUB_MATCHING_ACTIVE_RECORD",
+        "severity": "HIGH",
+        "recordIds": [
+          "formula.fu_yuan_huo_xue_tang",
+          "formula.fu_yuan_huo_xue_tang_import_stub"
+        ],
+        "entityType": "formula",
+        "detail": "Import stub (formula.fu_yuan_huo_xue_tang_import_stub) matches active canonical record (formula.fu_yuan_huo_xue_tang)"
+      },
+      {
+        "riskType": "DEPRECATED_BUT_REFERENCED_BY_ACTIVE",
+        "severity": "HIGH",
+        "recordIds": [
+          "formula.bai_du_san"
+        ],
+        "entityType": "formula",
+        "detail": "Deprecated record formula.bai_du_san is referenced by 4 active records/fields."
+      },
+      {
+        "riskType": "TARGET_MISSING_ORPHAN_REFERENCE",
+        "severity": "MEDIUM",
+        "recordIds": [
+          "formula.gui_zhi_jia_ge_gen_tang"
+        ],
+        "entityType": "formula",
+        "detail": "Target ID formula.gui_zhi_jia_ge_gen_tang is missing from canonical registries but referenced by 1 places."
+      },
+      {
+        "riskType": "TARGET_MISSING_ORPHAN_REFERENCE",
+        "severity": "MEDIUM",
+        "recordIds": [
+          "formula.xiao_qing_long_jia_shi_gao_tang"
+        ],
+        "entityType": "formula",
+        "detail": "Target ID formula.xiao_qing_long_jia_shi_gao_tang is missing from canonical registries but referenced by 1 places."
+      },
+      {
+        "riskType": "TARGET_MISSING_ORPHAN_REFERENCE",
+        "severity": "MEDIUM",
+        "recordIds": [
+          "formula.bai_hu_jia_ren_shen_tang"
+        ],
+        "entityType": "formula",
+        "detail": "Target ID formula.bai_hu_jia_ren_shen_tang is missing from canonical registries but referenced by 1 places."
+      },
+      {
+        "riskType": "TARGET_MISSING_ORPHAN_REFERENCE",
+        "severity": "MEDIUM",
+        "recordIds": [
+          "formula.bai_hu_jia_gui_zhi_tang"
+        ],
+        "entityType": "formula",
+        "detail": "Target ID formula.bai_hu_jia_gui_zhi_tang is missing from canonical registries but referenced by 1 places."
+      },
+      {
+        "riskType": "TARGET_MISSING_ORPHAN_REFERENCE",
+        "severity": "MEDIUM",
+        "recordIds": [
+          "formula.bai_hu_jia_cang_zhu_tang"
+        ],
+        "entityType": "formula",
+        "detail": "Target ID formula.bai_hu_jia_cang_zhu_tang is missing from canonical registries but referenced by 1 places."
+      }
+    ]
+  }
+}
