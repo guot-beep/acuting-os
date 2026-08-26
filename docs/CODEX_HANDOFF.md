@@ -1,5 +1,13 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-26] Codex Handoff — Conditions common GI etiologies B42
+
+- **Exact ids / fields**: `cond.h_pylori_infection`, `cond.crohn_disease`, `cond.ulcerative_colitis`, `cond.achalasia`, and `cond.gastroparesis`; filled only bilingual etiology, record-level sources, and matching field provenance. Existing summaries, pathology, safety fields, TCM relations, formulas, and acupoints were preserved.
+- **Measured delta**: maturity `310→312 FULL_DETAIL_CANDIDATE`, `195→193 DETAIL_PARTIAL`, `0→0 SKELETON`; H. pylori/Crohn/UC each `8→10/12`, achalasia/gastroparesis each `10→12/12`; missing etiology `169→164`, missing sources `154→149`; source entries `984→994`, sourced records `351→356`.
+- **Evidence / distinctions**: NCI, NIDDK, MedlinePlus, and NIH/NLM NCBI Bookshelf; all ten direct URLs returned HTTP 200. Distinguished H. pylori transmission and persistent gastric-mucosal infection, multifactorial immune/genetic/microbiome/environmental IBD, primary myenteric-neuron loss versus secondary pseudoachalasia, and diabetic/vagal/other causes of gastroparesis.
+- **Validation**: only five exact ids and four allowed field groups changed; the other 500 records remained equal. Condition standard `505/505 clean`, build-data, relations, relation registry, validation ratchet, content junk, URL reachability, generated-data rebuild, and `git diff --check` produced no new blocking defect.
+- **Explicit unresolved / next line**: H. pylori, Crohn disease, and ulcerative colitis remain partial because disease-specific `acupuncture_scope` is absent; no generic scope was invented. There remain 193 partial records and 164 etiology gaps; continue common anorectal/colonic Conditions with disease-specific official sources.
+
 ## [2026-08-26] Codex Handoff — Conditions sleep-related hypoventilation etiology B41
 
 - **Exact ids / fields**: `cond.sleep_related_hypoventilation`; filled only bilingual etiology, record-level sources, and matching field provenance. Existing summary, pathology, risk/red flags, acupuncture scope, TCM relations, formulas, and acupoints were preserved.

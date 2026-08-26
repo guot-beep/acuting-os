@@ -1,3 +1,13 @@
+# 2026-08-26 — Codex Conditions 常見 GI 病因 B42
+
+- **範圍**：精確修改 `cond.h_pylori_infection`、`cond.crohn_disease`、`cond.ulcerative_colitis`、`cond.achalasia`、`cond.gastroparesis`；只補雙語 etiology、record sources 與對應 field provenance，既有摘要、病理、安全欄位、中醫 relations、方劑與穴位未覆寫。
+- **數字**：`FULL_DETAIL_CANDIDATE 310→312`、`DETAIL_PARTIAL 195→193`、`SKELETON 0→0`；H. pylori／Crohn／UC 均 `8→10/12`，achalasia／gastroparesis 均 `10→12/12`；全庫缺 etiology `169→164`、缺 sources `154→149`；source entries `984→994`、有 record source 的卡 `351→356`。
+- **來源／臨床區分**：NCI、NIDDK、MedlinePlus 與 NIH/NLM NCBI Bookshelf；10 個直接 URL 均 HTTP 200。內容區分 H. pylori 傳播與胃黏膜持續感染、IBD 的免疫／遺傳／微生物群／環境多因性、achalasia 原發性神經肌層退化與 secondary pseudoachalasia，以及 gastroparesis 的糖尿病、迷走神經損傷與其他病因。
+- **驗證**：只變更 5 個指定 id 的 4 個允許欄位群，其他 500 卡逐記錄不變；condition standard `505/505 clean`、build-data、relations、relation registry、ratchet、content-junk、URL reachability、generated data 與 `git diff --check` 均無新增 blocking defect。
+- **未解／下一步**：H. pylori、Crohn、UC 仍各缺 disease-specific `acupuncture_scope`，故保持 partial；未以泛化文字硬補。仍有 `193` 張 partial／`164` 張病因缺口；下一批續做常見肛直腸／結腸 Conditions 的疾病特異病因。
+
+---
+
 # 2026-08-26 — Codex Conditions 睡眠低通氣病因 B41
 
 - **範圍**：精確修改 `cond.sleep_related_hypoventilation`；只補雙語 etiology、record sources 與對應 field provenance，既有摘要、病理、risk/red flags、acupuncture scope、中醫 relations、方劑與穴位未覆寫。
