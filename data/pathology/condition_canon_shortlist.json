@@ -36719,7 +36719,7 @@
    }
   },
   {
-   "id": "cond.copd",
+  "id": "cond.copd",
    "name_en": "COPD (adjunctive context)",
    "name_zh": "慢性阻塞性肺病（輔助文件情境）",
    "category": "respiratory",
@@ -36746,7 +36746,39 @@
     "pattern.spleen_stomach_yang_deficiency",
     "pattern.phlegm_stasis_binding"
    ],
-   "review_status": "draft",
+  "review_status": "draft",
+  "summary_zh": "慢性阻塞性肺病（COPD）是因氣道與肺泡受損造成持續、通常進行性的氣流受限，臨床可同時具有慢性支氣管炎與肺氣腫特徵。常見症狀為活動時呼吸困難、慢性咳嗽與痰量增加；急性惡化可迅速造成低氧與呼吸衰竭。",
+  "summary_en": "Chronic obstructive pulmonary disease (COPD) is persistent, usually progressive airflow limitation caused by damage to the airways and alveoli, often with overlapping chronic bronchitis and emphysema features. Common symptoms are exertional dyspnea, chronic cough, and increased sputum; exacerbations can rapidly cause hypoxemia and respiratory failure.",
+  "western_context_zh": "診斷以症狀、暴露史與肺量計確認氣流阻塞；照護重點包括戒菸、避免暴露、疫苗、依分級使用吸入型支氣管擴張劑／其他藥物、肺復健及個人化急性惡化計畫。氧療須依醫療評估，急性呼吸窘迫不屬門診輔助處置範圍。此處僅為文件對照用語，非治療指示。",
+  "western_context_en": "Diagnosis combines symptoms and exposure history with spirometric confirmation of airflow obstruction. Care emphasizes smoking cessation, exposure avoidance, vaccination, severity-guided inhaled bronchodilators/other medicines, pulmonary rehabilitation, and an individualized exacerbation plan. Oxygen therapy requires medical assessment, and acute respiratory distress is outside routine adjunctive care. This is documentation context, not a treatment directive.",
+  "risk_factors_zh": [
+    {"factor": "目前或過去吸菸（最重要的 COPD 風險因素，並加速肺功能下降）", "direction": "increases", "modifiable": true, "source": "https://www.cdc.gov/copd/about/index.html"},
+    {"factor": "二手菸、工作場所粉塵／煙霧與環境空氣污染（長期刺激並損傷氣道與肺組織）", "direction": "increases", "modifiable": true, "source": "https://www.nhlbi.nih.gov/health/copd/causes"},
+    {"factor": "COPD 家族史或 alpha-1 antitrypsin deficiency（增加遺傳易感性）", "direction": "increases", "modifiable": false, "source": "https://www.nhlbi.nih.gov/health/copd/causes"},
+    {"factor": "年齡增加及既有氣喘", "direction": "increases", "modifiable": false, "source": "https://www.cdc.gov/copd/about/index.html"}
+  ],
+  "risk_factors_en": [
+    {"factor": "Current or former cigarette smoking (the leading COPD risk factor and an accelerator of lung-function decline)", "direction": "increases", "modifiable": true, "source": "https://www.cdc.gov/copd/about/index.html"},
+    {"factor": "Secondhand smoke, workplace dust/fumes, and environmental air pollution (chronic airway and lung irritants)", "direction": "increases", "modifiable": true, "source": "https://www.nhlbi.nih.gov/health/copd/causes"},
+    {"factor": "Family history of COPD or alpha-1 antitrypsin deficiency (inherited susceptibility)", "direction": "increases", "modifiable": false, "source": "https://www.nhlbi.nih.gov/health/copd/causes"},
+    {"factor": "Increasing age and pre-existing asthma", "direction": "increases", "modifiable": false, "source": "https://www.cdc.gov/copd/about/index.html"}
+  ],
+  "acupuncture_scope_zh": {
+    "can_treat": "僅在 COPD 穩定期、已建立吸入藥與急性惡化計畫時，作為呼吸困難相關焦慮、肌肉緊張或生活品質的輔助照護；不能改善固定性氣流阻塞或取代肺復健。",
+    "precautions": "呼吸困難突然加劇、無法完整說句、發紺、意識改變、胸痛、血氧顯著下降或疑似感染性急性惡化時不施行常規針灸，立即醫療評估。",
+    "co_management": "與基層醫療／胸腔科協作，確認吸入器使用、肺復健、疫苗及急性惡化計畫；不得建議減停吸入藥、類固醇、抗生素或氧療。",
+    "evidence": "unknown",
+    "source": "https://www.cdc.gov/copd/about/index.html",
+    "note": "本批未取得 COPD 之病種特異針灸療效指引；此欄僅界定穩定期輔助與急性惡化邊界。"
+  },
+  "acupuncture_scope_en": {
+    "can_treat": "Only during stable COPD, with inhaler therapy and an exacerbation plan already established, may acupuncture be considered adjunctively for dyspnea-related anxiety, muscle tension, or quality of life; it does not reverse fixed airflow limitation or replace pulmonary rehabilitation.",
+    "precautions": "Do not provide routine acupuncture for abruptly worsening dyspnea, inability to speak full sentences, cyanosis, altered consciousness, chest pain, marked oxygen desaturation, or suspected infectious exacerbation; obtain immediate medical evaluation.",
+    "co_management": "Coordinate with primary care or pulmonology and confirm inhaler use, pulmonary rehabilitation, vaccination, and the exacerbation plan; never advise reducing or stopping inhalers, corticosteroids, antibiotics, or oxygen.",
+    "evidence": "unknown",
+    "source": "https://www.cdc.gov/copd/about/index.html",
+    "note": "No condition-specific acupuncture efficacy guideline for COPD was collected in this batch; this field defines stable adjunctive and exacerbation boundaries only."
+  },
    "etiology_zh": "中醫「肺脹」——《金匱要略》「咳而上氣,此為肺脹,其人喘,目如脫狀」;《丹溪心法》「肺脹而咳……此痰挾瘀血礙氣而病」——「痰挾瘀血礙氣」六字幾乎是此病病機的完整縮影。久咳久喘,遷延不癒,由肺及脾腎:肺虛則衛外不固,屢感外邪,咳喘頻作;脾虛失運,釀痰上貯於肺——「脾為生痰之源,肺為貯痰之器」;腎虛不納氣,動則喘甚——晚期呼吸困難之象;痰濁壅肺為標,久病入絡,瘀血內生——唇甲紫紺即瘀之外候。急性加重即「外邪引動伏痰」:表邪一至,痰隨氣壅,喘咳驟劇。本虛(肺脾腎)標實(痰瘀)之判定分期:穩定期補肺健脾益腎、化痰以杜其源;發作期降氣化痰、宣肺平喘;而「戒菸」即斷其燻灼之源,古今同義。",
    "western_pathology_zh": "慢性阻塞性肺病的定義是持續呼吸道症狀加上不完全可逆的氣流受限(肺功能 FEV1/FVC 低於 0.7 為通用切點)。吸菸是首因,職業粉塵、生物燃料煙霧暴露次之,α1-抗胰蛋白酶缺乏是須辨識的遺傳型。病理是兩軌並行:慢性支氣管炎軌——氣道慢性發炎、杯狀細胞增生黏液高分泌、小氣道壁纖維化增厚(小氣道正是氣流受限的主要部位);肺氣腫軌——蛋白酶-抗蛋白酶失衡毀損肺泡壁,彈性回縮力喪失、氣體交換面積縮減。過度充氣使呼吸功增加——勞動性呼吸困難的力學基礎;急性惡化(多由病毒細菌感染誘發)每一次都削去一階肺功能並增加死亡風險,防惡化因此是治療軸心。全身效應(骨骼肌耗損、心血管共病、焦慮憂鬱)使它不只是肺病;戒菸是唯一確定改變病程的介入,肺復健的證據等級居所有慢性病復健之前列。",
    "tcm_patterns": [
@@ -37256,9 +37288,12 @@
    "fetched_at": "2026-07-23T07:46:07.785Z",
    "source_type": "sourced_cloudtcm_record",
    "entity_type": "biomedical_condition",
-   "sources": [
-    "https://cloudtcm.com/disease/tcm/28283",
-    "https://medlineplus.gov/copd.html"
+  "sources": [
+   "https://cloudtcm.com/disease/tcm/28283",
+   "https://medlineplus.gov/copd.html",
+   "https://www.nhlbi.nih.gov/health/copd",
+   "https://www.nhlbi.nih.gov/health/copd/causes",
+   "https://www.cdc.gov/copd/about/index.html"
    ],
    "import_artifacts": [
     {
@@ -37298,9 +37333,37 @@
     "red_flags_zh": [
      "GOLD 惡化與共病紅旗通說"
     ],
-    "red_flags_en": [
-     "GOLD 惡化與共病紅旗通說"
-    ]
+   "red_flags_en": [
+    "GOLD 惡化與共病紅旗通說"
+   ],
+   "summary_zh": [
+    "https://www.nhlbi.nih.gov/health/copd",
+    "https://www.cdc.gov/copd/about/index.html"
+   ],
+   "summary_en": [
+    "https://www.nhlbi.nih.gov/health/copd",
+    "https://www.cdc.gov/copd/about/index.html"
+   ],
+   "western_context_zh": [
+    "https://www.nhlbi.nih.gov/health/copd"
+   ],
+   "western_context_en": [
+    "https://www.nhlbi.nih.gov/health/copd"
+   ],
+   "risk_factors_zh": [
+    "https://www.nhlbi.nih.gov/health/copd/causes",
+    "https://www.cdc.gov/copd/about/index.html"
+   ],
+   "risk_factors_en": [
+    "https://www.nhlbi.nih.gov/health/copd/causes",
+    "https://www.cdc.gov/copd/about/index.html"
+   ],
+   "acupuncture_scope_zh": [
+    "https://www.cdc.gov/copd/about/index.html"
+   ],
+   "acupuncture_scope_en": [
+    "https://www.cdc.gov/copd/about/index.html"
+   ]
    },
    "red_flags_zh": [
     "急性惡化伴意識改變、發紺、無法平臥 → 呼吸衰竭（急症）",
@@ -37461,7 +37524,7 @@
    }
   },
   {
-   "id": "cond.chronic_cough",
+  "id": "cond.chronic_cough",
    "name_en": "Chronic Cough",
    "name_zh": "慢性咳嗽",
    "category": "respiratory",
@@ -37487,7 +37550,39 @@
     "pattern.spleen_stomach_yang_deficiency",
     "pattern.phlegm_stasis_binding"
    ],
-   "review_status": "draft",
+  "review_status": "draft",
+  "summary_zh": "慢性咳嗽是持續或反覆咳嗽的臨床症狀，而非單一病因。常見線索包括上呼吸道症狀、氣喘、胃食道逆流、吸菸／刺激物與 ACE 抑制劑等藥物，但肺部感染、支氣管擴張或腫瘤等亦須依病史與紅旗排除。",
+  "summary_en": "Chronic cough is a persistent or recurrent clinical symptom, not a single diagnosis. Common clues include upper-airway symptoms, asthma, gastroesophageal reflux, smoking/irritants, and medicines such as ACE inhibitors, while pulmonary infection, bronchiectasis, malignancy, and other causes must be excluded according to history and red flags.",
+  "western_context_zh": "以咳嗽病程、痰、喘鳴、鼻／胃食道症狀、吸菸與職業暴露及完整用藥史建立鑑別；依臨床線索安排胸部影像、肺功能或其他檢查。治療應針對確認或高度疑似病因，不應只反覆壓制咳嗽。此處僅為文件對照用語，非治療指示。",
+  "western_context_en": "Build the differential from cough duration, sputum, wheeze, nasal or reflux symptoms, smoking and occupational exposure, and a complete medication history; use chest imaging, pulmonary function testing, or other investigations as clinically indicated. Treatment should target a confirmed or strongly suspected cause rather than repeatedly suppress the cough alone. This is documentation context, not a treatment directive.",
+  "risk_factors_zh": [
+    {"factor": "吸菸與二手菸暴露（刺激氣道並增加慢性肺病可能性）", "direction": "increases", "modifiable": true, "source": "https://medlineplus.gov/cough.html"},
+    {"factor": "ACE 抑制劑或其他可能引起咳嗽的藥物（僅由處方醫師檢視替換）", "direction": "increases", "modifiable": true, "source": "https://medlineplus.gov/cough.html"},
+    {"factor": "氣喘、鼻後滴流／過敏、胃食道逆流或近期呼吸道感染", "direction": "increases", "modifiable": false, "source": "https://medlineplus.gov/cough.html"},
+    {"factor": "職業或環境中的粉塵、煙霧與化學刺激物（可維持咳嗽反射敏感化）", "direction": "increases", "modifiable": true, "source": "https://www.nhs.uk/symptoms/cough/"}
+  ],
+  "risk_factors_en": [
+    {"factor": "Smoking and secondhand-smoke exposure (airway irritation and chronic-lung-disease risk)", "direction": "increases", "modifiable": true, "source": "https://medlineplus.gov/cough.html"},
+    {"factor": "ACE inhibitors or other cough-causing medicines (substitution belongs with the prescriber)", "direction": "increases", "modifiable": true, "source": "https://medlineplus.gov/cough.html"},
+    {"factor": "Asthma, postnasal drip/allergy, gastroesophageal reflux, or recent respiratory infection", "direction": "increases", "modifiable": false, "source": "https://medlineplus.gov/cough.html"},
+    {"factor": "Occupational or environmental dust, fumes, and chemical irritants (sustained cough-reflex irritation)", "direction": "increases", "modifiable": true, "source": "https://www.nhs.uk/symptoms/cough/"}
+  ],
+  "acupuncture_scope_zh": {
+    "can_treat": "僅在已進行病因評估、無紅旗且病況穩定時，可作為伴隨不適的輔助照護；不能以止咳反應取代胸部影像、肺功能或病因治療。",
+    "precautions": "咳血、呼吸困難、胸痛、發紺、意識改變、持續發燒、體重減輕或快速惡化時不施行常規針灸，應依嚴重度緊急轉診。",
+    "co_management": "與基層醫療／胸腔科協作並追蹤咳嗽病程、用藥與檢查；ACE 抑制劑或其他處方藥的任何停用／調整，均須先聯絡並諮詢原處方醫師。",
+    "evidence": "unknown",
+    "source": "https://medlineplus.gov/cough.html",
+    "note": "本批未取得慢性咳嗽之病種特異針灸療效指引；此欄僅界定病因評估、轉診與輔助照護邊界。"
+  },
+  "acupuncture_scope_en": {
+    "can_treat": "Only after etiologic assessment, with no red flags and a stable condition, may acupuncture be used as adjunctive care for associated discomfort; a cough response does not replace chest imaging, pulmonary testing, or cause-directed treatment.",
+    "precautions": "Do not provide routine acupuncture for hemoptysis, dyspnea, chest pain, cyanosis, altered consciousness, persistent fever, weight loss, or rapid deterioration; refer urgently according to severity.",
+    "co_management": "Coordinate with primary care or pulmonology and track cough duration, medicines, and investigations; contact and consult the prescriber before any discontinuation or adjustment of an ACE inhibitor or other prescription.",
+    "evidence": "unknown",
+    "source": "https://medlineplus.gov/cough.html",
+    "note": "No condition-specific acupuncture efficacy guideline for chronic cough was collected in this batch; this field defines etiologic assessment, referral, and adjunctive-care boundaries only."
+  },
    "etiology_zh": "慢性咳嗽指咳嗽遷延超過八週,中醫辨證常見數型:外感咳嗽失治、風邪未盡,伏於肺絡(風邪戀肺),遇冷或刺激性氣味即發,咽癢陣咳,苔薄;痰濕內蘊者,脾失健運,痰阻肺絡而咳痰量多、胸悶,苔白膩;肝火犯肺者,情緒波動即嗆咳陣作、咳引脅痛,苔薄黃,脈弦;肺陰虧虛者,乾咳無痰或痰少而黏、咽乾少津,舌紅少苔,多見於病程日久、反覆傷陰者。諸型可單獨或夾雜出現,故慢性咳嗽辨證較急性咳嗽複雜。",
    "western_pathology_zh": "慢性咳嗽定義為咳嗽持續超過8週,常見病因依序為上呼吸道咳嗽症候群(鼻涕倒流)、咳嗽變異型氣喘、胃食道逆流,以及服用ACE抑制劑類降血壓藥物,少數為慢性支氣管炎、支氣管擴張症或其他肺部病灶所致。共同機轉為咳嗽反射弧(氣道感覺神經末梢)因發炎、機械或化學刺激而持續處於敏感化狀態,診斷需系統性排除上述常見病因,並依線索安排胸部影像或肺功能檢查。",
    "tcm_patterns": [
@@ -37997,8 +38092,10 @@
    "fetched_at": "2026-07-23T07:45:08.877Z",
    "source_type": "sourced_cloudtcm_record",
    "entity_type": "biomedical_condition",
-   "sources": [
-    "https://cloudtcm.com/disease/tcm/28283"
+  "sources": [
+   "https://cloudtcm.com/disease/tcm/28283",
+   "https://medlineplus.gov/cough.html",
+   "https://www.nhs.uk/symptoms/cough/"
    ],
    "red_flags_zh": [
     "咳血 → 影像與專科急件",
@@ -38030,9 +38127,37 @@
     "western_pathology_zh": [
      "原值為與其他兩筆記錄重複套用的部落格文章,予以整篇替換。新內容取自 中醫內科學/皮膚科學教材通行病因病機內容 + 西醫臨床醫學通識,2026-08-21 撰寫,待 Ting 複核出處(慢性咳嗽鑑別診斷為通行醫學知識)。"
     ],
-    "western_pathology_en": [
-     "Same sourcing as western_pathology_zh, translated faithfully."
-    ]
+   "western_pathology_en": [
+    "Same sourcing as western_pathology_zh, translated faithfully."
+   ],
+   "summary_zh": [
+    "https://medlineplus.gov/cough.html",
+    "https://www.nhs.uk/symptoms/cough/"
+   ],
+   "summary_en": [
+    "https://medlineplus.gov/cough.html",
+    "https://www.nhs.uk/symptoms/cough/"
+   ],
+   "western_context_zh": [
+    "https://medlineplus.gov/cough.html"
+   ],
+   "western_context_en": [
+    "https://medlineplus.gov/cough.html"
+   ],
+   "risk_factors_zh": [
+    "https://medlineplus.gov/cough.html",
+    "https://www.nhs.uk/symptoms/cough/"
+   ],
+   "risk_factors_en": [
+    "https://medlineplus.gov/cough.html",
+    "https://www.nhs.uk/symptoms/cough/"
+   ],
+   "acupuncture_scope_zh": [
+    "https://medlineplus.gov/cough.html"
+   ],
+   "acupuncture_scope_en": [
+    "https://medlineplus.gov/cough.html"
+   ]
    },
    "etiology_en": "Chronic cough — cough persisting beyond eight weeks — is differentiated in TCM into several patterns. In lingering wind after an inadequately treated external contraction (wind lodged in the lung network), cough recurs paroxysmally with throat itch, triggered by cold or irritant odors, with a thin coating. In internal phlegm-damp accumulation, impaired spleen transportation lets phlegm obstruct the lung network, producing copious sputum and chest fullness with a white greasy coating. In liver fire invading the lung, emotional upset provokes choking paroxysmal cough with rib-side pain, a thin yellow coating, and a wiry pulse. In lung-yin deficiency, there is a dry cough with little or no sputum, dry throat with scant fluid, and a red tongue with little coating — most often seen in protracted cases with repeated yin injury. These patterns may appear singly or in combination, making chronic cough considerably harder to differentiate than acute cough.",
    "western_pathology_en": "Chronic cough is defined as cough persisting beyond 8 weeks. The most common causes, in roughly descending order, are upper airway cough syndrome (postnasal drip), cough-variant asthma, gastroesophageal reflux disease, and ACE-inhibitor antihypertensive medication, with chronic bronchitis, bronchiectasis, or other pulmonary lesions accounting for a smaller share. The shared mechanism is sensitization of the cough reflex arc (airway sensory afferents) from inflammation or mechanical/chemical irritation. Diagnosis requires systematically ruling out these common causes and, guided by clinical clues, obtaining chest imaging or pulmonary function testing as indicated.",
@@ -48453,7 +48578,7 @@
    }
   },
   {
-   "id": "cond.hypotension",
+  "id": "cond.hypotension",
    "name_en": "Hypotension (context)",
    "name_zh": "低血壓（文件情境）",
    "category": "cardio",
@@ -48472,9 +48597,41 @@
     "pattern.kidney_essence_deficiency",
     "pattern.spleen_qi_deficiency"
    ],
-   "review_status": "draft",
-   "etiology_zh": "",
-   "western_pathology_zh": "",
+  "review_status": "draft",
+  "summary_zh": "低血壓是血壓偏低的量測與臨床情境，不必然代表單一疾病；無症狀者可能不需處置，但若伴頭暈、視物模糊、虛弱、暈厥或跌倒，應評估姿勢變化、脫水、出血、藥物及心臟、內分泌或自主神經原因。急性低血壓合併休克徵象屬急症。",
+  "summary_en": "Hypotension is a blood-pressure finding and clinical context rather than a single disease. It may require no treatment when asymptomatic, but dizziness, blurred vision, weakness, syncope, or falls warrant assessment for postural change, dehydration, bleeding, medication effects, and cardiac, endocrine, or autonomic causes. Acute hypotension with signs of shock is an emergency.",
+  "western_context_zh": "先確認症狀、臥位與站立血壓、近期水分或失血情況及完整用藥，再依線索安排心電圖、血液檢查或心臟／自主神經評估。處置針對病因；任何藥物調整均由原處方醫師決定。此處僅為文件對照用語，非治療指示。",
+  "western_context_en": "First document symptoms, supine and standing blood pressure, recent fluid or blood loss, and a complete medication list; ECG, laboratory testing, or cardiac/autonomic assessment is then guided by the findings. Management targets the cause, and medication changes belong with the prescribing clinician. This is documentation context, not a treatment directive.",
+  "risk_factors_zh": [
+    {"factor": "脫水、嘔吐、腹瀉、發燒或失血造成循環血量下降", "direction": "increases", "modifiable": true, "source": "https://medlineplus.gov/lowbloodpressure.html"},
+    {"factor": "降壓藥、利尿劑及其他可能降低血壓的藥物（僅由處方醫師檢視調整）", "direction": "increases", "modifiable": true, "source": "https://www.nhs.uk/conditions/low-blood-pressure-hypotension/"},
+    {"factor": "心臟、內分泌或自主神經系統疾病", "direction": "increases", "modifiable": false, "source": "https://medlineplus.gov/lowbloodpressure.html"},
+    {"factor": "高齡及姿勢改變時的血壓調節脆弱性", "direction": "increases", "modifiable": false, "source": "https://www.nhs.uk/conditions/low-blood-pressure-hypotension/"}
+  ],
+  "risk_factors_en": [
+    {"factor": "Reduced circulating volume from dehydration, vomiting, diarrhea, fever, or blood loss", "direction": "increases", "modifiable": true, "source": "https://medlineplus.gov/lowbloodpressure.html"},
+    {"factor": "Antihypertensives, diuretics, and other medicines that may lower blood pressure (prescriber review required)", "direction": "increases", "modifiable": true, "source": "https://www.nhs.uk/conditions/low-blood-pressure-hypotension/"},
+    {"factor": "Cardiac, endocrine, or autonomic nervous system disease", "direction": "increases", "modifiable": false, "source": "https://medlineplus.gov/lowbloodpressure.html"},
+    {"factor": "Older age and vulnerability of blood-pressure regulation during postural change", "direction": "increases", "modifiable": false, "source": "https://www.nhs.uk/conditions/low-blood-pressure-hypotension/"}
+  ],
+  "acupuncture_scope_zh": {
+    "can_treat": "僅可在病因已評估且生命徵象穩定時，作為頭暈、疲倦等症狀的輔助照護；不能以針灸『升血壓』取代病因診斷。",
+    "precautions": "暈厥、胸痛、呼吸困難、發燒伴低血壓、活動性出血、意識改變或休克徵象時不進行常規針灸，立即啟動急症評估。",
+    "co_management": "與基層醫療／心臟科協作，記錄臥站血壓、症狀與用藥；降壓藥、利尿劑或其他處方藥的任何停用／調整，均須先聯絡並諮詢原處方醫師。",
+    "evidence": "unknown",
+    "source": "https://medlineplus.gov/lowbloodpressure.html",
+    "note": "本批未取得低血壓之病種特異針灸療效指引；此欄僅界定安全與轉診邊界。"
+  },
+  "acupuncture_scope_en": {
+    "can_treat": "Only after the cause has been assessed and vital signs are stable, acupuncture may be considered as adjunctive care for symptoms such as dizziness or fatigue; it must not be used to 'raise blood pressure' in place of etiologic diagnosis.",
+    "precautions": "Do not provide routine acupuncture when syncope, chest pain, dyspnea, fever with hypotension, active bleeding, altered consciousness, or signs of shock are present; activate urgent evaluation.",
+    "co_management": "Coordinate with primary care or cardiology and document supine/standing pressure, symptoms, and medicines; contact and consult the prescriber before any discontinuation or adjustment of antihypertensives, diuretics, or other prescriptions.",
+    "evidence": "unknown",
+    "source": "https://medlineplus.gov/lowbloodpressure.html",
+    "note": "No condition-specific acupuncture efficacy guideline for hypotension was collected in this batch; this field defines safety and referral boundaries only."
+  },
+  "etiology_zh": "中醫不以血壓數值單獨立病名，需依眩暈、乏力、心悸、畏寒、自汗、暈厥等表現辨證。官方中醫病例與科普資料所列常見病機包括氣血虧虛、脾虛清陽不升、中氣不足或腎陽不足；但低血壓亦可能源自失血、脫水、感染或藥物，不能一概歸為『虛證』。",
+  "western_pathology_zh": "血壓取決於心輸出量與周邊血管阻力。循環血量不足、心臟泵血下降、血管過度擴張或自主神經反射失調，均可使器官灌流下降；由臥／坐轉站時調節失敗可形成姿勢性低血壓。急劇且嚴重的灌流不足可進展為休克。",
    "tcm_patterns": [
     {
      "pattern_zh": "黃耆桂枝五物湯證",
@@ -48762,8 +48919,13 @@
    "fetched_at": "2026-07-23T07:45:15.937Z",
    "source_type": "sourced_cloudtcm_record",
    "entity_type": "biomedical_condition",
-   "sources": [
-    "https://cloudtcm.com/disease/tcm/753"
+  "sources": [
+   "https://cloudtcm.com/disease/tcm/753",
+   "https://medlineplus.gov/lowbloodpressure.html",
+   "https://medlineplus.gov/ency/article/000039.htm",
+   "https://www.nhs.uk/conditions/low-blood-pressure-hypotension/",
+   "https://zyj.beijing.gov.cn/sy/ccjy/202603/t20260330_4569317.html",
+   "https://wjw.beijing.gov.cn/bmfw_20143/jkzs/jksh/202504/t20250421_4070273.html"
    ],
    "import_artifacts": [
     {
@@ -48797,9 +48959,55 @@
     "red_flags_zh": [
      "ESC 暈厥指引紅旗通說"
     ],
-    "red_flags_en": [
-     "ESC 暈厥指引紅旗通說"
-    ]
+   "red_flags_en": [
+    "ESC 暈厥指引紅旗通說"
+   ],
+   "summary_zh": [
+    "https://medlineplus.gov/lowbloodpressure.html",
+    "https://medlineplus.gov/ency/article/000039.htm",
+    "https://www.nhs.uk/conditions/low-blood-pressure-hypotension/"
+   ],
+   "summary_en": [
+    "https://medlineplus.gov/lowbloodpressure.html",
+    "https://medlineplus.gov/ency/article/000039.htm",
+    "https://www.nhs.uk/conditions/low-blood-pressure-hypotension/"
+   ],
+   "western_context_zh": [
+    "https://medlineplus.gov/lowbloodpressure.html"
+   ],
+   "western_context_en": [
+    "https://medlineplus.gov/lowbloodpressure.html"
+   ],
+   "etiology_zh": [
+    "北京市中醫藥管理局／北京中醫藥大學東直門醫院：直立性低血壓屬多病因訊號，病例辨眩暈—氣血虧虛、脾虛清陽不升；https://zyj.beijing.gov.cn/sy/ccjy/202603/t20260330_4569317.html",
+    "北京市衛生健康委員會／北京天壇醫院：依具體辨證可見中氣不足、腎陽不足等，並建議諮詢中醫專科；https://wjw.beijing.gov.cn/bmfw_20143/jkzs/jksh/202504/t20250421_4070273.html",
+    "Biomedical causes cross-checked with https://medlineplus.gov/lowbloodpressure.html; TCM language does not replace etiologic assessment."
+   ],
+   "etiology_en": [
+    "Same Beijing Administration of Traditional Chinese Medicine / Dongzhimen Hospital sourcing as etiology_zh; translated and bounded against biomedical etiologic assessment."
+   ],
+   "western_pathology_zh": [
+    "https://medlineplus.gov/lowbloodpressure.html",
+    "https://medlineplus.gov/ency/article/000039.htm"
+   ],
+   "western_pathology_en": [
+    "https://medlineplus.gov/lowbloodpressure.html",
+    "https://medlineplus.gov/ency/article/000039.htm"
+   ],
+   "risk_factors_zh": [
+    "https://medlineplus.gov/lowbloodpressure.html",
+    "https://www.nhs.uk/conditions/low-blood-pressure-hypotension/"
+   ],
+   "risk_factors_en": [
+    "https://medlineplus.gov/lowbloodpressure.html",
+    "https://www.nhs.uk/conditions/low-blood-pressure-hypotension/"
+   ],
+   "acupuncture_scope_zh": [
+    "https://medlineplus.gov/lowbloodpressure.html"
+   ],
+   "acupuncture_scope_en": [
+    "https://medlineplus.gov/lowbloodpressure.html"
+   ]
    },
    "acupoint_code_normalization": {
     "date": "2026-08-15",
@@ -48869,11 +49077,11 @@
     "assessed": false,
     "no_source_found": false
    },
-   "western_pathology_en": "",
-   "etiology_en": ""
+  "western_pathology_en": "Blood pressure reflects cardiac output and peripheral vascular resistance. Reduced circulating volume, impaired cardiac pumping, excessive vasodilation, or failure of autonomic reflexes can reduce organ perfusion; failure to compensate when moving from lying or sitting to standing can produce orthostatic hypotension. Abrupt, severe hypoperfusion can progress to shock.",
+  "etiology_en": "TCM does not define a disease from the blood-pressure number alone; differentiation is based on manifestations such as dizziness, fatigue, palpitations, cold intolerance, spontaneous sweating, or syncope. Official TCM case and education sources describe qi-blood deficiency, Spleen deficiency with failure of clear yang to rise, middle-qi deficiency, or Kidney-yang deficiency among possible mechanisms. However, hypotension may also result from blood loss, dehydration, infection, or medication and must not be uniformly labeled a deficiency pattern."
   },
   {
-   "id": "cond.palpitations",
+  "id": "cond.palpitations",
    "name_en": "Palpitations / Benign Arrhythmia (context)",
    "name_zh": "心悸／良性心律不整（文件情境）",
    "category": "cardio",
@@ -48891,9 +49099,41 @@
     "pattern.liver_qi_stagnation",
     "pattern.heart_blood_stasis"
    ],
-   "review_status": "draft",
-   "etiology_zh": "",
-   "western_pathology_zh": "",
+  "review_status": "draft",
+  "summary_zh": "心悸是個人感覺心跳過快、過強、漏拍或不規則的症狀，不等同於已確診的心律不整；發作時的實際節律可能正常，也可能為心房顫動、上心室或心室性心律不整。新發、持續、運動誘發，或合併胸痛、呼吸困難、暈厥者需優先醫療評估。",
+  "summary_en": "Palpitations are the subjective sensation of a fast, forceful, skipped, or irregular heartbeat and are not synonymous with a diagnosed arrhythmia. The rhythm during symptoms may be normal or may represent atrial fibrillation, supraventricular arrhythmia, or ventricular arrhythmia. New, sustained, or exertional palpitations, or those accompanied by chest pain, dyspnea, or syncope, require priority medical evaluation.",
+  "western_context_zh": "臨床核心是把症狀與節律連結：記錄起止、誘因、持續時間與伴隨症狀，檢視藥物及刺激物，並以心電圖為起點；間歇發作者可依醫囑使用 Holter 或事件記錄器，必要時檢查電解質、甲狀腺及結構性心臟病。此處僅為文件對照用語，非治療指示。",
+  "western_context_en": "The clinical task is to correlate symptoms with rhythm: document onset, offset, triggers, duration, and associated symptoms; review medicines and stimulants; and begin with an ECG. Intermittent episodes may require clinician-directed Holter or event monitoring, with electrolytes, thyroid function, and structural heart disease assessed when indicated. This is documentation context, not a treatment directive.",
+  "risk_factors_zh": [
+    {"factor": "咖啡因、尼古丁、酒精或其他刺激物（可誘發心悸或使心率上升）", "direction": "increases", "modifiable": true, "source": "https://medlineplus.gov/ency/article/003081.htm"},
+    {"factor": "壓力、焦慮、發燒、睡眠不足或劇烈活動（可增加交感神經活性）", "direction": "increases", "modifiable": true, "source": "https://medlineplus.gov/ency/article/003081.htm"},
+    {"factor": "甲狀腺異常、電解質失衡、低氧或既有心臟／瓣膜疾病", "direction": "increases", "modifiable": false, "source": "https://www.nhlbi.nih.gov/health/arrhythmias/diagnosis"},
+    {"factor": "減充血劑、部分氣喘藥、心臟或血壓藥物等（需由醫師或藥師檢視）", "direction": "increases", "modifiable": true, "source": "https://medlineplus.gov/ency/article/003081.htm"}
+  ],
+  "risk_factors_en": [
+    {"factor": "Caffeine, nicotine, alcohol, or other stimulants (potential symptom triggers)", "direction": "increases", "modifiable": true, "source": "https://medlineplus.gov/ency/article/003081.htm"},
+    {"factor": "Stress, anxiety, fever, sleep loss, or strenuous activity (sympathetic activation)", "direction": "increases", "modifiable": true, "source": "https://medlineplus.gov/ency/article/003081.htm"},
+    {"factor": "Thyroid disorder, electrolyte imbalance, low oxygen, or underlying heart/valve disease", "direction": "increases", "modifiable": false, "source": "https://www.nhlbi.nih.gov/health/arrhythmias/diagnosis"},
+    {"factor": "Decongestants and some asthma, cardiac, or blood-pressure medicines (clinician/pharmacist review required)", "direction": "increases", "modifiable": true, "source": "https://medlineplus.gov/ency/article/003081.htm"}
+  ],
+  "acupuncture_scope_zh": {
+    "can_treat": "僅在危險性心律不整已排除、病況穩定且醫療計畫明確時，可將針灸定位為壓力或伴隨不適的輔助照護；不能用症狀短暫緩解推定節律安全。",
+    "precautions": "心悸合併胸痛、呼吸困難、暈厥／近暈厥、明顯頭暈、持續快速或不規則心跳時停止常規處置並啟動急症評估。",
+    "co_management": "與基層醫療／心臟科協作，保留發作紀錄與節律檢查結果；抗心律不整、抗凝血或其他心血管藥物的任何停用／調整，均須先聯絡並諮詢原處方醫師。",
+    "evidence": "unknown",
+    "source": "https://www.nhlbi.nih.gov/health/arrhythmias/diagnosis",
+    "note": "本批未取得心悸／心律不整之病種特異針灸療效指引；此欄僅界定安全與共管邊界。"
+  },
+  "acupuncture_scope_en": {
+    "can_treat": "Only after dangerous arrhythmia has been excluded, the condition is stable, and a medical plan is established may acupuncture be framed as adjunctive care for stress or associated discomfort; transient symptom relief does not establish rhythm safety.",
+    "precautions": "If palpitations occur with chest pain, dyspnea, syncope/near-syncope, marked dizziness, or a sustained rapid or irregular rhythm, stop routine care and activate urgent evaluation.",
+    "co_management": "Coordinate with primary care or cardiology and retain episode logs and rhythm-test results; contact and consult the prescriber before any discontinuation or adjustment of antiarrhythmics, anticoagulants, or other cardiovascular medicines.",
+    "evidence": "unknown",
+    "source": "https://www.nhlbi.nih.gov/health/arrhythmias/diagnosis",
+    "note": "No condition-specific acupuncture efficacy guideline for palpitations/arrhythmia was collected in this batch; this field defines safety and co-management boundaries only."
+  },
+  "etiology_zh": "中醫心悸可見於心神失養或受擾，常辨心血不足、心陰虧虛、心陽不振、心脾兩虛、痰火擾心或瘀阻心脈等；辨證必須結合發作型態、胸悶、失眠、汗出及舌脈。心悸只是症狀，不能以中醫證型取代心電圖對心律的判定。",
+  "western_pathology_zh": "心悸源自對心臟收縮或節律的感知增強。竇性心搏增快、早期收縮或心房／心室性心律不整均可造成症狀；交感活化、刺激物、藥物、甲狀腺與電解質異常可觸發或加重。症狀是否危險取決於實際節律、血流動力學影響與是否存在結構性心臟病。",
    "tcm_patterns": [
     {
      "pattern_zh": "心陽虛",
@@ -49180,8 +49420,11 @@
    "fetched_at": "2026-07-23T07:45:16.274Z",
    "source_type": "sourced_cloudtcm_record",
    "entity_type": "biomedical_condition",
-   "sources": [
-    "https://cloudtcm.com/disease/tcm/290"
+  "sources": [
+   "https://cloudtcm.com/disease/tcm/290",
+   "https://medlineplus.gov/ency/article/003081.htm",
+   "https://www.nhlbi.nih.gov/health/arrhythmias/diagnosis",
+   "https://www.nhlbi.nih.gov/health/arrhythmias/symptoms"
    ],
    "import_artifacts": [
     {
@@ -49225,9 +49468,50 @@
     "red_flags_en": [
      "ACC/ESC 心悸評估紅旗通說；curriculum/conditions/1 Palpitation.docx 轉介精神"
     ],
-    "etiology_zh": [
-     "原值為 C10 全庫共用樣板句(該句仍存於其他未修記錄);替換內容取自 /home/user/acuting-os/curriculum/conditions/1 Palpitation.md（2026-08-19 課件萃取,經對抗驗證);evidence: \"TCM Etiology & Pathology\" \"Excessive Condition: Mental disorder\""
-    ]
+   "etiology_zh": [
+    "原值為 C10 全庫共用樣板句(該句仍存於其他未修記錄);替換內容取自 /home/user/acuting-os/curriculum/conditions/1 Palpitation.md（2026-08-19 課件萃取,經對抗驗證);evidence: \"TCM Etiology & Pathology\" \"Excessive Condition: Mental disorder\""
+   ],
+   "etiology_en": [
+    "Same local curriculum sourcing as etiology_zh; translated and bounded against ECG-based rhythm assessment."
+   ],
+   "summary_zh": [
+    "https://medlineplus.gov/ency/article/003081.htm",
+    "https://www.nhlbi.nih.gov/health/arrhythmias/symptoms"
+   ],
+   "summary_en": [
+    "https://medlineplus.gov/ency/article/003081.htm",
+    "https://www.nhlbi.nih.gov/health/arrhythmias/symptoms"
+   ],
+   "western_context_zh": [
+    "https://www.nhlbi.nih.gov/health/arrhythmias/diagnosis"
+   ],
+   "western_context_en": [
+    "https://www.nhlbi.nih.gov/health/arrhythmias/diagnosis"
+   ],
+   "western_pathology_zh": [
+    "https://medlineplus.gov/ency/article/003081.htm",
+    "https://www.nhlbi.nih.gov/health/arrhythmias/diagnosis"
+   ],
+   "western_pathology_en": [
+    "https://medlineplus.gov/ency/article/003081.htm",
+    "https://www.nhlbi.nih.gov/health/arrhythmias/diagnosis"
+   ],
+   "risk_factors_zh": [
+    "https://medlineplus.gov/ency/article/003081.htm",
+    "https://www.nhlbi.nih.gov/health/arrhythmias/diagnosis"
+   ],
+   "risk_factors_en": [
+    "https://medlineplus.gov/ency/article/003081.htm",
+    "https://www.nhlbi.nih.gov/health/arrhythmias/diagnosis"
+   ],
+   "acupuncture_scope_zh": [
+    "https://www.nhlbi.nih.gov/health/arrhythmias/diagnosis",
+    "https://www.nhlbi.nih.gov/health/arrhythmias/symptoms"
+   ],
+   "acupuncture_scope_en": [
+    "https://www.nhlbi.nih.gov/health/arrhythmias/diagnosis",
+    "https://www.nhlbi.nih.gov/health/arrhythmias/symptoms"
+   ]
    },
    "acupoint_code_normalization": {
     "date": "2026-08-15",
@@ -49329,11 +49613,11 @@
     "assessed": false,
     "no_source_found": false
    },
-   "western_pathology_en": "",
-   "etiology_en": ""
+  "western_pathology_en": "Palpitations arise from heightened awareness of cardiac contraction or rhythm. Sinus tachycardia, premature beats, and atrial or ventricular arrhythmias may all produce symptoms; sympathetic activation, stimulants, medicines, thyroid disease, and electrolyte abnormalities can trigger or worsen them. Risk depends on the actual rhythm, its hemodynamic effect, and the presence of structural heart disease.",
+  "etiology_en": "In TCM, palpitations may reflect failure to nourish the Heart spirit or pathological disturbance of it. Common differentiations include Heart-blood deficiency, Heart-yin deficiency, Heart-yang weakness, Heart-Spleen deficiency, phlegm-fire disturbing the Heart, or blood stasis obstructing the Heart vessels; episode pattern, chest oppression, sleep, sweating, tongue, and pulse must be considered. Palpitations remain a symptom, and TCM pattern differentiation cannot replace ECG rhythm identification."
   },
   {
-   "id": "cond.cad",
+  "id": "cond.cad",
    "name_en": "Coronary Artery Disease (adjunctive context)",
    "name_zh": "冠狀動脈疾病（輔助文件情境）",
    "category": "cardio",
@@ -49346,7 +49630,39 @@
     "pattern.phlegm_damp",
     "pattern.heart_yang_deficiency"
    ],
-   "review_status": "draft",
+  "review_status": "draft",
+  "summary_zh": "冠狀動脈疾病是冠狀循環無法充分供應心肌氧氣的疾病群，最常見由粥樣斑塊造成心外膜冠狀動脈狹窄，也可涉及微血管功能障礙或血管痙攣。可無症狀、呈穩定型心絞痛，亦可因斑塊破裂與血栓形成進展為急性冠心症候群。",
+  "summary_en": "Coronary artery disease is a group of disorders in which the coronary circulation cannot deliver enough oxygen to the myocardium. It most often reflects atherosclerotic narrowing of epicardial coronary arteries, but microvascular dysfunction or vasospasm may also contribute. It may be silent, present as stable angina, or progress to acute coronary syndrome after plaque disruption and thrombosis.",
+  "western_context_zh": "西醫評估結合症狀、心電圖、心臟生物標記與依機率選擇的壓力測試或冠狀動脈影像；長期照護以戒菸、運動／心臟復健、控制血壓、血脂與糖尿病及依醫囑使用抗血小板、降脂或抗心絞痛藥物為主。新發、加劇或休息時胸痛按急性冠心症候群處理。此處僅為文件對照用語，非治療指示。",
+  "western_context_en": "Biomedical evaluation integrates symptoms, ECG, cardiac biomarkers, and probability-guided stress testing or coronary imaging. Long-term care centers on smoking cessation, exercise/cardiac rehabilitation, control of blood pressure, lipids, and diabetes, and clinician-directed antiplatelet, lipid-lowering, or antianginal therapy. New, worsening, or rest pain is managed as possible acute coronary syndrome. This is documentation context, not a treatment directive.",
+  "risk_factors_zh": [
+    {"factor": "吸菸及二手菸暴露（促進血管損傷與粥樣硬化）", "direction": "increases", "modifiable": true, "source": "https://www.nhlbi.nih.gov/health/coronary-heart-disease/risk-factors"},
+    {"factor": "高血壓、高 LDL 膽固醇與糖尿病", "direction": "increases", "modifiable": true, "source": "https://www.nhlbi.nih.gov/health/coronary-heart-disease/risk-factors"},
+    {"factor": "缺乏活動、肥胖及不健康飲食", "direction": "increases", "modifiable": true, "source": "https://www.nhlbi.nih.gov/health/coronary-heart-disease/risk-factors"},
+    {"factor": "年齡增加與早發冠心病家族史", "direction": "increases", "modifiable": false, "source": "https://www.nhlbi.nih.gov/health/coronary-heart-disease/risk-factors"}
+  ],
+  "risk_factors_en": [
+    {"factor": "Smoking and secondhand-smoke exposure (vascular injury and atherosclerosis)", "direction": "increases", "modifiable": true, "source": "https://www.nhlbi.nih.gov/health/coronary-heart-disease/risk-factors"},
+    {"factor": "High blood pressure, high LDL cholesterol, and diabetes", "direction": "increases", "modifiable": true, "source": "https://www.nhlbi.nih.gov/health/coronary-heart-disease/risk-factors"},
+    {"factor": "Physical inactivity, obesity, and an unhealthy diet", "direction": "increases", "modifiable": true, "source": "https://www.nhlbi.nih.gov/health/coronary-heart-disease/risk-factors"},
+    {"factor": "Increasing age and a family history of premature coronary disease", "direction": "increases", "modifiable": false, "source": "https://www.nhlbi.nih.gov/health/coronary-heart-disease/risk-factors"}
+  ],
+  "acupuncture_scope_zh": {
+    "can_treat": "僅限已確診且穩定、持續接受標準心血管治療者的症狀與壓力管理輔助；針灸不能處理冠狀動脈阻塞、逆轉斑塊或取代心臟復健與藥物。",
+    "precautions": "新發、加劇、休息時胸痛，或胸部不適合併呼吸困難、冷汗、噁心、暈厥時不施行常規針灸，立即依急性冠心症候群流程送醫。",
+    "co_management": "與心臟科及基層醫療共同追蹤，維持抗血小板、降脂、降壓與抗心絞痛等處方；任何活動量或藥物調整由醫療團隊決定。",
+    "evidence": "unknown",
+    "source": "https://www.nhlbi.nih.gov/health/coronary-heart-disease/treatment",
+    "note": "本批未取得冠狀動脈疾病之病種特異針灸療效指引；此欄僅界定穩定期輔助與急症邊界。"
+  },
+  "acupuncture_scope_en": {
+    "can_treat": "Limited to adjunctive symptom and stress support for diagnosed, stable patients who remain on standard cardiovascular care; acupuncture does not treat coronary obstruction, reverse plaque, or replace cardiac rehabilitation or medication.",
+    "precautions": "Do not provide routine acupuncture for new, worsening, or rest chest pain, or chest discomfort with dyspnea, diaphoresis, nausea, or syncope; activate emergency evaluation for possible acute coronary syndrome.",
+    "co_management": "Co-manage with cardiology and primary care and preserve prescribed antiplatelet, lipid-lowering, antihypertensive, and antianginal therapy; activity or medication changes belong with the medical team.",
+    "evidence": "unknown",
+    "source": "https://www.nhlbi.nih.gov/health/coronary-heart-disease/treatment",
+    "note": "No condition-specific acupuncture efficacy guideline for coronary artery disease was collected in this batch; this field defines stable adjunctive and emergency boundaries only."
+  },
    "etiology_zh": "中醫「胸痺」「心痛」,《金匱要略》立綱:「陽微陰弦,即胸痺而痛」——上焦陽氣不振(陽微),陰邪乘居陽位(陰弦),是此病千年不移的病機總綱。本虛:心氣不足、胸陽不振,漸及氣陰兩虛、心腎陽虛;標實:痰濁盤踞胸中(與膏脂斑塊之意象相合)、瘀血阻滯心脈(「心痛如刺、固定不移」)、寒凝(遇寒痛作,得溫則減)、氣滯(情志誘發,脹悶走竄)。勞力誘發者,勞則耗氣,氣虛血行愈滯——與「需氧-供氧失衡」同構;痰瘀互結日深,脈道愈窄,則病勢日進。治法:通陽宣痺、豁痰化瘀為標,益氣溫陽養陰為本,分期權衡;而「猝然劇痛、汗出肢冷」之真心痛,古人已識其危——「旦發夕死」,今即急性冠心症候群,屬急救轉診,非針藥緩圖之地。",
    "western_pathology_zh": "冠狀動脈疾病的底層是動脈粥樣硬化的數十年演進:內皮功能障礙(高血壓、吸菸、高血糖的共同打擊面)使含 apoB 脂蛋白滯留內膜、氧化修飾,單核球浸潤成泡沫細胞,平滑肌遷移形成纖維帽——斑塊既成,兩條出事路徑:管腔漸窄,需氧超過供氧時發生穩定型心絞痛(勞力誘發、休息或含硝酸甘油緩解);或斑塊破裂/侵蝕觸發血栓,驟然閉塞即急性冠心症候群——而破裂風險取決於斑塊性質(薄帽、大脂核、發炎活躍)而非狹窄程度,「輕度狹窄也能心肌梗塞」是這個病最重要的臨床事實。危險因子即治療靶:血脂(LDL 為因果軸)、血壓、血糖、吸菸;運動與心臟復健有堅實證據。此卡的針灸情境定位於穩定期輔助(症狀與生活品質、心臟復健之協同);任何新發、加劇、休息時胸痛屬急性冠心症候群之疑,是紅旗層的事,不在輔助範圍。",
    "tcm_patterns": [
@@ -49435,12 +49751,42 @@
     "red_flags_zh": [
      "AHA/ACC 急性冠心症候群警訊通說"
     ],
-    "red_flags_en": [
-     "AHA/ACC 急性冠心症候群警訊通說"
-    ]
+   "red_flags_en": [
+    "AHA/ACC 急性冠心症候群警訊通說"
+   ],
+   "summary_zh": [
+    "https://www.nhlbi.nih.gov/health/coronary-heart-disease",
+    "https://www.nhlbi.nih.gov/health/coronary-heart-disease/causes"
+   ],
+   "summary_en": [
+    "https://www.nhlbi.nih.gov/health/coronary-heart-disease",
+    "https://www.nhlbi.nih.gov/health/coronary-heart-disease/causes"
+   ],
+   "western_context_zh": [
+    "https://www.nhlbi.nih.gov/health/coronary-heart-disease/treatment"
+   ],
+   "western_context_en": [
+    "https://www.nhlbi.nih.gov/health/coronary-heart-disease/treatment"
+   ],
+   "risk_factors_zh": [
+    "https://www.nhlbi.nih.gov/health/coronary-heart-disease/risk-factors"
+   ],
+   "risk_factors_en": [
+    "https://www.nhlbi.nih.gov/health/coronary-heart-disease/risk-factors"
+   ],
+   "acupuncture_scope_zh": [
+    "https://www.nhlbi.nih.gov/health/coronary-heart-disease/treatment"
+   ],
+   "acupuncture_scope_en": [
+    "https://www.nhlbi.nih.gov/health/coronary-heart-disease/treatment"
+   ]
    },
-   "sources": [
-    "https://medlineplus.gov/coronaryarterydisease.html"
+  "sources": [
+   "https://medlineplus.gov/coronaryarterydisease.html",
+   "https://www.nhlbi.nih.gov/health/coronary-heart-disease",
+   "https://www.nhlbi.nih.gov/health/coronary-heart-disease/causes",
+   "https://www.nhlbi.nih.gov/health/coronary-heart-disease/risk-factors",
+   "https://www.nhlbi.nih.gov/health/coronary-heart-disease/treatment"
    ],
    "red_flags_zh": [
     "新發、加劇、或休息時胸痛 → 急性冠心症候群，呼叫救護車（急症）",

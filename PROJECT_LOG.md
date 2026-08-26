@@ -1,3 +1,13 @@
+# 2026-08-25 — Codex Conditions 心肺／臨床 Biomedicine 完整化 B32
+
+- **範圍**：只補 `cond.hypotension`、`cond.palpitations`、`cond.cad`、`cond.copd`、`cond.chronic_cough` 的雙語摘要、western context、結構化 risk factors、acupuncture scope；另只對原為空白的低血壓／心悸雙語 etiology 與 western pathology 補值。既有 red flags、TCM patterns、方劑、穴位、ids、schema 未改。
+- **數字**：`FULL_DETAIL_CANDIDATE 273→278`、`DETAIL_PARTIAL 232→227`、`SKELETON 0→0`；5 卡 maturity score 全達 `12/12`；全庫缺 summary/context/risk `44→39`、缺 scope `69→64`、缺 etiology `200→198`、缺 pathology `17→15`；condition source entries `899→916`。
+- **來源／臨床邊界**：MedlinePlus、NHLBI、CDC、NHS、北京市中醫藥管理局、北京市衛健委及本地 `curriculum/conditions/1 Palpitation.docx`；19 個官方直達 URL 均 HTTP 200。明示症狀／量測不等於單一診斷，急性冠心症候群、休克、危險心律不整、COPD 急性惡化及咳血等不屬常規針灸處置，任何停藥／調藥須聯絡原處方醫師。
+- **驗證**：record boundary `505→505`、只變更指定 5 ids／58 個允許欄位群；risk bilingual parity 與來源包含檢查通過；condition standard `505/505 clean`、build-data、relations、relation registry、ratchet、content-junk、19 URL reachability、generated data 與 `git diff --check` 無新增 blocking defect。
+- **未解／下一步**：5 卡既有 imported formula／acupoint 清單仍標 `protocol_status:"unassessed"`，本批未冒充療效證據或覆寫；下一批續補常見心肺 Conditions 的最大空白欄位，優先保留 Claude 溫習系統與其他 agent 路徑。
+
+---
+
 # 2026-08-25 — Codex TDIS 常見臨床／考試病名擴充 T3
 
 - **範圍**：新增 `tdis.xin_shuai`、`tdis.chi_dai`、`tdis.yue_jing_xian_hou_wu_ding_qi`、`tdis.jing_duan_fu_lai`、`tdis.jing_zhuo` 五張 draft 卡；既有 159 張記錄、schema、Symptoms、patterns、方劑與穴位未改。

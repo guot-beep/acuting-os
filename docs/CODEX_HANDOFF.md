@@ -1,5 +1,13 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-25] Codex Handoff — Conditions cardiac/pulmonary Biomedicine B32
+
+- **Exact ids / fields**: `cond.hypotension`, `cond.palpitations`, `cond.cad`, `cond.copd`, and `cond.chronic_cough`; filled bilingual summary, western context, structured risk factors, and acupuncture scope. Only the previously empty bilingual etiology and western pathology fields on hypotension/palpitations were additionally filled. Existing red flags, TCM patterns, formulas, acupoints, ids, schema, and other records were preserved.
+- **Measured delta**: maturity `273→278 FULL_DETAIL_CANDIDATE`, `232→227 DETAIL_PARTIAL`, `0→0 SKELETON`; all five selected cards now score `12/12`; missing summary/context/risk `44→39`, scope `69→64`, etiology `200→198`, pathology `17→15`; condition source entries `899→916`.
+- **Evidence / clinical boundary**: MedlinePlus, NHLBI, CDC, NHS, Beijing Administration of Traditional Chinese Medicine, Beijing Municipal Health Commission, and local `curriculum/conditions/1 Palpitation.docx`; all 19 official direct URLs returned HTTP 200. The cards separate symptoms/findings from diagnoses and explicitly route shock, possible ACS, dangerous arrhythmia, COPD exacerbation, hemoptysis, and other unstable presentations to medical care; medication changes require contact with the prescriber.
+- **Validation**: record boundary `505→505`; only the five target ids and 58 allowed field groups changed; bilingual risk parity and per-record source containment passed; condition standard `505/505 clean`, build-data, relations, relation registry, validation ratchet, content junk, URL reachability, generated-data rebuild, and `git diff --check` produced no new blocking defect.
+- **Explicit unresolved / next line**: the five cards' imported formula and acupoint lists remain `protocol_status:"unassessed"`; this batch did not promote them to evidence-based protocols. Continue the largest remaining common cardiac/pulmonary Condition gaps without touching Claude's study-system UI or other agents' active paths.
+
 ## [2026-08-25] Codex Handoff — TDIS common clinical/exam expansion T3
 
 - **Exact new ids**: appended `tdis.xin_shuai`, `tdis.chi_dai`, `tdis.yue_jing_xian_hou_wu_ding_qi`, `tdis.jing_duan_fu_lai`, and `tdis.jing_zhuo` as `review_status:"draft"`; no existing TDIS record, schema, Symptom, pattern, formula, herb, or acupoint was overwritten.
