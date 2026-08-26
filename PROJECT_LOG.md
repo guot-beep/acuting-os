@@ -1,3 +1,16 @@
+# 2026-08-26 Antigravity — Task 10B (Validator Coverage Truth Table & Guard Gap Inventory)
+
+- **做了什麼**: 完成全庫 366 支腳本之驗證器真實守護地圖、CI 納管真實性判定、D1–D21 決策守護矩陣、四大專項核心問題查證與 7 大守衛缺口清冊（`scripts/audit-validator-coverage-truth.js`），產出機器可讀 JSON 與完整報告。
+- **數字統計**:
+  - 全庫腳本 366 支；納管驗證/測試/稽核/報告 95 支（BLOCKING 66, NONBLOCKING 2, TEST 9, AUDIT 5, REPORT 10, REHEARSAL 3, UTILITY 271）。
+  - CI 納管真實現況：CI_INVOKED 55 支、TRANSITIVE_CI 6 支、ORPHAN_BLOCKING_VALIDATOR 13 支、INFORMATIONAL_CI_STEP 5 支、MANUAL_ONLY 287 支。
+  - 四大專項問題：F1 (34 條 Active->Deprecated 引用)=GUARD_ABSENT；F2 (D16 3 個退役 Pattern)=GUARD_ABSENT；F3 (D11 舊命名空間)=PARTIALLY_ENFORCED；F4 (退役 Herb/Formula ID)=GUARD_ABSENT。
+- **驗證結果**: 8/8 合成負控回歸測試 100% PASS；`antigravity-preflight.js` 判定 PASS WITH WARNINGS（Hard Failures: 0, Regressions: 0）；canonical / generated / workflow 異動 0 byte。
+- **已知未解**: 13 支具阻擋力之驗證器未進 CI；4 個 NOTE tier 步驟無法 fail-closed；現有驗證器均未過濾 `review_status === "deprecated"` 之目標。
+- **下一步**: 等待 Ting / 團隊依據本 Truth Table 進行架構政策裁定（決定哪些 validator 進 CI、何時補上 deprecated target guard）。
+
+---
+
 # 2026-08-25 Antigravity — Task 10A Round 2 (Precision Remediation: Legacy Namespace & Retired-ID Inventory)
 
 - **工作內容**: 執行 Task 10A Round 2 精準量測修正與嚴格關聯欄位掃描（`scripts/audit-legacy-namespace-retired-id.js`）。
