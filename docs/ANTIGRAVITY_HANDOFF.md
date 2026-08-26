@@ -1,3 +1,39 @@
+## ✅ Task 10B Round 2：Validator Coverage Truth Table & Guard Gap Inventory（已完成）
+
+- **類型**: READ-ONLY Dynamic Derived Architectural Guard Audit（0 production mutation, 0 CI workflow changes, 0 debt repairs）
+- **分支**: `antigravity/task10b-validator-coverage-truth-round2`
+- **主要產出**:
+  - 核心動態稽核腳本: `scripts/audit-validator-coverage-truth.js`
+  - 結構化資料庫: `data/audits/validator_coverage_truth_2026-08-26.json`
+  - 完整真相表報告: `docs/audits/VALIDATOR_COVERAGE_TRUTH_2026-08-26.md`
+- **核心數據 (SSOT 直出)**:
+  - Base SHA: `60ca605d3b66d42df7988358ea0ba6796ce560a6`
+  - 全庫腳本總數: **368** 支
+  - 納管驗證/測試/稽核/報告腳本: **97** 支
+  - 分類 (Taxonomy): BLOCKING_VALIDATOR 67 · NONBLOCKING_VALIDATOR 2 · TEST 10 · AUDIT 5 · REPORT 10 · REHEARSAL_DASHBOARD 3 · UTILITY_OTHER 271
+  - CI 調用真相 (CI Invocation Truth):
+    - `CI_INVOKED` (直接在 CI 阻擋): **56** 支
+    - `TRANSITIVE_CI` (透過 Ratchet 傳遞調用): **9** 支
+    - `ORPHAN_BLOCKING_VALIDATOR` (具 Fail-Closed 阻擋力但未進 CI): **13** 支
+    - `INFORMATIONAL_CI_STEP` (在 CI 中作為報告/NOTE tier 執行): **5** 支
+    - `MANUAL_ONLY` (手動工具/輔助腳本): **287** 支
+  - 獨立執行狀態分類 (Execution Breakdown):
+    - `GREEN_BLOCKING_VALIDATORS`: **66** 支
+    - `RED_BLOCKING_VALIDATORS`: **1** 支 (`validate-herb-canon.js`)
+    - `RED_TESTS`: **0** 支 (所有測試全部通過)
+    - `REHEARSAL_REQUIRES_ARGS`: **1** 支 (`rehearse-c2b.js`)
+    - `RED_REPORTS`: **1** 支 (`report-formula-content-gaps.js`)
+    - `SKIPPED_UNSAFE`: **1** 支 (`report-comparison-fill.js` 因預設路徑無條件寫入 docs 而安全略過)
+  - 四大專項問題即時派生判定:
+    - **A** (34 條 Active $\rightarrow$ Deprecated 引用): `GUARD_FOUND` (`validate-retired-id-references.js` 於 Ratchet 中 Fail-Closed 守護)
+    - **B** (D16 3 個退役 Pattern): `GUARD_FOUND` (`validate-retired-id-references.js` 覆蓋全部退役 Pattern)
+    - **C** (D11 舊命名空間): `GUARD_SCOPE_PARTIAL` (卡片層擋 `pat.*`，但 `validate-relations.js` 在 CI 中強制反向鎖定 `western_condition.*`/`eastern_disease.*`)
+    - **D** (退役 Herb / Formula ID 關聯): `GUARD_FOUND` (`validate-retired-id-references.js` 覆蓋全部資料夾所有退役 ID 關聯)
+  - D1–D22 決策動態地圖: 解析 `DECISIONS.md` 現存 22 個標題，D8 確認無目錄層級強制驗證器
+  - 回歸測試: 10/10 負控與動態發現測試 100% PASS（走實體生產發現函式）
+
+---
+
 ## ⚠️ Claude 週三獨立複核:Task 8A/8B/8C、Task 9A-D、Task 10A(2026-08-26)
 
 Ting 昨天(8/24)晚上暫停巡檢期間直接指派給你的只有 Task 8 三項(中藥 `safety_source_url`、
