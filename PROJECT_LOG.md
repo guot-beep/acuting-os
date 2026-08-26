@@ -1,3 +1,16 @@
+# 2026-08-25 Antigravity — Task 8B Round 2 (中藥 modern_functions_en 缺口重新掃描與誠實結案)
+
+- **工作內容**: 嚴格依據 Fail Closed 規則與最新 main baseline 重新掃描全庫中藥缺口。22 筆缺少 modern_functions_en 之記錄在 main 上均無既有 modern_functions_zh 正典基準；依規範全數標註 SKIPPED，不越界自行研究或生成中英文藥理內容。
+- **數字 (before -> after)**:
+  - translated_existing_source_data: 0
+  - skipped_no_zh_baseline: 22
+  - skipped_uncertain_translation: 0
+  - modern_functions_en 覆蓋率: 維持 341/363 (94%) 不變，既有 341 筆非空記錄 0 異動。
+- **驗證結果**: validate-herb-standard PASS (E11=0) / validate-content-junk PASS / check-validation-ratchet PASS / diff invariant 0 mutations on canon data / 0 illegal control characters。
+- **分支與狀態**: 推送至 antigravity/herb-fill-task8-modern-functions-round2，任務結束並停下。
+
+---
+
 # 2026-08-25 深夜 — Task 8C 驗收通過並落地:方劑 exact_source_url 補齊,94%→97%(附一則編碼異常提醒)
 
 Task 8C(`antigravity/formula-fill-task8-source-url`，commit `128da48e`）延續同一套 HTTP 驗證方法補
