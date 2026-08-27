@@ -1,3 +1,16 @@
+# 2026-08-26 Antigravity — Task 10C Round 3 (Actual app.js::importClinicalCases Boundary & Complete v2 Lifecycle)
+
+- **做了什麼**: 完成 Task 10C Round 3 臨床病歷匯出/匯入/還原契約驗證（`scripts/audit-clinical-export-contract.js`）：以隔離瀏覽器/事件環境直接執行 `app.js` 生產的 `importClinicalCases`（而非自寫編排），實測驗證格式毀損/語法錯誤/部分輸入/重複 ID 之真實 storage mutation boundary；新增直通 `restoreV2Envelope` 之重複 Case ID 拒收測試；驗證 `restore -> load -> normalize -> save -> read-back` 完整未知欄位生命週期（信封層保留、病例層 UI 週期剔除）。
+- **數字統計**:
+  - 識別 7 個 Export/Backup Producers 與 7 個 Import/Restore Consumers；建立 11 條全生命週期可達路徑契約矩陣。
+  - 舊裸陣列相容性：VERIFIED（`unwrapV1CasesPayload` 永久支援）；未知未來版本 Fail-Closed：VERIFIED（`schema_version: 99` loud error 拒收）；格式毀損寫入前保護：VERIFIED（直通實體 `importClinicalCases` 證實儲存零寫入零更動）；PHI 安全：VERIFIED（錯誤訊息長度不轉述內容）。
+  - 部分輸入防護（Partial-Input Protection）：NOT_ENFORCED（直通實體 `importClinicalCases` 證實同 ID 簡略物件在 Merge 模式下因 Map 覆蓋而重置未列欄位）；未知欄位保留：PARTIAL（v2 信封層儲存保留，病例層於 UI load/save 週期剔除）；`case_count` 檢驗：NOT_ENFORCED（僅具資訊性）；D12 條款強制性：PARTIAL（CI 已驗信封與不變量，2026-09-01 Additive 單向門待生效）。
+- **驗證結果**: 14/14 回歸測試 100% PASS（直通實體 `importClinicalCases` 與 `restoreV2Envelope`）；生產資料 0 異動。
+- **已知未解**: v1 normalizer 重新構造物件時會剔除未在白名單之擴充欄位；部分輸入在 Merge 模式下缺乏細粒度欄位級合併保護；`case_count` 尚未加入解包長度一致性強制校驗。
+- **下一步**: 推送至 `antigravity/task10c-clinical-export-contract-round3`，等待 Ting / 團隊審閱，不開始 Task 10D。
+
+---
+
 # 2026-08-26 深夜 — Claude 複核 Task 10C Round 2:工具可信,但挖到一個真的病歷合併資料風險
 
 Ting 問「task10c 你也看一下」。查完：**這次獨立重跑數字全對得上(7/7/11/14)，14/14 self-test
