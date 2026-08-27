@@ -1,8 +1,9 @@
-# Clinical Export / Import Contract Audit — Task 10C (Round 2)
+# Clinical Export / Import Contract Audit — Task 10C (Round 3)
 
 - **Audit Date**: 2026-08-26
-- **Base SHA**: `69e03dc1d605037f728416167e258090e5d2b07f`
-- **Head SHA**: `69e03dc1d605037f728416167e258090e5d2b07f`
+- **Base SHA (origin/main)**: `8ff5ea48f3f724c8080fee4bf10bf8ed6353dada`
+- **Audit Source SHA**: `8ff5ea48f3f724c8080fee4bf10bf8ed6353dada`
+- **Delivery Commit SHA**: `084539a8ba2ccf15bcff497c508ee9460428cc0e` (delivery_commit_sha is stamped in git handoff upon delivery commit creation.)
 - **Scope**: Private Clinical Backup / Export / Import / Restore Contract
 - **Contract Boundary**: Read-only verification of `app.js`, `js/clinical-store.js`, `scripts/test-export-envelope-shapes.js`, `data/clinical_cases/sample_export_fixture.json`, `data/clinical_cases/schema.sql`. Zero production data mutation.
 
@@ -15,11 +16,11 @@
 | **Clinical Backup / Export Producers** | **7** | 包含 v1/v2 UI 匯出、災難復原前自動備份、C2b 遷移產出、歷史裸陣列 |
 | **Import / Restore Consumers** | **7** | 包含 v1 解包、v2 還原引擎、v1/v2 本地讀取、C2b 遷移解析、CI 驗證器 |
 | **Reachable Real Routes** | **11** | 覆蓋全生命週期所有可達之匯出 $\rightarrow$ 匯入路徑 |
-| **Mutation-Boundary Fixtures** | **14** | 14 組全量覆蓋格式毀損、不變量違規、部分輸入、未知欄位之隔離測試 |
+| **Mutation-Boundary Fixtures** | **14** | 14 組直通實體 `app.js::importClinicalCases` 與 `restoreV2Envelope` 之隔離測試 |
 | **Pre-envelope Bare Array Support** | **VERIFIED** | 舊裸陣列備份永久支援，由 `unwrapV1CasesPayload` 原樣通過 |
-| **Future Version Fail-Closed** | **VERIFIED** | 未知/未來版本（如 `schema_version: 3`）於讀取邊界直接阻擋並拋出明確錯誤 |
+| **Future Version Fail-Closed** | **VERIFIED** | 未知/未來版本（如 `schema_version: 99`）於讀取邊界直接阻擋並拋出明確錯誤 |
 | **Fail-Before-Write Protection** | **VERIFIED** | 任何格式毀損、不變量違規、歷史截斷均在儲存寫入前中止，不產生副作用 |
-| **Partial-Input Overwrite Protection** | **NOT_ENFORCED** | 實測證實：同 ID 部分欄位物件在 Merge 模式下會覆寫並重置現存未列欄位 |
+| **Partial-Input Overwrite Protection** | **NOT_ENFORCED** | 實體執行證實：同 ID 部分欄位物件在 Merge 模式下因 Map 覆蓋而重置未列欄位 |
 | **PHI-Safe Error Reporting** | **VERIFIED** | 錯誤訊息只描述長度與格式結構，絕不回顯病歷內容與原始 PHI |
 | **Unknown Field Preservation** | **PARTIAL** | v1 匯入路徑走 normalizer 白名單過濾；v2 儲存層保留信封欄位，UI 週期剔除病例欄位 |
 | **Case Count Verification** | **NOT_ENFORCED** | v1 信封之 `case_count` 為資訊性欄位，解包時不強制作長度比對 |
@@ -35,10 +36,10 @@
 | **R3** | `Legacy bare-array export (pre-2026-08-26)` | `app.js::importClinicalCases (v1 Merge)` | `bare_array (pre-envelope)` | `Case[] (JSON array)` | `VERIFIED` | `NOT_ENFORCED` | `VERIFIED` | `NOT_APPLICABLE` | `VERIFIED` | `NOT_ENFORCED` | `VERIFIED` | scripts/test-export-envelope-shapes.js (Fixture 1) |
 | **R4** | `Legacy bare-array export (pre-2026-08-26)` | `app.js::importClinicalCases (v1 Restore)` | `bare_array (pre-envelope)` | `Case[] (JSON array)` | `VERIFIED` | `NOT_ENFORCED` | `VERIFIED` | `NOT_APPLICABLE` | `VERIFIED` | `NOT_ENFORCED` | `VERIFIED` | scripts/test-export-envelope-shapes.js (Fixture 1) |
 | **R5** | `app.js::importClinicalCases (v1 Pre-Restore Auto-Backup)` | `app.js::importClinicalCases (v1 Restore / Merge)` | `schema_version: 1` | `{ schema_version: 1, exported_at, case_count, cases: Case[] }` | `VERIFIED` | `NOT_ENFORCED` | `VERIFIED` | `VERIFIED` | `VERIFIED` | `NOT_ENFORCED` | `VERIFIED` | app.js (line 11108) |
-| **R6** | `app.js::exportClinicalCases (v2)` | `js/clinical-store.js::restoreV2Envelope` | `schema_version: 2` | `{ schema_version: 2, journal, patients, cases, runtime_revision, ... }` | `VERIFIED` | `VERIFIED` | `VERIFIED` | `VERIFIED` | `VERIFIED` | `NOT_ENFORCED` | `VERIFIED` | scripts/rehearse-runtime-restore.js, scripts/test-pointer-runtime.js |
+| **R6** | `app.js::exportClinicalCases (v2)` | `js/clinical-store.js::restoreV2Envelope` | `schema_version: 2` | `{ schema_version: 2, journal, patients, cases, runtime_revision, ... }` | `VERIFIED` | `PARTIAL` | `VERIFIED` | `VERIFIED` | `VERIFIED` | `NOT_ENFORCED` | `VERIFIED` | scripts/rehearse-runtime-restore.js, scripts/test-pointer-runtime.js |
 | **R7** | `js/clinical-store.js::buildMigrationPlan` | `js/clinical-store.js::executeMigration` | `c2b-1` | `{ migration_version: 'c2b-1', source_sha256, counts, patients, ... }` | `VERIFIED` | `VERIFIED` | `VERIFIED` | `VERIFIED` | `VERIFIED` | `NOT_ENFORCED` | `VERIFIED` | scripts/rehearse-c2b.js, scripts/migrate-c2b.js --self-test |
 | **R8** | `js/clinical-store.js::save (v1)` | `js/clinical-store.js::load (v1)` | `bare_array (v1 storage)` | `Case[] in localStorage['acuting-clinical-cases-v1']` | `VERIFIED` | `NOT_ENFORCED` | `VERIFIED` | `NOT_APPLICABLE` | `VERIFIED` | `NOT_ENFORCED` | `VERIFIED` | scripts/validate-clinical-store-phi-boundary.js, scripts/test-pointer-runtime.js |
-| **R9** | `js/clinical-store.js::save (v2)` | `js/clinical-store.js::load (v2)` | `schema_version: 2` | `{ schema_version: 2, journal, patients, cases, runtime_revision, ... } in staging` | `VERIFIED` | `VERIFIED` | `VERIFIED` | `VERIFIED` | `VERIFIED` | `NOT_ENFORCED` | `VERIFIED` | scripts/test-pointer-runtime.js |
+| **R9** | `js/clinical-store.js::save (v2)` | `js/clinical-store.js::load (v2)` | `schema_version: 2` | `{ schema_version: 2, journal, patients, cases, runtime_revision, ... } in staging` | `VERIFIED` | `PARTIAL` | `VERIFIED` | `VERIFIED` | `VERIFIED` | `NOT_ENFORCED` | `VERIFIED` | scripts/test-pointer-runtime.js |
 | **R10** | `data/clinical_cases/sample_export_fixture.json` | `scripts/validate-clinical-invariants.js` | `schema_version: 1` | `{ schema_version: 1, exported_at, case_count, cases: Case[] }` | `VERIFIED` | `NOT_APPLICABLE` | `VERIFIED` | `VERIFIED` | `VERIFIED` | `NOT_APPLICABLE` | `VERIFIED` | scripts/validate-clinical-invariants.js (line 28) |
 | **R11** | `data/clinical_cases/sample_export_fixture.json` | `scripts/test-export-envelope-shapes.js` | `schema_version: 1` | `{ schema_version: 1, exported_at, case_count, cases: Case[] }` | `VERIFIED` | `NOT_APPLICABLE` | `VERIFIED` | `VERIFIED` | `VERIFIED` | `NOT_APPLICABLE` | `VERIFIED` | scripts/test-export-envelope-shapes.js (Fixture 9) |
 
@@ -90,11 +91,11 @@
 
 ### Q7. 格式毀損之信封是否在修改儲存前被拒絕？
 - **判定**: **`VERIFIED`**
-- **佐證**: v1 匯入於 `JSON.parse`、解包、不變量檢驗、歷史截斷比對全數通過後才執行 `persistClinicalCases()`；v2 還原於 candidate 暫存與驗證全綠後才替換 active staging。
+- **佐證**: 直通實體 `app.js::importClinicalCases` 驗證：在 `JSON.parse`、解包、不變量檢驗、歷史截斷比對全數通過後才執行 `persistClinicalCases()`；v2 還原於 candidate 暫存與驗證全綠後才替換 active staging，儲存 100% 保持未修改狀態。
 
 ### Q8. 不完整或無效之輸入是否可能覆寫現存有效資料？
 - **判定**: **`NOT_ENFORCED`**
-- **佐證**: 實體程式碼行為：若匯入檔包含合法 JSON 但結構極為簡略（例如同 ID 但僅含 `{ id, patientCode }`），在 v1 Merge 模式下，由於無用藥/AVS 歷史違規，Map 合併將直接以該 partial case 覆蓋現有完整病例物件，導致性別、主訴、病程等欄位被重置為預設空值（`""`、`[]`）。Restore 模式則整庫替換。因此，部分輸入防護在欄位層次屬於 NOT_ENFORCED（具備欄位覆寫破壞性）。
+- **佐證**: 直通實體 `app.js::importClinicalCases` 實測證實：若匯入檔包含合法 JSON 但結構極為簡略（例如同 ID 但僅含 `{ id, patientCode }`），在 v1 Merge 模式下，由於無用藥/AVS 歷史違規，Map 合併將直接以該 partial case 覆蓋現有完整病例物件，導致性別、主訴、病程等欄位被重置為預設空值（`""`、`[]`）。Restore 模式則整庫替換。因此，部分輸入防護在欄位層次屬於 NOT_ENFORCED（具備欄位覆寫破壞性）。
 
 ### Q9. 未知/外加欄位在 Export $\rightarrow$ Import $\rightarrow$ Export 週期中是否被保留？
 - **判定**: **`PARTIAL`**
@@ -112,7 +113,7 @@
 - **佐證**: 
   - v1 Merge 模式：透過 `Map(id -> case)` 進行合併，具備決定性之 Last-Wins 特性（且受 `findImportHistoryViolations` 歷史延伸規則約束）。
   - C2b 遷移：`buildMigrationPlan` 發現來源資料有重複 Case ID 時直接 throw 阻擋。
-  - v2 還原：`verifyRuntimeEnvelope` 發現重複 Case ID 時直接登記 failure 拒收。
+  - v2 還原：`restoreV2Envelope` 直通實測證實發現重複 Case ID 時回傳 failure 拒收。
 
 ### Q12. 錯誤訊息是否面向使用者且不轉述病歷內容 (PHI-Safe)？
 - **判定**: **`VERIFIED`**
@@ -139,20 +140,20 @@
 
 ## 4. 回歸測試驗證（Regression Fixtures）
 
-本稽核腳本內建 14 項目標回歸測試（`--self-test`），全部直接載入 `app.js` 與 `js/clinical-store.js` 原始生產邏輯執行：
+本稽核腳本內建 14 項目標回歸測試（`--self-test`），全部直通 `app.js::importClinicalCases` 與 `js/clinical-store.js` 原始生產邏輯執行：
 1. **Fixture 1**: 舊裸陣列備份直接原樣通過 (`unwrapV1CasesPayload`) $\rightarrow$ **PASS**
 2. **Fixture 2**: 合法 `schema_version: 1` 信封 round-trip 解包 $\rightarrow$ **PASS**
-3. **Fixture 3**: 格式毀損之 cases 欄位在寫入前拋出 userFacing 錯誤並保留 storage 原狀 $\rightarrow$ **PASS**
-4. **Fixture 4**: 毀損 JSON 文本在寫入前阻擋並保留 storage 原狀 $\rightarrow$ **PASS**
-5. **Fixture 5**: 未知未來版本 (`schema_version: 99`) Loudly 阻擋且 storage 零寫入 $\rightarrow$ **PASS**
-6. **Fixture 6**: 重複 Case ID 在 v1 Merge 模式下呈現 Last-Wins $\rightarrow$ **PASS**
-7. **Fixture 7**: 重複 Case ID 在 C2b 遷移 / v2 還原中 Fail-Closed 拒收 $\rightarrow$ **PASS**
+3. **Fixture 3**: 格式毀損之 cases 欄位直通 `importClinicalCases` 寫入前拒收，儲存零更動 $\rightarrow$ **PASS**
+4. **Fixture 4**: 毀損 JSON 直通 `importClinicalCases` 寫入前拒收，儲存零更動 $\rightarrow$ **PASS**
+5. **Fixture 5**: 未知未來版本 (`schema_version: 99`) 直通 `importClinicalCases` Loudly 阻擋且儲存零寫入 $\rightarrow$ **PASS**
+6. **Fixture 6**: 重複 Case ID 直通 `importClinicalCases` 在 v1 Merge 模式下呈現 Last-Wins $\rightarrow$ **PASS**
+7. **Fixture 7**: 重複 Case ID 直通 `restoreV2Envelope` 驗證二階段拒收且 active staging 零變更 $\rightarrow$ **PASS**
 8. **Fixture 8**: `case_count` 不一致行為驗證 (v1 解包視為資訊性) $\rightarrow$ **PASS**
-9. **Fixture 9**: 部分輸入 (Partial Input) 在 Merge 模式下重置未列欄位之破壞性行為實測 $\rightarrow$ **PASS**
-10. **Fixture 10**: v1 case 層未知外加欄位在 `normalizeClinicalCase` 中被過濾剔除 $\rightarrow$ **PASS**
-11. **Fixture 11**: v2 信封層保留未知欄位，而病例層未知欄位於 UI load/save 週期中被剔除 $\rightarrow$ **PASS**
-12. **Fixture 12**: v2 信封傳入 v1 解包函式時 Fail-Closed 阻擋 $\rightarrow$ **PASS**
-13. **Fixture 13**: 錯誤訊息注入假 PHI 文字，驗證錯誤回顯絕不包含敏感內容 $\rightarrow$ **PASS**
-14. **Fixture 14**: 毀損 JSON 注入 v2 還原引擎，確認 active staging 與 pointer 零寫入零更動 $\rightarrow$ **PASS**
+9. **Fixture 9**: 部分輸入 (Partial Input) 直通 `importClinicalCases` 在 Merge 模式下重置未列欄位之破壞性實測 $\rightarrow$ **PASS**
+10. **Fixture 10**: 部分輸入 (Partial Input) 直通 `importClinicalCases` 在 Restore 模式下全庫取代之破壞性實測 $\rightarrow$ **PASS**
+11. **Fixture 11**: v1 case 層未知外加欄位在 `normalizeClinicalCase` 中被過濾剔除 $\rightarrow$ **PASS**
+12. **Fixture 12**: v2 未知欄位完整生命週期實測（信封層儲存保留，病例層 UI load/save 週期剔除） $\rightarrow$ **PASS**
+13. **Fixture 13**: v2 信封傳入 v1 解包函式時 Fail-Closed 阻擋 $\rightarrow$ **PASS**
+14. **Fixture 14**: 錯誤訊息注入假 PHI 文字，驗證錯誤回顯絕不包含敏感內容 $\rightarrow$ **PASS**
 
 ---

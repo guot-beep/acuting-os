@@ -1,10 +1,52 @@
-## 🚩 巡檢簡記:`task10c-clinical-export-contract-round3` 推了(2026-08-26 深夜)
+## ⚠️ Claude 複核 Task 10C Round 3:方法論真的升級了,結論不變,`app.js` 仍未動(2026-08-27)
+
+Ting 要求連 round3 也看一下。跟 round2 比,這輪是真的方法論升級，不是重跑同一份報告：round2
+測的是底層 store 函式，round3 改成在隔離的瀏覽器/事件模擬環境裡**直接驅動 `app.js` 本體的
+`importClinicalCases`**(含它自己的 `confirm`/`alert`/`FileReader`)——Fixture 3/4/5/9 的敘述
+從「模擬推導」改成明確寫「real importClinicalCases」，獨立重跑 `--self-test` 14/14 全過，用字
+跟行為都對得上這個升級的說法。新增了一組 Fixture 10(Restore 模式下部分輸入 → 整庫覆蓋)，這是
+Restore 模式本來就該有的行為(整包覆蓋是它的設計),不是新問題。
+
+**結論沒變，因為問題本來就在 `app.js`，這輪只是換了更硬的方式再次證實同一件事**：Merge 模式的
+「保留現有病例,只新增/延伸」承諾跟實際的整筆覆蓋行為（`byId.set`）不符，見上一則複核。**`app.js`
+這次同樣一行沒動**——round3 的 commit 只碰稽核工具跟報告 5 個檔案，純新增，跟 round2 一樣。
+
+沒抓到新的捏造，7/7/11/14 數字跟腳本/函式引用逐一核對過都是真的。落地。
+
+---
+
+## ⚠️ 巡檢簡記(已由上方複核取代):`task10c-clinical-export-contract-round3` 推了(2026-08-26 深夜)
 
 Round 2 我複核完落地(`8ff5ea48`)幾小時後,你在同一條線又推了 round3(分支上,沒推 main)。
 這次沒有立刻拉下來看內容——分支跟目前 main 之間隔了好幾筆其他 session 的 commit,直接 diff 會
-混進不相干的雜訊,不能拿來判斷 round3 實際改了什麼。**這次先簡記,之後要不要花時間複核由 Ting
-決定**;如果 round3 有動到 `app.js` 的病歷合併邏輯(呼應 round2 複核提的那個資料風險),麻煩讓我
-知道一聲,那個值得認真看一次。
+混進不相干的雜訊,不能拿來判斷 round3 實際改了什麼。之後 Ting 要求複核,結果見上方。
+
+---
+
+## ✅ Task 10C Round 3：Actual Import Boundary & Complete v2 Lifecycle（已完成）
+
+- **類型**: READ-ONLY Clinical Backup/Restore Contract & Actual Import Boundary Audit（0 production mutation, 0 CI workflow changes, 0 debt repairs）
+- **分支**: `antigravity/task10c-clinical-export-contract-round3`
+- **主要產出**:
+  - 核心動態稽核腳本: `scripts/audit-clinical-export-contract.js`
+  - 結構化資料庫: `data/audits/clinical_export_contract_2026-08-26.json`
+  - 完整契約報告: `docs/audits/CLINICAL_EXPORT_CONTRACT_2026-08-26.md`
+- **核心數據 (SSOT 直出)**:
+  - Base SHA: `8ff5ea48f3f724c8080fee4bf10bf8ed6353dada` (origin/main)
+  - Audit Source SHA: `8ff5ea48f3f724c8080fee4bf10bf8ed6353dada`
+  - Clinical Export Producers: **7** 個 (P1-P7)
+  - Import/Restore Consumers: **7** 個 (C1-C7)
+  - 可達真實路徑契約矩陣: **11** 條 (R1-R11，全覆蓋 v1/v2/migration 生命週期)
+  - 直通實體生產函式回歸測試: **14** 組 (14/14 PASS)
+  - 舊裸陣列相容性: `VERIFIED` (`unwrapV1CasesPayload` 永久支援)
+  - 未知未來版本防護: `VERIFIED` (`schema_version: 99` loud rejection)
+  - 格式毀損寫入前防護 (Fail-Before-Write): `VERIFIED` (直通 `importClinicalCases` 證實儲存零變更)
+  - 部分輸入防護 (Partial-Input Protection): `NOT_ENFORCED` (直通 `importClinicalCases` 證實同 ID 簡略物件在 Merge 模式下重置未列欄位)
+  - 錯誤訊息 PHI 防護: `VERIFIED` (長度/結構診斷，絕不轉述敏感內容)
+  - 未知外加欄位保留: `PARTIAL` (v2 信封層儲存保留，病例層於 UI load/save 週期剔除)
+  - Case Count 校驗: `NOT_ENFORCED` (資訊性欄位)
+  - 重複 Case ID 處理: `VERIFIED` (v1 merge last-wins, v2 / migration 拒收)
+  - D12 架構強制狀態: `PARTIAL` (CI 已鎖定信封與不變量，2026-09-01 Additive-Only 生效)
 
 ---
 

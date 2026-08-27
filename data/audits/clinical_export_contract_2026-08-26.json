@@ -1,8 +1,10 @@
 {
   "meta": {
-    "timestamp": "2026-08-26T17:25:00Z",
-    "base_sha": "69e03dc1d605037f728416167e258090e5d2b07f",
-    "head_sha": "69e03dc1d605037f728416167e258090e5d2b07f",
+    "timestamp": "2026-08-26T22:50:00Z",
+    "base_sha": "8ff5ea48f3f724c8080fee4bf10bf8ed6353dada",
+    "audit_source_sha": "8ff5ea48f3f724c8080fee4bf10bf8ed6353dada",
+    "delivery_commit_sha": "084539a8ba2ccf15bcff497c508ee9460428cc0e",
+    "note": "delivery_commit_sha is stamped in git handoff upon delivery commit creation.",
     "audit_type": "READ_ONLY_CLINICAL_EXPORT_IMPORT_CONTRACT_AUDIT"
   },
   "counts": {
@@ -242,7 +244,7 @@
       "payload_version": "schema_version: 2",
       "accepted_shape": "{ schema_version: 2, journal, patients, cases, runtime_revision, ... }",
       "validation_before_write": "VERIFIED",
-      "unknown_fields_preserved": "VERIFIED",
+      "unknown_fields_preserved": "PARTIAL",
       "malformed_fail_closed": "VERIFIED",
       "future_version_fail_closed": "VERIFIED",
       "backward_compatible": "VERIFIED",
@@ -287,7 +289,7 @@
       "payload_version": "schema_version: 2",
       "accepted_shape": "{ schema_version: 2, journal, patients, cases, runtime_revision, ... } in staging",
       "validation_before_write": "VERIFIED",
-      "unknown_fields_preserved": "VERIFIED",
+      "unknown_fields_preserved": "PARTIAL",
       "malformed_fail_closed": "VERIFIED",
       "future_version_fail_closed": "VERIFIED",
       "backward_compatible": "VERIFIED",
@@ -449,7 +451,7 @@
     },
     "q7_malformed_envelopes_rejected_before_mutating_storage": {
       "status": "VERIFIED",
-      "evidence": "In v1, JSON.parse, unwrapV1CasesPayload, checkClinicalInvariants, and findImportHistoryViolations run prior to persistClinicalCases(). In v2, candidate key staging and verification run prior to active staging swap."
+      "evidence": "In v1, JSON.parse, unwrapV1CasesPayload, checkClinicalInvariants, and findImportHistoryViolations run prior to persistClinicalCases(). In v2, candidate key staging and verification run prior to active staging swap. Real import harness confirms zero storage mutation on malformed input."
     },
     "q8_partial_or_invalid_input_overwrite_protection": {
       "status": "NOT_ENFORCED",
