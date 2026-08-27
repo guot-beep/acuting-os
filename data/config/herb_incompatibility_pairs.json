@@ -1,0 +1,37 @@
+{
+  "dataset": "十八反/十九畏 配伍禁忌對(B1, Ting ruling 2026-08-27)",
+  "policy": "B1(b):開獨立結構承載配伍禁忌,validate-herb-incompatibility.js 機器檢查「同方同時出現相反/相畏藥對」。歌訣為統編《中藥學》教材通行內容;id 對映只列本庫已存在的正典 id,庫內尚無卡的品項以 name_only 誠實列出、不編 id。經典方劑刻意用反藥者(如《金匱》甘遂半夏湯)以 incompatibility_note_zh 具名承認,不是刪對。",
+  "source_note": "十八反歌:本草明言十八反,半蔞貝蘞及攻烏;藻戟遂芫俱戰草,諸參辛芍叛藜蘆。十九畏歌:硫黃原是火中精,朴硝一見便相爭…(統編《中藥學》總論)",
+  "eighteen_incompatibilities": [
+    {
+      "group_zh": "甘草 反 甘遂/大戟/海藻/芫花",
+      "side_a": ["herb.gan_cao", "herb.zhi_gan_cao"],
+      "side_b": ["herb.gan_sui", "herb.da_ji", "herb.hai_zao"],
+      "side_b_name_only": ["芫花"]
+    },
+    {
+      "group_zh": "烏頭(含川烏/草烏/附子) 反 半夏/瓜蔞/貝母/白蘞/白及",
+      "note_zh": "附子為烏頭子根,統編教材通行將其納入烏頭類反藥範圍",
+      "side_a": ["herb.chuan_wu", "herb.cao_wu", "herb.fu_zi"],
+      "side_b": ["herb.ban_xia", "herb.gua_lou", "herb.gua_lou_ren", "herb.gua_lou_pi", "herb.tian_hua_fen", "herb.chuan_bei_mu", "herb.zhe_bei_mu", "herb.bai_ji"],
+      "side_b_name_only": ["白蘞"]
+    },
+    {
+      "group_zh": "藜蘆 反 諸參/細辛/芍藥",
+      "side_a": [],
+      "side_a_name_only": ["藜蘆"],
+      "side_b": ["herb.ren_shen", "herb.dang_shen", "herb.dan_shen", "herb.xuan_shen", "herb.bei_sha_shen", "herb.ku_shen", "herb.xi_xin", "herb.bai_shao", "herb.chi_shao"]
+    }
+  ],
+  "nineteen_antagonisms": [
+    { "group_zh": "硫黃 畏 朴硝(芒硝)", "side_a": ["herb.liu_huang"], "side_b": ["herb.mang_xiao"] },
+    { "group_zh": "水銀 畏 砒霜", "side_a": [], "side_a_name_only": ["水銀"], "side_b": [], "side_b_name_only": ["砒霜"] },
+    { "group_zh": "狼毒 畏 密陀僧", "side_a": [], "side_a_name_only": ["狼毒"], "side_b": [], "side_b_name_only": ["密陀僧"] },
+    { "group_zh": "巴豆 畏 牽牛", "side_a": ["herb.ba_dou"], "side_b": [], "side_b_name_only": ["牽牛子"] },
+    { "group_zh": "丁香 畏 鬱金", "side_a": ["herb.ding_xiang"], "side_b": ["herb.yu_jin"] },
+    { "group_zh": "牙硝 畏 三稜", "side_a": ["herb.mang_xiao"], "note_zh": "牙硝為芒硝製品,以 mang_xiao 代表", "side_b": ["herb.san_leng"] },
+    { "group_zh": "川烏草烏 畏 犀角", "side_a": ["herb.chuan_wu", "herb.cao_wu"], "side_b": [], "side_b_name_only": ["犀角(禁用品,本庫僅存 name-only)"] },
+    { "group_zh": "人參 畏 五靈脂", "side_a": ["herb.ren_shen"], "side_b": ["herb.wu_ling_zhi"] },
+    { "group_zh": "官桂(肉桂) 畏 石脂", "side_a": ["herb.rou_gui"], "side_b": ["herb.chi_shi_zhi"] }
+  ]
+}

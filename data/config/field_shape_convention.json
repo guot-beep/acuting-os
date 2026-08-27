@@ -1,0 +1,19 @@
+{
+  "dataset": "Field shape convention (B3, Ting ruling 2026-08-27)",
+  "ruling": "TING_RULING_SHEET_2026-08-27 B3(a):跨線欄位形狀公約先落地,各線依它正規化;不再各自為政",
+  "policy": [
+    "安全類欄位(red_flags / cautions* / contraindications* / warnings* / cautionsEn 及其雙語對)一律陣列;單條也用單元素陣列。",
+    "正規化只包形狀,不切語意:字串→[字串] 或 {zh:字串},逐字保留(憲法紅線 3 不得縮寫改寫);原文自身帶分隔符(如藥品標籤的分號清單)才可依該分隔符切條。",
+    "散文出處/策展註記(如來源差異說明)不是清單欄位,不強制陣列化。",
+    "canonical id 欄位永遠是字串,不得數值(tung 原始抓取檔的 number id 不屬 canonical 層)。",
+    "新增欄位時先查本檔;同名欄位跨檔案必須同形。爭議形狀先開 B 類裁定,不先動手。",
+    "import_artifacts 條目統一用 {original_field, text, reason, moved_at, ruling?}(B2(a):新寫統一此形,既有舊形記錄不改寫——改舊等於改寫出處紀錄)。"
+  ],
+  "normalized_batches": [
+    { "batch": "R1", "file": "data/scalp/scalp_points_full.json", "fields": ["functions", "location", "needling"], "done": "2026-08-27" },
+    { "batch": "R2", "file": "data/pharmacology/drugs.json", "fields": ["contraindications_zh", "contraindications_en"], "done": "2026-08-27" },
+    { "batch": "R3", "file": "data/acupoints/extra_points.json", "fields": ["cautionsEn", "pointIdentityZh", "pointIdentityEn"], "done": "2026-08-27" },
+    { "batch": "R4", "file": "data/herbs/herb_canon_shortlist.json", "fields": ["modern_pharmacology_zh", "indications_en"], "done": "2026-08-27" }
+  ],
+  "pending": "CROSS 跨檔批(361.json/auricular/scalp 的字串側)與 R10 非安全欄需個別裁決 — 見 docs/research_packs/FIELD_SHAPE_CONSISTENCY_BASELINE.md"
+}

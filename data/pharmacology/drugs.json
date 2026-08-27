@@ -495,8 +495,20 @@
       "setid_fix_note": "2026-08-11: prior setid pointed to a sorbitol-mannitol UROLOGIC IRRIGATION label (wrong clinical role, flagged by pharm enrich batch); replaced with OSMITROL (Baxter) IV injection label after live fetch verification.",
       "dailymed_label_format": "PLR",
       "dailymed_fetched_at": "2026-08-11",
-      "contraindications_en": "Known hypersensitivity to mannitol; anuria; severe hypovolemia; pre-existing severe pulmonary vascular congestion or pulmonary edema; active intracranial bleeding except during craniotomy (OSMITROL label §4).",
-      "contraindications_zh": "對 mannitol 過敏;無尿;重度血容量不足;既存重度肺血管鬱血或肺水腫;活動性顱內出血(開顱手術中除外)(OSMITROL 標籤 §4)。",
+      "contraindications_en": [
+        "Known hypersensitivity to mannitol",
+        "anuria",
+        "severe hypovolemia",
+        "pre-existing severe pulmonary vascular congestion or pulmonary edema",
+        "active intracranial bleeding except during craniotomy (OSMITROL label §4)."
+      ],
+      "contraindications_zh": [
+        "對 mannitol 過敏",
+        "無尿",
+        "重度血容量不足",
+        "既存重度肺血管鬱血或肺水腫",
+        "活動性顱內出血(開顱手術中除外)(OSMITROL 標籤 §4)"
+      ],
       "adverse_effects_en": "Hypersensitivity reactions (incl. cardiac arrest, anaphylaxis, hypotension, dyspnea); renal failure (acute kidney injury, osmotic nephrosis, azotemia, anuria); CNS toxicity (coma, seizures); fluid/electrolyte disturbances; infusion-site reactions (OSMITROL label §6, voluntary-report frequency caveat applies).",
       "adverse_effects_zh": "過敏反應(含心搏停止、全身性過敏、低血壓、呼吸困難);腎衰竭(急性腎損傷、滲透性腎病、氮血症、無尿);中樞神經毒性(昏迷、癲癇發作);體液與電解質失衡;輸注部位反應(OSMITROL 標籤 §6,自發通報頻率限制適用)。",
       "site_of_action_en": "Renal tubules (glomerular filtrate osmolarity); extracellular fluid compartment.",

@@ -918,3 +918,26 @@ PASS(composition 查無藥材維持 1 味次 `formula.huang_tu_tang` 的「灶�
   這裡不同,畢業會變鬆。
 - **Reconsider only if**:來源明確主張四神丸薑棗為方義本體(非藥引),
   或甘麥大棗湯以甘草為君的讀法獲教材級來源 —— 屆時改標並記新決定。
+
+## D28 — 裁定單總批:安全佇列 A/B/C 類一次裁清 · LOCKED(2026-08-27,Ting:「a0照c A13選b A8選a C1b升級 其他照建議辦」,對 TING_RULING_SHEET_2026-08-27)
+
+- **明點四項**:A0 選 (c) 矛盾可見化;A13 選 (b) 只做 17 張毒藥 CloudTCM 卡,
+  其餘 230 張 9/9 後;A8 選 (a) 毒/管制藥移除食療用量欄;C1b 小柴胡湯干擾素
+  警語升級併用禁忌。「其他照建議辦」= 裁定單各項建議選項全數生效
+  (A1a/A4a/A5b/A7a/A10a/A11a/A12c+a/A14a/A18-1a/-2a/-3a、B1b/B2a/B3a、
+  C1/C2/C3a/C4a/C5/C5b;A18-4 無建議,維持待裁)。
+- **執行紀錄(同日)**:安全批+小項批+結構批三個 commit;
+  已裁先行 gate:validate-herb-incompatibility.js(B1,十八反/十九畏,
+  起手 0 共存直進 green,負控已驗);field_shape_convention.json(B3 公約,
+  R1-R4 四批 68 個欄位逐字包形正規化)+ B2(a) import_artifacts 新寫統一形。
+  內容側六項打包 docs/FILL_LINE_DISPATCH_2026-08-27.md 交 fill 線/SOL。
+- **執行時發現的「佇列過時」**(裁定單多項標的已被先行解決,未重做):
+  C1b 資料面、A4(2026-08-21 Ting 已裁,白芍版)、A0c 藥卡詳頁、C1 婦科
+  15 對、C2 偏頭痛病理 —— 皆在 Pattern V2 和解與後續 commit 中落地。
+- **A0 的一個偏離,需 Ting 知悉**:裁定為 (c) 雙數字並列,但 repo 既有實作
+  (2026-08-12,SOL 路由)更安全 —— 四肢軟衝突雙顯+提醒、**肺胸頸等危險區
+  fail-closed 藏數字+衝突聲明**(顯示兩邊=邀請讀者挑深的那個)。已判定
+  **不降級**,維持既有分級策略;若 Ting 明示危險區也要雙顯,一行可改。
+- **Reconsider only if**:各單項照其原始佇列條目的 reconsider 條款;本總批
+  不設獨立回退條件。
+

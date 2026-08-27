@@ -437,6 +437,11 @@ jobs:
       - name: retired ids are never referenced by active records
         run: node scripts/validate-retired-id-references.js
 
+      # B1(2026-08-27 Ting 裁定):十八反/十九畏同方共存必須被具名承認。
+      # 現況 0 共存,起手即綠;負控注入甘草+甘遂已驗會響。
+      - name: herb incompatibility pairs (18 incompatibilities / 19 antagonisms)
+        run: node scripts/validate-herb-incompatibility.js
+
       # pointer 三態與還原演練:P4 的另外兩項驗收標準(31/31、65/65)。
       - name: pointer runtime three-state contract
         run: node scripts/test-pointer-runtime.js
