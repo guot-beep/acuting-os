@@ -1,3 +1,21 @@
+# 2026-08-27 Antigravity — Task 10D Round 4 (Generated Provenance Proof Only)
+
+- **做了什麼**: 完成 Task 10D Round 4 量測引擎構建存活與靜態污染修正（`scripts/audit-evidence-provenance-fragmentation.js`）：(1) 移除所有手寫 `is_bundled` 旗標，全數自 `index.html` 實際載入之生成檔案與構建依賴圖動態探測；(2) 記錄級生成存活驗證：嚴格比對正典記錄 ID、欄位路徑與數值深度相等性（`JSON.stringify(cVal) === JSON.stringify(gVal)`），拒絕全域欄位名 Set 比對；(3) 支援巢狀欄位路徑（如 `acupoint_protocol_evidence.sources`）；(4) 跨資料集污染防護：嚴格依資料集 $	imes$ 欄位路徑獨立評估，A 存活絕不使 B 自動通過；(5) 排除靜態 JS 資料檔（`data/**`）之寫入者污染，僅保留可執行腳本與構建器；(6) 擴展 Fixture 8 完整驗證 6 種記錄級存活、數值異動、巢狀路徑與跨資料集隔離狀態。
+- **數字統計**:
+  - 正典資料庫掃描數: 27 個
+  - 嚴格正典來源/審查欄位: 43 個
+  - 候選相關非來源欄位 (獨立排除): 10 個
+  - 具 Runtime/UI 消費者欄位: 20 個
+  - 僅 Validator 消費者欄位: 0 個
+  - 暗數據欄位 (DATA_PRESENT_NO_CONSUMER_FOUND): 8 個
+  - 逐筆數值比對之重疊欄位對: 7 組
+  - 實質跨 2+ 來源欄位優先序鏈路: 4 處
+- **驗證結果**: 8/8 自我測試 Fixtures 100% PASS；生產代碼與正典資料 0 異動。
+- **已知未解**: 存在 4 處優先序鏈路遮蔽次要來源（如 `sources` 優先於 `cloudtcm_url`）；狀態詞彙在不同維度共用；部分暗數據欄位（如 `original_shape`、`source_field`）在正典有值但無消費者。
+- **下一步**: 推送至 `antigravity/task10d-evidence-provenance-fragmentation-round4`，等待 Ting / 團隊審閱，不開始 Task 10E。
+
+---
+
 # 2026-08-27 — R12:病歷匯入 Merge 模式改成逐欄位合併,修掉 Task 10C 抓到的資料清空風險
 
 Ting 要求把 Task 10C round2-4 一路確認的那個資料風險「排進下一批要修的」。這是判斷型/行為變更工作,
