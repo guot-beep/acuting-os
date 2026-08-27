@@ -6,7 +6,8 @@
   "Knowledge→knowledge reverses are derived at build time (e.g. pattern_registry.used_by_conditions). Clinical→knowledge reverses are derived at RUNTIME only, never persisted into knowledge records (D9).",
   "Symmetric edges (differential_patterns, comparison membership) are stored once on one record and rendered on both — never mirrored by hand.",
   "Edges come in two kinds and they are NOT reverses of each other. DESCRIPTIVE edges answer \"which symptoms does this diagnosis have?\" and are stored on the diagnostic entity. INFERENTIAL edges answer \"what does this observation point to?\" and are stored on the observation. sym.differentiation[].points_to is inferential; edge.pattern_symptoms is descriptive. Deleting one as a duplicate of the other is a misreading of D13.",
-  "Authored side is NOT decided by cardinality. It is decided by where the source material naturally puts the information and where an agent is already working when it fills the card. For symptoms all four tests agree: the diagnosis lists its symptoms."
+  "Authored side is NOT decided by cardinality. It is decided by where the source material naturally puts the information and where an agent is already working when it fills the card. For symptoms all four tests agree: the diagnosis lists its symptoms.",
+  "NOT edges, deliberately unregistered (2026-08-27 meta-audit): classification-to-vocabulary fields (sym.taxonomy_ids, tdis.taxonomy_id, pattern_family, category — membership in a controlled vocab, not an entity↔entity claim) and provenance pointers (field_sources, migrated_from, cmp.source_condition_id, rf.entity_id — they say where something CAME FROM, not what it relates to). Do not 'fix' their absence here."
  ],
  "created": "2026-08-06",
  "edges": [
@@ -135,7 +136,50 @@
     "note": "SYMMETRIC: stored once on the record where it was authored, rendered on both patterns. Never hand-mirror onto the counterpart."
    },
    "validated_by": "scripts/validate-pattern-standard.js P6",
-   "field_note": "2026-08-19: was \"differential_patterns\" — the field holds inline objects whose id lives in .pattern_id; the path form makes R4 resolve ids the way sym.differentiation_zh[].points_to already does."
+   "field_note": "2026-08-19: was \"differential_patterns\" — the field holds inline objects whose id lives in .pattern_id; the path form makes R4 resolve ids the way sym.differentiation_zh[].points_to already does.",
+   "mutuality_note": "Measured 2026-08-27: 100/276 edges are mutual (both cards point at each other). Mutual entries with DISTINCT distinguishing text are legitimate dual-perspective authoring; byte-identical mirrors would be the hand-mirroring this policy forbids — not yet audited content-wise."
+  },
+  {
+   "id": "edge.pattern_biomedical_conditions",
+   "stored_on": "pattern.*",
+   "field": "related_biomedical_condition_ids",
+   "target": "cond.*",
+   "file": "data/pathology/pattern_library.json",
+   "edge_kind": "descriptive",
+   "reverse": {
+    "derived_field": null,
+    "note": "condition cards derive at render time"
+   },
+   "validated_by": "(none — validate-pattern-standard P6 does not resolve this field; 19 dangling ids found 2026-08-27, canonical-identity adjudication task open)",
+   "registered": "2026-08-27 meta-audit: 53 edges (v1.0 import vocabulary, adopted 2026-08-06) had never been registered — which is exactly how 19 dangling refs went unnoticed."
+  },
+  {
+   "id": "edge.pattern_tcm_diseases",
+   "stored_on": "pattern.*",
+   "field": "related_tcm_disease_ids",
+   "target": "tdis.*",
+   "file": "data/pathology/pattern_library.json",
+   "edge_kind": "descriptive",
+   "reverse": {
+    "derived_field": null,
+    "note": "tdis cards derive their 所屬證 chips at render time (related_patterns on tdis is the authored forward edge, edge.tdis_patterns — these are two directions of study linkage, both authored, ruled acceptable because they carry different claims: disease→its patterns vs pattern→diseases it appears in)"
+   },
+   "validated_by": "(none — validate-pattern-standard P6 does not resolve this field; 4 dangling ids found 2026-08-26, adjudication task open)",
+   "registered": "2026-08-27 meta-audit: 40 edges, previously invisible to the graph."
+  },
+  {
+   "id": "edge.pattern_family_structure",
+   "stored_on": "pattern.* (registry)",
+   "field": "members",
+   "field_note": "One entry for the family-structure triple: members / member_of (two-axis membership, D24) / develops_into (D-relations). All three resolve within pattern_registry.json.",
+   "target": "pattern.*",
+   "file": "data/pathology/pattern_registry.json",
+   "reverse": {
+    "derived_field": null,
+    "note": "member_of is NOT a derived reverse — it is hand-maintained in LOCKSTEP with members (a sanctioned D13 exception: the two-axis family structure, D24) and machine-guarded bidirectionally: validate-pattern-registry P3 checks member_of→members, the 2026-08-26 audit verified members→member_of (66/66 edges). develops_into has no reverse."
+   },
+   "validated_by": "scripts/validate-pattern-registry.js P3 + floors (D24: family heads must keep members)",
+   "registered": "2026-08-27 meta-audit — structural edges were guarded by their own validator but invisible to this ledger."
   },
   {
    "id": "edge.comparison_members",
@@ -193,7 +237,8 @@
    },
    "validated_by": "scripts/validate-pattern-standard.js (id resolution) + validate-symptom-standard.js Y8",
    "rationale": "中診 textbooks are organised as \"肺氣虛: 咳喘無力、氣短聲低、自汗畏風\". The fill line reads by pattern, not by symptom.",
-   "migration": "pattern_library.key_signs_zh holds 182 free-text strings. key_signs_ids is ADDITIVE — key_signs_zh stays as display fallback until sym.* coverage is sufficient. Never delete it (§0 只加深不刪除)."
+   "migration": "pattern_library.key_signs_zh held 182 free-text strings when written (re-measured 2026-08-27: 629 across the V2-grown library; key_signs_ids still 0 filled). key_signs_ids is ADDITIVE — key_signs_zh stays as display fallback until sym.* coverage is sufficient. Never delete it (§0 只加深不刪除).",
+   "parallel_field_note": "5 pattern records carry sym links under the v1-import field key_manifestation_ids (the tdis-style name) instead of key_signs_ids — nothing validates their resolution; unifying the two vocabularies is fill-line work (noted 2026-08-27 meta-audit)."
   },
   {
    "id": "edge.tdis_symptoms",
@@ -209,7 +254,7 @@
    },
    "validated_by": "scripts/validate-tdis-standard.js (id resolution) + validate-symptom-standard.js Y8",
    "rationale": "中醫內科學 is likewise organised from disease name down to manifestations.",
-   "migration": "tdis has no manifestation content yet — zero migration cost."
+   "migration": "Written 2026-08-06 as 'tdis has no manifestation content yet — zero migration cost'; re-measured 2026-08-27: 3 tdis records now carry key_manifestation_ids. The claim is retired, the edge is live."
   },
   {
    "id": "edge.tdis_patterns",
@@ -322,6 +367,33 @@
    "registered": "2026-08-27 D25 sweep. Distinct from data/herbs/formula_pattern_links.json (edge.formula_pattern_links_file)."
   },
   {
+   "id": "edge.formula_family",
+   "stored_on": "formula.*",
+   "field": "formula_family[].formula_id",
+   "target": "formula.*",
+   "file": "data/herbs/formulas.json",
+   "stored_shape": "inline_objects",
+   "reverse": {
+    "derived_field": null,
+    "note": "family members render from the shared listing"
+   },
+   "validated_by": "(none resolves this field — 33 nested ids across 71 carrier records, measured 2026-08-27)",
+   "registered": "2026-08-27 meta-audit."
+  },
+  {
+   "id": "edge.formula_modern_application_conditions",
+   "stored_on": "formula.*",
+   "field": "modern_application_condition_ids",
+   "target": "cond.*",
+   "file": "data/herbs/formulas.json",
+   "reverse": {
+    "derived_field": null,
+    "note": "condition cards derive at render time"
+   },
+   "validated_by": "(none — 2 edges measured 2026-08-27)",
+   "registered": "2026-08-27 meta-audit."
+  },
+  {
    "id": "edge.formula_pattern_links_file",
    "stored_on": "formula.* (junction file)",
    "field": "pattern_ids",
@@ -376,7 +448,7 @@
     "It stays in validate-condition-standard APPROVED so that record is not a defect. It is removed from APPROVED only after migration.",
     "A validator warning on the old value is acceptable; a blocking error is not, until migration is possible."
    ],
-   "measured": "1/150 records filled, 2026-08-06",
+   "measured": "1/150 records filled, 2026-08-06; re-measured 2026-08-27: still exactly 1 (cond.functional_dyspepsia) of a canon now 508 — no new usage leaked in",
    "differs_from_retired": "A RETIRED field is one nobody may write and nothing holds. This one still holds data, so it needs a third state — calling it retired while a validator still approves it is the contradiction this entry exists to prevent."
   }
  ]
