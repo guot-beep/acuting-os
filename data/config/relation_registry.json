@@ -190,6 +190,60 @@
    "migration": "tdis has no manifestation content yet — zero migration cost."
   },
   {
+   "id": "edge.tdis_patterns",
+   "stored_on": "tdis.*",
+   "field": "related_patterns",
+   "target": "pattern.*",
+   "file": "data/pathology/tdis_registry.json",
+   "edge_kind": "descriptive",
+   "reverse": {
+    "derived_field": null,
+    "note": "pattern cards derive their 所屬病 chips at render time"
+   },
+   "validated_by": "scripts/validate-tdis-standard.js (id resolution; N1 counts emptiness)",
+   "rationale": "辨證分型 — 中醫內科學 organises each disease into its pattern types; this is the tdis card's core section, authored content (空卡填補 batch 1-8), not a back-link.",
+   "registered": "2026-08-26 derived-governance sweep: 609 edges across 159/160 records had been live since the fill batches but the edge was never registered here — the registry's own policy says an unregistered link field is invisible to the graph."
+  },
+  {
+   "id": "edge.tdis_differentials",
+   "stored_on": "tdis.*",
+   "field": "differential_diseases",
+   "target": "tdis.*",
+   "file": "data/pathology/tdis_registry.json",
+   "reverse": {
+    "derived_field": null,
+    "note": "SYMMETRIC like edge.pattern_differentials: stored once where authored, rendered on both. Never hand-mirror."
+   },
+   "validated_by": "scripts/validate-tdis-standard.js",
+   "measured": "0/160 filled, 2026-08-26 — declared for the template, not yet in use"
+  },
+  {
+   "id": "edge.tdis_formulas",
+   "stored_on": "tdis.*",
+   "field": "typical_formulas",
+   "target": "formula.*",
+   "file": "data/pathology/tdis_registry.json",
+   "reverse": {
+    "derived_field": null,
+    "note": "formula cards derive at render time"
+   },
+   "validated_by": "scripts/validate-tdis-standard.js",
+   "measured": "0/160 filled, 2026-08-26 — 總綱層 links live on pattern cards; declared for the template"
+  },
+  {
+   "id": "edge.tdis_points",
+   "stored_on": "tdis.*",
+   "field": "typical_points",
+   "target": "point id (D2)",
+   "file": "data/pathology/tdis_registry.json",
+   "reverse": {
+    "derived_field": null,
+    "note": "point cards derive at render time"
+   },
+   "validated_by": "scripts/validate-tdis-standard.js",
+   "measured": "0/160 filled, 2026-08-26 — declared for the template"
+  },
+  {
    "id": "edge.symptom_pattern_inference",
    "stored_on": "sym.*",
    "field": "differentiation_zh[].points_to",
@@ -214,6 +268,10 @@
   {
    "field": "sym.seen_in_conditions / seen_in_patterns / seen_in_tdis",
    "reason": "All three are reverses of descriptive edges stored on the diagnostic entity. Derived at render time; hand-filling any of them is validate-symptom-standard Y8."
+  },
+  {
+   "field": "tdis_registry.related_conditions",
+   "reason": "The reverse of edge.condition_tcm_diseases (this registry made cond.* the stored side, 2026-08-06). 0/160 records had it filled when retired 2026-08-26 (derived-governance sweep), so it was retired from hand-filling at zero cost — the identical situation, and identical fix, as pattern_library.related_conditions above. validate-tdis-standard T8 now flags it."
   }
  ],
  "deprecated_but_temporarily_accepted": [

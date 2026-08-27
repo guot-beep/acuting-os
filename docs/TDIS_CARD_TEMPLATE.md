@@ -157,12 +157,14 @@ tdis.*   中醫病名   感冒 · 咳嗽 · 喘證 · 胃痛 · 痛經 · 不寐
 | 欄位 | 指向 | 說明 |
 |---|---|---|
 | `related_patterns` | `pattern.*` | **辨證分型 —— 這張卡的核心** |
-| `related_conditions` | `cond.*` | 西醫病名,多對多不等同 |
 | `differential_diseases` | `tdis.*` | 與相似中醫病名怎麼分 |
 | `typical_formulas` / `typical_points` | `formula.*` / point id | 總綱層,細節在證型卡 |
 
-> ~~`used_by_conditions`~~ **不准手填** —— 它是 `cond.related_eastern_diseases`
-> 的反向,一律衍生(D13)。手填 = T8。
+> ~~`used_by_conditions`~~ ~~`related_conditions`~~ **不准手填** —— 兩者都是
+> `cond.related_eastern_diseases` 的反向,一律衍生(D13)。手填 = T8。
+> (related_conditions 於 2026-08-26 自本表退役:relation_registry 08-06 就把
+> 這條邊的儲存側判給 cond.*,退役時 0/160 已填,零成本,同
+> pattern_library.related_conditions 先例。)
 
 ### 4.4 來源
 

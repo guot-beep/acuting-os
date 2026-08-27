@@ -1,6 +1,6 @@
 {
  "dataset": "TraditionalDisease registry (中醫病名, per CONDITIONS_MODULE_DESIGN)",
- "policy": "Draft registry of standard TCM disease names (中醫內科學/婦科學/外科學 chapter level). Ids are permanent. related_* back-links filled by validation pass in E3.",
+ "policy": "Draft registry of standard TCM disease names (中醫內科學/婦科學/外科學 chapter level). Ids are permanent. 本檔為手工維護的 source of truth,無生成器(2026-08-26 derived 治理掃描確認)。related_patterns 是人工撰寫的辨證分型內容(TDIS 空卡填補 batch 1-8,159/160),不是機器回填——建檔時預想的「related_* back-links filled by validation pass in E3」從未成為機制,該過時斷言於 2026-08-26 修正。反向欄一律衍生不手填(D13):used_by_conditions 與 related_conditions 皆為 cond.related_eastern_diseases 的反向,手填 = T8。",
  "created": "2026-07-12",
  "records": [
   {

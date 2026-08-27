@@ -61,6 +61,41 @@ ICD-10 對照分歧、約 30 筆 `comparisons.json` 骨架記錄空著——**�
 
 ---
 
+# 2026-08-26 — tdis_registry 照 D25 六原則掃描:無計數快取,但抓到過時 policy 斷言、5 個未登記邊欄、4 個懸空引用(待裁)
+
+Ting 指示把 pattern_registry 那套 derived 治理掃到 tdis_registry。結果分四類:
+
+- **✅ 乾淨的**:160 筆無任何 used_by_* 計數快取欄(無凍結風險);related_patterns
+  609 條邊全解析;taxonomy_id 45 分類全解析(第一輪報 160 筆不解析是我的腳本讀錯
+  vocab 結構,`categories` 不是 `records`,假警報);機器旗標/註記欄零個;
+  differential_diseases/related_conditions 0/160 手填(無雙向鏡像)。
+  **166 vs 160 之謎關閉**:前一 session PROJECT_LOG 寫「tdis_registry 166 筆」,
+  實測歷史只有 159→160(D23 加 yue_jing_bu_tiao),166 是他們把引用集合連
+  eastern_disease.* legacy 前綴一起數——無資料損失。
+- **⚠ 過時機器斷言(原則 4)**:policy 寫「related_* back-links filled by validation
+  pass in E3」——該機制從未存在;related_patterns 實際是空卡填補 batch 1-8 人工
+  撰寫的辨證分型內容(159/160)。policy 已改述事實 + 明寫本檔為手工維護正本、
+  無生成器。
+- **⚠ 名冊缺口(原則 2)**:validator 核可的 5 個連結欄,relation_registry 一條
+  都沒登記。已補:edge.tdis_patterns(609 條實邊)、tdis_differentials/
+  tdis_formulas/tdis_points(0 填,為 template 宣告);related_conditions **退役**
+  ——它是 edge.condition_tcm_diseases(儲存側 08-06 判給 cond.*)的反向,0/160
+  已填零成本退役,與 pattern_library.related_conditions 先例一字不差;
+  validate-tdis-standard T8 現在會擋手填,TDIS_CARD_TEMPLATE §4.3 同步改。
+- **⚠ 4 個懸空 tdis 引用(待裁,已開 task)**:pattern_library 等引用了未登錄的
+  tdis.shi_mian(正典雙胞胎 tdis.bu_mei 不寐已存在——應是重導不是補卡)、
+  tdis.niao_xue(尿血;tdis.xue_zheng 血證已存在,分立或併入待裁)、
+  tdis.er_ming(耳鳴,無雙胞胎,可能該補正典卡)、tdis.fu_zhang(腹脹,
+  病 vs 症狀歸屬待裁)。正典身份判定不自動補骨架(避免 shi_mian/bu_mei
+  重複正典——kidney_deficiency 事故同型),交裁定。
+  另:validate-pattern-standard P6 不驗 related_tcm_disease_ids 解析,這 4 筆
+  就是這樣漏網的——是否擴 P6 一併待裁。
+
+驗證:tdis-standard(0 blocking)、relation-registry(每條登記邊機器可解析)、
+relations(exit 0)、pattern-registry、ratchet、content-junk 全 PASS。
+
+---
+
 # 2026-08-26 — derived 欄位全面掃描:再抓到 3 筆過時機器註記 + relation_registry 少登記 2 個欄,其餘全乾淨
 
 Ting 追問「111 筆刷新那次,有沒有其他 derived 欄位跟那 4 筆 used_by_cases 一樣被漏掉」。

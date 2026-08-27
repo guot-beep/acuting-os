@@ -77,8 +77,12 @@ const APPROVED = new Set([
   "red_flags_zh", "red_flags_en",
   "treatment_principle_zh", "treatment_principle_en",
   "classical_references_zh", "classical_references_en",
-  // 4.3 relations (stored side only — reverses are derived, D13)
-  "related_patterns", "related_conditions", "differential_diseases",
+  // 4.3 relations (stored side only — reverses are derived, D13).
+  // related_conditions is NOT here: relation_registry made cond.* the stored
+  // side of this edge (edge.condition_tcm_diseases, 2026-08-06), so the tdis
+  // side is a reverse. 0/160 had it filled when retired 2026-08-26 — same
+  // zero-cost retirement as pattern_library.related_conditions.
+  "related_patterns", "differential_diseases",
   "typical_formulas", "typical_points",
   // 4.4 provenance
   "sources", "field_sources", "source_type",
@@ -87,7 +91,7 @@ const APPROVED = new Set([
 // classical_source before it is removed. Move first, then delete (§0 order).
 const LEGACY_TAXONOMY_FIELD = "classical_source_hint";
 // T8: reverses that must never be hand-filled (D13).
-const DERIVED_FIELDS = ["used_by_conditions"];
+const DERIVED_FIELDS = ["used_by_conditions", "related_conditions"];
 
 const BILINGUAL_PAIRS = [
   ["definition_zh", "definition_en"],
