@@ -164,6 +164,14 @@ CloudTCM 相反:有 202 筆精確名稱比對的驗證紀錄,那是**查過的**
 
 - `is_alternate` — 替代藥材列。名稱慣例加括號(「(竹葉)」),角色鏡射
   正選列。先例:竹葉石膏湯、銀翹散(D26)。
+- `dose_basis` — 劑量基準(D29,受控詞彙見 `data/config/dose_basis_vocabulary.json`):
+  formula_batch_amount 整批製方量 / per_unit_exposure 成品單位暴露 /
+  adult_daily_herb_dose 單味成人日劑量 / classical_text_amount 古籍原文量 /
+  raw_material_equivalent 原料等價量。**沒有來源就不標** —— 空著是誠實,
+  猜一個是把未查證包裝成已查證。同層可帶 `dose_basis_status`(valid/
+  malformed/mixed_basis/evidence_pending/source_conflict/not_applicable)、
+  `dose_basis_note_zh`、`dose_basis_derived_from_batch`(由批量換算者必須
+  在 note 自陳「名目分配輸入」,不得冒充實測人體暴露)。
 - `is_guide` — 藥引列(D27)。製備用藥(如四神丸的薑棗煮湯和丸),
   role_zh 歸「使」,role_reason_zh 說明藥引身分。方名編碼味數的方
   (四神丸=4)以本體味計,validate-formula-correctness 依此排除。

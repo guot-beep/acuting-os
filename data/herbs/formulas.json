@@ -87193,7 +87193,10 @@
      "actions_zh": "緩急止痛。",
      "role_reason_zh": "緩急止痛。",
      "is_alternate": false,
-     "role_zh": "君"
+     "role_zh": "君",
+     "dose_basis": "formula_batch_amount",
+     "dose_basis_status": "valid",
+     "dose_basis_note_zh": "180 g 是現代成方製備批次中的制草烏投料量，不是病人單次或單日制草烏劑量。古典來源保存為六兩，現代資料庫/成方標準另表為180 g。 每次暴露量待查:The 2020 standard gives honey added per 100 g powder but no explicit final pill count/yield. Do not back-calculate aconite per 3 g pill from an excipient range. [A3 收尾包(2026-08-27 SOL 查證)/D29]"
     },
     {
      "herb_id": "herb.chuan_wu",
@@ -87212,7 +87215,10 @@
      "actions_zh": "緩急止痛。",
      "role_reason_zh": "緩急止痛。",
      "is_alternate": false,
-     "role_zh": "臣"
+     "role_zh": "臣",
+     "dose_basis": "formula_batch_amount",
+     "dose_basis_status": "valid",
+     "dose_basis_note_zh": "180 g 是現代成方製備批次中的制川烏投料量，不是病人單次或單日制川烏劑量。古典來源保存為六兩，現代資料庫/成方標準另表為180 g。 每次暴露量待查:The 2020 standard gives honey added per 100 g powder but no explicit final pill count/yield. Do not back-calculate aconite per 3 g pill from an excipient range. [A3 收尾包(2026-08-27 SOL 查證)/D29]"
     },
     {
      "herb_id": "herb.tian_nan_xing",
@@ -91743,7 +91749,10 @@
      "actions_zh": "燥濕健脾。",
      "role_reason_zh": "燥濕健脾。",
      "is_alternate": false,
-     "role_zh": "佐"
+     "role_zh": "佐",
+     "dose_basis": "formula_batch_amount",
+     "dose_basis_status": "valid",
+     "dose_basis_note_zh": "30 g 應標為本方製備批次中的雄黃投料量，不是成人每日單味雄黃劑量。現代資料另記成品每丸3 g、一次1丸、一日1次。 每次暴露量待查:The cited source gives finished pill mass but not a final batch yield/count or a validated ingredient assay per pill. Do not infer Xiong Huang per pill from batch composition. [A3 收尾包(2026-08-27 SOL 查證)/D29]"
     },
     {
      "herb_id": "herb.jin_bo",
@@ -106354,7 +106363,9 @@
      "actions_zh": "",
      "role_reason_zh": "",
      "is_alternate": false,
-     "role_zh": "佐"
+     "role_zh": "佐",
+     "dose_basis_status": "malformed",
+     "dose_basis_note_zh": "現值 .5-60g 把不同基準拼成一個範圍,應拆開。2020 版成方標準:整批朱砂 100g、製成 960 丸、一次 1 丸、一日 1-2 次(名目分配輸入約 104 mg/丸,非實測人體暴露);古典《局方》另載朱砂二兩,應獨立保留為 classical_text_amount。二手資料括號換算的 60g 不得反過來當原文單位。分基準重寫前不標 dose_basis。 [A3 收尾包(2026-08-27 SOL 查證)/D29]"
     },
     {
      "herb_id": "herb.bai_zhu",
@@ -108429,7 +108440,9 @@
      "actions_zh": "緩急止痛。",
      "role_reason_zh": "緩急止痛。",
      "is_alternate": false,
-     "role_zh": "佐"
+     "role_zh": "佐",
+     "dose_basis_status": "evidence_pending",
+     "dose_basis_note_zh": "現值 `1-28g` 無法代表單一可追溯基準。2020版成方標準的整批細辛投料為18 g；2025單味細辛正文的成人通常量為1–3 g，散劑每次0.5–1 g。兩者必須分欄保存。 每次暴露量待查:The formula standard gives 18 g Xi Xin and finished dosage forms, but no explicit final batch unit count/yield. Honey addition is given as a range for one dosage form. Under the no-inference rule, do not calculate Xi Xin per pill. [A3 收尾包(2026-08-27 SOL 查證)/D29]"
     },
     {
      "herb_id": "herb.huang_lian",

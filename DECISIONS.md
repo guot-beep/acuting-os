@@ -969,3 +969,28 @@ PASS(composition 查無藥材維持 1 味次 `formula.huang_tu_tang` 的「灶�
 - **Reconsider only if**:未來要做「含某藥的所有方」窮舉功能——屆時從
   composition render-time derive 或建獨立索引,不回頭改 related_formulas
   的策展語意。
+
+## D29 — `dose_basis`:劑量欄必須說明自己是哪一種基準 · LOCKED(2026-08-27,Ting:「可以」,對 A3 收尾包的五值枚舉設計)
+
+- **What**:`composition[]` 新增 additive 欄位 `dose_basis`(+`dose_basis_status`
+  /`dose_basis_note_zh`/`dose_basis_derived_from_batch`),受控詞彙五值照 SOL
+  A3 設計輸入:formula_batch_amount / per_unit_exposure / adult_daily_herb_dose /
+  classical_text_amount / raw_material_equivalent(第五種是我方原本四值裝不下的,
+  A3 查證後補上)。詞彙檔 `data/config/dose_basis_vocabulary.json`,
+  gate `scripts/validate-dose-basis.js`(進 validate.yml green 區,負控 3/3)。
+- **Why**:A3 查證推翻了「毒性藥劑量錯很多倍」的原判 —— 至寶丹雄黃 30g 是
+  **整批製方量**不是病人劑量,錯的是欄位語意不是數字。本庫 1639 條 composition
+  列有 1534 條帶 dose_g,其中 **340 條最大值 ≥30g**,混裝至少三種互不可比的
+  基準。不標基準,同一個數字在不同列意思不同,而讀的人不會知道。
+- **不准猜是這條規則的核心**:本次只標 A3 有來源支持的 3 列
+  (至寶丹雄黃、小活絡丹制川烏/制草烏 = formula_batch_amount);
+  蘇合香丸朱砂 SOL 明給 `basis: null`+malformed,**維持不標**並在 note 記下
+  整批 100g/960 丸/名目分配 104mg 與《局方》二兩應獨立保存為
+  classical_text_amount;烏梅丸細辛 evidence_pending。其餘 336 條 ≥30g 的列
+  **一律留空** —— 疑似整批量不是判定,逐列需來源(fill 線的活)。
+- **兩道閘寫進詞彙檔**:per-unit 計算需「同版批量+明確成品數/產出率+單位重+
+  無缺漏製程因子」四項齊備;歷史單位預設不換算,不得跨朝代套同一係數。
+  由批量換算的 per_unit_exposure 必須自陳「名目分配輸入」,gate 會擋。
+- **Reconsider only if**:出現第六種基準(照 D20 精神是**再加一個值**,
+  不是把現有五值合併);或某一值在臨床上被證實無區分意義。
+

@@ -1,0 +1,59 @@
+{
+  "dataset": "dose_basis 受控詞彙(D29, Ting 裁定 2026-08-27)",
+  "ruling": "TING_RULING_SHEET/A3 收尾:dose_basis 五值枚舉照 SOL A3 設計輸入辦。來源 data/research_staging/a3_dose_basis_schema_input_2026-08-27.json",
+  "why": "composition[].dose_g 目前混裝至少三種互不可比的基準:整批製方量、成品單位暴露、單味成人日劑量。混裝的後果不是難看,是把 30g 雄黃讀成病人劑量(=藥典上限 300 倍)——A3 查證證實那是整批量,錯的是欄位語意不是數字。標了基準,同一個數字才有意義。",
+  "field": {
+    "name": "dose_basis",
+    "on": "composition[] 的每一列(與 dose_g 同層)",
+    "required": false,
+    "additive_note": "D12 additive-only:本欄新增不改動任何既有欄位;未標示者不視為錯誤,只是未判定(見 quality_status 的 evidence_pending)。"
+  },
+  "dose_basis_enum": [
+    {
+      "id": "formula_batch_amount",
+      "zh": "整批製方量",
+      "definition": "投入一個有據可查的整批製方/生產批次的藥材量。",
+      "note_zh": "本庫 340 列 dose_g 最大值 ≥30g,多數疑為此類 —— 但疑似不等於判定,逐列需來源。"
+    },
+    {
+      "id": "per_unit_exposure",
+      "zh": "成品單位暴露量",
+      "definition": "歸屬於單一成品(丸/錠/包)的藥材量。僅在來源直接載明,或可由『明確的整批投料 + 明確的成品產出數/重量』計算且無缺漏製程因子時成立。",
+      "warning_zh": "由批量/產出數計算者,一律標示為『名目分配輸入 nominal apportioned input』,不得稱為實測人體暴露量。"
+    },
+    {
+      "id": "adult_daily_herb_dose",
+      "zh": "單味成人日劑量",
+      "definition": "單味藥/飲片專論所載成人常用日用量。"
+    },
+    {
+      "id": "classical_text_amount",
+      "zh": "古籍原文量",
+      "definition": "完全照歷史來源印出的量,保留原單位與原措辭,不做無聲克數換算。"
+    },
+    {
+      "id": "raw_material_equivalent",
+      "zh": "原料等價量",
+      "definition": "成品質量以相當於若干飲片/生藥質量表示,例如『每 1g 相當於飲片 0.98g』。"
+    }
+  ],
+  "quality_status_enum": [
+    { "id": "valid", "zh": "基準明確且與數值相符" },
+    { "id": "malformed", "zh": "數值形狀本身壞掉(如 .5-60g 這種跨基準拼接的範圍)" },
+    { "id": "mixed_basis", "zh": "同一欄位混裝兩種以上基準" },
+    { "id": "evidence_pending", "zh": "尚未查證,不得推測" },
+    { "id": "source_conflict", "zh": "兩份來源給不同基準或數值,並記不擇一" },
+    { "id": "not_applicable", "zh": "此列不適用劑量基準(如藥引、非計量成分)" }
+  ],
+  "per_unit_calculation_gate": [
+    "同一版本來源同時提供:整批投料量、明確的成品數或已驗證產出率、成品單位識別/重量;",
+    "且無任何會使按比例分配失效的缺漏製程因子。",
+    "四項缺一即不得計算,標 evidence_pending。"
+  ],
+  "historical_unit_gate": [
+    "預設:保留原單位,不換算。",
+    "僅在具備該來源專屬的度量衡證據,或官方關鍵資訊表本身已給出正規化值時,才允許換算。",
+    "絕不把單一換算係數跨朝代或跨單位制通用化。"
+  ],
+  "hard_rule_zh": "沒有來源就不標基準 —— 空著是誠實,猜一個是把未查證包裝成已查證。本欄的價值全在『標了就是查過』。"
+}

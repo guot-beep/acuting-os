@@ -82,9 +82,14 @@ raw_material_equivalent + status 六值 + 兩道閘)、`a3_wugong_2025_verificat
 (蜈蚣:2025 正文未取得,canonical_eligible=false,**不得用 2015 鏡像值寫卡**)、
 `a3_source_registry`。
 
-**現在不要改任何 dose_g 數字** —— A3 的結論是「基準混裝」不是「數字錯」,
-修法是資料模型分基準,需 Ting 先裁 dose_basis 欄位(列 B 類)。
-fill 線此項只做:安宮牛黃丸(第五方,SOL 主動掃出)的基準查證備料。
+**dose_basis 欄位已由 Ting 裁定並落地(D29,2026-08-27)** —— 五值受控詞彙+
+gate 已在 CI。**仍然不要改任何 dose_g 數字**:修法是逐列標基準,不是改數字。
+
+fill 線此項的活:
+1. 安宮牛黃丸(第五方,SOL 主動掃出)的基準查證
+2. 340 條 ≥30g 的列逐列查證基準 —— **有來源才標,沒來源留空**
+   (現已標 3 條,全部來自 A3 查證)
+3. 蜈蚣:2025 藥典正文取得前不得寫卡(SOL 已標 canonical_eligible=false)
 
 ## 憲法提醒
 
