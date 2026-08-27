@@ -56,7 +56,11 @@ edge.pattern_biomedical_conditions 兩條(此前零登記,含三檔副本同步�
   encoding 1817/formula_correctness 0/formula_dose_staging 0)PASS 無回歸
 - validate-relation-registry:PASS,26 edges(24→26)全部機器可解析
 - validate-content-junk:PASS;git diff --check:clean;build-data 重生成 knowledge_core/data/pat
-- 三檔懸空引用:37 處(23 id)→ 9 處(7 id,全部是留裁項);generated 內 16 個舊 id 殘留 0
+- 三檔懸空引用:45 處(23 id;tdis 8 + cond 37)→ 13 處(7 id;tdis 3 + cond 10,全部是留裁項)。
+  訂正:本條目初稿此行寫「37→9」是兩個口徑混用的錯誤——37 只是 cond 一側的改前數,
+  9 是 validate-pattern N3 的 record 數(只驗 pattern_library,不含另兩份 seed 副本)。
+  三個口徑同時列出以免再混:改前引用 45 / 改後引用 13 / N3 notes 9 records。
+- generated 內 16 個舊 id 殘留 0(grep 三支 knowledge_*.js)
 
 來源缺口:本批純 id 解析,零內容宣稱,無新增需查源欄位。下一批:Ting 對 7 筆裁定後照裁執行,
 chyluria/lipiduria 若裁補卡則連紅旗查源一起排 E3;N3 歸零後 P6 升級 blocking。
