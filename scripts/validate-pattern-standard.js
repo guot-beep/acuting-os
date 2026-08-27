@@ -31,6 +31,14 @@
  * NOTES (reported, do not fail):
  *   N1 no differential_patterns — the one thing a pattern card is uniquely for
  *   N2 no treatment links at all (typical_points and typical_formulas empty)
+ *   N3 a related_tcm_disease_ids / related_biomedical_condition_ids id does not
+ *      resolve (edge.pattern_tcm_diseases / edge.pattern_biomedical_conditions).
+ *      Added 2026-08-27: the D25 sweep found 23 unregistered ids these two
+ *      fields referenced that P6 never looked at. Note-level, not blocking:
+ *      the ids still unresolved after the redirect batch are exactly the ones
+ *      whose canonical identity is an open Ting ruling (裁定前不准自動補骨架),
+ *      and a blocking gate would force fake canon cards to silence itself.
+ *      Promote to P6 only when the pending rulings land and the count is 0.
  *
  *   --worklist          list the ids behind the numbers, grouped by family
  *   --family 臟腑        only that pattern_family
@@ -44,6 +52,7 @@ const ROOT = path.resolve(__dirname, "..");
 const LIBRARY = "data/pathology/pattern_library.json";
 const REGISTRY = "data/pathology/pattern_registry.json";
 const CONDITIONS = "data/pathology/condition_canon_shortlist.json";
+const TDIS = "data/pathology/tdis_registry.json";
 const FAMILY_VOCAB = "data/config/pattern_family_vocabulary.json";
 
 const readJson = (rel) => JSON.parse(fs.readFileSync(path.join(ROOT, rel), "utf8"));
@@ -142,6 +151,7 @@ const library = readJson(LIBRARY).records || [];
 const registry = readJson(REGISTRY).records || [];
 const knownPatternIds = new Set([...library, ...registry].map((r) => r.id));
 const knownConditionIds = new Set((readJson(CONDITIONS).records || []).map((r) => r.id));
+const knownTdisIds = new Set((readJson(TDIS).records || []).map((r) => r.id));
 const FAMILY_IDS = new Set((readJson(FAMILY_VOCAB).records || []).map((r) => r.id));
 
 const scope = ONLY_FAMILY ? library.filter((r) => r.pattern_family === ONLY_FAMILY) : library;
@@ -202,6 +212,18 @@ for (const rec of scope) {
   }
   for (const cid of rec.related_conditions || []) {
     if (!knownConditionIds.has(cid)) add("P6", `related_conditions "${cid}" does not resolve`);
+  }
+
+  // N3 — the v1.0 import relation fields resolve (note-level; see header)
+  for (const tid of rec.related_tcm_disease_ids || []) {
+    if (!knownTdisIds.has(tid)) {
+      notes.push({ code: "N3", id, family: fam, detail: `related_tcm_disease_ids "${tid}" does not resolve in ${TDIS}` });
+    }
+  }
+  for (const cid of rec.related_biomedical_condition_ids || []) {
+    if (!knownConditionIds.has(cid)) {
+      notes.push({ code: "N3", id, family: fam, detail: `related_biomedical_condition_ids "${cid}" does not resolve in ${CONDITIONS}` });
+    }
   }
 
   // P8 — unknown fields

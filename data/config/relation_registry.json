@@ -421,6 +421,34 @@
    "validated_by": "scripts/validate-symptom-standard.js Y6",
    "rationale": "\"脹痛 points to 氣滯\" is clinical reasoning authored on the symptom card. \"氣滯證 presents with 脹痛\" is a textbook list authored on the pattern card. Different claims, different provenance, both needed.",
    "path_form": "nested: differentiation_zh[].points_to — verified parseable by scripts/validate-relation-registry.js on a temporary fixture 2026-08-06 (2 variants yielded 3 pattern ids, not objects). A consumer using record[field] naively would get the object array instead."
+  },
+  {
+   "id": "edge.pattern_tcm_diseases",
+   "stored_on": "pattern.*",
+   "field": "related_tcm_disease_ids",
+   "target": "tdis.*",
+   "file": "data/pathology/pattern_library.json",
+   "edge_kind": "descriptive",
+   "reverse": {
+    "derived_field": null,
+    "note": "No persisted reverse. NOT the mirror of edge.tdis_patterns — tdis.related_patterns is authored 辨證分型 content (which patterns this disease differentiates into); this field is the pattern card's own 常見病 list from the v1.0 import vocabulary. Different provenance, kept separate."
+   },
+   "validated_by": "scripts/validate-pattern-standard.js N3 (note-level resolution — promote to P6 when the pending identity rulings land)",
+   "registered": "2026-08-27 dangling-id ruling batch: the field arrived with merge 11f37a9's v1.0 vocabulary, was adopted into APPROVED, and referenced 4 tdis ids no validator ever resolved (2 redirected to canon twins, 2 pending Ting). Two seed copies exist (tcm_pattern_prototypes.json, tcm_pattern_lin_syndrome.json) whose records are duplicated into pattern_library by id — edits must touch all three; only pattern_library is validated."
+  },
+  {
+   "id": "edge.pattern_biomedical_conditions",
+   "stored_on": "pattern.*",
+   "field": "related_biomedical_condition_ids",
+   "target": "cond.*",
+   "file": "data/pathology/pattern_library.json",
+   "edge_kind": "descriptive",
+   "reverse": {
+    "derived_field": null,
+    "note": "No persisted reverse. NOT the mirror of edge.condition_patterns (cond.related_patterns) — that is the condition card's authored pattern list; this is the pattern card's biomedical study-reference list from the v1.0 import vocabulary. Many-to-many, never equivalence (憲法 §二.9)."
+   },
+   "validated_by": "scripts/validate-pattern-standard.js N3 (note-level resolution — promote to P6 when the pending identity rulings land)",
+   "registered": "2026-08-27 dangling-id ruling batch: 19 of the referenced cond ids were outside condition_canon_shortlist.json and no validator looked. 14 redirected to canon twins the same day; 5 (stroke / thrombosis / hypertensive_crisis / chyluria / lipiduria) pending Ting — 補骨架卡 would add C4 no-red-flags defects and regress the conditions ratchet, so pending stays visibly dangling at note level instead."
   }
  ],
  "retired_hand_filled_fields": [

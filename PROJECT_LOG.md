@@ -1,3 +1,67 @@
+# 2026-08-27 — D25 後續:pattern 三檔 23 個懸空診斷 id 逐一查雙胞胎,16 個重導落地、7 個留 Ting 裁定,P6 盲區以 N3 note 級補上
+
+MEASURED TREE: claude/zealous-hugle-887025(rebase 後基底 3d25efd0,本條目與資料改動同一 commit;基底含同日 formula/herb 懸空 id 治理批)
+
+背景:2026-08-26/27 derived 治理掃描發現 pattern_library.json / tcm_pattern_lin_syndrome.json /
+tcm_pattern_prototypes.json 的 related_tcm_disease_ids(4 個 tdis.*)與
+related_biomedical_condition_ids(19 個 cond.*)引用了未在正典登錄的 id,而
+validate-pattern-standard P6 從不驗這兩個欄位。裁定原則:不自動補骨架,逐一查雙胞胎後重導或留裁。
+cond.* 的正典基準 = condition_canon_shortlist.json 508 筆(懸空 37 個引用中 18 個其實在冊,
+不屬本批;剩 19 個與派工單完全一致)。tdis.* 基準 = tdis_registry.json 160 筆。
+
+**重導落地 16 個 id(三檔共 32 處替換,只動兩個 id 陣列,diff 逐 hunk 眼檢過)**:
+
+| 懸空 id | 重導為 | 處數 | 裁定依據 |
+|---|---|---|---|
+| tdis.shi_mian | tdis.bu_mei | 4 | 派工單建議,正典即不寐 |
+| tdis.er_ming | tdis.er_ming_er_long | 1 | **派工單說無雙胞胎,實查有**(耳鳴耳聾,免補卡) |
+| cond.tia | cond.transient_ischemic_attack | 2 | 同一實體 |
+| cond.prostatitis | cond.chronic_prostatitis | 4 | 正典卡名即 "Prostatitis (including...)" |
+| cond.menopausal_syndrome | cond.menopause_syndrome | 1 | 拼字近同雙胞胎 |
+| cond.angina | cond.angina_pectoris | 2 | 同一實體 |
+| cond.vertigo | cond.dizziness_vertigo | 2 | 同一實體 |
+| cond.acute_cystitis | cond.cystitis | 2 | 正典卡涵蓋(超集方向,不寫窄) |
+| cond.tuberculosis | cond.tuberculosis_disease | 1 | 上下文是 tdis.fei_lao(肺癆)=活動性結核 |
+| cond.hyperlipidemia | cond.dyslipidemia | 2 | 超集方向 |
+| cond.chronic_nephritis | cond.glomerulonephritis | 1 | 慢性腎炎中文慣用指慢性腎絲球腎炎;CKD 是分期實體非同物 |
+| cond.atypical_pneumonia | cond.pneumonia | 1 | 超集方向;窄化到 mycoplasma_pneumonia 是選項,留給 Ting 細化 |
+| cond.uti | cond.pyelonephritis | 2 | 熱淋陣列已有 cystitis+prostatitis,補上腎盂腎炎後 UTI 家族覆蓋不變 |
+| cond.dysmenorrhea | primary_+secondary_dysmenorrhea | 2 | 正典二卡恰好窮盡分割,聯集不減範圍 |
+| cond.bronchitis | acute_+chronic_bronchitis | 3 | 同上 |
+| cond.urolithiasis | ureteral_+bladder_stones | 2 | 同陣列已有 nephrolithiasis,三卡聯集=原範圍 |
+
+**留 Ting 裁定 7 個(維持懸空,N3 note 可見,畫面上呈英文 slug 無中文——實測瘀血內阻卡
+西醫對應列 "Thrombosis" 孤懸英文,旁邊是已重導的 原發性痛經·Primary Dysmenorrhea)**:
+
+1. tdis.niao_xue(尿血,2 處/血淋):A 併入 tdis.xue_zheng(內科學血證章含尿血,建議)/B 分立補卡
+2. tdis.fu_zhang(腹脹,1 處/脾氣虛):sym.abdominal_bloating(腹脹,有紅旗有來源)已存在——
+   A 從 related_tcm_disease_ids 移除、改掛 key_signs_ids(病→症重分類,先搬再刪)/B tdis 補卡
+3. cond.stroke(2 處/肝風二卡):A 聯集 acute_ischemic_stroke+intracerebral_hemorrhage /B 補傘卡
+4. cond.thrombosis(1 處/瘀血):A 重導 deep_vein_thrombosis /B 聯集 DVT+pulmonary_embolism /C 補傘卡
+5. cond.hypertensive_crisis(2 處/肝風二卡):同陣列已有 cond.hypertension,重導=實質刪除;A 補卡(I16)/B 刪除(需妳點頭)
+6. cond.chyluria(1 處/膏淋):無雙胞胎屬實;**補骨架卡會觸發 C4(無紅旗)→conditions 0→+1 棘輪回歸**,
+   所以補卡必須連紅旗一起查源填,是 E3 批次不是本批 — A 排 E3 補卡/B 維持懸空
+7. cond.lipiduria(1 處/膏淋):同上;proteinuria/hematuria 已有「檢驗所見立卡」先例
+
+**驗證器盲區(附帶裁定執行)**:P6 擴充採 note 級 N3(blocking 會讓 patterns 0→9 轉紅,且會逼人
+補假卡滅音);validate-pattern-standard.js 新增 knownTdisIds + 兩段 N3 迴圈與 header 說明,
+待 7 筆裁定歸零後再升 P6。relation_registry.json 補登 edge.pattern_tcm_diseases 與
+edge.pattern_biomedical_conditions 兩條(此前零登記,含三檔副本同步規則與 non-mirror 語意說明)。
+
+**逐欄位數字(改動前→後,單行指令可重現)**:
+- validate-pattern-standard --json:154 records/154 clean/0 defects(前後同);notes N3 0→9,N1 3→3
+- validate-tdis-standard --json:160/160/0(前後同)
+- validate-condition-standard --json:508/508/0(前後同)
+- check-validation-ratchet:8 層全 flat(conditions 0/patterns 0/tdis 0/symptoms 0/naming 0/
+  encoding 1817/formula_correctness 0/formula_dose_staging 0)PASS 無回歸
+- validate-relation-registry:PASS,26 edges(24→26)全部機器可解析
+- validate-content-junk:PASS;git diff --check:clean;build-data 重生成 knowledge_core/data/pat
+- 三檔懸空引用:37 處(23 id)→ 9 處(7 id,全部是留裁項);generated 內 16 個舊 id 殘留 0
+
+來源缺口:本批純 id 解析,零內容宣稱,無新增需查源欄位。下一批:Ting 對 7 筆裁定後照裁執行,
+chyluria/lipiduria 若裁補卡則連紅旗查源一起排 E3;N3 歸零後 P6 升級 blocking。
+---
+
 # 2026-08-27 — 懸空 herb.*/formula.* id 治理:逐一查雙胞胎,重導 5+去重 1+補 pending 標記 1,不補骨架
 
 延續同日 formulas/herbs derived 治理掃描的懸空 id 清單。掃描重現方式:對 data/ 知識層(排除

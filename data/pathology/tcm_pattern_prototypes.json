@@ -74,7 +74,7 @@
     "related_biomedical_condition_ids": [
       "cond.migraine",
       "cond.hypertension",
-      "cond.vertigo"
+      "cond.dizziness_vertigo"
     ],
     "primary_formula_ids": [
       "formula.tian_ma_gou_teng_yin"
@@ -159,7 +159,7 @@
     "differentiation_preview_zh": "雙重虛證：心不主血、脾不統血與生血不足並見。常用於心悸、失眠、月經過多、崩漏等氣血兩虛證候。",
     "differentiation_preview_en": "Dual Deficiency: Failure of Heart to govern Blood and Spleen to produce/control Blood. Commonly seen in insomnia, palpitations, hypermenorrhea, and chronic bleeding.",
     "related_tcm_disease_ids": [
-      "tdis.shi_mian",
+      "tdis.bu_mei",
       "tdis.xin_ji"
     ],
     "related_biomedical_condition_ids": [
@@ -258,8 +258,9 @@
       "tdis.xuan_yun"
     ],
     "related_biomedical_condition_ids": [
-      "cond.bronchitis",
-      "cond.hyperlipidemia",
+      "cond.acute_bronchitis",
+      "cond.chronic_bronchitis",
+      "cond.dyslipidemia",
       "cond.metabolic_syndrome"
     ],
     "primary_formula_ids": [
@@ -351,9 +352,10 @@
       "tdis.tong_jing"
     ],
     "related_biomedical_condition_ids": [
-      "cond.dysmenorrhea",
+      "cond.primary_dysmenorrhea",
+      "cond.secondary_dysmenorrhea",
       "cond.thrombosis",
-      "cond.angina"
+      "cond.angina_pectoris"
     ],
     "primary_formula_ids": [
       "formula.xue_fu_zhu_yu_tang",
