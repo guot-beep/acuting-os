@@ -3370,6 +3370,9 @@
         ],
         "aliases_zh": [
           "《景岳全書·婦人規》「輕則或早或遲」（本卡 classical_references_zh 既有出典）——月經先後無定期為此段所述週期不定時之正式中醫病名，2026-08-24 核對後補此別名（原 field_sources 誤以英文審核備註記錄，2026-08-24 改回中文出典格式）"
+        ],
+        "classical_references_zh": [
+          "A18-4(D28 補裁,2026-08-27):《景岳全書.婦人規》此段之病機鏈(衝任受損→腎氣日消→漸成枯閉)同時支持月經先後無定期與不孕論述,Ting 裁定雙卡並存 cross-reference —— 一份出典可同時支持多張卡,字面病名命中規則(N5)不得再自動搬移本段。姊妹卡:cond.female_infertility。"
         ]
       },
       "acupuncture_scope_zh": {
@@ -4848,7 +4851,7 @@
         {
           "original_field": "classical_references_zh",
           "text": "《景岳全書.婦人規》：「凡欲念不遂，沉思積鬱，心脾氣結致傷衝任之源，而腎氣日消，輕則或早或遲，重則漸成枯閉，此宜兼治心脾腎。」",
-          "reason": "N5 (classical_references_zh duplicated AND missing this card's own disease term): classical_references_zh is 《景岳全書·婦人規》 on menstrual-timing irregularity (\"輕則或早或遲\" = 月經先後無定期), not on infertility mechanism directly — the card's own disease terms (女性不孕症/不孕) are absent from the passage. True home is cond.irregular_menstruation (kept there, now also declared as its alias 月經先後無定期). Amenorrhea-as-consequence (\"重則漸成枯閉\") is a downstream link, not this passage's subject.",
+          "reason": "N5 (classical_references_zh duplicated AND missing this card's own disease term): classical_references_zh is 《景岳全書·婦人規》 on menstrual-timing irregularity (\"輕則或早或遲\" = 月經先後無定期), not on infertility mechanism directly — the card's own disease terms (女性不孕症/不孕) are absent from the passage. True home is cond.irregular_menstruation (kept there, now also declared as its alias 月經先後無定期). Amenorrhea-as-consequence (\"重則漸成枯閉\") is a downstream link, not this passage's subject.|2026-08-27 A18-4 Ting 裁定:恢復雙卡並存(本條目保留為搬移史,非現行狀態)",
           "moved_at": "2026-08-24"
         }
       ],
@@ -4884,6 +4887,9 @@
         ],
         "western_pathology_zh": [
           "原值為 C10 全庫共用樣板句(該句仍存於其他未修記錄);替換內容取自 /home/user/acuting-os/curriculum/conditions/INFERTI.md（2026-08-19 課件萃取,經對抗驗證);evidence: \"Kidney deficiency Blood, essence, Chong and Ren deficiency Mingmen fire fading Qi and blood stagnation Damp and phlegm blockage\" \"Infertility refers to inability of a couple to conceive after one year of unprotected intercourse. It affects about 1 of 5 couples in the USA.\""
+        ],
+        "classical_references_zh": [
+          "A18-4(D28 補裁,2026-08-27):《景岳全書.婦人規》此段之病機鏈(衝任受損→腎氣日消→漸成枯閉)同時支持月經先後無定期與不孕論述,Ting 裁定雙卡並存 cross-reference —— 一份出典可同時支持多張卡,字面病名命中規則(N5)不得再自動搬移本段。姊妹卡:cond.irregular_menstruation。"
         ]
       },
       "risk_factors_zh": [
@@ -5078,7 +5084,8 @@
         "no_source_found": false
       },
       "etiology_en": "",
-      "western_pathology_en": ""
+      "western_pathology_en": "",
+      "classical_references_zh": "《景岳全書.婦人規》：「凡欲念不遂，沉思積鬱，心脾氣結致傷衝任之源，而腎氣日消，輕則或早或遲，重則漸成枯閉，此宜兼治心脾腎。」"
     },
     {
       "id": "cond.male_infertility",

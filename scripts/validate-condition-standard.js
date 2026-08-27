@@ -555,7 +555,14 @@ for (const rec of scope) {
     if (group.length >= 2) {
       const terms = ownDiseaseTerms(rec);
       const hit = terms.find((t) => classical.includes(t));
-      if (!hit) {
+      // A18-4(D28,2026-08-27,Ting):一份出典可以同時支持多張卡 —— 病機鏈支持
+      // 不要求字面病名命中。具名核可寫在 field_sources.classical_references_zh
+      // 裡(含「雙卡並存」與姊妹卡 id),有核可者不再列 N5,否則本 note 每輪
+      // 都邀請下一個 agent 把已裁定的段落再搬走一次。核可是 per-card 具名的,
+      // 不是關掉整條 N5 —— 沒被裁過的重複照抓。
+      const dualCardSanctioned = [].concat((rec.field_sources || {})[CLASSICAL_FIELD] || [])
+        .some((s) => typeof s === "string" && s.includes("雙卡並存"));
+      if (!hit && !dualCardSanctioned) {
         const others = group.filter((g) => g !== rec.id);
         notes.push({
           code: "N5",

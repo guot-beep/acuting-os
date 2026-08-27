@@ -926,6 +926,11 @@ PASS(composition 查無藥材維持 1 味次 `formula.huang_tu_tang` 的「灶�
   警語升級併用禁忌。「其他照建議辦」= 裁定單各項建議選項全數生效
   (A1a/A4a/A5b/A7a/A10a/A11a/A12c+a/A14a/A18-1a/-2a/-3a、B1b/B2a/B3a、
   C1/C2/C3a/C4a/C5/C5b;A18-4 無建議,維持待裁)。
+- **A18-4 補裁(2026-08-27 稍後,Ting:「恢復雙卡並存」)**:《景岳全書.婦人規》
+  衝任受損段恢復同載於 cond.female_infertility 與 cond.irregular_menstruation
+  —— 一份出典可同時支持多張卡,病機鏈支持不要求字面病名命中。兩卡
+  field_sources 具名互指;N5 檢查學會「雙卡並存」具名核可(per-card,
+  未裁定的重複照抓);import_artifacts 的搬移史保留並註記非現行狀態。
 - **執行紀錄(同日)**:安全批+小項批+結構批三個 commit;
   已裁先行 gate:validate-herb-incompatibility.js(B1,十八反/十九畏,
   起手 0 共存直進 green,負控已驗);field_shape_convention.json(B3 公約,
