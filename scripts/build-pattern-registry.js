@@ -126,6 +126,21 @@ function main() {
   console.log(`已登錄但掃不到    ${unused.length}(僅指 conditions/comparisons/clinical_cases 三處;id 可能活在 pattern_library 本尊卡、穴位主治、tdis、方劑等層——2026-08-26 查證當時 38 筆全有實引用,勿逕判死詞彙)`);
   console.log(`引用計數漂移      ${drift.length}(登錄檔記載 vs 本次實測)`);
 
+  /* Machine-written usage notes rot the same way frozen counts do — the old
+   * builder stamped 「尚未被任何病症或鑑別卡引用」 at generation time and
+   * nothing ever re-checked it (3 stale ones found 2026-08-26). Detect only:
+   * removing a note is a registry edit, outside --refresh-counts' scope. */
+  const staleNotes = records.filter((r) => {
+    const u = use.get(r.id);
+    return (r.newly_registered_note_zh && u && (u.conditions.length || u.comparisons.length))
+      || (r.orphan_note_zh && u && u.conditions.length);
+  });
+  console.log(`過時使用註記      ${staleNotes.length}(newly_registered/orphan 註記與實測引用矛盾——手工編輯 registry 移除,本工具不代寫)`);
+  staleNotes.forEach((r) => {
+    const u = use.get(r.id);
+    console.log(`  ⚠ ${r.id.padEnd(44)} 註記稱未被引用,實測 cond ${u.conditions.length} / cmp ${u.comparisons.length}`);
+  });
+
   if (missing.length) {
     console.log('\n--- 已引用但未登錄(懸空引用)---');
     missing.forEach((id) => {

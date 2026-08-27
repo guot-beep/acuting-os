@@ -122,8 +122,10 @@
    "target": "pattern.* | formula.* (by record type)",
    "file": "data/knowledge/comparisons.json",
    "reverse": {
-    "derived_field": null,
-    "note": "member cards derive their comparison-table chips at render time"
+    "derived_field": "used_by_comparisons",
+    "on": "data/pathology/pattern_registry.json (pattern members only)",
+    "derived_by": "scripts/build-pattern-registry.js --refresh-counts",
+    "note": "Count only — member cards' comparison-table chips remain render-time. Declared 2026-08-26: the field had been persisted since 2026-07-31 but never registered here, which is how its staleness went unnoticed (D25 supplements)."
    },
    "validated_by": "scripts/validate-relations.js validateComparisons"
   },
@@ -135,7 +137,7 @@
    "file": "data/clinical_cases/schema.sql (+ acuting-clinical-cases-v1)",
    "reverse": {
     "derived_field": null,
-    "note": "RUNTIME ONLY (D9): the 'used in 18 cases' panel queries the clinical store at render; aggregates are never written into knowledge records. Dated snapshots go to data/audits/clinical_usage_snapshot.json only."
+    "note": "RUNTIME ONLY (D9): the 'used in 18 cases' panel queries the clinical store at render; aggregates are never written into knowledge records. Dated snapshots go to data/audits/clinical_usage_snapshot.json only. Distinct from D9's scope: pattern_registry.used_by_cases counts ONLY the repo's seed/sample case files (data/clinical_cases/*.json, template files excluded) via scripts/build-pattern-registry.js --refresh-counts — repo data, not the clinical store; the runtime store is never scanned or persisted (D25 supplement 2)."
    },
    "validated_by": "scripts/validate-clinical-case-standard.js F-series"
   },

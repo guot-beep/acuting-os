@@ -33,6 +33,35 @@ ICD-10 對照分歧、約 30 筆 `comparisons.json` 骨架記錄空著——**�
 
 ---
 
+# 2026-08-26 — derived 欄位全面掃描:再抓到 3 筆過時機器註記 + relation_registry 少登記 2 個欄,其餘全乾淨
+
+Ting 追問「111 筆刷新那次,有沒有其他 derived 欄位跟那 4 筆 used_by_cases 一樣被漏掉」。
+系統性掃法:以 relation_registry.json(D13 的邊清單)為 derived 欄位的正式名冊,加上
+pattern_registry 裡隱性的機器產值,逐項量測。結果:
+
+- **✅ 乾淨的(6 項)**:system→system_zh 映射(8 個辨證體系、151 筆、每系恰一種寫法);
+  needs_name_zh/needs_system 旗標雙向零錯;orphan_note_zh 零筆;members↔member_of
+  雙向指針 66 條邊完全一致(validator P3 只驗單向,這次補驗了另一向——D24 的 66 這個
+  數字原樣在);sym.* 124 筆零手填 seen_in_*(Y8 禁令守住);pattern_library 154 卡
+  零殘留已退役的 related_conditions。
+- **⚠ 抓到:3 筆過時機器註記**——stomach_fire/wind_cold/wind_heat 帶著舊 builder 蓋的
+  「登錄為正式詞彙,尚未被任何病症或鑑別卡引用。」,實測現已被引用 1/10/15 次。
+  同 used_by_cases 一個病:機器寫下時為真、之後沒人重驗。已移除三行(機器產生的
+  過時斷言,非人工內容,不受 §0 保護);偵測工具 report 模式新增「過時使用註記」
+  檢查,以後這類註記與實測矛盾會被點名(偵測不代寫,修法是手工編輯 registry)。
+- **⚠ 抓到:relation_registry 少登記 2 個持久化 derived 欄**——pattern_registry 實際
+  持久了三個計數欄,名冊只登記 used_by_conditions 一個。used_by_comparisons
+  (edge.comparison_members 反向)與 used_by_cases 補登記;後者特別註明只數 repo 的
+  種子/樣本案例檔,runtime 臨床庫照 D9 仍然 render-time only、永不持久化,不衝突。
+  名冊自己的 policy 就說「沒登記的欄,graph 看不見」——這正是這兩欄凍結三週沒人
+  發現的原因。
+- **111 筆那次刷新本身**:重驗漂移 0,無再漏。
+
+驗證:validate-relation-registry(PASS,每條登記邊機器可解析)、pattern-registry、
+pattern-standard、relations、ratchet、content-junk 全 PASS。
+
+---
+
 # 2026-08-26 — 「案例線要不要接上 38 筆 V2」裁定:不造案例,復原案例掃描,used_by_cases 變回量測值
 
 Ting 追問 38 筆 used_by_cases 全 0、案例線要不要接上。查證後裁定**不接**——但修了機械件:
