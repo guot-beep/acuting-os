@@ -1,3 +1,27 @@
+# 2026-08-27 — 沙參待裁項補分母:全庫只有 3 列,其中 1 列已是正確範本 → 開放題縮成二選一(零資料異動)
+
+承上一條。對方 session 補了一個對照組,我掃全庫算分母後確認它把裁定難度降了一級。
+**指向沙參類 herb id 的組成列全庫共 3 列**(掃 223 方全部 composition,`herb_id` 含 `sha_shen`):
+
+| 方 | 位置/角色 | herb_id | name_zh | name_en | pharmaceutical_latin | 狀態 |
+|---|---|---|---|---|---|---|
+| formula.sang_xing_tang | [5] 佐 | herb.bei_sha_shen | **北沙參** | Glehnia Root | Rx. Glehniae | ✅ 四欄一致 |
+| formula.yi_guan_jian | [2] 佐 | herb.bei_sha_shen | 沙參 | Glehniae / Adenophorae Radix | Rx. Adenophorae/Glehniae | ⚠️ 四欄三說 |
+| formula.sha_shen_mai_men_dong_tang | [0] 君 | herb.bei_sha_shen | 沙參 | Glehniae / Adenophorae Radix | Rx. Adenophorae/Glehniae | ⚠️ 四欄三說 |
+
+三件事因此確定:
+1. **桑杏湯那列是現成範本**——正確寫法已經存在於樹內,不必從零設計。待裁第 ① 項
+   (泛稱歸屬)於是從開放題縮成**二選一**:要嘛照桑杏湯把顯示欄對齊成「北沙參」,
+   要嘛維持泛稱但拉丁學名單一化。(對照組由對方 session 首先點名,分母與全景由本線補。)
+2. **分母是 3 不是 223**,要改的只有 2 列——是小修不是工程,不需要排批次。
+3. **零列指向 herb.sha_shen(退役)或 herb.nan_sha_shen**——方劑線這一側獨立佐證了
+   同日那條「退役卡活引用 0」的複查結論;新建的南沙參卡目前也確實沒有方劑引用它
+   (與該卡 related_formulas 刻意留空一致,不是漏掛)。
+
+資料仍未動,等 Ting 裁 ①。MEASURED TREE: main @ 2e0899ef。
+
+---
+
 # 2026-08-27 — 沙參線待裁項登記:退役卡 0 活引用成立,但輸入層仍可鑄造;方劑兩處組成「四欄三說」(零資料異動)
 
 跨 session 交叉複驗的結果登記,**本條沒有動任何資料檔**。起因是南沙參分立建卡後,
