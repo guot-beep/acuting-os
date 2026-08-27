@@ -1,3 +1,63 @@
+# 2026-08-27 — 沙參線待裁項登記:退役卡 0 活引用成立,但輸入層仍可鑄造;方劑兩處組成「四欄三說」(零資料異動)
+
+跨 session 交叉複驗的結果登記,**本條沒有動任何資料檔**。起因是南沙參分立建卡後,
+另一 session(Task 10A–10D 實作缺口審查)回報 picker 層問題,兩邊各自獨立實測後互相對上。
+
+**先接上同日「退役卡 0 命中」那條複查——它的結論成立,但它掃的是另一半**:
+該複查證實資料層**指向退役卡的活引用 0 條**(19 條邊/10,374 條邊分桶重跑),真陰性。
+而 picker 問題是**未來式**:`herbPickerOptions()`(app.js:8594)/`formulaPickerOptions()`
+(app.js:8582)/`patternPickerOptions()`/`westernConditionPickerOptions()` 皆為裸
+`records.map`,不濾 `review_status`。我在自己 worktree 實測(唯讀,未動 app.js):
+herbs 364 筆內 4 筆 deprecated 全數上架(han_lian_cao/wu_zei_gu/sha_shen/qian_cao_gen)、
+formulas 223 筆內 4 筆(含 label 逐字為「都氣丸(匯入重複殘根)」的 import stub),
+**畫面零標示**。`enhanceLinkField()` 把 textarea 設 hidden 後 picker 是這些欄位唯一鑄造路徑。
+→ 兩條結論不衝突:**存量 0,流量未關**。清存量的驗證器(validate-retired-id-references)
+不會發現這件事,因為它檢查的是「有沒有人引用」,不是「還能不能新引用」。
+
+**沙參個案(對方 session 的三項延伸,我複驗確認)**:
+1. 打「沙參」的三列順序為 北沙參 / 南沙參 / **沙參**(picker 過濾 `terms.includes(q)` 無排序);
+   第三列是唯一標籤為無修飾泛稱的那列——**開方時不想指定基原的人最會點的,正是退役卡**。
+2. picker 的 `terms` 只串 `name_zh + pinyin + name_en + id`,**不含 aliases_zh**。
+   D21 把泛稱「沙參」併進 `herb.bei_sha_shen.aliases_zh`(實測 `["沙參"]`)——**搜尋搜不到**。
+   即 D21 的重導在資料層做完了,在輸入層等於沒做。
+3. `herb.sha_shen` 的 `replaced_by`/`canonical_id`/`superseded_by`/`redirect_to`/
+   `replacement_id`/`merged_into` **六個全 undefined**,重導只活在 `deprecated_note_zh` 散文裡;
+   而該散文逐字寫「不含任何南沙參專屬臨床內容,**故未另立南沙參封存記錄**」——
+   立論已被今天的分立裁定推翻,且**零機制會發現它過期**。
+
+**我線內的具體落點(方劑線,已實測全庫僅此兩處,登記不改)**:
+`formulas.json` 兩處組成列同時宣稱三件互相矛盾的事——
+
+| 方 | 位置/角色 | herb_id | name_zh | name_en | pharmaceutical_latin |
+|---|---|---|---|---|---|
+| formula.sha_shen_mai_men_dong_tang | composition[0] 君 | herb.bei_sha_shen | 沙參 | Glehniae / Adenophorae Radix | Rx. **Adenophorae/Glehniae** |
+| formula.yi_guan_jian | composition[2] 佐 | herb.bei_sha_shen | 沙參 | Glehniae / Adenophorae Radix | Rx. **Adenophorae/Glehniae** |
+
+id 指北沙參、中文顯示泛稱、英文名南北並列、拉丁名南北並列**且順序相反**。
+兩處 herb_id 各有旁證支持指北(前者方名英譯 Glehnia and Ophiopogon Decoction;
+後者 `herb.bei_sha_shen.related_formulas` 已列 yi_guan_jian),**id 本身不是問題**;
+問題是三個顯示欄與 id 不一致。而 D21 註記明文說這個混寫拉丁名「依 Ting 裁定明確排除、
+未遷入 herb.bei_sha_shen」——同一個值被裁掉的地方是 herb 卡,方劑組成這兩處沒跟著處理。
+
+**為什麼不順手改**:憲法「覆蓋既有 canonical 內容先問 Ting」;且這兩處的中文欄正是
+泛稱歸屬問題的落點,拆開兩次裁會產生新的不一致。等 Ting 一次裁完再一批改。
+
+**留 Ting 裁定(三項,可分開裁)**:
+1. **泛稱「沙參」預設哪一味**(臨床):方書原文寫「沙參」時,顯示欄要照原文留泛稱、
+   還是對齊 id 改「北沙參」?沙參麥門冬湯查得是 Glehnia,但那是個案不是通則。
+   裁完才好一併修上表兩處的 name_zh/name_en/pharmaceutical_latin。
+2. **退役卡要不要補 machine-readable `replaced_by`**(結構):補了才能讓 picker 與驗證器
+   讀得到重導,不必靠散文。但「導向誰」取決於第 1 項。
+3. **picker 撤下 deprecated**(UI,對方 session 已列 P0/G1):這一項**不需要等前兩項**——
+   把退役卡撤出選單在任何裁定下都是對的,對方 session 的報告已如此切分。
+
+歸屬:picker 四函式與 aliases/terms 兩項由 Task 10A–10D 審查 session 首報並寫入其
+`docs/audits/IMPLEMENTATION_GAP_REVIEW_2026-08-27.md` §4「G1 附錄 · 沙參個案」;
+本條為方劑線這一側的獨立複驗與兩處組成落點登記。兩份記錄互為交叉驗證。
+MEASURED TREE: main @ 820af15f(rebase 後,本條零資料異動)。
+
+---
+
 # 2026-08-27 — Ting 裁定:撤 bai_xian_pi 藥對最後一處「蛇床子尚未建卡」句;蛇床子卡補 key_pairs 反向連結
 
 承上一條末尾留的紅旗。Ting 裁定「那很簡單啊就改啊」+「增加原本要寫的 pair」。
