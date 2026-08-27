@@ -1,3 +1,38 @@
+# 2026-08-26 深夜 — Ting 要求修 validate-relations.js 紅燈:查到是驗證器沒跟上 D11 裁定,不是資料錯
+
+Ting 上一輪複核 Task 10B 時看到「`validate-relations.js` 現在真的是紅燈、而且是 CI_INVOKED」，
+要求「順便修一下」。查了發現**根因是驗證器沒跟上三週前的架構裁定，不是資料錯，也不是要重新裁定**：
+
+`DECISIONS.md` D11(2026-08-06 LOCKED）明文鎖定 `cond.*`/`tdis.*` 為西醫病名/中醫病名的正式
+命名空間，各自有完整正典登錄檔(`condition_canon_shortlist.json` 508 筆／`tdis_registry.json`
+166 筆)。`data/pathology/clinical_graph_seed.json` 是 D11 之後蓋的檔案，正確使用 `cond.*`/
+`tdis.*`——但 `scripts/validate-relations.js` 的 `collectPathologyGraph()` 還在死守
+D11 之前的舊命名(`western_condition.`/`eastern_disease.`，來自更早的生育力子圖
+`conditions.json`/`condition_graph_expansion.json`)，於是 `clinical_graph_seed.json` 裡每一個
+正確的 `cond.*`/`tdis.*` id 都被當成「命名不合規」擋下來；連帶著任何合法引用正典登錄檔的檔案
+(`formula_pattern_links.json`／`comparisons.json`)也被判「引用不存在」——因為驗證器的引用集合
+從來沒有把兩個正典登錄檔(508+166 筆)讀進來，只讀了三個小型 pathology graph-seed 檔案的子集。
+
+**修法(只動驗證器,一個位元組資料沒碰)**：
+1. `addId()` 改成接受多個合法前綴的陣列——`cond.`/`tdis.`(D11 現行)跟 `western_condition.`/
+   `eastern_disease.`(舊生育力子圖自己仍在用、沒人要求遷移的既有 id)兩邊都認,不強迫任何檔案
+   改資料。
+2. 把兩個正典登錄檔(`condition_canon_shortlist.json`／`tdis_registry.json`)也接進引用集合來源
+   ——兩份都先確認過 100% 合規(0 筆不合規 id)才接進來,不會反而放行真的打錯的字串。
+
+**結果**：`node scripts/validate-relations.js` 從 exit 1(12 筆阻擋錯誤：5 筆「命名不合規」+
+7 筆「引用不存在」,全部同一個根因)變成 exit 0(`Relation validation passed.`)。原本的 2 筆
+ICD-10 對照分歧、約 30 筆 `comparisons.json` 骨架記錄空著——**這兩類是真實的內容缺口,不是這次
+的假警報,沒有動,留給 Ting 決定優先順序**,硬填會違反「沒查證的內容不准上畫面」。
+
+**驗證**：`build-data`／`validate-herb-standard`／`validate-formula-standard`／
+`validate-acupoint-standard`／`check-validation-ratchet`(0 退步)／`validate-content-junk`／
+`test-branch-mergeable` 全 PASS,只改 `scripts/validate-relations.js` 一個檔案(26 行新增、
+5 行修改),推送前後各追了一次 main(今天一直有其他 session 在動主幹),推完用全新 clone(`63301701`)
+獨立複核過一次,結果一致。
+
+---
+
 # 2026-08-26 — 「38 筆掃不到的 V2 記錄是不是死詞彙」查證:0 筆死,38/38 全活
 
 Ting 問 D25 偵測工具回報的「已登錄但掃不到 38 筆」是不是死詞彙。全 repo `git grep`
