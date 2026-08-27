@@ -2400,9 +2400,6 @@
     "Use with caution for those with hypertension.",
     "Contraindicated for those with for those with hypertension."
    ],
-   "herb_drug_interactions_en": [
-    "The combination of inhaled fluticasone and this formula can be an important modality in the treatment of mild and severe asthma patients."
-   ],
    "ba_fa_zh": "汗法 Han Fa / 解表法 (Release Exterior / Sweating strategy)",
    "course_level_en": "Formulations 1 — 2nd group: Familiar With The Information",
    "taiwan_pharmacopeia_zh": "Yes (THP p.129)",
@@ -2423,6 +2420,16 @@
     "Antiallergic, inhibits IgE-mediated mast cell degranulation & histamine release",
     "Anti-inflammatory, reduces lung tissue exudation and alveolar fibrosis",
     "Cardiotonic, diuretic, promotes fluid retention excretion"
+   ],
+   "unsourced_claims_quarantine": [
+    {
+     "field": "herb_drug_interactions_en",
+     "index": 0,
+     "text": "The combination of inhaled fluticasone and this formula can be an important modality in the treatment of mild and severe asthma patients.",
+     "reason": "HOLD_UNSOURCED_BENEFIT",
+     "quarantined": "2026-08-27",
+     "ruling": "TING_RULING_SHEET_2026-08-27 A0b(b):25 段 HOLD 全數隔離,僅 RISK_DIRECTION_KEEP 上畫面"
+    }
    ]
   },
   {
@@ -21332,9 +21339,6 @@
     "Contraindicated during pregnancy.",
     "Only when necessary for weak patients plus tonic herbs."
    ],
-   "herb_drug_interactions_en": [
-    "This formula has been shown to be effective at relieving constipation and nausea caused by excessive use of opioid analgesics."
-   ],
    "category_zh": "瀉下劑",
    "ba_fa_zh": "下法 Xia Fa (Downward Draining)",
    "course_level_en": "Formulations 1 — 1st group: Detailed Knowledge / Most Important",
@@ -21348,6 +21352,16 @@
     "Purges stool, eliminates stagnation, reduces fever",
     "Antibacterial, anti-inflammatory",
     "Note 2 (cited studies): Yin D. et al., protective effect and mechanism of the classic formula Xiao Cheng Qi Tang on gastric mucosa, China Journal of Traditional Chinese Medicine and Pharmacy, 2024 / Wang B. et al., modified Xiao Cheng Qi Tang as adjunct therapy for mild acute pancreatitis, Journal of Practical Traditional Chinese Medicine, 2024 / Ye J., Wang S., administration routes and modern clinical application of Xiao Cheng Qi Tang: research progress, Jiangxi Journal of Traditional Chinese Medicine, 2023 / Chen X. et al., Xiao Cheng Qi Tang for intractable hiccup: a case report, Journal of Practical Traditional Chinese Medicine, 2023 / Yang D., compound compatibility rules of the Cheng Qi decoctions, Marriage, Childbearing and Health, 2023 / Yin D. et al., pharmacological components and clinical application of the classic formula Xiao Cheng Qi Tang: research progress, Journal of Liaoning University of Traditional Chinese Medicine, 2023"
+   ],
+   "unsourced_claims_quarantine": [
+    {
+     "field": "herb_drug_interactions_en",
+     "index": 0,
+     "text": "This formula has been shown to be effective at relieving constipation and nausea caused by excessive use of opioid analgesics.",
+     "reason": "HOLD_MASKS_WARNING_SIGN",
+     "quarantined": "2026-08-27",
+     "ruling": "TING_RULING_SHEET_2026-08-27 A0b(b):25 段 HOLD 全數隔離,僅 RISK_DIRECTION_KEEP 上畫面"
+    }
    ]
   },
   {
@@ -23420,9 +23434,6 @@
     "Modify for treating constipation with Blood Deficiency.",
     "Modify for treating the very weak."
    ],
-   "herb_drug_interactions_en": [
-    "This formula can eliminate constipation caused by anti-psychotic drugs."
-   ],
    "category_zh": "瀉下劑",
    "ba_fa_zh": "下法 Xia Fa (Downward Draining)",
    "course_level_en": "Formulations 1 — 2nd group: Familiar With The Information",
@@ -23439,6 +23450,16 @@
     "Moistens intestines to unblock bowels (Huo Ma Ren, Xing Ren rich in oils)",
     "Promotes intestinal smooth muscle peristalsis (contains Xiao Cheng Qi structure)",
     "Softens feces, reduces defecation pain"
+   ],
+   "unsourced_claims_quarantine": [
+    {
+     "field": "herb_drug_interactions_en",
+     "index": 0,
+     "text": "This formula can eliminate constipation caused by anti-psychotic drugs.",
+     "reason": "HOLD_UNSOURCED_BENEFIT",
+     "quarantined": "2026-08-27",
+     "ruling": "TING_RULING_SHEET_2026-08-27 A0b(b):25 段 HOLD 全數隔離,僅 RISK_DIRECTION_KEEP 上畫面"
+    }
    ]
   },
   {
@@ -25119,11 +25140,7 @@
     "Contraindicated for those with for those with Yin and/or Blood Deficiency."
    ],
    "herb_drug_interactions_en": [
-    "CONTRAINDICATED with interferon. Concurrent use of this formula with interferon has caused interstitial pneumonitis, including fatal cases; Japanese labelling for the identical seven-herb preparation (TJ-9 Sho-saiko-to) lists concurrent interferon therapy as a contraindication. Refer to the prescribing physician before use in any patient on interferon. (PubMed 8980988; PubMed 7575138; LiverTox NBK548777)",
-    "Concurrent use of this formula and Interleukin 2 may have a synergistic anti-tumor effect against murine renal cell carcinoma.",
-    "Concurrent use of this formula and antiviral drugs such as zidovudine (AZT), lamivudine (3TC), or AZT plus 3TC may have a synergistic antiviral effect.",
-    "Concurrent use of this formula and 5-fluorouracil (5-FU) may have a synergistic in treating of cancer.",
-    "This formula has a beneficial effect in preventing and/or treating damage induced by drugs such as halothane, danazol, D-galactosamine, and carbon tetrachloride."
+    "CONTRAINDICATED with interferon. Concurrent use of this formula with interferon has caused interstitial pneumonitis, including fatal cases; Japanese labelling for the identical seven-herb preparation (TJ-9 Sho-saiko-to) lists concurrent interferon therapy as a contraindication. Refer to the prescribing physician before use in any patient on interferon. (PubMed 8980988; PubMed 7575138; LiverTox NBK548777)"
    ],
    "category_zh": "和解劑",
    "ba_fa_zh": "和法 He Fa (Harmonize)",
@@ -25198,6 +25215,40 @@
     "與齊多夫定（AZT）、拉米夫定（3TC）或 AZT+3TC 等抗病毒藥併用，可能有協同抗病毒作用。",
     "與 5-氟尿嘧啶（5-FU）併用治療癌症可能有協同作用。",
     "本方對氟烷（halothane）、達那唑（danazol）、D-半乳糖胺與四氯化碳等藥物所致損傷，有預防及／或治療作用。"
+   ],
+   "unsourced_claims_quarantine": [
+    {
+     "field": "herb_drug_interactions_en",
+     "index": 1,
+     "text": "Concurrent use of this formula and Interleukin 2 may have a synergistic anti-tumor effect against murine renal cell carcinoma.",
+     "reason": "HOLD_PRECLINICAL_AS_CLINICAL",
+     "quarantined": "2026-08-27",
+     "ruling": "TING_RULING_SHEET_2026-08-27 A0b(b):25 段 HOLD 全數隔離,僅 RISK_DIRECTION_KEEP 上畫面"
+    },
+    {
+     "field": "herb_drug_interactions_en",
+     "index": 2,
+     "text": "Concurrent use of this formula and antiviral drugs such as zidovudine (AZT), lamivudine (3TC), or AZT plus 3TC may have a synergistic antiviral effect.",
+     "reason": "HOLD_UNSOURCED_BENEFIT",
+     "quarantined": "2026-08-27",
+     "ruling": "TING_RULING_SHEET_2026-08-27 A0b(b):25 段 HOLD 全數隔離,僅 RISK_DIRECTION_KEEP 上畫面"
+    },
+    {
+     "field": "herb_drug_interactions_en",
+     "index": 3,
+     "text": "Concurrent use of this formula and 5-fluorouracil (5-FU) may have a synergistic in treating of cancer.",
+     "reason": "HOLD_UNSOURCED_BENEFIT",
+     "quarantined": "2026-08-27",
+     "ruling": "TING_RULING_SHEET_2026-08-27 A0b(b):25 段 HOLD 全數隔離,僅 RISK_DIRECTION_KEEP 上畫面"
+    },
+    {
+     "field": "herb_drug_interactions_en",
+     "index": 4,
+     "text": "This formula has a beneficial effect in preventing and/or treating damage induced by drugs such as halothane, danazol, D-galactosamine, and carbon tetrachloride.",
+     "reason": "HOLD_UNSOURCED_BENEFIT",
+     "quarantined": "2026-08-27",
+     "ruling": "TING_RULING_SHEET_2026-08-27 A0b(b):25 段 HOLD 全數隔離,僅 RISK_DIRECTION_KEEP 上畫面"
+    }
    ]
   },
   {
@@ -25909,9 +25960,6 @@
    "cautions_en": [
     "Contraindicated for those with Spleen and Stomach Deficiencies."
    ],
-   "herb_drug_interactions_en": [
-    "This formula shows a notable effect to treat aspirin-and ethanol- induced gastric hemorrhage. Its protective effect is comparable to sucralfate (Carafate), cimetidine (Tagamet) and 16, 16-dimethyl-prostaglandin E2 (DMPGE2)"
-   ],
    "category_zh": "和解劑",
    "ba_fa_zh": "和法 He Fa (Harmonize)",
    "course_level_en": "Formulations 1 — 3rd group: General Knowledge",
@@ -25931,6 +25979,16 @@
     "Promotes intestinal peristalsis, purges heat and unblocks bowels",
     "Anti-inflammatory, anti-endotoxin, hepatoprotective",
     "Regulates blood lipids and improves microcirculation"
+   ],
+   "unsourced_claims_quarantine": [
+    {
+     "field": "herb_drug_interactions_en",
+     "index": 0,
+     "text": "This formula shows a notable effect to treat aspirin-and ethanol- induced gastric hemorrhage. Its protective effect is comparable to sucralfate (Carafate), cimetidine (Tagamet) and 16, 16-dimethyl-prostaglandin E2 (DMPGE2)",
+     "reason": "HOLD_MASKS_WARNING_SIGN",
+     "quarantined": "2026-08-27",
+     "ruling": "TING_RULING_SHEET_2026-08-27 A0b(b):25 段 HOLD 全數隔離,僅 RISK_DIRECTION_KEEP 上畫面"
+    }
    ]
   },
   {
@@ -28672,10 +28730,6 @@
     "This formula may reduce tremors caused by antipsychotic-induced Parkinson's disease.",
     "This formula may be effective in treating menopausal symptoms induced by gonadotropin-releasing hormone agonist therapy without a negative effect on serum estradiol levels."
    ],
-   "herb_drug_interactions_en": [
-    "This formula may reduce tremors caused by antipsychotic-induced Parkinson's disease.",
-    "This formula may be effective in treating menopausal symptoms induced by gonadotropin-releasing hormone agonist therapy without a negative effect on serum estradiol levels."
-   ],
    "category_zh": "和解劑",
    "ba_fa_zh": "和法 He Fa (Harmonize)",
    "course_level_en": "Formulations 1 — 3rd group: General Knowledge",
@@ -28695,6 +28749,24 @@
     "Anti-inflammatory, fire-clearing, endocrine-regulating",
     "Hepatoprotective, reduces transaminases",
     "Vasodilatory, improves facial blood flow"
+   ],
+   "unsourced_claims_quarantine": [
+    {
+     "field": "herb_drug_interactions_en",
+     "index": 0,
+     "text": "This formula may reduce tremors caused by antipsychotic-induced Parkinson's disease.",
+     "reason": "HOLD_UNSOURCED_BENEFIT",
+     "quarantined": "2026-08-27",
+     "ruling": "TING_RULING_SHEET_2026-08-27 A0b(b):25 段 HOLD 全數隔離,僅 RISK_DIRECTION_KEEP 上畫面"
+    },
+    {
+     "field": "herb_drug_interactions_en",
+     "index": 1,
+     "text": "This formula may be effective in treating menopausal symptoms induced by gonadotropin-releasing hormone agonist therapy without a negative effect on serum estradiol levels.",
+     "reason": "HOLD_UNSOURCED_BENEFIT",
+     "quarantined": "2026-08-27",
+     "ruling": "TING_RULING_SHEET_2026-08-27 A0b(b):25 段 HOLD 全數隔離,僅 RISK_DIRECTION_KEEP 上畫面"
+    }
    ]
   },
   {
@@ -41106,6 +41178,25 @@
    "composition": [
     {
      "herb_id": "herb.huang_qi",
+     "herb_zh": "黃耆",
+     "name_zh": "黃耆",
+     "herb_en": "Astragali Radix",
+     "name_en": "Astragali Radix",
+     "pinyin": "Huang Qi",
+     "pinyin_toned": "Mì Zhì Huáng Qí",
+     "pharmaceutical_latin": "Honey-fried Rx. Astragali",
+     "dose_g": "10-120g",
+     "decoction_reference_g": "10-120g",
+     "in_formula_zh": "補氣升陽，固表止汗，托毒生肌。",
+     "in_formula_en": "Strengthens Spleen, raises Spleen/Stomach Yang, tonifies Wei Qi, stabilizes exterior and supports Lung. With Fang Feng strengthens exterior without trapping pathogen.",
+     "actions_zh": "補氣升陽，固表止汗，托毒生肌。",
+     "actions_en": "Strengthens Spleen, raises Spleen/Stomach Yang, tonifies Wei Qi, stabilizes exterior and supports Lung. With Fang Feng strengthens exterior without trapping pathogen.",
+     "role_reason_zh": "補氣升陽，固表止汗，托毒生肌。",
+     "is_alternate": false,
+     "role_zh": "君"
+    },
+    {
+     "herb_id": "herb.huang_qi",
      "herb_zh": "(蜜炙黃耆)",
      "name_zh": "(蜜炙黃耆)",
      "herb_en": "(Honey-fried Astragalus)",
@@ -41586,7 +41677,8 @@
     "Modulates T-lymphocyte subsets, antiallergic",
     "Regulates sweat gland function, stops sweating",
     "Broad-spectrum anti-respiratory virus"
-   ]
+   ],
+   "correction_note": "【2026-08-27 A14(a) Ting 裁定】全庫唯一「君藥只以 is_alternate 註記存在」的卡:補回黃耆非替代正條(君),蜜炙黃耆維持替代列;cmp.qi_tonify 比較表的自動組成差異欄自此不再漏掉本方存在理由。內容欄位自替代列鏡射,未新增臨床宣稱。"
   },
   {
    "id": "formula.sheng_mai_san",
@@ -51698,9 +51790,6 @@
     "Contraindicated when Kidney Deficiency is accompanied by Dampness or turbidity.",
     "Avoid cold and raw foods while taking this formula."
    ],
-   "herb_drug_interactions_en": [
-    "This formula has been shown to be effective in reversing corticosteroid-induced immune suppression."
-   ],
    "clinical_manifestations_zh": "久病後衰憊、精神低下嗜臥、畏寒肢冷、陽痿或精漏、腰膝痠軟；不孕、早洩、遺精、大便稀且夾不消化食物、尿失禁、下肢水腫、面白、自汗、頭暈、遺尿。",
    "tongue_zh": "淡",
    "pulse_zh": "沉遲弱。",
@@ -51737,6 +51826,16 @@
     "Strongly enhances immunity and cold tolerance",
     "Promotes bone marrow hematopoiesis, increases Hb",
     "Improves renal function, reduces proteinuria"
+   ],
+   "unsourced_claims_quarantine": [
+    {
+     "field": "herb_drug_interactions_en",
+     "index": 0,
+     "text": "This formula has been shown to be effective in reversing corticosteroid-induced immune suppression.",
+     "reason": "HOLD_REVERSES_INTENDED_DRUG_EFFECT",
+     "quarantined": "2026-08-27",
+     "ruling": "TING_RULING_SHEET_2026-08-27 A0b(b):25 段 HOLD 全數隔離,僅 RISK_DIRECTION_KEEP 上畫面"
+    }
    ]
   },
   {
@@ -53814,9 +53913,6 @@
     "脾虛泄瀉、消化不良，舌苔白膩者宜謹慎使用",
     "陽虛者禁用"
    ],
-   "herb_drug_interactions_en": [
-    "Administration of this formula showed effectiveness in treating streptomycin-induced toxicities."
-   ],
    "category_zh": "補益劑",
    "ba_fa_zh": "補法 Bu Fa (Tonify)",
    "course_level_en": "Not listed in the Formulations 1/2 knowledge-level lists",
@@ -53841,7 +53937,17 @@
     "Inhibits uropathogen proliferation"
    ],
    "source_classic": "《醫方考》；《醫宗金鑑》亦載",
-   "correction_note": "2026-08-20 出典並列：白名單來源一記《醫方考》，一記《醫宗金鑑》時方；兩者均保留，不將後載誤作唯一初出。"
+   "correction_note": "2026-08-20 出典並列：白名單來源一記《醫方考》，一記《醫宗金鑑》時方；兩者均保留，不將後載誤作唯一初出。",
+   "unsourced_claims_quarantine": [
+    {
+     "field": "herb_drug_interactions_en",
+     "index": 0,
+     "text": "Administration of this formula showed effectiveness in treating streptomycin-induced toxicities.",
+     "reason": "HOLD_UNSOURCED_BENEFIT",
+     "quarantined": "2026-08-27",
+     "ruling": "TING_RULING_SHEET_2026-08-27 A0b(b):25 段 HOLD 全數隔離,僅 RISK_DIRECTION_KEEP 上畫面"
+    }
+   ]
   },
   {
    "id": "formula.shen_qi_wan",
@@ -54918,9 +55024,6 @@
     "面赤發熱者禁用",
     "孕婦禁用"
    ],
-   "herb_drug_interactions_en": [
-    "This formula may be effective in treating side effects and adverse reactions, including dizziness, weight gain, perspiration and emotional disturbances associated with long-term prednisone use."
-   ],
    "category_zh": "補益劑",
    "ba_fa_zh": "補法 Bu Fa (Tonify)",
    "course_level_en": "Not listed in the Formulations 1/2 knowledge-level lists",
@@ -54966,6 +55069,16 @@
     "For a stronger kidney-warming effect, add Rou Gui and remove Gui Zhi.",
     "For clear, frequent, and copious urination with emaciation, add Bu Gu Zhi, Lu Rong, and Ba Ji Tian.",
     "For night urination, add Wu Wei Zi."
+   ],
+   "unsourced_claims_quarantine": [
+    {
+     "field": "herb_drug_interactions_en",
+     "index": 0,
+     "text": "This formula may be effective in treating side effects and adverse reactions, including dizziness, weight gain, perspiration and emotional disturbances associated with long-term prednisone use.",
+     "reason": "HOLD_MASKS_WARNING_SIGN",
+     "quarantined": "2026-08-27",
+     "ruling": "TING_RULING_SHEET_2026-08-27 A0b(b):25 段 HOLD 全數隔離,僅 RISK_DIRECTION_KEEP 上畫面"
+    }
    ]
   },
   {
@@ -70064,9 +70177,6 @@
    "cautions_en": [
     "Contraindicated for abdominal masses due to Blood Stasis from excess."
    ],
-   "herb_drug_interactions_en": [
-    "This formula has shown to potentiate the effects of clomiphene citrate for the treatment of infertility."
-   ],
    "category_zh": "理血劑",
    "ba_fa_zh": "課件未指派單一八法；依本方功效與證型判讀",
    "course_level_en": "Formulations 2 — 1st group: Detailed Knowledge",
@@ -70085,6 +70195,16 @@
     "Promotes uterine blood circulation, relieves uterine spasm",
     "Improves hemorheology, anticoagulant",
     "Warms channels, dispels cold, promotes endometrial repair"
+   ],
+   "unsourced_claims_quarantine": [
+    {
+     "field": "herb_drug_interactions_en",
+     "index": 0,
+     "text": "This formula has shown to potentiate the effects of clomiphene citrate for the treatment of infertility.",
+     "reason": "HOLD_UNSOURCED_BENEFIT",
+     "quarantined": "2026-08-27",
+     "ruling": "TING_RULING_SHEET_2026-08-27 A0b(b):25 段 HOLD 全數隔離,僅 RISK_DIRECTION_KEEP 上畫面"
+    }
    ]
   },
   {
@@ -74615,9 +74735,6 @@
     "Excessive diarrhea.",
     "Damp-Heat Accumulation."
    ],
-   "herb_drug_interactions_en": [
-    "May relieve nausea/dyspepsia associated with SSRIs."
-   ],
    "category_zh": "祛濕劑",
    "ba_fa_zh": "課件未指派單一八法；依本方功效與證型判讀",
    "course_level_en": "Formulations 2 — 1st group: Detailed Knowledge",
@@ -74665,6 +74782,16 @@
     "Renal protective, reduces glomerular edema",
     "Inhibits intestinal hypersecretion, antidiarrheal",
     "Antihypertensive, reduces cerebral edema"
+   ],
+   "unsourced_claims_quarantine": [
+    {
+     "field": "herb_drug_interactions_en",
+     "index": 0,
+     "text": "May relieve nausea/dyspepsia associated with SSRIs.",
+     "reason": "HOLD_UNSOURCED_BENEFIT",
+     "quarantined": "2026-08-27",
+     "ruling": "TING_RULING_SHEET_2026-08-27 A0b(b):25 段 HOLD 全數隔離,僅 RISK_DIRECTION_KEEP 上畫面"
+    }
    ]
   },
   {
@@ -87987,9 +88114,6 @@
     "Contraindicated for those with Spleen Deficiency.",
     "Use with caution during pregnancy."
    ],
-   "herb_drug_interactions_en": [
-    "With modifications, this formula relieves chemotherapy-induced nausea and vomiting in cancer patients."
-   ],
    "category_zh": "消食劑",
    "ba_fa_zh": "消法 Xiao Fa (Reduce / Disperse accumulation)",
    "course_level_en": "Formulations 2 — 1st group: Detailed Knowledge",
@@ -88009,6 +88133,16 @@
     "Promotes gastric emptying and intestinal peristalsis",
     "Antispasmodic, analgesic, anti-ulcer",
     "Regulates intestinal microbiota balance"
+   ],
+   "unsourced_claims_quarantine": [
+    {
+     "field": "herb_drug_interactions_en",
+     "index": 0,
+     "text": "With modifications, this formula relieves chemotherapy-induced nausea and vomiting in cancer patients.",
+     "reason": "HOLD_UNSOURCED_BENEFIT",
+     "quarantined": "2026-08-27",
+     "ruling": "TING_RULING_SHEET_2026-08-27 A0b(b):25 段 HOLD 全數隔離,僅 RISK_DIRECTION_KEEP 上畫面"
+    }
    ]
   },
   {
@@ -101769,10 +101903,6 @@
     "Contraindicated for those with for those with cough or hiccup due to Wind-Cold or Heat.",
     "Contraindicated for those with for those with high fever and irritability due to Exterior Heat."
    ],
-   "herb_drug_interactions_en": [
-    "This formula was found to be effective in treating enalapril-induced cough.",
-    "This formula was found to be effective in treating capsaicinl-induced cough."
-   ],
    "category_zh": "治燥劑",
    "ba_fa_zh": "課件未指派單一八法；依本方功效與證型判讀",
    "course_level_en": "Not listed in the Formulations 1/2 knowledge-level lists",
@@ -101796,6 +101926,24 @@
     "Anti-inflammatory and antiallergic effects",
     "Enhances body immunity and anti-fatigue capability",
     "Improves microcirculation, accelerates tissue repair"
+   ],
+   "unsourced_claims_quarantine": [
+    {
+     "field": "herb_drug_interactions_en",
+     "index": 0,
+     "text": "This formula was found to be effective in treating enalapril-induced cough.",
+     "reason": "HOLD_UNSOURCED_BENEFIT",
+     "quarantined": "2026-08-27",
+     "ruling": "TING_RULING_SHEET_2026-08-27 A0b(b):25 段 HOLD 全數隔離,僅 RISK_DIRECTION_KEEP 上畫面"
+    },
+    {
+     "field": "herb_drug_interactions_en",
+     "index": 1,
+     "text": "This formula was found to be effective in treating capsaicinl-induced cough.",
+     "reason": "HOLD_PRECLINICAL_AS_CLINICAL",
+     "quarantined": "2026-08-27",
+     "ruling": "TING_RULING_SHEET_2026-08-27 A0b(b):25 段 HOLD 全數隔離,僅 RISK_DIRECTION_KEEP 上畫面"
+    }
    ]
   },
   {
@@ -107543,9 +107691,6 @@
     "Contraindicated for those with Exterior symptoms still present.",
     "Contraindicated during pregnancy."
    ],
-   "herb_drug_interactions_en": [
-    "Recommended for treatment of menopausal symptoms induced by gonadotropin-releasing hormone agonists without a negative effect on serum estradiol levels."
-   ],
    "category_zh": "理血劑",
    "ba_fa_zh": "課件未指派單一八法；依本方功效與證型判讀",
    "course_level_en": "Formulations 2 — 1st group: Detailed Knowledge",
@@ -107565,6 +107710,16 @@
     "Accelerates pelvic/abdominal hematoma absorption",
     "Anti-inflammatory, anti-endotoxin, antibacterial",
     "Sedative, anti-manic central nervous system effect"
+   ],
+   "unsourced_claims_quarantine": [
+    {
+     "field": "herb_drug_interactions_en",
+     "index": 0,
+     "text": "Recommended for treatment of menopausal symptoms induced by gonadotropin-releasing hormone agonists without a negative effect on serum estradiol levels.",
+     "reason": "HOLD_UNSOURCED_BENEFIT",
+     "quarantined": "2026-08-27",
+     "ruling": "TING_RULING_SHEET_2026-08-27 A0b(b):25 段 HOLD 全數隔離,僅 RISK_DIRECTION_KEEP 上畫面"
+    }
    ]
   },
   {
@@ -111166,9 +111321,6 @@
     "Hypochondriac pain due to Liver, Gallbladder, or Blood Deficiency.",
     "Pregnancy."
    ],
-   "herb_drug_interactions_en": [
-    "May have a protective effect against aspirin-induced damage to the Stomach mucosa."
-   ],
    "category_zh": "清熱劑",
    "ba_fa_zh": "清法 Qing Fa (Clear)",
    "course_level_en": "Formulations 1 — 2nd group: Familiar With The Information",
@@ -111188,7 +111340,17 @@
     "Anti-Helicobacter pylori (H. pylori)",
     "Antiemetic, promotes gastric emptying"
    ],
-   "formula_song": "左金茱連六一丸，肝經火鬱吐吞酸，\n再加芍藥名戊己，熱瀉熱痢服之安。"
+   "formula_song": "左金茱連六一丸，肝經火鬱吐吞酸，\n再加芍藥名戊己，熱瀉熱痢服之安。",
+   "unsourced_claims_quarantine": [
+    {
+     "field": "herb_drug_interactions_en",
+     "index": 0,
+     "text": "May have a protective effect against aspirin-induced damage to the Stomach mucosa.",
+     "reason": "HOLD_MASKS_WARNING_SIGN",
+     "quarantined": "2026-08-27",
+     "ruling": "TING_RULING_SHEET_2026-08-27 A0b(b):25 段 HOLD 全數隔離,僅 RISK_DIRECTION_KEEP 上畫面"
+    }
+   ]
   },
   {
    "id": "formula.bu_fei_tang",
@@ -113424,10 +113586,6 @@
    "cautions_zh": [
     "孕婦慎用"
    ],
-   "herb_drug_interactions_en": [
-    "Concurrent use of this formula with colchicine was associated with improvement in learning acquisition deficit induced bu colchicine.",
-    "This formula may reduce menopausal symptoms induced by gonadotropin-releasing hormone agonists without negative effects on serum estradiol levels."
-   ],
    "category_zh": "理血劑",
    "exam_pearl": "【考綱重點】婦人腹痛（血虛水腫、肝脾不和）第一要方（張仲景名方）。當歸、芍藥、川芎（養血和血止痛）；白朮、茯苓、澤瀉（健脾利水滲濕）。血水同治、肝脾並調。NCBAHM 2026 CH Outline p.18。",
    "formula_song_zh": "當歸芍藥川芎當，茯苓澤瀉白朮香。\n婦人腹痛血水結，養血利水肝脾康。",
@@ -113441,7 +113599,25 @@
     "Diuretic edema reduction, improves hemorheology",
     "Hepatoprotective, strengthens Spleen, regulates sex hormones"
    ],
-   "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/DangGuiShaoYaoSan.html"
+   "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/DangGuiShaoYaoSan.html",
+   "unsourced_claims_quarantine": [
+    {
+     "field": "herb_drug_interactions_en",
+     "index": 0,
+     "text": "Concurrent use of this formula with colchicine was associated with improvement in learning acquisition deficit induced bu colchicine.",
+     "reason": "HOLD_PRECLINICAL_AS_CLINICAL",
+     "quarantined": "2026-08-27",
+     "ruling": "TING_RULING_SHEET_2026-08-27 A0b(b):25 段 HOLD 全數隔離,僅 RISK_DIRECTION_KEEP 上畫面"
+    },
+    {
+     "field": "herb_drug_interactions_en",
+     "index": 1,
+     "text": "This formula may reduce menopausal symptoms induced by gonadotropin-releasing hormone agonists without negative effects on serum estradiol levels.",
+     "reason": "HOLD_UNSOURCED_BENEFIT",
+     "quarantined": "2026-08-27",
+     "ruling": "TING_RULING_SHEET_2026-08-27 A0b(b):25 段 HOLD 全數隔離,僅 RISK_DIRECTION_KEEP 上畫面"
+    }
+   ]
   },
   {
    "id": "formula.dang_gui_yin_zi",
@@ -119938,11 +120114,6 @@
    "cautions_zh": [
     "高血壓者慎用"
    ],
-   "herb_drug_interactions_en": [
-    "This formula may be effective in treating schizophrenia patients with neuroleptic-induced hyperprolactinemia.",
-    "This formula has been shown to decrease paclitaxel-induced myalgia/arthralgia.",
-    "This formula has been shown to be effective in treating menopausal symptoms induced by gonadotropin-releasing hormone agonists without a negative effect on serum estradiol levels."
-   ],
    "category_zh": "補益劑",
    "exam_pearl": "【考綱重點】骨骼肌/平滑肌抽筋痛止痛神方（「酸甘化陰」代表方，張仲景名方）。白芍（君，酸收養血柔肝）；炙甘草（臣，甘溫補脾和中）。酸甘相合化生陰血，陰血充足則筋脈得養而痛止。NCBAHM 2026 CH Outline p.20。",
    "formula_song_zh": "芍藥甘草酸甘合，養血柔肝緩急克。\n腳攣腹痛肌抽搐，酸甘化陰痛自止。",
@@ -119956,7 +120127,33 @@
     "Regulates skeletal muscle excitability & electrolyte balance",
     "Anti-inflammatory, sedative, neuroprotective"
    ],
-   "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/ShaoYaoGanCaoTang.html"
+   "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/ShaoYaoGanCaoTang.html",
+   "unsourced_claims_quarantine": [
+    {
+     "field": "herb_drug_interactions_en",
+     "index": 0,
+     "text": "This formula may be effective in treating schizophrenia patients with neuroleptic-induced hyperprolactinemia.",
+     "reason": "HOLD_UNSOURCED_BENEFIT",
+     "quarantined": "2026-08-27",
+     "ruling": "TING_RULING_SHEET_2026-08-27 A0b(b):25 段 HOLD 全數隔離,僅 RISK_DIRECTION_KEEP 上畫面"
+    },
+    {
+     "field": "herb_drug_interactions_en",
+     "index": 1,
+     "text": "This formula has been shown to decrease paclitaxel-induced myalgia/arthralgia.",
+     "reason": "HOLD_UNSOURCED_BENEFIT",
+     "quarantined": "2026-08-27",
+     "ruling": "TING_RULING_SHEET_2026-08-27 A0b(b):25 段 HOLD 全數隔離,僅 RISK_DIRECTION_KEEP 上畫面"
+    },
+    {
+     "field": "herb_drug_interactions_en",
+     "index": 2,
+     "text": "This formula has been shown to be effective in treating menopausal symptoms induced by gonadotropin-releasing hormone agonists without a negative effect on serum estradiol levels.",
+     "reason": "HOLD_UNSOURCED_BENEFIT",
+     "quarantined": "2026-08-27",
+     "ruling": "TING_RULING_SHEET_2026-08-27 A0b(b):25 段 HOLD 全數隔離,僅 RISK_DIRECTION_KEEP 上畫面"
+    }
+   ]
   },
   {
    "id": "formula.tian_tai_wu_yao_san",
