@@ -1,3 +1,18 @@
+# 2026-08-26 深夜 — Claude 複核 Task 10C Round 2:工具可信,但挖到一個真的病歷合併資料風險
+
+Ting 問「task10c 你也看一下」。查完：**這次獨立重跑數字全對得上(7/7/11/14)，14/14 self-test
+重跑也全過，報告裡點名的每個函式跟 CI 腳本都逐一核對過真的存在、真的接進 CI——沒有 Task 10B
+那種捏造檔名的問題**。零正典/程式碼異動，純新增稽核工具跟報告。
+
+**真正重要的是下面 Fixture 9 揭露的問題**：「匯入病歷→合併模式」按鈕寫的是「安全:保留現有病例，
+只新增/延伸」，但 `app.js` 的 `importClinicalCases` 實際上是 `byId.set(inc.id, inc)`——拿匯入檔
+同 id 病例整筆蓋掉現有的，不是逐欄位合併。**匯入檔裡若有一筆只填部分欄位的同 id 病例，現有病歷
+沒被提到的欄位會被整個清空**，不是「延伸」。已用真實生產程式碼重現，不是理論推測。這是行為變更
+決定，沒有自己動手改 `app.js`，留給 Ting 裁定要不要修、怎麼修，詳見 `docs/ANTIGRAVITY_HANDOFF.md`
+對應條目。
+
+---
+
 # 2026-08-26 Antigravity — Task 10C Round 2 (Production-Path Contract Verification & Mutation Boundary)
 
 - **做了什麼**: 完成 Task 10C Round 2 臨床病歷匯出/匯入/還原契約可執行驗證（`scripts/audit-clinical-export-contract.js`）：改以生產函式實體執行與隔離儲存模擬推導全部契約結論（零寫死狀態），列舉 11 條全生命週期可達真實路徑，並以 14 組全量覆蓋格式毀損、不變量違規、部分輸入破壞性、未知欄位過濾之隔離測試驗證真實 storage mutation boundary。

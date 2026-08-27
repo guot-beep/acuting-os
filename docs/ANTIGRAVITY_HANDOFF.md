@@ -1,3 +1,23 @@
+## ⚠️ Claude 複核 Task 10C Round 2:工具跟報告都可信,但挖到一個真的病歷資料風險,講白話版在這裡(2026-08-26 深夜)
+
+Ting 要求連 task10c 也看一下,查完結論分兩層。
+
+**✅ 這次沒抓到捏造**：7 個匯出來源／7 個匯入端點／11 條路徑／14 組 fixture,獨立重跑全部數字
+對得上;自帶 `--self-test` 14/14 重跑也全過;報告裡點名的每一個函式(`unwrapV1CasesPayload`／
+`restoreV2Envelope`／`normalizeClinicalCase` 等)跟每一支 CI 腳本都逐一核對過真的存在、真的接進
+CI——這次不是 Task 10B 那種摘要抄錯不存在檔名的問題。零正典/程式碼異動,純新增稽核工具跟報告。
+
+**⚠️ 但裡面點出一個真的病歷資料風險,講白話版**：目前「匯入病歷 → 合併模式」按鈕的說明寫的是
+「安全:保留現有病例,只新增/延伸」，**但實際程式碼(`app.js` 的 `importClinicalCases`)不是這樣做
+的**——它是拿匯入檔裡每一筆病例的 id 去蓋掉現有的同 id 病例整筆物件(`byId.set(inc.id, inc)`)，
+不是逐欄位合併。**如果匯入檔裡剛好有一筆只填了部分欄位的同 id 病例(例如舊備份、手動修過的片段、
+其他系統匯出的簡化版)，現有病歷裡沒被匯入檔提到的欄位會整個被清空**，不是「新增/延伸」，是被
+覆蓋掉。已經用真實生產程式碼重現(Fixture 9),不是理論推測。**這個要不要修、怎麼修(逐欄位合併？
+匯入前先比對警告？)是行為變更決定,不是我能自己動手改的範圍——特別是病歷合併邏輯,留給 Ting 裁定
+優先順序跟修法**,這次落地只有稽核工具跟報告,`app.js` 一行沒動。
+
+---
+
 ## ✅ Task 10C Round 2：Production-Path Contract Verification & Mutation Boundary（已完成）
 
 - **類型**: READ-ONLY Clinical Backup/Restore Contract & Mutation Boundary Audit（0 production mutation, 0 CI workflow changes, 0 debt repairs）
