@@ -89,6 +89,41 @@ ICD-10 對照分歧、約 30 筆 `comparisons.json` 骨架記錄空著——**�
 
 ---
 
+# 2026-08-27 — symptoms/comparisons 兩線照 D25 六原則掃描:comparisons 挖出帶誤植歸屬的凍結雙胞胎陣列,symptoms 大盤乾淨
+
+Ting 指示把 derived 治理掃到 symptoms.json 與 comparisons.json。結果:
+
+**comparisons.json(嚴重的一個)**:檔案頂層除了 `records`(43 筆正本)還藏著一組
+2026-07-31 凍結的 legacy 三件套——`comparisons` 重複陣列 11 筆、`total_count: 11`、
+`updated_at`。逐筆 diff 發現 **9/11 雙胞胎已漂移,而且漂移方向是 attribution 級**:
+legacy 側仍寫 `authored_by: "model_draft"`,records 側是 Ting 07-31 已更正的
+`"owner"` + 更正註記(「原 model_draft 標記為誤植」)——同一個檔案裡留著一份
+持續斷言已更正誤植的複本。消費者查證:app.js 的 `res.comparisons` 是搜尋結果
+物件、report-comparison-fill 讀的是 formula 記錄內欄位、build-data 只讀
+`.records`——**legacy 三件套零讀者**。移除前逐筆核實 records 雙胞胎為嚴格超集
+(非更正欄位差異 0),然後整組移除,policy 明記「records 是唯一的記錄陣列」。
+compares 151 條邊(pattern+formula)全解析。
+
+**symptoms.json(大盤乾淨)**:124 筆、無任何 used_by_* 計數快取;
+differentiation points_to 396 條邊 0 不解析;taxonomy_ids 13 分類、
+supporting_measurements 48 條(對 outcome_metrics 27 id)全解析;
+seen_in_* 反向欄零手填(前次已驗)。policy 是持續追加的紀錄式寫法,不算腐爛;
+唯一凍結斷言是 `status` 欄停在 "batch_a+b+c"(=49 張)而實際 124——
+改為 "active" + policy 追加一條記載 batch C 之後的來歷(pattern-v2 匯流
+49→102、擴充 round 1-4 102→122、D23 骨架 →124),status 不再逐批更新。
+
+**假警報(記下以免下次重查)**:第一輪掃出 17 個「懸空 sym id」,拆開全非懸空:
+3 個是 relation_registry 裡的欄位路徑文字(sym.differentiation_zh 等)、
+12 個是 symptom_taxonomy.json 的分類 id 自己用 sym.* 前綴(分類與記錄共用
+命名空間——工具解析時要記得排除 taxonomy,是否改 symtax.* 前綴屬命名裁定,
+未動)、1 個在 research_staging 出處層、1 個在 audits 快照。
+知識層真懸空:**0**。
+
+驗證:comparison-standard、symptom-standard(0 blocking)、build-data、
+relations(exit 0)、pattern-registry、ratchet、content-junk 全 PASS。
+
+---
+
 # 2026-08-26 — tdis_registry 照 D25 六原則掃描:無計數快取,但抓到過時 policy 斷言、5 個未登記邊欄、4 個懸空引用(待裁)
 
 Ting 指示把 pattern_registry 那套 derived 治理掃到 tdis_registry。結果分四類:
