@@ -2,14 +2,19 @@
   "dataset": "localStorage (acuting-clinical-cases-v1) -> data/clinical_cases/schema.sql field mapping",
   "status": "design_only__migration_script_NOT_implemented",
   "created": "2026-08-06",
-  "updated": "2026-08-24",
+  "updated": "2026-08-27",
   "changelog": [
     "2026-08-24: Ting resolved all 3 unresolved_needs_ting decisions. (1) case.allergies -> new case_intake_baseline.allergies column (dedicated, not merged into red_flags — allergy history is not automatically an urgent warning). (2) soap.tongueBody / soap.tongueCoating -> new visits.tongue_body_zh / visits.tongue_coating_zh columns (stay split, matching the app UI's two separate inputs; legacy tongue_zh/tongue_en untouched). (3) soap.outcomeMetricLinks -> confirmed notes-only fallback (no fabricated metric row); the real standardized/statistics-ready mechanism is the existing outcomeMetrics -> visit_outcomes pipeline, which already uses a 0-10 scale for subjective metrics and real clinical units for objective ones. schema.sql updated in the same commit with the 3 new additive columns (allergies, tongue_body_zh/en, tongue_coating_zh/en). counts.by_status recomputed below.",
     "2026-08: added outcomeMetrics (the structured {metricId, valueNumber} layer, 63f0896/eda9819/a1348b5) and rewrote effectDurationDays now that 1a3a426 made it a migration-source-only fallback for it. Clarified outcomeMetricLinks's entry to distinguish it from outcomeMetrics (easy to confuse by name, opposite semantics). No runtime behavior changed by this edit — documentation only, per Ting's request. Everything else in this file is untouched and may already be stale for other fields added since this file's own `created` date above — see known_gaps_not_covered_by_this_pass below, out of scope for this pass, not silently claimed as covered.",
     "2026-08: D17 tables landed in schema.sql (case_agent_exposures, case_environmental_exposures, visit_lifestyle_factors, visit_adverse_events, visit_pattern_differentials) plus visit_tcm_patterns.role/confidence and visit_outcomes.related_sym_id. localStorage-side keys are NOT yet written by the app — see planned_mappings_d17. Mapping entries move from planned to real when the B2 contract lands in normalizeCase/normalizeSoapNote.",
     "2026-08: B-1 audit fix — case_exposure_events append-only history table; agentExposures[].events[] / environmentalExposures[].events[] added to the localStorage contract.",
     "2026-08: Codex audit HIGH#1 — planned_mappings_d17 expanded to per-column entries; status advanced (B2 contract landed); exposure timestamp rule = preserve-missing; visit_tcm_patterns.note ruled ADD-to-contract (app edit queued behind Codex batch-2 WIP).",
-    "2026-08: Codex re-audit gate fixes — note key landed in contract (b90cd7c), status advanced to dry_run_only, R8 structured comparator + CI fixture landed."
+    "2026-08: Codex re-audit gate fixes — note key landed in contract (b90cd7c), status advanced to dry_run_only, R8 structured comparator + CI fixture landed.",
+    {
+      "date": "2026-08-27",
+      "change": "補登 18 筆 exposure/adverse/lifestyle 縱向模型欄位(D17 §5),此前整條未進對照表",
+      "found_by": "scripts/validate-sqlite-mapping-coverage.js(同日新增的覆蓋率閘)"
+    }
   ],
   "policy": [
     "This file is a DESIGN, not a migration. No script reads it yet. It exists so the mapping is reviewable before it is executable — the H2 migration is a one-shot over real clinical data (D12), and a mapping decided inside a script is a mapping nobody reviewed.",
@@ -25,10 +30,9 @@
     "validation": "every destination table.column is asserted to exist in schema.sql before this file is written"
   },
   "counts": {
-    "total_fields": 87,
+    "total_fields": 105,
     "by_status": {
-      "mapped": 85,
-      "unresolved_needs_ting": 0,
+      "mapped": 103,
       "no_destination_yet": 2
     }
   },
@@ -821,6 +825,186 @@
       "nullable": true,
       "data_loss_risk": "none",
       "status": "mapped"
+    },
+    {
+      "source_scope": "case",
+      "source_field": "agentExposures",
+      "destination": "case_agent_exposures[]",
+      "transformation": "array→rows (parent case_id)",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped",
+      "note": "容器欄位:每個元素一列。事件序列另存 case_exposure_events(parent_type='agent')。 2026-08-27 補登(D18 前提紀律):D17 §5 的 exposure/adverse/lifestyle 縱向模型整條從未進對照表,由 validate-sqlite-mapping-coverage.js 抓出。去處對照 schema.sql 既有表欄。"
+    },
+    {
+      "source_scope": "case",
+      "source_field": "environmentalExposures",
+      "destination": "case_environmental_exposures[]",
+      "transformation": "array→rows (parent case_id)",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped",
+      "note": "容器欄位:每個元素一列。事件序列另存 case_exposure_events(parent_type='environmental')。 2026-08-27 補登(D18 前提紀律):D17 §5 的 exposure/adverse/lifestyle 縱向模型整條從未進對照表,由 validate-sqlite-mapping-coverage.js 抓出。去處對照 schema.sql 既有表欄。"
+    },
+    {
+      "source_scope": "agentExposure",
+      "source_field": "agentType",
+      "destination": "case_agent_exposures.agent_type",
+      "transformation": "as-is",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped",
+      "note": "2026-08-27 補登(D18 前提紀律):D17 §5 的 exposure/adverse/lifestyle 縱向模型整條從未進對照表,由 validate-sqlite-mapping-coverage.js 抓出。去處對照 schema.sql 既有表欄。"
+    },
+    {
+      "source_scope": "agentExposure",
+      "source_field": "agentId",
+      "destination": "case_agent_exposures.agent_id",
+      "transformation": "as-is",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped",
+      "note": "指向 drug.*/supp.*/formula.* 等正典 id(D15/D17)。 2026-08-27 補登(D18 前提紀律):D17 §5 的 exposure/adverse/lifestyle 縱向模型整條從未進對照表,由 validate-sqlite-mapping-coverage.js 抓出。去處對照 schema.sql 既有表欄。"
+    },
+    {
+      "source_scope": "agentExposure",
+      "source_field": "nameText",
+      "destination": "case_agent_exposures.name_text",
+      "transformation": "as-is",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped",
+      "note": "自由文字藥名 —— 病人自述而庫內查無 id 時的誠實落點,不得反向鑄 id。 2026-08-27 補登(D18 前提紀律):D17 §5 的 exposure/adverse/lifestyle 縱向模型整條從未進對照表,由 validate-sqlite-mapping-coverage.js 抓出。去處對照 schema.sql 既有表欄。"
+    },
+    {
+      "source_scope": "agentExposure",
+      "source_field": "doseText",
+      "destination": "case_agent_exposures.dose_text",
+      "transformation": "as-is",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped",
+      "note": "2026-08-27 補登(D18 前提紀律):D17 §5 的 exposure/adverse/lifestyle 縱向模型整條從未進對照表,由 validate-sqlite-mapping-coverage.js 抓出。去處對照 schema.sql 既有表欄。"
+    },
+    {
+      "source_scope": "agentExposure",
+      "source_field": "frequencyText",
+      "destination": "case_agent_exposures.frequency_text",
+      "transformation": "as-is",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped",
+      "note": "2026-08-27 補登(D18 前提紀律):D17 §5 的 exposure/adverse/lifestyle 縱向模型整條從未進對照表,由 validate-sqlite-mapping-coverage.js 抓出。去處對照 schema.sql 既有表欄。"
+    },
+    {
+      "source_scope": "agentExposure",
+      "source_field": "changeSinceLast",
+      "destination": "case_agent_exposures.change_since_last",
+      "transformation": "as-is",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped",
+      "note": "2026-08-27 補登(D18 前提紀律):D17 §5 的 exposure/adverse/lifestyle 縱向模型整條從未進對照表,由 validate-sqlite-mapping-coverage.js 抓出。去處對照 schema.sql 既有表欄。"
+    },
+    {
+      "source_scope": "agentExposure",
+      "source_field": "infoSource",
+      "destination": "case_agent_exposures.info_source",
+      "transformation": "as-is",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped",
+      "note": "2026-08-27 補登(D18 前提紀律):D17 §5 的 exposure/adverse/lifestyle 縱向模型整條從未進對照表,由 validate-sqlite-mapping-coverage.js 抓出。去處對照 schema.sql 既有表欄。"
+    },
+    {
+      "source_scope": "agentExposure",
+      "source_field": "events",
+      "destination": "case_exposure_events[] (parent_type='agent')",
+      "transformation": "array→rows",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped",
+      "note": "append-only 事件序列(D17 §5 單一縱向模型)。遷移時序列必須整段保序搬移,不得只取末狀態 —— 那會讓「劑量改過」與「一開始就是這個劑量」變得無法區分。 2026-08-27 補登(D18 前提紀律):D17 §5 的 exposure/adverse/lifestyle 縱向模型整條從未進對照表,由 validate-sqlite-mapping-coverage.js 抓出。去處對照 schema.sql 既有表欄。"
+    },
+    {
+      "source_scope": "environmentalExposure",
+      "source_field": "exposureId",
+      "destination": "case_environmental_exposures.exposure_id",
+      "transformation": "as-is",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped",
+      "note": "指向 exposure.* 詞彙(D17)。 2026-08-27 補登(D18 前提紀律):D17 §5 的 exposure/adverse/lifestyle 縱向模型整條從未進對照表,由 validate-sqlite-mapping-coverage.js 抓出。去處對照 schema.sql 既有表欄。"
+    },
+    {
+      "source_scope": "environmentalExposure",
+      "source_field": "nameText",
+      "destination": "case_environmental_exposures.name_text",
+      "transformation": "as-is",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped",
+      "note": "2026-08-27 補登(D18 前提紀律):D17 §5 的 exposure/adverse/lifestyle 縱向模型整條從未進對照表,由 validate-sqlite-mapping-coverage.js 抓出。去處對照 schema.sql 既有表欄。"
+    },
+    {
+      "source_scope": "environmentalExposure",
+      "source_field": "certainty",
+      "destination": "case_environmental_exposures.certainty",
+      "transformation": "as-is",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped",
+      "note": "suspected/confirmed —— D17 §6:疑似永不自動變確認。 2026-08-27 補登(D18 前提紀律):D17 §5 的 exposure/adverse/lifestyle 縱向模型整條從未進對照表,由 validate-sqlite-mapping-coverage.js 抓出。去處對照 schema.sql 既有表欄。"
+    },
+    {
+      "source_scope": "environmentalExposure",
+      "source_field": "timing",
+      "destination": "case_environmental_exposures.timing",
+      "transformation": "as-is",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped",
+      "note": "2026-08-27 補登(D18 前提紀律):D17 §5 的 exposure/adverse/lifestyle 縱向模型整條從未進對照表,由 validate-sqlite-mapping-coverage.js 抓出。去處對照 schema.sql 既有表欄。"
+    },
+    {
+      "source_scope": "environmentalExposure",
+      "source_field": "events",
+      "destination": "case_exposure_events[] (parent_type='environmental')",
+      "transformation": "array→rows",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped",
+      "note": "同 agentExposure.events:整段保序,不取末狀態。 2026-08-27 補登(D18 前提紀律):D17 §5 的 exposure/adverse/lifestyle 縱向模型整條從未進對照表,由 validate-sqlite-mapping-coverage.js 抓出。去處對照 schema.sql 既有表欄。"
+    },
+    {
+      "source_scope": "soap",
+      "source_field": "patternDifferentials",
+      "destination": "visit_pattern_differentials[]",
+      "transformation": "array→rows (parent visit_id)",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped",
+      "note": "鑑別診斷(含 ruled_out 與理由)——被排除的證型本身就是臨床推理紀錄,不可丟。 2026-08-27 補登(D18 前提紀律):D17 §5 的 exposure/adverse/lifestyle 縱向模型整條從未進對照表,由 validate-sqlite-mapping-coverage.js 抓出。去處對照 schema.sql 既有表欄。"
+    },
+    {
+      "source_scope": "soap",
+      "source_field": "lifestyleFactors",
+      "destination": "visit_lifestyle_factors[]",
+      "transformation": "array→rows (parent visit_id)",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped",
+      "note": "指向 life.* 詞彙(D17)。數值/單位/文字三種形態並存,遷移時不得只取其一。 2026-08-27 補登(D18 前提紀律):D17 §5 的 exposure/adverse/lifestyle 縱向模型整條從未進對照表,由 validate-sqlite-mapping-coverage.js 抓出。去處對照 schema.sql 既有表欄。"
+    },
+    {
+      "source_scope": "soap",
+      "source_field": "adverseEvents",
+      "destination": "visit_adverse_events[]",
+      "transformation": "array→rows (parent visit_id)",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped",
+      "note": "指向 adverse_event.* 詞彙(D17)。不良事件漏搬是安全等級的資料損失。 2026-08-27 補登(D18 前提紀律):D17 §5 的 exposure/adverse/lifestyle 縱向模型整條從未進對照表,由 validate-sqlite-mapping-coverage.js 抓出。去處對照 schema.sql 既有表欄。"
     }
   ],
   "residual_gaps": {
