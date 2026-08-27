@@ -12,7 +12,7 @@ fallback 讚為治理模範、原文引用過 mergeUnwired——讀了解析器�
 **⚠️→✅ 虛驚一場(但風險是真的)——退役卡混進正典集**:
 [[dangling-scan-counts-deprecated-as-canon]] 指出我用 `records.map(r=>r.id)` 建正典集,
 會把 deprecated 卡算成已解析、讓指向退役卡的引用永遠掃不出來。照 active/deprecated
-分桶重跑本輪全部 19 條邊(cond/tdis/pattern/sym/formula/herb/point/rf,合計約 9,000 條邊):
+分桶重跑本輪全部 19 條邊(cond/tdis/pattern/sym/formula/herb/point/rf,合計 10,374 條邊):
 正典裡確有 **11 張退役卡**(pattern 3、formula 4、herb 4,含 memory 點名的 herb.sha_shen),
 但**指向它們的活引用 0 條**——先前所有「0 懸空」結論成立,是真陰性不是偽陰性。
 仍未解的懸空維持原數:pattern→cond 24 條 / pattern→tdis 6 條 / point→pat.* 127 條
