@@ -197,6 +197,10 @@ grep -c "herb_drug_interactions" js/knowledge.js app.js   # 0 和 0
 來源:`docs/research_packs/FORMULA_EYESON_03.md` F-51。
 
 ### A2 · 慎用藥禁忌覆蓋率 1/63
+
+> ✅ **查源包已到貨(2026-08-27)**:SOL 交付,已落 research_staging(見
+> FILL_LINE_DISPATCH_2026-08-27.md 到貨註記)。回填歸 fill 線。
+
 **問題**:63 張含慎用藥的方劑卡,只有 1 張(生化湯)在所有六個安全面向上有內容。
 附子類 11 張**沒有一張**寫先煎/久煎;麻黃 9 張**沒有一張**寫心血管禁忌或 ephedrine 交互;
 細辛 8 張、木通/青木香 8 張(馬兜鈴酸)同樣為零。
@@ -204,6 +208,13 @@ grep -c "herb_drug_interactions" js/knowledge.js app.js   # 0 和 0
 只等你把它交給 SOL。**你要做的只是把那份檔案貼給 SOL。**
 
 ### A3 · 毒性藥劑量疑似錯很多倍
+
+> ⚠️ **SOL 查源翻案(2026-08-27,confidence high)**:至寶丹雄黃 30g、蘇合香丸
+> 朱砂 60g 為**整批製方量**(成丸後每次一丸),非 300 倍病人劑量錯誤 ——
+> 真正缺陷是 dose_g 欄混裝 formula_batch_amount / per-unit_exposure /
+> adult_daily_herb_dose 三種基準。修法是資料模型分基準,不是覆寫數字。
+> 烏梅丸細辛 18g 同理(整方分服基準)。dose_basis 欄位設計列 B 類待裁。
+
 `zhi_bao_dan` 雄黃 `30g`(藥典約 0.05–0.1g)、`su_he_xiang_wan` 硃砂 `.5-60g`、
 `wu_mei_wan` 細辛 `1-28g`、`xiao_huo_luo_dan` 川烏草烏各 `180g`(卡片自己寫「研末為丸,每次三公克」)。
 **相關卡已下架**,但資料本身還是錯的。已列入 A2 的請求 §E。**我方不會憑推測改劑量。**
