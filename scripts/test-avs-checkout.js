@@ -555,5 +555,38 @@ console.log("回歸鎖 — CLI v1(generate-avs.js)followUp 不自動進病人文
   }
 }
 
+// ---- DRY_CLINIC_LOG #13 正式關閉(2026-08-27)-------------------------------
+// 當初的 repro:case 開了加味逍遙散(formulaHerbs 自由文字 + formulaLinks
+// 俱在),AVS v3 半成品沒有渲染服藥指示段(Ting 現場原話:「我有開中藥
+// 我的診後照顧指示裡面沒有中藥的指示」)。此塊用同款 repro 打到「端產物」
+// 層(renderPatientHtml + renderPatientText),不是只驗 snapshot 欄位 ——
+// 段落標題「調理品怎麼吃」與方名都必須真的出現在病人拿到的文件裡。
+console.log("DRY_CLINIC_LOG #13 — 加味逍遙散 repro 打到端產物(HTML+Text)");
+{
+  const kase = makeCase();
+  const note = makeNote({
+    modalitiesPerformed: ["modality.acupuncture"],
+    formulaLinks: ["formula.jia_wei_xiao_yao_san"],
+    formulaHerbs: "加味逍遙散 每日兩次,飯後溫水送服",
+  });
+  const nameOfAgent = (id) => (id === "formula.jia_wei_xiao_yao_san" ? "加味逍遙散" : null);
+  const d = AVS.buildDraftSnapshot({ kase, note, library: LIBRARY, clinic: CLINIC, modalityVocabulary: MODALITY_VOCAB, outcomeMetricDefs: [], nameOfAgent });
+  assert(d.medicationInstructionsSnapshot.some((r) => r.name === "加味逍遙散"), "#13 snapshot 層:加味逍遙散進了服藥表");
+
+  const html = AVS.renderPatientHtml(d, { visitDate: note.visitDate });
+  assert(html.includes("調理品怎麼吃"), "#13 HTML:病人文件有「調理品怎麼吃」段");
+  assert(html.includes("加味逍遙散"), "#13 HTML:段裡有方名");
+
+  const text = AVS.renderPatientText(d, { visitDate: note.visitDate });
+  assert(text.includes("【調理品怎麼吃】"), "#13 Text:email 版同樣有服藥段");
+  assert(text.includes("加味逍遙散"), "#13 Text:段裡有方名");
+
+  // 反向鎖:沒開任何中藥時,這一段不得無中生有
+  const noteNoHerb = makeNote({ modalitiesPerformed: ["modality.acupuncture"] });
+  const dNo = AVS.buildDraftSnapshot({ kase: makeCase(), note: noteNoHerb, library: LIBRARY, clinic: CLINIC, modalityVocabulary: MODALITY_VOCAB, outcomeMetricDefs: [], nameOfAgent });
+  const htmlNo = AVS.renderPatientHtml(dNo, { visitDate: noteNoHerb.visitDate });
+  assert(!htmlNo.includes("調理品怎麼吃"), "#13 反向:沒開中藥就沒有這一段(不憑空生指示)");
+}
+
 console.log(`\n${pass} passed, ${fail} failed`);
 process.exit(fail ? 1 : 0);
