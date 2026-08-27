@@ -1,0 +1,39 @@
+{
+  "metadata": {
+    "status": "NOT CANONICAL",
+    "phi": "NO PHI",
+    "date": "2026-08-27"
+  },
+  "wugong": {
+    "ingredient_id": "herb.wu_gong",
+    "ingredient_zh": "蜈蚣",
+    "target_standard": "Chinese Pharmacopoeia 2025 Part I monograph",
+    "status": "evidence_pending",
+    "canonical_eligible": false,
+    "current_2025_body_text_verified": false,
+    "requested_fields": {
+      "adult_daily_dose": null,
+      "toxicity_label": null,
+      "pregnancy_clause": null
+    },
+    "legacy_comparator_only": {
+      "edition": "2015 mirror",
+      "dose": "3-5g",
+      "toxicity": "有毒",
+      "pregnancy": "孕婦禁用",
+      "source": "A3S13",
+      "canonical_eligible": false
+    },
+    "current_supporting_evidence": [
+      {
+        "source": "A3S01",
+        "finding": "Official 2025 online portal exists, but the Wu Gong monograph body was not retrieved in this pass."
+      },
+      {
+        "source": "A3S14",
+        "finding": "A current Wu Gong decoction-piece lot cites ChP 2025 Part I as its execution standard, but the page does not state the monograph dose/toxicity/pregnancy clauses."
+      }
+    ],
+    "decision": "Keep all three requested 2025 monograph fields evidence_pending. Do not copy the 2015 mirror values into canonical until a directly traceable 2025 monograph body or paper-page verification is obtained."
+  }
+}

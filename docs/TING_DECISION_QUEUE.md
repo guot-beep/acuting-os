@@ -214,6 +214,12 @@ grep -c "herb_drug_interactions" js/knowledge.js app.js   # 0 和 0
 
 ### A3 · 毒性藥劑量疑似錯很多倍
 
+> ✅ **收尾包已到貨(2026-08-27)**:四方基準判定齊(至寶丹/蘇合香丸/烏梅丸/
+> 小活絡丹)、蜈蚣 2025 正文複核結論 evidence_pending(拒用舊版鏡像寫卡)、
+> dose_basis 五值枚舉+per-unit 計算閘+朝代折算閘。另主動掃出第五方
+> 安宮牛黃丸(雄黃/朱砂同型 batch 混裝)待個別裁定。
+> 詳見 docs/research_packs/A3_TOXIC_FORMULA_DOSE_BASIS_CLOSEOUT_2026-08-27.md。
+>
 > ⚠️ **SOL 查源翻案(2026-08-27,confidence high)**:至寶丹雄黃 30g、蘇合香丸
 > 朱砂 60g 為**整批製方量**(成丸後每次一丸),非 300 倍病人劑量錯誤 ——
 > 真正缺陷是 dose_g 欄混裝 formula_batch_amount / per-unit_exposure /

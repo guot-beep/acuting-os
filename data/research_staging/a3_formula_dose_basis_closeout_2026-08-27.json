@@ -1,0 +1,250 @@
+{
+  "metadata": {
+    "request": "A3 毒性藥劑量基準收尾",
+    "date": "2026-08-27",
+    "status": "NOT CANONICAL",
+    "phi": "NO PHI",
+    "red_line": "寧缺勿造; evidence_pending stays null; no inferred canonical dose."
+  },
+  "records": [
+    {
+      "formula_id": "formula.zhi_bao_dan",
+      "formula_zh": "至寶丹",
+      "ingredient_id": "herb.xiong_huang",
+      "ingredient_zh": "雄黃",
+      "repo_value": "30g",
+      "adjudication_status": "resolved",
+      "basis": "formula_batch_amount",
+      "basis_status": "valid_if_labeled",
+      "source_backed_statement_zh": "30 g 應標為本方製備批次中的雄黃投料量，不是成人每日單味雄黃劑量。現代資料另記成品每丸3 g、一次1丸、一日1次。",
+      "source_backed_statement_en": "30 g is a formula-batch ingredient amount, not an adult daily single-herb dose. The same source separately gives a 3 g finished pill, one pill once daily.",
+      "per_unit_exposure": {
+        "status": "evidence_pending",
+        "value": null,
+        "unit": null,
+        "reason": "The cited source gives finished pill mass but not a final batch yield/count or a validated ingredient assay per pill. Do not infer Xiong Huang per pill from batch composition."
+      },
+      "sources": [
+        "A3S03",
+        "A3S11"
+      ]
+    },
+    {
+      "formula_id": "formula.su_he_xiang_wan",
+      "formula_zh": "蘇合香丸",
+      "ingredient_id": "herb.zhu_sha",
+      "ingredient_zh": "朱砂",
+      "repo_value": ".5-60g",
+      "adjudication_status": "resolved_as_malformed_mixture",
+      "basis": null,
+      "basis_status": "malformed",
+      "source_backed_statement_zh": "現值 `.5-60g` 把不同基準拼成一個範圍，應拆開。2020版成方標準為整批朱砂100 g、製成960丸、一次1丸、一日1–2次。古典《局方》條目另載朱砂二兩，應保留為 classical_text_amount；二手資料括號換算的60 g不能反過來當作原文單位。",
+      "source_backed_statement_en": "The current `.5-60g` range conflates dose bases. A 2020 formula standard uses Zhu Sha 100 g in the batch and makes 960 pills, dosed one pill 1–2 times/day. The classical entry separately gives Zhu Sha as two liang and should remain a classical_text_amount.",
+      "separated_values": [
+        {
+          "basis": "formula_batch_amount",
+          "value": 100,
+          "unit": "g",
+          "source": "A3S04"
+        },
+        {
+          "basis": "classical_text_amount",
+          "value_raw": "二兩",
+          "normalized_value": null,
+          "source": "A3S05"
+        },
+        {
+          "basis": "adult_daily_herb_dose",
+          "value_range": [
+            0.1,
+            0.5
+          ],
+          "unit": "g/day",
+          "source": "A3S12",
+          "note": "Single-herb Zhu Sha monograph; not a formula-batch amount."
+        }
+      ],
+      "per_unit_exposure": {
+        "status": "calculable_nominal_input_equivalent",
+        "value_g": 0.10416666666666667,
+        "value_mg": 104.16666666666667,
+        "method": "explicit batch ingredient input / explicit finished-unit count",
+        "interpretation": "Nominal apportioned Zhu Sha input per finished pill, not measured systemic exposure or assay content.",
+        "daily_nominal_input_equivalent_mg": [
+          104.16666666666667,
+          208.33333333333334
+        ],
+        "sources": [
+          "A3S04"
+        ]
+      },
+      "sources": [
+        "A3S04",
+        "A3S05",
+        "A3S12"
+      ]
+    },
+    {
+      "formula_id": "formula.wu_mei_wan",
+      "formula_zh": "烏梅丸",
+      "ingredient_id": "herb.xi_xin",
+      "ingredient_zh": "細辛",
+      "repo_value": "1-28g",
+      "adjudication_status": "resolved_as_malformed_mixture",
+      "basis": null,
+      "basis_status": "malformed",
+      "source_backed_statement_zh": "現值 `1-28g` 無法代表單一可追溯基準。2020版成方標準的整批細辛投料為18 g；2025單味細辛正文的成人通常量為1–3 g，散劑每次0.5–1 g。兩者必須分欄保存。",
+      "source_backed_statement_en": "The `1-28g` field is not a traceable single dose basis. The 2020 formula standard uses Xi Xin 18 g in the batch, while the 2025 single-herb monograph gives 1–3 g as the adult usual dose and 0.5–1 g per powder dose.",
+      "separated_values": [
+        {
+          "basis": "formula_batch_amount",
+          "value": 18,
+          "unit": "g",
+          "source": "A3S06"
+        },
+        {
+          "basis": "adult_daily_herb_dose",
+          "value_range": [
+            1,
+            3
+          ],
+          "unit": "g/day",
+          "source": "A3S07"
+        },
+        {
+          "basis": "per_dose_single_herb_powder",
+          "value_range": [
+            0.5,
+            1
+          ],
+          "unit": "g/dose",
+          "source": "A3S07",
+          "note": "This is a monograph powder-dose instruction, not the amount of Xi Xin contained in one Wu Mei Wan unit."
+        }
+      ],
+      "per_unit_exposure": {
+        "status": "evidence_pending",
+        "value": null,
+        "reason": "The formula standard gives 18 g Xi Xin and finished dosage forms, but no explicit final batch unit count/yield. Honey addition is given as a range for one dosage form. Under the no-inference rule, do not calculate Xi Xin per pill."
+      },
+      "sources": [
+        "A3S06",
+        "A3S07"
+      ]
+    },
+    {
+      "formula_id": "formula.xiao_huo_luo_dan",
+      "formula_zh": "小活絡丹／小活絡丸",
+      "ingredient_id": "herb.chuan_wu",
+      "ingredient_zh": "制川烏",
+      "repo_value": "180g",
+      "adjudication_status": "resolved",
+      "basis": "formula_batch_amount",
+      "basis_status": "valid_if_labeled",
+      "source_backed_statement_zh": "180 g 是現代成方製備批次中的制川烏投料量，不是病人單次或單日制川烏劑量。古典來源保存為六兩，現代資料庫/成方標準另表為180 g。",
+      "source_backed_statement_en": "180 g is a formula-batch input of prepared Chuan Wu, not a patient per-dose or daily herb dose. The classical text preserves six liang; modern sources separately display 180 g.",
+      "classical_source_amount": {
+        "basis": "classical_text_amount",
+        "value_raw": "六兩",
+        "source": "A3S10"
+      },
+      "per_unit_exposure": {
+        "status": "evidence_pending",
+        "value": null,
+        "reason": "The 2020 standard gives honey added per 100 g powder but no explicit final pill count/yield. Do not back-calculate aconite per 3 g pill from an excipient range."
+      },
+      "sources": [
+        "A3S08",
+        "A3S09",
+        "A3S10",
+        "A3S24"
+      ]
+    },
+    {
+      "formula_id": "formula.xiao_huo_luo_dan",
+      "formula_zh": "小活絡丹／小活絡丸",
+      "ingredient_id": "herb.cao_wu",
+      "ingredient_zh": "制草烏",
+      "repo_value": "180g",
+      "adjudication_status": "resolved",
+      "basis": "formula_batch_amount",
+      "basis_status": "valid_if_labeled",
+      "source_backed_statement_zh": "180 g 是現代成方製備批次中的制草烏投料量，不是病人單次或單日制草烏劑量。古典來源保存為六兩，現代資料庫/成方標準另表為180 g。",
+      "source_backed_statement_en": "180 g is a formula-batch input of prepared Cao Wu, not a patient per-dose or daily herb dose. The classical text preserves six liang; modern sources separately display 180 g.",
+      "classical_source_amount": {
+        "basis": "classical_text_amount",
+        "value_raw": "六兩",
+        "source": "A3S10"
+      },
+      "per_unit_exposure": {
+        "status": "evidence_pending",
+        "value": null,
+        "reason": "The 2020 standard gives honey added per 100 g powder but no explicit final pill count/yield. Do not back-calculate aconite per 3 g pill from an excipient range."
+      },
+      "sources": [
+        "A3S08",
+        "A3S09",
+        "A3S10",
+        "A3S24"
+      ]
+    }
+  ],
+  "same_pattern_scan": [
+    {
+      "formula_id": "formula.an_gong_niu_huang_wan",
+      "formula_zh": "安宮牛黃丸",
+      "ingredients": [
+        {
+          "ingredient_zh": "雄黃",
+          "repo_value": "1-30g"
+        },
+        {
+          "ingredient_zh": "朱砂",
+          "repo_value": ".5-30g"
+        }
+      ],
+      "status": "confirmed_same_pattern_needs_separate_adjudication",
+      "reason_zh": "repo audit 顯示範圍上限30 g；課程材料同時以雄黃30、朱砂30列在整方組成表，且整方製成3 g丸。高度符合「單味日劑量下限 + 方劑批量上限」被拼成 range 的模式。",
+      "canonical_action": "Do not auto-fix from this A3 pack. Create a follow-up adjudication using a formula-standard source for the exact batch and finished yield.",
+      "sources": [
+        "A3S21",
+        "A3S23",
+        "A3S11",
+        "A3S12"
+      ]
+    },
+    {
+      "formula_id": "formula.zi_xue_dan",
+      "formula_zh": "紫雪丹",
+      "ingredients": [
+        {
+          "ingredient_zh": "朱砂",
+          "material_value": "90g"
+        }
+      ],
+      "status": "suspected_batch_amount_in_material",
+      "reason_zh": "課程組成表把朱砂列90 g，同一材料另寫每次服1.5–3 g、每日1–2次，明顯不是把90 g當病人單次量。尚未在本 A3 輪確認 repo 的精確 `dose_g` 值與相同來源鏈，因此只列 suspected。",
+      "canonical_action": "Verify current repo value and formula-standard source before changing canonical.",
+      "sources": [
+        "A3S22"
+      ]
+    },
+    {
+      "formula_id": "formula.ci_zhu_wan",
+      "formula_zh": "磁朱丸",
+      "ingredients": [
+        {
+          "ingredient_zh": "朱砂",
+          "repo_value": "3-30g"
+        }
+      ],
+      "status": "suspected_malformed_mixed_basis",
+      "reason_zh": "repo audit 已記錄朱砂 `3-30g`。這種範圍與2025朱砂單味成人通常量0.1–0.5 g不相容，且上限呈批量尺度；但本輪未取得足以完成磁朱丸批量/成丸收率判定的方劑標準來源。",
+      "canonical_action": "needs_followup_source; do not infer a corrected value.",
+      "sources": [
+        "A3S23",
+        "A3S12"
+      ]
+    }
+  ]
+}

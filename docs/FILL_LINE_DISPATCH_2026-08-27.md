@@ -73,6 +73,19 @@ conditions 數字只准降。清單來源:樣板句掃描(content_quality 線)�
 先行部分已完成(食療欄+public_safe 下架維持)。SOL 補:IARC Group 1、
 口腔癌/口腔黏膜下纖維化敘述(具名來源);回來後 fill 線寫卡+刪減肥功效。
 
+## 7. A3 · 劑量基準(材料已到貨,實作待 dose_basis 欄位裁定)
+
+SOL 收尾包已落 staging(checksum 6/6):`a3_formula_dose_basis_closeout`
+(四方判定)、`a3_dose_basis_schema_input`(五值枚舉 formula_batch_amount/
+per_unit_exposure/adult_daily_herb_dose/classical_text_amount/
+raw_material_equivalent + status 六值 + 兩道閘)、`a3_wugong_2025_verification`
+(蜈蚣:2025 正文未取得,canonical_eligible=false,**不得用 2015 鏡像值寫卡**)、
+`a3_source_registry`。
+
+**現在不要改任何 dose_g 數字** —— A3 的結論是「基準混裝」不是「數字錯」,
+修法是資料模型分基準,需 Ting 先裁 dose_basis 欄位(列 B 類)。
+fill 線此項只做:安宮牛黃丸(第五方,SOL 主動掃出)的基準查證備料。
+
 ## 憲法提醒
 
 只加深不刪除;移動=封存(`import_artifacts`,新寫統一

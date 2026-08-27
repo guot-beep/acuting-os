@@ -1,0 +1,121 @@
+{
+  "metadata": {
+    "title": "A3 dose_basis content-design input",
+    "date": "2026-08-27",
+    "status": "NOT CANONICAL",
+    "phi": "NO PHI"
+  },
+  "recommended_model": {
+    "dose_basis_enum": [
+      {
+        "id": "formula_batch_amount",
+        "definition": "Ingredient amount charged into one documented formula/manufacturing batch."
+      },
+      {
+        "id": "per_unit_exposure",
+        "definition": "Ingredient amount attributable to one finished unit only when the source directly states it or it can be calculated from explicit ingredient batch input plus explicit finished-unit yield/count with no missing process factor.",
+        "warning": "Use 'nominal apportioned input' when calculated from batch/yield; do not call it measured systemic exposure."
+      },
+      {
+        "id": "adult_daily_herb_dose",
+        "definition": "Adult usual daily amount in a single-herb/decoction-piece monograph; ChP 2025 general principles support this interpretation unless otherwise specified."
+      },
+      {
+        "id": "classical_text_amount",
+        "definition": "Amount exactly as printed in the historical source, preserving original unit/wording; no silent gram conversion."
+      },
+      {
+        "id": "raw_material_equivalent",
+        "definition": "Finished-product mass expressed as equivalent to a stated mass of decoction pieces/crude drug, e.g. '每1g相当于饮片0.98g'."
+      }
+    ],
+    "quality_status_enum": [
+      "valid",
+      "malformed",
+      "mixed_basis",
+      "evidence_pending",
+      "source_conflict",
+      "not_applicable"
+    ],
+    "critical_rule": "`malformed` is not a dose basis. It is a quality/status flag. Keep semantics and data-quality state orthogonal."
+  },
+  "conversion_policy": {
+    "default": "never_auto_convert_historical_qian_liang_to_grams",
+    "why": [
+      "Historical medical metrology changed over time.",
+      "Even Eastern Han/Zhang Zhongjing conversion has published competing estimates (15 g/liang vs 13.8 g/liang).",
+      "Song-period medical units and later market units cannot be treated as one universal coefficient.",
+      "A modern secondary source may already embed a conversion; that converted value is source-provided normalization, not the original text."
+    ],
+    "allowed_conversion_cases": [
+      {
+        "case": "source_explicitly_defines_the_unit_system",
+        "rule": "Conversion may be stored with source-specific coefficient and provenance."
+      },
+      {
+        "case": "official_regulatory_key_information_table_provides_a_converted_amount",
+        "rule": "Store original amount and official converted amount separately; do not reverse-engineer a universal dynasty coefficient."
+      },
+      {
+        "case": "explicit 市制16两=1斤 context",
+        "rule": "May use 1 liang = 31.25 g and 1 qian = 3.125 g, citing A3S18. Never apply this coefficient to Han/Song classical text merely because the characters 两/钱 match."
+      }
+    ],
+    "disallowed_cases": [
+      "Automatically converting all Han/Tang/Song/Ming/Qing prescriptions with one qian/liang coefficient.",
+      "Inferring a dynasty from formula name alone.",
+      "Using a textbook's parenthetical gram value as proof that the historical original itself was written in grams.",
+      "Converting count/size units such as 枚, 梧桐子大 without a source-specific weight study."
+    ],
+    "evidence_examples": [
+      {
+        "source": "A3S15",
+        "claim": "Eastern Han estimate 1 liang = 15 g."
+      },
+      {
+        "source": "A3S16",
+        "claim": "Alternative scholarly estimate 1 liang = 13.8 g."
+      },
+      {
+        "source": "A3S18",
+        "claim": "Explicit old market 16-liang system: 1 liang = 31.25 g; 1 qian = 3.125 g."
+      }
+    ]
+  },
+  "per_unit_calculation_policy": {
+    "required_inputs": [
+      "ingredient batch input amount with matching formulation version",
+      "explicit final finished-unit count or validated final product yield",
+      "finished-unit definition/weight",
+      "no unaccounted extraction, discard, concentration, coating, excipient or processing factor that makes simple proportional allocation invalid"
+    ],
+    "labels": {
+      "direct_source_value": "per_unit_exposure",
+      "calculated_from_explicit_batch_and_yield": "per_unit_exposure (nominal_apportioned_input=true)",
+      "missing_yield_or_process_factor": "evidence_pending"
+    },
+    "formula_examples": [
+      {
+        "formula": "蘇合香丸",
+        "status": "calculable_nominal_input",
+        "why": "Zhu Sha 100 g and exactly 960 finished pills are stated in the same formula standard.",
+        "result": "100/960 g ≈ 0.10417 g = 104.17 mg nominal Zhu Sha input per pill; not a measured pharmacokinetic exposure."
+      },
+      {
+        "formula": "至寶丹",
+        "status": "batch_only",
+        "why": "3 g finished pill and daily unit dose are known, but batch output count/validated yield is not supplied in the cited source."
+      },
+      {
+        "formula": "烏梅丸",
+        "status": "batch_only",
+        "why": "Xi Xin 18 g batch input is known, but explicit final batch unit count is not supplied; honey ratio is not a final yield."
+      },
+      {
+        "formula": "小活絡丸",
+        "status": "batch_only",
+        "why": "Prepared aconites 180 g each and honey addition ratio are known, but final unit count/yield is not explicit. Do not derive aconite per 3 g pill."
+      }
+    ]
+  }
+}
