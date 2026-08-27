@@ -219,6 +219,47 @@ ICD-10 對照分歧、約 30 筆 `comparisons.json` 骨架記錄空著——**�
 
 ---
 
+# 2026-08-27 — relation_registry 自身 meta 審計:名冊也逃不過自己的配方——3 條過時斷言、5 條漏戶口真邊、1 個平行欄位;validator 確認 CI_INVOKED
+
+Ting 指示把名冊自己掃一遍。審計者被審計的結果:
+
+**✅ 骨架健全**:validated_by/derived_by 引用的 11 支腳本全存在;file 路徑全
+存在;policy 斷言 1(每邊恰存一側)在 D29 裁定後無違例;R1 自身 validator
+是 **CI_INVOKED、blocking、fail-closed、GREEN**(coverage truth 資料確認)
+——名冊有活閘門。
+
+**⚠ 3 條過時斷言(已修,量測值取代)**:edge.tdis_symptoms 稱「tdis 無
+manifestation 內容,零遷移成本」——實測 key_manifestation_ids 已有 3 筆;
+deprecated 條目 measured 凍在「1/150」——分母已 508(分子仍恰 1,
+functional_dyspepsia,無新洩漏,好消息);edge.pattern_symptoms 稱
+key_signs_zh 182 條自由文字——V2 成長後實測 629。三處均改為帶日期的重量測。
+
+**⚠ 5 條真邊漏戶口(已補登)**:完備性反掃(全庫 id-載欄位 vs 名冊)抓到
+pattern_library.related_biomedical_condition_ids ×53 與
+related_tcm_disease_ids ×40(**正是懸空 task 那兩個欄——沒登記所以沒人驗,
+23 筆懸空因此漏網**)、formulas.formula_family[].formula_id ×33、
+modern_application_condition_ids ×2、pattern_registry 家族結構
+members/member_of/develops_into(有自己的 validator 守著但名冊看不見)。
+過程中 R5 正確擋下我把 member_of 誤宣告成 derived——它是 D13 特許的
+雙側 lockstep(D24 結構),改為如實註明,validator 的擋是對的。
+
+**⚠ 1 個平行欄位(記入名冊,fill 線處理)**:5 張 pattern 卡用 v1-import 的
+tdis 式欄名 key_manifestation_ids 裝 sym 連結,而宣告的邊欄 key_signs_ids
+是 0 填——同一實體兩套詞彙,無人驗解析。
+
+**新 policy 行**:明文列出「刻意不登記」的兩類——分類軸(taxonomy_ids/
+pattern_family/category,是詞彙隸屬不是實體邊)與出處指針(field_sources/
+migrated_from/source_condition_id/rf.entity_id)——防止未來 agent 把它們
+的缺席當缺陷修。
+
+**僅報告**:differential_patterns 互指 100/276 條——內容相異的互指是雙視角
+合法著作,位元組相同才是禁止的手鏡像,內容面未逐筆審(留給 fill 線抽查)。
+
+名冊從 14 邊(08-06 建)長到 **29 邊**,D25 系列補登 15 條。驗證:
+relation-registry、pattern-standard、ratchet、content-junk 全 PASS。
+
+---
+
 # 2026-08-27 — clinical_graph_seed + red_flag_registry 照 D25 配方掃描:紅旗線以 0 問題通過全查,seed 三個小觀察(D23 裁定不動);十檔系列收官
 
 **red_flag_registry(226 筆)——模範線稱號經全配方實測坐實,0 個問題**:
