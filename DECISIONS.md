@@ -863,6 +863,17 @@ PASS(composition 查無藥材維持 1 味次 `formula.huang_tu_tang` 的「灶�
   通道受控:工具加 `--refresh-counts`,只准寫這兩個 derived 欄,
   used_by_cases 屬臨床案例線、不掃不寫;「不動既有記錄」的 D25 承諾
   修訂為「不動既有記錄的任何非 derived 欄位」。
+- **補充裁定二(同日,案例線接線)**:Ting 問 38 筆 V2 記錄 used_by_cases
+  全 0、案例線要不要接上。查證:used_by_cases 本是 derived 計數——舊 builder
+  曾掃 data/clinical_cases/**(PROJECT_LOG 有載),該能力在落後事故中遺失,
+  現值全是 V2-B 建卡時寫死的 0(31 筆帶欄位、0 筆非零)。裁定:**不為接上
+  而造案例**——repo 案例線僅 2 個樣本檔、151 筆裡只有 4 筆被引用,38 筆
+  的 0 是「案例線還沒長大」不是「這批掉隊」;為覆蓋率寫案例即拼裝,且臨床
+  內容 gate on Ting。**機械件復原**:偵測工具恢復掃 data/clinical_cases/**
+  (計數單位=一檔一案,*template* 檔不算),used_by_cases 併入
+  --refresh-counts 三欄之一;寫入規則「欄位已存在或實測>0 才寫」,不給
+  120 筆未接觸記錄塞字面 0。前一補充裁定「used_by_cases 不掃不寫」一句
+  自此修訂。刷新後 4 筆浮出真數字(肝氣鬱結×2、痰濕/心血虛/脾氣虛×1)。
 - **Reconsider only if**:未來登錄檔需要大規模機械重構(如 schema 遷移)
   ——屆時寫一次性遷移腳本走 ledger→apply 模式(出帳本、人工核、apply 落庫),
   不恢復常駐生成器。

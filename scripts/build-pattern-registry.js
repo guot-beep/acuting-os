@@ -27,20 +27,28 @@
  *              needs_name_zh=true — inventing a 證型 name is still exactly
  *              the guess that later reads as authoritative.
  *   --refresh-counts
- *              update used_by_conditions / used_by_comparisons on existing
- *              records to the fresh scan (D25 supplement, 2026-08-26). These
- *              two fields are DERIVED caches by definition
- *              (data/config/relation_registry.json edge.condition_patterns),
- *              so refreshing them is not "touching hand content" — it is the
- *              one mutation this tool is still allowed on existing records,
- *              and it must never write any other field. used_by_cases comes
- *              from the clinical-case line and is NOT scanned or written here.
+ *              update used_by_conditions / used_by_comparisons /
+ *              used_by_cases on existing records to the fresh scan (D25
+ *              supplements, 2026-08-26). These fields are DERIVED caches by
+ *              definition (data/config/relation_registry.json
+ *              edge.condition_patterns), so refreshing them is not "touching
+ *              hand content" — it is the one mutation this tool is still
+ *              allowed on existing records, and it must never write any
+ *              other field.
  *   --write    refuses, loudly. Kept so old muscle memory fails with an
  *              explanation instead of a wiped registry.
  *
- * Note: the scan sees conditions + comparisons only. used_by_cases on
- * registry records comes from the clinical-case line and is not checked here,
- * so "registered but unused" is informational, never a deletion list.
+ * used_by_cases: an earlier builder already scanned data/clinical_cases/**
+ * (see PROJECT_LOG「新增 validate-clinical-case-standard」entry); that
+ * capability was lost in the builder-falls-behind saga, leaving the V2-B
+ * creation-time zeros frozen in place. Restored here per D25 supplement 2.
+ * Counting unit = one JSON file, one case; *template* files are placeholder
+ * scaffolding and do not count as usage. The field is only written where it
+ * already exists or the measured count is > 0 — absence means 0, and adding
+ * a literal zero to a hundred untouched records is diff noise, not honesty.
+ *
+ * "Registered but unused" is informational, never a deletion list — real
+ * clinical cases live in the app runtime, not in this repo.
  */
 'use strict';
 const fs = require('fs');
@@ -49,7 +57,19 @@ const path = require('path');
 const ROOT = path.resolve(__dirname, '..');
 const CONDITIONS = path.join(ROOT, 'data/pathology/condition_canon_shortlist.json');
 const COMPARISONS = path.join(ROOT, 'data/knowledge/comparisons.json');
+const CASES = path.join(ROOT, 'data/clinical_cases');
 const REGISTRY = path.join(ROOT, 'data/pathology/pattern_registry.json');
+
+function listCaseFiles(dir) {
+  if (!fs.existsSync(dir)) return [];
+  const out = [];
+  fs.readdirSync(dir, { withFileTypes: true }).forEach((e) => {
+    const p = path.join(dir, e.name);
+    if (e.isDirectory()) out.push(...listCaseFiles(p));
+    else if (e.name.endsWith('.json') && !e.name.includes('template')) out.push(p);
+  });
+  return out;
+}
 
 const arr = (o, k) => (Array.isArray(o) ? o : (o && o[k]) || []);
 const titleCase = (id) => id.replace(/^pattern\./, '').replace(/_/g, ' ')
@@ -78,55 +98,62 @@ function main() {
   const use = new Map();
   const touch = (id, kind, ref) => {
     if (!String(id || '').startsWith('pattern.')) return;
-    if (!use.has(id)) use.set(id, { conditions: [], comparisons: [] });
+    if (!use.has(id)) use.set(id, { conditions: [], comparisons: [], cases: [] });
     use.get(id)[kind].push(ref);
   };
   conditions.forEach((c) => [c.related_patterns, c.tcm_patterns].forEach((l) =>
     (Array.isArray(l) ? l : []).forEach((p) => touch(typeof p === 'string' ? p : p && p.id, 'conditions', c.id))));
   comparisons.forEach((m) => (m.compares || []).forEach((p) => touch(p, 'comparisons', m.id)));
+  listCaseFiles(CASES).forEach((f) => {
+    const ids = new Set(fs.readFileSync(f, 'utf8').match(/pattern\.[a-z0-9_]+/g) || []);
+    ids.forEach((id) => touch(id, 'cases', path.relative(ROOT, f)));
+  });
 
   const missing = [...use.keys()].filter((id) => !registered.has(id)).sort();
   const unused = records.filter((r) => !use.has(r.id)).map((r) => r.id);
   const drift = records.filter((r) => {
     const u = use.get(r.id);
+    const caseFresh = u ? u.cases.length : 0;
     return (r.used_by_conditions || 0) !== (u ? u.conditions.length : 0)
-      || (r.used_by_comparisons || 0) !== (u ? u.comparisons.length : 0);
+      || (r.used_by_comparisons || 0) !== (u ? u.comparisons.length : 0)
+      || ((('used_by_cases' in r) || caseFresh > 0) && (r.used_by_cases || 0) !== caseFresh);
   });
 
   console.log('===== 證型登錄檔增量偵測(登錄檔為正本,D25)=====\n');
   console.log(`已登錄            ${records.length}`);
-  console.log(`使用中的 id       ${use.size}(conditions + comparisons)`);
+  console.log(`使用中的 id       ${use.size}(conditions + comparisons + clinical_cases)`);
   console.log(`已引用但未登錄    ${missing.length}  ← 這是本工具存在的原因`);
-  console.log(`已登錄但掃不到    ${unused.length}(僅指 conditions/comparisons 兩處;id 可能活在 pattern_library 本尊卡、穴位主治、tdis、方劑等層——2026-08-26 查證當時 38 筆全有實引用,勿逕判死詞彙)`);
+  console.log(`已登錄但掃不到    ${unused.length}(僅指 conditions/comparisons/clinical_cases 三處;id 可能活在 pattern_library 本尊卡、穴位主治、tdis、方劑等層——2026-08-26 查證當時 38 筆全有實引用,勿逕判死詞彙)`);
   console.log(`引用計數漂移      ${drift.length}(登錄檔記載 vs 本次實測)`);
 
   if (missing.length) {
     console.log('\n--- 已引用但未登錄(懸空引用)---');
     missing.forEach((id) => {
       const u = use.get(id);
-      console.log(`  ${id.padEnd(46)} cond ${u.conditions.length} / cmp ${u.comparisons.length}`);
+      console.log(`  ${id.padEnd(46)} cond ${u.conditions.length} / cmp ${u.comparisons.length} / case ${u.cases.length}`);
     });
   }
   if (drift.length) {
     console.log('\n--- 引用計數漂移(前 15 筆)---');
     drift.slice(0, 15).forEach((r) => {
-      const u = use.get(r.id) || { conditions: [], comparisons: [] };
-      console.log(`  ${r.id.padEnd(46)} cond ${r.used_by_conditions || 0}→${u.conditions.length} / cmp ${r.used_by_comparisons || 0}→${u.comparisons.length}`);
+      const u = use.get(r.id) || { conditions: [], comparisons: [], cases: [] };
+      console.log(`  ${r.id.padEnd(46)} cond ${r.used_by_conditions || 0}→${u.conditions.length} / cmp ${r.used_by_comparisons || 0}→${u.comparisons.length} / case ${r.used_by_cases || 0}→${u.cases.length}`);
     });
     if (drift.length > 15) console.log(`  … 其餘 ${drift.length - 15} 筆`);
-    if (!refresh) console.log('  (--refresh-counts 可只刷新這兩個 derived 計數欄,不碰其他欄位。)');
+    if (!refresh) console.log('  (--refresh-counts 可只刷新這三個 derived 計數欄,不碰其他欄位。)');
   }
 
   let dirty = false;
 
   if (refresh && drift.length) {
     drift.forEach((r) => {
-      const u = use.get(r.id) || { conditions: [], comparisons: [] };
+      const u = use.get(r.id) || { conditions: [], comparisons: [], cases: [] };
       r.used_by_conditions = u.conditions.length;
       r.used_by_comparisons = u.comparisons.length;
+      if (('used_by_cases' in r) || u.cases.length) r.used_by_cases = u.cases.length;
     });
     dirty = true;
-    console.log(`\n--refresh-counts:已更新 ${drift.length} 筆的 used_by_conditions / used_by_comparisons(僅此兩欄,其他欄位零改動)。`);
+    console.log(`\n--refresh-counts:已更新 ${drift.length} 筆的 used_by_conditions / used_by_comparisons / used_by_cases(僅此三個 derived 欄,其他欄位零改動)。`);
   } else if (refresh) {
     console.log('\n--refresh-counts:計數無漂移,無事可做。');
   }
@@ -159,6 +186,7 @@ function appendSkeletons(missing, use, records) {
       needs_system: true,
       used_by_conditions: u.conditions.length,
       used_by_comparisons: u.comparisons.length,
+      used_by_cases: u.cases.length,
       review_status: 'draft',
       source_type: 'usage_scan_append',
       level: 'pattern',

@@ -33,6 +33,28 @@ ICD-10 對照分歧、約 30 筆 `comparisons.json` 骨架記錄空著——**�
 
 ---
 
+# 2026-08-26 — 「案例線要不要接上 38 筆 V2」裁定:不造案例,復原案例掃描,used_by_cases 變回量測值
+
+Ting 追問 38 筆 used_by_cases 全 0、案例線要不要接上。查證後裁定**不接**——但修了機械件:
+
+- **used_by_cases 本是 derived 計數**:舊 builder 曾掃 `data/clinical_cases/**`
+  (本檔稍早「新增 validate-clinical-case-standard」條目有載,當時肝氣鬱結、痰濕各 1),
+  該能力在 builder 落後事故中遺失;現值全是 V2-B 建卡腳本寫死的 0(31 筆帶欄位、0 筆非零)。
+- **為什麼不接**:repo 案例線只有 2 個樣本檔(去識別化樣本 + 匯出 fixture),151 筆
+  登錄裡只有 4 筆被案例引用過——38 筆的 0 是「案例線還在種子階段」,不是「這批掉隊」。
+  真病例活在 app runtime(localStorage/SQLite),不在 repo。為了讓計數非零去寫 38 個
+  臨床案例 = 覆蓋率驅動的拼裝;要擴充案例線是內容策略,臨床內容 gate on Ting。
+- **修了什麼**:build-pattern-registry.js 恢復掃 `data/clinical_cases/**`(計數單位=
+  一檔一案;`*template*` 檔是佔位樣板不算),used_by_cases 併入 --refresh-counts 成為
+  第三個 derived 欄;寫入規則「欄位已存在或實測>0 才寫」,不給 120 筆未接觸記錄塞
+  字面 0。懸空偵測同步涵蓋案例引用(當年 pattern.phlegm_damp_obstruction 那種懸空
+  以後會被抓)。
+- **刷新結果**:4 筆浮出真數字——肝氣鬱結 case×2、痰濕/心血虛/脾氣虛各 ×1;
+  31 筆寫死的 0 變成量測的 0;registry diff 僅 +4 個 used_by_cases 欄位,零其他改動。
+  DECISIONS D25 補充裁定二有正式記錄。
+
+---
+
 # 2026-08-26 — 「38 筆掃不到的 V2 記錄是不是死詞彙」查證:0 筆死,38/38 全活
 
 Ting 問 D25 偵測工具回報的「已登錄但掃不到 38 筆」是不是死詞彙。全 repo `git grep`
