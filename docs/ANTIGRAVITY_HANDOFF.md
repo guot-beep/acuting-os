@@ -7,6 +7,31 @@
   - 結構化資料庫: `data/audits/evidence_provenance_fragmentation_2026-08-27.json`
   - 完整盤點報告: `docs/audits/EVIDENCE_PROVENANCE_FRAGMENTATION_2026-08-27.md`
 - **核心數據 (SSOT 直出)**:
+  - Base SHA: `7b0abfb0b0fda427db44adee482378a269675ff4` (origin/main)
+  - Audit Source SHA: `5d9f20898d43280b2fbf27f20c139ed6ad84c861`
+  - Delivery Commit SHA: `null` (外部 Git 分支 HEAD 紀錄)
+  - 掃描正典資料集: **27** 個
+  - 嚴格正典來源/審查欄位: **43** 個
+  - 候選相關非來源欄位 (獨立排除): **10** 個
+  - 具 Runtime / UI 消費者欄位: **20** 個
+  - 僅 Validator 消費者欄位: **0** 個
+  - 暗數據無消費者欄位 (DATA_PRESENT_NO_CONSUMER_FOUND): **8** 個
+  - 逐筆數值比對之重疊欄位對: **7** 組
+  - 實質跨 2+ 來源欄位優先序鏈路: **4** 處
+  - 生成包資料集路徑細部條目: **140** 筆
+  - 8/8 生產函式回歸 Fixtures: **8/8 PASS**
+
+---
+
+## ✅ Task 10D Round 4.1：Path-Preserving Generated Summary Only（已完成）
+
+- **類型**: READ-ONLY Evidence, Provenance & Review-State Architecture Inventory（0 production mutation, 0 CI workflow changes, 0 schema changes）
+- **分支**: `antigravity/task10d-evidence-provenance-fragmentation-round4.1`
+- **主要產出**:
+  - 核心動態稽核腳本: `scripts/audit-evidence-provenance-fragmentation.js`
+  - 結構化資料庫: `data/audits/evidence_provenance_fragmentation_2026-08-27.json`
+  - 完整盤點報告: `docs/audits/EVIDENCE_PROVENANCE_FRAGMENTATION_2026-08-27.md`
+- **核心數據 (SSOT 直出)**:
   - Base SHA: `3d25efd04633d13f20a509aa1dc4ae65ed49489d` (origin/main)
   - Audit Source SHA: `3d25efd04633d13f20a509aa1dc4ae65ed49489d`
   - Delivery Commit SHA: `null` (外部 Git 分支 HEAD 紀錄)

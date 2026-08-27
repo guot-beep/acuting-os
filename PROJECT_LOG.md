@@ -17,6 +17,25 @@
 
 ---
 
+# 2026-08-27 Antigravity — Task 10D Round 4.1 (Path-Preserving Generated Summary Only)
+
+- **做了什麼**: 完成 Task 10D Round 4.1 生成存活報告路徑保留修復（`scripts/audit-evidence-provenance-fragmentation.js`）：(1) 保留正典原始欄位路徑（如 `condition_canon.acupoint_protocol_evidence.protocol_status`），不再在存活評估前提前坍縮為葉節點名稱；(2) 依「資料庫 $	imes$ 欄位路徑」產出細部存活清單（`field_name`, `field_path`, `dataset`, `status`, `records_compared`, `evidence`），避免單一資料集存活掩蓋其他資料集 `DROPPED` / `NOT_BUNDLED` 狀態；(3) 產出欄位級彙總狀態（`ALL_SURVIVE_VERBATIM` / `MIXED` / `ALL_DROPPED` / `ALL_NOT_BUNDLED` / `CANNOT_DETERMINE`）；(4) 擴展 Fixture 8 嚴格斷言巢狀路徑存活與跨資料集 `MIXED` 彙總。
+- **數字統計**:
+  - 正典資料庫掃描數: 27 個
+  - 嚴格正典來源/審查欄位: 43 個
+  - 候選相關非來源欄位 (獨立排除): 10 個
+  - 具 Runtime/UI 消費者欄位: 20 個
+  - 僅 Validator 消費者欄位: 0 個
+  - 暗數據欄位 (DATA_PRESENT_NO_CONSUMER_FOUND): 8 個
+  - 逐筆數值比對之重疊欄位對: 7 組
+  - 實質跨 2+ 來源欄位優先序鏈路: 4 處
+  - 生成包資料集路徑細部條目: 140 筆
+- **驗證結果**: 8/8 自我測試 Fixtures 100% PASS；生產代碼與正典資料 0 異動。
+- **已知未解**: 存在 4 處優先序鏈路遮蔽次要來源；狀態詞彙在不同維度共用；部分暗數據欄位（如 `original_shape`、`source_field`）在正典有值但無消費者。
+- **下一步**: 推送至 `antigravity/task10d-evidence-provenance-fragmentation-round4.1`，Task 10D 就此永久關閉，不開始 Task 10E。
+
+---
+
 # 2026-08-27 — 懸空 herb.*/formula.* id 治理:逐一查雙胞胎,重導 5+去重 1+補 pending 標記 1,不補骨架
 
 延續同日 formulas/herbs derived 治理掃描的懸空 id 清單。掃描重現方式:對 data/ 知識層(排除

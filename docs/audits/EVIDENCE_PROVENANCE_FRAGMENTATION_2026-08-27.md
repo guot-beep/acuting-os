@@ -1,8 +1,8 @@
 # Evidence & Provenance Fragmentation Inventory — Task 10D (Round 4.1)
 
 - **Audit Date**: 2026-08-27
-- **Base SHA (origin/main)**: `3d25efd04633d13f20a509aa1dc4ae65ed49489d`
-- **Audit Source SHA**: `3d25efd04633d13f20a509aa1dc4ae65ed49489d`
+- **Base SHA (origin/main)**: `7b0abfb0b0fda427db44adee482378a269675ff4`
+- **Audit Source SHA**: `5d9f20898d43280b2fbf27f20c139ed6ad84c861`
 - **Delivery Commit SHA**: `null` (The immutable delivery commit SHA is the Git branch HEAD recorded externally upon commit creation.)
 - **Scope**: Canonical Evidence, Provenance, Authorship, Review State, and Source Verification Architecture
 - **Core Invariant**: 「SURVIVES_VERBATIM means the same canonical record carried the same field value into a runtime-loaded artifact. A matching field name somewhere else is insufficient.」
