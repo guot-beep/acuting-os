@@ -1,10 +1,10 @@
 {
   "meta": {
-    "timestamp": "2026-08-26T22:50:00Z",
-    "base_sha": "8ff5ea48f3f724c8080fee4bf10bf8ed6353dada",
-    "audit_source_sha": "8ff5ea48f3f724c8080fee4bf10bf8ed6353dada",
-    "delivery_commit_sha": "084539a8ba2ccf15bcff497c508ee9460428cc0e",
-    "note": "delivery_commit_sha is stamped in git handoff upon delivery commit creation.",
+    "timestamp": "2026-08-27T00:36:00Z",
+    "base_sha": "96171afe1d54565a05af08de986f3efb16835171",
+    "audit_source_sha": "96171afe1d54565a05af08de986f3efb16835171",
+    "delivery_commit_sha": null,
+    "note": "The immutable delivery commit SHA is the Git branch HEAD recorded externally upon commit creation.",
     "audit_type": "READ_ONLY_CLINICAL_EXPORT_IMPORT_CONTRACT_AUDIT"
   },
   "counts": {
@@ -467,7 +467,7 @@
     },
     "q11_duplicate_case_ids_handled_deterministically": {
       "status": "VERIFIED",
-      "details": "In v1 Merge mode, duplicate cases in incoming stream adopt deterministic last-wins in Map merge. In C2b buildMigrationPlan, duplicate case IDs throw an explicit Error. In v2 verifyRuntimeEnvelope, duplicate case IDs push a verification failure and abort restore."
+      "details": "In v1 Merge mode, duplicate cases in incoming stream adopt deterministic last-wins in Map merge. In C2b buildMigrationPlan, duplicate case IDs throw an explicit Error. In v2 verifyRuntimeEnvelope / restoreV2Envelope, duplicate case IDs produce a verification failure and abort restore."
     },
     "q12_error_messages_phi_safe": {
       "status": "VERIFIED",

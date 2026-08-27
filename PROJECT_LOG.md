@@ -1,3 +1,16 @@
+# 2026-08-27 Antigravity — Task 10C Round 4 (Final Evidence Integrity & Full v2 Restore Lifecycle)
+
+- **做了什麼**: 完成 Task 10C Round 4 臨床病歷匯出/匯入/還原契約動態驗證（`scripts/audit-clinical-export-contract.js`）：(1) 修正 Fixture 12 真實執行完整 v2 還原鏈路（`restoreV2Envelope` $\rightarrow$ `load` $\rightarrow$ `normalizeClinicalCase` $\rightarrow$ `save` $\rightarrow$ 讀出驗證信封層保留、病例層 UI 週期剔除）；(2) 移除寫死變數，改由 `runAudit()` 實體執行隔離探針動態衍生 q8 部分輸入覆寫破壞性；(3) 修正交付元資料，精確標註 Base SHA、Audit Source SHA 與 delivery_commit_sha（由 Git 分支 HEAD 外部紀錄）。
+- **數字統計**:
+  - 識別 7 個 Export/Backup Producers 與 7 個 Import/Restore Consumers；建立 11 條全生命週期可達路徑契約矩陣。
+  - 舊裸陣列相容性：VERIFIED（`unwrapV1CasesPayload` 永久支援）；未知未來版本 Fail-Closed：VERIFIED（`schema_version: 99` loud error 拒收）；格式毀損寫入前保護：VERIFIED（直通實體 `importClinicalCases` 證實儲存零寫入零更動）；PHI 安全：VERIFIED（錯誤訊息長度不轉述內容）。
+  - 部分輸入防護（Partial-Input Protection）：NOT_ENFORCED（實體探針動態衍生：同 ID 簡略物件在 Merge 模式下因 Map 覆蓋而重置未列欄位）；未知欄位保留：PARTIAL（v2 信封層儲存保留，病例層於 UI load/save 週期剔除）；`case_count` 檢驗：NOT_ENFORCED（僅具資訊性）；D12 條款強制性：PARTIAL（CI 已驗信封與不變量，2026-09-01 Additive 單向門待生效）。
+- **驗證結果**: 14/14 回歸測試 100% PASS（直通實體生產函式）；生產資料 0 異動。
+- **已知未解**: v1 normalizer 重新構造物件時會剔除未在白名單之擴充欄位；部分輸入在 Merge 模式下缺乏細粒度欄位級合併保護；`case_count` 尚未加入解包長度一致性強制校驗。
+- **下一步**: 推送至 `antigravity/task10c-clinical-export-contract-round4`，等待 Ting / 團隊審閱，不開始 Task 10D。
+
+---
+
 # 2026-08-27 — Claude 複核 Task 10C Round 3:方法論真的升級,結論不變,app.js 仍未動
 
 Ting 要求連 round3 也看一下。跟 round2 比是真的方法論升級：round2 測底層 store 函式，round3

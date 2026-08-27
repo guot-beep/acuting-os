@@ -1,3 +1,31 @@
+## ✅ Task 10C Round 4：Final Evidence Integrity & Full v2 Restore Lifecycle（已完成）
+
+- **類型**: READ-ONLY Clinical Backup/Restore Contract & Final Evidence Integrity Audit（0 production mutation, 0 CI workflow changes, 0 debt repairs）
+- **分支**: `antigravity/task10c-clinical-export-contract-round4`
+- **主要產出**:
+  - 核心動態稽核腳本: `scripts/audit-clinical-export-contract.js`
+  - 結構化資料庫: `data/audits/clinical_export_contract_2026-08-26.json`
+  - 完整契約報告: `docs/audits/CLINICAL_EXPORT_CONTRACT_2026-08-26.md`
+- **核心數據 (SSOT 直出)**:
+  - Base SHA: `96171afe1d54565a05af08de986f3efb16835171` (origin/main)
+  - Audit Source SHA: `96171afe1d54565a05af08de986f3efb16835171`
+  - Delivery Commit SHA: `(見當次 git commit SHA，推送至分支)`
+  - Clinical Export Producers: **7** 個 (P1-P7)
+  - Import/Restore Consumers: **7** 個 (C1-C7)
+  - 可達真實路徑契約矩陣: **11** 條 (R1-R11，全覆蓋 v1/v2/migration 生命週期)
+  - 直通實體生產函式回歸測試: **14** 組 (14/14 PASS)
+  - 舊裸陣列相容性: `VERIFIED` (`unwrapV1CasesPayload` 永久支援)
+  - 未知未來版本防護: `VERIFIED` (`schema_version: 99` loud rejection)
+  - 格式毀損寫入前防護 (Fail-Before-Write): `VERIFIED` (直通 `importClinicalCases` 證實儲存零變更)
+  - 部分輸入防護 (Partial-Input Protection): `NOT_ENFORCED` (直通實體探針動態衍生：同 ID 簡略物件在 Merge 模式下重置未列欄位)
+  - 錯誤訊息 PHI 防護: `VERIFIED` (長度/結構診斷，絕不轉述敏感內容)
+  - 未知外加欄位保留: `PARTIAL` (v2 信封層儲存保留，病例層於 UI load/save 週期剔除)
+  - Case Count 校驗: `NOT_ENFORCED` (資訊性欄位)
+  - 重複 Case ID 處理: `VERIFIED` (v1 merge last-wins, v2 / migration 拒收)
+  - D12 架構強制狀態: `PARTIAL` (CI 已鎖定信封與不變量，2026-09-01 Additive-Only 生效)
+
+---
+
 ## ⚠️ Claude 複核 Task 10C Round 3:方法論真的升級了,結論不變,`app.js` 仍未動(2026-08-27)
 
 Ting 要求連 round3 也看一下。跟 round2 比,這輪是真的方法論升級，不是重跑同一份報告：round2

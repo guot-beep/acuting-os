@@ -1,9 +1,9 @@
-# Clinical Export / Import Contract Audit — Task 10C (Round 3)
+# Clinical Export / Import Contract Audit — Task 10C (Round 4)
 
-- **Audit Date**: 2026-08-26
-- **Base SHA (origin/main)**: `8ff5ea48f3f724c8080fee4bf10bf8ed6353dada`
-- **Audit Source SHA**: `8ff5ea48f3f724c8080fee4bf10bf8ed6353dada`
-- **Delivery Commit SHA**: `084539a8ba2ccf15bcff497c508ee9460428cc0e` (delivery_commit_sha is stamped in git handoff upon delivery commit creation.)
+- **Audit Date**: 2026-08-26 / 2026-08-27
+- **Base SHA (origin/main)**: `96171afe1d54565a05af08de986f3efb16835171`
+- **Audit Source SHA**: `96171afe1d54565a05af08de986f3efb16835171`
+- **Delivery Commit SHA**: `null` (The immutable delivery commit SHA is the Git branch HEAD recorded externally upon commit creation.)
 - **Scope**: Private Clinical Backup / Export / Import / Restore Contract
 - **Contract Boundary**: Read-only verification of `app.js`, `js/clinical-store.js`, `scripts/test-export-envelope-shapes.js`, `data/clinical_cases/sample_export_fixture.json`, `data/clinical_cases/schema.sql`. Zero production data mutation.
 
@@ -152,7 +152,7 @@
 9. **Fixture 9**: 部分輸入 (Partial Input) 直通 `importClinicalCases` 在 Merge 模式下重置未列欄位之破壞性實測 $\rightarrow$ **PASS**
 10. **Fixture 10**: 部分輸入 (Partial Input) 直通 `importClinicalCases` 在 Restore 模式下全庫取代之破壞性實測 $\rightarrow$ **PASS**
 11. **Fixture 11**: v1 case 層未知外加欄位在 `normalizeClinicalCase` 中被過濾剔除 $\rightarrow$ **PASS**
-12. **Fixture 12**: v2 未知欄位完整生命週期實測（信封層儲存保留，病例層 UI load/save 週期剔除） $\rightarrow$ **PASS**
+12. **Fixture 12**: v2 未知欄位完整生命週期實測（經 `restoreV2Envelope` 寫入 staging，經 `load` 讀出，經 `normalizeClinicalCase` 過濾，經 `save` 寫回，確認信封層保留、病例層剔除） $\rightarrow$ **PASS**
 13. **Fixture 13**: v2 信封傳入 v1 解包函式時 Fail-Closed 阻擋 $\rightarrow$ **PASS**
 14. **Fixture 14**: 錯誤訊息注入假 PHI 文字，驗證錯誤回顯絕不包含敏感內容 $\rightarrow$ **PASS**
 
