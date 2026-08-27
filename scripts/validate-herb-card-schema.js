@@ -100,6 +100,23 @@ function main() {
       });
   });
 
+  // --json:給 check-validation-ratchet 用(2026-08-27 接線)。必須在任何報表
+  // 列印之前 —— ratchet 對輸出做 JSON.parse,前面混一行人類可讀文字就會炸。
+  // 目前 6 筆全是 H5 索引不對齊,而且逐筆看過:不是排版錯位,是中英兩側各自
+  // 帶著對方沒有的真內容(珍珠母英文多兩條課程層敘述、青木香中文多「解毒
+  // 消腫」)。刪任何一邊都是丟內容,補齊需要中醫判斷與來源,屬 fill 線。
+  // 棘輪鎖住不變差是這種積欠唯一能一直開著的形式。
+  if (process.argv.includes('--json')) {
+    const byCode = {};
+    for (const d of defects) {
+      const m = String(d).match(/^([A-Z]\d+)/);
+      const code = m ? m[1] : 'other';
+      byCode[code] = (byCode[code] || 0) + 1;
+    }
+    console.log(JSON.stringify({ defects: defects.length, by_code: byCode }));
+    process.exit(0);
+  }
+
   console.log('===== 中藥卡結構檢查 =====\n');
   console.log(`中藥卡總數      ${records.length}`);
   console.log(`參考卡          ${REFERENCE_ID} (${refKeys.length} 個欄位)`);

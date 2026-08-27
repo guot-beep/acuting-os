@@ -437,6 +437,36 @@ jobs:
       - name: retired ids are never referenced by active records
         run: node scripts/validate-retired-id-references.js
 
+      # W2-2 接線批(2026-08-27):以下 12 支寫好卻從未接線,實測全綠 ——
+      # 「寫好沒接線」正是本專案 2026-08-02 那次 27 支驗證器全部沒跑、
+      # 批次被報成完成又得重測的成因。綠的直接擋,不進棘輪。
+      # 另兩支(herb-canon 5577 / herb-card-schema 6)有真實積欠,進棘輪;
+      # test-herb-cloudtcm-fetch 會連外網,刻意不接 —— 外站掛掉不該讓 CI 假紅。
+      - name: pattern registry structure
+        run: node scripts/validate-pattern-registry.js
+      - name: point categories
+        run: node scripts/validate-point-categories.js
+      - name: supplement card standard
+        run: node scripts/validate-supp-standard.js
+      - name: herbal links
+        run: node scripts/validate-herbal-links.js
+      - name: no boilerplate or placeholder strings
+        run: node scripts/validate-no-boilerplate.js
+      - name: formula song format
+        run: node scripts/validate-formula-song.js
+      - name: condition sources
+        run: node scripts/validate-condition-sources.js
+      - name: formula quality strict
+        run: node scripts/validate-formula-quality-strict.js
+      - name: herb quality strict
+        run: node scripts/validate-herb-quality-strict.js
+      - name: cloudtcm vocabularies
+        run: node scripts/validate-cloudtcm-vocabularies.js
+      - name: knowledge gap logging
+        run: node scripts/test-knowledge-gap-logging.js
+      - name: practice audit
+        run: node scripts/test-practice-audit.js
+
       # D29(2026-08-27 Ting 裁定):dose_basis 受控詞彙與一致性。標了就必須合規;
       # 未標不是缺陷(未判定)。負控 3/3 已驗(非法 enum/換算未自陳/非法 status)。
       - name: dose_basis controlled vocabulary

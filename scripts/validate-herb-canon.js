@@ -165,6 +165,20 @@ function main() {
     failures: errors.length
   };
 
+  // --json:給 check-validation-ratchet 用。這支報的 5,577 筆是同一個 schema
+  // 塊(english_exam_track)在 164 張卡上缺欄位 —— 結構性積欠,不是逐張的臨床
+  // 內容問題。要求它一次歸零會擋住每一次 merge,於是沒人會留著這個 gate;
+  // 棘輪「不准變差」才是能一直開著的形式(2026-08-27 接線)。
+  if (process.argv.includes("--json")) {
+    const byCode = {};
+    for (const e of errors) {
+      const code = String(e).replace(/^[a-z]+\.[a-z_0-9]+: /, "").replace(/"[^"]*"/g, "X").replace(/\d+/g, "N").slice(0, 60);
+      byCode[code] = (byCode[code] || 0) + 1;
+    }
+    console.log(JSON.stringify({ defects: errors.length, warnings: warnings.length, by_code: byCode }));
+    process.exit(0);
+  }
+
   if (warnings.length) {
     console.warn("Herb canon validation warnings:");
     for (const warning of warnings) console.warn(`- ${warning}`);

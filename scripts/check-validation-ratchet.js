@@ -118,6 +118,39 @@ const RATCHETED = [
     // pending——需要人工核對 HKBU 來源掃描頁後才能定案，不是我能猜的。
     doc: "data/imports/formula_doses/formula_dose_staging.json",
   },
+  {
+    key: "content_quality",
+    script: "scripts/validate-content-quality.js",
+    args: ["--json"],
+    extract: (out) => JSON.parse(out).defects,
+    detail: (out) => JSON.parse(out).by_code,
+    // 2026-08-27 接線(W2-2):寫好但從未接線。缺陷數 = 實質內容覆蓋率
+    // <50% 的欄位數(現 5:361 穴的 muscles/nerves 全空、方劑 indications_zh、
+    // 方義 4%、中藥性味 21%)。這是 fill 線的長期回填面,棘輪保證不再變多。
+    doc: "docs/HERB_CARD_TEMPLATE.md",
+  },
+  {
+    key: "herb_canon",
+    script: "scripts/validate-herb-canon.js",
+    args: ["--json"],
+    extract: (out) => JSON.parse(out).defects,
+    detail: (out) => JSON.parse(out).by_code,
+    // 2026-08-27 接線(W2-2):寫好但從未接線。5,577 筆裡壓倒性多數是同一個
+    // schema 塊(english_exam_track)在 164 張卡缺欄位 —— 結構性積欠,要求
+    // 一次歸零會擋住每一次 merge,於是沒人會留著這個 gate。棘輪只准降。
+    doc: "docs/HERB_CARD_TEMPLATE.md",
+  },
+  {
+    key: "herb_card_schema",
+    script: "scripts/validate-herb-card-schema.js",
+    args: ["--json"],
+    extract: (out) => JSON.parse(out).defects,
+    detail: (out) => JSON.parse(out).by_code,
+    // 2026-08-27 接線(W2-2)。6 筆全是 H5 中英陣列不對齊,逐筆看過:兩側
+    // 各自有對方沒有的真內容(珍珠母英文多兩條、青木香中文多一條),刪任何
+    // 一邊都是丟內容,補齊需要中醫判斷 —— 屬 fill 線,不是機械修得掉的。
+    doc: "docs/HERB_CARD_TEMPLATE.md",
+  },
   // retired_id_references sat here one day (2026-08-26, ceiling 10) while the
   // D21 herb_pairs residue and D16 pattern re-references were redirected and
   // Ting ruled on 敗毒散→人參敗毒散 (D22). Baseline hit 0 the same day — it

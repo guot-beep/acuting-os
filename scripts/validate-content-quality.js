@@ -108,7 +108,18 @@ function loadArray(file) {
 const flatten = (v) => (Array.isArray(v) ? v.join(" ") : v == null ? "" : String(v));
 
 let anyFail = false;
+// --json:給 check-validation-ratchet 用(2026-08-27 接線)。缺陷數 = 實質內容
+// 覆蓋率低於 50% 的欄位數,不是欄位實例數 —— 這支量的是「哪些欄位整層還沒
+// 有內容」(如 361 穴的 muscles/nerves 全空),那是 fill 線的長期回填,棘輪
+// 只需要保證它不再變多。逐欄明細照舊由人類可讀模式輸出。
+const JSON_MODE = process.argv.includes("--json");
+const failingFields = [];
 const grand = { fields: 0, good: 0 };
+// 靜音人類可讀輸出:ratchet 對整份 stdout 做 JSON.parse,混一行報表就會炸。
+// 用 no-op 取代而不是逐處加判斷 —— 這支的列印散在整個掃描迴圈裡,逐處改
+// 反而容易漏一處,而漏一處的症狀是 ratchet 報「讀不到缺陷數」而非明顯錯誤。
+const realLog = console.log;
+if (JSON_MODE) console.log = () => {};
 
 for (const layer of LAYERS) {
   if (ONLY && ONLY !== layer.id) continue;
@@ -157,7 +168,7 @@ for (const layer of LAYERS) {
     const pct = Math.round((counts.good / records.length) * 100);
     grand.fields += records.length;
     grand.good += counts.good;
-    if (pct < 50) anyFail = true;
+    if (pct < 50) { anyFail = true; failingFields.push(`${layer.id}.${spec.name}=${pct}%`); }
 
     console.log(
       spec.name.padEnd(24) +
@@ -182,5 +193,13 @@ console.log(`substantive             : ${grand.good}  (${Math.round(grand.good /
 console.log(`\nempty  = nothing there            filler = 待補/pending/verify-later text`);
 console.log(`shared = same value as other records (template, not content)`);
 console.log(`notZh  = Chinese field with no Chinese   thin = present but too short\n`);
+
+if (JSON_MODE) {
+  console.log = realLog;
+  const byCode = {};
+  for (const f of failingFields) byCode[f] = 1;
+  console.log(JSON.stringify({ defects: failingFields.length, by_code: byCode }));
+  process.exit(0);
+}
 
 if (STRICT && anyFail) process.exit(1);
