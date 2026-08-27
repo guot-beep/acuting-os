@@ -6338,6 +6338,163 @@
       "tier": "urgent_referral",
       "tier_basis": "derived: max accepted Task C suggested_tier across this flag's evidence",
       "provenance_review": "task_c_accepted_2026-08-08"
+    },
+    {
+      "id": "rf.anovulation.missed_periods_evaluation",
+      "entity_id": "cond.anovulation",
+      "trigger_zh": "連續缺經超過一個週期，應就醫評估診斷",
+      "trigger_en": "More than one missed period — see a health care provider for diagnosis",
+      "tier": "routine_referral",
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/ency/article/001219.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Absent menstrual periods - secondary",
+          "section": "When to Contact a Medical Professional",
+          "quote_en": "See your primary health care provider or women's health care provider if you have missed more than one period so you can get diagnosed and treated, if needed.",
+          "retrieved_at": "2026-08-27"
+        }
+      ],
+      "review_status": "draft",
+      "authored_by": "claude"
+    },
+    {
+      "id": "rf.anovulation.headache_vision_loss_pituitary",
+      "entity_id": "cond.anovulation",
+      "trigger_zh": "缺經合併頭痛或視力喪失，需排除腦下垂體腫瘤",
+      "trigger_en": "Amenorrhea with headache or vision loss — rule out a pituitary tumor",
+      "tier": "urgent_referral",
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/ency/article/001219.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Absent menstrual periods - secondary",
+          "section": "Symptoms",
+          "quote_en": "If amenorrhea is caused by a pituitary tumor, there may be other symptoms related to the tumor, such as vision loss and headache.",
+          "retrieved_at": "2026-08-27"
+        }
+      ],
+      "review_status": "draft",
+      "authored_by": "claude"
+    },
+    {
+      "id": "rf.anovulation.unusual_vaginal_bleeding",
+      "entity_id": "cond.anovulation",
+      "trigger_zh": "異常陰道出血應就醫評估（無排卵為異常子宮出血常見成因）",
+      "trigger_en": "Unusual vaginal bleeding — contact a provider (anovulation is a common cause of abnormal uterine bleeding)",
+      "tier": "routine_referral",
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/ency/article/000903.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Abnormal uterine bleeding",
+          "section": "When to Contact a Medical Professional",
+          "quote_en": "Contact your provider if you have unusual vaginal bleeding.",
+          "retrieved_at": "2026-08-27"
+        },
+        {
+          "source_url": "https://medlineplus.gov/ency/article/000903.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Abnormal uterine bleeding",
+          "section": "Causes",
+          "quote_en": "AUB can occur when the ovaries do not release an egg.",
+          "retrieved_at": "2026-08-27"
+        }
+      ],
+      "review_status": "draft",
+      "authored_by": "claude"
+    },
+    {
+      "id": "rf.unexplained_infertility.age_35_six_months",
+      "entity_id": "cond.unexplained_infertility",
+      "trigger_zh": "35 歲以上嘗試受孕滿 6 個月未成，應與醫療提供者討論評估（具時效性）",
+      "trigger_en": "Age 35 or older and not pregnant after 6 months of trying — talk to a provider (time-sensitive)",
+      "tier": "routine_referral",
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/ency/article/001191.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Infertility",
+          "section": "Exams and Tests",
+          "quote_en": "Women over 35 should try to get pregnant for 6 months. If it does not occur within that time, they should talk to their provider.",
+          "retrieved_at": "2026-08-27"
+        }
+      ],
+      "review_status": "draft",
+      "authored_by": "claude"
+    },
+    {
+      "id": "rf.unexplained_infertility.one_year_no_conception",
+      "entity_id": "cond.unexplained_infertility",
+      "trigger_zh": "依年齡準則嘗試仍未受孕（30 歲以下滿 1 年），應就醫評估",
+      "trigger_en": "Not pregnant after age-appropriate trying (one year if under 30) — seek evaluation",
+      "tier": "routine_referral",
+      "evidence": [
+        {
+          "source_url": "https://medlineplus.gov/ency/article/001191.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Infertility",
+          "section": "When to Contact a Medical Professional",
+          "quote_en": "Contact your provider if you are not able to get pregnant.",
+          "retrieved_at": "2026-08-27"
+        },
+        {
+          "source_url": "https://medlineplus.gov/ency/article/001191.htm",
+          "source_org": "MedlinePlus",
+          "page_title": "Infertility",
+          "section": "Exams and Tests",
+          "quote_en": "Women under 30 try to get pregnant on their own for 1 year before getting tested for conditions that may cause infertility.",
+          "retrieved_at": "2026-08-27"
+        }
+      ],
+      "review_status": "draft",
+      "authored_by": "claude"
+    },
+    {
+      "id": "rf.insulin_resistance.diabetes_symptoms_prompt_eval",
+      "entity_id": "cond.insulin_resistance",
+      "trigger_zh": "出現糖尿病症狀（多尿、劇渴、視力模糊、傷口不癒、反覆感染）應儘速就醫檢測",
+      "trigger_en": "Symptoms of diabetes (increased urination, marked thirst, blurred vision, non-healing sores, frequent infections) — prompt evaluation",
+      "tier": "urgent_referral",
+      "evidence": [
+        {
+          "source_url": "https://www.niddk.nih.gov/health-information/diabetes/overview/symptoms-causes",
+          "source_org": "NIDDK",
+          "page_title": "Symptoms & Causes of Diabetes",
+          "section": "What are the symptoms of diabetes?",
+          "quote_en": "Common symptoms of diabetes include increased urination, feeling very thirsty, feeling very hungry, even after you have eaten, blurred vision, fatigue, sores that do not heal, frequent infections",
+          "retrieved_at": "2026-08-27"
+        }
+      ],
+      "review_status": "draft",
+      "authored_by": "claude"
+    },
+    {
+      "id": "rf.insulin_resistance.no_symptoms_screening",
+      "entity_id": "cond.insulin_resistance",
+      "trigger_zh": "胰島素阻抗與前期糖尿病通常無症狀；35 歲以上或過重且具風險因子者應檢測血糖",
+      "trigger_en": "Usually asymptomatic — get tested if age 35 or older, or overweight with risk factors",
+      "tier": "routine_referral",
+      "evidence": [
+        {
+          "source_url": "https://www.niddk.nih.gov/health-information/diabetes/overview/what-is-diabetes/prediabetes-insulin-resistance",
+          "source_org": "NIDDK",
+          "page_title": "Insulin Resistance & Prediabetes",
+          "section": "What are the symptoms of insulin resistance and prediabetes?",
+          "quote_en": "People with insulin resistance and prediabetes usually have no symptoms.",
+          "retrieved_at": "2026-08-27"
+        },
+        {
+          "source_url": "https://www.niddk.nih.gov/health-information/diabetes/overview/what-is-diabetes/prediabetes-insulin-resistance",
+          "source_org": "NIDDK",
+          "page_title": "Insulin Resistance & Prediabetes",
+          "section": "How do health care professionals diagnose insulin resistance and prediabetes?",
+          "quote_en": "Your health care professional may order tests for prediabetes if you're age 35 or older, or if you have overweight or obesity and other risk factors for prediabetes and type 2 diabetes.",
+          "retrieved_at": "2026-08-27"
+        }
+      ],
+      "review_status": "draft",
+      "authored_by": "claude"
     }
   ]
 }

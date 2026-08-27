@@ -64,9 +64,11 @@ if ((b4.supported || 0) !== 83 || (b4.not_found || 0) !== 13) defects.push(`RT6 
 if ((b123.supported || 0) !== 68 || (b123.not_found || 0) !== 27) defects.push(`RT6 batch123 ${b123.supported}/${b123.not_found} != 68/27`);
 
 // RT7 — authored-only fallback must not shrink
+// (floor raised 24→27, 2026-08-27: the 3 D23 skeletons got authored registry
+// records — cond.anovulation / unexplained_infertility / insulin_resistance)
 const wiredIds = new Set(wiredSrc.map((r) => r.id));
 const authoredOnly = K.conditionCanon.records.filter((r) => (r.red_flag_record_ids || []).length && !wiredIds.has(r.id));
-if (authoredOnly.length < 24) defects.push(`RT7 authored-only fallback ${authoredOnly.length} < 24 — safety presentation lost`);
+if (authoredOnly.length < 27) defects.push(`RT7 authored-only fallback ${authoredOnly.length} < 27 — safety presentation lost`);
 
 // RT9 — bundled registry must equal the source registry
 if (JSON.stringify(K.redFlagRegistry.records) !== JSON.stringify(registry.records))

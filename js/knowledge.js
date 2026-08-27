@@ -3510,7 +3510,9 @@
         return { label_zh: cat.name_zh || cat.id, label_en: cat.name_en || "", items, gap: missing ? `${missing} 缺安全警訊` : "" };
       });
       const rest = conds.filter((c) => !seen.has(c.id)).sort(bySafetyThenName);
-      if (rest.length) buckets.push({ label_zh: "未分類", label_en: "Uncategorised", items: rest, gap: "" });
+      // 未分類桶的缺數跟其他桶同一把尺——寫死 "" 的話,無警訊卡恰好全落
+      // 這桶時(2026-08-27 三張 D23 骨架卡就是),桶標題會漏報缺口。
+      if (rest.length) buckets.push({ label_zh: "未分類", label_en: "Uncategorised", items: rest, gap: (n => n ? `${n} 缺安全警訊` : "")(rest.filter((c) => !hasRedFlags(c)).length) });
       return buckets;
     };
 

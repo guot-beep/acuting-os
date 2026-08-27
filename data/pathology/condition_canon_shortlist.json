@@ -1,6 +1,6 @@
 {
   "dataset": "WesternCondition canon shortlist (E2 skeleton WITH bidirectional mappings, per CONDITIONS_MODULE_DESIGN)",
-  "policy": "Skeleton + mapping layer written by Claude (the knowledge-dense part). Every related_eastern_diseases id exists in tdis_registry.json; every related_patterns id exists in pattern_library.json. Prose fields (summary, red_flags, western_context, seeds) are E3 fill batches — a condition may NOT render until red_flags is filled. All draft / needs_source_review. Mappings are study references, not diagnostic equivalence claims.",
+  "policy": "Skeleton + mapping layer written by Claude (the knowledge-dense part). Every related_eastern_diseases id exists in tdis_registry.json; every related_patterns id exists in pattern_library.json. Prose fields (summary, red_flags, western_context, seeds) are E3 fill batches. Rendering: a condition without red flags renders LABELLED, not hidden (js/knowledge.js since ce719ba1 2026-08-07 — '⚠ 無安全警訊' badge, sorted last in its bucket, counted in the header; the pre-ce719ba1 render gate hid such records and made the gap itself invisible). Red flags' canonical home is red_flag_registry.json — build-data.js derives card arrays at build time. All draft / needs_source_review. Mappings are study references, not diagnostic equivalence claims.",
   "created": "2026-07-12",
   "records": [
     {
