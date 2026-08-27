@@ -143,6 +143,39 @@ ICD-10 對照分歧、約 30 筆 `comparisons.json` 骨架記錄空著——**�
 
 ---
 
+# 2026-08-27 — clinical_graph_seed + red_flag_registry 照 D25 配方掃描:紅旗線以 0 問題通過全查,seed 三個小觀察(D23 裁定不動);十檔系列收官
+
+**red_flag_registry(226 筆)——模範線稱號經全配方實測坐實,0 個問題**:
+- policy 七句斷言逐句當可驗命題測,全真:id 唯一 PASS、(entity,trigger_zh)
+  唯一 PASS(斷言 1);entity_id 226 筆全解析、cond./tdis. 前綴零違規
+  (斷言 5);authored 35 筆全帶 https evidence(斷言 3,查不到就是答案);
+  tier 值零違規,缺 tier 的 40 筆恰好就是 40 筆 not_found legacy——無來源
+  支持就不定級,設計自洽。
+- provenance ledger 實測 151 supported / 40 not_found / 0 pending,與
+  RT6 宣稱逐字吻合;35 筆無 provenance_status 恰為 35 筆 authored(該欄
+  是 legacy 遷移概念,authored 不需要);覆蓋 79 entity 與 validator 宣稱
+  一致;rf.* 全 repo 懸空 0。
+- 結論:名冊+fail-loud+anti-drift 三件套的線,連 policy 文字都與量測
+  零偏差——八檔掃描的反面教材們缺的就是這個。
+
+**clinical_graph_seed(生育力軌種子,2026-06-18 建)——量測 only,
+D23 已裁「照 D15 前例保留原樣,出處層」,零改動**:
+- 迷你複本漂移 ×2(cond.pcos 多囊卵巢症候群 vs canon 多囊性卵巢症候群、
+  cond.unexplained_infertility 少個「症」字)——出處層凍結 by design,報告即可。
+- pattern.phlegm_damp_obstruction 只在 seed 有、canon 無——即當年
+  「痰濕內阻」那條舊線(樣本病例已改引 pattern.phlegm_damp),seed 內部
+  links 自洽(14 個 id 引用 0 不解析),不是懸空。
+- med_class.* 前綴(3 筆)vs relation_registry 保留的 med.*——用藥層
+  命名空間未統一,建層時要先裁,先記著。
+- status="schema_seed_for_review" 凍結自 6/18(共 2 commits)——種子的
+  歷史定位已被 D23 實質確認,review 是否要正式結案由 Ting 定,不急。
+
+至此 **D25 derived 治理掃描十檔全部完成**(pattern/tdis/symptoms/
+comparisons/condition_canon/formulas/herbs/acupoints/graph_seed/
+red_flag_registry)。零改動收官——本輪純量測,無資料異動。
+
+---
+
 # 2026-08-27 — acupoints(361.json)照 D25 六原則掃描:derived 連結線機制健全但宣告失真、寫入器藏整檔 reformat bug(已修)、127 條 pat.* 懸空確認即 D23 B桶
 
 Ting 指示掃穴位線。七檔系列最後一條,結果:
