@@ -1,3 +1,49 @@
+## ✅ Task 10D：Evidence & Provenance Fragmentation Inventory（已完成）
+
+- **類型**: READ-ONLY Evidence, Provenance & Review-State Architecture Inventory（0 production mutation, 0 CI workflow changes, 0 schema changes）
+- **分支**: `antigravity/task10d-evidence-provenance-fragmentation`
+- **主要產出**:
+  - 核心動態稽核腳本: `scripts/audit-evidence-provenance-fragmentation.js`
+  - 結構化資料庫: `data/audits/evidence_provenance_fragmentation_2026-08-27.json`
+  - 完整盤點報告: `docs/audits/EVIDENCE_PROVENANCE_FRAGMENTATION_2026-08-27.md`
+- **核心數據 (SSOT 直出)**:
+  - Base SHA: `0e0eb7aefc3962e79a3dc7af1c74975dc96ee3bc` (origin/main)
+  - Audit Source SHA: `d840c6f7c42904949d609c094dd431fb79d1ba7a`
+  - Delivery Commit SHA: `null` (外部 Git 分支 HEAD 紀錄)
+  - 掃描正典資料集: **27** 個
+  - 識別來源/審查欄位總數: **119** 個
+  - 具 Runtime / UI 消費者欄位: **51** 個
+  - 僅 Validator 消費者欄位: **19** 個
+  - 暗數據無消費者欄位 (DATA_PRESENT_NO_CONSUMER_FOUND): **34** 個
+  - 欄位重疊比對矩陣: **8** 組
+  - 隱含優先序覆蓋鏈路: **568** 處
+  - 自測回歸 Fixtures: **8/8 PASS**
+
+---
+
+## ✅ Task 10D：Evidence & Provenance Fragmentation Inventory（已完成）
+
+- **類型**: READ-ONLY Evidence, Provenance & Review-State Architecture Inventory（0 production mutation, 0 CI workflow changes, 0 schema changes）
+- **分支**: `antigravity/task10d-evidence-provenance-fragmentation`
+- **主要產出**:
+  - 核心動態稽核腳本: `scripts/audit-evidence-provenance-fragmentation.js`
+  - 結構化資料庫: `data/audits/evidence_provenance_fragmentation_2026-08-27.json`
+  - 完整盤點報告: `docs/audits/EVIDENCE_PROVENANCE_FRAGMENTATION_2026-08-27.md`
+- **核心數據 (SSOT 直出)**:
+  - Base SHA: `0e0eb7aefc3962e79a3dc7af1c74975dc96ee3bc` (origin/main)
+  - Audit Source SHA: `72cd092cffe96d46fc1f21ab6e96d486cb426553`
+  - Delivery Commit SHA: `null` (外部 Git 分支 HEAD 紀錄)
+  - 掃描正典資料集: **27** 個
+  - 識別來源/審查欄位總數: **119** 個
+  - 具 Runtime / UI 消費者欄位: **51** 個
+  - 僅 Validator 消費者欄位: **19** 個
+  - 暗數據無消費者欄位 (DATA_PRESENT_NO_CONSUMER_FOUND): **34** 個
+  - 欄位重疊比對矩陣: **8** 組
+  - 隱含優先序覆蓋鏈路: **567** 處
+  - 自測回歸 Fixtures: **8/8 PASS**
+
+---
+
 ## ✅ Task 10C Round 4：Final Evidence Integrity & Full v2 Restore Lifecycle（已完成）
 
 - **類型**: READ-ONLY Clinical Backup/Restore Contract & Final Evidence Integrity Audit（0 production mutation, 0 CI workflow changes, 0 debt repairs）

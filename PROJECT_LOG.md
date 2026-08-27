@@ -1,3 +1,37 @@
+# 2026-08-27 Antigravity — Task 10D (Evidence & Provenance Fragmentation Inventory)
+
+- **做了什麼**: 完成 Task 10D 來源、證據、核實與審查架構片段化盤點稽核（`scripts/audit-evidence-provenance-fragmentation.js`）：(1) 掃描 27 個正典/設定資料集，識別 119 個來源與審查相關欄位；(2) 機械式映射所有欄位之程式消費者（51 個具執行期讀取、19 個僅驗證器讀取、34 個暗數據無消費者）；(3) 建立 8 組共存欄位對之重疊與相容性矩陣；(4) 探測出 568 處代碼層隱含優先序遮蔽鏈路；(5) 產出正典各家族之來源中繼覆蓋率與生成包生命週期行為。
+- **數字統計**:
+  - 正典資料庫掃描數: 27 個
+  - 識別來源與審查欄位: 119 個
+  - 具 Runtime/UI 消費者欄位: 51 個
+  - 僅 Validator 消費者欄位: 19 個
+  - 暗數據欄位 (DATA_PRESENT_NO_CONSUMER_FOUND): 34 個
+  - 分析之共存欄位對: 8 組
+  - 隱含優先序鏈路 (Precedence Chains): 568 處
+- **驗證結果**: 8/8 自我測試 Fixtures 100% PASS；生產資料 0 異動。
+- **已知未解**: 存在多重來源欄位共存但優先序不透明（如 `preferredCitation` $\rightarrow$ `exact_source_url` $\rightarrow$ `source_urls`）；狀態詞彙跨維度共用（如 `draft`、`verified`）；部分欄位（如 `dose_source`、`source_hint`）在正典有資料但無代碼讀取。
+- **下一步**: 推送至 `antigravity/task10d-evidence-provenance-fragmentation`，等待 Ting / 團隊審閱，不開始 Task 10E。
+
+---
+
+# 2026-08-27 Antigravity — Task 10D (Evidence & Provenance Fragmentation Inventory)
+
+- **做了什麼**: 完成 Task 10D 來源、證據、核實與審查架構片段化盤點稽核（`scripts/audit-evidence-provenance-fragmentation.js`）：(1) 掃描 27 個正典/設定資料集，識別 119 個來源與審查相關欄位；(2) 機械式映射所有欄位之程式消費者（51 個具執行期讀取、19 個僅驗證器讀取、34 個暗數據無消費者）；(3) 建立 8 組共存欄位對之重疊與相容性矩陣；(4) 探測出 567 處代碼層隱含優先序遮蔽鏈路；(5) 產出正典各家族之來源中繼覆蓋率與生成包生命週期行為。
+- **數字統計**:
+  - 正典資料庫掃描數: 27 個
+  - 識別來源與審查欄位: 119 個
+  - 具 Runtime/UI 消費者欄位: 51 個
+  - 僅 Validator 消費者欄位: 19 個
+  - 暗數據欄位 (DATA_PRESENT_NO_CONSUMER_FOUND): 34 個
+  - 分析之共存欄位對: 8 組
+  - 隱含優先序鏈路 (Precedence Chains): 567 處
+- **驗證結果**: 8/8 自我測試 Fixtures 100% PASS；生產資料 0 異動。
+- **已知未解**: 存在多重來源欄位共存但優先序不透明（如 `preferredCitation` $\rightarrow$ `exact_source_url` $\rightarrow$ `source_urls`）；狀態詞彙跨維度共用（如 `draft`、`verified`）；部分欄位（如 `dose_source`、`source_hint`）在正典有資料但無代碼讀取。
+- **下一步**: 推送至 `antigravity/task10d-evidence-provenance-fragmentation`，等待 Ting / 團隊審閱，不開始 Task 10E。
+
+---
+
 # 2026-08-27 Antigravity — Task 10C Round 4 (Final Evidence Integrity & Full v2 Restore Lifecycle)
 
 - **做了什麼**: 完成 Task 10C Round 4 臨床病歷匯出/匯入/還原契約動態驗證（`scripts/audit-clinical-export-contract.js`）：(1) 修正 Fixture 12 真實執行完整 v2 還原鏈路（`restoreV2Envelope` $\rightarrow$ `load` $\rightarrow$ `normalizeClinicalCase` $\rightarrow$ `save` $\rightarrow$ 讀出驗證信封層保留、病例層 UI 週期剔除）；(2) 移除寫死變數，改由 `runAudit()` 實體執行隔離探針動態衍生 q8 部分輸入覆寫破壞性；(3) 修正交付元資料，精確標註 Base SHA、Audit Source SHA 與 delivery_commit_sha（由 Git 分支 HEAD 外部紀錄）。
