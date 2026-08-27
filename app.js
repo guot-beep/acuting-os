@@ -11097,8 +11097,27 @@ function importClinicalCases(event) {
           alert(`合併被拒絕 Merge rejected — ${violations.length} 筆事件歷史會被改寫/截短:\n\n${violations.slice(0, 5).join("\n")}${violations.length > 5 ? "\n…" : ""}\n\n事件歷史只能延伸,不能改寫(append-only)。若這是刻意的災難復原,請改用 Restore 模式。`);
           return;
         }
+        // R12(2026-08-27,Task 10C round2-4 稽核抓到後修): Merge 模式的說明文字寫「保留
+        // 現有病例,只新增/延伸」,但這裡原本是整筆 byId.set(inc.id, inc) 蓋掉——匯入檔裡
+        // 只填部分欄位的同 id 病例會把現有病例沒提到的欄位整個清空,不是延伸。改成逐欄位
+        // 合併:只有「匯入檔原始物件真的有寫這個 key」的欄位才覆蓋既有值,其餘保留。用
+        // `imported`(unwrapV1CasesPayload 出來的原始物件,對應同一個 index)判斷有沒有寫,
+        // 不能用 `inc`(normalizeClinicalCase 補完後的物件永遠每個欄位都有值,沒填跟特意
+        // 清空分不出來)。新病例(existing 不存在)照舊整筆採用,不受影響。
         const byId = new Map(clinicalCases.map((c) => [c.id, c]));
-        for (const inc of incoming) byId.set(inc.id, inc);
+        incoming.forEach((inc, i) => {
+          const existing = byId.get(inc.id);
+          if (!existing) {
+            byId.set(inc.id, inc);
+            return;
+          }
+          const raw = imported[i] && typeof imported[i] === "object" ? imported[i] : {};
+          const merged = { ...existing };
+          for (const key of Object.keys(inc)) {
+            if (Object.prototype.hasOwnProperty.call(raw, key)) merged[key] = inc[key];
+          }
+          byId.set(inc.id, merged);
+        });
         clinicalCases = [...byId.values()];
       } else {
         const really = window.confirm(

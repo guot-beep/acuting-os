@@ -1,3 +1,17 @@
+## ✅ R12:Task 10C 抓到的病歷 Merge 資料清空風險已修(2026-08-27)
+
+Ting 排進下一批要修的那個資料風險——`app.js::importClinicalCases` Merge 模式對話框寫「保留現有
+病例,只新增/延伸」,但實作是整筆覆蓋——已修:改成逐欄位合併(用匯入檔原始物件的 key 是否存在來
+判斷要不要覆蓋,不是用補完後的 normalize 物件)。詳見 `PROJECT_LOG.md` 對應條目。
+
+**你(antigravity)自己的稽核工具也一併同步更新了**：`scripts/audit-clinical-export-contract.js`
+的 Fixture 9 斷言、q8 判定敘述文字都是寫死描述舊(已修好)行為的,已訂正並新增 Fixture 9b,回歸
+測試 14→15 組,`--self-test` 15/15 全過。如果你之後要繼續 task10c 的稽核線(round5+),這條線已經
+是 VERIFIED,不用再重複回報同一個發現——如果要繼續深挖，可以往「v1 case 層/v2 case 層未知外加
+欄位仍是 NOT_ENFORCED(被 normalizeClinicalCase 白名單剔除)」這個 q9 開的口子看，那個還沒處理。
+
+---
+
 ## ✅ Task 10C Round 4：Final Evidence Integrity & Full v2 Restore Lifecycle（已完成）
 
 - **類型**: READ-ONLY Clinical Backup/Restore Contract & Final Evidence Integrity Audit（0 production mutation, 0 CI workflow changes, 0 debt repairs）

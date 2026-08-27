@@ -1,3 +1,44 @@
+# 2026-08-27 — R12:病歷匯入 Merge 模式改成逐欄位合併,修掉 Task 10C 抓到的資料清空風險
+
+Ting 要求把 Task 10C round2-4 一路確認的那個資料風險「排進下一批要修的」。這是判斷型/行為變更工作,
+沒有指派給 antigravity,直接自己做。
+
+**根因**：`app.js::importClinicalCases` 的 Merge 模式對話框寫「保留現有病例,只新增/延伸」,但原本
+的實作是 `byId.set(inc.id, inc)`——拿匯入檔同 id 病例整筆蓋掉現有的。匯入檔裡若有一筆只填部分欄位
+的同 id 病例(舊備份、手動修過的片段、其他系統匯出的簡化版),現有病歷沒被提到的欄位會被整個清空,
+不是延伸。這正是 Task 10C round2/round3/round4 三輪稽核(Fixture 9)一路重現、逐輪加強驗證方式後
+仍然存在的同一個發現。
+
+**修法**：Merge 分支改成逐欄位合併——只有「匯入檔原始物件真的有寫這個 key」的欄位才覆蓋既有值,
+其餘保留。判斷「有沒有寫」用的是 `unwrapV1CasesPayload` 解出來的**原始**物件,不是
+`normalizeClinicalCase` 補完後的物件(補完後的物件永遠每個欄位都有值,會讓「沒填」跟「特意清空」
+分不出來)。新病例(同 id 在現有清單裡找不到)照舊整筆採用,不受影響;匯入檔裡明確有寫的欄位一樣
+會正常更新/延伸,不是整批忽略匯入。Restore 模式(整包覆蓋,災難復原用)完全沒動,那本來就該是全覆蓋
+設計。
+
+**獨立驗證**：另外寫了一支不依賴任何既有工具的驗證腳本,直接用跟 `scripts/audit-clinical-export-
+contract.js` 相同的 VM 沙盒技巧載入真正的 `app.js` 生產函式執行(不是重新實作邏輯),重現 Task 10C
+Fixture 9 的確切情境,確認：(1) 匯入檔沒提到的欄位全部保留,(2) 匯入檔裡明確有寫的欄位正常更新,
+(3) 全新病例(無 id 衝突)正常插入不受影響。
+
+**同步更新了 antigravity 自己的稽核工具,不然它會永遠對已修好的問題喊假警報**：
+`scripts/audit-clinical-export-contract.js` 的 q8 判定本來就是動態探測(不是寫死),修完 app.js 後
+自動從 `NOT_ENFORCED` 翻成 `VERIFIED`,不用改判定邏輯本身;但 Fixture 9 的斷言、q8/摘要表的敘述
+文字、Fixture 9 的 log 訊息都是寫死描述「舊行為」的,已經一併訂正,並新增 Fixture 9b(驗證明確有寫
+的欄位仍然正常更新,證明這是逐欄位合併不是整批忽略匯入)——回歸測試從 14 組變 15 組,`--self-test`
+15/15 全過。
+
+**驗證**：`build-data`／`validate-herb-standard`／`check-validation-ratchet`(0 退步)／
+`validate-content-junk`／`test-branch-mergeable` 全 PASS;另外把這個路徑相關的既有 CI 守衛全部
+重跑過一遍：`scripts/test-export-envelope-shapes.js`(10/10)、`scripts/validate-clinical-
+invariants.js`(0 violations)、`scripts/validate-clinical-store-phi-boundary.js`(PASS)、
+`scripts/test-pointer-runtime.js`(36/36)、`scripts/rehearse-runtime-restore.js`(65/65)、
+`scripts/test-avs-checkout.js`(118/118)——全部沒受影響。只改了 `app.js` 一個合併區塊(19 行)、
+`scripts/audit-clinical-export-contract.js` 的斷言與敘述文字、跟這兩支腳本重新產生的 JSON/MD
+報告,沒有動任何正典資料。
+
+---
+
 # 2026-08-27 Antigravity — Task 10C Round 4 (Final Evidence Integrity & Full v2 Restore Lifecycle)
 
 - **做了什麼**: 完成 Task 10C Round 4 臨床病歷匯出/匯入/還原契約動態驗證（`scripts/audit-clinical-export-contract.js`）：(1) 修正 Fixture 12 真實執行完整 v2 還原鏈路（`restoreV2Envelope` $\rightarrow$ `load` $\rightarrow$ `normalizeClinicalCase` $\rightarrow$ `save` $\rightarrow$ 讀出驗證信封層保留、病例層 UI 週期剔除）；(2) 移除寫死變數，改由 `runAudit()` 實體執行隔離探針動態衍生 q8 部分輸入覆寫破壞性；(3) 修正交付元資料，精確標註 Base SHA、Audit Source SHA 與 delivery_commit_sha（由 Git 分支 HEAD 外部紀錄）。

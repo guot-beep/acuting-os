@@ -1,8 +1,8 @@
 {
   "meta": {
     "timestamp": "2026-08-27T00:36:00Z",
-    "base_sha": "5001cc02cc49dcd88543f1049f5ac80e6e69d19c",
-    "audit_source_sha": "2697decf7fd91b4ea378f92694e051ecd6394290",
+    "base_sha": "bcb8b7ae07bfd306c8e3e71c092dc7b48647ee6e",
+    "audit_source_sha": "0e0eb7aefc3962e79a3dc7af1c74975dc96ee3bc",
     "delivery_commit_sha": null,
     "note": "The immutable delivery commit SHA is the Git branch HEAD recorded externally upon commit creation.",
     "audit_type": "READ_ONLY_CLINICAL_EXPORT_IMPORT_CONTRACT_AUDIT"
@@ -11,7 +11,7 @@
     "producers_count": 7,
     "consumers_count": 7,
     "reachable_routes_count": 11,
-    "regression_fixtures_count": 14
+    "regression_fixtures_count": 15
   },
   "producers": [
     {
@@ -454,8 +454,8 @@
       "evidence": "In v1, JSON.parse, unwrapV1CasesPayload, checkClinicalInvariants, and findImportHistoryViolations run prior to persistClinicalCases(). In v2, candidate key staging and verification run prior to active staging swap. Real import harness confirms zero storage mutation on malformed input."
     },
     "q8_partial_or_invalid_input_overwrite_protection": {
-      "status": "NOT_ENFORCED",
-      "details": "Observed production behavior: An incoming structurally valid but partial case object sharing an existing ID overwrites and erases existing fields under v1 Merge mode (unless an exposure history violation is triggered), because Map merge replaces the case object. Under Restore mode, the entire store is replaced."
+      "status": "VERIFIED",
+      "details": "R12 (2026-08-27) fix confirmed by probe: v1 Merge mode now merges field-by-field keyed on presence in the raw imported object (not the normalizeClinicalCase-completed one) -- a field absent from the incoming case is preserved from the existing record; a field explicitly present still updates/extends as intended. Restore mode is unchanged and still replaces the entire store (by design, disaster-recovery only)."
     },
     "q9_unknown_additive_fields_preserved": {
       "status": "PARTIAL",

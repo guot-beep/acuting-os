@@ -211,7 +211,7 @@ function createRealAppHarness(initialCases = [], initialPointer = null, initialS
 }
 
 async function runSelfTest() {
-  console.log("=== RUNNING TASK 10C MUTATION BOUNDARY REGRESSION SUITE (14 FIXTURES) ===");
+  console.log("=== RUNNING TASK 10C MUTATION BOUNDARY REGRESSION SUITE (15 FIXTURES) ===");
   const baseHarness = createRealAppHarness();
   require(path.join(ROOT, "js/clinical-store.js"));
   const S = globalThis.AcuTingClinicalStore;
@@ -328,13 +328,35 @@ async function runSelfTest() {
   const h9 = createRealAppHarness([fullExistingCase]);
   const partialIncoming = [{ id: "c1", patientCode: "P1" }]; // missing all clinical details
   const res9 = await h9.executeImport(JSON.stringify(partialIncoming), { merge: true });
-  assert.strictEqual(res9.storageMutated, true);
+  // No storageMutated assertion here: with R12's field-presence merge, this specific
+  // input (patientCode "P1" -> "P1", nothing else mentioned) produces a case object
+  // byte-identical to what already existed, so the serialized store genuinely does
+  // not change -- that IS the fix working, not a missed write. Fixture 9b below uses
+  // a real content change (goals) and asserts storage is written in that case.
   const mergedCase = res9.inMemoryCases.find((c) => c.id === "c1");
-  assert.strictEqual(mergedCase.caseTitle, "");
-  assert.strictEqual(mergedCase.sex, "");
-  assert.strictEqual(mergedCase.historyPresent, "");
-  assert.strictEqual(mergedCase.soapNotes.length, 0);
-  console.log("PASS [Fixture 9]: Partial case input under Merge -> real importClinicalCases replaces case and resets omitted fields");
+  // R12 (2026-08-27): Merge mode now merges field-by-field keyed on presence in the
+  // raw imported object, not the normalizeClinicalCase-completed one -- a field the
+  // incoming case doesn't mention is PRESERVED from the existing record, matching
+  // the import dialog's own promise ("保留現有病例,只新增/延伸"). Previously this
+  // fixture asserted the opposite (destructive reset to "" / []); that was the bug.
+  assert.strictEqual(mergedCase.caseTitle, "Full Important Title");
+  assert.strictEqual(mergedCase.sex, "F");
+  assert.strictEqual(mergedCase.historyPresent, "Severe pain for 3 months");
+  assert.strictEqual(mergedCase.soapNotes.length, 1);
+  assert.strictEqual(mergedCase.patientCode, "P1"); // present in incoming (same value) -- still applied
+  console.log("PASS [Fixture 9]: Partial case input under Merge -> real importClinicalCases now PRESERVES omitted fields (R12 fix)");
+  passed++;
+
+  // Fixture 9b: a field genuinely present in the incoming case still updates/extends,
+  // proving the fix is a field-presence merge, not "ignore the import entirely".
+  const h9b = createRealAppHarness([fullExistingCase]);
+  const updatingIncoming = [{ id: "c1", patientCode: "P1", goals: "Heal completely (updated)" }];
+  const res9b = await h9b.executeImport(JSON.stringify(updatingIncoming), { merge: true });
+  assert.strictEqual(res9b.storageMutated, true); // genuine content change this time -> storage IS written
+  const mergedCase9b = res9b.inMemoryCases.find((c) => c.id === "c1");
+  assert.strictEqual(mergedCase9b.goals, "Heal completely (updated)");
+  assert.strictEqual(mergedCase9b.caseTitle, "Full Important Title"); // still absent from incoming -> still preserved
+  console.log("PASS [Fixture 9b]: A field explicitly present in the incoming case still updates/extends under Merge");
   passed++;
 
   // Fixture 10: partial case input under Restore -> executed through real app.js::importClinicalCases
@@ -429,7 +451,7 @@ async function runSelfTest() {
     passed++;
   }
 
-  console.log(`\nSelf-Test Complete: ${passed}/14 fixtures passed.\n`);
+  console.log(`\nSelf-Test Complete: ${passed}/15 fixtures passed.\n`);
   return passed;
 }
 
@@ -804,7 +826,9 @@ async function runAudit() {
     },
     q8_partial_or_invalid_input_overwrite_protection: {
       status: partialOverwritesExistingFields ? "NOT_ENFORCED" : "VERIFIED",
-      details: "Observed production behavior: An incoming structurally valid but partial case object sharing an existing ID overwrites and erases existing fields under v1 Merge mode (unless an exposure history violation is triggered), because Map merge replaces the case object. Under Restore mode, the entire store is replaced."
+      details: partialOverwritesExistingFields
+        ? "Observed production behavior: An incoming structurally valid but partial case object sharing an existing ID overwrites and erases existing fields under v1 Merge mode (unless an exposure history violation is triggered), because Map merge replaces the case object. Under Restore mode, the entire store is replaced."
+        : "R12 (2026-08-27) fix confirmed by probe: v1 Merge mode now merges field-by-field keyed on presence in the raw imported object (not the normalizeClinicalCase-completed one) -- a field absent from the incoming case is preserved from the existing record; a field explicitly present still updates/extends as intended. Restore mode is unchanged and still replaces the entire store (by design, disaster-recovery only)."
     },
     q9_unknown_additive_fields_preserved: {
       status: "PARTIAL",
@@ -852,7 +876,7 @@ async function runAudit() {
       producers_count: producers.length,
       consumers_count: consumers.length,
       reachable_routes_count: routes.length,
-      regression_fixtures_count: 14
+      regression_fixtures_count: 15
     },
     producers,
     consumers,
@@ -884,11 +908,11 @@ function generateMarkdownReport(auditData) {
 | **Clinical Backup / Export Producers** | **${counts.producers_count}** | 包含 v1/v2 UI 匯出、災難復原前自動備份、C2b 遷移產出、歷史裸陣列 |
 | **Import / Restore Consumers** | **${counts.consumers_count}** | 包含 v1 解包、v2 還原引擎、v1/v2 本地讀取、C2b 遷移解析、CI 驗證器 |
 | **Reachable Real Routes** | **${counts.reachable_routes_count}** | 覆蓋全生命週期所有可達之匯出 $\\rightarrow$ 匯入路徑 |
-| **Mutation-Boundary Fixtures** | **${counts.regression_fixtures_count}** | 14 組直通實體 \`app.js::importClinicalCases\` 與 \`restoreV2Envelope\` 之隔離測試 |
+| **Mutation-Boundary Fixtures** | **${counts.regression_fixtures_count}** | 15 組直通實體 \`app.js::importClinicalCases\` 與 \`restoreV2Envelope\` 之隔離測試 |
 | **Pre-envelope Bare Array Support** | **${q.q4_pre_envelope_bare_array_accepted.status}** | 舊裸陣列備份永久支援，由 \`unwrapV1CasesPayload\` 原樣通過 |
 | **Future Version Fail-Closed** | **${q.q6_future_schema_versions_rejected_loudly.status}** | 未知/未來版本（如 \`schema_version: 99\`）於讀取邊界直接阻擋並拋出明確錯誤 |
 | **Fail-Before-Write Protection** | **${q.q7_malformed_envelopes_rejected_before_mutating_storage.status}** | 任何格式毀損、不變量違規、歷史截斷均在儲存寫入前中止，不產生副作用 |
-| **Partial-Input Overwrite Protection** | **${q.q8_partial_or_invalid_input_overwrite_protection.status}** | 實體執行證實：同 ID 部分欄位物件在 Merge 模式下因 Map 覆蓋而重置未列欄位 |
+| **Partial-Input Overwrite Protection** | **${q.q8_partial_or_invalid_input_overwrite_protection.status}** | 實體執行證實：R12(2026-08-27)修復後，Merge 模式改為逐欄位合併，同 ID 部分欄位物件不再重置既有欄位（見下方 Q8） |
 | **PHI-Safe Error Reporting** | **${q.q12_error_messages_phi_safe.status}** | 錯誤訊息只描述長度與格式結構，絕不回顯病歷內容與原始 PHI |
 | **Unknown Field Preservation** | **${q.q9_unknown_additive_fields_preserved.status}** | v1 匯入路徑走 normalizer 白名單過濾；v2 儲存層保留信封欄位，UI 週期剔除病例欄位 |
 | **Case Count Verification** | **${q.q10_case_count_validated.status}** | v1 信封之 \`case_count\` 為資訊性欄位，解包時不強制作長度比對 |
@@ -941,7 +965,7 @@ ${auditData.consumers.map((c) => `- **${c.id} (${c.name})** [${c.type}]: 接受�
 
 ### Q8. 不完整或無效之輸入是否可能覆寫現存有效資料？
 - **判定**: **\`${q.q8_partial_or_invalid_input_overwrite_protection.status}\`**
-- **佐證**: 直通實體 \`app.js::importClinicalCases\` 實測證實：若匯入檔包含合法 JSON 但結構極為簡略（例如同 ID 但僅含 \`{ id, patientCode }\`），在 v1 Merge 模式下，由於無用藥/AVS 歷史違規，Map 合併將直接以該 partial case 覆蓋現有完整病例物件，導致性別、主訴、病程等欄位被重置為預設空值（\`""\`、\`[]\`）。Restore 模式則整庫替換。因此，部分輸入防護在欄位層次屬於 NOT_ENFORCED（具備欄位覆寫破壞性）。
+- **佐證**: 直通實體 \`app.js::importClinicalCases\` 動態探針實測（非寫死結論）：\`${q.q8_partial_or_invalid_input_overwrite_protection.details}\`
 
 ### Q9. 未知/外加欄位在 Export $\\rightarrow$ Import $\\rightarrow$ Export 週期中是否被保留？
 - **判定**: **\`${q.q9_unknown_additive_fields_preserved.status}\`**
@@ -986,7 +1010,7 @@ ${auditData.consumers.map((c) => `- **${c.id} (${c.name})** [${c.type}]: 接受�
 
 ## 4. 回歸測試驗證（Regression Fixtures）
 
-本稽核腳本內建 14 項目標回歸測試（\`--self-test\`），全部直通 \`app.js::importClinicalCases\` 與 \`js/clinical-store.js\` 原始生產邏輯執行：
+本稽核腳本內建 15 項目標回歸測試（\`--self-test\`），全部直通 \`app.js::importClinicalCases\` 與 \`js/clinical-store.js\` 原始生產邏輯執行：
 1. **Fixture 1**: 舊裸陣列備份直接原樣通過 (\`unwrapV1CasesPayload\`) $\\rightarrow$ **PASS**
 2. **Fixture 2**: 合法 \`schema_version: 1\` 信封 round-trip 解包 $\\rightarrow$ **PASS**
 3. **Fixture 3**: 格式毀損之 cases 欄位直通 \`importClinicalCases\` 寫入前拒收，儲存零更動 $\\rightarrow$ **PASS**
@@ -995,12 +1019,13 @@ ${auditData.consumers.map((c) => `- **${c.id} (${c.name})** [${c.type}]: 接受�
 6. **Fixture 6**: 重複 Case ID 直通 \`importClinicalCases\` 在 v1 Merge 模式下呈現 Last-Wins $\\rightarrow$ **PASS**
 7. **Fixture 7**: 重複 Case ID 直通 \`restoreV2Envelope\` 驗證二階段拒收且 active staging 零變更 $\\rightarrow$ **PASS**
 8. **Fixture 8**: \`case_count\` 不一致行為驗證 (v1 解包視為資訊性) $\\rightarrow$ **PASS**
-9. **Fixture 9**: 部分輸入 (Partial Input) 直通 \`importClinicalCases\` 在 Merge 模式下重置未列欄位之破壞性實測 $\\rightarrow$ **PASS**
-10. **Fixture 10**: 部分輸入 (Partial Input) 直通 \`importClinicalCases\` 在 Restore 模式下全庫取代之破壞性實測 $\\rightarrow$ **PASS**
-11. **Fixture 11**: v1 case 層未知外加欄位在 \`normalizeClinicalCase\` 中被過濾剔除 $\\rightarrow$ **PASS**
-12. **Fixture 12**: v2 未知欄位完整生命週期實測（經 \`restoreV2Envelope\` 寫入 staging，經 \`load\` 讀出，經 \`normalizeClinicalCase\` 過濾，經 \`save\` 寫回，確認信封層保留、病例層剔除） $\\rightarrow$ **PASS**
-13. **Fixture 13**: v2 信封傳入 v1 解包函式時 Fail-Closed 阻擋 $\\rightarrow$ **PASS**
-14. **Fixture 14**: 錯誤訊息注入假 PHI 文字，驗證錯誤回顯絕不包含敏感內容 $\\rightarrow$ **PASS**
+9. **Fixture 9**: 部分輸入 (Partial Input) 直通 \`importClinicalCases\` 在 Merge 模式下驗證：R12(2026-08-27)修復後，匯入檔沒提到的既有欄位被保留，不再重置為空值 $\\rightarrow$ **PASS**
+10. **Fixture 9b**: 匯入檔裡明確有寫的欄位仍然照常更新/延伸(證明 R12 是逐欄位合併，不是整批忽略匯入) $\\rightarrow$ **PASS**
+11. **Fixture 10**: 部分輸入 (Partial Input) 直通 \`importClinicalCases\` 在 Restore 模式下全庫取代之破壞性實測(Restore 模式本來就是整包覆蓋設計，R12 未變動此模式) $\\rightarrow$ **PASS**
+12. **Fixture 11**: v1 case 層未知外加欄位在 \`normalizeClinicalCase\` 中被過濾剔除 $\\rightarrow$ **PASS**
+13. **Fixture 12**: v2 未知欄位完整生命週期實測（經 \`restoreV2Envelope\` 寫入 staging，經 \`load\` 讀出，經 \`normalizeClinicalCase\` 過濾，經 \`save\` 寫回，確認信封層保留、病例層剔除） $\\rightarrow$ **PASS**
+14. **Fixture 13**: v2 信封傳入 v1 解包函式時 Fail-Closed 阻擋 $\\rightarrow$ **PASS**
+15. **Fixture 14**: 錯誤訊息注入假 PHI 文字，驗證錯誤回顯絕不包含敏感內容 $\\rightarrow$ **PASS**
 
 ---
 `;
