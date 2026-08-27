@@ -1,8 +1,8 @@
 # Evidence & Provenance Fragmentation Inventory — Task 10D (Round 3)
 
 - **Audit Date**: 2026-08-27
-- **Base SHA (origin/main)**: `302cef57608744a48b5a487c613e70a9e232722f`
-- **Audit Source SHA**: `302cef57608744a48b5a487c613e70a9e232722f`
+- **Base SHA (origin/main)**: `a2f52d685c333f8094e4d02f7d55aba3623d445f`
+- **Audit Source SHA**: `c6b1a6cbd43f30353967019ee1140d11ccddfb13`
 - **Delivery Commit SHA**: `null` (The immutable delivery commit SHA is the Git branch HEAD recorded externally upon commit creation.)
 - **Scope**: Canonical Evidence, Provenance, Authorship, Review State, and Source Verification Architecture
 - **Core Invariant**: 「A property name is not a fallback operand, and a field name appearing in a generated file is not proof that the canonical field survived into runtime.」

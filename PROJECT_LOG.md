@@ -15,6 +15,23 @@
 
 ---
 
+# 2026-08-27 Antigravity — Task 10D Round 3 (Final Measurement Integrity Only)
+
+- **做了什麼**: 完成 Task 10D Round 3 量測引擎終審重構（`scripts/audit-evidence-provenance-fragmentation.js`）：(1)  occurrence 級消費者精確分類：寫入（`WRITES`）不再自動污染為 `READS_VALUE`、`UI_CONSUMER`、`RUNTIME_CONSUMER` 或 `DISPLAYS`，僅在欄位直接參與模板字面量或 DOM 賦值時標記 `DISPLAYS`；(2) 優先序運算元精確提取：嚴格解析 `||`、`??` 與條件 fallback 之實質欄位存取運算元（如 `record.sources`、`record.source_urls`），排除物件鍵名（`sources:`）、字串常數（`"Visual reference"`）、回呼變數與同行無關欄位，識別出 4 處真優先序鏈路；(3) 生成包存活依循真實構建依賴圖（動態探測 `index.html` 載入之生成檔案），比對正典與生成記錄欄位值；(4) 8/8 測試套件具備真實失敗能力（Fixture 4 驗證 write-only、Fixture 7 驗證 5 種負向優先序、Fixture 8 驗證合成正典→生成分類）。
+- **數字統計**:
+  - 正典資料庫掃描數: 27 個
+  - 嚴格正典來源/審查欄位: 43 個
+  - 候選相關非來源欄位 (獨立排除): 10 個
+  - 具 Runtime/UI 消費者欄位: 20 個
+  - 暗數據欄位 (DATA_PRESENT_NO_CONSUMER_FOUND): 7 個
+  - 逐筆數值比對之重疊欄位對: 7 組
+  - 實質跨 2+ 來源欄位優先序鏈路: 4 處
+- **驗證結果**: 8/8 自我測試 Fixtures 100% PASS；生產代碼與正典資料 0 異動。
+- **已知未解**: 存在 4 處優先序鏈路遮蔽次要來源（如 `sources` 優先於 `cloudtcm_url`）；狀態詞彙在不同維度共用；部分暗數據欄位（如 `original_shape`、`source_field`）在正典有值但無消費者。
+- **下一步**: 推送至 `antigravity/task10d-evidence-provenance-fragmentation-round3`，等待 Ting / 團隊審閱，不開始 Task 10E。
+
+---
+
 # 2026-08-27 — R12:病歷匯入 Merge 模式改成逐欄位合併,修掉 Task 10C 抓到的資料清空風險
 
 Ting 要求把 Task 10C round2-4 一路確認的那個資料風險「排進下一批要修的」。這是判斷型/行為變更工作,
