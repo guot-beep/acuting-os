@@ -1,3 +1,76 @@
+# 2026-08-27 — Ting 裁定:撤 bai_xian_pi 藥對最後一處「蛇床子尚未建卡」句;蛇床子卡補 key_pairs 反向連結
+
+承上一條末尾留的紅旗。Ting 裁定「那很簡單啊就改啊」+「增加原本要寫的 pair」。
+
+**先答「蛇床子為什麼沒建卡」——它有建卡,那句話是過時的假陳述,不是缺卡。**
+時間線(git 可重現):
+- `ec71d68c` 2026-07-29 00:38 herb batch 8 寫下這條藥對,當時蛇床子**確實**還沒卡,註記為真。
+- `0e15014e` 2026-07-29 17:07 herb batch 14(network-verified)建了 `herb.she_chuang_zi`,
+  距上一步 16.5 小時、同一天、不同批,**沒人回頭掃前批的註記**。
+- `0b100606` 2026-07-31 藥對標準化把這句原樣抄進 caution/cautions 四欄,過時陳述被複製放大。
+沒有人在寫的當下寫錯;是「卡片晚幾小時到、註記沒人回收」的流程洞。批次交接時要回掃前批的
+pending 註記,不然假陳述會被下一輪標準化複製。
+
+**改動 1:撤最後一處過時句(1 條藥對 × 4 欄)**
+`pair.di_fu_zi__ku_shen__bai_xian_pi`,只撤第二分句,前半禁忌一字不動,`；`收為`。`:
+- 前:「苦寒燥濕,脾胃虛寒、無濕熱者禁用/慎用;蛇床子尚未建卡,本批未列入正式 pair。」
+- 後:「苦寒燥濕,脾胃虛寒、無濕熱者禁用/慎用。」
+- en 前:"...absence of Damp-Heat. She Chuang Zi is not yet a local card, so it is not included here."
+- en 後:"...absence of Damp-Heat."
+caution_zh/en 與 cautions_zh/en 四欄同步,改後仍兩兩相等。
+
+**「原本要寫的 pair」查證:已經在庫裡,無須新增。**
+那句說「本批未列入正式 pair」——實際上蛇床子的藥對有兩條,都早已存在:
+- `pair.she_chuang_zi__ku_shen` 蛇床子配苦參(相須,American Dragon)
+- `pair.di_fu_zi__ku_shen__she_chuang_zi` 地膚子配苦參、蛇床子(相使,AD+CloudTCM)
+所以第二分句與第一分句一樣是過時陳述,不是待辦。**沒有憑空新增藥對記錄。**
+
+**改動 2:真正缺的是反向連結——蛇床子卡 `key_pairs` 是空的**
+藥對那一側有記錄,卡片這一側 `key_pairs: []`,卡上看不到自己的藥對。補 1 條:
+`蛇床子 + 苦參 Ku Shen`,rationale 雙語**取自本庫既有 `pair.she_chuang_zi__ku_shen` 的
+pair_meaning_zh/en 濃縮**,未新增任何未查證陳述(該 pair 的來源是 American Dragon)。
+三藥組合(地膚子配苦參、蛇床子)未列入 key_pairs:全庫 93 條 key_pairs 標籤 0 條使用「、」多藥形式,
+硬拆成二藥對等於自創一個來源沒有的配伍宣告,依紅線九不做。
+欄位形狀對齊全庫慣例 3 鍵(pair/rationale_zh/rationale_en),草稿曾多加 source_note_zh,
+已移除以免非慣例鍵不被渲染。
+
+**數字**:
+- 「尚未建卡」殘留藥對 3→2(`pair.ju_he__chuan_lian_zi`、
+  `pair.di_fu_zi__ju_hua__jue_ming_zi__qing_xiang_zi__gu_jing_cao`),兩者仍為真未建卡,不動。
+- `pending_herb_id` 標記 3 條不變(ju_he/qing_xiang_zi/gu_jing_cao)。
+- key_pairs 已填藥數 51→52 / 364。**312 味仍空是既有 backlog,非本批範圍**。
+
+**踩坑紀錄(值得記):基準檔取自 `git show origin/main:` 而 origin/main 已被別的 session 推進**
+本批中途做結構比對時,`knowledge_data.js` 冒出 13 個我沒碰的 `dose_basis` 葉節點差異,
+一度誤判為「我的 rebuild 刪掉毒性藥劑量基準註記」(草烏/川烏/雄黃/朱砂/細辛),已按紅線四停線追查。
+真相:另一個 session 在我上一批落地後又推了 `0e6fcb4e`(D29 dose_basis 五值受控詞彙),
+我的 HEAD 停在 `8e7da369` 比 main 舊一版,而 `git show origin/main:` 取到的是**新版**——
+基準比工作樹新,差異當然反過來看像是我刪的。查證方式:`git reflog show origin/main` 看到
+`0e6fcb4e ... update by push` 排在我的 `8e7da369` 之上;`git log --all -S"dose_basis" --
+data/generated/knowledge_data.js` 直接指出是哪一個 commit 帶進來的。
+**教訓:做 before/after 結構比對時,基準要釘死在自己的 HEAD(`git show HEAD:`),
+不要用會被別人推進的 `origin/main`;要比 main 就先 fetch 並 ff 上去再比。**
+處置:ff 到 `0e6fcb4e` 後重做兩個編輯,dose_basis 在比對中 14=14 全數保留,零損失。
+
+**驗證(在 0e6fcb4e 基底上全跑,輸出原文)**:
+- `node scripts/build-data.js` → `{"formulas":223,"herbs":364,"conditions":12,"eastern":6,"patterns":8,"sources":43,"comparisons":43,"symptoms":124,"relation_edges":29,"audit_missing":0}`
+- `node scripts/validate-herb-standard.js` → `PASS — no structural defects.`
+- `node scripts/validate-content-junk.js` → `validate-content-junk: PASS — no scraped header tokens, no encoding anomalies in _zh fields.`
+- `node scripts/validate-dose-basis.js`(D29 新增) → `PASS — dose_basis 標示全部合規。`
+- `node scripts/check-validation-ratchet.js` → `PASS — no regressions.`
+- `git diff --check` → 無輸出
+- 乾淨樹決定性檢查:ff 到新 main 後先跑一次 build-data,`git status` 空 = 上游 bundle 不欠重建。
+
+**自 diff(vs origin/main 0e6fcb4e)**:結構比對 knowledge_mm.js 與 knowledge_data.js
+**各 5 個變動葉節點**——`herbs.records[317].key_pairs`(長度 0→1)與
+`herbPairs.pairs[107]` 的 caution_zh/caution_en/cautions_zh/cautions_en,無第三處附帶變動;
+`dose_basis` 出現次數 baseline 14 / 本批 14 持平;herbs 364、pairs 218 不變;
+兩筆記錄的鍵集合與鍵順序不變,無欄位變短或被清空。
+
+MEASURED TREE: claude/practical-easley-73f009 @ origin/main 0e6fcb4e + 本批
+
+---
+
 # 2026-08-27 — 三個 task 的教訓回頭複查 D25 掃描:一處數字撤回(紅旗 17→3)、一處虛驚(退役卡 0 命中)、PROJECT_LOG 未截尾
 
 三個背景 task 完成後留下三條 memory,其中兩條直接質疑我這輪掃描的方法。逐條回頭驗:
