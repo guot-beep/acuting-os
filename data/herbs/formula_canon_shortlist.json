@@ -1,7 +1,8 @@
 {
   "dataset": "AcuTing OS formula canon shortlist",
   "status": "draft_shortlist_pending_ting_review",
-  "updated": "2026-07-03",
+  "updated": "2026-08-27",
+  "updated_note": "本欄曾凍結在 2026-07-03 而 git 持續有異動(D25 治理掃描發現)——git log 才是異動權威,本欄僅在整檔層級變更時手更。另:本檔 115 筆與 formulas.json 雙胞胎在 name_en/clinical_use_note/modern_clinical_use_tags/related_formulas 等欄已漂移 36 筆(formulas.json 為活檔,build-data/app 不讀本檔)——本檔的定位(凍結種子 vs 同步索引)待 Ting 裁定,在那之前以 formulas.json 為準。",
   "purpose": "NCCAOM-oriented formula skeleton list for Ting's personal study and future private clinic use. This file is a shortlist only; it does not contain formula content, claims, composition, indications, or dosage.",
   "review_rule": "Every record starts as draft. English-track content must later be checked against Bensky Formulas & Strategies / Materia Medica, Deadman where relevant, and NCCAOM terminology before source_checked. Chinese-track content may use CloudTCM formula pages and Wanfang as draft depth notes only.",
   "records": [
@@ -2431,5 +2432,5 @@
   ],
   "schema_note": "Formula ids and tier were added before content fill. Related formulas must reference stable id values. Existing 115 records are core; future additions can be expanded.",
   "comparison_group_note": "Comparison groups are study/differentiation clusters only. They do not imply automatic substitution or clinical equivalence.",
-  "related_formulas_note": "related_formulas are generated from comparison_group for study comparison only. They do not imply substitution, equivalence, or clinical recommendation."
+  "related_formulas_note": "related_formulas are generated from comparison_group for study comparison only. They do not imply substitution, equivalence, or clinical recommendation. 生成關係已非全稱(2026-08-27 量測:111/115 成立)——D22 敗毒散裁定後,解表 clique 四筆(gui_zhi_tang/ma_huang_tang/jiu_wei_qiang_huo_tang/xiao_qing_long_tang)的 related_formulas 手工改指 ren_shen_bai_du_san,而 deprecated 的 bai_du_san 仍留在同一 comparison_group;手工裁定優先於生成推導,不要用 comparison_group 重生成這四筆。"
 }

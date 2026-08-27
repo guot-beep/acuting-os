@@ -262,6 +262,74 @@
    "measured": "0/160 filled, 2026-08-26 — declared for the template"
   },
   {
+   "id": "edge.formula_composition",
+   "stored_on": "formula.*",
+   "field": "composition[].herb_id",
+   "target": "herb.*",
+   "file": "data/herbs/formulas.json",
+   "edge_kind": "descriptive",
+   "stored_shape": "inline_objects",
+   "shape_note": "Entries are objects carrying herb_id plus display fields (herb_zh/name_en/pinyin/dose) — id-bearing, unlike the pre-id shapes elsewhere. 1,637 herb_id edges measured 2026-08-27.",
+   "reverse": {
+    "derived_field": null,
+    "note": "SEE edge.herb_related_formulas — the herb side stores its own hand-maintained list which is NOT the mechanical reverse of this edge (measured 2026-08-27: only ~789/1,703 herb-side entries agree with composition membership; 846 composition edges lack a herb-side back-pointer). Whether the herb side means 'appears in composition' or 'curated representative formulas' is unruled; until then neither side may be regenerated from the other."
+   },
+   "validated_by": "scripts/validate-formula-standard.js (composition checks)",
+   "registered": "2026-08-27 D25 derived-governance sweep — no formula/herb edge had ever been registered here."
+  },
+  {
+   "id": "edge.herb_related_formulas",
+   "stored_on": "herb.*",
+   "field": "related_formulas",
+   "target": "formula.*",
+   "file": "data/herbs/herb_canon_shortlist.json",
+   "reverse": {
+    "derived_field": null,
+    "note": "formula cards derive herb chips at render time"
+   },
+   "validated_by": "scripts/validate-herb-canon.js (id resolution — 1,703 edges, 0 dangling measured 2026-08-27)",
+   "semantics": "UNRULED (2026-08-27): filled 363/363 by hand across fill batches, but only ~48% agrees bidirectionally with formula.composition (see edge.formula_composition.reverse.note). Reconciliation and the semantic ruling (exhaustive membership vs curated study links) are fill-line work gated on Ting; do NOT bulk-regenerate either side."
+  },
+  {
+   "id": "edge.formula_related_formulas",
+   "stored_on": "formula.*",
+   "field": "related_formulas",
+   "target": "formula.*",
+   "file": "data/herbs/formulas.json",
+   "reverse": {
+    "derived_field": null,
+    "note": "SYMMETRIC study/differentiation links: stored where authored, rendered on both. 417 edges, 0 dangling measured 2026-08-27."
+   },
+   "validated_by": "scripts/validate-relations.js"
+  },
+  {
+   "id": "edge.formula_patterns",
+   "stored_on": "formula.*",
+   "field": "tcm_pattern_ids",
+   "target": "pattern.*",
+   "file": "data/herbs/formulas.json",
+   "edge_kind": "descriptive",
+   "reverse": {
+    "derived_field": null,
+    "note": "pattern cards derive at render time"
+   },
+   "validated_by": "(none resolves this field — 80 edges, 0 dangling measured 2026-08-27)",
+   "registered": "2026-08-27 D25 sweep. Distinct from data/herbs/formula_pattern_links.json (edge.formula_pattern_links_file)."
+  },
+  {
+   "id": "edge.formula_pattern_links_file",
+   "stored_on": "formula.* (junction file)",
+   "field": "pattern_ids",
+   "field_note": "records also carry western_condition_ids (cond.*) — declared here once for the file; the validator resolves pattern_ids.",
+   "target": "pattern.* | cond.*",
+   "file": "data/herbs/formula_pattern_links.json",
+   "reverse": {
+    "derived_field": null,
+    "note": "10-record fertility-track junction file with its own clinical_authority_notice; read by validate-relations."
+   },
+   "validated_by": "scripts/validate-relations.js"
+  },
+  {
    "id": "edge.symptom_pattern_inference",
    "stored_on": "sym.*",
    "field": "differentiation_zh[].points_to",

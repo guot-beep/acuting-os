@@ -143,6 +143,52 @@ ICD-10 對照分歧、約 30 筆 `comparisons.json` 骨架記錄空著——**�
 
 ---
 
+# 2026-08-27 — formulas/herbs 兩線照 D25 六原則掃描:composition↔related_formulas 雙側儲存已漂移過半、27 個 needs_fill 旗標腐爛、shortlist 生成宣稱失真;解析面全綠
+
+Ting 指示掃最後兩條大線。**這輪挖出全系列最大的單一治理缺口**:
+
+**⚠ formula.composition ↔ herb.related_formulas 是同一條邊的雙側手工儲存,
+已漂移過半(語意未裁,只登記不調和)**:composition 帶 herb_id(1,637 條邊),
+herb 側 363/363 全有 related_formulas(1,703 條邊,id 解析 0 錯)——但雙向
+一致僅約 789 條:846 條 composition 邊 herb 側沒回指、914 條 herb 側邊不在
+方劑組成裡。relation_registry policy 第一句預言的「雙側手存必漂移」全景實例。
+herb 側語意(組成反向 vs 代表方策展連結)未裁,**兩側都不得機械重生成**;
+已在 relation_registry 雙雙登記並互相註明,調和歸 fill 線 gate on Ting。
+
+**⚠ 27 個 needs_fill 旗標腐爛(已修,量測值取代)**:旗標稱「組成/君臣佐使/
+功效/主治/禁忌全部待補、僅有考綱方名」,實際 composition 已填(25/27 帶
+field_sources)。逐筆機械核對重寫:已填項(含來源與否)、仍待項逐一列名;
+**2 筆(ling_jiao_gou_teng_yin、xi_jiao_di_huang_wan)composition 有內容但無
+field_sources——旗標裡明標「來源待查證勿信」,attribution 級,歸 fill 線**。
+formulas.json diff 恰 27 行(僅 needs_fill 欄)。
+
+**⚠ formula_canon_shortlist 三處失真(已修文字,定位待裁)**:
+`updated` 凍結在 07-03 而 git 異動到 08-26;`related_formulas are generated
+from comparison_group` 宣稱實測 111/115 成立——D22 敗毒散裁定後解表 clique
+四筆手工改指 ren_shen_bai_du_san,手工裁定優先於生成,已註明勿重生成;
+與 formulas.json 雙胞胎漂移 36/115(name_en×9、clinical_use_note×25 等,
+build-data/app 不讀本檔)——本檔定位(凍結種子 vs 同步索引)待 Ting 裁,
+在那之前以 formulas.json 為準,已寫進 updated_note。
+
+**✅ 解析面全綠**:formula.related_formulas 417 條、tcm_pattern_ids 80 條、
+herb.related_formulas 1,703 條、composition herb_id 全解析 0 錯。
+relation_registry 補登 5 條邊(formula_composition/herb_related_formulas/
+formula_related_formulas/formula_patterns/formula_pattern_links_file)——
+此前 formula/herb 邊零登記。
+
+**其他(報告不動手)**:dosage_normalized(289 筆)是 SOL 任務四的暗欄位,
+validate-herb-dosage-shape 明確擋它上畫面且零讀者,12 筆缺同步無實害;
+safety_review_pending 9 筆空值殘留(語意三態不明,不動);懸空 id 約 19
+formula + 7 herb(含 da_zhao→da_zao 錯字、xin_yi_hua→xin_yi 變體、V2 卡引用
+未建方如萆薢分清飲),已開裁定 task;validate-herb-canon 紅燈為 main 既存
+(Task 10B 已知),與本批無關(clean HEAD 同紅實測確認)。
+
+驗證:formula-standard/herb-standard/herb-dosage-shape/relation-registry/
+ratchet/content-junk 全 PASS;formulas.json 曾被縮排參數誤整檔 reformat,
+已回退重做(diff 恰 27 行)。
+
+---
+
 # 2026-08-27 — condition_canon(508 筆)照 D25 六原則掃描:policy 兩大斷言實測為真、紅旗 derived 線是治理模範;抓到兩個理想化邊宣告、19 個懸空引用、一個疑似無實作的安全閘門宣稱
 
 Ting 指示掃最大的一條。結果:
