@@ -1665,20 +1665,21 @@
       "pair_meaning_en": "Ju He moves qi and dissipates nodules; Chuan Lian Zi clears heat and relieves pain. Core pair for testicular pain and hernia.",
       "indication_zh": "寒疝腹痛、睪丸腫痛、偏墜腫脹、乳房脹痛",
       "indication_en": "Cold hernia pain, testicular swelling and pain, breast distension pain.",
-      "caution_zh": "川楝子有小毒，用量不宜過大。",
-      "caution_en": "Chuan Lian Zi is slightly toxic; control dosage carefully.",
+      "caution_zh": "川楝子有小毒，用量不宜過大。`herb.ju_he` 尚未建卡，之後補卡會自動恢復連結。",
+      "caution_en": "Chuan Lian Zi is slightly toxic; control dosage carefully. `herb.ju_he` is pending local card creation.",
       "found_in_formulas": [
         "formula.ju_he_wan"
       ],
       "sources": [
-        "cloudtcm_herb_pages"
+        "cloudtcm_herb_pages",
+        "pending_herb_id:herb.ju_he"
       ],
       "actions_zh": "橘核苦平行氣散結、止痛；川楝子苦寒行氣疏肝、清熱止痛。兩藥相須，疏肝理氣、行氣止痛、散結消腫之力顯著，為治療疝氣睪丸腫痛第一藥對。",
       "actions_en": "Ju He moves qi and dissipates nodules; Chuan Lian Zi clears heat and relieves pain. Core pair for testicular pain and hernia.",
       "indications_zh": "寒疝腹痛、睪丸腫痛、偏墜腫脹、乳房脹痛",
       "indications_en": "Cold hernia pain, testicular swelling and pain, breast distension pain.",
-      "cautions_zh": "川楝子有小毒，用量不宜過大。",
-      "cautions_en": "Chuan Lian Zi is slightly toxic; control dosage carefully.",
+      "cautions_zh": "川楝子有小毒，用量不宜過大。`herb.ju_he` 尚未建卡，之後補卡會自動恢復連結。",
+      "cautions_en": "Chuan Lian Zi is slightly toxic; control dosage carefully. `herb.ju_he` is pending local card creation.",
       "ncbahm_official_pair": false,
       "field_sources": {
         "actions_zh": [
@@ -6688,7 +6689,6 @@
       "caution_zh": "乾薑辛熱，陰虛內熱、實熱及孕婦慎用；血熱妄行者忌。",
       "caution_en": "Gan Jiang is hot: caution in Yin deficiency with Heat, Excess Heat, and pregnancy; avoid in Heat-driven bleeding.",
       "found_in_formulas": [
-        "formula.li_zhong_tang",
         "formula.li_zhong_wan",
         "formula.ban_xia_bai_zhu_tian_ma_tang",
         "formula.jian_pi_wan"
@@ -6983,7 +6983,7 @@
       "id": "pair.cang_er_zi__xin_yi_hua",
       "herbs": [
         "herb.cang_er_zi",
-        "herb.xin_yi_hua"
+        "herb.xin_yi"
       ],
       "name_zh": "蒼耳子配辛夷花",
       "name_en": "Cang Er Zi with Xin Yi Hua",

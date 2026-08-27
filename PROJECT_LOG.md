@@ -1,3 +1,60 @@
+# 2026-08-27 — 懸空 herb.*/formula.* id 治理:逐一查雙胞胎,重導 5+去重 1+補 pending 標記 1,不補骨架
+
+延續同日 formulas/herbs derived 治理掃描的懸空 id 清單。掃描重現方式:對 data/ 知識層(排除
+generated/research_staging/imports/audits)grep `formula\.[a-z0-9_]+` 與 `herb\.[a-z0-9_]+`,
+對照正典集 formulas.json(223)+formula_canon_shortlist(115)、herb_canon_shortlist(363)。
+修前:formula 懸空 23、herb 懸空 8。修後:formula 20、herb 5(全數已裁定歸類,見下)。
+
+**重導 5 處**(雙胞胎確認,機器引用改指正典 id,顯示文字不動):
+- `herb.da_zhao`→`herb.da_zao` reference/formula.gui_zhi_tang.json(herb_zh 大棗,拼字錯;同列 pinyin「Da Zhao」→「Da Zao」一併修,pinyin_toned 本來就是 Dà Zǎo)
+- `herb.geng_mi`→`herb.jing_mi` reference/formula.bai_hu_tang.json(herb_zh 粳米=正典 herb.jing_mi 粳米,粳 gēng/jīng 兩讀;主卡 composition 本來就用 jing_mi,此為 reference 層漂移。顯示 pinyin「Geng Mi」主卡也這樣寫,不動)
+- `herb.xin_yi_hua`→`herb.xin_yi` herb_pairs.json pair.cang_er_zi__xin_yi_hua 的 herbs 陣列(正典辛夷;pair id 與 name_zh 蒼耳子配辛夷花是顯示名與既有 id,紅線一不動)
+- `formula.huang_lian_a_jiao_tang`→`formula.huang_lian_e_jiao_tang` pattern_library.json typical_formulas(阿膠 e_jiao 正典拼法)
+- `formula.sha_shen_mai_dong_tang`→`formula.sha_shen_mai_men_dong_tang` pattern_library.json typical_formulas(沙參麥冬湯=沙參麥門冬湯同方)
+
+**去重 1 處**:herb_pairs.json 乾薑配白朮 found_in_formulas 原值同列
+`formula.li_zhong_tang` 與 `formula.li_zhong_wan` 兩條——理中湯/理中丸同組成異劑型,正典只有
+li_zhong_wan,故移除 li_zhong_tang 一條(原值保存於此,li_zhong_wan 保留,語意無損)。此裁定如
+Ting 認為湯/丸應分立,revert 這一行即可。
+
+**補 pending 標記 1 處**:`herb.ju_he`(橘核,無雙胞胎)照既有慣例(she_chuang_zi/qing_xiang_zi/
+gu_jing_cao/ge_jie/nan_sha_shen 五處先例)在 pair.ju_he__chuan_lian_zi 補
+`pending_herb_id:herb.ju_he` 至 sources + caution/cautions 雙語註記「尚未建卡,之後補卡會自動恢復連結」。
+
+**留前向引用不補骨架(修後餘量 formula 20 = 18 pending + 2 假警報;herb 5 = 4 pending + 1 假警報)**:
+- formula_family/comparisons 加減方 7:bai_hu_jia_ren_shen/gui_zhi/cang_zhu_tang、gui_zhi_jia_ge_gen/
+  shao_yao_tang、xiao_qing_long_jia_shi_gao_tang、ling_gan_wu_wei_jiang_xin_tang——條目自帶
+  name_zh+relation+change,渲染不依賴目標卡,依碧玉散 2A 前例精神保留(bi_yu_san 本身帶
+  reserved_pending_card 標記,同屬此類)
+- herb_pairs found_in_formulas 未建方 6:jiao_tai_wan、ju_he_wan、gui_zhi_jia_long_gu_mu_li_tang、
+  ma_huang_lian_qiao_chi_xiao_dou_tang、ren_shen_ge_jie_san、ting_li_da_zao_xie_fei_tang
+- 病證卡 typical_formulas/primary_formula_ids 未建方 5(淋證四方+交泰丸):bi_xie_fen_qing_yin、
+  chen_xiang_san、shi_wei_san、wu_bi_shan_yao_wan、jiao_tai_wan
+- herb pending 4(全帶 pending_herb_id 標記):ju_he、gu_jing_cao、qing_xiang_zi、nan_sha_shen
+- 假警報 3 類確認不動:herb.ac/herb.com/herb.ntin(URL 片段,ntin 是 herb.ntin.edu.tw)、
+  formula.composition(relation_registry 語意註記裡的欄位路徑)、formula.yu_nv_jian ×6(全是
+  formula.yu_nu_jian 記錄內 2026-08-19 合併溯源註記,改寫=竄改歷史,不動)
+
+**留 Ting 裁定**:
+1. `herb.nan_sha_shen` 南沙參:(a)分立建卡——南沙參(桔梗科沙參屬)與北沙參(傘形科珊瑚菜)基原不同,
+   藥典分立是主流;(b)併入 herb.sha_shen 泛稱卡。裁定前維持 pending 現狀。
+2. 補卡 backlog(本批不建骨架):淋證四方+交泰丸是考綱級經典方,建議優先;加減方 7 首與
+   found_in_formulas 6 首次之;herb 三味(ju_he/gu_jing_cao/qing_xiang_zi)再次之。
+3. 批外側發現:herb_pairs 裡 `pending_herb_id:herb.she_chuang_zi`(L5040)與
+   `pending_herb_id:herb.ge_jie`(L5123)已入正典但標記與「尚未建卡」註記未清——過時標記,
+   本批 id 清單外未動,待下一小批清理。
+
+**驗證**(修後全跑):`build-data`(formulas 223/herbs 363/patterns 154 重建,generated 三檔
+knowledge_data/mm/pat 各 3-4 行差異隨批 commit)、`validate-formula-standard`(PASS,組成查無
+的藥 0 味次)、`validate-herb-standard`(PASS,BASTYR/NCCAOM 考綱警告為既有非本批)、
+`validate-pattern-standard`(PASS,154 records·154 clean)、`validate-content-junk`(PASS)、
+`check-validation-ratchet`(PASS,encoding 1817 持平 0 退步)。差異共 4 來源檔 12+/12-,
+無欄位變短或清空(li_zhong_tang 去重一行為唯一刪除,已存原值於上)。
+掃描重現:`node <scratchpad>/scan-dangling.js`(帳本式唯讀掃描,未入庫)。
+MEASURED TREE: claude/frosty-yonath-0adbce @ 修後 commit。
+
+---
+
 # 2026-08-27 — R12:病歷匯入 Merge 模式改成逐欄位合併,修掉 Task 10C 抓到的資料清空風險
 
 Ting 要求把 Task 10C round2-4 一路確認的那個資料風險「排進下一批要修的」。這是判斷型/行為變更工作,
