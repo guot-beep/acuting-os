@@ -276,7 +276,7 @@
    "shape_note": "Entries are objects carrying herb_id plus display fields (herb_zh/name_en/pinyin/dose) — id-bearing, unlike the pre-id shapes elsewhere. 1,637 herb_id edges measured 2026-08-27.",
    "reverse": {
     "derived_field": null,
-    "note": "SEE edge.herb_related_formulas — the herb side stores its own hand-maintained list which is NOT the mechanical reverse of this edge (measured 2026-08-27: only ~789/1,703 herb-side entries agree with composition membership; 846 composition edges lack a herb-side back-pointer). Whether the herb side means 'appears in composition' or 'curated representative formulas' is unruled; until then neither side may be regenerated from the other."
+    "note": "Render-time only: a formula's herb list renders from composition itself; a herb card wanting '出現在哪些方' derives it from composition at render. RULED D26 (Ting, 2026-08-27): edge.herb_related_formulas is a DIFFERENT edge (curated study links), NOT this edge's reverse — the ~48% overlap and the 846 composition edges without a herb-side entry are BY DESIGN (curation is selective), not drift. Neither field may be regenerated from the other."
    },
    "validated_by": "scripts/validate-formula-standard.js (composition checks)",
    "registered": "2026-08-27 D25 derived-governance sweep — no formula/herb edge had ever been registered here."
@@ -292,7 +292,8 @@
     "note": "formula cards derive herb chips at render time"
    },
    "validated_by": "scripts/validate-herb-canon.js (id resolution — 1,703 edges, 0 dangling measured 2026-08-27)",
-   "semantics": "UNRULED (2026-08-27): filled 363/363 by hand across fill batches, but only ~48% agrees bidirectionally with formula.composition (see edge.formula_composition.reverse.note). Reconciliation and the semantic ruling (exhaustive membership vs curated study links) are fill-line work gated on Ting; do NOT bulk-regenerate either side."
+   "edge_kind": "descriptive",
+   "semantics": "RULED D26 (Ting, 2026-08-27:「herb側是策展連結不是組成反向」): curated study links — the formulas worth knowing this herb through (代表方/研讀連結), authored on the herb card. NOT the reverse of formula.composition and NOT exhaustive membership: a linked formula need not contain the herb (加減/代表用法 are legitimate), and a formula containing the herb need not be linked (curation is selective). The ~48% overlap with composition measured 2026-08-27 is therefore expected, not drift — no reconciliation work exists. Never bulk-regenerate this field from composition; membership questions are answered by composition, study-link questions by this field."
   },
   {
    "id": "edge.formula_related_formulas",

@@ -946,3 +946,26 @@ PASS(composition 查無藥材維持 1 味次 `formula.huang_tu_tang` 的「灶�
 - **Reconsider only if**:各單項照其原始佇列條目的 reconsider 條款;本總批
   不設獨立回退條件。
 
+
+## D29 — herb.related_formulas 語意裁定:策展連結,非組成反向 · LOCKED(2026-08-27,Ting:「herb側是策展連結不是組成反向 照這個裁定登記清楚」)
+
+- **背景**:D25 八檔 derived 治理掃描量測到 formula.composition(1,637 條
+  herb_id 邊)與 herb.related_formulas(363/363 全有,1,703 條邊,id 解析
+  0 錯)雙向一致僅約 789 條——846 條組成邊 herb 側無回指、914 條 herb 側邊
+  不在方劑組成內。當時語意未裁,兩側禁止互相重生成,gate on Ting。
+- **裁定**:herb.related_formulas 是**策展研讀連結**(認識這味藥該讀的
+  代表方/加減用法),authored on herb card,是一條**獨立的 descriptive 邊**
+  ——不是 formula.composition 的反向,也不承諾窮舉。因此:
+  1. 連結的方劑不必含該藥(加減/代表用法正當)、含該藥的方劑不必被連結
+     (策展本來就是選擇性的)——**~48% 重疊是設計,不是漂移,調和工作項
+     不存在,就地關閉**。
+  2. **兩欄永不互相重生成**:組成歸屬問題問 composition,研讀連結問題問
+     related_formulas。
+  3. composition 的反向(「這味藥出現在哪些方」)維持 render-time derive,
+     不持久化。
+- **登記**:relation_registry.json 兩條邊(edge.formula_composition /
+  edge.herb_related_formulas)已照本裁定改述,漂移量測數字保留為歷史
+  參照;derived 治理 memory 的「最大未裁項」同步關閉。
+- **Reconsider only if**:未來要做「含某藥的所有方」窮舉功能——屆時從
+  composition render-time derive 或建獨立索引,不回頭改 related_formulas
+  的策展語意。
