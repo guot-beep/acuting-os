@@ -69,9 +69,19 @@ const supB = b123.filter((r) => r.provenance_status === "supported").length;
 const nfB = b123.filter((r) => r.provenance_status === "not_found").length;
 if (supB !== 68 || nfB !== 27) defects.push(`B6 ledger ${supB}/${nfB}, accepted 68/27`);
 
-// B8
+// B8 — coexistence: the authored baseline must never SHRINK.
+//
+// 2026-08-27:這條原本寫成 `!== 35` 精確相等,於是 40e93dee 正當補上 7 筆
+// 有具名來源的 authored 紅旗(D23 三張骨架卡的 MedlinePlus/NIDDK 條目)之後
+// CI 就紅了 —— 而紅的原因是「內容變多」。這個檢查真正要防的是遷移把既有
+// authored 記錄吃掉(B8 的名字就叫 coexistence:legacy 遷入不得排擠原生),
+// 方向只有一個。精確相等會把每一次正當成長都變成一次假紅,而假紅重複幾次
+// 之後,下一個人就會直接把數字改掉不看內容 —— 那才是真正的損失。
+const AUTHORED_FLOOR = 42;   // 2026-08-27 實測;只准升,不准為了讓 CI 綠而降
 const authored = registry.records.filter((r) => !/\.legacy\d+$/.test(r.id));
-if (authored.length !== 35) defects.push(`B8 authored baseline ${authored.length}, expected 35`);
+if (authored.length < AUTHORED_FLOOR) {
+  defects.push(`B8 authored ${authored.length} < floor ${AUTHORED_FLOOR} —— 原生紅旗被遷移吃掉了`);
+}
 
 // B9 — Batch 4 full regression against ITS frozen export
 const b4 = registry.records.filter((r) => r.origin === "legacy_card_migration_batch4");
