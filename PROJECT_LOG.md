@@ -1,3 +1,16 @@
+# 2026-08-26 Antigravity — Task 10C Round 2 (Production-Path Contract Verification & Mutation Boundary)
+
+- **做了什麼**: 完成 Task 10C Round 2 臨床病歷匯出/匯入/還原契約可執行驗證（`scripts/audit-clinical-export-contract.js`）：改以生產函式實體執行與隔離儲存模擬推導全部契約結論（零寫死狀態），列舉 11 條全生命週期可達真實路徑，並以 14 組全量覆蓋格式毀損、不變量違規、部分輸入破壞性、未知欄位過濾之隔離測試驗證真實 storage mutation boundary。
+- **數字統計**:
+  - 識別 7 個 Export/Backup Producers 與 7 個 Import/Restore Consumers；建立 11 條可達路徑契約矩陣。
+  - 舊裸陣列相容性：VERIFIED（`unwrapV1CasesPayload` 永久支援）；未知未來版本 Fail-Closed：VERIFIED（`schema_version: 99` loud error 拒收）；格式毀損寫入前保護：VERIFIED（儲存零寫入零更動）；PHI 安全：VERIFIED（錯誤訊息長度不轉述內容）。
+  - 部分輸入防護（Partial-Input Protection）：NOT_ENFORCED（實測證實同 ID 簡略物件在 Merge 模式下因 Map 覆蓋而重置未列欄位）；未知欄位保留：PARTIAL（v2 信封層儲存保留，病例層於 UI load/save 週期剔除）；`case_count` 檢驗：NOT_ENFORCED（僅具資訊性）；D12 條款強制性：PARTIAL（CI 已驗信封與不變量，2026-09-01 Additive 單向門待生效）。
+- **驗證結果**: 14/14 回歸測試 100% PASS（直通真實生產函式）；生產資料 0 異動。
+- **已知未解**: v1 normalizer 重新構造物件時會剔除未在白名單之擴充欄位；部分輸入在 Merge 模式下缺乏細粒度欄位級合併保護；`case_count` 尚未加入解包長度一致性強制校驗。
+- **下一步**: 推送至 `antigravity/task10c-clinical-export-contract-round2`，等待 Ting / 團隊審閱，不開始 Task 10D。
+
+---
+
 # 2026-08-26 深夜 — Ting 要求修 validate-relations.js 紅燈:查到是驗證器沒跟上 D11 裁定,不是資料錯
 
 Ting 上一輪複核 Task 10B 時看到「`validate-relations.js` 現在真的是紅燈、而且是 CI_INVOKED」，

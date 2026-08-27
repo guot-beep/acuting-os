@@ -1,0 +1,490 @@
+{
+  "meta": {
+    "timestamp": "2026-08-26T17:25:00Z",
+    "base_sha": "69e03dc1d605037f728416167e258090e5d2b07f",
+    "head_sha": "69e03dc1d605037f728416167e258090e5d2b07f",
+    "audit_type": "READ_ONLY_CLINICAL_EXPORT_IMPORT_CONTRACT_AUDIT"
+  },
+  "counts": {
+    "producers_count": 7,
+    "consumers_count": 7,
+    "reachable_routes_count": 11,
+    "regression_fixtures_count": 14
+  },
+  "producers": [
+    {
+      "id": "P1",
+      "name": "app.js::exportClinicalCases (v1 mode)",
+      "type": "UI_DOWNLOAD",
+      "output_version": "schema_version: 1",
+      "output_shape": "{ schema_version: 1, exported_at: ISO, case_count: number, cases: Case[] }",
+      "description": "Triggered via Export Backup button in v1/pre-switch mode; wraps clinicalCases[] in schema_version:1 envelope."
+    },
+    {
+      "id": "P2",
+      "name": "app.js::exportClinicalCases (v2 mode)",
+      "type": "UI_DOWNLOAD",
+      "output_version": "schema_version: 2",
+      "output_shape": "{ schema_version: 2, journal: object, patients: Patient[], cases: Case[], pending_patient_codes?: string[], runtime_revision: number }",
+      "description": "Triggered via Export Backup button in v2 mode; exports raw staging envelope directly from localStorage[STAGING_KEY]."
+    },
+    {
+      "id": "P3",
+      "name": "app.js::importClinicalCases (pre-restore auto-backup)",
+      "type": "AUTOMATIC_SAFETY_EXPORT",
+      "output_version": "schema_version: 1",
+      "output_shape": "{ schema_version: 1, exported_at: ISO, case_count: number, cases: Case[] }",
+      "description": "Triggered automatically before destructive restore execution to ensure pre-restore state is recoverable."
+    },
+    {
+      "id": "P4",
+      "name": "js/clinical-store.js::buildMigrationPlan (CLI / migrate-c2b.js)",
+      "type": "CLI_PLAN_GENERATION",
+      "output_version": "c2b-1",
+      "output_shape": "{ migration_version: 'c2b-1', source_sha256: string, source_bytes: number, counts: object, patients: Patient[], caseAssignments: object[], blankCodeCases: string[], manualReviewQueue: object[] }",
+      "description": "Deterministic pure function generating C2b migration plan from raw v1 case snapshot bytes."
+    },
+    {
+      "id": "P5",
+      "name": "js/clinical-store.js::executeMigration",
+      "type": "STORAGE_MIGRATION",
+      "output_version": "schema_version: 2",
+      "output_shape": "{ schema_version: 2, journal: object, patients: Patient[], cases: Case[], pending_patient_codes: [] }",
+      "description": "Transforms raw v1 snapshot and deterministic plan into v2 staging candidate."
+    },
+    {
+      "id": "P6",
+      "name": "js/clinical-store.js::save (v2 runtime)",
+      "type": "STORAGE_RUNTIME_SAVE",
+      "output_version": "schema_version: 2",
+      "output_shape": "{ schema_version: 2, journal: object, patients: Patient[], cases: Case[], pending_patient_codes: string[], runtime_revision: number }",
+      "description": "Updates cases and syncs pending patient codes in localStorage[STAGING_KEY]."
+    },
+    {
+      "id": "P7",
+      "name": "Historical pre-envelope bare array (pre-2026-08-26)",
+      "type": "HISTORICAL_EXPORT",
+      "output_version": "bare_array (pre-envelope)",
+      "output_shape": "Case[] (JSON array)",
+      "description": "Legacy backups generated before D12 envelope implementation."
+    }
+  ],
+  "consumers": [
+    {
+      "id": "C1",
+      "name": "app.js::importClinicalCases -> unwrapV1CasesPayload",
+      "type": "UI_IMPORT_ROUTER_V1",
+      "accepted_versions": [
+        "bare_array",
+        "schema_version: 1"
+      ],
+      "accepted_shapes": [
+        "Case[]",
+        "{ schema_version: 1, cases: Case[], ... }"
+      ],
+      "description": "Parses incoming backup file, unwraps v1 envelope or bare array, validates invariants, routes to merge or restore."
+    },
+    {
+      "id": "C2",
+      "name": "app.js::importClinicalCases -> AcuTingClinicalStore.restoreV2Envelope",
+      "type": "UI_IMPORT_ROUTER_V2",
+      "accepted_versions": [
+        "schema_version: 2"
+      ],
+      "accepted_shapes": [
+        "{ schema_version: 2, journal: object, patients: Patient[], cases: Case[], ... }"
+      ],
+      "description": "Identifies v2 envelope, enforces runtime_revision integer gate, invokes restoreV2Envelope."
+    },
+    {
+      "id": "C3",
+      "name": "js/clinical-store.js::restoreV2Envelope",
+      "type": "STORAGE_RESTORE_ENGINE",
+      "accepted_versions": [
+        "schema_version: 2 (runtime-era or migration-era)"
+      ],
+      "accepted_shapes": [
+        "{ schema_version: 2, journal: object, patients: Patient[], cases: Case[], pending_patient_codes?: string[], runtime_revision?: number }"
+      ],
+      "description": "Core two-phase restore engine with candidate staging, referential integrity verification, anti-downgrade, and atomic swap."
+    },
+    {
+      "id": "C4",
+      "name": "js/clinical-store.js::load (v1 mode)",
+      "type": "STORAGE_LOAD_V1",
+      "accepted_versions": [
+        "bare_array"
+      ],
+      "accepted_shapes": [
+        "Case[] in localStorage['acuting-clinical-cases-v1']"
+      ],
+      "description": "Reads v1 storage key, enforces fail-loud JSON parsing and array shape verification."
+    },
+    {
+      "id": "C5",
+      "name": "js/clinical-store.js::load (v2 mode)",
+      "type": "STORAGE_LOAD_V2",
+      "accepted_versions": [
+        "schema_version: 2"
+      ],
+      "accepted_shapes": [
+        "{ schema_version: 2, cases: Case[], ... } in localStorage['acuting-clinical-v2-staging']"
+      ],
+      "description": "Reads staging envelope from localStorage[STAGING_KEY], enforces minimum envelope shape, returns .cases."
+    },
+    {
+      "id": "C6",
+      "name": "scripts/migrate-c2b.js CLI / buildMigrationPlan",
+      "type": "CLI_MIGRATION_CONSUMER",
+      "accepted_versions": [
+        "bare_array"
+      ],
+      "accepted_shapes": [
+        "Case[] (raw JSON text)"
+      ],
+      "description": "Consumes raw v1 snapshot to generate deterministic C2b migration plan."
+    },
+    {
+      "id": "C7",
+      "name": "scripts/validate-clinical-invariants.js / validate-clinical-case-standard.js",
+      "type": "CI_VALIDATOR_CONSUMERS",
+      "accepted_versions": [
+        "schema_version: 1",
+        "bare_array"
+      ],
+      "accepted_shapes": [
+        "data/clinical_cases/sample_export_fixture.json",
+        "Case[]"
+      ],
+      "description": "CI static validators asserting R1-R7 invariants, referential integrity, and standard schema."
+    }
+  ],
+  "contract_matrix": [
+    {
+      "route_id": "R1",
+      "producer": "app.js::exportClinicalCases (v1)",
+      "consumer": "app.js::importClinicalCases (v1 Merge)",
+      "payload_version": "schema_version: 1",
+      "accepted_shape": "{ schema_version: 1, exported_at, case_count, cases: Case[] }",
+      "validation_before_write": "VERIFIED",
+      "unknown_fields_preserved": "NOT_ENFORCED",
+      "malformed_fail_closed": "VERIFIED",
+      "future_version_fail_closed": "VERIFIED",
+      "backward_compatible": "VERIFIED",
+      "destructive_failure_possible": "NOT_ENFORCED",
+      "enforcement_evidence": "scripts/test-export-envelope-shapes.js, scripts/validate-clinical-invariants.js",
+      "CI_status": "VERIFIED"
+    },
+    {
+      "route_id": "R2",
+      "producer": "app.js::exportClinicalCases (v1)",
+      "consumer": "app.js::importClinicalCases (v1 Restore)",
+      "payload_version": "schema_version: 1",
+      "accepted_shape": "{ schema_version: 1, exported_at, case_count, cases: Case[] }",
+      "validation_before_write": "VERIFIED",
+      "unknown_fields_preserved": "NOT_ENFORCED",
+      "malformed_fail_closed": "VERIFIED",
+      "future_version_fail_closed": "VERIFIED",
+      "backward_compatible": "VERIFIED",
+      "destructive_failure_possible": "NOT_ENFORCED",
+      "enforcement_evidence": "scripts/test-export-envelope-shapes.js, scripts/validate-clinical-invariants.js",
+      "CI_status": "VERIFIED"
+    },
+    {
+      "route_id": "R3",
+      "producer": "Legacy bare-array export (pre-2026-08-26)",
+      "consumer": "app.js::importClinicalCases (v1 Merge)",
+      "payload_version": "bare_array (pre-envelope)",
+      "accepted_shape": "Case[] (JSON array)",
+      "validation_before_write": "VERIFIED",
+      "unknown_fields_preserved": "NOT_ENFORCED",
+      "malformed_fail_closed": "VERIFIED",
+      "future_version_fail_closed": "NOT_APPLICABLE",
+      "backward_compatible": "VERIFIED",
+      "destructive_failure_possible": "NOT_ENFORCED",
+      "enforcement_evidence": "scripts/test-export-envelope-shapes.js (Fixture 1)",
+      "CI_status": "VERIFIED"
+    },
+    {
+      "route_id": "R4",
+      "producer": "Legacy bare-array export (pre-2026-08-26)",
+      "consumer": "app.js::importClinicalCases (v1 Restore)",
+      "payload_version": "bare_array (pre-envelope)",
+      "accepted_shape": "Case[] (JSON array)",
+      "validation_before_write": "VERIFIED",
+      "unknown_fields_preserved": "NOT_ENFORCED",
+      "malformed_fail_closed": "VERIFIED",
+      "future_version_fail_closed": "NOT_APPLICABLE",
+      "backward_compatible": "VERIFIED",
+      "destructive_failure_possible": "NOT_ENFORCED",
+      "enforcement_evidence": "scripts/test-export-envelope-shapes.js (Fixture 1)",
+      "CI_status": "VERIFIED"
+    },
+    {
+      "route_id": "R5",
+      "producer": "app.js::importClinicalCases (v1 Pre-Restore Auto-Backup)",
+      "consumer": "app.js::importClinicalCases (v1 Restore / Merge)",
+      "payload_version": "schema_version: 1",
+      "accepted_shape": "{ schema_version: 1, exported_at, case_count, cases: Case[] }",
+      "validation_before_write": "VERIFIED",
+      "unknown_fields_preserved": "NOT_ENFORCED",
+      "malformed_fail_closed": "VERIFIED",
+      "future_version_fail_closed": "VERIFIED",
+      "backward_compatible": "VERIFIED",
+      "destructive_failure_possible": "NOT_ENFORCED",
+      "enforcement_evidence": "app.js (line 11108)",
+      "CI_status": "VERIFIED"
+    },
+    {
+      "route_id": "R6",
+      "producer": "app.js::exportClinicalCases (v2)",
+      "consumer": "js/clinical-store.js::restoreV2Envelope",
+      "payload_version": "schema_version: 2",
+      "accepted_shape": "{ schema_version: 2, journal, patients, cases, runtime_revision, ... }",
+      "validation_before_write": "VERIFIED",
+      "unknown_fields_preserved": "VERIFIED",
+      "malformed_fail_closed": "VERIFIED",
+      "future_version_fail_closed": "VERIFIED",
+      "backward_compatible": "VERIFIED",
+      "destructive_failure_possible": "NOT_ENFORCED",
+      "enforcement_evidence": "scripts/rehearse-runtime-restore.js, scripts/test-pointer-runtime.js",
+      "CI_status": "VERIFIED"
+    },
+    {
+      "route_id": "R7",
+      "producer": "js/clinical-store.js::buildMigrationPlan",
+      "consumer": "js/clinical-store.js::executeMigration",
+      "payload_version": "c2b-1",
+      "accepted_shape": "{ migration_version: 'c2b-1', source_sha256, counts, patients, ... }",
+      "validation_before_write": "VERIFIED",
+      "unknown_fields_preserved": "VERIFIED",
+      "malformed_fail_closed": "VERIFIED",
+      "future_version_fail_closed": "VERIFIED",
+      "backward_compatible": "VERIFIED",
+      "destructive_failure_possible": "NOT_ENFORCED",
+      "enforcement_evidence": "scripts/rehearse-c2b.js, scripts/migrate-c2b.js --self-test",
+      "CI_status": "VERIFIED"
+    },
+    {
+      "route_id": "R8",
+      "producer": "js/clinical-store.js::save (v1)",
+      "consumer": "js/clinical-store.js::load (v1)",
+      "payload_version": "bare_array (v1 storage)",
+      "accepted_shape": "Case[] in localStorage['acuting-clinical-cases-v1']",
+      "validation_before_write": "VERIFIED",
+      "unknown_fields_preserved": "NOT_ENFORCED",
+      "malformed_fail_closed": "VERIFIED",
+      "future_version_fail_closed": "NOT_APPLICABLE",
+      "backward_compatible": "VERIFIED",
+      "destructive_failure_possible": "NOT_ENFORCED",
+      "enforcement_evidence": "scripts/validate-clinical-store-phi-boundary.js, scripts/test-pointer-runtime.js",
+      "CI_status": "VERIFIED"
+    },
+    {
+      "route_id": "R9",
+      "producer": "js/clinical-store.js::save (v2)",
+      "consumer": "js/clinical-store.js::load (v2)",
+      "payload_version": "schema_version: 2",
+      "accepted_shape": "{ schema_version: 2, journal, patients, cases, runtime_revision, ... } in staging",
+      "validation_before_write": "VERIFIED",
+      "unknown_fields_preserved": "VERIFIED",
+      "malformed_fail_closed": "VERIFIED",
+      "future_version_fail_closed": "VERIFIED",
+      "backward_compatible": "VERIFIED",
+      "destructive_failure_possible": "NOT_ENFORCED",
+      "enforcement_evidence": "scripts/test-pointer-runtime.js",
+      "CI_status": "VERIFIED"
+    },
+    {
+      "route_id": "R10",
+      "producer": "data/clinical_cases/sample_export_fixture.json",
+      "consumer": "scripts/validate-clinical-invariants.js",
+      "payload_version": "schema_version: 1",
+      "accepted_shape": "{ schema_version: 1, exported_at, case_count, cases: Case[] }",
+      "validation_before_write": "VERIFIED",
+      "unknown_fields_preserved": "NOT_APPLICABLE",
+      "malformed_fail_closed": "VERIFIED",
+      "future_version_fail_closed": "VERIFIED",
+      "backward_compatible": "VERIFIED",
+      "destructive_failure_possible": "NOT_APPLICABLE",
+      "enforcement_evidence": "scripts/validate-clinical-invariants.js (line 28)",
+      "CI_status": "VERIFIED"
+    },
+    {
+      "route_id": "R11",
+      "producer": "data/clinical_cases/sample_export_fixture.json",
+      "consumer": "scripts/test-export-envelope-shapes.js",
+      "payload_version": "schema_version: 1",
+      "accepted_shape": "{ schema_version: 1, exported_at, case_count, cases: Case[] }",
+      "validation_before_write": "VERIFIED",
+      "unknown_fields_preserved": "NOT_APPLICABLE",
+      "malformed_fail_closed": "VERIFIED",
+      "future_version_fail_closed": "VERIFIED",
+      "backward_compatible": "VERIFIED",
+      "destructive_failure_possible": "NOT_APPLICABLE",
+      "enforcement_evidence": "scripts/test-export-envelope-shapes.js (Fixture 9)",
+      "CI_status": "VERIFIED"
+    }
+  ],
+  "special_questions": {
+    "q1_producers": {
+      "count": 7,
+      "items": [
+        {
+          "id": "P1",
+          "name": "app.js::exportClinicalCases (v1 mode)",
+          "output_version": "schema_version: 1"
+        },
+        {
+          "id": "P2",
+          "name": "app.js::exportClinicalCases (v2 mode)",
+          "output_version": "schema_version: 2"
+        },
+        {
+          "id": "P3",
+          "name": "app.js::importClinicalCases (pre-restore auto-backup)",
+          "output_version": "schema_version: 1"
+        },
+        {
+          "id": "P4",
+          "name": "js/clinical-store.js::buildMigrationPlan (CLI / migrate-c2b.js)",
+          "output_version": "c2b-1"
+        },
+        {
+          "id": "P5",
+          "name": "js/clinical-store.js::executeMigration",
+          "output_version": "schema_version: 2"
+        },
+        {
+          "id": "P6",
+          "name": "js/clinical-store.js::save (v2 runtime)",
+          "output_version": "schema_version: 2"
+        },
+        {
+          "id": "P7",
+          "name": "Historical pre-envelope bare array (pre-2026-08-26)",
+          "output_version": "bare_array (pre-envelope)"
+        }
+      ]
+    },
+    "q2_consumers": {
+      "count": 7,
+      "items": [
+        {
+          "id": "C1",
+          "name": "app.js::importClinicalCases -> unwrapV1CasesPayload",
+          "accepted_versions": [
+            "bare_array",
+            "schema_version: 1"
+          ]
+        },
+        {
+          "id": "C2",
+          "name": "app.js::importClinicalCases -> AcuTingClinicalStore.restoreV2Envelope",
+          "accepted_versions": [
+            "schema_version: 2"
+          ]
+        },
+        {
+          "id": "C3",
+          "name": "js/clinical-store.js::restoreV2Envelope",
+          "accepted_versions": [
+            "schema_version: 2 (runtime-era or migration-era)"
+          ]
+        },
+        {
+          "id": "C4",
+          "name": "js/clinical-store.js::load (v1 mode)",
+          "accepted_versions": [
+            "bare_array"
+          ]
+        },
+        {
+          "id": "C5",
+          "name": "js/clinical-store.js::load (v2 mode)",
+          "accepted_versions": [
+            "schema_version: 2"
+          ]
+        },
+        {
+          "id": "C6",
+          "name": "scripts/migrate-c2b.js CLI / buildMigrationPlan",
+          "accepted_versions": [
+            "bare_array"
+          ]
+        },
+        {
+          "id": "C7",
+          "name": "scripts/validate-clinical-invariants.js / validate-clinical-case-standard.js",
+          "accepted_versions": [
+            "schema_version: 1",
+            "bare_array"
+          ]
+        }
+      ]
+    },
+    "q3_accepted_payload_shapes": {
+      "v1_shapes": [
+        "Bare Array: Case[]",
+        "Envelope v1: { schema_version: 1, exported_at: ISO, case_count: number, cases: Case[] }"
+      ],
+      "v2_shapes": [
+        "Envelope v2: { schema_version: 2, journal: object, patients: Patient[], cases: Case[], pending_patient_codes?: string[], runtime_revision?: number }"
+      ],
+      "migration_shapes": [
+        "Plan c2b-1: { migration_version: 'c2b-1', source_sha256: string, source_bytes: number, counts: object, patients: Patient[], ... }"
+      ]
+    },
+    "q4_pre_envelope_bare_array_accepted": {
+      "status": "VERIFIED",
+      "evidence": "unwrapV1CasesPayload checks `if (Array.isArray(parsed)) return parsed;` for permanent backward compatibility. test-export-envelope-shapes.js asserts identity equality on bare array."
+    },
+    "q5_schema_version_1_roundtrip_lossless": {
+      "status": "PARTIAL",
+      "details": "Known canonical fields defined in normalizeClinicalCase / normalizeSoapNote round-trip 100% lossless. Unknown/additive fields on case objects are stripped during import by normalizeClinicalCase whitelisting. Envelope metadata (exported_at, case_count) is unpacked and re-stamped fresh on subsequent export."
+    },
+    "q6_future_schema_versions_rejected_loudly": {
+      "status": "VERIFIED",
+      "evidence": "unwrapV1CasesPayload throws userFacing Error explicitly citing schema_version. restoreV2Envelope rejects schema_version !== 2 with structured code REJECTED_UNCHANGED."
+    },
+    "q7_malformed_envelopes_rejected_before_mutating_storage": {
+      "status": "VERIFIED",
+      "evidence": "In v1, JSON.parse, unwrapV1CasesPayload, checkClinicalInvariants, and findImportHistoryViolations run prior to persistClinicalCases(). In v2, candidate key staging and verification run prior to active staging swap."
+    },
+    "q8_partial_or_invalid_input_overwrite_protection": {
+      "status": "NOT_ENFORCED",
+      "details": "Observed production behavior: An incoming structurally valid but partial case object sharing an existing ID overwrites and erases existing fields under v1 Merge mode (unless an exposure history violation is triggered), because Map merge replaces the case object. Under Restore mode, the entire store is replaced."
+    },
+    "q9_unknown_additive_fields_preserved": {
+      "status": "PARTIAL",
+      "details": "Split analysis: (1) v1 case-level unknown fields: NOT_ENFORCED (stripped by normalizeClinicalCase). (2) v2 envelope-level unknown fields: VERIFIED (preserved in staging storage). (3) v2 case-level unknown fields: NOT_ENFORCED (preserved in raw restore, but stripped upon UI load/save cycle)."
+    },
+    "q10_case_count_validated": {
+      "status": "NOT_ENFORCED",
+      "details": "case_count in schema_version:1 envelope is informational only. unwrapV1CasesPayload verifies Array.isArray(cases) but does not compare cases.length to case_count. In v2/c2b migration plans, counts are computed and cross-checked."
+    },
+    "q11_duplicate_case_ids_handled_deterministically": {
+      "status": "VERIFIED",
+      "details": "In v1 Merge mode, duplicate cases in incoming stream adopt deterministic last-wins in Map merge. In C2b buildMigrationPlan, duplicate case IDs throw an explicit Error. In v2 verifyRuntimeEnvelope, duplicate case IDs push a verification failure and abort restore."
+    },
+    "q12_error_messages_phi_safe": {
+      "status": "VERIFIED",
+      "evidence": "unwrapV1CasesPayload, parseJsonOrThrow, parseFailureDetail, and exportClinicalCases report only byte length and shape error descriptions, never echoing raw input text or patient payload. Enforced by scripts/validate-clinical-store-phi-boundary.js in CI."
+    },
+    "q13_v1_v2_routing_ambiguity_or_silent_downgrade": {
+      "status": "VERIFIED",
+      "evidence": "No ambiguous fallback or silent downgrade exists. exportClinicalCases checks pointer === 'v2' and fails closed if staging is missing/corrupt. importClinicalCases refuses v2 envelopes in v1 mode. unwrapV1CasesPayload explicitly traps schema_version:2 and throws if reached."
+    },
+    "q14_d12_machine_enforcement": {
+      "status": "PARTIAL",
+      "enforced_today": [
+        "scripts/test-export-envelope-shapes.js (CI): Enforces v1 envelope shape, bare array acceptance, rejection of bare export regressions, rejection of unknown schema versions.",
+        "scripts/validate-clinical-invariants.js (CI): Enforces R1-R7 clinical invariants on sample export fixture and cases.",
+        "scripts/validate-clinical-store-phi-boundary.js (CI): Enforces PHI-safe error boundaries and wrapped JSON parsing.",
+        "scripts/test-pointer-runtime.js (CI): Enforces pointer switching and v2 runtime envelope shape.",
+        "scripts/rehearse-runtime-restore.js: Enforces runtime-era backup restore and append-only preservation."
+      ],
+      "documented_pending": "D12 additive-only policy (no field renaming/removal in schema.sql, storage, or export) takes effect 2026-09-01."
+    }
+  }
+}

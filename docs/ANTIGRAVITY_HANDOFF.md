@@ -1,3 +1,30 @@
+## ✅ Task 10C Round 2：Production-Path Contract Verification & Mutation Boundary（已完成）
+
+- **類型**: READ-ONLY Clinical Backup/Restore Contract & Mutation Boundary Audit（0 production mutation, 0 CI workflow changes, 0 debt repairs）
+- **分支**: `antigravity/task10c-clinical-export-contract-round2`
+- **主要產出**:
+  - 核心動態稽核腳本: `scripts/audit-clinical-export-contract.js`
+  - 結構化資料庫: `data/audits/clinical_export_contract_2026-08-26.json`
+  - 完整契約報告: `docs/audits/CLINICAL_EXPORT_CONTRACT_2026-08-26.md`
+- **核心數據 (SSOT 直出)**:
+  - Base SHA: `69e03dc1d605037f728416167e258090e5d2b07f` (git 動態衍生)
+  - Head SHA: `69e03dc1d605037f728416167e258090e5d2b07f` (git 動態衍生)
+  - Clinical Export Producers: **7** 個 (P1-P7)
+  - Import/Restore Consumers: **7** 個 (C1-C7)
+  - 可達真實路徑契約矩陣: **11** 條 (R1-R11，全覆蓋 v1/v2/migration 生命週期)
+  - 隔離變更邊界回歸測試: **14** 組 (14/14 PASS)
+  - 舊裸陣列相容性: `VERIFIED` (`unwrapV1CasesPayload` 永久支援)
+  - 未知未來版本防護: `VERIFIED` (`schema_version: 99` loud rejection)
+  - 格式毀損寫入前防護 (Fail-Before-Write): `VERIFIED` (儲存零變更)
+  - 部分輸入防護 (Partial-Input Protection): `NOT_ENFORCED` (實測確認同 ID 簡略物件在 Merge 模式下因 Map 覆蓋而重置未列欄位)
+  - 錯誤訊息 PHI 防護: `VERIFIED` (長度/結構診斷，絕不轉述敏感內容)
+  - 未知外加欄位保留: `PARTIAL` (v2 信封層儲存保留，病例層於 UI load/save 週期剔除)
+  - Case Count 校驗: `NOT_ENFORCED` (資訊性欄位)
+  - 重複 Case ID 處理: `VERIFIED` (v1 merge last-wins, v2 / migration 拒收)
+  - D12 架構強制狀態: `PARTIAL` (CI 已鎖定信封與不變量，2026-09-01 Additive-Only 生效)
+
+---
+
 ## 🚩 巡檢簡記:又一條沒人指派的新線 `task10c-clinical-export-contract`(2026-08-26 深夜)
 
 推在分支上(`antigravity/task10c-clinical-export-contract`,`451f4b3b`)沒推 main,這點做對了。
