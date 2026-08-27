@@ -1,3 +1,18 @@
+# 2026-08-27 — Claude 複核 Task 10C Round 3:方法論真的升級,結論不變,app.js 仍未動
+
+Ting 要求連 round3 也看一下。跟 round2 比是真的方法論升級：round2 測底層 store 函式，round3
+改成在隔離瀏覽器/事件模擬環境裡直接驅動 `app.js` 本體的 `importClinicalCases`(含它自己的
+`confirm`/`alert`/`FileReader`)。獨立重跑 `--self-test` 14/14 全過，Fixture 3/4/5/9 的敘述
+明確改成「real importClinicalCases」，用字跟行為對得上這個升級。新增 Fixture 10(Restore 模式
+部分輸入→整庫覆蓋)是 Restore 模式本來的設計行為，不是新問題。
+
+結論沒變——round2 複核提的那個「Merge 模式承諾保留現有病例但實際整筆覆蓋」的資料風險，round3
+用更硬的方式(直接驅動生產函式而非底層 store)再次證實同一件事，見 `docs/ANTIGRAVITY_HANDOFF.md`
+對應條目。`app.js` 這次同樣一行沒動，round3 的 commit 只碰稽核工具跟報告 5 個檔案，純新增。
+沒抓到新的捏造，7/7/11/14 數字跟每個腳本/函式引用逐一核對過都是真的。落地。
+
+---
+
 # 2026-08-26 Antigravity — Task 10C Round 3 (Actual app.js::importClinicalCases Boundary & Complete v2 Lifecycle)
 
 - **做了什麼**: 完成 Task 10C Round 3 臨床病歷匯出/匯入/還原契約驗證（`scripts/audit-clinical-export-contract.js`）：以隔離瀏覽器/事件環境直接執行 `app.js` 生產的 `importClinicalCases`（而非自寫編排），實測驗證格式毀損/語法錯誤/部分輸入/重複 ID 之真實 storage mutation boundary；新增直通 `restoreV2Envelope` 之重複 Case ID 拒收測試；驗證 `restore -> load -> normalize -> save -> read-back` 完整未知欄位生命週期（信封層保留、病例層 UI 週期剔除）。
