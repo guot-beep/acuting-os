@@ -1,0 +1,330 @@
+{
+  "_meta": {
+    "package": "A1_FORMULA_SAFETY_FIELD_SEMANTICS_2026-08-27",
+    "status": "NOT CANONICAL",
+    "no_phi": true,
+    "rules_only": true,
+    "date": "2026-08-27",
+    "source_levels": [
+      "formula-specific",
+      "ingredient-derived",
+      "modern-component"
+    ],
+    "note": "Direction terms are controlled. Translators/renderers must not freely substitute stronger or weaker safety direction words."
+  },
+  "field_semantics": {
+    "contraindications": {
+      "decision_test_zh": "來源是否明確要求在該狀態下不得使用？",
+      "decision_test_en": "Does the source explicitly require that the product not be used in the stated condition?",
+      "meaning": "hard prohibition supported by source wording"
+    },
+    "cautions": {
+      "decision_test_zh": "來源是否保留在監測、調整、專業評估或指定前提下仍可使用的可能？",
+      "decision_test_en": "Does the source leave open the possibility of use after monitoring, adjustment, professional assessment, or a specified prerequisite?",
+      "meaning": "conditional use, monitoring, adjustment, supervision, prerequisite, or nonclinical restriction"
+    }
+  },
+  "directions": [
+    {
+      "direction_id": "contraindicated",
+      "field": "contraindications",
+      "zh_standard": "禁用於",
+      "en_standard": "Contraindicated in",
+      "auto_classify": true,
+      "zh_patterns": [
+        "禁用",
+        "忌用"
+      ],
+      "en_patterns": [
+        "contraindicated in",
+        "is contraindicated",
+        "are contraindicated"
+      ]
+    },
+    {
+      "direction_id": "do_not_use",
+      "field": "contraindications",
+      "zh_standard": "不得使用於",
+      "en_standard": "Do not use in",
+      "auto_classify": true,
+      "zh_patterns": [
+        "不得使用",
+        "不可使用",
+        "嚴禁",
+        "禁服"
+      ],
+      "en_patterns": [
+        "do not use",
+        "must not be used",
+        "must not use",
+        "prohibited"
+      ]
+    },
+    {
+      "direction_id": "prohibited_combination",
+      "field": "contraindications",
+      "zh_standard": "禁止與…同用",
+      "en_standard": "Must not be combined with",
+      "auto_classify": true,
+      "zh_patterns": [
+        "禁止配伍",
+        "禁止與"
+      ],
+      "en_patterns": [
+        "must not be combined with",
+        "prohibited combination"
+      ]
+    },
+    {
+      "direction_id": "unprocessed_form_prohibited",
+      "field": "contraindications",
+      "zh_standard": "未按規定炮製者不得使用",
+      "en_standard": "Do not use the unprocessed form",
+      "auto_classify": true,
+      "zh_patterns": [
+        "未炮製不得使用",
+        "生品不得使用"
+      ],
+      "en_patterns": [
+        "do not use the unprocessed form",
+        "unprocessed form must not be used"
+      ]
+    },
+    {
+      "direction_id": "exposure_limit_prohibited",
+      "field": "contraindications",
+      "zh_standard": "不得超過指定暴露上限",
+      "en_standard": "Must not exceed the specified exposure limit",
+      "auto_classify": true,
+      "zh_patterns": [
+        "不得超過",
+        "不可超過",
+        "嚴禁超過"
+      ],
+      "en_patterns": [
+        "must not exceed",
+        "do not exceed"
+      ]
+    },
+    {
+      "direction_id": "use_with_caution",
+      "field": "cautions",
+      "zh_standard": "慎用於",
+      "en_standard": "Use with caution in",
+      "auto_classify": true,
+      "zh_patterns": [
+        "慎用",
+        "慎服",
+        "宜慎",
+        "謹慎使用"
+      ],
+      "en_patterns": [
+        "use with caution",
+        "use caution",
+        "caution is advised"
+      ]
+    },
+    {
+      "direction_id": "requires_monitoring",
+      "field": "cautions",
+      "zh_standard": "使用時需監測",
+      "en_standard": "Requires monitoring",
+      "auto_classify": true,
+      "zh_patterns": [
+        "需監測",
+        "密切監測"
+      ],
+      "en_patterns": [
+        "requires monitoring",
+        "monitor closely"
+      ]
+    },
+    {
+      "direction_id": "requires_dose_adjustment",
+      "field": "cautions",
+      "zh_standard": "需調整劑量",
+      "en_standard": "Requires dose adjustment",
+      "auto_classify": true,
+      "zh_patterns": [
+        "需調整劑量",
+        "減量"
+      ],
+      "en_patterns": [
+        "requires dose adjustment",
+        "dose reduction"
+      ]
+    },
+    {
+      "direction_id": "avoid_high_dose",
+      "field": "cautions",
+      "zh_standard": "避免大劑量使用",
+      "en_standard": "Avoid high-dose use",
+      "auto_classify": true,
+      "zh_patterns": [
+        "避免大劑量",
+        "不宜大劑量"
+      ],
+      "en_patterns": [
+        "avoid high-dose use",
+        "avoid high doses"
+      ]
+    },
+    {
+      "direction_id": "avoid_prolonged_use",
+      "field": "cautions",
+      "zh_standard": "避免久服",
+      "en_standard": "Avoid prolonged use",
+      "auto_classify": true,
+      "zh_patterns": [
+        "不宜久服",
+        "避免久服",
+        "長期使用應慎"
+      ],
+      "en_patterns": [
+        "avoid prolonged use",
+        "avoid long-term use",
+        "short-term use only"
+      ]
+    },
+    {
+      "direction_id": "professional_supervision_required",
+      "field": "cautions",
+      "zh_standard": "需專業人員評估／指導下使用",
+      "en_standard": "Use only under qualified professional supervision",
+      "auto_classify": true,
+      "zh_patterns": [
+        "需專業人員評估",
+        "需醫師指導",
+        "指導下使用",
+        "不宜自行使用"
+      ],
+      "en_patterns": [
+        "use only under professional supervision",
+        "under qualified professional supervision",
+        "not for self-treatment"
+      ]
+    },
+    {
+      "direction_id": "risk_benefit_assessment_required",
+      "field": "cautions",
+      "zh_standard": "需先評估風險效益",
+      "en_standard": "Requires risk-benefit assessment",
+      "auto_classify": true,
+      "zh_patterns": [
+        "需權衡風險效益",
+        "效益大於風險"
+      ],
+      "en_patterns": [
+        "risk-benefit assessment",
+        "benefit outweighs risk"
+      ]
+    },
+    {
+      "direction_id": "processing_prerequisite",
+      "field": "cautions",
+      "zh_standard": "需按規定炮製／處理後使用",
+      "en_standard": "Requires specified processing before use",
+      "auto_classify": true,
+      "zh_patterns": [
+        "需炮製後使用",
+        "需按規定炮製",
+        "炮製後使用"
+      ],
+      "en_patterns": [
+        "requires processing before use",
+        "must be processed before use"
+      ]
+    },
+    {
+      "direction_id": "administration_prerequisite",
+      "field": "cautions",
+      "zh_standard": "需按指定煎煮／給藥方式使用",
+      "en_standard": "Requires specified preparation or administration",
+      "auto_classify": true,
+      "zh_patterns": [
+        "需先煎",
+        "需後下",
+        "按指定煎煮"
+      ],
+      "en_patterns": [
+        "requires specified preparation",
+        "requires specified administration"
+      ]
+    },
+    {
+      "direction_id": "not_recommended",
+      "field": "cautions",
+      "zh_standard": "不建議用於",
+      "en_standard": "Not recommended in",
+      "auto_classify": true,
+      "zh_patterns": [
+        "不建議"
+      ],
+      "en_patterns": [
+        "not recommended"
+      ]
+    },
+    {
+      "direction_id": "avoid_unless_directed",
+      "field": "cautions",
+      "zh_standard": "應避免，除非經專業評估",
+      "en_standard": "Avoid unless directed by a qualified clinician",
+      "auto_classify": true,
+      "zh_patterns": [
+        "應避免，除非",
+        "避免，除非"
+      ],
+      "en_patterns": [
+        "avoid unless"
+      ]
+    },
+    {
+      "direction_id": "athlete_restriction",
+      "field": "cautions",
+      "zh_standard": "運動員／禁賽規則限制",
+      "en_standard": "Athlete restriction applies",
+      "auto_classify": true,
+      "zh_patterns": [
+        "運動員限制",
+        "禁賽"
+      ],
+      "en_patterns": [
+        "athlete restriction",
+        "anti-doping"
+      ]
+    },
+    {
+      "direction_id": "regulatory_restriction",
+      "field": "cautions",
+      "zh_standard": "法規／產品使用限制",
+      "en_standard": "Regulatory restriction applies",
+      "auto_classify": true,
+      "zh_patterns": [
+        "法規限制",
+        "監管限制"
+      ],
+      "en_patterns": [
+        "regulatory restriction",
+        "regulatory limit"
+      ]
+    }
+  ],
+  "never_auto_upgrade_to_contraindication": {
+    "zh": [
+      "不建議",
+      "不宜",
+      "應避免",
+      "最好避免",
+      "慎用",
+      "需醫師指導"
+    ],
+    "en": [
+      "not recommended",
+      "avoid",
+      "should avoid",
+      "use caution",
+      "under supervision",
+      "should not be used"
+    ]
+  }
+}
