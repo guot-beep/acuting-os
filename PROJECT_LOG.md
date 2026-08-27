@@ -1,3 +1,68 @@
+# 2026-08-27 — Ting 裁定「南北沙參基原不同,照藥典分立」:herb.nan_sha_shen 建模板級卡(363→364)
+
+承上一條懸空 id 治理留給 Ting 的第 1 項。Ting 裁定分立建卡,本條執行。
+
+**分立的藥典依據(兩源獨立一致)**:臺灣中藥典第四版 ADENOPHORAE RADIX 南沙參 = Adenophora stricta Miq.
+或 Adenophora triphylla (Thunb.) A.DC.,**桔梗科 Campanulaceae**;北沙參 = Glehnia littoralis,**傘形科**。
+CloudTCM 8058 亦載「桔梗科沙參屬植物的根部」。⚠️ 過程中的反例:搜尋引擎摘要把南沙參基原寫成
+「Platycodon / Glehnia littoralis subsp. maritime」,實際開頁核讀才發現是摘要雜訊——**摘要不能當來源**。
+
+**接上 2026-08-14 的歷史缺口**:herb.sha_shen 該日經 Ting 裁定 deprecated(方案 A,實為北沙參重複匯入),
+其 deprecated_note 明寫「不含任何南沙參專屬臨床內容,故**未另立南沙參封存記錄**」——今天這張卡正是補上
+當時懸而未決的那一半。
+
+**新卡 herb.nan_sha_shen(55 欄,card_grade: template,review_status: draft,authored_by: Claude)**
+逐欄來源(全部實際核讀,無一欄無據):
+- 性味歸經/功效 3 條/主治 4 條/劑量/禁忌/exam pearl ← curriculum MM III Yin-tonifying L133–179
+- 南北鑑別「北沙參清熱力強於南沙參」← 同檔 L129–131
+- 反藜蘆(十八反「諸參辛芍叛藜蘆」)← Mnemonics L159(明列 Nan Sha Shen)
+- 拉丁名 Adenophorae Radix/部位 root ← Pinyin & Latin Herb List L152
+- 基原 ← 臺灣中藥典第四版 L25306–25313
+- 考綱地位 ← NCBAHM 2026 CH Appendix A L424
+- 基原/性味差異/現代藥理 2 tag/別名 ← https://cloudtcm.com/herb/8058(實際開頁)
+逐欄位數字:functions_zh 3(E8 區間 2–6)、indications_zh/_en 4/4、condition_tags 7/7、
+modern_functions 2/2、contraindications 3/3、cautions 3/3、channels 2/2——七組 _zh/_en 全部等長,
+寫入前腳本先自檢對齊與 _en 純英文才落檔。
+
+**照模板 §3.4a 兩份 Appendix 都查了,結果都是「有列但為合併寫法」**:
+- Appendix A L424 收 `Sha Shen (Glehniae/Adenophorae Radix)`,未分列南/北;南沙參為其兩基原之一,
+  故 ncbahm_2026_official 填 true(理由寫進 review_notes_zh,不留給後人猜)。
+- Appendix B L592 對藥 `Mai Men Dong and Sha Shen (Glehniae/Adenophorae Radix)` 同為合併寫法。
+  既有 pair.mai_men_dong__sha_shen 依 08-14 裁定已掛 herb.bei_sha_shen,**本次未動**。
+
+**刻意不做的四件事(每件都有理由,不是漏)**:
+1. `related_formulas` 留空:沙參麥門冬湯 name_en 為 Glehnia and Ophiopogon Decoction、composition 已指
+   herb.bei_sha_shen,考綱英譯亦明指 Glehnia → 不掛南沙參;查無其他具名來源指定南沙參的方,不編。
+2. `aliases_zh` 不收「沙參」:08-14 已歸 herb.bei_sha_shen,兩卡同列會讓全站 herb linking 歧義。
+3. `aliases_zh` 不收 CloudTCM 別名串裡的「知母」:知母是獨立藥材 herb.zhi_mu,判為該來源別名欄的
+   資料污染,不採信(只收 泡沙參/泡參/山沙參/白沙參 4 個明確沙參類俗名)。
+4. 現代藥理只採 CloudTCM 2 tag:curriculum「Materia Medica Abbbreviated」該頁是雙欄 PDF 轉文字、
+   欄位交錯,其 WM 與 10–15g 劑量段**無法安全歸屬到本味藥**,依模板 §0a 不採。只採該頁明確標了
+   「Nan Sha Shen:」前綴的句子。劑量同理只採 MM III 的 9–15g(乾)/15–30g(鮮);CloudTCM「3～5錢
+   (鮮者1～3兩)」原文照錄不換算——一錢克數因台制/大陸制而異,換算會產生來源沒說過的數字。
+
+**眼睛讀卡抓到 1 個渲染問題(驗證器全綠但畫面是斷的)**:主治第 3 條原寫「…咳之不出(南沙參與北沙參的
+分野所在)」,herb-linking 把「北沙參」轉成連結後,畫面變成「南沙參與北沙參 [Bei Sha Shen] 的分野所在」,
+句子被切斷。且該鑑別本就屬 clinical_use_note/exam_pearl(兩處都已寫),放主治是內容放錯欄位。已移除
+該括號註記(中英同步),重新 build + reload 後畫面四條乾淨。**這條只有開卡片才看得到,validator 全程綠燈。**
+
+**同批清理**:herb_pairs.json 冬瓜子七味組的 `pending_herb_id:herb.nan_sha_shen` 標記與 caution/cautions
+四欄的「尚未建卡」雙語註記已移除(建卡後即失真);畫面複驗該對藥的「南沙參 · Nan Sha Shen」連結已恢復,
+注意欄句子完整無殘句。
+
+**驗證**:`build-data`(herbs 363→**364**)、`validate-herb-standard`(PASS,新卡通過 E5/E6/E7/E8/E10)、
+`validate-formula-standard`(PASS)、`validate-pattern-standard`(PASS)、`validate-content-junk`(PASS)、
+`validate-herb-dosage-shape`(PASS)、`check-validation-ratchet`(PASS 0 退步)。
+herb_canon_shortlist.json diff = **290 insertions / 0 deletions**(純新增,無整檔 reformat——
+寫入用 JSON.stringify(db,null,1)+'\n',與原檔 round-trip 完全一致,已先實測)。
+卡片畫面複驗:21 個區塊全渲染,劑量帶來源標註,禁忌/慎用中英成對,7 個來源 chip 全顯示。
+MEASURED TREE: claude/frosty-yonath-0adbce @ 本 commit。
+
+**留 Ting**:(1) 考綱 Appendix B 合併寫法的對藥 pair.mai_men_dong__sha_shen 是否應同時掛南沙參;
+(2) 新卡 review_status=draft,待 RV1 源審;(3) 上一條 log 的補卡 backlog(淋證四方+交泰丸等)仍在。
+
+---
+
 # 2026-08-27 Antigravity — Task 10D Final (Evidence & Provenance Fragmentation Architecture Inventory)
 
 - **做了什麼**: 完成 Task 10D 正典來源、中繼資料、作者與審核狀態片段化架構盤點（`scripts/audit-evidence-provenance-fragmentation.js`）：(1) 盤點 27 個正典資料庫共 43 個來源/審查欄位（10 個候選非來源欄位獨立歸類）；(2) 詞法剝除與 occurrence-level 消費者分離，精確區分 `READS_VALUE`、`WRITES`、`DISPLAYS`、`CHECKS_ENUM`、`CHECKS_PRESENCE`、`TRANSFORMS` 與 `COPIES_THROUGH`，排除靜態資料檔寫入者污染；(3) 運算元級運算式解析，精準萃取 4 處跨 2+ 來源欄位之優先序鏈路；(4) 記錄級生成存活驗證：依真實構建圖與 exact field path（如 `condition_canon.acupoint_protocol_evidence.protocol_status`）比對數值深度相等性，產出 102 筆 per-dataset 存活明細與欄位級彙總；(5) 8/8 自我測試套件完整驗證。

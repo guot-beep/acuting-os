@@ -53532,6 +53532,296 @@
    ]
   },
   {
+   "review_status": "draft",
+   "source_status": "source_layered_draft",
+   "ncbahm_2026_official": true,
+   "public_safe": false,
+   "updated_at": "2026-08-27",
+   "authored_by": "Claude",
+   "name_header_note_zh": "中文/拼音旁為 common name；下一行拉丁藥名。",
+   "key_pairs": [],
+   "review_notes_zh": "AI draft(2026-08-27,Ting 裁定「南北沙參基原不同,照藥典分立建卡」後建):基原依臺灣中藥典第四版 ADENOPHORAE RADIX——Adenophora stricta Miq. 或 Adenophora triphylla (Thunb.) A.DC.(桔梗科),與北沙參 Glehnia littoralis(傘形科)不同科屬;CloudTCM 8058 亦記「桔梗科沙參屬植物的根部」,兩源一致。Appendix A 查證結果:考綱以**合併條目** Sha Shen (Glehniae/Adenophorae Radix) 收錄(L424),未分列南/北,南沙參為該條目兩基原之一,故 ncbahm_2026_official 填 true。Appendix B 查證結果:**有列**,但同樣是合併寫法 Mai Men Dong and Sha Shen (Glehniae/Adenophorae Radix)(L592);既有 pair.mai_men_dong__sha_shen 依 2026-08-14 沙參併卡裁定已掛 herb.bei_sha_shen,本次未動——該考綱對藥是否應同時掛南沙參,屬考綱合併寫法的歸屬問題,留 Ting 裁定。aliases_zh 刻意**不收「沙參」**(2026-08-14 Ting 裁定已歸 herb.bei_sha_shen,兩卡同列會讓全站 herb linking 歧義);亦**不收 CloudTCM 別名串裡的「知母」**——知母是獨立藥材 herb.zhi_mu,判為該來源別名欄的資料污染,不採信。related_formulas 留空:沙參麥門冬湯 name_en 為 Glehnia and Ophiopogon Decoction、composition 已指 herb.bei_sha_shen,考綱英譯亦明指 Glehnia,故不掛南沙參;查無其他具名來源明確指定南沙參的方劑,不編。American Dragon 無 NanShaShen 專頁(404 實測),故未列為來源。現代藥理僅採 CloudTCM 兩個 tag(強心作用/抗真菌);curriculum「Materia Medica Abbbreviated」該頁為雙欄 PDF 轉文字、欄位交錯,其 WM 與劑量段無法安全歸屬到本味藥,依模板 §0a「務必確認段落屬於這一味藥」不採。仍待 Ting/RV1 源審核。",
+   "source_type": "full_card_verified_multi_source",
+   "id": "herb.nan_sha_shen",
+   "name_zh": "南沙參",
+   "name_en": "Ladybell Root",
+   "pinyin": "Nan Sha Shen",
+   "pinyin_toned": "Nán Shā Shēn",
+   "pharmaceutical_latin": "Adenophorae Radix / Radix Adenophorae",
+   "part_used_zh": "根",
+   "part_used_en": "root",
+   "category": "補虛藥 / Tonify Yin",
+   "category_zh": "補陰藥",
+   "properties_taste_temp": "甘、微苦，涼",
+   "taste_temperature_zh": "甘、微苦，涼",
+   "channels_zh": [
+    "肺經",
+    "胃經"
+   ],
+   "channels_en": [
+    "LU Lung",
+    "ST Stomach"
+   ],
+   "channels_entered": [
+    "肺經",
+    "胃經"
+   ],
+   "aliases_zh": [
+    "泡沙參",
+    "泡參",
+    "山沙參",
+    "白沙參"
+   ],
+   "aliases_en": [],
+   "tcm_properties": {
+    "five_flavors_zh": [
+     "甘",
+     "微苦"
+    ],
+    "five_flavors_en": [
+     "Sweet",
+     "Slightly bitter"
+    ],
+    "four_natures_zh": "涼",
+    "four_natures_en": "Cool",
+    "meridian_tropism_zh": [
+     "肺經",
+     "胃經"
+    ],
+    "meridian_tropism_en": [
+     "LU Lung",
+     "ST Stomach"
+    ],
+    "part_used_zh": "根",
+    "part_used_en": "root",
+    "source_note_zh": "主欄性味歸經採課件 MM III(甘、微苦、涼;肺、胃)。CloudTCM 8058 另記性味「微苦, 甘, 淡, 微寒, 涼」、歸經多列「肝經, 脾經」——兩源不合,依模板規則 4 並記於此,主欄採考綱課件的肺胃二經共識,未擅自二選一。"
+   },
+   "property_channel_source_note_zh": "CloudTCM 8058 歸經另列肝、脾二經,課件 MM III 只列肺、胃;主欄採兩源共識的肺胃,肝脾差異保留在 tcm_properties.source_note_zh。",
+   "functions_zh": [
+    "養陰清肺",
+    "益胃生津",
+    "化痰止咳"
+   ],
+   "actions_en": [
+    "Nourishes Lung Yin and clears Lung Heat",
+    "Nourishes Stomach Yin and generates fluids",
+    "Transforms Phlegm and stops cough"
+   ],
+   "indications_zh": [
+    "肺胃陰虛燥證：乾咳少痰或痰黏難咳、聲音嘶啞、咽乾口燥",
+    "熱病後期津液受傷：口渴、心煩、餘熱未清",
+    "燥兼輕微痰阻：痰少而黏、咳之不出",
+    "虛勞傷及肺陰：低熱、盜汗、乾咳久嗽"
+   ],
+   "indications_en": [
+    "Lung and Stomach Yin deficiency with dryness: dry cough with scanty or sticky sputum, hoarse or weak voice, dry throat and mouth.",
+    "Post-febrile disease with injury to fluids: thirst, irritability, lingering residual heat.",
+    "Dryness with mild phlegm that is difficult to expectorate.",
+    "Consumptive patterns injuring Lung Yin: low-grade fever, night sweats, chronic dry cough."
+   ],
+   "condition_tags_zh": [
+    "乾咳",
+    "痰少難咳",
+    "聲音嘶啞",
+    "咽乾口燥",
+    "口渴",
+    "低熱",
+    "盜汗"
+   ],
+   "condition_tags_en": [
+    "Dry cough",
+    "Scanty sticky sputum",
+    "Hoarseness",
+    "Dry throat and mouth",
+    "Thirst",
+    "Low-grade fever",
+    "Night sweats"
+   ],
+   "modern_functions_zh": [
+    "強心作用",
+    "抗真菌"
+   ],
+   "modern_functions_en": [
+    "Cardiotonic activity",
+    "Antifungal activity"
+   ],
+   "dosage": {
+    "min_g": 9,
+    "max_g": 15,
+    "unit": "g/day",
+    "route": "decoction"
+   },
+   "dosage_g": {
+    "standard_daily_g": "9–15g 煎服（乾根，課件 MM III）",
+    "fresh_material_g": "15–30g（鮮品，課件 MM III）",
+    "cloudtcm_dose_g": "內服:熬湯，3～5錢（鮮者1～3兩）；或入丸、散（CloudTCM 原文照錄）",
+    "source_note": "精準克數採課件 MM III。CloudTCM 以錢/兩計,一錢的克數因版本(台制/大陸制)而異,故保留原文不換算——換算會產生來源沒說過的數字。"
+   },
+   "related_formulas": [],
+   "exam_importance": "★ NCBAHM 2026 CH Appendix A 以合併條目 Sha Shen (Glehniae/Adenophorae Radix) 收錄，南沙參為其兩基原之一。考點在南北之分：北沙參清熱力強，南沙參兼能化痰。",
+   "exam_pearl": "💡 南沙參 = 養陰兼輕微化痰（Nan Sha Shen = yin tonic with mild phlegm-clearing）；北沙參清熱力強於南沙參（Bei Sha Shen is stronger at clearing heat）。陰虛燥咳而「痰少黏、咳之不出」偏南沙參；純燥熱無痰偏北沙參。NCBAHM 2026 CH 課件 Yin-tonifying。",
+   "clinical_use_note": "南沙參與北沙參同名不同物：南沙參是桔梗科沙參屬（Adenophora）的根，北沙參是傘形科珊瑚菜（Glehnia littoralis）的根，基原不同科，2026-08-27 依藥典分立建卡。功用上兩者都養肺胃之陰、生津潤燥，分野在於：北沙參清熱力較強，多用於熱病後陰傷；南沙參質較輕，養陰之外兼能化痰，適合陰虛燥咳而痰少黏、咳之不出者——「陰虛而有痰」是選南不選北的關鍵。安全上兩味同屬十八反「諸參辛芍叛藜蘆」的「諸參」，絕不與藜蘆同用；性涼滋潤，風寒咳嗽與脾胃寒濕、虛寒者禁用，脾虛有濕者慎用。考綱以合併條目 Sha Shen (Glehniae/Adenophorae Radix) 收錄兩者，讀題時要從證候（有痰無痰、熱重不重）判斷指的是哪一味。",
+   "contraindications_zh": [
+    "風寒咳嗽禁用。",
+    "脾胃寒濕或虛寒者禁用。",
+    "反藜蘆（十八反「諸參辛芍叛藜蘆」），忌與藜蘆同用。"
+   ],
+   "contraindications_en": [
+    "Contraindicated in cough due to Wind-Cold.",
+    "Contraindicated in Cold-Damp or Deficiency-Cold of the Spleen and Stomach.",
+    "Incompatible with Li Lu (Veratrum) under the Eighteen Incompatibilities."
+   ],
+   "cautions_zh": [
+    "脾虛有濕者慎用。",
+    "陽虛生寒者不宜。",
+    "脾胃虛寒者慎用（CloudTCM）。"
+   ],
+   "cautions_en": [
+    "Use cautiously in Spleen deficiency with Dampness.",
+    "Not appropriate for Cold arising from Yang deficiency.",
+    "Use cautiously in Spleen-Stomach Deficiency-Cold (CloudTCM)."
+   ],
+   "safety_flags": [
+    "eighteen_incompatibilities_li_lu",
+    "spleen_stomach_cold_contraindication",
+    "exterior_cough_contraindication"
+   ],
+   "exact_source_url": "https://cloudtcm.com/herb/8058",
+   "safety_source_url": "https://cloudtcm.com/herb/8058",
+   "cloudtcm_url": "https://cloudtcm.com/herb/8058",
+   "source_urls": [
+    "https://cloudtcm.com/herb/8058"
+   ],
+   "source_citations": [
+    {
+     "name": "📘 課件 Materia Medica III Yin-tonifying — Nan Sha Shen",
+     "url": "curriculum/herbs/Materia Medica III – Yin-tonifying Herbs.md#L133-L179",
+     "scope": "主來源:性味歸經、三項核心功效、主治四類、劑量(9–15g乾/15–30g鮮)、禁忌與 exam pearl"
+    },
+    {
+     "name": "📘 課件 Materia Medica III — 北沙參 exam pearl 對照",
+     "url": "curriculum/herbs/Materia Medica III – Yin-tonifying Herbs.md#L129-L131",
+     "scope": "南北沙參鑑別:北沙參清熱力強於南沙參"
+    },
+    {
+     "name": "📘 課件 十八反 Mnemonics",
+     "url": "curriculum/herbs/Mnemonics for the 18 Incompatibilities in TCM.md#L159",
+     "scope": "安全:南沙參列於藜蘆反的「諸參」之中"
+    },
+    {
+     "name": "📘 課件 Pinyin & Latin Herb List",
+     "url": "curriculum/herbs/Pinyin & Latin Herb List.md#L152",
+     "scope": "拉丁藥名 Adenophorae Radix、藥用部位 root、英文常用名"
+    },
+    {
+     "name": "📘 臺灣中藥典第四版 ADENOPHORAE RADIX",
+     "url": "curriculum/formulas/臺灣中藥典第四版英文版.md#L25306-L25313",
+     "scope": "基原:Adenophora stricta Miq. / Adenophora triphylla (Thunb.) A.DC.,桔梗科(分立建卡的藥典依據)"
+    },
+    {
+     "name": "📘 NCBAHM 2026 CH Exam Content Outline, Appendix A / Appendix B",
+     "url": "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md#L424",
+     "scope": "考綱以合併條目 Sha Shen (Glehniae/Adenophorae Radix) 收錄;Appendix B L592 對藥同為合併寫法"
+    },
+    {
+     "name": "雲端中醫 CloudTCM 南沙參",
+     "url": "https://cloudtcm.com/herb/8058",
+     "scope": "外部核讀:基原(桔梗科沙參屬)、性味歸經差異、功效主治、劑量原文、慎用、現代藥理兩個 tag、別名"
+    }
+   ],
+   "field_sources": {
+    "properties_taste_temp": [
+     "curriculum/herbs/Materia Medica III – Yin-tonifying Herbs.md#L136",
+     "https://cloudtcm.com/herb/8058"
+    ],
+    "taste_temperature_zh": [
+     "curriculum/herbs/Materia Medica III – Yin-tonifying Herbs.md#L136"
+    ],
+    "channels_zh": [
+     "curriculum/herbs/Materia Medica III – Yin-tonifying Herbs.md#L137",
+     "https://cloudtcm.com/herb/8058"
+    ],
+    "channels_en": [
+     "curriculum/herbs/Materia Medica III – Yin-tonifying Herbs.md#L137"
+    ],
+    "tcm_properties": [
+     "curriculum/herbs/Materia Medica III – Yin-tonifying Herbs.md#L133-L137",
+     "https://cloudtcm.com/herb/8058"
+    ],
+    "functions_zh": [
+     "curriculum/herbs/Materia Medica III – Yin-tonifying Herbs.md#L140-L144",
+     "https://cloudtcm.com/herb/8058"
+    ],
+    "actions_en": [
+     "curriculum/herbs/Materia Medica III – Yin-tonifying Herbs.md#L140-L144"
+    ],
+    "indications_zh": [
+     "curriculum/herbs/Materia Medica III – Yin-tonifying Herbs.md#L146-L163",
+     "https://cloudtcm.com/herb/8058"
+    ],
+    "indications_en": [
+     "curriculum/herbs/Materia Medica III – Yin-tonifying Herbs.md#L146-L163"
+    ],
+    "condition_tags_zh": [
+     "curriculum/herbs/Materia Medica III – Yin-tonifying Herbs.md#L146-L163"
+    ],
+    "condition_tags_en": [
+     "curriculum/herbs/Materia Medica III – Yin-tonifying Herbs.md#L146-L163"
+    ],
+    "modern_functions_zh": [
+     "https://cloudtcm.com/herb/8058"
+    ],
+    "modern_functions_en": [
+     "translated: 本卡 modern_functions_zh 逐條忠實翻譯(紅線5 同長同序)"
+    ],
+    "dosage": [
+     "curriculum/herbs/Materia Medica III – Yin-tonifying Herbs.md#L165-L168"
+    ],
+    "dosage_g": [
+     "curriculum/herbs/Materia Medica III – Yin-tonifying Herbs.md#L165-L168",
+     "https://cloudtcm.com/herb/8058"
+    ],
+    "contraindications_zh": [
+     "curriculum/herbs/Materia Medica III – Yin-tonifying Herbs.md#L170-L175",
+     "curriculum/herbs/Mnemonics for the 18 Incompatibilities in TCM.md#L159"
+    ],
+    "contraindications_en": [
+     "curriculum/herbs/Materia Medica III – Yin-tonifying Herbs.md#L170-L175"
+    ],
+    "cautions_zh": [
+     "curriculum/herbs/Materia Medica III – Yin-tonifying Herbs.md#L170-L175",
+     "https://cloudtcm.com/herb/8058"
+    ],
+    "cautions_en": [
+     "curriculum/herbs/Materia Medica III – Yin-tonifying Herbs.md#L170-L175"
+    ],
+    "safety_flags": [
+     "curriculum/herbs/Materia Medica III – Yin-tonifying Herbs.md#L170-L175",
+     "curriculum/herbs/Mnemonics for the 18 Incompatibilities in TCM.md#L159"
+    ],
+    "aliases_zh": [
+     "https://cloudtcm.com/herb/8058"
+    ],
+    "exam_importance": [
+     "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md#L424"
+    ],
+    "exam_pearl": [
+     "curriculum/herbs/Materia Medica III – Yin-tonifying Herbs.md#L177-L179",
+     "curriculum/herbs/Materia Medica III – Yin-tonifying Herbs.md#L129-L131"
+    ],
+    "clinical_use_note": [
+     "curriculum/herbs/Materia Medica III – Yin-tonifying Herbs.md#L129-L179",
+     "curriculum/formulas/臺灣中藥典第四版英文版.md#L25306-L25313",
+     "curriculum/herbs/Mnemonics for the 18 Incompatibilities in TCM.md#L159"
+    ],
+    "pharmaceutical_latin": [
+     "curriculum/herbs/Pinyin & Latin Herb List.md#L152",
+     "curriculum/formulas/臺灣中藥典第四版英文版.md#L25306-L25313"
+    ]
+   },
+   "card_grade": "template"
+  },
+  {
    "id": "herb.mai_men_dong",
    "name_zh": "麥門冬",
    "name_en": "Ophiopogon Tuber",
