@@ -37,6 +37,15 @@ Spec 全在 `docs/research_packs/CLASSICAL_REFS_ATTRIBUTION_SCAN.md` §2
 需新寫鑑別文字 —— 具名來源(統編《中醫診斷學》層級即可,照 A18-1 裁定:
 教材通說樣板句為合法 source 類型,日後抽查)。
 
+> **A2 到貨(2026-08-27)**:SOL 查源包已落
+> `data/research_staging/formula_caution_safety_source_pack_sol_2026-08-27.json`
+> (+同名 docs/research_packs MD)。checksum 3/3 驗證、45 個具名來源、
+> 「寧缺勿造」全程守住(拒引無頁碼 Bensky、evidence_pending 誠實)。
+> **63 張慎用藥方劑卡的回填以此包為據**,逐句帶 provenance 三層標籤
+> (formula-specific / ingredient-derived / modern-component),
+> evidence_pending 者留白。蜈蚣劑量(舊版鏡像 3-5g)標 disagreement,
+> 寫回前需 2025 版正文複核。A1 包 SOL 尚在產出,到貨後同流程落 staging。
+
 ## 4. A1(a) · 方劑安全欄重設計 → 交 SOL
 
 163/224 張 `contraindications_en` 與 `cautions_en` 逐位元組相同 —— 結構性缺陷。
