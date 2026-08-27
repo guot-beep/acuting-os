@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * audit-clinical-export-contract.js — Task 10C Round 3: Actual Import Boundary Verification
+ * audit-clinical-export-contract.js — Task 10C Round 4: Final Evidence Integrity
  *
  * READ-ONLY deterministic audit evaluating private clinical backup/export/import/restore contracts.
  * All conclusions, mutation boundaries, and fixture proofs are executed directly against real production functions:
@@ -213,8 +213,10 @@ function createRealAppHarness(initialCases = [], initialPointer = null, initialS
 async function runSelfTest() {
   console.log("=== RUNNING TASK 10C MUTATION BOUNDARY REGRESSION SUITE (14 FIXTURES) ===");
   const baseHarness = createRealAppHarness();
+  require(path.join(ROOT, "js/clinical-store.js"));
   const S = globalThis.AcuTingClinicalStore;
   const sha = async (s) => crypto.createHash("sha256").update(s, "utf8").digest("hex");
+  const patientIdOf = async (code) => "patient." + (await sha("acuting-patient:" + code)).slice(0, 12);
   let passed = 0;
 
   // Fixture 1: old bare array accepted directly
@@ -353,17 +355,9 @@ async function runSelfTest() {
   console.log("PASS [Fixture 11]: v1 case-level unknown fields -> stripped by normalizeClinicalCase");
   passed++;
 
-  // Fixture 12: v2 unknown fields complete chain (restore -> load -> normalize -> save -> read-back)
-  const v2EnvWithUnknown = {
-    schema_version: 2,
-    journal: { created_at: "2026-08-01" },
-    patients: [],
-    cases: [{ id: "c1", patientCode: "", custom_case_field: "case_val", soapNotes: [] }],
-    custom_envelope_field: "envelope_val",
-    runtime_revision: 1
-  };
+  // Fixture 12: v2 unknown fields complete lifecycle via actual restoreV2Envelope -> load -> normalize -> save -> export
   const b12 = {
-    kv: new Map([["acuting-clinical-v2-staging", JSON.stringify(v2EnvWithUnknown)], ["acuting-clinical-active", "v2"]]),
+    kv: new Map([["acuting-clinical-cases-v1", JSON.stringify([{ id: "case.init", patientCode: "P-INIT", soapNotes: [] }])]]),
     read() { return this.kv.get("acuting-clinical-cases-v1") ?? null; },
     write(s) { this.kv.set("acuting-clinical-cases-v1", s); },
     readKey(k) { return this.kv.get(k) ?? null; },
@@ -371,15 +365,45 @@ async function runSelfTest() {
     removeKey(k) { this.kv.delete(k); },
   };
   S.setBackend(b12);
+
+  const pid12 = await patientIdOf("P-UNK");
+  const incomingV2WithUnknown = {
+    schema_version: 2,
+    journal: { created_at: "2026-08-01" },
+    patients: [
+      { id: pid12, patientCode: "P-UNK", caseIds: ["case.unk"], caseCount: 1, fields: {}, conflicts: {}, needsReview: [], adjudicationsApplied: [] }
+    ],
+    cases: [
+      { id: "case.unk", patientCode: "P-UNK", patientId: pid12, custom_case_field: "case_val_123", soapNotes: [] }
+    ],
+    custom_envelope_field: "envelope_val_xyz",
+    runtime_revision: 1
+  };
+
+  // Step 1: Real restoreV2Envelope execution
+  const restoreRes12 = await S.restoreV2Envelope(JSON.stringify(incomingV2WithUnknown), sha);
+  assert.strictEqual(restoreRes12.ok, true);
+
+  const rawStagingAfterRestore12 = JSON.parse(b12.kv.get("acuting-clinical-v2-staging"));
+  assert.strictEqual(rawStagingAfterRestore12.custom_envelope_field, "envelope_val_xyz"); // envelope-level preserved initially
+  assert.strictEqual(rawStagingAfterRestore12.cases[0].custom_case_field, "case_val_123"); // case-level preserved initially
+
+  // Step 2: Real AcuTingClinicalStore.load()
   const loadedCases12 = S.load();
-  assert.strictEqual(loadedCases12[0].custom_case_field, "case_val"); // storage read retains raw case fields
+  assert.strictEqual(loadedCases12[0].custom_case_field, "case_val_123");
+
+  // Step 3: Real normalizeClinicalCase()
   const uiCases12 = loadedCases12.map(baseHarness.sandbox.normalizeClinicalCase);
-  assert.strictEqual(uiCases12[0].custom_case_field, undefined); // UI normalizer drops unknown case fields
+  assert.strictEqual(uiCases12[0].custom_case_field, undefined); // dropped by normalizer
+
+  // Step 4: Real AcuTingClinicalStore.save()
   S.save(uiCases12);
-  const stagingAfter12 = JSON.parse(b12.kv.get("acuting-clinical-v2-staging"));
-  assert.strictEqual(stagingAfter12.custom_envelope_field, "envelope_val"); // envelope-level preserved in staging
-  assert.strictEqual(stagingAfter12.cases[0].custom_case_field, undefined); // case-level stripped permanently from staging
-  console.log("PASS [Fixture 12]: v2 unknown fields complete lifecycle -> envelope-level preserved, case-level stripped on UI load/save");
+
+  // Step 5: Read-back resulting staging envelope
+  const finalStaging12 = JSON.parse(b12.kv.get("acuting-clinical-v2-staging"));
+  assert.strictEqual(finalStaging12.custom_envelope_field, "envelope_val_xyz"); // envelope-level survived save
+  assert.strictEqual(finalStaging12.cases[0].custom_case_field, undefined); // case-level permanently removed
+  console.log("PASS [Fixture 12]: v2 unknown fields complete lifecycle -> executed restoreV2Envelope, load, normalize, save, verified envelope survives & case dropped");
   passed++;
 
   // Fixture 13: v2 payload sent down v1 route -> fails closed
@@ -409,12 +433,13 @@ async function runSelfTest() {
   return passed;
 }
 
-function runAudit() {
+async function runAudit() {
   const headSha = getGitSha("HEAD");
   const baseSha = getGitSha("origin/main");
 
   // Dynamically derive evidence using production harness
   const baseHarness = createRealAppHarness();
+  require(path.join(ROOT, "js/clinical-store.js"));
   const S = globalThis.AcuTingClinicalStore;
 
   // Test 1: Bare array acceptance
@@ -436,8 +461,21 @@ function runAudit() {
   let malformedUnwrapThrows = false;
   try { baseHarness.sandbox.unwrapV1CasesPayload({ schema_version: 1, cases: "not an array" }); } catch (e) { malformedUnwrapThrows = !!e.userFacing; }
 
-  // Test 6: Partial input overwrite behavior under Merge (derived from Map merge logic in app.js)
-  const partialOverwritesExistingFields = true; // Verified by Fixture 9 & 10
+  // Test 6: Dynamic partial input overwrite behavior under Merge (dynamically executed probe)
+  const probeFullCase = {
+    id: "case.probe",
+    patientCode: "P-PROBE",
+    caseTitle: "Full Title",
+    sex: "F",
+    birthYear: 1990,
+    historyPresent: "Severe pain for 3 months",
+    soapNotes: [{ id: "soap.1", visitDate: "2026-08-01", tcmPattern: "Stagnation" }]
+  };
+  const probeHarness = createRealAppHarness([probeFullCase]);
+  const partialProbeInput = [{ id: "case.probe", patientCode: "P-PROBE" }];
+  const probeMergeRes = await probeHarness.executeImport(JSON.stringify(partialProbeInput), { merge: true });
+  const probeMergedCase = probeMergeRes.inMemoryCases.find((c) => c.id === "case.probe");
+  const partialOverwritesExistingFields = probeMergeRes.storageMutated && probeMergedCase && probeMergedCase.caseTitle === "" && probeMergedCase.historyPresent === "";
 
   // Test 7: Case count validation in v1 unwrap
   const caseCountInformationalOnly = baseHarness.sandbox.unwrapV1CasesPayload({ schema_version: 1, exported_at: new Date().toISOString(), case_count: 999, cases: [{ id: "c1" }] }).length === 1;
@@ -778,7 +816,7 @@ function runAudit() {
     },
     q11_duplicate_case_ids_handled_deterministically: {
       status: "VERIFIED",
-      details: "In v1 Merge mode, duplicate cases in incoming stream adopt deterministic last-wins in Map merge. In C2b buildMigrationPlan, duplicate case IDs throw an explicit Error. In v2 verifyRuntimeEnvelope, duplicate case IDs push a verification failure and abort restore."
+      details: "In v1 Merge mode, duplicate cases in incoming stream adopt deterministic last-wins in Map merge. In C2b buildMigrationPlan, duplicate case IDs throw an explicit Error. In v2 verifyRuntimeEnvelope / restoreV2Envelope, duplicate case IDs produce a verification failure and abort restore."
     },
     q12_error_messages_phi_safe: {
       status: phiOmitted ? "VERIFIED" : "NOT_ENFORCED",
@@ -803,11 +841,11 @@ function runAudit() {
 
   return {
     meta: {
-      timestamp: "2026-08-26T22:50:00Z",
+      timestamp: "2026-08-27T00:36:00Z",
       base_sha: baseSha,
       audit_source_sha: headSha,
-      delivery_commit_sha: "PENDING_DELIVERY_COMMIT",
-      note: "delivery_commit_sha is stamped in git handoff upon delivery commit creation.",
+      delivery_commit_sha: null,
+      note: "The immutable delivery commit SHA is the Git branch HEAD recorded externally upon commit creation.",
       audit_type: "READ_ONLY_CLINICAL_EXPORT_IMPORT_CONTRACT_AUDIT"
     },
     counts: {
@@ -828,9 +866,9 @@ function generateMarkdownReport(auditData) {
   const counts = auditData.counts;
   const q = auditData.special_questions;
 
-  return `# Clinical Export / Import Contract Audit — Task 10C (Round 3)
+  return `# Clinical Export / Import Contract Audit — Task 10C (Round 4)
 
-- **Audit Date**: 2026-08-26
+- **Audit Date**: 2026-08-26 / 2026-08-27
 - **Base SHA (origin/main)**: \`${meta.base_sha}\`
 - **Audit Source SHA**: \`${meta.audit_source_sha}\`
 - **Delivery Commit SHA**: \`${meta.delivery_commit_sha}\` (${meta.note})
@@ -960,7 +998,7 @@ ${auditData.consumers.map((c) => `- **${c.id} (${c.name})** [${c.type}]: 接受�
 9. **Fixture 9**: 部分輸入 (Partial Input) 直通 \`importClinicalCases\` 在 Merge 模式下重置未列欄位之破壞性實測 $\\rightarrow$ **PASS**
 10. **Fixture 10**: 部分輸入 (Partial Input) 直通 \`importClinicalCases\` 在 Restore 模式下全庫取代之破壞性實測 $\\rightarrow$ **PASS**
 11. **Fixture 11**: v1 case 層未知外加欄位在 \`normalizeClinicalCase\` 中被過濾剔除 $\\rightarrow$ **PASS**
-12. **Fixture 12**: v2 未知欄位完整生命週期實測（信封層儲存保留，病例層 UI load/save 週期剔除） $\\rightarrow$ **PASS**
+12. **Fixture 12**: v2 未知欄位完整生命週期實測（經 \`restoreV2Envelope\` 寫入 staging，經 \`load\` 讀出，經 \`normalizeClinicalCase\` 過濾，經 \`save\` 寫回，確認信封層保留、病例層剔除） $\\rightarrow$ **PASS**
 13. **Fixture 13**: v2 信封傳入 v1 解包函式時 Fail-Closed 阻擋 $\\rightarrow$ **PASS**
 14. **Fixture 14**: 錯誤訊息注入假 PHI 文字，驗證錯誤回顯絕不包含敏感內容 $\\rightarrow$ **PASS**
 
@@ -969,7 +1007,7 @@ ${auditData.consumers.map((c) => `- **${c.id} (${c.name})** [${c.type}]: 接受�
 }
 
 async function writeReports() {
-  const auditData = runAudit();
+  const auditData = await runAudit();
   const jsonPath = path.join(ROOT, "data/audits/clinical_export_contract_2026-08-26.json");
   const mdPath = path.join(ROOT, "docs/audits/CLINICAL_EXPORT_CONTRACT_2026-08-26.md");
 
@@ -1016,7 +1054,7 @@ async function main() {
     return;
   }
 
-  const auditData = runAudit();
+  const auditData = await runAudit();
   console.log(JSON.stringify(auditData, null, 2));
 }
 
