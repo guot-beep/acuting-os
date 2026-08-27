@@ -1,3 +1,22 @@
+# 2026-08-27 Antigravity — Task 10D Final (Evidence & Provenance Fragmentation Architecture Inventory)
+
+- **做了什麼**: 完成 Task 10D 正典來源、中繼資料、作者與審核狀態片段化架構盤點（`scripts/audit-evidence-provenance-fragmentation.js`）：(1) 盤點 27 個正典資料庫共 43 個來源/審查欄位（10 個候選非來源欄位獨立歸類）；(2) 詞法剝除與 occurrence-level 消費者分離，精確區分 `READS_VALUE`、`WRITES`、`DISPLAYS`、`CHECKS_ENUM`、`CHECKS_PRESENCE`、`TRANSFORMS` 與 `COPIES_THROUGH`，排除靜態資料檔寫入者污染；(3) 運算元級運算式解析，精準萃取 4 處跨 2+ 來源欄位之優先序鏈路；(4) 記錄級生成存活驗證：依真實構建圖與 exact field path（如 `condition_canon.acupoint_protocol_evidence.protocol_status`）比對數值深度相等性，產出 102 筆 per-dataset 存活明細與欄位級彙總；(5) 8/8 自我測試套件完整驗證。
+- **數字統計**:
+  - 正典資料庫掃描數: 27 個
+  - 嚴格正典來源/審查欄位: 43 個
+  - 候選相關非來源欄位 (獨立排除): 10 個
+  - 具 Runtime/UI 消費者欄位: 20 個
+  - 僅 Validator 消費者欄位: 0 個
+  - 暗數據欄位 (DATA_PRESENT_NO_CONSUMER_FOUND): 8 個
+  - 逐筆數值比對之重疊欄位對: 7 組
+  - 實質跨 2+ 來源欄位優先序鏈路: 4 處
+  - 生成包資料集路徑細部條目: 140 筆
+- **驗證結果**: 8/8 自我測試 Fixtures 100% PASS；生產代碼與正典資料 0 異動。
+- **已知未解**: 存在 4 處優先序鏈路遮蔽次要來源；狀態詞彙在不同維度共用；部分暗數據欄位（如 `original_shape`、`source_field`）在正典有值但無消費者。
+- **下一步**: Task 10D 永久關閉，等待 Ting 與團隊後續排程。
+
+---
+
 # 2026-08-27 — D25 後續:pattern 三檔 23 個懸空診斷 id 逐一查雙胞胎,16 個重導落地、7 個留 Ting 裁定,P6 盲區以 N3 note 級補上
 
 MEASURED TREE: claude/zealous-hugle-887025(rebase 後基底 3d25efd0,本條目與資料改動同一 commit;基底含同日 formula/herb 懸空 id 治理批)
