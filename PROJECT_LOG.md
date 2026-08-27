@@ -1,3 +1,21 @@
+# 2026-08-27 Antigravity — Task 10D Round 2 (Measurement Integrity Fix)
+
+- **做了什麼**: 完成 Task 10D Round 2 量測引擎完整性重構（`scripts/audit-evidence-provenance-fragmentation.js`）：(1) 收緊欄位發現機制，明確排除 `rx_otc_status`、`exam_importance` 等 10 個非正典來源欄位至 `CANDIDATE_RELATED_FIELD` 獨立清冊，嚴格正典來源/證據欄位精確為 43 個；(2) 實作字串感知之詞法級註解剖析器（Lexical Stripper），完整保護字串與模板字面量（包含 `https://` 與 `//`）；(3) 嚴格區分 `WRITES`、`READS_VALUE`、`CHECKS_PRESENCE`、`CHECKS_ENUM`、`DISPLAYS`、`TRANSFORMS`、`COPIES_THROUGH` 等執行模式，確保寫入與讀取不互相污染；(4) 實作跨 2+ 實質正典來源欄位之優先序遮蔽鏈路過濾（排除純字串預設值 fallback），識別出 23 處真優先序鏈路；(5) 欄位重疊判定導入逐筆記錄數值比對（Record-Level Value Correlation），拒絕僅憑計數或消費者判定冗餘；(6) 機械式探測生成包存活狀態（`SURVIVES_VERBATIM`、`TRANSFORMED`、`NOT_BUNDLED`）；(7) 8/8 演算法測試全數呼叫真實稽核函式。
+- **數字統計**:
+  - 正典資料庫掃描數: 27 個
+  - 嚴格正典來源/審查欄位: 43 個
+  - 候選相關非來源欄位 (獨立排除): 10 個
+  - 具 Runtime/UI 消費者欄位: 23 個
+  - 僅 Validator 消費者欄位: 7 個
+  - 暗數據欄位 (DATA_PRESENT_NO_CONSUMER_FOUND): 7 個
+  - 逐筆數值比對之重疊欄位對: 7 組
+  - 實質跨 2+ 來源欄位優先序鏈路: 23 處
+- **驗證結果**: 8/8 自我測試 Fixtures 100% PASS；生產代碼與正典資料 0 異動。
+- **已知未解**: 存在部分優先序鏈路遮蔽次要來源（如 `sources` 優先於 `cloudtcm_url` 或 `source_urls`）；狀態詞彙在不同維度共用（如 `draft`）；部分暗數據欄位（如 `original_shape`、`source_field`）在正典有值但無消費者。
+- **下一步**: 推送至 `antigravity/task10d-evidence-provenance-fragmentation-round2`，等待 Ting / 團隊審閱，不開始 Task 10E。
+
+---
+
 # 2026-08-27 — R12:病歷匯入 Merge 模式改成逐欄位合併,修掉 Task 10C 抓到的資料清空風險
 
 Ting 要求把 Task 10C round2-4 一路確認的那個資料風險「排進下一批要修的」。這是判斷型/行為變更工作,

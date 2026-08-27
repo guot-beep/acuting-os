@@ -1,0 +1,4700 @@
+{
+  "meta": {
+    "timestamp": "2026-08-27T01:23:00Z",
+    "base_sha": "d082c56b8b9f8d8f7c6652d4a56f72501a0a38fb",
+    "audit_source_sha": "d082c56b8b9f8d8f7c6652d4a56f72501a0a38fb",
+    "delivery_commit_sha": null,
+    "note": "The immutable delivery commit SHA is the Git branch HEAD recorded externally upon commit creation.",
+    "audit_type": "READ_ONLY_EVIDENCE_PROVENANCE_FRAGMENTATION_INVENTORY"
+  },
+  "summary_counts": {
+    "discovered_evidence_fields_count": 43,
+    "candidate_related_fields_count": 10,
+    "canonical_datasets_scanned": 27,
+    "fields_with_runtime_consumers": 23,
+    "fields_with_validator_only_consumers": 7,
+    "fields_with_no_consumer_found": 7,
+    "overlap_pairs_analyzed": 7,
+    "precedence_chains_detected": 23
+  },
+  "field_inventory": [
+    {
+      "field_name": "review_status",
+      "first_level_semantic_category": "REVIEW_STATE",
+      "record_count_present": 3559,
+      "record_count_nonempty": 3559,
+      "observed_value_types": [
+        "string"
+      ],
+      "observed_enum_vocabulary": [
+        "deprecated",
+        "draft",
+        "draft_reviewed",
+        "reviewed",
+        "skeleton",
+        "skeleton_unreviewed",
+        "source_checked",
+        "sourced_checked",
+        "sourced_cloudtcm_record"
+      ],
+      "canonical_datasets_containing_it": [
+        "acupoints_361",
+        "auricular_points",
+        "avs_advice_library",
+        "cloudtcm_diseases",
+        "comparisons",
+        "condition_canon",
+        "conditions",
+        "extra_points",
+        "formulas",
+        "herb_pairs",
+        "herbs",
+        "pattern_library",
+        "pattern_registry",
+        "pharm_drug_classes",
+        "pharm_drugs",
+        "red_flag_registry",
+        "scalp_points",
+        "supplements",
+        "symptoms",
+        "tdis_registry"
+      ],
+      "json_path_examples": [
+        "review_status",
+        "english_exam_track.review_status",
+        "chinese_depth_track.review_status"
+      ]
+    },
+    {
+      "field_name": "field_sources",
+      "first_level_semantic_category": "SOURCE_CITATION",
+      "record_count_present": 2007,
+      "record_count_nonempty": 1991,
+      "observed_value_types": [
+        "object"
+      ],
+      "observed_enum_vocabulary": [],
+      "canonical_datasets_containing_it": [
+        "acupoints_361",
+        "condition_canon",
+        "extra_points",
+        "formulas",
+        "herbs",
+        "pattern_library",
+        "pharm_drug_classes",
+        "pharm_drugs",
+        "symptoms",
+        "tdis_registry"
+      ],
+      "json_path_examples": [
+        "field_sources"
+      ]
+    },
+    {
+      "field_name": "evidence",
+      "first_level_semantic_category": "EVIDENCE_STRENGTH",
+      "record_count_present": 1514,
+      "record_count_nonempty": 1471,
+      "observed_value_types": [
+        "array",
+        "string"
+      ],
+      "observed_enum_vocabulary": [
+        "clinical_judgment",
+        "course",
+        "guideline",
+        "label_derived",
+        "unknown",
+        "三焦背俞穴，水液代謝與消化下焦相關證型常用。",
+        "上髎穴具有調理下焦、健腰腿的功效。主治腰痛、大小便不利、遺尿、腰腿冷痛、陰挺、赤白帶下、陰中痒痛、月經不調等症。",
+        "曲差穴主要功效「祛風、明目、通絡」，主冶頭額痛、目眩、目視不明、鼻塞、流鼻血、面神經麻痹、三叉神經桶、視神經炎，近視。",
+        "會陽穴主要功效「益腎固帶，通理二便」，主治帶下，遺精，陽痿，泄瀉，痢疾，便血，痔疾，子宮糜爛，前列腺炎，陰部溼疹。",
+        "督俞穴主要功效「寬胸，理氣」。主治心痛，胸悶，呃逆，腹脹，腹痛，心動過速，心絞痛，冠心病，膈肌痙攣，皮膚搔癢症。",
+        "肺俞穴功效：宣肺降氣，止咳平喘，化痰止咳。主治：咳嗽，氣喘，咯血，骨蒸，潮熱，盜汗，鼻塞。",
+        "胃背俞穴，消化、胃氣上逆與中焦不和高頻配穴。",
+        "腰痛與腎系傳統證型常用；泌尿感染、腎病或神經壓迫需醫療診斷。",
+        "腰痛與腸胃症狀均有針灸研究；需區分肌骨、神經與內科病因。",
+        "臀腿後側疼痛與坐骨神經路徑配穴。"
+      ],
+      "canonical_datasets_containing_it": [
+        "acupoints_361",
+        "auricular_points",
+        "condition_canon",
+        "extra_points",
+        "red_flag_registry"
+      ],
+      "json_path_examples": [
+        "acupuncture_scope_zh.evidence",
+        "acupuncture_scope_en.evidence",
+        "evidence"
+      ]
+    },
+    {
+      "field_name": "sources",
+      "first_level_semantic_category": "SOURCE_CITATION",
+      "record_count_present": 1468,
+      "record_count_nonempty": 1326,
+      "observed_value_types": [
+        "array"
+      ],
+      "observed_enum_vocabulary": [
+        "curriculum/conditions/AMENO.md",
+        "curriculum/conditions/INFERTI.md",
+        "curriculum/conditions/IRREGU_1.md",
+        "https://cloudtcm.com/disease/tcm/11",
+        "https://cloudtcm.com/disease/tcm/1496",
+        "https://cloudtcm.com/disease/tcm/1543",
+        "https://cloudtcm.com/disease/tcm/32",
+        "https://medlineplus.gov/endometriosis.html",
+        "https://medlineplus.gov/femaleinfertility.html",
+        "https://medlineplus.gov/menstruation.html",
+        "https://medlineplus.gov/periodpain.html",
+        "https://medlineplus.gov/polycysticovarysyndrome.html",
+        "https://medlineplus.gov/premenstrualsyndrome.html",
+        "https://medlineplus.gov/vaginalbleeding.html",
+        "https://www.nichd.nih.gov/health/topics/pcos"
+      ],
+      "canonical_datasets_containing_it": [
+        "acupoints_361",
+        "auricular_points",
+        "condition_canon",
+        "extra_points",
+        "pattern_library",
+        "pharm_drug_classes",
+        "scalp_points",
+        "source_registry",
+        "supplements",
+        "symptoms",
+        "tdis_registry"
+      ],
+      "json_path_examples": [
+        "sources",
+        "acupoint_protocol_evidence.sources"
+      ]
+    },
+    {
+      "field_name": "source_type",
+      "first_level_semantic_category": "PROVENANCE",
+      "record_count_present": 1404,
+      "record_count_nonempty": 1404,
+      "observed_value_types": [
+        "string"
+      ],
+      "observed_enum_vocabulary": [
+        "board_outline_skeleton",
+        "claude_minimal_record_for_F12_link",
+        "course_board_cloudtcm_american_dragon_cross_checked",
+        "curriculum_cloudtcm_formula_draft",
+        "draft_dual_track_hkbu_cloudtcm_bensky_pending",
+        "draft_seed_pending_source_review",
+        "formula_canon_shortlist_skeleton",
+        "formula_ingredient_gap_fill",
+        "full_card_verified_multi_source",
+        "multi_source_curriculum_cloudtcm_american_dragon",
+        "source_transcribed",
+        "sourced_american_dragon",
+        "sourced_cloudtcm_record",
+        "sourced_research_pack",
+        "textbook_standard_plus_medlineplus_redflags"
+      ],
+      "canonical_datasets_containing_it": [
+        "acupoints_361",
+        "comparisons",
+        "condition_canon",
+        "conditions",
+        "formulas",
+        "herbs",
+        "pattern_registry",
+        "symptoms",
+        "tdis_registry"
+      ],
+      "json_path_examples": [
+        "source_type"
+      ]
+    },
+    {
+      "field_name": "authored_by",
+      "first_level_semantic_category": "AUTHORSHIP",
+      "record_count_present": 1150,
+      "record_count_nonempty": 1149,
+      "observed_value_types": [
+        "string"
+      ],
+      "observed_enum_vocabulary": [
+        "",
+        "Claude",
+        "Codex",
+        "antigravity",
+        "claude_d23_skeleton",
+        "migration:claude",
+        "model_draft",
+        "owner",
+        "v7_ingestion_batch2",
+        "v7_ingestion_pilot",
+        "v7_ingestion_priority_pack"
+      ],
+      "canonical_datasets_containing_it": [
+        "comparisons",
+        "condition_canon",
+        "formulas",
+        "herb_pairs",
+        "herbs",
+        "pattern_library",
+        "pharm_drug_classes",
+        "pharm_drugs",
+        "red_flag_registry",
+        "symptoms",
+        "tdis_registry"
+      ],
+      "json_path_examples": [
+        "authored_by"
+      ]
+    },
+    {
+      "field_name": "source_status",
+      "first_level_semantic_category": "VERIFICATION_STATE",
+      "record_count_present": 1056,
+      "record_count_nonempty": 1055,
+      "observed_value_types": [
+        "string"
+      ],
+      "observed_enum_vocabulary": [
+        "",
+        "bensky_review_pending",
+        "bensky_review_pending_chinese_source_draft",
+        "chinese_source_draft_hkbu_cloudtcm_review_pending",
+        "cloudtcm_or_institution_review_pending",
+        "curriculum_cloudtcm_reviewed_ad_formula_not_found",
+        "draft_pending_ting_review",
+        "dual_source_draft",
+        "model_draft_pending_source_review",
+        "source_layered_draft",
+        "source_review_pending"
+      ],
+      "canonical_datasets_containing_it": [
+        "acupoints_361",
+        "condition_canon",
+        "formulas",
+        "herbs"
+      ],
+      "json_path_examples": [
+        "english_exam_track.source_status",
+        "chinese_depth_track.source_status",
+        "source_status"
+      ]
+    },
+    {
+      "field_name": "source",
+      "first_level_semantic_category": "SOURCE_CITATION",
+      "record_count_present": 887,
+      "record_count_nonempty": 438,
+      "observed_value_types": [
+        "null",
+        "object",
+        "string"
+      ],
+      "observed_enum_vocabulary": [
+        "AAOS — Shoulder Impingement/Rotator Cuff Tendinitis",
+        "AAPM&R — Cervical Whiplash",
+        "ACOG — Breastfeeding Challenges",
+        "ACOG — Dysmenorrhea",
+        "ACOG — Management of Premenstrual Disorders",
+        "AcuTing OS Disease Knowledge Research Pack（依 NIAMS 臨床資料整理）",
+        "AcuTing OS Disease Knowledge Research Pack（依 NICHD 臨床資料整理）",
+        "AcuTing OS Disease Knowledge Research Pack（依 NIDDK 臨床資料整理）",
+        "CDC — PID STI Treatment Guidelines",
+        "CDC — Vulvovaginal Candidiasis STI Treatment Guidelines",
+        "curriculum/conditions GI 課程講義 + AcuTing OS 整理",
+        "curriculum/conditions 課程講義 + AcuTing OS 整理",
+        "curriculum/conditions/AMENO.md",
+        "curriculum/conditions/INFERTI.md",
+        "curriculum/conditions/IRREGU_1.md"
+      ],
+      "canonical_datasets_containing_it": [
+        "condition_canon",
+        "outcome_metrics",
+        "supplements",
+        "tung_points"
+      ],
+      "json_path_examples": [
+        "acupuncture_scope_zh.source",
+        "acupuncture_scope_en.source",
+        "source",
+        "interaction_focus.source",
+        "reference_range.source"
+      ]
+    },
+    {
+      "field_name": "cloudtcm_url",
+      "first_level_semantic_category": "SOURCE_LOCATOR",
+      "record_count_present": 875,
+      "record_count_nonempty": 874,
+      "observed_value_types": [
+        "array",
+        "string"
+      ],
+      "observed_enum_vocabulary": [
+        "https://cloudtcm.com/herb/1",
+        "https://cloudtcm.com/herb/1028",
+        "https://cloudtcm.com/herb/1079",
+        "https://cloudtcm.com/herb/1091",
+        "https://cloudtcm.com/herb/1139",
+        "https://cloudtcm.com/herb/1156",
+        "https://cloudtcm.com/herb/1171",
+        "https://cloudtcm.com/herb/1210",
+        "https://cloudtcm.com/herb/1217",
+        "https://cloudtcm.com/herb/1253",
+        "https://cloudtcm.com/herb/2",
+        "https://cloudtcm.com/herb/962",
+        "https://cloudtcm.com/herb/975",
+        "https://cloudtcm.com/herb/977",
+        "https://cloudtcm.com/herb/983"
+      ],
+      "canonical_datasets_containing_it": [
+        "acupoints_361",
+        "formulas",
+        "herbs"
+      ],
+      "json_path_examples": [
+        "cloudtcm_url",
+        "field_sources.cloudtcm_url"
+      ]
+    },
+    {
+      "field_name": "american_dragon_url",
+      "first_level_semantic_category": "SOURCE_LOCATOR",
+      "record_count_present": 664,
+      "record_count_nonempty": 662,
+      "observed_value_types": [
+        "array",
+        "string"
+      ],
+      "observed_enum_vocabulary": [
+        ""
+      ],
+      "canonical_datasets_containing_it": [
+        "formulas",
+        "herbs"
+      ],
+      "json_path_examples": [
+        "american_dragon_url",
+        "field_sources.american_dragon_url"
+      ]
+    },
+    {
+      "field_name": "exact_source_url",
+      "first_level_semantic_category": "SOURCE_LOCATOR",
+      "record_count_present": 574,
+      "record_count_nonempty": 521,
+      "observed_value_types": [
+        "array",
+        "null",
+        "string"
+      ],
+      "observed_enum_vocabulary": [
+        "https://cloudtcm.com/herb/1",
+        "https://cloudtcm.com/herb/1028",
+        "https://cloudtcm.com/herb/1079",
+        "https://cloudtcm.com/herb/1091",
+        "https://cloudtcm.com/herb/1139",
+        "https://cloudtcm.com/herb/1156",
+        "https://cloudtcm.com/herb/1210",
+        "https://cloudtcm.com/herb/1217",
+        "https://cloudtcm.com/herb/1253",
+        "https://cloudtcm.com/herb/2",
+        "https://cloudtcm.com/herb/6",
+        "https://cloudtcm.com/herb/962",
+        "https://cloudtcm.com/herb/975",
+        "https://cloudtcm.com/herb/977",
+        "https://cloudtcm.com/herb/983"
+      ],
+      "canonical_datasets_containing_it": [
+        "formulas",
+        "herbs"
+      ],
+      "json_path_examples": [
+        "exact_source_url",
+        "field_sources.exact_source_url"
+      ]
+    },
+    {
+      "field_name": "source_urls",
+      "first_level_semantic_category": "SOURCE_LOCATOR",
+      "record_count_present": 571,
+      "record_count_nonempty": 516,
+      "observed_value_types": [
+        "array"
+      ],
+      "observed_enum_vocabulary": [
+        "https://cloudtcm.com/herb/1",
+        "https://cloudtcm.com/herb/1028",
+        "https://cloudtcm.com/herb/1091",
+        "https://cloudtcm.com/herb/1139",
+        "https://cloudtcm.com/herb/1156",
+        "https://cloudtcm.com/herb/1171",
+        "https://cloudtcm.com/herb/1210",
+        "https://cloudtcm.com/herb/1217",
+        "https://cloudtcm.com/herb/1253",
+        "https://cloudtcm.com/herb/2",
+        "https://cloudtcm.com/herb/962",
+        "https://cloudtcm.com/herb/975",
+        "https://cloudtcm.com/herb/977",
+        "https://cloudtcm.com/herb/983",
+        "https://www.nccih.nih.gov/health/ephedra"
+      ],
+      "canonical_datasets_containing_it": [
+        "comparisons",
+        "conditions",
+        "formulas",
+        "herbs"
+      ],
+      "json_path_examples": [
+        "source_urls",
+        "field_sources.source_urls"
+      ]
+    },
+    {
+      "field_name": "safety_source_url",
+      "first_level_semantic_category": "SOURCE_LOCATOR",
+      "record_count_present": 434,
+      "record_count_nonempty": 434,
+      "observed_value_types": [
+        "string"
+      ],
+      "observed_enum_vocabulary": [
+        "https://cloudtcm.com/herb/1",
+        "https://cloudtcm.com/herb/1028",
+        "https://cloudtcm.com/herb/1079",
+        "https://cloudtcm.com/herb/1091",
+        "https://cloudtcm.com/herb/1139",
+        "https://cloudtcm.com/herb/1156",
+        "https://cloudtcm.com/herb/1210",
+        "https://cloudtcm.com/herb/1217",
+        "https://cloudtcm.com/herb/1253",
+        "https://cloudtcm.com/herb/2",
+        "https://cloudtcm.com/herb/6",
+        "https://cloudtcm.com/herb/962",
+        "https://cloudtcm.com/herb/975",
+        "https://cloudtcm.com/herb/977",
+        "https://cloudtcm.com/herb/983"
+      ],
+      "canonical_datasets_containing_it": [
+        "formulas",
+        "herbs"
+      ],
+      "json_path_examples": [
+        "safety_source_url",
+        "field_sources.safety_source_url"
+      ]
+    },
+    {
+      "field_name": "safety_source",
+      "first_level_semantic_category": "SOURCE_CITATION",
+      "record_count_present": 397,
+      "record_count_nonempty": 396,
+      "observed_value_types": [
+        "string"
+      ],
+      "observed_enum_vocabulary": [
+        "",
+        "Chenoweth p.32; American Dragon Zhi Bai Fu Zi",
+        "cloudtcm_caution_field",
+        "cloudtcm_cautions_field"
+      ],
+      "canonical_datasets_containing_it": [
+        "formulas",
+        "herbs"
+      ],
+      "json_path_examples": [
+        "safety_source"
+      ]
+    },
+    {
+      "field_name": "card_grade",
+      "first_level_semantic_category": "EVIDENCE_STRENGTH",
+      "record_count_present": 356,
+      "record_count_nonempty": 356,
+      "observed_value_types": [
+        "string"
+      ],
+      "observed_enum_vocabulary": [
+        "gold",
+        "partial",
+        "template"
+      ],
+      "canonical_datasets_containing_it": [
+        "herbs"
+      ],
+      "json_path_examples": [
+        "card_grade"
+      ]
+    },
+    {
+      "field_name": "source_classic",
+      "first_level_semantic_category": "SOURCE_CITATION",
+      "record_count_present": 343,
+      "record_count_nonempty": 343,
+      "observed_value_types": [
+        "array",
+        "string"
+      ],
+      "observed_enum_vocabulary": [
+        "curriculum 方剂学汇总 Table 14 (Gui Zhi Tang)",
+        "《傷寒六書》",
+        "《傷寒論》",
+        "《傷寒雜病論》",
+        "《千金要方》",
+        "《外台秘要》",
+        "《太平惠民和劑局方》",
+        "《小兒藥證直訣》",
+        "《攝生眾妙方》",
+        "《此事難知》",
+        "《溫病條辨》",
+        "《濟生方》",
+        "《通俗傷寒論》",
+        "《醫宗金鑑》",
+        "《金匱要略》"
+      ],
+      "canonical_datasets_containing_it": [
+        "formulas"
+      ],
+      "json_path_examples": [
+        "source_classic",
+        "field_sources.source_classic"
+      ]
+    },
+    {
+      "field_name": "source_hint",
+      "first_level_semantic_category": "PROVENANCE",
+      "record_count_present": 329,
+      "record_count_nonempty": 329,
+      "observed_value_types": [
+        "string"
+      ],
+      "observed_enum_vocabulary": [
+        "Bensky Materia Medica: Clear Heat",
+        "Bensky Materia Medica: Dispel Wind-Damp",
+        "Bensky Materia Medica: Drain Dampness",
+        "Bensky Materia Medica: Drain Downward",
+        "Bensky Materia Medica: Extinguish Wind",
+        "Bensky Materia Medica: Invigorate Blood",
+        "Bensky Materia Medica: Open Orifices",
+        "Bensky Materia Medica: Regulate Qi",
+        "Bensky Materia Medica: Release Exterior",
+        "Bensky Materia Medica: Relieve Food Stagnation",
+        "Bensky Materia Medica: Stop Bleeding",
+        "Bensky Materia Medica: Stop Cough and Wheeze",
+        "Bensky Materia Medica: Transform Dampness",
+        "Bensky Materia Medica: Transform Phlegm",
+        "Bensky Materia Medica: Warm Interior"
+      ],
+      "canonical_datasets_containing_it": [
+        "formulas",
+        "herbs"
+      ],
+      "json_path_examples": [
+        "source_hint"
+      ]
+    },
+    {
+      "field_name": "original_shape",
+      "first_level_semantic_category": "PROVENANCE",
+      "record_count_present": 289,
+      "record_count_nonempty": 289,
+      "observed_value_types": [
+        "string"
+      ],
+      "observed_enum_vocabulary": [
+        "json_string",
+        "object",
+        "plain_string"
+      ],
+      "canonical_datasets_containing_it": [
+        "herbs"
+      ],
+      "json_path_examples": [
+        "dosage_normalized.original_shape"
+      ]
+    },
+    {
+      "field_name": "source_field",
+      "first_level_semantic_category": "PROVENANCE",
+      "record_count_present": 289,
+      "record_count_nonempty": 289,
+      "observed_value_types": [
+        "string"
+      ],
+      "observed_enum_vocabulary": [
+        "dosage"
+      ],
+      "canonical_datasets_containing_it": [
+        "herbs"
+      ],
+      "json_path_examples": [
+        "dosage_normalized.source_field"
+      ]
+    },
+    {
+      "field_name": "import_artifacts",
+      "first_level_semantic_category": "IMPORT_HISTORY",
+      "record_count_present": 263,
+      "record_count_nonempty": 263,
+      "observed_value_types": [
+        "array"
+      ],
+      "observed_enum_vocabulary": [],
+      "canonical_datasets_containing_it": [
+        "condition_canon",
+        "herbs"
+      ],
+      "json_path_examples": [
+        "import_artifacts"
+      ]
+    },
+    {
+      "field_name": "origin",
+      "first_level_semantic_category": "PROVENANCE",
+      "record_count_present": 191,
+      "record_count_nonempty": 191,
+      "observed_value_types": [
+        "string"
+      ],
+      "observed_enum_vocabulary": [
+        "legacy_card_migration_batch123",
+        "legacy_card_migration_batch4"
+      ],
+      "canonical_datasets_containing_it": [
+        "red_flag_registry"
+      ],
+      "json_path_examples": [
+        "origin"
+      ]
+    },
+    {
+      "field_name": "source_url",
+      "first_level_semantic_category": "SOURCE_LOCATOR",
+      "record_count_present": 190,
+      "record_count_nonempty": 190,
+      "observed_value_types": [
+        "string"
+      ],
+      "observed_enum_vocabulary": [
+        "https://cloudtcm.com/disease/tcm/11",
+        "https://cloudtcm.com/disease/tcm/143",
+        "https://cloudtcm.com/disease/tcm/19",
+        "https://cloudtcm.com/disease/tcm/2",
+        "https://cloudtcm.com/disease/tcm/32",
+        "https://cloudtcm.com/disease/tcm/36",
+        "https://cloudtcm.com/disease/tcm/39",
+        "https://cloudtcm.com/disease/tcm/40",
+        "https://cloudtcm.com/disease/tcm/5",
+        "https://cloudtcm.com/disease/tcm/56",
+        "https://cloudtcm.com/disease/tcm/58",
+        "https://cloudtcm.com/disease/tcm/66",
+        "https://cloudtcm.com/disease/tcm/83",
+        "https://cloudtcm.com/disease/tcm/86",
+        "https://cloudtcm.com/disease/tcm/88"
+      ],
+      "canonical_datasets_containing_it": [
+        "cloudtcm_diseases"
+      ],
+      "json_path_examples": [
+        "source_url"
+      ]
+    },
+    {
+      "field_name": "source_citations",
+      "first_level_semantic_category": "SOURCE_CITATION",
+      "record_count_present": 165,
+      "record_count_nonempty": 164,
+      "observed_value_types": [
+        "array"
+      ],
+      "observed_enum_vocabulary": [
+        "《中華人民共和國藥典》2020年版一部：天葵子",
+        "《中華人民共和國藥典》2020年版一部：珍珠母",
+        "《中華人民共和國藥典》2020年版一部：石榴皮",
+        "《中華人民共和國藥典》2020年版一部：罌粟殼(注明有毒、按麻醉藥品管理)",
+        "《中華人民共和國藥典》2020年版一部：胡黃連",
+        "《中藥大辭典》：小麥",
+        "《中藥大辭典》：梨皮",
+        "《中藥大辭典》：糯稻根",
+        "《丹溪心法》大補陰丸方後注",
+        "《傷寒論》黃連阿膠湯條文",
+        "《溫病條辨》大定風珠條文",
+        "《溫病條辨》桑杏湯條文",
+        "《金匱要略》甘麥大棗湯條文",
+        "五味消毒飲(《醫宗金鑒》)組成藥",
+        "清骨散(《證治準繩》)組成藥"
+      ],
+      "canonical_datasets_containing_it": [
+        "herbs"
+      ],
+      "json_path_examples": [
+        "source_citations"
+      ]
+    },
+    {
+      "field_name": "last_reviewed",
+      "first_level_semantic_category": "REVIEW_STATE",
+      "record_count_present": 149,
+      "record_count_nonempty": 35,
+      "observed_value_types": [
+        "string"
+      ],
+      "observed_enum_vocabulary": [
+        "",
+        "2026-07-14",
+        "2026-07-17",
+        "2026-07-18",
+        "2026-07-28",
+        "2026-08-01"
+      ],
+      "canonical_datasets_containing_it": [
+        "comparisons",
+        "formulas",
+        "herbs"
+      ],
+      "json_path_examples": [
+        "last_reviewed"
+      ]
+    },
+    {
+      "field_name": "acupoint_protocol_evidence",
+      "first_level_semantic_category": "EVIDENCE_STRENGTH",
+      "record_count_present": 133,
+      "record_count_nonempty": 133,
+      "observed_value_types": [
+        "object"
+      ],
+      "observed_enum_vocabulary": [],
+      "canonical_datasets_containing_it": [
+        "condition_canon"
+      ],
+      "json_path_examples": [
+        "acupoint_protocol_evidence"
+      ]
+    },
+    {
+      "field_name": "protocol_status",
+      "first_level_semantic_category": "REVIEW_STATE",
+      "record_count_present": 133,
+      "record_count_nonempty": 133,
+      "observed_value_types": [
+        "string"
+      ],
+      "observed_enum_vocabulary": [
+        "adjunct_only",
+        "limited",
+        "no_source",
+        "not_supported",
+        "postoperative_only",
+        "symptom_only",
+        "unassessed"
+      ],
+      "canonical_datasets_containing_it": [
+        "condition_canon"
+      ],
+      "json_path_examples": [
+        "acupoint_protocol_evidence.protocol_status"
+      ]
+    },
+    {
+      "field_name": "content_source",
+      "first_level_semantic_category": "AUTHORSHIP",
+      "record_count_present": 130,
+      "record_count_nonempty": 130,
+      "observed_value_types": [
+        "array",
+        "string"
+      ],
+      "observed_enum_vocabulary": [
+        "aaos_orthoinfo",
+        "acr_criteria",
+        "cloudtcm_record",
+        "ichd3",
+        "medlineplus_overview",
+        "nih_niams_overview",
+        "nih_nichd_overview",
+        "research_pack_batch_i_autoimmune_msk_derm_genetic",
+        "research_pack_batch_k_reproductive_gyne_urology",
+        "standard_neurology_reference",
+        "standard_orofacial_reference",
+        "standard_orthopedic_reference",
+        "standard_pain_reference",
+        "standard_rheumatology_reference",
+        "standard_spine_reference"
+      ],
+      "canonical_datasets_containing_it": [
+        "condition_canon"
+      ],
+      "json_path_examples": [
+        "content_source"
+      ]
+    },
+    {
+      "field_name": "dailymed_setid",
+      "first_level_semantic_category": "SOURCE_LOCATOR",
+      "record_count_present": 59,
+      "record_count_nonempty": 59,
+      "observed_value_types": [
+        "string"
+      ],
+      "observed_enum_vocabulary": [
+        "0d914965-7001-45cb-ba51-d7c5964b05bc",
+        "268db224-d5db-457c-86bc-972c9fe07917",
+        "31a3d1cb-0f52-4818-965d-7584374bb23e",
+        "3a8ec82a-c367-40dc-9302-e1896fcb05ea",
+        "481b7802-5093-43e7-bbd9-1532197eb6e6",
+        "541c9a70-adaf-4ef3-94ba-ad4e70dfa057",
+        "557351f1-47b7-216d-e063-6394a90afb51",
+        "5e7568a6-cf8a-4de2-86ba-b94c8ab4c806",
+        "7cdcd001-ab4b-4210-a455-2e17a7bc4972",
+        "9ea0a519-dc7c-42e3-939e-2a7c80eedd25",
+        "a454cd24-0c6d-46e8-b1e4-197388606175",
+        "ac94cce3-9a39-41de-bb8b-10a5e5b8e83b",
+        "b119ed8a-289a-46c5-9778-6b07e4c061c4",
+        "c9928956-bb7b-4ec2-bc38-d3c9c4199cae",
+        "f51e64e0-f556-65d0-a876-fb709aaeefea"
+      ],
+      "canonical_datasets_containing_it": [
+        "pharm_drugs"
+      ],
+      "json_path_examples": [
+        "dailymed_setid"
+      ]
+    },
+    {
+      "field_name": "dailymed_url",
+      "first_level_semantic_category": "SOURCE_LOCATOR",
+      "record_count_present": 59,
+      "record_count_nonempty": 59,
+      "observed_value_types": [
+        "string"
+      ],
+      "observed_enum_vocabulary": [],
+      "canonical_datasets_containing_it": [
+        "pharm_drugs"
+      ],
+      "json_path_examples": [
+        "dailymed_url"
+      ]
+    },
+    {
+      "field_name": "dose_source",
+      "first_level_semantic_category": "SOURCE_CITATION",
+      "record_count_present": 36,
+      "record_count_nonempty": 34,
+      "observed_value_types": [
+        "null",
+        "object"
+      ],
+      "observed_enum_vocabulary": [],
+      "canonical_datasets_containing_it": [
+        "supplements"
+      ],
+      "json_path_examples": [
+        "dose_source"
+      ]
+    },
+    {
+      "field_name": "verification_status",
+      "first_level_semantic_category": "VERIFICATION_STATE",
+      "record_count_present": 34,
+      "record_count_nonempty": 34,
+      "observed_value_types": [
+        "string"
+      ],
+      "observed_enum_vocabulary": [
+        "machine_metadata_verified"
+      ],
+      "canonical_datasets_containing_it": [
+        "pharm_drugs"
+      ],
+      "json_path_examples": [
+        "verification_status"
+      ]
+    },
+    {
+      "field_name": "safety_review",
+      "first_level_semantic_category": "REVIEW_STATE",
+      "record_count_present": 1,
+      "record_count_nonempty": 1,
+      "observed_value_types": [
+        "object"
+      ],
+      "observed_enum_vocabulary": [],
+      "canonical_datasets_containing_it": [
+        "herbs"
+      ],
+      "json_path_examples": [
+        "safety_review"
+      ]
+    },
+    {
+      "field_name": "classic_formula_source_zh",
+      "first_level_semantic_category": "SOURCE_CITATION",
+      "record_count_present": 1,
+      "record_count_nonempty": 1,
+      "observed_value_types": [
+        "string"
+      ],
+      "observed_enum_vocabulary": [],
+      "canonical_datasets_containing_it": [
+        "herbs"
+      ],
+      "json_path_examples": [
+        "classic_formula_source_zh"
+      ]
+    },
+    {
+      "field_name": "classic_formula_source_en",
+      "first_level_semantic_category": "SOURCE_CITATION",
+      "record_count_present": 1,
+      "record_count_nonempty": 1,
+      "observed_value_types": [
+        "string"
+      ],
+      "observed_enum_vocabulary": [],
+      "canonical_datasets_containing_it": [
+        "herbs"
+      ],
+      "json_path_examples": [
+        "classic_formula_source_en"
+      ]
+    },
+    {
+      "field_name": "herb_pair_source_note_zh",
+      "first_level_semantic_category": "SOURCE_CITATION",
+      "record_count_present": 1,
+      "record_count_nonempty": 1,
+      "observed_value_types": [
+        "string"
+      ],
+      "observed_enum_vocabulary": [],
+      "canonical_datasets_containing_it": [
+        "herbs"
+      ],
+      "json_path_examples": [
+        "herb_pair_source_note_zh"
+      ]
+    },
+    {
+      "field_name": "herb_pair_source_note_en",
+      "first_level_semantic_category": "SOURCE_CITATION",
+      "record_count_present": 1,
+      "record_count_nonempty": 1,
+      "observed_value_types": [
+        "string"
+      ],
+      "observed_enum_vocabulary": [],
+      "canonical_datasets_containing_it": [
+        "herbs"
+      ],
+      "json_path_examples": [
+        "herb_pair_source_note_en"
+      ]
+    },
+    {
+      "field_name": "reference",
+      "first_level_semantic_category": "SOURCE_CITATION",
+      "record_count_present": 1,
+      "record_count_nonempty": 1,
+      "observed_value_types": [
+        "string"
+      ],
+      "observed_enum_vocabulary": [
+        "被替代的羚羊角：煎劑 1–3g、粉劑 0.3–0.5g（課件 MM III）"
+      ],
+      "canonical_datasets_containing_it": [
+        "herbs"
+      ],
+      "json_path_examples": [
+        "dosage_g.reference"
+      ]
+    },
+    {
+      "field_name": "reviewed_by",
+      "first_level_semantic_category": "REVIEW_STATE",
+      "record_count_present": 1,
+      "record_count_nonempty": 0,
+      "observed_value_types": [
+        "null"
+      ],
+      "observed_enum_vocabulary": [],
+      "canonical_datasets_containing_it": [
+        "formulas"
+      ],
+      "json_path_examples": [
+        "reviewed_by"
+      ]
+    },
+    {
+      "field_name": "herb_drug_interaction_sources",
+      "first_level_semantic_category": "SOURCE_CITATION",
+      "record_count_present": 1,
+      "record_count_nonempty": 1,
+      "observed_value_types": [
+        "array"
+      ],
+      "observed_enum_vocabulary": [
+        "https://pubmed.ncbi.nlm.nih.gov/7575138/",
+        "https://pubmed.ncbi.nlm.nih.gov/8980988/",
+        "https://www.ncbi.nlm.nih.gov/books/NBK548777/"
+      ],
+      "canonical_datasets_containing_it": [
+        "formulas"
+      ],
+      "json_path_examples": [
+        "herb_drug_interaction_sources"
+      ]
+    },
+    {
+      "field_name": "hierarchy_source_zh",
+      "first_level_semantic_category": "SOURCE_CITATION",
+      "record_count_present": 1,
+      "record_count_nonempty": 1,
+      "observed_value_types": [
+        "string"
+      ],
+      "observed_enum_vocabulary": [],
+      "canonical_datasets_containing_it": [
+        "formulas"
+      ],
+      "json_path_examples": [
+        "hierarchy_source_zh"
+      ]
+    },
+    {
+      "field_name": "verified",
+      "first_level_semantic_category": "VERIFICATION_STATE",
+      "record_count_present": 1,
+      "record_count_nonempty": 1,
+      "observed_value_types": [
+        "string"
+      ],
+      "observed_enum_vocabulary": [
+        "2026-08-11"
+      ],
+      "canonical_datasets_containing_it": [
+        "supplements"
+      ],
+      "json_path_examples": [
+        "dose_source.verified"
+      ]
+    },
+    {
+      "field_name": "source_hierarchy",
+      "first_level_semantic_category": "SOURCE_CITATION",
+      "record_count_present": 1,
+      "record_count_nonempty": 1,
+      "observed_value_types": [
+        "object"
+      ],
+      "observed_enum_vocabulary": [],
+      "canonical_datasets_containing_it": [
+        "source_registry"
+      ],
+      "json_path_examples": [
+        "source_hierarchy"
+      ]
+    },
+    {
+      "field_name": "D_clinical_evidence",
+      "first_level_semantic_category": "EVIDENCE_STRENGTH",
+      "record_count_present": 1,
+      "record_count_nonempty": 1,
+      "observed_value_types": [
+        "string"
+      ],
+      "observed_enum_vocabulary": [],
+      "canonical_datasets_containing_it": [
+        "source_registry"
+      ],
+      "json_path_examples": [
+        "source_hierarchy.D_clinical_evidence"
+      ]
+    }
+  ],
+  "candidate_related_fields": [
+    {
+      "field_name": "exam_importance",
+      "first_level_semantic_category": "CANDIDATE_RELATED_FIELD",
+      "record_count_present": 986,
+      "record_count_nonempty": 964,
+      "observed_value_types": [
+        "array",
+        "string"
+      ],
+      "observed_enum_vocabulary": [
+        "NCBAHM 2026 Chinese Herbology Content Outline, Domain I.A",
+        "curriculum/herbs/MATERIA MEDICA AND SPECIAL PREP.md#L102",
+        "curriculum/herbs/MATERIA MEDICA AND SPECIAL PREP.md#L28",
+        "curriculum/herbs/herb_functions_chenoweth.md#L1305",
+        "curriculum/herbs/herb_functions_chenoweth.md#L353",
+        "curriculum/herbs/herb_functions_chenoweth.pdf",
+        "curriculum/herbs/herb_functions_chenoweth.pdf#p3",
+        "curriculum/herbs/herb_functions_chenoweth.pdf#p5",
+        "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#p2",
+        "curriculum/herbs/pinyin_latin_herb_list.md#L266",
+        "curriculum/herbs/pinyin_latin_herb_list.md#L335",
+        "curriculum/herbs/pinyin_latin_herb_list.md#L52",
+        "https://cloudtcm.com/herb/1007",
+        "https://cloudtcm.com/herb/1116",
+        "https://cloudtcm.com/herb/1175"
+      ],
+      "canonical_datasets_containing_it": [
+        "acupoints_361",
+        "auricular_points",
+        "extra_points",
+        "formulas",
+        "herbs"
+      ],
+      "json_path_examples": [
+        "exam_importance",
+        "field_sources.exam_importance"
+      ]
+    },
+    {
+      "field_name": "course_level_en",
+      "first_level_semantic_category": "CANDIDATE_RELATED_FIELD",
+      "record_count_present": 376,
+      "record_count_nonempty": 376,
+      "observed_value_types": [
+        "array",
+        "string"
+      ],
+      "observed_enum_vocabulary": [
+        "Formulations 1 — 2nd group: Familiar With The Information",
+        "Formulations 1 — 3rd group: General Knowledge",
+        "Formulations 2 — 1st group: Detailed Knowledge",
+        "Formulations 2 — 2nd group: Familiar With The Information",
+        "Formulations 2 — 3rd group: General Knowledge",
+        "Not listed in the Formulations 1/2 knowledge-level lists"
+      ],
+      "canonical_datasets_containing_it": [
+        "formulas"
+      ],
+      "json_path_examples": [
+        "field_sources.course_level_en",
+        "course_level_en"
+      ]
+    },
+    {
+      "field_name": "diagram_urls_en",
+      "first_level_semantic_category": "CANDIDATE_RELATED_FIELD",
+      "record_count_present": 361,
+      "record_count_nonempty": 361,
+      "observed_value_types": [
+        "array"
+      ],
+      "observed_enum_vocabulary": [],
+      "canonical_datasets_containing_it": [
+        "acupoints_361"
+      ],
+      "json_path_examples": [
+        "diagram_urls_en"
+      ]
+    },
+    {
+      "field_name": "diagram_urls_zh",
+      "first_level_semantic_category": "CANDIDATE_RELATED_FIELD",
+      "record_count_present": 361,
+      "record_count_nonempty": 361,
+      "observed_value_types": [
+        "array"
+      ],
+      "observed_enum_vocabulary": [
+        "https://cloudtcm.com/acupoint/307",
+        "https://cloudtcm.com/acupoint/308",
+        "https://cloudtcm.com/acupoint/309",
+        "https://cloudtcm.com/acupoint/310",
+        "https://cloudtcm.com/acupoint/311",
+        "https://cloudtcm.com/acupoint/312",
+        "https://cloudtcm.com/acupoint/313",
+        "https://cloudtcm.com/acupoint/314",
+        "https://cloudtcm.com/acupoint/315",
+        "https://cloudtcm.com/acupoint/316",
+        "https://cloudtcm.com/acupoint/317",
+        "https://cloudtcm.com/acupoint/318",
+        "https://cloudtcm.com/acupoint/319",
+        "https://cloudtcm.com/acupoint/320",
+        "https://cloudtcm.com/acupoint/321"
+      ],
+      "canonical_datasets_containing_it": [
+        "acupoints_361"
+      ],
+      "json_path_examples": [
+        "diagram_urls_zh"
+      ]
+    },
+    {
+      "field_name": "examImportance",
+      "first_level_semantic_category": "CANDIDATE_RELATED_FIELD",
+      "record_count_present": 272,
+      "record_count_nonempty": 272,
+      "observed_value_types": [
+        "string"
+      ],
+      "observed_enum_vocabulary": [
+        "NCBAHM 2026 ACPL 考綱 Domain I（穴位定位，15%）",
+        "NCCAOM / US Acupuncture Board Exam Focus"
+      ],
+      "canonical_datasets_containing_it": [
+        "acupoints_361"
+      ],
+      "json_path_examples": [
+        "examImportance"
+      ]
+    },
+    {
+      "field_name": "atlas_url",
+      "first_level_semantic_category": "CANDIDATE_RELATED_FIELD",
+      "record_count_present": 261,
+      "record_count_nonempty": 260,
+      "observed_value_types": [
+        "string"
+      ],
+      "observed_enum_vocabulary": [
+        "",
+        "https://chinesemedicineatlas.com/tcm_herb_atlas/"
+      ],
+      "canonical_datasets_containing_it": [
+        "herbs"
+      ],
+      "json_path_examples": [
+        "atlas_url"
+      ]
+    },
+    {
+      "field_name": "updated_at",
+      "first_level_semantic_category": "CANDIDATE_RELATED_FIELD",
+      "record_count_present": 201,
+      "record_count_nonempty": 200,
+      "observed_value_types": [
+        "string"
+      ],
+      "observed_enum_vocabulary": [
+        "",
+        "2026-06-15",
+        "2026-06-19",
+        "2026-07-28",
+        "2026-07-29",
+        "2026-07-30",
+        "2026-08-02",
+        "2026-08-06",
+        "2026-08-11",
+        "2026-08-19"
+      ],
+      "canonical_datasets_containing_it": [
+        "herb_pairs",
+        "herbs",
+        "pattern_library",
+        "pharm_drugs",
+        "western_medications"
+      ],
+      "json_path_examples": [
+        "updated_at"
+      ]
+    },
+    {
+      "field_name": "acupoint_protocols",
+      "first_level_semantic_category": "CANDIDATE_RELATED_FIELD",
+      "record_count_present": 159,
+      "record_count_nonempty": 84,
+      "observed_value_types": [
+        "array"
+      ],
+      "observed_enum_vocabulary": [],
+      "canonical_datasets_containing_it": [
+        "condition_canon"
+      ],
+      "json_path_examples": [
+        "acupoint_protocols"
+      ]
+    },
+    {
+      "field_name": "rx_otc_status",
+      "first_level_semantic_category": "CANDIDATE_RELATED_FIELD",
+      "record_count_present": 34,
+      "record_count_nonempty": 34,
+      "observed_value_types": [
+        "string"
+      ],
+      "observed_enum_vocabulary": [
+        "OTC",
+        "Rx",
+        "Rx/OTC"
+      ],
+      "canonical_datasets_containing_it": [
+        "pharm_drugs"
+      ],
+      "json_path_examples": [
+        "rx_otc_status"
+      ]
+    },
+    {
+      "field_name": "schema_version",
+      "first_level_semantic_category": "CANDIDATE_RELATED_FIELD",
+      "record_count_present": 17,
+      "record_count_nonempty": 17,
+      "observed_value_types": [
+        "string"
+      ],
+      "observed_enum_vocabulary": [
+        "v1.0"
+      ],
+      "canonical_datasets_containing_it": [
+        "pattern_library"
+      ],
+      "json_path_examples": [
+        "schema_version"
+      ]
+    }
+  ],
+  "writer_reader_map": [
+    {
+      "field_name": "review_status",
+      "semantic_category": "REVIEW_STATE",
+      "consumption_modes": [
+        "CHECKS_ENUM",
+        "COPIES_THROUGH",
+        "DISPLAYS",
+        "READS_VALUE",
+        "TRANSFORMS",
+        "WRITES"
+      ],
+      "readers": [
+        "app.js",
+        "data/auricular/gb93_index.js",
+        "data/learn/schema.sql",
+        "data/tung/point_index.js",
+        "js/knowledge.js",
+        "js/practice-audit.js",
+        "legacy/app.js",
+        "scripts/add-missing-board-formulas.js",
+        "scripts/apply-comparison-fill.js",
+        "scripts/apply-curriculum-composition.js",
+        "scripts/apply-review-verdicts.js",
+        "scripts/audit-cr010-condition-detail-maturity.js",
+        "scripts/audit-dark-fields.js",
+        "scripts/audit-legacy-namespace-retired-id.js",
+        "scripts/audit-validator-coverage-truth.js",
+        "scripts/backfill-point-status.js",
+        "scripts/build-pattern-alias-map.js",
+        "scripts/build-pattern-registry.js",
+        "scripts/build_batch2_gold_formulas.js",
+        "scripts/build_hypertension_patterns.js",
+        "scripts/build_lin_syndrome_patterns.js",
+        "scripts/build_next_batch_patterns.js",
+        "scripts/build_pattern_prototype_card.js",
+        "scripts/build_pattern_v2_b.js",
+        "scripts/check-canon-no-loss.js",
+        "scripts/curate-sample-formula.js",
+        "scripts/curate-sp-channel.js",
+        "scripts/extract-cloudtcm-vocabularies.js",
+        "scripts/fetch-cloudtcm-acupoint-enrichment.js",
+        "scripts/fetch-cloudtcm-conditions-expanded.js",
+        "scripts/fetch-cloudtcm-conditions.js",
+        "scripts/fetch-exact-cloudtcm-formulas.js",
+        "scripts/fetch-exact-cloudtcm-herbs.js",
+        "scripts/fix-all-auricular-points-content-and-links.js",
+        "scripts/fix-formula-holds-thp.js",
+        "scripts/fix-source-registry.js",
+        "scripts/generate_formula_inventory.js",
+        "scripts/ingest-dui-yao-pairs.js",
+        "scripts/insert-361-drafts.js",
+        "scripts/inspect-conditions.js",
+        "scripts/lib/preflight-canonical.js",
+        "scripts/master_5_formulas_full_files_ingest.js",
+        "scripts/merge-361-preview.js",
+        "scripts/merge-formulas-preview.js",
+        "scripts/merge-records-3way.js",
+        "scripts/migrate-b123-red-flags.js",
+        "scripts/migrate-gyn-red-flags.js",
+        "scripts/migrate-pattern-v1-vocabulary.js",
+        "scripts/populate_ad_composition.js",
+        "scripts/preview-acupoint-anatomy-fill.js",
+        "scripts/preview-acupoint-anatomy-review.js",
+        "scripts/preview-acupoint-protocol-anatomy.js",
+        "scripts/preview-formula-chinese-depth.js",
+        "scripts/preview-formula-content-fill.js",
+        "scripts/preview-herb-comparison-groups.js",
+        "scripts/preview-herb-visual-links.js",
+        "scripts/refine-bl-channel.js",
+        "scripts/refine-cv-channel.js",
+        "scripts/refine-gb-channel.js",
+        "scripts/refine-gv-channel.js",
+        "scripts/refine-ht-channel.js",
+        "scripts/refine-ht-full.js",
+        "scripts/refine-ki-channel.js",
+        "scripts/refine-li-channel.js",
+        "scripts/refine-lr-channel.js",
+        "scripts/refine-lu-channel.js",
+        "scripts/refine-pc-channel.js",
+        "scripts/refine-si-channel.js",
+        "scripts/refine-sp-channel.js",
+        "scripts/refine-st-channel.js",
+        "scripts/refine-te-channel.js",
+        "scripts/repair-formula-cards.js",
+        "scripts/repopulate_ad_composition_full_bilingual.js",
+        "scripts/report-comparison-fill.js",
+        "scripts/seed-formula-comparisons.js",
+        "scripts/sync-cloudtcm-acupoint-canon.js",
+        "scripts/test-practice-audit.js",
+        "scripts/transform-cloudtcm-points.js",
+        "scripts/update-point-manifest.js",
+        "scripts/validate-acupoint-standard.js",
+        "scripts/validate-avs-library.js",
+        "scripts/validate-condition-standard.js",
+        "scripts/validate-formula-composition-signatures.js",
+        "scripts/validate-formula-correctness.js",
+        "scripts/validate-formula-dose-staging.js",
+        "scripts/validate-formula-standard.js",
+        "scripts/validate-herb-canon.js",
+        "scripts/validate-herb-integrity-predicates.js",
+        "scripts/validate-herbal-links.js",
+        "scripts/validate-pattern-standard.js",
+        "scripts/validate-point-ids.js",
+        "scripts/validate-red-flag-registry.js",
+        "scripts/validate-relations.js",
+        "scripts/validate-retired-id-references.js",
+        "scripts/validate-review-status-vocab.js",
+        "scripts/validate-supp-standard.js",
+        "scripts/validate-symptom-standard.js",
+        "scripts/validate-tdis-standard.js"
+      ],
+      "writers": [
+        "scripts/add-missing-board-formulas.js",
+        "scripts/apply-curriculum-composition.js",
+        "scripts/apply-review-verdicts.js",
+        "scripts/audit-cr010-condition-detail-maturity.js",
+        "scripts/audit-legacy-namespace-retired-id.js",
+        "scripts/audit-validator-coverage-truth.js",
+        "scripts/backfill-point-status.js",
+        "scripts/build-pattern-alias-map.js",
+        "scripts/build-pattern-registry.js",
+        "scripts/build_hypertension_patterns.js",
+        "scripts/build_lin_syndrome_patterns.js",
+        "scripts/build_next_batch_patterns.js",
+        "scripts/build_pattern_prototype_card.js",
+        "scripts/build_pattern_v2_b.js",
+        "scripts/check-canon-no-loss.js",
+        "scripts/curate-sample-formula.js",
+        "scripts/curate-sp-channel.js",
+        "scripts/extract-cloudtcm-vocabularies.js",
+        "scripts/fetch-cloudtcm-acupoint-enrichment.js",
+        "scripts/fetch-cloudtcm-conditions-expanded.js",
+        "scripts/fetch-cloudtcm-conditions.js",
+        "scripts/fetch-exact-cloudtcm-formulas.js",
+        "scripts/fetch-exact-cloudtcm-herbs.js",
+        "scripts/fix-all-auricular-points-content-and-links.js",
+        "scripts/fix-formula-holds-thp.js",
+        "scripts/fix-source-registry.js",
+        "scripts/generate_formula_inventory.js",
+        "scripts/import-zhiyuan-disease-index.js",
+        "scripts/ingest-dui-yao-pairs.js",
+        "scripts/insert-361-drafts.js",
+        "scripts/lib/preflight-canonical.js",
+        "scripts/master_5_formulas_full_files_ingest.js",
+        "scripts/merge-361-preview.js",
+        "scripts/merge-formulas-preview.js",
+        "scripts/migrate-b123-red-flags.js",
+        "scripts/migrate-gyn-red-flags.js",
+        "scripts/migrate-pattern-v1-vocabulary.js",
+        "scripts/populate_ad_composition.js",
+        "scripts/preview-acupoint-anatomy-fill.js",
+        "scripts/preview-acupoint-anatomy-review.js",
+        "scripts/preview-acupoint-protocol-anatomy.js",
+        "scripts/preview-herb-comparison-groups.js",
+        "scripts/preview-who-cun-fill.js",
+        "scripts/refine-bl-channel.js",
+        "scripts/refine-cv-channel.js",
+        "scripts/refine-gb-channel.js",
+        "scripts/refine-gv-channel.js",
+        "scripts/refine-ht-channel.js",
+        "scripts/refine-ht-full.js",
+        "scripts/refine-ki-channel.js",
+        "scripts/refine-li-channel.js",
+        "scripts/refine-lr-channel.js",
+        "scripts/refine-lu-channel.js",
+        "scripts/refine-pc-channel.js",
+        "scripts/refine-si-channel.js",
+        "scripts/refine-sp-channel.js",
+        "scripts/refine-st-channel.js",
+        "scripts/refine-te-channel.js",
+        "scripts/repair-formula-cards.js",
+        "scripts/repopulate_ad_composition_full_bilingual.js",
+        "scripts/report-formula-content-gaps.js",
+        "scripts/seed-formula-comparisons.js",
+        "scripts/sync-cloudtcm-acupoint-canon.js",
+        "scripts/test-practice-audit.js",
+        "scripts/transform-cloudtcm-points.js",
+        "scripts/validate-avs-library.js",
+        "scripts/validate-condition-standard.js",
+        "scripts/validate-formula-composition-signatures.js",
+        "scripts/validate-formula-correctness.js",
+        "scripts/validate-formula-standard.js",
+        "scripts/validate-herb-canon.js",
+        "scripts/validate-herb-integrity-predicates.js",
+        "scripts/validate-relations.js",
+        "scripts/validate-retired-id-references.js",
+        "scripts/validate-supp-standard.js",
+        "scripts/validate-tdis-standard.js"
+      ],
+      "validators": [
+        "scripts/check-canon-no-loss.js",
+        "scripts/test-practice-audit.js",
+        "scripts/validate-acupoint-standard.js",
+        "scripts/validate-avs-library.js",
+        "scripts/validate-condition-standard.js",
+        "scripts/validate-formula-composition-signatures.js",
+        "scripts/validate-formula-correctness.js",
+        "scripts/validate-formula-dose-staging.js",
+        "scripts/validate-formula-standard.js",
+        "scripts/validate-herb-canon.js",
+        "scripts/validate-herb-integrity-predicates.js",
+        "scripts/validate-herbal-links.js",
+        "scripts/validate-pattern-standard.js",
+        "scripts/validate-point-ids.js",
+        "scripts/validate-red-flag-registry.js",
+        "scripts/validate-relations.js",
+        "scripts/validate-retired-id-references.js",
+        "scripts/validate-review-status-vocab.js",
+        "scripts/validate-supp-standard.js",
+        "scripts/validate-symptom-standard.js",
+        "scripts/validate-tdis-standard.js"
+      ],
+      "builders": [
+        "scripts/build-pattern-alias-map.js",
+        "scripts/build-pattern-registry.js"
+      ],
+      "ui_consumers": [
+        "app.js"
+      ],
+      "runtime_consumers": [
+        "app.js",
+        "js/knowledge.js",
+        "js/practice-audit.js"
+      ],
+      "ci_consumers": [
+        "scripts/check-canon-no-loss.js",
+        "scripts/validate-acupoint-standard.js",
+        "scripts/validate-avs-library.js",
+        "scripts/validate-condition-standard.js",
+        "scripts/validate-formula-composition-signatures.js",
+        "scripts/validate-formula-standard.js",
+        "scripts/validate-herb-integrity-predicates.js",
+        "scripts/validate-point-ids.js",
+        "scripts/validate-red-flag-registry.js",
+        "scripts/validate-relations.js",
+        "scripts/validate-retired-id-references.js",
+        "scripts/validate-review-status-vocab.js",
+        "scripts/validate-symptom-standard.js"
+      ],
+      "report_only_consumers": [
+        "scripts/audit-cr010-condition-detail-maturity.js",
+        "scripts/audit-dark-fields.js",
+        "scripts/audit-legacy-namespace-retired-id.js",
+        "scripts/audit-validator-coverage-truth.js",
+        "scripts/report-comparison-fill.js",
+        "scripts/report-formula-content-gaps.js"
+      ],
+      "no_consumer_found": false
+    },
+    {
+      "field_name": "field_sources",
+      "semantic_category": "SOURCE_CITATION",
+      "consumption_modes": [
+        "CHECKS_ENUM",
+        "COPIES_THROUGH",
+        "DISPLAYS",
+        "READS_VALUE",
+        "TRANSFORMS",
+        "WRITES"
+      ],
+      "readers": [
+        "app.js",
+        "js/knowledge.js",
+        "scripts/add-missing-board-formulas.js",
+        "scripts/apply-acupoint-pattern-links.js",
+        "scripts/apply-contra-alignment.js",
+        "scripts/apply-contraindications-backfill.js",
+        "scripts/apply-curriculum-composition.js",
+        "scripts/apply-formula-family.js",
+        "scripts/apply-formula-songs.js",
+        "scripts/apply-herb-en-backfill.js",
+        "scripts/apply-modifications.js",
+        "scripts/apply-pi-actions-alignment.js",
+        "scripts/apply-source-classic.js",
+        "scripts/apply-tongue-pulse-backfill.js",
+        "scripts/audit-cr010-condition-detail-maturity.js",
+        "scripts/audit-dark-fields.js",
+        "scripts/audit-herb-cloudtcm-layer.js",
+        "scripts/audit-validator-coverage-truth.js",
+        "scripts/build-compare-with.js",
+        "scripts/build_batch2_gold_formulas.js",
+        "scripts/build_pattern_v2_b.js",
+        "scripts/clean-formula-safety-boilerplate.js",
+        "scripts/curate-misfile-move-batch2.js",
+        "scripts/curate-misfile-move-batch3.js",
+        "scripts/curate-misfile-move-batch4.js",
+        "scripts/curate-misfile-move-batch5.js",
+        "scripts/curate-sample-formula.js",
+        "scripts/curate-si-wu-tang-move.js",
+        "scripts/curate-sp-channel.js",
+        "scripts/curate-warm-interior-herbs.js",
+        "scripts/derive-formula-pattern-links.js",
+        "scripts/enrich_formula_actions_and_syndromes.js",
+        "scripts/fill-formula-in-formula-zh.js",
+        "scripts/fill-formula-roles-from-course.js",
+        "scripts/fill-formula-tag-layer.js",
+        "scripts/fill-formula-tongue-pulse-zh.js",
+        "scripts/fill-formulas-from-american-dragon.js",
+        "scripts/fill_all_14_missing_formulas.js",
+        "scripts/fix-appendix-a-alias-misses.js",
+        "scripts/fix-formula-bilingual-alignment.js",
+        "scripts/fix-formula-cloudtcm-urls.js",
+        "scripts/fix-formula-fake-chinese-and-junk.js",
+        "scripts/fix-formula-holds-thp.js",
+        "scripts/fix-formula-misfiled-composition.js",
+        "scripts/fix-formula-tags.js",
+        "scripts/ingest-dui-yao-pairs.js",
+        "scripts/link-formula-cloudtcm-aliases.js",
+        "scripts/link-formula-family-back.js",
+        "scripts/link-herb-sources.js",
+        "scripts/link-point-conditions.js",
+        "scripts/mark-exam-stars.js",
+        "scripts/mark-formula-board-status.js",
+        "scripts/master_process_5_batch.js",
+        "scripts/overwrite_formulas_from_ad_md.js",
+        "scripts/perfect_step1_actions.js",
+        "scripts/populate_ad_actions_and_syndromes.js",
+        "scripts/populate_ad_composition.js",
+        "scripts/process_10_formulas_batch.js",
+        "scripts/refine-bl-channel.js",
+        "scripts/refine-cv-channel.js",
+        "scripts/refine-gb-channel.js",
+        "scripts/refine-gv-channel.js",
+        "scripts/refine-ht-channel.js",
+        "scripts/refine-ht-full.js",
+        "scripts/refine-ki-channel.js",
+        "scripts/refine-li-channel.js",
+        "scripts/refine-lr-channel.js",
+        "scripts/refine-lu-channel.js",
+        "scripts/refine-pc-channel.js",
+        "scripts/refine-si-channel.js",
+        "scripts/refine-sp-channel.js",
+        "scripts/refine-st-channel.js",
+        "scripts/refine-te-channel.js",
+        "scripts/repair-formula-cards.js",
+        "scripts/repopulate_ad_composition_full_bilingual.js",
+        "scripts/report-pharm-coverage.js",
+        "scripts/restore-point-tags.js",
+        "scripts/stamp-herb-card-grade.js",
+        "scripts/step1_fill_all_formula_actions.js",
+        "scripts/test-pharm-negative-cases.js",
+        "scripts/validate-acupoint-standard.js",
+        "scripts/validate-condition-standard.js",
+        "scripts/validate-encoding.js",
+        "scripts/validate-extra-point-standard.js",
+        "scripts/validate-formula-standard.js",
+        "scripts/validate-herb-integrity-predicates.js",
+        "scripts/validate-herb-standard.js",
+        "scripts/validate-pattern-standard.js",
+        "scripts/validate-pharm-standard.js",
+        "scripts/validate-symptom-standard.js",
+        "scripts/validate-tdis-standard.js"
+      ],
+      "writers": [
+        "scripts/add-missing-board-formulas.js",
+        "scripts/apply-acupoint-pattern-links.js",
+        "scripts/apply-contra-alignment.js",
+        "scripts/apply-contraindications-backfill.js",
+        "scripts/apply-curriculum-composition.js",
+        "scripts/apply-formula-family.js",
+        "scripts/apply-formula-songs.js",
+        "scripts/apply-herb-en-backfill.js",
+        "scripts/apply-modifications.js",
+        "scripts/apply-pi-actions-alignment.js",
+        "scripts/apply-source-classic.js",
+        "scripts/apply-tongue-pulse-backfill.js",
+        "scripts/audit-cr010-condition-detail-maturity.js",
+        "scripts/build-compare-with.js",
+        "scripts/build_pattern_v2_b.js",
+        "scripts/clean-formula-safety-boilerplate.js",
+        "scripts/curate-misfile-move-batch2.js",
+        "scripts/curate-misfile-move-batch3.js",
+        "scripts/curate-misfile-move-batch4.js",
+        "scripts/curate-misfile-move-batch5.js",
+        "scripts/curate-sample-formula.js",
+        "scripts/curate-si-wu-tang-move.js",
+        "scripts/curate-sp-channel.js",
+        "scripts/curate-warm-interior-herbs.js",
+        "scripts/derive-formula-pattern-links.js",
+        "scripts/enrich_formula_actions_and_syndromes.js",
+        "scripts/fill-formula-in-formula-zh.js",
+        "scripts/fill-formula-roles-from-course.js",
+        "scripts/fill-formula-tag-layer.js",
+        "scripts/fill-formula-tongue-pulse-zh.js",
+        "scripts/fill-formulas-from-american-dragon.js",
+        "scripts/fill_all_14_missing_formulas.js",
+        "scripts/fix-appendix-a-alias-misses.js",
+        "scripts/fix-formula-bilingual-alignment.js",
+        "scripts/fix-formula-cloudtcm-urls.js",
+        "scripts/fix-formula-fake-chinese-and-junk.js",
+        "scripts/fix-formula-holds-thp.js",
+        "scripts/fix-formula-misfiled-composition.js",
+        "scripts/fix-formula-tags.js",
+        "scripts/ingest-dui-yao-pairs.js",
+        "scripts/link-formula-cloudtcm-aliases.js",
+        "scripts/link-formula-family-back.js",
+        "scripts/link-herb-sources.js",
+        "scripts/link-point-conditions.js",
+        "scripts/mark-exam-stars.js",
+        "scripts/mark-formula-board-status.js",
+        "scripts/master_process_5_batch.js",
+        "scripts/overwrite_formulas_from_ad_md.js",
+        "scripts/perfect_step1_actions.js",
+        "scripts/populate_ad_actions_and_syndromes.js",
+        "scripts/populate_ad_composition.js",
+        "scripts/process_10_formulas_batch.js",
+        "scripts/refine-bl-channel.js",
+        "scripts/refine-cv-channel.js",
+        "scripts/refine-gb-channel.js",
+        "scripts/refine-gv-channel.js",
+        "scripts/refine-ht-channel.js",
+        "scripts/refine-ht-full.js",
+        "scripts/refine-ki-channel.js",
+        "scripts/refine-li-channel.js",
+        "scripts/refine-lr-channel.js",
+        "scripts/refine-lu-channel.js",
+        "scripts/refine-pc-channel.js",
+        "scripts/refine-si-channel.js",
+        "scripts/refine-sp-channel.js",
+        "scripts/refine-st-channel.js",
+        "scripts/refine-te-channel.js",
+        "scripts/repair-formula-cards.js",
+        "scripts/repopulate_ad_composition_full_bilingual.js",
+        "scripts/restore-point-tags.js",
+        "scripts/step1_fill_all_formula_actions.js",
+        "scripts/test-pharm-negative-cases.js",
+        "scripts/validate-extra-point-standard.js",
+        "scripts/validate-herb-integrity-predicates.js"
+      ],
+      "validators": [
+        "scripts/test-pharm-negative-cases.js",
+        "scripts/validate-acupoint-standard.js",
+        "scripts/validate-condition-standard.js",
+        "scripts/validate-encoding.js",
+        "scripts/validate-extra-point-standard.js",
+        "scripts/validate-formula-standard.js",
+        "scripts/validate-herb-integrity-predicates.js",
+        "scripts/validate-herb-standard.js",
+        "scripts/validate-pattern-standard.js",
+        "scripts/validate-pharm-standard.js",
+        "scripts/validate-symptom-standard.js",
+        "scripts/validate-tdis-standard.js"
+      ],
+      "builders": [
+        "scripts/build-compare-with.js"
+      ],
+      "ui_consumers": [
+        "app.js"
+      ],
+      "runtime_consumers": [
+        "app.js",
+        "js/knowledge.js"
+      ],
+      "ci_consumers": [
+        "scripts/report-pharm-coverage.js",
+        "scripts/test-pharm-negative-cases.js",
+        "scripts/validate-acupoint-standard.js",
+        "scripts/validate-condition-standard.js",
+        "scripts/validate-extra-point-standard.js",
+        "scripts/validate-formula-standard.js",
+        "scripts/validate-herb-integrity-predicates.js",
+        "scripts/validate-herb-standard.js",
+        "scripts/validate-pharm-standard.js",
+        "scripts/validate-symptom-standard.js"
+      ],
+      "report_only_consumers": [
+        "scripts/audit-cr010-condition-detail-maturity.js",
+        "scripts/audit-dark-fields.js",
+        "scripts/audit-herb-cloudtcm-layer.js",
+        "scripts/audit-validator-coverage-truth.js",
+        "scripts/report-pharm-coverage.js"
+      ],
+      "no_consumer_found": false
+    },
+    {
+      "field_name": "source",
+      "semantic_category": "SOURCE_CITATION",
+      "consumption_modes": [
+        "COPIES_THROUGH",
+        "DISPLAYS",
+        "READS_VALUE",
+        "TRANSFORMS",
+        "WRITES"
+      ],
+      "readers": [
+        "app.js",
+        "data/auricular/gb93_worklist.js",
+        "data/clinical_cases/schema.sql",
+        "data/tung/point_index.js",
+        "index.html",
+        "js/avs.js",
+        "js/clinical-store.js",
+        "js/knowledge.js",
+        "js/practice-audit.js",
+        "legacy/app.js",
+        "legacy/index.html",
+        "scripts/analyze-cloudtcm-diffs.js",
+        "scripts/apply-361-enrichment.js",
+        "scripts/apply-acupoint-pattern-links.js",
+        "scripts/audit-clinical-export-contract.js",
+        "scripts/audit-dark-fields.js",
+        "scripts/audit-legacy-namespace-retired-id.js",
+        "scripts/build-cloudtcm-acupoint-map.js",
+        "scripts/build-cloudtcm-formula-map.js",
+        "scripts/build-cloudtcm-ref-map.js",
+        "scripts/build-cloudtcm-safety-review-batch.js",
+        "scripts/build-entity-registry.js",
+        "scripts/build-pattern-alias-map.js",
+        "scripts/build-pattern-registry.js",
+        "scripts/build-tcm-pattern-canon.js",
+        "scripts/build_pattern_v2_b.js",
+        "scripts/curate-sample-formula.js",
+        "scripts/extract-cloudtcm-vocabularies.js",
+        "scripts/extract-curriculum-md.js",
+        "scripts/extract-embedded-data.js",
+        "scripts/fetch-cloudtcm-points.js",
+        "scripts/fetch-mastertung-point-map.js",
+        "scripts/fix-all-auricular-points-content-and-links.js",
+        "scripts/fix-condition-pattern-mechanical.js",
+        "scripts/generate-72-extra-points.js",
+        "scripts/generate-scalp-and-auricular-dataset.js",
+        "scripts/harvest-american-dragon-formulas.js",
+        "scripts/import-zhiyuan-disease-index.js",
+        "scripts/insert-361-drafts.js",
+        "scripts/lib/preflight-generated-ci.js",
+        "scripts/link-formula-family-back.js",
+        "scripts/merge-formulas-preview.js",
+        "scripts/migrate-clinical-case-print-verify.js",
+        "scripts/migrate-gyn-red-flags.js",
+        "scripts/migrate-pattern-v1-vocabulary.js",
+        "scripts/parse-comprehensive-composition.js",
+        "scripts/populate_remaining_compositions.js",
+        "scripts/practice-audit.js",
+        "scripts/preview-acupoint-anatomy-fill.js",
+        "scripts/preview-acupoint-anatomy-review.js",
+        "scripts/preview-acupoint-protocol-anatomy.js",
+        "scripts/preview-bl61-bl67-encoding-repair.js",
+        "scripts/preview-formula-chinese-depth.js",
+        "scripts/preview-formula-content-fill.js",
+        "scripts/preview-herb-visual-links.js",
+        "scripts/refine-ht-full.js",
+        "scripts/rehearse-c2b.js",
+        "scripts/report-361-encoding-findings.js",
+        "scripts/report-acupoint-content-gaps.js",
+        "scripts/report-acupoint-contradictions.js",
+        "scripts/report-cloudtcm-buildout.js",
+        "scripts/report-comparison-fill.js",
+        "scripts/report-formula-content-gaps.js",
+        "scripts/restore-formula-roles.js",
+        "scripts/test-avs-checkout.js",
+        "scripts/test-pharm-source-integrity-negative-cases.js",
+        "scripts/test-practice-audit.js",
+        "scripts/translate-safety-terms.js",
+        "scripts/validate-acupoint-source-conflicts.js",
+        "scripts/validate-bilingual-render-parity.js",
+        "scripts/validate-cloudtcm-vocabularies.js",
+        "scripts/validate-condition-sources.js",
+        "scripts/validate-condition-standard.js",
+        "scripts/validate-content-junk.js",
+        "scripts/validate-data.js",
+        "scripts/validate-exposure-safety-render.js",
+        "scripts/validate-extra-point-standard.js",
+        "scripts/validate-herb-dosage-shape.js",
+        "scripts/validate-herbal-links.js",
+        "scripts/validate-metric-interpretation.js",
+        "scripts/validate-naming.js",
+        "scripts/validate-outcome-panel-render.js",
+        "scripts/validate-protocol-evidence-render.js",
+        "scripts/validate-red-flag-registry.js",
+        "scripts/validate-red-flag-runtime.js",
+        "scripts/validate-relations.js",
+        "scripts/validate-supp-standard.js"
+      ],
+      "writers": [
+        "app.js",
+        "data/clinical_cases/schema.sql",
+        "js/avs.js",
+        "js/clinical-store.js",
+        "js/knowledge.js",
+        "js/practice-audit.js",
+        "legacy/app.js",
+        "scripts/audit-clinical-export-contract.js",
+        "scripts/build-cloudtcm-acupoint-map.js",
+        "scripts/build-cloudtcm-formula-map.js",
+        "scripts/build-cloudtcm-ref-map.js",
+        "scripts/build-pattern-alias-map.js",
+        "scripts/build-tcm-pattern-canon.js",
+        "scripts/curate-sample-formula.js",
+        "scripts/fetch-cloudtcm-points.js",
+        "scripts/fetch-mastertung-point-map.js",
+        "scripts/fix-all-auricular-points-content-and-links.js",
+        "scripts/fix-condition-pattern-mechanical.js",
+        "scripts/generate-72-extra-points.js",
+        "scripts/generate-scalp-and-auricular-dataset.js",
+        "scripts/import-zhiyuan-disease-index.js",
+        "scripts/link-formula-family-back.js",
+        "scripts/merge-formulas-preview.js",
+        "scripts/parse-comprehensive-composition.js",
+        "scripts/report-361-encoding-findings.js",
+        "scripts/report-acupoint-contradictions.js",
+        "scripts/report-cloudtcm-buildout.js",
+        "scripts/test-practice-audit.js",
+        "scripts/validate-condition-sources.js",
+        "scripts/validate-exposure-safety-render.js",
+        "scripts/validate-herb-dosage-shape.js",
+        "scripts/validate-outcome-panel-render.js"
+      ],
+      "validators": [
+        "scripts/test-avs-checkout.js",
+        "scripts/test-pharm-source-integrity-negative-cases.js",
+        "scripts/test-practice-audit.js",
+        "scripts/validate-acupoint-source-conflicts.js",
+        "scripts/validate-bilingual-render-parity.js",
+        "scripts/validate-clinical-store-phi-boundary.js",
+        "scripts/validate-cloudtcm-vocabularies.js",
+        "scripts/validate-condition-sources.js",
+        "scripts/validate-condition-standard.js",
+        "scripts/validate-content-junk.js",
+        "scripts/validate-data.js",
+        "scripts/validate-exposure-safety-render.js",
+        "scripts/validate-extra-point-standard.js",
+        "scripts/validate-herb-dosage-shape.js",
+        "scripts/validate-herbal-links.js",
+        "scripts/validate-metric-interpretation.js",
+        "scripts/validate-naming.js",
+        "scripts/validate-outcome-panel-render.js",
+        "scripts/validate-protocol-evidence-render.js",
+        "scripts/validate-red-flag-registry.js",
+        "scripts/validate-red-flag-runtime.js",
+        "scripts/validate-relations.js",
+        "scripts/validate-supp-standard.js"
+      ],
+      "builders": [
+        "scripts/build-cloudtcm-acupoint-map.js",
+        "scripts/build-cloudtcm-formula-map.js",
+        "scripts/build-cloudtcm-ref-map.js",
+        "scripts/build-cloudtcm-safety-review-batch.js",
+        "scripts/build-entity-registry.js",
+        "scripts/build-pattern-alias-map.js",
+        "scripts/build-pattern-registry.js",
+        "scripts/build-tcm-pattern-canon.js"
+      ],
+      "ui_consumers": [
+        "app.js",
+        "index.html",
+        "legacy/index.html"
+      ],
+      "runtime_consumers": [
+        "app.js",
+        "index.html",
+        "js/avs.js",
+        "js/clinical-store.js",
+        "js/knowledge.js",
+        "js/notes.js",
+        "js/practice-audit.js",
+        "legacy/index.html"
+      ],
+      "ci_consumers": [
+        "scripts/test-avs-checkout.js",
+        "scripts/test-pharm-source-integrity-negative-cases.js",
+        "scripts/validate-acupoint-source-conflicts.js",
+        "scripts/validate-bilingual-render-parity.js",
+        "scripts/validate-clinical-store-phi-boundary.js",
+        "scripts/validate-condition-standard.js",
+        "scripts/validate-content-junk.js",
+        "scripts/validate-data.js",
+        "scripts/validate-exposure-safety-render.js",
+        "scripts/validate-extra-point-standard.js",
+        "scripts/validate-herb-dosage-shape.js",
+        "scripts/validate-metric-interpretation.js",
+        "scripts/validate-outcome-panel-render.js",
+        "scripts/validate-protocol-evidence-render.js",
+        "scripts/validate-red-flag-registry.js",
+        "scripts/validate-red-flag-runtime.js",
+        "scripts/validate-relations.js"
+      ],
+      "report_only_consumers": [
+        "scripts/audit-clinical-export-contract.js",
+        "scripts/audit-dark-fields.js",
+        "scripts/audit-legacy-namespace-retired-id.js",
+        "scripts/report-361-encoding-findings.js",
+        "scripts/report-acupoint-content-gaps.js",
+        "scripts/report-acupoint-contradictions.js",
+        "scripts/report-cloudtcm-buildout.js",
+        "scripts/report-comparison-fill.js",
+        "scripts/report-formula-content-gaps.js"
+      ],
+      "no_consumer_found": false
+    },
+    {
+      "field_name": "sources",
+      "semantic_category": "SOURCE_CITATION",
+      "consumption_modes": [
+        "COPIES_THROUGH",
+        "DISPLAYS",
+        "READS_VALUE",
+        "TRANSFORMS",
+        "WRITES"
+      ],
+      "readers": [
+        "app.js",
+        "data/tung/point_index.js",
+        "index.html",
+        "js/care-draft.js",
+        "js/knowledge.js",
+        "js/router.js",
+        "legacy/app.js",
+        "legacy/index.html",
+        "scripts/antigravity-preflight.js",
+        "scripts/audit-cr010-condition-detail-maturity.js",
+        "scripts/audit-validator-coverage-truth.js",
+        "scripts/build-data.js",
+        "scripts/build-entity-registry.js",
+        "scripts/build-term-crosswalk.js",
+        "scripts/build_pattern_v2_b.js",
+        "scripts/fetch-cloudtcm-points.js",
+        "scripts/fetch-mastertung-point-map.js",
+        "scripts/fix-all-auricular-points-content-and-links.js",
+        "scripts/fix-condition-pattern-mechanical.js",
+        "scripts/fix-formula-tags.js",
+        "scripts/fix-source-registry.js",
+        "scripts/generate-scalp-and-auricular-dataset.js",
+        "scripts/ingest-dui-yao-pairs.js",
+        "scripts/ingest-protocol-delivery.js",
+        "scripts/insert-361-drafts.js",
+        "scripts/merge-361-preview.js",
+        "scripts/migrate-pattern-v1-vocabulary.js",
+        "scripts/preview-acupoint-anatomy-fill.js",
+        "scripts/preview-acupoint-anatomy-review.js",
+        "scripts/preview-acupoint-protocol-anatomy.js",
+        "scripts/preview-formula-chinese-depth.js",
+        "scripts/preview-formula-content-fill.js",
+        "scripts/report-acupoint-content-gaps.js",
+        "scripts/test-pharm-negative-cases.js",
+        "scripts/transform-cloudtcm-points.js",
+        "scripts/update-missing-report.js",
+        "scripts/validate-condition-sources.js",
+        "scripts/validate-condition-standard.js",
+        "scripts/validate-extra-point-standard.js",
+        "scripts/validate-pattern-standard.js",
+        "scripts/validate-pharm-standard.js",
+        "scripts/validate-protocol-evidence-render.js",
+        "scripts/validate-symptom-standard.js",
+        "scripts/validate-tdis-standard.js"
+      ],
+      "writers": [
+        "app.js",
+        "js/knowledge.js",
+        "legacy/app.js",
+        "scripts/build-data.js",
+        "scripts/build-term-crosswalk.js",
+        "scripts/build_pattern_v2_b.js",
+        "scripts/fix-all-auricular-points-content-and-links.js",
+        "scripts/fix-condition-pattern-mechanical.js",
+        "scripts/generate-72-extra-points.js",
+        "scripts/generate-scalp-and-auricular-dataset.js",
+        "scripts/ingest-dui-yao-pairs.js",
+        "scripts/ingest-protocol-delivery.js",
+        "scripts/merge-361-preview.js",
+        "scripts/preview-acupoint-anatomy-review.js",
+        "scripts/preview-acupoint-protocol-anatomy.js",
+        "scripts/preview-formula-chinese-depth.js",
+        "scripts/preview-formula-content-fill.js",
+        "scripts/test-pharm-negative-cases.js",
+        "scripts/validate-condition-sources.js",
+        "scripts/validate-pharm-standard.js",
+        "scripts/validate-protocol-evidence-render.js"
+      ],
+      "validators": [
+        "scripts/test-pharm-negative-cases.js",
+        "scripts/validate-condition-sources.js",
+        "scripts/validate-condition-standard.js",
+        "scripts/validate-extra-point-standard.js",
+        "scripts/validate-pattern-standard.js",
+        "scripts/validate-pharm-standard.js",
+        "scripts/validate-protocol-evidence-render.js",
+        "scripts/validate-symptom-standard.js",
+        "scripts/validate-tdis-standard.js"
+      ],
+      "builders": [
+        "scripts/build-data.js",
+        "scripts/build-entity-registry.js",
+        "scripts/build-term-crosswalk.js"
+      ],
+      "ui_consumers": [
+        "app.js",
+        "index.html",
+        "legacy/index.html"
+      ],
+      "runtime_consumers": [
+        "app.js",
+        "index.html",
+        "js/care-draft.js",
+        "js/knowledge.js",
+        "js/router.js",
+        "legacy/index.html"
+      ],
+      "ci_consumers": [
+        "scripts/test-pharm-negative-cases.js",
+        "scripts/validate-condition-standard.js",
+        "scripts/validate-extra-point-standard.js",
+        "scripts/validate-pharm-standard.js",
+        "scripts/validate-protocol-evidence-render.js",
+        "scripts/validate-symptom-standard.js"
+      ],
+      "report_only_consumers": [
+        "scripts/audit-cr010-condition-detail-maturity.js",
+        "scripts/audit-validator-coverage-truth.js",
+        "scripts/report-acupoint-content-gaps.js",
+        "scripts/report-formula-content-gaps.js"
+      ],
+      "no_consumer_found": false
+    },
+    {
+      "field_name": "evidence",
+      "semantic_category": "EVIDENCE_STRENGTH",
+      "consumption_modes": [
+        "CHECKS_ENUM",
+        "COPIES_THROUGH",
+        "DISPLAYS",
+        "READS_VALUE",
+        "TRANSFORMS",
+        "WRITES"
+      ],
+      "readers": [
+        "app.js",
+        "index.html",
+        "js/knowledge.js",
+        "legacy/app.js",
+        "legacy/index.html",
+        "scripts/apply-acupoint-pattern-links.js",
+        "scripts/apply-b123-task-c-ledger.js",
+        "scripts/apply-formula-family.js",
+        "scripts/apply-modifications.js",
+        "scripts/audit-clinical-export-contract.js",
+        "scripts/audit-validator-coverage-truth.js",
+        "scripts/build-content-quality-overlay.js",
+        "scripts/evidence-debt.js",
+        "scripts/fix-formula-holds-thp.js",
+        "scripts/fix-ki6-and-all-points.js",
+        "scripts/ingest-protocol-delivery.js",
+        "scripts/insert-361-drafts.js",
+        "scripts/merge-361-preview.js",
+        "scripts/migrate-b123-red-flags.js",
+        "scripts/migrate-gyn-red-flags.js",
+        "scripts/populate-full-361-bilingual-fields.js",
+        "scripts/preview-formula-chinese-depth.js",
+        "scripts/refresh-dailymed-evidence.js",
+        "scripts/report-acupoint-content-gaps.js",
+        "scripts/report-formula-content-gaps.js",
+        "scripts/sync-embedded-with-361.js",
+        "scripts/test-pharm-source-integrity-negative-cases.js",
+        "scripts/validate-acupoint-standard.js",
+        "scripts/validate-b123-legacy-migration.js",
+        "scripts/validate-condition-standard.js",
+        "scripts/validate-formula-dose-staging.js",
+        "scripts/validate-gyn-legacy-migration.js",
+        "scripts/validate-pharm-standard.js",
+        "scripts/validate-protocol-evidence-render.js",
+        "scripts/validate-red-flag-registry.js",
+        "scripts/validate-supp-standard.js"
+      ],
+      "writers": [
+        "app.js",
+        "legacy/app.js",
+        "scripts/apply-b123-task-c-ledger.js",
+        "scripts/audit-clinical-export-contract.js",
+        "scripts/audit-validator-coverage-truth.js",
+        "scripts/build-content-quality-overlay.js",
+        "scripts/fix-ki6-and-all-points.js",
+        "scripts/generate-72-extra-points.js",
+        "scripts/insert-361-drafts.js",
+        "scripts/merge-361-preview.js",
+        "scripts/migrate-b123-red-flags.js",
+        "scripts/migrate-gyn-red-flags.js",
+        "scripts/sync-embedded-with-361.js",
+        "scripts/validate-gyn-legacy-migration.js",
+        "scripts/validate-pharm-standard.js",
+        "scripts/validate-red-flag-registry.js"
+      ],
+      "validators": [
+        "scripts/test-pharm-source-integrity-negative-cases.js",
+        "scripts/validate-acupoint-standard.js",
+        "scripts/validate-b123-legacy-migration.js",
+        "scripts/validate-condition-standard.js",
+        "scripts/validate-formula-dose-staging.js",
+        "scripts/validate-gyn-legacy-migration.js",
+        "scripts/validate-pharm-standard.js",
+        "scripts/validate-protocol-evidence-render.js",
+        "scripts/validate-red-flag-registry.js",
+        "scripts/validate-supp-standard.js"
+      ],
+      "builders": [
+        "scripts/build-content-quality-overlay.js"
+      ],
+      "ui_consumers": [
+        "app.js",
+        "index.html",
+        "legacy/index.html"
+      ],
+      "runtime_consumers": [
+        "app.js",
+        "index.html",
+        "js/knowledge.js",
+        "legacy/index.html"
+      ],
+      "ci_consumers": [
+        "scripts/test-pharm-source-integrity-negative-cases.js",
+        "scripts/validate-acupoint-standard.js",
+        "scripts/validate-b123-legacy-migration.js",
+        "scripts/validate-condition-standard.js",
+        "scripts/validate-gyn-legacy-migration.js",
+        "scripts/validate-pharm-standard.js",
+        "scripts/validate-protocol-evidence-render.js",
+        "scripts/validate-red-flag-registry.js"
+      ],
+      "report_only_consumers": [
+        "scripts/audit-clinical-export-contract.js",
+        "scripts/audit-validator-coverage-truth.js",
+        "scripts/report-acupoint-content-gaps.js",
+        "scripts/report-formula-content-gaps.js"
+      ],
+      "no_consumer_found": false
+    },
+    {
+      "field_name": "reference",
+      "semantic_category": "SOURCE_CITATION",
+      "consumption_modes": [
+        "COPIES_THROUGH",
+        "DISPLAYS",
+        "READS_VALUE",
+        "TRANSFORMS",
+        "WRITES"
+      ],
+      "readers": [
+        "app.js",
+        "index.html",
+        "js/knowledge.js",
+        "legacy/app.js",
+        "legacy/index.html",
+        "scripts/analyze-cloudtcm-diffs.js",
+        "scripts/audit-legacy-namespace-retired-id.js",
+        "scripts/audit-validator-coverage-truth.js",
+        "scripts/build-cloudtcm-safety-review-batch.js",
+        "scripts/build-site.js",
+        "scripts/build_batch1_gold_formulas.js",
+        "scripts/build_batch2_gold_formulas.js",
+        "scripts/build_gold_standard_formulas.js",
+        "scripts/build_xiao_qing_long_tang_gold.js",
+        "scripts/insert-361-drafts.js",
+        "scripts/lib/preflight-generated-ci.js",
+        "scripts/lib/preflight-ratchet.js",
+        "scripts/merge-cloudtcm-preview.js",
+        "scripts/preview-bl61-bl67-encoding-repair.js",
+        "scripts/report-361-encoding-findings.js",
+        "scripts/validate-content-junk.js",
+        "scripts/validate-relations.js",
+        "scripts/validate-retired-id-references.js",
+        "scripts/validate-symptom-standard.js"
+      ],
+      "writers": [
+        "scripts/lib/preflight-generated-ci.js",
+        "scripts/report-361-encoding-findings.js",
+        "scripts/validate-symptom-standard.js"
+      ],
+      "validators": [
+        "scripts/validate-content-junk.js",
+        "scripts/validate-relations.js",
+        "scripts/validate-retired-id-references.js",
+        "scripts/validate-symptom-standard.js"
+      ],
+      "builders": [
+        "scripts/build-cloudtcm-safety-review-batch.js",
+        "scripts/build-site.js"
+      ],
+      "ui_consumers": [
+        "app.js",
+        "index.html",
+        "legacy/index.html"
+      ],
+      "runtime_consumers": [
+        "app.js",
+        "index.html",
+        "js/knowledge.js",
+        "legacy/index.html"
+      ],
+      "ci_consumers": [
+        "scripts/validate-content-junk.js",
+        "scripts/validate-relations.js",
+        "scripts/validate-retired-id-references.js",
+        "scripts/validate-symptom-standard.js"
+      ],
+      "report_only_consumers": [
+        "scripts/audit-legacy-namespace-retired-id.js",
+        "scripts/audit-validator-coverage-truth.js",
+        "scripts/report-361-encoding-findings.js"
+      ],
+      "no_consumer_found": false
+    },
+    {
+      "field_name": "origin",
+      "semantic_category": "PROVENANCE",
+      "consumption_modes": [
+        "CHECKS_ENUM",
+        "COPIES_THROUGH",
+        "DISPLAYS",
+        "READS_VALUE",
+        "WRITES"
+      ],
+      "readers": [
+        "app.js",
+        "legacy/app.js",
+        "scripts/antigravity-preflight.js",
+        "scripts/apply-b123-task-c-ledger.js",
+        "scripts/audit-clinical-export-contract.js",
+        "scripts/audit-legacy-namespace-retired-id.js",
+        "scripts/audit-validator-coverage-truth.js",
+        "scripts/build-compare-with.js",
+        "scripts/build-data.js",
+        "scripts/check-branch-mergeable.js",
+        "scripts/generate-scalp-and-auricular-dataset.js",
+        "scripts/lib/preflight-git.js",
+        "scripts/migrate-b123-red-flags.js",
+        "scripts/migrate-clinical-case-print-verify.js",
+        "scripts/migrate-gyn-red-flags.js",
+        "scripts/preflight-c2b.js",
+        "scripts/scan-unmerged-branches.js",
+        "scripts/test-branch-mergeable.js",
+        "scripts/validate-b123-legacy-migration.js",
+        "scripts/validate-gyn-legacy-migration.js",
+        "scripts/validate-red-flag-registry.js",
+        "scripts/validate-red-flag-runtime.js",
+        "scripts/validate-red-flag-wiring.js",
+        "scripts/wire-b123-red-flag-refs.js"
+      ],
+      "writers": [
+        "scripts/build-compare-with.js",
+        "scripts/migrate-b123-red-flags.js",
+        "scripts/migrate-gyn-red-flags.js",
+        "scripts/validate-b123-legacy-migration.js",
+        "scripts/validate-gyn-legacy-migration.js",
+        "scripts/wire-b123-red-flag-refs.js"
+      ],
+      "validators": [
+        "scripts/check-branch-mergeable.js",
+        "scripts/test-branch-mergeable.js",
+        "scripts/validate-b123-legacy-migration.js",
+        "scripts/validate-gyn-legacy-migration.js",
+        "scripts/validate-red-flag-registry.js",
+        "scripts/validate-red-flag-runtime.js",
+        "scripts/validate-red-flag-wiring.js"
+      ],
+      "builders": [
+        "scripts/build-compare-with.js",
+        "scripts/build-data.js"
+      ],
+      "ui_consumers": [
+        "app.js"
+      ],
+      "runtime_consumers": [
+        "app.js"
+      ],
+      "ci_consumers": [
+        "scripts/check-branch-mergeable.js",
+        "scripts/test-branch-mergeable.js",
+        "scripts/validate-b123-legacy-migration.js",
+        "scripts/validate-gyn-legacy-migration.js",
+        "scripts/validate-red-flag-registry.js",
+        "scripts/validate-red-flag-runtime.js",
+        "scripts/validate-red-flag-wiring.js"
+      ],
+      "report_only_consumers": [
+        "scripts/audit-clinical-export-contract.js",
+        "scripts/audit-legacy-namespace-retired-id.js",
+        "scripts/audit-validator-coverage-truth.js"
+      ],
+      "no_consumer_found": false
+    },
+    {
+      "field_name": "source_urls",
+      "semantic_category": "SOURCE_LOCATOR",
+      "consumption_modes": [
+        "DISPLAYS",
+        "READS_VALUE",
+        "TRANSFORMS",
+        "WRITES"
+      ],
+      "readers": [
+        "app.js",
+        "data/auricular/gb93_index.js",
+        "data/tung/point_index.js",
+        "js/knowledge.js",
+        "legacy/app.js",
+        "scripts/add-missing-board-formulas.js",
+        "scripts/apply-comparison-fill.js",
+        "scripts/apply-curriculum-composition.js",
+        "scripts/audit-dark-fields.js",
+        "scripts/audit-herb-cloudtcm-layer.js",
+        "scripts/audit-legacy-namespace-retired-id.js",
+        "scripts/audit-validator-coverage-truth.js",
+        "scripts/build_batch2_gold_formulas.js",
+        "scripts/fetch-exact-cloudtcm-formulas.js",
+        "scripts/fetch-exact-cloudtcm-herbs.js",
+        "scripts/fetch-mastertung-point-map.js",
+        "scripts/fix-condition-pattern-mechanical.js",
+        "scripts/merge-formulas-preview.js",
+        "scripts/report-formula-content-gaps.js",
+        "scripts/validate-condition-standard.js",
+        "scripts/validate-formula-quality-strict.js",
+        "scripts/validate-herb-card-schema.js",
+        "scripts/validate-herb-quality-strict.js"
+      ],
+      "writers": [
+        "app.js",
+        "scripts/add-missing-board-formulas.js",
+        "scripts/apply-curriculum-composition.js",
+        "scripts/fetch-exact-cloudtcm-formulas.js",
+        "scripts/fetch-exact-cloudtcm-herbs.js",
+        "scripts/fetch-mastertung-point-map.js",
+        "scripts/fix-condition-pattern-mechanical.js",
+        "scripts/merge-formulas-preview.js"
+      ],
+      "validators": [
+        "scripts/validate-condition-standard.js",
+        "scripts/validate-formula-quality-strict.js",
+        "scripts/validate-herb-card-schema.js",
+        "scripts/validate-herb-quality-strict.js"
+      ],
+      "builders": [],
+      "ui_consumers": [
+        "app.js"
+      ],
+      "runtime_consumers": [
+        "app.js",
+        "js/knowledge.js"
+      ],
+      "ci_consumers": [
+        "scripts/validate-condition-standard.js"
+      ],
+      "report_only_consumers": [
+        "scripts/audit-dark-fields.js",
+        "scripts/audit-herb-cloudtcm-layer.js",
+        "scripts/audit-legacy-namespace-retired-id.js",
+        "scripts/audit-validator-coverage-truth.js",
+        "scripts/report-formula-content-gaps.js"
+      ],
+      "no_consumer_found": false
+    },
+    {
+      "field_name": "source_type",
+      "semantic_category": "PROVENANCE",
+      "consumption_modes": [
+        "CHECKS_ENUM",
+        "COPIES_THROUGH",
+        "READS_VALUE",
+        "WRITES"
+      ],
+      "readers": [
+        "data/learn/schema.sql",
+        "data/pathology/schema.sql",
+        "scripts/add-missing-board-formulas.js",
+        "scripts/apply-comparison-fill.js",
+        "scripts/audit-dark-fields.js",
+        "scripts/audit-herb-cloudtcm-layer.js",
+        "scripts/build-pattern-registry.js",
+        "scripts/build_pattern_v2_b.js",
+        "scripts/fetch-cloudtcm-acupoint-enrichment.js",
+        "scripts/fetch-cloudtcm-conditions-expanded.js",
+        "scripts/fetch-cloudtcm-conditions.js",
+        "scripts/fetch-exact-cloudtcm-formulas.js",
+        "scripts/fetch-exact-cloudtcm-herbs.js",
+        "scripts/merge-formulas-preview.js",
+        "scripts/preview-formula-content-fill.js",
+        "scripts/report-formula-content-gaps.js",
+        "scripts/sync-cloudtcm-acupoint-canon.js",
+        "scripts/validate-condition-standard.js",
+        "scripts/validate-formula-quality-strict.js",
+        "scripts/validate-herb-quality-strict.js",
+        "scripts/validate-pattern-standard.js",
+        "scripts/validate-symptom-standard.js",
+        "scripts/validate-tdis-standard.js"
+      ],
+      "writers": [
+        "scripts/add-missing-board-formulas.js",
+        "scripts/audit-herb-cloudtcm-layer.js",
+        "scripts/build-pattern-registry.js",
+        "scripts/build_pattern_v2_b.js",
+        "scripts/fetch-cloudtcm-acupoint-enrichment.js",
+        "scripts/fetch-cloudtcm-conditions-expanded.js",
+        "scripts/fetch-cloudtcm-conditions.js",
+        "scripts/fetch-exact-cloudtcm-formulas.js",
+        "scripts/fetch-exact-cloudtcm-herbs.js",
+        "scripts/merge-formulas-preview.js",
+        "scripts/report-formula-content-gaps.js",
+        "scripts/sync-cloudtcm-acupoint-canon.js",
+        "scripts/validate-formula-quality-strict.js",
+        "scripts/validate-herb-quality-strict.js"
+      ],
+      "validators": [
+        "scripts/validate-condition-standard.js",
+        "scripts/validate-formula-quality-strict.js",
+        "scripts/validate-herb-quality-strict.js",
+        "scripts/validate-pattern-standard.js",
+        "scripts/validate-symptom-standard.js",
+        "scripts/validate-tdis-standard.js"
+      ],
+      "builders": [
+        "scripts/build-pattern-registry.js"
+      ],
+      "ui_consumers": [],
+      "runtime_consumers": [],
+      "ci_consumers": [
+        "scripts/validate-condition-standard.js",
+        "scripts/validate-symptom-standard.js"
+      ],
+      "report_only_consumers": [
+        "scripts/audit-dark-fields.js",
+        "scripts/audit-herb-cloudtcm-layer.js",
+        "scripts/report-formula-content-gaps.js"
+      ],
+      "no_consumer_found": false
+    },
+    {
+      "field_name": "source_url",
+      "semantic_category": "SOURCE_LOCATOR",
+      "consumption_modes": [
+        "CHECKS_ENUM",
+        "COPIES_THROUGH",
+        "READS_VALUE",
+        "TRANSFORMS",
+        "WRITES"
+      ],
+      "readers": [
+        "data/learn/schema.sql",
+        "js/knowledge.js",
+        "scripts/apply-b123-task-c-ledger.js",
+        "scripts/apply-contraindications-backfill.js",
+        "scripts/apply-formula-songs.js",
+        "scripts/build-cloudtcm-ref-map.js",
+        "scripts/extract-cloudtcm-vocabularies.js",
+        "scripts/fetch-cloudtcm-conditions-expanded.js",
+        "scripts/fetch-cloudtcm-conditions.js",
+        "scripts/migrate-gyn-red-flags.js",
+        "scripts/preview-bl61-bl67-encoding-repair.js",
+        "scripts/preview-who-cun-fill.js",
+        "scripts/report-361-encoding-findings.js",
+        "scripts/report-cloudtcm-buildout.js",
+        "scripts/transform-cloudtcm-points.js",
+        "scripts/validate-cloudtcm-vocabularies.js",
+        "scripts/validate-formula-quality-strict.js",
+        "scripts/validate-gyn-legacy-migration.js",
+        "scripts/validate-herb-quality-strict.js",
+        "scripts/validate-red-flag-registry.js"
+      ],
+      "writers": [
+        "scripts/apply-b123-task-c-ledger.js",
+        "scripts/build-cloudtcm-ref-map.js",
+        "scripts/extract-cloudtcm-vocabularies.js",
+        "scripts/migrate-gyn-red-flags.js",
+        "scripts/preview-bl61-bl67-encoding-repair.js",
+        "scripts/preview-who-cun-fill.js",
+        "scripts/report-361-encoding-findings.js",
+        "scripts/transform-cloudtcm-points.js"
+      ],
+      "validators": [
+        "scripts/validate-cloudtcm-vocabularies.js",
+        "scripts/validate-formula-quality-strict.js",
+        "scripts/validate-gyn-legacy-migration.js",
+        "scripts/validate-herb-quality-strict.js",
+        "scripts/validate-red-flag-registry.js"
+      ],
+      "builders": [
+        "scripts/build-cloudtcm-ref-map.js"
+      ],
+      "ui_consumers": [],
+      "runtime_consumers": [
+        "js/knowledge.js"
+      ],
+      "ci_consumers": [
+        "scripts/validate-gyn-legacy-migration.js",
+        "scripts/validate-red-flag-registry.js"
+      ],
+      "report_only_consumers": [
+        "scripts/report-361-encoding-findings.js",
+        "scripts/report-cloudtcm-buildout.js"
+      ],
+      "no_consumer_found": false
+    },
+    {
+      "field_name": "verified",
+      "semantic_category": "VERIFICATION_STATE",
+      "consumption_modes": [
+        "COPIES_THROUGH",
+        "DISPLAYS",
+        "READS_VALUE",
+        "TRANSFORMS",
+        "WRITES"
+      ],
+      "readers": [
+        "app.js",
+        "index.html",
+        "js/knowledge.js",
+        "legacy/app.js",
+        "scripts/apply-curriculum-composition.js",
+        "scripts/apply-review-verdicts.js",
+        "scripts/audit-clinical-export-contract.js",
+        "scripts/build-data.js",
+        "scripts/check-today-survives.js",
+        "scripts/fetch-cloudtcm-herb-map.js",
+        "scripts/fetch-mastertung-point-map.js",
+        "scripts/insert-361-drafts.js",
+        "scripts/link-herb-sources.js",
+        "scripts/restore-formula-roles.js",
+        "scripts/validate-comparison-standard.js",
+        "scripts/validate-content-quality.js",
+        "scripts/validate-pharm-standard.js",
+        "scripts/validate-supp-standard.js"
+      ],
+      "writers": [
+        "scripts/fetch-cloudtcm-herb-map.js",
+        "scripts/fetch-mastertung-point-map.js"
+      ],
+      "validators": [
+        "scripts/check-today-survives.js",
+        "scripts/validate-comparison-standard.js",
+        "scripts/validate-content-quality.js",
+        "scripts/validate-pharm-standard.js",
+        "scripts/validate-supp-standard.js"
+      ],
+      "builders": [
+        "scripts/build-data.js"
+      ],
+      "ui_consumers": [
+        "app.js",
+        "index.html"
+      ],
+      "runtime_consumers": [
+        "app.js",
+        "index.html",
+        "js/knowledge.js"
+      ],
+      "ci_consumers": [
+        "scripts/validate-comparison-standard.js",
+        "scripts/validate-pharm-standard.js"
+      ],
+      "report_only_consumers": [
+        "scripts/audit-clinical-export-contract.js"
+      ],
+      "no_consumer_found": false
+    },
+    {
+      "field_name": "authored_by",
+      "semantic_category": "AUTHORSHIP",
+      "consumption_modes": [
+        "CHECKS_ENUM",
+        "READS_VALUE",
+        "TRANSFORMS",
+        "WRITES"
+      ],
+      "readers": [
+        "js/knowledge.js",
+        "scripts/apply-comparison-fill.js",
+        "scripts/audit-herb-cloudtcm-layer.js",
+        "scripts/build_batch2_gold_formulas.js",
+        "scripts/build_pattern_v2_b.js",
+        "scripts/migrate-b123-red-flags.js",
+        "scripts/migrate-gyn-red-flags.js",
+        "scripts/report-comparison-fill.js",
+        "scripts/seed-formula-comparisons.js",
+        "scripts/validate-comparison-standard.js",
+        "scripts/validate-condition-standard.js",
+        "scripts/validate-pattern-standard.js",
+        "scripts/validate-relations.js",
+        "scripts/validate-symptom-standard.js",
+        "scripts/validate-tdis-standard.js"
+      ],
+      "writers": [
+        "scripts/build_pattern_v2_b.js",
+        "scripts/migrate-b123-red-flags.js",
+        "scripts/migrate-gyn-red-flags.js",
+        "scripts/seed-formula-comparisons.js",
+        "scripts/validate-relations.js"
+      ],
+      "validators": [
+        "scripts/validate-comparison-standard.js",
+        "scripts/validate-condition-standard.js",
+        "scripts/validate-pattern-standard.js",
+        "scripts/validate-relations.js",
+        "scripts/validate-symptom-standard.js",
+        "scripts/validate-tdis-standard.js"
+      ],
+      "builders": [],
+      "ui_consumers": [],
+      "runtime_consumers": [
+        "js/knowledge.js"
+      ],
+      "ci_consumers": [
+        "scripts/validate-comparison-standard.js",
+        "scripts/validate-condition-standard.js",
+        "scripts/validate-relations.js",
+        "scripts/validate-symptom-standard.js"
+      ],
+      "report_only_consumers": [
+        "scripts/audit-herb-cloudtcm-layer.js",
+        "scripts/report-comparison-fill.js"
+      ],
+      "no_consumer_found": false
+    },
+    {
+      "field_name": "source_status",
+      "semantic_category": "VERIFICATION_STATE",
+      "consumption_modes": [
+        "CHECKS_ENUM",
+        "DISPLAYS",
+        "READS_VALUE",
+        "WRITES"
+      ],
+      "readers": [
+        "app.js",
+        "scripts/audit-legacy-namespace-retired-id.js",
+        "scripts/fetch-exact-cloudtcm-herbs.js",
+        "scripts/insert-361-drafts.js",
+        "scripts/merge-formulas-preview.js",
+        "scripts/preview-acupoint-anatomy-fill.js",
+        "scripts/preview-acupoint-anatomy-review.js",
+        "scripts/preview-acupoint-protocol-anatomy.js",
+        "scripts/transform-cloudtcm-points.js",
+        "scripts/validate-condition-standard.js",
+        "scripts/validate-formula-dose-staging.js",
+        "scripts/validate-herb-canon.js",
+        "scripts/validate-herbal-links.js",
+        "scripts/validate-relations.js"
+      ],
+      "writers": [
+        "scripts/audit-legacy-namespace-retired-id.js",
+        "scripts/fetch-exact-cloudtcm-herbs.js",
+        "scripts/insert-361-drafts.js",
+        "scripts/merge-formulas-preview.js",
+        "scripts/preview-acupoint-anatomy-fill.js",
+        "scripts/preview-acupoint-anatomy-review.js",
+        "scripts/preview-acupoint-protocol-anatomy.js",
+        "scripts/preview-who-cun-fill.js",
+        "scripts/transform-cloudtcm-points.js",
+        "scripts/validate-relations.js"
+      ],
+      "validators": [
+        "scripts/validate-condition-standard.js",
+        "scripts/validate-formula-dose-staging.js",
+        "scripts/validate-herb-canon.js",
+        "scripts/validate-herbal-links.js",
+        "scripts/validate-relations.js"
+      ],
+      "builders": [],
+      "ui_consumers": [
+        "app.js"
+      ],
+      "runtime_consumers": [
+        "app.js"
+      ],
+      "ci_consumers": [
+        "scripts/validate-condition-standard.js",
+        "scripts/validate-relations.js"
+      ],
+      "report_only_consumers": [
+        "scripts/audit-legacy-namespace-retired-id.js"
+      ],
+      "no_consumer_found": false
+    },
+    {
+      "field_name": "exact_source_url",
+      "semantic_category": "SOURCE_LOCATOR",
+      "consumption_modes": [
+        "CHECKS_ENUM",
+        "READS_VALUE",
+        "TRANSFORMS",
+        "WRITES"
+      ],
+      "readers": [
+        "js/knowledge.js",
+        "scripts/audit-herb-cloudtcm-layer.js",
+        "scripts/fetch-cloudtcm-conditions-expanded.js",
+        "scripts/fetch-cloudtcm-conditions.js",
+        "scripts/fetch-cloudtcm-formula-safety.js",
+        "scripts/fetch-cloudtcm-formula-tags.js",
+        "scripts/fetch-cloudtcm-herb-functions.js",
+        "scripts/fetch-exact-cloudtcm-formulas.js",
+        "scripts/fetch-exact-cloudtcm-herbs.js",
+        "scripts/fix-condition-pattern-mechanical.js",
+        "scripts/validate-condition-standard.js",
+        "scripts/validate-formula-quality-strict.js",
+        "scripts/validate-herb-quality-strict.js",
+        "scripts/validate-herb-standard.js"
+      ],
+      "writers": [
+        "scripts/fetch-cloudtcm-conditions-expanded.js",
+        "scripts/fetch-cloudtcm-conditions.js",
+        "scripts/fetch-cloudtcm-herb-functions.js",
+        "scripts/fetch-exact-cloudtcm-formulas.js",
+        "scripts/fetch-exact-cloudtcm-herbs.js",
+        "scripts/fix-condition-pattern-mechanical.js"
+      ],
+      "validators": [
+        "scripts/validate-condition-standard.js",
+        "scripts/validate-formula-quality-strict.js",
+        "scripts/validate-herb-quality-strict.js",
+        "scripts/validate-herb-standard.js"
+      ],
+      "builders": [],
+      "ui_consumers": [],
+      "runtime_consumers": [
+        "js/knowledge.js"
+      ],
+      "ci_consumers": [
+        "scripts/validate-condition-standard.js",
+        "scripts/validate-herb-standard.js"
+      ],
+      "report_only_consumers": [
+        "scripts/audit-herb-cloudtcm-layer.js"
+      ],
+      "no_consumer_found": false
+    },
+    {
+      "field_name": "cloudtcm_url",
+      "semantic_category": "SOURCE_LOCATOR",
+      "consumption_modes": [
+        "CHECKS_ENUM",
+        "DISPLAYS",
+        "READS_VALUE",
+        "TRANSFORMS",
+        "WRITES"
+      ],
+      "readers": [
+        "app.js",
+        "js/knowledge.js",
+        "scripts/audit-herb-cloudtcm-layer.js",
+        "scripts/build_batch2_gold_formulas.js",
+        "scripts/fetch-cloudtcm-acupoint-enrichment.js",
+        "scripts/fix-formula-cloudtcm-urls.js",
+        "scripts/inspect-conditions.js",
+        "scripts/link-formula-cloudtcm-aliases.js",
+        "scripts/link-herb-sources.js",
+        "scripts/report-formula-completeness.js",
+        "scripts/sync-cloudtcm-acupoint-canon.js"
+      ],
+      "writers": [
+        "scripts/fetch-cloudtcm-acupoint-enrichment.js",
+        "scripts/fix-formula-cloudtcm-urls.js",
+        "scripts/link-formula-cloudtcm-aliases.js",
+        "scripts/link-herb-sources.js",
+        "scripts/sync-cloudtcm-acupoint-canon.js"
+      ],
+      "validators": [],
+      "builders": [],
+      "ui_consumers": [
+        "app.js"
+      ],
+      "runtime_consumers": [
+        "app.js",
+        "js/knowledge.js"
+      ],
+      "ci_consumers": [],
+      "report_only_consumers": [
+        "scripts/audit-herb-cloudtcm-layer.js",
+        "scripts/report-formula-completeness.js"
+      ],
+      "no_consumer_found": false
+    },
+    {
+      "field_name": "source_classic",
+      "semantic_category": "SOURCE_CITATION",
+      "consumption_modes": [
+        "READS_VALUE",
+        "TRANSFORMS",
+        "WRITES"
+      ],
+      "readers": [
+        "js/knowledge.js",
+        "scripts/add-missing-board-formulas.js",
+        "scripts/apply-source-classic.js",
+        "scripts/audit-dark-fields.js",
+        "scripts/fetch-exact-cloudtcm-formulas.js",
+        "scripts/fix-formula-holds-thp.js",
+        "scripts/parse-comprehensive-composition.js",
+        "scripts/validate-formula-standard.js"
+      ],
+      "writers": [
+        "scripts/add-missing-board-formulas.js",
+        "scripts/apply-source-classic.js",
+        "scripts/fetch-exact-cloudtcm-formulas.js",
+        "scripts/fix-formula-holds-thp.js",
+        "scripts/parse-comprehensive-composition.js"
+      ],
+      "validators": [
+        "scripts/validate-formula-standard.js"
+      ],
+      "builders": [],
+      "ui_consumers": [],
+      "runtime_consumers": [
+        "js/knowledge.js"
+      ],
+      "ci_consumers": [
+        "scripts/validate-formula-standard.js"
+      ],
+      "report_only_consumers": [
+        "scripts/audit-dark-fields.js"
+      ],
+      "no_consumer_found": false
+    },
+    {
+      "field_name": "card_grade",
+      "semantic_category": "EVIDENCE_STRENGTH",
+      "consumption_modes": [
+        "CHECKS_ENUM",
+        "DISPLAYS",
+        "READS_VALUE",
+        "WRITES"
+      ],
+      "readers": [
+        "app.js",
+        "scripts/audit-dark-fields.js",
+        "scripts/audit-herb-cloudtcm-layer.js",
+        "scripts/generate_formula_inventory.js",
+        "scripts/stamp-herb-card-grade.js",
+        "scripts/validate-herb-integrity-predicates.js",
+        "scripts/validate-herb-standard.js"
+      ],
+      "writers": [
+        "app.js",
+        "scripts/audit-herb-cloudtcm-layer.js",
+        "scripts/generate_formula_inventory.js",
+        "scripts/stamp-herb-card-grade.js",
+        "scripts/validate-herb-integrity-predicates.js",
+        "scripts/validate-herb-standard.js"
+      ],
+      "validators": [
+        "scripts/validate-herb-integrity-predicates.js",
+        "scripts/validate-herb-standard.js"
+      ],
+      "builders": [],
+      "ui_consumers": [
+        "app.js"
+      ],
+      "runtime_consumers": [
+        "app.js"
+      ],
+      "ci_consumers": [
+        "scripts/validate-herb-integrity-predicates.js",
+        "scripts/validate-herb-standard.js"
+      ],
+      "report_only_consumers": [
+        "scripts/audit-dark-fields.js",
+        "scripts/audit-herb-cloudtcm-layer.js"
+      ],
+      "no_consumer_found": false
+    },
+    {
+      "field_name": "import_artifacts",
+      "semantic_category": "IMPORT_HISTORY",
+      "consumption_modes": [
+        "READS_VALUE",
+        "TRANSFORMS"
+      ],
+      "readers": [
+        "js/knowledge.js",
+        "scripts/audit-dark-fields.js",
+        "scripts/audit-validator-coverage-truth.js",
+        "scripts/ingest-protocol-delivery.js",
+        "scripts/validate-condition-standard.js",
+        "scripts/validate-field-shape-consistency.js",
+        "scripts/validate-no-template-protocol.js"
+      ],
+      "writers": [],
+      "validators": [
+        "scripts/validate-condition-standard.js",
+        "scripts/validate-field-shape-consistency.js",
+        "scripts/validate-no-template-protocol.js"
+      ],
+      "builders": [],
+      "ui_consumers": [],
+      "runtime_consumers": [
+        "js/knowledge.js"
+      ],
+      "ci_consumers": [
+        "scripts/validate-condition-standard.js",
+        "scripts/validate-field-shape-consistency.js",
+        "scripts/validate-no-template-protocol.js"
+      ],
+      "report_only_consumers": [
+        "scripts/audit-dark-fields.js",
+        "scripts/audit-validator-coverage-truth.js"
+      ],
+      "no_consumer_found": false
+    },
+    {
+      "field_name": "source_hint",
+      "semantic_category": "PROVENANCE",
+      "consumption_modes": [
+        "READS_VALUE",
+        "WRITES"
+      ],
+      "readers": [
+        "scripts/audit-dark-fields.js",
+        "scripts/fetch-exact-cloudtcm-herbs.js",
+        "scripts/merge-formulas-preview.js",
+        "scripts/report-formula-content-gaps.js",
+        "scripts/validate-herb-canon.js"
+      ],
+      "writers": [
+        "scripts/fetch-exact-cloudtcm-herbs.js",
+        "scripts/merge-formulas-preview.js"
+      ],
+      "validators": [
+        "scripts/validate-herb-canon.js"
+      ],
+      "builders": [],
+      "ui_consumers": [],
+      "runtime_consumers": [],
+      "ci_consumers": [],
+      "report_only_consumers": [
+        "scripts/audit-dark-fields.js",
+        "scripts/report-formula-content-gaps.js"
+      ],
+      "no_consumer_found": false
+    },
+    {
+      "field_name": "safety_source_url",
+      "semantic_category": "SOURCE_LOCATOR",
+      "consumption_modes": [
+        "READS_VALUE",
+        "WRITES"
+      ],
+      "readers": [
+        "scripts/audit-herb-cloudtcm-layer.js",
+        "scripts/fetch-cloudtcm-formula-safety.js",
+        "scripts/fetch-cloudtcm-herb-safety.js",
+        "scripts/link-herb-sources.js",
+        "scripts/validate-herb-standard.js"
+      ],
+      "writers": [
+        "scripts/fetch-cloudtcm-formula-safety.js",
+        "scripts/fetch-cloudtcm-herb-safety.js"
+      ],
+      "validators": [
+        "scripts/validate-herb-standard.js"
+      ],
+      "builders": [],
+      "ui_consumers": [],
+      "runtime_consumers": [],
+      "ci_consumers": [
+        "scripts/validate-herb-standard.js"
+      ],
+      "report_only_consumers": [
+        "scripts/audit-herb-cloudtcm-layer.js"
+      ],
+      "no_consumer_found": false
+    },
+    {
+      "field_name": "american_dragon_url",
+      "semantic_category": "SOURCE_LOCATOR",
+      "consumption_modes": [
+        "READS_VALUE",
+        "TRANSFORMS",
+        "WRITES"
+      ],
+      "readers": [
+        "js/knowledge.js",
+        "scripts/build_batch2_gold_formulas.js",
+        "scripts/link-herb-sources.js",
+        "scripts/repair-formula-cards.js",
+        "scripts/report-formula-completeness.js"
+      ],
+      "writers": [
+        "scripts/link-herb-sources.js"
+      ],
+      "validators": [],
+      "builders": [],
+      "ui_consumers": [],
+      "runtime_consumers": [
+        "js/knowledge.js"
+      ],
+      "ci_consumers": [],
+      "report_only_consumers": [
+        "scripts/report-formula-completeness.js"
+      ],
+      "no_consumer_found": false
+    },
+    {
+      "field_name": "source_citations",
+      "semantic_category": "SOURCE_CITATION",
+      "consumption_modes": [
+        "READS_VALUE",
+        "TRANSFORMS",
+        "WRITES"
+      ],
+      "readers": [
+        "js/knowledge.js",
+        "scripts/audit-herb-cloudtcm-layer.js",
+        "scripts/audit-legacy-namespace-retired-id.js",
+        "scripts/validate-herb-standard.js"
+      ],
+      "writers": [
+        "js/knowledge.js"
+      ],
+      "validators": [
+        "scripts/validate-herb-standard.js"
+      ],
+      "builders": [],
+      "ui_consumers": [],
+      "runtime_consumers": [
+        "js/knowledge.js"
+      ],
+      "ci_consumers": [
+        "scripts/validate-herb-standard.js"
+      ],
+      "report_only_consumers": [
+        "scripts/audit-herb-cloudtcm-layer.js",
+        "scripts/audit-legacy-namespace-retired-id.js"
+      ],
+      "no_consumer_found": false
+    },
+    {
+      "field_name": "last_reviewed",
+      "semantic_category": "REVIEW_STATE",
+      "consumption_modes": [
+        "READS_VALUE",
+        "WRITES"
+      ],
+      "readers": [
+        "scripts/apply-comparison-fill.js",
+        "scripts/audit-dark-fields.js",
+        "scripts/merge-formulas-preview.js",
+        "scripts/validate-clinical-case-standard.js"
+      ],
+      "writers": [
+        "scripts/merge-formulas-preview.js"
+      ],
+      "validators": [
+        "scripts/validate-clinical-case-standard.js"
+      ],
+      "builders": [],
+      "ui_consumers": [],
+      "runtime_consumers": [],
+      "ci_consumers": [
+        "scripts/validate-clinical-case-standard.js"
+      ],
+      "report_only_consumers": [
+        "scripts/audit-dark-fields.js"
+      ],
+      "no_consumer_found": false
+    },
+    {
+      "field_name": "reviewed_by",
+      "semantic_category": "REVIEW_STATE",
+      "consumption_modes": [
+        "CHECKS_ENUM",
+        "READS_VALUE",
+        "TRANSFORMS",
+        "WRITES"
+      ],
+      "readers": [
+        "js/review.js",
+        "scripts/apply-review-verdicts.js",
+        "scripts/test-pharm-negative-cases.js",
+        "scripts/validate-pharm-standard.js"
+      ],
+      "writers": [
+        "js/review.js",
+        "scripts/apply-review-verdicts.js",
+        "scripts/validate-pharm-standard.js"
+      ],
+      "validators": [
+        "scripts/test-pharm-negative-cases.js",
+        "scripts/validate-pharm-standard.js"
+      ],
+      "builders": [],
+      "ui_consumers": [],
+      "runtime_consumers": [
+        "js/review.js"
+      ],
+      "ci_consumers": [
+        "scripts/test-pharm-negative-cases.js",
+        "scripts/validate-pharm-standard.js"
+      ],
+      "report_only_consumers": [],
+      "no_consumer_found": false
+    },
+    {
+      "field_name": "acupoint_protocol_evidence",
+      "semantic_category": "EVIDENCE_STRENGTH",
+      "consumption_modes": [
+        "READS_VALUE",
+        "TRANSFORMS",
+        "WRITES"
+      ],
+      "readers": [
+        "js/knowledge.js",
+        "scripts/ingest-protocol-delivery.js",
+        "scripts/validate-condition-standard.js",
+        "scripts/validate-protocol-evidence-render.js"
+      ],
+      "writers": [
+        "scripts/ingest-protocol-delivery.js",
+        "scripts/validate-protocol-evidence-render.js"
+      ],
+      "validators": [
+        "scripts/validate-condition-standard.js",
+        "scripts/validate-protocol-evidence-render.js"
+      ],
+      "builders": [],
+      "ui_consumers": [],
+      "runtime_consumers": [
+        "js/knowledge.js"
+      ],
+      "ci_consumers": [
+        "scripts/validate-condition-standard.js",
+        "scripts/validate-protocol-evidence-render.js"
+      ],
+      "report_only_consumers": [],
+      "no_consumer_found": false
+    },
+    {
+      "field_name": "protocol_status",
+      "semantic_category": "REVIEW_STATE",
+      "consumption_modes": [
+        "CHECKS_ENUM",
+        "READS_VALUE",
+        "TRANSFORMS",
+        "WRITES"
+      ],
+      "readers": [
+        "js/knowledge.js",
+        "scripts/ingest-protocol-delivery.js",
+        "scripts/validate-condition-standard.js",
+        "scripts/validate-protocol-evidence-render.js"
+      ],
+      "writers": [
+        "scripts/ingest-protocol-delivery.js",
+        "scripts/validate-protocol-evidence-render.js"
+      ],
+      "validators": [
+        "scripts/validate-condition-standard.js",
+        "scripts/validate-protocol-evidence-render.js"
+      ],
+      "builders": [],
+      "ui_consumers": [],
+      "runtime_consumers": [
+        "js/knowledge.js"
+      ],
+      "ci_consumers": [
+        "scripts/validate-condition-standard.js",
+        "scripts/validate-protocol-evidence-render.js"
+      ],
+      "report_only_consumers": [],
+      "no_consumer_found": false
+    },
+    {
+      "field_name": "safety_source",
+      "semantic_category": "SOURCE_CITATION",
+      "consumption_modes": [
+        "READS_VALUE",
+        "WRITES"
+      ],
+      "readers": [
+        "scripts/fetch-cloudtcm-formula-safety.js",
+        "scripts/fetch-cloudtcm-herb-safety.js",
+        "scripts/report-herb-caution-conflicts.js"
+      ],
+      "writers": [
+        "scripts/fetch-cloudtcm-formula-safety.js",
+        "scripts/fetch-cloudtcm-herb-safety.js"
+      ],
+      "validators": [],
+      "builders": [],
+      "ui_consumers": [],
+      "runtime_consumers": [],
+      "ci_consumers": [],
+      "report_only_consumers": [
+        "scripts/report-herb-caution-conflicts.js"
+      ],
+      "no_consumer_found": false
+    },
+    {
+      "field_name": "verification_status",
+      "semantic_category": "VERIFICATION_STATE",
+      "consumption_modes": [
+        "CHECKS_ENUM",
+        "READS_VALUE",
+        "WRITES"
+      ],
+      "readers": [
+        "scripts/test-pharm-negative-cases.js",
+        "scripts/test-pharm-source-integrity-negative-cases.js",
+        "scripts/validate-pharm-standard.js"
+      ],
+      "writers": [
+        "scripts/test-pharm-negative-cases.js",
+        "scripts/validate-pharm-standard.js"
+      ],
+      "validators": [
+        "scripts/test-pharm-negative-cases.js",
+        "scripts/test-pharm-source-integrity-negative-cases.js",
+        "scripts/validate-pharm-standard.js"
+      ],
+      "builders": [],
+      "ui_consumers": [],
+      "runtime_consumers": [],
+      "ci_consumers": [
+        "scripts/test-pharm-negative-cases.js",
+        "scripts/test-pharm-source-integrity-negative-cases.js",
+        "scripts/validate-pharm-standard.js"
+      ],
+      "report_only_consumers": [],
+      "no_consumer_found": false
+    },
+    {
+      "field_name": "content_source",
+      "semantic_category": "AUTHORSHIP",
+      "consumption_modes": [
+        "READS_VALUE"
+      ],
+      "readers": [
+        "data/tung/point_index.js",
+        "scripts/validate-condition-standard.js"
+      ],
+      "writers": [],
+      "validators": [
+        "scripts/validate-condition-standard.js"
+      ],
+      "builders": [],
+      "ui_consumers": [],
+      "runtime_consumers": [],
+      "ci_consumers": [
+        "scripts/validate-condition-standard.js"
+      ],
+      "report_only_consumers": [],
+      "no_consumer_found": false
+    },
+    {
+      "field_name": "dailymed_setid",
+      "semantic_category": "SOURCE_LOCATOR",
+      "consumption_modes": [
+        "READS_VALUE",
+        "WRITES"
+      ],
+      "readers": [
+        "scripts/refresh-dailymed-evidence.js",
+        "scripts/validate-pharm-standard.js"
+      ],
+      "writers": [
+        "scripts/validate-pharm-standard.js"
+      ],
+      "validators": [
+        "scripts/validate-pharm-standard.js"
+      ],
+      "builders": [],
+      "ui_consumers": [],
+      "runtime_consumers": [],
+      "ci_consumers": [
+        "scripts/validate-pharm-standard.js"
+      ],
+      "report_only_consumers": [],
+      "no_consumer_found": false
+    },
+    {
+      "field_name": "classic_formula_source_zh",
+      "semantic_category": "SOURCE_CITATION",
+      "consumption_modes": [
+        "READS_VALUE",
+        "WRITES"
+      ],
+      "readers": [
+        "scripts/audit-dark-fields.js"
+      ],
+      "writers": [
+        "scripts/audit-dark-fields.js"
+      ],
+      "validators": [],
+      "builders": [],
+      "ui_consumers": [],
+      "runtime_consumers": [],
+      "ci_consumers": [],
+      "report_only_consumers": [
+        "scripts/audit-dark-fields.js"
+      ],
+      "no_consumer_found": false
+    },
+    {
+      "field_name": "classic_formula_source_en",
+      "semantic_category": "SOURCE_CITATION",
+      "consumption_modes": [
+        "READS_VALUE",
+        "WRITES"
+      ],
+      "readers": [
+        "scripts/audit-dark-fields.js"
+      ],
+      "writers": [
+        "scripts/audit-dark-fields.js"
+      ],
+      "validators": [],
+      "builders": [],
+      "ui_consumers": [],
+      "runtime_consumers": [],
+      "ci_consumers": [],
+      "report_only_consumers": [
+        "scripts/audit-dark-fields.js"
+      ],
+      "no_consumer_found": false
+    },
+    {
+      "field_name": "herb_pair_source_note_en",
+      "semantic_category": "SOURCE_CITATION",
+      "consumption_modes": [
+        "READS_VALUE",
+        "WRITES"
+      ],
+      "readers": [
+        "scripts/audit-dark-fields.js"
+      ],
+      "writers": [
+        "scripts/audit-dark-fields.js"
+      ],
+      "validators": [],
+      "builders": [],
+      "ui_consumers": [],
+      "runtime_consumers": [],
+      "ci_consumers": [],
+      "report_only_consumers": [
+        "scripts/audit-dark-fields.js"
+      ],
+      "no_consumer_found": false
+    },
+    {
+      "field_name": "herb_drug_interaction_sources",
+      "semantic_category": "SOURCE_CITATION",
+      "consumption_modes": [
+        "READS_VALUE",
+        "TRANSFORMS"
+      ],
+      "readers": [
+        "js/knowledge.js"
+      ],
+      "writers": [],
+      "validators": [],
+      "builders": [],
+      "ui_consumers": [],
+      "runtime_consumers": [
+        "js/knowledge.js"
+      ],
+      "ci_consumers": [],
+      "report_only_consumers": [],
+      "no_consumer_found": false
+    },
+    {
+      "field_name": "hierarchy_source_zh",
+      "semantic_category": "SOURCE_CITATION",
+      "consumption_modes": [
+        "READS_VALUE",
+        "WRITES"
+      ],
+      "readers": [
+        "scripts/audit-dark-fields.js"
+      ],
+      "writers": [
+        "scripts/audit-dark-fields.js"
+      ],
+      "validators": [],
+      "builders": [],
+      "ui_consumers": [],
+      "runtime_consumers": [],
+      "ci_consumers": [],
+      "report_only_consumers": [
+        "scripts/audit-dark-fields.js"
+      ],
+      "no_consumer_found": false
+    },
+    {
+      "field_name": "dose_source",
+      "semantic_category": "SOURCE_CITATION",
+      "consumption_modes": [
+        "READS_VALUE"
+      ],
+      "readers": [
+        "scripts/validate-supp-standard.js"
+      ],
+      "writers": [],
+      "validators": [
+        "scripts/validate-supp-standard.js"
+      ],
+      "builders": [],
+      "ui_consumers": [],
+      "runtime_consumers": [],
+      "ci_consumers": [],
+      "report_only_consumers": [],
+      "no_consumer_found": false
+    },
+    {
+      "field_name": "original_shape",
+      "semantic_category": "PROVENANCE",
+      "consumption_modes": [],
+      "readers": [],
+      "writers": [],
+      "validators": [],
+      "builders": [],
+      "ui_consumers": [],
+      "runtime_consumers": [],
+      "ci_consumers": [],
+      "report_only_consumers": [],
+      "no_consumer_found": true
+    },
+    {
+      "field_name": "source_field",
+      "semantic_category": "PROVENANCE",
+      "consumption_modes": [],
+      "readers": [],
+      "writers": [],
+      "validators": [],
+      "builders": [],
+      "ui_consumers": [],
+      "runtime_consumers": [],
+      "ci_consumers": [],
+      "report_only_consumers": [],
+      "no_consumer_found": true
+    },
+    {
+      "field_name": "safety_review",
+      "semantic_category": "REVIEW_STATE",
+      "consumption_modes": [],
+      "readers": [],
+      "writers": [],
+      "validators": [],
+      "builders": [],
+      "ui_consumers": [],
+      "runtime_consumers": [],
+      "ci_consumers": [],
+      "report_only_consumers": [],
+      "no_consumer_found": true
+    },
+    {
+      "field_name": "herb_pair_source_note_zh",
+      "semantic_category": "SOURCE_CITATION",
+      "consumption_modes": [],
+      "readers": [],
+      "writers": [],
+      "validators": [],
+      "builders": [],
+      "ui_consumers": [],
+      "runtime_consumers": [],
+      "ci_consumers": [],
+      "report_only_consumers": [],
+      "no_consumer_found": true
+    },
+    {
+      "field_name": "dailymed_url",
+      "semantic_category": "SOURCE_LOCATOR",
+      "consumption_modes": [],
+      "readers": [],
+      "writers": [],
+      "validators": [],
+      "builders": [],
+      "ui_consumers": [],
+      "runtime_consumers": [],
+      "ci_consumers": [],
+      "report_only_consumers": [],
+      "no_consumer_found": true
+    },
+    {
+      "field_name": "source_hierarchy",
+      "semantic_category": "SOURCE_CITATION",
+      "consumption_modes": [],
+      "readers": [],
+      "writers": [],
+      "validators": [],
+      "builders": [],
+      "ui_consumers": [],
+      "runtime_consumers": [],
+      "ci_consumers": [],
+      "report_only_consumers": [],
+      "no_consumer_found": true
+    },
+    {
+      "field_name": "D_clinical_evidence",
+      "semantic_category": "EVIDENCE_STRENGTH",
+      "consumption_modes": [],
+      "readers": [],
+      "writers": [],
+      "validators": [],
+      "builders": [],
+      "ui_consumers": [],
+      "runtime_consumers": [],
+      "ci_consumers": [],
+      "report_only_consumers": [],
+      "no_consumer_found": true
+    }
+  ],
+  "fragmentation_overlap_matrix": [
+    {
+      "field_pair": "sources vs field_sources",
+      "field_a": "sources",
+      "field_b": "field_sources",
+      "coexisting_datasets": [
+        "acupoints_361",
+        "condition_canon",
+        "extra_points",
+        "pattern_library",
+        "pharm_drug_classes",
+        "symptoms",
+        "tdis_registry"
+      ],
+      "coexisting_records_count": 1021,
+      "classification": "CLEARLY_DISTINCT",
+      "rationale": "Fields share category but represent strictly distinct values across all 1014 coexisting records."
+    },
+    {
+      "field_pair": "content_source vs authored_by",
+      "field_a": "content_source",
+      "field_b": "authored_by",
+      "coexisting_datasets": [
+        "condition_canon"
+      ],
+      "coexisting_records_count": 99,
+      "classification": "CLEARLY_DISTINCT",
+      "rationale": "Fields share category but represent strictly distinct values across all 99 coexisting records."
+    },
+    {
+      "field_pair": "review_status vs source_status",
+      "field_a": "review_status",
+      "field_b": "source_status",
+      "coexisting_datasets": [
+        "acupoints_361",
+        "condition_canon",
+        "formulas",
+        "herbs"
+      ],
+      "coexisting_records_count": 618,
+      "classification": "CLEARLY_DISTINCT",
+      "rationale": "Fields serve different semantic dimensions (REVIEW_STATE vs VERIFICATION_STATE)."
+    },
+    {
+      "field_pair": "exact_source_url vs safety_source_url",
+      "field_a": "exact_source_url",
+      "field_b": "safety_source_url",
+      "coexisting_datasets": [
+        "formulas",
+        "herbs"
+      ],
+      "coexisting_records_count": 399,
+      "classification": "PARTIAL_OVERLAP",
+      "rationale": "Fields share semantic category and exhibit partial value correlation (80% identical across 399 records)."
+    },
+    {
+      "field_pair": "cloudtcm_url vs american_dragon_url",
+      "field_a": "cloudtcm_url",
+      "field_b": "american_dragon_url",
+      "coexisting_datasets": [
+        "formulas",
+        "herbs"
+      ],
+      "coexisting_records_count": 364,
+      "classification": "PARTIAL_OVERLAP",
+      "rationale": "Fields share semantic category and exhibit partial value correlation (0% identical across 364 records)."
+    },
+    {
+      "field_pair": "dose_source vs sources",
+      "field_a": "dose_source",
+      "field_b": "sources",
+      "coexisting_datasets": [
+        "supplements"
+      ],
+      "coexisting_records_count": 36,
+      "classification": "CLEARLY_DISTINCT",
+      "rationale": "Fields share category but represent strictly distinct values across all 36 coexisting records."
+    },
+    {
+      "field_pair": "evidence vs sources",
+      "field_a": "evidence",
+      "field_b": "sources",
+      "coexisting_datasets": [
+        "acupoints_361",
+        "auricular_points",
+        "condition_canon",
+        "extra_points"
+      ],
+      "coexisting_records_count": 646,
+      "classification": "CLEARLY_DISTINCT",
+      "rationale": "Fields serve different semantic dimensions (EVIDENCE_STRENGTH vs SOURCE_CITATION)."
+    }
+  ],
+  "dark_evidence_fields": [
+    {
+      "field_name": "original_shape",
+      "record_count_nonempty": 289,
+      "canonical_datasets": [
+        "herbs"
+      ],
+      "status": "DATA_PRESENT_NO_CONSUMER_FOUND"
+    },
+    {
+      "field_name": "source_field",
+      "record_count_nonempty": 289,
+      "canonical_datasets": [
+        "herbs"
+      ],
+      "status": "DATA_PRESENT_NO_CONSUMER_FOUND"
+    },
+    {
+      "field_name": "safety_review",
+      "record_count_nonempty": 1,
+      "canonical_datasets": [
+        "herbs"
+      ],
+      "status": "DATA_PRESENT_NO_CONSUMER_FOUND"
+    },
+    {
+      "field_name": "herb_pair_source_note_zh",
+      "record_count_nonempty": 1,
+      "canonical_datasets": [
+        "herbs"
+      ],
+      "status": "DATA_PRESENT_NO_CONSUMER_FOUND"
+    },
+    {
+      "field_name": "dailymed_url",
+      "record_count_nonempty": 59,
+      "canonical_datasets": [
+        "pharm_drugs"
+      ],
+      "status": "DATA_PRESENT_NO_CONSUMER_FOUND"
+    },
+    {
+      "field_name": "source_hierarchy",
+      "record_count_nonempty": 1,
+      "canonical_datasets": [
+        "source_registry"
+      ],
+      "status": "DATA_PRESENT_NO_CONSUMER_FOUND"
+    },
+    {
+      "field_name": "D_clinical_evidence",
+      "record_count_nonempty": 1,
+      "canonical_datasets": [
+        "source_registry"
+      ],
+      "status": "DATA_PRESENT_NO_CONSUMER_FOUND"
+    }
+  ],
+  "empty_fields_with_consumers": [
+    {
+      "field_name": "reviewed_by",
+      "readers_count": 4,
+      "status": "CONSUMER_EXISTS_BUT_DATA_EMPTY"
+    }
+  ],
+  "status_vocabularies": {
+    "vocabularies": {
+      "review_status": [
+        "deprecated",
+        "draft",
+        "draft_reviewed",
+        "reviewed",
+        "skeleton",
+        "skeleton_unreviewed",
+        "source_checked",
+        "sourced_checked",
+        "sourced_cloudtcm_record"
+      ],
+      "source_status": [
+        "",
+        "bensky_review_pending",
+        "bensky_review_pending_chinese_source_draft",
+        "chinese_source_draft_hkbu_cloudtcm_review_pending",
+        "cloudtcm_or_institution_review_pending",
+        "curriculum_cloudtcm_reviewed_ad_formula_not_found",
+        "draft_pending_ting_review",
+        "dual_source_draft",
+        "model_draft_pending_source_review",
+        "source_layered_draft",
+        "source_review_pending"
+      ],
+      "protocol_status": [
+        "adjunct_only",
+        "limited",
+        "no_source",
+        "not_supported",
+        "postoperative_only",
+        "symptom_only",
+        "unassessed"
+      ],
+      "card_grade": [
+        "gold",
+        "partial",
+        "template"
+      ]
+    },
+    "cross_field_collisions": []
+  },
+  "per_dataset_provenance_coverage": [
+    {
+      "dataset_id": "herbs",
+      "rel_path": "data/herbs/herb_canon_shortlist.json",
+      "family": "herbs",
+      "records_total": 363,
+      "records_with_any_source_locator": 350,
+      "records_with_any_source_citation": 360,
+      "records_with_authorship": 80,
+      "records_with_review_state": 363,
+      "records_with_verification_state": 274,
+      "records_with_field_level_sources": 363,
+      "records_with_no_detected_provenance": 0
+    },
+    {
+      "dataset_id": "herb_pairs",
+      "rel_path": "data/herbs/herb_pairs.json",
+      "family": "herbs",
+      "records_total": 1,
+      "records_with_any_source_locator": 0,
+      "records_with_any_source_citation": 0,
+      "records_with_authorship": 1,
+      "records_with_review_state": 1,
+      "records_with_verification_state": 0,
+      "records_with_field_level_sources": 0,
+      "records_with_no_detected_provenance": 0
+    },
+    {
+      "dataset_id": "formulas",
+      "rel_path": "data/herbs/formulas.json",
+      "family": "formulas",
+      "records_total": 223,
+      "records_with_any_source_locator": 222,
+      "records_with_any_source_citation": 219,
+      "records_with_authorship": 9,
+      "records_with_review_state": 223,
+      "records_with_verification_state": 116,
+      "records_with_field_level_sources": 223,
+      "records_with_no_detected_provenance": 0
+    },
+    {
+      "dataset_id": "conditions",
+      "rel_path": "data/pathology/conditions.json",
+      "family": "biomedical_conditions",
+      "records_total": 12,
+      "records_with_any_source_locator": 0,
+      "records_with_any_source_citation": 0,
+      "records_with_authorship": 0,
+      "records_with_review_state": 12,
+      "records_with_verification_state": 0,
+      "records_with_field_level_sources": 0,
+      "records_with_no_detected_provenance": 0
+    },
+    {
+      "dataset_id": "condition_canon",
+      "rel_path": "data/pathology/condition_canon_shortlist.json",
+      "family": "biomedical_conditions",
+      "records_total": 508,
+      "records_with_any_source_locator": 0,
+      "records_with_any_source_citation": 258,
+      "records_with_authorship": 417,
+      "records_with_review_state": 508,
+      "records_with_verification_state": 101,
+      "records_with_field_level_sources": 465,
+      "records_with_no_detected_provenance": 0
+    },
+    {
+      "dataset_id": "tdis_registry",
+      "rel_path": "data/pathology/tdis_registry.json",
+      "family": "tcm_diseases",
+      "records_total": 160,
+      "records_with_any_source_locator": 0,
+      "records_with_any_source_citation": 75,
+      "records_with_authorship": 160,
+      "records_with_review_state": 160,
+      "records_with_verification_state": 0,
+      "records_with_field_level_sources": 159,
+      "records_with_no_detected_provenance": 0
+    },
+    {
+      "dataset_id": "cloudtcm_diseases",
+      "rel_path": "data/pathology/cloudtcm_disease_entries.json",
+      "family": "tcm_diseases",
+      "records_total": 190,
+      "records_with_any_source_locator": 190,
+      "records_with_any_source_citation": 0,
+      "records_with_authorship": 0,
+      "records_with_review_state": 190,
+      "records_with_verification_state": 0,
+      "records_with_field_level_sources": 0,
+      "records_with_no_detected_provenance": 0
+    },
+    {
+      "dataset_id": "pattern_library",
+      "rel_path": "data/pathology/pattern_library.json",
+      "family": "patterns",
+      "records_total": 154,
+      "records_with_any_source_locator": 0,
+      "records_with_any_source_citation": 154,
+      "records_with_authorship": 55,
+      "records_with_review_state": 117,
+      "records_with_verification_state": 0,
+      "records_with_field_level_sources": 150,
+      "records_with_no_detected_provenance": 0
+    },
+    {
+      "dataset_id": "pattern_registry",
+      "rel_path": "data/pathology/pattern_registry.json",
+      "family": "patterns",
+      "records_total": 151,
+      "records_with_any_source_locator": 0,
+      "records_with_any_source_citation": 0,
+      "records_with_authorship": 0,
+      "records_with_review_state": 151,
+      "records_with_verification_state": 0,
+      "records_with_field_level_sources": 0,
+      "records_with_no_detected_provenance": 0
+    },
+    {
+      "dataset_id": "acupoints_361",
+      "rel_path": "data/acupoints/361.json",
+      "family": "acupoints",
+      "records_total": 361,
+      "records_with_any_source_locator": 361,
+      "records_with_any_source_citation": 321,
+      "records_with_authorship": 0,
+      "records_with_review_state": 361,
+      "records_with_verification_state": 126,
+      "records_with_field_level_sources": 361,
+      "records_with_no_detected_provenance": 0
+    },
+    {
+      "dataset_id": "extra_points",
+      "rel_path": "data/acupoints/extra_points.json",
+      "family": "acupoints",
+      "records_total": 72,
+      "records_with_any_source_locator": 0,
+      "records_with_any_source_citation": 72,
+      "records_with_authorship": 0,
+      "records_with_review_state": 72,
+      "records_with_verification_state": 0,
+      "records_with_field_level_sources": 50,
+      "records_with_no_detected_provenance": 0
+    },
+    {
+      "dataset_id": "auricular_points",
+      "rel_path": "data/auricular/embedded/auricular_points.json",
+      "family": "acupoints",
+      "records_total": 203,
+      "records_with_any_source_locator": 0,
+      "records_with_any_source_citation": 203,
+      "records_with_authorship": 0,
+      "records_with_review_state": 203,
+      "records_with_verification_state": 0,
+      "records_with_field_level_sources": 0,
+      "records_with_no_detected_provenance": 0
+    },
+    {
+      "dataset_id": "scalp_points",
+      "rel_path": "data/scalp/scalp_points_full.json",
+      "family": "acupoints",
+      "records_total": 22,
+      "records_with_any_source_locator": 0,
+      "records_with_any_source_citation": 22,
+      "records_with_authorship": 0,
+      "records_with_review_state": 22,
+      "records_with_verification_state": 0,
+      "records_with_field_level_sources": 0,
+      "records_with_no_detected_provenance": 0
+    },
+    {
+      "dataset_id": "tung_points",
+      "rel_path": "data/tung/point_index.json",
+      "family": "acupoints",
+      "records_total": 1,
+      "records_with_any_source_locator": 0,
+      "records_with_any_source_citation": 1,
+      "records_with_authorship": 0,
+      "records_with_review_state": 0,
+      "records_with_verification_state": 0,
+      "records_with_field_level_sources": 0,
+      "records_with_no_detected_provenance": 0
+    },
+    {
+      "dataset_id": "symptoms",
+      "rel_path": "data/symptoms/symptoms.json",
+      "family": "symptoms",
+      "records_total": 124,
+      "records_with_any_source_locator": 0,
+      "records_with_any_source_citation": 122,
+      "records_with_authorship": 124,
+      "records_with_review_state": 124,
+      "records_with_verification_state": 0,
+      "records_with_field_level_sources": 122,
+      "records_with_no_detected_provenance": 0
+    },
+    {
+      "dataset_id": "comparisons",
+      "rel_path": "data/knowledge/comparisons.json",
+      "family": "comparisons",
+      "records_total": 43,
+      "records_with_any_source_locator": 9,
+      "records_with_any_source_citation": 0,
+      "records_with_authorship": 43,
+      "records_with_review_state": 43,
+      "records_with_verification_state": 0,
+      "records_with_field_level_sources": 0,
+      "records_with_no_detected_provenance": 0
+    },
+    {
+      "dataset_id": "red_flag_registry",
+      "rel_path": "data/pathology/red_flag_registry.json",
+      "family": "safety",
+      "records_total": 226,
+      "records_with_any_source_locator": 0,
+      "records_with_any_source_citation": 0,
+      "records_with_authorship": 226,
+      "records_with_review_state": 226,
+      "records_with_verification_state": 0,
+      "records_with_field_level_sources": 0,
+      "records_with_no_detected_provenance": 0
+    },
+    {
+      "dataset_id": "formula_safety_flags",
+      "rel_path": "data/herbs/formula_safety_flags.json",
+      "family": "safety",
+      "records_total": 1,
+      "records_with_any_source_locator": 0,
+      "records_with_any_source_citation": 0,
+      "records_with_authorship": 0,
+      "records_with_review_state": 0,
+      "records_with_verification_state": 0,
+      "records_with_field_level_sources": 0,
+      "records_with_no_detected_provenance": 1
+    },
+    {
+      "dataset_id": "pharm_drugs",
+      "rel_path": "data/pharmacology/drugs.json",
+      "family": "pharmacology",
+      "records_total": 59,
+      "records_with_any_source_locator": 59,
+      "records_with_any_source_citation": 0,
+      "records_with_authorship": 59,
+      "records_with_review_state": 59,
+      "records_with_verification_state": 34,
+      "records_with_field_level_sources": 59,
+      "records_with_no_detected_provenance": 0
+    },
+    {
+      "dataset_id": "pharm_drug_classes",
+      "rel_path": "data/pharmacology/drug_classes.json",
+      "family": "pharmacology",
+      "records_total": 48,
+      "records_with_any_source_locator": 0,
+      "records_with_any_source_citation": 48,
+      "records_with_authorship": 6,
+      "records_with_review_state": 48,
+      "records_with_verification_state": 0,
+      "records_with_field_level_sources": 39,
+      "records_with_no_detected_provenance": 0
+    },
+    {
+      "dataset_id": "western_medications",
+      "rel_path": "data/medications/western_medications.json",
+      "family": "pharmacology",
+      "records_total": 12,
+      "records_with_any_source_locator": 0,
+      "records_with_any_source_citation": 0,
+      "records_with_authorship": 0,
+      "records_with_review_state": 0,
+      "records_with_verification_state": 0,
+      "records_with_field_level_sources": 0,
+      "records_with_no_detected_provenance": 12
+    },
+    {
+      "dataset_id": "supplements",
+      "rel_path": "data/supplements/supplements.json",
+      "family": "supplements",
+      "records_total": 36,
+      "records_with_any_source_locator": 0,
+      "records_with_any_source_citation": 36,
+      "records_with_authorship": 0,
+      "records_with_review_state": 36,
+      "records_with_verification_state": 1,
+      "records_with_field_level_sources": 0,
+      "records_with_no_detected_provenance": 0
+    },
+    {
+      "dataset_id": "outcome_metrics",
+      "rel_path": "data/clinical_cases/outcome_metrics.json",
+      "family": "clinical_config",
+      "records_total": 27,
+      "records_with_any_source_locator": 0,
+      "records_with_any_source_citation": 17,
+      "records_with_authorship": 0,
+      "records_with_review_state": 0,
+      "records_with_verification_state": 0,
+      "records_with_field_level_sources": 0,
+      "records_with_no_detected_provenance": 10
+    },
+    {
+      "dataset_id": "avs_advice_library",
+      "rel_path": "data/config/avs_advice_library.json",
+      "family": "clinical_config",
+      "records_total": 13,
+      "records_with_any_source_locator": 0,
+      "records_with_any_source_citation": 0,
+      "records_with_authorship": 0,
+      "records_with_review_state": 13,
+      "records_with_verification_state": 0,
+      "records_with_field_level_sources": 0,
+      "records_with_no_detected_provenance": 0
+    },
+    {
+      "dataset_id": "content_quality",
+      "rel_path": "data/quality/content_quality.json",
+      "family": "quality",
+      "records_total": 1,
+      "records_with_any_source_locator": 0,
+      "records_with_any_source_citation": 0,
+      "records_with_authorship": 0,
+      "records_with_review_state": 0,
+      "records_with_verification_state": 0,
+      "records_with_field_level_sources": 0,
+      "records_with_no_detected_provenance": 1
+    },
+    {
+      "dataset_id": "formula_hdi_review",
+      "rel_path": "data/quality/formula_hdi_review.json",
+      "family": "quality",
+      "records_total": 1,
+      "records_with_any_source_locator": 0,
+      "records_with_any_source_citation": 0,
+      "records_with_authorship": 0,
+      "records_with_review_state": 0,
+      "records_with_verification_state": 0,
+      "records_with_field_level_sources": 0,
+      "records_with_no_detected_provenance": 1
+    },
+    {
+      "dataset_id": "source_registry",
+      "rel_path": "data/sources/source_registry.json",
+      "family": "source_registry",
+      "records_total": 1,
+      "records_with_any_source_locator": 0,
+      "records_with_any_source_citation": 1,
+      "records_with_authorship": 0,
+      "records_with_review_state": 0,
+      "records_with_verification_state": 0,
+      "records_with_field_level_sources": 0,
+      "records_with_no_detected_provenance": 0
+    }
+  ],
+  "consumer_precedence_chains": [
+    {
+      "consumer": "app.js",
+      "line_number": 478,
+      "expression": "sources: record.sources || (record.cloudtcm_url ? [record.cloudtcm_url] : []),",
+      "ordered_fields": [
+        "sources",
+        "cloudtcm_url"
+      ],
+      "ignored_when_higher_priority_populated": [
+        "cloudtcm_url"
+      ]
+    },
+    {
+      "consumer": "app.js",
+      "line_number": 535,
+      "expression": "sources: record.source_urls || [\"https://www.tungs-acupuncture.com\"],",
+      "ordered_fields": [
+        "sources",
+        "source_urls"
+      ],
+      "ignored_when_higher_priority_populated": [
+        "source_urls"
+      ]
+    },
+    {
+      "consumer": "app.js",
+      "line_number": 579,
+      "expression": "sources: (record.sources && record.sources.length) ? record.sources : (record.source_urls && record.source_urls.length ? record.source_urls : [",
+      "ordered_fields": [
+        "sources",
+        "source_urls"
+      ],
+      "ignored_when_higher_priority_populated": [
+        "source_urls"
+      ]
+    },
+    {
+      "consumer": "js/knowledge.js",
+      "line_number": 704,
+      "expression": "<small>${esc(link.label_en || link.labelEn || link.source || \"Visual reference\")}</small>",
+      "ordered_fields": [
+        "source",
+        "reference"
+      ],
+      "ignored_when_higher_priority_populated": [
+        "reference"
+      ]
+    },
+    {
+      "consumer": "js/knowledge.js",
+      "line_number": 1300,
+      "expression": "|| record.exact_source_url || (record.source_urls || []).find(Boolean) || \"\";",
+      "ordered_fields": [
+        "exact_source_url",
+        "source_urls"
+      ],
+      "ignored_when_higher_priority_populated": [
+        "source_urls"
+      ]
+    },
+    {
+      "consumer": "legacy/app.js",
+      "line_number": 96,
+      "expression": "sources: record.source_urls || [\"https://www.mastertungacupuncture.org/\"],",
+      "ordered_fields": [
+        "sources",
+        "source_urls"
+      ],
+      "ignored_when_higher_priority_populated": [
+        "source_urls"
+      ]
+    },
+    {
+      "consumer": "legacy/app.js",
+      "line_number": 147,
+      "expression": "sources: record.source_urls || auricularGb93.sources || [],",
+      "ordered_fields": [
+        "sources",
+        "source_urls"
+      ],
+      "ignored_when_higher_priority_populated": [
+        "source_urls"
+      ]
+    },
+    {
+      "consumer": "legacy/app.js",
+      "line_number": 7856,
+      "expression": "const english = sources.find((source) => source.includes(\"acupoints.org\")) || `https://www.acupoints.org/${String(point.code).toLowerCase()}-acupuncture-point/`;",
+      "ordered_fields": [
+        "sources",
+        "source"
+      ],
+      "ignored_when_higher_priority_populated": [
+        "source"
+      ]
+    },
+    {
+      "consumer": "legacy/app.js",
+      "line_number": 7857,
+      "expression": "const chinese = sources.find((source) => source.includes(\"cloudtcm.com\")) || \"https://cloudtcm.com/acupoint\";",
+      "ordered_fields": [
+        "sources",
+        "source"
+      ],
+      "ignored_when_higher_priority_populated": [
+        "source"
+      ]
+    },
+    {
+      "consumer": "legacy/app.js",
+      "line_number": 7901,
+      "expression": "return `${point.nameEn} (${point.pinyin}; ${point.code}) belongs to the ${shortMeridianEn(point)}. It is located in the ${regionEn(point).toLowerCase()} region.\\n\\nActions: ${point.functionsEn || \"Actions pending professional source review.\"}\\n\\nThis public English draft should be reviewed against WHO-style location standards, professional textbooks, and English clinical safety sources before publication.`;",
+      "ordered_fields": [
+        "source",
+        "sources"
+      ],
+      "ignored_when_higher_priority_populated": [
+        "sources"
+      ]
+    },
+    {
+      "consumer": "legacy/app.js",
+      "line_number": 8069,
+      "expression": "? sources.filter((source) => !source.includes(\"cloudtcm.com\") && !source.includes(\"a-hospital.com\"))",
+      "ordered_fields": [
+        "sources",
+        "source"
+      ],
+      "ignored_when_higher_priority_populated": [
+        "source"
+      ]
+    },
+    {
+      "consumer": "scripts/apply-acupoint-pattern-links.js",
+      "line_number": 92,
+      "expression": "held.push(`${prop.point_id}  ${pid}  (${evs.map((e) => e.confidence + \":\" + e.source).join(\" | \") || \"no evidence\"})`);",
+      "ordered_fields": [
+        "source",
+        "evidence"
+      ],
+      "ignored_when_higher_priority_populated": [
+        "evidence"
+      ]
+    },
+    {
+      "consumer": "scripts/audit-cr010-condition-detail-maturity.js",
+      "line_number": 143,
+      "expression": "const aRisk = (!a.hard_gates.red_flags ? 4:0) + (!a.hard_gates.acupuncture_scope ? 3:0) + (!a.hard_gates.sources ? 2:0) + (!a.hard_gates.field_sources ? 2:0);",
+      "ordered_fields": [
+        "sources",
+        "field_sources"
+      ],
+      "ignored_when_higher_priority_populated": [
+        "field_sources"
+      ]
+    },
+    {
+      "consumer": "scripts/audit-cr010-condition-detail-maturity.js",
+      "line_number": 144,
+      "expression": "const bRisk = (!b.hard_gates.red_flags ? 4:0) + (!b.hard_gates.acupuncture_scope ? 3:0) + (!b.hard_gates.sources ? 2:0) + (!b.hard_gates.field_sources ? 2:0);",
+      "ordered_fields": [
+        "sources",
+        "field_sources"
+      ],
+      "ignored_when_higher_priority_populated": [
+        "field_sources"
+      ]
+    },
+    {
+      "consumer": "scripts/ingest-protocol-delivery.js",
+      "line_number": 122,
+      "expression": "rows.push(`  ${c.condition_id.padEnd(30)} ${String(c.protocol_status).padEnd(15)} 穴 ${String(pts.length).padStart(2)} | 來源 ${String((c.sources || []).length).padStart(2)}`",
+      "ordered_fields": [
+        "protocol_status",
+        "sources"
+      ],
+      "ignored_when_higher_priority_populated": [
+        "sources"
+      ]
+    },
+    {
+      "consumer": "scripts/link-formula-family-back.js",
+      "line_number": 53,
+      "expression": "target.field_sources.derived_from = [fam.source || `由 ${base.name_zh} 的 formula_family 反向產生`];",
+      "ordered_fields": [
+        "field_sources",
+        "source"
+      ],
+      "ignored_when_higher_priority_populated": [
+        "source"
+      ]
+    },
+    {
+      "consumer": "scripts/report-361-encoding-findings.js",
+      "line_number": 53,
+      "expression": "- source: ${item.source_url || \"-\"}",
+      "ordered_fields": [
+        "source",
+        "source_url"
+      ],
+      "ignored_when_higher_priority_populated": [
+        "source_url"
+      ]
+    },
+    {
+      "consumer": "scripts/report-formula-completeness.js",
+      "line_number": 44,
+      "expression": "[\"來源連結\", (r) => filled(r.cloudtcm_url) || filled(r.american_dragon_url)],",
+      "ordered_fields": [
+        "cloudtcm_url",
+        "american_dragon_url"
+      ],
+      "ignored_when_higher_priority_populated": [
+        "american_dragon_url"
+      ]
+    },
+    {
+      "consumer": "scripts/validate-condition-sources.js",
+      "line_number": 54,
+      "expression": "if (!sources.some((entry) => (entry || \"\").includes(expected))) errors.push(`cond.functional_dyspepsia: missing exact source ${expected}`);",
+      "ordered_fields": [
+        "sources",
+        "source"
+      ],
+      "ignored_when_higher_priority_populated": [
+        "source"
+      ]
+    },
+    {
+      "consumer": "scripts/validate-condition-sources.js",
+      "line_number": 72,
+      "expression": "if (!sources.some((entry) => (entry || \"\").includes(expected))) errors.push(`cond.trigeminal_neuralgia: missing exact source ${expected}`);",
+      "ordered_fields": [
+        "sources",
+        "source"
+      ],
+      "ignored_when_higher_priority_populated": [
+        "source"
+      ]
+    },
+    {
+      "consumer": "scripts/validate-gyn-legacy-migration.js",
+      "line_number": 65,
+      "expression": "for (const e of r.evidence || []) if (!WL.test(e.source_url || \"\")) defects.push(`G7 off-whitelist: ${r.id} ${e.source_url}`);",
+      "ordered_fields": [
+        "evidence",
+        "source_url"
+      ],
+      "ignored_when_higher_priority_populated": [
+        "source_url"
+      ]
+    },
+    {
+      "consumer": "scripts/validate-herb-integrity-predicates.js",
+      "line_number": 368,
+      "expression": "hb9.push({ id: h.id, name_zh: h.name_zh || \"\", card_grade: h.card_grade, field_sources: h.field_sources });",
+      "ordered_fields": [
+        "card_grade",
+        "field_sources"
+      ],
+      "ignored_when_higher_priority_populated": [
+        "field_sources"
+      ]
+    },
+    {
+      "consumer": "scripts/validate-supp-standard.js",
+      "line_number": 58,
+      "expression": "if (!r.typical_dose_range_en || !(r.dose_source && r.dose_source.url && r.dose_source.verified)) fail(`${id}: maturity=${r.maturity} requires dose range + verified dose_source (url + verified date)`);",
+      "ordered_fields": [
+        "dose_source",
+        "verified"
+      ],
+      "ignored_when_higher_priority_populated": [
+        "verified"
+      ]
+    }
+  ],
+  "generated_data_behavior": [
+    {
+      "field_name": "source_hint",
+      "status": "NOT_BUNDLED",
+      "evidence": "Field omitted from generated runtime bundles"
+    },
+    {
+      "field_name": "review_status",
+      "status": "SURVIVES_VERBATIM",
+      "evidence": "Present in app_data.js"
+    },
+    {
+      "field_name": "source_status",
+      "status": "NOT_BUNDLED",
+      "evidence": "Field omitted from generated runtime bundles"
+    },
+    {
+      "field_name": "source_urls",
+      "status": "NOT_BUNDLED",
+      "evidence": "Field omitted from generated runtime bundles"
+    },
+    {
+      "field_name": "exact_source_url",
+      "status": "NOT_BUNDLED",
+      "evidence": "Field omitted from generated runtime bundles"
+    },
+    {
+      "field_name": "source_type",
+      "status": "NOT_BUNDLED",
+      "evidence": "Field omitted from generated runtime bundles"
+    },
+    {
+      "field_name": "safety_source_url",
+      "status": "NOT_BUNDLED",
+      "evidence": "Field omitted from generated runtime bundles"
+    },
+    {
+      "field_name": "safety_source",
+      "status": "NOT_BUNDLED",
+      "evidence": "Field omitted from generated runtime bundles"
+    },
+    {
+      "field_name": "cloudtcm_url",
+      "status": "NOT_BUNDLED",
+      "evidence": "Field omitted from generated runtime bundles"
+    },
+    {
+      "field_name": "american_dragon_url",
+      "status": "NOT_BUNDLED",
+      "evidence": "Field omitted from generated runtime bundles"
+    },
+    {
+      "field_name": "source_citations",
+      "status": "NOT_BUNDLED",
+      "evidence": "Field omitted from generated runtime bundles"
+    },
+    {
+      "field_name": "field_sources",
+      "status": "SURVIVES_VERBATIM",
+      "evidence": "Present in app_data.js"
+    },
+    {
+      "field_name": "card_grade",
+      "status": "NOT_BUNDLED",
+      "evidence": "Field omitted from generated runtime bundles"
+    },
+    {
+      "field_name": "original_shape",
+      "status": "NOT_BUNDLED",
+      "evidence": "Field omitted from generated runtime bundles"
+    },
+    {
+      "field_name": "source_field",
+      "status": "NOT_BUNDLED",
+      "evidence": "Field omitted from generated runtime bundles"
+    },
+    {
+      "field_name": "import_artifacts",
+      "status": "NOT_BUNDLED",
+      "evidence": "Field omitted from generated runtime bundles"
+    },
+    {
+      "field_name": "authored_by",
+      "status": "NOT_BUNDLED",
+      "evidence": "Field omitted from generated runtime bundles"
+    },
+    {
+      "field_name": "safety_review",
+      "status": "NOT_BUNDLED",
+      "evidence": "Field omitted from generated runtime bundles"
+    },
+    {
+      "field_name": "classic_formula_source_zh",
+      "status": "NOT_BUNDLED",
+      "evidence": "Field omitted from generated runtime bundles"
+    },
+    {
+      "field_name": "classic_formula_source_en",
+      "status": "NOT_BUNDLED",
+      "evidence": "Field omitted from generated runtime bundles"
+    },
+    {
+      "field_name": "herb_pair_source_note_zh",
+      "status": "NOT_BUNDLED",
+      "evidence": "Field omitted from generated runtime bundles"
+    },
+    {
+      "field_name": "herb_pair_source_note_en",
+      "status": "NOT_BUNDLED",
+      "evidence": "Field omitted from generated runtime bundles"
+    },
+    {
+      "field_name": "last_reviewed",
+      "status": "NOT_BUNDLED",
+      "evidence": "Field omitted from generated runtime bundles"
+    },
+    {
+      "field_name": "reference",
+      "status": "NOT_BUNDLED",
+      "evidence": "Field omitted from generated runtime bundles"
+    },
+    {
+      "field_name": "source_classic",
+      "status": "NOT_BUNDLED",
+      "evidence": "Field omitted from generated runtime bundles"
+    },
+    {
+      "field_name": "reviewed_by",
+      "status": "NOT_BUNDLED",
+      "evidence": "Field omitted from generated runtime bundles"
+    },
+    {
+      "field_name": "herb_drug_interaction_sources",
+      "status": "NOT_BUNDLED",
+      "evidence": "Field omitted from generated runtime bundles"
+    },
+    {
+      "field_name": "hierarchy_source_zh",
+      "status": "NOT_BUNDLED",
+      "evidence": "Field omitted from generated runtime bundles"
+    },
+    {
+      "field_name": "sources",
+      "status": "SURVIVES_VERBATIM",
+      "evidence": "Present in app_data.js"
+    },
+    {
+      "field_name": "evidence",
+      "status": "SURVIVES_VERBATIM",
+      "evidence": "Present in app_data.js"
+    },
+    {
+      "field_name": "source",
+      "status": "SURVIVES_VERBATIM",
+      "evidence": "Present in app_data.js"
+    },
+    {
+      "field_name": "content_source",
+      "status": "NOT_BUNDLED",
+      "evidence": "Field omitted from generated runtime bundles"
+    },
+    {
+      "field_name": "acupoint_protocol_evidence",
+      "status": "NOT_BUNDLED",
+      "evidence": "Field omitted from generated runtime bundles"
+    },
+    {
+      "field_name": "protocol_status",
+      "status": "NOT_BUNDLED",
+      "evidence": "Field omitted from generated runtime bundles"
+    },
+    {
+      "field_name": "source_url",
+      "status": "NOT_BUNDLED",
+      "evidence": "Field omitted from generated runtime bundles"
+    },
+    {
+      "field_name": "origin",
+      "status": "NOT_BUNDLED",
+      "evidence": "Field omitted from generated runtime bundles"
+    },
+    {
+      "field_name": "dailymed_setid",
+      "status": "NOT_BUNDLED",
+      "evidence": "Field omitted from generated runtime bundles"
+    },
+    {
+      "field_name": "dailymed_url",
+      "status": "NOT_BUNDLED",
+      "evidence": "Field omitted from generated runtime bundles"
+    },
+    {
+      "field_name": "verification_status",
+      "status": "NOT_BUNDLED",
+      "evidence": "Field omitted from generated runtime bundles"
+    },
+    {
+      "field_name": "dose_source",
+      "status": "NOT_BUNDLED",
+      "evidence": "Field omitted from generated runtime bundles"
+    },
+    {
+      "field_name": "verified",
+      "status": "NOT_BUNDLED",
+      "evidence": "Field omitted from generated runtime bundles"
+    },
+    {
+      "field_name": "source_hierarchy",
+      "status": "NOT_BUNDLED",
+      "evidence": "Field omitted from generated runtime bundles"
+    },
+    {
+      "field_name": "D_clinical_evidence",
+      "status": "NOT_BUNDLED",
+      "evidence": "Field omitted from generated runtime bundles"
+    }
+  ]
+}
