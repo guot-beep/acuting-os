@@ -1,3 +1,34 @@
+# 2026-08-27 — 三個 task 的教訓回頭複查 D25 掃描:一處數字撤回(紅旗 17→3)、一處虛驚(退役卡 0 命中)、PROJECT_LOG 未截尾
+
+三個背景 task 完成後留下三條 memory,其中兩條直接質疑我這輪掃描的方法。逐條回頭驗:
+
+**❌ 我報錯的(已在原條目就地訂正)——紅旗 17 筆量錯基準**:
+[[measure-the-bundle-not-the-source]] 指出 build 時 registry fallback 會補欄。
+對 bundle 重量:**來源檔缺 17/508 → bundle 實際缺 3/508**,14 筆由 fallback 補上;
+真缺的 3 筆全是 D23 骨架(skeleton,零內容是刻意的)。**沒有 draft 卡在裸渲染**,
+「17 卡疑似裸渲染」的規模主張撤回。最難堪的是:同一則掃描的上一段才剛把這條
+fallback 讚為治理模範、原文引用過 mergeUnwired——讀了解析器卻仍對來源檔下結論。
+
+**⚠️→✅ 虛驚一場(但風險是真的)——退役卡混進正典集**:
+[[dangling-scan-counts-deprecated-as-canon]] 指出我用 `records.map(r=>r.id)` 建正典集,
+會把 deprecated 卡算成已解析、讓指向退役卡的引用永遠掃不出來。照 active/deprecated
+分桶重跑本輪全部 19 條邊(cond/tdis/pattern/sym/formula/herb/point/rf,合計約 9,000 條邊):
+正典裡確有 **11 張退役卡**(pattern 3、formula 4、herb 4,含 memory 點名的 herb.sha_shen),
+但**指向它們的活引用 0 條**——先前所有「0 懸空」結論成立,是真陰性不是偽陰性。
+仍未解的懸空維持原數:pattern→cond 24 條 / pattern→tdis 6 條 / point→pat.* 127 條
+(前兩者即 task 處理中的懸空,第三者是 D23 B 桶)。
+
+**✅ 未踩到的**:[[prepend-conflict-truncates-tail]] 的截尾坑——我這輪 5 個碰
+PROJECT_LOG 的 commit numstat 全是 `N 0`,行數 4676→6232 單調遞增,共同尾巴完整。
+(我當時用 Edit 逐個移除衝突標記,沒按行號切段,恰好避開。)
+
+**自己抓到的第三個坑——重測腳本要印分母**:這次複查腳本第一版自己產出兩個假訊號
+(points_to 報 395/395 全懸空,實為沒展開巢狀陣列;bundle 紅旗報「缺 0」,
+實為 bundle 讀到 0 筆的空跑)。修正後才是上面的數字。**用來推翻舊結論的新量測,
+本身要先能證明它量到了東西**——每個計數印分母、0 筆即 throw。
+
+---
+
 # 2026-08-27 — 過時 pending_herb_id 清理:she_chuang_zi/ge_jie 已入正典,撤 2 標記 + 8 欄「尚未建卡」句
 
 承「懸空 herb.*/formula.* id 治理」條目末尾「留 Ting 裁定 3.批外側發現」的那兩處。
@@ -615,6 +646,17 @@ NOT render until red_flags is filled」,但 app.js grep red_flag 為 0、
 build-data dx shard 整包 508 筆不過濾——找不到執行點。17 筆無 red_flags_zh
 (14 draft + 3 D23 骨架)疑似正以無安全文字狀態渲染。畫面實測與補閘門/
 補內容的選項交 task,安全層設計屬 Ting 裁定。
+
+> **【2026-08-27 訂正——上段「17 筆」量錯基準,真值 3】** 該數字量的是來源檔;
+> build-data.js 的 redFlagRegistry fallback(mergeUnwired)會在 build 時按
+> entity_id 把 registry 記錄併進 conditionCanon。對 bundle 重量:**來源檔缺
+> 17/508 → bundle 實際缺 3/508**,14 筆由 registry fallback 補上。真缺的 3 筆
+> 全是 D23 骨架(cond.anovulation / unexplained_infertility / insulin_resistance,
+> review_status=skeleton,零內容宣稱是刻意的)。**沒有 draft 卡在裸渲染。**
+> 諷刺的是同一則掃描的上一段才剛把這條 fallback 讚為治理模範、原文引用過
+> mergeUnwired——讀了解析器卻仍對來源檔下結論,正是
+> [[measure-the-bundle-not-the-source]] 那條的成因。閘門本身是否存在仍待
+> task 的畫面實測;但「疑似裸渲染」的規模主張到此撤回。
 
 驗證:condition-standard、red-flag 三支、relations、relation-registry、
 ratchet、content-junk 全 PASS。
