@@ -1,3 +1,26 @@
+# 2026-08-26 — 「38 筆掃不到的 V2 記錄是不是死詞彙」查證:0 筆死,38/38 全活
+
+Ting 問 D25 偵測工具回報的「已登錄但掃不到 38 筆」是不是死詞彙。全 repo `git grep`
+逐 id 掃過(排除 pattern_registry 本身與 data/generated 生成檔),結論:**零死詞彙**。
+
+- **38/38 都有本尊卡**在 `data/pathology/pattern_library.json`——這批正是 Pattern V2
+  擴充(淋證四型、六經/衛氣營血、奇經八脈、臟腑複合證),入口本來就不在 condition atlas。
+- **25/38 被其他卡的 `differential_patterns` 引用**(最高:太陽中風 ×4、陽明腑證 ×3、
+  營分熱 ×3)。
+- 資料層引用面:`data/acupoints/361.json`(穴位主治)、`tdis_registry.json`、
+  `data/herbs/formulas.json`、`data/symptoms/symptoms.json`、
+  `tcm_pattern_lin_syndrome.json`、`avs_advice_library.json` 等。
+- 引用最少的兩筆(陽維脈失調、衝氣上逆)也有本尊卡 + 穴位/tdis 引用,不是孤兒。
+- 38 筆的 `used_by_cases` 全為 0——臨床案例線尚未用到它們,但這是「還沒用到」,
+  不是「死」。
+
+「掃不到」只是 build-pattern-registry.js 鏡頭窄:它只掃 conditions/comparisons 兩處,
+因為它的兩個 derived 計數欄(used_by_conditions/used_by_comparisons)在
+relation_registry.json 裡就是定義成這兩處的反向計數。已把工具報表的括號註記改清楚,
+避免下一個 agent 把「掃不到」誤讀成「沒人用」。除該行註記與本條 log 外零異動。
+
+---
+
 # 2026-08-26 深夜 — Claude 複核 Task 10B Round 4(驗證器涵蓋率真相表):工具本體可信,自撰摘要含一處捏造檔名
 
 Ting 問「task10b 你要不要順便看一下」——這是 antigravity 自己開的新線(沒人指派),推在

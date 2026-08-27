@@ -97,7 +97,7 @@ function main() {
   console.log(`已登錄            ${records.length}`);
   console.log(`使用中的 id       ${use.size}(conditions + comparisons)`);
   console.log(`已引用但未登錄    ${missing.length}  ← 這是本工具存在的原因`);
-  console.log(`已登錄但掃不到    ${unused.length}(僅供參考:掃描不含臨床案例線)`);
+  console.log(`已登錄但掃不到    ${unused.length}(僅指 conditions/comparisons 兩處;id 可能活在 pattern_library 本尊卡、穴位主治、tdis、方劑等層——2026-08-26 查證當時 38 筆全有實引用,勿逕判死詞彙)`);
   console.log(`引用計數漂移      ${drift.length}(登錄檔記載 vs 本次實測)`);
 
   if (missing.length) {
