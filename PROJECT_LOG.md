@@ -1,3 +1,73 @@
+# 2026-08-27 — 過時 pending_herb_id 清理:she_chuang_zi/ge_jie 已入正典,撤 2 標記 + 8 欄「尚未建卡」句
+
+承「懸空 herb.*/formula.* id 治理」條目末尾「留 Ting 裁定 3.批外側發現」的那兩處。
+派工單範圍就是這兩處,不擴批。**本條所有數字量的是 rebase 到 origin/main 96746c5f 之後的樹**
+(初稿量在 f8b43d23 舊基底,pending 標記寫成 6→4;rebase 後發現 main 的南沙參批已先清掉
+`nan_sha_shen` 一處,正確口徑是 5→3,已於此訂正——數字是分支相對的,兩邊都要量)。
+
+**入正典證據(先查再刪,兩層都查)**:
+- `herb.she_chuang_zi` 蛇床子 — herb_canon_shortlist.json 有記錄,54 欄,
+  `source_type: full_card_verified_multi_source`,`authored_by: Claude`,`updated_at 2026-07-29`
+- `herb.ge_jie` 蛤蚧 — 同檔有記錄,61 欄,同 source_type,`authored_by: Codex`,`updated_at 2026-07-29`
+- bundle 層複查(記憶規則「量 bundle 不量 source」):`data/generated/knowledge_mm.js`
+  herbs.records 364 筆(含 main 新建的 nan_sha_shen),兩個 id 皆在;剩下 3 個 pending id 皆不在。
+- 兩張卡 `review_status` 都是 `draft`(待 Ting/RV1 源審),但「已建卡」與「已審核」是兩件事;
+  pending 標記講的是前者,故標記過時成立。
+
+**動的兩條藥對(共 10 欄,-12 行/+10 行)**:
+| pair id | sources | caution_zh | caution_en | cautions_zh | cautions_en |
+|---|---|---|---|---|---|
+| `pair.di_fu_zi__ku_shen__she_chuang_zi` | 3→2 條(撤 `pending_herb_id:herb.she_chuang_zi`) | 撤句 | 撤句 | 撤句 | 撤句 |
+| `pair.dong_chong_xia_cao__ge_jie` | 3→2 條(撤 `pending_herb_id:herb.ge_jie`) | 撤句 | 撤句 | 撤句 | 撤句 |
+
+只刪那一句,原有禁忌內容一字不動,刪後全文(眼睛讀過,無斷句、無殘標點、_zh 無英文):
+- 地膚子配苦參、蛇床子 caution_zh =「苦寒與溫燥同用,需辨寒熱與濕熱/寒濕;脾胃虛寒或無濕熱者慎避。」
+- 冬蟲夏草配蛤蚧 caution_zh =「表邪未解、實熱咳喘或痰熱壅盛者慎避。」
+(caution_* 與 cautions_* 兩組值原本就相同,刪後仍相同,雙欄同步。)
+
+**「之後補卡會自動恢復連結」已兌現**:兩條藥對 herbs 陣列共 5 個 herb id
+(di_fu_zi/ku_shen/she_chuang_zi/dong_chong_xia_cao/ge_jie)在 bundle 內 5/5 解析得到卡片,
+0 懸空——這正是那句話該撤的理由,不是單純刪字。
+
+**剩餘 pending 標記逐一複查(5→3,無誤刪)**:
+`herb.ju_he`(L1675)、`herb.qing_xiang_zi`(L5082)、`herb.gu_jing_cao`(L5083)——三者在
+herb_canon_shortlist(364)與 bundle herbs.records(364)皆查無,仍是真未建卡,標記與註記全部保留。
+`herb.nan_sha_shen` 不在此列:main `20c2bf0d`(Ting 裁定南北沙參分立)已建卡並同批清掉標記與
+註記句,本批 rebase 後自動併入,兩批無衝突、無重複清理。
+generated 層計數複查:she_chuang_zi 0 / ge_jie 0 / nan_sha_shen 0 / ju_he 1 / qing_xiang_zi 1 / gu_jing_cao 1。
+
+**紅旗:批外還有第 3 處同性質過時陳述,本批未動,等 Ting 裁定**
+`pair.di_fu_zi__ku_shen__bai_xian_pi` 的 caution_zh/caution_en/cautions_zh/cautions_en
+(herb_pairs.json L4630/4631/4641/4642)寫「蛇床子尚未建卡,本批未列入正式 pair。」/
+"She Chuang Zi is not yet a local card, so it is not included here."
+兩個子句都已過時:(a)蛇床子已入正典(同上證據);(b)`pair.di_fu_zi__ku_shen__she_chuang_zi`
+本來就在同一檔案內,「未列入正式 pair」不成立。沒動的原因:它不帶 `pending_herb_id` 標記、
+不在派工單兩處之內,且該句是複合句,整句刪會留下「苦寒燥濕,脾胃虛寒、無濕熱者禁用/慎用;」
+的懸空分號,屬改寫而非移除,依憲法三「任何刪除先問 Ting」。裁定後一行可補。
+
+**批外觀察(未動)**:herb_pairs.json 頂層 `total_pairs` 欄位寫 161,實際 `pairs` 陣列 218 筆,
+既有漂移,非本批造成,亦非本批 id 清單內。
+
+**驗證(rebase 後全跑,輸出原文)**:
+- `node scripts/build-data.js` → `{"formulas":223,"herbs":364,"conditions":12,"eastern":6,"patterns":8,"sources":43,"comparisons":43,"symptoms":124,"relation_edges":29,"audit_missing":0}`
+- `node scripts/validate-herb-standard.js` → `PASS — no structural defects.`(BASTYR/NCCAOM 考綱缺檔警告為既有,非本批)
+- `node scripts/validate-content-junk.js` → `validate-content-junk: PASS — no scraped header tokens, no encoding anomalies in _zh fields.`
+- `node scripts/check-validation-ratchet.js` → `PASS — no regressions.`(encoding 1817 持平,其餘 0)
+- `git diff --check` → 無輸出
+
+**自 diff 結果(vs origin/main 96746c5f)**:herb_pairs.json 10+/12−,generated 兩檔隨批重建。
+rebase 衝突處理:generated 兩檔取上游側後用 build-data 決定性重刷(不手改生成檔);
+herb_pairs.json 自動合併成功(main 改 nan_sha_shen 段、本批改 she_chuang_zi/ge_jie 段,不重疊);
+PROJECT_LOG 兩側各自前置,本條置頂、main 六條在下,無刪除。
+結構比對(逐葉遞迴比對 origin/main 與本批 bundle 物件):knowledge_mm.js 變動葉節點 10 個、
+knowledge_data.js 變動葉節點 10 個,全部落在 herbPairs.pairs[117] 與 [119] 的
+caution_zh/caution_en/sources/cautions_zh/cautions_en,無第三處附帶變動;
+pairs 陣列長度 218 不變,兩筆記錄的鍵集合與鍵順序不變,無欄位變短或被清空。
+
+MEASURED TREE: claude/practical-easley-73f009 rebased @ origin/main 96746c5f
+
+---
+
 # 2026-08-27 — Ting 裁定「南北沙參基原不同,照藥典分立」:herb.nan_sha_shen 建模板級卡(363→364)
 
 承上一條懸空 id 治理留給 Ting 的第 1 項。Ting 裁定分立建卡,本條執行。
