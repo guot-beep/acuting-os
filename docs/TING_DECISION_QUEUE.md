@@ -1,3 +1,5 @@
+> **快速入口**:壓縮版裁定單在 `docs/TING_RULING_SHEET_2026-08-27.md`(30 分鐘可過完)。
+
 # Ting 待裁定清單(單一入口)
 
 彙整自 2026-08-12 各條線的 ledger。**沒有一項在擋 CI 或擋 landing** ——
@@ -326,6 +328,9 @@ grep -c "herb_drug_interactions" js/knowledge.js app.js   # 0 和 0
 **重現**:`node -e 'const j=require("./data/herbs/formulas.json");for(const r of j.records){const c=r.composition||[];const chiefs=c.filter(x=>/君/.test(x.role_zh||""));if(chiefs.length&&!chiefs.some(x=>!x.is_alternate))console.log(r.name_zh)}'`
 
 ### A15 · 四神丸:方名寫「四」,組成 6 味(生薑、大棗是否該排除在名稱計數外)
+
+> ✅ **已結案(2026-08-26/27)**:Ting 選 (a) 之結構化版 —— D27:新增 `is_guide` 藥引旗標,薑棗標上、味數計數排除,定義入 FORMULA_CARD_TEMPLATE。
+
 **問題**:`validate-formula-correctness.js`(2026-08-24 修過誤判後仍在報)標記
 `formula.si_shen_wan` 方名編碼 4 味,實際組成 6 味:補骨脂、吳茱萸、肉豆蔻、
 五味子、生薑、大棗——後兩者不是替代註記(`is_alternate:false`)。
@@ -338,12 +343,18 @@ grep -c "herb_drug_interactions" js/knowledge.js app.js   # 0 和 0
 清單本身該把四神丸拿掉。
 
 ### A16 · 甘麥大棗湯:組成無君藥標註
+
+> ✅ **已結案(2026-08-26/27)**:Ting 裁定 —— D27:君=小麥、臣=甘草、佐使=大棗(統編方劑學;Bensky 同);浮小麥標 is_alternate。
+
 **問題**:`formula.gan_mai_da_zao_tang` 四味(甘草、小麥、(浮小麥)替代、大棗)
 role_zh 全部是臣/佐,沒有一味標君。《金匱要略》原方是否明確定過君藥,各家說法
 不盡相同(有的以小麥為君,有的以甘草為君)——這是需要查證的方論判斷,我沒有
 自己補上。
 
 ### A17 · 銀翹散劑量待補檔:「Zhu Ye」竹葉 vs 該方組成「Dan Zhu Ye」淡竹葉是否同一味藥
+
+> ✅ **已結案(2026-08-26/27)**:Ting 裁定 —— D26:兩味不同藥、承認混淆地帶、方劑層標最優選。銀翹散淡竹葉為最優選、竹葉列 is_alternate(引原文);staging 列 herb_id 定案 herb.zhu_ye。
+
 **背景**:`data/imports/formula_doses/formula_dose_staging.json`(僅 5 筆,
 `status:staging_only`、`review_status:draft`,還沒上任何畫面)是從 HKBU 機構典藏
 逐字轉錄的劑量草稿。`formula.yin_qiao_san` 那筆的第 5 味逐字轉錄成「竹葉」
