@@ -66296,7 +66296,8 @@
     "Promotes gastric emptying and digestion",
     "Regulates autonomic nervous system"
    ],
-   "composition_suspect_cleared_note": "2026-08-19 原組成僅剩方名首味橘皮,依《金匱要略》橘皮竹茹湯重建六味,君臣佐使照 curriculum Table 440"
+   "composition_suspect_cleared_note": "2026-08-19 原組成僅剩方名首味橘皮,依《金匱要略》橘皮竹茹湯重建六味,君臣佐使照 curriculum Table 440",
+   "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 1 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：橘皮（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。\n【2026-08-27 C5b 復原記錄】上段稽核註記於 a7b8a040 佚失(全庫 167 方唯一一張),2026-08-14 合併時發現;本日自 61cf1198 逐字取回,獨立 commit 補上,不藏在 merge 裡。"
   },
   {
    "id": "formula.xue_fu_zhu_yu_tang",
