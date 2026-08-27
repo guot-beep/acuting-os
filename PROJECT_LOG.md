@@ -143,6 +143,42 @@ ICD-10 對照分歧、約 30 筆 `comparisons.json` 骨架記錄空著——**�
 
 ---
 
+# 2026-08-27 — acupoints(361.json)照 D25 六原則掃描:derived 連結線機制健全但宣告失真、寫入器藏整檔 reformat bug(已修)、127 條 pat.* 懸空確認即 D23 B桶
+
+Ting 指示掃穴位線。七檔系列最後一條,結果:
+
+**✅ 健全的**:point_id_manifest 是治理良好的 append-only ledger(925 id,
+361+72 extra 零缺漏);compare_with 228 條 codes 全解析(第一輪 114 不解析
+是我的萃取器沒認得 {codes,axis} 結構,假警報);related_conditions 1,690 條
+全解析且凍結度極低(185 個涉及點位 179 個完全同步——link-point-conditions.js
+有 --apply 刷新通道 + union 教義,是繼紅旗線後第二條有正規刷新機制的 derived 線)。
+
+**⚠ relation_registry 機制宣告失真(已修)**:edge.condition_acupoint_protocols
+的 reverse 寫著「render-time 衍生」,實際 §6.5 B 起就由 link-point-conditions.js
+**持久化**進 361.json(related_conditions×185、tcm_pattern_ids×44 點);
+已改為如實宣告 derived_field/derived_by(union、不刪除、cond 側改動後重跑)。
+
+**⚠ 寫入器整檔 reformat bug(已修)**:link-point-conditions --apply 的縮排
+偵測 regex 只認物件根檔,361.json 是陣列根 → 偵測失敗 fallback indent 2,
+**每跑一次就 21.5 萬行 reformat**(語意淨變化 2 行)。修 regex 後冪等實測
+通過;本次刷新以最小補丁落地(1 個穴 +cond.cinv/post_op_ileus,diff 4 行)。
+
+**✅ 127 條 tcm_pattern_ids 懸空 = D23 B桶,已裁不新開**:全是 32 個退役
+pat.<中文> id,舊版腳本寫入;現版腳本已拒寫 legacy(dry-run 顯示 39 筆
+「不落庫」)。D23 裁定交 fill 線走 pattern_alias_map,對不到留 pending——
+已在 relation_registry 註記,不重複開工。
+
+**報告不動手**:8 組 snake_case/camelCase 欄位鏡像(pointIdentityZh 等,
+361 筆全檔雙寫)——exam_pearl 7 筆漂移 + exam_star 11 筆單側,但 app 讀取
+順位 snake 優先且 snake 全有 → 漂移被遮蔽零畫面影響;建議日後整批退役
+camel 鏡像(app 端 4642 行 fallback 一併清),屬 app 重構批次,不在本掃描
+動。11 筆 EX-*/阿是代碼正規化失敗屬 extra points 線,informational。
+
+驗證:acupoint-standard、relation-registry、build-data、ratchet、content-junk
+全 PASS。
+
+---
+
 # 2026-08-27 — formulas/herbs 兩線照 D25 六原則掃描:composition↔related_formulas 雙側儲存已漂移過半、27 個 needs_fill 旗標腐爛、shortlist 生成宣稱失真;解析面全綠
 
 Ting 指示掃最後兩條大線。**這輪挖出全系列最大的單一治理缺口**:

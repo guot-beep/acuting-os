@@ -59,8 +59,10 @@
    "target": "point id (D2)",
    "file": "data/pathology/condition_canon_shortlist.json",
    "reverse": {
-    "derived_field": null,
-    "note": "point cards derive related_conditions at render time (already shipped in pointLinkSection)"
+    "derived_field": "related_conditions",
+    "on": "data/acupoints/361.json",
+    "derived_by": "scripts/link-point-conditions.js --apply (UNION writes — never removes; historical links survive cond-side redirects by design)",
+    "note": "Corrected 2026-08-27 (D25 sweep): this note used to claim render-time derivation, but the reverse has been PERSISTED onto point records since §6.5 B. Freshness measured 2026-08-27: 179/185 points in full sync, 1 refreshed same day, 5 carry union residue from D23 redirects. Rerun the script after cond-side protocol changes."
    },
    "validated_by": "scripts/validate-relations.js",
    "stored_shape": "inline_objects",
@@ -74,8 +76,10 @@
    "target": "pattern.* (aspirational — see stored_shape)",
    "file": "data/pathology/condition_canon_shortlist.json",
    "reverse": {
-    "derived_field": null,
-    "note": "no reverse possible until ids exist"
+    "derived_field": "tcm_pattern_ids",
+    "on": "data/acupoints/361.json (projection: cond.tcm_patterns[].acupoints_zh → the named points)",
+    "derived_by": "scripts/link-point-conditions.js --apply (UNION writes)",
+    "note": "Corrected 2026-08-27: a derived projection of this edge IS persisted — 44 points carry tcm_pattern_ids. 127 stored entries are retired pat.<中文> ids written by a pre-guard run; that is D23's B-bucket (ruled: fill line via pattern_alias_map, unmapped stay pending, never force-matched). The current script refuses to write legacy ids."
    },
    "validated_by": "scripts/validate-relation-registry.js R4/N3 (shape honesty only — no validator resolves the content)",
    "stored_shape": "inline_objects",

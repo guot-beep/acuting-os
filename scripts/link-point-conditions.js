@@ -170,6 +170,8 @@ console.log("\n病證最多的穴:");
 for (const [code, ids] of top) console.log(`  ${code.padEnd(6)} ${String(ids.length).padStart(3)} 個病證  ${byCode.get(code)?.chinese || ""}`);
 
 if (!APPLY) { console.log("\n(dry run — pass --apply)"); process.exit(0); }
-const indent = /^\{?\[?\n(\s+)"/.exec(raw)?.[1]?.length || 2;
+// Array-rooted files open `[\n {`, object-rooted `{\n "` — match either, or the
+// writer silently reformats the whole file (215k-line diff measured 2026-08-27).
+const indent = /^[\{\[]\n(\s+)[\{"]/.exec(raw)?.[1]?.length || 2;
 fs.writeFileSync(POINTS, JSON.stringify(data, null, indent) + (raw.endsWith("\n") ? "\n" : ""), "utf8");
 console.log("\nwritten: data/acupoints/361.json");
