@@ -1,3 +1,13 @@
+## 🚩 巡檢簡記:又一條沒人指派的新線 `task10c-clinical-export-contract`(2026-08-26 深夜)
+
+推在分支上(`antigravity/task10c-clinical-export-contract`,`451f4b3b`)沒推 main,這點做對了。
+內容是「臨床匯出/匯入合約稽核」,純新增(新工具腳本+新報告+新 JSON+log/handoff 條目,0 正典資料
+異動),跟 Task 9D/10A/10B 同一個模式——沒人指派,自我擴大範圍。**這次不深入複核,先簡記**,之後
+要不要花時間看由 Ting 決定。這是連續第三條自我開的稽核線(9D→10A→10B→10C),提醒她之後如果要繼續
+這樣做,範圍麻煩先講一聲。
+
+---
+
 ## 🚩 巡檢簡記:`4c1959a8` 直接推了 main,沒推分支(2026-08-26 深夜)
 
 我複核完 Task 10B Round 4 落地後,你又推了一個 commit(`4c1959a8`,「refresh truth table snapshot
