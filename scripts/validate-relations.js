@@ -21,8 +21,15 @@ function addId(set, id, source, errors, prefix) {
     errors.push(`${source}: missing id`);
     return;
   }
-  if (prefix && !id.startsWith(prefix)) {
-    errors.push(`${source}: id "${id}" must start with "${prefix}"`);
+  // prefix may be a single string or an array of acceptable prefixes. D11 (2026-08-06)
+  // locked `cond.`/`tdis.` as the canonical western-condition/eastern-disease namespaces,
+  // but the older fertility sub-graphs (conditions.json, condition_graph_expansion.json)
+  // still legitimately carry their own pre-D11 `western_condition.`/`eastern_disease.`
+  // ids for records that only exist inside that self-contained sub-graph. Both are
+  // accepted here rather than forcing a data migration this check wasn't asked to make.
+  const prefixes = Array.isArray(prefix) ? prefix : prefix ? [prefix] : [];
+  if (prefixes.length && !prefixes.some((p) => id.startsWith(p))) {
+    errors.push(`${source}: id "${id}" must start with one of: ${prefixes.join(", ")}`);
     return;
   }
   set.add(id);
@@ -42,15 +49,15 @@ function checkRef(set, id, source, errors) {
 
 function collectPathologyGraph(graph, sourceName, sets, errors) {
   asArray(graph.records).forEach((record, index) => {
-    addId(sets.westernConditions, record.id, `${sourceName}.records[${index}]`, errors, "western_condition.");
+    addId(sets.westernConditions, record.id, `${sourceName}.records[${index}]`, errors, ["cond.", "western_condition."]);
   });
 
   asArray(graph.western_conditions).forEach((record, index) => {
-    addId(sets.westernConditions, record.id, `${sourceName}.western_conditions[${index}]`, errors, "western_condition.");
+    addId(sets.westernConditions, record.id, `${sourceName}.western_conditions[${index}]`, errors, ["cond.", "western_condition."]);
   });
 
   asArray(graph.eastern_diseases).forEach((record, index) => {
-    addId(sets.easternDiseases, record.id, `${sourceName}.eastern_diseases[${index}]`, errors, "eastern_disease.");
+    addId(sets.easternDiseases, record.id, `${sourceName}.eastern_diseases[${index}]`, errors, ["tdis.", "eastern_disease."]);
   });
 
   asArray(graph.tcm_patterns).forEach((record, index) => {
@@ -421,6 +428,20 @@ function main() {
   ];
   const pathologyGraphs = pathologyFiles.map((filePath) => [filePath, readJson(filePath)]);
   pathologyGraphs.forEach(([filePath, graph]) => collectPathologyGraph(graph, filePath, sets, errors));
+
+  // D11 (2026-08-06) locked cond./tdis. as the canonical condition/TCM-disease namespaces,
+  // each with its own full registry (condition_canon_shortlist.json / tdis_registry.json).
+  // The pathology "graph seed" files above only carry a small fertility-workflow subset of
+  // those ids, so anything that references the wider canon (e.g. formula_pattern_links.json,
+  // comparisons.json) needs the full registries loaded as reference sources too.
+  const conditionCanonPath = "data/pathology/condition_canon_shortlist.json";
+  asArray(readJson(conditionCanonPath).records).forEach((record, index) => {
+    addId(sets.westernConditions, record.id, `${conditionCanonPath}.records[${index}]`, errors, "cond.");
+  });
+  const tdisRegistryPath = "data/pathology/tdis_registry.json";
+  asArray(readJson(tdisRegistryPath).records).forEach((record, index) => {
+    addId(sets.easternDiseases, record.id, `${tdisRegistryPath}.records[${index}]`, errors, "tdis.");
+  });
 
   pathologyGraphs.forEach(([filePath, graph]) => validatePathologyGraph(graph, filePath, sets, counters, errors));
   validateFormulaPatternLinks(sets, counters, errors);
