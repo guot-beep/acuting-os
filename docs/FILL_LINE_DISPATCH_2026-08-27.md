@@ -46,6 +46,15 @@ Spec 全在 `docs/research_packs/CLASSICAL_REFS_ATTRIBUTION_SCAN.md` §2
 > evidence_pending 者留白。蜈蚣劑量(舊版鏡像 3-5g)標 disagreement,
 > 寫回前需 2025 版正文複核。A1 包 SOL 尚在產出,到貨後同流程落 staging。
 
+> **A1 到貨(2026-08-27)**:SOL 規則包已落 research_staging(checksum 5/5):
+> `formula_safety_direction_lexicon_A1.json`(方向詞受控詞彙+永不自動升格清單)、
+> `formula_safety_statement_schema_A1.json`(單條敘述 JSON Schema 含渲染提示)、
+> `formula_safety_migration_classifier_A1.json`(14 條規則+precedence+否定樣式+
+> test_fixtures+canonical_write_gate)+兩份 MD(語意規格/163 張遷移規則)。
+> **163 張批次重灌照此包執行**(建 runner 照 MIGRATION_RULES §2 pipeline;
+> 判不動一律 needs_review 不硬分;方向詞查表不自由翻;test_fixtures 先過
+> 再跑真資料)。與 A2 包三層 provenance 互通。
+
 ## 4. A1(a) · 方劑安全欄重設計 → 交 SOL
 
 163/224 張 `contraindications_en` 與 `cautions_en` 逐位元組相同 —— 結構性缺陷。

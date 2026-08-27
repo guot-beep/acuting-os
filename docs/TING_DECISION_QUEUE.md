@@ -187,6 +187,11 @@ grep -c "herb_drug_interactions" js/knowledge.js app.js   # 0 和 0
 
 
 ### A1 · 方劑安全欄的結構問題(最根本的一條)
+
+> ✅ **規則包已到貨(2026-08-27)**:SOL 交付語意規格+受控詞彙+遷移分類器
+> (含 test_fixtures 與 canonical_write_gate),已落 research_staging。
+> 163 張批次重灌歸 fill 線,見 FILL_LINE_DISPATCH 到貨註記。
+
 **問題**:全庫 **163/224 張卡的 `contraindications_en` 與 `cautions_en` 逐位元組相同**。
 兩個欄位不是兩份獨立來源,是同一段英文被翻譯兩次 —— 而「禁用/慎用」的方向詞
 是譯者當下決定的。**所以中英方向打架不是翻譯品質問題,是結構必然,修翻譯止不住。**

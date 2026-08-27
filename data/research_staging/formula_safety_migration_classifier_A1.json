@@ -1,0 +1,312 @@
+{
+  "_meta": {
+    "package": "A1_FORMULA_SAFETY_FIELD_SEMANTICS_2026-08-27",
+    "status": "NOT CANONICAL",
+    "no_phi": true,
+    "classifier_version": "A1.1",
+    "target": "legacy duplicated contraindications/cautions safety text",
+    "canonical_write_default": false
+  },
+  "precedence": [
+    "negated_or_uncertain_direction",
+    "mixed_direction_or_context",
+    "regulatory_nonclinical_context",
+    "ambiguous_direction",
+    "hard_prohibition",
+    "conditional_caution",
+    "no_direction_token"
+  ],
+  "negation_or_uncertainty_patterns": {
+    "en": [
+      "not contraindicated",
+      "no contraindication",
+      "no known contraindications",
+      "contraindications unknown",
+      "contraindications are unknown",
+      "contraindications have not been established",
+      "not prohibited",
+      "is not prohibited",
+      "not forbidden"
+    ],
+    "zh": [
+      "非禁用",
+      "並非禁用",
+      "無禁忌",
+      "無已知禁忌",
+      "禁忌不明",
+      "禁忌尚不明確",
+      "尚無明確禁忌",
+      "並非禁止",
+      "非禁止",
+      "不是禁用"
+    ]
+  },
+  "ambiguous_patterns_to_review": {
+    "en": [
+      "should not be used",
+      "should avoid",
+      "avoid"
+    ],
+    "zh": [
+      "不宜使用",
+      "應避免",
+      "最好避免"
+    ]
+  },
+  "rules": [
+    {
+      "rule_id": "A1-M01",
+      "when": "same normalized segment appears in both legacy contraindications and cautions",
+      "action": "deduplicate before classification",
+      "note": "legacy field position is not evidence of direction"
+    },
+    {
+      "rule_id": "A1-M02",
+      "when": "negation or uncertainty pattern is present",
+      "classification": "needs_review",
+      "review_reason": "negated_or_uncertain_direction"
+    },
+    {
+      "rule_id": "A1-M03",
+      "when": "one inseparable segment contains both hard-prohibition and caution tokens",
+      "classification": "needs_review",
+      "review_reason": "mixed_direction_tokens"
+    },
+    {
+      "rule_id": "A1-M03A",
+      "when": "segment contains a nonclinical regulatory/anti-doping context and no inseparable clinical contraindication assertion",
+      "classification": "cautions",
+      "direction_id": "athlete_restriction_or_regulatory_restriction",
+      "reason_type": "regulatory_nonclinical",
+      "note": "regulatory prohibition is not a patient clinical contraindication"
+    },
+    {
+      "rule_id": "A1-M03B",
+      "when": "segment contains an ambiguous avoidance phrase such as should not be used / should avoid / 不宜使用 / 應避免 without a more specific controlled direction",
+      "classification": "needs_review",
+      "review_reason": "ambiguous_avoidance"
+    },
+    {
+      "rule_id": "A1-M04",
+      "when": "segment contains exactly one controlled hard-prohibition direction family and no higher-priority blocker",
+      "classification": "contraindications"
+    },
+    {
+      "rule_id": "A1-M05",
+      "when": "segment contains exactly one controlled caution direction family and no higher-priority blocker",
+      "classification": "cautions"
+    },
+    {
+      "rule_id": "A1-M06",
+      "when": "segment contains risk description but no controlled direction token",
+      "classification": "needs_review",
+      "review_reason": "no_direction_token"
+    },
+    {
+      "rule_id": "A1-M07",
+      "when": "direction is classifiable but source_ref/source_locator cannot be tied to that direction",
+      "classification": "needs_review",
+      "review_reason": "missing_provenance",
+      "canonical_write_eligible": false
+    },
+    {
+      "rule_id": "A1-M08",
+      "when": "source_level is ingredient-derived or modern-component but rendered statement asserts formula-level direction",
+      "classification": "needs_review",
+      "review_reason": "source_scope_unclear",
+      "canonical_write_eligible": false
+    },
+    {
+      "rule_id": "A1-M09",
+      "when": "paired zh/en assertion directions differ",
+      "classification": "needs_review",
+      "review_reason": "cross_language_direction_conflict",
+      "canonical_write_eligible": false
+    },
+    {
+      "rule_id": "A1-M10",
+      "when": "legacy text describes 十八反/十九畏 or structured incompatibility but cannot resolve canonical_relation_ref",
+      "classification": "needs_review",
+      "review_reason": "canonical_relation_unresolved"
+    },
+    {
+      "rule_id": "A1-M11",
+      "when": "structured incompatibility relation resolves",
+      "action": "render UI projection from relation; do not create duplicate canonical pair fact",
+      "source_level": "ingredient-derived"
+    },
+    {
+      "rule_id": "A1-M12",
+      "when": "restriction is anti-doping, athlete eligibility, or other nonclinical regulation",
+      "classification": "cautions",
+      "direction_id": "athlete_restriction_or_regulatory_restriction",
+      "reason_type": "regulatory_nonclinical"
+    }
+  ],
+  "review_reasons": [
+    "no_direction_token",
+    "mixed_direction_tokens",
+    "negated_direction",
+    "uncertain_direction",
+    "ambiguous_avoidance",
+    "missing_provenance",
+    "source_scope_unclear",
+    "cross_language_direction_conflict",
+    "conditional_threshold_unbound",
+    "canonical_relation_unresolved",
+    "regulatory_vs_clinical_mixed"
+  ],
+  "test_fixtures": [
+    {
+      "id": "pregnancy_hard_en",
+      "language": "en",
+      "text": "Contraindicated in pregnancy.",
+      "expected": "contraindications",
+      "expected_direction_id": "contraindicated"
+    },
+    {
+      "id": "pregnancy_caution_zh",
+      "language": "zh",
+      "text": "孕婦慎用。",
+      "expected": "cautions",
+      "expected_direction_id": "use_with_caution"
+    },
+    {
+      "id": "pregnancy_not_recommended_en",
+      "language": "en",
+      "text": "Not recommended during pregnancy.",
+      "expected": "cautions",
+      "expected_direction_id": "not_recommended"
+    },
+    {
+      "id": "pregnancy_unknown_en",
+      "language": "en",
+      "text": "Safety in pregnancy has not been established.",
+      "expected": "needs_review",
+      "expected_review_reason": "no_direction_token"
+    },
+    {
+      "id": "high_dose_caution_zh",
+      "language": "zh",
+      "text": "不宜大劑量久服。",
+      "expected": "cautions",
+      "expected_direction_ids": [
+        "avoid_high_dose",
+        "avoid_prolonged_use"
+      ]
+    },
+    {
+      "id": "unprocessed_hard_en",
+      "language": "en",
+      "text": "The unprocessed form must not be used.",
+      "expected": "contraindications",
+      "expected_direction_id": "unprocessed_form_prohibited"
+    },
+    {
+      "id": "processing_caution_en",
+      "language": "en",
+      "text": "Requires processing before use.",
+      "expected": "cautions",
+      "expected_direction_id": "processing_prerequisite"
+    },
+    {
+      "id": "athlete_nonclinical_en",
+      "language": "en",
+      "text": "Anti-doping restriction applies to competition athletes.",
+      "expected": "cautions",
+      "expected_direction_id": "athlete_restriction",
+      "expected_reason_type": "regulatory_nonclinical"
+    },
+    {
+      "id": "negated_contra_en",
+      "language": "en",
+      "text": "This is not contraindicated in older adults.",
+      "expected": "needs_review",
+      "expected_review_reason": "negated_or_uncertain_direction"
+    },
+    {
+      "id": "ambiguous_avoid_zh",
+      "language": "zh",
+      "text": "孕期應避免使用。",
+      "expected": "needs_review",
+      "expected_review_reason": "ambiguous_avoidance"
+    },
+    {
+      "id": "mixed_en",
+      "language": "en",
+      "text": "Use with caution in frail patients; contraindicated in severe hepatic failure.",
+      "expected": "segment_if_strong_boundary_else_needs_review",
+      "expected_outputs_if_segmented": [
+        "cautions",
+        "contraindications"
+      ]
+    },
+    {
+      "id": "risk_only_en",
+      "language": "en",
+      "text": "Long-term use has been associated with toxicity.",
+      "expected": "needs_review",
+      "expected_review_reason": "no_direction_token"
+    },
+    {
+      "id": "dose_limit_hard_en",
+      "language": "en",
+      "text": "Do not exceed 6 g per day.",
+      "expected": "contraindications",
+      "expected_direction_id": "exposure_limit_prohibited",
+      "expected_target_scope": "exposure > stated limit"
+    },
+    {
+      "id": "regulatory_prohibited_en",
+      "language": "en",
+      "text": "Prohibited in competition under the applicable anti-doping rule.",
+      "expected": "cautions",
+      "expected_direction_id": "athlete_restriction",
+      "expected_reason_type": "regulatory_nonclinical"
+    },
+    {
+      "id": "not_prohibited_en",
+      "language": "en",
+      "text": "This use is not prohibited.",
+      "expected": "needs_review",
+      "expected_review_reason": "negated_or_uncertain_direction"
+    },
+    {
+      "id": "not_self_treatment_en",
+      "language": "en",
+      "text": "Not for self-treatment; use only under professional supervision.",
+      "expected": "cautions",
+      "expected_direction_id": "professional_supervision_required"
+    }
+  ],
+  "canonical_write_gate": {
+    "all_required": [
+      "controlled_direction_recognized",
+      "source_ref_present",
+      "source_locator_supports_direction",
+      "valid_source_level",
+      "subject_scope_matches_source_level",
+      "bilingual_parity_or_single_language_only",
+      "no_unresolved_canonical_relation"
+    ],
+    "fail_action": "keep in research staging / needs_review; do not write canonical safety fields"
+  },
+  "regulatory_nonclinical_context_patterns": {
+    "en": [
+      "anti-doping",
+      "competition athlete",
+      "competition athletes",
+      "sport eligibility",
+      "sports eligibility",
+      "regulatory restriction"
+    ],
+    "zh": [
+      "反禁藥",
+      "禁賽",
+      "競賽運動員",
+      "運動員資格",
+      "法規限制",
+      "監管限制"
+    ]
+  }
+}

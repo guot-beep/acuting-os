@@ -1,0 +1,229 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "acuting://research-staging/formula-safety-statement/A1",
+  "title": "A1 Formula Safety Statement Staging Schema",
+  "description": "NOT CANONICAL. NO PHI. Staging object for one formula safety assertion before rendering into array<string> canonical card fields.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "assertion_id",
+    "card_id",
+    "language",
+    "target_state",
+    "direction_id",
+    "source_level",
+    "subject_scope",
+    "source_ref",
+    "source_locator",
+    "canonical_write_eligible"
+  ],
+  "properties": {
+    "assertion_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "card_id": {
+      "type": "string",
+      "pattern": "^formula\\."
+    },
+    "language": {
+      "enum": [
+        "zh",
+        "en"
+      ]
+    },
+    "target_state": {
+      "type": "string",
+      "minLength": 1
+    },
+    "direction_id": {
+      "enum": [
+        "contraindicated",
+        "do_not_use",
+        "prohibited_combination",
+        "unprocessed_form_prohibited",
+        "exposure_limit_prohibited",
+        "use_with_caution",
+        "requires_monitoring",
+        "requires_dose_adjustment",
+        "avoid_high_dose",
+        "avoid_prolonged_use",
+        "professional_supervision_required",
+        "risk_benefit_assessment_required",
+        "processing_prerequisite",
+        "administration_prerequisite",
+        "not_recommended",
+        "avoid_unless_directed",
+        "athlete_restriction",
+        "regulatory_restriction"
+      ]
+    },
+    "reason": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "reason_type": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        null,
+        "clinical",
+        "toxicity",
+        "interaction",
+        "preparation",
+        "regulatory_nonclinical",
+        "other_source_stated"
+      ]
+    },
+    "source_level": {
+      "enum": [
+        "formula-specific",
+        "ingredient-derived",
+        "modern-component"
+      ]
+    },
+    "subject_scope": {
+      "enum": [
+        "formula",
+        "ingredient",
+        "component"
+      ]
+    },
+    "subject_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "source_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_locator": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_text": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "canonical_relation_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "paired_assertion_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "canonical_write_eligible": {
+      "type": "boolean"
+    },
+    "review_reasons": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "source_level": {
+            "const": "formula-specific"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "subject_scope": {
+            "const": "formula"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "source_level": {
+            "const": "ingredient-derived"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "subject_scope": {
+            "const": "ingredient"
+          }
+        },
+        "required": [
+          "subject_ref"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "source_level": {
+            "const": "modern-component"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "subject_scope": {
+            "const": "component"
+          }
+        },
+        "required": [
+          "subject_ref"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "direction_id": {
+            "enum": [
+              "athlete_restriction",
+              "regulatory_restriction"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "reason_type": {
+            "const": "regulatory_nonclinical"
+          }
+        }
+      }
+    }
+  ],
+  "x-acuting-rendering": {
+    "staging_shape": "array<object>",
+    "canonical_card_shape": "array<string>",
+    "rule": "Canonical strings must be rendered from this object plus formula_safety_direction_lexicon_A1.json; direction wording must not be freely translated.",
+    "minimal_semantic_tuple": [
+      "target_state",
+      "direction_id",
+      "reason",
+      "source_level"
+    ],
+    "provenance_gate": [
+      "source_ref",
+      "source_locator"
+    ]
+  }
+}
