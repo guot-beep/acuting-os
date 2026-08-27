@@ -119,6 +119,19 @@ const RATCHETED = [
     doc: "data/imports/formula_doses/formula_dose_staging.json",
   },
   {
+    key: "relation_integrity",
+    script: "scripts/validate-relation-registry-integrity.js",
+    args: ["--json"],
+    extract: (out) => JSON.parse(out).defects,
+    detail: (out) => JSON.parse(out).by_code,
+    // 2026-08-27:D13 登記了 29 條邊,但沒有東西檢查那些欄位裡的 id 指得到
+    // 東西。首次掃描 32 筆懸空,其中 12 筆是代碼慣例錯(RN→CV 任脈、
+    // SJ→TE 三焦,本庫正典一律 CV/TE)當場修掉;剩 20 筆是前向引用 ——
+    // 該連的卡還沒建(cond.stroke、formula.jiao_tai_wan、白虎湯家族三方…)。
+    // 那是內容缺口不是結構錯,歸 fill 線;棘輪保證不再變多。
+    doc: "data/config/relation_registry.json",
+  },
+  {
     key: "content_quality",
     script: "scripts/validate-content-quality.js",
     args: ["--json"],

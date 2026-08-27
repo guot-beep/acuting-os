@@ -65,6 +65,17 @@
       },
       "doc": "data/imports/formula_doses/formula_dose_staging.json"
     },
+    "relation_integrity": {
+      "defects": 20,
+      "by_code": {
+        "edge.pattern_formulas": 5,
+        "edge.pattern_biomedical_conditions": 7,
+        "edge.pattern_tcm_diseases": 2,
+        "edge.formula_family": 5,
+        "edge.formula_pattern_links_file": 1
+      },
+      "doc": "data/config/relation_registry.json"
+    },
     "content_quality": {
       "defects": 5,
       "by_code": {
