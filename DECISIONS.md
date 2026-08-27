@@ -994,3 +994,26 @@ PASS(composition 查無藥材維持 1 味次 `formula.huang_tu_tang` 的「灶�
 - **Reconsider only if**:出現第六種基準(照 D20 精神是**再加一個值**,
   不是把現有五值合併);或某一值在臨床上被證實無區分意義。
 
+## D30 — D12 的 additive-only 從紀律變成閘門 · LOCKED(2026-08-27,執行 D12,無新裁定)
+
+- **What**:新增 `scripts/validate-clinical-contract-freeze.js`(進 CI green)
+  與基準檔 `data/audits/clinical_contract_baseline.json`,把 D12 的
+  additive-only 契約變成機器擋得住的規則。凍結表面三個:
+  schema.sql(29 表 / 356 欄,型別一併記)、匯出形狀(信封鍵 + 病例欄位型別,
+  以 sample_export_fixture 為存證)、localStorage key 名稱(4 個)。
+- **Why now**:D12 自 2026-09-01 生效,而到今天為止它只是一句紀律 ——
+  沒有任何東西在檢查。9/2 開診後 localStorage 裡是真實去識別病歷,
+  **改名造成的損失是靜默的**:舊備份還原時那個欄位就是不見,沒有錯誤訊息,
+  validator 也不會報(它們只檢查認得的欄位)。gate 提前四天上,是為了讓
+  凍結生效那天不是從零開始判斷,而是已經有一份對過帳的基準。
+- **判定**:新增→允許(提示跑 `--update` 收進基準);移除/改型別→FAIL;
+  改名表現為「一移除一新增」,同樣 FAIL 並印出疑似配對。
+- **`--update` 不接受破壞性變更**(實測會拒絕)。基準不是用來追認破壞的 ——
+  那正是這支存在的理由。真要破壞性變更的路徑:先寫遷移腳本、在測試資料上
+  跑過、記一條 DECISIONS,然後 `--force-rebaseline "<理由>"`(會留下歷史)。
+- **負控 6/6**:移除 schema 欄位、改型別、匯出信封鍵改名、localStorage key
+  改名(兩檔一起改才算數 —— 只改一檔會被聯集蓋掉,第一次負控就是這樣誤判
+  成 gate 壞掉)、`--update` 遇破壞拒絕、純新增放行。
+- **Reconsider only if**:H2 localStorage→SQLite 遷移 —— 那是 D12 自己
+  明列的計畫內例外,走 `--force-rebaseline` 並在 DECISIONS 記錄。
+

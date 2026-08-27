@@ -491,6 +491,15 @@ jobs:
       - name: localStorage→SQLite mapping coverage
         run: node scripts/validate-sqlite-mapping-coverage.js
 
+      # D12 契約凍結(2026-09-01 生效,gate 2026-08-27 先上):schema.sql /
+      # 匯出格式 / localStorage key 一律 additive-only。改名造成的損失是靜默的
+      # —— 舊備份還原時那個欄位就是不見,沒有錯誤訊息。負控 6/6 已驗
+      # (移除欄位、改型別、信封鍵改名、key 改名、--update 拒絕追認破壞、
+      # 純新增放行)。要破壞性變更:先寫遷移腳本+測試資料上跑過+記 DECISIONS,
+      # 再用 --force-rebaseline "<理由>"。
+      - name: D12 clinical contract freeze (additive-only)
+        run: node scripts/validate-clinical-contract-freeze.js
+
       # D12(2026-08-26):v1 匯出信封契約 —— 匯出必經 v1ExportEnvelope、
       # 匯入收斂三種形狀(裸陣列/1號信封/2號信封)、其他形狀 fail loud 且
       # 錯誤訊息不轉述檔案內容。含裸匯出回歸的靜態斷言。
