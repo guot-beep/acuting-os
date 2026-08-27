@@ -102,6 +102,49 @@ ICD-10 對照分歧、約 30 筆 `comparisons.json` 骨架記錄空著——**�
 
 ---
 
+# 2026-08-27 — condition_canon(508 筆)照 D25 六原則掃描:policy 兩大斷言實測為真、紅旗 derived 線是治理模範;抓到兩個理想化邊宣告、19 個懸空引用、一個疑似無實作的安全閘門宣稱
+
+Ting 指示掃最大的一條。結果:
+
+**✅ 乾淨的**:無任何 used_by_* 計數快取、無凍結 meta 三件套。policy 的兩句機器
+斷言逐條實測**皆為真**:related_patterns 1,380 條邊 0 筆不在 pattern_library;
+related_eastern_diseases 540 條邊 0 筆不在 tdis_registry(且都有 validator 持續
+守著,不是一次性斷言)。sign_symptom_ids 254 條、red_flag_refs 191 條(對
+registry 227 id)全解析。
+**紅旗 derived 線是全 repo 治理模範**:build-data 從 red_flag_refs 反解
+red_flags_zh/en 是 bundle-only(D13,永不回寫來源檔)、懸空或所有權錯配直接
+abort build、三支專用驗證器全綠(registry 226 筆/runtime/wiring:55 wired·
+191 refs·ledger 151/40/0),RT4 就是位元組級 anti-drift。
+
+**⚠ 兩個理想化邊宣告(原則 2,已修)**:relation_registry 把 herb_formulas
+宣告成指向 formula.* id,實測 **2,902 條全是中文方名字串**(溫經湯…)——
+與 acupoint_protocols 同類 pre-id 形狀,但後者誠實宣告了、它沒有;
+validate-relations 能 PASS 是因為它從未解析這個欄。已補 stored_shape/
+shape_note/migration。tcm_patterns(150 筆/720 個 pre-id 鑑別物件,
+app.js 7 處在渲染,是活內容)則**完全沒登記過**——已登記為
+edge.condition_tcm_patterns_preid,明寫禁止新記錄再用(新連結走
+related_patterns)。
+
+**⚠ 19 個知識層懸空 cond 引用(待裁,併入 task)**:pattern V2 檔的
+related_biomedical_condition_ids 引用了 19 個不存在的 cond id,多數有名稱
+略異的正典雙胞胎(dysmenorrhea vs primary/secondary_dysmenorrhea、
+menopausal_syndrome vs menopause_syndrome、tia vs transient_ischemic_attack…)
+——與 tdis 4 筆同型,已合併成一張 23 筆的裁定 task(原 tdis 單獨 task 撤銷)。
+漏網原因同樣是 validate-pattern-standard P6 不驗這兩個 *_ids 欄。
+另 31 個「懸空」中 4 個是欄位路徑假警報、8 個在 research_staging 出處層
+(CR010 批次的未來卡),不計。
+
+**⚠ 安全閘門宣稱疑似無實作(已開 task 查證)**:policy 說「a condition may
+NOT render until red_flags is filled」,但 app.js grep red_flag 為 0、
+build-data dx shard 整包 508 筆不過濾——找不到執行點。17 筆無 red_flags_zh
+(14 draft + 3 D23 骨架)疑似正以無安全文字狀態渲染。畫面實測與補閘門/
+補內容的選項交 task,安全層設計屬 Ting 裁定。
+
+驗證:condition-standard、red-flag 三支、relations、relation-registry、
+ratchet、content-junk 全 PASS。
+
+---
+
 # 2026-08-27 — symptoms/comparisons 兩線照 D25 六原則掃描:comparisons 挖出帶誤植歸屬的凍結雙胞胎陣列,symptoms 大盤乾淨
 
 Ting 指示把 derived 治理掃到 symptoms.json 與 comparisons.json。結果:

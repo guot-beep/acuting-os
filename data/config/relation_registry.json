@@ -41,13 +41,16 @@
    "id": "edge.condition_formulas",
    "stored_on": "cond.*",
    "field": "herb_formulas",
-   "target": "formula.*",
+   "target": "formula.* (aspirational — see stored_shape)",
    "file": "data/pathology/condition_canon_shortlist.json",
    "reverse": {
     "derived_field": null,
     "note": "formula cards derive related_conditions at render time"
    },
-   "validated_by": "scripts/validate-relations.js"
+   "validated_by": "scripts/validate-relations.js",
+   "stored_shape": "zh_name_strings",
+   "shape_note": "Measured 2026-08-27 (D25 derived-governance sweep): all 2,902 entries across 172 records are Chinese formula NAMES (e.g. 溫經湯), not formula.* ids — the same pre-id class as acupoint_protocols below. The original declaration claimed ids aspirationally; validate-relations passes because it never resolved this field. Declared honestly; migrating names → formula.* ids is the condition line's work, not a registry edit.",
+   "migration": "zh name strings -> formula.* ids. Until then this edge cannot be reverse-indexed."
   },
   {
    "id": "edge.condition_acupoint_protocols",
@@ -63,6 +66,21 @@
    "stored_shape": "inline_objects",
    "shape_note": "Measured 2026-08-06 by validate-relation-registry R4: this field holds inline objects ({name_zh, code}), not ids — e.g. cond.endometriosis carries {\"name_zh\":\"期門\",\"code\":\"LV14\"}. It is the same pre-id shape as cond.tcm_patterns. Declared honestly rather than aspirationally; migrating it to point ids is the condition line's work, not a registry edit.",
    "migration": "inline objects -> point ids (D2). Until then this edge cannot be reverse-indexed."
+  },
+  {
+   "id": "edge.condition_tcm_patterns_preid",
+   "stored_on": "cond.*",
+   "field": "tcm_patterns",
+   "target": "pattern.* (aspirational — see stored_shape)",
+   "file": "data/pathology/condition_canon_shortlist.json",
+   "reverse": {
+    "derived_field": null,
+    "note": "no reverse possible until ids exist"
+   },
+   "validated_by": "scripts/validate-relation-registry.js R4/N3 (shape honesty only — no validator resolves the content)",
+   "stored_shape": "inline_objects",
+   "shape_note": "Registered 2026-08-27 (D25 derived-governance sweep): 720 inline differentiation objects ({pattern_zh, formula_zh, symptoms_zh}) across 150 records, zero carry an id. This is the pre-id form of edge.condition_patterns and is ACTIVELY RENDERED by app.js (7 call sites) — it is content, not a dead legacy field, so it is registered as an edge with an honest shape rather than parked in deprecated_but_temporarily_accepted. It had never been registered here at all, which is how the graph could not see 720 pattern links.",
+   "migration": "pre-id objects -> related_patterns ids + structured content (fill line). NO new records may add tcm_patterns — new pattern links go in related_patterns."
   },
   {
    "id": "edge.condition_medications",

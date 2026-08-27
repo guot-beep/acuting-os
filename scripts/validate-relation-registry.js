@@ -125,18 +125,21 @@ for (const edge of edges) {
     if (r.shape !== "absent") { shape = r.shape; }
     if (r.values.length) {
       usedBy += 1;
-      // An edge may DECLARE that it still holds pre-id inline objects. Saying so
-      // is honest and keeps the registry describing reality; silently yielding
-      // objects while claiming to point at ids is the defect.
-      const bad = edge.stored_shape === "inline_objects" ? undefined : r.values.find((v) => typeof v !== "string");
+      // An edge may DECLARE that it still holds pre-id values. Saying so is
+      // honest and keeps the registry describing reality; silently yielding
+      // objects while claiming to point at ids is the defect. Recognized
+      // pre-id shapes: inline_objects (object entries), zh_name_strings
+      // (Chinese-name strings, e.g. cond.herb_formulas — 2026-08-27).
+      const PRE_ID_SHAPES = ["inline_objects", "zh_name_strings"];
+      const bad = PRE_ID_SHAPES.includes(edge.stored_shape) ? undefined : r.values.find((v) => typeof v !== "string");
       if (bad !== undefined) {
         err("R4", `${edge.field} on ${rec.id} yields a non-id value (${JSON.stringify(bad).slice(0, 40)}) — the path resolves to objects, not ids`);
         break;
       }
     }
   }
-  if (edge.stored_shape === "inline_objects") {
-    notes.push({ code: "N3", id, detail: "declared stored_shape=inline_objects — honest, but cannot be reverse-indexed until migrated to ids" });
+  if (edge.stored_shape === "inline_objects" || edge.stored_shape === "zh_name_strings") {
+    notes.push({ code: "N3", id, detail: `declared stored_shape=${edge.stored_shape} — honest, but cannot be reverse-indexed until migrated to ids` });
   }
   if (usedBy === 0) notes.push({ code: "N1", id, detail: `field "${edge.field}" not populated on any record yet (${records.length} records, path parses as ${shape || "absent"})` });
 
