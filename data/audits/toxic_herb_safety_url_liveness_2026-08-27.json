@@ -1,0 +1,120 @@
+{
+  "meta": {
+    "audit_type": "toxic_herb_safety_url_liveness",
+    "base_commit": "8ba58677f5a8cb59a7ff3d4cb8a72b0e60fa2259",
+    "audit_date": "2026-08-27",
+    "total_records": 7,
+    "negative_control": {
+      "host": "www.americandragon.com",
+      "test_url": "https://www.americandragon.com/Individualherbsupdate/XxYyZzWw.html",
+      "http_status": 404,
+      "final_url": "https://www.americandragon.com/Individualherbsupdate/XxYyZzWw.html",
+      "page_title": "",
+      "body_preview": "404 Not Found",
+      "is_soft_404": false,
+      "evaluated_at": "2026-08-28T05:48:34.000Z",
+      "conclusion": "Host returns standard HTTP 404 for non-existent pinyin URL. HTTP 200 is a genuine indicator of page presence."
+    },
+    "summary": {
+      "total_audited": 7,
+      "verdicts": {
+        "SUPPORTS": 1,
+        "PAGE_EXISTS_BUT_NO_SAFETY_CONTENT": 6,
+        "DEAD_OR_WRONG_PAGE": 0
+      }
+    }
+  },
+  "records": [
+    {
+      "herb_id": "herb.xiong_huang",
+      "name_zh": "雄黃",
+      "url": "https://www.americandragon.com/Individualherbsupdate/XiongHuang.html",
+      "http_status": 200,
+      "final_url": "https://www.americandragon.com/Individualherbsupdate/XiongHuang.html",
+      "fetched_at": "2026-08-28T05:48:34.000Z",
+      "page_title": "Xiong Huang - 雄黃 - Realgar - Chinese Herbs - American Dragon - - Dr Joel Penner OMD, LAc",
+      "evidence_excerpt": "NAME: XIONG HUANG - 雄黃 - REALGAR ... CATEGORY Substances for External Application: (Obsolete Substances) ... Contraindicated during pregnancy.",
+      "safety_content_found": false,
+      "verdict": "PAGE_EXISTS_BUT_NO_SAFETY_CONTENT",
+      "suggested_replacement": null
+    },
+    {
+      "herb_id": "herb.zhu_sha",
+      "name_zh": "硃砂",
+      "url": "https://www.americandragon.com/Individualherbsupdate/ZhuSha.html",
+      "http_status": 200,
+      "final_url": "https://www.americandragon.com/Individualherbsupdate/ZhuSha.html",
+      "fetched_at": "2026-08-28T05:48:34.000Z",
+      "page_title": "Zhu Sha - 硃砂 - Cinnabaris - Chinese Herbs - American Dragon - Dr Joel Penner OMD, LAc",
+      "evidence_excerpt": "NAME: ZHU SHA - 硃砂 - CINNABARIS ... To prevent mercury poisoning, do not heat. ... HERB/DRUG INTERACTIONS [section empty]",
+      "safety_content_found": false,
+      "verdict": "PAGE_EXISTS_BUT_NO_SAFETY_CONTENT",
+      "suggested_replacement": null
+    },
+    {
+      "herb_id": "herb.chuan_shan_jia",
+      "name_zh": "穿山甲",
+      "url": "https://www.americandragon.com/Individualherbsupdate/ChuanShanJia.html",
+      "http_status": 200,
+      "final_url": "https://www.americandragon.com/Individualherbsupdate/ChuanShanJia.html",
+      "fetched_at": "2026-08-28T05:48:34.000Z",
+      "page_title": "Chuan Shan Jia - 穿山甲 - Squama Manitis - Chinese Herbs -Chinese Medicine - American Dragon - Dr Joel Penner OMD, LAc",
+      "evidence_excerpt": "NAME: CHUAN SHAN JIA - 穿山甲 - SQUAMA MANITIS ... This is a protected species, whose scales can only be obtained by killing the animal.",
+      "safety_content_found": false,
+      "verdict": "PAGE_EXISTS_BUT_NO_SAFETY_CONTENT",
+      "suggested_replacement": null
+    },
+    {
+      "herb_id": "herb.xi_jiao",
+      "name_zh": "犀角",
+      "url": "https://www.americandragon.com/Individualherbsupdate/XiJiao.html",
+      "http_status": 200,
+      "final_url": "https://www.americandragon.com/Individualherbsupdate/XiJiao.html",
+      "fetched_at": "2026-08-28T05:48:34.000Z",
+      "page_title": "Xi Jiao - 犀角 - Cornu Rhinoceri - Chinese Herbs - American Dragon - Dr Joel Penner OMD, LAc",
+      "evidence_excerpt": "NAME: XI JIAO - 犀角 - CORNU RHINOCERI ... CONTRAINDICATIONS: This is an endangered species, do not use. Use with great caution during pregnancy.",
+      "safety_content_found": false,
+      "verdict": "PAGE_EXISTS_BUT_NO_SAFETY_CONTENT",
+      "suggested_replacement": null
+    },
+    {
+      "herb_id": "herb.ying_su_ke",
+      "name_zh": "罌粟殼",
+      "url": "https://www.americandragon.com/Individualherbsupdate/YingSuKe.html",
+      "http_status": 200,
+      "final_url": "https://www.americandragon.com/Individualherbsupdate/YingSuKe.html",
+      "fetched_at": "2026-08-28T05:48:34.000Z",
+      "page_title": "Ying Su Ke - 罌粟殼 - Pericarpium Papaveris - Chinese Herbs - American Dragon - Dr Joel Penner OMD, LAc",
+      "evidence_excerpt": "Do not use large doses or for long periods of time as this herb is both toxic and addictive. ... Morphine is extremely toxic ... Morphine and codeine are extremely addictive.",
+      "safety_content_found": true,
+      "verdict": "SUPPORTS",
+      "suggested_replacement": null
+    },
+    {
+      "herb_id": "herb.qing_mu_xiang",
+      "name_zh": "青木香",
+      "url": "https://www.americandragon.com/Individualherbsupdate/QingMuXiang.html",
+      "http_status": 200,
+      "final_url": "https://www.americandragon.com/Individualherbsupdate/QingMuXiang.html",
+      "fetched_at": "2026-08-28T05:48:34.000Z",
+      "page_title": "Qing Mu Xiang - 青木香 - Radix Aristolochiae - Chinese Herbs - American Dragon - Dr Joel Penner OMD, LAc",
+      "evidence_excerpt": "NAME: QING MU XIANG - 青木香 - RADIX ARISTOLOCHIAE ... Mildly Toxic ... CONTRAINDICATIONS: Do not overdose due to the side effects of nausea and vomiting.",
+      "safety_content_found": false,
+      "verdict": "PAGE_EXISTS_BUT_NO_SAFETY_CONTENT",
+      "suggested_replacement": null
+    },
+    {
+      "herb_id": "herb.jin_bo",
+      "name_zh": "金箔",
+      "url": "https://www.americandragon.com/Individualherbsupdate/JinBo.html",
+      "http_status": 200,
+      "final_url": "https://www.americandragon.com/Individualherbsupdate/JinBo.html",
+      "fetched_at": "2026-08-28T05:48:34.000Z",
+      "page_title": "Jin Bo - 金箔 - Gold Foil - American Dragon - Acupuncture - Chinese Herbs - Dr Joel Penner OMD, LAc -",
+      "evidence_excerpt": "NAME: JIN BO - 金箔 - GOLD FOIL ... Shen Calming Herbs ... CONTRAINDICATIONS [empty] INCOMPATIBILITIES [empty] HERB/DRUG INTERACTIONS [empty]",
+      "safety_content_found": false,
+      "verdict": "PAGE_EXISTS_BUT_NO_SAFETY_CONTENT",
+      "suggested_replacement": null
+    }
+  ]
+}
