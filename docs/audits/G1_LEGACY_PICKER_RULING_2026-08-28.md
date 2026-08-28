@@ -3,6 +3,7 @@
 > **MEASURED TREE：`origin/main` @ `2ee30b46`**（2026-08-28）。本文件零程式碼變更、零資料變更。
 > 上游：`docs/audits/IMPLEMENTATION_GAP_REVIEW_2026-08-27.md` 的 G1（P0，硬期限 9/05）。
 > 本文件負責報告 §7.2 的 **1a（語意裁定，Claude）**，並附 **1b 的派工單（Sonnet 5）**。
+> **2026-08-28 更新：桶 3 已由 Ting 裁定（保留＋加標示），登記為 D31。1a 全部結案，1b-i／1b-ii 皆可開工。**
 
 ---
 
@@ -56,7 +57,7 @@ tdis／condition／symptom／point **−0**（目前無 deprecated，但過濾�
 `tdis.tai_lou`（胎漏）與 `tdis.tai_dong_bu_an`（胎動不安）。
 **撤下後由 Ting 當場選一張或兩張都選**，比現在混成一列更精確，不擋 1b-ii。
 
-### 桶 3 — 正典無對應，**要 Ting 決定**（5 筆）
+### 桶 3 — 正典無對應 → **Ting 2026-08-28 裁定：保留＋加標示**（5 筆，已結案）
 
 `western_condition.male_factor_context`（男性因素不孕背景）· `western_condition.ovulatory_factor_context`
 （排卵因素不孕背景）· `western_condition.ivf_cycle`（試管嬰兒療程背景）·
@@ -65,7 +66,9 @@ tdis／condition／symptom／point **−0**（目前無 deprecated，但過濾�
 這 5 筆**在 508 張正典病名卡裡查無對應**（實測，含名稱正規化與 `name_en` 比對）。
 它們也**不是病名**——是「這一診發生在療程的哪一段」。撤下去，Ting 就沒有地方記錄這件事。
 
-**我的建議：這 5 筆先留在選單，但 label 前面加上可見標示（例如 `［療程背景］`），其餘 13 筆撤下。**
+**裁定（Ting 2026-08-28，選 A）：這 5 筆留在選單，label 前面加可見標示 `［療程背景］`，其餘 13 筆撤下。**
+這 5 個 id 成為一份**明文白名單**，白名單以外的 legacy id 一律不得進 picker（驗證器要擋，見 §3.2）。
+已登記為 **D31**（`DECISIONS.md`）。
 理由：它們沒有替代品，撤了是製造空缺；而它們也不跟任何正典卡同名，**不會造成「同一個病記成兩個 id」
 的分裂**——G1 真正要擋的那個傷害在它們身上並不存在。長期正解是給「療程背景」一個自己的欄位
 （不是病名欄），但那要動 schema，D30 剛凍結完，不該擠在 9/05 之前做。
@@ -117,13 +120,18 @@ node scripts/build-data.js && node scripts/check-validation-ratchet.js
 **落地方式**：Ting 2026-08-14 裁示適用——驗證通過後 rebase → ff-merge → push，不必等我。
 **這一項不是安全 gate**（不碰 PHI、不碰持久化格式），實作者自測可接受，不需要另找人對抗測試。
 
-### 3.2 Task 1b-ii — 移除三個 picker 的 legacy union（**Sonnet 5，等桶 3 的答案**）
+### 3.2 Task 1b-ii — 收斂三個 picker 的 legacy union（**Sonnet 5，桶 3 已裁定，可與 1b-i 同批做**）
 
 - `patternPickerOptions` 移除 `k.conditions?.tcm_patterns`（今天是 no-op，拆掉是拆引信）
 - `easternDiseasePickerOptions` 移除 `k.conditions?.eastern_diseases`（6 筆全撤，桶 1＋桶 2）
-- `westernConditionPickerOptions`：**依桶 3 的答案**——13 筆撤下；那 5 筆療程背景照 Ting 的裁定
-  （保留＋標示 / 一起撤下 / 建正典卡）處理
-- 驗證器加一條：picker 來源**不得** union 任何不在正典名冊裡的 id（負控：塞一筆假 legacy id 進 fixture → 必須 FAIL）
+- `westernConditionPickerOptions`：**7 筆撤下**（桶 1 的西醫那批）；**5 筆保留**——
+  `western_condition.{male_factor_context, ovulatory_factor_context, ivf_cycle, embryo_transfer, luteal_support}`，
+  label 必須帶可見前綴 `［療程背景］`（Ting 2026-08-28 裁定 / D31）。
+  **白名單寫死成一個常數**，不要用「id 前綴是 western_condition. 就放行」這種規則——
+  那等於沒有白名單，新的 legacy id 一樣會溜進來。
+- 驗證器加一條：picker 來源**不得** union 任何不在正典名冊、也不在 D31 白名單裡的 id。
+  **兩個負控都要有**：①塞一筆白名單以外的假 legacy id → 必須 FAIL；
+  ②把某一筆白名單記錄的 `［療程背景］` 標示拿掉 → 必須 FAIL（標示是裁定的一部分，不是裝飾）。
 
 ### 3.3 不派給誰
 
@@ -132,8 +140,11 @@ node scripts/build-data.js && node scripts/check-validation-ratchet.js
 
 ---
 
-## 4. 現在卡住的只有一件事
+## 4. 裁定狀態
 
-**桶 3 那 5 筆療程背景記錄**：Ting 臨床上會不會用到「這一診在 IVF 週期／胚胎植入後／黃體期支持」
-這種標記？會用 → 保留＋加標示（我的建議）；不會用 → 18 筆一起撤，選單全清。
-**1b-i 不等這個答案。**
+**桶 3 已於 2026-08-28 裁定完畢（保留＋加標示，D31）。G1 沒有任何一項還在等裁定——1b-i 與 1b-ii 都可以開工。**
+
+仍然開著、但**不擋 9/05** 的兩件事，另案處理，不要塞進這次 PR：
+
+1. 「療程背景」自己的欄位（長期正解）——要動 schema，D30 凍結後走 additive ＋ 基準更新。
+2. 桶 1 那 7 張正典卡的內容搬運（3 張 `skeleton`、7 張全無 `workflow_links`/`medication_links`）。

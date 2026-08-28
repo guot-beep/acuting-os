@@ -1017,3 +1017,32 @@ PASS(composition 查無藥材維持 1 味次 `formula.huang_tu_tang` 的「灶�
 - **Reconsider only if**:H2 localStorage→SQLite 遷移 —— 那是 D12 自己
   明列的計畫內例外,走 `--force-rebaseline` 並在 DECISIONS 記錄。
 
+
+## D31 — 臨床 picker 身分衛生:退役卡不上選單,legacy 診斷 id 只留 5 筆療程背景 · LOCKED(2026-08-28,Ting:「保留＋加標示」,對 G1 桶 3)
+
+- **What**:臨床輸入的 7 個 picker(`point`/`formula`/`herb`/`pattern`/`easternDisease`/
+  `symptom`/`westernCondition`)一律過濾 `review_status === "deprecated"`;
+  三個 picker 的 legacy union 收斂成一份**明文白名單**:
+  `western_condition.{male_factor_context, ovulatory_factor_context, ivf_cycle,
+  embryo_transfer, luteal_support}` **這 5 筆保留**,且 label 必須帶可見標示
+  (`［療程背景］`);其餘 13 筆(12 筆有 1:1 正典對應 + 胎漏胎動不安)撤出選單;
+  `patternPickerOptions` 的 `conditions.tcm_patterns` union 整個移除。
+  picker 的 `terms` 補上 `aliases_zh`/`aliases_en`。
+- **Why now**:這些欄位的文字框是 `hidden`,**picker 是唯一的鑄造路徑**——
+  選單上有兩列同名(心腎不交/肝火上炎/肝風內動 各一退役一正典,無排卵/月經不調等
+  7 組 legacy 與正典逐字同名),她選哪一個哪一個就永久寫進病歷。9/05 開始每一診都在發生。
+  同一條 gate D15/D17 對 `med.*` 已經裁過並修過一次,只是從沒套到證型/病名/中藥/方劑。
+- **判定**:退役 id **不得出現在任何 picker**(無例外);legacy namespace id 只有上列
+  5 筆例外,且必須有可見標示;白名單以外的 legacy id 出現在 picker 來源 → FAIL。
+  資料層不動——D23 明文允許 staging 檔保留 legacy namespace,本裁定只管輸入層。
+- **那 5 筆為什麼例外**:508 張正典病名卡查無對應(實測),而它們記的是
+  「這一診在療程的哪一段」,不是病名。撤下等於讓她沒地方記,而它們**不跟任何正典卡同名**,
+  不製造 G1 要擋的那種身分分裂。
+- **不擋但要記著**:①長期正解是給「療程背景」自己的欄位(不是病名欄)——動 schema,
+  D30 凍結後走 additive + 基準更新,不擠在 9/05 前。②桶 1 的 7 張西醫正典卡有 3 張是
+  `skeleton`(13 欄),7 張全部沒有 `workflow_links`/`medication_links`(那些接線只活在
+  legacy staging 記錄裡)——撤下後卡片較薄,搬運工作另案。
+- **負控是硬要求**:從任一 picker 拿掉過濾 → 驗證器必須 FAIL;塞一筆白名單以外的
+  legacy id 進 fixture → 必須 FAIL。自測綠不算數的同一條理由。
+- **Reconsider only if**:「療程背景」欄位落地 —— 那 5 筆一併撤出病名 picker。
+- **出處**:`docs/audits/G1_LEGACY_PICKER_RULING_2026-08-28.md`(裁定與重導對照表全文)。
