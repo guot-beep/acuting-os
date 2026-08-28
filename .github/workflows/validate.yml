@@ -512,6 +512,16 @@ jobs:
       # (移除欄位、改型別、信封鍵改名、key 改名、--update 拒絕追認破壞、
       # 純新增放行)。要破壞性變更:先寫遷移腳本+測試資料上跑過+記 DECISIONS,
       # 再用 --force-rebaseline "<理由>"。
+      # D31 臨床 picker 身分衛生:這些欄位的文字框是 hidden,picker 是唯一的鑄造
+      # 路徑 —— 選單上出現什麼,病歷裡就永久存下什麼。退役卡不得上架;legacy
+      # 命名空間只有白名單那 5 筆療程背景可留,且必須帶［療程背景］標示。
+      # 檢查方式是真的把 picker 跑起來(vm + 出貨的 knowledge_*.js),不是掃字串。
+      # 負控 7/7 每次 CI 都跑,全在 os.tmpdir 副本上做。
+      - name: D31 clinical picker hygiene
+        run: node scripts/validate-picker-hygiene.js
+      - name: D31 picker hygiene — negative controls (7/7)
+        run: node scripts/validate-picker-hygiene.js --self-test
+
       - name: D12 clinical contract freeze (additive-only)
         run: node scripts/validate-clinical-contract-freeze.js
 

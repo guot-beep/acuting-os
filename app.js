@@ -6742,15 +6742,19 @@ function renderAdverseEventRows(rows) {
  * 兩者不重複:自由文字是「為什麼」,這裡是**哪一個證型、有沒有被排除** ——
  * 只有後者能被 usedIn 反查與月審統計拿去用。
  *
- * 證型清單刻意用跟 patternPickerOptions 同一批來源(patternLibrary + 舊
- * conditions.tcm_patterns),否則這裡選出來的 id 會跟 tcmPatternSelections
- * 對不起來,反查就會斷。 */
+ * 證型清單刻意用跟 patternPickerOptions **同一批來源**,否則這裡選出來的 id 會跟
+ * tcmPatternSelections 對不起來,反查就會斷。
+ *
+ * D31(2026-08-28):來源同步縮成只有 patternLibrary —— picker 那邊的
+ * `conditions.tcm_patterns` union 已拆除(那 8 筆的 id 全都存在於正典
+ * patternLibrary,dedupe 又是 first-wins,所以拆掉零行為變化)。這裡跟著拆,
+ * 「同一批來源」這句話才繼續是真的;兩邊是否對齊由
+ * scripts/validate-picker-hygiene.js 每次 CI 驗一次,不靠這段註解自律。 */
 function patternDifferentialVocab() {
   const k = globalThis.ACUTING_KNOWLEDGE || {};
   const lib = k.patternLibrary?.records || [];
-  const old = k.conditions?.tcm_patterns || [];
   const seen = new Set();
-  return [...lib, ...old].filter((p) => {
+  return lib.filter((p) => {
     if (!p || !p.id || seen.has(p.id)) return false;
     seen.add(p.id);
     return p.review_status !== "deprecated";
@@ -8568,8 +8572,47 @@ function renderCaseTags(item) {
 // (form save/serialize is unchanged); we hide it and drive its value from chips.
 const linkPickerControllers = {};
 
+/* D31(2026-08-28)— 臨床 picker 身分衛生。
+ *
+ * 這些欄位的文字框被 enhanceLinkField() 設成 hidden,**picker 是唯一的鑄造
+ * 路徑**:選單上出現什麼,病歷裡就永久存下什麼。所以退役卡一律不得上架。
+ *
+ * 正確寫法同一份檔案裡早就有 —— patternDifferentialVocab() 的
+ * `p.review_status !== "deprecated"`,它的註解還寫明自己跟 patternPickerOptions
+ * 同源,只是那個過濾從來沒套到 picker 上。D15/D17 對 med.* 裁過同一條
+ * (「a Visit saved after the migration must never MINT a new med.* reference」),
+ * 也同樣沒套到證型/病名/中藥/方劑。這裡補齊。 */
+function pickerLive(records) {
+  return (records || []).filter((r) => r && r.review_status !== "deprecated");
+}
+
+/* 搜尋詞。D21 把泛稱「沙參」併進 herb.bei_sha_shen.aliases_zh 那一步,在輸入層
+ * 等於沒生效 —— 舊的 terms 只串 name_zh/pinyin/name_en/id,搜不到別名,於是打
+ * 「沙參」跳出來的第三列是 D21 退役的 herb.sha_shen。別名一併納入。 */
+function pickerTerms(r, extra) {
+  return `${r.name_zh || ""} ${r.pinyin || ""} ${r.name_en || ""} ${(r.aliases_zh || []).join(" ")} ${(r.aliases_en || []).join(" ")} ${extra || ""} ${r.id}`.toLowerCase();
+}
+
+/* D31 桶 3(Ting:「保留＋加標示」)— legacy `western_condition.*` 只有這 5 筆留在
+ * 選單。它們記的是「這一診在療程的哪一段」,不是病名;508 張正典病名卡查無對應,
+ * 撤掉等於讓她沒地方記,而它們不跟任何正典卡同名,不製造 G1 要擋的那種身分分裂。
+ * 其餘 7 筆有 1:1 正典對應(重導對照表見 docs/audits/
+ * G1_LEGACY_PICKER_RULING_2026-08-28.md),一律走正典 id。
+ *
+ * 白名單**寫死成常數**:用「id 前綴是 western_condition. 就放行」那種規則等於
+ * 沒有白名單 —— 下一筆 legacy id 一樣會溜進來。 */
+const TREATMENT_CONTEXT_PICKER_ALLOWLIST = [
+  "western_condition.male_factor_context",
+  "western_condition.ovulatory_factor_context",
+  "western_condition.ivf_cycle",
+  "western_condition.embryo_transfer",
+  "western_condition.luteal_support",
+];
+/* 標示是裁定的一部分,不是裝飾:沒有它,選單上分不出哪一列是 legacy 命名空間。 */
+const TREATMENT_CONTEXT_LABEL_PREFIX = "［療程背景］";
+
 function pointPickerOptions() {
-  return points
+  return pickerLive(points)
     .filter((p) => p.code)
     .map((p) => ({
       value: p.code,
@@ -8580,11 +8623,11 @@ function pointPickerOptions() {
 }
 
 function formulaPickerOptions() {
-  const records = globalThis.ACUTING_KNOWLEDGE?.formulas?.records || [];
+  const records = pickerLive(globalThis.ACUTING_KNOWLEDGE?.formulas?.records);
   return records.map((f) => ({
     value: f.id,
     label: `${f.name_zh || f.id}${f.pinyin ? " · " + f.pinyin : ""}`,
-    terms: `${f.name_zh || ""} ${f.pinyin || ""} ${f.name_en || ""} ${f.id}`.toLowerCase(),
+    terms: pickerTerms(f),
     meta: f.pinyin || f.name_en || "",
   }));
 }
@@ -8592,11 +8635,11 @@ function formulaPickerOptions() {
 // Gate 3 herb.* structured capture path — same shape as formulaPickerOptions,
 // reading the herb canon shortlist instead of the formula library.
 function herbPickerOptions() {
-  const records = globalThis.ACUTING_KNOWLEDGE?.herbs?.records || [];
+  const records = pickerLive(globalThis.ACUTING_KNOWLEDGE?.herbs?.records);
   return records.map((h) => ({
     value: h.id,
     label: `${h.name_zh || h.id}${h.pinyin ? " · " + h.pinyin : ""}`,
-    terms: `${h.name_zh || ""} ${h.pinyin || ""} ${h.name_en || ""} ${h.id}`.toLowerCase(),
+    terms: pickerTerms(h),
     meta: h.pinyin || h.name_en || "",
   }));
 }
@@ -8878,25 +8921,31 @@ function dedupeOptions(list) {
 }
 
 function patternPickerOptions() {
+  /* D31:原本還 union 了 `k.conditions.tcm_patterns`(8 筆)。那 8 筆的 id 全都
+   * 存在於正典 patternLibrary,而 dedupeOptions 是 first-wins、正典排在前面,
+   * 所以它們一列都上不了畫面 —— 今天無害,但那是引信:任何人往那份 staging
+   * 加一筆正典沒有的 id,它就會無聲出現在選單上。拆掉。 */
   const k = globalThis.ACUTING_KNOWLEDGE || {};
-  const lib = k.patternLibrary?.records || [];
-  const old = k.conditions?.tcm_patterns || [];
-  return dedupeOptions([...lib, ...old].map((p) => ({
+  const lib = pickerLive(k.patternLibrary?.records);
+  return dedupeOptions(lib.map((p) => ({
     value: p.id,
     label: `${p.name_zh || p.id}${p.name_en ? " · " + p.name_en : ""}`,
-    terms: `${p.name_zh || ""} ${p.name_en || ""} ${p.id}`.toLowerCase(),
+    terms: pickerTerms(p),
     meta: p.id,
   })));
 }
 
 function easternDiseasePickerOptions() {
+  /* D31:6 筆 `eastern_disease.*` 全部撤下 —— 5 筆與正典 tdis.* 中文名逐字相同
+   * (不孕/月經不調/月經後期/閉經/痛經),第 6 筆「胎漏胎動不安相關情境」在正典
+   * 是拆開的兩張(tdis.tai_lou / tdis.tai_dong_bu_an),撤下後當場選比混成一列
+   * 更精確。 */
   const k = globalThis.ACUTING_KNOWLEDGE || {};
-  const tdis = k.tdisRegistry?.records || [];
-  const old = k.conditions?.eastern_diseases || [];
-  return dedupeOptions([...tdis, ...old].map((d) => ({
+  const tdis = pickerLive(k.tdisRegistry?.records);
+  return dedupeOptions(tdis.map((d) => ({
     value: d.id,
     label: `${d.name_zh || d.id}${d.pinyin ? " · " + d.pinyin : (d.name_en ? " · " + d.name_en : "")}`,
-    terms: `${d.name_zh || ""} ${d.pinyin || ""} ${d.name_en || ""} ${d.id}`.toLowerCase(),
+    terms: pickerTerms(d),
     meta: d.id,
   })));
 }
@@ -8904,25 +8953,37 @@ function easternDiseasePickerOptions() {
 // Gate 3 sym.* structured capture path — same shape as
 // easternDiseasePickerOptions, reading the symptom vocabulary instead of tdis.
 function symptomPickerOptions() {
-  const records = globalThis.ACUTING_KNOWLEDGE?.symptoms?.records || [];
+  const records = pickerLive(globalThis.ACUTING_KNOWLEDGE?.symptoms?.records);
   return records.map((s) => ({
     value: s.id,
     label: `${s.name_zh || s.id}${s.pinyin ? " · " + s.pinyin : (s.name_en ? " · " + s.name_en : "")}`,
-    terms: `${s.name_zh || ""} ${s.pinyin || ""} ${s.name_en || ""} ${(s.aliases_zh || []).join(" ")} ${(s.aliases_en || []).join(" ")} ${s.id}`.toLowerCase(),
+    terms: pickerTerms(s),
     meta: s.id,
   }));
 }
 
 function westernConditionPickerOptions() {
+  /* D31:正典 508 張全上;legacy `western_condition.*` 只有白名單那 5 筆療程背景
+   * 留下,且必須帶可見前綴。其餘 7 筆(pcos / anovulation /
+   * unexplained_infertility / diminished_ovarian_reserve / insulin_resistance /
+   * endometriosis_context / recurrent_pregnancy_loss_context)都有 1:1 正典
+   * 對應,撤下。 */
   const k = globalThis.ACUTING_KNOWLEDGE || {};
-  const canon = k.conditionCanon?.records || [];
-  const old = k.conditions?.records || [];
-  return dedupeOptions([...canon, ...old].map((c) => ({
+  const canon = pickerLive(k.conditionCanon?.records).map((c) => ({
     value: c.id,
     label: `${c.name_zh || c.id}${c.name_en ? " · " + c.name_en : ""}`,
-    terms: `${c.name_zh || ""} ${c.name_en || ""} ${c.icd_hint || ""} ${c.id}`.toLowerCase(),
+    terms: pickerTerms(c, c.icd_hint),
     meta: c.icd_hint || c.id,
-  })));
+  }));
+  const treatmentContext = pickerLive(k.conditions?.records)
+    .filter((c) => TREATMENT_CONTEXT_PICKER_ALLOWLIST.includes(c.id))
+    .map((c) => ({
+      value: c.id,
+      label: `${TREATMENT_CONTEXT_LABEL_PREFIX}${c.name_zh || c.id}${c.name_en ? " · " + c.name_en : ""}`,
+      terms: pickerTerms(c, `${c.icd_hint || ""} 療程背景`),
+      meta: c.icd_hint || c.id,
+    }));
+  return dedupeOptions([...canon, ...treatmentContext]);
 }
 
 // INDEPENDENT_AUDIT_2026-08-11 #3-adjacent / TOP-10 #5: this picker used to
