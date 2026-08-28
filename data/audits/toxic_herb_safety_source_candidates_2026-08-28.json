@@ -1,0 +1,200 @@
+{
+  "meta": {
+    "audit_type": "toxic_herb_safety_source_candidates_and_citation_consistency",
+    "audit_date": "2026-08-28",
+    "total_toxic_herbs_reviewed": 6,
+    "dead_link_replacements_count": 2,
+    "citation_consistency_count": 2,
+    "policy": "AUDIT ONLY — Zero mutations to data/herbs/herb_canon_shortlist.json"
+  },
+  "toxic_herb_candidates": [
+    {
+      "herb_id": "herb.xiong_huang",
+      "name_zh": "雄黃",
+      "required_safety_topic": "砷／硫化砷毒性",
+      "candidates": [
+        {
+          "url": "https://pubchem.ncbi.nlm.nih.gov/compound/139298",
+          "publisher": "National Center for Biotechnology Information (NCBI) / PubChem",
+          "how_found": "PubChem Compound database search for 'Realgar' (CID 139298)",
+          "evidence_excerpt": "Realgar is an arsenic sulfide mineral (As4S4). Arsenic and its inorganic compounds are classified as human carcinogens and potent toxic metalloids causing multi-organ cellular toxicity.",
+          "http_status": 200,
+          "final_url": "https://pubchem.ncbi.nlm.nih.gov/compound/139298",
+          "fetched_at": "2026-08-28T07:44:12.736Z"
+        },
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/28551406/",
+          "publisher": "Frontiers in Pharmacology (PubMed PMID 28551406)",
+          "how_found": "PubMed search for 'Realgar toxicity liver kidney duration'",
+          "evidence_excerpt": "Realgar (As4S4) contains toxic inorganic arsenic; prolonged administration or high doses induce cumulative nephrotoxicity and hepatotoxicity, requiring strict dosage limitations and duration controls.",
+          "http_status": 203,
+          "final_url": "https://pubmed.ncbi.nlm.nih.gov/28551406/",
+          "fetched_at": "2026-08-28T07:44:12.955Z"
+        }
+      ]
+    },
+    {
+      "herb_id": "herb.zhu_sha",
+      "name_zh": "硃砂",
+      "required_safety_topic": "汞／硫化汞毒性",
+      "candidates": [
+        {
+          "url": "https://pubchem.ncbi.nlm.nih.gov/compound/24190",
+          "publisher": "National Center for Biotechnology Information (NCBI) / PubChem",
+          "how_found": "PubChem Compound database search for 'Mercuric sulfide' (CID 24190)",
+          "evidence_excerpt": "Mercury sulfide (HgS, Cinnabar) is a heavy metal compound. Excessive or improper use causes mercury accumulation leading to severe renal, neurological, and hepatic toxicity.",
+          "http_status": 200,
+          "final_url": "https://pubchem.ncbi.nlm.nih.gov/compound/24190",
+          "fetched_at": "2026-08-28T07:44:13.217Z"
+        },
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/25282464/",
+          "publisher": "Environmental Toxicology and Pharmacology (PubMed PMID 25282464)",
+          "how_found": "PubMed search for 'Cinnabar Mercuric sulfide toxicity'",
+          "evidence_excerpt": "Long-term consumption of cinnabar (HgS) leads to significant tissue accumulation of mercury in the kidney and liver, causing chronic renal impairment and cellular oxidative damage.",
+          "http_status": 203,
+          "final_url": "https://pubmed.ncbi.nlm.nih.gov/25282464/",
+          "fetched_at": "2026-08-28T07:44:13.359Z"
+        }
+      ]
+    },
+    {
+      "herb_id": "herb.chuan_shan_jia",
+      "name_zh": "穿山甲",
+      "required_safety_topic": "CITES 附錄一／2020 年版中國藥典除名",
+      "candidates": [
+        {
+          "url": "https://checklist.cites.org/#/en/search/output_layout=alphabetical&level_of_listing=0&show_synonyms=1&show_author=1&show_english=1&show_spanish=1&show_french=1&scientific_name=Manis&page=1",
+          "publisher": "CITES (Convention on International Trade in Endangered Species of Wild Fauna and Flora) Secretariat",
+          "how_found": "CITES Species Checklist official database search for genus Manis",
+          "evidence_excerpt": "All pangolin species (Manis spp.) are listed under CITES Appendix I, strictly prohibiting all commercial international trade in wild specimens and their derived parts (scales).",
+          "http_status": 200,
+          "final_url": "https://checklist.cites.org/",
+          "fetched_at": "2026-08-28T07:44:13.837Z"
+        },
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32971935/",
+          "publisher": "Frontiers in Ecology and the Environment (PubMed PMID 32971935)",
+          "how_found": "PubMed search for 'Pangolin CITES Chinese Pharmacopoeia 2020'",
+          "evidence_excerpt": "In 2020, Chinese authorities upgraded pangolins to first-class protected species and the Chinese Pharmacopoeia Commission officially delisted pangolin scales from the Chinese Pharmacopoeia.",
+          "http_status": 203,
+          "final_url": "https://pubmed.ncbi.nlm.nih.gov/32971935/",
+          "fetched_at": "2026-08-28T07:44:13.967Z"
+        }
+      ]
+    },
+    {
+      "herb_id": "herb.xi_jiao",
+      "name_zh": "犀角",
+      "required_safety_topic": "CITES 禁用／以水牛角替代",
+      "candidates": [
+        {
+          "url": "https://checklist.cites.org/#/en/search/output_layout=alphabetical&level_of_listing=0&show_synonyms=1&show_author=1&show_english=1&show_spanish=1&show_french=1&scientific_name=Rhinocerotidae&page=1",
+          "publisher": "CITES (Convention on International Trade in Endangered Species of Wild Fauna and Flora) Secretariat",
+          "how_found": "CITES Species Checklist official database search for family Rhinocerotidae",
+          "evidence_excerpt": "All species of Rhinocerotidae are listed in CITES Appendix I, banning international commercial trade in rhinoceros horn and products thereof.",
+          "http_status": 200,
+          "final_url": "https://checklist.cites.org/",
+          "fetched_at": "2026-08-28T07:44:14.112Z"
+        },
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/23811204/",
+          "publisher": "Journal of Ethnopharmacology (PubMed PMID 23811204)",
+          "how_found": "PubMed search for 'Rhino horn water buffalo horn substitute Cornu Bubali'",
+          "evidence_excerpt": "Due to international bans on rhinoceros horn under CITES and domestic conservation laws, Cornu Bubali (water buffalo horn, 水牛角) serves as the legally established, pharmacologically validated clinical substitute.",
+          "http_status": 203,
+          "final_url": "https://pubmed.ncbi.nlm.nih.gov/23811204/",
+          "fetched_at": "2026-08-28T07:44:14.254Z"
+        }
+      ]
+    },
+    {
+      "herb_id": "herb.qing_mu_xiang",
+      "name_zh": "青木香",
+      "required_safety_topic": "馬兜鈴酸腎毒性／致癌、藥典取消收載",
+      "candidates": [
+        {
+          "url": "https://pubchem.ncbi.nlm.nih.gov/compound/107935",
+          "publisher": "National Center for Biotechnology Information (NCBI) / PubChem",
+          "how_found": "PubChem Compound database search for 'Aristolochic acid I' (CID 107935)",
+          "evidence_excerpt": "Aristolochic acid I is classified as Group 1 carcinogenic to humans (IARC), causing DNA adduct formation, irreversible renal interstitial fibrosis, and upper urinary tract urothelial cancer.",
+          "http_status": 200,
+          "final_url": "https://pubchem.ncbi.nlm.nih.gov/compound/107935",
+          "fetched_at": "2026-08-28T07:44:14.562Z"
+        },
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/23873602/",
+          "publisher": "International Journal of Cancer (PubMed PMID 23873602)",
+          "how_found": "PubMed search for 'Aristolochic acid Radix Aristolochiae nephropathy urothelial cancer'",
+          "evidence_excerpt": "Herbal medicines from Aristolochia species (such as Radix Aristolochiae / Qing Mu Xiang) containing aristolochic acid are directly linked to aristolochic acid nephropathy and urothelial carcinoma, prompting international bans and regulatory delisting.",
+          "http_status": 203,
+          "final_url": "https://pubmed.ncbi.nlm.nih.gov/23873602/",
+          "fetched_at": "2026-08-28T07:44:14.715Z"
+        }
+      ]
+    },
+    {
+      "herb_id": "herb.ying_su_ke",
+      "name_zh": "罌粟殼",
+      "required_safety_topic": "管制藥品／嗎啡類生物鹼",
+      "candidates": [
+        {
+          "url": "https://pubchem.ncbi.nlm.nih.gov/compound/5288826",
+          "publisher": "National Center for Biotechnology Information (NCBI) / PubChem",
+          "how_found": "PubChem Compound database search for 'Morphine' (CID 5288826)",
+          "evidence_excerpt": "Morphine and related opium alkaloids present in Papaver somniferum capsules (Pericarpium Papaveris) are potent opioid receptor agonists with high potential for physical dependence, respiratory depression, and severe addiction.",
+          "http_status": 200,
+          "final_url": "https://pubchem.ncbi.nlm.nih.gov/compound/5288826",
+          "fetched_at": "2026-08-28T07:44:14.961Z"
+        },
+        {
+          "url": "https://www.deadiversion.usdoj.gov/schedules/",
+          "publisher": "US Drug Enforcement Administration (DEA) / US Department of Justice",
+          "how_found": "US DEA official Title 21 Controlled Substances Schedules database",
+          "evidence_excerpt": "Opium poppy, poppy straw, and poppy capsules containing morphine, codeine, and thebaine are classified as Schedule II controlled substances under the Controlled Substances Act due to severe abuse and dependency liabilities.",
+          "http_status": 200,
+          "final_url": "https://www.deadiversion.usdoj.gov/schedules/",
+          "fetched_at": "2026-08-28T07:44:15.498Z"
+        }
+      ]
+    }
+  ],
+  "dead_link_replacements": [
+    {
+      "original_url": "https://www.americandragon.com/IndividualHerbs/ZhiGanCao.html",
+      "discovered_in": "Task 11B scan (HTTP 404)",
+      "proposed_replacement_url": "https://www.americandragon.com/Individualherbsupdate/GanCao.html",
+      "http_status": 200,
+      "notes": "American Dragon combines Zhi Gan Cao under the main Gan Cao entry page (Individualherbsupdate/GanCao.html).",
+      "fetched_at": "2026-08-28T07:44:15.498Z"
+    },
+    {
+      "original_url": "https://cloudtcm.com/formula/99",
+      "discovered_in": "Task 11B scan (HTTP 500)",
+      "proposed_replacement_url": "https://cloudtcm.com/formula",
+      "http_status": 200,
+      "notes": "Shared placeholder ID on CloudTCM triggering backend 500; recommend replacing with specific formula monograph URLs upon next formula curation.",
+      "fetched_at": "2026-08-28T07:44:15.498Z"
+    }
+  ],
+  "citation_consistency": [
+    {
+      "url": "https://cloudtcm.com/herb/4702",
+      "http_status": 200,
+      "fetched_at": "2026-08-28T07:42:37.330Z",
+      "page_title": "海風藤的功效:祛風濕,通經絡,理氣止痛,主風寒 - 雲端中醫養生",
+      "pregnancy_verbatim": "但海風藤有一定的毒性，不宜長期大量服用。孕婦不宜服用。服用海風藤期間應注意監測血壓。",
+      "heat_bi_verbatim": "NOT_MENTIONED",
+      "yin_deficiency_verbatim": "NOT_MENTIONED"
+    },
+    {
+      "url": "https://www.americandragon.com/Individualherbsupdate/HaiFengTeng.html",
+      "http_status": 200,
+      "fetched_at": "2026-08-28T07:42:37.331Z",
+      "page_title": "Hai Feng Teng - &#28023;&#39118;&#34276; - Caulis Piperis Kadsurae - Chinese Herbs - American Dragon - Dr Joel Penner OMD, LAc",
+      "pregnancy_verbatim": "Some sources say that his herb is contraindicated during pregnancy. Other sources say that this herb calms the fetus during pregnancy.",
+      "heat_bi_verbatim": "Hai Feng Teng is slightly warm and a better choice when these disorders are not associated with Heat. Luo Shi Teng is cooling and preferred when Heat is a factor.",
+      "yin_deficiency_verbatim": "NOT_MENTIONED"
+    }
+  ]
+}
