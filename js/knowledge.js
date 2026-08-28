@@ -1422,6 +1422,25 @@
       // printed a column of 待補. The field is NOT deleted from the data —
       // §0 — it simply no longer occupies a column on the card.
       const decoctionDose = doseValue(item.decoction_reference_g || item.decoction_dose_g || item.dose_range);
+      /* D29 基準標示(2026-08-27):這一欄的數字混裝過至少三種互不可比的基準。
+         至寶丹雄黃 30g 是**整批製方量**(成品每丸 3g、一次一丸),而單味藥典
+         上限是 0.05–0.1g —— 不標基準,同一格數字就是 300 倍的誤讀。A3 查證
+         推翻了「劑量錯很多倍」的原判:錯的是欄位語意不是數字,所以修法是
+         把基準說出來,不是改數字。
+         只有標過 dose_basis 的列才顯示標籤 —— 340 列 ≥30g 裡目前只有 3 列
+         有來源支持,其餘留空是誠實的(D29:沒有來源就不標)。 */
+      const BASIS_LABEL = {
+        formula_batch_amount: "整批製方量",
+        per_unit_exposure: "成品單位量",
+        adult_daily_herb_dose: "單味日劑量",
+        classical_text_amount: "古籍原文量",
+        raw_material_equivalent: "原料等價量",
+      };
+      const basisTag = item.dose_basis && BASIS_LABEL[item.dose_basis]
+        ? `<small class="k-dose-basis" title="${esc(String(item.dose_basis_note_zh || ""))}">${esc(BASIS_LABEL[item.dose_basis])}</small>`
+        : (item.dose_basis_status === "malformed"
+          ? `<small class="k-dose-basis k-dose-basis-warn" title="${esc(String(item.dose_basis_note_zh || ""))}">基準未定</small>`
+          : "");
       const granuleDose = doseValue(item.granule_reference_g || item.granule_dose_g);
       const granuleContext = [usableText(item.granule_concentration_ratio), usableText(item.granule_brand)].filter(Boolean).join(" · ");
       // What this herb does IN THIS FORMULA (Ting: 加上每一味要在這個方劑的功效, 中文就好).
@@ -1441,7 +1460,7 @@
       return `<tr>
         <th scope="row"><div>${herb ? relationButton(herb.id, label, "herb") : `<span>${esc(label)}</span>`}${role ? `<small>${esc(role)}</small>` : ""}</div></th>
         <td class="k-dose-role">${roleReasonHtml ? roleReasonHtml : '<span class="k-detail-empty">—</span>'}</td>
-        <td>${esc(decoctionDose)}</td>
+        <td>${esc(decoctionDose)}${basisTag}</td>
         ${showGranule ? `<td><strong>${esc(granuleDose)}</strong>${granuleContext ? `<small>${esc(granuleContext)}</small>` : ""}</td>` : ""}
       </tr>`;
     }).join("");

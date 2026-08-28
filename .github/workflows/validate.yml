@@ -469,6 +469,13 @@ jobs:
 
       # D29(2026-08-27 Ting 裁定):dose_basis 受控詞彙與一致性。標了就必須合規;
       # 未標不是缺陷(未判定)。負控 3/3 已驗(非法 enum/換算未自陳/非法 status)。
+      # D29 續:標了基準就必須顯示。資料層做對不等於畫面說對 ——
+      # 至寶丹雄黃的 dose_basis 早在資料裡,渲染層卻只讀 decoction_reference_g,
+      # 線上那格就是沒有任何限定語的「30g」(單味藥典上限 0.05-0.1g)。
+      # 負控 3/3 已驗(不讀欄位/少一個標籤/無 malformed 分支)。
+      - name: dose_basis is actually rendered
+        run: node scripts/validate-dose-basis-render.js
+
       - name: dose_basis controlled vocabulary
         run: node scripts/validate-dose-basis.js
 

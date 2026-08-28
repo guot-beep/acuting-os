@@ -7914,3 +7914,16 @@ html { scroll-padding-top: 92px; }
   font-size: 0.95em;
   opacity: 0.92;
 }
+
+/* D29 劑量基準標籤(2026-08-27)。刻意做成同格內的小字而不是另一欄:
+   340 列裡目前只有 3 列標得出基準,開一整欄會讓 337 格空白看起來像資料
+   壞了。基準未定(malformed)用警示色 —— 那是「這個數字現在不能信」,
+   與「已查證是整批量」不是同一件事。 */
+.k-dose-basis {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.72em;
+  color: #6b7280;
+  white-space: nowrap;
+}
+.k-dose-basis-warn { color: #b45309; font-weight: 600; }
