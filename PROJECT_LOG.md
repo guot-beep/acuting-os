@@ -1,3 +1,41 @@
+# 2026-08-27 — Claude 獨立驗收 Task 11A/11B/11C:全數通過,已落地(含一次自己抓到的驗證誤判)
+
+**11A(7 味有毒/管制藥材 safety_source_url 連線驗證)**：獨立打 `xiong_huang` 的網址確認頁面真實
+存在、內容跟帳本聲稱一致(Realgar／孕婦禁忌)；`PAGE_EXISTS_BUT_NO_SAFETY_CONTENT` 這種誠實的
+細緻判定(不是灌水成「有」)本身就是可信的訊號。
+
+**11B(565 個 distinct URL 全庫 link-rot 掃描 + 雙站負控)**：**負控我自己也打了一次**——
+`cloudtcm.com`／`americandragon.com` 對編造的假頁面都回真 404，不是 soft-404，跟帳本聲稱一致，
+後續 200 是有效存在證明。
+
+**11C(95 筆中藥引用網址補齊，會動資料)**：這條最花時間，中間我自己一度誤判成嚴重違規——
+
+用 handoff 派工當時寫的 `MEASURED TREE`(舊 SHA)跑 `--verify-fill`，抓到 9 張中藥卡的 `key_pairs`
+被清空/截短，一度以為 Task 11C 違反了「只准動兩個 URL 欄位」的鐵律。**查證後發現是我自己用錯了
+比較基準**：main 在 Task 11C 開工之後、我複核之前，又落地了一輪「考綱歸屬核對」(24 項假 NCBAHM
+宣稱訂正)，那批**才是**清掉/訂正這些 `key_pairs` 條目的真正原因，跟 Task 11C 的網址填寫完全無關。
+改用 rebase 後 Task 11C 分支鏈緊接的正確 parent commit 重跑 `--verify-fill`，四項全 PASS
+(coverage 95/95、零無關異動、零覆蓋既有值、帳本 80 筆跟資料端 80 個新填欄位完全吻合)。
+**這次巡檢的教訓寫進來備查**：handoff 派工時寫的 `MEASURED TREE` SHA 只是開工當下的快照，main 動得快，
+複核時要用「當下」的正確基準重跑，不能沿用派工時寫死的舊 SHA，否則會把別人的正當修正錯判成違規。
+
+抽查了 2 筆 FILLED 網址(`herb.tao_ren`／`herb.niu_xi`)跟 1 筆 NO_SOURCE_FOUND(`herb.yin_xing`)：
+前兩筆自己打開網址確認內容真的對得上；`herb.yin_xing` 標「查無專屬條目」查證後也站得住腳——
+`cloudtcm.com` 上「銀杏」只是「白果」條目裡的植物學名稱，不是獨立索引頁，跟卡上 `bai_guo` 已有
+的來源不是同一件事，不能硬套。
+
+**驗證**：`--self-test` 8/8、`--verify-fill --base b750ae67`(rebase 後正確 parent)全 PASS、
+`build-data`／`validate-herb-standard`／`check-validation-ratchet`(0 退步)／`validate-content-junk`
+全 PASS。落地推送前後各 fetch 一次(main 動很快，rebase 時 `herb_canon_shortlist.json` 乾淨自動合併，
+只有 generated 檔案照例衝突、跑 build-data.js 重新產生解決)，推完用全新 clone 獨立複核過一次，
+結果一致。
+
+`data/herbs/herb_canon_shortlist.json`：`exact_source_url` 265/364 (73%) → 345/364 (95%)；
+`safety_source_url` 348/364 (95%) → 350/364 (96%)。80 個欄位填入、31 個誠實留空(附原因)、
+4 張 deprecated 卡與其他欄位 0 異動。已推上 `origin/main`(`b36f0d29`)。
+
+---
+
 # 2026-08-27 — Ting 裁定第 4、7 項:第 4 項你 8/14 就做完了不必再做;第 7 項兩味都無來源,不建卡,開派工單
 
 ## 第 4 項「可以合併但是要標註」——已經做完了,不再動
