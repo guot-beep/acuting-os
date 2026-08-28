@@ -1,3 +1,84 @@
+# 2026-08-27 — 考綱官方對藥遷移第 1 批(活血化瘀組):8 條從卡上自由文字補成 herb_pairs 記錄
+
+承同日「藥對雙軌併集」條目的 backlog:51 條考綱官方對藥只以自由文字活在藥單卡的
+`key_pairs`,藥對層查無 —— 進不了藥對頁、沒有七情、沒有主治欄、方劑卡也帶不出來。
+本批做活血化瘀組 5 味(丹參/桃仁/紅花/延胡索/雞血藤)的 8 條。**pairs 218 → 226,既有 218 筆
+逐筆比對零改動,無刪除。**
+
+## 照既有先例,不發明新形狀
+`pair.rel.board_exam` 這個關係已存在(`board_import_2026` 那 18 筆在用),所以不必為考綱對藥
+自創七情分類。沿用該形狀:`relation: pair.rel.board_exam` + `board_exam_pair: true`,
+並比先例填得更實 —— 先例的 `pair_meaning` 是「（待補充配伍意義）」樣板句,本批有卡上既有的
+`rationale_zh` 可搬,不留樣板。
+
+## 寫進去之前先查掉的四個坑
+1. **代表方已有方劑卡**:丹參飲/大黃牡丹湯/葦莖湯/桃紅四物湯/四物湯 5 首全部已存在。
+   先例(白芍配甘草 ↔ 芍藥甘草湯)確認「藥對等於整方組成」是可接受的,靠 `found_in_formulas` 連回去。
+2. **`葦莖` 不在正典**。本庫解為 `herb.lu_gen` 蘆根 —— `formula.wei_jing_tang` 組成自己就用
+   `herb.lu_gen`。故 herbs 陣列用 lu_gen,**不新建 herb.wei_jing、不留 pending 標記**,
+   並在 `teaching_note_zh` 明寫這個對應,不默默換掉。
+3. **`桃紅四物湯` 不可掛**:逐味比對組成後發現該方用**白芍**(herb.bai_shao),
+   不是本組合的**赤芍**(herb.chi_shao)。憑印象會掛錯,已剔除。8 條裡只有 3 條掛得上方劑。
+4. **id 與同組成重複**:8 個 id 與 8 組成員集合逐一比對現有 226 筆,零碰撞。
+
+## 8 條逐條(掛方欄空 = 查證後確實掛不上,不是漏填)
+| pair id | name_zh | found_in_formulas |
+|---|---|---|
+| `pair.dan_shen__tan_xiang__sha_ren` | 丹參配檀香、砂仁 | formula.dan_shen_yin |
+| `pair.dan_shen__hong_hua__tao_ren` | 丹參配紅花、桃仁 | — |
+| `pair.tao_ren__da_huang__mu_dan_pi` | 桃仁配大黃、牡丹皮 | formula.da_huang_mu_dan_tang |
+| `pair.tao_ren__lu_gen__dong_gua_zi__yi_yi_ren` | 桃仁配蘆根、冬瓜子、薏苡仁 | formula.wei_jing_tang |
+| `pair.hong_hua__dang_gui__chuan_xiong__chi_shao` | 紅花配當歸、川芎、赤芍 | —（白芍/赤芍之別,見上） |
+| `pair.yan_hu_suo__dang_gui__chuan_xiong__xiang_fu` | 延胡索配當歸、川芎、香附 | — |
+| `pair.ji_xue_teng__dang_gui__chuan_xiong__shu_di_huang` | 雞血藤配當歸、川芎、熟地黃 | — |
+| `pair.ji_xue_teng__sang_ji_sheng__du_huo` | 雞血藤配桑寄生、獨活 | — |
+
+## 來源與英文欄的誠實標示(兩件事請 Ting 過目)
+1. **Bastyr 考綱正本不在 repo**(`validate-herb-standard` 早就在警告:BASTYR 被 35 筆引用,
+   `curriculum/board/` 沒有那份考綱)。所以 `sources` **不寫**先例那種
+   「NCBAHM CH Content Outline 2026, Appendix B, p.16-17」式的具頁碼引用,改寫實話:
+   `herb_canon_shortlist:<card>.key_pairs（卡上標示「Bastyr 官方對藥」）` +
+   `unverified_outline:Bastyr 考綱正本不在 curriculum/board/，本條未能對正本核讀`。
+   `ncbahm_official_pair` 只有丹參飲那條為 true(卡上寫「Bastyr / NCBAHM」),其餘 false。
+2. **英文欄是我翻的,不是獨立來源**。卡上 8 條 `rationale_en` 全部是空的,只有中文。
+   schema_note 明文要求 every content field has _zh and _en,留空會生半套雙語對;
+   故 `pair_meaning_en`/`indication_en` 由中文如實英譯,並在
+   `field_sources` 標 `["translation_of_zh"]` 與 `["herb_card_key_pairs"]` 區分開來。
+   **如果 Ting 認為 AI 不該代譯,把這四欄清空即可,中文與其他欄位不受影響。**
+
+## 一個要裁的後果:遷移完成後,卡上的自由文字副本要不要退場?
+併集渲染的重複判定是嚴格集合相等,所以這 8 條一建好,**在來源藥自己的卡上就被判定為重複而濾掉**:
+- 丹參:authored 2 / 藥對層 3 / 判定重複 2 → 卡上結構化只顯示 1 條
+- 雞血藤:authored 2 / 藥對層 2 / 判定重複 2 → 卡上結構化顯示 0 條
+新內容在**其他成員藥**的卡上正常顯示(檀香/砂仁/蘆根/冬瓜子/大黃/牡丹皮…,已眼讀確認,
+帶可點成員、雙語配伍意義、雙語主治與代表方),藥對層也有了。但來源藥自己的卡仍只看得到
+舊的自由文字,看不到新的主治與掛方。
+憲法三「先搬到對的欄位,再改原欄位」的**後半段還沒做** —— 屬刪除,依規則等 Ting 點頭。
+點頭後動作:移除這 5 味卡上已遷移的 8 條 `key_pairs` 條目(一次批次,可逐條 diff 對照)。
+
+## 順帶紅旗(本批未動)
+`pair.rel.board_exam` 這個 relation id **不在 `data/config/herb_pair_relations.json` 的詞表裡**。
+渲染端 `PAIR_RELATIONS.get(pair.relation)` 取不到 → 關係標籤那一格直接不顯示。
+影響現在 26 筆(既有 18 + 本批 8),是既有問題非本批造成。補一筆詞表記錄即可,但那是
+七情詞表的內容決定(考綱對藥不是七情之一),留 Ting 裁。
+
+## 驗證(在 64427441 基底上全跑,輸出原文)
+- `node scripts/build-data.js` → `{"formulas":223,"herbs":364,...,"relation_edges":29,"audit_missing":0}`
+- `node scripts/validate-herb-standard.js` → `PASS — no structural defects.`
+- `node scripts/validate-content-junk.js` → `validate-content-junk: PASS — no scraped header tokens, no encoding anomalies in _zh fields.`
+- `node scripts/validate-dose-basis.js` → `PASS — dose_basis 標示全部合規。`
+- `node scripts/validate-herb-pair-render.js` → `PASS`;帳本數字動了:
+  判定重複 30 → 37、卡上新增顯示 79 → 89、**只活在卡上的孤兒條目 65 → 58**
+- `node scripts/check-validation-ratchet.js` → `PASS — no regressions.`
+- `git diff --check` → 無輸出
+
+**自 diff**:`herb_pairs.json` +380 / −0(純新增 8 筆);generated 兩檔隨批重建。
+既有 218 筆逐筆 JSON 比對零改動(寫入前 assert,不符就中止不寫檔)。
+
+MEASURED TREE: claude/practical-easley-73f009 @ origin/main 64427441 + 本批
+
+---
+
 # 2026-08-27 — 藥對雙軌併集:一個 `||` 讓 36 味卡吞掉 109 條結構化藥對,79 條回到畫面
 
 **這條推翻了我同日上一條的建議,先講結論。** 上一條說「key_pairs 312 味空是缺口,建議

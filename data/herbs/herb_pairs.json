@@ -8506,6 +8506,386 @@
           "curriculum/formulas/Dui-Yao-.pdf"
         ]
       }
+    },
+    {
+      "id": "pair.dan_shen__tan_xiang__sha_ren",
+      "herbs": [
+        "herb.dan_shen",
+        "herb.tan_xiang",
+        "herb.sha_ren"
+      ],
+      "name_zh": "丹參配檀香、砂仁",
+      "name_en": "Dan Shen with Tan Xiang and Sha Ren",
+      "relation": "pair.rel.board_exam",
+      "board_exam_pair": true,
+      "ncbahm_official_pair": true,
+      "pair_meaning_zh": "活血化瘀、行氣溫中止痛。",
+      "pair_meaning_en": "Invigorates Blood and dispels stasis while moving Qi and warming the Middle to stop pain.",
+      "indication_zh": "心胃氣滯血瘀之劇痛（代表方：丹參飲）。",
+      "indication_en": "Severe pain from Qi stagnation with Blood stasis in the Heart and Stomach (representative formula: Dan Shen Yin).",
+      "found_in_formulas": [
+        "formula.dan_shen_yin"
+      ],
+      "sources": [
+        "herb_canon_shortlist:herb.dan_shen.key_pairs（卡上標示「Bastyr / NCBAHM 官方對藥」）",
+        "unverified_outline:Bastyr 考綱正本不在 curriculum/board/，本條未能對正本核讀；內容為卡上既有敘述遷移，未新增未查證陳述。"
+      ],
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "migrated_from": "herb.dan_shen.key_pairs",
+      "actions_zh": "活血化瘀、行氣溫中止痛。",
+      "actions_en": "Invigorates Blood and dispels stasis while moving Qi and warming the Middle to stop pain.",
+      "indications_zh": "心胃氣滯血瘀之劇痛（代表方：丹參飲）。",
+      "indications_en": "Severe pain from Qi stagnation with Blood stasis in the Heart and Stomach (representative formula: Dan Shen Yin).",
+      "field_sources": {
+        "pair_meaning_zh": [
+          "herb_card_key_pairs"
+        ],
+        "indication_zh": [
+          "herb_card_key_pairs"
+        ],
+        "pair_meaning_en": [
+          "translation_of_zh"
+        ],
+        "indication_en": [
+          "translation_of_zh"
+        ],
+        "official_status": [
+          "bastyr_outline_not_in_repo"
+        ]
+      }
+    },
+    {
+      "id": "pair.dan_shen__hong_hua__tao_ren",
+      "herbs": [
+        "herb.dan_shen",
+        "herb.hong_hua",
+        "herb.tao_ren"
+      ],
+      "name_zh": "丹參配紅花、桃仁",
+      "name_en": "Dan Shen with Hong Hua and Tao Ren",
+      "relation": "pair.rel.board_exam",
+      "board_exam_pair": true,
+      "ncbahm_official_pair": false,
+      "pair_meaning_zh": "強效活血化瘀、通經止痛。",
+      "pair_meaning_en": "Strongly invigorates Blood, dispels stasis, unblocks the channels and stops pain.",
+      "indication_zh": "婦科血瘀之痛經、癥瘕。",
+      "indication_en": "Gynecological Blood stasis with dysmenorrhea and abdominal masses.",
+      "found_in_formulas": [],
+      "sources": [
+        "herb_canon_shortlist:herb.dan_shen.key_pairs（卡上標示「Bastyr 官方對藥」）",
+        "unverified_outline:Bastyr 考綱正本不在 curriculum/board/，本條未能對正本核讀；內容為卡上既有敘述遷移，未新增未查證陳述。"
+      ],
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "migrated_from": "herb.dan_shen.key_pairs",
+      "actions_zh": "強效活血化瘀、通經止痛。",
+      "actions_en": "Strongly invigorates Blood, dispels stasis, unblocks the channels and stops pain.",
+      "indications_zh": "婦科血瘀之痛經、癥瘕。",
+      "indications_en": "Gynecological Blood stasis with dysmenorrhea and abdominal masses.",
+      "field_sources": {
+        "pair_meaning_zh": [
+          "herb_card_key_pairs"
+        ],
+        "indication_zh": [
+          "herb_card_key_pairs"
+        ],
+        "pair_meaning_en": [
+          "translation_of_zh"
+        ],
+        "indication_en": [
+          "translation_of_zh"
+        ],
+        "official_status": [
+          "bastyr_outline_not_in_repo"
+        ]
+      }
+    },
+    {
+      "id": "pair.tao_ren__da_huang__mu_dan_pi",
+      "herbs": [
+        "herb.tao_ren",
+        "herb.da_huang",
+        "herb.mu_dan_pi"
+      ],
+      "name_zh": "桃仁配大黃、牡丹皮",
+      "name_en": "Tao Ren with Da Huang and Mu Dan Pi",
+      "relation": "pair.rel.board_exam",
+      "board_exam_pair": true,
+      "ncbahm_official_pair": false,
+      "pair_meaning_zh": "瀉熱破瘀、散結消腫。",
+      "pair_meaning_en": "Drains Heat, breaks up stasis, dissipates clumping and reduces swelling.",
+      "indication_zh": "腸癰腹痛（代表方：大黃牡丹湯）。",
+      "indication_en": "Intestinal abscess with abdominal pain (representative formula: Da Huang Mu Dan Tang).",
+      "found_in_formulas": [
+        "formula.da_huang_mu_dan_tang"
+      ],
+      "sources": [
+        "herb_canon_shortlist:herb.tao_ren.key_pairs（卡上標示「Bastyr 官方對藥」）",
+        "unverified_outline:Bastyr 考綱正本不在 curriculum/board/，本條未能對正本核讀；內容為卡上既有敘述遷移，未新增未查證陳述。"
+      ],
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "migrated_from": "herb.tao_ren.key_pairs",
+      "actions_zh": "瀉熱破瘀、散結消腫。",
+      "actions_en": "Drains Heat, breaks up stasis, dissipates clumping and reduces swelling.",
+      "indications_zh": "腸癰腹痛（代表方：大黃牡丹湯）。",
+      "indications_en": "Intestinal abscess with abdominal pain (representative formula: Da Huang Mu Dan Tang).",
+      "field_sources": {
+        "pair_meaning_zh": [
+          "herb_card_key_pairs"
+        ],
+        "indication_zh": [
+          "herb_card_key_pairs"
+        ],
+        "pair_meaning_en": [
+          "translation_of_zh"
+        ],
+        "indication_en": [
+          "translation_of_zh"
+        ],
+        "official_status": [
+          "bastyr_outline_not_in_repo"
+        ]
+      }
+    },
+    {
+      "id": "pair.tao_ren__lu_gen__dong_gua_zi__yi_yi_ren",
+      "herbs": [
+        "herb.tao_ren",
+        "herb.lu_gen",
+        "herb.dong_gua_zi",
+        "herb.yi_yi_ren"
+      ],
+      "name_zh": "桃仁配蘆根、冬瓜子、薏苡仁",
+      "name_en": "Tao Ren with Lu Gen, Dong Gua Zi and Yi Yi Ren",
+      "relation": "pair.rel.board_exam",
+      "board_exam_pair": true,
+      "ncbahm_official_pair": false,
+      "pair_meaning_zh": "清熱化痰、逐瘀排膿。",
+      "pair_meaning_en": "Clears Heat, transforms Phlegm, expels stasis and drains pus.",
+      "indication_zh": "肺癰咳吐膿血（代表方：葦莖湯）。",
+      "indication_en": "Lung abscess with cough and expectoration of pus and blood (representative formula: Wei Jing Tang).",
+      "found_in_formulas": [
+        "formula.wei_jing_tang"
+      ],
+      "sources": [
+        "herb_canon_shortlist:herb.tao_ren.key_pairs（卡上標示「Bastyr 官方對藥」）",
+        "unverified_outline:Bastyr 考綱正本不在 curriculum/board/，本條未能對正本核讀；內容為卡上既有敘述遷移，未新增未查證陳述。"
+      ],
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "migrated_from": "herb.tao_ren.key_pairs",
+      "actions_zh": "清熱化痰、逐瘀排膿。",
+      "actions_en": "Clears Heat, transforms Phlegm, expels stasis and drains pus.",
+      "indications_zh": "肺癰咳吐膿血（代表方：葦莖湯）。",
+      "indications_en": "Lung abscess with cough and expectoration of pus and blood (representative formula: Wei Jing Tang).",
+      "field_sources": {
+        "pair_meaning_zh": [
+          "herb_card_key_pairs"
+        ],
+        "indication_zh": [
+          "herb_card_key_pairs"
+        ],
+        "pair_meaning_en": [
+          "translation_of_zh"
+        ],
+        "indication_en": [
+          "translation_of_zh"
+        ],
+        "official_status": [
+          "bastyr_outline_not_in_repo"
+        ]
+      },
+      "teaching_note_zh": "卡上標籤寫「葦莖」；本庫葦莖解為 herb.lu_gen 蘆根（formula.wei_jing_tang 組成即用 herb.lu_gen），故 herbs 陣列用 herb.lu_gen，不另建 herb.wei_jing。"
+    },
+    {
+      "id": "pair.hong_hua__dang_gui__chuan_xiong__chi_shao",
+      "herbs": [
+        "herb.hong_hua",
+        "herb.dang_gui",
+        "herb.chuan_xiong",
+        "herb.chi_shao"
+      ],
+      "name_zh": "紅花配當歸、川芎、赤芍",
+      "name_en": "Hong Hua with Dang Gui, Chuan Xiong and Chi Shao",
+      "relation": "pair.rel.board_exam",
+      "board_exam_pair": true,
+      "ncbahm_official_pair": false,
+      "pair_meaning_zh": "活血養血、祛瘀止痛。",
+      "pair_meaning_en": "Invigorates and nourishes Blood, dispels stasis and stops pain.",
+      "indication_zh": "婦科痛經、經閉。",
+      "indication_en": "Gynecological dysmenorrhea and amenorrhea.",
+      "found_in_formulas": [],
+      "sources": [
+        "herb_canon_shortlist:herb.hong_hua.key_pairs（卡上標示「Bastyr 官方對藥」）",
+        "unverified_outline:Bastyr 考綱正本不在 curriculum/board/，本條未能對正本核讀；內容為卡上既有敘述遷移，未新增未查證陳述。"
+      ],
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "migrated_from": "herb.hong_hua.key_pairs",
+      "actions_zh": "活血養血、祛瘀止痛。",
+      "actions_en": "Invigorates and nourishes Blood, dispels stasis and stops pain.",
+      "indications_zh": "婦科痛經、經閉。",
+      "indications_en": "Gynecological dysmenorrhea and amenorrhea.",
+      "field_sources": {
+        "pair_meaning_zh": [
+          "herb_card_key_pairs"
+        ],
+        "indication_zh": [
+          "herb_card_key_pairs"
+        ],
+        "pair_meaning_en": [
+          "translation_of_zh"
+        ],
+        "indication_en": [
+          "translation_of_zh"
+        ],
+        "official_status": [
+          "bastyr_outline_not_in_repo"
+        ]
+      },
+      "teaching_note_zh": "未掛 formula.tao_hong_si_wu_tang：該方組成用白芍（herb.bai_shao），非本組合的赤芍（herb.chi_shao），已逐味比對組成確認。"
+    },
+    {
+      "id": "pair.yan_hu_suo__dang_gui__chuan_xiong__xiang_fu",
+      "herbs": [
+        "herb.yan_hu_suo",
+        "herb.dang_gui",
+        "herb.chuan_xiong",
+        "herb.xiang_fu"
+      ],
+      "name_zh": "延胡索配當歸、川芎、香附",
+      "name_en": "Yan Hu Suo with Dang Gui, Chuan Xiong and Xiang Fu",
+      "relation": "pair.rel.board_exam",
+      "board_exam_pair": true,
+      "ncbahm_official_pair": false,
+      "pair_meaning_zh": "行氣活血、調經止痛。",
+      "pair_meaning_en": "Moves Qi and invigorates Blood, regulates menstruation and stops pain.",
+      "indication_zh": "婦科痛經、經閉。",
+      "indication_en": "Gynecological dysmenorrhea and amenorrhea.",
+      "found_in_formulas": [],
+      "sources": [
+        "herb_canon_shortlist:herb.yan_hu_suo.key_pairs（卡上標示「Bastyr 官方對藥」）",
+        "unverified_outline:Bastyr 考綱正本不在 curriculum/board/，本條未能對正本核讀；內容為卡上既有敘述遷移，未新增未查證陳述。"
+      ],
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "migrated_from": "herb.yan_hu_suo.key_pairs",
+      "actions_zh": "行氣活血、調經止痛。",
+      "actions_en": "Moves Qi and invigorates Blood, regulates menstruation and stops pain.",
+      "indications_zh": "婦科痛經、經閉。",
+      "indications_en": "Gynecological dysmenorrhea and amenorrhea.",
+      "field_sources": {
+        "pair_meaning_zh": [
+          "herb_card_key_pairs"
+        ],
+        "indication_zh": [
+          "herb_card_key_pairs"
+        ],
+        "pair_meaning_en": [
+          "translation_of_zh"
+        ],
+        "indication_en": [
+          "translation_of_zh"
+        ],
+        "official_status": [
+          "bastyr_outline_not_in_repo"
+        ]
+      }
+    },
+    {
+      "id": "pair.ji_xue_teng__dang_gui__chuan_xiong__shu_di_huang",
+      "herbs": [
+        "herb.ji_xue_teng",
+        "herb.dang_gui",
+        "herb.chuan_xiong",
+        "herb.shu_di_huang"
+      ],
+      "name_zh": "雞血藤配當歸、川芎、熟地黃",
+      "name_en": "Ji Xue Teng with Dang Gui, Chuan Xiong and Shu Di Huang",
+      "relation": "pair.rel.board_exam",
+      "board_exam_pair": true,
+      "ncbahm_official_pair": false,
+      "pair_meaning_zh": "活血養血、通經止痛。",
+      "pair_meaning_en": "Invigorates and nourishes Blood, unblocks the channels and stops pain.",
+      "indication_zh": "血虛血瘀之月經不調、痛經。",
+      "indication_en": "Irregular menstruation and dysmenorrhea from Blood deficiency with Blood stasis.",
+      "found_in_formulas": [],
+      "sources": [
+        "herb_canon_shortlist:herb.ji_xue_teng.key_pairs（卡上標示「Bastyr 官方對藥」）",
+        "unverified_outline:Bastyr 考綱正本不在 curriculum/board/，本條未能對正本核讀；內容為卡上既有敘述遷移，未新增未查證陳述。"
+      ],
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "migrated_from": "herb.ji_xue_teng.key_pairs",
+      "actions_zh": "活血養血、通經止痛。",
+      "actions_en": "Invigorates and nourishes Blood, unblocks the channels and stops pain.",
+      "indications_zh": "血虛血瘀之月經不調、痛經。",
+      "indications_en": "Irregular menstruation and dysmenorrhea from Blood deficiency with Blood stasis.",
+      "field_sources": {
+        "pair_meaning_zh": [
+          "herb_card_key_pairs"
+        ],
+        "indication_zh": [
+          "herb_card_key_pairs"
+        ],
+        "pair_meaning_en": [
+          "translation_of_zh"
+        ],
+        "indication_en": [
+          "translation_of_zh"
+        ],
+        "official_status": [
+          "bastyr_outline_not_in_repo"
+        ]
+      }
+    },
+    {
+      "id": "pair.ji_xue_teng__sang_ji_sheng__du_huo",
+      "herbs": [
+        "herb.ji_xue_teng",
+        "herb.sang_ji_sheng",
+        "herb.du_huo"
+      ],
+      "name_zh": "雞血藤配桑寄生、獨活",
+      "name_en": "Ji Xue Teng with Sang Ji Sheng and Du Huo",
+      "relation": "pair.rel.board_exam",
+      "board_exam_pair": true,
+      "ncbahm_official_pair": false,
+      "pair_meaning_zh": "補肝腎、舒筋活絡。",
+      "pair_meaning_en": "Tonifies Liver and Kidney, relaxes the sinews and frees the collaterals.",
+      "indication_zh": "風濕痹痛、肢體麻木。",
+      "indication_en": "Wind-Damp painful obstruction with numbness of the limbs.",
+      "found_in_formulas": [],
+      "sources": [
+        "herb_canon_shortlist:herb.ji_xue_teng.key_pairs（卡上標示「Bastyr 官方對藥」）",
+        "unverified_outline:Bastyr 考綱正本不在 curriculum/board/，本條未能對正本核讀；內容為卡上既有敘述遷移，未新增未查證陳述。"
+      ],
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "migrated_from": "herb.ji_xue_teng.key_pairs",
+      "actions_zh": "補肝腎、舒筋活絡。",
+      "actions_en": "Tonifies Liver and Kidney, relaxes the sinews and frees the collaterals.",
+      "indications_zh": "風濕痹痛、肢體麻木。",
+      "indications_en": "Wind-Damp painful obstruction with numbness of the limbs.",
+      "field_sources": {
+        "pair_meaning_zh": [
+          "herb_card_key_pairs"
+        ],
+        "indication_zh": [
+          "herb_card_key_pairs"
+        ],
+        "pair_meaning_en": [
+          "translation_of_zh"
+        ],
+        "indication_en": [
+          "translation_of_zh"
+        ],
+        "official_status": [
+          "bastyr_outline_not_in_repo"
+        ]
+      }
     }
   ],
   "updated_at": "2026-07-30",
