@@ -1,3 +1,60 @@
+# 2026-08-28 — 分類 chip 說明補完:先訂正我自己量錯的欄位,結果真正的問題是 10 首方被錯放進 uncategorized
+
+Ting 裁「好」(補 `FORMULA_CATEGORY_DESC` 缺的分類說明)。動手第一件事是重量,**結果推翻了我上一條的報告**。
+
+## 先訂正:我上一條說「缺 6 個分類說明」是用錯欄位量的
+我量的是 `f.category_zh || f.category || f.category_en`,但**渲染端的 `categoryLabel()` 讀的是
+`f.category || f.category_en || f.category_id || "uncategorized"`** —— 兩者不同。
+`category_zh` 裡有「解表劑－辛溫解表」這種兩層標籤,`category` 裡沒有,
+所以**那 5 個子分類 chip 根本不會出現在畫面上**,我報的「缺說明」不成立。
+照渲染端的邏輯重量,真正缺說明的只有一個,而且是另一個東西:**`uncategorized`(10 首)**。
+
+## 真正的問題:那 10 首其實有分類,是畫面漏讀
+`uncategorized` 是 `categoryLabel()` 自己的英文 fallback。逐首看那 10 首:
+大青龍湯、當歸芍藥散、當歸飲子、桂枝芍藥知母湯、金鈴子散、羚角鉤藤飲、芍藥甘草湯、
+犀角地黃丸、瀉黃散、增液湯 —— **每一首的 `category_zh` 都寫得好好的**
+(解表劑、理血劑、治風劑、祛濕劑、理氣劑、補益劑、清熱劑、治燥劑)。
+是 `categoryLabel()` 沒讀 `category_zh`,把它們丟進一顆英文 chip。**資料沒問題,是畫面漏讀。**
+
+**改法**:`category_zh` 加進 fallback 鏈,擺在 `category` **之後** ——
+既有以 `category` 為準的行為一個字不動,只補沒有 `category` 的那些。
+效果:`uncategorized` 那顆 chip **消失**,10 首方回到自己的分類
+(清熱劑 25→27、解表劑 19→20、祛濕劑 19→20、理血劑 16→17、治風劑 8→10…)。
+
+## 「未分類」那顆:寫說明前先看它到底是什麼
+原值是「未分類 / 考點與補充劑」。**先逐首看過那 17 首**:補肺湯、大補陰丸、丹參飲、
+二至丸、葛根黃芩黃連湯、防風通聖散、固經丸、良附丸、暖肝煎… **全是各有明確治法歸屬的經典方**。
+所以它不是「查不到分類」,是**「考點與補充劑」批次匯入時共用的暫用標籤**,治法分類欄還沒指派。
+說明就照這個寫,不寫成「分類欄未填」那種含糊話。
+(第一版我寫成「分類欄未填或未對應到既有分類」,看過那 17 首之後改掉了 —— 那句不準確。)
+
+## 子分類回退(目前是預防性的,誠實說明)
+`buildCategoryChips` 的說明查表加了一層回退:查不到就取「－」之前的母分類。
+「解表劑－辛溫解表」→ 用「解表劑」的說明。**目前渲染端不產生子分類 chip,所以這段是備而不用**,
+但 `category_zh` 裡確實有兩層標籤,哪天 `categoryLabel` 改讀它就會用上,
+而且不必為每個新子分類再手寫一條。
+
+## 結果
+| | 修前 | 修後 |
+|---|---|---|
+| 分類 chip | 20 個(含 `uncategorized`) | **19 個** |
+| 有說明的 chip | 19 / 20 | **19 / 19** |
+| 被錯放進 uncategorized 的方 | 10 首 | **0** |
+
+**眼讀(dev server)**:`uncategorized` chip 已消失;點解表劑→「外感表證:風寒、風熱、表虛表實…」、
+點驅蟲劑→「腸道蟲積…」、點未分類→新寫的說明,三顆都正確顯示。
+
+## 驗證(八支全跑)
+`validate-herb-standard` / `validate-formula-standard` / `validate-content-junk` /
+`validate-herb-pair-render` / `validate-board-pair-attribution` /
+`validate-review-status-vocabulary` / `validate-rendered-reference-resolution` /
+`check-validation-ratchet` **全 PASS**;`git diff --check` 無輸出;`node --check` 通過。
+**只動 `js/knowledge.js` 一個檔,`data/**` 一個字都沒改。**
+
+MEASURED TREE: claude/practical-easley-73f009 @ origin/main 本批基底
+
+---
+
 # 2026-08-28 — Claude(第二輪)複核 Task 11E/11F:獨立重跑全過,順手解掉上一輪留的「PubMed 待第三方查證」
 
 Ting 要求連 11E/11F 也看一下。上一輪(Opus 5 session)已經驗收落地,這輪是我自己再重跑一次獨立核實，

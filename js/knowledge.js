@@ -2226,7 +2226,17 @@
     const render = () => {
       const cur = select.value;
       const active = chips.find((c) => c.value === cur);
-      const desc = active && descMap ? descMap[active.zh] : "";
+      /* 子分類沿用母分類的說明。方劑分類有「解表劑－辛溫解表」這種兩層標籤,
+         母分類「解表劑」表裡有說明、子分類沒有,於是那 5 個 chip 選起來下面一片空白。
+         與其為每個子分類再手寫一條(而且以後每多一個子分類就再缺一次),
+         不如取「－」之前那一段回退 —— 用的是既有的說明,不新增內容,也自動涵蓋未來的子分類。 */
+      const descOf = (zh) => {
+        if (!descMap || !zh) return "";
+        if (descMap[zh]) return descMap[zh];
+        const parent = String(zh).split(/[－—-]/)[0].trim();
+        return (parent && parent !== zh && descMap[parent]) ? descMap[parent] : "";
+      };
+      const desc = active ? descOf(active.zh) : "";
       container.innerHTML =
         chipHtml("", "全部", "All", records.length, !cur)
         + chips.map((c) => chipHtml(c.value, c.zh, c.en, c.count, cur === c.value)).join("")
@@ -2264,7 +2274,15 @@
     "開竅劑": "神昏竅閉：熱閉、寒閉。Blocked orifices: loss of consciousness patterns.",
     "治燥劑": "外燥、內燥：肺燥、腸燥。Dryness of lung and intestines.",
     "驅蟲劑": "腸道蟲積。Intestinal parasites.",
-    "癰瘍劑": "瘡瘍腫毒、內癰。Sores, abscesses, toxic swellings."
+    "癰瘍劑": "瘡瘍腫毒、內癰。Sores, abscesses, toxic swellings.",
+    /* 「未分類」不是治法分類。原值是「未分類 / 考點與補充劑」——「考點與補充劑」批次匯入時
+       共用的暫用標籤。逐首看過:補肺湯、大補陰丸、丹參飲、葛根黃芩黃連湯、防風通聖散…
+       都是各有明確治法歸屬的經典方,只是治法分類欄還沒指派。
+       它是本庫排第六大的 chip(2026-08-28 實測 17 首),沉默地混在治法分類中間
+       會讓人以為那也是一種治法。說清楚它是什麼。 */
+    "未分類": "這不是治法分類 —— 是「考點與補充劑」批次匯入時共用的暫用標籤,這些方的治法分類尚未指派(例如補肺湯、大補陰丸、丹參飲各自都有明確歸屬)。Not a treatment category: a placeholder from the exam-points/supplementary import batch; these formulas' treatment categories have not been assigned yet.",
+    /* 子分類(解表劑－辛溫解表 這種兩層標籤)不在這裡逐一列 ——
+       render 時取「－」之前的母分類回退,見 buildCategoryChips 的 descOf()。 */
   };
 
   // ---- Formulas ------------------------------------------------------------
@@ -2287,7 +2305,11 @@
         f.contraindications_zh,
         f.cautions_zh
       ].some((value) => Array.isArray(value) ? value.length > 0 : Boolean(value));
-      const categoryLabel = (f) => f.category || f.category_en || f.category_id || "uncategorized";
+      /* category_zh 要進這條 fallback 鏈。2026-08-28 實測:10 首方劑沒有 `category`
+         但 `category_zh` 寫得好好的(大青龍湯 解表劑、當歸芍藥散 理血劑、羚角鉤藤飲 治風劑…),
+         因為這裡沒讀它,它們全被丟進「uncategorized」那顆 chip —— 資料有分類,是畫面漏讀。
+         擺在 `category` 之後:既有以 `category` 為準的行為一個字不動,只補沒有 `category` 的那些。 */
+      const categoryLabel = (f) => f.category || f.category_zh || f.category_en || f.category_id || "uncategorized";
       const categories = [...new Set(records.map(categoryLabel).filter(Boolean))].sort((a, b) => a.localeCompare(b));
       const renderEnhanced = (list) => list.map((f) => {
         const contentReady = hasContent(f);
