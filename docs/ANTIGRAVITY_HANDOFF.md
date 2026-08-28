@@ -1,3 +1,115 @@
+## 📋 新派工 Task 11A / 11B（2026-08-27，Ting 指派）——兩項都是「只出帳本，不改資料」
+
+**MEASURED TREE：`origin/main` @ `28628c16`**（下面每一個數字都在這棵樹上實測，指令附在最後；main 動很快，開工前自己重跑一次對分母）
+
+這兩項是**機械式、對錯客觀**的任務——網址回不回 200、頁面是不是真的在講那味藥，這是查得到答案的事，
+不需要判斷。這也是 2026-08-24 那條分工規則裡**還會繼續派給你**的那一條線。
+
+### 共同邊界（兩項都適用，違反其中任何一條就是整批打回）
+
+1. **零資料異動**：`data/**.json` 除了你自己新增的帳本檔以外，一個 byte 都不准動。`app.js`、`js/**`、
+   `.github/workflows/**`、任何既有驗證器——都不准碰。
+2. **死連結只報，不修**。查到某個網址掛了、或指到別的藥，**不准順手換一個更好的上去**——那是裁定，
+   Ting 跟我決定。找到更好的來源，寫進帳本的 `suggested_replacement` 欄位就好。
+3. **推分支等審**：`antigravity/task11a-toxic-safety-url-liveness`、`antigravity/task11b-canon-url-liveness`，
+   不要推 main，推完在這份文件或 commit message 附一句「已推到 XXX 分支，等驗收」。
+4. **兩項分開推**，不要合成一個 commit。11B 建議再依 host 拆兩批（cloudtcm 一批、americandragon 一批）。
+
+---
+
+### 🔴 Task 11A：7 味有毒／管制藥材的 `safety_source_url` 實地連線驗證
+
+**為什麼是這 7 味**：2026-08-26 那次複核已經記錄——Task 8A 那 80 筆 `safety_source_url` 裡只有 27 筆是
+真的新查證，其餘 53 筆是複製既有欄位；而**我這邊的環境完全擋掉對外連線**，所以下面這 7 味有毒／管制
+藥材的網址，**到今天為止沒有任何人真的打開過**。你有網路，我沒有——這一項只有你能做。
+
+**標的（`origin/main` @ `28628c16` 實測現值）**：
+
+| 藥 | id | 現有 `safety_source_url` | 這頁必須支持的安全事實 |
+|---|---|---|---|
+| 雄黃 | `herb.xiong_huang` | `americandragon.com/Individualherbsupdate/XiongHuang.html` | 砷／重金屬毒性、孕婦禁 |
+| 朱砂 | `herb.zhu_sha` | `.../ZhuSha.html` | 汞／重金屬毒性、藥物交互作用 |
+| 穿山甲 | `herb.chuan_shan_jia` | `.../ChuanShanJia.html` | CITES 附錄一、2020 年版中國藥典除名 |
+| 犀角 | `herb.xi_jiao` | `.../XiJiao.html` | 瀕危禁用、以水牛角替代 |
+| 罌粟殼 | `herb.ying_su_ke` | `.../YingSuKe.html` | 管制藥品、含嗎啡類生物鹼 |
+| 青木香 | `herb.qing_mu_xiang` | `.../QingMuXiang.html` | 馬兜鈴酸腎毒性／致癌、2005 年版起取消收載 |
+| 金箔 | `herb.jin_bo` | `.../JinBo.html` | 廢用物質、安全性待審 |
+
+**⚠️ 開工第一件事：負控。這 7 條全是同一個形狀**——`americandragon.com/Individualherbsupdate/<拼音駝峰>.html`，
+是**由拼音機械組出來的**（全庫這個形狀共 **177 處**）。所以：
+
+> **先自己編一個不存在的拼音頁**（例如 `.../XxYyZzWw.html`）打打看回什麼。
+> **如果那個站對不存在的頁也回 200（soft-404），那「HTTP 200」這個證據就等於零**，
+> 帳本必須改用頁面內容判定。**這條負控的結果要寫在帳本的第一個欄位（`meta.negative_control`），
+> 不是寫在報告裡。**
+
+**每一味要記的欄位**（帳本 `data/audits/toxic_herb_safety_url_liveness_2026-08-27.json`）：
+
+`herb_id` · `name_zh` · `url` · `http_status` · `final_url`（跟隨轉址後）· `fetched_at`（UTC ISO）·
+`page_title` · `evidence_excerpt`（頁面上能證明這頁在講這味藥的逐字片段，≤200 字，**原文照抄不要翻譯**）·
+`safety_content_found`（頁面有沒有真的講到上表最後一欄那件事：true/false）· `verdict` ·
+`suggested_replacement`（沒有就 null）
+
+`verdict` 只能三選一：`SUPPORTS`／`PAGE_EXISTS_BUT_NO_SAFETY_CONTENT`／`DEAD_OR_WRONG_PAGE`。
+**七味都判 `SUPPORTS` 的話我會當成沒查**——這批是最可疑的一批，全綠反而是紅旗。
+
+---
+
+### 🟠 Task 11B：正典卡引用網址 link-rot 全掃
+
+**分母（`origin/main` @ `28628c16` 實測，三個檔的頂層引用欄位）**：
+
+| 檔 | 記錄數 | 出現次數 | distinct URL |
+|---|---|---|---|
+| `data/herbs/herb_canon_shortlist.json` | 364 | — | 369（`exact_source_url` 259／`safety_source_url` 344） |
+| `data/herbs/formulas.json` | 223 | — | 196（`exact_source_url` 196／`safety_source_url` 83） |
+| `data/pathology/condition_canon_shortlist.json` | 508 | — | 8（`source_url`） |
+| **合計** | | **907 處** | **565 個 distinct URL** |
+
+host 分佈（依出現次數）：`cloudtcm.com` **663**、`americandragon.com` **244**。
+掃描欄位固定三個：`exact_source_url`／`safety_source_url`／`source_url`。
+**穴位不在這批**——`data/acupoints/361.json` 這三個欄位一個都沒有（實測），不要去掃 `data/imports/**` 的
+staging 檔，那是出處層不是正典。
+
+**一樣先做負控**：每個 host 各編一個不存在的路徑打打看，把 soft-404 行為寫進帳本 `meta.negative_control`。
+`cloudtcm.com` 佔了 663 處——**如果它是 soft-404 站，這整批的「200 OK」全部沒有意義**，那才是這次真正
+要查出來的東西。
+
+**帳本**：`data/audits/canon_source_url_liveness_2026-08-27.json`，**一個 distinct URL 一列**：
+`url` · `occurrences` · `record_ids`（哪幾張卡引用它）· `fields` · `http_status` · `final_url` ·
+`fetched_at` · `soft404_suspected`（依該 host 的負控判定）· `page_title` · `verdict`
+
+**節流**：每個 host **≤2 req/s**，逾時／429 各重試 2 次並把重試次數記進帳本。把人家站台打掛比查不完更糟。
+
+---
+
+### ✅ 驗收方式（**這次驗收不讀你的報告，只跑指令**）
+
+你要順便交一支工具 `scripts/audit-source-url-liveness.js`，帶兩個模式：
+
+- **`--verify-ledger`**：**完全離線**（不准發任何網路請求），從 `data/**.json` 重算分母，跟帳本對照，
+  印出這四個數字並在任何一項不符時 **exit 1**：
+  1. 資料端 distinct URL 數 vs 帳本列數（必須相等）
+  2. 資料端 URL 集合 − 帳本 URL 集合（必須為空 = 沒有漏掃）
+  3. 帳本 URL 集合 − 資料端 URL 集合（必須為空 = **沒有憑空生出資料裡沒有的網址**）
+  4. `meta.negative_control` 存在且非空（沒做負控直接 FAIL）
+- **`--self-test`**：至少兩個負控 fixture，**兩個都必須讓 `--verify-ledger` 真的 FAIL**：
+  ① 帳本少一列 → FAIL；② 帳本多一列資料裡沒有的 URL → FAIL。
+  （測試自己不會空跑：fixture 走真實判定函式，不是假資料。）
+
+**我這邊的驗收就是這三行，離線可重跑**：
+
+```bash
+node scripts/audit-source-url-liveness.js --self-test     # 兩個負控都要 FAIL 得出來
+node scripts/audit-source-url-liveness.js --verify-ledger # exit 0，四個數字全對
+git show --stat <你的 commit>                              # 只准出現：新工具 + data/audits/*.json + docs/audits/*.md
+```
+
+**需要網路的那一段（頁面內容是不是真的支持）不歸我驗**，會抽 10 條交給有網路的第三方複跑。
+所以帳本裡的 `evidence_excerpt`／`final_url`／`fetched_at` 請照實寫——**抽樣對不上，整批退**。
+
+---
+
 ## ⚠️ Claude 複核 Task 10D:8/8 self-test 可信,但主報告有一筆數字在我的環境重跑不出來(2026-08-27)
 
 Ting 要求連 task10d 也看一下。**8/8 `--self-test` fixture 獨立重跑全過**,結構性數字(43 個來源欄位
