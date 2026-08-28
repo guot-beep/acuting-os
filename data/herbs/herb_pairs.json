@@ -10608,6 +10608,555 @@
         ]
       },
       "teaching_note_zh": "卡上標籤宣稱「2026 NCBAHM Appendix B 官方對藥」，但以 repo 內考綱正本 curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md 的 Appendix B 逐條核對後不成立（Appendix B 共 51 組、全部是二味對藥）。故本記錄不標 board_exam_pair／ncbahm_official_pair，配伍內容照卡上原文保留。宣稱本身留在藥卡標籤上未動，待 Ting 裁定該標籤怎麼改。"
+    },
+    {
+      "id": "pair.pu_gong_ying__gua_lou__zhe_bei_mu",
+      "herbs": [
+        "herb.pu_gong_ying",
+        "herb.gua_lou",
+        "herb.zhe_bei_mu"
+      ],
+      "name_zh": "蒲公英配瓜蔞、浙貝母",
+      "name_en": "Pu Gong Ying with Gua Lou and Zhe Bei Mu",
+      "ncbahm_official_pair": false,
+      "pair_meaning_zh": "清熱解毒、消腫散結。",
+      "pair_meaning_en": "Clears Heat, relieves toxicity and dissipates nodules.",
+      "indication_zh": "乳癰初起紅腫熱痛。",
+      "indication_en": "Early breast abscess with redness, swelling, Heat and pain.",
+      "found_in_formulas": [],
+      "sources": [
+        "herb_canon_shortlist:herb.pu_gong_ying.key_pairs（卡上未標官方對藥，為既有教學敘述）"
+      ],
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "migrated_from": "herb.pu_gong_ying.key_pairs",
+      "actions_zh": "清熱解毒、消腫散結。",
+      "actions_en": "Clears Heat, relieves toxicity and dissipates nodules.",
+      "indications_zh": "乳癰初起紅腫熱痛。",
+      "indications_en": "Early breast abscess with redness, swelling, Heat and pain.",
+      "field_sources": {
+        "pair_meaning_zh": [
+          "herb_card_key_pairs"
+        ],
+        "indication_zh": [
+          "herb_card_key_pairs"
+        ],
+        "pair_meaning_en": [
+          "herb_card_key_pairs"
+        ],
+        "indication_en": [
+          "herb_card_key_pairs"
+        ],
+        "official_status": [
+          "not_claimed_as_official"
+        ]
+      }
+    },
+    {
+      "id": "pair.pu_gong_ying__jin_yin_hua__zi_hua_di_ding",
+      "herbs": [
+        "herb.pu_gong_ying",
+        "herb.jin_yin_hua",
+        "herb.zi_hua_di_ding"
+      ],
+      "name_zh": "蒲公英配金銀花、紫花地丁",
+      "name_en": "Pu Gong Ying with Jin Yin Hua and Zi Hua Di Ding",
+      "ncbahm_official_pair": false,
+      "pair_meaning_zh": "相須。增強清熱解毒、消癰散結。",
+      "pair_meaning_en": "Xiang Xu (mutual accentuation). Strengthens Heat-clearing, toxicity-relieving and abscess-resolving effects.",
+      "indication_zh": "熱毒瘡癰、疔瘡腫痛。",
+      "indication_en": "Hot toxic sores and furuncles.",
+      "found_in_formulas": [],
+      "sources": [
+        "herb_canon_shortlist:herb.pu_gong_ying.key_pairs（卡上未標官方對藥，為既有教學敘述）"
+      ],
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "migrated_from": "herb.pu_gong_ying.key_pairs",
+      "actions_zh": "相須。增強清熱解毒、消癰散結。",
+      "actions_en": "Xiang Xu (mutual accentuation). Strengthens Heat-clearing, toxicity-relieving and abscess-resolving effects.",
+      "indications_zh": "熱毒瘡癰、疔瘡腫痛。",
+      "indications_en": "Hot toxic sores and furuncles.",
+      "field_sources": {
+        "pair_meaning_zh": [
+          "herb_card_key_pairs"
+        ],
+        "indication_zh": [
+          "herb_card_key_pairs"
+        ],
+        "pair_meaning_en": [
+          "herb_card_key_pairs"
+        ],
+        "indication_en": [
+          "herb_card_key_pairs"
+        ],
+        "official_status": [
+          "not_claimed_as_official"
+        ]
+      },
+      "teaching_note_zh": "卡上未指名代表方;本庫 formula.wu_wei_xiao_du_yin 五味消毒飲組成含此三味,但來源未點名該方,故不掛,不代來源作連結。"
+    },
+    {
+      "id": "pair.huang_qi__sheng_ma__chai_hu",
+      "herbs": [
+        "herb.huang_qi",
+        "herb.sheng_ma",
+        "herb.chai_hu"
+      ],
+      "name_zh": "黃耆配升麻、柴胡",
+      "name_en": "Huang Qi with Sheng Ma and Chai Hu",
+      "ncbahm_official_pair": false,
+      "pair_meaning_zh": "升陽舉陷。二藥升提下陷之中氣。",
+      "pair_meaning_en": "Sheng Ma and Chai Hu lift sunken middle Qi.",
+      "indication_zh": "臟器下垂、久瀉脫肛（補中益氣湯）。",
+      "indication_en": "Organ prolapse and chronic diarrhea (Bu Zhong Yi Qi Tang).",
+      "found_in_formulas": [
+        "formula.bu_zhong_yi_qi_tang"
+      ],
+      "sources": [
+        "herb_canon_shortlist:herb.huang_qi.key_pairs（卡上未標官方對藥，為既有教學敘述）"
+      ],
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "migrated_from": "herb.huang_qi.key_pairs",
+      "actions_zh": "升陽舉陷。二藥升提下陷之中氣。",
+      "actions_en": "Sheng Ma and Chai Hu lift sunken middle Qi.",
+      "indications_zh": "臟器下垂、久瀉脫肛（補中益氣湯）。",
+      "indications_en": "Organ prolapse and chronic diarrhea (Bu Zhong Yi Qi Tang).",
+      "field_sources": {
+        "pair_meaning_zh": [
+          "herb_card_key_pairs"
+        ],
+        "indication_zh": [
+          "herb_card_key_pairs"
+        ],
+        "pair_meaning_en": [
+          "herb_card_key_pairs"
+        ],
+        "indication_en": [
+          "herb_card_key_pairs"
+        ],
+        "official_status": [
+          "not_claimed_as_official"
+        ]
+      }
+    },
+    {
+      "id": "pair.dang_gui__bai_shao",
+      "herbs": [
+        "herb.dang_gui",
+        "herb.bai_shao"
+      ],
+      "name_zh": "當歸配白芍",
+      "name_en": "Dang Gui with Bai Shao",
+      "ncbahm_official_pair": false,
+      "pair_meaning_zh": "養血柔肝止痛。一動一靜，補血而能緩急。",
+      "pair_meaning_en": "One moves, one restrains: nourishes Blood and softens the Liver to relieve cramping pain.",
+      "indication_zh": "血虛肝鬱之痛經、腹痛。",
+      "indication_en": "Dysmenorrhea and abdominal pain from Blood deficiency with Liver constraint.",
+      "found_in_formulas": [],
+      "sources": [
+        "herb_canon_shortlist:herb.dang_gui.key_pairs（卡上未標官方對藥，為既有教學敘述）"
+      ],
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "migrated_from": "herb.dang_gui.key_pairs",
+      "actions_zh": "養血柔肝止痛。一動一靜，補血而能緩急。",
+      "actions_en": "One moves, one restrains: nourishes Blood and softens the Liver to relieve cramping pain.",
+      "indications_zh": "血虛肝鬱之痛經、腹痛。",
+      "indications_en": "Dysmenorrhea and abdominal pain from Blood deficiency with Liver constraint.",
+      "field_sources": {
+        "pair_meaning_zh": [
+          "herb_card_key_pairs"
+        ],
+        "indication_zh": [
+          "herb_card_key_pairs"
+        ],
+        "pair_meaning_en": [
+          "herb_card_key_pairs"
+        ],
+        "indication_en": [
+          "herb_card_key_pairs"
+        ],
+        "official_status": [
+          "not_claimed_as_official"
+        ]
+      }
+    },
+    {
+      "id": "pair.du_zhong__niu_xi",
+      "herbs": [
+        "herb.du_zhong",
+        "herb.niu_xi"
+      ],
+      "name_zh": "杜仲配牛膝",
+      "name_en": "Du Zhong with Niu Xi",
+      "ncbahm_official_pair": false,
+      "pair_meaning_zh": "牛膝引藥下行、強化下部止痛。",
+      "pair_meaning_en": "Niu Xi directs the formula downward and strengthens pain relief in the lower body.",
+      "indication_zh": "肝腎不足之腰膝痠痛。",
+      "indication_en": "Low back and knee pain from Liver-Kidney deficiency.",
+      "found_in_formulas": [],
+      "sources": [
+        "herb_canon_shortlist:herb.du_zhong.key_pairs（卡上未標官方對藥，為既有教學敘述）"
+      ],
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "migrated_from": "herb.du_zhong.key_pairs",
+      "actions_zh": "牛膝引藥下行、強化下部止痛。",
+      "actions_en": "Niu Xi directs the formula downward and strengthens pain relief in the lower body.",
+      "indications_zh": "肝腎不足之腰膝痠痛。",
+      "indications_en": "Low back and knee pain from Liver-Kidney deficiency.",
+      "field_sources": {
+        "pair_meaning_zh": [
+          "herb_card_key_pairs"
+        ],
+        "indication_zh": [
+          "herb_card_key_pairs"
+        ],
+        "pair_meaning_en": [
+          "herb_card_key_pairs"
+        ],
+        "indication_en": [
+          "herb_card_key_pairs"
+        ],
+        "official_status": [
+          "not_claimed_as_official"
+        ]
+      }
+    },
+    {
+      "id": "pair.du_zhong__shan_yao__xu_duan__tu_si_zi",
+      "herbs": [
+        "herb.du_zhong",
+        "herb.shan_yao",
+        "herb.xu_duan",
+        "herb.tu_si_zi"
+      ],
+      "name_zh": "杜仲配山藥、續斷、菟絲子",
+      "name_en": "Du Zhong with Shan Yao, Xu Duan and Tu Si Zi",
+      "ncbahm_official_pair": false,
+      "pair_meaning_zh": "安胎組合。",
+      "pair_meaning_en": "Fetus-calming group.",
+      "indication_zh": "妊娠出血、胎動不安（肝腎虛）。",
+      "indication_en": "Bleeding in pregnancy and restless fetus from Liver-Kidney deficiency.",
+      "found_in_formulas": [],
+      "sources": [
+        "herb_canon_shortlist:herb.du_zhong.key_pairs（卡上未標官方對藥，為既有教學敘述）"
+      ],
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "migrated_from": "herb.du_zhong.key_pairs",
+      "actions_zh": "安胎組合。",
+      "actions_en": "Fetus-calming group.",
+      "indications_zh": "妊娠出血、胎動不安（肝腎虛）。",
+      "indications_en": "Bleeding in pregnancy and restless fetus from Liver-Kidney deficiency.",
+      "field_sources": {
+        "pair_meaning_zh": [
+          "herb_card_key_pairs"
+        ],
+        "indication_zh": [
+          "herb_card_key_pairs"
+        ],
+        "pair_meaning_en": [
+          "herb_card_key_pairs"
+        ],
+        "indication_en": [
+          "herb_card_key_pairs"
+        ],
+        "official_status": [
+          "not_claimed_as_official"
+        ]
+      }
+    },
+    {
+      "id": "pair.rou_dou_kou__bu_gu_zhi__wu_wei_zi__wu_zhu_yu",
+      "herbs": [
+        "herb.rou_dou_kou",
+        "herb.bu_gu_zhi",
+        "herb.wu_wei_zi",
+        "herb.wu_zhu_yu"
+      ],
+      "name_zh": "肉豆蔻配補骨脂、五味子、吳茱萸",
+      "name_en": "Rou Dou Kou with Bu Gu Zhi, Wu Wei Zi and Wu Zhu Yu",
+      "relation": "pair.rel.board_exam",
+      "board_exam_pair": true,
+      "ncbahm_official_pair": false,
+      "pair_meaning_zh": "溫補脾腎、固腸止瀉。",
+      "pair_meaning_en": "Warms and tonifies Spleen and Kidney, binds the intestines and stops diarrhea.",
+      "indication_zh": "脾腎陽虛五更瀉（代表方：四神丸）。",
+      "indication_en": "Daybreak diarrhea from Spleen-Kidney Yang deficiency (representative formula: Si Shen Wan).",
+      "found_in_formulas": [
+        "formula.si_shen_wan"
+      ],
+      "sources": [
+        "herb_canon_shortlist:herb.rou_dou_kou.key_pairs（卡上標示「Bastyr 官方對藥」）",
+        "unverified_outline:Bastyr 考綱正本不在 curriculum/board/，本條未能對正本核讀；另註:同一批卡上標籤的 NCBAHM 那一半經考綱正本核對後 20 條有 10 條不成立(見同日歸屬核對條目)，故 Bastyr 宣稱亦僅記錄不背書。內容為卡上既有敘述遷移，未新增未查證陳述。"
+      ],
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "migrated_from": "herb.rou_dou_kou.key_pairs",
+      "actions_zh": "溫補脾腎、固腸止瀉。",
+      "actions_en": "Warms and tonifies Spleen and Kidney, binds the intestines and stops diarrhea.",
+      "indications_zh": "脾腎陽虛五更瀉（代表方：四神丸）。",
+      "indications_en": "Daybreak diarrhea from Spleen-Kidney Yang deficiency (representative formula: Si Shen Wan).",
+      "field_sources": {
+        "pair_meaning_zh": [
+          "herb_card_key_pairs"
+        ],
+        "indication_zh": [
+          "herb_card_key_pairs"
+        ],
+        "pair_meaning_en": [
+          "translation_of_zh"
+        ],
+        "indication_en": [
+          "translation_of_zh"
+        ],
+        "official_status": [
+          "bastyr_outline_not_in_repo"
+        ]
+      }
+    },
+    {
+      "id": "pair.rou_dou_kou__mu_xiang",
+      "herbs": [
+        "herb.rou_dou_kou",
+        "herb.mu_xiang"
+      ],
+      "name_zh": "肉豆蔻配木香",
+      "name_en": "Rou Dou Kou with Mu Xiang",
+      "relation": "pair.rel.board_exam",
+      "board_exam_pair": true,
+      "ncbahm_official_pair": false,
+      "pair_meaning_zh": "溫中理氣、澀腸止瀉。",
+      "pair_meaning_en": "Warms the Middle, regulates Qi, binds the intestines and stops diarrhea.",
+      "indication_zh": "脾虛氣滯之脘腹脹痛、久瀉。",
+      "indication_en": "Epigastric and abdominal distention with pain and chronic diarrhea from Spleen deficiency with Qi stagnation.",
+      "found_in_formulas": [],
+      "sources": [
+        "herb_canon_shortlist:herb.rou_dou_kou.key_pairs（卡上標示「Bastyr 官方對藥」）",
+        "unverified_outline:Bastyr 考綱正本不在 curriculum/board/，本條未能對正本核讀；另註:同一批卡上標籤的 NCBAHM 那一半經考綱正本核對後 20 條有 10 條不成立(見同日歸屬核對條目)，故 Bastyr 宣稱亦僅記錄不背書。內容為卡上既有敘述遷移，未新增未查證陳述。"
+      ],
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "migrated_from": "herb.rou_dou_kou.key_pairs",
+      "actions_zh": "溫中理氣、澀腸止瀉。",
+      "actions_en": "Warms the Middle, regulates Qi, binds the intestines and stops diarrhea.",
+      "indications_zh": "脾虛氣滯之脘腹脹痛、久瀉。",
+      "indications_en": "Epigastric and abdominal distention with pain and chronic diarrhea from Spleen deficiency with Qi stagnation.",
+      "field_sources": {
+        "pair_meaning_zh": [
+          "herb_card_key_pairs"
+        ],
+        "indication_zh": [
+          "herb_card_key_pairs"
+        ],
+        "pair_meaning_en": [
+          "translation_of_zh"
+        ],
+        "indication_en": [
+          "translation_of_zh"
+        ],
+        "official_status": [
+          "bastyr_outline_not_in_repo"
+        ]
+      }
+    },
+    {
+      "id": "pair.wu_mei__xi_xin__gan_jiang__huang_lian__fu_zi",
+      "herbs": [
+        "herb.wu_mei",
+        "herb.xi_xin",
+        "herb.gan_jiang",
+        "herb.huang_lian",
+        "herb.fu_zi"
+      ],
+      "name_zh": "烏梅配細辛、乾薑、黃連、附子",
+      "name_en": "Wu Mei with Xi Xin, Gan Jiang, Huang Lian and Fu Zi",
+      "relation": "pair.rel.board_exam",
+      "board_exam_pair": true,
+      "ncbahm_official_pair": false,
+      "pair_meaning_zh": "溫臟安蛔、寒熱並用。",
+      "pair_meaning_en": "Warms the organs to calm roundworms, using Cold and Hot medicinals together.",
+      "indication_zh": "膽道蛔蟲、蛔厥腹痛嘔吐（代表方：烏梅丸）。",
+      "indication_en": "Biliary ascariasis and roundworm reversal with abdominal pain and vomiting (representative formula: Wu Mei Wan).",
+      "found_in_formulas": [
+        "formula.wu_mei_wan"
+      ],
+      "sources": [
+        "herb_canon_shortlist:herb.wu_mei.key_pairs（卡上標示「Bastyr 官方對藥」）",
+        "unverified_outline:Bastyr 考綱正本不在 curriculum/board/，本條未能對正本核讀；另註:同一批卡上標籤的 NCBAHM 那一半經考綱正本核對後 20 條有 10 條不成立(見同日歸屬核對條目)，故 Bastyr 宣稱亦僅記錄不背書。內容為卡上既有敘述遷移，未新增未查證陳述。"
+      ],
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "migrated_from": "herb.wu_mei.key_pairs",
+      "actions_zh": "溫臟安蛔、寒熱並用。",
+      "actions_en": "Warms the organs to calm roundworms, using Cold and Hot medicinals together.",
+      "indications_zh": "膽道蛔蟲、蛔厥腹痛嘔吐（代表方：烏梅丸）。",
+      "indications_en": "Biliary ascariasis and roundworm reversal with abdominal pain and vomiting (representative formula: Wu Mei Wan).",
+      "field_sources": {
+        "pair_meaning_zh": [
+          "herb_card_key_pairs"
+        ],
+        "indication_zh": [
+          "herb_card_key_pairs"
+        ],
+        "pair_meaning_en": [
+          "translation_of_zh"
+        ],
+        "indication_en": [
+          "translation_of_zh"
+        ],
+        "official_status": [
+          "bastyr_outline_not_in_repo"
+        ]
+      },
+      "teaching_note_zh": "卡上標籤寫「干薑」，為「乾薑」的異體字形，對應 herb.gan_jiang。"
+    },
+    {
+      "id": "pair.he_zi__jie_geng__gan_cao",
+      "herbs": [
+        "herb.he_zi",
+        "herb.jie_geng",
+        "herb.gan_cao"
+      ],
+      "name_zh": "訶子配桔梗、甘草",
+      "name_en": "He Zi with Jie Geng and Gan Cao",
+      "relation": "pair.rel.board_exam",
+      "board_exam_pair": true,
+      "ncbahm_official_pair": false,
+      "pair_meaning_zh": "斂肺利咽、開音止痛。",
+      "pair_meaning_en": "Astringes the Lung, benefits the throat, restores the voice and stops pain.",
+      "indication_zh": "久咳失音（代表方：訶子湯）。",
+      "indication_en": "Chronic cough with loss of voice (representative formula: He Zi Tang).",
+      "found_in_formulas": [],
+      "sources": [
+        "herb_canon_shortlist:herb.he_zi.key_pairs（卡上標示「Bastyr 官方對藥」）",
+        "unverified_outline:Bastyr 考綱正本不在 curriculum/board/，本條未能對正本核讀；另註:同一批卡上標籤的 NCBAHM 那一半經考綱正本核對後 20 條有 10 條不成立(見同日歸屬核對條目)，故 Bastyr 宣稱亦僅記錄不背書。內容為卡上既有敘述遷移，未新增未查證陳述。"
+      ],
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "migrated_from": "herb.he_zi.key_pairs",
+      "actions_zh": "斂肺利咽、開音止痛。",
+      "actions_en": "Astringes the Lung, benefits the throat, restores the voice and stops pain.",
+      "indications_zh": "久咳失音（代表方：訶子湯）。",
+      "indications_en": "Chronic cough with loss of voice (representative formula: He Zi Tang).",
+      "field_sources": {
+        "pair_meaning_zh": [
+          "herb_card_key_pairs"
+        ],
+        "indication_zh": [
+          "herb_card_key_pairs"
+        ],
+        "pair_meaning_en": [
+          "translation_of_zh"
+        ],
+        "indication_en": [
+          "translation_of_zh"
+        ],
+        "official_status": [
+          "bastyr_outline_not_in_repo"
+        ]
+      },
+      "teaching_note_zh": "代表方訶子湯本庫尚無方劑卡，found_in_formulas 留空。"
+    },
+    {
+      "id": "pair.he_zi__ying_su_ke__rou_dou_kou",
+      "herbs": [
+        "herb.he_zi",
+        "herb.ying_su_ke",
+        "herb.rou_dou_kou"
+      ],
+      "name_zh": "訶子配罌粟殼、肉豆蔻",
+      "name_en": "He Zi with Ying Su Ke and Rou Dou Kou",
+      "relation": "pair.rel.board_exam",
+      "board_exam_pair": true,
+      "ncbahm_official_pair": false,
+      "pair_meaning_zh": "澀腸止瀉、固脫止痛。",
+      "pair_meaning_en": "Binds the intestines, stops diarrhea, secures against prolapse and stops pain.",
+      "indication_zh": "久瀉久痢（代表方：真人養臟湯）。",
+      "indication_en": "Chronic diarrhea and dysentery (representative formula: Zhen Ren Yang Zang Tang).",
+      "found_in_formulas": [
+        "formula.zhen_ren_yang_zang_tang"
+      ],
+      "sources": [
+        "herb_canon_shortlist:herb.he_zi.key_pairs（卡上標示「Bastyr 官方對藥」）",
+        "unverified_outline:Bastyr 考綱正本不在 curriculum/board/，本條未能對正本核讀；另註:同一批卡上標籤的 NCBAHM 那一半經考綱正本核對後 20 條有 10 條不成立(見同日歸屬核對條目)，故 Bastyr 宣稱亦僅記錄不背書。內容為卡上既有敘述遷移，未新增未查證陳述。"
+      ],
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "migrated_from": "herb.he_zi.key_pairs",
+      "actions_zh": "澀腸止瀉、固脫止痛。",
+      "actions_en": "Binds the intestines, stops diarrhea, secures against prolapse and stops pain.",
+      "indications_zh": "久瀉久痢（代表方：真人養臟湯）。",
+      "indications_en": "Chronic diarrhea and dysentery (representative formula: Zhen Ren Yang Zang Tang).",
+      "field_sources": {
+        "pair_meaning_zh": [
+          "herb_card_key_pairs"
+        ],
+        "indication_zh": [
+          "herb_card_key_pairs"
+        ],
+        "pair_meaning_en": [
+          "translation_of_zh"
+        ],
+        "indication_en": [
+          "translation_of_zh"
+        ],
+        "official_status": [
+          "bastyr_outline_not_in_repo"
+        ]
+      },
+      "teaching_note_zh": "卡上標籤寫「嬰粟殼」，為「罌粟殼」之誤，對應 herb.ying_su_ke（管制藥材，用藥安全見該卡）。"
+    },
+    {
+      "id": "pair.chi_shi_zhi__gan_jiang__jing_mi",
+      "herbs": [
+        "herb.chi_shi_zhi",
+        "herb.gan_jiang",
+        "herb.jing_mi"
+      ],
+      "name_zh": "赤石脂配乾薑、粳米",
+      "name_en": "Chi Shi Zhi with Gan Jiang and Jing Mi",
+      "relation": "pair.rel.board_exam",
+      "board_exam_pair": true,
+      "ncbahm_official_pair": false,
+      "pair_meaning_zh": "溫中健脾、固腸止瀉止血。",
+      "pair_meaning_en": "Warms the Middle, strengthens the Spleen, binds the intestines, stops diarrhea and stops bleeding.",
+      "indication_zh": "虛寒下痢便膿血（代表方：桃花湯）。",
+      "indication_en": "Deficiency-Cold dysentery with pus and blood in the stool (representative formula: Tao Hua Tang).",
+      "found_in_formulas": [
+        "formula.tao_hua_tang"
+      ],
+      "sources": [
+        "herb_canon_shortlist:herb.chi_shi_zhi.key_pairs（卡上標示「Bastyr 官方對藥」）",
+        "unverified_outline:Bastyr 考綱正本不在 curriculum/board/，本條未能對正本核讀；另註:同一批卡上標籤的 NCBAHM 那一半經考綱正本核對後 20 條有 10 條不成立(見同日歸屬核對條目)，故 Bastyr 宣稱亦僅記錄不背書。內容為卡上既有敘述遷移，未新增未查證陳述。"
+      ],
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "migrated_from": "herb.chi_shi_zhi.key_pairs",
+      "actions_zh": "溫中健脾、固腸止瀉止血。",
+      "actions_en": "Warms the Middle, strengthens the Spleen, binds the intestines, stops diarrhea and stops bleeding.",
+      "indications_zh": "虛寒下痢便膿血（代表方：桃花湯）。",
+      "indications_en": "Deficiency-Cold dysentery with pus and blood in the stool (representative formula: Tao Hua Tang).",
+      "field_sources": {
+        "pair_meaning_zh": [
+          "herb_card_key_pairs"
+        ],
+        "indication_zh": [
+          "herb_card_key_pairs"
+        ],
+        "pair_meaning_en": [
+          "translation_of_zh"
+        ],
+        "indication_en": [
+          "translation_of_zh"
+        ],
+        "official_status": [
+          "bastyr_outline_not_in_repo"
+        ]
+      }
     }
   ],
   "updated_at": "2026-07-30",

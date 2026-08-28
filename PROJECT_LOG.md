@@ -1,3 +1,76 @@
+# 2026-08-27 — 考綱對藥遷移收尾(第 5 批):12 條建記錄 + 12 條卡上副本移除;孤兒 16 → 4
+
+跨五批的遷移到此收尾。**pairs 263 → 275;卡上 authored 30 味/45 條 → 26 味/33 條;
+孤兒條目 16 → 4。既有 263 筆逐筆比對零改動。**
+
+## 剩下的 4 條全部是同一個原因:藥味不在正典,不建殘缺記錄
+| 卡 | 標籤 | 缺的藥味 |
+|---|---|---|
+| `herb.wang_bu_liu_xing` | 王不留行 + 穿山甲 + 木通 + **豬蹄** | 豬蹄(食材,非藥) |
+| `herb.tong_cao` | 通草 + 王不留行 + **豬蹄** | 同上 |
+| `herb.jiang_huang` | 薑黃 + 羌活 + 桑枝 + **海風藤** | 海風藤(真藥材,本庫未建卡) |
+| `herb.chi_shi_zhi` | 赤石脂 + **禹餘糧** | 禹餘糧(真藥材,本庫未建卡) |
+四條**維持原狀留在卡上**,畫面照常顯示(已眼讀赤石脂卡確認),內容沒有損失。
+要不要為海風藤、禹餘糧建卡是補卡 backlog 的內容決定,留 Ting。豬蹄不是中藥,建議永久排除。
+
+## 三處字形/錯字逐一查證後才對應(不是猜的)
+| 標籤寫 | 對應 | 性質 |
+|---|---|---|
+| 干薑 | `herb.gan_jiang` 乾薑 | 異體字形 |
+| 嬰粟殼 | `herb.ying_su_ke` 罌粟殼 | **錯字**(嬰/罌);該藥為管制藥材,用藥安全見該卡 |
+| (前批)葦莖 | `herb.lu_gen` 蘆根 | 品名對應 |
+三處都寫進該記錄的 `teaching_note_zh`,並在移除腳本裡列為**具名例外**(集合比對必然對不上,
+不能靠模糊匹配硬刪)——例外逐條寫明理由,不是靜默特例。
+
+## 12 條逐條
+掛方 5 條(逐味比對組成):補中益氣湯(黃耆配升麻、柴胡)、四神丸(肉豆蔻配補骨脂、五味子、吳茱萸)、
+烏梅丸(烏梅配細辛、乾薑、黃連、附子)、真人養臟湯(訶子配罌粟殼、肉豆蔻)、桃花湯(赤石脂配乾薑、粳米)。
+留空 7 條,其中一條**刻意不掛**:蒲公英配金銀花、紫花地丁 —— 本庫 `formula.wu_wei_xiao_du_yin`
+五味消毒飲的組成確實含此三味,但**卡上來源未點名該方**,不代來源作連結,理由寫進 teaching_note。
+訶子湯本庫無方劑卡,留空。
+
+**board 旗標**:本批 6 條標「Bastyr 官方對藥」者維持 `board_exam_pair` + `unverified_outline`
+(與第 1–3 批一致);6 條卡上未標官方對藥且自帶英文者不加旗標、英文用原文非代譯。
+`unverified_outline` 這次加了一句事實:**同一批卡上標籤的 NCBAHM 那一半經考綱正本核對後
+20 條有 10 條不成立**,故 Bastyr 宣稱亦僅記錄不背書。
+
+## 五批總帳
+| | 起點 | 收尾 |
+|---|---|---|
+| `herb_pairs` 記錄 | 218 | **275**(+57) |
+| 卡上 authored 條目 | 52 味 / 94 條 | **26 味 / 33 條** |
+| 只活在卡上的孤兒 | 65 | **4**(全數為藥味缺卡,非漏做) |
+| 併集後卡上新增顯示的結構化藥對 | 79 | **101** |
+| 假 NCBAHM 歸屬 | 24 | **13**(全為既有待裁,我造成的 5 筆已訂正) |
+
+## 驗證(在 d9293514 基底上全跑,輸出原文)
+- `build-data` → `{"formulas":223,"herbs":364,...,"audit_missing":0}`
+- `validate-herb-standard` → `PASS — no structural defects.`
+- `validate-content-junk` → `PASS — no scraped header tokens, no encoding anomalies in _zh fields.`
+- `validate-dose-basis` → `PASS — dose_basis 標示全部合規。`
+- `validate-herb-pair-render` → `PASS — 兩個藥對來源都到畫面上,重複判定與重算一致。`
+- `validate-board-pair-attribution` → `PASS — 沒有新的歸屬錯誤(既有 13 項在待裁清單內)。`
+- `check-validation-ratchet` → `PASS — no regressions.`
+- `git diff --check` → 無輸出
+
+**自 diff**:`herb_pairs.json` +549/−0(純新增 12 筆);
+`herb_canon_shortlist.json` +5/−67(變動欄位 9 個全為 `*.key_pairs`);generated 兩檔隨批重建。
+**眼讀**:訶子卡自由文字 0 條、結構化 3 條;赤石脂卡保留 1 條卡住的自由文字 + 1 條結構化。
+
+## 五批累積下來,留 Ting 的清單(前面各條都提過,集中在此)
+1. 既有 9 筆 herb_pairs 的假 NCBAHM 標記(3–4 味組合)—— 改 false,還是另立標?
+2. 4 條藥卡標籤的假 NCBAHM 宣稱(羌活+獨活、細辛+乾薑+五味子、滑石+甘草、延胡索+川楝子)
+3. Bastyr 正本不在 repo:那 20 筆 `board_exam_pair` 要不要一併降級?
+4. 重複卡:旱蓮草/墨旱蓮、沙參/北沙參
+5. 竹葉/淡竹葉:導赤散組成該用哪一個(裁完可補掛 `pair.mu_tong__sheng_di_huang__zhu_ye__gan_cao`)
+6. `pair.rel.board_exam` 不在七情詞表裡,38 筆的關係標籤都不顯示
+7. 補卡 backlog:海風藤、禹餘糧(補了就能收掉最後 4 條孤兒中的 2 條)
+8. `formula.yu_ping_feng_san` 組成裡 `huang_qi` 出現兩次(本批查證時順帶發現,未動)
+
+MEASURED TREE: claude/practical-easley-73f009 @ origin/main d9293514 + 本批
+
+---
+
 # 2026-08-27 — 解表批做到一半發現歸屬錯誤:考綱正本核對出 24 項假宣稱,我自己傳播了 5 項
 
 原本是遷移第 4 批(解表 10 條)。動工前照慣例查證,發現這批有 6 條標「2026 NCBAHM
