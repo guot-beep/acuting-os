@@ -1,3 +1,70 @@
+# 2026-08-28 — formulas.key_pairs 懸空 15 → 0:3 條重導 + 12 條建記錄,3 張方劑卡的策展藥對回來了
+
+Ting 裁「那 15 條 key_pairs 處理掉」。分兩段,依據不同,分開記。
+
+## 一、3 條重導(純機械,依據都不是猜的)
+| 方劑 | 從 | 到 | 依據 |
+|---|---|---|---|
+| `gui_zhi_tang` | `pair.sheng_jiang__da_zhao` | `pair.sheng_jiang__da_zao` | `herb.da_zhao` 是 `herb.da_zao` 大棗的錯字;前批「懸空 id 治理」已在 reference 層重導,**方劑這一側沒跟著改** |
+| `gui_zhi_tang` | `pair.shao_yao__gan_cao` | `pair.bai_shao__gan_cao` | 芍藥在本庫正名為 `herb.bai_shao`(該卡 `aliases_zh` 收「芍藥」,腳本寫入前 assert 過) |
+| `xiao_qing_long_tang` | `pair.xi_xin__gan_jiang__wu_wei_zi` | `pair.gan_jiang__xi_xin__wu_wei_zi` | 純成員排序不同,成員集合完全相同 |
+每條都先驗「目標記錄存在」「成員數相同」「重導後不產生重複」才改;`key_pairs` 條數不變。
+
+## 二、12 條建記錄 —— 先查來源,查到什麼就寫什麼,不足的地方明說
+**查證結果(三個來源都查了)**:
+- **curriculum:12 組沒有一組同一行同時述及兩味**(0 處)——課件沒有這些配伍的敘述
+- **方劑卡有每一味在該方的角色**(君臣佐使 + `in_formula_zh`)——這是真來源
+- **但沒有任何來源說「兩味合用達成什麼」**,而那正是 `schema_note` 說 `pair_meaning` 該講的事
+
+所以作法是:`pair_meaning` **由程式逐欄讀方劑卡的角色敘述組成**(不由我轉述,零抄錄誤差),
+並明白框成「於『X 方』中 —— 甲(君):…;乙(臣):…」。另立 `synergy_status: "pair_synergy_unsourced"`
+與逐筆 `teaching_note_zh` 寫明:**合用意義本庫無來源,不代為推論協同作用,亦不標七情 relation**
+(那是需要來源的分類宣告)。查到來源再補。
+
+**逐筆記下的資料落差**(不靜默吞掉):
+- 方劑卡未載角色說明的藥味:荊芥(銀翹散)、杏仁(桑菊飲)、黃柏(黃連解毒湯)——記錄裡直接寫「方劑卡未載」
+- 炮製/部位別:黃連解毒湯作「梔子炭」、導赤散作「甘草梢」、龍膽瀉肝湯作「當歸尾」,
+  `herbs` 陣列用正名,差異寫進 teaching_note
+
+**中途自己造的一個問題,當場修掉**:12 筆是照懸空 id 的字面建的,於是
+`pair.zhi_gan_cao__geng_mi` 把「粳米」的舊拼字帶進了新 id,但成員是 `herb.jing_mi`。
+**新建的 id 不該把錯字帶進去** —— 改為 `pair.zhi_gan_cao__jing_mi` 並重導白虎湯那一側,
+驗過 id 與成員推導一致。
+
+## 三、畫面(眼讀,dev server)
+修前那 3 張「策展藥對全數被靜默丟掉」的卡,現在全部回到策展清單:
+| 方劑 | 修前 | 修後 |
+|---|---|---|
+| 龍膽瀉肝湯 | 0 條策展 → 印「依組成推得」候選 | **3 條**,無「依組成推得」標記 |
+| 導赤散 | 同上 | **2 條** |
+| 黃連解毒湯 | 同上 | **3 條** |
+桂枝湯/銀翹散/白虎湯/桑菊飲/小青龍湯的缺漏提示也全部消失。
+
+## 數字
+| | 修前 | 修後 |
+|---|---|---|
+| `formulas.key_pairs` 懸空 | **15** | **0** |
+| `herb_pairs` 記錄 | 275 | **287** |
+| gate 上限 `formulas.key_pairs` | 15 | **0(已鎖)** |
+既有 275 筆藥對逐筆比對零改動;`formulas.json` 只動 2 筆的 `key_pairs`(變動欄位 2 個,條數不變)。
+
+## 驗證(九支全跑)
+`build-data`、`validate-herb-standard`、`validate-formula-standard`、`validate-content-junk`、
+`validate-dose-basis`、`validate-herb-pair-render`、`validate-board-pair-attribution`、
+`validate-review-status-vocabulary`、`validate-rendered-reference-resolution`、
+`check-validation-ratchet` **全 PASS**;`git diff --check` 無輸出。
+gate 負向測試:把上限鎖到 0 後注入一條懸空引用 → FAIL;還原 → PASS。
+
+## 剩下的兩項待裁(上一條就列了,未動)
+1. `relationButton` 要不要一律檢查目標存在?現在 `related_formulas` 是 0 懸空,**那是運氣不是機制**。
+2. `FORMULA_CATEGORY_DESC` 缺的 6 個分類說明要不要補。
+另:`patternLibrary.typical_formulas` 還有 5 條懸空、`herbPairs.found_in_formulas` 9 條(未渲染),
+都在 gate 的上限內盯著,要不要處理是下一輪的事。
+
+MEASURED TREE: claude/practical-easley-73f009 @ origin/main 本批基底
+
+---
+
 # 2026-08-28 — 「資料到畫面之間靜默降級」全掃描:最嚴重的一處是 3 張方劑卡的策展藥對整份消失
 
 Ting 裁「掃一次」。起因是同一週抓到三次同型缺陷(一個 `||` 吞掉 109 條藥對、

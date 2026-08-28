@@ -25,7 +25,7 @@ const ROOT = path.join(__dirname, "..");
 
 // 上限 = 2026-08-28 首次量測值。修好就把數字改小,只能往下不能往上。
 const CEILING = {
-  "formulas.key_pairs": 15,
+  "formulas.key_pairs": 0,   // 2026-08-28 從 15 降到 0:3 條重導 + 12 條建記錄
   "herbPairs.herbs": 3,
   "patternLibrary.typical_formulas": 5,
   "herbPairs.found_in_formulas": 9,
