@@ -44268,7 +44268,7 @@
    ],
    "source_hint": "Bensky Materia Medica: Stop Cough and Wheeze",
    "review_status": "draft",
-   "properties_taste_temp": "溫、甘、有毒、酸、小毒、苦",
+   "properties_taste_temp": "苦、微溫、有小毒",
    "functions": [
     "止咳化痰",
     "通便",
@@ -44320,20 +44320,23 @@
    "english_exam_track": {
     "review_status": "draft",
     "source_status": "bensky_review_pending",
-    "properties_taste_temp": "Draft: warm/cool/bitter/acrid depending on herb; verify individual taste and temperature.",
+    "properties_taste_temp": "Bitter, slightly warm; slightly toxic.",
     "functions": [
-     "Transform phlegm or stop cough pattern context",
-     "Support cough, phlegm, or qi-counterflow differentiation"
+     "Stops coughing and transforms Phlegm",
+     "Unblocks the bowels",
+     "Stops coughing and calms wheezing",
+     "Directs Qi downward",
+     "Generates fluids and quenches thirst",
+     "Expels and kills parasites"
     ],
     "indications": [
-     "Pattern documentation context only; verify against Bensky before source_checked."
+     "Directs Lung Qi downward and stops cough and wheezing; moistens the intestines and unblocks the bowels"
     ],
     "common_pairings": [
-     "Pairings depend on formula context; verify against Bensky before source_checked."
+     "Combined within Ma Huang Tang and Ma Xing Shi Gan Tang for cough and wheezing (see related_formulas)."
     ],
     "contraindications": [
-     "Review toxicity review before clinical use.",
-     "Review pregnancy review before clinical use."
+     "Contraindicated in Yin-deficiency cough with loose stools; slightly toxic -- do not exceed the recommended dose; use with caution in infants."
     ],
     "functions_zh_source": [
      "止咳化痰",
@@ -44532,7 +44535,8 @@
    "atlas_link_status": "index",
    "field_sources": {
     "properties_taste_temp": [
-     "https://cloudtcm.com/herb/3"
+     "https://cloudtcm.com/herb/3",
+     "中國藥典(WebSearch 核對 2026-08-28)"
     ],
     "channels_zh": [
      "https://cloudtcm.com/herb/3"
@@ -44561,7 +44565,22 @@
     "actions_en": [
      "translated: 本卡 functions_zh 逐條忠實翻譯(帳本 docs/research_packs/HERB_EN_BACKFILL_2026-08-19.json,紅線5 同長同序)"
     ],
-    "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md; American Dragon (americandragon.com); Taiwan Herbal Pharmacopoeia 4th ed."
+    "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md; American Dragon (americandragon.com); Taiwan Herbal Pharmacopoeia 4th ed.",
+    "contraindications_en": [
+     "由既有 contraindications_zh 直譯，未新增內容"
+    ],
+    "tcm_properties": [
+     "中國藥典(WebSearch 核對 2026-08-28)"
+    ],
+    "pharmaceutical_latin": [
+     "NCBAHM 2026 CH Content Outline, Appendix A (通用拉丁藥名)"
+    ],
+    "exam_pearl": [
+     "由本卡既有 modern_functions_detail_zh(苦杏仁苷/其他功效段)整理，未新增未查證宣稱"
+    ],
+    "exam_importance": [
+     "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf"
+    ]
    },
    "card_grade": "partial",
    "modern_functions_en": [
@@ -44644,8 +44663,42 @@
      "reason": "A8(a):毒性/管制藥材不承載食療用量(77 張食療上限高於藥用上限的系統性缺陷,毒藥子集先行)",
      "moved_at": "2026-08-27",
      "ruling": "TING_RULING_SHEET_2026-08-27"
+    },
+    {
+     "original_field": "properties_taste_temp",
+     "text": "溫、甘、有毒、酸、小毒、苦",
+     "reason": "中國藥典苦杏仁性味為「苦，微溫；有小毒」(WebSearch 2026-08-28 核對)；本卡原值混入無藥典依據的「甘」「酸」二味，「微溫」誤寫「溫」，且同時列「有毒」與「小毒」兩個不同毒性等級，先搬存再改。",
+     "moved_at": "2026-08-28",
+     "ruling": "A13(b) CloudTCM re-verification against 中國藥典/CloudTCM ground truth"
     }
-   ]
+   ],
+   "contraindications_en": [
+    "Contraindicated in Yin-deficiency cough with loose stools; slightly toxic -- do not exceed the recommended dose; use with caution in infants."
+   ],
+   "tcm_properties": {
+    "four_natures_zh": "微溫",
+    "four_natures_en": "Slightly Warm",
+    "five_flavors_zh": [
+     "苦"
+    ],
+    "five_flavors_en": [
+     "Bitter"
+    ],
+    "meridian_tropism_zh": [
+     "肺經",
+     "大腸經"
+    ],
+    "meridian_tropism_en": [
+     "LU Lung",
+     "LI Large Intestine"
+    ],
+    "part_used_zh": "種仁",
+    "part_used_en": "Seed Kernel"
+   },
+   "pharmaceutical_latin": "Armeniacae Semen Amarum",
+   "pinyin_toned": "Xìng Rén",
+   "exam_pearl": "苦杏仁苷經腸道分解產生微量氫氰酸，抑制呼吸中樞而鎮咳平喘，也是過量中毒的原因；有小毒，嬰兒慎用，不宜過量嚼服生品。",
+   "exam_importance": "★ NCBAHM 2026 CH 考綱 Domain I.A：止咳平喘藥中唯一列有小毒者，過量中毒機轉是常考點。"
   },
   {
    "id": "herb.su_zi",
@@ -44937,7 +44990,7 @@
    ],
    "source_hint": "Bensky Materia Medica: Stop Cough and Wheeze",
    "review_status": "draft",
-   "properties_taste_temp": "甘、辛、微甘、苦、溫",
+   "properties_taste_temp": "辛、微苦、溫",
    "functions": [
     "止咳化痰",
     "除煩",
@@ -44968,20 +45021,22 @@
    "english_exam_track": {
     "review_status": "draft",
     "source_status": "bensky_review_pending",
-    "properties_taste_temp": "Draft: warm/cool/bitter/acrid depending on herb; verify individual taste and temperature.",
+    "properties_taste_temp": "Acrid, slightly bitter, warm.",
     "functions": [
-     "Transform phlegm or stop cough pattern context",
-     "Support cough, phlegm, or qi-counterflow differentiation"
+     "Stops coughing and transforms Phlegm",
+     "Eliminates vexation",
+     "Stops coughing and calms wheezing",
+     "Moistens the Lungs",
+     "Directs Qi downward"
     ],
     "indications": [
-     "Pattern documentation context only; verify against Bensky before source_checked."
+     "Moistens the Lung, directs Qi downward, stops cough and transforms Phlegm for both new and chronic cough"
     ],
     "common_pairings": [
-     "Pairings depend on formula context; verify against Bensky before source_checked."
+     "Combined within Ding Chuan Tang and Bai He Gu Jin Tang for cough and wheezing (see related_formulas)."
     ],
     "contraindications": [
-     "Review pregnancy review before clinical use.",
-     "Review toxicity review before clinical use."
+     "Use cautiously in Yin-deficiency dry-Heat cough."
     ],
     "functions_zh_source": [
      "止咳化痰",
@@ -45083,7 +45138,8 @@
    "atlas_link_status": "index",
    "field_sources": {
     "properties_taste_temp": [
-     "https://cloudtcm.com/herb/1518"
+     "https://cloudtcm.com/herb/1518",
+     "中國藥典(WebSearch 核對 2026-08-28)"
     ],
     "channels_zh": [
      "https://cloudtcm.com/herb/1518"
@@ -45115,7 +45171,22 @@
     "actions_en": [
      "translated: 本卡 functions_zh 逐條忠實翻譯(帳本 docs/research_packs/HERB_EN_BACKFILL_2026-08-19.json,紅線5 同長同序)"
     ],
-    "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md; American Dragon (americandragon.com); Taiwan Herbal Pharmacopoeia 4th ed."
+    "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md; American Dragon (americandragon.com); Taiwan Herbal Pharmacopoeia 4th ed.",
+    "contraindications_en": [
+     "由既有 contraindications_zh 直譯，未新增內容"
+    ],
+    "tcm_properties": [
+     "中國藥典(WebSearch 核對 2026-08-28)"
+    ],
+    "pharmaceutical_latin": [
+     "NCBAHM 2026 CH Content Outline, Appendix A (通用拉丁藥名)"
+    ],
+    "exam_pearl": [
+     "由本卡既有 dosage/functions_zh 內容整理，未新增未查證宣稱"
+    ],
+    "exam_importance": [
+     "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf"
+    ]
    },
    "card_grade": "partial",
    "import_artifacts": [
@@ -45143,6 +45214,13 @@
      "reason": "A8(a):毒性/管制藥材不承載食療用量(77 張食療上限高於藥用上限的系統性缺陷,毒藥子集先行)",
      "moved_at": "2026-08-27",
      "ruling": "TING_RULING_SHEET_2026-08-27"
+    },
+    {
+     "original_field": "properties_taste_temp",
+     "text": "甘、辛、微甘、苦、溫",
+     "reason": "中國藥典款冬花性味為「辛、微苦，溫」(WebSearch 2026-08-28 核對)；本卡原值「甘」與「微甘」重複列出且無藥典依據，先搬存再改。",
+     "moved_at": "2026-08-28",
+     "ruling": "A13(b) CloudTCM re-verification against 中國藥典/CloudTCM ground truth"
     }
    ],
    "modern_functions_en": [
@@ -45204,7 +45282,34 @@
    ],
    "contraindications_zh": [
     "陰虛燥熱咳嗽者慎用。"
-   ]
+   ],
+   "contraindications_en": [
+    "Use cautiously in Yin-deficiency dry-Heat cough."
+   ],
+   "tcm_properties": {
+    "four_natures_zh": "溫",
+    "four_natures_en": "Warm",
+    "five_flavors_zh": [
+     "辛",
+     "微苦"
+    ],
+    "five_flavors_en": [
+     "Acrid",
+     "Slightly Bitter"
+    ],
+    "meridian_tropism_zh": [
+     "肺經"
+    ],
+    "meridian_tropism_en": [
+     "LU Lung"
+    ],
+    "part_used_zh": "花蕾",
+    "part_used_en": "Flower Bud"
+   },
+   "pharmaceutical_latin": "Farfarae Flos",
+   "pinyin_toned": "Kuǎn Dōng Huā",
+   "exam_pearl": "潤肺下氣、止咳化痰要藥，新久咳嗽皆可用；蜜炙可增強潤肺止咳作用（見本卡 dosage 特殊說明）。",
+   "exam_importance": "★ NCBAHM 2026 CH 考綱 Domain I.A：止咳平喘藥的炮製（蜜炙）與功效變化是常考點。"
   },
   {
    "id": "herb.zi_wan",
@@ -47127,23 +47232,22 @@
    "english_exam_track": {
     "review_status": "draft",
     "source_status": "bensky_review_pending",
-    "properties_taste_temp": "Draft: sweet/salty/cool or neutral depending on herb; verify individual taste and temperature.",
+    "properties_taste_temp": "Acrid, neutral; toxic.",
     "functions": [
-     "Extinguish internal wind pattern context",
-     "Support tremor, spasm, or dizziness-pattern differentiation"
+     "Calms the Liver and extinguishes Wind",
+     "Dispels Wind and stops convulsions",
+     "Dispels Wind and eliminates Dampness",
+     "Extinguishes Wind and stops convulsions",
+     "Resolves toxicity and kills parasites"
     ],
     "indications": [
-     "Pattern documentation context only; verify against Bensky before source_checked."
+     "Extinguishes internal Wind and stops convulsions; resolves toxicity and dissipates nodules; unblocks the collaterals and stops pain"
     ],
     "common_pairings": [
-     "Pairings depend on formula context; verify against Bensky before source_checked."
+     "Combined within Qian Zheng San for Wind-stroke with deviated mouth and eye, and within Bu Yang Huan Wu Tang for post-stroke hemiplegia (see related_formulas)."
     ],
     "contraindications": [
-     "Review toxicity review before clinical use.",
-     "Review pregnancy review before clinical use.",
-     "Review not for self treatment before clinical use.",
-     "Review urgent red flag review before clinical use.",
-     "Review dose preparation review before clinical use."
+     "Contraindicated in internal Wind from Blood deficiency; contraindicated in pregnancy; toxic -- use a small dose (dried herb 2-5 g)."
     ],
     "functions_zh_source": [
      "平肝息風",
@@ -47324,7 +47428,23 @@
     "actions_en": [
      "translated: 本卡 functions_zh 逐條忠實翻譯(帳本 docs/research_packs/HERB_EN_BACKFILL_2026-08-19.json,紅線5 同長同序)"
     ],
-    "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md; American Dragon (americandragon.com); Taiwan Herbal Pharmacopoeia 4th ed."
+    "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md; American Dragon (americandragon.com); Taiwan Herbal Pharmacopoeia 4th ed.",
+    "contraindications_en": [
+     "由既有 contraindications_zh 直譯，未新增內容"
+    ],
+    "tcm_properties": [
+     "https://cloudtcm.com/herb/1525",
+     "中國藥典(WebSearch 核對 2026-08-28，性味歸經一致)"
+    ],
+    "pharmaceutical_latin": [
+     "NCBAHM 2026 CH Content Outline, Appendix A (通用拉丁藥名)"
+    ],
+    "exam_pearl": [
+     "由本卡既有 indications_zh/cautions_zh 內容整理，未新增未查證宣稱"
+    ],
+    "exam_importance": [
+     "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf"
+    ]
    },
    "card_grade": "partial",
    "modern_functions_en": [
@@ -47409,7 +47529,32 @@
      "moved_at": "2026-08-27",
      "ruling": "TING_RULING_SHEET_2026-08-27"
     }
-   ]
+   ],
+   "contraindications_en": [
+    "Contraindicated in internal Wind from Blood deficiency; contraindicated in pregnancy; toxic -- use a small dose (dried herb 2-5 g)."
+   ],
+   "tcm_properties": {
+    "four_natures_zh": "平",
+    "four_natures_en": "Neutral",
+    "five_flavors_zh": [
+     "辛"
+    ],
+    "five_flavors_en": [
+     "Acrid"
+    ],
+    "meridian_tropism_zh": [
+     "肝經"
+    ],
+    "meridian_tropism_en": [
+     "LV Liver"
+    ],
+    "part_used_zh": "全體",
+    "part_used_en": "Whole Body"
+   },
+   "pharmaceutical_latin": "Scorpio",
+   "pinyin_toned": "Quán Xiē",
+   "exam_pearl": "息風止痙、通絡止痛要藥，治小兒驚風、中風口眼歪斜、頑固頭痛；有毒，孕婦禁用。（本卡 dosage 常用量 3-6g 與 contraindications_zh「乾品2-5g」兩個數字不一致，未查得哪個是誤植，待 Ting 裁定，兩者均保留未刪改）",
+   "exam_importance": "★ NCBAHM 2026 CH 考綱 Domain I.A：動物類毒藥的安全劑量是常考點。"
   },
   {
    "id": "herb.mu_li",
@@ -52782,19 +52927,28 @@
    "english_exam_track": {
     "review_status": "draft",
     "source_status": "bensky_review_pending",
-    "properties_taste_temp": "Mostly sweet; neutral to warm depending on herb. Draft pending Bensky verification.",
+    "properties_taste_temp": "Sweet, bitter, astringent, slightly warm.",
     "functions": [
-     "Tonify blood pattern context",
-     "Support menstrual/blood-deficiency study differentiation"
+     "Tonifies the Blood",
+     "Tonifies Qi",
+     "Dispels Wind and eliminates Dampness",
+     "Boosts Essence",
+     "Resolves toxicity",
+     "Quickens the collaterals and relieves pain",
+     "Unblocks the bowels",
+     "Strengthens sinews and bones",
+     "Tonifies the Liver and Kidneys",
+     "Protects the liver",
+     "Delays aging"
     ],
     "indications": [
-     "Blood deficiency documentation context only"
+     "Processed: tonifies Essence and Blood, tonifies the Liver and Kidneys, blackens the hair. Raw: moistens the intestines, resolves toxicity, treats malaria"
     ],
     "common_pairings": [
-     "Often studied with qi tonics or blood-moving herbs depending on pattern; verify against Bensky before source_checked."
+     "Combined within Blood- and Liver-Kidney-tonifying formulas such as Si Wu Tang, Gui Pi Tang, and Ba Zhen Tang (see related_formulas)."
     ],
     "contraindications": [
-     "Review pregnancy, heavy bleeding, anticoagulants, cloying digestive effect, and medication context."
+     "Contraindicated in loose stools with heavy Phlegm-Dampness; use with caution in impaired liver function."
     ],
     "functions_zh_source": [
      "補血",
@@ -53009,7 +53163,23 @@
     "actions_en": [
      "translated: 本卡 functions_zh 逐條忠實翻譯(帳本 docs/research_packs/HERB_EN_BACKFILL_2026-08-19.json,紅線5 同長同序)"
     ],
-    "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md; Taiwan Herbal Pharmacopoeia 4th ed.; American Dragon (americandragon.com)"
+    "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md; Taiwan Herbal Pharmacopoeia 4th ed.; American Dragon (americandragon.com)",
+    "contraindications_en": [
+     "由既有 contraindications_zh 直譯，未新增內容"
+    ],
+    "tcm_properties": [
+     "https://cloudtcm.com/herb/1062",
+     "中國藥典(制何首烏,WebSearch 核對 2026-08-28，性味歸經一致)"
+    ],
+    "pharmaceutical_latin": [
+     "NCBAHM 2026 CH Content Outline, Appendix A (通用拉丁藥名，制何首烏)"
+    ],
+    "exam_pearl": [
+     "由本卡既有 indications_zh/cautions_zh 內容整理，未新增未查證宣稱"
+    ],
+    "exam_importance": [
+     "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf"
+    ]
    },
    "card_grade": "partial",
    "import_artifacts": [
@@ -53101,7 +53271,39 @@
    ],
    "contraindications_zh": [
     "大便溏瀉及濕痰較重者忌服；肝功能不全者慎用。"
-   ]
+   ],
+   "contraindications_en": [
+    "Contraindicated in loose stools with heavy Phlegm-Dampness; use with caution in impaired liver function."
+   ],
+   "tcm_properties": {
+    "four_natures_zh": "微溫",
+    "four_natures_en": "Slightly Warm",
+    "five_flavors_zh": [
+     "甘",
+     "苦",
+     "澀"
+    ],
+    "five_flavors_en": [
+     "Sweet",
+     "Bitter",
+     "Astringent"
+    ],
+    "meridian_tropism_zh": [
+     "肝經",
+     "心經",
+     "腎經"
+    ],
+    "meridian_tropism_en": [
+     "LV Liver",
+     "HT Heart",
+     "KI Kidney"
+    ],
+    "part_used_zh": "塊根(製)",
+    "part_used_en": "Tuberous Root (processed)"
+   },
+   "pharmaceutical_latin": "Polygoni Multiflori Radix Praeparata",
+   "exam_pearl": "何首烏分生用與製用：生首烏潤腸解毒，製首烏補肝腎、益精血、烏鬚髮；肝功能不全者慎用是本卡安全要點。",
+   "exam_importance": "★ NCBAHM 2026 CH 考綱 Domain I.A：補血藥中唯一列入毒性複習範圍的一味，生熟異用是常考點。"
   },
   {
    "id": "herb.long_yan_rou",
