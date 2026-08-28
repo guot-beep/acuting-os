@@ -1,3 +1,13 @@
+# 2026-08-27 — Codex Conditions GI 病因缺口收斂 B44
+
+- **範圍**：精確修改 `cond.hiatal_hernia`、`cond.chronic_hepatitis_b`、`cond.primary_biliary_cholangitis`、`cond.sibo`、`cond.duodenitis`、`cond.upper_gi_bleeding`；只補雙語 etiology、record sources 與對應 field provenance，既有安全、TCM relations、方劑與穴位未覆寫；GI 類別缺雙語 etiology `6→0`。
+- **數字**：`FULL_DETAIL_CANDIDATE 318→319`、`DETAIL_PARTIAL 187→186`、`SKELETON 0→0`；上消化道出血 `10→12/12` 並進 full，慢性 B 肝 `11→12/12` 且仍為 full，其餘 4 卡 `8→10/12` 但仍缺 scope；全庫缺 etiology `158→152`、缺 sources `143→138`；source entries `1006→1017`、有 record source 的卡 `362→367`。
+- **來源／臨床區分**：NIH/NLM MedlinePlus、NIDDK、NCBI Bookshelf／PMC、CDC 與 ACG；12 個唯一直接 URL 最終均 HTTP 200（原 PubMed 203 端點已換同篇 PMC 全文）。內容區分 HBV 傳播與慢性化、PBC 自體免疫與細菌性膽管炎、SIBO secondary mechanisms、十二指腸炎多病因表型及 UGIB 不同出血來源。
+- **驗證**：只變更 6 個指定 id 的允許欄位群，其他 499 卡逐記錄不變；condition standard `505/505 clean`、build-data、relations、relation registry、ratchet、content-junk、URL reachability、generated data、逐卡 score 與 `git diff --check` 均無新增 blocking defect。
+- **未解／下一步**：食道裂孔疝氣、PBC、SIBO、十二指腸炎仍缺 disease-specific `acupuncture_scope`，未以泛化文字硬補；全庫仍有 `186` 張 partial／`152` 張病因缺口，下一批轉向常見 endocrine/metabolic Conditions。
+
+---
+
 # 2026-08-26 — Codex Conditions 肛直腸／結腸病因 B43
 
 - **範圍**：精確修改 `cond.anal_fissure`、`cond.colonic_polyp`、`cond.ischemic_colitis`、`cond.rectal_prolapse`、`cond.perianal_abscess`、`cond.anal_fistula`；只補雙語 etiology、record sources 與對應 field provenance，既有安全欄位、acupuncture scope、TCM relations、方劑與穴位未覆寫。

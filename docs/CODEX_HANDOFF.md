@@ -1,5 +1,13 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-27] Codex Handoff — Conditions GI etiology-gap closure B44
+
+- **Exact ids / fields**: `cond.hiatal_hernia`, `cond.chronic_hepatitis_b`, `cond.primary_biliary_cholangitis`, `cond.sibo`, `cond.duodenitis`, and `cond.upper_gi_bleeding`; filled bilingual etiology, record-level sources, and matching field provenance only. Existing safety content, TCM relations, formulas, and acupoints were preserved. Missing bilingual etiology in category `gi` is now `6→0`.
+- **Measured delta**: maturity `318→319 FULL_DETAIL_CANDIDATE`, `187→186 DETAIL_PARTIAL`, `0→0 SKELETON`; UGIB `10→12/12` and entered full, chronic HBV `11→12/12` while remaining full, and four scope-missing cards `8→10/12` while remaining partial; missing etiology `158→152`, missing sources `143→138`; source entries `1006→1017`, sourced records `362→367`.
+- **Evidence / distinctions**: NIH/NLM MedlinePlus, NIDDK, NCBI Bookshelf/PMC, CDC, and ACG; all twelve unique final direct URLs returned HTTP 200 (a PubMed 203 endpoint was replaced with the same article's PMC full text). Distinguished HBV transmission from chronic persistence, autoimmune PBC from bacterial cholangitis, secondary SIBO mechanisms, multifactorial duodenitis, and distinct UGIB source mechanisms.
+- **Validation**: only six exact ids and allowed field groups changed; the other 499 records remained equal. Condition standard `505/505 clean`, build-data, relations, relation registry, validation ratchet, content junk, URL reachability, generated-data rebuild, per-card score comparison, and `git diff --check` produced no new blocking defect.
+- **Explicit unresolved / next line**: hiatal hernia, PBC, SIBO, and duodenitis still lack disease-specific `acupuncture_scope`; none was invented. There remain 186 partial records and 152 etiology gaps; next target common endocrine/metabolic Conditions.
+
 ## [2026-08-26] Codex Handoff — Conditions anorectal/colonic etiologies B43
 
 - **Exact ids / fields**: `cond.anal_fissure`, `cond.colonic_polyp`, `cond.ischemic_colitis`, `cond.rectal_prolapse`, `cond.perianal_abscess`, and `cond.anal_fistula`; filled only bilingual etiology, record-level sources, and matching field provenance. Existing safety fields, acupuncture scope, TCM relations, formulas, and acupoints were preserved.
