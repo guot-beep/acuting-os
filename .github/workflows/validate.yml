@@ -545,6 +545,13 @@ jobs:
       # 全對、病人看起來正確,但「劑量改過」與「一開始就是這個劑量」從此
       # 無法區分,而且不會有任何 validator 變紅。照 schema.sql 真實兩表
       # 模擬遷移再反向重建,逐事件比對。含兩條負控(只搬末狀態/壓平歷史)。
+      # W2-1 前置:任何 clinical store backend 都要通過的同一套契約。
+      # Phase C 已把遷移面縮到 setBackend 一個插入點,但沒有人定義過 adapter
+      # 必須滿足什麼 —— 到真的換 backend 那天,唯一規格是讀 store 反推,
+      # 那正是最容易漏掉邊角行為的方式。7 條契約+2 條負控。
+      - name: clinical store backend contract
+        run: node scripts/test-clinical-backend-contract.js
+
       - name: exposure timeline survives migration (D17 §5)
         run: node scripts/test-exposure-timeline-migration.js
 
