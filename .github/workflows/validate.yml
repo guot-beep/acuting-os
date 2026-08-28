@@ -515,6 +515,15 @@ jobs:
       - name: D12 clinical contract freeze (additive-only)
         run: node scripts/validate-clinical-contract-freeze.js
 
+      # 2026-08-28:凍結面從三個補到五個 —— 前三個都是「檔案」,而真正決定
+      # localStorage 裡存下什麼的是「程式碼」:v1 的 normalizeClinicalCase/
+      # normalizeSoapNote 白名單(第四面,185 欄)、v2 staging 的 patient 列/
+      # envelope/journal 白名單(第五面,17 鍵)。負控 11/11 每次 CI 都真的跑
+      # —— gate 綠燈不算數,要證明它在該紅的時候紅得起來。自測全在 os.tmpdir()
+      # 的副本上做,不寫工作區任何檔案。
+      - name: D12 contract freeze — negative controls (11/11)
+        run: node scripts/validate-clinical-contract-freeze.js --self-test
+
       # D17 §5 的保序契約:遷移最容易犯的錯是「只取末狀態」—— 現況欄位
       # 全對、病人看起來正確,但「劑量改過」與「一開始就是這個劑量」從此
       # 無法區分,而且不會有任何 validator 變紅。照 schema.sql 真實兩表

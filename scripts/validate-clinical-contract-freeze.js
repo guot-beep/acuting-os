@@ -17,16 +17,25 @@
  *   改型別       → FAIL
  *   改名         → 表現為「一移除一新增」,同樣 FAIL(訊息會點出可疑配對)
  *
- * 涵蓋三個面:
+ * 涵蓋四個面:
  *   1. schema.sql 的表與欄(型別一併記)
  *   2. sample_export_fixture.json 的匯出信封鍵與病例欄位形狀
  *      (這份 fixture 是 app 匯出形狀的存證,CI 已在用它守不變量)
  *   3. localStorage key 名稱(app.js 的 CASE_STORAGE_KEY / STAGING_KEY / POINTER)
+ *   5. **v2 staging 的 patient 列 / envelope / journal 白名單**(2026-08-28 補)
+ *      —— C2b 指針切過去之後真正在用的是 v2。envelope 層有 runtime assert,
+ *      但 patient 列少一欄不會有任何人說話(見 scripts/lib/v2-store-shape.js)。
+ *   4. **normalizeClinicalCase / normalizeSoapNote 的白名單**(2026-08-28 補)
+ *      —— 前三個面都是「檔案」,而真正決定 localStorage 裡存下什麼的是「程式碼」。
+ *      IMPLEMENTATION_GAP_REVIEW_2026-08-27 §4 G2 的負控:從 normalizeClinicalCase
+ *      刪掉 allergyStatus,這支與另外四支臨床驗證器全部 exit 0。那條靜默刪除路徑
+ *      由第四個面關上,形狀取得方式見 scripts/lib/clinical-normalizer-shape.js。
  *
  * 用法:
  *   node scripts/validate-clinical-contract-freeze.js            # 比對
  *   node scripts/validate-clinical-contract-freeze.js --update   # 收新增進基準
  *   node scripts/validate-clinical-contract-freeze.js --json
+ *   node scripts/validate-clinical-contract-freeze.js --self-test  # 負控(不寫任何檔)
  *
  * --update 只接受「純新增」。有移除或型別變更時它會拒絕 —— 基準不是用來
  * 追認破壞的,那正是這支存在的理由。真的要破壞性變更:先寫遷移腳本、在
@@ -39,6 +48,17 @@ const path = require("path");
 const ROOT = path.resolve(__dirname, "..");
 const BASELINE = path.join(ROOT, "data/audits/clinical_contract_baseline.json");
 const AS_JSON = process.argv.includes("--json");
+const SELF_TEST = process.argv.includes("--self-test");
+const appSrcIdx = process.argv.indexOf("--app-src");
+const APP_SRC_PATH = appSrcIdx >= 0 ? process.argv[appSrcIdx + 1] : path.join(ROOT, "app.js");
+const APP_SRC = fs.readFileSync(APP_SRC_PATH, "utf8");
+const storeSrcIdx = process.argv.indexOf("--store-src");
+const STORE_SRC_PATH = storeSrcIdx >= 0 ? process.argv[storeSrcIdx + 1] : path.join(ROOT, "js/clinical-store.js");
+const STORE_SRC = fs.readFileSync(STORE_SRC_PATH, "utf8");
+const { readNormalizerShapes } = require("./lib/clinical-normalizer-shape.js");
+const { readV2StoreShapes } = require("./lib/v2-store-shape.js");
+
+if (SELF_TEST) { require("./lib/clinical-contract-selftest.js").run(__filename, ROOT); return; }
 const UPDATE = process.argv.includes("--update");
 const rbIdx = process.argv.indexOf("--force-rebaseline");
 const REBASELINE = rbIdx >= 0 ? process.argv[rbIdx + 1] : null;
@@ -88,8 +108,8 @@ function readExportShape() {
 
 // ---- 3. localStorage keys --------------------------------------------------
 function readStorageKeys() {
-  const app = fs.readFileSync(path.join(ROOT, "app.js"), "utf8");
-  const store = fs.readFileSync(path.join(ROOT, "js/clinical-store.js"), "utf8");
+  const app = APP_SRC;
+  const store = STORE_SRC;
   const keys = new Set();
   for (const src of [app, store]) {
     for (const m of src.matchAll(/["'](acuting-clinical[\w-]*)["']/g)) keys.add(m[1]);
@@ -97,7 +117,15 @@ function readStorageKeys() {
   return [...keys].sort();
 }
 
-const current = { schema: readSchema(), export: readExportShape(), storage_keys: readStorageKeys() };
+const normalizers = readNormalizerShapes(APP_SRC);
+const v2Store = readV2StoreShapes(STORE_SRC);
+const current = {
+  schema: readSchema(),
+  export: readExportShape(),
+  storage_keys: readStorageKeys(),
+  normalizers,
+  v2_store: v2Store,
+};
 
 // ---- 比對 ------------------------------------------------------------------
 const removed = [];
@@ -133,6 +161,31 @@ if (fs.existsSync(BASELINE)) {
 
   for (const k of baseline.storage_keys || []) if (!current.storage_keys.includes(k)) removed.push(`localStorage key "${k}"`);
   for (const k of current.storage_keys) if (!(baseline.storage_keys || []).includes(k)) added.push(`localStorage key "${k}"`);
+
+  // 第四面:normalize* 白名單。scope 整個不見 = 那一批欄位全部移除,不是「沒事」
+  const baseScopes = (baseline.normalizers && baseline.normalizers.scopes) || {};
+  for (const [scope, fields] of Object.entries(baseScopes)) {
+    if (!(scope in current.normalizers.scopes)) {
+      for (const k of Object.keys(fields)) removed.push(`normalizer.${scope}.${k}`);
+      continue;
+    }
+    diffCols(`normalizer.${scope}`, fields, current.normalizers.scopes[scope]);
+  }
+  for (const scope of Object.keys(current.normalizers.scopes)) {
+    if (!(scope in baseScopes)) added.push(`normalizer scope ${scope}`);
+  }
+
+  // 第五面:v2 staging 的三個白名單(只比鍵集合 —— 靜態抽取看不到型別,
+  // 不假裝看得到;少一個鍵就是靜默刪欄,這正是要擋的那件事)
+  const baseV2 = (baseline.v2_store && baseline.v2_store.scopes) || {};
+  for (const [scope, keys] of Object.entries(baseV2)) {
+    const now = current.v2_store.scopes[scope] || [];
+    for (const k of keys) if (!now.includes(k)) removed.push(`${scope}.${k}`);
+    for (const k of now) if (!keys.includes(k)) added.push(`${scope}.${k}`);
+  }
+  for (const scope of Object.keys(current.v2_store.scopes)) {
+    if (!(scope in baseV2)) added.push(`v2 scope ${scope}`);
+  }
 }
 
 const breaking = removed.length + retyped.length;
@@ -155,6 +208,16 @@ console.log("D12 臨床資料契約凍結閘\n");
 console.log(`  schema 表/欄            ${Object.keys(current.schema).length} / ${Object.values(current.schema).reduce((n, c) => n + Object.keys(c).length, 0)}`);
 console.log(`  匯出信封鍵              ${current.export.envelope.join(", ")}`);
 console.log(`  localStorage keys       ${current.storage_keys.length}`);
+console.log(`  normalize* 白名單        ${Object.keys(current.normalizers.scopes).length} 個 scope / ${Object.values(current.normalizers.scopes).reduce((n, f) => n + Object.keys(f).length, 0)} 欄`);
+console.log(`  v2 staging 白名單        ${Object.keys(current.v2_store.scopes).length} 個 scope / ${Object.values(current.v2_store.scopes).reduce((n, k) => n + k.length, 0)} 鍵`);
+for (const n of current.v2_store.notes) console.log(`  ⚠️  ${n}`);
+if (current.normalizers.stubbed.length) {
+  console.log(`  ⚠️  形狀是用 stub 推出來的(不可信,請補真實 helper):${current.normalizers.stubbed.join(", ")}`);
+}
+for (const [pathKey, kind] of Object.entries(current.normalizers.classify || {})) {
+  if (kind === "passthrough_no_whitelist") console.log(`  ⚠️  ${pathKey} —— 程式碼原封不動收下整個物件,沒有白名單可凍`);
+  if (kind === "unresolved_no_row") console.log(`  ⚠️  ${pathKey} —— 探針穿不過過濾器,這一批巢狀欄位沒有被凍住`);
+}
 console.log(`  基準檔                  ${baseline ? `有(${baseline.frozen_at})` : "尚未建立"}`);
 if (baseline) {
   console.log(`  新增(允許)              ${added.length}`);

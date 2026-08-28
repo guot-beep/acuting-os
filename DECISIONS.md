@@ -1046,3 +1046,51 @@ PASS(composition 查無藥材維持 1 味次 `formula.huang_tu_tang` 的「灶�
   legacy id 進 fixture → 必須 FAIL。自測綠不算數的同一條理由。
 - **Reconsider only if**:「療程背景」欄位落地 —— 那 5 筆一併撤出病名 picker。
 - **出處**:`docs/audits/G1_LEGACY_PICKER_RULING_2026-08-28.md`(裁定與重導對照表全文)。
+
+## D32 — D30 的凍結面從三個補到五個:白名單在**程式碼**裡,不在檔案裡 · LOCKED(2026-08-28,執行 D12/D30,無新裁定)
+
+- **What**:`validate-clinical-contract-freeze.js` 新增兩個面,並把負控接進 CI。
+  - **第四面**(`scripts/lib/clinical-normalizer-shape.js`):v1 的
+    `normalizeClinicalCase`/`normalizeSoapNote` 白名單 —— **11 個 scope / 185 欄**
+    (case 46、soap 58,加 agentExposures/environmentalExposures/其 events、
+    outcomeMetrics、lifestyleFactors、adverseEvents、tcmPatternSelections、
+    patternDifferentials 等巢狀列)。
+  - **第五面**(`scripts/lib/v2-store-shape.js`):v2 staging 的
+    `patient_row` 8 鍵 / `staging_envelope` 4 鍵 / `journal` 5 鍵 = **17 鍵**。
+  - **負控 11/11 進 CI**(`--self-test`,3 秒),不是只在開發時跑一次。
+- **Why now**:D30 凍的三個面(schema.sql、匯出信封、localStorage key 名稱)
+  **都是檔案**,而真正決定 localStorage 裡存下什麼的是**程式碼**。
+  `IMPLEMENTATION_GAP_REVIEW_2026-08-27` §4 G2 的負控實測:從
+  `normalizeClinicalCase` 刪掉 `allergyStatus`,D30 的 gate 與另外四支臨床
+  驗證器**全部 exit 0** —— 那一欄會在下一次存檔從每一筆病歷消失,無聲無息。
+  D12 於 9/01 生效,補在生效之前。
+- **方法(為什麼可信)**:第四面**在 vm 沙箱裡真的執行那兩支函式**再讀回傳物件,
+  不是用正規表示式數 `key:` 行(那會把巢狀物件字面量的鍵一起算進去、也看不出型別)。
+  缺的 helper 一律**從 `app.js` 抓真的那一支**進沙箱(本次解析到 5 支:
+  `createId`/`splitList`/`splitSafetyFlags`/`normalizeStringList`/`OUTCOME_VERDICTS`),
+  **stub 0 支**;真的抓不到會列在輸出裡,不會靜默用假的推形狀。
+  第五面那條路徑是 async + crypto,不宜執行,改用靜態字面量抽取(含簡寫屬性
+  `fields,` 與展開運算子);**抽不到鍵就丟錯,絕不回空集合** —— 回空集合會讓
+  gate 看起來很綠、其實什麼都沒守。
+- **誠實記錄:兩件沒凍住的東西**(gate 每次執行都會印出來,不是藏起來)
+  1. `soap.avsSnapshots` 是 **pass-through** —— 程式碼只檢查 `s.id` 就把整個物件
+     原樣收下,**它本身沒有白名單可凍**。這是程式碼的事實,不是 gate 抓不到。
+  2. 17 個字串陣列欄位(各種 `*Links`、`raceEthnicity` 等)沒有列結構可凍。
+- **已知的第六面候選(不在這批)**:草稿鍵 `acuting-draft-case-v1` /
+  `acuting-draft-soap-v1` 與 `acuting-backup-meta-v1` **不符第三面的 key 樣式**
+  (只抓 `acuting-clinical*`),而草稿內容是表單衍生、本來就沒有白名單。
+  損失是「打到一半還沒存的內容」,不是已存病歷,所以嚴重度低一階 —— 記在這裡,
+  9/05 之後再處理。
+- **負控 11/11**:刪 case 欄(`allergyStatus`,即缺口審查的原始負控)、刪 soap 欄
+  (`followUp`)、改型別(`baselineSeverity` string→number)、改名
+  (`patientPerspective`→`patientVoice`)、刪巢狀列一欄
+  (`outcomeMetrics[].relatedSymId`)、整支 normalizer 被改名(必須 fail loud)、
+  刪 v2 `patient_row.needsReview`、刪 v2 envelope 的 `patients`、
+  `patients.push` 錨點被改寫、純新增放行、兩支都不動必須綠。
+  **自測全在 `os.tmpdir()` 的副本上做,不寫工作區任何檔案**(這條是硬規則 ——
+  專案出過 gate 自己寫進追蹤檔、併發 session 把資料弄成永久損壞的事)。
+- **⚠️ 對抗測試尚未由第三方執行**:本項由同一個 agent 實作並自測。
+  `AGENTS.md`「安全 gate 的驗證分工」要求執行者與對抗測試者不得同源 ——
+  這一步**還沒做**,不要把上面的 11/11 當成已經被獨立驗證過。
+- **Reconsider only if**:C2b 指針切換完成、v1 normalizer 退場 ——
+  屆時第四面改為監看 v2 列建構器,第五面升格為主要契約面。
