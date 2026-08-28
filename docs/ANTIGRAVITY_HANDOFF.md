@@ -1,3 +1,77 @@
+## 📋 新派工 Task 11C（2026-08-27，Ting 指派）——補中藥引用網址，**這一項會動資料，規矩比 11A/11B 嚴**
+
+**MEASURED TREE：`origin/main` @ `8ba58677`**。分母開工前自己重跑一次（指令在最後）。
+
+**⚠️ 順序：11C 要等 11B 的負控結果出來才開工。** 全庫中藥引用網址只有兩個站
+（`cloudtcm.com` 424 處、`americandragon.com` 177 處），11B 正在查的就是「這兩個站對不存在的頁
+是不是也回 200」。**如果它們是 soft-404 站，你在 11C 補進去的每一條新網址都不可信**——所以先做 11B。
+
+### 分母（`origin/main` @ `8ba58677` 實測）
+
+- 中藥 364 筆，其中 **deprecated 4 筆（不准碰）**，active **360** 筆
+- 缺 `exact_source_url`：**95** 筆
+- 缺 `safety_source_url`：**16** 筆，而且**這 16 筆全部落在上面那 95 筆裡面**（兩欄都缺）
+- **所以工作清單就是 95 筆記錄**，其中 16 筆要補兩欄，79 筆補一欄
+
+缺 `exact_source_url` 的分類分佈（前段）：止血 9、活血化瘀 8、清熱解毒 8、收澀 8、清熱瀉火 7、
+利水滲濕 7、安神 6、補陰 5、平肝息風 4，其餘 24 個分類各 1–3 筆。
+
+缺 `safety_source_url` 的 16 筆逐筆：茯神 槐花 銀杏 化橘紅 白酒 黃酒 豬脊髓 小麥 炮薑 龜板膠
+龍齒 銀箔 棕櫚炭 茶葉 酒 碧玉散。
+
+### 這批的坑：**清單裡有一部分根本不該有來源頁**
+
+`白酒`／`黃酒`／`酒`／`碧玉散`（這是方不是藥）／`銀箔`／`金箔`（卡上已標
+`not_a_canonical_materia_medica_entry`）／`豬脊髓`／`雞子黃`／`糯稻根` 這一類，很可能兩個站都查無此條。
+**查無此條是正確答案，不是失敗**——照實留空並在帳本記 `NO_SOURCE_FOUND` 加原因。
+**不准為了把覆蓋率衝上去，硬掛一個「相近的」頁面上去。** Task 4 的左歸飲、Task 6 的
+`related_formulas` 都是誠實留空收下的先例。
+
+### 硬規矩（違反任何一條整批退）
+
+1. **只填真正空著的格子。** 已經有值的 `exact_source_url`／`safety_source_url` 一個都不准動——
+   不准「改成更好的」、不准正規化、不准補 `www.`。（Batch 3–5 那次 `modern_functions_en` 就是
+   把本來對的既有值洗掉，85/93 都是這個模式。）
+2. **只准動這兩個欄位。** 同一筆記錄的其他欄位、其他 364 筆記錄、其他任何檔案，都不准變。
+3. **不准用拼音組網址。** 現有那 177 條 `americandragon.com/Individualherbsupdate/<拼音駝峰>.html`
+   就是機械組出來的形狀，正是 11A 在查的疑點。**每一條新網址都必須是你從站內索引/搜尋頁點進去拿到的**，
+   帳本要記 `how_found`（你是從哪一頁點進去的），記不出來就等於沒查證。
+4. **一批 ≤30 筆**（`CLAUDE.md` 的規矩），分 4 批推，每批一支分支、一個 commit。
+5. 每批要跑 `node scripts/build-data.js`，**generated 檔隨批一起 commit**（`index.html` 直接載入）。
+
+### 帳本（跟資料改動同一個 commit）
+
+`data/audits/herb_source_url_fill_2026-08-27.json`，**95 筆記錄一筆都不能少**（填了的、留空的都要在）：
+
+`herb_id` · `name_zh` · `field`（哪一欄）· `url`（留空就 null）· `http_status` · `final_url` ·
+`fetched_at` · `page_title` · `evidence_excerpt`（頁面上證明這頁在講這味藥的逐字片段，≤200 字，原文照抄）·
+`how_found`（從哪個索引/搜尋頁點進去）· `outcome`（`FILLED` / `NO_SOURCE_FOUND` / `SKIPPED_NOT_A_HERB`）·
+`reason`（後兩者必填）
+
+### ✅ 驗收（一樣只跑指令，不讀報告）
+
+工具沿用 11A/11B 那支 `scripts/audit-source-url-liveness.js`，加第三個模式 **`--verify-fill --base <開工時的 sha>`**，
+**完全離線**，任何一項不符 exit 1：
+
+1. 這個 commit 改到的每一筆記錄，**除了那兩個 URL 欄位以外零差異**
+2. 那兩個欄位**只允許「空 → 有值」**，出現任何「有值 → 換成別的值」直接 FAIL
+3. 帳本涵蓋的 `herb_id` 集合 == 開工時實測的 95 筆集合（漏一筆 FAIL、多一筆 FAIL）
+4. 帳本裡 `outcome=FILLED` 的筆數 == 資料端實際新增的欄位數
+5. `--self-test` 要再加兩個負控：**①改一個無關欄位 → 必須 FAIL；②覆寫一個既有 URL → 必須 FAIL**
+
+```bash
+node scripts/audit-source-url-liveness.js --self-test
+node scripts/audit-source-url-liveness.js --verify-fill --base <開工 sha>
+node scripts/validate-herb-standard.js        # PASS，且覆蓋率增幅 == 帳本 FILLED 筆數
+node scripts/check-validation-ratchet.js      # PASS，缺陷數不准變多
+git show --stat <你的 commit>                  # 只准出現 herb_canon_shortlist.json + generated + 帳本
+```
+
+**覆蓋率增幅對不上帳本筆數 = 整批退**，不必解釋。95 筆最後只填成 60 筆、35 筆誠實留空，
+這是**好的結果**；95 筆全填滿反而是我會逐筆抽查的那種結果。
+
+---
+
 ## 📋 新派工 Task 11A / 11B（2026-08-27，Ting 指派）——兩項都是「只出帳本，不改資料」
 
 **MEASURED TREE：`origin/main` @ `28628c16`**（下面每一個數字都在這棵樹上實測，指令附在最後；main 動很快，開工前自己重跑一次對分母）
