@@ -8886,6 +8886,571 @@
           "bastyr_outline_not_in_repo"
         ]
       }
+    },
+    {
+      "id": "pair.chuan_xiong__bai_zhi__xi_xin",
+      "herbs": [
+        "herb.chuan_xiong",
+        "herb.bai_zhi",
+        "herb.xi_xin"
+      ],
+      "name_zh": "川芎配白芷、細辛",
+      "name_en": "Chuan Xiong with Bai Zhi and Xi Xin",
+      "relation": "pair.rel.board_exam",
+      "board_exam_pair": true,
+      "ncbahm_official_pair": false,
+      "pair_meaning_zh": "祛風散寒、通竅止痛。",
+      "pair_meaning_en": "Dispels Wind and scatters Cold, opens the orifices and stops pain.",
+      "indication_zh": "風寒頭痛（代表方：川芎茶調散）。",
+      "indication_en": "Wind-Cold headache (representative formula: Chuan Xiong Cha Tiao San).",
+      "found_in_formulas": [
+        "formula.chuan_xiong_cha_tiao_san"
+      ],
+      "sources": [
+        "herb_canon_shortlist:herb.chuan_xiong.key_pairs（卡上標示「Bastyr 官方對藥」）",
+        "unverified_outline:Bastyr 考綱正本不在 curriculum/board/，本條未能對正本核讀；內容為卡上既有敘述遷移，未新增未查證陳述。"
+      ],
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "migrated_from": "herb.chuan_xiong.key_pairs",
+      "actions_zh": "祛風散寒、通竅止痛。",
+      "actions_en": "Dispels Wind and scatters Cold, opens the orifices and stops pain.",
+      "indications_zh": "風寒頭痛（代表方：川芎茶調散）。",
+      "indications_en": "Wind-Cold headache (representative formula: Chuan Xiong Cha Tiao San).",
+      "field_sources": {
+        "pair_meaning_zh": [
+          "herb_card_key_pairs"
+        ],
+        "indication_zh": [
+          "herb_card_key_pairs"
+        ],
+        "pair_meaning_en": [
+          "translation_of_zh"
+        ],
+        "indication_en": [
+          "translation_of_zh"
+        ],
+        "official_status": [
+          "bastyr_outline_not_in_repo"
+        ]
+      }
+    },
+    {
+      "id": "pair.yu_jin__shi_chang_pu",
+      "herbs": [
+        "herb.yu_jin",
+        "herb.shi_chang_pu"
+      ],
+      "name_zh": "鬱金配石菖蒲",
+      "name_en": "Yu Jin with Shi Chang Pu",
+      "relation": "pair.rel.board_exam",
+      "board_exam_pair": true,
+      "ncbahm_official_pair": false,
+      "pair_meaning_zh": "清心開竅、化痰解鬱。",
+      "pair_meaning_en": "Clears the Heart and opens the orifices, transforms Phlegm and resolves constraint.",
+      "indication_zh": "濕熱痰濁蒙蔽心竅之神昏、癲狂（代表方：菖蒲鬱金湯）。",
+      "indication_en": "Clouding of the Heart orifices by Damp-Heat and turbid Phlegm with impaired consciousness or mania (representative formula: Chang Pu Yu Jin Tang).",
+      "found_in_formulas": [],
+      "sources": [
+        "herb_canon_shortlist:herb.yu_jin.key_pairs（卡上標示「Bastyr 官方對藥」）",
+        "unverified_outline:Bastyr 考綱正本不在 curriculum/board/，本條未能對正本核讀；內容為卡上既有敘述遷移，未新增未查證陳述。"
+      ],
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "migrated_from": "herb.yu_jin.key_pairs",
+      "actions_zh": "清心開竅、化痰解鬱。",
+      "actions_en": "Clears the Heart and opens the orifices, transforms Phlegm and resolves constraint.",
+      "indications_zh": "濕熱痰濁蒙蔽心竅之神昏、癲狂（代表方：菖蒲鬱金湯）。",
+      "indications_en": "Clouding of the Heart orifices by Damp-Heat and turbid Phlegm with impaired consciousness or mania (representative formula: Chang Pu Yu Jin Tang).",
+      "field_sources": {
+        "pair_meaning_zh": [
+          "herb_card_key_pairs"
+        ],
+        "indication_zh": [
+          "herb_card_key_pairs"
+        ],
+        "pair_meaning_en": [
+          "translation_of_zh"
+        ],
+        "indication_en": [
+          "translation_of_zh"
+        ],
+        "official_status": [
+          "bastyr_outline_not_in_repo"
+        ]
+      },
+      "teaching_note_zh": "代表方菖蒲鬱金湯本庫尚無方劑卡，故 found_in_formulas 留空，不填未建之方。"
+    },
+    {
+      "id": "pair.yu_jin__yin_chen_hao__jin_qian_cao",
+      "herbs": [
+        "herb.yu_jin",
+        "herb.yin_chen_hao",
+        "herb.jin_qian_cao"
+      ],
+      "name_zh": "鬱金配茵陳蒿、金錢草",
+      "name_en": "Yu Jin with Yin Chen Hao and Jin Qian Cao",
+      "relation": "pair.rel.board_exam",
+      "board_exam_pair": true,
+      "ncbahm_official_pair": false,
+      "pair_meaning_zh": "清熱利濕、利膽退黃排石。",
+      "pair_meaning_en": "Clears Heat and drains Dampness, benefits the gallbladder, reduces jaundice and expels stones.",
+      "indication_zh": "濕熱黃疸、膽石症。",
+      "indication_en": "Damp-Heat jaundice and gallstones.",
+      "found_in_formulas": [],
+      "sources": [
+        "herb_canon_shortlist:herb.yu_jin.key_pairs（卡上標示「Bastyr 官方對藥」）",
+        "unverified_outline:Bastyr 考綱正本不在 curriculum/board/，本條未能對正本核讀；內容為卡上既有敘述遷移，未新增未查證陳述。"
+      ],
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "migrated_from": "herb.yu_jin.key_pairs",
+      "actions_zh": "清熱利濕、利膽退黃排石。",
+      "actions_en": "Clears Heat and drains Dampness, benefits the gallbladder, reduces jaundice and expels stones.",
+      "indications_zh": "濕熱黃疸、膽石症。",
+      "indications_en": "Damp-Heat jaundice and gallstones.",
+      "field_sources": {
+        "pair_meaning_zh": [
+          "herb_card_key_pairs"
+        ],
+        "indication_zh": [
+          "herb_card_key_pairs"
+        ],
+        "pair_meaning_en": [
+          "translation_of_zh"
+        ],
+        "indication_en": [
+          "translation_of_zh"
+        ],
+        "official_status": [
+          "bastyr_outline_not_in_repo"
+        ]
+      },
+      "teaching_note_zh": "卡上標籤寫「茵陳」；本庫為 herb.yin_chen_hao 茵陳蒿的別名。"
+    },
+    {
+      "id": "pair.niu_xi__du_zhong__xu_duan",
+      "herbs": [
+        "herb.niu_xi",
+        "herb.du_zhong",
+        "herb.xu_duan"
+      ],
+      "name_zh": "牛膝配杜仲、續斷",
+      "name_en": "Niu Xi with Du Zhong and Xu Duan",
+      "relation": "pair.rel.board_exam",
+      "board_exam_pair": true,
+      "ncbahm_official_pair": false,
+      "pair_meaning_zh": "補肝腎、強筋骨。",
+      "pair_meaning_en": "Tonifies Liver and Kidney and strengthens the sinews and bones.",
+      "indication_zh": "腰膝酸痛（代表方：獨活寄生湯）。",
+      "indication_en": "Aching and weakness of the lower back and knees (representative formula: Du Huo Ji Sheng Tang).",
+      "found_in_formulas": [
+        "formula.du_huo_ji_sheng_tang"
+      ],
+      "sources": [
+        "herb_canon_shortlist:herb.niu_xi.key_pairs（卡上標示「Bastyr 官方對藥」）",
+        "unverified_outline:Bastyr 考綱正本不在 curriculum/board/，本條未能對正本核讀；內容為卡上既有敘述遷移，未新增未查證陳述。"
+      ],
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "migrated_from": "herb.niu_xi.key_pairs",
+      "actions_zh": "補肝腎、強筋骨。",
+      "actions_en": "Tonifies Liver and Kidney and strengthens the sinews and bones.",
+      "indications_zh": "腰膝酸痛（代表方：獨活寄生湯）。",
+      "indications_en": "Aching and weakness of the lower back and knees (representative formula: Du Huo Ji Sheng Tang).",
+      "field_sources": {
+        "pair_meaning_zh": [
+          "herb_card_key_pairs"
+        ],
+        "indication_zh": [
+          "herb_card_key_pairs"
+        ],
+        "pair_meaning_en": [
+          "translation_of_zh"
+        ],
+        "indication_en": [
+          "translation_of_zh"
+        ],
+        "official_status": [
+          "bastyr_outline_not_in_repo"
+        ]
+      },
+      "teaching_note_zh": "卡上標籤寫「懷牛膝」；本庫懷牛膝是 herb.niu_xi 的別名（與 herb.chuan_niu_xi 川牛膝分立為兩張卡），故 herbs 用 herb.niu_xi。"
+    },
+    {
+      "id": "pair.niu_xi__dai_zhe_shi__bai_shao",
+      "herbs": [
+        "herb.niu_xi",
+        "herb.dai_zhe_shi",
+        "herb.bai_shao"
+      ],
+      "name_zh": "牛膝配代赭石、白芍",
+      "name_en": "Niu Xi with Dai Zhe Shi and Bai Shao",
+      "relation": "pair.rel.board_exam",
+      "board_exam_pair": true,
+      "ncbahm_official_pair": false,
+      "pair_meaning_zh": "鎮肝熄風、引血下行。",
+      "pair_meaning_en": "Settles the Liver and extinguishes Wind, directs Blood downward.",
+      "indication_zh": "肝陽上亢之頭暈目眩（代表方：鎮肝熄風湯）。",
+      "indication_en": "Dizziness and vertigo from Liver Yang rising (representative formula: Zhen Gan Xi Feng Tang).",
+      "found_in_formulas": [
+        "formula.zhen_gan_xi_feng_tang"
+      ],
+      "sources": [
+        "herb_canon_shortlist:herb.niu_xi.key_pairs（卡上標示「Bastyr 官方對藥」）",
+        "unverified_outline:Bastyr 考綱正本不在 curriculum/board/，本條未能對正本核讀；內容為卡上既有敘述遷移，未新增未查證陳述。"
+      ],
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "migrated_from": "herb.niu_xi.key_pairs",
+      "actions_zh": "鎮肝熄風、引血下行。",
+      "actions_en": "Settles the Liver and extinguishes Wind, directs Blood downward.",
+      "indications_zh": "肝陽上亢之頭暈目眩（代表方：鎮肝熄風湯）。",
+      "indications_en": "Dizziness and vertigo from Liver Yang rising (representative formula: Zhen Gan Xi Feng Tang).",
+      "field_sources": {
+        "pair_meaning_zh": [
+          "herb_card_key_pairs"
+        ],
+        "indication_zh": [
+          "herb_card_key_pairs"
+        ],
+        "pair_meaning_en": [
+          "translation_of_zh"
+        ],
+        "indication_en": [
+          "translation_of_zh"
+        ],
+        "official_status": [
+          "bastyr_outline_not_in_repo"
+        ]
+      },
+      "teaching_note_zh": "卡上標籤寫「懷牛膝」；本庫懷牛膝是 herb.niu_xi 的別名（與 herb.chuan_niu_xi 川牛膝分立為兩張卡），故 herbs 用 herb.niu_xi。標籤另寫「生白芍」，生為炮製前綴，對應 herb.bai_shao。"
+    },
+    {
+      "id": "pair.yi_mu_cao__dang_gui__bai_shao__chuan_xiong",
+      "herbs": [
+        "herb.yi_mu_cao",
+        "herb.dang_gui",
+        "herb.bai_shao",
+        "herb.chuan_xiong"
+      ],
+      "name_zh": "益母草配當歸、白芍、川芎",
+      "name_en": "Yi Mu Cao with Dang Gui, Bai Shao and Chuan Xiong",
+      "relation": "pair.rel.board_exam",
+      "board_exam_pair": true,
+      "ncbahm_official_pair": false,
+      "pair_meaning_zh": "活血養血、調經止痛。",
+      "pair_meaning_en": "Invigorates and nourishes Blood, regulates menstruation and stops pain.",
+      "indication_zh": "月經不調、痛經。",
+      "indication_en": "Irregular menstruation and dysmenorrhea.",
+      "found_in_formulas": [],
+      "sources": [
+        "herb_canon_shortlist:herb.yi_mu_cao.key_pairs（卡上標示「Bastyr 官方對藥」）",
+        "unverified_outline:Bastyr 考綱正本不在 curriculum/board/，本條未能對正本核讀；內容為卡上既有敘述遷移，未新增未查證陳述。"
+      ],
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "migrated_from": "herb.yi_mu_cao.key_pairs",
+      "actions_zh": "活血養血、調經止痛。",
+      "actions_en": "Invigorates and nourishes Blood, regulates menstruation and stops pain.",
+      "indications_zh": "月經不調、痛經。",
+      "indications_en": "Irregular menstruation and dysmenorrhea.",
+      "field_sources": {
+        "pair_meaning_zh": [
+          "herb_card_key_pairs"
+        ],
+        "indication_zh": [
+          "herb_card_key_pairs"
+        ],
+        "pair_meaning_en": [
+          "translation_of_zh"
+        ],
+        "indication_en": [
+          "translation_of_zh"
+        ],
+        "official_status": [
+          "bastyr_outline_not_in_repo"
+        ]
+      }
+    },
+    {
+      "id": "pair.yi_mu_cao__pao_jiang__shan_zha",
+      "herbs": [
+        "herb.yi_mu_cao",
+        "herb.pao_jiang",
+        "herb.shan_zha"
+      ],
+      "name_zh": "益母草配炮薑、山楂",
+      "name_en": "Yi Mu Cao with Pao Jiang and Shan Zha",
+      "relation": "pair.rel.board_exam",
+      "board_exam_pair": true,
+      "ncbahm_official_pair": false,
+      "pair_meaning_zh": "溫經散寒、活血化瘀。",
+      "pair_meaning_en": "Warms the channels and scatters Cold, invigorates Blood and dispels stasis.",
+      "indication_zh": "產後惡露不下、腹痛。",
+      "indication_en": "Retained postpartum lochia with abdominal pain.",
+      "found_in_formulas": [],
+      "sources": [
+        "herb_canon_shortlist:herb.yi_mu_cao.key_pairs（卡上標示「Bastyr 官方對藥」）",
+        "unverified_outline:Bastyr 考綱正本不在 curriculum/board/，本條未能對正本核讀；內容為卡上既有敘述遷移，未新增未查證陳述。"
+      ],
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "migrated_from": "herb.yi_mu_cao.key_pairs",
+      "actions_zh": "溫經散寒、活血化瘀。",
+      "actions_en": "Warms the channels and scatters Cold, invigorates Blood and dispels stasis.",
+      "indications_zh": "產後惡露不下、腹痛。",
+      "indications_en": "Retained postpartum lochia with abdominal pain.",
+      "field_sources": {
+        "pair_meaning_zh": [
+          "herb_card_key_pairs"
+        ],
+        "indication_zh": [
+          "herb_card_key_pairs"
+        ],
+        "pair_meaning_en": [
+          "translation_of_zh"
+        ],
+        "indication_en": [
+          "translation_of_zh"
+        ],
+        "official_status": [
+          "bastyr_outline_not_in_repo"
+        ]
+      }
+    },
+    {
+      "id": "pair.ze_lan__yi_mu_cao",
+      "herbs": [
+        "herb.ze_lan",
+        "herb.yi_mu_cao"
+      ],
+      "name_zh": "澤蘭配益母草",
+      "name_en": "Ze Lan with Yi Mu Cao",
+      "relation": "pair.rel.board_exam",
+      "board_exam_pair": true,
+      "ncbahm_official_pair": false,
+      "pair_meaning_zh": "活血祛瘀、利水消腫。",
+      "pair_meaning_en": "Invigorates Blood and dispels stasis while promoting urination and reducing swelling.",
+      "indication_zh": "婦科產後水腫兼血瘀（代表方：澤蘭益母膏）。",
+      "indication_en": "Postpartum edema with Blood stasis (representative formula: Ze Lan Yi Mu Gao).",
+      "found_in_formulas": [],
+      "sources": [
+        "herb_canon_shortlist:herb.ze_lan.key_pairs（卡上標示「Bastyr 官方對藥」）",
+        "unverified_outline:Bastyr 考綱正本不在 curriculum/board/，本條未能對正本核讀；內容為卡上既有敘述遷移，未新增未查證陳述。"
+      ],
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "migrated_from": "herb.ze_lan.key_pairs",
+      "actions_zh": "活血祛瘀、利水消腫。",
+      "actions_en": "Invigorates Blood and dispels stasis while promoting urination and reducing swelling.",
+      "indications_zh": "婦科產後水腫兼血瘀（代表方：澤蘭益母膏）。",
+      "indications_en": "Postpartum edema with Blood stasis (representative formula: Ze Lan Yi Mu Gao).",
+      "field_sources": {
+        "pair_meaning_zh": [
+          "herb_card_key_pairs"
+        ],
+        "indication_zh": [
+          "herb_card_key_pairs"
+        ],
+        "pair_meaning_en": [
+          "translation_of_zh"
+        ],
+        "indication_en": [
+          "translation_of_zh"
+        ],
+        "official_status": [
+          "bastyr_outline_not_in_repo"
+        ]
+      }
+    },
+    {
+      "id": "pair.chuan_niu_xi__dang_gui__chi_shao__hong_hua",
+      "herbs": [
+        "herb.chuan_niu_xi",
+        "herb.dang_gui",
+        "herb.chi_shao",
+        "herb.hong_hua"
+      ],
+      "name_zh": "川牛膝配當歸、赤芍、紅花",
+      "name_en": "Chuan Niu Xi with Dang Gui, Chi Shao and Hong Hua",
+      "relation": "pair.rel.board_exam",
+      "board_exam_pair": true,
+      "ncbahm_official_pair": false,
+      "pair_meaning_zh": "活血祛瘀、通經止痛。",
+      "pair_meaning_en": "Invigorates Blood, dispels stasis, unblocks the channels and stops pain.",
+      "indication_zh": "血瘀之經閉、痛經。",
+      "indication_en": "Amenorrhea and dysmenorrhea from Blood stasis.",
+      "found_in_formulas": [],
+      "sources": [
+        "herb_canon_shortlist:herb.chuan_niu_xi.key_pairs（卡上標示「Bastyr 官方對藥」）",
+        "unverified_outline:Bastyr 考綱正本不在 curriculum/board/，本條未能對正本核讀；內容為卡上既有敘述遷移，未新增未查證陳述。"
+      ],
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "migrated_from": "herb.chuan_niu_xi.key_pairs",
+      "actions_zh": "活血祛瘀、通經止痛。",
+      "actions_en": "Invigorates Blood, dispels stasis, unblocks the channels and stops pain.",
+      "indications_zh": "血瘀之經閉、痛經。",
+      "indications_en": "Amenorrhea and dysmenorrhea from Blood stasis.",
+      "field_sources": {
+        "pair_meaning_zh": [
+          "herb_card_key_pairs"
+        ],
+        "indication_zh": [
+          "herb_card_key_pairs"
+        ],
+        "pair_meaning_en": [
+          "translation_of_zh"
+        ],
+        "indication_en": [
+          "translation_of_zh"
+        ],
+        "official_status": [
+          "bastyr_outline_not_in_repo"
+        ]
+      }
+    },
+    {
+      "id": "pair.wu_ling_zhi__pu_huang",
+      "herbs": [
+        "herb.wu_ling_zhi",
+        "herb.pu_huang"
+      ],
+      "name_zh": "五靈脂配蒲黃",
+      "name_en": "Wu Ling Zhi with Pu Huang",
+      "relation": "pair.rel.board_exam",
+      "board_exam_pair": true,
+      "ncbahm_official_pair": true,
+      "pair_meaning_zh": "相須為用，活血化瘀、止痛止血。",
+      "pair_meaning_en": "Mutual accentuation: invigorates Blood, dispels stasis, stops pain and stops bleeding.",
+      "indication_zh": "血瘀之心腹劇痛、痛經（代表方：失笑散）。",
+      "indication_en": "Severe chest and abdominal pain and dysmenorrhea from Blood stasis (representative formula: Shi Xiao San).",
+      "found_in_formulas": [
+        "formula.shi_xiao_san"
+      ],
+      "sources": [
+        "herb_canon_shortlist:herb.wu_ling_zhi.key_pairs（卡上標示「Bastyr / NCBAHM 官方對藥」）",
+        "unverified_outline:Bastyr 考綱正本不在 curriculum/board/，本條未能對正本核讀；內容為卡上既有敘述遷移，未新增未查證陳述。"
+      ],
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "migrated_from": "herb.wu_ling_zhi.key_pairs",
+      "actions_zh": "相須為用，活血化瘀、止痛止血。",
+      "actions_en": "Mutual accentuation: invigorates Blood, dispels stasis, stops pain and stops bleeding.",
+      "indications_zh": "血瘀之心腹劇痛、痛經（代表方：失笑散）。",
+      "indications_en": "Severe chest and abdominal pain and dysmenorrhea from Blood stasis (representative formula: Shi Xiao San).",
+      "field_sources": {
+        "pair_meaning_zh": [
+          "herb_card_key_pairs"
+        ],
+        "indication_zh": [
+          "herb_card_key_pairs"
+        ],
+        "pair_meaning_en": [
+          "translation_of_zh"
+        ],
+        "indication_en": [
+          "translation_of_zh"
+        ],
+        "official_status": [
+          "bastyr_outline_not_in_repo"
+        ]
+      },
+      "teaching_note_zh": "卡上敘述明寫「相須為用」；relation 仍用 pair.rel.board_exam 與同批一致，七情資訊保留在配伍意義原文中，不另行分類。"
+    },
+    {
+      "id": "pair.hu_zhang__yin_chen_hao__jin_qian_cao",
+      "herbs": [
+        "herb.hu_zhang",
+        "herb.yin_chen_hao",
+        "herb.jin_qian_cao"
+      ],
+      "name_zh": "虎杖配茵陳蒿、金錢草",
+      "name_en": "Hu Zhang with Yin Chen Hao and Jin Qian Cao",
+      "relation": "pair.rel.board_exam",
+      "board_exam_pair": true,
+      "ncbahm_official_pair": false,
+      "pair_meaning_zh": "清熱利濕、利膽退黃。",
+      "pair_meaning_en": "Clears Heat and drains Dampness, benefits the gallbladder and reduces jaundice.",
+      "indication_zh": "濕熱黃疸、膽囊炎。",
+      "indication_en": "Damp-Heat jaundice and cholecystitis.",
+      "found_in_formulas": [],
+      "sources": [
+        "herb_canon_shortlist:herb.hu_zhang.key_pairs（卡上標示「Bastyr 官方對藥」）",
+        "unverified_outline:Bastyr 考綱正本不在 curriculum/board/，本條未能對正本核讀；內容為卡上既有敘述遷移，未新增未查證陳述。"
+      ],
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "migrated_from": "herb.hu_zhang.key_pairs",
+      "actions_zh": "清熱利濕、利膽退黃。",
+      "actions_en": "Clears Heat and drains Dampness, benefits the gallbladder and reduces jaundice.",
+      "indications_zh": "濕熱黃疸、膽囊炎。",
+      "indications_en": "Damp-Heat jaundice and cholecystitis.",
+      "field_sources": {
+        "pair_meaning_zh": [
+          "herb_card_key_pairs"
+        ],
+        "indication_zh": [
+          "herb_card_key_pairs"
+        ],
+        "pair_meaning_en": [
+          "translation_of_zh"
+        ],
+        "indication_en": [
+          "translation_of_zh"
+        ],
+        "official_status": [
+          "bastyr_outline_not_in_repo"
+        ]
+      },
+      "teaching_note_zh": "卡上標籤寫「茵陳」；本庫為 herb.yin_chen_hao 茵陳蒿的別名。"
+    },
+    {
+      "id": "pair.hu_zhang__huang_qin__shi_gao",
+      "herbs": [
+        "herb.hu_zhang",
+        "herb.huang_qin",
+        "herb.shi_gao"
+      ],
+      "name_zh": "虎杖配黃芩、石膏",
+      "name_en": "Hu Zhang with Huang Qin and Shi Gao",
+      "relation": "pair.rel.board_exam",
+      "board_exam_pair": true,
+      "ncbahm_official_pair": false,
+      "pair_meaning_zh": "瀉熱化痰、清肺止咳。",
+      "pair_meaning_en": "Drains Heat, transforms Phlegm, clears the Lung and stops cough.",
+      "indication_zh": "肺熱咳嗽、氣喘。",
+      "indication_en": "Cough and wheezing from Lung Heat.",
+      "found_in_formulas": [],
+      "sources": [
+        "herb_canon_shortlist:herb.hu_zhang.key_pairs（卡上標示「Bastyr 官方對藥」）",
+        "unverified_outline:Bastyr 考綱正本不在 curriculum/board/，本條未能對正本核讀；內容為卡上既有敘述遷移，未新增未查證陳述。"
+      ],
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "migrated_from": "herb.hu_zhang.key_pairs",
+      "actions_zh": "瀉熱化痰、清肺止咳。",
+      "actions_en": "Drains Heat, transforms Phlegm, clears the Lung and stops cough.",
+      "indications_zh": "肺熱咳嗽、氣喘。",
+      "indications_en": "Cough and wheezing from Lung Heat.",
+      "field_sources": {
+        "pair_meaning_zh": [
+          "herb_card_key_pairs"
+        ],
+        "indication_zh": [
+          "herb_card_key_pairs"
+        ],
+        "pair_meaning_en": [
+          "translation_of_zh"
+        ],
+        "indication_en": [
+          "translation_of_zh"
+        ],
+        "official_status": [
+          "bastyr_outline_not_in_repo"
+        ]
+      }
     }
   ],
   "updated_at": "2026-07-30",

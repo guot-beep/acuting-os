@@ -1,3 +1,86 @@
+# 2026-08-27 — 考綱官方對藥遷移第 2 批(活血化瘀組收尾):12 條建記錄 + 12 條卡上副本移除
+
+第 1 批做了 5 味,本批把活血化瘀類剩下的 10 味做完。**pairs 226 → 238;卡上 authored
+50 味/86 條 → 43 味/74 條;孤兒條目 57 → 45。既有 226 筆逐筆比對零改動。**
+
+**先更正我自己的派工建議**:上一條我提議「下一批做補益/理氣組」。實際掃描後那個分組不成立——
+補虛類全部只有 5 條(補氣 2、補陽 2、補血 1)。剩餘 45 條的真實分佈是:
+利水滲濕 18、解表 11、收澀 7、補虛 5、清熱 2、活血化瘀 2(卡住的兩條,見下)。
+所以本批改為把活血化瘀收尾,下一批建議利水滲濕(18,最大群)。
+
+**Ting 的移除裁定套用到本批**:第 1 批她裁定「移除卡上已遷移的」。本批同樣操作,
+但判定改成**完全資料驅動**:該 pair 記錄必須 `migrated_from === <這張卡>.key_pairs`,
+且成員中文名集合與標籤辨識出的藥味集合嚴格相等,兩條都成立才刪。比對表加入別名解析
+(下方三處異名都是靠這個對上的)。**如果 Ting 認為第 2 批的移除該另外過目,revert 這半邊即可**,
+建記錄那半邊不受影響。
+
+## 14 條裡只做 12 條 —— 2 條卡在藥味不在正典,不建殘缺記錄
+| 卡住的條目 | 原因 |
+|---|---|
+| 王不留行 + 穿山甲 + 木通 + **豬蹄** | 豬蹄是食材不是藥,正典查無;只用 3 味建記錄會讓卡片顯示的組成與來源所述不符 |
+| 薑黃 + 羌活 + 桑枝 + **海風藤** | 海風藤正典查無(是真藥材,但本庫尚未建卡) |
+兩條**維持原狀留在卡上**,不建記錄、不建骨架、不留 pending 標記。
+海風藤要不要建卡是補卡 backlog 的內容決定,留 Ting。
+
+## 三處異名逐一查證後才對應(不是猜的)
+| 標籤寫 | 對應 | 依據 |
+|---|---|---|
+| 茵陳 | `herb.yin_chen_hao` 茵陳蒿 | 該卡 `aliases_zh` 就列了「茵陳」 |
+| 懷牛膝 | `herb.niu_xi` 牛膝 | 該卡 `aliases_zh` 列「懷牛膝」;與 `herb.chuan_niu_xi` 川牛膝分立為兩張卡,本批兩者都有記錄,沒有混用 |
+| 生白芍 | `herb.bai_shao` 白芍 | 「生」是炮製前綴 |
+三處都寫進該記錄的 `teaching_note_zh`,不默默替換。
+
+## 12 條逐條(掛方經組成逐味比對,掛不上就留空)
+| pair id | found_in_formulas |
+|---|---|
+| `pair.chuan_xiong__bai_zhi__xi_xin` 川芎配白芷、細辛 | formula.chuan_xiong_cha_tiao_san |
+| `pair.niu_xi__du_zhong__xu_duan` 牛膝配杜仲、續斷 | formula.du_huo_ji_sheng_tang |
+| `pair.niu_xi__dai_zhe_shi__bai_shao` 牛膝配代赭石、白芍 | formula.zhen_gan_xi_feng_tang |
+| `pair.wu_ling_zhi__pu_huang` 五靈脂配蒲黃 | formula.shi_xiao_san |
+| `pair.yu_jin__shi_chang_pu` 鬱金配石菖蒲 | —（菖蒲鬱金湯本庫無方劑卡，不填未建之方） |
+| `pair.yu_jin__yin_chen_hao__jin_qian_cao` 鬱金配茵陳蒿、金錢草 | — |
+| `pair.yi_mu_cao__dang_gui__bai_shao__chuan_xiong` 益母草配當歸、白芍、川芎 | — |
+| `pair.yi_mu_cao__pao_jiang__shan_zha` 益母草配炮薑、山楂 | — |
+| `pair.ze_lan__yi_mu_cao` 澤蘭配益母草 | — |
+| `pair.chuan_niu_xi__dang_gui__chi_shao__hong_hua` 川牛膝配當歸、赤芍、紅花 | — |
+| `pair.hu_zhang__yin_chen_hao__jin_qian_cao` 虎杖配茵陳蒿、金錢草 | — |
+| `pair.hu_zhang__huang_qin__shi_gao` 虎杖配黃芩、石膏 | — |
+掛方 4 條,其餘 8 條的代表方本庫沒有方劑卡(菖蒲鬱金湯/湧泉散/益母草膏/澤蘭益母膏/蠲痹湯),
+**寧可留空也不填未建之方**。
+
+**一處保留原文的判斷**:五靈脂配蒲黃的卡上敘述明寫「相須為用」。relation 仍用
+`pair.rel.board_exam` 與同批一致(不因單一條改分類),七情資訊原字保留在 `pair_meaning_zh` 裡,
+資訊沒有丟。
+
+## 逐卡移除結果(12 條)
+川芎 2→1(保留「川芎+當歸」,對應既有 `pair.dang_gui__chuan_xiong` 非本批遷移)、
+鬱金 2→0、牛膝 2→0、益母草 2→0、澤蘭 1→0、川牛膝 1→0、五靈脂 1→0、虎杖 2→0。
+變動欄位 8 個,**全部是 `*.key_pairs`**,任一條動到別的欄位腳本就中止不寫檔。
+
+**眼讀(dev server)**:虎杖卡自由文字 0 條、結構化 2 條(茵陳蒿/金錢草、黃芩/石膏)帶主治;
+五靈脂卡自由文字 0 條、結構化 2 條(巴豆配五靈脂 + 本批的五靈脂配蒲黃)帶主治。
+
+**來源與英譯標示同第 1 批**:Bastyr 考綱正本不在 `curriculum/board/`,`sources` 不寫具頁碼引用,
+標 `unverified_outline`;卡上 12 條 `rationale_en` 全空,`_en` 欄由中文如實英譯並在
+`field_sources` 標 `translation_of_zh`。
+
+## 驗證(在 47fffbd3 基底上全跑,輸出原文)
+- `node scripts/build-data.js` → `{"formulas":223,"herbs":364,...,"relation_edges":29,"audit_missing":0}`
+- `validate-herb-standard` → `PASS — no structural defects.`
+- `validate-content-junk` → `PASS — no scraped header tokens, no encoding anomalies in _zh fields.`
+- `validate-dose-basis` → `PASS — dose_basis 標示全部合規。`
+- `validate-herb-pair-render` → `PASS`;帳本 authored 86→74 條、卡上新增顯示 91→96、**孤兒 57→45**
+- `check-validation-ratchet` → `PASS — no regressions.`
+- `git diff --check` → 無輸出
+
+**自 diff**:`herb_pairs.json` +565/−0(純新增 12 筆);
+`herb_canon_shortlist.json` +2/−67(只移除 12 條 key_pairs 條目,8 個欄位變動全為 key_pairs);
+generated 兩檔隨批重建。既有 226 筆藥對逐筆 JSON 比對零改動(寫入前 assert)。
+
+MEASURED TREE: claude/practical-easley-73f009 @ origin/main 47fffbd3 + 本批
+
+---
+
 # 2026-08-27 — Ting 裁定:移除卡上已遷移的 8 條 key_pairs(憲法三「先搬再改原欄位」後半段)
 
 上一條把活血化瘀組 8 條考綱對藥搬進 herb_pairs.json 後,來源藥自己的卡上那份自由文字副本
