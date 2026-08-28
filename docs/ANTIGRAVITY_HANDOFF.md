@@ -1,3 +1,12 @@
+## ✅ Task 11D 獨立驗收通過，已落地 `origin/main`（`549a2359`）
+
+海風藤、禹餘糧兩張新卡收下：364→366，既有 364 筆逐位元組核對零異動，`herb_pairs.json` 零異動。
+4 個來源網址（American Dragon×2、cloudtcm×2）都自己打開核對過內容真的對得上。6 支驗證器全 PASS。
+細節見 `PROJECT_LOG.md` 對應條目。`herb.hai_feng_teng`／`herb.yu_yu_liang` 現在可以建藥對了
+（`herb.jiang_huang`／`herb.chi_shi_zhi` 卡上那兩條缺藥味的孤兒藥對）——這個由我接手，不用你動手。
+
+---
+
 ## 📋 新派工 Task 11E / 11F（2026-08-28）——11A/11B 收下之後的兩條後續，**都只出帳本**
 
 **MEASURED TREE：`origin/main` @ `2ee30b46`**。11A/11B/11C 已驗收落地，這兩項是它們直接長出來的後續。

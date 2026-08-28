@@ -1,3 +1,27 @@
+# 2026-08-28 — Claude 獨立驗收 Task 11D:海風藤、禹餘糧兩張新卡通過,已落地
+
+364→366 筆，既有 364 筆逐筆位元組比對 0 異動確認（自己重寫腳本核對，不是信報告數字）；
+`herb_pairs.json` 確認 0 異動（依規留給我接手）。6 支要求的驗證器全 PASS（herb-standard／
+content-junk／herb-pair-render／board-pair-attribution／check-validation-ratchet／
+`git diff --check`）。
+
+**逐一打開兩張卡的 4 個來源網址獨立核實**：`HaiFengTeng.html`／`YuYuLiang.html`（American Dragon）
+與 `cloudtcm.com/herb/4702`／`12479`（cloudtcm，含追蹤轉址）全部 200，內容裡的藥名、拉丁學名、
+懷孕禁忌等關鍵字都對得上卡上的宣稱，不是查了但沒對到內容。
+
+**中途複核 diff 時再度撞到「跟哪個 commit 比」的陷阱**：先拿 handoff 上一輪寫的舊 dispatch commit
+(`0570b0bc`)當基準比對，看到 `docs/ANTIGRAVITY_HANDOFF.md` 大量刪除、一份稽核文件整份消失，
+一度以為有問題——查了發現 task11d 分支其實是接在**我自己上一輪**驗收 11A/11B/11C 之後分岔出去的
+(parent 是 `2ee30b46`)，跟 `0570b0bc` 不是祖先關係，那次 diff 只是比錯基準看到的雜訊。改用真正的
+parent 重跑，5 個檔案、純新增，跟 commit 自己的 `git show --stat` 完全一致。**這是上一輪才寫進
+handoff 的教訓，這次真的用上了**——先確認兩個 commit 是不是祖先關係，再讀 diff，不要看到大量
+刪除就急著下結論。
+
+**驗證**：全套 6 支驗證器 PASS，全新 clone 獨立複核（`herbs count: 366`）結果一致。已推上
+`origin/main`（`549a2359`）。
+
+---
+
 # 2026-08-28 — review_status 那 39 筆:查下去是 165 筆、兩種相反病因,外加一處手寫 pill 副本印小寫 draft
 
 Ting 裁「處理 review_status 那 39 筆」。查證後範圍與病因都跟原本報的不一樣,分成三件事處理。
