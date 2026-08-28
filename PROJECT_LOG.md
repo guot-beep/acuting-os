@@ -1,3 +1,16 @@
+# 2026-08-27 — Claude 複核 Task 10D:8/8 self-test 可信,但一筆「暗數據」數字在我環境重跑不出來
+
+Ting 問「task10d 你也看一下」。8/8 `--self-test` fixture、以及 43/27/20/7/4 這幾個結構性數字獨立
+重跑全對得上。唯一對不上的：委交報告寫 `fields_with_no_consumer_found: 8`,我對著同一個 commit
+(`329ee1db`)同一份程式碼與資料,不加 `--write-report` 連跑 5 次穩定得到 7——差的是
+`herb.dosage_normalized.source_field`。直接 grep 過 `app.js`／`js/`／`scripts/`，這個欄位確實沒有
+真消費者(唯一撞到的 `m.source_field` 是 `localstorage_sqlite_mapping.json` 裡不相關的同名欄位)。
+換句話說**委交的「8」是對的，我這裡重跑漏掉一筆的「7」才是有問題那邊**——但重點是同一份程式碼對
+同一份資料在不同環境重跑會給出不同答案，代表偵測邏輯裡有環境相依的東西，不是穩定可重現。純資訊性
+稽核，不擋 CI，這次沒有動手修，詳見 `docs/ANTIGRAVITY_HANDOFF.md` 對應條目。
+
+---
+
 # 2026-08-27 — 沙參待裁項補分母:全庫只有 3 列,其中 1 列已是正確範本 → 開放題縮成二選一(零資料異動)
 
 承上一條。對方 session 補了一個對照組,我掃全庫算分母後確認它把裁定難度降了一級。

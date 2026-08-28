@@ -1,3 +1,24 @@
+## ⚠️ Claude 複核 Task 10D:8/8 self-test 可信,但主報告有一筆數字在我的環境重跑不出來(2026-08-27)
+
+Ting 要求連 task10d 也看一下。**8/8 `--self-test` fixture 獨立重跑全過**,結構性數字(43 個來源欄位
+／27 個正典資料集／20 個有 runtime consumer／7 組重疊欄位對／4 條優先序鏈路)逐一核對都對得上。
+
+**但 `fields_with_no_consumer_found`(暗數據欄位數)重跑不出同一個答案**：委交的報告寫 **8**,我在
+這個環境對著同一個 commit(`329ee1db`)、同一份程式碼跟資料,不加 `--write-report` 直接跑 5 次,
+穩定得到 **7**——差的那一筆是 `herb.dosage_normalized.source_field`。我另外用 grep 直接查過整個
+`app.js`／`js/`／`scripts/` 有沒有真的讀取 `dosage_normalized.source_field`：**沒有**,查到的
+`m.source_field` 是 `localstorage_sqlite_mapping.json` 裡完全不相關、只是同名的另一個欄位。也就是
+`source_field` 這個欄位本身確實沒有消費者,**委交報告的「8」是對的,我這個環境重跑漏掉這一筆的
+「7」才是有問題的那一邊**——但重點不是哪個數字對,是**同一份程式碼對著同一份資料,在不同環境下
+重跑會給出不一樣的答案**,這代表偵測邏輯裡有環境相依的東西(可能是檔案列舉順序、或某種提早退出
+判斷),不是穩定可重現的。
+
+這條不影響任何 CI、不擋任何東西(純資訊性稽核),這次沒有動手修——修的話需要先搞清楚根因(是
+readdir 順序、還是別的),留給你下一輪自己查,或者留給 Ting 決定要不要花時間查。其餘結論(8/8
+self-test、其他所有數字)都可信,已集成的落地內容不用重做。
+
+---
+
 ## ✅ Task 10D Final：Evidence & Provenance Fragmentation Inventory（已完成並集成）
 
 - **類型**: READ-ONLY Evidence, Provenance & Review-State Architecture Inventory（0 production mutation, 0 CI workflow changes, 0 schema changes）
