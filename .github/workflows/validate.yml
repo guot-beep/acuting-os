@@ -522,6 +522,13 @@ jobs:
       - name: D31 picker hygiene — negative controls (7/7)
         run: node scripts/validate-picker-hygiene.js --self-test
 
+      # W1-4 UI 執行凍結(9/01 生效,gate 8/28 先上以報告模式熱身)。
+      # 保護的不是「程式碼完美」,是 Ting 對介面的肌肉記憶 —— 開診第三天
+      # 按鈕換位置,比按鈕醜三個月嚴重得多。誠實聲明制:動 UI 檔就要在
+      # commit 訊息裡自稱修 bug 或聲明凍結例外。負控 3/3 已驗。
+      - name: W1-4 UI execution freeze (from 2026-09-01)
+        run: node scripts/validate-ui-freeze.js
+
       - name: D12 clinical contract freeze (additive-only)
         run: node scripts/validate-clinical-contract-freeze.js
 
