@@ -1,3 +1,65 @@
+# 2026-08-27 — Ting 裁定執行(第 1、2、5、6、8 項):把「假」改成「未確認」;補三個關係詞條;第 8 項我報錯了不改
+
+## 第 8 項:我的報告是錯的,不動
+上一條我把 `formula.yu_ping_feng_san` 組成裡「`huang_qi` 出現兩次」列為資料 bug,Ting 裁「改」。
+**實際去看那一筆:index[1] 是 `is_alternate: true` 的蜜炙黃耆 —— 那是炮製替代品,資料本來就是對的。**
+我先前只列 `herb_id` 沒看 `is_alternate` 就下判斷。**不改。**
+教訓:報 bug 前要把那筆記錄的欄位讀完,只看 id 會把「同藥不同炮製」誤判成重複。
+
+## 第 1、2 項:Ting 說「為什麼是假 有可能是 nccaom」「就寫不確定 不用刪除」
+**她是對的,我用「假」下得太重。** 對不上 repo 內的 NCBAHM 正本,只證明「不在那份 Appendix B 上」,
+不證明宣稱是捏造的 —— 來源可能是 **NCCAOM** 或其他考綱版本,而 NCCAOM 正本不在 repo
+(`validate-herb-standard` 早就在警告「NCCAOM 被 1 筆引用但無此考綱」),我核不了。
+
+改法:
+- **還原我第 1–3 批擅自改成 `false` 的 5 筆布林值為來源原本的宣稱(true)**,
+  並移除那段「…故改為 false」的訂正註記,避免同一筆裡留下兩段互相矛盾的話。
+- 新增 `official_claim_status` 欄承載「核到什麼程度」,布林欄只表示**來源怎麼宣稱**。
+  14 筆(既有 9 + 我的 5)標 `unmatched_ncbahm_appendix_b__source_unverified`,
+  `teaching_note_zh` 逐筆寫明核對範圍與「這不表示宣稱是錯的」。
+- **4 條藥卡標籤**照裁定寫不確定、不刪除:註記接在 `rationale_zh`(有英文的也接 `rationale_en`)
+  後面 —— **標在資料裡而畫面上看不到等於沒標**,所以放在會渲染的欄位。
+  條目數不變,只加註記。
+
+**驗證器改成自我記錄式**:原本是硬編一份「既有待裁清單」放行,現在改成
+**核不到就必須帶標記,帶了放行、沒帶 FAIL**。不必維護一份會腐的名單,
+而且以後新加的宣稱只要核不到又沒揭露就會被擋。
+負向測試:注入一筆未揭露的新宣稱 → `FAIL — 1 項`;還原 → PASS。
+現況:成立 53+10 條,核不到但已揭露 18 項,未揭露 0 項。
+
+## 第 6 項:Ting「我看不懂 你決定吧 但不要刪除 保守一點」
+查下去發現**不只 `board_exam` 一個** —— 有三個 relation id 被用著卻沒有詞表項,
+渲染端 `PAIR_RELATIONS.get()` 取不到,那一格一直空白:
+| relation id | 使用筆數 | 處置 |
+|---|---|---|
+| `pair.rel.board_exam` | 57 | 補詞條「考綱列名對藥」,明寫**這是出處標記不是七情之一** |
+| `pair.rel.xiang_zhi` 相制 | 8 | 補詞條(麻黃配石膏、黃連配肉桂那類寒熱相制),標 `not_seven_relations` |
+| `pair.rel.xiang_fan_or_contrast` | 1 | 補詞條,但**刻意不歸入相反或相畏** —— 那兩者都是安全等級宣告,該筆(巴豆配大黃)內容是辨異教學且古籍層另載「巴豆畏大黃」,來源未釐清前錯標的代價比留白高;標 `review_status: needs_ting_ruling` |
+**只加詞表項,任何既有記錄的 `relation` 值一個字都沒動**(保守、不刪除)。
+效果:關係標籤渲染得出來的記錄 **152 → 218 / 275**(其餘 57 筆本來就沒有 `relation` 欄)。
+
+## 第 5 項:Ting「我也不知道 要找資源 但兩個確實是不同中藥」
+裁定記入 `pair.mu_tong__sheng_di_huang__zhu_ye__gan_cao` 的 `teaching_note_zh`:
+竹葉與淡竹葉確實是不同中藥、兩張卡分立正確**不合併**;導赤散原方用哪一味無定論,
+需另查資源後才補掛 `found_in_formulas`。**在那之前寧可不掛,不以近似藥材代掛。**
+
+## 驗證(在 6a8bcae0 基底上全跑)
+`build-data`、`validate-herb-standard`、`validate-content-junk`、`validate-dose-basis`、
+`validate-herb-pair-render`、`validate-board-pair-attribution`、`check-validation-ratchet`
+**全 PASS**;`git diff --check` 無輸出。
+
+**自 diff**:`herb_pair_relations.json` +34/−0(純新增 3 個詞條);
+`herb_pairs.json` 15 筆的 `ncbahm_official_pair`/`official_claim_status`/`teaching_note_zh` 三欄;
+`herb_canon_shortlist.json` 4 筆的 `key_pairs` 註記(條目數不變);
+驗證器改寫;generated 隨批重建。逐筆 assert 確認未動其他欄位。
+
+**尚未處理(接著做)**:第 4 項合併重複卡(旱蓮草/墨旱蓮、沙參/北沙參,要標註)、
+第 7 項補卡(海風藤、禹餘糧)。
+
+MEASURED TREE: claude/practical-easley-73f009 @ origin/main 6a8bcae0 + 本批
+
+---
+
 # 2026-08-27 — 考綱對藥遷移收尾(第 5 批):12 條建記錄 + 12 條卡上副本移除;孤兒 16 → 4
 
 跨五批的遷移到此收尾。**pairs 263 → 275;卡上 authored 30 味/45 條 → 26 味/33 條;

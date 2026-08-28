@@ -71,6 +71,40 @@
       "caution": true,
       "safety_critical": true,
       "example_zh": "甘草反甘遂"
+    },
+    {
+      "id": "pair.rel.xiang_zhi",
+      "name_zh": "相制",
+      "name_en": "Mutual restraint",
+      "meaning_zh": "一寒一熱、一升一降的兩藥合用，各自制約對方的偏性，使全方作用得以發揮而不傷正。非七情原文之一，是本庫為寒熱相配一類藥對另立的標記。",
+      "meaning_en": "Two herbs of opposing nature (one cold, one hot; one ascending, one descending) used together so that each restrains the other's excess, letting the pair act without injuring the upright Qi. Not one of the classical seven relations - a local label for this kind of pairing.",
+      "clinical_effect": "moderating",
+      "not_seven_relations": true,
+      "vocabulary_note_zh": "2026-08-27 補登：這個 id 早已被 8 筆藥對使用（麻黃配石膏、黃連配肉桂、黃連配吳茱萸等），但詞表裡沒有對應項，渲染端 PAIR_RELATIONS.get() 取不到，關係標籤那一格一直是空白。本次只補詞表，不改任何既有記錄的 relation 值。",
+      "example_zh": "黃連配肉桂"
+    },
+    {
+      "id": "pair.rel.xiang_fan_or_contrast",
+      "name_zh": "對舉辨異（分類待確認）",
+      "name_en": "Contrast pairing (classification pending)",
+      "meaning_zh": "把兩味作用方向相近但寒熱、毒性不同的藥並列以資辨異，重點在區別而非配伍。此 id 名稱混了「相反」與「對比」兩種意思，實際使用的那一筆（巴豆配大黃）內容是辨異教學，並附註古籍層另載「巴豆畏大黃」。在來源釐清前不逕自歸入相反或相畏——那兩者都是安全等級的宣告，錯標的代價比留白高。",
+      "meaning_en": "Two herbs with similar direction of action but different temperature and toxicity, presented side by side for differentiation rather than as a combination. The id conflates 'mutual incompatibility' with 'contrast'; pending source clarification it is deliberately not classified as either xiang fan or xiang wei, since both are safety-level assertions.",
+      "clinical_effect": "differentiation",
+      "not_seven_relations": true,
+      "review_status": "needs_ting_ruling",
+      "vocabulary_note_zh": "2026-08-27 補登：僅 pair.ba_dou__da_huang 一筆使用。該筆 caution_zh 已載明「CloudTCM 古籍層另列巴豆畏大黃，需保留來源差異」。歸類請 Ting 裁定；在那之前這個詞條只描述現況，不作安全宣告。",
+      "example_zh": "巴豆配大黃"
+    },
+    {
+      "id": "pair.rel.board_exam",
+      "name_zh": "考綱列名對藥",
+      "name_en": "Board-outline listed pair",
+      "meaning_zh": "此組合被某份考綱點名為需要準備的對藥。這是「出處」標記，不是七情之一——它說的是「考試會考」，不是「兩藥之間是什麼關係」。同一筆記錄的七情關係若已知，寫在配伍意義原文裡。",
+      "meaning_en": "The combination is named in a board exam content outline as a pair candidates should prepare. This is a provenance marker, not one of the seven relations: it states that the pair is examinable, not what the herbs do to each other.",
+      "clinical_effect": "provenance_marker",
+      "not_seven_relations": true,
+      "vocabulary_note_zh": "2026-08-27 補登：57 筆藥對在用，但詞表沒有對應項，關係標籤一直不顯示。是否為考綱列名須以正本核對——NCBAHM CH 考綱正本在 curriculum/board/，由 scripts/validate-board-pair-attribution.js 逐條核；Bastyr 與 NCCAOM 正本不在 repo，帶這兩者宣稱的記錄只能標未確認。",
+      "example_zh": "白芍配甘草"
     }
   ]
 }

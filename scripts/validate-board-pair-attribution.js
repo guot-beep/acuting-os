@@ -121,6 +121,7 @@ notes.push("herb_pairs 標 ncbahm_official_pair:true — 成立 " + okPairs + " 
 for (const p of badPairs) {
   problems.push({
     known: p.id,
+    disclosed: p.official_claim_status === "unmatched_ncbahm_appendix_b__source_unverified",
     text: "herb_pairs " + p.id + "（" + p.name_zh + "，" + (p.herbs || []).length + " 味）標 ncbahm_official_pair:true，"
       + ((p.herbs || []).length !== 2 ? "但 Appendix B 全為二味對藥" : "但該組合不在 Appendix B 清單上")
       + (p.migrated_from ? "；migrated_from " + p.migrated_from : ""),
@@ -145,47 +146,36 @@ notes.push("藥卡 key_pairs 標籤宣稱 NCBAHM — 成立 " + okCards + " 條 
 for (const b of badCards) {
   problems.push({
     known: b.h.id + "|" + b.kp.pair,
+    disclosed: /未能以本庫/.test(String(b.kp.rationale_zh || "")),
     text: "藥卡 " + b.h.id + "「" + b.kp.pair + "」宣稱 NCBAHM，"
       + (b.n !== 2 ? "但辨識出 " + b.n + " 味而 Appendix B 全為二味對藥" : "但該組合不在 Appendix B 清單上"),
   });
 }
 
-// 既有待裁清單(2026-08-27 首次核對時就存在,不是本批造成)。
-// 這些不擋 CI —— 它們要不要改是內容決定,等 Ting 裁;但**不准再多**:
-// 清單以外的任何一項都是 FAIL。修好一項就從這裡刪一行,清單只能變短。
-const KNOWN = new Set([
-  // herb_pairs:3–4 味卻標 ncbahm_official_pair(Appendix B 全為二味)
-  "pair.chuan_xiong__dang_gui__chi_shao",
-  "pair.liu_huang__fu_zi__rou_gui",
-  "pair.bai_guo__ma_huang__zi_su_zi__xing_ren",
-  "pair.gou_ji__du_zhong__xu_duan",
-  "pair.gu_sui_bu__ru_xiang__mo_yao",
-  "pair.hai_piao_xiao__shan_yao__long_gu__mu_li",
-  "pair.he_tao_ren__dang_gui__huo_ma_ren__rou_cong_rong",
-  "pair.hu_jiao__sheng_jiang__ban_xia",
-  "pair.jing_mi__shi_gao__zhi_mu__gan_cao",
-  // 藥卡 key_pairs 標籤:宣稱 NCBAHM 但核對不成立
-  "herb.qiang_huo|羌活 + 獨活 (2026 NCBAHM Appendix B 官方對藥)",
-  "herb.xi_xin|細辛 + 乾薑 + 五味子 (2026 NCBAHM Appendix B 官方對藥)",
-  "herb.hua_shi|滑石 + 甘草 (Bastyr / NCBAHM 官方對藥)",
-  "herb.yan_hu_suo|延胡索 + 川楝子 (Bastyr / NCBAHM 官方對藥)",
-]);
-const fresh = problems.filter((p) => !p.known || !KNOWN.has(p.known));
-const stale = [...KNOWN].filter((k) => !problems.some((p) => p.known === k));
+// Ting 裁定(2026-08-27):對不上本庫 NCBAHM 正本 **不等於** 宣稱是假的 ——
+// 來源可能是 NCCAOM 或其他考綱版本,那些正本不在 repo,無從核對。
+// 所以規則不是「不在清單上就 FAIL」,而是:**核不到就必須帶標記**。
+//   herb_pairs → official_claim_status: "unmatched_ncbahm_appendix_b__source_unverified"
+//   藥卡標籤   → rationale_zh 裡寫明未能核實
+// 帶了標記 = 已誠實揭露,放行;沒帶 = FAIL。這樣不必維護一份會腐的名單,
+// 而且新加的宣稱只要核不到又沒揭露就會被擋下。
+const marked = problems.filter((p) => p.disclosed);
+const undisclosed = problems.filter((p) => !p.disclosed);
 
 console.log("validate-board-pair-attribution — 考綱官方對藥宣稱是否對得上考綱正本");
 notes.forEach((n) => console.log("  " + n));
-console.log("  既有待裁清單 " + KNOWN.size + " 項(不擋,等 Ting 裁定;清單只能變短)");
-if (stale.length) {
+console.log("  核不到但已標未確認(放行): " + marked.length + " 項");
+if (marked.length) {
   console.log("");
-  stale.forEach((s) => console.log("  ℹ 已修好,可從 KNOWN 清單刪掉:" + s));
+  marked.forEach((p) => console.log("  · " + p.text));
 }
-if (problems.length) {
+if (undisclosed.length) {
   console.log("");
-  problems.forEach((p) => console.log("  " + (KNOWN.has(p.known) ? "·" : "✗") + " " + p.text));
-}
-if (fresh.length) {
-  console.log("\nFAIL — " + fresh.length + " 項新的歸屬不符(既有 " + (problems.length - fresh.length) + " 項不計)");
+  undisclosed.forEach((p) => console.log("  ✗ " + p.text));
+  console.log("\nFAIL — " + undisclosed.length + " 項宣稱核不到而且沒有標未確認。");
+  console.log("  處置:不必刪除宣稱 —— herb_pairs 加 official_claim_status:"
+    + "\"unmatched_ncbahm_appendix_b__source_unverified\" 並在 teaching_note_zh 寫明核對範圍;"
+    + "藥卡則在 rationale_zh 附註未能核實。");
   process.exit(1);
 }
-console.log("\nPASS — 沒有新的歸屬錯誤(既有 " + problems.length + " 項在待裁清單內)。");
+console.log("\nPASS — 所有考綱宣稱要嘛對得上正本,要嘛已標未確認。");
