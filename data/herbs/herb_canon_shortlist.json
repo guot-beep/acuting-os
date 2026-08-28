@@ -15140,6 +15140,12 @@
     ],
     "pharmaceutical_latin": [
      "NCBAHM 2026 CH Content Outline, Appendix A (通用拉丁藥名)"
+    ],
+    "exam_pearl": [
+     "由本卡既有 indications_zh/contraindications_zh/cautions_zh 內容整理，未新增未查證宣稱"
+    ],
+    "exam_importance": [
+     "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf"
     ]
    },
    "card_grade": "partial",
@@ -15259,7 +15265,9 @@
     "part_used_en": "Root"
    },
    "pharmaceutical_latin": "Sophorae Flavescentis Radix",
-   "pinyin_toned": "Kǔ Shēn"
+   "pinyin_toned": "Kǔ Shēn",
+   "exam_pearl": "清熱燥濕、殺蟲、利尿要藥，治濕疹、陰癢、滴蟲性陰道炎；反藜蘆（十八反，見 contraindications_en），孕婦、心臟病、腎臟病患者慎用或避免。",
+   "exam_importance": "★ NCBAHM 2026 CH 考綱 Domain I.A：清熱燥濕藥的十八反配伍禁忌是常考點。"
   },
   {
    "id": "herb.jin_yin_hua",
@@ -21604,6 +21612,12 @@
     ],
     "pharmaceutical_latin": [
      "NCBAHM 2026 CH Content Outline, Appendix A (通用拉丁藥名)"
+    ],
+    "exam_pearl": [
+     "由本卡既有 dosage/cautions_zh/contraindications_zh 內容整理，未新增未查證宣稱"
+    ],
+    "exam_importance": [
+     "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf"
     ]
    },
    "card_grade": "partial",
@@ -21735,7 +21749,9 @@
     "part_used_en": "Root Tuber"
    },
    "pharmaceutical_latin": "Kansui Radix",
-   "pinyin_toned": "Gān Suì"
+   "pinyin_toned": "Gān Suì",
+   "exam_pearl": "峻下逐水藥之代表，反甘草（十八反，見 cautions_en）；醋制後多入丸散，不入湯劑；體弱、孕婦、潰瘍及出血病史者禁用。",
+   "exam_importance": "★ NCBAHM 2026 CH 考綱 Domain I.A：峻下逐水藥的炮製要求（醋制）與十八反是常考點。"
   },
   {
    "id": "herb.du_huo",
@@ -28377,6 +28393,9 @@
     ],
     "safety_info.cautions_en": [
      "由既有 safety_info.cautions_zh 直譯，未新增內容"
+    ],
+    "exam_pearl": [
+     "由本卡既有 safety_info/cautions_zh/dosage_g 內容整理，未新增未查證宣稱"
     ]
    },
    "card_grade": "partial",
@@ -28459,7 +28478,8 @@
    ],
    "contraindications_en": [
     "Contraindicated in pregnancy; use with caution in impaired renal function."
-   ]
+   ],
+   "exam_pearl": "利水通淋、清心火要藥；考點在辨別正品（川木通、白木通）與偽品關木通——關木通含馬兜鈴酸具腎毒性已被禁用，本卡指正品，見 safety_flags 的 species_confusion_aristolochic_acid_risk。"
   },
   {
    "id": "herb.hua_shi",
