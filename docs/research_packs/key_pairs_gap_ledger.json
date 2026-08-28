@@ -1,0 +1,3010 @@
+{
+ "measured": {
+  "herbs": 364,
+  "filled": 52,
+  "empty": 312
+ },
+ "bucket_A": [
+  {
+   "id": "herb.bai_zhu",
+   "name_zh": "白朮",
+   "ncbahm": true,
+   "two_herb_pairs": [
+    "pair.fu_ling__bai_zhu",
+    "pair.bai_zhu__cang_zhu",
+    "pair.bai_zhu__fu_ling",
+    "pair.gan_jiang__bai_zhu",
+    "pair.huang_qin__bai_zhu"
+   ],
+   "all_pairs": [
+    "pair.fu_ling__bai_zhu",
+    "pair.bai_zhu__cang_zhu",
+    "pair.bai_zhu__fu_ling",
+    "pair.gan_jiang__bai_zhu",
+    "pair.huang_qin__bai_zhu"
+   ]
+  },
+  {
+   "id": "herb.bai_shao",
+   "name_zh": "白芍",
+   "ncbahm": true,
+   "two_herb_pairs": [
+    "pair.chai_hu__bai_shao",
+    "pair.gui_zhi__bai_shao",
+    "pair.bai_shao__gan_cao",
+    "pair.chi_shao__bai_shao"
+   ],
+   "all_pairs": [
+    "pair.chai_hu__bai_shao",
+    "pair.gui_zhi__bai_shao",
+    "pair.chuan_wu__ma_huang__bai_shao",
+    "pair.bai_shao__gan_cao",
+    "pair.chi_shao__bai_shao"
+   ]
+  },
+  {
+   "id": "herb.chen_pi",
+   "name_zh": "陳皮",
+   "ncbahm": true,
+   "two_herb_pairs": [
+    "pair.chen_pi__ban_xia",
+    "pair.ban_xia__chen_pi",
+    "pair.he_zi__chen_pi",
+    "pair.zhu_ru__chen_pi"
+   ],
+   "all_pairs": [
+    "pair.chen_pi__ban_xia",
+    "pair.ban_xia__chen_pi",
+    "pair.he_zi__chen_pi",
+    "pair.zhu_ru__chen_pi"
+   ]
+  },
+  {
+   "id": "herb.gan_cao",
+   "name_zh": "甘草",
+   "ncbahm": true,
+   "two_herb_pairs": [
+    "pair.jie_geng__gan_cao",
+    "pair.lu_dou__gan_cao",
+    "pair.bai_shao__gan_cao",
+    "pair.hua_shi__gan_cao"
+   ],
+   "all_pairs": [
+    "pair.jie_geng__gan_cao",
+    "pair.jing_mi__shi_gao__zhi_mu__gan_cao",
+    "pair.lu_dou__gan_cao",
+    "pair.bai_shao__gan_cao",
+    "pair.hua_shi__gan_cao"
+   ]
+  },
+  {
+   "id": "herb.ren_shen",
+   "name_zh": "人參",
+   "ncbahm": true,
+   "two_herb_pairs": [
+    "pair.ren_shen__fu_zi",
+    "pair.ren_shen__huang_qi",
+    "pair.ma_huang__ren_shen",
+    "pair.ge_jie__ren_shen"
+   ],
+   "all_pairs": [
+    "pair.ren_shen__fu_zi",
+    "pair.ren_shen__huang_qi",
+    "pair.ren_shen__mai_dong__wu_wei_zi",
+    "pair.ma_huang__ren_shen",
+    "pair.ge_jie__ren_shen",
+    "pair.ge_jie__ren_shen__xing_ren__chuan_bei_mu",
+    "pair.he_tao_ren__ren_shen__ge_jie"
+   ]
+  },
+  {
+   "id": "herb.da_zao",
+   "name_zh": "大棗",
+   "ncbahm": true,
+   "two_herb_pairs": [
+    "pair.sheng_jiang__da_zao",
+    "pair.ting_li_zi__da_zao"
+   ],
+   "all_pairs": [
+    "pair.sheng_jiang__da_zao",
+    "pair.ting_li_zi__da_zao"
+   ]
+  },
+  {
+   "id": "herb.ge_jie",
+   "name_zh": "蛤蚧",
+   "ncbahm": true,
+   "two_herb_pairs": [
+    "pair.dong_chong_xia_cao__ge_jie",
+    "pair.ge_jie__ren_shen"
+   ],
+   "all_pairs": [
+    "pair.dong_chong_xia_cao__ge_jie",
+    "pair.ge_jie__ren_shen",
+    "pair.ge_jie__ren_shen__xing_ren__chuan_bei_mu",
+    "pair.he_tao_ren__ren_shen__ge_jie"
+   ]
+  },
+  {
+   "id": "herb.jin_ying_zi",
+   "name_zh": "金櫻子",
+   "ncbahm": true,
+   "two_herb_pairs": [
+    "pair.jin_ying_zi__sang_piao_xiao",
+    "pair.jin_ying_zi__qian_shi"
+   ],
+   "all_pairs": [
+    "pair.jin_ying_zi__sang_piao_xiao",
+    "pair.jin_ying_zi__qian_shi"
+   ]
+  },
+  {
+   "id": "herb.dong_chong_xia_cao",
+   "name_zh": "冬蟲夏草",
+   "ncbahm": true,
+   "two_herb_pairs": [
+    "pair.dong_chong_xia_cao__ge_jie"
+   ],
+   "all_pairs": [
+    "pair.dong_chong_xia_cao__du_zhong__yin_yang_huo__rou_cong_rong",
+    "pair.dong_chong_xia_cao__chuan_bei_mu__e_jiao__mai_men_dong",
+    "pair.dong_chong_xia_cao__ge_jie"
+   ]
+  },
+  {
+   "id": "herb.dong_kui_zi",
+   "name_zh": "冬葵子",
+   "ncbahm": true,
+   "two_herb_pairs": [
+    "pair.dong_kui_zi__huo_ma_ren"
+   ],
+   "all_pairs": [
+    "pair.dong_kui_zi__che_qian_zi__hua_shi__jin_qian_cao",
+    "pair.dong_kui_zi__huo_ma_ren"
+   ]
+  },
+  {
+   "id": "herb.feng_mi",
+   "name_zh": "蜂蜜",
+   "ncbahm": true,
+   "two_herb_pairs": [
+    "pair.feng_mi__huang_qi"
+   ],
+   "all_pairs": [
+    "pair.feng_mi__bai_zi_ren__huo_ma_ren",
+    "pair.feng_mi__huang_qi"
+   ]
+  },
+  {
+   "id": "herb.gu_sui_bu",
+   "name_zh": "骨碎補",
+   "ncbahm": true,
+   "two_herb_pairs": [
+    "pair.gu_sui_bu__xu_duan"
+   ],
+   "all_pairs": [
+    "pair.gu_sui_bu__ru_xiang__mo_yao",
+    "pair.gu_sui_bu__xu_duan"
+   ]
+  },
+  {
+   "id": "herb.gu_ya",
+   "name_zh": "谷芽",
+   "ncbahm": true,
+   "two_herb_pairs": [
+    "pair.gu_ya__mai_ya"
+   ],
+   "all_pairs": [
+    "pair.gu_ya__mai_ya",
+    "pair.gu_ya__shan_zha__shen_qu"
+   ]
+  },
+  {
+   "id": "herb.gua_lou_ren",
+   "name_zh": "栝樓仁",
+   "ncbahm": true,
+   "two_herb_pairs": [
+    "pair.gua_lou_ren__xing_ren"
+   ],
+   "all_pairs": [
+    "pair.gua_lou_ren__huo_ma_ren__zhi_ke",
+    "pair.gua_lou_ren__xing_ren"
+   ]
+  },
+  {
+   "id": "herb.hai_piao_xiao",
+   "name_zh": "海螵蛸",
+   "ncbahm": true,
+   "two_herb_pairs": [
+    "pair.hai_piao_xiao__bai_ji"
+   ],
+   "all_pairs": [
+    "pair.hai_piao_xiao__shan_yao__long_gu__mu_li",
+    "pair.hai_piao_xiao__bai_ji"
+   ]
+  },
+  {
+   "id": "herb.hai_zao",
+   "name_zh": "海藻",
+   "ncbahm": true,
+   "two_herb_pairs": [
+    "pair.hai_zao__kun_bu"
+   ],
+   "all_pairs": [
+    "pair.hai_zao__kun_bu"
+   ]
+  },
+  {
+   "id": "herb.huai_mi",
+   "name_zh": "槐米",
+   "ncbahm": true,
+   "two_herb_pairs": [
+    "pair.di_yu__huai_mi"
+   ],
+   "all_pairs": [
+    "pair.di_yu__huai_mi",
+    "pair.huai_mi__ce_bai_ye__jing_jie__zhi_ke"
+   ]
+  },
+  {
+   "id": "herb.kun_bu",
+   "name_zh": "昆布",
+   "ncbahm": true,
+   "two_herb_pairs": [
+    "pair.hai_zao__kun_bu"
+   ],
+   "all_pairs": [
+    "pair.hai_zao__kun_bu"
+   ]
+  },
+  {
+   "id": "herb.ling_zhi",
+   "name_zh": "靈芝",
+   "ncbahm": true,
+   "two_herb_pairs": [
+    "pair.ling_zhi__suan_zao_ren"
+   ],
+   "all_pairs": [
+    "pair.ling_zhi__suan_zao_ren"
+   ]
+  },
+  {
+   "id": "herb.lu_dou",
+   "name_zh": "綠豆",
+   "ncbahm": true,
+   "two_herb_pairs": [
+    "pair.lu_dou__gan_cao"
+   ],
+   "all_pairs": [
+    "pair.lu_dou__gan_cao"
+   ]
+  },
+  {
+   "id": "herb.ban_xia",
+   "name_zh": "半夏",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.ban_xia__hou_po",
+    "pair.chen_pi__ban_xia",
+    "pair.ban_xia__sheng_jiang",
+    "pair.tian_nan_xing__ban_xia",
+    "pair.liu_huang__ban_xia",
+    "pair.ban_xia__chen_pi",
+    "pair.zhu_ru__ban_xia",
+    "pair.ban_xia__huang_qin",
+    "pair.ban_xia__e_jiao"
+   ],
+   "all_pairs": [
+    "pair.ban_xia__hou_po",
+    "pair.chen_pi__ban_xia",
+    "pair.ban_xia__sheng_jiang",
+    "pair.tian_nan_xing__ban_xia",
+    "pair.ma_huang__gan_jiang__xi_xin__ban_xia",
+    "pair.liu_huang__ban_xia",
+    "pair.dong_gua_zi__xing_ren__ban_xia__chuan_bei_mu__ce_bai_ye",
+    "pair.dong_gua_zi__xing_ren__ban_xia__sheng_di_huang__nan_sha_shen__chuan_bei_mu__ce_bai_ye__qian_cao",
+    "pair.gua_lou_pi__huang_lian__ban_xia",
+    "pair.gua_lou_pi__xie_bai__ban_xia",
+    "pair.hu_jiao__sheng_jiang__ban_xia",
+    "pair.ban_xia__chen_pi",
+    "pair.zhu_ru__ban_xia",
+    "pair.ban_xia__huang_qin",
+    "pair.ban_xia__e_jiao"
+   ]
+  },
+  {
+   "id": "herb.ma_huang",
+   "name_zh": "麻黃",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.ma_huang__gui_zhi",
+    "pair.ma_huang__xing_ren",
+    "pair.ma_huang__shi_gao",
+    "pair.ma_huang__ren_shen",
+    "pair.ma_huang__fu_zi",
+    "pair.ma_huang__yi_yi_ren",
+    "pair.fu_ping__ma_huang"
+   ],
+   "all_pairs": [
+    "pair.ma_huang__gui_zhi",
+    "pair.ma_huang__xing_ren",
+    "pair.ma_huang__shi_gao",
+    "pair.ma_huang__ren_shen",
+    "pair.ma_huang__fu_zi",
+    "pair.ma_huang__gan_jiang__xi_xin__ban_xia",
+    "pair.ma_huang__yi_yi_ren",
+    "pair.ma_huang__shu_di_huang__bai_jie_zi__lu_jiao_jiao",
+    "pair.fu_ping__ma_huang",
+    "pair.chuan_wu__ma_huang__bai_shao",
+    "pair.bai_guo__ma_huang__zi_su_zi__xing_ren",
+    "pair.chi_xiao_dou__ma_huang__lian_qiao__sang_bai_pi"
+   ]
+  },
+  {
+   "id": "herb.fu_zi",
+   "name_zh": "附子",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.fu_zi__gan_jiang",
+    "pair.fu_zi__rou_gui",
+    "pair.ren_shen__fu_zi",
+    "pair.ma_huang__fu_zi",
+    "pair.huang_qi__fu_zi"
+   ],
+   "all_pairs": [
+    "pair.fu_zi__gan_jiang",
+    "pair.fu_zi__rou_gui",
+    "pair.ren_shen__fu_zi",
+    "pair.ma_huang__fu_zi",
+    "pair.liu_huang__fu_zi__rou_gui",
+    "pair.huang_qi__fu_zi"
+   ]
+  },
+  {
+   "id": "herb.ju_hua",
+   "name_zh": "菊花",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.sang_ye__ju_hua",
+    "pair.gou_qi_zi__ju_hua",
+    "pair.man_jing_zi__ju_hua",
+    "pair.jue_ming_zi__ju_hua",
+    "pair.mu_zei__ju_hua"
+   ],
+   "all_pairs": [
+    "pair.sang_ye__ju_hua",
+    "pair.gou_qi_zi__ju_hua",
+    "pair.man_jing_zi__ju_hua",
+    "pair.jue_ming_zi__ju_hua",
+    "pair.mu_zei__ju_hua",
+    "pair.di_fu_zi__ju_hua__jue_ming_zi__qing_xiang_zi__gu_jing_cao"
+   ]
+  },
+  {
+   "id": "herb.chai_hu",
+   "name_zh": "柴胡",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.chai_hu__bai_shao",
+    "pair.bo_he__chai_hu",
+    "pair.chai_hu__huang_qin",
+    "pair.chai_hu__sheng_ma"
+   ],
+   "all_pairs": [
+    "pair.chai_hu__bai_shao",
+    "pair.bo_he__chai_hu",
+    "pair.chai_hu__huang_qin",
+    "pair.chai_hu__sheng_ma"
+   ]
+  },
+  {
+   "id": "herb.e_jiao",
+   "name_zh": "阿膠",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.ai_ye__e_jiao",
+    "pair.zi_wan__e_jiao",
+    "pair.ban_xia__e_jiao",
+    "pair.huang_lian__e_jiao"
+   ],
+   "all_pairs": [
+    "pair.dong_chong_xia_cao__chuan_bei_mu__e_jiao__mai_men_dong",
+    "pair.ai_ye__e_jiao",
+    "pair.zi_wan__e_jiao",
+    "pair.ban_xia__e_jiao",
+    "pair.huang_lian__e_jiao"
+   ]
+  },
+  {
+   "id": "herb.mai_men_dong",
+   "name_zh": "麥門冬",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.mai_men_dong__wu_wei_zi",
+    "pair.mai_men_dong__sha_shen",
+    "pair.tian_men_dong__mai_men_dong",
+    "pair.mai_men_dong__xuan_shen"
+   ],
+   "all_pairs": [
+    "pair.mai_men_dong__wu_wei_zi",
+    "pair.ren_shen__mai_dong__wu_wei_zi",
+    "pair.dong_chong_xia_cao__chuan_bei_mu__e_jiao__mai_men_dong",
+    "pair.mai_men_dong__sha_shen",
+    "pair.tian_men_dong__mai_men_dong",
+    "pair.mai_men_dong__xuan_shen"
+   ]
+  },
+  {
+   "id": "herb.xiang_fu",
+   "name_zh": "香附",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.dang_gui__xiang_fu",
+    "pair.xiang_fu__wu_yao",
+    "pair.xiang_fu__yi_mu_cao",
+    "pair.ai_ye__xiang_fu"
+   ],
+   "all_pairs": [
+    "pair.dang_gui__xiang_fu",
+    "pair.xiang_fu__wu_yao",
+    "pair.xiang_fu__yi_mu_cao",
+    "pair.ai_ye__xiang_fu"
+   ]
+  },
+  {
+   "id": "herb.xing_ren",
+   "name_zh": "杏仁",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.ma_huang__xing_ren",
+    "pair.sang_ye__xing_ren",
+    "pair.gua_lou_ren__xing_ren",
+    "pair.tao_ren__xing_ren"
+   ],
+   "all_pairs": [
+    "pair.ma_huang__xing_ren",
+    "pair.sang_ye__xing_ren",
+    "pair.bai_guo__ma_huang__zi_su_zi__xing_ren",
+    "pair.dong_gua_zi__xing_ren__ban_xia__chuan_bei_mu__ce_bai_ye",
+    "pair.dong_gua_zi__xing_ren__ban_xia__sheng_di_huang__nan_sha_shen__chuan_bei_mu__ce_bai_ye__qian_cao",
+    "pair.ge_jie__ren_shen__xing_ren__chuan_bei_mu",
+    "pair.gua_lou_pi__zhe_bei_mu__jie_geng__xing_ren",
+    "pair.gua_lou_ren__xing_ren",
+    "pair.tao_ren__xing_ren"
+   ]
+  },
+  {
+   "id": "herb.ba_dou",
+   "name_zh": "巴豆",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.ba_dou__wu_ling_zhi",
+    "pair.ba_dou__da_huang",
+    "pair.ba_dou__gan_jiang"
+   ],
+   "all_pairs": [
+    "pair.ba_dou__wu_ling_zhi",
+    "pair.ba_dou__da_huang",
+    "pair.ba_dou__gan_jiang"
+   ]
+  },
+  {
+   "id": "herb.gan_jiang",
+   "name_zh": "乾薑",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.fu_zi__gan_jiang",
+    "pair.ba_dou__gan_jiang",
+    "pair.gan_jiang__bai_zhu"
+   ],
+   "all_pairs": [
+    "pair.fu_zi__gan_jiang",
+    "pair.gan_jiang__xi_xin__wu_wei_zi",
+    "pair.ma_huang__gan_jiang__xi_xin__ban_xia",
+    "pair.ba_dou__gan_jiang",
+    "pair.gan_jiang__bai_zhu"
+   ]
+  },
+  {
+   "id": "herb.huang_lian",
+   "name_zh": "黃連",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.huang_lian__rou_gui",
+    "pair.huang_lian__wu_zhu_yu",
+    "pair.huang_lian__e_jiao"
+   ],
+   "all_pairs": [
+    "pair.huang_lian__rou_gui",
+    "pair.huang_lian__wu_zhu_yu",
+    "pair.huang_lian__huang_qin__huang_bai",
+    "pair.gua_lou_pi__huang_lian__ban_xia",
+    "pair.huang_lian__e_jiao"
+   ]
+  },
+  {
+   "id": "herb.huang_qin",
+   "name_zh": "黃芩",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.chai_hu__huang_qin",
+    "pair.ban_xia__huang_qin",
+    "pair.huang_qin__bai_zhu"
+   ],
+   "all_pairs": [
+    "pair.huang_lian__huang_qin__huang_bai",
+    "pair.chai_hu__huang_qin",
+    "pair.ban_xia__huang_qin",
+    "pair.huang_qin__bai_zhu"
+   ]
+  },
+  {
+   "id": "herb.mu_li",
+   "name_zh": "牡蠣",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.long_gu__mu_li",
+    "pair.xuan_shen__mu_li",
+    "pair.huang_qi__mu_li"
+   ],
+   "all_pairs": [
+    "pair.long_gu__mu_li",
+    "pair.ma_huang_gen__huang_qi__mu_li",
+    "pair.hai_piao_xiao__shan_yao__long_gu__mu_li",
+    "pair.xuan_shen__mu_li",
+    "pair.huang_qi__mu_li"
+   ]
+  },
+  {
+   "id": "herb.suan_zao_ren",
+   "name_zh": "酸棗仁",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.suan_zao_ren__zhi_mu",
+    "pair.ling_zhi__suan_zao_ren",
+    "pair.suan_zao_ren__zhi_zi"
+   ],
+   "all_pairs": [
+    "pair.suan_zao_ren__zhi_mu",
+    "pair.ling_zhi__suan_zao_ren",
+    "pair.suan_zao_ren__zhi_zi"
+   ]
+  },
+  {
+   "id": "herb.ai_ye",
+   "name_zh": "艾葉",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.ai_ye__e_jiao",
+    "pair.ai_ye__xiang_fu"
+   ],
+   "all_pairs": [
+    "pair.ai_ye__e_jiao",
+    "pair.ai_ye__xiang_fu"
+   ]
+  },
+  {
+   "id": "herb.bie_jia",
+   "name_zh": "鱉甲",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.qing_hao__bie_jia",
+    "pair.gui_ban__bie_jia"
+   ],
+   "all_pairs": [
+    "pair.qing_hao__bie_jia",
+    "pair.gui_ban__bie_jia"
+   ]
+  },
+  {
+   "id": "herb.bo_he",
+   "name_zh": "薄荷",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.bo_he__chai_hu",
+    "pair.bo_he__chan_tui"
+   ],
+   "all_pairs": [
+    "pair.bo_he__chai_hu",
+    "pair.bo_he__chan_tui",
+    "pair.fu_ping__jing_jie__bo_he__lian_qiao",
+    "pair.fu_ping__bo_he__niu_bang_zi__chan_tui__sheng_ma",
+    "pair.fu_ping__bai_ji_li__niu_bang_zi__bo_he"
+   ]
+  },
+  {
+   "id": "herb.cang_zhu",
+   "name_zh": "蒼朮",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.bai_zhu__cang_zhu",
+    "pair.huang_bai__cang_zhu"
+   ],
+   "all_pairs": [
+    "pair.bai_zhu__cang_zhu",
+    "pair.huang_bai__cang_zhu"
+   ]
+  },
+  {
+   "id": "herb.chan_tui",
+   "name_zh": "蟬蛻",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.bo_he__chan_tui",
+    "pair.chan_tui__pang_da_hai"
+   ],
+   "all_pairs": [
+    "pair.bo_he__chan_tui",
+    "pair.chan_tui__pang_da_hai",
+    "pair.fu_ping__bo_he__niu_bang_zi__chan_tui__sheng_ma"
+   ]
+  },
+  {
+   "id": "herb.chuan_lian_zi",
+   "name_zh": "川楝子",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.ju_he__chuan_lian_zi",
+    "pair.chuan_lian_zi__yan_hu_suo"
+   ],
+   "all_pairs": [
+    "pair.ju_he__chuan_lian_zi",
+    "pair.chuan_lian_zi__yan_hu_suo"
+   ]
+  },
+  {
+   "id": "herb.da_huang",
+   "name_zh": "大黃",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.ba_dou__da_huang",
+    "pair.da_huang__mang_xiao"
+   ],
+   "all_pairs": [
+    "pair.bai_xian_pi__da_huang__zhi_zi",
+    "pair.ba_dou__da_huang",
+    "pair.da_huang__mang_xiao"
+   ]
+  },
+  {
+   "id": "herb.di_yu",
+   "name_zh": "地榆",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.di_yu__huai_mi",
+    "pair.di_yu__huai_hua"
+   ],
+   "all_pairs": [
+    "pair.di_yu__huai_mi",
+    "pair.di_yu__huai_hua"
+   ]
+  },
+  {
+   "id": "herb.fu_ping",
+   "name_zh": "浮萍",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.fu_ping__ma_huang",
+    "pair.fu_ping__tian_hua_fen"
+   ],
+   "all_pairs": [
+    "pair.fu_ping__jing_jie__bo_he__lian_qiao",
+    "pair.fu_ping__bo_he__niu_bang_zi__chan_tui__sheng_ma",
+    "pair.fu_ping__ma_huang",
+    "pair.fu_ping__tian_hua_fen",
+    "pair.fu_ping__bai_ji_li__niu_bang_zi__bo_he"
+   ]
+  },
+  {
+   "id": "herb.hou_po",
+   "name_zh": "厚朴",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.ban_xia__hou_po",
+    "pair.zhi_shi__hou_po"
+   ],
+   "all_pairs": [
+    "pair.ban_xia__hou_po",
+    "pair.zhi_shi__hou_po"
+   ]
+  },
+  {
+   "id": "herb.huang_bai",
+   "name_zh": "黃柏",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.zhi_mu__huang_bai",
+    "pair.huang_bai__cang_zhu"
+   ],
+   "all_pairs": [
+    "pair.zhi_mu__huang_bai",
+    "pair.huang_lian__huang_qin__huang_bai",
+    "pair.bai_hua_she_she_cao__yin_chen_hao__huang_bai__zhi_zi",
+    "pair.bai_xian_pi__huang_bai__ku_shen__fang_feng",
+    "pair.bi_xie__che_qian_zi__hua_shi__huang_bai",
+    "pair.chun_pi__huang_bai__zhi_zi__che_qian_zi",
+    "pair.huang_bai__cang_zhu"
+   ]
+  },
+  {
+   "id": "herb.huo_xiang",
+   "name_zh": "藿香",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.huo_xiang__pei_lan",
+    "pair.huo_xiang__zi_su_ye"
+   ],
+   "all_pairs": [
+    "pair.huo_xiang__pei_lan",
+    "pair.huo_xiang__zi_su_ye"
+   ]
+  },
+  {
+   "id": "herb.jue_ming_zi",
+   "name_zh": "決明子",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.jue_ming_zi__ju_hua",
+    "pair.jue_ming_zi__xia_ku_cao"
+   ],
+   "all_pairs": [
+    "pair.jue_ming_zi__ju_hua",
+    "pair.jue_ming_zi__xia_ku_cao",
+    "pair.di_fu_zi__ju_hua__jue_ming_zi__qing_xiang_zi__gu_jing_cao"
+   ]
+  },
+  {
+   "id": "herb.lian_qiao",
+   "name_zh": "連翹",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.jin_yin_hua__lian_qiao",
+    "pair.niu_bang_zi__lian_qiao"
+   ],
+   "all_pairs": [
+    "pair.jin_yin_hua__lian_qiao",
+    "pair.niu_bang_zi__lian_qiao",
+    "pair.fu_ping__jing_jie__bo_he__lian_qiao",
+    "pair.chi_xiao_dou__ma_huang__lian_qiao__sang_bai_pi"
+   ]
+  },
+  {
+   "id": "herb.man_jing_zi",
+   "name_zh": "蔓荊子",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.man_jing_zi__ju_hua",
+    "pair.man_jing_zi__fang_feng"
+   ],
+   "all_pairs": [
+    "pair.man_jing_zi__ju_hua",
+    "pair.man_jing_zi__fang_feng"
+   ]
+  },
+  {
+   "id": "herb.mu_zei",
+   "name_zh": "木賊",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.mu_zei__ju_hua",
+    "pair.mu_zei__bai_ji_li"
+   ],
+   "all_pairs": [
+    "pair.mu_zei__ju_hua",
+    "pair.mu_zei__bai_ji_li"
+   ]
+  },
+  {
+   "id": "herb.qian_shi",
+   "name_zh": "芡實",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.jin_ying_zi__qian_shi",
+    "pair.lian_zi__qian_shi"
+   ],
+   "all_pairs": [
+    "pair.jin_ying_zi__qian_shi",
+    "pair.lian_zi__qian_shi"
+   ]
+  },
+  {
+   "id": "herb.rou_cong_rong",
+   "name_zh": "肉蓯蓉",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.ba_ji_tian__rou_cong_rong",
+    "pair.dang_gui__rou_cong_rong"
+   ],
+   "all_pairs": [
+    "pair.ba_ji_tian__rou_cong_rong",
+    "pair.dong_chong_xia_cao__du_zhong__yin_yang_huo__rou_cong_rong",
+    "pair.he_tao_ren__dang_gui__huo_ma_ren__rou_cong_rong",
+    "pair.dang_gui__rou_cong_rong"
+   ]
+  },
+  {
+   "id": "herb.rou_gui",
+   "name_zh": "肉桂",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.huang_lian__rou_gui",
+    "pair.fu_zi__rou_gui"
+   ],
+   "all_pairs": [
+    "pair.huang_lian__rou_gui",
+    "pair.fu_zi__rou_gui",
+    "pair.liu_huang__fu_zi__rou_gui",
+    "pair.chen_xiang__wu_yao__rou_gui__xiao_hui_xiang"
+   ]
+  },
+  {
+   "id": "herb.sang_ye",
+   "name_zh": "桑葉",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.sang_ye__ju_hua",
+    "pair.sang_ye__xing_ren"
+   ],
+   "all_pairs": [
+    "pair.sang_ye__ju_hua",
+    "pair.sang_ye__xing_ren"
+   ]
+  },
+  {
+   "id": "herb.sheng_ma",
+   "name_zh": "升麻",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.ge_gen__sheng_ma",
+    "pair.chai_hu__sheng_ma"
+   ],
+   "all_pairs": [
+    "pair.ge_gen__sheng_ma",
+    "pair.chai_hu__sheng_ma",
+    "pair.fu_ping__bo_he__niu_bang_zi__chan_tui__sheng_ma"
+   ]
+  },
+  {
+   "id": "herb.shui_niu_jiao",
+   "name_zh": "水牛角",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.niu_huang__shui_niu_jiao",
+    "pair.shui_niu_jiao__sheng_di_huang"
+   ],
+   "all_pairs": [
+    "pair.niu_huang__shui_niu_jiao",
+    "pair.shui_niu_jiao__sheng_di_huang",
+    "pair.shui_niu_jiao__mu_dan_pi__chi_shao"
+   ]
+  },
+  {
+   "id": "herb.xia_ku_cao",
+   "name_zh": "夏枯草",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.jue_ming_zi__xia_ku_cao",
+    "pair.zhe_bei_mu__xia_ku_cao"
+   ],
+   "all_pairs": [
+    "pair.jue_ming_zi__xia_ku_cao",
+    "pair.zhe_bei_mu__xia_ku_cao"
+   ]
+  },
+  {
+   "id": "herb.xian_mao",
+   "name_zh": "仙茅",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.xian_mao__yin_yang_huo",
+    "pair.xian_mao__du_zhong"
+   ],
+   "all_pairs": [
+    "pair.xian_mao__yin_yang_huo",
+    "pair.xian_mao__du_zhong"
+   ]
+  },
+  {
+   "id": "herb.xu_duan",
+   "name_zh": "續斷",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.gu_sui_bu__xu_duan",
+    "pair.du_zhong__xu_duan"
+   ],
+   "all_pairs": [
+    "pair.gou_ji__du_zhong__xu_duan",
+    "pair.gu_sui_bu__xu_duan",
+    "pair.du_zhong__xu_duan"
+   ]
+  },
+  {
+   "id": "herb.xuan_shen",
+   "name_zh": "玄參",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.xuan_shen__mu_li",
+    "pair.mai_men_dong__xuan_shen"
+   ],
+   "all_pairs": [
+    "pair.xuan_shen__mu_li",
+    "pair.mai_men_dong__xuan_shen"
+   ]
+  },
+  {
+   "id": "herb.zhi_zi",
+   "name_zh": "梔子",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.zhi_zi__dan_dou_chi",
+    "pair.suan_zao_ren__zhi_zi"
+   ],
+   "all_pairs": [
+    "pair.bai_hua_she_she_cao__yin_chen_hao__huang_bai__zhi_zi",
+    "pair.bai_xian_pi__da_huang__zhi_zi",
+    "pair.zhi_zi__dan_dou_chi",
+    "pair.chuan_mu_tong__che_qian_zi__zhi_zi__hua_shi",
+    "pair.chun_pi__huang_bai__zhi_zi__che_qian_zi",
+    "pair.suan_zao_ren__zhi_zi"
+   ]
+  },
+  {
+   "id": "herb.zhu_ru",
+   "name_zh": "竹茹",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.zhu_ru__ban_xia",
+    "pair.zhu_ru__chen_pi"
+   ],
+   "all_pairs": [
+    "pair.zhu_ru__ban_xia",
+    "pair.zhu_ru__chen_pi"
+   ]
+  },
+  {
+   "id": "herb.zi_wan",
+   "name_zh": "紫菀",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.zi_wan__kuan_dong_hua",
+    "pair.zi_wan__e_jiao"
+   ],
+   "all_pairs": [
+    "pair.zi_wan__kuan_dong_hua",
+    "pair.zi_wan__e_jiao"
+   ]
+  },
+  {
+   "id": "herb.ba_ji_tian",
+   "name_zh": "巴戟天",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.ba_ji_tian__rou_cong_rong"
+   ],
+   "all_pairs": [
+    "pair.ba_ji_tian__rou_cong_rong"
+   ]
+  },
+  {
+   "id": "herb.bai_bu",
+   "name_zh": "百部",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.bai_qian__bai_bu"
+   ],
+   "all_pairs": [
+    "pair.bai_qian__bai_bu"
+   ]
+  },
+  {
+   "id": "herb.bai_he",
+   "name_zh": "百合",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.bai_he__zhi_mu"
+   ],
+   "all_pairs": [
+    "pair.bai_he__zhi_mu"
+   ]
+  },
+  {
+   "id": "herb.bai_ji",
+   "name_zh": "白及",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.hai_piao_xiao__bai_ji"
+   ],
+   "all_pairs": [
+    "pair.hai_piao_xiao__bai_ji"
+   ]
+  },
+  {
+   "id": "herb.bai_ji_li",
+   "name_zh": "白蒺藜",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.mu_zei__bai_ji_li"
+   ],
+   "all_pairs": [
+    "pair.fu_ping__bai_ji_li__niu_bang_zi__bo_he",
+    "pair.mu_zei__bai_ji_li"
+   ]
+  },
+  {
+   "id": "herb.bai_jie_zi",
+   "name_zh": "白芥子",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.lai_fu_zi__bai_jie_zi"
+   ],
+   "all_pairs": [
+    "pair.bai_jie_zi__zi_su_zi__lai_fu_zi",
+    "pair.ma_huang__shu_di_huang__bai_jie_zi__lu_jiao_jiao",
+    "pair.lai_fu_zi__bai_jie_zi"
+   ]
+  },
+  {
+   "id": "herb.bai_qian",
+   "name_zh": "白前",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.bai_qian__bai_bu"
+   ],
+   "all_pairs": [
+    "pair.bai_qian__bai_bu"
+   ]
+  },
+  {
+   "id": "herb.bei_sha_shen",
+   "name_zh": "北沙參",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.mai_men_dong__sha_shen"
+   ],
+   "all_pairs": [
+    "pair.mai_men_dong__sha_shen"
+   ]
+  },
+  {
+   "id": "herb.bi_ba",
+   "name_zh": "蓽茇",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.bi_ba__gao_liang_jiang"
+   ],
+   "all_pairs": [
+    "pair.bi_ba__gao_liang_jiang",
+    "pair.bi_ba__yan_hu_suo__xi_xin",
+    "pair.hu_jiao__gao_liang_jiang__bi_ba"
+   ]
+  },
+  {
+   "id": "herb.bi_xie",
+   "name_zh": "萆薢",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.yi_zhi_ren__bi_xie"
+   ],
+   "all_pairs": [
+    "pair.bi_xie__yi_zhi_ren__wu_yao",
+    "pair.bi_xie__che_qian_zi__hua_shi__huang_bai",
+    "pair.hai_tong_pi__bi_xie__mu_tong",
+    "pair.yi_zhi_ren__bi_xie"
+   ]
+  },
+  {
+   "id": "herb.bing_lang",
+   "name_zh": "檳榔",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.mu_xiang__bing_lang"
+   ],
+   "all_pairs": [
+    "pair.mu_xiang__bing_lang"
+   ]
+  },
+  {
+   "id": "herb.cao_wu",
+   "name_zh": "制草烏",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.chuan_wu__cao_wu"
+   ],
+   "all_pairs": [
+    "pair.chuan_wu__cao_wu"
+   ]
+  },
+  {
+   "id": "herb.chi_shao",
+   "name_zh": "赤芍",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.chi_shao__bai_shao"
+   ],
+   "all_pairs": [
+    "pair.chuan_xiong__dang_gui__chi_shao",
+    "pair.shui_niu_jiao__mu_dan_pi__chi_shao",
+    "pair.chi_shao__bai_shao"
+   ]
+  },
+  {
+   "id": "herb.chi_xiao_dou",
+   "name_zh": "赤小豆",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.chi_xiao_dou__dang_gui"
+   ],
+   "all_pairs": [
+    "pair.chi_xiao_dou__ma_huang__lian_qiao__sang_bai_pi",
+    "pair.chi_xiao_dou__dang_gui"
+   ]
+  },
+  {
+   "id": "herb.chuan_wu",
+   "name_zh": "制川烏",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.chuan_wu__cao_wu"
+   ],
+   "all_pairs": [
+    "pair.chuan_wu__cao_wu",
+    "pair.chuan_wu__ma_huang__bai_shao"
+   ]
+  },
+  {
+   "id": "herb.dai_zhe_shi",
+   "name_zh": "代赭石",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.xuan_fu_hua__dai_zhe_shi"
+   ],
+   "all_pairs": [
+    "pair.xuan_fu_hua__dai_zhe_shi"
+   ]
+  },
+  {
+   "id": "herb.dan_dou_chi",
+   "name_zh": "淡豆豉",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.zhi_zi__dan_dou_chi"
+   ],
+   "all_pairs": [
+    "pair.zhi_zi__dan_dou_chi"
+   ]
+  },
+  {
+   "id": "herb.di_gu_pi",
+   "name_zh": "地骨皮",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.sang_bai_pi__di_gu_pi"
+   ],
+   "all_pairs": [
+    "pair.sang_bai_pi__di_gu_pi"
+   ]
+  },
+  {
+   "id": "herb.du_huo",
+   "name_zh": "獨活",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.qiang_huo__du_huo"
+   ],
+   "all_pairs": [
+    "pair.qiang_huo__du_huo"
+   ]
+  },
+  {
+   "id": "herb.fang_ji",
+   "name_zh": "防己",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.huang_qi__fang_ji"
+   ],
+   "all_pairs": [
+    "pair.huang_qi__fang_ji"
+   ]
+  },
+  {
+   "id": "herb.gao_liang_jiang",
+   "name_zh": "高良薑",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.bi_ba__gao_liang_jiang"
+   ],
+   "all_pairs": [
+    "pair.bi_ba__gao_liang_jiang",
+    "pair.hu_jiao__gao_liang_jiang__bi_ba"
+   ]
+  },
+  {
+   "id": "herb.ge_gen",
+   "name_zh": "葛根",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.ge_gen__sheng_ma"
+   ],
+   "all_pairs": [
+    "pair.ge_gen__sheng_ma"
+   ]
+  },
+  {
+   "id": "herb.gou_qi_zi",
+   "name_zh": "枸杞子",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.gou_qi_zi__ju_hua"
+   ],
+   "all_pairs": [
+    "pair.gou_qi_zi__ju_hua",
+    "pair.fu_pen_zi__tu_si_zi__gou_qi_zi__wu_wei_zi"
+   ]
+  },
+  {
+   "id": "herb.gou_teng",
+   "name_zh": "鉤藤",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.tian_ma__gou_teng"
+   ],
+   "all_pairs": [
+    "pair.tian_ma__gou_teng"
+   ]
+  },
+  {
+   "id": "herb.gua_lou",
+   "name_zh": "瓜蔞",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.gua_lou__xie_bai"
+   ],
+   "all_pairs": [
+    "pair.gua_lou__xie_bai"
+   ]
+  },
+  {
+   "id": "herb.gui_ban",
+   "name_zh": "龜板",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.gui_ban__bie_jia"
+   ],
+   "all_pairs": [
+    "pair.gui_ban__bie_jia"
+   ]
+  },
+  {
+   "id": "herb.hai_jin_sha",
+   "name_zh": "海金沙",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.jin_qian_cao__hai_jin_sha"
+   ],
+   "all_pairs": [
+    "pair.jin_qian_cao__hai_jin_sha"
+   ]
+  },
+  {
+   "id": "herb.han_fang_ji",
+   "name_zh": "漢防己",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.han_fang_ji__huang_qi"
+   ],
+   "all_pairs": [
+    "pair.han_fang_ji__huang_qi",
+    "pair.han_fang_ji__gui_zhi__fu_ling"
+   ]
+  },
+  {
+   "id": "herb.huai_hua",
+   "name_zh": "槐花",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.di_yu__huai_hua"
+   ],
+   "all_pairs": [
+    "pair.di_yu__huai_hua"
+   ]
+  },
+  {
+   "id": "herb.huo_ma_ren",
+   "name_zh": "火麻仁",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.dong_kui_zi__huo_ma_ren"
+   ],
+   "all_pairs": [
+    "pair.dong_kui_zi__huo_ma_ren",
+    "pair.feng_mi__bai_zi_ren__huo_ma_ren",
+    "pair.gua_lou_ren__huo_ma_ren__zhi_ke",
+    "pair.he_tao_ren__dang_gui__huo_ma_ren__rou_cong_rong"
+   ]
+  },
+  {
+   "id": "herb.jie_geng",
+   "name_zh": "桔梗",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.jie_geng__gan_cao"
+   ],
+   "all_pairs": [
+    "pair.jie_geng__gan_cao",
+    "pair.gua_lou_pi__zhe_bei_mu__jie_geng__xing_ren"
+   ]
+  },
+  {
+   "id": "herb.jin_qian_cao",
+   "name_zh": "金錢草",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.jin_qian_cao__hai_jin_sha"
+   ],
+   "all_pairs": [
+    "pair.dong_kui_zi__che_qian_zi__hua_shi__jin_qian_cao",
+    "pair.jin_qian_cao__hai_jin_sha"
+   ]
+  },
+  {
+   "id": "herb.jin_yin_hua",
+   "name_zh": "金銀花",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.jin_yin_hua__lian_qiao"
+   ],
+   "all_pairs": [
+    "pair.jin_yin_hua__lian_qiao",
+    "pair.bai_hua_she_she_cao__bai_jiang_cao__jin_yin_hua"
+   ]
+  },
+  {
+   "id": "herb.ku_shen",
+   "name_zh": "苦參",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.she_chuang_zi__ku_shen"
+   ],
+   "all_pairs": [
+    "pair.bai_xian_pi__huang_bai__ku_shen__fang_feng",
+    "pair.di_fu_zi__ku_shen__bai_xian_pi",
+    "pair.di_fu_zi__ku_shen__she_chuang_zi",
+    "pair.she_chuang_zi__ku_shen"
+   ]
+  },
+  {
+   "id": "herb.kuan_dong_hua",
+   "name_zh": "款冬花",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.zi_wan__kuan_dong_hua"
+   ],
+   "all_pairs": [
+    "pair.zi_wan__kuan_dong_hua"
+   ]
+  },
+  {
+   "id": "herb.lai_fu_zi",
+   "name_zh": "萊菔子",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.lai_fu_zi__bai_jie_zi"
+   ],
+   "all_pairs": [
+    "pair.bai_jie_zi__zi_su_zi__lai_fu_zi",
+    "pair.lai_fu_zi__bai_jie_zi"
+   ]
+  },
+  {
+   "id": "herb.lian_zi",
+   "name_zh": "蓮子",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.lian_zi__qian_shi"
+   ],
+   "all_pairs": [
+    "pair.lian_zi__qian_shi"
+   ]
+  },
+  {
+   "id": "herb.liu_huang",
+   "name_zh": "硫黃",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.liu_huang__ban_xia"
+   ],
+   "all_pairs": [
+    "pair.liu_huang__fu_zi__rou_gui",
+    "pair.liu_huang__ban_xia"
+   ]
+  },
+  {
+   "id": "herb.long_gu",
+   "name_zh": "龍骨",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.long_gu__mu_li"
+   ],
+   "all_pairs": [
+    "pair.long_gu__mu_li",
+    "pair.hai_piao_xiao__shan_yao__long_gu__mu_li"
+   ]
+  },
+  {
+   "id": "herb.mai_ya",
+   "name_zh": "麥芽",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.gu_ya__mai_ya"
+   ],
+   "all_pairs": [
+    "pair.san_zha__shen_qu__mai_ya",
+    "pair.gu_ya__mai_ya"
+   ]
+  },
+  {
+   "id": "herb.mang_xiao",
+   "name_zh": "芒硝",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.da_huang__mang_xiao"
+   ],
+   "all_pairs": [
+    "pair.da_huang__mang_xiao"
+   ]
+  },
+  {
+   "id": "herb.mo_han_lian",
+   "name_zh": "墨旱蓮",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.han_lian_cao__nu_zhen_zi"
+   ],
+   "all_pairs": [
+    "pair.han_lian_cao__nu_zhen_zi"
+   ]
+  },
+  {
+   "id": "herb.mo_yao",
+   "name_zh": "沒藥",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.ru_xiang__mo_yao"
+   ],
+   "all_pairs": [
+    "pair.gu_sui_bu__ru_xiang__mo_yao",
+    "pair.ru_xiang__mo_yao"
+   ]
+  },
+  {
+   "id": "herb.mu_dan_pi",
+   "name_zh": "牡丹皮",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.mu_dan_pi__dan_shen"
+   ],
+   "all_pairs": [
+    "pair.shui_niu_jiao__mu_dan_pi__chi_shao",
+    "pair.mu_dan_pi__dan_shen"
+   ]
+  },
+  {
+   "id": "herb.mu_xiang",
+   "name_zh": "木香",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.mu_xiang__bing_lang"
+   ],
+   "all_pairs": [
+    "pair.mu_xiang__bing_lang"
+   ]
+  },
+  {
+   "id": "herb.niu_bang_zi",
+   "name_zh": "牛蒡子",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.niu_bang_zi__lian_qiao"
+   ],
+   "all_pairs": [
+    "pair.niu_bang_zi__lian_qiao",
+    "pair.fu_ping__bo_he__niu_bang_zi__chan_tui__sheng_ma",
+    "pair.fu_ping__bai_ji_li__niu_bang_zi__bo_he"
+   ]
+  },
+  {
+   "id": "herb.niu_huang",
+   "name_zh": "牛黃",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.niu_huang__shui_niu_jiao"
+   ],
+   "all_pairs": [
+    "pair.niu_huang__shui_niu_jiao",
+    "pair.niu_huang__she_xiang__bing_pian"
+   ]
+  },
+  {
+   "id": "herb.nu_zhen_zi",
+   "name_zh": "女貞子",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.han_lian_cao__nu_zhen_zi"
+   ],
+   "all_pairs": [
+    "pair.han_lian_cao__nu_zhen_zi"
+   ]
+  },
+  {
+   "id": "herb.pang_da_hai",
+   "name_zh": "胖大海",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.chan_tui__pang_da_hai"
+   ],
+   "all_pairs": [
+    "pair.chan_tui__pang_da_hai"
+   ]
+  },
+  {
+   "id": "herb.pei_lan",
+   "name_zh": "佩蘭",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.huo_xiang__pei_lan"
+   ],
+   "all_pairs": [
+    "pair.huo_xiang__pei_lan"
+   ]
+  },
+  {
+   "id": "herb.qing_hao",
+   "name_zh": "青蒿",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.qing_hao__bie_jia"
+   ],
+   "all_pairs": [
+    "pair.qing_hao__bie_jia"
+   ]
+  },
+  {
+   "id": "herb.quan_xie",
+   "name_zh": "全蠍",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.wu_gong__quan_xie"
+   ],
+   "all_pairs": [
+    "pair.bai_fu_zi__bai_jiang_can__quan_xie",
+    "pair.wu_gong__quan_xie",
+    "pair.bai_hua_she__wu_gong__quan_xie"
+   ]
+  },
+  {
+   "id": "herb.sang_bai_pi",
+   "name_zh": "桑白皮",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.sang_bai_pi__di_gu_pi"
+   ],
+   "all_pairs": [
+    "pair.chi_xiao_dou__ma_huang__lian_qiao__sang_bai_pi",
+    "pair.sang_bai_pi__di_gu_pi"
+   ]
+  },
+  {
+   "id": "herb.sang_piao_xiao",
+   "name_zh": "桑螵蛸",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.jin_ying_zi__sang_piao_xiao"
+   ],
+   "all_pairs": [
+    "pair.fu_pen_zi__sang_piao_xiao__yi_zhi_ren",
+    "pair.jin_ying_zi__sang_piao_xiao"
+   ]
+  },
+  {
+   "id": "herb.shan_yao",
+   "name_zh": "山藥",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.huang_qi__shan_yao"
+   ],
+   "all_pairs": [
+    "pair.hai_piao_xiao__shan_yao__long_gu__mu_li",
+    "pair.huang_qi__shan_yao"
+   ]
+  },
+  {
+   "id": "herb.shan_zhu_yu",
+   "name_zh": "山茱萸",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.shu_di__shan_zhu_yu"
+   ],
+   "all_pairs": [
+    "pair.shu_di__shan_zhu_yu"
+   ]
+  },
+  {
+   "id": "herb.sheng_di_huang",
+   "name_zh": "生地黃",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.shui_niu_jiao__sheng_di_huang"
+   ],
+   "all_pairs": [
+    "pair.shui_niu_jiao__sheng_di_huang",
+    "pair.dong_gua_zi__xing_ren__ban_xia__sheng_di_huang__nan_sha_shen__chuan_bei_mu__ce_bai_ye__qian_cao"
+   ]
+  },
+  {
+   "id": "herb.shu_di_huang",
+   "name_zh": "熟地黃",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.shu_di__shan_zhu_yu"
+   ],
+   "all_pairs": [
+    "pair.shu_di__shan_zhu_yu",
+    "pair.ma_huang__shu_di_huang__bai_jie_zi__lu_jiao_jiao"
+   ]
+  },
+  {
+   "id": "herb.tian_hua_fen",
+   "name_zh": "天花粉",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.fu_ping__tian_hua_fen"
+   ],
+   "all_pairs": [
+    "pair.fu_ping__tian_hua_fen"
+   ]
+  },
+  {
+   "id": "herb.tian_ma",
+   "name_zh": "天麻",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.tian_ma__gou_teng"
+   ],
+   "all_pairs": [
+    "pair.tian_ma__gou_teng"
+   ]
+  },
+  {
+   "id": "herb.tian_men_dong",
+   "name_zh": "天門冬",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.tian_men_dong__mai_men_dong"
+   ],
+   "all_pairs": [
+    "pair.tian_men_dong__mai_men_dong"
+   ]
+  },
+  {
+   "id": "herb.tian_nan_xing",
+   "name_zh": "天南星",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.tian_nan_xing__ban_xia"
+   ],
+   "all_pairs": [
+    "pair.tian_nan_xing__ban_xia"
+   ]
+  },
+  {
+   "id": "herb.ting_li_zi",
+   "name_zh": "葶藶子",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.ting_li_zi__da_zao"
+   ],
+   "all_pairs": [
+    "pair.ting_li_zi__da_zao"
+   ]
+  },
+  {
+   "id": "herb.wu_gong",
+   "name_zh": "蜈蚣",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.wu_gong__quan_xie"
+   ],
+   "all_pairs": [
+    "pair.wu_gong__quan_xie",
+    "pair.bai_hua_she__wu_gong__quan_xie"
+   ]
+  },
+  {
+   "id": "herb.wu_yao",
+   "name_zh": "烏藥",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.xiang_fu__wu_yao"
+   ],
+   "all_pairs": [
+    "pair.bi_xie__yi_zhi_ren__wu_yao",
+    "pair.chen_xiang__wu_yao__rou_gui__xiao_hui_xiang",
+    "pair.xiang_fu__wu_yao"
+   ]
+  },
+  {
+   "id": "herb.wu_zhu_yu",
+   "name_zh": "吳茱萸",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.huang_lian__wu_zhu_yu"
+   ],
+   "all_pairs": [
+    "pair.huang_lian__wu_zhu_yu"
+   ]
+  },
+  {
+   "id": "herb.xie_bai",
+   "name_zh": "薤白",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.gua_lou__xie_bai"
+   ],
+   "all_pairs": [
+    "pair.gua_lou_pi__xie_bai__ban_xia",
+    "pair.gua_lou__xie_bai"
+   ]
+  },
+  {
+   "id": "herb.xin_yi",
+   "name_zh": "辛夷",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.cang_er_zi__xin_yi_hua"
+   ],
+   "all_pairs": [
+    "pair.cang_er_zi__xin_yi_hua"
+   ]
+  },
+  {
+   "id": "herb.xuan_fu_hua",
+   "name_zh": "旋覆花",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.xuan_fu_hua__dai_zhe_shi"
+   ],
+   "all_pairs": [
+    "pair.xuan_fu_hua__dai_zhe_shi"
+   ]
+  },
+  {
+   "id": "herb.yi_zhi_ren",
+   "name_zh": "益智仁",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.yi_zhi_ren__bi_xie"
+   ],
+   "all_pairs": [
+    "pair.bi_xie__yi_zhi_ren__wu_yao",
+    "pair.fu_pen_zi__sang_piao_xiao__yi_zhi_ren",
+    "pair.yi_zhi_ren__bi_xie"
+   ]
+  },
+  {
+   "id": "herb.yin_yang_huo",
+   "name_zh": "淫羊藿",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.xian_mao__yin_yang_huo"
+   ],
+   "all_pairs": [
+    "pair.xian_mao__yin_yang_huo",
+    "pair.dong_chong_xia_cao__du_zhong__yin_yang_huo__rou_cong_rong"
+   ]
+  },
+  {
+   "id": "herb.zhe_bei_mu",
+   "name_zh": "浙貝母",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.zhe_bei_mu__xia_ku_cao"
+   ],
+   "all_pairs": [
+    "pair.gua_lou_pi__zhe_bei_mu__jie_geng__xing_ren",
+    "pair.zhe_bei_mu__xia_ku_cao"
+   ]
+  },
+  {
+   "id": "herb.zhi_shi",
+   "name_zh": "枳實",
+   "ncbahm": false,
+   "two_herb_pairs": [
+    "pair.zhi_shi__hou_po"
+   ],
+   "all_pairs": [
+    "pair.zhi_shi__hou_po"
+   ]
+  }
+ ],
+ "bucket_B": [
+  {
+   "id": "herb.di_fu_zi",
+   "name_zh": "地膚子",
+   "ncbahm": true,
+   "pairs": [
+    "pair.di_fu_zi__ku_shen__bai_xian_pi",
+    "pair.di_fu_zi__che_qian_zi__hua_shi",
+    "pair.di_fu_zi__ku_shen__she_chuang_zi",
+    "pair.di_fu_zi__ju_hua__jue_ming_zi__qing_xiang_zi__gu_jing_cao"
+   ]
+  },
+  {
+   "id": "herb.dong_gua_zi",
+   "name_zh": "冬瓜子",
+   "ncbahm": true,
+   "pairs": [
+    "pair.dong_gua_zi__yu_xing_cao__lu_gen__yi_yi_ren",
+    "pair.dong_gua_zi__xing_ren__ban_xia__chuan_bei_mu__ce_bai_ye",
+    "pair.dong_gua_zi__xing_ren__ban_xia__sheng_di_huang__nan_sha_shen__chuan_bei_mu__ce_bai_ye__qian_cao"
+   ]
+  },
+  {
+   "id": "herb.fu_pen_zi",
+   "name_zh": "覆盆子",
+   "ncbahm": true,
+   "pairs": [
+    "pair.fu_pen_zi__sang_piao_xiao__yi_zhi_ren",
+    "pair.fu_pen_zi__tu_si_zi__gou_qi_zi__wu_wei_zi"
+   ]
+  },
+  {
+   "id": "herb.gou_ji",
+   "name_zh": "狗脊",
+   "ncbahm": true,
+   "pairs": [
+    "pair.gou_ji__du_zhong__niu_xi",
+    "pair.gou_ji__du_zhong__xu_duan",
+    "pair.gou_ji__gui_zhi__qin_jiao__mu_gua__wu_jia_pi"
+   ]
+  },
+  {
+   "id": "herb.gua_lou_pi",
+   "name_zh": "栝樓皮",
+   "ncbahm": true,
+   "pairs": [
+    "pair.gua_lou_pi__huang_lian__ban_xia",
+    "pair.gua_lou_pi__xie_bai__ban_xia",
+    "pair.gua_lou_pi__zhe_bei_mu__jie_geng__xing_ren"
+   ]
+  },
+  {
+   "id": "herb.hai_tong_pi",
+   "name_zh": "海桐皮",
+   "ncbahm": true,
+   "pairs": [
+    "pair.hai_tong_pi__niu_xi__qiang_huo",
+    "pair.hai_tong_pi__bi_xie__mu_tong"
+   ]
+  },
+  {
+   "id": "herb.he_tao_ren",
+   "name_zh": "核桃仁",
+   "ncbahm": true,
+   "pairs": [
+    "pair.he_tao_ren__du_zhong__bu_gu_zhi",
+    "pair.he_tao_ren__ren_shen__ge_jie",
+    "pair.he_tao_ren__dang_gui__huo_ma_ren__rou_cong_rong"
+   ]
+  },
+  {
+   "id": "herb.hu_jiao",
+   "name_zh": "胡椒",
+   "ncbahm": true,
+   "pairs": [
+    "pair.hu_jiao__gao_liang_jiang__bi_ba",
+    "pair.hu_jiao__sheng_jiang__ban_xia"
+   ]
+  },
+  {
+   "id": "herb.jing_mi",
+   "name_zh": "粳米",
+   "ncbahm": true,
+   "pairs": [
+    "pair.jing_mi__shi_gao__zhi_mu__gan_cao"
+   ]
+  },
+  {
+   "id": "herb.nan_sha_shen",
+   "name_zh": "南沙參",
+   "ncbahm": true,
+   "pairs": [
+    "pair.dong_gua_zi__xing_ren__ban_xia__sheng_di_huang__nan_sha_shen__chuan_bei_mu__ce_bai_ye__qian_cao"
+   ]
+  },
+  {
+   "id": "herb.qing_dai",
+   "name_zh": "青黛",
+   "ncbahm": true,
+   "pairs": [
+    "pair.qing_dai__ce_bai_ye__bai_mao_gen"
+   ]
+  },
+  {
+   "id": "herb.bai_dou_kou",
+   "name_zh": "白豆蔻",
+   "ncbahm": false,
+   "pairs": [
+    "pair.chen_xiang__ding_xiang__bai_dou_kou__zi_su_ye__sheng_jiang"
+   ]
+  },
+  {
+   "id": "herb.bai_fu_zi",
+   "name_zh": "白附子",
+   "ncbahm": false,
+   "pairs": [
+    "pair.bai_fu_zi__bai_jiang_can__quan_xie"
+   ]
+  },
+  {
+   "id": "herb.bai_guo",
+   "name_zh": "白果",
+   "ncbahm": false,
+   "pairs": [
+    "pair.bai_guo__ma_huang__zi_su_zi__xing_ren"
+   ]
+  },
+  {
+   "id": "herb.bai_hua_she",
+   "name_zh": "白花蛇",
+   "ncbahm": false,
+   "pairs": [
+    "pair.bai_hua_she__qiang_huo__fang_feng__qin_jiao",
+    "pair.bai_hua_she__wu_gong__quan_xie"
+   ]
+  },
+  {
+   "id": "herb.bai_hua_she_she_cao",
+   "name_zh": "白花蛇舌草",
+   "ncbahm": false,
+   "pairs": [
+    "pair.bai_hua_she_she_cao__bai_jiang_cao__jin_yin_hua",
+    "pair.bai_hua_she_she_cao__yin_chen_hao__huang_bai__zhi_zi"
+   ]
+  },
+  {
+   "id": "herb.bai_jiang_can",
+   "name_zh": "白僵蠶",
+   "ncbahm": false,
+   "pairs": [
+    "pair.bai_fu_zi__bai_jiang_can__quan_xie"
+   ]
+  },
+  {
+   "id": "herb.bai_jiang_cao",
+   "name_zh": "敗醬草",
+   "ncbahm": false,
+   "pairs": [
+    "pair.bai_hua_she_she_cao__bai_jiang_cao__jin_yin_hua"
+   ]
+  },
+  {
+   "id": "herb.bai_mao_gen",
+   "name_zh": "白茅根",
+   "ncbahm": false,
+   "pairs": [
+    "pair.qing_dai__ce_bai_ye__bai_mao_gen"
+   ]
+  },
+  {
+   "id": "herb.bai_xian_pi",
+   "name_zh": "白鮮皮",
+   "ncbahm": false,
+   "pairs": [
+    "pair.bai_xian_pi__huang_bai__ku_shen__fang_feng",
+    "pair.bai_xian_pi__da_huang__zhi_zi",
+    "pair.di_fu_zi__ku_shen__bai_xian_pi"
+   ]
+  },
+  {
+   "id": "herb.bai_zi_ren",
+   "name_zh": "柏子仁",
+   "ncbahm": false,
+   "pairs": [
+    "pair.feng_mi__bai_zi_ren__huo_ma_ren"
+   ]
+  },
+  {
+   "id": "herb.bing_pian",
+   "name_zh": "冰片",
+   "ncbahm": false,
+   "pairs": [
+    "pair.niu_huang__she_xiang__bing_pian"
+   ]
+  },
+  {
+   "id": "herb.bu_gu_zhi",
+   "name_zh": "補骨脂",
+   "ncbahm": false,
+   "pairs": [
+    "pair.he_tao_ren__du_zhong__bu_gu_zhi"
+   ]
+  },
+  {
+   "id": "herb.ce_bai_ye",
+   "name_zh": "側柏葉",
+   "ncbahm": false,
+   "pairs": [
+    "pair.dong_gua_zi__xing_ren__ban_xia__chuan_bei_mu__ce_bai_ye",
+    "pair.dong_gua_zi__xing_ren__ban_xia__sheng_di_huang__nan_sha_shen__chuan_bei_mu__ce_bai_ye__qian_cao",
+    "pair.huai_mi__ce_bai_ye__jing_jie__zhi_ke",
+    "pair.qing_dai__ce_bai_ye__bai_mao_gen"
+   ]
+  },
+  {
+   "id": "herb.chen_xiang",
+   "name_zh": "沉香",
+   "ncbahm": false,
+   "pairs": [
+    "pair.chen_xiang__wu_yao__rou_gui__xiao_hui_xiang",
+    "pair.chen_xiang__ding_xiang__bai_dou_kou__zi_su_ye__sheng_jiang"
+   ]
+  },
+  {
+   "id": "herb.chuan_bei_mu",
+   "name_zh": "川貝母",
+   "ncbahm": false,
+   "pairs": [
+    "pair.dong_chong_xia_cao__chuan_bei_mu__e_jiao__mai_men_dong",
+    "pair.dong_gua_zi__xing_ren__ban_xia__chuan_bei_mu__ce_bai_ye",
+    "pair.dong_gua_zi__xing_ren__ban_xia__sheng_di_huang__nan_sha_shen__chuan_bei_mu__ce_bai_ye__qian_cao",
+    "pair.ge_jie__ren_shen__xing_ren__chuan_bei_mu"
+   ]
+  },
+  {
+   "id": "herb.chuan_mu_tong",
+   "name_zh": "川木通",
+   "ncbahm": false,
+   "pairs": [
+    "pair.chuan_mu_tong__che_qian_zi__zhi_zi__hua_shi"
+   ]
+  },
+  {
+   "id": "herb.chun_pi",
+   "name_zh": "椿皮",
+   "ncbahm": false,
+   "pairs": [
+    "pair.chun_pi__huang_bai__zhi_zi__che_qian_zi"
+   ]
+  },
+  {
+   "id": "herb.ci_wu_jia",
+   "name_zh": "刺五加",
+   "ncbahm": false,
+   "pairs": [
+    "pair.ci_wu_jia__du_zhong__sang_ji_sheng"
+   ]
+  },
+  {
+   "id": "herb.ding_xiang",
+   "name_zh": "丁香",
+   "ncbahm": false,
+   "pairs": [
+    "pair.chen_xiang__ding_xiang__bai_dou_kou__zi_su_ye__sheng_jiang"
+   ]
+  },
+  {
+   "id": "herb.fu_xiao_mai",
+   "name_zh": "浮小麥",
+   "ncbahm": false,
+   "pairs": [
+    "pair.ma_huang_gen__fu_xiao_mai__huang_qi"
+   ]
+  },
+  {
+   "id": "herb.lu_gen",
+   "name_zh": "蘆根",
+   "ncbahm": false,
+   "pairs": [
+    "pair.dong_gua_zi__yu_xing_cao__lu_gen__yi_yi_ren"
+   ]
+  },
+  {
+   "id": "herb.lu_jiao_jiao",
+   "name_zh": "鹿角膠",
+   "ncbahm": false,
+   "pairs": [
+    "pair.ma_huang__shu_di_huang__bai_jie_zi__lu_jiao_jiao"
+   ]
+  },
+  {
+   "id": "herb.ma_huang_gen",
+   "name_zh": "麻黃根",
+   "ncbahm": false,
+   "pairs": [
+    "pair.ma_huang_gen__huang_qi__mu_li",
+    "pair.ma_huang_gen__fu_xiao_mai__huang_qi"
+   ]
+  },
+  {
+   "id": "herb.mu_gua",
+   "name_zh": "木瓜",
+   "ncbahm": false,
+   "pairs": [
+    "pair.gou_ji__gui_zhi__qin_jiao__mu_gua__wu_jia_pi"
+   ]
+  },
+  {
+   "id": "herb.qian_cao",
+   "name_zh": "茜草",
+   "ncbahm": false,
+   "pairs": [
+    "pair.dong_gua_zi__xing_ren__ban_xia__sheng_di_huang__nan_sha_shen__chuan_bei_mu__ce_bai_ye__qian_cao"
+   ]
+  },
+  {
+   "id": "herb.qin_jiao",
+   "name_zh": "秦艽",
+   "ncbahm": false,
+   "pairs": [
+    "pair.bai_hua_she__qiang_huo__fang_feng__qin_jiao",
+    "pair.gou_ji__gui_zhi__qin_jiao__mu_gua__wu_jia_pi"
+   ]
+  },
+  {
+   "id": "herb.sang_ji_sheng",
+   "name_zh": "桑寄生",
+   "ncbahm": false,
+   "pairs": [
+    "pair.ci_wu_jia__du_zhong__sang_ji_sheng"
+   ]
+  },
+  {
+   "id": "herb.shan_zha",
+   "name_zh": "山楂",
+   "ncbahm": false,
+   "pairs": [
+    "pair.san_zha__shen_qu__mai_ya",
+    "pair.gu_ya__shan_zha__shen_qu"
+   ]
+  },
+  {
+   "id": "herb.she_xiang",
+   "name_zh": "麝香",
+   "ncbahm": false,
+   "pairs": [
+    "pair.niu_huang__she_xiang__bing_pian"
+   ]
+  },
+  {
+   "id": "herb.shen_qu",
+   "name_zh": "神麴",
+   "ncbahm": false,
+   "pairs": [
+    "pair.san_zha__shen_qu__mai_ya",
+    "pair.gu_ya__shan_zha__shen_qu"
+   ]
+  },
+  {
+   "id": "herb.tu_si_zi",
+   "name_zh": "菟絲子",
+   "ncbahm": false,
+   "pairs": [
+    "pair.fu_pen_zi__tu_si_zi__gou_qi_zi__wu_wei_zi"
+   ]
+  },
+  {
+   "id": "herb.wu_jia_pi",
+   "name_zh": "五加皮",
+   "ncbahm": false,
+   "pairs": [
+    "pair.gou_ji__gui_zhi__qin_jiao__mu_gua__wu_jia_pi"
+   ]
+  },
+  {
+   "id": "herb.xiao_hui_xiang",
+   "name_zh": "小茴香",
+   "ncbahm": false,
+   "pairs": [
+    "pair.chen_xiang__wu_yao__rou_gui__xiao_hui_xiang"
+   ]
+  },
+  {
+   "id": "herb.yin_chen_hao",
+   "name_zh": "茵陳蒿",
+   "ncbahm": false,
+   "pairs": [
+    "pair.bai_hua_she_she_cao__yin_chen_hao__huang_bai__zhi_zi"
+   ]
+  },
+  {
+   "id": "herb.yu_xing_cao",
+   "name_zh": "魚腥草",
+   "ncbahm": false,
+   "pairs": [
+    "pair.dong_gua_zi__yu_xing_cao__lu_gen__yi_yi_ren"
+   ]
+  },
+  {
+   "id": "herb.zhi_ke",
+   "name_zh": "枳殼",
+   "ncbahm": false,
+   "pairs": [
+    "pair.gua_lou_ren__huo_ma_ren__zhi_ke",
+    "pair.huai_mi__ce_bai_ye__jing_jie__zhi_ke"
+   ]
+  },
+  {
+   "id": "herb.zi_su_zi",
+   "name_zh": "紫蘇子",
+   "ncbahm": false,
+   "pairs": [
+    "pair.bai_jie_zi__zi_su_zi__lai_fu_zi",
+    "pair.bai_guo__ma_huang__zi_su_zi__xing_ren"
+   ]
+  }
+ ],
+ "bucket_C": [
+  {
+   "id": "herb.lian_xu",
+   "name_zh": "蓮鬚",
+   "ncbahm": true,
+   "category": "收澀藥 / Stabilize and Bind"
+  },
+  {
+   "id": "herb.lian_zi_xin",
+   "name_zh": "蓮子心",
+   "ncbahm": true,
+   "category": "清熱藥 / Clear Heat - Drain Fire"
+  },
+  {
+   "id": "herb.lu_lu_tong",
+   "name_zh": "路路通",
+   "ncbahm": true,
+   "category": "活血化瘀藥 / Invigorate Blood"
+  },
+  {
+   "id": "herb.ou_jie",
+   "name_zh": "藕節",
+   "ncbahm": true,
+   "category": "止血藥 / Stop Bleeding"
+  },
+  {
+   "id": "herb.qin_pi",
+   "name_zh": "秦皮",
+   "ncbahm": true,
+   "category": "清熱藥 / Clear Heat - Dry Damp"
+  },
+  {
+   "id": "herb.sang_zhi",
+   "name_zh": "桑枝",
+   "ncbahm": true,
+   "category": "祛風濕藥 / Dispel Wind-Damp"
+  },
+  {
+   "id": "herb.shi_wei",
+   "name_zh": "石韋",
+   "ncbahm": true,
+   "category": "利水滲濕藥 / Drain Dampness"
+  },
+  {
+   "id": "herb.si_gua_luo",
+   "name_zh": "絲瓜絡",
+   "ncbahm": true,
+   "category": "活血化瘀藥 / Invigorate Blood"
+  },
+  {
+   "id": "herb.suo_yang",
+   "name_zh": "鎖陽",
+   "ncbahm": true,
+   "category": "補虛藥 / Tonify Yang"
+  },
+  {
+   "id": "herb.tan_xiang",
+   "name_zh": "檀香",
+   "ncbahm": true,
+   "category": "理氣藥 / Regulate Qi"
+  },
+  {
+   "id": "herb.tu_bie_chong",
+   "name_zh": "土鱉蟲",
+   "ncbahm": true,
+   "category": "活血化瘀藥 / Invigorate Blood"
+  },
+  {
+   "id": "herb.tu_fu_ling",
+   "name_zh": "土茯苓",
+   "ncbahm": true,
+   "category": "清熱藥 / Clear Heat - Resolve Toxicity"
+  },
+  {
+   "id": "herb.xi_xian_cao",
+   "name_zh": "豨薟草",
+   "ncbahm": true,
+   "category": "祛風濕藥 / Dispel Wind-Damp"
+  },
+  {
+   "id": "herb.ye_ju_hua",
+   "name_zh": "野菊花",
+   "ncbahm": true,
+   "category": "清熱藥 / Clear Heat - Resolve Toxicity"
+  },
+  {
+   "id": "herb.zao_jiao_ci",
+   "name_zh": "皂角刺",
+   "ncbahm": true,
+   "category": "化痰止咳平喘藥 / Transform Phlegm - Warm"
+  },
+  {
+   "id": "herb.zhen_zhu",
+   "name_zh": "珍珠",
+   "ncbahm": true,
+   "category": "安神藥 / Calm Spirit"
+  },
+  {
+   "id": "herb.an_xi_xiang",
+   "name_zh": "安息香",
+   "ncbahm": false,
+   "category": "開竅藥 / Open Orifices"
+  },
+  {
+   "id": "herb.bai_bian_dou",
+   "name_zh": "白扁豆",
+   "ncbahm": false,
+   "category": "補虛藥 / Tonify Qi"
+  },
+  {
+   "id": "herb.bai_jiu",
+   "name_zh": "白酒",
+   "ncbahm": false,
+   "category": "溫裡藥 / Warm Interior"
+  },
+  {
+   "id": "herb.bai_tou_weng",
+   "name_zh": "白頭翁",
+   "ncbahm": false,
+   "category": "清熱藥 / Clear Heat - Resolve Toxicity"
+  },
+  {
+   "id": "herb.bai_wei",
+   "name_zh": "白薇",
+   "ncbahm": false,
+   "category": "清熱藥 / Clear Deficiency Heat"
+  },
+  {
+   "id": "herb.ban_lan_gen",
+   "name_zh": "板藍根",
+   "ncbahm": false,
+   "category": "清熱藥 / Clear Heat - Resolve Toxicity"
+  },
+  {
+   "id": "herb.ban_zhi_lian",
+   "name_zh": "半枝蓮",
+   "ncbahm": false,
+   "category": "清熱藥 / Clear Heat - Resolve Toxicity"
+  },
+  {
+   "id": "herb.bi_yu_san",
+   "name_zh": "碧玉散",
+   "ncbahm": false,
+   "category": "清熱藥 / Clear Heat - Drain Fire"
+  },
+  {
+   "id": "herb.cao_dou_kou",
+   "name_zh": "草豆蔻",
+   "ncbahm": false,
+   "category": "化濕藥 / Transform Dampness"
+  },
+  {
+   "id": "herb.cao_guo",
+   "name_zh": "草果",
+   "ncbahm": false,
+   "category": "化濕藥 / Transform Dampness"
+  },
+  {
+   "id": "herb.cha_ye",
+   "name_zh": "茶葉",
+   "ncbahm": false,
+   "category": "清熱藥 / Clear Heat - Drain Fire"
+  },
+  {
+   "id": "herb.chuan_shan_jia",
+   "name_zh": "穿山甲",
+   "ncbahm": false,
+   "category": "活血化瘀藥 / Invigorate Blood"
+  },
+  {
+   "id": "herb.chuan_xin_lian",
+   "name_zh": "穿心蓮",
+   "ncbahm": false,
+   "category": "清熱藥 / Clear Heat - Resolve Toxicity"
+  },
+  {
+   "id": "herb.chui_pen_cao",
+   "name_zh": "垂盆草",
+   "ncbahm": false,
+   "category": "清熱藥 / Clear Heat - Resolve Toxicity"
+  },
+  {
+   "id": "herb.ci_shi",
+   "name_zh": "磁石",
+   "ncbahm": false,
+   "category": "安神藥 / Calm Spirit"
+  },
+  {
+   "id": "herb.cong_bai",
+   "name_zh": "蔥白",
+   "ncbahm": false,
+   "category": "解表藥 / Release Exterior - Warm Acrid"
+  },
+  {
+   "id": "herb.da_fu_pi",
+   "name_zh": "大腹皮",
+   "ncbahm": false,
+   "category": "利水滲濕藥 / Drain Dampness"
+  },
+  {
+   "id": "herb.da_ji",
+   "name_zh": "大薊",
+   "ncbahm": false,
+   "category": "止血藥 / Stop Bleeding"
+  },
+  {
+   "id": "herb.da_qing_ye",
+   "name_zh": "大青葉",
+   "ncbahm": false,
+   "category": "清熱藥 / Clear Heat - Resolve Toxicity"
+  },
+  {
+   "id": "herb.dan_zhu_ye",
+   "name_zh": "淡竹葉",
+   "ncbahm": false,
+   "category": "清熱藥 / Clear Heat - Drain Fire"
+  },
+  {
+   "id": "herb.dang_shen",
+   "name_zh": "黨參",
+   "ncbahm": false,
+   "category": "補虛藥 / Tonify Qi"
+  },
+  {
+   "id": "herb.di_long",
+   "name_zh": "地龍",
+   "ncbahm": false,
+   "category": "平肝息風藥 / Extinguish Wind"
+  },
+  {
+   "id": "herb.fan_xie_ye",
+   "name_zh": "番瀉葉",
+   "ncbahm": false,
+   "category": "瀉下藥 / Drain Downward"
+  },
+  {
+   "id": "herb.fo_shou",
+   "name_zh": "佛手",
+   "ncbahm": false,
+   "category": "理氣藥 / Regulate Qi"
+  },
+  {
+   "id": "herb.gan_sui",
+   "name_zh": "甘遂",
+   "ncbahm": false,
+   "category": "瀉下藥 / Harsh Expellants"
+  },
+  {
+   "id": "herb.gao_ben",
+   "name_zh": "藁本",
+   "ncbahm": false,
+   "category": "解表藥 / Release Exterior - Warm Acrid"
+  },
+  {
+   "id": "herb.gui_ban_jiao",
+   "name_zh": "龜板膠",
+   "ncbahm": false,
+   "category": "補虛藥 / Tonify Yin"
+  },
+  {
+   "id": "herb.han_lian_cao",
+   "name_zh": "旱蓮草",
+   "ncbahm": false,
+   "category": "補虛藥 / Tonify Yin"
+  },
+  {
+   "id": "herb.han_shui_shi",
+   "name_zh": "寒水石",
+   "ncbahm": false,
+   "category": "清熱藥 / Clear Heat - Drain Fire"
+  },
+  {
+   "id": "herb.he_huan_pi",
+   "name_zh": "合歡皮",
+   "ncbahm": false,
+   "category": "安神藥 / Calm Spirit"
+  },
+  {
+   "id": "herb.he_shou_wu",
+   "name_zh": "何首烏",
+   "ncbahm": false,
+   "category": "補虛藥 / Tonify Blood"
+  },
+  {
+   "id": "herb.he_ye",
+   "name_zh": "荷葉",
+   "ncbahm": false,
+   "category": "清熱藥 / Clear Heat - Drain Fire"
+  },
+  {
+   "id": "herb.hei_zhi_ma",
+   "name_zh": "黑芝麻",
+   "ncbahm": false,
+   "category": "補虛藥 / Tonify Yin"
+  },
+  {
+   "id": "herb.hu_huang_lian",
+   "name_zh": "胡黃連",
+   "ncbahm": false,
+   "category": "清熱藥 / Clear Deficiency Heat"
+  },
+  {
+   "id": "herb.hua_jiao",
+   "name_zh": "花椒",
+   "ncbahm": false,
+   "category": "溫裡藥 / Warm Interior"
+  },
+  {
+   "id": "herb.hua_ju_hong",
+   "name_zh": "化橘紅",
+   "ncbahm": false,
+   "category": "理氣藥 / Regulate Qi"
+  },
+  {
+   "id": "herb.huang_jing",
+   "name_zh": "黃精",
+   "ncbahm": false,
+   "category": "補虛藥 / Tonify Qi"
+  },
+  {
+   "id": "herb.huang_jiu",
+   "name_zh": "黃酒",
+   "ncbahm": false,
+   "category": "溫裡藥 / Warm Interior"
+  },
+  {
+   "id": "herb.ji_nei_jin",
+   "name_zh": "雞內金",
+   "ncbahm": false,
+   "category": "消食藥 / Relieve Food Stagnation"
+  },
+  {
+   "id": "herb.ji_zi_huang",
+   "name_zh": "雞子黃",
+   "ncbahm": false,
+   "category": "補虛藥 / Tonify Yin"
+  },
+  {
+   "id": "herb.jin_bo",
+   "name_zh": "金箔",
+   "ncbahm": false,
+   "category": "安神藥 / Calm Spirit"
+  },
+  {
+   "id": "herb.jiu",
+   "name_zh": "酒",
+   "ncbahm": false,
+   "category": "活血化瘀藥 / Invigorate Blood"
+  },
+  {
+   "id": "herb.ju_hong",
+   "name_zh": "橘紅",
+   "ncbahm": false,
+   "category": "理氣藥 / Regulate Qi"
+  },
+  {
+   "id": "herb.ku_lian_pi",
+   "name_zh": "苦楝皮",
+   "ncbahm": false,
+   "category": "驅蟲藥 / Expel Parasites"
+  },
+  {
+   "id": "herb.li_pi",
+   "name_zh": "梨皮",
+   "ncbahm": false,
+   "category": "化痰止咳平喘藥 / Stop Cough and Wheeze"
+  },
+  {
+   "id": "herb.ling_yang_jiao",
+   "name_zh": "羚羊角",
+   "ncbahm": false,
+   "category": "平肝息風藥 / Extinguish Wind"
+  },
+  {
+   "id": "herb.long_chi",
+   "name_zh": "龍齒",
+   "ncbahm": false,
+   "category": "安神藥 / Calm Spirit"
+  },
+  {
+   "id": "herb.long_dan_cao",
+   "name_zh": "龍膽草",
+   "ncbahm": false,
+   "category": "清熱藥 / Clear Heat - Dry Damp"
+  },
+  {
+   "id": "herb.long_yan_rou",
+   "name_zh": "龍眼肉",
+   "ncbahm": false,
+   "category": "補虛藥 / Tonify Blood"
+  },
+  {
+   "id": "herb.lu_cha",
+   "name_zh": "綠茶",
+   "ncbahm": false,
+   "category": "清熱藥 / Clear Heat - Drain Fire"
+  },
+  {
+   "id": "herb.lu_hui",
+   "name_zh": "蘆薈",
+   "ncbahm": false,
+   "category": "瀉下藥 / Drain Downward"
+  },
+  {
+   "id": "herb.lu_rong",
+   "name_zh": "鹿茸",
+   "ncbahm": false,
+   "category": "補虛藥 / Tonify Yang"
+  },
+  {
+   "id": "herb.ma_bo",
+   "name_zh": "馬勃",
+   "ncbahm": false,
+   "category": "清熱藥 / Clear Heat - Resolve Toxicity"
+  },
+  {
+   "id": "herb.ma_chi_xian",
+   "name_zh": "馬齒莧",
+   "ncbahm": false,
+   "category": "清熱藥 / Clear Heat - Resolve Toxicity"
+  },
+  {
+   "id": "herb.mei_gui_hua",
+   "name_zh": "玫瑰花",
+   "ncbahm": false,
+   "category": "理氣藥 / Regulate Qi"
+  },
+  {
+   "id": "herb.nan_gua_zi",
+   "name_zh": "南瓜子",
+   "ncbahm": false,
+   "category": "驅蟲藥 / Expel Parasites"
+  },
+  {
+   "id": "herb.nuo_dao_gen",
+   "name_zh": "糯稻根",
+   "ncbahm": false,
+   "category": "收澀藥 / Stabilize and Bind"
+  },
+  {
+   "id": "herb.pao_jiang",
+   "name_zh": "炮薑",
+   "ncbahm": false,
+   "category": "止血藥 / Stop Bleeding"
+  },
+  {
+   "id": "herb.pi_pa_ye",
+   "name_zh": "枇杷葉",
+   "ncbahm": false,
+   "category": "化痰止咳平喘藥 / Stop Cough and Wheeze"
+  },
+  {
+   "id": "herb.pu_huang",
+   "name_zh": "蒲黃",
+   "ncbahm": false,
+   "category": "止血藥 / Stop Bleeding"
+  },
+  {
+   "id": "herb.qian_cao_gen",
+   "name_zh": "茜草根",
+   "ncbahm": false,
+   "category": "止血藥 / Stop Bleeding"
+  },
+  {
+   "id": "herb.qian_hu",
+   "name_zh": "前胡",
+   "ncbahm": false,
+   "category": "化痰止咳平喘藥 / Transform Phlegm - Cool"
+  },
+  {
+   "id": "herb.qing_mu_xiang",
+   "name_zh": "青木香",
+   "ncbahm": false,
+   "category": "理氣藥 / Regulate Qi"
+  },
+  {
+   "id": "herb.qing_pi",
+   "name_zh": "青皮",
+   "ncbahm": false,
+   "category": "理氣藥 / Regulate Qi"
+  },
+  {
+   "id": "herb.san_qi",
+   "name_zh": "三七",
+   "ncbahm": false,
+   "category": "止血藥 / Stop Bleeding"
+  },
+  {
+   "id": "herb.sang_shen",
+   "name_zh": "桑椹",
+   "ncbahm": false,
+   "category": "補虛藥 / Tonify Yin"
+  },
+  {
+   "id": "herb.sha_ren",
+   "name_zh": "砂仁",
+   "ncbahm": false,
+   "category": "化濕藥 / Transform Dampness"
+  },
+  {
+   "id": "herb.sha_shen",
+   "name_zh": "沙參",
+   "ncbahm": false,
+   "category": "補虛藥 / Tonify Yin"
+  },
+  {
+   "id": "herb.sha_yuan_zi",
+   "name_zh": "沙苑子",
+   "ncbahm": false,
+   "category": "補虛藥 / Tonify Yang"
+  },
+  {
+   "id": "herb.shan_dou_gen",
+   "name_zh": "山豆根",
+   "ncbahm": false,
+   "category": "清熱藥 / Clear Heat - Resolve Toxicity"
+  },
+  {
+   "id": "herb.shan_yang_jiao",
+   "name_zh": "山羊角",
+   "ncbahm": false,
+   "category": "平肝息風藥 / Extinguish Wind"
+  },
+  {
+   "id": "herb.she_gan",
+   "name_zh": "射干",
+   "ncbahm": false,
+   "category": "清熱藥 / Clear Heat - Resolve Toxicity"
+  },
+  {
+   "id": "herb.shi_chang_pu",
+   "name_zh": "石菖蒲",
+   "ncbahm": false,
+   "category": "開竅藥 / Open Orifices"
+  },
+  {
+   "id": "herb.shi_hu",
+   "name_zh": "石斛",
+   "ncbahm": false,
+   "category": "補虛藥 / Tonify Yin"
+  },
+  {
+   "id": "herb.shi_jue_ming",
+   "name_zh": "石決明",
+   "ncbahm": false,
+   "category": "平肝息風藥 / Extinguish Wind"
+  },
+  {
+   "id": "herb.shi_jun_zi",
+   "name_zh": "使君子",
+   "ncbahm": false,
+   "category": "驅蟲藥 / Expel Parasites"
+  },
+  {
+   "id": "herb.shi_liu_pi",
+   "name_zh": "石榴皮",
+   "ncbahm": false,
+   "category": "收澀藥 / Stabilize and Bind"
+  },
+  {
+   "id": "herb.su_he_xiang",
+   "name_zh": "蘇合香",
+   "ncbahm": false,
+   "category": "開竅藥 / Open Orifices"
+  },
+  {
+   "id": "herb.su_zi",
+   "name_zh": "蘇子",
+   "ncbahm": false,
+   "category": "化痰止咳平喘藥 / Stop Cough and Wheeze"
+  },
+  {
+   "id": "herb.tai_zi_shen",
+   "name_zh": "太子參",
+   "ncbahm": false,
+   "category": "補虛藥 / Tonify Qi"
+  },
+  {
+   "id": "herb.tian_kui_zi",
+   "name_zh": "天葵子",
+   "ncbahm": false,
+   "category": "清熱藥 / Clear Heat - Resolve Toxicity"
+  },
+  {
+   "id": "herb.wei_ling_xian",
+   "name_zh": "威靈仙",
+   "ncbahm": false,
+   "category": "祛風濕藥 / Dispel Wind-Damp"
+  },
+  {
+   "id": "herb.wu_bei_zi",
+   "name_zh": "五倍子",
+   "ncbahm": false,
+   "category": "收澀藥 / Stabilize and Bind"
+  },
+  {
+   "id": "herb.wu_zei_gu",
+   "name_zh": "烏賊骨",
+   "ncbahm": false,
+   "category": "收澀藥 / Stabilize and Bind"
+  },
+  {
+   "id": "herb.xi_jiao",
+   "name_zh": "犀角",
+   "ncbahm": false,
+   "category": "清熱藥 / Clear Heat - Cool Blood"
+  },
+  {
+   "id": "herb.xi_yang_shen",
+   "name_zh": "西洋參",
+   "ncbahm": false,
+   "category": "補虛藥 / Tonify Qi"
+  },
+  {
+   "id": "herb.xian_he_cao",
+   "name_zh": "仙鶴草",
+   "ncbahm": false,
+   "category": "止血藥 / Stop Bleeding"
+  },
+  {
+   "id": "herb.xiao_ji",
+   "name_zh": "小薊",
+   "ncbahm": false,
+   "category": "止血藥 / Stop Bleeding"
+  },
+  {
+   "id": "herb.xiao_mai",
+   "name_zh": "小麥",
+   "ncbahm": false,
+   "category": "安神藥 / Calm Spirit"
+  },
+  {
+   "id": "herb.xiao_shi",
+   "name_zh": "硝石",
+   "ncbahm": false,
+   "category": "瀉下藥 / Harsh Expellants"
+  },
+  {
+   "id": "herb.xiong_huang",
+   "name_zh": "雄黃",
+   "ncbahm": false,
+   "category": "驅蟲藥 / Expel Parasites"
+  },
+  {
+   "id": "herb.xue_yu_tan",
+   "name_zh": "血餘炭",
+   "ncbahm": false,
+   "category": "止血藥 / Stop Bleeding"
+  },
+  {
+   "id": "herb.ye_jiao_teng",
+   "name_zh": "夜交藤",
+   "ncbahm": false,
+   "category": "安神藥 / Calm Spirit"
+  },
+  {
+   "id": "herb.yi_tang",
+   "name_zh": "飴糖",
+   "ncbahm": false,
+   "category": "補虛藥 / Tonify Qi"
+  },
+  {
+   "id": "herb.yin_bo",
+   "name_zh": "銀箔",
+   "ncbahm": false,
+   "category": "安神藥 / Calm Spirit"
+  },
+  {
+   "id": "herb.yin_chai_hu",
+   "name_zh": "銀柴胡",
+   "ncbahm": false,
+   "category": "清熱藥 / Clear Deficiency Heat"
+  },
+  {
+   "id": "herb.yin_xing",
+   "name_zh": "銀杏",
+   "ncbahm": false,
+   "category": "化痰止咳平喘藥 / Transform Phlegm"
+  },
+  {
+   "id": "herb.ying_su_ke",
+   "name_zh": "罌粟殼",
+   "ncbahm": false,
+   "category": "收澀藥 / Stabilize and Bind"
+  },
+  {
+   "id": "herb.yu_li_ren",
+   "name_zh": "郁李仁",
+   "ncbahm": false,
+   "category": "瀉下藥 / Moisten Intestines"
+  },
+  {
+   "id": "herb.yu_zhu",
+   "name_zh": "玉竹",
+   "ncbahm": false,
+   "category": "補虛藥 / Tonify Yin"
+  },
+  {
+   "id": "herb.yuan_zhi",
+   "name_zh": "遠志",
+   "ncbahm": false,
+   "category": "安神藥 / Calm Spirit"
+  },
+  {
+   "id": "herb.zao_xin_tu",
+   "name_zh": "灶心土",
+   "ncbahm": false,
+   "category": "止血藥 / Stop Bleeding"
+  },
+  {
+   "id": "herb.zhen_zhu_mu",
+   "name_zh": "珍珠母",
+   "ncbahm": false,
+   "category": "平肝息風藥 / Extinguish Wind"
+  },
+  {
+   "id": "herb.zhi_gan_cao",
+   "name_zh": "炙甘草",
+   "ncbahm": false,
+   "category": "補虛藥 / Tonify Qi"
+  },
+  {
+   "id": "herb.zhu_ji_sui",
+   "name_zh": "豬脊髓",
+   "ncbahm": false,
+   "category": "補虛藥 / Tonify Yin"
+  },
+  {
+   "id": "herb.zhu_sha",
+   "name_zh": "硃砂",
+   "ncbahm": false,
+   "category": "安神藥 / Calm Spirit"
+  },
+  {
+   "id": "herb.zhu_ye",
+   "name_zh": "竹葉",
+   "ncbahm": false,
+   "category": "清熱藥 / Clear Heat - Drain Fire"
+  },
+  {
+   "id": "herb.zi_cao",
+   "name_zh": "紫草",
+   "ncbahm": false,
+   "category": "清熱藥 / Clear Heat - Cool Blood"
+  },
+  {
+   "id": "herb.zi_hua_di_ding",
+   "name_zh": "紫花地丁",
+   "ncbahm": false,
+   "category": "清熱藥 / Clear Heat - Resolve Toxicity"
+  },
+  {
+   "id": "herb.zong_lu_pi",
+   "name_zh": "棕櫚皮",
+   "ncbahm": false,
+   "category": "止血藥 / Stop Bleeding"
+  },
+  {
+   "id": "herb.zong_lu_tan",
+   "name_zh": "棕櫚炭",
+   "ncbahm": false,
+   "category": "止血藥 / Stop Bleeding"
+  }
+ ]
+}

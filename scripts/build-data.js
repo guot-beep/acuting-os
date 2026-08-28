@@ -297,6 +297,61 @@ for (const r of regRecords) {
   }
   (knowledge.tdisRegistry.records || []).forEach(mergeUnwired);
 }
+
+// 藥對雙軌合流 — IN THE BUNDLE ONLY（D13：推導，絕不寫回來源檔）。2026-08-27
+//
+// 單味藥卡上「經典對藥」有兩個來源，各自半滿、往相反方向漂：
+//   authored  record.key_pairs —— 手寫自由文字（52 味 / 94 條）。其中 45 條標明是
+//             2026 NCBAHM Appendix B 或 Bastyr 的官方對藥，而藥對層完全沒有對應
+//             記錄 —— 考綱要考的對藥只活在這裡。
+//   structured data/herbs/herb_pairs.json 的 218 筆（帶七情 relation、主治、注意、
+//             教學提示），是藥對頁與方劑卡共用的那一份。
+// 渲染端過去寫 `keyPairs || herbPairsSection(record)`：手寫欄一存在就把結構化那段
+// 整個蓋掉。結果是 36 味卡看不到自己的 109 條藥對記錄（黃耆 11、當歸 7、杜仲 7）——
+// 填得越好的卡丟得越多，而且畫面上看不出少了東西。改成併集顯示。
+//
+// 這裡只算「哪些 pair 已被手寫標籤講過」，讓 view 只做 filter，不在渲染時做模糊比對。
+// 判定用嚴格集合相等：標籤裡認得出的藥味集合 === 該 pair 的成員集合。
+// 子集不算重複 —— 「川芎 + 白芷 + 細辛」是考綱三味組合，與獨立的二味藥對
+// 「川芎配細辛」是兩件事，後者有自己的七情與主治；用子集比對會再把它藏起來
+// （實測會多藏 9 條）。寧可偶爾並列兩張相近的卡，也不要無聲吞掉結構化內容。
+{
+  const herbRecords = knowledge.herbs.records || [];
+  const pairRecords = (knowledge.herbPairs && knowledge.herbPairs.pairs) || [];
+  const nameById = new Map();
+  for (const h of herbRecords) if (h.name_zh) nameById.set(h.id, h.name_zh);
+  // 長名優先切走，否則短名會在長名裡假命中（白朮 → 朮）。
+  const allNames = [...new Set(nameById.values())].sort((a, b) => b.length - a.length);
+  const namesIn = (label) => {
+    const found = new Set();
+    let rest = String(label || "");
+    for (const n of allNames) {
+      if (rest.includes(n)) { found.add(n); rest = rest.split(n).join(" "); }
+    }
+    return found;
+  };
+  const sameSet = (a, b) => a.size === b.size && [...a].every((x) => b.has(x));
+
+  const pairsByHerb = new Map();
+  for (const p of pairRecords) {
+    for (const id of (p.herbs || [])) {
+      if (!pairsByHerb.has(id)) pairsByHerb.set(id, []);
+      pairsByHerb.get(id).push(p);
+    }
+  }
+  for (const h of herbRecords) {
+    const authored = h.key_pairs || [];
+    if (!authored.length) continue;                       // 沒手寫欄就沒有遮蔽問題
+    const labelSets = authored.map((kp) => namesIn(kp && kp.pair));
+    const covered = [];
+    for (const p of (pairsByHerb.get(h.id) || [])) {
+      const memberSet = new Set((p.herbs || []).map((id) => nameById.get(id)).filter(Boolean));
+      if (!memberSet.size) continue;
+      if (labelSets.some((s) => sameSet(s, memberSet))) covered.push(p.id);
+    }
+    h.key_pairs_covered_pair_ids = covered;
+  }
+}
 // ---- Knowledge shard emission（P1 快取粒度分包，2026-08-24）------------------
 // knowledge 依「變動頻率 × 消費時機」切成六片，每片以 Object.assign 合流到
 // 同一個 globalThis.ACUTING_KNOWLEDGE 物件實例——消費端讀到的形狀零改動。

@@ -1,3 +1,90 @@
+# 2026-08-27 — 藥對雙軌併集:一個 `||` 讓 36 味卡吞掉 109 條結構化藥對,79 條回到畫面
+
+**這條推翻了我同日上一條的建議,先講結論。** 上一條說「key_pairs 312 味空是缺口,建議
+build 期推導補齊」。去讀渲染端才發現方向相反:
+
+`js/knowledge.js` 的藥卡「經典對藥」區寫的是 `keyPairs || herbPairsSection(record)` ——
+一個 OR。手寫 `key_pairs` 一存在,就把 herb_pairs.json 那 218 筆結構化藥對區**整段蓋掉**。
+
+| | 修前實際畫面 |
+|---|---|
+| 312 味「空 key_pairs」 | 走 `herbPairsSection`,藥對照常顯示 —— **不是缺口** |
+| 52 味「已填」 | 只剩自由文字;其中 36 味共 **109 條**結構化藥對記錄被吞 |
+
+**填得越好的卡丟得越多**,而且畫面上看不出少了東西。資料層驗證器全綠,因為兩份資料都在,
+是 renderer 只選了一邊。被吞最多:黃耆 11、當歸 7、杜仲 7、細辛 6、五味子 6。
+那些記錄帶七情 relation、主治、注意、教學提示 —— 自由文字沒有。
+
+## 改了什麼(三處,都是 Claude 所有權路徑)
+
+**1. `scripts/build-data.js` — bundle 期推導 `key_pairs_covered_pair_ids`(D13:推導不寫回)**
+算「哪些藥對已被手寫標籤講過」,讓 view 只做 filter,不在渲染時做模糊比對。
+判定用**嚴格集合相等**(標籤裡認得出的藥味集合 === 該藥對成員集合)。長名優先切詞,
+避免「白朮」被「朮」假命中。**子集不算重複**:「川芎 + 白芷 + 細辛」是考綱三味組合,
+與獨立二味藥對「川芎配細辛」是兩件事,後者有自己的七情與主治;實測用子集比對會多藏 9 條
+(防風/細辛/蒼耳子/豬苓/川芎/黃耆/五味子/瞿麥/萹蓄各 1)。
+
+**2. `js/knowledge.js` — `keyPairs || herbPairsSection(record)` → `herbPairsBlock(record, keyPairs)`**
+併集:手寫在上(含只存在於卡上的考綱官方對藥),結構化藥對接在後面,只濾掉藥味完全相同的。
+`herbPairsSection` 加 `skipPairIds` 與 `quiet`(手寫欄已有內容時,這段沒東西就安靜收場,
+不要在有內容的區塊底下再貼一句「尚未建立此藥的藥對」)。
+舊 bundle 沒有 covered 欄位時退回全列 —— 寧可並列也不吞內容。
+
+**3. `scripts/validate-herb-pair-render.js`(新增)** — 資料驗證器抓不到這型 bug,只有跑渲染端才抓得到。
+三問:那個吞內容的 OR 有沒有回來(剝掉註解再比對,註解裡引述壞寫法不算違規)、
+build 的重複判定有沒有算且與就地重算一致、併集數對不對。**負向測試做過**:
+把 `||` 塞回去 → FAIL 2 項;還原 → PASS。不允許空跑通過(bundle 讀不到 herbs/pairs 直接 FAIL)。
+
+## 數字
+
+| 項目 | 數 |
+|---|---|
+| 有手寫 key_pairs 的藥 | 52 味 / 94 條 |
+| 修前被整段蓋掉的結構化藥對 | 36 味 / 109 條 |
+| 判定重複(併集後濾掉,避免雙印) | 30 條 |
+| **併集後回到畫面的結構化藥對** | **79 條** |
+| 只活在卡上、藥對層查無的手寫條目 | 65 條,其中 **51 條明示考綱官方對藥**(NCBAHM Appendix B / Bastyr),分布 30 味 |
+
+## 眼讀(dev server 實跑,四種情況)
+
+| 藥 | 修前 | 修後 |
+|---|---|---|
+| 黃耆(3 手寫 / 11 藥對) | 只有 3 條手寫 | 3 手寫 + **10 條結構化**(當歸配黃芪判定重複已濾,無雙印) |
+| 半夏(0 手寫 / 15 藥對) | 15 條 | 15 條(不變) |
+| 蛇床子(1 手寫 / 2 藥對) | 只有 1 條手寫 | 1 手寫 + 1 條(三味組合現身) |
+| 蓮鬚(兩者皆無) | 整段隱藏 | 整段隱藏(不變;`detailSection` 對 placeholder 內容本來就整段收掉) |
+
+順帶更正同日上一條的一句錯誤推理:我寫「全庫 key_pairs 標籤 0 條用多藥形式,故三味組合不進」——
+只驗了「、」分隔符。實際用的是 `A + B + C` 串接,**94 條裡 45 條就是多藥形式**,
+排除理由不成立。不過蛇床子那條三味組合現在由結構化藥對區顯示,畫面上已無缺口。
+
+## 缺口帳本落 `docs/research_packs/`
+
+`KEY_PAIRS_GAP_LEDGER_2026-08-27.md` + `key_pairs_gap_ledger.json`(A/B/C 三桶完整 id)。
+分桶改以「卡上看不看得到藥對」為準,不是欄位空不空:
+A 137 味(★20)與 B 48 味(★11)畫面本來就有,**不需動作**;
+**C 桶 127 味(★16)才是真缺口** —— 完全沒有藥對記錄,整段不顯示。
+下一步優先序:51 條考綱官方對藥補成 herb_pairs 記錄(30 味,建議分 2 批)> C 桶 ★16 味 > C 桶非★ 111 味。
+
+## 驗證(在 49c92209 基底上全跑,輸出原文)
+
+- `node scripts/build-data.js` → `{"formulas":223,"herbs":364,...,"relation_edges":29,"audit_missing":0}`
+- `node scripts/validate-herb-standard.js` → `PASS — no structural defects.`
+- `node scripts/validate-content-junk.js` → `validate-content-junk: PASS — no scraped header tokens, no encoding anomalies in _zh fields.`
+- `node scripts/validate-dose-basis.js` → `PASS — dose_basis 標示全部合規。`
+- `node scripts/validate-herb-pair-render.js` → `PASS — 兩個藥對來源都到畫面上,重複判定與重算一致。`
+- `node scripts/check-validation-ratchet.js` → `PASS — no regressions.`
+- `git diff --check` → 無輸出
+
+**自 diff**:結構比對 vs origin/main —— bundle 變動葉節點 52 個,**全部是新增的
+`herbs.records[*].key_pairs_covered_pair_ids`**,沒有任何既有欄位被改動或縮短;
+`dose_basis` 出現次數 14 = 14 持平;herbs 364、herb_pairs 218 不變。
+來源資料檔(`data/**`)本批**一個字都沒改** —— 這是渲染與 build 期的修復。
+
+MEASURED TREE: claude/practical-easley-73f009 @ origin/main 49c92209 + 本批
+
+---
+
 # 2026-08-27 — Claude 複核 Task 10D:8/8 self-test 可信,但一筆「暗數據」數字在我環境重跑不出來
 
 Ting 問「task10d 你也看一下」。8/8 `--self-test` fixture、以及 43/27/20/7/4 這幾個結構性數字獨立

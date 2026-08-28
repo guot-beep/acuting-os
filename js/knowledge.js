@@ -410,10 +410,30 @@
     return note + `<div class="k-pair-list">${list.map((p) => pairCard(p, !explicit.length)).join("")}</div>`;
   }
 
-  function herbPairsSection(record) {
-    const list = PAIRS.filter((p) => (p.herbs || []).includes(record.id));
-    if (!list.length) return '<p class="k-detail-empty">尚未建立此藥的藥對 / No herb pairs recorded yet.</p>';
+  function herbPairsSection(record, opts) {
+    const skip = new Set((opts && opts.skipPairIds) || []);
+    const list = PAIRS.filter((p) => (p.herbs || []).includes(record.id) && !skip.has(p.id));
+    if (!list.length) {
+      // 手寫欄已經印出內容時，這一段沒東西就安靜收場——不要在有內容的區塊底下
+      // 再貼一句「尚未建立此藥的藥對」，那是自相矛盾的畫面。
+      return (opts && opts.quiet) ? "" : '<p class="k-detail-empty">尚未建立此藥的藥對 / No herb pairs recorded yet.</p>';
+    }
     return `<div class="k-pair-list">${list.map((p) => pairCard(p, false)).join("")}</div>`;
+  }
+
+  /* 兩個藥對來源合流（2026-08-27）。原本是 `keyPairs || herbPairsSection(record)`：
+     手寫 key_pairs 一存在就把結構化藥對區整段蓋掉，36 味卡因此看不到自己 109 條
+     藥對記錄（黃耆 11、當歸 7、杜仲 7）；那些記錄帶七情關係、主治、注意與教學提示，
+     自由文字沒有。填得越好的卡丟得越多，而且畫面上看不出少了東西。
+     改成併集：手寫在上（含 45 條只存在於卡上的考綱官方對藥），結構化藥對接在後面，
+     只濾掉藥味完全相同的那幾條。重複判定在 build 期算好（key_pairs_covered_pair_ids），
+     這裡只做 filter；build 沒算過的舊 bundle 就退回全列，寧可並列也不吞內容。 */
+  function herbPairsBlock(record, authoredHtml) {
+    const derivedHtml = herbPairsSection(record, {
+      skipPairIds: record.key_pairs_covered_pair_ids || [],
+      quiet: !!authoredHtml,
+    });
+    return authoredHtml ? authoredHtml + derivedHtml : derivedHtml;
   }
 
   /* The badge printed the raw enum, so 44 formula cards read
@@ -2023,7 +2043,7 @@
         id: "pairing", 
         label: "對藥與古文 Pairing & Classics", 
         content: `
-          ${detailSection("經典對藥 (Herb Pairs)", "Key pairings and rationale", keyPairs || herbPairsSection(record))}
+          ${detailSection("經典對藥 (Herb Pairs)", "Key pairings and rationale", herbPairsBlock(record, keyPairs))}
           ${record.classical_text_zh ? detailSection("古籍原文 (Classical Text)", "本草原文與英譯", `<blockquote class="k-classic">${linkifyHerbs(record.classical_text_zh, record.id)}${record.classical_text_en ? `<span class="k-classic-en">${esc(record.classical_text_en)}</span>` : ""}</blockquote>`) : ""}
           ${record.classical_text_zh ? detailSection("古文典籍記載", "Classical text quotation", `<blockquote class="k-classic-quote" style="border-left:3px solid #d97706;padding-left:10px;font-style:italic;color:#451a03;margin:8px 0;line-height:1.6;">${esc(record.classical_text_zh).replace(/\n/g, '<br>')}</blockquote>`) : ""}
           ${/* clinical_use_note_zh 是**另一則**筆記,不是 clinical_use_note 的中文版:
