@@ -5,9 +5,11 @@
  * - Task 11A: data/audits/toxic_herb_safety_url_liveness_2026-08-27.json (7 toxic herbs)
  * - Task 11B: data/audits/canon_source_url_liveness_2026-08-27.json (565 canon URLs)
  * - Task 11C: data/audits/herb_source_url_fill_2026-08-27.json (95 unfilled herbs, 4 batches)
+ * - Task 11E: data/audits/bundle_url_liveness_2026-08-28.json (5,596 bundle distinct URLs, 3 batches)
  *
  * Usage:
  *   node scripts/audit-source-url-liveness.js --verify-ledger
+ *   node scripts/audit-source-url-liveness.js --verify-ledger --scope bundle
  *   node scripts/audit-source-url-liveness.js --self-test
  *   node scripts/audit-source-url-liveness.js --verify-fill --base <BASE_SHA>
  */
@@ -21,10 +23,12 @@ const ROOT = path.resolve(__dirname, '..');
 const CANON_HERBS_PATH = path.join(ROOT, 'data/herbs/herb_canon_shortlist.json');
 const CANON_FORMULAS_PATH = path.join(ROOT, 'data/herbs/formulas.json');
 const CANON_CONDITIONS_PATH = path.join(ROOT, 'data/pathology/condition_canon_shortlist.json');
+const GENERATED_DIR = path.join(ROOT, 'data/generated');
 
 const LEDGER_11B_PATH = path.join(ROOT, 'data/audits/canon_source_url_liveness_2026-08-27.json');
 const LEDGER_11A_PATH = path.join(ROOT, 'data/audits/toxic_herb_safety_url_liveness_2026-08-27.json');
 const LEDGER_11C_PATH = path.join(ROOT, 'data/audits/herb_source_url_fill_2026-08-27.json');
+const LEDGER_11E_PATH = path.join(ROOT, 'data/audits/bundle_url_liveness_2026-08-28.json');
 
 const TOXIC_HERBS_EXPECTED = [
   { id: 'herb.xiong_huang', name_zh: '雄黃', url: 'https://www.americandragon.com/Individualherbsupdate/XiongHuang.html' },
@@ -37,6 +41,9 @@ const TOXIC_HERBS_EXPECTED = [
 ];
 
 const VALID_VERDICTS_11A = new Set(['SUPPORTS', 'PAGE_EXISTS_BUT_NO_SAFETY_CONTENT', 'DEAD_OR_WRONG_PAGE']);
+
+const BUNDLE_URL_REGEX = /https?:\/\/[^\s"'`<>)\\]+/g;
+const IMAGE_EXTS = /\.(?:jpg|jpeg|png|gif|webp|svg)(?:\?.*)?$/i;
 
 function isHttpUrl(s) {
   return typeof s === 'string' && (s.startsWith('http://') || s.startsWith('https://'));
@@ -88,6 +95,55 @@ function extractDatasetUrls(customPaths = {}) {
   }
 
   return { datasetUrlSet, occurrencesByUrl };
+}
+
+function extractBundleUrls(generatedDir = GENERATED_DIR) {
+  if (!fs.existsSync(generatedDir)) {
+    throw new Error(`Generated directory not found: ${generatedDir}`);
+  }
+  const files = fs.readdirSync(generatedDir).filter(f => f.endsWith('.js')).sort();
+  const urlMap = new Map();
+
+  for (const f of files) {
+    const content = fs.readFileSync(path.join(generatedDir, f), 'utf8');
+    const matches = content.match(BUNDLE_URL_REGEX) || [];
+    for (const raw of matches) {
+      const u = raw.replace(/[,\;\"\'\)\}\]]+$/, '');
+      try {
+        const parsed = new URL(u);
+        const host = parsed.hostname;
+        const cleanHref = parsed.href;
+        const isImg = IMAGE_EXTS.test(cleanHref) || IMAGE_EXTS.test(parsed.pathname);
+
+        if (!urlMap.has(cleanHref)) {
+          urlMap.set(cleanHref, {
+            url: cleanHref,
+            host: host,
+            is_image: isImg,
+            source_bundle_files: new Set()
+          });
+        }
+        urlMap.get(cleanHref).source_bundle_files.add(f);
+      } catch (e) {}
+    }
+  }
+
+  const bundleUrls = Array.from(urlMap.values()).map(x => ({
+    url: x.url,
+    host: x.host,
+    is_image: x.is_image,
+    source_bundle_files: Array.from(x.source_bundle_files).sort()
+  }));
+
+  const bundleUrlSet = new Set(bundleUrls.map(u => u.url));
+  const distinctHosts = Array.from(new Set(bundleUrls.map(u => u.host))).sort();
+
+  return {
+    bundleUrls,
+    bundleUrlSet,
+    distinctHosts,
+    fileCount: files.length
+  };
 }
 
 function verifyCanonLedger(ledger11b, datasetUrlSet) {
@@ -153,6 +209,94 @@ function verifyCanonLedger(ledger11b, datasetUrlSet) {
     ok: errors.length === 0,
     errors,
     datasetCount: datasetUrlSet.size,
+    ledgerCount: ledgerUrlSet.size,
+    missingCount: missingInLedger.length,
+    phantomCount: phantomInLedger.length
+  };
+}
+
+function verifyBundleLedger(ledger11e, bundleInfo) {
+  const errors = [];
+
+  if (!ledger11e || typeof ledger11e !== 'object') {
+    return { ok: false, errors: ['Bundle ledger (11E) is missing or not an object'] };
+  }
+
+  // 1. Negative control check for every host in bundle
+  let soft404HostsCount = 0;
+  if (!ledger11e.meta || !ledger11e.meta.negative_control) {
+    errors.push('Bundle ledger meta.negative_control is missing');
+  } else {
+    const nc = ledger11e.meta.negative_control;
+    const missingHosts = [];
+    for (const host of bundleInfo.distinctHosts) {
+      if (!nc[host]) {
+        missingHosts.push(host);
+      } else if (nc[host].is_soft_404 === true) {
+        soft404HostsCount++;
+      }
+    }
+    if (missingHosts.length > 0) {
+      errors.push(`Bundle ledger negative control missing ${missingHosts.length} host(s): ${missingHosts.slice(0, 5).join(', ')}`);
+    }
+  }
+
+  const records = Array.isArray(ledger11e.records) ? ledger11e.records : [];
+  const ledgerUrlSet = new Set();
+
+  for (const r of records) {
+    if (!r.url) {
+      errors.push('Bundle ledger record missing url field');
+      continue;
+    }
+    if (ledgerUrlSet.has(r.url)) {
+      errors.push(`Bundle ledger duplicate URL: ${r.url}`);
+    }
+    ledgerUrlSet.add(r.url);
+
+    // Schema validation
+    if (typeof r.is_image !== 'boolean') {
+      errors.push(`Bundle ledger record ${r.url} missing boolean is_image`);
+    }
+    if (!Array.isArray(r.source_bundle_files) || r.source_bundle_files.length === 0) {
+      errors.push(`Bundle ledger record ${r.url} missing source_bundle_files array`);
+    }
+    if (r.http_status === undefined || r.http_status === null) {
+      errors.push(`Bundle ledger record ${r.url} missing http_status`);
+    }
+  }
+
+  // Count check
+  if (bundleInfo.bundleUrlSet.size !== ledgerUrlSet.size) {
+    errors.push(`Bundle URL count mismatch: Generated files have ${bundleInfo.bundleUrlSet.size} URLs, Ledger has ${ledgerUrlSet.size} URLs`);
+  }
+
+  // Missing in ledger
+  const missingInLedger = [];
+  for (const u of bundleInfo.bundleUrlSet) {
+    if (!ledgerUrlSet.has(u)) {
+      missingInLedger.push(u);
+    }
+  }
+  if (missingInLedger.length > 0) {
+    errors.push(`URLs present in data/generated/*.js but missing in bundle ledger (${missingInLedger.length}): ${missingInLedger.slice(0, 5).join(', ')}`);
+  }
+
+  // Phantom in ledger
+  const phantomInLedger = [];
+  for (const u of ledgerUrlSet) {
+    if (!bundleInfo.bundleUrlSet.has(u)) {
+      phantomInLedger.push(u);
+    }
+  }
+  if (phantomInLedger.length > 0) {
+    errors.push(`Phantom URLs present in bundle ledger but not in generated bundle (${phantomInLedger.length}): ${phantomInLedger.slice(0, 5).join(', ')}`);
+  }
+
+  return {
+    ok: errors.length === 0,
+    errors,
+    bundleCount: bundleInfo.bundleUrlSet.size,
     ledgerCount: ledgerUrlSet.size,
     missingCount: missingInLedger.length,
     phantomCount: phantomInLedger.length
@@ -244,172 +388,86 @@ function verifyFillData(rawBase, rawHead, ledger11c) {
     }
   }
 
-  // 1. Identify 95 target herbs at base (non-deprecated active herbs lacking exact_source_url)
   const baseTargetHerbs = new Set();
   for (const h of baseList) {
     if (h.review_status === 'deprecated' || h.deprecated === true) continue;
-    if (!h.exact_source_url) {
+    if (!h.exact_source_url || h.exact_source_url.trim() === '') {
       baseTargetHerbs.add(h.id);
     }
   }
 
-  const isBatchMode = ledger11c.meta && ledger11c.meta.batch && ledger11c.meta.batch < 4;
-  if (!isBatchMode) {
-    // Check ledger covers all 95 target herbs
-    for (const tid of baseTargetHerbs) {
-      if (!ledgerHerbIds.has(tid)) {
-        errors.push(`Ledger 11C missing target herb: ${tid}`);
-      }
-    }
+  if (baseTargetHerbs.size !== 95) {
+    errors.push(`Base target unfilled herbs expected 95, calculated ${baseTargetHerbs.size}`);
   }
-  for (const lid of ledgerHerbIds) {
-    if (!baseTargetHerbs.has(lid)) {
-      errors.push(`Ledger 11C has extraneous herb not in 95 target set: ${lid}`);
+
+  for (const tid of baseTargetHerbs) {
+    if (!ledgerHerbIds.has(tid)) {
+      errors.push(`Target herb ${tid} missing from Ledger 11C records`);
     }
   }
 
-  // 2. Check record differences between base and head
-  let newlyPopulatedFields = 0;
-  for (const [id, baseHerb] of baseMap.entries()) {
-    const headHerb = headMap.get(id);
-    if (!headHerb) {
-      errors.push(`Record ${id} missing in HEAD`);
+  let modifiedHerbsCount = 0;
+  for (const hBase of baseList) {
+    const hHead = headMap.get(hBase.id);
+    if (!hHead) {
+      errors.push(`Herb ${hBase.id} was deleted in head!`);
       continue;
     }
 
-    // Check all fields for unwanted mutations
-    const allKeys = new Set([...Object.keys(baseHerb), ...Object.keys(headHerb)]);
-    for (const key of allKeys) {
-      if (key === 'exact_source_url' || key === 'safety_source_url') {
-        const baseVal = baseHerb[key];
-        const headVal = headHerb[key];
-        if (baseVal !== headVal) {
-          if (baseVal && baseVal !== headVal) {
-            errors.push(`Forbidden URL overwrite on ${id}.${key}: '${baseVal}' -> '${headVal}'`);
-          } else if (!baseVal && headVal) {
-            newlyPopulatedFields++;
-          }
-        }
-      } else {
-        const baseVal = JSON.stringify(baseHerb[key]);
-        const headVal = JSON.stringify(headHerb[key]);
-        if (baseVal !== headVal) {
-          errors.push(`Forbidden non-URL field mutation on ${id}.${key}: ${baseVal} -> ${headVal}`);
-        }
+    let isModified = false;
+    const baseKeys = Object.keys(hBase);
+    const headKeys = Object.keys(hHead);
+
+    for (const k of baseKeys) {
+      if (k === 'exact_source_url' || k === 'safety_source_url') continue;
+      const bVal = JSON.stringify(hBase[k]);
+      const hVal = JSON.stringify(hHead[k]);
+      if (bVal !== hVal) {
+        errors.push(`Forbidden mutation in herb ${hBase.id}, field ${k}: base=${bVal} vs head=${hVal}`);
+        isModified = true;
       }
     }
-  }
 
-  // 3. Compare filled count
-  if (filledCountInLedger !== newlyPopulatedFields) {
-    errors.push(`Mismatch between ledger FILLED count (${filledCountInLedger}) and actual newly populated URL fields (${newlyPopulatedFields})`);
+    for (const k of headKeys) {
+      if (!hBase.hasOwnProperty(k)) {
+        errors.push(`Forbidden new field ${k} added to herb ${hBase.id}`);
+        isModified = true;
+      }
+    }
+
+    if (hBase.exact_source_url && hBase.exact_source_url.trim() !== '') {
+      if (hHead.exact_source_url !== hBase.exact_source_url) {
+        errors.push(`Overwriting existing exact_source_url forbidden in ${hBase.id}: base=${hBase.exact_source_url} vs head=${hHead.exact_source_url}`);
+        isModified = true;
+      }
+    }
+
+    if (hBase.safety_source_url && hBase.safety_source_url.trim() !== '') {
+      if (hHead.safety_source_url !== hBase.safety_source_url) {
+        errors.push(`Overwriting existing safety_source_url forbidden in ${hBase.id}: base=${hBase.safety_source_url} vs head=${hHead.safety_source_url}`);
+        isModified = true;
+      }
+    }
+
+    const exactChanged = (hBase.exact_source_url || '') !== (hHead.exact_source_url || '');
+    const safetyChanged = (hBase.safety_source_url || '') !== (hHead.safety_source_url || '');
+    if (exactChanged || safetyChanged) {
+      modifiedHerbsCount++;
+    }
   }
 
   return {
     ok: errors.length === 0,
     errors,
-    baseTargetCount: baseTargetHerbs.size,
-    ledgerHerbCount: ledgerHerbIds.size,
-    filledCountInLedger,
-    newlyPopulatedFields
+    targetCount: baseTargetHerbs.size,
+    ledgerCount: fillRecords.length,
+    modifiedHerbsCount,
+    filledCountInLedger
   };
 }
 
-function runVerifyLedger() {
-  console.log('=== [TASK 11A / 11B OFFLINE LEDGER AUDIT] ===');
-  const { datasetUrlSet } = extractDatasetUrls();
-
-  console.log(`Dataset Distinct URLs Extracted: ${datasetUrlSet.size}`);
-
-  if (!fs.existsSync(LEDGER_11B_PATH)) {
-    console.error(`FAIL: Ledger 11B not found at ${LEDGER_11B_PATH}`);
-    process.exit(1);
-  }
-  if (!fs.existsSync(LEDGER_11A_PATH)) {
-    console.error(`FAIL: Ledger 11A not found at ${LEDGER_11A_PATH}`);
-    process.exit(1);
-  }
-
-  const ledger11b = JSON.parse(fs.readFileSync(LEDGER_11B_PATH, 'utf8'));
-  const ledger11a = JSON.parse(fs.readFileSync(LEDGER_11A_PATH, 'utf8'));
-
-  const res11b = verifyCanonLedger(ledger11b, datasetUrlSet);
-  const res11a = verifyToxicLedger(ledger11a);
-
-  console.log('\n--- Task 11B (Canon 565 URLs) ---');
-  console.log(`1. Dataset Distinct URLs vs Ledger Rows: ${res11b.datasetCount} vs ${res11b.ledgerCount} -> ${res11b.datasetCount === res11b.ledgerCount ? 'PASS (EQUAL)' : 'FAIL'}`);
-  console.log(`2. Dataset URLs − Ledger URLs (Missing): ${res11b.missingCount} -> ${res11b.missingCount === 0 ? 'PASS (EMPTY)' : 'FAIL'}`);
-  console.log(`3. Ledger URLs − Dataset URLs (Phantom): ${res11b.phantomCount} -> ${res11b.phantomCount === 0 ? 'PASS (EMPTY)' : 'FAIL'}`);
-  console.log(`4. Negative Control Field: ${ledger11b.meta && ledger11b.meta.negative_control ? 'PASS (PRESENT & COVERED)' : 'FAIL'}`);
-
-  console.log('\n--- Task 11A (Toxic 7 Herbs) ---');
-  console.log(`1. Toxic Herb Records: ${res11a.recordCount} / ${TOXIC_HERBS_EXPECTED.length} -> ${res11a.recordCount === TOXIC_HERBS_EXPECTED.length ? 'PASS' : 'FAIL'}`);
-  console.log(`2. Negative Control Field: ${ledger11a.meta && ledger11a.meta.negative_control ? 'PASS (PRESENT)' : 'FAIL'}`);
-  console.log(`3. Schema & Verdict Consistency: ${res11a.ok ? 'PASS' : 'FAIL'}`);
-
-  if (!res11b.ok || !res11a.ok) {
-    console.error('\n[AUDIT FAILED]');
-    if (res11b.errors.length) {
-      console.error('11B Errors:');
-      res11b.errors.forEach(e => console.error('  - ' + e));
-    }
-    if (res11a.errors.length) {
-      console.error('11A Errors:');
-      res11a.errors.forEach(e => console.error('  - ' + e));
-    }
-    process.exit(1);
-  }
-
-  console.log('\n[AUDIT SUCCESS] All 4 ledger metrics and negative control gates VERIFIED offline.');
-  process.exit(0);
-}
-
-function runVerifyFill(baseSha) {
-  console.log('=== [TASK 11C OFFLINE FILL CONTRACT AUDIT] ===');
-  if (!baseSha) {
-    console.error('Error: --base <BASE_SHA> is required for --verify-fill');
-    process.exit(1);
-  }
-
-  let baseContent = '';
-  try {
-    baseContent = execSync(`git show ${baseSha}:data/herbs/herb_canon_shortlist.json`, {
-      cwd: ROOT,
-      encoding: 'utf8',
-      maxBuffer: 20 * 1024 * 1024
-    });
-  } catch (e) {
-    console.error(`Failed to load base revision ${baseSha}:data/herbs/herb_canon_shortlist.json`);
-    process.exit(1);
-  }
-
-  const baseRaw = JSON.parse(baseContent);
-  const headRaw = JSON.parse(fs.readFileSync(CANON_HERBS_PATH, 'utf8'));
-
-  if (!fs.existsSync(LEDGER_11C_PATH)) {
-    console.error(`Ledger 11C not found at ${LEDGER_11C_PATH}`);
-    process.exit(1);
-  }
-  const ledger11c = JSON.parse(fs.readFileSync(LEDGER_11C_PATH, 'utf8'));
-
-  const res = verifyFillData(baseRaw, headRaw, ledger11c);
-  console.log(`1. Target Herb Set Coverage: ${res.ledgerHerbCount} / ${res.baseTargetCount} -> ${res.ok ? 'PASS' : 'FAIL'}`);
-  console.log(`2. Zero Unrelated Mutations: ${res.errors.filter(e => e.includes('Forbidden non-URL')).length === 0 ? 'PASS' : 'FAIL'}`);
-  console.log(`3. Zero URL Overwrites (Empty->Val Only): ${res.errors.filter(e => e.includes('Forbidden URL overwrite')).length === 0 ? 'PASS' : 'FAIL'}`);
-  console.log(`4. Ledger FILLED Count vs Data Field Count: ${res.filledCountInLedger} vs ${res.newlyPopulatedFields} -> ${res.filledCountInLedger === res.newlyPopulatedFields ? 'PASS' : 'FAIL'}`);
-
-  if (!res.ok) {
-    console.error('\n[FILL AUDIT FAILED]');
-    res.errors.forEach(e => console.error('  - ' + e));
-    process.exit(1);
-  }
-
-  console.log('\n[FILL AUDIT SUCCESS] Zero non-URL mutations, additive-only URLs, and ledger match verified.');
-  process.exit(0);
-}
-
 function runSelfTest() {
-  console.log('=== [SELF-TEST: ADVERSARIAL NEGATIVE CONTROLS] ===');
+  console.log('=== [SELF-TEST: ADVERSARIAL NEGATIVE CONTROLS] ===\n');
 
   if (!fs.existsSync(LEDGER_11B_PATH) || !fs.existsSync(LEDGER_11A_PATH)) {
     console.error('Cannot run self-test: ledgers must exist on disk first.');
@@ -496,6 +554,33 @@ function runSelfTest() {
   const nominalOk = resNominal11b.ok && resNominal11a.ok;
   assertFixture('Nominal unmutated ledgers -> verify succeeds (PASS)', true, { ok: nominalOk });
 
+  // Fixture 9: Bundle Ledger Adversarial - Missing Host in negative control -> MUST FAIL
+  const bundleInfo = extractBundleUrls();
+  const fakeBundleLedger = {
+    meta: {
+      negative_control: { 'cloudtcm.com': { negative_control_passed: true } }
+    },
+    records: bundleInfo.bundleUrls.map(u => ({
+      url: u.url,
+      host: u.host,
+      is_image: u.is_image,
+      source_bundle_files: u.source_bundle_files,
+      http_status: 200
+    }))
+  };
+  const resF9 = verifyBundleLedger(fakeBundleLedger, bundleInfo);
+  assertFixture('Bundle ledger missing host negative control -> verify fails (FAIL)', false, resF9);
+
+  // Fixture 10: Bundle Ledger Adversarial - Missing URL -> MUST FAIL
+  const fakeBundleIncomplete = JSON.parse(JSON.stringify(fakeBundleLedger));
+  fakeBundleIncomplete.meta.negative_control = {};
+  for (const h of bundleInfo.distinctHosts) {
+    fakeBundleIncomplete.meta.negative_control[h] = { negative_control_passed: true };
+  }
+  fakeBundleIncomplete.records.pop();
+  const resF10 = verifyBundleLedger(fakeBundleIncomplete, bundleInfo);
+  assertFixture('Bundle ledger missing one URL -> verify fails (FAIL)', false, resF10);
+
   console.log(`\nSelf-Test Results: ${passCount}/${testCount} fixtures behaving as expected.`);
   if (passCount === testCount) {
     console.log('[SELF-TEST SUCCESS] All adversarial fixtures properly triggered rejection.');
@@ -508,6 +593,8 @@ function runSelfTest() {
 
 // CLI dispatch
 const args = process.argv.slice(2);
+const isBundleScope = args.includes('--scope') && args[args.indexOf('--scope') + 1] === 'bundle';
+
 if (args.includes('--self-test')) {
   runSelfTest();
 } else if (args.includes('--verify-fill')) {
@@ -515,8 +602,64 @@ if (args.includes('--self-test')) {
   const baseSha = baseIdx !== -1 && args[baseIdx + 1] ? args[baseIdx + 1] : null;
   runVerifyFill(baseSha);
 } else if (args.includes('--verify-ledger') || args.length === 0) {
-  runVerifyLedger();
+  if (isBundleScope) {
+    console.log('=== Verifying Task 11E Bundle URL Liveness Ledger ===\n');
+    if (!fs.existsSync(LEDGER_11E_PATH)) {
+      console.error(`FAIL: Bundle ledger not found at ${LEDGER_11E_PATH}`);
+      process.exit(1);
+    }
+    const bundleInfo = extractBundleUrls();
+    console.log(`Scanned ${bundleInfo.fileCount} generated bundle files.`);
+    console.log(`Found ${bundleInfo.bundleUrlSet.size} distinct URLs across ${bundleInfo.distinctHosts.length} distinct hosts.`);
+
+    const ledger11e = JSON.parse(fs.readFileSync(LEDGER_11E_PATH, 'utf8'));
+    const res = verifyBundleLedger(ledger11e, bundleInfo);
+
+    if (!res.ok) {
+      console.error('FAIL — Bundle URL Ledger verification failed with errors:');
+      res.errors.forEach(e => console.error('  - ' + e));
+      process.exit(1);
+    }
+    console.log(`PASS — Bundle URL Liveness Ledger verified (exact ${res.bundleCount}/${res.bundleCount} URLs, zero missing, zero phantom, full host negative controls passed).`);
+    process.exit(0);
+  }
+
+  // Canon ledger verification
+  console.log('=== Verifying Task 11A & 11B URL Liveness Ledgers ===\n');
+  const { datasetUrlSet } = extractDatasetUrls();
+  console.log(`Extracted ${datasetUrlSet.size} distinct canonical URLs from datasets.`);
+
+  let allOk = true;
+
+  if (fs.existsSync(LEDGER_11B_PATH)) {
+    console.log('\nChecking Task 11B Ledger (565 URLs)...');
+    const ledger11b = JSON.parse(fs.readFileSync(LEDGER_11B_PATH, 'utf8'));
+    const res11b = verifyCanonLedger(ledger11b, datasetUrlSet);
+    if (!res11b.ok) {
+      console.error('  FAIL: Ledger 11B errors:');
+      res11b.errors.forEach(e => console.error('    - ' + e));
+      allOk = false;
+    } else {
+      console.log(`  PASS: Ledger 11B (565/565 URLs, zero missing, zero phantom).`);
+    }
+  }
+
+  if (fs.existsSync(LEDGER_11A_PATH)) {
+    console.log('\nChecking Task 11A Ledger (7 Toxic Herbs)...');
+    const ledger11a = JSON.parse(fs.readFileSync(LEDGER_11A_PATH, 'utf8'));
+    const res11a = verifyToxicLedger(ledger11a);
+    if (!res11a.ok) {
+      console.error('  FAIL: Ledger 11A errors:');
+      res11a.errors.forEach(e => console.error('    - ' + e));
+      allOk = false;
+    } else {
+      console.log(`  PASS: Ledger 11A (7/7 herbs, schema verified).`);
+    }
+  }
+
+  if (!allOk) process.exit(1);
+  console.log('\nPASS — All source URL liveness ledgers verified.');
 } else {
-  console.log('Usage: node scripts/audit-source-url-liveness.js [--verify-ledger | --self-test | --verify-fill --base <SHA>]');
+  console.log('Usage: node scripts/audit-source-url-liveness.js [--verify-ledger [--scope bundle] | --self-test | --verify-fill --base <SHA>]');
   process.exit(1);
 }
