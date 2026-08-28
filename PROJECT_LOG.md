@@ -1,3 +1,23 @@
+# 2026-08-27 — Task 11A/11B/11C 網址存活性驗證、正典 link-rot 全掃與中藥引用網址補齊（4 批推進）
+
+- **做了什麼**：
+  1. Task 11A：7 味有毒/管制藥材 `safety_source_url` 連線存活性與安全內容逐字查證，完成負控與帳本 `data/audits/toxic_herb_safety_url_liveness_2026-08-27.json`。
+  2. Task 11B：正典卡 565 個 distinct URL 實施速率限制（≤2 req/s）link-rot 全掃與雙站負控，產出帳本 `data/audits/canon_source_url_liveness_2026-08-27.json`，死連結只報不修。
+  3. Task 11C：中藥正典 95 筆未填藥材來源網址補齊，嚴格禁止拼音猜測，查核 CloudTCM 與 American Dragon 正式目錄索引，分 4 批提交（Batch 1..4），完成累計帳本 `data/audits/herb_source_url_fill_2026-08-27.json`。
+- **數字 before→after**：
+  - 11A：7 味有毒藥材實測 1 SUPPORTS（罌粟殼）/ 6 PAGE_EXISTS_BUT_NO_SAFETY_CONTENT / 0 DEAD_OR_WRONG_PAGE。
+  - 11B：565 distinct URL 實測 563 HTTP 200 / 1 HTTP 404（ZhiGanCao）/ 1 HTTP 500（formula/99）/ 0 軟 404 / 0 網路失敗。
+  - 11C：中藥 `exact_source_url` 覆蓋率 265/364 (73%) → 345/364 (95%)；`safety_source_url` 覆蓋率 348/364 (95%) → 350/364 (96%)。80 欄位填入，31 欄位依規如實留空（食材/輔料/非藥材/正典無條目），4 味 deprecated 藥材及無關欄位 0 異動。
+- **驗證結果**：
+  - `node scripts/audit-source-url-liveness.js --self-test`：8/8 對抗負控測試全數通過（PASS）。
+  - `node scripts/audit-source-url-liveness.js --verify-fill --base d9293514e7cfb307f898814a5ddb910f2a5568f4`：全 4 批合約驗證通過（PASS）。
+  - `node scripts/validate-herb-standard.js`：PASS — no structural defects。
+  - `node scripts/check-validation-ratchet.js`：PASS — no regressions。
+- **已知未解**：
+  - 11B 發現的 2 處既有壞連結（`ZhiGanCao.html` 404 與 `cloudtcm.com/formula/99` 500）依規零改動、只在帳本記錄建議修復，留待獨立工單處理。
+  - 11C 中 15 味食材/輔料/非正典單味藥材（白酒、黃酒、酒、碧玉散、銀箔、金箔、豬脊髓、雞子黃、糯稻根、小麥、炮薑、龜板膠、龍齒、棕櫚炭、茶葉）官方雙站查無專屬條目，如實留空並記明原因。
+- **下一步**：已推到 `antigravity/task11a-toxic-safety-url-liveness`、`antigravity/task11b-canon-url-liveness`、`antigravity/task11c-herb-source-fill-batch1`、`antigravity/task11c-herb-source-fill-batch2`、`antigravity/task11c-herb-source-fill-batch3`、`antigravity/task11c-herb-source-fill-batch4` 共 6 支分支，等驗收。
+
 # 2026-08-27 — 解表批做到一半發現歸屬錯誤:考綱正本核對出 24 項假宣稱,我自己傳播了 5 項
 
 原本是遷移第 4 批(解表 10 條)。動工前照慣例查證,發現這批有 6 條標「2026 NCBAHM

@@ -1,3 +1,32 @@
+# ANTIGRAVITY HANDOFF
+
+## ✅ Task 11A / 11B / 11C 已全部完成並推送到獨立分支等驗收（2026-08-27）
+
+- **Task 11A 分支**：`antigravity/task11a-toxic-safety-url-liveness`（已推到 `origin`）
+- **Task 11B 分支**：`antigravity/task11b-canon-url-liveness`（已推到 `origin`）
+- **Task 11C Batch 1 分支**：`antigravity/task11c-herb-source-fill-batch1`（已推到 `origin`）
+- **Task 11C Batch 2 分支**：`antigravity/task11c-herb-source-fill-batch2`（已推到 `origin`）
+- **Task 11C Batch 3 分支**：`antigravity/task11c-herb-source-fill-batch3`（已推到 `origin`）
+- **Task 11C Batch 4 分支**：`antigravity/task11c-herb-source-fill-batch4`（已推到 `origin`）
+
+### 驗收指令（離線 100% 可測）
+```bash
+# 1. 對抗負控與自我測試（8/8 負控 fixture 必須 PASS）
+node scripts/audit-source-url-liveness.js --self-test
+
+# 2. 帳本四指標離線驗證（Task 11A / 11B）
+node scripts/audit-source-url-liveness.js --verify-ledger
+
+# 3. 填入合約離線驗證（Task 11C 零無關欄位異動、零既有覆蓋、帳本筆數嚴格吻合）
+node scripts/audit-source-url-liveness.js --verify-fill --base d9293514e7cfb307f898814a5ddb910f2a5568f4
+
+# 4. 中藥規格與無退化驗證
+node scripts/validate-herb-standard.js
+node scripts/check-validation-ratchet.js
+```
+
+---
+
 ## 📋 新派工 Task 11C（2026-08-27，Ting 指派）——補中藥引用網址，**這一項會動資料，規矩比 11A/11B 嚴**
 
 **MEASURED TREE：`origin/main` @ `8ba58677`**。分母開工前自己重跑一次（指令在最後）。
