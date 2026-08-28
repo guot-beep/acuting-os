@@ -8518,7 +8518,7 @@
       "name_en": "Dan Shen with Tan Xiang and Sha Ren",
       "relation": "pair.rel.board_exam",
       "board_exam_pair": true,
-      "ncbahm_official_pair": true,
+      "ncbahm_official_pair": false,
       "pair_meaning_zh": "活血化瘀、行氣溫中止痛。",
       "pair_meaning_en": "Invigorates Blood and dispels stasis while moving Qi and warming the Middle to stop pain.",
       "indication_zh": "心胃氣滯血瘀之劇痛（代表方：丹參飲）。",
@@ -8553,7 +8553,8 @@
         "official_status": [
           "bastyr_outline_not_in_repo"
         ]
-      }
+      },
+      "teaching_note_zh": "歸屬訂正(2026-08-27):卡上標籤寫「Bastyr / NCBAHM 官方對藥」，據此設過 ncbahm_official_pair:true；以 repo 內考綱正本 curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md 的 Appendix B 逐條核對後不成立（Appendix B 全部是二味對藥，共 51 組，本組合不在其中），故改為 false。Bastyr 那一半仍無正本可核（sources 已標 unverified_outline），board_exam_pair 維持原狀不作更強宣稱。"
     },
     {
       "id": "pair.dan_shen__hong_hua__tao_ren",
@@ -9321,7 +9322,7 @@
       "name_en": "Wu Ling Zhi with Pu Huang",
       "relation": "pair.rel.board_exam",
       "board_exam_pair": true,
-      "ncbahm_official_pair": true,
+      "ncbahm_official_pair": false,
       "pair_meaning_zh": "相須為用，活血化瘀、止痛止血。",
       "pair_meaning_en": "Mutual accentuation: invigorates Blood, dispels stasis, stops pain and stops bleeding.",
       "indication_zh": "血瘀之心腹劇痛、痛經（代表方：失笑散）。",
@@ -9357,7 +9358,7 @@
           "bastyr_outline_not_in_repo"
         ]
       },
-      "teaching_note_zh": "卡上敘述明寫「相須為用」；relation 仍用 pair.rel.board_exam 與同批一致，七情資訊保留在配伍意義原文中，不另行分類。"
+      "teaching_note_zh": "卡上敘述明寫「相須為用」；relation 仍用 pair.rel.board_exam 與同批一致，七情資訊保留在配伍意義原文中，不另行分類。 歸屬訂正(2026-08-27):卡上標籤寫「Bastyr / NCBAHM 官方對藥」，據此設過 ncbahm_official_pair:true；以 repo 內考綱正本 curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md 的 Appendix B 逐條核對後不成立（Appendix B 全部是二味對藥，共 51 組，本組合不在其中），故改為 false。Bastyr 那一半仍無正本可核（sources 已標 unverified_outline），board_exam_pair 維持原狀不作更強宣稱。"
     },
     {
       "id": "pair.hu_zhang__yin_chen_hao__jin_qian_cao",
@@ -9552,7 +9553,7 @@
       "name_en": "Zhu Ling with Fu Ling and Ze Xie",
       "relation": "pair.rel.board_exam",
       "board_exam_pair": true,
-      "ncbahm_official_pair": true,
+      "ncbahm_official_pair": false,
       "pair_meaning_zh": "淡滲利濕、通利小便。",
       "pair_meaning_en": "Bland percolation drains Dampness and promotes urination.",
       "indication_zh": "水濕停滯、小便不利（代表方：四苓散、五苓散）。",
@@ -9588,7 +9589,7 @@
           "bastyr_outline_not_in_repo"
         ]
       },
-      "teaching_note_zh": "herb.zhu_ling 與 herb.ze_xie 兩張卡各有一條同組成標籤（豬苓+茯苓+澤瀉／澤瀉+茯苓+豬苓），成員集合相同故只建這一筆，兩卡的副本都移除。代表方四苓散本庫尚無方劑卡，只掛已建的五苓散。"
+      "teaching_note_zh": "herb.zhu_ling 與 herb.ze_xie 兩張卡各有一條同組成標籤（豬苓+茯苓+澤瀉／澤瀉+茯苓+豬苓），成員集合相同故只建這一筆，兩卡的副本都移除。代表方四苓散本庫尚無方劑卡，只掛已建的五苓散。 歸屬訂正(2026-08-27):卡上標籤寫「Bastyr / NCBAHM 官方對藥」，據此設過 ncbahm_official_pair:true；以 repo 內考綱正本 curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md 的 Appendix B 逐條核對後不成立（Appendix B 全部是二味對藥，共 51 組，本組合不在其中），故改為 false。Bastyr 那一半仍無正本可核（sources 已標 unverified_outline），board_exam_pair 維持原狀不作更強宣稱。"
     },
     {
       "id": "pair.zhu_ling__e_jiao__hua_shi",
@@ -9648,7 +9649,7 @@
       "name_en": "Ze Xie with Bai Zhu",
       "relation": "pair.rel.board_exam",
       "board_exam_pair": true,
-      "ncbahm_official_pair": true,
+      "ncbahm_official_pair": false,
       "pair_meaning_zh": "健脾利水、溫化痰飲。",
       "pair_meaning_en": "Strengthens the Spleen, promotes urination and warms and transforms thin fluids.",
       "indication_zh": "水飲內停、頭目眩暈（代表方：澤瀉湯、五苓散）。",
@@ -9684,7 +9685,7 @@
           "bastyr_outline_not_in_repo"
         ]
       },
-      "teaching_note_zh": "代表方澤瀉湯本庫尚無方劑卡，只掛已建的五苓散。"
+      "teaching_note_zh": "代表方澤瀉湯本庫尚無方劑卡，只掛已建的五苓散。 歸屬訂正(2026-08-27):卡上標籤寫「Bastyr / NCBAHM 官方對藥」，據此設過 ncbahm_official_pair:true；以 repo 內考綱正本 curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md 的 Appendix B 逐條核對後不成立（Appendix B 全部是二味對藥，共 51 組，本組合不在其中），故改為 false。Bastyr 那一半仍無正本可核（sources 已標 unverified_outline），board_exam_pair 維持原狀不作更強宣稱。"
     },
     {
       "id": "pair.yi_yi_ren__bai_jiang_cao__fu_zi",
@@ -9889,7 +9890,7 @@
       "name_en": "Fu Shen with Suan Zao Ren and Yuan Zhi",
       "relation": "pair.rel.board_exam",
       "board_exam_pair": true,
-      "ncbahm_official_pair": true,
+      "ncbahm_official_pair": false,
       "pair_meaning_zh": "養心安神、交通心腎。",
       "pair_meaning_en": "Nourishes the Heart, settles the spirit and connects Heart and Kidney.",
       "indication_zh": "心悸、失眠、健忘（代表方：歸脾湯）。",
@@ -9924,7 +9925,8 @@
         "official_status": [
           "bastyr_outline_not_in_repo"
         ]
-      }
+      },
+      "teaching_note_zh": "歸屬訂正(2026-08-27):卡上標籤寫「Bastyr / NCBAHM 官方對藥」，據此設過 ncbahm_official_pair:true；以 repo 內考綱正本 curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md 的 Appendix B 逐條核對後不成立（Appendix B 全部是二味對藥，共 51 組，本組合不在其中），故改為 false。Bastyr 那一半仍無正本可核（sources 已標 unverified_outline），board_exam_pair 維持原狀不作更強宣稱。"
     },
     {
       "id": "pair.fu_shen__ren_shen__long_chi__yuan_zhi",
@@ -10162,6 +10164,450 @@
           "bastyr_outline_not_in_repo"
         ]
       }
+    },
+    {
+      "id": "pair.zi_su_ye__sheng_jiang",
+      "herbs": [
+        "herb.zi_su_ye",
+        "herb.sheng_jiang"
+      ],
+      "name_zh": "紫蘇葉配生薑",
+      "name_en": "Zi Su Ye with Sheng Jiang",
+      "ncbahm_official_pair": false,
+      "pair_meaning_zh": "相使。共同發散風寒、和胃止嘔，並用於魚蟹中毒。",
+      "pair_meaning_en": "Xiang Shi (mutual assistance). Together they disperse Wind-Cold, harmonize the Stomach, stop vomiting and address seafood toxicity.",
+      "indication_zh": "",
+      "indication_en": "",
+      "found_in_formulas": [],
+      "sources": [
+        "herb_canon_shortlist:herb.zi_su_ye.key_pairs（卡上未標官方對藥，為既有教學敘述）"
+      ],
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "migrated_from": "herb.zi_su_ye.key_pairs",
+      "actions_zh": "相使。共同發散風寒、和胃止嘔，並用於魚蟹中毒。",
+      "actions_en": "Xiang Shi (mutual assistance). Together they disperse Wind-Cold, harmonize the Stomach, stop vomiting and address seafood toxicity.",
+      "indications_zh": "",
+      "indications_en": "",
+      "field_sources": {
+        "pair_meaning_zh": [
+          "herb_card_key_pairs"
+        ],
+        "indication_zh": [
+          "herb_card_key_pairs"
+        ],
+        "pair_meaning_en": [
+          "herb_card_key_pairs"
+        ],
+        "indication_en": [
+          "herb_card_key_pairs"
+        ],
+        "official_status": [
+          "not_claimed_as_official"
+        ]
+      }
+    },
+    {
+      "id": "pair.zi_su_ye__chen_pi",
+      "herbs": [
+        "herb.zi_su_ye",
+        "herb.chen_pi"
+      ],
+      "name_zh": "紫蘇葉配陳皮",
+      "name_en": "Zi Su Ye with Chen Pi",
+      "ncbahm_official_pair": false,
+      "pair_meaning_zh": "行氣寬中、理氣化痰。",
+      "pair_meaning_en": "Moves Qi, unbinds the chest and transforms Phlegm.",
+      "indication_zh": "氣滯胸悶、脘腹脹滿。",
+      "indication_en": "Chest oppression and abdominal distention from Qi stagnation.",
+      "found_in_formulas": [],
+      "sources": [
+        "herb_canon_shortlist:herb.zi_su_ye.key_pairs（卡上未標官方對藥，為既有教學敘述）"
+      ],
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "migrated_from": "herb.zi_su_ye.key_pairs",
+      "actions_zh": "行氣寬中、理氣化痰。",
+      "actions_en": "Moves Qi, unbinds the chest and transforms Phlegm.",
+      "indications_zh": "氣滯胸悶、脘腹脹滿。",
+      "indications_en": "Chest oppression and abdominal distention from Qi stagnation.",
+      "field_sources": {
+        "pair_meaning_zh": [
+          "herb_card_key_pairs"
+        ],
+        "indication_zh": [
+          "herb_card_key_pairs"
+        ],
+        "pair_meaning_en": [
+          "herb_card_key_pairs"
+        ],
+        "indication_en": [
+          "herb_card_key_pairs"
+        ],
+        "official_status": [
+          "not_claimed_as_official"
+        ]
+      }
+    },
+    {
+      "id": "pair.xiang_ru__hou_po__bai_bian_dou",
+      "herbs": [
+        "herb.xiang_ru",
+        "herb.hou_po",
+        "herb.bai_bian_dou"
+      ],
+      "name_zh": "香薷配厚朴、白扁豆",
+      "name_en": "Xiang Ru with Hou Po and Bai Bian Dou",
+      "ncbahm_official_pair": false,
+      "pair_meaning_zh": "發汗解暑、化濕和中。",
+      "pair_meaning_en": "Induces sweating to release summerheat, transforms Dampness and harmonizes the Middle.",
+      "indication_zh": "夏月感冒暑濕（代表方：香薷飲）。",
+      "indication_en": "Summertime exterior invasion with summerheat-damp (representative formula: Xiang Ru Yin).",
+      "found_in_formulas": [],
+      "sources": [
+        "herb_canon_shortlist:herb.xiang_ru.key_pairs（卡上標示「2026 NCBAHM Appendix B 官方對藥」，本批核對後不成立，見 teaching_note）"
+      ],
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "migrated_from": "herb.xiang_ru.key_pairs",
+      "actions_zh": "發汗解暑、化濕和中。",
+      "actions_en": "Induces sweating to release summerheat, transforms Dampness and harmonizes the Middle.",
+      "indications_zh": "夏月感冒暑濕（代表方：香薷飲）。",
+      "indications_en": "Summertime exterior invasion with summerheat-damp (representative formula: Xiang Ru Yin).",
+      "field_sources": {
+        "pair_meaning_zh": [
+          "herb_card_key_pairs"
+        ],
+        "indication_zh": [
+          "herb_card_key_pairs"
+        ],
+        "pair_meaning_en": [
+          "translation_of_zh"
+        ],
+        "indication_en": [
+          "translation_of_zh"
+        ],
+        "official_status": [
+          "ncbahm_appendix_b_claim_refuted_2026-08-27"
+        ]
+      },
+      "teaching_note_zh": "卡上標籤宣稱「2026 NCBAHM Appendix B 官方對藥」，但以 repo 內考綱正本 curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md 的 Appendix B 逐條核對後不成立（Appendix B 共 51 組、全部是二味對藥）。故本記錄不標 board_exam_pair／ncbahm_official_pair，配伍內容照卡上原文保留。宣稱本身留在藥卡標籤上未動，待 Ting 裁定該標籤怎麼改。 代表方香薷飲本庫尚無方劑卡，found_in_formulas 留空。"
+    },
+    {
+      "id": "pair.jing_jie__bo_he",
+      "herbs": [
+        "herb.jing_jie",
+        "herb.bo_he"
+      ],
+      "name_zh": "荊芥配薄荷",
+      "name_en": "Jing Jie with Bo He",
+      "ncbahm_official_pair": false,
+      "pair_meaning_zh": "疏散風熱、透疹止癢。",
+      "pair_meaning_en": "Disperses Wind-Heat and vents rashes.",
+      "indication_zh": "風熱初起、麻疹初起或瘙癢。",
+      "indication_en": "Early Wind-Heat, initial measles or pruritic eruptions.",
+      "found_in_formulas": [],
+      "sources": [
+        "herb_canon_shortlist:herb.jing_jie.key_pairs（卡上未標官方對藥，為既有教學敘述）"
+      ],
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "migrated_from": "herb.jing_jie.key_pairs",
+      "actions_zh": "疏散風熱、透疹止癢。",
+      "actions_en": "Disperses Wind-Heat and vents rashes.",
+      "indications_zh": "風熱初起、麻疹初起或瘙癢。",
+      "indications_en": "Early Wind-Heat, initial measles or pruritic eruptions.",
+      "field_sources": {
+        "pair_meaning_zh": [
+          "herb_card_key_pairs"
+        ],
+        "indication_zh": [
+          "herb_card_key_pairs"
+        ],
+        "pair_meaning_en": [
+          "herb_card_key_pairs"
+        ],
+        "indication_en": [
+          "herb_card_key_pairs"
+        ],
+        "official_status": [
+          "not_claimed_as_official"
+        ]
+      }
+    },
+    {
+      "id": "pair.fang_feng__huang_qi__bai_zhu",
+      "herbs": [
+        "herb.fang_feng",
+        "herb.huang_qi",
+        "herb.bai_zhu"
+      ],
+      "name_zh": "防風配黃耆、白朮",
+      "name_en": "Fang Feng with Huang Qi and Bai Zhu",
+      "ncbahm_official_pair": false,
+      "pair_meaning_zh": "固表止汗。黃耆、白朮益氣固表，防風疏散表邪，使補而不留邪。",
+      "pair_meaning_en": "Secures the Exterior and stops sweating: Huang Qi and Bai Zhu tonify and secure the Exterior while Fang Feng disperses Wind, so tonification does not trap pathogens.",
+      "indication_zh": "衛氣虛自汗、易感冒（玉屏風散）。",
+      "indication_en": "Spontaneous sweating and susceptibility to colds from Wei Qi deficiency (Yu Ping Feng San).",
+      "found_in_formulas": [
+        "formula.yu_ping_feng_san"
+      ],
+      "sources": [
+        "herb_canon_shortlist:herb.fang_feng.key_pairs（卡上未標官方對藥，為既有教學敘述）",
+        "herb_canon_shortlist:herb.huang_qi.key_pairs（同一組合的另一版敘述，已併入）"
+      ],
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "migrated_from": "herb.fang_feng.key_pairs+herb.huang_qi.key_pairs",
+      "actions_zh": "固表止汗。黃耆、白朮益氣固表，防風疏散表邪，使補而不留邪。",
+      "actions_en": "Secures the Exterior and stops sweating: Huang Qi and Bai Zhu tonify and secure the Exterior while Fang Feng disperses Wind, so tonification does not trap pathogens.",
+      "indications_zh": "衛氣虛自汗、易感冒（玉屏風散）。",
+      "indications_en": "Spontaneous sweating and susceptibility to colds from Wei Qi deficiency (Yu Ping Feng San).",
+      "field_sources": {
+        "pair_meaning_zh": [
+          "herb_card_key_pairs"
+        ],
+        "indication_zh": [
+          "herb_card_key_pairs"
+        ],
+        "pair_meaning_en": [
+          "herb_card_key_pairs"
+        ],
+        "indication_en": [
+          "herb_card_key_pairs"
+        ],
+        "official_status": [
+          "not_claimed_as_official"
+        ]
+      },
+      "teaching_note_zh": "本條併入兩張卡的原敘述：herb.fang_feng 防風卡版（黃耆、白朮益氣固表，防風疏散表邪）與 herb.huang_qi 黃耆卡版（固表止汗，補氣固表兼疏散）。黃耆版多出的「止汗」功效定位已保留。兩版中英文皆為卡上原有，非代譯。"
+    },
+    {
+      "id": "pair.qiang_huo__fang_feng",
+      "herbs": [
+        "herb.qiang_huo",
+        "herb.fang_feng"
+      ],
+      "name_zh": "羌活配防風",
+      "name_en": "Qiang Huo with Fang Feng",
+      "ncbahm_official_pair": false,
+      "pair_meaning_zh": "發散風寒、勝濕止痛。",
+      "pair_meaning_en": "Disperses Wind-Cold, overcomes Dampness and stops pain.",
+      "indication_zh": "風寒濕痹、頭身疼痛（代表方：九味羌活湯）。",
+      "indication_en": "Wind-Cold-Damp painful obstruction with head and body pain (representative formula: Jiu Wei Qiang Huo Tang).",
+      "found_in_formulas": [
+        "formula.jiu_wei_qiang_huo_tang"
+      ],
+      "sources": [
+        "herb_canon_shortlist:herb.qiang_huo.key_pairs（卡上標示「2026 NCBAHM Appendix B 官方對藥」，本批核對後不成立，見 teaching_note）"
+      ],
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "migrated_from": "herb.qiang_huo.key_pairs",
+      "actions_zh": "發散風寒、勝濕止痛。",
+      "actions_en": "Disperses Wind-Cold, overcomes Dampness and stops pain.",
+      "indications_zh": "風寒濕痹、頭身疼痛（代表方：九味羌活湯）。",
+      "indications_en": "Wind-Cold-Damp painful obstruction with head and body pain (representative formula: Jiu Wei Qiang Huo Tang).",
+      "field_sources": {
+        "pair_meaning_zh": [
+          "herb_card_key_pairs"
+        ],
+        "indication_zh": [
+          "herb_card_key_pairs"
+        ],
+        "pair_meaning_en": [
+          "translation_of_zh"
+        ],
+        "indication_en": [
+          "translation_of_zh"
+        ],
+        "official_status": [
+          "ncbahm_appendix_b_claim_refuted_2026-08-27"
+        ]
+      },
+      "teaching_note_zh": "卡上標籤宣稱「2026 NCBAHM Appendix B 官方對藥」，但以 repo 內考綱正本 curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md 的 Appendix B 逐條核對後不成立（Appendix B 共 51 組、全部是二味對藥）。故本記錄不標 board_exam_pair／ncbahm_official_pair，配伍內容照卡上原文保留。宣稱本身留在藥卡標籤上未動，待 Ting 裁定該標籤怎麼改。"
+    },
+    {
+      "id": "pair.bai_zhi__cang_er_zi__xin_yi",
+      "herbs": [
+        "herb.bai_zhi",
+        "herb.cang_er_zi",
+        "herb.xin_yi"
+      ],
+      "name_zh": "白芷配蒼耳子、辛夷",
+      "name_en": "Bai Zhi with Cang Er Zi and Xin Yi",
+      "ncbahm_official_pair": false,
+      "pair_meaning_zh": "宣通鼻竅、散風止痛。",
+      "pair_meaning_en": "Opens the nasal orifices, disperses Wind and stops pain.",
+      "indication_zh": "鼻淵鼻塞（代表方：蒼耳子散）。",
+      "indication_en": "Nasal congestion and sinus disorder (representative formula: Cang Er Zi San).",
+      "found_in_formulas": [
+        "formula.cang_er_zi_san"
+      ],
+      "sources": [
+        "herb_canon_shortlist:herb.bai_zhi.key_pairs（卡上標示「2026 NCBAHM Appendix B 官方對藥」，本批核對後不成立，見 teaching_note）"
+      ],
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "migrated_from": "herb.bai_zhi.key_pairs",
+      "actions_zh": "宣通鼻竅、散風止痛。",
+      "actions_en": "Opens the nasal orifices, disperses Wind and stops pain.",
+      "indications_zh": "鼻淵鼻塞（代表方：蒼耳子散）。",
+      "indications_en": "Nasal congestion and sinus disorder (representative formula: Cang Er Zi San).",
+      "field_sources": {
+        "pair_meaning_zh": [
+          "herb_card_key_pairs"
+        ],
+        "indication_zh": [
+          "herb_card_key_pairs"
+        ],
+        "pair_meaning_en": [
+          "translation_of_zh"
+        ],
+        "indication_en": [
+          "translation_of_zh"
+        ],
+        "official_status": [
+          "ncbahm_appendix_b_claim_refuted_2026-08-27"
+        ]
+      },
+      "teaching_note_zh": "卡上標籤宣稱「2026 NCBAHM Appendix B 官方對藥」，但以 repo 內考綱正本 curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md 的 Appendix B 逐條核對後不成立（Appendix B 共 51 組、全部是二味對藥）。故本記錄不標 board_exam_pair／ncbahm_official_pair，配伍內容照卡上原文保留。宣稱本身留在藥卡標籤上未動，待 Ting 裁定該標籤怎麼改。"
+    },
+    {
+      "id": "pair.bai_zhi__chuan_xiong",
+      "herbs": [
+        "herb.bai_zhi",
+        "herb.chuan_xiong"
+      ],
+      "name_zh": "白芷配川芎",
+      "name_en": "Bai Zhi with Chuan Xiong",
+      "ncbahm_official_pair": false,
+      "pair_meaning_zh": "祛風止痛。",
+      "pair_meaning_en": "Dispels Wind and stops pain.",
+      "indication_zh": "前額、眉稜骨頭痛（代表方：川芎茶調散）。",
+      "indication_en": "Frontal and supraorbital headache (representative formula: Chuan Xiong Cha Tiao San).",
+      "found_in_formulas": [
+        "formula.chuan_xiong_cha_tiao_san"
+      ],
+      "sources": [
+        "herb_canon_shortlist:herb.bai_zhi.key_pairs（卡上標示「2026 NCBAHM Appendix B 官方對藥」，本批核對後不成立，見 teaching_note）"
+      ],
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "migrated_from": "herb.bai_zhi.key_pairs",
+      "actions_zh": "祛風止痛。",
+      "actions_en": "Dispels Wind and stops pain.",
+      "indications_zh": "前額、眉稜骨頭痛（代表方：川芎茶調散）。",
+      "indications_en": "Frontal and supraorbital headache (representative formula: Chuan Xiong Cha Tiao San).",
+      "field_sources": {
+        "pair_meaning_zh": [
+          "herb_card_key_pairs"
+        ],
+        "indication_zh": [
+          "herb_card_key_pairs"
+        ],
+        "pair_meaning_en": [
+          "translation_of_zh"
+        ],
+        "indication_en": [
+          "translation_of_zh"
+        ],
+        "official_status": [
+          "ncbahm_appendix_b_claim_refuted_2026-08-27"
+        ]
+      },
+      "teaching_note_zh": "卡上標籤宣稱「2026 NCBAHM Appendix B 官方對藥」，但以 repo 內考綱正本 curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md 的 Appendix B 逐條核對後不成立（Appendix B 共 51 組、全部是二味對藥）。故本記錄不標 board_exam_pair／ncbahm_official_pair，配伍內容照卡上原文保留。宣稱本身留在藥卡標籤上未動，待 Ting 裁定該標籤怎麼改。"
+    },
+    {
+      "id": "pair.xi_xin__ma_huang__fu_zi",
+      "herbs": [
+        "herb.xi_xin",
+        "herb.ma_huang",
+        "herb.fu_zi"
+      ],
+      "name_zh": "細辛配麻黃、附子",
+      "name_en": "Xi Xin with Ma Huang and Fu Zi",
+      "ncbahm_official_pair": false,
+      "pair_meaning_zh": "助陽解表、溫經散寒。",
+      "pair_meaning_en": "Assists Yang to release the Exterior, warms the channels and scatters Cold.",
+      "indication_zh": "陽虛外感、少陰病（代表方：麻黃細辛附子湯）。",
+      "indication_en": "Exterior invasion with Yang deficiency, Shao Yin disease (representative formula: Ma Huang Xi Xin Fu Zi Tang).",
+      "found_in_formulas": [],
+      "sources": [
+        "herb_canon_shortlist:herb.xi_xin.key_pairs（卡上標示「2026 NCBAHM Appendix B 官方對藥」，本批核對後不成立，見 teaching_note）"
+      ],
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "migrated_from": "herb.xi_xin.key_pairs",
+      "actions_zh": "助陽解表、溫經散寒。",
+      "actions_en": "Assists Yang to release the Exterior, warms the channels and scatters Cold.",
+      "indications_zh": "陽虛外感、少陰病（代表方：麻黃細辛附子湯）。",
+      "indications_en": "Exterior invasion with Yang deficiency, Shao Yin disease (representative formula: Ma Huang Xi Xin Fu Zi Tang).",
+      "field_sources": {
+        "pair_meaning_zh": [
+          "herb_card_key_pairs"
+        ],
+        "indication_zh": [
+          "herb_card_key_pairs"
+        ],
+        "pair_meaning_en": [
+          "translation_of_zh"
+        ],
+        "indication_en": [
+          "translation_of_zh"
+        ],
+        "official_status": [
+          "ncbahm_appendix_b_claim_refuted_2026-08-27"
+        ]
+      },
+      "teaching_note_zh": "卡上標籤宣稱「2026 NCBAHM Appendix B 官方對藥」，但以 repo 內考綱正本 curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md 的 Appendix B 逐條核對後不成立（Appendix B 共 51 組、全部是二味對藥）。故本記錄不標 board_exam_pair／ncbahm_official_pair，配伍內容照卡上原文保留。宣稱本身留在藥卡標籤上未動，待 Ting 裁定該標籤怎麼改。 代表方麻黃細辛附子湯本庫尚無方劑卡，found_in_formulas 留空。"
+    },
+    {
+      "id": "pair.cang_er_zi__xin_yi__bai_zhi__bo_he",
+      "herbs": [
+        "herb.cang_er_zi",
+        "herb.xin_yi",
+        "herb.bai_zhi",
+        "herb.bo_he"
+      ],
+      "name_zh": "蒼耳子配辛夷、白芷、薄荷",
+      "name_en": "Cang Er Zi with Xin Yi, Bai Zhi and Bo He",
+      "ncbahm_official_pair": false,
+      "pair_meaning_zh": "宣通鼻竅、散風止痛。",
+      "pair_meaning_en": "Opens the nasal orifices, disperses Wind and stops pain.",
+      "indication_zh": "鼻淵鼻塞、流濁涕（代表方：蒼耳子散）。",
+      "indication_en": "Nasal congestion with turbid discharge and sinus disorder (representative formula: Cang Er Zi San).",
+      "found_in_formulas": [
+        "formula.cang_er_zi_san"
+      ],
+      "sources": [
+        "herb_canon_shortlist:herb.cang_er_zi.key_pairs（卡上標示「2026 NCBAHM Appendix B 官方對藥」，本批核對後不成立，見 teaching_note）"
+      ],
+      "review_status": "draft",
+      "authored_by": "Claude",
+      "migrated_from": "herb.cang_er_zi.key_pairs",
+      "actions_zh": "宣通鼻竅、散風止痛。",
+      "actions_en": "Opens the nasal orifices, disperses Wind and stops pain.",
+      "indications_zh": "鼻淵鼻塞、流濁涕（代表方：蒼耳子散）。",
+      "indications_en": "Nasal congestion with turbid discharge and sinus disorder (representative formula: Cang Er Zi San).",
+      "field_sources": {
+        "pair_meaning_zh": [
+          "herb_card_key_pairs"
+        ],
+        "indication_zh": [
+          "herb_card_key_pairs"
+        ],
+        "pair_meaning_en": [
+          "translation_of_zh"
+        ],
+        "indication_en": [
+          "translation_of_zh"
+        ],
+        "official_status": [
+          "ncbahm_appendix_b_claim_refuted_2026-08-27"
+        ]
+      },
+      "teaching_note_zh": "卡上標籤宣稱「2026 NCBAHM Appendix B 官方對藥」，但以 repo 內考綱正本 curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md 的 Appendix B 逐條核對後不成立（Appendix B 共 51 組、全部是二味對藥）。故本記錄不標 board_exam_pair／ncbahm_official_pair，配伍內容照卡上原文保留。宣稱本身留在藥卡標籤上未動，待 Ting 裁定該標籤怎麼改。"
     }
   ],
   "updated_at": "2026-07-30",

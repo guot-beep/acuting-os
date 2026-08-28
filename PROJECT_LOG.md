@@ -1,3 +1,77 @@
+# 2026-08-27 — 解表批做到一半發現歸屬錯誤:考綱正本核對出 24 項假宣稱,我自己傳播了 5 項
+
+原本是遷移第 4 批(解表 10 條)。動工前照慣例查證,發現這批有 6 條標「2026 NCBAHM
+Appendix B 官方對藥」,而**那份考綱正本就在 repo 裡**(`curriculum/board/NCBAHM_CH_...md`,
+已有抽出的 markdown),從來沒有人拿它核對過。一核就出事,所以本條**歸屬修正是主體,遷移是附帶**。
+
+## 核對結果:Appendix B 全部是二味對藥,共 51 組
+| 稽核對象 | 宣稱數 | 成立 | 不成立 |
+|---|---|---|---|
+| 藥卡 `key_pairs` 標籤宣稱 NCBAHM | 20 | 10 | **10** |
+| `herb_pairs` 標 `ncbahm_official_pair:true` | 67 | 53 | **14** |
+
+不成立的 14 筆 = **9 筆既有**(3–4 味組合,但 Appendix B 全為二味)+ **5 筆是我第 1–3 批
+照卡上標籤設的**。
+**我的 5 筆已訂正為 false**(只動 `ncbahm_official_pair` 與 `teaching_note_zh` 兩欄,
+逐筆 assert 未動其他欄位):`dan_shen__tan_xiang__sha_ren`、`wu_ling_zhi__pu_huang`、
+`zhu_ling__fu_ling__ze_xie`、`ze_xie__bai_zhu`、`fu_shen__suan_zao_ren__yuan_zhi`。
+Bastyr 那一半仍無正本可核,`board_exam_pair` 維持原狀不作更強宣稱。
+
+**排除 3 項假警報**:旱蓮草/墨旱蓮、沙參/北沙參、辛夷/辛夷花 —— 考綱與本庫用不同名字指同一味藥,
+是**重複卡與命名問題,不是歸屬錯誤**。驗證器加了中文名/別名交集的同藥分群才分得開。
+(順帶紅旗:`herb.han_lian_cao` 旱蓮草與 `herb.mo_han_lian` 墨旱蓮、`herb.sha_shen` 沙參與
+`herb.bei_sha_shen` 北沙參 各是兩張卡指同一味藥,是否該併留 Ting。)
+
+## 新增 `scripts/validate-board-pair-attribution.js`
+拿 repo 內考綱正本逐條核對「NCBAHM 官方對藥」宣稱。三個設計重點:
+1. **解析出 0 組一律 FAIL,不允許空跑通過。** 初版就踩到:考綱內文第 36 行有一句
+   「See Appendix B.」,`findIndex` 抓到它讓區段落在錯地方,解析出 0 組,
+   於是「該組合不在清單上」對每一條都成立 —— 一份看起來很有說服力、實際上全錯的報告。
+   錨點改成行首 `^Appendix B\.` 後才是 51 組。**這種假報告比沒有報告更危險。**
+2. **既有待裁清單 13 項具名放行,清單以外一律 FAIL,而且清單只能變短**(修好的會提示可刪行)。
+   既有問題是內容決定,等 Ting 裁;但不准再多。
+3. **負向測試做過**:注入一筆假 `ncbahm_official_pair:true` → `FAIL — 1 項新的歸屬不符`;
+   還原 → PASS。
+
+## 遷移第 4 批(解表 10 條)—— 全部不標 board 旗標
+本批 6 條的 Appendix B 宣稱**核對後全不成立**,故 10 筆記錄一律
+`ncbahm_official_pair:false`、**不加 `board_exam_pair`/`relation:board_exam`**,
+`field_sources.official_status` 標 `ncbahm_appendix_b_claim_refuted_2026-08-27`,
+核對結論寫進每筆 `teaching_note_zh`。**配伍內容照卡上原文保留,只是不再宣稱它是考綱官方。**
+卡上那句宣稱**留著沒動**(那是標籤文字,改法待 Ting 裁),但已列入驗證器的待裁清單。
+
+掛方 5 條(玉屏風散、九味羌活湯、蒼耳子散 ×2、川芎茶調散,均逐味比對組成);
+香薷飲與麻黃細辛附子湯本庫無方劑卡,留空不填未建之方。
+
+**又一次內容併入**:移除時發現 `herb.huang_qi` 黃耆卡也有一條同組成的「黃耆 + 白朮・防風」,
+開頭是「**固表止汗**」,多出「止汗」這個功效定位,不是防風版的子集 ——
+兩版併入 `pair.fang_feng__huang_qi__bai_zhu` 後才移除兩卡副本,中英皆為卡上原文非代譯。
+(第 3 批的桂枝/茯苓也是同一型;**跨卡同組成的兩份敘述要先比對再合,不能直接丟一邊**。)
+
+## 數字
+pairs 253 → **263**;卡上 authored 43 味/74 條 → **30 味/45 條**(移除 11 條,含 1 條跨卡);
+孤兒條目 27 → **16**;歸屬不符 24 → **13**(全為既有待裁)。既有 253 筆逐筆比對零改動。
+
+## 驗證(在 28628c16 基底上全跑,輸出原文)
+- `build-data` → `{"formulas":223,"herbs":364,...,"audit_missing":0}`
+- `validate-herb-standard` → `PASS — no structural defects.`
+- `validate-content-junk` → `PASS — no scraped header tokens, no encoding anomalies in _zh fields.`
+- `validate-dose-basis` → `PASS — dose_basis 標示全部合規。`
+- `validate-herb-pair-render` → `PASS`
+- `validate-board-pair-attribution`(新) → `PASS — 沒有新的歸屬錯誤(既有 13 項在待裁清單內)。`
+- `check-validation-ratchet` → `PASS — no regressions.`
+- `git diff --check` → 無輸出
+
+## 留 Ting 裁定(三項)
+1. **既有 9 筆 herb_pairs 的假 NCBAHM 標記**(3–4 味組合)—— 改 false 還是另立「非考綱但重要組合」的標?
+2. **4 條藥卡標籤的假宣稱**(羌活+獨活、細辛+乾薑+五味子、滑石+甘草、延胡索+川楝子)——
+   標籤文字怎麼改?
+3. **重複卡**:旱蓮草/墨旱蓮、沙參/北沙參 各兩張卡指同一味藥。
+
+MEASURED TREE: claude/practical-easley-73f009 @ origin/main 28628c16 + 本批
+
+---
+
 # 2026-08-27 — 考綱官方對藥遷移第 3 批(利水滲濕組):15 條建記錄 + 18 條卡上副本移除
 
 **pairs 238 → 253;卡上 authored 43 味/74 條 → 34 味/56 條;孤兒條目 45 → 27。
