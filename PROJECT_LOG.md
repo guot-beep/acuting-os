@@ -1,3 +1,57 @@
+# 2026-08-27 — Ting 裁定第 4、7 項:第 4 項你 8/14 就做完了不必再做;第 7 項兩味都無來源,不建卡,開派工單
+
+## 第 4 項「可以合併但是要標註」——已經做完了,不再動
+去讀那兩組卡才發現:`herb.han_lian_cao` 旱蓮草與 `herb.sha_shen` 沙參
+**`review_status` 早就是 `deprecated`,而且零引用**(藥對 0、方劑 0)。
+兩張退役卡的 `deprecated_note_zh` 是 2026-08-14 你自己那次裁定(DECISIONS.md D21,
+「SOL 鑑定四組中藥重複卡 + Ting 裁定 2026-08-14『四組照建議 沙參方案A』」)留下的,內容比我會寫的更完整:
+逐欄記錄了遷移了哪些欄位、哪些沒遷移、為什麼(例如沙參卡的
+`name_en「Glehniae / Adenophorae Radix」為北/南沙參拉丁學名混寫,依 Ting 裁定明確排除`;
+茜草根卡的三個裸網域來源「未攜帶新增臨床事實,未遷移」)。
+**同批退役的還有 `herb.wu_zei_gu` 烏賊骨、`herb.qian_cao_gen` 茜草根,共四組。**
+
+**我為什麼會誤報**:歸屬驗證器的拼音比對把「考綱寫 Han Lian Cao / Sha Shen、藥對用
+herb.mo_han_lian / herb.bei_sha_shen」判成不符。那是**驗證器不認得同一味藥的兩張卡**,
+不是資料有問題 —— 已在同日前一批加了「中文名+別名交集分群」修掉。
+**結論:第 4 項無事可做,一個字都沒動。**
+
+## 第 7 項「好 補卡」——查證後兩味都不建,理由逐味列
+| 藥味 | repo 內來源 | 結論 |
+|---|---|---|
+| 海風藤 | `curriculum/` 5 個檔提到,但**全部只是功效索引表裡的一個名字**(Herb Functions.md L74/L177/L464/L498、Materia Medica Abbbreviated.md L1188)——**沒有任何一處寫性味、歸經、劑量、禁忌** | 課件不足以建卡 |
+| 禹餘糧 | `curriculum/` 與 `curriculum/board/` 四份考綱**完全查無** | repo 內零來源 |
+兩味也都**不在 NCBAHM CH 2026 考綱的中藥清單上**(已 grep 確認),所以補卡的價值是
+「收掉藥對層最後 4 條孤兒中的 2 條」,不是考綱需求。
+
+**憲法紅線四:劑量、毒性、孕期、藥物交互絕不虛構,必須具名來源。**
+在沒有外部來源可查證的情況下建卡 = 用同類藥推想填滿,那正是這幾批一直在清的東西。
+**所以我不建,改開派工單。**「查不到」是有價值的答案。
+
+## 開了 Task 11D 派工單(`docs/ANTIGRAVITY_HANDOFF.md` 置頂)
+憲法五要求的五項齊備:允許的檔案(只有 `herb_canon_shortlist.json` 且只准新增 2 筆)、
+禁止的檔案(**特別點名不要動 `herb_pairs.json`**,藥對等卡進來由 Claude 接手,因為要處理
+「代表方本庫沒有」「豬蹄不補」那幾個判斷)、id 清單(2 筆)、驗證指令(六支+分母重跑
+364→366,多一筆少一筆都要回頭查)、完成的定義(含「任一味查不到就只建另一味並回報查過哪些站;
+兩味都查不到就整批回報不建,**這是可接受的結果**」)。
+派工單裡把 Claude 已經查過的死路寫進去,避免重複踩:海風藤課件只有索引名、禹餘糧 repo 零來源。
+
+## 順帶記下、本批未動的兩件事
+1. **`review_status` 欄有 39 筆填的是 `sourced_cloudtcm_record`** —— 那是 `source_type` 的值。
+   取值分佈:draft 277、**sourced_cloudtcm_record 39**、source_checked 37、undefined 5、
+   deprecated 4、draft_reviewed 1、reviewed 1。同一個值同時出現在兩個欄位,像是欄位填錯,
+   但 39 筆要怎麼改是內容決定(改成 draft?還是這個庫本來就把 review_status 當 source 用?),
+   **不猜著改**,留 Ting。
+2. 豬蹄不是中藥,建議在孤兒清單裡永久排除,不要每次掃描都再出現一次。
+
+## 驗證(在 15f3d1f3 基底上,本批只動 docs/,資料零變動)
+`validate-herb-standard`、`validate-content-junk`、`validate-herb-pair-render`、
+`validate-board-pair-attribution`、`check-validation-ratchet` 全 PASS;`git diff --check` 無輸出。
+`data/**` 本批**一個字都沒改**。
+
+MEASURED TREE: claude/practical-easley-73f009 @ origin/main 15f3d1f3 + 本批
+
+---
+
 # 2026-08-27 — Ting 裁定執行(第 1、2、5、6、8 項):把「假」改成「未確認」;補三個關係詞條;第 8 項我報錯了不改
 
 ## 第 8 項:我的報告是錯的,不動

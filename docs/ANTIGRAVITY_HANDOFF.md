@@ -1,3 +1,74 @@
+## 📋 新派工 Task 11D（2026-08-27，Ting 裁定「好 補卡」）——建 2 張中藥卡：海風藤、禹餘糧
+
+**MEASURED TREE：`origin/main` @ `15f3d1f3`**。開工前自己重跑分母指令（在最後）。
+
+**為什麼要這兩張**：不是考綱需求（兩味都**不在** NCBAHM CH 2026 考綱的中藥清單上，已 grep 確認）。
+補了它們是為了收掉藥對層最後 4 條孤兒中的 2 條——目前這 4 條卡在「標籤裡有一味藥沒有卡」：
+
+| 卡上條目 | 缺的藥味 | 補了之後 |
+|---|---|---|
+| `herb.jiang_huang`「薑黃 + 羌活 + 桑枝 + **海風藤**」 | 海風藤 | 可建 `pair.jiang_huang__qiang_huo__sang_zhi__hai_feng_teng` |
+| `herb.chi_shi_zhi`「赤石脂 + **禹餘糧**」 | 禹餘糧 | 可建 `pair.chi_shi_zhi__yu_yu_liang`（代表方赤石脂禹餘糧湯，本庫亦無方劑卡） |
+| `herb.wang_bu_liu_xing`、`herb.tong_cao` 的兩條 | **豬蹄** | **不補**——豬蹄是食材不是中藥，建議永久排除 |
+
+### ⚠️ 這批最大的坑：**本庫沒有這兩味的來源**，所以這是「查證任務」不是「填表任務」
+
+Claude 已經查過，結論如下，**不要重複踩**：
+
+- **海風藤**：`curriculum/` 有 5 個檔提到，但**全部只是功效索引表裡的一個名字**
+  （`Herb Functions.md` L74/L177/L464/L498、`Materia Medica Abbbreviated.md` L1188），
+  **沒有任何一處寫它的性味、歸經、劑量、禁忌**。課件不足以建卡。
+- **禹餘糧**：`curriculum/` 與 `curriculum/board/` 四份考綱**完全查無**。repo 內零來源。
+
+所以**兩張卡都必須靠外部具名來源**（American Dragon / CloudTCM / 藥典）逐欄查證。
+**憲法紅線四：劑量、毒性、孕期、藥物交互絕不虛構，必須具名來源；兩源不合就兩個都記並標出處。**
+**查不到就回報「查不到」——那是有價值的答案，不准用同類藥推想填滿。**
+
+### 允許改的檔案
+- `data/herbs/herb_canon_shortlist.json`（只准**新增** 2 筆記錄）
+
+### 禁止改的檔案
+- 其他所有 `data/**`、`js/**`、`scripts/**`、`docs/**`、`curriculum/**`
+- **特別是不要動 `herb_pairs.json`**——藥對等這兩張卡進來之後由 Claude 接手建，
+  因為要處理「代表方本庫沒有」「豬蹄不補」那幾個判斷。
+- 4 張 `review_status: deprecated` 的卡一律不准碰。
+
+### 這批的 id 清單（就 2 筆，不多做）
+- `herb.hai_feng_teng` 海風藤（Piperis kadsurae Caulis；祛風濕藥）
+- `herb.yu_yu_liang` 禹餘糧（Limonitum；收澀藥）
+（拉丁名與分類是建議起點，**以你查到的來源為準，不合就照來源並註明**。）
+
+### 欄位要求
+照 `docs/HERB_CARD_TEMPLATE.md`。最低限度必須有且逐欄標來源：
+`id / name_zh / name_en / pinyin（無聲調）/ pharmaceutical_latin / category /
+properties_taste_temp / channels_zh + channels_en（等長）/ functions_zh + actions_en（等長）/
+indications_zh + indications_en（等長）/ dosage_g / contraindications_zh + _en / cautions_zh + _en /
+exact_source_url / safety_source_url / review_status: "draft" / authored_by / source_type`
+**`_en` 陣列長度必須等於 `_zh`，否則整個留空**（紅線五）。**`_zh` 欄位裡不准出現英文句子。**
+
+### 驗證指令（收工必跑，輸出原文貼回報）
+```
+export PATH="/c/Program Files/nodejs:$PATH"
+node scripts/build-data.js
+node scripts/validate-herb-standard.js
+node scripts/validate-content-junk.js
+node scripts/validate-herb-pair-render.js
+node scripts/validate-board-pair-attribution.js
+node scripts/check-validation-ratchet.js
+git diff --check
+```
+分母重跑：`node -e "const j=require('./data/herbs/herb_canon_shortlist.json');console.log(j.records.length)"`
+（現在 364，做完應為 366；**只准變成 366，多一筆少一筆都要回頭查**。）
+
+### 完成的定義
+1. `herb_canon_shortlist.json` 新增這 2 筆、既有 364 筆**逐筆 JSON 比對零改動**（寫入前 assert）
+2. 上面六支驗證器全 PASS，`git diff --check` 無輸出
+3. 每一個劑量/毒性/禁忌欄位都有具名來源網址；**沒查到的欄位留空並在回報裡列出來**，
+   不准用「一般而言」「同類藥多為」這種話填
+4. 回報逐欄位列數字，附驗證器輸出原文
+5. **任一味查不到足夠來源 → 只建另一味，並把查不到的那味連同查過哪些站一起回報**；
+   兩味都查不到就整批回報不建，這是可接受的結果
+
 ## 📋 新派工 Task 11C（2026-08-27，Ting 指派）——補中藥引用網址，**這一項會動資料，規矩比 11A/11B 嚴**
 
 **MEASURED TREE：`origin/main` @ `8ba58677`**。分母開工前自己重跑一次（指令在最後）。
