@@ -21613,7 +21613,7 @@
    ],
    "cautions_en": [
     "Contraindicated in Qi deficiency, Yin deficiency, Spleen-Stomach weakness, and pregnancy — Gan Sui is Cool in nature and may deplete Qi and Blood, worsening these deficiency patterns; pregnant women are especially sensitive and should not use Gan Sui.",
-    "Avoid combining with Gan Cao (Licorice) — concurrent use produces incompatible pharmacological effects and reduces Gan Sui's purgative action.",
+    "Eighteen Antagonisms: Gan Sui is incompatible with Gan Cao (Licorice) — do not combine (an absolute prohibition, matching the corresponding entry on the Gan Cao card).",
     "Avoid in Spleen-Stomach Deficiency-Cold, diarrhea, abdominal pain, or abdominal distension — Gan Sui is Cold in nature and may worsen diarrhea, abdominal pain, and abdominal distension in Spleen-Stomach Deficiency-Cold.",
     "Concurrent use with antidiarrheal agents, diuretics, cardiac glycosides, or hypoglycemic drugs may cause adverse reactions — use only under medical supervision.",
     "Not for prolonged use — long-term use of Gan Sui may cause diarrhea, dehydration, and electrolyte imbalance; use only under medical supervision."
@@ -21651,6 +21651,13 @@
      "reason": "中國藥典甘遂性味為「苦，寒；有毒」(WebSearch 2026-08-28 核對)；本卡原值同時列「有毒」與「大毒」兩個不同毒性等級(自相矛盾)，並多出無來源支持的「甘」味，先搬存再改。",
      "moved_at": "2026-08-28",
      "ruling": "A13(b) CloudTCM re-verification against 中國藥典/CloudTCM ground truth"
+    },
+    {
+     "original_field": "cautions_en[1]",
+     "text": "Avoid combining with Gan Cao (Licorice) — concurrent use produces incompatible pharmacological effects and reduces Gan Sui's purgative action.",
+     "reason": "A7(a)(2026-08-27,先於本次任務)已把 cautions_zh[1] 的十八反敘述從「降低藥效」改為絕對禁同用(與 herb.gan_cao 卡同向)，但英文鏡像未同步更新，兩語言讀者看到方向相反的安全訊息。開卡片眼讀(dispatch 強制步驟)時發現，依已核准的 A7(a) 方向補正英文，非新的臨床判斷。",
+     "moved_at": "2026-08-28",
+     "ruling": "A13(b) 延續 A7(a) 之更正，補英文鏡像"
     }
    ],
    "dosage_normalized": {
