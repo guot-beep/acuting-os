@@ -1,3 +1,13 @@
+# 2026-08-27 — Codex Conditions 電解質／酸鹼病因 B45
+
+- **範圍**：精確修改 `cond.hypercalcemia`、`cond.hypocalcemia`、`cond.hyperkalemia`、`cond.hypokalemia`、`cond.metabolic_acidosis`、`cond.hyponatremia`；只補雙語 etiology、record sources 與對應 field provenance，既有安全欄位、acupuncture scope、中醫 relations、方劑與穴位未覆寫。
+- **數字**：六卡分別 `9→11`、`10→12`、`9→11`、`10→12`、`9→11`、`10→12/12`，全數由 partial 進入 full；`FULL_DETAIL_CANDIDATE 319→325`、`DETAIL_PARTIAL 186→180`、`SKELETON 0→0`；全庫缺 etiology `152→146`、缺 sources `138→132`；source entries `1017→1029`、有 record source 的卡 `367→373`。
+- **來源／臨床區分**：NIH/NLM MedlinePlus、NCBI Bookshelf StatPearls 與 Endotext；12 個疾病特異直接 URL 均 HTTP 200。內容區分真實與假性鈣／鉀／鈉異常、PTH-dependent 與 suppressed-PTH 高血鈣、PTH response 低血鈣、腎排泄／細胞轉移／外源負荷鉀異常、high-gap 與 normal-gap metabolic acidosis，以及低血鈉的 tonicity 與 volume-state 分類。
+- **驗證**：只變更 6 個指定 id 的 4 個允許欄位群，其他 499 卡逐記錄不變；condition standard `505/505 clean`、build-data、relations、relation registry、ratchet、content-junk、URL reachability、generated data、逐卡 score 與 `git diff --check` 均無新增 blocking defect。
+- **未解／下一步**：`FULL_DETAIL_CANDIDATE` 只表示 schema 成熟度，不代表 Ting RV1 或既有 scope／red-flag provenance 已核准；本批未提供電解質矯正速率、補充劑量或中藥自療指示。全庫仍有 `180` 張 partial／`146` 張病因缺口，下一批可轉向常見 endocrine Conditions。
+
+---
+
 # 2026-08-27 — Codex Conditions GI 病因缺口收斂 B44
 
 - **範圍**：精確修改 `cond.hiatal_hernia`、`cond.chronic_hepatitis_b`、`cond.primary_biliary_cholangitis`、`cond.sibo`、`cond.duodenitis`、`cond.upper_gi_bleeding`；只補雙語 etiology、record sources 與對應 field provenance，既有安全、TCM relations、方劑與穴位未覆寫；GI 類別缺雙語 etiology `6→0`。
@@ -4726,5 +4736,3 @@ Current repo state as of this log:
 - **來源與邊界**：使用 NIH/NEI、NIH/NLM MedlinePlus、NHS、Guy's and St Thomas' NHS 與 Moorfields Eye Hospital NHS；10 個直接內容頁皆 HTTP 200。分清穩定老化飛蚊／急性 retinal warning、眼壓過高／glaucoma／acute angle closure、弱視／斜視、真斜視／假性斜視，以及單純流淚／阻塞／感染性淚囊炎。
 - **驗證**：來源狀態；dry-run/apply `20 operations / 5 ids / skipped 0 / missing 0`；fill 與 canonical/generated 逐欄 equality、逐記錄 boundary diff；`build-data`、condition standard `505/505 clean`、ratchet、sources `899`、relation registry、content-junk、maturity audit、`git diff --check` 均無新增 defect。
 - **未解**：本批未改既有 summary、red flags、risk 或 scope；8 個 frozen control-character 與 formula generic dosage 警告屬其他線且未增加。下一批依 Ting 指示轉入 Conditions 內中醫病名內容，須先依 `CONDITION_CARD_TEMPLATE` 與 condition-fill skill 重建稽核基線。
-
----

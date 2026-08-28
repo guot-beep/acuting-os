@@ -1,5 +1,13 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-27] Codex Handoff — Conditions electrolyte/acid-base etiologies B45
+
+- **Exact ids / fields**: `cond.hypercalcemia`, `cond.hypocalcemia`, `cond.hyperkalemia`, `cond.hypokalemia`, `cond.metabolic_acidosis`, and `cond.hyponatremia`; filled only bilingual etiology, record-level sources, and matching field provenance. Existing safety content, acupuncture scope, TCM relations, formulas, and acupoints were preserved.
+- **Measured delta**: card scores `9→11`, `10→12`, `9→11`, `10→12`, `9→11`, and `10→12/12`, with all six promoted from partial to full; maturity `319→325 FULL_DETAIL_CANDIDATE`, `186→180 DETAIL_PARTIAL`, `0→0 SKELETON`; missing etiology `152→146`, missing sources `138→132`; source entries `1017→1029`, sourced records `367→373`.
+- **Evidence / distinctions**: NIH/NLM MedlinePlus, NCBI Bookshelf StatPearls, and Endotext; all twelve disease-specific direct URLs returned HTTP 200. Distinguished true from pseudo calcium/potassium/sodium abnormalities, PTH-dependent from suppressed-PTH hypercalcemia, hypocalcemia by PTH response, potassium excretion/shift/load mechanisms, high- versus normal-anion-gap metabolic acidosis, and hyponatremia by tonicity and volume state.
+- **Validation**: only six exact ids and four allowed field groups changed; the other 499 records remained equal. Condition standard `505/505 clean`, build-data, relations, relation registry, validation ratchet, content junk, URL reachability, generated-data rebuild, per-card score comparison, and `git diff --check` produced no new blocking defect.
+- **Explicit unresolved / next line**: `FULL_DETAIL_CANDIDATE` is schema maturity only, not Ting RV1 approval or item-level approval of existing scope/red-flag provenance. This batch adds no electrolyte correction rates, replacement doses, or self-treatment directions. There remain 180 partial records and 146 etiology gaps; continue common endocrine Conditions with disease-specific official sources.
+
 ## [2026-08-27] Codex Handoff — Conditions GI etiology-gap closure B44
 
 - **Exact ids / fields**: `cond.hiatal_hernia`, `cond.chronic_hepatitis_b`, `cond.primary_biliary_cholangitis`, `cond.sibo`, `cond.duodenitis`, and `cond.upper_gi_bleeding`; filled bilingual etiology, record-level sources, and matching field provenance only. Existing safety content, TCM relations, formulas, and acupoints were preserved. Missing bilingual etiology in category `gi` is now `6→0`.
