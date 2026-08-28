@@ -49,6 +49,9 @@ node scripts/validate-exposure-safety-render.js  # 黑框警告有沒有帶到�
 node scripts/validate-care-draft-render.js       # 產生草稿按鈕接得上、取消真的不下載
 node scripts/validate-care-draft-phi.js          # 草稿不帶 patientCode/caseTitle,且從不宣稱已清乾淨
 node scripts/test-branch-mergeable.js            # 可合性 gate 自己不准發假紅燈(含 shallow clone)
+node scripts/validate-herb-pair-render.js        # 藥卡兩個藥對來源要併集顯示,不准一個 || 吞掉另一個
+node scripts/validate-board-pair-attribution.js  # 「考綱官方對藥」核不到正本就必須標未確認
+node scripts/validate-review-status-vocabulary.js # 狀態標籤不准印出生 enum(詞彙取自 knowledge.js)
 # 其他線：condition / tdis / pattern / symptom / comparison / formula-song
 node scripts/check-validation-ratchet.js   # 缺陷數不准變多
 ```

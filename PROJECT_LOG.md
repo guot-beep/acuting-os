@@ -1,3 +1,77 @@
+# 2026-08-28 — review_status 那 39 筆:查下去是 165 筆、兩種相反病因,外加一處手寫 pill 副本印小寫 draft
+
+Ting 裁「處理 review_status 那 39 筆」。查證後範圍與病因都跟原本報的不一樣,分成三件事處理。
+
+## 一、先查證,結果推翻了「填錯欄位」這個假設的一半
+我原本猜那 39 筆是把 `source_type` 的值複製到 `review_status`。**不是**:
+- 39 筆裡 **38 筆的 `source_type` 是 `formula_ingredient_gap_fill`**,只有 1 筆同值。
+  所以 `review_status` 那格不是 source_type 的複本,是**被拿來當第二個來源欄用**了。
+- 因此改欄之前必須先確認出處不會消失:**逐筆檢查 39/39 全部在
+  `exact_source_url`／`source_urls` 裡有 cloudtcm 網址**,出處完整保留在該保留的地方,改欄不遺失資訊。
+  (腳本把這條做成寫入前的 assert,任一筆沒有網址就中止不寫檔。)
+
+## 二、範圍其實是 165 筆,而且兩種病因處置相反
+`review_status` 是**會渲染**的欄位(`statusPill()` 拿它查 `STATUS_LABEL`,查不到就原樣印)。
+全庫掃 12 個記錄集合 1846 筆:
+| 值 | 筆數 | 病因 | 處置 |
+|---|---|---|---|
+| `skeleton` / `skeleton_unreviewed` | **124**(tdis 85、supplements 36、condition 3) | **合法狀態,渲染端沒收** | 改 `js/knowledge.js` 補標籤 |
+| `sourced_cloudtcm_record` | 39 | 來源描述誤入狀態欄 | 改資料 → `draft` |
+| `draft_reviewed` / `reviewed` | 2 | 詞彙外近義值 | 改資料 → `source_checked` |
+**只改 39 筆會漏掉 124 筆,而且那 124 筆改資料是錯的方向** —— 骨架卡狀態是本專案刻意的設計
+(C4/T4 安全檢查對它有專門的 carve-out)。
+
+那 2 筆(白蒺藜 `draft_reviewed`、炙甘草 `reviewed`)**不降級為 draft** —— 那會抹掉「審過」這個宣稱。
+映到詞彙內語意最近的 `source_checked`,但**這是就近映射不是重新查證**:兩筆的 `last_reviewed` 都是空的,
+無從得知誰在何時審的,已在註記逐筆寫明。
+**41 筆的舊值全部保存在新欄 `review_status_note_zh`,可逆。**
+
+## 三、順藤摸到一處手寫 pill 副本:證型大卡上 151 顆標籤印小寫 `draft`
+補完標籤後回畫面複查,發現還有 151 顆標籤印的是小寫 `draft` 而不是「草稿 Draft」。
+追到 `js/knowledge.js` 3080/3216 兩處**繞過 `statusPill()` 的手寫副本**:
+```
+<span class="k-status k-status-draft">${esc(p.review_status || p.status || "draft")}</span>
+```
+class 寫死 `k-status-draft`(不管實際狀態都套草稿樣式)、文字直接印原值。
+**手抄第二份就是這樣跟本尊分岔的(D13)。** 兩處改回叫 `statusPill()`。
+`styles.css` 補 `skeleton` 的樣式(比草稿更淡,骨架卡比草稿還空),並訂正該處註解
+——原註解說「沒有樣式的值…顯示原始字串」,這個前提已經不成立了。
+
+## 四、新 gate:`scripts/validate-review-status-vocabulary.js`
+**詞彙直接從 `js/knowledge.js` 的 `STATUS_LABEL` 解析,不在驗證器裡另抄一份**
+(抄第二份就會有一天不同步,而畫面照樣印得出來、只是印錯 —— 正是這批修的病)。
+掃 12 個記錄集合。回報時**不預設要改哪一邊**,兩種病因都寫在錯誤訊息裡讓下一個人判斷。
+- 解析不到 `STATUS_LABEL` 或解析出 0 個鍵 → FAIL,不允許空跑通過
+- **雙向負向測試做過**:注入一筆詞彙外資料值 → FAIL;把 `skeleton` 從 STATUS_LABEL 刪掉 → FAIL
+  (證明詞彙真的是單一來源,不是兩邊各寫一份)。還原 → PASS
+
+## 數字
+| | 修前 | 修後 |
+|---|---|---|
+| 詞彙外 `review_status`(全庫 1846 筆) | **165** | **0** |
+| 畫面上印生 enum 的狀態標籤 | 有 | 0 |
+| 畫面上印小寫 `draft` 的標籤 | 151 | **0** |
+| 正確渲染的標籤 | — | 草稿 1373 / 已核對來源 39 / 骨架卡 88 / 已退役 8 |
+| `check-validation-ratchet` 的 `herb_canon` 缺陷 | 5577 | **5538**(−39,已 `--update` 鎖入 baseline) |
+
+**眼讀(dev server)**:淡竹葉(原 `sourced_cloudtcm_record`)→「草稿 Draft」;
+白蒺藜(原 `draft_reviewed`)、炙甘草(原 `reviewed`)→「已核對來源 Source checked」;
+骨架卡 88 顆→「骨架卡 Skeleton」;小寫 draft 殘留 0;生 enum 殘留 0。
+
+## 驗證(在 b750ae67 基底上全跑)
+`build-data`、`validate-herb-standard`、`validate-content-junk`、`validate-dose-basis`、
+`validate-herb-pair-render`、`validate-board-pair-attribution`、
+`validate-review-status-vocabulary`(新)、`check-validation-ratchet` **全 PASS**;
+`git diff --check` 無輸出。三支新驗證器已登記到 `CLAUDE.md` 的驗證器清單。
+
+**自 diff**:`herb_canon_shortlist.json` 41 筆 × 2 欄(review_status + review_status_note_zh),
+逐筆 assert 確認未動其他欄位;`js/knowledge.js` STATUS_LABEL 補 2 個鍵 + 2 處手寫副本改叫 statusPill;
+`styles.css` 補 1 條規則 + 訂正註解;`validation_baseline.json` 鎖入改善;generated 隨批重建。
+
+MEASURED TREE: claude/practical-easley-73f009 @ origin/main b750ae67 + 本批
+
+---
+
 # 2026-08-27 — Claude 獨立驗收 Task 11A/11B/11C:全數通過,已落地(含一次自己抓到的驗證誤判)
 
 **11A(7 味有毒/管制藥材 safety_source_url 連線驗證)**：獨立打 `xiong_huang` 的網址確認頁面真實

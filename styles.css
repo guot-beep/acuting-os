@@ -4998,8 +4998,12 @@ a { color: var(--accent-dark); }
 }
 .k-status-draft { background: #f7efdc; }
 /* 已核對來源是 Ting 的 RV1 升級，值得跟草稿分辨得出來；deprecated 要一眼看出
-   是退役品。沒有樣式的值 = 樣板沒定義的值，維持預設灰底而且顯示原始字串。 */
+   是退役品；骨架卡比草稿還空(欄位在、內容待填)，用最淡的底色排在草稿之前。
+   沒有樣式的值維持預設底色 —— 但顯示文字現在一律走 js/knowledge.js 的 STATUS_LABEL，
+   不再印出生 enum(2026-08-28)。 */
 .k-status-source_checked { background: #e3efe1; color: #3f6b3a; }
+.k-status-skeleton,
+.k-status-skeleton_unreviewed { background: #f4f2ee; color: #8a8378; }
 .k-status-deprecated { background: #ece9e6; color: #6d6560; text-decoration: line-through; }
 .k-status-fertility { background: #f3e2da; color: var(--warn); }
 .k-missing { color: var(--warn); font-weight: 600; }

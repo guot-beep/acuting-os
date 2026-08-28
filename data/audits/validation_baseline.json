@@ -1,6 +1,6 @@
 {
   "note": "Defect-count ceiling per layer. CI fails if any count rises. Only ever lower this file — see scripts/check-validation-ratchet.js.",
-  "updated_at": "2026-08-27",
+  "updated_at": "2026-08-28",
   "rebaseline_history": [
     {
       "date": "2026-08-05",
@@ -88,7 +88,7 @@
       "doc": "docs/HERB_CARD_TEMPLATE.md"
     },
     "herb_canon": {
-      "defects": 5577,
+      "defects": 5538,
       "by_code": {
         "Top-level missing field: dataset": 1,
         "Top-level missing field: status": 1,
@@ -107,7 +107,7 @@
         "related formula does not exist: formula.chai_hu_gui_zhi_tang": 1,
         "related formula does not exist: formula.chai_hu_jia_long_gu_": 3,
         "related formula does not exist: formula.qiang_huo_sheng_shi_": 2,
-        "record review_status must remain draft for this staging file": 87,
+        "record review_status must remain draft for this staging file": 48,
         "related formula does not exist: formula.bai_tou_weng_tang": 2,
         "related formula does not exist: formula.qing_gu_san": 2,
         "related formula does not exist: formula.da_huang_mu_dan_tang": 1,

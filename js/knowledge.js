@@ -443,9 +443,18 @@
      the card rather than be dressed up as if it were a real state. The herb
      line still has 43 such records (validate-formula-standard F14 now blocks
      new ones on the formula side). */
+  /* 卡片右上那顆狀態標籤的受控詞彙。**這是唯一的一份**——
+     scripts/validate-review-status-vocabulary.js 直接從這裡解析,不另抄一份
+     (抄第二份就會有一天不同步,而畫面照樣印得出來,只是印錯)。
+     2026-08-28 補 skeleton / skeleton_unreviewed:這兩個是本專案刻意的狀態
+     (骨架卡:欄位在、內容待填,C4/T4 安全檢查對它們有專門的 carve-out),
+     但這張表沒收,於是 124 筆卡片的狀態格直接印出生 enum 字串
+     (tdis 85、supplements 36、condition 3)。是渲染端不認得,不是資料錯,所以補這裡。 */
   const STATUS_LABEL = {
     draft: "草稿 Draft",
     source_checked: "已核對來源 Source checked",
+    skeleton: "骨架卡 Skeleton",
+    skeleton_unreviewed: "骨架卡・未審 Skeleton, unreviewed",
     deprecated: "已退役 Deprecated"
   };
   function statusPill(status) {
@@ -3068,7 +3077,11 @@
               <button type="button" class="${!isEn ? 'is-active' : ''}" data-modal-lang="zh">🇹🇼 中文大卡</button>
               <button type="button" class="${isEn ? 'is-active' : ''}" data-modal-lang="en">🇺🇸 English Card</button>
             </div>
-            <span class="k-status k-status-draft">${esc(p.review_status || p.status || "draft")}</span>
+            ${/* 2026-08-28:這裡原本是手寫的一份 pill —— class 寫死 k-status-draft、
+                  文字直接印 review_status 原值。結果證型大卡上 151 顆標籤印的是小寫
+                  「draft」而不是「草稿 Draft」，而且不管實際狀態是什麼都套草稿的樣式。
+                  手抄第二份就是這樣跟本尊分岔的(D13)。改回叫 statusPill()。 */""}
+            ${statusPill(p.review_status || p.status)}
           </div>
 
           <div class="k-big-card-header">
@@ -3204,7 +3217,11 @@
         <article class="k-card k-pattern-card" data-record-id="${esc(p.id)}">
           <header>
             <strong>${isEn ? esc(p.name_en) : esc(p.name_zh)} <small>${isEn ? esc(p.name_zh) : esc(p.name_en)}</small></strong>
-            <span class="k-status k-status-draft">${esc(p.review_status || p.status || "draft")}</span>
+            ${/* 2026-08-28:這裡原本是手寫的一份 pill —— class 寫死 k-status-draft、
+                  文字直接印 review_status 原值。結果證型大卡上 151 顆標籤印的是小寫
+                  「draft」而不是「草稿 Draft」，而且不管實際狀態是什麼都套草稿的樣式。
+                  手抄第二份就是這樣跟本尊分岔的(D13)。改回叫 statusPill()。 */""}
+            ${statusPill(p.review_status || p.status)}
           </header>
           ${manifests.length ? `
             <div class="k-pattern-manifestations" style="margin-top: 0.4rem;">
