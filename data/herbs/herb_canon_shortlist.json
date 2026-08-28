@@ -103845,26 +103845,27 @@
    "related_formulas": [],
    "exam_importance": "非 2026 NCBAHM 考綱主表藥物；為臨床常用祛風濕通絡止痛藤類藥，常與桑枝、薑黃等配伍。",
    "exam_pearl": "海風藤 = 祛風濕 + 通經絡 + 止痛。微溫不燥，風寒濕痹筋脈拘攣之要藥，常與絡石藤（性涼）對比。",
-   "clinical_use_note": "海風藤為胡椒科藤莖，味辛苦微溫，長於通絡止痛、祛風除濕，主要用於風寒濕痹、關節疼痛與筋脈拘攣。因其性偏微溫，熱痹關節紅腫熱痛非其首選，宜慎用或改配清熱通絡藥（如絡石藤）。孕期安全性文獻記載不一，缺乏確切現代安全性依據，宜慎用；且不宜長期過量服用。",
+   "clinical_use_note": "海風藤為胡椒科藤莖，味辛苦微溫，長於通絡止痛、祛風除濕，特別適用於風寒濕痹、關節屈伸不利與筋脈拘攣。因其性偏微溫，熱痹關節紅腫熱痛者禁用，宜改配清熱通絡藥（如絡石藤）。安全方面：孕婦用藥歷代文獻記載不一（AD 載有說禁忌、有說安胎；CloudTCM 標孕婦不宜），本庫依安全從嚴原則標註孕婦禁用；並注意不可長期過量以防蓄積，服用期間監測血壓與胃腸反應。",
    "contraindications_zh": [
-    "尚無明確絕對禁忌記載；熱痹及孕期見慎用事項。"
+    "陰虛火旺或熱痹關節紅腫灼痛者禁用。",
+    "孕婦忌服（部分文獻標註慎服，依安全從嚴原則禁用）。"
    ],
    "contraindications_en": [
-    "No definitive absolute contraindications documented; see cautions for Heat Bi and pregnancy."
+    "Contraindicated in Yin deficiency with Fire or Heat Bi with red, swollen, hot joints.",
+    "Contraindicated during pregnancy (some literature notes caution; strict safety applied)."
    ],
    "cautions_zh": [
-    "海風藤性偏微溫，熱痹關節紅腫熱痛者非首選，宜慎用或改配清熱通絡藥（如絡石藤）。",
-    "孕期使用文獻記載不一（部分載慎服，部分載安胎），缺乏確切現代安全性依據，孕婦宜慎用。",
-    "不宜長期過量服用；服用期間宜注意監測血壓。"
+    "不可長期過量服用。",
+    "服用期間應監測血壓與胃腸反應。"
    ],
    "cautions_en": [
-    "Hai Feng Teng is slightly warm; it is not the first choice in Heat Bi with red swollen hot joints and should be used with caution or combined with heat-clearing herbs (such as Luo Shi Teng).",
-    "Pregnancy safety is inconsistent across historical sources (some cite caution, others cite calming fetus); due to lack of definitive modern safety data, use with caution during pregnancy.",
-    "Avoid long-term or excessive dosing; monitor blood pressure during administration."
+    "Do not use in excessive doses or over prolonged durations.",
+    "Monitor blood pressure and gastrointestinal reactions during use."
    ],
    "safety_flags": [
-    "heat_bi_caution",
-    "pregnancy_caution"
+    "pregnancy_contraindication",
+    "yin_deficiency_fire_contraindication",
+    "heat_bi_contraindication"
    ],
    "english_exam_track": {
     "review_status": "draft",
@@ -103881,7 +103882,7 @@
      "Gui Zhi, Wei Ling Xian, Qin Jiao, Dang Gui"
     ],
     "contraindications": [
-     "No absolute contraindications documented; use caution in Heat Bi and pregnancy."
+     "Contraindicated in Yin deficiency with Heat or Heat Bi; contraindicated during pregnancy."
     ]
    },
    "chinese_depth_track": {
@@ -103940,10 +103941,10 @@
      "https://cloudtcm.com/herb/4702"
     ],
     "contraindications_zh": [
-     "https://www.americandragon.com/Individualherbsupdate/HaiFengTeng.html"
+     "https://www.americandragon.com/Individualherbsupdate/HaiFengTeng.html",
+     "https://cloudtcm.com/herb/4702"
     ],
     "cautions_zh": [
-     "https://www.americandragon.com/Individualherbsupdate/HaiFengTeng.html",
      "https://cloudtcm.com/herb/4702"
     ],
     "clinical_use_note": [
