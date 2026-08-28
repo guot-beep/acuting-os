@@ -30881,21 +30881,22 @@
    "english_exam_track": {
     "review_status": "draft",
     "source_status": "bensky_review_pending",
-    "properties_taste_temp": "Draft: acrid/hot or warm; verify individual taste and temperature.",
+    "properties_taste_temp": "Acrid, bitter, hot; slightly toxic.",
     "functions": [
-     "Warm interior cold pattern context",
-     "Support cold abdominal pain or yang-collapse differentiation"
+     "Warms the middle, disperses cold, and alleviates pain",
+     "Redirects rebellious qi downward",
+     "Smoothes the Liver",
+     "Dries dampness"
     ],
     "indications": [
-     "Pattern documentation context only; verify against Bensky before source_checked."
+     "Disperses Cold and relieves pain; redirects rebellious Qi downward and stops vomiting; assists Yang and stops diarrhea"
     ],
     "common_pairings": [
-     "Pairings depend on formula context; verify against Bensky before source_checked."
+     "Combined within Wu Zhu Yu Tang for Jueyin (Liver-channel) headache with vomiting, and within Zuo Jin Wan with Huang Lian for Liver Fire invading the Stomach (see related_formulas)."
     ],
     "contraindications": [
-     "Review pregnancy review before clinical use.",
-     "Review toxicity review before clinical use.",
-     "Review dose preparation review before clinical use."
+     "Pungent, hot and drying — not to be used excessively or long-term, as it readily consumes Qi and stirs Fire.",
+     "Contraindicated in Yin deficiency with Fire blazing."
     ],
     "functions_zh_source": [
      "補陽",
@@ -31116,7 +31117,19 @@
     "contraindications_zh": [
      "由既有 cautions_zh 依「禁服/忌服」挑出，未新增內容"
     ],
-    "modern_functions_en": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
+    "modern_functions_en": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md",
+    "tcm_properties": [
+     "中國藥典(WebSearch 核對 2026-08-28，性味歸經一致)"
+    ],
+    "pharmaceutical_latin": [
+     "NCBAHM 2026 CH Content Outline, Appendix A (通用拉丁藥名)"
+    ],
+    "exam_pearl": [
+     "由本卡既有 dosage/cautions_zh 內容整理，未新增未查證宣稱"
+    ],
+    "exam_importance": [
+     "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf"
+    ]
    },
    "function_tags_zh": [
     "補陽",
@@ -31217,7 +31230,37 @@
      "moved_at": "2026-08-27",
      "ruling": "TING_RULING_SHEET_2026-08-27"
     }
-   ]
+   ],
+   "tcm_properties": {
+    "four_natures_zh": "熱",
+    "four_natures_en": "Hot",
+    "five_flavors_zh": [
+     "辛",
+     "苦"
+    ],
+    "five_flavors_en": [
+     "Acrid",
+     "Bitter"
+    ],
+    "meridian_tropism_zh": [
+     "肝經",
+     "脾經",
+     "胃經",
+     "腎經"
+    ],
+    "meridian_tropism_en": [
+     "LV Liver",
+     "SP Spleen",
+     "ST Stomach",
+     "KI Kidney"
+    ],
+    "part_used_zh": "近成熟果實",
+    "part_used_en": "Near-ripe Fruit"
+   },
+   "pharmaceutical_latin": "Evodiae Fructus",
+   "pinyin_toned": "Wú Zhū Yú",
+   "exam_pearl": "溫裡藥中善治厥陰頭痛的一味（吳茱萸湯），兼能降逆止嘔、助陽止瀉；辛熱燥烈，用量宜小（1-3g），陰虛火旺者忌服。",
+   "exam_importance": "★ NCBAHM 2026 CH 考綱 Domain I.A：溫裡藥安全用量與陰虛禁忌是常考點。"
   },
   {
    "id": "herb.xiao_hui_xiang",
@@ -33927,22 +33970,24 @@
    "english_exam_track": {
     "review_status": "draft",
     "source_status": "bensky_review_pending",
-    "properties_taste_temp": "Draft: acrid/bitter/warm or neutral depending on herb; verify individual taste and temperature.",
+    "properties_taste_temp": "Bitter, cold; slightly toxic.",
     "functions": [
-     "Regulate qi pattern context",
-     "Support distention, constraint, or food-stagnation differentiation"
+     "Regulates and moves Qi",
+     "Expels and kills parasites",
+     "Soothes the Liver and relieves constraint",
+     "Benefits the intestines and Stomach",
+     "Promotes bile flow",
+     "Moves Qi and relieves pain",
+     "Resolves toxicity and kills parasites"
     ],
     "indications": [
-     "Pattern documentation context only; verify against Bensky before source_checked."
+     "Moves Qi and relieves pain in the chest, hypochondrium, and abdomen; relieves hernial pain; expels parasites"
     ],
     "common_pairings": [
-     "Pairings depend on formula context; verify against Bensky before source_checked."
+     "Combined within Yi Guan Jian and Chai Hu Shu Gan San for Liver-Qi constraint with hypochondriac pain (see related_formulas)."
     ],
     "contraindications": [
-     "Review toxicity review before clinical use.",
-     "Review pregnancy review before clinical use.",
-     "Review liver disease review before clinical use.",
-     "Review dose preparation review before clinical use."
+     "Use cautiously in Spleen-Stomach Deficiency-Cold; slightly toxic -- do not exceed the recommended dose."
     ],
     "functions_zh_source": [
      "理氣行氣",
@@ -34096,7 +34141,23 @@
      "translated: 本卡 functions_zh 逐條忠實翻譯(帳本 docs/research_packs/HERB_EN_BACKFILL_2026-08-19.json,紅線5 同長同序)"
     ],
     "modern_functions_en": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md",
-    "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
+    "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md",
+    "contraindications_en": [
+     "由既有 contraindications_zh 直譯，未新增內容"
+    ],
+    "tcm_properties": [
+     "https://cloudtcm.com/herb/993",
+     "中國藥典(WebSearch 核對 2026-08-28，性味歸經一致)"
+    ],
+    "pharmaceutical_latin": [
+     "NCBAHM 2026 CH Content Outline, Appendix A (通用拉丁藥名)"
+    ],
+    "exam_pearl": [
+     "由本卡既有 functions_zh/cautions_zh 內容整理，未新增未查證宣稱"
+    ],
+    "exam_importance": [
+     "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf"
+    ]
    },
    "card_grade": "partial",
    "import_artifacts": [
@@ -34177,7 +34238,38 @@
    ],
    "contraindications_zh": [
     "脾胃虛寒者慎用；不可過量服用（有小毒）。"
-   ]
+   ],
+   "contraindications_en": [
+    "Use cautiously in Spleen-Stomach Deficiency-Cold; slightly toxic -- do not exceed the recommended dose."
+   ],
+   "tcm_properties": {
+    "four_natures_zh": "寒",
+    "four_natures_en": "Cold",
+    "five_flavors_zh": [
+     "苦"
+    ],
+    "five_flavors_en": [
+     "Bitter"
+    ],
+    "meridian_tropism_zh": [
+     "肝經",
+     "胃經",
+     "小腸經",
+     "膀胱經"
+    ],
+    "meridian_tropism_en": [
+     "LV Liver",
+     "ST Stomach",
+     "SI Small Intestine",
+     "BL Bladder"
+    ],
+    "part_used_zh": "成熟果實",
+    "part_used_en": "Ripe Fruit"
+   },
+   "pharmaceutical_latin": "Toosendan Fructus",
+   "pinyin_toned": "Chuān Liàn Zǐ",
+   "exam_pearl": "理氣藥中兼能清肝火、殺蟲的一味，行氣止痛偏肝胃；有小毒，不宜過量或久服，孕婦禁用。",
+   "exam_importance": "★ NCBAHM 2026 CH 考綱 Domain I.A：理氣藥安全用量是常考點。"
   },
   {
    "id": "herb.qing_pi",
@@ -41845,22 +41937,25 @@
    "english_exam_track": {
     "review_status": "draft",
     "source_status": "bensky_review_pending",
-    "properties_taste_temp": "Draft: warm/cool/bitter/acrid depending on herb; verify individual taste and temperature.",
+    "properties_taste_temp": "Acrid, warm; toxic (internal use requires processing).",
     "functions": [
-     "Transform phlegm or stop cough pattern context",
-     "Support cough, phlegm, or qi-counterflow differentiation"
+     "Dry Dampness and transform Phlegm",
+     "Descend rebellious Qi, harmonize the Stomach and stop vomiting",
+     "Dissipate nodules and reduce focal distention",
+     "Reduce swelling and relieve pain when used externally"
     ],
     "indications": [
-     "Pattern documentation context only; verify against Bensky before source_checked."
+     "Damp-Phlegm and Cold-Phlegm cough with copious white sputum and chest oppression (with Chen Pi, Fu Ling, Gan Cao -- Er Chen Tang).",
+     "Stomach-Qi rebellion with nausea and vomiting (with Sheng Jiang for Cold; with Huang Lian, Zhu Ru for Heat)."
     ],
     "common_pairings": [
-     "Pairings depend on formula context; verify against Bensky before source_checked."
+     "Formal pairs: Ban Xia + Chen Pi (see herb_pairs.json pair.chen_pi__ban_xia) and Ban Xia + Hou Po (pair.ban_xia__hou_po); combined within Er Chen Tang and Xiao Chai Hu Tang (see related_formulas)."
     ],
     "contraindications": [
-     "Review toxicity review before clinical use.",
-     "Review pregnancy review before clinical use.",
-     "Review dose preparation review before clinical use.",
-     "Review incompatibility review before clinical use."
+     "Contraindicated for dry cough from Yin or fluid deficiency and for Dry Phlegm.",
+     "Contraindicated with hemoptysis, other bleeding disorders, or sore throat due to Fire.",
+     "Raw Ban Xia must not be administered internally.",
+     "Incompatible with all forms of Aconite."
     ],
     "functions_zh_source": [
      "溫化寒痰",
@@ -42179,6 +42274,9 @@
     ],
     "modern_functions_detail_zh": [
      "https://cloudtcm.com/herb/966"
+    ],
+    "tcm_properties": [
+     "中國藥典(WebSearch 核對 2026-08-28，性味歸經一致)"
     ]
    },
    "atlas_url": "https://chinesemedicineatlas.com/tcm_herb_atlas/",
@@ -42227,6 +42325,28 @@
     "not_rendered_reason": "整形不是查證。食療與藥用已分欄,但 80 張的落差與蘇合香的 SAFETY_HOLD 仍未裁決,因此本欄刻意不上畫面;validate-herb-dosage-shape.js D1 會擋住接線。",
     "no_new_numbers": true,
     "source_field": "dosage"
+   },
+   "tcm_properties": {
+    "four_natures_zh": "溫",
+    "four_natures_en": "Warm",
+    "five_flavors_zh": [
+     "辛"
+    ],
+    "five_flavors_en": [
+     "Acrid"
+    ],
+    "meridian_tropism_zh": [
+     "脾經",
+     "胃經",
+     "肺經"
+    ],
+    "meridian_tropism_en": [
+     "SP Spleen",
+     "ST Stomach",
+     "LU Lung"
+    ],
+    "part_used_zh": "塊莖(炮製品)",
+    "part_used_en": "Rhizome (processed)"
    }
   },
   {
@@ -42280,21 +42400,28 @@
    "english_exam_track": {
     "review_status": "draft",
     "source_status": "bensky_review_pending",
-    "properties_taste_temp": "Draft: warm/cool/bitter/acrid depending on herb; verify individual taste and temperature.",
+    "properties_taste_temp": "Bitter, acrid, warm; toxic (internal use requires processing).",
     "functions": [
-     "Transform phlegm or stop cough pattern context",
-     "Support cough, phlegm, or qi-counterflow differentiation"
+     "Dry Dampness and transform Phlegm",
+     "Dispel Wind and transform Phlegm",
+     "Dispel Wind and stop spasms",
+     "Dissipate nodules, reduce swelling and relieve pain externally"
     ],
     "indications": [
-     "Pattern documentation context only; verify against Bensky before source_checked."
+     "Damp-Phlegm and stubborn Phlegm obstructing the Lung: copious cough with chest oppression (stronger drying action than Ban Xia).",
+     "Wind-Phlegm disturbing upward: dizziness, Wind-stroke with Phlegm obstruction, deviated mouth and eye, hemiplegia.",
+     "Wind-Phlegm obstruction: epilepsy, childhood convulsions, tetanus with spasms.",
+     "Phlegm-Heat: this herb is warming and is not used alone -- combine with Heat-clearing, Phlegm-transforming herbs such as Huang Qin or Zhu Li.",
+     "Abscesses, Phlegm nodules, and snakebite: raw herb ground and applied topically only."
     ],
     "common_pairings": [
-     "Pairings depend on formula context; verify against Bensky before source_checked."
+     "Combined within Er Chen Tang and Qian Zheng San for stubborn Phlegm and Wind-Phlegm obstruction (see related_formulas)."
     ],
     "contraindications": [
-     "Review toxicity review before clinical use.",
-     "Review pregnancy review before clinical use.",
-     "Review dose preparation review before clinical use."
+     "Contraindicated during pregnancy.",
+     "Contraindicated for dry cough or Dry Phlegm from Yin or fluid deficiency.",
+     "Contraindicated for Internal Wind from Blood deficiency or blazing Fire.",
+     "Raw Tian Nan Xing must not be administered internally."
     ],
     "functions_zh_source": [
      "溫化寒痰",
@@ -42558,6 +42685,9 @@
     ],
     "exam_pearl": [
      "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf"
+    ],
+    "tcm_properties": [
+     "中國藥典(WebSearch 核對 2026-08-28，性味歸經一致)"
     ]
    },
    "key_pairs": [],
@@ -42615,7 +42745,31 @@
      "moved_at": "2026-08-27",
      "ruling": "TING_RULING_SHEET_2026-08-27"
     }
-   ]
+   ],
+   "tcm_properties": {
+    "four_natures_zh": "溫",
+    "four_natures_en": "Warm",
+    "five_flavors_zh": [
+     "苦",
+     "辛"
+    ],
+    "five_flavors_en": [
+     "Bitter",
+     "Acrid"
+    ],
+    "meridian_tropism_zh": [
+     "肺經",
+     "肝經",
+     "脾經"
+    ],
+    "meridian_tropism_en": [
+     "LU Lung",
+     "LV Liver",
+     "SP Spleen"
+    ],
+    "part_used_zh": "塊莖(炮製品)",
+    "part_used_en": "Rhizome (processed)"
+   }
   },
   {
    "id": "herb.jie_geng",
