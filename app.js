@@ -230,6 +230,19 @@ const OUTCOME_INTERPRETATION_BADGES = {
 // Knowledge-gap logging(2026-08-25,Ting 要求「給 picker 加自由輸入後路,
 // 缺口另外收集」)。同一個 TDZ 理由不能宣告在 enhanceLinkField 附近——
 // 說明見該函式上方 readKnowledgeGaps 前的完整註解。
+/* D31 桶 3(Ting:「保留＋加標示」)的白名單與標示前綴。宣告在此而非用到它們
+ * 的 picker 附近,同 AGENT_EXPOSURE_TYPE_LABELS 的 TDZ 理由:初次 render 在
+ * app.js:1678,之後宣告的 top-level const 在那一刻還在暫時性死區。
+ * 完整裁定說明留在原位(treatmentContextPickerOptions 上方)。 */
+const TREATMENT_CONTEXT_PICKER_ALLOWLIST = [
+  "western_condition.male_factor_context",
+  "western_condition.ovulatory_factor_context",
+  "western_condition.ivf_cycle",
+  "western_condition.embryo_transfer",
+  "western_condition.luteal_support",
+];
+const TREATMENT_CONTEXT_LABEL_PREFIX = "［療程背景］";
+
 const KNOWLEDGE_GAP_STORAGE_KEY = "acuting-knowledge-gaps-v1";
 const KNOWLEDGE_GAP_FIELD_LABELS = {
   symptomLinks: "症狀 Symptom",
@@ -8601,15 +8614,9 @@ function pickerTerms(r, extra) {
  *
  * 白名單**寫死成常數**:用「id 前綴是 western_condition. 就放行」那種規則等於
  * 沒有白名單 —— 下一筆 legacy id 一樣會溜進來。 */
-const TREATMENT_CONTEXT_PICKER_ALLOWLIST = [
-  "western_condition.male_factor_context",
-  "western_condition.ovulatory_factor_context",
-  "western_condition.ivf_cycle",
-  "western_condition.embryo_transfer",
-  "western_condition.luteal_support",
-];
-/* 標示是裁定的一部分,不是裝飾:沒有它,選單上分不出哪一列是 legacy 命名空間。 */
-const TREATMENT_CONTEXT_LABEL_PREFIX = "［療程背景］";
+// (TREATMENT_CONTEXT_PICKER_ALLOWLIST / TREATMENT_CONTEXT_LABEL_PREFIX 宣告
+//  已前移至檔頭 boot-order 區 —— 見 AGENT_EXPOSURE_TYPE_LABELS 註解。
+//  上面那段裁定說明留在原地,因為它解釋的是這一段程式碼在做什麼。)
 
 function pointPickerOptions() {
   return pickerLive(points)
