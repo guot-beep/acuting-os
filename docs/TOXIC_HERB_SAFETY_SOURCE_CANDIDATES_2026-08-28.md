@@ -7,22 +7,24 @@
 
 ---
 
-## 1. 6 味有毒／管制藥材權威安全來源候選
+## 1. 6 味有毒／管制藥材權威安全來源候選（實測連線、驗證標題與逐字引文）
 
-| 藥名 | ID | 核心安全事實 | 推薦權威來源候選 | 出版機構 / 資料庫 | HTTP 狀態 | 關鍵證據節錄 |
+| 藥名 | ID | 核心安全事實 | 推薦權威來源候選 | 出版機構 / 資料庫 | HTTP 狀態 | 來源頁面逐字節錄 (≤200 字) |
 |---|---|---|---|---|---|---|
-| **雄黃** | `herb.xiong_huang` | 砷／硫化砷毒性 | `https://pubchem.ncbi.nlm.nih.gov/compound/139298` | NCBI PubChem (CID 139298) | 200 OK | "Realgar is an arsenic sulfide mineral (As4S4). Arsenic and its inorganic compounds are classified as human carcinogens and potent toxic metalloids causing multi-organ cellular toxicity." |
-| **雄黃 (備選)** | `herb.xiong_huang` | 砷毒性劑量療程控制 | `https://pubmed.ncbi.nlm.nih.gov/28551406/` | Frontiers in Pharmacology (PMID 28551406) | 203 OK | "Realgar (As4S4) contains toxic inorganic arsenic; prolonged administration or high doses induce cumulative nephrotoxicity and hepatotoxicity, requiring strict dosage limitations and duration controls." |
-| **硃砂** | `herb.zhu_sha` | 汞／硫化汞毒性 | `https://pubchem.ncbi.nlm.nih.gov/compound/24190` | NCBI PubChem (CID 24190) | 200 OK | "Mercury sulfide (HgS, Cinnabar) is a heavy metal compound. Excessive or improper use causes mercury accumulation leading to severe renal, neurological, and hepatic toxicity." |
-| **硃砂 (備選)** | `herb.zhu_sha` | 汞蓄積毒性 | `https://pubmed.ncbi.nlm.nih.gov/25282464/` | Environ Toxicol Pharmacol (PMID 25282464) | 203 OK | "Long-term consumption of cinnabar (HgS) leads to significant tissue accumulation of mercury in the kidney and liver, causing chronic renal impairment and cellular oxidative damage." |
-| **穿山甲** | `herb.chuan_shan_jia` | CITES 附錄一／藥典除名 | `https://checklist.cites.org/#/en/search/output_layout=alphabetical&level_of_listing=0&show_synonyms=1&show_author=1&show_english=1&show_spanish=1&show_french=1&scientific_name=Manis&page=1` | CITES Secretariat | 200 OK | "All pangolin species (Manis spp.) are listed under CITES Appendix I, strictly prohibiting all commercial international trade in wild specimens and their derived parts (scales)." |
-| **穿山甲 (備選)** | `herb.chuan_shan_jia` | 2020 藥典除名 | `https://pubmed.ncbi.nlm.nih.gov/32971935/` | Front Ecol Environ (PMID 32971935) | 203 OK | "In 2020, Chinese authorities upgraded pangolins to first-class protected species and the Chinese Pharmacopoeia Commission officially delisted pangolin scales from the Chinese Pharmacopoeia." |
-| **犀角** | `herb.xi_jiao` | CITES 禁用／水牛角替代 | `https://checklist.cites.org/#/en/search/output_layout=alphabetical&level_of_listing=0&show_synonyms=1&show_author=1&show_english=1&show_spanish=1&show_french=1&scientific_name=Rhinocerotidae&page=1` | CITES Secretariat | 200 OK | "All species of Rhinocerotidae are listed in CITES Appendix I, banning international commercial trade in rhinoceros horn and products thereof." |
-| **犀角 (備選)** | `herb.xi_jiao` | 水牛角法定替代驗證 | `https://pubmed.ncbi.nlm.nih.gov/23811204/` | J Ethnopharmacol (PMID 23811204) | 203 OK | "Due to international bans on rhinoceros horn under CITES and domestic conservation laws, Cornu Bubali (water buffalo horn, 水牛角) serves as the legally established, pharmacologically validated clinical substitute." |
-| **青木香** | `herb.qing_mu_xiang` | 馬兜鈴酸腎毒性／致癌 | `https://pubchem.ncbi.nlm.nih.gov/compound/107935` | NCBI PubChem (CID 107935) | 200 OK | "Aristolochic acid I is classified as Group 1 carcinogenic to humans (IARC), causing DNA adduct formation, irreversible renal interstitial fibrosis, and upper urinary tract urothelial cancer." |
-| **青木香 (備選)** | `herb.qing_mu_xiang` | 泌尿上皮癌與管制 | `https://pubmed.ncbi.nlm.nih.gov/23873602/` | Int J Cancer (PMID 23873602) | 203 OK | "Herbal medicines from Aristolochia species (such as Radix Aristolochiae / Qing Mu Xiang) containing aristolochic acid are directly linked to aristolochic acid nephropathy and urothelial carcinoma, prompting international bans and regulatory delisting." |
-| **罌粟殼** | `herb.ying_su_ke` | 管制藥品／嗎啡類生物鹼 | `https://pubchem.ncbi.nlm.nih.gov/compound/5288826` | NCBI PubChem (CID 5288826) | 200 OK | "Morphine and related opium alkaloids present in Papaver somniferum capsules (Pericarpium Papaveris) are potent opioid receptor agonists with high potential for physical dependence, respiratory depression, and severe addiction." |
-| **罌粟殼 (備選)** | `herb.ying_su_ke` | 聯邦管制藥品目錄 | `https://www.deadiversion.usdoj.gov/schedules/` | US DEA / DOJ | 200 OK | "Opium poppy, poppy straw, and poppy capsules containing morphine, codeine, and thebaine are classified as Schedule II controlled substances under the Controlled Substances Act due to severe abuse and dependency liabilities." |
+| **雄黃** | `herb.xiong_huang` | 砷／硫化砷毒性 | `https://pubchem.ncbi.nlm.nih.gov/compound/139298` | NCBI PubChem (CID 139298) | 200 OK | "Compound: Realgar; IUPAC Name: 1,3,5,7-tetrathia-2,4,6,8-tetraarsatricyclo[3.3.0.03,7]octane; Molecular Formula: As4S4." |
+| **雄黃 (備選 1)** | `herb.xiong_huang` | 中樞與過量毒性 | `https://pubmed.ncbi.nlm.nih.gov/41270212/` | Advanced Science (PMID 41270212) | 203 OK | "However, prolonged, excessive, or uncontrolled administration of Chinese patent medicines containing realgar can occasionally induce adverse effects." |
+| **雄黃 (備選 2)** | `herb.xiong_huang` | 砷中毒與代謝風險 | `https://pubmed.ncbi.nlm.nih.gov/36110533/` | Front Pharmacol (PMID 36110533) | 203 OK | "However, it raises great safety concerns due to the adverse effects reported by arsenic or mercury poisoning." |
+| **硃砂** | `herb.zhu_sha` | 汞／硫化汞毒性 | `https://pubchem.ncbi.nlm.nih.gov/compound/24190` | NCBI PubChem (CID 24190) | 200 OK | "Compound: Mercuric sulfide; IUPAC Name: sulfanylidene-lambda2-mercury; Molecular Formula: HgS." |
+| **硃砂 (備選 1)** | `herb.zhu_sha` | 汞腎毒性爭議 | `https://pubmed.ncbi.nlm.nih.gov/42546910/` | Pharmacol Res (PMID 42546910) | 203 OK | "However, its clinical use has been controversial due to concerns regarding mercury nephrotoxicity." |
+| **硃砂 (備選 2)** | `herb.zhu_sha` | 長期過量蓄積風險 | `https://pubmed.ncbi.nlm.nih.gov/36110533/` | Front Pharmacol (PMID 36110533) | 203 OK | "Excessive exposure to arsenic and mercury may still pose risks especially by long-term or excessive medication." |
+| **穿山甲** | `herb.chuan_shan_jia` | CITES 附錄一／零商業配額 | `https://checklist.cites.org/#/en/search/output_layout=alphabetical&level_of_listing=0&show_synonyms=1&show_author=1&show_english=1&show_spanish=1&show_french=1&scientific_name=Manis&page=1` | CITES Secretariat | 200 OK | "All species of pangolin (Manis spp.) are included in CITES Appendix I with zero export quota for wild specimens traded for commercial purposes." |
+| **穿山甲 (備選)** | `herb.chuan_shan_jia` | 附錄一禁止商業貿易 | `https://speciesplus.net/species#/taxon_concepts/5283/legal` | UNEP-WCMC / CITES Species+ | 200 OK | "Manis pentadactyla is listed in CITES Appendix I since 02/01/2017. All commercial international trade in wild specimens is prohibited." |
+| **犀角** | `herb.xi_jiao` | CITES 附錄一／水牛角替代 | `https://checklist.cites.org/#/en/search/output_layout=alphabetical&level_of_listing=0&show_synonyms=1&show_author=1&show_english=1&show_spanish=1&show_french=1&scientific_name=Rhinocerotidae&page=1` | CITES Secretariat | 200 OK | "All species of Rhinocerotidae (Rhinoceroses) are included in CITES Appendix I, prohibiting international commercial trade in rhinoceros horn and derived products." |
+| **犀角 (備選)** | `herb.xi_jiao` | 水牛角替代犀角方劑研究 | `https://pubmed.ncbi.nlm.nih.gov/42642006/` | J Ethnopharmacol (PMID 42642006) | 203 OK | "A classical Traditional Chinese Medicine (TCM) formula comprising Cornu Bubali (substituted for Rhinoceros horn), Radix Rehmanniae, Paeoniae Radix Rubra, and Cortex Moutan." |
+| **青木香** | `herb.qing_mu_xiang` | 馬兜鈴酸 I 化學與毒性 | `https://pubchem.ncbi.nlm.nih.gov/compound/2236` | NCBI PubChem (CID 2236) | 200 OK | "Compound: Aristolochic acid I; IUPAC Name: 8-methoxy-6-nitronaphtho[2,1-b][1]benzofuran-5-carboxylic acid; Molecular Formula: C17H11NO7." |
+| **青木香 (備選)** | `herb.qing_mu_xiang` | 馬兜鈴酸腎病致病因 | `https://pubmed.ncbi.nlm.nih.gov/42208666/` | Free Radic Biol Med (PMID 42208666) | 203 OK | "Aristolochic acid I (AAI) is a potent nephrotoxin responsible for aristolochic acid nephropathy (AAN)." |
+| **罌粟殼** | `herb.ying_su_ke` | 嗎啡化學實體 | `https://pubchem.ncbi.nlm.nih.gov/compound/5288826` | NCBI PubChem (CID 5288826) | 200 OK | "Compound: Morphine; IUPAC Name: (4R,4aR,7S,7aR,12bS)-3-methyl-2,4,4a,7,7a,13-hexahydro-1H-4,12-methanobenzofuro[3,2-e]isoquinoline-7,9-diol; Molecular Formula: C17H19NO3." |
+| **罌粟殼 (備選)** | `herb.ying_su_ke` | 聯邦 II 級管制物質目錄 | `https://www.deadiversion.usdoj.gov/schedules/` | US DEA / DOJ | 200 OK | "Schedule II substances, which include morphine, opium poppy, poppy straw, and poppy straw concentrate, have a high potential for abuse which may lead to severe psychological or physical dependence." |
 
 ---
 
@@ -32,27 +34,16 @@
    - **建議候選**：`https://www.americandragon.com/Individualherbsupdate/GanCao.html` (HTTP 200)
    - **說明**：American Dragon 已將炙甘草整合收載於甘草條目主頁面（包含 Honey Fried / Zhi Gan Cao 之性味、歸經與臨床應用）。
 2. **`https://cloudtcm.com/formula/99` (HTTP 500)**：
-   - **建議候選**：`https://cloudtcm.com/formula` (HTTP 200)
-   - **說明**：ID 99 為 CloudTCM 早期無效預設 placeholder，觸發後端 500；建議後續方劑維護時改以具體方劑 URL 取代。
+   - **建議候選**：`NO_SOURCE_FOUND`
+   - **原因與說明**：`cloudtcm.com/formula/99` 為早期未對應之 placeholder ID，觸發後端 500；CloudTCM 上查無 ID 99 之具體單一方劑頁面，且依規定不得以全站方劑目錄 `/formula` 代替單方，故如實標記為 `NO_SOURCE_FOUND`。
 
 ---
 
 ## 3. 海風藤（`herb.hai_feng_teng`）引用一致性逐字核對
 
-針對 `https://cloudtcm.com/herb/4702` 與 `https://www.americandragon.com/Individualherbsupdate/HaiFengTeng.html` 進行線上原文逐字抓取，不摻入任何模型推理：
+針對 `https://cloudtcm.com/herb/4702` 與 `https://www.americandragon.com/Individualherbsupdate/HaiFengTeng.html` 進行線上原文逐字抓取：
 
 | 來源站點 | URL | HTTP 狀態 | 孕婦原文 (pregnancy_verbatim) | 熱痹／熱證原文 (heat_bi_verbatim) | 陰虛火旺原文 (yin_deficiency_verbatim) |
 |---|---|---|---|---|---|
 | **雲端中醫 CloudTCM** | `https://cloudtcm.com/herb/4702` | 200 OK | **「但海風藤有一定的毒性，不宜長期大量服用。孕婦不宜服用。服用海風藤期間應注意監測血壓。」** | `NOT_MENTIONED` | `NOT_MENTIONED` |
 | **American Dragon** | `https://www.americandragon.com/Individualherbsupdate/HaiFengTeng.html` | 200 OK | **"Some sources say that this herb is contraindicated during pregnancy. Other sources say that this herb calms the fetus during pregnancy."** | **"Hai Feng Teng is slightly warm and a better choice when these disorders are not associated with Heat. Luo Shi Teng is cooling and preferred when Heat is a factor."** | `NOT_MENTIONED` |
-
-### 核對發現與結論
-1. **孕期**：
-   - CloudTCM 明文寫「**孕婦不宜服用**」。
-   - American Dragon 記載存在文獻分歧（"Some sources say that this herb is contraindicated during pregnancy. Other sources say that this herb calms the fetus during pregnancy."）。
-2. **熱痹**：
-   - American Dragon 明文指出海風藤微溫適合非熱證，熱痹宜選性涼之絡石藤。CloudTCM 本文未特別載明熱痹字眼。
-3. **陰虛火旺**：
-   - 兩站海風藤主文頁面均未出現「陰虛火旺」之禁忌字眼。
-4. **臨床裁定**：
-   - 現有資料庫措辭（`79507a11`）已依 Ting 裁定標示為「孕婦宜慎用（文獻記載不一）」與「熱痹非首選/慎用」，本稽核如實記錄原文供臨床備查，**零改動資料庫**。
