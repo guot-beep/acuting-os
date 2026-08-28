@@ -5709,6 +5709,18 @@ body[data-content-mode="english"] .i18n-zh {
 }
 .k-relation-chip:hover,
 .k-relation-chip:focus-visible { background: #d9e9df; outline: 2px solid #c59631; outline-offset: 1px; }
+/* 目標卡還沒建 —— 退成不可點的靜態樣子,並帶一個「尚未建卡」小標。
+   關鍵是它**不能長得像可點的** :否則就是把死連結畫得跟活連結一樣(2026-08-28)。 */
+.k-relation-chip.is-missing {
+  background: #f4f2ee;
+  border: 1px dashed #c9c2b6;
+  color: #7a7369;
+  cursor: default;
+  font-weight: 600;
+  gap: 0.3rem;
+}
+.k-relation-chip.is-missing:hover { background: #f4f2ee; outline: none; }
+.k-relation-chip.is-missing small { color: var(--warn); font-size: 0.9em; white-space: nowrap; }
 .k-composition-list { display: grid; gap: 0.55rem; margin: 0; padding-left: 1.5rem; }
 .k-composition-list li { color: #8a6d1f; }
 .k-composition-list li > div { align-items: center; display: flex; flex-wrap: wrap; gap: 0.45rem; }

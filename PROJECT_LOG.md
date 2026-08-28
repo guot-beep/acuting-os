@@ -1,3 +1,57 @@
+# 2026-08-28 — relationButton 加目標存在檢查:死連結退成「尚未建卡」靜態 chip,並補一道守衛
+
+Ting 裁「relationButton 加檢查」。查下去發現是**兩個地方各缺一半,合起來才變成死連結**,兩邊都補。
+
+## 病因是兩處相加
+1. `relationButton(id, label, kind)` **完全不檢查目標存不存在**,一律吐可點按鈕;
+   標籤還是 `formulaLabel()` 把 id 美化出來的(`formula.jiao_tai_wan` → 「Jiao Tai Wan」),
+   **看不出那張卡並不存在**。
+2. `openKnowledgeDetail()` 對「kind 認得、但記錄不存在」是**靜默 `return`**。
+   (2026-08-23 那次修的是另一半:未知 kind 現在會 `console.warn`;這一半一直開著。)
+兩者相加 = 一顆看起來可點、點下去什麼都不發生、console 也沒痕跡的按鈕。
+上一批稽核時 `related_formulas` 剛好 0 懸空 —— **那是運氣不是機制**。
+
+## 改法
+- 新增 `relationTargetExists(kind, id)`:formula / herb / pharm 各查自己的登記表,
+  **未知 kind 一律當作不存在**(寧可退成靜態,也不要做出點了沒反應的按鈕)。
+- `relationButton` 查不到就吐 `<span class="k-relation-chip is-missing">`,
+  帶「尚未建卡 / no card yet」小標與 `title=<原始 id>`,**不是 `<button>`、沒有 `data-detail-id`**。
+- `styles.css` 加 `.is-missing`:虛線框、灰字、`cursor: default`、hover 不變色 ——
+  **關鍵是它不能長得像可點的**,否則等於把死連結畫得跟活連結一樣。
+- `openKnowledgeDetail()` 的靜默 `return` 改成先 `console.warn` 再 return,
+  訊息直接說「這顆按鈕是死連結,發它的地方應該先檢查目標存不存在」。
+  relationButton 修好後理論上到不了這裡,但 `k-herb-link`、`k-open-detail` 等處也會產生按鈕,
+  留一道會出聲的網。
+
+## 實測(dev server,注入假引用再還原)
+現行資料 `related_formulas` 是 0 懸空,新路徑跑不到,所以**注入一條
+`formula.does_not_exist_test` 到桂枝卡實測**:
+- 該 chip 渲染成 `<span>`、`is-missing`、文字「Does not exist test尚未建卡」、`title` 顯示原始 id、
+  **不可點**(無 `data-detail-id`)
+- 同卡其他 32 顆 chip 不受影響,仍是可點 `<button>`(桂枝湯、麻黃湯…)
+測完**已還原**,`git status` 確認 `data/**` 零殘留。
+
+## 守衛(加進 `validate-rendered-reference-resolution.js`)
+上限管「資料裡還有幾個懸空」,守衛管「萬一有,畫面怎麼表現」——兩件事都要。
+三項檢查:`relationTargetExists()` 存在、`relationButton()` 真的有呼叫它、
+`openKnowledgeDetail()` 的那一路仍會出聲。比對前剝掉註解(註解裡引述壞寫法不算違規)。
+**負向測試**:把 `relationButton` 的檢查改成 `if (false)` → `FAIL — 1 項`;還原 → PASS。
+
+## 驗證(八支全跑)
+`validate-herb-standard` / `validate-formula-standard` / `validate-content-junk` /
+`validate-herb-pair-render` / `validate-board-pair-attribution` /
+`validate-review-status-vocabulary` / `validate-rendered-reference-resolution` /
+`check-validation-ratchet` **全 PASS**;`git diff --check` 無輸出;`node --check js/knowledge.js` 通過。
+**`data/**` 本批一個字都沒改**(只動 js/knowledge.js、styles.css、scripts/)。
+
+## 剩下一項待裁
+`FORMULA_CATEGORY_DESC` 缺 6 個分類的 tooltip 說明(解表劑－辛溫/辛涼解表、
+清熱劑－清氣分熱/清熱解毒/清臟腑熱、未分類)。缺了只是 chip 少一行說明,不影響顯示。
+
+MEASURED TREE: claude/practical-easley-73f009 @ origin/main 本批基底
+
+---
+
 # 2026-08-28 — formulas.key_pairs 懸空 15 → 0:3 條重導 + 12 條建記錄,3 張方劑卡的策展藥對回來了
 
 Ting 裁「那 15 條 key_pairs 處理掉」。分兩段,依據不同,分開記。

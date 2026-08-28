@@ -623,7 +623,24 @@
     return `<section class="k-detail-section"><h3>${esc(titleZh)} <small>${esc(titleEn)}</small></h3>${content}</section>`;
   }
 
+  /* 目標存不存在必須在這裡檢查，不能等使用者點下去。
+     openKnowledgeDetail() 對「kind 認得、但記錄不存在」是靜默 `return`
+     ——2026-08-23 那次修的是另一半（未知 kind 現在會 console.warn），這一半還開著。
+     兩者相加的後果是:引用一個不存在的 id 會渲染成**看起來可點、點了完全沒反應的按鈕**，
+     標籤還是 formulaLabel() 把 id 美化出來的「Jiao Tai Wan」，看不出那張卡並不存在。
+     2026-08-28 稽核時 related_formulas 剛好 0 懸空 —— 那是運氣不是機制。
+     查不到就退成靜態 chip 並標「尚未建卡」:缺口要看得見，不要變成死連結。 */
+  function relationTargetExists(kind, id) {
+    if (kind === "formula") return formulaById.has(id);
+    if (kind === "herb") return herbById.has(id);
+    if (kind === "pharm") return pharmDrugs.some((d) => d.id === id);
+    return false;   // 未知 kind 一律當作不存在:寧可退成靜態,也不要做出點了沒反應的按鈕
+  }
   function relationButton(id, label, kind) {
+    if (!relationTargetExists(kind, id)) {
+      return `<span class="k-relation-chip is-missing" title="${esc(String(id))}">${esc(label)}`
+        + `<small>${esc(modeText("尚未建卡", "no card yet"))}</small></span>`;
+    }
     return `<button type="button" class="k-relation-chip" data-detail-kind="${esc(kind)}" data-detail-id="${esc(id)}">${esc(label)}</button>`;
   }
 
@@ -2118,7 +2135,13 @@
       : kind === "pharm" ? pharmDrugs.find((d) => d.id === id)
       : kind === "herb" ? herbById.get(id)
       : (console.warn(`openKnowledgeDetail: unsupported kind "${kind}" (id=${id})`), null);
-    if (!record) return;
+    // kind 認得但記錄不存在,以前是靜默 return —— 按鈕按了什麼都不發生,console 也沒痕跡。
+    // relationButton() 現在會把這種目標退成靜態 chip,理論上到不了這裡;
+    // 但別的地方(k-herb-link、k-open-detail…)也會產生這種按鈕,所以留一道會出聲的網。
+    if (!record) {
+      console.warn(`openKnowledgeDetail: no ${kind} record for id="${id}" —— 這顆按鈕是死連結,發它的地方應該先檢查目標存不存在`);
+      return;
+    }
     const dialog = ensureDetailDialog();
     const panels = kind === "formula" ? formulaPanels(record)
       : kind === "pharm" ? pharmPanels(record)

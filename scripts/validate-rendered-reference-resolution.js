@@ -63,6 +63,25 @@ const FIELDS = [
 const problems = [];
 const improved = [];
 const notes = [];
+
+// ---- 渲染端守衛:relationButton 必須先檢查目標存不存在 -----------------------
+// 跟下面的數量上限是兩件事:上限管「資料裡還有幾個懸空」,這裡管「萬一有,畫面怎麼表現」。
+// 沒有這道檢查,一個懸空 id 會渲染成看起來可點、點了完全沒反應的按鈕
+// —— openKnowledgeDetail() 對「kind 認得但記錄不存在」原本是靜默 return。
+// 剝掉註解再比對:註解裡引述壞寫法不算違規。
+{
+  const rawView = fs.readFileSync(path.join(ROOT, "js/knowledge.js"), "utf8");
+  const code = rawView.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/(^|[^:])\/\/[^\n]*/g, "$1 ");
+  if (!/function\s+relationTargetExists\s*\(/.test(code)) {
+    problems.push("js/knowledge.js 找不到 relationTargetExists() —— relationButton 的存在性檢查被移除或改名，"
+      + "這支必須跟著更新，不能默默跳過");
+  } else if (!/function\s+relationButton[\s\S]{0,500}?relationTargetExists\s*\(/.test(code)) {
+    problems.push("js/knowledge.js 的 relationButton() 沒有呼叫 relationTargetExists() —— 目標不存在時會渲染成死連結");
+  }
+  if (!/no \$\{kind\} record for id/.test(rawView)) {
+    problems.push("js/knowledge.js 的 openKnowledgeDetail() 對「kind 認得但記錄不存在」又變回靜默 return —— 那一路要出聲");
+  }
+}
 let scanned = 0;
 for (const f of FIELDS) {
   const key = f.set + "." + f.field;
