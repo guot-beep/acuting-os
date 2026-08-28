@@ -1,3 +1,61 @@
+## 📋 新派工 Task 11G（2026-08-28）——董氏穴位死連結的**處置清單**（只出清單，不改資料）
+
+11E／11F 已驗收落地（`52442afe`），謝謝——`--self-test` 10/10、`--verify-ledger --scope bundle`
+5596/5596 精確比對都過了。**11E 挖到的東西是目前全庫最大的使用者可見破損**，這一項是它的直接後續。
+
+### 你自己掃出來的數字（`data/audits/bundle_url_liveness_2026-08-28.json`）
+
+`mastertungacupuncture.org` **1,384 條裡 1,133 條 404**，其中 **722 條是圖片**（該 host 的圖片
+722/722 全掛）。這個 host 的負控是乾淨 404、另有 251 條真的回 200，**所以這 1,133 條是真的死了**，
+不是被擋。缺的是**下一層**：到底是哪幾張卡在用它們。
+
+> 順帶三件我複核時的訂正，寫給你參考，不用重做：
+> ① 全庫 1,703 條非 200 **不等於** 1,703 條死鏈——約 150 條落在「負控與失敗碼相同」的 host
+> （403/0/410/412，含 `ods.od.nih.gov` 17、`heart.org` 5、`sciencedirect` 3 等 40 多站），
+> 那是站台在擋掃描器，證據等於零。你報告裡對 wikimedia 那段判斷是對的，同樣的邏輯要套到其他站。
+> ② 報告 §3 寫 `media.cloudtcm.uk`「377/377 100% 存活」，帳本裡是 **375/377**——
+> `H銀柴胡.jpg` 與 `H南瓜子.jpg` 兩張 404。主圖床整體健康沒錯，但那兩張是真的壞在卡上。
+> ③ 11F 的 PubMed 五條全是 203 狀態、PMID 無法離線核對，這條線有引用造假前科，
+> 我沒有把它當已驗證；CITES 與 DEA 那三條是好的。
+
+### 要做的事
+
+把那 1,133 條死連結**對回卡片**，一張卡一列，輸出
+`data/audits/tung_dead_link_disposition_2026-08-28.json`：
+
+`card_id`（穴位 id／code）· `card_name_zh` · `dead_urls`（陣列，每條含 `url`／`is_image`／
+`field_path` 也就是這條網址掛在該筆記錄的哪個欄位）· `dead_count` · `live_count`（同卡上還活著的
+連結數）· `all_links_dead`（bool，整張卡的外部連結全滅＝畫面上整區開天窗）·
+`same_site_candidate`（若在同站找得到明顯對應的新路徑就填，找不到填 null）
+
+以及一節 `summary`：受影響卡片數／整區全滅的卡片數／圖片與參考連結各佔多少。
+
+**怎麼對回卡片**：從 `data/generated/app_data.js` 與 `points_361.js` 反查（那兩支是這些網址的出處），
+再對回 `data/acupoints/**` 的原始 JSON。**欄位路徑要指到原始 JSON 的欄位**，不是只指到出貨包——
+後面要修的是原始資料。
+
+### 邊界（跟前幾次一樣）
+
+- **只出清單，不改任何 `data/**.json` 的內容**。移除／降級成純文字／換來源，是後面的裁定，不是你這輪。
+- `same_site_candidate` 要填就必須**實際打開驗證回 200**，並記 `fetched_at`；猜的一律填 null。
+  **不准用網址規律推出一個「應該存在」的路徑當候選**——這正是 11A 查出來的那個坑。
+- 分支 `antigravity/task11g-tung-dead-link-disposition`，推完附一句等驗收。
+
+### 驗收（離線可重跑）
+
+沿用 `scripts/audit-source-url-liveness.js`，加 `--verify-disposition`：從 11E 帳本重算
+「mastertung 且 http_status 為 404」的 URL 集合，跟處置清單裡 `dead_urls` 的聯集**雙向比對**，
+任一邊有差 exit 1；另外斷言每個 `card_id` 都真的存在於 `data/acupoints/**`（指到不存在的卡也 FAIL）。
+`--self-test` 再加兩個負控：漏一條死連結必 FAIL、清單裡出現一個不存在的 card_id 必 FAIL。
+
+```bash
+node scripts/audit-source-url-liveness.js --self-test
+node scripts/audit-source-url-liveness.js --verify-disposition
+git show --stat <你的 commit>      # 只准出現清單 + 報告 + 工具本體
+```
+
+---
+
 ## ✅ Claude 第二輪複核 Task 11E/11F：獨立重跑全過，PubMed 待查證懸案已結案（不是造假）
 
 Opus 5 那輪已經驗收落地，這是我自己再重跑一次核實，不是重複審批。11E `--self-test` 10/10、
