@@ -21,7 +21,6 @@
 | **犀角 (備選)** | `herb.xi_jiao` | 水牛角替代犀角方劑研究 | `https://pubmed.ncbi.nlm.nih.gov/42642006/` | J Ethnopharmacol (PMID 42642006) | 203 OK | `"A classical Traditional Chinese Medicine (TCM) formula comprising Cornu Bubali (substituted for Rhinoceros horn), Radix Rehmanniae, Paeoniae Radix Rubra, and Cortex Moutan."` (172 字) |
 | **青木香** | `herb.qing_mu_xiang` | 馬兜鈴酸腎病致病原 | `https://pubmed.ncbi.nlm.nih.gov/42208666/` | Free Radic Biol Med (PMID 42208666) | 203 OK | `"Aristolochic acid I (AAI) is a potent nephrotoxin responsible for aristolochic acid nephropathy (AAN)."` (102 字) |
 | **罌粟殼** | `herb.ying_su_ke` | 聯邦 II 級管制依賴性 | `https://www.deadiversion.usdoj.gov/schedules/schedules.html` | US DEA / DOJ | 200 OK | `"Substances in this schedule have a high potential for abuse which may lead to severe psychological or physical dependence."` (122 字) |
-| **罌粟殼 (備選)** | `herb.ying_su_ke` | 聯邦法規 II 級管制清單 | `https://www.ecfr.gov/current/title-21/chapter-II/part-1308/section-1308.12` | eCFR / US GPO | 200 OK | `"Opium and opiate, and any salt, compound, derivative, or preparation of opium or opiate: (xv) Morphine; (xvi) Opium poppy and poppy straw;"` (138 字) |
 
 ---
 
