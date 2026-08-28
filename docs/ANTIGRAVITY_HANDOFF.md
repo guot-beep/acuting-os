@@ -93,6 +93,27 @@ git show --stat <你的 commit>      # 只准出現帳本 + docs
 順帶把 11B 掃出來的那 2 條死連結（1×404、1×500）也放進同一份帳本的 `dead_link_replacements` 節，
 一樣只給候選、不改資料。
 
+#### 11F 追加一條（2026-08-28）：海風藤的引用一致性 —— 這條**不是找新來源，是核對舊來源**
+
+你 Task 11D 交的修正版安全措辭已經被 Ting 裁定採用、併進 main（`79507a11`）。實質效果是安全分級放寬：
+孕婦**禁用 → 慎用**、熱痹**禁用 → 慎用**、陰虛火旺禁用**移除**。
+
+問題在引用：新版把 `contraindications_zh` 的來源從「americandragon ＋ cloudtcm」改成只留 americandragon，
+**但 `cloudtcm.com/herb/4702` 仍然是這張卡的 `safety_source_url`**，而舊版的 `clinical_use_note` 白紙黑字寫著
+「CloudTCM 標孕婦不宜」。如果那頁真的寫孕婦不宜，卡上的「慎用」就跟自己引用的來源對不上。
+
+**要你做的（帳本一列，不改資料）**：打開下面兩頁，把它們對「孕婦」「熱痹／熱證」「陰虛火旺」各自的原話逐字抄回來：
+
+- `https://cloudtcm.com/herb/4702`（這張卡的 `safety_source_url`）
+- `https://www.americandragon.com/Individualherbsupdate/HaiFengTeng.html`
+
+欄位：`url` · `http_status` · `fetched_at` · `pregnancy_verbatim` · `heat_bi_verbatim` ·
+`yin_deficiency_verbatim`（該頁沒提就寫 `NOT_MENTIONED`，**不要用推論補**）· `page_title`。
+放進 11F 同一份帳本的 `citation_consistency` 節。
+
+**不要改 `herb_canon_shortlist.json`**，也**不要**因為查到的結果比較嚴格就自己把措辭改回去 ——
+那是 Ting 的臨床裁定，你交原話，她決定。
+
 ---
 
 ## ✅ Task 11A/11B/11C 獨立驗收通過，已落地 `origin/main`（`b36f0d29`）
