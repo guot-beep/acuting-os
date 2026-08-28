@@ -1,3 +1,74 @@
+# 2026-08-28 — 「資料到畫面之間靜默降級」全掃描:最嚴重的一處是 3 張方劑卡的策展藥對整份消失
+
+Ting 裁「掃一次」。起因是同一週抓到三次同型缺陷(一個 `||` 吞掉 109 條藥對、
+STATUS_LABEL 少兩鍵讓 124 張卡印生 enum、兩處手抄 pill 讓 151 顆標籤印小寫 draft)——
+共同點是**查表失敗時不出聲**,資料層驗證器全綠而畫面已經在騙人。
+完整稽核落 `docs/research_packs/RENDER_FALLBACK_AUDIT_2026-08-28.md`,這裡只記結論與處置。
+
+## 掃描器自己先犯了同一個病,值得記
+初版把 `RF_TIER_CLASS` 抽出 **0 個 key**(它是單行物件字面量,而抽取器用了行首錨點),
+於是 193 筆紅旗 tier 全被報成「查不到」——**一份看起來很有說服力、實際上全錯的報告**。
+眼讀原始碼才發現那三個鍵跟資料完全對得上。同週 Appendix B 解析器踩的是一模一樣的坑。
+**抽取器抓 0 筆一律當失敗**,這條要變成寫掃描器的預設。
+另外修掉兩個量測誤差才看得到真值:症狀有記錄+分類軸**兩層**登記表(只比記錄會生 158 次假警報);
+3 個字串是欄位路徑/歷史註記不是 id(前批已裁定)。
+
+## 兩層掃描
+- 靜態:10 個檔約 2 萬行,7 種降級型態命中 153 處 —— 但大多是合法的(表單 `?.value || ""` 那類)。
+- 實測:拿 bundle 實際值去比詞彙表、拿實際引用去比登記表。**只有實測數字算數。**
+
+**詞彙表 4 張全部覆蓋 OK**(STATUS_LABEL 0 缺、BASIS_LABEL 0、RF_TIER_CLASS 0、
+FORMULA_CATEGORY_DESC 缺 6 個分類的 tooltip 說明——不影響顯示,只是少了說明)。
+
+## 關鍵發現:懸空 ≠ 畫面壞掉,要看那欄渲不渲染、查不到時做什麼
+逐欄位讀原始碼確認行為,三種後果都存在:
+| 欄位 | 引用 | 懸空 | 查不到時 |
+|---|---|---|---|
+| `formulas.key_pairs` | 25 | **15** | **靜默丟掉**(`.filter(Boolean)`) |
+| `patternLibrary.typical_formulas` | 207 | 5 | 證型大卡代表方 |
+| `herbPairs.herbs` | 715 | 3 | **印 id 去前綴的 slug**,不是藥名 |
+| `herbPairs.found_in_formulas` | 262 | 9 | 未渲染(純資料整潔) |
+| `herbs/formulas.related_formulas` | 2120 | **0** | — |
+
+**還有一類本次沒觸發但機制在**:`relationButton(id, formulaLabel(id))` **不檢查目標存不存在**
+就渲染成可點按鈕,標籤還把 id 美化成「Jiao tai wan」。`related_formulas` 現在是 0 懸空,
+**靠的是運氣不是機制** —— 一旦出現懸空就是看起來活的死連結。
+
+## 最嚴重:3 張方劑卡的策展藥對整份消失
+`formulas.key_pairs` 15 條懸空分佈 8 張卡,其中
+`huang_lian_jie_du_tang` 3/3、`dao_chi_san` 2/2、`long_dan_xie_gan_tang` 3/3 **全丟**。
+全丟會讓 `explicit.length === 0`,那一區改走「依組成推得」的候選清單,畫面上標著「依組成推得」——
+**看起來像這張卡本來就沒策展過藥對。**
+逐條查能不能救:**15 條裡只有 1 條**是排序不同(`pair.xi_xin__gan_jiang__wu_wei_zi`
+→ 既有 `pair.gan_jiang__xi_xin__wu_wei_zi`);3 條引用的藥味不在正典
+(`herb.da_zhao`/`herb.shao_yao`/`herb.geng_mi` —— da_zhao 與 geng_mi 正是前批重導過的雙胞胎,
+**方劑這一側沒跟著改**);其餘 11 條是藥對記錄真的還沒建。
+
+## 本批做的兩件事(都不改資料)
+1. **讓它不要再靜默**:`formulaPairsSection` 把解析不到的 id 列在畫面上
+   (「本方另列了 N 條藥對,但那些藥對記錄尚未建立」+ 警示色左框),`styles.css` 加 `.k-pair-missing`。
+   **眼讀確認**:龍膽瀉肝湯列出 3 條、桂枝湯列出 2 條,顯示的藥對卡數不變。
+2. **上 gate**:`scripts/validate-rendered-reference-resolution.js`,每個會渲染的引用欄位一個上限,
+   **只准變少**(改善會提示把數字調下來)。盯數量不盯名單,因為懸空 id 會換人不換數量。
+   負向測試:注入一條懸空引用 → `FAIL — 1 項`;還原 → PASS。空掃(掃到 0 筆引用)一律 FAIL。
+
+## 驗證(八支全跑,輸出原文)
+`validate-herb-standard` / `validate-content-junk` / `validate-dose-basis` /
+`validate-herb-pair-render` / `validate-board-pair-attribution` /
+`validate-review-status-vocabulary` / `validate-rendered-reference-resolution`(新) /
+`check-validation-ratchet` **全 PASS**;`git diff --check` 無輸出。
+`data/**` 本批**一個字都沒改**(只動 js/、styles.css、docs/、scripts/、CLAUDE.md)。
+
+## 待 Ting 決定(三項,都寫在稽核檔末)
+1. 那 15 條 key_pairs:1 條改排序即可、3 條要先處理藥味雙胞胎、11 條要建藥對記錄
+   (黃連解毒湯/導赤散/龍膽瀉肝湯那幾組都是考科常見對藥)。
+2. `relationButton` 要不要一律檢查目標存在?現在 0 懸空是運氣不是機制。
+3. `FORMULA_CATEGORY_DESC` 缺的 6 個分類說明要不要補。
+
+MEASURED TREE: claude/practical-easley-73f009 @ origin/main 本批基底
+
+---
+
 # 2026-08-28 — Claude 獨立驗收 Task 11D:海風藤、禹餘糧兩張新卡通過,已落地
 
 364→366 筆，既有 364 筆逐筆位元組比對 0 異動確認（自己重寫腳本核對，不是信報告數字）；

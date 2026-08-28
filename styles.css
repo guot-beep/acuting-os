@@ -6184,6 +6184,9 @@ button.k-modern-chip.is-active { outline: 2px solid var(--accent, #38bdf8); outl
 .k-pair-caution { color: #b45309; }
 .k-pair-teach { padding-top: 0.35rem; border-top: 1px dashed var(--line, rgba(148,163,184,0.3)); }
 .k-pair-note { margin: 0 0 0.6rem; font-size: 0.88rem; opacity: 0.85; }
+/* 引用了尚未建立的藥對記錄 —— 這一行的存在就是重點:失敗要看得見,
+   不能像以前那樣 filter(Boolean) 靜默丟掉(2026-08-28)。 */
+.k-pair-missing { color: var(--warn); opacity: 1; border-left: 3px solid var(--warn); padding-left: 0.6rem; }
 
 /* Formula category cards are now clickable browse entries */
 .formula-category-card.is-clickable { cursor: pointer; transition: border-color 0.15s, transform 0.05s; }

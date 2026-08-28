@@ -1,0 +1,101 @@
+#!/usr/bin/env node
+/**
+ * validate-rendered-reference-resolution.js — 會上畫面的跨卡引用,解析得到嗎
+ *
+ * 為什麼有這一支(2026-08-28):
+ * 這個庫反覆出現的不是資料錯,是**資料到畫面之間查表失敗時不出聲**。
+ * 同一週已經抓到三次:一個 `||` 讓 36 味藥卡吞掉 109 條藥對、STATUS_LABEL 少兩個鍵
+ * 讓 124 張卡印生 enum、兩處手抄 pill 讓 151 顆標籤印小寫 draft。
+ * 這支管第四種:**引用了不存在的 id**。三種畫面後果都遇過:
+ *   靜默丟掉   formulas.key_pairs 走 .filter(Boolean) —— 3 張方劑卡的策展藥對整份消失,
+ *              改印「依組成推得」的候選,看起來像本來就沒策展過(已於同日改成會出聲)
+ *   印生 slug  herbPairs.herbs 查不到就靜態 chip,標籤是 id 去前綴
+ *   死連結     relationButton 不管目標存不存在都渲染成可點按鈕
+ *
+ * 規則:**只准變少**。每個欄位一個上限,超過就 FAIL;低於就提示可以把上限調下來。
+ * 不用「清單」是因為懸空 id 會換人不換數量;盯數量比盯名單耐用。
+ *
+ * 用法: node scripts/validate-rendered-reference-resolution.js
+ */
+"use strict";
+
+const fs = require("fs");
+const path = require("path");
+const ROOT = path.join(__dirname, "..");
+
+// 上限 = 2026-08-28 首次量測值。修好就把數字改小,只能往下不能往上。
+const CEILING = {
+  "formulas.key_pairs": 15,
+  "herbPairs.herbs": 3,
+  "patternLibrary.typical_formulas": 5,
+  "herbPairs.found_in_formulas": 9,
+};
+const BEHAVIOUR = {
+  "formulas.key_pairs": "方劑卡藥對區:解析不到的現在會列出 id 說明尚未建立(改前是靜默丟掉)",
+  "herbPairs.herbs": "藥對卡成員 chip:查不到就印 id 去前綴的 slug,不是藥名",
+  "patternLibrary.typical_formulas": "證型大卡代表方",
+  "herbPairs.found_in_formulas": "目前未渲染(資料整潔問題,不影響畫面)",
+};
+
+for (const f of ["core", "ref", "rx", "mm", "dx", "pat"]) {
+  const p = path.join(ROOT, "data/generated/knowledge_" + f + ".js");
+  if (!fs.existsSync(p)) { console.log("FAIL — 先跑 node scripts/build-data.js(缺 " + f + " 分片)"); process.exit(1); }
+  globalThis.window = globalThis;
+  require(p);
+}
+const K = globalThis.ACUTING_KNOWLEDGE || {};
+const recs = (n) => { const d = K[n]; return (d && (d.records || d.pairs)) || []; };
+if (!recs("herbs").length || !recs("formulas").length || !recs("herbPairs").length) {
+  console.log("FAIL — bundle 讀不到 herbs/formulas/herbPairs,不允許空跑通過。"); process.exit(1);
+}
+const ID = {
+  herb: new Set(recs("herbs").map((r) => r.id)),
+  formula: new Set(recs("formulas").map((r) => r.id)),
+  pair: new Set(recs("herbPairs").map((r) => r.id)),
+};
+const FIELDS = [
+  { set: "formulas", field: "key_pairs", ns: "pair" },
+  { set: "herbPairs", field: "herbs", ns: "herb" },
+  { set: "patternLibrary", field: "typical_formulas", ns: "formula" },
+  { set: "herbPairs", field: "found_in_formulas", ns: "formula" },
+];
+
+const problems = [];
+const improved = [];
+const notes = [];
+let scanned = 0;
+for (const f of FIELDS) {
+  const key = f.set + "." + f.field;
+  const bad = new Map();
+  let total = 0;
+  for (const r of recs(f.set)) {
+    const v = r[f.field];
+    for (const x of (Array.isArray(v) ? v : (v ? [v] : []))) {
+      const id = typeof x === "string" ? x : (x && (x.id || x.formula_id || x.herb_id));
+      if (typeof id !== "string" || !id.startsWith(f.ns + ".")) continue;
+      total++; scanned++;
+      if (!ID[f.ns].has(id)) bad.set(id, (bad.get(id) || 0) + 1);
+    }
+  }
+  const n = [...bad.values()].reduce((a, x) => a + x, 0);
+  const cap = CEILING[key];
+  notes.push(key.padEnd(34) + "引用 " + String(total).padStart(4) + " → 解析不到 " + String(n).padStart(3) + " / 上限 " + String(cap === undefined ? "(未設)" : cap));
+  if (cap === undefined) { problems.push(key + " 沒有設上限 —— 新欄位要先量一次再把數字寫進 CEILING"); continue; }
+  if (n > cap) {
+    problems.push(key + " 解析不到 " + n + " 條,超過上限 " + cap + "。畫面行為:" + (BEHAVIOUR[key] || "?")
+      + "\n      新增的:" + [...bad.keys()].slice(0, 8).join(", "));
+  } else if (n < cap) improved.push(key + " " + cap + " → " + n + "(把 CEILING 裡的數字改成 " + n + " 鎖住)");
+}
+if (!scanned) { console.log("FAIL — 一筆引用都沒掃到,欄位名稱可能變了,不允許空跑通過。"); process.exit(1); }
+
+console.log("validate-rendered-reference-resolution — 會上畫面的跨卡引用解析得到嗎");
+notes.forEach((n) => console.log("  " + n));
+if (improved.length) { console.log(""); improved.forEach((s) => console.log("  ℹ 改善了:" + s)); }
+if (problems.length) {
+  console.log("");
+  problems.forEach((p) => console.log("  ✗ " + p));
+  console.log("\nFAIL — " + problems.length + " 項。引用不存在的 id 不是資料整潔問題:"
+    + "查不到時畫面會靜默丟掉、印生 slug、或給出一個點了沒東西的死連結。");
+  process.exit(1);
+}
+console.log("\nPASS — 會上畫面的引用解析不到的數量都在上限內。");

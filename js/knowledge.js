@@ -394,7 +394,14 @@
   }
 
   function formulaPairsSection(record) {
-    const explicit = (record.key_pairs || []).map((id) => PAIRS.find((p) => p.id === id)).filter(Boolean);
+    /* key_pairs 列的 id 有一部分指向不存在的藥對記錄(2026-08-28 實測 25 條引用裡 15 條懸空，
+       分佈在 8 張方劑卡)。原本 .filter(Boolean) 把它們**靜默丟掉** —— 讀者看到 3 條裡的 1 條，
+       完全不知道另外 2 條曾經被列出來過；黃連解毒湯／導赤散／龍膽瀉肝湯 更是整份被丟光，
+       於是那一區改印「依組成推得」的候選清單，看起來像本來就沒策展過。
+       失敗必須出聲:解析不到的照樣列出來，說清楚是「引用了尚未建立的藥對記錄」。 */
+    const wanted = (record.key_pairs || []).filter((id) => typeof id === "string");
+    const explicit = wanted.map((id) => PAIRS.find((p) => p.id === id)).filter(Boolean);
+    const unresolved = wanted.filter((id) => !PAIRS.some((p) => p.id === id));
     let derived = [];
     if (!explicit.length) {
       const inFormula = new Set((record.composition || []).map((c) =>
@@ -402,12 +409,18 @@
       derived = PAIRS.filter((p) => (p.herbs || []).length && p.herbs.every((h) => inFormula.has(h)));
     }
     const list = explicit.length ? explicit : derived;
+    const missingNote = unresolved.length
+      ? `<p class="k-pair-note k-pair-missing">${esc(modeText(
+          `本方另列了 ${unresolved.length} 條藥對，但那些藥對記錄尚未建立，因此無法顯示內容：${unresolved.join("、")}`,
+          `This formula also lists ${unresolved.length} pair(s) whose records do not exist yet, so they cannot be shown: ${unresolved.join(", ")}`
+        ))}</p>`
+      : "";
     if (!list.length) {
-      return '<p class="k-detail-empty">此方尚未建立藥對 / No herb pairs recorded for this formula yet.</p>';
+      return missingNote + '<p class="k-detail-empty">此方尚未建立藥對 / No herb pairs recorded for this formula yet.</p>';
     }
     const keyPairsNote = usableText(contentMode === "english" ? (record.key_pairs_note_en || record.key_pairs_note_zh) : (record.key_pairs_note_zh || record.key_pairs_note_en));
     const note = keyPairsNote ? `<p class="k-pair-note">${esc(keyPairsNote)}</p>` : "";
-    return note + `<div class="k-pair-list">${list.map((p) => pairCard(p, !explicit.length)).join("")}</div>`;
+    return note + missingNote + `<div class="k-pair-list">${list.map((p) => pairCard(p, !explicit.length)).join("")}</div>`;
   }
 
   function herbPairsSection(record, opts) {
