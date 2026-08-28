@@ -4435,19 +4435,30 @@
    "english_exam_track": {
     "review_status": "draft",
     "source_status": "bensky_review_pending",
-    "properties_taste_temp": "Acrid; warm. Draft pending Bensky verification.",
+    "properties_taste_temp": "Acrid, warm; toxic. Root and rhizome only (ChP restricts medicinal use to root/rhizome).",
     "functions": [
-     "Release exterior wind-cold pattern context",
-     "Support surface-dispersing study differentiation"
+     "Release the exterior, disperse Wind-Cold, and alleviate pain",
+     "Warm the Lung and transform thin fluids",
+     "Unblock the nasal orifices"
     ],
     "indications": [
-     "Exterior pattern documentation context only"
+     "Wind-Cold headache and migraine — with Chuan Xiong, Bai Zhi, Qiang Huo",
+     "Foot-Shaoyin (Kidney) headache and toothache, may be chewed — with Bai Zhi",
+     "Toothache from Stomach Heat — with Shi Gao, Zhi Mu, Huang Qin",
+     "Wind-Cold-Damp Bi — with Qiang Huo, Du Huo, Fang Feng",
+     "Cold thin fluids lodged in the Lung: cough with copious watery sputum — with Ma Huang, Gan Jiang, Wu Wei Zi",
+     "Nasal congestion and sinusitis — with Bai Zhi, Xin Yi, Cang Er Zi"
     ],
     "common_pairings": [
-     "Pairings depend on formula context; verify against Bensky before source_checked."
+     "Formal pair: Xi Xin + Gan Jiang + Wu Wei Zi for cold-fluid cough (see key_pairs); also combined within Xiao Qing Long Tang and Chuan Xiong Cha Tiao San (see related_formulas)."
     ],
     "contraindications": [
-     "Review pregnancy, fever red flags, sweating/dehydration, and medication context when relevant."
+     "Contraindicated in febrile disorders",
+     "Contraindicated in Yin deficiency with cough or wheezing",
+     "Contraindicated in Yang excess",
+     "Contraindicated in headache from Blood deficiency or Wind-Heat",
+     "Contraindicated in spontaneous sweating from Qi deficiency",
+     "Incompatible with Li Lu (Veratrum) — the Eighteen Antagonisms"
     ],
     "functions_zh_source": [
      "散風寒",
@@ -4862,7 +4873,7 @@
    ],
    "source_hint": "Bensky Materia Medica: Release Exterior",
    "review_status": "draft",
-   "properties_taste_temp": "甘、微苦、溫、小毒",
+   "properties_taste_temp": "辛、苦、溫、有毒",
    "functions": [
     "發汗解表",
     "散風寒",
@@ -4889,19 +4900,24 @@
    "english_exam_track": {
     "review_status": "draft",
     "source_status": "bensky_review_pending",
-    "properties_taste_temp": "Acrid; warm. Draft pending Bensky verification.",
+    "properties_taste_temp": "Acrid, bitter, warm; toxic. Fruit with spines.",
     "functions": [
-     "Release exterior wind-cold pattern context",
-     "Support surface-dispersing study differentiation"
+     "Open the nasal orifices and alleviate pain",
+     "Dispel Wind and eliminate Dampness",
+     "Dispel Wind and stop itching"
     ],
     "indications": [
-     "Exterior pattern documentation context only"
+     "Sinusitis with thick discharge and reduced sense of smell",
+     "Wind-Damp Bi pain",
+     "Occipital headache, usually as an auxiliary herb",
+     "Skin itching and rashes"
     ],
     "common_pairings": [
-     "Pairings depend on formula context; verify against Bensky before source_checked."
+     "Paired with Xin Yi Hua (NCBAHM 2026 CH Appendix B) for nasal congestion and sinusitis; also combined within Cang Er Zi San (see related_formulas)."
     ],
     "contraindications": [
-     "Review pregnancy, fever red flags, sweating/dehydration, and medication context when relevant."
+     "Avoid in Blood-deficient constitutions — its warm nature readily causes dizziness and headache.",
+     "Contraindicated in pregnancy and lactation — constituents may affect the fetus or infant."
     ],
     "functions_zh_source": [
      "發汗解表",
@@ -5000,12 +5016,12 @@
     "four_natures_zh": "溫",
     "four_natures_en": "Warm",
     "five_flavors_zh": [
-     "甘",
-     "微苦"
+     "辛",
+     "苦"
     ],
     "five_flavors_en": [
-     "Sweet",
-     "Slightly bitter"
+     "Acrid",
+     "Bitter"
     ],
     "meridian_tropism_zh": [
      "肺經"
@@ -5081,7 +5097,8 @@
      "curriculum/herbs/herb_functions_chenoweth.pdf"
     ],
     "properties_taste_temp": [
-     "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1"
+     "https://cloudtcm.com/herb/977",
+     "中國藥典(WebSearch 核對 2026-08-28，多個藥典鏡像站一致)"
     ],
     "channels_zh": [
      "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p1"
@@ -5126,7 +5143,7 @@
      "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf#p1"
     ],
     "tcm_properties": [
-     "https://cloudtcm.com/herb/977"
+     "中國藥典(WebSearch 核對 2026-08-28)"
     ],
     "traditional_functions_zh": [
      "https://cloudtcm.com/herb/977"
@@ -5221,6 +5238,13 @@
      "reason": "A8(a):毒性/管制藥材不承載食療用量(77 張食療上限高於藥用上限的系統性缺陷,毒藥子集先行)",
      "moved_at": "2026-08-27",
      "ruling": "TING_RULING_SHEET_2026-08-27"
+    },
+    {
+     "original_field": "properties_taste_temp",
+     "text": "甘、微苦、溫、小毒",
+     "reason": "中國藥典苍耳子性味為「辛、苦，溫；有毒」(WebSearch 2026-08-28 核對多個藥典鏡像一致)；本卡原值缺辛味、毒性等級誤標為小毒(應為有毒，較嚴重一級)，先搬存再改，避免安全等級被低估。",
+     "moved_at": "2026-08-28",
+     "ruling": "A13(b) CloudTCM re-verification against 中國藥典/CloudTCM ground truth"
     }
    ]
   },
@@ -14866,19 +14890,27 @@
    "english_exam_track": {
     "review_status": "draft",
     "source_status": "bensky_review_pending",
-    "properties_taste_temp": "Mostly bitter/sweet/cold depending on herb. Draft pending Bensky verification.",
+    "properties_taste_temp": "Bitter, cold.",
     "functions": [
-     "clear heat and dry dampness",
-     "Support heat-pattern study differentiation"
+     "Expels and kills parasites",
+     "Clears Heat and cools the Blood",
+     "Clears Heat and promotes urination",
+     "Generates fluids and quenches thirst",
+     "Dries Dampness",
+     "Clears Heat and drains Fire",
+     "Promotes urination and reduces edema",
+     "Calms and arrests wheezing",
+     "Stops diarrhea",
+     "Resolves toxicity and kills parasites"
     ],
     "indications": [
-     "Heat-pattern documentation context only"
+     "Clears Heat, dries Dampness; kills parasites; promotes urination"
     ],
     "common_pairings": [
-     "Pairings depend on heat level and organ/pattern context; verify against Bensky before source_checked."
+     "Combined within Xiao Feng San for Wind-Damp itching skin lesions (see related_formulas)."
     ],
     "contraindications": [
-     "Review pregnancy, cold deficiency, digestive tolerance, infection red flags, liver/kidney context, and medications when relevant."
+     "Contraindicated in Spleen-Stomach Deficiency-Cold; incompatible with Li Lu (Veratrum) -- the Eighteen Antagonisms."
     ],
     "functions_zh_source": [
      "驅蟲殺蟲",
@@ -15098,7 +15130,17 @@
     "actions_en": [
      "translated: 本卡 functions_zh 逐條忠實翻譯(帳本 docs/research_packs/HERB_EN_BACKFILL_2026-08-19.json,紅線5 同長同序)"
     ],
-    "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md; Taiwan Herbal Pharmacopoeia 4th ed.; American Dragon (americandragon.com)"
+    "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md; Taiwan Herbal Pharmacopoeia 4th ed.; American Dragon (americandragon.com)",
+    "contraindications_en": [
+     "由既有 contraindications_zh 直譯，未新增內容"
+    ],
+    "tcm_properties": [
+     "https://cloudtcm.com/herb/1781",
+     "中國藥典(WebSearch 核對 2026-08-28，性味歸經一致)"
+    ],
+    "pharmaceutical_latin": [
+     "NCBAHM 2026 CH Content Outline, Appendix A (通用拉丁藥名)"
+    ]
    },
    "card_grade": "partial",
    "import_artifacts": [
@@ -15186,7 +15228,38 @@
    ],
    "contraindications_zh": [
     "脾胃虛寒者忌服；反藜蘆（十八反）。"
-   ]
+   ],
+   "contraindications_en": [
+    "Contraindicated in Spleen-Stomach Deficiency-Cold; incompatible with Li Lu (Veratrum) -- the Eighteen Antagonisms."
+   ],
+   "tcm_properties": {
+    "four_natures_zh": "寒",
+    "four_natures_en": "Cold",
+    "five_flavors_zh": [
+     "苦"
+    ],
+    "five_flavors_en": [
+     "Bitter"
+    ],
+    "meridian_tropism_zh": [
+     "心經",
+     "肝經",
+     "胃經",
+     "大腸經",
+     "膀胱經"
+    ],
+    "meridian_tropism_en": [
+     "HT Heart",
+     "LV Liver",
+     "ST Stomach",
+     "LI Large Intestine",
+     "BL Bladder"
+    ],
+    "part_used_zh": "根",
+    "part_used_en": "Root"
+   },
+   "pharmaceutical_latin": "Sophorae Flavescentis Radix",
+   "pinyin_toned": "Kǔ Shēn"
   },
   {
    "id": "herb.jin_yin_hua",
@@ -21365,7 +21438,7 @@
    ],
    "source_hint": "Bensky Materia Medica: Drain Downward",
    "review_status": "draft",
-   "properties_taste_temp": "苦、有毒、寒、甘、大毒",
+   "properties_taste_temp": "苦、寒、有毒",
    "functions": [
     "峻下逐水",
     "瀉下",
@@ -21392,23 +21465,21 @@
    "english_exam_track": {
     "review_status": "draft",
     "source_status": "bensky_review_pending",
-    "properties_taste_temp": "Draft: bitter/cold or moistening depending on herb; verify individual taste and temperature.",
+    "properties_taste_temp": "Bitter, cold; toxic.",
     "functions": [
-     "Drain downward or moisten intestines pattern context",
-     "Support constipation and excess/deficiency differentiation"
+     "Drastically purges and expels water",
+     "Drains downward",
+     "Transforms Phlegm and directs Qi downward",
+     "Reduces swelling and dissipates nodules"
     ],
     "indications": [
-     "Pattern documentation context only; verify against Bensky before source_checked."
+     "Drastically purges retained fluids; reduces swelling and dissipates nodules"
     ],
     "common_pairings": [
-     "Pairings depend on formula context; verify against Bensky before source_checked."
+     "Incompatible with Gan Cao (Licorice) -- the Eighteen Antagonisms; do not combine."
     ],
     "contraindications": [
-     "Review toxicity review before clinical use.",
-     "Review pregnancy review before clinical use.",
-     "Review not for self treatment before clinical use.",
-     "Review dehydration electrolyte review before clinical use.",
-     "Review dose preparation review before clinical use."
+     "Contraindicated in weak or deficient patients, during pregnancy, with ulcers, or with a history of bleeding."
     ],
     "functions_zh_source": [
      "峻下逐水",
@@ -21489,7 +21560,8 @@
    "atlas_link_status": "index",
    "field_sources": {
     "properties_taste_temp": [
-     "https://cloudtcm.com/herb/1040"
+     "https://cloudtcm.com/herb/1040",
+     "中國藥典(WebSearch 核對 2026-08-28)"
     ],
     "channels_zh": [
      "https://cloudtcm.com/herb/1040"
@@ -21526,6 +21598,12 @@
     ],
     "contraindications_en": [
      "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p6"
+    ],
+    "tcm_properties": [
+     "中國藥典(WebSearch 核對 2026-08-28)"
+    ],
+    "pharmaceutical_latin": [
+     "NCBAHM 2026 CH Content Outline, Appendix A (通用拉丁藥名)"
     ]
    },
    "card_grade": "partial",
@@ -21566,6 +21644,13 @@
      "reason": "A7(a):十八反被弱化表述為「降低藥效」,與甘草卡的絕對禁用方向相反;統一為禁同用",
      "moved_at": "2026-08-27",
      "ruling": "TING_RULING_SHEET_2026-08-27"
+    },
+    {
+     "original_field": "properties_taste_temp",
+     "text": "苦、有毒、寒、甘、大毒",
+     "reason": "中國藥典甘遂性味為「苦，寒；有毒」(WebSearch 2026-08-28 核對)；本卡原值同時列「有毒」與「大毒」兩個不同毒性等級(自相矛盾)，並多出無來源支持的「甘」味，先搬存再改。",
+     "moved_at": "2026-08-28",
+     "ruling": "A13(b) CloudTCM re-verification against 中國藥典/CloudTCM ground truth"
     }
    ],
    "dosage_normalized": {
@@ -21619,7 +21704,31 @@
    ],
    "contraindications_en": [
     "Contraindicated in weak or deficient patients, during pregnancy, with ulcers, or with a history of bleeding."
-   ]
+   ],
+   "tcm_properties": {
+    "four_natures_zh": "寒",
+    "four_natures_en": "Cold",
+    "five_flavors_zh": [
+     "苦"
+    ],
+    "five_flavors_en": [
+     "Bitter"
+    ],
+    "meridian_tropism_zh": [
+     "肺經",
+     "腎經",
+     "大腸經"
+    ],
+    "meridian_tropism_en": [
+     "LU Lung",
+     "KI Kidney",
+     "LI Large Intestine"
+    ],
+    "part_used_zh": "塊根",
+    "part_used_en": "Root Tuber"
+   },
+   "pharmaceutical_latin": "Kansui Radix",
+   "pinyin_toned": "Gān Suì"
   },
   {
    "id": "herb.du_huo",
@@ -27926,22 +28035,33 @@
    "english_exam_track": {
     "review_status": "draft",
     "source_status": "bensky_review_pending",
-    "properties_taste_temp": "Draft: bland/sweet/cold or neutral depending on herb; verify individual taste and temperature.",
+    "properties_taste_temp": "Slightly bitter, bland, cold; non-toxic (authentic Akebia -- not to be confused with Aristolochia-derived Guan Mu Tong, which is banned for aristolochic-acid nephrotoxicity).",
     "functions": [
-     "Promote urination pattern context",
-     "Support dampness, edema, or lin-pattern differentiation"
+     "Clear Heat & Drain Fire",
+     "Clear Heat & Promote Urination",
+     "Tonify Blood & Nourish Liver",
+     "Promote Urination & Leach Dampness",
+     "Expel Pus",
+     "Promote Lactation",
+     "Promote Urination & Unblock Lin",
+     "Clear Heat & Relieve Toxicity",
+     "Reduce Swelling & Relieve Pain",
+     "Clear Heart & Drain Fire"
     ],
     "indications": [
-     "Pattern documentation context only; verify against Bensky before source_checked."
+     "Damp-Heat Lin syndrome with reddish, painful urination; Heart-Fire with mouth and tongue sores (representative formula: Dao Chi San).",
+     "Postpartum insufficient lactation, amenorrhea, Wind-Damp Bi pain."
     ],
     "common_pairings": [
-     "Pairings depend on formula context; verify against Bensky before source_checked."
+     "Combined within Dao Chi San for Heart-Fire with mouth/tongue sores and Damp-Heat Lin syndrome (see related_formulas)."
     ],
     "contraindications": [
-     "Review pregnancy review before clinical use.",
-     "Review kidney disease review before clinical use.",
-     "Review toxicity review before clinical use.",
-     "Review dose preparation review before clinical use."
+     "Contraindicated without internal Damp-Heat — Mu Tong's bitter, cold nature may injure upright Qi.",
+     "Contraindicated in fluid deficiency — its diuretic action easily depletes body fluids further.",
+     "Contraindicated in Qi weakness — its cold nature may deplete Yang Qi.",
+     "Contraindicated in Spermatorrhea — may aggravate seminal leakage.",
+     "Contraindicated in urinary frequency — its diuretic action may worsen the frequency.",
+     "Contraindicated in pregnancy — its blood-invigorating, menstruation-promoting action may cause miscarriage."
     ],
     "functions_zh_source": [
      "清熱瀉火",
@@ -28234,6 +28354,9 @@
     "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md",
     "pharmaceutical_latin": [
      "curriculum/herbs/Pinyin & Latin Herb List.md; curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md"
+    ],
+    "contraindications_en": [
+     "由既有 contraindications_zh 直譯，未新增內容"
     ]
    },
    "card_grade": "partial",
@@ -28313,6 +28436,9 @@
      "moved_at": "2026-08-27",
      "ruling": "TING_RULING_SHEET_2026-08-27"
     }
+   ],
+   "contraindications_en": [
+    "Contraindicated in pregnancy; use with caution in impaired renal function."
    ]
   },
   {
@@ -29439,7 +29565,7 @@
    ],
    "source_hint": "Bensky Materia Medica: Warm Interior",
    "review_status": "draft",
-   "properties_taste_temp": "辛、甘、有毒、大熱、大毒",
+   "properties_taste_temp": "辛、甘、大熱、有毒",
    "functions": [
     "溫裡溫中",
     "補陽",
@@ -29494,24 +29620,21 @@
    "english_exam_track": {
     "review_status": "draft",
     "source_status": "bensky_review_pending",
-    "properties_taste_temp": "Draft: acrid/hot or warm; verify individual taste and temperature.",
+    "properties_taste_temp": "Acrid, sweet, very hot; toxic.",
     "functions": [
-     "Warm interior cold pattern context",
-     "Support cold abdominal pain or yang-collapse differentiation"
+     "Revives the yang and restores devastated yang",
+     "Augments fire and assists the Yang",
+     "Disperses cold-dampness, warms the channels and alleviates pain"
     ],
     "indications": [
-     "Pattern documentation context only; verify against Bensky before source_checked."
+     "Revives devastated Yang and rescues from collapse; warms and tonifies Kidney and Spleen Yang; disperses Cold and relieves pain"
     ],
     "common_pairings": [
-     "Pairings depend on formula context; verify against Bensky before source_checked."
+     "Incompatible with Ban Xia, Gua Lou, Bei Mu, Bai Lian, and Bai Ji -- the Eighteen Antagonisms (see cautions_en)."
     ],
     "contraindications": [
-     "Review toxicity review before clinical use.",
-     "Review cardiac review before clinical use.",
-     "Review pregnancy review before clinical use.",
-     "Review not for self treatment before clinical use.",
-     "Review dose preparation review before clinical use.",
-     "Review incompatibility review before clinical use."
+     "Contraindicated in Yin deficiency with Yang excess, true Heat with false Cold, and in pregnancy.",
+     "This substance is pungent, hot and drying; contraindicated in Yin deficiency with Yang hyperactivity and in pregnancy."
     ],
     "functions_zh_source": [
      "溫裡溫中",
@@ -29678,7 +29801,8 @@
    "atlas_link_status": "index",
    "field_sources": {
     "properties_taste_temp": [
-     "https://cloudtcm.com/herb/1037"
+     "https://cloudtcm.com/herb/1037",
+     "中國藥典(WebSearch 核對 2026-08-28)"
     ],
     "channels_zh": [
      "https://cloudtcm.com/herb/1037"
@@ -29714,7 +29838,19 @@
     "contraindications_zh": [
      "由既有 cautions_zh 依「禁服/忌服」挑出，未新增內容"
     ],
-    "modern_functions_en": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
+    "modern_functions_en": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md",
+    "tcm_properties": [
+     "中國藥典(WebSearch 核對 2026-08-28)"
+    ],
+    "pharmaceutical_latin": [
+     "NCBAHM 2026 CH Content Outline, Appendix A (通用拉丁藥名)"
+    ],
+    "exam_pearl": [
+     "由本卡既有 cautions_en/dosage_normalized 內容整理，未新增未查證宣稱"
+    ],
+    "exam_importance": [
+     "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.pdf"
+    ]
    },
    "function_tags_zh": [
     "溫裡溫中",
@@ -29807,8 +29943,43 @@
      "reason": "A8(a):毒性/管制藥材不承載食療用量(77 張食療上限高於藥用上限的系統性缺陷,毒藥子集先行)",
      "moved_at": "2026-08-27",
      "ruling": "TING_RULING_SHEET_2026-08-27"
+    },
+    {
+     "original_field": "properties_taste_temp",
+     "text": "辛、甘、有毒、大熱、大毒",
+     "reason": "中國藥典附子性味為「辛、甘，大熱；有毒」(WebSearch 2026-08-28 核對)；本卡原值多出無藥典依據的「大毒」(與藥典「有毒」重複且等級不同)，先搬存再改。",
+     "moved_at": "2026-08-28",
+     "ruling": "A13(b) CloudTCM re-verification against 中國藥典/CloudTCM ground truth"
     }
-   ]
+   ],
+   "tcm_properties": {
+    "four_natures_zh": "大熱",
+    "four_natures_en": "Very Hot",
+    "five_flavors_zh": [
+     "辛",
+     "甘"
+    ],
+    "five_flavors_en": [
+     "Acrid",
+     "Sweet"
+    ],
+    "meridian_tropism_zh": [
+     "心經",
+     "腎經",
+     "脾經"
+    ],
+    "meridian_tropism_en": [
+     "HT Heart",
+     "KI Kidney",
+     "SP Spleen"
+    ],
+    "part_used_zh": "側根(炮製品)",
+    "part_used_en": "Lateral Root (processed)"
+   },
+   "pharmaceutical_latin": "Aconiti Lateralis Radix Praeparata",
+   "pinyin_toned": "Fù Zǐ",
+   "exam_pearl": "本批最高風險藥：回陽救逆第一藥，必先煎久煎（30–60分鐘）以降解烏頭鹼毒性；反半夏、瓜蔞、貝母、白蘞、白芨（十八反，見 cautions_en）。",
+   "exam_importance": "★ NCBAHM 2026 CH 考綱 Domain I.A：毒性藥材炮製與煎法降毒是必考點，附子是最具代表性的例子。"
   },
   {
    "id": "herb.gan_jiang",
