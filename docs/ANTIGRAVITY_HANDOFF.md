@@ -100,6 +100,17 @@ git show --stat <你的 commit>      # 只准出現帳本 + docs
 
 ---
 
+## ✅ Task 11D 已完成並推送到獨立分支等驗收（2026-08-28）
+
+- **Task 11D 分支**：`antigravity/task11d-new-herbs-hai-feng-teng-yu-yu-liang`（已推到 `origin`）
+- **建立卡片**：
+  1. `herb.hai_feng_teng`（海風藤）：來源 `https://www.americandragon.com/Individualherbsupdate/HaiFengTeng.html` & `https://cloudtcm.com/herb/4702`
+  2. `herb.yu_yu_liang`（禹餘糧）：來源 `https://www.americandragon.com/Individualherbsupdate/YuYuLiang.html` & `https://cloudtcm.com/herb/12479`
+- **中藥卡總數**：364 筆 → 366 筆（既有 364 筆零改動，`herb_pairs.json` 零改動）
+- **六大驗證器結果**：全部 PASS（零退化，零結構缺陷，`git diff --check` 零輸出）
+
+---
+
 ## 📋 新派工 Task 11D（2026-08-27，Ting 裁定「好 補卡」）——建 2 張中藥卡：海風藤、禹餘糧
 
 **MEASURED TREE：`origin/main` @ `15f3d1f3`**。開工前自己重跑分母指令（在最後）。

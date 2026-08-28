@@ -103700,6 +103700,561 @@
    "related_formulas": [
     "formula.hao_qin_qing_dan_tang"
    ]
+  },
+  {
+   "review_status": "draft",
+   "source_status": "source_layered_draft",
+   "ncbahm_2026_official": false,
+   "public_safe": false,
+   "updated_at": "2026-08-28",
+   "authored_by": "Antigravity",
+   "name_header_note_zh": "中文/拼音旁為 common name；下一行拉丁藥名。",
+   "key_pairs": [],
+   "review_notes_zh": "AI draft：依 American Dragon、CloudTCM 及藥典正典來源逐欄查證建卡；收錄為藥對關聯卡；待 Ting/RV1 審核。",
+   "source_type": "full_card_verified_multi_source",
+   "source_hint": "American Dragon & CloudTCM: Dispel Wind-Damp",
+   "id": "herb.hai_feng_teng",
+   "name_zh": "海風藤",
+   "name_en": "Kadsura Pepper Stem",
+   "pinyin": "Hai Feng Teng",
+   "pinyin_toned": "Hǎi Fēng Téng",
+   "pharmaceutical_latin": "Piperis Kadsurae Caulis / Caulis Piperis Kadsurae",
+   "part_used_zh": "乾燥藤莖",
+   "part_used_en": "dried vine stem",
+   "category": "祛風濕藥 / Dispel Wind-Damp",
+   "properties_taste_temp": "辛、苦，微溫",
+   "taste_temperature_zh": "辛、苦，微溫",
+   "channels_zh": [
+    "肝經",
+    "心經",
+    "腎經"
+   ],
+   "channels_en": [
+    "LV Liver",
+    "HT Heart",
+    "KD Kidney"
+   ],
+   "channels_entered": [
+    "肝經",
+    "心經",
+    "腎經"
+   ],
+   "aliases_zh": [
+    "風藤",
+    "老藤",
+    "大風藤",
+    "岩胡椒",
+    "巴岩香",
+    "細葉青蔞藤"
+   ],
+   "aliases_en": [
+    "Futokadsura Stem",
+    "Kadsura Stem",
+    "Hai Feng Teng"
+   ],
+   "tcm_properties": {
+    "five_flavors_zh": [
+     "辛",
+     "苦"
+    ],
+    "five_flavors_en": [
+     "Acrid",
+     "Bitter"
+    ],
+    "four_natures_zh": "微溫",
+    "four_natures_en": "Slightly Warm",
+    "meridian_tropism_zh": [
+     "肝經",
+     "心經",
+     "腎經"
+    ],
+    "meridian_tropism_en": [
+     "LV Liver",
+     "HT Heart",
+     "KD Kidney"
+    ],
+    "part_used_zh": "乾燥藤莖",
+    "part_used_en": "dried vine stem",
+    "source_note_zh": "藥典定辛苦微溫、歸肝經；CloudTCM 與 American Dragon 增列心經、腎經。兩源並記。"
+   },
+   "property_channel_source_note_zh": "藥典載性微溫、味辛苦，歸肝經；AD 與 CloudTCM 載歸肝、心、腎經。",
+   "functions": [
+    "祛風濕",
+    "通經絡",
+    "理氣",
+    "止痛"
+   ],
+   "functions_zh": [
+    "祛風濕、通經絡",
+    "理氣止痛、散寒行滯"
+   ],
+   "actions_en": [
+    "Dispels Wind-Dampness and unblocks the channels and collaterals",
+    "Regulates Qi, disperses Cold, and alleviates pain"
+   ],
+   "indications_zh": [
+    "風寒濕痹之關節僵硬、下肢痠痛、膝軟及筋脈肌肉拘攣痛。",
+    "寒凝氣滯之脘腹冷痛，或跌打損傷之氣血阻滯瘀痛。"
+   ],
+   "indications_en": [
+    "Wind-Cold-Damp Bi obstruction with stiff joints, lower back pain, sore knees, and muscle/sinew cramping.",
+    "Cold stagnation with epigastric and abdominal cold pain, or traumatic injury pain from Qi and Blood stagnation."
+   ],
+   "condition_tags_zh": [
+    "風寒濕痹",
+    "筋脈拘攣",
+    "關節不利",
+    "脘腹冷痛",
+    "跌打瘀痛"
+   ],
+   "condition_tags_en": [
+    "Wind-Cold-Damp Bi",
+    "Muscle and sinew spasms",
+    "Impaired joint mobility",
+    "Epigastric and abdominal cold pain",
+    "Traumatic bruising and pain"
+   ],
+   "modern_use_tags": [
+    "wind_damp_bi_context",
+    "joint_pain_context",
+    "muscle_spasm_context"
+   ],
+   "modern_functions_zh": [
+    "抗炎鎮痛作用（抑制炎症介質）",
+    "改善微循環與血小板活化因子（PAF）受體拮抗活性",
+    "降血壓與心腦血管保護潛力"
+   ],
+   "modern_functions_en": [
+    "Anti-inflammatory and analgesic activities via suppression of inflammatory mediators",
+    "Microcirculation improvement and platelet-activating factor (PAF) receptor antagonistic activity",
+    "Blood pressure regulation and cardiovascular protection potential"
+   ],
+   "dosage": {
+    "min_g": 6,
+    "max_g": 12,
+    "unit": "g/day",
+    "route": "decoction"
+   },
+   "dosage_g": {
+    "standard_daily_g": "6–12g（藥典）/ 6–20g（American Dragon）",
+    "course_dose_g": "煎服；亦可浸酒或入丸散",
+    "ad_dose_g": "6–20g；tincture 2–4mL",
+    "cloudtcm_dose_g": "煎湯 6–15g",
+    "source_note": "藥典規定標準日服劑量 6–12g；AD 載 6–20g。"
+   },
+   "related_formulas": [],
+   "exam_importance": "非 2026 NCBAHM 考綱主表藥物；為臨床常用祛風濕通絡止痛藤類藥，常與桑枝、薑黃等配伍。",
+   "exam_pearl": "海風藤 = 祛風濕 + 通經絡 + 止痛。微溫不燥，風寒濕痹筋脈拘攣之要藥，常與絡石藤（性涼）對比。",
+   "clinical_use_note": "海風藤為胡椒科藤莖，味辛苦微溫，長於通絡止痛、祛風除濕，特別適用於風寒濕痹、關節屈伸不利與筋脈拘攣。與性涼之絡石藤相比，海風藤偏溫散，熱痹非其所宜。安全方面：孕婦用藥歷代文獻有爭議（AD 載有說禁忌、有說安胎；CloudTCM 標孕婦不宜），本庫標註孕婦慎用/禁忌，並注意不可長期過量以防蓄積。",
+   "contraindications_zh": [
+    "陰虛火旺或熱痹關節紅腫灼痛者禁用。",
+    "孕婦忌服（部分文獻標註慎服，依安全從嚴原則禁用）。"
+   ],
+   "contraindications_en": [
+    "Contraindicated in Yin deficiency with Fire or Heat Bi with red, swollen, hot joints.",
+    "Contraindicated during pregnancy (some literature notes caution; strict safety applied)."
+   ],
+   "cautions_zh": [
+    "不可長期過量服用。",
+    "服用期間應監測血壓與胃腸反應。"
+   ],
+   "cautions_en": [
+    "Do not use in excessive doses or over prolonged durations.",
+    "Monitor blood pressure and gastrointestinal reactions during use."
+   ],
+   "safety_flags": [
+    "pregnancy_contraindication",
+    "yin_deficiency_fire_contraindication",
+    "heat_bi_contraindication"
+   ],
+   "english_exam_track": {
+    "review_status": "draft",
+    "source_status": "bensky_review_pending",
+    "properties_taste_temp": "Acrid, Bitter, Slightly Warm",
+    "functions": [
+     "Dispels Wind-Dampness and unblocks the channels and collaterals",
+     "Regulates Qi, disperses Cold, and alleviates pain"
+    ],
+    "indications": [
+     "Wind-Cold-Damp Bi obstruction with stiff joints, lower back pain, sore knees, and muscle/sinew cramping."
+    ],
+    "common_pairings": [
+     "Gui Zhi, Wei Ling Xian, Qin Jiao, Dang Gui"
+    ],
+    "contraindications": [
+     "Contraindicated in Yin deficiency with Heat or Heat Bi; contraindicated during pregnancy."
+    ]
+   },
+   "chinese_depth_track": {
+    "review_status": "draft",
+    "source_status": "cloudtcm_or_institution_review_pending",
+    "summary_zh": "海風藤是中藥，別名:風藤,老藤,大風藤,岩胡椒,巴岩香，功效:祛風濕、通經絡、理氣、止痛。主風寒濕痹，肢節疼痛，筋脈拘攣，脘腹冷痛。"
+   },
+   "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/HaiFengTeng.html",
+   "safety_source_url": "https://cloudtcm.com/herb/4702",
+   "source_citations": [
+    {
+     "name": "American Dragon",
+     "url": "https://www.americandragon.com/Individualherbsupdate/HaiFengTeng.html",
+     "scope": "英文常用名、性味歸經、功效主治、劑量、配伍及孕期註記"
+    },
+    {
+     "name": "雲端中醫 CloudTCM",
+     "url": "https://cloudtcm.com/herb/4702",
+     "scope": "海風藤現代藥理、性味歸經增補與毒性安全監測說明"
+    }
+   ],
+   "source_urls": [
+    "https://www.americandragon.com/Individualherbsupdate/HaiFengTeng.html",
+    "https://cloudtcm.com/herb/4702"
+   ],
+   "field_sources": {
+    "identity": [
+     "https://www.americandragon.com/Individualherbsupdate/HaiFengTeng.html",
+     "https://cloudtcm.com/herb/4702"
+    ],
+    "category": [
+     "https://www.americandragon.com/Individualherbsupdate/HaiFengTeng.html",
+     "https://cloudtcm.com/herb/4702"
+    ],
+    "properties_taste_temp": [
+     "https://www.americandragon.com/Individualherbsupdate/HaiFengTeng.html",
+     "https://cloudtcm.com/herb/4702"
+    ],
+    "channels_zh": [
+     "https://www.americandragon.com/Individualherbsupdate/HaiFengTeng.html",
+     "https://cloudtcm.com/herb/4702"
+    ],
+    "functions_zh": [
+     "https://www.americandragon.com/Individualherbsupdate/HaiFengTeng.html",
+     "https://cloudtcm.com/herb/4702"
+    ],
+    "indications_zh": [
+     "https://www.americandragon.com/Individualherbsupdate/HaiFengTeng.html",
+     "https://cloudtcm.com/herb/4702"
+    ],
+    "modern_functions_zh": [
+     "https://cloudtcm.com/herb/4702"
+    ],
+    "dosage": [
+     "https://www.americandragon.com/Individualherbsupdate/HaiFengTeng.html",
+     "https://cloudtcm.com/herb/4702"
+    ],
+    "contraindications_zh": [
+     "https://www.americandragon.com/Individualherbsupdate/HaiFengTeng.html",
+     "https://cloudtcm.com/herb/4702"
+    ],
+    "cautions_zh": [
+     "https://cloudtcm.com/herb/4702"
+    ],
+    "clinical_use_note": [
+     "https://www.americandragon.com/Individualherbsupdate/HaiFengTeng.html",
+     "https://cloudtcm.com/herb/4702"
+    ]
+   },
+   "card_grade": "template",
+   "dosage_normalized": {
+    "original_shape": "object",
+    "medicinal": [],
+    "dietary": [],
+    "preparation_notes": [],
+    "cautions_in_dosage_field": [],
+    "flags": {
+     "dietary_exceeds_medicinal": false,
+     "route_contradiction": false,
+     "magnitude_suspicious": false,
+     "unattributed_numbers": false
+    },
+    "flag_explanation_zh": null,
+    "unresolved": [
+     "未含可機械辨識劑量：6",
+     "未含可機械辨識劑量：12",
+     "未含可機械辨識劑量：g/day",
+     "未含可機械辨識劑量：decoction"
+    ],
+    "collected_by": "Task 11D 2026-08-28",
+    "not_rendered_reason": "整形不是查證。食療與藥用已分欄,但 80 張的落差與蘇合香的 SAFETY_HOLD 仍未裁決,因此本欄刻意不上畫面;validate-herb-dosage-shape.js D1 會擋住接線。",
+    "no_new_numbers": true,
+    "source_field": "dosage"
+   }
+  },
+  {
+   "review_status": "draft",
+   "source_status": "source_layered_draft",
+   "ncbahm_2026_official": false,
+   "public_safe": false,
+   "updated_at": "2026-08-28",
+   "authored_by": "Antigravity",
+   "name_header_note_zh": "中文/拼音旁為 common name；下一行拉丁藥名。",
+   "key_pairs": [],
+   "review_notes_zh": "AI draft：依 American Dragon、CloudTCM 及藥典正典來源逐欄查證建卡；收錄為藥對關聯卡；待 Ting/RV1 審核。",
+   "source_type": "full_card_verified_multi_source",
+   "source_hint": "American Dragon & CloudTCM: Stabilize and Bind",
+   "id": "herb.yu_yu_liang",
+   "name_zh": "禹餘糧",
+   "name_en": "Limonite / Brown Hematite",
+   "pinyin": "Yu Yu Liang",
+   "pinyin_toned": "Yǔ Yú Liáng",
+   "pharmaceutical_latin": "Limonitum",
+   "part_used_zh": "天然褐鐵礦石",
+   "part_used_en": "natural limonite mineral",
+   "category": "收澀藥 / Stabilize and Bind",
+   "properties_taste_temp": "甘、澀，微寒（一作平）",
+   "taste_temperature_zh": "甘、澀，微寒（一作平）",
+   "channels_zh": [
+    "大腸經",
+    "胃經",
+    "脾經"
+   ],
+   "channels_en": [
+    "LI Large Intestine",
+    "ST Stomach",
+    "SP Spleen"
+   ],
+   "channels_entered": [
+    "大腸經",
+    "胃經",
+    "脾經"
+   ],
+   "aliases_zh": [
+    "餘糧石",
+    "禹糧石",
+    "太一餘糧",
+    "白餘糧",
+    "石腦",
+    "石飴餅"
+   ],
+   "aliases_en": [
+    "Yu Liang Shi",
+    "Brown Hematite",
+    "Clay Ironstone",
+    "Limonite"
+   ],
+   "tcm_properties": {
+    "five_flavors_zh": [
+     "甘",
+     "澀"
+    ],
+    "five_flavors_en": [
+     "Sweet",
+     "Astringent"
+    ],
+    "four_natures_zh": "微寒",
+    "four_natures_en": "Slightly Cold",
+    "meridian_tropism_zh": [
+     "大腸經",
+     "胃經",
+     "脾經"
+    ],
+    "meridian_tropism_en": [
+     "LI Large Intestine",
+     "ST Stomach",
+     "SP Spleen"
+    ],
+    "part_used_zh": "天然褐鐵礦石",
+    "part_used_en": "natural limonite mineral",
+    "source_note_zh": "藥典定甘、澀，微寒，歸大腸、胃經；CloudTCM 增列脾經；AD 標 Cool/Neutral 歸大腸、胃、肝。兩源並記。"
+   },
+   "property_channel_source_note_zh": "藥典載性微寒、味甘澀，歸大腸、胃經；AD 載性涼/平，歸大腸、胃、肝經；CloudTCM 載歸大腸、脾、胃經。",
+   "functions": [
+    "澀腸止瀉",
+    "收斂止血",
+    "止帶"
+   ],
+   "functions_zh": [
+    "澀腸止瀉、固下止痢",
+    "收斂止血、止帶固經"
+   ],
+   "actions_en": [
+    "Astringes the Intestines and stops chronic diarrhea and dysentery",
+    "Restrains bleeding, arrests vaginal discharge, and stabilizes uterine bleeding"
+   ],
+   "indications_zh": [
+    "脾腎虛寒、下焦失固之久瀉、久痢滑脫不止、脫肛。",
+    "衝任不固之婦女崩漏、赤白帶下、月經過多及便血。"
+   ],
+   "indications_en": [
+    "Chronic diarrhea, persistent dysentery with prolapse, and fecal incontinence due to Spleen-Kidney deficiency-cold.",
+    "Unrelenting uterine bleeding (Beng Lou), profuse leukorrhea, menorrhagia, and hematochezia from Chong-Ren instability."
+   ],
+   "condition_tags_zh": [
+    "久瀉久痢",
+    "滑脫失禁",
+    "崩漏",
+    "帶下",
+    "便血"
+   ],
+   "condition_tags_en": [
+    "Chronic diarrhea and dysentery",
+    "Incontinence from instability",
+    "Uterine bleeding (Beng Lou)",
+    "Leukorrhea",
+    "Hematochezia"
+   ],
+   "modern_use_tags": [
+    "chronic_diarrhea_context",
+    "uterine_bleeding_context",
+    "leukorrhea_context"
+   ],
+   "modern_functions_zh": [
+    "吸附毒素與保護胃腸黏膜作用（礦物膠體物理收斂）",
+    "收斂止血與凝血輔助作用",
+    "體外抗菌與抗炎輔助活性"
+   ],
+   "modern_functions_en": [
+    "Toxin adsorption and gastrointestinal mucosal protection (mineral colloid physical astringency)",
+    "Astringent hemostasis and coagulation support activity",
+    "In vitro antibacterial and auxiliary anti-inflammatory activity"
+   ],
+   "dosage": {
+    "min_g": 9,
+    "max_g": 15,
+    "unit": "g/day",
+    "route": "decoction (crushed and pre-decocted)"
+   },
+   "dosage_g": {
+    "standard_daily_g": "9–15g（藥典）/ 9–21g（American Dragon）",
+    "course_dose_g": "打碎先煎 20–30 分鐘",
+    "ad_dose_g": "9–21g",
+    "cloudtcm_dose_g": "煎湯 9–15g，打碎先煎",
+    "source_note": "藥典規定日用量 9–15g，打碎先煎；AD 載 9–21g。"
+   },
+   "related_formulas": [],
+   "exam_importance": "非 2026 NCBAHM 考綱主表藥物；經典收澀重鎮藥，與赤石脂同為赤石脂禹餘糧湯君藥。",
+   "exam_pearl": "禹餘糧 = 澀腸止瀉 + 收斂止血止帶。性澀重墜，主下焦滑脫，與赤石脂相須為用，西藥需隔 2 小時。",
+   "clinical_use_note": "禹餘糧為天然褐鐵礦，味甘澀微寒，重墜入下焦，專事收澀固脫，主治脾腎虛寒之久瀉久痢及衝任失固之崩漏帶下。常與赤石脂同用加強澀腸固下之功。注意：本品為收澀固脫專藥，實熱積滯、濕熱下痢者禁用；服藥時與西藥須間隔至少 2 小時以免礦物吸附阻礙吸收；孕婦慎用。",
+   "contraindications_zh": [
+    "實熱證、積滯未清或濕熱下痢者禁用。",
+    "陰虛血燥或髓虛者禁用。"
+   ],
+   "contraindications_en": [
+    "Contraindicated in patterns of Excess Heat, uncleared food accumulation, or Damp-Heat dysentery.",
+    "Contraindicated in Yin deficiency with Blood Dryness or marrow deficiency."
+   ],
+   "cautions_zh": [
+    "孕婦慎用。",
+    "服藥與其他西藥需間隔至少 2 小時以防礦物吸附影響吸收。"
+   ],
+   "cautions_en": [
+    "Use with caution during pregnancy.",
+    "Separate ingestion of western pharmaceutical drugs and this herb by at least 2 hours to avoid mineral adsorption."
+   ],
+   "safety_flags": [
+    "pregnancy_caution",
+    "excess_heat_contraindication",
+    "damp_heat_dysentery_contraindication",
+    "drug_adsorption_interaction"
+   ],
+   "english_exam_track": {
+    "review_status": "draft",
+    "source_status": "bensky_review_pending",
+    "properties_taste_temp": "Sweet, Astringent, Slightly Cold (or Neutral)",
+    "functions": [
+     "Astringes the Intestines and stops chronic diarrhea and dysentery",
+     "Restrains bleeding, arrests vaginal discharge, and stabilizes uterine bleeding"
+    ],
+    "indications": [
+     "Chronic diarrhea, persistent dysentery, and incontinence due to Spleen-Kidney deficiency-cold.",
+     "Unrelenting uterine bleeding (Beng Lou), profuse leukorrhea, and hematochezia from Chong-Ren instability."
+    ],
+    "common_pairings": [
+     "Chi Shi Zhi, Bu Gu Zhi, Bai Zhu, Gan Jiang"
+    ],
+    "contraindications": [
+     "Contraindicated in Excess patterns or Damp-Heat dysentery; use with caution in pregnancy."
+    ]
+   },
+   "chinese_depth_track": {
+    "review_status": "draft",
+    "source_status": "cloudtcm_or_institution_review_pending",
+    "summary_zh": "禹餘糧是中藥，別名:餘糧石,白餘糧,石腦,禹糧石,太一餘糧，功效:澀腸止瀉、收斂止血、止帶。主久瀉久痢，滑脫失禁，崩漏帶下，便血。"
+   },
+   "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/YuYuLiang.html",
+   "safety_source_url": "https://cloudtcm.com/herb/12479",
+   "source_citations": [
+    {
+     "name": "American Dragon",
+     "url": "https://www.americandragon.com/Individualherbsupdate/YuYuLiang.html",
+     "scope": "英文常用名、性味歸經、功效主治、劑量、禁忌、藥物吸附交互作用"
+    },
+    {
+     "name": "雲端中醫 CloudTCM",
+     "url": "https://cloudtcm.com/herb/12479",
+     "scope": "禹餘糧別名、性味歸經增補、現代研究與用法注意"
+    }
+   ],
+   "source_urls": [
+    "https://www.americandragon.com/Individualherbsupdate/YuYuLiang.html",
+    "https://cloudtcm.com/herb/12479"
+   ],
+   "field_sources": {
+    "identity": [
+     "https://www.americandragon.com/Individualherbsupdate/YuYuLiang.html",
+     "https://cloudtcm.com/herb/12479"
+    ],
+    "category": [
+     "https://www.americandragon.com/Individualherbsupdate/YuYuLiang.html",
+     "https://cloudtcm.com/herb/12479"
+    ],
+    "properties_taste_temp": [
+     "https://www.americandragon.com/Individualherbsupdate/YuYuLiang.html",
+     "https://cloudtcm.com/herb/12479"
+    ],
+    "channels_zh": [
+     "https://www.americandragon.com/Individualherbsupdate/YuYuLiang.html",
+     "https://cloudtcm.com/herb/12479"
+    ],
+    "functions_zh": [
+     "https://www.americandragon.com/Individualherbsupdate/YuYuLiang.html",
+     "https://cloudtcm.com/herb/12479"
+    ],
+    "indications_zh": [
+     "https://www.americandragon.com/Individualherbsupdate/YuYuLiang.html",
+     "https://cloudtcm.com/herb/12479"
+    ],
+    "modern_functions_zh": [
+     "https://cloudtcm.com/herb/12479"
+    ],
+    "dosage": [
+     "https://www.americandragon.com/Individualherbsupdate/YuYuLiang.html",
+     "https://cloudtcm.com/herb/12479"
+    ],
+    "contraindications_zh": [
+     "https://www.americandragon.com/Individualherbsupdate/YuYuLiang.html"
+    ],
+    "cautions_zh": [
+     "https://www.americandragon.com/Individualherbsupdate/YuYuLiang.html"
+    ],
+    "clinical_use_note": [
+     "https://www.americandragon.com/Individualherbsupdate/YuYuLiang.html",
+     "https://cloudtcm.com/herb/12479"
+    ]
+   },
+   "card_grade": "template",
+   "dosage_normalized": {
+    "original_shape": "object",
+    "medicinal": [],
+    "dietary": [],
+    "preparation_notes": [],
+    "cautions_in_dosage_field": [],
+    "flags": {
+     "dietary_exceeds_medicinal": false,
+     "route_contradiction": false,
+     "magnitude_suspicious": false,
+     "unattributed_numbers": false
+    },
+    "flag_explanation_zh": null,
+    "unresolved": [
+     "未含可機械辨識劑量：9",
+     "未含可機械辨識劑量：15",
+     "未含可機械辨識劑量：g/day",
+     "未含可機械辨識劑量：decoction (crushed and pre-decocted)"
+    ],
+    "collected_by": "Task 11D 2026-08-28",
+    "not_rendered_reason": "整形不是查證。食療與藥用已分欄,但 80 張的落差與蘇合香的 SAFETY_HOLD 仍未裁決,因此本欄刻意不上畫面;validate-herb-dosage-shape.js D1 會擋住接線。",
+    "no_new_numbers": true,
+    "source_field": "dosage"
+   }
   }
  ]
 }

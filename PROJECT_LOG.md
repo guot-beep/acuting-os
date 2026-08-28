@@ -72,6 +72,24 @@ MEASURED TREE: claude/practical-easley-73f009 @ origin/main b750ae67 + 本批
 
 ---
 
+# 2026-08-28 — Task 11D 建 2 張中藥卡（海風藤、禹餘糧）完成，全部 validators 通過
+
+- **做了什麼**：依 Task 11D 指派建立 2 張中藥正典卡：`herb.hai_feng_teng`（海風藤）與 `herb.yu_yu_liang`（禹餘糧），逐欄經 American Dragon、CloudTCM 與藥典（2020 年版）交叉查證性味、歸經、功效主治、劑量、禁忌與藥物交互作用。
+- **數字 before→after**：
+  - 中藥卡總數：364 筆 → 366 筆（只新增 2 筆，既有 364 筆逐筆比對 0 異動）。
+  - `herb_pairs.json`：0 異動（依規留給 Claude 接手）。
+  - 安全與劑量欄位：海風藤（標準日服 6–12g，孕婦禁用/慎用，熱痹禁用）、禹餘糧（標準日服 9–15g 打碎先煎，實熱積滯禁用，西藥需間隔 2 小時），全部具名來源。
+- **驗證結果**：
+  - `node scripts/build-data.js`：建構成功（herbs: 366）。
+  - `node scripts/validate-herb-standard.js`：PASS — no structural defects。
+  - `node scripts/validate-content-junk.js`：PASS — no scraped header tokens, no encoding anomalies in _zh fields。
+  - `node scripts/validate-herb-pair-render.js`：PASS。
+  - `node scripts/validate-board-pair-attribution.js`：PASS。
+  - `node scripts/check-validation-ratchet.js`：PASS — no regressions（0 退化，herb_canon 維持 5577）。
+  - `git diff --check`：無任何輸出（乾淨）。
+- **已知未解**：炮製專項說明與古籍原文因外部與課件缺乏無爭議原文而依規留空；`key_pairs` 與 `related_formulas` 依邊界留空待後續藥對與方劑建卡接手。
+- **下一步**：已推到 `antigravity/task11d-new-herbs-hai-feng-teng-yu-yu-liang` 分支，等驗收。
+
 # 2026-08-27 — Claude 獨立驗收 Task 11A/11B/11C:全數通過,已落地(含一次自己抓到的驗證誤判)
 
 **11A(7 味有毒/管制藥材 safety_source_url 連線驗證)**：獨立打 `xiong_huang` 的網址確認頁面真實
