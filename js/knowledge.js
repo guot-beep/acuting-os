@@ -250,6 +250,16 @@
       add(K.conditions);
       add(K.tdisRegistry);
       add(K.symptoms);
+      /* 2026-08-28 補 formulas / herbs / patternRegistry。
+         entityLabel() 查不到就把 id 美化成像樣的名字(`formula.zhen_gan_xi_feng_tang`
+         → 「Zhen gan xi feng tang」)—— 不會壞、不會紅燈、看起來還挺正常,
+         所以沒人發現證型大卡上 **207 個代表方 chip 印的全是美化 slug 而不是方名**。
+         實測補進來之後,264 個 id 裡只剩 12 個查不到,而那 12 個就是真懸空的
+         (已由 entityCardExists() 標成 ⚠ 尚無卡)。
+         patternRegistry 一併補:D10 說它才是 id 權威,只加 library 會漏掉 registry-only 的。 */
+      add(K.formulas);
+      add(K.herbs);
+      add(K.patternRegistry);
     }
     return map;
   })();
@@ -291,6 +301,23 @@
       ? `<span class="k-entity-chip"><small>症狀</small>${esc(entityLabel(id))}</span>`
       : `<span class="k-entity-chip is-unresolved" title="${esc(id)} — 尚無症狀卡 / no symptom card yet"><small>症狀</small>${esc(entityLabel(id))} ⚠</span>`
     ).join("");
+  }
+
+  /* 有沒有那張卡,決定 chip 長什麼樣 —— 沿用上面 symptomChips 的作法。
+     為什麼非標不可:entityLabel() 對未知 id 是**把 slug 美化**
+     (`formula.shi_wei_san` → 「Shi wei san」),所以不標的話,一個不存在的卡
+     會渲染得跟真的一模一樣。2026-08-28 實測證型大卡上:代表方劑 207 個引用有 5 個是這種,
+     西醫對應 57 個裡有 7 個。 */
+  const FORMULA_CARD_IDS = new Set((((K && K.formulas && K.formulas.records) || [])).map((r) => r.id));
+  const CONDITION_CARD_IDS = new Set((((K && K.conditionCanon && K.conditionCanon.records) || [])).map((r) => r.id));
+  function entityCardExists(id) {
+    const ns = String(id).split(".")[0];
+    if (ns === "formula") return FORMULA_CARD_IDS.has(id);
+    if (ns === "cond") return CONDITION_CARD_IDS.has(id);
+    return true;   // 沒有登記表可查的命名空間不妄下判斷,維持原樣
+  }
+  function unresolvedChipAttrs(id, whatZh, whatEn) {
+    return ` class="k-entity-chip is-unresolved" title="${esc(String(id))} — ${esc(whatZh)} / ${esc(whatEn)}"`;
   }
 
   /* ⚠ LABEL RESOLVERS — DO NOT let a render-site rewrite drop these calls.
@@ -3201,7 +3228,11 @@
           ${(formulas.length || points.length || conditions.length) ? `
             <div class="k-big-card-section">
               <h3>${isEn ? "4. Primary Treatment & Links" : "4. 代表方藥與針灸處方 Primary Treatment & Links"}</h3>
-              ${formulas.length ? `<p><strong>💊 ${isEn ? "Primary Formulas:" : "代表方劑："}</strong> ${formulas.map(id => `<a href="#formulaSection" class="k-entity-chip" onclick="document.getElementById('patternDetailModalOverlay').classList.remove('is-open')">💊 ${esc(entityLabel(id))}</a>`).join(" ")}</p>` : ""}
+              ${formulas.length ? `<p><strong>💊 ${isEn ? "Primary Formulas:" : "代表方劑："}</strong> ${formulas.map(id => entityCardExists(id)
+                  ? `<a href="#formulaSection" class="k-entity-chip" onclick="document.getElementById('patternDetailModalOverlay').classList.remove('is-open')">💊 ${esc(entityLabel(id))}</a>`
+                  /* 卡不存在就不要給連結:那個 <a> 會關掉大卡、跳到方劑列表,而那張方在列表裡也找不到。 */
+                  : `<span${unresolvedChipAttrs(id, "尚無方劑卡", "no formula card yet")}>💊 ${esc(entityLabel(id))} ⚠</span>`
+                ).join(" ")}</p>` : ""}
               ${points.length ? `<p><strong>📌 ${isEn ? "Acupuncture Points:" : "針灸配穴："}</strong> ${points.map(code => `<a href="#point/${esc(code)}" class="k-entity-chip" onclick="document.getElementById('patternDetailModalOverlay').classList.remove('is-open')">📌 ${esc(code)}</a>`).join(" ")}</p>` : ""}
               ${/* 配穴理由(63 張證型卡有,先前完全沒上過畫面)。
                     卡片原本只列出穴位代碼 —— 讀的人看得到「取什麼」,看不到「為什麼」。
@@ -3214,7 +3245,10 @@
                 const t = usableText(why);
                 return t ? `<p class="k-point-rationale"><strong>${isEn ? "Why these points:" : "配穴理由："}</strong> ${esc(t)}</p>` : "";
               })()}
-              ${conditions.length ? `<p><strong>🏥 ${isEn ? "Biomedical Mapping:" : "西醫對應："}</strong> ${conditions.map(id => `<span class="k-tag">${esc(entityLabel(id))}</span>`).join(" ")}</p>` : ""}
+              ${conditions.length ? `<p><strong>🏥 ${isEn ? "Biomedical Mapping:" : "西醫對應："}</strong> ${conditions.map(id => entityCardExists(id)
+                  ? `<span class="k-tag">${esc(entityLabel(id))}</span>`
+                  : `<span${unresolvedChipAttrs(id, "尚無病症卡", "no condition card yet")}>${esc(entityLabel(id))} ⚠</span>`
+                ).join(" ")}</p>` : ""}
             </div>
           ` : ""}
 

@@ -7714,7 +7714,16 @@ html { scroll-padding-top: 92px; }
   font-size: .74rem; font-weight: 600;
   background: var(--warn-bg, #fff3e0); color: var(--warn, #a15c00);
 }
-.k-entity-chip.is-unresolved { opacity: .65; }
+/* 「這張卡不存在」的統一視覺語言:虛線框 + 不可點的游標,跟 .k-relation-chip.is-missing 一致。
+   原本只有 opacity: .65 —— 太隱晦,而 entityLabel() 會把未知 id 美化成像樣的名字
+   (formula.shi_wei_san → 「Shi wei san」),兩者相加就看不出那張卡並不存在(2026-08-28)。 */
+.k-entity-chip.is-unresolved {
+  opacity: .8;
+  background: #f4f2ee;
+  border: 1px dashed #c9c2b6;
+  color: #7a7369;
+  cursor: default;
+}
 
 /* A+ Clinical Safety View (2026-08-09) — structured red-flag rows.
    Tier labels resolve from the registry's tier_vocabulary at render time;

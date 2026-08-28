@@ -1,3 +1,70 @@
+# 2026-08-28 — 收尾那 12 條懸空,結果在證型大卡上抓到更大的一個:207 個代表方 chip 印的是美化 slug
+
+原本只是要處理 `patternLibrary.typical_formulas` 5 條 + `herbPairs.found_in_formulas` 9 條懸空。
+去讀渲染端,發現**證型大卡的 chip 不走 `relationButton`**(那是上一批加檢查的地方),
+是另一處手寫的,於是又挖出兩層問題。
+
+## 一、證型大卡的 chip 是另一套,上一批的檢查蓋不到
+`openPatternBigCardModal` 裡的代表方/西醫對應 chip 直接呼叫 `entityLabel(id)`,
+而 **`entityLabel()` 對未知 id 的行為是「把 slug 美化」**
+(`formula.shi_wei_san` → 「Shi wei san」,原始碼註解寫著 "humanise rather than expose the key")。
+不會壞、不會紅燈、看起來還挺正常 —— 所以懸空的方跟真的方**長得一模一樣**。
+代表方那顆還是 `<a href="#formulaSection">`:點了會關掉大卡跳到方劑列表,而那張方在列表裡也沒有。
+
+**同一個檔案裡本來就有正確的先例**:`symptomChips()` 對沒有卡的 `sym.*`
+會加 `is-unresolved` + `title` + ⚠。照抄那個作法:
+新增 `entityCardExists(id)`(formula / cond 各查登記表,沒登記表可查的命名空間不妄下判斷),
+兩處 chip 查不到就退成 `<span class="k-entity-chip is-unresolved">` 帶 ⚠ 與 title,
+**代表方那顆同時拿掉 `<a>`** —— 卡不存在就不該給連結。
+`styles.css` 把 `.k-entity-chip.is-unresolved` 從「只有 `opacity: .65`」改成虛線框+灰字+`cursor: default`,
+跟上一批的 `.k-relation-chip.is-missing` 統一視覺語言。
+
+## 二、挖下去更大的一個:`ENTITY_NAMES` 根本沒收方劑
+驗完懸空的有標了,卻發現**解析成功的那顆也不對** —— 顯示「Zhen gan xi feng tang」而不是「鎮肝熄風湯」。
+查 `ENTITY_NAMES` 的建構:只 `add()` 了 patternLibrary / conditionCanon / conditions /
+tdisRegistry / symptoms,**沒有 formulas、沒有 herbs、沒有 patternRegistry**。
+所以每一個丟給 `entityLabel()` 的 `formula.*` 都走美化 slug 那條路。
+
+**實測**:證型大卡丟給 `entityLabel` 的 id 共 264 個,其中 **207 個 formula 全部印美化 slug**
+(另 7 個 cond 是真懸空)。補上 `formulas`/`herbs`/`patternRegistry` 之後,
+264 個裡只剩 12 個查不到 —— 就是那 5+7 條真懸空,而且已經被 ⚠ 標出來了。
+patternRegistry 一併補的理由:D10 說它才是 id 權威,只加 library 會漏掉 registry-only 的 id。
+
+**眼讀**:肝風內動的代表方從「Zhen gan xi feng tang」變成
+**「鎮肝熄風湯 · Sedate the Liver and Extinguish Wind Decoction」**;
+西醫對應的 Stroke / Hypertensive crisis 兩個真懸空標上 ⚠ 與
+「cond.stroke — 尚無病症卡 / no condition card yet」,同列已建卡的仍正常顯示中英名。
+石淋的代表方「Shi wei san ⚠」是 `<span>` 不是連結。
+
+## 三、`herbPairs.found_in_formulas` 那 9 條:確認過不渲染,不動
+`pairCard()` 沒有讀這個欄位(逐行看過),所以那 9 條懸空**不會上畫面**,是純資料整潔問題。
+它們指向的方(交泰丸、苓甘五味薑辛湯、桂枝加龍骨牡蠣湯、橘核丸…)前批已裁定
+「留前向引用不補骨架」。維持原狀,gate 上限照舊盯著。
+
+## 四、守衛(加進 `validate-rendered-reference-resolution.js`)
+上一批盯的是 `relationButton`;這批再加兩項:
+`entityCardExists()` 必須存在、`ENTITY_NAMES` 必須收齊六個集合
+(formulas / patternLibrary / patternRegistry / conditionCanon / symptoms / tdisRegistry)。
+**負向測試**:把 `add(K.formulas)` 註解掉 → `FAIL — 1 項`(訊息直接說「該命名空間的 chip 會全部印美化 slug」);還原 → PASS。
+
+## 數字
+| | 修前 | 修後 |
+|---|---|---|
+| 證型大卡上印美化 slug 的 chip | **207** | **0** |
+| 懸空但看起來像真卡的 chip | 12 | **0**(全部標 ⚠ + title,代表方不再是連結) |
+| `.k-entity-chip.is-unresolved` 的視覺 | 只有 opacity .65 | 虛線框 + 灰字 + cursor: default |
+
+## 驗證(八支全跑)
+`validate-herb-standard` / `validate-formula-standard` / `validate-content-junk` /
+`validate-herb-pair-render` / `validate-board-pair-attribution` /
+`validate-review-status-vocabulary` / `validate-rendered-reference-resolution` /
+`check-validation-ratchet` **全 PASS**;`git diff --check` 無輸出;`node --check` 通過。
+**`data/**` 本批一個字都沒改**(只動 js/knowledge.js、styles.css、scripts/)。
+
+MEASURED TREE: claude/practical-easley-73f009 @ origin/main 本批基底
+
+---
+
 # 2026-08-28 — 分類 chip 說明補完:先訂正我自己量錯的欄位,結果真正的問題是 10 首方被錯放進 uncategorized
 
 Ting 裁「好」(補 `FORMULA_CATEGORY_DESC` 缺的分類說明)。動手第一件事是重量,**結果推翻了我上一條的報告**。

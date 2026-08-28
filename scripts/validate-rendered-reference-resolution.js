@@ -81,6 +81,22 @@ const notes = [];
   if (!/no \$\{kind\} record for id/.test(rawView)) {
     problems.push("js/knowledge.js 的 openKnowledgeDetail() 對「kind 認得但記錄不存在」又變回靜默 return —— 那一路要出聲");
   }
+  // 證型大卡的 chip 走的是 entityLabel + entityCardExists,不是 relationButton,要分開盯。
+  if (!/function\s+entityCardExists\s*\(/.test(code)) {
+    problems.push("js/knowledge.js 找不到 entityCardExists() —— 證型大卡的代表方/西醫對應 chip 會恢復成"
+      + "「查不到就印美化 slug、看起來跟真的一樣」");
+  }
+  // ENTITY_NAMES 少收一個集合,那個命名空間的 chip 就全部印美化 slug(2026-08-28 實測:formulas 少收 → 207 個)
+  {
+    const m2 = code.match(/const\s+ENTITY_NAMES\s*=[\s\S]*?return map;/);
+    const body = m2 ? m2[0] : "";
+    for (const need of ["formulas", "patternLibrary", "patternRegistry", "conditionCanon", "symptoms", "tdisRegistry"]) {
+      if (!new RegExp("add\\(K\\." + need + "\\)").test(body)) {
+        problems.push("js/knowledge.js 的 ENTITY_NAMES 沒收 K." + need
+          + " —— 該命名空間的 chip 會全部印美化 slug 而不是名稱");
+      }
+    }
+  }
 }
 let scanned = 0;
 for (const f of FIELDS) {
