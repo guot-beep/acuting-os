@@ -473,6 +473,14 @@ jobs:
       # 至寶丹雄黃的 dose_basis 早在資料裡,渲染層卻只讀 decoction_reference_g,
       # 線上那格就是沒有任何限定語的「30g」(單味藥典上限 0.05-0.1g)。
       # 負控 3/3 已驗(不讀欄位/少一個標籤/無 malformed 分支)。
+      # LEARN_STATE_CONTRACT(2026-08-27):醫學事實 ≠ 學習狀態。學習狀態層
+      # 還不存在,這條先綠著上線 —— 等有人開始建 Learn 那天,「在 herb 卡上
+      # 加個 wrong_count 最快」的誘惑會很具體,那時規則已經在擋。
+      # 第一版把 last_reviewed(內容審核時間戳)誤列為學習狀態,報了 157 筆
+      # 假警報;分界線是「換一個人答案會不會變」,已照此修正。
+      - name: learn state stays out of canonical knowledge
+        run: node scripts/validate-learn-state-boundary.js
+
       - name: dose_basis is actually rendered
         run: node scripts/validate-dose-basis-render.js
 
