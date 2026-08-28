@@ -1,3 +1,91 @@
+## 📋 新派工 Task 11E / 11F（2026-08-28）——11A/11B 收下之後的兩條後續，**都只出帳本**
+
+**MEASURED TREE：`origin/main` @ `2ee30b46`**。11A/11B/11C 已驗收落地，這兩項是它們直接長出來的後續。
+
+---
+
+### 🔴 Task 11E：**出貨包**層級的網址存活性掃描——11B 掃的只是原始檔，不是使用者實際載入的東西
+
+**這條是 11B 的方法缺口，不是它做錯。** 11B 的分母（565 個 distinct URL）取自三個原始 `data/**.json`；
+但畫面載入的是 `data/generated/*.js`（`index.html` 直接載入），**build 時會把多個來源合併進去**，
+所以出貨包裡的網址比原始檔多一個數量級：
+
+| 分母（`origin/main` @ `2ee30b46`，`data/generated/*.js` 共 10 支檔實測） | 數字 |
+|---|---|
+| 出貨包 distinct URL | **5,594** |
+| 其中**圖片**網址（.jpg/.png/.gif/.webp/.svg） | **1,158** |
+| 11B 已經掃過的（原始檔三檔） | 565（≈ 出貨包的 10%） |
+
+host 分佈（distinct URL 數）：`mastertungacupuncture.org` 1384 · `cloudtcm.com` 1307 ·
+`americandragon.com` 648 · **`media.cloudtcm.uk` 377（圖床）** · `acupoints.org` 322 ·
+`medlineplus.gov` 289 · `acupun.site` 205 · `zhongyifangji.com` 124 · `pubmed` 87 ·
+`dailymed.nlm.nih.gov` 59 · `upload.wikimedia.org` 56 · **`app.notion.com` 23** · 其餘零星。
+
+**為什麼值得做**：圖片掛掉 = 卡片上直接開天窗，這是使用者看得見的壞掉，不是資料整潔問題。
+**`app.notion.com` 那 23 條要單獨列一節**——Notion 連結多半是私有頁，任何使用者點了都是 404／要求登入，
+如果真的是這樣，那是「出貨包裡夾帶了只有作者打得開的連結」。
+
+**批次**（每批一支分支，分開推）：
+- **11E-1**：**1,158 條圖片網址**（優先，這批壞掉最有感）
+- **11E-2**：`mastertungacupuncture.org` + `acupoints.org` + `acupun.site`（穴位圖譜三站，1,911）
+- **11E-3**：其餘全部，**並把 `app.notion.com` 那 23 條單獨成一節**
+
+**規矩照 11B**：每個 host 先做 soft-404 負控寫進 `meta.negative_control`；節流 ≤2 req/s per host；
+圖片只發 `HEAD`（拿不到再 `GET`），**不要把圖檔內容下載下來**；死連結只報不修。
+帳本：`data/audits/bundle_url_liveness_2026-08-28.json`，一列一個 distinct URL，
+欄位比照 11B，另加 `is_image`（bool）與 `source_bundle_files`（出現在哪幾支 generated 檔）。
+
+**驗收**（沿用 `scripts/audit-source-url-liveness.js`，加 `--scope bundle`，**離線**）：
+從 `data/generated/*.js` 重算 distinct URL 集合 → 跟帳本雙向比對，任一邊有差直接 exit 1；
+`meta.negative_control` 要涵蓋帳本裡出現過的**每一個 host**，少一個 host 就 FAIL。
+
+```bash
+node scripts/audit-source-url-liveness.js --self-test
+node scripts/audit-source-url-liveness.js --verify-ledger --scope bundle
+git show --stat <你的 commit>      # 只准出現帳本 + docs
+```
+
+---
+
+### 🟠 Task 11F：6 味有毒／管制藥材要找**真正講到那件事**的來源——**候選清單，不准動資料**
+
+11A 的結果是這次最有價值的一個發現，照實記在這裡：**7 味裡只有 1 味的現有網址真的講到安全事實，
+6 味是 `PAGE_EXISTS_BUT_NO_SAFETY_CONTENT`**（頁面在、也確實是那味藥，但整頁沒有講到毒性／管制那件事）。
+負控乾淨（兩站都回真 404，不是 soft-404），所以這個結論是可信的。
+
+**要找的 6 味，以及那一頁必須明確講到的事**：
+
+| 藥 | id | 頁面必須講到 |
+|---|---|---|
+| 雄黃 | `herb.xiong_huang` | 砷／硫化砷毒性 |
+| 朱砂 | `herb.zhu_sha` | 汞／硫化汞毒性 |
+| 穿山甲 | `herb.chuan_shan_jia` | CITES 附錄一／2020 年版中國藥典除名 |
+| 犀角 | `herb.xi_jiao` | CITES 禁用／以水牛角替代 |
+| 青木香 | `herb.qing_mu_xiang` | 馬兜鈴酸腎毒性／致癌、藥典取消收載 |
+| 罌粟殼 | `herb.ying_su_ke` | 管制藥品／嗎啡類生物鹼 |
+
+（第 7 味 `herb.jin_bo` 金箔判 `SUPPORTS`，不用再找。）
+
+**來源白名單——只接受這幾類，其他一律不收**：
+國際公約與政府主管機關（`cites.org`／`checklist.cites.org`、`fda.gov`、`dailymed.nlm.nih.gov`、
+`nmpa.gov.cn`、台灣衛福部 `mohw.gov.tw`）、國家級醫藥資料庫（`pubchem.ncbi.nlm.nih.gov`、
+`medlineplus.gov`、`nccih.nih.gov`、`ods.od.nih.gov`）、同儕審查文獻（`pubmed.ncbi.nlm.nih.gov`／
+`pmc.ncbi.nlm.nih.gov`）。**中醫藥入口網站（cloudtcm／americandragon 等）這一輪不收**——
+11A 已經證明它們沒有這些內容。
+
+**這一項不准改 `data/herbs/herb_canon_shortlist.json`。** 現有那 6 條 URL 是「有值」的，
+覆寫既有值是 11C 的硬紅線，這裡一樣。你交的是候選清單，換不換由 Ting 跟我決定。
+
+帳本 `data/audits/toxic_herb_safety_source_candidates_2026-08-28.json`，每味 1–3 個候選，每個候選要有：
+`url` · `http_status` · `final_url` · `fetched_at` · `publisher`（哪個機關／期刊）· `evidence_excerpt`
+（**必須是明確講到上表最後一欄那件事的那一段原文**，≤200 字，照抄不翻譯）· `how_found`。
+**找不到就記 `NO_SOURCE_FOUND` 加原因，不要拿「有提到這味藥」的頁面充數**——11A 抓到的就是這個。
+
+順帶把 11B 掃出來的那 2 條死連結（1×404、1×500）也放進同一份帳本的 `dead_link_replacements` 節，
+一樣只給候選、不改資料。
+
+---
+
 ## ✅ Task 11A/11B/11C 獨立驗收通過，已落地 `origin/main`（`b36f0d29`）
 
 三項都收下：11A(7 味有毒藥材連線驗證)、11B(565 個 URL 全庫掃描+雙站負控，我自己也打過一次負控，
