@@ -1657,16 +1657,45 @@
      * 畫面卻少一半:150 句被歸進 cautions_* 的安全文字當場離開卡面,包括
      * 麻黃湯「高血壓者慎用」「孕婦慎用」、補陽還五湯與抗凝血劑併用的出血風險。
      *
-     * 改成兩個都印,各自帶小標。舊卡上兩欄仍是逐字複本的(尚未遷移的 63 張),
-     * 用 alreadyShown 的 80% 重疊測試擋掉,不然同一份清單會印兩次。 */
+     * 改成兩個都印,各自帶小標。舊卡上兩欄仍有逐字複本(尚未遷移的 63 張),
+     * 重複的要擋掉,不然同一份清單會印兩次。
+     *
+     * 但**去重要逐項做,不能整塊做**。第一版寫成
+     *   alreadyShown(cautionsZh, [contraZh]) || alreadyShown(cautionsEn, [contraEn])
+     * —— 任一語言側 80% 重複就把**整個**注意事項區(兩種語言一起)藏掉。
+     * 於是 A1 的孤兒回填一落地,24 句立刻在 18 張卡上重新消失:五苓散英文側
+     * 88% 重複,把中文側 4 句獨有的一起帶走(「不宜長期服用」在裡面);
+     * 補陽還五湯英文側 100% 重複,把與抗凝血劑併用的出血風險整段帶走。
+     * 這跟它要修的 `||` 是同一種病 —— 用整塊的判斷處理逐項的事實。
+     *
+     * 規則:**併集,但先扣掉已經印過的那幾條**。兩側等長時整列一起留或一起丟,
+     * 才不會把逐索引配對打散(detailPairedList 只在等長時配對)。
+     *
+     * 已知代價:等長時只要有一半不是重複,整列就留下,於是另一半會印第二次 ——
+     * 全庫 41 處,清一色是「英文那句在禁忌區出現過、中文那句是新的」
+     * (麻黃湯 "Use only for short periods of time."、涼膈散 "Weak patients.")。
+     * 不改成逐語言獨立過濾,是因為那會讓兩側長度變成**巧合相等**而內容錯位 ——
+     * 那正是同一天在 modern_pharmacology 修掉的錯配 bug。
+     * 取捨很清楚:**同一句印兩次是雜訊,少印一句是安全問題**。 */
     const contraindicationsZh = cleanList(record.contraindications_zh);
     const contraindicationsEn = cleanList(record.contraindications_en || exam.contraindications_en);
-    const cautionsZh = cleanList(record.cautions_zh);
-    const cautionsEn = cleanList(record.cautions_en);
+    const rawCautionsZh = cleanList(record.cautions_zh);
+    const rawCautionsEn = cleanList(record.cautions_en);
+    const shownZh = new Set(contraindicationsZh.map(chipKey));
+    const shownEn = new Set(contraindicationsEn.map(chipKey));
+    const { zh: cautionsZh, en: cautionsEn } = (() => {
+      if (rawCautionsZh.length && rawCautionsEn.length && rawCautionsZh.length === rawCautionsEn.length) {
+        const keep = rawCautionsZh.map((v, i) =>
+          !(shownZh.has(chipKey(v)) && shownEn.has(chipKey(rawCautionsEn[i]))));
+        return { zh: rawCautionsZh.filter((_, i) => keep[i]), en: rawCautionsEn.filter((_, i) => keep[i]) };
+      }
+      return {
+        zh: rawCautionsZh.filter((v) => !shownZh.has(chipKey(v))),
+        en: rawCautionsEn.filter((v) => !shownEn.has(chipKey(v))),
+      };
+    })();
     const contraHasContent = contraindicationsZh.length || contraindicationsEn.length;
-    const cautionsIsDuplicate =
-      alreadyShown(cautionsZh, [contraindicationsZh]) || alreadyShown(cautionsEn, [contraindicationsEn]);
-    const cautionsHasContent = (cautionsZh.length || cautionsEn.length) && !cautionsIsDuplicate;
+    const cautionsHasContent = cautionsZh.length || cautionsEn.length;
     const contraHtml = (contraHasContent || cautionsHasContent)
       ? `${contraHasContent ? `${cautionsHasContent ? `<h4 class="k-subhead">禁忌 Contraindications</h4>` : ""}${detailPairedList(contraindicationsZh, contraindicationsEn)}` : ""}` +
         `${cautionsHasContent ? `<h4 class="k-subhead">注意事項 Cautions</h4>${detailPairedList(cautionsZh, cautionsEn)}` : ""}`
