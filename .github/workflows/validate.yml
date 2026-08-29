@@ -497,6 +497,17 @@ jobs:
       - name: bilingual chips pair same-source lists (not merely same-length)
         run: node scripts/validate-bilingual-index-pairing.js
 
+      # 2026-08-28:A1(a) 把方劑安全欄按方向拆成 contraindications_*/cautions_*,
+      # 資料層零遺失、所有驗證器全綠、棘輪 flat —— 而卡面上少了 423 句,
+      # 因為安全區寫的是 `contraindications_zh || cautions_zh`(二選一),
+      # 且 cautions_en 從來沒被讀過。拆欄之前兩欄裝同一份文字,缺陷是隱形的。
+      # 麻黃湯「高血壓者慎用」、補陽還五湯與抗凝血劑併用的出血風險都在裡面。
+      # R1 有資料的安全欄都要被 formulaPanels 讀,兩個都有資料的欄位不准 ||;
+      # R2 棘輪:只活在 import_artifacts 的安全句子(基線 280)只准變少。
+      # 負控 3/3 已驗(寫回 ||、面板不讀 cautions_en、孤兒數變多)。
+      - name: formula safety text stays reachable on the card
+        run: node scripts/validate-formula-safety-reachability.js
+
       - name: dose_basis controlled vocabulary
         run: node scripts/validate-dose-basis.js
 
