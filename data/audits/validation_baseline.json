@@ -1,6 +1,6 @@
 {
   "note": "Defect-count ceiling per layer. CI fails if any count rises. Only ever lower this file — see scripts/check-validation-ratchet.js.",
-  "updated_at": "2026-08-28",
+  "updated_at": "2026-08-29",
   "rebaseline_history": [
     {
       "date": "2026-08-05",
@@ -81,7 +81,7 @@
       "by_code": {
         "acupoints.muscles=0%": 1,
         "acupoints.nerves=0%": 1,
-        "herbs.properties_taste_temp=21%": 1,
+        "herbs.properties_taste_temp=20%": 1,
         "formulas.indications_zh=0%": 1,
         "formulas.fang_yi_zh=4%": 1
       },
@@ -199,9 +199,9 @@
       "doc": "docs/HERB_CARD_TEMPLATE.md"
     },
     "herb_card_schema": {
-      "defects": 6,
+      "defects": 1,
       "by_code": {
-        "H5": 6
+        "H5": 1
       },
       "doc": "docs/HERB_CARD_TEMPLATE.md"
     }
