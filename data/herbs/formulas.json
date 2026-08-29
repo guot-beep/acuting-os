@@ -132925,19 +132925,15 @@
     "氣促喘息"
    ],
    "contraindications_en": [
-    "Use caution for those with Spleen Deficiency type diarrhea and indigestion with a white greasy tongue coat.",
-    "Use caution in areas where diseases are predominantly caused by Dampness.",
     "Contraindicated for those with Yang Deficiency."
    ],
    "cautions_en": [
     "Use caution for those with Spleen Deficiency type diarrhea and indigestion with a white greasy tongue coat.",
-    "Use caution in areas where diseases are predominantly caused by Dampness.",
-    "Contraindicated for those with Yang Deficiency."
+    "Use caution in areas where diseases are predominantly caused by Dampness."
    ],
    "cautions_zh": [
     "脾虛所致腹瀉、消化不良、舌苔白膩者慎用",
-    "所在地區疾病多因濕邪所致者宜謹慎使用",
-    "陽虛者禁用"
+    "所在地區疾病多因濕邪所致者宜謹慎使用"
    ],
    "herb_drug_interactions_en": [],
    "category_zh": "未分類 / 考點與補充劑",
@@ -132969,12 +132965,40 @@
    "course_level_en": "Not found in the uploaded Formulations 1/2 master knowledge-level lists.",
    "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/DuQiWan.html",
    "contraindications_zh": [
-    "脾虛所致腹瀉、消化不良、舌苔白膩者慎用",
-    "所在地區疾病多因濕邪所致者宜謹慎使用",
     "陽虛者禁用"
    ],
    "id_fix_note": "2026-08-11 F2 resolution: this was a duplicate import stub of formula.du_qi_wan (corrupt placeholder id). Content merged into canonical card where its fields were empty; stub deprecated, never deleted (D6).",
-   "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/DuQiWan.html"
+   "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/DuQiWan.html",
+   "import_artifacts": [
+    {
+     "original_field": "contraindications_en",
+     "text": "Use caution for those with Spleen Deficiency type diarrhea and indigestion with a white greasy tongue coat. | Use caution in areas where diseases are predominantly caused by Dampness. | Contraindicated for those with Yang Deficiency.",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:47:59.758Z",
+     "ruling": "D28/A1(a). after=[Contraindicated for those with Yang Deficiency.]; needs_review(0)=[]"
+    },
+    {
+     "original_field": "cautions_en",
+     "text": "Use caution for those with Spleen Deficiency type diarrhea and indigestion with a white greasy tongue coat. | Use caution in areas where diseases are predominantly caused by Dampness. | Contraindicated for those with Yang Deficiency.",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:47:59.758Z",
+     "ruling": "D28/A1(a). after=[Use caution for those with Spleen Deficiency type diarrhea and indigestion with a white greasy tongue coat. | Use caution in areas where diseases are predominantly caused by Dampness.]; needs_review(0)=[]"
+    },
+    {
+     "original_field": "contraindications_zh",
+     "text": "脾虛所致腹瀉、消化不良、舌苔白膩者慎用 | 所在地區疾病多因濕邪所致者宜謹慎使用 | 陽虛者禁用",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:47:59.758Z",
+     "ruling": "D28/A1(a). after=[陽虛者禁用]; needs_review(0)=[]"
+    },
+    {
+     "original_field": "cautions_zh",
+     "text": "脾虛所致腹瀉、消化不良、舌苔白膩者慎用 | 所在地區疾病多因濕邪所致者宜謹慎使用 | 陽虛者禁用",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:47:59.758Z",
+     "ruling": "D28/A1(a). after=[脾虛所致腹瀉、消化不良、舌苔白膩者慎用 | 所在地區疾病多因濕邪所致者宜謹慎使用]; needs_review(0)=[]"
+    }
+   ]
   },
   {
    "id": "formula.fu_yuan_huo_xue_tang_import_stub",
@@ -133111,22 +133135,13 @@
    ],
    "contraindications_en": [
     "Contraindicated during pregnancy.",
-    "If this formula leads to diarrhea without a complete cure, use a different formula.",
     "Contraindicated for those who are weak and deficient.",
-    "Use with caution for those with Spleen Deficiency.",
     "Contraindicated for those with for those with Spleen Deficiency."
    ],
    "cautions_en": [
-    "Contraindicated during pregnancy.",
-    "If this formula leads to diarrhea without a complete cure, use a different formula.",
-    "Contraindicated for those who are weak and deficient.",
-    "Use with caution for those with Spleen Deficiency.",
-    "Contraindicated for those with for those with Spleen Deficiency."
+    "Use with caution for those with Spleen Deficiency."
    ],
    "cautions_zh": [
-    "孕婦禁用",
-    "若服用本方導致腹瀉未能痊癒，宜改用他方。",
-    "體虛氣血不足者禁用。",
     "脾虛者慎用。"
    ],
    "herb_drug_interactions_en": [],
@@ -133165,12 +133180,40 @@
    "taiwan_pharmacopeia_zh": "Yes (THP p.133)",
    "contraindications_zh": [
     "孕婦禁用",
-    "若服用本方導致腹瀉未能痊癒，宜改用他方。",
-    "體虛氣血不足者禁用。",
-    "脾虛者慎用。"
+    "體虛氣血不足者禁用。"
    ],
    "id_fix_note": "2026-08-11 F2 resolution: this was a duplicate import stub of formula.fu_yuan_huo_xue_tang (corrupt placeholder id). Content merged into canonical card where its fields were empty; stub deprecated, never deleted (D6).",
-   "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/FuYuanHuoXueTang.html"
+   "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/FuYuanHuoXueTang.html",
+   "import_artifacts": [
+    {
+     "original_field": "contraindications_en",
+     "text": "Contraindicated during pregnancy. | If this formula leads to diarrhea without a complete cure, use a different formula. | Contraindicated for those who are weak and deficient. | Use with caution for those with Spleen Deficiency. | Contraindicated for those with for those with Spleen Deficiency.",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:47:59.758Z",
+     "ruling": "D28/A1(a). after=[Contraindicated during pregnancy. | Contraindicated for those who are weak and deficient. | Contraindicated for those with for those with Spleen Deficiency.]; needs_review(1)=[If this formula leads to diarrhea without a complete cure, use a different formula. <no_direction_token>]"
+    },
+    {
+     "original_field": "cautions_en",
+     "text": "Contraindicated during pregnancy. | If this formula leads to diarrhea without a complete cure, use a different formula. | Contraindicated for those who are weak and deficient. | Use with caution for those with Spleen Deficiency. | Contraindicated for those with for those with Spleen Deficiency.",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:47:59.758Z",
+     "ruling": "D28/A1(a). after=[Use with caution for those with Spleen Deficiency.]; needs_review(1)=[If this formula leads to diarrhea without a complete cure, use a different formula. <no_direction_token>]"
+    },
+    {
+     "original_field": "contraindications_zh",
+     "text": "孕婦禁用 | 若服用本方導致腹瀉未能痊癒，宜改用他方。 | 體虛氣血不足者禁用。 | 脾虛者慎用。",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:47:59.758Z",
+     "ruling": "D28/A1(a). after=[孕婦禁用 | 體虛氣血不足者禁用。]; needs_review(1)=[若服用本方導致腹瀉未能痊癒，宜改用他方。 <no_direction_token>]"
+    },
+    {
+     "original_field": "cautions_zh",
+     "text": "孕婦禁用 | 若服用本方導致腹瀉未能痊癒，宜改用他方。 | 體虛氣血不足者禁用。 | 脾虛者慎用。",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:47:59.758Z",
+     "ruling": "D28/A1(a). after=[脾虛者慎用。]; needs_review(1)=[若服用本方導致腹瀉未能痊癒，宜改用他方。 <no_direction_token>]"
+    }
+   ]
   }
  ]
 }
