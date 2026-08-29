@@ -1,3 +1,104 @@
+# 2026-08-29 — A1(a) 177 張方劑安全欄重灌:31 張因「套用會兩欄同時清空」保留原狀不動
+
+D28/A1(a) 派工:224 張方劑卡裡,`contraindications_en`/`cautions_en`(以及對應中文欄)
+逐句重疊——不是兩份獨立內容,是同一段文字貼兩次,「禁用 vs 慎用」的方向是先前貼進去
+時隨手決定的。照 `docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md`
+§2 pipeline 建 `scripts/a1-safety-lexicon-lib.js`(分類器,查
+`data/research_staging/formula_safety_direction_lexicon_A1.json` 受控詞彙表,不寫死方向詞)
++ `scripts/a1-safety-migrate.js`(runner)。`scripts/a1-safety-fixture-test.js` 對 16 條
+`test_fixtures` 16/16 全過後才碰 `data/herbs/formulas.json`。
+
+## 範圍怎麼量(可重現,跟派工單「163」的估計不同)
+
+`node scripts/a1-safety-migrate.js --scope`:一張卡「在範圍內」= 該語言的
+`contraindications_<lang>` 與 `cautions_<lang>` 至少有一句標準化後逐字相同
+(A1-M01)。量出來 **177 張**(英文 173、中文 149、聯集 177),不是派工單估的 163——
+用的是逐句重疊而非整陣列相等,數字差異記在這裡供對照。8 批(7×25+1×2)全部跑完、
+逐批 build-data.js + 六支驗證器 + ratchet 綠燈才 commit+push。
+
+## 紅線守門:套用前多裝一道「兩欄同時清空」防呆
+
+分類完才發現:少數卡的某個語言,**全部句子都判不出方向**(用詞不在受控詞彙表裡,
+例如英文寫 "Use extreme caution" 而不是表列的 "use caution"、"Do not take X" 而不是
+"do not use")。若照原設計把 needs_review 全部移出 canonical,contraindications_<lang>
+與 cautions_<lang> 會**同時歸零**——這張卡在那個語言會從「有安全資訊(雖然重複)」
+變成「什麼都沒有」,違反憲法紅線三(不清空有內容的欄位)。
+
+修法:兩欄會同時清空時,整個語言**保留原狀不套用**(`held_back`),寧可維持舊有的
+重複,不清空。177 張範圍卡裡 **41 個語言組合(31 張卡)觸發**,清單在
+`git log` 的 batch1/8 commit 訊息與 import_artifacts 之外——這 31 張卡的舊重複
+**還在**,是已知、故意保留的殘留缺陷,不是遺漏。
+
+## 逐欄位數字(before → after,可用 `git diff f9302490..HEAD -- data/herbs/formulas.json` 重現)
+
+| 欄位 | before | after |
+|---|---|---|
+| `contraindications_en`(全庫加總) | 655 | 462 |
+| `cautions_en` | 521 | 152 |
+| `contraindications_zh` | 656 | 469 |
+| `cautions_zh` | 507 | 186 |
+
+重疊(缺陷本體)卡數:英文 173→**26**、中文 149→**15**(殘留即上面的 held_back 31 張)。
+160 張卡實際被改動(`import_artifacts` 新增 562 筆,shape 照 `field_shape_convention.json`
+的 `{original_field, text, reason, moved_at, ruling}`,`text` 用 `|` join 字串,不是陣列)。
+281 個「語言×卡」實際套用,281 之中 279 句被隔離進 `needs_review`(不進 canonical,
+原文完整留在 import_artifacts):`no_direction_token` 232、`ambiguous_avoidance` 46、
+`mixed_direction_tokens` 1。另外 41 個 held_back 語言組合裡有 83 句維持原地不動
+(仍是舊的重複,沒有被隔離也沒有被分類)。
+
+## 待 Ting 裁定 1(最高優先)——4 張含硃砂/雄黃方劑的劑量/療程警語現在整句消失於畫面
+
+`安宮牛黃丸`(an_gong_niu_huang_wan)、`紫雪丹`(zi_xue_dan)、`蘇合香丸`(su_he_xiang_wan)、
+`朱砂安神丸`(zhu_sha_an_shen_wan)——四張卡裡「硃砂/雄黃不可大量服用／不可加熱／
+do not take ... in large doses or heated」這類語句,動詞不在受控詞彙表(表列是
+「不可使用/do not use」,原句是「不可服用/不可加熱/do not take/self-administer」),
+分類器判 `no_direction_token`,已從 `cautions_en/zh` 移出、原文只留在 `import_artifacts`,
+**卡面上現在完全看不到這幾句**。這是機械套用受控詞彙表的誠實結果,不是我自己判斷
+「不重要」。兩種辦法:(a) Ting 確認這類「劑量/加熱條件限制」語意上等於
+`avoid_high_dose`/`avoid_prolonged_use`/`administration_prerequisite`,手動把這 4 張卡
+的這幾句改判為 cautions;(b) 把受控詞彙表的動詞清單擴充(服用/take/administer/加熱/heat),
+之後重跑這 4 張。查詢:`node -e "require(fs)…"` 或直接搜 `import_artifacts` 裡
+`reason` 含 `A1(a)` 且 `ruling` 含「硃砂」的四筆記錄。
+
+## 待 Ting 裁定 2——31 張卡(41 語言組合)held_back 清單,建議下一步找補源
+
+`formula.chai_ge_jie_ji_tang[zh]` `formula.liang_ge_san[en]` `formula.qing_ying_tang[en]`
+`formula.xi_jiao_di_huang_tang[en]` `formula.huang_lian_e_jiao_tang[zh]`
+`formula.qing_wei_san[en]` `formula.xie_bai_san[en]` `formula.shao_yao_tang[en]`
+`formula.qing_hao_bie_jia_tang[en]` `formula.qing_gu_san[en/zh]`
+`formula.taishan_pan_shi_san[en/zh]` `formula.suo_quan_wan[en/zh]`
+`formula.yue_ju_wan[zh]` `formula.chai_hu_shu_gan_san[zh]` `formula.zhu_ling_tang[en]`
+`formula.san_ren_tang[en]` `formula.er_miao_san[en/zh]` `formula.si_miao_wan[en/zh]`
+`formula.zhen_wu_tang[en]` `formula.fang_ji_huang_qi_tang[en]` `formula.wen_dan_tang[zh]`
+`formula.zuo_jin_wan[en]` `formula.da_jian_zhong_tang[en/zh]`(此卡另外 0 個 field_sources
+安全欄來源、`source_urls` 空,即使判得出方向也過不了 provenance gate)
+`formula.ding_zhi_wan[en/zh]` `formula.shao_yao_gan_cao_tang[en/zh]`(同樣缺來源)
+`formula.wu_pi_san[en/zh]` `formula.xi_jiao_di_huang_wan[en]` `formula.zeng_ye_tang[en/zh]`
+`formula.wei_jing_tang[en]`(同樣缺來源) `formula.si_miao_yong_an_tang[en]`
+`formula.dang_gui_nian_tong_tang[en]`。三張完全無來源
+(`da_jian_zhong_tang`/`shao_yao_gan_cao_tang`/`wei_jing_tang`)建議先補
+`source_urls` 或 `field_sources`,其餘多半是用詞不在受控表(同上一項的模式)。
+
+## 有記錄但不擋 CI 的旁支數字
+
+`validate-formula-standard.js` 的「中英未對齊」worklist 計數(非阻擋、非 ratchet)
+9→53——因為這次刻意把英文、中文各自獨立分類(各自依自己的文字判方向),
+不做跨語言配對,兩側陣列長度自然不再保證相等;渲染器本來就只在長度相等時才
+逐項配對,長度不等時分別列印並註明不對應,不會錯位。`有禁忌` 217→211
+(6 張卡的內容整段移去 cautions_zh,屬於欄位歸位不是流失)。
+
+驗證器(全綠):`build-data.js` / `validate-formula-standard.js`(exit 0,F1-F14 皆
+PASS)/ `validate-formula-correctness.js`(0 ERROR 0 GAP)/ `validate-content-junk.js`
+(PASS,既有 33 張方劑共用劑量句 warning 不變)/ `validate-herb-incompatibility.js`
+(0 未承認共存)/ `validate-dose-basis.js`(0 缺陷)/ `validate-relation-registry-integrity.js`
+(20 筆懸空,ratchet 內既有數字未變)/ `check-validation-ratchet.js`(PASS — no regressions,
+encoding 1817 / relation_integrity 20 / content_quality 5 / herb_canon 5538 /
+herb_card_schema 6,皆與 batch 前一致)。
+
+8 個 commit 全部 push 到 main(`d29d7255`..`6caa15c6`),HEAD 與 origin/main 一致。
+
+---
+
 # 2026-08-28 — 收尾那 12 條懸空,結果在證型大卡上抓到更大的一個:207 個代表方 chip 印的是美化 slug
 
 原本只是要處理 `patternLibrary.typical_formulas` 5 條 + `herbPairs.found_in_formulas` 9 條懸空。
