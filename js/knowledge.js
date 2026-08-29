@@ -1648,10 +1648,28 @@
       : "";
 
     const safety = [...new Set([...(record.safety_flags || []), ...(record.herb_drug_cautions || [])])];
-    const contraindicationsZh = cleanList(record.contraindications_zh || record.cautions_zh);
+    /* 這一區的標題一直是「禁忌與注意事項」,但它只印得出其中一項:
+     * `contraindications_zh || cautions_zh` 是**二選一**,禁忌非空時注意事項
+     * 整段短路掉;而 `cautions_en` 從來沒有被任何一行讀過。
+     *
+     * 在 A1(a) 把「禁忌/注意」按方向拆成兩個欄位之前,這個缺陷是隱形的 ——
+     * 兩欄裝著同一份文字,印哪一欄都一樣。拆開之後它立刻變成資料層做對了、
+     * 畫面卻少一半:150 句被歸進 cautions_* 的安全文字當場離開卡面,包括
+     * 麻黃湯「高血壓者慎用」「孕婦慎用」、補陽還五湯與抗凝血劑併用的出血風險。
+     *
+     * 改成兩個都印,各自帶小標。舊卡上兩欄仍是逐字複本的(尚未遷移的 63 張),
+     * 用 alreadyShown 的 80% 重疊測試擋掉,不然同一份清單會印兩次。 */
+    const contraindicationsZh = cleanList(record.contraindications_zh);
     const contraindicationsEn = cleanList(record.contraindications_en || exam.contraindications_en);
-    const contraHtml = (contraindicationsZh.length || contraindicationsEn.length)
-      ? detailPairedList(contraindicationsZh, contraindicationsEn)
+    const cautionsZh = cleanList(record.cautions_zh);
+    const cautionsEn = cleanList(record.cautions_en);
+    const contraHasContent = contraindicationsZh.length || contraindicationsEn.length;
+    const cautionsIsDuplicate =
+      alreadyShown(cautionsZh, [contraindicationsZh]) || alreadyShown(cautionsEn, [contraindicationsEn]);
+    const cautionsHasContent = (cautionsZh.length || cautionsEn.length) && !cautionsIsDuplicate;
+    const contraHtml = (contraHasContent || cautionsHasContent)
+      ? `${contraHasContent ? `${cautionsHasContent ? `<h4 class="k-subhead">禁忌 Contraindications</h4>` : ""}${detailPairedList(contraindicationsZh, contraindicationsEn)}` : ""}` +
+        `${cautionsHasContent ? `<h4 class="k-subhead">注意事項 Cautions</h4>${detailPairedList(cautionsZh, cautionsEn)}` : ""}`
       : detailList(safetyList(safety));
 
     return [
