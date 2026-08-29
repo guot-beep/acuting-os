@@ -57,13 +57,25 @@ const check = (name, ok, detail) => {
 console.log("方劑安全文字可達性 —— 資料裡有的,卡上要看得到\n");
 console.log("R1 渲染層 —— 有資料的安全欄都要被讀,且不准兩兩二選一");
 
+/* 搜尋範圍必須是 formulaPanels 的函式本體,不能是整個檔案。
+ * 第一版拿整個 js/knowledge.js 做 grep,結果 `record.cautions_en` 在中藥面板
+ * 也出現過,於是「方劑面板根本沒讀它」這個注入永遠抓不到 —— 負向對照當場
+ * 打臉(NC2 exit 0)。一支範圍畫錯的 gate 會穩定地報綠,那比沒有 gate 更糟。 */
+const panelStart = src.indexOf("function formulaPanels(");
+const panelEnd = src.indexOf("function herbPanels(", panelStart + 1);
+const panel = panelStart >= 0 && panelEnd > panelStart ? src.slice(panelStart, panelEnd) : "";
+check("R1a 找得到 formulaPanels 的函式本體",
+  !!panel,
+  "js/knowledge.js 裡切不出 formulaPanels…herbPanels 這一段 —— 函式被改名或搬家了," +
+  "這支的 R1 已經在看錯的地方,請一併更新(不要讓它繼續報綠)");
+
 // 哪些安全欄實際帶著資料
 const carrying = SAFETY_FIELDS.filter((f) => records.some((r) => L(r[f]).length));
 for (const f of carrying) {
   const n = records.filter((r) => L(r[f]).length).length;
-  check(`R1 渲染層讀 ${f}（${n} 張卡有資料）`,
-    new RegExp(`record\\.${f}\\b`).test(src),
-    `js/knowledge.js 從來沒有讀過 ${f} —— ${n} 張卡的這些句子在畫面上不存在`);
+  check(`R1 方劑面板讀 ${f}（${n} 張卡有資料）`,
+    !!panel && new RegExp(`record\\.${f}\\b`).test(panel),
+    `formulaPanels 從來沒有讀過 ${f} —— ${n} 張卡的這些句子在方劑卡上不存在`);
 }
 
 /* 二選一短路:`record.A || record.B`,而 A、B 都是帶資料的安全欄。
@@ -73,7 +85,7 @@ for (const a of carrying) {
     if (a === b) continue;
     const shortCircuit = new RegExp(`record\\.${a}\\s*\\|\\|\\s*record\\.${b}\\b`);
     check(`R1 ${a} 沒有用 || 吞掉 ${b}`,
-      !shortCircuit.test(src),
+      !shortCircuit.test(panel),
       `渲染層寫成 record.${a} || record.${b} —— 兩欄都有資料時,${b} 永遠印不出來`);
   }
 }
