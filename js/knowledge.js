@@ -2006,18 +2006,24 @@
       return `<button type="button" class="k-cond-tag" data-search-term="${esc(zh)}" title="搜尋「${esc(zh)}」相關內容">` +
         `${esc(zh)}${en ? `<small>(${esc(en)})</small>` : ""}</button>`;
     }).join("");
-    /* bilingualChips 是**逐索引**配對的,所以英文那一側必須是同一份清單的翻譯。
-     * 這裡原本拿 modern_pharmacology_zh 去配 modern_functions_en —— 兩個不同的欄位。
-     * 79 張有中文藥理的卡裡,長度真的相符的只有 18 張;而 modern_pharmacology_en
-     * (先前完全沒被讀過)相符的有 32 張。長度不符時逐索引配對會把「第 1 項中文」
-     * 配上「第 1 項不相干的英文」,等於印出錯的翻譯 —— 那比沒有翻譯糟。
-     * 規則(索引對齊):長度相符才配,兩個都不符就只印中文。 */
+    /* bilingualChips 是**逐索引**配對的,所以英文那一側必須是「同一份清單的翻譯」。
+     * 兩條各自不夠的護欄,合起來才擋得住:
+     *   (1) 長度要相符 —— 不然「第 1 項中文」會配上「第 1 項不相干的英文」;
+     *   (2) 來源欄位要相同 —— 長度相符**不代表**同源。原本允許
+     *       modern_pharmacology_zh 湊 modern_functions_en,11 張卡剛好一樣長
+     *       就配了進去,而那是兩份不同的清單、順序也不同:
+     *         香薷「發汗與退熱作用」→ "Increases gastric acid secretion"
+     *         石膏「顯著解熱作用」  → "Hypoglycemic activity"
+     *         蒼耳子「降血糖作用」  → "Analgesic activity"
+     * 印錯的翻譯比沒有翻譯糟,而長度檢查永遠抓不到 (2) 這種錯。
+     * 那 11 張因此少了英文 chip,但中文本身就自帶英文括號
+     * (「降血糖作用 (Hypoglycemic Effect - Atractyloside)」),資訊沒有損失。 */
+    const usingPharmZh = cleanList(record.modern_pharmacology_zh).length > 0;
     const modernPharmEn = (() => {
-      const a = cleanList(record.modern_pharmacology_en);
-      if (a.length === modernPharm.length) return a;
-      const b = cleanList(record.modern_functions_en);
-      if (b.length === modernPharm.length) return b;
-      return [];
+      const sameSource = usingPharmZh
+        ? cleanList(record.modern_pharmacology_en)
+        : cleanList(record.modern_functions_en);
+      return sameSource.length === modernPharm.length ? sameSource : [];
     })();
     const bilingualModernPharm = bilingualChips(
       modernPharm,
