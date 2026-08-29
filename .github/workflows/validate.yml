@@ -484,6 +484,19 @@ jobs:
       - name: dose_basis is actually rendered
         run: node scripts/validate-dose-basis-render.js
 
+      # 2026-08-28:上面那支守「有沒有印」,這支守「印出來的兩側是不是同一份
+      # 清單」。雙語 chip 是逐索引印的,而它會用兩種方式壞掉 —— 長度不符
+      # (渲染層已擋),以及長度剛好相符但來源欄位不同(長度檢查完全看不見)。
+      # 後者讓 11 張卡印出錯的翻譯:香薷「發汗與退熱作用」配成
+      # "Increases gastric acid secretion"、石膏「顯著解熱作用」配成
+      # "Hypoglycemic activity"。讀者沒有理由懷疑括號裡那句。
+      # 負控 4/4 已驗(跨欄位 fallback / 拿掉長度守門 / 資料索引不對齊 /
+      # 渲染變數改名時 gate 要出聲而不是默默通過)。
+      # R2 讓出中藥層 functions/indications 給 herb-card-schema H5 的棘輪,
+      # 免得同一個缺陷被兩支各記一次。
+      - name: bilingual chips pair same-source lists (not merely same-length)
+        run: node scripts/validate-bilingual-index-pairing.js
+
       - name: dose_basis controlled vocabulary
         run: node scripts/validate-dose-basis.js
 

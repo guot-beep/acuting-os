@@ -53,6 +53,7 @@ node scripts/validate-herb-pair-render.js        # 藥卡兩個藥對來源要�
 node scripts/validate-board-pair-attribution.js  # 「考綱官方對藥」核不到正本就必須標未確認
 node scripts/validate-review-status-vocabulary.js # 狀態標籤不准印出生 enum(詞彙取自 knowledge.js)
 node scripts/validate-rendered-reference-resolution.js # 會上畫面的跨卡引用,懸空數只准變少
+node scripts/validate-bilingual-index-pairing.js  # 雙語 chip 逐索引配對:等長還不夠,要同一份清單
 # 其他線：condition / tdis / pattern / symptom / comparison / formula-song
 node scripts/check-validation-ratchet.js   # 缺陷數不准變多
 ```
