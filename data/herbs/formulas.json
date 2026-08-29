@@ -19641,18 +19641,12 @@
     "Wrist and hand pain",
     "耳痛"
    ],
-   "contraindications_en": [
-    "Use caution with Spleen Deficiency.",
-    "Use caution with Qi and Blood Deficiency.",
-    "Yin type boils."
-   ],
+   "contraindications_en": [],
    "cautions_en": [
-    "Yin type boils.",
     "Use caution with Spleen Deficiency.",
     "Use caution with Qi and Blood Deficiency."
    ],
    "cautions_zh": [
-    "陰證瘡癤者禁用",
     "脾虛者慎用",
     "氣血兩虛者慎用"
    ],
@@ -19662,9 +19656,7 @@
    "course_level_en": "Not listed in the Formulations 1/2 knowledge-level lists",
    "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/WuWeiXiaoDuYin.html",
    "contraindications_zh": [
-    "陰證瘡癤者禁用",
-    "脾虛者慎用",
-    "氣血兩虛者慎用"
+    "陰證瘡癤者禁用"
    ],
    "correction_note": "【2026-08-12 紅線五：組成 _zh 拉丁拼寫改中文】第5味 name_zh「Tian Kui Zi」→「天葵子」；第6味 name_zh「Jiu」→「溫黃酒」。拼音原值仍在各列 pinyin 欄；中文名依該列 herb_id 於 herb_canon_shortlist 的中文名＋原拼寫的炮製前綴／部位後綴（炒、酒炒、制、穗、梢…）對照填入。 name_zh 依 herb_id herb.tian_kui_zi 與拼音 Tian Kui Zi 作「天葵子」；herb_zh 現值「地葵子」疑為形誤，§0 只加不刪，原字未動，待 Ting 裁定是否改。\n【2026-08-12 樣板句清除 — 錯置的甘草功效（變體）】以下 1 味藥的所列欄位原值逐字同為「和中健脾，調和諸藥。」（原文保存於此）：溫黃酒（actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。",
    "source_classic": "《醫宗金鑒》",
@@ -19681,6 +19673,36 @@
     "Anti-inflammatory, anti-edema, analgesic",
     "Promotes wound healing and pus resolution",
     "Enhances phagocytic function"
+   ],
+   "import_artifacts": [
+    {
+     "original_field": "contraindications_en",
+     "text": "Use caution with Spleen Deficiency. | Use caution with Qi and Blood Deficiency. | Yin type boils.",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[]; needs_review(1)=[Yin type boils. <no_direction_token>]"
+    },
+    {
+     "original_field": "cautions_en",
+     "text": "Yin type boils. | Use caution with Spleen Deficiency. | Use caution with Qi and Blood Deficiency.",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[Use caution with Spleen Deficiency. | Use caution with Qi and Blood Deficiency.]; needs_review(1)=[Yin type boils. <no_direction_token>]"
+    },
+    {
+     "original_field": "contraindications_zh",
+     "text": "陰證瘡癤者禁用 | 脾虛者慎用 | 氣血兩虛者慎用",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[陰證瘡癤者禁用]; needs_review(0)=[]"
+    },
+    {
+     "original_field": "cautions_zh",
+     "text": "陰證瘡癤者禁用 | 脾虛者慎用 | 氣血兩虛者慎用",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[脾虛者慎用 | 氣血兩虛者慎用]; needs_review(0)=[]"
+    }
    ]
   },
   {
@@ -20187,9 +20209,8 @@
     "Contraindicated for those who vomit frequently due to the pathogen remaining in the Shao Yang.",
     "Contraindicated for those who have Interior Cold with a slow pulse.",
     "Contraindicated for those with spontaneous sweating and normal urination.",
-    "Use extreme caution with weak patients, add tonics.",
     "This formula is strong in action and may cause vomiting or diarrhea; weak patients should use it with particular care. Strictly contraindicated in pregnancy. As a potent purgative, use cautiously in patients with Qi deficiency, insufficient Yin fluids, or constipation that is not severe — especially the elderly or debilitated.",
-    "Note that the formula should be discontinued as soon as symptoms improve, to avoid injuring the upright Qi through overuse. It is unsuitable for patients who are weak, whose pulse is deep and feeble, or who lack accumulated heat in the stomach and intestines; otherwise it may cause harm."
+    "Contraindicated for those who stop eating."
    ],
    "contraindications_zh": [
     "孕婦禁用",
@@ -20200,10 +20221,7 @@
     "不能進食者禁用",
     "邪在少陽、頻頻嘔吐者禁用",
     "裡寒脈遲者禁用",
-    "自汗出而小便自利者禁用",
-    "體虛者須極慎用,宜加補益之品",
-    "這個藥方作用強烈，可能會引起嘔吐或腹瀉，虛弱的患者應該特別小心使用。孕婦嚴禁使用。由於這是一種強效的通便藥，對於氣虛（身體能量不足）、陰液不足、便秘不嚴重的患者，特別是年老或體弱者，應該謹慎使用。",
-    "使用此藥時，應該注意一旦症狀緩解就停止服用，以免過度使用而損傷身體正氣。如果患者的身體虛弱、脈象沉弱或胃腸中沒有積熱，則不適合使用，否則可能會對身體造成傷害。"
+    "自汗出而小便自利者禁用"
    ],
    "safety_flags": [],
    "source_urls": [
@@ -20346,15 +20364,6 @@
    "exact_source_url": "https://cloudtcm.com/formula/32",
    "fetched_at": "2026-07-23T07:08:46.557Z",
    "cautions_zh": [
-    "孕婦禁用",
-    "邪尚在衛分或太陽表證階段者禁用",
-    "心下痞硬，提示邪尚在膈上者禁用",
-    "面赤為熱浮於表者禁用",
-    "脾胃虛弱、食量甚少者禁用",
-    "不能進食者禁用",
-    "邪在少陽、頻頻嘔吐者禁用",
-    "裡寒脈遲者禁用",
-    "自汗出而小便自利者禁用",
     "體虛者須極慎用,宜加補益之品"
    ],
    "safety_source": "cloudtcm_cautions_field",
@@ -20882,18 +20891,7 @@
     "腹水",
     "陰道炎"
    ],
-   "cautions_en": [
-    "Contraindicated during pregnancy.",
-    "Contraindicated when a pathogen remains at the protective (Wei) stage or in the Tai Yang level.",
-    "Contraindicated when there is hardness in the epigastric area indicating that the pathogen is still above the diaphragm.",
-    "Contraindicated when there is a flushed face due to Heat Floating in the Exterior.",
-    "Contraindicated for those with Spleen and Stomach Deficiency who eat only small amounts.",
-    "Contraindicated for those who stop eating.",
-    "Contraindicated for those who vomit frequently due to the pathogen remaining in the Shao Yang.",
-    "Contraindicated for those who have Interior Cold with a slow pulse.",
-    "Contraindicated for those with spontaneous sweating and normal urination.",
-    "Use extreme caution with weak patients, add tonics."
-   ],
+   "cautions_en": [],
    "herb_drug_interactions_en": [],
    "category_zh": "瀉下劑",
    "ba_fa_zh": "下法 Xia Fa (Downward Draining)",
@@ -20981,6 +20979,36 @@
     "Anti-endotoxin, reduces intestinal permeability, protects mucosal barrier",
     "Improves microcirculation, anti-inflammatory, anti-shock",
     "Promotes bile secretion and gallstone clearance"
+   ],
+   "import_artifacts": [
+    {
+     "original_field": "contraindications_en",
+     "text": "Contraindicated during pregnancy. | Contraindicated when a pathogen remains at the protective (Wei) stage or in the Tai Yang level. | Contraindicated when there is hardness in the epigastric area indicating that the pathogen is still above the diaphragm. | Contraindicated when there is a flushed face due to Heat Floating in the Exterior. | Contraindicated for those with Spleen and Stomach Deficiency who eat only small amounts. | Contraindicated for those who are unable to eat. | Contraindicated for those who vomit frequently due to the pathogen remaining in the Shao Yang. | Contraindicated for those who have Interior Cold with a slow pulse. | Contraindicated for those with spontaneous sweating and normal urination. | Use extreme caution with weak patients, add tonics. | This formula is strong in action and may cause vomiting or diarrhea; weak patients should use it with particular care. Strictly contraindicated in pregnancy. As a potent purgative, use cautiously in patients with Qi deficiency, insufficient Yin fluids, or constipation that is not severe — especially the elderly or debilitated. | Note that the formula should be discontinued as soon as symptoms improve, to avoid injuring the upright Qi through overuse. It is unsuitable for patients who are weak, whose pulse is deep and feeble, or who lack accumulated heat in the stomach and intestines; otherwise it may cause harm.",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[Contraindicated during pregnancy. | Contraindicated when a pathogen remains at the protective (Wei) stage or in the Tai Yang level. | Contraindicated when there is hardness in the epigastric area indicating that the pathogen is still above the diaphragm. | Contraindicated when there is a flushed face due to Heat Floating in the Exterior. | Contraindicated for those with Spleen and Stomach Deficiency who eat only small amounts. | Contraindicated for those who are unable to eat. | Contraindicated for those who vomit frequently due to the pathogen remaining in the Shao Yang. | Contraindicated for those who have Interior Cold with a slow pulse. | Contraindicated for those with spontaneous sweating and normal urination. | This formula is strong in action and may cause vomiting or diarrhea; weak patients should use it with particular care. Strictly contraindicated in pregnancy. As a potent purgative, use cautiously in patients with Qi deficiency, insufficient Yin fluids, or constipation that is not severe — especially the elderly or debilitated. | Contraindicated for those who stop eating.]; needs_review(2)=[Use extreme caution with weak patients, add tonics. <no_direction_token> | Note that the formula should be discontinued as soon as symptoms improve, to avoid injuring the upright Qi through overuse. It is unsuitable for patients who are weak, whose pulse is deep and feeble, or who lack accumulated heat in the stomach and intestines; otherwise it may cause harm. <ambiguous_avoidance>]"
+    },
+    {
+     "original_field": "cautions_en",
+     "text": "Contraindicated during pregnancy. | Contraindicated when a pathogen remains at the protective (Wei) stage or in the Tai Yang level. | Contraindicated when there is hardness in the epigastric area indicating that the pathogen is still above the diaphragm. | Contraindicated when there is a flushed face due to Heat Floating in the Exterior. | Contraindicated for those with Spleen and Stomach Deficiency who eat only small amounts. | Contraindicated for those who stop eating. | Contraindicated for those who vomit frequently due to the pathogen remaining in the Shao Yang. | Contraindicated for those who have Interior Cold with a slow pulse. | Contraindicated for those with spontaneous sweating and normal urination. | Use extreme caution with weak patients, add tonics.",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[]; needs_review(2)=[Use extreme caution with weak patients, add tonics. <no_direction_token> | Note that the formula should be discontinued as soon as symptoms improve, to avoid injuring the upright Qi through overuse. It is unsuitable for patients who are weak, whose pulse is deep and feeble, or who lack accumulated heat in the stomach and intestines; otherwise it may cause harm. <ambiguous_avoidance>]"
+    },
+    {
+     "original_field": "contraindications_zh",
+     "text": "孕婦禁用 | 邪尚在衛分或太陽表證階段者禁用 | 心下痞硬，提示邪尚在膈上者禁用 | 面赤為熱浮於表者禁用 | 脾胃虛弱、食量甚少者禁用 | 不能進食者禁用 | 邪在少陽、頻頻嘔吐者禁用 | 裡寒脈遲者禁用 | 自汗出而小便自利者禁用 | 體虛者須極慎用,宜加補益之品 | 這個藥方作用強烈，可能會引起嘔吐或腹瀉，虛弱的患者應該特別小心使用。孕婦嚴禁使用。由於這是一種強效的通便藥，對於氣虛（身體能量不足）、陰液不足、便秘不嚴重的患者，特別是年老或體弱者，應該謹慎使用。 | 使用此藥時，應該注意一旦症狀緩解就停止服用，以免過度使用而損傷身體正氣。如果患者的身體虛弱、脈象沉弱或胃腸中沒有積熱，則不適合使用，否則可能會對身體造成傷害。",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[孕婦禁用 | 邪尚在衛分或太陽表證階段者禁用 | 心下痞硬，提示邪尚在膈上者禁用 | 面赤為熱浮於表者禁用 | 脾胃虛弱、食量甚少者禁用 | 不能進食者禁用 | 邪在少陽、頻頻嘔吐者禁用 | 裡寒脈遲者禁用 | 自汗出而小便自利者禁用]; needs_review(2)=[這個藥方作用強烈，可能會引起嘔吐或腹瀉，虛弱的患者應該特別小心使用。孕婦嚴禁使用。由於這是一種強效的通便藥，對於氣虛（身體能量不足）、陰液不足、便秘不嚴重的患者，特別是年老或體弱者，應該謹慎使用。 <mixed_direction_tokens> | 使用此藥時，應該注意一旦症狀緩解就停止服用，以免過度使用而損傷身體正氣。如果患者的身體虛弱、脈象沉弱或胃腸中沒有積熱，則不適合使用，否則可能會對身體造成傷害。 <no_direction_token>]"
+    },
+    {
+     "original_field": "cautions_zh",
+     "text": "孕婦禁用 | 邪尚在衛分或太陽表證階段者禁用 | 心下痞硬，提示邪尚在膈上者禁用 | 面赤為熱浮於表者禁用 | 脾胃虛弱、食量甚少者禁用 | 不能進食者禁用 | 邪在少陽、頻頻嘔吐者禁用 | 裡寒脈遲者禁用 | 自汗出而小便自利者禁用 | 體虛者須極慎用,宜加補益之品",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[體虛者須極慎用,宜加補益之品]; needs_review(2)=[這個藥方作用強烈，可能會引起嘔吐或腹瀉，虛弱的患者應該特別小心使用。孕婦嚴禁使用。由於這是一種強效的通便藥，對於氣虛（身體能量不足）、陰液不足、便秘不嚴重的患者，特別是年老或體弱者，應該謹慎使用。 <mixed_direction_tokens> | 使用此藥時，應該注意一旦症狀緩解就停止服用，以免過度使用而損傷身體正氣。如果患者的身體虛弱、脈象沉弱或胃腸中沒有積熱，則不適合使用，否則可能會對身體造成傷害。 <no_direction_token>]"
+    }
    ]
   },
   {
@@ -21115,16 +21143,10 @@
    ],
    "modifications_zh": [],
    "contraindications_en": [
-    "Contraindicated during pregnancy.",
-    "Only when necessary for weak patients plus tonic herbs.",
-    "Xiao Cheng Qi Tang has a purgative action; it is therefore not suitable for pregnant women, breastfeeding women, children, or the weak.",
-    "After taking Xiao Cheng Qi Tang, side effects such as diarrhea and abdominal pain may occur. If severe side effects occur, stop the medicine immediately and seek medical attention."
+    "Contraindicated during pregnancy."
    ],
    "contraindications_zh": [
-    "孕婦禁用",
-    "體虛者僅於必要時使用，並加補益之品",
-    "小承氣湯具有瀉下作用，因此孕婦、哺乳期婦女、小兒、體弱者不宜服用。",
-    "服用小承氣湯後，可能會出現腹瀉、腹痛等副作用。如果出現嚴重的副作用，應立即停藥並就醫。"
+    "孕婦禁用"
    ],
    "safety_flags": [],
    "source_urls": [
@@ -21243,10 +21265,7 @@
    "source_classic": "《傷寒雜病論》",
    "exact_source_url": "https://cloudtcm.com/formula/40",
    "fetched_at": "2026-07-23T07:08:58.403Z",
-   "cautions_zh": [
-    "孕婦禁用",
-    "體虛者僅於必要時使用，並加補益之品"
-   ],
+   "cautions_zh": [],
    "safety_source": "cloudtcm_cautions_field",
    "safety_source_url": "https://cloudtcm.com/formula/40",
    "safety_fetched_at": "2026-07-23T07:33:05.023Z",
@@ -21707,10 +21726,7 @@
     "疝氣",
     "牙痛"
    ],
-   "cautions_en": [
-    "Contraindicated during pregnancy.",
-    "Only when necessary for weak patients plus tonic herbs."
-   ],
+   "cautions_en": [],
    "category_zh": "瀉下劑",
    "ba_fa_zh": "下法 Xia Fa (Downward Draining)",
    "course_level_en": "Formulations 1 — 1st group: Detailed Knowledge / Most Important",
@@ -21733,6 +21749,36 @@
      "reason": "HOLD_MASKS_WARNING_SIGN",
      "quarantined": "2026-08-27",
      "ruling": "TING_RULING_SHEET_2026-08-27 A0b(b):25 段 HOLD 全數隔離,僅 RISK_DIRECTION_KEEP 上畫面"
+    }
+   ],
+   "import_artifacts": [
+    {
+     "original_field": "contraindications_en",
+     "text": "Contraindicated during pregnancy. | Only when necessary for weak patients plus tonic herbs. | Xiao Cheng Qi Tang has a purgative action; it is therefore not suitable for pregnant women, breastfeeding women, children, or the weak. | After taking Xiao Cheng Qi Tang, side effects such as diarrhea and abdominal pain may occur. If severe side effects occur, stop the medicine immediately and seek medical attention.",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[Contraindicated during pregnancy.]; needs_review(3)=[Only when necessary for weak patients plus tonic herbs. <no_direction_token> | Xiao Cheng Qi Tang has a purgative action; it is therefore not suitable for pregnant women, breastfeeding women, children, or the weak. <no_direction_token> | After taking Xiao Cheng Qi Tang, side effects such as diarrhea and abdominal pain may occur. If severe side effects occur, stop the medicine immediately and seek medical attention. <no_direction_token>]"
+    },
+    {
+     "original_field": "cautions_en",
+     "text": "Contraindicated during pregnancy. | Only when necessary for weak patients plus tonic herbs.",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[]; needs_review(3)=[Only when necessary for weak patients plus tonic herbs. <no_direction_token> | Xiao Cheng Qi Tang has a purgative action; it is therefore not suitable for pregnant women, breastfeeding women, children, or the weak. <no_direction_token> | After taking Xiao Cheng Qi Tang, side effects such as diarrhea and abdominal pain may occur. If severe side effects occur, stop the medicine immediately and seek medical attention. <no_direction_token>]"
+    },
+    {
+     "original_field": "contraindications_zh",
+     "text": "孕婦禁用 | 體虛者僅於必要時使用，並加補益之品 | 小承氣湯具有瀉下作用，因此孕婦、哺乳期婦女、小兒、體弱者不宜服用。 | 服用小承氣湯後，可能會出現腹瀉、腹痛等副作用。如果出現嚴重的副作用，應立即停藥並就醫。",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[孕婦禁用]; needs_review(3)=[體虛者僅於必要時使用，並加補益之品 <no_direction_token> | 小承氣湯具有瀉下作用，因此孕婦、哺乳期婦女、小兒、體弱者不宜服用。 <no_direction_token> | 服用小承氣湯後，可能會出現腹瀉、腹痛等副作用。如果出現嚴重的副作用，應立即停藥並就醫。 <no_direction_token>]"
+    },
+    {
+     "original_field": "cautions_zh",
+     "text": "孕婦禁用 | 體虛者僅於必要時使用，並加補益之品",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[]; needs_review(3)=[體虛者僅於必要時使用，並加補益之品 <no_direction_token> | 小承氣湯具有瀉下作用，因此孕婦、哺乳期婦女、小兒、體弱者不宜服用。 <no_direction_token> | 服用小承氣湯後，可能會出現腹瀉、腹痛等副作用。如果出現嚴重的副作用，應立即停藥並就醫。 <no_direction_token>]"
     }
    ]
   },
@@ -21861,12 +21907,10 @@
     "註：以上藥物用量為古代用量，現代應用需根據患者具體情況調整。加入桂枝、桃仁是用於治療大熱之氣，熱甚搏血的情況。加入黃連、犀角用於疏利三焦，徹其本熱。"
    ],
    "contraindications_en": [
-    "Contraindicated during pregnancy.",
-    "Use extreme caution with weak patients, add tonics."
+    "Contraindicated during pregnancy."
    ],
    "contraindications_zh": [
-    "孕婦禁用",
-    "體虛者須極慎用,宜加補益之品"
+    "孕婦禁用"
    ],
    "safety_flags": [],
    "source_urls": [
@@ -21979,7 +22023,6 @@
    "exact_source_url": "https://cloudtcm.com/formula/277",
    "fetched_at": "2026-07-23T07:08:56.266Z",
    "cautions_zh": [
-    "孕婦禁用",
     "體虛者須極慎用,宜加補益之品"
    ],
    "syndromes_zh": [
@@ -22451,10 +22494,7 @@
     "失眠",
     "上呼吸道感染"
    ],
-   "cautions_en": [
-    "Contraindicated during pregnancy.",
-    "Use extreme caution with weak patients, add tonics."
-   ],
+   "cautions_en": [],
    "herb_drug_interactions_en": [],
    "category_zh": "瀉下劑",
    "ba_fa_zh": "下法 Xia Fa (Downward Draining)",
@@ -22468,6 +22508,36 @@
     "抗炎、抗菌、降火",
     "促進毒素排除",
     "本方用於治療藥物過量，療效令人滿意。"
+   ],
+   "import_artifacts": [
+    {
+     "original_field": "contraindications_en",
+     "text": "Contraindicated during pregnancy. | Use extreme caution with weak patients, add tonics.",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[Contraindicated during pregnancy.]; needs_review(1)=[Use extreme caution with weak patients, add tonics. <no_direction_token>]"
+    },
+    {
+     "original_field": "cautions_en",
+     "text": "Contraindicated during pregnancy. | Use extreme caution with weak patients, add tonics.",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[]; needs_review(1)=[Use extreme caution with weak patients, add tonics. <no_direction_token>]"
+    },
+    {
+     "original_field": "contraindications_zh",
+     "text": "孕婦禁用 | 體虛者須極慎用,宜加補益之品",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[孕婦禁用]; needs_review(0)=[]"
+    },
+    {
+     "original_field": "cautions_zh",
+     "text": "孕婦禁用 | 體虛者須極慎用,宜加補益之品",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[體虛者須極慎用,宜加補益之品]; needs_review(0)=[]"
+    }
    ]
   },
   {
@@ -23181,23 +23251,10 @@
     "Contraindicated for those with necrotic appendicitis.",
     "Contraindicated for those with appendicitis with peritonitis.",
     "Contraindicated for infants with appendicitis.",
-    "Contraindicated for those with appendicitis due to parasites.",
-    "Use extreme caution in the weak and elderly."
+    "Contraindicated for those with appendicitis due to parasites."
    ],
-   "cautions_en": [
-    "Contraindicated for those with necrotic appendicitis.",
-    "Contraindicated for those with appendicitis with peritonitis.",
-    "Contraindicated for infants with appendicitis.",
-    "Contraindicated for those with appendicitis due to parasites.",
-    "Contraindicated during Pregnancy.",
-    "Use extreme caution in the weak and elderly."
-   ],
+   "cautions_en": [],
    "cautions_zh": [
-    "壞疽性闌尾炎者禁用",
-    "闌尾炎併發腹膜炎者禁用",
-    "嬰兒闌尾炎禁用",
-    "因寄生蟲引起之闌尾炎禁用",
-    "孕婦禁用",
     "體虛及老年人須極慎用"
    ],
    "herb_drug_interactions_en": [],
@@ -23210,8 +23267,7 @@
     "闌尾炎併發腹膜炎者禁用",
     "嬰兒闌尾炎禁用",
     "因寄生蟲引起之闌尾炎禁用",
-    "孕婦禁用",
-    "體虛及老年人須極慎用"
+    "孕婦禁用"
    ],
    "correction_note": "[2026-08-12 F-19 eyes-on] public_safe 降為 false:modern_applications 將腹膜炎列為適應症而 contraindications 同時禁忌之(矛盾未解前不得公開)。 見 docs/research_packs/FORMULA_EYESON_01.md F-19。\n【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 1 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：桃仁（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。\n【2026-08-12 紅線五：組成 _zh 拉丁拼寫改中文】第5味 name_zh「Dong Gua Ren」→「冬瓜仁」。拼音原值仍在各列 pinyin 欄；中文名依該列 herb_id 於 herb_canon_shortlist 的中文名＋原拼寫的炮製前綴／部位後綴（炒、酒炒、制、穗、梢…）對照填入。\n【2026-08-12 樣板句清除 — 錯置的甘草功效（變體）】以下 1 味藥的所列欄位原值逐字同為「和中健脾，調和諸藥。」（原文保存於此）：芒硝（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。",
    "source_classic": "《金匱要略》",
@@ -23229,7 +23285,37 @@
     "Promotes intestinal motility, purges heat and breaks blood stasis",
     "Antibacterial, anti-endotoxin"
    ],
-   "composition_suspect_cleared_note": "2026-08-19 核對《金匱要略》大黃牡丹湯五味(大黃、牡丹皮、桃仁、冬瓜仁、芒硝)俱在,旗標清除"
+   "composition_suspect_cleared_note": "2026-08-19 核對《金匱要略》大黃牡丹湯五味(大黃、牡丹皮、桃仁、冬瓜仁、芒硝)俱在,旗標清除",
+   "import_artifacts": [
+    {
+     "original_field": "contraindications_en",
+     "text": "Contraindicated during Pregnancy. | Contraindicated for those with necrotic appendicitis. | Contraindicated for those with appendicitis with peritonitis. | Contraindicated for infants with appendicitis. | Contraindicated for those with appendicitis due to parasites. | Use extreme caution in the weak and elderly.",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[Contraindicated during Pregnancy. | Contraindicated for those with necrotic appendicitis. | Contraindicated for those with appendicitis with peritonitis. | Contraindicated for infants with appendicitis. | Contraindicated for those with appendicitis due to parasites.]; needs_review(1)=[Use extreme caution in the weak and elderly. <no_direction_token>]"
+    },
+    {
+     "original_field": "cautions_en",
+     "text": "Contraindicated for those with necrotic appendicitis. | Contraindicated for those with appendicitis with peritonitis. | Contraindicated for infants with appendicitis. | Contraindicated for those with appendicitis due to parasites. | Contraindicated during Pregnancy. | Use extreme caution in the weak and elderly.",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[]; needs_review(1)=[Use extreme caution in the weak and elderly. <no_direction_token>]"
+    },
+    {
+     "original_field": "contraindications_zh",
+     "text": "壞疽性闌尾炎者禁用 | 闌尾炎併發腹膜炎者禁用 | 嬰兒闌尾炎禁用 | 因寄生蟲引起之闌尾炎禁用 | 孕婦禁用 | 體虛及老年人須極慎用",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[壞疽性闌尾炎者禁用 | 闌尾炎併發腹膜炎者禁用 | 嬰兒闌尾炎禁用 | 因寄生蟲引起之闌尾炎禁用 | 孕婦禁用]; needs_review(0)=[]"
+    },
+    {
+     "original_field": "cautions_zh",
+     "text": "壞疽性闌尾炎者禁用 | 闌尾炎併發腹膜炎者禁用 | 嬰兒闌尾炎禁用 | 因寄生蟲引起之闌尾炎禁用 | 孕婦禁用 | 體虛及老年人須極慎用",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[體虛及老年人須極慎用]; needs_review(0)=[]"
+    }
+   ]
   },
   {
    "id": "formula.ma_zi_ren_wan",
@@ -23441,21 +23527,11 @@
    ],
    "contraindications_en": [
     "Contraindicated during pregnancy.",
-    "Modify for treating constipation with Blood Deficiency.",
-    "Modify for treating the very weak.",
-    "Although this formula moistens the intestines and gently purges, it contains purgative, stagnation-breaking ingredients; the elderly and weak, and those with depleted fluids and scanty Blood, should not take it regularly. Use with caution in pregnancy.",
-    "Contraindicated for those allergic to Ma Zi Ren: anyone allergic to hemp seed should avoid taking Ma Zi Ren Wan.",
-    "Not for long-term use: although Ma Zi Ren Wan moistens the intestines and unblocks the bowels, it should not be taken over a long period.",
-    "Ma Zi Ren is the seed of Cannabis sativa; those who must undergo urine drug testing should not take it."
+    "Contraindicated for those allergic to Ma Zi Ren: anyone allergic to hemp seed should avoid taking Ma Zi Ren Wan."
    ],
    "contraindications_zh": [
     "孕婦禁用",
-    "血虛便秘者，宜加減使用",
-    "體質甚虛者，宜加減使用",
-    "本方雖為潤腸緩下之劑，但含有攻下破滯之品，故年老體虛，津虧血少者，不宜常服，孕婦慎用。",
-    "對麻子仁過敏者禁用：如果對麻子仁過敏，應避免服用麻子仁丸。",
-    "不宜久服：麻子仁丸雖具有潤腸通便的功效，但不宜久服。",
-    "麻子仁是大麻的種子，需要驗尿者不宜服用。"
+    "對麻子仁過敏者禁用：如果對麻子仁過敏，應避免服用麻子仁丸。"
    ],
    "safety_flags": [],
    "source_urls": [
@@ -23555,9 +23631,8 @@
    "exact_source_url": "https://cloudtcm.com/formula/222",
    "fetched_at": "2026-07-23T07:08:51.402Z",
    "cautions_zh": [
-    "孕婦禁用",
-    "血虛便秘者，宜加減使用",
-    "體質甚虛者，宜加減使用"
+    "本方雖為潤腸緩下之劑，但含有攻下破滯之品，故年老體虛，津虧血少者，不宜常服，孕婦慎用。",
+    "不宜久服：麻子仁丸雖具有潤腸通便的功效，但不宜久服。"
    ],
    "safety_source": "cloudtcm_cautions_field",
    "safety_source_url": "https://cloudtcm.com/formula/222",
@@ -23802,9 +23877,7 @@
     "皮膚乾燥"
    ],
    "cautions_en": [
-    "Contraindicated during pregnancy.",
-    "Modify for treating constipation with Blood Deficiency.",
-    "Modify for treating the very weak."
+    "Although this formula moistens the intestines and gently purges, it contains purgative, stagnation-breaking ingredients; the elderly and weak, and those with depleted fluids and scanty Blood, should not take it regularly. Use with caution in pregnancy."
    ],
    "category_zh": "瀉下劑",
    "ba_fa_zh": "下法 Xia Fa (Downward Draining)",
@@ -23831,6 +23904,36 @@
      "reason": "HOLD_UNSOURCED_BENEFIT",
      "quarantined": "2026-08-27",
      "ruling": "TING_RULING_SHEET_2026-08-27 A0b(b):25 段 HOLD 全數隔離,僅 RISK_DIRECTION_KEEP 上畫面"
+    }
+   ],
+   "import_artifacts": [
+    {
+     "original_field": "contraindications_en",
+     "text": "Contraindicated during pregnancy. | Modify for treating constipation with Blood Deficiency. | Modify for treating the very weak. | Although this formula moistens the intestines and gently purges, it contains purgative, stagnation-breaking ingredients; the elderly and weak, and those with depleted fluids and scanty Blood, should not take it regularly. Use with caution in pregnancy. | Contraindicated for those allergic to Ma Zi Ren: anyone allergic to hemp seed should avoid taking Ma Zi Ren Wan. | Not for long-term use: although Ma Zi Ren Wan moistens the intestines and unblocks the bowels, it should not be taken over a long period. | Ma Zi Ren is the seed of Cannabis sativa; those who must undergo urine drug testing should not take it.",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[Contraindicated during pregnancy. | Contraindicated for those allergic to Ma Zi Ren: anyone allergic to hemp seed should avoid taking Ma Zi Ren Wan.]; needs_review(4)=[Modify for treating constipation with Blood Deficiency. <no_direction_token> | Modify for treating the very weak. <no_direction_token> | Not for long-term use: although Ma Zi Ren Wan moistens the intestines and unblocks the bowels, it should not be taken over a long period. <no_direction_token> | Ma Zi Ren is the seed of Cannabis sativa; those who must undergo urine drug testing should not take it. <no_direction_token>]"
+    },
+    {
+     "original_field": "cautions_en",
+     "text": "Contraindicated during pregnancy. | Modify for treating constipation with Blood Deficiency. | Modify for treating the very weak.",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[Although this formula moistens the intestines and gently purges, it contains purgative, stagnation-breaking ingredients; the elderly and weak, and those with depleted fluids and scanty Blood, should not take it regularly. Use with caution in pregnancy.]; needs_review(4)=[Modify for treating constipation with Blood Deficiency. <no_direction_token> | Modify for treating the very weak. <no_direction_token> | Not for long-term use: although Ma Zi Ren Wan moistens the intestines and unblocks the bowels, it should not be taken over a long period. <no_direction_token> | Ma Zi Ren is the seed of Cannabis sativa; those who must undergo urine drug testing should not take it. <no_direction_token>]"
+    },
+    {
+     "original_field": "contraindications_zh",
+     "text": "孕婦禁用 | 血虛便秘者，宜加減使用 | 體質甚虛者，宜加減使用 | 本方雖為潤腸緩下之劑，但含有攻下破滯之品，故年老體虛，津虧血少者，不宜常服，孕婦慎用。 | 對麻子仁過敏者禁用：如果對麻子仁過敏，應避免服用麻子仁丸。 | 不宜久服：麻子仁丸雖具有潤腸通便的功效，但不宜久服。 | 麻子仁是大麻的種子，需要驗尿者不宜服用。",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[孕婦禁用 | 對麻子仁過敏者禁用：如果對麻子仁過敏，應避免服用麻子仁丸。]; needs_review(3)=[血虛便秘者，宜加減使用 <no_direction_token> | 體質甚虛者，宜加減使用 <no_direction_token> | 麻子仁是大麻的種子，需要驗尿者不宜服用。 <no_direction_token>]"
+    },
+    {
+     "original_field": "cautions_zh",
+     "text": "孕婦禁用 | 血虛便秘者，宜加減使用 | 體質甚虛者，宜加減使用",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[本方雖為潤腸緩下之劑，但含有攻下破滯之品，故年老體虛，津虧血少者，不宜常服，孕婦慎用。 | 不宜久服：麻子仁丸雖具有潤腸通便的功效，但不宜久服。]; needs_review(3)=[血虛便秘者，宜加減使用 <no_direction_token> | 體質甚虛者，宜加減使用 <no_direction_token> | 麻子仁是大麻的種子，需要驗尿者不宜服用。 <no_direction_token>]"
     }
    ]
   },
@@ -24483,17 +24586,17 @@
     "Contraindicated for those with Excess above and deficiency below.",
     "Contraindicated for those with Liver Fire.",
     "Contraindicated for those with bleeding gums.",
-    "Use with caution for those with Liver Yang Rising, hypertension, or vomiting of blood due to Yin deficiency.",
     "Chai Hu ascends and disperses while Huang Qin and Ban Xia are drying in nature, so this formula is contraindicated for those with Yin deficiency and scanty Blood.",
-    "Long-term use may cause headache, dizziness, bleeding gums, and pneumonia."
+    "Contraindicated for those with for those with Liver Yang Rising.",
+    "Contraindicated for those with for those with hypertension.",
+    "Contraindicated for those with for those with hematemesis due to Yin Deficiency.",
+    "Contraindicated for those with for those with Yin and/or Blood Deficiency."
    ],
    "contraindications_zh": [
     "上實下虛者禁用",
     "肝火者禁用",
     "牙齦出血者禁用",
-    "肝陽上亢，高血壓，陰虛吐血慎用",
-    "柴胡升散，芩、夏性燥，故對陰虛血少者禁用。",
-    "長期服用可能引起頭痛、頭暈，牙齦出血、肺炎"
+    "柴胡升散，芩、夏性燥，故對陰虛血少者禁用。"
    ],
    "herb_drug_cautions": [
     "liver_disease_review",
@@ -24712,11 +24815,7 @@
    "exact_source_url": "https://cloudtcm.com/formula/43",
    "fetched_at": "2026-07-23T07:08:39.025Z",
    "cautions_zh": [
-    "上實下虛者禁用",
-    "肝火者禁用",
-    "牙齦出血者禁用",
-    "肝陽上亢，高血壓，陰虛吐血慎用",
-    "柴胡升散，芩、夏性燥，故對陰虛血少者禁用。"
+    "肝陽上亢，高血壓，陰虛吐血慎用"
    ],
    "safety_source": "cloudtcm_cautions_field",
    "safety_source_url": "https://cloudtcm.com/formula/43",
@@ -25499,17 +25598,11 @@
     "甲狀腺癌"
    ],
    "cautions_en": [
-    "Contraindicated for those with Excess above and deficiency below.",
-    "Contraindicated for those with Liver Fire.",
-    "Contraindicated for those with bleeding gums.",
+    "Use with caution for those with Liver Yang Rising, hypertension, or vomiting of blood due to Yin deficiency.",
     "Use with caution for those with Liver Yang Rising.",
     "Use with caution for those with hypertension.",
     "Use with caution for those with hematemesis due to Yin Deficiency.",
-    "Use with caution for those with Yin and/or Blood Deficiency.",
-    "Contraindicated for those with for those with Liver Yang Rising.",
-    "Contraindicated for those with for those with hypertension.",
-    "Contraindicated for those with for those with hematemesis due to Yin Deficiency.",
-    "Contraindicated for those with for those with Yin and/or Blood Deficiency."
+    "Use with caution for those with Yin and/or Blood Deficiency."
    ],
    "herb_drug_interactions_en": [
     "CONTRAINDICATED with interferon. Concurrent use of this formula with interferon has caused interstitial pneumonitis, including fatal cases; Japanese labelling for the identical seven-herb preparation (TJ-9 Sho-saiko-to) lists concurrent interferon therapy as a contraindication. Refer to the prescribing physician before use in any patient on interferon. (PubMed 8980988; PubMed 7575138; LiverTox NBK548777)"
@@ -25620,6 +25713,36 @@
      "reason": "HOLD_UNSOURCED_BENEFIT",
      "quarantined": "2026-08-27",
      "ruling": "TING_RULING_SHEET_2026-08-27 A0b(b):25 段 HOLD 全數隔離,僅 RISK_DIRECTION_KEEP 上畫面"
+    }
+   ],
+   "import_artifacts": [
+    {
+     "original_field": "contraindications_en",
+     "text": "Contraindicated for those with Excess above and deficiency below. | Contraindicated for those with Liver Fire. | Contraindicated for those with bleeding gums. | Use with caution for those with Liver Yang Rising, hypertension, or vomiting of blood due to Yin deficiency. | Chai Hu ascends and disperses while Huang Qin and Ban Xia are drying in nature, so this formula is contraindicated for those with Yin deficiency and scanty Blood. | Long-term use may cause headache, dizziness, bleeding gums, and pneumonia.",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[Contraindicated for those with Excess above and deficiency below. | Contraindicated for those with Liver Fire. | Contraindicated for those with bleeding gums. | Chai Hu ascends and disperses while Huang Qin and Ban Xia are drying in nature, so this formula is contraindicated for those with Yin deficiency and scanty Blood. | Contraindicated for those with for those with Liver Yang Rising. | Contraindicated for those with for those with hypertension. | Contraindicated for those with for those with hematemesis due to Yin Deficiency. | Contraindicated for those with for those with Yin and/or Blood Deficiency.]; needs_review(1)=[Long-term use may cause headache, dizziness, bleeding gums, and pneumonia. <no_direction_token>]"
+    },
+    {
+     "original_field": "cautions_en",
+     "text": "Contraindicated for those with Excess above and deficiency below. | Contraindicated for those with Liver Fire. | Contraindicated for those with bleeding gums. | Use with caution for those with Liver Yang Rising. | Use with caution for those with hypertension. | Use with caution for those with hematemesis due to Yin Deficiency. | Use with caution for those with Yin and/or Blood Deficiency. | Contraindicated for those with for those with Liver Yang Rising. | Contraindicated for those with for those with hypertension. | Contraindicated for those with for those with hematemesis due to Yin Deficiency. | Contraindicated for those with for those with Yin and/or Blood Deficiency.",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[Use with caution for those with Liver Yang Rising, hypertension, or vomiting of blood due to Yin deficiency. | Use with caution for those with Liver Yang Rising. | Use with caution for those with hypertension. | Use with caution for those with hematemesis due to Yin Deficiency. | Use with caution for those with Yin and/or Blood Deficiency.]; needs_review(1)=[Long-term use may cause headache, dizziness, bleeding gums, and pneumonia. <no_direction_token>]"
+    },
+    {
+     "original_field": "contraindications_zh",
+     "text": "上實下虛者禁用 | 肝火者禁用 | 牙齦出血者禁用 | 肝陽上亢，高血壓，陰虛吐血慎用 | 柴胡升散，芩、夏性燥，故對陰虛血少者禁用。 | 長期服用可能引起頭痛、頭暈，牙齦出血、肺炎",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[上實下虛者禁用 | 肝火者禁用 | 牙齦出血者禁用 | 柴胡升散，芩、夏性燥，故對陰虛血少者禁用。]; needs_review(1)=[長期服用可能引起頭痛、頭暈，牙齦出血、肺炎 <no_direction_token>]"
+    },
+    {
+     "original_field": "cautions_zh",
+     "text": "上實下虛者禁用 | 肝火者禁用 | 牙齦出血者禁用 | 肝陽上亢，高血壓，陰虛吐血慎用 | 柴胡升散，芩、夏性燥，故對陰虛血少者禁用。",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[肝陽上亢，高血壓，陰虛吐血慎用]; needs_review(1)=[長期服用可能引起頭痛、頭暈，牙齦出血、肺炎 <no_direction_token>]"
     }
    ]
   },
@@ -25831,13 +25954,9 @@
     "體質虛弱 → 加太子參、當歸"
    ],
    "contraindications_en": [
-    "Use with caution in those without an excess pattern.",
-    "This formula is designed for a combined Shao Yang and Yang Ming pattern; a pure Shao Yang pattern or a pure Yang Ming pattern alone is not appropriate for it. When using it, the proportions of the ingredients should also be adjusted according to the relative severity of the Shao Yang disorder and the Yang Ming heat accumulation.",
     "Contraindicated for those with Spleen and Stomach Deficiencies."
    ],
    "contraindications_zh": [
-    "非實證者慎用",
-    "本方為少陽與陽明合病而設，單純少陽證或陽明證非本方所宜。使用時還需要依照少陽病與陽明熱結的輕重，斟酌修改方中的比例",
     "脾胃虛弱者禁用"
    ],
    "safety_flags": [],
@@ -25952,7 +26071,7 @@
    "exact_source_url": "https://cloudtcm.com/formula/35",
    "fetched_at": "2026-07-23T07:08:46.280Z",
    "cautions_zh": [
-    "脾胃虛弱者禁用"
+    "非實證者慎用"
    ],
    "safety_source": "cloudtcm_cautions_field",
    "safety_source_url": "https://cloudtcm.com/formula/35",
@@ -26330,7 +26449,7 @@
     "消化不良"
    ],
    "cautions_en": [
-    "Contraindicated for those with Spleen and Stomach Deficiencies."
+    "Use with caution in those without an excess pattern."
    ],
    "category_zh": "和解劑",
    "ba_fa_zh": "和法 He Fa (Harmonize)",
@@ -26360,6 +26479,36 @@
      "reason": "HOLD_MASKS_WARNING_SIGN",
      "quarantined": "2026-08-27",
      "ruling": "TING_RULING_SHEET_2026-08-27 A0b(b):25 段 HOLD 全數隔離,僅 RISK_DIRECTION_KEEP 上畫面"
+    }
+   ],
+   "import_artifacts": [
+    {
+     "original_field": "contraindications_en",
+     "text": "Use with caution in those without an excess pattern. | This formula is designed for a combined Shao Yang and Yang Ming pattern; a pure Shao Yang pattern or a pure Yang Ming pattern alone is not appropriate for it. When using it, the proportions of the ingredients should also be adjusted according to the relative severity of the Shao Yang disorder and the Yang Ming heat accumulation. | Contraindicated for those with Spleen and Stomach Deficiencies.",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[Contraindicated for those with Spleen and Stomach Deficiencies.]; needs_review(1)=[This formula is designed for a combined Shao Yang and Yang Ming pattern; a pure Shao Yang pattern or a pure Yang Ming pattern alone is not appropriate for it. When using it, the proportions of the ingredients should also be adjusted according to the relative severity of the Shao Yang disorder and the Yang Ming heat accumulation. <no_direction_token>]"
+    },
+    {
+     "original_field": "cautions_en",
+     "text": "Contraindicated for those with Spleen and Stomach Deficiencies.",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[Use with caution in those without an excess pattern.]; needs_review(1)=[This formula is designed for a combined Shao Yang and Yang Ming pattern; a pure Shao Yang pattern or a pure Yang Ming pattern alone is not appropriate for it. When using it, the proportions of the ingredients should also be adjusted according to the relative severity of the Shao Yang disorder and the Yang Ming heat accumulation. <no_direction_token>]"
+    },
+    {
+     "original_field": "contraindications_zh",
+     "text": "非實證者慎用 | 本方為少陽與陽明合病而設，單純少陽證或陽明證非本方所宜。使用時還需要依照少陽病與陽明熱結的輕重，斟酌修改方中的比例 | 脾胃虛弱者禁用",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[脾胃虛弱者禁用]; needs_review(1)=[本方為少陽與陽明合病而設，單純少陽證或陽明證非本方所宜。使用時還需要依照少陽病與陽明熱結的輕重，斟酌修改方中的比例 <no_direction_token>]"
+    },
+    {
+     "original_field": "cautions_zh",
+     "text": "脾胃虛弱者禁用",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[非實證者慎用]; needs_review(1)=[本方為少陽與陽明合病而設，單純少陽證或陽明證非本方所宜。使用時還需要依照少陽病與陽明熱結的輕重，斟酌修改方中的比例 <no_direction_token>]"
     }
    ]
   },
@@ -26872,15 +27021,9 @@
     "此方是中醫婦科的常用方，常用於治療各種「月經不調」，經常加香附、陳皮以疏肝解鬱。陰虛嚴重者，加熟地以養肝。肝鬱化火者，加牡丹皮、梔子以清熱涼血。"
    ],
    "contraindications_en": [
-    "Use with caution during pregnancy.",
-    "Use with caution for those with Qi Stagnation with underlying Liver and Kidney Yin Deficiency.",
-    "Liver constraint mostly arises from unfulfilled emotions; the person taking this formula must also work at the psychological level to release stress for it to be effective. Otherwise the medicine is 'free and easy' (xiao yao) while the person is not, and the benefit will be limited."
+    "Contraindicated for those with for those with Qi Stagnation with underlying Liver and Kidney Yin Deficiency."
    ],
-   "contraindications_zh": [
-    "孕婦慎用",
-    "肝腎陰虛兼氣滯者慎用",
-    "肝鬱多因情志不遂所致，服用的人也必須從心理下手釋放壓力，才會有效果。否則藥血「逍遙」而人不逍遙，效果有限。"
-   ],
+   "contraindications_zh": [],
    "herb_drug_cautions": [
     "pregnancy_review",
     "medication_review"
@@ -27856,8 +27999,7 @@
    ],
    "cautions_en": [
     "Use with caution during pregnancy.",
-    "Use with caution for those with Qi Stagnation with underlying Liver and Kidney Yin Deficiency.",
-    "Contraindicated for those with for those with Qi Stagnation with underlying Liver and Kidney Yin Deficiency."
+    "Use with caution for those with Qi Stagnation with underlying Liver and Kidney Yin Deficiency."
    ],
    "herb_drug_interactions_en": [],
    "category_zh": "和解劑",
@@ -27899,6 +28041,36 @@
     "Hepatoprotective and choleretic",
     "Regulates hypothalamic-pituitary-gonadal axis (endocrine modulation)",
     "Enhances gastrointestinal motility and improves microcirculation"
+   ],
+   "import_artifacts": [
+    {
+     "original_field": "contraindications_en",
+     "text": "Use with caution during pregnancy. | Use with caution for those with Qi Stagnation with underlying Liver and Kidney Yin Deficiency. | Liver constraint mostly arises from unfulfilled emotions; the person taking this formula must also work at the psychological level to release stress for it to be effective. Otherwise the medicine is 'free and easy' (xiao yao) while the person is not, and the benefit will be limited.",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[Contraindicated for those with for those with Qi Stagnation with underlying Liver and Kidney Yin Deficiency.]; needs_review(1)=[Liver constraint mostly arises from unfulfilled emotions; the person taking this formula must also work at the psychological level to release stress for it to be effective. Otherwise the medicine is 'free and easy' (xiao yao) while the person is not, and the benefit will be limited. <no_direction_token>]"
+    },
+    {
+     "original_field": "cautions_en",
+     "text": "Use with caution during pregnancy. | Use with caution for those with Qi Stagnation with underlying Liver and Kidney Yin Deficiency. | Contraindicated for those with for those with Qi Stagnation with underlying Liver and Kidney Yin Deficiency.",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[Use with caution during pregnancy. | Use with caution for those with Qi Stagnation with underlying Liver and Kidney Yin Deficiency.]; needs_review(1)=[Liver constraint mostly arises from unfulfilled emotions; the person taking this formula must also work at the psychological level to release stress for it to be effective. Otherwise the medicine is 'free and easy' (xiao yao) while the person is not, and the benefit will be limited. <no_direction_token>]"
+    },
+    {
+     "original_field": "contraindications_zh",
+     "text": "孕婦慎用 | 肝腎陰虛兼氣滯者慎用 | 肝鬱多因情志不遂所致，服用的人也必須從心理下手釋放壓力，才會有效果。否則藥血「逍遙」而人不逍遙，效果有限。",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[]; needs_review(1)=[肝鬱多因情志不遂所致，服用的人也必須從心理下手釋放壓力，才會有效果。否則藥血「逍遙」而人不逍遙，效果有限。 <no_direction_token>]"
+    },
+    {
+     "original_field": "cautions_zh",
+     "text": "孕婦慎用 | 肝腎陰虛兼氣滯者慎用",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[孕婦慎用 | 肝腎陰虛兼氣滯者慎用]; needs_review(1)=[肝鬱多因情志不遂所致，服用的人也必須從心理下手釋放壓力，才會有效果。否則藥血「逍遙」而人不逍遙，效果有限。 <no_direction_token>]"
+    }
    ]
   },
   {
@@ -28147,16 +28319,10 @@
    "modifications_en": [],
    "modifications_zh": [],
    "contraindications_en": [
-    "Use with caution during pregnancy.",
-    "Contraindicated for those with underlying Deficiency and Cold.",
-    "This formula may reduce tremors caused by antipsychotic-induced Parkinson's disease.",
-    "This formula may be effective in treating menopausal symptoms induced by gonadotropin-releasing hormone agonist therapy without a negative effect on serum estradiol levels."
+    "Contraindicated for those with underlying Deficiency and Cold."
    ],
    "contraindications_zh": [
-    "孕婦慎用",
-    "素體虛寒者禁用",
-    "本方可能減輕抗精神病藥物誘發帕金森氏症所致之震顫",
-    "本方可能有效治療促性腺激素釋放激素促效劑療法所致之更年期症狀，且不會對血清雌二醇濃度造成負面影響"
+    "素體虛寒者禁用"
    ],
    "herb_drug_cautions": [
     "pregnancy_review",
@@ -28373,10 +28539,7 @@
    "exact_source_url": "https://cloudtcm.com/formula/65",
    "fetched_at": "2026-07-23T07:08:39.588Z",
    "cautions_zh": [
-    "孕婦慎用",
-    "素體虛寒者禁用",
-    "本方可能減輕抗精神病藥物誘發帕金森氏症所致之震顫",
-    "本方可能有效治療促性腺激素釋放激素促效劑療法所致之更年期症狀，且不會對血清雌二醇濃度造成負面影響"
+    "孕婦慎用"
    ],
    "pharmacology_zh": "神經與精神系統\n\n1. 抗憂鬱\n\n調節神經傳導物質：影響大腦中的化學物質，如提升5-HT、多巴胺與正腎上腺素的含量，並增加調控神經元生長與可塑性的BDNF水平來緩解憂鬱。\n\n保護神經元：透過啟動細胞「自噬」機制清除受損物質，並調節MAPK、PI3K/AKT等細胞存活信號路徑，減少海馬迴等腦區的神經元凋亡。\n\n抗神經發炎：抑制腦部免疫細胞（小膠質細胞）的過度活化，進而降低IL-1β、TNF-α等促發炎因子的釋放。\n\n2. 抗焦慮\n\n調節壓力荷爾蒙：有效改善壓力反應系統（HPA軸）的功能紊亂，使體內過高的壓力荷爾蒙（皮質醇）恢復正常，從而發揮抗焦慮效果。\n\n3. 改善睡眠與認知\n\n研究顯示，其可作為輔助療法，改善中風後失眠、阿茲海默症相關認知障礙、帕金森氏症抑鬱等多種神經系統問題，並可改善慢性疲勞症候群患者的疲勞狀態。\n\n消化與代謝系統\n\n1. 調節腸胃功能\n\n透過調節「腦腸軸」，顯著改善功能性消化不良、腸躁症等壓力型腸胃問題。\n\n2. 全面保護肝臟\n\n對抗肝損傷：可降低肝細胞死亡，減輕脂肪堆積與發炎，並提升肝臟自身抗氧化能力（如增加穀胱甘肽、SOD等酵素活性），對部分藥物或化學物質誘導的肝損傷有預防效果。\n\n逆轉肝纖維化：抑制肝星狀細胞活化，阻斷關鍵的TGF-β1/Smad纖維化信號路徑，從而逆轉肝纖維化進程。\n\n婦科與內分泌系統\n\n1. 調節生殖內分泌軸\n\n可調節因肝鬱導致的HPG軸功能紊亂，讓紊亂的體內激素恢復平衡。例如，對乳腺增生或停經症候群，可降低過高的雌激素（E2）與泌乳素（PRL），此效果非直接補充荷爾蒙，而是起雙向調節作用。\n\n2. 改善婦科相關問題\n\n可用於治療多種與內分泌失調相關的婦科問題，包括經痛、月經不調、多囊性卵巢症候群（PCOS）、卵巢早衰或更年期症候群。部分研究也肯定其對改善不孕或子宮內膜環境的助益。\n\n免疫與發炎反應\n\n維持免疫平衡：具免疫調節作用，可調節Th1/Th2免疫反應的平衡，並抑制多種發炎因子的過度產生，在多種自體免疫疾病（如橋本氏甲狀腺炎）中觀察到減輕組織發炎損傷的效果。\n\n腫瘤輔助治療\n\n提高化療效果與安全性：研究發現，可影響化療藥物在血液及腦內的濃度與代謝，與抗肝癌化療藥5-FU併用可能具潛在增效作用（但需注意使用劑量）。\n\n抑制腫瘤生長：藥方中的某些活性成分（如芍藥苷、槲皮素等）可直接抑制乳癌、肝癌等腫瘤細胞的增生與轉移，或誘導其凋亡。\n\n提升生活品質：在肝癌等癌症治療中，有助於調節免疫力，改善患者因疾病和治療引起的疲勞、厭食、情緒低落等問題。",
    "syndromes_zh": [
@@ -29097,10 +29260,7 @@
     "躁鬱症"
    ],
    "cautions_en": [
-    "Use with caution during pregnancy.",
-    "Contraindicated for those with underlying Deficiency and Cold.",
-    "This formula may reduce tremors caused by antipsychotic-induced Parkinson's disease.",
-    "This formula may be effective in treating menopausal symptoms induced by gonadotropin-releasing hormone agonist therapy without a negative effect on serum estradiol levels."
+    "Use with caution during pregnancy."
    ],
    "category_zh": "和解劑",
    "ba_fa_zh": "和法 He Fa (Harmonize)",
@@ -29138,6 +29298,36 @@
      "reason": "HOLD_UNSOURCED_BENEFIT",
      "quarantined": "2026-08-27",
      "ruling": "TING_RULING_SHEET_2026-08-27 A0b(b):25 段 HOLD 全數隔離,僅 RISK_DIRECTION_KEEP 上畫面"
+    }
+   ],
+   "import_artifacts": [
+    {
+     "original_field": "contraindications_en",
+     "text": "Use with caution during pregnancy. | Contraindicated for those with underlying Deficiency and Cold. | This formula may reduce tremors caused by antipsychotic-induced Parkinson's disease. | This formula may be effective in treating menopausal symptoms induced by gonadotropin-releasing hormone agonist therapy without a negative effect on serum estradiol levels.",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[Contraindicated for those with underlying Deficiency and Cold.]; needs_review(2)=[This formula may reduce tremors caused by antipsychotic-induced Parkinson's disease. <no_direction_token> | This formula may be effective in treating menopausal symptoms induced by gonadotropin-releasing hormone agonist therapy without a negative effect on serum estradiol levels. <no_direction_token>]"
+    },
+    {
+     "original_field": "cautions_en",
+     "text": "Use with caution during pregnancy. | Contraindicated for those with underlying Deficiency and Cold. | This formula may reduce tremors caused by antipsychotic-induced Parkinson's disease. | This formula may be effective in treating menopausal symptoms induced by gonadotropin-releasing hormone agonist therapy without a negative effect on serum estradiol levels.",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[Use with caution during pregnancy.]; needs_review(2)=[This formula may reduce tremors caused by antipsychotic-induced Parkinson's disease. <no_direction_token> | This formula may be effective in treating menopausal symptoms induced by gonadotropin-releasing hormone agonist therapy without a negative effect on serum estradiol levels. <no_direction_token>]"
+    },
+    {
+     "original_field": "contraindications_zh",
+     "text": "孕婦慎用 | 素體虛寒者禁用 | 本方可能減輕抗精神病藥物誘發帕金森氏症所致之震顫 | 本方可能有效治療促性腺激素釋放激素促效劑療法所致之更年期症狀，且不會對血清雌二醇濃度造成負面影響",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[素體虛寒者禁用]; needs_review(2)=[本方可能減輕抗精神病藥物誘發帕金森氏症所致之震顫 <no_direction_token> | 本方可能有效治療促性腺激素釋放激素促效劑療法所致之更年期症狀，且不會對血清雌二醇濃度造成負面影響 <no_direction_token>]"
+    },
+    {
+     "original_field": "cautions_zh",
+     "text": "孕婦慎用 | 素體虛寒者禁用 | 本方可能減輕抗精神病藥物誘發帕金森氏症所致之震顫 | 本方可能有效治療促性腺激素釋放激素促效劑療法所致之更年期症狀，且不會對血清雌二醇濃度造成負面影響",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[孕婦慎用]; needs_review(2)=[本方可能減輕抗精神病藥物誘發帕金森氏症所致之震顫 <no_direction_token> | 本方可能有效治療促性腺激素釋放激素促效劑療法所致之更年期症狀，且不會對血清雌二醇濃度造成負面影響 <no_direction_token>]"
     }
    ]
   },
@@ -29288,16 +29478,10 @@
     "小便不利 → 加滑石"
    ],
    "contraindications_en": [
-    "Contraindicated for those with diarrhea due to Food Stagnation.",
-    "Do not arbitrarily increase the dosage of Fang Feng.",
-    "Differentiate from abdominal pain caused by food poisoning; if the abdominal pain is due to food poisoning, this formula should not be used.",
-    "Not appropriate for abdominal pain and diarrhea due to Yang Ming Damp-Heat or heat toxin. Bai Zhu in this formula is bitter and drying, and Chen Pi and Fang Feng are acrid, aromatic, warm and drying — unsuitable for patients with heat-type abdominal pain. Therefore, before clinical use, carefully differentiate the patient's pattern to ensure medication safety."
+    "Contraindicated for those with diarrhea due to Food Stagnation."
    ],
    "contraindications_zh": [
-    "食積所致之腹瀉者禁用",
-    "防風劑量不可任意增加",
-    "應該與因食物中毒引起的腹痛進行鑑別，如果是因食物中毒導致的腹痛，則不宜使用此方劑。",
-    "陽明濕熱或熱毒引起的腹痛和腹瀉症狀，不適宜使用本方劑。本方中的白朮具有苦燥的特性，而陳皮和防風則具辛香且溫燥的性質，這些都不適合熱性腹痛的患者使用。因此，在臨床應用這個方劑之前，必須仔細辨別患者的症狀類型，以確保用藥的安全性。"
+    "食積所致之腹瀉者禁用"
    ],
    "safety_flags": [],
    "source_urls": [
@@ -29385,10 +29569,7 @@
    "source_classic": "《景岳全書》",
    "exact_source_url": "https://cloudtcm.com/formula/563",
    "fetched_at": "2026-07-23T07:08:56.520Z",
-   "cautions_zh": [
-    "食積所致之腹瀉者禁用",
-    "防風劑量不可任意增加"
-   ],
+   "cautions_zh": [],
    "safety_source": "cloudtcm_cautions_field",
    "safety_source_url": "https://cloudtcm.com/formula/563",
    "safety_fetched_at": "2026-07-23T07:33:03.456Z",
@@ -29614,10 +29795,7 @@
     "肝癌",
     "頸部緊繃"
    ],
-   "cautions_en": [
-    "Contraindicated for those with diarrhea due to Food Stagnation.",
-    "Do not arbitrarily increase the dosage of Fang Feng."
-   ],
+   "cautions_en": [],
    "herb_drug_interactions_en": [],
    "category_zh": "和解劑",
    "ba_fa_zh": "和法 He Fa (Harmonize)",
@@ -29637,6 +29815,36 @@
     "Regulates gut microbiota and enteric nervous system",
     "Anti-inflammatory and antidiarrheal",
     "Reduces visceral hypersensitivity"
+   ],
+   "import_artifacts": [
+    {
+     "original_field": "contraindications_en",
+     "text": "Contraindicated for those with diarrhea due to Food Stagnation. | Do not arbitrarily increase the dosage of Fang Feng. | Differentiate from abdominal pain caused by food poisoning; if the abdominal pain is due to food poisoning, this formula should not be used. | Not appropriate for abdominal pain and diarrhea due to Yang Ming Damp-Heat or heat toxin. Bai Zhu in this formula is bitter and drying, and Chen Pi and Fang Feng are acrid, aromatic, warm and drying — unsuitable for patients with heat-type abdominal pain. Therefore, before clinical use, carefully differentiate the patient's pattern to ensure medication safety.",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[Contraindicated for those with diarrhea due to Food Stagnation.]; needs_review(3)=[Do not arbitrarily increase the dosage of Fang Feng. <no_direction_token> | Differentiate from abdominal pain caused by food poisoning; if the abdominal pain is due to food poisoning, this formula should not be used. <ambiguous_avoidance> | Not appropriate for abdominal pain and diarrhea due to Yang Ming Damp-Heat or heat toxin. Bai Zhu in this formula is bitter and drying, and Chen Pi and Fang Feng are acrid, aromatic, warm and drying — unsuitable for patients with heat-type abdominal pain. Therefore, before clinical use, carefully differentiate the patient's pattern to ensure medication safety. <no_direction_token>]"
+    },
+    {
+     "original_field": "cautions_en",
+     "text": "Contraindicated for those with diarrhea due to Food Stagnation. | Do not arbitrarily increase the dosage of Fang Feng.",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[]; needs_review(3)=[Do not arbitrarily increase the dosage of Fang Feng. <no_direction_token> | Differentiate from abdominal pain caused by food poisoning; if the abdominal pain is due to food poisoning, this formula should not be used. <ambiguous_avoidance> | Not appropriate for abdominal pain and diarrhea due to Yang Ming Damp-Heat or heat toxin. Bai Zhu in this formula is bitter and drying, and Chen Pi and Fang Feng are acrid, aromatic, warm and drying — unsuitable for patients with heat-type abdominal pain. Therefore, before clinical use, carefully differentiate the patient's pattern to ensure medication safety. <no_direction_token>]"
+    },
+    {
+     "original_field": "contraindications_zh",
+     "text": "食積所致之腹瀉者禁用 | 防風劑量不可任意增加 | 應該與因食物中毒引起的腹痛進行鑑別，如果是因食物中毒導致的腹痛，則不宜使用此方劑。 | 陽明濕熱或熱毒引起的腹痛和腹瀉症狀，不適宜使用本方劑。本方中的白朮具有苦燥的特性，而陳皮和防風則具辛香且溫燥的性質，這些都不適合熱性腹痛的患者使用。因此，在臨床應用這個方劑之前，必須仔細辨別患者的症狀類型，以確保用藥的安全性。",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[食積所致之腹瀉者禁用]; needs_review(3)=[防風劑量不可任意增加 <no_direction_token> | 應該與因食物中毒引起的腹痛進行鑑別，如果是因食物中毒導致的腹痛，則不宜使用此方劑。 <ambiguous_avoidance> | 陽明濕熱或熱毒引起的腹痛和腹瀉症狀，不適宜使用本方劑。本方中的白朮具有苦燥的特性，而陳皮和防風則具辛香且溫燥的性質，這些都不適合熱性腹痛的患者使用。因此，在臨床應用這個方劑之前，必須仔細辨別患者的症狀類型，以確保用藥的安全性。 <no_direction_token>]"
+    },
+    {
+     "original_field": "cautions_zh",
+     "text": "食積所致之腹瀉者禁用 | 防風劑量不可任意增加",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[]; needs_review(3)=[防風劑量不可任意增加 <no_direction_token> | 應該與因食物中毒引起的腹痛進行鑑別，如果是因食物中毒導致的腹痛，則不宜使用此方劑。 <ambiguous_avoidance> | 陽明濕熱或熱毒引起的腹痛和腹瀉症狀，不適宜使用本方劑。本方中的白朮具有苦燥的特性，而陳皮和防風則具辛香且溫燥的性質，這些都不適合熱性腹痛的患者使用。因此，在臨床應用這個方劑之前，必須仔細辨別患者的症狀類型，以確保用藥的安全性。 <no_direction_token>]"
+    }
    ]
   },
   {
@@ -30518,10 +30726,7 @@
     "硬皮症",
     "()"
    ],
-   "cautions_en": [
-    "Contraindicated for those with focal distention due to Qi Stagnation or Food Stagnation or Accumulation of Phlegm and Heat.",
-    "Contraindicated for those with nausea and vomiting due to Yin Deficiency."
-   ],
+   "cautions_en": [],
    "herb_drug_interactions_en": [],
    "category_zh": "和解劑",
    "ba_fa_zh": "和法 He Fa (Harmonize)",
@@ -30555,6 +30760,22 @@
     "抗炎、鎮吐、抑酸",
     "調節胃腸激素（Gastrin、Motilin）",
     "本方能有效控制順鉑（cisplatin）與伊立替康（irinotecan）引起的腹瀉。"
+   ],
+   "import_artifacts": [
+    {
+     "original_field": "contraindications_en",
+     "text": "Contraindicated for those with focal distention due to Qi Stagnation or Food Stagnation or Accumulation of Phlegm and Heat. | Contraindicated for those with nausea and vomiting due to Yin Deficiency.",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[Contraindicated for those with focal distention due to Qi Stagnation or Food Stagnation or Accumulation of Phlegm and Heat. | Contraindicated for those with nausea and vomiting due to Yin Deficiency.]; needs_review(0)=[]"
+    },
+    {
+     "original_field": "cautions_en",
+     "text": "Contraindicated for those with focal distention due to Qi Stagnation or Food Stagnation or Accumulation of Phlegm and Heat. | Contraindicated for those with nausea and vomiting due to Yin Deficiency.",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[]; needs_review(0)=[]"
+    }
    ]
   },
   {
@@ -30725,15 +30946,11 @@
    ],
    "contraindications_en": [
     "Contraindicated for those with External Wind Invasion with fever.",
-    "Contraindicated for those with Yin Deficiency.",
-    "Use with caution during pregnancy.",
-    "For those with sudden turmoil disorder, stop when diarrhea and vomiting have stopped."
+    "Contraindicated for those with Yin Deficiency."
    ],
    "contraindications_zh": [
     "外感風邪發熱者禁用",
-    "陰虛者禁用",
-    "孕婦慎用",
-    "霍亂吐瀉止後即當停藥"
+    "陰虛者禁用"
    ],
    "safety_flags": [],
    "source_urls": [
@@ -30932,10 +31149,7 @@
     "消瘦。"
    ],
    "cautions_zh": [
-    "外感風邪發熱者禁用",
-    "陰虛者禁用",
-    "孕婦慎用",
-    "霍亂吐瀉止後即當停藥"
+    "孕婦慎用"
    ],
    "on_board_list": true,
    "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
@@ -31443,10 +31657,7 @@
     "肝硬化"
    ],
    "cautions_en": [
-    "Contraindicated for those with External Wind Invasion with fever.",
-    "Contraindicated for those with Yin Deficiency.",
-    "Use with caution during pregnancy.",
-    "For those with sudden turmoil disorder, stop when diarrhea and vomiting have stopped."
+    "Use with caution during pregnancy."
    ],
    "herb_drug_interactions_en": [],
    "category_zh": "溫裡劑",
@@ -31499,6 +31710,36 @@
     "Promotes gastric mucosal repair, anti-ulcer",
     "Analgesic, antispasmodic, pain-relieving",
     "Improves Spleen-deficiency immune function and microcirculation"
+   ],
+   "import_artifacts": [
+    {
+     "original_field": "contraindications_en",
+     "text": "Contraindicated for those with External Wind Invasion with fever. | Contraindicated for those with Yin Deficiency. | Use with caution during pregnancy. | For those with sudden turmoil disorder, stop when diarrhea and vomiting have stopped.",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[Contraindicated for those with External Wind Invasion with fever. | Contraindicated for those with Yin Deficiency.]; needs_review(1)=[For those with sudden turmoil disorder, stop when diarrhea and vomiting have stopped. <no_direction_token>]"
+    },
+    {
+     "original_field": "cautions_en",
+     "text": "Contraindicated for those with External Wind Invasion with fever. | Contraindicated for those with Yin Deficiency. | Use with caution during pregnancy. | For those with sudden turmoil disorder, stop when diarrhea and vomiting have stopped.",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[Use with caution during pregnancy.]; needs_review(1)=[For those with sudden turmoil disorder, stop when diarrhea and vomiting have stopped. <no_direction_token>]"
+    },
+    {
+     "original_field": "contraindications_zh",
+     "text": "外感風邪發熱者禁用 | 陰虛者禁用 | 孕婦慎用 | 霍亂吐瀉止後即當停藥",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[外感風邪發熱者禁用 | 陰虛者禁用]; needs_review(1)=[霍亂吐瀉止後即當停藥 <no_direction_token>]"
+    },
+    {
+     "original_field": "cautions_zh",
+     "text": "外感風邪發熱者禁用 | 陰虛者禁用 | 孕婦慎用 | 霍亂吐瀉止後即當停藥",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[孕婦慎用]; needs_review(1)=[霍亂吐瀉止後即當停藥 <no_direction_token>]"
+    }
    ]
   },
   {
@@ -32117,21 +32358,10 @@
    "contraindications_en": [
     "Contraindicated for those with Yin Deficiency.",
     "Contraindicated during pregnancy.",
-    "Contraindicated for those with External invasion with fever.",
-    "For those with sudden turmoil disorder, stop when diarrhea and vomiting have stopped."
+    "Contraindicated for those with External invasion with fever."
    ],
-   "cautions_en": [
-    "Contraindicated for those with External invasion with fever.",
-    "For those with sudden turmoil disorder, stop when diarrhea and vomiting have stopped.",
-    "Contraindicated for those with Yin Deficiency.",
-    "Contraindicated during pregnancy."
-   ],
-   "cautions_zh": [
-    "外感發熱者禁用",
-    "霍亂吐瀉止後即當停藥",
-    "陰虛者禁用",
-    "孕婦禁用"
-   ],
+   "cautions_en": [],
+   "cautions_zh": [],
    "herb_drug_interactions_en": [],
    "category_zh": "溫裡劑",
    "ba_fa_zh": "溫法 Wen Fa (Warm)",
@@ -32139,7 +32369,6 @@
    "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/FuZiLiZhongWan.html",
    "contraindications_zh": [
     "外感發熱者禁用",
-    "霍亂吐瀉止後即當停藥",
     "陰虛者禁用",
     "孕婦禁用"
    ],
@@ -32169,6 +32398,36 @@
      ],
      "indication_zh": "脾胃虛寒兼表證未解者",
      "source": "curriculum/formulas/14_Formula_Cards_131-140_溫裡劑_治風劑.md"
+    }
+   ],
+   "import_artifacts": [
+    {
+     "original_field": "contraindications_en",
+     "text": "Contraindicated for those with Yin Deficiency. | Contraindicated during pregnancy. | Contraindicated for those with External invasion with fever. | For those with sudden turmoil disorder, stop when diarrhea and vomiting have stopped.",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[Contraindicated for those with Yin Deficiency. | Contraindicated during pregnancy. | Contraindicated for those with External invasion with fever.]; needs_review(1)=[For those with sudden turmoil disorder, stop when diarrhea and vomiting have stopped. <no_direction_token>]"
+    },
+    {
+     "original_field": "cautions_en",
+     "text": "Contraindicated for those with External invasion with fever. | For those with sudden turmoil disorder, stop when diarrhea and vomiting have stopped. | Contraindicated for those with Yin Deficiency. | Contraindicated during pregnancy.",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[]; needs_review(1)=[For those with sudden turmoil disorder, stop when diarrhea and vomiting have stopped. <no_direction_token>]"
+    },
+    {
+     "original_field": "contraindications_zh",
+     "text": "外感發熱者禁用 | 霍亂吐瀉止後即當停藥 | 陰虛者禁用 | 孕婦禁用",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[外感發熱者禁用 | 陰虛者禁用 | 孕婦禁用]; needs_review(1)=[霍亂吐瀉止後即當停藥 <no_direction_token>]"
+    },
+    {
+     "original_field": "cautions_zh",
+     "text": "外感發熱者禁用 | 霍亂吐瀉止後即當停藥 | 陰虛者禁用 | 孕婦禁用",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[]; needs_review(1)=[霍亂吐瀉止後即當停藥 <no_direction_token>]"
     }
    ]
   },
@@ -32360,15 +32619,10 @@
     "蟲積 → 加烏梅、川椒，減飴糖、白芍"
    ],
    "contraindications_en": [
-    "Use with caution for those with Fire from Yin Deficiency, vomiting, or abdominal fullness.",
-    "Contraindicated for those with Heat from Yin Deficiency.",
-    "Eliminate sweet flavor for vomiting or roundworms.",
-    "Modify for abdominal distention."
+    "Contraindicated for those with Heat from Yin Deficiency."
    ],
    "contraindications_zh": [
-    "陰虛火旺者慎用。",
-    "因嘔吐或蛔蟲所致者，宜去甘味藥。",
-    "腹脹（中滿）者宜隨證加減。"
+    "陰虛內熱者禁用"
    ],
    "safety_flags": [],
    "source_urls": [
@@ -32511,9 +32765,7 @@
    "exact_source_url": "https://cloudtcm.com/formula/39",
    "fetched_at": "2026-07-23T07:08:58.929Z",
    "cautions_zh": [
-    "陰虛內熱者禁用",
-    "因嘔吐或蛔蟲所致者，宜去甘味藥。",
-    "腹脹（中滿）者宜隨證加減。"
+    "陰虛火旺者慎用。"
    ],
    "safety_source": "cloudtcm_cautions_field",
    "safety_source_url": "https://cloudtcm.com/formula/39",
@@ -32954,9 +33206,7 @@
     "乳癌化療"
    ],
    "cautions_en": [
-    "Contraindicated for those with Heat from Yin Deficiency.",
-    "Eliminate sweet flavor for vomiting or roundworms.",
-    "Modify for abdominal distention."
+    "Use with caution for those with Fire from Yin Deficiency, vomiting, or abdominal fullness."
    ],
    "herb_drug_interactions_en": [],
    "category_zh": "溫裡劑",
@@ -33001,6 +33251,36 @@
     "Relieves GI smooth muscle spasm, analgesic",
     "Regulates autonomic nervous system, improves digestion/absorption",
     "Promotes hemoglobin synthesis, enhances physical constitution"
+   ],
+   "import_artifacts": [
+    {
+     "original_field": "contraindications_en",
+     "text": "Use with caution for those with Fire from Yin Deficiency, vomiting, or abdominal fullness. | Contraindicated for those with Heat from Yin Deficiency. | Eliminate sweet flavor for vomiting or roundworms. | Modify for abdominal distention.",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[Contraindicated for those with Heat from Yin Deficiency.]; needs_review(2)=[Eliminate sweet flavor for vomiting or roundworms. <no_direction_token> | Modify for abdominal distention. <no_direction_token>]"
+    },
+    {
+     "original_field": "cautions_en",
+     "text": "Contraindicated for those with Heat from Yin Deficiency. | Eliminate sweet flavor for vomiting or roundworms. | Modify for abdominal distention.",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[Use with caution for those with Fire from Yin Deficiency, vomiting, or abdominal fullness.]; needs_review(2)=[Eliminate sweet flavor for vomiting or roundworms. <no_direction_token> | Modify for abdominal distention. <no_direction_token>]"
+    },
+    {
+     "original_field": "contraindications_zh",
+     "text": "陰虛火旺者慎用。 | 因嘔吐或蛔蟲所致者，宜去甘味藥。 | 腹脹（中滿）者宜隨證加減。",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[陰虛內熱者禁用]; needs_review(2)=[因嘔吐或蛔蟲所致者，宜去甘味藥。 <no_direction_token> | 腹脹（中滿）者宜隨證加減。 <no_direction_token>]"
+    },
+    {
+     "original_field": "cautions_zh",
+     "text": "陰虛內熱者禁用 | 因嘔吐或蛔蟲所致者，宜去甘味藥。 | 腹脹（中滿）者宜隨證加減。",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[陰虛火旺者慎用。]; needs_review(2)=[因嘔吐或蛔蟲所致者，宜去甘味藥。 <no_direction_token> | 腹脹（中滿）者宜隨證加減。 <no_direction_token>]"
+    }
    ]
   },
   {
@@ -33549,26 +33829,14 @@
     "肝硬化"
    ],
    "contraindications_en": [
-    "Contraindicated for those with Heat from Yin Deficiency.",
-    "Eliminate sweet flavor for vomiting from roundworms.",
-    "Modify for abdominal distention."
+    "Contraindicated for those with Heat from Yin Deficiency."
    ],
-   "cautions_en": [
-    "Eliminate sweet flavor for vomiting from roundworms.",
-    "Contraindicated for those with Heat from Yin Deficiency.",
-    "Modify for abdominal distention."
-   ],
-   "cautions_zh": [
-    "因蛔蟲所致嘔吐者，宜去甘味藥。",
-    "陰虛內熱者禁用",
-    "腹脹（中滿）者宜隨證加減。"
-   ],
+   "cautions_en": [],
+   "cautions_zh": [],
    "herb_drug_interactions_en": [],
    "category_zh": "溫裡劑",
    "contraindications_zh": [
-    "因蛔蟲所致嘔吐者，宜去甘味藥。",
-    "陰虛內熱者禁用",
-    "腹脹（中滿）者宜隨證加減。"
+    "陰虛內熱者禁用"
    ],
    "source_classic": "《金匱要略》",
    "formula_song_zh": "小建湯加兩半耆。諸虛里急治無遺。\n急當甘緩虛當補。愈信長沙百世師。",
@@ -33586,7 +33854,37 @@
     "Enhances GI motility and tone",
     "Stops sweating, improves anemia"
    ],
-   "composition_suspect_cleared_note": "2026-08-19 核對《金匱要略》黃耆建中湯七味(小建中湯全方加黃耆)俱在,旗標清除"
+   "composition_suspect_cleared_note": "2026-08-19 核對《金匱要略》黃耆建中湯七味(小建中湯全方加黃耆)俱在,旗標清除",
+   "import_artifacts": [
+    {
+     "original_field": "contraindications_en",
+     "text": "Contraindicated for those with Heat from Yin Deficiency. | Eliminate sweet flavor for vomiting from roundworms. | Modify for abdominal distention.",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[Contraindicated for those with Heat from Yin Deficiency.]; needs_review(2)=[Eliminate sweet flavor for vomiting from roundworms. <no_direction_token> | Modify for abdominal distention. <no_direction_token>]"
+    },
+    {
+     "original_field": "cautions_en",
+     "text": "Eliminate sweet flavor for vomiting from roundworms. | Contraindicated for those with Heat from Yin Deficiency. | Modify for abdominal distention.",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[]; needs_review(2)=[Eliminate sweet flavor for vomiting from roundworms. <no_direction_token> | Modify for abdominal distention. <no_direction_token>]"
+    },
+    {
+     "original_field": "contraindications_zh",
+     "text": "因蛔蟲所致嘔吐者，宜去甘味藥。 | 陰虛內熱者禁用 | 腹脹（中滿）者宜隨證加減。",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[陰虛內熱者禁用]; needs_review(2)=[因蛔蟲所致嘔吐者，宜去甘味藥。 <no_direction_token> | 腹脹（中滿）者宜隨證加減。 <no_direction_token>]"
+    },
+    {
+     "original_field": "cautions_zh",
+     "text": "因蛔蟲所致嘔吐者，宜去甘味藥。 | 陰虛內熱者禁用 | 腹脹（中滿）者宜隨證加減。",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[]; needs_review(2)=[因蛔蟲所致嘔吐者，宜去甘味藥。 <no_direction_token> | 腹脹（中滿）者宜隨證加減。 <no_direction_token>]"
+    }
+   ]
   },
   {
    "id": "formula.si_ni_tang",
@@ -33739,8 +34037,7 @@
     "頑痺 → 加桂枝、白朮"
    ],
    "contraindications_en": [
-    "Contraindicated for those with True Heat with False Cold (C.M.: cold extremities, thirst with a desire for cold drinks, dark urine, T: Red, C: Yellow).",
-    "Stop this formula immediately once the hands and feet have warmed up."
+    "Contraindicated for those with True Heat with False Cold (C.M.: cold extremities, thirst with a desire for cold drinks, dark urine, T: Red, C: Yellow)."
    ],
    "contraindications_zh": [
     "體內實熱者禁服",
@@ -34274,10 +34571,7 @@
     "消化不良",
     "痛經"
    ],
-   "cautions_en": [
-    "Contraindicated for those with True Heat with False Cold (C.M.: cold extremities, thirst with a desire for cold drinks, dark urine, T: Red, C: Yellow).",
-    "Stop this formula immediately once the hands and feet have warmed up."
-   ],
+   "cautions_en": [],
    "herb_drug_interactions_en": [],
    "category_zh": "溫裡劑",
    "ba_fa_zh": "溫法 Wen Fa (Warm)",
@@ -34330,6 +34624,22 @@
     "Improves microcirculation, dilates coronary arteries",
     "Antiarrhythmic, myocardial protection",
     "Enhances tissue hypoxia tolerance"
+   ],
+   "import_artifacts": [
+    {
+     "original_field": "contraindications_en",
+     "text": "Contraindicated for those with True Heat with False Cold (C.M.: cold extremities, thirst with a desire for cold drinks, dark urine, T: Red, C: Yellow). | Stop this formula immediately once the hands and feet have warmed up.",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[Contraindicated for those with True Heat with False Cold (C.M.: cold extremities, thirst with a desire for cold drinks, dark urine, T: Red, C: Yellow).]; needs_review(1)=[Stop this formula immediately once the hands and feet have warmed up. <no_direction_token>]"
+    },
+    {
+     "original_field": "cautions_en",
+     "text": "Contraindicated for those with True Heat with False Cold (C.M.: cold extremities, thirst with a desire for cold drinks, dark urine, T: Red, C: Yellow). | Stop this formula immediately once the hands and feet have warmed up.",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[]; needs_review(1)=[Stop this formula immediately once the hands and feet have warmed up. <no_direction_token>]"
+    }
    ]
   },
   {
@@ -34639,12 +34949,14 @@
    "modifications_en": [],
    "modifications_zh": [],
    "contraindications_en": [
-    "For very severe vomiting, take the formula cool.",
-    "Contraindicated for vomiting or acid regurgitation due to Heat, vomiting due to Stomach Heat, vomiting due to Yin deficiency, and headache due to Liver Yang Rising."
+    "Contraindicated for vomiting or acid regurgitation due to Heat, vomiting due to Stomach Heat, vomiting due to Yin deficiency, and headache due to Liver Yang Rising.",
+    "Contraindicated for those with vomiting or acid reflux due to Heat.",
+    "Contraindicated for those with headache due to Liver Yang Rising."
    ],
    "contraindications_zh": [
-    "嘔吐甚劇者，藥宜冷服",
-    "因熱而致的嘔吐反酸忌，胃熱嘔吐，陰虛嘔吐，或肝陽上亢之頭痛均禁用本方。"
+    "因熱而致的嘔吐反酸忌，胃熱嘔吐，陰虛嘔吐，或肝陽上亢之頭痛均禁用本方。",
+    "因熱而致之嘔吐反酸者禁用",
+    "肝陽上亢之頭痛者禁用"
    ],
    "safety_flags": [],
    "source_urls": [
@@ -34772,11 +35084,7 @@
    "source_classic": "《傷寒雜病論》",
    "exact_source_url": "https://cloudtcm.com/formula/111",
    "fetched_at": "2026-07-23T07:08:58.127Z",
-   "cautions_zh": [
-    "嘔吐甚劇者，藥宜冷服",
-    "因熱而致之嘔吐反酸者禁用",
-    "肝陽上亢之頭痛者禁用"
-   ],
+   "cautions_zh": [],
    "safety_source": "cloudtcm_cautions_field",
    "safety_source_url": "https://cloudtcm.com/formula/111",
    "safety_fetched_at": "2026-07-23T07:33:04.770Z",
@@ -35170,11 +35478,7 @@
     "慢性腎絲球腎炎",
     "消化不良"
    ],
-   "cautions_en": [
-    "For very severe vomiting, take the formula cool.",
-    "Contraindicated for those with vomiting or acid reflux due to Heat.",
-    "Contraindicated for those with headache due to Liver Yang Rising."
-   ],
+   "cautions_en": [],
    "herb_drug_interactions_en": [],
    "category_zh": "溫裡劑",
    "ba_fa_zh": "溫法 Wen Fa (Warm)",
@@ -35194,6 +35498,36 @@
     "Relieves cerebrovascular and GI smooth muscle spasms (strong analgesic)",
     "Gastroprotective, promotes gastric emptying",
     "Antihypertensive, dilates cerebral vessels"
+   ],
+   "import_artifacts": [
+    {
+     "original_field": "contraindications_en",
+     "text": "For very severe vomiting, take the formula cool. | Contraindicated for vomiting or acid regurgitation due to Heat, vomiting due to Stomach Heat, vomiting due to Yin deficiency, and headache due to Liver Yang Rising.",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[Contraindicated for vomiting or acid regurgitation due to Heat, vomiting due to Stomach Heat, vomiting due to Yin deficiency, and headache due to Liver Yang Rising. | Contraindicated for those with vomiting or acid reflux due to Heat. | Contraindicated for those with headache due to Liver Yang Rising.]; needs_review(1)=[For very severe vomiting, take the formula cool. <no_direction_token>]"
+    },
+    {
+     "original_field": "cautions_en",
+     "text": "For very severe vomiting, take the formula cool. | Contraindicated for those with vomiting or acid reflux due to Heat. | Contraindicated for those with headache due to Liver Yang Rising.",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[]; needs_review(1)=[For very severe vomiting, take the formula cool. <no_direction_token>]"
+    },
+    {
+     "original_field": "contraindications_zh",
+     "text": "嘔吐甚劇者，藥宜冷服 | 因熱而致的嘔吐反酸忌，胃熱嘔吐，陰虛嘔吐，或肝陽上亢之頭痛均禁用本方。",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[因熱而致的嘔吐反酸忌，胃熱嘔吐，陰虛嘔吐，或肝陽上亢之頭痛均禁用本方。 | 因熱而致之嘔吐反酸者禁用 | 肝陽上亢之頭痛者禁用]; needs_review(1)=[嘔吐甚劇者，藥宜冷服 <no_direction_token>]"
+    },
+    {
+     "original_field": "cautions_zh",
+     "text": "嘔吐甚劇者，藥宜冷服 | 因熱而致之嘔吐反酸者禁用 | 肝陽上亢之頭痛者禁用",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[]; needs_review(1)=[嘔吐甚劇者，藥宜冷服 <no_direction_token>]"
+    }
    ]
   },
   {
@@ -35392,11 +35726,10 @@
    ],
    "contraindications_en": [
     "Contraindicated for those with Yin Deficiency with Empty Fire.",
-    "Use with caution during Spring and Summer or in warm climates."
+    "Contraindicated for those with during Spring and Summer or in warm climates."
    ],
    "contraindications_zh": [
-    "陰虛火旺者禁用",
-    "春夏或溫暖氣候慎用"
+    "陰虛火旺者禁用"
    ],
    "safety_flags": [],
    "source_urls": [
@@ -35529,7 +35862,6 @@
    "exact_source_url": "https://cloudtcm.com/formula/256",
    "fetched_at": "2026-07-23T07:08:47.071Z",
    "cautions_zh": [
-    "陰虛火旺者禁用",
     "春夏或溫暖氣候慎用"
    ],
    "syndromes_zh": [
@@ -35959,9 +36291,7 @@
     "耳痛"
    ],
    "cautions_en": [
-    "Contraindicated for those with Yin Deficiency with Empty Fire.",
-    "Use with caution during Spring and Summer or in warm climates.",
-    "Contraindicated for those with during Spring and Summer or in warm climates."
+    "Use with caution during Spring and Summer or in warm climates."
    ],
    "herb_drug_interactions_en": [],
    "category_zh": "溫裡劑",
@@ -35999,6 +36329,36 @@
     "Anticoagulant, prevents thrombosis",
     "Analgesic, antispasmodic, anti-inflammatory",
     "Promotes wound and frostbite tissue repair"
+   ],
+   "import_artifacts": [
+    {
+     "original_field": "contraindications_en",
+     "text": "Contraindicated for those with Yin Deficiency with Empty Fire. | Use with caution during Spring and Summer or in warm climates.",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[Contraindicated for those with Yin Deficiency with Empty Fire. | Contraindicated for those with during Spring and Summer or in warm climates.]; needs_review(0)=[]"
+    },
+    {
+     "original_field": "cautions_en",
+     "text": "Contraindicated for those with Yin Deficiency with Empty Fire. | Use with caution during Spring and Summer or in warm climates. | Contraindicated for those with during Spring and Summer or in warm climates.",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[Use with caution during Spring and Summer or in warm climates.]; needs_review(0)=[]"
+    },
+    {
+     "original_field": "contraindications_zh",
+     "text": "陰虛火旺者禁用 | 春夏或溫暖氣候慎用",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[陰虛火旺者禁用]; needs_review(0)=[]"
+    },
+    {
+     "original_field": "cautions_zh",
+     "text": "陰虛火旺者禁用 | 春夏或溫暖氣候慎用",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[春夏或溫暖氣候慎用]; needs_review(0)=[]"
+    }
    ]
   },
   {
@@ -36161,8 +36521,7 @@
     "Contraindicated for those with Deficiency Heat, high fever or a combination of irritability, thirst and constipation unless modified."
    ],
    "contraindications_zh": [
-    "實證而高熱、煩躁、口渴、便秘者禁用",
-    "虛熱、高熱,或煩躁口渴便秘並見者,非經加減不用"
+    "實證而高熱、煩躁、口渴、便秘者禁用"
    ],
    "herb_drug_cautions": [
     "cloying_digestive_effect",
@@ -36338,10 +36697,7 @@
    "source_classic": "《聖濟總錄》",
    "exact_source_url": "https://cloudtcm.com/formula/75",
    "fetched_at": "2026-07-23T07:08:39.847Z",
-   "cautions_zh": [
-    "實證而高熱、煩躁、口渴、便秘者禁用",
-    "虛熱、高熱,或煩躁口渴便秘並見者,非經加減不用"
-   ],
+   "cautions_zh": [],
    "pharmacology_zh": "白朮：有明顯而持久的利尿作用，且能促進電解質特別是鈉的排出，還能鎮靜、保護肝臟、防止肝糖元減少。\n\n人參：能興奮人體新陳代謝機能，又使血色素增加。\n\n茯苓：含有豐富的茯苓酶、葡萄糖、果糖及礦物質，有顯著的營養利尿作用。\n\n合為滋養強壯健胃利尿劑，綜觀全方：能興奮中樞神經系統，減輕疲乏感。有促使紅細胞、血色素及自細胞升高的作用。能增強機體的免疫功能，可糾正胃腸功能紊亂，並有護肝效能。故其強壯補養作用頗為突出，不僅有補氣之功，而且有補血之力，故為補氣與雙補氣血的基礎要方。",
    "syndromes_zh": [
     "肺氣虛",
@@ -36922,10 +37278,7 @@
     "結腸炎",
     "足痛"
    ],
-   "cautions_en": [
-    "Contraindicated for those with Excess Syndromes with high fever, irritability, thirst and constipation.",
-    "Contraindicated for those with Deficiency Heat, high fever or a combination of irritability, thirst and constipation unless modified."
-   ],
+   "cautions_en": [],
    "herb_drug_interactions_en": [],
    "clinical_manifestations_zh": "面色蒼白或萎黃、食慾低下、唇色淡、舌活動較僵或不靈、四肢倦重；餐後心下或腹部脹滿；可見出血、噁心嘔吐、泛酸、氣短、便溏或腹瀉、疲倦嗜臥、肌肉消瘦、聲音低弱或懶言、四肢無力、遺尿、腹壁無力、腸鳴或腹痛。",
    "coating_zh": "白",
@@ -36998,6 +37351,36 @@
     "Regulates cellular and humoral immunity (promotes reticuloendothelial phagocytosis)",
     "Promotes bone marrow hematopoiesis, increases RBC and hemoglobin",
     "Anti-ulcer, gastroprotective"
+   ],
+   "import_artifacts": [
+    {
+     "original_field": "contraindications_en",
+     "text": "Contraindicated for those with Excess Syndromes with high fever, irritability, thirst and constipation. | Contraindicated for those with Deficiency Heat, high fever or a combination of irritability, thirst and constipation unless modified.",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[Contraindicated for those with Excess Syndromes with high fever, irritability, thirst and constipation. | Contraindicated for those with Deficiency Heat, high fever or a combination of irritability, thirst and constipation unless modified.]; needs_review(0)=[]"
+    },
+    {
+     "original_field": "cautions_en",
+     "text": "Contraindicated for those with Excess Syndromes with high fever, irritability, thirst and constipation. | Contraindicated for those with Deficiency Heat, high fever or a combination of irritability, thirst and constipation unless modified.",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[]; needs_review(0)=[]"
+    },
+    {
+     "original_field": "contraindications_zh",
+     "text": "實證而高熱、煩躁、口渴、便秘者禁用 | 虛熱、高熱,或煩躁口渴便秘並見者,非經加減不用",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[實證而高熱、煩躁、口渴、便秘者禁用]; needs_review(1)=[虛熱、高熱,或煩躁口渴便秘並見者,非經加減不用 <no_direction_token>]"
+    },
+    {
+     "original_field": "cautions_zh",
+     "text": "實證而高熱、煩躁、口渴、便秘者禁用 | 虛熱、高熱,或煩躁口渴便秘並見者,非經加減不用",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[]; needs_review(1)=[虛熱、高熱,或煩躁口渴便秘並見者,非經加減不用 <no_direction_token>]"
+    }
    ]
   },
   {
@@ -37229,7 +37612,7 @@
    "modifications_en": [],
    "modifications_zh": [],
    "contraindications_en": [
-    "Use with caution for those with a high fever, Yin Deficiency Heat, Qi Stagnation, Body Fluid Deficiency, irritability, thirst or constipation."
+    "Contraindicated for those with for those with a high fever, Yin Deficiency Heat, Qi Stagnation, Body Fluid Deficiency, irritability, thirst or constipation."
    ],
    "contraindications_zh": [
     "本方性較溫燥，真陰虧損者忌用"
@@ -37923,8 +38306,7 @@
     "咳嗽 哮喘 愛滋病 / 免疫功能低下"
    ],
    "cautions_en": [
-    "Use with caution for those with a high fever, Yin Deficiency Heat, Qi Stagnation, Body Fluid Deficiency, irritability, thirst or constipation.",
-    "Contraindicated for those with for those with a high fever, Yin Deficiency Heat, Qi Stagnation, Body Fluid Deficiency, irritability, thirst or constipation."
+    "Use with caution for those with a high fever, Yin Deficiency Heat, Qi Stagnation, Body Fluid Deficiency, irritability, thirst or constipation."
    ],
    "herb_drug_interactions_en": [],
    "clinical_manifestations_zh": "噁心嘔吐、胸脘脹滿、大量稀白痰、呼吸短促、面色萎黃、食慾低下、唇色淡、四肢倦重、餐後脹滿；可見出血、胸脘痞悶、泛酸、便溏腹瀉、疲倦、聲低懶言、遺尿、腸鳴、四肢冷、尿清量多、肢體無力、腹壁無力。",
@@ -37953,6 +38335,22 @@
     "Antiemetic, anti-inflammatory, promotes mucosal repair",
     "Regulates GI smooth muscle antispasmodic effect",
     "Enhances immunity and reduces fatigue"
+   ],
+   "import_artifacts": [
+    {
+     "original_field": "contraindications_en",
+     "text": "Use with caution for those with a high fever, Yin Deficiency Heat, Qi Stagnation, Body Fluid Deficiency, irritability, thirst or constipation.",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[Contraindicated for those with for those with a high fever, Yin Deficiency Heat, Qi Stagnation, Body Fluid Deficiency, irritability, thirst or constipation.]; needs_review(0)=[]"
+    },
+    {
+     "original_field": "cautions_en",
+     "text": "Use with caution for those with a high fever, Yin Deficiency Heat, Qi Stagnation, Body Fluid Deficiency, irritability, thirst or constipation. | Contraindicated for those with for those with a high fever, Yin Deficiency Heat, Qi Stagnation, Body Fluid Deficiency, irritability, thirst or constipation.",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[Use with caution for those with a high fever, Yin Deficiency Heat, Qi Stagnation, Body Fluid Deficiency, irritability, thirst or constipation.]; needs_review(0)=[]"
+    }
    ]
   },
   {
@@ -38940,17 +39338,10 @@
    ],
    "contraindications_en": [
     "Contraindicated for those with Excess syndromes.",
-    "Modify for concurrent Heat from Yin Deficiency.",
-    "Use with caution during pregnancy.",
-    "Use with caution for those with Exterior or Interior Heat conditions.",
-    "While taking this formula, avoid raw, cold, greasy, and hard-to-digest foods."
+    "Contraindicated for those with for those with Exterior or Interior Heat conditions."
    ],
    "contraindications_zh": [
-    "實證者禁用",
-    "兼陰虛內熱者，宜加減使用",
-    "孕婦慎用",
-    "表裡有熱者慎用",
-    "服用本方，禁食生冷、油膩、不易消化之物"
+    "實證者禁用"
    ],
    "safety_flags": [],
    "source_urls": [
@@ -39115,8 +39506,6 @@
    "exact_source_url": "https://cloudtcm.com/formula/194",
    "fetched_at": "2026-07-23T07:08:53.620Z",
    "cautions_zh": [
-    "實證者禁用",
-    "兼陰虛內熱者，宜加減使用",
     "孕婦慎用",
     "表裡有熱者慎用"
    ],
@@ -39680,11 +40069,8 @@
     "結腸炎"
    ],
    "cautions_en": [
-    "Contraindicated for those with Excess syndromes.",
-    "Modify for concurrent Heat from Yin Deficiency.",
     "Use with caution during pregnancy.",
-    "Use with caution for those with Exterior or Interior Heat conditions.",
-    "Contraindicated for those with for those with Exterior or Interior Heat conditions."
+    "Use with caution for those with Exterior or Interior Heat conditions."
    ],
    "herb_drug_interactions_en": [],
    "clinical_manifestations_zh": "便溏或水瀉、四肢無力、體重下降、胸脘痞悶脹滿、面色淡黃、腹脹、消化不良、嘔吐、疲倦、怕冷、帶下、食慾下降、腸鳴、水腫；可有經期腹瀉、咳嗽痰多、肥胖女性白帶多。",
@@ -39730,6 +40116,36 @@
     "Enhances small intestine absorption of nutrients",
     "Immunomodulatory, anti-inflammatory",
     "Promotes plasma protein synthesis, reduces edema"
+   ],
+   "import_artifacts": [
+    {
+     "original_field": "contraindications_en",
+     "text": "Contraindicated for those with Excess syndromes. | Modify for concurrent Heat from Yin Deficiency. | Use with caution during pregnancy. | Use with caution for those with Exterior or Interior Heat conditions. | While taking this formula, avoid raw, cold, greasy, and hard-to-digest foods.",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[Contraindicated for those with Excess syndromes. | Contraindicated for those with for those with Exterior or Interior Heat conditions.]; needs_review(2)=[Modify for concurrent Heat from Yin Deficiency. <no_direction_token> | While taking this formula, avoid raw, cold, greasy, and hard-to-digest foods. <ambiguous_avoidance>]"
+    },
+    {
+     "original_field": "cautions_en",
+     "text": "Contraindicated for those with Excess syndromes. | Modify for concurrent Heat from Yin Deficiency. | Use with caution during pregnancy. | Use with caution for those with Exterior or Interior Heat conditions. | Contraindicated for those with for those with Exterior or Interior Heat conditions.",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[Use with caution during pregnancy. | Use with caution for those with Exterior or Interior Heat conditions.]; needs_review(2)=[Modify for concurrent Heat from Yin Deficiency. <no_direction_token> | While taking this formula, avoid raw, cold, greasy, and hard-to-digest foods. <ambiguous_avoidance>]"
+    },
+    {
+     "original_field": "contraindications_zh",
+     "text": "實證者禁用 | 兼陰虛內熱者，宜加減使用 | 孕婦慎用 | 表裡有熱者慎用 | 服用本方，禁食生冷、油膩、不易消化之物",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[實證者禁用]; needs_review(2)=[兼陰虛內熱者，宜加減使用 <no_direction_token> | 服用本方，禁食生冷、油膩、不易消化之物 <no_direction_token>]"
+    },
+    {
+     "original_field": "cautions_zh",
+     "text": "實證者禁用 | 兼陰虛內熱者，宜加減使用 | 孕婦慎用 | 表裡有熱者慎用",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[孕婦慎用 | 表裡有熱者慎用]; needs_review(2)=[兼陰虛內熱者，宜加減使用 <no_direction_token> | 服用本方，禁食生冷、油膩、不易消化之物 <no_direction_token>]"
+    }
    ]
   },
   {
@@ -41477,9 +41893,7 @@
     "大病後虛弱",
     "全身疼痛"
    ],
-   "cautions_en": [
-    "Contraindicated for those with Yin Deficiency or Interior Heat."
-   ],
+   "cautions_en": [],
    "herb_drug_interactions_en": [],
    "clinical_manifestations_zh": "可見畏寒、各種出血、腸鳴腹脹、反覆感冒、慢性低熱、視物模糊、四肢冷、便秘、耳聾、情緒低落、喜熱飲；慢性腹瀉或痢疾、頭暈、眼瞼下垂、鼻肺乾癢、氣短、排尿困難或水腫伴臟器下垂、遺尿、眼疲勞或眼瘡、倦怠、失禁、發熱反覆、便尿頻、天冷反覺肌膚發熱、外陰瘡、甲狀腺腫、頭痛、便血、吐血、血尿、痔、呃逆、聲啞、口渴；腹部間歇性隱痛喜溫喜按、勞動後發熱加重、懶言、帶下、四肢消瘦、牙痛纏綿、水瀉、失聲、咳嗽無力、尿混濁、身冷。",
    "category_zh": "補益劑",
@@ -41503,6 +41917,22 @@
     "Significantly enhances immune function and NK cell activity",
     "Regulates intestinal smooth muscle motility",
     "Anti-fatigue, endocrine regulating"
+   ],
+   "import_artifacts": [
+    {
+     "original_field": "contraindications_en",
+     "text": "Contraindicated for those with Yin Deficiency or Interior Heat.",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[Contraindicated for those with Yin Deficiency or Interior Heat.]; needs_review(0)=[]"
+    },
+    {
+     "original_field": "cautions_en",
+     "text": "Contraindicated for those with Yin Deficiency or Interior Heat.",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[]; needs_review(0)=[]"
+    }
    ]
   },
   {
@@ -41647,13 +42077,11 @@
    ],
    "contraindications_en": [
     "Contraindicated for those with Excess patterns.",
-    "Contraindicated for those with night sweats due to Yin Deficiency.",
-    "Not appropriate for exterior invasion in deficient patients when the pathogen predominates over the deficiency, nor for night sweats with fever due to Yin deficiency."
+    "Contraindicated for those with night sweats due to Yin Deficiency."
    ],
    "contraindications_zh": [
     "實證者禁用",
-    "陰虛盜汗者禁用",
-    "虛人外感，邪多虛少，以及陰虛發熱之盜汗，不宜使用本方。"
+    "陰虛盜汗者禁用"
    ],
    "safety_flags": [],
    "source_urls": [
@@ -41750,10 +42178,7 @@
    "source_classic": "《究原方》",
    "exact_source_url": "https://cloudtcm.com/formula/86",
    "fetched_at": "2026-07-23T07:09:01.266Z",
-   "cautions_zh": [
-    "實證者禁用",
-    "陰虛盜汗者禁用"
-   ],
+   "cautions_zh": [],
    "safety_source": "cloudtcm_cautions_field",
    "safety_source_url": "https://cloudtcm.com/formula/86",
    "safety_fetched_at": "2026-07-23T07:33:07.924Z",
@@ -42019,10 +42444,7 @@
     "上背痛",
     "盜汗 愛滋病 / 免疫功能低下"
    ],
-   "cautions_en": [
-    "Contraindicated for those with Excess patterns.",
-    "Contraindicated for those with night sweats due to Yin Deficiency."
-   ],
+   "cautions_en": [],
    "herb_drug_interactions_en": [],
    "clinical_manifestations_zh": "怕風怕冷、自汗、反覆感冒、面色淡而有光澤，容易受外邪侵襲。",
    "tongue_zh": "淡或粉紅",
@@ -42050,7 +42472,37 @@
     "Regulates sweat gland function, stops sweating",
     "Broad-spectrum anti-respiratory virus"
    ],
-   "correction_note": "【2026-08-27 A14(a) Ting 裁定】全庫唯一「君藥只以 is_alternate 註記存在」的卡:補回黃耆非替代正條(君),蜜炙黃耆維持替代列;cmp.qi_tonify 比較表的自動組成差異欄自此不再漏掉本方存在理由。內容欄位自替代列鏡射,未新增臨床宣稱。"
+   "correction_note": "【2026-08-27 A14(a) Ting 裁定】全庫唯一「君藥只以 is_alternate 註記存在」的卡:補回黃耆非替代正條(君),蜜炙黃耆維持替代列;cmp.qi_tonify 比較表的自動組成差異欄自此不再漏掉本方存在理由。內容欄位自替代列鏡射,未新增臨床宣稱。",
+   "import_artifacts": [
+    {
+     "original_field": "contraindications_en",
+     "text": "Contraindicated for those with Excess patterns. | Contraindicated for those with night sweats due to Yin Deficiency. | Not appropriate for exterior invasion in deficient patients when the pathogen predominates over the deficiency, nor for night sweats with fever due to Yin deficiency.",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[Contraindicated for those with Excess patterns. | Contraindicated for those with night sweats due to Yin Deficiency.]; needs_review(1)=[Not appropriate for exterior invasion in deficient patients when the pathogen predominates over the deficiency, nor for night sweats with fever due to Yin deficiency. <no_direction_token>]"
+    },
+    {
+     "original_field": "cautions_en",
+     "text": "Contraindicated for those with Excess patterns. | Contraindicated for those with night sweats due to Yin Deficiency.",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[]; needs_review(1)=[Not appropriate for exterior invasion in deficient patients when the pathogen predominates over the deficiency, nor for night sweats with fever due to Yin deficiency. <no_direction_token>]"
+    },
+    {
+     "original_field": "contraindications_zh",
+     "text": "實證者禁用 | 陰虛盜汗者禁用 | 虛人外感，邪多虛少，以及陰虛發熱之盜汗，不宜使用本方。",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[實證者禁用 | 陰虛盜汗者禁用]; needs_review(1)=[虛人外感，邪多虛少，以及陰虛發熱之盜汗，不宜使用本方。 <ambiguous_avoidance>]"
+    },
+    {
+     "original_field": "cautions_zh",
+     "text": "實證者禁用 | 陰虛盜汗者禁用",
+     "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
+     "moved_at": "2026-08-29T04:44:46.971Z",
+     "ruling": "D28/A1(a). after=[]; needs_review(1)=[虛人外感，邪多虛少，以及陰虛發熱之盜汗，不宜使用本方。 <ambiguous_avoidance>]"
+    }
+   ]
   },
   {
    "id": "formula.sheng_mai_san",
