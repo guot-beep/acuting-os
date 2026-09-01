@@ -126,9 +126,12 @@
 
   function load() {
     if (activeIsV2()) {
-      return readStagingEnvelopeOrThrow("load").cases;
+      const cases = readStagingEnvelopeOrThrow("load").cases;
+      lastSyncedRaw = readKey(STAGING_KEY);                       // 樂觀鎖基準(走 seam)
+      return cases;
     }
     const saved = backend.read();
+    lastSyncedRaw = saved;                                        // 樂觀鎖基準(null 也算)
     if (!saved) return [];
     // R15(Dry Clinic #9):v1 與 v2 同等 fail-loud。「不存在→[]」是新機;
     // 「存在但壞→丟錯」—— 靜默回 [] 會讓下一次 save 把還救得回來的原始
@@ -146,6 +149,8 @@
   }
 
   function save(cases) {
+    // 樂觀鎖:任何寫入之前先確認沒有別的分頁在本分頁載入之後寫過(見 writeKey 上方)
+    assertOwnsWrite(cases);
     if (activeIsV2()) {
       const env = readStagingEnvelopeOrThrow("save");
       env.cases = cases;
@@ -180,7 +185,9 @@
       writeKey(STAGING_KEY, JSON.stringify(env));   // 單一 setItem = 原子替換
       return;
     }
-    backend.write(JSON.stringify(cases, null, 2));
+    const serialized = JSON.stringify(cases, null, 2);
+    backend.write(serialized);
+    lastSyncedRaw = serialized;   // v1 不走 writeKey,基準要自己同步
   }
 
   /* 存檔後補建 pending 病人(async — sha256 與遷移同款 deterministic id)。
@@ -924,7 +931,68 @@
 
   // backend 介面擴充(P3 需要 per-key 讀寫;localStorage 版直接對應)。
   function readKey(k) { return backend.readKey ? backend.readKey(k) : global.localStorage.getItem(k); }
-  function writeKey(k, v) { backend.writeKey ? backend.writeKey(k, v) : global.localStorage.setItem(k, v); }
+  /* ── 多分頁併發保護(2026-08-31)────────────────────────────────────
+   * 實測過的資料遺失情境:同一台機器開兩個分頁(診間很常見 —— 一頁查方劑、
+   * 一頁寫病歷)。兩頁都在開機時讀到同一份清單;A 頁存了新病例;B 頁存檔時
+   * 把**它開機時那份**整個寫回去,A 頁的病例就沒了。而 persistClinicalCases()
+   * 還回傳 true —— 靜默遺失,畫面上看不出來。
+   *
+   * 不能用「合併」解:deleteCurrentCase 是真的從陣列移除(app.js),
+   * 依 id 合併會讓另一頁剛刪掉的病例復活 —— 在病歷裡復活一筆已刪紀錄,
+   * 是另一種同樣嚴重的錯。
+   *
+   * 所以是樂觀鎖:記住本分頁最後一次讀到/寫出的**原始位元組**,存檔前比對。
+   * 不一致就拒絕寫入,但**先把本分頁的內容存進另一個備份鍵**再拒絕 ——
+   * 拒絕存檔而讓她剛打的病歷消失,等於用一種資料遺失換掉另一種。
+   * 錯誤訊息由 app.js 既有的 alert 路徑大聲印出(「存檔失敗 —— 資料尚未寫入!」)。 */
+  const CONFLICT_BACKUP_KEY = "acuting-clinical-conflict-backup";
+  /* 三態,不是兩態 —— 這裡踩過一次:
+   *   undefined  本分頁從來沒有讀過(工具/測試直接餵 backend)→ 沒有基準可比
+   *   null       讀過,而且當時 store 是空的  ← 這一態最容易被誤當成「沒讀過」
+   *   string     讀過,當時的原始位元組
+   * 第一版把「讀過但當時是空的」也寫成 null 並放行,結果正是要防的情境
+   * (B 分頁開機時 store 空 → A 分頁寫入 → B 存檔覆蓋)被自己放行了,
+   * 瀏覽器實測才發現,單元測試全綠。 */
+  let lastSyncedRaw;   // undefined = 沒有基準
+  /* 一律走 backend seam(readKey/writeKey/read),不直接碰 global.localStorage ——
+   * 那層正是未來 SQLite/D1 adapter 要插進來的地方。第一版寫成
+   * `global.localStorage.getItem(...)`,被 rehearse-runtime-restore.js 當場擋下
+   * (它刻意把 localStorage 打樁成會拋錯,就是為了守這條)。 */
+  const activeKey = () => (activeIsV2() ? STAGING_KEY : STORAGE_KEY);
+  const rawNow = () => (activeIsV2() ? readKey(STAGING_KEY) : backend.read());
+  const looksEmpty = (s) => !s || !String(s).trim() || String(s).trim() === "[]";
+  function stashConflict(cases, why) {
+    // 備份本身失敗(配額滿)不可以把衝突錯誤吃掉 —— 那才是要讓她看到的那一個。
+    try {
+      writeKey(CONFLICT_BACKUP_KEY, JSON.stringify({
+        stashed_at: new Date().toISOString(), reason: why, cases,
+      }));
+      return true;
+    } catch (e) { return false; }
+  }
+  function assertOwnsWrite(cases) {
+    /* 沒有基準(undefined)就不比對 —— 遷移/演練工具直接餵 backend、不走
+     * load 就 save,對它們拒絕並不會多防到什麼,只會讓工具動不了
+     * (rehearse-runtime-restore 當場擋下過第一版)。
+     * 但「讀過、當時是空的」(null)**要**比對:那正是兩個分頁同時開著、
+     * 都從空的開始的情境。 */
+    if (lastSyncedRaw === undefined) return;
+    const now = rawNow();
+    // null 與 "" 與 "[]" 都算空;兩邊都空就沒有衝突
+    if (now === lastSyncedRaw || (looksEmpty(now) && looksEmpty(lastSyncedRaw))) return;
+    const ok = stashConflict(cases, "另一個分頁在本分頁載入之後寫入過");
+    throw new Error(
+      `拒絕寫入:另一個分頁在這之後存過檔,直接寫入會蓋掉它的內容。\n` +
+      `本分頁的內容${ok ? `已備份到 localStorage["${CONFLICT_BACKUP_KEY}"](沒有遺失)` : "**備份也失敗了**(配額滿?)"}。\n` +
+      `做法:先在另一個分頁按「匯出病例」備份,再重新載入本頁。`);
+  }
+
+  function writeKey(k, v) {
+    backend.writeKey ? backend.writeKey(k, v) : global.localStorage.setItem(k, v);
+    // 遷移/還原/切 pointer 都走這裡而不走 save() —— 它們本來就該整份替換。
+    // 寫完同步基準,否則下一次 save() 會拿舊基準比對而誤判成分頁衝突。
+    if (k === activeKey()) lastSyncedRaw = v;
+  }
   function removeKey(k) { backend.removeKey ? backend.removeKey(k) : global.localStorage.removeItem(k); }
 
   global.AcuTingClinicalStore = {
@@ -947,7 +1015,9 @@
     syncPendingPatients,
     activeIsV2,
     verifyRuntimeEnvelope,
-    setBackend(b) { backend = b; },       // SQLite/D1 adapter 的插入點
+    // 換 backend = 換一個世界,樂觀鎖的基準跟著作廢(拿舊世界的位元組去比
+    // 新世界的,只會產生假衝突)。
+    setBackend(b) { backend = b; lastSyncedRaw = undefined; },   // SQLite/D1 adapter 的插入點
     checkClinicalInvariants,
     canonicalEventPayload,
     exposureHistoryExtends,
