@@ -2,6 +2,12 @@
      Text layer only — figures, tables-as-images and formatting are NOT here.
      Cite as curriculum/acupoints/Therapeutics Notes Comprehensive (1).pdf#p<N> and verify against the original before
      using any number (dose, depth, lab value) from it. -->
+<!-- 2026-09-01 查證:本檔那幾串連續問號是講義原文就有的,不是抽取時掉的字。
+       「s Crucian」後的兩個問號
+       「…expanding outward caused by what」後的三個問號(其後接 Emotions? Excess yang)
+     對來源 Therapeutics Notes Comprehensive (1).pdf 重抽比對,來源同樣印著連續問號。
+     旁證:同一份來源的中文(例 [导赤散])抽得出來,所以不是編碼吃字。
+     ——不要「補」成漢字。 -->
 
 ## p.1
 

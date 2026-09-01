@@ -1,3 +1,8 @@
+<!-- 2026-09-01 查證:本檔那幾串連續問號是講義原文就有的,不是抽取時掉的字。
+       「Small formula: Dao Chi San → Sheng Di, Mu Tong, Dan Zhu Ye, Gan cao」後的三個問號
+     對來源 Herbal Formulations Comprehensive.docx.pdf(只在 git 歷史)重抽比對,來源同樣印著連續問號。
+     旁證:同一份來源的中文(例 [导赤散])抽得出來,所以不是編碼吃字。
+     ——不要「補」成漢字。 -->
 # Herbal Formulations Comprehensive.docx
 
 > 自動抽取自 `curriculum/formulas/Herbal Formulations Comprehensive.docx.pdf`(engine: pdfplumber)。**這是原始文字,未經整理或校對。**

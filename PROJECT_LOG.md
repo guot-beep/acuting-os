@@ -1,3 +1,56 @@
+# 2026-09-01 — 8 處問號在課件裡標註完成;註記推移行號,2 個 `#L` 錨點跟著校正
+
+那 8 處連續問號前一批已查證是講義原文就有的(對來源 PDF 重抽逐處比對)。
+Ting 裁定「在課件裡標一下」,讓下一個看到的人不用再查一遍、也不會手癢去「補」成漢字。
+
+## 5 個檔各加一段檔頭註記
+
+| 檔 | 標註處 |
+|---|---|
+| `acupoints/Advanced Techniques Notes.md` | 1 |
+| `acupoints/Therapeutics Notes Comprehensive (1).md` | 2 |
+| `formulas/10_Formula_Cards_091-100_理血劑_固澀劑.md` | 3 |
+| `formulas/Herbal Formulations Comprehensive.docx.md` | 1 |
+| `herbs/方剂学汇总_extracted.md` | 1 |
+
+註記接在抽取器自己的 provenance header 之後,寫明:哪幾處、怎麼查的、
+旁證(同一份來源的中文如 `[导赤散]` 抽得出來,所以不是編碼吃字),
+最後一句是「**不要「補」成漢字**」。
+
+**本文一個字都沒動** —— 本文是抽出來的原始素材,插字進去就等於改寫來源。
+腳本用「剝掉開頭所有註記區塊後必須逐字相同」把這件事斷言起來。
+
+## 註記自己差點把要澄清的訊號弄糊
+
+第一版註記照抄了問號的**字面**(`「s Crucian??」`),結果全庫「還剩幾處連續問號」
+的計數從 **8 被灌成 30** —— 註記把它要澄清的那個訊號本身弄髒了。
+還原重做,改成描述(`「s Crucian」後的兩個問號`),並在腳本加一條斷言:
+**註記裡不准出現連續問號**。重做後計數回到 8,逐檔也對得上(1/2/3/1/1)。
+
+同理註記裡不寫行號:註記自己會把行號往下推,寫了立刻過時,所以引原文片段。
+
+## 行號推移與錨點校正
+
+註記讓本文整體下移(+5 / +6 行)。查過 `data/**` 指向這 5 個檔的錨點:
+只有 2 個不同的 `#L`(在 `data/herbs/formulas.json`,共 6 處出現),都已加同樣位移:
+
+| 錨點 | 校正 | 指到的內容(改前=改後,逐字比對) |
+|---|---|---|
+| `Herbal Formulations…docx.md` | `#L6952-L6973` → `#L6957-L6978` | `Huang Tu Tang [黄土汤] (Yellow Earth Decoction) Source: Jin Gui Yao Lue` |
+| `方剂学汇总_extracted.md` | `#L3017` → `#L3022` | `Zhen Zhu Mu Wan [珍珠母丸] [Mother-Of-Pearl Pill] (Pu Ji Ben Shi Fang)` |
+
+**用內容驗證而不是只對數字**:改之前先把兩個錨點指到的文字存下來,改完再取一次
+比對,逐字相同才算過。`#p` 錨點不受影響(頁錨點靠 `## p.N` 標記,不靠行號)。
+
+順帶確認:前一批加註記的 3 個 conditions 檔(`2.2 Impotence` / `SHOULDER` / `NECK`)
+`#L` 錨點都是 0,那次沒有波及。
+
+## 驗證
+
+`build-data.js` + 驗證器全 exit=0;棘輪 13 條全 flat;
+`validate-curriculum-anchor-resolution` 仍是 7(全是無關的 A3 穴位課件頁碼)。
+全庫連續問號 8 處、`(cid:N)` 0 處。
+
 # 2026-09-01 — 1164 處 `(cid:0)` 還原為箭頭 `→`,21 個方劑課件檔
 
 Ting 裁定改掉。`(cid:N)` 是 pdftotext 對不到字形時把 CID 編號直接印成文字,

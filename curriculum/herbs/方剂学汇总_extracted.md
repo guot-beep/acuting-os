@@ -1,3 +1,8 @@
+<!-- 2026-09-01 查證:本檔那幾串連續問號是講義原文就有的,不是抽取時掉的字。
+       「Small formula: Dao Chi San Sheng Di, Mu Tong, Dan Zhu Ye, Gan cao」後的三個問號
+     本檔無二進位來源;同一句話在 Herbal Formulations Comprehensive.docx.pdf 裡查到,來源同樣印著連續問號。
+     旁證:同一份來源的中文(例 [导赤散])抽得出來,所以不是編碼吃字。
+     ——不要「補」成漢字。 -->
 
 
 

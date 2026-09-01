@@ -1,3 +1,8 @@
+<!-- 2026-09-01 查證:本檔那幾串連續問號是講義原文就有的,不是抽取時掉的字。
+       「Direct needling」句尾的三個問號
+     對來源 Advanced Techniques Notes.pdf 以 pdftotext -enc UTF-8 重抽比對,來源同樣印著連續問號。
+     旁證:同一份來源的中文(例 [导赤散])抽得出來,所以不是編碼吃字。
+     ——不要「補」成漢字。 -->
 # Advanced Techniques Notes
 
 > 自動抽取自 `curriculum/acupoints/Advanced Techniques Notes.pdf`(engine: pdfplumber+xycut)。**這是原始文字,未經整理或校對。**
