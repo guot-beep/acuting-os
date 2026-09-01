@@ -661,6 +661,10 @@ fail-loud 持久層 + v2 export + Git 外備份已覆蓋單機單人期的資料
 > - 驗證:`scripts/test-clinical-sqlite-service.js` 38 條(含負控)CI blocking;隔離服務上用真表單
 >   建病例 rev 0→1、投影 `cases=1 patients=1`、F5 仍在、非服務來源無徽章。
 > - 操作:`docs/SQLITE_RUNBOOK_2026-09-01.md`。狀態:plan ✅ shadow ✅ verify ✅ **pointer ✅ rollback ✅**。
+> - Ting 2026-09-01 晚**回報**真實資料遷移完成(五個核對 ✓、徽章 rev 1)。Claude 在跑 session 的機器(TT)上
+>   找不到對應 .db / 服務 / 今日匯出檔,推定在另一台電腦執行;**Claude 尚未核對**。手機仍 localStorage(B2 未解)。
+> - 2026-09-01 晚加自動備份:服務啟動 / 關閉 / 每 6h `VACUUM INTO` 到 `backups/`(留 14 份,revision 沒變略過);
+>   `--backup` 手動。同碟備份不擋硬碟死。
 
 ## D20 — Outcome metric 的判讀分兩個軸,不是一個 · LOCKED(2026-08-13,Ting:「兩個軸留著」)
 

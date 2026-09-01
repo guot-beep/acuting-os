@@ -57,6 +57,8 @@ const MAX_BODY = 64 * 1024 * 1024;
 const HISTORY_PER_KEY = 200;
 const DEFAULT_PORT = 8785;
 const DEFAULT_DB = path.join(os.homedir(), "Documents", "AcuTing", "acuting-clinical.db");
+const BACKUP_KEEP = 14;                              // backups/ 留最近幾份
+const BACKUP_INTERVAL_MS = 6 * 60 * 60 * 1000;       // 服務開著時,每 6 小時一份(revision 有變才做)
 const MIME = {
   ".html": "text/html; charset=utf-8",
   ".js": "text/javascript; charset=utf-8",
@@ -376,7 +378,56 @@ function statusReport(db, dbFile, store, projection) {
     history_rows: store.historyCount(),
     projection: projection.status(),
     projection_tables: tables,
+    last_backup_at: getMeta(db, "last_backup_at"),
+    last_backup_file: getMeta(db, "last_backup_file"),
+    last_backup_revision: getMeta(db, "last_backup_revision") === null ? null : Number(getMeta(db, "last_backup_revision")),
+    backups: listBackups(dbFile).length,
   };
+}
+
+// ── 自動備份(VACUUM INTO)──────────────────────────────────────────────────
+/* 現在 .db 是桌機病例的唯一正本(history 表在同一個檔裡,檔案沒了它也沒了)。
+ * VACUUM INTO 在服務開著時也能做出一致快照,所以:啟動時、每 6 小時、正常關閉時各做一次,
+ * revision 沒變就略過(不會每次雙擊都多一份空轉)。放在 .db 旁邊的 backups/,留最近 14 份。
+ * 這不取代「複製到隨身碟/雲端」—— 同一顆硬碟上的備份只擋誤操作與檔案損毀,不擋硬碟死掉。 */
+const backupDirOf = (dbFile) => path.join(path.dirname(dbFile), "backups");
+const backupBase = (dbFile) => path.basename(dbFile, path.extname(dbFile));
+function listBackups(dbFile) {
+  const dir = backupDirOf(dbFile), base = backupBase(dbFile) + ".";
+  try { return fs.readdirSync(dir).filter((f) => f.startsWith(base) && f.endsWith(".db")).sort(); }
+  catch (_) { return []; }
+}
+function backupNow(db, dbFile, opts) {
+  const force = !!(opts && opts.force);
+  const log = (opts && opts.log) || (() => {});
+  const rev = revisionOf(db);
+  const last = Number(getMeta(db, "last_backup_revision") ?? -1);
+  if (!force && rev === last) return { skipped: true, revision: rev };
+  const dir = backupDirOf(dbFile);
+  fs.mkdirSync(dir, { recursive: true });
+  /* 檔名必須**字典序 = 時間序**:保留策略與「最新一份」都靠排序。含毫秒;同一毫秒撞名時
+   * 用固定兩位序號 -00/-01(第一版用 ".db" 對 "-1.db",'-' 排在 '.' 前面,新檔反而被當成舊的)。 */
+  const stamp = new Date().toISOString().replace(/[:.]/g, "-");
+  const base = backupBase(dbFile);
+  let target = null;
+  for (let n = 0; n < 100; n++) {
+    const cand = path.join(dir, `${base}.${stamp}-${String(n).padStart(2, "0")}.db`);
+    if (!fs.existsSync(cand)) { target = cand; break; }
+  }
+  if (!target) throw new Error("同一毫秒內超過 100 份備份?不可能,停下");
+  db.exec(`VACUUM INTO '${target.replace(/'/g, "''")}'`);
+  setMeta(db, "last_backup_revision", String(rev));
+  setMeta(db, "last_backup_at", now());
+  setMeta(db, "last_backup_file", target);
+  const files = listBackups(dbFile);
+  const removed = [];
+  while (files.length > BACKUP_KEEP) {
+    const f = files.shift();
+    try { fs.unlinkSync(path.join(dir, f)); removed.push(f); } catch (_) { /* 鎖住就下次再清 */ }
+  }
+  const size = fs.statSync(target).size;
+  log(`backup ✓ ${path.basename(target)}(${(size / 1024).toFixed(0)} KB,rev ${rev});backups/ 保留 ${BACKUP_KEEP} 份${removed.length ? `,清掉 ${removed.length} 份舊的` : ""}`);
+  return { skipped: false, revision: rev, file: target, size, removed };
 }
 
 // ── server ────────────────────────────────────────────────────────────────
@@ -389,6 +440,19 @@ function startServer(opts) {
   cleanupTmp(dbFile);
   const store = createStore(db);
   const projection = createProjection(db, dbFile, store, { log, exporter: opts.exporter });
+  const autoBackup = opts.autoBackup !== false;
+  const backup = (why) => {
+    try {
+      const r = backupNow(db, dbFile, { log });
+      if (r.skipped) log(`backup 略過(${why}:revision ${r.revision} 沒變)`);
+    } catch (e) { log(`backup ✗(${why}):${e.message}`); }
+  };
+  let backupTimer = null;
+  if (autoBackup) {
+    backup("啟動");
+    backupTimer = setInterval(() => backup("定時"), BACKUP_INTERVAL_MS);
+    if (backupTimer.unref) backupTimer.unref();
+  }
   const ctx = { db, dbFile, store, projection, root, port: null, log };
   const handle = createHandler(ctx);
 
@@ -421,8 +485,13 @@ function startServer(opts) {
       ctx.port = port;
       const url = `http://${host}:${port}/`;
       const close = () => new Promise((r) => {
+        if (backupTimer) clearInterval(backupTimer);
         projection.dispose();   // 先取消投影排程,再關 db —— 順序反過來 timer 會撞到 finalize 過的 statement
-        server.close(() => { try { db.close(); } catch (_) { /* */ } r(); });
+        server.close(() => {
+          if (autoBackup) backup("關閉");   // 一天結束關視窗 = 當天的工作多一份快照
+          try { db.close(); } catch (_) { /* */ }
+          r();
+        });
         /* server.close() 只是不再接新連線,會等瀏覽器的 keep-alive 連線自己斷 —— 那可能是
          * 永遠(測試裡就這樣掛了五分鐘)。Ctrl+C 要立刻停,不是等 Chrome 心情好。 */
         if (server.closeAllConnections) server.closeAllConnections();
@@ -442,6 +511,7 @@ function parseArgs(argv) {
     else if (a === "--root") o.root = path.resolve(argv[++i]);
     else if (a === "--open") o.open = true;
     else if (a === "--status") o.status = true;
+    else if (a === "--backup") o.backup = true;
     else if (a === "--help" || a === "-h") o.help = true;
     else { console.error(`不認得的參數:${a}`); o.help = true; }
   }
@@ -461,6 +531,8 @@ function printStatus(rep) {
   else console.log(`投影表   ${p.ok ? "✓" : "⚠ 上次重建失敗"}  ${p.at}  ${p.cases ?? "?"} 筆病例  exit ${p.exit_code ?? "-"}${p.ok ? "" : "\n" + (p.summary || []).slice(-8).map((l) => "         " + l).join("\n")}`);
   const t = Object.entries(rep.projection_tables).filter(([, n]) => n > 0);
   if (t.length) console.log(`         有資料的表 ${t.length} 張:` + t.map(([k, n]) => `${k}=${n}`).join(" "));
+  if (rep.last_backup_at) console.log(`備份     最近 ${rep.last_backup_at}(rev ${rep.last_backup_revision})  backups/ 共 ${rep.backups} 份  ${rep.last_backup_file || ""}`);
+  else console.log("備份     還沒有(服務啟動 / 關閉 / 每 6 小時會自動做;或 --backup 立刻做一份)");
 }
 
 async function main() {
@@ -470,12 +542,16 @@ async function main() {
     console.log("      node scripts/clinical-sqlite-service.js --status [--db <path>]");
     process.exit(2);
   }
-  if (o.status) {
+  if (o.status || o.backup) {
     if (!fs.existsSync(o.db)) { console.log(`資料庫還不存在:${o.db}\n(啟動服務並在 app 裡存過一次檔之後才會有)`); process.exit(1); }
     const db = openDb(o.db);
     const store = createStore(db);
     const projection = createProjection(db, o.db, store, {});
-    printStatus(statusReport(db, o.db, store, projection));
+    if (o.backup) {
+      const r = backupNow(db, o.db, { force: true, log: (m) => console.log(m) });
+      console.log(`備份完成:${r.file}`);
+    }
+    if (o.status) printStatus(statusReport(db, o.db, store, projection));
     db.close();
     return;
   }
@@ -511,7 +587,7 @@ async function main() {
   process.on("SIGTERM", stop);
 }
 
-module.exports = { openDb, createStore, createProjection, createHandler, startServer, statusReport, serveStatic, KEYS, API, SERVICE, VERSION, DEFAULT_DB, DEFAULT_PORT, HISTORY_PER_KEY };
+module.exports = { openDb, createStore, createProjection, createHandler, startServer, statusReport, serveStatic, backupNow, listBackups, KEYS, API, SERVICE, VERSION, DEFAULT_DB, DEFAULT_PORT, HISTORY_PER_KEY, BACKUP_KEEP };
 
 if (require.main === module) {
   main().catch((e) => { console.error("⛔", e && e.stack || e); process.exit(1); });

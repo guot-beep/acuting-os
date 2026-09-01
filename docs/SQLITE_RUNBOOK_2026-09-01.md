@@ -89,9 +89,12 @@ node C:\Projects\acuting-sqlite-tools\scripts\clinical-sqlite-service.js --statu
 - **桌機**:雙擊 `.cmd` → 用 `127.0.0.1:8785`。加書籤,取名「AcuTing 診所」。
 - 桌機瀏覽器裡 workers.dev 的書籤改名「舊 · 手機用」。**不要再在桌機用它建病例**(那會寫進舊簿子,幾天後妳會有兩本對不起來的簿子)。
 - **手機**:照舊 workers.dev。
-- **備份**:關掉黑視窗之後,把 `Documents\AcuTing\acuting-clinical.db` 複製到隨身碟或雲端 = 完整備份。
-  (要先關服務:SQLite 開著的時候資料有一部分在旁邊的 `-wal` 檔裡,關掉才會併回主檔。)
-  或照舊在 app 裡按「匯出 JSON」。**`.db` 絕對不進 git**(D7;`.gitignore` 已擋 `*.db`)。
+- **備份(自動)**:服務**啟動時、關閉時、每 6 小時**會自己在 `Documents\AcuTing\backups\` 存一份完整快照
+  (revision 沒變就不多存),留最近 14 份。想立刻多一份:`node …\clinical-sqlite-service.js --backup`。
+  這些都在同一顆硬碟上,只擋誤操作與檔案壞掉,**不擋硬碟死掉** —— 每週把 `backups\` 最新那一份
+  複製到隨身碟或雲端。或照舊在 app 裡按「匯出 JSON」。**`.db` 絕對不進 git**(D7;`.gitignore` 已擋 `*.db`)。
+- **為什麼 .db 不放 OneDrive**:`Documents\AcuTing` 指的是本機的 `C:\Users\<妳>\Documents`,不是 OneDrive 那個
+  Documents。這是刻意的 —— 病例不離開這台電腦(D7)。
 - **更新卡片內容**:照常 push;下次雙擊 `.cmd` 會先抓最新 main 再啟動。
 
 ### 6. 回頭(任何時候)
@@ -134,7 +137,7 @@ node C:\Projects\acuting-sqlite-tools\scripts\clinical-sqlite-service.js --statu
 | plan | ✅ |
 | shadow | ✅ 影子匯出(下午) |
 | verify | ✅ Ting 真實病例 1 筆,5/5 |
-| **pointer** | ✅ **2026-09-01 晚**(本文件) |
+| **pointer** | ✅ **2026-09-01 晚**(本文件)。Ting 2026-09-01 晚**回報**完成(五個核對 ✓、徽章 rev 1);Claude 在 TT 這台機器上找不到對應的 .db / 服務,推定在另一台電腦執行,**尚未由 Claude 核對** |
 | rollback | ✅ 設計即回滾:開回 workers.dev;localStorage 從未被寫 |
 
 ---

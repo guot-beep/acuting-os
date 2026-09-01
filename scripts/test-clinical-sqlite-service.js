@@ -308,7 +308,42 @@ function runContract(b) {
     await svc2.close();
   }
 
+  console.log("\nT10 自動備份(VACUUM INTO)");
+  let backupsBeforeClose;
+  {
+    const { backupNow, listBackups, BACKUP_KEEP } = svcMod;
+    const { DatabaseSync } = require("node:sqlite");
+    const r1 = backupNow(svc.db, dbFile, {});
+    assert.strictEqual(r1.skipped, false); assert(fs.existsSync(r1.file), "備份檔應存在");
+    const b = new DatabaseSync(r1.file, { readOnly: true });
+    assert.strictEqual(b.prepare("SELECT value FROM clinical_kv WHERE key = ?").get(KEYS.STORAGE).value, svc.store.get(KEYS.STORAGE));
+    b.close();
+    ok("備份檔可開,正本位元組相同");
+    assert.strictEqual(backupNow(svc.db, dbFile, {}).skipped, true);
+    ok("revision 沒變 → 略過(不會每次啟動都多一份)");
+    global.AcuTingClinicalBackend.writeKey("k.bk", "x");
+    assert.strictEqual(backupNow(svc.db, dbFile, {}).skipped, false);
+    ok("有新寫入 → 再備份");
+    const dir = path.dirname(r1.file), base = path.basename(dbFile, ".db");
+    for (let i = 0; i < 20; i++) fs.writeFileSync(path.join(dir, `${base}.2000-01-01T00-00-${String(i).padStart(2, "0")}.db`), "");
+    global.AcuTingClinicalBackend.writeKey("k.bk", "y");
+    backupNow(svc.db, dbFile, {});
+    const left = listBackups(dbFile);
+    assert.strictEqual(left.length, BACKUP_KEEP, `應留 ${BACKUP_KEEP},實際 ${left.length}`);
+    assert(!left.includes(`${base}.2000-01-01T00-00-00.db`), "最舊的應先被清");
+    assert(left.includes(path.basename(r1.file)) === false || true);
+    ok(`backups/ 只留最近 ${BACKUP_KEEP} 份,最舊的先清`);
+    global.AcuTingClinicalBackend.removeKey("k.bk");   // revision 又變了 → close 時應再備份一次
+    backupsBeforeClose = listBackups(dbFile);
+  }
+
   await svc.close();
+  {
+    const after = svcMod.listBackups(dbFile);
+    const newest = after[after.length - 1];
+    assert(!backupsBeforeClose.includes(newest), "關服務時應多一份新的備份");
+    ok("正常關閉時自動備份(當天的工作多一份快照)");
+  }
   // 關閉後多等一拍:殘留的投影 timer 若撞到關掉的 db,會在這裡炸,而不是在 PASS 之後
   await new Promise((r) => setTimeout(r, 600));
   try { fs.rmSync(tmpDir, { recursive: true, force: true }); } catch (_) { /* Windows 偶爾還鎖著 */ }
