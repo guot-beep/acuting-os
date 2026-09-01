@@ -103,6 +103,28 @@ if (blocked.length) {
 }
 console.log(`halt-not-drop:${noDest.length} 個無去處欄位,這份資料裡都沒有值 ✓`);
 
+/* ── 病人代號前置檢查(2026-09-01)────────────────────────────────────
+ * schema.sql 的 cases.patient_id 是 NOT NULL,而 app 允許病例不填病人代號
+ * (對照表 R9 gate C:blank code → patientId=null)。這是 schema 與 app 之間
+ * 既有的矛盾,不是這支能自己裁的。實測:一筆沒代號的病例會讓 SQLite 拒絕
+ * 它和它底下 9 列子資料,而且是寫到一半才印一串 constraint 錯誤 ——
+ * 產出的 .db 看起來完整、其實少一筆。這正是「halt, not drop」要擋的。
+ * 所以在建庫之前就查,有就停,零寫入,把哪幾筆列出來讓她回 app 補。 */
+// 不用下面才宣告的 S():這段跑在建庫之前,S 在那時還在 TDZ(第一版就這樣崩過)。
+const patientCodeOf = (c) => String((c && c.patientCode) || "").trim();
+const noCode = cases.filter((c) => !patientCodeOf(c));
+if (noCode.length) {
+  console.error(`\nFAIL — ${noCode.length} 筆病例沒有病人代號,SQLite 的病例表要求每一筆都掛在一個病人上。`);
+  for (const c of noCode) {
+    console.error(`  病例 ${c.id}  「${String(c.caseTitle || "(無標題)").slice(0, 40)}」  開案日 ${c.startDate || "?"}`);
+  }
+  console.error(`\n什麼都沒有被寫出去,原本的病例一個字都沒動。`);
+  console.error(`下一步:到 app 裡把這幾筆的「病人代號」補上(去識別化代號即可,例如 P-001),再跑一次。`);
+  console.error(`如果它是測試病例,直接刪掉也行。`);
+  process.exit(1);
+}
+console.log(`病人代號前置檢查:${cases.length} 筆病例都有代號 ✓`);
+
 // ── 建庫 ─────────────────────────────────────────────────────────────────
 fs.rmSync(outFile, { force: true });
 const db = new DatabaseSync(outFile);

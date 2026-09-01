@@ -53,6 +53,11 @@ D18 是 LOCKED 的,妳的原話是條件觸發制:病例 ≥50、或多裝置需
 
 ### 步驟二 — 跑一行指令
 
+> 腳本住在 **`C:\Projects\acuting-sqlite-tools`**(一份釘在 main 的唯讀副本,重開機不會消失)。
+> **不要**用 `C:\Projects\acupuncture-point-app` 那份 —— 那個 worktree 在
+> `codex/pattern-v2` 分支、落後 main 一百多個 commit、**裡面根本沒有這支腳本**
+> (2026-09-01 實測)。在那裡跑會得到 `Cannot find module`,不是妳的問題。
+
 開 PowerShell,先讓它找得到 Node:
 
 ```powershell
@@ -62,7 +67,7 @@ $env:Path = "C:\Program Files\nodejs;" + $env:Path
 然後(把路徑換成妳實際的檔名):
 
 ```powershell
-node C:\Projects\acupuncture-point-app\scripts\export-clinical-to-sqlite.js "$env:USERPROFILE\Downloads\acuting-cases.json" "$env:USERPROFILE\Documents\acuting-clinical.db"
+node C:\Projects\acuting-sqlite-tools\scripts\export-clinical-to-sqlite.js "$env:USERPROFILE\Downloads\acuting-cases.json" "$env:USERPROFILE\Documents\acuting-clinical.db"
 ```
 
 ### 步驟三 — 看它印什麼
@@ -74,6 +79,7 @@ node C:\Projects\acupuncture-point-app\scripts\export-clinical-to-sqlite.js "$en
 | `halt-not-drop:… 都沒有值 ✓` | 沒有欄位是「有資料卻沒地方放」 |
 | `寫入結果` 一張表幾列 | 資料真的進去了 |
 | `對照表覆蓋 … 合計 105 / 105 ✓` | 105 條規則全部歸位,沒有漏算 |
+| `病人代號前置檢查:… 都有代號 ✓` | 每筆病例都掛得上病人。**沒代號的會整支停下**並列出是哪幾筆 —— 回 app 補代號(或刪掉測試病例)再跑 |
 | `往返核對 … ✓ 全部相符` | 從 SQLite 讀回來的內容與原本逐字一樣 |
 
 **只要有任何一行是 ⛔ 或 ⚠️,就停下來把整段貼給我。**
