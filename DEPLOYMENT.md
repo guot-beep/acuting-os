@@ -115,26 +115,45 @@ No build step is required right now.
 
 ## Cloudflare Pages 部署(2026-07-26 定案)—— **這是正式上線的路徑**
 
-### AI session 怎麼驗收(2026-08-31 補)
+### 正式網址(Ting 提供,2026-09-01)
 
-線上站鎖在 Cloudflare Zero Trust 後面(只有 Ting 的 email + 一次性 PIN),
-**AI session 開不了、也不該去登入她的帳號**。而且專案的 `*.pages.dev` 網址
-沒有寫在 repo 裡任何地方。所以:
+```text
+https://acuting-os.guotingru.workers.dev/
+```
 
-- **不要**拿線上網址當驗收目標,拿不到就當「壞了」——你只是進不去。
-- 驗收改成兩層,兩層都做:
-  1. `node scripts/dev-server.js <port>` 起本機服務,開卡片用眼睛讀;
-  2. `node scripts/build-site.js` 產出 `dist/`,**驗那份產物**——
-     那才是真正會送到她手機上的東西。載入 `dist/data/generated/*.js`
-     取出記錄來比對,不要用字串 grep(bundle 是壓過的,grep 會給假陰性;
-     2026-08-31 就這樣誤判過一次「青木香沒有 deprecated」)。
-- 單檔超過 25 MiB 部署會失敗,而失敗發生在 Cloudflare 那端。
-  `build-site.js` 從 2026-08-31 起會直接 exit 1(20 MiB 先出警告),
-  不再只是 console.warn —— 否則唯一會發現的人是打開手機發現網站沒更新的 Ting。
+注意是 `workers.dev`,不是本節下面寫的 `*.pages.dev` —— 實際部署走的是 Worker
+(或 Pages-on-Workers)。這個網址先前只存在於 Cloudflare 後台,repo 裡沒有,
+2026-09-01 才由 Ting 貼出來記進這裡。
 
-**Ting 這邊值得做一次的事**:把專案的 `*.pages.dev` 網址寫進這份文件。
-現在它只存在於 Cloudflare 後台,任何人(包括妳自己換裝置時)都得回後台翻。
+**實測(2026-09-01,從她自己的機器用純 node fetch 與獨立瀏覽器 profile 各驗一次):**
+- 回 200,直接拿到 app —— **沒有經過 Cloudflare Access 的登入頁**。
+  本節下面「上鎖(只有 Ting 能開)」那段描述的 Zero Trust 政策,**沒有套在這個
+  hostname 上**(可能是套在 pages.dev 那個、而這個 workers.dev 是另一份沒鎖的部署)。
+- 這**不是** PHI 外洩:app 是純前端 + localStorage,伺服器上沒有任何病例。
+  陌生人打開只會看到知識庫 + 一本空的病例簿。
+- 但文件說它是私有的而它不是 —— 要不要鎖、鎖哪一個,是 Ting 的決定
+  (已列進 docs/TING_PENDING_RULINGS_2026-08-31.md B3)。
+- 當天 main 的所有修正都已在線上(逐一比對 js/knowledge.js 與
+  js/clinical-store.js 的標記,並開瀏覽器讀 DOM:508 張病症卡的紅旗區
+  0 張印壞字串,痛風卡印「緊急轉診 ⚠ 發燒合併關節症狀 → 立即轉診排除感染性關節炎」)。
 
+### AI session 怎麼驗收
+
+既然這個 hostname 沒有 Access,AI session **可以**直接驗線上版 —— 但只准**唯讀**:
+只導覽、只讀 DOM、**絕不碰 localStorage**。線上版在 Ting 自己的瀏覽器裡裝著她的
+真實病例;AI 的瀏覽器 profile 是獨立的(看到 0 筆病例是正常的),但在線上網址
+上建測試病例、清 localStorage 都是不可原諒的手滑。要做寫入測試一律用本機服務
+(`node scripts/dev-server.js <port>`)。
+
+驗收仍然兩層:
+1. 本機服務開卡片眼讀(可以寫入、可以建測試病例);
+2. `node scripts/build-site.js` 產出 `dist/`,驗那份產物 —— 載入
+   `dist/data/generated/*.js` 取記錄比對,不要字串 grep(bundle 壓過,grep 會給
+   假陰性,2026-08-31 就這樣誤判過「青木香沒有 deprecated」)。
+3. 線上版只做第三層確認:fetch 標記 + 唯讀 DOM。
+
+單檔超過 25 MiB 部署會失敗,而失敗發生在 Cloudflare 那端。`build-site.js` 從
+2026-08-31 起會直接 exit 1(20 MiB 先出警告),不再只是 console.warn。
 
 **設定**(Cloudflare Dashboard → Workers & Pages → 專案 → Settings → Build):
 

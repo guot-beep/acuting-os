@@ -216,15 +216,27 @@ TDIS 用 registry 的 `emergency_referral / urgent_referral / routine_referral`(
 
 詳見 `docs/SQLITE_RUNBOOK_2026-09-01.md`。
 
-### B3 · 部署網址沒有寫在 repo 裡
+### B3 · 線上版沒有上鎖(網址已記入 DEPLOYMENT.md)
 
-線上站是 Cloudflare Pages,鎖在 Zero Trust 後面(妳的 email + 一次性 PIN)。
-專案的 `*.pages.dev` 網址**只存在於 Cloudflare 後台**,repo 裡沒有。
-後果:任何人(包括妳換裝置時)都得回後台翻;AI session 也無法驗線上版,
-只能驗本機服務與 `dist/` 產物。
+妳 9/01 貼給我的網址 `https://acuting-os.guotingru.workers.dev/` 已經寫進
+DEPLOYMENT.md,這條的前半解決了。但我拿到網址後實測發現一件事:
 
-- **(a) 把網址寫進 DEPLOYMENT.md** ← 我建議,30 秒的事
-- (b) 不寫(維持只有妳知道)
+**它沒有經過 Cloudflare Access。** 純 node fetch 直接回 200 拿到 app,獨立瀏覽器
+profile 也直接開得起來,沒有 email + 一次性 PIN 那一關。DEPLOYMENT.md 裡
+「上鎖(只有 Ting 能開)」那段描述的政策,沒有套在這個 `workers.dev` hostname 上
+(可能是套在 pages.dev 那個、而這個是另一份沒鎖的部署)。
+
+先說清楚**不是**什麼:不是 PHI 外洩。app 是純前端 + localStorage,伺服器上沒有
+任何病例,陌生人打開只會看到知識庫 + 一本空的病例簿。
+
+但是:文件說它私有而它公開;而且知識庫是妳的策展成果。
+
+- (a) 把 Cloudflare Access 套到 `workers.dev` 這個 hostname 上(後台幾分鐘的事)
+- (b) 維持公開 —— 那就把 DEPLOYMENT.md「上鎖」那段改掉,別讓文件說謊
+- (c) 先不動,開診後再看 ← **開診前我不建議動部署設定**,但 (b) 的文件更正
+  可以現在做
+
+不裁定的後果:下一個人讀文件會以為它是私有的。
 
 ### B4 · 那個只有妳能做的 30 秒任務(還沒做)
 
