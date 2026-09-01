@@ -1,5 +1,14 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-08-31] Codex Handoff — Task 11G 董氏穴位死連結處置清單
+
+- **Branch / Base / Remote**：`codex/tung-dead-link-disposition`，rebase 後基底 `origin/main@9ce64a6b`；產物 commit `5e1a8fc4`。已推到該分支，等驗收。
+- **清單**：`data/audits/tung_dead_link_disposition_2026-08-28.json`；Task 11E 分母維持 `total 1384 / dead404 1133 / deadImages 722`。`1133/1133` distinct 404 URLs 全部對回 411 張卡與 1,215 個精確 `(card_id, url, field_path)` 原始欄位 occurrences。
+- **分類**：distinct dead URLs = 圖片 722／參考連結 411；原始欄位 occurrences = 圖片 722／參考連結 493。411 張受影響卡中，只有 `ex.le3` 百蟲窩的 ledger-scanned 外部連結全為 404；其餘卡至少仍有一條 `OK` URL。`same_site_candidate` 已驗證 0、維持 `null` 411、live candidate checks 0，沒有用網址規律猜候選。
+- **驗證器**：`scripts/audit-source-url-liveness.js` 新增 `--verify-disposition`，雙向比對 ledger URL 聯集、卡片存在性、`is_image`、原始 `field_path` occurrence、逐卡計數與 summary；`--self-test` 新增「漏一條 dead URL」與「不存在 card_id」兩個負控，總結果 `13/13`。
+- **本輪實跑**：`PASS — 1133/1133 distinct dead URLs mapped to 411 cards and 1215 exact source-field occurrences; 1 all-links-dead card(s).`；`Self-Test Results: 13/13 fixtures behaving as expected.`；`validate-acupoint-standard: 361 points (361 template-grade) ... PASS — no blocking defects.`；`Point id validation passed.`；`check-validation-ratchet.js`=`PASS — no regressions.`；`build-data.js` 後 generated 零 diff；`validate-content-junk.js` 只有 frozen-baseline warnings 且最後 PASS；`git diff --check` 無輸出。
+- **邊界 / 下一步**：canonical `data/acupoints/**`、`app.js`、`js/**`、`data/generated/**` 零異動；本輪只出清單、驗證模式、報告與 handoff。後續移除、降級純文字或換來源仍需 Ting／內容線裁定。
+
 ## [2026-08-21] Codex Handoff — TDIS／herb contraindications／formula songs and rulings
 
 - **Branch / Base / Remote**: `codex/tdis-herb-fill-20260820`, rebased on `origin/claude/system-optimization-3ptpk0@2cb06a0b`; rewritten content commits `a705bd91`, `afb0448e`, `8f2b16dd`, `18ef1512`, `e9e836ac`, `50f5e432`, plus handoff `8d503397`. Branch is pushed; stacked draft PR [#66](https://github.com/guot-beep/acuting-os/pull/66) targets `claude/system-optimization-3ptpk0`.

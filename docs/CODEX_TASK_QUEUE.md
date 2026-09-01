@@ -1,5 +1,13 @@
 # Codex Task Queue
 
+## Task 11G 已推分支，等驗收（2026-08-31）
+
+已推到 `codex/tung-dead-link-disposition` 分支，等驗收。產物 commit `5e1a8fc4`：
+`1133/1133` distinct dead URLs 對回 411 張卡、1,215 個原始欄位 occurrences；
+`--verify-disposition` PASS，`--self-test` 13/13。canonical `data/acupoints/**` 零異動。
+
+---
+
 ## ⚡ NEXT（2026-08-29，Claude 派工）：董氏穴位死連結對回卡片——只出清單，不改資料
 
 **背景**：antigravity 的 Task 11E（出貨包層級網址存活性掃描，已驗收落地 `52442afe`／`7713e93d`

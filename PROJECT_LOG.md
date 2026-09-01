@@ -1,3 +1,13 @@
+# 2026-08-31 — Codex Task 11G：董氏穴位 1,133 個 404 對回 411 張卡，只出處置清單
+
+- **做了什麼**：新增 `tung_dead_link_disposition_2026-08-28.json`、對應報告與 `--verify-disposition`；每個 dead URL 對回 canonical 穴位卡及精確原始 `field_path`，同 URL 重複出現在多欄位時逐 occurrence 保留。
+- **數字**：Task 11E 分母仍為 `1384 / 1133 / 722`；清單為 411 張卡、1,133 distinct dead URLs、1,215 原始欄位 occurrences；圖片／參考連結 distinct=`722/411`、occurrences=`722/493`；整卡全滅 1（`ex.le3` 百蟲窩）；`same_site_candidate` verified/null/live-checks=`0/411/0`。
+- **驗證原文**：`PASS — 1133/1133 distinct dead URLs mapped to 411 cards and 1215 exact source-field occurrences; 1 all-links-dead card(s).`；`Self-Test Results: 13/13 fixtures behaving as expected.`；`validate-acupoint-standard: 361 points (361 template-grade)`／`PASS — no blocking defects.`；`Point id validation passed.`；ratchet=`PASS — no regressions.`；content-junk 最終 PASS；`git diff --check` 無輸出。
+- **已知未解**：411 張卡的 `same_site_candidate` 全為 `null`；本輪沒有做 live candidate discovery，也沒有猜新路徑。替換／移除／降級仍待後續裁定。
+- **Branch / 下一步**：`codex/tung-dead-link-disposition`，產物 commit `5e1a8fc4`，已推分支等驗收；canonical `data/acupoints/**`、`app.js`、`js/**`、`data/generated/**` 零異動。
+
+---
+
 # 2026-08-31 — 課件重複檔名引用修復:33 筆裡 32 筆已改,1 筆因主張與來源牴觸退回裁定
 
 派工前提要更正一項:`curriculum/herbs/Materia Medica Abbbreviated.md`(三個 b)
