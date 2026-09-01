@@ -1,3 +1,106 @@
+# 2026-08-31 — 還原課件舊抽取(4 檔),48 個 #L 錨點逐筆重驗:46 對、2 錯而兩筆都是我上一批弄的
+
+Ting 裁定:還原成舊抽取,然後把那 47 筆重驗一次。
+
+## 還原範圍:只動 4 檔,但退化是 47 檔
+
+先量範圍再動手。`ebef2401` 觸及 96 個 `curriculum/**.md`,其中 **49 個是新增**
+(無舊版可比)、**47 個退化**、改善 0、無變化 0。**47 個退化檔的 CJK 全部歸零**,
+不只那兩個 Chenoweth 檔。
+
+本批只還原 4 個(兩對孿生檔,留一半舊一半新只會製造新的混亂):
+
+| 檔 | 行 | CJK | U+FFFD |
+|---|---|---|---|
+| `materia_medica_abbreviated_chenoweth.md` | 3475 → **9007** | 0 → **1110** | 3582 → **0** |
+| `Materia Medica Abbbreviated.md`(孿生) | 同上 | 同上 | 同上 |
+| `herb_functions_chenoweth.md` | 1011 → **2282** | 0 → **201** | 2079 → **0** |
+| `Herb Functions.md`(孿生) | 同上 | 同上 | 同上 |
+
+**回捲前先確認不會丟東西**:比對兩版的英數詞集合。新版獨有的 71 / 22 個詞
+幾乎全是新檔頭樣板(`extracted, scripts, cite, verify, lab, value`)與**壞掉的拼音**
+(`shng, cng, jng, fng, tin, qng` = 聲調母音被刪);舊版獨有的則是真內容——
+`crohn, addison, alzheimer, athlete, horse, dutchman, wu-zhu, aso`。
+所以這 4 檔的新版是**純粹變差**,回捲不丟內容。
+
+`curriculum/**` 是 Ting 的目錄(AI 只讀),本次是依她明確指示動的。
+
+## 48 個 #L 錨點逐筆重驗
+
+指向這 4 檔的 `#L` 錨點:**48 個不同錨點、289 次出現**(249 在
+`herb_canon_shortlist.json`、38 在 `herb_pairs.json`、2 在稽核檔)。
+每一筆都把「引用者 + 欄位 + 錨點指到的原文」並排印出來人工讀過。
+
+**46 筆指對** —— 每個錨點都落在它被引用的那味藥自己的條目上。抽樣:
+
+- `#L222-L231` → `Jú Huā (菊花) [Chrysanthemum]`(herb.ju_hua)
+- `#L1197-L1218` → `Bā Doù (巴豆) [Clinging Bean]`(herb.ba_dou)
+- `#L8624-L8648` → `Wú Gōng (蜈蚣) [Centipede]`(herb.wu_gong)
+- `#L6175-L6199` → `Xiān Máo 仙茅 [Immortal Grass]`(herb.xian_mao)
+- `#L523-L531` → `Shŭi Niú Jiăo (水牛角)`(herb.shui_niu_jiao)
+
+也就是說:**這 48 筆當初全部引對了**。是 `ebef2401` 重抽把檔案換掉,才讓其中
+19 筆變成超界、其餘看起來「還在範圍內」卻指到別的地方。不是任何人引錯。
+
+## 2 筆錯的,兩筆都是我 2026-08-31 弄出來的
+
+1. **`pair.lu_dou__gan_cao.sources[0]`** —— 我上一批把原錨點 `#L1245-L1247`
+   判成「指到 p.15 活血化瘀藥,與綠豆甘草無關」並改成 `#L344-L350`。
+   **那個診斷是錯的**:原錨點對的是舊抽取,本來就正確。還原後 `#L344-L350`
+   反而指到**淡竹葉**條目。已改回 `#L1245-L1247`(p.6 巴豆條目
+   「Minimize toxicity: prescribe with Gan Cao & Lu Dou」),並**加上**
+   綠豆自身條目 `#L882-L888`(p.5「Antidote: Fu Zi, Ba Dou, other poisons
+   (Powder & soak in cold water) [w/ Gan Cao]」)作為第一手依據。
+   自我更正的理由逐字寫進 `import_artifacts`。
+
+2. **`herb.han_shui_shi.tcm_properties.source_note_zh`** 引的是壞版拼音
+   「Han Shi Shi [Calcitum]」—— 那是劣化檔的 OCR 殘骸。還原後原文是
+   「Hán Shŭi Shí (寒水石) [Calcitum]」,引文照原文更新,原文存證。
+   性味歸經與 p.2 不變(還原檔 L388-L391 重新核對)。
+
+## 我上兩批寫的頁錨點全部通過還原檢驗
+
+`#pN` 跨抽取版本通用的推論成立,實測:
+
+| 卡 | 錨點 | 還原檔位置 | 落在 |
+|---|---|---|---|
+| herb.han_shui_shi | `#p2` | L388 `Hán Shŭi Shí (寒水石) [Calcitum]` | p.2 ✅ |
+| herb.xi_jiao | `#p3` | L509 `Xī Jiăo (犀角) [Rhinoceros Horn]` | p.3 ✅ |
+| herb.chuan_shan_jia | `#p16` | L3327 `Chuān Shān Jiă (穿山甲)` | p.16 ✅ |
+| herb.shan_yang_jiao | `#p38` | L8252 `Shān Yáng Jiăo 山羊角` | p.38 ✅ |
+| herb.zhen_zhu_mu | `#p38` | L8400 `Zhēn Zhū Mu (珍珠) [Mother of Pearl]` | p.38 ✅ |
+
+犀角的補值在單欄版面下更乾淨:`[5] Clear Heat, Cool Blood (Bitter/CD)` 章名、
+`Xī Jiăo (犀角) [Rhinoceros Horn]`、`(B/Cd) Salty [HT, LV, ST]` 三行相連,
+下方 `Shŭi Niú Jiăo (水牛角) / (Cd) Salty [HT, LV, ST]` 明確是另一條,
+完全沒有跨欄疑慮。水牛角**無苦味**也再次確認,前一批留給 RV1 的那個疑點依然成立。
+
+珍珠母同頁兩條:`Zhēn Zhū (珍珠) [Precious Ball] / Margarita [Pearl]`(L8379)與
+`Zhēn Zhū Mu (珍珠) [Mother of Pearl]`(L8400)。課件把後者的中文也寫成「珍珠」,
+是來源自身的筆誤,靠拼音與英文名分辨;本庫兩張卡分立不受影響。
+
+## 驗證
+
+`build-data.js` + CLAUDE.md 列的 15 支 + `validate-ui-freeze` +
+`validate-retired-id-references` + `test-branch-mergeable` 全 exit=0。
+
+棘輪 `curriculum_anchors` **26 → 7(−19)**,`A2 行號超出範圍` 從基線**完全消失**,
+只剩 `A3 頁碼超出範圍` 7 筆(穴位課件,屬穴位線判斷)。其餘 12 條 flat,已 `--update`。
+
+開卡看過:綠豆/甘草/寒水石/犀角/珍珠母 五張 × 各分頁,無 `Abbbreviated`、
+無裸錨點漏到畫面、核心欄未被清空;犀角仍是「苦、鹹，寒 / 心經、肝經、胃經」。
+
+## 還沒處理
+
+另外 **43 個退化檔**(CJK 同樣歸零)沒有動,因為有些新版**行數反而變多**——
+`Formulations Summary Chart` 1700→2637、`AP Point Book` 13863→17398、多個 MM2 模組
+也是。那些檔整批回捲會丟掉新抽到的英文內容,得逐檔比對詞集合才知道划不划算,
+而且 `formula.er_xian_tang` 的 `#L2188-L2206` 正是只存在於**新版**的座標
+(舊版只有 1700 行),回捲會反過來弄壞它。這批不碰,留裁定。
+
+根本解其實是把抽取器修好(讓它不吃中文)再重抽一次,那樣兩邊的好處都拿得到;
+但那要動 `scripts/extract-curriculum-md.js` 與全部 96 個檔,是另一條線。
+
 # 2026-08-31 — 課件錨點驗證器上線;A1 改名 6 筆修掉;查出重抽把兩個課件的中文全滅
 
 Ting 裁定「機械重映射 47 筆 + 做成驗證器」。驗證器做了、A1 修了,**但 47 筆行號
