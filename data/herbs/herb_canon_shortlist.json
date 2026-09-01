@@ -694,9 +694,9 @@
         "formula.zhi_shi_xie_bai_gui_zhi_tang"
       ],
       "safety_flags": [
-        "pregnancy_priority_review",
-        "bleeding_priority_review",
-        "herb_drug_interaction_review"
+        "pregnancy_review",
+        "bleeding_review",
+        "medication_review"
       ],
       "clinical_use_note": "桂枝是中藥，別名:桂枝尖,桂心,柳桂, 功效:發汗解表,風寒表實證,辛溫行散,透達營衛,善於外行肌腠,祛除風寒,溫經通脈止痛,助心陽,通陽利水,去風濕，肩背肢節酸疼,抗炎、抗過敏作用,改善心血管系統,抗菌抗病毒,鎮靜、抗驚厥作用,近來發現桂枝對體溫有雙向調節作用。",
       "modern_use_tags": [
@@ -1192,7 +1192,7 @@
         "formula.xing_su_san"
       ],
       "safety_flags": [
-        "pregnancy_priority_review",
+        "pregnancy_review",
         "source_access_review"
       ],
       "clinical_use_note": "紫蘇葉是中藥別名:蘇,蘇葉,紫菜,蘇葉,赤蘇,紅蘇,紅紫蘇,皺紫蘇。主治功效:發表散寒,,開宣肺氣,行氣寬中理氣。治感冒風寒,惡寒發熱,咳嗽,氣喘,胸腹脹滿,胎動不安,安胎,解魚蟹毒,妊娠惡阻止嘔,用於感冒風寒,發熱惡寒,頭痛鼻塞,降氣,補中益氣,安胎,降血糖,鎮靜理氣行氣,補陽,溫裡溫中,止咳平喘,抗菌,提升免疫力,降血脂...等等",
@@ -1668,8 +1668,8 @@
         "formula.xuan_fu_dai_zhe_tang"
       ],
       "safety_flags": [
-        "heat_pattern_contraindication",
-        "herb_drug_interaction_review"
+        "heat_sign_review",
+        "medication_review"
       ],
       "clinical_use_note": "生薑是中藥，別名:百辣雲,因地辛,薑母,生薑,炎涼小子,薑根,蜜炙薑,生薑汁,勾裝指,鮮生薑,薑, 功效:主風寒感冒；惡寒發熱；頭痛鼻塞；嘔吐；痰飲喘咳；脹滿；泄瀉。散風寒。止咳化痰,補陽,抗氧化,抗潰瘍作用,抗癌,,減肥減重,止嘔,解表,降氣,健脾胃,抗菌、抗病毒,抗發炎,降血壓,解毒...等等。",
       "modern_use_tags": [
@@ -3118,7 +3118,7 @@
       ],
       "safety_flags": [
         "pregnancy_source_conflict",
-        "herb_incompatibility_review"
+        "incompatibility_review"
       ],
       "clinical_use_note": "防風是中藥，別名:白毛草,百枝,茴芸,百蜚,銅芸,閭根,茴草,風肉,屏風,山芹萊, 功效:袪風解表、除濕、止痙、止瀉、止血用於感冒頭痛，風疹瘙癢。散風寒,止瀉,止痛,祛風除濕,抗菌,去風止痙,抗癌,抗氧化,解表\n止血,去風止痛,鎮靜,提升免疫力,降血壓,抗凝血...等等。",
       "modern_use_tags": [
@@ -5359,13 +5359,13 @@
         "formula.gan_lu_xiao_du_dan"
       ],
       "safety_flags": [
-        "exterior_deficiency_contraindicated",
-        "liver_yang_rising_contraindicated",
-        "yin_deficiency_heat_contraindicated",
-        "lactation_contraindicated",
-        "pediatric_essential_oil_inhalation_avoid",
+        "sweating",
+        "liver_yang_rising_review",
+        "yin_deficiency_review",
+        "lactation_review",
+        "pediatric_review",
         "hiatal_hernia_contraindicated",
-        "late_decoction_required"
+        "dose_preparation_review"
       ],
       "clinical_use_note": "薄荷質輕上浮，是辛涼解表中清頭目、利咽與疏肝的代表。與桑葉、菊花同用偏疏散風熱；與桔梗、牛蒡子同用偏利咽；少量入逍遙散類方則取疏肝解鬱。考試要記「後下」以保存揮發油，並區分一般飲片與高濃度薄荷精油的孕期安全性。",
       "modern_use_tags": [
@@ -6030,12 +6030,12 @@
       ],
       "safety_flags": [
         "pregnancy_caution",
-        "exterior_deficiency_caution",
-        "qi_yin_deficiency_caution",
-        "sedative_interaction",
-        "caffeine_interaction",
-        "pediatric_dose_review",
-        "insect_allergy_review"
+        "sweating",
+        "yin_deficiency_review",
+        "sedative_medication_review",
+        "medication_review",
+        "pediatric_review",
+        "allergy_review"
       ],
       "clinical_use_note": "蟬蛻質輕，除疏散風熱外，考試重點是利咽開音、透疹止癢、明目退翳、息風止痙。和薄荷相比更偏聲音嘶啞、皮膚瘙癢與小兒驚風；和牛蒡子相比不以清熱解毒、利咽散結為主。昆蟲來源須記過敏風險，止痙大劑量不可自行推定。",
       "modern_use_tags": [
@@ -6606,9 +6606,9 @@
         "formula.qing_zao_jiu_fei_tang"
       ],
       "safety_flags": [
-        "cold_lung_caution",
+        "cold_deficiency_review",
         "qi_deficiency_caution",
-        "max_dose_30g_ad",
+        "dose_preparation_review",
         "allergy_review",
         "no_ad_drug_interactions_listed"
       ],
@@ -16072,7 +16072,7 @@
       ],
       "safety_flags": [
         "allergy_review",
-        "herb_drug_interaction_review",
+        "medication_review",
         "pregnancy_review"
       ],
       "clinical_use_note": "蒲公英是中藥，別名:孛孛丁菜,白鼓丁,婆婆丁,黃花草,雙英蔔地,古古丁,蔔地蜈蚣,鬼燈籠,鵓鴣英,地丁,雙英卜地,狗乳草, 功效:清熱解毒，利尿散結。治急性乳腺炎，淋巴腺炎，瘰癧，疔毒瘡腫，急性結膜炎，感冒發熱，急性扁桃體炎，急性支氣管炎，胃炎，肝炎，膽囊炎，尿路感染。",
@@ -22788,8 +22788,8 @@
       "safety_flags": [
         "kidney_disease_review",
         "pregnancy_review",
-        "species_confusion",
-        "aristolochic_acid_risk"
+        "species_confusion_review",
+        "aristolochic_acid_risk_pending_ting_review"
       ],
       "clinical_use_note": "防己是中藥，別名:石蟾蜍,粉防己,漢防己,載君行,解離,級防己,石解,瓜防已,長根金少年犯, 功效:行水，瀉下焦濕熱。治水腫臌脹，濕熱腳氣，手足攣痛，癬疥瘡腫。《本經》：「主風寒溫瘧，熱氣諸癇。除邪，利大小便。」",
       "modern_use_tags": [
@@ -28125,7 +28125,7 @@
         "kidney_disease_review",
         "toxicity_review",
         "dose_preparation_review",
-        "species_confusion_aristolochic_acid_risk"
+        "species_confusion_aristolochic"
       ],
       "clinical_use_note": "木通為木通科植物木通的乾燥藤莖。主產於江蘇、浙江、安徽、江西、湖北、湖南、四川、貴州、雲南等地。夏、秋二季採收，除去枝葉及粗皮，切片，曬乾。\n木通味苦、辛，性寒。歸肺、大腸、膀胱經。具有利尿通淋、清熱解毒、消腫止痛的功效。\n主治\n熱淋澀痛：可與滑石、車前子、甘草等同用。\n水腫脹滿：可與澤瀉、茯苓、豬苓等同用。\n肺熱咳嗽：可與桑白皮、杏仁、甘草等同用。\n癰腫瘡毒：可與金銀花、連翹、蒲公英等同用。\n現代研究\n木通具有利尿、降血壓、抗菌、抗炎、鎮痛、解熱、抗腫瘤等作用。\n利尿：木通能增加尿量、排尿次數，對急性腎炎、慢性腎炎、心源性水腫、肝硬化腹水等有一定療效。\n降血壓：木通能降低血壓，對高血壓有一定的治療作用。\n抗菌：木通對多種細菌有抑制作用，如金黃色葡萄球菌、大腸桿菌、綠膿桿菌等。\n抗炎：木通能抑制炎症反應，對急性炎症有一定的治療作用。\n鎮痛：木通有一定的鎮痛作用，對神經性疼痛、胃痛、關節痛等有一定的療效。\n解熱：木通能降低體溫，對發熱有一定的治療作用。\n抗腫瘤：木通有一定的抗腫瘤作用，對肺癌、肝癌、胃癌等有一定的治療作用。",
       "modern_use_tags": [
@@ -32335,10 +32335,8 @@
       "safety_flags": [
         "pregnancy_review",
         "dryness_review",
-        "yin_deficiency_dry_cough_contraindication",
-        "stomach_fire_contraindication",
-        "excess_heat_caution",
-        "fluid_deficiency_caution"
+        "yin_deficiency_review",
+        "heat_sign_review"
       ],
       "clinical_use_note": "陳皮的臨床價值在「一藥兩用」：既理氣健脾（治脹滿噯氣），又燥濕化痰（治痰多咳嗽），所以脾虛生痰這種本虛標實的證候特別對證。它大量出現在方劑裡還有第二個原因——當佐藥防止補藥滋膩礙胃，這是 AD 特別列出的一條功效。與青皮的鑑別要記：陳皮和緩走中焦、青皮峻烈走肝膽。乾咳無痰或胃火嘔吐者忌用。",
       "modern_use_tags": [
@@ -48341,13 +48339,10 @@
         "hypertension_review",
         "insomnia_review",
         "pregnancy_review",
-        "eighteen_incompatibilities_li_lu",
-        "nineteen_antagonisms_wu_ling_zhi",
-        "antagonism_lai_fu_zi",
-        "excess_heat_contraindication",
-        "hypertension_contraindication",
-        "maoi_interaction",
-        "antidiabetic_interaction"
+        "incompatibility_review",
+        "heat_sign_review",
+        "medication_review",
+        "blood_sugar_review"
       ],
       "clinical_use_note": "人參的核心定位是「大補元氣」——氣虛欲脫的救急藥，這是黨參替代不了的地方（黨參力緩，僅適合平補）。四大功效分屬四臟：補脾肺氣、生津、安神益智。用法上要記得另煎兌服。安全上有三個必記：反藜蘆、畏五靈脂、實證熱證忌服；現代還要注意 AD 列的 MAOI 與降血糖藥交互作用，以及收縮壓 >180 禁用。",
       "modern_use_tags": [
@@ -49729,11 +49724,10 @@
       "safety_flags": [
         "pregnancy_review",
         "dryness_review",
-        "yin_deficiency_heat_contraindication",
+        "yin_deficiency_review",
         "qi_stagnation_contraindication",
-        "anticoagulant_interaction",
-        "antiplatelet_interaction",
-        "diuretic_interaction"
+        "anticoagulant_review",
+        "medication_review"
       ],
       "clinical_use_note": "白朮是補氣健脾的核心藥，特別之處在於它同時「補」與「燥」——既補脾氣又燥濕利水，所以脾虛兼濕的證候非它不可。與蒼朮的鑑別是必考：白朮偏補、蒼朮偏燥，記「補用白、燥用蒼」。炮製差異臨床意義大（生／炒／焦三者用途不同），開方時要指明。陰虛內熱、氣滯脹滿者忌用。",
       "modern_use_tags": [
@@ -50525,12 +50519,7 @@
         "cardiac_review",
         "medication_review",
         "incompatibility_review",
-        "eighteen_incompatibilities_gan_sui_da_ji_yuan_hua_hai_zao",
-        "hypertension_caution",
-        "edema_caution",
-        "pseudoaldosteronism_long_term",
-        "corticosteroid_interaction",
-        "digoxin_interaction"
+        "pseudoaldosteronism_long_term"
       ],
       "clinical_use_note": "甘草是方劑中最常見的佐使藥，核心價值在「調和諸藥」與「緩急止痛」，而不是單獨使用的補氣力。生用偏清熱解毒（咽痛、瘡瘍、解毒），炙用偏補中益氣（脾虛、心悸脈結代，如炙甘草湯）。安全上有兩個必記：十八反的四味絕不可同用；長期大劑量會造成假性醛固酮增多症，對高血壓、水腫、低血鉀患者尤其要留意。",
       "modern_use_tags": [
@@ -51018,9 +51007,8 @@
       "safety_flags": [
         "blood_sugar_review",
         "pregnancy_review",
-        "damp_heat_contraindication",
-        "excess_heat_contraindication",
-        "phlegm_heat_contraindication",
+        "heat_sign_review",
+        "phlegm_pattern_review",
         "parasites_contraindication",
         "qi_stagnation_contraindication"
       ],
@@ -51461,13 +51449,11 @@
       "safety_flags": [
         "pregnancy_review",
         "bleeding_review",
-        "eighteen_incompatibilities_li_lu",
-        "antagonism_shi_hu",
-        "yang_deficiency_cold_contraindication",
-        "drowsiness_caution",
-        "anticoagulant_interaction",
-        "antidiabetic_interaction",
-        "sedative_interaction"
+        "incompatibility_review",
+        "cold_deficiency_review",
+        "sedative_medication_review",
+        "anticoagulant_review",
+        "blood_sugar_review"
       ],
       "clinical_use_note": "白芍的核心是「柔肝」——養血、斂陰、緩急三者都由此而來，所以它治的是虛性、攣急性的痛（腹痛、腿抽筋、脅痛），不是瘀血刺痛（那是赤芍）。臨床最常見的三個搭配就是 Appendix B 收的那三組：配甘草緩急止痛、配柴胡疏肝而不傷陰、配桂枝調和營衛。陽虛虛寒泄瀉者忌用，十八反反藜蘆。",
       "modern_use_tags": [
@@ -54142,9 +54128,9 @@
         "Use cautiously in Spleen-Stomach Deficiency-Cold (CloudTCM)."
       ],
       "safety_flags": [
-        "eighteen_incompatibilities_li_lu",
-        "spleen_stomach_cold_contraindication",
-        "exterior_cough_contraindication"
+        "incompatibility_review",
+        "cold_digestive_weakness",
+        "exterior_pathogen_review"
       ],
       "exact_source_url": "https://cloudtcm.com/herb/8058",
       "safety_source_url": "https://cloudtcm.com/herb/8058",
@@ -73723,9 +73709,9 @@
       },
       "safety_flags": [
         "pregnancy_contraindication_source_disagreement",
-        "diarrhea_qi_deficiency",
-        "hypoglycemic_drug_interaction",
-        "diuretic_interaction"
+        "cold_digestive_weakness",
+        "blood_sugar_review",
+        "medication_review"
       ],
       "exam_importance": "NCBAHM 2026 CH lists Niu Bang Zi and Appendix B lists Niu Bang Zi + Lian Qiao. Focus: Wind-Heat sore throat, rash venting, Heat-toxin swelling, and bowel moistening.",
       "exam_pearl": "牛蒡子 = 風熱咽痛 + 麻疹不透 + 熱毒腫痛 + 潤腸；NCBAHM Appendix B：牛蒡子配連翹。",
@@ -78168,11 +78154,10 @@
         "source_notes_en": "American Dragon emphasizes that Fu Ping is one of the few Cold strong diaphoretics and should be used only with significant Excess Heat; CloudTCM adds kidney disease, pregnancy, and overdose-toxicity cautions."
       },
       "safety_flags": [
-        "strong_diaphoretic",
-        "deficiency_sweating_contraindication",
+        "sweating",
         "pregnancy_caution",
-        "kidney_disease_caution",
-        "overdose_toxicity_caution"
+        "kidney_disease_review",
+        "toxicity_review"
       ],
       "exam_importance": "Fu Ping is course-supported; not found in local NCBAHM 2026 CH outline search. Focus: strong acrid-cold diaphoresis, rash venting, itching, and edema; avoid deficiency sweating.",
       "exam_pearl": "浮萍 = 辛寒強發汗 + 透疹止癢 + 利水消腫；像麻黃能發汗利水，但方向偏風熱與皮膚，不治喘咳。",
@@ -80899,7 +80884,7 @@
       "safety_flags": [
         "pregnancy_caution",
         "qi_blood_deficiency_caution",
-        "diuretic_interaction",
+        "medication_review",
         "minor_toxicity_source_difference"
       ],
       "study_tags": [
@@ -81266,14 +81251,12 @@
         "AD lists antagonism with Che Qian Zi; CloudTCM also preserves historical incompatibilities such as Da Huang, Huang Lian, and Li Lu, so source differences must remain visible."
       ],
       "safety_flags": [
-        "toxic",
-        "very_toxic",
-        "pregnancy_contraindicated",
-        "lactation_contraindicated",
-        "max_dose_review",
-        "herb_interaction_review",
-        "special_preparation_required",
-        "topical_caution"
+        "toxicity_review",
+        "pregnancy_caution",
+        "lactation_review",
+        "dose_preparation_review",
+        "medication_review",
+        "skin_irritation_review"
       ],
       "safety_review_pending": true,
       "related_formulas": [
@@ -81649,16 +81632,13 @@
         "Use with Cao Wu or Ma Qian Zi appears in topical pain plasters, but toxicity is additive and this must not be treated as an ordinary internal combination."
       ],
       "safety_flags": [
-        "toxic",
-        "very_toxic",
-        "pregnancy_contraindicated",
+        "toxicity_review",
+        "pregnancy_caution",
         "cardiotoxicity",
         "neurotoxicity",
         "arrhythmia_risk",
-        "herb_drug_interaction",
-        "special_preparation_required",
-        "predecoction_required",
-        "topical_only_raw"
+        "medication_review",
+        "dose_preparation_review"
       ],
       "safety_review_pending": true,
       "related_formulas": [
@@ -82038,15 +82018,13 @@
         "Often appears in topical plasters, liniments, or washes; internal use requires professional processing and dose supervision."
       ],
       "safety_flags": [
-        "toxic",
-        "very_toxic",
-        "pregnancy_contraindicated",
+        "toxicity_review",
+        "pregnancy_caution",
         "cardiotoxicity",
         "neurotoxicity",
         "arrhythmia_risk",
-        "herb_drug_interaction",
-        "special_preparation_required",
-        "topical_preferred"
+        "medication_review",
+        "dose_preparation_review"
       ],
       "safety_review_pending": true,
       "related_formulas": [
@@ -82417,9 +82395,9 @@
         "Natural material is rare and expensive; synthetic Calculus Bovis is a substitute with weaker orifice-opening action and must be labeled by source."
       ],
       "safety_flags": [
-        "pregnancy_contraindicated",
-        "sedative_interaction",
-        "pediatric_caution",
+        "pregnancy_caution",
+        "sedative_medication_review",
+        "pediatric_review",
         "pattern_specific",
         "source_difference_review"
       ],
@@ -82769,9 +82747,9 @@
       ],
       "safety_flags": [
         "pregnancy_caution",
-        "allergy_contraindicated",
-        "deficiency_cold_caution",
-        "predecoction_required",
+        "allergy_review",
+        "cold_deficiency_review",
+        "dose_preparation_review",
         "endangered_species_substitute"
       ],
       "safety_review_pending": true,
@@ -83145,12 +83123,12 @@
         "Topical use for sores, snakebite, or scrofula still requires avoidance of mucosa/eyes and monitoring for allergy."
       ],
       "safety_flags": [
-        "toxic",
-        "pregnancy_contraindicated",
+        "toxicity_review",
+        "pregnancy_caution",
         "liver_function_risk",
-        "max_dose_review",
-        "pediatric_caution",
-        "topical_caution"
+        "dose_preparation_review",
+        "pediatric_review",
+        "skin_irritation_review"
       ],
       "safety_review_pending": true,
       "related_formulas": [
@@ -83520,10 +83498,10 @@
         "Differentiate Han Fang Ji from Mu/Guang Fang Ji; do not substitute based only on the name Fang Ji."
       ],
       "safety_flags": [
-        "species_confusion",
-        "aristolochic_acid_risk",
-        "diuretic_interaction",
-        "pregnancy_parturition_blood_deficiency_caution"
+        "species_confusion_review",
+        "aristolochic_acid_risk_pending_ting_review",
+        "medication_review",
+        "pregnancy_caution"
       ],
       "safety_review_pending": false,
       "related_formulas": [
@@ -83794,9 +83772,11 @@
         "Clinically distinguish it from Ma Huang: related plant name but different part and opposite therapeutic direction."
       ],
       "safety_flags": [
-        "exterior_pathogen_contraindication",
-        "pregnancy_lactation_pediatric_caution_cloudtcm",
-        "differentiate_from_ma_huang"
+        "exterior_pathogen_review",
+        "pregnancy_caution",
+        "lactation_review",
+        "pediatric_review",
+        "species_confusion_review"
       ],
       "safety_review_pending": false,
       "related_formulas": [
@@ -84091,11 +84071,11 @@
         "Unprocessed seed clears Liver Fire and eye Wind-Heat more strongly but is colder; dry-fried seed is gentler and used differently."
       ],
       "safety_flags": [
-        "spleen_stomach_deficiency_cold_diarrhea",
+        "cold_digestive_weakness",
         "hypotension",
         "pregnancy_caution",
-        "diuretic_interaction",
-        "huo_ma_ren_incompatibility_ad"
+        "medication_review",
+        "incompatibility_review"
       ],
       "safety_review_pending": false,
       "related_formulas": [],
@@ -84385,10 +84365,10 @@
       ],
       "safety_flags": [
         "pregnancy_caution",
-        "pediatric_under_one_caution",
-        "depleted_fluids_caution",
+        "pediatric_review",
+        "yin_deficiency_review",
         "urinary_frequency_caution",
-        "avoid_prolonged_use"
+        "dose_preparation_review"
       ],
       "safety_review_pending": false,
       "related_formulas": [],
@@ -84665,11 +84645,11 @@
         "Bai Hua She is similar to Wu Shao She but stronger and toxic; do not substitute casually."
       ],
       "safety_flags": [
-        "toxic_animal_substance",
-        "pregnancy_contraindication_high_risk",
-        "anticoagulant_antiplatelet_interaction",
-        "iron_incompatibility",
-        "avoid_unsupervised_medicinal_wine"
+        "toxicity_review",
+        "pregnancy_caution",
+        "anticoagulant_review",
+        "dose_preparation_review",
+        "not_for_self_treatment"
       ],
       "safety_review_pending": true,
       "related_formulas": [],
@@ -84952,11 +84932,9 @@
         "Internal Kidney-Yang warming use requires a true Cold/Yang-deficiency pattern; do not use simply for constipation."
       ],
       "safety_flags": [
-        "toxic_mineral",
-        "pregnancy_contraindication",
-        "yin_deficiency_heat_contraindication",
-        "internal_use_caution",
-        "topical_absorption_overdose_risk"
+        "toxicity_review",
+        "pregnancy_caution",
+        "yin_deficiency_review"
       ],
       "safety_review_pending": true,
       "related_formulas": [],
@@ -85245,12 +85223,12 @@
         "Avoid iron containers is retained as a classical / American Dragon safety note."
       ],
       "safety_flags": [
-        "toxic_herb",
-        "pregnancy_contraindicated",
-        "yin_deficiency_heat_contraindicated",
-        "excess_heat_contraindicated",
-        "avoid_long_term_use",
-        "professional_supervision_required"
+        "toxicity_review",
+        "pregnancy_caution",
+        "yin_deficiency_review",
+        "heat_sign_review",
+        "dose_preparation_review",
+        "not_for_self_treatment"
       ],
       "safety_review_pending": false,
       "related_formulas": [
@@ -85548,10 +85526,10 @@
       ],
       "safety_flags": [
         "pregnancy_caution",
-        "lactation_caution",
-        "spleen_stomach_deficiency_cold_caution",
-        "kidney_disease_caution",
-        "high_dose_professional_supervision"
+        "lactation_review",
+        "cold_digestive_weakness",
+        "kidney_disease_review",
+        "not_for_self_treatment"
       ],
       "safety_review_pending": false,
       "related_formulas": [],
@@ -85847,12 +85825,12 @@
         "Classical source / AD incompatibility layer lists avoiding combination with Sang Piao Xiao, Jie Geng, Fu Ling, and Bei Xie."
       ],
       "safety_flags": [
-        "pregnancy_contraindicated",
-        "deficiency_cold_contraindicated",
-        "spleen_deficiency_loose_stool_contraindicated",
-        "liver_disease_caution",
-        "drug_interaction_microtubule_inhibitors",
-        "allergy_caution"
+        "pregnancy_caution",
+        "cold_deficiency_review",
+        "cold_digestive_weakness",
+        "liver_disease_review",
+        "medication_review",
+        "allergy_review"
       ],
       "safety_review_pending": false,
       "related_formulas": [],
@@ -86080,10 +86058,10 @@
         "Legacy card herb.yin_xing is retained as an alias record for now; new formula links should use herb.bai_guo."
       ],
       "safety_flags": [
-        "slightly_toxic",
-        "exterior_pathogen_contraindication",
+        "toxicity_review",
+        "exterior_pathogen_review",
         "excess_pattern_contraindication",
-        "pregnancy_review_priority",
+        "pregnancy_review",
         "legacy_alias_record_exists"
       ],
       "safety_review_pending": true,
@@ -86305,9 +86283,9 @@
         "No American Dragon Bai Qian individual-herb page was verified in this pass; AD is not listed as a reviewed source."
       ],
       "safety_flags": [
-        "pregnancy_contraindication_cloudtcm",
+        "pregnancy_caution",
         "qi_deficiency_cough_contraindication_cloudtcm",
-        "antihypertensive_caution_cloudtcm",
+        "hypertension_review",
         "american_dragon_not_verified"
       ],
       "safety_review_pending": true,
@@ -86543,8 +86521,8 @@
       "safety_flags": [
         "pregnancy_caution",
         "high_dose_cancer_use_review",
-        "blood_glucose_drug_caution",
-        "blood_pressure_drug_caution"
+        "blood_sugar_review",
+        "hypertension_review"
       ],
       "safety_review_pending": true,
       "related_formulas": [],
@@ -86773,10 +86751,10 @@
       ],
       "safety_flags": [
         "hot_acrid",
-        "yin_deficiency_heat_contraindication",
-        "excess_heat_contraindication",
-        "slightly_toxic_cloudtcm",
-        "topical_use_separate"
+        "yin_deficiency_review",
+        "heat_sign_review",
+        "toxicity_review",
+        "dose_preparation_review"
       ],
       "safety_review_pending": true,
       "related_formulas": [
@@ -87026,9 +87004,8 @@
         "Its Wind-Damp action is mild; Bi pain is secondary, while Lower Jiao turbid Dampness and milky Lin are the core."
       ],
       "safety_flags": [
-        "yin_deficiency_fire_contraindication",
+        "yin_deficiency_review",
         "no_dampness_lower_jiao_contraindication",
-        "kidney_yin_deficiency_low_back_pain_contraindication",
         "liver_injury_high_dose_caution"
       ],
       "safety_review_pending": true,
@@ -87270,9 +87247,10 @@
       ],
       "safety_flags": [
         "heart_channel_excess_contraindication",
-        "yin_deficiency_heat_caution",
-        "pregnancy_lactation_caution",
-        "volatile_late_add_powder_note"
+        "yin_deficiency_review",
+        "pregnancy_caution",
+        "lactation_review",
+        "dose_preparation_review"
       ],
       "related_formulas": [
         "formula.su_zi_jiang_qi_tang"
@@ -87516,9 +87494,9 @@
         "Separate food-therapy amounts from medicinal decoction dosing; do not treat large food use as routine decoction dose."
       ],
       "safety_flags": [
-        "pregnancy_overdose_miscarriage_caution",
-        "dryness_long_term_caution",
-        "allergy_caution"
+        "pregnancy_caution",
+        "dryness_review",
+        "allergy_review"
       ],
       "related_formulas": [],
       "related_formulas_note": "麻黃連翹赤小豆湯若 formula ID 變動，方劑批次再核對。",
@@ -87759,10 +87737,10 @@
         "Classical lactation combinations may mention pangolin; modern use requires legal substitutes and must not use protected/illegal materials."
       ],
       "safety_flags": [
-        "pregnancy_contraindication",
-        "species_confusion_aristolochic_acid_risk",
+        "pregnancy_caution",
+        "species_confusion_aristolochic",
         "kidney_toxicity_review",
-        "yin_fluid_injury_caution"
+        "yin_deficiency_review"
       ],
       "related_formulas": [
         "formula.dao_chi_san",
@@ -88010,9 +87988,10 @@
       ],
       "safety_flags": [
         "astringent_pathogen_trapping_caution",
-        "spleen_stomach_deficiency_cold_contraindication",
-        "toxicity_high_dose_review",
-        "pregnancy_lactation_caution"
+        "cold_digestive_weakness",
+        "toxicity_review",
+        "pregnancy_caution",
+        "lactation_review"
       ],
       "related_formulas": [
         "formula.gu_jing_wan"
@@ -88255,9 +88234,9 @@
         "Because it is a tonic/adaptogen-like Shen-calming herb, patients with insomnia, blood-pressure issues, cardiovascular medication, or polypharmacy require professional assessment; this is a review flag, not a verified interaction statement."
       ],
       "safety_flags": [
-        "internal_heat_contraindication",
-        "yin_deficiency_contraindication",
-        "interaction_review_pending",
+        "heat_sign_review",
+        "yin_deficiency_review",
+        "medication_review",
         "adaptogen_safety_review"
       ],
       "related_formulas": [],
@@ -88465,9 +88444,9 @@
       ],
       "safety_flags": [
         "pregnancy_caution",
-        "pediatric_caution",
-        "incompatibility_hai_piao_xiao",
-        "overdose_caution"
+        "pediatric_review",
+        "incompatibility_review",
+        "dose_preparation_review"
       ],
       "related_formulas": [],
       "key_pairs": [],
@@ -88652,10 +88631,12 @@
         "Expensive and prone to substitution/adulteration; verify sourcing quality and do not equate supplement-grade products with medicinal material."
       ],
       "safety_flags": [
-        "exterior_condition_caution",
-        "pregnancy_lactation_pediatric_caution",
-        "anticoagulant_caution",
-        "source_quality_caution"
+        "exterior_pathogen_review",
+        "pregnancy_caution",
+        "lactation_review",
+        "pediatric_review",
+        "anticoagulant_review",
+        "heavy_metal_quality_review"
       ],
       "related_formulas": [],
       "key_pairs": [],
@@ -88843,8 +88824,8 @@
         "CloudTCM food-therapy instructions are not the same as therapeutic dosing; chronic illness or immune weakness still requires pattern differentiation."
       ],
       "safety_flags": [
-        "deficiency_cold_caution",
-        "food_therapy_dose_separate"
+        "cold_deficiency_review",
+        "dose_preparation_review"
       ],
       "related_formulas": [
         "formula.wei_jing_tang"
@@ -89031,9 +89012,9 @@
       ],
       "safety_flags": [
         "pregnancy_caution",
-        "deficiency_cold_caution",
-        "diabetes_caution",
-        "overdose_caution"
+        "cold_deficiency_review",
+        "blood_sugar_review",
+        "dose_preparation_review"
       ],
       "related_formulas": [],
       "key_pairs": [],
@@ -89219,10 +89200,10 @@
         "Do not dissolve in boiling water or cook for long in decoction (course and CloudTCM)."
       ],
       "safety_flags": [
-        "infant_contraindication",
-        "diabetes_caution",
-        "damp_phlegm_contraindication",
-        "do_not_decoct"
+        "pediatric_review",
+        "blood_sugar_review",
+        "phlegm_pattern_review",
+        "dose_preparation_review"
       ],
       "related_formulas": [
         "formula.ma_zi_ren_wan"
@@ -89468,9 +89449,9 @@
         "Use excessive dietary amounts cautiously in Spleen-Stomach deficiency Cold, loose stools, or indigestion."
       ],
       "safety_flags": [
-        "damp_heat_urination_contraindication",
-        "yin_deficiency_heat_caution",
-        "kidney_disease_food_caution"
+        "heat_sign_review",
+        "yin_deficiency_review",
+        "kidney_disease_review"
       ],
       "safety_review_pending": true,
       "related_formulas": [],
@@ -89747,9 +89728,9 @@
         "This card does not use dose/safety numbers from the AD direct page because the page was blocked in this pass."
       ],
       "safety_flags": [
-        "exterior_cough_contraindication",
-        "excess_heat_cough_contraindication",
-        "animal_source_quality_review",
+        "exterior_pathogen_review",
+        "heat_sign_review",
+        "heavy_metal_quality_review",
         "source_discrepancy_review"
       ],
       "safety_review_pending": true,
@@ -90021,9 +90002,9 @@
         "American Dragon notes antagonism with Bai Jiang Cao; check combinations."
       ],
       "safety_flags": [
-        "heat_dysuria_contraindication",
-        "yin_deficiency_heat_contraindication",
-        "bai_jiang_cao_incompatibility"
+        "heat_sign_review",
+        "yin_deficiency_review",
+        "incompatibility_review"
       ],
       "safety_review_pending": true,
       "related_formulas": [],
@@ -90307,9 +90288,9 @@
       ],
       "safety_flags": [
         "pregnancy_caution",
-        "renal_insufficiency_caution",
-        "thrombocytopenia_caution",
-        "yin_deficiency_heat_caution",
+        "kidney_disease_review",
+        "bleeding_review",
+        "yin_deficiency_review",
         "blood_deficiency_contraindication"
       ],
       "safety_review_pending": true,
@@ -90563,8 +90544,8 @@
         "Both Gu Ya and Mai Ya digest starch; Mai Ya also has a lactation-inhibiting direction, while Gu Ya is milder and more Stomach-strengthening for weak patients."
       ],
       "safety_flags": [
-        "lactation_avoidance",
-        "long_term_use_review",
+        "lactation_review",
+        "dose_preparation_review",
         "cloudtcm_exact_page_missing"
       ],
       "safety_review_pending": true,
@@ -90840,9 +90821,9 @@
         "Whole fruit, peel, and seed differ in emphasis and dose; do not treat Gua Lou Pi as interchangeable with Gua Lou Ren."
       ],
       "safety_flags": [
-        "spleen_stomach_deficiency_cold_contraindication",
-        "cold_phlegm_contraindication",
-        "wu_tou_incompatibility"
+        "cold_digestive_weakness",
+        "phlegm_pattern_review",
+        "incompatibility_review"
       ],
       "source_citations": [
         {
@@ -91132,10 +91113,10 @@
         "CloudTCM's Gua Lou Zi page flags overdose/toxicity risk; keep this source note visible."
       ],
       "safety_flags": [
-        "loose_stool_contraindication",
-        "cold_phlegm_contraindication",
-        "wu_tou_incompatibility",
-        "overdose_diarrhea_caution"
+        "cold_digestive_weakness",
+        "phlegm_pattern_review",
+        "incompatibility_review",
+        "dose_preparation_review"
       ],
       "source_citations": [
         {
@@ -91441,12 +91422,12 @@
         "For topical powder use, wound hygiene and infection risk still require care."
       ],
       "safety_flags": [
-        "deficiency_heat_contraindication",
-        "blood_heat_contraindication",
-        "pregnancy_contraindication_cloudtcm",
-        "kidney_function_contraindication_cloudtcm",
-        "constipation_long_use_caution",
-        "fu_zi_bai_ji_incompatibility_review"
+        "yin_deficiency_review",
+        "heat_sign_review",
+        "pregnancy_caution",
+        "kidney_disease_review",
+        "dose_preparation_review",
+        "incompatibility_review"
       ],
       "source_citations": [
         {
@@ -91734,10 +91715,10 @@
       ],
       "safety_flags": [
         "blood_deficiency_contraindication_ad",
-        "accumulated_fire_contraindication_ad",
-        "diabetes_drug_interaction_review",
-        "lipid_drug_interaction_review",
-        "external_use_caution"
+        "heat_sign_review",
+        "blood_sugar_review",
+        "medication_review",
+        "skin_irritation_review"
       ],
       "source_citations": [
         {
@@ -92010,10 +91991,10 @@
         "Because it is bitter, salty, cold, softening, and water-draining, use cautiously in deficiency-cold constitution or prolonged courses."
       ],
       "safety_flags": [
-        "gan_cao_incompatibility",
-        "spleen_stomach_deficiency_cold_contraindication",
+        "incompatibility_review",
+        "cold_digestive_weakness",
         "thyroid_iodine_review",
-        "cold_bitter_long_use_caution"
+        "digestive_tolerance_review"
       ],
       "source_citations": [
         {
@@ -92285,11 +92266,11 @@
         "A precise CloudTCM He/Hu Tao Ren page was not found this pass; Ye He Tao Ren is contextual variant background only."
       ],
       "safety_flags": [
-        "phlegm_fire_contraindication",
-        "hot_cough_contraindication",
-        "yin_deficiency_heat_contraindication",
-        "diarrhea_contraindication",
-        "anticoagulant_antiplatelet_interaction"
+        "phlegm_pattern_review",
+        "heat_sign_review",
+        "yin_deficiency_review",
+        "cold_digestive_weakness",
+        "anticoagulant_review"
       ],
       "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/HuTaoRen.html",
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/HuTaoRen.html",
@@ -92565,11 +92546,11 @@
         "CloudTCM includes a classical note that mung bean can counteract its toxicity."
       ],
       "safety_flags": [
-        "yin_deficiency_heat_contraindication",
-        "bleeding_disorder_contraindication",
+        "yin_deficiency_review",
+        "bleeding_review",
         "hemorrhoid_contraindication",
-        "pregnancy_contraindication",
-        "mouth_eye_throat_heat_contraindication"
+        "pregnancy_caution",
+        "heat_sign_review"
       ],
       "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/HuJiao.html",
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/HuJiao.html",
@@ -92862,11 +92843,11 @@
         "CloudTCM lists hypoglycemic and blood-pressure-lowering activity; review interactions with diabetes or antihypertensive drugs."
       ],
       "safety_flags": [
-        "yin_deficiency_blood_heat_contraindication",
+        "yin_deficiency_review",
         "non_excess_heat_contraindication",
-        "spleen_stomach_deficiency_cold_caution",
-        "diabetes_drug_interaction_review",
-        "antihypertensive_interaction_review"
+        "cold_digestive_weakness",
+        "blood_sugar_review",
+        "hypertension_review"
       ],
       "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/HuaiHuaMi.html",
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/HuaiHuaMi.html",
@@ -93145,12 +93126,11 @@
         "Honey-prepared form emphasizes middle-tonifying intestinal astringing; salt-prepared form more strongly enters Kidney to astringe Jing and urine."
       ],
       "safety_flags": [
-        "excess_pathogen_heat_contraindication",
-        "yin_deficiency_fire_contraindication",
-        "heat_diarrhea_contraindication",
-        "constipation_long_use_caution",
-        "pregnancy_postpartum_caution",
-        "opioid_interaction_cloudtcm"
+        "heat_sign_review",
+        "yin_deficiency_review",
+        "dose_preparation_review",
+        "pregnancy_caution",
+        "medication_review"
       ],
       "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/JinYingZi.html",
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/JinYingZi.html",
@@ -93421,7 +93401,7 @@
         "CloudTCM Jing Mi Gan is rice-washing water with different nature/use; do not treat it as a precise Jing Mi single-herb page."
       ],
       "safety_flags": [
-        "carbohydrate_glucose_caution",
+        "blood_sugar_review",
         "food_medicinal_context",
         "no_strict_contraindication_found"
       ],
@@ -93679,9 +93659,9 @@
         "Long-term use reported to cause weight loss/thinness (CloudTCM)."
       ],
       "safety_flags": [
-        "spleen_stomach_cold_contraindication",
-        "hyperthyroidism_caution",
-        "antidiabetic_drug_interaction"
+        "cold_digestive_weakness",
+        "thyroid_iodine_review",
+        "blood_sugar_review"
       ],
       "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/KunBu.html",
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/KunBu.html",
@@ -93936,7 +93916,7 @@
       "safety_flags": [
         "constipation_contraindication",
         "difficult_urination_contraindication",
-        "liver_yang_rising_contraindication"
+        "liver_yang_rising_review"
       ],
       "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/LianXu.html",
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/LianXu.html",
@@ -94189,8 +94169,8 @@
       "safety_flags": [
         "no_heat_pattern_contraindication",
         "pregnancy_caution",
-        "spleen_stomach_cold_caution",
-        "antihypertensive_drug_interaction"
+        "cold_digestive_weakness",
+        "hypertension_review"
       ],
       "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/LianZiXin.html",
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/LianZiXin.html",
@@ -94449,9 +94429,10 @@
       ],
       "safety_flags": [
         "excess_pattern_caution",
-        "anticoagulant_interaction",
-        "pregnancy_lactation_caution",
-        "herb_incompatibility_chang_shan_yin_chen_hao"
+        "anticoagulant_review",
+        "pregnancy_caution",
+        "lactation_review",
+        "incompatibility_review"
       ],
       "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/LingZhi.html",
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/LingZhi.html",
@@ -94692,7 +94673,7 @@
         "Avoid combining with warming medicinals (CloudTCM)."
       ],
       "safety_flags": [
-        "spleen_stomach_cold_contraindication",
+        "cold_digestive_weakness",
         "no_heat_pattern_caution",
         "menstruation_caution"
       ],
@@ -94954,10 +94935,10 @@
         "CloudTCM notes caution in pregnancy and lactation."
       ],
       "safety_flags": [
-        "pregnancy_contraindication",
-        "heavy_menstruation_contraindication",
-        "palpitation_caution",
-        "yin_deficiency_heat_caution"
+        "pregnancy_caution",
+        "bleeding_review",
+        "cardiac_review",
+        "yin_deficiency_review"
       ],
       "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/LuLuTong.html",
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/LuLuTong.html",
@@ -95203,7 +95184,7 @@
       "safety_flags": [
         "pregnancy_caution",
         "menstruation_caution",
-        "spleen_stomach_cold_caution"
+        "cold_digestive_weakness"
       ],
       "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/OuJie.html",
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/OuJie.html",
@@ -95452,10 +95433,11 @@
         "CloudTCM notes caution in hypertensive patients."
       ],
       "safety_flags": [
-        "spleen_stomach_cold_contraindication",
-        "herb_incompatibility_wu_zhu_yu",
-        "pregnancy_lactation_caution",
-        "hypertension_caution"
+        "cold_digestive_weakness",
+        "incompatibility_review",
+        "pregnancy_caution",
+        "lactation_review",
+        "hypertension_review"
       ],
       "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/QinPi.html",
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/QinPi.html",
@@ -95710,10 +95692,10 @@
         "CloudTCM notes caution when combined with anticoagulant medication."
       ],
       "safety_flags": [
-        "pregnancy_contraindication",
-        "spleen_stomach_cold_contraindication",
+        "pregnancy_caution",
+        "cold_digestive_weakness",
         "yin_deficiency_no_heat_toxicity_contraindication",
-        "anticoagulant_interaction"
+        "anticoagulant_review"
       ],
       "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/QingDai.html",
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/QingDai.html",
@@ -95950,9 +95932,10 @@
       ],
       "safety_flags": [
         "pregnancy_caution",
-        "spleen_stomach_weak_caution",
-        "anticoagulant_interaction",
-        "antihypertensive_hypoglycemic_interaction"
+        "cold_digestive_weakness",
+        "anticoagulant_review",
+        "hypertension_review",
+        "blood_sugar_review"
       ],
       "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/SangZhi.html",
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/SangZhi.html",
@@ -96204,10 +96187,10 @@
         "This herb is toxic; internal dosage must not be increased casually."
       ],
       "safety_flags": [
-        "yin_deficiency_heat_contraindication",
-        "damp_heat_lower_jiao_contraindication",
-        "toxic_herb_internal_use_caution",
-        "herb_incompatibility_mu_dan_pi_ba_dou_bei_mu"
+        "yin_deficiency_review",
+        "heat_sign_review",
+        "toxicity_review",
+        "incompatibility_review"
       ],
       "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/SheChuangZi.html",
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/SheChuangZi.html",
@@ -96457,7 +96440,7 @@
       ],
       "safety_flags": [
         "yin_deficiency_no_damp_heat_contraindication",
-        "renal_impairment_contraindication",
+        "kidney_disease_review",
         "pregnancy_pediatric_elderly_caution"
       ],
       "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/ShiWei.html",
@@ -96705,9 +96688,10 @@
         "CloudTCM notes children and the elderly should avoid excess use given its cooling nature."
       ],
       "safety_flags": [
-        "spleen_deficiency_loose_stool_caution",
-        "pediatric_diarrhea_caution",
-        "pregnancy_lactation_caution"
+        "cold_digestive_weakness",
+        "pediatric_review",
+        "pregnancy_caution",
+        "lactation_review"
       ],
       "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/SiGuaLuo.html",
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/SiGuaLuo.html",
@@ -96952,9 +96936,9 @@
         "American Dragon notes caution in those prone to excessive sexual arousal or overactive Ministerial Fire."
       ],
       "safety_flags": [
-        "spleen_deficiency_diarrhea_contraindication",
-        "yin_deficiency_heat_contraindication",
-        "excess_heat_constipation_contraindication"
+        "cold_digestive_weakness",
+        "yin_deficiency_review",
+        "heat_sign_review"
       ],
       "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/SuoYang.html",
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/SuoYang.html",
@@ -97202,8 +97186,8 @@
         "American Dragon notes caution in pregnancy."
       ],
       "safety_flags": [
-        "yin_deficiency_heat_contraindication",
-        "excess_heat_contraindication",
+        "yin_deficiency_review",
+        "heat_sign_review",
         "pregnancy_caution"
       ],
       "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/TanXiang.html",
@@ -97447,10 +97431,10 @@
         "Caution with anticoagulant or antiplatelet drugs, which may have an additive or synergistic effect (American Dragon)."
       ],
       "safety_flags": [
-        "pregnancy_contraindication",
+        "pregnancy_caution",
         "no_blood_stasis_contraindication",
-        "toxic_herb_caution",
-        "anticoagulant_antiplatelet_interaction"
+        "toxicity_review",
+        "anticoagulant_review"
       ],
       "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/TuBieChong.html",
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/TuBieChong.html",
@@ -97685,9 +97669,9 @@
         "CloudTCM notes avoiding contact with iron implements during preparation/storage."
       ],
       "safety_flags": [
-        "liver_kidney_yin_deficiency_contraindication",
-        "pregnancy_contraindication",
-        "tea_interaction_caution"
+        "yin_deficiency_review",
+        "pregnancy_caution",
+        "medication_review"
       ],
       "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/TuFuLing.html",
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/TuFuLing.html",
@@ -97939,9 +97923,10 @@
         "American Dragon notes avoiding use in Bi/numbness from Yin-Blood or Spleen-Kidney deficiency; extreme caution in pregnancy and children."
       ],
       "safety_flags": [
-        "yin_blood_deficiency_contraindication",
-        "overdose_vomiting_caution",
-        "pregnancy_pediatric_caution"
+        "yin_deficiency_review",
+        "dose_preparation_review",
+        "pregnancy_caution",
+        "pediatric_review"
       ],
       "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/XiXianCao.html",
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/XiXianCao.html",
@@ -98190,9 +98175,9 @@
         "CloudTCM notes caution in pregnancy."
       ],
       "safety_flags": [
-        "spleen_stomach_cold_caution",
-        "stomach_qi_injury_caution",
-        "anticoagulant_antiplatelet_interaction",
+        "cold_digestive_weakness",
+        "digestive_tolerance_review",
+        "anticoagulant_review",
         "pregnancy_caution"
       ],
       "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/YeJuHua.html",
@@ -98437,8 +98422,8 @@
       ],
       "safety_flags": [
         "ruptured_abscess_contraindication",
-        "pregnancy_contraindication",
-        "drug_absorption_interaction"
+        "pregnancy_caution",
+        "medication_review"
       ],
       "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/ZaoJiaoCi.html",
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/ZaoJiaoCi.html",
@@ -98683,7 +98668,7 @@
       "safety_flags": [
         "no_excess_heat_contraindication",
         "pregnancy_caution",
-        "powder_form_only"
+        "dose_preparation_review"
       ],
       "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/ZhenZhu.html",
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/ZhenZhu.html",
@@ -98821,7 +98806,7 @@
       "safety_flags": [
         "hypertension_review",
         "edema_review",
-        "incompatibilities_review"
+        "incompatibility_review"
       ],
       "clinical_use_note": "炙甘草為甘草蜜炙而成，性偏溫，長於補脾和胃、益氣復脈。用於心氣虛之心悸脈結代（炙甘草湯）及脾胃虛弱、倦怠乏力。",
       "modern_use_tags": [
@@ -99066,7 +99051,7 @@
         "pregnancy_review",
         "not_for_self_treatment",
         "dose_preparation_review",
-        "heavy_metal_review"
+        "heavy_metal_quality_review"
       ],
       "related_formulas": [
         "formula.an_gong_niu_huang_wan"
@@ -99198,7 +99183,7 @@
         "pregnancy_review",
         "not_for_self_treatment",
         "dose_preparation_review",
-        "heavy_metal_review",
+        "heavy_metal_quality_review",
         "medication_review"
       ],
       "related_formulas": [
@@ -101422,7 +101407,7 @@
       ],
       "safety_flags": [
         "safety_review_pending",
-        "easily_confused_with_dan_zhu_ye"
+        "species_confusion_review"
       ],
       "safety_review_pending": true,
       "related_formulas": [
@@ -101632,7 +101617,7 @@
       ],
       "safety_flags": [
         "prohibited_endangered_species",
-        "obsolete_substance",
+        "prohibited_obsolete_substance",
         "ncbahm_appendix_d",
         "substitute_with_shui_niu_jiao"
       ],
@@ -102057,7 +102042,7 @@
       ],
       "safety_flags": [
         "safety_review_pending",
-        "easily_confused_with_huang_lian"
+        "species_confusion_review"
       ],
       "safety_review_pending": true,
       "related_formulas": [
@@ -102255,9 +102240,9 @@
         "The contraindications are carried over from the Gui Ban monograph (same source material); the Gui Ban Jiao section itself lists none separately. Gelatin preparations are cloying and warrant extra care in Spleen deficiency with loose stool, but the coursework does not state this for the gelatin specifically."
       ],
       "safety_flags": [
-        "pregnancy_contraindication",
-        "diarrhea_contraindication",
-        "cold_damp_contraindication"
+        "pregnancy_caution",
+        "cold_digestive_weakness",
+        "cold_deficiency_review"
       ],
       "safety_review_pending": true,
       "related_formulas": [
@@ -102465,7 +102450,8 @@
         "**Source gap (important)**: a full-text search of curriculum/ for addict / controlled substance / narcotic / dependen returned **no addiction, dependency, or controlled-substance warning of any kind**. The opiate-alkaloid control and addiction risk of poppy husk is clinical common knowledge, but the existing teaching material does not state it, so per the constitution ('report what you cannot source, do not invent it') this card does not supply specific legal or risk language. Ting should fill this layer from an authoritative source before it is upgraded."
       ],
       "safety_flags": [
-        "管制藥品：含嗎啡類生物鹼"
+        "toxicity_review",
+        "not_for_self_treatment"
       ],
       "safety_review_pending": true,
       "related_formulas": [
@@ -102494,7 +102480,16 @@
       },
       "card_grade": "partial",
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/YingSuKe.html",
-      "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/YingSuKe.html"
+      "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/YingSuKe.html",
+      "import_artifacts": [
+        {
+          "original_field": "safety_flags",
+          "text": "管制藥品：含嗎啡類生物鹼",
+          "reason": "罌粟殼：自由中文句，句意已完整存在於 contraindications_zh，搬進 import_artifacts 後旗標改為兩個既有 slug——毒性（嗎啡類生物鹼）+ 不宜自行使用（管制藥品需處方/專業監督）；沒有專門的「管制藥品」slug，是否要新登記留待 Ting 決定",
+          "moved_at": "2026-08-31",
+          "ruling": "sonnet/safety-flag-vocab batch — 派工單 FILL_LINE_DISPATCH_2026-08-31_SAFETY_FLAGS，Ting review 2026-08-31 修正後執行"
+        }
+      ]
     },
     {
       "review_status": "draft",
@@ -102621,7 +102616,7 @@
       ],
       "safety_flags": [
         "safety_review_pending",
-        "easily_confused_with_zhen_zhu"
+        "species_confusion_review"
       ],
       "safety_review_pending": true,
       "related_formulas": [
@@ -102832,7 +102827,7 @@
       ],
       "safety_flags": [
         "safety_review_pending",
-        "easily_confused_with_long_gu"
+        "species_confusion_review"
       ],
       "safety_review_pending": true,
       "related_formulas": [
@@ -103224,7 +103219,7 @@
         "NCBAHM Appendix D obsolete-substance flag: the outline requires knowing the historical actions and indications, the endangered-status issue, and the substitution strategy. The spelling 'Zhi Chuan Shan Jia' does not appear in the coursework; only 'Pao Shan Jia' does, both denoting the prepared form."
       ],
       "safety_flags": [
-        "禁用：CITES 附錄一保護動物，2020年版中國藥典除名"
+        "prohibited_obsolete_substance"
       ],
       "safety_review_pending": false,
       "related_formulas": [
@@ -103288,6 +103283,13 @@
           "reason": "課件檔名「Materia Medica Abbbreviated.md」印在臨床敘述中間 = 出處誤植為內容；該檔與 canonical 的 materia_medica_abbreviated_chenoweth.md 逐位元組相同（僅抽取標頭那一行不同，行號一致），故內容主張不變，只把檔名搬到 field_sources。",
           "moved_at": "2026-08-31",
           "ruling": "Ting 2026-08-31 派工：課件檔名不進臨床句子，出處歸 field_sources"
+        },
+        {
+          "original_field": "safety_flags",
+          "text": "禁用：CITES 附錄一保護動物，2020年版中國藥典除名",
+          "reason": "穿山甲：自由中文句，句意已完整存在於 contraindications_zh，搬進 import_artifacts 後旗標改為本批新登記 B 概念 prohibited_obsolete_substance",
+          "moved_at": "2026-08-31",
+          "ruling": "sonnet/safety-flag-vocab batch — 派工單 FILL_LINE_DISPATCH_2026-08-31_SAFETY_FLAGS，Ting review 2026-08-31 修正後執行"
         }
       ]
     },
@@ -103875,7 +103877,7 @@
         "Toxic; use internally with great caution; contraindicated in pregnancy."
       ],
       "safety_flags": [
-        "有毒：內服須嚴格控制"
+        "toxicity_review"
       ],
       "safety_review_pending": true,
       "related_formulas": [
@@ -103932,7 +103934,16 @@
         "source_field": "dosage"
       },
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/XiaoShi.html",
-      "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/XiaoShi.html"
+      "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/XiaoShi.html",
+      "import_artifacts": [
+        {
+          "original_field": "safety_flags",
+          "text": "有毒：內服須嚴格控制",
+          "reason": "硝石：自由中文句，句意已完整存在於 contraindications_zh/cautions_zh，搬進 import_artifacts 後旗標改為既有 toxicity_review",
+          "moved_at": "2026-08-31",
+          "ruling": "sonnet/safety-flag-vocab batch — 派工單 FILL_LINE_DISPATCH_2026-08-31_SAFETY_FLAGS，Ting review 2026-08-31 修正後執行"
+        }
+      ]
     },
     {
       "review_status": "deprecated",
@@ -104029,7 +104040,8 @@
         "The aristolochic-acid entries on the NCBAHM 2026 outline are Guan Mu Tong, Guang Fang Ji and Ma Dou Ling — **Qing Mu Xiang is not on that list**."
       ],
       "safety_flags": [
-        "禁用：馬兜鈴科，含馬兜鈴酸(腎毒性/致癌)，中國藥典2005年版起取消收載"
+        "aristolochic_acid_risk",
+        "kidney_disease_review"
       ],
       "safety_review_pending": true,
       "related_formulas": [
@@ -104063,7 +104075,16 @@
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/QingMuXiang.html",
       "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/QingMuXiang.html",
       "deprecated_note_zh": "2026-08-31 撤下（Ting 裁定）：馬兜鈴科，含馬兜鈴酸，具腎毒性與致癌性，中國藥典自 2005 年版起取消收載。卡片內容完整保留供辨識與歷史查考，但不再作為可開立的藥物。紫雪丹的組成仍列本品（古方事實，不竄改），data/config/formula_caution_herbs.json 的 aristolochia_risk 警示亦維持不變 —— 撤下卡片不等於撤下警告。functions_zh/actions_en 的索引不對齊維持原狀：替一味已撤下的藥補寫適應症英文，方向與本裁定相反。",
-      "deprecation_kind": "withdrawn_no_successor"
+      "deprecation_kind": "withdrawn_no_successor",
+      "import_artifacts": [
+        {
+          "original_field": "safety_flags",
+          "text": "禁用：馬兜鈴科，含馬兜鈴酸(腎毒性/致癌)，中國藥典2005年版起取消收載",
+          "reason": "青木香：自由中文句，句意已完整存在於 contraindications_zh，搬進 import_artifacts 後旗標依派工單指示改為 aristolochic_acid_risk + kidney_disease_review",
+          "moved_at": "2026-08-31",
+          "ruling": "sonnet/safety-flag-vocab batch — 派工單 FILL_LINE_DISPATCH_2026-08-31_SAFETY_FLAGS，Ting review 2026-08-31 修正後執行"
+        }
+      ]
     },
     {
       "review_status": "draft",
@@ -104161,7 +104182,7 @@
         "The coursework lists no toxicity or cautions for Jin Bo; this card does not supply any."
       ],
       "safety_flags": [
-        "obsolete_substance",
+        "prohibited_obsolete_substance",
         "safety_review_pending",
         "not_a_canonical_materia_medica_entry"
       ],
@@ -104284,7 +104305,7 @@
         "The coursework lists no toxicity or cautions for Yin Bo; this card does not supply any. It appears in only one formula in the coursework, with even less data than gold foil."
       ],
       "safety_flags": [
-        "obsolete_substance",
+        "prohibited_obsolete_substance",
         "safety_review_pending",
         "not_a_canonical_materia_medica_entry"
       ],
@@ -104878,9 +104899,9 @@
         "Monitor blood pressure and gastrointestinal reactions during use."
       ],
       "safety_flags": [
-        "pregnancy_contraindication",
-        "yin_deficiency_fire_contraindication",
-        "heat_bi_contraindication"
+        "pregnancy_caution",
+        "yin_deficiency_review",
+        "heat_sign_review"
       ],
       "english_exam_track": {
         "review_status": "draft",
@@ -105156,9 +105177,8 @@
       ],
       "safety_flags": [
         "pregnancy_caution",
-        "excess_heat_contraindication",
-        "damp_heat_dysentery_contraindication",
-        "drug_adsorption_interaction"
+        "heat_sign_review",
+        "medication_review"
       ],
       "english_exam_track": {
         "review_status": "draft",
