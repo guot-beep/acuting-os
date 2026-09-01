@@ -62,8 +62,19 @@ if (leaked.length) {
 fs.rmSync(OUT, { recursive: true, force: true });
 fs.mkdirSync(OUT, { recursive: true });
 
+/* Cloudflare 的單檔上限是 25 MiB。超過的話部署會在 Cloudflare 那端失敗
+ * (`[ERROR] Asset too large`)—— 而 CI 這邊是綠的,因為原本只 console.warn。
+ * 也就是說:唯一會發現的方式是 Ting 打開手機發現網站沒更新。
+ * 2026-08-31 改成硬紅,並加一條 20 MiB 的接近警告 —— generated 檔會隨著
+ * 卡片填充長大(現在最大 knowledge_dx.js 6.65 MB),不希望它某天從綠直接
+ * 跳成部署失敗。 */
+const HARD_MIB = 25;
+const WARN_MIB = 20;
+
 let total = 0;
 const missing = [];
+const oversize = [];
+const nearLimit = [];
 for (const rel of files) {
   const src = path.join(ROOT, rel);
   if (!fs.existsSync(src)) { missing.push(rel); continue; }
@@ -72,13 +83,25 @@ for (const rel of files) {
   fs.copyFileSync(src, dst);
   const mb = fs.statSync(src).size / (1024 * 1024);
   total += mb;
-  if (mb > 25) console.warn(`  !! ${rel} is ${mb.toFixed(1)} MB — over Cloudflare's 25 MiB asset limit`);
+  if (mb >= HARD_MIB) oversize.push([rel, mb]);
+  else if (mb >= WARN_MIB) nearLimit.push([rel, mb]);
   console.log(`  ${mb.toFixed(2).padStart(6)} MB  ${rel}`);
 }
 
 if (missing.length) {
   console.error(`\nFAIL — referenced by ${ENTRY} but missing:`);
   missing.forEach((m) => console.error("  " + m));
+  process.exit(1);
+}
+
+for (const [rel, mb] of nearLimit) {
+  console.warn(`\n  !! ${rel} is ${mb.toFixed(1)} MB — Cloudflare 單檔上限 ${HARD_MIB} MiB,剩不到 ${(HARD_MIB - mb).toFixed(1)} MB 餘裕。`);
+}
+if (oversize.length) {
+  console.error(`\nFAIL — ${oversize.length} 個檔案超過 Cloudflare 單檔上限 ${HARD_MIB} MiB,這樣部署一定失敗:`);
+  for (const [rel, mb] of oversize) console.error(`  ${mb.toFixed(1)} MB  ${rel}`);
+  console.error("\n這件事必須在 CI 擋下來 —— 不然唯一會發現的人是打開手機發現網站沒更新的 Ting。");
+  console.error("處理方向:把該檔切片(參考 knowledge 六片的做法),或讓 index.html 不要引用它。");
   process.exit(1);
 }
 

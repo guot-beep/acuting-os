@@ -48,7 +48,14 @@ Deploy the static folder to a platform that supports password protection or priv
 - Netlify with password or identity protection.
 - A private acuting.com subdomain managed by the existing site workflow.
 
-### Option C: GitHub Pages
+### Option C: GitHub Pages —— 沒有採用,不要拿這裡的網址去驗收
+
+> **2026-08-31 實測:`https://guot-beep.github.io/acuting-os/` 回 404
+> 「There isn't a GitHub Pages site here」。Pages 從來沒有啟用過。**
+>
+> 這一節寫的是「啟用之後會是什麼網址」,不是「現在在跑的網址」。
+> 底下那行網址被當成上線位址讀過至少一次,白花了一輪驗收時間 ——
+> 正式上線的是 **Cloudflare Pages**(見本文件〈Cloudflare Pages 部署〉)。
 
 GitHub Pages can host static HTML/CSS/JS from a repository. Private repository support and access control depend on the GitHub plan and organization settings. Confirm current GitHub settings before using it for private clinical study access.
 
@@ -106,7 +113,28 @@ No build step is required right now.
 
 ---
 
-## Cloudflare Pages 部署(2026-07-26 定案)
+## Cloudflare Pages 部署(2026-07-26 定案)—— **這是正式上線的路徑**
+
+### AI session 怎麼驗收(2026-08-31 補)
+
+線上站鎖在 Cloudflare Zero Trust 後面(只有 Ting 的 email + 一次性 PIN),
+**AI session 開不了、也不該去登入她的帳號**。而且專案的 `*.pages.dev` 網址
+沒有寫在 repo 裡任何地方。所以:
+
+- **不要**拿線上網址當驗收目標,拿不到就當「壞了」——你只是進不去。
+- 驗收改成兩層,兩層都做:
+  1. `node scripts/dev-server.js <port>` 起本機服務,開卡片用眼睛讀;
+  2. `node scripts/build-site.js` 產出 `dist/`,**驗那份產物**——
+     那才是真正會送到她手機上的東西。載入 `dist/data/generated/*.js`
+     取出記錄來比對,不要用字串 grep(bundle 是壓過的,grep 會給假陰性;
+     2026-08-31 就這樣誤判過一次「青木香沒有 deprecated」)。
+- 單檔超過 25 MiB 部署會失敗,而失敗發生在 Cloudflare 那端。
+  `build-site.js` 從 2026-08-31 起會直接 exit 1(20 MiB 先出警告),
+  不再只是 console.warn —— 否則唯一會發現的人是打開手機發現網站沒更新的 Ting。
+
+**Ting 這邊值得做一次的事**:把專案的 `*.pages.dev` 網址寫進這份文件。
+現在它只存在於 Cloudflare 後台,任何人(包括妳自己換裝置時)都得回後台翻。
+
 
 **設定**(Cloudflare Dashboard → Workers & Pages → 專案 → Settings → Build):
 
