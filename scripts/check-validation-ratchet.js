@@ -35,7 +35,7 @@
  */
 const fs = require("fs");
 const path = require("path");
-const { execFileSync } = require("child_process");
+const { spawnSync } = require("child_process");
 
 const ROOT = path.resolve(__dirname, "..");
 const BASELINE = "data/audits/validation_baseline.json";
@@ -191,15 +191,20 @@ const RATCHETED = [
   // of a ratchet entry: hold the line, then leave.
 ];
 
+/* 用 spawnSync 而不是 execFileSync,是為了把離開碼帶回來。
+   2026-09-01:某支驗證器硬當機(exit -1073740791),舊版的 catch 只回傳
+   `stdout + stderr` —— 而硬當機時兩者都是空的,於是下面那句 RATCHET ERROR
+   後面印出一片空白,連「它是掛了還是格式變了」都分不出來,只能用猜的。
+   離開碼是唯一能分辨這兩件事的證據,不能丟。 */
 function run(script, args) {
-  try {
-    return execFileSync(process.execPath, [path.join(ROOT, script), ...args], {
-      cwd: ROOT, encoding: "utf8", stdio: ["ignore", "pipe", "pipe"],
-    });
-  } catch (err) {
-    // These validators exit 1 when defects exist — that is expected here.
-    return `${err.stdout || ""}${err.stderr || ""}`;
-  }
+  const r = spawnSync(process.execPath, [path.join(ROOT, script), ...args], {
+    cwd: ROOT, encoding: "utf8", stdio: ["ignore", "pipe", "pipe"],
+  });
+  // 這些驗證器有缺陷時本來就 exit 1 —— 那是預期的,不是錯誤。
+  return {
+    out: `${r.stdout || ""}${r.stderr || ""}`,
+    status: r.status, signal: r.signal, spawnError: r.error,
+  };
 }
 
 const UPDATE = process.argv.includes("--update");
@@ -217,12 +222,34 @@ const baseline = fs.existsSync(baselinePath)
 
 const current = {};
 for (const entry of RATCHETED) {
-  const out = run(entry.script, entry.args);
+  const res = run(entry.script, entry.args);
+  const out = res.out;
   let count;
   try {
     count = entry.extract(out);
   } catch {
     console.error(`RATCHET ERROR: could not read a defect count from ${entry.script}.`);
+    /* 以下三種是完全不同的故障,舊版印同一句話。分開講,不然下次還是要重猜。
+       判準是**離開碼**,不是「輸出空不空」——第一版寫成看輸出,負向測試立刻打臉:
+       `process.abort()` 會吐原生堆疊、模組找不到會吐 loader 錯誤,兩者輸出都非空,
+       於是三條分支全落到同一句。真正的 0xC0000409 才是一個字都不印的。
+       正常跑完的驗證器只會是 exit 0(PASS)或 1(有缺陷);其餘一律是它自己掛了。 */
+    const abnormalExit = res.status !== 0 && res.status !== 1;
+    const nodeCrashSignature =
+      /(^|\n)\s*(node:internal|Error: Cannot find module|FATAL ERROR|-+ Native stack trace)/.test(out);
+    if (res.spawnError) {
+      console.error(`  子行程起不來:${res.spawnError.message}`);
+    } else if (abnormalExit || res.signal || nodeCrashSignature) {
+      console.error(`  **驗證器自己掛了**,不是缺陷數變多 —— 不要照著去改資料。`);
+      console.error(`  exit=${res.status}, signal=${res.signal || "none"}, 輸出 ${out.length} 字元。`);
+      if (out.trim() === "") {
+        console.error("  一個字都沒印出來。Windows 上 exit=-1073740791 (0xC0000409) 是 node 的");
+        console.error("  通用 abort 碼,不專指堆疊溢位;2026-09-01 遇過一次間歇當機,27 次未重現,根因未知。");
+      }
+    } else {
+      console.error(`  子行程正常跑完(exit=${res.status})但抽不出數字,共 ${out.length} 字元。`);
+      console.error("  多半是報表格式改了而 extract() 沒跟上,不是資料變壞。");
+    }
     console.error(out.slice(0, 400));
     process.exit(2);
   }
