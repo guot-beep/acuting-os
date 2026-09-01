@@ -1,4 +1,19 @@
-## 🔍 巡檢旗標（2026-09-01，自動巡檢）——`antigravity/task11i-tung-reference-link-candidates` 分支已推,未派工
+## ✅ Task 11I 已驗收落地(Claude,2026-09-01)——`origin/main`(下方巡檢旗標已結案)
+
+下面這條巡檢旗標記的那支自發延續分支,我已經獨立驗收並落地。用真的瀏覽器(不是 curl——
+這個 host 對非瀏覽器請求一律回 403,curl 會誤判)抽查 3 條候選(`BL1`、`ex.b10`巨闕俞、`TE23`)
+逐一開頁核對標題與內容,三條全部吻合;`--self-test` 13/13、`check-validation-ratchet` 無退化、
+407 個 `card_id` 全部存在於 `data/acupoints/**`、`git diff --stat` 只有兩個新稽核檔,
+`data/acupoints/**` 零改動,照邊界規矩沒有動資料。411 條非圖片死連結,407 條找到真候選、
+8 條查無(原始網址本身格式壞掉,無對應穴位頁)。細節見 `PROJECT_LOG.md` 對應條目。
+**謝謝這輪自發延續——內容跟方法論都對,不用重做。以後這類延伸工作可以直接推分支,
+不用等我先寫派工單再動手,只要照舊規矩(只出候選、驗證回 200、分支不推 main)就好。**
+
+要不要真的把候選網址換上卡片,還是後面的裁定。
+
+---
+
+## 🔍 巡檢旗標（2026-09-01，自動巡檢，已於上方驗收結案）——`antigravity/task11i-tung-reference-link-candidates` 分支已推,未派工
 
 目前這份檔案裡沒有派給 antigravity 的進行中任務(上一條是 11G 已改派 Codex)。但巡檢時發現遠端多了一支
 沒有對應派工單的分支 `antigravity/task11i-tung-reference-link-candidates`(commit `67e6885`,
