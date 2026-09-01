@@ -1,3 +1,72 @@
+# 2026-08-31 — 犀角性味歸經據 p.3 補上（Ting 裁定），並更正「查無」那句錯敘述
+
+前一批（9ce64a6b）把 `herb.xi_jiao` 整筆退回,理由是卡上寫「逐檔搜尋…查無犀角
+自己的性味歸經段落」與來源牴觸。Ting 2026-08-31 裁定:據 p.3 補上,標 draft。
+
+## 來源(補值前先機器核對四行,不合就整支停)
+
+`curriculum/herbs/materia_medica_abbreviated_chenoweth.md`
+
+| 行 | 內容 | 作用 |
+|---|---|---|
+| L164 | `[5] Clear Heat, Cool Blood (Bitter/CD)` | `(B/Cd)` 的展開就印在同頁章名上,不是我推的 |
+| L165 | `Xi Jiao () [Rhinoceros Horn]` | 犀角自己的標題 |
+| L166 | `(B/Cd) Salty [HT, LV, ST]` | 犀角自己的性味歸經欄 |
+| L182 | `Shui Niu Jiao () [Water Buffalo Horn]` | 水牛角**另起**一條,欄位邊界確認 |
+
+同記法交叉驗證:黃芩 `(B/Cd) [GB, LI, LU, ST]`(苦寒)、牡丹皮 `(B/Cd) Acrid`
+(苦辛微寒)、柴胡 `(A/C) Bitter`(辛涼苦)——`(B/Cd)` = Bitter/Cold 成立。
+故讀為 **苦、鹹，寒；心、肝、胃經**。
+
+## 逐欄 before → after（全部原本為空,未覆蓋任何既有內容）
+
+腳本對這五欄先跑 non-empty 檢查,任一非空就 throw,確保不是「短的蓋長的」:
+
+| 欄位 | before | after |
+|---|---|---|
+| `properties_taste_temp` | `""` | `苦、鹹，寒` |
+| `channels_zh` | `[]` | `["心經","肝經","胃經"]` |
+| `tcm_properties.five_flavors_zh` / `_en` | `[]` / `[]` | `["苦","鹹"]` / `["Bitter","Salty"]` |
+| `tcm_properties.four_natures_zh` / `_en` | `""` / `""` | `寒` / `Cold` |
+| `tcm_properties.meridian_tropism_zh` / `_en` | `[]` / `[]` | `["心經","肝經","胃經"]` / `["HT Heart","LV Liver","ST Stomach"]` |
+
+紅線 5(`_en` 長度 = `_zh`)腳本內斷言:five_flavors 2/2、meridian_tropism 3/3。
+`review_status` 維持 `draft`、`card_grade` 維持 `partial`(未動,分級不是我的裁量)。
+
+## 那句錯敘述怎麼處理
+
+原 `source_note_zh` 存進 `import_artifacts`(原文逐字),改寫後明說三件事:
+出處是 p.3 犀角自身條目、`(B/Cd)` 依同頁章名展開、水牛角是同欄下方**另一條**。
+
+**沒有順手裁掉的一件事**:原註記還說犀角地黃湯組成表的
+「Bitter, salty, cold / HT, LV, ST」是水牛角的。查證後這句**存疑但未改**——
+該串印在 `Chief Shui Niu Jiao` 那一列上（`[Xi Jiao] [3-9]` 是其下的替代標註），
+所以「不從方劑卡搬」的原則仍然對;但它與本頁**犀角**條目相符、與本頁水牛角條目
+`(Cd) Salty`（**無苦味**）不符。兩者何以互異留 RV1,本卡不代為裁定,
+註記裡照這個措辭寫清楚。
+
+## 驗證
+
+`build-data.js` + CLAUDE.md 列的 15 支 validator + `validate-ui-freeze` 全 exit=0。
+棘輪:`herb_canon` **5534 → 5533（−1）**,細項
+`properties_taste_temp must be a non-empty string` **76 → 75**,已 `--update` 鎖進
+`data/audits/validation_baseline.json`(棘輪只准往下)。其餘 11 條 flat。
+
+diff 49/11,不是整檔重排(縮排從檔案自身偵測,見前一批的教訓)。
+
+**開卡片看過**:性味 `苦、鹹，寒`、歸經 `心經、肝經、胃經` 都上畫面,
+狀態顯示 `Draft · source review`。依 CLAUDE.md 新增的第 5 條特別確認渲染
+fallback 沒有搶先——歸經走 `props.meridian_tropism_zh || record.channels_entered
+|| record.channels_zh`,本卡 `channels_entered` 不存在,由新填的
+`meridian_tropism_zh` 命中。來源分頁也看得到那則 p.3 引用(field_sources 不上畫面,
+所以另補了一則 source_citations,否則卡上有結論卻看不到出處)。
+
+## 副作用:三個 b 的活引用歸零
+
+`Materia Medica Abbbreviated` 這個重複檔名在 `herb_canon_shortlist.json` 的
+**最後一個活引用**就在犀角這則 source_note_zh 裡,隨本次改寫消失。
+現在該檔 34 筆全部在 `import_artifacts` 存證區(刻意保留原文),**live 0 筆**。
+
 # 2026-08-31 — 課件重複檔名引用修復:33 筆裡 32 筆已改,1 筆因主張與來源牴觸退回裁定
 
 派工前提要更正一項:`curriculum/herbs/Materia Medica Abbbreviated.md`(三個 b)
