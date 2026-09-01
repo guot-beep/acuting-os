@@ -1,3 +1,67 @@
+# 2026-09-01 — 剩下 8 處 `??` 全部是原文的問號,不是掉字;順手量到 1164 處 `(cid:0)`
+
+上一批補完 3 檔 8 處被 antiword 吃掉的漢字後,全庫還剩 8 處 `??` 沒查。查完了:
+**8 處全部是講義作者自己打的問號**,沒有一處是掉字。本批沒有改任何檔案。
+
+## 逐處查證(對來源 PDF 用 `-enc UTF-8` 重抽比對)
+
+| 檔 / 行 | .md 裡是 | 來源 PDF 裡是 | 判定 |
+|---|---|---|---|
+| `acupoints/Advanced Techniques Notes.md` L319 | `Direct needling???` | `Direct needling???` | 原文問號 |
+| `acupoints/Therapeutics Notes…(1).md` L2418 | `s Crucian??` | `Crucian??` | 原文問號 |
+| 同 L3596 | `caused by what??? Emotions?` | 同 | 原文問號 |
+| `formulas/10_Formula_Cards_091-100…md` L2191/L2225/L2419 | `Gan cao???` | `Gan cao???` | 原文問號 |
+| `formulas/Herbal Formulations Comprehensive.docx.md` L6941 | `Gan cao???` | 同 | 原文問號 |
+| `herbs/方剂学汇总_extracted.md` L13 | `Gan cao???` | 同 | 原文問號 |
+
+後五處其實是**同一句話**在四個檔裡的重複(`Small formula: Dao Chi San → Sheng Di,
+Mu Tong, Dan Zhu Ye, Gan cao???`),只要在權威來源查到一次就全部定案。
+來源是 `Herbal Formulations Comprehensive.docx.pdf`(只在 git 歷史裡,6.8MB)。
+
+**強力旁證**:同一份 PDF、同一次抽取,`Dao Chi San [导赤散] (Guide Out The Red Powder)`
+的中文**抽得出來**。若 `???` 是掉的漢字,同一頁不可能只掉這三個字。
+該 .md 本身也確實含 `导赤散`,CJK 1723。
+
+順帶把上一批一個 loose end 補掉:`Therapeutics Notes Comprehensive (1).md` 的
+CJK 是 0,直接對來源 PDF 重抽確認 —— **來源本身 CJK 就是 0**,不是抽壞。
+
+## 順手量到的新缺陷:1164 處 `(cid:0)`
+
+查上面那句話時看到 `Dao Chi San (cid:0) Sheng Di…`。`(cid:N)` 是 pdftotext
+對不到字形時直接把 CID 編號印成文字。全庫掃過:
+
+**1164 處、21 個檔,全部在 `curriculum/formulas/`,而且全部是同一個 `(cid:0)`。**
+
+| 檔 | 處 |
+|---|---|
+| `Herbal Formulations Comprehensive.docx.md` | 418 |
+| `Formulations Summary Chart.docx.md` | 146 |
+| `12_Formula_Cards_111-120…` | 97 |
+| `13_Formula_Cards_121-130…` | 95 |
+| `08_Formula_Cards_071-080…` | 77 |
+| 其餘 16 檔 | 331 |
+
+**它是箭頭 `→`**,證據不是靠語感:
+
+1. 全部 1164 處都是同一個 cid 編號,不是一堆不同字形。
+2. 同一份檔案裡就有直接對照 —— `10_Formula_Cards_091-100`:
+   L2191 `Dao Chi San → Sheng Di, Mu Tong, Dan Zhu Ye, Gan cao???`
+   L2419 `Dao Chi San (cid:0) Sheng Di, Mu Tong, Dan Zhu Ye, Gan cao???`
+   同一句,一處抽成箭頭、一處抽成 cid。
+3. 系統性比對:1003 行含 `(cid:0)`,把它換成 `→` 之後,**231 行在別處找得到
+   逐字相同的行**,零反例。
+4. 語境一致:`Diagnosis (cid:0) Strategy (cid:0) Formula`、
+   `Too deficient to be tonified (cid:0) Use Sha Ren`、
+   `interior or meridians (cid:0) Restore functions of Yang Qi`。
+
+**沒有動手**:這不在「查那 8 處」的範圍內,而且 `curriculum/**` 是 Ting 的目錄。
+執行成本:純文字取代 1164 處、21 檔,不需要來源二進位檔(`formulas/` 也只剩 .md)。
+要做的話一行取代加逐檔 diff 就夠,風險低。留裁定。
+
+## 驗證
+
+本批沒有改任何檔案。`build-data.js` + 驗證器全 exit=0,棘輪 13 條全 flat。
+
 # 2026-09-01 — 8 處被 antiword 吃掉的漢字回填完成:從 .doc 二進位抽出來,不是推測
 
 上一批標記「3 檔 8 處待補,沒有工具就不編」。這批找到了抽的方法,補完了。
