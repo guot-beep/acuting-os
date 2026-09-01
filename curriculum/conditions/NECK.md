@@ -2,6 +2,11 @@
      Text layer only — figures, tables-as-images and formatting are NOT here.
      Cite as curriculum/conditions/NECK.DOC#p<N> and verify against the original before
      using any number (dose, depth, lab value) from it. -->
+<!-- 2026-09-01 CJK 回填:antiword 抽 NECK.DOC 時把漢字換成了 ?。
+     這些字是從該 .doc 的二進位(git 709e23c2^)以 UTF-16LE 直接讀出來的,不是推測:
+       落枕 @3072,後接 "Its main manifestation are"
+       导气 @6656,後接 ":  SJ 10"
+     繁簡依原文照抄,未統一。 -->
 
 AOM Therapeutics 1
 School of AOM
@@ -10,7 +15,7 @@ Bastyr University
 
                                              Stiff  Neck ( Torticollis )
 
-Stiff neck here refers to wryneck caused by an inappropriate sleeping posture or attack of wind cold on the neck/nape that leads to disturbance of local circulation of Qi in involved meridians.  It occurs mostly in adults. In TCM it is called as luo zhen??.
+Stiff neck here refers to wryneck caused by an inappropriate sleeping posture or attack of wind cold on the neck/nape that leads to disturbance of local circulation of Qi in involved meridians.  It occurs mostly in adults. In TCM it is called as luo zhen落枕.
 
 Its main manifestation are stiffness and pain of the neck and nape on one side, and wry neck towards one side with motor impairment, most patients keep their heads to the affected side in order to reduce pain and spasm.  The possible manifestation might be as follows:
 
@@ -37,7 +42,7 @@ Treatment
      Luozhen
      Inability of flexion and extension :  UB 60,  Lu 7
      Difficult in rotating neck:  SI 7
-     Inducing Qi technique ??:  SJ 10  For patients withlocal hypertenderness
+     Inducing Qi technique 导气:  SJ 10  For patients withlocal hypertenderness
 
 3.  Apply inducing Qi technique on Luozhen.
      Direct patient keep moving neck at the same time while needling.

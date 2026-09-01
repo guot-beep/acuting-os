@@ -2,6 +2,11 @@
      Text layer only — figures, tables-as-images and formatting are NOT here.
      Cite as curriculum/conditions/SHOULDER.DOC#p<N> and verify against the original before
      using any number (dose, depth, lab value) from it. -->
+<!-- 2026-09-01 CJK 回填:antiword 抽 SHOULDER.DOC 時把漢字換成了 ?。
+     這些字是從該 .doc 的二進位(git 709e23c2^)以 UTF-16LE 直接讀出來的,不是推測:
+       50-year-old shoulder " ( 五十肩 ) @2794
+       Three Shoulder Points "肩三针: LI 15 @4782
+     繁簡依原文照抄,未統一。 -->
 
 AOM Therapeutics 1
 Dr.  Liu
@@ -10,7 +15,7 @@ Bastyr University
 
 Frozen  Shoulder
 
-The frozen shoulder also known as " 50-year-old shoulder " ( ??? ) in TCM because it usually occurs in people around their 50s.
+The frozen shoulder also known as " 50-year-old shoulder " ( 五十肩 ) in TCM because it usually occurs in people around their 50s.
 In Western medicine, frozen shoulder is similar to periarthritis of the shoulder joint.
 
 Etiology & Pathogenesis
@@ -41,7 +46,7 @@ Treatment
 
 2.  Prescription
      Points from Three Hand Yang Meridians are mainly selected.
-     " Three Shoulder Points "???: LI 15, SI 9, Jianneiling
+     " Three Shoulder Points "肩三针: LI 15, SI 9, Jianneiling
      LI 15, LI 14, SI 11, SJ 14, Jianneiling, SI 9, Ashi points.
      Secondary points:   LI 11, LI 4, Lu 5, SI 12, SI 13, SI 8, GB 21, SJ 4, SJ 10, Lu 9
                                     St 38 - UB 57 - running needle

@@ -1,3 +1,68 @@
+# 2026-09-01 — 8 處被 antiword 吃掉的漢字回填完成:從 .doc 二進位抽出來,不是推測
+
+上一批標記「3 檔 8 處待補,沒有工具就不編」。這批找到了抽的方法,補完了。
+
+## 怎麼抽的(不是猜的)
+
+Word 97+ 的 `.doc` 是 OLE 複合檔,文字分段存,每段可能是 8-bit(cp1252)或
+16-bit(UTF-16LE);中文只可能在 16-bit 段。所以不用 antiword,直接在二進位裡
+找旁邊那句英文的 **UTF-16LE 形式**,後面接的碼位就是被吃掉的字。
+
+`.doc` 本身只在 git 歷史裡(`709e23c2^`,該 commit 把原始課件移出分支)。
+
+## 8 處逐一列出(位移 = .doc 內的位元組位置)
+
+| 檔 | 佔位 | 回填 | 來源位移與上下文 |
+|---|---|---|---|
+| `2.2 Impotence…md` | `Yang Wei??` | `陽痿` | @3584,後接 `Different names in TCM:` |
+| 同 | `Yang Wei ??` | `陽痿` | @3664 |
+| 同 | `Yin Wei ??` | `陰痿` | @3690 |
+| 同 | `Jin Wei ??` | `筋痿` | @3714,後接 `ED occurs only on the male` |
+| `SHOULDER.md` | `( ??? )` | `五十肩` | @2794,`" 50-year-old shoulder " ( 五十肩 ) in TCM` |
+| 同 | `Points "???:` | `肩三针` | @4782,`" Three Shoulder Points "肩三针: LI 15` |
+| `NECK.md` | `luo zhen??.` | `落枕` | @3072,後接 `Its main manifestation are` |
+| 同 | `technique ??:` | `导气` | @6656,後接 `:  SJ 10` |
+
+原始碼位驗證過:`陽`=U+967D `痿`=U+75FF、`陰`=U+9670、`筋`=U+7B4B、
+`五十肩`=U+4E94 U+5341 U+80A9、`肩三针`=U+80A9 U+4E09 U+9488、
+`落枕`、`导气`=U+5BFC U+6C14。
+
+**繁簡混用照抄不訂正**:同一批檔裡 Impotence 用繁體(陽痿/陰痿/筋痿),
+SHOULDER/NECK 用簡體(肩三针、导气)。那是來源本來的樣子,統一等於改寫出處。
+
+## 一個自己攔下來的錯
+
+腳本裡有一道「佔位以外的內容不准動」的檢查(把 CJK 與 `?` 都剝掉後比對前後文)。
+第一版它就發動了 —— 我把 `is called Yang Wei??` 寫成 `… Yang Wei 陽痿`,
+**多加了一個空格**。回頭把三個檔的原始碼位連空白一起 dump 出來看,確認規則就是
+「`?` 換成漢字,空白一個都不動」,改掉後才通過。字數也完全對得上(2↔2、3↔3)。
+
+## 驗證
+
+三個檔的**本文** CJK:8 / 6 / 4,正好等於補進去的字數;`??` 佔位歸零。
+diff 逐檔看過:只有佔位那幾行 + 檔頭多一段出處註記,沒有第三種改動。
+`build-data.js` + 驗證器全 exit=0,棘輪 13 條全 flat。
+
+每個檔的檔頭加了一段註記,寫明這些字是從哪個 `.doc` 的哪個位移抽出來的 ——
+免得後人以為是手打進去的。**該註記本身含中文**,所以拿「全庫 CJK 總數」當指標時
+這 3 檔會多算約 45 字,量本文要先剝掉 `<!-- -->` 區塊。
+
+## 這 3 檔不會再被蓋回去
+
+`curriculum/conditions/` 的二進位來源已在 `709e23c2` 移出分支,
+`extract-curriculum-md.js --only conditions` 掃到 0 個來源 —— 沒有東西可以重抽,
+比防退化閘門更徹底。
+
+## 全庫剩下的 `??`
+
+`acupoints/Advanced Techniques Notes.md`(1)、
+`acupoints/Therapeutics Notes Comprehensive (1).md`(2)、
+`formulas/10_Formula_Cards_091-100_理血劑_固澀劑.md`(3)、
+`formulas/Herbal Formulations Comprehensive.docx.md`(1)、
+`herbs/方剂学汇总_extracted.md`(1)—— 共 8 處未查。
+其中 `Therapeutics Notes` 的 `caused by what???` 前一批已確認是講義原本的問號。
+其餘 7 處來源格式不同(PDF/docx),不在本批範圍,留著。
+
 # 2026-09-01 — 87 個無中文課件檔逐檔查證:沒有一個是抽壞的;真缺口只有 3 檔 8 處
 
 上一批留的話是「87 個 .md 仍無中文,多數應該本來就是純英文,但沒逐檔確認,
