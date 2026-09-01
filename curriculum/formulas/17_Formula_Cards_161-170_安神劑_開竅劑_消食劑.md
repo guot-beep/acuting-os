@@ -450,10 +450,10 @@ cook together. Take bid. ● An shen bu xin wan [China] (nu zhen zi, han lian ca
 Blood xu虚劳 [inability to sleep, deficient irritability, palpitations, night sweats, Modern Research
 dizziness and vertigo, dry throat and mouth] ●
 ● dry, red tongue, a thin rapid pulse. [Too deficient to fall asleep, shen
-wandering, (too tired to fall asleep (cid:0) Need to nourish the yin)] Case Study
+wandering, (too tired to fall asleep → Need to nourish the yin)] Case Study
 ● Specialty: Nourish, tonify, calm & sedate at same time [just like chicken soup] ●
 ● Not heavy, like rocks
-● Study long hours (cid:0) Consumes, damages blood (cid:0) condensed, concentrated Think & Review
+● Study long hours → Consumes, damages blood → condensed, concentrated Think & Review
 ● Move Qi & Blood to avoid blood stagnation ●
 ● Small formula but works very well, not deep enough sleep
 Applications: Deficient irritability虚烦 & insomnia due to blood xu (either from
@@ -1318,10 +1318,10 @@ cook together. Take bid. ● An shen bu xin wan [China] (nu zhen zi, han lian ca
 Blood xu虚劳 [inability to sleep, deficient irritability, palpitations, night sweats, Modern Research
 dizziness and vertigo, dry throat and mouth] ●
 ● dry, red tongue, a thin rapid pulse. [Too deficient to fall asleep, shen
-wandering, (too tired to fall asleep (cid:0) Need to nourish the yin)] Case Study
+wandering, (too tired to fall asleep → Need to nourish the yin)] Case Study
 ● Specialty: Nourish, tonify, calm & sedate at same time [just like chicken soup] ●
 ● Not heavy, like rocks
-● Study long hours (cid:0) Consumes, damages blood (cid:0) condensed, concentrated Think & Review
+● Study long hours → Consumes, damages blood → condensed, concentrated Think & Review
 ● Move Qi & Blood to avoid blood stagnation ●
 ● Small formula but works very well, not deep enough sleep
 Applications: Deficient irritability虚烦 & insomnia due to blood xu (either from
@@ -1731,9 +1731,9 @@ over-thinking or anxiousness, as well as blood loss that consumes Fluids, and Ca
 severe or chronic illness that injures Zang Fluids. Manifestations: depression, ● A 26 y-o female suffers from crying and laughing spells without apparent
 moodiness, weeping, absent-mindedness, restless sleep, frequent yawning & reason. She cannot control herself in keeping talking or screaming sometimes.
 abnormal behavior [5 organs] She has difficulty to fall asleep and wakes up easily. All these symptoms get
-⬧ Caused by deficiency of organ fluids (cid:0) too dry, not well nourished, can’t worse with menstruations. MD Dx: schizophrenia.
+⬧ Caused by deficiency of organ fluids → too dry, not well nourished, can’t worse with menstruations. MD Dx: schizophrenia.
 function normally, consumes too much [heat] or can’t make enough ●
-⬧ Worry, overthinking (cid:0) internally consumes fluid
+⬧ Worry, overthinking → internally consumes fluid
 ⬧ Diabetes, hyperthyroidism Think & Review
 ● Pathogenesis: Lu stores po (corporeal soul), which dominates the experience of ● What is the difference between formulas that anchor & settle shen and
 grief & related with weeping. When Lu yin is xu, po can’t be stored adequately, formulas that nourish Ht & calm shen?
@@ -1742,8 +1742,8 @@ joy. When xu Blood fails to nourish Ht, shen will be disturbed, resulting in pat
 sudden laughter after inappropriate crying. Lr controls Tendons & K controls ● Please compare gan mai da zao tang with xiao yao san.
 yawning. Fluids xu or Blood loss may cause frequent yawning & stretched of ●
 the back & body.
-⬧ Will deficiency (cid:0) KD deficiency
-⬧ Mild yin deficiency, yin organs lost function (cid:0) not functioning normally
+⬧ Will deficiency → KD deficiency
+⬧ Mild yin deficiency, yin organs lost function → not functioning normally
 Applications: Zang zao; Disorders diagnosed as HT and/or SP Xu, such as
 menopausal sx, PMS, postpartum palpitations and sweating.
 ● Depression, CFS, Seizures, Senile cutaneous pruritus
@@ -3187,11 +3187,11 @@ FORMULATIONS 2
 Formulas That Stabilize and Bind [固涩剂]
 ● Leakage and discharge (hua tuo滑脱, literally “slippage and separation”) are ● Etiology – qi xu due to chronic diseases or congenital weakness [Qi Deficiency:
 pathological conditions caused by a chronic xu of the body’s normal qi, can’t hold the good stuff]
-characterized by chronic symptoms of leakage and loss of qi, blood, essence or ⬧ WM osteoporosis/osteoartritis: Calcium going away from bones (cid:0) Bones get
-fluids with no external pathogenic factors present, manifested with loose, brittle (KD Xu (cid:0) Not enough energy & power to hold the calcium (cid:0)
+characterized by chronic symptoms of leakage and loss of qi, blood, essence or ⬧ WM osteoporosis/osteoartritis: Calcium going away from bones → Bones get
+fluids with no external pathogenic factors present, manifested with loose, brittle (KD Xu → Not enough energy & power to hold the calcium →
 spontaneous sweating, night sweats, chronic coughing, signs of incontinence Bone spurs)
-such as chronic diarrhea, urinary leakage, bedwetting(enuresis) or involuntary ⬧ Diabetes: Glucose leaking out (cid:0) no energy, ADP doesn’t work. SP Qi too
-sperm loss(spermatorrhea), uterine bleeding, vaginal discharges(leukorrhea) weak (cid:0) essence leaking out
+such as chronic diarrhea, urinary leakage, bedwetting(enuresis) or involuntary ⬧ Diabetes: Glucose leaking out → no energy, ADP doesn’t work. SP Qi too
+sperm loss(spermatorrhea), uterine bleeding, vaginal discharges(leukorrhea) weak → essence leaking out
 ● Leaking the good stuff. ⬧ Chronic nephritis: Protein leaking out (SP/KD Qi deficiency)
 ● Dumping the trash is okay, but you have to keep the good stuff ● Pathogenesis – qi is exhausted and loses its normal function of stabilizing and
 consolidating, thus causing the basic body substances to leak or spill out. This
@@ -3683,11 +3683,11 @@ FORMULATIONS 2
 Formulas That Stabilize and Bind [固涩剂]
 ● Leakage and discharge (hua tuo滑脱, literally “slippage and separation”) are ● Etiology – qi xu due to chronic diseases or congenital weakness [Qi Deficiency:
 pathological conditions caused by a chronic xu of the body’s normal qi, can’t hold the good stuff]
-characterized by chronic symptoms of leakage and loss of qi, blood, essence or ⬧ WM osteoporosis/osteoartritis: Calcium going away from bones (cid:0) Bones get
-fluids with no external pathogenic factors present, manifested with loose, brittle (KD Xu (cid:0) Not enough energy & power to hold the calcium (cid:0)
+characterized by chronic symptoms of leakage and loss of qi, blood, essence or ⬧ WM osteoporosis/osteoartritis: Calcium going away from bones → Bones get
+fluids with no external pathogenic factors present, manifested with loose, brittle (KD Xu → Not enough energy & power to hold the calcium →
 spontaneous sweating, night sweats, chronic coughing, signs of incontinence Bone spurs)
-such as chronic diarrhea, urinary leakage, bedwetting(enuresis) or involuntary ⬧ Diabetes: Glucose leaking out (cid:0) no energy, ADP doesn’t work. SP Qi too
-sperm loss(spermatorrhea), uterine bleeding, vaginal discharges(leukorrhea) weak (cid:0) essence leaking out
+such as chronic diarrhea, urinary leakage, bedwetting(enuresis) or involuntary ⬧ Diabetes: Glucose leaking out → no energy, ADP doesn’t work. SP Qi too
+sperm loss(spermatorrhea), uterine bleeding, vaginal discharges(leukorrhea) weak → essence leaking out
 ● Leaking the good stuff. ⬧ Chronic nephritis: Protein leaking out (SP/KD Qi deficiency)
 ● Dumping the trash is okay, but you have to keep the good stuff ● Pathogenesis – qi is exhausted and loses its normal function of stabilizing and
 consolidating, thus causing the basic body substances to leak or spill out. This
@@ -4042,7 +4042,7 @@ Bao He Wan [保和丸] (Preserve Harmony Pill) Source: Dan Xi Xin Fa
 ● Preparation & administration: grind them into powder, form into pills with ● Yes
 water, take 6-9g bid with water or a decoction made from mai ya. Also
 decoction with proportionate reduction of dosage. Modern Research
-● Er Chen Tang image (almost (cid:0) missing gan cao) ●
+● Er Chen Tang image (almost → missing gan cao) ●
 ● Indications: Food stagnation [focal distension & fullness in the chest and Case Study
 epigastrium, abdominal distension (bloating) with occasional pain better with ● A 48 y-o male comes in complaining with an epigastric fullness & distension,
 BM, rotten-smelling belching, acid regurgitation, nausea/vomiting, aversion to worse one hour after eating, accompanied with abdominal bloating and dull

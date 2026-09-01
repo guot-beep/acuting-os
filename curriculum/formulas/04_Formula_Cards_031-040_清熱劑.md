@@ -448,7 +448,7 @@ Specialties switching to Atkin’s diet (6 months ago). He did lose 6 pounds at 
 ● Da Huang: Get rid of heat through defecation then gained back. However, he feels hot all the time. Other sx: constipation,
 ● Zhi Zi: Drain heat through urine thirst, hot sensation worse in the evening, red face pronounced on the nose
 ● Dan Zhu Ye & Zhi Zi: Relieve irritability and around area with some acne. Talking to him, you smell a warm steam
-● Huang Lian has very strong anti-viral, anti-bacterial properties coming to you. [Yang Ming can’t handle so much heat (cid:0) goes to blood]
+● Huang Lian has very strong anti-viral, anti-bacterial properties coming to you. [Yang Ming can’t handle so much heat → goes to blood]
 ⬧ Stronger than Huang Qin & Bai ● A red tongue with thick yellow coating; a forceful and rapid pulse.
 ⬧ Reduces cholesterol, blood sugar, blood pressure ● Dx:
 ⬧ Very bitter, nasty taste is good for condition ● Tx:
@@ -466,7 +466,7 @@ Plus yin chen, da huang Jaundice Plus pu gong yin, jin yin hua, lian qiao Skin d
 Related Formula
 Formula Ingredients Indications
 Xie Xin Tang [泻心汤] Da huang 6 Damp-heat excess with interior Very strong
-[Drain Heart Heat] (Jin Gui Yao Lue) Huang lian 3 clumping [HT heat, drain, shift (cid:0) Bowel Substantial & insubstantial heat
+[Drain Heart Heat] (Jin Gui Yao Lue) Huang lian 3 clumping [HT heat, drain, shift → Bowel Substantial & insubstantial heat
 Huang qin 3 movements]
 36
 Kimberly Chenoweth
@@ -1421,7 +1421,7 @@ Deputy Mu Tong 3-6 Bitter, cool; Clears heat from Ht and SI through urination, p
 Ht, SI, UB
 Assistant Dan Zhu Ye 3-6 Sweet, bland, cold; Alleviates irritability by clearing heart heat
 Ht, St, UB
-Envoy Gan Cao Shao 3-6 Sweet, neutral; all 12 Harmonizes, treats painful urinary dysfunction (cid:0) Urinary tract
+Envoy Gan Cao Shao 3-6 Sweet, neutral; all 12 Harmonizes, treats painful urinary dysfunction → Urinary tract
 primary meridians Shao: Small tips of Gan Cao root
 Small tips enter to the urethra, big tips more tonify function
 Modifications
@@ -1432,7 +1432,7 @@ mai
 Plus han lian cao, bai mao gen Blood in the urine
 Related Formula
 formulas ingredients indications
-Xie Xin Dao Chi San Huang Lian, Deng Xin Cao, Sheng Di, More severe heat in SI & HT: tongue Huang Lian (cid:0) Stronger [clear HT heat]
+Xie Xin Dao Chi San Huang Lian, Deng Xin Cao, Sheng Di, More severe heat in SI & HT: tongue Huang Lian → Stronger [clear HT heat]
 (Yi Zong Jin Jian) Gan Cao Shao, Mu Tong thrusting in kids
 Qing Xin Lian Zi Yin Huang Qin, Mai Dong, Di Gu Pi, Che Severe HT heat with Qi & Yin Xu, Summer days: Make tea & drink
 (Tai Ping Hui Min He Ji Ju Fang) Qian Zi, Gan Cao, Lian Rou, Fu Ling, Damp Heat downward infusion Nourish Qi
@@ -1444,12 +1444,12 @@ Kimberly Chenoweth
 
 FORMULATIONS 1
 Formulas That Clear Heat From The Zang-Fu Organs [清脏腑热]
-Long Dan Xie Gan Tang (Wan (cid:0) Patent) [龙胆泻肝汤] (Gentiana Longdancao Decoction To Drain The Liver) Source: Yi Fang Ji Jie
+Long Dan Xie Gan Tang (Wan → Patent) [龙胆泻肝汤] (Gentiana Longdancao Decoction To Drain The Liver) Source: Yi Fang Ji Jie
 ● Actions: Drains LV & GB Fire, Clears & Drains Lower Jiao Damp-Heat. Modern Research
 ● Preparation and administration: decoction -long dan cao, zhi zi, sheng di are ● Urination-promoting
 fried in wine to produce draining with dispersion. Pills. ● Immunity-boosting
 ● Xie Gan: Drain LV heat ● Anti-hypertensive
-● Xiao Chai Hu Tang (cid:0) Harmonize Shao Yang ● Peristalsis-reducing
+● Xiao Chai Hu Tang → Harmonize Shao Yang ● Peristalsis-reducing
 ● Long Dan Cao & Xia Ku Cao: Treat hypertension [LV Yang rising, LV Heat] ● Anti-inflammatory
 ● ● Anti-allergic
 Indications: Excess heat in LV and/or GB meridians [hypochondric pain, Patent
@@ -1477,16 +1477,16 @@ dots along the sides of the tongue; and dark urine or urinary difficulty. pain t
 ● Acute glaucoma ● Da huang (lu hui), zhi zi(3-huang) with long dan cao in dang gui long hui wan
 ● Suppurative otitis media
 Rank Herb Amount Properties Channels Notes
-Chief Long Dan Cao 3-9 Very bitter, very cold LV, GB, UB Don’t take too long (cid:0) will damage SP
+Chief Long Dan Cao 3-9 Very bitter, very cold LV, GB, UB Don’t take too long → will damage SP
 Drains LV & GB excess heat, eliminates Damp Heat from lower jiao
 Deputy Huang Qin 9 Helps chief in upper clear & lower drain
 Clears heat toxin, drain d-h, Aids clearing upper heat
 Zhi Zi 9 Helps chief in upper clear & lower drain
 Clears heat toxin, drain d-h
-Assistant Mu Tong 9 Conduct d-h (cid:0) Find a way out for d-h; promote urination
+Assistant Mu Tong 9 Conduct d-h → Find a way out for d-h; promote urination
 STDs, skin conditions, shao yang, LV Damp heat, LV yang rising
-Che Qian Zi 9 Conduct d-h (cid:0) Find a way out for d-h, promote urination
-Ze Xie 12 Conduct d-h (cid:0) Find a way out for d-h, promote urination
+Che Qian Zi 9 Conduct d-h → Find a way out for d-h, promote urination
+Ze Xie 12 Conduct d-h → Find a way out for d-h, promote urination
 Chai Hu 6 Aid in clearing upper Combination for clearing Shaoyang heat
 heat
 Sheng Di 9 Drain evils without injuring normal qi
@@ -1501,8 +1501,8 @@ Minus dang gui, sheng di; Severe damp-heat Plus da huang, lu hui constipation
 Plus yi yi ren, bi yu san
 Related Formula
 formulas Ingridients indications
-Xie Qing Wan泻青丸 Dang Gui, Long Dan Cao, Chuan Xiong, Interior constrained LV fire. Draining Qing = blue/green (cid:0) LV
-(Xiao Er Yao Zheng Zhi Jue) Zhi Zi, Da Huang, Qiang Huo, Fang fire effect weaker than Long Dan Xie Aromatic (cid:0) disperse
+Xie Qing Wan泻青丸 Dang Gui, Long Dan Cao, Chuan Xiong, Interior constrained LV fire. Draining Qing = blue/green → LV
+(Xiao Er Yao Zheng Zhi Jue) Zhi Zi, Da Huang, Qiang Huo, Fang fire effect weaker than Long Dan Xie Aromatic → disperse
 Feng Gan Tang Weakest
 Dang Gui Long Hui Wan Dang Gui, Long Dan Cao, Zhi Zi, Huang Liver & GB excess fire with constipation Strongest in heat clearing, detoxing,
 [当归龙荟丸] (Dan Xi Xin Fa) Lian, Huang Bai, Huang Qin, Lu Hui, Da and dark rough urination promote bowel movement & urination
@@ -1871,12 +1871,12 @@ _Source field is blank / not provided in the current uploaded dataset._
 <summary>Herbal Formulations Comprehensive exact extracted section — p.40, 41</summary>
 
 ```text
-Long Dan Xie Gan Tang (Wan (cid:0) Patent) [龙胆泻肝汤] (Gentiana Longdancao Decoction To Drain The Liver) Source: Yi Fang Ji Jie
+Long Dan Xie Gan Tang (Wan → Patent) [龙胆泻肝汤] (Gentiana Longdancao Decoction To Drain The Liver) Source: Yi Fang Ji Jie
 ● Actions: Drains LV & GB Fire, Clears & Drains Lower Jiao Damp-Heat. Modern Research
 ● Preparation and administration: decoction -long dan cao, zhi zi, sheng di are ● Urination-promoting
 fried in wine to produce draining with dispersion. Pills. ● Immunity-boosting
 ● Xie Gan: Drain LV heat ● Anti-hypertensive
-● Xiao Chai Hu Tang (cid:0) Harmonize Shao Yang ● Peristalsis-reducing
+● Xiao Chai Hu Tang → Harmonize Shao Yang ● Peristalsis-reducing
 ● Long Dan Cao & Xia Ku Cao: Treat hypertension [LV Yang rising, LV Heat] ● Anti-inflammatory
 ● ● Anti-allergic
 Indications: Excess heat in LV and/or GB meridians [hypochondric pain, Patent
@@ -1904,16 +1904,16 @@ dots along the sides of the tongue; and dark urine or urinary difficulty. pain t
 ● Acute glaucoma ● Da huang (lu hui), zhi zi(3-huang) with long dan cao in dang gui long hui wan
 ● Suppurative otitis media
 Rank Herb Amount Properties Channels Notes
-Chief Long Dan Cao 3-9 Very bitter, very cold LV, GB, UB Don’t take too long (cid:0) will damage SP
+Chief Long Dan Cao 3-9 Very bitter, very cold LV, GB, UB Don’t take too long → will damage SP
 Drains LV & GB excess heat, eliminates Damp Heat from lower jiao
 Deputy Huang Qin 9 Helps chief in upper clear & lower drain
 Clears heat toxin, drain d-h, Aids clearing upper heat
 Zhi Zi 9 Helps chief in upper clear & lower drain
 Clears heat toxin, drain d-h
-Assistant Mu Tong 9 Conduct d-h (cid:0) Find a way out for d-h; promote urination
+Assistant Mu Tong 9 Conduct d-h → Find a way out for d-h; promote urination
 STDs, skin conditions, shao yang, LV Damp heat, LV yang rising
-Che Qian Zi 9 Conduct d-h (cid:0) Find a way out for d-h, promote urination
-Ze Xie 12 Conduct d-h (cid:0) Find a way out for d-h, promote urination
+Che Qian Zi 9 Conduct d-h → Find a way out for d-h, promote urination
+Ze Xie 12 Conduct d-h → Find a way out for d-h, promote urination
 Chai Hu 6 Aid in clearing upper Combination for clearing Shaoyang heat
 heat
 Sheng Di 9 Drain evils without injuring normal qi
@@ -1928,8 +1928,8 @@ Minus dang gui, sheng di; Severe damp-heat Plus da huang, lu hui constipation
 Plus yi yi ren, bi yu san
 Related Formula
 formulas Ingridients indications
-Xie Qing Wan泻青丸 Dang Gui, Long Dan Cao, Chuan Xiong, Interior constrained LV fire. Draining Qing = blue/green (cid:0) LV
-(Xiao Er Yao Zheng Zhi Jue) Zhi Zi, Da Huang, Qiang Huo, Fang fire effect weaker than Long Dan Xie Aromatic (cid:0) disperse
+Xie Qing Wan泻青丸 Dang Gui, Long Dan Cao, Chuan Xiong, Interior constrained LV fire. Draining Qing = blue/green → LV
+(Xiao Er Yao Zheng Zhi Jue) Zhi Zi, Da Huang, Qiang Huo, Fang fire effect weaker than Long Dan Xie Aromatic → disperse
 Feng Gan Tang Weakest
 Dang Gui Long Hui Wan Dang Gui, Long Dan Cao, Zhi Zi, Huang Liver & GB excess fire with constipation Strongest in heat clearing, detoxing,
 [当归龙荟丸] (Dan Xi Xin Fa) Lian, Huang Bai, Huang Qin, Lu Hui, Da and dark rough urination promote bowel movement & urination
@@ -2278,10 +2278,10 @@ _Source field is blank / not provided in the current uploaded dataset._
 
 ```text
 Zuo Jin Wan [左金丸] (Left Metal Pill) Source: Dan Xi Xin Fa
-● Actions: Clears LV Heat, Directs Rebellious Qi (cid:0), Stop Vomiting. Patents
+● Actions: Clears LV Heat, Directs Rebellious Qi →, Stop Vomiting. Patents
 ● Preparations: grind the herbs into powder and form into pills with water. ● Xiang lian wan
 Decoction with the dosage specified in parentheses. ● Jia wei xiang lian wan
-● Administration: pill- take in 2-3g doses 2-3 times a day. ⬧ Damp heat, toxins, parasites, etc. (cid:0) Clean up & restore function of stomach
+● Administration: pill- take in 2-3g doses 2-3 times a day. ⬧ Damp heat, toxins, parasites, etc. → Clean up & restore function of stomach
 ●
 Modern Research
 Indications ● Anti-acid
@@ -2289,8 +2289,8 @@ Indications ● Anti-acid
 pain [Classic LV Fire invading ST bringing fire/food up], indeterminate gnawing ● Anti-microorganism
 hunger [don’t know if you’re hungry or not], epigastric focal distention, ●
 vomiting, acid regurgitation, belching, a bitter taste in mouth [LV (Mother)
-Excess (cid:0) Reduce LV’s Son (HT) (cid:0) Good for HT Heat/Fire], Severe LV Qi Case Study
-Stagnation for long time (cid:0) LV Heat [Toxin accumulation in ST] ● A 29 y-o female asks for help of her heartburn with acid reflux in the evenings
+Excess → Reduce LV’s Son (HT) → Good for HT Heat/Fire], Severe LV Qi Case Study
+Stagnation for long time → LV Heat [Toxin accumulation in ST] ● A 29 y-o female asks for help of her heartburn with acid reflux in the evenings
 ● T: Red with yellow coating, P: wiry, rapid 2 hours after meal. She just started a stressful job 23 days ago, and has to keep
 eating to ease herself from time to time. Other sx: bloating, burping and
 Applications epigastric pain while stressed out, headache.
@@ -2307,10 +2307,10 @@ Applications epigastric pain while stressed out, headache.
 preparations)
 ⬧ Small formula
 ● Try to name the effect of huang lian a 5-E therapeutic principle in zuo jin wan.
-⬧ LV (Mother) Excess (cid:0) Reduce LV’s Son (HT) (cid:0) Good for HT Heat/Fire
+⬧ LV (Mother) Excess → Reduce LV’s Son (HT) → Good for HT Heat/Fire
 Rank Herb Amount Properties Channels Notes
 Chief Huang lian 180 (15-18) Bitter, cold HT, LV, ST, LI Drains LV fire, clears heat from ST
-Ratio 6:1 Very good (cid:0) bitter, cold for LV Fire
+Ratio 6:1 Very good → bitter, cold for LV Fire
 A/E Wu zhu yu 15-30 (2-3) Acrid, bitter, warm, SP, SP, LV, Hot nature is moderated by cold nature of the chief [Very strong aromatic]
 poisonous KD Moves qi, releases constraint by dispersing liver, directs St qi downward
 Modifications
@@ -2701,9 +2701,9 @@ Think & Review
 Rank Herb Amount Properties Channels Notes
 Chief Sang Bai Pi 30 Sweet, cold LU, SP Dosage varies based on heat [Mulberry tree bark]
 (Chao) Drains LU constrained heat, stops coughing and wheezing
-More Excess (cid:0) Chao Sang Bai Pi = Chief
+More Excess → Chao Sang Bai Pi = Chief
 Deputy Di Gu Pi 30 Sweet, cold LU, LV, KD dosage varies based on xu, Clears yin-deficient heat [Gou Qi Zi tree bark]
-More deficiency (cid:0) Di Gu Pi = Chief
+More deficiency → Di Gu Pi = Chief
 Assistant Zhi Gan Cao 3 Sweet, warm Tonify the middle (mom) to nurture son and harmonizes
 Envoy Geng Mi 15-30 Bland, neutral Protects ST, aids zhi gan cao in tonifying the middle
 Modifications
@@ -3883,10 +3883,10 @@ Case Study
 ● Indications: Damp-heat dysenteric disorders [abdominal pain, tenesmus, ● A 18 y-o female looks for help for her diarrhea with abdominal pain upon
 difficulty with defication, diarrhea with pus(white) and blood(red)(equal return from a trip to South America. She took antibiotics twice 2 days ago for
 amounts), a burning sensation around the anus, dark,scanty urine] an acute diarrhea with pus in stool. Other sx: tenesmus, a hot feeling around
-⬧ Damp Heat in LI (cid:0) Bloody diarrhea with pus anus, frequent BM with a bit of stool and a lot pus and some blood
-⬧ Diarrhea with blood (heat) (cid:0) Regulate the blood ● A slightly red tongue with thick yellow coating, especially in the center; a
-⬧ Tenesmus (urge to go) from Qi stagnation (cid:0) Regulate the Qi slippery and slightly rapid pulse.
-⬧ Blood & tenesmus (cid:0) Regulate Qi & Blood [Very important in dysenteric ● Dx:
+⬧ Damp Heat in LI → Bloody diarrhea with pus anus, frequent BM with a bit of stool and a lot pus and some blood
+⬧ Diarrhea with blood (heat) → Regulate the blood ● A slightly red tongue with thick yellow coating, especially in the center; a
+⬧ Tenesmus (urge to go) from Qi stagnation → Regulate the Qi slippery and slightly rapid pulse.
+⬧ Blood & tenesmus → Regulate Qi & Blood [Very important in dysenteric ● Dx:
 disorders] ● Tx:
 ● T: greasy, slightly yellow coating, P: wiry, rapid ●
 Applications Think & Review
@@ -3897,8 +3897,8 @@ Applications Think & Review
 ● Anal sinusitis
 Rank Herb Amount Properties Channels Notes
 Chief Bai Shao Yao 15-20 Sour, bitter, cool LV, SP Regulates qi & blood, relieves pain, stops diarrhea
-Shao Yao Gan Cao tang: treat spasmatic muscles, like 4 gates (cid:0) Regulate Qi &
-Blood (cid:0) Remove stagnation, restore Ying & Wei circulation
+Shao Yao Gan Cao tang: treat spasmatic muscles, like 4 gates → Regulate Qi &
+Blood → Remove stagnation, restore Ying & Wei circulation
 Deputy Dang Gui 6-9 Sweet, acrid, bitter, HT, LV, SP Helps chief move blood
 warm
 Gan Cao 4-5 Sweet, neutral Helps chief moderate spasms, protects middle
@@ -3907,7 +3907,7 @@ Bing Lang 4-5 Acrid, bitter, warm SP, ST, LI Moves qi, leads stagnation out
 Assistant Huang Lian 6-9 Bitter, cold Clear heat, dry damp
 Huang Qin 9-12 Bitter, cold Clear heat, dry damp
 Da Huang 9-12 Bitter, cold ST, LI, LV Drains d-h through stools
-Guan Gui 1.5-3 Acrid, sweet, hot KD, SP, LV, Young Rou Gui (cinnamon tree <5 years old) (cid:0) Milder, not as hot as Rou Gui
+Guan Gui 1.5-3 Acrid, sweet, hot KD, SP, LV, Young Rou Gui (cinnamon tree <5 years old) → Milder, not as hot as Rou Gui
 UB Aids moving blood; An opposing assistant,
 Hold gate, don’t let everyone out (gatekeeper, security)
 Modifications
@@ -4270,7 +4270,7 @@ Bai Tou Weng Tang [白头翁汤] (Pulsatilla Decoction) Source: Shang Han Lun [W
 ● Actions: Clears Heat, Relieves Toxicity, Cools Blood, Alleviates Dysenteric Modern Research
 Disorders. ● Anti-inflammatory
 ● Preparation and administration: decoction, take warm. ● Anti-bacterial
-● All four ingredients are cold (cid:0) Very rare for ZZJ [Can put in Gan Cao to soften, ● Ulcer-healing
+● All four ingredients are cold → Very rare for ZZJ [Can put in Gan Cao to soften, ● Ulcer-healing
 move Qi, ●
 ● Indications: Hot dysenteric disorders [abdominal pain, tenesmus, (burning Case Study
 sensation around anus), diarrhea containing more blood than pus, thirst; ● A 40 y-o male has had diarrhea with purple- red pus in stool for 4 days after he

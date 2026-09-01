@@ -317,7 +317,7 @@ Case Study
 yellow, viscous sputum that is difficult to expectorate, focal distension, a feeling
 of fullness in the chest & diaphragm, nausea, wheezing, or difficult breathing; a Think & Review
 red tongue with greasy yellow coating, a rapid slippery pulse. ●
-● Flu that has gotten into Yang Ming & Qi stage (cid:0) take as pill
+● Flu that has gotten into Yang Ming & Qi stage → take as pill
 Applications
 ● Cough from heat-phlegm presenting with sticky yellow sputum, yellow coating,
 & rapid pulse
@@ -328,7 +328,7 @@ Applications
 ● Nicotine addiction
 Rank Herb Amount Properties Channels Notes
 Chief Dan nan xing 45 Toxic Strongly clears and breaks fire-phlegm, opens chest, stops coughing
-Deputy Gua lou ren 30 Clears heat, resolves phlegm, opens chest [Lubricating (cid:0) move down to LI]
+Deputy Gua lou ren 30 Clears heat, resolves phlegm, opens chest [Lubricating → move down to LI]
 Assistant Huang qin 30 Clears Lu heat, dries damp. With gua lou ren drains Lu fire
 Envoy Zhi shi 30 Moves qi, dissipates fire-phlegm clumps, dispels focal distension
 Xing ren 30 Toxic Facilitates Lu qi flow, stops coughing (treats rebellious LU Qi)
@@ -682,7 +682,7 @@ yellow greasy tongue coating
 ● Inflammation in lungs
 Rank Herb Amount Properties Channels Notes
 Chief Gua lou Clears heat, dissipates clumps, dispels phlegm, expands the chest
-Can use Gua Lou Pi (chest), Ren (LI), whole thing (cid:0) for all symptoms
+Can use Gua Lou Pi (chest), Ren (LI), whole thing → for all symptoms
 Deputy Huang lian Clears heat, dries damp
 Assistant Jiang ban xia Directs rebellious downward, transforms phlegm, eliminates focal distension,
 dissipates clumps, harmonizes St
@@ -1007,16 +1007,16 @@ diaphragm, reduces food stagnation. ● A bundled-up 69 y-o male suffers from co
 ● Preparation & administration: crush the seeds & place in a cheesecloth bag. of white foamy watery mucus accompanied by SOB & a stifling sensation in the
 Decoct with sheng jiang in winter, take with honey for constipated patients. chest & diaphragm. Other sx: a cold feeling in the abdomen, loose stools with
 ⬧ Powder & put in tea bag indigested food chunks. His MD diagnosed him as chronic bronchitis 12 years
-⬧ Honey & ginger (cid:0) warm up, protect SP/ST ago, as emphysema 3 years ago, as duodenal ulcer 24 years ago.
+⬧ Honey & ginger → warm up, protect SP/ST ago, as emphysema 3 years ago, as duodenal ulcer 24 years ago.
 ⬧ Honey: lubricate GI ● A pale flabby tongue with moist white slippery coating; a tight full pulse.
 ● Dx:
 ● Indications: Lu cold-phlegm with food stagnation – coughing & wheezing, ● Tx:
 copious sputum, focal distension & heaviness in the chest & epigastrium, loss ●
 of appetite, indigestion; a white greasy tongue coating, a slippery pulse.
-● Old age (90s) (cid:0) Digestion slow down Think & Review
+● Old age (90s) → Digestion slow down Think & Review
 ● Phlegm in lung (coughing) ● all can be used for phlegm accumulation from Middle jiao xu, can you tell the
 ● Phlegm in middle jiao differences among these 3 formulas?
-● All the seeds good for constipation ● San zi yang qin tang: no tonify function, just treat symptoms (cid:0) lubricate &
+● All the seeds good for constipation ● San zi yang qin tang: no tonify function, just treat symptoms → lubricate &
 conduct down
 Applications ● er chen tang: + ren shen & bai zhu, slight tonify middle jiao function, dry
 ● Lu cold-phlegm with food stagnation damp & stop production of phlegm
@@ -1940,8 +1940,8 @@ yellow sputum. He has been treated by xiao qing long tang then sang ju yin at
 ● Indications: External wind-phlegm causing cough [Coughing with sputum, the beginning of his cold. He smoked for over 20 years and just quit 5 weeks
 itchy sore throat, possible slight chills & fever, aversion to wind] ago.
 ● T: thin white tongue coating, P: floating pulse. ● A normal tongue with thin white coating; a slightly floating pulse
-● Springtime, fall (cid:0) more allergies, no rain (cid:0) more allergies ● Dx:
-● Treats symptoms (cid:0) coughing (including residual cough) ● Tx:
+● Springtime, fall → more allergies, no rain → more allergies ● Dx:
+● Treats symptoms → coughing (including residual cough) ● Tx:
 ●
 Applications
 ● Cough due to Exterior conditions Think & Review

@@ -497,7 +497,7 @@ FORMULATIONS 1
 ● Actions: Nourishes KD Yin, Supplements Essence, Benefits Marrow. ● Zuo gui wan
 ● Preparation and administration: grind the ingredients into powder and form ● Cong rong bu shen wan (rou cong rong, shu di, tu si zi, wu wei zi)
 into pills with honey, take in 9-15g doses bid with salted water or warm water. ⬧ KD Yin & yang Xu, but no significant heat/cold symptoms
-● Severe KD deficiency, very dry, lost memory, forgetful, hot flashes, ⬧ Evenly tonify yin & yang (cid:0) Focus on KD Essence
+● Severe KD deficiency, very dry, lost memory, forgetful, hot flashes, ⬧ Evenly tonify yin & yang → Focus on KD Essence
 osteoporosis, strengthens lower back [Du Mai empty] ● Fertile garden
 ● Stronger than Liu Wei Di Huang Wan [Yin & Essence Tonic] ● Zuo gui teapills
 ⬧ Tonify yin from yang [Tu Si Zi, Lu Jiao Jiao] ●
@@ -1190,8 +1190,8 @@ Jin Gui Shen Qi Wan [金匮肾气丸] (Kidney Qi Pill From The Golden Cabinet) S
 ● Preparation and administration: grind the herbs into powder, form into small ● Jin gui shen qi wan
 pills with honey. Take 9-15g of the pills, bid, with warm water. Decoction with ● Ji sheng shen qi wan
 dosage of the herbs decreased by a factor of ten. ● Golden Book Teapills
-● Make decoction (cid:0) get rid of zero ● Dynamic Warrior
-● Without Zhi Fu Zi & Gui Zhi, it’s a yin tonic (cid:0) These make it a yang tonic ● Rehmannia 8
+● Make decoction → get rid of zero ● Dynamic Warrior
+● Without Zhi Fu Zi & Gui Zhi, it’s a yin tonic → These make it a yang tonic ● Rehmannia 8
 ● If Fire leaves KD & starts floating up, use Rou Gui instead of Gui Zhi to anchor
 KD Yang Modern Research
 ● Tonify 3 Yin channels: KD, LV, ● Anti-early-aging
@@ -1264,7 +1264,7 @@ spermatorrhea; or aching, weakness of lower back & knees. Also infertility, ● 
 loose stools (sometimes with undigested food particles), incontinence, and
 edema of the lower extremities Case Study
 ● T: pale with white coating, P: deep and slow ● A 57 y-o male looks for Tx of poor sleep due to frequent urinations at night(3-5
-● Can’t stand anymore, have to use walker [KD deficiency (cid:0) Restore KD Yang Qi] times/night). Other sx: weak urine stream with dripping, cold limbs,
+● Can’t stand anymore, have to use walker [KD deficiency → Restore KD Yang Qi] times/night). Other sx: weak urine stream with dripping, cold limbs,
 pronounced in lower limbs, low sex drive,or premature ejaculation. Western
 Applications Dx: benign hyperplasia of prostate.
 ● K yang xu with Mingmen fire waning; or K yang xu with essence and blood xu ● A dusky tongue with thin white coating; a deep and weak pulse.
@@ -1961,8 +1961,8 @@ Jin Gui Shen Qi Wan [金匮肾气丸] (Kidney Qi Pill From The Golden Cabinet) S
 ● Preparation and administration: grind the herbs into powder, form into small ● Jin gui shen qi wan
 pills with honey. Take 9-15g of the pills, bid, with warm water. Decoction with ● Ji sheng shen qi wan
 dosage of the herbs decreased by a factor of ten. ● Golden Book Teapills
-● Make decoction (cid:0) get rid of zero ● Dynamic Warrior
-● Without Zhi Fu Zi & Gui Zhi, it’s a yin tonic (cid:0) These make it a yang tonic ● Rehmannia 8
+● Make decoction → get rid of zero ● Dynamic Warrior
+● Without Zhi Fu Zi & Gui Zhi, it’s a yin tonic → These make it a yang tonic ● Rehmannia 8
 ● If Fire leaves KD & starts floating up, use Rou Gui instead of Gui Zhi to anchor
 KD Yang Modern Research
 ● Tonify 3 Yin channels: KD, LV, ● Anti-early-aging
@@ -2035,7 +2035,7 @@ spermatorrhea; or aching, weakness of lower back & knees. Also infertility, ● 
 loose stools (sometimes with undigested food particles), incontinence, and
 edema of the lower extremities Case Study
 ● T: pale with white coating, P: deep and slow ● A 57 y-o male looks for Tx of poor sleep due to frequent urinations at night(3-5
-● Can’t stand anymore, have to use walker [KD deficiency (cid:0) Restore KD Yang Qi] times/night). Other sx: weak urine stream with dripping, cold limbs,
+● Can’t stand anymore, have to use walker [KD deficiency → Restore KD Yang Qi] times/night). Other sx: weak urine stream with dripping, cold limbs,
 pronounced in lower limbs, low sex drive,or premature ejaculation. Western
 Applications Dx: benign hyperplasia of prostate.
 ● K yang xu with Mingmen fire waning; or K yang xu with essence and blood xu ● A dusky tongue with thin white coating; a deep and weak pulse.
@@ -2513,12 +2513,12 @@ end, e jiao dissolved in strained decoction, taken tid.
 ● Myocardium-protecting
 ● Indications: Qi & blood xu due to consumptive conditions [HT Qi & Blood Xu] ● Myocardiocellular DNA & myocardio-cytoplasm-protein-synthesis promotion
 palpitations with anxiety, irritability, insomnia, emaciation, sob, constipation, a ●
-dry mouth and throat Thinking too much (cid:0) Internally consumes the Heart
+dry mouth and throat Thinking too much → Internally consumes the Heart
 blood [Contraindiacated for patients with high blood pressure or diabetes], Case Study
 ● T: pale, shiny tongue, ● A 21 y-o female complains of palpitations, sob, thirst, chest fullness, irritability,
 ● P: consistently irregular, slow-irregular, or thin, faint, and forceless. fatigue, light-headedness secondary to a flu-like bug last month.
 ● ● A dusky tongue with little coating; a thin, slow, and irregular pulse.
-● PTSD: HT shen disturbed (cid:0) Nourish HT Blood [Mother is nourishing (HT ● She seems hearing from the nurse about that she had a viral myocarditis. So a
+● PTSD: HT shen disturbed → Nourish HT Blood [Mother is nourishing (HT ● She seems hearing from the nurse about that she had a viral myocarditis. So a
 Blood)] good rest and nutrients is necessary.
 ● Dx:
 Applications ● Tx:
@@ -2526,7 +2526,7 @@ Applications ● Tx:
 dai-intermittent) – this formula is also called fu mai tang (restore the pulse Think & Review
 decoction复脉汤); 2. Lung atrophy肺痿 – dry coughing/of blood-streaked ● Please compare gui pi tang with zhi gan cao tang.
 sputum, emaciation, sob, insomnia, irritability, sweating, dry throat/tongue ● Please compare gui pi tang with bu zhong yi qi tang.
-● Arrhythmia [Irregular pulses (cid:0) Unknown reason] ● Please compare gui pi tang with shi quan da bu tang.
+● Arrhythmia [Irregular pulses → Unknown reason] ● Please compare gui pi tang with shi quan da bu tang.
 ● Coronary heart disease/angina pectoris [Mild cases] ● What is the paired-herb to calm restless fetus in tai shan pan shi san?
 ● Mitral stenosis, Emphysema ●
 ● Neurasthenia, Hyperthyroidism
@@ -3951,8 +3951,8 @@ _Source field is blank / not provided in the current uploaded dataset._
 Bai Hu Tang [白虎汤] (White Tiger Decoction) [1st Degree]
 ● Actions: Clears Qi-Level Heat, Generates Fluids. Modern Research
 ● Preparation: Cook shi gao first, then cook the rest until rice is done. ● Anti-pyretic
-⬧ Now have powdered shi gao (cid:0) don’t have to cook it first. ● Immunity-supporting
-⬧ Back in the old times, didn’t have antibiotics (cid:0) use shi gao to reduce fever ● Anti-bacterial
+⬧ Now have powdered shi gao → don’t have to cook it first. ● Immunity-supporting
+⬧ Back in the old times, didn’t have antibiotics → use shi gao to reduce fever ● Anti-bacterial
 ● Shi Gao + Zhi Mu = Bai Hu Tang ● Anti-inflammatory
 ● Ma Huang + Gui Zhi = Ma Huang tang ●
 ● Pay attention to chief pairs
@@ -3963,7 +3963,7 @@ Indications He came back from Europe yesterday and felt chilly and hot last nigh
 sweating & aversion to heat, a red face, severe thirst with a desire to drink and thirst with desire to drink cold fluids, very hot.
 irritability; and a flooding, forceful or slippery, rapid pulse] ● You feel the heat steaming out from him while interviewing with him, and feel
 ● This sx can be summarized as “Four Greats/Big” 四大. [Big Fever, sweating, sticky wet while feeling his pulses.
-pulse, thirst] Get rid of fever (cid:0) everything else follows ● A red tongue with thin yellow dry coat; a rapid and forceful pulse.
+pulse, thirst] Get rid of fever → everything else follows ● A red tongue with thin yellow dry coat; a rapid and forceful pulse.
 ● Organ: Da Cheng Qi Tang ● Dx:
 ● Tx:
 Applications
@@ -3977,7 +3977,7 @@ yin-fluids damage and without interior clumping. ●
 ● Systemic pruritus, Acute pancreatitis
 Rank Herb Amount Properties Channels Notes
 Chief Shi Gao 30-50 Sweet, acrid, LU, ST Clears blazing heat, alleviate thirst and irritability
-very cold Cold is draining [used to make tofu with shi gao (cid:0) after everyone eat, run to
+very cold Cold is draining [used to make tofu with shi gao → after everyone eat, run to
 bathroom]
 Deputy Zhi Mu 9 Bitter, cold LU, ST, KD Clears heat, nourishes fluids (yin)
 Mutual promotion [Shi Gao & Zhi Mu] (just like Ma Huang & Gui Zhi)
@@ -4409,8 +4409,8 @@ Applications nauseated. Then he went on trip without taking again.
 ● Aftermath of a febrile disease [lingering fever] ● Dx:
 ● Febrile diseases with injury to qi and yin-fluids characterized by unabated ● Tx:
 fever…
-● Toxic reactions from chemo/radio-therapy [Radiation is extreme heat (cid:0) Patient Think & Review
-feels hot & dry (cid:0) Damage Qi & Yin] ● Why do Shi Gao & Zhi Mu play an important role in Bai Hu Tang?
+● Toxic reactions from chemo/radio-therapy [Radiation is extreme heat → Patient Think & Review
+feels hot & dry → Damage Qi & Yin] ● Why do Shi Gao & Zhi Mu play an important role in Bai Hu Tang?
 ● Post-surgical fever ● What are the combined actions of ren shen and zhi gan cao in zhu ye shi gao
 ● Pharyngitis tang?
 ● Nephritis ● Why ban xia is included in zhu ye shi gao tang?
@@ -4850,7 +4850,7 @@ Applications his with little effect, but caused him diarrhea.
 ● Psoriasis, Medicinal rashes Chapter 2? Where toxin? Where heat? Substantial form?
 ● Pityriasis rosea ⬧ Clearing heat: clear toxins, detox, get heat from different levels
 ● Hodgkin’s disease, Pain from cancers ▪ Appendicitis:
-* already formed, pus (cid:0) substantial
+* already formed, pus → substantial
 * Just inflamed: insubstantial
 ⬧ Downward draining: Get rid of substantial heat accumulated below middle
 jiao
@@ -4863,13 +4863,13 @@ Sheng Di 15 Cool blood, nourish, Zeng Ye Tang. Cools blood, nourishes and genera
 generate fluids
 Mai Dong 9 Cool blood, nourish, Zeng Ye Tang. Cools blood, nourishes and generates yin-fluids
 generate fluids
-Assistant Jin Yin Hua 9 Clear heat, guide, Yin Qiao San. Clear heat from Qi level, guide heat from Ying (cid:0) Qi (cid:0) Wei (cid:0) Out
+Assistant Jin Yin Hua 9 Clear heat, guide, Yin Qiao San. Clear heat from Qi level, guide heat from Ying → Qi → Wei → Out
 Relieve toxicity [Ying Level: can disturb spirit] Drain heat down from heart, relieve toxicity
-Lian Qiao 6 Clear heat, guide Yin Qiao San. Clear heat from Qi level, guide heat from Ying (cid:0) Qi (cid:0) Wei (cid:0) Out
+Lian Qiao 6 Clear heat, guide Yin Qiao San. Clear heat from Qi level, guide heat from Ying → Qi → Wei → Out
 [Ying Level: can disturb spirit] Drain heat down from heart, relieve toxicity
-Huang Lian 4.5 Clear heat, guide Yin Qiao San. Clear heat from Qi level, guide heat from Ying (cid:0) Qi (cid:0) Wei (cid:0) Out
+Huang Lian 4.5 Clear heat, guide Yin Qiao San. Clear heat from Qi level, guide heat from Ying → Qi → Wei → Out
 [Ying Level: can disturb spirit] Drain heat down from heart, relieve toxicity
-Dan Zhu Ye 3 Clear heat, guide Yin Qiao San. Clear heat from Qi level, guide heat from Ying (cid:0) Qi (cid:0) Wei (cid:0) Out
+Dan Zhu Ye 3 Clear heat, guide Yin Qiao San. Clear heat from Qi level, guide heat from Ying → Qi → Wei → Out
 [Ying Level: can disturb spirit] Drain heat down from heart, relieve toxicity
 Envoy Dan Shen 6 Bitter, slt. cold HT, PC, LV Prevents blood stasis, reinforces other herbs which cool blood
 Modifications
@@ -5289,7 +5289,7 @@ Case Study
 Indications ● 52 y-o female leukemia patient comes in complaining about abdominal
 ● Heat Entering Blood-Level: Fever, various types of bleeding (vomiting of blood, distention and fullness, thirst and nosebleed 1-2 times/day. She is treated with
 nosebleed, blood in the stool or urine, and rashes) [most of heat already chemo and feels irritable. She looks pale and weak.
-entered blood (cid:0) reckless blood circulation (cid:0) cause all kinds of bleeding, get ● Dry purple red tongue with thin gray coating
+entered blood → reckless blood circulation → cause all kinds of bleeding, get ● Dry purple red tongue with thin gray coating
 anywhere], black and tarry stools [far blood], abdominal distention and ● thin, weak, and slightly rapid pulse.
 fullness, thirst with an inability to swallow; or delirium ● Dx:
 ● T: Scarlet with prickles, P: thin, rapid ● Tx:
@@ -5330,7 +5330,7 @@ dan dou chi, tian hua fen, xuan shen, zi severe heat toxin, delirious speech, Zi
 cao deep-purple rashes… scarlet Chang Pu
 tongue/with black coating Huang Qin
 Tian Hua Fen [HIV +]
-End 5/4/2017 (cid:0) Midterm
+End 5/4/2017 → Midterm
 34
 Kimberly Chenoweth
 

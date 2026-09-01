@@ -696,11 +696,11 @@ _Source field is blank / not provided in the current uploaded dataset._
 
 ```text
 Jing Fang Bai Du San - Ren Shen; Severe w-c-d in strong persons Release wind [milder than Ma Huang &
-[Replace Ma Huang Tang, etc. (cid:0) more + Jing Jie, Fang Feng [Often Paired] (without sweating) Gui Zhi], more commonly used than
+[Replace Ma Huang Tang, etc. → more + Jing Jie, Fang Feng [Often Paired] (without sweating) Gui Zhi], more commonly used than
 comprehensive] Ren Shen Bai Du San
 Shen Su Yin (He Ji Ju Fang) Ren Shen, Jie Geng, Qian Hu, Fu Ling, Exterior w-c and internal damp-phlegm Zi Su Ye: warm, acrid
 [More tonifying, middle jiao & internal Gan Cao, Sheng Jiang, Zi Su Ye, Chen in weak persons Chen Pi:
-damp ingredients (cid:0) better for weak Pi, Ge Geng, Jiang Ban Xia [prepared Ge Gen: Muscle layers
+damp ingredients → better for weak Pi, Ge Geng, Jiang Ban Xia [prepared Ge Gen: Muscle layers
 patients] w/ Sheng Jiang], Mu Xiang, Da Zao Jiang Ban Xia: Better for middle jiao
 16
 Kimberly Chenoweth
@@ -722,9 +722,9 @@ Da Cheng Qi Tang大承气汤 (Major Order The Qi Decoction) [Very Important!] So
 ● Preparation (decoction): Add Da Huang Near End [cook too long, no purging ● Peristalsis-promoting, Promotion of volume of blood flow in intestines
 function, moves blood instead] ● Anti-inflammatory, Bacteria inhibiting
 ● Administration: taken warm; discontinue upon diarrhea induced ● RNA synthesis-promotion for hepatic cells
-Indications [Very Excess, lot of heat, blocked lower jiao (cid:0) Open up] Case Study
+Indications [Very Excess, lot of heat, blocked lower jiao → Open up] Case Study
 ● Yang Ming Fu Organ Excess [阳明腑实证]: severe constipation & flatulence, ● A 32 y-o male looks for help for his stubborn constipation with abdominal pain
-focal distention, and abdominal fullness, abdominal pain (cid:0) with pressure, and fullness secondary to a flu he caught 8 days ago. He also feels thirsty and
+focal distention, and abdominal fullness, abdominal pain → with pressure, and fullness secondary to a flu he caught 8 days ago. He also feels thirsty and
 tense & firm abdomen; dry yellow/dry black tongue coating with prickles, a hot. [Heat accumulation, yin consumed] He has not had BM for 4 days and has
 submerged excessive pulse. Tidal fever, delirious speech, profuse sweating a dull pain in hepatic area. Talking to him you smell an odor like rotten apple.
 from palms & soles. ● Dry tongue with gray-yellow coating, thickening at the back; a slippery pulse.
@@ -734,14 +734,14 @@ coating with prickles [heat], submerged forceful pulse. ● If pt. also present 
 ● 4 Types Abdominal Symptoms: focal distension痞, fullness满, dryness燥, ⬧ ST Heat: Huang Lian [in mouth]
 hardness实[Need to have all 4 to prescribe this formula] [Pi, Man, Zao, Shi]
 ● Diarrhea with bluegreen, stinky, turbid fluid, presenting with abdominal pain, Review & Think
-hardness and masses [Hard stool accumulate too long in lower jiao (cid:0) dried up ● What possible symptoms and signs could present if a patient suffers from
+hardness and masses [Hard stool accumulate too long in lower jiao → dried up ● What possible symptoms and signs could present if a patient suffers from
 (bullets), in spaces between bullets “nasty water/fluid” can go through] Yangming-Fu organ disorder?
 ● Heat collapse, ● Please compare the Formulas - “order the qi decoctions 承气汤” in terms of
 ● Kuang (hysterical attack) [aggressive historical type (excess heat)] their ingredients, dosages, preparations, actions, and indications.
 ⬧ [Dian: depressed type]
 ● Acute calculus diseases (cholelithiasis, urolithiasis…) ● Da Huang Nickname: “The General” Very strong, a lot of honors &
 ● Gastric dysperistalsis, Post-surgery GI Sx, Intestinal adhesive obstruction achievements, highest rank in military.
-● Acute lead colic, Acute necrotic pancreatitis [Heat & toxins block insides] ⬧ Prepare with alcohol: Jiu Da Huang [Drunken General (cid:0) can do anything]
+● Acute lead colic, Acute necrotic pancreatitis [Heat & toxins block insides] ⬧ Prepare with alcohol: Jiu Da Huang [Drunken General → can do anything]
 ● Acute renal failure due to epidemic hemorrhagic fever ⬧ Move Blood & bowel (internally)
 Rank Herb Amount Properties Channels Notes
 Chief Da Huang 12 Bitter, cold, purging Propulsive effect in purging, improve peristalsis [Don’t cook very long]
@@ -762,12 +762,12 @@ Xiao Cheng Qi Tang Minus mang xiao (Da Huang 12, Hou Po 6, Zhi Shi 6-9 Mild Yang
 Tiao Wei Cheng Qi Tang Minus Zhi Shi, Huo Po; Plus Gan Cao (Da Huang 12 & Mild Yangming organ Sx w/o distension Gan Cao: Tonify SP (middle jiao xu)
 Gan Cao 6-Cook Together, Mang Xiao 9-12) and fullness
 Da Huang Gan Cao Tang Minus Mang Xiao, Zhi Shi, Huo Po Unblock bowels, purge & harmonize Tonify & harmonize at same time
-(cid:0) (Da Huang 12, Gan Cao 3) ST, stop vomiting. For heat clumping in
+→ (Da Huang 12, Gan Cao 3) ST, stop vomiting. For heat clumping in
 LI & fire rising to disturb ST
 Hou Po San Wu Tang Minus Mang Xiao (Hou Po 24, Zhi Shi 12-15, Da Moves qi down & unblocks bowels. For Same ingredients as Xiao [XCQT],
 Hou Po = Chief Huang 12-Add Near End) qi stagnation causing constipation different dosage, bloating > heat
 Zeng Ye Cheng Qi Tang Minus Zhi Shi, Hou Po; Plus Xuan Shen, Mai Dong, Enriches Yin Fluids, Drains Heat. For Zeng Ye Tang: Xuan Shen, Mai Man
-Sheng Di (Xuan Shen, Mai Dong, Sheng Di Huang, Da Yangming Organ Sx With Yin Xu Dong, Sheng Di Huang (cid:0) Add fluids
+Sheng Di (Xuan Shen, Mai Dong, Sheng Di Huang, Da Yangming Organ Sx With Yin Xu Dong, Sheng Di Huang → Add fluids
 Huang [Add Near End], Mang Xiao)
 Fu Fang Da Cheng Qi Plus Lai Fu Zi, Tao Ren [moisten intestines], Chi Shao Purges interior, moves qi & blood. For
 Tang Yao [move blood] (Da Huang 15-Add Near End, Mang simple intestinal obstruction with
@@ -801,10 +801,10 @@ stomach and intestines cheng qi tang and da xian xiong tang
 ● Exudative pleurisy/cirrhosis
 Rank Herb Amount Properties Channels Notes
 Chief Gan Sui 1-1.5 Bitter, sweet, cold, Drives out accumulated water in the chest by flushing downward
-purging, toxic [Very toxic! (cid:0) Small dosage] (Don’t cook (cid:0) powder & put with formula)
+purging, toxic [Very toxic! → Small dosage] (Don’t cook → powder & put with formula)
 [Flush down, then Da Huang & Mang Xiao take it out]
 Heat & water accumulated in upper, middle & lower jiao (Can have chest pain)
-[Pleurisy, ascites (cid:0) Pathogenic water accumulation + constipation]
+[Pleurisy, ascites → Pathogenic water accumulation + constipation]
 Deputy Da Huang 9-12 Bitter, cold Helps chief in clearing out and draining heat through stools
 Mang Xiao 9-12 Salty, cold Helps chief in softening clumps and draining heat
 Related Formula
@@ -822,8 +822,8 @@ FORMULATIONS 1
 Formulas That Moisten the Intestines and Unblock the Bowels 润下
 ● Constipation due to Yin damage from excessive heat, or constitutional heat ● Treated with formulas that induce BM by lubricating the intestines, which
 leading to lack of fluids/dry up, which is called boat pause because of dry-up of contain substances of a sweet, bland, and oily natures 增水行舟.
-river 无水舟停. ● Vegans: Not enough oil (cid:0) lack of lubrication
-● “Lack of water (cid:0) Boat stopped (cid:0) Add more water, boat go again”
+river 无水舟停. ● Vegans: Not enough oil → lack of lubrication
+● “Lack of water → Boat stopped → Add more water, boat go again”
 Ma Zi Ren Wan (Hemp Seed Pill) Source: Shang Han Lun
 ● Actions: Moistens Intestines, Drains Heat, Moves Qi, Unblocks Bowels. Patent Forms
 ● Preparation: form the powdered herbs into pills with honey; or cook herbs to ● China
@@ -832,7 +832,7 @@ decoction in a proportionate reducing dosage. ⬧ Run Chang Wan 8 tid [润肠丸
 ● USA
 Indications ⬧ Smooth response 8-15 drops tid
 ● 脾约证 (Pi Yao Zheng) ST excess binds fluid-depleted SP [ST Excess, SP
-deficiency (cid:0) ST too strong, SP not strong enough] [Insufficient lubrication, Modern Research
+deficiency → ST too strong, SP not strong enough] [Insufficient lubrication, Modern Research
 constipation with dry, hard stool that is difficult to expel, frequent urination ● Cathartic effect
 ● T: dry, yellow coating, P: submerged, rapid/floating, choppy ● Peristalsis-promotion
 ● Xiao Cheng Qi Tang hiding in this formula
@@ -1272,7 +1272,7 @@ Chief Tao Ren 12 [Tao He = Tao Ren] Moves blood. Breaks up and dispels blood sta
 Chief Pair: Both move blood
 Da Huang 12 Clears heat, purges Intestines, attacks stasis & guides it out
 Not cooked: move bowel stronger
-Cooked: Move blood better (cid:0) Usually both function
+Cooked: Move blood better → Usually both function
 Opens lower jiao at same time
 Deputy Gui Zhi 6 Unblocks Meridians, dispels retained blood stasis from lower jiao
 Assistant Mang Xiao 6 Softens accumulation, clears heat, purges Intestines
@@ -1758,16 +1758,16 @@ complexion, or sclera, P: choppy or wiry, tight ●
 Think & Review
 Applications ● Why are qi-moving herbs often added to formulas that invigorate Blood?
 ● Blood stagnation in chest with constrained LV Qi: commonly used in treating ● What is the function of Gui Zhi in Tao he cheng qi tang? NCCAOM
-chest pain d/t blood stasis accompanied by a dark-red tongue & a choppy or ⬧ ZZJ Formula, likes to use Gui Zhi (cid:0) Release remaining EPI (Tai Yang Syndrome
-wiry, tight pulse (cid:0) Conditions caused by wind cold)
-● Blood stasis in children: usually when fever, pain, & difficulty in sleeping ⬧ Warm & acrid (cid:0) Break up blood stasis
-develop after trauma. ⬧ Promote urination (cid:0) Open up lower jiao, urinary tract (Qi Hua fxn) [Release
+chest pain d/t blood stasis accompanied by a dark-red tongue & a choppy or ⬧ ZZJ Formula, likes to use Gui Zhi → Release remaining EPI (Tai Yang Syndrome
+wiry, tight pulse → Conditions caused by wind cold)
+● Blood stasis in children: usually when fever, pain, & difficulty in sleeping ⬧ Warm & acrid → Break up blood stasis
+develop after trauma. ⬧ Promote urination → Open up lower jiao, urinary tract (Qi Hua fxn) [Release
 ● Embolism, CHD, Hypertension/hyperlipemia stagnation]
 ● Intercostal neuralgia, Migraine HA, Postconcussion syndrome ⬧ Warm: help control cold nature of Da Huang & Mang Xiao
 ● Primary dysmenorrhea, Menopausal syndrome, Chest Bi, Chronic hepatitis ● What formulas are included in Xue fu zhu yu tang? Why is Sheng di used here
 ● Psychosis, Acute optic neuritis, Angina pectoris instead of Shu di? Why is Chi shao used here instead of Bai shao?
-⬧ Bai Shao: Yin herb, Blood tonic (cid:0) Nourish blood, enter Chong, soften LV
-(good for LV Qi Stagnation) (cid:0) Treat spasmatic muscle pain
+⬧ Bai Shao: Yin herb, Blood tonic → Nourish blood, enter Chong, soften LV
+(good for LV Qi Stagnation) → Treat spasmatic muscle pain
 ⬧ Chi Shao: Move blood, much more moving than bai shao, cools blood, good
 for blood inflammation (Hepatitis B/C), HIV
 ●
@@ -1777,7 +1777,7 @@ Hong Hua 9 Invigorates blood circulation
 Chuan Xiong 4.5
 Deputy Dang Gui 9
 Chi Shao 6
-Chuan Niu Xi 9 4 herbs (cid:0) Qi Circulation, 2 ckts/vents [Chuan Niu Xi/Chai Hu, Jie Geng, Zhi Ke]
+Chuan Niu Xi 9 4 herbs → Qi Circulation, 2 ckts/vents [Chuan Niu Xi/Chai Hu, Jie Geng, Zhi Ke]
 Reduces bl stasis, conducts bl flow down
 Assistant Chai Hu 3 Moves Lr qi, reduces constraint
 Jie Geng 4.5 Conducts qi upward, open up Lu qi
@@ -1804,8 +1804,8 @@ hong hua, zhi ke which are visible when lying down
 Shao Fu Zhu Yu Tang (Drive Out Blood Chao xiao hui xiang, chao gan jiang, Blood stasis accumulating in the lower Shao Fu: Lower abdomen
 Stasis In The Lower Abdomen yan hu suo, dang gui, chuan xiong, mo abdomen – palpable masses that xiao hui xiang: Lower abdomen,
 Decoction) 少腹逐瘀汤 yao, guan gui, [chi shao, pu huang, may/may not be painful; or lower abd. hernia feeling
-chao wu ling zhi (cid:0) Move abdominal Pain w/o palpable masses; or abd.
-blood stasis (gynecological)] Distension, LBP during menses with Blood stagnation (cid:0) Ovarian cysts,
+chao wu ling zhi → Move abdominal Pain w/o palpable masses; or abd.
+blood stasis (gynecological)] Distension, LBP during menses with Blood stagnation → Ovarian cysts,
 purple bl… fibroids, hernias, prostatitis, etc.
 Shen Tong Zhu Yu Tang (Drive Out Qin jiao, chuan xiong, tao ren, hong Bi sx qi & Blood stagnation in Shen tong = body ache
 Blood Stasis From A Painful Body hua, gan cao, qiang huo, mo yao, dang meridians & collaterals – pain at Guide function of formula into
@@ -2091,8 +2091,8 @@ hong hua, zhi ke which are visible when lying down
 Shao Fu Zhu Yu Tang (Drive Out Blood Chao xiao hui xiang, chao gan jiang, Blood stasis accumulating in the lower Shao Fu: Lower abdomen
 Stasis In The Lower Abdomen yan hu suo, dang gui, chuan xiong, mo abdomen – palpable masses that xiao hui xiang: Lower abdomen,
 Decoction) 少腹逐瘀汤 yao, guan gui, [chi shao, pu huang, may/may not be painful; or lower abd. hernia feeling
-chao wu ling zhi (cid:0) Move abdominal Pain w/o palpable masses; or abd.
-blood stasis (gynecological)] Distension, LBP during menses with Blood stagnation (cid:0) Ovarian cysts,
+chao wu ling zhi → Move abdominal Pain w/o palpable masses; or abd.
+blood stasis (gynecological)] Distension, LBP during menses with Blood stagnation → Ovarian cysts,
 purple bl… fibroids, hernias, prostatitis, etc.
 Shen Tong Zhu Yu Tang (Drive Out Qin jiao, chuan xiong, tao ren, hong Bi sx qi & Blood stagnation in Shen tong = body ache
 Blood Stasis From A Painful Body hua, gan cao, qiang huo, mo yao, dang meridians & collaterals – pain at Guide function of formula into
@@ -2390,8 +2390,8 @@ hong hua, zhi ke which are visible when lying down
 Shao Fu Zhu Yu Tang (Drive Out Blood Chao xiao hui xiang, chao gan jiang, Blood stasis accumulating in the lower Shao Fu: Lower abdomen
 Stasis In The Lower Abdomen yan hu suo, dang gui, chuan xiong, mo abdomen – palpable masses that xiao hui xiang: Lower abdomen,
 Decoction) 少腹逐瘀汤 yao, guan gui, [chi shao, pu huang, may/may not be painful; or lower abd. hernia feeling
-chao wu ling zhi (cid:0) Move abdominal Pain w/o palpable masses; or abd.
-blood stasis (gynecological)] Distension, LBP during menses with Blood stagnation (cid:0) Ovarian cysts,
+chao wu ling zhi → Move abdominal Pain w/o palpable masses; or abd.
+blood stasis (gynecological)] Distension, LBP during menses with Blood stagnation → Ovarian cysts,
 purple bl… fibroids, hernias, prostatitis, etc.
 Shen Tong Zhu Yu Tang (Drive Out Qin jiao, chuan xiong, tao ren, hong Bi sx qi & Blood stagnation in Shen tong = body ache
 Blood Stasis From A Painful Body hua, gan cao, qiang huo, mo yao, dang meridians & collaterals – pain at Guide function of formula into
@@ -2679,8 +2679,8 @@ _Source field is blank / not provided in the current uploaded dataset._
 Shao Fu Zhu Yu Tang (Drive Out Blood Chao xiao hui xiang, chao gan jiang, Blood stasis accumulating in the lower Shao Fu: Lower abdomen
 Stasis In The Lower Abdomen yan hu suo, dang gui, chuan xiong, mo abdomen – palpable masses that xiao hui xiang: Lower abdomen,
 Decoction) 少腹逐瘀汤 yao, guan gui, [chi shao, pu huang, may/may not be painful; or lower abd. hernia feeling
-chao wu ling zhi (cid:0) Move abdominal Pain w/o palpable masses; or abd.
-blood stasis (gynecological)] Distension, LBP during menses with Blood stagnation (cid:0) Ovarian cysts,
+chao wu ling zhi → Move abdominal Pain w/o palpable masses; or abd.
+blood stasis (gynecological)] Distension, LBP during menses with Blood stagnation → Ovarian cysts,
 purple bl… fibroids, hernias, prostatitis, etc.
 Shen Tong Zhu Yu Tang (Drive Out Qin jiao, chuan xiong, tao ren, hong Bi sx qi & Blood stagnation in Shen tong = body ache
 Blood Stasis From A Painful Body hua, gan cao, qiang huo, mo yao, dang meridians & collaterals – pain at Guide function of formula into
@@ -3317,7 +3317,7 @@ Case Study
 lower limbs, facial paralysis, slurred speech, drooling, dry stools, frequent Think & Review
 urination or urinary incontinence] ●
 ● T: dusky with white coating, P: moderate/weak and wiry
-● Qi Xu (cid:0) Stagnation (Stroke consumes Qi)
+● Qi Xu → Stagnation (Stroke consumes Qi)
 Applications
 ● Post-stroke sx d/t blood stasis in the meridians caused by Qi xu [Qi Deficiency,
 Blood stasis]
@@ -3728,7 +3728,7 @@ Tao Ren 9
 Hong Hua 6
 Assistant Chuan Shan Jia 6 Anteater (pangolin) scales [endangered species]
 Crack stasis to dredge Meridians and collaterals
-Tian Hua Fen 9 Good for Blood infections, HIV [concentrated (cid:0) IV], blood stasis
+Tian Hua Fen 9 Good for Blood infections, HIV [concentrated → IV], blood stasis
 Root of Gua Lou tree [Trichosanthes]
 Reduces stasis & swelling and relieves pain by entering Blood, help generate new
 Blood and tissues
@@ -3771,7 +3771,7 @@ zang-fu
 Heat in Zang-Fu Blood heat Yin xu Qi xu
 Treatment Principle
 ● Acute bleeding: priority is to first stop bleeding & resolve disharmony later ● For bleeding from the upper jiao, avoid ma huang, gui zhi, sheng ma, chai hu
-● Chronic bleeding: treat symptom (bleeding) & the underlying condition [ascending herbs (cid:0) disperse]
+● Chronic bleeding: treat symptom (bleeding) & the underlying condition [ascending herbs → disperse]
 simultaneously ● For bleeding from the lower jiao, avoid niu xi, zhi shi, da huang, mang xiao
 ● Formulas include astringent, hemostatic ingredients as chief, and heat-clearing [descending herbs, purging]
 or qi-tonifying or other ingredients to address associated sx/underlying factors. ● Dang Gui, Chuan Xiong, Dan Shen are often chosen to arrest bleeding d/t
@@ -3779,7 +3779,7 @@ or qi-tonifying or other ingredients to address associated sx/underlying factors
 ● For bleeding from the upper jiao: ingredients are often astringent & may stagnate Blood flow
 ⬧ shi heat: add niu xi, zhi shi to guide blood down; ● For prolonged bleeding, Dang Gui Bu Xue Tang [Dang Gui (1) & Huang Qi (5)]
 ⬧ xu cold in middle jiao: add ban xia, pao jiang to warm & descend Blood should be given to tonify qi & blood or added into the basic formula if not
-[Excess pushes blood up (cid:0) guide back to where it’s supposed to be] already included
+[Excess pushes blood up → guide back to where it’s supposed to be] already included
 ● For bleeding from the lower jiao: add jing jie, sheng ma, huang qi, ren shen to ●
 raise the Yang and tonify Qi [chronic uterine bleeding, hemorrhoids, colitis],
 tonify Qi so that blood stays in vessels, raise Qi so that it doesn’t collapse down

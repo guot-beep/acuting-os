@@ -610,7 +610,7 @@ FORMULATIONS 1
 ● Actions: Nourishes KD Yin, Supplements Essence, Benefits Marrow. ● Zuo gui wan
 ● Preparation and administration: grind the ingredients into powder and form ● Cong rong bu shen wan (rou cong rong, shu di, tu si zi, wu wei zi)
 into pills with honey, take in 9-15g doses bid with salted water or warm water. ⬧ KD Yin & yang Xu, but no significant heat/cold symptoms
-● Severe KD deficiency, very dry, lost memory, forgetful, hot flashes, ⬧ Evenly tonify yin & yang (cid:0) Focus on KD Essence
+● Severe KD deficiency, very dry, lost memory, forgetful, hot flashes, ⬧ Evenly tonify yin & yang → Focus on KD Essence
 osteoporosis, strengthens lower back [Du Mai empty] ● Fertile garden
 ● Stronger than Liu Wei Di Huang Wan [Yin & Essence Tonic] ● Zuo gui teapills
 ⬧ Tonify yin from yang [Tu Si Zi, Lu Jiao Jiao] ●
@@ -1321,7 +1321,7 @@ Modifications
 + sang shen zi Sweet, cool; Stronger effect in enriching yin and
 Lr, K tonifying blood
 Related Formula
-Sang Ma Wan [桑麻丸] Sang Ye 300 [Best (cid:0) Sang Shen: Fruit] Yin xu with dried blood & wind-damp More often used
+Sang Ma Wan [桑麻丸] Sang Ye 300 [Best → Sang Shen: Fruit] Yin xu with dried blood & wind-damp More often used
 (Yi Fang Ji Jie) Hei Zhi Ma 120 [dizziness, blurred vision, chronic Honey: Nourish yin, tonify yang
 Bai Mi (Honey) 300 cough, constipation with very dry
 stools, dry flaky skin accompanied by
@@ -2207,7 +2207,7 @@ Tao Ren 9
 Hong Hua 6
 Assistant Chuan Shan Jia 6 Anteater (pangolin) scales [endangered species]
 Crack stasis to dredge Meridians and collaterals
-Tian Hua Fen 9 Good for Blood infections, HIV [concentrated (cid:0) IV], blood stasis
+Tian Hua Fen 9 Good for Blood infections, HIV [concentrated → IV], blood stasis
 Root of Gua Lou tree [Trichosanthes]
 Reduces stasis & swelling and relieves pain by entering Blood, help generate new
 Blood and tissues
@@ -2250,7 +2250,7 @@ zang-fu
 Heat in Zang-Fu Blood heat Yin xu Qi xu
 Treatment Principle
 ● Acute bleeding: priority is to first stop bleeding & resolve disharmony later ● For bleeding from the upper jiao, avoid ma huang, gui zhi, sheng ma, chai hu
-● Chronic bleeding: treat symptom (bleeding) & the underlying condition [ascending herbs (cid:0) disperse]
+● Chronic bleeding: treat symptom (bleeding) & the underlying condition [ascending herbs → disperse]
 simultaneously ● For bleeding from the lower jiao, avoid niu xi, zhi shi, da huang, mang xiao
 ● Formulas include astringent, hemostatic ingredients as chief, and heat-clearing [descending herbs, purging]
 or qi-tonifying or other ingredients to address associated sx/underlying factors. ● Dang Gui, Chuan Xiong, Dan Shen are often chosen to arrest bleeding d/t
@@ -2258,7 +2258,7 @@ or qi-tonifying or other ingredients to address associated sx/underlying factors
 ● For bleeding from the upper jiao: ingredients are often astringent & may stagnate Blood flow
 ⬧ shi heat: add niu xi, zhi shi to guide blood down; ● For prolonged bleeding, Dang Gui Bu Xue Tang [Dang Gui (1) & Huang Qi (5)]
 ⬧ xu cold in middle jiao: add ban xia, pao jiang to warm & descend Blood should be given to tonify qi & blood or added into the basic formula if not
-[Excess pushes blood up (cid:0) guide back to where it’s supposed to be] already included
+[Excess pushes blood up → guide back to where it’s supposed to be] already included
 ● For bleeding from the lower jiao: add jing jie, sheng ma, huang qi, ren shen to ●
 raise the Yang and tonify Qi [chronic uterine bleeding, hemorrhoids, colitis],
 tonify Qi so that blood stays in vessels, raise Qi so that it doesn’t collapse down
@@ -2972,7 +2972,7 @@ with a proportionate reduction in the dosage of the herbs. Modern Research
 sticky, clotted, red or purple; Or heat feelings in chest, irritability, lower secondary to an abortion 58 days ago. The blood flow is up & down with dark
 abdominal pain, dark urine red thick blood and some clots. Other sx: LBP, weak legs, feverish sensation,
 ● T: red with yellow coating, P: rapid, wiry thirst, short temper. She also tells you that she has had another abortion last
-● Chong & Ren Damage (cid:0) Excessive bleeding year and had the similar sufferings but was shorter period of time.
+● Chong & Ren Damage → Excessive bleeding year and had the similar sufferings but was shorter period of time.
 ● Tongue: red with thin yellow coating
 Applications ● Pulse: rapid and tight.
 ● Liver stagnant heat disturbs the Chong & Ren causing uterine bleeding ● Dx:
@@ -2988,7 +2988,7 @@ Bai Shao 30 Bitter, sour, cool LV, SP Enriches Yin/blood, Enters Chong meridian
 Deputy Huang Qin 30 Bitter, cold; HT, LU, GB, Clears hear from upper jiao
 LI
 Assistant Huang Bai 9 Bitter, cold KD, UB Clears heat from lower jiao
-Envoy Chun Gen Pi 21 Bitter, astringent, cold LI, LV Clears heat, cools blood, dries damp, astringes (cid:0) Stop uterine bleeding
+Envoy Chun Gen Pi 21 Bitter, astringent, cold LI, LV Clears heat, cools blood, dries damp, astringes → Stop uterine bleeding
 Special for gynecology
 Xiang Fu 7.5 Acrid, slt bitter, sweet, LV, SJ Spreads Lr qi, releases constraint [Qi Mover]
 slt warm

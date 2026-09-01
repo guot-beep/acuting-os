@@ -621,15 +621,15 @@ proportionate reduction in dosage. Modern Research
 ● Indications: Kidney xu causing spermatorrhea – chronic seminal emissions,
 impotence, fatigue, and weakness, sore and weak limbs, lower back pain, Case Study
 tinnitus; a pale tongue with white coating, and a thin, frail pulse. ●
-● Can’t maintain erection or ejaculate (cid:0) very deficient
+● Can’t maintain erection or ejaculate → very deficient
 ● Strong gold lock Think & Review
 ●
 Applications
 ● spontaneous emission (spermatorrhea which occurs without dreams from
 instability of essence gate due to Kidney xu.
 ● Leukorrhea
-● Enuresis (Bedwetting) (cid:0) KD not strong enough
-⬧ Dreams about bathroom (cid:0) HT
+● Enuresis (Bedwetting) → KD not strong enough
+⬧ Dreams about bathroom → HT
 ● Chronic diarrhea
 ● Diabetes
 ● Male infertility
@@ -1637,7 +1637,7 @@ damp]
 ● Diarrhea or edema during menstruation or pregnancy
 ● Chronic colitis
 Rank Herb Amount Properties Channels Notes
-Chief Chao Bai Zhu 30 Bitter, sweet, warm; Sp,St Boosts Sp, dries damp [Si Jun Zi Tang (cid:0) Tonify SP]
+Chief Chao Bai Zhu 30 Bitter, sweet, warm; Sp,St Boosts Sp, dries damp [Si Jun Zi Tang → Tonify SP]
 Chao Shan Yao 30 Sweet, neutral; Sp, Lu, K boosts Sp,K,stops discharg
 Ren Shen 6 Sweet,slt bitter,slt warm;Sp Boosts Sp/qi
 Deputy Cang Zhu 9 Acrid, bitter, warm, Dries damp,stops discharge
@@ -1662,7 +1662,7 @@ Also clears damp-heat fetid (bad smell)
 Related Formula
 Name of Formulas Ingredients Actions/indications
 Qing dai tang [清带汤] (yi xue zhong Shan yao, Boosts Sp, stops vaginal discharge. For Not as comprehensive as Wan Dai Tang
-zhong can xi lu) (long gu, mu li) (cid:0) Pair: astringent, help Sp xu with profuse, thin, clear/red,
+zhong can xi lu) (long gu, mu li) → Pair: astringent, help Sp xu with profuse, thin, clear/red,
 close the door continuous discharge
 hai piao xiao (astringent), qian cao gen
 Yi huang tang [易黄汤] (fu qing zhu nu Chao shan yao, chao qian shi, huang Boosts Sp, dries damp, clears heat, Damp Heat
@@ -2074,7 +2074,7 @@ focal distension and a stifling sensation in the chest and abdomen, fixed pain i
 the hypochondria, belching, distending breast pain, vomiting, acid ● Dx:
 regurgitation, nausea/vomiting, mild coughing with copious sputum, reduced ● Tr.Pr.:
 appetite, and indigestion ● Formula:
-● No special herb to treat phlegm, but is heat & damp together (cid:0) treat damp & ● Herbs:
+● No special herb to treat phlegm, but is heat & damp together → treat damp & ● Herbs:
 heat, phlegm gets treated automatically ●
 ● T: dusky, purple or red tongue with white or yellow greasy (Qi stagnation,
 damp) coating Think & Review

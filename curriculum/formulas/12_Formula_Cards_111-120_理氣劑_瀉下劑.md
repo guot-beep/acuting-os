@@ -1312,9 +1312,9 @@ warms & resolves phlegm-cold. ●
 ● Preparation & administration: decoct with 2 slices of sheng jiang, 3 pieces of da
 zao & 5 leaves of su ye. In one version, chen pi 6-9g is added. In another Modern Research
 version, chen xiang is added & rou gui excluded. ●
-● Zi Su Ye is light, aromatic (cid:0) floats up (cid:0) Don’t use for rebellious Qi
-● Zi Su Zi is more anchoring, grounding (cid:0) Better for rebellious Qi Case Study
-● Zi Su Gen: Stem (cid:0) Between leaf & seeds (cid:0) More for Qi blocked in between (cid:0) ● A 65 y-o male suffers from wheezing & SOB for over 20 years. Often worse with
+● Zi Su Ye is light, aromatic → floats up → Don’t use for rebellious Qi
+● Zi Su Zi is more anchoring, grounding → Better for rebellious Qi Case Study
+● Zi Su Gen: Stem → Between leaf & seeds → More for Qi blocked in between → ● A 65 y-o male suffers from wheezing & SOB for over 20 years. Often worse with
 Open up air passages [Like Gui Zhi, which opens meridians] catching a cold, and accompanied with coughing up a big amount of clear
 foamy mucus, a stifling feeling in the chest. He usually has cold extremities,
 ● Indications: Excess above & deficiency below [上实下虚] [LU phlegm-damp & especially at the lower ones. Other sx: urinary difficulty, decreased libido.
@@ -1848,9 +1848,9 @@ Da Cheng Qi Tang大承气汤 (Major Order The Qi Decoction) [Very Important!] So
 ● Preparation (decoction): Add Da Huang Near End [cook too long, no purging ● Peristalsis-promoting, Promotion of volume of blood flow in intestines
 function, moves blood instead] ● Anti-inflammatory, Bacteria inhibiting
 ● Administration: taken warm; discontinue upon diarrhea induced ● RNA synthesis-promotion for hepatic cells
-Indications [Very Excess, lot of heat, blocked lower jiao (cid:0) Open up] Case Study
+Indications [Very Excess, lot of heat, blocked lower jiao → Open up] Case Study
 ● Yang Ming Fu Organ Excess [阳明腑实证]: severe constipation & flatulence, ● A 32 y-o male looks for help for his stubborn constipation with abdominal pain
-focal distention, and abdominal fullness, abdominal pain (cid:0) with pressure, and fullness secondary to a flu he caught 8 days ago. He also feels thirsty and
+focal distention, and abdominal fullness, abdominal pain → with pressure, and fullness secondary to a flu he caught 8 days ago. He also feels thirsty and
 tense & firm abdomen; dry yellow/dry black tongue coating with prickles, a hot. [Heat accumulation, yin consumed] He has not had BM for 4 days and has
 submerged excessive pulse. Tidal fever, delirious speech, profuse sweating a dull pain in hepatic area. Talking to him you smell an odor like rotten apple.
 from palms & soles. ● Dry tongue with gray-yellow coating, thickening at the back; a slippery pulse.
@@ -1860,14 +1860,14 @@ coating with prickles [heat], submerged forceful pulse. ● If pt. also present 
 ● 4 Types Abdominal Symptoms: focal distension痞, fullness满, dryness燥, ⬧ ST Heat: Huang Lian [in mouth]
 hardness实[Need to have all 4 to prescribe this formula] [Pi, Man, Zao, Shi]
 ● Diarrhea with bluegreen, stinky, turbid fluid, presenting with abdominal pain, Review & Think
-hardness and masses [Hard stool accumulate too long in lower jiao (cid:0) dried up ● What possible symptoms and signs could present if a patient suffers from
+hardness and masses [Hard stool accumulate too long in lower jiao → dried up ● What possible symptoms and signs could present if a patient suffers from
 (bullets), in spaces between bullets “nasty water/fluid” can go through] Yangming-Fu organ disorder?
 ● Heat collapse, ● Please compare the Formulas - “order the qi decoctions 承气汤” in terms of
 ● Kuang (hysterical attack) [aggressive historical type (excess heat)] their ingredients, dosages, preparations, actions, and indications.
 ⬧ [Dian: depressed type]
 ● Acute calculus diseases (cholelithiasis, urolithiasis…) ● Da Huang Nickname: “The General” Very strong, a lot of honors &
 ● Gastric dysperistalsis, Post-surgery GI Sx, Intestinal adhesive obstruction achievements, highest rank in military.
-● Acute lead colic, Acute necrotic pancreatitis [Heat & toxins block insides] ⬧ Prepare with alcohol: Jiu Da Huang [Drunken General (cid:0) can do anything]
+● Acute lead colic, Acute necrotic pancreatitis [Heat & toxins block insides] ⬧ Prepare with alcohol: Jiu Da Huang [Drunken General → can do anything]
 ● Acute renal failure due to epidemic hemorrhagic fever ⬧ Move Blood & bowel (internally)
 Rank Herb Amount Properties Channels Notes
 Chief Da Huang 12 Bitter, cold, purging Propulsive effect in purging, improve peristalsis [Don’t cook very long]
@@ -1888,12 +1888,12 @@ Xiao Cheng Qi Tang Minus mang xiao (Da Huang 12, Hou Po 6, Zhi Shi 6-9 Mild Yang
 Tiao Wei Cheng Qi Tang Minus Zhi Shi, Huo Po; Plus Gan Cao (Da Huang 12 & Mild Yangming organ Sx w/o distension Gan Cao: Tonify SP (middle jiao xu)
 Gan Cao 6-Cook Together, Mang Xiao 9-12) and fullness
 Da Huang Gan Cao Tang Minus Mang Xiao, Zhi Shi, Huo Po Unblock bowels, purge & harmonize Tonify & harmonize at same time
-(cid:0) (Da Huang 12, Gan Cao 3) ST, stop vomiting. For heat clumping in
+→ (Da Huang 12, Gan Cao 3) ST, stop vomiting. For heat clumping in
 LI & fire rising to disturb ST
 Hou Po San Wu Tang Minus Mang Xiao (Hou Po 24, Zhi Shi 12-15, Da Moves qi down & unblocks bowels. For Same ingredients as Xiao [XCQT],
 Hou Po = Chief Huang 12-Add Near End) qi stagnation causing constipation different dosage, bloating > heat
 Zeng Ye Cheng Qi Tang Minus Zhi Shi, Hou Po; Plus Xuan Shen, Mai Dong, Enriches Yin Fluids, Drains Heat. For Zeng Ye Tang: Xuan Shen, Mai Man
-Sheng Di (Xuan Shen, Mai Dong, Sheng Di Huang, Da Yangming Organ Sx With Yin Xu Dong, Sheng Di Huang (cid:0) Add fluids
+Sheng Di (Xuan Shen, Mai Dong, Sheng Di Huang, Da Yangming Organ Sx With Yin Xu Dong, Sheng Di Huang → Add fluids
 Huang [Add Near End], Mang Xiao)
 Fu Fang Da Cheng Qi Plus Lai Fu Zi, Tao Ren [moisten intestines], Chi Shao Purges interior, moves qi & blood. For
 Tang Yao [move blood] (Da Huang 15-Add Near End, Mang simple intestinal obstruction with
@@ -1927,10 +1927,10 @@ stomach and intestines cheng qi tang and da xian xiong tang
 ● Exudative pleurisy/cirrhosis
 Rank Herb Amount Properties Channels Notes
 Chief Gan Sui 1-1.5 Bitter, sweet, cold, Drives out accumulated water in the chest by flushing downward
-purging, toxic [Very toxic! (cid:0) Small dosage] (Don’t cook (cid:0) powder & put with formula)
+purging, toxic [Very toxic! → Small dosage] (Don’t cook → powder & put with formula)
 [Flush down, then Da Huang & Mang Xiao take it out]
 Heat & water accumulated in upper, middle & lower jiao (Can have chest pain)
-[Pleurisy, ascites (cid:0) Pathogenic water accumulation + constipation]
+[Pleurisy, ascites → Pathogenic water accumulation + constipation]
 Deputy Da Huang 9-12 Bitter, cold Helps chief in clearing out and draining heat through stools
 Mang Xiao 9-12 Salty, cold Helps chief in softening clumps and draining heat
 Related Formula
@@ -1948,8 +1948,8 @@ FORMULATIONS 1
 Formulas That Moisten the Intestines and Unblock the Bowels 润下
 ● Constipation due to Yin damage from excessive heat, or constitutional heat ● Treated with formulas that induce BM by lubricating the intestines, which
 leading to lack of fluids/dry up, which is called boat pause because of dry-up of contain substances of a sweet, bland, and oily natures 增水行舟.
-river 无水舟停. ● Vegans: Not enough oil (cid:0) lack of lubrication
-● “Lack of water (cid:0) Boat stopped (cid:0) Add more water, boat go again”
+river 无水舟停. ● Vegans: Not enough oil → lack of lubrication
+● “Lack of water → Boat stopped → Add more water, boat go again”
 Ma Zi Ren Wan (Hemp Seed Pill) Source: Shang Han Lun
 ● Actions: Moistens Intestines, Drains Heat, Moves Qi, Unblocks Bowels. Patent Forms
 ● Preparation: form the powdered herbs into pills with honey; or cook herbs to ● China
@@ -1958,7 +1958,7 @@ decoction in a proportionate reducing dosage. ⬧ Run Chang Wan 8 tid [润肠丸
 ● USA
 Indications ⬧ Smooth response 8-15 drops tid
 ● 脾约证 (Pi Yao Zheng) ST excess binds fluid-depleted SP [ST Excess, SP
-deficiency (cid:0) ST too strong, SP not strong enough] [Insufficient lubrication, Modern Research
+deficiency → ST too strong, SP not strong enough] [Insufficient lubrication, Modern Research
 constipation with dry, hard stool that is difficult to expel, frequent urination ● Cathartic effect
 ● T: dry, yellow coating, P: submerged, rapid/floating, choppy ● Peristalsis-promotion
 ● Xiao Cheng Qi Tang hiding in this formula
@@ -2010,8 +2010,8 @@ FORMULATIONS 1
 Ji Chuan Jian (Benefit The River Flow Decoction)
 Source: Jing Yue Quan Shu
 ● Actions: Warms Kidneys, Tonifies Essence, Moistens Intestines, Unblocks Applications: constipation should be treated with tonics, e.g. the elderly or
-Bowels. [Getting older (cid:0) everything getting sluggish, if GI still moving, it’s debilitated or the postpartum [Can’t tell if yin [heat sx] or yang [cold sx]
-because of yang Qi. If Yang Qi slows down, GI slows down] deficiency (cid:0) if can’t tell, it must be KD Essence Xu (cid:0) Use this formula]
+Bowels. [Getting older → everything getting sluggish, if GI still moving, it’s debilitated or the postpartum [Can’t tell if yin [heat sx] or yang [cold sx]
+because of yang Qi. If Yang Qi slows down, GI slows down] deficiency → if can’t tell, it must be KD Essence Xu → Use this formula]
 ● Preparation: decoction ● Chronic renal insufficiency [Not KD failure yet] due to glomerulonephritis
 ```
 
@@ -2476,12 +2476,12 @@ Xiao Cheng Qi Tang Minus mang xiao (Da Huang 12, Hou Po 6, Zhi Shi 6-9 Mild Yang
 Tiao Wei Cheng Qi Tang Minus Zhi Shi, Huo Po; Plus Gan Cao (Da Huang 12 & Mild Yangming organ Sx w/o distension Gan Cao: Tonify SP (middle jiao xu)
 Gan Cao 6-Cook Together, Mang Xiao 9-12) and fullness
 Da Huang Gan Cao Tang Minus Mang Xiao, Zhi Shi, Huo Po Unblock bowels, purge & harmonize Tonify & harmonize at same time
-(cid:0) (Da Huang 12, Gan Cao 3) ST, stop vomiting. For heat clumping in
+→ (Da Huang 12, Gan Cao 3) ST, stop vomiting. For heat clumping in
 LI & fire rising to disturb ST
 Hou Po San Wu Tang Minus Mang Xiao (Hou Po 24, Zhi Shi 12-15, Da Moves qi down & unblocks bowels. For Same ingredients as Xiao [XCQT],
 Hou Po = Chief Huang 12-Add Near End) qi stagnation causing constipation different dosage, bloating > heat
 Zeng Ye Cheng Qi Tang Minus Zhi Shi, Hou Po; Plus Xuan Shen, Mai Dong, Enriches Yin Fluids, Drains Heat. For Zeng Ye Tang: Xuan Shen, Mai Man
-Sheng Di (Xuan Shen, Mai Dong, Sheng Di Huang, Da Yangming Organ Sx With Yin Xu Dong, Sheng Di Huang (cid:0) Add fluids
+Sheng Di (Xuan Shen, Mai Dong, Sheng Di Huang, Da Yangming Organ Sx With Yin Xu Dong, Sheng Di Huang → Add fluids
 Huang [Add Near End], Mang Xiao)
 Fu Fang Da Cheng Qi Plus Lai Fu Zi, Tao Ren [moisten intestines], Chi Shao Purges interior, moves qi & blood. For
 Tang Yao [move blood] (Da Huang 15-Add Near End, Mang simple intestinal obstruction with
@@ -2515,10 +2515,10 @@ stomach and intestines cheng qi tang and da xian xiong tang
 ● Exudative pleurisy/cirrhosis
 Rank Herb Amount Properties Channels Notes
 Chief Gan Sui 1-1.5 Bitter, sweet, cold, Drives out accumulated water in the chest by flushing downward
-purging, toxic [Very toxic! (cid:0) Small dosage] (Don’t cook (cid:0) powder & put with formula)
+purging, toxic [Very toxic! → Small dosage] (Don’t cook → powder & put with formula)
 [Flush down, then Da Huang & Mang Xiao take it out]
 Heat & water accumulated in upper, middle & lower jiao (Can have chest pain)
-[Pleurisy, ascites (cid:0) Pathogenic water accumulation + constipation]
+[Pleurisy, ascites → Pathogenic water accumulation + constipation]
 Deputy Da Huang 9-12 Bitter, cold Helps chief in clearing out and draining heat through stools
 Mang Xiao 9-12 Salty, cold Helps chief in softening clumps and draining heat
 Related Formula
@@ -2536,8 +2536,8 @@ FORMULATIONS 1
 Formulas That Moisten the Intestines and Unblock the Bowels 润下
 ● Constipation due to Yin damage from excessive heat, or constitutional heat ● Treated with formulas that induce BM by lubricating the intestines, which
 leading to lack of fluids/dry up, which is called boat pause because of dry-up of contain substances of a sweet, bland, and oily natures 增水行舟.
-river 无水舟停. ● Vegans: Not enough oil (cid:0) lack of lubrication
-● “Lack of water (cid:0) Boat stopped (cid:0) Add more water, boat go again”
+river 无水舟停. ● Vegans: Not enough oil → lack of lubrication
+● “Lack of water → Boat stopped → Add more water, boat go again”
 Ma Zi Ren Wan (Hemp Seed Pill) Source: Shang Han Lun
 ● Actions: Moistens Intestines, Drains Heat, Moves Qi, Unblocks Bowels. Patent Forms
 ● Preparation: form the powdered herbs into pills with honey; or cook herbs to ● China
@@ -2546,7 +2546,7 @@ decoction in a proportionate reducing dosage. ⬧ Run Chang Wan 8 tid [润肠丸
 ● USA
 Indications ⬧ Smooth response 8-15 drops tid
 ● 脾约证 (Pi Yao Zheng) ST excess binds fluid-depleted SP [ST Excess, SP
-deficiency (cid:0) ST too strong, SP not strong enough] [Insufficient lubrication, Modern Research
+deficiency → ST too strong, SP not strong enough] [Insufficient lubrication, Modern Research
 constipation with dry, hard stool that is difficult to expel, frequent urination ● Cathartic effect
 ● T: dry, yellow coating, P: submerged, rapid/floating, choppy ● Peristalsis-promotion
 ● Xiao Cheng Qi Tang hiding in this formula
@@ -2598,31 +2598,31 @@ FORMULATIONS 1
 Ji Chuan Jian (Benefit The River Flow Decoction)
 Source: Jing Yue Quan Shu
 ● Actions: Warms Kidneys, Tonifies Essence, Moistens Intestines, Unblocks Applications: constipation should be treated with tonics, e.g. the elderly or
-Bowels. [Getting older (cid:0) everything getting sluggish, if GI still moving, it’s debilitated or the postpartum [Can’t tell if yin [heat sx] or yang [cold sx]
-because of yang Qi. If Yang Qi slows down, GI slows down] deficiency (cid:0) if can’t tell, it must be KD Essence Xu (cid:0) Use this formula]
+Bowels. [Getting older → everything getting sluggish, if GI still moving, it’s debilitated or the postpartum [Can’t tell if yin [heat sx] or yang [cold sx]
+because of yang Qi. If Yang Qi slows down, GI slows down] deficiency → if can’t tell, it must be KD Essence Xu → Use this formula]
 ● Preparation: decoction ● Chronic renal insufficiency [Not KD failure yet] due to glomerulonephritis
 ● Administration: taken with empty stomach [Tonify KD to bring function back]
-● Indications: Constipation due to KD Yang and Qi Xu in seniors (cid:0) fluids & ● GI dysfunction in patients with extensive burn
+● Indications: Constipation due to KD Yang and Qi Xu in seniors → fluids & ● GI dysfunction in patients with extensive burn
 essence insufficiency [constipation, clear and copious urine, LBP, and a cold ● Atonic constipation [lost power of intestines]
 sensation in the back, weak & sore back and lower limbs. T: white, thin ● Chronic arthritis [as getting older, joints fall apart, can’t hold it together
-coating, P: deep & slow] anymore (cid:0) deterioration (bone spurs, arthritis, osteoporosis)]
+coating, P: deep & slow] anymore → deterioration (bone spurs, arthritis, osteoporosis)]
 ● Drink tea to keep bowels moving ● Urinary difficulty due to prostatomegaly [prostate enlargement] [first sign of
-● LI: All the power comes from the KD. KD is the power station. KD Yang warms KD deficiency in males (cid:0) tonify KD]
+● LI: All the power comes from the KD. KD is the power station. KD Yang warms KD deficiency in males → tonify KD]
 up everything [Life is back]
 ● Tonify KD Yin, Yang, Essence. If you have enough KD essence, you have enough Think & Review
 to generate KD Yin & Yang ● Why is rou cong rong used as a chief ingredient in ji chuan jian instead of sheng
 ● NCCAOM: Usually have questions about this herb/formula. Why ZZJ choose di or shu di?
 Rou Cong Rong instead of Sheng Di Huang [enters HT, LV, KD, sweet, bitter, ● Can you explain the mutual effects of
-cold], Shu Di Huang [Also enter HT, LV KD] (cid:0) Don’t have function to enrich KD ⬧ niu xi and zhi ke: up & down
+cold], Shu Di Huang [Also enter HT, LV KD] → Don’t have function to enrich KD ⬧ niu xi and zhi ke: up & down
 Essence, ⬧ dang gui and zhi ke: Qi and blood
-● Cong Rong Bu Shen Wan: Patent (cid:0) Tonify KD Yin, Yang, Essence [Gui Wan ⬧ sheng ma and zhi ke & ze xie: Up & down
-● Seniors: can’t tell between yin & yang xu (cid:0) choose this tonify essence ⬧ rou cong rong and ze xie?
+● Cong Rong Bu Shen Wan: Patent → Tonify KD Yin, Yang, Essence [Gui Wan ⬧ sheng ma and zhi ke & ze xie: Up & down
+● Seniors: can’t tell between yin & yang xu → choose this tonify essence ⬧ rou cong rong and ze xie?
 ● 6 ingredients: 1st 3 tonify, 2nd 3 are reducing [well designed, well balanced]
 Rank Herb Amount Properties Channels Notes
 Chief Rou Cong Rong 6-9 Sweet, salty, sour, KD, LI Warms and tonifies KD Yang, moistens intestines
 warm
 Deputy Dang Gui 9-15 Sweet, acrid, bitter, HT, LV, SP Nourishes blood, moistens intestines [Good for people who lose too much blood
-warm (cid:0) after surgery, postpartum] [Dang Gui Yi Mu Cao (cid:0) postpartum]
+warm → after surgery, postpartum] [Dang Gui Yi Mu Cao → postpartum]
 Hui Niu Xi 6 Bitter, sour, neutral LV, KD Strengthens Lower Back & KD, descending nature to…
 Stronger function to tonify, Form vent
 Assistant Ze Xie 4.5 Sweet, bland, cold KD, GB Drains turbidity, descending nature to…
@@ -3117,7 +3117,7 @@ _Source field is blank / not provided in the current uploaded dataset._
 Tiao Wei Cheng Qi Tang Da Huang 12 & Gan Cao 6 [Cook Together]
 Mang Xiao 9-12
 Da Huang Gan Cao Tang Minus Mang Xiao, Zhi Shi, Huo Po
-(cid:0) (Da Huang 12, Gan Cao 3)
+→ (Da Huang 12, Gan Cao 3)
 Zeng Ye Cheng Qi Tang Xuan Shen, Mai Dong, Sheng Di Huang, Da Huang
 [Add Near End], Mang Xiao
 Rank Herb Amount Properties Channels Notes
@@ -3125,7 +3125,7 @@ Chief Sheng Di Huang 15 Nourishes Yin and adds fluids
 Deputy Gan Cao 6
 Assistant Ren Shen 4.5 Tonify Qi
 Da Huang 9 Draining [Not added near end]
-Mang Xiao 3 Draining [Also cooked together (cid:0) Draining function weaker]
+Mang Xiao 3 Draining [Also cooked together → Draining function weaker]
 Mai Dong 15 Tonify Yin, Nourishes Yin and adds fluids
 Xuan Shen 15 Tonify Yin, Nourishes Yin and adds fluids
 Dang Gui 4.5 Tonify Blood
@@ -3158,7 +3158,7 @@ defecation as main symptoms which are toxic, they are contraindicated during pre
 ● out fetus], used with extreme caution and for a short-term use.
 Shi Zao Tang [十枣汤] (Ten-Jujube Decoction)
 Source: Shang Han Lun
-● Actions: Purges & drives out congested fluids. ● Anorexia: Sheng Jiang & Da Zao (cid:0) Cook together & drink liquid
+● Actions: Purges & drives out congested fluids. ● Anorexia: Sheng Jiang & Da Zao → Cook together & drink liquid
 ● Preparation: grind first 3 herbs into powder, cook da zao to decoction. ● Modern Research
 ⬧ In old days, used theses 3 ingredients for suicide ● Cathartic
 ● Administration: take 0.5-1g [No more than 1 g] with a warm da zao decoction ● Diuretic
@@ -3170,16 +3170,16 @@ Indications [Just know name & indications] ● A 56 y-o strong-built male comes 
 ● Suspended, congested fluids 悬饮clogging up the chest and hypochondriac abdomen, with slight jaundice and GI dysfunction, scanty urine and
 area [cough with pain in the chest and hypochondria, hard focal distention in constipation. He has been suffering form Hep C for over 14 years and had
 the epigastrium, dry heaves, sob, headache, vertigo; or chest pain extending to ascites extraction 2 years ago. He used to be a heavy drinker. [Hep C & heavy
-the back that makes breathing difficult drinking (cid:0) both damage LV (cid:0) LV gets hard (cid:0) ascites]
+the back that makes breathing difficult drinking → both damage LV → LV gets hard → ascites]
 ● White, slippery tongue coating, and a sumerged, wiry pulse. ● A dusky tongue with yellow thick coating; a slippery and wiry pulse.
 ● Excess edema 实水 [Shi Shui] water accumulation obstructed interior, ● Dx:
 generalized edema, pronounced in the lower part of body, abd.distention, ● Tx: Use Xiao Cheng Qi Tang [Could theoretically use Shi Zao Tang, but not
 wheezing, chest fullness, and difficult urination and defecation. [Generally only available]
-used for robust patient in old days (cid:0) Now, just send to ER, hospital] ● How many sections?
+used for robust patient in old days → Now, just send to ER, hospital] ● How many sections?
 ⬧ 1: Heat
 Applications: short-term use for severe excessive fluids/ damp/phlegm internal ⬧ 2: Moisten to promote bowel
 accumulation. ⬧ 3: Warm yang to move bowel [Da Huang Fu Zi Tang, Wen Pi Tang]
-● Exudative pleurisy ⬧ 4: Purge & tonify [yin & qi xu (cid:0) Xin jiao . . . ]
+● Exudative pleurisy ⬧ 4: Purge & tonify [yin & qi xu → Xin jiao . . . ]
 ● Ascites from liver cirrhosis ⬧ 5: Drive Excess Water from body [Shi Zao Tang]
 ● Infantile acute viral pneumonia
 ● Uremia from systemic lupus erythematosus
@@ -3203,11 +3203,11 @@ Plus bai jie zi Severe phlegm/turbidity
 Related Formula
 New formulas Based on shi zao tang Indications
 Kong Xian Dan Minus Yuan Hua, Da Zao; Phlegm lurking around diaphragm that Not safe formula [never seen used, but
-控涎丹 [Remove Da Zao (cid:0) More Dangerous] obstructs qi flow [sudden excruciating it exists]
+控涎丹 [Remove Da Zao → More Dangerous] obstructs qi flow [sudden excruciating it exists]
 Plus Bai Jie Zi pains, thick, sticky sputum rattling in
 throat at night…]
 Zhou Che Wan Minus Da Zao; water & heat accumulation in interior Zhou = boat, Che = vehicle
-舟车丸 Plus Qian Niu Zi, Da Huang, Qing Pi, (for robust patient) obstructing qi [This formula is even worse (cid:0) The
+舟车丸 Plus Qian Niu Zi, Da Huang, Qing Pi, (for robust patient) obstructing qi [This formula is even worse → The
 Chen Pi, Mu Xiang, Bing Lang, Qing Fen mechanism: ascites, distention, hard worst! Very harsh! Robust patients
 abdomen, scanty urine, constipation only] Just know names, don’t use!
 23
@@ -3245,24 +3245,24 @@ Applications: Shao Yang Sx ● Anti-seizure
 discomfort in the hypochondria in women often due to colds contracted after
 childbirth or during menstruation. Case Study
 ● Malaria ● A tall, slender and quick-talking [Heat, Qi stagnation] 28 y-o old female looks
-● Gastritis from bile reflux (cid:0) inflames stomach [reflux, nausea, vomiting] for Tx for her warm and cold disorders secondary to her 2 abortions [Blood
+● Gastritis from bile reflux → inflames stomach [reflux, nausea, vomiting] for Tx for her warm and cold disorders secondary to her 2 abortions [Blood
 ● Chronic active hepatitis B [fever not high, but feel hot] Damaged] lately, which gets worse pre-menstrually and when she feels
 ● Hepatitis C, Drug-induced hepatitis depressed. She had taken birth control pills [disturb hormones] for 5 years
 ● Depression [LV/GB problems] before she picked up a boyfriend. Sx: hot & cold without reasons, thirst, short
 ● Meniere’s disease [dizziness, vomiting, feel very sick] temper, depression, eats without gaining weight [high metabolism]
 ● Chronic fatigue sx, Postpartum fever/cough ● A thin white tongue coating, a slightly pale tongue with red tip;
-● Morning sickness [get pregnant (cid:0) another little guy in the body that disturbs ● Thready [blood deficiency] and slightly rapid [heat] pulse.
+● Morning sickness [get pregnant → another little guy in the body that disturbs ● Thready [blood deficiency] and slightly rapid [heat] pulse.
 you, western medicine doesn’t have solution] ● Dx:
 ● Otitis media, Conjunctivitis in spring… ● Tx:
 Rank Herb Amount Properties Channels Notes
 Chief Chai Hu 12-24 Bitter, acrid, slt cold; LV, GB Vents Shao yang sx, moves qi by ascending [difficult to use sweating & draining]
 Deputy Huang Qin 9 Bitter, cold [slightly HT, LU, GB, Clear Shao yang heat by descending, soften hardness
-acrid] LI Chief pair: Chai Hu + Huang Qin forms a pair (cid:0) creates wind inside [(cid:0) + (cid:0)]
-together (cid:0) helps vent the pathogen
+acrid] LI Chief pair: Chai Hu + Huang Qin forms a pair → creates wind inside [→ + →]
+together → helps vent the pathogen
 Assistant Ban Xia 9 Acrid, warm, SP, ST Transforms phlegm, harmonize middle jiao
 poisonous Second pair: Ban Xia & Sheng Jiang
 Sheng Jiang 9 Acrid, slt warm LU, ST Releases, stop nausea & vomiting with ban xia
-Ren Shen 9 Sweet, bitter, warm SP, LU Supports and protects Qi [Last 3: Tonify middle jiao (cid:0) don’t let pathogen invade
+Ren Shen 9 Sweet, bitter, warm SP, LU Supports and protects Qi [Last 3: Tonify middle jiao → don’t let pathogen invade
 into Yang Ming]
 Da Zao 4 PC Sweet, warm SP, LU Supports and protects Qi, harmonizes the others
 Envoy Zhi Gan Cao 9 Sweet, neutral SP, ST Supports and protects Qi
@@ -3277,7 +3277,7 @@ New formulas Based on xiao chai hu tang Indications
 Chai Hu Gui Zhi Tang (Jin Gui Yao Lue) Add Gui Zhi, Bai Shao Shao Yang sx where exterior has not 5 of them. Add chief pair of Gui Zhi
 been completely released Tang
 Chai Hu Zhi Jie Tang (Zhang Shi Yi Minus Ren Shen, Da Zao, Gan Cao; Shao Yang sx Exterior > Interior [Vent Not ZZJ, later guys [Lu Cha: Green Tea]
-Tong) Add Zhi Ke, Jie Geng, Chen Pi, Lu Cha exterior] Tonic (cid:0) Middle Jiao [Jie Geng (cid:0) Guide
+Tong) Add Zhi Ke, Jie Geng, Chen Pi, Lu Cha exterior] Tonic → Middle Jiao [Jie Geng → Guide
 pathogens to exterior]
 Chai Hu Qing Zao Tang (Wen Yi Lun) Minus Ren Shen, Ban Xia, Heat entering the membrane source, Tian Hua Fen: Good for treating HIV+,
 Add Chen Pi, Zhi Mu, Tian Hua Fen causing fluids injury can directly enter blood, detox, soften
@@ -3730,10 +3730,10 @@ stomach and intestines cheng qi tang and da xian xiong tang
 ● Exudative pleurisy/cirrhosis
 Rank Herb Amount Properties Channels Notes
 Chief Gan Sui 1-1.5 Bitter, sweet, cold, Drives out accumulated water in the chest by flushing downward
-purging, toxic [Very toxic! (cid:0) Small dosage] (Don’t cook (cid:0) powder & put with formula)
+purging, toxic [Very toxic! → Small dosage] (Don’t cook → powder & put with formula)
 [Flush down, then Da Huang & Mang Xiao take it out]
 Heat & water accumulated in upper, middle & lower jiao (Can have chest pain)
-[Pleurisy, ascites (cid:0) Pathogenic water accumulation + constipation]
+[Pleurisy, ascites → Pathogenic water accumulation + constipation]
 Deputy Da Huang 9-12 Bitter, cold Helps chief in clearing out and draining heat through stools
 Mang Xiao 9-12 Salty, cold Helps chief in softening clumps and draining heat
 Related Formula
@@ -3751,8 +3751,8 @@ FORMULATIONS 1
 Formulas That Moisten the Intestines and Unblock the Bowels 润下
 ● Constipation due to Yin damage from excessive heat, or constitutional heat ● Treated with formulas that induce BM by lubricating the intestines, which
 leading to lack of fluids/dry up, which is called boat pause because of dry-up of contain substances of a sweet, bland, and oily natures 增水行舟.
-river 无水舟停. ● Vegans: Not enough oil (cid:0) lack of lubrication
-● “Lack of water (cid:0) Boat stopped (cid:0) Add more water, boat go again”
+river 无水舟停. ● Vegans: Not enough oil → lack of lubrication
+● “Lack of water → Boat stopped → Add more water, boat go again”
 Ma Zi Ren Wan (Hemp Seed Pill) Source: Shang Han Lun
 ● Actions: Moistens Intestines, Drains Heat, Moves Qi, Unblocks Bowels. Patent Forms
 ● Preparation: form the powdered herbs into pills with honey; or cook herbs to ● China
@@ -3761,7 +3761,7 @@ decoction in a proportionate reducing dosage. ⬧ Run Chang Wan 8 tid [润肠丸
 ● USA
 Indications ⬧ Smooth response 8-15 drops tid
 ● 脾约证 (Pi Yao Zheng) ST excess binds fluid-depleted SP [ST Excess, SP
-deficiency (cid:0) ST too strong, SP not strong enough] [Insufficient lubrication, Modern Research
+deficiency → ST too strong, SP not strong enough] [Insufficient lubrication, Modern Research
 constipation with dry, hard stool that is difficult to expel, frequent urination ● Cathartic effect
 ● T: dry, yellow coating, P: submerged, rapid/floating, choppy ● Peristalsis-promotion
 ● Xiao Cheng Qi Tang hiding in this formula
@@ -3813,31 +3813,31 @@ FORMULATIONS 1
 Ji Chuan Jian (Benefit The River Flow Decoction)
 Source: Jing Yue Quan Shu
 ● Actions: Warms Kidneys, Tonifies Essence, Moistens Intestines, Unblocks Applications: constipation should be treated with tonics, e.g. the elderly or
-Bowels. [Getting older (cid:0) everything getting sluggish, if GI still moving, it’s debilitated or the postpartum [Can’t tell if yin [heat sx] or yang [cold sx]
-because of yang Qi. If Yang Qi slows down, GI slows down] deficiency (cid:0) if can’t tell, it must be KD Essence Xu (cid:0) Use this formula]
+Bowels. [Getting older → everything getting sluggish, if GI still moving, it’s debilitated or the postpartum [Can’t tell if yin [heat sx] or yang [cold sx]
+because of yang Qi. If Yang Qi slows down, GI slows down] deficiency → if can’t tell, it must be KD Essence Xu → Use this formula]
 ● Preparation: decoction ● Chronic renal insufficiency [Not KD failure yet] due to glomerulonephritis
 ● Administration: taken with empty stomach [Tonify KD to bring function back]
-● Indications: Constipation due to KD Yang and Qi Xu in seniors (cid:0) fluids & ● GI dysfunction in patients with extensive burn
+● Indications: Constipation due to KD Yang and Qi Xu in seniors → fluids & ● GI dysfunction in patients with extensive burn
 essence insufficiency [constipation, clear and copious urine, LBP, and a cold ● Atonic constipation [lost power of intestines]
 sensation in the back, weak & sore back and lower limbs. T: white, thin ● Chronic arthritis [as getting older, joints fall apart, can’t hold it together
-coating, P: deep & slow] anymore (cid:0) deterioration (bone spurs, arthritis, osteoporosis)]
+coating, P: deep & slow] anymore → deterioration (bone spurs, arthritis, osteoporosis)]
 ● Drink tea to keep bowels moving ● Urinary difficulty due to prostatomegaly [prostate enlargement] [first sign of
-● LI: All the power comes from the KD. KD is the power station. KD Yang warms KD deficiency in males (cid:0) tonify KD]
+● LI: All the power comes from the KD. KD is the power station. KD Yang warms KD deficiency in males → tonify KD]
 up everything [Life is back]
 ● Tonify KD Yin, Yang, Essence. If you have enough KD essence, you have enough Think & Review
 to generate KD Yin & Yang ● Why is rou cong rong used as a chief ingredient in ji chuan jian instead of sheng
 ● NCCAOM: Usually have questions about this herb/formula. Why ZZJ choose di or shu di?
 Rou Cong Rong instead of Sheng Di Huang [enters HT, LV, KD, sweet, bitter, ● Can you explain the mutual effects of
-cold], Shu Di Huang [Also enter HT, LV KD] (cid:0) Don’t have function to enrich KD ⬧ niu xi and zhi ke: up & down
+cold], Shu Di Huang [Also enter HT, LV KD] → Don’t have function to enrich KD ⬧ niu xi and zhi ke: up & down
 Essence, ⬧ dang gui and zhi ke: Qi and blood
-● Cong Rong Bu Shen Wan: Patent (cid:0) Tonify KD Yin, Yang, Essence [Gui Wan ⬧ sheng ma and zhi ke & ze xie: Up & down
-● Seniors: can’t tell between yin & yang xu (cid:0) choose this tonify essence ⬧ rou cong rong and ze xie?
+● Cong Rong Bu Shen Wan: Patent → Tonify KD Yin, Yang, Essence [Gui Wan ⬧ sheng ma and zhi ke & ze xie: Up & down
+● Seniors: can’t tell between yin & yang xu → choose this tonify essence ⬧ rou cong rong and ze xie?
 ● 6 ingredients: 1st 3 tonify, 2nd 3 are reducing [well designed, well balanced]
 Rank Herb Amount Properties Channels Notes
 Chief Rou Cong Rong 6-9 Sweet, salty, sour, KD, LI Warms and tonifies KD Yang, moistens intestines
 warm
 Deputy Dang Gui 9-15 Sweet, acrid, bitter, HT, LV, SP Nourishes blood, moistens intestines [Good for people who lose too much blood
-warm (cid:0) after surgery, postpartum] [Dang Gui Yi Mu Cao (cid:0) postpartum]
+warm → after surgery, postpartum] [Dang Gui Yi Mu Cao → postpartum]
 Hui Niu Xi 6 Bitter, sour, neutral LV, KD Strengthens Lower Back & KD, descending nature to…
 Stronger function to tonify, Form vent
 Assistant Ze Xie 4.5 Sweet, bland, cold KD, GB Drains turbidity, descending nature to…
@@ -3861,7 +3861,7 @@ Kimberly Chenoweth
 FORMULATIONS 1
 Warm the Yang and Guide out accumulation 温下
 ● Accumulation due to cold excess in the interior characterized by constipation, ● Treated with both warming and purging herbs simultaneously
-abdominal fullness and distention, abdominal pain that responds favorably to ● Boat engine broke down (cid:0) restore power [warm yang]
+abdominal fullness and distention, abdominal pain that responds favorably to ● Boat engine broke down → restore power [warm yang]
 warmth, cold extremities, and a submerged, tight pulse.
 ●
 ```
@@ -4616,8 +4616,8 @@ constipation, hypochondriac pain, fever [heat caused by stagnation], cold ● Se
 hands and feet/fear to cold [Use power to restore engine to boat] ● Anticonvulsant
 ● White, greasy tongue coating, and a submerged, tight, and wiry pulse.
 Case Study
-Applications: cold accumulation in the interior [More cold (cid:0) use Da Huang Fu Zi ● A 67 y-o male asks for help for his BM difficulty secondary to prostatectomy
-Tang, not significant hot/cold (just sluggish) (cid:0) Use Ji Chuan Jian, post partum (cid:0) due prostate cancer 2 months ago. He feels stuffed up and hot, incomplete BM
+Applications: cold accumulation in the interior [More cold → use Da Huang Fu Zi ● A 67 y-o male asks for help for his BM difficulty secondary to prostatectomy
+Tang, not significant hot/cold (just sluggish) → Use Ji Chuan Jian, post partum → due prostate cancer 2 months ago. He feels stuffed up and hot, incomplete BM
 Ma Zi Ren Wan] with great exertion every 2-3 days. He is often frustrated and has costal pain
 ● Senile constipation from time to time. Other sx: cold limbs, no sex drive.
 ● Chronic uremia ● A gray thick tongue coating with distended sublingual veins; a wiry and slow
@@ -4631,7 +4631,7 @@ Chief Zhi Fu Zi 9 Acrid, sweet, hot, HT, SP, KD Warms Yang, expel cold [body, jo
 poisonous Rescue Yang, heart attack]
 Decoct Fu Zi for about an hour before adding other ingredients
 Deputy Da Huang 9 Bitter, cold ST, LI, LV Helps chief, purges and cleanse LI, alleviates pains;
-Da Huang is counter balanced by Fu Zi [Balanced (cid:0) Not too hot, not too cold]
+Da Huang is counter balanced by Fu Zi [Balanced → Not too hot, not too cold]
 Assistant Xi Xin 3 Acrid, warm LU, SP, KD Helps c & d in warming and expelling cold
 Modifications
 Double Zhi Fu Zi And Xi Xin Severe cold with chills Plus Dang Shen, Dang Gui Weak constitution
@@ -4640,7 +4640,7 @@ Plus Ban Xia, Chen Pi, Huang Lian Nausea, vomiting
 Related Formula
 New formula Based on da huang fu zi tang indication
 Wen Pi Tang (Qian Jin Yao Fang) Minus Xi Xin; SP Yang Xu causing cold accumulation, Much warmer, more tonifying, focused
-Plus Gan Jiang, Ren Shen, Gan Cao constipation; also for chronic red-and on middle jiao [Wen Pi (cid:0) Warm up SP]
+Plus Gan Jiang, Ren Shen, Gan Cao constipation; also for chronic red-and on middle jiao [Wen Pi → Warm up SP]
 –white dysenteric sx
 21
 Kimberly Chenoweth
@@ -4669,19 +4669,19 @@ constipation, abdominal distention, hardness and fullness, fatigue, sob, dry and
 mouth and throat, cracked lips; dry difficult stool, stinky gas. He has been sick for over a week-fever & chills,
 ● Dry, yellow/black tongue coating with cracks; pulse may vary productive cough with green mucus, sore throat. He is too busy to take care
 this bug – now it becomes a monster that he has to deal with. [Ying & Qi
-Formulas contained damaged (cid:0) Wind cold getting into Yang Ming]
+Formulas contained damaged → Wind cold getting into Yang Ming]
 ● Tiao Wei Cheng Qi Tang: Da Huang, Mang Xiao, Gan Cao ● A dry brown tongue coating, a dark red tongue. A tight and slight slippery
 ● pulse that gets weaker with pressure.
 ● Dx: Qi & yin deficiency
 ● Tx:
 ● After 3 days with your Tx, the patient feels better. But he appears cold and tired
 without appetite. Tx?
-⬧ Wen Pi Tang [Warm up & Restore SP & ST (cid:0) always do this after recovering
+⬧ Wen Pi Tang [Warm up & Restore SP & ST → always do this after recovering
 from illness (middle jiao is key)]
 Tiao Wei Cheng Qi Tang Da Huang 12 & Gan Cao 6 [Cook Together]
 Mang Xiao 9-12
 Da Huang Gan Cao Tang Minus Mang Xiao, Zhi Shi, Huo Po
-(cid:0) (Da Huang 12, Gan Cao 3)
+→ (Da Huang 12, Gan Cao 3)
 Zeng Ye Cheng Qi Tang Xuan Shen, Mai Dong, Sheng Di Huang, Da Huang
 [Add Near End], Mang Xiao
 Rank Herb Amount Properties Channels Notes
@@ -4689,7 +4689,7 @@ Chief Sheng Di Huang 15 Nourishes Yin and adds fluids
 Deputy Gan Cao 6
 Assistant Ren Shen 4.5 Tonify Qi
 Da Huang 9 Draining [Not added near end]
-Mang Xiao 3 Draining [Also cooked together (cid:0) Draining function weaker]
+Mang Xiao 3 Draining [Also cooked together → Draining function weaker]
 Mai Dong 15 Tonify Yin, Nourishes Yin and adds fluids
 Xuan Shen 15 Tonify Yin, Nourishes Yin and adds fluids
 Dang Gui 4.5 Tonify Blood
@@ -4722,7 +4722,7 @@ defecation as main symptoms which are toxic, they are contraindicated during pre
 ● out fetus], used with extreme caution and for a short-term use.
 Shi Zao Tang [十枣汤] (Ten-Jujube Decoction)
 Source: Shang Han Lun
-● Actions: Purges & drives out congested fluids. ● Anorexia: Sheng Jiang & Da Zao (cid:0) Cook together & drink liquid
+● Actions: Purges & drives out congested fluids. ● Anorexia: Sheng Jiang & Da Zao → Cook together & drink liquid
 ● Preparation: grind first 3 herbs into powder, cook da zao to decoction. ● Modern Research
 ⬧ In old days, used theses 3 ingredients for suicide ● Cathartic
 ● Administration: take 0.5-1g [No more than 1 g] with a warm da zao decoction ● Diuretic
@@ -4734,16 +4734,16 @@ Indications [Just know name & indications] ● A 56 y-o strong-built male comes 
 ● Suspended, congested fluids 悬饮clogging up the chest and hypochondriac abdomen, with slight jaundice and GI dysfunction, scanty urine and
 area [cough with pain in the chest and hypochondria, hard focal distention in constipation. He has been suffering form Hep C for over 14 years and had
 the epigastrium, dry heaves, sob, headache, vertigo; or chest pain extending to ascites extraction 2 years ago. He used to be a heavy drinker. [Hep C & heavy
-the back that makes breathing difficult drinking (cid:0) both damage LV (cid:0) LV gets hard (cid:0) ascites]
+the back that makes breathing difficult drinking → both damage LV → LV gets hard → ascites]
 ● White, slippery tongue coating, and a sumerged, wiry pulse. ● A dusky tongue with yellow thick coating; a slippery and wiry pulse.
 ● Excess edema 实水 [Shi Shui] water accumulation obstructed interior, ● Dx:
 generalized edema, pronounced in the lower part of body, abd.distention, ● Tx: Use Xiao Cheng Qi Tang [Could theoretically use Shi Zao Tang, but not
 wheezing, chest fullness, and difficult urination and defecation. [Generally only available]
-used for robust patient in old days (cid:0) Now, just send to ER, hospital] ● How many sections?
+used for robust patient in old days → Now, just send to ER, hospital] ● How many sections?
 ⬧ 1: Heat
 Applications: short-term use for severe excessive fluids/ damp/phlegm internal ⬧ 2: Moisten to promote bowel
 accumulation. ⬧ 3: Warm yang to move bowel [Da Huang Fu Zi Tang, Wen Pi Tang]
-● Exudative pleurisy ⬧ 4: Purge & tonify [yin & qi xu (cid:0) Xin jiao . . . ]
+● Exudative pleurisy ⬧ 4: Purge & tonify [yin & qi xu → Xin jiao . . . ]
 ● Ascites from liver cirrhosis ⬧ 5: Drive Excess Water from body [Shi Zao Tang]
 ● Infantile acute viral pneumonia
 ● Uremia from systemic lupus erythematosus
@@ -4767,11 +4767,11 @@ Plus bai jie zi Severe phlegm/turbidity
 Related Formula
 New formulas Based on shi zao tang Indications
 Kong Xian Dan Minus Yuan Hua, Da Zao; Phlegm lurking around diaphragm that Not safe formula [never seen used, but
-控涎丹 [Remove Da Zao (cid:0) More Dangerous] obstructs qi flow [sudden excruciating it exists]
+控涎丹 [Remove Da Zao → More Dangerous] obstructs qi flow [sudden excruciating it exists]
 Plus Bai Jie Zi pains, thick, sticky sputum rattling in
 throat at night…]
 Zhou Che Wan Minus Da Zao; water & heat accumulation in interior Zhou = boat, Che = vehicle
-舟车丸 Plus Qian Niu Zi, Da Huang, Qing Pi, (for robust patient) obstructing qi [This formula is even worse (cid:0) The
+舟车丸 Plus Qian Niu Zi, Da Huang, Qing Pi, (for robust patient) obstructing qi [This formula is even worse → The
 Chen Pi, Mu Xiang, Bing Lang, Qing Fen mechanism: ascites, distention, hard worst! Very harsh! Robust patients
 abdomen, scanty urine, constipation only] Just know names, don’t use!
 23

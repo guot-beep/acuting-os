@@ -612,7 +612,7 @@ _Source field is blank / not provided in the current uploaded dataset._
 Dan Shen Yin [丹参饮] (Salvia Decoction) Source: Shi Fang Ge Kuo
 ● Actions: invigorates Blood, dispels Blood stasis, moves qi, relieves pain. Patent
 ● Preparation: decoction ●
-● Good, balanced formulation (cid:0) Learn it, Cold, but protect middle jiao
+● Good, balanced formulation → Learn it, Cold, but protect middle jiao
 Modern Research
 ● Indications: Blood stasis & qi stagnation in the Middle causing chest pain that ●
 may radiate upward [abdominal or epigastric pain which may radiate upward
@@ -626,7 +626,7 @@ Chief Dan Shen 30 bitter, slt. Cold HT, PC, LV Invigorates Blood, reduces Blood 
 vessels), relieves irritability, reduces swelling
 Deputy Tan Xiang 5 acrid, warm, aromatic SP, ST, LU Moves qi in the chest area, relieves pain Reduce coldness of
 Assistant Sha Ren 5 acrid, warm, aromatic SP, ST Moves qi, dries damp, relieves abdominal pain Dan Shen
-[Too deficient to be tonified (cid:0) Use Sha Ren]
+[Too deficient to be tonified → Use Sha Ren]
 108
 Kimberly Chenoweth
 
@@ -1127,7 +1127,7 @@ Wen Jing Tang [温经汤] (Warm The Meridian Decoction) Source: Jin Gui Yao Lue 
 Blood stasis, stops uterine bleeding, tonifies Qi, Boosts the Middle ● A 32 y-o female tells you on your CHM shift that she has been experiencing
 ● Preparation & administration: 2-3 times the dosage of dang shen can sub for irregular menstruation for 8 months secondary to her delivery to her 3rd child.
 ren shen if Qi is not very xu. decoction She was exposed to a cold atmosphere for 3 hours while delivering baby and
-● 12 ingredients (cid:0) Record for ZZJ she lost about 500 ml blood. Other sx: abd. Pain worse with cold, better with
+● 12 ingredients → Record for ZZJ she lost about 500 ml blood. Other sx: abd. Pain worse with cold, better with
 heat or passing out purple clots, spotting for 5-10 days or skip menses, cold
 ● Indications: Chong & Ren meridians empty cold with Blood stagnation causing extremities, sallow complexion, dry skin and lips.
 menstrual disorders [mild, persistent uterine bleeding, irregular menstruation, ● A pale purple tongue with thin moist coating
@@ -1140,11 +1140,11 @@ Applications ● Which one is stronger in warming up the meridians –
 ● Xu and cold in Chong & Ren with Blood stagnation causing Ob-Gyn disorders ⬧ wen jing tang [warmer]
 ● Infertility ⬧ ai fu nuan gong wan?
 ● Chronic pelvic inflammation ● What the function of ban xia in wen jing tang?
-● Menopausal sx ⬧ Tonify SP & ST (cid:0) Chong Mai intersection [ST 30]
+● Menopausal sx ⬧ Tonify SP & ST → Chong Mai intersection [ST 30]
 ● Hyperplasia of mammary glands ● Why and how is gui zhi fu ling wan used during pregnancy?
-⬧ Pregnancy & blood stasis (cid:0) 3 reasons [pill form, small dose, honey]
+⬧ Pregnancy & blood stasis → 3 reasons [pill form, small dose, honey]
 ● Why are qi-tonifying & blood-nourishing herbs found in wen jing tang?
-⬧ Qi & Blood (cid:0) Women’s foundation (major material & major diagnosis)
+⬧ Qi & Blood → Women’s foundation (major material & major diagnosis)
 Rank Herb Amount Properties Channels Notes
 Chief Wu Zhu Yu 9 Warm Disperse cold, warm & dredge meridians, relieve pain [Warm uterus]
 Gui Zhi 6 Warm
@@ -1170,7 +1170,7 @@ rou gui
 Related Formula
 Formula Ingredients Indication
 Ai Fu Nuan Gong Wan Ai ye, xiang fu, wu zhu yu, chuan xiong, Xu and cold uterus: profuse & clear Guan Gui: young Rou Gui [< 5 year old
-艾附暖宫丸 bai shao, huang qi, sheng di, dang gui, vaginal discharge, sallow complexion, tree] (cid:0) less warm than Rou Gui (cid:0)
+艾附暖宫丸 bai shao, huang qi, sheng di, dang gui, vaginal discharge, sallow complexion, tree] → less warm than Rou Gui →
 xu duan, guan gui pain at limbs, fatigue, poor digestion, Guide into uterus & KD
 irregular menses, no pregnancy for
 years, cold abd.pain
@@ -1198,7 +1198,7 @@ injuries resulting in injury to Blood collaterals, the small vessels causing app
 hemorrhage and thereafter obstruction from Blood stasis. reinforce the blood-moving and meridian-dredging functions.
 ● ● For severe cases, bloodstasis-crackers are also included such as san leng, e zhu,
 wu gong… [Animals: Tu Bie, cockroach (move blood for severe stasis),
-centipede, scorpion, snakes (cid:0) Stronger to Move blood, break blood stasis]
+centipede, scorpion, snakes → Stronger to Move blood, break blood stasis]
 Fu yuan huo xue tang [复元活血汤] (revive health by invigorating Blood decoction) source: yi xue fa ming
 ● Actions: invigorates Blood & reduces Blood stasis to relieve pain, spreads Lr Qi, Patent
 unblocks Meridians. ●
@@ -1227,7 +1227,7 @@ Tao Ren 9
 Hong Hua 6
 Assistant Chuan Shan Jia 6 Anteater (pangolin) scales [endangered species]
 Crack stasis to dredge Meridians and collaterals
-Tian Hua Fen 9 Good for Blood infections, HIV [concentrated (cid:0) IV], blood stasis
+Tian Hua Fen 9 Good for Blood infections, HIV [concentrated → IV], blood stasis
 Root of Gua Lou tree [Trichosanthes]
 Reduces stasis & swelling and relieves pain by entering Blood, help generate new
 Blood and tissues
@@ -1270,7 +1270,7 @@ zang-fu
 Heat in Zang-Fu Blood heat Yin xu Qi xu
 Treatment Principle
 ● Acute bleeding: priority is to first stop bleeding & resolve disharmony later ● For bleeding from the upper jiao, avoid ma huang, gui zhi, sheng ma, chai hu
-● Chronic bleeding: treat symptom (bleeding) & the underlying condition [ascending herbs (cid:0) disperse]
+● Chronic bleeding: treat symptom (bleeding) & the underlying condition [ascending herbs → disperse]
 simultaneously ● For bleeding from the lower jiao, avoid niu xi, zhi shi, da huang, mang xiao
 ● Formulas include astringent, hemostatic ingredients as chief, and heat-clearing [descending herbs, purging]
 or qi-tonifying or other ingredients to address associated sx/underlying factors. ● Dang Gui, Chuan Xiong, Dan Shen are often chosen to arrest bleeding d/t
@@ -1278,7 +1278,7 @@ or qi-tonifying or other ingredients to address associated sx/underlying factors
 ● For bleeding from the upper jiao: ingredients are often astringent & may stagnate Blood flow
 ⬧ shi heat: add niu xi, zhi shi to guide blood down; ● For prolonged bleeding, Dang Gui Bu Xue Tang [Dang Gui (1) & Huang Qi (5)]
 ⬧ xu cold in middle jiao: add ban xia, pao jiang to warm & descend Blood should be given to tonify qi & blood or added into the basic formula if not
-[Excess pushes blood up (cid:0) guide back to where it’s supposed to be] already included
+[Excess pushes blood up → guide back to where it’s supposed to be] already included
 ● For bleeding from the lower jiao: add jing jie, sheng ma, huang qi, ren shen to ●
 raise the Yang and tonify Qi [chronic uterine bleeding, hemorrhoids, colitis],
 tonify Qi so that blood stays in vessels, raise Qi so that it doesn’t collapse down
@@ -1636,7 +1636,7 @@ Middle [Blood Guide]
 Zhi Gan Cao 2 Harmonizes formula.
 The little boy urine nourishes Yin, reduces Blood stasis, directs fire downward
 Middle part of urine from first thing in the morning
-Boy’s urine especially good for traumatic injury [have a fall (cid:0) drink boy’s urine
+Boy’s urine especially good for traumatic injury [have a fall → drink boy’s urine
 first thing in the morning]
 Modifications
 Sheng hua tang Shi xiao san
@@ -2020,7 +2020,7 @@ easily-provoked anger, bitter taste in the mouth, red cheeks, constipation,
 hypochondriac pain] Think & Review
 ● T: red tongue with yellow coating, P: wiry & rapid pulse. ●
 ●
-● Emotions too much (cid:0) Wood (LV) insult Metal (LU)
+● Emotions too much → Wood (LV) insult Metal (LU)
 Applications
 ● Cough & bleeding due to Lr fire invading Lu
 ● Pulmonary TB, Bronchiectasis
@@ -2397,7 +2397,7 @@ the ingredients, take in 12g doses as a Modern Research
 urinary bleeding, dysuria with frequent, urgent, painful, burning scanty Case Study
 urination; or simple blood in the urine accompanied by thirst, irritability] ●
 ● T: red tongue with yellow coating, P: rapid, full, possible wiry pulse
-● Bloody urine caused by heat (cid:0) Bloody Lin syndrome Think & Review
+● Bloody urine caused by heat → Bloody Lin syndrome Think & Review
 ●
 Applications
 ● Lower jiao shi heat causing Re Lin (热淋) & Xue Lin (血淋)
@@ -2416,7 +2416,7 @@ Dan zhu ye 15
 Zhi zi
 Dang gui 6 Nourishes & moves Blood, prevents too cold from other ingredients
 Envoy Zhi gan cao 6 harmonizes
-Small formula: Dao Chi San (cid:0) Sheng Di, Mu Tong, Dan Zhu Ye, Gan cao???
+Small formula: Dao Chi San → Sheng Di, Mu Tong, Dan Zhu Ye, Gan cao???
 116
 Kimberly Chenoweth
 
@@ -2740,7 +2740,7 @@ external consolidation ● Yu ping feng san is an astringent formula. Why then i
 ● Postpartum excessive sweating fang feng used in this formula?
 ● Post-surgery excessive sweating ● Why are huang qi and fang feng used together in yu ping feng san?
 ● Excessive sweating from improper/excessive diaphoretic treatment [too much ⬧ One dispersing, one consolidating
-ma huang tang] ⬧ Mutually enhance (cid:0) Reach balance
+ma huang tang] ⬧ Mutually enhance → Reach balance
 ●
 Rank Herb Amount Properties Channels Notes
 Chief Mu Li 30 Astringent Stop sweating, shrink pores
@@ -3609,7 +3609,7 @@ Chief Bu Gu Zhi 120 Acrid, bitter, warm KD, SP Warms up mingmen fire, tonifies S
 Deputy Rou Dou Kou 60 Acrid, warm SP, LI Warms Sp, astringes Intestines to stop diarrhea
 Assistant Wu Zhu Yu 30 Acrid, bitter, warm, SP, LV, KD Warms Sp & K, dispels cold
 poisonous
-Wu Wei Zi 60 Sour, warm LU, KD Astringes Intestines to stop diarrhea [Main flavor: sour (cid:0) astringent]
+Wu Wei Zi 60 Sour, warm LU, KD Astringes Intestines to stop diarrhea [Main flavor: sour → astringent]
 Sheng Jiang Acrid, hot LU, ST Warms & tonifies the middle jiao Pair: Cure chronic gastritis, many
 Da Zao Sweet, neutral SP, ST Tonifies & harmonizes the middle jiao difficulties in middle jiao
 Modifications
