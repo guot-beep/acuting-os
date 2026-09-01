@@ -1,3 +1,51 @@
+# 2026-08-29 — CLAUDE.md 加第 5 條:渲染路徑上的 fallback 預設當缺陷(規則只加 4 行)
+
+Ting 裁「好」(把「靜默降級一律當缺陷」寫進 CLAUDE.md)。
+
+## 為什麼值得動憲法級的檔案:這不是一次意外,是七次
+| # | 位置 | 畫面後果 |
+|---|---|---|
+| 1 | `keyPairs \|\| herbPairsSection()` | 36 味藥卡吞掉 **109 條**結構化藥對 |
+| 2 | `STATUS_LABEL` 少 skeleton 兩個鍵 | **124 張卡**狀態標籤印生 enum |
+| 3 | 兩處手抄 pill 繞過 `statusPill()` | **151 顆**標籤印小寫 `draft` |
+| 4 | `formulas.key_pairs` 的 `.filter(Boolean)` | **15 條**靜默丟掉,3 張方劑卡策展藥對全丟 |
+| 5 | `ENTITY_NAMES` 沒收 formulas → `entityLabel` 美化 slug | **207 個**代表方 chip 印 slug 不是方名 |
+| 6 | A1(a) 拆欄後 `contraindications_zh \|\| cautions_zh` | 卡面少 **423 句**安全敘述(另一 session) |
+| 7 | 修 6 時用整塊 80% 比例去重 | **24 句**在 18 張卡上重新消失(同上) |
+七次的共同點完全一樣:**查表/取值失敗時不出聲**,資料層驗證器全綠而畫面在說謊。
+第 6 條最貴,而且說明了引爆條件:**`||` 的傷害等於「兩側同時有內容的機率」**——
+欄位語意重疊時那個機率是 0,它安靜地待著;拆欄的那一天它才引爆。
+**遷移不是引入 bug,是引爆既有的 bug。**
+
+## 寫法:照 rules-diet 原則,只加 4 行不寫段落
+`docs/AI_CONSTITUTION.md` 與 `CLAUDE.md` 的既定方針是**只能縮不能長,靠機器強制而不是靠散文**。
+所以不新開一節,只把「最常犯的四條」變成五條,`CLAUDE.md` 淨增 4 行(64→68 行):
+
+> 5. **渲染路徑上的 fallback 預設當缺陷**:`A || B`、`|| ""`、`filter(Boolean)`、
+>    查不到就把 id 美化——查表失敗不出聲,資料驗證器全綠而畫面在說謊。已抓七次,
+>    最貴的是拆欄後卡面少 423 句。要留就在註解寫明「查不到時使用者看到什麼」;
+>    **派「拆欄/補第二來源」的批次之前先讀渲染端**。
+
+兩個要求各對應一個已知的失敗模式:
+- 「註解寫明查不到時使用者看到什麼」——因為這七次每一個都是**看似體貼的合理 fallback**,
+  單看都無可指摘,寫下後果才會讓下一個人看見代價。
+- 「派工前先讀渲染端」——第 6 條是事後才發現的,那時資料已經改完、卡面已經缺了。
+  **這是派工單的前置條件,不是驗收項目。**
+
+## 機器強制的部分已經在了(這條規則不是只靠自律)
+`validate-herb-pair-render`(併集不准被 `||` 吞)、`validate-review-status-vocabulary`
+(詞彙外不准印生 enum,詞彙單一來源)、`validate-rendered-reference-resolution`
+(懸空數只准變少 + `relationButton`/`entityCardExists`/`ENTITY_NAMES` 三項渲染端守衛)。
+本批在 33 個 commit 之後的 main 上重跑,**四支全 PASS**,`check-validation-ratchet` 亦 PASS,
+`build-data` 後 generated 無異動(上游不欠重建)。
+
+## 本批動了什麼
+只有 `CLAUDE.md` +5/−1。**`data/**`、`js/**`、`scripts/**` 一個字都沒改。**
+
+MEASURED TREE: claude/practical-easley-73f009 @ origin/main 9d58eea8 + 本批
+
+---
+
 # 2026-08-29 — A1(a) 177 張方劑安全欄重灌:31 張因「套用會兩欄同時清空」保留原狀不動
 
 D28/A1(a) 派工:224 張方劑卡裡,`contraindications_en`/`cautions_en`(以及對應中文欄)
