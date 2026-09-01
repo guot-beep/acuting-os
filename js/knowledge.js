@@ -3118,18 +3118,58 @@
     const RF_BY_ID = new Map(((K.redFlagRegistry && K.redFlagRegistry.records) || []).map((r) => [r.id, r]));
     const RF_TIER_VOCAB = (K.redFlagRegistry && K.redFlagRegistry.tier_vocabulary) || {};
     const RF_TIER_CLASS = { emergency_referral: "is-tier-emergency", urgent_referral: "is-tier-urgent", routine_referral: "is-tier-routine" };
+    /* red_flags_zh/_en 有**兩種形狀**,而這一區原本只認得字串:
+     *   字串  1389 筆
+     *   物件   519 筆 {finding, urgency_level, recommended_action, rationale, source}
+     * 物件走到 esc() 就變成 "[object Object]" —— 508 張條件卡裡有 **137 張**
+     * 的急症紅旗印的是那串字,而且標題還正確地數出「Red flags (3)」,
+     * 等於告訴人「有三條」然後一條都讀不到。受影響的包括子宮外孕、
+     * 子癲前症、異常子宮出血 —— 全庫風險最高的那幾張轉診卡。
+     * (2026-09-01 實測確認;先前所有驗證器全綠,因為它們檢查資料不檢查畫面。)
+     *
+     * 物件形狀其實比字串形狀資訊更多,所以修法不是「把物件轉成字串就好」,
+     * 而是把它多出來的東西用出來:finding → 建議動作 進正文,
+     * urgency_level 進分級標籤,rationale/source 進 title(滑過去看得到)。 */
+    const RF_URGENCY_LABEL = {
+      emergency: { zh: "立即急診", en: "Emergency" },
+      urgent: { zh: "緊急轉診", en: "Urgent" },
+      same_day: { zh: "當日處理", en: "Same day" },
+      routine: { zh: "常規轉診", en: "Routine" },
+    };
+    const RF_URGENCY_CLASS = {
+      emergency: "is-tier-emergency", urgent: "is-tier-urgent",
+      same_day: "is-tier-urgent", routine: "is-tier-routine",
+    };
+    const isRfObject = (v) => !!v && typeof v === "object" && !Array.isArray(v);
+    const rfText = (v) => {
+      if (!isRfObject(v)) return String(v || "");
+      return [v.finding, v.recommended_action].filter(Boolean).join(" → ");
+    };
+    const rfTitle = (v) => (isRfObject(v)
+      ? [v.rationale, v.source ? `來源:${v.source}` : ""].filter(Boolean).join(" · ") : "");
+
     const redFlagRows = (c) => {
       const zh = asList(c.red_flags_zh), en = asList(c.red_flags_en), ids = asList(c.red_flag_record_ids);
       const n = Math.max(zh.length, en.length);
       if (!n) return "";
       const rows = [];
       for (let i = 0; i < n; i++) {
-        const text = modeText(zh[i] || en[i] || "", en[i] || zh[i] || "");
+        const zhText = rfText(zh[i]), enText = rfText(en[i]);
+        const text = modeText(zhText || enText, enText || zhText);
         const f = RF_BY_ID.get(ids[i]);
+        // 物件永遠不會等於 registry 的 trigger 字串,所以 aligned 自然為 false ——
+        // 那是對的:沒有對齊就不該掛 registry 的分級。
         const aligned = f && (f.trigger_zh === zh[i] || (en[i] && f.trigger_en === en[i]));
         const v = aligned && f.tier ? RF_TIER_VOCAB[f.tier] : null;
-        const badge = v ? `<span class="k-red-flag-tier ${RF_TIER_CLASS[f.tier] || ""}">${esc(modeText(v.zh, String(v.en || "").split(/[—(]/)[0].trim()))}</span>` : "";
-        rows.push(`<li class="k-red-flag-item">${badge}<span class="k-red-flag-text">⚠ ${esc(text)}</span></li>`);
+        // registry 沒對上時,用紅旗自己帶的 urgency_level(物件形狀才有)
+        const u = isRfObject(zh[i]) ? zh[i].urgency_level : (isRfObject(en[i]) ? en[i].urgency_level : null);
+        const badge = v
+          ? `<span class="k-red-flag-tier ${RF_TIER_CLASS[f.tier] || ""}">${esc(modeText(v.zh, String(v.en || "").split(/[—(]/)[0].trim()))}</span>`
+          : (u && RF_URGENCY_LABEL[u]
+            ? `<span class="k-red-flag-tier ${RF_URGENCY_CLASS[u] || ""}">${esc(modeText(RF_URGENCY_LABEL[u].zh, RF_URGENCY_LABEL[u].en))}</span>`
+            : "");
+        const why = rfTitle(zh[i]) || rfTitle(en[i]);
+        rows.push(`<li class="k-red-flag-item">${badge}<span class="k-red-flag-text"${why ? ` title="${esc(why)}"` : ""}>⚠ ${esc(text)}</span></li>`);
       }
       return `<details class="k-condition-flags"><summary>${esc(modeText(`安全警訊 / Red flags (${n})`, `Red flags (${n})`))}</summary><ul class="k-red-flag-list">${rows.join("")}</ul></details>`;
     };
@@ -3322,7 +3362,10 @@
             <div class="k-big-card-section">
               <h3>5. 急症紅旗 Safety Red Flags</h3>
               <div class="k-red-flag-box">
-                <strong>🚨 急症紅旗：</strong> ${p.red_flags_zh.map(esc).join(" · ")}
+                ${/* 同一個兩種形狀的問題(見 redFlagRows 上方):證型卡目前沒有
+                     物件形狀的紅旗,但兩邊用同一個資料欄位,哪天有了就會在這裡
+                     印出 [object Object]。一行的事,現在就擋掉。 */ ""}
+                <strong>🚨 急症紅旗：</strong> ${p.red_flags_zh.map((v) => esc(v && typeof v === "object" ? [v.finding, v.recommended_action].filter(Boolean).join(" → ") : String(v || ""))).join(" · ")}
               </div>
             </div>
           ` : ""}
