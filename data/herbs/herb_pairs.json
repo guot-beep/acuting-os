@@ -6608,7 +6608,7 @@
       "caution_en": "The detoxification dose is far higher than the usual daily dose and applies only to acute-poisoning emergency use, not routine dosing.",
       "found_in_formulas": [],
       "sources": [
-        "curriculum/herbs/Materia Medica Abbbreviated.md#L1245-L1247",
+        "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L344-L350",
         "american_dragon"
       ],
       "actions_zh": "綠豆甘寒清熱解毒，甘草甘平調和解毒。兩藥相須，解毒力大增，為傳統解附子、川烏等烏頭類藥物中毒的經典組合；American Dragon 記載高劑量（綠豆120g配甘草60g）可對抗附子中毒。",
@@ -6628,7 +6628,16 @@
           "curriculum",
           "american_dragon"
         ]
-      }
+      },
+      "import_artifacts": [
+        {
+          "original_field": "sources[0]",
+          "text": "curriculum/herbs/Materia Medica Abbbreviated.md#L1245-L1247",
+          "reason": "雙重錯誤：(1) 檔名為重複檔「Materia Medica Abbbreviated.md」，canonical 為 materia_medica_abbreviated_chenoweth.md（兩檔逐位元組相同，僅抽取標頭那一行不同，行號一致）；(2) 行號區間 L1245-L1247 指到 p.15 活血化瘀藥段落，與綠豆／甘草解毒無關。實際出處經逐行核對為 L344-L350（p.5 綠豆條目：「Antidote: Fu Zi, Ba Dou, other poisons (Powder & soak in cold water) [w/ Gan Cao]」），另 L467（p.6 巴豆條目：「Minimize toxicity: prescribe with Gan Cao & Lu Dou」）互相印證。內容主張成立，僅定位錯誤，故校正而非撤除。",
+          "moved_at": "2026-08-31",
+          "ruling": "Ting 2026-08-31 派工：課件檔名不進臨床句子，出處歸 field_sources"
+        }
+      ]
     },
     {
       "id": "pair.bai_zhu__fu_ling",

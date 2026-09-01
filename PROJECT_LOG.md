@@ -1,3 +1,119 @@
+# 2026-08-31 — 課件重複檔名引用修復:33 筆裡 32 筆已改,1 筆因主張與來源牴觸退回裁定
+
+派工前提要更正一項:`curriculum/herbs/Materia Medica Abbbreviated.md`(三個 b)
+**存在,而且有進版控** —— `git ls-files curriculum/herbs/` 兩個檔名都在。它與
+canonical 的 `materia_medica_abbreviated_chenoweth.md` **逐位元組相同**,只差第 1、3
+行抽取標頭寫的來源 PDF 檔名(`diff` 只有 2 個 hunk,兩檔皆 3474 行),兩個 PDF 的
+md5 也一樣(`990db5816fa5adda59289c885ca9bc99`)。所以這不是懸空引用,是重複檔;
+**行號在兩檔之間可以互換**,舊的 `#L` 錨點不必重算。
+
+## 逐檔筆數(可重現:`grep -o Abbbreviated <file> | wc -l`)
+
+| 檔案 | 命中 | 這批處理 |
+|---|---|---|
+| `data/herbs/herb_canon_shortlist.json` | 33 | 32 改、1 退回 |
+| `data/herbs/herb_pairs.json` | 1 | 1 改(含行號校正) |
+| `data/research_staging/cr010_live/cr010_source_reuse_map_live.json` | 18 | 18 改 |
+| `data/audits/pr59_merge_ledger_2026-08-19.json` | 27 | 0(稽核帳本=歷史紀錄,不動) |
+
+派工單寫的「33 references」對應的是 shortlist 這一檔;四檔合計字串值 79 筆
+(`node scratchpad/inventory.js`)。
+
+## shortlist 33 筆的三種處置
+
+先讀渲染層再分桶(`grep -rn "source_note\|review_notes" app.js js/ index.html` 零命中
+= 那兩個欄位不上畫面):
+
+- **A 出處欄位路徑改正 8 筆**(`source_citations[].url`、`field_sources.*[]`)——純路徑,不動內容。
+- **B 會上畫面的內容字串 16 筆** —— 先 `import_artifacts` 存原文(`{original_field,
+  text, reason, moved_at, ruling}`),再改寫把檔名移出句子,出處併入 `field_sources`
+  (併集,不覆寫;新增 13 鍵、既有陣列追加 1)。涉 4 味:珍珠母 5、山羊角 5、
+  穿山甲 3、寒水石 3。
+- **C 不上畫面的來源註記 8 筆**(`review_notes_zh` / `tcm_properties.source_note_zh` /
+  `dosage_g.source_note`)——檔名就地改成 canonical,散文照留。
+
+`modern_functions_zh` 這欄要注意:珍珠母沒有 `modern_pharmacology_zh`,渲染是
+`modern_pharmacology_zh || modern_functions_zh` 二選一落到後者,派工單引的那句
+「保護胃黏膜、鬆弛平滑肌(課件 …Abbbreviated.md 珍珠母條目:WM: ST, muscle relaxer)」
+就是從這條路徑上畫面的。
+
+## 逐條核對來源,兩筆定位錯、一筆主張不成立
+
+每一筆都回 `materia_medica_abbreviated_chenoweth.md` 對過,不是照搬:
+
+- 珍珠母 p.38(L3185–L3200)✅ 自身條目、`Dosage: Higher [15-30g]. Pre-decoct`、
+  `WM: ST, muscle relaxer` 都在,且緊接 `Zhen Zhu [Precious Ball]` 之後另立標題。
+- 穿山甲 p.16(L1337–L1355)✅ `Salty, Cool [LV & ST]`、`Bi (Wind Cold) [arthritis]`
+  配 `Du Huo, Qiang Huo, Chuan Xiong`。
+- 山羊角 p.38(L3162–L3172)✅ `Cornu Naemorhedis / Salty, Cold [LV]`、
+  「效同羚羊角而力緩,需 2–3 倍劑量」是來源自己的比較句。
+- 黃酒 ✅ `with water or Huang Jiu if used in a decoction`(L2369,全檔唯一一次,
+  卡上「唯一具名出處」的說法成立)。
+- 龍齒 ✅ 負面主張成立:`Long Chi` / `Dentis Mastodi` / `dragon teeth` 全檔 0 命中。
+- 南沙參 ✅ 負面主張成立:p.25 欄位確實交錯(L2145–L2165 目視確認),WM 與劑量段
+  無法安全歸屬。
+
+**定位錯 2 筆(內容成立,已校正並記入 import_artifacts):**
+
+1. `herb.han_shui_shi` 寫「p.4-5」,實際寒水石自身條目在 **p.2**(L118–L121:
+   `Han Shi Shi [Calcitum]` / `(Cd) Acrid, Salty [HT, ST, KD]` / `Sore throat, Red
+   eyes (burning)`);`## p.N` 與頁尾頁碼一致(p.16 頁尾印 16 已驗)。旁證:本卡
+   `field_sources.functions_zh` 早先已標 `...chenoweth.pdf#p2` —— 先前有人已經改對過
+   一半,散文那半沒跟上。
+2. `pair.lu_dou__gan_cao` 的 `#L1245-L1247` 指到 **p.15 活血化瘀藥**,與綠豆/甘草
+   解毒無關。實際出處在 **L344–L350**(p.5 綠豆條目:`Antidote: Fu Zi, Ba Dou, other
+   poisons (Powder & soak in cold water) [w/ Gan Cao]`),另 L467(p.6 巴豆條目:
+   `Minimize toxicity: prescribe with Gan Cao & Lu Dou`)互證。主張成立,只是錨點錯,
+   故校正而非撤除。
+
+**主張不成立 1 筆(未改,退回裁定):**
+
+`herb.xi_jiao` 的 `tcm_properties.source_note_zh` 寫「逐檔搜尋…犀角均只以水牛角的
+被替代對象身分出現…**查無犀角自己的性味歸經段落**」。這句與來源牴觸:犀角在
+**p.3(L165–L166)有自己的條目**,自己的標題 `Xi Jiao () [Rhinoceros Horn]` 與自己的
+性味歸經欄 `(B/Cd) Salty [HT, LV, ST]`,位於 [5] Clear Heat, Cool Blood 欄;同欄下方
+另有 `Shui Niu Jiao () [Water Buffalo Horn] (Cd) Salty [HT, LV, ST]` 標
+`Xi Jiao Substitute`,兩者是分開的兩條。兩者性味只差一個 `B`(苦),當初誤判可以理解,
+但結論是錯的。
+
+依派工單「查不到就標記、不要默默改路徑」,**這筆完全沒動**(檔名仍是三個 b,是刻意
+留的旗標)。要 Ting 裁定的是:`tcm_properties` 性味歸經要不要據 p.3 補上——那是改
+canonical 臨床欄位,不在本批授權內。執行成本:1 張卡、1 個欄位,範本照
+`herb.shan_yang_jiao` 同款補法即可。
+
+## 驗證(全部 exit=0)
+
+`node scripts/build-data.js` → herbs 366、formulas 223、audit_missing 0。
+`validate-herb-standard` / `formula-standard` / `acupoint-standard` / `content-junk` /
+`metric-interpretation` / `herb-dosage-shape` / `outcome-panel-render` /
+`exposure-safety-render` / `care-draft-render` / `care-draft-phi` /
+`herb-pair-render` / `board-pair-attribution` / `review-status-vocabulary` /
+`rendered-reference-resolution` / `bilingual-index-pairing` 全 PASS。
+`check-validation-ratchet` 12 條全 `flat`,無一條上升。
+
+**損失稽核**(HEAD vs 工作樹逐葉比對,`scratchpad/lossaudit.js`):記錄數 366→366、
+287→287;欄位消失 0、清空 0、陣列縮短 0。33 筆長度變化全部等於被移除的檔名長度
+(如 `47→56` 是路徑改長,`136→105` 是移除 31 字元檔名)。劑量數字一字未改。
+
+**量 bundle 不量原始檔**:`data/generated/` 載進 vm 後全樹掃描,`import_artifacts`
+內 35 筆(存證,刻意保留原文)、可被渲染層讀到的 live **1 筆** = 犀角那個不上畫面的
+`source_note_zh`。四張改過的卡 card-facing 欄位 0 命中。
+
+**開卡片用眼睛讀過**:起 dev server(8361),`ACUTING_KNOWLEDGE_API.openDetail` 逐一
+開 8 張卡 × 5 個分頁,畫面上 `Abbbreviated` **0 次**。珍珠母現在畫面上是
+「保護胃黏膜、鬆弛平滑肌(課件珍珠母條目:WM: ST, muscle relaxer)」、劑量欄
+「…15–30g 打碎先煎(課件珍珠母自身條目:Dosage: Higher [15-30g]. Pre-decoct)」。
+山羊角與黃酒的「來源」區塊仍印 `📘 課件 Materia Medica Abbreviated(Chenoweth)p.38`
+—— 那是拼寫正確的**書名**印在出處欄,不是檔名混進句子,保留。
+
+## 沒做的
+
+`data/audits/pr59_merge_ledger_2026-08-19.json`(27)、`PROJECT_LOG.md`(2)、
+`docs/research_packs/HERB_F12_LEDGER.md`(3)、`docs/ANTIGRAVITY_HANDOFF.md`(1)、
+`scripts/extract-curriculum-text.py`(1)、`curriculum/INDEX.md`(2)全部未動:前四者是
+歷史紀錄,`curriculum/**` 是 Ting 的目錄(AI 只讀)。重複檔本身
+(`curriculum/herbs/Materia Medica Abbbreviated.{md,pdf}`)要不要退役,也是 Ting 的。
+
 # 2026-08-29 — CLAUDE.md 加第 5 條:渲染路徑上的 fallback 預設當缺陷(規則只加 4 行)
 
 Ting 裁「好」(把「靜默降級一律當缺陷」寫進 CLAUDE.md)。

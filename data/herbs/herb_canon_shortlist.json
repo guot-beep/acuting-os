@@ -54000,7 +54000,7 @@
       "authored_by": "Claude",
       "name_header_note_zh": "中文/拼音旁為 common name；下一行拉丁藥名。",
       "key_pairs": [],
-      "review_notes_zh": "AI draft(2026-08-27,Ting 裁定「南北沙參基原不同,照藥典分立建卡」後建):基原依臺灣中藥典第四版 ADENOPHORAE RADIX——Adenophora stricta Miq. 或 Adenophora triphylla (Thunb.) A.DC.(桔梗科),與北沙參 Glehnia littoralis(傘形科)不同科屬;CloudTCM 8058 亦記「桔梗科沙參屬植物的根部」,兩源一致。Appendix A 查證結果:考綱以**合併條目** Sha Shen (Glehniae/Adenophorae Radix) 收錄(L424),未分列南/北,南沙參為該條目兩基原之一,故 ncbahm_2026_official 填 true。Appendix B 查證結果:**有列**,但同樣是合併寫法 Mai Men Dong and Sha Shen (Glehniae/Adenophorae Radix)(L592);既有 pair.mai_men_dong__sha_shen 依 2026-08-14 沙參併卡裁定已掛 herb.bei_sha_shen,本次未動——該考綱對藥是否應同時掛南沙參,屬考綱合併寫法的歸屬問題,留 Ting 裁定。aliases_zh 刻意**不收「沙參」**(2026-08-14 Ting 裁定已歸 herb.bei_sha_shen,兩卡同列會讓全站 herb linking 歧義);亦**不收 CloudTCM 別名串裡的「知母」**——知母是獨立藥材 herb.zhi_mu,判為該來源別名欄的資料污染,不採信。related_formulas 留空:沙參麥門冬湯 name_en 為 Glehnia and Ophiopogon Decoction、composition 已指 herb.bei_sha_shen,考綱英譯亦明指 Glehnia,故不掛南沙參;查無其他具名來源明確指定南沙參的方劑,不編。American Dragon 無 NanShaShen 專頁(404 實測),故未列為來源。現代藥理僅採 CloudTCM 兩個 tag(強心作用/抗真菌);curriculum「Materia Medica Abbbreviated」該頁為雙欄 PDF 轉文字、欄位交錯,其 WM 與劑量段無法安全歸屬到本味藥,依模板 §0a「務必確認段落屬於這一味藥」不採。仍待 Ting/RV1 源審核。",
+      "review_notes_zh": "AI draft(2026-08-27,Ting 裁定「南北沙參基原不同,照藥典分立建卡」後建):基原依臺灣中藥典第四版 ADENOPHORAE RADIX——Adenophora stricta Miq. 或 Adenophora triphylla (Thunb.) A.DC.(桔梗科),與北沙參 Glehnia littoralis(傘形科)不同科屬;CloudTCM 8058 亦記「桔梗科沙參屬植物的根部」,兩源一致。Appendix A 查證結果:考綱以**合併條目** Sha Shen (Glehniae/Adenophorae Radix) 收錄(L424),未分列南/北,南沙參為該條目兩基原之一,故 ncbahm_2026_official 填 true。Appendix B 查證結果:**有列**,但同樣是合併寫法 Mai Men Dong and Sha Shen (Glehniae/Adenophorae Radix)(L592);既有 pair.mai_men_dong__sha_shen 依 2026-08-14 沙參併卡裁定已掛 herb.bei_sha_shen,本次未動——該考綱對藥是否應同時掛南沙參,屬考綱合併寫法的歸屬問題,留 Ting 裁定。aliases_zh 刻意**不收「沙參」**(2026-08-14 Ting 裁定已歸 herb.bei_sha_shen,兩卡同列會讓全站 herb linking 歧義);亦**不收 CloudTCM 別名串裡的「知母」**——知母是獨立藥材 herb.zhi_mu,判為該來源別名欄的資料污染,不採信。related_formulas 留空:沙參麥門冬湯 name_en 為 Glehnia and Ophiopogon Decoction、composition 已指 herb.bei_sha_shen,考綱英譯亦明指 Glehnia,故不掛南沙參;查無其他具名來源明確指定南沙參的方劑,不編。American Dragon 無 NanShaShen 專頁(404 實測),故未列為來源。現代藥理僅採 CloudTCM 兩個 tag(強心作用/抗真菌);curriculum「Materia Medica Abbreviated」該頁為雙欄 PDF 轉文字、欄位交錯,其 WM 與劑量段無法安全歸屬到本味藥,依模板 §0a「務必確認段落屬於這一味藥」不採。仍待 Ting/RV1 源審核。",
       "source_type": "full_card_verified_multi_source",
       "id": "herb.nan_sha_shen",
       "name_zh": "南沙參",
@@ -100278,7 +100278,7 @@
         },
         {
           "name": "📘 課件 Materia Medica Abbreviated 送服法附註",
-          "url": "curriculum/herbs/Materia Medica Abbbreviated.md",
+          "url": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md",
           "scope": "「with water or Huang Jiu if used in a decoction」——黃酒作為送服媒介的唯一具名出處"
         }
       ],
@@ -100286,7 +100286,7 @@
       "field_sources": {
         "identity": [
           "curriculum/formulas/05_Formula_Cards_041-050_清熱劑_祛濕劑.md",
-          "curriculum/herbs/Materia Medica Abbbreviated.md"
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
         ],
         "category": [
           "curriculum/formulas/05_Formula_Cards_041-050_清熱劑_祛濕劑.md"
@@ -102511,7 +102511,7 @@
         ],
         "part_used_zh": "貝殼（煅）",
         "part_used_en": "shell (calcined)",
-        "source_note_zh": "性味歸經取自 Materia Medica Abbbreviated.md p.38「Zhen Zhu Mu [Mother of Pearl] Sweet, Salty, Cold [HT, LV]」——這是珍珠母**自己的**獨立條目，緊接在同頁「珍珠 Zhen Zhu / Margarita」條目之後、另立標題，兩者未混同。原判斷「課件無珍珠母專論」係 F12 建卡當時只查過拼音拉丁對照表與方劑組成行，未查到這份 Chenoweth 講義；2026-08-11 深化批次補查後更正。"
+        "source_note_zh": "性味歸經取自 materia_medica_abbreviated_chenoweth.md p.38「Zhen Zhu Mu [Mother of Pearl] Sweet, Salty, Cold [HT, LV]」——這是珍珠母**自己的**獨立條目，緊接在同頁「珍珠 Zhen Zhu / Margarita」條目之後、另立標題，兩者未混同。原判斷「課件無珍珠母專論」係 F12 建卡當時只查過拼音拉丁對照表與方劑組成行，未查到這份 Chenoweth 講義；2026-08-11 深化批次補查後更正。"
       },
       "functions_zh": [
         "平肝潛陽",
@@ -102531,7 +102531,7 @@
         "肝陽上亢之眩暈（課件珍珠母丸：Anchors Liver Yang and calms Shen; helps dizziness）。",
         "心神不寧之心悸、失眠（同上：palpitations and insomnia）。",
         "羚角鉤藤湯中，AD 列為羚羊角的替代藥之一（10–45g）。",
-        "肝陽上亢兼耳鳴、失眠、驚厥（Materia Medica Abbbreviated.md 珍珠母自身條目：Calms LV & Anchors yang [LV Yang rising, dizziness, tinnitus, insomnia, seizures]）。",
+        "肝陽上亢兼耳鳴、失眠、驚厥（珍珠母自身條目：Calms LV & Anchors yang [LV Yang rising, dizziness, tinnitus, insomnia, seizures]）。",
         "痰蒙心竅、心火上炎之譫語、震顫、抽搐、躁狂（同上：Pacifies HT Fire [LV yang rising with phlegm misting pericardium with HT fire]）。",
         "濕疹、皮膚瘙癢，外用散劑（同上：Promotes healing & reduces itching）；胃酸過多、消化性潰瘍、胃痛（同上：Neutralizes ST acid）。"
       ],
@@ -102539,7 +102539,7 @@
         "Dizziness from ascendant Liver Yang (Zhen Zhu Mu Wan card: anchors Liver Yang and calms Shen, helps dizziness).",
         "Palpitations and insomnia from a restless Spirit (same source).",
         "In Ling Jiao Gou Teng Tang, American Dragon lists it as one substitute for Ling Yang Jiao (10–45g).",
-        "Ascendant Liver Yang with tinnitus, insomnia, and seizures (Materia Medica Abbbreviated.md Zhen Zhu Mu entry: calms LV and anchors Yang for LV Yang rising, dizziness, tinnitus, insomnia, seizures).",
+        "Ascendant Liver Yang with tinnitus, insomnia, and seizures (Zhen Zhu Mu's own entry: calms LV and anchors Yang for LV Yang rising, dizziness, tinnitus, insomnia, seizures).",
         "Phlegm misting the pericardium with Heart Fire from ascendant Liver Yang — delirious speech, tremors, seizures, mania (same entry: pacifies HT Fire).",
         "Eczema and itching, used topically as a powder (same entry: promotes healing and reduces itching); acid reflux, peptic ulcer, and stomach pain (same entry: neutralizes ST acid)."
       ],
@@ -102556,7 +102556,7 @@
         "Insomnia"
       ],
       "modern_functions_zh": [
-        "保護胃黏膜、鬆弛平滑肌（課件 Materia Medica Abbbreviated.md 珍珠母條目：WM: ST, muscle relaxer）"
+        "保護胃黏膜、鬆弛平滑肌（課件珍珠母條目：WM: ST, muscle relaxer）"
       ],
       "modern_functions_en": [
         "Gastric mucosal protection and smooth-muscle relaxant action (course entry: WM: ST, muscle relaxer)"
@@ -102568,7 +102568,7 @@
         "route": "decoction (crush and pre-decoct)"
       },
       "dosage_g": {
-        "standard_daily_g": "21–30g（課件珍珠母丸）／10–45g（課件羚角鉤藤湯，作羚羊角替代）／15–30g 打碎先煎（Materia Medica Abbbreviated.md 珍珠母自身條目：Dosage: Higher [15-30g]. Pre-decoct）",
+        "standard_daily_g": "21–30g（課件珍珠母丸）／10–45g（課件羚角鉤藤湯，作羚羊角替代）／15–30g 打碎先煎（課件珍珠母自身條目：Dosage: Higher [15-30g]. Pre-decoct）",
         "source_note": "三處數字量級一致（15–45g 區間），單味藥專論與方中用量互相印證，並記。"
       },
       "contraindications_zh": [
@@ -102592,7 +102592,7 @@
       ],
       "exam_importance": "",
       "exam_pearl": "珍珠母 = 育珠貝的殼（煅），與珍珠是殼與珠的關係，不是同一味。珍珠 0.3–1g 研末安神；珍珠母 15–30g 打碎先煎潛陽（自身條目與方劑用量互相印證）。名字差一個字，用量差十到三十倍。",
-      "clinical_use_note": "珍珠母是育珠貝的殼（煅過），跟珍珠本身是「殼與珠」的關係，不是同一味。它走的是重鎮潛陽路線：肝陽上亢的眩暈、心神不寧的心悸失眠，同時是羚羊角（瀕危）的可用替代之一，這點在羚角鉤藤湯裡很實用。**2026-08-11 深化批次補充**：珍珠母其實有自己的獨立條目（Materia Medica Abbbreviated.md p.38，緊接珍珠條目之後），甘鹹寒、入心肝經，除平肝潛陽、安神定驚外，還有清肝明目、外用收斂生肌止癢、制酸止痛（似牡蠣）等功效，用量 15–30g 打碎先煎——與方中 21–30g／10–45g 互相印證，並有「WM: ST, muscle relaxer」的現代藥理記載。臨床最要小心的仍是與珍珠的用量級距混淆。",
+      "clinical_use_note": "珍珠母是育珠貝的殼（煅過），跟珍珠本身是「殼與珠」的關係，不是同一味。它走的是重鎮潛陽路線：肝陽上亢的眩暈、心神不寧的心悸失眠，同時是羚羊角（瀕危）的可用替代之一，這點在羚角鉤藤湯裡很實用。**2026-08-11 深化批次補充**：珍珠母其實有自己的獨立條目（Chenoweth 課件 p.38，緊接珍珠條目之後），甘鹹寒、入心肝經，除平肝潛陽、安神定驚外，還有清肝明目、外用收斂生肌止癢、制酸止痛（似牡蠣）等功效，用量 15–30g 打碎先煎——與方中 21–30g／10–45g 互相印證，並有「WM: ST, muscle relaxer」的現代藥理記載。臨床最要小心的仍是與珍珠的用量級距混淆。",
       "source_citations": [
         "《中華人民共和國藥典》2020年版一部：珍珠母",
         "珍珠母丸(《普濟本事方》)主藥"
@@ -102612,7 +102612,22 @@
           "《中華人民共和國藥典》2020年版一部：珍珠母",
           "珍珠母丸(《普濟本事方》)主藥"
         ],
-        "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md; American Dragon (americandragon.com); Taiwan Herbal Pharmacopoeia 4th ed."
+        "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md; American Dragon (americandragon.com); Taiwan Herbal Pharmacopoeia 4th ed.",
+        "indications_zh": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p38"
+        ],
+        "indications_en": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p38"
+        ],
+        "modern_functions_zh": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p38"
+        ],
+        "dosage": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p38"
+        ],
+        "clinical_use_note": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p38"
+        ]
       },
       "card_grade": "partial",
       "dosage_normalized": {
@@ -102640,7 +102655,44 @@
         "source_field": "dosage"
       },
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/ZhenZhuMu.html",
-      "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/ZhenZhuMu.html"
+      "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/ZhenZhuMu.html",
+      "import_artifacts": [
+        {
+          "original_field": "indications_zh[3]",
+          "text": "肝陽上亢兼耳鳴、失眠、驚厥（Materia Medica Abbbreviated.md 珍珠母自身條目：Calms LV & Anchors yang [LV Yang rising, dizziness, tinnitus, insomnia, seizures]）。",
+          "reason": "課件檔名「Materia Medica Abbbreviated.md」印在臨床敘述中間 = 出處誤植為內容；該檔與 canonical 的 materia_medica_abbreviated_chenoweth.md 逐位元組相同（僅抽取標頭那一行不同，行號一致），故內容主張不變，只把檔名搬到 field_sources。",
+          "moved_at": "2026-08-31",
+          "ruling": "Ting 2026-08-31 派工：課件檔名不進臨床句子，出處歸 field_sources"
+        },
+        {
+          "original_field": "indications_en[3]",
+          "text": "Ascendant Liver Yang with tinnitus, insomnia, and seizures (Materia Medica Abbbreviated.md Zhen Zhu Mu entry: calms LV and anchors Yang for LV Yang rising, dizziness, tinnitus, insomnia, seizures).",
+          "reason": "課件檔名「Materia Medica Abbbreviated.md」印在臨床敘述中間 = 出處誤植為內容；該檔與 canonical 的 materia_medica_abbreviated_chenoweth.md 逐位元組相同（僅抽取標頭那一行不同，行號一致），故內容主張不變，只把檔名搬到 field_sources。",
+          "moved_at": "2026-08-31",
+          "ruling": "Ting 2026-08-31 派工：課件檔名不進臨床句子，出處歸 field_sources"
+        },
+        {
+          "original_field": "modern_functions_zh[0]",
+          "text": "保護胃黏膜、鬆弛平滑肌（課件 Materia Medica Abbbreviated.md 珍珠母條目：WM: ST, muscle relaxer）",
+          "reason": "課件檔名「Materia Medica Abbbreviated.md」印在臨床敘述中間 = 出處誤植為內容；該檔與 canonical 的 materia_medica_abbreviated_chenoweth.md 逐位元組相同（僅抽取標頭那一行不同，行號一致），故內容主張不變，只把檔名搬到 field_sources。",
+          "moved_at": "2026-08-31",
+          "ruling": "Ting 2026-08-31 派工：課件檔名不進臨床句子，出處歸 field_sources"
+        },
+        {
+          "original_field": "dosage_g.standard_daily_g",
+          "text": "21–30g（課件珍珠母丸）／10–45g（課件羚角鉤藤湯，作羚羊角替代）／15–30g 打碎先煎（Materia Medica Abbbreviated.md 珍珠母自身條目：Dosage: Higher [15-30g]. Pre-decoct）",
+          "reason": "課件檔名「Materia Medica Abbbreviated.md」印在臨床敘述中間 = 出處誤植為內容；該檔與 canonical 的 materia_medica_abbreviated_chenoweth.md 逐位元組相同（僅抽取標頭那一行不同，行號一致），故內容主張不變，只把檔名搬到 field_sources。",
+          "moved_at": "2026-08-31",
+          "ruling": "Ting 2026-08-31 派工：課件檔名不進臨床句子，出處歸 field_sources"
+        },
+        {
+          "original_field": "clinical_use_note",
+          "text": "珍珠母是育珠貝的殼（煅過），跟珍珠本身是「殼與珠」的關係，不是同一味。它走的是重鎮潛陽路線：肝陽上亢的眩暈、心神不寧的心悸失眠，同時是羚羊角（瀕危）的可用替代之一，這點在羚角鉤藤湯裡很實用。**2026-08-11 深化批次補充**：珍珠母其實有自己的獨立條目（Materia Medica Abbbreviated.md p.38，緊接珍珠條目之後），甘鹹寒、入心肝經，除平肝潛陽、安神定驚外，還有清肝明目、外用收斂生肌止癢、制酸止痛（似牡蠣）等功效，用量 15–30g 打碎先煎——與方中 21–30g／10–45g 互相印證，並有「WM: ST, muscle relaxer」的現代藥理記載。臨床最要小心的仍是與珍珠的用量級距混淆。",
+          "reason": "課件檔名「Materia Medica Abbbreviated.md」印在臨床敘述中間 = 出處誤植為內容；該檔與 canonical 的 materia_medica_abbreviated_chenoweth.md 逐位元組相同（僅抽取標頭那一行不同，行號一致），故內容主張不變，只把檔名搬到 field_sources。",
+          "moved_at": "2026-08-31",
+          "ruling": "Ting 2026-08-31 派工：課件檔名不進臨床句子，出處歸 field_sources"
+        }
+      ]
     },
     {
       "review_status": "draft",
@@ -102651,7 +102703,7 @@
       "authored_by": "Claude",
       "name_header_note_zh": "中文/拼音旁為 common name；下一行拉丁藥名。",
       "key_pairs": [],
-      "review_notes_zh": "為補 F12（珍珠母丸 composition 查無）而建。與 herb.long_gu（龍骨）是不同用部：Fossilia Dentis Mastodi（齒）vs Fossilia Ossis Mastodi（骨）。課件無龍齒專論，性味歸經留空，不搬龍骨的。2026-08-11 深化批次：逐檔搜尋 curriculum/herbs/ 全部 md（含 Materia Medica Abbbreviated.md 全文、Pinyin & Latin Herb List）與 THP 4th ed.（DENTIS MASTODI 檢索無結果），龍齒僅見於拼音拉丁對照表一行與珍珠母丸組成行，查無獨立性味歸經段落。留空判斷維持不變。待 RV1。",
+      "review_notes_zh": "為補 F12（珍珠母丸 composition 查無）而建。與 herb.long_gu（龍骨）是不同用部：Fossilia Dentis Mastodi（齒）vs Fossilia Ossis Mastodi（骨）。課件無龍齒專論，性味歸經留空，不搬龍骨的。2026-08-11 深化批次：逐檔搜尋 curriculum/herbs/ 全部 md（含 materia_medica_abbreviated_chenoweth.md 全文、Pinyin & Latin Herb List）與 THP 4th ed.（DENTIS MASTODI 檢索無結果），龍齒僅見於拼音拉丁對照表一行與珍珠母丸組成行，查無獨立性味歸經段落。留空判斷維持不變。待 RV1。",
       "source_type": "formula_ingredient_gap_fill",
       "id": "herb.long_chi",
       "name_zh": "龍齒",
@@ -103064,7 +103116,7 @@
         ],
         "part_used_zh": "鱗片",
         "part_used_en": "scales",
-        "source_note_zh": "性味歸經取自 Materia Medica Abbbreviated.md p.16「Chuan Shan Jia [Penetrate Mountain Scale] Salty, Cool [LV & ST]」——這是穿山甲**自己的**獨立條目（自己的標題與性味歸經欄，位於 Blood Regulating 章）。原判斷「Chenoweth 功效索引只給分類標記」係 F12 建卡當時只查過索引頁與方劑組成行，未查到這份講義正文的性味歸經欄；2026-08-11 深化批次補查後更正。"
+        "source_note_zh": "性味歸經取自 materia_medica_abbreviated_chenoweth.md p.16「Chuan Shan Jia [Penetrate Mountain Scale] Salty, Cool [LV & ST]」——這是穿山甲**自己的**獨立條目（自己的標題與性味歸經欄，位於 Blood Regulating 章）。原判斷「Chenoweth 功效索引只給分類標記」係 F12 建卡當時只查過索引頁與方劑組成行，未查到這份講義正文的性味歸經欄；2026-08-11 深化批次補查後更正。"
       },
       "functions_zh": [
         "活血消癥",
@@ -103080,7 +103132,7 @@
         "血瘀經閉、癥瘕積聚（課件復元活血湯：Historically used to open channels and disperse Blood Stasis）。",
         "瘡瘍腫毒未潰或膿成不潰（仙方活命飲用炙穿山甲，取其潰堅排膿）。",
         "以上為**歷史功效**；課件標明現代為保育類廢用物質。",
-        "風寒濕痺、風濕關節疼痛（Materia Medica Abbbreviated.md 穿山甲自身條目：Bi (Wind Cold) [arthritis]；配伍 Du Huo, Qiang Huo, Chuan Xiong）。",
+        "風寒濕痺、風濕關節疼痛（穿山甲自身條目：Bi (Wind Cold) [arthritis]；配伍 Du Huo, Qiang Huo, Chuan Xiong）。",
         "乳汁不通，煮湯用（同上：Promotes lactation [boil in soup with pork bones or pig feet]）。",
         "瘡瘍、癤腫、瘰癧膿成未潰（同上：Abscesses, boils, scrofula, goiter；配伍 Jin Yin Hua, Tian Hua Fen, Zao Jiao Ci 等排膿解毒藥）。"
       ],
@@ -103088,7 +103140,7 @@
         "Blood-stasis amenorrhea and abdominal masses (Fu Yuan Huo Xue Tang card: historically used to open channels and disperse Blood Stasis).",
         "Sores and toxic swellings that have not ulcerated, or where pus has formed but not discharged (Xian Fang Huo Ming Yin uses the prepared form to break through and expel pus).",
         "These are the **historical** actions; the coursework marks it an obsolete, protected animal substance in modern practice.",
-        "Wind-Cold Bi with joint pain (Materia Medica Abbbreviated.md Chuan Shan Jia entry: Bi [Wind Cold, arthritis]; paired with Du Huo, Qiang Huo, Chuan Xiong).",
+        "Wind-Cold Bi with joint pain (Chuan Shan Jia's own entry: Bi [Wind Cold, arthritis]; paired with Du Huo, Qiang Huo, Chuan Xiong).",
         "Insufficient lactation, taken as a soup (same entry: promotes lactation, boiled in soup with pork bones or pig feet).",
         "Sores, boils, and scrofula with pus formed but not discharged (same entry: abscesses, boils, scrofula, goiter; paired with pus-draining, toxin-resolving herbs such as Jin Yin Hua, Tian Hua Fen, Zao Jiao Ci)."
       ],
@@ -103143,7 +103195,7 @@
       ],
       "exam_importance": "★ NCBAHM Appendix D 廢用物質。考點：歷史功效 + 保育議題 + 替代（王不留行）。",
       "exam_pearl": "穿山甲善「走竄通透」——通經、下乳、潰堅排膿，什麼堵都能穿。現代禁用，替代記王不留行（同樣主打通經下乳）。",
-      "clinical_use_note": "穿山甲的形象很好記：鱗甲善鑽，所以功效全是「通」——通經絡、通乳汁、通瘡瘍（潰堅排膿）。它與犀角、罌粟殼同為 NCBAHM Appendix D 的廢用物質，考法一致。替代藥王不留行選得很合理，因為兩者最重疊的功能就是通經下乳。命名注意：仙方活命飲的資料寫「Zhi Chuan Shan Jia」，但課件實際只出現「炮山甲 Pao Shan Jia」的寫法，兩者都是炮製品。**2026-08-11 深化批次補充**：穿山甲其實有自己的獨立條目（Materia Medica Abbbreviated.md p.16），鹹涼、入肝胃經，除通經消癥、消腫排膿外，還記有治風寒濕痺關節痛（配獨活、羌活、川芎）的用法——與王不留行「通經下乳」的替代重疊面之外，多了一個祛風濕痛的向度。",
+      "clinical_use_note": "穿山甲的形象很好記：鱗甲善鑽，所以功效全是「通」——通經絡、通乳汁、通瘡瘍（潰堅排膿）。它與犀角、罌粟殼同為 NCBAHM Appendix D 的廢用物質，考法一致。替代藥王不留行選得很合理，因為兩者最重疊的功能就是通經下乳。命名注意：仙方活命飲的資料寫「Zhi Chuan Shan Jia」，但課件實際只出現「炮山甲 Pao Shan Jia」的寫法，兩者都是炮製品。**2026-08-11 深化批次補充**：穿山甲其實有自己的獨立條目（Chenoweth 課件 p.16），鹹涼、入肝胃經，除通經消癥、消腫排膿外，還記有治風寒濕痺關節痛（配獨活、羌活、川芎）的用法——與王不留行「通經下乳」的替代重疊面之外，多了一個祛風濕痛的向度。",
       "source_citations": [
         "CITES Appendix I (Manis spp.)",
         "《中華人民共和國藥典》2020年版除名報導"
@@ -103163,11 +103215,43 @@
           "《中華人民共和國藥典》2020年版除名報導"
         ],
         "modern_functions_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md",
-        "modern_functions_en": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
+        "modern_functions_en": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md",
+        "indications_zh": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p16"
+        ],
+        "indications_en": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p16"
+        ],
+        "clinical_use_note": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p16"
+        ]
       },
       "card_grade": "partial",
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/ChuanShanJia.html",
-      "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/ChuanShanJia.html"
+      "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/ChuanShanJia.html",
+      "import_artifacts": [
+        {
+          "original_field": "indications_zh[3]",
+          "text": "風寒濕痺、風濕關節疼痛（Materia Medica Abbbreviated.md 穿山甲自身條目：Bi (Wind Cold) [arthritis]；配伍 Du Huo, Qiang Huo, Chuan Xiong）。",
+          "reason": "課件檔名「Materia Medica Abbbreviated.md」印在臨床敘述中間 = 出處誤植為內容；該檔與 canonical 的 materia_medica_abbreviated_chenoweth.md 逐位元組相同（僅抽取標頭那一行不同，行號一致），故內容主張不變，只把檔名搬到 field_sources。",
+          "moved_at": "2026-08-31",
+          "ruling": "Ting 2026-08-31 派工：課件檔名不進臨床句子，出處歸 field_sources"
+        },
+        {
+          "original_field": "indications_en[3]",
+          "text": "Wind-Cold Bi with joint pain (Materia Medica Abbbreviated.md Chuan Shan Jia entry: Bi [Wind Cold, arthritis]; paired with Du Huo, Qiang Huo, Chuan Xiong).",
+          "reason": "課件檔名「Materia Medica Abbbreviated.md」印在臨床敘述中間 = 出處誤植為內容；該檔與 canonical 的 materia_medica_abbreviated_chenoweth.md 逐位元組相同（僅抽取標頭那一行不同，行號一致），故內容主張不變，只把檔名搬到 field_sources。",
+          "moved_at": "2026-08-31",
+          "ruling": "Ting 2026-08-31 派工：課件檔名不進臨床句子，出處歸 field_sources"
+        },
+        {
+          "original_field": "clinical_use_note",
+          "text": "穿山甲的形象很好記：鱗甲善鑽，所以功效全是「通」——通經絡、通乳汁、通瘡瘍（潰堅排膿）。它與犀角、罌粟殼同為 NCBAHM Appendix D 的廢用物質，考法一致。替代藥王不留行選得很合理，因為兩者最重疊的功能就是通經下乳。命名注意：仙方活命飲的資料寫「Zhi Chuan Shan Jia」，但課件實際只出現「炮山甲 Pao Shan Jia」的寫法，兩者都是炮製品。**2026-08-11 深化批次補充**：穿山甲其實有自己的獨立條目（Materia Medica Abbbreviated.md p.16），鹹涼、入肝胃經，除通經消癥、消腫排膿外，還記有治風寒濕痺關節痛（配獨活、羌活、川芎）的用法——與王不留行「通經下乳」的替代重疊面之外，多了一個祛風濕痛的向度。",
+          "reason": "課件檔名「Materia Medica Abbbreviated.md」印在臨床敘述中間 = 出處誤植為內容；該檔與 canonical 的 materia_medica_abbreviated_chenoweth.md 逐位元組相同（僅抽取標頭那一行不同，行號一致），故內容主張不變，只把檔名搬到 field_sources。",
+          "moved_at": "2026-08-31",
+          "ruling": "Ting 2026-08-31 派工：課件檔名不進臨床句子，出處歸 field_sources"
+        }
+      ]
     },
     {
       "review_status": "draft",
@@ -103178,7 +103262,7 @@
       "authored_by": "Claude",
       "name_header_note_zh": "中文/拼音旁為 common name；下一行拉丁藥名。",
       "key_pairs": [],
-      "review_notes_zh": "為補 F12（羚角鉤藤湯 composition 查無）而建。原判斷「課件中山羊角只以替代藥身分出現，無獨立專論」——2026-08-11 深化批次重新逐檔搜尋 curriculum/herbs/*.md 後，在 Materia Medica Abbbreviated.md p.38（[29] Extinguish Wind 章）找到山羊角自己的獨立條目（自己的標題、拉丁名 Cornu Naemorhedis、自己的性味歸經欄），並非借用羚羊角。該條目本身即明言「Similar functions to Ling Yang Jiao, effect milder, 2-3x dose」——這是來源自身的比較敘述，不是本卡代為推論。性味歸經、功效已據此補上；仍無來源給禁忌與用量區間，故禁忌欄留空、card_grade 維持 partial。待 RV1。",
+      "review_notes_zh": "為補 F12（羚角鉤藤湯 composition 查無）而建。原判斷「課件中山羊角只以替代藥身分出現，無獨立專論」——2026-08-11 深化批次重新逐檔搜尋 curriculum/herbs/*.md 後，在 materia_medica_abbreviated_chenoweth.md p.38（[29] Extinguish Wind 章）找到山羊角自己的獨立條目（自己的標題、拉丁名 Cornu Naemorhedis、自己的性味歸經欄），並非借用羚羊角。該條目本身即明言「Similar functions to Ling Yang Jiao, effect milder, 2-3x dose」——這是來源自身的比較敘述，不是本卡代為推論。性味歸經、功效已據此補上；仍無來源給禁忌與用量區間，故禁忌欄留空、card_grade 維持 partial。待 RV1。",
       "source_type": "formula_ingredient_gap_fill",
       "id": "herb.shan_yang_jiao",
       "name_zh": "山羊角",
@@ -103217,7 +103301,7 @@
         ],
         "part_used_zh": "角",
         "part_used_en": "horn",
-        "source_note_zh": "性味歸經取自 Materia Medica Abbbreviated.md p.38「Shan Yang Jiao [Mountain Goats Horn] Cornu Naemorhedis / Salty, Cold [LV]」——這是山羊角**自己的**獨立條目（自己的標題與性味歸經欄），與同頁羚羊角、珍珠母分屬不同欄位，非借用他藥。原判斷「無獨立專論」係 F12 建卡當時只查過 CHM 課程包與羚角鉤藤湯方劑卡，未查到這份 Chenoweth 講義；2026-08-11 深化批次補查後更正。"
+        "source_note_zh": "性味歸經取自 materia_medica_abbreviated_chenoweth.md p.38「Shan Yang Jiao [Mountain Goats Horn] Cornu Naemorhedis / Salty, Cold [LV]」——這是山羊角**自己的**獨立條目（自己的標題與性味歸經欄），與同頁羚羊角、珍珠母分屬不同欄位，非借用他藥。原判斷「無獨立專論」係 F12 建卡當時只查過 CHM 課程包與羚角鉤藤湯方劑卡，未查到這份 Chenoweth 講義；2026-08-11 深化批次補查後更正。"
       },
       "functions_zh": [
         "平肝息風、清肝熱（作羚羊角替代）",
@@ -103229,11 +103313,11 @@
       ],
       "indications_zh": [
         "羚角鉤藤湯證：肝經熱盛動風、高熱驚厥抽搐——課件以山羊角替代瀕危的羚羊角（CHM 課程包：Ling Yang Jiao endangered – substituting Shan Yang Jiao）。",
-        "肝陽上亢/肝火上炎：眩暈、頭痛、抽搐、目赤腫痛（Materia Medica Abbbreviated.md 山羊角自身條目：Calms Liver and sedates, treats Liver yang or Liver fire rising with dizziness, vertigo, convulsions, spasms or redness, pain and swelling of the eyes）。"
+        "肝陽上亢/肝火上炎：眩暈、頭痛、抽搐、目赤腫痛（山羊角自身條目：Calms Liver and sedates, treats Liver yang or Liver fire rising with dizziness, vertigo, convulsions, spasms or redness, pain and swelling of the eyes）。"
       ],
       "indications_en": [
         "The Ling Jiao Gou Teng Tang pattern of Liver-channel Heat stirring Wind with high fever and convulsions — the coursework substitutes Shan Yang Jiao for the endangered Ling Yang Jiao (CHM course package: Ling Yang Jiao endangered, substituting Shan Yang Jiao).",
-        "Ascendant Liver Yang/Fire: dizziness, headache, convulsions, and red/swollen/painful eyes (Materia Medica Abbbreviated.md Shan Yang Jiao entry: calms Liver and sedates, treats Liver yang or Liver fire rising with dizziness, vertigo, convulsions, spasms or redness, pain and swelling of the eyes)."
+        "Ascendant Liver Yang/Fire: dizziness, headache, convulsions, and red/swollen/painful eyes (Shan Yang Jiao's own entry: calms Liver and sedates, treats Liver yang or Liver fire rising with dizziness, vertigo, convulsions, spasms or redness, pain and swelling of the eyes)."
       ],
       "condition_tags_zh": [
         "肝風內動",
@@ -103264,7 +103348,7 @@
       "dosage_g": {
         "standard_daily_g": "10–45g（課件羚角鉤藤湯，作替代藥）",
         "reference": "被替代的羚羊角：煎劑 1–3g、粉劑 0.3–0.5g（課件 MM III）",
-        "source_note": "替代用量比羚羊角高一個數量級，這是替代品普遍的特徵（同水牛角代犀角）。山羊角自身條目（Materia Medica Abbbreviated.md）只給「2–3 倍羚羊角劑量」的相對敘述，未給絕對克數，故仍以方劑用量為準，不代為換算。"
+        "source_note": "替代用量比羚羊角高一個數量級，這是替代品普遍的特徵（同水牛角代犀角）。山羊角自身條目（materia_medica_abbreviated_chenoweth.md）只給「2–3 倍羚羊角劑量」的相對敘述，未給絕對克數，故仍以方劑用量為準，不代為換算。"
       },
       "contraindications_zh": [
         "脾胃虛寒者慎用。"
@@ -103272,11 +103356,11 @@
       "contraindications_en": [],
       "cautions_zh": [
         "課件未列山羊角的禁忌與注意事項；本卡不代為填寫。羚羊角的注意事項（虛證慎用）**屬羚羊角，未搬入**。",
-        "山羊角自身條目已找到（Materia Medica Abbbreviated.md p.38），但該條目同樣未列禁忌；性味歸經與功效已據其補齊，用量區間與禁忌仍待 RV1 以專業來源補齊。"
+        "山羊角自身條目已找到（Chenoweth 課件 p.38），但該條目同樣未列禁忌；性味歸經與功效已據其補齊，用量區間與禁忌仍待 RV1 以專業來源補齊。"
       ],
       "cautions_en": [
         "The coursework lists no contraindications or cautions for Shan Yang Jiao; this card does not supply any. The Ling Yang Jiao caution (use cautiously in deficiency conditions) belongs to **Ling Yang Jiao and has not been copied here**.",
-        "Shan Yang Jiao's own entry has now been located (Materia Medica Abbbreviated.md p.38), but it likewise lists no contraindications; nature, flavor, channels, and actions have been filled from it, while dosage range and contraindications still await RV1 and a professional source."
+        "Shan Yang Jiao's own entry has now been located (the Chenoweth handout, p.38), but it likewise lists no contraindications; nature, flavor, channels, and actions have been filled from it, while dosage range and contraindications still await RV1 and a professional source."
       ],
       "safety_flags": [
         "safety_review_pending",
@@ -103288,7 +103372,7 @@
       ],
       "exam_importance": "",
       "exam_pearl": "羚羊角瀕危，替代選山羊角（10–45g）或珍珠母（10–45g）。替代品用量都比羚羊角（1–3g）高一個數量級。山羊角自身條目明言「效同羚羊角、力較緩、需 2–3 倍劑量」——這正是替代劑量偏高的機轉解釋。",
-      "clinical_use_note": "山羊角在本庫最主要的身分是羚羊角的替代品：羚羊角是保育類（Cornu Saigae Tataricae，賽加羚羊），課件在羚角鉤藤湯處明列兩個替代選項——山羊角與珍珠母，用量都是 10–45g，比羚羊角本身的 1–3g 高得多。**2026-08-11 深化批次補充**：山羊角其實也有自己的獨立條目（Materia Medica Abbbreviated.md p.38），鹹寒、入肝經，功效為鎮肝——治肝陽上亢/肝火上炎之眩暈、抽搐、目赤腫痛，條目本身即說明「效同羚羊角而力緩，需 2–3 倍劑量」。這不是把羚羊角的性味硬搬過來，是山羊角自己的條目也做了這個比較；性味歸經據此補齊，但用量區間與禁忌來源仍只有方劑數字，故 card_grade 維持 partial。",
+      "clinical_use_note": "山羊角在本庫最主要的身分是羚羊角的替代品：羚羊角是保育類（Cornu Saigae Tataricae，賽加羚羊），課件在羚角鉤藤湯處明列兩個替代選項——山羊角與珍珠母，用量都是 10–45g，比羚羊角本身的 1–3g 高得多。**2026-08-11 深化批次補充**：山羊角其實也有自己的獨立條目（Chenoweth 課件 p.38），鹹寒、入肝經，功效為鎮肝——治肝陽上亢/肝火上炎之眩暈、抽搐、目赤腫痛，條目本身即說明「效同羚羊角而力緩，需 2–3 倍劑量」。這不是把羚羊角的性味硬搬過來，是山羊角自己的條目也做了這個比較；性味歸經據此補齊，但用量區間與禁忌來源仍只有方劑數字，故 card_grade 維持 partial。",
       "source_citations": [
         {
           "name": "📘 課件 CHM Formulation 2 course package",
@@ -103307,7 +103391,7 @@
         },
         {
           "name": "📘 課件 Materia Medica Abbreviated（Chenoweth）p.38 山羊角自身條目",
-          "url": "curriculum/herbs/Materia Medica Abbbreviated.md",
+          "url": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md",
           "scope": "[29] Extinguish Wind 章：Shan Yang Jiao [Mountain Goats Horn] Cornu Naemorhedis / Salty, Cold [LV] / Similar functions to Ling Yang Jiao, milder, needs 2-3x dose / Calms Liver and sedates, treats Liver yang or Liver fire rising with dizziness, vertigo, convulsions, spasms or redness, pain and swelling of the eyes。此為 OCR 壓平的四欄版面，本卡僅採用「山羊角」自己標題下方、下一個藥名標題（Shi Jue Ming）之前的段落，未跨欄引用。"
         }
       ],
@@ -103321,20 +103405,20 @@
           "curriculum/formulas/15_Formula_Cards_141-150_治風劑_祛痰劑.md"
         ],
         "properties_taste_temp": [
-          "curriculum/herbs/Materia Medica Abbbreviated.md"
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
         ],
         "channels_zh": [
-          "curriculum/herbs/Materia Medica Abbbreviated.md"
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
         ],
         "functions_zh": [
           "curriculum/formulas/15_Formula_Cards_141-150_治風劑_祛痰劑.md",
           "curriculum/herbs/CHM_Formulation_2_course_package_extracted.md",
-          "curriculum/herbs/Materia Medica Abbbreviated.md"
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
         ],
         "indications_zh": [
           "curriculum/formulas/15_Formula_Cards_141-150_治風劑_祛痰劑.md",
           "curriculum/herbs/CHM_Formulation_2_course_package_extracted.md",
-          "curriculum/herbs/Materia Medica Abbbreviated.md"
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
         ],
         "dosage": [
           "curriculum/formulas/15_Formula_Cards_141-150_治風劑_祛痰劑.md",
@@ -103342,16 +103426,23 @@
         ],
         "cautions_zh": [
           "curriculum/formulas/15_Formula_Cards_141-150_治風劑_祛痰劑.md",
-          "curriculum/herbs/Materia Medica III-Wind-extinguishing Herbs.md"
+          "curriculum/herbs/Materia Medica III-Wind-extinguishing Herbs.md",
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p38"
         ],
         "clinical_use_note": [
           "curriculum/formulas/15_Formula_Cards_141-150_治風劑_祛痰劑.md",
           "curriculum/herbs/CHM_Formulation_2_course_package_extracted.md",
-          "curriculum/herbs/Materia Medica Abbbreviated.md"
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
         ],
         "modern_functions_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md",
         "modern_functions_en": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md",
-        "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md; American Dragon (americandragon.com); Taiwan Herbal Pharmacopoeia 4th ed."
+        "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md; American Dragon (americandragon.com); Taiwan Herbal Pharmacopoeia 4th ed.",
+        "indications_en": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p38"
+        ],
+        "cautions_en": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p38"
+        ]
       },
       "card_grade": "partial",
       "dosage_normalized": {
@@ -103379,7 +103470,44 @@
         "source_field": "dosage"
       },
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/ShanYangJiao.html",
-      "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/ShanYangJiao.html"
+      "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/ShanYangJiao.html",
+      "import_artifacts": [
+        {
+          "original_field": "indications_zh[1]",
+          "text": "肝陽上亢/肝火上炎：眩暈、頭痛、抽搐、目赤腫痛（Materia Medica Abbbreviated.md 山羊角自身條目：Calms Liver and sedates, treats Liver yang or Liver fire rising with dizziness, vertigo, convulsions, spasms or redness, pain and swelling of the eyes）。",
+          "reason": "課件檔名「Materia Medica Abbbreviated.md」印在臨床敘述中間 = 出處誤植為內容；該檔與 canonical 的 materia_medica_abbreviated_chenoweth.md 逐位元組相同（僅抽取標頭那一行不同，行號一致），故內容主張不變，只把檔名搬到 field_sources。",
+          "moved_at": "2026-08-31",
+          "ruling": "Ting 2026-08-31 派工：課件檔名不進臨床句子，出處歸 field_sources"
+        },
+        {
+          "original_field": "indications_en[1]",
+          "text": "Ascendant Liver Yang/Fire: dizziness, headache, convulsions, and red/swollen/painful eyes (Materia Medica Abbbreviated.md Shan Yang Jiao entry: calms Liver and sedates, treats Liver yang or Liver fire rising with dizziness, vertigo, convulsions, spasms or redness, pain and swelling of the eyes).",
+          "reason": "課件檔名「Materia Medica Abbbreviated.md」印在臨床敘述中間 = 出處誤植為內容；該檔與 canonical 的 materia_medica_abbreviated_chenoweth.md 逐位元組相同（僅抽取標頭那一行不同，行號一致），故內容主張不變，只把檔名搬到 field_sources。",
+          "moved_at": "2026-08-31",
+          "ruling": "Ting 2026-08-31 派工：課件檔名不進臨床句子，出處歸 field_sources"
+        },
+        {
+          "original_field": "cautions_zh[1]",
+          "text": "山羊角自身條目已找到（Materia Medica Abbbreviated.md p.38），但該條目同樣未列禁忌；性味歸經與功效已據其補齊，用量區間與禁忌仍待 RV1 以專業來源補齊。",
+          "reason": "課件檔名「Materia Medica Abbbreviated.md」印在臨床敘述中間 = 出處誤植為內容；該檔與 canonical 的 materia_medica_abbreviated_chenoweth.md 逐位元組相同（僅抽取標頭那一行不同，行號一致），故內容主張不變，只把檔名搬到 field_sources。",
+          "moved_at": "2026-08-31",
+          "ruling": "Ting 2026-08-31 派工：課件檔名不進臨床句子，出處歸 field_sources"
+        },
+        {
+          "original_field": "cautions_en[1]",
+          "text": "Shan Yang Jiao's own entry has now been located (Materia Medica Abbbreviated.md p.38), but it likewise lists no contraindications; nature, flavor, channels, and actions have been filled from it, while dosage range and contraindications still await RV1 and a professional source.",
+          "reason": "課件檔名「Materia Medica Abbbreviated.md」印在臨床敘述中間 = 出處誤植為內容；該檔與 canonical 的 materia_medica_abbreviated_chenoweth.md 逐位元組相同（僅抽取標頭那一行不同，行號一致），故內容主張不變，只把檔名搬到 field_sources。",
+          "moved_at": "2026-08-31",
+          "ruling": "Ting 2026-08-31 派工：課件檔名不進臨床句子，出處歸 field_sources"
+        },
+        {
+          "original_field": "clinical_use_note",
+          "text": "山羊角在本庫最主要的身分是羚羊角的替代品：羚羊角是保育類（Cornu Saigae Tataricae，賽加羚羊），課件在羚角鉤藤湯處明列兩個替代選項——山羊角與珍珠母，用量都是 10–45g，比羚羊角本身的 1–3g 高得多。**2026-08-11 深化批次補充**：山羊角其實也有自己的獨立條目（Materia Medica Abbbreviated.md p.38），鹹寒、入肝經，功效為鎮肝——治肝陽上亢/肝火上炎之眩暈、抽搐、目赤腫痛，條目本身即說明「效同羚羊角而力緩，需 2–3 倍劑量」。這不是把羚羊角的性味硬搬過來，是山羊角自己的條目也做了這個比較；性味歸經據此補齊，但用量區間與禁忌來源仍只有方劑數字，故 card_grade 維持 partial。",
+          "reason": "課件檔名「Materia Medica Abbbreviated.md」印在臨床敘述中間 = 出處誤植為內容；該檔與 canonical 的 materia_medica_abbreviated_chenoweth.md 逐位元組相同（僅抽取標頭那一行不同，行號一致），故內容主張不變，只把檔名搬到 field_sources。",
+          "moved_at": "2026-08-31",
+          "ruling": "Ting 2026-08-31 派工：課件檔名不進臨床句子，出處歸 field_sources"
+        }
+      ]
     },
     {
       "review_status": "draft",
@@ -103437,7 +103565,7 @@
         ],
         "part_used_zh": "礦石",
         "part_used_en": "mineral",
-        "source_note_zh": "性味歸經取自 Materia Medica Abbbreviated.md p.4-5「Han Shi Shi [Calcitum] (Cd) Acrid, Salty [HT, ST, KD]」——這是寒水石**自己的**獨立條目（自己的標題與性味歸經欄），與同頁其他清熱藥分屬不同欄位，非借用他藥。原判斷「只有分類標記」係 F12 建卡當時只查過 Chenoweth 功效索引與方劑組成行，未查到這份講義的性味歸經欄；2026-08-11 深化批次補查後更正。"
+        "source_note_zh": "性味歸經取自 materia_medica_abbreviated_chenoweth.md p.2「Han Shi Shi [Calcitum] (Cd) Acrid, Salty [HT, ST, KD]」——這是寒水石**自己的**獨立條目（自己的標題與性味歸經欄），與同頁其他清熱藥分屬不同欄位，非借用他藥。原判斷「只有分類標記」係 F12 建卡當時只查過 Chenoweth 功效索引與方劑組成行，未查到這份講義的性味歸經欄；2026-08-11 深化批次補查後更正。"
       },
       "functions_zh": [
         "清熱瀉火",
@@ -103452,13 +103580,13 @@
       "indications_zh": [
         "氣分熱盛之高熱、煩躁、口渴（課件紫雪丹：Clears Qi-level Heat/Fire, irritability and thirst；AD 記其與石膏、滑石同用）。",
         "課件方劑學彙總把它列為紫雪丹君藥：清熱瀉火、導熱下行。",
-        "咽痛、目赤（灼熱感）（Materia Medica Abbbreviated.md 寒水石自身條目：Sore throat, Red eyes (burning)）。",
+        "咽痛、目赤（灼熱感）（寒水石自身條目：Sore throat, Red eyes (burning)）。",
         "皮膚燙傷、瘡瘍、口瘡，外用（同上：Skin: Burns, sores, oral ulcers）。"
       ],
       "indications_en": [
         "Qi-level Heat with high fever, irritability and thirst (Zi Xue Dan card: clears Qi-level Heat/Fire, irritability and thirst; American Dragon pairs it with Shi Gao and Hua Shi).",
         "The 方剂学汇总 ingredient table lists it as a chief in Zi Xue Dan: clear Heat, drain Fire, conduct Heat downward.",
-        "Sore throat and red, burning eyes (Materia Medica Abbbreviated.md Han Shui Shi entry: sore throat, red eyes [burning]).",
+        "Sore throat and red, burning eyes (Han Shui Shi's own entry: sore throat, red eyes [burning]).",
         "Burns, sores, and oral ulcers, used topically (same entry: skin — burns, sores, oral ulcers)."
       ],
       "condition_tags_zh": [
@@ -103511,7 +103639,7 @@
       ],
       "exam_importance": "",
       "exam_pearl": "寒水石在紫雪丹裡與石膏、滑石組成「三大清熱礦石」，主打氣分大熱的高熱煩渴、導熱下行。自身條目另有咽痛目赤（灼熱）與外用治燙傷瘡瘍口瘡的用法。",
-      "clinical_use_note": "寒水石是紫雪丹的君藥之一，跟石膏、滑石同組，靠礦石的重墜寒涼清氣分大熱、導熱從小便去。它在本庫只出現在紫雪丹一個方。用量欄要特別小心：現代常用量 6–15g，但古方原文寫「1500」，那是丸散劑的原料總量不是每服量——這種量級混淆在開竅類古方裡很常見。**2026-08-11 深化批次補充**：寒水石其實有自己的獨立條目（Materia Medica Abbbreviated.md p.4-5），性味辛鹹寒、入心胃腎經，除清氣分熱外還記有利咽（咽痛目赤灼熱）與外用清熱消腫（燙傷、瘡瘍、口瘡）的用法。",
+      "clinical_use_note": "寒水石是紫雪丹的君藥之一，跟石膏、滑石同組，靠礦石的重墜寒涼清氣分大熱、導熱從小便去。它在本庫只出現在紫雪丹一個方。用量欄要特別小心：現代常用量 6–15g，但古方原文寫「1500」，那是丸散劑的原料總量不是每服量——這種量級混淆在開竅類古方裡很常見。**2026-08-11 深化批次補充**：寒水石其實有自己的獨立條目（Chenoweth 課件 p.2），性味辛鹹寒、入心胃腎經，除清氣分熱外還記有利咽（咽痛目赤灼熱）與外用清熱消腫（燙傷、瘡瘍、口瘡）的用法。",
       "source_citations": [
         "《中藥大辭典》：寒水石",
         "紫雪丹(《外台秘要》)組成藥"
@@ -103533,7 +103661,16 @@
         ],
         "modern_functions_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md",
         "modern_functions_en": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md",
-        "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md; Taiwan Herbal Pharmacopoeia 4th ed."
+        "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md; Taiwan Herbal Pharmacopoeia 4th ed.",
+        "indications_zh": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p2"
+        ],
+        "indications_en": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p2"
+        ],
+        "clinical_use_note": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p2"
+        ]
       },
       "card_grade": "partial",
       "dosage_normalized": {
@@ -103561,7 +103698,37 @@
         "source_field": "dosage"
       },
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/HanShuiShi.html",
-      "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/HanShuiShi.html"
+      "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/HanShuiShi.html",
+      "import_artifacts": [
+        {
+          "original_field": "indications_zh[2]",
+          "text": "咽痛、目赤（灼熱感）（Materia Medica Abbbreviated.md 寒水石自身條目：Sore throat, Red eyes (burning)）。",
+          "reason": "課件檔名「Materia Medica Abbbreviated.md」印在臨床敘述中間 = 出處誤植為內容；該檔與 canonical 的 materia_medica_abbreviated_chenoweth.md 逐位元組相同（僅抽取標頭那一行不同，行號一致），故內容主張不變，只把檔名搬到 field_sources。",
+          "moved_at": "2026-08-31",
+          "ruling": "Ting 2026-08-31 派工：課件檔名不進臨床句子，出處歸 field_sources"
+        },
+        {
+          "original_field": "indications_en[2]",
+          "text": "Sore throat and red, burning eyes (Materia Medica Abbbreviated.md Han Shui Shi entry: sore throat, red eyes [burning]).",
+          "reason": "課件檔名「Materia Medica Abbbreviated.md」印在臨床敘述中間 = 出處誤植為內容；該檔與 canonical 的 materia_medica_abbreviated_chenoweth.md 逐位元組相同（僅抽取標頭那一行不同，行號一致），故內容主張不變，只把檔名搬到 field_sources。",
+          "moved_at": "2026-08-31",
+          "ruling": "Ting 2026-08-31 派工：課件檔名不進臨床句子，出處歸 field_sources"
+        },
+        {
+          "original_field": "clinical_use_note",
+          "text": "寒水石是紫雪丹的君藥之一，跟石膏、滑石同組，靠礦石的重墜寒涼清氣分大熱、導熱從小便去。它在本庫只出現在紫雪丹一個方。用量欄要特別小心：現代常用量 6–15g，但古方原文寫「1500」，那是丸散劑的原料總量不是每服量——這種量級混淆在開竅類古方裡很常見。**2026-08-11 深化批次補充**：寒水石其實有自己的獨立條目（Materia Medica Abbbreviated.md p.4-5），性味辛鹹寒、入心胃腎經，除清氣分熱外還記有利咽（咽痛目赤灼熱）與外用清熱消腫（燙傷、瘡瘍、口瘡）的用法。",
+          "reason": "課件檔名「Materia Medica Abbbreviated.md」印在臨床敘述中間 = 出處誤植為內容；該檔與 canonical 的 materia_medica_abbreviated_chenoweth.md 逐位元組相同（僅抽取標頭那一行不同，行號一致），故內容主張不變，只把檔名搬到 field_sources。 另：原文頁碼 p.4-5 有誤 —— 寒水石自身條目在 p.2（materia_medica_abbreviated_chenoweth.md L118-L121：「Han Shi Shi [Calcitum] / (Cd) Acrid, Salty [HT, ST, KD] / Sore throat, Red eyes (burning)」），本卡 field_sources.functions_zh 早先已標 ...chenoweth.pdf#p2，一併校正為 p.2。",
+          "moved_at": "2026-08-31",
+          "ruling": "Ting 2026-08-31 派工：課件檔名不進臨床句子，出處歸 field_sources"
+        },
+        {
+          "original_field": "tcm_properties.source_note_zh",
+          "text": "性味歸經取自 Materia Medica Abbbreviated.md p.4-5「Han Shi Shi [Calcitum] (Cd) Acrid, Salty [HT, ST, KD]」——這是寒水石**自己的**獨立條目（自己的標題與性味歸經欄），與同頁其他清熱藥分屬不同欄位，非借用他藥。原判斷「只有分類標記」係 F12 建卡當時只查過 Chenoweth 功效索引與方劑組成行，未查到這份講義的性味歸經欄；2026-08-11 深化批次補查後更正。",
+          "reason": "頁碼校正：寒水石自身條目在 p.2（materia_medica_abbreviated_chenoweth.md L118-L121），不在 p.4-5；本卡 field_sources.functions_zh 早先已標 ...chenoweth.pdf#p2 可互證。同時把重複檔名改為 canonical 檔名。",
+          "moved_at": "2026-08-31",
+          "ruling": "Ting 2026-08-31 派工：課件檔名不進臨床句子，出處歸 field_sources"
+        }
+      ]
     },
     {
       "review_status": "draft",
