@@ -505,6 +505,16 @@ jobs:
       - name: bilingual chips pair same-source lists (not merely same-length)
         run: node scripts/validate-bilingual-index-pairing.js
 
+      # 2026-09-01:red_flags_zh/_en 有兩種形狀(字串 4242 筆 / 物件 1438 筆),
+      # 而渲染層只認得字串 —— 508 張條件卡裡 137 張的急症紅旗印成
+      # "[object Object]",標題還正確地數出「Red flags (3)」。受影響的包括
+      # 子宮外孕、子癲前症、異常子宮出血。所有驗證器當時全綠,因為它們檢查
+      # 資料不檢查畫面;是開卡片用眼睛讀才發現的。
+      # R1 沒有第三種形狀 / R2 urgency_level 在已知的兩套詞彙內 /
+      # R3 兩條渲染路徑都讀 finding。負控 4/4 已驗(含「函式改名時 gate 要出聲」)。
+      - name: red flag shapes (renderer must handle both string and object)
+        run: node scripts/validate-red-flag-shapes.js
+
       # 2026-08-28:A1(a) 把方劑安全欄按方向拆成 contraindications_*/cautions_*,
       # 資料層零遺失、所有驗證器全綠、棘輪 flat —— 而卡面上少了 423 句,
       # 因為安全區寫的是 `contraindications_zh || cautions_zh`(二選一),
