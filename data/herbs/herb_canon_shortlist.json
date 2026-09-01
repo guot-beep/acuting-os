@@ -44828,7 +44828,7 @@
         "肺經"
       ],
       "source_hint": "Bensky Materia Medica: Stop Cough and Wheeze",
-      "review_status": "draft",
+      "review_status": "deprecated",
       "properties_taste_temp": "辛、溫",
       "functions": [
         "止咳化痰",
@@ -45093,7 +45093,8 @@
       ],
       "contraindications_zh": [
         "脾胃虛弱便溏者慎用。"
-      ]
+      ],
+      "deprecated_note_zh": "2026-09-01 停用：與 herb.zi_su_zi（紫蘇子，藥典正名 Perillae Fructus）為同一味的重複匯入記錄。判定依據：本記錄自身的 cautions／clinical_use_note／chinese_depth_track 通篇寫的就是「紫蘇子」，分類同為化痰止咳平喘藥，來源同為 CloudTCM herb/1254。保留 herb.zi_su_zi 的理由有二：它是藥典正名，且它是被引用的那一張（藥對 2、方劑 3：蘇子降氣湯／三子養親湯／定喘湯），本記錄零引用（藥對 0、方劑 0）—— 改 id 會斷外鍵（紅線一）。【已遷入 herb.zi_su_zi 的 16 欄（該卡原本皆為空，非覆蓋）】cautions、channels_entered、chinese_depth_track、clinical_use_note、cloudtcm_url、english_exam_track、functions、modern_functions_detail_zh、modern_functions_en/_zh/_source/_source_url、modern_use_tags、properties_taste_temp、safety_flags、source_hint。【刻意未遷移:dosage／dosage_normalized】本記錄的 dosage 是「JSON 字串」形狀(一般建議 5-10 克／食療用量範圍 6-12 克／炒後用可增強降氣化痰、陰虛喘咳者慎用,來源 CloudTCM herb/1254),herb.zi_su_zi 該欄原為 null,所以這是有代價的取捨,不是零損失:**紫蘇子卡目前沒有劑量值**。不遷的理由有三:(1) validate-herb-dosage-shape.js 的 D2 閘門擋住「JSON 字串」再增加,原樣搬會從 176 變 177;(2) 若改寫成物件,這組鍵(一般建議／食療用量範圍／特殊說明)在 116 張物件卡裡一張都沒有 —— 等於在同一個世代裡多生一種形狀,而那正是本庫反覆付代價的缺陷;(3) 這 177 張同屬一個待裁世代(D3 食療上限高於藥用上限 75 張、蘇合香 SAFETY_HOLD 未決),該由該世代自己的批次一起收斂,不該由這次合併單方面動安全欄位(紅線四)。現況無畫面後果:renderer 不讀 record.dosage,該欄尚未接線。原值逐字保留在本記錄(未硬刪),劑量世代裁定後應一併回填 herb.zi_su_zi。【cautions 採併集不覆蓋】本記錄 5 條（雙語等長）併到該卡原有 1 條之後，共 6 條；多出的是該卡原本沒有的安全內容：孕婦慎用（辛溫活血）、藥物交互作用、過量致瀉、**生紫蘇子有毒須炒製或煎煮**；safety_flags 的 pregnancy_review 一併帶入。該卡原值已依 archive-before-replace 封存於其自身 import_artifacts。「蘇子」已併入該卡 aliases_zh，study_tags 併集。【未遷移：related_formulas】本記錄列 7 首，逐一核對 composition 後只有 3 首確實含紫蘇子（蘇子降氣湯、三子養親湯、定喘湯——該卡本來就有這 3 首）；二陳湯、溫膽湯、貝母瓜蔞散、杏蘇散 4 首的組成皆不含紫蘇子（杏蘇散用的是蘇葉不是蘇子），判定為未查證關聯，未遷移亦未修改，比照 D21 對沙參那次的處置。【未遷移：名稱與分類層】id／name_zh／name_en／pinyin／category／category_zh／public_safe／source_type／actions_en／functions_zh／contraindications_zh／各來源網址／fetched_at 皆保留該卡自身版本，不用短的覆蓋長的、不用重複卡改寫正名卡。本記錄未硬刪，review_status 改 deprecated 供追溯（D6）。對應：DECISIONS.md D21（2026-08-14 四組中藥重複卡）；本組為第 5 組，Ting 裁定 2026-09-01「照 D21 合併」。"
     },
     {
       "id": "herb.kuan_dong_hua",
@@ -74244,14 +74245,21 @@
         "降氣化痰；止咳平喘；潤腸通便"
       ],
       "cautions_zh": [
-        "脾虛便溏者慎用"
+        "脾虛便溏者慎用",
+        "氣虛久嗽、陰虛喘逆、脾虛便滑者不宜服用：紫蘇子具有疏泄作用，這些體質的人容易虛不受補，服用紫蘇子可能加重症狀。",
+        "孕婦慎用：紫蘇子性味辛溫，有活血化瘀的作用，孕婦服用可能會導致流產。",
+        "與其他藥物相互作用：紫蘇子可能會與某些藥物產生相互作用，服用前應諮詢醫師或藥師。",
+        "過量服用可能腹瀉：紫蘇子有潤腸通便的作用，過量服用可能導致腹瀉。",
+        "避免生食：生紫蘇子有毒，服用前必須經過炒製或煎煮。"
       ],
       "study_tags": [
         "單味中藥",
         "國考大綱",
         "順天堂藥材",
         "化痰止咳平喘藥",
-        "紫蘇子"
+        "紫蘇子",
+        "止咳平喘藥",
+        "蘇子"
       ],
       "source_urls": [
         "https://cloudtcm.com",
@@ -74266,7 +74274,9 @@
       "fetched_at": "2026-07-23",
       "tags_fetched_at": "2026-07-23",
       "safety_fetched_at": "2026-07-23",
-      "aliases_zh": [],
+      "aliases_zh": [
+        "蘇子"
+      ],
       "condition_tags_zh": [],
       "related_formulas": [
         "formula.su_zi_jiang_qi_tang",
@@ -74282,11 +74292,28 @@
         "actions_en": [
           "translated: 本卡 functions_zh 逐條忠實翻譯(帳本 docs/research_packs/HERB_EN_BACKFILL_2026-08-19.json,紅線5 同長同序)"
         ],
-        "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md; Taiwan Herbal Pharmacopoeia 4th ed.; American Dragon (americandragon.com)"
+        "contraindications_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md; Taiwan Herbal Pharmacopoeia 4th ed.; American Dragon (americandragon.com)",
+        "modern_functions_detail_zh": [
+          "https://cloudtcm.com/herb/1254"
+        ],
+        "modern_functions_zh": [
+          "https://cloudtcm.com/herb/1254"
+        ],
+        "properties_taste_temp": [
+          "https://cloudtcm.com/herb/1254"
+        ],
+        "cautions_zh": [
+          "https://cloudtcm.com/herb/1254"
+        ]
       },
       "card_grade": "partial",
       "cautions_en": [
-        "Use cautiously in Spleen deficiency with loose stools."
+        "Use cautiously in Spleen deficiency with loose stools.",
+        "Not suitable in Qi-deficiency chronic cough, Yin-deficiency wheezing with rebellious Qi, or Spleen-deficiency loose stools — Su Zi's dispersing action may aggravate symptoms in these deficiency patterns that cannot tolerate strong dispersal.",
+        "Use cautiously in pregnancy — Su Zi is acrid and warm with a Blood-invigorating, stasis-resolving action that may cause miscarriage.",
+        "May interact with other medications — consult a physician or pharmacist before use.",
+        "Overdose may cause diarrhea — Su Zi's moistening laxative action can lead to diarrhea if taken in excess.",
+        "Avoid raw consumption — raw Su Zi is toxic; it must be dry-fried or decocted before use."
       ],
       "actions_en": [
         "Directs Qi downward and transforms Phlegm; stops coughing and calms wheezing; moistens the intestines and unblocks the bowels"
@@ -74295,7 +74322,159 @@
         "脾虛便溏及氣虛喘咳者忌服。"
       ],
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/ZiSuZi.html",
-      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。"
+      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。",
+      "cautions": "紫蘇子的注意事項重點：\n**氣虛久嗽、陰虛喘逆、脾虛便滑者不宜服用：**紫蘇子具有疏泄作用，這些體質的人容易虛不受補，服用紫蘇子可能加重症狀。\n**孕婦慎用：**紫蘇子性味辛溫，有活血化瘀的作用，孕婦服用可能會導致流產。\n**與其他藥物相互作用：**紫蘇子可能會與某些藥物產生相互作用，服用前應諮詢醫師或藥師。\n**過量服用可能腹瀉：**紫蘇子有潤腸通便的作用，過量服用可能導致腹瀉。\n**避免生食：**生紫蘇子有毒，服用前必須經過炒製或煎煮。",
+      "channels_entered": [
+        "大腸經",
+        "脾經",
+        "肺經"
+      ],
+      "chinese_depth_track": {
+        "review_status": "draft",
+        "source_status": "cloudtcm_or_institution_review_pending",
+        "summary_zh": "紫蘇子，為脣形科紫蘇一年生草本植物紫蘇的乾燥成熟果實。主產於江蘇、安徽、浙江、河南、山東等地。秋季果實成熟時採收，除去雜質，曬乾。\n性味辛、溫，歸肺、脾經。功效降氣消痰，平喘止咳，潤腸通便。\n主治肺熱咳嗽，痰多氣喘，腸燥便祕。\n現代研究表明，紫蘇子含有揮髮油、黃酮類、多糖等成分，具有抗菌、抗炎、抗氧化、降血脂降血糖、抗腫瘤等作用。\n常用功效\n止咳平喘：紫蘇子有良好的止咳平喘作用，臨床常用於治療肺熱咳嗽、痰多氣喘等症。\n潤腸通便：紫蘇子有潤腸通便的作用，臨床常用於治療腸燥便祕等症。\n降血脂：紫蘇子有降低血脂的作用，臨床常用於治療高脂血症等症。\n降血糖：紫蘇子有降低血糖的作用，臨床常用於治療糖尿病等症。\n抗腫瘤：紫蘇子有抗腫瘤的作用，臨床常用於治療肺癌、乳腺癌等腫瘤。\n現代研究\n抗菌作用：紫蘇子中的揮髮油具有抗菌作用，對金黃色葡萄球菌、白喉桿菌、肺炎雙球菌等均有抑制作用。\n抗炎作用：紫蘇子中的黃酮類成分具有抗炎作用，對小鼠蛋清性足腫、角叉菜膠性足腫等均有抑制作用。\n抗氧化作用：紫蘇子中的多糖具有抗氧化作用，能清除體內自由基，延緩衰老。\n降血脂作用：紫蘇子中的多糖具有降血脂作用，能降低血清總膽固醇、三酸甘油酯、低密度脂蛋白膽固醇水平，提高高密度脂蛋白膽固醇水平。\n降血糖作用：紫蘇子中的多糖具有降血糖作用，能降低血糖水平，改善胰島素抵抗。\n抗腫瘤作用：紫蘇子中的多糖具有抗腫瘤作用，能抑制腫瘤細胞增殖，誘導腫瘤細胞凋亡。",
+        "functions_zh": [
+          "止咳化痰",
+          "止咳平喘",
+          "潤肺",
+          "降氣",
+          "潤腸通便",
+          "降血脂",
+          "降血糖",
+          "抗腫瘤",
+          "抗菌",
+          "抗發炎",
+          "抗氧化"
+        ]
+      },
+      "clinical_use_note": "紫蘇子，為脣形科紫蘇一年生草本植物紫蘇的乾燥成熟果實。主產於江蘇、安徽、浙江、河南、山東等地。秋季果實成熟時採收，除去雜質，曬乾。\n性味辛、溫，歸肺、脾經。功效降氣消痰，平喘止咳，潤腸通便。\n主治肺熱咳嗽，痰多氣喘，腸燥便祕。\n現代研究表明，紫蘇子含有揮髮油、黃酮類、多糖等成分，具有抗菌、抗炎、抗氧化、降血脂降血糖、抗腫瘤等作用。\n常用功效\n止咳平喘：紫蘇子有良好的止咳平喘作用，臨床常用於治療肺熱咳嗽、痰多氣喘等症。\n潤腸通便：紫蘇子有潤腸通便的作用，臨床常用於治療腸燥便祕等症。\n降血脂：紫蘇子有降低血脂的作用，臨床常用於治療高脂血症等症。\n降血糖：紫蘇子有降低血糖的作用，臨床常用於治療糖尿病等症。\n抗腫瘤：紫蘇子有抗腫瘤的作用，臨床常用於治療肺癌、乳腺癌等腫瘤。\n現代研究\n抗菌作用：紫蘇子中的揮髮油具有抗菌作用，對金黃色葡萄球菌、白喉桿菌、肺炎雙球菌等均有抑制作用。\n抗炎作用：紫蘇子中的黃酮類成分具有抗炎作用，對小鼠蛋清性足腫、角叉菜膠性足腫等均有抑制作用。\n抗氧化作用：紫蘇子中的多糖具有抗氧化作用，能清除體內自由基，延緩衰老。\n降血脂作用：紫蘇子中的多糖具有降血脂作用，能降低血清總膽固醇、三酸甘油酯、低密度脂蛋白膽固醇水平，提高高密度脂蛋白膽固醇水平。\n降血糖作用：紫蘇子中的多糖具有降血糖作用，能降低血糖水平，改善胰島素抵抗。\n抗腫瘤作用：紫蘇子中的多糖具有抗腫瘤作用，能抑制腫瘤細胞增殖，誘導腫瘤細胞凋亡。",
+      "cloudtcm_url": "https://cloudtcm.com/herb/1254",
+      "english_exam_track": {
+        "review_status": "draft",
+        "source_status": "bensky_review_pending",
+        "properties_taste_temp": "Draft: warm/cool/bitter/acrid depending on herb; verify individual taste and temperature.",
+        "functions": [
+          "Transform phlegm or stop cough pattern context",
+          "Support cough, phlegm, or qi-counterflow differentiation"
+        ],
+        "indications": [
+          "Pattern documentation context only; verify against Bensky before source_checked."
+        ],
+        "common_pairings": [
+          "Pairings depend on formula context; verify against Bensky before source_checked."
+        ],
+        "contraindications": [
+          "Review pregnancy review before clinical use."
+        ],
+        "functions_zh_source": [
+          "止咳化痰",
+          "止咳平喘",
+          "潤肺",
+          "降氣",
+          "潤腸通便",
+          "降血脂",
+          "降血糖",
+          "抗腫瘤",
+          "抗菌",
+          "抗發炎",
+          "抗氧化"
+        ]
+      },
+      "functions": [
+        "止咳化痰",
+        "止咳平喘",
+        "潤肺",
+        "降氣",
+        "潤腸通便",
+        "降血脂",
+        "降血糖",
+        "抗腫瘤",
+        "抗菌",
+        "抗發炎",
+        "抗化"
+      ],
+      "modern_functions_detail_zh": [
+        {
+          "tag": "潤腸通便",
+          "analysis_zh": "紫蘇子在現代藥理學上，其潤腸通便功效主要歸因於其高含量的膳食纖維。這些膳食纖維在腸道中不被消化吸收，能顯著增加糞便的體積和含水量，從而軟化糞便。此外，膳食纖維通過其物理性作用，刺激腸壁，促進腸道蠕動，縮短糞便在腸內的停留時間。這種容積性瀉下作用結合促進腸動力的機制，有效緩解由腸燥引起的便秘，使排便過程更為順暢。"
+        },
+        {
+          "tag": "降血脂",
+          "analysis_zh": "紫蘇子具多重降血脂機制。其富含α-亞麻酸，此為必需脂肪酸，能有效降低血液中的膽固醇與甘油三酯水平。其次，紫蘇子中的膳食纖維能與腸道內的膽固醇及甘油三酯結合，促進其隨糞便排出體外，減少吸收。此外，紫蘇子所含的黃酮類化合物亦可輔助降低血脂，且具備抗氧化作用，有助於保護血管壁免受氧化損傷，進一步維護心血管健康。"
+        },
+        {
+          "tag": "降血糖",
+          "analysis_zh": "紫蘇子在現代藥理研究中，其降血糖功效透過多種活性成分及其機制具體展現。紫蘇子油是其中一種關鍵成分，它能有效抑制肝臟葡萄糖的輸出，直接降低血液中的葡萄糖水平。此外，紫蘇子多糖則能增強機體對胰島素的敏感性，從而促進細胞對葡萄糖的有效攝取與利用。而紫蘇子皁苷的降血糖作用則體現在其抑制α-葡萄糖苷酶的活性上，這種酶在消化道中負責分解複雜碳水化合物，透過抑制其活性，可延緩葡萄糖的吸收速度，顯著降低餐後血糖的升高幅度。這些成分透過各自的藥理途徑協同作用，賦予紫蘇子顯著的降血糖效能。臨牀應用上，紫蘇子亦常與其他藥材配伍，用於糖尿病等病症的輔助治療。同時，紫蘇子還兼具降血脂、抗氧化及抗炎等多元生物活性。"
+        },
+        {
+          "tag": "抗腫瘤",
+          "analysis_zh": "紫蘇子現代藥理研究證實其抗腫瘤功效，主要歸因於所含紫蘇醛、紫蘇油及紫蘇多糖等活性成分。紫蘇醛可能透過誘導癌細胞凋亡及抑制腫瘤血管新生發揮作用。紫蘇油，特別是其中的不飽和脂肪酸，顯示出對多種腫瘤細胞的抑制活性。紫蘇多糖則被認為具有免疫調節功能，可增強機體對腫瘤的抵抗力。這些成分協同作用，抑制腫瘤細胞增殖與生長。臨床上，紫蘇子已應用於輔助治療肺癌、乳腺癌等，有助改善患者症狀並提高生存品質。"
+        },
+        {
+          "tag": "抗菌",
+          "analysis_zh": "揮發油為紫蘇子抗菌功效之關鍵，富含紫蘇醛、檸檬烯等多種萜類化合物。這些成分透過破壞細菌細胞膜結構、干擾其代謝酶系統及抑制核酸蛋白質合成，致細菌生長受阻或滅活。現代藥理研究證實，紫蘇子揮發油對金黃色葡萄球菌、白喉桿菌及肺炎雙球菌等病原體，均展現顯著體外抑制作用，彰顯其廣譜抗菌潛力。"
+        },
+        {
+          "tag": "抗發炎",
+          "analysis_zh": "紫蘇子在現代藥理研究中，其抗發炎功效主要歸因於其豐富的黃酮類成分。這些活性物質能顯著抑制體內的發炎反應，其作用機制涉及對多種發炎介質和途徑的調節。研究顯示，紫蘇子提取物可有效降低發炎細胞因子的釋放，例如腫瘤壞死因子-α (TNF-α) 及介白素-6 (IL-6)，這些細胞因子在發炎過程中扮演關鍵角色。此外，它還能抑制環氧合酶-2 (COX-2) 及誘導型一氧化氮合酶 (iNOS) 的活性，進而減少前列腺素和一氧化氮等促炎物質的生成。在動物實驗模型中，紫蘇子已證實能顯著抑制小鼠蛋清性足腫和角叉菜膠性足腫等急性炎症反應，證明其具有明確的抗炎作用。此功效為紫蘇子在處理多種發炎相關疾病提供了潛在的藥理學基礎。"
+        },
+        {
+          "tag": "抗化",
+          "analysis_zh": "紫蘇子現代藥理研究顯示，其多糖成分具顯著抗氧化活性。該多糖能有效清除體內如1,1-二苯基-2-三硝基苯肼(DPPH)自由基、羥自由基及超氧陰離子自由基，從而清除自由基並延緩衰老。此外，紫蘇子多糖亦能提升機體內超氧化物歧化酶(SOD)、過氧化氫酶(CAT)及谷胱甘肽過氧化酶(GPx)等重要抗氧化酶的活性，全面增強機體的內源性抗氧化能力。"
+        }
+      ],
+      "modern_functions_en": [
+        "Moistening laxative activity",
+        "Lipid-lowering activity",
+        "Hypoglycemic activity",
+        "Antitumor activity",
+        "Antibacterial activity",
+        "Anti-inflammatory activity",
+        "Antioxidant activity"
+      ],
+      "modern_functions_source": "cloudtcm_herb_tag_analysis",
+      "modern_functions_source_url": "https://cloudtcm.com/herb/1254",
+      "modern_functions_zh": [
+        "潤腸通便",
+        "降血脂",
+        "降血糖",
+        "抗腫瘤",
+        "抗菌",
+        "抗發炎",
+        "抗化"
+      ],
+      "modern_use_tags": [
+        "cough_context",
+        "phlegm_context",
+        "asthma_documentation_context"
+      ],
+      "properties_taste_temp": "辛、溫",
+      "safety_flags": [
+        "pregnancy_review"
+      ],
+      "source_hint": "Bensky Materia Medica: Stop Cough and Wheeze",
+      "import_artifacts": [
+        {
+          "source": "merge:herb.su_zi→herb.zi_su_zi",
+          "date": "2026-09-01",
+          "note_zh": "合併前 herb.zi_su_zi 自身的原值,依 archive-before-replace 封存。cautions 採併集(原值仍在上方第 0 筆),未被覆蓋。",
+          "original": {
+            "cautions_zh": [
+              "脾虛便溏者慎用"
+            ],
+            "cautions_en": [
+              "Use cautiously in Spleen deficiency with loose stools."
+            ],
+            "study_tags": [
+              "單味中藥",
+              "國考大綱",
+              "順天堂藥材",
+              "化痰止咳平喘藥",
+              "紫蘇子"
+            ]
+          }
+        }
+      ]
     },
     {
       "id": "herb.xin_yi",
