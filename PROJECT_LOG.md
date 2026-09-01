@@ -1,3 +1,82 @@
+# 2026-09-01 — 87 個無中文課件檔逐檔查證:沒有一個是抽壞的;真缺口只有 3 檔 8 處
+
+上一批留的話是「87 個 .md 仍無中文,多數應該本來就是純英文,但沒逐檔確認,
+不能當成已清乾淨」。這批把它確認完。結論:**那 87 個檔的「沒中文」是對的**,
+不是缺陷。過程中我自己的掃描器產生了兩輪假陽性,都逐一解碼推翻。
+
+## 逐檔結論(87/87)
+
+| | 檔數 | 依據 |
+|---|---|---|
+| A 來源存在,內容確實沒中文 | 36 | `.docx` 解 `word/document.xml` 去標籤後計數;`.pdf` 用 `pdftotext -enc UTF-8` |
+| B 掃描報疑似,解碼後全是假陽性 | 22 | 見下 |
+| C 全歷史都沒有二進位來源 | 29 | 手寫/生成的 md,不是抽出來的 |
+
+C 類的 29 個:研究包 `AcuTing_OS_Disease_Knowledge_Research_Pack…` 16 個、
+`conditions/TCM patterns/` 8 個、`Plan/` 的 roadmap 2 個、formulas 的 QA 與
+NCBAHM 清單各 1、`CHM_Formulation_2_course_package_extracted.md` 1。
+這些本來就是寫出來的文件,沒有來源可比,也不該有中文。
+
+## git 歷史:沒有一個檔曾經有過中文
+
+87 檔共 115 個歷史版本,**逐版**取出來數,讀不到的 0 個,曾有中文的 **0 個**。
+所以沒有任何一個是從好版本退化來的。
+
+(第一次跑時 git 噴 `packfile cannot be mapped: File too large`,而我的 helper
+把非 spawn 錯誤當成「沒有這個版本」靜靜跳過 —— 那會讓「0 個退化」變成假結論。
+加上「讀不到」單獨計數後重跑,確認 115 版全部讀得到,結論才成立。)
+
+## 我自己製造的兩輪假陽性
+
+**第一輪:`.docx` 的「中文」全在字型名屬性裡。**
+9 個檔被報成「來源有中文但 .md 是 0」,最多的 156 字。解開一看:
+`document.xml` 全檔 156 個 CJK,**去掉標籤後是 0** —— 全部是
+`w:eastAsia="宋体"` 這種字型名。抽取器把標籤剝掉是對的,不是缺陷。
+
+**第二輪:`.doc` 的「中文」是 ASCII/UTF-16 被錯位讀成 CJK。**
+5 個檔被報成有數千中文字,樣本長這樣 —— 把碼位拆回位元組就露餡:
+
+| 樣本 | 實際是 |
+|---|---|
+| `浉潰整据` | `Impotenc` |
+| `牅捥楴敬搠獹畦据楴湯` | `Erectile dysfunction` |
+| `橢橢譺譺` | `bjbjzz`(OLE 簽章) |
+| `唀渀欀渀漀眀渀` | `Unknown`(字型名) |
+| `吀椀洀攀猀` / `刀漀洀愀渀` | `Times` / `Roman` |
+| `肇襉劚箥烦` | 二進位垃圾 `IR{¥pæ` |
+
+`.doc` 存的是 8-bit ASCII 與 UTF-16 字型名,我用「連續位元組對」讀成 CJK,
+於是 `"Im"` 變成 `浉`。我加過一道「連續 ≥3 個才算」的防呆 —— **沒有用**,
+因為 ASCII 文字本來就連成長串。真正有效的判準是「碼位的兩個位元組不可以
+同時是可列印 ASCII」,加上實際解碼回去看。22 個疑似全部推翻。
+
+## 唯一的真缺口:3 檔 8 處被 antiword 吃掉的漢字
+
+| 檔 | 處 | 看得出來是什麼 |
+|---|---|---|
+| `conditions/2.2 Impotence - handouts on canvas.md` | 4 | `Yang Wei??` ×2、`Yin Wei ??`(陽痿/陰痿) |
+| `conditions/SHOULDER.md` | 2 | `" 50-year-old shoulder " ( ??? )`(五十肩)、`" Three Shoulder Points "???`(肩三針) |
+| `conditions/NECK.md` | 2 | `luo zhen??`(落枕)、`Inducing Qi technique ??`(導氣) |
+
+三個檔的來源都是 `.doc`,走 antiword,它對 CJK 不可靠,把漢字換成 `?`。
+**沒有補上去**:那是推測而不是抽取,憲法紅線不准編。每一處旁邊都有拼音或英文,
+所以意思沒丟,丟的是字。要補回來需要能讀 .doc 的 CJK 的工具,目前沒有
+(`.doc` 本身也只存在於 git 歷史,`709e23c2` 已從分支移除)。
+
+`acupoints/Therapeutics Notes Comprehensive (1).md` 的 `caused by what???` 查過,
+是講義原本的問號,不是被吃掉的字。
+
+## 驗證
+
+本批**沒有改任何資料**,只有稽核與這則紀錄。
+`build-data.js` + 18 支 validator 全 exit=0;棘輪 13 條全 flat。
+
+## 留著的
+
+- 上述 3 檔 8 處漢字,待有能處理 `.doc` CJK 的工具再補;不編。
+- `curriculum/conditions/` 的二進位來源全部只在 git 歷史裡(`709e23c2^`),
+  磁碟上只剩 .md。要重抽得先從 git 取回。
+
 # 2026-09-01 — 撤除剩下 3 筆錯置 elucidation;掃描器的「假警報」其實是第 5 組重複卡
 
 Ting 裁「那 3 筆也撤除」。
