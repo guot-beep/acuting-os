@@ -1,3 +1,18 @@
+## 🔍 巡檢旗標（2026-09-01，自動巡檢）——`antigravity/task11i-tung-reference-link-candidates` 分支已推,未派工
+
+目前這份檔案裡沒有派給 antigravity 的進行中任務(上一條是 11G 已改派 Codex)。但巡檢時發現遠端多了一支
+沒有對應派工單的分支 `antigravity/task11i-tung-reference-link-candidates`(commit `67e6885`,
+2026-09-01 00:52 推)：內容是 `data/audits/tung_dead_link_reference_candidates_2026-09-01.json` +
+一份 `.md` 報告,自稱「mastertungacupuncture.org 非圖片死連結同站候選清單,407/413 找到」。
+**只加了兩個稽核檔案,沒有動任何 `data/**.json`,也沒有推到 main。**
+
+這看起來是 11G 那條(「如果你已經在做、或分支已經在推了,不用停,讓我知道就好」)的自發延續,而不是
+新的違規動作。這輪巡檢的範圍只鎖定「目前作用中任務有沒有動 `herb_canon_shortlist.json`」,所以這支
+分支**沒有被本輪驗收或落地**,先在這裡記一筆讓 Ting 看到。要不要把它排進正式派工單、要不要照 11G
+驗收流程走(`--verify-disposition` 那類離線比對),等 Ting 或下一輪明確指示。
+
+---
+
 ## 🔁 Task 11G 已改派給 Codex（2026-08-29），你不用做這條了
 
 到今天為止 `antigravity/task11g-tung-dead-link-disposition` 分支從沒出現過，這條改派給
