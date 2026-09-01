@@ -57,7 +57,15 @@ const LAYERS = [
     label: (r) => `${r.id} ${r.name_zh || ""}`,
     fields: [
       { name: "functions", minLen: 12 },
-      { name: "properties_taste_temp", minLen: 8 },
+      /* 性味的值**本來就會重複** —— 全庫 221 個不同值,最多的「辛、溫」10 味、
+       * 「辛、苦、溫」8 味。那是中藥學的事實,不是有人貼樣板。
+       * shared 這條啟發式(值與別筆相同 = 樣板)對它是錯的:它把 107 筆
+       * 正確的性味算成缺陷,於是這一欄長年顯示 20%,而實際填了 291/366。
+       * sharedOk 只放給「值域本來就小的受控描述」,不放給散文欄位。 */
+      /* minLen 也要跟著改:性味的標準寫法就是短的 ——「辛、溫」3 字、
+       * 「苦、寒」3 字都是完整正確的答案。原本設 8,於是 209 筆正確的性味
+       * 被算成「太短」。長度在這一欄不是品質訊號,填了沒填才是。 */
+      { name: "properties_taste_temp", minLen: 2, sharedOk: true },
       { name: "clinical_use_note", minLen: 20 },
       { name: "dosage", minLen: 3 },
       { name: "cautions", minLen: 8 }
@@ -71,7 +79,13 @@ const LAYERS = [
     fields: [
       { name: "composition", minLen: 3 },
       { name: "actions_zh", zh: true, minLen: 6 },
-      { name: "indications_zh", zh: true, minLen: 6 },
+      /* 方劑的主治內容住在 pattern_indications_zh(222/223),indications_zh
+       * 是 0/223 —— 但那不是缺口,是欄位名。渲染層本來就把兩個併起來讀
+       * (js/knowledge.js:214 `...(record.indications_zh||[]), ...(record.pattern_indications_zh||[])`),
+       * 所以這裡也要一起看,否則報表會說「主治覆蓋率 0%」而畫面上其實滿的。
+       * 2026-09-01 之前這一欄一直被算成 223 筆全空,把 fill 線指去一個
+       * 不存在的缺口。 */
+      { name: "indications_zh", alt: ["pattern_indications_zh"], zh: true, minLen: 6 },
       { name: "fang_yi_zh", zh: true, minLen: 10 }
     ]
   },
@@ -105,7 +119,18 @@ function loadArray(file) {
   return arrays.sort((a, b) => b.length - a.length)[0];
 }
 
-const flatten = (v) => (Array.isArray(v) ? v.join(" ") : v == null ? "" : String(v));
+/* 物件也要攤平成它真正的文字。第一版用 String(v),物件就變成
+ * "[object Object]" —— 沒有中文、長度固定 15,於是 137 張條件卡的
+ * red_flags_zh(物件形狀 {finding, recommended_action, …},內容全是中文)
+ * 被算成「中文欄位裡沒有中文」。那是量錯不是資料錯。
+ * 同一個形狀在渲染層造成的是 [object Object] 印在卡上(已於 814c1632 修掉);
+ * 在這裡造成的是一份指錯方向的覆蓋率報表。 */
+const flatten = (v) => {
+  if (v == null) return "";
+  if (Array.isArray(v)) return v.map(flatten).join(" ");
+  if (typeof v === "object") return Object.values(v).map(flatten).join(" ");
+  return String(v);
+};
 
 let anyFail = false;
 // --json:給 check-validation-ratchet 用(2026-08-27 接線)。缺陷數 = 實質內容
@@ -137,15 +162,26 @@ for (const layer of LAYERS) {
     const offenders = { filler: [], shared: [], notZh: [], thin: [] };
 
     /* how many records share each exact value */
+    /* 取值時把 alt(同義的姊妹欄位)一起看 —— 渲染層併集讀哪幾個,這裡就
+     * 併集讀哪幾個,否則報表量的是欄位名而不是畫面。 */
+    const pick = (r) => {
+      const names = [spec.name, ...(spec.alt || [])];
+      for (const n of names) {
+        const v = r[n];
+        if (v !== undefined && v !== null && flatten(v).trim()) return v;
+      }
+      return r[spec.name];
+    };
+
     const freq = new Map();
     for (const r of records) {
-      const v = JSON.stringify(r[spec.name] ?? "");
+      const v = JSON.stringify(pick(r) ?? "");
       if (v === '""' || v === "[]" || v === "null") continue;
       freq.set(v, (freq.get(v) || 0) + 1);
     }
 
     for (const r of records) {
-      const raw = r[spec.name];
+      const raw = pick(r);
       const text = flatten(raw).trim();
       if (!text) { counts.empty += 1; continue; }
 
@@ -153,7 +189,7 @@ for (const layer of LAYERS) {
       if (PLACEHOLDER.test(text)) {
         counts.filler += 1; offenders.filler.push(layer.label(r)); continue;
       }
-      if ((freq.get(key) || 0) > 1) {
+      if (!spec.sharedOk && (freq.get(key) || 0) > 1) {
         counts.shared += 1; offenders.shared.push(`${layer.label(r)} (x${freq.get(key)})`); continue;
       }
       if (spec.zh && !CJK.test(text)) {
