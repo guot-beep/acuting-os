@@ -42,20 +42,48 @@ const UI_PATTERNS = [/^app\.js$/, /^js\//, /^index\.html$/, /^styles\.css$/];
 const EXEMPT = [/^js\/.*\.test\.js$/];   // 測試檔不算 UI
 
 const git = (args) => execFileSync("git", args, { cwd: ROOT, encoding: "utf8" }).trim();
+const rev = (r) => { try { return git(["rev-parse", "--verify", `${r}^{commit}`]); } catch { return null; } };
 
-let base = "origin/main";
-try { git(["rev-parse", "--verify", base]); } catch { base = "HEAD~1"; }
+/* 比對基準怎麼決定 —— 這一段是 2026-08-31 補的。原版在**兩種真實情境下
+ * 都測不到任何東西**,而 CI 只會印一行「跳過」然後 exit 0:
+ *
+ *   1. 淺 checkout。green job 的 actions/checkout 沒有 fetch-depth,預設
+ *      depth 1:origin/main 不存在、HEAD~1 也不存在,merge-base 直接爆,
+ *      原版 catch 住之後 exit 0。實測(單 commit repo,凍結生效中,
+ *      commit 動了 js/):「無法比對 git 範圍 — 跳過 / EXIT=0」。
+ *   2. push-to-main。本專案的落地方式就是 push HEAD:main(update.bat 亦然),
+ *      CI 於是在 main 上跑,而 merge-base(origin/main, HEAD) === HEAD ——
+ *      範圍是空的,永遠 0 個 UI 檔,永遠 PASS。
+ *
+ * 基準改成:FREEZE_BASE(CI 傳 github.event.before)→ 領先 origin/main 就用
+ * merge-base → 否則用 HEAD~1(main 上剛推進來的那幾個 commit)。
+ * 三條都問不出來時**不准靜默放行**,見下面的 fail-loud。 */
+const ENV_BASE = process.env.FREEZE_BASE && !/^0+$/.test(process.env.FREEZE_BASE)
+  ? rev(process.env.FREEZE_BASE) : null;
+
+let base = null;
+let baseWhy = "";
+if (ENV_BASE) {
+  base = ENV_BASE; baseWhy = "FREEZE_BASE(此次 push 之前的 tip)";
+} else if (rev("origin/main")) {
+  const mb = (() => { try { return git(["merge-base", "origin/main", "HEAD"]); } catch { return null; } })();
+  if (mb && mb !== rev("HEAD")) { base = mb; baseWhy = "merge-base(origin/main, HEAD)"; }
+  else if (rev("HEAD~1")) { base = rev("HEAD~1"); baseWhy = "HEAD~1(HEAD 就是 main 的 tip)"; }
+} else if (rev("HEAD~1")) {
+  base = rev("HEAD~1"); baseWhy = "HEAD~1(找不到 origin/main)";
+}
 
 let changed = [];
 let messages = "";
-try {
-  const mergeBase = git(["merge-base", base, "HEAD"]);
-  changed = git(["diff", "--name-only", `${mergeBase}..HEAD`]).split("\n").filter(Boolean)
-    .filter((f) => UI_PATTERNS.some((p) => p.test(f)) && !EXEMPT.some((p) => p.test(f)));
-  messages = changed.length ? git(["log", "--format=%s%n%b", `${mergeBase}..HEAD`]) : "";
-} catch (err) {
-  console.log(`validate-ui-freeze: 無法比對 git 範圍(${err.message.split("\n")[0]}) — 跳過`);
-  process.exit(0);
+let rangeError = base ? null : "找不到可用的比對基準(FREEZE_BASE / origin/main / HEAD~1 都問不到)";
+if (base) {
+  try {
+    changed = git(["diff", "--name-only", `${base}..HEAD`]).split("\n").filter(Boolean)
+      .filter((f) => UI_PATTERNS.some((p) => p.test(f)) && !EXEMPT.some((p) => p.test(f)));
+    messages = changed.length ? git(["log", "--format=%s%n%b", `${base}..HEAD`]) : "";
+  } catch (err) {
+    rangeError = err.message.split("\n")[0];
+  }
 }
 
 const ALLOW = /修\s*bug|bug\s*fix|bugfix|fix\(|^fix |修正|紅燈|回歸|regression|hotfix|凍結例外|freeze[- ]exception/im;
@@ -65,12 +93,28 @@ console.log("UI 執行凍結(W1-4)\n");
 console.log(`  凍結日        ${FREEZE_DATE}`);
 console.log(`  今天          ${TODAY}${process.env.FREEZE_TODAY ? "(env 覆寫)" : ""}`);
 console.log(`  狀態          ${ACTIVE ? "已生效" : `尚未生效(還有 ${Math.ceil((new Date(FREEZE_DATE) - new Date(TODAY)) / 86400000)} 天)`}`);
-console.log(`  比對基準      ${base}`);
-console.log(`  本分支動到的 UI 檔  ${changed.length}`);
+console.log(`  比對基準      ${rangeError ? "（無法決定）" : `${base.slice(0, 8)}  ${baseWhy}`}`);
+console.log(`  這次改動到的 UI 檔  ${rangeError ? "?" : changed.length}`);
 for (const f of changed) console.log(`      ${f}`);
 console.log(`  commit 訊息自稱修 bug/例外  ${declared ? "是" : "否"}\n`);
 
 if (STATUS_ONLY) process.exit(0);
+
+/* 算不出範圍時的處置,分凍結前後 —— 這是這支最重要的一段。
+ * 凍結生效之後,「我不知道這次改了什麼」不能等於「沒問題」:淺 checkout 會讓
+ * 每一次 CI 都走到這裡,而原版印一行字就 exit 0。
+ * 一支在**看不見**的時候報綠的 gate,比沒有 gate 更糟 —— 它讓人以為有人在看。 */
+if (rangeError) {
+  if (!ACTIVE) {
+    console.log(`凍結尚未生效,且無法比對 git 範圍(${rangeError})—— 報告模式,略過。`);
+    process.exit(0);
+  }
+  console.log(`FAIL — 凍結生效中,但這支算不出「這次改了什麼」(${rangeError})。\n`);
+  console.log("不知道 = 不准過。最常見的原因是 CI 用了淺 checkout(depth 1),");
+  console.log("那樣 origin/main 與 HEAD~1 都不存在,凍結會在完全看不見的情況下每次報綠。");
+  console.log("修法:checkout 加 fetch-depth: 0,或由 CI 傳 FREEZE_BASE=<push 前的 tip>。");
+  process.exit(1);
+}
 
 if (!ACTIVE) {
   console.log("凍結尚未生效 —— 報告模式。9/01 起,動到 UI 檔而訊息未自稱修 bug 的分支會被擋下。");
