@@ -92,7 +92,13 @@ if (blocked.length) {
     const n = blocked.filter((x) => x === r).length;
     console.error(`  ${k}  ${n} 筆  (遺失風險 ${r.data_loss_risk})\n     ${r.transformation}`);
   }
-  console.error("\n先讓這些欄位有欄位可去(schema.sql 加欄 + 更新對照表),再跑這支。");
+  /* 這句話是給 Ting 看的,不是給工程師看的。她在診所前一天照 runbook 跑這支,
+   * 撞到這裡時需要知道的是「這不是我做錯什麼」以及「下一步做什麼」,
+   * 不是「schema.sql 加欄」。 */
+  console.error("\n這**不是**妳做錯什麼 —— 是妳的病例用到了一個還沒有對應資料庫欄位的東西,");
+  console.error("這支寧可整個停下來,也不要靜靜把它丟掉(少匯一個欄位而不出聲,比不匯還糟)。");
+  console.error("\n什麼都沒有被寫出去,原本的病例一個字都沒動。");
+  console.error("下一步:把上面這幾行整段貼給 Claude,補完欄位再跑一次即可。");
   process.exit(1);
 }
 console.log(`halt-not-drop:${noDest.length} 個無去處欄位,這份資料裡都沒有值 ✓`);
