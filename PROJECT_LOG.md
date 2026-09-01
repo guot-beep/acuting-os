@@ -1,3 +1,116 @@
+# 2026-09-01 — 抽取器修好(`-enc UTF-8` + 防退化閘門),47 檔還原,課件中文 +7541 字
+
+Ting 裁定「開」那條線:修好抽取器再重抽,兩邊好處都拿。做完的結果比預期複雜——
+**修好編碼救不回全部中文**,所以最後是「修抽取器 + 還原 pdfplumber 版」兩手都用。
+
+## 病因:一個沒給的 flag
+
+`scripts/extract-curriculum-md.js` 呼叫 `pdftotext -layout`,**沒有 `-enc UTF-8`**。
+Git for Windows 附的 Xpdf 4.00 預設輸出 Latin1,中文直接被吃掉:
+
+```
+預設    Hu?ng Q?n () [Skullcap root]      ← ebef2401 之後全庫都長這樣
+-enc UTF-8   Huáng Qín (黄芩) [Skullcap root]
+```
+
+一併回來的還有聲調、`•` 項目符號、`è` 箭頭。全庫 U+FFFD **14007 → 3428**。
+
+## 但編碼修好只救回一部分中文
+
+實測 47 個退化檔:U+FFFD 全部歸零,中文卻只追回零頭 ——
+`12 LIVER` 153→8、`4 SPLEEN` 166→11、`14 DU` 181→22。
+
+原因是 pdftotext 一直在噴 `Syntax Error: Unknown character collection 'Adobe-Japan1'`:
+那些 PDF 用 CID 字型嵌中文,這個 Xpdf build 沒有語言包(`/mingw64/share/xpdf` 不存在),
+整批字形對不到就丟掉。舊版是 Python 的 pdfplumber 抽的,它處理得了。
+
+可選的真解只有三條:裝 Xpdf 語言包(要下載、動機器設定)、加 `pdfjs-dist` 之類的
+npm 依賴(這是零依賴 repo,無 package.json)、或**用 git 裡的 pdfplumber 版**。
+選第三條:不動機器、不加依賴,而且那份文本本來就最好。
+
+## 還原 47 檔:先量得失才動手
+
+**得失比對**(比英數詞集合,檔頭樣板詞先剔除):47 檔**全部**還原後最多只失去
+27 個英文詞,卻都拿回大量中文。三個最「貴」的:
+
+| 檔 | 失 / 得(英文詞) | 中文 |
+|---|---|---|
+| `MM2_Module 3_Herbs_That_Drain_Dampness` | 27 / **79** | 61 → 216 |
+| `MM2_Herbs_that_Regulate_Qi` | 22 / **89** | 58 → 204 |
+| `Formulations Summary Chart.docx` | 11 / 10 | 0 → **987** |
+
+失去的那些逐項看過:`Formulations` 那 11 個(`doesn't, addison's, raynaud's`…)是
+**我 tokenizer 的假象**(舊版用彎引號);`MM2_Module 3` 那 27 個是真的——新版抓到了
+英文釋名(`"seed-before-cart"` 車前子、`"lamp wick herb"` 燈心草),舊版沒有。
+但同一檔還原也**拿回 79 個**詞,淨值仍是正的,所以還原。那些釋名不是永久失去:
+PDF 還在,修好的抽取器隨時可再跑。
+
+**我先前「有些檔新版行數變多 = 內容更多」的判斷是錯的**——行數變多是 `-layout`
+用空白把每行墊到欄位位置,不是文字變多。改用**去空白後的內容量**重量才看得出來。
+
+## 防退化閘門(這才是不讓同樣的事再發生的東西)
+
+`writeIfNotWorse()`:重抽只准變好。中文變少、壞字元變多、或去空白後內容量掉到
+85% 以下,一律**拒寫**並列出來。實測有效——跑 `--force` 時它擋下 46 檔,包括
+臺灣中藥典(U+FFFD 會 362→1116),以及所有已還原的好檔。
+
+閘門的度量踩過一次坑:第一版用**位元組長度**比,結果把 19 個正確的還原判成
+「內容縮水」——`-layout` 的空白填充讓同一份文字位元組數差一倍以上。改成去空白後
+再比。這個坑寫進註解,免得下一個人再用長度當內容量。
+
+## 逐檔確認沒有任何一檔變差
+
+68 個變更檔逐一對 HEAD 比中文數、壞字元數、去空白內容量、英文詞集合:
+**59 檔改善、2 檔詞集合有疑慮、其餘持平**。那 2 檔(`Wk 2 Yuan source and luo`、
+`wk 7 8 confluent points`)查過是**假警報**:所謂「掉了」的詞是舊抽取的黏字
+(`borborygmuscheng`、`aphasiaindications`、`mentalrestlessness`),新版正確斷成
+`borborygmus` / `nosebleed` / `restlessness`。零檔變差。
+
+## 兩個因還原而超界的錨點
+
+還原改變行號,兩筆 `#L` 錨點失效,都重新定位並讀過原文確認:
+
+| 卡 | 原 | 新 | 依據 |
+|---|---|---|---|
+| `formula.er_xian_tang` | `Formulations…#L2188-L2206`(2637 行版) | `#L1426-L1428` | `Er Xian Tang [二仙汤] [2 Xian] / (Two-Immortal Decoction) / (Fang Ji Xue)`,還原版連中文方名都在 |
+| `herb.nan_sha_shen` | `Mnemonics…#L159`(176 行版) | `#L35-L38` | `Radix et Rhizoma Veratri (Li Lu) is incompatible with 8 herbs … Radix Adenophorae (Nan Sha Shen)`,正是十八反出處 |
+
+## 驗證器也修了一個自己的缺陷
+
+`validate-curriculum-anchor-resolution.js` 原本把 `import_artifacts` 也算進去。
+那是**存證區**——裡面放的就是被取代的舊值,本來就不再指得到,那正是它們被取代的
+原因。每搬存一次就永久 +1,天花板再也降不下去。改成走 JSON 結構、跳過整個
+`import_artifacts` 子樹;JSON 壞掉時退回整檔掃(寧可多報不可漏報)。防空跑守則
+保留並實測(`exit 2`)。
+
+## 數字
+
+| 指標 | 前 | 後 |
+|---|---|---|
+| curriculum 全庫 CJK | 171,430 | **178,971** |
+| curriculum 全庫 U+FFFD | 14,007 | **3,428** |
+| 中文為 0 的 .md | 134 | **87** |
+| 棘輪 `curriculum_anchors` | 7 | 7(flat;A2 仍為 0) |
+
+`build-data.js` + CLAUDE.md 列的 15 支 + `validate-ui-freeze` +
+`validate-retired-id-references` + `test-branch-mergeable` +
+`validate-curriculum-anchor-resolution` 全 exit=0;棘輪 13 條全 flat。
+開卡看過南沙參與二仙湯:無裸錨點漏到畫面,方名中文正常。
+
+`--force` 連跑兩次結果相同(冪等)。
+
+## 沒解決的
+
+- **1 檔需要 OCR**:`MM2 Review of Herbs.pdf`(文字層是雜訊,既有 .md 保留不動)。
+- **2 檔抽取失敗**:`curriculum/cases/Case Study Chenoweth.docx`(unzip 打不開)、
+  `curriculum/theory/Medical Chinese 1 Notes.pdf`(抽出來是空的)。兩者都是既有狀況,
+  不是這次造成的。
+- **87 個 .md 仍無中文**:多數本來就是純英文文件,但沒有逐檔確認過,不能當成「已清乾淨」。
+- **A3 錨點 7 筆**:經絡課件的 `#p4`/`#p5` 指到 PDF 根本沒有的頁(已讀 `/Count` 確認),
+  出自 `data/acupoints/361.json`,屬穴位線判斷。
+- 真要把 CID 字型的中文全部拿回來,還是得裝 Xpdf 語言包或換 PDF 函式庫;
+  目前是靠 git 裡的 pdfplumber 版補這個洞。
+
 # 2026-09-01 — 撤除定喘湯「銀杏」的錯置藥理敘述;順帶查出同一批還有 3 筆同型,2 筆會上畫面
 
 Ting 裁 (1) 撤除那段敘述 (2) 那 5 條 `found_in_formulas` 留空。
