@@ -18,7 +18,8 @@
       "te_to_th_mapping": "TE (Triple Heater) channel dead URLs use 'te' suffix (e.g. guanchong-te1) but live site uses 'th' (e.g. th1). Verified by probing th1, th5, th10, th15, th23 - all HTTP 200."
     },
     "elapsed_ms": 206583,
-    "last_patched_at": "2026-09-01T07:50:39.192Z"
+    "last_patched_at": "2026-09-01T09:23:03.234Z",
+    "patch_note": "2026-09-01: corrected summary statistics programmatically from source JSONs; no URLs re-fetched"
   },
   "candidates": [
     {
@@ -4093,12 +4094,57 @@
     }
   ],
   "summary": {
-    "attempted": 413,
+    "attempted": 415,
     "found": 407,
-    "not_found": 6,
+    "not_found": 8,
     "not_attempted_time_limit": 0,
     "total_distinct_dead_urls": 411,
-    "total_dead_ref_occurrences": 413,
-    "te_th_mapping_note": "mastertungacupuncture.org uses code th1-th23 for Triple Heater / San Jiao channel (TE in older dead URLs)"
+    "total_dead_ref_occurrences": 493,
+    "candidate_type_breakdown": {
+      "ex_points": 46,
+      "te_to_th_mapping": 23,
+      "channel_points": 338,
+      "malformed_url": 0
+    },
+    "not_found_detail": [
+      {
+        "card_id": "ex.b12",
+        "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/list:",
+        "occurrences": 1,
+        "reason": "malformed URL: trailing colon; points to bare directory with colon, no acupoint slug"
+      },
+      {
+        "card_id": "ex.ca5",
+        "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/list:",
+        "occurrences": 1,
+        "reason": "malformed URL: trailing colon; same as ex.b12 above"
+      },
+      {
+        "card_id": "ex.hn17",
+        "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/list:",
+        "occurrences": 1,
+        "reason": "malformed URL: trailing colon; same as ex.b12 above"
+      },
+      {
+        "card_id": "ex.hn21",
+        "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points:",
+        "occurrences": 2,
+        "reason": "malformed URL: bare directory path with colon, no acupoint slug"
+      },
+      {
+        "card_id": "ex.hn21",
+        "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points",
+        "occurrences": 2,
+        "reason": "malformed URL: bare directory index page, not a specific acupoint page"
+      },
+      {
+        "card_id": "ex.hn22",
+        "url": "https://www.mastertungacupuncture.org/traditional_points:",
+        "occurrences": 1,
+        "reason": "malformed URL: old-style path with trailing colon, no acupoint slug"
+      }
+    ],
+    "te_th_mapping_note": "mastertungacupuncture.org uses code th1-th23 for Triple Heater / San Jiao channel (TE in older dead URLs)",
+    "accounting_note": "attempted = found(407) + not_found(8) = 415; total_dead_ref_occurrences = all non-image dead entries in disposition file = 493; the 78-entry gap (493-415) represents duplicate (card_id,url) occurrences that resolve to the same distinct candidate already counted once in 'found'"
   }
 }
