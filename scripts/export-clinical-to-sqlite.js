@@ -25,7 +25,14 @@
  *
  * 用法:
  *   node scripts/export-clinical-to-sqlite.js <cases.json> [out.db]
+ *   node scripts/export-clinical-to-sqlite.js <cases.json> <existing.db> --into
  *   node scripts/export-clinical-to-sqlite.js --self-test
+ *
+ * `--into`(2026-09-01,遷移日加的):不砍檔、不建新檔,而是在**既有的** .db 裡
+ * 把 schema.sql 的 29 張投影表整組 DROP 再重建。給 clinical-sqlite-service.js
+ * 用 —— 那個檔案裡還有 clinical_kv(病例信封正本),這支只准碰 schema.sql
+ * 列名的表,其餘一律不動。整個重建在單一交易裡,中途失敗就整組回滾,
+ * 上一版投影原樣留著。
  *
  * 產出的 .db 是臨床資料,**絕對不可 commit**(D7)。預設寫到 repo 外。
  */
@@ -42,6 +49,7 @@ const SAMPLE = path.join(ROOT, "data/clinical_cases/sample_export_fixture.json")
 
 const argv = process.argv.slice(2);
 const SELF_TEST = argv.includes("--self-test");
+const INTO = argv.includes("--into");
 const positional = argv.filter((a) => !a.startsWith("--"));
 const inFile = SELF_TEST ? SAMPLE : positional[0];
 const outFile = SELF_TEST
@@ -51,6 +59,10 @@ const outFile = SELF_TEST
 if (!inFile) {
   console.error("用法: node scripts/export-clinical-to-sqlite.js <cases.json> [out.db]");
   console.error("      node scripts/export-clinical-to-sqlite.js --self-test");
+  process.exit(2);
+}
+if (INTO && !(positional[1] && fs.existsSync(positional[1]))) {
+  console.error("--into 需要第二個參數是一個**已存在**的 .db(服務建的那個);要建新檔請不要加 --into。");
   process.exit(2);
 }
 
@@ -126,19 +138,31 @@ if (noCode.length) {
 console.log(`病人代號前置檢查:${cases.length} 筆病例都有代號 ✓`);
 
 // ── 建庫 ─────────────────────────────────────────────────────────────────
-fs.rmSync(outFile, { force: true });
+const schemaSql = fs.readFileSync(SCHEMA, "utf8");
+/* 投影表 = schema.sql 裡 CREATE TABLE 列名的那些,由檔案本身決定、不靠這裡
+ * 手抄。--into 模式只准 DROP 這一組;同一個 .db 裡的 clinical_kv / clinical_meta
+ * 等(服務的正本表)不在名單上,結構上碰不到。 */
+const schemaTables = [...schemaSql.matchAll(/CREATE TABLE IF NOT EXISTS[ ]+([A-Za-z0-9_]+)/g)].map((m) => m[1]);
+if (!INTO) fs.rmSync(outFile, { force: true });
 const db = new DatabaseSync(outFile);
+db.exec("PRAGMA busy_timeout = 5000;");   // 服務同時開著這個檔:等鎖,不要立刻 SQLITE_BUSY
 db.exec("PRAGMA foreign_keys = ON;");
-db.exec(fs.readFileSync(SCHEMA, "utf8"));
+/* 單一交易:--into 模式下 DROP+CREATE+全部 INSERT 要嘛整組成立、要嘛整組回滾
+ * (process 中途死掉,未 COMMIT 的交易由 SQLite 自己丟棄),上一版投影不會
+ * 被砍到一半。FK 保持 ON:子表先砍(反建立順序),不會撞到父表約束;
+ * 寫入階段的 FK 拒絕要照舊記進 rowErrors,關掉 FK 會讓壞列靜默進去。 */
+db.exec("BEGIN;");
+if (INTO) for (const t of [...schemaTables].reverse()) db.exec(`DROP TABLE IF EXISTS ${t};`);
+db.exec(schemaSql);
 const tableList = db.prepare(
   "SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%'"
-).all().map((r) => r.name);
+).all().map((r) => r.name).filter((n) => schemaTables.includes(n));
 const colCache = new Map();
 const colsOf = (t) => {
   if (!colCache.has(t)) colCache.set(t, db.prepare(`PRAGMA table_info(${t})`).all().map((c) => c.name));
   return colCache.get(t);
 };
-console.log(`schema.sql 建出 ${tableList.length} 張表 ✓\n`);
+console.log(`schema.sql ${INTO ? "在既有檔案裡重建" : "建出"} ${tableList.length} 張表 ✓\n`);
 
 const S = (v) => (v === undefined || v === null || String(v) === "" ? null : String(v));
 const N = (v) => {
@@ -500,10 +524,12 @@ for (const c of cases) {
 }
 console.log(mismatch ? `  ⛔ ${mismatch} 處不符` : "  ✓ 全部相符");
 
+db.exec("COMMIT;");   // 先提交再量檔案大小,否則 fresh 模式印出 0 KB(資料還在交易裡)
 const total = [...counts.values()].reduce((a, b) => a + b, 0);
 console.log(`\n合計 ${total} 列,寫在 ${counts.size} 張表。檔案 ${(fs.statSync(outFile).size / 1024).toFixed(0)} KB`);
 console.log(`\n⚠️  ${outFile} 是臨床資料,絕對不可 commit(D7)。`);
-console.log("    localStorage 仍是唯一正本;不要這份副本時直接刪檔,app 完全不受影響。");
+if (INTO) console.log("    這 29 張是查詢用的投影表,由 clinical-sqlite-service.js 在每次存檔後重建;正本是同一個檔案裡的 clinical_kv。");
+else console.log("    localStorage 仍是唯一正本;不要這份副本時直接刪檔,app 完全不受影響。");
 
 db.close();
 const bad = mismatch + rowErrors.length + unhandled.size;

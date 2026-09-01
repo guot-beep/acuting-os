@@ -179,3 +179,29 @@ Emails = Ting 的 email → 登入方式 One-time PIN。
 
 **注意**:病例資料存在各瀏覽器 localStorage,手機與電腦各自獨立;
 要搬用面板裡的 匯出/匯入 JSON。知識內容(穴位/中藥/方劑)則隨部署同步。
+
+---
+
+## 桌機 SQLite 模式(2026-09-01 起,Ting 裁定提前執行 D18 pointer 步)
+
+**兩個網址 = 兩本病例簿。開哪一個,就寫哪一本。**
+
+| 網址 | 病例存在哪 | 誰用 |
+|---|---|---|
+| `http://127.0.0.1:8785/`(由 `scripts/clinical-sqlite-service.js` 供應) | **SQLite** `%USERPROFILE%\Documents\AcuTing\acuting-clinical.db` | 診間桌機 |
+| `https://acuting-os.guotingru.workers.dev/` | 該瀏覽器的 localStorage | 手機;桌機**不要**再在這裡建病例 |
+
+- 判斷靠**來源**不靠旗標:`js/clinical-sqlite-backend.js` 只在 loopback 主機名上探測同源
+  `/__clinical/ping`,拿到服務標記才把 `AcuTingClinicalStore.setBackend()` 接到 SQLite;
+  workers.dev / `dev-server.js` 上這支什麼都不做,app 行為逐位元組不變。
+- 正本是 `clinical_kv`(app 寫出的字串原樣);schema.sql 的 29 張表是每次存檔後重建的
+  查詢投影,投影失敗不擋存檔、只亮徽章。左下角徽章 `🗄 SQLite · acuting-clinical.db · rev N`
+  = 這個分頁正在寫 SQLite;沒有徽章 = localStorage。
+- 回滾 = 開回 workers.dev。localStorage 從頭到尾只被讀出來匯入,沒有被寫。
+- 桌機的 app 版本 = `C:\Projects\acuting-sqlite-tools`(釘 main 的唯讀副本);
+  `scripts/start-clinical-desktop.cmd` 每次啟動會先 fetch 最新 main。卡片內容照常 push,
+  下次雙擊就是新版。
+- 手機↔電腦仍**不同步**;那要 D1 + 一次隱私裁定(TING_PENDING_RULINGS B2),不是 SQLite 的事。
+- 操作流程:`docs/SQLITE_RUNBOOK_2026-09-01.md`。回歸套件:`scripts/test-clinical-sqlite-service.js`。
+- AI session 驗收規則不變:線上版唯讀;寫入測試用本機服務,**而且要用自己的 `--db` 與 `--port`**
+  (預設 8785 + Documents 那個 .db 是 Ting 的真實病例)。

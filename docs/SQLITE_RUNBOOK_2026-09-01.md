@@ -1,140 +1,152 @@
-# SQLite 操作流程(2026-09-01)
+# SQLite 遷移操作流程(2026-09-01 晚,Ting 裁定「現在搬」)
 
-寫給 Ting,不是寫給 agent。**十分鐘,四個步驟,隨時可以反悔。**
-
----
-
-## 先講三件會影響妳決定的事
-
-### 1. SQLite 不會讓手機和電腦共用病例
-
-這是最容易誤會的一點,而它可能正是妳想搬的原因。
-
-現在手機和電腦各自有一份 localStorage,互不相通(DEPLOYMENT.md 有寫)。
-**換成 SQLite 之後,還是各自一份。** SQLite 是「檔案型資料庫」,檔案在哪台
-機器上,資料就只在那台機器上。
-
-要讓兩邊共用,需要的是**伺服器**(例如 Cloudflare D1),那是完全不同的一件事 ——
-而且它會把病例資料放到妳自己的電腦以外,那是 D7 現在刻意不做的事。
-如果「手機電腦同步」才是妳真正想解決的問題,我們要談的是 D1,不是 SQLite,
-而那需要一次獨立的隱私邊界裁定。
-
-### 2. 接頭還沒有寫
-
-已經有的:`schema.sql`(29 張表、356 欄)、欄位對照表(105 欄逐欄記錄,含妳
-2026-08-24 的三個裁定)、後端契約測試(7 條)、`setBackend()` 這個插入點。
-
-**沒有的**:真正的 SQLite adapter。`js/clinical-store.js` 那一行的註解到今天
-還是「SQLite/D1 adapter 的插入點」—— 是插座,不是插頭。
-
-所以明天**不可能**把 app 切換到 SQLite。做得到的是下面那件事,而且它有價值。
-
-### 3. 妳自己在 8/11 裁定過「9/2 前不做 SQLite」
-
-D18 是 LOCKED 的,妳的原話是條件觸發制:病例 ≥50、或多裝置需求出現、
-或容量壓力浮現,三者任一才啟動。理由寫在裡面:開診前最後幾週的風險預算
-應該花在已知高風險面,不是引入新儲存引擎。
-
-明天是 9/1,後天開診。**下面這個流程刻意設計成不違反那條裁定** ——
-它不切換任何東西,只是把資料多備份成一種格式。
+寫給 Ting,不是寫給 agent。**六步,十五分鐘,隨時可以回頭。**
 
 ---
 
-## 明天要做的:影子匯出(shadow export)
+## 先講清楚這次搬的是什麼
 
-一句話:**把病例匯出成一個 SQLite 檔,app 完全不動,不喜歡就刪檔。**
+- **搬完以後**:桌機上的 app 從 `http://127.0.0.1:8785/` 開,病例存在
+  `C:\Users\guoti\Documents\AcuTing\acuting-clinical.db` —— 一個真的 SQLite 檔,
+  可以複製、可以下 SQL。
+- **沒搬的**:手機。手機碰不到妳桌機的檔案,仍然用 workers.dev + 它自己的 localStorage。
+  手機電腦共用要等 D1,那是另一次決定,今晚不做。
+- **沒動的**:workers.dev 那邊瀏覽器裡的舊病例。遷移只把它**複製**進 SQLite,一個字都不刪、
+  不改。所以回頭 = 開回 workers.dev,就這樣。
+- **無關的**:卡片內容(中藥/方劑/穴位)。那些在 git 裡,照常改、照常 push。
 
-### 步驟一 — 從 app 匯出病例(在瀏覽器裡)
+## 一張表:兩個網址 = 兩本簿子
 
-開 AcuTing OS → 病例 → 按「**匯出病例**」。
-會下載一個 JSON 檔,記下它存到哪裡(通常是「下載」資料夾)。
+| 開哪個網址 | 病例寫進哪 | 誰用 |
+|---|---|---|
+| `http://127.0.0.1:8785/`(黑視窗開著時) | **SQLite** `Documents\AcuTing\acuting-clinical.db` | 診間桌機 |
+| `https://acuting-os.guotingru.workers.dev/` | 那台裝置瀏覽器的 localStorage | 手機。桌機**不要**再在這裡建病例 |
 
-> 這一步只有妳能做。病例存在妳的瀏覽器裡,任何 AI session 都讀不到(D7)。
+分辨方法只有一個,而且很明顯:**app 左下角有綠色徽章 `🗄 SQLite · … · rev N` = 正在寫 SQLite;
+沒有徽章 = 在寫 localStorage。**
 
-### 步驟二 — 跑一行指令
+---
 
-> 腳本住在 **`C:\Projects\acuting-sqlite-tools`**(一份釘在 main 的唯讀副本,重開機不會消失)。
-> **不要**用 `C:\Projects\acupuncture-point-app` 那份 —— 那個 worktree 在
-> `codex/pattern-v2` 分支、落後 main 一百多個 commit、**裡面根本沒有這支腳本**
-> (2026-09-01 實測)。在那裡跑會得到 `Cannot find module`,不是妳的問題。
+## 步驟
 
-開 PowerShell,先讓它找得到 Node:
+### 0. 先把最新病例匯出一份(在 workers.dev,用桌機瀏覽器)
+
+病例 → **匯出 JSON**。記住存到哪(通常是「下載」)。
+下午那份如果之後沒再加病例,直接用它也可以。
+
+### 1. 更新工具副本(只有第一次要手動;以後啟動器自己會更新)
+
+PowerShell 貼這一行:
+
+```powershell
+git -C C:\Projects\acuting-sqlite-tools fetch -q origin main; git -C C:\Projects\acuting-sqlite-tools checkout -q --detach origin/main; Test-Path C:\Projects\acuting-sqlite-tools\scripts\start-clinical-desktop.cmd
+```
+
+最後要印 `True`。印 `False` 就停下來貼給我。
+
+### 2. 啟動服務
+
+雙擊 **`C:\Projects\acuting-sqlite-tools\scripts\start-clinical-desktop.cmd`**。
+
+會發生三件事:
+1. 一個黑色視窗(標題 `acuting-clinical-sqlite`)開著,印出資料庫路徑、`revision 0`、`病例 0 筆`。
+2. 瀏覽器自動開 `http://127.0.0.1:8785/`。
+3. app 左下角出現綠色徽章 **`🗄 SQLite · acuting-clinical.db · rev 0`**。
+
+病例 0 筆是**正常的** —— 這是一本新簿子,還沒匯入。
+
+> 黑視窗要一直開著。關掉 = app 存不了檔(它會跳紅字說「這次**沒有**寫入」,不會靜默丟)。
+
+### 3. 匯入
+
+app 上方病例列的**匯入**(選檔案)→ 選步驟 0 的 JSON →
+跳出「匯入模式 Import mode」→ 按 **確定(合併 Merge)**。
+
+看三個地方:
+- 徽章變 `rev 1`,病例列表出現妳的病例。
+- 黑視窗多兩行:`PUT acuting-clinical-cases-v1 … → rev 1` 和 `projection ✓ N 筆病例 → 29 張投影表`。
+- 如果跳「匯入被拒絕 … 契約違規」,整段貼給我,什麼都沒被寫入。
+
+### 4. 核對(五個 ✓)
+
+| # | 做 | 要看到 |
+|---|---|---|
+| a | app 按 F5 重新整理 | 病例還在、徽章還在 |
+| b | PowerShell 跑下面兩行 | `正本 keys 1 個`、`病例 N 筆`(N = 妳匯入的數量)、`投影表 ✓`、`有資料的表 … cases=N patients=…` |
+| c | 在 app 裡對某一筆加一則 SOAP(或改一個字)存檔 | 徽章 `rev` +1;黑視窗多一行 `PUT` |
+| d | 再 F5 | 剛才的修改還在 |
+| e | 再跑一次 b | `revision` 變大、`history` 列數變大(每次存檔前的舊版都留著,每個 key 最近 200 版) |
 
 ```powershell
 $env:Path = "C:\Program Files\nodejs;" + $env:Path
+node C:\Projects\acuting-sqlite-tools\scripts\clinical-sqlite-service.js --status
 ```
 
-然後(把路徑換成妳實際的檔名):
+五個都 ✓ = **搬完了**。
 
-```powershell
-node C:\Projects\acuting-sqlite-tools\scripts\export-clinical-to-sqlite.js "$env:USERPROFILE\Downloads\acuting-cases.json" "$env:USERPROFILE\Documents\acuting-clinical.db"
-```
+### 5. 從明天起怎麼用
 
-### 步驟三 — 看它印什麼
+- **桌機**:雙擊 `.cmd` → 用 `127.0.0.1:8785`。加書籤,取名「AcuTing 診所」。
+- 桌機瀏覽器裡 workers.dev 的書籤改名「舊 · 手機用」。**不要再在桌機用它建病例**(那會寫進舊簿子,幾天後妳會有兩本對不起來的簿子)。
+- **手機**:照舊 workers.dev。
+- **備份**:關掉黑視窗之後,把 `Documents\AcuTing\acuting-clinical.db` 複製到隨身碟或雲端 = 完整備份。
+  (要先關服務:SQLite 開著的時候資料有一部分在旁邊的 `-wal` 檔裡,關掉才會併回主檔。)
+  或照舊在 app 裡按「匯出 JSON」。**`.db` 絕對不進 git**(D7;`.gitignore` 已擋 `*.db`)。
+- **更新卡片內容**:照常 push;下次雙擊 `.cmd` 會先抓最新 main 再啟動。
 
-它會印四件事,**每一件都要看一眼**:
+### 6. 回頭(任何時候)
 
-| 印出來的 | 代表 |
-|---|---|
-| `halt-not-drop:… 都沒有值 ✓` | 沒有欄位是「有資料卻沒地方放」 |
-| `寫入結果` 一張表幾列 | 資料真的進去了 |
-| `對照表覆蓋 … 合計 105 / 105 ✓` | 105 條規則全部歸位,沒有漏算 |
-| `病人代號前置檢查:… 都有代號 ✓` | 每筆病例都掛得上病人。**沒代號的會整支停下**並列出是哪幾筆 —— 回 app 補代號(或刪掉測試病例)再跑 |
-| `往返核對 … ✓ 全部相符` | 從 SQLite 讀回來的內容與原本逐字一樣 |
-
-**只要有任何一行是 ⛔ 或 ⚠️,就停下來把整段貼給我。**
-特別是這兩種:
-
-- `⚠️ 有值、但這支還沒實作的來源欄位` —— 妳的資料用到了我刻意沒做的五個欄位
-  之一(它們需要判斷,不是機械轉換)。那幾欄**沒有**進資料庫。
-- `FAIL — 落在「還沒有欄位可去」的來源欄位` —— 整支會停下來不寫。
-  這是設計如此:少匯一個欄位而不出聲,比不匯還糟。
-
-### 步驟四 — 想反悔就刪檔
-
-```powershell
-Remove-Item "$env:USERPROFILE\Documents\acuting-clinical.db"
-```
-
-沒了。app 從頭到尾沒被動過,localStorage 還是唯一正本。
+關黑視窗 → 開 workers.dev → 舊病例原封不動(遷移從頭到尾沒有寫過它)。
+如果在 SQLite 模式已經新增了病例、想帶回去:先在 `127.0.0.1:8785` 按「匯出 JSON」,
+再到 workers.dev 匯入(合併)。
 
 ---
 
-## 這件事換到什麼
+## 會遇到的訊息
 
-1. **對照表第一次被真的執行過。** 它維護了幾個月,一直只是一份文件。
-   哪條規則會炸,今天知道比遷移那天知道便宜太多。
-2. **一個可以下 SQL 的病例庫。** localStorage 答不出「這半年開最多的方是哪幾個」
-   「哪些病人同時在吃抗凝血劑」,SQLite 可以:
-
-   ```sql
-   SELECT formula_id, COUNT(*) n FROM visit_formulas GROUP BY 1 ORDER BY n DESC LIMIT 10;
-   ```
-
-3. **一份格式不同的備份。** JSON 壞掉與 SQLite 壞掉不會同時發生。
-
----
-
-## 兩個必須記得的邊界
-
-- **那個 `.db` 是臨床資料,絕對不可以 commit 進 git**(D7)。
-  預設寫在 repo 外面就是為了這個。
-- **它是唯讀副本,不是正本。** 之後在 app 裡新增的病例**不會**自動進去 ——
-  要更新就重跑一次步驟一到三。
-
----
-
-## 如果之後真的要整個搬過去
-
-按 D18 自己寫的順序,現在只做到第二步:
-
-| 步 | 內容 | 狀態 |
+| 看到 | 意思 | 做什麼 |
 |---|---|---|
-| plan | schema + 對照表 + 契約測試 | ✅ 已完成 |
-| **shadow** | **匯出成 .db,不切換** | ✅ **這份文件** |
-| verify | 用真實資料跑 shadow,逐欄核對 | ✅ **2026-09-01 Ting 用真實病例跑過**(1 筆,P-001,五個檢查點全 ✓,`halt-not-drop` 與病人代號前置檢查都過)。這是對照表 105 條規則第一次跑在真實資料上 |
-| pointer | 寫 adapter,把 app 的讀寫指向 SQLite | ⬜ 未開始(setBackend 還是空的) |
-| rollback | 切回 localStorage 的演練 | ⬜ 未開始 |
+| 徽章變**橘** `⚠ 查詢表未更新` | 病例**已經存好了**;只是 SQL 查詢用的 29 張表這一次沒重建成功(最常見:某筆病例沒填病人代號) | 滑鼠移到徽章上看原因。不急,下次存檔會再試 |
+| 紅字「SQLite 服務沒有回應 —— 這次…**沒有**寫入」 | 黑視窗被關了 | 重開 `.cmd` → F5 → 再存一次 |
+| 紅字「拒絕寫入:另一個分頁在這之後存過檔…」 | 兩個分頁同時開著 `127.0.0.1:8785` 都在改 | 照訊息:F5 這一頁再改一次。被擋的內容已備份在 SQLite 的 `acuting-clinical-conflict-backup` |
+| 徽章**紅** `⛔ SQLite 服務讀取失敗 — 唯讀保護中` | 服務在,但讀不到資料 | 把黑視窗的錯誤整段貼給我。它**不會**靜默退回 localStorage |
+| 黑視窗:`埠 8785 已被占用` | 服務已經在另一個視窗跑著 | 直接開 `127.0.0.1:8785` 就好 |
+| 黑視窗:`FAIL — N 筆病例沒有病人代號` 或 `還沒有欄位可去` | 出現在 projection 那幾行 = 只影響查詢表,病例已存 | 同橘徽章;想修就到 app 補病人代號 |
 
-`pointer` 那一步會動到臨床寫入路徑,**不該在開診那週做**。
-等三個觸發條件之一真的出現(病例 ≥50 / 多裝置 / 容量壓力),再排。
+---
+
+## 這次做了什麼(工程摘要,給之後的自己)
+
+- D18 的 **pointer** 步,Ting 2026-09-01 裁定提前執行(原條件觸發制:病例 ≥50 / 多裝置 / 容量)。
+- pointer = **網址來源**,不是 localStorage 裡的旗標:由 `scripts/clinical-sqlite-service.js`
+  供應的頁面才裝 SQLite backend(`js/clinical-sqlite-backend.js` 只在 loopback 探測同源
+  `/__clinical/ping`);workers.dev / dev-server 上逐位元組不變。
+- 正本 = `clinical_kv`(store 寫出的字串原樣,契約 C2/C7);29 張表 = 投影,
+  每次存檔後 `export-clinical-to-sqlite.js --into` 在同一個檔裡重建;投影失敗 fail-visible,不擋存檔。
+- 雙分頁:`If-Match` revision → 409 零寫入 + 備份;store 既有的樂觀鎖照樣有效。
+- `clinical_kv_history` 每個 key 留最近 200 版。
+- 回歸套件 `scripts/test-clinical-sqlite-service.js`(38 條,CI blocking),含負控。
+- 2026-09-01 22:13 在隔離服務(port 8791、暫存 .db)用真的「新增病例」表單走過一遍:
+  rev 0→1、`cases=1 patients=1`、F5 後仍在、dev-server 來源無徽章無病例。
+
+| D18 步 | 狀態 |
+|---|---|
+| plan | ✅ |
+| shadow | ✅ 影子匯出(下午) |
+| verify | ✅ Ting 真實病例 1 筆,5/5 |
+| **pointer** | ✅ **2026-09-01 晚**(本文件) |
+| rollback | ✅ 設計即回滾:開回 workers.dev;localStorage 從未被寫 |
+
+---
+
+## 附:影子匯出(下午那一版,仍可單獨用)
+
+把一份匯出 JSON 轉成獨立的 SQLite 檔,app 不動、不喜歡就刪 —— 現在主要用途是
+**離線核對**或**把 JSON 備份轉成可查詢的檔**:
+
+```powershell
+node C:\Projects\acuting-sqlite-tools\scripts\export-clinical-to-sqlite.js "$env:USERPROFILE\Downloads\acuting-cases.json" "$env:USERPROFILE\Documents\acuting-shadow.db"
+```
+
+要看的五行:`halt-not-drop … ✓`、`寫入結果`、`對照表覆蓋 … 105 / 105 ✓`、
+`病人代號前置檢查 … ✓`、`往返核對 … ✓ 全部相符`。任何 ⛔/⚠️ 整段貼給我。

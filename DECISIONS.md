@@ -640,6 +640,28 @@ fail-loud 持久層 + v2 export + Git 外備份已覆蓋單機單人期的資料
 > 各處「9/5 前不做 SQLite」讀作「9/2 前不做」;條件觸發制不變。D12 的
 > 9/01 additive-only 凍結仍在進診所之前,不受影響。
 
+> **附記 — pointer 步提前執行(Ting 裁定,2026-09-01 晚)**
+> Ting 原話:「別管之前了 我想現在搬移 因為之前 token 不夠 今天是最好的時間」。條件觸發制
+> (≥50 / 多裝置 / 容量)由她本人解除。Claude 執行前重述過兩點風險(開診前一晚動臨床寫入
+> 路徑;SQLite 不解決手機同步),她重申後執行 —— 這是她的裁定,不是偏離。
+>
+> **實作形狀**(對齊本條的 plan→shadow→verify→pointer→rollback):
+> - pointer = **來源(origin)**,不是 localStorage 旗標:由 `scripts/clinical-sqlite-service.js`
+>   供應的 `http://127.0.0.1:8785/` 用 SQLite;workers.dev / dev-server 一律 localStorage、
+>   行為逐位元組不變(`js/clinical-sqlite-backend.js` 只在 loopback 主機名探測同源 ping)。
+> - 正本 = `clinical_kv`(store 寫出的字串原樣;backend 契約 C1–C7);`schema.sql` 29 表 = 投影,
+>   每次存檔後 `export-clinical-to-sqlite.js --into` 在同一檔重建;投影失敗 **fail-visible**
+>   (徽章轉橘),不擋臨床存檔。不反向(表→物件):對照表 5 條刻意未實作 + 有損 JOIN,反推即遺失。
+> - rollback = 開回 workers.dev;localStorage 全程只被讀出匯入,從未被寫。
+> - 雙分頁:`If-Match` revision → 409 零寫入 + 備份到 `acuting-clinical-conflict-backup`;
+>   store 既有樂觀鎖(2026-09-01 早)在此 backend 上照樣觸發。`clinical_kv_history` 每 key 留 200 版。
+> - **不解決**:手機↔電腦同步(仍需 D1 + 隱私裁定;TING_PENDING_RULINGS B2)。
+> - D32 凍結:`index.html` 一行 + `js/clinical-sqlite-backend.js`(含左下角儲存徽章)以
+>   「凍結例外」入庫;理由 = 兩本簿子並存期間必須一眼看出正在寫哪一本,這是安全資訊。
+> - 驗證:`scripts/test-clinical-sqlite-service.js` 38 條(含負控)CI blocking;隔離服務上用真表單
+>   建病例 rev 0→1、投影 `cases=1 patients=1`、F5 仍在、非服務來源無徽章。
+> - 操作:`docs/SQLITE_RUNBOOK_2026-09-01.md`。狀態:plan ✅ shadow ✅ verify ✅ **pointer ✅ rollback ✅**。
+
 ## D20 — Outcome metric 的判讀分兩個軸,不是一個 · LOCKED(2026-08-13,Ting:「兩個軸留著」)
 
 **鎖住什麼**:`data/clinical_cases/outcome_metrics.json` 的每一筆記錄,對

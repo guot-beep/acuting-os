@@ -222,6 +222,12 @@ jobs:
       - name: clinical store never echoes raw parser text (PHI boundary)
         run: node scripts/validate-clinical-store-phi-boundary.js
 
+      # SQLite 病例服務 + 瀏覽器 adapter(D18 pointer 步,2026-09-01 Ting 裁定提前):
+      # 契約 C1–C7、兩分頁 409 + 備份、history、29 張投影表重建與 halt、真 HTTP、
+      # 非 loopback 不探測、毒丸、負控。合成 fixture + 暫存 .db,不碰任何真實病例。
+      - name: SQLite clinical service + browser adapter
+        run: node scripts/test-clinical-sqlite-service.js
+
       # CARE 草稿匯出邊界(2026-08-14 Ting ruling / CODEX AUDIT #1-#2)。
       # 這三支在 CLAUDE.md 裡被列為「改完要跑」,但 `grep -c care` 在這個檔案
       # 上一直回 0 —— 也就是說,唯一會逼人跑它們的東西不存在。而它們守的是
