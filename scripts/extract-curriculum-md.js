@@ -56,6 +56,32 @@ function walk(dir, out = []) {
 
 function relOf(p) { return path.relative(ROOT, p).replace(/\\/g, "/"); }
 
+/* 這台機器(Git for Windows 的 msys 層)在連續 spawn 幾十個外部程序時會間歇性
+ * 失敗:`fork: Resource temporarily unavailable`、`cygheap read copy failed`。
+ * 症狀是同一份輸入連跑三次,failed 分別是 3、3、7 —— 隨機少抽幾個檔,而
+ * failed 清單看起來像「這些檔有問題」。那是**啟動不了工具**,不是檔案抽不出來,
+ * 兩者混在一起會讓人去查錯的東西(整個 session 的教訓就是這種誤導最貴)。
+ * 所以:spawn 層級的錯誤重試,重試完還是失敗才報,而且訊息要說得出是哪一種。 */
+function runTool(cmd, args, attempts = 4) {
+  let lastErr;
+  for (let i = 0; i < attempts; i++) {
+    try {
+      return execFileSync(cmd, args, { encoding: "utf8", maxBuffer: 64 * 1024 * 1024 });
+    } catch (err) {
+      lastErr = err;
+      const spawnLevel = err.code === "EAGAIN" || err.code === "ENOMEM" || err.status === null
+        || /Resource temporarily unavailable|cygheap|fork/i.test(String(err.message) + String(err.stderr || ""));
+      if (!spawnLevel) throw err;          // 工具真的跑了但失敗 → 是這個檔的問題,不重試
+      const waitMs = 150 * (i + 1);
+      Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, waitMs);   // 同步 sleep
+    }
+  }
+  const e = new Error(`無法啟動 ${cmd}(重試 ${attempts} 次都是 spawn 失敗,不是這個檔的問題):`
+    + String(lastErr && lastErr.message).split("\n")[0]);
+  e.spawnFailure = true;
+  throw e;
+}
+
 function header(src) {
   return `<!-- Extracted from ${relOf(src)} by scripts/extract-curriculum-md.js.\n`
     + `     Text layer only — figures, tables-as-images and formatting are NOT here.\n`
@@ -95,9 +121,7 @@ function extractPdf(src) {
   // -eol unix:這個 build 在 Windows 上預設吐 CRLF,而本檔其餘輸出是 LF。
   // 混行尾會讓每次重跑都產生一整批「只有行尾不同」的假 diff(git 又會正規化回 LF,
   // 於是工作區與 repo 永遠對不齊)。統一成 LF。
-  const raw = withAsciiPath(src, (p) => execFileSync("pdftotext", ["-layout", "-enc", "UTF-8", "-eol", "unix", p, "-"], {
-    encoding: "utf8", maxBuffer: 64 * 1024 * 1024,
-  }));
+  const raw = withAsciiPath(src, (p) => runTool("pdftotext", ["-layout", "-enc", "UTF-8", "-eol", "unix", p, "-"]));
   // pdftotext separates pages with \f — turn that into a locatable marker.
   const pages = raw.split("\f");
   return pages
@@ -114,9 +138,7 @@ function decodeEntities(s) {
 }
 
 function extractOoxml(src) {
-  const xml = withAsciiPath(src, (p) => execFileSync("unzip", ["-p", p, "word/document.xml"], {
-    encoding: "utf8", maxBuffer: 64 * 1024 * 1024,
-  }));
+  const xml = withAsciiPath(src, (p) => runTool("unzip", ["-p", p, "word/document.xml"]));
   return decodeEntities(
     xml
       // structural boundaries first, so text does not run together
@@ -150,9 +172,7 @@ function looksLikeOcrNoise(text) {
 
 function extractDoc(src) {
   // -w 0 disables line wrapping so paragraphs survive as paragraphs.
-  return withAsciiPath(src, (p) => execFileSync("antiword", ["-w", "0", p], {
-    encoding: "utf8", maxBuffer: 64 * 1024 * 1024,
-  }))
+  return withAsciiPath(src, (p) => runTool("antiword", ["-w", "0", p]))
     .replace(/\r/g, "")
     .replace(/[ \t]+\n/g, "\n")
     .replace(/\n{3,}/g, "\n\n")
@@ -199,7 +219,7 @@ function writeIfNotWorse(out, body, src) {
   return { ok: true, note: gains.length ? gains.join("；") : "無退化" };
 }
 
-const results = { written: [], skipped_existing: [], needs_ocr: [], failed: [], refused_worse: [] };
+const results = { written: [], skipped_existing: [], needs_ocr: [], failed: [], refused_worse: [], spawn_failed: [] };
 
 const files = walk(CURRICULUM).filter((f) => {
   if (ONLY && !ONLY.some((o) => relOf(f).includes(`/${o}/`))) return false;
@@ -231,7 +251,9 @@ for (const src of files) {
     if (!w.ok) { results.refused_worse.push(`${relOf(out)} — ${w.note}`); continue; }
     results.written.push(`${relOf(out)} (${Math.round(body.length / 1024)}KB text${w.note === "new" ? "" : "；" + w.note})`);
   } catch (err) {
-    results.failed.push(`${relOf(src)} — ${String(err.message).split("\n")[0]}`);
+    // 啟動不了工具 ≠ 這個檔有問題。混在一起報,會讓人去查沒壞的檔案。
+    if (err.spawnFailure) results.spawn_failed.push(`${relOf(src)} — ${String(err.message).split("\n")[0]}`);
+    else results.failed.push(`${relOf(src)} — ${String(err.message).split("\n")[0]}`);
   }
 }
 
