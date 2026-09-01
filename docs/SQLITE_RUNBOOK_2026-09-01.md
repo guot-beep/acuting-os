@@ -132,7 +132,7 @@ Remove-Item "$env:USERPROFILE\Documents\acuting-clinical.db"
 |---|---|---|
 | plan | schema + 對照表 + 契約測試 | ✅ 已完成 |
 | **shadow** | **匯出成 .db,不切換** | ✅ **這份文件** |
-| verify | 用真實資料跑 shadow,逐欄核對 | ⬜ 明天妳做步驟一到三就是這個 |
+| verify | 用真實資料跑 shadow,逐欄核對 | ✅ **2026-09-01 Ting 用真實病例跑過**(1 筆,P-001,五個檢查點全 ✓,`halt-not-drop` 與病人代號前置檢查都過)。這是對照表 105 條規則第一次跑在真實資料上 |
 | pointer | 寫 adapter,把 app 的讀寫指向 SQLite | ⬜ 未開始(setBackend 還是空的) |
 | rollback | 切回 localStorage 的演練 | ⬜ 未開始 |
 
