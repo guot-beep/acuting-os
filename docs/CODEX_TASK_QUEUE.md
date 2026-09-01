@@ -1,5 +1,68 @@
 # Codex Task Queue
 
+## ⚡ NEXT（2026-08-29，Claude 派工）：董氏穴位死連結對回卡片——只出清單，不改資料
+
+**背景**：antigravity 的 Task 11E（出貨包層級網址存活性掃描，已驗收落地 `52442afe`／`7713e93d`
+兩輪獨立複核都過）挖到全庫目前最大的使用者可見破損：`mastertungacupuncture.org` 1,384 條網址裡
+**1,133 條真的 404**（負控乾淨，兩次獨立驗證過不是站台擋掃描器），其中 **722 條是圖片**（該 host
+圖片 722/722 全滅）。已派給 antigravity 當 Task 11G，**到 2026-08-29 為止她完全沒有動工**（分支
+`antigravity/task11g-tung-dead-link-disposition` 從未出現），改派給你，不用等她。
+
+**MEASURED TREE**：`origin/main` @ `ec073767`。開工前自己用下面這行重跑分母，數字要跟這裡一致：
+```bash
+node -e "const j=require('./data/audits/bundle_url_liveness_2026-08-28.json');const mt=j.records.filter(r=>r.host.includes('mastertungacupuncture'));console.log('total',mt.length,'dead404',mt.filter(r=>r.http_status===404).length,'deadImages',mt.filter(r=>r.http_status===404&&r.is_image).length)"
+```
+應該印出 `total 1384 dead404 1133 deadImages 722`；main 動很快，數字對不上就先回報再問要不要繼續。
+
+### 要做的事（跟 11E 的離線 ledger 反向對照即可，不需要活連線）
+
+把那 1,133 條死連結**對回卡片**，一張卡一列，輸出
+`data/audits/tung_dead_link_disposition_2026-08-28.json`：
+
+`card_id`（穴位 id／code）· `card_name_zh` · `dead_urls`（陣列，每條含 `url`／`is_image`／
+`field_path`，即這條網址掛在該筆記錄的哪個欄位）· `dead_count` · `live_count`（同卡上還活著的
+連結數）· `all_links_dead`（bool，整張卡的外部連結全滅＝畫面上整區開天窗）·
+`same_site_candidate`（若在同站找得到明顯對應的新路徑就填，找不到填 `null`）
+
+以及一節 `summary`：受影響卡片數／整區全滅的卡片數／圖片與參考連結各佔多少。
+
+**怎麼對回卡片**：從 `data/generated/app_data.js` 與 `points_361.js` 反查（那兩支是這些網址的
+出處），再對回 `data/acupoints/**` 的原始 JSON。**欄位路徑要指到原始 JSON 的欄位**，不是只指到
+出貨包——後面要修的是原始資料。
+
+### 邊界（跟 11A-11F 一樣的規矩，違反任一條整批退）
+
+- **只出清單，不改任何 `data/**.json` 的內容**。移除／降級成純文字／換來源，是後面的裁定，不是你這輪。
+- `same_site_candidate` 要填就必須**實際打開驗證回 200**，並記 `fetched_at`；猜的一律填 `null`。
+  **不准用網址規律推出一個「應該存在」的路徑當候選**——這是 Task 11A 查出來的坑（177 條
+  americandragon 網址是拼音機械組出來的，看起來合理但沒人真的點開驗證過）。如果這個環境沒有
+  對外連線，`same_site_candidate` 全填 `null` 是誠實且可接受的結果，不要用猜的湊。
+- 推自己的分支（例如 `codex/tung-dead-link-disposition`），不要推 main。推完在
+  `docs/CODEX_HANDOFF.md`（最上方）跟這份檔案都留一句「已推到 XXX 分支，等驗收」。
+- 小批次、小 commit（照 `AI_CONSTITUTION.md` §三）；只准改動這份清單 + 你自己新增的驗證模式 +
+  對應報告，`app.js`／`js/**`／既有驗證器都不准動。
+
+### 驗收（照 11A-11F 的模式，自己在 `scripts/audit-source-url-liveness.js` 加一個新模式）
+
+`--verify-disposition` 目前**還不存在**，是這輪要新增的：從 11E 帳本
+（`data/audits/bundle_url_liveness_2026-08-28.json`）重算「mastertung 且 http_status 為 404」的
+URL 集合，跟處置清單裡 `dead_urls` 的聯集**雙向比對**，任一邊有差 exit 1；另外斷言每個 `card_id`
+都真的存在於 `data/acupoints/**`（指到不存在的卡也 FAIL）。`--self-test` 再加兩個負控：漏一條
+死連結必 FAIL、清單裡出現一個不存在的 card_id 必 FAIL。
+
+```bash
+node scripts/audit-source-url-liveness.js --self-test
+node scripts/audit-source-url-liveness.js --verify-disposition
+node scripts/check-validation-ratchet.js
+git show --stat <你的 commit>      # 只准出現清單 + 報告 + 工具本體
+```
+
+回報照 `AI_CONSTITUTION.md` §四：逐欄位數字（受影響卡片數／全滅卡片數／`same_site_candidate`
+填了幾個查空幾個），不要用「完成」「100%」這種字。**這是全庫目前最大的使用者可見破損，值得優先做**，
+但邊界跟前幾輪一樣嚴——只出清單，資料一個 byte 都不准動。
+
+---
+
 > **收口規則(2026-08-12,優先於本檔任何既有條目)**
 > 找到**非 hard-gate** 問題 → 寫進 backlog,**不得因此重開當前 milestone**,
 > 也不得自行發起同一 milestone 的第二輪完整 adversarial review。
