@@ -117798,7 +117798,7 @@
         "source_classic": [
           "https://cloudtcm.com/formula/344",
           "https://www.zysj.com.cn/zhongyaofang/erxiantang/index.html",
-          "curriculum/Formulations Summary Chart.docx.md#L2188-L2206"
+          "curriculum/formulas/Formulations Summary Chart.docx.md#L2188-L2206"
         ]
       },
       "ad_syndromes_en": [
@@ -131780,7 +131780,7 @@
       "field_sources": {
         "composition": [
           "American Dragon Formula Dataset (AD_Selected_Formulas_Name_Herbs_Actions.md, 2026-08-07)",
-          "curriculum/Formulations Summary Chart.docx.md（Hao Qin Qing Dan Tang 列下方「Bi Yu San: Hua Shi: Gan Cao: Qing Dai 6:1:1」） —— 碧玉散展開比例",
+          "curriculum/formulas/Formulations Summary Chart.docx.md（Hao Qin Qing Dan Tang 列下方「Bi Yu San: Hua Shi: Gan Cao: Qing Dai 6:1:1」） —— 碧玉散展開比例",
           "docs/research_packs/FORMULA_4_BLOCKERS_SOL.md §4 + Ting 裁定 2A（2026-08-12）；欄位規格見 docs/FORMULA_CARD_TEMPLATE.md §3.1"
         ],
         "actions_zh": [
@@ -131811,7 +131811,7 @@
           "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處：見本筆 field_sources.contraindications 或 field_sources.composition 等既有出處欄位）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
         ],
         "composition_source_note_zh": [
-          "curriculum/Formulations Summary Chart.docx.md（Hao Qin Qing Dan Tang 列下方「Bi Yu San: Hua Shi: Gan Cao: Qing Dai 6:1:1」）",
+          "curriculum/formulas/Formulations Summary Chart.docx.md（Hao Qin Qing Dan Tang 列下方「Bi Yu San: Hua Shi: Gan Cao: Qing Dai 6:1:1」）",
           "docs/research_packs/FORMULA_4_BLOCKERS_SOL.md §4 + Ting 裁定 2A（2026-08-12）；欄位規格見 docs/FORMULA_CARD_TEMPLATE.md §3.1"
         ],
         "source_classic": [
@@ -132012,7 +132012,7 @@
       "contraindications_zh": [
         "因陽虛所致痰濕者禁用"
       ],
-      "composition_source_note_zh": "組成出自 American Dragon 匯入層；使藥位的碧玉散是成方不是單味藥，2026-08-12 依 docs/FORMULA_CARD_TEMPLATE.md §3.1 改寫為 entry_type: formula_in_formula，展開為滑石:甘草:青黛 6:1:1（來源：curriculum/Formulations Summary Chart.docx.md（Hao Qin Qing Dan Tang 列下方「Bi Yu San: Hua Shi: Gan Cao: Qing Dai 6:1:1」）），三味都接回中藥庫 id，安全與交互作用可以走到葉子藥材。⚠️ 課件把碧玉散標為 Envoy（使），本卡既有值為「佐」，兩者不一致 —— 未擅改，列給 Ting 裁定。",
+      "composition_source_note_zh": "組成出自 American Dragon 匯入層；使藥位的碧玉散是成方不是單味藥，2026-08-12 依 docs/FORMULA_CARD_TEMPLATE.md §3.1 改寫為 entry_type: formula_in_formula，展開為滑石:甘草:青黛 6:1:1（來源：curriculum/formulas/Formulations Summary Chart.docx.md（Hao Qin Qing Dan Tang 列下方「Bi Yu San: Hua Shi: Gan Cao: Qing Dai 6:1:1」）），三味都接回中藥庫 id，安全與交互作用可以走到葉子藥材。⚠️ 課件把碧玉散標為 Envoy（使），本卡既有值為「佐」，兩者不一致 —— 未擅改，列給 Ting 裁定。",
       "correction_note": "【2026-08-12 方中方結構 — Ting 裁定 2A】碧玉散那一列原本是 herb_id 空字串 + herb_zh「碧玉散」，被 F12 判為「中藥庫查無的藥」。依 docs/FORMULA_CARD_TEMPLATE.md §3.1 改為 formula-in-formula 型別：保留方名身分（formula_id formula.bi_yu_san），同時內嵌展開的三味葉子藥材。\n沒有刪任何東西：原有的 in_formula_zh/_en、actions_zh/_en、role_reason_zh、劑量、role_zh 全部原封保留，in_formula 兩語只在句尾追加「這是成方不是單味藥」與比例。\n被取代的兩個值已保存於此：name_zh 原值「Bi Yu San」（中文欄位放羅馬拼音，憲法紅線五；拼音仍在本列 pinyin 欄），herb_id 原值為空字串「」（空字串不是連結，改用 formula_id）。\n方劑庫目前沒有 formula.bi_yu_san 這張卡，故 id 標 formula_id_status = reserved_pending_card，不留空、不假裝已解析。\n⚠️ 待 Ting 裁定：curriculum/Formulations Summary Chart 把碧玉散標為 Envoy（使），本卡既有 role_zh 為「佐」。本次不動既有值。\n【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 1 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：青蒿（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。\n【2026-08-12 紅線五：組成 _zh 拉丁拼寫改中文】第7味 name_zh「Chi Fu Ling」→「赤茯苓」。拼音原值仍在各列 pinyin 欄；中文名依該列 herb_id 於 herb_canon_shortlist 的中文名＋原拼寫的炮製前綴／部位後綴（炒、酒炒、制、穗、梢…）對照填入。\n【2026-08-12 樣板句清除 — 錯置的甘草功效（變體）】以下 1 味藥的所列欄位原值逐字同為「和中健脾，調和諸藥。」（原文保存於此）：赤茯苓（actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。",
       "source_classic": "《重訂通俗傷寒論》",
       "modifications_zh": [

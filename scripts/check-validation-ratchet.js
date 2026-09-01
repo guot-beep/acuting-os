@@ -164,6 +164,22 @@ const RATCHETED = [
     // 一邊都是丟內容,補齊需要中醫判斷 —— 屬 fill 線,不是機械修得掉的。
     doc: "docs/HERB_CARD_TEMPLATE.md",
   },
+  {
+    key: "curriculum_anchors",
+    script: "scripts/validate-curriculum-anchor-resolution.js",
+    args: ["--json"],
+    extract: (out) => JSON.parse(out).defects,
+    detail: (out) => JSON.parse(out).by_code,
+    // 2026-08-31 接線。32 筆:A2 行號超出 19 + A1 檔案不存在 6 + A3 頁碼超出 7。
+    // 根因不是有人引錯 —— `ebef2401` 重新抽取了兩個 Chenoweth 課件
+    // (mm_abbreviated 9006→3474 行、herb_functions 2281→1010 行),在那之前寫的
+    // `#L` 錨點一次全失效。這 19 筆是「超界所以看得出來」的部分;另有 28 筆仍落在
+    // 新檔範圍內、卻指到不相干段落,這支**抓不到**(pair.lu_dou__gan_cao 即此型,
+    // 靠人回去讀才發現)。所以天花板降到 0 也不等於錨點全對。
+    // A1 的 6 筆是純改名/搬家(TRIPLE BURNER→SAN JIAO 5 筆、Formulations Summary
+    // Chart 少一層目錄 1 筆),機械修得掉;A2/A3 要等課件檔本身的處置裁定。
+    doc: "docs/AI_CONSTITUTION.md",
+  },
   // retired_id_references sat here one day (2026-08-26, ceiling 10) while the
   // D21 herb_pairs residue and D16 pattern re-references were redirected and
   // Ting ruled on 敗毒散→人參敗毒散 (D22). Baseline hit 0 the same day — it
