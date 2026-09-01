@@ -538,6 +538,15 @@ jobs:
       - name: localStorage→SQLite mapping coverage
         run: node scripts/validate-sqlite-mapping-coverage.js
 
+      # 上面那支問「對照表有沒有漏登欄位」,這支問「那些規則跑不跑得動」——
+      # 兩個不同的問題。對照表維護得再好,沒跑過就只是一份文件;真正的遷移日
+      # 才發現規則錯,是最貴的時機。用內附的去識別化 fixture 實際建一次
+      # SQLite、寫進去、再讀回來逐欄比對,並印出 105 條規則的互斥分桶
+      # (自動 70 / 逐條 28 / 有值就停 2 / 刻意不做 5,合計必須等於 105)。
+      # 寫到 os.tmpdir(),不碰 repo,也不需要真實臨床資料。
+      - name: SQLite shadow export runs (mapping rules actually execute)
+        run: node scripts/export-clinical-to-sqlite.js --self-test
+
       # D12 契約凍結(2026-09-01 生效,gate 2026-08-27 先上):schema.sql /
       # 匯出格式 / localStorage key 一律 additive-only。改名造成的損失是靜默的
       # —— 舊備份還原時那個欄位就是不見,沒有錯誤訊息。負控 6/6 已驗
