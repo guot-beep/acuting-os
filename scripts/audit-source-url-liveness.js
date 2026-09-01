@@ -10,6 +10,8 @@
  * Usage:
  *   node scripts/audit-source-url-liveness.js --verify-ledger
  *   node scripts/audit-source-url-liveness.js --verify-ledger --scope bundle
+ *   node scripts/audit-source-url-liveness.js --write-disposition
+ *   node scripts/audit-source-url-liveness.js --verify-disposition
  *   node scripts/audit-source-url-liveness.js --self-test
  *   node scripts/audit-source-url-liveness.js --verify-fill --base <BASE_SHA>
  */
@@ -29,6 +31,15 @@ const LEDGER_11B_PATH = path.join(ROOT, 'data/audits/canon_source_url_liveness_2
 const LEDGER_11A_PATH = path.join(ROOT, 'data/audits/toxic_herb_safety_url_liveness_2026-08-27.json');
 const LEDGER_11C_PATH = path.join(ROOT, 'data/audits/herb_source_url_fill_2026-08-27.json');
 const LEDGER_11E_PATH = path.join(ROOT, 'data/audits/bundle_url_liveness_2026-08-28.json');
+const TUNG_DISPOSITION_PATH = path.join(ROOT, 'data/audits/tung_dead_link_disposition_2026-08-28.json');
+const TUNG_DISPOSITION_REPORT_PATH = path.join(ROOT, 'docs/audits/TUNG_DEAD_LINK_DISPOSITION_2026-08-28.md');
+
+const ACUPOINT_SOURCE_PATHS = [
+  path.join(ROOT, 'data/acupoints/361.json'),
+  path.join(ROOT, 'data/acupoints/extra_points.json')
+];
+
+const TUNG_HOST_FRAGMENT = 'mastertungacupuncture';
 
 const TOXIC_HERBS_EXPECTED = [
   { id: 'herb.xiong_huang', name_zh: '雄黃', url: 'https://www.americandragon.com/Individualherbsupdate/XiongHuang.html' },
@@ -144,6 +155,389 @@ function extractBundleUrls(generatedDir = GENERATED_DIR) {
     distinctHosts,
     fileCount: files.length
   };
+}
+
+function normalizeExtractedUrl(raw) {
+  const trimmed = raw.replace(/[,\;\"\'\)\}\]]+$/, '');
+  try {
+    return new URL(trimmed).href;
+  } catch (e) {
+    return null;
+  }
+}
+
+function formatFieldPath(relativeFile, card, segments) {
+  const selectorKey = card.id ? 'id' : 'code';
+  const selectorValue = card.id || card.code;
+  let suffix = '';
+  for (const segment of segments) {
+    suffix += typeof segment === 'number' ? `[${segment}]` : `${suffix ? '.' : ''}${segment}`;
+  }
+  return `${relativeFile}[${selectorKey}=${selectorValue}]${suffix ? `.${suffix}` : ''}`;
+}
+
+function extractUrlsFromValue(value, segments, relativeFile, card, occurrences) {
+  if (typeof value === 'string') {
+    const matches = value.match(BUNDLE_URL_REGEX) || [];
+    for (const raw of matches) {
+      const url = normalizeExtractedUrl(raw);
+      if (!url) continue;
+      occurrences.push({
+        url,
+        field_path: formatFieldPath(relativeFile, card, segments)
+      });
+    }
+    return;
+  }
+
+  if (Array.isArray(value)) {
+    value.forEach((item, index) => {
+      extractUrlsFromValue(item, segments.concat(index), relativeFile, card, occurrences);
+    });
+    return;
+  }
+
+  if (value && typeof value === 'object') {
+    for (const [key, item] of Object.entries(value)) {
+      extractUrlsFromValue(item, segments.concat(key), relativeFile, card, occurrences);
+    }
+  }
+}
+
+function loadAcupointCards(customPaths = ACUPOINT_SOURCE_PATHS) {
+  const cards = [];
+  const seenIds = new Set();
+
+  for (const sourcePath of customPaths) {
+    const relativeFile = path.relative(ROOT, sourcePath).replace(/\\/g, '/');
+    const raw = JSON.parse(fs.readFileSync(sourcePath, 'utf8'));
+    const records = toRecordList(raw);
+
+    for (const card of records) {
+      const cardId = card.id || card.code;
+      if (!cardId) {
+        throw new Error(`${relativeFile} contains an acupoint record without id/code`);
+      }
+      if (seenIds.has(cardId)) {
+        throw new Error(`Duplicate acupoint card id across canonical sources: ${cardId}`);
+      }
+      seenIds.add(cardId);
+
+      const occurrences = [];
+      extractUrlsFromValue(card, [], relativeFile, card, occurrences);
+      cards.push({
+        card_id: cardId,
+        card_code: card.code || cardId,
+        card_name_zh: card.name_zh || card.chinese || card.nameZh || '',
+        source_file: relativeFile,
+        occurrences
+      });
+    }
+  }
+
+  return cards;
+}
+
+function dispositionSummary(cards, deadLedgerMap, ledgerMap) {
+  const affectedCards = cards.filter(card =>
+    card.occurrences.some(occurrence => deadLedgerMap.has(occurrence.url))
+  );
+  const deadOccurrences = affectedCards.flatMap(card =>
+    card.occurrences.filter(occurrence => deadLedgerMap.has(occurrence.url))
+  );
+  const liveOccurrences = affectedCards.flatMap(card =>
+    card.occurrences.filter(occurrence => ledgerMap.get(occurrence.url)?.verdict === 'OK')
+  );
+  const allLinksDeadCardCount = affectedCards.filter(card =>
+    card.occurrences.length > 0 &&
+    card.occurrences.every(occurrence => ledgerMap.get(occurrence.url)?.verdict === 'DEAD_404')
+  ).length;
+  const deadRecords = Array.from(deadLedgerMap.values());
+
+  return {
+    affected_card_count: affectedCards.length,
+    all_links_dead_card_count: allLinksDeadCardCount,
+    distinct_dead_url_count: deadLedgerMap.size,
+    dead_url_occurrence_count: deadOccurrences.length,
+    live_url_occurrence_count: liveOccurrences.length,
+    dead_image_url_count: deadRecords.filter(record => record.is_image).length,
+    dead_reference_url_count: deadRecords.filter(record => !record.is_image).length,
+    dead_image_occurrence_count: deadOccurrences.filter(occurrence => deadLedgerMap.get(occurrence.url).is_image).length,
+    dead_reference_occurrence_count: deadOccurrences.filter(occurrence => !deadLedgerMap.get(occurrence.url).is_image).length,
+    same_site_candidate_verified_count: 0,
+    same_site_candidate_null_count: affectedCards.length,
+    same_site_candidate_live_checks_attempted: 0
+  };
+}
+
+function buildTungDisposition(ledger11e, cards = loadAcupointCards()) {
+  const ledgerRecords = Array.isArray(ledger11e.records) ? ledger11e.records : [];
+  const ledgerMap = new Map(ledgerRecords.map(record => [record.url, record]));
+  const deadLedgerMap = new Map(
+    ledgerRecords
+      .filter(record => record.host.includes(TUNG_HOST_FRAGMENT) && record.http_status === 404)
+      .map(record => [record.url, record])
+  );
+  const affectedCards = cards.filter(card =>
+    card.occurrences.some(occurrence => deadLedgerMap.has(occurrence.url))
+  );
+
+  return {
+    meta: {
+      audit_type: 'tung_dead_link_disposition',
+      source_ledger: 'data/audits/bundle_url_liveness_2026-08-28.json',
+      source_files: ACUPOINT_SOURCE_PATHS.map(sourcePath => path.relative(ROOT, sourcePath).replace(/\\/g, '/')),
+      target_host: 'www.mastertungacupuncture.org',
+      target_http_status: 404,
+      generated_at: new Date().toISOString(),
+      count_semantics: {
+        distinct_dead_url_count: 'Distinct 404 URLs in the Task 11E ledger.',
+        dead_count: 'Source-field occurrences in this card; one URL repeated in multiple fields is counted once per field_path.',
+        live_count: 'Source-field occurrences in this card whose Task 11E verdict is OK.',
+        all_links_dead: 'True only when every ledger-scanned URL occurrence in the source card has verdict DEAD_404.'
+      },
+      same_site_candidate_policy: 'No candidate is inferred from URL patterns. A non-null candidate requires an observed HTTP 200 and fetched_at.'
+    },
+    summary: dispositionSummary(cards, deadLedgerMap, ledgerMap),
+    cards: affectedCards.map(card => {
+      const deadUrls = card.occurrences
+        .filter(occurrence => deadLedgerMap.has(occurrence.url))
+        .map(occurrence => ({
+          url: occurrence.url,
+          is_image: deadLedgerMap.get(occurrence.url).is_image,
+          field_path: occurrence.field_path
+        }))
+        .sort((a, b) => a.field_path.localeCompare(b.field_path) || a.url.localeCompare(b.url));
+      const liveCount = card.occurrences.filter(
+        occurrence => ledgerMap.get(occurrence.url)?.verdict === 'OK'
+      ).length;
+      const allLinksDead = card.occurrences.length > 0 && card.occurrences.every(
+        occurrence => ledgerMap.get(occurrence.url)?.verdict === 'DEAD_404'
+      );
+
+      return {
+        card_id: card.card_id,
+        card_name_zh: card.card_name_zh,
+        dead_urls: deadUrls,
+        dead_count: deadUrls.length,
+        live_count: liveCount,
+        all_links_dead: allLinksDead,
+        same_site_candidate: null
+      };
+    }).sort((a, b) => a.card_id.localeCompare(b.card_id, undefined, { numeric: true }))
+  };
+}
+
+function verifyTungDisposition(disposition, ledger11e, cards = loadAcupointCards()) {
+  const errors = [];
+  const ledgerRecords = Array.isArray(ledger11e.records) ? ledger11e.records : [];
+  const ledgerMap = new Map(ledgerRecords.map(record => [record.url, record]));
+  const deadLedgerMap = new Map(
+    ledgerRecords
+      .filter(record => record.host.includes(TUNG_HOST_FRAGMENT) && record.http_status === 404)
+      .map(record => [record.url, record])
+  );
+  const cardMap = new Map(cards.map(card => [card.card_id, card]));
+  const expected = buildTungDisposition(ledger11e, cards);
+  const rows = Array.isArray(disposition?.cards) ? disposition.cards : [];
+  const listedUrls = new Set();
+  const listedOccurrences = new Set();
+  const seenCards = new Set();
+
+  if (!disposition || typeof disposition !== 'object') {
+    return { ok: false, errors: ['Disposition is missing or not an object'] };
+  }
+  if (!disposition.summary || typeof disposition.summary !== 'object') {
+    errors.push('Disposition summary is missing');
+  }
+  if (!Array.isArray(disposition.cards)) {
+    errors.push('Disposition cards must be an array');
+  }
+
+  for (const row of rows) {
+    if (!row.card_id || !cardMap.has(row.card_id)) {
+      errors.push(`Disposition references nonexistent acupoint card_id: ${row.card_id || '(missing)'}`);
+      continue;
+    }
+    if (seenCards.has(row.card_id)) {
+      errors.push(`Disposition contains duplicate card row: ${row.card_id}`);
+    }
+    seenCards.add(row.card_id);
+
+    const card = cardMap.get(row.card_id);
+    if (row.card_name_zh !== card.card_name_zh) {
+      errors.push(`Card ${row.card_id} card_name_zh mismatch: expected ${card.card_name_zh}, got ${row.card_name_zh}`);
+    }
+    if (!Array.isArray(row.dead_urls)) {
+      errors.push(`Card ${row.card_id} dead_urls must be an array`);
+      continue;
+    }
+    if (row.dead_count !== row.dead_urls.length) {
+      errors.push(`Card ${row.card_id} dead_count mismatch: expected ${row.dead_urls.length}, got ${row.dead_count}`);
+    }
+
+    const sourceOccurrenceSet = new Set(card.occurrences.map(item => `${item.url}\u0000${item.field_path}`));
+    for (const item of row.dead_urls) {
+      if (!item || typeof item.url !== 'string' || typeof item.field_path !== 'string') {
+        errors.push(`Card ${row.card_id} contains a malformed dead_urls entry`);
+        continue;
+      }
+      const ledgerRecord = deadLedgerMap.get(item.url);
+      if (!ledgerRecord) {
+        errors.push(`Card ${row.card_id} contains phantom or non-404 URL: ${item.url}`);
+        continue;
+      }
+      if (item.is_image !== ledgerRecord.is_image) {
+        errors.push(`Card ${row.card_id} is_image mismatch for ${item.url}`);
+      }
+      const occurrenceKey = `${item.url}\u0000${item.field_path}`;
+      if (!sourceOccurrenceSet.has(occurrenceKey)) {
+        errors.push(`Card ${row.card_id} field_path does not resolve to the listed URL: ${item.field_path}`);
+      }
+      if (listedOccurrences.has(`${row.card_id}\u0000${occurrenceKey}`)) {
+        errors.push(`Card ${row.card_id} duplicates dead URL occurrence: ${item.url} @ ${item.field_path}`);
+      }
+      listedOccurrences.add(`${row.card_id}\u0000${occurrenceKey}`);
+      listedUrls.add(item.url);
+    }
+
+    const expectedRow = expected.cards.find(item => item.card_id === row.card_id);
+    if (!expectedRow) {
+      errors.push(`Card ${row.card_id} has no dead mastertung URL in canonical source data`);
+      continue;
+    }
+    if (row.live_count !== expectedRow.live_count) {
+      errors.push(`Card ${row.card_id} live_count mismatch: expected ${expectedRow.live_count}, got ${row.live_count}`);
+    }
+    if (row.all_links_dead !== expectedRow.all_links_dead) {
+      errors.push(`Card ${row.card_id} all_links_dead mismatch: expected ${expectedRow.all_links_dead}, got ${row.all_links_dead}`);
+    }
+    if (row.same_site_candidate !== null) {
+      const candidate = row.same_site_candidate;
+      let candidateHost = '';
+      try {
+        candidateHost = new URL(candidate?.url).hostname;
+      } catch (e) {}
+      if (!candidate || candidate.http_status !== 200 || !candidate.fetched_at || !candidateHost.includes(TUNG_HOST_FRAGMENT)) {
+        errors.push(`Card ${row.card_id} has an unverified same_site_candidate`);
+      }
+    }
+  }
+
+  for (const url of deadLedgerMap.keys()) {
+    if (!listedUrls.has(url)) {
+      errors.push(`Disposition is missing dead ledger URL: ${url}`);
+    }
+  }
+  for (const url of listedUrls) {
+    if (!deadLedgerMap.has(url)) {
+      errors.push(`Disposition contains URL outside dead ledger set: ${url}`);
+    }
+  }
+
+  const expectedOccurrences = new Set();
+  for (const row of expected.cards) {
+    for (const item of row.dead_urls) {
+      expectedOccurrences.add(`${row.card_id}\u0000${item.url}\u0000${item.field_path}`);
+    }
+  }
+  for (const occurrence of expectedOccurrences) {
+    if (!listedOccurrences.has(occurrence)) {
+      errors.push(`Disposition is missing source-field occurrence: ${occurrence.replace(/\u0000/g, ' @ ')}`);
+    }
+  }
+  for (const occurrence of listedOccurrences) {
+    if (!expectedOccurrences.has(occurrence)) {
+      errors.push(`Disposition contains phantom source-field occurrence: ${occurrence.replace(/\u0000/g, ' @ ')}`);
+    }
+  }
+
+  const summaryKeys = Object.keys(expected.summary);
+  for (const key of summaryKeys) {
+    if (disposition.summary?.[key] !== expected.summary[key]) {
+      errors.push(`Summary ${key} mismatch: expected ${expected.summary[key]}, got ${disposition.summary?.[key]}`);
+    }
+  }
+
+  return {
+    ok: errors.length === 0,
+    errors,
+    distinctDeadUrlCount: deadLedgerMap.size,
+    affectedCardCount: expected.summary.affected_card_count,
+    deadOccurrenceCount: expected.summary.dead_url_occurrence_count,
+    allLinksDeadCardCount: expected.summary.all_links_dead_card_count
+  };
+}
+
+function writeTungDispositionReport(disposition) {
+  const summary = disposition.summary;
+  const allDeadCards = disposition.cards.filter(card => card.all_links_dead);
+  const lines = [
+    '# Task 11G — 董氏穴位死連結處置清單',
+    '',
+    `- 來源帳本：\`${disposition.meta.source_ledger}\``,
+    `- 受影響卡片：${summary.affected_card_count}`,
+    `- 整張卡 ledger-scanned 外部連結全為 404：${summary.all_links_dead_card_count}`,
+    `- Dead distinct URLs：${summary.distinct_dead_url_count}（圖片 ${summary.dead_image_url_count}／參考連結 ${summary.dead_reference_url_count}）`,
+    `- 原始欄位 occurrences：${summary.dead_url_occurrence_count}（圖片 ${summary.dead_image_occurrence_count}／參考連結 ${summary.dead_reference_occurrence_count}）`,
+    `- 同卡仍為 OK 的原始欄位 occurrences：${summary.live_url_occurrence_count}`,
+    `- \`same_site_candidate\`：已驗證 ${summary.same_site_candidate_verified_count}；留 null ${summary.same_site_candidate_null_count}；本輪 live candidate checks ${summary.same_site_candidate_live_checks_attempted}`,
+    '',
+    '## 全連結 404 卡片',
+    ''
+  ];
+
+  if (allDeadCards.length === 0) {
+    lines.push('- 無');
+  } else {
+    for (const card of allDeadCards) {
+      lines.push(`- \`${card.card_id}\` ${card.card_name_zh}：dead occurrences ${card.dead_count}；live occurrences ${card.live_count}`);
+    }
+  }
+
+  lines.push(
+    '',
+    '## 計數與處置邊界',
+    '',
+    '- JSON 一張卡一列；同一 URL 若出現在同卡多個原始欄位，每個 `field_path` 各留一筆，避免後續修復漏欄位。',
+    '- `summary.distinct_dead_url_count` 對應 Task 11E ledger 的 URL 聯集；occurrence 數則對應原始 JSON 欄位。',
+    '- 本輪沒有推測替代網址，也沒有修改任何穴位 canonical JSON。',
+    '- 驗證：`node scripts/audit-source-url-liveness.js --verify-disposition`。',
+    ''
+  );
+
+  fs.writeFileSync(TUNG_DISPOSITION_REPORT_PATH, lines.join('\n'), 'utf8');
+}
+
+function runWriteDisposition() {
+  if (!fs.existsSync(LEDGER_11E_PATH)) {
+    console.error(`FAIL: Bundle ledger not found at ${LEDGER_11E_PATH}`);
+    process.exit(1);
+  }
+  const ledger11e = JSON.parse(fs.readFileSync(LEDGER_11E_PATH, 'utf8'));
+  const disposition = buildTungDisposition(ledger11e);
+  fs.writeFileSync(TUNG_DISPOSITION_PATH, `${JSON.stringify(disposition, null, 2)}\n`, 'utf8');
+  writeTungDispositionReport(disposition);
+  console.log(`WROTE ${path.relative(ROOT, TUNG_DISPOSITION_PATH)} (${disposition.summary.affected_card_count} cards, ${disposition.summary.distinct_dead_url_count} distinct dead URLs, ${disposition.summary.dead_url_occurrence_count} source-field occurrences).`);
+  console.log(`WROTE ${path.relative(ROOT, TUNG_DISPOSITION_REPORT_PATH)}.`);
+}
+
+function runVerifyDisposition() {
+  console.log('=== Verifying Task 11G Tung Dead-Link Disposition ===\n');
+  if (!fs.existsSync(LEDGER_11E_PATH) || !fs.existsSync(TUNG_DISPOSITION_PATH)) {
+    console.error('FAIL: Task 11E ledger or Task 11G disposition file is missing.');
+    process.exit(1);
+  }
+  const ledger11e = JSON.parse(fs.readFileSync(LEDGER_11E_PATH, 'utf8'));
+  const disposition = JSON.parse(fs.readFileSync(TUNG_DISPOSITION_PATH, 'utf8'));
+  const result = verifyTungDisposition(disposition, ledger11e);
+  if (!result.ok) {
+    console.error(`FAIL — Task 11G disposition has ${result.errors.length} error(s):`);
+    result.errors.slice(0, 50).forEach(error => console.error(`  - ${error}`));
+    if (result.errors.length > 50) console.error(`  - ... ${result.errors.length - 50} more`);
+    process.exit(1);
+  }
+  console.log(`PASS — ${result.distinctDeadUrlCount}/${result.distinctDeadUrlCount} distinct dead URLs mapped to ${result.affectedCardCount} cards and ${result.deadOccurrenceCount} exact source-field occurrences; ${result.allLinksDeadCardCount} all-links-dead card(s).`);
 }
 
 function verifyCanonLedger(ledger11b, datasetUrlSet) {
@@ -469,13 +863,20 @@ function verifyFillData(rawBase, rawHead, ledger11c) {
 function runSelfTest() {
   console.log('=== [SELF-TEST: ADVERSARIAL NEGATIVE CONTROLS] ===\n');
 
-  if (!fs.existsSync(LEDGER_11B_PATH) || !fs.existsSync(LEDGER_11A_PATH)) {
+  if (
+    !fs.existsSync(LEDGER_11B_PATH) ||
+    !fs.existsSync(LEDGER_11A_PATH) ||
+    !fs.existsSync(LEDGER_11E_PATH) ||
+    !fs.existsSync(TUNG_DISPOSITION_PATH)
+  ) {
     console.error('Cannot run self-test: ledgers must exist on disk first.');
     process.exit(1);
   }
 
   const base11b = JSON.parse(fs.readFileSync(LEDGER_11B_PATH, 'utf8'));
   const base11a = JSON.parse(fs.readFileSync(LEDGER_11A_PATH, 'utf8'));
+  const base11e = JSON.parse(fs.readFileSync(LEDGER_11E_PATH, 'utf8'));
+  const base11g = JSON.parse(fs.readFileSync(TUNG_DISPOSITION_PATH, 'utf8'));
   const nominalUrlSet = new Set(base11b.records.map(r => r.url));
 
   let passCount = 0;
@@ -581,6 +982,34 @@ function runSelfTest() {
   const resF10 = verifyBundleLedger(fakeBundleIncomplete, bundleInfo);
   assertFixture('Bundle ledger missing one URL -> verify fails (FAIL)', false, resF10);
 
+  // Fixture 11: Task 11G disposition omits one distinct dead URL -> MUST FAIL
+  const fixture11_11g = JSON.parse(JSON.stringify(base11g));
+  const omittedUrl = fixture11_11g.cards[0].dead_urls[0].url;
+  for (const card of fixture11_11g.cards) {
+    card.dead_urls = card.dead_urls.filter(item => item.url !== omittedUrl);
+    card.dead_count = card.dead_urls.length;
+  }
+  const resF11 = verifyTungDisposition(fixture11_11g, base11e);
+  assertFixture('Task 11G disposition missing one dead URL -> verify fails (FAIL)', false, resF11);
+
+  // Fixture 12: Task 11G disposition references a nonexistent card -> MUST FAIL
+  const fixture12_11g = JSON.parse(JSON.stringify(base11g));
+  fixture12_11g.cards.push({
+    card_id: 'NONEXISTENT-TUNG-CARD',
+    card_name_zh: '不存在的穴位',
+    dead_urls: [],
+    dead_count: 0,
+    live_count: 0,
+    all_links_dead: false,
+    same_site_candidate: null
+  });
+  const resF12 = verifyTungDisposition(fixture12_11g, base11e);
+  assertFixture('Task 11G disposition with nonexistent card_id -> verify fails (FAIL)', false, resF12);
+
+  // Fixture 13: Nominal Task 11G disposition -> MUST PASS
+  const resF13 = verifyTungDisposition(base11g, base11e);
+  assertFixture('Nominal Task 11G disposition -> verify succeeds (PASS)', true, resF13);
+
   console.log(`\nSelf-Test Results: ${passCount}/${testCount} fixtures behaving as expected.`);
   if (passCount === testCount) {
     console.log('[SELF-TEST SUCCESS] All adversarial fixtures properly triggered rejection.');
@@ -597,6 +1026,10 @@ const isBundleScope = args.includes('--scope') && args[args.indexOf('--scope') +
 
 if (args.includes('--self-test')) {
   runSelfTest();
+} else if (args.includes('--write-disposition')) {
+  runWriteDisposition();
+} else if (args.includes('--verify-disposition')) {
+  runVerifyDisposition();
 } else if (args.includes('--verify-fill')) {
   const baseIdx = args.indexOf('--base');
   const baseSha = baseIdx !== -1 && args[baseIdx + 1] ? args[baseIdx + 1] : null;
@@ -660,6 +1093,6 @@ if (args.includes('--self-test')) {
   if (!allOk) process.exit(1);
   console.log('\nPASS — All source URL liveness ledgers verified.');
 } else {
-  console.log('Usage: node scripts/audit-source-url-liveness.js [--verify-ledger [--scope bundle] | --self-test | --verify-fill --base <SHA>]');
+  console.log('Usage: node scripts/audit-source-url-liveness.js [--verify-ledger [--scope bundle] | --write-disposition | --verify-disposition | --self-test | --verify-fill --base <SHA>]');
   process.exit(1);
 }
