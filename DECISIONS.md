@@ -660,9 +660,17 @@ fail-loud 持久層 + v2 export + Git 外備份已覆蓋單機單人期的資料
 >   「凍結例外」入庫;理由 = 兩本簿子並存期間必須一眼看出正在寫哪一本,這是安全資訊。
 > - 驗證:`scripts/test-clinical-sqlite-service.js` 38 條(含負控)CI blocking;隔離服務上用真表單
 >   建病例 rev 0→1、投影 `cases=1 patients=1`、F5 仍在、非服務來源無徽章。
-> - 操作:`docs/SQLITE_RUNBOOK_2026-09-01.md`。狀態:plan ✅ shadow ✅ verify ✅ **pointer ✅ rollback ✅**。
-> - Ting 2026-09-01 晚**回報**真實資料遷移完成(五個核對 ✓、徽章 rev 1)。Claude 在跑 session 的機器(TT)上
->   找不到對應 .db / 服務 / 今日匯出檔,推定在另一台電腦執行;**Claude 尚未核對**。手機仍 localStorage(B2 未解)。
+> - 操作:`docs/SQLITE_RUNBOOK_2026-09-01.md`。狀態:plan ✅ shadow ✅ verify ✅ **pointer 🟡 已實作、未採用** rollback n/a(從未切換)。
+> - Ting 2026-09-01 晚先**回報**遷移完成(五個核對 ✓、徽章 rev 1);Claude 在同一台機器(TT,她確認就是這台)上
+>   找不到 .db / 服務 / 今日匯出檔 → **遷移並未發生**。Claude 隨後用她的啟動器開了正式服務準備代她匯入,
+>   她在匯入前裁定:**「我要用網頁那個 Cloudflare 那個」,不用 localhost** → 服務停掉、空簿子(revision 0)刪除,
+>   **病例一直在 workers.dev 的 localStorage,未被動過**。
+> - **教訓(寫給下一個要做這件事的人)**:pointer = 網址來源這個設計,等於要求使用者換網址;應在動工前用一句話
+>   確認「妳願意改開 127.0.0.1 嗎?」。Ting 對「搬 SQLite」的心智模型是「同一個網頁,後面換資料庫」,而且她隨後說明
+>   目的:「這樣手機跟電腦去那個網址才會同步阿」「之前我們說好的就是 Cloudflare 那個做為病例登入的」——
+>   **她要的一直是多裝置共用,即 D1**;本機 SQLite 從一開始就不是她要的東西(runbook 的 B2 警語寫了但沒被讀進去)。
+>   剩下兩條路都是裁定:(a) 同網址跨源連本機服務(桌機限定;CORS + Chrome 本機網路權限,同步 XHR 能否過權限提示未驗證),
+>   (b) Cloudflare D1(手機電腦共用;前提 B3 上鎖 + B2 隱私裁定)。已列入 TING_PENDING_RULINGS B2。
 > - 2026-09-01 晚加自動備份:服務啟動 / 關閉 / 每 6h `VACUUM INTO` 到 `backups/`(留 14 份,revision 沒變略過);
 >   `--backup` 手動。同碟備份不擋硬碟死。
 

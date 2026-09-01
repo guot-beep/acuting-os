@@ -1,5 +1,15 @@
 # SQLite 遷移操作流程(2026-09-01 晚,Ting 裁定「現在搬」)
 
+> ## ⛔ 2026-09-01 22:50 停用 —— 不要照這份做
+> Ting 看到流程後裁定:**「我之後要用 localhost 登入病例???? NONONO 我要用網頁那個 Cloudflare 那個」**。
+> 這份流程的前提是桌機改開 `127.0.0.1:8785`,她不要。所以:
+> - **病例照舊在 workers.dev 的 localStorage,沒動、沒丟、照常用。**
+> - 下面的服務 / adapter / 匯入工具都已實作並測過(43 條),但**未採用**。Claude 當晚開過一次正式服務,
+>   確認簿子是空的(revision 0)後已停掉並刪除。
+> - 下一步是裁定,不是工程:同一個網址背後要接 SQLite 有兩條路 ——
+>   (a) 網頁跨源連本機服務(桌機限定,需 CORS + Chrome 本機網路權限,未驗證);
+>   (b) Cloudflare D1(手機電腦共用,需先把網站上鎖 B3 + 一次隱私裁定 B2)。見 TING_PENDING_RULINGS B2。
+
 寫給 Ting,不是寫給 agent。**六步,十五分鐘,隨時可以回頭。**
 
 ---
@@ -137,8 +147,8 @@ node C:\Projects\acuting-sqlite-tools\scripts\clinical-sqlite-service.js --statu
 | plan | ✅ |
 | shadow | ✅ 影子匯出(下午) |
 | verify | ✅ Ting 真實病例 1 筆,5/5 |
-| **pointer** | ✅ **2026-09-01 晚**(本文件)。Ting 2026-09-01 晚**回報**完成(五個核對 ✓、徽章 rev 1);Claude 在 TT 這台機器上找不到對應的 .db / 服務,推定在另一台電腦執行,**尚未由 Claude 核對** |
-| rollback | ✅ 設計即回滾:開回 workers.dev;localStorage 從未被寫 |
+| **pointer** | 🟡 **已實作、未採用**(2026-09-01 晚)。Ting 先回報「完成」,追查後確認機器上無任何痕跡(未發生);隨後她裁定要用 Cloudflare 網址、不用 localhost,本流程停用 |
+| rollback | ✅(從未離開)localStorage 從未被寫,workers.dev 一直是正本 |
 
 ---
 
