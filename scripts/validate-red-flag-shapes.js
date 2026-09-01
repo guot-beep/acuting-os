@@ -106,7 +106,10 @@ const stripComments = (s) =>
   s.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/(^|[^:])\/\/[^\n]*/g, "$1");
 const code = stripComments(src);
 
-const rowsStart = code.indexOf("const redFlagRows");
+/* 用正規式配「宣告」而不是 indexOf 子字串 —— `const redFlagRowsRenamed` 也
+ * 含有 `const redFlagRows`,第一版因此在「函式被改名」的注入下照樣報綠。 */
+const rowsDecl = /const\s+redFlagRows\s*=/.exec(code);
+const rowsStart = rowsDecl ? rowsDecl.index : -1;
 const helperStart = code.indexOf("const RF_URGENCY_LABEL");
 /* 切片要從輔助函式(rfText/rfTitle)開始 —— 它們定義在 redFlagRows **之前**,
  * 第一版從 `const redFlagRows` 切,把讀 finding 的那幾行切在外面,於是在
