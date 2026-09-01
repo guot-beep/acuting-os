@@ -54151,7 +54151,7 @@
         },
         {
           "name": "📘 課件 十八反 Mnemonics",
-          "url": "curriculum/herbs/Mnemonics for the 18 Incompatibilities in TCM.md#L159",
+          "url": "curriculum/herbs/Mnemonics for the 18 Incompatibilities in TCM.md#L35-L38",
           "scope": "安全:南沙參列於藜蘆反的「諸參」之中"
         },
         {
@@ -54229,7 +54229,7 @@
         ],
         "contraindications_zh": [
           "curriculum/herbs/Materia Medica III – Yin-tonifying Herbs.md#L170-L175",
-          "curriculum/herbs/Mnemonics for the 18 Incompatibilities in TCM.md#L159"
+          "curriculum/herbs/Mnemonics for the 18 Incompatibilities in TCM.md#L35-L38"
         ],
         "contraindications_en": [
           "curriculum/herbs/Materia Medica III – Yin-tonifying Herbs.md#L170-L175"
@@ -54243,7 +54243,7 @@
         ],
         "safety_flags": [
           "curriculum/herbs/Materia Medica III – Yin-tonifying Herbs.md#L170-L175",
-          "curriculum/herbs/Mnemonics for the 18 Incompatibilities in TCM.md#L159"
+          "curriculum/herbs/Mnemonics for the 18 Incompatibilities in TCM.md#L35-L38"
         ],
         "aliases_zh": [
           "https://cloudtcm.com/herb/8058"
@@ -54258,14 +54258,23 @@
         "clinical_use_note": [
           "curriculum/herbs/Materia Medica III – Yin-tonifying Herbs.md#L129-L179",
           "curriculum/formulas/臺灣中藥典第四版英文版.md#L25306-L25313",
-          "curriculum/herbs/Mnemonics for the 18 Incompatibilities in TCM.md#L159"
+          "curriculum/herbs/Mnemonics for the 18 Incompatibilities in TCM.md#L35-L38"
         ],
         "pharmaceutical_latin": [
           "curriculum/herbs/Pinyin & Latin Herb List.md#L152",
           "curriculum/formulas/臺灣中藥典第四版英文版.md#L25306-L25313"
         ]
       },
-      "card_grade": "template"
+      "card_grade": "template",
+      "import_artifacts": [
+        {
+          "original_field": "(所有引用此錨點的欄位)",
+          "text": "curriculum/herbs/Mnemonics for the 18 Incompatibilities in TCM.md#L159",
+          "reason": "還原課件抽取後行號位移:原 #L159 是對著 ebef2401 劣化版(176 行)寫的,還原成 pdfplumber 版(154 行)後超界。內容重新定位於 L35-L38(「Radix et Rhizoma Veratri (Li Lu) is incompatible with 8 herbs … Radix Adenophorae (Nan Sha Shen)」),正是本卡 contraindications_zh / safety_flags / clinical_use_note 需要的十八反出處。",
+          "moved_at": "2026-09-01",
+          "ruling": "Ting 2026-09-01：修好抽取器並重抽/還原課件"
+        }
+      ]
     },
     {
       "id": "herb.mai_men_dong",

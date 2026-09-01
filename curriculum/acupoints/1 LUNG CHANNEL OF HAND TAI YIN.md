@@ -1,181 +1,366 @@
-<!-- Extracted from curriculum/acupoints/1 LUNG CHANNEL OF HAND TAI YIN.pdf by scripts/extract-curriculum-md.js.
-     Text layer only — figures, tables-as-images and formatting are NOT here.
-     Cite as curriculum/acupoints/1 LUNG CHANNEL OF HAND TAI YIN.pdf#p<N> and verify against the original before
-     using any number (dose, depth, lab value) from it. -->
+# 1 LUNG CHANNEL OF HAND TAI YIN
+
+> 自動抽取自 `curriculum/acupoints/1 LUNG CHANNEL OF HAND TAI YIN.pdf`(engine: pdfplumber+xycut)。**這是原始文字,未經整理或校對。**
+> 
+> ℹ️ 原始版面是多欄,已依欄位逐欄由上往下重讀(XY-cut),分類歸屬正確。
+> 引用寫法:`curriculum/acupoints/1 LUNG CHANNEL OF HAND TAI YIN.pdf#p<頁碼>`。頁碼 = 下方 `## p.N` 標題。
+> ⚠️ PDF 的段落順序不等於視覺順序。跨欄位抓到的內容(尤其禁忌、劑量、
+> 針刺深度)一定要回頭確認它掛在哪一味藥/哪一個穴底下 —— 曾經在麻黃附近
+> 抓到的禁忌實際上屬於桂枝。
 
 ## p.1
 
+Name
+LU-1*
+Zhong Fu
+中府
+Central
+Treasury
+Association/Precautions
+Front Mu Point
+Never puncture deeply
+towards medial aspect.
+(Pneumothorax danger)
+LU-2 Local Point
+Yun Men
+雲門 Moxibustion Applicable
+Cloud Gate
+Never puncture deeply
+towards medial aspect.
+(Pneumothorax danger)
+LU-3* Window of Sky Point
+Tian Fu
+天府 Some Say No Moxa
+Celestial
+Storehouse
+LU-4 Local Point
+Xia Bai
+俠白 Moxibustion Applicable
+Guarding
+White
+LU-5*
+Chi Ze
+尺澤
+Cubit Marsh
+He Sea Point
+Water Point
+Some Say No Moxa
+Kimberly Chenoweth
 LUNG CHANNEL OF HAND TAI YIN
-
-           Name  Association/Precautions  Location/Needling Method               Functions & Actions                    Indications/Notes
-LU-1*            Front Mu Point                                                                                         � Cough, asthma, pain in the chest,
-Zhong Fu                                  � Latero-superior to the sternum, � Disseminates & Descends Lung Qi
-                 Moxibustion Applicable                                                                                   shoulder and back, fullness in the
-                                          1 cun below Yunmen (LU-2), at � Alleviates cough and wheezing                   chest
-                 Never puncture deeply                                                                                  � As the entry point of the Lung
-Central          towards medial aspect.   the level of the first intercostal     � Transforms phlegm                      Channel and the meeting point with
-Treasury         (Pneumothorax danger)    space, 6 cun lateral to the            � Clears heat                            the Spleen channel, LU-01 (Zhong
-                                          anterior midline                       � Regulates the water passages           Fu) is where the Ying Qi begins its
-                                                                                                                          cycle throughout the channels.
-                                                                                 � Descends Stomach Q                   � Lung Front MU Point - useful for all
-                                                                                                                          LU Issues, especially of Excess Type -
-                                          Needling Method:                                                                cough, wheezing, asthma.
-                                                                                                                        � LU disharmonies involving
-                                          � Obliquely 0.5-0.8 inch toward                                                 Phlegm/Heat excess arising from the
-                                                                                                                          middle warmer - vomiting, difficult
-                                          lateral aspect of chest                                                         ingestion
-                                                                                                                        � Cough, asthma, wheezing, shortness
-LU-2             Local Point              � In the superior lateral part of the  � Clears Lung heat                       of breath, dyspnea
-Yun Men                                     anterior thoracic wall, superior     � Disseminates & Descends Lung Qi      � Fullness and pain in the chest
-                 Moxibustion Applicable     to the coracoid process of           � Dispels anxiety and agitation        � Heat in the chest
-                                            scapula, in the depression of the    � Drains heat in the joints            � Pain and inflammation in the
-                 Never puncture deeply      infra-clavicular fossa, 6 cun                                                 shoulder and back
-Cloud Gate       towards medial aspect.     lateral to the anterior midline.                                            � Similar to LU 1 but used more often
-                 (Pneumothorax danger)                                                                                    as a local shoulder point.
-                                                                                                                        � Cough, asthma, tension in the chest.
-LU-3*            Window of Sky Point      Needling Method:                       � Clears Lung heat & descends Lung
-Tian Fu          Some Say No Moxa         � Obliquely 0.5-0.8 inch toward          Qi                                   � Asthma, wheezing, and cough
-                                                                                                                        � Hemoptysis, epistaxis, and thirst
-                                            lateral aspect of chest              � Cools blood and stops bleeding       � Pain in medial aspect of upper arm
-                                                                                 � Calms the corporeal soul (Po)        � Window of the Sky Point: regulates
-Celestial                                 � On the medial (anterior) aspect
-Storehouse                                  of the upper arm                                                              head/body Qi flow � goiters,
-                                                                                                                          swellings in the neck.
-                                          � 3 cun below end of axillary fold                                            � Lung related spirit disharmonies -
-                                          � On the radial side of m. biceps                                               stress induced asthma, poor
-                                                                                                                          memory, fuzzy/muddled thinking,
-                                            brachii                                                                       depression, "floating corpse ghost
-                                          Needling Method:                                                                talk", "melancholy crying ghost talk"
-                                          � Perpendicular 0.5-1.0 inch                                                    (classical descriptions possibly for
-                                                                                                                          seeing ghost, talking about ghosts
-LU-4             Local Point              � On medial aspect of upper arm        � Descends Lung Qi                       a/or people who have died, being in
-Xia Bai          Moxibustion Applicable   � 4 cun below the anterior end of      � Regulates Qi and blood in the chest    constant long-term grief about
-                                                                                                                          someone who has passed, etc.).
-                                            the axillary fold                    � Clears heat from Lung                � LV invading the LU pathologies.
-                                          � Or 5 cun above the cubital           � Descends rebellious Qi               � Generally for heat related issues
-Guarding                                                                         � Regulates the water passages           whether from excess or deficiency -
-White                                       crease,                              � Activates the channel                  nosebleed, coughing blood
-                                          � On the radial side of m. biceps      � Relaxes the sinews                   � Cough, fullness in the chest
-LU-5*            He Sea Point                                                    � Alleviates pain                      � Pain in medial aspect of the upper
-Chi Ze           Water Point                brachii.                                                                      arm
-                                          Needling Method:                                                              � May be used for cough, shortness of
-                 Some Say No Moxa         � Perpendicular 0.5-1.0 inch                                                    breath, chest pain, heart pain
-                                          � On cubital crease
-Cubit Marsh                               � In depression on radial side of                                             � Cough, hemoptysis, asthma, sore
-                                                                                                                          throat, upper body edema
-                                            biceps brachii tendon
-                                          � Located with elbow slightly                                                 � Afternoon fever, eneuresis
-                                                                                                                        � Fullness in the chest, infantile
-                                            flexed
-                                                                                                                          convulsions, mastitis
-                                          Needling Method:                                                              � He Sea Point: Useful for counterflow
-                                          � Perpendicular 0.5-1.0 inch
-                                                                                                                          Qi, diarrhea, hot skin conditions,
-                                                                                                                          phlegm-heat excess
-                                                                                                                        � Acute/chronic or Exterior/Interior
-                                                                                                                          Conditions
-                                                                                                                        � Local point for elbow: tendinitis,
-                                                                                                                          tennis elbow, spasmodic pain of the
-                                                                                                                          elbow and arm
-                                                                                                                        � Classically noted for 5 types of
-                                                                                                                          Lumbar Pain, possibly upper body
-                                                                                                                          equivalent of UB-40
-
-Kimberly Chenoweth                                                                                                      1
+Location/Needling Method Functions & Actions
+• Latero-superior to the sternum, • Disseminates & Descends Lung Qi
+1 cun below Yunmen (LU-2), at • Alleviates cough and wheezing
+the level of the first intercostal • Transforms phlegm
+space, 6 cun lateral to the • Clears heat
+anterior midline • Regulates the water passages
+• Descends Stomach Q
+Needling Method:
+• Obliquely 0.5-0.8 inch toward
+lateral aspect of chest
+• In the superior lateral part of the
+anterior thoracic wall, superior
+to the coracoid process of
+scapula, in the depression of the
+infra-clavicular fossa, 6 cun
+lateral to the anterior midline.
+• Clears Lung heat
+• Disseminates & Descends Lung Qi
+• Dispels anxiety and agitation
+• Drains heat in the joints
+Needling Method:
+• Obliquely 0.5-0.8 inch toward
+lateral aspect of chest
+• On the medial (anterior) aspect
+of the upper arm
+• 3 cun below end of axillary fold
+• On the radial side of m. biceps
+brachii
+Needling Method:
+• Perpendicular 0.5-1.0 inch
+• Clears Lung heat & descends Lung
+Qi
+• Cools blood and stops bleeding
+• Calms the corporeal soul (Po)
+• On medial aspect of upper arm
+• 4 cun below the anterior end of
+the axillary fold
+• Or 5 cun above the cubital
+crease,
+• On the radial side of m. biceps
+brachii.
+Needling Method:
+• Perpendicular 0.5-1.0 inch
+• On cubital crease
+• In depression on radial side of
+biceps brachii tendon
+• Located with elbow slightly
+flexed
+Needling Method:
+• Perpendicular 0.5-1.0 inch
+• Descends Lung Qi
+• Regulates Qi and blood in the chest
+• Clears heat from Lung
+• Descends rebellious Qi
+• Regulates the water passages
+• Activates the channel
+• Relaxes the sinews
+• Alleviates pain
+Indications/Notes
+• Cough, asthma, pain in the chest,
+shoulder and back, fullness in the
+chest
+• As the entry point of the Lung
+Channel and the meeting point with
+the Spleen channel, LU-01 (Zhong
+Fu) is where the Ying Qi begins its
+cycle throughout the channels.
+• Lung Front MU Point - useful for all
+LU Issues, especially of Excess Type -
+cough, wheezing, asthma.
+• LU disharmonies involving
+Phlegm/Heat excess arising from the
+middle warmer - vomiting, difficult
+ingestion
+• Cough, asthma, wheezing, shortness
+of breath, dyspnea
+• Fullness and pain in the chest
+• Heat in the chest
+• Pain and inflammation in the
+shoulder and back
+• Similar to LU 1 but used more often
+as a local shoulder point.
+• Cough, asthma, tension in the chest.
+• Asthma, wheezing, and cough
+• Hemoptysis, epistaxis, and thirst
+• Pain in medial aspect of upper arm
+• Window of the Sky Point: regulates
+head/body Qi flow à goiters,
+swellings in the neck.
+• Lung related spirit disharmonies -
+stress induced asthma, poor
+memory, fuzzy/muddled thinking,
+depression, "floating corpse ghost
+talk", "melancholy crying ghost talk"
+(classical descriptions possibly for
+seeing ghost, talking about ghosts
+a/or people who have died, being in
+constant long-term grief about
+someone who has passed, etc.).
+• LV invading the LU pathologies.
+• Generally for heat related issues
+whether from excess or deficiency -
+nosebleed, coughing blood
+• Cough, fullness in the chest
+• Pain in medial aspect of the upper
+arm
+• May be used for cough, shortness of
+breath, chest pain, heart pain
+• Cough, hemoptysis, asthma, sore
+throat, upper body edema
+• Afternoon fever, eneuresis
+• Fullness in the chest, infantile
+convulsions, mastitis
+• He Sea Point: Useful for counterflow
+Qi, diarrhea, hot skin conditions,
+phlegm-heat excess
+• Acute/chronic or Exterior/Interior
+Conditions
+• Local point for elbow: tendinitis,
+tennis elbow, spasmodic pain of the
+elbow and arm
+• Classically noted for 5 types of
+Lumbar Pain, possibly upper body
+equivalent of UB-40
+1
 
 ## p.2
 
+Name
+LU-6
+Kong Zui
+孔最
+Collection
+Hole
+Association/Precautions
+Xi Cleft Point
+Moxibustion applicable
+LU-7** Luo Connecting Point
+Lie Que • Large Intestine (LI-4)
+列缺
+Command Point of Head
+Broken
+& Posterior Neck
+Sequence
+Master (Confluent)
+Point of Ren [Coupled
+w/KD 6]
+LU-8
+Jing Qu
+經渠
+Channel Ditch
+Jing River Point
+Metal Point
+Moxibustion applicable
+LU-9** Shu Stream Point
+Tai Yuan Earth Point
+太淵 Yuan Source Point
+Hui Meeting Point of the
+Great Abyss
+Vessels
+Moxibustion applicable
+Avoid Radial Artery
+LU-10* Ying Spring Point
+Yu Ji Fire Point
+魚際
+Moxibustion applicable
+Fish Border
+LU-11*
+Shao Shang
+少商
+Lesser Shang
+Jing Well Point
+Wood Point
+Some Say No Moxa
+Kimberly Chenoweth
 LUNG CHANNEL OF HAND TAI YIN
-
-           Name  Association/Precautions   Location/Needling Method              Functions & Actions                      Indications/Notes
-LU-6             Xi Cleft Point
-Kong Zui         Moxibustion applicable    � On palmar aspect of forearm         � Disseminates & descends Lung Qi        � Cough, pain in the chest, asthma,
-                                                                                                                            hemoptysis, sore throat, spasmodic
-                 Luo Connecting Point      � On the line joining LU-9 & LU-5 � Clears heat and moistens the Lung            pain of the elbow and arm
-                 � Large Intestine (LI-4)
-Collection       Command Point of Head     � 7 cun above the transverse          � Clears heat and stops bleeding         � Xi Cleft Point: for Acute attacks of
-Hole             & Posterior Neck                                                                                           EPI's, usually wind-heat or wind-dry -
-                 Master (Confluent)        crease of the wrist                   � Moderates acute conditions               cough, wheezing, asthma, sore
-LU-7**           Point of Ren [Coupled                                                                                      throat.
-Lie Que          w/KD 6]                   Needling Method:
-                 Moxibustion applicable    � Perpendicular 0.5-1.0 inch                                                   � Dry hacking cough, especially at
-                                                                                                                            night.
-                 Jing River Point          � Superior to styloid process of      � Releases exterior
-Broken           Metal Point                 radius                              � Expels wind (virus, pollen) �          � Local point for pain along the
-Sequence         Moxibustion applicable                                                                                     meridian, especially at the joints
-                                           � 1.5 cun above transverse crease       causes sweat
-LU-8             Shu Stream Point            btwn brachioradial muscle &         � Promotes descending function of        � Headache, migraine, neck rigidity
-Jing Qu          Earth Point                 tendon of long abductor muscle                                               � Cough, asthma, sore throat
-                 Yuan Source Point           of thumb                              lung                                   � Facial Paralysis, toothache
-                 Hui Meeting Point of the                                        � Pacifies wind & phlegm                 � Pain & weakness of wrist
-                 Vessels                   � (Not on LU-5 � LU-9 line)           � Benefits head & nape                   � Exterior wind (body aches,
-Channel Ditch    Moxibustion applicable                                          � Opens & regulates conception
-                 Avoid Radial Artery       Needling Method:                                                                 Chills/fever, runny nose, scratchy
-LU-9**                                     � Oblique 0.3-0.5 inches upward         vessel                                   throat, sneezing)
-Tai Yuan         Ying Spring Point                                               � Regulates water passages & lymph       � Internal wind (Bell's palsy, twitching
-                 Fire Point                                                      � Activates channel                        spasms, lockjaw,
-                 Moxibustion applicable                                          � Alleviates pain (esp. wrist injuries)  � Ren Master Point: Treats
-                                                                                                                            genitourinary & gynecological issues
-Great Abyss      Jing Well Point           � 1 cun above the transverse          � Descends Lung Qi                         & yin deficient sore throat.
-                 Wood Point                  crease of the wrist                 � alleviates cough and wheezing          � Thumb pain: Luo Connection Point
-LU-10*           Some Say No Moxa                                                                                           � Spreads over thenar eminence
-Yu Ji                                      � In the depression on the lateral
-                                             side of the radial artery                                                    � Cough, asthma, fever, pain in the
-                                                                                                                            chest, sore throat, pain in the wrist
-                                           Needling Method:
-Fish Border                                � Perpendicular 0.1-0.3 inch                                                   � Not as broad as an effect as LU 7,
-                                                                                                                            but useful for expelling wind,
-LU-11*                                     � At the radial end of the            � Tonifies Lung & transforms phlegm        tonifying Qi and Yin.
-Shao Shang                                   transverse crease of the wrist, in  � Promotes the descending function
-                                             the depression on the lateral                                                � Pain in the area of KD 1 � plantar
-                                             side of the radial artery             of the Lung                              fasciitis
-                                                                                 � Regulates and harmonizes the one
-Lesser Shang                               Needling Method:                                                               � Chronic Weak Cough, wheezing,
-                                           � Perpendicular 0.2-0.3 inches          hundred vessels                          asthma, hemoptysis, sore throat,
-                                                                                 � Activates the channel and                palpitation, pain in the chest, wrist
-                                                                                                                            and arm
-                                                                                   alleviates pain
-                                                                                                                          � As this is the Earth (Mother) point on
-                                           � On the radial aspect of the         � Benefits the throat                      the Metal Channel, it is the primary
-                                             midpoint of the first metacarpal    � Clears Lung heat                         point on the Lung channel to treat
-                                             bone, on the junction of the red    � Descends rebellious Qi                   Lung deficiency by tonifying the Lung
-                                             and white skin (i.e., the junction  � Harmonizes the Stomach and               Qi and Yin.
-                                             of the dorsum and palm of the
-                                             hand).                                Heart                                  � Tonify LU Qi and Yin: cough, asthma,
-                                                                                                                            wheezing, SOB, chronic runny nose
-                                           Needling Method:                      � Revives consciousness                    w/watery discharge.
-                                           � Perpendicular 0.5-0.8 inches        � Clears heat and benefits the throat
-                                                                                                                          � Hui Meeting Point of the Vessels:
-                                           � On the radial side of the thumb,                                               circulation issues, clarifying an
-                                             about 0.1 cun posterior to the                                                 indescernible pulse (for diagnosis).
-                                             corner of the nail
-                                                                                                                          � Cough, hemoptysis, sore throat, loss
-                                           Needling Method:                                                                 of voice, fever, feverish sensation in
-                                           � Perpendicular 0.1 inches                                                       the palm
-                                           � Or prick to bleed
-                                                                                                                          � To clear heat, acute sore throat
-                                                                                                                          � Clear Excess or Deficiency Heat from
-
-                                                                                                                            the LU Channel and Organ.
-                                                                                                                          � Sore throat w/excess heat.
-                                                                                                                          � Reckless bleeding from heat
-
-                                                                                                                          � Sore throat, cough, asthma,
-                                                                                                                            epistaxis, fever, loss of
-                                                                                                                            consciousness, mania, spasmodic
-                                                                                                                            pain of the thumb
-
-                                                                                                                          � Extreme sore throat (may bleed
-                                                                                                                            point to reduce heat).
-
-                                                                                                                          � Tonsilitis
-                                                                                                                          � Revival point especially from wind-
-
-                                                                                                                            stroke
-
-Kimberly Chenoweth                                                                                                        2
+Location/Needling Method Functions & Actions
+• On palmar aspect of forearm • Disseminates & descends Lung Qi
+• On the line joining LU-9 & LU-5 • Clears heat and moistens the Lung
+• 7 cun above the transverse • Clears heat and stops bleeding
+crease of the wrist • Moderates acute conditions
+Needling Method:
+• Perpendicular 0.5-1.0 inch
+• Superior to styloid process of
+radius
+• 1.5 cun above transverse crease
+btwn brachioradial muscle &
+tendon of long abductor muscle
+of thumb
+• (Not on LU-5 à LU-9 line)
+Needling Method:
+• Oblique 0.3-0.5 inches upward
+• Releases exterior
+• Expels wind (virus, pollen) à
+causes sweat
+• Promotes descending function of
+lung
+• Pacifies wind & phlegm
+• Benefits head & nape
+• Opens & regulates conception
+vessel
+• Regulates water passages & lymph
+• Activates channel
+• Alleviates pain (esp. wrist injuries)
+• 1 cun above the transverse
+crease of the wrist
+• In the depression on the lateral
+side of the radial artery
+Needling Method:
+• Perpendicular 0.1-0.3 inch
+• Descends Lung Qi
+• alleviates cough and wheezing
+• At the radial end of the
+transverse crease of the wrist, in
+the depression on the lateral
+side of the radial artery
+Needling Method:
+• Perpendicular 0.2-0.3 inches
+• Tonifies Lung & transforms phlegm
+• Promotes the descending function
+of the Lung
+• Regulates and harmonizes the one
+hundred vessels
+• Activates the channel and
+alleviates pain
+• On the radial aspect of the
+midpoint of the first metacarpal
+bone, on the junction of the red
+and white skin (i.e., the junction
+of the dorsum and palm of the
+hand).
+Needling Method:
+• Perpendicular 0.5-0.8 inches
+• On the radial side of the thumb,
+about 0.1 cun posterior to the
+corner of the nail
+Needling Method:
+• Perpendicular 0.1 inches
+• Or prick to bleed
+• Benefits the throat
+• Clears Lung heat
+• Descends rebellious Qi
+• Harmonizes the Stomach and
+Heart
+• Revives consciousness
+• Clears heat and benefits the throat
+Indications/Notes
+• Cough, pain in the chest, asthma,
+hemoptysis, sore throat, spasmodic
+pain of the elbow and arm
+• Xi Cleft Point: for Acute attacks of
+EPI's, usually wind-heat or wind-dry -
+cough, wheezing, asthma, sore
+throat.
+• Dry hacking cough, especially at
+night.
+• Local point for pain along the
+meridian, especially at the joints
+• Headache, migraine, neck rigidity
+• Cough, asthma, sore throat
+• Facial Paralysis, toothache
+• Pain & weakness of wrist
+• Exterior wind (body aches,
+Chills/fever, runny nose, scratchy
+throat, sneezing)
+• Internal wind (Bell’s palsy, twitching
+spasms, lockjaw,
+• Ren Master Point: Treats
+genitourinary & gynecological issues
+& yin deficient sore throat.
+• Thumb pain: Luo Connection Point
+à Spreads over thenar eminence
+• Cough, asthma, fever, pain in the
+chest, sore throat, pain in the wrist
+• Not as broad as an effect as LU 7,
+but useful for expelling wind,
+tonifying Qi and Yin.
+• Pain in the area of KD 1 à plantar
+fasciitis
+• Chronic Weak Cough, wheezing,
+asthma, hemoptysis, sore throat,
+palpitation, pain in the chest, wrist
+and arm
+• As this is the Earth (Mother) point on
+the Metal Channel, it is the primary
+point on the Lung channel to treat
+Lung deficiency by tonifying the Lung
+Qi and Yin.
+• Tonify LU Qi and Yin: cough, asthma,
+wheezing, SOB, chronic runny nose
+w/watery discharge.
+• Hui Meeting Point of the Vessels:
+circulation issues, clarifying an
+indescernible pulse (for diagnosis).
+• Cough, hemoptysis, sore throat, loss
+of voice, fever, feverish sensation in
+the palm
+• To clear heat, acute sore throat
+• Clear Excess or Deficiency Heat from
+the LU Channel and Organ.
+• Sore throat w/excess heat.
+• Reckless bleeding from heat
+• Sore throat, cough, asthma,
+epistaxis, fever, loss of
+consciousness, mania, spasmodic
+pain of the thumb
+• Extreme sore throat (may bleed
+point to reduce heat).
+• Tonsilitis
+• Revival point especially from wind-
+stroke
+2
 
 ## p.3
 
-Kimberly Chenoweth  3
-
+Kimberly Chenoweth
+3

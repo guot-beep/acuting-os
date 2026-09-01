@@ -7,7 +7,7 @@
 
 Erin Stewart, DAOM, LAc, LMT, CA                                  Bastyr University
 
-Materia Medica III � Astringent Herbs (Stabilize & Bind)
+Materia Medica III – Astringent Herbs (Stabilize & Bind)
 
 Overview
 
@@ -27,12 +27,12 @@ Core Actions Restrain leakage; stabilize essence; stop discharge
 
 Global Cautions
 
-    � Do not use when exterior pathogens, damp-heat, food stagnation, or excess heat
+    • Do not use when exterior pathogens, damp-heat, food stagnation, or excess heat
          are present.
 
-    � Premature use may trap pathogens.
+    • Premature use may trap pathogens.
 
-Astringent Herbs � Quick Reference Table
+Astringent Herbs – Quick Reference Table
 
 Herb         Nature               Channels                        Core Exam
 Wu Wei Zi    Warm                 LU, HT, KD                      Keywords
@@ -90,7 +90,7 @@ Lian Zi Xin     Cold              Bitter           Stabilizes KD;
                                                    Clears Heart Fire;
                                                    Calms Shen
 
-W W�i Z 
+Wǔ Wèi Zǐ 五味子
 
 Fructus Schisandrae Chinensis | Schisandra fruit
 
@@ -112,32 +112,32 @@ Erin Stewart, DAOM, LAc, LMT, CA                    Bastyr University
 
 Key Indications
 
-    � Chronic cough/wheeze from LU � KD deficiency (esp. recurrent, weak voice/SOB,
+    • Chronic cough/wheeze from LU ± KD deficiency (esp. recurrent, weak voice/SOB,
          long course)
 
-    � Spontaneous sweating/night sweats (deficiency leakage)
-    � Spermatorrhea, enuresis, urinary frequency (KD instability)
-    � Insomnia/palpitations from HT�KD disharmony (deficient restraint)
+    • Spontaneous sweating/night sweats (deficiency leakage)
+    • Spermatorrhea, enuresis, urinary frequency (KD instability)
+    • Insomnia/palpitations from HT–KD disharmony (deficient restraint)
 
 Dosage
 
-    � 2�6 g (decoction); 1�3 g (powder)
+    • 2–6 g (decoction); 1–3 g (powder)
 
 Processing
 
-    � Typically used unprocessed; can be added later in decoction if you want to
+    • Typically used unprocessed; can be added later in decoction if you want to
          preserve aromatic/astringent effect.
 
 Cautions/Contraindications
 
-    � Do not use early in exterior conditions or when pathogens remain (can trap)
-    � Avoid in excess heat, damp-phlegm, Liver fire, or unresolved rash/heat toxin
+    • Do not use early in exterior conditions or when pathogens remain (can trap)
+    • Avoid in excess heat, damp-phlegm, Liver fire, or unresolved rash/heat toxin
 
 Exam Pearl
 
-      "All the leakages": LU (cough) + sweat + essence/urine + Shen
+      “All the leakages”: LU (cough) + sweat + essence/urine + Shen
 
-W M�i 
+Wū Méi 乌梅
 
 Fructus Prunus Mume | Mume fruit/Dark plum
 
@@ -157,31 +157,31 @@ Erin Stewart, DAOM, LAc, LMT, CA  Bastyr University
 
 Key Indications
 
-    � Chronic diarrhea/dysentery (more "bind intestines" than tonify)
-    � Thirst/fluids damaged (esp. chronic illness, deficiency heat patterns)
-    � Chronic cough with deficiency component (restrains LU qi)
-    � Roundworm abdominal pain/vomiting (classical: parasite pain with spasm)
+    • Chronic diarrhea/dysentery (more “bind intestines” than tonify)
+    • Thirst/fluids damaged (esp. chronic illness, deficiency heat patterns)
+    • Chronic cough with deficiency component (restrains LU qi)
+    • Roundworm abdominal pain/vomiting (classical: parasite pain with spasm)
 
 Dosage
 
-    � 3�10 g, up to 30 g when needed
+    • 3–10 g, up to 30 g when needed
 
 Processing
 
-    � Charred (Tan): higher-yield for bleeding/diarrhea (astringency emphasized)
+    • Charred (Tan): higher-yield for bleeding/diarrhea (astringency emphasized)
 
 Cautions/Contraindications
 
-    � Not for acute diarrhea from food poisoning/infection or marked
+    • Not for acute diarrhea from food poisoning/infection or marked
          stagnation/excess heat
 
-    � Don't "bind" if the pathogen/excess is still active
+    • Don’t “bind” if the pathogen/excess is still active
 
 Exam Pearl
 
       Wu Mei is the only astringent that expels parasites
 
-H Z 
+Hē Zǐ 诃子
 
 Fructus Terminaliae Chebulae | Chebula fruit/Myrobalan
 
@@ -195,20 +195,20 @@ Primary Actions
 
 Key Indications
 
-    � Chronic cough/wheeze with voice loss/hoarseness (restrains LU + benefits
+    • Chronic cough/wheeze with voice loss/hoarseness (restrains LU + benefits
          throat)
 
-    � Chronic diarrhea/dysentery (can be used in hot/cold depending on combo--test
+    • Chronic diarrhea/dysentery (can be used in hot/cold depending on combo—test
          will cue)
 
 Dosage
 
-    � 3�10 g
+    • 3–10 g
 
 Processing
 
-    � Unroasted: benefits voice / clears LU
-    � Roasted: stops diarrhea (stronger binding)
+    • Unroasted: benefits voice / clears LU
+    • Roasted: stops diarrhea (stronger binding)
 
 ## p.5
 
@@ -216,13 +216,13 @@ Erin Stewart, DAOM, LAc, LMT, CA  Bastyr University
 
 Cautions/Contraindications
 
-    � Avoid early-stage exterior patterns; don't bind before the pathogen is cleared.
+    • Avoid early-stage exterior patterns; don’t bind before the pathogen is cleared.
 
 Exam Pearl
 
-    � If the stem says "chronic cough + lost voice", He Zi jumps to the top.
+    • If the stem says “chronic cough + lost voice”, He Zi jumps to the top.
 
-Ch� Sh� Zh 
+Chì Shí Zhī 赤石脂
 
 Halloysitum Rubrum | Halloysite/kaolin
 
@@ -237,38 +237,38 @@ Primary Actions
 
 Key Indications
 
-    � Chronic diarrhea/dysentery (mucus � blood) from deficiency/cold
-    � Uterine bleeding, blood in stool when "cold/deficiency containment failure" is
+    • Chronic diarrhea/dysentery (mucus ± blood) from deficiency/cold
+    • Uterine bleeding, blood in stool when “cold/deficiency containment failure” is
 
          emphasized
-    � Topical: promotes healing of chronic sores/ulcers
+    • Topical: promotes healing of chronic sores/ulcers
 
 Dosage
 
-    � 10�20 g (decoction or powders); topical powder as needed
+    • 10–20 g (decoction or powders); topical powder as needed
 
 Processing
 
-    � Wrap in gauze or pre-decoct (exam-friendly handling note from many teaching
+    • Wrap in gauze or pre-decoct (exam-friendly handling note from many teaching
          traditions)
 
 Cautions/Contraindications
 
-    � Pregnancy caution
-    � Can bind/adsorb in GI tract  separate from medications by a couple of hours to
+    • Pregnancy caution
+    • Can bind/adsorb in GI tract → separate from medications by a couple of hours to
 
          prevent medication absorption issues
 
 Exam Pearl
 
-    � Strongest intestinal binder (if question says "chronic, unremitting diarrhea"  Chi
+    • Strongest intestinal binder (if question says “chronic, unremitting diarrhea” → Chi
          Shi Zhi).
 
 ## p.6
 
 Erin Stewart, DAOM, LAc, LMT, CA            Bastyr University
 
-R�u D�u K�u 
+Ròu Dòu Kòu 肉豆蔻
 
 Semen Myristicae fragrans| Nutmeg
 
@@ -283,34 +283,34 @@ Primary Actions
 
 Key Indications
 
-    � Chronic diarrhea from SP yang deficiency (often with cold abdominal pain)
-    � 5 AM diarrhea / "daybreak diarrhea" patterns when cold/yang deficiency is
+    • Chronic diarrhea from SP yang deficiency (often with cold abdominal pain)
+    • 5 AM diarrhea / “daybreak diarrhea” patterns when cold/yang deficiency is
 
          emphasized
-    � Diarrhea with qi stagnation signs: distention, fullness, poor appetite (warms +
+    • Diarrhea with qi stagnation signs: distention, fullness, poor appetite (warms +
 
          moves qi)
 
 Dosage
 
-    � 3�10 g decoction; 1.5�3 g powder
+    • 3–10 g decoction; 1.5–3 g powder
 
 Processing
 
-    � Roasted is preferred/standard for therapeutic use (warming + binding; reduces
+    • Roasted is preferred/standard for therapeutic use (warming + binding; reduces
          irritant effects)
 
 Cautions/Contraindications
 
-    � Fresh/unprocessed can irritate intestines  may worsen diarrhea
-    � Avoid binding if diarrhea is from active damp-heat/pathogen
+    • Fresh/unprocessed can irritate intestines → may worsen diarrhea
+    • Avoid binding if diarrhea is from active damp-heat/pathogen
 
 Exam Pearl
 
-    � "Warm the middle + bind diarrhea" (it's not just a binder; it's a warming qi-
+    • “Warm the middle + bind diarrhea” (it’s not just a binder; it’s a warming qi-
          regulating binder).
 
-Chn Gn P� (Chun Pi) 
+Chūn Gēn Pí (Chun Pi) 椿根皮
 
 Cortex Ailanthi altissima | Ailanthus bark
 
@@ -331,28 +331,28 @@ Erin Stewart, DAOM, LAc, LMT, CA  Bastyr University
 
 Key Indications
 
-    � Damp-heat diarrhea/dysentery (often blood/pus in stool)
-    � Uterine bleeding/leukorrhea from damp-heat (astringe + clear)
-    � Topical: antiparasitic/antifungal itching patterns (depending on how you teach it)
+    • Damp-heat diarrhea/dysentery (often blood/pus in stool)
+    • Uterine bleeding/leukorrhea from damp-heat (astringe + clear)
+    • Topical: antiparasitic/antifungal itching patterns (depending on how you teach it)
 
 Dosage
 
-    � 3�5 g internally; external wash/ointment as needed
+    • 3–5 g internally; external wash/ointment as needed
 
 Processing
 
-    � Commonly decocted; external preparation as a wash.
+    • Commonly decocted; external preparation as a wash.
 
 Cautions/Contraindications
 
-    � Larger doses may cause GI upset (nausea/vomiting)--pair with appropriate herbs
+    • Larger doses may cause GI upset (nausea/vomiting)—pair with appropriate herbs
          to keep dose moderate.
 
 Exam Pearl
 
-    � The "cold astringent" for damp-heat diarrhea (bind + clear).
+    • The “cold astringent” for damp-heat diarrhea (bind + clear).
 
-Li�n Z 
+Lián Zǐ 莲子
 
 Semen Nelumbinis | Lotus seed
 
@@ -367,19 +367,19 @@ Primary Actions
 
 Key Indications
 
-    � SP deficiency diarrhea (chronic, weak appetite/fatigue)
-    � KD deficiency with spermatorrhea/leukorrhea (stabilizes essence)
-    � Insomnia/anxiety where HT�KD deficiency is part of the pattern (calms Shen +
+    • SP deficiency diarrhea (chronic, weak appetite/fatigue)
+    • KD deficiency with spermatorrhea/leukorrhea (stabilizes essence)
+    • Insomnia/anxiety where HT–KD deficiency is part of the pattern (calms Shen +
 
          binds)
 
 Dosage
 
-    � 6�15 g
+    • 6–15 g
 
 Processing
 
-    � Commonly decocted; also food therapy.
+    • Commonly decocted; also food therapy.
 
 ## p.8
 
@@ -387,13 +387,13 @@ Erin Stewart, DAOM, LAc, LMT, CA                     Bastyr University
 
 Cautions/Contraindications
 
-    � Avoid with dry constipation / significant dryness
+    • Avoid with dry constipation / significant dryness
 
 Exam Pearl
 
-    � The "3-system binder-tonic": SP (diarrhea) + KD (essence) + HT (Shen).
+    • The “3-system binder-tonic”: SP (diarrhea) + KD (essence) + HT (Shen).
 
-Li�n Xu 
+Lián Xu 莲须
 
 Nelumbinis Stamen| Lotus stamen
 
@@ -408,32 +408,32 @@ Primary Actions
 
 Key Indications
 
-    � KD instability: spermatorrhea, frequent urination, leukorrhea (restrains leakage)
-    � Excessive dreaming / unsettled Shen from HT�KD deficiency heat (clears HT
+    • KD instability: spermatorrhea, frequent urination, leukorrhea (restrains leakage)
+    • Excessive dreaming / unsettled Shen from HT–KD deficiency heat (clears HT
 
          while astringing)
-    � Bleeding presentations where "astringe + stop bleeding" is emphasized in the
+    • Bleeding presentations where “astringe + stop bleeding” is emphasized in the
 
          stem/stamen group
 
 Dosage
 
-    � Commonly taught ~1.5�6 g (decoction range).
+    • Commonly taught ~1.5–6 g (decoction range).
 
 Processing
 
-    � Typically unprocessed; some traditions use charred for bleeding (if you teach that
+    • Typically unprocessed; some traditions use charred for bleeding (if you teach that
          variant).
 
 Cautions/Contraindications
 
-    � Avoid in constipation / when binding would worsen retention.
+    • Avoid in constipation / when binding would worsen retention.
 
 Exam Pearl
 
-    � More "pure astringent" than Lian Zi (less tonic, more restraining).
+    • More “pure astringent” than Lian Zi (less tonic, more restraining).
 
-Shn Zh Y� 
+Shān Zhū Yú 山茱萸
 
 Fructus Cornus officinalis | Cornelian cherry fruit
 
@@ -452,30 +452,30 @@ Primary Actions
 
 Key Indications
 
-    � KD leakage: urinary frequency, incontinence, spermatorrhea (astringes KD)
-    � Collapse tendencies (classical: helps "secure" and prevent further loss)
-    � LV/KD deficiency with weakness of low back/knees + leakage picture
+    • KD leakage: urinary frequency, incontinence, spermatorrhea (astringes KD)
+    • Collapse tendencies (classical: helps “secure” and prevent further loss)
+    • LV/KD deficiency with weakness of low back/knees + leakage picture
 
 Dosage
 
-    � 5�10 g, up to 30 g in severe leakage
+    • 5–10 g, up to 30 g in severe leakage
 
 Processing
 
-    � Usually unprocessed.
+    • Usually unprocessed.
 
 Cautions/Contraindications
 
-    � Avoid with difficult urination from damp-heat / constrained heat in lower burner
-    � Use caution in deficient KD fire patterns (where warming/transforming is needed
+    • Avoid with difficult urination from damp-heat / constrained heat in lower burner
+    • Use caution in deficient KD fire patterns (where warming/transforming is needed
 
          instead of binding)
 
 Exam Pearl
 
-    � Astringent + yin-tonic direction (it "secures" while supporting LV/KD).
+    • Astringent + yin-tonic direction (it “secures” while supporting LV/KD).
 
-Fu Xiao Mai 
+Fu Xiao Mai 浮小麦
 
 Triticum aestivum | Floating wheat
 
@@ -490,9 +490,9 @@ Primary Actions
 
 Key Indications
 
-    � Spontaneous sweating (Qi deficiency) and night sweats (Yin deficiency)
-    � "Steaming bone" sensation from Qi�Yin deficiency with deficiency heat
-    � Irritability/insomnia when sweating is part of the deficiency picture
+    • Spontaneous sweating (Qi deficiency) and night sweats (Yin deficiency)
+    • “Steaming bone” sensation from Qi–Yin deficiency with deficiency heat
+    • Irritability/insomnia when sweating is part of the deficiency picture
 
 ## p.10
 
@@ -500,25 +500,25 @@ Erin Stewart, DAOM, LAc, LMT, CA  Bastyr University
 
 Dosage
 
-    � 15�30 g (Fu Xiao Mai)
-    � (Some teaching traditions list Xiao Mai higher, 30�60 g, when used food-therapy
+    • 15–30 g (Fu Xiao Mai)
+    • (Some teaching traditions list Xiao Mai higher, 30–60 g, when used food-therapy
 
          style)
 
 Processing
 
-    � Usually used unprocessed in decoction (sometimes lightly dry-fried in practice, but
+    • Usually used unprocessed in decoction (sometimes lightly dry-fried in practice, but
          not essential for exam answers)
 
 Cautions/Contraindications
 
-    � Avoid when sweating is from exterior pathogen or excess heat
+    • Avoid when sweating is from exterior pathogen or excess heat
 
 Exam Pearl
 
-    � Think "deficiency sweating + irritability"  Fu Xiao Mai.
+    • Think “deficiency sweating + irritability” → Fu Xiao Mai.
 
-Ma Huang Gen 
+Ma Huang Gen 麻黄根
 
 Ephedrae Radix| Ephedra root
 
@@ -531,33 +531,33 @@ Primary Actions
 
 Key Indications
 
-    � Stops sweating from deficiency (classically spontaneous; can be used for night
+    • Stops sweating from deficiency (classically spontaneous; can be used for night
          sweats in deficiency patterns)
 
-    � Used when the question is simply: "stop sweating" and you don't need the HT-
+    • Used when the question is simply: “stop sweating” and you don’t need the HT-
          focused nuance of Fu Xiao Mai
 
 Dosage
 
-    � 3�10 g
+    • 3–10 g
 
 Processing
 
-    � Typically unprocessed in decoction.
+    • Typically unprocessed in decoction.
 
 Cautions/Contraindications
 
-    � Contraindicated in exterior conditions (don't trap pathogens by closing the pores)
+    • Contraindicated in exterior conditions (don’t trap pathogens by closing the pores)
 
 Exam Pearl
 
-    � Sweating-only stopper (compare with Fu Xiao Mai = HT/Yin-def nuance).
+    • Sweating-only stopper (compare with Fu Xiao Mai = HT/Yin-def nuance).
 
 ## p.11
 
 Erin Stewart, DAOM, LAc, LMT, CA                      Bastyr University
 
-Qian Shi 
+Qian Shi 芡实
 
 Euryale ferox | Euryale seed, Fox nut
 
@@ -571,32 +571,32 @@ Primary Actions
 
 Key Indications
 
-    � SP deficiency with damp: chronic diarrhea (esp. pediatric "damp diarrhea"
+    • SP deficiency with damp: chronic diarrhea (esp. pediatric “damp diarrhea”
          pattern)
 
-    � KD deficiency: spermatorrhea, leukorrhea, urinary frequency (stabilizes essence)
-    � Often used when the stem says: "tonifies SP + stabilizes KD" but with a damp
+    • KD deficiency: spermatorrhea, leukorrhea, urinary frequency (stabilizes essence)
+    • Often used when the stem says: “tonifies SP + stabilizes KD” but with a damp
 
          flavor (SP focus)
 
 Dosage
 
-    � 10�15 g
+    • 10–15 g
 
 Processing
 
-    � Typically unprocessed in decoction.
+    • Typically unprocessed in decoction.
 
 Cautions/Contraindications
 
-    � Use caution if there is significant constipation (binding tendency).
+    • Use caution if there is significant constipation (binding tendency).
 
 Exam Pearl
 
-    � Lian Zi vs Qian Shi: Lian Zi has HT/Shen emphasis; Qian Shi has damp/SP
+    • Lian Zi vs Qian Shi: Lian Zi has HT/Shen emphasis; Qian Shi has damp/SP
          emphasis.
 
-Fu Pen Zi 
+Fu Pen Zi 覆盆子
 
 Rubus chingii| Chinese raspberry fruit
 
@@ -615,82 +615,82 @@ Erin Stewart, DAOM, LAc, LMT, CA                                 Bastyr Universi
 
 Key Indications
 
-    � KD deficiency leakage: enuresis, urinary frequency, spermatorrhea, premature
+    • KD deficiency leakage: enuresis, urinary frequency, spermatorrhea, premature
          ejaculation
 
-    � LV/KD deficiency vision issues (blurred vision) + low back weakness
-    � Also shows up in "diabetes insipidus-like polyuria" presentations (KD not
+    • LV/KD deficiency vision issues (blurred vision) + low back weakness
+    • Also shows up in “diabetes insipidus-like polyuria” presentations (KD not
 
          securing fluids)
 
 Dosage
 
-    � 3�10 g
+    • 3–10 g
 
 Processing
 
-    � Often unprocessed; sometimes dry-fried in practice (not usually needed for exam
+    • Often unprocessed; sometimes dry-fried in practice (not usually needed for exam
          answers).
 
 Cautions/Contraindications
 
-    � Avoid where there is yin deficiency fire/excess heat driving symptoms (don't just
-         "bind").
+    • Avoid where there is yin deficiency fire/excess heat driving symptoms (don’t just
+         “bind”).
 
 Exam Pearl
 
-    � Secure KD + brighten eyes (if they mention vision, it's a big differentiator vs many
+    • Secure KD + brighten eyes (if they mention vision, it’s a big differentiator vs many
          other stabilizers).
 
 Herbal Comparisons
 
-    � Wu Wei Zi vs. Wu Mei: All leakages vs. fluids & parasites
+    • Wu Wei Zi vs. Wu Mei: All leakages vs. fluids & parasites
 
-    � He Zi vs. Wu Wei Zi: Voice/Lung vs. multi-system
+    • He Zi vs. Wu Wei Zi: Voice/Lung vs. multi-system
 
-    � Chi Shi Zhi: Strongest intestinal binder
+    • Chi Shi Zhi: Strongest intestinal binder
 
 Structural Overview
 
 Stop Cough:
 
-    � Wu Wei Zi
-    � Wu Mei
-    � He Zi
+    • Wu Wei Zi
+    • Wu Mei
+    • He Zi
 
 Stop Sweating:
 
-    � Wu Wei Zi
-    � Fu Xiao Mai
-    � Ma Huang Gen
+    • Wu Wei Zi
+    • Fu Xiao Mai
+    • Ma Huang Gen
 
 Stabilize Essence:
 
-    � Wu Wei Zi
-    � Shan Zhu Yu
-    � Lian Zi
+    • Wu Wei Zi
+    • Shan Zhu Yu
+    • Lian Zi
 
 ## p.13
 
 Erin Stewart, DAOM, LAc, LMT, CA  Bastyr University
 
-    � Qian Shi
-    � Fu Pen Zi
-    � Lian Xu
+    • Qian Shi
+    • Fu Pen Zi
+    • Lian Xu
 
 Stop Diarrhea:
 
-    � Wu Mei
-    � He Zi
-    � Qian Shi
-    � Lian Zi
-    � Rou Dou Kou
-    � Chi Shi Zhi
-    � Chun Gen Pi
+    • Wu Mei
+    • He Zi
+    • Qian Shi
+    • Lian Zi
+    • Rou Dou Kou
+    • Chi Shi Zhi
+    • Chun Gen Pi
 
 Bonus-Bonus-Bonus-Bonus-Bonus-Bonus-Bonus-Bonus-Bonus-Bonus
 
-Li�n Z Xin  (Herbs that Clear Heat/Drain Fire)
+Lián Zǐ Xin 莲子芯 (Herbs that Clear Heat/Drain Fire)
 
 Nelumbinis Plumula | Lotus seed embryo
 
@@ -699,25 +699,25 @@ Channels: Heart, Kidney
 
 Primary Actions
 
-    1. Clears (sedates) Heart Fire / clears Heat from the Heart (� Pericardium)
+    1. Clears (sedates) Heart Fire / clears Heat from the Heart (± Pericardium)
     2. Calms the Shen / tranquilizes
-    3. "Communicates" Heart and Kidneys / restores Heart�Kidney coordination
+    3. “Communicates” Heart and Kidneys / restores Heart–Kidney coordination
     4. Stops bleeding by cooling Blood/clearing Blood-Heat
     5. Astringes (secures) essence
 
 Key Indications
 
-    � High fever or lingering febrile Heat with mental confusion, delirium,
+    • High fever or lingering febrile Heat with mental confusion, delirium,
          restlessness/irritability.
 
-    � Insomnia from Heart Heat/Fire (often: vexation, inability to settle, possibly thirst).
-    � Insomnia + seminal emission/spermatorrhea framed as failure of Heart�Kidney
+    • Insomnia from Heart Heat/Fire (often: vexation, inability to settle, possibly thirst).
+    • Insomnia + seminal emission/spermatorrhea framed as failure of Heart–Kidney
 
-         "coordination/communication."
-    � Hematemesis and hemoptysis (and classically other "heat in Blood" bleed
+         “coordination/communication.”
+    • Hematemesis and hemoptysis (and classically other “heat in Blood” bleed
 
          presentations) when Heat forces Blood out of the vessels.
-    � Tongue ulcerations/mouth sores when Heart Fire flares upward
+    • Tongue ulcerations/mouth sores when Heart Fire flares upward
 
 ## p.14
 
@@ -725,15 +725,15 @@ Erin Stewart, DAOM, LAc, LMT, CA  Bastyr University
 
 Dosage
 
-    � 1.5�6 g.
+    • 1.5–6 g.
 
 Cautions/Contraindications
 
-    � Avoid in constipation or abdominal masses
+    • Avoid in constipation or abdominal masses
 
 Exam Pearl
 
-    � Think Heart/Pericardium Fire  restlessness/insomnia/delirium, plus a
-         "secondary" board-style pairing of Blood-Heat bleeding and spermatorrhea from
-         Heart�Kidney disharmony.
+    • Think Heart/Pericardium Fire → restlessness/insomnia/delirium, plus a
+         “secondary” board-style pairing of Blood-Heat bleeding and spermatorrhea from
+         Heart–Kidney disharmony.
 

@@ -88,16 +88,48 @@ function fileInfo(rel) {
   return v;
 }
 
+/* import_artifacts 是**存證區**:裡面放的就是被取代掉的舊值,逐字保留(憲法紅線 3)。
+   那些舊錨點本來就不再指得到 —— 那正是它們被取代的原因。把存證區算進缺陷數,
+   等於每搬存一次就永久 +1,天花板再也降不下去,還會讓人以為卡上有壞引用。
+   量的是**現在會被當成出處用的**錨點,所以整個 import_artifacts 子樹跳過。 */
+function liveAnchorsIn(node, out) {
+  if (typeof node === 'string') {
+    ANCHOR_RE.lastIndex = 0;
+    let m;
+    while ((m = ANCHOR_RE.exec(node))) out.push(m[0]);
+    return out;
+  }
+  if (Array.isArray(node)) { for (const v of node) liveAnchorsIn(v, out); return out; }
+  if (node && typeof node === 'object') {
+    for (const k of Object.keys(node)) {
+      if (k === 'import_artifacts') continue;
+      liveAnchorsIn(node[k], out);
+    }
+  }
+  return out;
+}
+
 function main() {
   const files = collectFiles(SCAN_DIR, []);
   const anchors = new Map(); // anchor -> Set(citing file, repo-relative)
   for (const f of files) {
     const raw = fs.readFileSync(f, 'utf8');
-    let m;
-    ANCHOR_RE.lastIndex = 0;
-    while ((m = ANCHOR_RE.exec(raw))) {
-      if (!anchors.has(m[0])) anchors.set(m[0], new Set());
-      anchors.get(m[0]).add(path.relative(ROOT, f).replace(/\\/g, '/'));
+    const rel = path.relative(ROOT, f).replace(/\\/g, '/');
+    let found;
+    if (f.endsWith('.json')) {
+      // JSON 走結構,才能跳過 import_artifacts 子樹
+      try { found = liveAnchorsIn(JSON.parse(raw), []); }
+      catch { found = null; }                      // 壞 JSON:退回整檔掃,寧可多報不可漏報
+    }
+    if (!found) {
+      found = [];
+      ANCHOR_RE.lastIndex = 0;
+      let m;
+      while ((m = ANCHOR_RE.exec(raw))) found.push(m[0]);
+    }
+    for (const a of found) {
+      if (!anchors.has(a)) anchors.set(a, new Set());
+      anchors.get(a).add(rel);
     }
   }
 

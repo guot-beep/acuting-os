@@ -9,7 +9,7 @@ Foundations of Oriental Medicine Content Outline
 Effective September 1, 2026
 
 Note to Candidate: This document serves as a guide to assist in examination preparation for
-candidates who have met NCBAHMTM eligibility requirements. Below is the content outline for
+candidates who have met NCBAHM™ eligibility requirements. Below is the content outline for
 the Foundations of Oriental Medicine examination.
 
 Domain I. Patient Assessment Methods (28% of Exam)
@@ -30,12 +30,12 @@ Domain I. Patient Assessment Methods (28% of Exam)
          1. Identify presenting complaints (e.g., onset, location, aggravation).
          2. Formulate additional questions based on patient's responses and examination
               findings.
-         3. Conduct a Review of Systems (ROS) utilizing "Ten Questions" (Shi Wen) (e.g., pain,
+         3. Conduct a Review of Systems (ROS) utilizing “Ten Questions” (Shi Wen) (e.g., pain,
               energy level, sweating, body sensations) and other approaches.
          4. Identify etiological factors, including internal (e.g., emotions), external (e.g.,
               environment) and miscellaneous (e.g., diet, occupation) factors.
 
-� 2026 National Certification Board for Acupuncture and Herbal Medicine (NCBAHM)TM. All rights reserved.
+© 2026 National Certification Board for Acupuncture and Herbal Medicine (NCBAHM)™. All rights reserved.
 2026 FOM Content Outline
 
                                                                                                                                                                                1
@@ -74,7 +74,7 @@ Domain III. Treatment Planning (34% of Exam)
               a. Yin/Yang
               b. Five Elements (Wu Xing)
 
-� 2026 National Certification Board for Acupuncture and Herbal Medicine (NCBAHM)TM. All rights reserved.
+© 2026 National Certification Board for Acupuncture and Herbal Medicine (NCBAHM)™. All rights reserved.
 2026 FOM Content Outline
 
                                                                                                                                                                                2
@@ -97,7 +97,7 @@ c. Eight Principles (Ba Gang) (e.g., interior/exterior, heat/cold)
               l. Miscellaneous etiology (e.g., diet, lifestyle, trauma)
          2. Establish treatment priorities (e.g., Root and Branch [Ben Biao], acute vs. chronic)
               and develop a treatment plan.
-         3. Modify the treatment plan based on patient's response, disease progression, and
+         3. Modify the treatment plan based on patient’s response, disease progression, and
               lifestyle factors.
          4. Explain assessment findings and the treatment plan to the patient.
          5. Counsel the patient on self-care home management techniques to prevent disease
@@ -105,7 +105,7 @@ c. Eight Principles (Ba Gang) (e.g., interior/exterior, heat/cold)
          6. Provide dietary recommendations according to Chinese medicine (e.g.,
               temperature, taste, functions).
 
-� 2026 National Certification Board for Acupuncture and Herbal Medicine (NCBAHM)TM. All rights reserved.
+© 2026 National Certification Board for Acupuncture and Herbal Medicine (NCBAHM)™. All rights reserved.
 2026 FOM Content Outline
 
                                                                                                                                                                                3
@@ -119,12 +119,12 @@ Bibliography is only to provide the candidate with suggested resources to utiliz
 examination. Candidates should feel free to consider other resources that cover the material in the
 Content Outline.
 
-There is no single text recommended by NCBAHMTM. All NCBAHMTM examination modules reflect
+There is no single text recommended by NCBAHM™. All NCBAHM™ examination modules reflect
 practice in the United States as determined by the most recent job analysis.
 
-NCBAHMTM's item writers and examination development committee members frequently use the
+NCBAHM™’s item writers and examination development committee members frequently use the
 following texts as resources; however, the sources used are not limited to the books listed here. The
-NCBAHMTM does not endorse any third-party study/preparation guide.
+NCBAHM™ does not endorse any third-party study/preparation guide.
 
 Cheng, Xinnong. (Ed.). Chinese Acupuncture and Moxibustion. 4th ed. Beijing: Foreign
     Languages Press, 2019.
@@ -157,7 +157,7 @@ Wiseman, Nigel, and Andy Ellis. Fundamentals of Chinese Medicine. Revised Editio
 Wu, Yan, and Warren Fischer. Practical Therapeutics of Traditional Chinese Medicine. Ed. Jake P.
     Fratkin. Brookline, MA: Paradigm Publications, 1997.
 
-� 2026 National Certification Board for Acupuncture and Herbal Medicine (NCBAHM)TM. All rights reserved.
+© 2026 National Certification Board for Acupuncture and Herbal Medicine (NCBAHM)™. All rights reserved.
 2026 FOM Content Outline
 
                                                                                                                                                                                4

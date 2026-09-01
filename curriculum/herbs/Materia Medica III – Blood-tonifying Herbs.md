@@ -5,7 +5,7 @@
 
 ## p.1
 
-Materia Medica III � Blood-Tonifying Herbs
+Materia Medica III – Blood-Tonifying Herbs
 
 Overview
 
@@ -18,19 +18,19 @@ General Characteristics
 Attribute     Description
 Taste         Sweet (often acrid or bitter as secondary)
 
-Temperature Warm (most), Neutral�Cool (select)
+Temperature Warm (most), Neutral–Cool (select)
 Channels Liver, Heart, Spleen
 
 Core Actions Tonify blood; nourish yin; regulate menses
 
 Global Cautions
 
-    � Blood tonics can be cloying  watch for Spleen deficiency, dampness, or loose
+    • Blood tonics can be cloying → watch for Spleen deficiency, dampness, or loose
          stools.
 
-    � Warm blood tonics may aggravate heat or yin-deficient heat.
+    • Warm blood tonics may aggravate heat or yin-deficient heat.
 
-Blood-Tonifying Herbs � Quick Reference Table
+Blood-Tonifying Herbs – Quick Reference Table
 
 Herb          Nature            Channels                  Core Exam
 Dang Gui      Warm              LV, HT, SP                Keywords
@@ -63,7 +63,7 @@ Long Yan Rou  Warm     HT, SP      Nourishes blood;
                                    Tonifies qi & blood;
                                    calms Shen
 
-Dng Gu 
+Dāng Guī 当归
 
 Radix Angelicae Sinensis | Chinese angelica root
 
@@ -80,33 +80,33 @@ Primary Actions
 
 Key Indications
 
-    � Blood deficiency: dizziness, pale complexion, palpitations
-    � Gynecologic disorders: dysmenorrhea, irregular menses, amenorrhea
-    � Pain due to blood deficiency or cold from deficiency
-    � Constipation due to blood deficiency
+    • Blood deficiency: dizziness, pale complexion, palpitations
+    • Gynecologic disorders: dysmenorrhea, irregular menses, amenorrhea
+    • Pain due to blood deficiency or cold from deficiency
+    • Constipation due to blood deficiency
 
 Processing
 
-    � Dang Gui Shen: Tonifies blood
-    � Dang Gui Wei: Invigorates blood
-    � Quan Dang Gui: Harmonizes blood
+    • Dang Gui Shen: Tonifies blood
+    • Dang Gui Wei: Invigorates blood
+    • Quan Dang Gui: Harmonizes blood
 
 Dosage
 
-    � 5�15 g
+    • 5–15 g
 
 Contraindications
 
-    � Excess patterns; yin-deficient heat
-    � Caution with diarrhea or abdominal distention
+    • Excess patterns; yin-deficient heat
+    • Caution with diarrhea or abdominal distention
 
 ## p.3
 
 Exam Pearl
 
-      Dang Gui both tonifies and moves blood--think deficiency with pain.
+      Dang Gui both tonifies and moves blood—think deficiency with pain.
 
-Sh� D� Hu�ng 
+Shú Dì Huáng 熟地黄
 
 Radix Rehmanniae Preparata | Prepared rehmannia
 Nature & Flavor: Sweet, slightly warm
@@ -120,29 +120,29 @@ Primary Actions
 
 Key Indications
 
-    � Severe blood deficiency with dizziness, insomnia, menstrual disorders
-    � Kidney yin deficiency with heat signs
-    � Essence deficiency: low back pain, tinnitus, premature graying
+    • Severe blood deficiency with dizziness, insomnia, menstrual disorders
+    • Kidney yin deficiency with heat signs
+    • Essence deficiency: low back pain, tinnitus, premature graying
 
 Dosage
 
-    � 10�30 g
+    • 10–30 g
 
 Processing Notes
 
-    � Charred Shu Di: Stops bleeding
-    � Combine with Chen Pi or Sha Ren to protect the Middle Jiao
+    • Charred Shu Di: Stops bleeding
+    • Combine with Chen Pi or Sha Ren to protect the Middle Jiao
 
 Contraindications
 
-    � Dampness, phlegm, qi stagnation
-    � Weak digestion
+    • Dampness, phlegm, qi stagnation
+    • Weak digestion
 
 Exam Pearl
 
       Shu Di = strongest blood & essence tonic, but most cloying
 
-H� Shu W  (Zhi)
+Hé Shǒu Wū 何首乌 (Zhi)
 
 Radix Polygoni Multiflori Preparata | Processed fleeceflower
 Nature & Flavor: Bitter, sweet, astringent, slightly warm
@@ -160,28 +160,28 @@ Primary Actions
 
 Key Indications
 
-    � Premature graying, dizziness, weakness in the lower back and knees
-    � Constipation from blood deficiency
-    � Used for fire toxins such as carbuncles, sores, and goiter
+    • Premature graying, dizziness, weakness in the lower back and knees
+    • Constipation from blood deficiency
+    • Used for fire toxins such as carbuncles, sores, and goiter
 
 Processing Distinction (Critical)
 
-    � Sheng He Shou Wu: Clears toxins, moves bowels (NOT a tonic); it is bitter and has
+    • Sheng He Shou Wu: Clears toxins, moves bowels (NOT a tonic); it is bitter and has
          a strong action to eliminate heat
 
-    � Zhi He Shou Wu: Tonifies blood & essence; strengthens Liver & Kidney, benefits
+    • Zhi He Shou Wu: Tonifies blood & essence; strengthens Liver & Kidney, benefits
          hair
 
 Dosage
 
-    � 10�30 g
+    • 10–30 g
 
 Contraindications
 
-    � Spleen deficiency with loose stools
-    � Dampness or phlegm
+    • Spleen deficiency with loose stools
+    • Dampness or phlegm
 
-B�i Sh�o 
+Bái Sháo 白芍
 
 Radix Paeoniae Alba | White peony root
 
@@ -197,28 +197,28 @@ Primary Actions
 
 Key Indications
 
-    � Menstrual disorders with deficiency
-    � Muscle cramps, abdominal pain
+    • Menstrual disorders with deficiency
+    • Muscle cramps, abdominal pain
 
 ## p.5
 
-� Liver qi constraint with deficiency
-    � Spontaneous or night sweating
+• Liver qi constraint with deficiency
+    • Spontaneous or night sweating
 
 Dosage
 
-    � 5�10 g (up to 30 g)
+    • 5–10 g (up to 30 g)
 
 Contraindications
 
-    � Yang deficiency with cold
-    � Incompatible with Li Lu
+    • Yang deficiency with cold
+    • Incompatible with Li Lu
 
 Exam Pearl
 
       Bai Shao treats pain from deficiency, not stasis.
 
- Jio 
+Ē Jiāo 阿胶
 
 Colla Corii Asini | Donkey-hide gelatin
 Nature & Flavor: Sweet, neutral
@@ -232,21 +232,21 @@ Primary Actions
 
 Key Indications
 
-    � Bleeding from deficiency (uterine, coughing blood)
-    � Blood deficiency with dryness
+    • Bleeding from deficiency (uterine, coughing blood)
+    • Blood deficiency with dryness
 
 Dosage
 
-    � 3�9 g (melt separately in the warm decoction or hot water)
+    • 3–9 g (melt separately in the warm decoction or hot water)
 
 Contraindications
 
-    � E Jiao is cloying and is contraindicated with Spleen and Stomach deficiencies that
+    • E Jiao is cloying and is contraindicated with Spleen and Stomach deficiencies that
          manifest as loose stools, diarrhea, or poor appetite
 
-    � Dampness, phlegm, poor digestion
+    • Dampness, phlegm, poor digestion
 
-L�ng Yn R�u 
+Lóng Yǎn Ròu 龙眼肉
 
 Arillus Longan | Longan fruit
 
@@ -263,20 +263,20 @@ Primary Actions
 
 Key Indications
 
-    � Insomnia, anxiety, palpitations from deficiency
-    � Poor memory, fatigue
+    • Insomnia, anxiety, palpitations from deficiency
+    • Poor memory, fatigue
 
 Dosage
 
-    � 9�15 g
-    � Max dose for Long Yan Rou is 30g. It is also used in paste, grain-based liquor, or pill
+    • 9–15 g
+    • Max dose for Long Yan Rou is 30g. It is also used in paste, grain-based liquor, or pill
 
          form.
 
 Contraindications
 
-    � Phlegm-fire, middle jiao dampness, or pill forms
-    � Long Yan Rou is warm, so it is contraindicated in cases of excess or deficiency heat
+    • Phlegm-fire, middle jiao dampness, or pill forms
+    • Long Yan Rou is warm, so it is contraindicated in cases of excess or deficiency heat
 
          and in exterior conditions.
 
@@ -286,7 +286,7 @@ Exam Pearl
 
 Comparisons
 
-    � Dang Gui vs. Shu Di: Moving vs. cloying; pain vs. essence
-    � Dang Gui vs. Bai Shao: Moves blood vs. preserves yin
-    � He Shou Wu vs. Shu Di: Hair/Jing vs. marrow/essence
+    • Dang Gui vs. Shu Di: Moving vs. cloying; pain vs. essence
+    • Dang Gui vs. Bai Shao: Moves blood vs. preserves yin
+    • He Shou Wu vs. Shu Di: Hair/Jing vs. marrow/essence
 

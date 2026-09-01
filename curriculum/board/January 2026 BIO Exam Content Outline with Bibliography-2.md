@@ -9,7 +9,7 @@ Biomedicine Content Outline
 Effective September 1, 2026
 
 Note to Candidate: This document serves as a guide to assist in examination preparation for
-candidates who have met NCBAHMTM eligibility requirements. Below is the content outline for
+candidates who have met NCBAHM™ eligibility requirements. Below is the content outline for
 the Biomedicine examination.
 
 Please note: In regards to Clean Needle Technique (CNT), the Biomedicine module focuses on
@@ -31,12 +31,12 @@ Domain I. Biomedical Sciences (18% of Exam)
     C. Supplements (5%)
          1. Identify commonly used supplements and their functions.3
          2. Recognize interactions, side effects and adverse effects of supplements.
-         3. Identify clinically significant supplement � pharmaceutical interactions.
+         3. Identify clinically significant supplement – pharmaceutical interactions.
 
 1 See Appendix A: Medical Conditions.
 2 See Appendix B: Pharmaceuticals.
 3 See Appendix C: Supplements.
-� 2026 National Certification Board for Acupuncture and Herbal Medicine (NCBAHM)TM. All rights reserved.
+© 2026 National Certification Board for Acupuncture and Herbal Medicine (NCBAHM)™. All rights reserved.
 2026 BIO Content Outline
 
                                                                                                                                                                                1
@@ -74,7 +74,7 @@ Domain II. Patient Evaluation (26% of Exam)
          4. Recognize the clinical significance of findings from laboratory tests.
          5. Identify indications for other diagnostic tests (e.g., EMG, EKG, biopsy).
 
-� 2026 National Certification Board for Acupuncture and Herbal Medicine (NCBAHM)TM. All rights reserved.
+© 2026 National Certification Board for Acupuncture and Herbal Medicine (NCBAHM)™. All rights reserved.
 2026 BIO Content Outline
 
                                                                                                                                                                                2
@@ -105,7 +105,7 @@ Domain IV. Professional Responsibilities (22% of Exam)
     A. Professional and ethical conduct (5%)
          1. Comply with applicable federal laws and regulations (e.g., FDA, ADA, HIPAA, CDC).
          2. Comply with the legal scope of practice for Acupuncturists.
-         3. Adhere to the NCBAHMTM Code of Ethics, Grounds for Professional Discipline, and the
+         3. Adhere to the NCBAHM™ Code of Ethics, Grounds for Professional Discipline, and the
               Procedures for Upholding Professional Conduct.
          4. Respect professional boundaries between patients and clinicians.
          5. Recognize and respond appropriately to unsafe or unprofessional practice.
@@ -113,7 +113,7 @@ Domain IV. Professional Responsibilities (22% of Exam)
          7. Demonstrate respect for understanding non-discriminatory practices.
          8. Identify and manage potential conflict of interest situations.
 
-� 2026 National Certification Board for Acupuncture and Herbal Medicine (NCBAHM)TM. All rights reserved.
+© 2026 National Certification Board for Acupuncture and Herbal Medicine (NCBAHM)™. All rights reserved.
 2026 BIO Content Outline
 
                                                                                                                                                                                3
@@ -124,7 +124,7 @@ Domain IV. Professional Responsibilities (22% of Exam)
          10. Terminate the course of treatment as appropriate.
     B. Infection control and workplace safety (3%)
          1. Identify modes of transmission of communicable diseases (e.g., airborne, fecal-oral).
-         2. Follow CDC's standard and transmission-based precautions to prevent disease
+         2. Follow CDC’s standard and transmission-based precautions to prevent disease
 
               transmission and minimize the risk of infection.
          3. Maintain safe clinical environment in accordance with OSHA and other standards
@@ -132,11 +132,11 @@ Domain IV. Professional Responsibilities (22% of Exam)
               (e.g., cleaning and disinfection of equipment, hazard communication).
          4. Comply with workplace health and safety standards.
     C. Records management and reporting (3%)
-         1. Document the following information in patient's chart: assessment findings,
+         1. Document the following information in patient’s chart: assessment findings,
 
               treatment plan, responses to treatment and plan for follow-up care.
          2. Maintain patient records in accordance with professional and legal standards.
-         3. Maintain patient's privacy and confidentiality of protected health information in
+         3. Maintain patient’s privacy and confidentiality of protected health information in
 
               accordance with HIPAA and other legislation.
          4. Report instances of suspected abuse and neglect as required by law.
@@ -158,7 +158,7 @@ Domain IV. Professional Responsibilities (22% of Exam)
               biomedicine (e.g., correlation of diagnostic categories, differences in uses of organ
               systems).
 
-� 2026 National Certification Board for Acupuncture and Herbal Medicine (NCBAHM)TM. All rights reserved.
+© 2026 National Certification Board for Acupuncture and Herbal Medicine (NCBAHM)™. All rights reserved.
 2026 BIO Content Outline
 
                                                                                                                                                                                4
@@ -173,7 +173,7 @@ Domain IV. Professional Responsibilities (22% of Exam)
               seizures, falls, anaphylactic reactions, hypoglycemia).
          2. Implement emergency protocols in practice (e.g., CPR).
 
-� 2026 National Certification Board for Acupuncture and Herbal Medicine (NCBAHM)TM. All rights reserved.
+© 2026 National Certification Board for Acupuncture and Herbal Medicine (NCBAHM)™. All rights reserved.
 2026 BIO Content Outline
 
                                                                                                                                                                                5
@@ -184,32 +184,32 @@ Appendix A. Medical Conditions
 The exam will focus on but may not be exclusively limited to the conditions below.
 
 Autoimmune
-    � Myasthenia gravis
-    � Psoriasis
-    � Rheumatoid arthritis (RA)
-    � Systemic lupus erythematosus (SLE)
-    � Temporal arteritis
+    • Myasthenia gravis
+    • Psoriasis
+    • Rheumatoid arthritis (RA)
+    • Systemic lupus erythematosus (SLE)
+    • Temporal arteritis
 
 Cardiovascular
-    � Aneurysm
-    � Angina pectoris
-    � Arrhythmia (e.g., atrial fibrillation, premature ventricular contraction, tachycardia)
-    � Atherosclerosis (e.g., coronary artery disease, peripheral vascular disease)
-    � Blood pressure disorders (e.g., hypertension, hypotension)
-    � Congestive heart failure
-    � Deep vein thrombosis
-    � Dyslipidemia
-    � Myocardial infarction
-    � Postural orthostatic tachycardia syndrome (POTS)
-    � Raynaud's phenomenon
-    � Valvular disease
+    • Aneurysm
+    • Angina pectoris
+    • Arrhythmia (e.g., atrial fibrillation, premature ventricular contraction, tachycardia)
+    • Atherosclerosis (e.g., coronary artery disease, peripheral vascular disease)
+    • Blood pressure disorders (e.g., hypertension, hypotension)
+    • Congestive heart failure
+    • Deep vein thrombosis
+    • Dyslipidemia
+    • Myocardial infarction
+    • Postural orthostatic tachycardia syndrome (POTS)
+    • Raynaud’s phenomenon
+    • Valvular disease
 
 Dermatological
-    � Burns
-    � Contagious skin conditions (e.g., lice, fungal infections, scabies, cellulitis)
-    � Noncontagious skin conditions (e.g., acne, eczema, alopecia, moles)
+    • Burns
+    • Contagious skin conditions (e.g., lice, fungal infections, scabies, cellulitis)
+    • Noncontagious skin conditions (e.g., acne, eczema, alopecia, moles)
 
-� 2026 National Certification Board for Acupuncture and Herbal Medicine (NCBAHM)TM. All rights reserved.
+© 2026 National Certification Board for Acupuncture and Herbal Medicine (NCBAHM)™. All rights reserved.
 2026 BIO Content Outline
 
                                                                                                                                                                                6
@@ -217,36 +217,36 @@ Dermatological
 ## p.7
 
 Endocrine and Metabolic
-    � Adrenal disorders (e.g., Cushing's, Addison's)
-    � Diabetes Type 1
-    � Metabolic syndrome/insulin resistance (e.g., Diabetes Type 2)
-    � Obesity
-    � Parathyroid disorders
-    � Pituitary disorders
-    � Thyroid disorders (e.g., Hashimoto's thyroiditis, Graves' disease)
+    • Adrenal disorders (e.g., Cushing’s, Addison’s)
+    • Diabetes Type 1
+    • Metabolic syndrome/insulin resistance (e.g., Diabetes Type 2)
+    • Obesity
+    • Parathyroid disorders
+    • Pituitary disorders
+    • Thyroid disorders (e.g., Hashimoto’s thyroiditis, Graves’ disease)
 
 Gastrointestinal
-    � Appendicitis
-    � Cirrhosis
-    � Diverticular diseases (e.g., diverticulosis, diverticulitis)
-    � Food sensitivity/allergies (e.g., celiac disease, lactose intolerance)
-    � Gallbladder conditions (e.g., cholelithiasis, cholecystitis)
-    � Gastric bypass
-    � Gastritis
-    � Gastroesophageal reflux disease (GERD)
-    � Gastrointestinal polyps
-    � Hemorrhoids
-    � Hepatitis
-    � Hiatal hernia
-    � Inflammatory bowel disease (e.g., Crohn's disease, ulcerative colitis)
-    � Intestinal/biliary obstruction
-    � Irritable bowel syndrome (IBS)
-    � Pancreatitis
-    � Peptic ulcer (e.g., H. pylori, Campylobacter)
-    � Peritonitis
-    � Small intestinal bacterial overgrowth (SIBO)
+    • Appendicitis
+    • Cirrhosis
+    • Diverticular diseases (e.g., diverticulosis, diverticulitis)
+    • Food sensitivity/allergies (e.g., celiac disease, lactose intolerance)
+    • Gallbladder conditions (e.g., cholelithiasis, cholecystitis)
+    • Gastric bypass
+    • Gastritis
+    • Gastroesophageal reflux disease (GERD)
+    • Gastrointestinal polyps
+    • Hemorrhoids
+    • Hepatitis
+    • Hiatal hernia
+    • Inflammatory bowel disease (e.g., Crohn’s disease, ulcerative colitis)
+    • Intestinal/biliary obstruction
+    • Irritable bowel syndrome (IBS)
+    • Pancreatitis
+    • Peptic ulcer (e.g., H. pylori, Campylobacter)
+    • Peritonitis
+    • Small intestinal bacterial overgrowth (SIBO)
 
-� 2026 National Certification Board for Acupuncture and Herbal Medicine (NCBAHM)TM. All rights reserved.
+© 2026 National Certification Board for Acupuncture and Herbal Medicine (NCBAHM)™. All rights reserved.
 2026 BIO Content Outline
 
                                                                                                                                                                                7
@@ -254,73 +254,73 @@ Gastrointestinal
 ## p.8
 
 Hematological
-    � Bleeding and coagulation disorders (e.g., pulmonary embolism)
-    � Disorders of platelets (e.g., thrombocytopenia)
-    � Disorders of red blood cells (e.g., anemia, polycythemia, sickle cell)
-    � Disorders of white blood cells (e.g., neutropenia)
-    � Hemochromatosis
+    • Bleeding and coagulation disorders (e.g., pulmonary embolism)
+    • Disorders of platelets (e.g., thrombocytopenia)
+    • Disorders of red blood cells (e.g., anemia, polycythemia, sickle cell)
+    • Disorders of white blood cells (e.g., neutropenia)
+    • Hemochromatosis
 
 Infectious
-    � Bacterial infections (e.g., E. coli, strep, MRSA, impetigo)
-    � Foodborne illness
-    � Lyme disease
-    � Parasitic infections
-    � Sexually transmitted infections
-    � Tuberculosis
-    � Viral infections (e.g., shingles, measles, influenza, post-viral illness)
+    • Bacterial infections (e.g., E. coli, strep, MRSA, impetigo)
+    • Foodborne illness
+    • Lyme disease
+    • Parasitic infections
+    • Sexually transmitted infections
+    • Tuberculosis
+    • Viral infections (e.g., shingles, measles, influenza, post-viral illness)
 
 Genetics
-    � Down syndrome
-    � Ehlers-Danlos syndrome (EDS)
-    � Marfan syndrome
+    • Down syndrome
+    • Ehlers-Danlos syndrome (EDS)
+    • Marfan syndrome
 
 Mental, Neurodevelopmental, and Behavioral
-    � Addictions
-    � Anxiety disorders
-    � Attention-deficit/hyperactivity disorder (ADHD)
-    � Eating disorders (e.g., anorexia nervosa, bulimia nervosa)
-    � Mood disorders (e.g., depression, bi-polar disorder)
-    � Obsessive-compulsive disorder (OCD)
-    � Post-traumatic stress disorder (PTSD)
-    � Schizophrenia
+    • Addictions
+    • Anxiety disorders
+    • Attention-deficit/hyperactivity disorder (ADHD)
+    • Eating disorders (e.g., anorexia nervosa, bulimia nervosa)
+    • Mood disorders (e.g., depression, bi-polar disorder)
+    • Obsessive-compulsive disorder (OCD)
+    • Post-traumatic stress disorder (PTSD)
+    • Schizophrenia
 
-� 2026 National Certification Board for Acupuncture and Herbal Medicine (NCBAHM)TM. All rights reserved.
+© 2026 National Certification Board for Acupuncture and Herbal Medicine (NCBAHM)™. All rights reserved.
 2026 BIO Content Outline
 
                                                                                                                                                                                8
 
 ## p.9
 
-� Spectrum disorder (e.g., autism)
-    � Substance use disorder (e.g., alcohol, opioids, nicotine)
-    � Suicidal ideation
+• Spectrum disorder (e.g., autism)
+    • Substance use disorder (e.g., alcohol, opioids, nicotine)
+    • Suicidal ideation
 
 Musculoskeletal
-    � Acute, subacute, and chronic musculoskeletal conditions (e.g., trauma, degenerative
+    • Acute, subacute, and chronic musculoskeletal conditions (e.g., trauma, degenerative
          disorders)
-    � Affecting the appendicular skeleton (e.g., meniscal injuries, frozen shoulder)
-    � Affecting the axial skeleton (e.g., disc herniation, TMJD)
-    � Bone density disorders
-    � Gout
+    • Affecting the appendicular skeleton (e.g., meniscal injuries, frozen shoulder)
+    • Affecting the axial skeleton (e.g., disc herniation, TMJD)
+    • Bone density disorders
+    • Gout
 
 Neurological
-    � Bell's palsy
-    � Concussion and traumatic brain injury (TBI)
-    � Dementia (e.g., Alzheimer's disease)
-    � Disorders of the central nervous system (e.g., cauda equina)
-    � Epilepsy
-    � Headaches (e.g., cluster, tension, migraine)
-    � Neuro-degenerative (e.g., multiple sclerosis, Parkinson's disease)
-    � Peripheral neuropathies
-    � Post-herpetic neuralgia
-    � Radiculopathies (e.g., sciatica)
-    � Stroke
-    � Transient ischemic attack (TIA)
-    � Trigeminal neuralgia
-    � Vertigo
-    � Other (e.g., Guillain-Barre, restless leg syndrome)
+    • Bell’s palsy
+    • Concussion and traumatic brain injury (TBI)
+    • Dementia (e.g., Alzheimer’s disease)
+    • Disorders of the central nervous system (e.g., cauda equina)
+    • Epilepsy
+    • Headaches (e.g., cluster, tension, migraine)
+    • Neuro-degenerative (e.g., multiple sclerosis, Parkinson’s disease)
+    • Peripheral neuropathies
+    • Post-herpetic neuralgia
+    • Radiculopathies (e.g., sciatica)
+    • Stroke
+    • Transient ischemic attack (TIA)
+    • Trigeminal neuralgia
+    • Vertigo
+    • Other (e.g., Guillain-Barre, restless leg syndrome)
 
-� 2026 National Certification Board for Acupuncture and Herbal Medicine (NCBAHM)TM. All rights reserved.
+© 2026 National Certification Board for Acupuncture and Herbal Medicine (NCBAHM)™. All rights reserved.
 2026 BIO Content Outline
 
                                                                                                                                                                                9
@@ -328,54 +328,54 @@ Neurological
 ## p.10
 
 Oncological
-    � Cancer (e.g., organs, blood, bone, skin)
-    � Side effects secondary to cancer treatment (e.g., nausea, pain)
+    • Cancer (e.g., organs, blood, bone, skin)
+    • Side effects secondary to cancer treatment (e.g., nausea, pain)
 
 Ophthalmic and Ear, Nose and Throat
-    � Conditions of the ear (e.g., otitis media, tinnitus)
-    � Conditions of the eye (e.g., macular degeneration, conjunctivitis)
-    � Conditions of the nose and throat (e.g., sinusitis, allergic rhinitis)
+    • Conditions of the ear (e.g., otitis media, tinnitus)
+    • Conditions of the eye (e.g., macular degeneration, conjunctivitis)
+    • Conditions of the nose and throat (e.g., sinusitis, allergic rhinitis)
 
 Pulmonary
-    � Asthma
-    � Chronic obstructive pulmonary disease (COPD)
-    � Pneumothorax
-    � Respiratory tract infections (e.g., bronchitis, pneumonia)
+    • Asthma
+    • Chronic obstructive pulmonary disease (COPD)
+    • Pneumothorax
+    • Respiratory tract infections (e.g., bronchitis, pneumonia)
 
 Reproductive
-    � Breast conditions (e.g., lumps, mastitis)
-    � Erectile dysfunction (ED)
-    � Infertility (e.g., polycystic ovarian syndrome (PCOS), low sperm count)
-    � Menopause (e.g., normal and with complications)
-    � Menstrual and uterine disorders (e.g., dysmenorrhea, endometriosis, fibroids)
-    � Perinatal support (e.g., labor preparation, postpartum)
-    � Pregnancy (e.g., normal and with complications)
-    � Prostate conditions (e.g., benign prostatic hyperplasia (BPH), prostatitis)
+    • Breast conditions (e.g., lumps, mastitis)
+    • Erectile dysfunction (ED)
+    • Infertility (e.g., polycystic ovarian syndrome (PCOS), low sperm count)
+    • Menopause (e.g., normal and with complications)
+    • Menstrual and uterine disorders (e.g., dysmenorrhea, endometriosis, fibroids)
+    • Perinatal support (e.g., labor preparation, postpartum)
+    • Pregnancy (e.g., normal and with complications)
+    • Prostate conditions (e.g., benign prostatic hyperplasia (BPH), prostatitis)
 
 Urinary/Renal
-    � Dysuria (e.g., painful urination, retention)
-    � Incontinence
-    � Infections (e.g., cystitis, pyelonephritis)
-    � Kidney stones
+    • Dysuria (e.g., painful urination, retention)
+    • Incontinence
+    • Infections (e.g., cystitis, pyelonephritis)
+    • Kidney stones
 
-� 2026 National Certification Board for Acupuncture and Herbal Medicine (NCBAHM)TM. All rights reserved.
+© 2026 National Certification Board for Acupuncture and Herbal Medicine (NCBAHM)™. All rights reserved.
 2026 BIO Content Outline
 
                                                                                                                                                                              10
 
 ## p.11
 
-� Pelvic floor dysfunction (e.g., pelvic floor prolapse)
+• Pelvic floor dysfunction (e.g., pelvic floor prolapse)
 Miscellaneous
 
-    � Implants (e.g., pacemakers, breasts, other body part enhancements, muscles that have
+    • Implants (e.g., pacemakers, breasts, other body part enhancements, muscles that have
          been treated with Botox)
 
-    � Multi-system conditions (e.g., chronic fatigue, fibromyalgia)
-    � Sleep disorders (e.g., narcolepsy, sleep apnea, insomnia)
-    � Non-dermatological fungal infections (e.g., candidiasis)
+    • Multi-system conditions (e.g., chronic fatigue, fibromyalgia)
+    • Sleep disorders (e.g., narcolepsy, sleep apnea, insomnia)
+    • Non-dermatological fungal infections (e.g., candidiasis)
 
-� 2026 National Certification Board for Acupuncture and Herbal Medicine (NCBAHM)TM. All rights reserved.
+© 2026 National Certification Board for Acupuncture and Herbal Medicine (NCBAHM)™. All rights reserved.
 2026 BIO Content Outline
 
                                                                                                                                                                              11
@@ -386,31 +386,31 @@ Appendix B. Pharmaceuticals
 The exam will focus on but may not be exclusively limited to the list of medication categories
 below.
 
-� Allergy/sinus       � Central nervous system (CNS)
-� Analgesic               stimulants/attention deficit
-� Anti-angina
-� Anti-anxiety        � Cough
-� Antiasthmatic       � Dermatological
-� Antibiotic          � Substances of abuse
-� Anticancer          � Fertility
-� Anticoagulant       � Gastrointestinal
-� Antidementia        � Hormonal replacement therapy
-� Antidepressants     � Immune modulators/biologics
-� Antidiabetic        � Mood stabilizer
-� Antidiarrheal       � Non-steroidal anti-inflammatory
-� Antifungal
-� Antihyperlipidemic      drugs (NSAIDs)
-� Antihypertension    � Opioids
-� Antinausea          � Osteoporosis
-� Anti-Parkinson      � Sexual dysfunction
-� Antipsychotics      � Sleep
-� Antiseizure         � Smoking cessation
-� Antiviral           � Steroids
-� Birth control       � Stool softeners/laxatives
-� Cannabinoids        � Thyroid
-                      � Weight management
+• Allergy/sinus       • Central nervous system (CNS)
+• Analgesic               stimulants/attention deficit
+• Anti-angina
+• Anti-anxiety        • Cough
+• Antiasthmatic       • Dermatological
+• Antibiotic          • Substances of abuse
+• Anticancer          • Fertility
+• Anticoagulant       • Gastrointestinal
+• Antidementia        • Hormonal replacement therapy
+• Antidepressants     • Immune modulators/biologics
+• Antidiabetic        • Mood stabilizer
+• Antidiarrheal       • Non-steroidal anti-inflammatory
+• Antifungal
+• Antihyperlipidemic      drugs (NSAIDs)
+• Antihypertension    • Opioids
+• Antinausea          • Osteoporosis
+• Anti-Parkinson      • Sexual dysfunction
+• Antipsychotics      • Sleep
+• Antiseizure         • Smoking cessation
+• Antiviral           • Steroids
+• Birth control       • Stool softeners/laxatives
+• Cannabinoids        • Thyroid
+                      • Weight management
 
-� 2026 National Certification Board for Acupuncture and Herbal Medicine (NCBAHM)TM. All rights reserved.
+© 2026 National Certification Board for Acupuncture and Herbal Medicine (NCBAHM)™. All rights reserved.
 2026 BIO Content Outline
 
                                                                                                                                                                              12
@@ -420,22 +420,22 @@ below.
 Appendix C. Supplements
 The exam will focus on but may not be exclusively limited to the list below.
 
-   � Amino acids (e.g., L-glutamine, L-lysine, choline)
-   � Anabolic supplements (e.g., creatine)
-   � Antioxidants (e.g., coenzyme Q10, selenium)
-   � Bone/Joint health (e.g., glucosamine, collagen)
-   � Digestive support (e.g., enzymes, probiotics)
-   � Energy support (e.g., ashwagandha, guarana)
-   � Essential fatty acids (e.g., fish oils)
-   � Herbal supplements (e.g., saw palmetto, valerian, turmeric)
-   � Homeopathic remedies (e.g., arnica, nux vomica)
-   � Hormonal support (e.g., melatonin, wild yam, DHEA)
-   � Minerals (e.g., calcium, magnesium, potassium, iron)
-   � Mood support (e.g., St. John's Wort, SAMe, 5-HTP)
-   � Sexual function support (e.g., yohimbine)
-   � Vitamins (e.g., A, B1-B12, C, D, E, K)
+   • Amino acids (e.g., L-glutamine, L-lysine, choline)
+   • Anabolic supplements (e.g., creatine)
+   • Antioxidants (e.g., coenzyme Q10, selenium)
+   • Bone/Joint health (e.g., glucosamine, collagen)
+   • Digestive support (e.g., enzymes, probiotics)
+   • Energy support (e.g., ashwagandha, guarana)
+   • Essential fatty acids (e.g., fish oils)
+   • Herbal supplements (e.g., saw palmetto, valerian, turmeric)
+   • Homeopathic remedies (e.g., arnica, nux vomica)
+   • Hormonal support (e.g., melatonin, wild yam, DHEA)
+   • Minerals (e.g., calcium, magnesium, potassium, iron)
+   • Mood support (e.g., St. John's Wort, SAMe, 5-HTP)
+   • Sexual function support (e.g., yohimbine)
+   • Vitamins (e.g., A, B1-B12, C, D, E, K)
 
-� 2026 National Certification Board for Acupuncture and Herbal Medicine (NCBAHM)TM. All rights reserved.
+© 2026 National Certification Board for Acupuncture and Herbal Medicine (NCBAHM)™. All rights reserved.
 2026 BIO Content Outline
 
                                                                                                                                                                              13
@@ -449,21 +449,21 @@ Bibliography is only to provide the candidate with suggested resources to utiliz
 examination. Candidates should feel free to consider other resources that cover the material in the
 Content Outline.
 
-There is no single text recommended by NCBAHMTM. All NCBAHMTM examination modules reflect
+There is no single text recommended by NCBAHM™. All NCBAHM™ examination modules reflect
 practice in the United States as determined by the most recent job analysis.
 
-NCBAHMTM's item writers and examination development committee members frequently use the
+NCBAHM™’s item writers and examination development committee members frequently use the
 following texts as resources; however, the sources used are not limited to the books listed here. The
-NCBAHMTM does not endorse any third-party study/preparation guide.
+NCBAHM™ does not endorse any third-party study/preparation guide.
 
 Anzaldua, David. An Acupuncturist's Guide to Medical Red Flags & Referrals. Boulder, CO: Blue
     Poppy Enterprises, Inc., 2010.
 
-Benjamin, Ben E. and Cherie Sohnen-Moe. The Ethics of Touch: The Hands-On Practitioner's
+Benjamin, Ben E. and Cherie Sohnen-Moe. The Ethics of Touch: The Hands-On Practitioner’s
     Guide to Creating a Professional, Safe, and Enduring Practice. 3rd ed. Boulder, CO: Discovery
     of Books, 2020.
 
-Bickley, Lynn S. Bates' Guide to Physical Examination and History Taking. 13th ed. Revised
+Bickley, Lynn S. Bates’ Guide to Physical Examination and History Taking. 13th ed. Revised
     Reprint. Philadelphia: Lippincott Williams & Wilkins Publishers, 2023.
 
 Council of Colleges of Acupuncture and Oriental Medicine. Clean Needle Technique Manual Best
@@ -486,7 +486,7 @@ Papadakis, Maxine A., Stephen J. McPhee, and Michael W. Rabow. Current Diagnosis
 Porter, Robert S. (Ed.). The Merck Manual of Diagnosis and Therapy. 20th ed. West Point, PA:
     Merck & Co. Inc., 2018.
 
-� 2026 National Certification Board for Acupuncture and Herbal Medicine (NCBAHM)TM. All rights reserved.
+© 2026 National Certification Board for Acupuncture and Herbal Medicine (NCBAHM)™. All rights reserved.
 2026 BIO Content Outline
 
                                                                                                                                                                              14
@@ -495,7 +495,7 @@ Porter, Robert S. (Ed.). The Merck Manual of Diagnosis and Therapy. 20th ed. Wes
 
 Rakel, David P and Vincent Minichiello (Eds.). Integrative Medicine. 5th ed. Elsevier, 2023.
 
-Stephenson, Clare. The Complementary Therapist's Guide to Red Flags and Referrals.1st ed. New
+Stephenson, Clare. The Complementary Therapist’s Guide to Red Flags and Referrals.1st ed. New
     York: Elsevier Churchill Livingstone, 2013.
 
 Websites
@@ -537,7 +537,7 @@ NCBAHM Procedure for Upholding                  ICD Coding
     Professional Conduct (located under
     Professional Discipline section)
 
-� 2026 National Certification Board for Acupuncture and Herbal Medicine (NCBAHM)TM. All rights reserved.
+© 2026 National Certification Board for Acupuncture and Herbal Medicine (NCBAHM)™. All rights reserved.
 2026 BIO Content Outline
 
                                                                                                                                                                              15

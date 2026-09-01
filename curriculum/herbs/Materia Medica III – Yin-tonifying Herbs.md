@@ -5,20 +5,20 @@
 
 ## p.1
 
-Materia Medica III � Yin-Tonifying Herbs
+Materia Medica III – Yin-Tonifying Herbs
 
 Overview
 
 Yin-tonifying herbs nourish yin, generate fluids, clear deficiency heat, and anchor yang.
-They are most commonly used for chronic deficiency patterns, postfebrile damage,
+They are most commonly used for chronic deficiency patterns, post‑febrile damage,
 dryness, and wasting disorders. Primary organs affected include the Lung, Stomach,
 Kidney, and Liver.
 
 Core Patterns
 
-    � Yin deficiency: dry mouth/throat, night sweats, red tongue (little coat)
-    � Deficiency heat: afternoon fever, irritability
-    � Post-febrile injury: thirst, dry cough
+    • Yin deficiency: dry mouth/throat, night sweats, red tongue (little coat)
+    • Deficiency heat: afternoon fever, irritability
+    • Post-febrile injury: thirst, dry cough
 
 General Characteristics
 
@@ -34,19 +34,19 @@ Core Actions Nourish yin; generate fluids; clear deficiency heat
 
 Global Cautions
 
-    � Yin tonics may be cloying  caution with Spleen deficiency, dampness, or loose
+    • Yin tonics may be cloying → caution with Spleen deficiency, dampness, or loose
          stools.
 
-    � Cold yin tonics may aggravate cold or deficiency-cold patterns.
+    • Cold yin tonics may aggravate cold or deficiency-cold patterns.
 
-Yin-Tonifying Herbs � Quick Reference Table
+Yin-Tonifying Herbs – Quick Reference Table
 
 Herb          Nature                     Channels                 Core Exam
 Bei Sha Shen  Cool                       LU, ST                   Keywords
 
 Nan Sha Shen  Cool                       LU, ST                   Nourishes Lung &
                                                                   Stomach yin;
-                                                                  postfebrile dryness
+                                                                  post‑febrile dryness
 
                                                                   Nourishes yin;
                                                                   clears phlegm
@@ -79,7 +79,7 @@ Gou Qi Zi      Neutral        LV, KD, LU
                                                                           Tonifies LV/KD yin;
                                                                           brightens eyes
 
-Bi Sh Shn 
+Běi Shā Shēn 北沙参
 
 Radix Glehniae | Glehnia root
 
@@ -93,44 +93,44 @@ Primary Actions
 
 Key Indications
 
-    � Lung Yin deficiency
+    • Lung Yin deficiency
          Dry cough, Scanty or absent sputum
          Hoarse or weak voice, Dry throat, Cough worse in the evening
 
-    � Lung Yin deficiency with deficiency heat
+    • Lung Yin deficiency with deficiency heat
          Low-grade fever, Night sweating, Five-center heat, Irritability
 
-    � Stomach Yin deficiency
+    • Stomach Yin deficiency
          Dry mouth and thirst, Poor appetite
          Dry retching or nausea without phlegm
          Sensation of dryness or burning in the epigastrium
 
-    � Post-febrile disease with Yin and fluid injury
+    • Post-febrile disease with Yin and fluid injury
 
 ## p.3
 
 Persistent thirst, Dryness, Fatigue with heat signs
          Thin, red tongue with little or no coat
-    � Consumptive patterns
+    • Consumptive patterns
          Chronic illness with dryness and weakness, Depletion of fluids and Yin over time
 
 Dosage
 
-    � 10�15 g in decoction (dried root)
-    � 15�30 g of the fresh herb
+    • 10–15 g in decoction (dried root)
+    • 15–30 g of the fresh herb
 
 Cautions / Contraindications
 
-    � Contraindicated in cough due to wind-cold
-    � Contraindicated in cold-damp or deficient-cold of the Spleen and Stomach
-    � Incompatible with L L� ()
-    � Use cautiously with significant dampness or phlegm
+    • Contraindicated in cough due to wind-cold
+    • Contraindicated in cold-damp or deficient-cold of the Spleen and Stomach
+    • Incompatible with Lǐ Lú (藜芦)
+    • Use cautiously with significant dampness or phlegm
 
 Exam Pearl
 
       Bei Sha Shen is stronger at clearing heat than Nan Sha Shen.
 
-N�n Sh Shn 
+Nán Shā Shēn 南沙参
 
 Radix Adenophorae | Adenophora root
 
@@ -145,18 +145,18 @@ Primary Actions
 
 Key Indications
 
-    � Lung and Stomach yin deficiency with dryness
+    • Lung and Stomach yin deficiency with dryness
          Dry cough, scanty or sticky sputum
          Hoarse or weak voice
          Dry throat and mouth
 
-    � Post-febrile disease with injury to fluids
+    • Post-febrile disease with injury to fluids
          Thirst, irritability, residual heat
 
-    � Dryness with mild phlegm
+    • Dryness with mild phlegm
          Especially when phlegm is difficult to expectorate
 
-    � Consumptive patterns affecting Lung Yin
+    • Consumptive patterns affecting Lung Yin
 
 ## p.4
 
@@ -164,21 +164,21 @@ Low-grade fever, night sweats, dry cough
 
 Dosage
 
-    � 9�15 g in decoction (dried root)
-    � 15�30 g if using fresh material
+    • 9–15 g in decoction (dried root)
+    • 15–30 g if using fresh material
 
 Cautions
 
-    � Contraindicated in cough due to wind-cold
-    � Use cautiously in Spleen deficiency with dampness
-    � Incompatible with L L� ()
-    � Not appropriate for cold from deficiency of Yang
+    • Contraindicated in cough due to wind-cold
+    • Use cautiously in Spleen deficiency with dampness
+    • Incompatible with Lǐ Lú (藜芦)
+    • Not appropriate for cold from deficiency of Yang
 
 Exam Pearl
 
-     Nan Sha Shen = yin tonic with mild phlegmclearing
+     Nan Sha Shen = yin tonic with mild phlegm‑clearing
 
-M�i M�n Dng 
+Mài Mén Dōng 麦门冬
 
 Radix Ophiopogonis | Ophiopogon tuber
 
@@ -194,18 +194,18 @@ Primary Actions
 
 Key Indications
 
-    � Chronic dry cough; thick, difficult sputum
-    � Stomach yin deficiency with thirst
-    � Irritability from deficiency heat
+    • Chronic dry cough; thick, difficult sputum
+    • Stomach yin deficiency with thirst
+    • Irritability from deficiency heat
 
 Dosage
 
-    � 10-15g in a decoction
+    • 10-15g in a decoction
 
 Contraindications
 
-    � Dampphlegm cough due to wind-cold or damp-phlegm accumulation
-    � Cold type Spleen deficiency diarrhea
+    • Damp‑phlegm cough due to wind-cold or damp-phlegm accumulation
+    • Cold type Spleen deficiency diarrhea
 
 ## p.5
 
@@ -213,7 +213,7 @@ Exam Pearl
 
       Mai Dong uniquely enters the Heart
 
-Tin M�n Dng 
+Tiān Mén Dōng 天门冬
 
 Radix Asparagi | Asparagus tuber
 Nature & Flavor: Sweet, bitter, very cold
@@ -227,29 +227,29 @@ Primary Actions
 
 Key Indications
 
-    � Dry, nonproductive, or scanty-sputum cough, Throat dryness, Hoarse voice, Cough
+    • Dry, nonproductive, or scanty-sputum cough, Throat dryness, Hoarse voice, Cough
          worse in the evening or at night
 
-    � Dizziness, Tinnitus, Low back and knee weakness, Night sweats, Five-center heat
-    � Chronic illness with wasting, Dryness and exhaustion, Deep depletion of fluids and
+    • Dizziness, Tinnitus, Low back and knee weakness, Night sweats, Five-center heat
+    • Chronic illness with wasting, Dryness and exhaustion, Deep depletion of fluids and
 
          Yin
-    � Dry, hard stools due to fluid deficiency
+    • Dry, hard stools due to fluid deficiency
 
 Dosage
 
-    � 6- 15g in a decoction
+    • 6- 15g in a decoction
 
 Contraindications
 
-    � Colddeficient diarrhea and cold in the Middle Jiao
-    � Windcold cough
+    • Cold‑deficient diarrhea and cold in the Middle Jiao
+    • Wind‑cold cough
 
 Exam Pearl
 
-     Tian Dong = stronger, colder, more dryingcounteracting than Mai Dong
+     Tian Dong = stronger, colder, more drying‑counteracting than Mai Dong
 
-Sh� H� 
+Shí Hú 石斛
 
 Herba Dendrobii | Dendrobium
 Nature & Flavor: Sweet, slightly cold
@@ -265,28 +265,28 @@ Primary Actions
 
 Key Indications
 
-    � Severe thirst from yin deficiency
-    � Postfebrile qi & yin deficiency
+    • Severe thirst from yin deficiency
+    • Post‑febrile qi & yin deficiency
 
 Dosage
 
-    � 6-10g in a decoction
-    � 15-30g of fresh herb which strongly clears heat and generates body fluids
+    • 6-10g in a decoction
+    • 15-30g of fresh herb which strongly clears heat and generates body fluids
 
 Cautions
 
-    � Contraindicated in excess febrile disorders, damp-phlegm accumulation on
+    • Contraindicated in excess febrile disorders, damp-phlegm accumulation on
          exterior stage diseases
 
-    � Not for use during the early stages of warm-febrile disorders
+    • Not for use during the early stages of warm-febrile disorders
 
 Exam Pearl
 
       Shi Hu = best for Stomach yin deficiency
 
-Y� Zh� 
+Yù Zhú 玉竹
 
-Rhizoma Polygonati Odorati | Solomon's seal
+Rhizoma Polygonati Odorati | Solomon’s seal
 
 Nature & Flavor: Sweet, neutral
 Channels: Lung, Stomach
@@ -295,31 +295,31 @@ Primary Actions
 
     1. Nourishes Lung & Stomach yin
     2. Moistens dryness
-    3. Releases exterior windheat with yin deficiency
+    3. Releases exterior wind‑heat with yin deficiency
 
 Key Indications
 
-    � Non-productive dry cough, scanty, sticky sputum, dry mouth, and thirst
-    � Hunger with no desire to eat, stomach, and epigastric discomfort.
-    � Wind-heat invasion causing fever and cough
+    • Non-productive dry cough, scanty, sticky sputum, dry mouth, and thirst
+    • Hunger with no desire to eat, stomach, and epigastric discomfort.
+    • Wind-heat invasion causing fever and cough
 
 Dosage
 
-    � 10-15g in a decoction
-    � Fresh is more effective for yin deficiency heat.
+    • 10-15g in a decoction
+    • Fresh is more effective for yin deficiency heat.
 
 ## p.7
 
 Contraindications
 
-    � Dampness or qi stagnation
-    � Spleen deficiency and phlegm stagnation
+    • Dampness or qi stagnation
+    • Spleen deficiency and phlegm stagnation
 
 Exam Pearl
 
       Yu Zhu = mildest; safest with deficiency
 
-Hu�ng Jng 
+Huáng Jīng 黄精
 
 Rhizoma Polygonati | Polygonatum
 Nature & Flavor: Sweet, neutral
@@ -333,26 +333,26 @@ Primary Actions
 
 Key Indications
 
-    � Dry cough with little sputum and shortness of breath
-    � Lassitude, fatigue, loss of appetite, dry mouth, loss of taste, dry stools, dry, red
+    • Dry cough with little sputum and shortness of breath
+    • Lassitude, fatigue, loss of appetite, dry mouth, loss of taste, dry stools, dry, red
 
          tongue
-    � Low back pain, lightheadedness, weakness of the lower extremities
+    • Low back pain, lightheadedness, weakness of the lower extremities
 
 Dosage
 
-    � 10-20g in a decoction
-    � Use 30-60g of fresh herb
+    • 10-20g in a decoction
+    • Use 30-60g of fresh herb
 
 Cautions
 
-    � Colddeficient diarrhea
+    • Cold‑deficient diarrhea
 
 Exam Pearl
 
       Huang Jing bridges qi + yin deficiency
 
-Bi H� 
+Bǎi Hé 百合
 
 Bulbus Lilii | Lily bulb
 Nature & Flavor: Sweet, slightly bitter, slightly cold
@@ -367,22 +367,22 @@ Primary Actions
 
 Key Indications
 
-    � Chronic, consumptive, dry cough, shortness of breath, difficult-to-expectorate
+    • Chronic, consumptive, dry cough, shortness of breath, difficult-to-expectorate
          sputum (white or yellow with streaks of blood)
 
-    � Intractable low-grade fever, insomnia, restlessness, irritability after a febrile
+    • Intractable low-grade fever, insomnia, restlessness, irritability after a febrile
          disease
 
 Dosage
 
-    � 10-30g in a decoction
+    • 10-30g in a decoction
 
 Cautions
 
-    � Contraindicated with middle jiao deficiency, diarrhea, or loose stools
-    � Do not use in cases of wind-cold invasion or phlegm
+    • Contraindicated with middle jiao deficiency, diarrhea, or loose stools
+    • Do not use in cases of wind-cold invasion or phlegm
 
-Gu Q Z 
+Gǒu Qǐ Zǐ 枸杞子
 
 Fructus Lycii | Goji berry
 
@@ -397,83 +397,83 @@ Primary Actions
 
 Key Indications
 
-    � Liver and Kidney deficiency patterns where the essence and blood are unable to
+    • Liver and Kidney deficiency patterns where the essence and blood are unable to
          nourish the eyes
 
-    � Dizziness, blurred vision, diminished visual acuity
-    � Soreness and weakness of the lower back and knees
-    � Chronic or consumptive Lung disorders
+    • Dizziness, blurred vision, diminished visual acuity
+    • Soreness and weakness of the lower back and knees
+    • Chronic or consumptive Lung disorders
 
 Dosage
 
-    � 5-10g in a decoction
+    • 5-10g in a decoction
 
 Contraindications
 
-    � Exterior or excess conditions
+    • Exterior or excess conditions
 
 ## p.9
 
-� Use with caution with patients who have diarrhea due to Spleen deficiency.
+• Use with caution with patients who have diarrhea due to Spleen deficiency.
 
 Herbal Comparisons
 
-    � Bei vs. Nan Sha Shen: Heatclearing vs. phlegmclearing
-    � Mai Dong vs. Tian Dong: Heart entry vs. stronger Lung/KD yin
-    � Shi Hu vs. Yu Zhu: Deficiency heat vs. gentle moistening
+    • Bei vs. Nan Sha Shen: Heat‑clearing vs. phlegm‑clearing
+    • Mai Dong vs. Tian Dong: Heart entry vs. stronger Lung/KD yin
+    • Shi Hu vs. Yu Zhu: Deficiency heat vs. gentle moistening
 
 Yin-Tonifying
 
 General identity
 
-All five herbs primarily address Liver�Kidney Yin deficiency.
+All five herbs primarily address Liver–Kidney Yin deficiency.
 They differ in what they emphasize:
 
-      Core Emphasis                                            Herbs
+      Core Emphasis                                             Herbs
 
-Nourish Yin + stop bleeding                            H�n Li�n Co
+Nourish Yin + stop bleeding                            Hán Lián Cǎo
 
-Nourish Yin + clear deficiency heat + brighten eyes N Zhn Z
+Nourish Yin + clear deficiency heat + brighten eyes Nǚ Zhēn Zǐ
 
-Nourish Yin + anchor Yang + strengthen bones           Gu Bn / Gu Bn Jio
+Nourish Yin + anchor Yang + strengthen bones           Guī Bǎn / Guī Bǎn Jiāo
 
-Nourish Yin + anchor Yang + soften masses              Bi Ji
+Nourish Yin + anchor Yang + soften masses              Biē Jiǎ
 
-Nourish Yin + nourish Blood + moisten intestines Hi Zh M�
+Nourish Yin + nourish Blood + moisten intestines Hēi Zhī Má
 
 Quick reference table
 
-Herb                       Nature /     Channels               Primary Exam Actions
+Herb                       Nature /     Channels                Primary Exam Actions
                             Flavor
 
-H�n Li�n Co                Sweet,       Liver, Kidney  Tonifies Liver�Kidney Yin; cools
+Hán Lián Cǎo 旱莲草           Sweet,       Liver, Kidney  Tonifies Liver–Kidney Yin; cools
 (Herba Ecliptae)           sour, cool                  Blood; stops bleeding
 
-N Zhn Z                    Bitter,      Liver, Kidney  Tonifies Liver�Kidney Yin; clears
+Nǚ Zhēn Zǐ 女贞子             Bitter,      Liver, Kidney  Tonifies Liver–Kidney Yin; clears
 (Fructus Ligustri Lucidi)  sweet, cool                 deficiency heat; brightens eyes
 
 ## p.10
 
-Herb             Nature /      Channels        Primary Exam Actions
-                  Flavor
+Herb                 Nature /  Channels        Primary Exam Actions
+                      Flavor
 
-Gu Bn  (Plastrum Salty,        Heart, Liver, Nourishes Yin; anchors Yang;
+Guī Bǎn 龟板 (Plastrum Salty,    Heart, Liver, Nourishes Yin; anchors Yang;
 
-Testudinis)      sweet, cold Kidney            strengthens bones
+Testudinis)          sweet, cold Kidney        strengthens bones
 
-Gu Bn Jio        Salty,        Heart, Liver, Stronger Yin tonic; stops bleeding;
+Guī Bǎn Jiāo 龟板胶     Salty,    Heart, Liver, Stronger Yin tonic; stops bleeding;
 (Gelatin)
-                 sweet, cold Kidney            nourishes Blood
+                     sweet, cold Kidney        nourishes Blood
 
-Bi Ji  (Carapax  Salty,        Liver           Nourishes Yin; anchors Yang;
-Trionycis)       slightly                      softens hardness; dissipates
-                 cold                          nodules
+Biē Jiǎ 鳖甲 (Carapax  Salty,    Liver           Nourishes Yin; anchors Yang;
+Trionycis)           slightly                  softens hardness; dissipates
+                     cold                      nodules
 
-Hi Zh M�         Sweet,        Liver, Kidney,  Nourishes Liver�Kidney Yin;
+Hēi Zhī Má 黑芝麻       Sweet,    Liver, Kidney,  Nourishes Liver–Kidney Yin;
                                LI              nourishes Blood; moistens
 (Semen Sesami Nigrum) neutral                  intestines
 
-H�n li�n co 
+Hán lián cǎo 旱莲草
 
 Herba Ecliptae | False daisy herb
 
@@ -487,24 +487,24 @@ Actions:
 
 Key Indications:
 
-    � Liver�Kidney Yin deficiency: dizziness, tinnitus, premature gray hair
-    � Bleeding due to Yin deficiency heat: hematuria, uterine bleeding, hematemesis
+    • Liver–Kidney Yin deficiency: dizziness, tinnitus, premature gray hair
+    • Bleeding due to Yin deficiency heat: hematuria, uterine bleeding, hematemesis
 
 Exam Pearl:
 
-"Yin tonic that also stops bleeding."
+“Yin tonic that also stops bleeding.”
 
 Dosage:
 
-    � 10�15 g (dried)
-    � 20�30 g (fresh; stronger cooling and hemostatic)
+    • 10–15 g (dried)
+    • 20–30 g (fresh; stronger cooling and hemostatic)
 
 ## p.11
 
 Cautions:
-    � Use cautiously in Spleen/Kidney Yang deficiency, cold diarrhea
+    • Use cautiously in Spleen/Kidney Yang deficiency, cold diarrhea
 
-N zhn z 
+Nǚ zhēn zǐ 女贞子
 
 Fructus Ligustri Lucidi | Glossy privet fruit
 Nature/Flavor: Bitter, sweet, cool
@@ -515,16 +515,16 @@ Actions:
     2. Clears deficiency heat
     3. Brightens the eyes
 Key Indications:
-    � Yin deficiency: dizziness, tinnitus, blurred vision, low back weakness
-    � Yin deficiency heat: hot flashes, steaming bones
+    • Yin deficiency: dizziness, tinnitus, blurred vision, low back weakness
+    • Yin deficiency heat: hot flashes, steaming bones
 Exam Pearl:
-"The Yin tonic that clears heat and brightens eyes."
+“The Yin tonic that clears heat and brightens eyes.”
 Dosage:
-    � 10�15 g
+    • 10–15 g
 Cautions:
-    � Contraindicated in Yang deficiency or Spleen/Stomach cold diarrhea
+    • Contraindicated in Yang deficiency or Spleen/Stomach cold diarrhea
 
-Gu bn 
+Guī bǎn 龟板
 
 Plastrum Testudinis | Tortoise (turtle shell)
 Nature/Flavor: Salty, sweet, cold
@@ -540,43 +540,43 @@ Actions:
 
 Key Indications:
 
-    � Yin deficiency with Yang rising: dizziness, tinnitus, headaches
-    � Weak bones, delayed fontanel closure
-    � Uterine bleeding from deficiency heat
+    • Yin deficiency with Yang rising: dizziness, tinnitus, headaches
+    • Weak bones, delayed fontanel closure
+    • Uterine bleeding from deficiency heat
 
 Exam Pearl:
 
-"Heavy Yin tonic that anchors Yang and strengthens bones."
+“Heavy Yin tonic that anchors Yang and strengthens bones.”
 
 Dosage:
-    � 10�30 g
+    • 10–30 g
          (crushed and pre-decocted)
 
 Cautions:
 
-    � Contraindicated in pregnancy
-    � Contraindicated in diarrhea, cold-damp, deficiency cold
+    • Contraindicated in pregnancy
+    • Contraindicated in diarrhea, cold-damp, deficiency cold
 
-Gu bn jio 
+Guī bǎn jiāo 龟板胶
 
-Identity: Gelatin extract of Gu Bn
+Identity: Gelatin extract of Guī Bǎn
 
 Stronger for:
 
-    � Stopping bleeding
-    � Nourishing Blood and Yin
+    • Stopping bleeding
+    • Nourishing Blood and Yin
 
 Dosage:
 
-    � 3�10 g, dissolved into strained decoction
+    • 3–10 g, dissolved into strained decoction
 
 Exam Pearl:
 
-"Gu Bn Jio = heavier Yin + hemostasis."
+“Guī Bǎn Jiāo = heavier Yin + hemostasis.”
 
 ## p.13
 
-Bi ji 
+Biē jiǎ 鳖甲
 
 Carapax Trionycis | Soft-shelled turtle carapace
 
@@ -591,28 +591,28 @@ Actions:
 
 Key Indications:
 
-    � Yin deficiency with deficiency heat: tidal fevers, night sweats
-    � Liver wind from Yin deficiency: tremors, spasms
-    � Masses, nodules, amenorrhea from accumulations
+    • Yin deficiency with deficiency heat: tidal fevers, night sweats
+    • Liver wind from Yin deficiency: tremors, spasms
+    • Masses, nodules, amenorrhea from accumulations
 
 Exam Pearl:
 
-"The Yin tonic that breaks masses."
+“The Yin tonic that breaks masses.”
 
 Dosage:
 
-    � 10�30 g
+    • 10–30 g
          (crushed, pre-decocted)
 
-    � Vinegar-processed  better for masses
+    • Vinegar-processed → better for masses
 
 Cautions:
 
-    � Contraindicated in pregnancy
-    � Contraindicated in Spleen deficiency diarrhea
-    � Avoid if exterior pathogen not resolved
+    • Contraindicated in pregnancy
+    • Contraindicated in Spleen deficiency diarrhea
+    • Avoid if exterior pathogen not resolved
 
-Hi zh m� 
+Hēi zhī má 黑芝麻
 
 Semen Sesami Nigrum | Black sesame seed
 
@@ -629,37 +629,37 @@ Actions:
 
 Key Indications:
 
-    � Yin/Blood deficiency: dizziness, blurred vision, premature graying
-    � Constipation from dryness or Blood deficiency
+    • Yin/Blood deficiency: dizziness, blurred vision, premature graying
+    • Constipation from dryness or Blood deficiency
 
 Exam Pearl:
 
-"The Yin tonic that treats constipation."
+“The Yin tonic that treats constipation.”
 
 Dosage:
 
-    � 9�15 g
+    • 9–15 g
          (often roasted and ground)
 
 Cautions:
 
-    � Use cautiously in loose stools or dampness
+    • Use cautiously in loose stools or dampness
 
-HIGH-YIELD COMPARISONS  Distinction
+HIGH-YIELD COMPARISONS     Distinction
 
                   Pair
 
-H�n Li�n Co vs. N Zhn Z Bleeding vs. heat/eyes
+Hán Lián Cǎo vs. Nǚ Zhēn Zǐ Bleeding vs. heat/eyes
 
-Gu Bn vs. Bi Ji       Bone strengthening vs. mass-dissolving
+Guī Bǎn vs. Biē Jiǎ        Bone strengthening vs. mass-dissolving
 
-Gu Bn Jio vs. Gu Bn   Blood-stopping vs. structure-building
+Guī Bǎn Jiāo vs. Guī Bǎn   Blood-stopping vs. structure-building
 
-Hi Zh M� vs. N Zhn Z  Constipation vs. heat/vision
+Hēi Zhī Má vs. Nǚ Zhēn Zǐ  Constipation vs. heat/vision
 
 Clinical META-RULE
 
 Ask:
-"Is this Yin deficiency showing up as bleeding, heat, masses, weak bones, or constipation?"
+“Is this Yin deficiency showing up as bleeding, heat, masses, weak bones, or constipation?”
 That answer chooses the herb.
 

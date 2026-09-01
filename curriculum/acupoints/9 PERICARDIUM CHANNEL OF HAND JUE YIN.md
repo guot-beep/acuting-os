@@ -1,173 +1,319 @@
-<!-- Extracted from curriculum/acupoints/9 PERICARDIUM CHANNEL OF HAND JUE YIN.pdf by scripts/extract-curriculum-md.js.
-     Text layer only — figures, tables-as-images and formatting are NOT here.
-     Cite as curriculum/acupoints/9 PERICARDIUM CHANNEL OF HAND JUE YIN.pdf#p<N> and verify against the original before
-     using any number (dose, depth, lab value) from it. -->
+# 9 PERICARDIUM CHANNEL OF HAND JUE YIN
+
+> 自動抽取自 `curriculum/acupoints/9 PERICARDIUM CHANNEL OF HAND JUE YIN.pdf`(engine: pdfplumber+xycut)。**這是原始文字,未經整理或校對。**
+> 
+> ℹ️ 原始版面是多欄,已依欄位逐欄由上往下重讀(XY-cut),分類歸屬正確。
+> 引用寫法:`curriculum/acupoints/9 PERICARDIUM CHANNEL OF HAND JUE YIN.pdf#p<頁碼>`。頁碼 = 下方 `## p.N` 標題。
+> ⚠️ PDF 的段落順序不等於視覺順序。跨欄位抓到的內容(尤其禁忌、劑量、
+> 針刺深度)一定要回頭確認它掛在哪一味藥/哪一個穴底下 —— 曾經在麻黃附近
+> 抓到的禁忌實際上屬於桂枝。
 
 ## p.1
 
+Name
+PC-1*
+Tian Chi
+天池
+Celestial Pool
+Association/Precautions
+Window of the Sky
+(Tian: Heavenly, Sky,
+Celestial)
+Intersection Point
+• PC
+• GB
+PC-2 Local Point
+Tian Quan
+天泉 Moxibustion Applicable
+Celestial
+Spring
+PC-3*
+Qu Ze
+曲澤
+Marsh at the
+Bend
+He Sea Point
+Water Point
+Moxibustion Applicable
+PC-4*
+Xi Men
+郄門
+Xi Cleft Gate
+Xi Cleft Point
+Moxibustion Applicable
+PC-5*
+Jian Shi
+間使
+Intermediary
+Courier
+Jing River Point
+Metal Point
+Moxibustion Applicable
+Kimberly Chenoweth
 PERICARDIUM CHANNEL OF HAND JUE YIN
-
-           Name  Association/Precautions  Location/Needling Method            Functions & Actions                   Indications/Notes
-PC-1*            Window of the Sky        � In 4th intercostal space          � Unbinds the chest
-Tian Chi         (Tian: Heavenly, Sky,                                                                              � Suffocating sensation in the chest
-                 Celestial)               � 1 cun lateral to the nipple       � Transforms phlegm                   � Pain in the hypochondriac region
-                 Intersection Point                                                                                 � Swelling and pain of the axillary
-                 � PC                     � 5 cun lateral to the anterior     � Descends rebellion
-Celestial Pool   � GB                                                                                                 region, axillary sweating
-                                          midline                             � Regulates Qi and dissipates         � Fullness of the chest
-                                                                                                                    � Counterflow qi, headache
-                                                                              nodules                               � Blurred vision
-                                                                                                                    � Breast disorders
-                                          Needling Method:                    � Benefits the breasts                � Insufficient lactation
-                                                                                                                    � Cardiac pain
-                                          � Oblique 0.2-0.4 inch.                                                   � Distension of the hypochondriac
-
-                 Moxibustion Applicable   No Deep Needling:                                                           region
-                                                                                                                    � Cough
-                                          Danger of pneumothorax                                                    � Pain in the chest, back and the
-
-PC-2             Local Point              � 2 cun below the level of the      � Unbinds the chest                     medial aspect of the arm
-Tian Quan        Moxibustion Applicable     anterior axillary fold            � Invigorates blood                   � May be used for angina
-                                                                              � Alleviates pain                     � Used in Medical Qi Gong as alternate
-                                          � Between the two heads of m.
-                                            biceps brachii                                                            Window to the Sky Point instead of
-Celestial                                                                                                             PC 1
-Spring                                    Needling Method:
-                                          � Perpendicular 0.5-0.7 inch                                              � Chronic angina
-                                                                                                                    � Tremors of the hand a/or arm
-PC-3*            He Sea Point             � On transverse cubital crease      � Clears heat from the Qi, nutritive
-Qu Ze            Water Point              � Ulnar side of biceps brachii        and blood levels                      (Parkinson's disease)
-                 Moxibustion Applicable                                                                             � Gastrointestinal disorders, "sudden
-                                            tendon                            � Harmonizes the Stomach and
-                 Xi Cleft Point           Needling Method:                      intestines and stops vomiting         turmoil disease" - vomiting and
-Marsh at the     Moxibustion Applicable   � Perpendicular 0.5-0.7 inch                                                diarrhea.
-Bend                                      � Or prick with a three-edged       � Activates the channel               � Clears Ying Stage Heat
-                                                                              � Alleviates pain                     � Cardiac pain, palpitation, epistaxis
-PC-4*                                       needle to cause bleeding                                                � Hematemesis, hemoptysis
-Xi Men                                                                        � Invigorates blood & dispels stasis  � Chest pain, furuncle, epilepsy
-                                          � 5 cun above transverse wrist      � Cools blood and stops bleeding      � Acute palpitations, angina
-                                            crease                            � Calms the spirit                    � Acute heat in the Blood: coughing or
-                                                                              � Moderates acute conditions            vomiting of Blood, bleeding
-Xi Cleft Gate                             � On line connecting (PC-3) and                                             hemorrhoids.
-                                            (PC-7)                                                                  � Spirit disorders typically due to
-                                                                                                                      Blood stasis, yin spirit problems,
-                                          � Between the tendons of palmaris                                           depression, fear of people, grief
-                                            longus and flexor carpi radialis                                        � Cardiac pain, palpitation
-                                                                                                                    � Stomachache, vomiting,
-                                          Needling Method:                                                          � Febrile diseases, Irritability, mental
-                                          � Perpendicular 0.5-1.0 inch                                                disorders
-                                                                                                                    � Malaria (Shao Yang Disease: half
-PC-5*            Jing River Point         � 3 cun above the transverse        � Transforms phlegm                     inside/half outside)
-Jian Shi         Metal Point                crease of the wrist               � Settles and calms the spirit        � Epilepsy, swelling of the axilla,
-                                                                              � Descends Rebellious Qi regulates    � Contracture of the elbow and arm
-                 Moxibustion Applicable   � Between the tendons of palmaris                                         � Phlegm issues affecting the chest,
-                                            longus and flexor carpi radialis    the Stomach                           heart, lungs a/or throat.
-Intermediary                                                                  � Regulates Menstruation              � Heat disorders affecting the heart,
-Courier                                   Needling Method:                                                            chest pain, restlessness, insomnia,
-                                          � Perpendicular 0.5-1.0 inch                                                red tongue tip.
-                                                                                                                    � Sudden heart pain, angina.
-                                                                                                                    � Wheezing w/ phlegm you can feel &
-                                                                                                                      hear: Combine with Ren 22
-                                                                                                                    � Distal point for enlarged thyroid
-
-Kimberly Chenoweth                                                                                                  1
+Location/Needling Method Functions & Actions
+• In 4th intercostal space • Unbinds the chest
+• 1 cun lateral to the nipple • Transforms phlegm
+• 5 cun lateral to the anterior • Descends rebellion
+midline • Regulates Qi and dissipates
+nodules
+Needling Method: • Benefits the breasts
+• Oblique 0.2-0.4 inch.
+No Deep Needling:
+Danger of pneumothorax
+• 2 cun below the level of the • Unbinds the chest
+anterior axillary fold • Invigorates blood
+• Between the two heads of m. • Alleviates pain
+biceps brachii
+Needling Method:
+• Perpendicular 0.5-0.7 inch
+• On transverse cubital crease
+• Ulnar side of biceps brachii
+tendon
+Needling Method:
+• Perpendicular 0.5-0.7 inch
+• Or prick with a three-edged
+needle to cause bleeding
+• 5 cun above transverse wrist
+crease
+• On line connecting (PC-3) and
+(PC-7)
+• Between the tendons of palmaris
+longus and flexor carpi radialis
+Needling Method:
+• Perpendicular 0.5-1.0 inch
+• Clears heat from the Qi, nutritive
+and blood levels
+• Harmonizes the Stomach and
+intestines and stops vomiting
+• Activates the channel
+• Alleviates pain
+• Invigorates blood & dispels stasis
+• Cools blood and stops bleeding
+• Calms the spirit
+• Moderates acute conditions
+• 3 cun above the transverse
+crease of the wrist
+• Between the tendons of palmaris
+longus and flexor carpi radialis
+Needling Method:
+• Perpendicular 0.5-1.0 inch
+• Transforms phlegm
+• Settles and calms the spirit
+• Descends Rebellious Qi regulates
+the Stomach
+• Regulates Menstruation
+Indications/Notes
+• Suffocating sensation in the chest
+• Pain in the hypochondriac region
+• Swelling and pain of the axillary
+region, axillary sweating
+• Fullness of the chest
+• Counterflow qi, headache
+• Blurred vision
+• Breast disorders
+• Insufficient lactation
+• Cardiac pain
+• Distension of the hypochondriac
+region
+• Cough
+• Pain in the chest, back and the
+medial aspect of the arm
+• May be used for angina
+• Used in Medical Qi Gong as alternate
+Window to the Sky Point instead of
+PC 1
+• Chronic angina
+• Tremors of the hand a/or arm
+(Parkinson's disease)
+• Gastrointestinal disorders, "sudden
+turmoil disease" - vomiting and
+diarrhea.
+• Clears Ying Stage Heat
+• Cardiac pain, palpitation, epistaxis
+• Hematemesis, hemoptysis
+• Chest pain, furuncle, epilepsy
+• Acute palpitations, angina
+• Acute heat in the Blood: coughing or
+vomiting of Blood, bleeding
+hemorrhoids.
+• Spirit disorders typically due to
+Blood stasis, yin spirit problems,
+depression, fear of people, grief
+• Cardiac pain, palpitation
+• Stomachache, vomiting,
+• Febrile diseases, Irritability, mental
+disorders
+• Malaria (Shao Yang Disease: half
+inside/half outside)
+• Epilepsy, swelling of the axilla,
+• Contracture of the elbow and arm
+• Phlegm issues affecting the chest,
+heart, lungs a/or throat.
+• Heat disorders affecting the heart,
+chest pain, restlessness, insomnia,
+red tongue tip.
+• Sudden heart pain, angina.
+• Wheezing w/ phlegm you can feel &
+hear: Combine with Ren 22
+• Distal point for enlarged thyroid
+1
 
 ## p.2
 
-PERICARDIUM CHANNEL OF HAND JUE YIN
-
-           Name  Association/Precautions  Location/Needling Method           Functions & Actions                     Indications/Notes
-PC-6**           Luo Connecting Point
-Nei Guan         Yin Wei Master Point     � 2 cun above the transverse       � Unbinds the chest                     � Cardiac pain, palpitation, stuffy
-                 (With SP 4)                                                                                           chest, hypochondriac region pain
-                                          crease of the wrist, between the � Regulates Qi
-                 Moxibustion Applicable                                                                              � Stomachache, nausea, vomiting,
-Inner Pass                                  tendons of m. palmaris longus    � Regulates the Heart                     hiccup
-                                            and m. flexor radialis           � Calms the spirit
-                                          Needling Method:                   � Harmonizes the Stomach and            � Mental disorders, epilepsy,
-                                          � Perpendicular 0.5-0.8 inch                                                 insomnia, febrile diseases,
-                                                                               alleviates nausea and vomiting          irritability, malaria, contracture and
-                                                                                                                       pain of the elbow and arm
-                                                                             � Clears heat
-                                                                                                                     � Similar to PC 3 but more for Chronic
-                                                                             � Opens the Yin Linking vessel            Heart symptoms from Qi stagnation.
-
-PC-7*            Shu Stream Point         � In middle of transverse wrist    � Clears heat from the Heart and        � Opens and relaxes the chest: chest
-Da Ling          Earth Point                crease                             calms the spirit                        tightness, asthma, angina,
-(Darling)        Yuan Source Point                                                                                     palpitations.
-                 Ghost Point              � Between the tendons of palmaris  � Harmonizes the Stomach and
-                                            longus & flexor carpi radialis     intestines                            � Insomnia a/or other spirit disorders
-                 Moxibustion Applicable                                                                                of an excess or deficient nature,
-Great Mound                               Needling Method:                   � Unbinds the chest                       mania, nervousness, stress, poor
-                                          � Perpendicular 0.3-0.5 inch       � Clears the nutritive level and cools    memory.
-
-                                                                               blood                                 � Nausea, seasickness, motion
-                                                                                                                       sickness, vomiting, epigastric pain.
-PC-8*            Ying Spring Point        � At the center of the palm        � Clears heat from the Pericardium
-Lao Gong         Fire Point               � Between the 2nd & 3rd              and revives consciousness             � Carpal Tunnel Syndrome (Often CTS
-                 Exit Point                                                                                            is lateral epicondylitis transmitting
-                 Ghost Point                metacarpal bones                 � Clears heat from the Heart and          to wrist)
-                                          � Closer to the 3rd metacarpal       calms the spirit
-Place of Toil    Moxibustion Applicable   � In the part touching tip of the                                          � Cardiac pain, palpitation, stomach
-                                                                             � Harmonizes the Stomach and              ache, vomiting, mental disorders,
-                                            middle finger when a fist made     clears heat from the middle jiao        epilepsy, stuffy chest, pain in the
-                                                                                                                       hypochondriac region, convulsion,
-                                          Needling Method:                   � Clears the nutritive level and cools    insomnia, irritability, foul breath
-                                          � Perpendicular 0.3-0.5 inch         blood
-                                                                                                                     � Cooling heat affecting the Heart of
-PC-9             Jing Well Point          � In the center of the tip of the  � Clears heat from Pericardium            deficient or excess nature.
-Zong Chong       Intersection Point         middle finger                    � Revives consciousness
-                 � PC                                                        � Clears the Heart                      � Clears Ying and Blood heat, fever
-                 � GB                     Needling Method:                   � Benefits the tongue                     deep in the body that is drying up
-                 � LV                     � Perpendicular 0.3-0.5 inch       � Clears summer-heat                      fluids.
+Name
+PC-6**
+Nei Guan
+內關
+Inner Pass
+Association/Precautions
+Luo Connecting Point
+Yin Wei Master Point
+(With SP 4)
+Moxibustion Applicable
+PC-7*
+Da Ling
+(Darling)
+大陵
+Great Mound
+Shu Stream Point
+Earth Point
+Yuan Source Point
+Ghost Point
+Moxibustion Applicable
+PC-8*
+Lao Gong
+勞宮
+Place of Toil
+Ying Spring Point
+Fire Point
+Exit Point
+Ghost Point
+Moxibustion Applicable
+PC-9 Jing Well Point
+Zong Chong Intersection Point
+中衝 • PC
+• GB
 Central Hub
-                 Moxibustion Applicable                                                                              � Carpal Tunnel Syndrome � Combine
-                                                                                                                       with PC 5, PC 6 & SP 9 (Often CTS is
-                                                                                                                       lateral epicondylitis transmitting to
-                                                                                                                       wrist) � Needle distally into carpal
-                                                                                                                       tunnel
-
-                                                                                                                     � Cardiac pain, mental disorder,
-                                                                                                                       epilepsy, gastritis, foul breath,
-                                                                                                                       fungus infection of the hand and
-                                                                                                                       foot, vomiting, nausea
-
-                                                                                                                     � Excess heat conditions, more cooling
-                                                                                                                       than PC 7, which can be used for
-                                                                                                                       heat from an excess or deficient
-                                                                                                                       issue.
-
-                                                                                                                     � Heat in the mouth, mouth or tongue
-                                                                                                                       ulcers, cold sores from Heart or
-                                                                                                                       Stomach Fire.
-
-                                                                                                                     � Cools Ying and Blood stage heat,
-                                                                                                                       fevers with damage to the yin.
-
-                                                                                                                     � Cools the Blood, blood in the stool or
-                                                                                                                       urine, nosebleeds.
-
-                                                                                                                     � Cardiac pain, palpitation, loss of
-                                                                                                                       consciousness, aphasia with stiffness
-                                                                                                                       and swelling of the tongue, febrile
-                                                                                                                       diseases, heat stroke, convulsion,
-                                                                                                                       feverish sensation in the palm.
-
-                                                                                                                     � Jing Well Point for clearing heat in
-                                                                                                                       the Heart.
-
-                                                                                                                     � Stiff tongue, speech disorders,
-                                                                                                                       especially those arising after a
-                                                                                                                       stroke.
-
-                                                                                                                     � Restoring consciousness.
-                                                                                                                     � The only Jing-Well point that is not
-
-                                                                                                                       located on the corner of the nail
-
-Kimberly Chenoweth                                                                                                   2
+• LV
+Kimberly Chenoweth
+PERICARDIUM CHANNEL OF HAND JUE YIN
+Location/Needling Method Functions & Actions
+• 2 cun above the transverse • Unbinds the chest
+crease of the wrist, between the • Regulates Qi
+tendons of m. palmaris longus • Regulates the Heart
+and m. flexor radialis • Calms the spirit
+Needling Method: • Harmonizes the Stomach and
+• Perpendicular 0.5-0.8 inch alleviates nausea and vomiting
+• Clears heat
+• Opens the Yin Linking vessel
+• In middle of transverse wrist
+crease
+• Between the tendons of palmaris
+longus & flexor carpi radialis
+Needling Method:
+• Perpendicular 0.3-0.5 inch
+• Clears heat from the Heart and
+calms the spirit
+• Harmonizes the Stomach and
+intestines
+• Unbinds the chest
+• Clears the nutritive level and cools
+blood
+• At the center of the palm
+• Between the 2nd & 3rd
+metacarpal bones
+• Closer to the 3rd metacarpal
+• In the part touching tip of the
+middle finger when a fist made
+Needling Method:
+• Perpendicular 0.3-0.5 inch
+• Clears heat from the Pericardium
+and revives consciousness
+• Clears heat from the Heart and
+calms the spirit
+• Harmonizes the Stomach and
+clears heat from the middle jiao
+• Clears the nutritive level and cools
+blood
+• In the center of the tip of the
+middle finger
+Needling Method:
+• Perpendicular 0.3-0.5 inch
+• Clears heat from Pericardium
+• Revives consciousness
+• Clears the Heart
+• Benefits the tongue
+• Clears summer-heat
+Indications/Notes
+• Cardiac pain, palpitation, stuffy
+chest, hypochondriac region pain
+• Stomachache, nausea, vomiting,
+hiccup
+• Mental disorders, epilepsy,
+insomnia, febrile diseases,
+irritability, malaria, contracture and
+pain of the elbow and arm
+• Similar to PC 3 but more for Chronic
+Heart symptoms from Qi stagnation.
+• Opens and relaxes the chest: chest
+tightness, asthma, angina,
+palpitations.
+• Insomnia a/or other spirit disorders
+of an excess or deficient nature,
+mania, nervousness, stress, poor
+memory.
+• Nausea, seasickness, motion
+sickness, vomiting, epigastric pain.
+• Carpal Tunnel Syndrome (Often CTS
+is lateral epicondylitis transmitting
+to wrist)
+• Cardiac pain, palpitation, stomach
+ache, vomiting, mental disorders,
+epilepsy, stuffy chest, pain in the
+hypochondriac region, convulsion,
+insomnia, irritability, foul breath
+• Cooling heat affecting the Heart of
+deficient or excess nature.
+• Clears Ying and Blood heat, fever
+deep in the body that is drying up
+fluids.
+• Carpal Tunnel Syndrome à Combine
+with PC 5, PC 6 & SP 9 (Often CTS is
+lateral epicondylitis transmitting to
+wrist) à Needle distally into carpal
+tunnel
+• Cardiac pain, mental disorder,
+epilepsy, gastritis, foul breath,
+fungus infection of the hand and
+foot, vomiting, nausea
+• Excess heat conditions, more cooling
+than PC 7, which can be used for
+heat from an excess or deficient
+issue.
+• Heat in the mouth, mouth or tongue
+ulcers, cold sores from Heart or
+Stomach Fire.
+• Cools Ying and Blood stage heat,
+fevers with damage to the yin.
+• Cools the Blood, blood in the stool or
+urine, nosebleeds.
+• Cardiac pain, palpitation, loss of
+consciousness, aphasia with stiffness
+and swelling of the tongue, febrile
+diseases, heat stroke, convulsion,
+feverish sensation in the palm.
+• Jing Well Point for clearing heat in
+the Heart.
+• Stiff tongue, speech disorders,
+especially those arising after a
+stroke.
+• Restoring consciousness.
+• The only Jing-Well point that is not
+located on the corner of the nail
+2
 
 ## p.3
 
-Kimberly Chenoweth  3
-
+Kimberly Chenoweth
+3

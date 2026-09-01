@@ -56,6 +56,32 @@ function walk(dir, out = []) {
 
 function relOf(p) { return path.relative(ROOT, p).replace(/\\/g, "/"); }
 
+/* 這台機器(Git for Windows 的 msys 層)在連續 spawn 幾十個外部程序時會間歇性
+ * 失敗:`fork: Resource temporarily unavailable`、`cygheap read copy failed`。
+ * 症狀是同一份輸入連跑三次,failed 分別是 3、3、7 —— 隨機少抽幾個檔,而
+ * failed 清單看起來像「這些檔有問題」。那是**啟動不了工具**,不是檔案抽不出來,
+ * 兩者混在一起會讓人去查錯的東西(整個 session 的教訓就是這種誤導最貴)。
+ * 所以:spawn 層級的錯誤重試,重試完還是失敗才報,而且訊息要說得出是哪一種。 */
+function runTool(cmd, args, attempts = 4) {
+  let lastErr;
+  for (let i = 0; i < attempts; i++) {
+    try {
+      return execFileSync(cmd, args, { encoding: "utf8", maxBuffer: 64 * 1024 * 1024 });
+    } catch (err) {
+      lastErr = err;
+      const spawnLevel = err.code === "EAGAIN" || err.code === "ENOMEM" || err.status === null
+        || /Resource temporarily unavailable|cygheap|fork/i.test(String(err.message) + String(err.stderr || ""));
+      if (!spawnLevel) throw err;          // 工具真的跑了但失敗 → 是這個檔的問題,不重試
+      const waitMs = 150 * (i + 1);
+      Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, waitMs);   // 同步 sleep
+    }
+  }
+  const e = new Error(`無法啟動 ${cmd}(重試 ${attempts} 次都是 spawn 失敗,不是這個檔的問題):`
+    + String(lastErr && lastErr.message).split("\n")[0]);
+  e.spawnFailure = true;
+  throw e;
+}
+
 function header(src) {
   return `<!-- Extracted from ${relOf(src)} by scripts/extract-curriculum-md.js.\n`
     + `     Text layer only — figures, tables-as-images and formatting are NOT here.\n`
@@ -84,9 +110,18 @@ function withAsciiPath(src, fn) {
 
 function extractPdf(src) {
   // -layout keeps column structure; without it, two-column handouts interleave.
-  const raw = withAsciiPath(src, (p) => execFileSync("pdftotext", ["-layout", p, "-"], {
-    encoding: "utf8", maxBuffer: 64 * 1024 * 1024,
-  }));
+  //
+  // -enc UTF-8 is NOT optional. The Xpdf pdftotext shipped with Git for Windows
+  // defaults to Latin1, which silently deletes every CJK character and mangles
+  // tone marks and bullets: 「Huáng Qín (黄芩)」 came out as 「Hu?ng Q?n ()」.
+  // That is how 47 curriculum .md files lost 100% of their Chinese in one
+  // commit (ebef2401) without anyone noticing — the files still looked
+  // extracted. See the writeIfNotWorse() gate below, which now makes that
+  // class of loss impossible to commit.
+  // -eol unix:這個 build 在 Windows 上預設吐 CRLF,而本檔其餘輸出是 LF。
+  // 混行尾會讓每次重跑都產生一整批「只有行尾不同」的假 diff(git 又會正規化回 LF,
+  // 於是工作區與 repo 永遠對不齊)。統一成 LF。
+  const raw = withAsciiPath(src, (p) => runTool("pdftotext", ["-layout", "-enc", "UTF-8", "-eol", "unix", p, "-"]));
   // pdftotext separates pages with \f — turn that into a locatable marker.
   const pages = raw.split("\f");
   return pages
@@ -103,9 +138,7 @@ function decodeEntities(s) {
 }
 
 function extractOoxml(src) {
-  const xml = withAsciiPath(src, (p) => execFileSync("unzip", ["-p", p, "word/document.xml"], {
-    encoding: "utf8", maxBuffer: 64 * 1024 * 1024,
-  }));
+  const xml = withAsciiPath(src, (p) => runTool("unzip", ["-p", p, "word/document.xml"]));
   return decodeEntities(
     xml
       // structural boundaries first, so text does not run together
@@ -139,16 +172,54 @@ function looksLikeOcrNoise(text) {
 
 function extractDoc(src) {
   // -w 0 disables line wrapping so paragraphs survive as paragraphs.
-  return withAsciiPath(src, (p) => execFileSync("antiword", ["-w", "0", p], {
-    encoding: "utf8", maxBuffer: 64 * 1024 * 1024,
-  }))
+  return withAsciiPath(src, (p) => runTool("antiword", ["-w", "0", p]))
     .replace(/\r/g, "")
     .replace(/[ \t]+\n/g, "\n")
     .replace(/\n{3,}/g, "\n\n")
     .trim();
 }
 
-const results = { written: [], skipped_existing: [], needs_ocr: [], failed: [] };
+/* 只加深,不刪除 —— 套用到抽取本身。
+ *
+ * 2026-08-31 查出:ebef2401 用預設 Latin1 重抽,47 個 .md 的中文**全部**歸零、
+ * 補進數千個 U+FFFD,而且全部 commit 進去了,沒有任何閘門攔下來。檔案看起來
+ * 「有抽取」,驗證器也不看課件,所以壞了三週沒人發現;連帶讓所有 #L 錨點失效。
+ *
+ * 這道閘門就是為那件事設的:重抽只准變好。中文變少、壞字元變多、或內容明顯
+ * 縮水,一律拒寫並列出來,由人決定 —— 因為那些症狀沒有一個是「抽得比較好」
+ * 的樣子。要真的取代舊版,先讓數字說得過去。 */
+function qualityOf(text) {
+  const body = text.replace(/^<!--[\s\S]*?-->\n*/, "");   // 檔頭樣板不算內容
+  return {
+    cjk: (body.match(/[一-鿿]/g) || []).length,
+    bad: (body.match(/�/g) || []).length,
+    /* 去掉所有空白才是內容量。-layout 會把每一行用空格墊到欄位位置,
+       同一份文字的位元組長度可以差一倍以上 —— 用原始長度比,會把
+       「同樣內容、少了排版填充」誤判成內容縮水,擋掉正確的抽取。 */
+    dense: body.replace(/\s+/g, "").length,
+  };
+}
+
+function writeIfNotWorse(out, body, src) {
+  const next = header(src) + body + "\n";
+  if (!fs.existsSync(out)) { fs.writeFileSync(out, next, "utf8"); return { ok: true, note: "new" }; }
+
+  const prev = fs.readFileSync(out, "utf8");
+  const a = qualityOf(prev), b = qualityOf(next);
+  const regressions = [];
+  if (b.cjk < a.cjk) regressions.push(`中文字 ${a.cjk} → ${b.cjk}`);
+  if (b.bad > a.bad) regressions.push(`U+FFFD ${a.bad} → ${b.bad}`);
+  if (b.dense < a.dense * 0.85) regressions.push(`本文內容量 ${a.dense} → ${b.dense}（去空白後少於 85%）`);
+  if (regressions.length) return { ok: false, note: regressions.join("；") };
+
+  fs.writeFileSync(out, next, "utf8");
+  const gains = [];
+  if (b.cjk > a.cjk) gains.push(`中文字 ${a.cjk} → ${b.cjk}`);
+  if (b.bad < a.bad) gains.push(`U+FFFD ${a.bad} → ${b.bad}`);
+  return { ok: true, note: gains.length ? gains.join("；") : "無退化" };
+}
+
+const results = { written: [], skipped_existing: [], needs_ocr: [], failed: [], refused_worse: [], spawn_failed: [] };
 
 const files = walk(CURRICULUM).filter((f) => {
   if (ONLY && !ONLY.some((o) => relOf(f).includes(`/${o}/`))) return false;
@@ -176,10 +247,13 @@ for (const src of files) {
       results.needs_ocr.push(relOf(src) + (fs.existsSync(out) ? " (existing .md kept)" : ""));
       continue;
     }
-    fs.writeFileSync(out, header(src) + body + "\n", "utf8");
-    results.written.push(`${relOf(out)} (${Math.round(body.length / 1024)}KB text)`);
+    const w = writeIfNotWorse(out, body, src);
+    if (!w.ok) { results.refused_worse.push(`${relOf(out)} — ${w.note}`); continue; }
+    results.written.push(`${relOf(out)} (${Math.round(body.length / 1024)}KB text${w.note === "new" ? "" : "；" + w.note})`);
   } catch (err) {
-    results.failed.push(`${relOf(src)} — ${String(err.message).split("\n")[0]}`);
+    // 啟動不了工具 ≠ 這個檔有問題。混在一起報,會讓人去查沒壞的檔案。
+    if (err.spawnFailure) results.spawn_failed.push(`${relOf(src)} — ${String(err.message).split("\n")[0]}`);
+    else results.failed.push(`${relOf(src)} — ${String(err.message).split("\n")[0]}`);
   }
 }
 
@@ -188,6 +262,7 @@ console.log(`  written            ${results.written.length}`);
 console.log(`  skipped (has .md)  ${results.skipped_existing.length}`);
 
 console.log(`  needs OCR          ${results.needs_ocr.length}`);
+console.log(`  拒寫(會變差)      ${results.refused_worse.length}`);
 console.log(`  failed             ${results.failed.length}\n`);
 if (results.written.length) { console.log("WRITTEN:"); results.written.forEach((r) => console.log("  " + r)); }
 if (results.needs_ocr.length) {
@@ -195,5 +270,10 @@ if (results.needs_ocr.length) {
   console.log("No .md written on purpose: gibberish that looks ingested is worse than a gap.");
   console.log("Ting: these are readable only by a human or a vision model.");
   results.needs_ocr.forEach((r) => console.log("  " + r));
+}
+if (results.refused_worse.length) {
+  console.log(`\n拒寫 —— 新抽取比現有 .md 差,沒有覆蓋 (${results.refused_worse.length} 檔)。`);
+  console.log("中文變少 / 壞字元變多 / 本文縮水都不是「抽得更好」的樣子,由人判斷後再決定。");
+  results.refused_worse.forEach((r) => console.log("  " + r));
 }
 if (results.failed.length) { console.log("\nFAILED:"); results.failed.forEach((r) => console.log("  " + r)); }
