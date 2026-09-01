@@ -1,5 +1,5 @@
 {
-  "vocabulary_version": "1.0",
+  "vocabulary_version": "1.1",
   "created_at": "2026-07-22",
   "name_zh": "安全旗標",
   "name_en": "Safety flags",
@@ -52,6 +52,16 @@
     { "id": "heat_signs", "name_zh": "熱象", "name_en": "Heat signs", "kind": "tcm_pattern" },
     { "id": "dryness_review", "name_zh": "燥象審慎", "name_en": "Dryness caution", "kind": "tcm_pattern" },
     { "id": "phlegm_pattern_review", "name_zh": "痰證審核", "name_en": "Phlegm-pattern review", "kind": "tcm_pattern" },
-    { "id": "sweating", "name_zh": "汗證審慎", "name_en": "Sweating caution", "kind": "tcm_pattern" }
+    { "id": "sweating", "name_zh": "汗證審慎", "name_en": "Sweating caution", "kind": "tcm_pattern" },
+    { "id": "safety_review_pending", "name_zh": "安全審核待補", "name_en": "Safety review pending", "kind": "status" },
+    { "id": "aristolochic_acid_risk", "name_zh": "馬兜鈴酸風險（本藥自身含）", "name_en": "Aristolochic acid risk (intrinsic)", "kind": "toxicity" },
+    { "id": "species_confusion_aristolochic", "name_zh": "馬兜鈴酸品種混淆風險", "name_en": "Aristolochic-acid species-confusion risk", "kind": "toxicity" },
+    { "id": "species_confusion_review", "name_zh": "品種／名稱混淆風險", "name_en": "Species or name confusion risk", "kind": "toxicity" },
+    { "id": "prohibited_obsolete_substance", "name_zh": "停用／違禁物質", "name_en": "Prohibited or obsolete substance", "kind": "toxicity" },
+    { "id": "pediatric_review", "name_zh": "兒科審慎", "name_en": "Pediatric caution", "kind": "population" },
+    { "id": "yin_deficiency_review", "name_zh": "陰虛（津虧）審慎", "name_en": "Yin-deficiency / fluid-depletion caution", "kind": "tcm_pattern" },
+    { "id": "exterior_pathogen_review", "name_zh": "表邪未解審慎", "name_en": "Unresolved exterior-pathogen caution", "kind": "tcm_pattern" },
+    { "id": "liver_yang_rising_review", "name_zh": "肝陽上亢審慎", "name_en": "Liver-yang-rising caution", "kind": "tcm_pattern" },
+    { "id": "thyroid_iodine_review", "name_zh": "甲狀腺／碘含量審慎", "name_en": "Thyroid / iodine caution", "kind": "comorbidity" }
   ]
 }
