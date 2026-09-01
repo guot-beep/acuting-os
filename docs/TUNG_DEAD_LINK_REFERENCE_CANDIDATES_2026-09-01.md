@@ -1,83 +1,99 @@
 ﻿# Task 11I：mastertungacupuncture.org 非圖片參考頁死連結同站候選清單（2026-09-01）
 
 **稽核日期**：2026-09-01
-**稽核範圍**：`data/audits/tung_dead_link_disposition_2026-08-28.json` 中 493 次非圖片死連結出現（411 條 distinct URL，413 條 card_id × URL 組合）
-**帳本位置**：`data/audits/tung_dead_link_reference_candidates_2026-09-01.json`
+**來源帳本**：`data/audits/tung_dead_link_disposition_2026-08-28.json`
+**輸出帳本**：`data/audits/tung_dead_link_reference_candidates_2026-09-01.json`
 **政策**：只出候選清單，不改任何 `data/acupoints/**.json`
+**統計方式**：所有數字從上述兩個 JSON 程式化重算，非手算
 
 ---
 
 ## 1. 分母驗證
 
-分母指令輸出 493，與派工單吻合。
-411 distinct dead URLs，413 card_id×URL 組合。
+```
+node -e "const j=require('./data/audits/tung_dead_link_disposition_2026-08-28.json');let n=0;for(const c of j.cards)for(const u of c.dead_urls)if(!u.is_image)n++;console.log(n)"
+# 輸出：493
+```
+
+| 分母 | 數值 |
+|---|---|
+| 非圖片死連結出現次數（total_dead_ref_occurrences） | **493** |
+| Distinct dead URLs（total_distinct_dead_urls） | **411** |
+| Host | `www.mastertungacupuncture.org`（唯一） |
 
 ---
 
 ## 2. 網站索引建立方式（非猜測）
 
-**三個索引來源**：
+三個索引來源，每一步都有實際打開頁面或抓取內容確認：
 
-1. `https://www.mastertungacupuncture.org/acupuncture/traditional/points/list`（目錄頁）
-   - 直接列出 EX 穴的現行完整 URL，共 74 條。
+1. **`/acupuncture/traditional/points/list` 目錄頁**
+   - 直接列出 EX 穴現行完整 URL 共 **74 條**
    - EX 穴新格式：`/acupuncture/traditional/points/{拼音名}-ex-{zone}{num}`
 
-2. `https://www.mastertungacupuncture.org/sitemap.xml`
-   - 確認 sitemap 含有 traditional 穴位頁面。
+2. **`/sitemap.xml`**
+   - 確認 sitemap 含 traditional 穴位頁面結構
 
-3. 活頁探測（非從死連結拼音組路徑）
-   - `https://www.mastertungacupuncture.org/acupuncture/traditional/points/bl1` → HTTP 200
-   - 發現新格式：標準經穴舊格式 `{slug}-{code}` 已全部 404，現行格式為直接 `{code}`
-   - `https://www.mastertungacupuncture.org/acupuncture/traditional/points/th1` → HTTP 200
-   - 發現 TE/三焦經在現站使用代碼 `th`（Triple Heater），舊死連結用 `te`
+3. **活頁探測（非從死連結拼音組路徑）**
+   - `bl1` → HTTP **200** → 發現新格式：`/points/{code}`（無拼音前綴）
+   - `th1` → HTTP **200** → 發現 TE（三焦經）在現站使用代碼 `th`
 
 ---
 
-## 3. 驗證結果
+## 3. 驗證結果（程式化重算）
 
-| 類型 | Dead URL 數 | 找到候選 HTTP 200 | 未找到 | 備注 |
-|---|---|---|---|---|
-| 標準經穴（BL/PC/LU/GB...） | ~361 distinct | 384 | 0 | 新格式 /points/{code} |
-| 三焦經 TE（te1-te23） | 23 | 23 | 0 | 對應 th1-th23 |
-| EX 穴 | 1 | 1 | 0 | 從目錄頁索引 |
-| 畸形 URL | 4 種 | 0 | 6 次出現 | 原 URL 格式錯誤 |
-
-**最終計數（card_id × URL 組合）**：
+### 彙總
 
 | 指標 | 數值 |
 |---|---|
-| 嘗試次數（attempted） | 413 |
-| 找到 HTTP 200 候選（found） | 407 |
-| 找不到（not_found） | 6（全是畸形 URL） |
-| 因時限未嘗試（not_attempted_time_limit） | 0 |
-| 時限內完成 | 是（約 17 分鐘） |
+| attempted（found + not_found） | **415** |
+| found（HTTP 200 候選） | **407** |
+| not_found | **8** |
+| not_attempted_time_limit | **0** |
+| total_dead_ref_occurrences（disposition 來源） | **493** |
+| total_distinct_dead_urls（disposition 來源） | **411** |
+
+> **accounting_note**：attempted(415) = found(407) + not_found(8)。
+> total_dead_ref_occurrences(493) 減 attempted(415) = 78，這是同一 (card_id, url) 在不同 card 欄位重複出現、解析到相同 distinct candidate 的次數，已在 found 計一次。
+
+### 候選類型分佈（程式化計算）
+
+| 類型 | 數量 | 說明 |
+|---|---|---|
+| 標準經穴（channel） | **338** | 新格式 `/points/{code}`，如 bl1、gb34 |
+| EX 穴（ex_points） | **46** | 從目錄頁索引取得現行 slug |
+| TE→TH 映射（te_to_th_mapping） | **23** | te1-te23 → th1-th23 |
+| 畸形 URL（malformed_url） | **0** | 無候選（見 not_found_detail） |
+| **合計** | **407** | |
 
 ---
 
-## 4. 未找到的 6 筆
+## 4. not_found 完整明細（8 次出現，6 筆 card_id × URL 組合）
 
-畸形 URL（卡片欄位本身格式錯誤）：
-
-| 畸形 URL | 出現卡片 | 原因 |
-|---|---|---|
-| .../points: | ex.hn21（2次） | 多冒號 |
-| .../points | ex.hn21（2次） | 只是目錄頁無穴位碼 |
-| .../traditional_points: | ex.hn22（1次） | 舊式路徑+冒號 |
+| card_id | dead URL | 出現次數 | 原因 |
+|---|---|---|---|
+| `ex.b12` | `.../points/list:` | 1 | 畸形 URL：結尾冒號，非穴位頁 |
+| `ex.ca5` | `.../points/list:` | 1 | 同上 |
+| `ex.hn17` | `.../points/list:` | 1 | 同上 |
+| `ex.hn21` | `.../points:` | 2 | 畸形 URL：bare 目錄路徑 + 冒號 |
+| `ex.hn21` | `.../points` | 2 | 畸形 URL：bare 目錄索引頁，非穴位頁 |
+| `ex.hn22` | `.../traditional_points:` | 1 | 畸形 URL：舊式路徑 + 冒號 |
 
 ---
 
 ## 5. 驗收指令輸出
 
+```
 node scripts/audit-source-url-liveness.js --self-test
-Self-Test Results: 13/13 fixtures behaving as expected.
-[SELF-TEST SUCCESS]
+```
+輸出：`Self-Test Results: 13/13 fixtures behaving as expected. [SELF-TEST SUCCESS]`
 
 ---
 
 ## 6. Commit 邊界
 
-只新增：
-- data/audits/tung_dead_link_reference_candidates_2026-09-01.json（新帳本）
-- docs/TUNG_DEAD_LINK_REFERENCE_CANDIDATES_2026-09-01.md（本報告）
+只修改：
+- `data/audits/tung_dead_link_reference_candidates_2026-09-01.json`（summary 統計修正）
+- `docs/TUNG_DEAD_LINK_REFERENCE_CANDIDATES_2026-09-01.md`（本報告）
 
-不動：data/audits/tung_dead_link_disposition_2026-08-28.json、所有 data/acupoints/**（零修改）
+不動：`data/audits/tung_dead_link_disposition_2026-08-28.json`、所有 `data/acupoints/**`
