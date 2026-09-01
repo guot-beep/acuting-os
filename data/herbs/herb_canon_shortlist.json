@@ -103605,7 +103605,7 @@
         ],
         "part_used_zh": "礦石",
         "part_used_en": "mineral",
-        "source_note_zh": "性味歸經取自 materia_medica_abbreviated_chenoweth.md p.2「Han Shi Shi [Calcitum] (Cd) Acrid, Salty [HT, ST, KD]」——這是寒水石**自己的**獨立條目（自己的標題與性味歸經欄），與同頁其他清熱藥分屬不同欄位，非借用他藥。原判斷「只有分類標記」係 F12 建卡當時只查過 Chenoweth 功效索引與方劑組成行，未查到這份講義的性味歸經欄；2026-08-11 深化批次補查後更正。"
+        "source_note_zh": "性味歸經取自 materia_medica_abbreviated_chenoweth.md p.2「Hán Shŭi Shí (寒水石) [Calcitum] / (Cd) Acrid, Salty [HT, ST, KD]」——這是寒水石**自己的**獨立條目（自己的標題與性味歸經欄），與同頁其他清熱藥分屬不同欄位，非借用他藥。原判斷「只有分類標記」係 F12 建卡當時只查過 Chenoweth 功效索引與方劑組成行，未查到這份講義的性味歸經欄；2026-08-11 深化批次補查後更正。"
       },
       "functions_zh": [
         "清熱瀉火",
@@ -103767,6 +103767,13 @@
           "reason": "頁碼校正：寒水石自身條目在 p.2（materia_medica_abbreviated_chenoweth.md L118-L121），不在 p.4-5；本卡 field_sources.functions_zh 早先已標 ...chenoweth.pdf#p2 可互證。同時把重複檔名改為 canonical 檔名。",
           "moved_at": "2026-08-31",
           "ruling": "Ting 2026-08-31 派工：課件檔名不進臨床句子，出處歸 field_sources"
+        },
+        {
+          "original_field": "tcm_properties.source_note_zh",
+          "text": "性味歸經取自 materia_medica_abbreviated_chenoweth.md p.2「Han Shi Shi [Calcitum] (Cd) Acrid, Salty [HT, ST, KD]」——這是寒水石**自己的**獨立條目（自己的標題與性味歸經欄），與同頁其他清熱藥分屬不同欄位，非借用他藥。原判斷「只有分類標記」係 F12 建卡當時只查過 Chenoweth 功效索引與方劑組成行，未查到這份講義的性味歸經欄；2026-08-11 深化批次補查後更正。",
+          "reason": "引文更新：原文引的是 `ebef2401` 劣化抽取下的壞拼音「Han Shi Shi」（該版把中文與聲調全部消滅）。本批依 Ting 裁定還原 `47833857` 舊抽取後，課件原文為「Hán Shŭi Shí (寒水石) [Calcitum]」，引文照原文更新。性味歸經與頁碼(p.2)不變，已在還原檔 L388-L391 重新核對。",
+          "moved_at": "2026-08-31",
+          "ruling": "Ting 2026-08-31 裁定：還原課件舊抽取，並把 47 筆錨點重驗一次"
         }
       ]
     },

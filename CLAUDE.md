@@ -59,6 +59,7 @@ node scripts/validate-review-status-vocabulary.js # 狀態標籤不准印出生 
 node scripts/validate-rendered-reference-resolution.js # 會上畫面的跨卡引用,懸空數只准變少
 node scripts/validate-bilingual-index-pairing.js  # 雙語 chip 逐索引配對:等長還不夠,要同一份清單
 node scripts/validate-curriculum-anchor-resolution.js # 課件錨點指得到嗎;#pN 跨版本通用,#L 重抽就死
+node scripts/validate-found-in-formulas-integrity.js # 藥對→方劑反向索引(暫無渲染)只准變好
 # 其他線：condition / tdis / pattern / symptom / comparison / formula-song
 node scripts/check-validation-ratchet.js   # 缺陷數不准變多
 ```
