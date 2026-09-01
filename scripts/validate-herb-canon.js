@@ -109,7 +109,15 @@ function main() {
     if ((record.safety_flags || []).length === 0) errors.push(`${label}: safety_flags should include at least one review context`);
     if ((record.modern_use_tags || []).length === 0) warnings.push(`${label}: modern_use_tags is empty`);
 
-    if (record.review_status !== "draft") {
+    /* 2026-08-31:這條規則寫於這個檔還是純 staging 的時期,當時「維持 draft」
+     * 是對的。但 D6 規定退役的唯一機制就是 `review_status: "deprecated"`
+     * (不硬刪),於是這條規則變成**禁止憲法自己指定的做法** —— 每退役一張卡
+     * 就多記一筆缺陷。青木香撤下(Ting 2026-08-31)撞上的就是這個。
+     * 一支會把「照裁定辦」記成缺陷的 gate,只會讓人學會忽略它。
+     *
+     * 只放行 `deprecated`,因為它有 D6 撐著。`source_checked`(39 筆)是另一條
+     * 線的晉升狀態,我沒有裁定依據,維持紅;`undefined`(5 筆)是真的缺欄位。 */
+    if (record.review_status !== "draft" && record.review_status !== "deprecated") {
       sourceChecked += record.review_status === "source_checked" ? 1 : 0;
       errors.push(`${label}: record review_status must remain draft for this staging file`);
     }
