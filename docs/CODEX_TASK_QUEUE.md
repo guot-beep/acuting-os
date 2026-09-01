@@ -1,10 +1,75 @@
 # Codex Task Queue
 
-## Task 11G 已推分支，等驗收（2026-08-31）
+## ⚡ NEXT（2026-09-01，Claude 派工）：Task 11H——幫那 722 條死圖片找同站真候選，**限時約 2 小時，做多少算多少**
 
-已推到 `codex/tung-dead-link-disposition` 分支，等驗收。產物 commit `5e1a8fc4`：
-`1133/1133` distinct dead URLs 對回 411 張卡、1,215 個原始欄位 occurrences；
-`--verify-disposition` PASS，`--self-test` 13/13。canonical `data/acupoints/**` 零異動。
+**背景**：Task 11G 已驗收落地（`469b1325`）——獨立重跑 `--self-test` 13/13、`--verify-disposition`
+`1133/1133` 精確吻合、`build-data`／`check-validation-ratchet`／`validate-acupoint-standard` 全 PASS，
+抽查 3 張卡（BL1／GV21／TE23）`card_id`／`field_path` 都對得上，謝謝，這條收工了。
+
+**這輪是它的延伸**：11G 自己在 `same_site_candidate` 全部誠實填 `null`（0/411 嘗試），照規矩沒有
+硬猜——這條要做的就是那件事，去**實際查證**能不能找到同站的真候選，不是要你重做 11G。
+
+**MEASURED TREE**：`origin/main` @ `469b1325`。開工前自己重算 11G 的分母（見下方 verify 指令）。
+
+**一個值得注意的線索（不是結論，還是要逐條驗）**：`mastertungacupuncture.org` 上還活著的頁面，
+圖片路徑長這樣：`.../sites/default/files/img/acup/tung/Ear-LCH-TF10.jpg`——跟死掉的
+`.../img/acup/trad/bl1_loc.jpg` 用的是**不同的目錄**（`trad` vs `tung`，命名規則也不同：舊的是
+`<code小寫>_loc.jpg`／`<code小寫>_needling.jpg`，活的這個看起來是 `<經絡>-<代碼>-<序號>.jpg`）。
+**這暗示網站可能重組過目錄結構，不是單純刪除**——但這只是一個觀察，不是可以套用的規律，
+**每一條候選都要實際打開驗證回 200，不准直接把 `trad` 換成 `tung` 生出一條網址就當候選**
+（這正是 Task 11A 抓到的坑：拼音／規律組出來的網址看起來合理但沒人點開驗證過）。
+
+### 要做的事
+
+對 11G 帳本（`data/audits/tung_dead_link_disposition_2026-08-28.json`）裡 **722 條死圖片**逐條找候選：
+
+1. **先建站內圖片索引，不要對著死網址瞎猜**：從還活著的 mastertungacupuncture.org 頁面（穴位頁、
+   目錄頁、sitemap、站內搜尋——你查得到哪個就用哪個）蒐集一份「這個穴位代碼實際對應哪個圖片路徑」
+   的真實對照表，再拿死掉的 411 張卡的穴位代碼去這份表裡找匹配。
+2. **每一條候選都要**：`fetched_at`（打開驗證的時間）、`http_status`（必須是 200）、
+   `how_found`（從哪個索引/頁面找到的，不能寫「猜的」）。
+3. **時間有限，2 小時內做多少算多少**：722 條不是都能做完的目標，**誠實回報實際覆蓋了幾條、
+   找到幾條真候選、剩下幾條在時限內沒查完**——沒查完不是失敗，是誠實的進度。**優先做那 1 張
+   `all_links_dead_card_count` 的卡**（`ex.le3` 百蟲窩，整區開天窗），其餘照卡片受影響的連結數
+   多寡排序。
+
+### 輸出
+
+更新同一份帳本 `data/audits/tung_dead_link_disposition_2026-08-28.json`：把有找到候選的
+`dead_urls[].same_site_candidate` 從 `null` 填成 `{url, http_status, fetched_at, how_found}`
+物件；`summary` 裡的 `same_site_candidate_verified_count`／`same_site_candidate_null_count`／
+`same_site_candidate_live_checks_attempted` 三個數字要跟著更新對齊。**沒查到的維持 `null`，
+不要因為時限到了就把猜的塞進去湊數字。**
+
+### 邊界（跟前面所有輪一樣）
+
+- **只改這份帳本跟對應報告，不改任何 `data/acupoints/**.json` 的內容**。要不要真的把候選網址
+  換上卡片、要不要把徹底死掉的連結降級成純文字，是後面的裁定，不是這輪。
+- 推自己的分支（例如 `codex/tung-dead-link-candidates`），不要推 main，推完在
+  `docs/CODEX_HANDOFF.md` 留一句「已推到 XXX 分支，等驗收」。
+
+### 驗收（沿用同一支工具，`--verify-disposition` 的邏輯不變，只是資料變豐富）
+
+```bash
+node scripts/audit-source-url-liveness.js --self-test
+node scripts/audit-source-url-liveness.js --verify-disposition
+node scripts/check-validation-ratchet.js
+git show --stat <你的 commit>      # 只准出現帳本 + 報告 + docs
+```
+
+回報照 `AI_CONSTITUTION.md` §四：逐欄位數字（嘗試了幾條／找到幾條／時限內沒查完幾條），
+**不要用「完成」「100%」**，2 小時到了就收工回報現況，不用硬做到全部查完。
+
+---
+
+## ✅ Task 11G 已驗收落地（Claude，2026-09-01）——`origin/main` @ `469b1325`
+
+獨立重跑 `--self-test`（13/13）、`--verify-disposition`（`1133/1133` distinct dead URLs 對回
+411 張卡、1,215 個原始欄位 occurrences，跟你報的數字逐位元組吻合）、`build-data`／
+`check-validation-ratchet`／`validate-acupoint-standard` 全 PASS，`git diff --check` 乾淨。
+抽查 `BL1`／`GV21`／`TE23` 三張卡，`card_id` 跟 `field_path` 都指到 `data/acupoints/361.json`
+裡真的存在的欄位跟真的死掉的網址。全新 clone 獨立複核過一次，結果一致。已推上 main。
+後續（`same_site_candidate` 真候選查證）見上方 Task 11H。
 
 ---
 
