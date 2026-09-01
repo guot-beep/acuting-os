@@ -92,7 +92,10 @@ function extractPdf(src) {
   // commit (ebef2401) without anyone noticing — the files still looked
   // extracted. See the writeIfNotWorse() gate below, which now makes that
   // class of loss impossible to commit.
-  const raw = withAsciiPath(src, (p) => execFileSync("pdftotext", ["-layout", "-enc", "UTF-8", p, "-"], {
+  // -eol unix:這個 build 在 Windows 上預設吐 CRLF,而本檔其餘輸出是 LF。
+  // 混行尾會讓每次重跑都產生一整批「只有行尾不同」的假 diff(git 又會正規化回 LF,
+  // 於是工作區與 repo 永遠對不齊)。統一成 LF。
+  const raw = withAsciiPath(src, (p) => execFileSync("pdftotext", ["-layout", "-enc", "UTF-8", "-eol", "unix", p, "-"], {
     encoding: "utf8", maxBuffer: 64 * 1024 * 1024,
   }));
   // pdftotext separates pages with \f — turn that into a locatable marker.
