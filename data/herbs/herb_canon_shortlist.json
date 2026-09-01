@@ -101530,22 +101530,40 @@
       "part_used_en": "horn (prohibited in modern practice)",
       "category": "清熱藥 / Clear Heat - Cool Blood",
       "category_zh": "清熱涼血藥",
-      "properties_taste_temp": "",
+      "properties_taste_temp": "苦、鹹，寒",
       "taste_temperature_zh": "",
-      "channels_zh": [],
+      "channels_zh": [
+        "心經",
+        "肝經",
+        "胃經"
+      ],
       "channels_en": [],
       "aliases_zh": [],
       "aliases_en": [],
       "tcm_properties": {
-        "five_flavors_zh": [],
-        "five_flavors_en": [],
-        "four_natures_zh": "",
-        "four_natures_en": "",
-        "meridian_tropism_zh": [],
-        "meridian_tropism_en": [],
+        "five_flavors_zh": [
+          "苦",
+          "鹹"
+        ],
+        "five_flavors_en": [
+          "Bitter",
+          "Salty"
+        ],
+        "four_natures_zh": "寒",
+        "four_natures_en": "Cold",
+        "meridian_tropism_zh": [
+          "心經",
+          "肝經",
+          "胃經"
+        ],
+        "meridian_tropism_en": [
+          "HT Heart",
+          "LV Liver",
+          "ST Stomach"
+        ],
         "part_used_zh": "角",
         "part_used_en": "horn",
-        "source_note_zh": "課件無犀角的單味藥專論。犀角地黃湯與清營湯課程區塊裡的「Bitter, salty, cold / HT, LV, ST」是**水牛角**（Chief Shui Niu Jiao）的性味歸經，不是犀角的，故本卡性味歸經留空，不搬用。2026-08-11 深化批次：逐檔搜尋 curriculum/herbs/ 全部 md（06 清熱解毒章、Herb Functions.md、Herbal Clinic Entry Exam Study Guide、M.M.1 Herb List、Materia Medica Abbbreviated.md／chenoweth 版）與 THP 4th ed.，犀角均只以水牛角的「被替代對象」身分出現（8–10 倍劑量換算水牛角），查無犀角自己的性味歸經段落；THP 全文檢索 RHINOCEROTIS 亦無此條（保育類，THP 未收錄）。留空的判斷維持不變。"
+        "source_note_zh": "性味歸經取自 materia_medica_abbreviated_chenoweth.md p.3「Xi Jiao [Rhinoceros Horn] (B/Cd) Salty [HT, LV, ST]」——這是犀角**自己的**獨立條目（自己的標題與性味歸經欄）；(B/Cd) 的展開見同頁章名「[5] Clear Heat, Cool Blood (Bitter/CD)」，故讀為苦、鹹，寒。同欄下方另起的「Shui Niu Jiao [Water Buffalo Horn] (Cd) Salty [HT, LV, ST]」是**另一條**條目，本卡未借用。2026-08-31 更正：原判斷「課件無犀角單味藥專論、查無其性味歸經段落」係逐檔搜尋時漏掉這一頁，該敘述不成立，原文存於 import_artifacts。仍維持不從方劑卡搬用：犀角地黃湯組成表的「Bitter, salty, cold / HT, LV, ST」印在 Chief Shui Niu Jiao 列上（[Xi Jiao] 為其下的替代標註），歸屬不明確；且該串與本頁**犀角**條目相符、與本頁水牛角條目（無苦味）不符，兩者何以互異留待 RV1，本卡不代為裁定。THP 4th ed. 全文檢索 RHINOCEROTIS 仍無此條（保育類未收錄），該項不變。"
       },
       "functions_zh": [
         "涼血清熱",
@@ -101651,6 +101669,11 @@
           "name": "📘 課件 NCBAHM 2026 CH 考綱",
           "url": "curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md",
           "scope": "Xi Jiao (Rhinocerotis Cornu) 列名；Shui Niu Jiao (Bubali Cornu) 另列"
+        },
+        {
+          "name": "📘 課件 Materia Medica Abbreviated（Chenoweth）p.3 犀角自身條目",
+          "url": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md",
+          "scope": "[5] Clear Heat, Cool Blood (Bitter/CD) 章：Xi Jiao [Rhinoceros Horn] / (B/Cd) Salty [HT, LV, ST]；(B/Cd) 依同頁章名展開為 Bitter/Cold，故讀為苦、鹹，寒。此為 OCR 壓平的四欄版面，本卡僅採用「犀角」自己標題下方、下一個藥名標題（Shui Niu Jiao）之前的段落，未跨欄引用。"
         }
       ],
       "source_urls": [],
@@ -101683,11 +101706,26 @@
           "curriculum/formulas/17_Formula_Cards_161-170_安神劑_開竅劑_消食劑.md"
         ],
         "modern_functions_zh": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md",
-        "modern_functions_en": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md"
+        "modern_functions_en": "curriculum/herbs/materia_medica_abbreviated_chenoweth.md",
+        "properties_taste_temp": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p3"
+        ],
+        "channels_zh": [
+          "curriculum/herbs/materia_medica_abbreviated_chenoweth.pdf#p3"
+        ]
       },
       "card_grade": "partial",
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/XiJiao.html",
-      "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/XiJiao.html"
+      "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/XiJiao.html",
+      "import_artifacts": [
+        {
+          "original_field": "tcm_properties.source_note_zh",
+          "text": "課件無犀角的單味藥專論。犀角地黃湯與清營湯課程區塊裡的「Bitter, salty, cold / HT, LV, ST」是**水牛角**（Chief Shui Niu Jiao）的性味歸經，不是犀角的，故本卡性味歸經留空，不搬用。2026-08-11 深化批次：逐檔搜尋 curriculum/herbs/ 全部 md（06 清熱解毒章、Herb Functions.md、Herbal Clinic Entry Exam Study Guide、M.M.1 Herb List、Materia Medica Abbbreviated.md／chenoweth 版）與 THP 4th ed.，犀角均只以水牛角的「被替代對象」身分出現（8–10 倍劑量換算水牛角），查無犀角自己的性味歸經段落；THP 全文檢索 RHINOCEROTIS 亦無此條（保育類，THP 未收錄）。留空的判斷維持不變。",
+          "reason": "原註記宣稱「逐檔搜尋…查無犀角自己的性味歸經段落」，與來源牴觸：materia_medica_abbreviated_chenoweth.md p.3（L165-L166）有犀角**自己的**條目，自己的標題「Xi Jiao () [Rhinoceros Horn]」與自己的性味歸經欄「(B/Cd) Salty [HT, LV, ST]」，同欄下方 L182 才另起「Shui Niu Jiao () [Water Buffalo Horn] (Cd) Salty [HT, LV, ST]」，是兩條不同條目。該欄位原為空字串/空陣列，本次依 Ting 裁定據 p.3 補值，故先搬存原判斷再改寫。",
+          "moved_at": "2026-08-31",
+          "ruling": "Ting 2026-08-31 裁定：犀角性味歸經據 Chenoweth 課件 p.3 自身條目補上，標 draft"
+        }
+      ]
     },
     {
       "review_status": "draft",
