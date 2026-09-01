@@ -381,7 +381,7 @@ Dang Gui Bu Xue Tang [当归补血汤] (Danggui Decoction To Tonify The Blood) S
 ● Actions: Tonifies Qi, Generates Blood. Modern Research
 ● Preparation and administration: decoction, taken with an empty stomach, ● Blood-tonic
 bid-tid. ● Anti-anoxia
-● Ratio: Huang Qi: Dang Gui (cid:0) 5:1 [Can’t tonify blood without tonifying Qi] (cid:0) Qi ● Cardiac muscle-protecting
+● Ratio: Huang Qi: Dang Gui → 5:1 [Can’t tonify blood without tonifying Qi] → Qi ● Cardiac muscle-protecting
 is very important to tonify blood ● Coagulation-inhibiting
 ● Postpartum soup: chicken cooked with huang Qi & dang gui ● Immune-boosting
 ● Liver-protecting
@@ -400,7 +400,7 @@ and deficient (large) pulse. ●
 ● Leukopenia
 ● Thrombocytopenic purpura Think & Review
 ● Bone marrow suppression due to chemo/radio therapy ● What is the most commonly used Ob-Gyn herb in CHM? Why?
-● Functional uterine bleeding ⬧ Dang Gui: both functions (cid:0) nourish blood, tonify Qi
+● Functional uterine bleeding ⬧ Dang Gui: both functions → nourish blood, tonify Qi
 ● Neurasthenia ● Dang gui bu xue tang is a good example in which blood is nourished through
 ● Menopausal Syndrome tonifying qi. Have you found a vice versa example in a qi-tonifying formula?
 ● Male infertility ● 3. Please compare the fever in dang gui bu xue tang and bai hu tang
@@ -876,7 +876,7 @@ Ba Zhen Tang [八珍汤] (Eight-Treasure Decoction) Source: Zheng Ti Lei Yao
 ● Actions: Tonifies & Augments Qi & Blood. Patent
 ● Preparation and administration: cook with 3 slices of sheng jiang and 2 pieces ● Ba zhen wan
 of da zao, taken before meals, bid-tid. ● Nu ke ba zhen wan
-● Postpartum ladies: Don’t exercise right after birth, miscarriage, abortion (cid:0) ● Ba zhen yi mu wan
+● Postpartum ladies: Don’t exercise right after birth, miscarriage, abortion → ● Ba zhen yi mu wan
 need to wait until tendons & ligaments have time to return to normal [wait at ● Shi quan da bu wan
 least 40 days to 3 months] ● Yang ying wan
 ● Eight Treasures
@@ -922,14 +922,14 @@ vaginal discharge
 Shi Quan Da Bu Tang [十全大补丸] + Huang Qi, Rou Gui [Warm Formula] Qi & blood xu with a predominance of Chronic fatigue
 (Tai Ping Hui Min He Ji Ju Fang) deficient qi tending toward cold: Fibromyalgia
 consumptive diseases
-Ren Shen Yang Ying Tang [养营] - Chuan Xiong Qi & blood xu with shen disturbance: Shen lost spirit (cid:0) wandering
+Ren Shen Yang Ying Tang [养营] - Chuan Xiong Qi & blood xu with shen disturbance: Shen lost spirit → wandering
 (Tai Ping Hui Min He Ji Ju Tang) + Huang Qi, Chen Pi, Rou Gui, Wu Wei palpitations, forgetfulness…
 Zi, Yuan Zhi
 Tai Shan Pan Shi San [泰山盘石散] Ren Shen, Huang Qi, Xu Duan, Huang Qi & blood xu with restless fetus or Huang Qin + Sha Ren: Anchor, calm
 (Jing Yue Quan Shu) Qin, Chuan Xiong, Shu Di, Bai Shao, Bai signs of threatened miscarriage in down fetus
 Zhu, Zhi Gan Cao, Sha Ren, Nuo Mi pregnant women
 Chang Ning Tang [肠宁汤] Dang Gui, Shu Di, Ren Shen, Mai Dong, Postpartum abdominal pain (better Chang = intestines
-(Fu Qing Zhu Nu Ke) E Jiao, Shan Yao, Shu Duan, Rou Gui, with pressure (cid:0) deficiency) due to loss Tonify lower jiao
+(Fu Qing Zhu Nu Ke) E Jiao, Shan Yao, Shu Duan, Rou Gui, with pressure → deficiency) due to loss Tonify lower jiao
 Gan Cao of blood
 66
 Kimberly Chenoweth
@@ -1324,14 +1324,14 @@ _Source field is blank / not provided in the current uploaded dataset._
 Shi Quan Da Bu Tang [十全大补丸] + Huang Qi, Rou Gui [Warm Formula] Qi & blood xu with a predominance of Chronic fatigue
 (Tai Ping Hui Min He Ji Ju Fang) deficient qi tending toward cold: Fibromyalgia
 consumptive diseases
-Ren Shen Yang Ying Tang [养营] - Chuan Xiong Qi & blood xu with shen disturbance: Shen lost spirit (cid:0) wandering
+Ren Shen Yang Ying Tang [养营] - Chuan Xiong Qi & blood xu with shen disturbance: Shen lost spirit → wandering
 (Tai Ping Hui Min He Ji Ju Tang) + Huang Qi, Chen Pi, Rou Gui, Wu Wei palpitations, forgetfulness…
 Zi, Yuan Zhi
 Tai Shan Pan Shi San [泰山盘石散] Ren Shen, Huang Qi, Xu Duan, Huang Qi & blood xu with restless fetus or Huang Qin + Sha Ren: Anchor, calm
 (Jing Yue Quan Shu) Qin, Chuan Xiong, Shu Di, Bai Shao, Bai signs of threatened miscarriage in down fetus
 Zhu, Zhi Gan Cao, Sha Ren, Nuo Mi pregnant women
 Chang Ning Tang [肠宁汤] Dang Gui, Shu Di, Ren Shen, Mai Dong, Postpartum abdominal pain (better Chang = intestines
-(Fu Qing Zhu Nu Ke) E Jiao, Shan Yao, Shu Duan, Rou Gui, with pressure (cid:0) deficiency) due to loss Tonify lower jiao
+(Fu Qing Zhu Nu Ke) E Jiao, Shan Yao, Shu Duan, Rou Gui, with pressure → deficiency) due to loss Tonify lower jiao
 Gan Cao of blood
 66
 Kimberly Chenoweth
@@ -1628,7 +1628,7 @@ Tai Shan Pan Shi San [泰山盘石散] Ren Shen, Huang Qi, Xu Duan, Huang Qi & b
 (Jing Yue Quan Shu) Qin, Chuan Xiong, Shu Di, Bai Shao, Bai signs of threatened miscarriage in down fetus
 Zhu, Zhi Gan Cao, Sha Ren, Nuo Mi pregnant women
 Chang Ning Tang [肠宁汤] Dang Gui, Shu Di, Ren Shen, Mai Dong, Postpartum abdominal pain (better Chang = intestines
-(Fu Qing Zhu Nu Ke) E Jiao, Shan Yao, Shu Duan, Rou Gui, with pressure (cid:0) deficiency) due to loss Tonify lower jiao
+(Fu Qing Zhu Nu Ke) E Jiao, Shan Yao, Shu Duan, Rou Gui, with pressure → deficiency) due to loss Tonify lower jiao
 Gan Cao of blood
 66
 Kimberly Chenoweth
@@ -2214,7 +2214,7 @@ with honey, taken in 9g doses, tid. ● Zhi bai di huang wan ● Eight Immortals
 ● Decoction with 1/10 [get rid of zeros] ● Zhi bai ba wei wan ● Strengthen the Root
 ● Developed for kids ● Qi ju di huang wan ● Nourish the Root
 ● 3 pairs: Very balanced, tonify without cloying, draining without damaging the ● Mai wei di huang wan ● Quiet Contemplative
-good Qi (cid:0) Good for old people starting to go downhill ● Ming mu di huang wan ● Nine Flavor Tea
+good Qi → Good for old people starting to go downhill ● Ming mu di huang wan ● Nine Flavor Tea
 ● Wu Wei Zi: Very strong in vitamin B, good for insomnia, lack of focus ● Er long zuo ci wan ● Replenish Essence
 ● Brighten the Eyes
 ● Indications: KD & LV Yin Xu [soreness and weakness in lower back, ● Nourish Essence Form
@@ -2274,7 +2274,7 @@ FORMULATIONS 1
 ● Actions: Nourishes KD Yin, Supplements Essence, Benefits Marrow. ● Zuo gui wan
 ● Preparation and administration: grind the ingredients into powder and form ● Cong rong bu shen wan (rou cong rong, shu di, tu si zi, wu wei zi)
 into pills with honey, take in 9-15g doses bid with salted water or warm water. ⬧ KD Yin & yang Xu, but no significant heat/cold symptoms
-● Severe KD deficiency, very dry, lost memory, forgetful, hot flashes, ⬧ Evenly tonify yin & yang (cid:0) Focus on KD Essence
+● Severe KD deficiency, very dry, lost memory, forgetful, hot flashes, ⬧ Evenly tonify yin & yang → Focus on KD Essence
 osteoporosis, strengthens lower back [Du Mai empty] ● Fertile garden
 ● Stronger than Liu Wei Di Huang Wan [Yin & Essence Tonic] ● Zuo gui teapills
 ⬧ Tonify yin from yang [Tu Si Zi, Lu Jiao Jiao] ●
@@ -2747,7 +2747,7 @@ FORMULATIONS 1
 ● Actions: Nourishes KD Yin, Supplements Essence, Benefits Marrow. ● Zuo gui wan
 ● Preparation and administration: grind the ingredients into powder and form ● Cong rong bu shen wan (rou cong rong, shu di, tu si zi, wu wei zi)
 into pills with honey, take in 9-15g doses bid with salted water or warm water. ⬧ KD Yin & yang Xu, but no significant heat/cold symptoms
-● Severe KD deficiency, very dry, lost memory, forgetful, hot flashes, ⬧ Evenly tonify yin & yang (cid:0) Focus on KD Essence
+● Severe KD deficiency, very dry, lost memory, forgetful, hot flashes, ⬧ Evenly tonify yin & yang → Focus on KD Essence
 osteoporosis, strengthens lower back [Du Mai empty] ● Fertile garden
 ● Stronger than Liu Wei Di Huang Wan [Yin & Essence Tonic] ● Zuo gui teapills
 ⬧ Tonify yin from yang [Tu Si Zi, Lu Jiao Jiao] ●
@@ -3569,7 +3569,7 @@ spermatorrhea; or aching, weakness of lower back & knees. Also infertility, ● 
 loose stools (sometimes with undigested food particles), incontinence, and
 edema of the lower extremities Case Study
 ● T: pale with white coating, P: deep and slow ● A 57 y-o male looks for Tx of poor sleep due to frequent urinations at night(3-5
-● Can’t stand anymore, have to use walker [KD deficiency (cid:0) Restore KD Yang Qi] times/night). Other sx: weak urine stream with dripping, cold limbs,
+● Can’t stand anymore, have to use walker [KD deficiency → Restore KD Yang Qi] times/night). Other sx: weak urine stream with dripping, cold limbs,
 pronounced in lower limbs, low sex drive,or premature ejaculation. Western
 Applications Dx: benign hyperplasia of prostate.
 ● K yang xu with Mingmen fire waning; or K yang xu with essence and blood xu ● A dusky tongue with thin white coating; a deep and weak pulse.
@@ -4428,7 +4428,7 @@ FORMULATIONS 1
 ● Actions: Nourishes KD Yin, Supplements Essence, Benefits Marrow. ● Zuo gui wan
 ● Preparation and administration: grind the ingredients into powder and form ● Cong rong bu shen wan (rou cong rong, shu di, tu si zi, wu wei zi)
 into pills with honey, take in 9-15g doses bid with salted water or warm water. ⬧ KD Yin & yang Xu, but no significant heat/cold symptoms
-● Severe KD deficiency, very dry, lost memory, forgetful, hot flashes, ⬧ Evenly tonify yin & yang (cid:0) Focus on KD Essence
+● Severe KD deficiency, very dry, lost memory, forgetful, hot flashes, ⬧ Evenly tonify yin & yang → Focus on KD Essence
 osteoporosis, strengthens lower back [Du Mai empty] ● Fertile garden
 ● Stronger than Liu Wei Di Huang Wan [Yin & Essence Tonic] ● Zuo gui teapills
 ⬧ Tonify yin from yang [Tu Si Zi, Lu Jiao Jiao] ●

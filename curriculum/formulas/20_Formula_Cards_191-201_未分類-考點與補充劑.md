@@ -616,7 +616,7 @@ _Source field is blank / not provided in the current uploaded dataset._
 <summary>Herbal Formulations Comprehensive exact extracted section — p.123, 124</summary>
 
 ```text
-Ling Jiao Gou Teng Tang (Antelope Ling yang jiao, gou teng, sang ye, ju LV meridian excess heat stirring up Cold ingredients (cid:0) Cool blood
+Ling Jiao Gou Teng Tang (Antelope Ling yang jiao, gou teng, sang ye, ju LV meridian excess heat stirring up Cold ingredients → Cool blood
 Horn & Uncaria Decoction) hua, bai shao, sheng di, chuan bei mu, internal movement of wind – For situations with more heat [high
 铃角钩藤汤 zhu ru, fu shen, gan cao persistent high fever, irritability, fever, etc.]
 restlessness, dizziness, vertigo,
@@ -1618,8 +1618,8 @@ _Source field is blank / not provided in the current uploaded dataset._
 <summary>Herbal Formulations Comprehensive exact extracted section — p.45, 46</summary>
 
 ```text
-Shao Yao Gan Cao tang: treat spasmatic muscles, like 4 gates (cid:0) Regulate Qi &
-Blood (cid:0) Remove stagnation, restore Ying & Wei circulation
+Shao Yao Gan Cao tang: treat spasmatic muscles, like 4 gates → Regulate Qi &
+Blood → Remove stagnation, restore Ying & Wei circulation
 Deputy Dang Gui 6-9 Sweet, acrid, bitter, HT, LV, SP Helps chief move blood
 warm
 Gan Cao 4-5 Sweet, neutral Helps chief moderate spasms, protects middle
@@ -1628,7 +1628,7 @@ Bing Lang 4-5 Acrid, bitter, warm SP, ST, LI Moves qi, leads stagnation out
 Assistant Huang Lian 6-9 Bitter, cold Clear heat, dry damp
 Huang Qin 9-12 Bitter, cold Clear heat, dry damp
 Da Huang 9-12 Bitter, cold ST, LI, LV Drains d-h through stools
-Guan Gui 1.5-3 Acrid, sweet, hot KD, SP, LV, Young Rou Gui (cinnamon tree <5 years old) (cid:0) Milder, not as hot as Rou Gui
+Guan Gui 1.5-3 Acrid, sweet, hot KD, SP, LV, Young Rou Gui (cinnamon tree <5 years old) → Milder, not as hot as Rou Gui
 UB Aids moving blood; An opposing assistant,
 Hold gate, don’t let everyone out (gatekeeper, security)
 Modifications
@@ -2291,11 +2291,11 @@ powder, take 6-9g as a draft. Or decoction menstruation. Each period she begins 
 joints, usually 2-3 pounds weight gain. Other sx: tiredness, epigastric
 ● Indications: Skin edema (pi shui 皮水) – generalized edema with a sensation distension, reduced urination, reduced appetite.
 of heaviness, distension, and fullness in the epigastrium & abdomen, labored & ● A pale flabby tongue with thick white coating
-heavy breathing, urinary difficulty; [SP Xu causes damp accumulation (cid:0) damp ● A deep soft pulse
+heavy breathing, urinary difficulty; [SP Xu causes damp accumulation → damp ● A deep soft pulse
 goes out & shows on skin] ● Dx:
 ● a pale flabby/scalloped tongue (toothmarks) with white greasy coating, a deep, ● Tx:
 moderate, slippery pulse. ●
-● Use 5 skins to treat skin edema (cid:0) Not very strong
+● Use 5 skins to treat skin edema → Not very strong
 Think & Review
 Applications ● Sheng Jiang: if you want warm properties, don’t use skin
 ● Superficial edema from Sp xu causing damp accumulation
@@ -2306,7 +2306,7 @@ Applications ● Sheng Jiang: if you want warm properties, don’t use skin
 ● Exudative pleurisy due to TB
 Rank Herb Amount Properties Channels Notes
 No ranks Sang bai pi 9 [Mulberry bark] Moves Lu qi, promotes urination, drains water-damp
-(cid:0) Round Sheng jiang pi 9 Slightly Cool Moves Lu qi, drains superficial edema
+→ Round Sheng jiang pi 9 Slightly Cool Moves Lu qi, drains superficial edema
 table ☺ Fu ling pi 9 Strengthens Sp, promotes urination, drains water-damp
 [Sometimes skin very ugly]
 Chen pi 9 [Tangerine skin, just red part, stronger] Regulates qi, harmonizes Middle jiao
@@ -2359,7 +2359,7 @@ as a draft with remaining herbs. Or as decoction Modern Research
 a heavy sensation in the body, superficial edema, urinary difficulty; a pale ●
 tongue with white coating, a floating weak or soggy thin pulse.
 ● Feng shui & pi shui are similar (damp accumulation on skin)
-⬧ Pi Shui: SP xu (cid:0) cause water in skin
+⬧ Pi Shui: SP xu → cause water in skin
 ⬧ Feng Shui: exterior wind damp condition
 Applications
 ● Sp & protective qi xu causing wind edema or wind-damp
@@ -2373,9 +2373,9 @@ Applications
 Rank Herb Amount Properties Channels Notes
 Chief Huang qi 15 Stabilizes & strengthens protective qi, promotes urination, reduces swelling
 Fang ji [Han] 12 With huang qi, expels wind-damp, promotes urination, relieves pain
-Contains aristolchic acid (cid:0) Safe when used in small doses for limited time
+Contains aristolchic acid → Safe when used in small doses for limited time
 Often used for patients with Bi syndrome
-2 kinds: Han Fang Ji (cid:0) promote urination, treat edema
+2 kinds: Han Fang Ji → promote urination, treat edema
 Guang/Mu: Mostly focused on Bi syndrome
 Deputy Bai zhu 9 Stengthens Sp, drains damp, promotes urination
 Assistant Zhi gan cao 6 Tonifies Middle to generate qi
@@ -2800,7 +2800,7 @@ Case Study
 Indications ● 52 y-o female leukemia patient comes in complaining about abdominal
 ● Heat Entering Blood-Level: Fever, various types of bleeding (vomiting of blood, distention and fullness, thirst and nosebleed 1-2 times/day. She is treated with
 nosebleed, blood in the stool or urine, and rashes) [most of heat already chemo and feels irritable. She looks pale and weak.
-entered blood (cid:0) reckless blood circulation (cid:0) cause all kinds of bleeding, get ● Dry purple red tongue with thin gray coating
+entered blood → reckless blood circulation → cause all kinds of bleeding, get ● Dry purple red tongue with thin gray coating
 anywhere], black and tarry stools [far blood], abdominal distention and ● thin, weak, and slightly rapid pulse.
 fullness, thirst with an inability to swallow; or delirium ● Dx:
 ● T: Scarlet with prickles, P: thin, rapid ● Tx:
@@ -2841,7 +2841,7 @@ dan dou chi, tian hua fen, xuan shen, zi severe heat toxin, delirious speech, Zi
 cao deep-purple rashes… scarlet Chang Pu
 tongue/with black coating Huang Qin
 Tian Hua Fen [HIV +]
-End 5/4/2017 (cid:0) Midterm
+End 5/4/2017 → Midterm
 34
 Kimberly Chenoweth
 
@@ -3235,14 +3235,14 @@ Kimberly Chenoweth
 ## p.120
 
 FORMULATIONS 2
-Xiao Feng San (Eliminate Wind Powder) [消风散 (13 Wei)] Wai Ke Zheng Zong [Very Important Formula (cid:0) Need To Know ALL Ingredients]
+Xiao Feng San (Eliminate Wind Powder) [消风散 (13 Wei)] Wai Ke Zheng Zong [Very Important Formula → Need To Know ALL Ingredients]
 ● Topical or oral Case Study
 ● Main formula for dermatological issues ● A 26 y-o male comes in for his comes-and-goes flat rashes. The rash started
 ● Actions: disperses wind, eliminates damp, clear heat, and cools Blood during his travel to Midwest last summer and has been coming 1-2 times
 ● Preparation & administration: decoction. May be taken orally on an empty St, almost every week, mostly with heat, cold and damp, or pressure stimulations.
 or applied topically while decoction cools down. The rash started with itchiness and becomes red and larger in various shapes,
 ● Avoid alcohol, coffee, spicy foods, seafood, & smoking [Avoid Fa Wu] often expands with scratches; subsides in 2-3 hours with distraction or focus on
-● Wind cause itchiness, can combine with other pathogens (cold, damp, etc.) (cid:0) something else. However, he usually can’t help scratching. [Typical urticaria]
+● Wind cause itchiness, can combine with other pathogens (cold, damp, etc.) → something else. However, he usually can’t help scratching. [Typical urticaria]
 Grab the top gangster & everyone else dissipates ● A normal tongue with thin yellow coating; a floating & rapid pulse, pronounced
 ● Adjust dosage based on presentation [more wind, damp, heat, etc] while itching.
 ● Treat blood to treat wind (very comprehensive formula, can modify) ● Dx:

@@ -318,7 +318,7 @@ _Source field is blank / not provided in the current uploaded dataset._
 
 ```text
 Jian Pi Wan [健脾丸(13 Wei)] (Strengthen The Spleen Pill) Source: Zheng Zhi Zhen Sheng
-● Based on Si Jun Zi Tang (cid:0) treat deficiency Patent
+● Based on Si Jun Zi Tang → treat deficiency Patent
 ● Actions: strengthens Sp, improves digestion, reduces food stagnation, & stops ●
 diarrhea.
 ● Preparation & administration: grind the herbs into powder, form into pills with Modern Research
@@ -1564,22 +1564,22 @@ Applications ● She was diagnosed as chronic urinary tract infection years ago.
 ● Tuberculosis
 ● UTI Think & Review
 ● Hyperthyoidism ● Please compare da bu yin wan with liu wei di huang wan and zhi bai di huang
-● Pyelonephritis wan. Chart (cid:0) Compare
+● Pyelonephritis wan. Chart → Compare
 ● Epididymitis ● What does it mean – cultivate the root and clear the source?
-● Diabetes mellitus ⬧ Principle in Nei Jing (cid:0) Anchor the yang, make base stronger
+● Diabetes mellitus ⬧ Principle in Nei Jing → Anchor the yang, make base stronger
 ● ⬧ Higher building needs deeper foundation
-⬧ Longer life, more stable, less suffering (cid:0) Need strong root
-⬧ KD Essence [yin & yang], Lose root (cid:0) Life in trouble
-⬧ Deficient heat disturbing yin (cid:0) Yang floats up [Zhi Mu, Huang Bai]
-⬧ Deficint fire [minister fire] (cid:0) Start from KD (cid:0) Out of balance
+⬧ Longer life, more stable, less suffering → Need strong root
+⬧ KD Essence [yin & yang], Lose root → Life in trouble
+⬧ Deficient heat disturbing yin → Yang floats up [Zhi Mu, Huang Bai]
+⬧ Deficint fire [minister fire] → Start from KD → Out of balance
 ⬧ Clear source & anchor yang
 ● Compare zuo gui wan with zuo gui yin.
 ● What roles do gui jiao and lu jiao jiao play in zuo gui wan?
 ⬧ What extra meridian enter?
 ● How do three tonics balance with three drains in liu wei di huang wan?
-NCCAOM (cid:0) 3 pairs
+NCCAOM → 3 pairs
 ● Why some related formulas do not include all three drains?
-⬧ Don’t have excess to worry about (cid:0) Focus on yin tonics
+⬧ Don’t have excess to worry about → Focus on yin tonics
 ⬧ Severe yin deficiency
 Rank Herb Amount Properties Channels Notes
 Chief Shu Di Huang 180 Sweet, slt.warm LV, KD, HT Enriches/tonifies KD & LV
@@ -1596,7 +1596,7 @@ Modifications
 Related Formula
 formulas ingredients indications
 Zi Shen Tong Guan Wan Huang Bai 30, Damp-heat in blood level of lower jiao Yin & Yang not connected [gate closed]
-[滋肾通关丸] (Lan Shi Mi Cang) Zhi Mu 30, difficult, painful urination/no urination (cid:0) Restore yin/yang function
+[滋肾通关丸] (Lan Shi Mi Cang) Zhi Mu 30, difficult, painful urination/no urination → Restore yin/yang function
 Rou Gui 1.5 with lower abdomen distention, no
 thirst
 Liang Di Tang [两地汤] Sheng Di 30, KD yin xu with empty fire [early
@@ -2257,7 +2257,7 @@ _Source field is blank / not provided in the current uploaded dataset._
 <summary>Herbal Formulations Comprehensive exact extracted section — p.6, 7, 8, 9</summary>
 
 ```text
-Da Qing Long Tang [Very ● Ma Huang [18] ● Ma Huang (cid:0) 18 Exterior cold w/interior heat.
+Da Qing Long Tang [Very ● Ma Huang [18] ● Ma Huang → 18 Exterior cold w/interior heat.
 Important formula for severe ● Gui Zhi ● Plus Shi Gao Severe fever & chills w/o sweating
 wind cold with internal heat] ● Xing Ren ● Sheng Jiang, Da Acute floating edema
 ● Zhi Gan Cao Zao Internal Heat (constitutional) [Ex: heavy smoker, LU toxins]
@@ -2321,7 +2321,7 @@ Gui Zhi Jia Ge Gen Tang Plus ge gen ● Taiyang sx w/stiff neck and upper back, 
 Gui Zhi Jia Hou Po Xing Zi Tang Plus hou po, xing ren [5+2=7 ingredients] ● Wheezing plus gui zhi tang sx
 Gui Zhi Fu Zi Tang Plus fu zi ● Bi sx in the meridians due to wind cold
 Gui Zhi Jia Shao Yao Tang Double shao yao [18] ● Tai yin from tai yang due to incorrect purgatives at tai yang
-● Because of incorrect treatment of Tai Yang (cid:0) get into SP
+● Because of incorrect treatment of Tai Yang → get into SP
 Gui Zhi Qu Shao Yao Tang Minus shao yao ● Irregular pulse, chest fullness due to incorrect purgatives at Tai yang
 ● Qu = get rid of
 Modifications [FYI]
@@ -2340,7 +2340,7 @@ Kimberly Chenoweth
 FORMULATIONS 1
 Xiao Qing Long Tang (Minor Bluegreen Dragon Decoction) Source: Shang Han Lun
 ● Actions: Releases Exterior, Warms Lung, Transforms Fluids, Arrests Wheezing & Modern research:
-Cough By Directing Rebellious Qi (cid:0). ● Antiasthmatic (anti-acetylcholine)
+Cough By Directing Rebellious Qi →. ● Antiasthmatic (anti-acetylcholine)
 ● Root in middle jiao ● Antiallergic (antihistaminic)
 ● Preparation: < 20’ ● Circulation-promoting
 ● Administration: taken hot
@@ -2366,21 +2366,21 @@ Applications: Exterior wind cold with interior congested fluids. ● What are th
 Rank Herb Amount Properties Channels Notes
 Chief Ma Huang 9 Warm, acrid Release exterior, move damp by facilitating lung qi
 Gui Zhi 9 Warm, acrid Mutual accentuation (xiang xu) with ma huang
-Regulate Ying & Wei (cid:0) Back to Normal
+Regulate Ying & Wei → Back to Normal
 Deputy Gan Jiang 3 Warm, acrid Deputy pair: Get rid of phlegm, mucus, dampness
 With xi xin, warm interior, transform damp, release w-c
 [dried, domestic, focus on middle jiao]
 Xi Xin 3 Very warm, acrid With gan jiang, help release w-c, also stop coughing
-[Wild ginger (cid:0) Very warm, very strong, focused on upper jiao]
+[Wild ginger → Very warm, very strong, focused on upper jiao]
 Assistant Wu Wei Zi 6 Sour, astringent Prevent leakage of lung qi due to warm acrid herbs
-[5 flavor seeds, but sour is major flavor (cid:0) astringent]
+[5 flavor seeds, but sour is major flavor → astringent]
 treat possible side effects, prevent leakage of LU Qi from the strong herbs]
 Bai Shao 9 Sour, nourishing Prevent too dry warm by nourishing blood and Yin
-Regulate Ying & Wei (cid:0) Back to Normal
+Regulate Ying & Wei → Back to Normal
 Ban Xia 9 Dry warm Dry damp, harmonize ST by conducting Qi downward
 Help Xi Xin & Gan Jiang to treat damp [focused on middle jiao]
 Envoy Zhi Gan Cao 6 Sweet, warm Augment qi, harmonize all the herbs
-Too much spicy stuff make middle jiao upset (cid:0) add sweet [yin to protect middle
+Too much spicy stuff make middle jiao upset → add sweet [yin to protect middle
 jiao]
 Modifications
 Ma huang and gui zhi up; Sheng jiang replaces gan jiang Stronger in dispersing w-c Severe chills
@@ -2676,7 +2676,7 @@ _Source field is blank / not provided in the current uploaded dataset._
 Dan Shen Yin [丹参饮] (Salvia Decoction) Source: Shi Fang Ge Kuo
 ● Actions: invigorates Blood, dispels Blood stasis, moves qi, relieves pain. Patent
 ● Preparation: decoction ●
-● Good, balanced formulation (cid:0) Learn it, Cold, but protect middle jiao
+● Good, balanced formulation → Learn it, Cold, but protect middle jiao
 Modern Research
 ● Indications: Blood stasis & qi stagnation in the Middle causing chest pain that ●
 may radiate upward [abdominal or epigastric pain which may radiate upward
@@ -2690,7 +2690,7 @@ Chief Dan Shen 30 bitter, slt. Cold HT, PC, LV Invigorates Blood, reduces Blood 
 vessels), relieves irritability, reduces swelling
 Deputy Tan Xiang 5 acrid, warm, aromatic SP, ST, LU Moves qi in the chest area, relieves pain Reduce coldness of
 Assistant Sha Ren 5 acrid, warm, aromatic SP, ST Moves qi, dries damp, relieves abdominal pain Dan Shen
-[Too deficient to be tonified (cid:0) Use Sha Ren]
+[Too deficient to be tonified → Use Sha Ren]
 108
 Kimberly Chenoweth
 

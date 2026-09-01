@@ -13,15 +13,15 @@ Chapter 1: 汗法Formulas That Release the Exterior [Sweating]
 Acrid-Warm辛温 to Release Exterior解表 [Wind-Cold]
 Name [Source] Rank Herb Amount Related Plus Minus
 Ma Huang Tang [麻黄汤] Chief Ma Huang M 9 Ma Huang Jia Zhu Tang [5] ● Bai Zhu 12
-(Ephedra Decoction) [4] Deputy Gui Zhi G 6 [Body Aches (cid:0) Damp Cold]
-[Shang Han Lun] Assistant Xing Ren X 9 Da Qing Long Tang [7] ● Ma Huang (cid:0) 18
+(Ephedra Decoction) [4] Deputy Gui Zhi G 6 [Body Aches → Damp Cold]
+[Shang Han Lun] Assistant Xing Ren X 9 Da Qing Long Tang [7] ● Ma Huang → 18
 [Ku Xing Ren] ● Acute floating edema ● Shi Gao
 Strongest Diaphoretic [Apricot Seed] ● Internal Heat [Heavy Smoker, ● Sheng Jiang
 [Could damage Qi & Fluids] Envoy Zhi Gan Cao Z 3 toxins in lung] ● Da Zao
 Actions: Releases Exterior Cold & Arrests Wheezing San Ao Tang [3 Ingredients] ● Gui Zhi
 Exterior Condition Formula Preparation: Short time [<20 minutes] [Mild, Initial Wind Cold]
 Indications: Tai Yang Shang Han (Wind Cold Exterior Excess (Shi)) Hua Gai San [7 Ingredients] ● Sang Bai Pi ● Gui Zhi
-[Fever & chills NO sweating Floating, tight pulse] (cid:0) Induces Sweating Wheezing, T: thin, Internal phlegm with wind cold ● Zi Su Zi
+[Fever & chills NO sweating Floating, tight pulse] → Induces Sweating Wheezing, T: thin, Internal phlegm with wind cold ● Zi Su Zi
 white coating, P: floating, tight attack [Scoop away, stop ● Chi Fu Ling
 production] ● Chen Pi
 Gui Zhi Tang [5 Ingredients] Chief Gui Zhi G 9 Gui Zhi Jia Ge Gen Tang [6] ● Ge Gen
@@ -30,12 +30,12 @@ Gui Zhi Tang [5 Ingredients] Chief Gui Zhi G 9 Gui Zhi Jia Ge Gen Tang [6] ● G
 Da Zao D 3 pieces [7 Ingredients] Wheezing ● Xing Ren
 Exterior Deficiency = Excess Envoy Zhi Gan Cao Z 6 Gui Zhi Fu Zi Tang ● Fu Zi
 Actions: Releases Exterior From Muscle Layer, Regulates Ying & Wei [Wind Cold Bi]
-Indications: Wind Cold Exterior Deficiency [Fever & aversion to wind, headache Gui Zhi Jia Shao Yao Tang ● Shao Yao (cid:0) 18
-Sweating but temperature doesn’t (cid:0), stiff neck, nasal congestion, dry heaves, no [Incorrect treatment of Tai Yang (cid:0) [Doubled]
+Indications: Wind Cold Exterior Deficiency [Fever & aversion to wind, headache Gui Zhi Jia Shao Yao Tang ● Shao Yao → 18
+Sweating but temperature doesn’t →, stiff neck, nasal congestion, dry heaves, no [Incorrect treatment of Tai Yang → [Doubled]
 particular thirst] get into SP (Tai Yin)]
 ● T: thin, white, moist coating, P: floating relaxed or floating, slightly soft pulse] Gui Zhi Qu Shao Yao Tang ● Shao Yao
-Sweet & Acrid: Produces Yang, Sweet & Sour: Produces Yin [Incorrect treatment of Tai Yang (cid:0)
-Gui Zhi + Bai Shao Yao (cid:0) Harmonize Ying & Wei Irregular pulse, chest fullness]
+Sweet & Acrid: Produces Yang, Sweet & Sour: Produces Yin [Incorrect treatment of Tai Yang →
+Gui Zhi + Bai Shao Yao → Harmonize Ying & Wei Irregular pulse, chest fullness]
 Xiao Qing Long Tang [8] Chief Ma Huang M 9 Xiao Qing Long Jia Shi Gao Tang ● Shi Gao
 (Minor Bluegreen Dragon Gui Zhi G 9 Wheezing with irritability,
 Decoction) Deputy Gan Jiang G 3 abdominal & thoracic distention
@@ -43,7 +43,7 @@ Decoction) Deputy Gan Jiang G 3 abdominal & thoracic distention
 Actions: Releases Exterior, Assistant Wu Wei Zi W 6 [Coughing & wheezing with rattling ● Kuan Dong Hua ● Gui Zhi
 Warms LU, Transforms Bai Shao BS 9 sound] ● Sheng Jiang ● Bai Shao
 Fluids, Arrests Wheezing & Ban Xia BX 9 ● Da Zao ● Zhi Gan Cao
-Cough (Rebellious Qi (cid:0))
+Cough (Rebellious Qi →)
 Envoy Zhi Gan Cao Z 6
 Indications: Wind cold invasion with chronic internal congested fluids, or SP Xu
 [Coughing, wheezing, sputum, stifling sensation, edema]
@@ -82,7 +82,7 @@ w/o sweating; thirst, flushed face; ● Lian Qiao
 
 FORMULATIONS SUMMARY CHART
 [Source: Tai Ping Hui Min Assistant Hou Po H 6 floating rapid pulse [ongoing
-He Ji Ju Fang] inflammation inside (cid:0) Clear heat]
+He Ji Ju Fang] inflammation inside → Clear heat]
 Summertime Exterior Damp Cold [Transforms Damp, Harmonizes Middle Jiao]
 Chapter 1: 汗法Formulas That Release the Exterior [Sweating]
 Acrid-Cool Formulas To Release Wind Heat [辛凉解表]
@@ -123,18 +123,18 @@ Ma Xing Shi Gan Tang Chief Ma Huang 4.5-12 Ma Huang Ma Huang
 (Ephedra, Apricot Kernel, Shi Gao 18-48 Shi Gao Shi Gao
 Gypsum, Licorice Decoction) Deputy Xing Ren 9 Xing Ren Xing Ren
 Source: Shang Han Lun Envoy Zhi Gan Cao 6 Zhi Gan Cao Zhi Gan Cao
-Actions: Acrid, Cool To Clear LU Heat, directs rebellious Qi (cid:0) to calm wheezing Sheng Jiang Sheng Jiang
+Actions: Acrid, Cool To Clear LU Heat, directs rebellious Qi → to calm wheezing Sheng Jiang Sheng Jiang
 Indications: LU Heat [fever w or w/o sweating, thirst, wheezing, coughing, Da Zao Da Zao
-labored breath, nasal flaring & pain] Ratio: Ma Huang (cid:0) Shi Gao 1:4 Bai Zhu
-Can adjust this formula from Internal heat (cid:0) Exterior Conditions
+labored breath, nasal flaring & pain] Ratio: Ma Huang → Shi Gao 1:4 Bai Zhu
+Can adjust this formula from Internal heat → Exterior Conditions
 Wind edema & aversion to drafts [Severe wind edema with puffy orbits
 ● Ma Huang: Dispersing function [Release Exterior]
-Wind Cold blocks LU & UB fxn & heavy limbs, (cid:0) urination, more water
+Wind Cold blocks LU & UB fxn & heavy limbs, → urination, more water
 ● Shi Gao: Neutralizes heat of Ma Huang [Internal Heat]
-retention (cid:0) stimulates middle jiao (cid:0)
-● Severe LU Heat (Internal Heat): [Ma Huang (cid:0), Shi Gao (cid:0)]
+retention → stimulates middle jiao →
+● Severe LU Heat (Internal Heat): [Ma Huang →, Shi Gao →]
 transform fluids]
-● Less internal heat, more exterior symptoms: [Ma Huang (cid:0), Shi Gao (cid:0)]
+● Less internal heat, more exterior symptoms: [Ma Huang →, Shi Gao →]
 Sheng Ma Ge Gen Tang Chief Sheng Ma 3-6 Actions: Release Muscle Layer, vents rashes
 (Cimicigfuga [Black Cohosh] Deputy Ge Gen 3-6 Indications: headache, generalized body aches, or sneezing, coughing, red eyes,
 & Kudzu Decoction) Assistant Chi Shao 6 tearing, thirst, allergies, Early-stage measles/rashes or measles/rashes that do not
@@ -143,7 +143,7 @@ Zhi Jue
 Chai Ge Jie Ji Tang Chief Chai Hu 3-9 Actions: releases the exterior from the muscle layer, clears interior heat
 [柴葛解肌汤] Ge Gen 6-12 Indications: Simultaneous Tai Yang and Yang Ming disorder:
 (Bupleurum & Kudzu Deputy Qiang Huo 3-6 Constrained/unresolved exterior wind cold transforming into interior heat.
-Decoction To Release Bai Zhi 3-6 [(cid:0) fever & (cid:0) chills, no sweating, HA, stiff extremities, eye & orbital pain, dry nasal
+Decoction To Release Bai Zhi 3-6 [→ fever & → chills, no sweating, HA, stiff extremities, eye & orbital pain, dry nasal
 Muscle Layer) Huang Qin 6-9 passages, irritability, insomnia, a thin yellow tongue coating, a slightly flooding
 Source: Shang Han Liu Shu pulse] (Mycoplasmal pneumonia, Flu/URI, Atypical delayed measles)
 Shi Gao 5-15
@@ -180,7 +180,7 @@ deficient patients) Ren Shen [Bai] 30 Ren Shen [Bai] Ren Shen [Bai]
 Fu Ling 30 Fu Ling Fu Ling
 Envoy Gan Cao 15 Gan Cao Gan Cao
 Actions: Releases Exterior Wind Damp, Tonifies Qi Release wind [milder than Ma Huang & More tonifying, (middle jiao & internal
-Indications: Wind-cold-damp invasion to deficient patient [high fever & severe Gui Zhi], (more commonly used than damp ingredients) (cid:0) better for weak
+Indications: Wind-cold-damp invasion to deficient patient [high fever & severe Gui Zhi], (more commonly used than damp ingredients) → better for weak
 chills with shivering, absence of sweating, pain and stiffness of head & neck, Ren Shen Bai Du San) patients
 soreness & pain in extremities, focal distention & fullness of chest, nasal
 congestion with sonorous breathing, productive cough
@@ -191,20 +191,20 @@ Base Formula Related Formulas
 Name [Source] Rank Herb Amount Xiao Cheng Qi Tang Hou Po San Wu Tang Zeng Ye Cheng Qi Tang
 Da Cheng Qi Tang Chief Da Huang 12 Da Huang [12] [CT] Da Huang 12 [ANE] Da Huang [12] [ANE]
 [大承气汤] Deputy Mang Xiao 9 Mang Xiao Mang Xiao Mang Xiao [9]
-(Major Order Qi Decoction) Assistant Zhi Shi 12 Zhi Shi (cid:0) [6-9] Zhi Shi (cid:0) [12-15] Zhi Shi
-[Very Important!] Hou Po 24 Hou Po (cid:0) [6] Hou Po 24 [Chief] Hou Po
-● Yang Ming Fu Organ (Excess) [severe constipation, flatulence, focal distension, Cook together [CT]: Moves qi (cid:0) & unblocks Xuan Shen
-sensation of abdominal fullness; dry yellow/dry black tongue coating with ● Da Huang [(cid:0) Purging bowels. Qi stagnation (cid:0) Mai Dong [+fluid]
+(Major Order Qi Decoction) Assistant Zhi Shi 12 Zhi Shi → [6-9] Zhi Shi → [12-15] Zhi Shi
+[Very Important!] Hou Po 24 Hou Po → [6] Hou Po 24 [Chief] Hou Po
+● Yang Ming Fu Organ (Excess) [severe constipation, flatulence, focal distension, Cook together [CT]: Moves qi → & unblocks Xuan Shen
+sensation of abdominal fullness; dry yellow/dry black tongue coating with ● Da Huang [→ Purging bowels. Qi stagnation → Mai Dong [+fluid]
 prickles [heat], submerged forceful pulse. effect (milder)] constipation Sheng Di Huang [+ fluid]
 ● 4 Types of Abdominal Symptoms: focal distension痞, fullness满, dryness燥 ● Zhi Shi, Hou Po Same ingredients as Xiao Enriches Yin Fluids,
 hardness实 [Need to have all 4 to prescribe this formula] [Pi, Man, Zao, Shi] Yang Ming organ w/o Cheng Qi Tang, different Drains Heat. Yang Ming
 ● Diarrhea with bluegreen, stinky, turbid fluid, presenting with abdominal pain, dryness dosage [bloating > heat] Organ Sx w/ Yin Xu
-hardness and masses [Hard stool accumulate too long in lower jiao (cid:0) dried up 2 Formulas, Same Ingredients, Different Amounts
+hardness and masses [Hard stool accumulate too long in lower jiao → dried up 2 Formulas, Same Ingredients, Different Amounts
 (bullets), in spaces between bullets “nasty water/fluid” can go through] Related Formulas
 ⬧ Heat collapse Tiao Wei Cheng Qi Tang Da Huang Gan Cao Tang Fu Fang
 ⬧ Kuang (hysterical attack) [aggressive historical type (excess heat)] Da Cheng Qi Tang
-▪ [Dian: depressed type] Da Huang [12] [CT] Da Huang [12] Da Huang (cid:0) [15] [ANE]
-⬧ Acute calculus diseases (cholelithiasis, urolithiasis…) Mang Xiao (cid:0) [9-12] Mang Xiao Mang Xiao (cid:0) [9-15]
+▪ [Dian: depressed type] Da Huang [12] [CT] Da Huang [12] Da Huang → [15] [ANE]
+⬧ Acute calculus diseases (cholelithiasis, urolithiasis…) Mang Xiao → [9-12] Mang Xiao Mang Xiao → [9-15]
 ⬧ Gastric dysperistalsis, Post-surgery GI Sx, Intestinal adhesive obstruction
 Zhi Shi Zhi Shi Zhi Shi
 ⬧ Acute lead colic, Acute necrotic pancreatitis [Heat & toxins block insides]
@@ -213,8 +213,8 @@ Hou Po Hou Po Hou Po
 Gan Cao [6] (Tonify SP) Gan Cao [6] (Tonify SP) Lai Fu Zi
 ● Actions: Vigorously Purges Heat Accumulation.
 ● Preparation (decoction): Cook together [CT]: Unblock bowels, purge & Tao Ren
-⬧ Da Huang: Add Near End [ANE] ● Da Huang [(cid:0) Purging harmonize ST, stop [Moisten intestines]
-▪ Cook too long, no purging function (cid:0) moves blood instead effect (milder)] vomiting. Heat clumping Chi Shao Yao
+⬧ Da Huang: Add Near End [ANE] ● Da Huang [→ Purging harmonize ST, stop [Moisten intestines]
+▪ Cook too long, no purging function → moves blood instead effect (milder)] vomiting. Heat clumping Chi Shao Yao
 ⬧ Mang Xiao [MgSO]: Add powder to prepared decoction ● Gan Cao in LI & fire rising to [Move Blood]
 4 Yang Ming organ w/o disturb ST Purges interior, moves
 distention & fullness Qi & blood. Simple
@@ -223,9 +223,9 @@ Yang Ming organ
 Symptoms
 Base Formula Related Formulas
 Name [Source] Rank Herb Amount Da Xian Xiong Wan (Shang Han Lun)
-Da Xian Xiong Tang Chief Gan Sui 1-1.5 Gan Sui (cid:0) 30 ● Powder & make pills [For milder cases. Decoction
-(Major Sinking Into Chest Deputy Da Huang 9-12 Da Huang (cid:0) 250 much stronger]
-Decoction) Mang Xiao 9-12 Mang Xiao (cid:0) 175 ● Take 6-12g with warm water.
+Da Xian Xiong Tang Chief Gan Sui 1-1.5 Gan Sui → 30 ● Powder & make pills [For milder cases. Decoction
+(Major Sinking Into Chest Deputy Da Huang 9-12 Da Huang → 250 much stronger]
+Decoction) Mang Xiao 9-12 Mang Xiao → 175 ● Take 6-12g with warm water.
 Source: Shang Han Lun Ting Li Zi 175 ● Jie Xiong manifestations above diaphragm: stiff
 ● Actions: Drains Heat & Drives Out Water By Flushing Downward Xing Ren 175 upper back & neck, sweating besides hardness,
 ● Indications: Clumping in chest [结胸证]: Fullness & hardness of epigastrium, Bai Mi (Honey) 250 fullness & pain in chest.
@@ -259,13 +259,13 @@ Zhi Shi, Hou Po)] Envoy Bai Mi (honey) Lubricates only to treat ● Song Zi Ren,
 constipation without excess ● Yu Li Ren, ● Hou Po
 Indications: (Pi Yao Zheng) ST excess binds fluid-depleted SP [ST Excess, SP
 ● Chen Pi, ● Da Huang
-deficiency (cid:0) ST too strong, SP not strong enough], Insufficient lubrication,
+deficiency → ST too strong, SP not strong enough], Insufficient lubrication,
 ● Rice Gruel
 constipation with dry, hard stool (difficult to expel), frequent urination
 ● T: dry, yellow coating, P: submerged, rapid/floating, choppy
 Ji Chuan Jian (Benefit The Chief Rou Cong Rong 6-9 ● Actions: Warms Kidneys, Tonifies Essence, Moistens Intestines, Unblocks
 River Flow Decoction) Deputy Dang Gui 9-15 Bowels. Tonify KD Yin, Yang, Essence
-Source: Jing Yue Quan Shu Hui Niu Xi 6 ● Indications: Constipation due to KD Yang and Qi Xu in seniors (cid:0) fluids &
+Source: Jing Yue Quan Shu Hui Niu Xi 6 ● Indications: Constipation due to KD Yang and Qi Xu in seniors → fluids &
 Actions: Warms Kidneys, Assistant Ze Xie 4.5 essence insufficiency [constipation, clear and copious urine, LBP, and a cold
 Tonifies Essence, Moistens Zhi Ke 3 sensation in the back, weak & sore back and lower limbs. T: white, thin
 Intestines, Unblocks Bowels. coating, P: deep & slow]
@@ -283,12 +283,12 @@ Source: Jin Gui Yao Lue other ingredients Ren Shen
 Actions: Warms Interior, Disperses Cold, Unblocks Bowels, Alleviates Pain Gan Cao
 Indications: Excess Interior Cold Accumulation [寒积里实] Wen Pi Tang Indications
 ● Abdominal pain & constipation, hypochondriac pain, fever [heat caused by ● SP Yang Xu causing cold accumulation, constipation
-stagnation], cold hands & feet/fear to cold [Power (cid:0) restore engine to boat] ● Also for chronic red & white dysenteric sx
-● T: White, greasy tongue coating, P: submerged, tight, and wiry ● Much warmer, more tonifying, focused on middle jiao [Wen Pi (cid:0) Warm up SP]
+stagnation], cold hands & feet/fear to cold [Power → restore engine to boat] ● Also for chronic red & white dysenteric sx
+● T: White, greasy tongue coating, P: submerged, tight, and wiry ● Much warmer, more tonifying, focused on middle jiao [Wen Pi → Warm up SP]
 Applications/Differentiation:
-● More cold (cid:0) use Da Huang Fu Zi Tang
-● Not significant hot/cold (just sluggish) (cid:0) Use Ji Chuan Jian,
-● Post partum (cid:0) Ma Zi Ren Wan
+● More cold → use Da Huang Fu Zi Tang
+● Not significant hot/cold (just sluggish) → Use Ji Chuan Jian,
+● Post partum → Ma Zi Ren Wan
 Formulas That Purge & Tonify
 Base Formula Related Formulas Small Formulas Included in Xin Jia Huang Long Tang
 Name [Source] Rank Herb Amount Huang Long Tang Tiao Wei Da Huang Zeng Ye
@@ -330,27 +330,27 @@ Shi Zao Tang [十枣汤] Chief Gan Sui Equal Gan Sui Gan Sui
 Source: Shang Han Lun Assistant Yuan Hua Equal Yuan Hua Yuan Hua
 Envoy Da Zao 10 pc More Dangerous without Da Zao! More Dangerous without Da Zao!
 Actions: Purges & drives out congested fluids Bai Zie Zi Qian Niu Zi
-Indications [Just know name & indications] Remove Da Zao (cid:0) Even More Da Huang
+Indications [Just know name & indications] Remove Da Zao → Even More Da Huang
 ● Suspended, congested fluids 悬饮clogging up the chest and hypochondriac Dangerous than Shi Zao Tang] Qing Pi, Chen Pi
 area [cough with pain in the chest and hypochondria, hard focal distention in Mu Xiang
 the epigastrium, dry heaves, sob, headache, vertigo; or chest pain extending to Bing Lang
 the back that makes breathing difficult
 Qing Fen
 ● White, slippery tongue coating, and a sumerged, wiry pulse.
-This formula is even worse (cid:0)
+This formula is even worse →
 ● Excess edema 实水 [Shi Shui] water accumulation obstructed interior,
 The worst! Very harsh!
 generalized edema, pronounced in the lower part of body, abdominal
 [Robust patients only]
 distention, wheezing, chest fullness, and difficult urination and defecation.
-[Generally only used for robust patient in old days (cid:0) Send to ER, hospital]
+[Generally only used for robust patient in old days → Send to ER, hospital]
 Just know names, don’t use!
 Chapter 2: Formulas That Harmonize 和法- Formulas That Harmonize Shao Yang Disorders [和解少阳]
 Base Formula Related Formulas
 Name [Source] Rank Herb Amount Chai Hu Gui Zhi Tang [9] Chai Hu Zhi Jie Tang [8] Chai Hu Qing Zao Tang
 (Jin Gui Yao Lue) (Zhang Shi Yi Tong) [8] (Wen Yi Lun)
-Xiao Chai Hu Tang [7] Chief Chai Hu (cid:0) 1st Pair 12-24 Chai Hu Chai Hu Chai Hu
-[小柴胡汤] Deputy Huang Qin (cid:0) [Chief] 9 Huang Qin Huang Qin Huang Qin
+Xiao Chai Hu Tang [7] Chief Chai Hu → 1st Pair 12-24 Chai Hu Chai Hu Chai Hu
+[小柴胡汤] Deputy Huang Qin → [Chief] 9 Huang Qin Huang Qin Huang Qin
 Minor Bupleurum Assistant Ban Xia 2nd Pair 9 Ban Xia Ban Xia Ban Xia
 Decoction Sheng Jiang 9 Sheng Jiang Sheng Jiang Sheng Jiang
 Source: Shang Han Lun Ren Shen 9 Ren Shen Ren Shen Ren Shen
@@ -361,11 +361,11 @@ Envoy Zhi Gan Cao 9 Zhi Gan Cao Zhi Gan Cao Zhi Gan Cao
 Disorders
 Gui Zhi Gui Zhi Tang Zhi Ke Zhi Mu
 Actions: Harmonizes & Releases Shao Yang Disorders Bai Shao Pair Jie Geng Tian Hua Fen [HIV+]
-● 1st Pair [Chief]: Chai Hu + Huang Qin (cid:0) creates wind inside [(cid:0) + (cid:0)] together (cid:0) Chen Pi Chen Pi
+● 1st Pair [Chief]: Chai Hu + Huang Qin → creates wind inside [→ + →] together → Chen Pi Chen Pi
 helps vent the pathogen Lu Cha
 ● 2nd Pair: Ban Xia + Sheng Jiang: Transforms phlegm, harmonize middle jiao, Shao Yang sx where Shao Yang sx where Heat entering
 stops nausea & vomiting exterior has not been Exterior > Interior membrane source,
-● Last 3: Tonify middle jiao (cid:0) don’t let pathogen invade into Yang Ming completely released [Vent exterior] causing fluids injury
+● Last 3: Tonify middle jiao → don’t let pathogen invade into Yang Ming completely released [Vent exterior] causing fluids injury
 Indications: Alternating fever and chills, [Only chills: interior, only fever: Tian Hua Fen: directly
 exterior], Dry throat, bitter/sour taste in the mouth, dizziness, irritability, enter blood, detox,
 sensation of fullness in the chest and hypochondria, heartburn, nausea and soften lumps [mumps,
@@ -383,8 +383,8 @@ Assistant Chi Fu Ling 9
 ● Red tongue with thick, greasy coating (yellow or white, or a combination of
 Envoy Bi Yu San [A, E] 9
 both)
-Bi Yu San: Hua Shi: Gan Cao: Qing Dai (cid:0) 6:1:1
-● Rapid pulse that is slippery on the right and wiry on the left (cid:0) LV is wiry, SP is
+Bi Yu San: Hua Shi: Gan Cao: Qing Dai → 6:1:1
+● Rapid pulse that is slippery on the right and wiry on the left → LV is wiry, SP is
 Common Ingredients [Hao Qin Qing Dan Tang & Xiao Chai Hu Tang]
 slippery [damp, phlegm, turbid]
 ● Huang Qin, Ban Xia, Gan Cao
@@ -418,7 +418,7 @@ Name [Source] Rank Herb Amount Zhi Shi Shao Yao San (Jin Gui Yao Lue) Chai Hu Sh
 Si Ni San [四逆散] (Frigid Chief Chai Hu 9-12 Chai Hu Chai Hu
 Extremities Powder) Deputy Zhi Shi 9-12 Zhi Shi Zhi Shi
 Source: Shang Han Lun Assistant Bai Shao 12-24 Bai Shao Bai Shao
-LV Qi Stagnation (cid:0) Angry (cid:0) Envoy Zhi Gan Cao [A,E] 6-9 Zhi Gan Cao Zhi Gan Cao
+LV Qi Stagnation → Angry → Envoy Zhi Gan Cao [A,E] 6-9 Zhi Gan Cao Zhi Gan Cao
 Hungry, Cold extremities
 Actions: Vents Pathogenic Influences, Releases Constraint, Spreads LV Qi, Postpartum abdominal pain, Chen Pi
 Regulates SP irritability, fullness, difficult to lie flat Chuan Xiong
@@ -427,7 +427,7 @@ body) irritability, fullness of chest and epigastrium; abdominal pain, severe Zh
 diarrhea. Red tongue with yellow coating, wiry pulse. Hypochondriac pain, alternating fever
 Disharmony between LV & ST: hypochondriac pain & distention, epigastric pain & chills due to blood stagnation
 & fullness, bitter taste in mouth, belching, reduced appetite; or vomiting [LV Qi Severe LV Qi Stagnation
-constraint overact on ST (cid:0) rebellious ST because of LV Qi stagnation], wiry pulse
+constraint overact on ST → rebellious ST because of LV Qi stagnation], wiry pulse
 Base Formula Related Formulas
 Name [Source] Rank Herb Amount Jia Wei Xiao Yao San Hei Xiao Yao San Chai Hu Shu Gan San
 (Dan Zhi Xiao Yao San) [Hei = Black] (Jing Yue Quan Shu)
@@ -446,19 +446,19 @@ Bo He Bo He Bo He Bo He
 Indications Mu Dan Pi, Sheng Di Or Chen Pi
 ● LV Constraint With Blood Xu & SP Weakness [hypochondriac pain, headache, Zhi Zi Shu Di Huang Chuan Xiong
 vertigo, bitter taste in mouth, dry mouth & throat, fatigue, reduced appetite] With LV heat or fire With abdominal pain Xiang Fu
-● Pale red tongue, and a wiry, deficient pulse. Qi Stagnation (cid:0) Heat from Blood Xu Zhi Ke
+● Pale red tongue, and a wiry, deficient pulse. Qi Stagnation → Heat from Blood Xu Zhi Ke
 ● May also have alternating fever & chills, irregular menstruation, or distended [Yin nourishing stuff]
-breasts. LV Qi Stagnation (cid:0) sometimes feel hot, sometimes feel cold [PMS, Bai Shao Yao & Bai Zhu: Treat Simultaneous LV & SP Xu
+breasts. LV Qi Stagnation → sometimes feel hot, sometimes feel cold [PMS, Bai Shao Yao & Bai Zhu: Treat Simultaneous LV & SP Xu
 menopause, LV Qi Stagnation with SP Qi Deficiency (diarrhea before finals,
 diarrhea during menstruation)]
 ● Can be taken for a long period of time without middle jiao adverse effects
 Base Formula
 Name [Source] Rank Herb Amount
-Tong Xie Yao Fang Chief Chao Bai Zhu 90 [9-12] ● LV Qi Stagnation (cid:0) Abdominal Pain (cid:0) Diarrhea
+Tong Xie Yao Fang Chief Chao Bai Zhu 90 [9-12] ● LV Qi Stagnation → Abdominal Pain → Diarrhea
 [痛泻要方] Chao Bai Shao 60 [6-24] ● 4 Herbs, well balanced: Qi Stagnation, Blood Xu, make SP back to normal
 (Important Formula For Deputy Chao Chen Pi 45 [4.5-9] Indications
 Painful Diarrhea) A/E Fang Feng 30-60 ● Painful diarrhea due to SP xu with an overcontrolling LV [recurrent problems
-Source: Jing Yue Quan Shu [3-6] of borborygmus (Qi & fluids mixed up (cid:0) make noise & pain), abdominal pain,
+Source: Jing Yue Quan Shu [3-6] of borborygmus (Qi & fluids mixed up → make noise & pain), abdominal pain,
 diarrhea with pain (which starts with urge to defecate and subsides after
 Actions: Spreads LV Qi & completion)]
 tonifies SP ● T: thin, white tongue coating
@@ -468,13 +468,13 @@ Base Formula Related Formulas
 Name [Source] Rank Herb Amount Sheng Jiang Xie Xin Tang Gan Cao Xie Xin Tang Xiao Chai Hu Tang
 (Shang Han Lun) (Shang Han Lun)
 Ban Xia Xie Xin Tang Chief Ban Xia 12 Ban Xia Ban Xia Ban Xia
-[半夏泻心汤] Deputy Gan Jiang 9 Gan Jiang (cid:0) 3 Gan Jiang Gan Jiang
+[半夏泻心汤] Deputy Gan Jiang 9 Gan Jiang → 3 Gan Jiang Gan Jiang
 (Pinellia Decoction To Drain Huang Qin 9 Huang Qin Huang Qin Huang Qin
 Epigastrium) Huang Lian 3 Huang Lian Huang Lian Huang Lian
 Source: Shang Han Lun Assistant Ren Shen 9 Ren Shen Ren Shen Ren Shen
 Da Zao 4 PC Da Zao Da Zao Da Zao
-3 Xie Xin Tangs Envoy Zhi Gan Cao 9 Zhi Gan Cao Zhi Gan Cao (cid:0) 12-15 Zhi Gan Cao
-Actions: Harmonizes ST, Directs Rebellious Qi (cid:0), Disperses Clumping, Eliminates Sheng Jiang 12 [Chief] Chai Hu
+3 Xie Xin Tangs Envoy Zhi Gan Cao 9 Zhi Gan Cao Zhi Gan Cao → 12-15 Zhi Gan Cao
+Actions: Harmonizes ST, Directs Rebellious Qi →, Disperses Clumping, Eliminates Sheng Jiang 12 [Chief] Chai Hu
 Focal Distention [ST & Intestines] Water & heat complexes Severe SP/ST Qi Xu Sheng Jiang
 Indications: Clumping in epigastrium & focal distention [痞 (Pi)] due to Or ST Xu with food [undigested food in Xiao Chai Hu Tang
 improper purging of an exterior or half exterior/interior condition with stagnation & suspended stool, frequent Minus
@@ -504,7 +504,7 @@ Indications Qi & Yin injury With Wind Damp Heat Damp-warm-febrile
 sweating & aversion to heat, a red face, severe thirst with a desire to drink and weak pulses] distention, white greasy
 irritability; and a flooding, forceful or slippery, rapid pulse] tongue coat]
 ● Symptoms: “Four Greats/Big” 四大. [Big Fever, Sweating, Pulse, Thirst] Get rid
-of fever (cid:0) everything else follows
+of fever → everything else follows
 Base Formula
 Name [Source] Rank Herb Amount
 Zhu Ye Shi Gao Tang Chief Dan Zhu Ye 9-15 Clears [HT] heat, alleviates irritability (specialty)
@@ -525,7 +525,7 @@ Decoction) Deputy Xuan Shen 9 Zeng Ye Tang at night), severe irritability and
 Source: Wen Bing Tiao Bian Sheng Di Huang 15 Cools blood, nourishes and generates restlessness, thirst, delirium,
 Mai Dong 9 yin-fluids indistinct erythema [red patches
 Actions: Assistant Jin Yin Hua 9 Yin Qiao San: Clear heat from Qi level, under skin but haven’t come out
-Clears Ying Heat, Lian Qiao 6 Guide heat: Ying (cid:0) Qi (cid:0) Wei (cid:0) Out yet], purpura
+Clears Ying Heat, Lian Qiao 6 Guide heat: Ying → Qi → Wei → Out yet], purpura
 Relieves Fire Toxins, Huang Lian 4.5 [Ying Level: can disturb spirit] Drain ● T: Scarlet, dry reddish-purple
 Nourishes Yin Dan Zhu Ye 3 heat down from heart, relieve toxicity ● P: thin, rapid
 Envoy Dan Shen 6 Prevents blood stasis, reinforces other
@@ -541,7 +541,7 @@ Source: Qian Jin Yao Fang Envoy Mu Dan Pi 6 Mu Dan Pi deep-purple rashes
 Blood Stasis Lian Qiao
 ● Indications: Heat Entering Blood-Level [Fever, various types of bleeding Xuan Shen
 (vomiting of blood, nosebleed, blood in the stool or urine, and rashes) [most of Ban Lan Gen Detoxing Herbs
-heat already entered blood (cid:0) reckless blood circulation (cid:0) cause all kinds of
+heat already entered blood → reckless blood circulation → cause all kinds of
 Zi Cao
 bleeding, get anywhere], black and tarry stools [far blood], abdominal
 Chang Pu
@@ -577,25 +577,25 @@ Huang Lian 6-12 Huang Lian Jie Du Tang: Relieves Huang Lian
 Huang Qin 3-9 toxicity, eliminates toxic fire Huang Qin
 Zhi Zi 6-12 Zhi Zi
 Lian Qiao 6-12 Lian Qiao
-Envoy Jie Geng 3-6 Ascending, Conducts ingredients (cid:0) Jie Geng
+Envoy Jie Geng 3-6 Ascending, Conducts ingredients → Jie Geng
 Indications: Severe heat (fire) in both Qi & Blood levels [intense fever, strong thirst, dry heaves, severe & stabbing Geng Mi
 headache, extreme irritability, even delirious speech, rash, nosebleed] Indications: Qi & Blood level heat with
 ● T: dark-red, lips are dark & scorched, P: rapid and either deep & thin (more severe) or floating & large (less severe). dark-red blotches on skin…
 Dosages Vs. Pulses:
-● Deep, thin & rapid pulse (cid:0) large dose [1.5-2 times normal]; Floating, large & rapid pulse (cid:0) small dosage [½ normal]
+● Deep, thin & rapid pulse → large dose [1.5-2 times normal]; Floating, large & rapid pulse → small dosage [½ normal]
 Chapter 4: Formulas That Clear Heat [清法] - Formulas That Clear Heat and Relieve Toxicity [清热解毒]
 Base Formula Related Formula
 Name [Source] Rank Herb Amount Specialties Xie Xin Tang [泻心汤]
 [Drain Heart Heat] (Jin Gui Yao Lue)
-Huang Lian Jie Du Tang [4] Chief Huang Lian 3-9 ● Huang Lian has very strong anti-viral, Huang Lian (cid:0) 3
-[黄连解毒汤] Deputy Huang Qin 6 anti-bacterial properties Huang Qin (cid:0) 3
+Huang Lian Jie Du Tang [4] Chief Huang Lian 3-9 ● Huang Lian has very strong anti-viral, Huang Lian → 3
+[黄连解毒汤] Deputy Huang Qin 6 anti-bacterial properties Huang Qin → 3
 (Coptis Decoction To Relieve Assistant Huang Bai 6 ⬧ Stronger than Huang Qin & Bai Huang Bai
 Toxicity) A/E Zhi Zi 6-12 ⬧ Reduces cholesterol, blood sugar, Zhi Zi
 Source: Wai Tai Bi Yao blood pressure Da Huang 6
 ⬧ Very bitter, nasty taste is good for
 Actions: Drains Fire & Relieves Toxicity Damp-heat excess with interior
 condition
-Indications: Severe heat (fire) toxin obstruction of 3 Jiao [high fever, irritability, clumping [HT heat, drain, shift (cid:0)
+Indications: Severe heat (fire) toxin obstruction of 3 Jiao [high fever, irritability, clumping [HT heat, drain, shift →
 ● Zhi Zi: Drain heat through urine
 dry mouth & throat, incoherent speech, insomnia, dark urine or nosebleed, Bowel movements]
 ● Dan Zhu Ye & Zhi Zi: Relieve
@@ -611,7 +611,7 @@ Source: Tai Ping Hui Min He Mang Xiao 600 (9) Drains formed heat Mang Xiao
 Ji Ju Fang Huang Qin 300 (5) Helps Chief, Clears & drains unformed Huang Qin
 Zhi Zi 300 (5) heat thru upper & lower exits Zhi Zi
 Actions: Drains Fire,
-Dan Zhu Ye 7 leaves Light, (cid:0) Dan Zhu Ye
+Dan Zhu Ye 7 leaves Light, → Dan Zhu Ye
 Unblocks Bowels
 Assistant Bo He 300 (5) Aids in clearing upper Jiao heat Bo He
 [Cool Diaphragm]
@@ -623,8 +623,8 @@ vomiting blood, constipation, dark scanty urine, delirious speech] ● Gan Cao [
 ● T: red body or edges with dry, yellow/white coating, P: rapid and/or slippery red, swollen & macerated throat]
 Name [Source] Rank Herb Amount Functions
 Pu Ji Xiao Du Yin Chief Huang Qin (Jiu Chao) 15 Clear/Drain Upper Jiao Heat Indications: Acute, massive febrile
-[普济消毒饮] Huang Lian (Jiu Chao) 15 Jiu Chao: Stir-fried with alcohol (cid:0) disorder of head (Da Tou Wen 大头
-(Universal Benefit Stronger dispersing heat function 瘟) (cid:0) Big Head Condition [Feels like
+[普济消毒饮] Huang Lian (Jiu Chao) 15 Jiu Chao: Stir-fried with alcohol → disorder of head (Da Tou Wen 大头
+(Universal Benefit Stronger dispersing heat function 瘟) → Big Head Condition [Feels like
 Decoction To Eliminate Deputy Niu Bang Zi 3 Disperses & dissipates getting puffed up (like mumps)] strong
 Toxins) Lian Qiao 3 Clear wind-heat from head, face, fever and chills, redness, swelling, and
 Source: Wei Sheng Bao Jian Bo He 3 muscle & skin burning pain of the head and face,
@@ -637,7 +637,7 @@ Disperses Wind Heat ● P: floating, rapid, & forceful
 Ban Lan Gen 3 drain heat toxin
 Jie Geng 6 Clear heat & nourish throat
 Gan Cao 6
-Assistant Chen Pi 6 Moves Qi (cid:0) free flow of Qi & blood
+Assistant Chen Pi 6 Moves Qi → free flow of Qi & blood
 Envoy Sheng Ma 1.5 Raise Yang, disperse wind heat,
 8
 © Kimberly Chenoweth
@@ -658,7 +658,7 @@ Actions: Clears Heart, Promotes Urination, Nourishes Yin Huang Lian Lian Rou
 Indications: Heat in HT & SI meridians: irritability with sensation of heat in the Deng Xin Cao Fu Ling
 chest, thirst with a desire to drink cold beverages, a red face, possibly sores More severe heat in SI & HT: tongue Ren Shen
 around the mouth; or dark, scanty, rough, & painful urination [HT Heat + SI Heat], thrusting in kids Severe HT heat with Qi & Yin Xu,
-or even clearly visible blood in the urine Huang Lian (cid:0) Stronger [clear HT heat] Damp Heat downward infusion
+or even clearly visible blood in the urine Huang Lian → Stronger [clear HT heat] Damp Heat downward infusion
 ● T: red, P: rapid Summer days: Make tea & drink
 Nourish Qi
 Base Formula Related Formulas
@@ -666,9 +666,9 @@ Name [Source] Rank Herb Amount Functions Xie Qing Wan泻青丸 Dang Gui Long Hui
 (Xiao Er Yao Zheng Zhi [当归龙荟丸]
 Jue) (Dan Xi Xin Fa)
 Long Dan Xie Gan Tang Chief Long Dan Cao 3-9 Clears LJ Damp Heat Long Dan Cao Long Dan Cao
-(Wan (cid:0) Patent) Deputy Huang Qin 9 Clears Upper Jiao Heat Huang Qin Huang Qin
+(Wan → Patent) Deputy Huang Qin 9 Clears Upper Jiao Heat Huang Qin Huang Qin
 [龙胆泻肝汤] (Gentiana Zhi Zi 9 Drain Heat Zhi Zi Zhi Zi
-Longdancao Decoction To Assistant Mu Tong 9 Conducts D-H (cid:0) Mu Tong Mu Tong
+Longdancao Decoction To Assistant Mu Tong 9 Conducts D-H → Mu Tong Mu Tong
 Drain The Liver) Che Qian Zi 9 Promotes urination Che Qian Zi Che Qian Zi
 Source: Yi Fang Ji Jie Ze Xie 12 [Way out for D-H] Ze Xie Ze Xie
 Chai Hu 6 Clears Upper Jiao Heat Chai Hu Chai Hu
@@ -690,9 +690,9 @@ fire. She Xiang
 weaker than Long Dan with constipation &
 ● Red tongue or red dots along the sides of the tongue
 Xie Gan Tang dark rough urination
-● Dark urine or urinary difficulty ● Qing = blue/green (cid:0) ● Strongest in heat
+● Dark urine or urinary difficulty ● Qing = blue/green → ● Strongest in heat
 Functions/Combinations LV clearing, detoxing,
-● Long Dan Cao [Bitter, cold]: Drains LV & GB excess heat, eliminates Lower Jiao Damp Heat ● Aromatic (cid:0) disperse promote bowel
+● Long Dan Cao [Bitter, cold]: Drains LV & GB excess heat, eliminates Lower Jiao Damp Heat ● Aromatic → disperse promote bowel
 ● Huang Qin & Zhi Zi: Clear heat toxin, drain Damp Heat, Help Chief clear Upper Jiao & drain Lower Jiao ● Weakest movement & urination
 ● Huang Qin & Chai Hu: Combo for Shao Yang Heat, Aids clearing UJ Heat
 End 5/15/2017 Quiz
@@ -702,14 +702,14 @@ Name [Source] Rank Herb Amount Xiang Lian Wan [香连丸] Wu Ji Wan [戊己丸]
 (Tai Ping Hui Min He Ji Ju Fang) (Tai Ping Hui Min He Ji Ju Fang)
 Zuo Jin Wan [左金丸] Chief Huang Lian 180 (15-18) Huang Lian 60 Huang Lian
 (Left Metal Pill) A/E Wu Zhu Yu 15-30 (2-3) Wu Zhu Yu 300 Wu Zhu Yu
-Source: Dan Xi Xin Fa Huang Lian : Wu Zhu Yu Ratio (cid:0) 6:1 Mu Xiang 130 Bai Shao
-Actions: Clears LV Heat, Directs Rebellious Qi (cid:0), Stop Vomiting Preparation: Preparation:
+Source: Dan Xi Xin Fa Huang Lian : Wu Zhu Yu Ratio → 6:1 Mu Xiang 130 Bai Shao
+Actions: Clears LV Heat, Directs Rebellious Qi →, Stop Vomiting Preparation: Preparation:
 Indications: Liver heat (fire) overacts on ST causing disharmony of LV & SP Fry first 2 herbs together, then discard Grind equal amounts of each herb into
 hypochondriac pain [Classic LV Fire invading ST bringing fire/food up], Wu Zhu Yu (get function). Grind huang powder and form into pills with flour
 indeterminate gnawing hunger [don’t know if you’re hungry or not], epigastric lian, mu xiang & form into pill with
 focal distention, vomiting, acid regurgitation, belching, a bitter taste in mouth [LV vinegar
-(Mother) Excess (cid:0) Reduce LV’s Son (HT) (cid:0) Good for HT Heat/Fire], Severe LV Qi Dysenteric disorders due to damp-heat Disharmony between LV & SP (ST)
-Stagnation for long time (cid:0) LV Heat [Toxin accumulation in ST] [Food allergy patients]
+(Mother) Excess → Reduce LV’s Son (HT) → Good for HT Heat/Fire], Severe LV Qi Dysenteric disorders due to damp-heat Disharmony between LV & SP (ST)
+Stagnation for long time → LV Heat [Toxin accumulation in ST] [Food allergy patients]
 ● T: Red with yellow coating, P: wiry, rapid
 Same Ratio as Liu Yi San
 9
@@ -736,16 +736,16 @@ formula for heat stuck inside] (Pediatric Formula) Da Zao
 LV fire scorching LU: coughing of Lung abscess with phlegm in chest,
 Dosage [Adjust according to cymptoms]
 blood/blood-streaked sputum, flank Ascites, water, pus in LU
-● More Excess, Heat (cid:0) Chao Sang Bai Pi = Chief
+● More Excess, Heat → Chao Sang Bai Pi = Chief
 pain [More deficiency, more heat in LU, [Very aggressive formula, lot of Da
-● More Deficiency, Yin Xu Heat (cid:0) Di Gu Pi = Chief [More in formula]
+● More Deficiency, Yin Xu Heat → Di Gu Pi = Chief [More in formula]
 more effective, used more than Xie Bai Zao, Not used much now]
 San]
 Base Formula Related Formulas
 Name [Source] Rank Herb Amount Qing Wei Tang [清胃汤] Xie Huang San [泻黄散]
 (Yi Zong Jin Jian) (Xiao Er Yao Zheng Zhi Jue)
-Qing Wei San [清胃散] Chief Huang Lian (cid:0) 3-6 Huang Lian Huang Lian
-(Clear Stomach Powder) Deputy Sheng Ma (cid:0) 3-6 Sheng Ma Sheng Ma
+Qing Wei San [清胃散] Chief Huang Lian → 3-6 Huang Lian Huang Lian
+(Clear Stomach Powder) Deputy Sheng Ma → 3-6 Sheng Ma Sheng Ma
 Source: Lang Shi Mi Cang Assistant Mu Dan Pi 6-9 Mu Dan Pi Mu Dan Pi
 Sheng Di Huang 6-12 Sheng Di Huang Sheng Di Huang
 Dang Gui 6-12 Dang Gui Dang Gui
@@ -793,10 +793,10 @@ Guan Gui 1.5-3 [Young Rou Gui, milder, less hot than Rou Gui] Guan Gui
 ● Indications: Damp-heat dysenteric disorders [abdominal pain, tenesmus, Aids moving blood, Opposing assistant [Holds gate Da Zao
 difficulty with defecation, diarrhea with equal amounts of pus (white) & blood closed, doesn’t let everything out] Dysenteric disorders due
 (red), burning sensation around the anus, dark, scanty urine] to heat entering interior:
-⬧ Damp Heat in LI (cid:0) Bloody diarrhea with pus, tenesmus fever, abdominal pain,
-⬧ Diarrhea with blood (heat) (cid:0) Regulate the blood bitter taste in mouth…
-⬧ Tenesmus (urge to go) from Qi stagnation (cid:0) Regulate the Qi
-⬧ Blood & tenesmus (cid:0) Regulate Qi & Blood [Very important (cid:0) dysentery]
+⬧ Damp Heat in LI → Bloody diarrhea with pus, tenesmus fever, abdominal pain,
+⬧ Diarrhea with blood (heat) → Regulate the blood bitter taste in mouth…
+⬧ Tenesmus (urge to go) from Qi stagnation → Regulate the Qi
+⬧ Blood & tenesmus → Regulate Qi & Blood [Very important → dysentery]
 ● T: greasy, slightly yellow coating, P: wiry, rapid
 10
 © Kimberly Chenoweth
@@ -862,12 +862,12 @@ Base Formula Related Formulas
 Name [Source] Rank Herb Amount Ji Su San [鸡苏散] Bi Yu San [碧玉散] Yi Yuan San [益元散]
 Liu Yi San [六一散] Chief Hua Shi (6) 180 g Hua shi (6) Hua shi (6) Hua shi (6)
 (Six-To-One Powder) Deputy Gan Cao (1) 30 g Gan cao (1) Gan cao (1) Gan cao (1)
-Source: Shang Han Zhi Ge Hua Shi : Gan Cao Ratio (cid:0) 6:1 Bo He 7.5 g Qing Dai 30g Zhu Sha [Cinnabar] 10g
+Source: Shang Han Zhi Ge Hua Shi : Gan Cao Ratio → 6:1 Bo He 7.5 g Qing Dai 30g Zhu Sha [Cinnabar] 10g
 ● Actions: Clears Summerheat, Resolves Dampness, Augments Qi. Concurrent exterior With LV & GB stagnant Anxiety, palpitations,
 ● Indications: Summer-heat (damp) invasion [fever, sweating, thirst, irritability, wind heat: headache, heat: red eyes, sore insomnia,
 urinary difficulty, diarrhea] [Very mild formula, initial stage] heavy distended head throat, mouth/tongue dream-disturbed sleep
 ● T: thin, yellow, and greasy coating, P: soggy, rapid sores Not used anymore
-Same Ratio as Zuo Jin Wan [6:1] Ingredient in (cinnabar (cid:0) mercury)
+Same Ratio as Zuo Jin Wan [6:1] Ingredient in (cinnabar → mercury)
 Hao Qin Qing Dan Tang taken with den xin cao
 decoction
 Base Formula Related Formulas
@@ -958,9 +958,9 @@ Envoy Zhi Gan Cao 9 Zhi Gan Cao Zhi Gan Cao Zhi Gan Cao
 ● Actions: Warms Middle, Strengthens SP & ST [more warm up middle jiao] Fu Zi Fu Ling Gui Zhi
 ● Indications: Middle Jiao Xu Cold [diarrhea with watery stool, nausea & Ban Xia
 vomiting, no particular thirst, loss of appetite, abdominal pain] More severe internal Middle yang xu with cold Taiyang sx mistreated by
-● [Chronic & deficient disorders: Sudden turmoil disorder [霍乱], Spitting of cold, Recurrent oral & congested fluids, purgatives (cid:0) exterior
+● [Chronic & deficient disorders: Sudden turmoil disorder [霍乱], Spitting of cold, Recurrent oral & congested fluids, purgatives → exterior
 fluids due to cold in chest during recovery from chronic disease [can’t ulcers from xu cold phlegm, mucus hasn’t been resolved
-transform (cid:0) dampness accumulates], Chronic bleeding from yang xu, Chronic accumulation Internal cold developed
+transform → dampness accumulates], Chronic bleeding from yang xu, Chronic accumulation Internal cold developed
 childhood convulsion] [SP damaged]
 ● T: pale/flabby with white coating, P: deep, thin
 Base Formula Related Formulas
@@ -974,9 +974,9 @@ Source: Shang Han Lun Sheng Jiang 2nd 9 Sheng Jiang, Sheng Jiang,
 Gui Zhi Tang Plus Yi Tang Da Zao Pair 4 PC Da Zao Da Zao
 Actions: warms & tonifies middle jiao, moderates spasmodic abdominal pain Huang Qi 9g [Qi Tonic] Dang Gui 12g [Blood Tonic]
 [more tonify middle jiao] More severe qi xu: Shortness of Postpartum weakness & emaciation:
-● Very balanced (cid:0) regulate different levels (cid:0) Harmonizes breath, spontaneous sweating, faint & tight, persistent abdominal pain, sob
-● Flora changes as get older because pH changes (cid:0) Need to rebalance system frail Pulse [Lose so much blood, then start
-Indications: Spasmodic abdominal pain from consumptive deficiency feeding baby (cid:0) Even more deficient]
+● Very balanced → regulate different levels → Harmonizes breath, spontaneous sweating, faint & tight, persistent abdominal pain, sob
+● Flora changes as get older because pH changes → Need to rebalance system frail Pulse [Lose so much blood, then start
+Indications: Spasmodic abdominal pain from consumptive deficiency feeding baby → Even more deficient]
 [intermittent, spasmodic abdominal pain (better with warmth & pressure), Gui Zhi (Sweet) + Bai Shao Yao (sour): Harmonize Ying & Wei, yin & yang
 lusterless complexion, reduced appetite, low-grade fever, palpitations, irritability, Bai Shao Yao (Sour) + Gan Cao (sweet): produce yin to relieve spasm
 cold & sore extremities w/ general discomfort, dry mouth & throat Sheng Jiang + Da Zao: Aids in regulating Ying & Wei, protects middle, Regulates
@@ -986,8 +986,8 @@ Base Formula Related Formulas
 Name [Source] Rank Herb Amount Si Ni Jia Ren Shen Bai Tong Tang Tong Mai Si Ni Shen Fu Tang
 Tang (Shang Han Lun) Tang (Jiao Zhu Fu Ren
 (Shang Han Lun) (Shang Han Lun) Liang Fang)
-Si Ni Tang [四逆汤] (Frigid Chief Sheng Fu Zi 5-10 Sheng Fu Zi Sheng Fu Zi Sheng Fu Zi (cid:0) 15 Zhi Fu Zi [9]
-Extremities Decoction) Deputy Gan Jiang 6-9 Gan Jiang Gan Jiang Gan Jiang (cid:0) 9 Gan Jiang
+Si Ni Tang [四逆汤] (Frigid Chief Sheng Fu Zi 5-10 Sheng Fu Zi Sheng Fu Zi Sheng Fu Zi → 15 Zhi Fu Zi [9]
+Extremities Decoction) Deputy Gan Jiang 6-9 Gan Jiang Gan Jiang Gan Jiang → 9 Gan Jiang
 Source: Shang Han Lun Assistant Zhi Gan Cao 6 Zhi Gan Cao Zhi Gan Cao Zhi Gan Cao Zhi Gan Cao
 ● Actions: Rescues devastated yang, warms middle, stops diarrhea. [HT attack] Ren Shen 3g Cong Bai 4 Pc Ren Shen 12g
 ● Indications: Kidney yang exhaustion with internal cold [Extremely cold Extremities Shao Yin sx: Shao Yin sx: Sudden yang qi
@@ -1019,19 +1019,19 @@ Releases Shao Yang, Drains Ban Xia Pair 9 Ban Xia Ban Xia Ban Xia
 Internal Clumping Heat
 Envoy Sheng Jiang 15 Sheng Jiang Sheng Jiang Sheng Jiang
 Da Zao 5 PC Da Zao Da Zao Da Zao
-● Chief Pair: Chai Hu + Huang Qin (cid:0) creates wind inside [(cid:0) + (cid:0)] together (cid:0) Ren Shen Hou Po Hu Huang Lian
+● Chief Pair: Chai Hu + Huang Qin → creates wind inside [→ + →] together → Ren Shen Hou Po Hu Huang Lian
 helps vent the pathogen [stronger effect to clear LV & GB heat] Zhi Gan Cao Gan Cao Bai Shao
 ● Zhi Shi & Da Huang: Drain heat clumping from Yang Ming Actions: Harmonizes & Zhi Shi Mu Xiang
 ● Bai Shao: Paired with Da Huang & Zhi Shi, Relieves abdominal excess pain Releases Shao Yang Gui Zhi Yan Hu Suo
 [focal distention/ fullness & pain in epigastrium from qi/blood disharmony] Disorders Mang Xiao
 ● Pair: Ban Xia + Sheng Jiang: Transforms phlegm, harmonize middle jiao, stops
 Shares RED indications Exterior not yet resolved Acute pancreatitis
-nausea & vomiting [Directs Rebellious Qi (cid:0)]
+nausea & vomiting [Directs Rebellious Qi →]
 Additional: Dry throat, with an interior excess [stabbing, diffuse
 ● Sheng Jiang & Da Zao: Regulate Ying & Wei; help release pathogenic influence
 dizziness, irritability, has developed [Tai Yang epigastric pain extending
 ● Indications: Concurrent Shao Yang & Yang Ming disorder [alternating fever &
-heartburn, (cid:0) appetite & Yang Ming sx] to the back, fever/chills]
+heartburn, → appetite & Yang Ming sx] to the back, fever/chills]
 chills, fullness in chest and hypochondria (with or without pain), bitter taste in
 T: thin, white coating
 mouth, nausea, continuous vomiting, hard focal distention or fullness & pain
@@ -1109,7 +1109,7 @@ Wu Ji [五积]
 Ban Xia 90 (9) Transform Phlegm Cold injury (shang han) Actions: Harmonizes &
 ● Cold寒
 ● Damp湿 Fu Ling 90 (9) Move Qi leading to accumulation Releases Shao Yang
-● Qi气 Jie Geng 360 (9) Regulate Qi by (cid:0) & (cid:0) & fullness in chest and Disorders
+● Qi气 Jie Geng 360 (9) Regulate Qi by → & → & fullness in chest and Disorders
 ● Blood血 Zhi Ke 180 (4.5) transform Phlegm hypochondria [difficult Indications: Alternating
 ● Phlegm痰 Dang Gui 90 (4.5) Move blood urination, thirst, fever & chills, Dry throat,
 Bai Shao 90 (4.5) Alleviate pain sweating of head, bitter/sour taste in
@@ -1200,8 +1200,8 @@ out w/o damaging normal Qi
 ● Why can Shen Ling Bai Zhu San be used for chronic cough with copious sputum
 ● Infantile malnutrition, Rickets, Infantile anorexia Xu & Qi stagnation;
 due to lung xu? Please deliberate from 5E perspective
-● Zinc deficiency in children, Mal-absorption SP Xu (cid:0) weakness,
-⬧ LU is son of Earth (SP) (cid:0) Tonify Earth [SP] to tonify Metal [LU]
+● Zinc deficiency in children, Mal-absorption SP Xu → weakness,
+⬧ LU is son of Earth (SP) → Tonify Earth [SP] to tonify Metal [LU]
 ● Chronic gastritis, bronchitis, hepatitis, nephritis reduced appetite,
 ● Diabetes mellitus, Allergic enteritis diarrhea, weight loss
 ● Liver cirrhosis, Urinary tract stones,
@@ -1216,8 +1216,8 @@ Bu Zhong Yi Qi Tang Chief Huang Qi 18 Huang Qi Huang Qi Huang Qi
 Augment The Qi Decoction) Zhi Gan Cao -Fu Lng 6 Zhi Gan Cao Zhi Gan Cao Zhi Gan Cao
 Source: Pi Wei Lun Assistant Dang Gui 6 Dang Gui Dang Gui Dang Gui
 Chen Pi 6 Chen Pi Chen Pi Chen Pi
-Envoy Sheng Ma (cid:0) 6 Sheng Ma Sheng Ma Sheng Ma
-Chai Hu (cid:0) 6 Chai Hu Chai Hu Chai Hu
+Envoy Sheng Ma → 6 Sheng Ma Sheng Ma Sheng Ma
+Chai Hu → 6 Chai Hu Chai Hu Chai Hu
 Actions: Tonifies Middle Jiao Qi, Raises Sunken Yang Zhi Mu, Ban Xia, Du Huo,
 Indications: SP & ST Qi Xu leading to yang sinking [intermittent fever, worse with Jie Geng Fang Feng, Bai Shao,
 exertion, spontaneous sweating, thirst for warm beverages, SOB, laconic speech, Qiang Huo, Fu Ling,
@@ -1269,7 +1269,7 @@ adrenal exhaustion,
 Indications: LU Qi Xu with heat in lungs [chronic coughing & wheezing, thick,
 hypothyroidism
 yellow sputum, coughing of pus and blood, sensation of heat and irritability in
-the chest, facial edema, gradual emaciation Gecko Pair: Male & Female to balance (cid:0) Tonify Qi, Essence
+the chest, facial edema, gradual emaciation Gecko Pair: Male & Female to balance → Tonify Qi, Essence
 ● T: purple with either thin & white or greasy, thin, & yellow tongue coat More Deficiency cough: Chuan Bei Mu [small white seed, more expensive]
 ● P: floating, deficient pulse, especially at the distal position (Cun) More mucus: Zhi Bei Mu [larger, slices, less expensive]
 Chapter 7: Formulas That Tonify the Blood [补血]
@@ -1301,7 +1301,7 @@ Tonify The Blood) exertion
 Source: Nei Wai Shang Bian Tou Nong San [透脓散] Chuan Xiong, Chronic abscesses w/o
 Huo Lun (Wai Ke Zheng Zong) Chuan Shan Jia, heads which produce
 Actions: Tonifies Qi, Generates Blood Zao Jiao Ci pus but do not readily
-Ratio: Huang Qi: Dang Gui (cid:0) 5:1 [Tonify Qi to Tonify Blood] perforate to discharge
+Ratio: Huang Qi: Dang Gui → 5:1 [Tonify Qi to Tonify Blood] perforate to discharge
 ● Indications: Consumptive fatigue (lao juan) [劳倦内伤] (kind of blood xu from the pus
 injury to yuan qi 原气) hot sensation in muscles, red face, irritability, thirst,
 with a preference for warm beverages; or difficult-to-heal wounds & skin
@@ -1310,7 +1310,7 @@ postpartum, Consumptive Fatigue [low fever, slight sweating, thirst for warm
 beverages, and deficient (large) pulse]
 ● T: pale, P: flooding, large, & deficient pulse, forceless when pressed hard.
 ● What is the most commonly used Ob-Gyn herb in CHM? Why?
-⬧ Dang Gui: both functions (cid:0) nourish blood, tonify Qi
+⬧ Dang Gui: both functions → nourish blood, tonify Qi
 17
 © Kimberly Chenoweth
 
@@ -1343,7 +1343,7 @@ Si Jun Zi Tang [Qi Tonic] Si Wu Tang [Blood Tonic] (Jing Yue Quan Shu) Bai Zhu, 
 Sheng Jiang, Da Zao
 Chang Ning Tang Dang Gui, Shu Di Huang, Postpartum abdominal
 [肠宁汤] Ren Shen, Mai Dong, pain (better with
-(Fu Qing Zhu Nu Ke) E Jiao, Shan Yao, pressure (cid:0) deficiency)
+(Fu Qing Zhu Nu Ke) E Jiao, Shan Yao, pressure → deficiency)
 Shu Duan, Rou Gui, due to loss of blood
 Gan Cao
 Base Formula Related Formulas
@@ -1387,7 +1387,7 @@ Enriches Yin, Restores Pulse
 Da Zao 5-10 PC Help chief in tonifying qi and blood Da Zao
 ● Indications: Qi & blood xu due to consumptive conditions [HT Qi & Blood Xu] Applications Bai Shao
 palpitations with anxiety, irritability, insomnia, emaciation, sob, constipation, a 1. Irregular pulses (slow-irregular [结 Yangming-fu in which purging has
-dry mouth and throat, Thinking too much (cid:0) Internally consumes the Heart jie], knotted, consistently-irregular [代 removed heat, but has also depleted
+dry mouth and throat, Thinking too much → Internally consumes the Heart jie], knotted, consistently-irregular [代 removed heat, but has also depleted
 blood [Contraindiacated for patients with high blood pressure or diabetes] dai] intermittent) yin-fluids: fever, red face, heat in palms
 ● T: pale, shiny tongue 2. Lung atrophy肺痿: dry cough, and soles, dry mouth & tongue, large,
 ● P: consistently irregular, slow-irregular, or thin, faint, and forceless blood-streaked sputum, emaciation, deficient pulse
@@ -1463,7 +1463,7 @@ spontaneous and nocturnal emissions; hot palms and soles, chronic dry and sore s
 throat, toothache, or wasting and thirsting disorder Mai Wei麦味 Di Huang + Mai Dong 9g, LU & KD Yin Xu:
 ● Emotional, mental, spiritual weakness [Kids, middle aged ladies, etc.] Wan (Ba Xian Chang Wu Wei Zi 6g coughing blood,
 ● 3 pairs: Very balanced, tonify without cloying, draining without damaging the Shou Wan八仙长寿) wheezing, tidal fever,
-good Qi (cid:0) Good for old people starting to go downhill night sweats
+good Qi → Good for old people starting to go downhill night sweats
 ⬧ Shu Di Huang (KD) & Ze Xie (drain damp): KD Ming Mu Di Huang Wan + Sheng Di, Chai Hu, LV & KD Yin Xu:
 ⬧ Shan Zhu Yu (astringent, warm) & Mu Dan Pi: LV 明目 Dang Gui, Wu Wei Zi, Fu blurry/diminished vision
 ⬧ Shan Yao (astringent, SP tonic) & Fu Ling: SP Shen; [Stronger than Qi Ju . . .]
@@ -1487,16 +1487,16 @@ Base Formula Related Formulas
 Name [Source] Rank Herb Amount Zuo Gui Yin [左归饮] Da Bu Yuan Jian Gu Yin Jian [固阴煎]
 (Jing Yue Quan Shu) [大补元煎] (Jing Yue Quan Shu)
 (Jing Yue Quan Shu)
-Zuo Gui Wan (Restore The Chief Shu Di Huang (cid:0) yin 24 Shu Di Huang Shu Di Huang Shu Di Huang
-Left-Kidney Pill) Deputy Shan Zhu Yu (cid:0) yin 12 Shan Zhu Yu Shan Zhu Yu Shan Zhu Yu
-Source: Jing Yue Quan Shu Shan Yao (cid:0) yin 12 Shan Yao Shan Yao Shan Yao
-Gou Qi Zi (cid:0) KD yin/yg 12 Gou Qi Zi Gou Qi Zi Gou Qi Zi
+Zuo Gui Wan (Restore The Chief Shu Di Huang → yin 24 Shu Di Huang Shu Di Huang Shu Di Huang
+Left-Kidney Pill) Deputy Shan Zhu Yu → yin 12 Shan Zhu Yu Shan Zhu Yu Shan Zhu Yu
+Source: Jing Yue Quan Shu Shan Yao → yin 12 Shan Yao Shan Yao Shan Yao
+Gou Qi Zi → KD yin/yg 12 Gou Qi Zi Gou Qi Zi Gou Qi Zi
 Actions: Nourishes KD Yin, Assistant Chuan Niu Xi 9 Chuan Niu Xi Chuan Niu Xi Chuan Niu Xi
 Supplements Essence,
-Tu Si Zi (cid:0) Yang 12 Tu Si Zi Tu Si Zi Tu Si Zi
+Tu Si Zi → Yang 12 Tu Si Zi Tu Si Zi Tu Si Zi
 Benefits Marrow
-Envoy Lu Jiao Jiao (cid:0) Du 12 Lu Jiao Jiao Lu Jiao Jiao Lu Jiao Jiao
-D/E Gui Ban Jiao (cid:0) Ren 12 Gui Ban Jiao Gui Ban Jiao Gui Ban Jiao
+Envoy Lu Jiao Jiao → Du 12 Lu Jiao Jiao Lu Jiao Jiao Lu Jiao Jiao
+D/E Gui Ban Jiao → Ren 12 Gui Ban Jiao Gui Ban Jiao Gui Ban Jiao
 Indications: True yin xu [light-headedness, vertigo, tinnitus, soreness and Gou Qi Zi, Ren Shen, Dang Gui, Ren Shen, Wu Wei Zi,
 weakness in the lower back and legs, spontaneous and nocturnal emissions, Fu Ling, Du Zhong, Tu Si Zi, Yuan Zhi,
 spontaneous and night sweats, dry mouth and throat, thirst] Zhi Gan Cao Zhi Gan Cao Zhi Gan Cao
@@ -1514,7 +1514,7 @@ Da Bu Yin Wan [大补阴丸] Chief Shu Di Huang 180 Enriches/tonifies KD/LV Huan
 Source: Dan Xi Xin Fa Deputy Chao Huang Bai 120 Quells KD fire Rou Gui 1.5 Bai Shao 15
 Jiu Chao Zhi Mu 120 Clears LU & KD heat Yin & Yang not Mai Dong 15
 Marrow Tonify Essence connected [gate closed] Di Gu Pi 9
-honey Moderate Huang Bai (cid:0) Restore yin/yang fxn E Jiao 9
+honey Moderate Huang Bai → Restore yin/yang fxn E Jiao 9
 Actions: Enriches Yin & Causes Fire To Descend Damp-heat in blood KD yin xu with empty fire
 Indications: Empty fire upward-rising due to LV & KD yin xu [steaming bone level of lower jiao [early menses with red,
 disorder (hot flushes, brain not working) with afternoon tidal fever, night sweats, difficult, painful scanty & sticky blood,
@@ -1626,7 +1626,7 @@ Base Formula Related Formulas
 Name [Source] Rank Herb Amount Bu Fei Tang [补肺汤] Yue Hua Wan [月华丸]
 Bu Fei E Jiao Tang Chief E Jiao 45 Nourishes yin/blood Sang Bai Pi Tian Dong, Mai Dong
 [补肺阿胶汤] Deputy Ma Dou Ling 15 LU: Heat/cough Shu Di Huang Shu Di, Sheng Di
-(Tonify The Lungs Decoction Xing Ren 6 LU: Qi (cid:0), wheezing Ren Shen Shan Yao, Bai Bu
+(Tonify The Lungs Decoction Xing Ren 6 LU: Qi →, wheezing Ren Shen Shan Yao, Bai Bu
 With Ass-Hide Gelatin) Niu Bang Zi 7.5 LU: congested throat Zi Wan Sha Shen, Chuan Bei Mu,
 Source: Xiao Er Yao Zheng Assistant Geng Mi (Rice) 30 Tonify SP (Earth) [M] to Huang Qi E Jiao, Fu Ling,
 Zhi Jue Zhi Gan Cao 7.5 Tonify LU (Metal) [S] Wu Wei Zi Ta Gan, San Qi,
@@ -1670,13 +1670,13 @@ and weak lower back and knees, long-term infertility] thin pulse [Not for yin Xu
 Base Formula Related Formulas
 Name [Source] Rank Herb Amount Wu Zi Yan Zong Wan Huan Shao Dan
 [五子衍宗丸] [还少丹]
-Qi Bao Mei Ran Dan Chief He Shou Wu 300 (cid:0)LV, KD, blood, essence Gou Qi Zi 240 Shan Yao, Niu Xi
-[七宝美髯丹] Assistant Fu Ling 150 (cid:0) SP, drain damp Tu Si Zi 240 Shan Zhu Yu, Fu Ling
+Qi Bao Mei Ran Dan Chief He Shou Wu 300 →LV, KD, blood, essence Gou Qi Zi 240 Shan Yao, Niu Xi
+[七宝美髯丹] Assistant Fu Ling 150 → SP, drain damp Tu Si Zi 240 Shan Zhu Yu, Fu Ling
 (Seven-Treasure Special Pill Deputy Hui Niu Xi 150 Tonify LV & KD, Blood Wu Wei Zi 60 Wu Wei Zi
-For Beautiful Whiskers) Assistant Dang Gui 150 Nourishes blood, (cid:0) LV Fu Pen Zi 120 Rou Cong Rong
-Source: Yi Fang Ji Jie Deputy Gou Qi Zi 150 (cid:0) KD essence & blood Che Qian Zi 60 Ba Ji, Shi Chang Pu
+For Beautiful Whiskers) Assistant Dang Gui 150 Nourishes blood, → LV Fu Pen Zi 120 Rou Cong Rong
+Source: Yi Fang Ji Jie Deputy Gou Qi Zi 150 → KD essence & blood Che Qian Zi 60 Ba Ji, Shi Chang Pu
 Deputy Tu Si Zi 150 Yuan Zhi, Du Zhong
-Assistant Bu Gu Zhi 120 (cid:0) KD yang (cid:0) essence Chu Shi Zi, Hui Xiang
+Assistant Bu Gu Zhi 120 → KD yang → essence Chu Shi Zi, Hui Xiang
 Envoy Hei Zhi Ma Guides to KD & LV Gou Qi Zi, Shu Di Huang
 Actions: Enriches KD Yin, Nourishes LV Blood Bai Mi (White Rice)
 Indications: LV & KD insufficiency [premature graying of the hair or hair loss, KD essence xu: infertility, SP & KD yang xu, HT

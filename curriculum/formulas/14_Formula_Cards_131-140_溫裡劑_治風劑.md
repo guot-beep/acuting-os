@@ -429,7 +429,7 @@ Applications [Chronic & deficient disorders] ● Adrenocortical function-regulat
 ● Middle jiao cold from xu
 ● Sudden turmoil disorder 霍乱 Case Study
 ● Spitting of fluids due to cold in the chest during recovery from a chronic ● A 26 y-o male nurse has been suffering from anemia due to the recent
-disease [can’t transform (cid:0) dampness accumulates] diagnosed duodenal ulcer. He feels tired and can’t concentrate on work. Other
+disease [can’t transform → dampness accumulates] diagnosed duodenal ulcer. He feels tired and can’t concentrate on work. Other
 ● Chronic bleeding from yang xu sx: poor appetite, mild cold abdominal pain, worse with hunger, better with
 ● Chronic childhood convulsion warm food, sallow complexion, occasional diarrhea. Has taken si jun zi tang
 ⬧ Gastric/duodenal ulcers with some effect.
@@ -1538,8 +1538,8 @@ Xiao Jian Zhong Tang [小建中汤] (Minor Construct The Middle Decoction) Sourc
 ● Gui Zhi Tang Plus Yi Tang Modern Research
 ● Actions: warms & tonifies middle jiao, moderates spasmodic abdominal pain. ● Anti-peptic ulcer (by prorecting the mucosa)
 ● Preparation and administration: add yi tang (maltose) to the strained decoction ● Antispastic
-● Very balanced (cid:0) regulate different levels (cid:0) Harmonizes ● Analgesic
-● Flora changes as get older because pH changes (cid:0) Need to rebalance system ●
+● Very balanced → regulate different levels → Harmonizes ● Analgesic
+● Flora changes as get older because pH changes → Need to rebalance system ●
 ● Indications: Spasmodic abdominal pain from consumptive deficiency [虚劳里 Case Study
 急] [intermittent, spasmodic abdominal pain that responds favorably to local ● A 3 and half year old girl came in with her mom, looking for help for the
 application of warmth and pressure, a lusterless complexion, reduced appetite, abdominal cramps with apathy, tiredness, low motivation to learn or play.
@@ -1550,9 +1550,9 @@ nonspecific discomfort, and a dry mouth and throat vomiting of acid fluid, reduc
 appear in the wind and qi areas.
 Applications ● Dx:
 ● abdominal pain due to cold from xu; heat (yin fire) due to lack of regulation ● Tx:
-between yi and yang – sweet,warm to expel heat. [Chronic GI disorders (cid:0) lack ●
-of absorption (cid:0) malnutrition, anemia, TCM Perspective: Middle Jiao deficiency
-(cid:0) can’t balance yin & yang] Think & Review
+between yi and yang – sweet,warm to expel heat. [Chronic GI disorders → lack ●
+of absorption → malnutrition, anemia, TCM Perspective: Middle Jiao deficiency
+→ can’t balance yin & yang] Think & Review
 ● Chronic hepatitis ● Can you tell the relationship between xiao jian zhong tang [more focus on
 ● Chronic gastritis deficiency] and gui zhi tang?
 ● Gastric/duodenal ulcers ⬧ Retains function to Reguate Ying & Wei
@@ -1587,7 +1587,7 @@ Huang Qi Jian Zhong Tang + huang qi 9g More severe qi xu: sob, spontaneous Add Q
 (Jin Gui Yao Lue) sweating, faint & frail Pulse
 Dang Gui Jian Zhong Tang + dang gui 12g Postpartum weakness & emaciation: Add blood tonic
 (Qian Jin Yi Fang) tight, persistent abdominal pain, sob Lose so much blood, then start feeding
-baby (cid:0) Even more deficient
+baby → Even more deficient
 53
 Kimberly Chenoweth
 
@@ -1933,7 +1933,7 @@ Huang Qi Jian Zhong Tang + huang qi 9g More severe qi xu: sob, spontaneous Add Q
 (Jin Gui Yao Lue) sweating, faint & frail Pulse
 Dang Gui Jian Zhong Tang + dang gui 12g Postpartum weakness & emaciation: Add blood tonic
 (Qian Jin Yi Fang) tight, persistent abdominal pain, sob Lose so much blood, then start feeding
-baby (cid:0) Even more deficient
+baby → Even more deficient
 53
 Kimberly Chenoweth
 
@@ -2671,7 +2671,7 @@ Patents ● When ren shen is added into si ni tang, what action changes have tak
 ● Shen fu zhu she ye (shen fu injection) ⬧ Tonifies yang, yin & Qi
 Rank Herb Amount Properties Channels Notes
 Chief Sheng Fu Zi 5-10 Acrid, sweet, hot, HT, SP, KD Warms & stimulates kidney yang and disseminates throughout the body
-poisonous [Difficult to buy this now (cid:0) Toxic]
+poisonous [Difficult to buy this now → Toxic]
 Deputy Gan Jiang 6-9 Acrid, hot SP, ST, LU, Warms the middle, eliminates cold, work with fu zi synergistically.
 KD Fu zi is not hot if it is used apart from gan jiang (complementary)
 Fu Zi + Gan Jiang: Warm up 3 jiao [warm up yang Qi of whole body]
@@ -2688,12 +2688,12 @@ Si Ni Jia Ren Shen Tang + ren shen 3g Extremities remain cold with Tx Maintain e
 Bai Tong Tang + cong bai 4 pieces [bridge/open Shaoyin sx: diarrhea, faint pulses
 (Shang Han Lun) meridians]
 - zhi gan cao
-Tong Mai Si Ni Tang (Shang Han Lun) Increase sheng fu zi to 15g, Shaoyin sx: interior cold with exterior Heart attack, heart failure (cid:0) Use
+Tong Mai Si Ni Tang (Shang Han Lun) Increase sheng fu zi to 15g, Shaoyin sx: interior cold with exterior Heart attack, heart failure → Use
 gan jiang to 9g heat; higher dosage [use too much, could be
 Severe Ht yang xu dangerous, but needed for heart
 failure]
 Shen Fu Tang Ren shen 12g, Sudden yang qi collapse, used as an Made into IV in emergency room in
-(Jiao Zhu Fu Ren Liang Fang) zhi fu zi 9g rescuing formula (a short form of si ni china (cid:0) get into blood immediately,
+(Jiao Zhu Fu Ren Liang Fang) zhi fu zi 9g rescuing formula (a short form of si ni china → get into blood immediately,
 jia ren shen tang) rescue heart attack
 54
 Kimberly Chenoweth
@@ -3540,8 +3540,8 @@ Patents
 accompanied by fever and chills, dizziness, nasal congestion] a ● Bi Yan Pian/Wan
 ● T: thin white coating, P: floating
 ● Tai Yin headache: [very vague, whole head, heavy, hazy, misty], feel more
-heaviness, haziness, misty mind (cid:0) Damp (cid:0) Cang Zhu & Bai Zhu
-● Cold cause (cid:0) Jue Yin headache
+heaviness, haziness, misty mind → Damp → Cang Zhu & Bai Zhu
+● Cold cause → Jue Yin headache
 ● Migraines, with aura: Jiang Can (sick silkworm), Ju Hua
 ● Cang Er Zi San: Cang Er Zi, Xin Yi Hua (pair), Bai Zhi, Bo He
 Rank Herb Amount Properties Channels Notes
@@ -3554,7 +3554,7 @@ Tai Yang: add Gao Ben]
 Bai Zhi 60 Releases exterior, opens nasal passages, relieves yangming [frontal] HA
 Yang Ming: Add Ge Gen
 Xi Xin 30 Warm, enters deep Releases w-c, opens nasal passages, warms interior, relieves shaoyin HA
-level Shao Yin: internal headache, tooth pain (cid:0) Add Dan Shen
+level Shao Yin: internal headache, tooth pain → Add Dan Shen
 Assistant Fang Feng, 45 Disperse wind from head, release exterior
 Jing Jie 120 Harmonizes other herbs
 Envoy Gan Cao 60 Clears heat-toxin, opens orifices, moderates warm dry effect of other herbs
@@ -3889,14 +3889,14 @@ _Source field is blank / not provided in the current uploaded dataset._
 <summary>Herbal Formulations Comprehensive exact extracted section — p.120, 121</summary>
 
 ```text
-Xiao Feng San (Eliminate Wind Powder) [消风散 (13 Wei)] Wai Ke Zheng Zong [Very Important Formula (cid:0) Need To Know ALL Ingredients]
+Xiao Feng San (Eliminate Wind Powder) [消风散 (13 Wei)] Wai Ke Zheng Zong [Very Important Formula → Need To Know ALL Ingredients]
 ● Topical or oral Case Study
 ● Main formula for dermatological issues ● A 26 y-o male comes in for his comes-and-goes flat rashes. The rash started
 ● Actions: disperses wind, eliminates damp, clear heat, and cools Blood during his travel to Midwest last summer and has been coming 1-2 times
 ● Preparation & administration: decoction. May be taken orally on an empty St, almost every week, mostly with heat, cold and damp, or pressure stimulations.
 or applied topically while decoction cools down. The rash started with itchiness and becomes red and larger in various shapes,
 ● Avoid alcohol, coffee, spicy foods, seafood, & smoking [Avoid Fa Wu] often expands with scratches; subsides in 2-3 hours with distraction or focus on
-● Wind cause itchiness, can combine with other pathogens (cold, damp, etc.) (cid:0) something else. However, he usually can’t help scratching. [Typical urticaria]
+● Wind cause itchiness, can combine with other pathogens (cold, damp, etc.) → something else. However, he usually can’t help scratching. [Typical urticaria]
 Grab the top gangster & everyone else dissipates ● A normal tongue with thin yellow coating; a floating & rapid pulse, pronounced
 ● Adjust dosage based on presentation [more wind, damp, heat, etc] while itching.
 ● Treat blood to treat wind (very comprehensive formula, can modify) ● Dx:

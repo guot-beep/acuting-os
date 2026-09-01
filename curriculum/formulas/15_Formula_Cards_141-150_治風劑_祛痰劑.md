@@ -384,15 +384,15 @@ Applications ●
 Rank Herb Amount Properties Channels Notes
 Chief Tian Ma 9 Sweet, neutral LV Calm Lr, subdue yang, clear heat, extinguish wind
 Gou Teng 12 HT Tian Ma: Very starchy, like potato chips, expensive ($100-$200/lb), treat internal
-Shi Jue Ming 18 Salty, cold LV, KD wind (sweet (cid:0) nourish)
+Shi Jue Ming 18 Salty, cold LV, KD wind (sweet → nourish)
 Gou Teng: extinguish internal wind, Clear heat from LV & HT, relieve spasms
 Shi Jue Ming: heavy, subdue yang, anchor
 Deputy Zhi Zi 9 Clear heat, drain fire, prevent heat from rising in Lr meridian
 Assistant Huang Qin 9
 Envoy Yi Mu Cao 9 Invigorates Blood, promotes urination, prevents Bl from rising to the head with
-ascending Lr yang [Special: Often used postpartum (cid:0) Invigorate blood, promote
+ascending Lr yang [Special: Often used postpartum → Invigorate blood, promote
 urination, transform damp] Postpartum ladies often have blood stasis, damp
-accumulation (cid:0) help recover from deficiency in lower jiao
+accumulation → help recover from deficiency in lower jiao
 Chuan Niu Xi 12 Conducts Blood downward, nourishes Lr & K
 Du Zhong 9 With chuan niu xi, tonify & nourish Lr & K
 Sang Ji Sheng 9
@@ -409,7 +409,7 @@ long hui wan
 di, shou wu
 Related Formula
 Formula Ingredients Indication
-Ling Jiao Gou Teng Tang (Antelope Ling yang jiao, gou teng, sang ye, ju LV meridian excess heat stirring up Cold ingredients (cid:0) Cool blood
+Ling Jiao Gou Teng Tang (Antelope Ling yang jiao, gou teng, sang ye, ju LV meridian excess heat stirring up Cold ingredients → Cool blood
 Horn & Uncaria Decoction) hua, bai shao, sheng di, chuan bei mu, internal movement of wind – For situations with more heat [high
 铃角钩藤汤 zhu ru, fu shen, gan cao persistent high fever, irritability, fever, etc.]
 restlessness, dizziness, vertigo,
@@ -1232,7 +1232,7 @@ numbness that is worse with cold; muscle weakness or spasm] ● Dx: Excess condi
 ● Wind-phlegm obstruction with Blood stasis in the Meridians & Collaterals ●
 [chronic numbness, stiffness/paralysis or pain in limbs (especially in the lower
 extremities) due to wind-stroke; hemiplegia, peripheral neuropathy] Think & Review
-● T: dusky tongue with white coating, P: wiry, slippery pulse [wind stroke (cid:0) very ●
+● T: dusky tongue with white coating, P: wiry, slippery pulse [wind stroke → very ●
 strong]
 ● Xiao: Acute, excess, only Bi
 ● Da: Bi & wei syndrome, not as risky
@@ -1248,12 +1248,12 @@ Zhi Chuan Wu 180 Hot, toxic alleviate pain. Cao wu is stronger than chuan wu
 Both very toxic/poisonous, safe in patent pills because can control dosage
 Radix aconite
 Deputy Tian Nan Xing 180 warm Aids chiefs in strongly expels wind & scours out phlegm
-[Dan Nan Xing (cid:0) prepred with ox bile (cid:0) cold]
+[Dan Nan Xing → prepred with ox bile → cold]
 Assistant Mo Yao 66 Move Qi & Blood, aid the chiefs in dredging Meridians & Collaterals
 Ru Xiang 66
 Envoy Di Long 180 Unblocks Meridians & Collaterals, moves Blood
 Wine Boosts the Blood-invigorating function of formula & guides the effect into
-Collaterals (small branches (cid:0) deeper level, blood related, chronic conditions)
+Collaterals (small branches → deeper level, blood related, chronic conditions)
 Modifications
 + fang feng, qin jiao, qiang huo, du huo Severe wind
 + cang zhu, yi yi ren Severe damp
@@ -1261,7 +1261,7 @@ Modifications
 Related Formula
 Formula Ingredients (50味) Indications
 Da Huo Luo Dan [大活络丹] Bai hua she, wu shao she, wei ling xian, Actions: expels wind, dredges Patent available
-(Patent Form) cao wu, tian ma, quan xie, shou wu, collaterals, alleviates pain, nourishes So many ingredients (cid:0) Neutralize &
+(Patent Form) cao wu, tian ma, quan xie, shou wu, collaterals, alleviates pain, nourishes So many ingredients → Neutralize &
 (Major Invigorate The Collaterals gui ban, ma huang, guan zhong, zhi Blood, tonifies qi. complement each other
 Special Pill) gan cao, qiang huo, guan gui, huo For sequelae & Wei sx due to CVA, Many seniors use this
 Source: Shen Ji Zong Lu xiang, wu yao, huang lian, shu di, da nerve dz & traumatic/ sports injury
@@ -1834,7 +1834,7 @@ _Source field is blank / not provided in the current uploaded dataset._
 <summary>Herbal Formulations Comprehensive exact extracted section — p.123, 124</summary>
 
 ```text
-Ling Jiao Gou Teng Tang (Antelope Ling yang jiao, gou teng, sang ye, ju LV meridian excess heat stirring up Cold ingredients (cid:0) Cool blood
+Ling Jiao Gou Teng Tang (Antelope Ling yang jiao, gou teng, sang ye, ju LV meridian excess heat stirring up Cold ingredients → Cool blood
 Horn & Uncaria Decoction) hua, bai shao, sheng di, chuan bei mu, internal movement of wind – For situations with more heat [high
 铃角钩藤汤 zhu ru, fu shen, gan cao persistent high fever, irritability, fever, etc.]
 restlessness, dizziness, vertigo,
@@ -2458,7 +2458,7 @@ with sheng jiang. stools, weight loss.
 copious, white sputum that is easily expectorated, palpitations, dizziness]
 ● T: Flabby, tooth-marked tongue with white greasy thick coating, Think & Review
 ● P: slippery ● Why are qi-regulating herbs often added to formulas that resolve phlegm?
-⬧ Phlegm slows down Qi flow (cid:0) causes Qi stagnation (cid:0) add Qi regulating
+⬧ Phlegm slows down Qi flow → causes Qi stagnation → add Qi regulating
 Applications herbs to make phlegm go away sooner
 ● Basic phlegm-treating formula ●
 ● Chronic/infantile gastritis ● So far, in how many formulas can you find out the image of er chen tang?
@@ -2917,23 +2917,23 @@ Wen Dan Tang [温胆汤] (Warm The Gallbladder Decoction) Source: Yi Zong Jin Ji
 ● Preparation & administration: add sheng jiang 5 pieces, make as a decoction ● A slightly-fluffy 34 y-o female comes in with complaint of restlessness &
 ● Er Chen Tang + Zhu Ru & Zhi Shi irritability, perturbation & intenseness. Other sx: chest & epigastric fullness and
 distension, nausea with a feeling of vomiting, palpitations, insomnia, anxiety.
-● Indications: GB & ST disharmony with heat-phlegm [nausea, vomiting, acid ● A slightly flabby tongue with [white sticky coating (cid:0) GB sign]
-regurgitation, palpitations, anxiety, indeterminate gnawing hunger, insomnia, ⬧ Thick white (cid:0) heat
-dizziness, or seizures accompanied by copious sputum, focal distension of the ⬧ Powdery white (cid:0) even more heat
+● Indications: GB & ST disharmony with heat-phlegm [nausea, vomiting, acid ● A slightly flabby tongue with [white sticky coating → GB sign]
+regurgitation, palpitations, anxiety, indeterminate gnawing hunger, insomnia, ⬧ Thick white → heat
+dizziness, or seizures accompanied by copious sputum, focal distension of the ⬧ Powdery white → even more heat
 chest, a bitter taste in the mouth, slight thirst] ● A slightly rapid & slippery pulse
 ● T: red tongue with greasy yellow coating, ● Dx:
 ● P: slippery rapid or wiry ● Tx:
 ● GB 2nd biggest meridian after UB. In 3 jiao, involved in many organs
-● GB is Judge. If judge has trouble, can’t make decisions (cid:0) decision-making Think & Review
+● GB is Judge. If judge has trouble, can’t make decisions → decision-making Think & Review
 problems [ ● Insomnia Differentiation
 ● Indeterminate gnawing hunger: You hungry or not? I don’t know, just feel ⬧ Gui Pi Tang: HT Blood xu & SP Qi xu
-discomfort in middle jiao [GB doesn’t work (cid:0) can’t make decisions] (special) ⬧ Tian Wang Bu Xin Dan: HT Xu & KD yin xu
+discomfort in middle jiao [GB doesn’t work → can’t make decisions] (special) ⬧ Tian Wang Bu Xin Dan: HT Xu & KD yin xu
 ● Why are zhu ru & zhi shi included in wen dan tang (phlegm heat caused by
 Applications disharmony)?
 ● Disharmony between GB & ST with heat-phlegm internal disturbance with ⬧
 timidity & hyper-sensitivitiy, irritability & gnawing, insomnia or ● Please compare wen dan tang with zhu ye shi gao tang?
 dream-disturbed sleep, nausea & vomiting, or seizures (with copious sputum)
-⬧ Insomnia: timid, easily frightened, especially when home alone ● Chronic inflammation causes GB problems (cid:0) walls thinner, stones, parasites,
+⬧ Insomnia: timid, easily frightened, especially when home alone ● Chronic inflammation causes GB problems → walls thinner, stones, parasites,
 ⬧ GB cause high cholesterol, high calcium
 ● Damp-phlegm with a tendency/initial sx of heat-transforming presenting with a ● Huang Lian is next herb star, price getting higher & higher
 slightly yellow or white greasy thick tongue coating, a wiry slightly rapid or
@@ -3264,9 +3264,9 @@ Gui Zhi Fu Ling Wan [桂枝茯苓丸] (Cinnamon Twig & Poria Pill) Source: Jin G
 form into pills the size of rabbit droppings with honey, take 3 times daily before
 meals. Or decoction with the dosage specified above. Modern Research
 ● Safe to use during pregnancy ●
-⬧ Pill form instead of decoction (cid:0) More mild, slower
+⬧ Pill form instead of decoction → More mild, slower
 ⬧ Small dosage, rabbit dropping Case Study
-⬧ With honey (cid:0) neutralized ● A 41 y-o female looks for help for her 14-18 days bleeding with dark-red blood
+⬧ With honey → neutralized ● A 41 y-o female looks for help for her 14-18 days bleeding with dark-red blood
 and purple clots for over 3 years. She tells you that she was diagnosed as
 ● Indications: Blood stasis in the uterus [mild, persistent uterine bleeding of uterine fibroid 2 and half years ago. Other sx: abd. Cramping for 5 days at the
 purple or dark blood during pregnancy accompanied by abdominal pain that beginning of each mense, low energy, poor digestion.
@@ -3686,18 +3686,18 @@ distension in the chest & epigastrium; hypertension, eye or mouth deviation] his
 ● P: wiry/slippery pulse. ● Tx:
 Applications Think & Review
 ● Wind-phlegm up-disturbance ● Have you found a formula hidden in ban xia bai zhu tian ma tang? If yes. What
-● Meniere’s disease, Hypertension is it? Er Chen Tang (add Tian Ma & Bai Zhu) (cid:0) 9 formulas with Er Chen Tang
+● Meniere’s disease, Hypertension is it? Er Chen Tang (add Tian Ma & Bai Zhu) → 9 formulas with Er Chen Tang
 ● Epilepsy, Bell’s palsy, Chalasia of cardia 贲门弛缓 ● Please make comparison of er chen tang, wen dan tang & ban xia bai zhu tian
 ma tang.
 ● Describe the different functions of ban xia in the following formulas:
-● ban xia xie xin tang: Focal distention under heart in upper epigastric area (cid:0)
-ban xia for regulate & dispersing (acrid) Qi (cid:0) Ban Xia & Gan Jiang
+● ban xia xie xin tang: Focal distention under heart in upper epigastric area →
+ban xia for regulate & dispersing (acrid) Qi → Ban Xia & Gan Jiang
 ⬧ Heat/cold clumping
 ⬧ Review 3 Xie Xin Tangs
 ● ban xia hou po tang: Plum pit Qi due to LV Qi stagnation with Qi & phlegm
-clumping together in throat (cid:0) Descend Qi
+clumping together in throat → Descend Qi
 ⬧ Resolve phlegm & reduce accumulation
-⬧ Regulate & descend Qi (cid:0) Descend phlegm & Qi
+⬧ Regulate & descend Qi → Descend phlegm & Qi
 ● ban xia bai zhu tian ma tang: Treat internal wind blowing phlegm to cause
 headaches, dizziness, vertigo
 ⬧ Dries damp, transforms phlegm, relieves nausea & vomiting

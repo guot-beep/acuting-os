@@ -465,7 +465,7 @@ wind-cold ●
 Rank Herb Amount Properties Channels Notes
 Chief Zi Su Ye 12 Acrid, aromatic, LU, SP Releases exterior, moves qi [More Upper & Middle Jiao]
 warm;
-Deputy Xiang Fu 12 Acrid, bitter, warm LV, SJ Moves & disperses stagnant qi [Strongest Qi Mover (cid:0) LV Qi]
+Deputy Xiang Fu 12 Acrid, bitter, warm LV, SJ Moves & disperses stagnant qi [Strongest Qi Mover → LV Qi]
 Assistant Chen Pi 6 Acrid, bitter, aromatic, LU, SP, ST Assists chief & deputy in moving qi [More focused on middle jiao]
 warm
 Envoy Zhi Gan Cao 3 Harmonize, All 12 Prevents qi-moving herbs from depleting qi
@@ -506,7 +506,7 @@ Case Study
 Applications: damp-cold contracted during the summertime ● A 17 y-o female feels heavy and cold with abdominal distension and tight chest
 ● Acute gastroenteritits after she drank a liter of ice tea and a large cone of ice cream upon her
 ● Hypokalemia (low blood potassium caused fatigue, weakness, poor appetite, completion of cross country tournament on a hot summer day. [Ate too much
-abdominal distension, thirst) coldness (cid:0) Frozen digestion (cid:0) feel discomfort inside (cold = big burden for
+abdominal distension, thirst) coldness → Frozen digestion → feel discomfort inside (cold = big burden for
 ● Infantile summer unexplained fever [Damp will cause low grade fever, SP/ST)]
 especially in afternoon] ● She appears red face with cold skin, and coarse breathing
 ⬧ If mother is still nursing, have mother take herbs, otherwise, make formula ● A thin white tongue coating;
@@ -538,7 +538,7 @@ New formula Based on xiang ru san Indications
 Xin Jia Xiang Ru Yin (Switch To Cold In Replaces Bai Bian Dou With Xian Bian Summer damp-heat: fever, chills w/o
 Formula Nature) Dou Hua [Xian = Fresh, Hua = Flower sweating; thirst, flushed face; floating
 (Wen Bing Tiao Bian) (Aromatic)] rapid pulse [ongoing inflammation
-Plus Jin Yin Hua, Lian Qiao inside (cid:0) Clear heat]
+Plus Jin Yin Hua, Lian Qiao inside → Clear heat]
 11
 Kimberly Chenoweth
 
@@ -550,7 +550,7 @@ Acrid-Cool Formulas To Release W-H 辛凉解表
 ● Fever, sweating, a slight aversion to wind/slight chills, HA, thirst, sore throat. Or
 also cough, eye redness. A thin white/slightly yellow tongue coating; a floating
 and rapid pulse.
-⬧ Epidemic, febrile diseases (cid:0) Warm diseases (cid:0) Easily damage yin (cid:0) Don’t use
+⬧ Epidemic, febrile diseases → Warm diseases → Easily damage yin → Don’t use
 much dispersing, warm stuff
 ⬧ In those days, everyone is cold, hungry, lack of warmth
 ⬧ Focus on get rid of cold & tonify yang Qi
@@ -582,10 +582,10 @@ Chief Sang Ye 7.5 Sweet, bitter, cool LU, LV Releases w-h & cough
 Ju Hua 3 Sweet, bitter, cool; LU, LV For upper Jiao w-h (eyes)
 Deputy Lian Qiao 4.5 bitter, slightly acrid; HT, LV, GB Clears heat & detoxify
 Bo He [Hou Xia] 2.5 acrid, aromatic,cool LU, LV For upper Jiao w-h (orifices) [Aromatic: add near end]
-Jie Geng 6 acrid,bitter,neutral LU, ST For cough (ascending lung qi) [Guiding herb (cid:0) into lung]
+Jie Geng 6 acrid,bitter,neutral LU, ST For cough (ascending lung qi) [Guiding herb → into lung]
 [Invasion into Tai Yang meridian]
 Xing Ren 6 bitter,warm LU, LI Paired with jie geng (descending)
-[one goes up, one goes down (cid:0) cause circle to facilitate venting of lu qi]
+[one goes up, one goes down → cause circle to facilitate venting of lu qi]
 Assistant Lu Gen 6 sweet,cold LU, ST Clears heat, generates fluids [Warm febrile diseases cause problem]
 Always focus on Yang [colder] [Nourish, generate, big grass]
 Envoy Gan Cao 2.5 envoy All 12 Clears & harmonizes; paired with jie geng soothes throat
@@ -611,7 +611,7 @@ Yin Qiao San (Honeysuckle And Forsythia Powder)
 Source: Wen Bing Tiao Bian
 ● Very Important Formula!!!! Modern research:
 ● Very Famous, almost most famous [Good For when catch a cold] ● Antipyretic
-● Most Popular formula for exterior conditions [Polluted environment (cid:0) too ● Anti-inflammatory
+● Most Popular formula for exterior conditions [Polluted environment → too ● Anti-inflammatory
 much toxins already in system, so when catch exterior conditions, already have ● Analgesic
 ```
 
@@ -1119,10 +1119,10 @@ Chief Sang Ye 7.5 Sweet, bitter, cool LU, LV Releases w-h & cough
 Ju Hua 3 Sweet, bitter, cool; LU, LV For upper Jiao w-h (eyes)
 Deputy Lian Qiao 4.5 bitter, slightly acrid; HT, LV, GB Clears heat & detoxify
 Bo He [Hou Xia] 2.5 acrid, aromatic,cool LU, LV For upper Jiao w-h (orifices) [Aromatic: add near end]
-Jie Geng 6 acrid,bitter,neutral LU, ST For cough (ascending lung qi) [Guiding herb (cid:0) into lung]
+Jie Geng 6 acrid,bitter,neutral LU, ST For cough (ascending lung qi) [Guiding herb → into lung]
 [Invasion into Tai Yang meridian]
 Xing Ren 6 bitter,warm LU, LI Paired with jie geng (descending)
-[one goes up, one goes down (cid:0) cause circle to facilitate venting of lu qi]
+[one goes up, one goes down → cause circle to facilitate venting of lu qi]
 Assistant Lu Gen 6 sweet,cold LU, ST Clears heat, generates fluids [Warm febrile diseases cause problem]
 Always focus on Yang [colder] [Nourish, generate, big grass]
 Envoy Gan Cao 2.5 envoy All 12 Clears & harmonizes; paired with jie geng soothes throat
@@ -1148,9 +1148,9 @@ Yin Qiao San (Honeysuckle And Forsythia Powder)
 Source: Wen Bing Tiao Bian
 ● Very Important Formula!!!! Modern research:
 ● Very Famous, almost most famous [Good For when catch a cold] ● Antipyretic
-● Most Popular formula for exterior conditions [Polluted environment (cid:0) too ● Anti-inflammatory
+● Most Popular formula for exterior conditions [Polluted environment → too ● Anti-inflammatory
 much toxins already in system, so when catch exterior conditions, already have ● Analgesic
-heat in body (cid:0) Quickly switch to wind heat] ● Antibiotic
+heat in body → Quickly switch to wind heat] ● Antibiotic
 ● Next Quiz: Common ingredients between two formulas [5 ingredients in ● Antiviral
 common] ● Immune support
 ● Actions: Acrid-Cool To Release Wind-Heat, Clears Heat & Relieves Toxicity ● Peristalsis-inhibiting
@@ -1180,13 +1180,13 @@ Deputy Jie Geng 3-6 Spreads Lung Qi LU Soothes throat []
 Niu Bang Zi 9-12 Detoxifys, Clear Heat Paired with jie gen…
 Paired with bo he…
 Bo He [Hou Xia] 3-6 Acrid, Aromatic, Cool LU, LV Clears heat from orifices
-Dan Dou Chi 3-6 Helps Chiefs Releases the exterior [Fermented soybean (cid:0) Help Qi]
-Assistant Jing Jie 6-9 Acrid, Aromatic LU, LV Assists chiefs & deputies [Specialty: Almost neutral (cid:0) often in wind cold/heat,
+Dan Dou Chi 3-6 Helps Chiefs Releases the exterior [Fermented soybean → Help Qi]
+Assistant Jing Jie 6-9 Acrid, Aromatic LU, LV Assists chiefs & deputies [Specialty: Almost neutral → often in wind cold/heat,
 mediator, in middle] Wind cold, itchiness
 Dan Zhu Ye 6-9 Sweet, Bland, Cold HT, ST, UB Assists chiefs & deputies [Specialty: Clear heat from HT & SI, scanty urination,
 irritability, best part: center piece that sticks out from leaf (Zhu Ye Xin)]
 Lu Gen 15-30 Sweet, Cold LU, ST Assists chiefs & deputies [Avoid getting too dry, hot, prevent damage to yin]
-Envoy Gan Cao [A&E] 3-6 Harmonizes Other Paired with jie gen (cid:0) throat
+Envoy Gan Cao [A&E] 3-6 Harmonizes Other Paired with jie gen → throat
 Herbs
 Modifications
 Plus ju hua,man jing zi Address headache HA w/o sweating
@@ -1219,7 +1219,7 @@ FORMULATIONS 1
 Ma Xing Shi Gan Tang (Ephedra, Apricot Kernel, Gypsum, And Licorice Decoction) Source: Shang Han Lun
 ● Actions: Acrid, Cool To Clear Lung Heat, calms wheezing by directing rebellious Modern Research
 Qi downward ● Antibechic
-● Ratio: Ma Huang (cid:0) Shi Gao 1:4 ● Expectorant
+● Ratio: Ma Huang → Shi Gao 1:4 ● Expectorant
 ● Preparation: < 20’ ● Antiallergic
 ● Administration: taken lukewarm ● Anti-inflammatory
 ● Lung heat 肺热 :fever with or without sweating, thirst, wheezing, coughing, ● Antipyretic
@@ -1228,7 +1228,7 @@ tongue coating, and a rapid, forceful/slippery pulse ● Anti-micobial
 ⬧ More Internal LU Heat
 ⬧ Some books put this formula in the Clear Internal Heat chapter Case Study
 ▪ [Ma Huang & Shi Gao together] ● A 24 y-o male caught a flu last week while he was very busy at his project for
-⬧ If no LU Heat, use a different formula [Wind heat (cid:0) No use] finals. Now he is miserable for his coughing and wheezing with yellow sticky
+⬧ If no LU Heat, use a different formula [Wind heat → No use] finals. Now he is miserable for his coughing and wheezing with yellow sticky
 ● Applications: lung heat with wheezing and coughing/exterior symptoms still mucus at times [Internal LU Heat]. Staring 2 days ago, he also feels hot,
 present. Sx: fever, wheezing/labored breathing /coughing, yellow thin coating, especially above his chest, and sweats a little bit when he coughs.
 rapid pulse. ● A thin yellow and dry tongue coating, red tip. A fast, forceful and slightly
@@ -1239,13 +1239,13 @@ rapid pulse. ● A thin yellow and dry tongue coating, red tip. A fast, forceful
 ● Cystitis [UB infection (Tai Yang) & SI]
 Review & Think
 ● Analyze the effect and relationship between ma huang and shi gao in formula
-Ma Xing Shi Gan Tang. [Always question in NCCAOM (cid:0) Classic relationship]
+Ma Xing Shi Gan Tang. [Always question in NCCAOM → Classic relationship]
 ⬧ Ma Huang: Dispersing function,
 ⬧ Shi Gao: Neutralizes the heat of Ma Huang
 Rank Herb Amount Properties Channels Notes
 Chief Ma Huang 4.5-12 Acrid, sweet, Treat constrained fire by dispersing it [Disperse/Release Exterior]
 Warm For severe lung heat, ma huang dosage is reduced and shi gao is increased;
-Can adjust this formula from more Internal heat (cid:0) exterior conditions [Adjust
+Can adjust this formula from more Internal heat → exterior conditions [Adjust
 ratio of Ma Huang & Shi Gao]
 Shi Gao 18-48 Acrid, sweet, Less internal heat and more exterior symptoms, ma huang dosage is increased
 Very cold and shi gao is reduced.
@@ -1774,9 +1774,9 @@ Yin Qiao San (Honeysuckle And Forsythia Powder)
 Source: Wen Bing Tiao Bian
 ● Very Important Formula!!!! Modern research:
 ● Very Famous, almost most famous [Good For when catch a cold] ● Antipyretic
-● Most Popular formula for exterior conditions [Polluted environment (cid:0) too ● Anti-inflammatory
+● Most Popular formula for exterior conditions [Polluted environment → too ● Anti-inflammatory
 much toxins already in system, so when catch exterior conditions, already have ● Analgesic
-heat in body (cid:0) Quickly switch to wind heat] ● Antibiotic
+heat in body → Quickly switch to wind heat] ● Antibiotic
 ● Next Quiz: Common ingredients between two formulas [5 ingredients in ● Antiviral
 common] ● Immune support
 ● Actions: Acrid-Cool To Release Wind-Heat, Clears Heat & Relieves Toxicity ● Peristalsis-inhibiting
@@ -1806,13 +1806,13 @@ Deputy Jie Geng 3-6 Spreads Lung Qi LU Soothes throat []
 Niu Bang Zi 9-12 Detoxifys, Clear Heat Paired with jie gen…
 Paired with bo he…
 Bo He [Hou Xia] 3-6 Acrid, Aromatic, Cool LU, LV Clears heat from orifices
-Dan Dou Chi 3-6 Helps Chiefs Releases the exterior [Fermented soybean (cid:0) Help Qi]
-Assistant Jing Jie 6-9 Acrid, Aromatic LU, LV Assists chiefs & deputies [Specialty: Almost neutral (cid:0) often in wind cold/heat,
+Dan Dou Chi 3-6 Helps Chiefs Releases the exterior [Fermented soybean → Help Qi]
+Assistant Jing Jie 6-9 Acrid, Aromatic LU, LV Assists chiefs & deputies [Specialty: Almost neutral → often in wind cold/heat,
 mediator, in middle] Wind cold, itchiness
 Dan Zhu Ye 6-9 Sweet, Bland, Cold HT, ST, UB Assists chiefs & deputies [Specialty: Clear heat from HT & SI, scanty urination,
 irritability, best part: center piece that sticks out from leaf (Zhu Ye Xin)]
 Lu Gen 15-30 Sweet, Cold LU, ST Assists chiefs & deputies [Avoid getting too dry, hot, prevent damage to yin]
-Envoy Gan Cao [A&E] 3-6 Harmonizes Other Paired with jie gen (cid:0) throat
+Envoy Gan Cao [A&E] 3-6 Harmonizes Other Paired with jie gen → throat
 Herbs
 Modifications
 Plus ju hua,man jing zi Address headache HA w/o sweating
@@ -1845,7 +1845,7 @@ FORMULATIONS 1
 Ma Xing Shi Gan Tang (Ephedra, Apricot Kernel, Gypsum, And Licorice Decoction) Source: Shang Han Lun
 ● Actions: Acrid, Cool To Clear Lung Heat, calms wheezing by directing rebellious Modern Research
 Qi downward ● Antibechic
-● Ratio: Ma Huang (cid:0) Shi Gao 1:4 ● Expectorant
+● Ratio: Ma Huang → Shi Gao 1:4 ● Expectorant
 ● Preparation: < 20’ ● Antiallergic
 ● Administration: taken lukewarm ● Anti-inflammatory
 ● Lung heat 肺热 :fever with or without sweating, thirst, wheezing, coughing, ● Antipyretic
@@ -1854,7 +1854,7 @@ tongue coating, and a rapid, forceful/slippery pulse ● Anti-micobial
 ⬧ More Internal LU Heat
 ⬧ Some books put this formula in the Clear Internal Heat chapter Case Study
 ▪ [Ma Huang & Shi Gao together] ● A 24 y-o male caught a flu last week while he was very busy at his project for
-⬧ If no LU Heat, use a different formula [Wind heat (cid:0) No use] finals. Now he is miserable for his coughing and wheezing with yellow sticky
+⬧ If no LU Heat, use a different formula [Wind heat → No use] finals. Now he is miserable for his coughing and wheezing with yellow sticky
 ● Applications: lung heat with wheezing and coughing/exterior symptoms still mucus at times [Internal LU Heat]. Staring 2 days ago, he also feels hot,
 present. Sx: fever, wheezing/labored breathing /coughing, yellow thin coating, especially above his chest, and sweats a little bit when he coughs.
 rapid pulse. ● A thin yellow and dry tongue coating, red tip. A fast, forceful and slightly
@@ -1865,13 +1865,13 @@ rapid pulse. ● A thin yellow and dry tongue coating, red tip. A fast, forceful
 ● Cystitis [UB infection (Tai Yang) & SI]
 Review & Think
 ● Analyze the effect and relationship between ma huang and shi gao in formula
-Ma Xing Shi Gan Tang. [Always question in NCCAOM (cid:0) Classic relationship]
+Ma Xing Shi Gan Tang. [Always question in NCCAOM → Classic relationship]
 ⬧ Ma Huang: Dispersing function,
 ⬧ Shi Gao: Neutralizes the heat of Ma Huang
 Rank Herb Amount Properties Channels Notes
 Chief Ma Huang 4.5-12 Acrid, sweet, Treat constrained fire by dispersing it [Disperse/Release Exterior]
 Warm For severe lung heat, ma huang dosage is reduced and shi gao is increased;
-Can adjust this formula from more Internal heat (cid:0) exterior conditions [Adjust
+Can adjust this formula from more Internal heat → exterior conditions [Adjust
 ratio of Ma Huang & Shi Gao]
 Shi Gao 18-48 Acrid, sweet, Less internal heat and more exterior symptoms, ma huang dosage is increased
 Very cold and shi gao is reduced.
@@ -1893,7 +1893,7 @@ New formulas Plus Minus indications
 Yue Bi Tang (Jin Gui Yao Lue) ● Sheng Jiang, ● Xing Ren Wind edema with aversion to drafts
 ● Da Zao Wind Cold blocks LU & UB functions
 Yue Bi Jia Zhu Tang (Jin Gui Yao Lue) ● Sheng Jiang, ● Xing Ren Severe wind edema with puffy orbits/heavy limbs, reduced urination, more water
-● Da Zao, retention (cid:0) stimulate middle jiao (cid:0) transform fluids
+● Da Zao, retention → stimulate middle jiao → transform fluids
 ● Bai Zhu
 14
 Kimberly Chenoweth
@@ -1928,7 +1928,7 @@ Source: Shang Han Liu Shu [Zhang Zhong Jing’s Follower]
 ● Actions: releases the exterior from the muscle layer, clear interior heat.
 ⬧ Simultaneous Interior & Exterior [Tai Yang & Yang Ming together] Review & Think
 ● Preparation: < 20’ ● Please compare yin qiao san with sang ju yin in terms of ingredients, actions,
-● Administration: taken lukewarm indications. [Compare (cid:0) Common ingredients]
+● Administration: taken lukewarm indications. [Compare → Common ingredients]
 ● Applications: Simultaneous Tai Yang and Yang Ming disorder. ● Please analyze shi gao and ma huang in terms of dosage and effect in ma xing
 Constrained/unresolved exterior wind cold transforming into interior heat. Sx: shi gao tang,
 increasing fever and decreasing chills, no sweating, HA, stiff extremities, eye ●
@@ -2381,7 +2381,7 @@ _Source field is blank / not provided in the current uploaded dataset._
 Ma Xing Shi Gan Tang (Ephedra, Apricot Kernel, Gypsum, And Licorice Decoction) Source: Shang Han Lun
 ● Actions: Acrid, Cool To Clear Lung Heat, calms wheezing by directing rebellious Modern Research
 Qi downward ● Antibechic
-● Ratio: Ma Huang (cid:0) Shi Gao 1:4 ● Expectorant
+● Ratio: Ma Huang → Shi Gao 1:4 ● Expectorant
 ● Preparation: < 20’ ● Antiallergic
 ● Administration: taken lukewarm ● Anti-inflammatory
 ● Lung heat 肺热 :fever with or without sweating, thirst, wheezing, coughing, ● Antipyretic
@@ -2390,7 +2390,7 @@ tongue coating, and a rapid, forceful/slippery pulse ● Anti-micobial
 ⬧ More Internal LU Heat
 ⬧ Some books put this formula in the Clear Internal Heat chapter Case Study
 ▪ [Ma Huang & Shi Gao together] ● A 24 y-o male caught a flu last week while he was very busy at his project for
-⬧ If no LU Heat, use a different formula [Wind heat (cid:0) No use] finals. Now he is miserable for his coughing and wheezing with yellow sticky
+⬧ If no LU Heat, use a different formula [Wind heat → No use] finals. Now he is miserable for his coughing and wheezing with yellow sticky
 ● Applications: lung heat with wheezing and coughing/exterior symptoms still mucus at times [Internal LU Heat]. Staring 2 days ago, he also feels hot,
 present. Sx: fever, wheezing/labored breathing /coughing, yellow thin coating, especially above his chest, and sweats a little bit when he coughs.
 rapid pulse. ● A thin yellow and dry tongue coating, red tip. A fast, forceful and slightly
@@ -2401,13 +2401,13 @@ rapid pulse. ● A thin yellow and dry tongue coating, red tip. A fast, forceful
 ● Cystitis [UB infection (Tai Yang) & SI]
 Review & Think
 ● Analyze the effect and relationship between ma huang and shi gao in formula
-Ma Xing Shi Gan Tang. [Always question in NCCAOM (cid:0) Classic relationship]
+Ma Xing Shi Gan Tang. [Always question in NCCAOM → Classic relationship]
 ⬧ Ma Huang: Dispersing function,
 ⬧ Shi Gao: Neutralizes the heat of Ma Huang
 Rank Herb Amount Properties Channels Notes
 Chief Ma Huang 4.5-12 Acrid, sweet, Treat constrained fire by dispersing it [Disperse/Release Exterior]
 Warm For severe lung heat, ma huang dosage is reduced and shi gao is increased;
-Can adjust this formula from more Internal heat (cid:0) exterior conditions [Adjust
+Can adjust this formula from more Internal heat → exterior conditions [Adjust
 ratio of Ma Huang & Shi Gao]
 Shi Gao 18-48 Acrid, sweet, Less internal heat and more exterior symptoms, ma huang dosage is increased
 Very cold and shi gao is reduced.
@@ -2429,7 +2429,7 @@ New formulas Plus Minus indications
 Yue Bi Tang (Jin Gui Yao Lue) ● Sheng Jiang, ● Xing Ren Wind edema with aversion to drafts
 ● Da Zao Wind Cold blocks LU & UB functions
 Yue Bi Jia Zhu Tang (Jin Gui Yao Lue) ● Sheng Jiang, ● Xing Ren Severe wind edema with puffy orbits/heavy limbs, reduced urination, more water
-● Da Zao, retention (cid:0) stimulate middle jiao (cid:0) transform fluids
+● Da Zao, retention → stimulate middle jiao → transform fluids
 ● Bai Zhu
 14
 Kimberly Chenoweth
@@ -2464,7 +2464,7 @@ Source: Shang Han Liu Shu [Zhang Zhong Jing’s Follower]
 ● Actions: releases the exterior from the muscle layer, clear interior heat.
 ⬧ Simultaneous Interior & Exterior [Tai Yang & Yang Ming together] Review & Think
 ● Preparation: < 20’ ● Please compare yin qiao san with sang ju yin in terms of ingredients, actions,
-● Administration: taken lukewarm indications. [Compare (cid:0) Common ingredients]
+● Administration: taken lukewarm indications. [Compare → Common ingredients]
 ● Applications: Simultaneous Tai Yang and Yang Ming disorder. ● Please analyze shi gao and ma huang in terms of dosage and effect in ma xing
 Constrained/unresolved exterior wind cold transforming into interior heat. Sx: shi gao tang,
 increasing fever and decreasing chills, no sweating, HA, stiff extremities, eye ●
@@ -2476,7 +2476,7 @@ coating, a slightly flooding pulse.
 Rank Herb Amount Properties Channels Notes
 Chief Chai Hu 3-9 LV Qi Stagnation, Shao Yang [Between interior & exterior, sandwiched between
 two pieces of bread]
-Ge Gen 6-12 Relax muscle layers (cid:0) work between layers
+Ge Gen 6-12 Relax muscle layers → work between layers
 Deputy Qiang Huo 3-6
 Bai Zhi 3-6
 Huang Qin 6-9
@@ -2820,7 +2820,7 @@ Source: Shang Han Liu Shu [Zhang Zhong Jing’s Follower]
 ● Actions: releases the exterior from the muscle layer, clear interior heat.
 ⬧ Simultaneous Interior & Exterior [Tai Yang & Yang Ming together] Review & Think
 ● Preparation: < 20’ ● Please compare yin qiao san with sang ju yin in terms of ingredients, actions,
-● Administration: taken lukewarm indications. [Compare (cid:0) Common ingredients]
+● Administration: taken lukewarm indications. [Compare → Common ingredients]
 ● Applications: Simultaneous Tai Yang and Yang Ming disorder. ● Please analyze shi gao and ma huang in terms of dosage and effect in ma xing
 Constrained/unresolved exterior wind cold transforming into interior heat. Sx: shi gao tang,
 increasing fever and decreasing chills, no sweating, HA, stiff extremities, eye ●
@@ -2832,7 +2832,7 @@ coating, a slightly flooding pulse.
 Rank Herb Amount Properties Channels Notes
 Chief Chai Hu 3-9 LV Qi Stagnation, Shao Yang [Between interior & exterior, sandwiched between
 two pieces of bread]
-Ge Gen 6-12 Relax muscle layers (cid:0) work between layers
+Ge Gen 6-12 Relax muscle layers → work between layers
 Deputy Qiang Huo 3-6
 Bai Zhi 3-6
 Huang Qin 6-9
@@ -3229,7 +3229,7 @@ Source: Shang Han Liu Shu [Zhang Zhong Jing’s Follower]
 ● Actions: releases the exterior from the muscle layer, clear interior heat.
 ⬧ Simultaneous Interior & Exterior [Tai Yang & Yang Ming together] Review & Think
 ● Preparation: < 20’ ● Please compare yin qiao san with sang ju yin in terms of ingredients, actions,
-● Administration: taken lukewarm indications. [Compare (cid:0) Common ingredients]
+● Administration: taken lukewarm indications. [Compare → Common ingredients]
 ● Applications: Simultaneous Tai Yang and Yang Ming disorder. ● Please analyze shi gao and ma huang in terms of dosage and effect in ma xing
 Constrained/unresolved exterior wind cold transforming into interior heat. Sx: shi gao tang,
 increasing fever and decreasing chills, no sweating, HA, stiff extremities, eye ●
@@ -3241,7 +3241,7 @@ coating, a slightly flooding pulse.
 Rank Herb Amount Properties Channels Notes
 Chief Chai Hu 3-9 LV Qi Stagnation, Shao Yang [Between interior & exterior, sandwiched between
 two pieces of bread]
-Ge Gen 6-12 Relax muscle layers (cid:0) work between layers
+Ge Gen 6-12 Relax muscle layers → work between layers
 Deputy Qiang Huo 3-6
 Bai Zhi 3-6
 Huang Qin 6-9
@@ -3747,7 +3747,7 @@ Ren Shen Bai Du San [人参败毒散] Source: Xiao Er Yao Zheng Zhi Jue
 ⬧ Not very aggressive formula, no strong diaphoretic ingredients ● Anti-pyretic, Analgesic
 ⬧ Very useful in Seattle for initial stage exterior condition [sore, tired, heavy, ● Lower liver enzymes
 not like to move, Qi deficiency] ● Urination-promoting, Diaphoretic
-⬧ Damp is heavy & doesn’t stay on surface (cid:0) goes to muscles & SP ● Phlegm-diluting, Immune-boosting
+⬧ Damp is heavy & doesn’t stay on surface → goes to muscles & SP ● Phlegm-diluting, Immune-boosting
 ● Preparation: grind into a fine powder but bo he and sheng jiang (decoct); or
 decoct all herbs by 80% reduced dosage. Case Study
 ● Administration: powder: 6g with decoction bid/tid; ● A 3 year and 5 month old boy comes in with his mom, complaining of
@@ -3757,14 +3757,14 @@ chills with shivering, absence of sweating, pain and stiffness of head & neck, w
 soreness & pain in extremities, focal distention & fullness of chest, nasal and mentally [Qi Deficiency]. He looks pale and apathetic
 congestion with sonorous breathing, productive cough ● A slightly pale tongue white greasy coating. The index finger veins appear dark
 T: greasy, white tongue coating, P: floating, soggy red and superficial within qi regions.
-● Dx: Food allergies [damp, phlegm (antibodies) (cid:0) hidden
-Applications: originally designed for children suffering from exterior w-c-d ● Tx: Ren Shen Bai Du San [Minus Qiang Huo (taste not good)] add Bai Zhu (cid:0)
+● Dx: Food allergies [damp, phlegm (antibodies) → hidden
+Applications: originally designed for children suffering from exterior w-c-d ● Tx: Ren Shen Bai Du San [Minus Qiang Huo (taste not good)] add Bai Zhu →
 ● Underlying qi-deficient patients with external w-c-d, including the aged, post Recovered very quickly
 partum women, and those recovering from a debilitating illness
 ● Infantile fever due to EPI, Infantile diarrhea Review & Think
 ● Dengue fever, Chronic suppurative mumps ● What is ren shen bai du san designed for?
 ● Senile cold/flu ● Why is ren shen included in ren shen bai du san? What kind of ren shen you
-● Toxic skin disorders [Stay in skin for long time (cid:0) pus it out] prefer to use in the formula? Bai Ren Shen Why?
+● Toxic skin disorders [Stay in skin for long time → pus it out] prefer to use in the formula? Bai Ren Shen Why?
 ⬧ If patient not deficient, don’t use Ren Shen or pathogen will stay in body
 Patent forms of bai du san ● Which of the following formulas is stronger in releasing exterior
 ● Prime Rescue (Jade), Dispel Invasion (K’an) wind-cold-damp – Shen Su Yin [Stronger] Vs. Ren Shen Bai Du San?
@@ -3780,12 +3780,12 @@ help chiefs in releasing exterior, lower fever
 Assistant Jie Geng 30 Ascending and descending actions to regulate flow of chest qi, relieve chest
 discomfort [Guiding herb]
 Zhi Ke 30 Ascending and descending actions to regulate flow of chest qi, relieve chest
-discomfort [Moves Qi, vent damp in upper, middle jiao (cid:0) Treat bloating,
+discomfort [Moves Qi, vent damp in upper, middle jiao → Treat bloating,
 heaviness in middle jiao]
 Qian Hu 30 Transform phlegm, strengthen Sp, release w-c-d – treat both root & branches
 Sheng Jiang Little Bit Transform phlegm, strengthen Sp, release w-c-d – treat both root & branches
-Ren Shen 30 Tonify qi to dispel pathogens; prevent relapses [Use Bai Ren Shen (cid:0) not so
-greasy, cloying (cid:0) Tonify Qi without retaining pathogens]
+Ren Shen 30 Tonify qi to dispel pathogens; prevent relapses [Use Bai Ren Shen → not so
+greasy, cloying → Tonify Qi without retaining pathogens]
 Fu Ling 30 Transform phlegm, strengthen Sp, release w-c-d – treat both root & branches
 Tonify qi to dispel pathogens; prevent relapses
 Envoy Gan Cao 15 Tonify qi to dispel pathogens; prevent relapses
@@ -3798,11 +3798,11 @@ Plus wei ling xian, qin jiao, wu tou
 Minus qiang huo, du huo, fu ling Without damp presentation
 Related Formula Based on ren shen bai du san Indications Notes
 Jing Fang Bai Du San - Ren Shen; Severe w-c-d in strong persons Release wind [milder than Ma Huang &
-[Replace Ma Huang Tang, etc. (cid:0) more + Jing Jie, Fang Feng [Often Paired] (without sweating) Gui Zhi], more commonly used than
+[Replace Ma Huang Tang, etc. → more + Jing Jie, Fang Feng [Often Paired] (without sweating) Gui Zhi], more commonly used than
 comprehensive] Ren Shen Bai Du San
 Shen Su Yin (He Ji Ju Fang) Ren Shen, Jie Geng, Qian Hu, Fu Ling, Exterior w-c and internal damp-phlegm Zi Su Ye: warm, acrid
 [More tonifying, middle jiao & internal Gan Cao, Sheng Jiang, Zi Su Ye, Chen in weak persons Chen Pi:
-damp ingredients (cid:0) better for weak Pi, Ge Geng, Jiang Ban Xia [prepared Ge Gen: Muscle layers
+damp ingredients → better for weak Pi, Ge Geng, Jiang Ban Xia [prepared Ge Gen: Muscle layers
 patients] w/ Sheng Jiang], Mu Xiang, Da Zao Jiang Ban Xia: Better for middle jiao
 16
 Kimberly Chenoweth
@@ -3824,9 +3824,9 @@ Da Cheng Qi Tang大承气汤 (Major Order The Qi Decoction) [Very Important!] So
 ● Preparation (decoction): Add Da Huang Near End [cook too long, no purging ● Peristalsis-promoting, Promotion of volume of blood flow in intestines
 function, moves blood instead] ● Anti-inflammatory, Bacteria inhibiting
 ● Administration: taken warm; discontinue upon diarrhea induced ● RNA synthesis-promotion for hepatic cells
-Indications [Very Excess, lot of heat, blocked lower jiao (cid:0) Open up] Case Study
+Indications [Very Excess, lot of heat, blocked lower jiao → Open up] Case Study
 ● Yang Ming Fu Organ Excess [阳明腑实证]: severe constipation & flatulence, ● A 32 y-o male looks for help for his stubborn constipation with abdominal pain
-focal distention, and abdominal fullness, abdominal pain (cid:0) with pressure, and fullness secondary to a flu he caught 8 days ago. He also feels thirsty and
+focal distention, and abdominal fullness, abdominal pain → with pressure, and fullness secondary to a flu he caught 8 days ago. He also feels thirsty and
 tense & firm abdomen; dry yellow/dry black tongue coating with prickles, a hot. [Heat accumulation, yin consumed] He has not had BM for 4 days and has
 submerged excessive pulse. Tidal fever, delirious speech, profuse sweating a dull pain in hepatic area. Talking to him you smell an odor like rotten apple.
 from palms & soles. ● Dry tongue with gray-yellow coating, thickening at the back; a slippery pulse.
@@ -3836,14 +3836,14 @@ coating with prickles [heat], submerged forceful pulse. ● If pt. also present 
 ● 4 Types Abdominal Symptoms: focal distension痞, fullness满, dryness燥, ⬧ ST Heat: Huang Lian [in mouth]
 hardness实[Need to have all 4 to prescribe this formula] [Pi, Man, Zao, Shi]
 ● Diarrhea with bluegreen, stinky, turbid fluid, presenting with abdominal pain, Review & Think
-hardness and masses [Hard stool accumulate too long in lower jiao (cid:0) dried up ● What possible symptoms and signs could present if a patient suffers from
+hardness and masses [Hard stool accumulate too long in lower jiao → dried up ● What possible symptoms and signs could present if a patient suffers from
 (bullets), in spaces between bullets “nasty water/fluid” can go through] Yangming-Fu organ disorder?
 ● Heat collapse, ● Please compare the Formulas - “order the qi decoctions 承气汤” in terms of
 ● Kuang (hysterical attack) [aggressive historical type (excess heat)] their ingredients, dosages, preparations, actions, and indications.
 ⬧ [Dian: depressed type]
 ● Acute calculus diseases (cholelithiasis, urolithiasis…) ● Da Huang Nickname: “The General” Very strong, a lot of honors &
 ● Gastric dysperistalsis, Post-surgery GI Sx, Intestinal adhesive obstruction achievements, highest rank in military.
-● Acute lead colic, Acute necrotic pancreatitis [Heat & toxins block insides] ⬧ Prepare with alcohol: Jiu Da Huang [Drunken General (cid:0) can do anything]
+● Acute lead colic, Acute necrotic pancreatitis [Heat & toxins block insides] ⬧ Prepare with alcohol: Jiu Da Huang [Drunken General → can do anything]
 ● Acute renal failure due to epidemic hemorrhagic fever ⬧ Move Blood & bowel (internally)
 Rank Herb Amount Properties Channels Notes
 Chief Da Huang 12 Bitter, cold, purging Propulsive effect in purging, improve peristalsis [Don’t cook very long]
@@ -3864,12 +3864,12 @@ Xiao Cheng Qi Tang Minus mang xiao (Da Huang 12, Hou Po 6, Zhi Shi 6-9 Mild Yang
 Tiao Wei Cheng Qi Tang Minus Zhi Shi, Huo Po; Plus Gan Cao (Da Huang 12 & Mild Yangming organ Sx w/o distension Gan Cao: Tonify SP (middle jiao xu)
 Gan Cao 6-Cook Together, Mang Xiao 9-12) and fullness
 Da Huang Gan Cao Tang Minus Mang Xiao, Zhi Shi, Huo Po Unblock bowels, purge & harmonize Tonify & harmonize at same time
-(cid:0) (Da Huang 12, Gan Cao 3) ST, stop vomiting. For heat clumping in
+→ (Da Huang 12, Gan Cao 3) ST, stop vomiting. For heat clumping in
 LI & fire rising to disturb ST
 Hou Po San Wu Tang Minus Mang Xiao (Hou Po 24, Zhi Shi 12-15, Da Moves qi down & unblocks bowels. For Same ingredients as Xiao [XCQT],
 Hou Po = Chief Huang 12-Add Near End) qi stagnation causing constipation different dosage, bloating > heat
 Zeng Ye Cheng Qi Tang Minus Zhi Shi, Hou Po; Plus Xuan Shen, Mai Dong, Enriches Yin Fluids, Drains Heat. For Zeng Ye Tang: Xuan Shen, Mai Man
-Sheng Di (Xuan Shen, Mai Dong, Sheng Di Huang, Da Yangming Organ Sx With Yin Xu Dong, Sheng Di Huang (cid:0) Add fluids
+Sheng Di (Xuan Shen, Mai Dong, Sheng Di Huang, Da Yangming Organ Sx With Yin Xu Dong, Sheng Di Huang → Add fluids
 Huang [Add Near End], Mang Xiao)
 Fu Fang Da Cheng Qi Plus Lai Fu Zi, Tao Ren [moisten intestines], Chi Shao Purges interior, moves qi & blood. For
 Tang Yao [move blood] (Da Huang 15-Add Near End, Mang simple intestinal obstruction with
@@ -3903,10 +3903,10 @@ stomach and intestines cheng qi tang and da xian xiong tang
 ● Exudative pleurisy/cirrhosis
 Rank Herb Amount Properties Channels Notes
 Chief Gan Sui 1-1.5 Bitter, sweet, cold, Drives out accumulated water in the chest by flushing downward
-purging, toxic [Very toxic! (cid:0) Small dosage] (Don’t cook (cid:0) powder & put with formula)
+purging, toxic [Very toxic! → Small dosage] (Don’t cook → powder & put with formula)
 [Flush down, then Da Huang & Mang Xiao take it out]
 Heat & water accumulated in upper, middle & lower jiao (Can have chest pain)
-[Pleurisy, ascites (cid:0) Pathogenic water accumulation + constipation]
+[Pleurisy, ascites → Pathogenic water accumulation + constipation]
 Deputy Da Huang 9-12 Bitter, cold Helps chief in clearing out and draining heat through stools
 Mang Xiao 9-12 Salty, cold Helps chief in softening clumps and draining heat
 Related Formula
@@ -4342,7 +4342,7 @@ _Source field is blank / not provided in the current uploaded dataset._
 ```text
 Shen Su Yin (He Ji Ju Fang) Ren Shen, Jie Geng, Qian Hu, Fu Ling, Exterior w-c and internal damp-phlegm Zi Su Ye: warm, acrid
 [More tonifying, middle jiao & internal Gan Cao, Sheng Jiang, Zi Su Ye, Chen in weak persons Chen Pi:
-damp ingredients (cid:0) better for weak Pi, Ge Geng, Jiang Ban Xia [prepared Ge Gen: Muscle layers
+damp ingredients → better for weak Pi, Ge Geng, Jiang Ban Xia [prepared Ge Gen: Muscle layers
 patients] w/ Sheng Jiang], Mu Xiang, Da Zao Jiang Ban Xia: Better for middle jiao
 16
 Kimberly Chenoweth
@@ -4364,9 +4364,9 @@ Da Cheng Qi Tang大承气汤 (Major Order The Qi Decoction) [Very Important!] So
 ● Preparation (decoction): Add Da Huang Near End [cook too long, no purging ● Peristalsis-promoting, Promotion of volume of blood flow in intestines
 function, moves blood instead] ● Anti-inflammatory, Bacteria inhibiting
 ● Administration: taken warm; discontinue upon diarrhea induced ● RNA synthesis-promotion for hepatic cells
-Indications [Very Excess, lot of heat, blocked lower jiao (cid:0) Open up] Case Study
+Indications [Very Excess, lot of heat, blocked lower jiao → Open up] Case Study
 ● Yang Ming Fu Organ Excess [阳明腑实证]: severe constipation & flatulence, ● A 32 y-o male looks for help for his stubborn constipation with abdominal pain
-focal distention, and abdominal fullness, abdominal pain (cid:0) with pressure, and fullness secondary to a flu he caught 8 days ago. He also feels thirsty and
+focal distention, and abdominal fullness, abdominal pain → with pressure, and fullness secondary to a flu he caught 8 days ago. He also feels thirsty and
 tense & firm abdomen; dry yellow/dry black tongue coating with prickles, a hot. [Heat accumulation, yin consumed] He has not had BM for 4 days and has
 submerged excessive pulse. Tidal fever, delirious speech, profuse sweating a dull pain in hepatic area. Talking to him you smell an odor like rotten apple.
 from palms & soles. ● Dry tongue with gray-yellow coating, thickening at the back; a slippery pulse.
@@ -4376,14 +4376,14 @@ coating with prickles [heat], submerged forceful pulse. ● If pt. also present 
 ● 4 Types Abdominal Symptoms: focal distension痞, fullness满, dryness燥, ⬧ ST Heat: Huang Lian [in mouth]
 hardness实[Need to have all 4 to prescribe this formula] [Pi, Man, Zao, Shi]
 ● Diarrhea with bluegreen, stinky, turbid fluid, presenting with abdominal pain, Review & Think
-hardness and masses [Hard stool accumulate too long in lower jiao (cid:0) dried up ● What possible symptoms and signs could present if a patient suffers from
+hardness and masses [Hard stool accumulate too long in lower jiao → dried up ● What possible symptoms and signs could present if a patient suffers from
 (bullets), in spaces between bullets “nasty water/fluid” can go through] Yangming-Fu organ disorder?
 ● Heat collapse, ● Please compare the Formulas - “order the qi decoctions 承气汤” in terms of
 ● Kuang (hysterical attack) [aggressive historical type (excess heat)] their ingredients, dosages, preparations, actions, and indications.
 ⬧ [Dian: depressed type]
 ● Acute calculus diseases (cholelithiasis, urolithiasis…) ● Da Huang Nickname: “The General” Very strong, a lot of honors &
 ● Gastric dysperistalsis, Post-surgery GI Sx, Intestinal adhesive obstruction achievements, highest rank in military.
-● Acute lead colic, Acute necrotic pancreatitis [Heat & toxins block insides] ⬧ Prepare with alcohol: Jiu Da Huang [Drunken General (cid:0) can do anything]
+● Acute lead colic, Acute necrotic pancreatitis [Heat & toxins block insides] ⬧ Prepare with alcohol: Jiu Da Huang [Drunken General → can do anything]
 ● Acute renal failure due to epidemic hemorrhagic fever ⬧ Move Blood & bowel (internally)
 Rank Herb Amount Properties Channels Notes
 Chief Da Huang 12 Bitter, cold, purging Propulsive effect in purging, improve peristalsis [Don’t cook very long]
@@ -4404,12 +4404,12 @@ Xiao Cheng Qi Tang Minus mang xiao (Da Huang 12, Hou Po 6, Zhi Shi 6-9 Mild Yang
 Tiao Wei Cheng Qi Tang Minus Zhi Shi, Huo Po; Plus Gan Cao (Da Huang 12 & Mild Yangming organ Sx w/o distension Gan Cao: Tonify SP (middle jiao xu)
 Gan Cao 6-Cook Together, Mang Xiao 9-12) and fullness
 Da Huang Gan Cao Tang Minus Mang Xiao, Zhi Shi, Huo Po Unblock bowels, purge & harmonize Tonify & harmonize at same time
-(cid:0) (Da Huang 12, Gan Cao 3) ST, stop vomiting. For heat clumping in
+→ (Da Huang 12, Gan Cao 3) ST, stop vomiting. For heat clumping in
 LI & fire rising to disturb ST
 Hou Po San Wu Tang Minus Mang Xiao (Hou Po 24, Zhi Shi 12-15, Da Moves qi down & unblocks bowels. For Same ingredients as Xiao [XCQT],
 Hou Po = Chief Huang 12-Add Near End) qi stagnation causing constipation different dosage, bloating > heat
 Zeng Ye Cheng Qi Tang Minus Zhi Shi, Hou Po; Plus Xuan Shen, Mai Dong, Enriches Yin Fluids, Drains Heat. For Zeng Ye Tang: Xuan Shen, Mai Man
-Sheng Di (Xuan Shen, Mai Dong, Sheng Di Huang, Da Yangming Organ Sx With Yin Xu Dong, Sheng Di Huang (cid:0) Add fluids
+Sheng Di (Xuan Shen, Mai Dong, Sheng Di Huang, Da Yangming Organ Sx With Yin Xu Dong, Sheng Di Huang → Add fluids
 Huang [Add Near End], Mang Xiao)
 Fu Fang Da Cheng Qi Plus Lai Fu Zi, Tao Ren [moisten intestines], Chi Shao Purges interior, moves qi & blood. For
 Tang Yao [move blood] (Da Huang 15-Add Near End, Mang simple intestinal obstruction with
@@ -4443,10 +4443,10 @@ stomach and intestines cheng qi tang and da xian xiong tang
 ● Exudative pleurisy/cirrhosis
 Rank Herb Amount Properties Channels Notes
 Chief Gan Sui 1-1.5 Bitter, sweet, cold, Drives out accumulated water in the chest by flushing downward
-purging, toxic [Very toxic! (cid:0) Small dosage] (Don’t cook (cid:0) powder & put with formula)
+purging, toxic [Very toxic! → Small dosage] (Don’t cook → powder & put with formula)
 [Flush down, then Da Huang & Mang Xiao take it out]
 Heat & water accumulated in upper, middle & lower jiao (Can have chest pain)
-[Pleurisy, ascites (cid:0) Pathogenic water accumulation + constipation]
+[Pleurisy, ascites → Pathogenic water accumulation + constipation]
 Deputy Da Huang 9-12 Bitter, cold Helps chief in clearing out and draining heat through stools
 Mang Xiao 9-12 Salty, cold Helps chief in softening clumps and draining heat
 Related Formula
@@ -4464,8 +4464,8 @@ FORMULATIONS 1
 Formulas That Moisten the Intestines and Unblock the Bowels 润下
 ● Constipation due to Yin damage from excessive heat, or constitutional heat ● Treated with formulas that induce BM by lubricating the intestines, which
 leading to lack of fluids/dry up, which is called boat pause because of dry-up of contain substances of a sweet, bland, and oily natures 增水行舟.
-river 无水舟停. ● Vegans: Not enough oil (cid:0) lack of lubrication
-● “Lack of water (cid:0) Boat stopped (cid:0) Add more water, boat go again”
+river 无水舟停. ● Vegans: Not enough oil → lack of lubrication
+● “Lack of water → Boat stopped → Add more water, boat go again”
 Ma Zi Ren Wan (Hemp Seed Pill) Source: Shang Han Lun
 ● Actions: Moistens Intestines, Drains Heat, Moves Qi, Unblocks Bowels. Patent Forms
 ● Preparation: form the powdered herbs into pills with honey; or cook herbs to ● China
@@ -4474,7 +4474,7 @@ decoction in a proportionate reducing dosage. ⬧ Run Chang Wan 8 tid [润肠丸
 ● USA
 Indications ⬧ Smooth response 8-15 drops tid
 ● 脾约证 (Pi Yao Zheng) ST excess binds fluid-depleted SP [ST Excess, SP
-deficiency (cid:0) ST too strong, SP not strong enough] [Insufficient lubrication, Modern Research
+deficiency → ST too strong, SP not strong enough] [Insufficient lubrication, Modern Research
 constipation with dry, hard stool that is difficult to expel, frequent urination ● Cathartic effect
 ● T: dry, yellow coating, P: submerged, rapid/floating, choppy ● Peristalsis-promotion
 ● Xiao Cheng Qi Tang hiding in this formula

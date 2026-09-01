@@ -394,14 +394,14 @@ Applications
 ● Externally-contracted wind-cold with concurrent internal damp stagnation Think & Review
 ● Vomiting above w/ diarrhea below and chills & fever, white tongue coating ● Please compare huo xiang zheng qi san with xiang ru san (in chapter 1:xiang ru,
 [damp cold] bai bian dou, hou po) in terms of their similarities and differences.
-● Summer wind-cold ⬧ All aromatic (cid:0) summer
+● Summer wind-cold ⬧ All aromatic → summer
 ● Stomach flu ⬧ Get rid of wind cold, wind damp
 ● Acute gastroenteritis ● Please compare huo xiang zheng qi san with ping wei san.
 ● Chronic hepatitis B ⬧ Both 1st degree formulas
 ● Morning sickness ⬧
 ● Please compare huo xiang zheng qi san with
 Small formulas ● jing fang bai du san (in chapter 1: jing jie, fang feng, qiang huo, qiang hu, chai
-● Open all 3 jiaos (cid:0) cause big vent: chen pi, da fu pi, and jie geng hu, zhi ke, fu ling, jie geng, chuan xiong, gan cao).
+● Open all 3 jiaos → cause big vent: chen pi, da fu pi, and jie geng hu, zhi ke, fu ling, jie geng, chuan xiong, gan cao).
 ● Damp: Zi su ye, Bai zhi, bai zhu ⬧ Wind cold & toxins, without damp accumulation in middle jiao
 ⬧ Wintertime, catch cold, no damp, no ST symptoms
 ⬧ Toxic symptoms
@@ -435,8 +435,8 @@ Formulas That Clear Damp-heat清热祛湿
 ● Damp-heat sx develop from invasion of external damp-heat, or from damp ● Main manifestation: a yellow greasy tongue coating, a slippery (and /or rapid)
 which transforms into heat in the interior. When damp combines with heat, it pulse, a heavy sensation, fever that worsens in the afternoon
 is just like that oil mixed with dough, which makes it hard to separate & treat. ⬧ Heavy smokers, drinkers, drug users, junk food junkies
-⬧ Yin pathogen (treat damp with warm things (cid:0) make heat worse) & Yang ⬧ Hard to get rid of, Like oil mixed into dough
-pathogen (treat heat with cool things (cid:0) make damp worse) (cid:0) hard to treat ⬧ Hepatitis patients
+⬧ Yin pathogen (treat damp with warm things → make heat worse) & Yang ⬧ Hard to get rid of, Like oil mixed into dough
+pathogen (treat heat with cool things → make damp worse) → hard to treat ⬧ Hepatitis patients
 ```
 
 </details>
@@ -778,7 +778,7 @@ tangerine), some abdominal fullness & distension, thirst (with the ability to �
 take only sips), dark scanty & difficult urination; sweating from the head only; ● Dx: yang type jaundice ()
 a yellow greasy tongue coating, a slippery, rapid or deep, full pulse. ● Tx: yinchenhao tang (1/5-1/6 in dosage) + che qian cao, bai mao gen, fu ling.
 ● Allergic jaundice Cured in 4 days
-● Clear damp & dump it ● Can also use normal dose & let mom drink (cid:0) milk
+● Clear damp & dump it ● Can also use normal dose & let mom drink → milk
 ● Well designed
 Think & Review
 Applications ●
@@ -796,15 +796,15 @@ Assistant Da Huang 9 Purges heat through the bowels, moves Blood to help Lr for 
 These 3 herbs act synergistically to drain damp-heat & encourage the fading of
 jaundice
 formulas Ingredients Indications
-Yin Chen Si Ni Tang茵陈四逆汤 Yin chen hao, pao jiang, fu zi, gan cao Yin-type 阴黄 or damp-cold jaundice Warm KD & SP yang (cid:0) restores
-with K yang xu functions (cid:0) transform damp
+Yin Chen Si Ni Tang茵陈四逆汤 Yin chen hao, pao jiang, fu zi, gan cao Yin-type 阴黄 or damp-cold jaundice Warm KD & SP yang → restores
+with K yang xu functions → transform damp
 (mild yin type)
-Zhi Zi Bai Pi Tang Zhi zi Fever & jaundice as sequela of Milder (cid:0) treats mild yang type
+Zhi Zi Bai Pi Tang Zhi zi Fever & jaundice as sequela of Milder → treats mild yang type
 栀子柏皮汤 Huang bai cold-induced disorder in cases heat > jaundice
 Zhi gan cao damp
-Yin Chen Zhu Fu Tang茵陈术附汤 Yin chen hao, bai zhu, gan jiang, fu zi, Yin-type 阴黄 jaundice with more Sp Severe yin type (cid:0) stronger than Yin
+Yin Chen Zhu Fu Tang茵陈术附汤 Yin chen hao, bai zhu, gan jiang, fu zi, Yin-type 阴黄 jaundice with more Sp Severe yin type → stronger than Yin
 rou gui, zhi gan cao yang xu (some K yang xu as well) Chen Si Ni Tang
-[Si Ni Tang: Gan jiang, raw fu zi, etc (cid:0)
+[Si Ni Tang: Gan jiang, raw fu zi, etc →
 rescue yang] Cooked fu zi: transform
 damp & drive it away
 130
@@ -1191,7 +1191,7 @@ Applications there is no constipation present?
 ● Lower jiao damp-heat with acute heat Lin ⬧ Drain the heat down & dump heat through stool & urination [2 exits better
 ● Heart meridian heat, Acute UTI, Glomerulonephritis than one],
 ● Cystitis, Urethritis, Prostatitis, Stomatitis, Urinary Calculi ⬧ Da Huang: Conducts heat down & moves blood (Purging & moving). Blood
-● Acute Excess beyond meridians & vessels (cid:0) blood stasis forms. Bleeding & blood stasis go
+● Acute Excess beyond meridians & vessels → blood stasis forms. Bleeding & blood stasis go
 together. Treat possible blood stasis. [2 reasons use da huang]
 ● What are the differences between ba zheng san and dao chi san, even though
 these 2 formulas all can be used to treat Lin sx?
@@ -1207,10 +1207,10 @@ Qu mai 9
 Bian xu 9
 Assistant Zhi zi 9 Drains heat from 3 jiaos through urine
 Zhi da huang 9 Drains heat through stool
-Deng xin cao 9 Sweet, slightly cold, HT, SI, LU [rush stem pith (cid:0) ancient wick] Very light, cook not long, Guides heat down
+Deng xin cao 9 Sweet, slightly cold, HT, SI, LU [rush stem pith → ancient wick] Very light, cook not long, Guides heat down
 bland Guide effect of whole formula into urethra & dump damp heat away from there
 Envoy Gan cao (shao) 9 Harmonizes formula, relieves abdominal pain
-Ba zheng san Dao chi san [Designed for Kids (cid:0) Milder]
+Ba zheng san Dao chi san [Designed for Kids → Milder]
 Co. indication Hot painful urinary dysfunction
 Dif. Focuses Lower jiao sx – Urinary retention with lower Upper jiao sx – Irritability, mouth sores
 abdominal distension and pain
@@ -2645,7 +2645,7 @@ Er Miao San [二妙散] (Two-Marvel Powder) Source: Dan Xi Xin Fa
 ● Actions: clears heat, dries dampness Patent
 ● Preparation & administration: fry equal amounts of both herbs, grind into ●
 powder, take 3-6g twice a day with ginger juice. Or as decoction
-● Both treat damp heat (cid:0) very balanced Modern Research
+● Both treat damp heat → very balanced Modern Research
 ●
 ● Indications: Damp-heat lodged in Lower Jiao – scanty, yellow urine, or a thick
 yellow & foul-smelling vaginal discharge; a yellow greasy tongue coating Case Study

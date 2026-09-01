@@ -462,7 +462,7 @@ greasy white tongue coating, a slippery pulse
 of frothy saliva, dizziness, SOB, coughing, possible expectoration of copious
 white sputum; a thick white or thick greasy white tongue coating, a slippery
 pulse
-⬧ too much phlegm & mucus blocked in middle jiao (cid:0) dizziness, SOB
+⬧ too much phlegm & mucus blocked in middle jiao → dizziness, SOB
 Applications
 ● Taiyang water buildup (xu shui 蓄水)
 ● Sp xu with damp & water accumulation
@@ -887,7 +887,7 @@ Applications ● A slightly rapid & thready pulse
 ● Infantile diarrhea from damp-heat injury to Yin level with reduced urination, ●
 dry skin, sunken eyes, fever which worsens at night, dark-red, dry tongue
 ⬧ Young kids: yin fluids easily damaged because they don’t have much reserve Think & Review
-(cid:0) if urination is significantly reduced (cid:0) could have KD/renal damage (cid:0) need ●
+→ if urination is significantly reduced → could have KD/renal damage → need ●
 to immediately protect yin
 ● Chronic nephritis
 ● Infantile nephritis
@@ -906,7 +906,7 @@ water pathways that involve K [Specialty]
 Envoy Hua shi 9 Clears heat, promotes urination, relieves Lin, dissolves the water-heat clumping
 E jiao 9 Nourishes Yin, moistens dry w/o causing retention of water-heat, stops bleeding
 Special pair [Hua Shi & E Jiao]: When they get tother: nourish yin, clear heat to
-promote urination & protect yin & same time (cid:0) urinate & get rid of damp heat
+promote urination & protect yin & same time → urinate & get rid of damp heat
 without hurting good yin fluids
 Modifications
 + zhi zi, che qian zi Hot Lin
@@ -931,7 +931,7 @@ Pulse Thin, rapid Floating, rapid
 Pathogenesis Pathogenic factor enters yangming or shaoyin External w-c transfers from taiyang meridian to
 meridian & changes into heat that injures yin, taiyang organ, which causes cold & water to
 water-heat clump in Lower jiao [Clumping: Little nut, accumulate in Lower jiao
-hard to get rid of (cid:0) break clump]
+hard to get rid of → break clump]
 135
 Kimberly Chenoweth
 
@@ -1275,7 +1275,7 @@ as a draft with remaining herbs. Or as decoction Modern Research
 a heavy sensation in the body, superficial edema, urinary difficulty; a pale ●
 tongue with white coating, a floating weak or soggy thin pulse.
 ● Feng shui & pi shui are similar (damp accumulation on skin)
-⬧ Pi Shui: SP xu (cid:0) cause water in skin
+⬧ Pi Shui: SP xu → cause water in skin
 ⬧ Feng Shui: exterior wind damp condition
 Applications
 ● Sp & protective qi xu causing wind edema or wind-damp
@@ -1289,9 +1289,9 @@ Applications
 Rank Herb Amount Properties Channels Notes
 Chief Huang qi 15 Stabilizes & strengthens protective qi, promotes urination, reduces swelling
 Fang ji [Han] 12 With huang qi, expels wind-damp, promotes urination, relieves pain
-Contains aristolchic acid (cid:0) Safe when used in small doses for limited time
+Contains aristolchic acid → Safe when used in small doses for limited time
 Often used for patients with Bi syndrome
-2 kinds: Han Fang Ji (cid:0) promote urination, treat edema
+2 kinds: Han Fang Ji → promote urination, treat edema
 Guang/Mu: Mostly focused on Bi syndrome
 Deputy Bai zhu 9 Stengthens Sp, drains damp, promotes urination
 Assistant Zhi gan cao 6 Tonifies Middle to generate qi
@@ -1735,7 +1735,7 @@ Zhen Wu Tang [真武汤] (True Warrior Decoction) Source: Shang Han Lun
 ● Actions: warms Yang, promotes urination. Patent
 ● Preparation & administration: decoction ●
 ●
-● KD Yang Xu: Cold water upward invading heart (cid:0) ht doesn’t work well Modern Research
+● KD Yang Xu: Cold water upward invading heart → ht doesn’t work well Modern Research
 ●
 ● Indications: KD & SP Yang xu causing water accumulation [difficult urination,
 aching & heaviness in the extremities, generalized edema, dislike of cold, Case Study
@@ -1745,8 +1745,8 @@ head heaviness] (Urinary difficulty, lower jiao edema) palpitations, stifling se
 ● P: deep, thin, weak pulse. unable to lie flat at sleep. MD’s diagnosis: heart failure from pulmonary heart
 ● Overuse of diaphoretics in Taiyang syndromes [fever, abnormal sweating, disease.
 dizziness, palpitations in the epigastrium, trembling, shivering, unsteady ● A dusky tongue with white moist coating; a deep rapid & thin pulse
-appearance] [Too much sweating (cid:0) yin damage (cid:0) damages yang (cid:0) trembling, ● Dx:
-twitching (clear yang can’t reach top (cid:0) severe symptoms)] ● Tx:
+appearance] [Too much sweating → yin damage → damages yang → trembling, ● Dx:
+twitching (clear yang can’t reach top → severe symptoms)] ● Tx:
 ● T: pale tongue with moist white coating ●
 ● P: thin deep forceless pulse
 ⬧ Think & Review
@@ -1762,12 +1762,12 @@ Chief Fu Zi 9 Very acrid very hot to warm K yang, restore collapsed yang
 Deputy Bai Zhu 6 Tonifies Sp, dries damp
 With fu ling, sheng jiang to boost Earth to control water
 Bai Zhu & Fu Zi combo: tonify SP yang by tonifying KD yang (below waist edema)
-5E: Bai Zhu (cid:0) strengthen SP (earth) to control water (like dam) [NCCAOM}
+5E: Bai Zhu → strengthen SP (earth) to control water (like dam) [NCCAOM}
 Fu Ling 9 Helps bai zhu tonify Sp, drains damp
 Assistant Sheng Jiang 9 Warms Middle jiao, dispels cold & water
 Bai Shao 9 [very special] Relieves abdominal pain, prevents dry hot herbs from injuring yin
-Sour: Nourish & stabilize yin (cid:0) Soften spasmatic muscles & tendons
-Coldness in lower jiao (cid:0) cold pain (cid:0) bai shao deal with that
+Sour: Nourish & stabilize yin → Soften spasmatic muscles & tendons
+Coldness in lower jiao → cold pain → bai shao deal with that
 Modifications
 + gan jiang, xi xin, wu wei zi Wheezing or coughing with copious + wu zhu yu, ban xia With vomiting
 watery sputum
@@ -2512,10 +2512,10 @@ to cold & attraction to warmth, palpitations, SOB] May also be paresthesias show
 (weird/abnormal/unusual sensations) or numbness. LB a few times during last 20 years, and each time acupuncture helped in
 ● T: pale tongue with a white coating relieving the pain.
 ● P: thin weak slow pulse. ● A pale dusky tongue with white greasy coating, a deep slow pulse, weak at Chi
-● Long time chronic Bi syndrome (cid:0) arthritis many years, deformed joints, sections.
+● Long time chronic Bi syndrome → arthritis many years, deformed joints, sections.
 simultaneous Qi & Blood xu, chronic deficiency & excess mixed together ● Dx:
-● Age 40: Yang Qi has declined to half (cid:0) House doesn’t have heating system ● Tx:
-⬧ Protect yang, don’t waste yin (cid:0) last longer
+● Age 40: Yang Qi has declined to half → House doesn’t have heating system ● Tx:
+⬧ Protect yang, don’t waste yin → last longer
 ⬧ Age slowly, don’t get sick until old, die quickly Think & Review
 ● Strengthen KD Yang Qi to stabilize lower jiao ● Please summarize the symptoms that indicate the use of du huo ji sheng tang.
 ● Lower body, deficiency, chronic ● Please make comparison of qiang huo sheng shi tang & du huo ji sheng tang
@@ -3189,7 +3189,7 @@ Ma Huang Tang麻黄汤 (Ephedra Decoction) Source: Shang Han Lun
 ● Indications: ● Antitussive
 ⬧ Taiyang shang han/ wind cold exterior shi. Fever & chills w/o sweating ● Antiasthmatic
 ⬧ Floating, tight pulse. ● Expectorant
-▪ [Exterior Excess] Exterior condition but pores closed (cid:0) Can’t get rid of ● Antibacterial, antiviral
+▪ [Exterior Excess] Exterior condition but pores closed → Can’t get rid of ● Antibacterial, antiviral
 pathogen. Not really an excess. Means that pores are closed
 ⬧ Cause: Wind-cold exterior shi 风寒表实 – fever and chills (chills Case study
 predominant) without sweating, headache, generalized body aches [Wei ● Mr. S., male, 19 years old, a college student. Mr. S. has been suffering from
@@ -3224,7 +3224,7 @@ Ma Huang Jia Zhu Tang ● Ma Huang Bai Zhu 12 Body aches due to damp cold
 ● Xing Ren
 ● Zhi Gan Cao
 ● Bai Zhu 12
-Da Qing Long Tang [Very ● Ma Huang [18] ● Ma Huang (cid:0) 18 Exterior cold w/interior heat.
+Da Qing Long Tang [Very ● Ma Huang [18] ● Ma Huang → 18 Exterior cold w/interior heat.
 Important formula for severe ● Gui Zhi ● Plus Shi Gao Severe fever & chills w/o sweating
 wind cold with internal heat] ● Xing Ren ● Sheng Jiang, Da Acute floating edema
 ● Zhi Gan Cao Zao Internal Heat (constitutional) [Ex: heavy smoker, LU toxins]
@@ -3288,7 +3288,7 @@ Gui Zhi Jia Ge Gen Tang Plus ge gen ● Taiyang sx w/stiff neck and upper back, 
 Gui Zhi Jia Hou Po Xing Zi Tang Plus hou po, xing ren [5+2=7 ingredients] ● Wheezing plus gui zhi tang sx
 Gui Zhi Fu Zi Tang Plus fu zi ● Bi sx in the meridians due to wind cold
 Gui Zhi Jia Shao Yao Tang Double shao yao [18] ● Tai yin from tai yang due to incorrect purgatives at tai yang
-● Because of incorrect treatment of Tai Yang (cid:0) get into SP
+● Because of incorrect treatment of Tai Yang → get into SP
 Gui Zhi Qu Shao Yao Tang Minus shao yao ● Irregular pulse, chest fullness due to incorrect purgatives at Tai yang
 ● Qu = get rid of
 Modifications [FYI]
@@ -3307,7 +3307,7 @@ Kimberly Chenoweth
 FORMULATIONS 1
 Xiao Qing Long Tang (Minor Bluegreen Dragon Decoction) Source: Shang Han Lun
 ● Actions: Releases Exterior, Warms Lung, Transforms Fluids, Arrests Wheezing & Modern research:
-Cough By Directing Rebellious Qi (cid:0). ● Antiasthmatic (anti-acetylcholine)
+Cough By Directing Rebellious Qi →. ● Antiasthmatic (anti-acetylcholine)
 ● Root in middle jiao ● Antiallergic (antihistaminic)
 ● Preparation: < 20’ ● Circulation-promoting
 ● Administration: taken hot
@@ -3333,21 +3333,21 @@ Applications: Exterior wind cold with interior congested fluids. ● What are th
 Rank Herb Amount Properties Channels Notes
 Chief Ma Huang 9 Warm, acrid Release exterior, move damp by facilitating lung qi
 Gui Zhi 9 Warm, acrid Mutual accentuation (xiang xu) with ma huang
-Regulate Ying & Wei (cid:0) Back to Normal
+Regulate Ying & Wei → Back to Normal
 Deputy Gan Jiang 3 Warm, acrid Deputy pair: Get rid of phlegm, mucus, dampness
 With xi xin, warm interior, transform damp, release w-c
 [dried, domestic, focus on middle jiao]
 Xi Xin 3 Very warm, acrid With gan jiang, help release w-c, also stop coughing
-[Wild ginger (cid:0) Very warm, very strong, focused on upper jiao]
+[Wild ginger → Very warm, very strong, focused on upper jiao]
 Assistant Wu Wei Zi 6 Sour, astringent Prevent leakage of lung qi due to warm acrid herbs
-[5 flavor seeds, but sour is major flavor (cid:0) astringent]
+[5 flavor seeds, but sour is major flavor → astringent]
 treat possible side effects, prevent leakage of LU Qi from the strong herbs]
 Bai Shao 9 Sour, nourishing Prevent too dry warm by nourishing blood and Yin
-Regulate Ying & Wei (cid:0) Back to Normal
+Regulate Ying & Wei → Back to Normal
 Ban Xia 9 Dry warm Dry damp, harmonize ST by conducting Qi downward
 Help Xi Xin & Gan Jiang to treat damp [focused on middle jiao]
 Envoy Zhi Gan Cao 6 Sweet, warm Augment qi, harmonize all the herbs
-Too much spicy stuff make middle jiao upset (cid:0) add sweet [yin to protect middle
+Too much spicy stuff make middle jiao upset → add sweet [yin to protect middle
 jiao]
 Modifications
 Ma huang and gui zhi up; Sheng jiang replaces gan jiang Stronger in dispersing w-c Severe chills
@@ -3820,7 +3820,7 @@ Gui Zhi Jia Ge Gen Tang Plus ge gen ● Taiyang sx w/stiff neck and upper back, 
 Gui Zhi Jia Hou Po Xing Zi Tang Plus hou po, xing ren [5+2=7 ingredients] ● Wheezing plus gui zhi tang sx
 Gui Zhi Fu Zi Tang Plus fu zi ● Bi sx in the meridians due to wind cold
 Gui Zhi Jia Shao Yao Tang Double shao yao [18] ● Tai yin from tai yang due to incorrect purgatives at tai yang
-● Because of incorrect treatment of Tai Yang (cid:0) get into SP
+● Because of incorrect treatment of Tai Yang → get into SP
 Gui Zhi Qu Shao Yao Tang Minus shao yao ● Irregular pulse, chest fullness due to incorrect purgatives at Tai yang
 ● Qu = get rid of
 Modifications [FYI]
@@ -3839,7 +3839,7 @@ Kimberly Chenoweth
 FORMULATIONS 1
 Xiao Qing Long Tang (Minor Bluegreen Dragon Decoction) Source: Shang Han Lun
 ● Actions: Releases Exterior, Warms Lung, Transforms Fluids, Arrests Wheezing & Modern research:
-Cough By Directing Rebellious Qi (cid:0). ● Antiasthmatic (anti-acetylcholine)
+Cough By Directing Rebellious Qi →. ● Antiasthmatic (anti-acetylcholine)
 ● Root in middle jiao ● Antiallergic (antihistaminic)
 ● Preparation: < 20’ ● Circulation-promoting
 ● Administration: taken hot
@@ -3865,21 +3865,21 @@ Applications: Exterior wind cold with interior congested fluids. ● What are th
 Rank Herb Amount Properties Channels Notes
 Chief Ma Huang 9 Warm, acrid Release exterior, move damp by facilitating lung qi
 Gui Zhi 9 Warm, acrid Mutual accentuation (xiang xu) with ma huang
-Regulate Ying & Wei (cid:0) Back to Normal
+Regulate Ying & Wei → Back to Normal
 Deputy Gan Jiang 3 Warm, acrid Deputy pair: Get rid of phlegm, mucus, dampness
 With xi xin, warm interior, transform damp, release w-c
 [dried, domestic, focus on middle jiao]
 Xi Xin 3 Very warm, acrid With gan jiang, help release w-c, also stop coughing
-[Wild ginger (cid:0) Very warm, very strong, focused on upper jiao]
+[Wild ginger → Very warm, very strong, focused on upper jiao]
 Assistant Wu Wei Zi 6 Sour, astringent Prevent leakage of lung qi due to warm acrid herbs
-[5 flavor seeds, but sour is major flavor (cid:0) astringent]
+[5 flavor seeds, but sour is major flavor → astringent]
 treat possible side effects, prevent leakage of LU Qi from the strong herbs]
 Bai Shao 9 Sour, nourishing Prevent too dry warm by nourishing blood and Yin
-Regulate Ying & Wei (cid:0) Back to Normal
+Regulate Ying & Wei → Back to Normal
 Ban Xia 9 Dry warm Dry damp, harmonize ST by conducting Qi downward
 Help Xi Xin & Gan Jiang to treat damp [focused on middle jiao]
 Envoy Zhi Gan Cao 6 Sweet, warm Augment qi, harmonize all the herbs
-Too much spicy stuff make middle jiao upset (cid:0) add sweet [yin to protect middle
+Too much spicy stuff make middle jiao upset → add sweet [yin to protect middle
 jiao]
 Modifications
 Ma huang and gui zhi up; Sheng jiang replaces gan jiang Stronger in dispersing w-c Severe chills
@@ -4269,7 +4269,7 @@ _Source field is blank / not provided in the current uploaded dataset._
 ```text
 Xiao Qing Long Tang (Minor Bluegreen Dragon Decoction) Source: Shang Han Lun
 ● Actions: Releases Exterior, Warms Lung, Transforms Fluids, Arrests Wheezing & Modern research:
-Cough By Directing Rebellious Qi (cid:0). ● Antiasthmatic (anti-acetylcholine)
+Cough By Directing Rebellious Qi →. ● Antiasthmatic (anti-acetylcholine)
 ● Root in middle jiao ● Antiallergic (antihistaminic)
 ● Preparation: < 20’ ● Circulation-promoting
 ● Administration: taken hot
@@ -4295,21 +4295,21 @@ Applications: Exterior wind cold with interior congested fluids. ● What are th
 Rank Herb Amount Properties Channels Notes
 Chief Ma Huang 9 Warm, acrid Release exterior, move damp by facilitating lung qi
 Gui Zhi 9 Warm, acrid Mutual accentuation (xiang xu) with ma huang
-Regulate Ying & Wei (cid:0) Back to Normal
+Regulate Ying & Wei → Back to Normal
 Deputy Gan Jiang 3 Warm, acrid Deputy pair: Get rid of phlegm, mucus, dampness
 With xi xin, warm interior, transform damp, release w-c
 [dried, domestic, focus on middle jiao]
 Xi Xin 3 Very warm, acrid With gan jiang, help release w-c, also stop coughing
-[Wild ginger (cid:0) Very warm, very strong, focused on upper jiao]
+[Wild ginger → Very warm, very strong, focused on upper jiao]
 Assistant Wu Wei Zi 6 Sour, astringent Prevent leakage of lung qi due to warm acrid herbs
-[5 flavor seeds, but sour is major flavor (cid:0) astringent]
+[5 flavor seeds, but sour is major flavor → astringent]
 treat possible side effects, prevent leakage of LU Qi from the strong herbs]
 Bai Shao 9 Sour, nourishing Prevent too dry warm by nourishing blood and Yin
-Regulate Ying & Wei (cid:0) Back to Normal
+Regulate Ying & Wei → Back to Normal
 Ban Xia 9 Dry warm Dry damp, harmonize ST by conducting Qi downward
 Help Xi Xin & Gan Jiang to treat damp [focused on middle jiao]
 Envoy Zhi Gan Cao 6 Sweet, warm Augment qi, harmonize all the herbs
-Too much spicy stuff make middle jiao upset (cid:0) add sweet [yin to protect middle
+Too much spicy stuff make middle jiao upset → add sweet [yin to protect middle
 jiao]
 Modifications
 Ma huang and gui zhi up; Sheng jiang replaces gan jiang Stronger in dispersing w-c Severe chills
@@ -4848,7 +4848,7 @@ talking.
 Applications: ● Dx: Internal Damp Heat, External Wind Cold Damp [common in Seattle]
 ● Externally-contracted wind-cold-dampness with concurrent internal ⬧ Wind Cold Damp is going deeper
 accumulation of heat characterized by fever and chills (more chill) without ⬧ Smoking: Internal, hidden phlegm, triggered by wind cold damp
-sweating, HA, and stiff neck, generalized aches and pain. [New thing is the ● Tai Yang (cid:0) Shao Yang
+sweating, HA, and stiff neck, generalized aches and pain. [New thing is the ● Tai Yang → Shao Yang
 pain] ● Tx: Release Wind cold Damp, transform damp in interior
 ● Headaches: w-c-d type/w-d type ● Add a little Huang Lian would be helpful
 ● Acute urticaria: w-c-d type/w-h-d type
@@ -4861,14 +4861,14 @@ Disperses Wind Cold Damp
 Deputy Fang Feng 6 Acrid, sweet, warm Helps chief in dispersing w-c-d, alleviating pain
 Very good for Wind Cold [sweet: good for wind, won’t damage anything (Qi, yin),
 very nourishing]
-Cang Zhu 6 Acrid, bitter, warm, Helps chief in dispersing and eliminating damp [aromatic (cid:0) get rid of damp]
+Cang Zhu 6 Acrid, bitter, warm, Helps chief in dispersing and eliminating damp [aromatic → get rid of damp]
 dry Very Dry
 Assistant Xi Xin 2 Acrid, very warm Assists chief, deputies [warm meridians]
-Chuan Xiong 3 Acrid, warm LV, GB Assists chief, deputies [move blood, aromatic (cid:0) Disperse wind cold]
+Chuan Xiong 3 Acrid, warm LV, GB Assists chief, deputies [move blood, aromatic → Disperse wind cold]
 Really good for pain in LV, GB meridians [especially LV/GB headaches]
 Bai Zhi 3 Acrid, warm Assists chief, deputies [release wind cold damp, front headaches (Yang Ming)]
 Huang Qin 3 Bitter, cold Clear internal heat (qi) [Damp Heat in upper jiao, especially in LU]
-Sheng Di Huang 3 Bitter, sweet, cold Clear internal heat (Blood) [Nourish yin, clear blood heat (cid:0) internal heat]
+Sheng Di Huang 3 Bitter, sweet, cold Clear internal heat (Blood) [Nourish yin, clear blood heat → internal heat]
 Envoy Gan Cao 3 envoy Harmonizes all herbs
 Plus shi gao, zhi mu Stronger heat-clearing effect Pronounced internal heat
 Plus huo xiang, ban xia, chen pi Minus sheng di Stronger damp-eliminating effect Pronounced damp
@@ -4914,7 +4914,7 @@ wind-cold ●
 Rank Herb Amount Properties Channels Notes
 Chief Zi Su Ye 12 Acrid, aromatic, LU, SP Releases exterior, moves qi [More Upper & Middle Jiao]
 warm;
-Deputy Xiang Fu 12 Acrid, bitter, warm LV, SJ Moves & disperses stagnant qi [Strongest Qi Mover (cid:0) LV Qi]
+Deputy Xiang Fu 12 Acrid, bitter, warm LV, SJ Moves & disperses stagnant qi [Strongest Qi Mover → LV Qi]
 Assistant Chen Pi 6 Acrid, bitter, aromatic, LU, SP, ST Assists chief & deputy in moving qi [More focused on middle jiao]
 warm
 Envoy Zhi Gan Cao 3 Harmonize, All 12 Prevents qi-moving herbs from depleting qi
@@ -4955,7 +4955,7 @@ Case Study
 Applications: damp-cold contracted during the summertime ● A 17 y-o female feels heavy and cold with abdominal distension and tight chest
 ● Acute gastroenteritits after she drank a liter of ice tea and a large cone of ice cream upon her
 ● Hypokalemia (low blood potassium caused fatigue, weakness, poor appetite, completion of cross country tournament on a hot summer day. [Ate too much
-abdominal distension, thirst) coldness (cid:0) Frozen digestion (cid:0) feel discomfort inside (cold = big burden for
+abdominal distension, thirst) coldness → Frozen digestion → feel discomfort inside (cold = big burden for
 ● Infantile summer unexplained fever [Damp will cause low grade fever, SP/ST)]
 especially in afternoon] ● She appears red face with cold skin, and coarse breathing
 ⬧ If mother is still nursing, have mother take herbs, otherwise, make formula ● A thin white tongue coating;
@@ -4987,7 +4987,7 @@ New formula Based on xiang ru san Indications
 Xin Jia Xiang Ru Yin (Switch To Cold In Replaces Bai Bian Dou With Xian Bian Summer damp-heat: fever, chills w/o
 Formula Nature) Dou Hua [Xian = Fresh, Hua = Flower sweating; thirst, flushed face; floating
 (Wen Bing Tiao Bian) (Aromatic)] rapid pulse [ongoing inflammation
-Plus Jin Yin Hua, Lian Qiao inside (cid:0) Clear heat]
+Plus Jin Yin Hua, Lian Qiao inside → Clear heat]
 11
 Kimberly Chenoweth
 

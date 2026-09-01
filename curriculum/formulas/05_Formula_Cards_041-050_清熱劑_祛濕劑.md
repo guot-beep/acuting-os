@@ -1687,12 +1687,12 @@ Applications similar sx. [Big head disease]
 ● Acute oral infection ● Which pairs of herbs in Pu Ji Xiao Du Yin are working on descending and
 ● Acute viral myocarditis ascending to vent the heat toxin?
 ● Erysipelas
-● Flat wart ● Huang Qi & Huang Lian (cid:0) Descending
-● Cough from throat disorders ● Sheng Ma, Chai Hu (cid:0) Ascending
+● Flat wart ● Huang Qi & Huang Lian → Descending
+● Cough from throat disorders ● Sheng Ma, Chai Hu → Ascending
 ●
 Rank Herb Amount Properties Channels Notes
 Chief Huang Qin 15 Bitter,cold Clear and drain toxic heat from upper jiao
-(Jiu Chao) Jiu Chao: Stir-fried with alcohol (cid:0) Stronger dispersing heat function
+(Jiu Chao) Jiu Chao: Stir-fried with alcohol → Stronger dispersing heat function
 Huang Lian 15 Bitter,cold Clear and drain toxic heat from upper jiao
 (Jiu Chao)
 Deputy Niu Bang Zi 3 Acrid, cool Disperse & dissipate, Clear wind-heat from the head, face, muscle and skin
@@ -3118,7 +3118,7 @@ Ping Wei San [平胃散] (Calm The Stomach Powder) Source: Tai Ping Hui Min He J
 zao, take as a draft in 6-9 doses on an empty St. Also as decoction with dosage
 in parentheses Modern Research
 ●
-● Indications: Damp-cold stagnating in SP & ST [Middle jiao (cid:0) Aromatic (cid:0)
+● Indications: Damp-cold stagnating in SP & ST [Middle jiao → Aromatic →
 transform, dry, vent damp] distention & fullness in the epigastrium & Case Study
 abdomen, loss of taste & appetite, a heavy sensation in the limbs, loose stool ●
 or diarrhea, easy-fatigued, increased desire to sleep, nausea & vomiting,
@@ -3160,7 +3160,7 @@ vomiting, diarrhea, abdominal
 distension & fullness
 Ping wei san Li zhong wan
 Pathogenesis Dysfunction of transformation & transportation in Middle Jiao
-Indications Damp stagnation in Middle Jiao [Aromatic (cid:0) treat Middle Jiao xu with cold
+Indications Damp stagnation in Middle Jiao [Aromatic → treat Middle Jiao xu with cold
 damp]
 Co. sx Poor appetite, abdominal distension, indigestion, nausea, vomiting, loose stool
 Dif. sx Heaviness of limbs; flabby tongue w/ thick greasy co, Abd. Pain better w/ warmth & pressure; pale wet

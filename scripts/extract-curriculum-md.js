@@ -197,6 +197,12 @@ function qualityOf(text) {
        同一份文字的位元組長度可以差一倍以上 —— 用原始長度比,會把
        「同樣內容、少了排版填充」誤判成內容縮水,擋掉正確的抽取。 */
     dense: body.replace(/\s+/g, "").length,
+    /* (cid:N):pdftotext 對不到字形時,把 CID 編號當文字印出來。2026-09-01 全庫
+       有 1164 處,全是同一個 (cid:0)，也就是箭頭 →,已還原。
+       要單獨列一項是因為上面三項都擋不住它:重抽回 (cid:0) 時中文沒變少、
+       壞字元沒變多,而 "(cid:0)" 比 "→" 還長,連內容量都不算縮水。
+       壞掉的輸出不一定比較短。 */
+    cid: (body.match(/\(cid:\d+\)/g) || []).length,
   };
 }
 
@@ -210,6 +216,7 @@ function writeIfNotWorse(out, body, src) {
   if (b.cjk < a.cjk) regressions.push(`中文字 ${a.cjk} → ${b.cjk}`);
   if (b.bad > a.bad) regressions.push(`U+FFFD ${a.bad} → ${b.bad}`);
   if (b.dense < a.dense * 0.85) regressions.push(`本文內容量 ${a.dense} → ${b.dense}（去空白後少於 85%）`);
+  if (b.cid > a.cid) regressions.push(`未對映字形 (cid:N) ${a.cid} → ${b.cid}`);
   if (regressions.length) return { ok: false, note: regressions.join("；") };
 
   fs.writeFileSync(out, next, "utf8");
