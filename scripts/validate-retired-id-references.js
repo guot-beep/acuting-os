@@ -15,6 +15,26 @@
  * merely mentions an id (deprecated_note_zh and friends) is a longer string
  * and never matches exactly, so documentation stays legal.
  *
+ * ---- 兩種退役,不是一種(2026-08-31)------------------------------------
+ * 這支原本的前提是「deprecation 就是一次重導」—— 對 D16/D21 那四筆成立,
+ * 它們都是重複匯入,每一筆都有正名可以改指。青木香撤下(Ting 2026-08-31)
+ * 打破了這個前提:馬兜鈴酸,中國藥典 2005 年起取消收載,**沒有替代品**;
+ * 而紫雪丹的組成確實含它。要求「改指到正名」等於逼人竄改古方。
+ *
+ * 於是退役分兩類,由退役記錄自己宣告 `deprecation_kind`:
+ *   "redirect"(預設,未宣告時)  有正名。任何引用都是缺陷,必須改指。
+ *   "withdrawn_no_successor"    撤下且無替代。引用**只在一個地方**合法:
+ *                               data/herbs/formulas.json 的
+ *                               records[].composition[].herb_id ——
+ *                               古方含哪幾味是歷史事實,不是臨床建議。
+ *
+ * 白名單刻意只有這一條路徑。herb_pairs、related_herbs、病症卡的治療區塊…
+ * 那些是「現在可以用」的推薦,指向一味撤下的藥仍然是缺陷。放寬成整個檔案
+ * 或整個 kind,這支就不再守得住任何東西。
+ *
+ * 撤下之後真正把藥擋在病歷之外的,是 app.js 的 pickerLive()
+ * (`review_status !== "deprecated"`),不是這支;這支只保證引用不擴散。
+ *
  * Layers that legitimately keep history are skipped entirely:
  *   data/audits/**           dated snapshots — they SHOULD show the past
  *   data/generated/**        rebuilt from canon; fixed by rebuilding, not editing
@@ -53,6 +73,7 @@ const files = walk(path.join(ROOT, "data"), []);
 
 // ---- pass 1: collect retired ids (any record with review_status "deprecated")
 const retired = new Map(); // id -> file it is declared in
+const retiredKind = new Map(); // id -> "redirect" | "withdrawn_no_successor"
 for (const abs of files) {
   let doc;
   try {
@@ -66,13 +87,26 @@ for (const abs of files) {
     if (!node || typeof node !== "object") return;
     if (typeof node.id === "string" && node.review_status === "deprecated") {
       retired.set(node.id, rel);
+      retiredKind.set(node.id, node.deprecation_kind === "withdrawn_no_successor"
+        ? "withdrawn_no_successor" : "redirect");
     }
     for (const v of Object.values(node)) scan(v);
   })(doc);
 }
 
+/* 唯一的白名單:古方組成裡的一味撤下藥。路徑寫死成
+ * data/herbs/formulas.json 的 records[N].composition[M].herb_id ——
+ * 不是「這個檔案隨便哪裡」,也不是「這個 kind 到處都行」。
+ * 只有 withdrawn_no_successor 適用;redirect 類仍然一律是缺陷。 */
+const COMPOSITION_REF = /^records\[\d+\]\.composition\[\d+\]\.herb_id$/;
+const historicalCompositionRef = (rel, trail, id) =>
+  retiredKind.get(id) === "withdrawn_no_successor"
+  && rel === "data/herbs/formulas.json"
+  && COMPOSITION_REF.test(trail);
+
 // ---- pass 2: find exact-string references outside the retired record itself
 const violations = [];
+const allowed = [];
 for (const abs of files) {
   let doc;
   try {
@@ -94,6 +128,10 @@ for (const abs of files) {
       return;
     }
     if (typeof node === "string" && retired.has(node)) {
+      if (historicalCompositionRef(rel, trail, node)) {
+        allowed.push({ file: rel, path: trail, id: node });
+        return;
+      }
       violations.push({ file: rel, path: trail, id: node, declaredIn: retired.get(node) });
     }
   })(doc, "");
@@ -109,8 +147,19 @@ if (process.argv.includes("--json")) {
 }
 
 console.log(`retired (deprecated) canonical ids: ${retired.size}`);
-for (const [id, file] of [...retired.entries()].sort()) console.log(`  ${id}  (${file})`);
+for (const [id, file] of [...retired.entries()].sort()) {
+  const kind = retiredKind.get(id);
+  console.log(`  ${id}  (${file})${kind === "withdrawn_no_successor" ? "  [撤下,無替代]" : ""}`);
+}
 console.log();
+
+/* 放行的引用一定要印出來。靜默的白名單是 gate 腐爛的標準路徑 ——
+ * 下一個人看到 PASS,不會知道有東西被放過去了。 */
+if (allowed.length) {
+  console.log(`古方組成的歷史引用(放行,不是缺陷):${allowed.length} 筆`);
+  for (const a of allowed) console.log(`  ${a.file}  ${a.path}  -> ${a.id}`);
+  console.log();
+}
 
 if (violations.length === 0) {
   console.log("PASS — 0 active references to retired ids.");
