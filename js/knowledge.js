@@ -709,7 +709,13 @@
 
     const citations = Array.isArray(record.source_citations) ? record.source_citations : [];
     if (citations.length) {
-      citations.forEach(c => {
+      citations.forEach(raw => {
+        /* 元素有兩種形狀:物件 {name,url,scope} 與**純字串**引用
+         * (石榴皮的「《中華人民共和國藥典》2020年版一部:石榴皮」)。
+         * 字串上 `c.url` / `c.name` 都是 undefined,於是整條被靜靜跳過 ——
+         * 22 張卡的引用因此消失,而畫面反而印「來源待補」,把有來源的卡
+         * 說成沒有來源。 */
+        const c = (typeof raw === "string") ? { name: raw } : (raw || {});
         const isUrl = c.url && /^https?:\/\//.test(c.url) && !/cloudtcm|americandragon/.test(c.url);
         if (isUrl) {
           html += `
@@ -746,7 +752,15 @@
       html += `<div style="display:inline-block;padding:6px 12px;background:#f6efdd;border:1px solid #e0d3ae;border-radius:6px;color:#6b5620;font-size:0.85em;">📘 課件 ${esc(base)}${page ? ` p${esc(page)}` : ""}</div>`;
     });
     if (record.safety_review_pending) {
-      html += `<div style="flex-basis:100%;margin-top:6px;color:#92400e;font-size:0.85em;">⏳ ${esc(record.safety_review_pending)}</div>`;
+      /* 這個欄位有兩種形狀:14 筆是真的複核筆記(麻黃那筆寫著「區分中醫處方
+       * 中的炮製麻黃與美國被禁售的含麻黃鹼膳食補充品」),58 筆是布林 true。
+       * 布林走到 esc() 就是逐字印「⏳ true」—— 巴豆卡上真的長那樣。
+       * 有筆記就印筆記,沒有就印一句人話。 */
+      const srp = record.safety_review_pending;
+      const srpText = (typeof srp === "string" && srp.trim())
+        ? srp
+        : modeText("安全資訊審核中", "Safety review pending");
+      html += `<div style="flex-basis:100%;margin-top:6px;color:#92400e;font-size:0.85em;">⏳ ${esc(srpText)}</div>`;
     }
 
     html += '</div>';
@@ -2150,9 +2164,21 @@
             )}</p>`)}
           </div>
           ${detailSection("功效 (Actions)", "傳統功效 · 中英對照", `<div class="k-chip-cloud">${bilingualFunctions}${actionsAligned ? "" : actionsEn.map((a) => `<span class="k-chip" style="background:#ecfdf5;color:#047857;padding:4px 10px;margin:3px;border-radius:6px;display:inline-block;">${esc(a)}</span>`).join("")}</div>`)}
-          ${(record.pao_zhi_notes_zh || record.pao_zhi_notes_en) ? detailSection("炮製作用 (Pao Zhi)", "炮製方式與臨床差異（來源見下方引用）", `<p style="background:#fef3c7;color:#92400e;padding:8px 12px;border-radius:6px;font-size:0.92em;margin-top:6px;">${esc(
-            (contentMode === "english" && usableText(record.pao_zhi_notes_en)) || record.pao_zhi_notes_zh || usableText(record.pao_zhi_notes_en)
-          )}</p>`) : ""}
+          ${(record.pao_zhi_notes_zh || record.pao_zhi_notes_en) ? detailSection("炮製作用 (Pao Zhi)", "炮製方式與臨床差異（來源見下方引用）", (() => {
+            /* 這個欄位有兩種形狀:79 筆字串 + 26 筆**陣列**(一種炮製法一條)。
+             * 陣列走到 esc() 會被逗號黏成一長句 —— 半夏的四種炮製法擠成一段,
+             * 而「生半夏:毒性強,只供外用,不得內服」被埋在句尾。
+             * 陣列就分條列,那本來就是它被寫成陣列的理由。 */
+            const v = (contentMode === "english" && usableText(record.pao_zhi_notes_en))
+              || record.pao_zhi_notes_zh || usableText(record.pao_zhi_notes_en);
+            const box = "background:#fef3c7;color:#92400e;padding:8px 12px;border-radius:6px;font-size:0.92em;margin-top:6px;";
+            if (Array.isArray(v)) {
+              const items = v.filter((x) => String(x || "").trim());
+              if (!items.length) return "";
+              return `<ul style="${box}margin-left:0;padding-left:26px;">${items.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>`;
+            }
+            return `<p style="${box}">${esc(v)}</p>`;
+          })()) : ""}
           ${modernPharm.length ? detailSection("現代藥理 (Modern Pharmacology)", "實證藥理作用", `<div class="k-chip-cloud">${bilingualModernPharm}</div>`) : ""}
           ${herbModernDetailSection(record)}
         ` 
@@ -2175,8 +2201,26 @@
         label: "對藥與古文 Pairing & Classics", 
         content: `
           ${detailSection("經典對藥 (Herb Pairs)", "Key pairings and rationale", herbPairsBlock(record, keyPairs))}
-          ${record.classical_text_zh ? detailSection("古籍原文 (Classical Text)", "本草原文與英譯", `<blockquote class="k-classic">${linkifyHerbs(record.classical_text_zh, record.id)}${record.classical_text_en ? `<span class="k-classic-en">${esc(record.classical_text_en)}</span>` : ""}</blockquote>`) : ""}
-          ${record.classical_text_zh ? detailSection("古文典籍記載", "Classical text quotation", `<blockquote class="k-classic-quote" style="border-left:3px solid #d97706;padding-left:10px;font-style:italic;color:#451a03;margin:8px 0;line-height:1.6;">${esc(record.classical_text_zh).replace(/\n/g, '<br>')}</blockquote>`) : ""}
+          ${/* classical_text_zh/_en 也是兩種形狀:21 筆字串 + 19 筆陣列。
+               陣列走到 esc()/linkifyHerbs 會被逗號黏成一句,而且這個欄位在
+               卡上出現**兩次**(下面兩個區塊),所以同一份內容壞兩遍。
+               陣列先攤成換行分隔的字串,兩處都把換行渲染成 <br>。
+               (兩個區塊印同一個欄位這件事本身也可疑,但那是區塊結構的問題,
+                凍結期不動;已列待裁。) */ ""}
+          ${(() => {
+            const flat = (v) => (Array.isArray(v)
+              ? v.filter((x) => String(x || "").trim()).join("\n")
+              : String(v || ""));
+            const zh = flat(record.classical_text_zh);
+            const en = flat(record.classical_text_en);
+            if (!zh) return "";
+            const brZh = linkifyHerbs(zh, record.id).replace(/\n/g, "<br>");
+            const brEn = en ? esc(en).replace(/\n/g, "<br>") : "";
+            return detailSection("古籍原文 (Classical Text)", "本草原文與英譯",
+              `<blockquote class="k-classic">${brZh}${brEn ? `<span class="k-classic-en">${brEn}</span>` : ""}</blockquote>`)
+              + detailSection("古文典籍記載", "Classical text quotation",
+                `<blockquote class="k-classic-quote" style="border-left:3px solid #d97706;padding-left:10px;font-style:italic;color:#451a03;margin:8px 0;line-height:1.6;">${esc(zh).replace(/\n/g, "<br>")}</blockquote>`);
+          })()}
           ${/* clinical_use_note_zh 是**另一則**筆記,不是 clinical_use_note 的中文版:
                 9 張卡兩者都有,而內容重疊為 0。前者是「學習辨識」,後者記的是
                 「課件與 American Dragon 的寫法差在哪」—— 對照來源時要用的正是後者。
@@ -3044,11 +3088,21 @@
         yang: ["陽", "Yang"]
       };
       const principles = pattern.eight_principles || {};
+      /* 八綱的鍵名有**兩套**:110 筆用 cold_heat / deficiency_excess,
+       * 17 筆用倒過來的 heat_cold / excess_deficiency。這一段只讀前者,
+       * 於是那 17 張證型卡的寒熱與虛實兩軸整個消失 —— 腎陽虛的 meta 列
+       * 只印「裏 · 陽」,病名裡的「虛」字在它自己的八綱標籤上不見了。
+       * 兩套都讀;哪一套是正解是資料層的收斂題(已列待裁),但畫面上
+       * 不該因為鍵名寫法不同就少兩軸。 */
+      const axis = (...names) => {
+        for (const n of names) if (principles[n]) return principles[n];
+        return undefined;
+      };
       return [
-        principles.interior_exterior,
-        principles.cold_heat,
-        principles.deficiency_excess,
-        principles.yin_yang
+        axis("interior_exterior", "exterior_interior"),
+        axis("cold_heat", "heat_cold"),
+        axis("deficiency_excess", "excess_deficiency"),
+        axis("yin_yang", "yang_yin")
       ].filter(Boolean).map((value) => {
         const labels = valueLabels[value];
         return labels ? labels[isEn ? 1 : 0] : value;
