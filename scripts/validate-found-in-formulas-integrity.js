@@ -2,19 +2,18 @@
 /**
  * validate-found-in-formulas-integrity.js — 藥對的 found_in_formulas 站不站得住
  *
- * ⚠ 先講一件寫在前面的事:**這個欄位目前是暗的。**
- * `herb_pairs.json` 的 schema_note 說它的用途是
+ * 這個欄位是方劑卡「經典對藥」區的第二個來源。`herb_pairs.json` 的 schema_note 一直寫著
  *   "formula ids where this pair does the work, so the formula card can show its pairs"
- * 但 2026-09-01 全庫 grep:`js/**`、`app.js`、其他 `scripts/**` 沒有任何地方讀它，
- * 只有這支驗證器讀。也就是 **274 條策展連結、涵蓋 123 張方劑卡，一條都沒上過畫面**。
- * 對照組:方劑側的 `key_pairs` 只有 25 條、涵蓋 9 張卡，而那一側是有渲染的。
+ * 但**它從來沒被接上**:2026-09-01 全庫 grep 只有這支驗證器讀它 —— 274 條策展連結、
+ * 涵蓋 123 張方劑卡,一條都沒上過畫面;而方劑側的 `key_pairs` 只有 25 條卻是有渲染的。
+ * 同日 Ting 裁定接線,兩側併集後方劑卡多出 240 條藥對(其中 114 張原本一條都沒有)。
  *
- * 那為什麼不直接接上去?因為接之前量了可信度,**還不到可以接的程度**:
- * 265 條可查證的連結裡，有一批的藥對成員根本不在該方的 composition 裡。
- * 接上去就是把錯的內容送上畫面 —— 那正是 CLAUDE.md 第 5 條在講的事情的反面
- * (不是 fallback 說謊，是把沒驗過的資料當成已驗過的送出去)。
+ * **接線之前先量了可信度,不是先接再說。** 初測 265 條可查證連結裡有 21 條的藥對成員
+ * 根本不在該方 composition 裡;那 21 條先處理完才接(17 條錯連移除、部位別判為同一味、
+ * 定喘湯「銀杏」補上 herb_id)。沒驗就接 = 把未驗內容當已驗送上畫面 ——
+ * 那是 CLAUDE.md 第 5 條的反面(不是 fallback 說謊,是拿沒驗過的東西當驗過的用)。
  *
- * 所以這支先把它**量起來、盯住只能變好**，接線與否是內容決定，等 Ting 裁。
+ * 接線之後這支就是那條線的守門。
  *
  * 三個計數，每個一個上限，**只准變少**:
  *   dangling  found_in_formulas 指向不存在的方(目前 9 條 / 7 首方)
@@ -33,8 +32,10 @@ const fs = require("fs");
 const path = require("path");
 const ROOT = path.join(__dirname, "..");
 
-// 2026-09-01 首次量測值。修好就把數字改小，只能往下不能往上。
-const CEILING = { dangling: 9, mismatch: 16, both_missing: 5 };
+// 2026-09-01:接線同批把 21 條不成立的連結修掉後鎖到 0。
+// mismatch / both_missing **一條都不准新增** —— 這條線現在會上畫面。
+// dangling 9 是前向引用(指向 7 首尚未建卡的方),前批已裁定保留,只准變少。
+const CEILING = { dangling: 9, mismatch: 0, both_missing: 0 };
 
 const readJson = (rel) => JSON.parse(fs.readFileSync(path.join(ROOT, rel), "utf8"));
 const hp = readJson("data/herbs/herb_pairs.json");
@@ -64,7 +65,7 @@ const grp = new Map();
 }
 const gid = (id) => grp.get(id) || id;
 
-// 炮製前綴:只認寫法差異，不認部位差異
+// 炮製前綴:寫法差異,不是內容錯(炙甘草 = 甘草)
 const PREP = /^(炙|生|炒|焦|煅|製|制|酒|蜜|鹽|醋|薑|姜|土|麩|燀|去油)+/;
 const stripPrep = (s) => String(s || "").replace(PREP, "");
 const samePreparation = (a, b) => {
@@ -72,6 +73,17 @@ const samePreparation = (a, b) => {
   if (!A || !B || A === B) return false;
   return stripPrep(A) === stripPrep(B) && stripPrep(A).length >= 2;
 };
+/* 部位別:Ting 裁定(2026-09-01)在這個檢查裡當成同一味 —— 藥對指名某個部位、
+   方劑組成寫全株(或反之)時，連結在臨床上仍成立。
+   **刻意寫成具名清單而不是模糊規則**:模糊規則(例如「名字包含」)會把真的錯連一起洗白，
+   而這個檢查的價值就在於分得出「寫法不同」與「連錯方」。要加新的一組就明確加一行。 */
+const PART_GROUPS = [
+  ["herb.gua_lou", "herb.gua_lou_pi", "herb.gua_lou_ren"],   // 瓜蔞 / 栝樓皮 / 栝樓仁
+  ["herb.huai_hua", "herb.huai_mi"],                          // 槐花 / 槐米
+];
+const partOf = new Map();
+PART_GROUPS.forEach((g, i) => g.forEach((id) => partOf.set(id, "part" + i)));
+const samePart = (a, b) => partOf.has(a) && partOf.get(a) === partOf.get(b);
 
 let links = 0;
 const dangling = new Map();
@@ -85,7 +97,8 @@ for (const p of pairs) {
     links++;
     const compIds = (f.composition || []).map((c) => c.herb_id).filter(Boolean);
     const compG = new Set(compIds.map(gid));
-    const miss = (p.herbs || []).filter((h) => !compG.has(gid(h)) && !compIds.some((c) => samePreparation(h, c)));
+    const miss = (p.herbs || []).filter((h) => !compG.has(gid(h))
+      && !compIds.some((c) => samePreparation(h, c) || samePart(h, c)));
     if (!miss.length) continue;
     const row = { pair: p.id, pairZh: p.name_zh || p.id, fid, fZh: f.name_zh || fid, miss: miss.map(zh) };
     if (miss.length === (p.herbs || []).length) bothMissing.push(row);
@@ -96,8 +109,8 @@ const nDangling = [...dangling.values()].reduce((a, b) => a + b, 0);
 const counts = { dangling: nDangling, mismatch: mismatch.length, both_missing: bothMissing.length };
 
 console.log("validate-found-in-formulas-integrity — 藥對→方劑的反向索引站不站得住");
-console.log("  ⚠ 此欄位目前無任何渲染端讀取(2026-09-01 全庫 grep):" + links + " 條可查證連結、"
-  + new Set(pairs.flatMap((p) => (p.found_in_formulas || []).filter((x) => byF.has(x)))).size + " 張方劑卡，都沒上過畫面。");
+console.log("  這條線 2026-09-01 起有渲染(formulaPairsSection 與 key_pairs 併集):" + links + " 條可查證連結、"
+  + new Set(pairs.flatMap((p) => (p.found_in_formulas || []).filter((x) => byF.has(x)))).size + " 張方劑卡會用到。");
 for (const k of Object.keys(CEILING)) {
   console.log("  " + k.padEnd(14) + String(counts[k]).padStart(3) + " / 上限 " + CEILING[k]);
 }
@@ -121,8 +134,8 @@ if (better.length) {
 }
 if (over.length) {
   console.log("\nFAIL — " + over.map((k) => k + " " + counts[k] + " > " + CEILING[k]).join("、"));
-  console.log("  這個欄位還沒接上畫面，所以壞掉不會有人看到 —— 正因為如此才要靠 gate 盯，"
-    + "否則接線的那一天會一次爆出來。");
+  console.log("  這條線會上方劑卡的「經典對藥」區,所以錯連 = 錯的藥對出現在方劑卡上。"
+    + "\n  處置:把該連結拿掉,或改指組成真的含有這條藥對全部成員的方 —— 不要改比對規則來讓它變綠。");
   process.exit(1);
 }
 console.log("\nPASS — 三個計數都在上限內。");

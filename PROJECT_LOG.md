@@ -1,3 +1,79 @@
+# 2026-09-01 — 三項裁定執行:清乾淨 21 條錯連 → 接線 → 方劑卡策展藥對 25 → 248
+
+Ting 裁 (1) 接 `found_in_formulas` 到方劑卡 (2) 5 條錯連改指正確的方 (3) 部位別當同一味、白果修方劑側。
+**順序刻意是 2、3 先做,1 最後** —— 先接線就是把 21 條沒驗過的連結送上畫面。
+
+## (3) 先講「白果」:定喘湯沒有漏味,是那筆缺 `herb_id`
+定喘湯組成 9 味齊全,「銀杏」是臣藥、**但那筆 composition 沒有 `herb_id`**,
+所以比對時報「缺白果」。銀杏 = 白果(`herb.bai_guo` 的 `aliases_zh` 就收「銀杏」),
+補上 `herb_id: herb.bai_guo`,其餘 222 首逐筆比對零改動。
+全庫只剩 1 筆 composition 沒有 `herb_id`(蒿芩清膽湯的「碧玉散」—— 那是方不是藥,正確)。
+
+**🚩 順帶抓到一個沒改的內容問題**:定喘湯「銀杏」那筆的 `elucidation_zh` 描述的是
+**銀杏葉**的藥理(「擴張支氣管、改善肺部微循環、抗氧化抗炎」),而定喘湯用的是
+**白果(種子)** —— 兩者是不同藥材,白果過量有毒、功效是斂肺定喘。
+同一段還列了一個對不上的組成(「麻黃、杏仁、半夏、厚朴、甘草、生薑、細辛」——
+定喘湯沒有厚朴/生薑/細辛,而少了款冬花/桑白皮/蘇子/黃芩),讀起來像 AI 生成的填充。
+**我只補 id 沒動那段敘述**(改寫需要來源),請 Ting 裁。
+另外 `herb.yin_xing`(銀杏,無拉丁名)與 `herb.bai_guo`(白果,Semen Ginkgo)並存,疑似重複卡。
+
+## (3) 部位別:寫成具名清單,不寫模糊規則
+`herb.gua_lou / gua_lou_pi / gua_lou_ren`(瓜蔞/栝樓皮/栝樓仁)、
+`herb.huai_hua / huai_mi`(槐花/槐米)兩組在這個檢查裡判為同一味。
+**刻意用具名清單**:模糊規則(例如「名字互相包含」)會把真的錯連一起洗白,
+而這個檢查的價值就在於分得出「寫法不同」與「連錯方」。
+
+## (2) 5 條錯連 + 同類的 12 條,一起改指正確的方
+「改指正確的方」在多數情況等於「拿掉錯的那一條」,因為正確的方**本來就已經列在同一筆裡**。
+共移除 17 條(B 類 5 + C 類 12),變動欄位 14 個全為 `*.found_in_formulas`:
+| 藥對 | 移除 | 該筆剩下 |
+|---|---|---|
+| 麻黃配石膏 | 越鞠丸 | 麻杏石甘湯、防風通聖散 |
+| 人參配黃芪 | 半夏白朮天麻湯、八珍湯 | 補中益氣湯、十全大補湯、歸脾湯 |
+| 生薑配大棗 | 參苓白朮散 | 桂枝湯、葛根湯、小柴胡湯…(13 首) |
+| 附子配乾薑 | 真武湯、理中丸 | 四逆湯、烏梅丸 |
+| 金銀花配連翹 | 普濟消毒飲 | 銀翹散、清營湯 |
+| 天麻配鉤藤 | 半夏白朮天麻湯 | 天麻鉤藤飲 |
+| 川芎配當歸、赤芍 | 四物湯 | 血府逐瘀湯 |
+| 川木通配車前子… | 導赤散 | 八正散 |
+| 乾薑配白朮 | 半夏白朮天麻湯、健脾丸 | 理中丸 |
+| **巴戟天配肉蓯蓉** | 右歸丸 | **(空)** |
+| **三棱配莪朮** | 至寶丹 | **(空)** |
+| **白朮配蒼朮** | 平胃散 | **(空)** |
+| **白花蛇舌草配茵陳蒿…** | 茵陳蒿湯 | **(空)** |
+| **冬瓜子配魚腥草…** | 葦莖湯 | **(空)** |
+最後 5 條變成空的,不是我偷懶 —— **223 首方裡沒有任何一首的組成同時含這條藥對的全部成員**,
+沒有可以指的方。這 5 條要不要另外建方或改藥對成員,留 Ting。
+
+**修完重量:265 → 248 條可查證連結,mismatch 0、both_missing 0**,上限一併鎖到 0(一條都不准新增)。
+
+## (1) 接線:方劑卡「經典對藥」併集兩個來源
+`formulaPairsSection` 原本只讀方劑側的 `key_pairs`。改成併集,**以 `pair.id` 去重**
+(CLAUDE.md 第 5 條:併集不是二選一;先算重疊再合,否則同一條印兩次)。
+| | 接線前 | 接線後 |
+|---|---|---|
+| 方劑卡策展藥對總數 | **25** | **248**(+223) |
+| 受益方劑卡 | — | **116 張,其中 111 張原本一條都沒有** |
+那 111 張原本只能印「依組成推得」的候選清單,看起來像本來就沒策展過。
+
+**眼讀(dev server)**:逍遙散 4 條(柴胡配白芍、薄荷配柴胡、白朮配茯苓、白芍配甘草)、
+補中益氣湯 4 條、桂枝湯 3 條,**三張都不再出現「依組成推得」標記**,表示走的是策展清單。
+
+## 驗證(九支全跑)
+`validate-herb-standard` / `validate-formula-standard` / `validate-content-junk` /
+`validate-herb-pair-render` / `validate-board-pair-attribution` /
+`validate-review-status-vocabulary` / `validate-rendered-reference-resolution` /
+`validate-found-in-formulas-integrity` / `check-validation-ratchet` **全 PASS**;
+`git diff --check` 無輸出;`node --check js/knowledge.js` 通過。
+
+## 待 Ting 裁(兩項)
+1. **定喘湯「銀杏」的 `elucidation_zh` 寫的是銀杏葉藥理**,且內附的組成清單對不上該方 —— 要重寫還是撤除?
+2. 上面 5 條 `found_in_formulas` 變空的藥對:建方、改成員、還是就留空?
+
+MEASURED TREE: claude/practical-easley-73f009 @ origin/main 本批基底
+
+---
+
 # 2026-09-01 — 要處理那 9 條 found_in_formulas,結果發現整個欄位是暗的:274 條策展連結沒上過畫面
 
 Ting 裁「那 9 條 found_in_formulas 也處理掉」。動手前照第 5 條先讀渲染端,**結論跟預期完全不同**。
@@ -322,6 +398,18 @@ fallback 沒有搶先——歸經走 `props.meridian_tropism_zh || record.channe
 `Materia Medica Abbbreviated` 這個重複檔名在 `herb_canon_shortlist.json` 的
 **最後一個活引用**就在犀角這則 source_note_zh 裡,隨本次改寫消失。
 現在該檔 34 筆全部在 `import_artifacts` 存證區(刻意保留原文),**live 0 筆**。
+
+---
+
+# 2026-08-31 — Codex Task 11G：董氏穴位 1,133 個 404 對回 411 張卡，只出處置清單
+
+- **做了什麼**：新增 `tung_dead_link_disposition_2026-08-28.json`、對應報告與 `--verify-disposition`；每個 dead URL 對回 canonical 穴位卡及精確原始 `field_path`，同 URL 重複出現在多欄位時逐 occurrence 保留。
+- **數字**：Task 11E 分母仍為 `1384 / 1133 / 722`；清單為 411 張卡、1,133 distinct dead URLs、1,215 原始欄位 occurrences；圖片／參考連結 distinct=`722/411`、occurrences=`722/493`；整卡全滅 1（`ex.le3` 百蟲窩）；`same_site_candidate` verified/null/live-checks=`0/411/0`。
+- **驗證原文**：`PASS — 1133/1133 distinct dead URLs mapped to 411 cards and 1215 exact source-field occurrences; 1 all-links-dead card(s).`；`Self-Test Results: 13/13 fixtures behaving as expected.`；`validate-acupoint-standard: 361 points (361 template-grade)`／`PASS — no blocking defects.`；`Point id validation passed.`；ratchet=`PASS — no regressions.`；content-junk 最終 PASS；`git diff --check` 無輸出。
+- **已知未解**：411 張卡的 `same_site_candidate` 全為 `null`；本輪沒有做 live candidate discovery，也沒有猜新路徑。替換／移除／降級仍待後續裁定。
+- **Branch / 下一步**：`codex/tung-dead-link-disposition`，產物 commit `5e1a8fc4`，已推分支等驗收；canonical `data/acupoints/**`、`app.js`、`js/**`、`data/generated/**` 零異動。
+
+---
 
 # 2026-08-31 — 課件重複檔名引用修復:33 筆裡 32 筆已改,1 筆因主張與來源牴觸退回裁定
 

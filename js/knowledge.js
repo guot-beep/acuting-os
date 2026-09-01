@@ -426,8 +426,20 @@
        完全不知道另外 2 條曾經被列出來過；黃連解毒湯／導赤散／龍膽瀉肝湯 更是整份被丟光，
        於是那一區改印「依組成推得」的候選清單，看起來像本來就沒策展過。
        失敗必須出聲:解析不到的照樣列出來，說清楚是「引用了尚未建立的藥對記錄」。 */
+    /* 這一區有**兩個**策展來源,以前只讀方劑側那一個(2026-09-01 Ting 裁定接線):
+         方劑側 record.key_pairs             25 條引用 /   9 張卡  —— 一直有讀
+         藥對側 pair.found_in_formulas      274 條引用 / 123 張卡  —— 從來沒讀過
+       schema_note 本來就寫著 found_in_formulas 是「so the formula card can show its pairs」，
+       但那條線從未接上:120 張卡因此少了 240 條藥對，其中 114 張一條都沒有、
+       只能印「依組成推得」的候選,看起來像本來就沒策展過。
+       併集而不是二選一(CLAUDE.md 第 5 條);以 pair.id 去重,不然同一條會印兩次。
+       接線前先把 21 條「藥對成員不在該方組成裡」的連結處理掉了 ——
+       validate-found-in-formulas-integrity 現在把 mismatch/both_missing 鎖在 0。 */
     const wanted = (record.key_pairs || []).filter((id) => typeof id === "string");
-    const explicit = wanted.map((id) => PAIRS.find((p) => p.id === id)).filter(Boolean);
+    const fromKeyPairs = wanted.map((id) => PAIRS.find((p) => p.id === id)).filter(Boolean);
+    const seen = new Set(fromKeyPairs.map((p) => p.id));
+    const fromReverse = PAIRS.filter((p) => !seen.has(p.id) && (p.found_in_formulas || []).includes(record.id));
+    const explicit = [...fromKeyPairs, ...fromReverse];
     const unresolved = wanted.filter((id) => !PAIRS.some((p) => p.id === id));
     let derived = [];
     if (!explicit.length) {
