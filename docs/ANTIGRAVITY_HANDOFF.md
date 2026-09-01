@@ -11,6 +11,13 @@
 分支**沒有被本輪驗收或落地**,先在這裡記一筆讓 Ting 看到。要不要把它排進正式派工單、要不要照 11G
 驗收流程走(`--verify-disposition` 那類離線比對),等 Ting 或下一輪明確指示。
 
+**追記(2026-09-01 02:23 推,同一輪巡檢複查)**：這支分支又推了一個後續 commit
+`0245224`「程式化重算 summary 統計數字」——只改了同兩個稽核檔案本身的統計數字(407→415、
+not_found 6→8、補 `candidate_type_breakdown`/`not_found_detail`/`accounting_note`),
+commit message 自己寫明「不重查任何 URL」。**依然只動 `data/audits/**`,`data/acupoints/**`
+零修改,沒有推到 main。** 屬於同一條自發延續線的自我訂正,不是新開的範圍,一樣不驗收、不落地,
+繼續等 Ting 或下一輪明確指示要不要收。
+
 ---
 
 ## 🔁 Task 11G 已改派給 Codex（2026-08-29），你不用做這條了
