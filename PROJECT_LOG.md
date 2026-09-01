@@ -1,3 +1,57 @@
+# 2026-09-01 — 撤除定喘湯「銀杏」的錯置藥理敘述;順帶查出同一批還有 3 筆同型,2 筆會上畫面
+
+Ting 裁 (1) 撤除那段敘述 (2) 那 5 條 `found_in_formulas` 留空。
+
+## (2) 留空:已是現狀,只記裁定
+巴戟天配肉蓯蓉、三棱配莪朮、白朮配蒼朮、白花蛇舌草配茵陳蒿…、冬瓜子配魚腥草… 這 5 條
+維持 `found_in_formulas: []`。理由記在案:**223 首方裡沒有任何一首的組成同時含該藥對全部成員**,
+沒有可以指的方;`validate-found-in-formulas-integrity` 的 mismatch/both_missing 上限已鎖 0,
+之後有人硬填一個對不上的方會被擋下。
+
+## (1) 撤除,並照既有慣例封存原文
+`correction_note` 是這個庫既有的封存欄(176 首方在用,格式是「原文保存於此」)。
+定喘湯自己那欄已經有三段 2026-08-12 的樣板句清除紀錄。照同格式追加一段,
+把 244 字原文逐字封存,再清空 `elucidation_zh`。
+**變動欄位只有 `composition` 與 `correction_note` 兩個**,其餘 222 首方逐筆比對零改動;
+銀杏那筆除了少掉 `elucidation_zh`,其他 12 個鍵一字未動(寫入前 assert)。
+
+**為什麼那段會出現在畫面上——又是清欄那天引爆的**:
+`js/knowledge.js:1550` 的逐味說明取值是
+`in_formula_zh || role_reason_zh || function_in_formula_zh || role_note_zh || elucidation_zh`,
+`elucidation_zh` 是最後一格。**2026-08-12 那次樣板句清除把本味的 `in_formula_zh`／`role_reason_zh`
+清空之後,它就遞補上畫面** —— 清欄之前它一直被前面幾格擋著,誰也看不到。
+這正是 CLAUDE.md 第 5 條說的:`||` 的傷害等於「兩側同時有內容的機率」,清欄的那天才引爆。
+
+**眼讀**:定喘湯卡內已無「擴張支氣管／改善肺部微循環」與那個對不上的組成清單。
+(全頁掃還會命中兩處,逐一看過都是別的東西且正確:`k-depth-text` 寫「白果:斂肺定喘,止咳化痰,
+為臣藥」—— 恰好佐證被撤那段是錯的;`kp-zh` 是麻黃的藥理,麻黃鹼確實擴張支氣管。)
+
+## 🚩 順帶查出:同一批 elucidation 還有 3 筆同型,2 筆會上畫面
+全庫 1639 筆 composition 只有 **35 筆**有 `elucidation_zh`,集中在四方
+(天王補心丹 13、定喘湯 9、旋覆代赭湯 7、桃紅四物湯 6)——像同一批灌進來的。
+機械檢查「敘述裡點名的藥味有沒有不在該方組成裡」,5 筆命中,逐段讀過後:
+| 條目 | 錯在哪 | 會上畫面? |
+|---|---|---|
+| 定喘湯／銀杏 | 寫的是銀杏葉藥理 + 對不上的組成 | 會 → **本批已撤除** |
+| 天王補心丹／柏子仁 | 「天王補心丹中含有**黃連、黃芩**等清熱燥濕之品」——該方沒有這兩味 | **會** |
+| 定喘湯／款冬花 | 「與**黃芪**、甘草等藥物配伍」——本方無黃芪 | **會** |
+| 天王補心丹／五味子 | 「可與**方中**其他補腎藥物如**黃芪**」——該方無黃芪 | 不會(有 `in_formula_zh` 擋著) |
+| 定喘湯／紫蘇子 | 只提到「蘇子」= 自己 | — **假警報**,別名沒登記而已 |
+35 筆裡有 **25 筆會上畫面**(其餘 10 筆被前位欄擋著)。
+**這 3 筆我沒動** —— 撤除是刪除,依憲法要逐案裁定;證據與行號都在上面,你點頭我照同樣作法
+(封存進 correction_note 再清空)處理。
+
+## 驗證(九支全跑)
+`validate-herb-standard` / `validate-formula-standard` / `validate-content-junk` /
+`validate-herb-pair-render` / `validate-board-pair-attribution` /
+`validate-review-status-vocabulary` / `validate-rendered-reference-resolution` /
+`validate-found-in-formulas-integrity` / `check-validation-ratchet` **全 PASS**;
+`git diff --check` 無輸出。本批只動 `data/herbs/formulas.json`(3 行)+ generated 隨批重建。
+
+MEASURED TREE: claude/practical-easley-73f009 @ origin/main 本批基底
+
+---
+
 # 2026-09-01 — 三項裁定執行:清乾淨 21 條錯連 → 接線 → 方劑卡策展藥對 25 → 248
 
 Ting 裁 (1) 接 `found_in_formulas` 到方劑卡 (2) 5 條錯連改指正確的方 (3) 部位別當同一味、白果修方劑側。
