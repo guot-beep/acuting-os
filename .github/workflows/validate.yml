@@ -563,6 +563,12 @@ jobs:
       # 就是 HEAD,範圍是空的,凍結永遠看不到任何 UI 變更。github.event.before
       # 給的正是「這次 push 推進去了什麼」。
       # PR 事件沒有這個值(空字串),閘門會自己退回 merge-base,那對 PR 是對的。
+      # 反空跑證明,排在凍結閘門**前面**:它在暫存目錄自建拋棄式 repo,
+      # 重現淺 checkout 與 push-to-main 兩種形狀,確認閘門該紅時紅、
+      # 看不見時不裝作沒事。不碰真實工作樹。13 條。
+      - name: UI freeze gate is not a no-op
+        run: node scripts/test-ui-freeze-gate.js
+
       - name: W1-4 UI execution freeze (from 2026-09-01)
         env:
           FREEZE_BASE: ${{ github.event.before }}
