@@ -203,7 +203,7 @@ TDIS 用 registry 的 `emergency_referral / urgent_referral / routine_referral`(
 - **(a) 維持不對齊,棘輪長駐 1** ← 我建議(1 是誠實的數字)
 - (b) 補齊英文讓棘輪歸零
 
-### B2 · SQLite vs 手機電腦同步(**這條會影響妳明天做什麼**)
+### B2 · SQLite vs 手機電腦同步 —— ✅ 已裁(2026-09-01 晚,D33):走 D1,第二週末切換
 
 如果妳想搬 SQLite 的真正原因是「手機和電腦各一份病例」,
 **SQLite 解決不了** —— 檔案在哪台機器資料就在哪台。
@@ -223,7 +223,7 @@ TDIS 用 registry 的 `emergency_referral / urgent_referral / routine_referral`(
 
 詳見 `docs/SQLITE_RUNBOOK_2026-09-01.md`。
 
-### B3 · 線上版沒有上鎖(網址已記入 DEPLOYMENT.md)
+### B3 · 線上版沒有上鎖 —— ✅ 已裁(2026-09-01 晚,D33):(a) 套 Access,而且是 D1 上線的前提
 
 妳 9/01 貼給我的網址 `https://acuting-os.guotingru.workers.dev/` 已經寫進
 DEPLOYMENT.md,這條的前半解決了。但我拿到網址後實測發現一件事:

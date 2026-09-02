@@ -1148,3 +1148,24 @@ PASS(composition 查無藥材維持 1 味次 `formula.huang_tu_tang` 的「灶�
   凍結前同樣改動→報告模式放行。以 `FREEZE_TODAY` 環境變數模擬日期。
 - **Reconsider only if**:開診首週在診間發現介面擋路 —— 那正是「凍結例外」
   這條路存在的原因,走它並記錄裁定,不是把 gate 關掉。
+
+## D33 — 病例上雲:Cloudflare D1 為病例正本,以 Access 上鎖為前提 · LOCKED(Ting 裁定,2026-09-01 晚)
+
+**裁定原文**:「兩個都 OK 第二週末切換可以」—— 針對 `docs/D1_MIGRATION_PLAN_2026-09-01.md` 的兩個前提與時程。
+背景:她的目標從頭就是「手機跟電腦去那個網址才會同步」(見 D18 附記教訓);本機 SQLite 無法滿足,當晚已停用。
+
+**鎖住什麼**:
+1. 病例正本可以離開 Ting 的電腦,存在她 Cloudflare 帳號下的 **D1**。D7「knowledge 在 git / clinical 只在本機」
+   的後半句自此修訂為「clinical 在 D1;localStorage 在切換後凍結為回滾錨(D18 原文機制)」。
+2. **前提一:先上鎖。** `acuting-os.guotingru.workers.dev` 必須先套 Cloudflare Access(Ting 的 email + 一次性 PIN;
+   TING_PENDING_RULINGS B3 以 (a) 結案)。Worker 對 `/__clinical/*` 必須驗 Access JWT;沒驗過 → 401、零資料。
+   **上鎖未完成前,不得把任何會讀寫 D1 的程式部署到正式網址。**
+3. **前提二:去識別化不變。** D1 裡只放 app 既有欄位;姓名 / 完整生日 / 電話 / 地址 / 保險號碼仍禁止
+   (DEPLOYMENT.md 邊界 + D4)。
+4. 契約沿用本機服務的 `/__clinical` kv 契約(backend C1–C7、`If-Match` revision、history);正本是 `clinical_kv` 的
+   位元組原樣,不是關聯表(投影用本機工具從 D1 拉回來建)。
+5. 時程:開診第一週(9/2–9/8)不動;目標 **9/13–14 切換**;切換前必須在 staging 走完
+   雙裝置 / 雙分頁 / 斷網 / 回滾四項演練,缺一不切。
+
+**只有在這種情況下重新考慮**:Access 無法套在該 hostname(→ 先換到可上鎖的 hostname 再談),
+或法規 / 保險要求病歷不得存於第三方雲(→ 回到本機 + 手動匯出同步)。
