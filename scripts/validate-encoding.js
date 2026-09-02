@@ -70,7 +70,10 @@ function inspectValue(value, context, issues) {
     // Without this exemption every properly-cited 中文 field reports as mojibake,
     // and the noise grows with each herb that gets sourced correctly.
     const inFieldSources = String(context.path || "").includes("field_sources");
-    if (context.key && isChineseField(context.key) && !inFieldSources && trimmed.length > 3 && !CJK_RE.test(trimmed)) {
+    // 2026-09-02:*_urls_zh / *_url_zh 裝的是連結(cloudtcm 圖片網址),不是中文散文 —— 361 筆 diagram_urls_zh 全是假陽性。
+    // 只豁免「整個值就是一個 URL」的情況;URL 混在中文句子裡仍照常檢查。
+    const isBareUrl = /^https?:\/\/\S+$/i.test(trimmed);
+    if (context.key && isChineseField(context.key) && !inFieldSources && !isBareUrl && trimmed.length > 3 && !CJK_RE.test(trimmed)) {
       issues.push({
         type: "chinese_field_without_cjk",
         file: context.file,

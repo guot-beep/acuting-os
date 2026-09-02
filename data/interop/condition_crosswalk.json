@@ -1638,6 +1638,21 @@
       "condition_id": "cond.oligomenorrhea",
       "icd10": [
         {
+          "code": "N91.5",
+          "description": "Oligomenorrhea, unspecified",
+          "system": "ICD-10-CM",
+          "release": "FY2026",
+          "effective_from": "2025-10-01",
+          "effective_to": "2026-09-30",
+          "billable": true,
+          "mapping_type": "leaf_option",
+          "status": "source_checked",
+          "primary": false,
+          "source": "CDC NCHS FY2026 code files via cond_batch4_gyn staging (accepted 2026-08-08)",
+          "reviewer_note": "Primary/secondary/unspecified axis.",
+          "label_source_history": "nlm_icd10cm"
+        },
+        {
           "code": "N91.3",
           "description": "Primary oligomenorrhea",
           "system": "ICD-10-CM",
@@ -1664,21 +1679,6 @@
           "primary": false,
           "source": "CDC NCHS FY2026 code files via cond_batch4_gyn staging (accepted 2026-08-08)",
           "reviewer_note": "Primary/secondary/unspecified axis."
-        },
-        {
-          "code": "N91.5",
-          "description": "Oligomenorrhea, unspecified",
-          "system": "ICD-10-CM",
-          "release": "FY2026",
-          "effective_from": "2025-10-01",
-          "effective_to": "2026-09-30",
-          "billable": true,
-          "mapping_type": "leaf_option",
-          "status": "source_checked",
-          "primary": false,
-          "source": "CDC NCHS FY2026 code files via cond_batch4_gyn staging (accepted 2026-08-08)",
-          "reviewer_note": "Primary/secondary/unspecified axis.",
-          "label_source_history": "nlm_icd10cm"
         }
       ],
       "tcm_dictionary_refs": [],
@@ -3107,6 +3107,21 @@
       "condition_id": "cond.cervical_spondylosis",
       "icd10": [
         {
+          "code": "M47.812",
+          "description": "Spondylosis without myelopathy or radiculopathy, cervical region",
+          "system": "ICD-10-CM",
+          "release": "FY2026",
+          "effective_from": "2025-10-01",
+          "effective_to": "2026-09-30",
+          "billable": true,
+          "mapping_type": "leaf_option",
+          "status": "source_checked",
+          "primary": false,
+          "source": "CDC NCHS FY2026 code files via cond_batch2_pain_msk staging (accepted 2026-08-08)",
+          "reviewer_note": "Matches the current seed only when neither myelopathy nor radiculopathy is documented.",
+          "label_source_history": "nlm_icd10cm"
+        },
+        {
           "code": "M47.12",
           "description": "Other spondylosis with myelopathy, cervical region",
           "system": "ICD-10-CM",
@@ -3133,21 +3148,6 @@
           "primary": false,
           "source": "CDC NCHS FY2026 code files via cond_batch2_pain_msk staging (accepted 2026-08-08)",
           "reviewer_note": "Neurologic complication axis."
-        },
-        {
-          "code": "M47.812",
-          "description": "Spondylosis without myelopathy or radiculopathy, cervical region",
-          "system": "ICD-10-CM",
-          "release": "FY2026",
-          "effective_from": "2025-10-01",
-          "effective_to": "2026-09-30",
-          "billable": true,
-          "mapping_type": "leaf_option",
-          "status": "source_checked",
-          "primary": false,
-          "source": "CDC NCHS FY2026 code files via cond_batch2_pain_msk staging (accepted 2026-08-08)",
-          "reviewer_note": "Matches the current seed only when neither myelopathy nor radiculopathy is documented.",
-          "label_source_history": "nlm_icd10cm"
         },
         {
           "code": "M47.892",
