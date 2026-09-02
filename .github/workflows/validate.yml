@@ -706,6 +706,14 @@ jobs:
       - name: pdftotext (acupoint page-anchor accuracy needs the PDF layout)
         run: sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils
 
+      # 覆蓋率印出來給人看。ratchet 只把關「指錯」的數量,它不會告訴你這支到底
+      # **驗了幾筆** —— 而本機是 Xpdf 4.00、CI 是 poppler,兩者 -layout 的分欄不保證
+      # 一致。真的對不上時,症狀是「查不到」變多、缺陷數照樣 0(方向是安全的,
+      # 但 gate 會安靜地縮水)。所以獨立跑一次讓數字進 log:落地時是
+      # 掃到 419 / 強驗 408 / 弱檢查 11 / 查不到 0,對不起來就是抽取器差異,不是資料。
+      - name: acupoint page-anchor accuracy (coverage numbers visible in the log)
+        run: node scripts/validate-acupoint-page-anchor-accuracy.js
+
       - name: herb exam-track filler (template sentences are defects, not content)
         run: node scripts/validate-herb-track-filler.js
 
