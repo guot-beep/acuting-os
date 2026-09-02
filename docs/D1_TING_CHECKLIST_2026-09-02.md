@@ -34,7 +34,7 @@
 2. 之後的政策與 One-time PIN 同路徑 A 第 3、4 步。
 
 ### 拿兩個值給我
-- **AUD tag**:Access → Applications → 點 `AcuTing OS` → **Overview** 或 **Basic information** 裡的
+- **AUD tag**:Access → Applications → 點 **All Workers**(妳帳號裡已經有的那個;若是新建的就點新建的)→ **Overview** 或 **Basic information** 裡的
   **Application Audience (AUD) Tag**(一長串 64 個字元)→ 複製。
 - **Team domain**:Zero Trust → **Settings** → **Custom Pages**(或 **General**)裡的 **Team domain**,
   長得像 `acuting.cloudflareaccess.com` → 複製(我會加 `https://`)。
@@ -102,11 +102,11 @@ AUD_TAG     =
 
 | 元件 | 測試 |
 |---|---|
-| Access JWT 驗證(只認 RS256、金鑰輪替、alg 混淆與竄改都擋) | 27 條 |
-| 病例正本資料層(compare-and-set 用 trigger 守門、大值分塊、每 key 留 200 版歷史) | 29 條 |
-| HTTP 契約(沒登入 401 / 沒設定 503、跨站寫入 403、兩台同時寫 409) | 30 條 |
+| Access JWT 驗證(只認 RS256、金鑰輪替、alg 混淆與竄改都擋、service token) | 31 條 |
+| 病例正本資料層(compare-and-set 用 trigger 守門、大值分塊、每 key 留 50 版歷史) | 30 條 |
+| HTTP 契約(沒登入 401 / 沒設定 503、跨站寫入 403、兩台同時寫 409、正本鍵不可刪、例外不外洩) | 35 條 |
 | 瀏覽器端(本機服務 + D1 共用同一套) | 43 條 |
-| 部署閘門(半套設定不准上 main)+ 負控 | 17 條 |
-| 本機 Worker + D1(真瀏覽器):建案、重啟後仍在、兩分頁衝突擋下並備份 | 走過一遍 |
+| 部署閘門(半套設定不准上 main、app 第二道錨)+ 負控 | 20 條 |
+| 本機 Worker + D1(真瀏覽器):建案、重啟後仍在、兩分頁衝突擋下並備份、故意拿掉連接器 → 唯讀 | 走過一遍;全套 CI 重放 100/100 |
 
 D1 平台的兩個坑已用實測繞開:多句交易裡的條件式更新會讓過期寫入落地(改用 trigger);單列 2 MB 上限(分塊)。
