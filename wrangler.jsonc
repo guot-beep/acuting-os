@@ -1,25 +1,35 @@
+// Cloudflare deploy config for AcuTing OS(private clinical app)。
+  // 靜態資產:dist/(scripts/build-site.js 只複製 index.html 引用的檔案,並擋 curriculum// clinical// imports// docs/)。
+  // 病例服務:src/worker.mjs 只攔 /__clinical/*(run_worker_first),其餘交給資產;病例正本在 D1(D33)。
+  // 認證:每一條 /__clinical/* 都驗 Cloudflare Access 的 JWT(vars 三個 ACCESS_*);沒設 → 503 fail-closed。
+  // 這個檔由 scripts/apply-d1-production-config.js 產生;改值請改那支的參數再跑一次,並讓 validate-d1-deploy-gate.js 過。
 {
-  // Cloudflare deploy config for AcuTing OS (private study app).
-  // Without this, wrangler treats the repo ROOT as the assets directory and
-  // uploads all 897 files / 137 MB — which fails on the 39 MB import file
-  // (25 MiB per-asset limit) and would publish curriculum/ (copyrighted
-  // course material). dist/ is built by scripts/build-site.js and contains
-  // only the 13 files index.html actually references.
   "name": "acuting-os",
   "compatibility_date": "2026-07-26",
-  // dist/ is GITIGNORED, so every fresh Cloudflare Workers Builds checkout has
-  // NO dist/ until something builds it. Putting the build here (wrangler runs
-  // build.command before every deploy/dev) makes the pipeline deterministic
-  // from the repo alone — it no longer depends on a Dashboard build-command
-  // field that can silently drift (which is exactly what broke the deploys
-  // after the Pages -> Workers Static Assets move). build-site.js also
-  // enforces the curriculum//clinical//imports//docs/ quarantine, so the
-  // build step is a privacy gate, not just a copy.
   "build": {
     "command": "node scripts/build-site.js"
   },
   "assets": {
     "directory": "./dist",
-    "not_found_handling": "single-page-application"
+    "not_found_handling": "single-page-application",
+    "binding": "ASSETS",
+    "run_worker_first": [
+      "/__clinical/*"
+    ]
+  },
+  "main": "src/worker.mjs",
+  "d1_databases": [
+    {
+      "binding": "CLINICAL_DB",
+      "database_name": "acuting-clinical",
+      "database_id": "c96bd14b-70ed-49c1-8abf-1eeb1eac651f"
+    }
+  ],
+  "vars": {
+    "ENVIRONMENT": "production",
+    "CLINICAL_DB_NAME": "acuting-clinical",
+    "ACCESS_TEAM_DOMAIN": "https://soft-snow-1c0c.cloudflareaccess.com",
+    "ACCESS_AUD": "595aadf420d59864fede44c0d74321dd2c7ed7b44c822455873c289b3794ad26",
+    "ACCESS_ALLOWED_EMAILS": "guotingru@gmail.com"
   }
 }
