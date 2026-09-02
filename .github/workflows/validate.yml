@@ -110,7 +110,7 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "24"
 
       # 品質 overlay 在 build-data 之前重建:build-data 會把它包進 bundle,
       # 順序反了的話 CI 綠燈證明的是舊 overlay。它是從 ledger 產生的,
@@ -680,7 +680,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "24"
       - name: no layer may get worse than its committed baseline
         run: node scripts/check-validation-ratchet.js
 
