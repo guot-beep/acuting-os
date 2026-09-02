@@ -240,6 +240,8 @@ jobs:
         run: node scripts/validate-d1-deploy-gate.js
       - name: D1 deploy gate self-test (negative controls)
         run: node scripts/test-d1-deploy-gate.js
+      - name: two-book export diff (migration pre-check) self-test
+        run: node scripts/diff-clinical-exports.js --self-test
 
       # CARE 草稿匯出邊界(2026-08-14 Ting ruling / CODEX AUDIT #1-#2)。
       # 這三支在 CLAUDE.md 裡被列為「改完要跑」,但 `grep -c care` 在這個檔案

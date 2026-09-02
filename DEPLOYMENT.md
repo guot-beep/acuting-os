@@ -205,3 +205,13 @@ Emails = Ting 的 email → 登入方式 One-time PIN。
 - 操作流程:`docs/SQLITE_RUNBOOK_2026-09-01.md`。回歸套件:`scripts/test-clinical-sqlite-service.js`。
 - AI session 驗收規則不變:線上版唯讀;寫入測試用本機服務,**而且要用自己的 `--db` 與 `--port`**
   (預設 8785 + Documents 那個 .db 是 Ting 的真實病例)。
+
+### D33 切換(D1 上線)之後的 AI 規則
+
+- 正式網址在 Access 之後,而且**頁面本身就會載入雲端病例**:AI session **不得**在 Ting 的瀏覽器設定檔裡開正式網址
+  (開頁 = 讀病歷),也不得用她的 Access session 打 `/__clinical/*`。線上核對只做兩件事:匿名 fetch `/__clinical/ping`
+  應被 Access 擋(登入頁 / 302)—— 證明鎖在;以及 Ting 自己貼回來的徽章文字與筆數。
+- 寫入測試一律在本機 `wrangler dev`(`.claude/launch.json` 的 `d1-local-8797`,`--persist-to` 短路徑,DEV_AUTH_BYPASS 只在 loopback 生效)
+  或未來的 staging Worker(自己的 D1 + 自己的 Access),永遠不是正式 D1。
+- 部署 = 讀病歷的程式上線:改到 `src/**`、`wrangler.jsonc`、`js/clinical-*.js`、`index.html`、`scripts/build-site.js` 的 commit
+  要過 `scripts/validate-d1-deploy-gate.js`;半套設定(有 Worker 沒 meta、有 meta 沒 Worker、placeholder id)CI 會擋。

@@ -5,6 +5,13 @@
 
 > 先登入 https://dash.cloudflare.com/(帳號 guotingru@gmail.com)。
 
+### 先知道的四件事(做之前讀一次,免得卡住)
+1. **Zero Trust 第一次開通會要妳選方案並輸入信用卡**,即使選 Free(0 元)也要卡。這是 Cloudflare 的規定,不是我們的。
+2. 鎖上以後,**同一個網址上的 `previsit.html`(病人自填問卷頁)也會要求登入**。如果妳有讓病人自己在手機上填那頁,
+   告訴我,previsit 要另外搬到一個不上鎖的網址;如果都是妳代填,就沒差。
+3. workers.dev 這種網址**不能**用「Self-hosted 應用程式」上鎖(那需要自己的網域),要用 Worker 自己的 **Access** 頁籤(下面路徑 A)。
+4. 新開的 Zero Trust 預設登入方式是「Cloudflare 帳號」,不是 email PIN;**要自己加 One-time PIN**(路徑 A 第 4 步),不然手機登入會要妳輸 Cloudflare 密碼。
+
 ---
 
 ## 事 1:把網站上鎖(Cloudflare Access)—— D33 前提一
@@ -12,24 +19,27 @@
 **目的**:從此打開 `https://acuting-os.guotingru.workers.dev/` 要先用妳的 email 收一次性 PIN 才進得去。
 病例上雲之後,沒鎖 = 任何人拿到網址就能讀寫。
 
-### 路徑 A(最短,建議先試)
-1. 左邊選單 **Workers & Pages** → 點 **acuting-os** → 上方 **Settings** → **Domains & Routes**。
-2. 找到 `acuting-os.guotingru.workers.dev` 那一列 → 右邊 **⋯** → 若有 **Enable Cloudflare Access** 就按下去。
-3. 它會自動建立一個 Access 應用程式。按完後**一定要去檢查政策**(路徑 B 的第 5 步),確定只放行妳的 email。
+### 路徑 A(Worker 自己的 Access 頁籤 —— 這是 workers.dev 唯一正確的做法)
+1. 左邊選單 **Workers & Pages** → 點 **acuting-os** → 上方頁籤找 **Access**(在 Settings 旁邊;找不到就在 Settings 裡找 "Access")。
+2. 按 **Protect this Worker behind Access**(或 Enable)。範圍選 **All traffic**(不要選 Previews only)——
+   這樣正式網址、預覽網址都一起鎖。第一次會把妳帶去開通 Zero Trust(選 Free、取 team name 例如 `acuting`、輸入卡)。
+3. 它會自動建立一個 Access 應用程式與政策。**去檢查政策**:Zero Trust → **Access** → **Applications** → 點那個應用程式 →
+   Policies → 確定 Action 是 **Allow**、規則是 **Emails = guotingru@gmail.com**(不是 Everyone、不是「Cloudflare 帳號」)。
+   不對就改成這樣;Session duration 用 **24 hours**。
+4. 加 email PIN 登入:Zero Trust → **Integrations**(或 Settings)→ **Identity providers** → **Add new** → **One-time PIN** → Save。
 
-### 路徑 B(手動,A 找不到那個按鈕時)
-1. 左邊選單 **Zero Trust**(第一次會要妳選方案,選 **Free**;會要妳取一個 team name,例如 `acuting` —— **把這個 team name 記下來**)。
-2. **Access** → **Applications** → **Add an application** → **Self-hosted**。
-3. Application name:`AcuTing OS`;Session duration:`24 hours`。
-4. Application domain:輸入 `acuting-os.guotingru.workers.dev`(Path 留空)。→ Next。
-5. **Policy**:Policy name `Ting only`;Action **Allow**;Configure rules → Selector **Emails** → 值 `guotingru@gmail.com`。→ Next → 其餘預設 → **Add application**。
-6. 登入方式:Zero Trust → **Settings** → **Authentication** → Login methods 至少要有 **One-time PIN**(預設就有)。
+### 路徑 B(路徑 A 真的找不到 Access 頁籤時)
+1. Zero Trust → **Access** → **Applications** → **Add an application** → 若列表裡有 **Workers** / 選擇 Worker 的選項,選 **acuting-os**;
+   若只有 Self-hosted(要求網域),就停下來把畫面拍給我,不要硬填 workers.dev。
+2. 之後的政策與 One-time PIN 同路徑 A 第 3、4 步。
 
 ### 拿兩個值給我
 - **AUD tag**:Access → Applications → 點 `AcuTing OS` → **Overview** 或 **Basic information** 裡的
   **Application Audience (AUD) Tag**(一長串 64 個字元)→ 複製。
 - **Team domain**:Zero Trust → **Settings** → **Custom Pages**(或 **General**)裡的 **Team domain**,
   長得像 `acuting.cloudflareaccess.com` → 複製(我會加 `https://`)。
+- (順手)**Workers 方案**:Workers & Pages → Plans 看是 Free 還是 Paid。Free 每個請求只有 10 ms CPU,病例多了以後存檔可能撞牆;
+  撞到時我會請妳升 Workers Paid(每月 5 美元)。現在不用動。
 
 ### 確認鎖上了
 用**無痕視窗**開 `https://acuting-os.guotingru.workers.dev/` → 應該看到 Cloudflare Access 的登入頁(要 email)。
@@ -76,8 +86,12 @@ AUD_TAG     =
 1. 我把三個值寫進設定、跑閘門、推上 main → Workers Builds 自動部署(3–5 分鐘)。
 2. **妳在桌機**:開網址 → Access 登入 → 左下角出現**藍色徽章** `☁ D1 · acuting-clinical · rev 0 · guotingru@gmail.com`,病例 0 筆(新簿子,正常)。
 3. **匯入桌機的病例**:病例 → 匯入 → 選桌機那份匯出 JSON → 「合併」→ 徽章 rev 1、病例出現。
-4. **手機**:同一個網址 → Access 登入 → 看到同一筆病例(**這就是妳要的**)→ 手機也按「匯出 JSON」(舊的手機病例)→ 傳到桌機 → 桌機匯入「合併」→ 兩邊重新整理都看到全部。
-   如果合併被拒(「事件歷史會被改寫」),停下來貼給我,不要選「完整還原」。
+4. **手機**:同一個網址 → Access 登入 → 看到同一筆病例(**這就是妳要的**)→ 手機也按「匯出 JSON」(舊的手機病例)→ 傳到桌機。
+   **先不要匯入。** 我先跑 `node scripts/diff-clinical-exports.js 桌機.json 手機.json`:
+   - 印出「✓ 沒有 divergent」→ 桌機匯入手機那份,選「合併」→ 兩邊重新整理都看到全部,筆數 = 聯集。
+   - 印出「⛔ 有 divergent」= 同一個病例兩台都改過(例如各自加了 SOAP)。app 的合併會把其中一台的 SOAP 整個蓋掉,
+     所以我會先做出合併好的 R.json 給妳看,妳點頭再匯入。
+   任何時候都不要選「完整還原」。
 5. **五個核對**:(a) 桌機 F5 病例還在;(b) 手機 F5 一樣;(c) 桌機加一則 SOAP → 手機 F5 看得到;(d) 手機改一筆 → 桌機 F5 看得到;(e) 兩台同時改同一筆 → 後存的那台被擋、重新整理後再改一次成功。
 6. 舊的 localStorage 病例從頭到尾沒被動過 = 回滾錨。回滾 = 我把設定切回純靜態(一個指令、一次 push),app 回到 localStorage,匯出 JSON 匯回去即可。
 

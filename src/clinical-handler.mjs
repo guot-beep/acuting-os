@@ -28,6 +28,9 @@ export const SERVICE = "acuting-clinical-sqlite";   // adapter 認這個標記;D
 export const API = "/__clinical";
 export const CLIENT_HEADER = "x-acuting-client";
 export const MAX_BODY = 64 * 1024 * 1024;
+/* 正本鍵不准 DELETE:app 在 v1 世界從不刪主槽;一個失控的 client 迴圈或被劫持的 session 也不能一鍵清空整本簿子。
+ * 要「清空」只能寫入 "[]"(留在 history 裡),不能刪列。 */
+export const PROTECTED_KEYS = new Set(["acuting-clinical-cases-v1", "acuting-clinical-v2-staging"]);
 
 const isLoopback = (h) => h === "127.0.0.1" || h === "localhost" || h === "[::1]" || h === "::1";
 
@@ -66,10 +69,11 @@ export function createClinicalHandler(deps) {
     return { ok: true, email: r.email || null, actor: r.email || (r.commonName ? `svc:${r.commonName}` : null), kind: r.kind || "user" };
   }
 
-  return async function handle(request) {
+  async function handleInner(request) {
     const url = new URL(request.url);
     const method = request.method.toUpperCase();
     if (!url.pathname.startsWith(`${API}/`)) return json(404, { error: "not_found" });
+    if (url.search) return json(400, { error: "no_query_string", message: "病例 API 不接受查詢字串(避免資料進到 URL 與存取紀錄)。" });
 
     const auth = await authenticate(request, url);
     if (!auth.ok) {
@@ -135,11 +139,23 @@ export function createClinicalHandler(deps) {
         log(`PUT ${key} ${body.length} chars → rev ${r.revision} ${auth.actor || ""}`);
         return json(200, { revision: r.revision });
       }
+      if (PROTECTED_KEYS.has(key)) return json(405, { error: "protected_key", message: "正本鍵不能刪除;要清空請寫入 [](會留在 history)。" });
       const r = await core.del(key, ifMatch, auth.actor || null);
       if (!r.ok) { log(`DELETE ${key} 409`); return conflict(r); }
       log(`DELETE ${key} → rev ${r.revision} ${auth.actor || ""}`);
       return json(200, { revision: r.revision });
     }
     return json(404, { error: "not_found" });
+  }
+
+  /* 任何未預期的例外都不能把訊息送回瀏覽器(D1 錯誤含 SQL 文字)也不能整段進 log。
+   * 回一個短參照碼,log 只記錯誤類別 + 訊息前 120 字(bound params 不在 SQL 文字裡,所以沒有值)。 */
+  return async function handle(request) {
+    try { return await handleInner(request); }
+    catch (e) {
+      const ref = Math.random().toString(36).slice(2, 10);
+      log(`✗ internal ${ref} ${(e && e.name) || "Error"}: ${String((e && e.message) || e).slice(0, 120)}`);
+      return json(500, { service: SERVICE, backend: "d1", error: "internal", ref, message: `服務內部錯誤(參照 ${ref})。這次沒有寫入;把這個參照碼貼給 Claude。` });
+    }
   };
 }

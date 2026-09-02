@@ -153,6 +153,23 @@ const LOCAL = "http://127.0.0.1:8797";
     const hist = await core.historyCount();
     assert.strictEqual(hist, 3);
     ok("history 3 筆(每次寫入一筆)");
+    const delMain = await call(handle, PROD, "DELETE", "/__clinical/kv/" + KEY, { headers: { ...W, "if-match": "3" } });
+    assert.strictEqual(delMain.status, 405); assert.strictEqual(delMain.json.error, "protected_key");
+    assert.strictEqual(await core.get(KEY), payload);
+    ok("DELETE 正本鍵 → 405,簿子還在(要清空只能寫入 [])");
+    const qs = await call(handle, PROD, "GET", "/__clinical/kv?debug=1", { headers: AUTH });
+    assert.strictEqual(qs.status, 400);
+    ok("帶查詢字串 → 400(資料不進 URL)");
+  }
+
+  console.log("\nH4b 內部錯誤不外洩");
+  {
+    const boom = mk({ core: { revision: async () => { throw new Error("D1_ERROR: near \"SELECT secret_value\": syntax error"); } } });
+    const r = await call(boom.handle, PROD, "GET", "/__clinical/ping", { headers: AUTH });
+    assert.strictEqual(r.status, 500); assert.strictEqual(r.json.error, "internal"); assert(r.json.ref);
+    assert(!JSON.stringify(r.json).includes("secret_value"), "例外訊息洩到回應裡");
+    assert(logs.some((l) => l.includes("✗ internal") && l.includes(r.json.ref)));
+    ok("未預期例外 → 500 + 參照碼,回應不含例外文字,log 有參照碼可對");
   }
 
   console.log("\nH5 瀏覽器 adapter 接上處理器");

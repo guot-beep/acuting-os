@@ -27,7 +27,9 @@ function buildHandler(env) {
   const allowedSvc = String(env.ACCESS_ALLOWED_SERVICE_TOKENS || "").split(",").map((s) => s.trim()).filter(Boolean);   // service token 的 Client ID(備份工具)
   const authConfigured = !!(teamDomain && aud);
   if (authConfigured && jwksFor !== teamDomain) { jwksCache = createJwksCache(jwksFetcher(teamDomain)); jwksFor = teamDomain; }
-  const core = createKvCore(createD1Adapter(env.CLINICAL_DB));
+  /* history 每 key 留 50 版(不是本機服務的 200):D1 免費方案單庫 500 MB,信封若長到 2 MB,200 版 × 2 鍵就爆了;
+   * 50 版 + D1 Time Travel(7/30 天)夠用。 */
+  const core = createKvCore(createD1Adapter(env.CLINICAL_DB), { historyPerKey: Number(env.HISTORY_PER_KEY) || 50 });
   return createClinicalHandler({
     core,
     ensureSchema: () => core.ensureSchema(),

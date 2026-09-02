@@ -62,3 +62,8 @@ data/clinical_cases/exports/
 # Python bytecode from scripts/extract-curriculum-text.py
 __pycache__/
 *.pyc
+
+# wrangler 本機狀態與本機祕密(wrangler dev)
+.wrangler/
+.dev.vars
+.dev.vars.*
