@@ -206,6 +206,19 @@ const LOCAL = "http://127.0.0.1:8797";
     const st = global.AcuTingClinicalBackend.state();
     assert.strictEqual(st.backend, "d1"); assert.strictEqual(st.email, "guotingru@gmail.com");
     ok("state() 有 backend=d1 與 email(徽章用)");
+
+    // (e) Access 登入過期:同步 XHR 跟著 302 到登入頁,拿回 200 + HTML —— 絕不能被當成寫入成功
+    const loginPage = { status: 200, text: "<!doctype html><html><title>Cloudflare Access</title><body>Sign in</body></html>" };
+    const expiredMap = { ...okMap, PUT: () => loginPage };
+    B.install({ transport: canned(expiredMap), location: { hostname: "acuting-os.guotingru.workers.dev" }, expectService: true, onChange() {} });
+    S.load();
+    const revBefore = global.AcuTingClinicalBackend.state().revision;
+    let threwExp = null;
+    try { S.save([{ id: "case.expired", patientCode: "P-1", soapNotes: [] }]); } catch (e) { threwExp = e; }
+    assert(threwExp && /沒有\*\*寫入|登入已過期/.test(threwExp.message), threwExp && threwExp.message);
+    assert.strictEqual(global.AcuTingClinicalBackend.state().revision, revBefore);
+    assert.strictEqual(global.AcuTingClinicalBackend.read(), "[]", "鏡像不得被更新成沒寫進去的內容");
+    ok("寫入拿到 200 + 登入頁 HTML → 拋錯、鏡像與 revision 不變(不會把沒存到的當存到)");
   }
 
   console.log("\nH6 log 不含值");

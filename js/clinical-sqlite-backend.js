@@ -97,8 +97,12 @@
         else if (parsed && Array.isArray(parsed.cases)) cases = parsed.cases;
         const payload = JSON.stringify({ stashed_at: new Date().toISOString(), reason: why, key: k, cases: cases, raw: cases ? undefined : v });
         const r = transport("PUT", API + "/kv/" + encodeURIComponent(CONFLICT_BACKUP_KEY), payload, { "Content-Type": "text/plain; charset=utf-8", ...WRITE_HEADERS });
-        return r.status === 200;
+        return r.status === 200 && !!parseWriteAck(r.text);   // 200 + 登入頁 HTML 不算備份成功
       } catch (_) { return false; }
+    }
+    /** 寫入的 ack 必須是 JSON 且帶整數 revision;其他一律視為沒寫進去。 */
+    function parseWriteAck(text) {
+      try { const j = JSON.parse(text); return (j && Number.isSafeInteger(j.revision)) ? j : null; } catch (_) { return null; }
     }
     function put(k, v) {
       ensureFresh();
@@ -106,9 +110,12 @@
       const r = transport("PUT", API + "/kv/" + encodeURIComponent(k), s,
         { "Content-Type": "text/plain; charset=utf-8", "If-Match": String(revision), ...WRITE_HEADERS });
       if (r.status === 200) {
-        let j = {}; try { j = JSON.parse(r.text); } catch (_) { /* */ }
+        /* 200 不等於寫進去了:Access 登入過期時,同步 XHR 會跟著 302 跑到登入頁,拿回 200 + HTML。
+         * 只有 JSON 且帶整數 revision 才算成功;否則當失敗拋出,app 才會回滾並提示,不會把沒存到的當存到。 */
+        const j = parseWriteAck(r.text);
+        if (!j) throw new Error("病例服務的回應不是預期格式(最常見:登入已過期,回的是登入頁)—— 這次" + "寫入" + "**沒有**寫入。\n重新整理頁面重新登入,再把剛才的修改做一次。");
         mirror.set(k, s);
-        if (Number.isSafeInteger(j.revision)) revision = j.revision;
+        revision = j.revision;
         announce(); onChange();
         return;
       }
@@ -125,9 +132,10 @@
       ensureFresh();
       const r = transport("DELETE", API + "/kv/" + encodeURIComponent(k), undefined, { "If-Match": String(revision), ...WRITE_HEADERS });
       if (r.status === 200) {
-        let j = {}; try { j = JSON.parse(r.text); } catch (_) { /* */ }
+        const j = parseWriteAck(r.text);
+        if (!j) throw new Error("病例服務的回應不是預期格式(最常見:登入已過期)—— 這次刪除**沒有**執行。重新整理頁面重新登入後再試。");
         mirror.delete(k);
-        if (Number.isSafeInteger(j.revision)) revision = j.revision;
+        revision = j.revision;
         announce(); onChange();
         return;
       }
@@ -283,7 +291,11 @@
             if (j && j.service === MARKER && (r.status === 401 || r.status === 503)) { backend.setInfo({ authLost: true }); onChange(backend.state()); }
             return;
           }
-          if (!j) return;
+          if (!j || j.service !== MARKER) {
+            // 200 但不是我們的 JSON = 被 Access 轉去登入頁(登入過期)。先亮紅徽章;下一次寫入會被 parseWriteAck 擋下。
+            backend.setInfo({ authLost: true }); onChange(backend.state());
+            return;
+          }
           backend.setInfo({ authLost: false, email: j.email !== undefined ? j.email : backend.state().email });
           const st = backend.state();
           st.projection = j.projection || st.projection;
