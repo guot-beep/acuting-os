@@ -628,7 +628,22 @@
         "not_rendered_reason": "整形不是查證。食療與藥用已分欄,但 80 張的落差與蘇合香的 SAFETY_HOLD 仍未裁決,因此本欄刻意不上畫面;validate-herb-dosage-shape.js D1 會擋住接線。",
         "no_new_numbers": true,
         "source_field": "dosage"
-      }
+      },
+      "indications_en": [
+        "Wind-Cold exterior excess pattern — aversion to cold with fever, no sweating, headache and generalized body aches, nasal congestion, floating tight pulse; combined with Gui Zhi (Cinnamon Twig) in Ma Huang Tang (Ephedra Decoction).",
+        "Wind-Cold binding the Lung with constrained Lung qi — cough, wheezing, chest oppression; combined with Xing Ren (Apricot Kernel) and Gan Cao (Licorice) in San Ao Tang.",
+        "Heat pathogen constraining the Lung — fever, thirst, rapid wheezing cough with dyspnea, flaring of the nostrils; combined with Shi Gao (Gypsum) and Xing Ren (Apricot Kernel) in Ma Xing Shi Gan Tang (Ephedra, Apricot Kernel, Gypsum, and Licorice Decoction).",
+        "Qi deficiency with an exterior invasion of Wind-Cold — aversion to cold without sweating together with shortness of breath and fatigue; combined with Ren Shen (Ginseng) to support the righteous qi while releasing the exterior.",
+        "Wind-Water edema — acute edema with an exterior pattern and difficult urination; unprocessed Ma Huang diffuses Lung qi and induces sweating to regulate the water passages.",
+        "Wind-Cold-Damp painful obstruction — cold, painful joints with restricted flexion and extension; combined with Gui Zhi (Cinnamon Twig) and Bai Zhu (White Atractylodes) or Yi Yi Ren (Coix Seed) to warm and disperse Cold-Damp.",
+        "Yang deficiency with an exterior invasion, or Yang deficiency edema — aversion to cold, cold limbs, deep pulse; combined with Fu Zi (Aconite) to warm Yang while releasing the exterior and assisting Yang to move water.",
+        "Cough and wheezing from exterior Cold with interior Fluid retention — coughing up thin, watery phlegm, chest fullness, wheezing; combined with Gan Jiang (Dried Ginger), Xi Xin (Asarum), and Ban Xia (Pinellia) in Xiao Qing Long Tang (Minor Bluegreen Dragon Decoction).",
+        "Yin-type flat abscess, diffuse swelling without a head, or impaired blood flow to the extremities from Cold congealing the channels — combined with Shu Di Huang (Prepared Rehmannia), Bai Jie Zi (White Mustard Seed), and Lu Jiao Jiao (Deer Antler Glue) among others to warm Yang, disperse Cold, and unblock stagnation."
+      ],
+      "channels_en": [
+        "Lung",
+        "Bladder"
+      ]
     },
     {
       "id": "herb.gui_zhi",
@@ -1149,6 +1164,18 @@
         "Analgesic and antipyretic effects",
         "Anti-inflammatory and antiviral activity",
         "Cardiotonic effect and improved blood circulation"
+      ],
+      "indications_en": [
+        "Wind-Cold exterior deficiency with disharmony of Ying (Nutritive) and Wei (Defensive) Qi (sweating with aversion to wind) — combined with Bai Shao (White Peony Root), Sheng Jiang (Fresh Ginger), and Da Zao (Chinese Jujube)",
+        "Wind-Cold exterior excess with absence of sweating and generalized body aches — combined with Ma Huang (Ephedra)",
+        "Wind-Cold-Damp painful obstruction (Bi syndrome) with cold-congealing pain in the channels — combined with Qiang Huo (Notopterygium Root) and Fu Zi (Aconite Lateral Root)",
+        "Yang deficiency with fluid retention (Water-Rheum) (palpitations, dizziness, difficult urination) — combined with Fu Ling (Poria) and Bai Zhu (White Atractylodes Rhizome)",
+        "Cold-congealed Blood stasis causing dysmenorrhea or abdominal masses — combined with Dang Gui (Chinese Angelica Root), Chuan Xiong (Sichuan Lovage Rhizome), and Tao Ren (Peach Kernel)"
+      ],
+      "channels_en": [
+        "Heart",
+        "Lung",
+        "Bladder"
       ]
     },
     {
@@ -1587,6 +1614,17 @@
         "Promotes gastrointestinal motility and relieves spasm",
         "Anti-allergic, antitussive, and antiasthmatic effects",
         "Antibacterial and antifungal activity"
+      ],
+      "indications_en": [
+        "Wind-Cold common cold with concurrent cough and nasal congestion — combined with Sheng Jiang (fresh Ginger) and Xing Ren (Apricot Kernel)",
+        "Qi stagnation with chest oppression and epigastric and abdominal distension — combined with Chen Pi (Tangerine Peel) and Xiang Fu (Cyperus)",
+        "Nausea and vomiting due to Spleen-Stomach qi stagnation — combined with Sheng Jiang (fresh Ginger) and Ban Xia (Pinellia)",
+        "Morning sickness of pregnancy and disharmony of fetal qi — Zi Su Ye (Perilla Leaf) is better at moving qi, while Su Geng (Perilla Stem) is better at calming the fetus",
+        "Abdominal pain and vomiting from fish or crab poisoning — combined with Sheng Jiang (fresh Ginger)"
+      ],
+      "channels_en": [
+        "Lung",
+        "Spleen"
       ]
     },
     {
@@ -2185,6 +2223,18 @@
         "Promotes gastric secretion and gastric emptying",
         "Anti-inflammatory and analgesic effects",
         "Antioxidant activity and cardiovascular protection"
+      ],
+      "indications_en": [
+        "Early-stage Wind-Cold with cough and phlegm — combine with Zi Su Ye (Perilla Leaf) and Xing Ren (Apricot Kernel)",
+        "Stomach Cold with vomiting and cold pain in the epigastrium and abdomen — combine with Ban Xia (Pinellia)",
+        "Wind-Cold invading the Lung with cough, or Lung deficiency with phlegm-cough — combine with Xing Ren (Apricot Kernel) and Zi Wan (Aster Root)",
+        "Toxicity from herbs such as Ban Xia (Pinellia) or Tian Nan Xing (Arisaema), or fish/crab poisoning — combine with Gan Cao (Licorice) and Zi Su Ye (Perilla Leaf)",
+        "Taiyang Wind-Strike pattern with disharmony of Nutritive and Defensive qi — combine with Gui Zhi (Cinnamon Twig), Bai Shao (White Peony), and Da Zao (Jujube)"
+      ],
+      "channels_en": [
+        "Lung",
+        "Spleen",
+        "Stomach"
       ]
     },
     {
@@ -2576,6 +2626,10 @@
         "Broad-spectrum antibacterial and antiviral activity",
         "Promotes gastrointestinal motility and relieves spasm",
         "Mild diuretic effect"
+      ],
+      "channels_en": [
+        "Lung",
+        "Stomach"
       ]
     },
     {
@@ -3061,6 +3115,17 @@
         "Promotes cutaneous microcirculation",
         "Significant hemostatic effect (Schizonepeta charcoal)",
         "Broad-spectrum antibacterial and anti-inflammatory activity"
+      ],
+      "indications_en": [
+        "Wind-Cold exterior pattern (aversion to cold, fever, absence of sweating) — combine with Fang Feng (Siler) and Qiang Huo (Notopterygium)",
+        "Wind-Heat exterior pattern (fever, headache, sore throat) — combine with Bo He (Mint), Jin Yin Hua (Honeysuckle), and Lian Qiao (Forsythia)",
+        "Early-stage measles with incomplete eruption, or wind-rash with itching — combine with Bo He (Mint), Niu Bang Zi (Burdock Seed), and Chan Tui (Cicada Molting)",
+        "Postpartum convulsions or lockjaw due to external Wind — used as an adjuvant herb according to pattern differentiation",
+        "Mild bleeding such as blood in the stool or uterine bleeding — charred Jing Jie (Jing Jie Tan) is used"
+      ],
+      "channels_en": [
+        "Lung",
+        "Liver"
       ]
     },
     {
@@ -3591,7 +3656,19 @@
         "not_rendered_reason": "整形不是查證。食療與藥用已分欄,但 80 張的落差與蘇合香的 SAFETY_HOLD 仍未裁決,因此本欄刻意不上畫面;validate-herb-dosage-shape.js D1 會擋住接線。",
         "no_new_numbers": true,
         "source_field": "dosage"
-      }
+      },
+      "indications_en": [
+        "Wind-Cold exterior pattern (headache, aversion to cold, generalized body aches) — combined with Jing Jie (Schizonepeta) and Zi Su Ye (Perilla Leaf)",
+        "Wind-Cold-Damp Bi (painful obstruction) with pain of the limbs and joints — combined with Qiang Huo (Notopterygium) and Qin Jiao (Gentiana Macrophylla)",
+        "Tremor and spasm of the hands and feet induced by external Wind — used as an adjunct herb to relieve spasm",
+        "Painful diarrhea with abdominal borborygmus and pain due to Spleen-Liver disharmony — combined with Bai Zhu (Atractylodes), Bai Shao (White Peony), and Chen Pi (Tangerine Peel)",
+        "Spontaneous sweating and susceptibility to catching cold due to deficient Defensive (Wei) Qi — combined with Huang Qi (Astragalus) and Bai Zhu (Atractylodes) (Yu Ping Feng San)"
+      ],
+      "channels_en": [
+        "Bladder",
+        "Liver",
+        "Spleen"
+      ]
     },
     {
       "id": "herb.qiang_huo",
@@ -4019,6 +4096,10 @@
         "Significant analgesic and antipyretic effects",
         "Anti-arrhythmic and anti-myocardial-ischemic activity",
         "Anti-inflammatory and antifungal activity"
+      ],
+      "channels_en": [
+        "Bladder",
+        "Kidney"
       ]
     },
     {
@@ -4426,7 +4507,12 @@
         "not_rendered_reason": "整形不是查證。食療與藥用已分欄,但 80 張的落差與蘇合香的 SAFETY_HOLD 仍未裁決,因此本欄刻意不上畫面;validate-herb-dosage-shape.js D1 會擋住接線。",
         "no_new_numbers": true,
         "source_field": "dosage"
-      }
+      },
+      "channels_en": [
+        "Lung",
+        "Spleen",
+        "Stomach"
+      ]
     },
     {
       "id": "herb.xi_xin",
@@ -4913,7 +4999,11 @@
         "not_rendered_reason": "整形不是查證。食療與藥用已分欄,但 80 張的落差與蘇合香的 SAFETY_HOLD 仍未裁決,因此本欄刻意不上畫面;validate-herb-dosage-shape.js D1 會擋住接線。",
         "no_new_numbers": true,
         "source_field": "dosage"
-      }
+      },
+      "channels_en": [
+        "Lung",
+        "Kidney"
+      ]
     },
     {
       "id": "herb.cang_er_zi",
@@ -5307,6 +5397,9 @@
         "Hypoglycemic effect (atractyloside)",
         "Antibacterial and anti-allergic activity",
         "Analgesic and anti-inflammatory effects"
+      ],
+      "channels_en": [
+        "Lung"
       ]
     },
     {
@@ -11667,6 +11760,16 @@
         "Significant antipyretic effect",
         "Sedative effect and regulation of sweat gland (diaphoretic) activity",
         "Topical use promotes wound healing and hemostasis"
+      ],
+      "indications_en": [
+        "Clears Heat and drains Fire; relieves irritability and stops thirst; astringes and generates flesh (when calcined)"
+      ],
+      "channels_en": [
+        "Lung",
+        "Stomach"
+      ],
+      "contraindications_en": [
+        "Prohibited in patients with Yin deficiency with interior Heat, and in those with Spleen-Stomach Cold deficiency."
       ]
     },
     {
@@ -12093,6 +12196,17 @@
       },
       "contraindications_zh": [
         "脾胃虛寒便溏者禁用。"
+      ],
+      "indications_en": [
+        "Clears Heat and drains Fire; nourishes Yin and moistens dryness"
+      ],
+      "channels_en": [
+        "Lung",
+        "Stomach",
+        "Kidney"
+      ],
+      "contraindications_en": [
+        "Contraindicated in patients with Spleen-Stomach deficiency-cold and loose stools."
       ]
     },
     {
@@ -12357,6 +12471,16 @@
       ],
       "contraindications_zh": [
         "脾胃虛寒者慎用。"
+      ],
+      "indications_en": [
+        "Clears Heat and drains Fire; generates fluids and stops thirst; stops vomiting; promotes urination"
+      ],
+      "channels_en": [
+        "Lung",
+        "Stomach"
+      ],
+      "contraindications_en": [
+        "Use with caution in patients with Spleen-Stomach deficiency-cold."
       ]
     },
     {
@@ -12668,6 +12792,16 @@
       ],
       "contraindications_zh": [
         "孕婦禁用；脾胃虛寒者忌服；反烏頭（十八反）。"
+      ],
+      "indications_en": [
+        "Clears Heat and drains Fire; generates fluids and quenches thirst; reduces swelling and expels pus."
+      ],
+      "channels_en": [
+        "Lung",
+        "Stomach"
+      ],
+      "contraindications_en": [
+        "Contraindicated in pregnancy; contraindicated in those with Spleen-Stomach deficiency cold; incompatible with Wu Tou (Aconite) (one of the Eighteen Incompatibilities)."
       ]
     },
     {
@@ -13014,6 +13148,17 @@
       ],
       "contraindications_zh": [
         "脾虛便溏者忌服。"
+      ],
+      "indications_en": [
+        "Drains Fire and relieves irritability; clears Heat and drains Dampness; cools the Blood and resolves toxicity"
+      ],
+      "channels_en": [
+        "Heart",
+        "Lung",
+        "Triple Burner"
+      ],
+      "contraindications_en": [
+        "Contraindicated in patients with Spleen deficiency and loose stools."
       ]
     },
     {
@@ -13291,6 +13436,16 @@
       ],
       "contraindications_zh": [
         "脾胃虛弱者慎用。"
+      ],
+      "indications_en": [
+        "Clears Heat and drains Fire; brightens the eyes; dissipates nodules and reduces swelling"
+      ],
+      "channels_en": [
+        "Liver",
+        "Gallbladder"
+      ],
+      "contraindications_en": [
+        "Use with caution in Spleen-Stomach deficiency."
       ]
     },
     {
@@ -13730,6 +13885,19 @@
       ],
       "contraindications_zh": [
         "脾胃虛寒及食少便溏者慎用。"
+      ],
+      "indications_en": [
+        "Clears Heat and dries Dampness; drains Fire and resolves toxicity; stops bleeding; calms the fetus"
+      ],
+      "channels_en": [
+        "Lung",
+        "Gallbladder",
+        "Spleen",
+        "Large Intestine",
+        "Small Intestine"
+      ],
+      "contraindications_en": [
+        "Use with caution in patients with Spleen-Stomach deficiency-cold, and those with reduced appetite and loose stools."
       ]
     },
     {
@@ -14204,6 +14372,20 @@
       ],
       "contraindications_zh": [
         "脾胃虛寒者忌服；苦燥傷陰，不宜久服。"
+      ],
+      "indications_en": [
+        "Clears Heat and dries Dampness; drains Fire and resolves toxicity."
+      ],
+      "channels_en": [
+        "Heart",
+        "Spleen",
+        "Stomach",
+        "Liver",
+        "Gallbladder",
+        "Large Intestine"
+      ],
+      "contraindications_en": [
+        "Contraindicated in patients with Spleen and Stomach deficiency cold; being bitter and drying, it can damage Yin, so it should not be used long-term."
       ]
     },
     {
@@ -14582,6 +14764,17 @@
       ],
       "contraindications_zh": [
         "脾胃虛寒及胃弱食少者忌服。"
+      ],
+      "indications_en": [
+        "Clears Heat and dries Dampness; drains Fire and eliminates steaming bone disorder; resolves toxicity and heals sores."
+      ],
+      "channels_en": [
+        "Kidney",
+        "Bladder",
+        "Large Intestine"
+      ],
+      "contraindications_en": [
+        "Contraindicated in Spleen-Stomach deficiency cold and in those with a weak stomach and poor appetite."
       ]
     },
     {
@@ -14898,6 +15091,16 @@
       ],
       "contraindications_zh": [
         "脾胃虛寒及無實火者慎用。"
+      ],
+      "indications_en": [
+        "Clears heat and dries dampness; drains Liver and Gallbladder fire."
+      ],
+      "channels_en": [
+        "Liver",
+        "Gallbladder"
+      ],
+      "contraindications_en": [
+        "Use with caution in Spleen-Stomach deficiency cold and in the absence of excess fire."
       ]
     },
     {
@@ -15336,7 +15539,17 @@
       "pharmaceutical_latin": "Sophorae Flavescentis Radix",
       "pinyin_toned": "Kǔ Shēn",
       "exam_pearl": "清熱燥濕、殺蟲、利尿要藥，治濕疹、陰癢、滴蟲性陰道炎；反藜蘆（十八反，見 contraindications_en），孕婦、心臟病、腎臟病患者慎用或避免。",
-      "exam_importance": "★ NCBAHM 2026 CH 考綱 Domain I.A：清熱燥濕藥的十八反配伍禁忌是常考點。"
+      "exam_importance": "★ NCBAHM 2026 CH 考綱 Domain I.A：清熱燥濕藥的十八反配伍禁忌是常考點。",
+      "indications_en": [
+        "Clears Heat and dries Dampness; kills parasites; promotes urination."
+      ],
+      "channels_en": [
+        "Heart",
+        "Liver",
+        "Stomach",
+        "Large Intestine",
+        "Bladder"
+      ]
     },
     {
       "id": "herb.jin_yin_hua",
@@ -15696,6 +15909,17 @@
       ],
       "contraindications_zh": [
         "脾胃虛寒及氣虛瘡瘍膿清者忌服。"
+      ],
+      "indications_en": [
+        "Clears Heat and resolves toxicity; disperses Wind-Heat."
+      ],
+      "channels_en": [
+        "Lung",
+        "Heart",
+        "Stomach"
+      ],
+      "contraindications_en": [
+        "Contraindicated in patients with Spleen and Stomach deficiency cold, and in Qi deficiency with sores discharging thin, watery pus."
       ]
     },
     {
@@ -16035,6 +16259,17 @@
       ],
       "contraindications_zh": [
         "脾胃虛寒及氣虛發熱者忌服。"
+      ],
+      "indications_en": [
+        "Clears Heat and resolves toxicity; reduces swelling and dissipates nodules; disperses Wind-Heat."
+      ],
+      "channels_en": [
+        "Lung",
+        "Heart",
+        "Small Intestine"
+      ],
+      "contraindications_en": [
+        "Contraindicated in Spleen-Stomach Yang deficiency Cold and Qi deficiency fever."
       ]
     },
     {
@@ -16453,7 +16688,18 @@
         "not_rendered_reason": "整形不是查證。食療與藥用已分欄,但 80 張的落差與蘇合香的 SAFETY_HOLD 仍未裁決,因此本欄刻意不上畫面;validate-herb-dosage-shape.js D1 會擋住接線。",
         "no_new_numbers": true,
         "source_field": "dosage"
-      }
+      },
+      "indications_en": [
+        "Early-stage breast abscess with red, swollen, hot, and painful breast — combine with Gua Lou (Trichosanthes Fruit), Zhe Bei Mu (Zhejiang Fritillary Bulb), and Jin Yin Hua (Honeysuckle Flower)",
+        "Heat-toxin sores and abscesses, swollen and painful furuncles — combine with Jin Yin Hua (Honeysuckle Flower), Zi Hua Di Ding (Yedoon's Violet Herb), and Lian Qiao (Forsythia Fruit)",
+        "Lung abscess and intestinal abscess — combine respectively with Yu Xing Cao (Houttuynia Herb) and Dong Gua Ren (Wax Gourd Seed), or with Hong Teng (Sargentodoxa Stem) and Bai Jiang Cao (Patrinia Herb)",
+        "Liver Fire with red, swollen, painful eyes — may be used alone as a decoction for steaming and washing, or combined with Ju Hua (Chrysanthemum Flower) and Huang Qin (Scutellaria Root)",
+        "Damp-Heat painful urinary dysfunction (lin syndrome), rough and painful urination, or Damp-Heat jaundice — combine according to pattern differentiation with herbs that drain Dampness and clear Heat"
+      ],
+      "channels_en": [
+        "Liver",
+        "Stomach"
+      ]
     },
     {
       "id": "herb.zi_hua_di_ding",
@@ -16676,6 +16922,16 @@
       ],
       "contraindications_zh": [
         "陰疽及脾胃虛寒者忌服。"
+      ],
+      "indications_en": [
+        "Clears Heat and resolves toxicity; cools the Blood and reduces swelling."
+      ],
+      "channels_en": [
+        "Heart",
+        "Liver"
+      ],
+      "contraindications_en": [
+        "Contraindicated in Yin-type flat abscesses and in Spleen-Stomach Cold deficiency."
       ]
     },
     {
@@ -16951,6 +17207,16 @@
       ],
       "contraindications_zh": [
         "脾胃虛寒者忌服。"
+      ],
+      "indications_en": [
+        "Clears Heat and resolves toxicity; cools the Blood and resolves macules"
+      ],
+      "channels_en": [
+        "Heart",
+        "Stomach"
+      ],
+      "contraindications_en": [
+        "Contraindicated in patients with Spleen-Stomach deficiency-cold."
       ]
     },
     {
@@ -17261,6 +17527,16 @@
       ],
       "contraindications_zh": [
         "脾胃虛寒者忌服；不宜大劑量長期服用。"
+      ],
+      "indications_en": [
+        "Clears Heat and resolves toxicity; cools the Blood and benefits the throat"
+      ],
+      "channels_en": [
+        "Heart",
+        "Stomach"
+      ],
+      "contraindications_en": [
+        "Contraindicated in patients with Spleen-Stomach Cold deficiency; not suitable for long-term use at large doses."
       ]
     },
     {
@@ -17571,6 +17847,15 @@
       ],
       "contraindications_zh": [
         "虛寒證及陰性瘡瘍者忌服。"
+      ],
+      "indications_en": [
+        "Clears Heat and resolves toxicity; reduces abscesses and expels pus; promotes urination and relieves painful urinary dribbling"
+      ],
+      "channels_en": [
+        "Lung"
+      ],
+      "contraindications_en": [
+        "Contraindicated in deficiency-Cold patterns and in patients with yin-type sores."
       ]
     },
     {
@@ -17875,6 +18160,16 @@
       ],
       "contraindications_zh": [
         "虛寒泄瀉者忌服。"
+      ],
+      "indications_en": [
+        "Clears heat and resolves toxicity; cools the blood and stops dysentery."
+      ],
+      "channels_en": [
+        "Stomach",
+        "Large Intestine"
+      ],
+      "contraindications_en": [
+        "Contraindicated in deficiency-cold diarrhea."
       ]
     },
     {
@@ -18227,6 +18522,17 @@
       ],
       "contraindications_zh": [
         "脾胃虛寒、腹瀉及濕滯中焦者忌服。"
+      ],
+      "indications_en": [
+        "Clears Heat and cools the Blood; nourishes Yin and generates fluids."
+      ],
+      "channels_en": [
+        "Heart",
+        "Liver",
+        "Kidney"
+      ],
+      "contraindications_en": [
+        "Contraindicated in Spleen-Stomach deficiency cold, diarrhea, and Dampness stagnating in the Middle Burner."
       ]
     },
     {
@@ -18505,6 +18811,17 @@
       ],
       "contraindications_zh": [
         "脾胃虛寒及食少便溏者忌服；反藜蘆（十八反）。"
+      ],
+      "indications_en": [
+        "Clears heat and cools the blood; nourishes Yin and downbears fire; resolves toxicity and dissipates nodules."
+      ],
+      "channels_en": [
+        "Lung",
+        "Stomach",
+        "Kidney"
+      ],
+      "contraindications_en": [
+        "Contraindicated in Spleen-Stomach deficiency cold and in those with poor appetite and loose stools; incompatible with Li Lu (Veratrum) per the Eighteen Incompatibilities."
       ]
     },
     {
@@ -18905,6 +19222,17 @@
       ],
       "contraindications_zh": [
         "血虛有寒、孕婦及月經過多者禁用。"
+      ],
+      "indications_en": [
+        "Clears Heat and cools the Blood; invigorates the Blood and dispels stasis; reduces deficiency Heat"
+      ],
+      "channels_en": [
+        "Heart",
+        "Liver",
+        "Kidney"
+      ],
+      "contraindications_en": [
+        "Contraindicated in Blood deficiency with cold, pregnancy, and profuse menstruation."
       ]
     },
     {
@@ -19261,6 +19589,15 @@
       ],
       "contraindications_zh": [
         "血虛無瘀及脾胃虛寒者忌服；反藜蘆（十八反）。"
+      ],
+      "indications_en": [
+        "Clears Heat and cools the Blood; dissipates stasis and relieves pain; clears Liver Fire"
+      ],
+      "channels_en": [
+        "Liver"
+      ],
+      "contraindications_en": [
+        "Contraindicated in Blood deficiency without stasis and in patients with Spleen-Stomach deficiency-cold; incompatible with Li Lu (Veratrum Root) (one of the Eighteen Incompatible Medicinals, Shi Ba Fan)."
       ]
     },
     {
@@ -19596,6 +19933,16 @@
       ],
       "contraindications_zh": [
         "產後血虛及脾胃虛弱便溏者慎用。"
+      ],
+      "indications_en": [
+        "Reduces deficiency Heat; relieves summerheat; checks malaria"
+      ],
+      "channels_en": [
+        "Liver",
+        "Gallbladder"
+      ],
+      "contraindications_en": [
+        "Use with caution in postpartum Blood deficiency and in Spleen-Stomach deficiency with loose stools."
       ]
     },
     {
@@ -19871,6 +20218,17 @@
       ],
       "contraindications_zh": [
         "脾虛便溏及外感風寒咳嗽者忌服。"
+      ],
+      "indications_en": [
+        "Cools the Blood and eliminates steaming bone-fever; clears the Lung and drains Fire."
+      ],
+      "channels_en": [
+        "Lung",
+        "Liver",
+        "Kidney"
+      ],
+      "contraindications_en": [
+        "Contraindicated in those with Spleen deficiency and loose stools, and in cough due to exterior Wind-Cold."
       ]
     },
     {
@@ -20133,6 +20491,16 @@
       ],
       "contraindications_zh": [
         "血虛發熱及外感風寒者忌服。"
+      ],
+      "indications_en": [
+        "Reduces deficiency fever; clears fever due to infantile malnutrition (Gan)."
+      ],
+      "channels_en": [
+        "Liver",
+        "Stomach"
+      ],
+      "contraindications_en": [
+        "Contraindicated in fever due to Blood deficiency and in exterior Wind-Cold patterns."
       ]
     },
     {
@@ -20544,6 +20912,19 @@
       ],
       "contraindications_zh": [
         "孕婦、月經期及哺乳期慎用；脾胃虛寒者忌服。"
+      ],
+      "indications_en": [
+        "Drains downward to eliminate accumulation; clears heat and drains fire; cools the blood and resolves toxicity; expels stasis and frees the menses."
+      ],
+      "channels_en": [
+        "Spleen",
+        "Stomach",
+        "Large Intestine",
+        "Liver",
+        "Pericardium"
+      ],
+      "contraindications_en": [
+        "Use with caution during pregnancy, menstruation, and lactation; contraindicated in Spleen-Stomach deficiency cold."
       ]
     },
     {
@@ -20876,6 +21257,13 @@
       ],
       "contraindications_en": [
         "Contraindicated during pregnancy."
+      ],
+      "indications_en": [
+        "Purges downward to unblock the bowels; moistens dryness and softens hardness; clears Fire and reduces swelling."
+      ],
+      "channels_en": [
+        "Stomach",
+        "Large Intestine"
       ]
     },
     {
@@ -21213,6 +21601,16 @@
       ],
       "contraindications_zh": [
         "脾虛便溏者慎用；不宜大量生食（含微量毒性）。"
+      ],
+      "indications_en": [
+        "Moistens the Intestines and unblocks the bowels."
+      ],
+      "channels_en": [
+        "Spleen",
+        "Large Intestine"
+      ],
+      "contraindications_en": [
+        "Use with caution in Spleen deficiency with loose stools; not to be eaten raw in large amounts (contains trace toxicity)."
       ]
     },
     {
@@ -21497,6 +21895,17 @@
       ],
       "contraindications_zh": [
         "孕婦及津液虧虛者慎用。"
+      ],
+      "indications_en": [
+        "Moistens the intestines and unblocks the bowels; promotes urination and reduces edema."
+      ],
+      "channels_en": [
+        "Spleen",
+        "Large Intestine",
+        "Small Intestine"
+      ],
+      "contraindications_en": [
+        "Use with caution in pregnancy and in those with fluid depletion."
       ]
     },
     {
@@ -21820,7 +22229,15 @@
       "pharmaceutical_latin": "Kansui Radix",
       "pinyin_toned": "Gān Suì",
       "exam_pearl": "峻下逐水藥之代表，反甘草（十八反，見 cautions_en）；醋制後多入丸散，不入湯劑；體弱、孕婦、潰瘍及出血病史者禁用。",
-      "exam_importance": "★ NCBAHM 2026 CH 考綱 Domain I.A：峻下逐水藥的炮製要求（醋制）與十八反是常考點。"
+      "exam_importance": "★ NCBAHM 2026 CH 考綱 Domain I.A：峻下逐水藥的炮製要求（醋制）與十八反是常考點。",
+      "indications_en": [
+        "Purges water and expels fluid retention; reduces swelling and dissipates nodules."
+      ],
+      "channels_en": [
+        "Lung",
+        "Kidney",
+        "Large Intestine"
+      ]
     },
     {
       "id": "herb.du_huo",
@@ -22143,6 +22560,16 @@
       ],
       "contraindications_zh": [
         "陰虛火旺及血虛頭痛者慎用。"
+      ],
+      "indications_en": [
+        "Dispels Wind and overcomes Dampness; disperses Cold and relieves pain."
+      ],
+      "channels_en": [
+        "Kidney",
+        "Bladder"
+      ],
+      "contraindications_en": [
+        "Use with caution in Yin deficiency with effulgent Fire and Blood deficiency headache."
       ]
     },
     {
@@ -22392,6 +22819,15 @@
       ],
       "contraindications_zh": [
         "氣血虛弱者慎用；不可久服（耗氣）。"
+      ],
+      "indications_en": [
+        "Dispels Wind-Damp; unblocks the channels and collaterals; dissolves a fish bone lodged in the throat."
+      ],
+      "channels_en": [
+        "Bladder"
+      ],
+      "contraindications_en": [
+        "Use with caution in Qi-Blood deficiency; not for prolonged use (may deplete Qi)."
       ]
     },
     {
@@ -22737,6 +23173,17 @@
       ],
       "contraindications_zh": [
         "脾虛便溏及久病氣血虛弱者慎用。"
+      ],
+      "indications_en": [
+        "Dispels Wind-Damp; unblocks the collaterals and relieves pain; clears deficiency Heat; clears Damp-Heat."
+      ],
+      "channels_en": [
+        "Stomach",
+        "Liver",
+        "Gallbladder"
+      ],
+      "contraindications_en": [
+        "Use with caution in Spleen deficiency with loose stools and in patients with chronic illness and Qi-Blood deficiency."
       ]
     },
     {
@@ -23140,7 +23587,18 @@
       "contraindications_zh": [
         "陰虛津傷及脾胃虛弱者慎用。"
       ],
-      "pharmaceutical_latin": "Stephaniae tetrandrae Radix / Radix Stephaniae Tetrandrae"
+      "pharmaceutical_latin": "Stephaniae tetrandrae Radix / Radix Stephaniae Tetrandrae",
+      "indications_en": [
+        "Dispels Wind and relieves pain; promotes urination and reduces edema."
+      ],
+      "channels_en": [
+        "Bladder",
+        "Spleen",
+        "Kidney"
+      ],
+      "contraindications_en": [
+        "Use with caution in Yin deficiency with fluid damage and Spleen-Stomach weakness."
+      ]
     },
     {
       "id": "herb.sang_ji_sheng",
@@ -23404,6 +23862,16 @@
       ],
       "contraindications_zh": [
         "無特定禁忌。"
+      ],
+      "indications_en": [
+        "Dispels Wind-Damp; tonifies the Liver and Kidney; strengthens the sinews and bones; calms the fetus."
+      ],
+      "channels_en": [
+        "Liver",
+        "Kidney"
+      ],
+      "contraindications_en": [
+        "No specific contraindications."
       ]
     },
     {
@@ -23732,6 +24200,16 @@
       ],
       "contraindications_zh": [
         "陰虛火旺者慎用。"
+      ],
+      "indications_en": [
+        "Dispels Wind-Dampness; tonifies the Liver and Kidneys; strengthens the sinews and bones; promotes urination."
+      ],
+      "channels_en": [
+        "Liver",
+        "Kidney"
+      ],
+      "contraindications_en": [
+        "Use with caution in Yin deficiency with effulgent Fire."
       ]
     },
     {
@@ -24018,6 +24496,16 @@
       ],
       "contraindications_zh": [
         "胃酸過多者慎用。"
+      ],
+      "indications_en": [
+        "Relaxes the sinews and unblocks the collaterals; harmonizes the Stomach and transforms Dampness"
+      ],
+      "channels_en": [
+        "Liver",
+        "Spleen"
+      ],
+      "contraindications_en": [
+        "Use with caution in patients with excess stomach acid."
       ]
     },
     {
@@ -24311,6 +24799,17 @@
       ],
       "contraindications_zh": [
         "陰虛血燥及舌紅少津者慎用。"
+      ],
+      "indications_en": [
+        "Transforms Dampness; relieves summerheat; stops vomiting."
+      ],
+      "channels_en": [
+        "Spleen",
+        "Stomach",
+        "Lung"
+      ],
+      "contraindications_en": [
+        "Use with caution in Yin deficiency with Blood dryness, and in patients with a red tongue and scanty fluids."
       ]
     },
     {
@@ -24579,6 +25078,17 @@
       ],
       "contraindications_zh": [
         "陰虛血燥者慎用。"
+      ],
+      "indications_en": [
+        "Relieves summerheat and transforms Dampness; dispels turbidity and harmonizes the Middle [Jiao]."
+      ],
+      "channels_en": [
+        "Spleen",
+        "Stomach",
+        "Lung"
+      ],
+      "contraindications_en": [
+        "Use with caution in Yin deficiency with Blood dryness."
       ]
     },
     {
@@ -24941,6 +25451,17 @@
       ],
       "contraindications_zh": [
         "陰虛內熱及大汗津傷者忌服。"
+      ],
+      "indications_en": [
+        "Dries Dampness and strengthens the Spleen; dispels Wind and disperses Cold; brightens the eyes"
+      ],
+      "channels_en": [
+        "Spleen",
+        "Stomach",
+        "Liver"
+      ],
+      "contraindications_en": [
+        "Contraindicated in patients with Yin deficiency with interior Heat, and in those with fluid damage from profuse sweating."
       ]
     },
     {
@@ -25330,6 +25851,18 @@
       ],
       "contraindications_zh": [
         "孕婦慎用；津液虧耗者忌服。"
+      ],
+      "indications_en": [
+        "Dries Dampness and transforms Phlegm; directs Qi downward and relieves fullness."
+      ],
+      "channels_en": [
+        "Spleen",
+        "Stomach",
+        "Lung",
+        "Large Intestine"
+      ],
+      "contraindications_en": [
+        "Use with caution in pregnancy; contraindicated in patients with depleted body fluids."
       ]
     },
     {
@@ -25620,6 +26153,17 @@
       ],
       "contraindications_zh": [
         "陰虛有熱者慎用。"
+      ],
+      "indications_en": [
+        "Transforms Dampness and moves Qi; warms the Middle and stops diarrhea; calms the fetus"
+      ],
+      "channels_en": [
+        "Spleen",
+        "Stomach",
+        "Kidney"
+      ],
+      "contraindications_en": [
+        "Use with caution in patients with Yin deficiency with Heat."
       ]
     },
     {
@@ -25890,6 +26434,17 @@
       ],
       "contraindications_zh": [
         "陰虛血燥者慎用。"
+      ],
+      "indications_en": [
+        "Transforms Dampness and moves Qi; warms the Middle and stops vomiting."
+      ],
+      "channels_en": [
+        "Lung",
+        "Spleen",
+        "Stomach"
+      ],
+      "contraindications_en": [
+        "Use with caution in those with Yin deficiency and Blood dryness."
       ]
     },
     {
@@ -26364,7 +26919,19 @@
         "not_rendered_reason": "整形不是查證。食療與藥用已分欄,但 80 張的落差與蘇合香的 SAFETY_HOLD 仍未裁決,因此本欄刻意不上畫面;validate-herb-dosage-shape.js D1 會擋住接線。",
         "no_new_numbers": true,
         "source_field": "dosage"
-      }
+      },
+      "indications_en": [
+        "Water-Damp retention: difficult urination, edema, diarrhea — combined with Zhu Ling (Polyporus), Ze Xie (Alisma), and Bai Zhu (White Atractylodes) in Wu Ling San (Five-Ingredient Powder with Poria).",
+        "Spleen deficiency with Dampness encumbrance: poor appetite, loose stools, fatigue and lack of strength — combined with Ren Shen (Ginseng), Bai Zhu (White Atractylodes), and Gan Cao (Licorice) in Si Jun Zi Tang (Four Gentlemen Decoction).",
+        "Phlegm-Rheum: palpitations, dizziness, thick greasy tongue coating (Damp-type dizziness, not Liver Yang rising) — combined with Gui Zhi (Cinnamon Twig) and Bai Zhu (White Atractylodes) in Ling Gui Zhu Gan Tang (Poria, Cinnamon Twig, Atractylodes, and Licorice Decoction).",
+        "Heart Spirit unrest: palpitations, insomnia, poor memory — use Fu Shen (Poria with Hostwood), combined with Suan Zao Ren (Sour Jujube Seed) and Yuan Zhi (Polygala)."
+      ],
+      "channels_en": [
+        "Heart",
+        "Spleen",
+        "Kidney",
+        "Lung"
+      ]
     },
     {
       "id": "herb.zhu_ling",
@@ -26766,6 +27333,13 @@
       },
       "contraindications_zh": [
         "無濕熱者及腎虛小便失禁者慎用。"
+      ],
+      "channels_en": [
+        "Kidney",
+        "Bladder"
+      ],
+      "contraindications_en": [
+        "Use with caution in the absence of Damp-Heat and in Kidney deficiency with urinary incontinence."
       ]
     },
     {
@@ -27198,6 +27772,13 @@
       },
       "contraindications_zh": [
         "腎虛精滑及無濕熱者忌服。"
+      ],
+      "channels_en": [
+        "Kidney",
+        "Bladder"
+      ],
+      "contraindications_en": [
+        "Contraindicated in Kidney deficiency with involuntary seminal emission, and in patients without Damp-Heat."
       ]
     },
     {
@@ -27662,6 +28243,19 @@
       },
       "contraindications_zh": [
         "孕婦慎用；津傷便秘者慎用。"
+      ],
+      "indications_en": [
+        "Edema, beriberi (leg qi), difficult urination, Spleen deficiency diarrhea (representative formula: Shen Ling Bai Zhu San).",
+        "Early-stage Damp-Warmth, Wind-Damp painful obstruction, sinew and vessel spasm and contracture (representative formula: Yi Yi Zhu Ye Tang).",
+        "Lung abscess with coughing of pus and blood, intestinal abscess with abdominal pain (representative formulas: Wei Jing Tang, Fu Zi Yi Yi Bai Jiang San)."
+      ],
+      "channels_en": [
+        "Spleen",
+        "Stomach",
+        "Lung"
+      ],
+      "contraindications_en": [
+        "Use with caution in pregnancy; use with caution in those with fluid damage and constipation."
       ]
     },
     {
@@ -28074,6 +28668,21 @@
         "Expectorant and antitussive effects",
         "Mild laxative effect via mucilage lubrication of the intestine",
         "Antihypertensive and anti-inflammatory effects"
+      ],
+      "indications_en": [
+        "Damp-Heat edema, inhibited urination, and painful, stinging strangury due to heat (representative formula: Ba Zheng San).",
+        "Summerheat-Damp diarrhea and watery diarrhea (representative formula: Che Qian Zi San; promotes urination to firm the stool).",
+        "Red, swollen, and painful eyes due to Liver Fire; dim and blurred vision (representative formula: Long Dan Xie Gan Tang).",
+        "Cough with copious phlegm due to Lung Heat."
+      ],
+      "channels_en": [
+        "Liver",
+        "Kidney",
+        "Lung",
+        "Small Intestine"
+      ],
+      "contraindications_en": [
+        "Use with caution in Kidney deficiency with seminal emission (slippery essence) and in pregnancy."
       ]
     },
     {
@@ -28557,7 +29166,16 @@
       "contraindications_en": [
         "Contraindicated in pregnancy; use with caution in impaired renal function."
       ],
-      "exam_pearl": "利水通淋、清心火要藥；考點在辨別正品（川木通、白木通）與偽品關木通——關木通含馬兜鈴酸具腎毒性已被禁用，本卡指正品，見 safety_flags 的 species_confusion_aristolochic_acid_risk。"
+      "exam_pearl": "利水通淋、清心火要藥；考點在辨別正品（川木通、白木通）與偽品關木通——關木通含馬兜鈴酸具腎毒性已被禁用，本卡指正品，見 safety_flags 的 species_confusion_aristolochic_acid_risk。",
+      "indications_en": [
+        "Damp-Heat strangury (painful urinary dysfunction) with red, rough urination, and Heart Fire flaring upward causing mouth and tongue sores (representative formula: Dao Chi San).",
+        "Postpartum lack of lactation, amenorrhea, and Wind-Damp painful obstruction (Bi syndrome)."
+      ],
+      "channels_en": [
+        "Heart",
+        "Small Intestine",
+        "Bladder"
+      ]
     },
     {
       "id": "herb.hua_shi",
@@ -28930,6 +29548,19 @@
       },
       "contraindications_zh": [
         "脾虛便溏及孕婦慎用。"
+      ],
+      "indications_en": [
+        "Heat strangury and stone strangury with painful, difficult urination (representative formula: Ba Zheng San).",
+        "Summerheat-Dampness with vexation and thirst, fever, and watery diarrhea (representative formula: Liu Yi San, Six-to-One Powder).",
+        "Damp eczema, damp sores, and prickly heat (applied topically as a powder)."
+      ],
+      "channels_en": [
+        "Bladder",
+        "Lung",
+        "Stomach"
+      ],
+      "contraindications_en": [
+        "Use with caution in Spleen deficiency with loose stools and in pregnancy."
       ]
     },
     {
@@ -29347,6 +29978,18 @@
       ],
       "contraindications_zh": [
         "蓄血發黃及脾胃虛寒者慎用。"
+      ],
+      "indications_en": [
+        "Clears and drains Damp-Heat; reduces jaundice."
+      ],
+      "channels_en": [
+        "Spleen",
+        "Stomach",
+        "Liver",
+        "Gallbladder"
+      ],
+      "contraindications_en": [
+        "Use with caution in jaundice due to Blood accumulation (xu xue fa huang) and in patients with Spleen-Stomach deficiency cold."
       ]
     },
     {
@@ -29668,6 +30311,18 @@
       ],
       "contraindications_zh": [
         "脾胃虛寒便溏者慎用。"
+      ],
+      "indications_en": [
+        "Drains Dampness and relieves jaundice; promotes urination and unblocks painful urinary dribbling (lin); resolves toxicity and reduces swelling."
+      ],
+      "channels_en": [
+        "Liver",
+        "Gallbladder",
+        "Kidney",
+        "Bladder"
+      ],
+      "contraindications_en": [
+        "Use with caution in those with Spleen-Stomach deficiency cold and loose stools."
       ]
     },
     {
@@ -30097,7 +30752,15 @@
       "pharmaceutical_latin": "Aconiti Lateralis Radix Praeparata",
       "pinyin_toned": "Fù Zǐ",
       "exam_pearl": "本批最高風險藥：回陽救逆第一藥，必先煎久煎（30–60分鐘）以降解烏頭鹼毒性；反半夏、瓜蔞、貝母、白蘞、白芨（十八反，見 cautions_en）。",
-      "exam_importance": "★ NCBAHM 2026 CH 考綱 Domain I.A：毒性藥材炮製與煎法降毒是必考點，附子是最具代表性的例子。"
+      "exam_importance": "★ NCBAHM 2026 CH 考綱 Domain I.A：毒性藥材炮製與煎法降毒是必考點，附子是最具代表性的例子。",
+      "indications_en": [
+        "Revives Yang and rescues from devastation (counterflow); augments Fire and assists Yang; disperses Cold and relieves pain"
+      ],
+      "channels_en": [
+        "Heart",
+        "Kidney",
+        "Spleen"
+      ]
     },
     {
       "id": "herb.gan_jiang",
@@ -30511,7 +31174,17 @@
         "not_rendered_reason": "整形不是查證。食療與藥用已分欄,但 80 張的落差與蘇合香的 SAFETY_HOLD 仍未裁決,因此本欄刻意不上畫面;validate-herb-dosage-shape.js D1 會擋住接線。",
         "no_new_numbers": true,
         "source_field": "dosage"
-      }
+      },
+      "indications_en": [
+        "Warms the middle and dispels Cold; restores devastated Yang and unblocks the vessels; warms the Lung and transforms thin fluids."
+      ],
+      "channels_en": [
+        "Spleen",
+        "Stomach",
+        "Kidney",
+        "Heart",
+        "Lung"
+      ]
     },
     {
       "id": "herb.rou_gui",
@@ -30937,7 +31610,16 @@
         "not_rendered_reason": "整形不是查證。食療與藥用已分欄,但 80 張的落差與蘇合香的 SAFETY_HOLD 仍未裁決,因此本欄刻意不上畫面;validate-herb-dosage-shape.js D1 會擋住接線。",
         "no_new_numbers": true,
         "source_field": "dosage"
-      }
+      },
+      "indications_en": [
+        "Tonifies fire and assists Yang; disperses cold and alleviates pain; warms and frees the channels and vessels; guides fire back to its source."
+      ],
+      "channels_en": [
+        "Kidney",
+        "Spleen",
+        "Heart",
+        "Liver"
+      ]
     },
     {
       "id": "herb.wu_zhu_yu",
@@ -31378,7 +32060,16 @@
       "pharmaceutical_latin": "Evodiae Fructus",
       "pinyin_toned": "Wú Zhū Yú",
       "exam_pearl": "溫裡藥中善治厥陰頭痛的一味（吳茱萸湯），兼能降逆止嘔、助陽止瀉；辛熱燥烈，用量宜小（1-3g），陰虛火旺者忌服。",
-      "exam_importance": "★ NCBAHM 2026 CH 考綱 Domain I.A：溫裡藥安全用量與陰虛禁忌是常考點。"
+      "exam_importance": "★ NCBAHM 2026 CH 考綱 Domain I.A：溫裡藥安全用量與陰虛禁忌是常考點。",
+      "indications_en": [
+        "Disperses Cold and alleviates pain; redirects rebellious qi downward and stops vomiting; assists Yang and stops diarrhea."
+      ],
+      "channels_en": [
+        "Liver",
+        "Spleen",
+        "Stomach",
+        "Kidney"
+      ]
     },
     {
       "id": "herb.xiao_hui_xiang",
@@ -31695,7 +32386,16 @@
         "not_rendered_reason": "整形不是查證。食療與藥用已分欄,但 80 張的落差與蘇合香的 SAFETY_HOLD 仍未裁決,因此本欄刻意不上畫面;validate-herb-dosage-shape.js D1 會擋住接線。",
         "no_new_numbers": true,
         "source_field": "dosage"
-      }
+      },
+      "indications_en": [
+        "Disperses Cold and relieves pain; regulates Qi and harmonizes the Stomach"
+      ],
+      "channels_en": [
+        "Liver",
+        "Kidney",
+        "Spleen",
+        "Stomach"
+      ]
     },
     {
       "id": "herb.ding_xiang",
@@ -32064,7 +32764,15 @@
         "not_rendered_reason": "整形不是查證。食療與藥用已分欄,但 80 張的落差與蘇合香的 SAFETY_HOLD 仍未裁決,因此本欄刻意不上畫面;validate-herb-dosage-shape.js D1 會擋住接線。",
         "no_new_numbers": true,
         "source_field": "dosage"
-      }
+      },
+      "indications_en": [
+        "Warms the Middle and directs rebellious Qi downward; tonifies the Kidney and assists Yang."
+      ],
+      "channels_en": [
+        "Spleen",
+        "Stomach",
+        "Kidney"
+      ]
     },
     {
       "id": "herb.ju_hong",
@@ -32275,6 +32983,16 @@
       ],
       "contraindications_zh": [
         "陰虛燥咳者忌服。"
+      ],
+      "indications_en": [
+        "Regulates Qi and relaxes the Middle; dries Dampness and transforms Phlegm."
+      ],
+      "channels_en": [
+        "Lung",
+        "Spleen"
+      ],
+      "contraindications_en": [
+        "Contraindicated in Yin deficiency dry cough."
       ]
     },
     {
@@ -32728,7 +33446,12 @@
         "not_rendered_reason": "整形不是查證。食療與藥用已分欄,但 80 張的落差與蘇合香的 SAFETY_HOLD 仍未裁決,因此本欄刻意不上畫面;validate-herb-dosage-shape.js D1 會擋住接線。",
         "no_new_numbers": true,
         "source_field": "dosage"
-      }
+      },
+      "channels_en": [
+        "Lung",
+        "Spleen",
+        "Stomach"
+      ]
     },
     {
       "id": "herb.zhi_ke",
@@ -33027,6 +33750,16 @@
       ],
       "contraindications_zh": [
         "孕婦及脾胃虛弱者慎用。"
+      ],
+      "indications_en": [
+        "Regulates Qi and relieves fullness in the middle; moves stagnation and reduces distention."
+      ],
+      "channels_en": [
+        "Spleen",
+        "Stomach"
+      ],
+      "contraindications_en": [
+        "Use with caution in pregnancy and in Spleen-Stomach Qi deficiency."
       ]
     },
     {
@@ -33349,6 +34082,17 @@
       ],
       "contraindications_zh": [
         "孕婦及脾胃虛弱者慎用。"
+      ],
+      "indications_en": [
+        "Breaks qi stagnation and reduces accumulation; transforms Phlegm and disperses focal distention"
+      ],
+      "channels_en": [
+        "Spleen",
+        "Stomach",
+        "Large Intestine"
+      ],
+      "contraindications_en": [
+        "Use with caution in pregnant women and in patients with Spleen-Stomach weakness."
       ]
     },
     {
@@ -33712,6 +34456,18 @@
       ],
       "contraindications_zh": [
         "陰虛津傷者慎用。"
+      ],
+      "indications_en": [
+        "Moves Qi and relieves pain; strengthens the Spleen and promotes digestion."
+      ],
+      "channels_en": [
+        "Spleen",
+        "Stomach",
+        "Large Intestine",
+        "Gallbladder"
+      ],
+      "contraindications_en": [
+        "Use with caution in patients with Yin deficiency and fluid damage."
       ]
     },
     {
@@ -34033,6 +34789,17 @@
       ],
       "contraindications_zh": [
         "氣虛無滯者慎用。"
+      ],
+      "indications_en": [
+        "Spreads Liver qi and regulates qi; regulates menstruation and relieves pain."
+      ],
+      "channels_en": [
+        "Liver",
+        "Spleen",
+        "Triple Burner"
+      ],
+      "contraindications_en": [
+        "Use with caution in qi deficiency without stagnation."
       ]
     },
     {
@@ -34385,7 +35152,16 @@
       "pharmaceutical_latin": "Toosendan Fructus",
       "pinyin_toned": "Chuān Liàn Zǐ",
       "exam_pearl": "理氣藥中兼能清肝火、殺蟲的一味，行氣止痛偏肝胃；有小毒，不宜過量或久服，孕婦禁用。",
-      "exam_importance": "★ NCBAHM 2026 CH 考綱 Domain I.A：理氣藥安全用量是常考點。"
+      "exam_importance": "★ NCBAHM 2026 CH 考綱 Domain I.A：理氣藥安全用量是常考點。",
+      "indications_en": [
+        "Moves Qi and relieves pain; kills parasites and treats ringworm (tinea)."
+      ],
+      "channels_en": [
+        "Liver",
+        "Stomach",
+        "Small Intestine",
+        "Bladder"
+      ]
     },
     {
       "id": "herb.qing_pi",
@@ -34715,6 +35491,17 @@
       ],
       "contraindications_zh": [
         "氣虛者慎用；多服耗氣。"
+      ],
+      "indications_en": [
+        "Soothes the Liver and breaks Qi stagnation; reduces accumulation and resolves stagnation."
+      ],
+      "channels_en": [
+        "Liver",
+        "Gallbladder",
+        "Stomach"
+      ],
+      "contraindications_en": [
+        "Use with caution in Qi deficiency; excessive use consumes Qi."
       ]
     },
     {
@@ -35081,6 +35868,17 @@
       ],
       "contraindications_zh": [
         "脾胃虛弱及胃酸過多者慎用；孕婦慎用（易引起子宮收縮）。"
+      ],
+      "indications_en": [
+        "Promotes digestion and strengthens the Stomach; moves Qi and dispels stasis; transforms turbidity and lowers lipids."
+      ],
+      "channels_en": [
+        "Spleen",
+        "Stomach",
+        "Liver"
+      ],
+      "contraindications_en": [
+        "Use with caution in Spleen-Stomach deficiency and in those with excess stomach acid; use with caution in pregnancy (may readily induce uterine contractions)."
       ]
     },
     {
@@ -35321,6 +36119,16 @@
       ],
       "contraindications_zh": [
         "脾胃虛弱無積滯者慎用；孕婦慎用。"
+      ],
+      "indications_en": [
+        "Promotes digestion and regulates the Middle [Jiao]."
+      ],
+      "channels_en": [
+        "Spleen",
+        "Stomach"
+      ],
+      "contraindications_en": [
+        "Use with caution in Spleen-Stomach deficiency without food stagnation; use with caution during pregnancy."
       ]
     },
     {
@@ -35682,6 +36490,17 @@
       ],
       "contraindications_zh": [
         "授乳期婦女禁用（退乳）；無積滯者慎用。"
+      ],
+      "indications_en": [
+        "Moves qi and reduces food stagnation; strengthens the Spleen and stimulates the appetite; reduces lactation and relieves distension."
+      ],
+      "channels_en": [
+        "Spleen",
+        "Stomach",
+        "Liver"
+      ],
+      "contraindications_en": [
+        "Contraindicated in breastfeeding women (reduces lactation); use with caution in the absence of food stagnation."
       ]
     },
     {
@@ -35930,6 +36749,18 @@
       ],
       "contraindications_zh": [
         "脾胃無積滯者慎用。"
+      ],
+      "indications_en": [
+        "Strengthens the Stomach and promotes digestion; astringes Essence and stops seminal emission; unblocks urinary strangury and dissolves stones."
+      ],
+      "channels_en": [
+        "Spleen",
+        "Stomach",
+        "Small Intestine",
+        "Bladder"
+      ],
+      "contraindications_en": [
+        "Use with caution in patients without Spleen-Stomach food stagnation."
       ]
     },
     {
@@ -36282,6 +37113,16 @@
       ],
       "contraindications_zh": [
         "孕婦禁用；無瘀血者慎用。"
+      ],
+      "indications_en": [
+        "Transforms stasis and stops bleeding; invigorates the Blood and relieves pain."
+      ],
+      "channels_en": [
+        "Liver",
+        "Stomach"
+      ],
+      "contraindications_en": [
+        "Contraindicated in pregnancy; use with caution in those without Blood stasis."
       ]
     },
     {
@@ -36563,6 +37404,17 @@
       ],
       "contraindications_zh": [
         "反甘草、烏頭、藜蘆（十八反）；外感咯血或肺癰初起者慎用。"
+      ],
+      "indications_en": [
+        "Astringes and stops bleeding; reduces swelling and promotes the growth of new flesh (tissue regeneration)"
+      ],
+      "channels_en": [
+        "Lung",
+        "Stomach",
+        "Liver"
+      ],
+      "contraindications_en": [
+        "Incompatible with Gan Cao (Licorice Root), Wu Tou (Aconite Root), and Li Lu (Veratrum Root) per the Eighteen Incompatibles (Shi Ba Fan); use with caution in hemoptysis due to exterior conditions or early-stage Lung abscess."
       ]
     },
     {
@@ -36900,6 +37752,17 @@
       ],
       "contraindications_zh": [
         "陰虛血熱者慎用；不可過量服用。"
+      ],
+      "indications_en": [
+        "Warms the channels and stops bleeding; dispels Cold and regulates menstruation; calms the fetus."
+      ],
+      "channels_en": [
+        "Liver",
+        "Spleen",
+        "Kidney"
+      ],
+      "contraindications_en": [
+        "Use with caution in those with Yin deficiency and Blood Heat; must not be taken in excessive amounts."
       ]
     },
     {
@@ -37288,6 +38151,16 @@
       ],
       "contraindications_zh": [
         "虛寒性出血者慎用；大面積燒傷不宜大面積外敷。"
+      ],
+      "indications_en": [
+        "Cools the Blood and stops bleeding; resolves toxicity and closes sores"
+      ],
+      "channels_en": [
+        "Liver",
+        "Large Intestine"
+      ],
+      "contraindications_en": [
+        "Use with caution in bleeding due to deficiency cold; not suitable for large-area external application on extensive burns."
       ]
     },
     {
@@ -37554,6 +38427,17 @@
       ],
       "contraindications_zh": [
         "多服胃弱者慎用。"
+      ],
+      "indications_en": [
+        "Cools the Blood and stops bleeding; promotes hair growth and blackens the hair."
+      ],
+      "channels_en": [
+        "Lung",
+        "Liver",
+        "Spleen"
+      ],
+      "contraindications_en": [
+        "Use with caution when taken in excess, and in those with a weak Stomach."
       ]
     },
     {
@@ -38022,6 +38906,15 @@
         "Contraindicated in Yin deficiency with Heat.",
         "Contraindicated with heavy menstrual bleeding.",
         "Contraindicated in bleeding disorders."
+      ],
+      "indications_en": [
+        "Irregular menstruation, amenorrhea, dysmenorrhea, postpartum abdominal pain with lochia discharge (representative formulas: Fo Shou San, Xiong Gui Jiao Ai Tang).",
+        "Headaches of various types due to Wind-Cold, Wind-Heat, Blood deficiency, or Blood stasis, and Wind-Damp painful obstruction (Bi syndrome) (representative formula: Chuan Xiong Cha Tiao San)."
+      ],
+      "channels_en": [
+        "Liver",
+        "Gallbladder",
+        "Pericardium"
       ]
     },
     {
@@ -38416,6 +39309,16 @@
       },
       "contraindications_zh": [
         "孕婦禁用。"
+      ],
+      "indications_en": [
+        "Chest bi with heart pain; epigastric pain; dysmenorrhea; postpartum abdominal pain from stasis obstruction; traumatic injury; and pain patterns of qi stagnation and blood stasis anywhere in the body (representative formula: Jin Ling Zi San)."
+      ],
+      "channels_en": [
+        "Liver",
+        "Spleen"
+      ],
+      "contraindications_en": [
+        "Contraindicated in pregnancy."
       ]
     },
     {
@@ -38909,6 +39812,20 @@
       },
       "contraindications_zh": [
         "孕婦慎用；畏丁香（十九畏）。"
+      ],
+      "indications_en": [
+        "Distension and pain in the chest, abdomen, and hypochondrium; dysmenorrhea; irregular menstruation (representative formula: Chai Hu Shu Gan San, modified).",
+        "Clouded consciousness in febrile disease; epilepsy and manic disorders; Phlegm-Damp obscuring the Heart orifices (representative formulas: Chang Pu Yu Jin Tang, Zhi Bao Dan).",
+        "Hematemesis, epistaxis, and hematuria due to reckless movement of Blood from Blood Heat (representative formula: Sheng Di Huang Tang, modified).",
+        "Damp-Heat jaundice; cholelithiasis (representative formula: Yin Chen Hao Tang, modified)."
+      ],
+      "channels_en": [
+        "Liver",
+        "Heart",
+        "Lung"
+      ],
+      "contraindications_en": [
+        "Use with caution in pregnancy; incompatible with Clove (Ding Xiang) per the Nineteen Incompatibilities (Shi Jiu Wei)."
       ]
     },
     {
@@ -39450,6 +40367,19 @@
       },
       "contraindications_zh": [
         "孕婦慎用；反藜蘆（十八反）。"
+      ],
+      "indications_en": [
+        "Chest painful obstruction (Bi) with heart pain, epigastric, abdominal, and hypochondriac pain, dysmenorrhea, amenorrhea, postpartum Blood stasis, and abdominal masses (accumulations and gatherings) (representative formulas: Dan Shen Yin, Fufang Danshen Pian).",
+        "Heat-pattern febrile disease with vexation and agitation, insomnia, and palpitations with fearful throbbing (representative formula: Tian Wang Bu Xin Dan).",
+        "Sores, welling-abscesses, swelling and toxicity, and breast abscess (representative formula: Xiao Ru Tang)."
+      ],
+      "channels_en": [
+        "Heart",
+        "Pericardium",
+        "Liver"
+      ],
+      "contraindications_en": [
+        "Use with caution during pregnancy; incompatible with Li Lu (Veratrum Root) (one of the Eighteen Incompatible Medicinals, Shi Ba Fan)."
       ]
     },
     {
@@ -39683,7 +40613,12 @@
         "潤腸通便"
       ],
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/TaoRen.html",
-      "exact_source_url": "https://cloudtcm.com/herb/1190"
+      "exact_source_url": "https://cloudtcm.com/herb/1190",
+      "indications_en": [
+        "Amenorrhea, dysmenorrhea, postpartum abdominal pain from retained lochia, traumatic injury, abdominal masses and accumulations (representative formulas: Tao Hong Si Wu Tang, Tao He Cheng Qi Tang).",
+        "Intestinal dryness with constipation (representative formula: Ma Zi Ren Wan).",
+        "Lung abscess with coughing of pus and blood, intestinal abscess with abdominal pain (representative formulas: Wei Jing Tang, Da Huang Mu Dan Tang)."
+      ]
     },
     {
       "id": "herb.hong_hua",
@@ -40108,6 +41043,17 @@
       },
       "contraindications_zh": [
         "孕婦禁用；出血性疾病者忌服。"
+      ],
+      "indications_en": [
+        "Amenorrhea, dysmenorrhea, retained lochia after childbirth, abdominal masses and accumulations (representative formula: Tao Hong Si Wu Tang, Peach Kernel and Safflower Four Substances Decoction).",
+        "Chest Bi with cardiac pain, stabbing pain in the chest and hypochondria, swelling and pain from traumatic injury (representative formula: Xue Fu Zhu Yu Tang, Drive Out Stasis in the Mansion of Blood Decoction)."
+      ],
+      "channels_en": [
+        "Heart",
+        "Liver"
+      ],
+      "contraindications_en": [
+        "Contraindicated in pregnancy; contraindicated in patients with bleeding disorders."
       ]
     },
     {
@@ -40389,7 +41335,19 @@
         "Immunomodulatory activity",
         "Antitumor activity"
       ],
-      "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/NiuXi.html"
+      "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/NiuXi.html",
+      "indications_en": [
+        "Dysmenorrhea, amenorrhea, and retained lochia after childbirth (representative formula: Niu Xi San).",
+        "Soreness and weakness of the low back and knees, Wind-Damp painful obstruction (Bi), and flaccidity and weakness of the lower limbs (representative formula: Du Huo Ji Sheng Tang).",
+        "Reckless movement of hot Blood causing hematemesis, epistaxis, swollen and painful gums, mouth and tongue sores, and headache with dizziness (representative formulas: Zhen Gan Xi Feng Tang, Niu Xi Dao Chi San)."
+      ],
+      "channels_en": [
+        "Liver",
+        "Kidney"
+      ],
+      "contraindications_en": [
+        "Contraindicated in pregnancy; contraindicated in patients with excessive menstrual bleeding or diarrhea due to sinking of Middle Qi."
+      ]
     },
     {
       "id": "herb.wang_bu_liu_xing",
@@ -40741,6 +41699,13 @@
       ],
       "contraindications_en": [
         "Contraindicated during pregnancy."
+      ],
+      "indications_en": [
+        "Invigorates the Blood and unblocks the menses; promotes lactation and reduces swelling; promotes urination and relieves painful urinary dysfunction"
+      ],
+      "channels_en": [
+        "Liver",
+        "Stomach"
       ]
     },
     {
@@ -41181,6 +42146,17 @@
       },
       "contraindications_zh": [
         "孕婦禁用；脾胃虛弱及無積滯者慎用。"
+      ],
+      "indications_en": [
+        "Blood stagnation with amenorrhea, dysmenorrhea, postpartum abdominal pain, and abdominal masses and accumulations (zhengjia) (representative formulas: E Zhu Wan, San Leng E Zhu Tang).",
+        "Undigested food accumulation with distention and pain of the epigastrium and abdomen (representative formula: Mu Xiang Bing Lang Wan Jia Wei)."
+      ],
+      "channels_en": [
+        "Liver",
+        "Spleen"
+      ],
+      "contraindications_en": [
+        "Contraindicated in pregnancy; use with caution in Spleen-Stomach Qi deficiency and in patients without food accumulation or stagnation."
       ]
     },
     {
@@ -41621,6 +42597,14 @@
       ],
       "contraindications_en": [
         "Contraindicated during pregnancy."
+      ],
+      "indications_en": [
+        "Blood stasis amenorrhea, dysmenorrhea, retained postpartum lochia, and abdominal masses and accumulations (representative formula: San Leng E Zhu Wan, Sparganium and Zedoaria Pill).",
+        "Food stagnation with epigastric and abdominal distension and pain."
+      ],
+      "channels_en": [
+        "Liver",
+        "Spleen"
       ]
     },
     {
@@ -41977,6 +42961,17 @@
       },
       "contraindications_zh": [
         "孕婦慎用；無血瘀者慎用。"
+      ],
+      "indications_en": [
+        "Irregular menstruation, dysmenorrhea, amenorrhea accompanied by Blood deficiency or Blood stasis (representative formula: Fu Ke Yang Xue Jiao Nang).",
+        "Wind-Damp painful obstruction (Bi), numbness of the hands and feet, soreness and weakness of the lower back and knees, and paralysis as a sequela of Wind-stroke."
+      ],
+      "channels_en": [
+        "Liver",
+        "Kidney"
+      ],
+      "contraindications_en": [
+        "Use with caution during pregnancy; use with caution in the absence of Blood stasis."
       ]
     },
     {
@@ -42463,7 +43458,21 @@
         ],
         "part_used_zh": "塊莖(炮製品)",
         "part_used_en": "Rhizome (processed)"
-      }
+      },
+      "indications_en": [
+        "Damp-Phlegm of the Lung and Spleen, Cold-Phlegm cough with copious white sputum that is easy to expectorate, and chest oppression — combine with Chen Pi (Tangerine Peel), Fu Ling (Poria), and Gan Cao (Licorice) (Er Chen Tang).",
+        "Cold-Fluids invading the Lung, cough with thin sputum accompanied by nausea and vomiting — combine with Gan Jiang (Dried Ginger) and Xi Xin (Asarum).",
+        "Phlegm-Heat cough with thick, sticky yellow sputum — must be combined with Heat-clearing herbs such as Huang Qin (Scutellaria), Shi Gao (Gypsum), and Zhi Mu (Anemarrhena); not suitable for use alone.",
+        "Phlegm-Fluids in the Stomach with rebellious Stomach Qi causing nausea and vomiting — for Cold patterns combine with Sheng Jiang (Fresh Ginger); for Stomach Heat combine with Huang Lian (Coptis) and Zhu Ru (Bamboo Shavings).",
+        "Morning sickness of pregnancy — listed by Chenoweth as a key herb for morning sickness, combined with Sheng Jiang (Fresh Ginger), Sha Ren (Amomum), or Zi Su Geng (Perilla Stem); sources diverge on the safety of use during pregnancy.",
+        "Phlegm and Qi binding together causing chest and epigastric focal distention and oppression, plum-pit qi, or phlegm nodules and scrofula — combine with Hou Po (Magnolia Bark) and Fu Ling (Poria).",
+        "Sores, swellings, and phlegm nodules — the raw herb, ground into powder, is for external use only and must not be taken internally."
+      ],
+      "channels_en": [
+        "Spleen",
+        "Stomach",
+        "Lung"
+      ]
     },
     {
       "id": "herb.tian_nan_xing",
@@ -42885,7 +43894,19 @@
         ],
         "part_used_zh": "塊莖(炮製品)",
         "part_used_en": "Rhizome (processed)"
-      }
+      },
+      "indications_en": [
+        "Damp-Phlegm and stubborn Phlegm obstructing the Lungs — cough with copious sputum, fullness and oppression in the chest and diaphragm; its ability to dry Dampness and transform Phlegm is stronger than that of Ban Xia (Pinellia).",
+        "Wind-Phlegm disturbing the upper body — dizziness, Wind-stroke with Phlegm obstruction, deviation of the eyes and mouth, hemiplegia.",
+        "Wind-Phlegm obstruction, Phlegm confounding the Heart orifices — epilepsy, infantile convulsions, and tetanic convulsions (tetanus).",
+        "Phlegm-Heat patterns — as this herb is warm in nature, it is not used alone; it must be combined with Heat-clearing, Phlegm-transforming herbs such as Huang Qin (Scutellaria) and Zhu Li (bamboo sap).",
+        "Sores and swellings, Phlegm nodules, venomous snake bites — the raw herb is ground into powder and applied topically; for external use only."
+      ],
+      "channels_en": [
+        "Lung",
+        "Liver",
+        "Spleen"
+      ]
     },
     {
       "id": "herb.jie_geng",
@@ -43262,7 +44283,17 @@
         "not_rendered_reason": "整形不是查證。食療與藥用已分欄,但 80 張的落差與蘇合香的 SAFETY_HOLD 仍未裁決,因此本欄刻意不上畫面;validate-herb-dosage-shape.js D1 會擋住接線。",
         "no_new_numbers": true,
         "source_field": "dosage"
-      }
+      },
+      "indications_en": [
+        "Externally contracted cough — combined according to the pattern for either Wind-Cold or Wind-Heat, used for cough with profuse phlegm and chest oppression with stuffiness.",
+        "Lung qi failing to disperse with Phlegm obstructing the throat — sore throat, hoarseness, loss of voice.",
+        "Lung abscess with chest pain, coughing up pus and phlegm — combined with Yu Xing Cao (Houttuynia) and Yi Yi Ren (Coix Seed) and the like, to clear the Lungs and expel pus.",
+        "Swollen, sore throat — commonly combined with Gan Cao (Licorice) to disperse Lung qi and benefit the throat.",
+        "Guides the actions of other herbs upward — within a formula, carries the other herbs upward to reach the chest, Lungs, head, and face."
+      ],
+      "channels_en": [
+        "Lung"
+      ]
     },
     {
       "id": "herb.chuan_bei_mu",
@@ -43553,6 +44584,16 @@
       ],
       "contraindications_zh": [
         "脾胃虛寒及寒痰濕痰者忌服；反烏頭（十八反）。"
+      ],
+      "indications_en": [
+        "Clears Heat and transforms Phlegm; moistens the Lung and stops cough; dissipates nodules and reduces swelling"
+      ],
+      "channels_en": [
+        "Lung",
+        "Heart"
+      ],
+      "contraindications_en": [
+        "Contraindicated in patients with Spleen-Stomach deficiency-cold and in Cold-Phlegm or Damp-Phlegm patterns; incompatible with Wu Tou (Aconite Main Root) (one of the Eighteen Incompatible Medicinals, Shi Ba Fan)."
       ]
     },
     {
@@ -43839,7 +44880,17 @@
       "contraindications_zh": [
         "寒痰濕痰及脾胃虛寒者忌服；反烏頭（十八反）。"
       ],
-      "correction_note": "【2026-08-27 A11(a) Ting 裁定,收尾】本卡錯置的川貝母內容:cautions_zh 五條已於 2026-08-14 由 SOL 查源判定+Ting 核可封存;本日將最後一欄 modern_functions_detail_zh(六段川貝母藥理)一併封存留白。浙貝母(Fritillaria thunbergii)與川貝母(F. cirrhosa)為不同藥材;活欄位自此零錯置,本卡待照 HERB_CARD_TEMPLATE 以浙貝母來源重寫(排 A13(b) 佇列)。"
+      "correction_note": "【2026-08-27 A11(a) Ting 裁定,收尾】本卡錯置的川貝母內容:cautions_zh 五條已於 2026-08-14 由 SOL 查源判定+Ting 核可封存;本日將最後一欄 modern_functions_detail_zh(六段川貝母藥理)一併封存留白。浙貝母(Fritillaria thunbergii)與川貝母(F. cirrhosa)為不同藥材;活欄位自此零錯置,本卡待照 HERB_CARD_TEMPLATE 以浙貝母來源重寫(排 A13(b) 佇列)。",
+      "indications_en": [
+        "Clears Heat and transforms Phlegm; dissipates nodulation and reduces abscesses"
+      ],
+      "channels_en": [
+        "Lung",
+        "Heart"
+      ],
+      "contraindications_en": [
+        "Contraindicated in Cold-Phlegm and Damp-Phlegm patterns, and in patients with Spleen-Stomach Cold deficiency; incompatible with Wu Tou (Aconite) (per the Eighteen Incompatibilities)."
+      ]
     },
     {
       "id": "herb.gua_lou",
@@ -44111,6 +45162,17 @@
       ],
       "contraindications_zh": [
         "脾胃虛寒及便溏者忌服；反烏頭（十八反）。"
+      ],
+      "indications_en": [
+        "Clears Heat and transforms Phlegm; opens the chest and dissipates nodulation; moistens the intestines and unblocks the bowels"
+      ],
+      "channels_en": [
+        "Lung",
+        "Stomach",
+        "Large Intestine"
+      ],
+      "contraindications_en": [
+        "Contraindicated in patients with Spleen-Stomach Cold deficiency and loose stools; incompatible with Wu Tou (Aconite) (per the Eighteen Incompatibilities)."
       ]
     },
     {
@@ -44368,6 +45430,17 @@
       ],
       "contraindications_zh": [
         "寒痰咳嗽及脾胃虛寒者忌服。"
+      ],
+      "indications_en": [
+        "Clears Heat and transforms Phlegm; relieves vexation and stops vomiting"
+      ],
+      "channels_en": [
+        "Lung",
+        "Stomach",
+        "Heart"
+      ],
+      "contraindications_en": [
+        "Contraindicated in cough due to Cold-Phlegm and in patients with Spleen-Stomach deficiency-cold."
       ]
     },
     {
@@ -44814,7 +45887,14 @@
       "pharmaceutical_latin": "Armeniacae Semen Amarum",
       "pinyin_toned": "Xìng Rén",
       "exam_pearl": "苦杏仁苷經腸道分解產生微量氫氰酸，抑制呼吸中樞而鎮咳平喘，也是過量中毒的原因；有小毒，嬰兒慎用，不宜過量嚼服生品。",
-      "exam_importance": "★ NCBAHM 2026 CH 考綱 Domain I.A：止咳平喘藥中唯一列有小毒者，過量中毒機轉是常考點。"
+      "exam_importance": "★ NCBAHM 2026 CH 考綱 Domain I.A：止咳平喘藥中唯一列有小毒者，過量中毒機轉是常考點。",
+      "indications_en": [
+        "Directs qi downward to stop cough and calm wheezing; moistens the intestines and unblocks the bowels."
+      ],
+      "channels_en": [
+        "Lung",
+        "Large Intestine"
+      ]
     },
     {
       "id": "herb.su_zi",
@@ -45426,7 +46506,13 @@
       "pharmaceutical_latin": "Farfarae Flos",
       "pinyin_toned": "Kuǎn Dōng Huā",
       "exam_pearl": "潤肺下氣、止咳化痰要藥，新久咳嗽皆可用；蜜炙可增強潤肺止咳作用（見本卡 dosage 特殊說明）。",
-      "exam_importance": "★ NCBAHM 2026 CH 考綱 Domain I.A：止咳平喘藥的炮製（蜜炙）與功效變化是常考點。"
+      "exam_importance": "★ NCBAHM 2026 CH 考綱 Domain I.A：止咳平喘藥的炮製（蜜炙）與功效變化是常考點。",
+      "indications_en": [
+        "Moistens the Lungs and directs qi downward; stops cough and transforms Phlegm."
+      ],
+      "channels_en": [
+        "Lung"
+      ]
     },
     {
       "id": "herb.zi_wan",
@@ -45700,6 +46786,15 @@
       ],
       "contraindications_zh": [
         "實熱者慎用。"
+      ],
+      "indications_en": [
+        "Moistens the Lung and directs Qi downward; dissolves Phlegm and stops cough"
+      ],
+      "channels_en": [
+        "Lung"
+      ],
+      "contraindications_en": [
+        "Use with caution in patients with excess Heat."
       ]
     },
     {
@@ -46026,6 +47121,16 @@
           "moved_at": "2026-08-27",
           "ruling": "TING_RULING_SHEET_2026-08-27"
         }
+      ],
+      "indications_en": [
+        "Transforms dampness and stimulates the appetite; opens the orifices and dispels phlegm; revives the spirit and sharpens the intellect."
+      ],
+      "channels_en": [
+        "Heart",
+        "Stomach"
+      ],
+      "contraindications_en": [
+        "Use with caution in Yin deficiency with Yang hyperactivity, and in irritability with profuse sweating."
       ]
     },
     {
@@ -46283,6 +47388,16 @@
       ],
       "contraindications_zh": [
         "陰虛火旺者禁用。"
+      ],
+      "indications_en": [
+        "Opens the orifices; dispels foul turbidity; moves Qi and relieves pain"
+      ],
+      "channels_en": [
+        "Heart",
+        "Spleen"
+      ],
+      "contraindications_en": [
+        "Contraindicated in Yin deficiency with effulgent Fire."
       ]
     },
     {
@@ -46602,6 +47717,16 @@
       ],
       "contraindications_zh": [
         "脾胃虛寒者慎用；不宜久煎。"
+      ],
+      "indications_en": [
+        "Clears Heat and calms the Liver; extinguishes Wind and calms fright."
+      ],
+      "channels_en": [
+        "Liver",
+        "Pericardium"
+      ],
+      "contraindications_en": [
+        "Use with caution in those with Spleen-Stomach deficiency cold; not suitable for prolonged decoction."
       ]
     },
     {
@@ -46970,6 +48095,15 @@
           "moved_at": "2026-08-27",
           "ruling": "TING_RULING_SHEET_2026-08-27"
         }
+      ],
+      "indications_en": [
+        "Extinguishes Wind and stops convulsions; calms and subdues Liver Yang; dispels Wind and unblocks the collaterals"
+      ],
+      "channels_en": [
+        "Liver"
+      ],
+      "contraindications_en": [
+        "Use with caution in patients with Blood deficiency generating Wind or Yin deficiency; use with caution in pregnancy."
       ]
     },
     {
@@ -47296,6 +48430,17 @@
           "moved_at": "2026-08-27",
           "ruling": "TING_RULING_SHEET_2026-08-27"
         }
+      ],
+      "indications_en": [
+        "Clears Heat and calms fright; frees the collaterals; calms wheezing; promotes urination."
+      ],
+      "channels_en": [
+        "Liver",
+        "Spleen",
+        "Bladder"
+      ],
+      "contraindications_en": [
+        "Use with caution in those with Spleen-Stomach deficiency cold; use with caution in pregnancy."
       ]
     },
     {
@@ -47671,7 +48816,13 @@
       "pharmaceutical_latin": "Scorpio",
       "pinyin_toned": "Quán Xiē",
       "exam_pearl": "息風止痙、通絡止痛要藥，治小兒驚風、中風口眼歪斜、頑固頭痛；有毒，孕婦禁用。（本卡 dosage 常用量 3-6g 與 contraindications_zh「乾品2-5g」兩個數字不一致，未查得哪個是誤植，待 Ting 裁定，兩者均保留未刪改）",
-      "exam_importance": "★ NCBAHM 2026 CH 考綱 Domain I.A：動物類毒藥的安全劑量是常考點。"
+      "exam_importance": "★ NCBAHM 2026 CH 考綱 Domain I.A：動物類毒藥的安全劑量是常考點。",
+      "indications_en": [
+        "Extinguishes Wind and stops spasms; attacks toxicity and dissipates nodules; frees the collaterals and relieves pain."
+      ],
+      "channels_en": [
+        "Liver"
+      ]
     },
     {
       "id": "herb.mu_li",
@@ -47973,6 +49124,16 @@
       ],
       "contraindications_zh": [
         "虛寒證及無實火者慎用；先煎。"
+      ],
+      "indications_en": [
+        "Anchors Yang and nourishes Yin; heavily settles and calms the spirit; astringes and stabilizes; suppresses acid and relieves pain."
+      ],
+      "channels_en": [
+        "Liver",
+        "Kidney"
+      ],
+      "contraindications_en": [
+        "Use with caution in deficiency-cold patterns and in the absence of excess Fire; decoct first."
       ]
     },
     {
@@ -48250,6 +49411,17 @@
       ],
       "contraindications_zh": [
         "濕熱積滯者慎用；先煎。"
+      ],
+      "indications_en": [
+        "Sedates and calms the spirit; calms the Liver and subdues Yang; astringes and consolidates"
+      ],
+      "channels_en": [
+        "Heart",
+        "Liver",
+        "Kidney"
+      ],
+      "contraindications_en": [
+        "Use with caution in Damp-Heat with accumulation and stagnation; decoct first."
       ]
     },
     {
@@ -48816,7 +49988,13 @@
         "not_rendered_reason": "整形不是查證。食療與藥用已分欄,但 80 張的落差與蘇合香的 SAFETY_HOLD 仍未裁決,因此本欄刻意不上畫面;validate-herb-dosage-shape.js D1 會擋住接線。",
         "no_new_numbers": true,
         "source_field": "dosage"
-      }
+      },
+      "channels_en": [
+        "Spleen",
+        "Lung",
+        "Heart",
+        "Kidney"
+      ]
     },
     {
       "id": "herb.dang_shen",
@@ -49189,6 +50367,16 @@
       ],
       "contraindications_zh": [
         "實證、熱證及正氣不虛者忌服；不宜與藜蘆同用。"
+      ],
+      "indications_en": [
+        "Tonifies the Middle and augments Qi; strengthens the Spleen and benefits the Lung; nourishes Blood and generates fluids."
+      ],
+      "channels_en": [
+        "Spleen",
+        "Lung"
+      ],
+      "contraindications_en": [
+        "Contraindicated in excess patterns, Heat patterns, and where the righteous Qi is not deficient; not suitable for use with Li Lu (Veratrum)."
       ]
     },
     {
@@ -49662,7 +50850,18 @@
         "not_rendered_reason": "整形不是查證。食療與藥用已分欄,但 80 張的落差與蘇合香的 SAFETY_HOLD 仍未裁決,因此本欄刻意不上畫面;validate-herb-dosage-shape.js D1 會擋住接線。",
         "no_new_numbers": true,
         "source_field": "dosage"
-      }
+      },
+      "indications_en": [
+        "Spleen and Lung qi deficiency: reduced appetite, fatigue, and loose stools — combine with Ren Shen (Ginseng), Dang Shen (Codonopsis), and Bai Zhu (White Atractylodes)",
+        "Sinking of Middle qi: prolapse of the uterus, stomach, or rectum, and uterine bleeding — combine with Ren Shen (Ginseng), Bai Zhu (White Atractylodes), Sheng Ma (Cimicifuga), and Chai Hu (Bupleurum) (Bu Zhong Yi Qi Tang; for prolapse use a small dose of about 5g)",
+        "Spontaneous sweating due to unconsolidated Defensive qi — combine with Bai Zhu (White Atractylodes) and Fang Feng (Siler) (Yu Ping Feng San)",
+        "Sores and ulcers that fail to close, or pus that fails to discharge, due to qi and Blood deficiency — combine with Ren Shen (Ginseng), Dang Gui (Chinese Angelica), and Chuan Shan Jia (Pangolin Scales) (used raw, not honey-fried)",
+        "Edema due to qi deficiency — used raw, at a large dose of 25-50g"
+      ],
+      "channels_en": [
+        "Lung",
+        "Spleen"
+      ]
     },
     {
       "id": "herb.bai_zhu",
@@ -50091,7 +51290,11 @@
         "not_rendered_reason": "整形不是查證。食療與藥用已分欄,但 80 張的落差與蘇合香的 SAFETY_HOLD 仍未裁決,因此本欄刻意不上畫面;validate-herb-dosage-shape.js D1 會擋住接線。",
         "no_new_numbers": true,
         "source_field": "dosage"
-      }
+      },
+      "channels_en": [
+        "Spleen",
+        "Stomach"
+      ]
     },
     {
       "id": "herb.shan_yao",
@@ -50396,6 +51599,17 @@
       ],
       "contraindications_zh": [
         "濕盛中滿、積滯實熱者忌服。"
+      ],
+      "indications_en": [
+        "Tonifies the Spleen and nourishes the Stomach; generates fluids and benefits the Lung; tonifies the Kidney and astringes essence."
+      ],
+      "channels_en": [
+        "Spleen",
+        "Lung",
+        "Kidney"
+      ],
+      "contraindications_en": [
+        "Contraindicated in excess dampness with fullness in the middle, and in food stagnation with excess heat."
       ]
     },
     {
@@ -50949,7 +52163,13 @@
         "not_rendered_reason": "整形不是查證。食療與藥用已分欄,但 80 張的落差與蘇合香的 SAFETY_HOLD 仍未裁決,因此本欄刻意不上畫面;validate-herb-dosage-shape.js D1 會擋住接線。",
         "no_new_numbers": true,
         "source_field": "dosage"
-      }
+      },
+      "channels_en": [
+        "Heart",
+        "Lung",
+        "Spleen",
+        "Stomach"
+      ]
     },
     {
       "id": "herb.da_zao",
@@ -51388,7 +52608,11 @@
         "not_rendered_reason": "整形不是查證。食療與藥用已分欄,但 80 張的落差與蘇合香的 SAFETY_HOLD 仍未裁決,因此本欄刻意不上畫面;validate-herb-dosage-shape.js D1 會擋住接線。",
         "no_new_numbers": true,
         "source_field": "dosage"
-      }
+      },
+      "channels_en": [
+        "Spleen",
+        "Stomach"
+      ]
     },
     {
       "id": "herb.bai_shao",
@@ -51840,7 +53064,11 @@
         "not_rendered_reason": "整形不是查證。食療與藥用已分欄,但 80 張的落差與蘇合香的 SAFETY_HOLD 仍未裁決,因此本欄刻意不上畫面;validate-herb-dosage-shape.js D1 會擋住接線。",
         "no_new_numbers": true,
         "source_field": "dosage"
-      }
+      },
+      "channels_en": [
+        "Liver",
+        "Spleen"
+      ]
     },
     {
       "id": "herb.dang_gui",
@@ -52344,7 +53572,19 @@
         "not_rendered_reason": "整形不是查證。食療與藥用已分欄,但 80 張的落差與蘇合香的 SAFETY_HOLD 仍未裁決,因此本欄刻意不上畫面;validate-herb-dosage-shape.js D1 會擋住接線。",
         "no_new_numbers": true,
         "source_field": "dosage"
-      }
+      },
+      "indications_en": [
+        "Various types of Blood deficiency: pale complexion, dizziness, dry brittle hair, blurred vision, tinnitus, palpitations — combined with Huang Qi (Astragalus) in Dang Gui Bu Xue Tang (Tangkuei Decoction to Tonify the Blood), where Huang Qi serves as the chief herb.",
+        "Menstrual irregularity, dysmenorrhea, amenorrhea, premenstrual syndrome, menopause (a key gynecological herb; warm in nature, warms the uterus) — combined with Bai Shao (White Peony), Chuan Xiong (Ligusticum), and Shu Di Huang (Prepared Rehmannia) in Si Wu Tang (Four Substances Decoction).",
+        "Blood stasis or Deficiency-Cold pain: abdominal pain, traumatic injury, Cold-Damp Bi (painful obstruction) pattern — use Dang Gui Wei (Angelica Tail), combined with Dan Shen (Salvia), Ru Xiang (Frankincense), Mo Yao (Myrrh), Gui Zhi (Cinnamon Twig), and Qin Jiao (Gentiana Macrophylla).",
+        "Sores and swollen, painful abscesses with pus that fails to drain — combined with Huang Qi (Astragalus), Ren Shen (Ginseng), and Chuan Shan Jia (Pangolin Scales).",
+        "Blood deficiency with Intestinal dryness and constipation — combined with Huo Ma Ren (Hemp Seed) and Rou Cong Rong (Cistanche)."
+      ],
+      "channels_en": [
+        "Heart",
+        "Liver",
+        "Spleen"
+      ]
     },
     {
       "id": "herb.shu_di_huang",
@@ -52663,6 +53903,17 @@
       ],
       "contraindications_zh": [
         "脾胃虛弱、氣滯痰多及腹瀉便溏者忌服。"
+      ],
+      "indications_en": [
+        "Tonifies the Blood and nourishes Yin; fills the Essence and enriches the marrow."
+      ],
+      "channels_en": [
+        "Heart",
+        "Liver",
+        "Kidney"
+      ],
+      "contraindications_en": [
+        "Contraindicated in Spleen-Stomach deficiency, qi stagnation with copious phlegm, and diarrhea with loose stools."
       ]
     },
     {
@@ -52972,6 +54223,17 @@
       ],
       "contraindications_zh": [
         "脾胃虛弱、嘔吐泄瀉及外感實熱者忌服。"
+      ],
+      "indications_en": [
+        "Tonifies Blood; nourishes Yin; moistens the Lung; stops bleeding"
+      ],
+      "channels_en": [
+        "Lung",
+        "Liver",
+        "Kidney"
+      ],
+      "contraindications_en": [
+        "Contraindicated in patients with Spleen-Stomach weakness, vomiting and diarrhea, and in externally-contracted excess Heat conditions."
       ]
     },
     {
@@ -53408,7 +54670,15 @@
       },
       "pharmaceutical_latin": "Polygoni Multiflori Radix Praeparata",
       "exam_pearl": "何首烏分生用與製用：生首烏潤腸解毒，製首烏補肝腎、益精血、烏鬚髮；肝功能不全者慎用是本卡安全要點。",
-      "exam_importance": "★ NCBAHM 2026 CH 考綱 Domain I.A：補血藥中唯一列入毒性複習範圍的一味，生熟異用是常考點。"
+      "exam_importance": "★ NCBAHM 2026 CH 考綱 Domain I.A：補血藥中唯一列入毒性複習範圍的一味，生熟異用是常考點。",
+      "indications_en": [
+        "Tonifies Essence and Blood (prepared/processed form); arrests malaria; resolves toxicity; moistens the intestines and unblocks the bowels (unprocessed/raw form)."
+      ],
+      "channels_en": [
+        "Liver",
+        "Heart",
+        "Kidney"
+      ]
     },
     {
       "id": "herb.long_yan_rou",
@@ -53708,6 +54978,16 @@
       ],
       "contraindications_zh": [
         "內有痰火、濕阻中焦及氣滯脹滿者忌服。"
+      ],
+      "indications_en": [
+        "Tonifies the Heart and Spleen; nourishes the Blood and calms the spirit"
+      ],
+      "channels_en": [
+        "Heart",
+        "Spleen"
+      ],
+      "contraindications_en": [
+        "Contraindicated in patients with internal Phlegm-Fire, Dampness obstructing the Middle Burner, or qi stagnation with distention and fullness."
       ]
     },
     {
@@ -53976,6 +55256,16 @@
       ],
       "contraindications_zh": [
         "風寒咳嗽及脾胃虛寒便溏者禁用；反藜蘆。"
+      ],
+      "indications_en": [
+        "Nourishes Yin and clears the Lung; benefits the Stomach and generates fluids"
+      ],
+      "channels_en": [
+        "Lung",
+        "Stomach"
+      ],
+      "contraindications_en": [
+        "Contraindicated in cough due to Wind-Cold and in patients with Spleen-Stomach deficiency-cold with loose stools; incompatible with Li Lu (Veratrum Root)."
       ]
     },
     {
@@ -54583,6 +55873,17 @@
       ],
       "contraindications_zh": [
         "脾胃虛寒泄瀉、胃有痰飲濕濁者禁用。"
+      ],
+      "indications_en": [
+        "Nourishes Yin and moistens the Lung; benefits the Stomach and generates fluids; clears the Heart and relieves irritability"
+      ],
+      "channels_en": [
+        "Heart",
+        "Lung",
+        "Stomach"
+      ],
+      "contraindications_en": [
+        "Prohibited in patients with Spleen-Stomach Cold deficiency with diarrhea, or Stomach Phlegm-Fluid retention with turbid Dampness."
       ]
     },
     {
@@ -54865,6 +56166,16 @@
       ],
       "contraindications_zh": [
         "脾胃虛寒、食少便溏及風寒咳嗽者禁用。"
+      ],
+      "indications_en": [
+        "Nourishes Yin and moistens dryness; clears the Lungs and generates fluids."
+      ],
+      "channels_en": [
+        "Lung",
+        "Kidney"
+      ],
+      "contraindications_en": [
+        "Contraindicated in Spleen-Stomach deficiency cold, poor appetite with loose stools, and Wind-Cold cough."
       ]
     },
     {
@@ -55181,6 +56492,13 @@
       ],
       "contraindications_en": [
         "Contraindicated in excess febrile disorders, Damp-Phlegm accumulation, exterior-stage disease, and early-stage warm-febrile disorders."
+      ],
+      "indications_en": [
+        "Benefits the Stomach and generates fluids; nourishes Yin and clears heat."
+      ],
+      "channels_en": [
+        "Stomach",
+        "Kidney"
       ]
     },
     {
@@ -55443,6 +56761,16 @@
       ],
       "contraindications_zh": [
         "脾虛便溏、痰濕氣滯者忌服。"
+      ],
+      "indications_en": [
+        "Nourishes Yin and moistens dryness; generates fluids and quenches thirst."
+      ],
+      "channels_en": [
+        "Lung",
+        "Stomach"
+      ],
+      "contraindications_en": [
+        "Contraindicated in Spleen deficiency with loose stools, and Phlegm-Damp Qi stagnation."
       ]
     },
     {
@@ -55746,6 +57074,13 @@
       ],
       "contraindications_en": [
         "Contraindicated with Middle Jiao deficiency, diarrhea or loose stools, and cough due to Wind-Cold or Phlegm."
+      ],
+      "indications_en": [
+        "Nourishes Yin and moistens the Lungs; clears the Heart and calms the spirit"
+      ],
+      "channels_en": [
+        "Heart",
+        "Lung"
       ]
     },
     {
@@ -56081,6 +57416,14 @@
       ],
       "contraindications_en": [
         "Contraindicated in excess or exterior conditions."
+      ],
+      "indications_en": [
+        "Nourishes and tonifies the Liver and Kidney; boosts Essence and brightens the eyes."
+      ],
+      "channels_en": [
+        "Liver",
+        "Kidney",
+        "Lung"
       ]
     },
     {
@@ -56370,6 +57713,16 @@
       ],
       "contraindications_zh": [
         "脾胃虛寒便溏者忌服。"
+      ],
+      "indications_en": [
+        "Nourishes and tonifies the Liver and Kidneys; brightens the eyes and blackens the hair."
+      ],
+      "channels_en": [
+        "Liver",
+        "Kidney"
+      ],
+      "contraindications_en": [
+        "Contraindicated in Spleen-Stomach deficiency cold with loose stools."
       ]
     },
     {
@@ -56604,6 +57957,17 @@
         "Immunomodulatory activity",
         "Antitumor activity",
         "Antioxidant activity"
+      ],
+      "indications_en": [
+        "Nourishes Yin and anchors Yang; benefits the Kidneys and strengthens the bones; nourishes Blood and tonifies the Heart; astringes essence and stops flooding [uterine bleeding]."
+      ],
+      "channels_en": [
+        "Liver",
+        "Kidney",
+        "Heart"
+      ],
+      "contraindications_en": [
+        "Use with caution in Spleen-Stomach deficiency cold, during pregnancy, and in Dampness obstructing the Middle Jiao."
       ]
     },
     {
@@ -56853,6 +58217,16 @@
       ],
       "contraindications_zh": [
         "陰虛火旺者禁用；孕婦慎用；不宜與附子同用。"
+      ],
+      "indications_en": [
+        "Warms and tonifies the Liver and Kidneys; boosts essence and nourishes the Blood; consolidates and stops abnormal uterine bleeding and vaginal discharge."
+      ],
+      "channels_en": [
+        "Liver",
+        "Kidney"
+      ],
+      "contraindications_en": [
+        "Contraindicated in those with Yin deficiency and effulgent Fire; use with caution in pregnancy; not to be used together with Fu Zi (Aconite)."
       ]
     },
     {
@@ -57173,6 +58547,13 @@
       ],
       "contraindications_en": [
         "Contraindicated with Yang rising, internal or exterior Heat conditions, or Phlegm-Heat."
+      ],
+      "indications_en": [
+        "Strengthens Kidney Yang; boosts essence and Blood; strengthens the sinews and bones; regulates the Chong and Ren vessels."
+      ],
+      "channels_en": [
+        "Kidney",
+        "Liver"
       ]
     },
     {
@@ -57459,6 +58840,16 @@
       ],
       "contraindications_zh": [
         "陰虛火旺者忌服。"
+      ],
+      "indications_en": [
+        "Tonifies Kidney Yang; strengthens the sinews and bones; dispels Wind-Damp"
+      ],
+      "channels_en": [
+        "Liver",
+        "Kidney"
+      ],
+      "contraindications_en": [
+        "Contraindicated in Yin deficiency with effulgent Fire."
       ]
     },
     {
@@ -57730,6 +59121,16 @@
       ],
       "contraindications_zh": [
         "陰虛火旺者忌服。"
+      ],
+      "indications_en": [
+        "Tonifies Kidney Yang; strengthens the sinews and bones; dispels Wind-Damp."
+      ],
+      "channels_en": [
+        "Kidney",
+        "Liver"
+      ],
+      "contraindications_en": [
+        "Contraindicated in Yin deficiency with effulgent fire."
       ]
     },
     {
@@ -58116,7 +59517,16 @@
         "not_rendered_reason": "整形不是查證。食療與藥用已分欄,但 80 張的落差與蘇合香的 SAFETY_HOLD 仍未裁決,因此本欄刻意不上畫面;validate-herb-dosage-shape.js D1 會擋住接線。",
         "no_new_numbers": true,
         "source_field": "dosage"
-      }
+      },
+      "indications_en": [
+        "Liver-Kidney insufficiency: soreness and pain of the low back and knees, weakness of the sinews and bones, fatigue, frequent urination — combine with Niu Xi and Du Huo (high-frequency exam point, YY).",
+        "Restless fetus (threatened miscarriage), pregnancy bleeding (Liver-Kidney deficiency) — combine with Shan Yao, Xu Duan, and Tu Si Zi.",
+        "Dizziness and vertigo due to Liver Yang rising (hypertension) — combine with Bai Shao, Shi Jue Ming, Xia Ku Cao, and Huang Qin."
+      ],
+      "channels_en": [
+        "Liver",
+        "Kidney"
+      ]
     },
     {
       "id": "herb.xu_duan",
@@ -58372,6 +59782,16 @@
       ],
       "contraindications_zh": [
         "陰虛火旺及風濕熱痹者慎用。"
+      ],
+      "indications_en": [
+        "Tonifies the Liver and Kidneys; moves the Blood through the vessels; mends the sinews and bones."
+      ],
+      "channels_en": [
+        "Liver",
+        "Kidney"
+      ],
+      "contraindications_en": [
+        "Use with caution in Yin deficiency with effulgent Fire and in Wind-Damp-Heat painful obstruction."
       ]
     },
     {
@@ -58691,6 +60111,16 @@
       ],
       "contraindications_zh": [
         "陰虛火旺、大便秘結及孕婦忌服。"
+      ],
+      "indications_en": [
+        "Warms the Spleen and stops diarrhea; tonifies the Kidney and strengthens Yang; assists the Kidney in grasping Qi and calms wheezing"
+      ],
+      "channels_en": [
+        "Kidney",
+        "Spleen"
+      ],
+      "contraindications_en": [
+        "Contraindicated in patients with Yin deficiency with effulgent Fire, constipation, and in pregnancy."
       ]
     },
     {
@@ -58964,6 +60394,17 @@
       ],
       "contraindications_zh": [
         "腎虛火旺、大便燥結及小便短赤者忌服。"
+      ],
+      "indications_en": [
+        "Tonifies the Liver and Kidneys; astringes Essence and reduces urination; calms the fetus and brightens the eyes."
+      ],
+      "channels_en": [
+        "Liver",
+        "Kidney",
+        "Spleen"
+      ],
+      "contraindications_en": [
+        "Contraindicated in Kidney deficiency with effulgent Fire, dry constipation, and short scanty dark urine."
       ]
     },
     {
@@ -59225,6 +60666,16 @@
       ],
       "contraindications_zh": [
         "腎虛火旺者慎用。"
+      ],
+      "indications_en": [
+        "Tonifies the Kidney and assists Yang; secures Essence and reduces urination; nourishes the Liver and brightens the eyes"
+      ],
+      "channels_en": [
+        "Liver",
+        "Kidney"
+      ],
+      "contraindications_en": [
+        "Use with caution in patients with Kidney deficiency and exuberant Fire."
       ]
     },
     {
@@ -59623,6 +61074,17 @@
       ],
       "contraindications_zh": [
         "肝鬱有熱及實邪郁火者慎用。"
+      ],
+      "indications_en": [
+        "Nourishes the Heart and benefits the Liver; calms the Spirit; astringes sweat."
+      ],
+      "channels_en": [
+        "Heart",
+        "Liver",
+        "Gallbladder"
+      ],
+      "contraindications_en": [
+        "Use with caution in Liver qi stagnation with Heat, and in excess conditions with constrained Fire."
       ]
     },
     {
@@ -59908,6 +61370,17 @@
       ],
       "contraindications_zh": [
         "痰多及大便溏瀉者忌服。"
+      ],
+      "indications_en": [
+        "Nourishes the Heart and calms the spirit; moistens the intestines and unblocks the bowels."
+      ],
+      "channels_en": [
+        "Heart",
+        "Kidney",
+        "Large Intestine"
+      ],
+      "contraindications_en": [
+        "Contraindicated in profuse phlegm and in loose stools or diarrhea."
       ]
     },
     {
@@ -60175,6 +61648,17 @@
       ],
       "contraindications_zh": [
         "胃潰瘍及胃炎患者慎用；實火及痰火亢盛者慎用。"
+      ],
+      "indications_en": [
+        "Calms the spirit and sharpens the mind; expels Phlegm and reduces swelling"
+      ],
+      "channels_en": [
+        "Heart",
+        "Kidney",
+        "Lung"
+      ],
+      "contraindications_en": [
+        "Use with caution in patients with peptic ulcer disease and gastritis; use with caution in excess Fire and exuberant Phlegm-Fire."
       ]
     },
     {
@@ -60413,6 +61897,16 @@
       ],
       "contraindications_zh": [
         "孕婦慎用。"
+      ],
+      "indications_en": [
+        "Relieves constraint and calms the spirit; invigorates the blood and reduces swelling."
+      ],
+      "channels_en": [
+        "Heart",
+        "Liver"
+      ],
+      "contraindications_en": [
+        "Use with caution in pregnancy."
       ]
     },
     {
@@ -60835,6 +62329,17 @@
         "Bidirectional regulation of the central nervous system with anti-fatigue effect",
         "Cardiotonic and antioxidant effects",
         "Enhances immunity and increases resistance to stress"
+      ],
+      "indications_en": [
+        "Chronic vomiting and chronic cough, Lung deficiency with wheezing and cough, Kidney deficiency wheezing (representative formulas: Du Qi Wan; Xiao Qing Long Tang plus Wu Wei Zi).",
+        "Spontaneous sweating, night sweats, thirst from fluid damage, wasting-thirst (xiao ke) due to internal Heat (representative formula: Sheng Mai San).",
+        "Seminal emission, spermatorrhea, frequent urination, chronic unremitting diarrhea (representative formula: Si Shen Wan).",
+        "Palpitations, insomnia, profuse dreaming (representative formula: Tian Wang Bu Xin Dan)."
+      ],
+      "channels_en": [
+        "Lung",
+        "Heart",
+        "Kidney"
       ]
     },
     {
@@ -61093,6 +62598,17 @@
       ],
       "contraindications_zh": [
         "外感風寒及實熱積滯者忌服。"
+      ],
+      "indications_en": [
+        "Astringes the Lung and drains Fire; astringes the intestines and stops diarrhea; consolidates essence and stops seminal emission; astringes sweat and stops bleeding."
+      ],
+      "channels_en": [
+        "Lung",
+        "Large Intestine",
+        "Kidney"
+      ],
+      "contraindications_en": [
+        "Contraindicated in exterior Wind-Cold patterns and in excess Heat with stagnation and accumulation."
       ]
     },
     {
@@ -61381,6 +62897,16 @@
       ],
       "contraindications_zh": [
         "命門火旺、素有濕熱及小便不利者忌服。"
+      ],
+      "indications_en": [
+        "Tonifies the Liver and Kidneys; astringes and consolidates"
+      ],
+      "channels_en": [
+        "Liver",
+        "Kidney"
+      ],
+      "contraindications_en": [
+        "Contraindicated in effulgent Ming Men (Life Gate) Fire, constitutional Damp-Heat, and difficult urination."
       ]
     },
     {
@@ -61680,6 +63206,17 @@
       ],
       "contraindications_zh": [
         "中滿痞脹及大便燥結者忌服。"
+      ],
+      "indications_en": [
+        "Boosts the Kidneys and consolidates Essence; tonifies the Spleen and stops diarrhea; stops vaginal discharge; nourishes the Heart and calms the spirit."
+      ],
+      "channels_en": [
+        "Spleen",
+        "Kidney",
+        "Heart"
+      ],
+      "contraindications_en": [
+        "Contraindicated in fullness and focal distension of the middle burner and in dry, bound stool."
       ]
     },
     {
@@ -61973,6 +63510,16 @@
       ],
       "contraindications_zh": [
         "大小便不利、食積停滯及瘧疾者忌服。"
+      ],
+      "indications_en": [
+        "Boosts the Kidneys and consolidates essence; tonifies the Spleen and stops diarrhea; eliminates Dampness and stops vaginal discharge."
+      ],
+      "channels_en": [
+        "Spleen",
+        "Kidney"
+      ],
+      "contraindications_en": [
+        "Contraindicated in difficult urination and defecation, food stagnation and accumulation, and malaria."
       ]
     },
     {
@@ -62265,6 +63812,12 @@
       ],
       "contraindications_zh": [
         "表尖無汗者忌服。"
+      ],
+      "indications_en": [
+        "Consolidates the exterior and stops sweating; boosts qi; eliminates Heat."
+      ],
+      "channels_en": [
+        "Heart"
       ]
     },
     {
@@ -62546,6 +64099,16 @@
       ],
       "contraindications_zh": [
         "孕婦慎用；脾胃虛寒者忌服；先煎。"
+      ],
+      "indications_en": [
+        "Calms the Liver and anchors Yang; heavily settles and directs rebellious [qi] downward; cools the Blood and stops bleeding."
+      ],
+      "channels_en": [
+        "Liver",
+        "Heart"
+      ],
+      "contraindications_en": [
+        "Use with caution during pregnancy; contraindicated in Spleen-Stomach deficiency cold; decoct first."
       ]
     },
     {
@@ -62870,7 +64433,19 @@
         "not_rendered_reason": "整形不是查證。食療與藥用已分欄,但 80 張的落差與蘇合香的 SAFETY_HOLD 仍未裁決,因此本欄刻意不上畫面;validate-herb-dosage-shape.js D1 會擋住接線。",
         "no_new_numbers": true,
         "source_field": "dosage"
-      }
+      },
+      "indications_en": [
+        "Phlegm-Fluids obstructing the Lung with rebellious Lung Qi — cough and wheezing, copious phlegm, and chest oppression.",
+        "Cough due to Cold-Phlegm or Heat-Phlegm — combine with warming-transforming or heat-clearing, phlegm-transforming herbs according to the pattern.",
+        "Rebellious Stomach Qi — nausea and vomiting, belching, and hiccup.",
+        "Phlegm-Fluids accumulating in the chest and hypochondria — fullness and distention of the chest and hypochondria, cough that pulls on chest pain."
+      ],
+      "channels_en": [
+        "Lung",
+        "Spleen",
+        "Stomach",
+        "Large Intestine"
+      ]
     },
     {
       "id": "herb.gao_liang_jiang",
@@ -63161,6 +64736,16 @@
       ],
       "contraindications_zh": [
         "陰虛有熱者忌服。"
+      ],
+      "indications_en": [
+        "Warms the Stomach and stops vomiting; dispels Cold and relieves pain."
+      ],
+      "channels_en": [
+        "Spleen",
+        "Stomach"
+      ],
+      "contraindications_en": [
+        "Contraindicated in Yin deficiency with Heat."
       ]
     },
     {
@@ -63611,7 +65196,15 @@
         "not_rendered_reason": "整形不是查證。食療與藥用已分欄,但 80 張的落差與蘇合香的 SAFETY_HOLD 仍未裁決,因此本欄刻意不上畫面;validate-herb-dosage-shape.js D1 會擋住接線。",
         "no_new_numbers": true,
         "source_field": "dosage"
-      }
+      },
+      "indications_en": [
+        "Warms the Middle and relieves pain; kills parasites and stops itching."
+      ],
+      "channels_en": [
+        "Spleen",
+        "Stomach",
+        "Kidney"
+      ]
     },
     {
       "id": "herb.fo_shou",
@@ -63912,6 +65505,18 @@
       ],
       "contraindications_zh": [
         "陰虛有熱者慎用。"
+      ],
+      "indications_en": [
+        "Soothes the Liver and regulates qi; harmonizes the Stomach and relieves pain; dries Dampness and transforms Phlegm"
+      ],
+      "channels_en": [
+        "Liver",
+        "Spleen",
+        "Stomach",
+        "Lung"
+      ],
+      "contraindications_en": [
+        "Use with caution in patients with Yin deficiency with Heat."
       ]
     },
     {
@@ -64174,6 +65779,16 @@
       ],
       "contraindications_zh": [
         "陰虛火旺者慎用。"
+      ],
+      "indications_en": [
+        "Soothes the Liver and relieves constraint; moves Qi and relieves pain; invigorates the Blood and dissipates stasis."
+      ],
+      "channels_en": [
+        "Liver",
+        "Spleen"
+      ],
+      "contraindications_en": [
+        "Use with caution in Yin deficiency with effulgent Fire."
       ]
     },
     {
@@ -64523,6 +66138,17 @@
       ],
       "contraindications_zh": [
         "氣虛無滯者慎用。"
+      ],
+      "indications_en": [
+        "Unblocks the Yang and disperses nodulation; moves Qi and resolves stagnation."
+      ],
+      "channels_en": [
+        "Lung",
+        "Stomach",
+        "Large Intestine"
+      ],
+      "contraindications_en": [
+        "Use with caution in Qi deficiency without stagnation."
       ]
     },
     {
@@ -64812,6 +66438,17 @@
       ],
       "contraindications_zh": [
         "氣虛無積滯者慎用；不宜與人參同用。"
+      ],
+      "indications_en": [
+        "Promotes digestion and guides out stagnation; directs Qi downward and transforms Phlegm."
+      ],
+      "channels_en": [
+        "Lung",
+        "Spleen",
+        "Stomach"
+      ],
+      "contraindications_en": [
+        "Use with caution in Qi deficiency without food stagnation; not suitable for use with Ren Shen (Ginseng)."
       ]
     },
     {
@@ -65057,6 +66694,16 @@
       ],
       "contraindications_zh": [
         "過量可致嘔吐腹瀉；忌與熱茶同服。"
+      ],
+      "indications_en": [
+        "Kills parasites and reduces accumulation; strengthens the Stomach."
+      ],
+      "channels_en": [
+        "Spleen",
+        "Stomach"
+      ],
+      "contraindications_en": [
+        "Overdose may cause vomiting and diarrhea; avoid taking with hot tea."
       ]
     },
     {
@@ -65444,7 +67091,15 @@
       "pharmaceutical_latin": "Meliae Cortex",
       "pinyin_toned": "Kǔ Liàn Pí",
       "exam_pearl": "驅蟲藥中專治蛔蟲、鉤蟲、蟯蟲、陰道滴蟲的樹皮類藥；有毒，孕婦及肝病患者禁用，劑量宜嚴格遵循6-15g（鮮品加倍）。",
-      "exam_importance": "★ NCBAHM 2026 CH 考綱 Domain I.A：驅蟲藥安全劑量與肝腎功能禁忌是常考點。"
+      "exam_importance": "★ NCBAHM 2026 CH 考綱 Domain I.A：驅蟲藥安全劑量與肝腎功能禁忌是常考點。",
+      "indications_en": [
+        "Kills parasites and treats ringworm"
+      ],
+      "channels_en": [
+        "Spleen",
+        "Stomach",
+        "Liver"
+      ]
     },
     {
       "id": "herb.bing_lang",
@@ -65752,7 +67407,14 @@
       "pharmaceutical_latin": "Arecae Semen",
       "pinyin_toned": "Bīng Láng",
       "exam_pearl": "驅蟲藥中兼能行氣利水、截瘧的種子藥，對絛蟲效果尤佳；驅蟲用量遠高於一般消積用量（本卡 dosage 特殊說明載明可達30-60g），須醫師指導。",
-      "exam_importance": "★ NCBAHM 2026 CH 考綱 Domain I.A：驅蟲藥的驅蟲劑量與一般消積劑量差異是常考點。"
+      "exam_importance": "★ NCBAHM 2026 CH 考綱 Domain I.A：驅蟲藥的驅蟲劑量與一般消積劑量差異是常考點。",
+      "indications_en": [
+        "Kills parasites and reduces accumulation; moves Qi and promotes urination; arrests malarial disorders."
+      ],
+      "channels_en": [
+        "Stomach",
+        "Large Intestine"
+      ]
     },
     {
       "id": "herb.nan_gua_zi",
@@ -65937,6 +67599,16 @@
       ],
       "contraindications_zh": [
         "無特殊禁忌，多食易肥胖。"
+      ],
+      "indications_en": [
+        "Kills parasites (tapeworm)"
+      ],
+      "channels_en": [
+        "Stomach",
+        "Large Intestine"
+      ],
+      "contraindications_en": [
+        "No specific contraindications; excessive consumption may readily lead to weight gain."
       ]
     },
     {
@@ -66257,6 +67929,17 @@
       ],
       "contraindications_zh": [
         "熱盛出血者慎用。"
+      ],
+      "indications_en": [
+        "Astringes to stop bleeding; arrests malarial disorders; stops dysentery; resolves toxicity."
+      ],
+      "channels_en": [
+        "Lung",
+        "Liver",
+        "Spleen"
+      ],
+      "contraindications_en": [
+        "Use with caution in bleeding due to excessive Heat."
       ]
     },
     {
@@ -66527,6 +68210,16 @@
       ],
       "contraindications_zh": [
         "孕婦禁用（能引起子宮收縮）；無瘀血者慎用。"
+      ],
+      "indications_en": [
+        "Stops bleeding; transforms stasis; relieves painful urinary dribbling (Lin syndrome)."
+      ],
+      "channels_en": [
+        "Liver",
+        "Pericardium"
+      ],
+      "contraindications_en": [
+        "Contraindicated in pregnancy (may induce uterine contractions); use with caution in patients without Blood stasis."
       ]
     },
     {
@@ -66776,6 +68469,12 @@
       "contraindications_en": [
         "Contraindicated during pregnancy because it may stimulate uterine contractions.",
         "Contraindicated when Blood stasis is absent."
+      ],
+      "indications_en": [
+        "Cools the Blood and stops bleeding; dispels stasis and unblocks the menses"
+      ],
+      "channels_en": [
+        "Liver"
       ]
     },
     {
@@ -67199,6 +68898,18 @@
       },
       "contraindications_zh": [
         "孕婦禁用；胃弱易嘔者慎用。"
+      ],
+      "indications_en": [
+        "Severe pain from Qi and Blood stagnation in the heart, abdomen, and epigastrium, dysmenorrhea, amenorrhea, and Wind-Damp painful obstruction (Bi) (representative formula: Qi Li San).",
+        "Swelling and pain from traumatic injury, and non-healing sores and welling-abscesses with swelling and toxicity after rupture (representative formula: Ruxiang Dingtong San)."
+      ],
+      "channels_en": [
+        "Heart",
+        "Liver",
+        "Spleen"
+      ],
+      "contraindications_en": [
+        "Contraindicated during pregnancy; use with caution in patients with weak stomach prone to vomiting."
       ]
     },
     {
@@ -67612,6 +69323,17 @@
       ],
       "contraindications_zh": [
         "孕婦禁用；胃弱易嘔者慎用。"
+      ],
+      "indications_en": [
+        "Disperses Blood and expels stasis; reduces swelling and relieves pain."
+      ],
+      "channels_en": [
+        "Heart",
+        "Liver",
+        "Spleen"
+      ],
+      "contraindications_en": [
+        "Contraindicated during pregnancy; use with caution in those with a weak stomach prone to vomiting."
       ]
     },
     {
@@ -68052,6 +69774,19 @@
       },
       "contraindications_zh": [
         "孕婦禁用；無瘀血者慎用。"
+      ],
+      "indications_en": [
+        "Irregular menstruation, dysmenorrhea, amenorrhea, incomplete discharge of postpartum lochia, and abdominal pain from incomplete postpartum uterine involution (used alone decocted into a paste, or combined with Dang Gui).",
+        "Edema, inhibited urination, and edema of acute nephritis (used alone at a large dosage, decocted).",
+        "Traumatic injury; sores and carbuncles with swelling and toxicity; skin eczema."
+      ],
+      "channels_en": [
+        "Liver",
+        "Pericardium",
+        "Bladder"
+      ],
+      "contraindications_en": [
+        "Contraindicated in pregnancy; use with caution in the absence of blood stasis."
       ]
     },
     {
@@ -68376,6 +70111,17 @@
       },
       "contraindications_zh": [
         "無瘀血者慎用；孕婦慎用。"
+      ],
+      "indications_en": [
+        "Irregular menstruation, dysmenorrhea, amenorrhea, and postpartum abdominal pain from retained lochia (representative formula: Ze Lan Tang).",
+        "Postpartum edema, swelling of the body and face, and difficult urination."
+      ],
+      "channels_en": [
+        "Liver",
+        "Spleen"
+      ],
+      "contraindications_en": [
+        "Use with caution in patients without Blood stasis; use with caution in pregnancy."
       ]
     },
     {
@@ -68710,7 +70456,16 @@
         "not_rendered_reason": "整形不是查證。食療與藥用已分欄,但 80 張的落差與蘇合香的 SAFETY_HOLD 仍未裁決,因此本欄刻意不上畫面;validate-herb-dosage-shape.js D1 會擋住接線。",
         "no_new_numbers": true,
         "source_field": "dosage"
-      }
+      },
+      "indications_en": [
+        "Cold-Phlegm obstructing the Lung — cough and wheezing, copious thin clear phlegm, fullness and oppression in the chest and diaphragm.",
+        "Phlegm-Rheum accumulating in the chest and hypochondrium — distension, fullness and pain in the chest and hypochondrium, cough that radiates to hypochondriac pain.",
+        "Phlegm obstructing the channels and collaterals — numbness of the limbs, joint pain, Yin-type welling-abscesses (Yin Ju) and flowing/wandering abscesses (Liu Zhu).",
+        "Cold-Phlegm congealing and binding — phlegm nodules, scrofula (Luo Li), and diffuse, non-suppurating swelling of Yin-type welling-abscesses."
+      ],
+      "channels_en": [
+        "Lung"
+      ]
     },
     {
       "id": "herb.qian_hu",
@@ -69011,6 +70766,15 @@
       ],
       "contraindications_zh": [
         "陰虛火旺及寒痰咳嗽者忌服。"
+      ],
+      "indications_en": [
+        "Directs Qi downward and transforms Phlegm; diffuses and disperses Wind-Heat."
+      ],
+      "channels_en": [
+        "Lung"
+      ],
+      "contraindications_en": [
+        "Contraindicated in Yin deficiency with effulgent Fire and Cold-Phlegm cough."
       ]
     },
     {
@@ -69229,6 +70993,15 @@
       ],
       "contraindications_zh": [
         "脾胃虛寒大便溏薄者慎用。"
+      ],
+      "indications_en": [
+        "Moistens the Lungs, directs Qi downward, and stops coughing; kills parasites and lice."
+      ],
+      "channels_en": [
+        "Lung"
+      ],
+      "contraindications_en": [
+        "Use with caution in Spleen-Stomach deficiency cold with loose stools."
       ]
     },
     {
@@ -69558,6 +71331,16 @@
       ],
       "contraindications_zh": [
         "胃寒者慎用。"
+      ],
+      "indications_en": [
+        "Clears the Lung and stops coughing; directs rebellious Qi downward and stops vomiting."
+      ],
+      "channels_en": [
+        "Lung",
+        "Stomach"
+      ],
+      "contraindications_en": [
+        "Use with caution in Stomach Cold."
       ]
     },
     {
@@ -69820,6 +71603,16 @@
       ],
       "contraindications_zh": [
         "肺虛喘咳及脾虛腫滿者慎用；孕婦禁用。"
+      ],
+      "indications_en": [
+        "Drains the Lung and calms wheezing; promotes urination and reduces edema."
+      ],
+      "channels_en": [
+        "Lung",
+        "Bladder"
+      ],
+      "contraindications_en": [
+        "Use with caution in Lung deficiency with wheezing and cough, and in Spleen deficiency with edema and distention; contraindicated in pregnancy."
       ]
     },
     {
@@ -70147,6 +71940,17 @@
           "moved_at": "2026-08-27",
           "ruling": "TING_RULING_SHEET_2026-08-27"
         }
+      ],
+      "indications_en": [
+        "Extinguishes Wind and stops spasms; dispels Wind and relieves pain; transforms Phlegm and dissipates nodules."
+      ],
+      "channels_en": [
+        "Liver",
+        "Lung",
+        "Stomach"
+      ],
+      "contraindications_en": [
+        "Use with caution in those with Blood deficiency without Wind-Phlegm; use with caution in pregnancy."
       ]
     },
     {
@@ -70413,6 +72217,16 @@
       ],
       "contraindications_zh": [
         "燥痰、陰虛火旺者慎用。"
+      ],
+      "indications_en": [
+        "Nourishes the Heart and calms the spirit; dispels Wind and unblocks the collaterals."
+      ],
+      "channels_en": [
+        "Heart",
+        "Liver"
+      ],
+      "contraindications_en": [
+        "Use with caution in Dry-Phlegm and in Yin deficiency with effulgent Fire."
       ]
     },
     {
@@ -70697,6 +72511,16 @@
       ],
       "contraindications_zh": [
         "邪實正不虛者慎用。"
+      ],
+      "indications_en": [
+        "Boosts Qi and strengthens the Spleen; generates fluids and moistens the Lung."
+      ],
+      "channels_en": [
+        "Spleen",
+        "Lung"
+      ],
+      "contraindications_en": [
+        "Use with caution in those with excess pathogenic factors and no underlying deficiency."
       ]
     },
     {
@@ -71047,6 +72871,17 @@
       ],
       "contraindications_zh": [
         "中寒便溏、濕濁中阻者忌服；反藜蘆。"
+      ],
+      "indications_en": [
+        "Tonifies Qi and nourishes Yin; clears Heat and generates fluids"
+      ],
+      "channels_en": [
+        "Heart",
+        "Lung",
+        "Kidney"
+      ],
+      "contraindications_en": [
+        "Contraindicated in Middle Cold with loose stools and Turbid Damp obstructing the Middle Burner; incompatible with Li Lu (Veratrum Root)."
       ]
     },
     {
@@ -71347,6 +73182,16 @@
       ],
       "contraindications_zh": [
         "脾胃虛寒便溏者忌服。"
+      ],
+      "indications_en": [
+        "Nourishes Yin and tonifies the Blood; generates fluids and moistens the intestines"
+      ],
+      "channels_en": [
+        "Liver",
+        "Kidney"
+      ],
+      "contraindications_en": [
+        "Contraindicated in Spleen-Stomach deficiency cold with loose stools."
       ]
     },
     {
@@ -71916,6 +73761,13 @@
       ],
       "contraindications_en": [
         "Contraindicated with diarrhea or constipation due to excess Heat."
+      ],
+      "indications_en": [
+        "Tonifies Kidney Yang; boosts Essence and Blood; moistens the intestines and unblocks the bowels."
+      ],
+      "channels_en": [
+        "Kidney",
+        "Large Intestine"
       ]
     },
     {
@@ -72174,6 +74026,13 @@
       ],
       "contraindications_en": [
         "Contraindicated with Yin-deficient Heat or Heat causing frequent urination or spermatorrhea."
+      ],
+      "indications_en": [
+        "Warms the Spleen and stops diarrhea; controls salivation; secures Essence and reduces urination"
+      ],
+      "channels_en": [
+        "Spleen",
+        "Kidney"
       ]
     },
     {
@@ -72824,7 +74683,16 @@
       "contraindications_en": [
         "Contraindicated in dry constipation and Damp-Heat dysentery."
       ],
-      "pharmaceutical_latin": "Myristicae Semen"
+      "pharmaceutical_latin": "Myristicae Semen",
+      "indications_en": [
+        "Chronic diarrhea due to Spleen-Stomach deficiency cold; fifth-watch diarrhea; morning diarrhea; dysenteric diarrhea due to Spleen-Kidney Yang deficiency (representative formula: Si Shen Wan).",
+        "Cold pain in the epigastrium and abdomen; poor appetite with vomiting; abdominal distension (representative formula: Rou Dou Kou Wan)."
+      ],
+      "channels_en": [
+        "Spleen",
+        "Stomach",
+        "Large Intestine"
+      ]
     },
     {
       "id": "herb.chuan_niu_xi",
@@ -73035,7 +74903,17 @@
         "Antitumor activity",
         "Promotes bone metabolism"
       ],
-      "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/ChuanNiuXi.html"
+      "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/ChuanNiuXi.html",
+      "indications_en": [
+        "Invigorates the blood and frees the menses; dispels wind and disinhibits dampness; guides the blood downward."
+      ],
+      "channels_en": [
+        "Liver",
+        "Kidney"
+      ],
+      "contraindications_en": [
+        "Contraindicated in pregnancy; contraindicated in menorrhagia."
+      ]
     },
     {
       "id": "herb.dan_zhu_ye",
@@ -73122,7 +75000,18 @@
         "孕婦及陰虛火旺者慎用。"
       ],
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/DanZhuYe.html",
-      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。"
+      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。",
+      "indications_en": [
+        "Clears Heat and drains Fire; eliminates vexation and quenches thirst; promotes urination and unblocks painful urinary dribbling."
+      ],
+      "channels_en": [
+        "Heart",
+        "Stomach",
+        "Small Intestine"
+      ],
+      "contraindications_en": [
+        "Use with caution in pregnancy and in Yin deficiency with effulgent Fire."
+      ]
     },
     {
       "id": "herb.fu_shen",
@@ -73346,7 +75235,14 @@
       "contraindications_zh": [
         "虛寒精滑者忌服。"
       ],
-      "safety_source_url": "https://cloudtcm.com/herb/1035"
+      "safety_source_url": "https://cloudtcm.com/herb/1035",
+      "channels_en": [
+        "Heart",
+        "Spleen"
+      ],
+      "contraindications_en": [
+        "Contraindicated in patients with deficiency-cold type seminal emission (spermatorrhea)."
+      ]
     },
     {
       "id": "herb.niu_bang_zi",
@@ -74059,7 +75955,17 @@
       "contraindications_zh": [
         "孕婦慎用；無濕熱者忌服。"
       ],
-      "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/TongCao.html"
+      "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/TongCao.html",
+      "indications_en": [
+        "Clears Heat and promotes urination; unblocks qi and promotes lactation."
+      ],
+      "channels_en": [
+        "Lung",
+        "Stomach"
+      ],
+      "contraindications_en": [
+        "Use with caution in pregnancy; contraindicated in the absence of Damp-Heat."
+      ]
     },
     {
       "id": "herb.sha_shen",
@@ -74226,7 +76132,18 @@
         "脾胃虛寒食少便溏者慎用。"
       ],
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/BaiWei.html",
-      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。"
+      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。",
+      "indications_en": [
+        "Clears Heat and cools the Blood; promotes urination and unblocks painful urinary dribbling (Lin syndrome); resolves toxicity and heals sores"
+      ],
+      "channels_en": [
+        "Lung",
+        "Stomach",
+        "Kidney"
+      ],
+      "contraindications_en": [
+        "Use with caution in patients with Spleen-Stomach deficiency-cold, reduced appetite, and loose stools."
+      ]
     },
     {
       "id": "herb.zi_su_zi",
@@ -74474,6 +76391,15 @@
             ]
           }
         }
+      ],
+      "indications_en": [
+        "Directs Qi downward and transforms Phlegm; stops coughing and calms wheezing; moistens the intestines and unblocks the bowels."
+      ],
+      "channels_en": [
+        "Lung"
+      ],
+      "contraindications_en": [
+        "Contraindicated in Spleen deficiency with loose stools and in qi deficiency with wheezing cough."
       ]
     },
     {
@@ -74677,7 +76603,11 @@
       "american_dragon_link_status": "derived",
       "atlas_url": "https://chinesemedicineatlas.com/tcm_herb_atlas/",
       "atlas_link_status": "index",
-      "card_grade": "template"
+      "card_grade": "template",
+      "channels_en": [
+        "Lung",
+        "Stomach"
+      ]
     },
     {
       "id": "herb.da_fu_pi",
@@ -74756,7 +76686,18 @@
         "氣虛下陷及體虛者忌服。"
       ],
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/DaFuPi.html",
-      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。"
+      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。",
+      "indications_en": [
+        "Moves qi and guides out stagnation; promotes urination and reduces edema"
+      ],
+      "channels_en": [
+        "Spleen",
+        "Stomach",
+        "Large Intestine"
+      ],
+      "contraindications_en": [
+        "Contraindicated in patients with qi deficiency and sinking, and in those with general weakness."
+      ]
     },
     {
       "id": "herb.da_ji",
@@ -74848,7 +76789,17 @@
         "Antitumor activity"
       ],
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/DaJi.html",
-      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。"
+      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。",
+      "indications_en": [
+        "Cools the Blood and stops bleeding; dissipates stasis and reduces swelling"
+      ],
+      "channels_en": [
+        "Heart",
+        "Liver"
+      ],
+      "contraindications_en": [
+        "Use with caution in patients with Spleen-Stomach deficiency-cold who are not bleeding."
+      ]
     },
     {
       "id": "herb.xiao_ji",
@@ -74940,7 +76891,17 @@
         "Diuretic activity"
       ],
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/XiaoJi.html",
-      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。"
+      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。",
+      "indications_en": [
+        "Cools the Blood and stops bleeding; dispels stasis and reduces swelling"
+      ],
+      "channels_en": [
+        "Heart",
+        "Liver"
+      ],
+      "contraindications_en": [
+        "Use with caution in patients with Spleen-Stomach Cold deficiency who have no bleeding."
+      ]
     },
     {
       "id": "herb.she_gan",
@@ -75028,7 +76989,16 @@
         "脾虛便溏及孕婦慎用。"
       ],
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/SheGan.html",
-      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。"
+      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。",
+      "indications_en": [
+        "Clears Heat and resolves toxicity; dissolves Phlegm and benefits the throat."
+      ],
+      "channels_en": [
+        "Lung"
+      ],
+      "contraindications_en": [
+        "Use with caution in Spleen deficiency with loose stools and in pregnancy."
+      ]
     },
     {
       "id": "herb.sang_bai_pi",
@@ -75125,7 +77095,16 @@
         "肺寒咳嗽及脾虛者慎用。"
       ],
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/SangBaiPi.html",
-      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。"
+      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。",
+      "indications_en": [
+        "Drains the Lung and calms wheezing; promotes urination and reduces edema."
+      ],
+      "channels_en": [
+        "Lung"
+      ],
+      "contraindications_en": [
+        "Use with caution in Lung Cold cough and Spleen deficiency."
+      ]
     },
     {
       "id": "herb.sang_piao_xiao",
@@ -75203,7 +77182,17 @@
         "陰虛火旺及小便頻數屬熱者忌服。"
       ],
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/SangPiaoXiao.html",
-      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。"
+      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。",
+      "indications_en": [
+        "Secures essence and reduces urination; tonifies the Kidney and assists Yang."
+      ],
+      "channels_en": [
+        "Liver",
+        "Kidney"
+      ],
+      "contraindications_en": [
+        "Contraindicated in Yin deficiency with effulgent fire, and in frequent urination due to heat."
+      ]
     },
     {
       "id": "herb.huai_hua",
@@ -75298,7 +77287,17 @@
         "Lipid-lowering activity"
       ],
       "safety_source_url": "https://cloudtcm.com/herb/1076",
-      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。"
+      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。",
+      "indications_en": [
+        "Cools the Blood and stops bleeding; clears the Liver and drains Fire"
+      ],
+      "channels_en": [
+        "Liver",
+        "Large Intestine"
+      ],
+      "contraindications_en": [
+        "Use with caution in Spleen-Stomach deficiency cold."
+      ]
     },
     {
       "id": "herb.bai_bian_dou",
@@ -75376,7 +77375,17 @@
         "寒濕吐瀉及瘧疾者慎用。"
       ],
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/BaiBianDou.html",
-      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。"
+      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。",
+      "indications_en": [
+        "Strengthens the Spleen and transforms Dampness; harmonizes the Middle and relieves Summerheat."
+      ],
+      "channels_en": [
+        "Spleen",
+        "Stomach"
+      ],
+      "contraindications_en": [
+        "Use with caution in Cold-Damp vomiting and diarrhea, and in malaria."
+      ]
     },
     {
       "id": "herb.bai_mao_gen",
@@ -75475,7 +77484,18 @@
         "Antihypertensive activity"
       ],
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/BaiMaoGen.html",
-      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。"
+      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。",
+      "indications_en": [
+        "Cools the Blood and stops bleeding; clears Heat and promotes urination."
+      ],
+      "channels_en": [
+        "Lung",
+        "Stomach",
+        "Bladder"
+      ],
+      "contraindications_en": [
+        "Use with caution in Spleen-Stomach deficiency cold and in those with frequent urination."
+      ]
     },
     {
       "id": "herb.bai_fu_zi",
@@ -75759,7 +77779,17 @@
         "no_new_numbers": true,
         "source_field": "dosage"
       },
-      "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/ZhiBaiFuZi.html"
+      "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/ZhiBaiFuZi.html",
+      "indications_en": [
+        "Wind-Phlegm obstructing the collaterals, disorders of the head and face — deviation of the eye and mouth, facial paralysis, migraine headache, hemiplegia.",
+        "Wind-Phlegm blocking and obstructing with sinew and vessel spasm and tension — epilepsy, infantile convulsions, tetanic spasm (lockjaw).",
+        "Phlegm nodules and scrofula, venomous snakebite — the processed herb is taken internally, or an appropriate amount of the raw herb is applied externally.",
+        "Migraine and frontal headache, dizziness due to Wind-Phlegm — commonly combined with Chuan Xiong (Ligusticum) and Bai Zhi (Angelica Dahurica), among others."
+      ],
+      "channels_en": [
+        "Stomach",
+        "Liver"
+      ]
     },
     {
       "id": "herb.qu_mai",
@@ -75951,7 +77981,18 @@
       "contraindications_zh": [
         "孕婦禁用；氣血虛弱者慎用。"
       ],
-      "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/QuMai.html"
+      "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/QuMai.html",
+      "indications_en": [
+        "Promotes urination and unblocks painful urinary dribbling (Lin); breaks Blood stasis and promotes menstruation."
+      ],
+      "channels_en": [
+        "Heart",
+        "Small Intestine",
+        "Bladder"
+      ],
+      "contraindications_en": [
+        "Contraindicated in pregnancy; use with caution in Qi and Blood deficiency."
+      ]
     },
     {
       "id": "herb.shi_jue_ming",
@@ -76040,7 +78081,16 @@
         "脾胃虛寒及無實火者慎用；先煎。"
       ],
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/ShiJueMing.html",
-      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。"
+      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。",
+      "indications_en": [
+        "Calms the Liver and subdues Yang; clears the Liver and brightens the eyes."
+      ],
+      "channels_en": [
+        "Liver"
+      ],
+      "contraindications_en": [
+        "Use with caution in Spleen-Stomach deficiency cold and in the absence of excess Fire; decoct first."
+      ]
     },
     {
       "id": "herb.ling_yang_jiao",
@@ -76126,7 +78176,17 @@
         "脾胃虛寒者慎用；孕婦慎用。"
       ],
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/LingYangJiao.html",
-      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。"
+      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。",
+      "indications_en": [
+        "Calms the Liver and extinguishes Wind; clears the Liver and brightens the eyes; cools the Blood and resolves toxicity."
+      ],
+      "channels_en": [
+        "Liver",
+        "Heart"
+      ],
+      "contraindications_en": [
+        "Use with caution in Spleen-Stomach deficiency cold; use with caution during pregnancy."
+      ]
     },
     {
       "id": "herb.qian_cao_gen",
@@ -76303,7 +78363,18 @@
         "脾胃虛寒者慎用。"
       ],
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/HeYe.html",
-      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。"
+      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。",
+      "indications_en": [
+        "Clears Summerheat and transforms Dampness; raises and disseminates clear Yang; cools the Blood and stops bleeding."
+      ],
+      "channels_en": [
+        "Heart",
+        "Liver",
+        "Spleen"
+      ],
+      "contraindications_en": [
+        "Use with caution in Spleen-Stomach Yang deficiency Cold."
+      ]
     },
     {
       "id": "herb.bian_xu",
@@ -76488,7 +78559,16 @@
       "contraindications_zh": [
         "脾胃虛寒及無濕熱者忌服。"
       ],
-      "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/BianXu.html"
+      "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/BianXu.html",
+      "indications_en": [
+        "Promotes urination and unblocks urinary strangury (lin); kills parasites and relieves itching."
+      ],
+      "channels_en": [
+        "Bladder"
+      ],
+      "contraindications_en": [
+        "Contraindicated in Spleen-Stomach deficiency cold and in the absence of Damp-Heat."
+      ]
     },
     {
       "id": "herb.xue_yu_tan",
@@ -76576,7 +78656,17 @@
         "出血兼有瘀滯者慎用。"
       ],
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/XueYuTan.html",
-      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。"
+      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。",
+      "indications_en": [
+        "Astringes and stops bleeding; transforms stasis and promotes urination."
+      ],
+      "channels_en": [
+        "Liver",
+        "Stomach"
+      ],
+      "contraindications_en": [
+        "Use with caution in bleeding accompanied by Blood stasis and stagnation."
+      ]
     },
     {
       "id": "herb.wu_ling_zhi",
@@ -76785,7 +78875,17 @@
         "Hepatoprotective activity",
         "Antitumor activity"
       ],
-      "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/WuLingZhi.html"
+      "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/WuLingZhi.html",
+      "indications_en": [
+        "Severe pain from Blood stasis in the heart and abdomen, Chest Bi with cardiac pain, postpartum abdominal pain from retained lochia, dysmenorrhea (representative formula: Shi Xiao San, Sudden Smile Powder).",
+        "Uterine bleeding (Beng Lou, flooding and spotting), postpartum bleeding accompanied by Blood stasis (representative formula: Shi Xiao San Jia Wei, Modified Sudden Smile Powder)."
+      ],
+      "channels_en": [
+        "Liver"
+      ],
+      "contraindications_en": [
+        "Contraindicated in pregnancy; Ren Shen (Ginseng) is antagonized by Wu Ling Zhi, per the Nineteen Incompatibilities (Shi Jiu Wei)."
+      ]
     },
     {
       "id": "herb.bie_jia",
@@ -76880,7 +78980,17 @@
         "Hepatoprotective activity"
       ],
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/BieJia.html",
-      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。"
+      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。",
+      "indications_en": [
+        "Nourishes Yin and subdues Yang; softens hardness and dissipates nodules."
+      ],
+      "channels_en": [
+        "Liver",
+        "Kidney"
+      ],
+      "contraindications_en": [
+        "Use with caution in Spleen-Stomach deficiency cold, poor appetite with loose stools, and in pregnancy."
+      ]
     },
     {
       "id": "herb.wu_mei",
@@ -77091,7 +79201,22 @@
       "contraindications_zh": [
         "外感初起、實熱積滯者忌服。"
       ],
-      "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/WuMei.html"
+      "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/WuMei.html",
+      "indications_en": [
+        "Lung deficiency with chronic cough and scanty phlegm (representative formula: Wu Mei Wan).",
+        "Chronic diarrhea and dysentery with slippery Large Intestine (representative formula: Tao Hua Tang plus Wu Mei).",
+        "Deficiency-Heat wasting-thirst disorder with fluid damage and thirst (representative formula: Yu Quan San).",
+        "Roundworm reversal with abdominal pain, and vomiting with abdominal pain (representative formula: Wu Mei Wan)."
+      ],
+      "channels_en": [
+        "Liver",
+        "Spleen",
+        "Lung",
+        "Large Intestine"
+      ],
+      "contraindications_en": [
+        "Contraindicated in early-stage exterior conditions and in excess Heat with accumulation and stagnation."
+      ]
     },
     {
       "id": "herb.deng_xin_cao",
@@ -77279,7 +79404,18 @@
       "contraindications_zh": [
         "中寒小便失禁者忌服。"
       ],
-      "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/DengXinCao.html"
+      "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/DengXinCao.html",
+      "indications_en": [
+        "Clears Heart Fire; promotes urination."
+      ],
+      "channels_en": [
+        "Heart",
+        "Lung",
+        "Small Intestine"
+      ],
+      "contraindications_en": [
+        "Contraindicated in patients with interior Cold and urinary incontinence."
+      ]
     },
     {
       "id": "herb.cong_bai",
@@ -77461,7 +79597,11 @@
       "atlas_url": "https://chinesemedicineatlas.com/tcm_herb_atlas/",
       "atlas_link_status": "index",
       "card_grade": "template",
-      "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/CongBai.html"
+      "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/CongBai.html",
+      "channels_en": [
+        "Lung",
+        "Stomach"
+      ]
     },
     {
       "id": "herb.yin_xing",
@@ -77535,7 +79675,16 @@
       "contraindications_zh": [
         "有小毒，生食或過量易中毒；兒童及孕婦慎用。"
       ],
-      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。"
+      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。",
+      "indications_en": [
+        "Restrains the Lungs and arrests wheezing; stops vaginal discharge and reduces urination."
+      ],
+      "channels_en": [
+        "Lung"
+      ],
+      "contraindications_en": [
+        "Slightly toxic; eating it raw or in excessive amounts readily causes poisoning; use with caution in children and pregnant women."
+      ]
     },
     {
       "id": "herb.yi_tang",
@@ -77612,7 +79761,18 @@
         "中滿濕熱、小兒疳積及齒痛者忌服。"
       ],
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/YiTang.html",
-      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。"
+      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。",
+      "indications_en": [
+        "Moderates the Middle and tonifies deficiency; generates fluids and moistens dryness."
+      ],
+      "channels_en": [
+        "Spleen",
+        "Stomach",
+        "Lung"
+      ],
+      "contraindications_en": [
+        "Contraindicated in middle fullness due to Damp-Heat, infantile malnutrition disorder, and toothache."
+      ]
     },
     {
       "id": "herb.ma_bo",
@@ -77699,7 +79859,16 @@
         "風寒咳嗽及肺寒者忌服。"
       ],
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/MaBo.html",
-      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。"
+      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。",
+      "indications_en": [
+        "Clears the Lungs and benefits the throat; resolves toxicity and stops bleeding"
+      ],
+      "channels_en": [
+        "Lung"
+      ],
+      "contraindications_en": [
+        "Contraindicated in Wind-Cold cough and Lung Cold."
+      ]
     },
     {
       "id": "herb.she_xiang",
@@ -77775,7 +79944,14 @@
         "Contraindicated during pregnancy; topical use may also cause miscarriage."
       ],
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/SheXiang.html",
-      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。"
+      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。",
+      "indications_en": [
+        "Opens the orifices and revives the spirit; invigorates the blood and unblocks the channels; relieves pain."
+      ],
+      "channels_en": [
+        "Heart",
+        "Spleen"
+      ]
     },
     {
       "id": "herb.hei_zhi_ma",
@@ -77860,7 +80036,18 @@
         "Hypoglycemic activity"
       ],
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/HeiZhiMa.html",
-      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。"
+      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。",
+      "indications_en": [
+        "Tonifies the Liver and Kidneys; boosts Essence and Blood; moistens the intestines and unblocks the bowels"
+      ],
+      "channels_en": [
+        "Liver",
+        "Kidney",
+        "Large Intestine"
+      ],
+      "contraindications_en": [
+        "Contraindicated in Spleen deficiency with loose stools."
+      ]
     },
     {
       "id": "herb.gao_ben",
@@ -78036,7 +80223,10 @@
       "atlas_url": "https://chinesemedicineatlas.com/tcm_herb_atlas/",
       "atlas_link_status": "index",
       "card_grade": "template",
-      "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/GaoBen.html"
+      "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/GaoBen.html",
+      "channels_en": [
+        "Bladder"
+      ]
     },
     {
       "id": "herb.fu_ping",
@@ -78558,7 +80748,17 @@
         "脾胃虛弱便溏者忌服。"
       ],
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/ZiCao.html",
-      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。"
+      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。",
+      "indications_en": [
+        "Cools and invigorates the Blood; resolves toxicity and vents rashes."
+      ],
+      "channels_en": [
+        "Heart",
+        "Liver"
+      ],
+      "contraindications_en": [
+        "Contraindicated in Spleen-Stomach deficiency with loose stools."
+      ]
     },
     {
       "id": "herb.chuan_xin_lian",
@@ -78650,7 +80850,19 @@
         "脾胃虛寒者忌服；不宜大劑量長期服用（有小毒）。"
       ],
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/ChuanXinLian.html",
-      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。"
+      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。",
+      "indications_en": [
+        "Clears Heat and resolves toxicity; dries Dampness"
+      ],
+      "channels_en": [
+        "Heart",
+        "Lung",
+        "Large Intestine",
+        "Bladder"
+      ],
+      "contraindications_en": [
+        "Contraindicated in Spleen-Stomach deficiency cold; not to be taken long-term in large doses (slightly toxic)."
+      ]
     },
     {
       "id": "herb.shan_dou_gen",
@@ -78740,7 +80952,17 @@
         "脾胃虛寒者忌服；過量服用有毒，成人每日不超過6g。"
       ],
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/ShanDouGen.html",
-      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。"
+      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。",
+      "indications_en": [
+        "Clears Heat and resolves toxicity; benefits the throat and reduces swelling"
+      ],
+      "channels_en": [
+        "Lung",
+        "Stomach"
+      ],
+      "contraindications_en": [
+        "Contraindicated in patients with Spleen-Stomach Cold deficiency; toxic in excess — adult daily dose should not exceed 6g."
+      ]
     },
     {
       "id": "herb.ma_chi_xian",
@@ -78820,7 +81042,17 @@
         "脾虛便溏者忌服。"
       ],
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/MaChiXian.html",
-      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。"
+      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。",
+      "indications_en": [
+        "Clears Heat and resolves toxicity; cools the Blood and stops bleeding; stops dysentery"
+      ],
+      "channels_en": [
+        "Large Intestine",
+        "Liver"
+      ],
+      "contraindications_en": [
+        "Contraindicated in patients with Spleen deficiency and loose stools."
+      ]
     },
     {
       "id": "herb.chui_pen_cao",
@@ -78899,7 +81131,18 @@
         "脾胃虛寒者慎用。"
       ],
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/ChuiPenCao.html",
-      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。"
+      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。",
+      "indications_en": [
+        "Clears Heat and resolves toxicity; reduces swelling and drains Dampness; lowers transaminase levels."
+      ],
+      "channels_en": [
+        "Liver",
+        "Gallbladder",
+        "Small Intestine"
+      ],
+      "contraindications_en": [
+        "Use with caution in those with Spleen-Stomach deficiency cold."
+      ]
     },
     {
       "id": "herb.bai_jiang_cao",
@@ -78980,7 +81223,18 @@
         "脾胃虛寒者慎用；孕婦慎用。"
       ],
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/BaiJiangCao.html",
-      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。"
+      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。",
+      "indications_en": [
+        "Clears Heat and resolves toxicity; reduces abscesses and expels pus; dispels stasis and relieves pain."
+      ],
+      "channels_en": [
+        "Stomach",
+        "Large Intestine",
+        "Liver"
+      ],
+      "contraindications_en": [
+        "Use with caution in Spleen-Stomach Cold deficiency; use with caution in pregnancy."
+      ]
     },
     {
       "id": "herb.fan_xie_ye",
@@ -79056,7 +81310,16 @@
         "孕婦、月經期、哺乳期及脾胃虛寒者禁用；不宜長期服用。"
       ],
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/FanXieYe.html",
-      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。"
+      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。",
+      "indications_en": [
+        "Drains Heat and moves stagnation; unblocks the bowels"
+      ],
+      "channels_en": [
+        "Large Intestine"
+      ],
+      "contraindications_en": [
+        "Contraindicated during pregnancy, menstruation, and lactation, and in patients with Spleen-Stomach deficiency-cold; not suitable for long-term use."
+      ]
     },
     {
       "id": "herb.lu_hui",
@@ -79123,7 +81386,18 @@
         "孕婦、月經期及脾胃虛寒便溏者禁用。"
       ],
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/LuHui.html",
-      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。"
+      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。",
+      "indications_en": [
+        "Purges downward and unblocks the bowels; clears the Liver and drains Fire; kills parasites."
+      ],
+      "channels_en": [
+        "Liver",
+        "Stomach",
+        "Large Intestine"
+      ],
+      "contraindications_en": [
+        "Contraindicated in pregnancy, during menstruation, and in patients with Spleen-Stomach deficiency cold with loose stools."
+      ]
     },
     {
       "id": "herb.cao_dou_kou",
@@ -79199,7 +81473,17 @@
         "陰虛血燥者忌服。"
       ],
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/CaoDouKou.html",
-      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。"
+      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。",
+      "indications_en": [
+        "Warms the Middle and dries Dampness; moves Qi and activates the Spleen."
+      ],
+      "channels_en": [
+        "Spleen",
+        "Stomach"
+      ],
+      "contraindications_en": [
+        "Contraindicated in Yin deficiency with Blood dryness."
+      ]
     },
     {
       "id": "herb.cao_guo",
@@ -79275,7 +81559,17 @@
         "氣血虛弱及陰虛血燥者忌服。"
       ],
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/CaoGuo.html",
-      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。"
+      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。",
+      "indications_en": [
+        "Dries Dampness and warms the Middle; checks malaria."
+      ],
+      "channels_en": [
+        "Spleen",
+        "Stomach"
+      ],
+      "contraindications_en": [
+        "Contraindicated in Qi-Blood deficiency and Yin deficiency with Blood dryness."
+      ]
     },
     {
       "id": "herb.hai_jin_sha",
@@ -79363,7 +81657,17 @@
         "Anti-inflammatory activity"
       ],
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/HaiJinSha.html",
-      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。"
+      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。",
+      "indications_en": [
+        "Promotes urination and unblocks painful urinary dribbling; relieves pain."
+      ],
+      "channels_en": [
+        "Bladder",
+        "Small Intestine"
+      ],
+      "contraindications_en": [
+        "Contraindicated in Kidney deficiency with urinary incontinence."
+      ]
     },
     {
       "id": "herb.wu_yao",
@@ -79460,7 +81764,19 @@
         "Anti-inflammatory activity"
       ],
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/WuYao.html",
-      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。"
+      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。",
+      "indications_en": [
+        "Moves qi and relieves pain; warms the Kidney and disperses cold."
+      ],
+      "channels_en": [
+        "Lung",
+        "Spleen",
+        "Kidney",
+        "Bladder"
+      ],
+      "contraindications_en": [
+        "Contraindicated in Yin deficiency with internal heat and in qi deficiency."
+      ]
     },
     {
       "id": "herb.jiang_huang",
@@ -79680,7 +81996,18 @@
         "Antiplatelet aggregation activity",
         "Lipid-lowering activity"
       ],
-      "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/JiangHuang.html"
+      "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/JiangHuang.html",
+      "indications_en": [
+        "Stabbing pain in the chest, hypochondria, epigastrium and abdomen, amenorrhea and dysmenorrhea, postpartum Blood stasis obstruction (representative formula: Jiang Huang San, Turmeric Powder).",
+        "Wind-Damp Bi pain of the shoulder and arm, swelling and pain from traumatic injury (representative formula: Juan Bi Tang, Eliminate Painful Obstruction Decoction)."
+      ],
+      "channels_en": [
+        "Spleen",
+        "Liver"
+      ],
+      "contraindications_en": [
+        "Contraindicated in pregnancy; use with caution in Blood deficiency without stasis."
+      ]
     },
     {
       "id": "herb.pang_da_hai",
@@ -79760,7 +82087,17 @@
         "脾胃虛寒便溏及風寒感冒咳嗽者忌服；不宜長期當茶飲用。"
       ],
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/PangDaHai.html",
-      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。"
+      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。",
+      "indications_en": [
+        "Clears Heat and moistens the Lungs; benefits the throat and opens the voice; moistens the Intestines and unblocks the bowels."
+      ],
+      "channels_en": [
+        "Lung",
+        "Large Intestine"
+      ],
+      "contraindications_en": [
+        "Contraindicated in Spleen-Stomach deficiency cold with loose stools and in Wind-Cold common cold with cough; not suitable for long-term use as a tea."
+      ]
     },
     {
       "id": "herb.ci_shi",
@@ -79850,7 +82187,15 @@
         "Iron-supplementing activity"
       ],
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/CiShi.html",
-      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。"
+      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。",
+      "indications_en": [
+        "Settles and calms the spirit; sharpens hearing and brightens the eyes; aids the grasping of Qi and calms wheezing."
+      ],
+      "channels_en": [
+        "Liver",
+        "Heart",
+        "Kidney"
+      ]
     },
     {
       "id": "herb.bing_pian",
@@ -79951,7 +82296,15 @@
         "Promotes transdermal absorption"
       ],
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/BingPian.html",
-      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。"
+      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。",
+      "indications_en": [
+        "Opens the orifices and revives the spirit; clears Heat and relieves pain"
+      ],
+      "channels_en": [
+        "Heart",
+        "Spleen",
+        "Lung"
+      ]
     },
     {
       "id": "herb.huang_jing",
@@ -80034,7 +82387,18 @@
         "Antioxidant activity"
       ],
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/HuangJing.html",
-      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。"
+      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。",
+      "indications_en": [
+        "Tonifies Qi and nourishes Yin; strengthens the Spleen; moistens the Lung; benefits the Kidney."
+      ],
+      "channels_en": [
+        "Spleen",
+        "Lung",
+        "Kidney"
+      ],
+      "contraindications_en": [
+        "Contraindicated in patients with Middle Cold and diarrhea, or Phlegm-Damp with focal distention and fullness."
+      ]
     },
     {
       "id": "herb.mo_han_lian",
@@ -80274,7 +82638,17 @@
       "contraindications_zh": [
         "脾胃虛寒便溏者忌服。"
       ],
-      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。"
+      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"sourced_cloudtcm_record\"，那是來源描述不是審核狀態，落在受控詞彙(draft / source_checked / skeleton / skeleton_unreviewed / deprecated)之外，卡片右上的狀態標籤因此直接印出生 enum 字串。CloudTCM 出處已完整保存在 exact_source_url / source_urls，改欄不影響出處可追溯。內容未經人審，依憲法「新內容 review_status:draft」改為 draft。",
+      "indications_en": [
+        "Nourishes and tonifies the Liver and Kidney; cools the blood and stops bleeding."
+      ],
+      "channels_en": [
+        "Liver",
+        "Kidney"
+      ],
+      "contraindications_en": [
+        "Contraindicated in Spleen-Stomach deficiency cold with loose stools."
+      ]
     },
     {
       "id": "herb.hu_zhang",
@@ -80476,7 +82850,13 @@
         "瀉熱化痰"
       ],
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/HuZhang.html",
-      "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/HuZhang.html"
+      "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/HuZhang.html",
+      "indications_en": [
+        "Amenorrhea, Wind-Damp painful obstruction, and swelling and pain from traumatic injury.",
+        "Damp-Heat jaundice, turbid strangury, and vaginal discharge (representative formula: Yin Chen Hao Tang, Artemisia Yinchenhao Decoction, with modifications).",
+        "Scalds and burns, venomous snake bites, and sores and toxic swellings (applied topically as a wash or compress).",
+        "Lung Heat cough with copious phlegm."
+      ]
     },
     {
       "id": "herb.he_zi",
@@ -80658,7 +83038,14 @@
         "澀腸止瀉"
       ],
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/HeZi.html",
-      "exact_source_url": "https://cloudtcm.com/herb/1064"
+      "exact_source_url": "https://cloudtcm.com/herb/1064",
+      "indications_en": [
+        "Chronic cough with loss of voice, swollen and sore throat, and hoarseness (used raw; representative formula: He Zi Tang).",
+        "Chronic diarrhea and dysentery, and unremitting rectal prolapse (used roasted; representative formula: Zhen Ren Yang Zang Tang)."
+      ],
+      "contraindications_en": [
+        "Contraindicated in patients with an exterior pattern from external contraction, or excess Heat with accumulation and stagnation."
+      ]
     },
     {
       "id": "herb.chi_shi_zhi",
@@ -80856,6 +83243,14 @@
         "Gastrointestinal mucosal adsorption and protection (aluminum silicate)",
         "Significant hemostatic effect",
         "Adsorbs bacterial toxins and stops diarrhea"
+      ],
+      "indications_en": [
+        "Chronic diarrhea and chronic dysentery, blood in the stool, pus and blood in the stool, and dysentery with prolapse (representative formulas: Tao Hua Tang, Chishizhi Yuyuliang Tang).",
+        "Uterine bleeding (flooding and spotting) and vaginal discharge, of the deficiency-cold type.",
+        "Non-healing sores and welling-abscesses with chronic ulceration, and weeping eczema (applied topically as a powder)."
+      ],
+      "contraindications_en": [
+        "Contraindicated in acute diarrhea and dysentery with unresolved accumulation and stagnation; incompatible with Guan Gui (Rou Gui / Cinnamon Bark)."
       ]
     },
     {
@@ -88700,7 +91095,11 @@
         "not_rendered_reason": "整形不是查證。食療與藥用已分欄,但 80 張的落差與蘇合香的 SAFETY_HOLD 仍未裁決,因此本欄刻意不上畫面;validate-herb-dosage-shape.js D1 會擋住接線。",
         "no_new_numbers": true,
         "source_field": "dosage"
-      }
+      },
+      "channels_en": [
+        "Bladder",
+        "Kidney"
+      ]
     },
     {
       "review_status": "draft",
@@ -88890,7 +91289,11 @@
         "not_rendered_reason": "整形不是查證。食療與藥用已分欄,但 80 張的落差與蘇合香的 SAFETY_HOLD 仍未裁決,因此本欄刻意不上畫面;validate-herb-dosage-shape.js D1 會擋住接線。",
         "no_new_numbers": true,
         "source_field": "dosage"
-      }
+      },
+      "channels_en": [
+        "Lung",
+        "Kidney"
+      ]
     },
     {
       "review_status": "draft",
@@ -89082,7 +91485,13 @@
         "not_rendered_reason": "整形不是查證。食療與藥用已分欄,但 80 張的落差與蘇合香的 SAFETY_HOLD 仍未裁決,因此本欄刻意不上畫面;validate-herb-dosage-shape.js D1 會擋住接線。",
         "no_new_numbers": true,
         "source_field": "dosage"
-      }
+      },
+      "channels_en": [
+        "Lung",
+        "Large Intestine",
+        "Stomach",
+        "Small Intestine"
+      ]
     },
     {
       "review_status": "draft",
@@ -89264,7 +91673,12 @@
         "not_rendered_reason": "整形不是查證。食療與藥用已分欄,但 80 張的落差與蘇合香的 SAFETY_HOLD 仍未裁決,因此本欄刻意不上畫面;validate-herb-dosage-shape.js D1 會擋住接線。",
         "no_new_numbers": true,
         "source_field": "dosage"
-      }
+      },
+      "channels_en": [
+        "Bladder",
+        "Large Intestine",
+        "Small Intestine"
+      ]
     },
     {
       "review_status": "draft",
@@ -89457,7 +91871,13 @@
         "not_rendered_reason": "整形不是查證。食療與藥用已分欄,但 80 張的落差與蘇合香的 SAFETY_HOLD 仍未裁決,因此本欄刻意不上畫面;validate-herb-dosage-shape.js D1 會擋住接線。",
         "no_new_numbers": true,
         "source_field": "dosage"
-      }
+      },
+      "channels_en": [
+        "Lung",
+        "Spleen",
+        "Large Intestine",
+        "Stomach"
+      ]
     },
     {
       "review_status": "draft",
@@ -99194,7 +101614,13 @@
         "no_new_numbers": true,
         "source_field": "dosage"
       },
-      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"reviewed\"，落在受控詞彙之外，狀態標籤印出生字串。不降級為 draft(那會抹掉「審過」這個宣稱)，改映到詞彙內語意最近的 source_checked。**這是就近映射不是重新查證** —— 該卡 last_reviewed 為空；source_type 為 sourced_american_dragon，exact_source_url 與 safety_source_url 皆有值。"
+      "review_status_note_zh": "2026-08-28 訂正:review_status 原值為 \"reviewed\"，落在受控詞彙之外，狀態標籤印出生字串。不降級為 draft(那會抹掉「審過」這個宣稱)，改映到詞彙內語意最近的 source_checked。**這是就近映射不是重新查證** —— 該卡 last_reviewed 為空；source_type 為 sourced_american_dragon，exact_source_url 與 safety_source_url 皆有值。",
+      "channels_en": [
+        "Spleen",
+        "Stomach",
+        "Heart",
+        "Lung"
+      ]
     },
     {
       "id": "herb.xiong_huang",
@@ -99319,7 +101745,18 @@
         "Antibacterial activity"
       ],
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/XiongHuang.html",
-      "exact_source_url": "https://cloudtcm.com/herb/1339"
+      "exact_source_url": "https://cloudtcm.com/herb/1339",
+      "indications_en": [
+        "Abscesses, swellings, and furuncles",
+        "Snake and insect bites",
+        "Scabies and ringworm (tinea)",
+        "Fright epilepsy (convulsions)",
+        "Malaria"
+      ],
+      "channels_en": [
+        "Liver",
+        "Large Intestine"
+      ]
     },
     {
       "id": "herb.zhu_sha",
@@ -99450,7 +101887,17 @@
         "Antibacterial activity"
       ],
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/ZhuSha.html",
-      "exact_source_url": "https://cloudtcm.com/herb/1250"
+      "exact_source_url": "https://cloudtcm.com/herb/1250",
+      "indications_en": [
+        "Palpitations with a tendency to be easily startled.",
+        "Insomnia with profuse dreaming.",
+        "Epilepsy and manic agitation.",
+        "Infantile convulsions due to fright wind.",
+        "Sores, ulcers, and swollen toxic lesions."
+      ],
+      "channels_en": [
+        "Heart"
+      ]
     },
     {
       "review_status": "draft",
@@ -99478,7 +101925,9 @@
       "channels_zh": [
         "大腸經"
       ],
-      "channels_en": [],
+      "channels_en": [
+        "Large Intestine"
+      ],
       "channels_entered": [
         "胃經",
         "大腸經"
@@ -99570,7 +102019,9 @@
       "contraindications_zh": [
         "瀉痢初起及實熱積滯者忌服。"
       ],
-      "contraindications_en": [],
+      "contraindications_en": [
+        "Contraindicated in the early stages of diarrhea or dysentery, and in excess Heat with food stagnation."
+      ],
       "cautions_zh": [
         "瀉痢初起、實邪未清者不宜。"
       ],
@@ -99660,7 +102111,10 @@
         "肝經",
         "胃經"
       ],
-      "channels_en": [],
+      "channels_en": [
+        "Liver",
+        "Stomach"
+      ],
       "channels_entered": [
         "肝經",
         "胃經"
@@ -99743,7 +102197,9 @@
       "contraindications_zh": [
         "脾胃虛寒者慎用。"
       ],
-      "contraindications_en": [],
+      "contraindications_en": [
+        "Use with caution in Spleen-Stomach deficiency cold."
+      ],
       "cautions_zh": [
         "脾胃虛寒者慎用。"
       ],
@@ -99926,7 +102382,9 @@
       "contraindications_zh": [
         "陰虛燥咳嗽者忌服。"
       ],
-      "contraindications_en": [],
+      "contraindications_en": [
+        "Contraindicated in Yin deficiency with dry cough."
+      ],
       "cautions_zh": [
         "THP 化橘紅專論未列禁忌與注意事項；本卡不代為填寫，安全欄待補。"
       ],
@@ -100048,7 +102506,10 @@
         "心經",
         "肝經"
       ],
-      "channels_en": [],
+      "channels_en": [
+        "Heart",
+        "Liver"
+      ],
       "aliases_zh": [
         "糯稻根鬚",
         "稻根鬚"
@@ -100118,7 +102579,9 @@
       "contraindications_zh": [
         "無汗者忌服。"
       ],
-      "contraindications_en": [],
+      "contraindications_en": [
+        "Contraindicated in those without sweating."
+      ],
       "cautions_zh": [
         "課件與 THP 皆未提供糯稻根的性味、歸經、禁忌與注意事項；本卡除功效與方中用量外全部留空，待 RV1 補專業來源。"
       ],
@@ -100266,7 +102729,9 @@
       "contraindications_zh": [
         "陰虛火旺、高血壓及肝病患者忌服。"
       ],
-      "contraindications_en": [],
+      "contraindications_en": [
+        "Contraindicated in Yin deficiency with effulgent Fire, hypertension, and liver disease."
+      ],
       "cautions_zh": [
         "白酒是含乙醇的藥引，不是正典本草單味藥；孕婦、肝病、酒精過敏、正在服用會與酒精交互作用之西藥者，其風險課件並未討論，處方前須另查專業來源。",
         "課件對白酒未列任何禁忌或注意事項；本卡不代為填寫具體風險數字或族群。",
@@ -100421,7 +102886,9 @@
       "contraindications_zh": [
         "濕熱內蘊及高血壓患者慎用。"
       ],
-      "contraindications_en": [],
+      "contraindications_en": [
+        "Use with caution in those with internal Damp-Heat accumulation and in patients with hypertension."
+      ],
       "cautions_zh": [
         "黃酒是含乙醇的送服藥引，不是正典本草單味藥；孕婦、肝病、酒精過敏及與酒精交互作用之西藥，課件未討論，須另查專業來源。",
         "課件對黃酒未列任何禁忌或注意事項；本卡不代為填寫。"
@@ -100512,7 +102979,10 @@
         "心經",
         "腎經"
       ],
-      "channels_en": [],
+      "channels_en": [
+        "Heart",
+        "Kidney"
+      ],
       "aliases_zh": [
         "蛋黃"
       ],
@@ -100573,7 +103043,9 @@
       "contraindications_zh": [
         "脾胃虛寒便溏及食滯脹滿者忌服。"
       ],
-      "contraindications_en": [],
+      "contraindications_en": [
+        "Contraindicated in Spleen-Stomach deficiency cold with loose stools and in food stagnation with distension and fullness."
+      ],
       "cautions_zh": [
         "煎服法：藥液濾出後才把蛋黃攪入，不與藥同煎（課件：stir into strained decoction）。",
         "課件未列雞子黃的禁忌或注意事項；蛋類過敏、生食蛋黃的微生物風險等現代考量課件一字未提，須另查專業來源。"
@@ -100718,7 +103190,9 @@
       "contraindications_zh": [
         "神經衰弱失眠者及脾胃虛寒者慎用。"
       ],
-      "contraindications_en": [],
+      "contraindications_en": [
+        "Use with caution in neurasthenia with insomnia and in Spleen-Stomach deficiency cold."
+      ],
       "cautions_zh": [
         "課件未列綠茶的禁忌與注意事項。本庫 herb.he_tao_ren 的卡片記有 American Dragon「不宜與濃茶同服」的敘述，顯示茶與部分藥material 有配伍顧慮；本卡不代為推廣成通則，待 RV1 以專業來源補齊。"
       ],
@@ -100832,7 +103306,10 @@
         "肺經",
         "心經"
       ],
-      "channels_en": [],
+      "channels_en": [
+        "Lung",
+        "Heart"
+      ],
       "aliases_zh": [],
       "aliases_en": [],
       "tcm_properties": {
@@ -100898,7 +103375,9 @@
       "contraindications_zh": [
         "脾胃虛寒者慎用。"
       ],
-      "contraindications_en": [],
+      "contraindications_en": [
+        "Use with caution in Spleen-Stomach deficiency cold."
+      ],
       "cautions_zh": [
         "課件未列梨皮的禁忌與注意事項；本卡不代為填寫。"
       ],
@@ -101063,7 +103542,9 @@
       "contraindications_zh": [
         "出血兼有瘀滯者慎用。"
       ],
-      "contraindications_en": [],
+      "contraindications_en": [
+        "Use with caution in bleeding accompanied by blood stasis."
+      ],
       "cautions_zh": [
         "課件未列棕櫚皮的禁忌與注意事項；收斂止血藥用於瘀血未盡之出血時的顧慮，課件於本味未著墨，待 RV1 補來源。"
       ],
@@ -101176,7 +103657,9 @@
       "channels_zh": [
         "腎經"
       ],
-      "channels_en": [],
+      "channels_en": [
+        "Kidney"
+      ],
       "channels_entered": [
         "督脈",
         "腎經"
@@ -101251,7 +103734,9 @@
       "contraindications_zh": [
         "脾胃虛寒便溏者忌服。"
       ],
-      "contraindications_en": [],
+      "contraindications_en": [
+        "Contraindicated in patients with Spleen-Stomach deficiency-cold and loose stools."
+      ],
       "cautions_zh": [
         "動物來源藥材；課件自己標註為「historical animal-derived source data」，現代處方是否使用、以何替代，課件未交代。",
         "課件未列本味的禁忌與注意事項；動物組織的來源安全、宗教與素食限制、傳染病風險等現代考量課件一字未提，須另查專業來源。"
@@ -101342,7 +103827,9 @@
       "channels_zh": [
         "心經"
       ],
-      "channels_en": [],
+      "channels_en": [
+        "Heart"
+      ],
       "channels_entered": [
         "心經"
       ],
@@ -101411,7 +103898,9 @@
       "contraindications_zh": [
         "無特定禁忌；濕盛者不宜過量。"
       ],
-      "contraindications_en": [],
+      "contraindications_en": [
+        "No specific contraindications; those with excess Dampness should avoid excessive amounts."
+      ],
       "cautions_zh": [
         "**來源衝突（未裁決）**：甘麥大棗湯同一張課件卡內，AD 表列君藥為小麥（Xiao Mai, 9-60g），Bastyr/Chenoweth 區塊列為浮小麥（Fu Xiao Mai, 9-15g，註 Floating, disabled wheat, more astringent properties）；AD 表另把浮小麥列為小麥的替代藥。兩者是不同藥材，處方前須確認採用哪一版。",
         "課件 AD 表把小麥的拉丁名寫成 Fr. Tritici Levis（那是浮小麥的拉丁名），疑為資料缺陷。",
@@ -101584,7 +104073,9 @@
       "contraindications_zh": [
         "脾虛便溏及陰虛無實火者慎用。"
       ],
-      "contraindications_en": [],
+      "contraindications_en": [
+        "Use with caution in Spleen deficiency with loose stools, and in Yin deficiency without excess fire."
+      ],
       "cautions_zh": [
         "**與淡竹葉是兩味藥，不可互相取代地填資料**：課件 M.M.1 herb list 與 Chenoweth 功效索引把 Zhu Ye 與 Dan Zhu Ye 分列兩條；竹葉石膏湯的組成資料實際採用淡竹葉（Hb. Lophatheri，君藥），(Zhu Ye)（Fol. Bambusae）僅列為可替代。",
         "課件無竹葉的專論，性味與禁忌均無來源；本卡不代為填寫。"
@@ -101710,7 +104201,11 @@
         "肝經",
         "胃經"
       ],
-      "channels_en": [],
+      "channels_en": [
+        "Heart",
+        "Liver",
+        "Stomach"
+      ],
       "aliases_zh": [],
       "aliases_en": [],
       "tcm_properties": {
@@ -102017,7 +104512,9 @@
       "contraindications_zh": [
         "陰虛內熱、血熱妄行出血者禁用。"
       ],
-      "contraindications_en": [],
+      "contraindications_en": [
+        "Contraindicated in Yin deficiency with interior Heat and in reckless bleeding due to Heat in the Blood."
+      ],
       "cautions_zh": [
         "課件 Pào Jiāng 段落未列禁忌與注意事項。同章乾薑的禁忌（陰虛內熱、血熱者忌；孕婦慎用，大劑量可能致流產）**屬乾薑，未搬入本卡**——炒炭已改變藥性（辛熱→苦澀溫），直接套用會失真。",
         "炮薑與乾薑是課件明列的比較考點（Comparison of Gan Jiang and Pao Jiang），處方與調劑時不可互代。"
@@ -102127,7 +104624,11 @@
         "胃經",
         "大腸經"
       ],
-      "channels_en": [],
+      "channels_en": [
+        "Liver",
+        "Stomach",
+        "Large Intestine"
+      ],
       "channels_entered": [
         "肝經",
         "胃經",
@@ -102221,7 +104722,9 @@
       "contraindications_zh": [
         "脾胃虛寒者忌服。"
       ],
-      "contraindications_en": [],
+      "contraindications_en": [
+        "Contraindicated in those with Spleen-Stomach deficiency cold."
+      ],
       "cautions_zh": [
         "脾胃虛寒者慎用。"
       ],
@@ -102553,7 +105056,11 @@
         "大腸經",
         "腎經"
       ],
-      "channels_en": [],
+      "channels_en": [
+        "Lung",
+        "Large Intestine",
+        "Kidney"
+      ],
       "aliases_zh": [
         "米殼",
         "御米殼"
@@ -102706,7 +105213,10 @@
         "肝經",
         "心經"
       ],
-      "channels_en": [],
+      "channels_en": [
+        "Liver",
+        "Heart"
+      ],
       "aliases_zh": [
         "珠母"
       ],
@@ -102795,7 +105305,9 @@
       "contraindications_zh": [
         "脾胃虛寒者慎用。"
       ],
-      "contraindications_en": [],
+      "contraindications_en": [
+        "Use with caution in Spleen-Stomach Cold deficiency."
+      ],
       "cautions_zh": [
         "脾胃虛寒者慎用。"
       ],
@@ -103004,7 +105516,9 @@
       "contraindications_zh": [
         "陰虛火旺者慎用；先煎。"
       ],
-      "contraindications_en": [],
+      "contraindications_en": [
+        "Use with caution in those with Yin deficiency and effulgent Fire; decoct first."
+      ],
       "cautions_zh": [
         "課件未列龍齒的禁忌與注意事項；本卡不代為填寫。龍骨的禁忌（火盛遺精者忌、濕熱或外感者忌）**屬龍骨，未搬入**。",
         "與龍骨為不同用部（齒 vs 骨），拉丁名不同，調劑不可互代。"
@@ -103124,7 +105638,10 @@
         "心經",
         "脾經"
       ],
-      "channels_en": [],
+      "channels_en": [
+        "Heart",
+        "Spleen"
+      ],
       "channels_entered": [
         "心經",
         "脾經",
@@ -103213,7 +105730,9 @@
       "contraindications_zh": [
         "陰虛火旺者慎用。"
       ],
-      "contraindications_en": [],
+      "contraindications_en": [
+        "Use with caution in patients with Yin deficiency and exuberant Fire."
+      ],
       "cautions_zh": [
         "陰虛火旺者慎用。"
       ],
@@ -103309,7 +105828,10 @@
         "肝經",
         "胃經"
       ],
-      "channels_en": [],
+      "channels_en": [
+        "Liver",
+        "Stomach"
+      ],
       "aliases_zh": [
         "山甲",
         "甲珠"
@@ -103581,7 +106103,9 @@
       "contraindications_zh": [
         "脾胃虛寒者慎用。"
       ],
-      "contraindications_en": [],
+      "contraindications_en": [
+        "Use with caution in Spleen-Stomach deficiency cold."
+      ],
       "cautions_zh": [
         "課件未列山羊角的禁忌與注意事項；本卡不代為填寫。羚羊角的注意事項（虛證慎用）**屬羚羊角，未搬入**。",
         "山羊角自身條目已找到（Chenoweth 課件 p.38），但該條目同樣未列禁忌；性味歸經與功效已據其補齊，用量區間與禁忌仍待 RV1 以專業來源補齊。"
@@ -103765,7 +106289,11 @@
         "胃經",
         "腎經"
       ],
-      "channels_en": [],
+      "channels_en": [
+        "Heart",
+        "Stomach",
+        "Kidney"
+      ],
       "aliases_zh": [
         "凝水石"
       ],
@@ -103851,7 +106379,9 @@
       "contraindications_zh": [
         "脾胃虛寒者忌服。"
       ],
-      "contraindications_en": [],
+      "contraindications_en": [
+        "Contraindicated in Spleen-Stomach deficiency cold."
+      ],
       "cautions_zh": [
         "脾胃虛寒者忌服。"
       ],
@@ -103992,7 +106522,10 @@
         "心經",
         "脾經"
       ],
-      "channels_en": [],
+      "channels_en": [
+        "Heart",
+        "Spleen"
+      ],
       "aliases_zh": [
         "火硝",
         "焰硝"
@@ -104064,7 +106597,9 @@
       "contraindications_zh": [
         "孕婦及體虛者禁用；有小毒，不宜過量或久服。"
       ],
-      "contraindications_en": [],
+      "contraindications_en": [
+        "Contraindicated during pregnancy and in patients with deficiency of the body; slightly toxic — not suitable for excessive dosage or prolonged use."
+      ],
       "cautions_zh": [
         "有毒，內服宜慎；孕婦禁用。"
       ],
@@ -104308,7 +106843,10 @@
         "心經",
         "肝經"
       ],
-      "channels_en": [],
+      "channels_en": [
+        "Heart",
+        "Liver"
+      ],
       "aliases_zh": [],
       "aliases_en": [],
       "tcm_properties": {
@@ -104437,7 +106975,10 @@
         "心經",
         "肝經"
       ],
-      "channels_en": [],
+      "channels_en": [
+        "Heart",
+        "Liver"
+      ],
       "aliases_zh": [],
       "aliases_en": [],
       "tcm_properties": {
@@ -104567,7 +107108,10 @@
         "《中藥大辭典》：伏龍肝",
         "黃土湯(《金匱要略》)主藥"
       ],
-      "channels_en": [],
+      "channels_en": [
+        "Spleen",
+        "Stomach"
+      ],
       "field_sources": {
         "functions_zh": [
           "《中藥大辭典》：伏龍肝",
@@ -104606,7 +107150,10 @@
         "Stops diarrhea"
       ],
       "safety_source_url": "https://www.americandragon.com/Individualherbsupdate/ZaoXinTu.html",
-      "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/ZaoXinTu.html"
+      "exact_source_url": "https://www.americandragon.com/Individualherbsupdate/ZaoXinTu.html",
+      "contraindications_en": [
+        "Contraindicated in bleeding due to Heat patterns."
+      ]
     },
     {
       "review_status": "draft",
@@ -104644,7 +107191,11 @@
       "source_citations": [
         "《中華人民共和國藥典》2020年版一部：棕櫚(炭)"
       ],
-      "channels_en": [],
+      "channels_en": [
+        "Liver",
+        "Lung",
+        "Large Intestine"
+      ],
       "field_sources": {
         "functions_zh": [
           "《中華人民共和國藥典》2020年版一部：棕櫚(炭)"
@@ -104673,6 +107224,9 @@
       "related_formulas": [],
       "actions_en": [
         "Astringent hemostatic activity"
+      ],
+      "contraindications_en": [
+        "Use with caution in bleeding accompanied by Blood stasis and stagnation."
       ]
     },
     {
@@ -104710,7 +107264,11 @@
         "《中藥大辭典》：茶葉",
         "《太平惠民和劑局方》川芎茶調散服法"
       ],
-      "channels_en": [],
+      "channels_en": [
+        "Heart",
+        "Lung",
+        "Stomach"
+      ],
       "field_sources": {
         "functions_zh": [
           "《中藥大辭典》：茶葉",
@@ -104766,7 +107324,10 @@
       "contraindications_zh": [
         "失眠及胃潰瘍患者慎用。"
       ],
-      "related_formulas": []
+      "related_formulas": [],
+      "contraindications_en": [
+        "Use with caution in patients with insomnia and peptic ulcer disease."
+      ]
     },
     {
       "review_status": "draft",
@@ -104812,7 +107373,12 @@
         "《醫林改錯》通竅活血湯條文",
         "《中藥大辭典》：酒"
       ],
-      "channels_en": [],
+      "channels_en": [
+        "Heart",
+        "Liver",
+        "Lung",
+        "Stomach"
+      ],
       "field_sources": {
         "functions_zh": [
           "《金匱要略》瓜蔞薤白白酒湯條文",
@@ -104856,6 +107422,9 @@
         "Promotes blood circulation",
         "Enhances herbal delivery",
         "Disperses cold"
+      ],
+      "contraindications_en": [
+        "Contraindicated in Yin deficiency with effulgent Fire, Damp-Heat constitution, and liver disease."
       ]
     },
     {
@@ -104878,7 +107447,11 @@
         "胃經",
         "膀胱經"
       ],
-      "channels_en": [],
+      "channels_en": [
+        "Heart",
+        "Stomach",
+        "Bladder"
+      ],
       "functions_zh": [
         "清熱解暑",
         "利濕",
@@ -104930,6 +107503,9 @@
       ],
       "related_formulas": [
         "formula.hao_qin_qing_dan_tang"
+      ],
+      "contraindications_en": [
+        "Use with caution in pregnancy."
       ]
     },
     {
