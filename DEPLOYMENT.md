@@ -125,32 +125,69 @@ https://acuting-os.guotingru.workers.dev/
 (或 Pages-on-Workers)。這個網址先前只存在於 Cloudflare 後台,repo 裡沒有,
 2026-09-01 才由 Ting 貼出來記進這裡。
 
-**實測(2026-09-01,從她自己的機器用純 node fetch 與獨立瀏覽器 profile 各驗一次):**
-- 回 200,直接拿到 app —— **沒有經過 Cloudflare Access 的登入頁**。
-  本節下面「上鎖(只有 Ting 能開)」那段描述的 Zero Trust 政策,**沒有套在這個
-  hostname 上**(可能是套在 pages.dev 那個、而這個 workers.dev 是另一份沒鎖的部署)。
-- 這**不是** PHI 外洩:app 是純前端 + localStorage,伺服器上沒有任何病例。
-  陌生人打開只會看到知識庫 + 一本空的病例簿。
-- 但文件說它是私有的而它不是 —— 要不要鎖、鎖哪一個,是 Ting 的決定
-  (已列進 docs/TING_PENDING_RULINGS_2026-08-31.md B3)。
-- 當天 main 的所有修正都已在線上(逐一比對 js/knowledge.js 與
-  js/clinical-store.js 的標記,並開瀏覽器讀 DOM:508 張病症卡的紅旗區
-  0 張印壞字串,痛風卡印「緊急轉診 ⚠ 發燒合併關節症狀 → 立即轉診排除感染性關節炎」)。
+**現況(2026-09-02 起):這個 hostname 在 Cloudflare Access 後面,而且是刻意的。**
+
+匿名 `curl`(無 cookie,等同 Googlebot 或任何訪客)量到:
+
+```text
+https://acuting-os.guotingru.workers.dev/   302
+Www-Authenticate: Cloudflare-Access
+Location: https://soft-snow-1c0c.cloudflareaccess.com/cdn-cgi/access/login/...
+```
+
+依據是 **B3 / D33 裁定(2026-09-01 晚)**:「套 Access,而且是 D1 上線的前提」——
+D1 一上線,頁面本身就會載入雲端病例,所以鎖必須先在。2026-09-02 Ting 再次確認
+**維持鎖著**。
+
+> **以下是 2026-09-01 的舊量測,留著當歷史,不要拿它當現況判斷依據。**
+>
+> 實測(2026-09-01,從她自己的機器用純 node fetch 與獨立瀏覽器 profile 各驗一次):
+> - 回 200,直接拿到 app —— 沒有經過 Cloudflare Access 的登入頁。
+>   本節下面「上鎖(只有 Ting 能開)」那段描述的 Zero Trust 政策,沒有套在這個
+>   hostname 上(可能是套在 pages.dev 那個、而這個 workers.dev 是另一份沒鎖的部署)。
+> - 這**不是** PHI 外洩:app 是純前端 + localStorage,伺服器上沒有任何病例。
+>   陌生人打開只會看到知識庫 + 一本空的病例簿。
+> - 但文件說它是私有的而它不是 —— 要不要鎖、鎖哪一個,是 Ting 的決定
+>   (已列進 docs/TING_PENDING_RULINGS_2026-08-31.md B3)。**← 這條後來裁了,見上。**
+> - 當天 main 的所有修正都已在線上(逐一比對 js/knowledge.js 與
+>   js/clinical-store.js 的標記,並開瀏覽器讀 DOM:508 張病症卡的紅旗區
+>   0 張印壞字串,痛風卡印「緊急轉診 ⚠ 發燒合併關節症狀 → 立即轉診排除感染性關節炎」)。
+
+**不要把 `acuting.com` 跟這個網址搞混**:`acuting.com` 是另一個站(行銷站,
+title 為 `AcuTing — Ancien…`,`/js/knowledge.js` 回 404),它**沒有** Access,
+SEO 也是完整的(robots.txt `Allow: /`、sitemap.xml 200)。本文件講的一律是
+上面那個 workers.dev 的 OS app。
 
 ### AI session 怎麼驗收
 
-既然這個 hostname 沒有 Access,AI session **可以**直接驗線上版 —— 但只准**唯讀**:
-只導覽、只讀 DOM、**絕不碰 localStorage**。線上版在 Ting 自己的瀏覽器裡裝著她的
-真實病例;AI 的瀏覽器 profile 是獨立的(看到 0 筆病例是正常的),但在線上網址
-上建測試病例、清 localStorage 都是不可原諒的手滑。要做寫入測試一律用本機服務
-(`node scripts/dev-server.js <port>`)。
+**這個 hostname 在 Access 後面,AI session 開不了,也不該想辦法開。**
+(2026-09-01 那版寫的是「既然沒有 Access,AI 可以直接驗線上版」—— 前提沒了,
+規則跟著作廢。)
 
-驗收仍然兩層:
+- **不得**在 Ting 的瀏覽器設定檔裡開這個網址:她那個 profile 有 Access session,
+  開頁就是讀她的病歷。
+- **不得**借用她的 Access session 打任何路徑。
+- AI 自己的瀏覽器 profile 開它只會拿到登入頁,沒有意義。
+
+線上唯一該做的檢查是**反過來確認鎖還在**:匿名 fetch 應該回 302 + Access 標頭。
+回 200 反而是事故 —— 表示鎖掉了,要立刻回報。
+
+```bash
+curl -sSI https://acuting-os.guotingru.workers.dev/ | grep -i "cloudflare-access"
+# 有輸出 = 鎖在(正常);沒有輸出 = 鎖掉了,回報 Ting
+```
+
+要做寫入測試一律用本機服務(`node scripts/dev-server.js <port>`),
+**而且要用自己的 `--db` 與 `--port`**(預設 8785 + Documents 那個 .db 是 Ting 的真實病例)。
+
+驗收就是這兩層(**沒有第三層了** —— 線上版 AI 開不了):
 1. 本機服務開卡片眼讀(可以寫入、可以建測試病例);
 2. `node scripts/build-site.js` 產出 `dist/`,驗那份產物 —— 載入
    `dist/data/generated/*.js` 取記錄比對,不要字串 grep(bundle 壓過,grep 會給
    假陰性,2026-08-31 就這樣誤判過「青木香沒有 deprecated」)。
-3. 線上版只做第三層確認:fetch 標記 + 唯讀 DOM。
+
+線上版是否真的帶著這次的修正,只能由 Ting 自己開來看、把畫面或徽章文字貼回來。
+**AI 不准為了「確認上線了」而繞過 Access。**
 
 單檔超過 25 MiB 部署會失敗,而失敗發生在 Cloudflare 那端。`build-site.js` 從
 2026-08-31 起會直接 exit 1(20 MiB 先出警告),不再只是 console.warn。
@@ -174,8 +211,18 @@ https://acuting-os.guotingru.workers.dev/
 build 會自動帶上,不用改腳本。
 
 **上鎖(只有 Ting 能開)**:Cloudflare Zero Trust → Access → Applications →
-Add self-hosted → 網域填 `<專案>.pages.dev` → Policy: Allow / Include /
-Emails = Ting 的 email → 登入方式 One-time PIN。
+Add self-hosted → Policy: Allow / Include / Emails = Ting 的 email →
+登入方式 One-time PIN。
+
+**網域要填實際在服務的那一個**。這段原本寫 `<專案>.pages.dev`,但實際部署走的是
+`acuting-os.guotingru.workers.dev`(見上「正式網址」),鎖錯 hostname 等於沒鎖。
+2026-09-02 量到現行 application 的團隊網域是 `soft-snow-1c0c.cloudflareaccess.com`,
+`kid` 開頭 `595aadf420d59864`。
+
+**改 Access 政策前先想清楚它涵蓋幾個 hostname**:2026-09-02 曾經有一段時間
+同一個 application 同時蓋住 `acuting.com`(公開行銷站)與這個 workers.dev,
+結果行銷站對所有訪客、包括 Googlebot 都回 302 —— 連 `robots.txt` 都拿不到,
+SEO 完全隱形。要鎖的是 OS app,不是行銷站。
 
 **注意**:病例資料存在各瀏覽器 localStorage,手機與電腦各自獨立;
 要搬用面板裡的 匯出/匯入 JSON。知識內容(穴位/中藥/方劑)則隨部署同步。

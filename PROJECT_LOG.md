@@ -1,3 +1,49 @@
+# 2026-09-02 — Ting 裁定 workers.dev 維持鎖著;DEPLOYMENT.md 三處對齊現況
+
+昨天記的那則(acuting.com 曾被 Access 全站擋住)裡我寫「待 Ting 決定 workers.dev
+要不要鎖」。**更正:B3 早在 2026-09-01 晚就裁了** —— `TING_PENDING_RULINGS_2026-08-31.md`
+B3 寫著「✅ 已裁(D33):(a) 套 Access,而且是 D1 上線的前提」。所以那道鎖是刻意的、
+而且有裁定在先,只是 DEPLOYMENT.md 沒跟著更新。2026-09-02 Ting 再次確認維持鎖著。
+
+## 改了三處(寫入前後各量一次,確認不是拿過時數字寫死)
+
+**1. 「正式網址」的實測段** —— 原本寫「回 200,沒有經過 Access 登入頁」。
+改成現況(302 + `Www-Authenticate: Cloudflare-Access`,團隊網域
+`soft-snow-1c0c.cloudflareaccess.com`),並寫明依據是 B3/D33。
+**2026-09-01 的舊量測整段保留**,收進引用區塊並標「留著當歷史,不要拿它當現況
+判斷依據」—— 只加深不刪除,那筆量測本身沒有錯,是世界變了。
+
+同一處補了一句防混淆:`acuting.com` 是**另一個站**(行銷站,`/js/knowledge.js`
+回 404),沒有 Access、SEO 完整;本文件講的一律是 workers.dev 的 OS app。
+
+**2. 「AI session 怎麼驗收」** —— 原本整段的前提是「既然這個 hostname 沒有 Access,
+AI **可以**直接驗線上版」。前提沒了,規則作廢。改成:不得在 Ting 的 profile 裡開
+(她那個 profile 有 Access session,開頁 = 讀病歷)、不得借用她的 session、
+AI 自己的 profile 開了也只有登入頁。
+
+線上唯一該做的是**反過來確認鎖還在**,文件裡給了指令並實跑驗證過:
+
+```bash
+curl -sSI https://acuting-os.guotingru.workers.dev/ | grep -i "cloudflare-access"
+# 有輸出 = 鎖在(正常);沒有輸出 = 鎖掉了,回報 Ting
+```
+
+實跑結果:workers.dev 有輸出(exit 0)、acuting.com 無輸出(exit 1),兩個方向都對。
+「驗收兩層」那份清單的第 3 點(線上版做第三層確認)一併刪掉並註明沒有第三層了。
+
+**3. 「上鎖(只有 Ting 能開)」的設定步驟** —— 原本網域欄寫 `<專案>.pages.dev`,
+但實際在服務的是 workers.dev,**鎖錯 hostname 等於沒鎖**。改成「填實際在服務的
+那一個」並記下現行 application 的識別(團隊網域 + `kid` 開頭 `595aadf420d59864`)。
+
+同時加了一條警告:改政策前先確認它涵蓋幾個 hostname —— 2026-09-02 曾經有一段時間
+同一個 application 同時蓋住 `acuting.com` 與 workers.dev,結果行銷站對所有訪客
+(含 Googlebot)回 302,連 `robots.txt` 都拿不到。**要鎖的是 OS app,不是行銷站。**
+
+## 沒有動的
+
+Cloudflare 後台一個設定都沒碰 —— 帳號設定不是 AI 該改的。本批只改 `DEPLOYMENT.md`
+(diff 67/20),沒有資料變更。
+
 # 2026-09-02 — acuting.com 曾被 Cloudflare Access 全站擋住(量測紀錄);現已解除,但 workers.dev 仍鎖著
 
 Ting 在別的對話串發現 acuting.com 對訪客顯示 Cloudflare Access 登入頁,要我把查到的
