@@ -71,6 +71,10 @@ function check(root) {
     if (!app.includes('meta[name="acuting-clinical-backend"]') || !app.includes("!window.AcuTingClinicalBackend")) {
       problems.push("G4 app.js 的 loadClinicalCases 缺少『宣告雲端但 AcuTingClinicalBackend 不存在 → 唯讀』守門;adapter 檔案沒載到時會靜默開本機新簿子");
     }
+    // 守門在開機期(第 807 行)跑,而 clinicalStoreIntegrityError 的 let 在後面:必須經 hoisted 標記接手,否則 TDZ 讓守門靜默失效(2026-09-02 e2e 抓到)
+    if (!app.includes("let clinicalStoreIntegrityError = (typeof window !== \"undefined\" && window.__acutingBootIntegrityError) || null;")) {
+      problems.push("G4 clinicalStoreIntegrityError 的宣告沒有從 window.__acutingBootIntegrityError 接手 —— 開機期守門會因 TDZ 失效");
+    }
   } else if (Array.isArray(cfg.d1_databases) && cfg.d1_databases.length) {
     problems.push("G3 沒有 main 卻有 d1_databases —— 半套設定;部署會失敗並擋住之後所有內容更新");
   }

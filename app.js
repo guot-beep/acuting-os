@@ -1969,7 +1969,8 @@ function handlePointHashChange() {
 // load (pointer=v2 with missing/corrupt staging): the app runs READ-ONLY on
 // whatever loaded — persist refuses, because saving over a half-loaded world
 // is how data disappears.
-let clinicalStoreIntegrityError = null;
+// 開機期(第 807 行)記下的唯讀原因由這裡接手 —— 那時這個 let 還在 TDZ(見 loadClinicalCases 的 markBootIntegrityError)
+let clinicalStoreIntegrityError = (typeof window !== "undefined" && window.__acutingBootIntegrityError) || null;
 
 // Dry Clinic #7:localhost 與 127.0.0.1 是不同 origin = 兩個互不相通的
 // 病人資料庫(2026-08-11 演練實測)。同機別名陷阱只有這一組;真機部署的
@@ -2007,14 +2008,21 @@ function loadClinicalCases() {
   // 病例正本就在雲端;此時若 js/clinical-sqlite-backend.js 沒載到或沒跑完(部署缺檔、SPA fallback
   // 把缺的 .js 回成 HTML、腳本評估失敗),store 會停在 localStorage 後端 —— 那是一本空簿子,
   // 靜默開下去就是兩本簿子。這裡不信任 adapter 一定會跑:宣告在、連接器不在 → 唯讀保護。
-  try {
-    const declaredCloud = document.querySelector('meta[name="acuting-clinical-backend"]');
-    if (declaredCloud && !window.AcuTingClinicalBackend) {
-      clinicalStoreIntegrityError = "這份部署宣告病例在雲端(" + (declaredCloud.getAttribute("content") || "?") + "),但雲端連接器沒有載入 —— 已進入唯讀保護,不會用瀏覽器本機開一本新簿子。請重新整理;若持續,把這段貼給 Claude。";
-      alert("臨床儲存層完整性錯誤,已進入唯讀保護:\n" + clinicalStoreIntegrityError);
-      return [];
-    }
-  } catch (_) { /* 沒有 document(測試環境)就略過 */ }
+  // 這個函式在第 807 行的頂層被呼叫,而 `let clinicalStoreIntegrityError` 在後面才宣告(TDZ):
+  // 開機期直接賦值會 ReferenceError,把整個 app 弄死或(被 try 吃掉後)靜默放行。所以開機期的
+  // 唯讀原因先記在 hoisted 的 window 標記上,由那個 let 的初始值接手;persist 只看那個 let。
+  const markBootIntegrityError = (msg) => {
+    window.__acutingBootIntegrityError = msg;
+    try { clinicalStoreIntegrityError = msg; } catch (_) { /* 開機期 TDZ:由宣告處的初始值接手 */ }
+  };
+  let declaredCloud = null;
+  try { declaredCloud = document.querySelector('meta[name="acuting-clinical-backend"]'); } catch (_) { declaredCloud = null; }
+  if (declaredCloud && !window.AcuTingClinicalBackend) {
+    const msg = "這份部署宣告病例在雲端(" + (declaredCloud.getAttribute("content") || "?") + "),但雲端連接器沒有載入 —— 已進入唯讀保護,不會用瀏覽器本機開一本新簿子。請重新整理;若持續,把這段貼給 Claude。";
+    markBootIntegrityError(msg);
+    alert("臨床儲存層完整性錯誤,已進入唯讀保護:\n" + msg);
+    return [];
+  }
   // Phase C seam (js/clinical-store.js): storage I/O goes through the
   // repository layer; normalization stays HERE (contract layer, not storage).
   // The direct-localStorage fallback is not dead code — if the store script
@@ -2024,7 +2032,7 @@ function loadClinicalCases() {
     try {
       return AcuTingClinicalStore.load().map(normalizeClinicalCase);
     } catch (e) {
-      clinicalStoreIntegrityError = e.message;
+      markBootIntegrityError(e.message);
       alert("臨床儲存層完整性錯誤,已進入唯讀保護:\n" + e.message);
       return [];
     }
@@ -2034,8 +2042,8 @@ function loadClinicalCases() {
   // v1 鍵當現況顯示,凍結的回滾錨會被誤報成現況(reload 後才發現不見),
   // 而且第一次存檔會把回滾錨靜默改寫掉。鎖唯讀,不讀 v1 內容當正常資料。
   if (localStorage.getItem("acuting-clinical-active") === "v2") {
-    clinicalStoreIntegrityError = "系統已切換 v2 但 clinical-store 模組未載入 —— 唯讀保護啟動,禁止存檔;請確認用正式入口開啟,勿用 legacy 頁。";
-    alert("臨床儲存層完整性錯誤,已進入唯讀保護:\n" + clinicalStoreIntegrityError);
+    markBootIntegrityError("系統已切換 v2 但 clinical-store 模組未載入 —— 唯讀保護啟動,禁止存檔;請確認用正式入口開啟,勿用 legacy 頁。");
+    alert("臨床儲存層完整性錯誤,已進入唯讀保護:\n" + window.__acutingBootIntegrityError);
     return [];
   }
   const saved = localStorage.getItem(CASE_STORAGE_KEY);
@@ -2053,8 +2061,8 @@ function loadClinicalCases() {
     // 直接顯示在螢幕上。訊息改為只有 key 名與長度(長度不是 PHI,但足以
     // 分辨空/截斷/格式壞)。這條 fallback 路徑在 store 模組載入失敗時才走,
     // 所以不能依賴 store 的 parseFailureDetail,同款規則就地實作一次。
-    clinicalStoreIntegrityError = `v1 store corrupt: unparseable JSON, ${saved.length} char(s) present in localStorage["${CASE_STORAGE_KEY}"](內容不轉述,避免病歷資料出現在錯誤訊息)`;
-    alert("臨床儲存層完整性錯誤,已進入唯讀保護:\n" + clinicalStoreIntegrityError);
+    markBootIntegrityError(`v1 store corrupt: unparseable JSON, ${saved.length} char(s) present in localStorage["${CASE_STORAGE_KEY}"](內容不轉述,避免病歷資料出現在錯誤訊息)`);
+    alert("臨床儲存層完整性錯誤,已進入唯讀保護:\n" + window.__acutingBootIntegrityError);
     return [];
   }
 }

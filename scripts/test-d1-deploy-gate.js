@@ -10,7 +10,7 @@ const { check, stripJsonc } = require("./validate-d1-deploy-gate.js");
 let passed = 0;
 const ok = (m) => { passed++; console.log(`  ✓ ${m}`); };
 const META = '<meta name="acuting-clinical-backend" content="d1">';
-const GUARD = 'document.querySelector(\'meta[name="acuting-clinical-backend"]\'); if (declaredCloud && !window.AcuTingClinicalBackend) {}';
+const GUARD = 'document.querySelector(\'meta[name="acuting-clinical-backend"]\'); if (declaredCloud && !window.AcuTingClinicalBackend) {} }\nlet clinicalStoreIntegrityError = (typeof window !== "undefined" && window.__acutingBootIntegrityError) || null;\nfunction x() {';
 const mk = (cfg, html, appJs) => {
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), "acuting-gate-"));
   fs.writeFileSync(path.join(dir, "wrangler.jsonc"), typeof cfg === "string" ? cfg : JSON.stringify(cfg, null, 2));
@@ -52,7 +52,8 @@ expectFail("meta content 不是 d1", mk(full, '<meta name="acuting-clinical-back
 
 console.log("\n第二道錨(G4)");
 expectFail("app.js 沒有『宣告雲端但無連接器 → 唯讀』守門", mk(full, META, "function loadClinicalCases() { return []; }"), /G4/);
-expectPass("守門在 → PASS", mk(full, META));
+expectFail("守門在、但 let 沒從 hoisted 標記接手(TDZ 會讓守門失效)", mk(full, META, 'function loadClinicalCases() { const declaredCloud = document.querySelector(\'meta[name="acuting-clinical-backend"]\'); if (declaredCloud && !window.AcuTingClinicalBackend) {} }\nlet clinicalStoreIntegrityError = null;'), /接手|TDZ/);
+expectPass("守門在 + 宣告接手 → PASS", mk(full, META));
 
 console.log("\n半套(G3)");
 expectFail("沒 main 卻有 d1_databases", mk({ ...base, d1_databases: full.d1_databases }, ""), /G3/);
