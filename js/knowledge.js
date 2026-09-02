@@ -407,16 +407,18 @@
         ${relLabel ? `<span class="k-pair-relation${warn ? " is-warning" : ""}">${esc(relLabel)}</span>` : ""}
         ${derived ? '<span class="k-pair-derived">依組成推得 · derived from composition</span>' : ""}
       </header>
-      ${pair.pair_meaning_zh ? `<p class="k-pair-meaning">${esc(pair.pair_meaning_zh)}</p>` : ""}
-      ${pair.pair_meaning_en ? `<p class="k-pair-meaning-en">${esc(pair.pair_meaning_en)}</p>` : ""}
-      ${pair.indication_zh ? `<p class="k-pair-line"><strong>主治</strong> ${esc(pair.indication_zh)}</p>` : ""}
+      ${/* 這六行過去都用裸真值判斷,於是佔位字(「（待補）」/"(pending)")會被當成內容印出來。
+            改走 usableText():它會把佔位字、亂碼、連續問號一律當成空。 */""}
+      ${usableText(pair.pair_meaning_zh) ? `<p class="k-pair-meaning">${esc(pair.pair_meaning_zh)}</p>` : ""}
+      ${usableText(pair.pair_meaning_en) ? `<p class="k-pair-meaning-en">${esc(pair.pair_meaning_en)}</p>` : ""}
+      ${usableText(pair.indication_zh) ? `<p class="k-pair-line"><strong>主治</strong> ${esc(pair.indication_zh)}</p>` : ""}
       ${/* 暗欄位接線:216/218 筆有 indication_en,但這張卡過去只讀 _zh ——
             其中 37 筆只有英文,於是主治整行不見,資料明明在庫裡。
             比照上面 pair_meaning 的作法,兩種語言各印一行:不做 fallback
             假裝英文是中文,也不代為翻譯,有什麼就顯示什麼。 */""}
-      ${pair.indication_en ? `<p class="k-pair-line k-pair-line-en"><strong>Indication</strong> ${esc(pair.indication_en)}</p>` : ""}
-      ${pair.caution_zh ? `<p class="k-pair-line k-pair-caution"><strong>注意</strong> ${esc(pair.caution_zh)}</p>` : ""}
-      ${pair.teaching_note_zh ? `<p class="k-pair-line k-pair-teach"><strong>學習提示</strong> ${esc(pair.teaching_note_zh)}</p>` : ""}
+      ${usableText(pair.indication_en) ? `<p class="k-pair-line k-pair-line-en"><strong>Indication</strong> ${esc(pair.indication_en)}</p>` : ""}
+      ${usableText(pair.caution_zh) ? `<p class="k-pair-line k-pair-caution"><strong>注意</strong> ${esc(pair.caution_zh)}</p>` : ""}
+      ${usableText(pair.teaching_note_zh) ? `<p class="k-pair-line k-pair-teach"><strong>學習提示</strong> ${esc(pair.teaching_note_zh)}</p>` : ""}
     </article>`;
   }
 
@@ -558,6 +560,13 @@
     /^review .+ before clinical use\.?$/i,
     /verify against .+ before source_checked\.?$/i,
     /pattern documentation context only\.?$/i,
+    /* 2026-09-02:中文佔位字過去不在這張表裡,於是 18 筆藥對的主治欄(值就是
+       「（待補）」)被裸真值判斷當成有內容,卡上印出「主治 （待補）」——
+       比整行不印更糟:讀者看到一個明確標示「這裡本來該有東西」的空承諾。
+       照上面的既有紀律,**只比對整串**,不比對任意位置 ——
+       真的在談「待補」兩個字的句子(例如註記裡寫「安全欄待補」)不能被誤殺。 */
+    /^[（(]?\s*待補\s*[)）]?$/,
+    /^[（(]?\s*pending\s*[)）]?$/i,
   ];
   function usableText(value) {
     const text = String(value || "").trim();
@@ -2846,7 +2855,10 @@
       const total = compares.length * dimensions.length;
       const filled = compares.reduce((sum, id) => {
         const row = (record.cells || {})[id] || {};
-        return sum + dimensions.filter((dimension) => String(row[dimension] || "").trim()).length;
+        // 與 cellText 同一把尺(usableText)。原本這裡用裸 trim,而 cellText 改用
+        // usableText 之後,放佔位字的格子會被統計算成「已填」卻在畫面上是空的。
+        // 今天實測差 0 格(906 格 / 已填 150),所以這是防它日後各走各的。
+        return sum + dimensions.filter((dimension) => usableText(row[dimension])).length;
       }, 0);
       return { filled, total };
     };
@@ -2861,15 +2873,20 @@
     }, { filled: 0, total: 0, emptyTables: 0, partialTables: 0, completeTables: 0 });
     const pendingCells = Math.max(0, comparisonTotals.total - comparisonTotals.filled);
     const cellText = (record, compareId, dimension) => {
-      const owned = String(((record.cells || {})[compareId] || {})[dimension] || "").trim();
+      // usableText 而不是 trim 真值:格子裡若放的是「（待補）」這種佔位字,
+      // 它不是內容,不該擋掉下面的自動彙整、也不該印出來。
+      const owned = usableText(((record.cells || {})[compareId] || {})[dimension]);
       if (owned) return esc(owned);
-      const auto = String(autoCell(record, compareId, dimension) || "").trim();
+      const auto = usableText(autoCell(record, compareId, dimension));
       const diff = dimension === "辨證要點" ? cardDifferentiators(record, compareId) : "";
       if (auto || diff) {
         const body = [auto, diff].filter(Boolean).map((t) => esc(t)).join("<br>");
         return '<span class="k-cell-auto" title="卡片引用:自動彙整自本卡欄位,非鑑別點">' + body + "</span>";
       }
-      return '<span class="k-empty-cell">待 Ting 填寫</span>';
+      /* 這裡原本印「待 Ting 填寫」——把內部工作分派印給讀卡的人看,而且是寫死在
+         渲染器裡的,改資料改不掉。空格就顯示成空格;「還剩幾格沒填」這個資訊
+         上方的統計列已經有了(filled/total 與「N 完成·N 部分·N 空」)。 */
+      return '<span class="k-empty-cell" title="這一格尚未填寫">—</span>';
     };
     const renderComparisons = (list) => list.map((record) => {
       const compares = record.compares || [];

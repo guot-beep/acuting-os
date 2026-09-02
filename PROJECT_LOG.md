@@ -1,3 +1,58 @@
+# 2026-09-02 — 佔位字不再假裝成內容;渲染器不再把工作分派印給讀卡的人
+
+Ting 裁定做三件:(a) 那 18 筆「主治 （待補）」與寫死的「待 Ting 填寫」、
+(b) previsit 把 id 印給病人、(c) 穴位那半邊再跑一輪普查。這則是 (a)(b)。
+
+## (a-1) 18 筆藥對的主治欄:三處都要改,只改一處沒用
+
+`usableText()`(js/knowledge.js:562)本來就會濾佔位字 —— 但 `PLACEHOLDER_RES`
+**只收英文佔位句**,中文的「（待補）」不在裡面;而 `pairCard` 又根本沒呼叫 `usableText`,
+用的是裸真值判斷。兩個缺口疊在一起,才會在卡上印出「**主治** （待補）」。
+
+改三處:
+1. `PLACEHOLDER_RES` 補中英文的裸佔位字。照該處既有紀律**只比對整串** ——
+   真的在談「待補」兩個字的句子(例如註記寫「安全欄待補」)不能被誤殺。
+2. `pairCard` 六個顯示欄位全部改走 `usableText`(原本六行都是裸真值)。
+3. 資料端:18 筆的 `indication_zh`/`_en`/`indications_zh`/`_en` 四欄值就是佔位字,
+   移除該四鍵。留著會讓缺口掃描把它們算成「已填」—— 佔位字沒有內容,它只是在假裝有。
+   腳本斷言「四欄全部是佔位字才准清」,任一欄有真內容就整批停手。
+
+## (a-2) 渲染器寫死的「待 Ting 填寫」
+
+`cellText`(:2872)對空格印死字串「待 Ting 填寫」——把內部工作分派印給讀卡的人,
+而且寫在渲染器裡,改資料改不掉。改成 `—`(title="這一格尚未填寫")。
+「還剩幾格沒填」沒有因此消失:上方統計列本來就有 `filled/total` 與
+「N 完成 · N 部分 · N 空」。實測 134 個空格全部變成 `—`,全頁再無那五個字。
+
+## 我自己改出來的第二把尺,當場修掉
+
+`cellText` 改用 `usableText` 之後,`cellStats`(:2858)還在用裸 trim ——
+**放佔位字的格子會被統計算成「已填」卻在畫面上是空的**。今天實測差 0 格
+(906 格 / 已填 150),所以是潛在不一致,但那正是這個庫最貴的病的種子。
+`cellStats` 一併改用 `usableText`,兩把尺統一。
+
+## (b) previsit:潛在缺陷,不是現行缺陷 —— 我上一則講得太重
+
+`previsit.html:400` 原本是 `return FALLBACK_PROMPTS[metricId] || { zh: metricId, en: "" }`,
+查不到題目就把原始 id 當題目印給**病人**。但查下去:
+`PREVISIT_METRICS` 是**寫死的 6 項**,而 `FALLBACK_PROMPTS` 正好覆蓋那 6 項;
+那 3 個缺 `patient_prompt_zh` 的指標(endometrial_lining / follicle_size /
+range_of_motion_deg)**根本不在問卷裡**。所以今天沒有任何病人看到 id ——
+上一則的摘要說「會把原始 id 印給病人」講得太重了,正確說法是**誰把其中一項加進問卷就會踩到**。
+
+還是修了,因為那條 fallback 就是 CLAUDE.md 第 5 條的形狀,只是還沒被觸發:
+- `metricPrompt` 查不到就回 `null`,不再用 id 充數
+- 呼叫端跳過該項並記進 `unpromptableMetrics`,同時 `console.warn`
+- payload 帶上 `unpromptableMetrics` ——「病人沒答」與「系統沒能問」不是同一件事,
+  這條紀律跟同檔案裡 `aeSelfReport.answered` 的三態設計是同一條。
+- **不編造題目**:寫病人看得懂的臨床測量題目要臨床判斷,不是這批該做的。
+
+`scripts/validate-previsit-payload.js --self-test` 全過(3 good + 33 bad);
+payload 驗證器只檢查必帶欄位、不擋額外鍵,所以新增欄位不會被拒收。
+`scripts/test-export-envelope-shapes.js` 10/10 PASS。
+
+14 支驗證器 exit 0,棘輪 PASS。艾葉卡與鑑別表都開起來看過。
+
 # 2026-09-02 — 把「別的資料集有沒有同樣的問題」從一句話變成數字:124 條,12 組
 
 昨天收 herb_pairs 的學習提示時,我自己寫了「窄閘門,只管這一個欄位;別的資料集有沒有

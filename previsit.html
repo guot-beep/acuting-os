@@ -392,12 +392,20 @@
     for (var i = 0; i < records.length; i++) if (records[i].id === metricId) return records[i];
     return null;
   }
+  /* 2026-09-02:最後那行原本是 `|| { zh: metricId, en: "" }` —— 查不到題目就把
+   * 原始 id(例如 metric.follicle_size)當成題目印給**病人**看。這是 CLAUDE.md 第 5 條
+   * 那個形狀:查表失敗不出聲,還把 id 美化成內容。
+   * 目前是潛在缺陷不是現行缺陷:PREVISIT_METRICS 寫死 6 項,FALLBACK_PROMPTS 正好覆蓋
+   * 那 6 項;但 outcomeMetrics 有 3 筆沒有 patient_prompt_zh(endometrial_lining /
+   * follicle_size / range_of_motion_deg),誰把其中一項加進問卷就會踩到。
+   * 改成回傳 null:沒有人話題目就不出這一題,並把它記下來讓醫師知道問不到,
+   * 而不是拿一串 id 去問病人。不編造題目 —— 那要臨床判斷。 */
   function metricPrompt(metricId) {
     var def = getMetricDef(metricId);
     if (def && def.patient_prompt_zh) {
       return { zh: def.patient_prompt_zh, en: def.patient_prompt_en || "" };
     }
-    return FALLBACK_PROMPTS[metricId] || { zh: metricId, en: "" };
+    return FALLBACK_PROMPTS[metricId] || null;
   }
 
   function escapeHtml(s) {
@@ -406,12 +414,22 @@
     });
   }
 
+  // 問不到題目的指標:不出題,但要讓醫師在收到回覆時知道少了哪一項(見 payload)。
+  var unpromptableMetrics = [];
+
   function renderMetricFields() {
     var container = document.getElementById("metricFields");
     var html = "";
+    unpromptableMetrics = [];
     for (var i = 0; i < PREVISIT_METRICS.length; i++) {
       var cfg = PREVISIT_METRICS[i];
       var prompt = metricPrompt(cfg.metricId);
+      if (!prompt) {
+        // 沉默跳過等於醫師以為病人不肯答;記下來,由 payload 誠實回報「問不到」。
+        unpromptableMetrics.push(cfg.metricId);
+        if (window.console && console.warn) console.warn("previsit: 找不到病人題目文字,略過此項 —", cfg.metricId);
+        continue;
+      }
       var badge = cfg.followupOnly ? '<span class="badge">僅複診 follow-up only</span>' : "";
       var attrs = 'type="number" inputmode="decimal" id="' + cfg.metricId + '" name="' + cfg.metricId + '" min="' + cfg.min + '"';
       if (cfg.max != null) attrs += ' max="' + cfg.max + '"';
@@ -800,6 +818,9 @@
         patientCode: patientCode,
         filledAt: new Date().toISOString(),
         metrics: metrics,
+        // 「病人沒答」與「系統沒能問」不是同一件事,和上面 aeSelfReport 的 answered
+        // 是同一條紀律:少了哪一項要說出來,不能讓醫師以為病人跳過不答。
+        unpromptableMetrics: unpromptableMetrics.slice(),
         subjectiveText: document.getElementById("subjectiveText").value.trim(),
         patientPerspective: document.getElementById("patientPerspective").value.trim(),
         // answered 是獨立欄位而非把 any 改成三態:any 的布林契約已經被
