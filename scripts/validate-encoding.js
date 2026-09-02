@@ -73,7 +73,25 @@ function inspectValue(value, context, issues) {
     // 2026-09-02:*_urls_zh / *_url_zh 裝的是連結(cloudtcm 圖片網址),不是中文散文 —— 361 筆 diagram_urls_zh 全是假陽性。
     // 只豁免「整個值就是一個 URL」的情況;URL 混在中文句子裡仍照常檢查。
     const isBareUrl = /^https?:\/\/\S+$/i.test(trimmed);
-    if (context.key && isChineseField(context.key) && !inFieldSources && !isBareUrl && trimmed.length > 3 && !CJK_RE.test(trimmed)) {
+    /* 2026-09-02 第二輪:剩下的 156 筆逐條看過,其中 33 筆不是缺口,是這條規則問錯了問題。
+     * 三種都豁免,理由分開寫,因為它們錯的方式不一樣:
+     *  (a) 連結標籤(external_links[].label_zh / visual_links[].label_zh):值是網站名
+     *      「American Dragon」。品牌名不翻譯 —— 翻成「美國龍」才是錯的。
+     *  (b) 交互作用對象(with_label_zh):值是西藥學名「Warfarin」「Tamoxifen」。
+     *      臺灣臨床本來就寫英文學名;硬翻成音譯反而讓人查不到。
+     *  (c) 評分表的欄位名(research_staging 的 criteria[].zh = "summary_zh"):
+     *      那是設定檔在描述「要看哪個欄位」,不是給人讀的中文。
+     * 注意這三條都是**依路徑**豁免,不是依值 —— 依值(例如「短的就放過」)會把真的缺口也放掉。 */
+    const p = String(context.path || "");
+    const isLinkLabel = /(external_links|visual_links|source_links|links)\[\d+\]\.label_zh$/.test(p);
+    const isInteractionPartner = /\.with_label_zh$/.test(p);
+    const isScoringFieldName = /criteria\[\d+\]\.zh$/.test(p) && /research_staging/.test(String(context.file || ""));
+    /* (d) 結構描述檔:`schema.json` 的 $.fields.location_zh、以及任何 field_definitions.* ——
+     *     值是「這個欄位裝什麼」的英文說明,不是卡片內容。把它們算成缺口,等於要求
+     *     schema 檔用中文描述自己的欄位。 */
+    const isSchemaDefinition = /(^|\/)schema\.json$/.test(String(context.file || "").replace(/\\/g, "/")) || /(^|\.)field_definitions\./.test(p);
+    const exemptByPath = isLinkLabel || isInteractionPartner || isScoringFieldName || isSchemaDefinition;
+    if (context.key && isChineseField(context.key) && !inFieldSources && !isBareUrl && !exemptByPath && trimmed.length > 3 && !CJK_RE.test(trimmed)) {
       issues.push({
         type: "chinese_field_without_cjk",
         file: context.file,
