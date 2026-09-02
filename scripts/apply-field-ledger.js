@@ -90,9 +90,18 @@ function applyEntry(record, entry) {
   return { ok: true };
 }
 
+/* JSON.stringify 的 space 是「每一層」的縮排,所以要抓的是**最小縮排單位**,不是隨便一行的縮排。
+ * 第一版用 /\n([ \t]+)"/ —— 在裸陣列檔(data/acupoints/embedded/meridian_ki.json)上,元素是 `{`
+ * 不是 `"`,於是抓到第二層(屬性)的 4 格,整個檔從 2 格被重排成 4 格:語意只改 11 條,diff 卻 1,385 行,
+ * 沒有人能在那種 diff 上覆核。改成取所有行裡最小的非零縮排。 */
 function detectIndent(raw) {
-  const m = raw.match(/\n([ \t]+)"/);
-  return m ? m[1] : "  ";
+  let min = null;
+  for (const line of raw.split("\n")) {
+    const m = line.match(/^([ \t]+)\S/);
+    if (!m) continue;
+    if (min === null || m[1].length < min.length) min = m[1];
+  }
+  return min || "  ";
 }
 
 function apply(ledger, opts) {
@@ -119,7 +128,11 @@ function apply(ledger, opts) {
     const json = JSON.parse(raw);
     const records = Array.isArray(json) ? json : json.records;
     if (!Array.isArray(records)) { report.errors.push(`${file}: 找不到 records 陣列`); continue; }
-    const byId = new Map(records.map((r) => [r.id, r]));
+    /* 記錄的識別鍵不是每個檔都叫 id:穴位檔(data/acupoints/embedded/meridian_*.json)用 code。
+     * 兩個都收進索引;衝突時 id 優先(先建 code 再用 id 覆蓋)。 */
+    const byId = new Map();
+    for (const r of records) if (r && r.code !== undefined) byId.set(r.code, r);
+    for (const r of records) if (r && r.id !== undefined) byId.set(r.id, r);
     let applied = 0;
     for (const e of entries) {
       const rec = byId.get(e.record);
@@ -199,6 +212,16 @@ function selfTest() {
   assert.strictEqual(raw1.endsWith("\n"), raw0.endsWith("\n"));
   assert(/\n  "records"/.test(raw1));
   ok("縮排與尾端換行沿用原檔");
+
+  /* 裸陣列 + 2 格縮排:這正是 meridian_ki.json 的形狀,也是第一版把整檔從 2 格重排成 4 格的地方
+   * (語意只改 11 條、diff 卻 1,385 行)。元素是 `{` 而不是 `"`,所以「抓第一個縮排的引號」會抓到第二層。 */
+  fs.writeFileSync(path.join(dir, file), JSON.stringify([{ id: "r1", a: ["p"] }], null, 2) + "\n");
+  const bareBefore = fs.readFileSync(path.join(dir, file), "utf8");
+  apply([{ file, record: "r1", path: "a[0]", expect: "p", value: "q" }], { root: dir });
+  const bareAfter = fs.readFileSync(path.join(dir, file), "utf8");
+  assert.strictEqual(bareBefore.split("\n").length, bareAfter.split("\n").length, "行數不該變(排版被改了)");
+  assert(/^\n?\[\n  \{/.test("\n" + bareAfter) || bareAfter.startsWith("[\n  {"), "裸陣列的 2 格縮排沒有保住");
+  ok("裸陣列檔的縮排也保住(元素是 { 不是 \" 的情形)");
 
   fs.rmSync(dir, { recursive: true, force: true });
   console.log(`\nPASS — ${n} 條`);
