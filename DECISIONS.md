@@ -1180,6 +1180,13 @@ PASS(composition 查無藥材維持 1 味次 `formula.huang_tu_tang` 的「灶�
 > 它同時把公開主站 acuting.com 鎖住約 2.5 小時(訪客看到 Access 登入頁;play.acuting.com 在 GitHub Pages 不受影響)。
 > 修法:刪除 All Workers,改為 acuting-os Worker 專屬的 Access(All traffic,AUD 換成 a2d8e3c1…,commit c4d181df)。
 > 規則:**病例站的鎖只能是 Worker 專屬,永不使用帳號層級應用程式**;`scripts/canary-production-lock.js` 自此同時斷言 acuting.com / play 匿名 200。
+> **改用通行碼(Ting 2026-09-02 裁定「改用通行碼:不碰 Access」)**:Cloudflare 的「Access OTP 郵件被擋」事故讓她兩個站都收不到 PIN,
+>   登入只有一條路等於隨時可能把自己鎖在門外。改為 app 層通行碼:雲端只存 PBKDF2 雜湊,驗證只在 Worker,
+>   通過後發 HMAC 簽章的通行證(30 天、換碼即失效)。**知識庫維持公開,只有 /__clinical/* 需要通行證** ——
+>   所以「整個站被鎖住」在結構上不會再發生。設定見 docs/D1_PASSPHRASE_SETUP_2026-09-02.md;
+>   閘門要求通行碼與 Access **恰好一種**,且 CLINICAL_TOKEN_SECRET 不得寫進 wrangler.jsonc(那個檔在 git 裡)。
+>   強度取捨:免費方案每請求 10ms CPU,迭代只用 30,000;線上猜測由「加權長度 ≥16 的通行碼 + 每 15 分鐘 8 次」擋住。
+>   誠實記下:這比 Access 弱一點(通行碼是「誰知道誰進得去」,沒有 email 身分),對單人診所 + 去識別化資料可接受。
 > **回滾(2026-09-02 23:00)**:Cloudflare 自 01:33Z 起有「Access OTP 郵件被擋」事故,Ting 收不到 PIN、登不進新的 Worker 專屬 Access;
 > 開診在即,以 `apply-d1-production-config.js --revert`(commit bf0a64d4)切回純靜態 + localStorage,由她在 acuting-os 的 Access 頁移除鎖。
 > 雲端 D1 內容:她匯入過一份 0 筆的 JSON,無臨床資料。**D33 本身不變**,只是切換延後到事故解除。
