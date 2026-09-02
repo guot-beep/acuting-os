@@ -1174,4 +1174,5 @@ PASS(composition 查無藥材維持 1 味次 `formula.huang_tu_tang` 的「灶�
 > 做完並在本機 Miniflare D1 + 真瀏覽器走過雙分頁演練;**main 未動**。切換 = `scripts/apply-d1-production-config.js`(寫入她的
 > database_id / team domain / AUD)→ `validate-d1-deploy-gate.js`(Worker 與 index.html 宣告 meta 同進同出、無 placeholder)→ 合 main。
 > 兩個實測改寫了設計:D1 多句 batch 裡條件式 UPDATE 擋不住過期寫入(改 trigger RAISE);單列 2 MB 上限(值分塊)。
-> 另:Access 只能從 Worker 自己的 Access 頁籤套到 workers.dev(不能用 Self-hosted 應用);鎖上後同網址的 `previsit.html` 也會要求登入,待 Ting 裁。
+> 另:Access 只能從 Worker 自己的 Access 頁籤套到 workers.dev(不能用 Self-hosted 應用);鎖上後同網址的 `previsit.html` 也會要求登入 ——
+> **Ting 2026-09-02 裁定「病人自填這個功能先不要」**,previsit 跟著鎖,不另外搬。她的 Zero Trust 帳號已存在(有「All Workers」與「BoardPrep」兩個 Access 應用),鎖 acuting-os 走 All Workers 那個。
