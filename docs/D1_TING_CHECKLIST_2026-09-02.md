@@ -43,7 +43,8 @@
 
 ### 確認鎖上了
 用**無痕視窗**開 `https://acuting-os.guotingru.workers.dev/` → 應該看到 Cloudflare Access 的登入頁(要 email)。
-沒看到就是沒鎖,回頭檢查第 4 步的 domain 有沒有打錯。
+沒看到就是沒鎖。做完跟我說一聲,我會跑 `node scripts/canary-production-lock.js`(零 cookie、不碰資料)
+確認六條路徑(首頁、病例 API、previsit、亂打的路徑…)全部被擋;它 PASS 之前我不會合併切換。
 
 > 鎖上以後妳自己(手機、電腦)第一次開也要登入一次(輸入 email → 收 PIN → 貼上),之後 24 小時內免登。
 > **app 現在的病例(localStorage)完全不受影響**,鎖的是門,不是屋內。
