@@ -57,17 +57,22 @@ expectPass("守門在 + 宣告接手 → PASS", mk(full, META));
 
 console.log("\n認證模式(通行碼 / Access,恰好一種)");
 const passVars = { ENVIRONMENT: "production", CLINICAL_DB_NAME: "acuting-clinical",
-  CLINICAL_PASS_SALT: "YAqmBYLid2hS2xwbjSHBGQ", CLINICAL_PASS_HASH: "J5GLJDIgG8DOjRjoDBqbMkeeWBlx0J65yNkBOoCytdU",
-  CLINICAL_PASS_ITER: 120000, CLINICAL_PASS_VERSION: 1 };
+  CLINICAL_SETUP_SALT: "YAqmBYLid2hS2xwbjSHBGQ", CLINICAL_SETUP_HASH: "J5GLJDIgG8DOjRjoDBqbMkeeWBlx0J65yNkBOoCytdU",
+  CLINICAL_SETUP_ITER: 120000, CLINICAL_SETUP_EPOCH: 1 };
 const passCfg = { ...full, vars: passVars };
 expectPass("通行碼模式(完整)→ PASS", mk(passCfg, META));
 expectFail("兩種認證同時設", mk({ ...full, vars: { ...passVars, ACCESS_TEAM_DOMAIN: "https://acuting.cloudflareaccess.com", ACCESS_AUD: "a".repeat(64), ACCESS_ALLOWED_EMAILS: "x@y.z" } }, META), /只能留一種/);
 expectFail("一種都沒設", mk({ ...full, vars: { ENVIRONMENT: "production" } }, META), /沒有任何認證設定/);
-expectFail("PASS_HASH 格式不對", mk({ ...full, vars: { ...passVars, CLINICAL_PASS_HASH: "short" } }, META), /CLINICAL_PASS_HASH/);
-expectFail("PASS_SALT 缺", mk({ ...full, vars: { ...passVars, CLINICAL_PASS_SALT: "" } }, META), /CLINICAL_PASS_SALT|只能留一種|沒有任何認證/);
-expectFail("迭代次數太低", mk({ ...full, vars: { ...passVars, CLINICAL_PASS_ITER: 500 } }, META), /CLINICAL_PASS_ITER/);
-expectFail("PASS_VERSION 不是正整數", mk({ ...full, vars: { ...passVars, CLINICAL_PASS_VERSION: 0 } }, META), /CLINICAL_PASS_VERSION/);
+expectFail("SETUP_HASH 格式不對", mk({ ...full, vars: { ...passVars, CLINICAL_SETUP_HASH: "short" } }, META), /CLINICAL_SETUP_HASH/);
+expectFail("SETUP_SALT 缺", mk({ ...full, vars: { ...passVars, CLINICAL_SETUP_SALT: "" } }, META), /CLINICAL_SETUP_SALT|只能留一種|沒有任何認證/);
+expectFail("迭代次數太低", mk({ ...full, vars: { ...passVars, CLINICAL_SETUP_ITER: 500 } }, META), /CLINICAL_SETUP_ITER/);
+expectFail("SETUP_EPOCH 不是正整數", mk({ ...full, vars: { ...passVars, CLINICAL_SETUP_EPOCH: 0 } }, META), /CLINICAL_SETUP_EPOCH/);
 expectFail("簽證秘密被寫進 wrangler.jsonc", mk({ ...full, vars: { ...passVars, CLINICAL_TOKEN_SECRET: "oops-this-is-in-git" } }, META), /CLINICAL_TOKEN_SECRET/);
+/* 這四條是最貴的那種錯誤的防線:有人(包括未來的我)把通行碼雜湊搬回設定檔。
+ * repo 公開,那等於把離線破解的材料一起發佈,而一句記得住的通行碼撐不了一天。 */
+for (const k of ["CLINICAL_PASS_HASH", "CLINICAL_PASS_SALT", "CLINICAL_PASS_ITER", "CLINICAL_PASS_VERSION"]) {
+  expectFail(`${k} 被搬回公開設定檔`, mk({ ...full, vars: { ...passVars, [k]: "x".repeat(44) } }, META), new RegExp(k));
+}
 
 console.log("\n半套(G3)");
 expectFail("沒 main 卻有 d1_databases", mk({ ...base, d1_databases: full.d1_databases }, ""), /G3/);

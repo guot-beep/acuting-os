@@ -62,19 +62,26 @@ function check(root) {
     /* 認證模式:通行碼(Ting 2026-09-02 裁定)或 Cloudflare Access,**恰好一種**。
      * 兩種都沒設 → 部署上去每個病例請求都 503,等於白推一次;
      * 兩種都設 → 沒有人說得準當下走的是哪一條,將來換模式時會有人以為改了其實沒改。 */
-    const hasPass = !!(v.CLINICAL_PASS_SALT || v.CLINICAL_PASS_HASH);
+    const hasPass = !!(v.CLINICAL_SETUP_SALT || v.CLINICAL_SETUP_HASH);
     const hasAccess = !!(v.ACCESS_TEAM_DOMAIN || v.ACCESS_AUD);
+    /* ⛔ 最重要的一條:**這個 repo 是公開的**(github.com/guot-beep/acuting-os)。
+     * 日常通行碼是一句人記得住的話;把它的 salt+hash 推上 GitHub,等於把離線破解的材料一起公開,
+     * 30,000 次迭代對 GPU 只是把時間從幾分鐘拉到大約一天。所以那組雜湊只能住 D1(見 auth-store.passRecord),
+     * git 裡只放一次性設定碼的雜湊(16 碼亂數,約 79 bits,公開也破不了)。 */
+    for (const k of ["CLINICAL_PASS_HASH", "CLINICAL_PASS_SALT", "CLINICAL_PASS_ITER", "CLINICAL_PASS_VERSION"]) {
+      if (v[k]) problems.push(`G2 ${k} 不得出現在 wrangler.jsonc —— 這個 repo 是公開的,一句記得住的通行碼的雜湊公開後大約一天就會被離線破解。通行碼雜湊只住 D1,git 裡只放 CLINICAL_SETUP_*。`);
+    }
     if (hasPass && hasAccess) problems.push("G2 通行碼與 Cloudflare Access 兩種認證同時設定 —— 只能留一種");
-    else if (!hasPass && !hasAccess) problems.push("G2 沒有任何認證設定(通行碼的 CLINICAL_PASS_* 或 Access 的 ACCESS_*)—— 部署後病例 API 會全部 503");
+    else if (!hasPass && !hasAccess) problems.push("G2 沒有任何認證設定(通行碼的 CLINICAL_SETUP_* 或 Access 的 ACCESS_*)—— 部署後病例 API 會全部 503");
     else if (hasPass) {
-      if (!/^[A-Za-z0-9_-]{16,}$/.test(String(v.CLINICAL_PASS_SALT || ""))) problems.push("G2 vars.CLINICAL_PASS_SALT 格式不對(scripts/make-clinical-passphrase-hash.js 產生的 base64url)");
-      if (!/^[A-Za-z0-9_-]{40,}$/.test(String(v.CLINICAL_PASS_HASH || ""))) problems.push("G2 vars.CLINICAL_PASS_HASH 格式不對(base64url,256-bit)");
-      const iter = Number(v.CLINICAL_PASS_ITER || 0);
-      if (!Number.isFinite(iter) || iter < 10000) problems.push(`G2 vars.CLINICAL_PASS_ITER 太低或缺(${v.CLINICAL_PASS_ITER || "缺"});至少 10000`);
-      if (!Number.isSafeInteger(Number(v.CLINICAL_PASS_VERSION)) || Number(v.CLINICAL_PASS_VERSION) < 1) problems.push("G2 vars.CLINICAL_PASS_VERSION 必須是 ≥1 的整數(換通行碼時 +1,舊通行證才會失效)");
-      /* 簽證秘密只能當 secret 放(wrangler secret put),不能寫進 wrangler.jsonc ——
-       * 這個檔在 git 裡,寫進去等於把「偽造通行證的鑰匙」推上 GitHub。 */
-      if (v.CLINICAL_TOKEN_SECRET) problems.push("G2 CLINICAL_TOKEN_SECRET 不得出現在 wrangler.jsonc(那是能偽造通行證的鑰匙,要用 wrangler secret put 或後台 Secret 設定)");
+      if (!/^[A-Za-z0-9_-]{16,}$/.test(String(v.CLINICAL_SETUP_SALT || ""))) problems.push("G2 vars.CLINICAL_SETUP_SALT 格式不對(scripts/make-clinical-setup-code.js 產生的 base64url)");
+      if (!/^[A-Za-z0-9_-]{40,}$/.test(String(v.CLINICAL_SETUP_HASH || ""))) problems.push("G2 vars.CLINICAL_SETUP_HASH 格式不對(base64url,256-bit)");
+      const iter = Number(v.CLINICAL_SETUP_ITER || 0);
+      if (!Number.isFinite(iter) || iter < 10000) problems.push(`G2 vars.CLINICAL_SETUP_ITER 太低或缺(${v.CLINICAL_SETUP_ITER || "缺"});至少 10000`);
+      if (!Number.isSafeInteger(Number(v.CLINICAL_SETUP_EPOCH)) || Number(v.CLINICAL_SETUP_EPOCH) < 1) problems.push("G2 vars.CLINICAL_SETUP_EPOCH 必須是 ≥1 的整數(要重新設定通行碼時 +1)");
+      // 簽證秘密預設由 Worker 在 D1 裡自動產生(auth-store.tokenSecret);真要自己指定就設成 Secret。
+      // 無論如何都不能寫進這個檔 —— 它在 git 裡,而且是公開的。
+      if (v.CLINICAL_TOKEN_SECRET) problems.push("G2 CLINICAL_TOKEN_SECRET 不得出現在 wrangler.jsonc(那是能偽造通行證的鑰匙,而這個檔公開在 GitHub;不設就由 Worker 自己在 D1 產生)");
     } else {
       if (!/^https:\/\/[a-z0-9-]+\.cloudflareaccess\.com$/i.test(String(v.ACCESS_TEAM_DOMAIN || ""))) problems.push(`G2 vars.ACCESS_TEAM_DOMAIN 必須是 https://<team>.cloudflareaccess.com(${v.ACCESS_TEAM_DOMAIN || "缺"})`);
       if (!/^[0-9a-f]{64}$/i.test(String(v.ACCESS_AUD || ""))) problems.push("G2 vars.ACCESS_AUD 必須是 Access 應用程式的 64 hex AUD tag(缺或格式不對)");

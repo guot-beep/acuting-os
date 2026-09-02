@@ -11,6 +11,26 @@
   },
   "assets": {
     "directory": "./dist",
-    "not_found_handling": "single-page-application"
+    "not_found_handling": "single-page-application",
+    "binding": "ASSETS",
+    "run_worker_first": [
+      "/__clinical/*"
+    ]
+  },
+  "main": "src/worker.mjs",
+  "d1_databases": [
+    {
+      "binding": "CLINICAL_DB",
+      "database_name": "acuting-clinical",
+      "database_id": "c96bd14b-70ed-49c1-8abf-1eeb1eac651f"
+    }
+  ],
+  "vars": {
+    "ENVIRONMENT": "production",
+    "CLINICAL_DB_NAME": "acuting-clinical",
+    "CLINICAL_SETUP_SALT": "vWBiR32leSXUfVR7u_3dTQ",
+    "CLINICAL_SETUP_HASH": "GxuhP3QptK6bHkMW_OhUFHkf_egUROJRxws2xFmdTM8",
+    "CLINICAL_SETUP_ITER": 30000,
+    "CLINICAL_SETUP_EPOCH": 1
   }
 }

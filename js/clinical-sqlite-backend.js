@@ -39,6 +39,7 @@
    * 通行證只證明「曾經打對過」,有到期日,換通行碼時伺服器把版本 +1 就全部失效。 */
   const TOKEN_KEY = "acuting-clinical-auth-token";
   const PROMPT_ID = "acuting-passphrase-prompt";
+  const SEED_ID = "acuting-seed-prompt";
   const readToken = () => { try { return global.localStorage.getItem(TOKEN_KEY) || ""; } catch (_) { return ""; } };
   const writeToken = (t) => { try { global.localStorage.setItem(TOKEN_KEY, t); return true; } catch (_) { return false; } };
   const clearToken = () => { try { global.localStorage.removeItem(TOKEN_KEY); } catch (_) { /* */ } };
@@ -195,6 +196,74 @@
 
   /* 通行碼輸入框。刻意做成「蓋住整頁、只能輸入」的樣子:病例讀不到的時候,
    * 讓她以為 app 壞了比讓她看到一本空簿子好 —— 後者才是真的危險。 */
+  /* 第一次設定:整個部署還沒有人訂過通行碼(伺服器回 setup_required)。
+   * 要設定碼是因為這個 repo 公開 —— git 裡只能放高熵的一次性碼,
+   * 她記得住的那句通行碼在這裡才第一次產生,雜湊直接寫進 D1。 */
+  function renderSetupPrompt(transport, opts) {
+    const d = global.document;
+    if (!d || !d.body || d.getElementById(PROMPT_ID)) return;
+    const wrap = d.createElement("div");
+    wrap.id = PROMPT_ID;
+    wrap.setAttribute("role", "dialog");
+    wrap.setAttribute("aria-modal", "true");
+    wrap.style.cssText = "position:fixed;inset:0;z-index:100000;background:rgba(15,23,42,.92);display:flex;align-items:center;justify-content:center;padding:20px;overflow:auto;";
+    wrap.innerHTML =
+      '<form style="background:#fff;max-width:430px;width:100%;border-radius:14px;padding:22px 20px;box-shadow:0 18px 50px rgba(0,0,0,.35);font:15px/1.6 system-ui,-apple-system,&quot;Noto Sans TC&quot;,sans-serif;color:#0f172a;">' +
+      '<h2 style="margin:0 0 6px;font-size:19px;">設定病例通行碼(只做這一次)</h2>' +
+      '<p style="margin:0 0 14px;color:#475569;font-size:13.5px;">先貼一次設定碼,然後訂一句妳自己記得住的話。' +
+      '之後所有裝置都用那句話進病例,設定碼就作廢了。</p>' +
+      '<label style="display:block;font-size:13px;color:#334155;margin-bottom:4px;">設定碼</label>' +
+      '<input data-code type="text" autocapitalize="off" autocorrect="off" spellcheck="false" ' +
+      'style="width:100%;box-sizing:border-box;padding:11px 12px;font-size:16px;border:1px solid #cbd5e1;border-radius:9px;font-family:ui-monospace,monospace;" placeholder="xxxx-xxxx-xxxx-xxxx">' +
+      '<label style="display:block;font-size:13px;color:#334155;margin:12px 0 4px;">妳要訂的通行碼</label>' +
+      '<input data-p1 type="password" autocomplete="new-password" autocapitalize="off" autocorrect="off" spellcheck="false" ' +
+      'style="width:100%;box-sizing:border-box;padding:11px 12px;font-size:16px;border:1px solid #cbd5e1;border-radius:9px;" placeholder="例如:白虎湯加石膏四十克">' +
+      '<input data-p2 type="password" autocomplete="new-password" autocapitalize="off" autocorrect="off" spellcheck="false" ' +
+      'style="width:100%;box-sizing:border-box;margin-top:8px;padding:11px 12px;font-size:16px;border:1px solid #cbd5e1;border-radius:9px;" placeholder="再打一次確認">' +
+      '<p style="margin:8px 0 0;color:#64748b;font-size:12.5px;">中文一個字算 2 分、其他算 1 分,總分至少 16、字數至少 8。不要用生日、電話、診所名字。</p>' +
+      '<p data-err style="margin:10px 0 0;color:#b91c1c;font-size:13.5px;min-height:1.2em;"></p>' +
+      '<button type="submit" style="margin-top:12px;width:100%;padding:11px;font-size:16px;border:0;border-radius:9px;background:#1d4ed8;color:#fff;cursor:pointer;">設定並進入病例</button>' +
+      "</form>";
+    const form = wrap.querySelector("form");
+    const code = wrap.querySelector("[data-code]");
+    const p1 = wrap.querySelector("[data-p1]");
+    const p2 = wrap.querySelector("[data-p2]");
+    const err = wrap.querySelector("[data-err]");
+    const btn = wrap.querySelector("button");
+    form.addEventListener("submit", (ev) => {
+      ev.preventDefault();
+      if (!code.value.trim()) { err.textContent = "還沒貼設定碼。"; return; }
+      // 兩次不一致就在這裡擋掉:打錯字卻設定成功,等於當場把自己鎖在門外
+      if (p1.value !== p2.value) { err.textContent = "兩次打的通行碼不一樣。"; return; }
+      if (!p1.value) { err.textContent = "還沒訂通行碼。"; return; }
+      btn.disabled = true; btn.textContent = "設定中…"; err.textContent = "";
+      let r;
+      try {
+        r = transport("POST", API + "/auth/setup", JSON.stringify({ setup_code: code.value.trim(), passphrase: p1.value }),
+          { "Content-Type": "application/json; charset=utf-8", "X-AcuTing-Client": "clinical-store" });
+      } catch (e) { r = { status: 0, text: "", error: String((e && e.message) || e) }; }
+      btn.disabled = false; btn.textContent = "設定並進入病例";
+      let j = null;
+      try { j = JSON.parse(r.text); } catch (_) { j = null; }
+      if (r.status === 200 && j && typeof j.token === "string" && j.token) {
+        code.value = ""; p1.value = ""; p2.value = "";     // 不留在 DOM 裡
+        if (!writeToken(j.token)) { err.textContent = "瀏覽器不讓我存通行證(無痕模式?)。換一般視窗再試。"; return; }
+        btn.textContent = "設定好了,重新載入…";
+        try { global.location.reload(); } catch (_) { /* */ }
+        return;
+      }
+      if (r.status === 400) { err.textContent = (j && j.message) || "通行碼強度不夠,再想長一點的。"; return; }
+      if (r.status === 401) { err.textContent = "設定碼不對。整段貼上,連字號也要。"; return; }
+      if (r.status === 410) { err.textContent = "這個病例庫已經設定過了。用妳訂的通行碼登入,重新整理頁面。"; return; }
+      if (r.status === 429) { err.textContent = (j && j.message) || "試太多次了,等一下再試。"; return; }
+      if (r.status === 0) { err.textContent = "連不上伺服器,檢查網路後再試。"; return; }
+      err.textContent = "伺服器回了非預期的結果(HTTP " + r.status + ")。把這個數字告訴 Claude。";
+    });
+    d.body.appendChild(wrap);
+    try { code.focus(); } catch (_) { /* */ }
+    if (opts && opts.onRendered) opts.onRendered(wrap);
+  }
+
   function renderPassphrasePrompt(transport, opts) {
     const d = global.document;
     if (!d || !d.body || d.getElementById(PROMPT_ID)) return;
@@ -244,6 +313,67 @@
     d.body.appendChild(wrap);
     try { input.focus(); } catch (_) { /* */ }
     if (opts && opts.onRendered) opts.onRendered(wrap);
+  }
+
+  /* 切換到雲端的第一天:雲端是空的,而這台裝置的 localStorage 還躺著她之前的病例。
+   * 要她去「匯出 JSON → 找檔案 → 匯入」是三個可以出錯的步驟(選錯檔、選到舊檔、選到別台的檔)。
+   * 這裡直接把「這台裝置有 N 筆、雲端 0 筆」講出來,按一下就上傳。
+   *
+   * 三條安全規則:
+   *   1. **只在雲端主槽不存在或是空陣列時**出現 —— 雲端已經有東西就絕不覆蓋。
+   *   2. 用 If-Match 帶當下 revision:上傳的瞬間若別台先寫了,伺服器擋下(409),不會蓋掉對方。
+   *   3. localStorage 那份**一個字都不刪** —— 它從此是回滾錨。上傳成功也不清。 */
+  function localBookSummary() {
+    try {
+      const raw = global.localStorage.getItem(STORAGE_KEY);
+      if (!raw || !raw.trim()) return null;
+      const arr = JSON.parse(raw);
+      if (!Array.isArray(arr) || !arr.length) return null;
+      return { raw, count: arr.length };
+    } catch (_) { return null; }
+  }
+
+  function renderSeedPrompt(backend, onDone) {
+    const d = global.document;
+    if (!d || !d.body || d.getElementById(SEED_ID)) return;
+    const local = localBookSummary();
+    if (!local) return;
+    let cloud = null;
+    try { cloud = backend.read(); } catch (_) { return; }
+    const cloudEmpty = cloud === null || !String(cloud).trim() || String(cloud).trim() === "[]";
+    if (!cloudEmpty) return;                      // 雲端已經有病例 → 這個框根本不該出現
+
+    const wrap = d.createElement("div");
+    wrap.id = SEED_ID;
+    wrap.setAttribute("role", "dialog");
+    wrap.style.cssText = "position:fixed;inset:0;z-index:99998;background:rgba(15,23,42,.9);display:flex;align-items:center;justify-content:center;padding:20px;";
+    wrap.innerHTML =
+      '<div style="background:#fff;max-width:440px;width:100%;border-radius:14px;padding:22px 20px;box-shadow:0 18px 50px rgba(0,0,0,.35);font:15px/1.6 system-ui,-apple-system,&quot;Noto Sans TC&quot;,sans-serif;color:#0f172a;">' +
+      '<h2 style="margin:0 0 6px;font-size:19px;">把這台裝置的病例上傳到雲端?</h2>' +
+      '<p style="margin:0 0 6px;color:#334155;font-size:14px;">這台裝置有 <b>' + local.count + '</b> 筆病例,雲端目前是空的。</p>' +
+      '<p style="margin:0 0 14px;color:#64748b;font-size:13px;">上傳之後手機和電腦看到的就是同一本。' +
+      '這台裝置原本那份不會被刪除,留著當備份。</p>' +
+      '<p data-err style="margin:0 0 10px;color:#b91c1c;font-size:13.5px;min-height:1.2em;"></p>' +
+      '<div style="display:flex;gap:8px;">' +
+      '<button data-skip style="flex:1;padding:11px;font-size:15px;border:1px solid #cbd5e1;border-radius:9px;background:#fff;cursor:pointer;">先不要</button>' +
+      '<button data-go style="flex:2;padding:11px;font-size:15px;border:0;border-radius:9px;background:#1d4ed8;color:#fff;cursor:pointer;">上傳 ' + local.count + ' 筆</button>' +
+      "</div></div>";
+    const err = wrap.querySelector("[data-err]");
+    const go = wrap.querySelector("[data-go]");
+    wrap.querySelector("[data-skip]").addEventListener("click", () => { wrap.remove(); if (onDone) onDone({ seeded: false }); });
+    go.addEventListener("click", () => {
+      go.disabled = true; go.textContent = "上傳中…"; err.textContent = "";
+      try {
+        backend.write(local.raw);                 // 走既有的 If-Match 路徑;別台先寫就會 409
+        wrap.remove();
+        if (onDone) onDone({ seeded: true, count: local.count });
+        try { global.location.reload(); } catch (_) { /* */ }
+      } catch (e) {
+        go.disabled = false; go.textContent = "再試一次";
+        err.textContent = String((e && e.message) || e).split("\n")[0];
+      }
+    });
+    d.body.appendChild(wrap);
   }
 
   function poisonBackend(message) {
@@ -323,9 +453,18 @@
          * 同時仍然裝毒丸:在她打對之前,病例一律唯讀 —— 絕不讓 app 退回 localStorage 開一本空簿子。 */
         if (p.status === 401 && ping.auth_mode === "passphrase") {
           if (ping.error === "auth_invalid") clearToken();   // 舊證過期或被換過通行碼:丟掉,免得每次都拿它去撞
-          const res = poisonNow("需要通行碼才能開病例。輸入之後這台裝置 30 天內免再打。");
-          try { renderPassphrasePrompt(transport, opts); } catch (e) { try { console.error("通行碼輸入框無法顯示:", e && e.message); } catch (_) { /* */ } }
+          /* setup_required:整個部署還沒有人訂過通行碼 → 跳「設定」框(要設定碼),不是登入框。
+           * 跳錯框的代價不是難看而是走不下去 —— 她會對著一個沒有正確答案的欄位一直打。 */
+          const needsSetup = ping.setup_required === true;
+          const res = poisonNow(needsSetup
+            ? "這個病例庫還沒設定通行碼。用設定碼完成第一次設定。"
+            : "需要通行碼才能開病例。輸入之後這台裝置 30 天內免再打。");
+          try {
+            if (needsSetup) renderSetupPrompt(transport, opts);
+            else renderPassphrasePrompt(transport, opts);
+          } catch (e) { try { console.error("通行碼輸入框無法顯示:", e && e.message); } catch (_) { /* */ } }
           res.needsPassphrase = true;
+          res.needsSetup = needsSetup;
           return res;
         }
         // 服務在、但拒絕我們(401 沒登入 / 503 設定不全):唯讀,不退回 localStorage
@@ -355,6 +494,8 @@
     store.setBackend(backend);
     global.AcuTingClinicalBackend = backend;
     try { onChange(backend.state()); } catch (_) { /* */ }
+    // 切換第一天:雲端空的、這台裝置有病例 → 問一句要不要上傳(見 renderSeedPrompt 的三條安全規則)
+    if (opts.seedPrompt !== false) { try { renderSeedPrompt(backend, opts.onSeed); } catch (_) { /* 上傳提示壞掉不能害 app 起不來 */ } }
     // 每 10 秒 ping 一次更新徽章(投影狀態 / 別台裝置的 revision / 登入是否過期);不碰鏡像內容。
     try {
       if (global.setInterval && global.document) {
@@ -384,7 +525,7 @@
     return { installed: true, revision: backend.state().revision, db: ping.db, backend: ping.backend || "sqlite", email: ping.email || null };
   }
 
-  global.AcuTingClinicalSqliteBackend = { install, makeBackend, poisonBackend, renderBadge, renderPassphrasePrompt, MARKER, API, CONFLICT_BACKUP_KEY, TOKEN_KEY };
+  global.AcuTingClinicalSqliteBackend = { install, makeBackend, poisonBackend, renderBadge, renderPassphrasePrompt, renderSetupPrompt, renderSeedPrompt, localBookSummary, MARKER, API, CONFLICT_BACKUP_KEY, TOKEN_KEY, SEED_ID };
 
   // 瀏覽器裡自動安裝(script 是 defer,store 已在前面載好)。Node 測試環境只匯出,不自動跑。
   if (global.document && global.XMLHttpRequest && global.location) {

@@ -105,18 +105,67 @@ export function createClinicalHandler(deps) {
         return json(429, { service: SERVICE, backend: "d1", error: "too_many_attempts", retry_after_sec: res.retryAfterSec,
           message: `試太多次了,請等 ${Math.ceil(res.retryAfterSec / 60)} 分鐘再試。` }, { "Retry-After": String(res.retryAfterSec) });
       }
+      if (res.setupRequired) {
+        log("POST auth 409 (還沒設定過通行碼)");
+        return json(409, { service: SERVICE, backend: "d1", error: "setup_required", setup_required: true,
+          message: "這個病例庫還沒設定通行碼。請用設定碼完成第一次設定。" });
+      }
       log(`POST auth 401 (通行碼不符;這個來源今天第 ${res.fails || "?"} 次)`);
       return json(401, { service: SERVICE, backend: "d1", error: "auth_invalid", message: "通行碼不對。" });
+    }
+
+    /* 一次性設定端點:憑設定碼把她自己選的通行碼寫進 D1。
+     * 設定完成後(且 env 紀元沒調高)一律 410,連設定碼都不驗 —— 它不會變成長期可猜的入口。 */
+    if (url.pathname === `${API}/auth/setup` && deps.passphraseAuth) {
+      if (method !== "POST") return json(405, { error: "method_not_allowed" });
+      if (!request.headers.get(CLIENT_HEADER)) return json(403, { error: "client_header_required" });
+      let body = "";
+      try { body = await request.text(); } catch (_) { body = ""; }
+      let setupCode = "", passphrase = "";
+      try {
+        const j = JSON.parse(body || "{}");
+        setupCode = typeof j.setup_code === "string" ? j.setup_code : "";
+        passphrase = typeof j.passphrase === "string" ? j.passphrase : "";
+      } catch (_) { /* 兩個都留空,下面一律當失敗 */ }
+      const res = await deps.passphraseAuth.setup(setupCode, passphrase, request);
+      if (res.ok) {
+        log("POST auth/setup 200 (通行碼已設定,設定端點關閉)");
+        return json(200, { service: SERVICE, backend: "d1", token: res.token, expires: res.expires });
+      }
+      if (res.blocked) {
+        log(`POST auth/setup 429 (失敗過多,${res.retryAfterSec}s)`);
+        return json(429, { service: SERVICE, backend: "d1", error: "too_many_attempts", retry_after_sec: res.retryAfterSec,
+          message: `試太多次了,請等 ${Math.ceil(res.retryAfterSec / 60)} 分鐘再試。` }, { "Retry-After": String(res.retryAfterSec) });
+      }
+      if (res.closed) {
+        log("POST auth/setup 410 (已經設定過)");
+        return json(410, { service: SERVICE, backend: "d1", error: "setup_closed",
+          message: "這個病例庫已經設定過通行碼了。要重設請調高 CLINICAL_SETUP_EPOCH。" });
+      }
+      if (res.weak) {
+        log("POST auth/setup 400 (通行碼強度不足)");
+        return json(400, { service: SERVICE, backend: "d1", error: "weak_passphrase", message: res.message });
+      }
+      log(`POST auth/setup 401 (設定碼不符;這個來源第 ${res.fails || "?"} 次)`);
+      return json(401, { service: SERVICE, backend: "d1", error: "setup_code_invalid", message: "設定碼不對。" });
     }
 
     const auth = await authenticate(request, url);
     if (!auth.ok) {
       log(`${method} ${url.pathname} ${auth.status} ${auth.reason}${auth.detail ? " (" + auth.detail + ")" : ""}`);
-      // 帶 service 標記:adapter 據此判「服務在、沒登入」→ 毒丸或跳出通行碼輸入框,不是退回 localStorage
+      /* 帶 service 標記:adapter 據此判「服務在、沒登入」→ 毒丸或跳出輸入框,不是退回 localStorage。
+       * setup_required 再決定跳哪一種框:第一次設定(要設定碼)還是日常登入(只要通行碼)。
+       * 這一句多一次 D1 查詢,但只在 401 才走到,而 401 本來就少。 */
+      let setupRequired = false;
+      if (auth.status === 401 && deps.passphraseAuth && deps.passphraseAuth.setupRequired) {
+        try { setupRequired = await deps.passphraseAuth.setupRequired(); } catch (_) { setupRequired = false; }
+      }
       return json(auth.status, { service: SERVICE, backend: "d1", error: auth.reason,
         auth_mode: deps.passphraseAuth ? "passphrase" : "access",
+        setup_required: setupRequired,
         message: auth.status === 503 ? "服務的認證設定不完整,拒絕所有請求(fail-closed)。"
-          : (deps.passphraseAuth ? "需要通行碼(或通行證已過期)。" : "登入無效或已過期,請重新整理頁面重新登入。") });
+          : (setupRequired ? "這個病例庫還沒設定通行碼,請先用設定碼完成設定。"
+            : (deps.passphraseAuth ? "需要通行碼(或通行證已過期)。" : "登入無效或已過期,請重新整理頁面重新登入。")) });
     }
 
     try { await ready(); } catch (e) {

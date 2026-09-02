@@ -1,118 +1,93 @@
-# D1 切換:妳要做的三件事(Cloudflare 後台,約 10 分鐘)+ 切換當下的核對
+# D1 切換:妳要做的事(不用進 Cloudflare 後台)
 
-寫給 Ting。程式那邊已經做完、測完(見文末)。**只有妳的帳號能做這三件事**,做完把三個值貼給我,
-我 30 分鐘內切換。可以用手機瀏覽器做。
+寫給 Ting。2026-09-02 改版:**Cloudflare Access 整套拿掉**,改成 app 自己的通行碼。
+之前那份清單要妳開 Zero Trust、綁信用卡、拿 AUD tag —— 那些現在一件都不用做。
 
-> 先登入 https://dash.cloudflare.com/(帳號 guotingru@gmail.com)。
-
-### 先知道的四件事(做之前讀一次,免得卡住)
-1. **Zero Trust 第一次開通會要妳選方案並輸入信用卡**,即使選 Free(0 元)也要卡。這是 Cloudflare 的規定,不是我們的。
-2. 鎖上以後,同一個網址上的 `previsit.html`(病人自填問卷頁)也會要求登入。**Ting 2026-09-02 裁定:「病人自填這個功能先不要」**
-   → previsit 跟著一起鎖,不另外搬;之後要開放病人自填時再談(需要一個不上鎖的網址)。
-3. workers.dev 這種網址**不能**用「Self-hosted 應用程式」上鎖(那需要自己的網域),要用 Worker 自己的 **Access** 頁籤(下面路徑 A)。
-4. 新開的 Zero Trust 預設登入方式是「Cloudflare 帳號」,不是 email PIN;**要自己加 One-time PIN**(路徑 A 第 4 步),不然手機登入會要妳輸 Cloudflare 密碼。
+> 為什麼改:9/2 那天 Access 的一次性 PIN 郵件完全收不到(兩個站都一樣,妳的 Gmail 最後一封 Cloudflare 驗證碼停在 8/28),
+> 而且帳號層級的「All Workers」應用程式把公開主站 acuting.com 一起鎖了約 2.5 小時。
+> 通行碼不碰 Cloudflare 的登入系統,也**只保護病例**——知識庫(穴位、方劑、中藥)永遠公開,TikTok 來的人照樣看得到。
 
 ---
 
-## 事 1:把網站上鎖(Cloudflare Access)—— D33 前提一
+## 妳要做的:兩件事,約三分鐘
 
-**目的**:從此打開 `https://acuting-os.guotingru.workers.dev/` 要先用妳的 email 收一次性 PIN 才進得去。
-病例上雲之後,沒鎖 = 任何人拿到網址就能讀寫。
+### 1. 切換前:按一次「匯出 JSON」
 
-> ⛔ **2026-09-02 事故,以後不要再犯**:Zero Trust 裡「All Workers」那種**帳號層級**的 Access 應用程式(目的地 = 全部 Workers)
-> 會把帳號裡**每一個** Worker 一起鎖,包括公開的主站 acuting.com(那晚被擋了約 2.5 小時,訪客全部看到登入頁)。
-> 只能用下面路徑 A 的 **Worker 專屬** Access(只管 acuting-os)。改完任何 Access 設定都要跑 `scripts/canary-production-lock.js`,
-> 它現在同時檢查「病例站被鎖」和「acuting.com / play 公開可看」。
-> 另一個坑:政策規則的選擇器要用 **Emails**(單一 email),不是 **Email domain**——Email domain 填整個 email 進去等於沒有人符合,自己會登不進去。
+在現在的 app 裡,病例 → **匯出 JSON**,存到桌機。
 
-### 路徑 A(Worker 自己的 Access 頁籤 —— 這是 workers.dev 唯一正確的做法)
-1. 左邊選單 **Workers & Pages** → 點 **acuting-os** → 上方頁籤找 **Access**(在 Settings 旁邊;找不到就在 Settings 裡找 "Access")。
-2. 按 **Protect this Worker behind Access**(或 Enable)。範圍選 **All traffic**(不要選 Previews only)——
-   這樣正式網址、預覽網址都一起鎖。第一次會把妳帶去開通 Zero Trust(選 Free、取 team name 例如 `acuting`、輸入卡)。
-3. 它會自動建立一個 Access 應用程式與政策。**去檢查政策**:Zero Trust → **Access** → **Applications** → 點那個應用程式 →
-   Policies → 確定 Action 是 **Allow**、規則是 **Emails = guotingru@gmail.com**(不是 Everyone、不是「Cloudflare 帳號」)。
-   不對就改成這樣;Session duration 用 **24 hours**。
-4. 加 email PIN 登入:Zero Trust → **Integrations**(或 Settings)→ **Identity providers** → **Add new** → **One-time PIN** → Save。
+這是回滾錨,不是備份儀式。切換之後雲端是空的,而妳這台電腦上的舊病例**一個字都不會被動到**,
+所以就算全部出錯,把這個檔匯回去就回到今天的狀態。
 
-### 路徑 B(路徑 A 真的找不到 Access 頁籤時)
-1. Zero Trust → **Access** → **Applications** → **Add an application** → 若列表裡有 **Workers** / 選擇 Worker 的選項,選 **acuting-os**;
-   若只有 Self-hosted(要求網域),就停下來把畫面拍給我,不要硬填 workers.dev。
-2. 之後的政策與 One-time PIN 同路徑 A 第 3、4 步。
+### 2. 切換後:第一次開 app,設定通行碼
 
-### 拿兩個值給我
-- **AUD tag**:Access → Applications → 點 **All Workers**(妳帳號裡已經有的那個;若是新建的就點新建的)→ **Overview** 或 **Basic information** 裡的
-  **Application Audience (AUD) Tag**(一長串 64 個字元)→ 複製。
-- **Team domain**:Zero Trust → **Settings** → **Custom Pages**(或 **General**)裡的 **Team domain**,
-  長得像 `acuting.cloudflareaccess.com` → 複製(我會加 `https://`)。
-- (順手)**Workers 方案**:Workers & Pages → Plans 看是 Free 還是 Paid。Free 每個請求只有 10 ms CPU,病例多了以後存檔可能撞牆;
-  撞到時我會請妳升 Workers Paid(每月 5 美元)。現在不用動。
+打開 `https://acuting-os.guotingru.workers.dev/`,會跳一個框「設定病例通行碼(只做這一次)」:
 
-### 確認鎖上了
-用**無痕視窗**開 `https://acuting-os.guotingru.workers.dev/` → 應該看到 Cloudflare Access 的登入頁(要 email)。
-沒看到就是沒鎖。做完跟我說一聲,我會跑 `node scripts/canary-production-lock.js`(零 cookie、不碰資料)
-確認六條路徑(首頁、病例 API、previsit、亂打的路徑…)全部被擋;它 PASS 之前我不會合併切換。
+- **設定碼**:我另外給妳的那串 `xxxx-xxxx-xxxx-xxxx`,整段貼上(連字號也要)。
+- **妳要訂的通行碼**:自己想一句,打兩次。
+  規則:中文一個字算 2 分、其他算 1 分,**總分至少 16、字數至少 8**。
+  不要用生日、電話、診所名字。**也不要用說明文件裡舉的那些例子**——那些字串是公開的。
 
-> 鎖上以後妳自己(手機、電腦)第一次開也要登入一次(輸入 email → 收 PIN → 貼上),之後 24 小時內免登。
-> **app 現在的病例(localStorage)完全不受影響**,鎖的是門,不是屋內。
+按下去就進病例了。之後:
+
+- 這台裝置 **30 天內不用再打**。
+- 手機第一次開,只要打**那句通行碼**(不用設定碼,設定碼用過就作廢)。
+- 設定碼給錯或通行碼太弱,框會直接說哪裡不對,可以馬上再試。
+
+### 如果這台電腦本來就有病例
+
+設定完會再問一句「這台裝置有 N 筆病例,雲端目前是空的,要上傳嗎?」——按 **上傳 N 筆**。
+不用去找匯出檔、不用匯入。本機那份不會被刪,留著當備份。
 
 ---
 
-## 事 2:建 D1 資料庫 —— 病例的新家
+## 忘記通行碼怎麼辦
 
-1. **Workers & Pages** → 左邊 **D1 SQL Database** → **Create database**。
-2. Name:`acuting-clinical`;Location:預設(自動)即可 → **Create**。
-3. 進到資料庫頁面,右邊(或 Settings)有 **Database ID**(UUID,像 `0f1e2d3c-4b5a-…`)→ 複製給我。
-
-不用建表、不用綁定,程式第一次連線會自己建表;綁定由設定檔(wrangler.jsonc)宣告,我來。
+跟我說一聲。我重新產生一組設定碼、把紀元加 1 推上去(約五分鐘),妳再設定一次新的通行碼。
+**病例一個字都不會動。** 舊的通行證會全部失效,所有裝置要重打一次新通行碼。
 
 ---
 
-## 事 3(選做,給自動備份用):Service token
+## 切換那天的五個核對(我做,妳在旁邊約 15 分鐘)
 
-之後要讓桌機的工具**不用手動登入**就能把整本病例拉回來當備份,需要一組機器用的鑰匙:
-Zero Trust → **Access** → **Service Auth** → **Service Tokens** → **Create Service Token** → 名稱 `acuting-backup-desktop`,
-Duration 1 年 → 建立後會顯示 **Client ID** 與 **Client Secret**(**Secret 只顯示這一次**,先貼到密碼管理器,再把兩個都給我)。
-沒做也沒關係,備份可以先靠 app 的「匯出 JSON」。
+1. 桌機開網址 → 設定通行碼 → 左下角出現藍色徽章 `☁ D1 · acuting-clinical · rev N`。
+2. 桌機 F5,病例還在。
+3. 手機開同一個網址 → 打那句通行碼 → **看到同一批病例**(這就是妳要的)。
+4. 桌機加一則 SOAP → 手機 F5 看得到;手機改一筆 → 桌機 F5 看得到。
+5. 兩台同時改同一筆 → 後存的那台被擋下、內容自動備份、重新整理後再改一次會成功。
 
----
-
-## 貼給我的東西(三行)
-
-```
-DATABASE_ID = 
-TEAM_DOMAIN = 
-AUD_TAG     = 
-```
-
-(選做)`SERVICE_TOKEN_ID / SECRET`。
+回滾:我把設定切回純靜態(一個指令、一次 push),app 回到 localStorage,舊病例原封不動還在。
 
 ---
 
-## 切換那天(我做,妳在旁邊 15 分鐘)
+## 為什麼通行碼的雜湊不放在設定檔裡(給以後的我看)
 
-1. 我把三個值寫進設定、跑閘門、推上 main → Workers Builds 自動部署(3–5 分鐘)。
-2. **妳在桌機**:開網址 → Access 登入 → 左下角出現**藍色徽章** `☁ D1 · acuting-clinical · rev 0 · guotingru@gmail.com`,病例 0 筆(新簿子,正常)。
-3. **匯入桌機的病例**:病例 → 匯入 → 選桌機那份匯出 JSON → 「合併」→ 徽章 rev 1、病例出現。
-4. **手機**:同一個網址 → Access 登入 → 看到同一筆病例(**這就是妳要的**)→ 手機也按「匯出 JSON」(舊的手機病例)→ 傳到桌機。
-   **先不要匯入。** 我先跑 `node scripts/diff-clinical-exports.js 桌機.json 手機.json`:
-   - 印出「✓ 沒有 divergent」→ 桌機匯入手機那份,選「合併」→ 兩邊重新整理都看到全部,筆數 = 聯集。
-   - 印出「⛔ 有 divergent」= 同一個病例兩台都改過(例如各自加了 SOAP)。app 的合併會把其中一台的 SOAP 整個蓋掉,
-     所以我會先做出合併好的 R.json 給妳看,妳點頭再匯入。
-   任何時候都不要選「完整還原」。
-5. **五個核對**:(a) 桌機 F5 病例還在;(b) 手機 F5 一樣;(c) 桌機加一則 SOAP → 手機 F5 看得到;(d) 手機改一筆 → 桌機 F5 看得到;(e) 兩台同時改同一筆 → 後存的那台被擋、重新整理後再改一次成功。
-6. 舊的 localStorage 病例從頭到尾沒被動過 = 回滾錨。回滾 = 我把設定切回純靜態(一個指令、一次 push),app 回到 localStorage,匯出 JSON 匯回去即可。
+`guot-beep/acuting-os` 是**公開** repo,`wrangler.jsonc` 跟著進 GitHub。
+一句人記得住的通行碼,只要 salt+hash 公開,GPU 大約一天就能離線破解出來 ——
+30,000 次 PBKDF2 迭代擋不住,而免費方案每請求 10 ms CPU 又不允許把迭代拉高。
+
+所以分兩層:
+
+| | 放哪裡 | 熵 | 用幾次 |
+|---|---|---|---|
+| 設定碼 | `wrangler.jsonc`(公開) | 16 碼亂數,約 79 bits,公開也破不了 | 一次 |
+| 通行碼 | **D1**,由 Worker 在設定時寫入 | 一句記得住的話 | 每台裝置每 30 天 |
+
+線上猜通行碼受限流保護(同來源 15 分鐘 8 次),離線猜不到 —— 因為 hash 不公開。
+`scripts/validate-d1-deploy-gate.js` 有四條負控,任何人(包括未來的我)把 `CLINICAL_PASS_*` 搬回設定檔就會擋下部署。
 
 ---
 
-## 程式那邊已經做完什麼(給妳安心,不用讀懂)
+## 程式那邊已經做完什麼
 
 | 元件 | 測試 |
 |---|---|
-| Access JWT 驗證(只認 RS256、金鑰輪替、alg 混淆與竄改都擋、service token) | 31 條 |
-| 病例正本資料層(compare-and-set 用 trigger 守門、大值分塊、每 key 留 50 版歷史) | 30 條 |
-| HTTP 契約(沒登入 401 / 沒設定 503、跨站寫入 403、兩台同時寫 409、正本鍵不可刪、例外不外洩) | 35 條 |
-| 瀏覽器端(本機服務 + D1 共用同一套) | 43 條 |
-| 部署閘門(半套設定不准上 main、app 第二道錨)+ 負控 | 20 條 |
-| 本機 Worker + D1(真瀏覽器):建案、重啟後仍在、兩分頁衝突擋下並備份、故意拿掉連接器 → 唯讀 | 走過一遍;全套 CI 重放 100/100 |
+| 通行碼原語(PBKDF2、定時比較、加權強度、通行證簽發與驗證、限流) | 43 條 |
+| 通行碼 HTTP 流程(401 帶模式、限流、竄改零寫入、設定不全 503、log 不含祕密) | 28 條 |
+| **一次性設定流程(跑的是 Worker 真正那支實作)** | 11 條 |
+| 病例正本資料層(CAS 用 trigger 守門、大值分塊、每 key 留 50 版) | 30 條 |
+| HTTP 契約(跨站寫入 403、兩台同時寫 409、正本鍵不可刪、例外不外洩) | 35 條 |
+| 瀏覽器端 adapter(本機服務與 D1 共用同一套) | 43 條 |
+| 部署閘門 + 負控(含「通行碼雜湊不准進公開 repo」四條) | 32 條 |
+| 真瀏覽器端到端:設定框 → 設定 → 寫入 → 重整免打 → 設定端點關上 → 上傳本機病例 | 走過一遍 |
 
 D1 平台的兩個坑已用實測繞開:多句交易裡的條件式更新會讓過期寫入落地(改用 trigger);單列 2 MB 上限(分塊)。
