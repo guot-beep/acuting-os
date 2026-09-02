@@ -983,7 +983,7 @@
     const ok = stashConflict(cases, "另一個分頁在本分頁載入之後寫入過");
     throw new Error(
       `拒絕寫入:另一個分頁在這之後存過檔,直接寫入會蓋掉它的內容。\n` +
-      `本分頁的內容${ok ? `已備份到 localStorage["${CONFLICT_BACKUP_KEY}"](沒有遺失)` : "**備份也失敗了**(配額滿?)"}。\n` +
+      `本分頁的內容${ok ? `已備份到病例儲存的 "${CONFLICT_BACKUP_KEY}"(沒有遺失;這個分頁用的是 localStorage 就在 localStorage,用雲端就在雲端)` : "**備份也失敗了**(配額滿或服務沒回應?)"}。\n` +
       `做法:先在另一個分頁按「匯出病例」備份,再重新載入本頁。`);
   }
 

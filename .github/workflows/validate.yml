@@ -228,6 +228,19 @@ jobs:
       - name: SQLite clinical service + browser adapter
         run: node scripts/test-clinical-sqlite-service.js
 
+      # D33 D1 積木(純 Node 可測,不需 Cloudflare 帳號):
+      - name: Access JWT verification (RS256 only, JWKS rotation, alg-confusion negatives)
+        run: node scripts/test-access-jwt.js
+      - name: clinical kv core (trigger-guarded CAS, chunking, history)
+        run: node scripts/test-clinical-kv-core.js
+      - name: clinical HTTP handler contract (fail-closed auth, CSRF header, CAS)
+        run: node scripts/test-clinical-handler.js
+      # 部署閘門:Worker 與 index.html 宣告必須同進同出;半套設定不准上 main(D33)
+      - name: D1 deploy gate
+        run: node scripts/validate-d1-deploy-gate.js
+      - name: D1 deploy gate self-test (negative controls)
+        run: node scripts/test-d1-deploy-gate.js
+
       # CARE 草稿匯出邊界(2026-08-14 Ting ruling / CODEX AUDIT #1-#2)。
       # 這三支在 CLAUDE.md 裡被列為「改完要跑」,但 `grep -c care` 在這個檔案
       # 上一直回 0 —— 也就是說,唯一會逼人跑它們的東西不存在。而它們守的是

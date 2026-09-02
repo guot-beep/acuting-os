@@ -1,0 +1,17 @@
+{
+  // 本機 e2e 用的 Worker 設定(wrangler dev --config wrangler.local.jsonc)。
+  // Workers Builds 只讀 wrangler.jsonc,所以這個檔永遠不會被部署。
+  // 一定要配 --persist-to 短路徑(Windows 上 Miniflare 的 D1 狀態檔路徑一長就全部 internal error)。
+  "name": "acuting-os-local",
+  "main": "src/worker.mjs",
+  "compatibility_date": "2026-07-26",
+  "assets": { "directory": "./dist", "binding": "ASSETS", "run_worker_first": ["/__clinical/*"], "not_found_handling": "single-page-application" },
+  "d1_databases": [
+    { "binding": "CLINICAL_DB", "database_name": "acuting-clinical-local", "database_id": "00000000-0000-0000-0000-00000000local" }
+  ],
+  "vars": {
+    "ENVIRONMENT": "local",
+    "DEV_AUTH_BYPASS": "1",
+    "CLINICAL_DB_NAME": "acuting-clinical-local"
+  }
+}

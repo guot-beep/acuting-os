@@ -3,8 +3,6 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- D33:這份部署帶病例服務(Worker + D1)。js/clinical-sqlite-backend.js 看到這個宣告就在任何主機名上探測 /__clinical/ping,探測不到 = 唯讀,不退回 localStorage。與 src/worker.mjs 同一個 commit 出貨。 -->
-    <meta name="acuting-clinical-backend" content="d1">
     <title>AcuTing OS</title>
     <!-- 品牌字型：永不阻塞。preload 提前抓、media="print" 讓 stylesheet 不進
          script-blocking 集合，js/fonts.js 在「載完之後」才翻成 all——被翻轉的
