@@ -11,25 +11,6 @@
   },
   "assets": {
     "directory": "./dist",
-    "not_found_handling": "single-page-application",
-    "binding": "ASSETS",
-    "run_worker_first": [
-      "/__clinical/*"
-    ]
-  },
-  "main": "src/worker.mjs",
-  "d1_databases": [
-    {
-      "binding": "CLINICAL_DB",
-      "database_name": "acuting-clinical",
-      "database_id": "c96bd14b-70ed-49c1-8abf-1eeb1eac651f"
-    }
-  ],
-  "vars": {
-    "ENVIRONMENT": "production",
-    "CLINICAL_DB_NAME": "acuting-clinical",
-    "ACCESS_TEAM_DOMAIN": "https://soft-snow-1c0c.cloudflareaccess.com",
-    "ACCESS_AUD": "a2d8e3c1923f65e2088fb86186f440979022197a6731cbb072e0a432c64dd935",
-    "ACCESS_ALLOWED_EMAILS": "guotingru@gmail.com"
+    "not_found_handling": "single-page-application"
   }
 }
