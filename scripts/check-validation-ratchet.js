@@ -154,6 +154,21 @@ const RATCHETED = [
     doc: "docs/HERB_CARD_TEMPLATE.md",
   },
   {
+    key: "herb_track_filler",
+    script: "scripts/validate-herb-track-filler.js",
+    args: ["--json"],
+    extract: (out) => JSON.parse(out).defects,
+    detail: (out) => JSON.parse(out).by_code,
+    // 2026-09-02:herb_canon 那 5,495 筆裡壓倒性多數是「200 張卡缺 english_exam_track」,
+    // 而**已經有的 204 張裡 181 張裝的是樣板句** —— "Review pregnancy review before clinical
+    // use." 一字不差出現在 110 張卡上。更關鍵:js/knowledge.js 的 herbPanels 讀了
+    // english_exam_track 卻沒用它任何欄位,這些必填欄位不會出現在任何卡面。
+    // 也就是說把 herb_canon 補綠最省力的做法,就是再生 162 份同樣的樣板:閘門全綠、
+    // 卡面零改變、真假從此分不出來。這一層存在就是為了讓那條路走不通 —— 樣板本身是缺陷,
+    // 只准往下。等 Ting 裁定 english_exam_track 的去留(見 docs/TING_PENDING_RULINGS 的 C6)。
+    doc: "docs/HERB_CARD_TEMPLATE.md",
+  },
+  {
     key: "herb_card_schema",
     script: "scripts/validate-herb-card-schema.js",
     args: ["--json"],

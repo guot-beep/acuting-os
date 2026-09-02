@@ -249,6 +249,10 @@ jobs:
       # 一個把病歷寫到硬碟的按鈕:patientCode/caseTitle 不得出門、黑框必須在、
       # 產生器不准宣稱任何一份草稿已清乾淨、二次確認按取消就真的不下載。
       # 三支都是純合成 fixture,不碰 data/**,實測 exit 0 -> blocking。
+      # 帳本落庫工具:agent 唯讀出帳本、這支逐條驗證後才寫(現況不符就拒絕)
+      - name: field ledger apply self-test
+        run: node scripts/apply-field-ledger.js --self-test
+
       - name: CARE draft PHI export boundary (never claims a draft is clean)
         run: node scripts/validate-care-draft-phi.js
 
@@ -696,6 +700,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "24"
+      - name: herb exam-track filler (template sentences are defects, not content)
+        run: node scripts/validate-herb-track-filler.js
+
       - name: no layer may get worse than its committed baseline
         run: node scripts/check-validation-ratchet.js
 
