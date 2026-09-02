@@ -1,3 +1,69 @@
+# 2026-09-02 — acuting.com 曾被 Cloudflare Access 全站擋住(量測紀錄);現已解除,但 workers.dev 仍鎖著
+
+Ting 在別的對話串發現 acuting.com 對訪客顯示 Cloudflare Access 登入頁,要我把查到的
+記進來。**這一則只是量測紀錄,沒有動任何設定** —— Cloudflare 帳號設定不是 AI 該改的。
+
+## 05:25 UTC 的量測(curl,無 cookie = 等同 Googlebot 與 TikTok 點進來的人)
+
+| 網址 | 狀態 | Access 標頭 |
+|---|---|---|
+| `https://acuting.com/` | **302** | 有 |
+| `https://acuting.com/robots.txt` | **302** | 有 |
+| `https://acuting.com/index.html` | **302** | 有 |
+| `https://acuting-os.guotingru.workers.dev/` | **302** | 有 |
+| `https://play.acuting.com/` | 200 | 無 |
+
+**整站每一個路徑都被擋,連 `robots.txt` 都拿不到** —— 爬蟲連「這站允不允許爬」
+都讀不到,等於完全隱形。Ting 的判斷(SEO 全白做、TikTok 導流進不去)成立。
+
+證據:
+- `Www-Authenticate: Cloudflare-Access resource_metadata="https://acuting.com/.well-known/cloudflare-access-protected-resource/"`
+- `Location: https://soft-snow-1c0c.cloudflareaccess.com/cdn-cgi/access/login/acuting.com?...`
+- 該 JWT 的 meta 解出來是 `"hostname":"acuting.com"`、`"auth_status":"NONE"`
+- `acuting.com` 與 `workers.dev` 兩者的 `kid` 相同(`595aadf420d59864…`)
+  → **同一個 Access application 同時涵蓋兩個 hostname**
+
+## 06:30 UTC 複查:acuting.com 已解除
+
+| 網址 | 狀態 | Access 標頭 |
+|---|---|---|
+| `https://acuting.com/` | **200** | 無 |
+| `https://acuting.com/robots.txt` | **200** | 無 |
+| `https://acuting-os.guotingru.workers.dev/` | **302** | **仍有** |
+
+一小時內被解掉了(不是我做的)。
+
+## 一個我原本搞錯、必須更正的地方
+
+`acuting.com` 送出的**不是本 repo 的 OS app**,是行銷站:
+- title 是 `AcuTing — Ancien…`,不是 `AcuTing OS`
+- `/js/knowledge.js`、`/data/generated/knowledge_core.js` 都回 **404**
+
+而且那個行銷站的 SEO 是完整的:`robots.txt` 是 `User-agent: * / Allow: /` 並指向
+sitemap;`sitemap.xml` 回 200(5040 bytes,含 `/`、`/about/`、`/booking/`、
+`/contact/`、`/formulas/`、`/herbs/` 等);`<meta name="description">` 也有。
+
+**所以我當時說的「沒有 robots.txt、沒有 sitemap、沒有 meta description」是指
+本 repo 的 OS app(`index.html` 只有 `<title>AcuTing OS`,`build-site.js` 不產生
+robots/sitemap),不是 acuting.com。** 兩個是不同的站,當時混在一起講了。
+
+## 還沒解決:workers.dev 仍在 Access 後面
+
+`DEPLOYMENT.md` 目前寫著(2026-09-01 記):
+
+> **實測**:回 200,直接拿到 app —— **沒有經過 Cloudflare Access 的登入頁**。
+
+**這句現在是錯的** —— 今天量到 302 + Access 標頭。那份文件也寫明上鎖的原意是
+套在 `<專案>.pages.dev`,而不是這個 workers.dev。所以現況要嘛是刻意新鎖上的,
+要嘛是政策範圍被擴大時掃到的。
+
+連帶影響:同一份文件寫「既然這個 hostname 沒有 Access,AI session **可以**直接
+驗線上版(唯讀)」—— 這條驗收路徑現在走不通了。
+
+**待 Ting 決定**:workers.dev 要不要維持鎖著。
+(`docs/TING_PENDING_RULINGS_2026-08-31.md` B3 已經有「要不要鎖、鎖哪一個」這條。)
+決定之後 `DEPLOYMENT.md` 那兩段要跟著改 —— 目前先不動,免得把還沒定的狀態寫死。
+
 # 2026-09-02 深夜 — D1 切上去又切回來:Access 只鎖 acuting-os 的修正 + Cloudflare OTP 事故 → 回滾到純靜態,重切等事故解除
 
 22:07 D33 切換推上 main(1d22de44);她桌機、手機都看到藍徽章 `☁ D1`。接著兩件事:
