@@ -1,3 +1,50 @@
+# 2026-09-02 — acuting.com SEO 稽核:50 頁全抓,四項真缺陷;原始碼不在本 repo,只能交清單
+
+Ting 要求「把 acuting.com 那個 SEO 的洞補一下」。**補不了 —— 但不是因為做不到,
+是因為那個站的原始碼不在這裡。** `PUBLIC_HANDOFF_FOR_ACUTING_COM.md` 寫得很清楚:
+
+> The acuting.com site is currently managed outside this project.
+
+所以本批只做稽核並交出精確清單。**另外要先釐清一個我自己造成的混淆**:
+9/01 我說過「沒有 robots.txt、沒有 sitemap、沒有 meta description」——那是指
+**本 repo 的 OS app**,不是 acuting.com。而 OS app 現在在 Cloudflare Access 後面、
+是私有臨床工作區,**本來就不該被索引,不需要補 SEO**。兩件事不要混。
+
+## 量測(50 個 sitemap URL,50/50 抓到)
+
+**四項真缺陷:**
+
+| # | 缺陷 | 規模 | 修法 |
+|---|---|---|---|
+| 1 | **sitemap 列的網址會 308 跳轉** | **39/50** | 全部 `/journal/*.html` 跳到無副檔名版(`/journal/insomnia-tcm.html` → `/journal/insomnia-tcm`)。sitemap 應列最終網址;列會跳轉的等於浪費爬取預算 → sitemap 改列無 `.html` 版本 |
+| 2 | **缺 `og:image`** | **35/50** | 社群分享沒縮圖。缺的含 `/about/`、`/booking/`、`/contact/`、`/search/` 與 31 篇 journal;有的 15 頁是 `/`、`/formulas/`、`/herbs/`、`/journal/`、`/learn/`、`/patterns/`、`/points/` 與 8 篇 journal |
+| 3 | **`/booking/` 沒有 `<h1>`** | 1 頁 | 轉換關鍵頁卻沒有主標題(title 是 `Book an Appointment 預約掛號 \| AcuTing`,但 h1Count=0) |
+| 4 | **沒有 JSON-LD 結構化資料** | 9 頁 | 首頁有,其餘 9 頁沒有 |
+
+**已經沒問題的(不要謊報成缺陷)**:title、meta description、canonical、
+`html lang`、圖片 alt **全部 50 頁齊全**;標題與描述**沒有任何重複**。
+
+**判成缺陷但其實正常的**:`/journal/`(483 字元)、`/learn/`(521)、`/search/`(535)
+正文偏短 —— 那三個是列表頁,短是應該的。掃描器的門檻不適用,不列入清單。
+
+## 稽核工具自己先失敗了一次
+
+第一版 curl 直接吐 stdout,50 頁**全部**拿到
+`curl: (23) client returned ERROR on write`,而報表照樣印出一整排「0 缺陷」——
+抓 0 筆卻報全乾淨,是這個專案最會騙人的失敗模式(已經在課件那條線上犯過六次)。
+改成 `-o` 寫檔再讀才拿到真數字。
+
+第二版還有一個沒影響結論的 bug:`idx` 沒傳進 `extract()`,50 頁的暫存檔全部寫成
+`page-undefined.html` 互相覆蓋 —— 但每頁是抓完當場解析的,`seo.json` 的逐頁資料
+仍然正確,只是事後無法回頭檢視個別頁面。結論用 `seo.json` 複核過:
+15 頁**有** `og:image`(含首頁,與先前手動看到的 5 個 og 標籤吻合),
+證明抓取邏輯在那 15 頁上有效,「35 頁缺」不是 regex 失誤。
+
+## 交給誰
+
+acuting.com 的原始碼由本專案之外的流程管理。這四項要由管那個站的人改。
+本 repo 不動、也不該動。
+
 # 2026-09-01 — 卡上的「學習提示」長年是工程筆記;41 條改寫成給讀卡的人看
 
 Ting 裁定把上一則提到的 16 條註記改寫。實際做下來是 **41 條**,分兩批,
