@@ -2003,6 +2003,18 @@ function localDateISO(t) {
 }
 
 function loadClinicalCases() {
+  // D33 第二道錨(2026-09-02 修正):index.html 若宣告 <meta name="acuting-clinical-backend">,
+  // 病例正本就在雲端;此時若 js/clinical-sqlite-backend.js 沒載到或沒跑完(部署缺檔、SPA fallback
+  // 把缺的 .js 回成 HTML、腳本評估失敗),store 會停在 localStorage 後端 —— 那是一本空簿子,
+  // 靜默開下去就是兩本簿子。這裡不信任 adapter 一定會跑:宣告在、連接器不在 → 唯讀保護。
+  try {
+    const declaredCloud = document.querySelector('meta[name="acuting-clinical-backend"]');
+    if (declaredCloud && !window.AcuTingClinicalBackend) {
+      clinicalStoreIntegrityError = "這份部署宣告病例在雲端(" + (declaredCloud.getAttribute("content") || "?") + "),但雲端連接器沒有載入 —— 已進入唯讀保護,不會用瀏覽器本機開一本新簿子。請重新整理;若持續,把這段貼給 Claude。";
+      alert("臨床儲存層完整性錯誤,已進入唯讀保護:\n" + clinicalStoreIntegrityError);
+      return [];
+    }
+  } catch (_) { /* 沒有 document(測試環境)就略過 */ }
   // Phase C seam (js/clinical-store.js): storage I/O goes through the
   // repository layer; normalization stays HERE (contract layer, not storage).
   // The direct-localStorage fallback is not dead code — if the store script

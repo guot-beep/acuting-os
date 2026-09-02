@@ -68,6 +68,8 @@ export function createKvCore(db, opts) {
   const historyPerKey = (opts && opts.historyPerKey) || HISTORY_PER_KEY;
   const chunkUnits = (opts && opts.chunkUnits) || CHUNK_UNITS;
   const nowIso = (opts && opts.now) || (() => new Date().toISOString());
+  // 不記 history 的 key(例如衝突備份槽:它本身就是備份,再備份它只會讓庫長一倍)
+  const noHistory = new Set((opts && opts.noHistoryKeys) || []);
 
   async function ensureSchema() {
     await db.batch(SCHEMA_STATEMENTS.map((sql) => S(sql)));
@@ -112,6 +114,7 @@ export function createKvCore(db, opts) {
 
   /** 把「舊值」搬進 history 的語句(同一個 batch 內)。 */
   function historyStatements(next, key, op, prior, at, actor) {
+    if (noHistory.has(key)) return [];
     const chunks = prior ? splitChunks(prior.value, chunkUnits) : [];
     const stmts = [
       S(`INSERT INTO clinical_kv_history (revision, key, op, prior_present, prior_chunk_count, prior_char_length, written_at, actor)

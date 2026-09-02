@@ -130,6 +130,8 @@ export function createClinicalHandler(deps) {
         message: "另一台裝置或分頁在你上次讀取之後寫過檔;這次寫入被拒絕,零寫入。" });
 
       if (method === "PUT") {
+        // 正本鍵不接受「沒讀過就整本覆蓋」:If-Match 必帶(adapter 一定帶;只有衝突備份槽允許強制寫)
+        if (PROTECTED_KEYS.has(key) && ifMatch === undefined) return json(428, { error: "if_match_required", message: "正本鍵的寫入必須帶 If-Match(先讀再寫,防止整本被沒讀過的內容覆蓋)。" });
         const len = Number(request.headers.get("content-length") || 0);
         if (len > MAX_BODY) return json(413, { error: "too_large" });
         const body = await request.text();

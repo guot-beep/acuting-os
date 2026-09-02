@@ -29,7 +29,10 @@ function buildHandler(env) {
   if (authConfigured && jwksFor !== teamDomain) { jwksCache = createJwksCache(jwksFetcher(teamDomain)); jwksFor = teamDomain; }
   /* history 每 key 留 50 版(不是本機服務的 200):D1 免費方案單庫 500 MB,信封若長到 2 MB,200 版 × 2 鍵就爆了;
    * 50 版 + D1 Time Travel(7/30 天)夠用。 */
-  const core = createKvCore(createD1Adapter(env.CLINICAL_DB), { historyPerKey: Number(env.HISTORY_PER_KEY) || 50 });
+  const core = createKvCore(createD1Adapter(env.CLINICAL_DB), {
+    historyPerKey: Number(env.HISTORY_PER_KEY) || 50,
+    noHistoryKeys: ["acuting-clinical-conflict-backup"],   // 備份槽不再備份自己
+  });
   return createClinicalHandler({
     core,
     ensureSchema: () => core.ensureSchema(),

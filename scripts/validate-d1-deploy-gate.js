@@ -65,6 +65,12 @@ function check(root) {
     if (v.ENVIRONMENT !== "production") problems.push(`G2 vars.ENVIRONMENT 必須是 production(${v.ENVIRONMENT || "缺"})`);
     if (String(v.DEV_AUTH_BYPASS || "") === "1") problems.push("G2 vars.DEV_AUTH_BYPASS=1 不得出現在正式設定(雖然只在 loopback 生效,也不留)");
     if (!/worker\.mjs$/.test(cfg.main)) problems.push(`G2 main 應為 src/worker.mjs(${cfg.main})`);
+    // G4 第二道錨:app.js 自己也要在「宣告了雲端卻沒有連接器」時唯讀,不能只靠 adapter 檔案載得到
+    const appPath = path.join(root, "app.js");
+    const app = fs.existsSync(appPath) ? fs.readFileSync(appPath, "utf8") : "";
+    if (!app.includes('meta[name="acuting-clinical-backend"]') || !app.includes("!window.AcuTingClinicalBackend")) {
+      problems.push("G4 app.js 的 loadClinicalCases 缺少『宣告雲端但 AcuTingClinicalBackend 不存在 → 唯讀』守門;adapter 檔案沒載到時會靜默開本機新簿子");
+    }
   } else if (Array.isArray(cfg.d1_databases) && cfg.d1_databases.length) {
     problems.push("G3 沒有 main 卻有 d1_databases —— 半套設定;部署會失敗並擋住之後所有內容更新");
   }

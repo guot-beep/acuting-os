@@ -41,6 +41,7 @@
     const x = new global.XMLHttpRequest();
     try {
       x.open(method, path, false);
+      x.setRequestHeader("X-Requested-With", "XMLHttpRequest");   // Access 對 XHR 傾向回 401 而不是 302 到登入頁
       for (const k in (headers || {})) x.setRequestHeader(k, headers[k]);
       x.send(body === undefined ? null : body);
     } catch (e) {
@@ -260,6 +261,9 @@
           "\n重新整理頁面重新登入;若持續,把這段貼給 Claude。");
       }
       if (expectService) {
+        if (p.status === 401 || p.status === 403) {
+          return poisonNow("尚未登入或登入已過期(HTTP " + p.status + ")。重新整理頁面完成 Access 登入;在那之前病例唯讀。");
+        }
         return poisonNow("這個部署宣告有病例服務(" + (declared || "expected") + "),但探測不到(HTTP " + p.status + (p.error ? ", " + p.error : "") + ")。" +
           "已進入唯讀保護 —— 重新整理;若持續,把這段貼給 Claude。");
       }
@@ -315,8 +319,19 @@
     try { install(); }
     catch (e) {
       // install 內部已把「服務存在之後」的失敗全收成毒丸;會走到這裡只剩探測階段本身炸掉
-      // (例如瀏覽器擋同步 XHR)。在 loopback 上這值得被看到,但不能擋 app 啟動。
-      try { console.error("clinical-sqlite-backend: 探測失敗,維持 localStorage:", e && e.message); } catch (_) { /* */ }
+      // (例如瀏覽器擋同步 XHR)。宣告了雲端的部署**不准**因此退回 localStorage(那是兩本簿子的入口);
+      // 沒宣告的(本機服務情境)才維持 localStorage 並在 console 說一聲。
+      const msg = String((e && e.message) || e);
+      let declared = false;
+      try { declared = !!global.document.querySelector('meta[name="acuting-clinical-backend"]'); } catch (_) { declared = false; }
+      if (declared && global.AcuTingClinicalStore) {
+        const poison = poisonBackend("雲端病例連接器啟動失敗(" + msg + ")—— 唯讀保護。重新整理;若持續,把這段貼給 Claude。");
+        global.AcuTingClinicalStore.setBackend(poison);
+        global.AcuTingClinicalBackend = poison;
+        try { renderBadge(poison.state()); } catch (_) { /* */ }
+      } else {
+        try { console.error("clinical-sqlite-backend: 探測失敗,維持 localStorage:", msg); } catch (_) { /* */ }
+      }
     }
   }
 })(typeof window !== "undefined" ? window : globalThis);

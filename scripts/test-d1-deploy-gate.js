@@ -10,10 +10,12 @@ const { check, stripJsonc } = require("./validate-d1-deploy-gate.js");
 let passed = 0;
 const ok = (m) => { passed++; console.log(`  ✓ ${m}`); };
 const META = '<meta name="acuting-clinical-backend" content="d1">';
-const mk = (cfg, html) => {
+const GUARD = 'document.querySelector(\'meta[name="acuting-clinical-backend"]\'); if (declaredCloud && !window.AcuTingClinicalBackend) {}';
+const mk = (cfg, html, appJs) => {
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), "acuting-gate-"));
   fs.writeFileSync(path.join(dir, "wrangler.jsonc"), typeof cfg === "string" ? cfg : JSON.stringify(cfg, null, 2));
   fs.writeFileSync(path.join(dir, "index.html"), `<!doctype html><head><meta charset="utf-8">${html || ""}</head><body></body>`);
+  fs.writeFileSync(path.join(dir, "app.js"), appJs === undefined ? `function loadClinicalCases() { const declaredCloud = ${GUARD} }` : appJs);
   return dir;
 };
 const base = {
@@ -47,6 +49,10 @@ expectFail("ACCESS_ALLOWED_EMAILS 空", mk({ ...full, vars: { ...full.vars, ACCE
 expectFail("ENVIRONMENT 不是 production", mk({ ...full, vars: { ...full.vars, ENVIRONMENT: "staging" } }, META), /ENVIRONMENT/);
 expectFail("DEV_AUTH_BYPASS=1 混進正式設定", mk({ ...full, vars: { ...full.vars, DEV_AUTH_BYPASS: "1" } }, META), /DEV_AUTH_BYPASS/);
 expectFail("meta content 不是 d1", mk(full, '<meta name="acuting-clinical-backend" content="sqlite">'), /content/);
+
+console.log("\n第二道錨(G4)");
+expectFail("app.js 沒有『宣告雲端但無連接器 → 唯讀』守門", mk(full, META, "function loadClinicalCases() { return []; }"), /G4/);
+expectPass("守門在 → PASS", mk(full, META));
 
 console.log("\n半套(G3)");
 expectFail("沒 main 卻有 d1_databases", mk({ ...base, d1_databases: full.d1_databases }, ""), /G3/);

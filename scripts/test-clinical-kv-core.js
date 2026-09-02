@@ -118,6 +118,11 @@ const KEY = "acuting-clinical-cases-v1";
     assert.strictEqual(orphans, 0); ok("history 孤兒塊 = 0(修剪連塊一起清)");
     const first = await db.first("SELECT prior_present FROM clinical_kv_history WHERE key='k.emoji'");
     assert.strictEqual(first.prior_present, 0); ok("第一次寫入的 history 記 prior_present=0(先前不存在)");
+    const coreNoHist = createKvCore(db, { now, noHistoryKeys: ["k.nohist"] });
+    let r = await coreNoHist.put("k.nohist", "a", rev); rev = r.revision; r = await coreNoHist.put("k.nohist", "b", rev); rev = r.revision;
+    assert.strictEqual((await db.first("SELECT COUNT(*) n FROM clinical_kv_history WHERE key='k.nohist'")).n, 0);
+    assert.strictEqual(await coreNoHist.get("k.nohist"), "b");
+    ok("noHistoryKeys 的 key 不留 history(值照常寫、revision 照常進)");
   }
 
   console.log("\nsnapshot / status");
