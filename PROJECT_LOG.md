@@ -1,3 +1,76 @@
+# 2026-09-01 — 那 9 條「考綱官方對藥」不是查不到,是借用了另一筆的身分
+
+8-27 我把 14 條核不到的 NCBAHM 宣稱標成「未確認、不刪除」,理由是
+「可能是 NCCAOM 或其他考綱版本,正本不在 repo,無從核對」。Ting 裁定處理那 9 條。
+一量,那個理由**對其中 9 條是錯的**。
+
+## 量到什麼
+
+把每條多味組合拆成所有二味子對,回頭比對 Appendix B:
+
+| | 條數 | 結果 |
+|---|---|---|
+| 原有的 | 9 | **每一條都內含剛好一組** Appendix B 官方二味對藥 |
+| 遷移帶入的 | 5 | 一組子對都沒有 |
+
+而且那 9 組官方二味對藥**全都已經有自己的獨立記錄**,全部標著
+`ncbahm_official_pair: true`,全部通過驗證器:
+
+| 擴充組合 | 內含的官方對藥 | 已存在的記錄 |
+|---|---|---|
+| 川芎配當歸、赤芍 | 當歸 + 川芎 | `pair.dang_gui__chuan_xiong` |
+| 硫黃配附子、肉桂 | 附子 + 肉桂 | `pair.fu_zi__rou_gui` |
+| 白果配麻黃、紫蘇子、杏仁 | 麻黃 + 杏仁 | `pair.ma_huang__xing_ren` |
+| 狗脊配杜仲、續斷 | 杜仲 + 續斷 | `pair.du_zhong__xu_duan` |
+| 骨碎補配乳香、沒藥 | 乳香 + 沒藥 | `pair.ru_xiang__mo_yao` |
+| 海螵蛸配山藥、龍骨、牡蠣 | 龍骨 + 牡蠣 | `pair.long_gu__mu_li` |
+| 核桃仁配當歸、火麻仁、肉蓯蓉 | 當歸 + 肉蓯蓉 | `pair.dang_gui__rou_cong_rong` |
+| 胡椒配生薑、半夏 | 半夏 + 生薑 | `pair.ban_xia__sheng_jiang` |
+| 粳米配石膏、知母、甘草 | 石膏 + 知母 | `pair.shi_gao__zhi_mu` |
+
+所以這不是「查不到的宣稱」,是**把已經另有記錄的官方對藥的身分,套到臨床擴充組合上**。
+`field_sources.official_status` 九條全寫 `["ncbahm_2026_outline_appendix_b"]` —— 指著考綱,
+但考綱上的是核心那兩味,不是這個三味/四味組合。
+
+## 改了什麼
+
+每條:`ncbahm_official_pair` true → **false**;新增 `contains_ncbahm_official_pair`
+指向那筆官方記錄;`official_claim_status` 改 `resolved__core_pair_carded_separately`;
+`field_sources.official_status` 改成寫明「核心二味成立,本擴充不在其中」;
+`teaching_note_zh` 重寫。
+
+**內容欄位一個字沒動**,腳本逐一比對 18 個內容欄位(name/herbs/relation/meaning/
+indication/caution/actions/sources/found_in_formulas 等)才准寫檔;278 筆未動。
+
+閘門結果:核不到的宣稱 **18 項 → 9 項**(剩 5 條遷移帶入 + 4 條藥卡標籤)。
+
+## 新增守則:指標不准爛
+
+改成 `false` 之後這 9 條就退出原本那條檢查了 —— 等於從閘門視野裡消失。
+`validate-board-pair-attribution.js` 補第三段,守 `contains_ncbahm_official_pair`
+三件事:指得到、被指的那筆自己在 Appendix B 上、那兩味確實都在本組合裡。
+三種壞法各做一次負向測試(指向不存在 / 指向不在 B 上的 / 指向不被包含的),
+都會 FAIL 並指名;乾淨時報「成立 9 條」。
+
+## 兩個自己抓到的錯
+
+**註記第一版寫「課件列出的臨床擴充」——一核只有 4/9 的 `sources` 指課件。**
+另外 5 條是 American Dragon(5)、CloudTCM(1)、本庫方劑檔(1)。那句話會在 5 條卡上
+變成我新造的假宣稱。改成從每筆自己的 `sources` 推出來,不手寫。
+
+**註記第一版是寫給我自己看的。**卡片上出現 `ncbahm_official_pair:true`、
+`contains_ncbahm_official_pair` 這種欄位名,還有一整段在講我 8-27 那次判斷怎麼被推翻。
+讀卡的人不需要這些。重寫成:考綱收的是哪兩味、本組合多出什麼、出處是哪裡、
+要背的是核心那兩味。技術軌跡留在 commit 與這裡。
+
+## 沒動的
+
+**5 條遷移帶入的**(丹參配檀香砂仁、五靈脂配蒲黃、豬苓配茯苓澤瀉、澤瀉配白朮、
+茯神配酸棗仁遠志)一組 Appendix B 子對都沒有,8-27 的理由對它們仍然成立:
+核不到不等於假,維持「已標未確認、不刪除」。**4 條藥卡標籤**同理未動。
+
+13 支驗證器 exit 0,棘輪 PASS。開卡片讀過 紫蘇子 上的新註記。
+
 # 2026-09-01 — 7 個 A3 錨點修好(棘輪 7→0);但同一支查法量出 171 筆「頁碼在範圍內卻指錯」
 
 Ting 裁定查那 7 處。查完:**穴都在課件裡,只是頁碼寫過頭**,已逐穴改對,

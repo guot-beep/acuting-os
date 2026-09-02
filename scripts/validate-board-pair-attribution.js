@@ -152,6 +152,27 @@ for (const b of badCards) {
   });
 }
 
+/* ---- 3. contains_ncbahm_official_pair 指標(2026-09-01)---------------------
+   9 條「把官方對藥身分套到臨床擴充組合上」更正後,改用這個欄位指向真正的官方那筆。
+   指標會腐:被指的記錄可能改名、被拆、或自己不再是 Appendix B 對藥。
+   這裡守三件事 —— 指得到、被指的確實在 Appendix B 上、而且確實被本組合包含。
+   沒有這一段,更正過的 9 條就從閘門視野裡消失了(它們已不是 ncbahm_official_pair:true)。 */
+const pairById = new Map(pairs.map((p) => [p.id, p]));
+let okPtr = 0;
+for (const p of pairs) {
+  const target = p.contains_ncbahm_official_pair;
+  if (!target) continue;
+  const t = pairById.get(target);
+  if (!t) {
+    problems.push({ known: p.id, disclosed: false, text: "herb_pairs " + p.id + " 的 contains_ncbahm_official_pair 指向不存在的 " + target });
+  } else if (!onAppB(t.herbs || [])) {
+    problems.push({ known: p.id, disclosed: false, text: "herb_pairs " + p.id + " 指向 " + target + "，但那筆自己不在 Appendix B 上" });
+  } else if (!(t.herbs || []).every((h) => (p.herbs || []).includes(h))) {
+    problems.push({ known: p.id, disclosed: false, text: "herb_pairs " + p.id + " 指向 " + target + "，但那兩味並不都在本組合裡" });
+  } else okPtr++;
+}
+notes.push("contains_ncbahm_official_pair 指標 — 成立 " + okPtr + " 條");
+
 // Ting 裁定(2026-08-27):對不上本庫 NCBAHM 正本 **不等於** 宣稱是假的 ——
 // 來源可能是 NCCAOM 或其他考綱版本,那些正本不在 repo,無從核對。
 // 所以規則不是「不在清單上就 FAIL」,而是:**核不到就必須帶標記**。
