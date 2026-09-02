@@ -17,12 +17,23 @@
  * 外加第四條:`field_sources.compare_with` 引**自己**或**對比對象**那一頁都算對
  * (ST36 配 SP6 引脾經 SP-6 那頁;BL16 配 BL17 引的是 BL16 自己的專論頁)。
  *
- * ## 已知盲區:散文講義只有弱檢查
- * `Therapeutics Notes` 有 143 頁,而 SJ5 出現在其中 **45 頁**(31%)——
+ * ## 散文講義:原本是盲區,靠「比較要有兩邊」補起來了
+ * `Therapeutics Notes` 有 143 頁,SJ5 出現在其中 **45 頁**(31%)——
  * 「被引頁有沒有提到這個穴」對這種文件幾乎恆真,隨便挑一頁都有三分之一機率過。
- * 突變測試證實:把 TE5 從 `#p58` 改成 `#p3` **抓不到**。
- * 所以 prose 那一類**不計入「指對」**,單獨列成「弱檢查」——把它算成已驗證
- * 會虛報覆蓋率。它只擋得住「引了一頁完全沒提到這個穴」這種粗錯。
+ * 第一版因此只把 prose 算成「弱檢查」,突變測試也證實 TE5 `#p58`→`#p3` 抓不到。
+ *
+ * 後來去看那些錨點掛在哪裡,發現 **11 個散文錨點全部掛在 `field_sources.compare_with`**。
+ * 那是一個強得多的宣稱:被引的那一頁要撐得起「這兩個穴的比較」,就該同時看得到兩邊。
+ * 改成這條之後,10/11 通過,剩下的 CV12 `#p14` 是**真的指錯**——比較句
+ * 「REN 13 是上焦、REN 12 是中焦、REN 10 是下焦」在 `#p15`,而 CV10/CV13 本來就引 p.15。
+ * 修掉之後 419/419 全部走強檢查,突變測試從 2/3 變 3/3。
+ *
+ * 為什麼敢 gate 這一條:**自己找得到**,就證明版面與比對機制在那一頁是有效的,
+ * 這時「對象不在」才是關於資料的證據;自己都找不到則相反(可能是解析或別名問題),
+ * 所以那一類仍然只計「查不到」,不 gate。
+ * 比對認代號也認名字(`Shang Wan` / `上脘`)—— 散文比較常寫名字不寫代號,
+ * 只認代號會漏認,而漏認在這裡會直接變成假缺陷。
+ * 殘留盲區:**不掛在 compare_with 上的散文錨點**(今天 0 筆)仍然只有弱檢查。
  *
  * ## 為什麼一定要用 pdftotext,不能讀現成的 .md
  * `curriculum/acupoints/*.md` 是 pdfplumber 版(單欄、一欄一行),同一個代號會在
@@ -88,6 +99,29 @@ function codeAtLineStart(line) {
   const ch = ALIAS[norm(m[1])];
   return ch ? ch + m[2] : null;
 }
+/* 代號→名字。散文頁比較兩個穴時常常寫名字不寫代號(「Shang Wan」「上脘」),
+   只認代號會漏認,而漏認在這裡會直接變成假缺陷。pinyin 在資料裡是 "Shangwan"、
+   課件寫 "Shang Wan",所以兩邊都把非字母去掉再比。去掉空白會讓比對變寬
+   (可能誤命中),但寬只會少報缺陷,方向是安全的。 */
+const NAMES = new Map();
+function loadNames(recs) {
+  for (const r of recs) {
+    const c = canon(r.code || '');
+    if (!c) continue;
+    const py = String(r.pinyin || '').toLowerCase().replace(/[^a-z]/g, '');
+    NAMES.set(c, { py: py.length >= 4 ? py : null, zh: r.chinese || r.name_zh || null });
+  }
+}
+function mentionsPoint(txt, want, flatLower) {
+  if (mentionsAnywhere(txt, want)) return true;
+  const n = NAMES.get(want);
+  if (!n) return false;
+  if (n.py && flatLower.includes(n.py)) return true;
+  if (n.zh && n.zh.length >= 2 && txt.includes(n.zh)) return true;
+  return false;
+}
+const flatten = (t) => t.toLowerCase().replace(/[^a-z]/g, '');
+
 function mentionsAnywhere(txt, want) {
   const re = /([A-Za-z][A-Za-z.]{0,4})[\s.-]{0,2}(\d{1,3})(?![0-9])/g;
   let m;
@@ -164,6 +198,7 @@ function main() {
   }
 
   const recs = JSON.parse(fs.readFileSync(POINTS, 'utf8'));
+  loadNames(recs);
   const res = { ok: 0, weak: 0, wrong: [], unresolved: [] };
 
   for (const rec of recs) {
@@ -194,8 +229,26 @@ function main() {
 
         if (kind === 'prose') {
           const txt = pages[cited - 1] || '';
-          // 弱檢查:不計入「指對」,見檔頭〈已知盲區〉
-          if (targets.some((t) => mentionsAnywhere(txt, t))) res.weak++;
+          const flat = flatten(txt);
+          /* 散文講義沒有「條目」可查,單問「這頁提到這個穴沒」近乎恆真
+             (SJ5 出現在 143 頁裡的 45 頁),那是原本的盲區。
+             但實際上 11 個散文錨點**全部**掛在 compare_with 上 —— 那是一個強得多的
+             宣稱:被引的那一頁要撐得起「這兩個穴的比較」,就該同時看得到兩邊。
+             只看得到自己 = 這頁支持不了那段比較,算指錯。
+             為什麼敢 gate 這一條:自己找得到,就證明這頁的版面與比對機制在這頁是work 的,
+             那時候「對象不在」才是關於資料的證據。自己都找不到則相反(可能是解析或
+             別名的問題),所以那一類仍然只計「查不到」,不 gate。 */
+          const selfSeen = mentionsPoint(txt, self, flat);
+          if (inCompare && partners.size) {
+            if (!selfSeen) { res.unresolved.push({ code: rec.code, node, why: '散文:被引頁連這個穴自己都沒提到' }); return; }
+            const seenPartner = [...partners].some((p) => mentionsPoint(txt, p, flat));
+            if (seenPartner) res.ok++;
+            else res.wrong.push({ code: rec.code, node, cited, actual: [], kind: 'prose-compare',
+              why: '比較來源:該頁只有 ' + self + ',看不到 ' + [...partners].join('/') });
+            return;
+          }
+          // 非比較用的散文錨點(目前 0 筆):只擋得住「整頁完全沒提到」,不算已驗證
+          if (targets.some((t) => mentionsPoint(txt, t, flat))) res.weak++;
           else res.unresolved.push({ code: rec.code, node, why: '散文:被引頁沒提到' });
           return;
         }
@@ -251,7 +304,9 @@ function main() {
 
   const byCode = {};
   for (const w of res.wrong) {
-    const label = 'P1 頁碼指錯(' + w.kind + ')';
+    const label = w.kind === 'prose-compare'
+      ? 'P2 比較來源頁上看不到對比對象'
+      : 'P1 頁碼指錯(' + w.kind + ')';
     byCode[label] = (byCode[label] || 0) + 1;
   }
 
@@ -265,7 +320,7 @@ function main() {
   console.log('validate-acupoint-page-anchor-accuracy — 引的頁碼是不是那一頁');
   console.log('  掃到 #p 錨點        ' + scanned);
   console.log('  強檢查通過          ' + res.ok + '   ← 確認在該穴自己那一頁');
-  console.log('  弱檢查(散文)      ' + res.weak + '   ← 只確認被引頁提到過;見檔頭盲區說明,不算已驗證');
+  console.log('  弱檢查(散文)      ' + res.weak + '   ← 非比較用的散文錨點,只確認頁上提到過,不算已驗證');
   console.log('  **指錯**            ' + res.wrong.length + '   ← 缺陷數,由 ratchet 把關');
   console.log('  查不到(不算缺陷)  ' + res.unresolved.length + '   ← 別名表或版面判準的覆蓋率問題,不是資料錯');
 
@@ -273,7 +328,8 @@ function main() {
     const show = process.argv.includes('--worklist') ? res.wrong : res.wrong.slice(0, 15);
     console.log('');
     for (const w of show) {
-      console.log('  ' + String(w.code).padEnd(6) + ' 寫 p.' + w.cited + ' → 該穴自身條目在 p.' + w.actual.join('/'));
+      console.log('  ' + String(w.code).padEnd(6) + ' 寫 p.' + w.cited + ' → '
+        + (w.why ? w.why : '該穴自身條目在 p.' + w.actual.join('/')));
       console.log('      ' + w.node.replace('curriculum/acupoints/', ''));
     }
     if (show.length < res.wrong.length) console.log('  …另有 ' + (res.wrong.length - show.length) + ' 筆,加 --worklist 全列。');
@@ -285,7 +341,8 @@ function main() {
 
   console.log('');
   console.log('  三種來源用三把尺:table 看自身那一列 / compendium 看專論頁(行首代號 + LOCATION:)');
-  console.log('  / prose 看該頁有沒有提到。compare_with 引自己或對比對象那一頁都算對。');
+  console.log('  / prose 若掛在 compare_with 上,要求該頁同時看得到兩邊(認代號也認穴名)。');
+  console.log('  非比較用的散文錨點只做弱檢查 —— 那一類不算已驗證,見檔頭。');
   console.log(res.wrong.length ? '\n' + res.wrong.length + ' 筆指錯(數量由 check-validation-ratchet.js 把關,不准變多)。'
     : '\nPASS — 每個判得出來的錨點都指到該穴自己的那一頁。');
   if (res.wrong.length) process.exit(1);
