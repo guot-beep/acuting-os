@@ -160,18 +160,33 @@ for (const b of badCards) {
 const pairById = new Map(pairs.map((p) => [p.id, p]));
 let okPtr = 0;
 for (const p of pairs) {
-  const target = p.contains_ncbahm_official_pair;
-  if (!target) continue;
-  const t = pairById.get(target);
-  if (!t) {
-    problems.push({ known: p.id, disclosed: false, text: "herb_pairs " + p.id + " 的 contains_ncbahm_official_pair 指向不存在的 " + target });
-  } else if (!onAppB(t.herbs || [])) {
-    problems.push({ known: p.id, disclosed: false, text: "herb_pairs " + p.id + " 指向 " + target + "，但那筆自己不在 Appendix B 上" });
-  } else if (!(t.herbs || []).every((h) => (p.herbs || []).includes(h))) {
-    problems.push({ known: p.id, disclosed: false, text: "herb_pairs " + p.id + " 指向 " + target + "，但那兩味並不都在本組合裡" });
-  } else okPtr++;
+  /* 欄位是**陣列**:一個擴充組合可以內含不只一組考綱對藥
+     (延胡索配當歸、川芎、香附 就同時含 當歸+川芎 與 當歸+香附)。
+     2026-09-01 初版寫成單值,遇到那一條就裝不下 —— 單值加陣列兩種形狀並存
+     正是本庫最貴的缺陷,所以整批遷成陣列,舊的單值鍵一併淘汰。 */
+  if (typeof p.contains_ncbahm_official_pair === "string") {
+    problems.push({ known: p.id, disclosed: false,
+      text: "herb_pairs " + p.id + " 還在用已淘汰的單值鍵 contains_ncbahm_official_pair，請改用陣列 contains_ncbahm_official_pairs" });
+    continue;
+  }
+  const targets = p.contains_ncbahm_official_pairs;
+  if (!targets) continue;
+  if (!Array.isArray(targets) || !targets.length) {
+    problems.push({ known: p.id, disclosed: false, text: "herb_pairs " + p.id + " 的 contains_ncbahm_official_pairs 不是非空陣列" });
+    continue;
+  }
+  for (const target of targets) {
+    const t = pairById.get(target);
+    if (!t) {
+      problems.push({ known: p.id, disclosed: false, text: "herb_pairs " + p.id + " 的 contains_ncbahm_official_pairs 指向不存在的 " + target });
+    } else if (!onAppB(t.herbs || [])) {
+      problems.push({ known: p.id, disclosed: false, text: "herb_pairs " + p.id + " 指向 " + target + "，但那筆自己不在 Appendix B 上" });
+    } else if (!(t.herbs || []).every((h) => (p.herbs || []).includes(h))) {
+      problems.push({ known: p.id, disclosed: false, text: "herb_pairs " + p.id + " 指向 " + target + "，但那兩味並不都在本組合裡" });
+    } else okPtr++;
+  }
 }
-notes.push("contains_ncbahm_official_pair 指標 — 成立 " + okPtr + " 條");
+notes.push("contains_ncbahm_official_pairs 指標 — 成立 " + okPtr + " 條");
 
 /* ---- 4. relation = pair.rel.board_exam(2026-09-01)-------------------------
    這一條是前三條全綠之後才發現的:考綱宣稱不只寫在 ncbahm_official_pair 這個
@@ -180,10 +195,9 @@ notes.push("contains_ncbahm_official_pair 指標 — 成立 " + okPtr + " 條");
    前三條只查布林與標籤字串,所以 57 條用這個 relation 的記錄裡有 39 條核不到,
    而閘門一條都沒看到。修完 Ting 指名的 5 條後還有 34 條。
 
-   照本 repo 既有做法收:**具名上限、清單外一律 FAIL、數字只准變少**。
-   不列具名清單是因為這 34 條要逐條查證來源(多半是課件或方劑組成),
-   那是另一批工作;先把「不准再新增」鎖住。 */
-const BOARD_REL_CEILING = 34;
+   2026-09-01 稍後那 34 條也處理完了(撤掉 relation,改寫成方劑歸屬或指向內含的考綱對藥),
+   所以上限降到 0:**這個 relation 只能用在真的在 Appendix B 上的組合**,一條都不准例外。 */
+const BOARD_REL_CEILING = 0;
 const relClaims = pairs.filter((p) => p.relation === "pair.rel.board_exam");
 const relBad = relClaims.filter((p) => !onAppB(p.herbs || []));
 notes.push("relation=pair.rel.board_exam(卡上印「考綱列名對藥」)— 共 " + relClaims.length
