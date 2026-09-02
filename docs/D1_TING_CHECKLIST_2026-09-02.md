@@ -19,6 +19,12 @@
 **目的**:從此打開 `https://acuting-os.guotingru.workers.dev/` 要先用妳的 email 收一次性 PIN 才進得去。
 病例上雲之後,沒鎖 = 任何人拿到網址就能讀寫。
 
+> ⛔ **2026-09-02 事故,以後不要再犯**:Zero Trust 裡「All Workers」那種**帳號層級**的 Access 應用程式(目的地 = 全部 Workers)
+> 會把帳號裡**每一個** Worker 一起鎖,包括公開的主站 acuting.com(那晚被擋了約 2.5 小時,訪客全部看到登入頁)。
+> 只能用下面路徑 A 的 **Worker 專屬** Access(只管 acuting-os)。改完任何 Access 設定都要跑 `scripts/canary-production-lock.js`,
+> 它現在同時檢查「病例站被鎖」和「acuting.com / play 公開可看」。
+> 另一個坑:政策規則的選擇器要用 **Emails**(單一 email),不是 **Email domain**——Email domain 填整個 email 進去等於沒有人符合,自己會登不進去。
+
 ### 路徑 A(Worker 自己的 Access 頁籤 —— 這是 workers.dev 唯一正確的做法)
 1. 左邊選單 **Workers & Pages** → 點 **acuting-os** → 上方頁籤找 **Access**(在 Settings 旁邊;找不到就在 Settings 裡找 "Access")。
 2. 按 **Protect this Worker behind Access**(或 Enable)。範圍選 **All traffic**(不要選 Previews only)——

@@ -13,9 +13,21 @@ const i = argv.indexOf("--url");
 const BASE = String(i >= 0 ? argv[i + 1] : "https://acuting-os.guotingru.workers.dev").replace(/\/+$/, "");
 const rnd = Math.random().toString(36).slice(2, 10);
 const PATHS = ["/", "/index.html", "/__clinical/ping", "/__clinical/kv", "/previsit.html", `/nope-${rnd}`];
+/* 反向保證(2026-09-02 事故):帳號層級的「All Workers」Access 應用程式把主站 acuting.com 一起鎖了 2.5 小時。
+ * 這些公開站**必須**匿名可看(200);任何一個被轉去 cloudflareaccess.com 就 FAIL。 */
+const MUST_BE_PUBLIC = ["https://acuting.com/", "https://play.acuting.com/"];
 
 (async () => {
   let bad = 0;
+  console.log(`公開站不得被 Access 擋:`);
+  for (const u of MUST_BE_PUBLIC) {
+    let status = 0, loc = "", err = "";
+    try { const r = await fetch(u, { redirect: "manual" }); status = r.status; loc = r.headers.get("location") || ""; } catch (e) { err = e.message; }
+    const lockedByAccess = /\.cloudflareaccess\.com/i.test(loc);
+    const okPublic = status === 200 && !lockedByAccess;
+    if (!okPublic) bad++;
+    console.log(`  ${okPublic ? "🌐" : "⛔"} ${u.padEnd(34)} ${status}${lockedByAccess ? "  → 被 Access 擋住了!" : ""}${err ? "  " + err : ""}`);
+  }
   console.log(`零 cookie 探測 ${BASE}`);
   for (const p of PATHS) {
     let status = 0, loc = "", err = "";
@@ -29,8 +41,8 @@ const PATHS = ["/", "/index.html", "/__clinical/ping", "/__clinical/kv", "/previ
     console.log(`  ${locked ? "🔒" : "⛔"} ${p.padEnd(22)} ${status}${loc ? "  → " + loc.replace(/^https?:\/\//, "").split("/")[0] : ""}${err ? "  " + err : ""}`);
   }
   if (bad) {
-    console.log(`\nFAIL — ${bad}/${PATHS.length} 條路徑沒有被 Access 擋下(還沒鎖,或鎖的範圍不對)。D33:鎖上之前不得部署會讀 D1 的設定。`);
+    console.log(`\nFAIL — ${bad} 條不符:病例站每條路徑都要被 Access 擋下,而公開站(acuting.com / play)每條都要匿名 200。鎖的範圍錯了就是這裡亮。`);
     process.exit(1);
   }
-  console.log(`\nPASS — ${PATHS.length} 條路徑全部被 Access 擋下。`);
+  console.log(`\nPASS — 病例站 ${PATHS.length} 條路徑全部被 Access 擋下;公開站 ${MUST_BE_PUBLIC.length} 個全部匿名可看。`);
 })();

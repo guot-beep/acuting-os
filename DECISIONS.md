@@ -1175,4 +1175,8 @@ PASS(composition 查無藥材維持 1 味次 `formula.huang_tu_tang` 的「灶�
 > database_id / team domain / AUD)→ `validate-d1-deploy-gate.js`(Worker 與 index.html 宣告 meta 同進同出、無 placeholder)→ 合 main。
 > 兩個實測改寫了設計:D1 多句 batch 裡條件式 UPDATE 擋不住過期寫入(改 trigger RAISE);單列 2 MB 上限(值分塊)。
 > 另:Access 只能從 Worker 自己的 Access 頁籤套到 workers.dev(不能用 Self-hosted 應用);鎖上後同網址的 `previsit.html` 也會要求登入 ——
-> **Ting 2026-09-02 裁定「病人自填這個功能先不要」**,previsit 跟著鎖,不另外搬。她的 Zero Trust 帳號已存在(有「All Workers」與「BoardPrep」兩個 Access 應用),鎖 acuting-os 走 All Workers 那個。
+> **Ting 2026-09-02 裁定「病人自填這個功能先不要」**,previsit 跟著鎖,不另外搬。
+> **事故(2026-09-02 ~19:50–22:25)**:鎖 acuting-os 一開始用的是帳號層級的「All Workers」Access 應用程式(目的地 = 全部 Workers);
+> 它同時把公開主站 acuting.com 鎖住約 2.5 小時(訪客看到 Access 登入頁;play.acuting.com 在 GitHub Pages 不受影響)。
+> 修法:刪除 All Workers,改為 acuting-os Worker 專屬的 Access(All traffic,AUD 換成 a2d8e3c1…,commit c4d181df)。
+> 規則:**病例站的鎖只能是 Worker 專屬,永不使用帳號層級應用程式**;`scripts/canary-production-lock.js` 自此同時斷言 acuting.com / play 匿名 200。
