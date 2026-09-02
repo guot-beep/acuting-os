@@ -91,6 +91,14 @@ function main() {
     if (coverage < 0.5) thin.push({ id: r.id, n: keys.length, pct: Math.round(coverage * 100) });
 
     // H5 — bilingual arrays must align or the English side must be empty
+    //
+    // 2026-09-02:退役卡不在這條的射程內。唯一還亮著的 H5 是 herb.qing_mu_xiang
+    // (Ting 2026-09-01 裁定撤下,deprecation_kind: withdrawn_no_successor):
+    // functions_zh 兩條、actions_en 一條。要「修」只有兩條路 —— 給它補一條英文
+    // (那是替一張已撤下的卡編造內容)或刪掉一條中文(D6 只加深不刪除)。兩條都不對。
+    // 退役卡按定義不再進臨床畫面也不再被編輯,它的雙語對齊是無法行動的缺陷,
+    // 留在計數裡只會讓「還有幾個真缺陷」這個數字失真。
+    if (r.review_status === 'deprecated') return;
     [['functions_zh', 'actions_en'], ['indications_zh', 'indications_en'],
       ['contraindications_zh', 'contraindications_en'], ['cautions_zh', 'cautions_en']]
       .forEach(([zh, en]) => {
