@@ -1,10 +1,14 @@
-/* clinical-sqlite-backend.js — 把 AcuTingClinicalStore 的 backend 插座接到本機 SQLite 服務
- * (scripts/clinical-sqlite-service.js)。D18 的 pointer 步;Ting 2026-09-01 裁定提前執行。
+/* clinical-sqlite-backend.js — 把 AcuTingClinicalStore 的 backend 插座接到 /__clinical 病例服務:
+ *   - 本機 SQLite 服務(scripts/clinical-sqlite-service.js;已實作、未採用)
+ *   - Cloudflare Worker + D1(src/worker.mjs;D33,手機與電腦同一本病例簿)
+ * 兩者是同一份 HTTP 契約,adapter 不分家。
  *
- * 何時生效:只有在頁面是由那個服務供應時 —— 同源 GET /__clinical/ping 回應帶服務標記。
- *   在 workers.dev / dev-server.js 上這支什麼都不做,app 行為逐位元組不變;而且只在
- *   loopback 主機名(127.0.0.1 / localhost)上才會探測,線上版連那一個請求都不會發。
- *   換句話說:**開哪個網址 = 用哪個儲存**。回滾 = 開回原本的網址;兩邊互不覆寫。
+ * 何時探測(兩個條件任一):
+ *   (a) index.html 有 <meta name="acuting-clinical-backend" content="d1">:這份部署**宣告**自己帶病例服務,
+ *       所以在任何主機名上都探測,而且探測失敗 = 毒丸(唯讀),**絕不**退回 localStorage ——
+ *       meta 與 Worker 在同一個 commit 出貨,不會出現「宣告了卻沒有」的正常狀態。
+ *   (b) 沒有宣告時,只在 loopback 主機名探測(本機服務情境);線上純靜態部署一個請求都不發。
+ * 服務回 401/503 但帶服務標記 = 「服務在、拒絕我們」(沒登入 / Access 沒設定)→ 毒丸,不是「沒服務」。
  *
  * 同步 XHR(刻意):store 的 read()/write() 是同步契約,app 的存檔路徑靠 write() 拋錯
  *   來回滾記憶體狀態(persistClinicalCases → snapshot)。改成 async 會讓「存檔失敗」變成
@@ -48,8 +52,10 @@
   function makeBackend(transport, hooks) {
     hooks = hooks || {};
     const mirror = new Map();
-    let revision = 0, stale = false, projection = null, dbName = "";
-    const state = () => ({ kind: "sqlite", revision, projection, db: dbName, keys: mirror.size });
+    let revision = 0, stale = false, projection = null, dbName = "", backendKind = "sqlite", email = null, authLost = false;
+    const state = () => ({ kind: "sqlite", backend: backendKind, email: email, authLost: authLost, revision, projection, db: dbName, keys: mirror.size });
+    // 寫入一律帶自訂標頭:逼出 CORS 預檢、而服務不回任何 CORS 標頭 → 跨站帶 cookie 的寫入到不了服務(CSRF)。
+    const WRITE_HEADERS = { "X-AcuTing-Client": "clinical-store" };
     const onChange = () => { try { if (hooks.onChange) hooks.onChange(state()); } catch (_) { /* 徽章壞了不能害存檔 */ } };
 
     function refresh() {
@@ -90,7 +96,7 @@
         if (Array.isArray(parsed)) cases = parsed;
         else if (parsed && Array.isArray(parsed.cases)) cases = parsed.cases;
         const payload = JSON.stringify({ stashed_at: new Date().toISOString(), reason: why, key: k, cases: cases, raw: cases ? undefined : v });
-        const r = transport("PUT", API + "/kv/" + encodeURIComponent(CONFLICT_BACKUP_KEY), payload, { "Content-Type": "text/plain; charset=utf-8" });
+        const r = transport("PUT", API + "/kv/" + encodeURIComponent(CONFLICT_BACKUP_KEY), payload, { "Content-Type": "text/plain; charset=utf-8", ...WRITE_HEADERS });
         return r.status === 200;
       } catch (_) { return false; }
     }
@@ -98,7 +104,7 @@
       ensureFresh();
       const s = String(v);
       const r = transport("PUT", API + "/kv/" + encodeURIComponent(k), s,
-        { "Content-Type": "text/plain; charset=utf-8", "If-Match": String(revision) });
+        { "Content-Type": "text/plain; charset=utf-8", "If-Match": String(revision), ...WRITE_HEADERS });
       if (r.status === 200) {
         let j = {}; try { j = JSON.parse(r.text); } catch (_) { /* */ }
         mirror.set(k, s);
@@ -117,7 +123,7 @@
     }
     function del(k) {
       ensureFresh();
-      const r = transport("DELETE", API + "/kv/" + encodeURIComponent(k), undefined, { "If-Match": String(revision) });
+      const r = transport("DELETE", API + "/kv/" + encodeURIComponent(k), undefined, { "If-Match": String(revision), ...WRITE_HEADERS });
       if (r.status === 200) {
         let j = {}; try { j = JSON.parse(r.text); } catch (_) { /* */ }
         mirror.delete(k);
@@ -159,6 +165,12 @@
       markStale: () => { stale = true; },
       state: state,
       setDbName: (n) => { dbName = String(n || ""); },
+      setInfo: (i) => {
+        if (!i) return;
+        if (i.backend) backendKind = String(i.backend);
+        if (i.email !== undefined) email = i.email;
+        if (i.authLost !== undefined) authLost = !!i.authLost;
+      },
     };
   }
 
@@ -181,17 +193,27 @@
     }
     if (st.kind === "sqlite-unavailable") {
       el.style.background = "#7f1d1d";
-      el.textContent = "⛔ SQLite 服務讀取失敗 — 唯讀保護中";
+      el.textContent = "⛔ 病例服務無法使用 — 唯讀保護中(重新整理;持續的話把訊息貼給 Claude)";
       el.title = st.message || "";
+      return;
+    }
+    if (st.authLost) {
+      el.style.background = "#7f1d1d";
+      el.textContent = "⛔ 登入已過期 — 重新整理頁面重新登入(現在不會寫入)";
+      el.title = "病例服務回 401/503;為了不把資料寫進錯的地方,存檔會被擋下直到重新登入。";
       return;
     }
     const p = st.projection;
     const bad = !!(p && p.ok === false);
-    el.style.background = bad ? "#78350f" : "#14532d";
-    el.textContent = "🗄 SQLite · " + (st.db || "") + " · rev " + st.revision + (bad ? " · ⚠ 查詢表未更新" : "");
-    el.title = bad
-      ? "正本已存好。查詢用的投影表最近一次重建失敗:\n" + ((p && p.summary) || []).slice(-8).join("\n")
-      : (p ? "投影表最近重建:" + p.at + "(" + p.cases + " 筆病例)" : "正本在 SQLite;投影表在第一次存檔後建立");
+    const cloud = st.backend === "d1";
+    el.style.background = bad ? "#78350f" : (cloud ? "#1e3a8a" : "#14532d");
+    el.textContent = (cloud ? "☁ D1" : "🗄 SQLite") + " · " + (st.db || "") + " · rev " + st.revision +
+      (cloud && st.email ? " · " + st.email : "") + (bad ? " · ⚠ 查詢表未更新" : "");
+    el.title = cloud
+      ? "病例正本在 Cloudflare D1(手機與電腦是同一本);登入身分:" + (st.email || "?")
+      : (bad
+        ? "正本已存好。查詢用的投影表最近一次重建失敗:\n" + ((p && p.summary) || []).slice(-8).join("\n")
+        : (p ? "投影表最近重建:" + p.at + "(" + p.cases + " 筆病例)" : "正本在 SQLite;投影表在第一次存檔後建立"));
   }
 
   function install(opts) {
@@ -201,48 +223,77 @@
     const loc = opts.location || global.location;
     const onChange = opts.onChange || renderBadge;
     if (!store || !loc) return { installed: false, why: "no-store-or-location" };
-    if (!opts.force && !isLoopback(loc.hostname)) return { installed: false, why: "not-loopback" };
+    // 部署有沒有「宣告」自己帶病例服務(index.html 的 meta,與 Worker 同一個 commit 出貨)
+    const declared = (() => {
+      try {
+        const m = global.document && global.document.querySelector && global.document.querySelector('meta[name="acuting-clinical-backend"]');
+        return m ? String(m.getAttribute("content") || "").trim() : "";
+      } catch (_) { return ""; }
+    })();
+    const expectService = opts.expectService !== undefined ? !!opts.expectService : (declared === "d1" || declared === "sqlite");
+    if (!expectService && !opts.force && !isLoopback(loc.hostname)) return { installed: false, why: "not-loopback" };
+
+    const poisonNow = (msg) => {
+      const poison = poisonBackend(msg);
+      store.setBackend(poison);
+      global.AcuTingClinicalBackend = poison;
+      try { onChange(poison.state()); } catch (_) { /* */ }
+      return { installed: true, poisoned: true, why: msg };
+    };
+
     const p = transport("GET", API + "/ping");
-    if (p.status !== 200) return { installed: false, why: "no-service" };
     let ping = null;
-    try { ping = JSON.parse(p.text); } catch (_) { return { installed: false, why: "no-service" }; }
-    if (!ping || ping.service !== MARKER) return { installed: false, why: "no-service" };
+    try { ping = JSON.parse(p.text); } catch (_) { ping = null; }
+    const hasMarker = !!(ping && ping.service === MARKER);
+    if (p.status !== 200 || !hasMarker) {
+      if (hasMarker) {
+        // 服務在、但拒絕我們(401 沒登入 / 503 Access 沒設定):唯讀,不退回 localStorage
+        return poisonNow("病例服務拒絕連線(HTTP " + p.status + "):" + (ping.message || ping.error || "") +
+          "\n重新整理頁面重新登入;若持續,把這段貼給 Claude。");
+      }
+      if (expectService) {
+        return poisonNow("這個部署宣告有病例服務(" + (declared || "expected") + "),但探測不到(HTTP " + p.status + (p.error ? ", " + p.error : "") + ")。" +
+          "已進入唯讀保護 —— 重新整理;若持續,把這段貼給 Claude。");
+      }
+      return { installed: false, why: "no-service" };
+    }
 
     // 從這裡開始,服務確定存在:任何失敗都是毒丸,不是退回 localStorage。
     let backend;
     try {
       backend = makeBackend(transport, { onChange: onChange });
       backend.setDbName(ping.db || "");
+      backend.setInfo({ backend: ping.backend || "sqlite", email: ping.email || null });
       backend.refresh();
     } catch (e) {
-      const poison = poisonBackend((e && e.message) || String(e));
-      store.setBackend(poison);
-      global.AcuTingClinicalBackend = poison;
-      try { onChange(poison.state()); } catch (_) { /* */ }
-      return { installed: true, poisoned: true, why: poison.state().message };
+      return poisonNow((e && e.message) || String(e));
     }
     store.setBackend(backend);
     global.AcuTingClinicalBackend = backend;
     try { onChange(backend.state()); } catch (_) { /* */ }
-    // 投影狀態是存檔之後非同步算出來的;每 10 秒用 ping 把徽章更新一次(不碰鏡像)。
+    // 每 10 秒 ping 一次更新徽章(投影狀態 / 別台裝置的 revision / 登入是否過期);不碰鏡像內容。
     try {
       if (global.setInterval && global.document) {
         const t = global.setInterval(() => {
           if (global.document.hidden) return;
           const r = transport("GET", API + "/ping");
-          if (r.status !== 200) return;
-          try {
-            const j = JSON.parse(r.text);
-            const st = backend.state();
-            st.projection = j.projection || st.projection;
-            if (Number.isSafeInteger(j.revision) && j.revision !== st.revision) backend.markStale();
-            onChange(st);
-          } catch (_) { /* */ }
+          let j = null;
+          try { j = JSON.parse(r.text); } catch (_) { j = null; }
+          if (r.status !== 200) {
+            if (j && j.service === MARKER && (r.status === 401 || r.status === 503)) { backend.setInfo({ authLost: true }); onChange(backend.state()); }
+            return;
+          }
+          if (!j) return;
+          backend.setInfo({ authLost: false, email: j.email !== undefined ? j.email : backend.state().email });
+          const st = backend.state();
+          st.projection = j.projection || st.projection;
+          if (Number.isSafeInteger(j.revision) && j.revision !== st.revision) backend.markStale();
+          onChange(st);
         }, 10000);
         if (t && t.unref) t.unref();
       }
     } catch (_) { /* */ }
-    return { installed: true, revision: backend.state().revision, db: ping.db };
+    return { installed: true, revision: backend.state().revision, db: ping.db, backend: ping.backend || "sqlite", email: ping.email || null };
   }
 
   global.AcuTingClinicalSqliteBackend = { install, makeBackend, poisonBackend, renderBadge, MARKER, API, CONFLICT_BACKUP_KEY };
