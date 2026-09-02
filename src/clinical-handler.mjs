@@ -27,6 +27,7 @@ import { KEY_RE } from "./clinical-kv-core.mjs";
 export const SERVICE = "acuting-clinical-sqlite";   // adapter 認這個標記;D1 版沿用,另加 backend:"d1"
 export const API = "/__clinical";
 export const CLIENT_HEADER = "x-acuting-client";
+export const AUTH_HEADER = "x-acuting-auth";
 export const MAX_BODY = 64 * 1024 * 1024;
 /* 正本鍵不准 DELETE:app 在 v1 世界從不刪主槽;一個失控的 client 迴圈或被劫持的 session 也不能一鍵清空整本簿子。
  * 要「清空」只能寫入 "[]"(留在 history 裡),不能刪列。 */
@@ -59,8 +60,18 @@ export function createClinicalHandler(deps) {
   let schemaReady = null;
   const ready = () => (schemaReady ||= Promise.resolve(deps.ensureSchema ? deps.ensureSchema() : null));
 
+  /* 認證有兩種模式,由部署設定決定,永遠只啟用一種:
+   *   passphrase —— 通行碼(Ting 2026-09-02 裁定)。瀏覽器帶 X-AcuTing-Auth 通行證。
+   *   access     —— Cloudflare Access 的 JWT(保留;OTP 郵件事故解除後若要換回來不必改程式)。
+   * 兩種都沒設好 → 503,永不放行。 */
   async function authenticate(request, url) {
     if (deps.devBypass && isLoopback(url.hostname)) return { ok: true, email: "dev@localhost", actor: "dev@localhost", kind: "user", bypass: true };
+    if (deps.passphraseAuth) {
+      const token = request.headers.get(AUTH_HEADER);
+      const r = await deps.passphraseAuth.verifyToken(token);
+      if (!r.ok) return { ok: false, status: 401, reason: r.reason === "no_token" ? "auth_required" : "auth_invalid", detail: r.reason };
+      return { ok: true, email: null, actor: "passphrase", kind: "passphrase" };
+    }
     if (!deps.authConfigured) return { ok: false, status: 503, reason: "auth_not_configured" };
     const token = request.headers.get("cf-access-jwt-assertion");
     const r = await deps.verify(token);
@@ -75,12 +86,37 @@ export function createClinicalHandler(deps) {
     if (!url.pathname.startsWith(`${API}/`)) return json(404, { error: "not_found" });
     if (url.search) return json(400, { error: "no_query_string", message: "病例 API 不接受查詢字串(避免資料進到 URL 與存取紀錄)。" });
 
+    /* 換通行碼的端點:唯一不需要通行證的 /__clinical/* 路徑。
+     * 它自己有失敗限流,而且回應永遠是同一句話 —— 不告訴對方是「碼錯」還是「被鎖」以外的細節。 */
+    if (url.pathname === `${API}/auth` && deps.passphraseAuth) {
+      if (method !== "POST") return json(405, { error: "method_not_allowed" });
+      if (!request.headers.get(CLIENT_HEADER)) return json(403, { error: "client_header_required" });
+      let body = "";
+      try { body = await request.text(); } catch (_) { body = ""; }
+      let passphrase = "";
+      try { const j = JSON.parse(body || "{}"); passphrase = typeof j.passphrase === "string" ? j.passphrase : ""; } catch (_) { passphrase = ""; }
+      const res = await deps.passphraseAuth.login(passphrase, request);
+      if (res.ok) {
+        log(`POST auth 200 (通行碼正確,發證到期 ${new Date(res.expires * 1000).toISOString().slice(0, 10)})`);
+        return json(200, { service: SERVICE, backend: "d1", token: res.token, expires: res.expires });
+      }
+      if (res.blocked) {
+        log(`POST auth 429 (失敗過多,${res.retryAfterSec}s)`);
+        return json(429, { service: SERVICE, backend: "d1", error: "too_many_attempts", retry_after_sec: res.retryAfterSec,
+          message: `試太多次了,請等 ${Math.ceil(res.retryAfterSec / 60)} 分鐘再試。` }, { "Retry-After": String(res.retryAfterSec) });
+      }
+      log(`POST auth 401 (通行碼不符;這個來源今天第 ${res.fails || "?"} 次)`);
+      return json(401, { service: SERVICE, backend: "d1", error: "auth_invalid", message: "通行碼不對。" });
+    }
+
     const auth = await authenticate(request, url);
     if (!auth.ok) {
-      log(`${method} ${url.pathname} ${auth.status} ${auth.reason}`);
-      // 帶 service 標記:adapter 據此判「服務在、沒登入」→ 毒丸,不是退回 localStorage
+      log(`${method} ${url.pathname} ${auth.status} ${auth.reason}${auth.detail ? " (" + auth.detail + ")" : ""}`);
+      // 帶 service 標記:adapter 據此判「服務在、沒登入」→ 毒丸或跳出通行碼輸入框,不是退回 localStorage
       return json(auth.status, { service: SERVICE, backend: "d1", error: auth.reason,
-        message: auth.status === 503 ? "服務的 Access 設定不完整,拒絕所有請求(fail-closed)。" : "登入無效或已過期,請重新整理頁面重新登入。" });
+        auth_mode: deps.passphraseAuth ? "passphrase" : "access",
+        message: auth.status === 503 ? "服務的認證設定不完整,拒絕所有請求(fail-closed)。"
+          : (deps.passphraseAuth ? "需要通行碼(或通行證已過期)。" : "登入無效或已過期,請重新整理頁面重新登入。") });
     }
 
     try { await ready(); } catch (e) {

@@ -235,6 +235,11 @@ jobs:
         run: node scripts/test-clinical-kv-core.js
       - name: clinical HTTP handler contract (fail-closed auth, CSRF header, CAS)
         run: node scripts/test-clinical-handler.js
+      # 通行碼認證(Ting 2026-09-02 裁定;取代 Cloudflare Access)
+      - name: passphrase auth primitives (hash, token, rate limit, constant-time)
+        run: node scripts/test-passphrase-auth.js
+      - name: passphrase auth end-to-end through the HTTP handler
+        run: node scripts/test-passphrase-flow.js
       # 部署閘門:Worker 與 index.html 宣告必須同進同出;半套設定不准上 main(D33)
       - name: D1 deploy gate
         run: node scripts/validate-d1-deploy-gate.js

@@ -34,6 +34,14 @@
   const CONFLICT_BACKUP_KEY = "acuting-clinical-conflict-backup";
   const CHANNEL = "acuting-clinical-sqlite";
   const BADGE_ID = "acuting-sqlite-badge";
+  /* 通行碼模式(Ting 2026-09-02 裁定,取代 Cloudflare Access):
+   * 這裡存的是伺服器發的**通行證**,不是通行碼 —— 通行碼永遠不進瀏覽器儲存、不進網址、不進 log。
+   * 通行證只證明「曾經打對過」,有到期日,換通行碼時伺服器把版本 +1 就全部失效。 */
+  const TOKEN_KEY = "acuting-clinical-auth-token";
+  const PROMPT_ID = "acuting-passphrase-prompt";
+  const readToken = () => { try { return global.localStorage.getItem(TOKEN_KEY) || ""; } catch (_) { return ""; } };
+  const writeToken = (t) => { try { global.localStorage.setItem(TOKEN_KEY, t); return true; } catch (_) { return false; } };
+  const clearToken = () => { try { global.localStorage.removeItem(TOKEN_KEY); } catch (_) { /* */ } };
 
   const isLoopback = (h) => h === "127.0.0.1" || h === "localhost" || h === "[::1]";
 
@@ -42,6 +50,8 @@
     try {
       x.open(method, path, false);
       x.setRequestHeader("X-Requested-With", "XMLHttpRequest");   // Access 對 XHR 傾向回 401 而不是 302 到登入頁
+      const tok = readToken();
+      if (tok) x.setRequestHeader("X-AcuTing-Auth", tok);          // 通行碼模式的通行證;Access 模式下伺服器忽略它
       for (const k in (headers || {})) x.setRequestHeader(k, headers[k]);
       x.send(body === undefined ? null : body);
     } catch (e) {
@@ -183,6 +193,59 @@
     };
   }
 
+  /* 通行碼輸入框。刻意做成「蓋住整頁、只能輸入」的樣子:病例讀不到的時候,
+   * 讓她以為 app 壞了比讓她看到一本空簿子好 —— 後者才是真的危險。 */
+  function renderPassphrasePrompt(transport, opts) {
+    const d = global.document;
+    if (!d || !d.body || d.getElementById(PROMPT_ID)) return;
+    const wrap = d.createElement("div");
+    wrap.id = PROMPT_ID;
+    wrap.setAttribute("role", "dialog");
+    wrap.setAttribute("aria-modal", "true");
+    wrap.style.cssText = "position:fixed;inset:0;z-index:100000;background:rgba(15,23,42,.92);display:flex;align-items:center;justify-content:center;padding:20px;";
+    wrap.innerHTML =
+      '<form style="background:#fff;max-width:420px;width:100%;border-radius:14px;padding:22px 20px;box-shadow:0 18px 50px rgba(0,0,0,.35);font:15px/1.6 system-ui,-apple-system,&quot;Noto Sans TC&quot;,sans-serif;color:#0f172a;">' +
+      '<h2 style="margin:0 0 6px;font-size:19px;">輸入病例通行碼</h2>' +
+      '<p style="margin:0 0 14px;color:#475569;font-size:13.5px;">這台裝置第一次開病例才要輸入,之後 30 天內免打。<br>知識庫(穴位、方劑、中藥)不需要通行碼。</p>' +
+      '<input type="password" autocomplete="current-password" autocapitalize="off" autocorrect="off" spellcheck="false" ' +
+      'style="width:100%;box-sizing:border-box;padding:11px 12px;font-size:16px;border:1px solid #cbd5e1;border-radius:9px;" placeholder="妳訂的那句話">' +
+      '<p data-err style="margin:10px 0 0;color:#b91c1c;font-size:13.5px;min-height:1.2em;"></p>' +
+      '<button type="submit" style="margin-top:12px;width:100%;padding:11px;font-size:16px;border:0;border-radius:9px;background:#1d4ed8;color:#fff;cursor:pointer;">進入病例</button>' +
+      '</form>';
+    const form = wrap.querySelector("form");
+    const input = wrap.querySelector("input");
+    const err = wrap.querySelector("[data-err]");
+    const btn = wrap.querySelector("button");
+    form.addEventListener("submit", (ev) => {
+      ev.preventDefault();
+      const pass = input.value;
+      if (!pass) { err.textContent = "還沒輸入。"; return; }
+      btn.disabled = true; btn.textContent = "檢查中…"; err.textContent = "";
+      let r;
+      try {
+        r = transport("POST", API + "/auth", JSON.stringify({ passphrase: pass }),
+          { "Content-Type": "application/json; charset=utf-8", "X-AcuTing-Client": "clinical-store" });
+      } catch (e) { r = { status: 0, text: "", error: String((e && e.message) || e) }; }
+      btn.disabled = false; btn.textContent = "進入病例";
+      let j = null;
+      try { j = JSON.parse(r.text); } catch (_) { j = null; }
+      if (r.status === 200 && j && typeof j.token === "string" && j.token) {
+        input.value = "";                                  // 通行碼不留在 DOM 裡
+        if (!writeToken(j.token)) { err.textContent = "瀏覽器不讓我存通行證(無痕模式?)。換一般視窗再試。"; return; }
+        btn.textContent = "好了,重新載入…";
+        try { global.location.reload(); } catch (_) { /* */ }
+        return;
+      }
+      if (r.status === 429) { err.textContent = (j && j.message) || "試太多次了,等一下再試。"; return; }
+      if (r.status === 401) { err.textContent = "通行碼不對。注意大小寫與空白。"; return; }
+      if (r.status === 0) { err.textContent = "連不上伺服器,檢查網路後再試。"; return; }
+      err.textContent = "伺服器回了非預期的結果(HTTP " + r.status + ")。把這個數字告訴 Claude。";
+    });
+    d.body.appendChild(wrap);
+    try { input.focus(); } catch (_) { /* */ }
+    if (opts && opts.onRendered) opts.onRendered(wrap);
+  }
+
   function poisonBackend(message) {
     const boom = () => { throw new Error(message); };
     return { read: boom, write: boom, readKey: boom, writeKey: boom, removeKey: boom, state: () => ({ kind: "sqlite-unavailable", message: message }) };
@@ -256,7 +319,16 @@
     const hasMarker = !!(ping && ping.service === MARKER);
     if (p.status !== 200 || !hasMarker) {
       if (hasMarker) {
-        // 服務在、但拒絕我們(401 沒登入 / 503 Access 沒設定):唯讀,不退回 localStorage
+        /* 通行碼模式且尚未持證 → 跳輸入框(而不是只留一個看不懂的錯誤)。
+         * 同時仍然裝毒丸:在她打對之前,病例一律唯讀 —— 絕不讓 app 退回 localStorage 開一本空簿子。 */
+        if (p.status === 401 && ping.auth_mode === "passphrase") {
+          if (ping.error === "auth_invalid") clearToken();   // 舊證過期或被換過通行碼:丟掉,免得每次都拿它去撞
+          const res = poisonNow("需要通行碼才能開病例。輸入之後這台裝置 30 天內免再打。");
+          try { renderPassphrasePrompt(transport, opts); } catch (e) { try { console.error("通行碼輸入框無法顯示:", e && e.message); } catch (_) { /* */ } }
+          res.needsPassphrase = true;
+          return res;
+        }
+        // 服務在、但拒絕我們(401 沒登入 / 503 設定不全):唯讀,不退回 localStorage
         return poisonNow("病例服務拒絕連線(HTTP " + p.status + "):" + (ping.message || ping.error || "") +
           "\n重新整理頁面重新登入;若持續,把這段貼給 Claude。");
       }
@@ -312,7 +384,7 @@
     return { installed: true, revision: backend.state().revision, db: ping.db, backend: ping.backend || "sqlite", email: ping.email || null };
   }
 
-  global.AcuTingClinicalSqliteBackend = { install, makeBackend, poisonBackend, renderBadge, MARKER, API, CONFLICT_BACKUP_KEY };
+  global.AcuTingClinicalSqliteBackend = { install, makeBackend, poisonBackend, renderBadge, renderPassphrasePrompt, MARKER, API, CONFLICT_BACKUP_KEY, TOKEN_KEY };
 
   // 瀏覽器裡自動安裝(script 是 defer,store 已在前面載好)。Node 測試環境只匯出,不自動跑。
   if (global.document && global.XMLHttpRequest && global.location) {

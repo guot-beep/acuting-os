@@ -59,9 +59,27 @@ function check(root) {
     if (!d1) problems.push("G2 d1_databases 缺 binding=CLINICAL_DB");
     else if (!/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(String(d1.database_id || ""))) problems.push(`G2 CLINICAL_DB.database_id 不是真的 UUID(${d1.database_id})—— 還是 placeholder,部署會失敗`);
     const v = cfg.vars || {};
-    if (!/^https:\/\/[a-z0-9-]+\.cloudflareaccess\.com$/i.test(String(v.ACCESS_TEAM_DOMAIN || ""))) problems.push(`G2 vars.ACCESS_TEAM_DOMAIN 必須是 https://<team>.cloudflareaccess.com(${v.ACCESS_TEAM_DOMAIN || "缺"})`);
-    if (!/^[0-9a-f]{64}$/i.test(String(v.ACCESS_AUD || ""))) problems.push("G2 vars.ACCESS_AUD 必須是 Access 應用程式的 64 hex AUD tag(缺或格式不對)");
-    if (!String(v.ACCESS_ALLOWED_EMAILS || "").trim()) problems.push("G2 vars.ACCESS_ALLOWED_EMAILS 不得為空(第二道:政策設錯時仍只放行這些 email)");
+    /* 認證模式:通行碼(Ting 2026-09-02 裁定)或 Cloudflare Access,**恰好一種**。
+     * 兩種都沒設 → 部署上去每個病例請求都 503,等於白推一次;
+     * 兩種都設 → 沒有人說得準當下走的是哪一條,將來換模式時會有人以為改了其實沒改。 */
+    const hasPass = !!(v.CLINICAL_PASS_SALT || v.CLINICAL_PASS_HASH);
+    const hasAccess = !!(v.ACCESS_TEAM_DOMAIN || v.ACCESS_AUD);
+    if (hasPass && hasAccess) problems.push("G2 通行碼與 Cloudflare Access 兩種認證同時設定 —— 只能留一種");
+    else if (!hasPass && !hasAccess) problems.push("G2 沒有任何認證設定(通行碼的 CLINICAL_PASS_* 或 Access 的 ACCESS_*)—— 部署後病例 API 會全部 503");
+    else if (hasPass) {
+      if (!/^[A-Za-z0-9_-]{16,}$/.test(String(v.CLINICAL_PASS_SALT || ""))) problems.push("G2 vars.CLINICAL_PASS_SALT 格式不對(scripts/make-clinical-passphrase-hash.js 產生的 base64url)");
+      if (!/^[A-Za-z0-9_-]{40,}$/.test(String(v.CLINICAL_PASS_HASH || ""))) problems.push("G2 vars.CLINICAL_PASS_HASH 格式不對(base64url,256-bit)");
+      const iter = Number(v.CLINICAL_PASS_ITER || 0);
+      if (!Number.isFinite(iter) || iter < 10000) problems.push(`G2 vars.CLINICAL_PASS_ITER 太低或缺(${v.CLINICAL_PASS_ITER || "缺"});至少 10000`);
+      if (!Number.isSafeInteger(Number(v.CLINICAL_PASS_VERSION)) || Number(v.CLINICAL_PASS_VERSION) < 1) problems.push("G2 vars.CLINICAL_PASS_VERSION 必須是 ≥1 的整數(換通行碼時 +1,舊通行證才會失效)");
+      /* 簽證秘密只能當 secret 放(wrangler secret put),不能寫進 wrangler.jsonc ——
+       * 這個檔在 git 裡,寫進去等於把「偽造通行證的鑰匙」推上 GitHub。 */
+      if (v.CLINICAL_TOKEN_SECRET) problems.push("G2 CLINICAL_TOKEN_SECRET 不得出現在 wrangler.jsonc(那是能偽造通行證的鑰匙,要用 wrangler secret put 或後台 Secret 設定)");
+    } else {
+      if (!/^https:\/\/[a-z0-9-]+\.cloudflareaccess\.com$/i.test(String(v.ACCESS_TEAM_DOMAIN || ""))) problems.push(`G2 vars.ACCESS_TEAM_DOMAIN 必須是 https://<team>.cloudflareaccess.com(${v.ACCESS_TEAM_DOMAIN || "缺"})`);
+      if (!/^[0-9a-f]{64}$/i.test(String(v.ACCESS_AUD || ""))) problems.push("G2 vars.ACCESS_AUD 必須是 Access 應用程式的 64 hex AUD tag(缺或格式不對)");
+      if (!String(v.ACCESS_ALLOWED_EMAILS || "").trim()) problems.push("G2 vars.ACCESS_ALLOWED_EMAILS 不得為空(第二道:政策設錯時仍只放行這些 email)");
+    }
     if (v.ENVIRONMENT !== "production") problems.push(`G2 vars.ENVIRONMENT 必須是 production(${v.ENVIRONMENT || "缺"})`);
     if (String(v.DEV_AUTH_BYPASS || "") === "1") problems.push("G2 vars.DEV_AUTH_BYPASS=1 不得出現在正式設定(雖然只在 loopback 生效,也不留)");
     if (!/worker\.mjs$/.test(cfg.main)) problems.push(`G2 main 應為 src/worker.mjs(${cfg.main})`);
