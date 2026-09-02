@@ -173,6 +173,32 @@ for (const p of pairs) {
 }
 notes.push("contains_ncbahm_official_pair 指標 — 成立 " + okPtr + " 條");
 
+/* ---- 4. relation = pair.rel.board_exam(2026-09-01)-------------------------
+   這一條是前三條全綠之後才發現的:考綱宣稱不只寫在 ncbahm_official_pair 這個
+   **看不到的布林**上,也寫在 relation 裡 —— `pair.rel.board_exam` 在卡上印出來的是
+   「考綱列名對藥 · Board-outline listed pair」,那是使用者真正讀到的那句話。
+   前三條只查布林與標籤字串,所以 57 條用這個 relation 的記錄裡有 39 條核不到,
+   而閘門一條都沒看到。修完 Ting 指名的 5 條後還有 34 條。
+
+   照本 repo 既有做法收:**具名上限、清單外一律 FAIL、數字只准變少**。
+   不列具名清單是因為這 34 條要逐條查證來源(多半是課件或方劑組成),
+   那是另一批工作;先把「不准再新增」鎖住。 */
+const BOARD_REL_CEILING = 34;
+const relClaims = pairs.filter((p) => p.relation === "pair.rel.board_exam");
+const relBad = relClaims.filter((p) => !onAppB(p.herbs || []));
+notes.push("relation=pair.rel.board_exam(卡上印「考綱列名對藥」)— 共 " + relClaims.length
+  + " 條,核得到 " + (relClaims.length - relBad.length) + " / 核不到 " + relBad.length
+  + "(上限 " + BOARD_REL_CEILING + ",只准變少)");
+let relCeilingBreached = false;
+if (relBad.length > BOARD_REL_CEILING) {
+  relCeilingBreached = true;
+  console.log("FAIL — relation 為 pair.rel.board_exam 而核不到的記錄從 " + BOARD_REL_CEILING
+    + " 增為 " + relBad.length + " 條。");
+  console.log("  這個 relation 會在卡上印「考綱列名對藥」,核不到就不要用它;");
+  console.log("  新增的請改用七情 relation,或不填 relation(卡上就不顯示分類標籤)。");
+  relBad.slice(0, 10).forEach((p) => console.log("  ✗ " + p.id + "（" + p.name_zh + "）"));
+}
+
 // Ting 裁定(2026-08-27):對不上本庫 NCBAHM 正本 **不等於** 宣稱是假的 ——
 // 來源可能是 NCCAOM 或其他考綱版本,那些正本不在 repo,無從核對。
 // 所以規則不是「不在清單上就 FAIL」,而是:**核不到就必須帶標記**。
@@ -197,6 +223,10 @@ if (undisclosed.length) {
   console.log("  處置:不必刪除宣稱 —— herb_pairs 加 official_claim_status:"
     + "\"unmatched_ncbahm_appendix_b__source_unverified\" 並在 teaching_note_zh 寫明核對範圍;"
     + "藥卡則在 rationale_zh 附註未能核實。");
+  process.exit(1);
+}
+if (relCeilingBreached) {
+  console.log("\nFAIL — relation 上的考綱宣稱超出上限(見上)。");
   process.exit(1);
 }
 console.log("\nPASS — 所有考綱宣稱要嘛對得上正本,要嘛已標未確認。");
