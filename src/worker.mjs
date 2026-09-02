@@ -24,6 +24,7 @@ function buildHandler(env) {
   const teamDomain = String(env.ACCESS_TEAM_DOMAIN || "").replace(/\/+$/, "");
   const aud = String(env.ACCESS_AUD || "");
   const allowed = String(env.ACCESS_ALLOWED_EMAILS || "").split(",").map((s) => s.trim()).filter(Boolean);
+  const allowedSvc = String(env.ACCESS_ALLOWED_SERVICE_TOKENS || "").split(",").map((s) => s.trim()).filter(Boolean);   // service token 的 Client ID(備份工具)
   const authConfigured = !!(teamDomain && aud);
   if (authConfigured && jwksFor !== teamDomain) { jwksCache = createJwksCache(jwksFetcher(teamDomain)); jwksFor = teamDomain; }
   const core = createKvCore(createD1Adapter(env.CLINICAL_DB));
@@ -32,7 +33,7 @@ function buildHandler(env) {
     ensureSchema: () => core.ensureSchema(),
     authConfigured,
     devBypass: env.DEV_AUTH_BYPASS === "1",
-    verify: (token) => verifyAccessJwt(token, { teamDomain, aud, jwks: jwksCache, allowedEmails: allowed }),
+    verify: (token) => verifyAccessJwt(token, { teamDomain, aud, jwks: jwksCache, allowedEmails: allowed, allowedServiceNames: allowedSvc }),
     version: VERSION,
     dbName: env.CLINICAL_DB_NAME || "acuting-clinical",
     environment: env.ENVIRONMENT || null,

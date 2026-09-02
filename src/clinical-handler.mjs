@@ -57,12 +57,13 @@ export function createClinicalHandler(deps) {
   const ready = () => (schemaReady ||= Promise.resolve(deps.ensureSchema ? deps.ensureSchema() : null));
 
   async function authenticate(request, url) {
-    if (deps.devBypass && isLoopback(url.hostname)) return { ok: true, email: "dev@localhost", bypass: true };
+    if (deps.devBypass && isLoopback(url.hostname)) return { ok: true, email: "dev@localhost", actor: "dev@localhost", kind: "user", bypass: true };
     if (!deps.authConfigured) return { ok: false, status: 503, reason: "auth_not_configured" };
     const token = request.headers.get("cf-access-jwt-assertion");
     const r = await deps.verify(token);
     if (!r.ok) return { ok: false, status: 401, reason: r.reason };
-    return { ok: true, email: r.email };
+    // actor 進 history:使用者 = email;service token = svc:<common_name>(備份工具)。兩者都不是 PHI。
+    return { ok: true, email: r.email || null, actor: r.email || (r.commonName ? `svc:${r.commonName}` : null), kind: r.kind || "user" };
   }
 
   return async function handle(request) {
@@ -129,14 +130,14 @@ export function createClinicalHandler(deps) {
         if (len > MAX_BODY) return json(413, { error: "too_large" });
         const body = await request.text();
         if (body.length > MAX_BODY) return json(413, { error: "too_large" });
-        const r = await core.put(key, body, ifMatch, auth.email || null);
+        const r = await core.put(key, body, ifMatch, auth.actor || null);
         if (!r.ok) { log(`PUT ${key} 409 (rev ${r.revision} ≠ ${r.expected})`); return conflict(r); }
-        log(`PUT ${key} ${body.length} chars → rev ${r.revision} ${auth.email || ""}`);
+        log(`PUT ${key} ${body.length} chars → rev ${r.revision} ${auth.actor || ""}`);
         return json(200, { revision: r.revision });
       }
-      const r = await core.del(key, ifMatch, auth.email || null);
+      const r = await core.del(key, ifMatch, auth.actor || null);
       if (!r.ok) { log(`DELETE ${key} 409`); return conflict(r); }
-      log(`DELETE ${key} → rev ${r.revision} ${auth.email || ""}`);
+      log(`DELETE ${key} → rev ${r.revision} ${auth.actor || ""}`);
       return json(200, { revision: r.revision });
     }
     return json(404, { error: "not_found" });

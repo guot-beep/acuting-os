@@ -127,11 +127,22 @@ export async function verifyAccessJwt(token, opts) {
   if (Number.isFinite(payload.nbf) && payload.nbf > now + skew) return fail("not_yet_valid");
   if (Number.isFinite(payload.iat) && payload.iat > now + skew) return fail("not_yet_valid");
   const email = typeof payload.email === "string" ? payload.email.toLowerCase() : null;
-  if (Array.isArray(opts.allowedEmails) && opts.allowedEmails.length) {
-    const allow = opts.allowedEmails.map((e) => String(e).toLowerCase().trim());
-    if (!email || !allow.includes(email)) return fail("email_not_allowed");
+  // Service token(機器用鑰匙,給備份工具):Access 簽出的 JWT 沒有 email,身分在 common_name(= Client ID)。
+  const commonName = typeof payload.common_name === "string" && payload.common_name ? payload.common_name : null;
+  const emailAllow = Array.isArray(opts.allowedEmails) ? opts.allowedEmails.map((e) => String(e).toLowerCase().trim()).filter(Boolean) : [];
+  const svcAllow = Array.isArray(opts.allowedServiceNames) ? opts.allowedServiceNames.map((s) => String(s).trim()).filter(Boolean) : [];
+  let kind = email ? "user" : (commonName ? "service" : "unknown");
+  if (emailAllow.length || svcAllow.length) {
+    const okEmail = !!(email && emailAllow.includes(email));
+    const okSvc = !!(commonName && svcAllow.includes(commonName));
+    if (!okEmail && !okSvc) {
+      if (email) return fail("email_not_allowed");
+      if (commonName) return fail("service_token_not_allowed");
+      return fail("email_not_allowed");
+    }
+    kind = okEmail ? "user" : "service";
   }
-  return { ok: true, email, sub: typeof payload.sub === "string" ? payload.sub : null, exp: payload.exp };
+  return { ok: true, email, commonName, kind, sub: typeof payload.sub === "string" ? payload.sub : null, exp: payload.exp };
 }
 
 /** Worker 端的 JWKS 取得函式(給 createJwksCache 用)。teamDomain 不帶尾斜線。 */

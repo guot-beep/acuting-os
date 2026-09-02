@@ -111,6 +111,20 @@ async function mint(key, payload, headerOverride) {
     ok("過期 30 秒(在 60 秒 skew 內)→ 仍接受(時鐘誤差容忍)");
   }
 
+  console.log("\nService token(備份工具的機器鑰匙)");
+  {
+    const svcOpts = { ...opts, allowedServiceNames: ["abc123.access"] };
+    const svcPayload = () => ({ aud: [AUD], iss: TEAM, common_name: "abc123.access", iat: nowSec - 10, exp: nowSec + 3600, type: "app" });
+    const r = await verifyAccessJwt(await mint(k1, svcPayload()), svcOpts);
+    assert.strictEqual(r.ok, true); assert.strictEqual(r.kind, "service"); assert.strictEqual(r.commonName, "abc123.access"); assert.strictEqual(r.email, null);
+    ok("common_name 在名單 → ok(kind=service,沒有 email)");
+    await expectFail("service token 不在名單", await mint(k1, { ...svcPayload(), common_name: "evil.access" }), "service_token_not_allowed", svcOpts);
+    await expectFail("沒設 allowedServiceNames 時 service token 一律拒絕", await mint(k1, svcPayload()), "service_token_not_allowed", opts);
+    const u = await verifyAccessJwt(await mint(k1, base()), svcOpts);
+    assert.strictEqual(u.ok, true); assert.strictEqual(u.kind, "user");
+    ok("兩個名單同時設時,使用者 email 仍照常放行(kind=user)");
+  }
+
   console.log("\n金鑰輪替 / JWKS 節流");
   {
     nowSec += 61;   // 上面的「未知 kid」負控已用掉這一分鐘的重抓額度 —— 那正是節流在做事;時鐘往前走才輪到輪替
