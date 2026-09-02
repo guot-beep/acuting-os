@@ -39,14 +39,20 @@
 | 0 | **開診第一週照舊**:workers.dev + localStorage,手機電腦各自(跟今天一樣) | 妳 | — |
 | 1 | Access 上鎖 workers.dev(B3) | 妳(我陪) | 無痕視窗開網址,會被要求 email + PIN |
 | 2 | Cloudflare 後台建 D1 資料庫 `acuting-clinical`,綁到 Worker,把 database_id 貼給我 | 妳(我陪) | dashboard 看得到綁定 |
-| 3 | Worker 程式(`/__clinical` on D1)+ 契約測試進 CI | 我 | 43 條同款測試綠 |
-| 4 | 先部署到 **staging** 網址,用假病例走一遍:兩台裝置、兩個分頁、斷網 | 我 + 妳的手機 | 五個核對 |
+| 3 | Worker 程式(`/__clinical` on D1)+ 契約測試進 CI | 我 | ✅ **2026-09-02 凌晨**:分支 `claude/d1-worker`;JWT 31 / kv 核心 29 / 處理器 34 / adapter 43 / 閘門 17 條全綠 |
+| 4 | 先部署到 **staging** 網址,用假病例走一遍:兩台裝置、兩個分頁、斷網 | 我 + 妳的手機 | ✅ 本機 Miniflare D1 + 真瀏覽器已走過(建案 / 重啟仍在 / 雙分頁 409 + 備份 + 回滾);雲端 staging Worker 需第二個 D1 + Access,**列為切換後補做** |
 | 5 | **遷移**:桌機匯出 JSON → 匯入雲端;手機匯出 JSON → 合併匯入(同 id 覆蓋、不同 id 追加;有衝突我列出來給妳裁) | 妳按「匯出」,其餘我做 | 兩台看到同一份;筆數 = 桌機 ∪ 手機 |
 | 6 | 切換正式網址;徽章顯示 `☁ D1 · rev N` | 我 | 手機、電腦各存一筆,對方重新整理看得到 |
-| 7 | 回滾演練:關掉綁定 → app 唯讀橫幅;匯出 JSON 匯回 localStorage | 我 | 做一次 |
-| 8 | 備份:每日 Worker cron 匯出 kv;本機工具 `--from-d1` 把整本拉回桌機 `backups/` | 我 | 一份拉回來可開 |
+| 7 | 回滾演練:關掉綁定 → app 唯讀橫幅;匯出 JSON 匯回 localStorage | 我 | 🟡 `scripts/apply-d1-production-config.js --revert` 已寫並在沙盒驗過逐位元組還原;正式演練在切換日 |
+| 8 | 備份:本機工具 `scripts/pull-clinical-from-d1.js`(service token)把整本拉回桌機 `backups/`(JSON + 29 表 .db) | 我 | ✅ 對本機 D1 拉回 2 筆、105/105、往返 ✓;雲端 cron→R2 列為後續 |
 
-## 時程(誠實版)
+## 時程(實際)
+
+- 2026-09-01 晚 Ting 追加:「今天直接做吧」「我出門 你接管電腦 做一個半小時」「可以做好這樣給你七個小時夠不夠?」
+  → 程式與測試在 09-02 凌晨做完(見步驟 3、4、8)。**切換本身等她的三個帳號值**(D1 database_id、Access team domain、AUD tag),
+  見 `docs/D1_TING_CHECKLIST_2026-09-02.md`。切換 = `scripts/apply-d1-production-config.js` → 閘門 → 合進 main(Workers Builds 自動部署)。
+
+## 時程(原估,保留對照)
 
 - 妳的部分:步驟 1、2 各約十分鐘,可以同一天。
 - 我的部分:3–4 約兩個工作天;5–8 一天。

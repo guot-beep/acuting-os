@@ -1,3 +1,31 @@
+# 2026-09-02 — D1(手機電腦同一本病例簿)Worker 做完、本機演練過;切換等 Ting 的三個帳號值
+
+9/1 晚 Ting 先要「搬 SQLite」,本機 SQLite 服務做完後她說「我要用網頁那個 Cloudflare 那個」「這樣手機跟電腦去那個網址才會同步」
+—— 目標其實是 **D1**。裁定記為 D33(Access 上鎖 + 去識別化為前提),她再追加「今天直接做,給你七個小時」。
+
+**做完(分支 `claude/d1-worker`,main 未動)**:
+
+| 元件 | 測試 |
+|---|---|
+| `src/access-jwt.mjs` Access JWT(RS256 only、JWKS 快取 + 節流、email / service-token 名單) | 31 |
+| `src/clinical-kv-core.mjs` 正本資料層(trigger 守門 CAS、值分塊、history 50 版) | 29 |
+| `src/clinical-handler.mjs` + `kv-d1-adapter.mjs` + `worker.mjs`(契約 = 本機服務;fail-closed;CSRF 標頭;例外不外洩) | 34 |
+| `js/clinical-sqlite-backend.js`(宣告即探測、拒絕即毒丸、200+登入頁不算寫入、☁ 徽章) | 43(本機服務套件) |
+| `scripts/validate-d1-deploy-gate.js`(Worker/meta 同進同出;半套不准上 main) | 17 |
+| `scripts/apply-d1-production-config.js`(切換 / 回滾 commit 產生器)、`pull-clinical-from-d1.js`(備份拉回)、`diff-clinical-exports.js`(兩本簿子離線比對) | 沙盒 / e2e / 6 |
+
+本機 `wrangler dev`(Miniflare D1)+ 真瀏覽器:真表單建案 rev 3→4、伺服器重啟資料仍在、雙分頁衝突 → 409 / 樂觀鎖 / 備份 / 回滾 / 重整兩筆都在。
+
+**兩個實測改了設計**:(1) D1 多句 batch 裡「條件式 UPDATE 再看 changes」擋不住過期寫入(v1 探針:409 但值落地)→ 改用 trigger RAISE,
+整組原子回滾,四路競賽恰一贏;(2) D1 單列 2,000,000 bytes 上限,本機模擬不會擋 → 值分塊(≤500k UTF-16 units,不切 surrogate)。
+另兩個 Windows 坑:Miniflare 狀態路徑 259 字元 → 全部 `internal error`(用 `--persist-to` 短路徑);wrangler dev 開著時 build-site 砍 dist/ 會 EPERM。
+
+**還沒做、等她**:Access 上鎖(Worker 的 Access 頁籤,All traffic;OTP 要手動加;Zero Trust 開通要卡)、建 D1、給我 database_id / team domain / AUD
+→ `apply-d1-production-config.js` → 閘門 → 合 main → 她匯入桌機 JSON、手機匯出後先 `diff-clinical-exports.js` 再合併。
+`previsit.html` 病人頁鎖上後也要登入,待她裁。雲端 staging Worker、cron→R2 備份列為切換後補做。
+
+CI:Node 20→24(`node:sqlite` 在 20 不存在,green job 自 8/31 起必紅);分支上 99 步重放僅 dist/ 檔案鎖與測試環境變數外洩兩類假紅。
+
 # 2026-09-01 — 剩下的 5+4 條考綱宣稱撤下;順手發現真正的問題大 4 倍,在 relation 裡
 
 Ting 裁定處理剩下的 5 條 herb_pairs 與 4 條藥卡標籤。做完發現前三條檢查全綠是**假象**。
