@@ -1,3 +1,88 @@
+# 2026-09-02 — 把「別的資料集有沒有同樣的問題」從一句話變成數字:124 條,12 組
+
+昨天收 herb_pairs 的學習提示時,我自己寫了「窄閘門,只管這一個欄位;別的資料集有沒有
+同樣的問題**沒有量**」。這一輪把那句話變成數字。派 12 組平行判定 + 12 組對抗覆測 +
+1 個完備性批評(25 個 agent,tool 呼叫 852 次)。
+
+**MEASURED TREE: claude/practical-easley-73f009 @ f5acf4c8**
+
+## 我自己探路時修了兩次掃描條件
+
+第一版掃出 **10264 條「含記錄 id」** —— 幾乎全是 `herbs::id`、`composition[].herb_id`
+這種**結構連結欄位本身**,不是散文。又一次「掃描器把一切都報成壞的」。
+收緊成「含中文、長度 ≥20、非 id/連結欄位、且命中工程術語表」之後是 **997 筆、70 組**,
+再合併同族成 12 組派工。
+
+## 結果:12/12 完成,0 被覆測推翻
+
+| | |
+|---|---|
+| 問題總數 | **124** |
+| ├ 工程術語(欄位名/記錄 id/內部作業語) | 69 |
+| ├ 會腐爛的承諾(待裁定/待補/查到來源再補) | 22 |
+| └ 其他(讀者看不懂或誤導) | 33 |
+| 確認**不上畫面**的欄位 | 2 組:`formulas.correction_note`(176 筆)、`herbs.review_notes_zh`+`review_status_note_zh`(92 筆) |
+
+`correction_note` 那組值得記:它是 archive-before-replace 的存證欄,176 筆裡 153 筆含
+「紅線」、136 筆含 snake_case 欄位名 —— 但渲染端**完全沒讀它**,連搜尋索引白名單都沒有。
+覆測員另外實測:起獨立埠、逐張開啟那 176 張方劑卡比對 innerText,176/176 只有 1 個
+偶然重疊(引述的組成本來就該印)。所以這一欄不是缺陷,是**定位正確的存證區**,
+`scripts/audit-dark-fields.js:56` 早就把它列進 IGNORE。
+
+## 已經腐爛的那一條,已修
+
+`pair.hai_zao__kun_bu` 的四個安全欄位(`caution_zh/_en`、`cautions_zh/_en`)都寫著
+「昆布卡片尚待建立,先保留未連結 ID」。**但 `herb.kun_bu` 存在(name_zh=昆布),
+而且該藥對的 `herbs` 陣列早就連著它** —— 雙重假話,而且夾在「海藻反甘草」與
+「脾胃虛寒者忌用」兩則真安全資訊中間。已移除該子句,兩則真安全資訊逐一斷言保留。
+這不是措辭問題,是不實陳述。
+
+## 最貴的三類(已逐條自核)
+
+1. **`js/knowledge.js:2872` 渲染器寫死 `待 Ting 填寫`** —— 鑑別表空格會自己印出這五個字,
+   是把內部工作分派印給讀卡的人。改資料改不掉,得改渲染器。
+2. **18 筆藥對的 `indication_zh` 就是「（待補）」**,而 `pairCard`(:412)用裸真值判斷,
+   於是卡上印出「**主治** （待補）」—— 比整行不印更糟。
+3. **有毒藥卡在畫面上承認自己劑量對不上**:`herb.quan_xie` 的 `exam_pearl` 印著
+   「本卡 dosage 常用量 3-6g 與 contraindications_zh「乾品2-5g」兩個數字不一致,待 Ting 裁定」。
+   同類:`herb.gui_zhi` 的妊娠警語結尾「保留待 Ting 審核」、`herb.hua_ju_hong` 與
+   `herb.lu_cha` 的安全區塊**唯一一條**就是「安全欄待補」。
+
+## 完備性批評抓到更大的洞
+
+**穴位家族整個不在 `ACUTING_KNOWLEDGE` 裡**,所以這 12 組一條都沒碰到它們 ——
+`ACUTING_POINTS_361`(361)、`ACUTING_TUNG_INDEX`(277)、`ACUTING_AURICULAR_GB93`、
+`ACUTING_APP_DATA` 的 auricularPoints(203)/extraPoints(72)/scalpPoints(22)是另外四個全域。
+已量的七個資料集 longZH ≈ 26,600;**沒量的 ≈ 20,400 longZH + 16,600 longEN**。
+這輪大約只覆蓋了散文總量的一半多一點,而漏掉的那半包含 app 的同名主體。
+
+還有五條**有輸出但沒人看過**的渲染路徑:AVS 病人衛教單(列印/存 PDF/複製寄信,
+讀者是病人)、previsit.html 病人自填問卷、CARE/STRICTA 草稿 .md 匯出、
+`title=` hover 屬性(靜態掃描與肉眼讀卡都看不到)、統一搜尋的命中索引。
+
+### previsit.html:病人會看到原始 id(我自己核過)
+
+`previsit.html:400` `return FALLBACK_PROMPTS[metricId] || { zh: metricId, en: "" }`。
+`FALLBACK_PROMPTS` 只收 **6** 個;而 `outcomeMetrics` 27 筆裡有 **3 筆**缺
+`patient_prompt_zh`:`metric.endometrial_lining`、`metric.follicle_size`、
+`metric.range_of_motion_deg`,**三個都不在 fallback 裡**。
+也就是說這三項若被放進問卷,病人看到的題目就是 `metric.follicle_size` 這串字。
+正是 CLAUDE.md 第 5 條那個形狀,只是這次的讀者是病人。**未修,待裁**。
+
+## 對 agent 結論的兩處更正(不能照單全收)
+
+- 有一組把 **MEASURED TREE 蓋成 `a093fec9`**,實際是 `f5acf4c8`。蓋錯章的數字不可重現。
+  (完備性批評那支蓋對了,所以是單一 agent 的筆誤,不是全體讀錯樹。)
+- 同一組說我的掃描器分母不對(151 vs 176),**這個批評本身是錯的**:
+  176 是「非空」,151 是「命中工程術語表」,兩個不同分母;長度 <20 的有 0 筆。
+
+## 這一輪沒有動的
+
+除了 `pair.hai_zao__kun_bu` 那一條不實陳述,其餘 123 條**一律未動**,等裁定 ——
+它們橫跨 12 個資料集,而且有相當比例牽涉臨床/安全措辭與「這句該不該由 Ting 拍板」。
+
+14 支驗證器 exit 0,棘輪 PASS。
+
 # 2026-09-02 — 上一則說「散文講義是盲區」,那句現在不成立了:補起來,順手查出 CV12 一筆真的指錯
 
 上一則(`acupoint_page_anchors` 接線)把散文講義列成**已知盲區**:`Therapeutics Notes` 143 頁裡
