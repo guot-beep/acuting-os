@@ -3197,7 +3197,7 @@
         "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L281-L286",
         "curriculum/herbs/materia_medica_abbreviated_chenoweth.md#L8493-L8522"
       ],
-      "teaching_note_zh": "這是 AD 補充組合，非 NCBAHM Appendix B 正式對藥；白蒺藜已建 herb.bai_ji_li 以避免死連結。",
+      "teaching_note_zh": "此組合出自 American Dragon 的補充配伍，不是考綱 Appendix B 的正式對藥。",
       "actions_zh": "浮萍辛寒發汗、透表泄熱；白蒺藜祛風明目止癢並平肝；牛蒡子疏風熱、利咽透疹；薄荷疏散風熱、清利頭目。此組依 American Dragon Major Combinations，用於風熱發熱頭痛與皮膚/頭面風熱。",
       "actions_en": "Fu Ping acrid-coldly promotes sweating and vents exterior Heat; Bai Ji Li dispels Wind, benefits the eyes, relieves itching, and calms the Liver; Niu Bang Zi disperses Wind-Heat and vents rashes; Bo He disperses Wind-Heat and clears the head. This American Dragon combination supports Wind-Heat fever/headache and Wind-Heat affecting the skin, head, or eyes.",
       "indications_zh": "風熱發熱頭痛，兼頭目不利、皮膚風熱或疹癢者。",
@@ -3215,7 +3215,8 @@
           "curriculum",
           "american_dragon"
         ]
-      }
+      },
+      "curation_note_zh": "這是 AD 補充組合，非 NCBAHM Appendix B 正式對藥；白蒺藜已建 herb.bai_ji_li 以避免死連結。"
     },
     {
       "id": "pair.ba_dou__wu_ling_zhi",
@@ -8742,8 +8743,9 @@
           "bastyr_outline_not_in_repo"
         ]
       },
-      "teaching_note_zh": "卡上標籤寫「葦莖」；本庫葦莖解為 herb.lu_gen 蘆根（formula.wei_jing_tang 組成即用 herb.lu_gen），故 herbs 陣列用 herb.lu_gen，不另建 herb.wei_jing。 本組合不在 2026 NCBAHM 考綱 Appendix B 的 51 組對藥內；本條來源標的 Bastyr 考綱正本不在本庫（curriculum/board/ 只有四份 NCBAHM 考綱），無從佐證。這一組是葦莖湯的組成，當常用臨床對藥記。",
-      "official_claim_status": "withdrawn__bastyr_source_not_in_repo"
+      "teaching_note_zh": "來源標籤寫「葦莖」，即本庫的蘆根 —— 葦莖湯原方用的也是這一味。 本組合不在 2026 NCBAHM 考綱 Appendix B 的 51 組對藥內；本條來源標的 Bastyr 考綱正本不在本庫（curriculum/board/ 只有四份 NCBAHM 考綱），無從佐證。這一組是葦莖湯的組成，當常用臨床對藥記。",
+      "official_claim_status": "withdrawn__bastyr_source_not_in_repo",
+      "curation_note_zh": "卡上標籤寫「葦莖」；本庫葦莖解為 herb.lu_gen 蘆根（formula.wei_jing_tang 組成即用 herb.lu_gen），故 herbs 陣列用 herb.lu_gen，不另建 herb.wei_jing。 本組合不在 2026 NCBAHM 考綱 Appendix B 的 51 組對藥內；本條來源標的 Bastyr 考綱正本不在本庫（curriculum/board/ 只有四份 NCBAHM 考綱），無從佐證。這一組是葦莖湯的組成，當常用臨床對藥記。"
     },
     {
       "id": "pair.hong_hua__dang_gui__chuan_xiong__chi_shao",
@@ -8790,11 +8792,12 @@
           "bastyr_outline_not_in_repo"
         ]
       },
-      "teaching_note_zh": "未掛 formula.tao_hong_si_wu_tang：該方組成用白芍（herb.bai_shao），非本組合的赤芍（herb.chi_shao），已逐味比對組成確認。 本組合不在 2026 NCBAHM 考綱 Appendix B 的 51 組對藥內；本條來源標的 Bastyr 考綱正本不在本庫（curriculum/board/ 只有四份 NCBAHM 考綱），無從佐證。其中「當歸 + 川芎」是 Appendix B 收錄的二味對藥（本庫另有獨立卡片），考綱要背的是那兩味；本組合當常用臨床對藥記。",
+      "teaching_note_zh": "與桃紅四物湯相近但不是同一組：該方用白芍，本組合用赤芍。 本組合不在 2026 NCBAHM 考綱 Appendix B 的 51 組對藥內；本條來源標的 Bastyr 考綱正本不在本庫（curriculum/board/ 只有四份 NCBAHM 考綱），無從佐證。其中「當歸 + 川芎」是 Appendix B 收錄的二味對藥（本庫另有獨立卡片），考綱要背的是那兩味；本組合當常用臨床對藥記。",
       "official_claim_status": "withdrawn__bastyr_source_not_in_repo",
       "contains_ncbahm_official_pairs": [
         "pair.dang_gui__chuan_xiong"
-      ]
+      ],
+      "curation_note_zh": "未掛 formula.tao_hong_si_wu_tang：該方組成用白芍（herb.bai_shao），非本組合的赤芍（herb.chi_shao），已逐味比對組成確認。 本組合不在 2026 NCBAHM 考綱 Appendix B 的 51 組對藥內；本條來源標的 Bastyr 考綱正本不在本庫（curriculum/board/ 只有四份 NCBAHM 考綱），無從佐證。其中「當歸 + 川芎」是 Appendix B 收錄的二味對藥（本庫另有獨立卡片），考綱要背的是那兩味；本組合當常用臨床對藥記。"
     },
     {
       "id": "pair.yan_hu_suo__dang_gui__chuan_xiong__xiang_fu",
@@ -9038,8 +9041,9 @@
           "bastyr_outline_not_in_repo"
         ]
       },
-      "teaching_note_zh": "代表方菖蒲鬱金湯本庫尚無方劑卡，故 found_in_formulas 留空，不填未建之方。 本組合不在 2026 NCBAHM 考綱 Appendix B 的 51 組對藥內；本條來源標的 Bastyr 考綱正本不在本庫（curriculum/board/ 只有四份 NCBAHM 考綱），無從佐證。當常用臨床對藥記。",
-      "official_claim_status": "withdrawn__bastyr_source_not_in_repo"
+      "teaching_note_zh": "代表方為菖蒲鬱金湯（本庫尚未建該方卡片）。 本組合不在 2026 NCBAHM 考綱 Appendix B 的 51 組對藥內；本條來源標的 Bastyr 考綱正本不在本庫（curriculum/board/ 只有四份 NCBAHM 考綱），無從佐證。當常用臨床對藥記。",
+      "official_claim_status": "withdrawn__bastyr_source_not_in_repo",
+      "curation_note_zh": "代表方菖蒲鬱金湯本庫尚無方劑卡，故 found_in_formulas 留空，不填未建之方。 本組合不在 2026 NCBAHM 考綱 Appendix B 的 51 組對藥內；本條來源標的 Bastyr 考綱正本不在本庫（curriculum/board/ 只有四份 NCBAHM 考綱），無從佐證。當常用臨床對藥記。"
     },
     {
       "id": "pair.yu_jin__yin_chen_hao__jin_qian_cao",
@@ -9085,8 +9089,9 @@
           "bastyr_outline_not_in_repo"
         ]
       },
-      "teaching_note_zh": "卡上標籤寫「茵陳」；本庫為 herb.yin_chen_hao 茵陳蒿的別名。 本組合不在 2026 NCBAHM 考綱 Appendix B 的 51 組對藥內；本條來源標的 Bastyr 考綱正本不在本庫（curriculum/board/ 只有四份 NCBAHM 考綱），無從佐證。當常用臨床對藥記。",
-      "official_claim_status": "withdrawn__bastyr_source_not_in_repo"
+      "teaching_note_zh": "來源標籤寫「茵陳」，即本庫的茵陳蒿。 本組合不在 2026 NCBAHM 考綱 Appendix B 的 51 組對藥內；本條來源標的 Bastyr 考綱正本不在本庫（curriculum/board/ 只有四份 NCBAHM 考綱），無從佐證。當常用臨床對藥記。",
+      "official_claim_status": "withdrawn__bastyr_source_not_in_repo",
+      "curation_note_zh": "卡上標籤寫「茵陳」；本庫為 herb.yin_chen_hao 茵陳蒿的別名。 本組合不在 2026 NCBAHM 考綱 Appendix B 的 51 組對藥內；本條來源標的 Bastyr 考綱正本不在本庫（curriculum/board/ 只有四份 NCBAHM 考綱），無從佐證。當常用臨床對藥記。"
     },
     {
       "id": "pair.niu_xi__du_zhong__xu_duan",
@@ -9134,11 +9139,12 @@
           "bastyr_outline_not_in_repo"
         ]
       },
-      "teaching_note_zh": "卡上標籤寫「懷牛膝」；本庫懷牛膝是 herb.niu_xi 的別名（與 herb.chuan_niu_xi 川牛膝分立為兩張卡），故 herbs 用 herb.niu_xi。 本組合不在 2026 NCBAHM 考綱 Appendix B 的 51 組對藥內；本條來源標的 Bastyr 考綱正本不在本庫（curriculum/board/ 只有四份 NCBAHM 考綱），無從佐證。其中「杜仲 + 續斷」是 Appendix B 收錄的二味對藥（本庫另有獨立卡片），考綱要背的是那兩味；本組合當常用臨床對藥記。",
+      "teaching_note_zh": "來源標籤寫「懷牛膝」，即本庫的牛膝；川牛膝是另一味藥，另有卡片。 本組合不在 2026 NCBAHM 考綱 Appendix B 的 51 組對藥內；本條來源標的 Bastyr 考綱正本不在本庫（curriculum/board/ 只有四份 NCBAHM 考綱），無從佐證。其中「杜仲 + 續斷」是 Appendix B 收錄的二味對藥（本庫另有獨立卡片），考綱要背的是那兩味；本組合當常用臨床對藥記。",
       "official_claim_status": "withdrawn__bastyr_source_not_in_repo",
       "contains_ncbahm_official_pairs": [
         "pair.du_zhong__xu_duan"
-      ]
+      ],
+      "curation_note_zh": "卡上標籤寫「懷牛膝」；本庫懷牛膝是 herb.niu_xi 的別名（與 herb.chuan_niu_xi 川牛膝分立為兩張卡），故 herbs 用 herb.niu_xi。 本組合不在 2026 NCBAHM 考綱 Appendix B 的 51 組對藥內；本條來源標的 Bastyr 考綱正本不在本庫（curriculum/board/ 只有四份 NCBAHM 考綱），無從佐證。其中「杜仲 + 續斷」是 Appendix B 收錄的二味對藥（本庫另有獨立卡片），考綱要背的是那兩味；本組合當常用臨床對藥記。"
     },
     {
       "id": "pair.niu_xi__dai_zhe_shi__bai_shao",
@@ -9186,8 +9192,9 @@
           "bastyr_outline_not_in_repo"
         ]
       },
-      "teaching_note_zh": "卡上標籤寫「懷牛膝」；本庫懷牛膝是 herb.niu_xi 的別名（與 herb.chuan_niu_xi 川牛膝分立為兩張卡），故 herbs 用 herb.niu_xi。標籤另寫「生白芍」，生為炮製前綴，對應 herb.bai_shao。 本組合不在 2026 NCBAHM 考綱 Appendix B 的 51 組對藥內；本條來源標的 Bastyr 考綱正本不在本庫（curriculum/board/ 只有四份 NCBAHM 考綱），無從佐證。這一組是鎮肝熄風湯的組成，當常用臨床對藥記。",
-      "official_claim_status": "withdrawn__bastyr_source_not_in_repo"
+      "teaching_note_zh": "來源標籤寫「懷牛膝」，即本庫的牛膝（川牛膝是另一味藥）；「生白芍」指未經炮製的白芍。 本組合不在 2026 NCBAHM 考綱 Appendix B 的 51 組對藥內；本條來源標的 Bastyr 考綱正本不在本庫（curriculum/board/ 只有四份 NCBAHM 考綱），無從佐證。這一組是鎮肝熄風湯的組成，當常用臨床對藥記。",
+      "official_claim_status": "withdrawn__bastyr_source_not_in_repo",
+      "curation_note_zh": "卡上標籤寫「懷牛膝」；本庫懷牛膝是 herb.niu_xi 的別名（與 herb.chuan_niu_xi 川牛膝分立為兩張卡），故 herbs 用 herb.niu_xi。標籤另寫「生白芍」，生為炮製前綴，對應 herb.bai_shao。 本組合不在 2026 NCBAHM 考綱 Appendix B 的 51 組對藥內；本條來源標的 Bastyr 考綱正本不在本庫（curriculum/board/ 只有四份 NCBAHM 考綱），無從佐證。這一組是鎮肝熄風湯的組成，當常用臨床對藥記。"
     },
     {
       "id": "pair.yi_mu_cao__dang_gui__bai_shao__chuan_xiong",
@@ -9473,8 +9480,9 @@
           "bastyr_outline_not_in_repo"
         ]
       },
-      "teaching_note_zh": "卡上標籤寫「茵陳」；本庫為 herb.yin_chen_hao 茵陳蒿的別名。 本組合不在 2026 NCBAHM 考綱 Appendix B 的 51 組對藥內；本條來源標的 Bastyr 考綱正本不在本庫（curriculum/board/ 只有四份 NCBAHM 考綱），無從佐證。當常用臨床對藥記。",
-      "official_claim_status": "withdrawn__bastyr_source_not_in_repo"
+      "teaching_note_zh": "來源標籤寫「茵陳」，即本庫的茵陳蒿。 本組合不在 2026 NCBAHM 考綱 Appendix B 的 51 組對藥內；本條來源標的 Bastyr 考綱正本不在本庫（curriculum/board/ 只有四份 NCBAHM 考綱），無從佐證。當常用臨床對藥記。",
+      "official_claim_status": "withdrawn__bastyr_source_not_in_repo",
+      "curation_note_zh": "卡上標籤寫「茵陳」；本庫為 herb.yin_chen_hao 茵陳蒿的別名。 本組合不在 2026 NCBAHM 考綱 Appendix B 的 51 組對藥內；本條來源標的 Bastyr 考綱正本不在本庫（curriculum/board/ 只有四份 NCBAHM 考綱），無從佐證。當常用臨床對藥記。"
     },
     {
       "id": "pair.hu_zhang__huang_qin__shi_gao",
@@ -9567,7 +9575,8 @@
           "not_claimed_as_official"
         ]
       },
-      "teaching_note_zh": "本條併入兩張卡的原敘述：herb.fu_ling 茯苓卡版（痰飲之心悸、頭眩）與 herb.gui_zhi 桂枝卡版（陽虛水飲所致眩暈、心悸、小便不利）。兩版中英文皆為卡上原有，非代譯；桂枝版多出的「小便不利」與「陽虛水飲」框架已保留。"
+      "teaching_note_zh": "本條配伍敘述併自茯苓與桂枝兩張卡：茯苓側重痰飲之心悸、頭眩，桂枝側重陽虛水飲所致的眩暈、心悸、小便不利。",
+      "curation_note_zh": "本條併入兩張卡的原敘述：herb.fu_ling 茯苓卡版（痰飲之心悸、頭眩）與 herb.gui_zhi 桂枝卡版（陽虛水飲所致眩暈、心悸、小便不利）。兩版中英文皆為卡上原有，非代譯；桂枝版多出的「小便不利」與「陽虛水飲」框架已保留。"
     },
     {
       "id": "pair.fu_shen__suan_zao_ren",
@@ -9610,7 +9619,7 @@
           "not_claimed_as_official"
         ]
       },
-      "teaching_note_zh": "此條原掛在 herb.fu_ling 茯苓卡上，但描述的是茯神（herb.fu_shen）的配伍；建記錄後改由茯神卡顯示，茯苓卡不再重複。"
+      "curation_note_zh": "此條原掛在 herb.fu_ling 茯苓卡上，但描述的是茯神（herb.fu_shen）的配伍；建記錄後改由茯神卡顯示，茯苓卡不再重複。"
     },
     {
       "id": "pair.zhu_ling__fu_ling__ze_xie",
@@ -9658,8 +9667,9 @@
           "bastyr_outline_not_in_repo"
         ]
       },
-      "teaching_note_zh": "herb.zhu_ling 與 herb.ze_xie 兩張卡各有一條同組成標籤（豬苓+茯苓+澤瀉／澤瀉+茯苓+豬苓），成員集合相同故只建這一筆，兩卡的副本都移除。代表方四苓散本庫尚無方劑卡，只掛已建的五苓散。 歸屬更正（2026-09-01）：此組合不在 2026 NCBAHM 考綱 Appendix B 的 51 組對藥內；原標示所稱的 Bastyr／NCCAOM 考綱正本不在本庫（curriculum/board/ 只有四份 NCBAHM 考綱），無從佐證，故撤下考綱宣稱，卡上不再顯示「考綱列名對藥」。這一組是五苓散的組成，當常用臨床對藥記。內容未刪。",
-      "official_claim_status": "withdrawn__no_board_source_in_repo"
+      "teaching_note_zh": "代表方為四苓散（本庫尚未建該方卡片）；組成含這三味的五苓散已建卡。 歸屬更正（2026-09-01）：此組合不在 2026 NCBAHM 考綱 Appendix B 的 51 組對藥內；原標示所稱的 Bastyr／NCCAOM 考綱正本不在本庫（curriculum/board/ 只有四份 NCBAHM 考綱），無從佐證，故撤下考綱宣稱，卡上不再顯示「考綱列名對藥」。這一組是五苓散的組成，當常用臨床對藥記。內容未刪。",
+      "official_claim_status": "withdrawn__no_board_source_in_repo",
+      "curation_note_zh": "herb.zhu_ling 與 herb.ze_xie 兩張卡各有一條同組成標籤（豬苓+茯苓+澤瀉／澤瀉+茯苓+豬苓），成員集合相同故只建這一筆，兩卡的副本都移除。代表方四苓散本庫尚無方劑卡，只掛已建的五苓散。 歸屬更正（2026-09-01）：此組合不在 2026 NCBAHM 考綱 Appendix B 的 51 組對藥內；原標示所稱的 Bastyr／NCCAOM 考綱正本不在本庫（curriculum/board/ 只有四份 NCBAHM 考綱），無從佐證，故撤下考綱宣稱，卡上不再顯示「考綱列名對藥」。這一組是五苓散的組成，當常用臨床對藥記。內容未刪。"
     },
     {
       "id": "pair.zhu_ling__e_jiao__hua_shi",
@@ -9755,8 +9765,9 @@
           "bastyr_outline_not_in_repo"
         ]
       },
-      "teaching_note_zh": "代表方澤瀉湯本庫尚無方劑卡，只掛已建的五苓散。 歸屬更正（2026-09-01）：此組合不在 2026 NCBAHM 考綱 Appendix B 的 51 組對藥內；原標示所稱的 Bastyr／NCCAOM 考綱正本不在本庫（curriculum/board/ 只有四份 NCBAHM 考綱），無從佐證，故撤下考綱宣稱，卡上不再顯示「考綱列名對藥」。這一組是五苓散的組成，當常用臨床對藥記。內容未刪。",
-      "official_claim_status": "withdrawn__no_board_source_in_repo"
+      "teaching_note_zh": "代表方為澤瀉湯（本庫尚未建該方卡片）；組成含這兩味的五苓散已建卡。 歸屬更正（2026-09-01）：此組合不在 2026 NCBAHM 考綱 Appendix B 的 51 組對藥內；原標示所稱的 Bastyr／NCCAOM 考綱正本不在本庫（curriculum/board/ 只有四份 NCBAHM 考綱），無從佐證，故撤下考綱宣稱，卡上不再顯示「考綱列名對藥」。這一組是五苓散的組成，當常用臨床對藥記。內容未刪。",
+      "official_claim_status": "withdrawn__no_board_source_in_repo",
+      "curation_note_zh": "代表方澤瀉湯本庫尚無方劑卡，只掛已建的五苓散。 歸屬更正（2026-09-01）：此組合不在 2026 NCBAHM 考綱 Appendix B 的 51 組對藥內；原標示所稱的 Bastyr／NCCAOM 考綱正本不在本庫（curriculum/board/ 只有四份 NCBAHM 考綱），無從佐證，故撤下考綱宣稱，卡上不再顯示「考綱列名對藥」。這一組是五苓散的組成，當常用臨床對藥記。內容未刪。"
     },
     {
       "id": "pair.yi_yi_ren__bai_jiang_cao__fu_zi",
@@ -9802,8 +9813,9 @@
           "bastyr_outline_not_in_repo"
         ]
       },
-      "teaching_note_zh": "代表方附子薏苡敗醬散（薏苡附子敗醬散）本庫尚無方劑卡，found_in_formulas 留空，不填未建之方。 本組合不在 2026 NCBAHM 考綱 Appendix B 的 51 組對藥內；本條來源標的 Bastyr 考綱正本不在本庫（curriculum/board/ 只有四份 NCBAHM 考綱），無從佐證。當常用臨床對藥記。",
-      "official_claim_status": "withdrawn__bastyr_source_not_in_repo"
+      "teaching_note_zh": "代表方為薏苡附子敗醬散（本庫尚未建該方卡片）。 本組合不在 2026 NCBAHM 考綱 Appendix B 的 51 組對藥內；本條來源標的 Bastyr 考綱正本不在本庫（curriculum/board/ 只有四份 NCBAHM 考綱），無從佐證。當常用臨床對藥記。",
+      "official_claim_status": "withdrawn__bastyr_source_not_in_repo",
+      "curation_note_zh": "代表方附子薏苡敗醬散（薏苡附子敗醬散）本庫尚無方劑卡，found_in_formulas 留空，不填未建之方。 本組合不在 2026 NCBAHM 考綱 Appendix B 的 51 組對藥內；本條來源標的 Bastyr 考綱正本不在本庫（curriculum/board/ 只有四份 NCBAHM 考綱），無從佐證。當常用臨床對藥記。"
     },
     {
       "id": "pair.che_qian_zi__mu_tong__hua_shi__da_huang",
@@ -9852,8 +9864,9 @@
           "bastyr_outline_not_in_repo"
         ]
       },
-      "teaching_note_zh": "標籤寫「木通」，對應正名卡 herb.mu_tong（木通科）；herb.chuan_mu_tong 川木通雖把「木通」收為別名，但非本條所指，且本庫八正散組成用的即為 herb.mu_tong。木通類品種差異涉及馬兜鈴酸安全議題，不以別名撞名帶過。 本組合不在 2026 NCBAHM 考綱 Appendix B 的 51 組對藥內；本條來源標的 Bastyr 考綱正本不在本庫（curriculum/board/ 只有四份 NCBAHM 考綱），無從佐證。這一組是八正散的組成，當常用臨床對藥記。",
-      "official_claim_status": "withdrawn__bastyr_source_not_in_repo"
+      "teaching_note_zh": "來源標籤寫「木通」，本庫指木通科的木通，八正散原方用的也是這一味。川木通雖然也以「木通」為別名，但不是本條所指 —— 木通類的品種差異牽涉馬兜鈴酸的安全問題，不能以同名帶過。 本組合不在 2026 NCBAHM 考綱 Appendix B 的 51 組對藥內；本條來源標的 Bastyr 考綱正本不在本庫（curriculum/board/ 只有四份 NCBAHM 考綱），無從佐證。這一組是八正散的組成，當常用臨床對藥記。",
+      "official_claim_status": "withdrawn__bastyr_source_not_in_repo",
+      "curation_note_zh": "標籤寫「木通」，對應正名卡 herb.mu_tong（木通科）；herb.chuan_mu_tong 川木通雖把「木通」收為別名，但非本條所指，且本庫八正散組成用的即為 herb.mu_tong。木通類品種差異涉及馬兜鈴酸安全議題，不以別名撞名帶過。 本組合不在 2026 NCBAHM 考綱 Appendix B 的 51 組對藥內；本條來源標的 Bastyr 考綱正本不在本庫（curriculum/board/ 只有四份 NCBAHM 考綱），無從佐證。這一組是八正散的組成，當常用臨床對藥記。"
     },
     {
       "id": "pair.che_qian_zi__bai_zhu__fu_ling",
@@ -9899,11 +9912,12 @@
           "bastyr_outline_not_in_repo"
         ]
       },
-      "teaching_note_zh": "代表方車前子散本庫尚無方劑卡，found_in_formulas 留空。 本組合不在 2026 NCBAHM 考綱 Appendix B 的 51 組對藥內；本條來源標的 Bastyr 考綱正本不在本庫（curriculum/board/ 只有四份 NCBAHM 考綱），無從佐證。其中「白朮 + 茯苓」是 Appendix B 收錄的二味對藥（本庫另有獨立卡片），考綱要背的是那兩味；本組合當常用臨床對藥記。",
+      "teaching_note_zh": "代表方為車前子散（本庫尚未建該方卡片）。 本組合不在 2026 NCBAHM 考綱 Appendix B 的 51 組對藥內；本條來源標的 Bastyr 考綱正本不在本庫（curriculum/board/ 只有四份 NCBAHM 考綱），無從佐證。其中「白朮 + 茯苓」是 Appendix B 收錄的二味對藥（本庫另有獨立卡片），考綱要背的是那兩味；本組合當常用臨床對藥記。",
       "official_claim_status": "withdrawn__bastyr_source_not_in_repo",
       "contains_ncbahm_official_pairs": [
         "pair.bai_zhu__fu_ling"
-      ]
+      ],
+      "curation_note_zh": "代表方車前子散本庫尚無方劑卡，found_in_formulas 留空。 本組合不在 2026 NCBAHM 考綱 Appendix B 的 51 組對藥內；本條來源標的 Bastyr 考綱正本不在本庫（curriculum/board/ 只有四份 NCBAHM 考綱），無從佐證。其中「白朮 + 茯苓」是 Appendix B 收錄的二味對藥（本庫另有獨立卡片），考綱要背的是那兩味；本組合當常用臨床對藥記。"
     },
     {
       "id": "pair.mu_tong__sheng_di_huang__zhu_ye__gan_cao",
@@ -9950,8 +9964,9 @@
           "bastyr_outline_not_in_repo"
         ]
       },
-      "teaching_note_zh": "標籤寫「竹葉」，對應正名卡 herb.zhu_ye。本庫 formula.dao_chi_san 導赤散的組成用的是 herb.dan_zhu_ye 淡竹葉，與本條標籤不一致，故未掛該方。Ting 裁定（2026-08-27）：竹葉與淡竹葉確實是不同中藥，兩張卡分立正確，不合併；導赤散原方究竟用哪一味目前無定論，需另查資源後才補掛 found_in_formulas。在那之前寧可不掛，不以近似藥材代掛。 本組合不在 2026 NCBAHM 考綱 Appendix B 的 51 組對藥內；本條來源標的 Bastyr 考綱正本不在本庫（curriculum/board/ 只有四份 NCBAHM 考綱），無從佐證。當常用臨床對藥記。",
-      "official_claim_status": "withdrawn__bastyr_source_not_in_repo"
+      "teaching_note_zh": "來源標籤寫「竹葉」，即本庫的竹葉；而本庫導赤散的組成用的是淡竹葉。竹葉與淡竹葉是不同的兩味藥（Ting 2026-08-27 裁定），導赤散原方究竟用哪一味目前無定論，所以本條暫不掛導赤散，也不以近似藥材代掛。 本組合不在 2026 NCBAHM 考綱 Appendix B 的 51 組對藥內；本條來源標的 Bastyr 考綱正本不在本庫（curriculum/board/ 只有四份 NCBAHM 考綱），無從佐證。當常用臨床對藥記。",
+      "official_claim_status": "withdrawn__bastyr_source_not_in_repo",
+      "curation_note_zh": "標籤寫「竹葉」，對應正名卡 herb.zhu_ye。本庫 formula.dao_chi_san 導赤散的組成用的是 herb.dan_zhu_ye 淡竹葉，與本條標籤不一致，故未掛該方。Ting 裁定（2026-08-27）：竹葉與淡竹葉確實是不同中藥，兩張卡分立正確，不合併；導赤散原方究竟用哪一味目前無定論，需另查資源後才補掛 found_in_formulas。在那之前寧可不掛，不以近似藥材代掛。 本組合不在 2026 NCBAHM 考綱 Appendix B 的 51 組對藥內；本條來源標的 Bastyr 考綱正本不在本庫（curriculum/board/ 只有四份 NCBAHM 考綱），無從佐證。當常用臨床對藥記。"
     },
     {
       "id": "pair.fu_shen__suan_zao_ren__yuan_zhi",
@@ -10047,8 +10062,9 @@
           "bastyr_outline_not_in_repo"
         ]
       },
-      "teaching_note_zh": "代表方安神定志丸本庫尚無方劑卡，found_in_formulas 留空。 本組合不在 2026 NCBAHM 考綱 Appendix B 的 51 組對藥內；本條來源標的 Bastyr 考綱正本不在本庫（curriculum/board/ 只有四份 NCBAHM 考綱），無從佐證。當常用臨床對藥記。",
-      "official_claim_status": "withdrawn__bastyr_source_not_in_repo"
+      "teaching_note_zh": "代表方為安神定志丸（本庫尚未建該方卡片）。 本組合不在 2026 NCBAHM 考綱 Appendix B 的 51 組對藥內；本條來源標的 Bastyr 考綱正本不在本庫（curriculum/board/ 只有四份 NCBAHM 考綱），無從佐證。當常用臨床對藥記。",
+      "official_claim_status": "withdrawn__bastyr_source_not_in_repo",
+      "curation_note_zh": "代表方安神定志丸本庫尚無方劑卡，found_in_formulas 留空。 本組合不在 2026 NCBAHM 考綱 Appendix B 的 51 組對藥內；本條來源標的 Bastyr 考綱正本不在本庫（curriculum/board/ 只有四份 NCBAHM 考綱），無從佐證。當常用臨床對藥記。"
     },
     {
       "id": "pair.fu_shen__bai_zhu__fu_ling",
@@ -10094,11 +10110,12 @@
           "bastyr_outline_not_in_repo"
         ]
       },
-      "teaching_note_zh": "卡上寫「四君子湯加味」；本庫 formula.si_jun_zi_tang 的組成不含 herb.fu_shen（是加味後才有），逐味比對不符故不掛，不把加味方當原方。 本組合不在 2026 NCBAHM 考綱 Appendix B 的 51 組對藥內；本條來源標的 Bastyr 考綱正本不在本庫（curriculum/board/ 只有四份 NCBAHM 考綱），無從佐證。其中「白朮 + 茯苓」是 Appendix B 收錄的二味對藥（本庫另有獨立卡片），考綱要背的是那兩味；本組合當常用臨床對藥記。",
+      "teaching_note_zh": "來源寫「四君子湯加味」：四君子湯原方不含茯神，茯神是加味之後才有的，所以本條不算四君子湯本方的組成。 本組合不在 2026 NCBAHM 考綱 Appendix B 的 51 組對藥內；本條來源標的 Bastyr 考綱正本不在本庫（curriculum/board/ 只有四份 NCBAHM 考綱），無從佐證。其中「白朮 + 茯苓」是 Appendix B 收錄的二味對藥（本庫另有獨立卡片），考綱要背的是那兩味；本組合當常用臨床對藥記。",
       "official_claim_status": "withdrawn__bastyr_source_not_in_repo",
       "contains_ncbahm_official_pairs": [
         "pair.bai_zhu__fu_ling"
-      ]
+      ],
+      "curation_note_zh": "卡上寫「四君子湯加味」；本庫 formula.si_jun_zi_tang 的組成不含 herb.fu_shen（是加味後才有），逐味比對不符故不掛，不把加味方當原方。 本組合不在 2026 NCBAHM 考綱 Appendix B 的 51 組對藥內；本條來源標的 Bastyr 考綱正本不在本庫（curriculum/board/ 只有四份 NCBAHM 考綱），無從佐證。其中「白朮 + 茯苓」是 Appendix B 收錄的二味對藥（本庫另有獨立卡片），考綱要背的是那兩味；本組合當常用臨床對藥記。"
     },
     {
       "id": "pair.qu_mai__bian_xu__mu_tong",
@@ -10371,7 +10388,8 @@
           "ncbahm_appendix_b_claim_refuted_2026-08-27"
         ]
       },
-      "teaching_note_zh": "卡上標籤宣稱「2026 NCBAHM Appendix B 官方對藥」，但以 repo 內考綱正本 curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md 的 Appendix B 逐條核對後不成立（Appendix B 共 51 組、全部是二味對藥）。故本記錄不標 board_exam_pair／ncbahm_official_pair，配伍內容照卡上原文保留。宣稱本身留在藥卡標籤上未動，待 Ting 裁定該標籤怎麼改。 代表方香薷飲本庫尚無方劑卡，found_in_formulas 留空。"
+      "teaching_note_zh": "此組合不在 2026 NCBAHM 考綱 Appendix B 的 51 組對藥內（Appendix B 全部是二味對藥）。代表方為香薷飲（本庫尚未建該方卡片）。",
+      "curation_note_zh": "卡上標籤宣稱「2026 NCBAHM Appendix B 官方對藥」，但以 repo 內考綱正本 curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md 的 Appendix B 逐條核對後不成立（Appendix B 共 51 組、全部是二味對藥）。故本記錄不標 board_exam_pair／ncbahm_official_pair，配伍內容照卡上原文保留。宣稱本身留在藥卡標籤上未動，待 Ting 裁定該標籤怎麼改。 代表方香薷飲本庫尚無方劑卡，found_in_formulas 留空。"
     },
     {
       "id": "pair.jing_jie__bo_he",
@@ -10460,7 +10478,8 @@
           "not_claimed_as_official"
         ]
       },
-      "teaching_note_zh": "本條併入兩張卡的原敘述：herb.fang_feng 防風卡版（黃耆、白朮益氣固表，防風疏散表邪）與 herb.huang_qi 黃耆卡版（固表止汗，補氣固表兼疏散）。黃耆版多出的「止汗」功效定位已保留。兩版中英文皆為卡上原有，非代譯。"
+      "teaching_note_zh": "本條配伍敘述併自防風與黃耆兩張卡：防風卡側重黃耆、白朮益氣固表而防風疏散表邪，黃耆卡側重固表止汗。",
+      "curation_note_zh": "本條併入兩張卡的原敘述：herb.fang_feng 防風卡版（黃耆、白朮益氣固表，防風疏散表邪）與 herb.huang_qi 黃耆卡版（固表止汗，補氣固表兼疏散）。黃耆版多出的「止汗」功效定位已保留。兩版中英文皆為卡上原有，非代譯。"
     },
     {
       "id": "pair.qiang_huo__fang_feng",
@@ -10505,7 +10524,8 @@
           "ncbahm_appendix_b_claim_refuted_2026-08-27"
         ]
       },
-      "teaching_note_zh": "卡上標籤宣稱「2026 NCBAHM Appendix B 官方對藥」，但以 repo 內考綱正本 curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md 的 Appendix B 逐條核對後不成立（Appendix B 共 51 組、全部是二味對藥）。故本記錄不標 board_exam_pair／ncbahm_official_pair，配伍內容照卡上原文保留。宣稱本身留在藥卡標籤上未動，待 Ting 裁定該標籤怎麼改。"
+      "teaching_note_zh": "此組合不在 2026 NCBAHM 考綱 Appendix B 的 51 組對藥清單上；配伍內容照來源原文保留。",
+      "curation_note_zh": "卡上標籤宣稱「2026 NCBAHM Appendix B 官方對藥」，但以 repo 內考綱正本 curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md 的 Appendix B 逐條核對後不成立（Appendix B 共 51 組、全部是二味對藥）。故本記錄不標 board_exam_pair／ncbahm_official_pair，配伍內容照卡上原文保留。宣稱本身留在藥卡標籤上未動，待 Ting 裁定該標籤怎麼改。"
     },
     {
       "id": "pair.bai_zhi__cang_er_zi__xin_yi",
@@ -10551,7 +10571,8 @@
           "ncbahm_appendix_b_claim_refuted_2026-08-27"
         ]
       },
-      "teaching_note_zh": "卡上標籤宣稱「2026 NCBAHM Appendix B 官方對藥」，但以 repo 內考綱正本 curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md 的 Appendix B 逐條核對後不成立（Appendix B 共 51 組、全部是二味對藥）。故本記錄不標 board_exam_pair／ncbahm_official_pair，配伍內容照卡上原文保留。宣稱本身留在藥卡標籤上未動，待 Ting 裁定該標籤怎麼改。"
+      "teaching_note_zh": "此組合不在 2026 NCBAHM 考綱 Appendix B 的 51 組對藥內 —— Appendix B 全部是二味對藥；配伍內容照來源原文保留。",
+      "curation_note_zh": "卡上標籤宣稱「2026 NCBAHM Appendix B 官方對藥」，但以 repo 內考綱正本 curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md 的 Appendix B 逐條核對後不成立（Appendix B 共 51 組、全部是二味對藥）。故本記錄不標 board_exam_pair／ncbahm_official_pair，配伍內容照卡上原文保留。宣稱本身留在藥卡標籤上未動，待 Ting 裁定該標籤怎麼改。"
     },
     {
       "id": "pair.bai_zhi__chuan_xiong",
@@ -10596,7 +10617,8 @@
           "ncbahm_appendix_b_claim_refuted_2026-08-27"
         ]
       },
-      "teaching_note_zh": "卡上標籤宣稱「2026 NCBAHM Appendix B 官方對藥」，但以 repo 內考綱正本 curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md 的 Appendix B 逐條核對後不成立（Appendix B 共 51 組、全部是二味對藥）。故本記錄不標 board_exam_pair／ncbahm_official_pair，配伍內容照卡上原文保留。宣稱本身留在藥卡標籤上未動，待 Ting 裁定該標籤怎麼改。"
+      "teaching_note_zh": "此組合不在 2026 NCBAHM 考綱 Appendix B 的 51 組對藥清單上；配伍內容照來源原文保留。",
+      "curation_note_zh": "卡上標籤宣稱「2026 NCBAHM Appendix B 官方對藥」，但以 repo 內考綱正本 curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md 的 Appendix B 逐條核對後不成立（Appendix B 共 51 組、全部是二味對藥）。故本記錄不標 board_exam_pair／ncbahm_official_pair，配伍內容照卡上原文保留。宣稱本身留在藥卡標籤上未動，待 Ting 裁定該標籤怎麼改。"
     },
     {
       "id": "pair.xi_xin__ma_huang__fu_zi",
@@ -10640,7 +10662,8 @@
           "ncbahm_appendix_b_claim_refuted_2026-08-27"
         ]
       },
-      "teaching_note_zh": "卡上標籤宣稱「2026 NCBAHM Appendix B 官方對藥」，但以 repo 內考綱正本 curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md 的 Appendix B 逐條核對後不成立（Appendix B 共 51 組、全部是二味對藥）。故本記錄不標 board_exam_pair／ncbahm_official_pair，配伍內容照卡上原文保留。宣稱本身留在藥卡標籤上未動，待 Ting 裁定該標籤怎麼改。 代表方麻黃細辛附子湯本庫尚無方劑卡，found_in_formulas 留空。"
+      "teaching_note_zh": "此組合不在 2026 NCBAHM 考綱 Appendix B 的 51 組對藥內（Appendix B 全部是二味對藥）。代表方為麻黃細辛附子湯（本庫尚未建該方卡片）。",
+      "curation_note_zh": "卡上標籤宣稱「2026 NCBAHM Appendix B 官方對藥」，但以 repo 內考綱正本 curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md 的 Appendix B 逐條核對後不成立（Appendix B 共 51 組、全部是二味對藥）。故本記錄不標 board_exam_pair／ncbahm_official_pair，配伍內容照卡上原文保留。宣稱本身留在藥卡標籤上未動，待 Ting 裁定該標籤怎麼改。 代表方麻黃細辛附子湯本庫尚無方劑卡，found_in_formulas 留空。"
     },
     {
       "id": "pair.cang_er_zi__xin_yi__bai_zhi__bo_he",
@@ -10687,7 +10710,8 @@
           "ncbahm_appendix_b_claim_refuted_2026-08-27"
         ]
       },
-      "teaching_note_zh": "卡上標籤宣稱「2026 NCBAHM Appendix B 官方對藥」，但以 repo 內考綱正本 curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md 的 Appendix B 逐條核對後不成立（Appendix B 共 51 組、全部是二味對藥）。故本記錄不標 board_exam_pair／ncbahm_official_pair，配伍內容照卡上原文保留。宣稱本身留在藥卡標籤上未動，待 Ting 裁定該標籤怎麼改。"
+      "teaching_note_zh": "此組合不在 2026 NCBAHM 考綱 Appendix B 的 51 組對藥內 —— Appendix B 全部是二味對藥；配伍內容照來源原文保留。",
+      "curation_note_zh": "卡上標籤宣稱「2026 NCBAHM Appendix B 官方對藥」，但以 repo 內考綱正本 curriculum/board/NCBAHM_CH_Exam_Content_Outline-w-Bibliography_Jan_2026.md 的 Appendix B 逐條核對後不成立（Appendix B 共 51 組、全部是二味對藥）。故本記錄不標 board_exam_pair／ncbahm_official_pair，配伍內容照卡上原文保留。宣稱本身留在藥卡標籤上未動，待 Ting 裁定該標籤怎麼改。"
     },
     {
       "id": "pair.pu_gong_ying__gua_lou__zhe_bei_mu",
@@ -10774,7 +10798,8 @@
           "not_claimed_as_official"
         ]
       },
-      "teaching_note_zh": "卡上未指名代表方;本庫 formula.wu_wei_xiao_du_yin 五味消毒飲組成含此三味,但來源未點名該方,故不掛,不代來源作連結。"
+      "teaching_note_zh": "來源沒有指名代表方；五味消毒飲的組成含這三味，但來源未點名該方，故不代為連結。",
+      "curation_note_zh": "卡上未指名代表方;本庫 formula.wu_wei_xiao_du_yin 五味消毒飲組成含此三味,但來源未點名該方,故不掛,不代來源作連結。"
     },
     {
       "id": "pair.huang_qi__sheng_ma__chai_hu",
@@ -11093,11 +11118,12 @@
           "bastyr_outline_not_in_repo"
         ]
       },
-      "teaching_note_zh": "卡上標籤寫「干薑」，為「乾薑」的異體字形，對應 herb.gan_jiang。 本組合不在 2026 NCBAHM 考綱 Appendix B 的 51 組對藥內；本條來源標的 Bastyr 考綱正本不在本庫（curriculum/board/ 只有四份 NCBAHM 考綱），無從佐證。其中「附子 + 乾薑」是 Appendix B 收錄的二味對藥（本庫另有獨立卡片），考綱要背的是那兩味；本組合當常用臨床對藥記。",
+      "teaching_note_zh": "來源標籤寫「干薑」，是「乾薑」的異體字。 本組合不在 2026 NCBAHM 考綱 Appendix B 的 51 組對藥內；本條來源標的 Bastyr 考綱正本不在本庫（curriculum/board/ 只有四份 NCBAHM 考綱），無從佐證。其中「附子 + 乾薑」是 Appendix B 收錄的二味對藥（本庫另有獨立卡片），考綱要背的是那兩味；本組合當常用臨床對藥記。",
       "official_claim_status": "withdrawn__bastyr_source_not_in_repo",
       "contains_ncbahm_official_pairs": [
         "pair.fu_zi__gan_jiang"
-      ]
+      ],
+      "curation_note_zh": "卡上標籤寫「干薑」，為「乾薑」的異體字形，對應 herb.gan_jiang。 本組合不在 2026 NCBAHM 考綱 Appendix B 的 51 組對藥內；本條來源標的 Bastyr 考綱正本不在本庫（curriculum/board/ 只有四份 NCBAHM 考綱），無從佐證。其中「附子 + 乾薑」是 Appendix B 收錄的二味對藥（本庫另有獨立卡片），考綱要背的是那兩味；本組合當常用臨床對藥記。"
     },
     {
       "id": "pair.he_zi__jie_geng__gan_cao",
@@ -11143,11 +11169,12 @@
           "bastyr_outline_not_in_repo"
         ]
       },
-      "teaching_note_zh": "代表方訶子湯本庫尚無方劑卡，found_in_formulas 留空。 本組合不在 2026 NCBAHM 考綱 Appendix B 的 51 組對藥內；本條來源標的 Bastyr 考綱正本不在本庫（curriculum/board/ 只有四份 NCBAHM 考綱），無從佐證。其中「桔梗 + 甘草」是 Appendix B 收錄的二味對藥（本庫另有獨立卡片），考綱要背的是那兩味；本組合當常用臨床對藥記。",
+      "teaching_note_zh": "代表方為訶子湯（本庫尚未建該方卡片）。 本組合不在 2026 NCBAHM 考綱 Appendix B 的 51 組對藥內；本條來源標的 Bastyr 考綱正本不在本庫（curriculum/board/ 只有四份 NCBAHM 考綱），無從佐證。其中「桔梗 + 甘草」是 Appendix B 收錄的二味對藥（本庫另有獨立卡片），考綱要背的是那兩味；本組合當常用臨床對藥記。",
       "official_claim_status": "withdrawn__bastyr_source_not_in_repo",
       "contains_ncbahm_official_pairs": [
         "pair.jie_geng__gan_cao"
-      ]
+      ],
+      "curation_note_zh": "代表方訶子湯本庫尚無方劑卡，found_in_formulas 留空。 本組合不在 2026 NCBAHM 考綱 Appendix B 的 51 組對藥內；本條來源標的 Bastyr 考綱正本不在本庫（curriculum/board/ 只有四份 NCBAHM 考綱），無從佐證。其中「桔梗 + 甘草」是 Appendix B 收錄的二味對藥（本庫另有獨立卡片），考綱要背的是那兩味；本組合當常用臨床對藥記。"
     },
     {
       "id": "pair.he_zi__ying_su_ke__rou_dou_kou",
@@ -11195,8 +11222,9 @@
           "bastyr_outline_not_in_repo"
         ]
       },
-      "teaching_note_zh": "卡上標籤寫「嬰粟殼」，為「罌粟殼」之誤，對應 herb.ying_su_ke（管制藥材，用藥安全見該卡）。 本組合不在 2026 NCBAHM 考綱 Appendix B 的 51 組對藥內；本條來源標的 Bastyr 考綱正本不在本庫（curriculum/board/ 只有四份 NCBAHM 考綱），無從佐證。這一組是真人養臟湯的組成，當常用臨床對藥記。",
-      "official_claim_status": "withdrawn__bastyr_source_not_in_repo"
+      "teaching_note_zh": "來源標籤寫「嬰粟殼」，是「罌粟殼」之誤。罌粟殼屬管制藥材，用藥安全見該藥卡片。 本組合不在 2026 NCBAHM 考綱 Appendix B 的 51 組對藥內；本條來源標的 Bastyr 考綱正本不在本庫（curriculum/board/ 只有四份 NCBAHM 考綱），無從佐證。這一組是真人養臟湯的組成，當常用臨床對藥記。",
+      "official_claim_status": "withdrawn__bastyr_source_not_in_repo",
+      "curation_note_zh": "卡上標籤寫「嬰粟殼」，為「罌粟殼」之誤，對應 herb.ying_su_ke（管制藥材，用藥安全見該卡）。 本組合不在 2026 NCBAHM 考綱 Appendix B 的 51 組對藥內；本條來源標的 Bastyr 考綱正本不在本庫（curriculum/board/ 只有四份 NCBAHM 考綱），無從佐證。這一組是真人養臟湯的組成，當常用臨床對藥記。"
     },
     {
       "id": "pair.chi_shi_zhi__gan_jiang__jing_mi",
@@ -11286,7 +11314,8 @@
           "unsourced"
         ]
       },
-      "teaching_note_zh": "本記錄的配伍意義欄寫的是「兩味各自在 銀翹散 中的角色」，逐字取自該方劑卡的 composition。**兩味合用達成什麼（schema_note 說 pair_meaning 該講的那件事）本庫目前沒有來源**：curriculum 全庫查無同時述及這兩味的段落，方劑卡也只寫各自角色。故不代為推論協同作用，亦不標七情 relation（那是需要來源的分類宣告）。查到來源後再補。"
+      "teaching_note_zh": "本條的配伍敘述寫的是兩味各自在銀翹散裡的角色，逐字取自該方卡片；**兩味合用達成什麼，本庫目前查不到來源**，所以不代為推論協同作用，也不標七情關係，查到來源再補。",
+      "curation_note_zh": "本記錄的配伍意義欄寫的是「兩味各自在 銀翹散 中的角色」，逐字取自該方劑卡的 composition。**兩味合用達成什麼（schema_note 說 pair_meaning 該講的那件事）本庫目前沒有來源**：curriculum 全庫查無同時述及這兩味的段落，方劑卡也只寫各自角色。故不代為推論協同作用，亦不標七情 relation（那是需要來源的分類宣告）。查到來源後再補。"
     },
     {
       "id": "pair.jing_jie__dan_dou_chi",
@@ -11327,7 +11356,8 @@
           "unsourced"
         ]
       },
-      "teaching_note_zh": "本記錄的配伍意義欄寫的是「兩味各自在 銀翹散 中的角色」，逐字取自該方劑卡的 composition。**兩味合用達成什麼（schema_note 說 pair_meaning 該講的那件事）本庫目前沒有來源**：curriculum 全庫查無同時述及這兩味的段落，方劑卡也只寫各自角色。故不代為推論協同作用，亦不標七情 relation（那是需要來源的分類宣告）。查到來源後再補。 方劑卡未載角色說明的藥味：荊芥。"
+      "teaching_note_zh": "本條的配伍敘述寫的是兩味各自在銀翹散裡的角色，逐字取自該方卡片；**兩味合用達成什麼，本庫目前查不到來源**，所以不代為推論協同作用，也不標七情關係，查到來源再補。（其中荊芥在該方卡片裡沒有角色說明。）",
+      "curation_note_zh": "本記錄的配伍意義欄寫的是「兩味各自在 銀翹散 中的角色」，逐字取自該方劑卡的 composition。**兩味合用達成什麼（schema_note 說 pair_meaning 該講的那件事）本庫目前沒有來源**：curriculum 全庫查無同時述及這兩味的段落，方劑卡也只寫各自角色。故不代為推論協同作用，亦不標七情 relation（那是需要來源的分類宣告）。查到來源後再補。 方劑卡未載角色說明的藥味：荊芥。"
     },
     {
       "id": "pair.jie_geng__xing_ren",
@@ -11368,7 +11398,8 @@
           "unsourced"
         ]
       },
-      "teaching_note_zh": "本記錄的配伍意義欄寫的是「兩味各自在 桑菊飲 中的角色」，逐字取自該方劑卡的 composition。**兩味合用達成什麼（schema_note 說 pair_meaning 該講的那件事）本庫目前沒有來源**：curriculum 全庫查無同時述及這兩味的段落，方劑卡也只寫各自角色。故不代為推論協同作用，亦不標七情 relation（那是需要來源的分類宣告）。查到來源後再補。 方劑卡未載角色說明的藥味：杏仁。"
+      "teaching_note_zh": "本條的配伍敘述寫的是兩味各自在桑菊飲裡的角色，逐字取自該方卡片；**兩味合用達成什麼，本庫目前查不到來源**，所以不代為推論協同作用，也不標七情關係，查到來源再補。（其中杏仁在該方卡片裡沒有角色說明。）",
+      "curation_note_zh": "本記錄的配伍意義欄寫的是「兩味各自在 桑菊飲 中的角色」，逐字取自該方劑卡的 composition。**兩味合用達成什麼（schema_note 說 pair_meaning 該講的那件事）本庫目前沒有來源**：curriculum 全庫查無同時述及這兩味的段落，方劑卡也只寫各自角色。故不代為推論協同作用，亦不標七情 relation（那是需要來源的分類宣告）。查到來源後再補。 方劑卡未載角色說明的藥味：杏仁。"
     },
     {
       "id": "pair.zhi_gan_cao__jing_mi",
@@ -11409,7 +11440,8 @@
           "unsourced"
         ]
       },
-      "teaching_note_zh": "本記錄的配伍意義欄寫的是「兩味各自在 白虎湯 中的角色」，逐字取自該方劑卡的 composition。**兩味合用達成什麼（schema_note 說 pair_meaning 該講的那件事）本庫目前沒有來源**：curriculum 全庫查無同時述及這兩味的段落，方劑卡也只寫各自角色。故不代為推論協同作用，亦不標七情 relation（那是需要來源的分類宣告）。查到來源後再補。"
+      "teaching_note_zh": "本條的配伍敘述寫的是兩味各自在白虎湯裡的角色，逐字取自該方卡片；**兩味合用達成什麼，本庫目前查不到來源**，所以不代為推論協同作用，也不標七情關係，查到來源再補。",
+      "curation_note_zh": "本記錄的配伍意義欄寫的是「兩味各自在 白虎湯 中的角色」，逐字取自該方劑卡的 composition。**兩味合用達成什麼（schema_note 說 pair_meaning 該講的那件事）本庫目前沒有來源**：curriculum 全庫查無同時述及這兩味的段落，方劑卡也只寫各自角色。故不代為推論協同作用，亦不標七情 relation（那是需要來源的分類宣告）。查到來源後再補。"
     },
     {
       "id": "pair.huang_lian__huang_qin",
@@ -11450,7 +11482,8 @@
           "unsourced"
         ]
       },
-      "teaching_note_zh": "本記錄的配伍意義欄寫的是「兩味各自在 黃連解毒湯 中的角色」，逐字取自該方劑卡的 composition。**兩味合用達成什麼（schema_note 說 pair_meaning 該講的那件事）本庫目前沒有來源**：curriculum 全庫查無同時述及這兩味的段落，方劑卡也只寫各自角色。故不代為推論協同作用，亦不標七情 relation（那是需要來源的分類宣告）。查到來源後再補。"
+      "teaching_note_zh": "本條的配伍敘述寫的是兩味各自在黃連解毒湯裡的角色，逐字取自該方卡片；**兩味合用達成什麼，本庫目前查不到來源**，所以不代為推論協同作用，也不標七情關係，查到來源再補。",
+      "curation_note_zh": "本記錄的配伍意義欄寫的是「兩味各自在 黃連解毒湯 中的角色」，逐字取自該方劑卡的 composition。**兩味合用達成什麼（schema_note 說 pair_meaning 該講的那件事）本庫目前沒有來源**：curriculum 全庫查無同時述及這兩味的段落，方劑卡也只寫各自角色。故不代為推論協同作用，亦不標七情 relation（那是需要來源的分類宣告）。查到來源後再補。"
     },
     {
       "id": "pair.huang_qin__huang_bai",
@@ -11491,7 +11524,8 @@
           "unsourced"
         ]
       },
-      "teaching_note_zh": "本記錄的配伍意義欄寫的是「兩味各自在 黃連解毒湯 中的角色」，逐字取自該方劑卡的 composition。**兩味合用達成什麼（schema_note 說 pair_meaning 該講的那件事）本庫目前沒有來源**：curriculum 全庫查無同時述及這兩味的段落，方劑卡也只寫各自角色。故不代為推論協同作用，亦不標七情 relation（那是需要來源的分類宣告）。查到來源後再補。 方劑卡未載角色說明的藥味：黃柏。"
+      "teaching_note_zh": "本條的配伍敘述寫的是兩味各自在黃連解毒湯裡的角色，逐字取自該方卡片；**兩味合用達成什麼，本庫目前查不到來源**，所以不代為推論協同作用，也不標七情關係，查到來源再補。（其中黃柏在該方卡片裡沒有角色說明。）",
+      "curation_note_zh": "本記錄的配伍意義欄寫的是「兩味各自在 黃連解毒湯 中的角色」，逐字取自該方劑卡的 composition。**兩味合用達成什麼（schema_note 說 pair_meaning 該講的那件事）本庫目前沒有來源**：curriculum 全庫查無同時述及這兩味的段落，方劑卡也只寫各自角色。故不代為推論協同作用，亦不標七情 relation（那是需要來源的分類宣告）。查到來源後再補。 方劑卡未載角色說明的藥味：黃柏。"
     },
     {
       "id": "pair.huang_lian__zhi_zi",
@@ -11532,7 +11566,8 @@
           "unsourced"
         ]
       },
-      "teaching_note_zh": "本記錄的配伍意義欄寫的是「兩味各自在 黃連解毒湯 中的角色」，逐字取自該方劑卡的 composition。**兩味合用達成什麼（schema_note 說 pair_meaning 該講的那件事）本庫目前沒有來源**：curriculum 全庫查無同時述及這兩味的段落，方劑卡也只寫各自角色。故不代為推論協同作用，亦不標七情 relation（那是需要來源的分類宣告）。查到來源後再補。 方中作「(梔子炭)」(梔子的炮製/部位別),herbs 陣列用正名 herb.zhi_zi。"
+      "teaching_note_zh": "本條的配伍敘述寫的是兩味各自在黃連解毒湯裡的角色，逐字取自該方卡片；**兩味合用達成什麼，本庫目前查不到來源**，所以不代為推論協同作用，也不標七情關係，查到來源再補。方中作「梔子炭」，是梔子的炮製品。",
+      "curation_note_zh": "本記錄的配伍意義欄寫的是「兩味各自在 黃連解毒湯 中的角色」，逐字取自該方劑卡的 composition。**兩味合用達成什麼（schema_note 說 pair_meaning 該講的那件事）本庫目前沒有來源**：curriculum 全庫查無同時述及這兩味的段落，方劑卡也只寫各自角色。故不代為推論協同作用，亦不標七情 relation（那是需要來源的分類宣告）。查到來源後再補。 方中作「(梔子炭)」(梔子的炮製/部位別),herbs 陣列用正名 herb.zhi_zi。"
     },
     {
       "id": "pair.sheng_di_huang__dan_zhu_ye",
@@ -11573,7 +11608,8 @@
           "unsourced"
         ]
       },
-      "teaching_note_zh": "本記錄的配伍意義欄寫的是「兩味各自在 導赤散 中的角色」，逐字取自該方劑卡的 composition。**兩味合用達成什麼（schema_note 說 pair_meaning 該講的那件事）本庫目前沒有來源**：curriculum 全庫查無同時述及這兩味的段落，方劑卡也只寫各自角色。故不代為推論協同作用，亦不標七情 relation（那是需要來源的分類宣告）。查到來源後再補。"
+      "teaching_note_zh": "本條的配伍敘述寫的是兩味各自在導赤散裡的角色，逐字取自該方卡片；**兩味合用達成什麼，本庫目前查不到來源**，所以不代為推論協同作用，也不標七情關係，查到來源再補。",
+      "curation_note_zh": "本記錄的配伍意義欄寫的是「兩味各自在 導赤散 中的角色」，逐字取自該方劑卡的 composition。**兩味合用達成什麼（schema_note 說 pair_meaning 該講的那件事）本庫目前沒有來源**：curriculum 全庫查無同時述及這兩味的段落，方劑卡也只寫各自角色。故不代為推論協同作用，亦不標七情 relation（那是需要來源的分類宣告）。查到來源後再補。"
     },
     {
       "id": "pair.mu_tong__gan_cao",
@@ -11614,7 +11650,8 @@
           "unsourced"
         ]
       },
-      "teaching_note_zh": "本記錄的配伍意義欄寫的是「兩味各自在 導赤散 中的角色」，逐字取自該方劑卡的 composition。**兩味合用達成什麼（schema_note 說 pair_meaning 該講的那件事）本庫目前沒有來源**：curriculum 全庫查無同時述及這兩味的段落，方劑卡也只寫各自角色。故不代為推論協同作用，亦不標七情 relation（那是需要來源的分類宣告）。查到來源後再補。 方中作「甘草梢」(甘草的炮製/部位別),herbs 陣列用正名 herb.gan_cao。"
+      "teaching_note_zh": "本條的配伍敘述寫的是兩味各自在導赤散裡的角色，逐字取自該方卡片；**兩味合用達成什麼，本庫目前查不到來源**，所以不代為推論協同作用，也不標七情關係，查到來源再補。方中作「甘草梢」，是甘草的特定部位。",
+      "curation_note_zh": "本記錄的配伍意義欄寫的是「兩味各自在 導赤散 中的角色」，逐字取自該方劑卡的 composition。**兩味合用達成什麼（schema_note 說 pair_meaning 該講的那件事）本庫目前沒有來源**：curriculum 全庫查無同時述及這兩味的段落，方劑卡也只寫各自角色。故不代為推論協同作用，亦不標七情 relation（那是需要來源的分類宣告）。查到來源後再補。 方中作「甘草梢」(甘草的炮製/部位別),herbs 陣列用正名 herb.gan_cao。"
     },
     {
       "id": "pair.long_dan_cao__chai_hu",
@@ -11655,7 +11692,8 @@
           "unsourced"
         ]
       },
-      "teaching_note_zh": "本記錄的配伍意義欄寫的是「兩味各自在 龍膽瀉肝湯 中的角色」，逐字取自該方劑卡的 composition。**兩味合用達成什麼（schema_note 說 pair_meaning 該講的那件事）本庫目前沒有來源**：curriculum 全庫查無同時述及這兩味的段落，方劑卡也只寫各自角色。故不代為推論協同作用，亦不標七情 relation（那是需要來源的分類宣告）。查到來源後再補。"
+      "teaching_note_zh": "本條的配伍敘述寫的是兩味各自在龍膽瀉肝湯裡的角色，逐字取自該方卡片；**兩味合用達成什麼，本庫目前查不到來源**，所以不代為推論協同作用，也不標七情關係，查到來源再補。",
+      "curation_note_zh": "本記錄的配伍意義欄寫的是「兩味各自在 龍膽瀉肝湯 中的角色」，逐字取自該方劑卡的 composition。**兩味合用達成什麼（schema_note 說 pair_meaning 該講的那件事）本庫目前沒有來源**：curriculum 全庫查無同時述及這兩味的段落，方劑卡也只寫各自角色。故不代為推論協同作用，亦不標七情 relation（那是需要來源的分類宣告）。查到來源後再補。"
     },
     {
       "id": "pair.huang_qin__zhi_zi",
@@ -11696,7 +11734,8 @@
           "unsourced"
         ]
       },
-      "teaching_note_zh": "本記錄的配伍意義欄寫的是「兩味各自在 龍膽瀉肝湯 中的角色」，逐字取自該方劑卡的 composition。**兩味合用達成什麼（schema_note 說 pair_meaning 該講的那件事）本庫目前沒有來源**：curriculum 全庫查無同時述及這兩味的段落，方劑卡也只寫各自角色。故不代為推論協同作用，亦不標七情 relation（那是需要來源的分類宣告）。查到來源後再補。"
+      "teaching_note_zh": "本條的配伍敘述寫的是兩味各自在龍膽瀉肝湯裡的角色，逐字取自該方卡片；**兩味合用達成什麼，本庫目前查不到來源**，所以不代為推論協同作用，也不標七情關係，查到來源再補。",
+      "curation_note_zh": "本記錄的配伍意義欄寫的是「兩味各自在 龍膽瀉肝湯 中的角色」，逐字取自該方劑卡的 composition。**兩味合用達成什麼（schema_note 說 pair_meaning 該講的那件事）本庫目前沒有來源**：curriculum 全庫查無同時述及這兩味的段落，方劑卡也只寫各自角色。故不代為推論協同作用，亦不標七情 relation（那是需要來源的分類宣告）。查到來源後再補。"
     },
     {
       "id": "pair.sheng_di_huang__dang_gui",
@@ -11737,7 +11776,8 @@
           "unsourced"
         ]
       },
-      "teaching_note_zh": "本記錄的配伍意義欄寫的是「兩味各自在 龍膽瀉肝湯 中的角色」，逐字取自該方劑卡的 composition。**兩味合用達成什麼（schema_note 說 pair_meaning 該講的那件事）本庫目前沒有來源**：curriculum 全庫查無同時述及這兩味的段落，方劑卡也只寫各自角色。故不代為推論協同作用，亦不標七情 relation（那是需要來源的分類宣告）。查到來源後再補。 方中作「當歸尾」(當歸的炮製/部位別),herbs 陣列用正名 herb.dang_gui。"
+      "teaching_note_zh": "本條的配伍敘述寫的是兩味各自在龍膽瀉肝湯裡的角色，逐字取自該方卡片；**兩味合用達成什麼，本庫目前查不到來源**，所以不代為推論協同作用，也不標七情關係，查到來源再補。方中作「當歸尾」，是當歸的特定部位。",
+      "curation_note_zh": "本記錄的配伍意義欄寫的是「兩味各自在 龍膽瀉肝湯 中的角色」，逐字取自該方劑卡的 composition。**兩味合用達成什麼（schema_note 說 pair_meaning 該講的那件事）本庫目前沒有來源**：curriculum 全庫查無同時述及這兩味的段落，方劑卡也只寫各自角色。故不代為推論協同作用，亦不標七情 relation（那是需要來源的分類宣告）。查到來源後再補。 方中作「當歸尾」(當歸的炮製/部位別),herbs 陣列用正名 herb.dang_gui。"
     }
   ],
   "updated_at": "2026-07-30",
