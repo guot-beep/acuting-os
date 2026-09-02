@@ -10,7 +10,11 @@
  * Scenario E  定稿後改建議庫:歷史 AVS 渲染文字不變
  * Scenario F  更正流程:v1 superseded、v2 finalized、v1 仍可讀
  * Scenario G  legacy 自由文字推斷:draft 標記 inferred、定稿存確認後結果
- * 附加:惡意/誤植診斷詞進自訂指示 → checkPatientOutputSafety 必攔
+ * 附加:惡意/誤植的**內部 id 代碼**進自訂指示 → checkPatientOutputSafety 必攔
+ *   (2026-09-02 更正原句「誤植診斷詞…必攔」:本檔注入的一直是 id 代碼
+ *    pattern.liver_qi_stagnation 與病歷代碼 P&1,從來沒有注入過中文診斷詞。
+ *    實測「肝鬱氣滯」「胃食道逆流」該閘門直接放行 —— 這一層目前靠醫師自律,
+ *    沒有測試覆蓋,也沒有機器把關。別把本檔的 118 綠燈讀成「中文診斷詞擋得住」。)
  *
  * 用法:node scripts/test-avs-checkout.js
  */
