@@ -1180,3 +1180,9 @@ PASS(composition 查無藥材維持 1 味次 `formula.huang_tu_tang` 的「灶�
 > 它同時把公開主站 acuting.com 鎖住約 2.5 小時(訪客看到 Access 登入頁;play.acuting.com 在 GitHub Pages 不受影響)。
 > 修法:刪除 All Workers,改為 acuting-os Worker 專屬的 Access(All traffic,AUD 換成 a2d8e3c1…,commit c4d181df)。
 > 規則:**病例站的鎖只能是 Worker 專屬,永不使用帳號層級應用程式**;`scripts/canary-production-lock.js` 自此同時斷言 acuting.com / play 匿名 200。
+> **回滾(2026-09-02 23:00)**:Cloudflare 自 01:33Z 起有「Access OTP 郵件被擋」事故,Ting 收不到 PIN、登不進新的 Worker 專屬 Access;
+> 開診在即,以 `apply-d1-production-config.js --revert`(commit bf0a64d4)切回純靜態 + localStorage,由她在 acuting-os 的 Access 頁移除鎖。
+> 雲端 D1 內容:她匯入過一份 0 筆的 JSON,無臨床資料。**D33 本身不變**,只是切換延後到事故解除。
+> **重切步驟(15 分鐘)**:她 acuting-os → Access → Protect this Worker(All traffic,規則 Emails = 她)→ 我跑 canary(病例站鎖、acuting.com 公開)→
+> `node scripts/apply-d1-production-config.js --database-id c96bd14b-70ed-49c1-8abf-1eeb1eac651f --team-domain https://soft-snow-1c0c.cloudflareaccess.com --aud <轉址 kid>` → 閘門 → push main。
+> AUD 會隨 Access 應用程式重建而變,一律從轉址的 `kid=` 讀,不要抄舊的。

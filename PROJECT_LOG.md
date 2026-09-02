@@ -1,3 +1,17 @@
+# 2026-09-02 深夜 — D1 切上去又切回來:Access 只鎖 acuting-os 的修正 + Cloudflare OTP 事故 → 回滾到純靜態,重切等事故解除
+
+22:07 D33 切換推上 main(1d22de44);她桌機、手機都看到藍徽章 `☁ D1`。接著兩件事:
+
+1. **主站被鎖 2.5h**:鎖 acuting-os 用的是帳號層級「All Workers」Access 應用程式,把 acuting.com 一起鎖了(訪客看到登入頁)。
+   匿名探針(轉址 Location 的 `kid=` = 應用程式 AUD)定位到同一個應用程式 → 刪除,改 acuting-os Worker 專屬 Access,AUD 換成 a2d8e3c1…(c4d181df)。
+   `canary-production-lock.js` 加反向斷言:acuting.com / play 必須匿名 200(cc5504f4)。
+2. **登不進去**:Cloudflare 事故「Access one-time PIN emails blocked by certain email security gateways」(01:33Z 起,調查中),她收不到 PIN;
+   登入頁只有 email PIN 一種。開診在即 → 23:00 推回滾 bf0a64d4(`--revert`:拿掉 Worker/D1/meta),她移除 acuting-os 的 Access 後 app 回到下午狀態(localStorage)。
+
+雲端 D1 目前沒有臨床資料(她匯入的是 0 筆)。重切 = 她重開 Worker 專屬 Access → 我跑 canary → apply(AUD 從轉址讀)→ 閘門 → push,約 15 分鐘;程式一行都不用改。
+
+教訓兩條(已入記憶與清單):Access 的 scope 是帳號級副作用面,改完要探測「不該鎖的有沒有被波及」;登入方式只有 OTP 一條路時,任何郵件事故都等於鎖死自己 —— 之後加第二個 IdP(Google)再切。
+
 # 2026-09-02 — 86 筆拆開查完:37 筆是我拿錯尺,49 筆是真缺陷已修
 
 Ting 裁定把「該 PDF 找不到這個穴」那 86 筆拆開。拆的結論:
