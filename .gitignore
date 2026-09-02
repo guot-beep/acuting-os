@@ -67,3 +67,6 @@ __pycache__/
 .wrangler/
 .dev.vars
 .dev.vars.*
+
+# 本機通行碼 e2e 的設定(含測試用 hash 與簽證秘密;每個人自己產生,不要進 git)
+wrangler.localpass.jsonc
