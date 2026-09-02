@@ -700,6 +700,12 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "24"
+      # acupoint_page_anchors 這一層要重抽課件 PDF 的版面才能判「引的是不是那一頁」。
+      # 沒裝 poppler 時那支會回 {"skipped":true},而 ratchet 的 extract 會**丟例外**
+      # (exit 2),不會靜靜當 0 —— 也就是說這一步漏掉會讓 CI 紅,不會讓 gate 消失。
+      - name: pdftotext (acupoint page-anchor accuracy needs the PDF layout)
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils
+
       - name: herb exam-track filler (template sentences are defects, not content)
         run: node scripts/validate-herb-track-filler.js
 
