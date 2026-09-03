@@ -172,6 +172,12 @@ jobs:
       - name: review_status controlled vocabulary
         run: node scripts/validate-review-status-vocab.js
 
+      # 2026-08-24: 全庫 id/name 撞名檢查(D3 homonym rule)寫好一直沒接進這個檔案——
+      # 「有 28 支驗證器但沒東西逼它們跑」的同一種病,這次補上第 12 支。實測
+      # `node scripts/validate-naming.js` 在這棵樹上 586 筆全過、exit 0,才接成 blocking。
+      - name: naming collisions across all canonical id/name spaces (D3)
+        run: node scripts/validate-naming.js
+
       # Graduated from the ratchet 2026-08-06: the 72 extra-point D2 ids were
       # backfilled (add-point-ids.js), validate-point-ids is green, so it now
       # blocks like everything else.
@@ -210,8 +216,25 @@ jobs:
       - name: acupoint card standard
         run: node scripts/validate-acupoint-standard.js
 
+      # 2026-08-24: 361 穴的五輸/原絡俞募/八會分類一直有獨立驗證器,沒有 CI 逼它跑。
+      # 實測 exit 0(129 穴標了分類、60 穴標 five_shu_element)才接成 blocking。
+      - name: point category tagging (five-shu / yuan-luo-shu-mu / eight-hui)
+        run: node scripts/validate-point-categories.js
+
       - name: condition card standard
         run: node scripts/validate-condition-standard.js
+
+      # 2026-08-24: condition 的 source citation 層(505 筆、553 條直接來源)有自己
+      # 的驗證器,一樣沒接進來。實測 exit 0(241/505 記錄至少有一個來源)才接成 blocking。
+      - name: condition source citations
+        run: node scripts/validate-condition-sources.js
+
+      # 2026-08-24: CloudTCM 匯入的四份控制詞彙(病名分類/病名/方劑功效標籤/
+      # 方劑主治標籤,共 2473+190+139+14 筆)有結構驗證器,一樣沒接進 CI——它不要求
+      # 全部雙語(2473 筆方劑主治標籤裡 2415 筆誠實標 pending_professional_translation
+      # 就過),只鎖 id 格式/去重/來源網址/翻譯狀態欄位的一致性。實測 exit 0 才接成 blocking。
+      - name: CloudTCM controlled vocabularies (ids, source urls, translation_status)
+        run: node scripts/validate-cloudtcm-vocabularies.js
 
       - name: acupoint source conflicts (APB-2 / APB-4)
         run: node scripts/validate-acupoint-source-conflicts.js
@@ -335,6 +358,22 @@ jobs:
       - name: formula card standard
         run: node scripts/validate-formula-standard.js
 
+      # 2026-08-24: 三支量測過但沒接進 CI 的方劑驗證器,一次補齊——
+      #   validate-no-boilerplate.js      exit 0 (0 個樣板/佔位字串,201 方劑)
+      #   validate-herbal-links.js        exit 0 (10 筆 draft 方劑關聯記錄)
+      #   validate-formula-quality-strict.js exit 0
+      # 三支皆已在這棵樹上實測 exit 0 才接成 blocking(公式同上面每一支:量測、
+      # 不是用猜的)。validate-formula-song.js 特意不接——它整支腳本沒有任何
+      # process.exit,設計上就不可能失敗,接了也只是裝飾,不是 gate。
+      - name: formula fields contain no boilerplate/placeholder text
+        run: node scripts/validate-no-boilerplate.js
+
+      - name: herbal (formula-relationship) links
+        run: node scripts/validate-herbal-links.js
+
+      - name: formula quality (strict tier)
+        run: node scripts/validate-formula-quality-strict.js
+
       # FB-20 (docs/research_packs/FORMULA_EYESON_02.md F-32/F-41): composition-
       # signature duplicate detector. NOTE tier on purpose — 4 unresolved
       # exact-duplicate pairs exist in the live data today (see the script's
@@ -380,6 +419,17 @@ jobs:
       - name: herb integrity predicates HB-4/5/6/8/9/10/11/12 (NOTE tier, see script header)
         run: node scripts/validate-herb-integrity-predicates.js
 
+      # 2026-08-24: pattern_library.json(154 筆證型卡)跟 pattern_registry.json
+      # (151 筆辨證體系登記)各有自己的驗證器,兩支都沒接進 CI——證型是 condition/
+      # tdis/formula 三條線共用的中樞命名空間(D10),沒有 CI 守著等於三條線都可能
+      # 悄悄把它撞壞。實測兩支都 exit 0(pattern-standard 154 筆全過;pattern-registry
+      # 151 有辨證體系、53 有兩軸歸屬,均高於下限)才接成 blocking。
+      - name: pattern card standard
+        run: node scripts/validate-pattern-standard.js
+
+      - name: pattern registry (canonical taxonomy/clinical id space)
+        run: node scripts/validate-pattern-registry.js
+
       - name: comparison standard
         run: node scripts/validate-comparison-standard.js
 
@@ -389,6 +439,16 @@ jobs:
       # yardstick is on the wall before the content arrives (D14).
       - name: symptom standard
         run: node scripts/validate-symptom-standard.js
+
+      # 2026-08-24: tdis_registry.json(159 筆中醫病名卡)有自己的驗證器,沒接進 CI。
+      # 實測 exit 0(159 筆全過,唯一一條 N1 是 note 級不擋)才接成 blocking。
+      - name: TDIS (中醫病名) card standard
+        run: node scripts/validate-tdis-standard.js
+
+      # 2026-08-24: supplements.json(36 筆保健品卡,8 個分類)同樣有驗證器沒接進 CI。
+      # 實測 exit 0(0 defects, 0 warnings)才接成 blocking。
+      - name: supplement card standard
+        run: node scripts/validate-supp-standard.js
 
       # Pharmacology line (2026-08-12). Until now `grep -c pharm` on this file
       # returned 0: 59 drug cards, 48 classes, 38 targets and 7 systems had no
