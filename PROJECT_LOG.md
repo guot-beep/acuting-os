@@ -1,3 +1,11 @@
+# 2026-09-03 — Codex Task 11H 02:30 heartbeat：第二至第四批圖片候選
+
+- **做了什麼**：re-fetch `origin/main@626c0686` 後重讀 Codex／Antigravity handoff；Antigravity 無未處理派工，續做 Codex Task 11H。三個 30-card commits：`615fb165`、`1e492c58`、`967763e5`；canonical `data/acupoints/**` 零異動。
+- **數字 before→after**：heartbeat 內 dead-image candidates `60→240/722`（+180 fields／90 cards／90 unique live images），null `662→482`；各批目錄 1/1、point pages 30/30、`h1` code 30/30、images 30/30 均以真瀏覽器確認 HTTP 200。
+- **驗證結果**：原文 `Self-Test Results: 14/14 fixtures behaving as expected.`；原文 `PASS — 1133/1133 distinct dead URLs mapped to 411 cards and 1215 exact source-field occurrences; 1 all-links-dead card(s).`；nested candidates `240 verified / 482 null / 0 malformed`；`git diff --check` 無輸出。
+- **已知未解**：482/722 dead-image fields 尚未調查；`check-validation-ratchet.js` 仍在既有 anchor-validator output parser 抽數處 exit 1，此錯誤已於上一批在 clean `origin/main@626c0686` 同樣重現，未宣稱 ratchet green。
+- **下一步**：已推到 `codex/tung-dead-link-candidates`，等驗收；若續派，從剩餘 482 依相同目錄→point page→image browser checks、每批最多 30 cards 往下查。
+
 # 2026-09-02 — Codex Task 11H 首批圖片候選＋Antigravity Task 11I identity 更正
 
 - **做了什麼**：branch `codex/tung-dead-link-candidates`，base `origin/main@626c0686`；Task 11H data commit `8a4dab23`，Task 11I correction commit `76463036`，只動 audit ledger／report／focused verifier，canonical `data/acupoints/**` 零異動。

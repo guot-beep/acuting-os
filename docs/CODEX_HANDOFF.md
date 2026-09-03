@@ -1,5 +1,13 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-09-03] Codex Handoff — Task 11H 02:30 heartbeat batches 2–4
+
+- **Branch / Base / Commits**：`codex/tung-dead-link-candidates`，re-fetched base 仍為 `origin/main@626c0686`；本 heartbeat 三批 commits `615fb165`、`1e492c58`、`967763e5`。已推到該分支，等驗收。
+- **Measured coverage**：candidate fields `60→240/722`（heartbeat +180；累計 120 cards／120 unique point images），null `662→482`。每批 30 cards，全部由 live directory 的實際 href 進 point page，核對 `h1` code，再 browser-open image；heartbeat point pages `90/90`、code `90/90`、images `90/90` HTTP 200。
+- **Validation**：`--self-test`=`14/14`；`--verify-disposition`=`1133/1133 distinct URLs / 1215 exact source-field occurrences / 411 cards` PASS；nested candidate audit=`240 verified / 482 null / 0 malformed`；`git diff --check` clean。ratchet 仍是 clean main 可重現的 anchor-validator output parser baseline，沒有報成 green。
+- **Antigravity queue**：最新 `docs/ANTIGRAVITY_HANDOFF.md` 沒有進行中派工；Task 11I 已驗收落地，其 `ex.le3` identity mismatch 已在本 branch 前一批 `76463036` 更正，本 heartbeat 沒重做該 milestone。
+- **Boundary / Next**：canonical `data/acupoints/**`、app/runtime、generated data 零異動；482 dead-image fields 維持 null。續查時仍以 30 cards 為上限，候選必須保留 `fetched_at`／HTTP 200／`how_found`，不由 URL pattern 猜測。
+
 ## [2026-09-02] Codex Handoff — Task 11H 首批圖片候選＋Task 11I identity correction
 
 - **Branch / Base / Commits**：`codex/tung-dead-link-candidates`，base `origin/main@626c0686`；Task 11I correction `76463036`；Task 11H batch `8a4dab23`。已推到該分支，等驗收。
