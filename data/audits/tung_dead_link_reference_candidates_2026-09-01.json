@@ -18,8 +18,8 @@
       "te_to_th_mapping": "TE (Triple Heater) channel dead URLs use 'te' suffix (e.g. guanchong-te1) but live site uses 'th' (e.g. th1). Verified by probing th1, th5, th10, th15, th23 - all HTTP 200."
     },
     "elapsed_ms": 206583,
-    "last_patched_at": "2026-09-01T09:23:03.234Z",
-    "patch_note": "2026-09-01: corrected summary statistics programmatically from source JSONs; no URLs re-fetched"
+    "last_patched_at": "2026-09-03T05:21:18.873Z",
+    "patch_note": "2026-09-03: corrected ex.le3 identity mismatch after browser verification against the live directory and point pages; summary counts unchanged"
   },
   "candidates": [
     {
@@ -1276,10 +1276,10 @@
       "card_id": "ex.le3",
       "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/baizhongwo-ex-le3",
       "same_site_candidate": {
-        "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/xinei-ex-le3",
+        "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/baichongwo-ex-le13",
         "http_status": 200,
-        "fetched_at": "2026-09-01T07:46:01.202Z",
-        "how_found": "sitemap/directory-page index at https://www.mastertungacupuncture.org/acupuncture/traditional/points/list"
+        "fetched_at": "2026-09-03T05:21:18.873Z",
+        "how_found": "browser-verified directory entry 'Ex-LE13 Baichongwo' at https://www.mastertungacupuncture.org/acupuncture/traditional/points/list; live page h1 'Baichongwo (Ex-LE13)' and body contains 百蟲窩"
       }
     },
     {
