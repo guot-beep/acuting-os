@@ -6,7 +6,7 @@
 - Dead distinct URLs：1133（圖片 722／參考連結 411）
 - 原始欄位 occurrences：1215（圖片 722／參考連結 493）
 - 同卡仍為 OK 的原始欄位 occurrences：2611
-- 圖片 `dead_urls[].same_site_candidate`：已驗證 120；留 null 602；累計調查 120 個 dead-image 欄位（60 個 unique live image HTTP checks）
+- 圖片 `dead_urls[].same_site_candidate`：已驗證 180；留 null 542；累計調查 180 個 dead-image 欄位（90 個 unique live image HTTP checks）
 
 ## Task 11H 第一批實測
 
@@ -23,6 +23,13 @@
 - 結果：目錄 1/1 HTTP 200；point pages 30/30 HTTP 200；`h1` code 30/30 相符；unique image URLs 30/30 HTTP 200。
 - 卡片：`BL4`–`BL6`、`BL37`–`BL63`（依仍為 null 的 dead-image 數與 card id 排序後的下一批 30 張）。
 - 每個候選保留各自的 `fetched_at`、HTTP 200 與 `how_found`；其餘 602/722 維持 `same_site_candidate: null`。
+
+## Task 11H 第三批實測（2026-09-03）
+
+- 範圍：再查 30 張卡／60 個 dead-image 原始欄位；候選累計 `120→180/722`，null `602→542`。
+- 結果：目錄 1/1 HTTP 200；point pages 30/30 HTTP 200；`h1` code 30/30 相符；unique image URLs 30/30 HTTP 200。
+- 卡片：`BL7`–`BL9`、`BL64`–`BL67`、`CV1`–`CV8`、`CV10`–`CV24`（依仍為 null 的 dead-image 數與 card id 排序後的下一批 30 張）。
+- 每個候選保留各自的 `fetched_at`、HTTP 200 與 `how_found`；其餘 542/722 維持 `same_site_candidate: null`。
 
 ## 全連結 404 卡片
 
