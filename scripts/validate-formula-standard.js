@@ -60,6 +60,7 @@ const HERBS = path.join(ROOT, "data/herbs/herb_canon_shortlist.json");
 
 const WORKLIST = process.argv.includes("--worklist");
 const ALL = process.argv.includes("--all");
+const JSON_OUT = process.argv.includes("--json");
 const catArg = (() => {
   const i = process.argv.indexOf("--category");
   return i > -1 ? process.argv[i + 1] : null;
@@ -100,7 +101,7 @@ const errors = [];
 const flags = new Map();
 const flag = (r, msg) => {
   const k = r.id || r.name_zh;
-  if (!flags.has(k)) flags.set(k, { name: r.name_zh || r.pinyin || r.id, category: r.category || r.category_en || "", items: [] });
+  if (!flags.has(k)) flags.set(k, { id: r.id, name: r.name_zh || r.pinyin || r.id, category: r.category || r.category_en || "", items: [] });
   flags.get(k).items.push(msg);
 };
 
@@ -434,6 +435,18 @@ for (const r of recs) {
   if (!arr(r.modifications_zh).length) flag(r, "缺加減變化");
   if (!String(r.source_classic || "").trim()) flag(r, "缺出典 source_classic");
   if (!arr(r.contraindications_zh).length) flag(r, "缺禁忌 contraindications_zh");
+}
+
+if (JSON_OUT) {
+  // Additive, read-only output mode — dumps the same `flags` the human report
+  // is built from, keyed by formula id, so other scripts (e.g.
+  // report-formula-completeness.js) can cross-check "does this formula have
+  // a real validator defect" without re-implementing any check here. Does
+  // not change any existing validation logic or exit code.
+  const out = {};
+  for (const [k, v] of flags) out[v.id || k] = v.items;
+  console.log(JSON.stringify(out));
+  process.exit(0);
 }
 
 console.log(`validate-formula-standard: ${recs.length} formulas (${nTemplate} template-grade)\n`);
