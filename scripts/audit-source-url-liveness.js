@@ -265,7 +265,7 @@ function dispositionSummary(cards, deadLedgerMap, ledgerMap) {
     dead_image_occurrence_count: deadOccurrences.filter(occurrence => deadLedgerMap.get(occurrence.url).is_image).length,
     dead_reference_occurrence_count: deadOccurrences.filter(occurrence => !deadLedgerMap.get(occurrence.url).is_image).length,
     same_site_candidate_verified_count: 0,
-    same_site_candidate_null_count: affectedCards.length,
+    same_site_candidate_null_count: deadOccurrences.filter(occurrence => deadLedgerMap.get(occurrence.url).is_image).length,
     same_site_candidate_live_checks_attempted: 0
   };
 }
@@ -305,7 +305,8 @@ function buildTungDisposition(ledger11e, cards = loadAcupointCards()) {
         .map(occurrence => ({
           url: occurrence.url,
           is_image: deadLedgerMap.get(occurrence.url).is_image,
-          field_path: occurrence.field_path
+          field_path: occurrence.field_path,
+          ...(deadLedgerMap.get(occurrence.url).is_image ? { same_site_candidate: null } : {})
         }))
         .sort((a, b) => a.field_path.localeCompare(b.field_path) || a.url.localeCompare(b.url));
       const liveCount = card.occurrences.filter(
@@ -343,6 +344,8 @@ function verifyTungDisposition(disposition, ledger11e, cards = loadAcupointCards
   const listedUrls = new Set();
   const listedOccurrences = new Set();
   const seenCards = new Set();
+  let nestedCandidateVerifiedCount = 0;
+  let nestedCandidateNullCount = 0;
 
   if (!disposition || typeof disposition !== 'object') {
     return { ok: false, errors: ['Disposition is missing or not an object'] };
@@ -389,6 +392,25 @@ function verifyTungDisposition(disposition, ledger11e, cards = loadAcupointCards
       }
       if (item.is_image !== ledgerRecord.is_image) {
         errors.push(`Card ${row.card_id} is_image mismatch for ${item.url}`);
+      }
+      if (item.is_image) {
+        if (!Object.prototype.hasOwnProperty.call(item, 'same_site_candidate')) {
+          errors.push(`Card ${row.card_id} image entry is missing same_site_candidate: ${item.url}`);
+        } else if (item.same_site_candidate === null) {
+          nestedCandidateNullCount += 1;
+        } else {
+          const candidate = item.same_site_candidate;
+          let candidateHost = '';
+          try {
+            candidateHost = new URL(candidate?.url).hostname;
+          } catch (e) {}
+          const fetchedAtValid = typeof candidate?.fetched_at === 'string' && !Number.isNaN(Date.parse(candidate.fetched_at));
+          const howFoundValid = typeof candidate?.how_found === 'string' && candidate.how_found.trim().length > 0;
+          if (!candidate || candidate.http_status !== 200 || !candidateHost.includes(TUNG_HOST_FRAGMENT) || !fetchedAtValid || !howFoundValid) {
+            errors.push(`Card ${row.card_id} has an unverified dead_urls[].same_site_candidate: ${item.url}`);
+          }
+          nestedCandidateVerifiedCount += 1;
+        }
       }
       const occurrenceKey = `${item.url}\u0000${item.field_path}`;
       if (!sourceOccurrenceSet.has(occurrenceKey)) {
@@ -452,10 +474,21 @@ function verifyTungDisposition(disposition, ledger11e, cards = loadAcupointCards
     }
   }
 
-  const summaryKeys = Object.keys(expected.summary);
+  const candidateSummary = {
+    same_site_candidate_verified_count: nestedCandidateVerifiedCount,
+    same_site_candidate_null_count: nestedCandidateNullCount,
+    same_site_candidate_live_checks_attempted: nestedCandidateVerifiedCount
+  };
+  const candidateSummaryKeys = new Set(Object.keys(candidateSummary));
+  const summaryKeys = Object.keys(expected.summary).filter(key => !candidateSummaryKeys.has(key));
   for (const key of summaryKeys) {
     if (disposition.summary?.[key] !== expected.summary[key]) {
       errors.push(`Summary ${key} mismatch: expected ${expected.summary[key]}, got ${disposition.summary?.[key]}`);
+    }
+  }
+  for (const [key, value] of Object.entries(candidateSummary)) {
+    if (disposition.summary?.[key] !== value) {
+      errors.push(`Summary ${key} mismatch: expected ${value}, got ${disposition.summary?.[key]}`);
     }
   }
 
@@ -1009,6 +1042,13 @@ function runSelfTest() {
   // Fixture 13: Nominal Task 11G disposition -> MUST PASS
   const resF13 = verifyTungDisposition(base11g, base11e);
   assertFixture('Nominal Task 11G disposition -> verify succeeds (PASS)', true, resF13);
+
+  // Fixture 14: Task 11H nested image candidate without HTTP 200 evidence -> MUST FAIL
+  const fixture14_11h = JSON.parse(JSON.stringify(base11g));
+  const imageEntry = fixture14_11h.cards.flatMap(card => card.dead_urls).find(item => item.is_image);
+  imageEntry.same_site_candidate.http_status = 404;
+  const resF14 = verifyTungDisposition(fixture14_11h, base11e);
+  assertFixture('Task 11H nested image candidate without HTTP 200 evidence -> verify fails (FAIL)', false, resF14);
 
   console.log(`\nSelf-Test Results: ${passCount}/${testCount} fixtures behaving as expected.`);
   if (passCount === testCount) {
