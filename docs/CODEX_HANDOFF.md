@@ -1,5 +1,13 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-09-02] Codex Handoff — Task 11H 首批圖片候選＋Task 11I identity correction
+
+- **Branch / Base / Commits**：`codex/tung-dead-link-candidates`，base `origin/main@626c0686`；Task 11I correction `76463036`；Task 11H batch `8a4dab23`。已推到該分支，等驗收。
+- **Task 11H measured coverage**：dead-image candidates `0→60/722`，null `722→662`；30 張卡、60 個 dead-image fields，來自站內目錄的 30 個 point pages，各自 `h1` code 相符，30 個 unique point images 逐一 browser-opened HTTP 200。沒有從舊檔名或 URL pattern 生候選。
+- **Task 11I correction**：`ex.le3` 卡名百蟲窩，原 ledger 候選誤指 `Xinei (Ex-LE3)` 膝內；live directory 的真條目是 `Ex-LE13 Baichongwo`，已改為 `/points/baichongwo-ex-le13`，頁面 HTTP 200／`h1`／正文中文名均核對；summary `407 found / 8 not_found` 不變。
+- **Validation**：`--self-test`=`14/14`；`--verify-disposition`=`1133/1133 distinct URLs / 1215 exact source-field occurrences / 411 cards` PASS；JSON parse、`git diff --check` PASS。ratchet 在 branch 與 clean `origin/main@626c0686` 都因既有 anchor-validator output parser 抽不到數字而 exit 1，不表示本 batch green。
+- **Boundary / Next**：canonical `data/acupoints/**`、`app.js`、`js/**`、generated data 零異動；662 個 dead-image fields 未調查。11H handoff 的 nested schema 與 11G card-level verifier 原本衝突，本輪只擴充同一 verifier 以驗 nested evidence／summary，沒有放寬既有 URL/card/field-path gates；下一批仍以 30 cards 為上限。
+
 ## [2026-08-31] Codex Handoff — Task 11G 董氏穴位死連結處置清單
 
 - **Branch / Base / Remote**：`codex/tung-dead-link-disposition`，rebase 後基底 `origin/main@9ce64a6b`；產物 commit `5e1a8fc4`。已推到該分支，等驗收。

@@ -1,3 +1,11 @@
+# 2026-09-02 — Codex Task 11H 首批圖片候選＋Antigravity Task 11I identity 更正
+
+- **做了什麼**：branch `codex/tung-dead-link-candidates`，base `origin/main@626c0686`；Task 11H data commit `8a4dab23`，Task 11I correction commit `76463036`，只動 audit ledger／report／focused verifier，canonical `data/acupoints/**` 零異動。
+- **數字 before→after**：722 個 dead-image 欄位候選 `0→60`，null `722→662`；30 張卡的目錄頁／point page／unique point image 都用真瀏覽器打開，HTTP 200=`1/1 + 30/30 + 30/30`，`h1` code=`30/30`。
+- **驗證結果**：`--self-test`=`14/14`；`--verify-disposition`=`1133/1133 URLs / 1215 field occurrences / 411 cards` PASS；JSON parse、`git diff --check` PASS。`check-validation-ratchet.js` 在本 branch 與乾淨 `origin/main@626c0686` 都同樣因 anchor validator 輸出抽數失敗而 exit 1，屬已確認 baseline。
+- **已知未解**：662/722 dead-image 欄位尚未調查；既有 verifier 原本只懂 card-level candidate 且把 null 分母鎖在 411，本輪為符合 11H 明文契約補成 `dead_urls[]`／722 分母。Task 11I 的 `ex.le3` 原候選把百蟲窩錯指膝內，已改為 browser-verified `Baichongwo (Ex-LE13)`，407/8 統計不變。
+- **下一步**：已推到 `codex/tung-dead-link-candidates`，等驗收；後續依相同 30-card 小批次續查剩餘 662，仍只出候選，不改 canonical URL。
+
 # 2026-09-02 — 第二輪普查:73 條,15 條讀者是病人;兩處不實的安全宣稱已更正
 
 Ting 裁定的 (c)。8 條(五條沒人看過的渲染路徑 + 穴位家族四個平行全域)
