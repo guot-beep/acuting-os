@@ -6,7 +6,7 @@
 - Dead distinct URLs：1133（圖片 722／參考連結 411）
 - 原始欄位 occurrences：1215（圖片 722／參考連結 493）
 - 同卡仍為 OK 的原始欄位 occurrences：2611
-- 圖片 `dead_urls[].same_site_candidate`：已驗證 534；留 null 188；累計候選 live checks 534 個 dead-image 欄位（267 個 unique live image HTTP checks）
+- 圖片 `dead_urls[].same_site_candidate`：已驗證 594；留 null 128；累計候選 live checks 594 個 dead-image 欄位（299 個 unique live image HTTP checks）
 
 ## Task 11H 第一批實測
 
@@ -73,6 +73,14 @@
 - 結果：目錄 1/1 HTTP 200；point pages 30/30 HTTP 200；`h1` code 30/30 相符；unique image URLs 30/30 HTTP 200。
 - 卡片：`LU8`–`LU11`、`PC1`–`PC9`、`SI1`–`SI17`（依仍為 null 的 dead-image 數與 card id 排序後的下一批 30 張）。
 - 每個候選保留各自的 `fetched_at`、HTTP 200 與 `how_found`；其餘 188/722 維持 `same_site_candidate: null`。
+
+## Task 11H 第十批實測（2026-09-04）
+
+- 範圍：再查 30 張卡／60 個 dead-image 原始欄位；候選累計 `534→594/722`，null `188→128`。
+- 結果：目錄 1/1 HTTP 200；point pages 30/30 HTTP 200；`h1` code 30/30 相符；page images 32/32 HTTP 200。
+- 卡片：`SI18`、`SI19`、`SP1`–`SP21`、`ST1`–`ST7`（跳過已查無圖的 `LR9`–`LR11`，再依 card id 取下一批 30 張）。
+- `SP21` 與 `ST6` 各有兩張同穴位頁圖片；四張都在真瀏覽器開啟並目視確認為該 H1 穴位的不同定位視圖，依頁面 DOM 順序一對一記入兩個 dead-image 欄位，`how_found` 保留 page image index。
+- 其餘 128/722 維持 `same_site_candidate: null`；沒有由檔名或 URL 規律推測候選。
 
 ## 全連結 404 卡片
 
