@@ -240,6 +240,10 @@ jobs:
         run: node scripts/test-passphrase-auth.js
       - name: passphrase auth end-to-end through the HTTP handler
         run: node scripts/test-passphrase-flow.js
+      # 上面那支測的是 handler 配一個 passphraseAuth **替身**;這支跑的是 worker.mjs 裡
+      # 真正的 buildPassphraseAuth。少了它,設定流程(唯一會寫入通行碼記錄的路徑)在 CI 裡沒人守。
+      - name: one-time setup flow (runs the real buildPassphraseAuth, not a stub)
+        run: node scripts/test-setup-flow.js
       # 部署閘門:Worker 與 index.html 宣告必須同進同出;半套設定不准上 main(D33)
       - name: D1 deploy gate
         run: node scripts/validate-d1-deploy-gate.js
