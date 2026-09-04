@@ -1,3 +1,11 @@
+# 2026-09-04 — Codex Task 11H 候選調查收斂
+
+- **做了什麼**：本輪續查最後 91 cards／182 dead-image fields，data commits `ea125c13`、`6ec22bcd`、`b03249ac`、`7523fbd0`；Task 11H 累計 `361/361` cards 已逐頁調查。只動 audit ledger/report，canonical `data/acupoints/**`、app/runtime、generated data 零異動。
+- **數字 before→after**：candidate fields `534→716/722`，null `188→6`；累計 358 cards／716 fields 有 browser-verified candidates，3 cards／6 fields 無圖。共 361 個 unique live image HTTP checks；`SP21`、`ST6`、`ST8` 的雙圖均依 DOM 順序逐欄對應。
+- **驗證結果**：`Self-Test Results: 14/14 fixtures behaving as expected.`；`PASS — 1133/1133 distinct dead URLs mapped to 411 cards and 1215 exact source-field occurrences; 1 all-links-dead card(s).`；candidate audit `716 verified / 6 null / 0 malformed`；`validate-content-junk: PASS`；`build-data` 後 generated 零 diff；`git diff --check` 無輸出。
+- **已知未解**：`LR9`–`LR11` live pages 明寫 `Picture in preparation.` 且 DOM/lazy attributes/CSS 無圖，6 fields 保留 null；`TE18` live source 中文 `契脈` 與 canonical `瘈脈` 差異只記證據、未改資料。ratchet 仍因既有 anchor-validator 報表解析／`pdftotext` baseline exit 1，未宣稱 green。
+- **下一步**：推到 `codex/tung-dead-link-candidates` 交 reviewer 驗收；是否套用 canonical URL 由 Ting／內容線另行裁定。推送後依 Ting 指示查看 Claude／Codex queue／Antigravity 是否新增派工。
+
 # 2026-09-04 — Codex Task 11H 第八至第九批圖片候選
 
 - **做了什麼**：Ting 授權保留 focused nested-candidate verifier 後，續查兩批共 60 cards；data commits `801d75d2`、`da744822`。只動 ledger/report，canonical `data/acupoints/**` 零異動。

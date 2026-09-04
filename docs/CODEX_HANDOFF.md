@@ -1,5 +1,13 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-09-04] Codex Handoff — Task 11H 候選調查收斂
+
+- **Branch / Base / Commits**：`codex/tung-dead-link-candidates`，base `origin/main@626c0686`；本輪 data commits `ea125c13`、`6ec22bcd`、`b03249ac`、`7523fbd0`。仍只動 audit ledger/report，canonical `data/acupoints/**`、app/runtime、generated data 零異動。
+- **Measured coverage**：本輪調查 91 cards／182 dead-image fields，candidate fields `534→716/722`，null `188→6`。Task 11H 累計 `361/361` cards 已調查；358 cards／716 fields 有 browser-verified live candidates，3 cards／6 fields 誠實維持 null。共做 361 個 unique live image HTTP checks；`SP21`、`ST6`、`ST8` 各有兩張有效不同視圖，依 point-page DOM 順序逐欄對應。
+- **Exceptions / Evidence**：`LR9`、`LR10`、`LR11` 頁面明寫 `Picture in preparation.`，network-idle 後無 `img/source` lazy URL 或 CSS background，故未猜候選。網站目錄使用 `TH1`–`TH23` 而 repo 使用 `TE1`–`TE23`，逐頁以 live directory、`h1` Pinyin/code、中文名比對；`TE18` source 中文作 `契脈`、canonical 作 `瘈脈`，只在 `how_found` 留差異，未改 canonical。`TE23` 頁面的 `favicon.ico` 404 不屬候選資產。
+- **Validation**：`--self-test`=`14/14`；`--verify-disposition`=`1133/1133 distinct URLs / 1215 exact source-field occurrences / 411 cards` PASS；candidate audit=`716 verified / 6 null / 0 malformed`；`validate-content-junk` PASS with frozen warnings；`build-data` generated zero diff；`git diff --check` clean。ratchet 仍為既知 anchor-validator 報表解析／`pdftotext` baseline，exit 1，未報成 green。
+- **Next**：Task 11H 候選調查已收斂，可交 reviewer 驗收；是否把候選寫入 canonical URL，仍需 Ting／內容線另行裁定。依 Ting 指示，推送後重新查看 Claude、Codex queue 與 Antigravity handoff 是否有新派工。
+
 ## [2026-09-04] Codex Handoff — Task 11H batches 8–9
 
 - **Branch / Base / Commits**：`codex/tung-dead-link-candidates`，re-fetched base 仍為 `origin/main@626c0686`；本輪 data commits `801d75d2`、`da744822`。Ting 已明確授權保留 11H focused nested-candidate verifier，先前 verifier/file-boundary 文字衝突解除。
