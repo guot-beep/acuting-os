@@ -1,8 +1,15 @@
-// Cloudflare deploy config for AcuTing OS(private clinical app)。
+// Cloudflare deploy config for AcuTing OS。
+  // **現況(2026-09-04):純靜態、公開站。沒有 Worker、沒有 D1、沒有任何認證。**
   // 靜態資產:dist/(scripts/build-site.js 只複製 index.html 引用的檔案,並擋 curriculum// clinical// imports// docs/)。
-  // 病例服務:src/worker.mjs 只攔 /__clinical/*(run_worker_first),其餘交給資產;病例正本在 D1(D33)。
-  // 認證:每一條 /__clinical/* 都驗 Cloudflare Access 的 JWT(vars 三個 ACCESS_*);沒設 → 503 fail-closed。
-  // 這個檔由 scripts/apply-d1-production-config.js 產生;改值請改那支的參數再跑一次,並讓 validate-d1-deploy-gate.js 過。
+  // 病例目前存在瀏覽器的 localStorage,伺服器上沒有任何病歷。
+  //
+  // 這段註解在 2026-09-04 之前描述的是一套**這個檔裡並不存在**的設定(Worker、D1、
+  // 三個 ACCESS_* 變數、run_worker_first)。那是 2026-09-01 深夜回滾(bf0a64d4)只還原了
+  // 設定、沒有還原說明留下的 —— 讀這個檔的人會以為病例站是鎖著的,而它是公開的。
+  // 註解與設定不一致比沒有註解更糟,所以 validate-d1-deploy-gate.js 現在會擋這件事。
+  //
+  // D1 + 通行碼那一版在分支 claude/d1-worker(已測、未合)。切換方式:
+  // scripts/apply-d1-production-config.js 產生本檔 → validate-d1-deploy-gate.js 要過 → 合 main 即部署。
 {
   "name": "acuting-os",
   "compatibility_date": "2026-07-26",

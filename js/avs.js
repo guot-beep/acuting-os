@@ -440,7 +440,10 @@ ${sec("下次回診", snapshot.followUpSnapshot ? `<p>回診安排:${esc(snapsho
 
     if (meds.length) {
       push("【調理品怎麼吃】");
-      meds.forEach((r) => push(`・${r.name}　${r.dose}　${r.freq}`));
+      // 與 HTML 版同一個規則:沒記錄的劑量/頻率印「—」。
+      // 少了這個 fallback,純文字版印出來是兩個全形空白,病人看到的是「名稱　　頻率」——
+      // 分不出「沒交代劑量」與「這裡本來有字」。同一份 snapshot 的兩個出口不該說不同的話。
+      meds.forEach((r) => push(`・${r.name}　${r.dose || "—"}　${r.freq || "—"}`));
       byCat("herb_caution").forEach((t) => push(`　※ ${t}`));
       push();
     }

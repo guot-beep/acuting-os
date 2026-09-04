@@ -592,5 +592,31 @@ console.log("DRY_CLINIC_LOG #13 — 加味逍遙散 repro 打到端產物(HTML+T
   assert(!htmlNo.includes("調理品怎麼吃"), "#13 反向:沒開中藥就沒有這一段(不憑空生指示)");
 }
 
+/* #14 同一份 snapshot 的兩個出口對「沒有劑量」要說同一句話。
+ * HTML 版一直是 `esc(r.dose) || "—"`,純文字版原本直接內插空字串,印出來是
+ * 「・名稱　　頻率」—— 兩個全形空白,病人分不出是沒交代還是字被吃掉。
+ * 這條守的是一致性,不是有沒有值。 */
+{
+  const kase = makeCase();
+  const note = makeNote({
+    modalitiesPerformed: ["modality.acupuncture"],
+    formulaLinks: ["formula.jia_wei_xiao_yao_san"],
+    formulaHerbs: "加味逍遙散",           // 只有方名,沒有劑量也沒有頻率
+  });
+  const nameOfAgent = (id) => (id === "formula.jia_wei_xiao_yao_san" ? "加味逍遙散" : null);
+  const d = AVS.buildDraftSnapshot({ kase, note, library: LIBRARY, clinic: CLINIC, modalityVocabulary: MODALITY_VOCAB, outcomeMetricDefs: [], nameOfAgent });
+  const row = (d.medicationInstructionsSnapshot || []).find((r) => r.name === "加味逍遙散");
+  if (row && !String(row.dose || "").trim()) {
+    const text = AVS.renderPatientText(d, { visitDate: note.visitDate });
+    const line = text.split("\n").find((l) => l.includes("加味逍遙散") && l.startsWith("・"));
+    assert(!!line, "#14 Text:找得到那一行服藥指示");
+    assert(line.includes("—"), "#14 Text:沒有劑量時要印「—」,不能留兩個全形空白(要與 HTML 版一致)");
+    assert(!/　　/.test(line), "#14 Text:那一行不得出現連續兩個全形空白(=被吃掉的欄位)");
+  } else {
+    // 引擎哪天改成一定給劑量,這條就沒有守備對象了 —— 講出來,不要靜靜地變成空跑的測試
+    assert(true, "#14 略過:這個情境下引擎已保證劑量非空(斷言無對象,不是通過)");
+  }
+}
+
 console.log(`\n${pass} passed, ${fail} failed`);
 process.exit(fail ? 1 : 0);

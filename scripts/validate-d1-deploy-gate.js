@@ -78,6 +78,28 @@ function check(root) {
   } else if (Array.isArray(cfg.d1_databases) && cfg.d1_databases.length) {
     problems.push("G3 沒有 main 卻有 d1_databases —— 半套設定;部署會失敗並擋住之後所有內容更新");
   }
+
+  /* G5 註解不准宣稱這個檔裡沒有的設定。
+   * 2026-09-01 深夜的回滾(bf0a64d4)只還原了設定,沒有還原上面那段說明,結果
+   * wrangler.jsonc 有三個月的時間寫著「病例正本在 D1」「每一條 /__clinical/* 都驗 Access JWT」,
+   * 而檔內只有 assets —— 讀的人會以為病例站是鎖著的,而它是公開的。
+   * 這一類缺陷(文件宣稱 > 實作)在這個庫反覆出現,所以用機器守,不靠人記得改註解。 */
+  const rawText = fs.readFileSync(wranglerPath, "utf8");
+  const brace = rawText.indexOf("{");
+  const commentText = rawText.slice(0, brace >= 0 ? brace : rawText.length);
+  const mentions = (re) => re.test(commentText);
+  const hasWorkerCfg = typeof cfg.main === "string" && /worker\.mjs$/.test(cfg.main);
+  const talksClinical = mentions(/run_worker_first|\bD1\b|d1_databases|ACCESS_[A-Z_]|src\/worker\.mjs|__clinical/);
+  /* 規則不是「不准提到這些字」—— 解釋歷史一定會提到。規則是:
+   * **設定裡沒有病例服務時,註解必須有一行明講現況**。有那一行,讀的人就不會被歷史說明誤導;
+   * 沒有那一行而又滿篇 D1/Access,就是 2026-09-01 回滾留下的那種假象。 */
+  if (!hasWorkerCfg && talksClinical) {
+    const declaresStatic = /現況[^\n]*(純靜態|沒有\s*Worker|沒有\s*D1|localStorage)/.test(commentText);
+    if (!declaresStatic) {
+      problems.push("G5 wrangler.jsonc 沒有 Worker/D1 設定,註解卻在講 D1 / Access / __clinical,而且沒有任何一行說明現況 —— " +
+        "2026-09-01 的回滾就是這樣讓這個檔宣稱病例站鎖著、實際公開了三天。請加一行「**現況(日期):純靜態…**」,或補上真的設定。");
+    }
+  }
   return problems;
 }
 
