@@ -6,7 +6,7 @@
 - Dead distinct URLs：1133（圖片 722／參考連結 411）
 - 原始欄位 occurrences：1215（圖片 722／參考連結 493）
 - 同卡仍為 OK 的原始欄位 occurrences：2611
-- 圖片 `dead_urls[].same_site_candidate`：已驗證 300；留 null 422；累計調查 300 個 dead-image 欄位（150 個 unique live image HTTP checks）
+- 圖片 `dead_urls[].same_site_candidate`：已驗證 360；留 null 362；累計調查 360 個 dead-image 欄位（180 個 unique live image HTTP checks）
 
 ## Task 11H 第一批實測
 
@@ -44,6 +44,13 @@
 - 結果：目錄 1/1 HTTP 200；point pages 30/30 HTTP 200；`h1` code 30/30 相符；unique image URLs 30/30 HTTP 200。
 - 卡片：`GB4`–`GB9`、`GB36`–`GB44`、`GV1`–`GV2`、`GV10`–`GV22`（依仍為 null 的 dead-image 數與 card id 排序後的下一批 30 張）。
 - 每個候選保留各自的 `fetched_at`、HTTP 200 與 `how_found`；其餘 422/722 維持 `same_site_candidate: null`。
+
+## Task 11H 第六批實測（2026-09-03）
+
+- 範圍：再查 30 張卡／60 個 dead-image 原始欄位；候選累計 `300→360/722`，null `422→362`。
+- 結果：目錄 1/1 HTTP 200；point pages 30/30 HTTP 200；`h1` code 30/30 相符；unique image URLs 30/30 HTTP 200。
+- 卡片：`GV3`–`GV9`、`GV23`–`GV28`、`HT1`–`HT9`、`KI1`、`KI10`–`KI16`（依仍為 null 的 dead-image 數與 card id 排序後的下一批 30 張）。
+- 每個候選保留各自的 `fetched_at`、HTTP 200 與 `how_found`；其餘 362/722 維持 `same_site_candidate: null`。
 
 ## 全連結 404 卡片
 
