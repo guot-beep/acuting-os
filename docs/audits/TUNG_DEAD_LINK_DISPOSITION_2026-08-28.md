@@ -6,7 +6,7 @@
 - Dead distinct URLs：1133（圖片 722／參考連結 411）
 - 原始欄位 occurrences：1215（圖片 722／參考連結 493）
 - 同卡仍為 OK 的原始欄位 occurrences：2611
-- 圖片 `dead_urls[].same_site_candidate`：已驗證 474；留 null 248；累計候選 live checks 474 個 dead-image 欄位（237 個 unique live image HTTP checks）
+- 圖片 `dead_urls[].same_site_candidate`：已驗證 534；留 null 188；累計候選 live checks 534 個 dead-image 欄位（267 個 unique live image HTTP checks）
 
 ## Task 11H 第一批實測
 
@@ -66,6 +66,13 @@
 - 卡片：`LI12`–`LI20`、`LR1`–`LR14`、`LU1`–`LU7`（依仍為 null 的 dead-image 數與 card id 排序後的下一批 30 張）。
 - `LR9`、`LR10`、`LR11` 的 live point pages 均明寫 `Picture in preparation.`；network-idle 後 `img`／`source` 的 `src`、`data-src`、`srcset`、`data-srcset` 與 CSS background 都沒有穴位圖，因此其 6 個欄位誠實維持 null，沒有猜 URL。
 - Ting 於 2026-09-04 明確授權保留 focused nested-candidate verifier；先前「nested 722-field schema」與「verifier 不變」的派工文字衝突據此解除。
+
+## Task 11H 第九批實測（2026-09-04）
+
+- 範圍：再查 30 張卡／60 個 dead-image 原始欄位；候選累計 `474→534/722`，null `248→188`。
+- 結果：目錄 1/1 HTTP 200；point pages 30/30 HTTP 200；`h1` code 30/30 相符；unique image URLs 30/30 HTTP 200。
+- 卡片：`LU8`–`LU11`、`PC1`–`PC9`、`SI1`–`SI17`（依仍為 null 的 dead-image 數與 card id 排序後的下一批 30 張）。
+- 每個候選保留各自的 `fetched_at`、HTTP 200 與 `how_found`；其餘 188/722 維持 `same_site_candidate: null`。
 
 ## 全連結 404 卡片
 
