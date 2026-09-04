@@ -1,5 +1,13 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-09-03] Codex Handoff — Task 11H batches 5–6
+
+- **Branch / Base / Commits**：`codex/tung-dead-link-candidates`，re-fetched base 仍為 `origin/main@626c0686`；本輪 commits `afe5c762`、`c62e26c9`。已推到該分支，等驗收。
+- **Measured coverage**：candidate fields `240→360/722`（本輪 +120；累計 180 cards／180 unique point images），null `482→362`。兩批均由 live directory 實際 href 進 point page，核對 `h1` code，再 browser-open image；point pages／code／images 各 `60/60` HTTP 200。
+- **Validation**：`--self-test`=`14/14`；`--verify-disposition`=`1133/1133 distinct URLs / 1215 exact source-field occurrences / 411 cards` PASS；`validate-content-junk` PASS with frozen warnings；`build-data` generated zero diff；`git diff --check` clean。ratchet 仍是 clean main 可重現的 anchor-validator output parser baseline，未報成 green。
+- **Execution note**：不提交的批次 runner 首次用 inline `run-code` 遇 syntax error 時在任何 ledger write 前停止；改為 Playwright `--filename` 後才寫入，兩批各自 30/30 通過。這個工具與 browser artifacts 收工時移除。
+- **Boundary / Next**：canonical `data/acupoints/**`、app/runtime、generated data 零異動；362 dead-image fields 維持 null。續查仍以 30 cards 為上限，候選必須保留 `fetched_at`／HTTP 200／`how_found`，不由 URL pattern 猜測。
+
 ## [2026-09-03] Codex Handoff — Task 11H 02:30 heartbeat batches 2–4
 
 - **Branch / Base / Commits**：`codex/tung-dead-link-candidates`，re-fetched base 仍為 `origin/main@626c0686`；本 heartbeat 三批 commits `615fb165`、`1e492c58`、`967763e5`。已推到該分支，等驗收。
