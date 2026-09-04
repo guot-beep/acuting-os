@@ -32,9 +32,9 @@
     "dead_reference_url_count": 411,
     "dead_image_occurrence_count": 722,
     "dead_reference_occurrence_count": 493,
-    "same_site_candidate_verified_count": 714,
-    "same_site_candidate_null_count": 8,
-    "same_site_candidate_live_checks_attempted": 714
+    "same_site_candidate_verified_count": 716,
+    "same_site_candidate_null_count": 6,
+    "same_site_candidate_live_checks_attempted": 716
   },
   "cards": [
     {
@@ -14495,13 +14495,23 @@
           "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/trad/te23_loc.jpg",
           "is_image": true,
           "field_path": "data/acupoints/361.json[id=TE23].diagram_urls_en[0]",
-          "same_site_candidate": null
+          "same_site_candidate": {
+            "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/TH%2023.jpg",
+            "http_status": 200,
+            "fetched_at": "2026-09-04T17:29:22.236Z",
+            "how_found": "browser-verified https://www.mastertungacupuncture.org/acupuncture/traditional/points/list -> https://www.mastertungacupuncture.org/acupuncture/traditional/points/th23; h1 'Sizhukong (TH 23)' and Chinese name '絲竹空' matched TE23 via TH/TE channel-code alias; image opened with HTTP 200"
+          }
         },
         {
           "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/trad/te23_needling.jpg",
           "is_image": true,
           "field_path": "data/acupoints/361.json[id=TE23].diagram_urls_en[1]",
-          "same_site_candidate": null
+          "same_site_candidate": {
+            "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/TH%2023.jpg",
+            "http_status": 200,
+            "fetched_at": "2026-09-04T17:29:22.236Z",
+            "how_found": "browser-verified https://www.mastertungacupuncture.org/acupuncture/traditional/points/list -> https://www.mastertungacupuncture.org/acupuncture/traditional/points/th23; h1 'Sizhukong (TH 23)' and Chinese name '絲竹空' matched TE23 via TH/TE channel-code alias; image opened with HTTP 200"
+          }
         },
         {
           "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/sizhukong-te23",

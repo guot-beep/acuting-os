@@ -6,7 +6,7 @@
 - Dead distinct URLs：1133（圖片 722／參考連結 411）
 - 原始欄位 occurrences：1215（圖片 722／參考連結 493）
 - 同卡仍為 OK 的原始欄位 occurrences：2611
-- 圖片 `dead_urls[].same_site_candidate`：已驗證 714；留 null 8；累計候選 live checks 714 個 dead-image 欄位（360 個 unique live image HTTP checks）
+- 圖片 `dead_urls[].same_site_candidate`：已驗證 716；留 null 6；累計候選 live checks 716 個 dead-image 欄位（361 個 unique live image HTTP checks）
 
 ## Task 11H 第一批實測
 
@@ -96,6 +96,13 @@
 - 卡片：`ST38`–`ST45`、`TE1`–`TE22`。網站目錄使用 `TH`，repo 使用 `TE`；每張 TE 卡均以同號 TH page 的 H1 pinyin 與頁面中文名交叉核對後才記入。
 - `TE18` 頁面 H1 `Chimai (TH 18)` 與代碼／拼音相符，但來源中文標成「契脈」，不同於 canonical「瘈脈」；差異已寫進 `how_found`，沒有覆蓋 canonical 名稱。
 - 其餘 8/722 維持 null：`LR9`–`LR11` 已查無圖 6 欄，`TE23` 尚待最後一批 2 欄。
+
+## Task 11H 第十三批實測（2026-09-04）
+
+- 範圍：最後 1 張未調查卡 `TE23`／2 個 dead-image 原始欄位；候選累計 `714→716/722`，null `8→6`。
+- 結果：目錄、`TH23` point page、H1／中文 identity 與 unique image 均 `1/1` 相符且 HTTP 200；圖片頁額外出現的 favicon 404 不屬候選資產。
+- 361 張 dead-image cards 均已調查：358 張／716 欄找到候選；`LR9`–`LR11` 三張 live pages 明寫圖片準備中，6 欄維持 null。
+- `TE23` 依 `TH`／`TE` channel-code alias 核對 `Sizhukong (TH 23)` 與「絲竹空」後記入，沒有修改 canonical code/name。
 
 ## 全連結 404 卡片
 
