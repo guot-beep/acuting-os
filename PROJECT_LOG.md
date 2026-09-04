@@ -1,3 +1,11 @@
+# 2026-09-03 — Codex Task 11H 第七批圖片候選
+
+- **做了什麼**：續做 Task 11H 第七個 30-card batch，data commit `e5cfb425`；範圍 `KI2`–`KI9`、`KI17`–`KI27`、`LI1`–`LI11`，canonical `data/acupoints/**` 零異動。
+- **數字 before→after**：dead-image candidates `360→420/722`（+60 fields／30 cards／30 unique live images），null `362→302`；目錄 1/1、point pages 30/30、`h1` code 30/30、images 30/30 均由真瀏覽器確認 HTTP 200。
+- **驗證結果**：`Self-Test Results: 14/14 fixtures behaving as expected.`；`PASS — 1133/1133 distinct dead URLs mapped to 411 cards and 1215 exact source-field occurrences; 1 all-links-dead card(s).`；candidate audit `420 verified / 302 null / 0 malformed`；`validate-content-junk: PASS`；`build-data` 後 generated 零 diff；`git diff --check` 無輸出。
+- **已知未解**：302/722 dead-image fields 尚未調查；ratchet 仍在既有 anchor-validator output parser 處 exit 1，未宣稱 green。11H nested schema verifier 擴充仍待 reviewer 驗收。
+- **下一步**：推到 `codex/tung-dead-link-candidates` 後等驗收；若續派，從剩餘 151 cards 依相同目錄→point page→image browser checks、每批最多 30 cards 往下查。
+
 # 2026-09-03 — Codex Task 11H 第五至第六批圖片候選
 
 - **做了什麼**：re-fetch `origin/main@626c0686` 並重讀 Codex／Antigravity handoff；續做唯一進行中 Task 11H。兩個 30-card commits：`afe5c762`、`c62e26c9`；canonical `data/acupoints/**` 零異動。

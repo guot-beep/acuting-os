@@ -1,5 +1,13 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-09-03] Codex Handoff — Task 11H batch 7
+
+- **Branch / Base / Commit**：`codex/tung-dead-link-candidates`，base 仍為 `origin/main@626c0686`；本批 data commit `e5cfb425`。推到同名遠端分支後等待驗收。
+- **Measured coverage**：candidate fields `360→420/722`（本批 +60；累計 210 cards／210 unique point images），null `362→302`。由 live directory 實際 href 進 30 個 point pages，核對 `h1` code，再 browser-open 30 個 images；pages／code／images 各 `30/30` HTTP 200。
+- **Validation**：`--self-test`=`14/14`；`--verify-disposition`=`1133/1133 distinct URLs / 1215 exact source-field occurrences / 411 cards` PASS；nested candidate audit=`420 verified / 302 null / 0 malformed`；`validate-content-junk` PASS with frozen warnings；`build-data` generated zero diff；`git diff --check` clean。ratchet 仍為既知 anchor-validator output parser baseline，exit 1，未報成 green。
+- **Scope / Evidence**：本批 `KI2`–`KI9`、`KI17`–`KI27`、`LI1`–`LI11`；每個欄位保留 browser observation 的 `fetched_at`、HTTP 200 與含 list→point page→image 的 `how_found`。canonical `data/acupoints/**`、app/runtime、generated data 零異動。
+- **Next**：302 dead-image fields（151 cards）維持 null；下一批仍依排序取最多 30 cards，逐頁實測，不由 URL pattern 猜候選。合併前仍需 reviewer 裁定 11H nested schema verifier 擴充是否符合派工邊界。
+
 ## [2026-09-03] Codex Handoff — Task 11H batches 5–6
 
 - **Branch / Base / Commits**：`codex/tung-dead-link-candidates`，re-fetched base 仍為 `origin/main@626c0686`；本輪 commits `afe5c762`、`c62e26c9`。已推到該分支，等驗收。
