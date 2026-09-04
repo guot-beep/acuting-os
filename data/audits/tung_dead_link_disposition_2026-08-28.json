@@ -32,9 +32,9 @@
     "dead_reference_url_count": 411,
     "dead_image_occurrence_count": 722,
     "dead_reference_occurrence_count": 493,
-    "same_site_candidate_verified_count": 240,
-    "same_site_candidate_null_count": 482,
-    "same_site_candidate_live_checks_attempted": 240
+    "same_site_candidate_verified_count": 300,
+    "same_site_candidate_null_count": 422,
+    "same_site_candidate_live_checks_attempted": 300
   },
   "cards": [
     {
@@ -4683,13 +4683,23 @@
           "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/trad/gb4_loc.jpg",
           "is_image": true,
           "field_path": "data/acupoints/361.json[id=GB4].diagram_urls_en[0]",
-          "same_site_candidate": null
+          "same_site_candidate": {
+            "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/GB%204.jpg",
+            "http_status": 200,
+            "fetched_at": "2026-09-04T00:04:52.019Z",
+            "how_found": "browser-verified https://www.mastertungacupuncture.org/acupuncture/traditional/points/list -> https://www.mastertungacupuncture.org/acupuncture/traditional/points/gb4; h1 'Hanyan (GB 4)' matched card code; image opened with HTTP 200"
+          }
         },
         {
           "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/trad/gb4_needling.jpg",
           "is_image": true,
           "field_path": "data/acupoints/361.json[id=GB4].diagram_urls_en[1]",
-          "same_site_candidate": null
+          "same_site_candidate": {
+            "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/GB%204.jpg",
+            "http_status": 200,
+            "fetched_at": "2026-09-04T00:04:52.019Z",
+            "how_found": "browser-verified https://www.mastertungacupuncture.org/acupuncture/traditional/points/list -> https://www.mastertungacupuncture.org/acupuncture/traditional/points/gb4; h1 'Hanyan (GB 4)' matched card code; image opened with HTTP 200"
+          }
         },
         {
           "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/hanyan-gb4",
@@ -4710,13 +4720,23 @@
           "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/trad/gb5_loc.jpg",
           "is_image": true,
           "field_path": "data/acupoints/361.json[id=GB5].diagram_urls_en[0]",
-          "same_site_candidate": null
+          "same_site_candidate": {
+            "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/GB%205.jpg",
+            "http_status": 200,
+            "fetched_at": "2026-09-04T00:04:57.232Z",
+            "how_found": "browser-verified https://www.mastertungacupuncture.org/acupuncture/traditional/points/list -> https://www.mastertungacupuncture.org/acupuncture/traditional/points/gb5; h1 'Xuanlu (GB 5)' matched card code; image opened with HTTP 200"
+          }
         },
         {
           "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/trad/gb5_needling.jpg",
           "is_image": true,
           "field_path": "data/acupoints/361.json[id=GB5].diagram_urls_en[1]",
-          "same_site_candidate": null
+          "same_site_candidate": {
+            "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/GB%205.jpg",
+            "http_status": 200,
+            "fetched_at": "2026-09-04T00:04:57.232Z",
+            "how_found": "browser-verified https://www.mastertungacupuncture.org/acupuncture/traditional/points/list -> https://www.mastertungacupuncture.org/acupuncture/traditional/points/gb5; h1 'Xuanlu (GB 5)' matched card code; image opened with HTTP 200"
+          }
         },
         {
           "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/xuanlu-gb5",
@@ -4737,13 +4757,23 @@
           "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/trad/gb6_loc.jpg",
           "is_image": true,
           "field_path": "data/acupoints/361.json[id=GB6].diagram_urls_en[0]",
-          "same_site_candidate": null
+          "same_site_candidate": {
+            "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/GB%206.jpg",
+            "http_status": 200,
+            "fetched_at": "2026-09-04T00:04:58.299Z",
+            "how_found": "browser-verified https://www.mastertungacupuncture.org/acupuncture/traditional/points/list -> https://www.mastertungacupuncture.org/acupuncture/traditional/points/gb6; h1 'Xuanli (GB 6)' matched card code; image opened with HTTP 200"
+          }
         },
         {
           "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/trad/gb6_needling.jpg",
           "is_image": true,
           "field_path": "data/acupoints/361.json[id=GB6].diagram_urls_en[1]",
-          "same_site_candidate": null
+          "same_site_candidate": {
+            "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/GB%206.jpg",
+            "http_status": 200,
+            "fetched_at": "2026-09-04T00:04:58.299Z",
+            "how_found": "browser-verified https://www.mastertungacupuncture.org/acupuncture/traditional/points/list -> https://www.mastertungacupuncture.org/acupuncture/traditional/points/gb6; h1 'Xuanli (GB 6)' matched card code; image opened with HTTP 200"
+          }
         },
         {
           "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/xuanli-gb6",
@@ -4764,13 +4794,23 @@
           "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/trad/gb7_loc.jpg",
           "is_image": true,
           "field_path": "data/acupoints/361.json[id=GB7].diagram_urls_en[0]",
-          "same_site_candidate": null
+          "same_site_candidate": {
+            "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/GB%207.jpg",
+            "http_status": 200,
+            "fetched_at": "2026-09-04T00:04:59.191Z",
+            "how_found": "browser-verified https://www.mastertungacupuncture.org/acupuncture/traditional/points/list -> https://www.mastertungacupuncture.org/acupuncture/traditional/points/gb7; h1 'Qubin (GB 7)' matched card code; image opened with HTTP 200"
+          }
         },
         {
           "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/trad/gb7_needling.jpg",
           "is_image": true,
           "field_path": "data/acupoints/361.json[id=GB7].diagram_urls_en[1]",
-          "same_site_candidate": null
+          "same_site_candidate": {
+            "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/GB%207.jpg",
+            "http_status": 200,
+            "fetched_at": "2026-09-04T00:04:59.191Z",
+            "how_found": "browser-verified https://www.mastertungacupuncture.org/acupuncture/traditional/points/list -> https://www.mastertungacupuncture.org/acupuncture/traditional/points/gb7; h1 'Qubin (GB 7)' matched card code; image opened with HTTP 200"
+          }
         },
         {
           "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/qubin-gb7",
@@ -4791,13 +4831,23 @@
           "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/trad/gb8_loc.jpg",
           "is_image": true,
           "field_path": "data/acupoints/361.json[id=GB8].diagram_urls_en[0]",
-          "same_site_candidate": null
+          "same_site_candidate": {
+            "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/GB%208.jpg",
+            "http_status": 200,
+            "fetched_at": "2026-09-04T00:05:00.062Z",
+            "how_found": "browser-verified https://www.mastertungacupuncture.org/acupuncture/traditional/points/list -> https://www.mastertungacupuncture.org/acupuncture/traditional/points/gb8; h1 'Shuaigu (GB 8)' matched card code; image opened with HTTP 200"
+          }
         },
         {
           "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/trad/gb8_needling.jpg",
           "is_image": true,
           "field_path": "data/acupoints/361.json[id=GB8].diagram_urls_en[1]",
-          "same_site_candidate": null
+          "same_site_candidate": {
+            "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/GB%208.jpg",
+            "http_status": 200,
+            "fetched_at": "2026-09-04T00:05:00.062Z",
+            "how_found": "browser-verified https://www.mastertungacupuncture.org/acupuncture/traditional/points/list -> https://www.mastertungacupuncture.org/acupuncture/traditional/points/gb8; h1 'Shuaigu (GB 8)' matched card code; image opened with HTTP 200"
+          }
         },
         {
           "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/shuaigu-gb8",
@@ -4818,13 +4868,23 @@
           "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/trad/gb9_loc.jpg",
           "is_image": true,
           "field_path": "data/acupoints/361.json[id=GB9].diagram_urls_en[0]",
-          "same_site_candidate": null
+          "same_site_candidate": {
+            "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/GB%209.jpg",
+            "http_status": 200,
+            "fetched_at": "2026-09-04T00:05:00.954Z",
+            "how_found": "browser-verified https://www.mastertungacupuncture.org/acupuncture/traditional/points/list -> https://www.mastertungacupuncture.org/acupuncture/traditional/points/gb9; h1 'Tianchong (GB 9)' matched card code; image opened with HTTP 200"
+          }
         },
         {
           "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/trad/gb9_needling.jpg",
           "is_image": true,
           "field_path": "data/acupoints/361.json[id=GB9].diagram_urls_en[1]",
-          "same_site_candidate": null
+          "same_site_candidate": {
+            "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/GB%209.jpg",
+            "http_status": 200,
+            "fetched_at": "2026-09-04T00:05:00.954Z",
+            "how_found": "browser-verified https://www.mastertungacupuncture.org/acupuncture/traditional/points/list -> https://www.mastertungacupuncture.org/acupuncture/traditional/points/gb9; h1 'Tianchong (GB 9)' matched card code; image opened with HTTP 200"
+          }
         },
         {
           "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/tianchong-gb9",
@@ -5807,13 +5867,23 @@
           "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/trad/gb36_loc.jpg",
           "is_image": true,
           "field_path": "data/acupoints/361.json[id=GB36].diagram_urls_en[0]",
-          "same_site_candidate": null
+          "same_site_candidate": {
+            "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/GB_36.jpg",
+            "http_status": 200,
+            "fetched_at": "2026-09-04T00:04:48.499Z",
+            "how_found": "browser-verified https://www.mastertungacupuncture.org/acupuncture/traditional/points/list -> https://www.mastertungacupuncture.org/acupuncture/traditional/points/gb36; h1 'Waiqiu (GB 36)' matched card code; image opened with HTTP 200"
+          }
         },
         {
           "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/trad/gb36_needling.jpg",
           "is_image": true,
           "field_path": "data/acupoints/361.json[id=GB36].diagram_urls_en[1]",
-          "same_site_candidate": null
+          "same_site_candidate": {
+            "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/GB_36.jpg",
+            "http_status": 200,
+            "fetched_at": "2026-09-04T00:04:48.499Z",
+            "how_found": "browser-verified https://www.mastertungacupuncture.org/acupuncture/traditional/points/list -> https://www.mastertungacupuncture.org/acupuncture/traditional/points/gb36; h1 'Waiqiu (GB 36)' matched card code; image opened with HTTP 200"
+          }
         },
         {
           "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/waiqiu-gb36",
@@ -5834,13 +5904,23 @@
           "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/trad/gb37_loc.jpg",
           "is_image": true,
           "field_path": "data/acupoints/361.json[id=GB37].diagram_urls_en[0]",
-          "same_site_candidate": null
+          "same_site_candidate": {
+            "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/GB_37.jpg",
+            "http_status": 200,
+            "fetched_at": "2026-09-04T00:04:49.408Z",
+            "how_found": "browser-verified https://www.mastertungacupuncture.org/acupuncture/traditional/points/list -> https://www.mastertungacupuncture.org/acupuncture/traditional/points/gb37; h1 'Guangming (GB 37)' matched card code; image opened with HTTP 200"
+          }
         },
         {
           "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/trad/gb37_needling.jpg",
           "is_image": true,
           "field_path": "data/acupoints/361.json[id=GB37].diagram_urls_en[1]",
-          "same_site_candidate": null
+          "same_site_candidate": {
+            "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/GB_37.jpg",
+            "http_status": 200,
+            "fetched_at": "2026-09-04T00:04:49.408Z",
+            "how_found": "browser-verified https://www.mastertungacupuncture.org/acupuncture/traditional/points/list -> https://www.mastertungacupuncture.org/acupuncture/traditional/points/gb37; h1 'Guangming (GB 37)' matched card code; image opened with HTTP 200"
+          }
         },
         {
           "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/guangming-gb37",
@@ -5861,13 +5941,23 @@
           "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/trad/gb38_loc.jpg",
           "is_image": true,
           "field_path": "data/acupoints/361.json[id=GB38].diagram_urls_en[0]",
-          "same_site_candidate": null
+          "same_site_candidate": {
+            "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/GB_38.jpg",
+            "http_status": 200,
+            "fetched_at": "2026-09-04T00:04:50.318Z",
+            "how_found": "browser-verified https://www.mastertungacupuncture.org/acupuncture/traditional/points/list -> https://www.mastertungacupuncture.org/acupuncture/traditional/points/gb38; h1 'Yangfu (GB 38)' matched card code; image opened with HTTP 200"
+          }
         },
         {
           "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/trad/gb38_needling.jpg",
           "is_image": true,
           "field_path": "data/acupoints/361.json[id=GB38].diagram_urls_en[1]",
-          "same_site_candidate": null
+          "same_site_candidate": {
+            "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/GB_38.jpg",
+            "http_status": 200,
+            "fetched_at": "2026-09-04T00:04:50.318Z",
+            "how_found": "browser-verified https://www.mastertungacupuncture.org/acupuncture/traditional/points/list -> https://www.mastertungacupuncture.org/acupuncture/traditional/points/gb38; h1 'Yangfu (GB 38)' matched card code; image opened with HTTP 200"
+          }
         },
         {
           "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yangfu-gb38",
@@ -5888,13 +5978,23 @@
           "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/trad/gb39_loc.jpg",
           "is_image": true,
           "field_path": "data/acupoints/361.json[id=GB39].diagram_urls_en[0]",
-          "same_site_candidate": null
+          "same_site_candidate": {
+            "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/GB_39.jpg",
+            "http_status": 200,
+            "fetched_at": "2026-09-04T00:04:51.142Z",
+            "how_found": "browser-verified https://www.mastertungacupuncture.org/acupuncture/traditional/points/list -> https://www.mastertungacupuncture.org/acupuncture/traditional/points/gb39; h1 'Xuanzhong (GB 39)' matched card code; image opened with HTTP 200"
+          }
         },
         {
           "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/trad/gb39_needling.jpg",
           "is_image": true,
           "field_path": "data/acupoints/361.json[id=GB39].diagram_urls_en[1]",
-          "same_site_candidate": null
+          "same_site_candidate": {
+            "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/GB_39.jpg",
+            "http_status": 200,
+            "fetched_at": "2026-09-04T00:04:51.142Z",
+            "how_found": "browser-verified https://www.mastertungacupuncture.org/acupuncture/traditional/points/list -> https://www.mastertungacupuncture.org/acupuncture/traditional/points/gb39; h1 'Xuanzhong (GB 39)' matched card code; image opened with HTTP 200"
+          }
         },
         {
           "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/xuanzhong-gb39",
@@ -5915,13 +6015,23 @@
           "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/trad/gb40_loc.jpg",
           "is_image": true,
           "field_path": "data/acupoints/361.json[id=GB40].diagram_urls_en[0]",
-          "same_site_candidate": null
+          "same_site_candidate": {
+            "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/GB_40.jpg",
+            "http_status": 200,
+            "fetched_at": "2026-09-04T00:04:52.869Z",
+            "how_found": "browser-verified https://www.mastertungacupuncture.org/acupuncture/traditional/points/list -> https://www.mastertungacupuncture.org/acupuncture/traditional/points/gb40; h1 'Qiuxu (GB 40)' matched card code; image opened with HTTP 200"
+          }
         },
         {
           "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/trad/gb40_needling.jpg",
           "is_image": true,
           "field_path": "data/acupoints/361.json[id=GB40].diagram_urls_en[1]",
-          "same_site_candidate": null
+          "same_site_candidate": {
+            "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/GB_40.jpg",
+            "http_status": 200,
+            "fetched_at": "2026-09-04T00:04:52.869Z",
+            "how_found": "browser-verified https://www.mastertungacupuncture.org/acupuncture/traditional/points/list -> https://www.mastertungacupuncture.org/acupuncture/traditional/points/gb40; h1 'Qiuxu (GB 40)' matched card code; image opened with HTTP 200"
+          }
         },
         {
           "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/qiuxu-gb40",
@@ -5942,13 +6052,23 @@
           "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/trad/gb41_loc.jpg",
           "is_image": true,
           "field_path": "data/acupoints/361.json[id=GB41].diagram_urls_en[0]",
-          "same_site_candidate": null
+          "same_site_candidate": {
+            "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/GB_41.jpg",
+            "http_status": 200,
+            "fetched_at": "2026-09-04T00:04:53.759Z",
+            "how_found": "browser-verified https://www.mastertungacupuncture.org/acupuncture/traditional/points/list -> https://www.mastertungacupuncture.org/acupuncture/traditional/points/gb41; h1 'Zulinqi (GB 41)' matched card code; image opened with HTTP 200"
+          }
         },
         {
           "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/trad/gb41_needling.jpg",
           "is_image": true,
           "field_path": "data/acupoints/361.json[id=GB41].diagram_urls_en[1]",
-          "same_site_candidate": null
+          "same_site_candidate": {
+            "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/GB_41.jpg",
+            "http_status": 200,
+            "fetched_at": "2026-09-04T00:04:53.759Z",
+            "how_found": "browser-verified https://www.mastertungacupuncture.org/acupuncture/traditional/points/list -> https://www.mastertungacupuncture.org/acupuncture/traditional/points/gb41; h1 'Zulinqi (GB 41)' matched card code; image opened with HTTP 200"
+          }
         },
         {
           "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/zulinqi-gb41",
@@ -5969,13 +6089,23 @@
           "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/trad/gb42_loc.jpg",
           "is_image": true,
           "field_path": "data/acupoints/361.json[id=GB42].diagram_urls_en[0]",
-          "same_site_candidate": null
+          "same_site_candidate": {
+            "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/GB_42.jpg",
+            "http_status": 200,
+            "fetched_at": "2026-09-04T00:04:54.660Z",
+            "how_found": "browser-verified https://www.mastertungacupuncture.org/acupuncture/traditional/points/list -> https://www.mastertungacupuncture.org/acupuncture/traditional/points/gb42; h1 'Diwuhui (GB 42)' matched card code; image opened with HTTP 200"
+          }
         },
         {
           "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/trad/gb42_needling.jpg",
           "is_image": true,
           "field_path": "data/acupoints/361.json[id=GB42].diagram_urls_en[1]",
-          "same_site_candidate": null
+          "same_site_candidate": {
+            "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/GB_42.jpg",
+            "http_status": 200,
+            "fetched_at": "2026-09-04T00:04:54.660Z",
+            "how_found": "browser-verified https://www.mastertungacupuncture.org/acupuncture/traditional/points/list -> https://www.mastertungacupuncture.org/acupuncture/traditional/points/gb42; h1 'Diwuhui (GB 42)' matched card code; image opened with HTTP 200"
+          }
         },
         {
           "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/diwuhui-gb42",
@@ -5996,13 +6126,23 @@
           "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/trad/gb43_loc.jpg",
           "is_image": true,
           "field_path": "data/acupoints/361.json[id=GB43].diagram_urls_en[0]",
-          "same_site_candidate": null
+          "same_site_candidate": {
+            "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/GB_43.jpg",
+            "http_status": 200,
+            "fetched_at": "2026-09-04T00:04:55.513Z",
+            "how_found": "browser-verified https://www.mastertungacupuncture.org/acupuncture/traditional/points/list -> https://www.mastertungacupuncture.org/acupuncture/traditional/points/gb43; h1 'Xiaxi (GB 43)' matched card code; image opened with HTTP 200"
+          }
         },
         {
           "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/trad/gb43_needling.jpg",
           "is_image": true,
           "field_path": "data/acupoints/361.json[id=GB43].diagram_urls_en[1]",
-          "same_site_candidate": null
+          "same_site_candidate": {
+            "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/GB_43.jpg",
+            "http_status": 200,
+            "fetched_at": "2026-09-04T00:04:55.513Z",
+            "how_found": "browser-verified https://www.mastertungacupuncture.org/acupuncture/traditional/points/list -> https://www.mastertungacupuncture.org/acupuncture/traditional/points/gb43; h1 'Xiaxi (GB 43)' matched card code; image opened with HTTP 200"
+          }
         },
         {
           "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/xiaxi-gb43",
@@ -6023,13 +6163,23 @@
           "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/trad/gb44_loc.jpg",
           "is_image": true,
           "field_path": "data/acupoints/361.json[id=GB44].diagram_urls_en[0]",
-          "same_site_candidate": null
+          "same_site_candidate": {
+            "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/GB_44.jpg",
+            "http_status": 200,
+            "fetched_at": "2026-09-04T00:04:56.365Z",
+            "how_found": "browser-verified https://www.mastertungacupuncture.org/acupuncture/traditional/points/list -> https://www.mastertungacupuncture.org/acupuncture/traditional/points/gb44; h1 'Zuqiaoyin (GB 44)' matched card code; image opened with HTTP 200"
+          }
         },
         {
           "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/trad/gb44_needling.jpg",
           "is_image": true,
           "field_path": "data/acupoints/361.json[id=GB44].diagram_urls_en[1]",
-          "same_site_candidate": null
+          "same_site_candidate": {
+            "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/GB_44.jpg",
+            "http_status": 200,
+            "fetched_at": "2026-09-04T00:04:56.365Z",
+            "how_found": "browser-verified https://www.mastertungacupuncture.org/acupuncture/traditional/points/list -> https://www.mastertungacupuncture.org/acupuncture/traditional/points/gb44; h1 'Zuqiaoyin (GB 44)' matched card code; image opened with HTTP 200"
+          }
         },
         {
           "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/zuqiaoyin-gb44",
@@ -6050,13 +6200,23 @@
           "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/trad/gv1_loc.jpg",
           "is_image": true,
           "field_path": "data/acupoints/361.json[id=GV1].diagram_urls_en[0]",
-          "same_site_candidate": null
+          "same_site_candidate": {
+            "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/GV_1.jpg",
+            "http_status": 200,
+            "fetched_at": "2026-09-04T00:05:01.798Z",
+            "how_found": "browser-verified https://www.mastertungacupuncture.org/acupuncture/traditional/points/list -> https://www.mastertungacupuncture.org/acupuncture/traditional/points/gv1; h1 'Changqiang (GV 1)' matched card code; image opened with HTTP 200"
+          }
         },
         {
           "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/trad/gv1_needling.jpg",
           "is_image": true,
           "field_path": "data/acupoints/361.json[id=GV1].diagram_urls_en[1]",
-          "same_site_candidate": null
+          "same_site_candidate": {
+            "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/GV_1.jpg",
+            "http_status": 200,
+            "fetched_at": "2026-09-04T00:05:01.798Z",
+            "how_found": "browser-verified https://www.mastertungacupuncture.org/acupuncture/traditional/points/list -> https://www.mastertungacupuncture.org/acupuncture/traditional/points/gv1; h1 'Changqiang (GV 1)' matched card code; image opened with HTTP 200"
+          }
         },
         {
           "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/changqiang-gv1",
@@ -6077,13 +6237,23 @@
           "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/trad/gv2_loc.jpg",
           "is_image": true,
           "field_path": "data/acupoints/361.json[id=GV2].diagram_urls_en[0]",
-          "same_site_candidate": null
+          "same_site_candidate": {
+            "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/GV_2.jpg",
+            "http_status": 200,
+            "fetched_at": "2026-09-04T00:05:10.897Z",
+            "how_found": "browser-verified https://www.mastertungacupuncture.org/acupuncture/traditional/points/list -> https://www.mastertungacupuncture.org/acupuncture/traditional/points/gv2; h1 'Yaoshu (GV 2)' matched card code; image opened with HTTP 200"
+          }
         },
         {
           "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/trad/gv2_needling.jpg",
           "is_image": true,
           "field_path": "data/acupoints/361.json[id=GV2].diagram_urls_en[1]",
-          "same_site_candidate": null
+          "same_site_candidate": {
+            "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/GV_2.jpg",
+            "http_status": 200,
+            "fetched_at": "2026-09-04T00:05:10.897Z",
+            "how_found": "browser-verified https://www.mastertungacupuncture.org/acupuncture/traditional/points/list -> https://www.mastertungacupuncture.org/acupuncture/traditional/points/gv2; h1 'Yaoshu (GV 2)' matched card code; image opened with HTTP 200"
+          }
         },
         {
           "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yaoshu-gv2",
@@ -6293,13 +6463,23 @@
           "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/trad/gv10_loc.jpg",
           "is_image": true,
           "field_path": "data/acupoints/361.json[id=GV10].diagram_urls_en[0]",
-          "same_site_candidate": null
+          "same_site_candidate": {
+            "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/GV_10.jpg",
+            "http_status": 200,
+            "fetched_at": "2026-09-04T00:05:02.623Z",
+            "how_found": "browser-verified https://www.mastertungacupuncture.org/acupuncture/traditional/points/list -> https://www.mastertungacupuncture.org/acupuncture/traditional/points/gv10; h1 'Lingtai (GV 10)' matched card code; image opened with HTTP 200"
+          }
         },
         {
           "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/trad/gv10_needling.jpg",
           "is_image": true,
           "field_path": "data/acupoints/361.json[id=GV10].diagram_urls_en[1]",
-          "same_site_candidate": null
+          "same_site_candidate": {
+            "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/GV_10.jpg",
+            "http_status": 200,
+            "fetched_at": "2026-09-04T00:05:02.623Z",
+            "how_found": "browser-verified https://www.mastertungacupuncture.org/acupuncture/traditional/points/list -> https://www.mastertungacupuncture.org/acupuncture/traditional/points/gv10; h1 'Lingtai (GV 10)' matched card code; image opened with HTTP 200"
+          }
         },
         {
           "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/lingtai-gv10",
@@ -6320,13 +6500,23 @@
           "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/trad/gv11_loc.jpg",
           "is_image": true,
           "field_path": "data/acupoints/361.json[id=GV11].diagram_urls_en[0]",
-          "same_site_candidate": null
+          "same_site_candidate": {
+            "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/GV_11_0.jpg",
+            "http_status": 200,
+            "fetched_at": "2026-09-04T00:05:03.398Z",
+            "how_found": "browser-verified https://www.mastertungacupuncture.org/acupuncture/traditional/points/list -> https://www.mastertungacupuncture.org/acupuncture/traditional/points/gv11; h1 'Shendao (GV 11)' matched card code; image opened with HTTP 200"
+          }
         },
         {
           "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/trad/gv11_needling.jpg",
           "is_image": true,
           "field_path": "data/acupoints/361.json[id=GV11].diagram_urls_en[1]",
-          "same_site_candidate": null
+          "same_site_candidate": {
+            "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/GV_11_0.jpg",
+            "http_status": 200,
+            "fetched_at": "2026-09-04T00:05:03.398Z",
+            "how_found": "browser-verified https://www.mastertungacupuncture.org/acupuncture/traditional/points/list -> https://www.mastertungacupuncture.org/acupuncture/traditional/points/gv11; h1 'Shendao (GV 11)' matched card code; image opened with HTTP 200"
+          }
         },
         {
           "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/shendao-gv11",
@@ -6347,13 +6537,23 @@
           "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/trad/gv12_loc.jpg",
           "is_image": true,
           "field_path": "data/acupoints/361.json[id=GV12].diagram_urls_en[0]",
-          "same_site_candidate": null
+          "same_site_candidate": {
+            "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/GV_12.jpg",
+            "http_status": 200,
+            "fetched_at": "2026-09-04T00:05:04.252Z",
+            "how_found": "browser-verified https://www.mastertungacupuncture.org/acupuncture/traditional/points/list -> https://www.mastertungacupuncture.org/acupuncture/traditional/points/gv12; h1 'Shenzhu (GV 12)' matched card code; image opened with HTTP 200"
+          }
         },
         {
           "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/trad/gv12_needling.jpg",
           "is_image": true,
           "field_path": "data/acupoints/361.json[id=GV12].diagram_urls_en[1]",
-          "same_site_candidate": null
+          "same_site_candidate": {
+            "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/GV_12.jpg",
+            "http_status": 200,
+            "fetched_at": "2026-09-04T00:05:04.252Z",
+            "how_found": "browser-verified https://www.mastertungacupuncture.org/acupuncture/traditional/points/list -> https://www.mastertungacupuncture.org/acupuncture/traditional/points/gv12; h1 'Shenzhu (GV 12)' matched card code; image opened with HTTP 200"
+          }
         },
         {
           "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/shenzhu-gv12",
@@ -6374,13 +6574,23 @@
           "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/trad/gv13_loc.jpg",
           "is_image": true,
           "field_path": "data/acupoints/361.json[id=GV13].diagram_urls_en[0]",
-          "same_site_candidate": null
+          "same_site_candidate": {
+            "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/GV_13.jpg",
+            "http_status": 200,
+            "fetched_at": "2026-09-04T00:05:05.098Z",
+            "how_found": "browser-verified https://www.mastertungacupuncture.org/acupuncture/traditional/points/list -> https://www.mastertungacupuncture.org/acupuncture/traditional/points/gv13; h1 'Taodao (GV 13)' matched card code; image opened with HTTP 200"
+          }
         },
         {
           "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/trad/gv13_needling.jpg",
           "is_image": true,
           "field_path": "data/acupoints/361.json[id=GV13].diagram_urls_en[1]",
-          "same_site_candidate": null
+          "same_site_candidate": {
+            "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/GV_13.jpg",
+            "http_status": 200,
+            "fetched_at": "2026-09-04T00:05:05.098Z",
+            "how_found": "browser-verified https://www.mastertungacupuncture.org/acupuncture/traditional/points/list -> https://www.mastertungacupuncture.org/acupuncture/traditional/points/gv13; h1 'Taodao (GV 13)' matched card code; image opened with HTTP 200"
+          }
         },
         {
           "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/taodao-gv13",
@@ -6401,13 +6611,23 @@
           "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/trad/gv14_loc.jpg",
           "is_image": true,
           "field_path": "data/acupoints/361.json[id=GV14].diagram_urls_en[0]",
-          "same_site_candidate": null
+          "same_site_candidate": {
+            "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/GV14.jpg",
+            "http_status": 200,
+            "fetched_at": "2026-09-04T00:05:05.984Z",
+            "how_found": "browser-verified https://www.mastertungacupuncture.org/acupuncture/traditional/points/list -> https://www.mastertungacupuncture.org/acupuncture/traditional/points/gv14; h1 'Dazhui (GV 14)' matched card code; image opened with HTTP 200"
+          }
         },
         {
           "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/trad/gv14_needling.jpg",
           "is_image": true,
           "field_path": "data/acupoints/361.json[id=GV14].diagram_urls_en[1]",
-          "same_site_candidate": null
+          "same_site_candidate": {
+            "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/GV14.jpg",
+            "http_status": 200,
+            "fetched_at": "2026-09-04T00:05:05.984Z",
+            "how_found": "browser-verified https://www.mastertungacupuncture.org/acupuncture/traditional/points/list -> https://www.mastertungacupuncture.org/acupuncture/traditional/points/gv14; h1 'Dazhui (GV 14)' matched card code; image opened with HTTP 200"
+          }
         },
         {
           "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/dazhui-gv14",
@@ -6428,13 +6648,23 @@
           "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/trad/gv15_loc.jpg",
           "is_image": true,
           "field_path": "data/acupoints/361.json[id=GV15].diagram_urls_en[0]",
-          "same_site_candidate": null
+          "same_site_candidate": {
+            "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/GV15_0.jpg",
+            "http_status": 200,
+            "fetched_at": "2026-09-04T00:05:06.824Z",
+            "how_found": "browser-verified https://www.mastertungacupuncture.org/acupuncture/traditional/points/list -> https://www.mastertungacupuncture.org/acupuncture/traditional/points/gv15; h1 'Yamen (GV 15)' matched card code; image opened with HTTP 200"
+          }
         },
         {
           "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/trad/gv15_needling.jpg",
           "is_image": true,
           "field_path": "data/acupoints/361.json[id=GV15].diagram_urls_en[1]",
-          "same_site_candidate": null
+          "same_site_candidate": {
+            "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/GV15_0.jpg",
+            "http_status": 200,
+            "fetched_at": "2026-09-04T00:05:06.824Z",
+            "how_found": "browser-verified https://www.mastertungacupuncture.org/acupuncture/traditional/points/list -> https://www.mastertungacupuncture.org/acupuncture/traditional/points/gv15; h1 'Yamen (GV 15)' matched card code; image opened with HTTP 200"
+          }
         },
         {
           "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/yamen-gv15",
@@ -6455,13 +6685,23 @@
           "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/trad/gv16_loc.jpg",
           "is_image": true,
           "field_path": "data/acupoints/361.json[id=GV16].diagram_urls_en[0]",
-          "same_site_candidate": null
+          "same_site_candidate": {
+            "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/GV16.jpg",
+            "http_status": 200,
+            "fetched_at": "2026-09-04T00:05:07.651Z",
+            "how_found": "browser-verified https://www.mastertungacupuncture.org/acupuncture/traditional/points/list -> https://www.mastertungacupuncture.org/acupuncture/traditional/points/gv16; h1 'Fengfu (GV 16)' matched card code; image opened with HTTP 200"
+          }
         },
         {
           "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/trad/gv16_needling.jpg",
           "is_image": true,
           "field_path": "data/acupoints/361.json[id=GV16].diagram_urls_en[1]",
-          "same_site_candidate": null
+          "same_site_candidate": {
+            "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/GV16.jpg",
+            "http_status": 200,
+            "fetched_at": "2026-09-04T00:05:07.651Z",
+            "how_found": "browser-verified https://www.mastertungacupuncture.org/acupuncture/traditional/points/list -> https://www.mastertungacupuncture.org/acupuncture/traditional/points/gv16; h1 'Fengfu (GV 16)' matched card code; image opened with HTTP 200"
+          }
         },
         {
           "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/fengfu-gv16",
@@ -6482,13 +6722,23 @@
           "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/trad/gv17_loc.jpg",
           "is_image": true,
           "field_path": "data/acupoints/361.json[id=GV17].diagram_urls_en[0]",
-          "same_site_candidate": null
+          "same_site_candidate": {
+            "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/GV17_0.jpg",
+            "http_status": 200,
+            "fetched_at": "2026-09-04T00:05:08.444Z",
+            "how_found": "browser-verified https://www.mastertungacupuncture.org/acupuncture/traditional/points/list -> https://www.mastertungacupuncture.org/acupuncture/traditional/points/gv17; h1 'Naohu (GV 17)' matched card code; image opened with HTTP 200"
+          }
         },
         {
           "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/trad/gv17_needling.jpg",
           "is_image": true,
           "field_path": "data/acupoints/361.json[id=GV17].diagram_urls_en[1]",
-          "same_site_candidate": null
+          "same_site_candidate": {
+            "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/GV17_0.jpg",
+            "http_status": 200,
+            "fetched_at": "2026-09-04T00:05:08.444Z",
+            "how_found": "browser-verified https://www.mastertungacupuncture.org/acupuncture/traditional/points/list -> https://www.mastertungacupuncture.org/acupuncture/traditional/points/gv17; h1 'Naohu (GV 17)' matched card code; image opened with HTTP 200"
+          }
         },
         {
           "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/naohu-gv17",
@@ -6509,13 +6759,23 @@
           "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/trad/gv18_loc.jpg",
           "is_image": true,
           "field_path": "data/acupoints/361.json[id=GV18].diagram_urls_en[0]",
-          "same_site_candidate": null
+          "same_site_candidate": {
+            "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/GV18_0.jpg",
+            "http_status": 200,
+            "fetched_at": "2026-09-04T00:05:09.229Z",
+            "how_found": "browser-verified https://www.mastertungacupuncture.org/acupuncture/traditional/points/list -> https://www.mastertungacupuncture.org/acupuncture/traditional/points/gv18; h1 'Qiangjian (GV 18)' matched card code; image opened with HTTP 200"
+          }
         },
         {
           "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/trad/gv18_needling.jpg",
           "is_image": true,
           "field_path": "data/acupoints/361.json[id=GV18].diagram_urls_en[1]",
-          "same_site_candidate": null
+          "same_site_candidate": {
+            "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/GV18_0.jpg",
+            "http_status": 200,
+            "fetched_at": "2026-09-04T00:05:09.229Z",
+            "how_found": "browser-verified https://www.mastertungacupuncture.org/acupuncture/traditional/points/list -> https://www.mastertungacupuncture.org/acupuncture/traditional/points/gv18; h1 'Qiangjian (GV 18)' matched card code; image opened with HTTP 200"
+          }
         },
         {
           "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/qiangjian-gv18",
@@ -6536,13 +6796,23 @@
           "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/trad/gv19_loc.jpg",
           "is_image": true,
           "field_path": "data/acupoints/361.json[id=GV19].diagram_urls_en[0]",
-          "same_site_candidate": null
+          "same_site_candidate": {
+            "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/GV19.jpg",
+            "http_status": 200,
+            "fetched_at": "2026-09-04T00:05:10.032Z",
+            "how_found": "browser-verified https://www.mastertungacupuncture.org/acupuncture/traditional/points/list -> https://www.mastertungacupuncture.org/acupuncture/traditional/points/gv19; h1 'Houding (GV 19)' matched card code; image opened with HTTP 200"
+          }
         },
         {
           "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/trad/gv19_needling.jpg",
           "is_image": true,
           "field_path": "data/acupoints/361.json[id=GV19].diagram_urls_en[1]",
-          "same_site_candidate": null
+          "same_site_candidate": {
+            "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/GV19.jpg",
+            "http_status": 200,
+            "fetched_at": "2026-09-04T00:05:10.032Z",
+            "how_found": "browser-verified https://www.mastertungacupuncture.org/acupuncture/traditional/points/list -> https://www.mastertungacupuncture.org/acupuncture/traditional/points/gv19; h1 'Houding (GV 19)' matched card code; image opened with HTTP 200"
+          }
         },
         {
           "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/houding-gv19",
@@ -6563,13 +6833,23 @@
           "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/trad/gv20_loc.jpg",
           "is_image": true,
           "field_path": "data/acupoints/361.json[id=GV20].diagram_urls_en[0]",
-          "same_site_candidate": null
+          "same_site_candidate": {
+            "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/GV20_0.jpg",
+            "http_status": 200,
+            "fetched_at": "2026-09-04T00:05:11.721Z",
+            "how_found": "browser-verified https://www.mastertungacupuncture.org/acupuncture/traditional/points/list -> https://www.mastertungacupuncture.org/acupuncture/traditional/points/gv20; h1 'Baihui (GV 20)' matched card code; image opened with HTTP 200"
+          }
         },
         {
           "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/trad/gv20_needling.jpg",
           "is_image": true,
           "field_path": "data/acupoints/361.json[id=GV20].diagram_urls_en[1]",
-          "same_site_candidate": null
+          "same_site_candidate": {
+            "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/GV20_0.jpg",
+            "http_status": 200,
+            "fetched_at": "2026-09-04T00:05:11.721Z",
+            "how_found": "browser-verified https://www.mastertungacupuncture.org/acupuncture/traditional/points/list -> https://www.mastertungacupuncture.org/acupuncture/traditional/points/gv20; h1 'Baihui (GV 20)' matched card code; image opened with HTTP 200"
+          }
         },
         {
           "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/baihui-gv20",
@@ -6590,13 +6870,23 @@
           "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/trad/gv21_loc.jpg",
           "is_image": true,
           "field_path": "data/acupoints/361.json[id=GV21].diagram_urls_en[0]",
-          "same_site_candidate": null
+          "same_site_candidate": {
+            "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/GV21.jpg",
+            "http_status": 200,
+            "fetched_at": "2026-09-04T00:05:12.659Z",
+            "how_found": "browser-verified https://www.mastertungacupuncture.org/acupuncture/traditional/points/list -> https://www.mastertungacupuncture.org/acupuncture/traditional/points/gv21; h1 'Qianding (GV 21)' matched card code; image opened with HTTP 200"
+          }
         },
         {
           "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/trad/gv21_needling.jpg",
           "is_image": true,
           "field_path": "data/acupoints/361.json[id=GV21].diagram_urls_en[1]",
-          "same_site_candidate": null
+          "same_site_candidate": {
+            "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/GV21.jpg",
+            "http_status": 200,
+            "fetched_at": "2026-09-04T00:05:12.659Z",
+            "how_found": "browser-verified https://www.mastertungacupuncture.org/acupuncture/traditional/points/list -> https://www.mastertungacupuncture.org/acupuncture/traditional/points/gv21; h1 'Qianding (GV 21)' matched card code; image opened with HTTP 200"
+          }
         },
         {
           "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/qianding-gv21",
@@ -6617,13 +6907,23 @@
           "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/trad/gv22_loc.jpg",
           "is_image": true,
           "field_path": "data/acupoints/361.json[id=GV22].diagram_urls_en[0]",
-          "same_site_candidate": null
+          "same_site_candidate": {
+            "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/GV22.jpg",
+            "http_status": 200,
+            "fetched_at": "2026-09-04T00:05:13.478Z",
+            "how_found": "browser-verified https://www.mastertungacupuncture.org/acupuncture/traditional/points/list -> https://www.mastertungacupuncture.org/acupuncture/traditional/points/gv22; h1 'Xinhui (GV 22)' matched card code; image opened with HTTP 200"
+          }
         },
         {
           "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/trad/gv22_needling.jpg",
           "is_image": true,
           "field_path": "data/acupoints/361.json[id=GV22].diagram_urls_en[1]",
-          "same_site_candidate": null
+          "same_site_candidate": {
+            "url": "https://www.mastertungacupuncture.org/sites/default/files/img/acup/tung/GV22.jpg",
+            "http_status": 200,
+            "fetched_at": "2026-09-04T00:05:13.478Z",
+            "how_found": "browser-verified https://www.mastertungacupuncture.org/acupuncture/traditional/points/list -> https://www.mastertungacupuncture.org/acupuncture/traditional/points/gv22; h1 'Xinhui (GV 22)' matched card code; image opened with HTTP 200"
+          }
         },
         {
           "url": "https://www.mastertungacupuncture.org/acupuncture/traditional/points/xinhui-gv22",
