@@ -6,7 +6,7 @@
 - Dead distinct URLs：1133（圖片 722／參考連結 411）
 - 原始欄位 occurrences：1215（圖片 722／參考連結 493）
 - 同卡仍為 OK 的原始欄位 occurrences：2611
-- 圖片 `dead_urls[].same_site_candidate`：已驗證 654；留 null 68；累計候選 live checks 654 個 dead-image 欄位（330 個 unique live image HTTP checks）
+- 圖片 `dead_urls[].same_site_candidate`：已驗證 714；留 null 8；累計候選 live checks 714 個 dead-image 欄位（360 個 unique live image HTTP checks）
 
 ## Task 11H 第一批實測
 
@@ -88,6 +88,14 @@
 - 結果：目錄 1/1 HTTP 200；point pages 30/30 HTTP 200；`h1` code 30/30 相符；page images 31/31 HTTP 200。
 - 卡片：`ST8`–`ST37`。`ST8` 的兩張圖片均目視確認為該穴位的不同定位視圖，依 DOM 順序一對一記入兩個欄位。
 - 其餘 68/722 維持 `same_site_candidate: null`；沒有由檔名或 URL 規律推測候選。
+
+## Task 11H 第十二批實測（2026-09-04）
+
+- 範圍：再查 30 張卡／60 個 dead-image 原始欄位；候選累計 `654→714/722`，null `68→8`。
+- 結果：目錄 1/1 HTTP 200；point pages 30/30 HTTP 200；穴位 identity 30/30 相符；unique images 30/30 HTTP 200。
+- 卡片：`ST38`–`ST45`、`TE1`–`TE22`。網站目錄使用 `TH`，repo 使用 `TE`；每張 TE 卡均以同號 TH page 的 H1 pinyin 與頁面中文名交叉核對後才記入。
+- `TE18` 頁面 H1 `Chimai (TH 18)` 與代碼／拼音相符，但來源中文標成「契脈」，不同於 canonical「瘈脈」；差異已寫進 `how_found`，沒有覆蓋 canonical 名稱。
+- 其餘 8/722 維持 null：`LR9`–`LR11` 已查無圖 6 欄，`TE23` 尚待最後一批 2 欄。
 
 ## 全連結 404 卡片
 
