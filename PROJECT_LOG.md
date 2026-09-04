@@ -1,3 +1,11 @@
+# 2026-09-04 — Codex Task 11H 第八至第九批圖片候選
+
+- **做了什麼**：Ting 授權保留 focused nested-candidate verifier 後，續查兩批共 60 cards；data commits `801d75d2`、`da744822`。只動 ledger/report，canonical `data/acupoints/**` 零異動。
+- **數字 before→after**：candidate fields `420→534/722`（+114 fields／57 cards／57 unique live images），ledger null `302→188`；累計已調查 540 fields，其中 534 找到候選、6 為 `LR9`–`LR11` 無圖，另 182 fields 未調查。
+- **驗證結果**：`Self-Test Results: 14/14 fixtures behaving as expected.`；`PASS — 1133/1133 distinct dead URLs mapped to 411 cards and 1215 exact source-field occurrences; 1 all-links-dead card(s).`；candidate audit `534 verified / 188 null / 0 malformed`；`validate-content-junk: PASS`；兩次 `build-data` 後 generated 零 diff；`git diff --check` 無輸出。
+- **已知未解**：`LR9`–`LR11` live pages 明寫 `Picture in preparation.` 且 DOM/lazy attributes/CSS 無圖，6 fields 誠實留 null；ratchet 的 anchor-validator parser／`pdftotext` baseline 仍 exit 1，未宣稱 green。
+- **下一步**：推到 `codex/tung-dead-link-candidates` 後等驗收；下一批跳過已查無圖三卡，從 `SI18`、`SI19`、`SP1`–`SP21`、`ST1`–`ST7` 繼續，仍以 30 cards 為上限。
+
 # 2026-09-03 — Codex Task 11H 第七批圖片候選
 
 - **做了什麼**：續做 Task 11H 第七個 30-card batch，data commit `e5cfb425`；範圍 `KI2`–`KI9`、`KI17`–`KI27`、`LI1`–`LI11`，canonical `data/acupoints/**` 零異動。

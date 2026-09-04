@@ -1,5 +1,13 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-09-04] Codex Handoff — Task 11H batches 8–9
+
+- **Branch / Base / Commits**：`codex/tung-dead-link-candidates`，re-fetched base 仍為 `origin/main@626c0686`；本輪 data commits `801d75d2`、`da744822`。Ting 已明確授權保留 11H focused nested-candidate verifier，先前 verifier/file-boundary 文字衝突解除。
+- **Measured coverage**：本輪調查 60 cards／120 dead-image fields；找到 57 cards／114 fields，candidate fields `420→534/722`，ledger null `302→188`。累計調查 270 cards／540 fields，其中 267 cards／534 fields 有 live candidate，3 cards／6 fields 維持 null；另有 91 cards／182 fields 未調查。
+- **No-candidate evidence**：`LR9`、`LR10`、`LR11` 的 point pages／`h1` 皆 HTTP 200 且相符，但頁面明寫 `Picture in preparation.`；network-idle 後 `img/source` lazy attributes 與 CSS backgrounds 均無穴位圖，所以沒有猜 URL。
+- **Validation**：`--self-test`=`14/14`；`--verify-disposition`=`1133/1133 distinct URLs / 1215 exact source-field occurrences / 411 cards` PASS；candidate audit=`534 verified / 188 null / 0 malformed`；`validate-content-junk` PASS with frozen warnings；兩批各自 `build-data` generated zero diff、`git diff --check` clean。ratchet 仍為既知 anchor-validator parser／`pdftotext` baseline，exit 1，未報成 green。
+- **Next**：跳過已調查但無圖的 `LR9`–`LR11`；下一批 30 cards 是 `SI18`、`SI19`、`SP1`–`SP21`、`ST1`–`ST7`。仍只寫 ledger/report/docs，不改 canonical URLs。
+
 ## [2026-09-03] Codex Handoff — Task 11H batch 7
 
 - **Branch / Base / Commit**：`codex/tung-dead-link-candidates`，base 仍為 `origin/main@626c0686`；本批 data commit `e5cfb425`。推到同名遠端分支後等待驗收。
