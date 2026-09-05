@@ -1,3 +1,75 @@
+# 2026-09-05 — 開診第一週:11H 驗收落地、藥用部位 176→21、搜尋修 159 味、encoding 48→44、四個工具盲區補上
+
+Ting 裁定:「自己做吧,不用給 Codex」「讓 Codex 檢查就好」。所以資料批次改由 Claude 執行
+(隔離 worktree,各配一名反駁式覆核員),Codex 的佇列改成 12R 覆核任務。
+**MEASURED TREE: claude/0904-clinic-week1 @ 47c39d24(基底 main @ b196248f)**
+
+## 落地到 main 的(本則之後 ff)
+
+| 事 | before → after | 重現 |
+|---|---|---|
+| Task 11H(Codex)穴位死圖片同站候選 | 716/722 候選,抽 12 條實開全是 200 JPEG | `node scripts/audit-source-url-liveness.js --verify-disposition` |
+| 中藥卡「使用部位」印「待補」 | **176 → 21** / 360 | `node scripts/report-card-slot-gaps.js --panel herbPanels` → `inline:part_used_en` |
+| `part_used_en` 有 field_sources | 4 → 158(CSV 128、藥典 30) | 見 `data/audits/part_used_targets_2026-09-04.json` |
+| 中藥搜尋索引漏 `functions_zh` | 搜「活血」48 → 56、「清熱」113 → 129、「養陰」1 → 4(真瀏覽器) | `node scripts/validate-herb-search-index.js`(新,已接 CI) |
+| `validate-encoding` | 48 → 44(4 條機械修;44 條全需裁定) | `node scripts/validate-encoding.js --json` |
+| 課件錨點驗證器掃到的錨點 | 400 → **545**(csv#row 之前完全不抽) | `node scripts/validate-curriculum-anchor-resolution.js` |
+| 缺口掃描器 herbPanels part_used | 232 → 176(別名 + 行內鏈解析;`--self-test` 11 條) | `node scripts/report-card-slot-gaps.js --self-test` |
+| 病人衛教單純文字版劑量 fallback | 兩個全形空白 → 「—」(與 HTML 版一致;test-avs-checkout +3 條) | `node scripts/test-avs-checkout.js` |
+| `wrangler.jsonc` 註解說謊(宣稱 D1/Access,實為純靜態) | 改成實話 + 閘門 G5 | `node scripts/validate-d1-deploy-gate.js` |
+| relation 驗證器印 `undefined →` | 印 `formula.er_chen_tang →`(junction 來源鍵是 formula_id) | `node scripts/validate-relation-registry-integrity.js` |
+
+## 覆核員推翻的、我照改的
+
+- **part-used 被推翻(零損害)**:13 張卡的值與 repo 內臺灣中藥典定義句矛盾(黃連 Root、夏枯草 Whole herb、
+  淫羊藿 Whole herb、肉蓯蓉 Whole plant、蒲黃 Charred pollen…)。CSV 同一列拉丁名欄寫 Rhizoma、口語欄寫 root,
+  執行者對白茅根扣住、對同型的 13 筆放行。**已改引藥典 #pN**(逐頁核過定義句),龍眼肉保留 CSV 錨點取 Arillus → Aril。
+  可逆,列待裁 D8-3。
+- **回報說「錨點全部可解析 PASS」是假的**:驗證器對 csv#row 不抽。已擴。負控:`#row99999` → A2、`.md#row3` → A4。
+- **encoding 執行者說 moxa 不上卡是錯的**:`app.js:5603/5630` needlingArticle 會印。**355/361 穴位卡英文模式
+  印無來源灸量模板句、LR9 印「ERROR」** → 待裁 D7(紅線 4)。
+
+## 我自己給錯、已更正的
+
+- **C6**:9/02 說 `english_exam_track` 卡面出現 0 次、建議退役、缺陷 5,495 → 約 400。三個都錯:該欄在
+  `js/knowledge.js:1527/2005/1324` 是方劑卡 actions/主治/加減的後備來源(方劑 115/219、中藥 200/360 有內容),
+  退役會清掉 115 張方劑卡看得見的內容;真實結果 3,051。待裁檔已就地更正,建議改 (c) 維持現狀。
+
+## 來源缺口(誠實留白)
+
+- 藥用部位剩 21 味:藥典無專論(龍骨、鹿茸、麝香、羚羊角、血餘炭、灶心土、硃砂、磁石、雄黃…礦物/動物/加工品)、
+  瓜蔞(藥典只有天花粉與瓜蔞子)、桑椹、蔥白、飴糖、酒、碧玉散(成方)、白僵蠶(定義句非單一名詞)。清單在執行者回報。
+- encoding 44:17 個英文病名 × 34 格(Loffler's Syndrome、Bronchiaesthenia…7 個疑為來源截斷/拼錯)、
+  `SOAP Note` 1、沉香 AD 句 1、3 味 summary_zh 英文草稿、`????` 1(初始 commit 即損毀)、LR9 ERROR。
+  逐條位置:`docs/audits/ENCODING_UNTRANSLATED_TERMS_2026-09-05.md`。
+
+## 待 Ting(全部在 docs/TING_PENDING_RULINGS_2026-08-31.md D 群)
+
+D1 診所四個真值(**急,病人手上**)· D2 拔罐/刮痧斷言 · D5 11H 候選只頂替定位圖 · D6 20 筆懸空引用 ·
+D7 355 張灸量模板句 · D8 藥用部位三個小裁定 · C6 更正後選項 · 17 個病名中文。
+
+## 驗證器輸出(整合樹 47c39d24)
+
+```
+validate-herb-standard                 PASS — no structural defects.
+validate-formula-standard              PASS — no blocking defects.
+validate-content-junk                  PASS(既有 WARN:33 方共用「6.0g～12.0g，分次開水送服。」,非本批)
+validate-encoding --json               {"defects":44}(基準 44)
+validate-curriculum-anchor-resolution  掃描 663 檔,不同錨點 545,指不到 0,PASS
+validate-herb-search-index             PASS — 360/360 味藥的卡上功效都搜得到(索引欄位 13 個)
+validate-bilingual-render-parity       PASS — no blocking defects.
+validate-knowledge-parts / render-blocking / ui-freeze / d1-deploy-gate   PASS
+test-avs-checkout                      121 passed, 0 failed
+validate-relation-registry-integrity   20 筆懸空(基準 20,見 D6)
+check-validation-ratchet               PASS — no regressions.
+```
+
+## 下一批
+
+D7 若裁 (a):一支帳本清 355 格。D8-1 若裁 (a):6 格。C6 若裁 (a′):改必填清單 + 刪 181 張樣板。
+Codex 12R:覆核 main 上 b196248f..(本則 ff 後的 sha)。
+
+
 # 2026-09-04 — Codex Task 11H 候選調查收斂
 
 - **做了什麼**：本輪續查最後 91 cards／182 dead-image fields，data commits `ea125c13`、`6ec22bcd`、`b03249ac`、`7523fbd0`；Task 11H 累計 `361/361` cards 已逐頁調查。只動 audit ledger/report，canonical `data/acupoints/**`、app/runtime、generated data 零異動。
