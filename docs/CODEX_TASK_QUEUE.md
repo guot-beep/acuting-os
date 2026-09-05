@@ -10,7 +10,7 @@
 
 ### 要覆核的範圍
 
-兩條資料線與所有工具修正已於 2026-09-05 整合並 ff 到 main。**覆核 main 上 `b196248f..<本 commit 的 sha>` 這一段**(git log 看得到 8 個 commit:病人衛教單修正、搜尋索引、缺口掃描器別名/行內鏈、11H 待裁、藥用部位 176→21、encoding 48→44、錨點驗證器 csv#row、PROJECT_LOG)。
+兩條資料線與所有工具修正已於 2026-09-05 整合並 ff 到 main。**覆核 main 上 `b196248f..HEAD`(2026-09-05 落地時 HEAD = 747ae4d8 之後一個 commit)這一段**(`git rev-list --count b196248f..origin/main` 應為 19;其中 6 個是藥用部位分批、3 個是 encoding、1 個 generated 合併重建,其餘是工具與文件:病人衛教單修正、搜尋索引、缺口掃描器別名/行內鏈、11H 待裁、藥用部位 176→21、encoding 48→44、錨點驗證器 csv#row、PROJECT_LOG)。
 每個 commit 訊息裡的數字都是宣稱,逐一重跑。
 
 ### 每一批都要做的事
