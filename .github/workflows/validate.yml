@@ -717,6 +717,11 @@ jobs:
       - name: herb exam-track filler (template sentences are defects, not content)
         run: node scripts/validate-herb-track-filler.js
 
+      # 搜尋索引與卡面同步:159/360 味藥只有 functions_zh,之前用功效關鍵字搜不到(2026-09-05)。
+      # 這支從 js/knowledge.js 解析欄位清單、對真資料重建索引逐味檢查,不是 grep 一行字串。
+      - name: herb search index covers every visible function (functions_zh was unindexed)
+        run: node scripts/validate-herb-search-index.js
+
       - name: no layer may get worse than its committed baseline
         run: node scripts/check-validation-ratchet.js
 

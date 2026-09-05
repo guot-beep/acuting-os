@@ -2671,8 +2671,14 @@
           h.name_en,
           h.pinyin,
           h.category,
+          h.category_zh,
           ...(h.channels_entered || []),
+          // functions 與 functions_zh 是同一件事的兩種語言;159/360 味藥只有 _zh,
+          // 之前只索引 functions,那 159 味用「活血」「養陰」這種功效關鍵字搜不到。
+          // 修 bug(D32 凍結例外):搜尋結果變多,畫面不變。
           ...(h.functions || []),
+          ...(h.functions_zh || []),
+          ...(h.functions_en || []),
           ...(h.related_formulas || []),
           ...(h.safety_flags || []),
           ...(h.modern_use_tags || [])
