@@ -67,7 +67,7 @@ check-validation-ratchet               PASS — no regressions.
 ## 下一批
 
 D7 若裁 (a):一支帳本清 355 格。D8-1 若裁 (a):6 格。C6 若裁 (a′):改必填清單 + 刪 181 張樣板。
-Codex 12R:覆核 main 上 b196248f..(本則 ff 後的 sha)。
+Codex 12R:覆核 main 上 b196248f..(本 commit)這一段。
 
 
 # 2026-09-04 — Codex Task 11H 候選調查收斂
