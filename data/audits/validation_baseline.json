@@ -1,6 +1,6 @@
 {
   "note": "Defect-count ceiling per layer. CI fails if any count rises. Only ever lower this file — see scripts/check-validation-ratchet.js.",
-  "updated_at": "2026-09-02",
+  "updated_at": "2026-09-05",
   "rebaseline_history": [
     {
       "date": "2026-08-05",
@@ -45,10 +45,9 @@
       "doc": "DECISIONS.md D3"
     },
     "encoding": {
-      "defects": 48,
+      "defects": 44,
       "by_code": {
-        "chinese_field_without_cjk": 45,
-        "replacement_character": 2,
+        "chinese_field_without_cjk": 43,
         "question_mark_only": 1
       },
       "doc": "data/audits/en_zh_term_crosswalk.json"

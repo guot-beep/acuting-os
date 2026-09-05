@@ -1,3 +1,20 @@
+/**
+ * validate-encoding.js — 抓「中文欄位裡沒有中文」「置換字元 �」「問號串 ????」三種編碼/語言錯置。
+ *
+ * 豁免一律**依路徑**不依值(依值會把真缺口一起放掉),每一條都寫明它錯的方式:
+ *   - data/audits、data/imports 整個不掃(帳本與匯入暫存,不上畫面)。
+ *   - field_sources.*:值是引用路徑/網址,不是散文。
+ *   - 整個值就是一個 URL(*_urls_zh 裝 cloudtcm 圖片網址)。
+ *   - external_links/visual_links 的 label_zh(品牌名)、with_label_zh(西藥學名)、
+ *     research_staging criteria[].zh 與 schema.json / field_definitions.*(描述欄位的設定)。
+ *   - extraction_artifact_removed.removed_verbatim(2026-09-05):這個欄位的契約是「逐字保存
+ *     被移除的 PDF 頁尾殘渣,以備歸屬裁定」(herb_pairs 兩筆:" �2013 TCM Review Seminars TM 7 …")。
+ *     那個 � 不是本庫的編碼壞了,是被移除的原文抓進來時就長那樣;把它「修」成 © 等於竄改證物,
+ *     刪掉又違反它自己的用途。所以只對這一個路徑尾巴跳過 �/問號檢查;� 出現在任何其他欄位照抓
+ *     (負控:同結構暫存檔裡 indication_en 塞 � 仍被報 replacement_character)。
+ *
+ * 用法:node scripts/validate-encoding.js [--summary-only] [--json]
+ */
 const fs = require("fs");
 const path = require("path");
 
@@ -40,14 +57,17 @@ function isChineseField(key) {
 function inspectValue(value, context, issues) {
   if (typeof value === "string") {
     const trimmed = value.trim();
-    if (QUESTION_ONLY_RE.test(trimmed)) {
+    // 2026-09-05:逐字存證欄位(見檔頭)。只跳過 �/問號檢查,不跳過任何其他規則;
+    // 路徑尾巴必須完整匹配,removed_verbatim 之外的鍵(reason/field)仍照常檢查。
+    const isVerbatimArtifact = /\.extraction_artifact_removed\.removed_verbatim$/.test(String(context.path || ""));
+    if (!isVerbatimArtifact && QUESTION_ONLY_RE.test(trimmed)) {
       issues.push({
         type: "question_mark_only",
         file: context.file,
         path: context.path,
         value
       });
-    } else if (QUESTION_DAMAGE_RE.test(trimmed)) {
+    } else if (!isVerbatimArtifact && QUESTION_DAMAGE_RE.test(trimmed)) {
       issues.push({
         type: "question_mark_damage",
         file: context.file,
@@ -56,7 +76,7 @@ function inspectValue(value, context, issues) {
       });
     }
 
-    if (REPLACEMENT_RE.test(value)) {
+    if (!isVerbatimArtifact && REPLACEMENT_RE.test(value)) {
       issues.push({
         type: "replacement_character",
         file: context.file,
