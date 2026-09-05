@@ -73,6 +73,34 @@ Codex 的 11H 已驗收落地(`b196248f`):722 條死圖片找到 716 條同站�
 所以 (a) 會把一張定位圖放進「針法」欄位,那是張冠李戴;針法圖是真的沒了,就誠實標沒了。
 順帶記下:圖上浮水印是 eLotus.org,原站是轉載;`field_sources` 要寫原站網址,不要寫成 eLotus。
 
+### D6 · 20 筆懸空引用:19 筆指向沒有卡的東西,要建卡還是撤引用(棘輪 `relation_integrity` 卡在 20)
+
+`node scripts/validate-relation-registry-integrity.js` 的 20 筆,我逐筆看過,**沒有一筆是打錯字**,
+全部是「引用了一張還不存在的卡」。分四組,每組是同一種決定:
+
+| 邊 | 筆數 | 指向 | 例 |
+|---|---|---|---|
+| `formula_family` | 5 | 經方的加減方(沒有卡) | 桂枝湯 → 桂枝加葛根湯;白虎湯 → 白虎加人參湯 / 加桂枝湯 / 加蒼朮湯 |
+| `pattern_formulas` | 5 | 淋證用方(沒有卡) | 石淋 → 石韋散;膏淋 → 萆薢分清飲;勞淋 → 無比山藥丸;心腎不交 → 交泰丸 |
+| `pattern_biomedical_conditions` | 7 | 西醫病名(沒有 cond 卡) | 肝風 → cond.stroke / cond.hypertensive_crisis;血瘀 → cond.thrombosis;膏淋 → cond.chyluria |
+| `pattern_tcm_diseases` | 2 | 中醫病名(沒有 tdis 卡) | 脾氣虛 → tdis.fu_zhang;血淋 → tdis.niao_xue |
+
+第 20 筆(`formula_pattern_links_file` 的 `undefined → pattern.phlegm_damp_obstruction`)分兩半:
+`undefined` 是驗證器印錯(junction 記錄的來源鍵是 `formula_id`,它讀 `id`),已修,現在印
+`formula.er_chen_tang`。但目標**真的不存在**:證型庫裡沒有 `pattern.phlegm_damp_obstruction`,
+最接近的是 `pattern.phlegm_damp` 與 `pattern.phlegm`。二陳湯該掛哪一個,一個詞,妳定:
+- **(d)** 改成 `pattern.phlegm_damp`(我的建議:二陳湯燥濕化痰,痰濕是它的本證)。
+
+- **(a) 建卡**:19 張新卡(5 加減方 + 5 淋證方 + 7 西醫病 + 2 中醫病)。每一張都要來源;
+  加減方那 5 張其實 `formula_family` 裡已經有組成變化與主治,搬成卡的成本低。
+- **(b) 撤引用**:把 19 條連結拿掉,棘輪歸 0。代價:證型卡上「常用方」「相關西醫病」少一項,
+  而且那些連結本身是對的(石淋確實用石韋散),只是目標沒卡。
+- **(c) 改成「名稱型引用」**:引用留著、改成只帶名字不帶 id(像 `formula_family` 裡另外 58 筆那樣),
+  驗證器不再當懸空。卡片上顯示名字但不可點。
+- 不裁定的後果:棘輪這一層永遠卡在 20,任何新的真懸空(打錯 id)會被這 20 筆掩護。
+
+我的建議:**(c) 先做,(a) 的加減方 5 張排進 backlog。** (c) 讓棘輪重新能抓真錯誤,而且不刪任何正確的關聯。
+
 ### D4 · C6 的數字我上次給錯了(**更正,見下方 C 群的 C6**)
 
 我 9/02 建議「退役 `english_exam_track`,缺陷會從 5,495 掉到約 400」。
