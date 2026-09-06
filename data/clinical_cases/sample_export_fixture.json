@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "exported_at": "2026-08-26T00:00:00Z",
-  "case_count": 1,
+  "case_count": 2,
   "cases": [
     {
       "id": "case.fixture_invariants_a",
@@ -180,6 +180,131 @@
           ]
         }
       ]
+    },
+    {
+      "id": "case.fixture_synthetic_2",
+      "patientCode": "FAKE-FIXTURE-A",
+      "caseTitle": "fixture 合成:第二病例(演練對照表其餘欄位,虛構)",
+      "caseCategory": "pain",
+      "status": "active",
+      "startDate": "2026-01-05",
+      "birthYear": 1985,
+      "birthYearMonth": "1985-04",
+      "sex": "F",
+      "genderIdentity": "woman",
+      "raceEthnicity": [
+        "reth.asian"
+      ],
+      "raceEthnicityDetail": "fixture 合成:Taiwanese",
+      "onsetApprox": "P2Y",
+      "chronicity": "chronic",
+      "coursePattern": "intermittent",
+      "previousTreatment": [
+        "acupuncture",
+        "medication"
+      ],
+      "previousTreatmentNotes": "fixture 合成:曾針灸六次;間歇服用止痛藥",
+      "baselineSeverity": 6,
+      "occupation": "fixture",
+      "goals": "fixture 合成:頭痛頻率減半",
+      "chiefComplaint": "fixture 合成:反覆偏頭痛兩年",
+      "historyPresent": "fixture 合成:每月發作三至四次,經前加重,休息後緩解",
+      "pastHistory": "fixture 合成:無重大病史",
+      "allergyStatus": "has",
+      "allergies": "fixture 合成:青黴素",
+      "currentMeds": "",
+      "menstrualObHistory": "fixture 合成:週期 28 天,經痛輕度",
+      "lifestyle": "fixture 合成:睡眠六小時,咖啡每日兩杯",
+      "westernConditions": [
+        "cond.migraine"
+      ],
+      "easternDiseases": [
+        "tdis.tou_tong"
+      ],
+      "tcmPatterns": [
+        "pattern.liver_qi_stagnation"
+      ],
+      "safetyFlags": [
+        "fixture 合成:無抗凝血劑使用"
+      ],
+      "agentExposures": [],
+      "environmentalExposures": [],
+      "summary": "fixture 合成:病程摘要",
+      "soapNotes": [
+        {
+          "id": "soap.fixture_synthetic_2.v1",
+          "visitDate": "2026-01-05",
+          "visitNumber": 1,
+          "cycleDay": 12,
+          "fertilityPhase": "follicular",
+          "workflowLink": "",
+          "cyclePhase": "follicular",
+          "tongueBody": "fixture 合成:淡紅,邊有齒痕",
+          "tongueCoating": "fixture 合成:薄白",
+          "pulse": "fixture 合成:弦細",
+          "vitals": "fixture 合成:BP 118/76, HR 72",
+          "tcmPattern": "",
+          "pathomechanism": "fixture 合成:肝鬱氣滯,脾失健運",
+          "treatmentPrinciple": "fixture 合成:疏肝健脾",
+          "modalities": "fixture 合成:針刺 + 艾灸",
+          "advice": "fixture 合成:減少咖啡因,規律作息",
+          "westernConditionLinks": [
+            "cond.migraine"
+          ],
+          "easternDiseaseLinks": [
+            "tdis.tou_tong"
+          ],
+          "tcmPatternSelections": [],
+          "patternDifferentials": [],
+          "tcmPatternLinks": [],
+          "safetyFlagLinks": [
+            "pregnancy_caution"
+          ],
+          "subjective": "fixture 合成:本週頭痛兩次,程度較前減輕",
+          "objective": "fixture 合成:頸肩肌肉緊張,GB20 壓痛",
+          "assessment": "fixture 合成:肝鬱化火趨緩",
+          "plan": "fixture 合成:每週一次,連續四週",
+          "pointsUsed": "",
+          "acupointLinks": [
+            "LI4",
+            "LR3",
+            "GB20",
+            "SP6"
+          ],
+          "retentionMinutes": 25,
+          "technique": "fixture 合成:平補平瀉",
+          "needleCount": 8,
+          "needleDepthText": "fixture 合成:0.5–1 寸",
+          "deqiResponse": "obtained",
+          "needleStimulation": "manual",
+          "needleTypeText": "fixture 合成:0.25×40mm 不鏽鋼",
+          "formulaHerbs": "fixture 合成:加味逍遙散",
+          "formulaLinks": [
+            "formula.jia_wei_xiao_yao_san"
+          ],
+          "westernMeds": "fixture 合成:ibuprofen 400mg prn",
+          "medicationLinks": [
+            "drug.ibuprofen"
+          ],
+          "outcomes": "fixture 合成:頭痛頻率由每週三次降至兩次",
+          "outcomeMetricLinks": [],
+          "outcomeVerdict": "improved",
+          "outcomeMetrics": [],
+          "lifestyleFactors": [],
+          "adverseEvents": [],
+          "effectDurationDays": "",
+          "referralOrSupervisorQuestion": "fixture 合成:是否需要影像檢查,請督導確認",
+          "followUp": "fixture 合成:一週後回診",
+          "patientPerspective": "fixture 合成:病人自述睡眠改善後頭痛較少",
+          "differentialConsidered": "fixture 合成:曾考慮痰濁上擾,因無眩暈胸悶排除",
+          "reflection": "fixture 合成:GB20 壓痛明顯,下次加深刺",
+          "ifIneffectivePlan": "fixture 合成:若兩週無效改用電針",
+          "createdAt": "2026-01-05T09:10:00.000Z",
+          "updatedAt": "2026-01-05T09:40:00.000Z"
+        }
+      ],
+      "createdAt": "2026-01-05T09:00:00.000Z",
+      "updatedAt": "2026-01-05T09:40:00.000Z"
     }
   ]
 }

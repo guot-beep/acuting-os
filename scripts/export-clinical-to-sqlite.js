@@ -376,10 +376,15 @@ for (const c of cases) {
       put(table, o);
     }
   };
-  explodeCase("case_western_conditions", c.westernConditions, "condition_id");
-  explodeCase("case_eastern_diseases", c.easternDiseases, "disease_id");
+  /* 欄名以 schema.sql 為準(2026-09-06 修):這三張表的 NOT NULL 欄是
+   * western_condition_id / eastern_disease_id / flag_type,原本寫的 condition_id /
+   * disease_id / safety_flag_id 在 schema 裡不存在 —— put() 只保留表上真有的欄,
+   * 所以值被靜默丟掉、然後撞 NOT NULL。fixture 第一次帶 case 層病名/安全提醒
+   * 真值(sample_export_fixture 第二病例)才抓到;在那之前 self-test 全綠。 */
+  explodeCase("case_western_conditions", c.westernConditions, "western_condition_id");
+  explodeCase("case_eastern_diseases", c.easternDiseases, "eastern_disease_id");
   explodeCase("case_tcm_patterns", c.tcmPatterns, "pattern_id");
-  explodeCase("case_safety_flags", c.safetyFlags, "safety_flag_id");
+  explodeCase("case_safety_flags", c.safetyFlags, "flag_type");
   explodeCase("case_race_ethnicity", c.raceEthnicity, "race_ethnicity_id");
   explodeCase("case_previous_treatment", c.previousTreatment, "treatment_type");
   explodeObjects("case_agent_exposures", c.agentExposures, "case_id", S(c.id), "agentexp");
@@ -441,7 +446,7 @@ for (const c of cases) {
     // safetyFlagLinks 的去處是 CASE 層(對照表註明:per-visit 旗標會失去它被提出的那一診)
     for (const f of (s.safetyFlagLinks || [])) {
       if (!S(f)) continue;
-      const o = { case_id: S(c.id), safety_flag_id: S(f) };
+      const o = { case_id: S(c.id), flag_type: S(f) };   // 欄名同上:schema 是 flag_type,不是 safety_flag_id
       if (colsOf("case_safety_flags").includes("id")) o.id = nextId("csf");
       put("case_safety_flags", o);
     }

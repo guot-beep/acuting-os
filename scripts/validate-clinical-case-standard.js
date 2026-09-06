@@ -67,7 +67,10 @@ const DATE_FIELDS = new Set([
   // sample_export_fixture.json) uses camelCase for the same dates-by-design.
   // Birth dates stay unexempted in BOTH casings: birthYearMonth is coarse by
   // construction and a full birthDate field does not exist in the contract.
-  'visitDate', 'resolvedDate', 'createdAt', 'updatedAt',
+  // startDate = case start (app.js saveCaseFromForm, <input type="date">),
+  // the camelCase twin of start_date above — added 2026-09-06 when the fixture
+  // first carried a real case.startDate value.
+  'visitDate', 'resolvedDate', 'createdAt', 'updatedAt', 'startDate',
 ]);
 
 /* Matched against the FIELD the string sits in, never the whole path. Matching
