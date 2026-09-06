@@ -1836,7 +1836,10 @@
       // 來源文字用 **沒有** 強調關鍵詞,而 pair() 會原樣 escape,畫面上就變成
       // 字面的星號。這裡只把成對的 ** 轉成粗體 —— escape 已經先做完,所以轉的是
       // 我們自己輸出的標記,不是把來源文字當 HTML 解析。
-      : (checkedNote
+      /* 修 bug(2026-09-06,凍結例外 D32):pair() 兩欄皆空回的是 `<p class="k-detail-empty"></p>`(truthy),
+       * 所以之前只要沒有黑框,就印一個空的「黑框警告:已查證」標題 —— 33/59 張卡對沒人查過的藥宣稱查過。
+       * 「查過沒有」與「沒人查」臨床後果相反,標題只能在真的有註記時出現。 */
+      : (has("boxed_warning_checked_note_zh", "boxed_warning_checked_note_en")
           ? `<div class="k-boxed-checked"><strong>${esc(modeText("黑框警告:已查證", "Boxed warning: checked"))}</strong>${
               checkedNote.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")}</div>`
           : "");
@@ -1847,7 +1850,8 @@
      * 針刺的數值門檻,**不要自行設一個**。
      * 對一個坐在治療床邊的執業者,這是全庫最切身的一句話,不該排在藥理後面。 */
     const acuNote = pair(record.acupuncture_note_zh, record.acupuncture_note_en);
-    const acuBlock = acuNote
+    // 同上一個修正:pair() 空值 truthy,標題不能靠它判斷有沒有內容(2026-09-06)
+    const acuBlock = has("acupuncture_note_zh", "acupuncture_note_en")
       ? `<div class="k-acu-note"><strong>${esc(modeText("🪡 針刺相關 —— 這個病人能不能扎", "🪡 Needling — can this patient be needled"))}</strong>${acuNote}</div>`
       : "";
 

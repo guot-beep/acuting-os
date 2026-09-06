@@ -150,6 +150,25 @@ Codex 的 11H 已驗收落地(`b196248f`):722 條死圖片找到 716 條同站�
 順帶兩個工程項(我自己做,不用裁):`export-clinical-to-sqlite.js` 的 `put()` 會靜默丟掉表上沒有的欄名(這次三個欄名錯了兩週沒人知道),要改成 fail-loud;
 `test-clinical-sqlite-service.js:195` 假設 fixture 只有一個病人,第二病例用同一代號繞過了,之後要放第二個病人得改它。
 
+### D10 · 兩條內容線(09-06)留下的五個裁定
+
+**方劑加減 zh(CloudTCM)**:118 張整段消失的方 → 72 對得到 → 68 過組成交叉驗證(≥70% 重疊)→ 24 張有乾淨加減句(85 條逐字驗)。
+只落了 **1 張**(麥門冬湯 4 條),因為 `validate-formula-standard` 的 **F5** 禁止 template-grade 卡「有 modifications_zh、沒 modifications_en」。
+其餘 23 張 81 條在 `docs/research_packs/MODIFICATIONS_ZH_CLOUDTCM_PENDING_F5_2026-09-06.json`。覆核員成立、0 歸屬錯誤(它另抓到至寶丹/潤腸丸同名異方 0%/40% 重疊、荊防敗毒散段落其實在講敗毒散,都已排除)。
+1. **F5 怎麼辦**:(a) 放寬 —— CloudTCM 來源的 modifications_zh 允許先無 _en;(b) 我把 81 條翻成英文,同一個來源錨點,F5 照守;(c) 不落,等英文來源。建議 **(b)**:翻譯不是新宣稱,來源仍是 CloudTCM 那段。
+   覆核員另指出 3 條措辭要先刪(烏梅丸第 1 句帶站方評論、桃紅四物湯首句懸空連接詞、參附湯 4 句是轉述體),落庫前照刪。
+
+**西藥黑框查證註記(DailyMed)**:31 筆填「依 DailyMed 藥品標籤(查證日 2026-08-11,setid …)未列黑框警語」。覆核員**推翻**:
+2. **furosemide 是假陰性**:它的 SPL 第一節就是標題「WARNING」的黑框全文,只是沒編成 LOINC 34066-1。四個鍵已移除(還原)。
+   `scripts/refresh-dailymed-evidence.js` 只認 34066-1,要補「首節 WARNING 標題」偵測 —— 我做,不用裁。
+3. **其餘 30 筆的措辭**:證據只有「SPL 沒有 34066-1 區段」,句子卻說「未列黑框警語」,宣稱 > 證據。我已把 30 筆改成機器事實:
+   「依 DailyMed SPL(查證日 2026-08-11,setid …)未標記黑框警語區段(LOINC 34066-1)。」/ 英文對應。**可逆**;妳若要更白話的版本,一句話。
+4. **levothyroxine、semaglutide**:回應含 BOXED_WARNING,黑框全文在 `warnings_zh[0]`,卡上紅框沒出現。把它搬進 `boxed_warning_zh/en`(field_sources 已標 #BOXED_WARNING)紅框就會自動出現。這是搬既有內容,要妳點頭。
+5. **heparin**:唯一既有的手寫註記(08-12)沒有 _en、沒有 field_sources;其回應無 BOXED_WARNING,可用同一規則補。點頭就補。
+
+順帶已修(不用裁):`js/knowledge.js` pharmPanels 的 `checkedNote` 用 truthy 判斷,兩欄皆空也印「黑框警告:已查證」標題 ——
+這批之前有 **33 張卡對沒人查過的藥宣稱查過**。已改成兩欄皆空不印。
+
 ### D4 · C6 的數字我上次給錯了(**更正,見下方 C 群的 C6**)
 
 我 9/02 建議「退役 `english_exam_track`,缺陷會從 5,495 掉到約 400」。
