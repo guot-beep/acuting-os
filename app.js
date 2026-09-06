@@ -5602,6 +5602,11 @@ function needlingArticle(point) {
       parts.push(`MOXIBUSTION & HEAT THERAPY:\n⚠️ ${moxaZhText}`);
     } else if (point.moxaEn) {
       parts.push(`MOXIBUSTION & HEAT THERAPY:\n${point.moxaEn}`);
+    } else if (moxaZhText) {
+      /* 修 bug(2026-09-07,凍結例外 D32,D7 裁定「自行決定」):355/361 穴的 moxa_en 是生成器統一套的
+       * 「3-5 moxa cones or 5-15 minutes」模板句,沒有來源 —— 灸量是憲法第 4 條列名的不得虛構項,已從資料清掉。
+       * 清掉之後英文讀者不該什麼都看不到:moxa_zh 是 CloudTCM 的真內容,照禁灸那條的既有作法,原文給出去。 */
+      parts.push(`MOXIBUSTION & HEAT THERAPY (source text, Chinese):\n${moxaZhText}`);
     }
     // cautionsEn arrives in BOTH shapes: an array from records whose
     // contraindications_en is a list, and a plain string from 206 of the 947
