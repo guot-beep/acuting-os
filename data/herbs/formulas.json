@@ -7433,6 +7433,15 @@
         ],
         "pattern_indications_en": [
           "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 1 條 / pattern_indications_en 2 條(不同來源並行),對齊為 2 組;原條目逐字保留,補齊側為對側之翻譯"
+        ],
+        "modifications_zh": [
+          "data/imports/cloudtcm/formula_url_map.json#蒼耳子散/pageData.ActionIndication",
+          "https://cloudtcm.com/formula/269"
+        ],
+        "modifications_en": [
+          "data/imports/cloudtcm/formula_url_map.json#蒼耳子散/pageData.ActionIndication",
+          "https://cloudtcm.com/formula/269",
+          "translated 2026-09-07 from modifications_zh (Claude)"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/269",
@@ -7493,6 +7502,14 @@
         "Antibacterial, inhibits pneumococcus and S. aureus",
         "Constricts nasal mucosal blood vessels, opens nasal passages",
         "Analgesic, relieves frontal sinus pain"
+      ],
+      "modifications_zh": [
+        "鼻塞重者，加細辛、鵝不食草等，以辛散宣通。",
+        "發熱者，加黃芩、魚腥草等，以清內熱。"
+      ],
+      "modifications_en": [
+        "For severe nasal congestion, add Xi Xin, E Bu Shi Cao and the like to disperse and unblock with acrid herbs.",
+        "For fever, add Huang Qin, Yu Xing Cao and the like to clear internal heat."
       ]
     },
     {
@@ -14117,8 +14134,16 @@
         "少陰熱證",
         "血分熱毒痢疾證"
       ],
-      "modifications_en": [],
-      "modifications_zh": [],
+      "modifications_en": [
+        "For exuberant Heart fire with anguish and vexation in the heart, add Shan Zhi Zi, Lian Zi Xin, Zhu Ye Xin and the like to clear and drain Heart fire.",
+        "For sleep that is shallow and not sound, with the Heart spirit deprived of nourishment, add Suan Zao Ren and Ye Jiao Teng to nourish the Heart and calm the spirit.",
+        "For palpitations with unrest, add Fu Shen and Bai Zi Ren to nourish the Heart and settle palpitations."
+      ],
+      "modifications_zh": [
+        "心火旺，心中懊憹者，加山梔子、蓮子心，竹葉心等，清瀉心火。",
+        "寐而不熟，心神失養者，加棗仁，夜交藤以養心安神。",
+        "心悸不寧者、加茯神、柏子仁以養心定悸。"
+      ],
       "contraindications_en": [
         "The pathomechanism of this pattern is deficiency of the righteous Qi combined with excess pathogenic Heat, so the formula simultaneously drains Fire with bitter-cold herbs and enriches Yin with sour-sweet herbs. If the patient's presentation is predominantly deficient with little excess pathogen, this formula is not appropriate."
       ],
@@ -14330,6 +14355,15 @@
         ],
         "formula_song": [
           "《湯頭歌訣》(汪昂,含通行加減歌)或方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+        ],
+        "modifications_zh": [
+          "data/imports/cloudtcm/formula_url_map.json#黃連阿膠湯/pageData.ActionIndication",
+          "https://cloudtcm.com/formula/306"
+        ],
+        "modifications_en": [
+          "data/imports/cloudtcm/formula_url_map.json#黃連阿膠湯/pageData.ActionIndication",
+          "https://cloudtcm.com/formula/306",
+          "translated 2026-09-07 from modifications_zh (Claude)"
         ]
       },
       "cloudtcm_id": 306,
@@ -35842,6 +35876,15 @@
         ],
         "formula_song": [
           "《湯頭歌訣》(汪昂,含通行加減歌)或方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+        ],
+        "modifications_zh": [
+          "data/imports/cloudtcm/formula_url_map.json#參附湯/pageData.ActionIndication",
+          "https://cloudtcm.com/formula/568"
+        ],
+        "modifications_en": [
+          "data/imports/cloudtcm/formula_url_map.json#參附湯/pageData.ActionIndication",
+          "https://cloudtcm.com/formula/568",
+          "translated 2026-09-07 from modifications_zh (Claude)"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/568",
@@ -35888,6 +35931,18 @@
         "Increases cardiac output, improves myocardial perfusion",
         "Protects ischemic myocardium, antiarrhythmic",
         "Regulates cellular and humoral immunity"
+      ],
+      "modifications_zh": [
+        "《類證治裁》中提到「少陰則閉目合面，參附湯加甘草、生薑」，說明在治療少陰痙症時，可在參附湯基礎上加入甘草和生薑。",
+        "《血證論》中提到「參附湯。加阿膠熟地茯苓甘草以救之」，用於治療產後血崩兼汗出氣喘的危急情況。",
+        "「喘促」的症狀，參附湯可加五味子和沉香。(《血證論》)",
+        "「若小水不化，兼腰痛者...參附湯，加五味、茯苓亦可。」(《血證論》)"
+      ],
+      "modifications_en": [
+        "《類證治裁》 (Lei Zheng Zhi Cai) states: 'In Shaoyin [tetany], the eyes are closed and the face is turned downward; Shen Fu Tang with Gan Cao and Sheng Jiang added', indicating that when treating Shaoyin tetany, Gan Cao and Sheng Jiang may be added on the basis of Shen Fu Tang.",
+        "《血證論》 (Xue Zheng Lun) states: 'Shen Fu Tang, with E Jiao, Shu Di Huang, Fu Ling and Gan Cao added to rescue [the patient]', used for the critical situation of postpartum flooding with sweating and panting.",
+        "For the symptom of 'hasty panting', Wu Wei Zi and Chen Xiang may be added to Shen Fu Tang. (《血證論》 Xue Zheng Lun)",
+        "'If the urine is not transformed, with concurrent lumbar pain...Shen Fu Tang with Wu Wei Zi and Fu Ling added will also do.' (《血證論》 Xue Zheng Lun)"
       ]
     },
     {
@@ -38751,8 +38806,18 @@
         "行氣通絡",
         "調和中焦"
       ],
-      "modifications_en": [],
-      "modifications_zh": [],
+      "modifications_en": [
+        "For more severe qi deficiency, increase the dose of Ren Shen and Bai Zhu.",
+        "For copious, congesting phlegm, increase the dose of Ban Xia and Chen Pi.",
+        "For fear of cold and aversion to cold, add Pao Jiang and Fu Zi to warm the middle and dispel cold.",
+        "For copious, thin, clear phlegm, add Gan Jiang and Xi Xin to warm the Lung and transform thin fluids."
+      ],
+      "modifications_zh": [
+        "氣虛較嚴重者，重用人參、白朮。",
+        "痰多壅盛者，重用半夏、陳皮。",
+        "畏寒怕冷者，加炮薑、附子以溫中祛寒。",
+        "痰多清稀者，加乾薑、細辛以溫肺化飲。"
+      ],
       "contraindications_en": [
         "Contraindicated for those with for those with a high fever, Yin Deficiency Heat, Qi Stagnation, Body Fluid Deficiency, irritability, thirst or constipation."
       ],
@@ -39050,6 +39115,15 @@
         ],
         "formula_song": [
           "《湯頭歌訣》(汪昂,含通行加減歌)或方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+        ],
+        "modifications_zh": [
+          "data/imports/cloudtcm/formula_url_map.json#六君子湯/pageData.ActionIndication",
+          "https://cloudtcm.com/formula/54"
+        ],
+        "modifications_en": [
+          "data/imports/cloudtcm/formula_url_map.json#六君子湯/pageData.ActionIndication",
+          "https://cloudtcm.com/formula/54",
+          "translated 2026-09-07 from modifications_zh (Claude)"
         ]
       },
       "cloudtcm_id": 54,
@@ -46689,8 +46763,14 @@
         "補血調血",
         "活血化瘀"
       ],
-      "modifications_en": [],
-      "modifications_zh": [],
+      "modifications_en": [
+        "For example, in 《醫學集成》 (Yi Xue Ji Cheng), for 'menstruation overdue and not arriving, with distending pain due to congealed blood', Xiang Fu, E Zhu, Mu Tong, Mu Xiang, Rou Gui and Gan Cao are added on the basis of Tao Hong Si Wu Tang to strengthen the effects of moving qi and invigorating blood, warming the channels and relieving pain.",
+        "For 'spotting that is scant and does not flow freely, with occasional stasis clots' as recorded in 《婦科冰鑑》 (Fu Ke Bing Jian), Xiang Fu is added on the basis of Tao Hong Si Wu Tang to strengthen the power of breaking stasis and moving stagnation."
+      ],
+      "modifications_zh": [
+        "如《醫學集成》中，對於「過期不行，因血凝脹痛」，在桃紅四物湯的基礎上加香附、莪朮、木通、木香、肉桂、甘草，以加強行氣活血、溫經止痛之效。",
+        "《婦科冰鑑》中記載的「漏血澀少，間有淤塊者」，在桃紅四物湯的基礎上加香附以增強破瘀行滯之力。"
+      ],
       "contraindications_en": [
         "Pregnancy, heavy bleeding, anticoagulants, surgery/procedure timing, or anemia requires review"
       ],
@@ -46894,6 +46974,15 @@
         ],
         "pattern_indications_en": [
           "translated 2026-08-19 from the rewritten pattern_indications_zh"
+        ],
+        "modifications_zh": [
+          "data/imports/cloudtcm/formula_url_map.json#桃紅四物湯/pageData.ActionIndication",
+          "https://cloudtcm.com/formula/171"
+        ],
+        "modifications_en": [
+          "data/imports/cloudtcm/formula_url_map.json#桃紅四物湯/pageData.ActionIndication",
+          "https://cloudtcm.com/formula/171",
+          "translated 2026-09-07 from modifications_zh (Claude)"
         ]
       },
       "cloudtcm_id": 171,
@@ -52507,8 +52596,20 @@
         "肝腎陰虛精髓虧損證",
         "痿證（肝腎虧虛型）"
       ],
-      "modifications_en": [],
-      "modifications_zh": [],
+      "modifications_en": [
+        "For seminal efflux, remove Chuan Niu Xi.",
+        "If true yin fails to be secured and deficiency fire flames upward, a purely yin, utterly quiescent formula is appropriate: from this formula remove Gou Qi Zi and Lu Jiao Jiao, and add Nu Zhen Zi 3 liang and Mai Men Dong 3 liang",
+        "For fire restraining Lung metal with dry cough and scant phlegm, add Bai He to moisten the Lung and stop cough.",
+        "For night heat and steaming bone, add Di Gu Pi to clear deficiency heat and abate steaming bone; for inhibited urination, add Fu Ling to promote urination and percolate dampness.",
+        "For dry, bound stools, remove Tu Si Zi and add Rou Cong Rong to moisten the intestines and free the stool; for qi deficiency, add Ren Shen to tonify qi."
+      ],
+      "modifications_zh": [
+        "滑精者，去川牛膝。",
+        "如真陰失守，虛火上炎者，宜用純陰至靜之劑，於本方去枸杞、鹿膠，加女貞子3兩，麥冬3兩",
+        "火剋肺金，乾咳少痰者，加百合以潤肺止咳。",
+        "夜熱骨蒸者，加地骨皮以清虛熱，退骨蒸，小便不利者，加茯苓以利水滲濕。",
+        "大便燥結者，去菟絲子，加肉蓯蓉以潤腸通便，氣虛者，加人參以補氣。"
+      ],
       "contraindications_en": [
         "Contraindicated for those with signs of Excess Heat.",
         "This formula is not suited for long-term use.",
@@ -52742,7 +52843,18 @@
         "tcm_pattern_ids": [
           "derived: 本方 pattern_indications_zh 經 data/config/pattern_alias_map.json + data/pathology/pattern_registry.json name_zh 逐字對照(scripts/derive-formula-pattern-links.js,不拆複合證、不近似匹配、不用 syndromes_zh)"
         ],
-        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)"
+        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)",
+        "modifications_zh": [
+          "data/imports/cloudtcm/formula_url_map.json#左歸丸/pageData.ActionIndication",
+          "data/imports/cloudtcm/formula_url_map.json#左歸丸/pageData.OldAdministration",
+          "https://cloudtcm.com/formula/81"
+        ],
+        "modifications_en": [
+          "data/imports/cloudtcm/formula_url_map.json#左歸丸/pageData.ActionIndication",
+          "data/imports/cloudtcm/formula_url_map.json#左歸丸/pageData.OldAdministration",
+          "https://cloudtcm.com/formula/81",
+          "translated 2026-09-07 from modifications_zh (Claude)"
+        ]
       },
       "cloudtcm_id": 81,
       "action_profile": {
@@ -53753,8 +53865,14 @@
         "腎陽不足命門火衰證",
         "痿證（腎氣陽虛型）"
       ],
-      "modifications_en": [],
-      "modifications_zh": [],
+      "modifications_en": [
+        "If yang is debilitated and qi deficient, Ren Shen must be added as the chief, either 2-3 liang or 5-6 liang, increased or decreased according to the person's deficiency or excess",
+        "If lienteric diarrhea or Kidney diarrhea does not stop, add Bei Wu Wei Zi 3 liang and Rou Dou Kou 3 liang (stir-fried in flour, with the oil removed)"
+      ],
+      "modifications_zh": [
+        "如陽衰氣虛，必加人參以為之主，或2-3兩、或5-6兩，隨人虛實以為增減",
+        "如飧泄腎泄不止，加北五味子3兩、肉豆蔻3兩（面炒，去油用）"
+      ],
       "contraindications_en": [
         "Contraindicated when Kidney Deficiency is accompanied by Dampness or turbidity.",
         "Avoid cold and raw foods while taking this formula."
@@ -53985,6 +54103,15 @@
         ],
         "formula_family": [
           "curriculum/herbs/方剂学汇总_extracted.md(Table 295, source lines 2569;帳本 docs/research_packs/FORMULA_FAMILY_PROPOSALS_2026-08-19.json,劑量逐字審計)"
+        ],
+        "modifications_zh": [
+          "data/imports/cloudtcm/formula_url_map.json#右歸丸/pageData.OldAdministration",
+          "https://cloudtcm.com/formula/70"
+        ],
+        "modifications_en": [
+          "data/imports/cloudtcm/formula_url_map.json#右歸丸/pageData.OldAdministration",
+          "https://cloudtcm.com/formula/70",
+          "translated 2026-09-07 from modifications_zh (Claude)"
         ]
       },
       "cloudtcm_id": 70,
@@ -66140,6 +66267,15 @@
         ],
         "exact_source_url": [
           "FB-10 2026-08-12：原值「https://cloudtcm.com/formula/99」為 59 筆共用的錯誤預設值（大黃牡丹湯的頁面），與本筆自己的 source_urls/cloudtcm_id 不符；改回本筆對應的「https://cloudtcm.com/formula/168」。見 docs/research_packs/FORMULA_EYESON_01.md F-18 / §3 FB-10。"
+        ],
+        "modifications_zh": [
+          "data/imports/cloudtcm/formula_url_map.json#柴胡加龍骨牡蠣湯/pageData.ActionIndication",
+          "https://cloudtcm.com/formula/168"
+        ],
+        "modifications_en": [
+          "data/imports/cloudtcm/formula_url_map.json#柴胡加龍骨牡蠣湯/pageData.ActionIndication",
+          "https://cloudtcm.com/formula/168",
+          "translated 2026-09-07 from modifications_zh (Claude)"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/168",
@@ -66205,7 +66341,13 @@
         "Improves heart rate variability (HRV), antiarrhythmic",
         "Regulates GI smooth muscle motility and neurotransmitters"
       ],
-      "composition_suspect_cleared_note": "2026-08-19 原組成僅剩方名首味柴胡,依《傷寒論》107條重建十一味;原方鉛丹有毒、現代通例不用,未入列"
+      "composition_suspect_cleared_note": "2026-08-19 原組成僅剩方名首味柴胡,依《傷寒論》107條重建十一味;原方鉛丹有毒、現代通例不用,未入列",
+      "modifications_zh": [
+        "急躁易怒，面色嫩紅，潮熱，虛煩不得眠，舌絳舌赤，去桂枝、大黃，加黃連，阿膠、雞子黃、芍藥、百合、生地。"
+      ],
+      "modifications_en": [
+        "For irascibility and irritability, a delicate red complexion, tidal fever, deficiency vexation with inability to sleep, and a crimson or red tongue, remove Gui Zhi and Da Huang, and add Huang Lian, E Jiao, Ji Zi Huang, Shao Yao, Bai He and Sheng Di Huang."
+      ]
     },
     {
       "id": "formula.yue_ju_wan",
@@ -71057,8 +71199,26 @@
         "風痰阻絡兼氣血凝滯證",
         "氣虛血瘀痿證"
       ],
-      "modifications_en": [],
-      "modifications_zh": [],
+      "modifications_en": [
+        "For a cold tendency, add Rou Gui and Ba Ji Tian to warm the Kidney and dissipate cold.",
+        "For Spleen deficiency, add Dang Shen and Bai Zhu to fortify the Spleen and boost qi.",
+        "For copious phlegm, add Fa Ban Xia and Tian Zhu Huang to transform phlegm.",
+        "For impaired speech, add Shi Chang Pu and Yuan Zhi to open the orifices and transform phlegm.",
+        "For deviation of the mouth and eye, add Bai Fu Zi, Bai Jiang Can and Quan Xie to dispel wind and free the channels.",
+        "For long-standing hemiplegia with no evident response to treatment, add Shui Zhi and Meng Chong to break stasis and free the channels.",
+        "For weak, flaccid lower limbs, add Du Zhong and Niu Xi to tonify the Liver and Kidney and strengthen sinews and bones.",
+        "For dizziness and headache, add Ju Hua, Man Jing Zi, Shi Jue Ming and Dai Zhe Shi to calm the Liver and extinguish wind."
+      ],
+      "modifications_zh": [
+        "偏寒者加肉桂、巴戟天以溫腎散寒。",
+        "脾虛者加黨參、白朮以健脾益氣。",
+        "痰多者加法半夏、天竺黃以化痰。",
+        "語言不利者加石菖蒲、遠志以開竅化痰。",
+        "口眼喎斜者加白附子、僵蠶、全蠍以祛風通絡。",
+        "偏癱日久療效不顯者加水蛭、虻蟲以破瘀通絡。",
+        "下肢痿軟者加杜仲、牛膝以補肝腎強筋骨。",
+        "頭暈頭痛者加菊花、蔓荊子、石決明、代赭石以平肝熄風。"
+      ],
       "contraindications_en": [
         "Contraindicated immediately after a stroke due to cerebral hemorrhage.",
         "Contraindicated for those with Wind-Stroke with a big, forceful or firm, wiry, forceful pulse.",
@@ -71299,7 +71459,16 @@
         "cautions_zh": [
           "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處：既有 field_sources 各欄位所列課件/CloudTCM 來源）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
         ],
-        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)"
+        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)",
+        "modifications_zh": [
+          "data/imports/cloudtcm/formula_url_map.json#補陽還五湯/pageData.ActionIndication",
+          "https://cloudtcm.com/formula/264"
+        ],
+        "modifications_en": [
+          "data/imports/cloudtcm/formula_url_map.json#補陽還五湯/pageData.ActionIndication",
+          "https://cloudtcm.com/formula/264",
+          "translated 2026-09-07 from modifications_zh (Claude)"
+        ]
       },
       "cloudtcm_id": 264,
       "action_profile": {
@@ -75678,6 +75847,15 @@
         ],
         "related_formulas": [
           "curriculum/formulas/09_Formula_Cards_081-090_解表劑_理血劑.md #084-088 (Classical/course source: Yi Lin Gai Cuo, 王清任《醫林改錯》五首逐瘀湯,依身體部位分主治:胸中血府/膈下/少腹/週身痛/頭面清竅)"
+        ],
+        "modifications_zh": [
+          "data/imports/cloudtcm/formula_url_map.json#身痛逐瘀湯/pageData.ActionIndication",
+          "https://cloudtcm.com/formula/120"
+        ],
+        "modifications_en": [
+          "data/imports/cloudtcm/formula_url_map.json#身痛逐瘀湯/pageData.ActionIndication",
+          "https://cloudtcm.com/formula/120",
+          "translated 2026-09-07 from modifications_zh (Claude)"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/120",
@@ -75872,6 +76050,14 @@
           "moved_at": "2026-08-29T04:46:06.239Z",
           "ruling": "D28/A1(a). after=[]; needs_review(0)=[]"
         }
+      ],
+      "modifications_zh": [
+        "若微熱：加蒼朮、黃柏，以清熱燥濕。",
+        "若虛弱：量加黃耆一至二兩，以補氣扶正。"
+      ],
+      "modifications_en": [
+        "If there is slight heat: add Cang Zhu and Huang Bai to clear heat and dry dampness.",
+        "If there is weakness: add Huang Qi in a measured amount of one to two liang to tonify qi and support the right."
       ]
     },
     {
@@ -77688,8 +77874,14 @@
         "下焦水蓄證（溢飲/支飲）",
         "痰飲證"
       ],
-      "modifications_en": [],
-      "modifications_zh": [],
+      "modifications_en": [
+        "For diarrhea from summerheat stroke or sudden turmoil, add Hua Shi to drain dampness and clear heat.",
+        "For more severe edema, add Sang Bai Pi, Chen Pi, Da Fu Pi and Che Qian Zi to strengthen the action of moving water and dispersing swelling."
+      ],
+      "modifications_zh": [
+        "中暑霍亂泄瀉者，加滑石以利濕清熱。",
+        "水腫較甚者，加桑白皮，橘皮，大腹皮、車前子以增強行水消腫作用。"
+      ],
       "contraindications_en": [
         "With Spleen Qi and Kidney Deficiency limit dosage, may combine with tonics.",
         "For urinary difficulty with Yin Deficiency, protect Yin.",
@@ -77998,6 +78190,15 @@
         ],
         "related_formulas": [
           "curriculum/formulas/ (Board exam high-frequency sister formula associations)"
+        ],
+        "modifications_zh": [
+          "data/imports/cloudtcm/formula_url_map.json#五苓散/pageData.ActionIndication",
+          "https://cloudtcm.com/formula/50"
+        ],
+        "modifications_en": [
+          "data/imports/cloudtcm/formula_url_map.json#五苓散/pageData.ActionIndication",
+          "https://cloudtcm.com/formula/50",
+          "translated 2026-09-07 from modifications_zh (Claude)"
         ]
       },
       "cloudtcm_id": 50,
@@ -79441,8 +79642,18 @@
         "三焦上焦熱證",
         "衛分濕熱證"
       ],
-      "modifications_en": [],
-      "modifications_zh": [],
+      "modifications_en": [
+        "In the initial stage of damp-warmth, when the defense-aspect signs have not yet resolved and there is aversion to cold, Huo Xiang, Xiang Ru and Pei Lan may be added to release the exterior and transform dampness.",
+        "If dampness predominates over heat, with symptoms of nausea and retching, more pronounced epigastric fullness, and a thick, greasy tongue coating, Cang Zhu, Shi Chang Pu and Cao Guo may be added to transform with aroma and dry dampness.",
+        "If heat predominates over dampness, with symptoms of generalized heat and thirst, fullness and oppression, vexation, nausea and retching, or sweating that brings no relief followed by a return of fever, where the pathogenic heat is not yet deep or severe, Lian Qiao, Huang Qin and Huang Lian may be added to clear heat and dispel dampness.",
+        "If exuberant heat damages fluids, with symptoms of thirst, parched lips, a yellow and dry coating, and a red tongue margin and tip, Hou Po and Ban Xia may be removed, and Tian Hua Fen and Mai Men Dong added to generate fluids and relieve thirst."
+      ],
+      "modifications_zh": [
+        "濕溫初起，衛分症未罷，有惡寒現象者，可加藿香、香薷、佩蘭以解表化濕。",
+        "若濕重於熱，症見嘔惡，脘痞較重，舌苔厚膩，可加蒼朮、石菖蒲、草果以芳化燥濕。",
+        "若熱重於濕，症見身熱口渴，滿悶，心煩嘔噁，或汗出不解，繼而復熱，邪熱尚不深重者，可加連翹、黃芩、黃連以清熱祛濕。",
+        "若熱盛傷津，症見口渴，唇焦，苔黃而乾，舌邊尖紅，可去厚朴，半夏，加天花粉、麥冬以生津止渴。"
+      ],
       "contraindications_en": [
         "Not suitable for those with a yellow, greasy tongue coating where Heat is more pronounced than Dampness.",
         "In treating Damp diseases, promoting sweating is forbidden; yet failing to induce slight sweating when Yang is constrained instead causes harm — this is the physician's fault. Patients with Dampness must not be made to sweat, for the body already sweats copiously and Yang collapse is easily induced; hence in Damp-Warmth patterns, mistakenly promoting sweating is called 'double summerheat injury'.",
@@ -79652,6 +79863,15 @@
         ],
         "formula_song": [
           "《湯頭歌訣》(汪昂,含通行加減歌)或方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+        ],
+        "modifications_zh": [
+          "data/imports/cloudtcm/formula_url_map.json#三仁湯/pageData.ActionIndication",
+          "https://cloudtcm.com/formula/401"
+        ],
+        "modifications_en": [
+          "data/imports/cloudtcm/formula_url_map.json#三仁湯/pageData.ActionIndication",
+          "https://cloudtcm.com/formula/401",
+          "translated 2026-09-07 from modifications_zh (Claude)"
         ]
       },
       "cloudtcm_id": 401,
@@ -80087,6 +80307,15 @@
         ],
         "formula_song_zh": [
           "https://www.zhongyifangji.com/cht/prescription/detail/id/4"
+        ],
+        "modifications_zh": [
+          "data/imports/cloudtcm/formula_url_map.json#二妙散/pageData.ActionIndication",
+          "https://cloudtcm.com/formula/368"
+        ],
+        "modifications_en": [
+          "data/imports/cloudtcm/formula_url_map.json#二妙散/pageData.ActionIndication",
+          "https://cloudtcm.com/formula/368",
+          "translated 2026-09-07 from modifications_zh (Claude)"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/368",
@@ -80355,6 +80584,22 @@
         "burning heat in the joints",
         "oliguria",
         "eczema"
+      ],
+      "modifications_zh": [
+        "濕重於熱以蒼朮為君藥，用量可大於黃柏。",
+        "如果熱重於濕，則以黃柏為君藥，用量可大於蒼朮。",
+        "濕熱並重者，兩藥等量。",
+        "若濕熱腳氣，可加薏苡仁、木瓜、檳榔等，以滲濕泄濁。",
+        "若濕熱帶下可加赤茯苓、梔子、薏苡仁、車前子等，以滲濕止帶",
+        "若下部濕瘡、濕癢可加龍膽草、澤瀉、赤小豆、土茯苓以祛濕熱，解瘡毒。"
+      ],
+      "modifications_en": [
+        "When dampness predominates over heat, Cang Zhu is the chief herb, and its dose may be greater than that of Huang Bai.",
+        "If heat predominates over dampness, then Huang Bai is the chief herb, and its dose may be greater than that of Cang Zhu.",
+        "When dampness and heat are equally severe, the two herbs are used in equal amounts.",
+        "If there is damp-heat leg qi, Yi Yi Ren, Mu Gua, Bing Lang and the like may be added to percolate dampness and discharge turbidity.",
+        "If there is damp-heat vaginal discharge, Chi Fu Ling, Zhi Zi, Yi Yi Ren, Che Qian Zi and the like may be added to percolate dampness and check discharge",
+        "If there are damp sores or damp itching of the lower body, Long Dan Cao, Ze Xie, Chi Xiao Dou and Tu Fu Ling may be added to dispel damp-heat and resolve sore toxin."
       ]
     },
     {
@@ -82401,8 +82646,12 @@
         "風濕痺證",
         "風濕在表兼衛氣虛證（肺脾氣虛）"
       ],
-      "modifications_en": [],
-      "modifications_zh": [],
+      "modifications_en": [
+        "If abdominal pain appears because water-damp obstruction causes disharmony of the interior qi, Shao Yao may be added to free and regulate the qi dynamic, relax tension and relieve pain."
+      ],
+      "modifications_zh": [
+        "若因水溼阻滯引起裏氣不和而見腹痛時，可加芍藥通調氣機，緩急止痛。"
+      ],
       "contraindications_en": [
         "This formula is not appropriate for those with exuberant Water-Damp and severe swelling.",
         "This formula should not be used for Excess-type edema accompanied by gastrointestinal symptoms such as nausea, abdominal distension, and loose stools.",
@@ -82606,6 +82855,15 @@
         ],
         "contraindications_en": [
           "2026-08-19 雙語聯集對齊：原 contraindications_zh 5 條 / contraindications_en 3 條(不同來源並行),對齊為 8 組;原條目逐字保留,補齊側為對側之翻譯"
+        ],
+        "modifications_zh": [
+          "data/imports/cloudtcm/formula_url_map.json#防己黃耆湯/pageData.ActionIndication",
+          "https://cloudtcm.com/formula/526"
+        ],
+        "modifications_en": [
+          "data/imports/cloudtcm/formula_url_map.json#防己黃耆湯/pageData.ActionIndication",
+          "https://cloudtcm.com/formula/526",
+          "translated 2026-09-07 from modifications_zh (Claude)"
         ]
       },
       "cloudtcm_id": 526,
@@ -84405,6 +84663,15 @@
         ],
         "related_formulas": [
           "curriculum/formulas/ (Board exam high-frequency sister formula associations)"
+        ],
+        "modifications_zh": [
+          "data/imports/cloudtcm/formula_url_map.json#苓桂朮甘湯/pageData.ActionIndication",
+          "https://cloudtcm.com/formula/151"
+        ],
+        "modifications_en": [
+          "data/imports/cloudtcm/formula_url_map.json#苓桂朮甘湯/pageData.ActionIndication",
+          "https://cloudtcm.com/formula/151",
+          "translated 2026-09-07 from modifications_zh (Claude)"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/151",
@@ -84458,6 +84725,18 @@
         "formula.wu_ling_san",
         "formula.zhu_ling_tang",
         "formula.shi_pi_yin"
+      ],
+      "modifications_zh": [
+        "眩暈甚者，加澤瀉。",
+        "咳嗽嘔吐稀涎者，加半夏，陳皮。",
+        "乾嘔，巔頂疼痛，加吳茱萸。",
+        "體寒加附子，以溫散水氣，脾氣虛弱者，加黨參，黃耆以益氣健脾。"
+      ],
+      "modifications_en": [
+        "For severe dizziness, add Ze Xie.",
+        "For cough with vomiting of thin drool, add Ban Xia and Chen Pi.",
+        "For dry retching and vertex headache, add Wu Zhu Yu.",
+        "For bodily cold, add Fu Zi to warm and disperse water qi; for Spleen qi deficiency, add Dang Shen and Huang Qi to boost qi and fortify the Spleen."
       ]
     },
     {
@@ -99679,8 +99958,16 @@
         "肺陰虛證",
         "肺腎陰虛虛火上炎證"
       ],
-      "modifications_en": [],
-      "modifications_zh": [],
+      "modifications_en": [
+        "For severe cough and wheezing, add Xing Ren, Wu Wei Zi and Kuan Dong Hua to stop cough and calm wheezing.",
+        "If coughing of blood is severe, Jie Geng, with its upbearing and lifting action, may be removed, or Bai Ji, Bai Mao Gen and Xian He Cao added to enhance the effect of stopping bleeding.",
+        "With poor appetite and reduced food intake, use Shu Di Huang stir-fried with Sha Ren, or further add Chen Pi to regulate qi and harmonize the Stomach."
+      ],
+      "modifications_zh": [
+        "咳喘甚者，加杏仁、五味子、款冬花以止咳平喘。",
+        "若咳血重者，可去桔梗之升提，或加白芨、白茅根，仙鶴草以增止血之功。",
+        "兼納差食少者，用砂仁拌炒熟地，或再加陳皮理氣和胃。"
+      ],
       "contraindications_en": [
         "Avoid raw and cold, pungent and spicy, and greasy foods.",
         "Contraindicated for those with cough due to Excess conditions."
@@ -99869,6 +100156,15 @@
         ],
         "related_formulas": [
           "curriculum/formulas/ (Board exam high-frequency sister formula associations)"
+        ],
+        "modifications_zh": [
+          "data/imports/cloudtcm/formula_url_map.json#百合固金湯/pageData.ActionIndication",
+          "https://cloudtcm.com/formula/106"
+        ],
+        "modifications_en": [
+          "data/imports/cloudtcm/formula_url_map.json#百合固金湯/pageData.ActionIndication",
+          "https://cloudtcm.com/formula/106",
+          "translated 2026-09-07 from modifications_zh (Claude)"
         ]
       },
       "cloudtcm_id": 106,
@@ -102674,8 +102970,18 @@
         "三焦中焦濕阻證",
         "三焦中焦濕熱證"
       ],
-      "modifications_en": [],
-      "modifications_zh": [],
+      "modifications_en": [
+        "If there is high fever and thirst, yellowing of the body and eyes, aching limbs, and inhibited urination and defecation, belonging to dampness and heat equally severe, Zhi Zi, Da Huang and Bai Mao Gen may be added to clear heat and drain fire, resolve toxin and abate jaundice.",
+        "If there is facial swelling but dampness is not severe, Qing Dai or Ban Lan Gen may be added to strengthen the toxin-resolving action.",
+        "If the throat is swollen, Ban Lan Gen, Niu Bang Zi, Jin Yin Hua and Shan Dou Gen may be added to soothe the throat and dissipate binds.",
+        "If there is heat strangury with rough, painful urination, Bai Mao Gen, Zhu Ye, Shi Wei and Bian Xu may be added to clear heat and free strangury."
+      ],
+      "modifications_zh": [
+        "若高熱口渴，身目發黃，肢體酸痛，二便不暢屬於濕熱並重者，可加梔子、大黃、白茅根以清熱瀉火，解毒退黃。",
+        "若面腫而濕不重者，可加青黛或板藍根，以增強解毒作用。",
+        "若咽腫，可加板藍根、牛蒡子、金銀花、山豆根利咽散結。",
+        "若熱淋，小便澀痛者，可加白茅根、竹葉、石韋，萹蓄以清熱通淋。"
+      ],
       "contraindications_en": [
         "Not appropriate when Damp-Heat has entered the Ying level, with delirious speech and a crimson tongue.",
         "This formula clears and drains Damp-Heat and easily damages Yin fluids; not suitable for those with Yin deficiency."
@@ -102885,7 +103191,16 @@
         "tcm_pattern_ids": [
           "derived: 本方 pattern_indications_zh 經 data/config/pattern_alias_map.json + data/pathology/pattern_registry.json name_zh 逐字對照(scripts/derive-formula-pattern-links.js,不拆複合證、不近似匹配、不用 syndromes_zh)"
         ],
-        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)"
+        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)",
+        "modifications_zh": [
+          "data/imports/cloudtcm/formula_url_map.json#甘露消毒丹/pageData.ActionIndication",
+          "https://cloudtcm.com/formula/88"
+        ],
+        "modifications_en": [
+          "data/imports/cloudtcm/formula_url_map.json#甘露消毒丹/pageData.ActionIndication",
+          "https://cloudtcm.com/formula/88",
+          "translated 2026-09-07 from modifications_zh (Claude)"
+        ]
       },
       "cloudtcm_id": 88,
       "action_profile": {
@@ -103553,8 +103868,14 @@
         "胃腸風熱（腸風）",
         "胃腸濕熱"
       ],
-      "modifications_en": [],
-      "modifications_zh": [],
+      "modifications_en": [
+        "If Large Intestine heat is exuberant, Huang Lian and Huang Bai may be added to strengthen the heat-clearing, toxin-resolving action",
+        "If the volume of bleeding from below is large, add Di Yu to strengthen the stopping of bleeding"
+      ],
+      "modifications_zh": [
+        "若大腸熱盛，可加黃連、黃柏以強化清熱解毒作用",
+        "若下血量大，加地榆以增強止血"
+      ],
       "contraindications_en": [
         "Do not use long term.",
         "This powder form is now rarely produced; the formula has gradually been replaced by prepared medicines such as Huai Jiao Wan — select accordingly in clinical practice.",
@@ -103716,6 +104037,15 @@
         ],
         "contraindications_en": [
           "2026-08-19 雙語聯集對齊：原 contraindications_zh 4 條 / contraindications_en 3 條(不同來源並行),對齊為 5 組;原條目逐字保留,補齊側為對側之翻譯"
+        ],
+        "modifications_zh": [
+          "data/imports/cloudtcm/formula_url_map.json#槐花散/pageData.ActionIndication",
+          "https://cloudtcm.com/formula/268"
+        ],
+        "modifications_en": [
+          "data/imports/cloudtcm/formula_url_map.json#槐花散/pageData.ActionIndication",
+          "https://cloudtcm.com/formula/268",
+          "translated 2026-09-07 from modifications_zh (Claude)"
         ]
       },
       "cloudtcm_id": 268,
@@ -108508,8 +108838,18 @@
         "燥痰",
         "肺熱津傷之痿證"
       ],
-      "modifications_en": [],
-      "modifications_zh": [],
+      "modifications_en": [
+        "For copious phlegm, adding Bei Mu and Gua Lou can moisten dryness and transform phlegm.",
+        "Blood desiccation is blood deficiency; adding Sheng Di Huang can nourish blood and enrich yin.",
+        "For severe heat, this is heat that has already entered the nutrient and blood, hence Xi Jiao, Ling Yang Jiao or Niu Huang are added to cool the blood and stop bleeding, settle fright and calm the spirit.",
+        "The Ren Shen in the formula may be replaced with Xi Yang Shen, which fits the disease pattern even better, because Xi Yang Shen can tonify original qi and boost fluids."
+      ],
+      "modifications_zh": [
+        "痰多加貝母、瓜蔞可潤燥化痰。",
+        "血枯者，血虛也，加生地能養血滋陰。",
+        "熱甚者，此熱已入營血之熱，故加犀角、羚羊角或牛黃以涼血止血，鎮驚安神。",
+        "方中人參，可以換西洋參，則於病證更為合拍，因西洋參能補元氣而益津液。"
+      ],
       "contraindications_en": [
         "Contraindicated for those with Deficiency without an Exterior Condition.",
         "The original formula used calcined Shi Gao, but modern practice mostly uses raw Shi Gao, with calcined Shi Gao mainly for external application. The amount of Shi Gao should be weighed according to the severity of the condition, avoiding an excessive dose that would injure Lung Qi."
@@ -108743,6 +109083,15 @@
         ],
         "related_formulas": [
           "curriculum/formulas/ (Board exam high-frequency sister formula associations)"
+        ],
+        "modifications_zh": [
+          "data/imports/cloudtcm/formula_url_map.json#清燥救肺湯/pageData.ActionIndication",
+          "https://cloudtcm.com/formula/216"
+        ],
+        "modifications_en": [
+          "data/imports/cloudtcm/formula_url_map.json#清燥救肺湯/pageData.ActionIndication",
+          "https://cloudtcm.com/formula/216",
+          "translated 2026-09-07 from modifications_zh (Claude)"
         ]
       },
       "cloudtcm_id": 216,
@@ -113945,8 +114294,16 @@
         "久瀉久痢（依《傷寒論》原文語境）",
         "胃熱兼腎虛證"
       ],
-      "modifications_en": [],
-      "modifications_zh": [],
+      "modifications_en": [
+        "For severe vomiting, Sheng Jiang, Ban Xia and Wu Zhu Yu may be added to downbear counterflow and stop vomiting.",
+        "For severe abdominal pain, Bai Shao and Gan Cao may be added to relax tension and relieve pain.",
+        "To speed up the worm-expelling power, purgatives such as Da Huang and Mang Xiao may also be added."
+      ],
+      "modifications_zh": [
+        "嘔吐嚴重者，可加生薑、半夏、吳茱萸以降逆止嘔。",
+        "腹痛甚者，可加白芍、甘草以緩急止痛。",
+        "爲加速驅蟲之力，亦可加瀉下的大黃、芒硝等。"
+      ],
       "contraindications_en": [
         "Contraindicated for those with explosive diarrhea.",
         "Contraindicated for those with Damp-Heat dysentery.",
@@ -114160,6 +114517,15 @@
         "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)",
         "pattern_indications_en": [
           "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 1 條 / pattern_indications_en 4 條(不同來源並行),對齊為 5 組;原條目逐字保留,補齊側為對側之翻譯"
+        ],
+        "modifications_zh": [
+          "data/imports/cloudtcm/formula_url_map.json#烏梅丸/pageData.ActionIndication",
+          "https://cloudtcm.com/formula/179"
+        ],
+        "modifications_en": [
+          "data/imports/cloudtcm/formula_url_map.json#烏梅丸/pageData.ActionIndication",
+          "https://cloudtcm.com/formula/179",
+          "translated 2026-09-07 from modifications_zh (Claude)"
         ]
       },
       "cloudtcm_id": 179,
@@ -117991,6 +118357,15 @@
         ],
         "formula_song_zh": [
           "https://jicheng.tw/tcm/book/%E9%87%91%E5%8C%B1%E6%96%B9%E6%AD%8C%E6%8B%AC/index.html"
+        ],
+        "modifications_zh": [
+          "data/imports/cloudtcm/formula_url_map.json#大建中湯/pageData.ActionIndication",
+          "https://cloudtcm.com/formula/34"
+        ],
+        "modifications_en": [
+          "data/imports/cloudtcm/formula_url_map.json#大建中湯/pageData.ActionIndication",
+          "https://cloudtcm.com/formula/34",
+          "translated 2026-09-07 from modifications_zh (Claude)"
         ]
       },
       "ad_syndromes_en": [
@@ -118195,7 +118570,24 @@
       ],
       "ba_fa_en": [
         "warming method"
-      ]
+      ],
+      "modifications_zh": [
+        "腹痛脹滿者，加厚朴、砂仁。",
+        "寒甚而頭痛目眩者，加吳茱萸。",
+        "惡寒重者，加附子。",
+        "嘔吐嚴重加半夏、生薑。",
+        "口乾者，加白芍。",
+        "手足麻痹者，加桂枝。"
+      ],
+      "modifications_en": [
+        "For abdominal pain with distension and fullness, add Hou Po and Sha Ren.",
+        "For severe cold with headache and dizzy vision, add Wu Zhu Yu.",
+        "For severe aversion to cold, add Fu Zi.",
+        "For severe vomiting, add Ban Xia and Sheng Jiang.",
+        "For dry mouth, add Bai Shao.",
+        "For numbness of the hands and feet, add Gui Zhi."
+      ],
+      "cloudtcm_id": 34
     },
     {
       "id": "formula.da_qing_long_tang",
@@ -119151,6 +119543,15 @@
         ],
         "source_classic": [
           "https://cloudtcm.com/formula/257(「當歸芍藥散,出處:《金匱》卷下…此方最原始出自於漢朝的《金匱要略》」;帳本 docs/research_packs/SOURCE_CLASSIC_WEB_PROPOSALS_2026-08-19.json)"
+        ],
+        "modifications_zh": [
+          "data/imports/cloudtcm/formula_url_map.json#當歸芍藥散/pageData.ActionIndication",
+          "https://cloudtcm.com/formula/257"
+        ],
+        "modifications_en": [
+          "data/imports/cloudtcm/formula_url_map.json#當歸芍藥散/pageData.ActionIndication",
+          "https://cloudtcm.com/formula/257",
+          "translated 2026-09-07 from modifications_zh (Claude)"
         ]
       },
       "ad_syndromes_en": [
@@ -119381,7 +119782,24 @@
         "low energy",
         "aching back",
         "thirst without desire to drink"
-      ]
+      ],
+      "modifications_zh": [
+        "經期或經後腹痛：可加入香附、延胡索、川楝子等藥材來理氣活血，調理經期、緩解疼痛。",
+        "產後腹痛、惡露不盡：可加入烏藥、益母草來促進氣血循環。",
+        "胃部刺痛：加入五靈脂、木香以理氣化瘀止痛。",
+        "若伴有嚴重泛酸，則加烏賊骨、瓦楞子來中和胃酸。",
+        "肋部疼痛：可加入鬱金、川楝子以疏肝活血、緩解疼痛。",
+        "習慣性流產：若屬於肝脾虛弱、氣血不足，可去除澤瀉，加上升麻、黃耆、阿膠、艾葉炭來安胎止血。"
+      ],
+      "modifications_en": [
+        "Abdominal pain during or after menstruation: herbs such as Xiang Fu, Yan Hu Suo and Chuan Lian Zi may be added to regulate qi and invigorate blood, regulate the menstrual period and relieve pain.",
+        "Postpartum abdominal pain with unceasing lochia: Wu Yao and Yi Mu Cao may be added to promote the circulation of qi and blood.",
+        "Stabbing pain in the stomach region: add Wu Ling Zhi and Mu Xiang to regulate qi, transform stasis and relieve pain.",
+        "If accompanied by severe acid regurgitation, then add Wu Zei Gu and Wa Leng Zi to neutralize stomach acid.",
+        "Rib-side pain: Yu Jin and Chuan Lian Zi may be added to course the Liver, invigorate blood and relieve pain.",
+        "Habitual miscarriage: if it belongs to Liver-Spleen weakness with insufficiency of qi and blood, Ze Xie may be removed, and Sheng Ma, Huang Qi, E Jiao and Ai Ye Tan added to calm the fetus and stop bleeding."
+      ],
+      "cloudtcm_id": 257
     },
     {
       "id": "formula.dang_gui_yin_zi",
@@ -131245,6 +131663,15 @@
         ],
         "contraindications_en": [
           "translated: 本卡 contraindications_zh 逐條忠實翻譯(紅線5 同長同序,強度不升降)"
+        ],
+        "modifications_zh": [
+          "data/imports/cloudtcm/formula_url_map.json#參蘇飲/pageData.OldAdministration",
+          "https://cloudtcm.com/formula/196"
+        ],
+        "modifications_en": [
+          "data/imports/cloudtcm/formula_url_map.json#參蘇飲/pageData.OldAdministration",
+          "https://cloudtcm.com/formula/196",
+          "translated 2026-09-07 from modifications_zh (Claude)"
         ]
       },
       "actions_en": [
@@ -131446,7 +131873,16 @@
       ],
       "ba_fa_en": [
         "sweating method"
-      ]
+      ],
+      "modifications_zh": [
+        "噦者，加乾葛",
+        "腹痛，加芍藥。"
+      ],
+      "modifications_en": [
+        "For hiccough, add Ge Gen",
+        "For abdominal pain, add Shao Yao."
+      ],
+      "cloudtcm_id": 196
     },
     {
       "id": "formula.zai_zao_san",
