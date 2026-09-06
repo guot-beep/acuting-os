@@ -28,25 +28,51 @@ const path = require("path");
 const ROOT = path.join(__dirname, "..");
 const CEILING = 0;   // 只准變少
 
-const bundle = path.join(ROOT, "data/generated/knowledge_mm.js");
-if (!fs.existsSync(bundle)) { console.log("FAIL — 先跑 node scripts/build-data.js"); process.exit(1); }
-globalThis.window = globalThis;
-require(bundle);
+/* 讀 index.html 真正載入的六片 shard,不只 mm:id 命名空間要從**整個 bundle** 的 id 前綴取
+   (herb./pair. 在 mm,pattern./tdis./cond./sym./cmp./drug. 在別片),只讀一片就只認得兩個。 */
+for (const f of ["core", "ref", "rx", "mm", "dx", "pat"]) {
+  const p = path.join(ROOT, "data/generated/knowledge_" + f + ".js");
+  if (!fs.existsSync(p)) { console.log("FAIL — 先跑 node scripts/build-data.js(缺 " + f + " 分片)"); process.exit(1); }
+  globalThis.window = globalThis;
+  require(p);
+}
 const K = globalThis.ACUTING_KNOWLEDGE || {};
 const pairs = (K.herbPairs && K.herbPairs.pairs) || [];
 if (!pairs.length) { console.log("FAIL — bundle 讀不到 herbPairs,不是資料乾淨"); process.exit(1); }
 
-/* 記錄 id 與欄位名。刻意不收「Appendix B」「NCBAHM」這種**考綱專有名詞** ——
-   那是讀卡的人該看到的字,不是工程術語。 */
+/* 2026-09-06 之前這裡是一份手抄清單:四個 id 前綴 + 九個欄位名 + 「herbs 陣列」。
+   覆核員負控:寫 official_claim_status / migrated_from / pattern.spleen_qi_xu / tdis.hypertension
+   進 teaching_note_zh,全部放行 —— 手抄清單守得住的只有抄過的那幾個。換成兩條通則:
+     · 記錄 id:命名空間**從 bundle 實際的 id 前綴集合取**(今天 24 個),不另抄一份會腐的清單
+     · snake_case 詞形:中文欄位裡不該出現 a_b 這種東西,不管它叫什麼
+   另保留一條通則接住舊清單裡的「herbs 陣列」:英文詞 + 陣列/欄位。
+   刻意不收「Appendix B」「NCBAHM」這種**考綱專有名詞** —— 那是讀卡的人該看到的字,不是工程術語。 */
+const idPrefixes = new Set();
+for (const v of Object.values(K)) {
+  const recs = v && (v.records || v.pairs);
+  if (!Array.isArray(recs)) continue;
+  for (const r of recs) if (r && typeof r.id === "string" && r.id.includes(".")) idPrefixes.add(r.id.split(".")[0]);
+}
+if (idPrefixes.size < 2) {
+  console.log("FAIL — 從 bundle 抽到的 id 前綴只有 " + idPrefixes.size + " 個(今天是 24 個),bundle 形狀變了,不允許空跑通過。");
+  process.exit(1);
+}
+const prefixAlt = [...idPrefixes].sort((a, b) => b.length - a.length).map((s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|");
 const MARKERS = [
-  { re: /\bherb\.[a-z0-9_]+/g,     what: "藥卡 id" },
-  { re: /\bpair\.[a-z0-9_.]+/g,    what: "藥對 id" },
-  { re: /\bformula\.[a-z0-9_]+/g,  what: "方劑 id" },
-  { re: /\bcond\.[a-z0-9_]+/g,     what: "病症 id" },
-  { re: /found_in_formulas|key_pairs|board_exam_pair|ncbahm_official_pair|review_status|schema_note|teaching_note_zh|curation_note_zh|contains_ncbahm_official_pairs?/g,
-    what: "欄位名" },
-  { re: /herbs 陣列/g,             what: "欄位名" },
+  { re: new RegExp("\\b(?:" + prefixAlt + ")\\.[a-z0-9_]+(?:\\.[a-z0-9_]+)*", "g"), what: "記錄 id" },
+  { re: /\b[a-z][a-z0-9]*(?:_[a-z0-9]+)+\b/g, what: "snake_case 欄位名" },
+  { re: /\b[a-z][a-z0-9_]*\s*(?:陣列|欄位)/g, what: "欄位名(英文詞+陣列/欄位)" },
 ];
+
+/* 下限(2026-09-06):有值的 teaching_note_zh 一條都沒抽到 = 欄位名變了或 build 掉欄位,
+   不是「卡上沒有學習提示所以沒問題」。今天 74 條有值。 */
+const withNote = pairs.filter((p) => p.teaching_note_zh).length;
+if (!withNote) {
+  console.log("validate-card-text-audience — 會上卡片的字是寫給讀卡的人看的嗎");
+  console.log("  掃 herb_pairs.teaching_note_zh —— 有值 0 條 / 全部 " + pairs.length + " 條");
+  console.log("\nFAIL — 有值的 teaching_note_zh 一條都沒抽到(今天應有 74 條),欄位名可能變了;這是量不到,不是資料乾淨,不允許空跑通過。");
+  process.exit(1);
+}
 
 const hits = [];
 for (const p of pairs) {
@@ -59,7 +85,8 @@ for (const p of pairs) {
 
 console.log("validate-card-text-audience — 會上卡片的字是寫給讀卡的人看的嗎");
 console.log("  掃 herb_pairs.teaching_note_zh(渲染成卡上「學習提示」)—— 有值 "
-  + pairs.filter((p) => p.teaching_note_zh).length + " 條 / 全部 " + pairs.length + " 條");
+  + withNote + " 條 / 全部 " + pairs.length + " 條");
+console.log("  id 命名空間取自 bundle 前綴集合: " + idPrefixes.size + " 個");
 console.log("  帶欄位名或記錄 id 的: " + hits.length + "(上限 " + CEILING + ")");
 if (hits.length) {
   console.log("");

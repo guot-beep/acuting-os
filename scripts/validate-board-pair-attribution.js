@@ -14,6 +14,8 @@
  *      所以解析出 0 組一律視為 FAIL,不允許空跑通過)
  *   2. 逐條核對 herb_pairs 的 ncbahm_official_pair:true
  *   3. 逐條核對藥卡 key_pairs 標籤裡的 NCBAHM / Appendix B 字樣
+ *   (後來加了第 4 段 contains_ncbahm_official_pairs 指標、第 5 段 relation=pair.rel.board_exam,
+ *    以及 2026-09-06 的下限:四種宣稱載體合計掃到 0 條也 FAIL —— 抽 0 是量不到,不是乾淨)
  *
  * 比對用拼音,並吃別名:考綱寫 Xin Yi Hua / Han Lian Cao / Sha Shen,
  * 本庫正名是 辛夷 / 墨旱蓮 / 北沙參,中文別名對得上就算命中——
@@ -32,8 +34,10 @@ const problems = [];
 const notes = [];
 
 if (!fs.existsSync(OUTLINE)) {
-  console.log("validate-board-pair-attribution — SKIP");
-  console.log("  考綱正本不在 curriculum/board/,無法核對。這不是 PASS,是量不到。");
+  /* 2026-09-06:原本印「SKIP」。exit 2 是對的,但讀 log 的人看到 SKIP 會當成「這支沒跑、沒事」,
+   * 跟 exit 碼說的相反 —— 印字要跟離開碼講同一件事。 */
+  console.log("validate-board-pair-attribution — FAIL(量不到)");
+  console.log("  考綱正本不在 curriculum/board/,無法核對。這不是 PASS,是量不到,所以 exit 2。");
   /* 2026-09-06 接進 CI 時改成 exit 2:正本在 git 裡(curriculum/board/ 9 檔),CI 一定看得到;
    * 看不到就是 checkout 壞了或檔案被搬走 —— 那時報綠等於裝一支「看不見的時候說沒事」的閘門,
    * 正是 validate-ui-freeze 在 2026-08-31 花大力氣修掉的那種。「不知道」要 FAIL,不要 PASS。 */
@@ -162,6 +166,7 @@ for (const b of badCards) {
    沒有這一段,更正過的 9 條就從閘門視野裡消失了(它們已不是 ncbahm_official_pair:true)。 */
 const pairById = new Map(pairs.map((p) => [p.id, p]));
 let okPtr = 0;
+let ptrTotal = 0;   // 掃到的指標條數(成立 + 不成立),下面的「宣稱總數下限」要用
 for (const p of pairs) {
   /* 欄位是**陣列**:一個擴充組合可以內含不只一組考綱對藥
      (延胡索配當歸、川芎、香附 就同時含 當歸+川芎 與 當歸+香附)。
@@ -179,6 +184,7 @@ for (const p of pairs) {
     continue;
   }
   for (const target of targets) {
+    ptrTotal++;
     const t = pairById.get(target);
     if (!t) {
       problems.push({ known: p.id, disclosed: false, text: "herb_pairs " + p.id + " 的 contains_ncbahm_official_pairs 指向不存在的 " + target });
@@ -214,6 +220,29 @@ if (relBad.length > BOARD_REL_CEILING) {
   console.log("  這個 relation 會在卡上印「考綱列名對藥」,核不到就不要用它;");
   console.log("  新增的請改用七情 relation,或不填 relation(卡上就不顯示分類標籤)。");
   relBad.slice(0, 10).forEach((p) => console.log("  ✗ " + p.id + "（" + p.name_zh + "）"));
+}
+
+/* ---- 5. 下限:一條宣稱都沒掃到 = 量不到,不是乾淨(2026-09-06)------------------
+   覆核員 40 案負控抓到的形狀:把四種宣稱載體(布林 ncbahm_official_pair / 藥卡 key_pairs 含
+   NCBAHM 字樣 / contains_ncbahm_official_pairs / relation=pair.rel.board_exam)全部改名,
+   上面四段各自「掃到 0、不成立 0」,閘門照樣全綠。欄位改名、build-data 掉欄位、記錄形狀漂移
+   都長這樣(記憶:scanners that extract zero report everything broken)。
+   今天四種載體合計 53+10+20+18 = 101 條;合計 0 只可能是欄位名變了,一律 FAIL。 */
+const claimByCarrier = {
+  "布林 ncbahm_official_pair": okPairs + badPairs.length,
+  "藥卡 key_pairs 標籤": okCards + badCards.length,
+  "contains_ncbahm_official_pairs 指標": ptrTotal,
+  "relation=pair.rel.board_exam": relClaims.length,
+};
+const claimTotal = Object.values(claimByCarrier).reduce((a, b) => a + b, 0);
+notes.push("四種宣稱載體合計 " + claimTotal + " 條("
+  + Object.entries(claimByCarrier).map(([k, v]) => k + " " + v).join(" / ") + ")");
+if (claimTotal === 0) {
+  console.log("validate-board-pair-attribution — 考綱官方對藥宣稱是否對得上考綱正本");
+  notes.forEach((n) => console.log("  " + n));
+  console.log("\nFAIL — 一條考綱宣稱都沒掃到(四種載體合計 0),欄位名可能變了。");
+  console.log("  這是量不到,不是資料乾淨;不允許空跑通過。先確認 herb_pairs / 藥卡 key_pairs 的欄位名與 build-data 有沒有把欄位帶進 bundle。");
+  process.exit(1);
 }
 
 // Ting 裁定(2026-08-27):對不上本庫 NCBAHM 正本 **不等於** 宣稱是假的 ——

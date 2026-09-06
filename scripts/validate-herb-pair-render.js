@@ -122,6 +122,12 @@ if (!fs.existsSync(bundlePath)) {
         if (!hit) orphanEntries++;
       }
     }
+    /* 下限(2026-09-06):authored key_pairs 一味都沒抽到 = 欄位名變了或 build 掉欄位,
+       不是「沒有手寫藥對所以沒有併集問題」。覆核員負控把每味藥的 key_pairs 刪掉,
+       上面的迴圈一條都不進、problems 空、閘門全綠。今天 26 味 / 33 條。 */
+    if (!authoredHerbs) {
+      problems.push(`authored key_pairs 一味都沒抽到(herbs 共 ${herbs.length} 味;今天應有 26 味 / 33 條)—— 欄位名可能變了或 build 掉了欄位。這是量不到,不是資料乾淨,不允許空跑通過。`);
+    }
     notes.push(`authored key_pairs: ${authoredHerbs} 味 / ${authoredEntries} 條`);
     notes.push(`判定與藥對層重複(渲染時濾掉): ${coveredTotal} 條`);
     notes.push(`併集後在這些卡上新增顯示的結構化藥對: ${unionShown} 條`);

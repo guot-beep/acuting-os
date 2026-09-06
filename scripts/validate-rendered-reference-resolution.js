@@ -34,8 +34,13 @@ const BEHAVIOUR = {
   "formulas.key_pairs": "方劑卡藥對區:解析不到的現在會列出 id 說明尚未建立(改前是靜默丟掉)",
   "herbPairs.herbs": "藥對卡成員 chip:查不到就印 id 去前綴的 slug,不是藥名",
   "patternLibrary.typical_formulas": "證型大卡代表方",
-  "herbPairs.found_in_formulas": "目前未渲染(資料整潔問題,不影響畫面)",
+  "herbPairs.found_in_formulas": "方劑卡「經典對藥」區的第二個來源(2026-09-01 起與 key_pairs 併集渲染;"
+    + "解析不到的 9 條與 validate-found-in-formulas-integrity 的 dangling 9 是同一批前向引用)",
 };
+/* 形狀不對的引用(2026-09-06):字串但前綴不對、物件但沒有 id/formula_id/herb_id、或根本不是字串/物件。
+   之前是 continue —— 覆核員負控往 formulas.key_pairs 塞 "herb.x" / "noprefix" / {pair_id:"pair.x"},
+   三種全放行;而渲染端一樣查不到。今天四個欄位都是 0,上限 0。 */
+const MALFORMED_CEILING = 0;
 
 for (const f of ["core", "ref", "rx", "mm", "dx", "pat"]) {
   const p = path.join(ROOT, "data/generated/knowledge_" + f + ".js");
@@ -78,7 +83,9 @@ const notes = [];
   } else if (!/function\s+relationButton[\s\S]{0,500}?relationTargetExists\s*\(/.test(code)) {
     problems.push("js/knowledge.js 的 relationButton() 沒有呼叫 relationTargetExists() —— 目標不存在時會渲染成死連結");
   }
-  if (!/no \$\{kind\} record for id/.test(rawView)) {
+  // 2026-09-06:改測剝過註解的 code,不測 rawView —— 把 console.warn 換成一行註解「used to log: no ${kind} record for id」
+  // 就能滿足舊寫法(覆核員負控實測放行)。其他三項本來就是測 code。
+  if (!/no \$\{kind\} record for id/.test(code)) {
     problems.push("js/knowledge.js 的 openKnowledgeDetail() 對「kind 認得但記錄不存在」又變回靜默 return —— 那一路要出聲");
   }
   // 證型大卡的 chip 走的是 entityLabel + entityCardExists,不是 relationButton,要分開盯。
@@ -102,20 +109,37 @@ let scanned = 0;
 for (const f of FIELDS) {
   const key = f.set + "." + f.field;
   const bad = new Map();
+  const malformed = [];
   let total = 0;
   for (const r of recs(f.set)) {
     const v = r[f.field];
     for (const x of (Array.isArray(v) ? v : (v ? [v] : []))) {
       const id = typeof x === "string" ? x : (x && (x.id || x.formula_id || x.herb_id));
-      if (typeof id !== "string" || !id.startsWith(f.ns + ".")) continue;
+      if (typeof id !== "string" || !id.startsWith(f.ns + ".")) {
+        // 2026-09-06 之前是 continue:形狀不對的引用直接消失,總數與懸空數都看不到它。
+        malformed.push((r.id || "?") + " → " + (typeof x === "string" ? x : JSON.stringify(x)));
+        continue;
+      }
       total++; scanned++;
       if (!ID[f.ns].has(id)) bad.set(id, (bad.get(id) || 0) + 1);
     }
   }
   const n = [...bad.values()].reduce((a, x) => a + x, 0);
   const cap = CEILING[key];
-  notes.push(key.padEnd(34) + "引用 " + String(total).padStart(4) + " → 解析不到 " + String(n).padStart(3) + " / 上限 " + String(cap === undefined ? "(未設)" : cap));
+  notes.push(key.padEnd(34) + "引用 " + String(total).padStart(4) + " → 解析不到 " + String(n).padStart(3) + " / 上限 " + String(cap === undefined ? "(未設)" : cap)
+    + "  形狀不對 " + malformed.length + " / 上限 " + MALFORMED_CEILING);
+  if (malformed.length > MALFORMED_CEILING) {
+    problems.push(key + " 有 " + malformed.length + " 筆形狀不對的引用(不是 " + f.ns + ". 開頭的字串,也不是帶 id/formula_id/herb_id 的物件),渲染端一樣查不到:"
+      + "\n      " + malformed.slice(0, 5).join("\n      "));
+  }
   if (cap === undefined) { problems.push(key + " 沒有設上限 —— 新欄位要先量一次再把數字寫進 CEILING"); continue; }
+  /* 下限(2026-09-06):這個欄位一筆引用都沒抽到、而上限存在 = 欄位名變了或 build 掉欄位。
+     原本只有全域的 scanned 下限:一個欄位空掉、其他三個還在,照樣全綠(覆核員負控:
+     formulas.key_pairs 全改成 {pair_id} → 抽 0 → PASS)。今天 25 / 739 / 207 / 257。 */
+  if (total === 0) {
+    problems.push(key + " 一筆引用都沒抽到,但上限 " + cap + " 存在 —— 欄位名可能變了或 build 掉了欄位。這是量不到,不是資料乾淨,不允許空跑通過。");
+    continue;
+  }
   if (n > cap) {
     problems.push(key + " 解析不到 " + n + " 條,超過上限 " + cap + "。畫面行為:" + (BEHAVIOUR[key] || "?")
       + "\n      新增的:" + [...bad.keys()].slice(0, 8).join(", "));

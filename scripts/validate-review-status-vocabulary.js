@@ -36,10 +36,15 @@ if (!VOCAB.size) {
   process.exit(1);
 }
 
-const bundlePath = path.join(ROOT, "data/generated/knowledge_data.js");
-if (!fs.existsSync(bundlePath)) { console.log("FAIL — 先跑 node scripts/build-data.js"); process.exit(1); }
-globalThis.window = globalThis;
-require(bundlePath);
+/* 2026-09-06:改讀 index.html 真正載入的六片 shard(knowledge_core/ref/rx/mm/dx/pat.js),
+   不讀 knowledge_data.js —— 那一片沒有被 index.html 載入,驗它等於驗一份畫面用不到的複本;
+   兩份分岔時(build-data 只更新其中一份)閘門看的會是錯的那份。 */
+for (const f of ["core", "ref", "rx", "mm", "dx", "pat"]) {
+  const p = path.join(ROOT, "data/generated/knowledge_" + f + ".js");
+  if (!fs.existsSync(p)) { console.log("FAIL — 先跑 node scripts/build-data.js(缺 " + f + " 分片)"); process.exit(1); }
+  globalThis.window = globalThis;
+  require(p);
+}
 const K = globalThis.ACUTING_KNOWLEDGE || {};
 
 // statusPill 會被叫到的那些記錄集合。新增知識線時要記得加進來——
@@ -48,25 +53,43 @@ const SETS = [
   "herbs", "formulas", "conditionCanon", "conditions", "patternLibrary", "patternRegistry",
   "symptoms", "comparisons", "tdisRegistry", "supplementRecords", "pharmDrugs", "medications",
 ];
+/* 渲染端對這三個集合是 `review_status || status`(js/knowledge.js 的證型卡 L3351/L3501、
+   鑑別表 L2906);驗證器要跟渲染器同一把尺,不然 status:"owner_filled" 而沒有 review_status 的記錄,
+   卡上印生字串、這裡卻看不到(覆核員負控實測放行)。用 || 不用 ??,因為渲染器是 ||:
+   review_status 為空字串時渲染器會退到 status,?? 不會。 */
+const STATUS_FALLBACK_SETS = new Set(["patternLibrary", "patternRegistry", "comparisons"]);
 let scanned = 0;
 const offenders = new Map();   // value -> [{set, id}]
+const missingSets = [];
 for (const name of SETS) {
   const d = K[name];
-  const recs = (d && (d.records || d.pairs)) || [];
+  const recs = d && (d.records || d.pairs);
+  /* 2026-09-06:原本 `|| []` —— 集合從 bundle 消失時掃 0 筆、沒有違規、閘門全綠
+     (覆核員負控:delete K.tdisRegistry → PASS)。集合不在 = 那條線不受保護,要 FAIL 並印集合名。 */
+  if (!d || !Array.isArray(recs) || !recs.length) { missingSets.push(name + (d ? "(存在但沒有 records/pairs 或為空)" : "(bundle 裡沒有這個集合)")); continue; }
   for (const r of recs) {
     scanned++;
-    const v = r.review_status;
+    const v = STATUS_FALLBACK_SETS.has(name) ? (r.review_status || r.status) : r.review_status;
     if (v === undefined || v === null || v === "") continue;   // statusPill 會 fallback 成 draft
     if (VOCAB.has(String(v))) continue;
     if (!offenders.has(String(v))) offenders.set(String(v), []);
     offenders.get(String(v)).push(name + ":" + r.id);
   }
 }
+if (missingSets.length) {
+  console.log("validate-review-status-vocabulary — 狀態標籤會不會印出生 enum");
+  console.log("  掃描 " + SETS.length + " 個記錄集合，共 " + scanned + " 筆");
+  missingSets.forEach((s) => console.log("  ✗ 集合不在 bundle:" + s));
+  console.log("\nFAIL — " + missingSets.length + " 個集合在六片 shard 裡讀不到。那條線就不受這個 gate 保護;");
+  console.log("  集合改名就把 SETS 跟著改,build-data 掉了集合就去修 build,不要在這裡放行。");
+  process.exit(1);
+}
 if (!scanned) { console.log("FAIL — 一筆記錄都沒掃到，bundle 或集合名稱不對，不允許空跑通過。"); process.exit(1); }
 
 console.log("validate-review-status-vocabulary — 狀態標籤會不會印出生 enum");
 console.log("  受控詞彙(取自 js/knowledge.js STATUS_LABEL): " + [...VOCAB].join(" / "));
-console.log("  掃描 " + SETS.length + " 個記錄集合，共 " + scanned + " 筆");
+console.log("  掃描 " + SETS.length + " 個記錄集合(六片 shard)，共 " + scanned + " 筆;"
+  + [...STATUS_FALLBACK_SETS].join("/") + " 讀 review_status || status(與渲染器同一把尺)");
 if (!offenders.size) {
   console.log("\nPASS — 沒有詞彙外的 review_status。");
   process.exit(0);
