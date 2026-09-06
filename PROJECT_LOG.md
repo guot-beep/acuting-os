@@ -1,3 +1,29 @@
+# 2026-09-06(續二)— 兩條內容線落地:方劑加減 zh 1 張(81 條待裁)、西藥黑框查證 30 筆降級 + 1 筆假陰性撤回;pharmPanels 空標題 bug 修掉
+
+**MEASURED TREE: main @ 925bc002**
+
+| 線 | 結果 | 覆核 |
+|---|---|---|
+| 方劑加減 zh(CloudTCM `formula_url_map`) | 118 整段消失 → 72 對得到 → 68 過組成交叉驗證 ≥70% → 24 張 85 條逐字驗 → **落 1 張**(麥門冬湯 4 條),23 張 81 條被 F5 擋(template-grade 不得 zh-only)→ `docs/research_packs/MODIFICATIONS_ZH_CLOUDTCM_PENDING_F5_2026-09-06.json` | 成立,0 歸屬錯誤;它自己排除至寶丹(同名異方 0%)、潤腸丸(40%)、荊防敗毒散(段落講敗毒散)等 |
+| 西藥黑框查證註記(DailyMed 回應) | 31 筆填「未列黑框警語」→ **furosemide 假陰性**(SPL 首節就是 WARNING 黑框全文,只是沒編 LOINC 34066-1)四鍵撤回;其餘 30 筆降級為機器事實「未標記黑框警語區段(LOINC 34066-1)」 | 推翻(1 歸屬錯誤、0 損害);覆核員對 31 個 setid 的 live XML 逐一掃 pre-body/WARNING 標題,30 乾淨 |
+| `js/knowledge.js` pharmPanels | `checkedNote`/`acuNote` 用 `pair()` 回傳做真值判斷,兩欄皆空是 truthy → **33/59 張卡對沒人查過的藥印空的「黑框警告:已查證」標題**;改 `has(zh,en)`;真瀏覽器四張卡實測 | — |
+
+教訓寫進記憶:**宣稱強度不得大於證據強度** —— 「SPL 沒有 34066-1」不等於「沒有黑框」;句子只能說機器實際查到的那件事。
+
+## 待 Ting(D10,五條)
+
+F5 放寬或我翻 81 條英文(建議翻,同一來源錨點)· furosemide 偵測法補「首節 WARNING」(我做)· 30 筆措辭是否要更白話(可逆)·
+levothyroxine / semaglutide 把 warnings_zh[0] 搬進 boxed_warning · heparin 補 _en 與來源。
+
+## 驗證器(925bc002)
+
+```
+validate-pharm-standard PASS · validate-formula-standard PASS(有加減變化 99/223)· content-junk PASS ·
+bilingual-index-pairing PASS · ui-freeze PASS(凍結例外)· ratchet 17 層 flat PASS
+drugs.json:記錄 59→59、id 集合不變、帳本 60 條寫入 60 不符 0
+```
+
+
 # 2026-09-06(續)— fixture 74→0 挖出兩週的匯出欄名 bug;六支驗證器加下限(11 案由綠轉紅);方劑搜尋 category_zh;CI 連五輪綠
 
 **MEASURED TREE: main @ 317d8d7e**(CI run 34045076266 起連續 success)
