@@ -495,7 +495,23 @@
         "patternDifferentials": "array",
         "lifestyleFactors": "array",
         "adverseEvents": "array",
-        "outcomeMetrics": "array"
+        "outcomeMetrics": "array",
+        "cycleDay": "number",
+        "fertilityPhase": "string",
+        "workflowLink": "string",
+        "cyclePhase": "string",
+        "tongueBody": "string",
+        "tongueCoating": "string",
+        "pulse": "string",
+        "vitals": "string",
+        "tcmPattern": "string",
+        "pathomechanism": "string",
+        "treatmentPrinciple": "string",
+        "modalities": "string",
+        "advice": "string",
+        "westernConditionLinks": "array",
+        "easternDiseaseLinks": "array",
+        "tcmPatternLinks": "array"
       }
     }
   },
