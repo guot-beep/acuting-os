@@ -15,7 +15,10 @@
  *
  * 接線之後這支就是那條線的守門。
  *
- * 三個計數，每個一個上限，**只准變少**:
+ * 四個計數，每個一個上限，**只准變少**:
+ *   malformed found_in_formulas 裡不是 `formula.` 開頭字串的東西(物件、裸 slug、別的命名空間)。
+ *             2026-09-06 之前這些被 `continue` 靜默跳過 —— 覆核員負控塞 {id:"formula.x"} /
+ *             "si_jun_zi_tang" / "herb.x" 三種都放行,而渲染端一樣查不到。上限 0。
  *   dangling  found_in_formulas 指向不存在的方(目前 9 條 / 7 首方)
  *   mismatch  藥對某味不在該方 composition。比對會吃兩件事:
  *             · 同一味藥的兩張卡(中文名/別名交集分群)
@@ -35,9 +38,19 @@ const ROOT = path.join(__dirname, "..");
 // 2026-09-01:接線同批把 21 條不成立的連結修掉後鎖到 0。
 // mismatch / both_missing **一條都不准新增** —— 這條線現在會上畫面。
 // dangling 9 是前向引用(指向 7 首尚未建卡的方),前批已裁定保留,只准變少。
-const CEILING = { dangling: 9, mismatch: 0, both_missing: 0 };
+const CEILING = { malformed: 0, dangling: 9, mismatch: 0, both_missing: 0 };
 
-const readJson = (rel) => JSON.parse(fs.readFileSync(path.join(ROOT, rel), "utf8"));
+// 2026-09-06:原本是裸 JSON.parse(readFileSync) —— 檔案不在時吐一整段 ENOENT 堆疊,
+// 讀 log 的人要自己從堆疊裡撈路徑。改成印檔名、exit 1。
+const readJson = (rel) => {
+  try {
+    return JSON.parse(fs.readFileSync(path.join(ROOT, rel), "utf8"));
+  } catch (e) {
+    console.log("FAIL — 讀不到 " + rel + "(" + ((e && e.code) || (e && e.name) || "error") + ":" + ((e && e.message) || "") + ")");
+    console.log("  檔案缺了或不是合法 JSON;這是量不到,不是資料乾淨,不允許空跑通過。");
+    process.exit(1);
+  }
+};
 const hp = readJson("data/herbs/herb_pairs.json");
 const pairs = hp.pairs || [];
 const forms = readJson("data/herbs/formulas.json").records || [];
@@ -86,12 +99,17 @@ PART_GROUPS.forEach((g, i) => g.forEach((id) => partOf.set(id, "part" + i)));
 const samePart = (a, b) => partOf.has(a) && partOf.get(a) === partOf.get(b);
 
 let links = 0;
+const malformed = [];
 const dangling = new Map();
 const mismatch = [];
 const bothMissing = [];
 for (const p of pairs) {
   for (const fid of (p.found_in_formulas || [])) {
-    if (typeof fid !== "string" || !fid.startsWith("formula.")) continue;
+    if (typeof fid !== "string" || !fid.startsWith("formula.")) {
+      // 2026-09-06 之前這裡是 continue:形狀不對的引用直接消失,三個計數都看不到它。
+      malformed.push({ pair: p.id, pairZh: p.name_zh || p.id, raw: typeof fid === "string" ? fid : JSON.stringify(fid) });
+      continue;
+    }
     const f = byF.get(fid);
     if (!f) { dangling.set(fid, (dangling.get(fid) || 0) + 1); continue; }
     links++;
@@ -106,16 +124,27 @@ for (const p of pairs) {
   }
 }
 const nDangling = [...dangling.values()].reduce((a, b) => a + b, 0);
-const counts = { dangling: nDangling, mismatch: mismatch.length, both_missing: bothMissing.length };
+const counts = { malformed: malformed.length, dangling: nDangling, mismatch: mismatch.length, both_missing: bothMissing.length };
 
 console.log("validate-found-in-formulas-integrity — 藥對→方劑的反向索引站不站得住");
 console.log("  這條線 2026-09-01 起有渲染(formulaPairsSection 與 key_pairs 併集):" + links + " 條可查證連結、"
   + new Set(pairs.flatMap((p) => (p.found_in_formulas || []).filter((x) => byF.has(x)))).size + " 張方劑卡會用到。");
+/* 下限(2026-09-06):可查證連結 0 條 = 欄位名變了或 build 掉欄位,不是「沒有連結所以三個計數都 0」。
+   覆核員負控把每一條 found_in_formulas 改名,三個計數全 0、閘門全綠。今天 248 條。 */
+if (links === 0) {
+  console.log("\nFAIL — 一條可查證連結都沒抽到(found_in_formulas 今天應有 248 條),欄位名可能變了;這是量不到,不是資料乾淨,不允許空跑通過。");
+  process.exit(1);
+}
 for (const k of Object.keys(CEILING)) {
   console.log("  " + k.padEnd(14) + String(counts[k]).padStart(3) + " / 上限 " + CEILING[k]);
 }
 const over = Object.keys(CEILING).filter((k) => counts[k] > CEILING[k]);
 const better = Object.keys(CEILING).filter((k) => counts[k] < CEILING[k]);
+if (malformed.length) {
+  console.log("\n  形狀不對的引用(不是 formula. 開頭的字串;渲染端一樣查不到,以前被靜默跳過):");
+  malformed.slice(0, 20).forEach((r) => console.log("    " + r.pairZh.padEnd(22) + "→ " + r.raw));
+  if (malformed.length > 20) console.log("    …另有 " + (malformed.length - 20) + " 條。");
+}
 if (dangling.size) {
   console.log("\n  指向不存在的方(前向引用，前批已裁定「留引用不補骨架」):");
   for (const [fid, n] of dangling) console.log("    " + fid.padEnd(46) + n + " 次");
@@ -138,4 +167,4 @@ if (over.length) {
     + "\n  處置:把該連結拿掉,或改指組成真的含有這條藥對全部成員的方 —— 不要改比對規則來讓它變綠。");
   process.exit(1);
 }
-console.log("\nPASS — 三個計數都在上限內。");
+console.log("\nPASS — 四個計數都在上限內。");
