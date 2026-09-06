@@ -1,3 +1,34 @@
+# 2026-09-06(續)— fixture 74→0 挖出兩週的匯出欄名 bug;六支驗證器加下限(11 案由綠轉紅);方劑搜尋 category_zh;CI 連五輪綠
+
+**MEASURED TREE: main @ 317d8d7e**(CI run 34045076266 起連續 success)
+
+| 事 | 數字 / 證據 |
+|---|---|
+| 持久層對照表「登記了但沒被 fixture 演練」 | **74 → 0**(棘輪 `mapping_fixture_uncovered`);74 欄位每一個附 app.js 匯出寫入行號 |
+| 順帶抓到的真 bug | `export-clinical-to-sqlite.js` 對三張表寫 `condition_id / disease_id / safety_flag_id`,表上實際是 `western_condition_id / eastern_disease_id / flag_type`;`put()` 靜默丟欄再撞 NOT NULL,兩週沒人知道,因為 fixture 從沒帶過那幾欄。已修;self-test 45 列 / 22 表往返相符 |
+| `put()` 改 fail-loud | 欄名不在表上 → 記錯、拒寫、整支 exit≠0。負控:把 HANDLER 欄名故意寫錯 → exit 1「欄名不在表上 → condition_id」 |
+| 六支新接線驗證器加「抽 0 筆也 FAIL」與 malformed 桶 | 覆核員 harness 40 案:**11 案 exit 0 → 1、0 案變差**;另加 10 新案 9 紅 1 by-design 綠 |
+| 方劑搜尋讀不到 `category_zh` | 219 張都有 category_zh 卻沒索引;修;驗證器擴到方劑(負控拿掉修正 → FAIL 15 行) |
+| CI | b196248f…ea15ea0f 六輪紅 → df204009 / 1f6d8656 / 2bfe1894 / 745b5197 / f01614fb / 4b317fd6 全綠 |
+
+## 誠實的但書(fixture 執行者自己列的,我照登)
+
+- 7 欄只演練到「key 在、值空」(`currentMeds`、`workflowLink`、`tcmPattern`、`tcmPatternLinks`、`pointsUsed`、`outcomeMetricLinks`、`effectDurationDays`):投影腳本刻意不實作,round-trip **仍未證明**;棘輪的 0 不是 105/105 都走過去回來。→ 待裁 D9-1。
+- 對照表落後 normalizer **12 欄**(`publicationConsent*`、六個 `reflection*`、`modalitiesPerformed`、`symptomLinks`、`herbLinks`、`avsSnapshots`),app 會匯出、對照表沒登記、fixture 刻意沒放。→ 待裁 D9-2。
+- `westernConditions` 等四欄 UI 是自由文字,對照表寫「一 id 一列」;真實資料很可能是人話。→ 待裁 D9-3。
+- `test-clinical-sqlite-service.js:195` 假設 fixture 只有一個病人,第二病例用同一代號 `FAKE-FIXTURE-A` 繞過;要放第二病人得改它。
+- 六支裡 herbPairs 仍不在 review-status 的 SETS(執行者未查證藥對卡有沒有 statusPill),下一條線。
+
+## 文件
+
+DEPLOYMENT.md「現況(09-02 起)在 Cloudflare Access 後面」改為 09-06 的 Worker + D1 + 通行碼(09-02 那段降為歷史)。
+PLAN 08-26→09-09 五個勾選框逐項附證據(2 打勾、2 部分、1 打勾附但書)。
+
+## 進行中
+
+兩條內容線(方劑加減 zh 自 CloudTCM、西藥黑框查證註記自 DailyMed 回應)各配覆核員,回來後驗收。
+
+
 # 2026-09-06 — D33 切換上線;main 的 CI 從 9/02 起是紅的、棘輪四天沒有 gate,今天修好轉綠;六支驗證器接線;持久層反向覆蓋入棘輪
 
 **MEASURED TREE: main @ 1f6d8656(CI run 34044169277 全綠)**
