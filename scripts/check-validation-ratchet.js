@@ -54,6 +54,18 @@ const RATCHETED = [
     detail: (out) => JSON.parse(out).by_code,
     doc: "data/clinical_cases/localstorage_sqlite_mapping.json",
   },
+  /* 第三個方向(2026-09-06):app 的 normalizer 現在會寫的欄位,對照表有沒有登記。
+   * 對照表的「2026-08 機械比對過」是快照;程式碼漂了 12 欄沒人知道。沙箱讀不到形狀時吐 skipped(allowSkip),
+   * 不當 0 也不弄暗別層。 */
+  {
+    key: "mapping_unregistered_runtime_fields",
+    script: "scripts/validate-sqlite-mapping-coverage.js",
+    args: ["--runtime-json"],
+    allowSkip: true,
+    extract: (out) => JSON.parse(out).defects,
+    detail: (out) => JSON.parse(out).by_code,
+    doc: "docs/TING_PENDING_RULINGS_2026-08-31.md",
+  },
   {
     key: "conditions",
     script: "scripts/validate-condition-standard.js",

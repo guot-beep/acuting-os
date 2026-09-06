@@ -76,6 +76,40 @@ for (const m of mapping.mappings || []) {
   uncovered.push({ key, scope: m.source_scope, field: m.source_field });
 }
 
+/* 第三個方向(2026-09-06 加):**app 現在真的會寫進 localStorage 的欄位**,對照表有沒有登記。
+ * 對照表 residual_gaps.note 寫「2026-08 機械比對過 normalizer 每一個 key」—— 那是快照,程式碼會漂。
+ * 補 fixture 時發現 normalizer 已多出 12 個欄位(publicationConsent*、六個 reflection*、modalitiesPerformed、
+ * symptomLinks、herbLinks、avsSnapshots)是對照表沒有的:app 會匯出、對照表不知道、fixture 刻意不放(放了正向閘會紅)。
+ * 這裡用 scripts/lib/clinical-normalizer-shape.js 在沙箱裡真的跑 normalizeClinicalCase/normalizeSoapNote 讀鍵,
+ * 與對照表比;數字進棘輪(mapping_unregistered_runtime_fields,只准降)。每欄的 status 詞要 Ting 點頭(D9-2),
+ * 這支只負責讓漂移看得見。 */
+let runtimeUnregistered = [];
+let runtimeNote = "";
+try {
+  const { readNormalizerShapes } = require("./lib/clinical-normalizer-shape.js");
+  const shapes = readNormalizerShapes(fs.readFileSync(path.join(ROOT, "app.js"), "utf8"));
+  for (const scope of ["case", "soap"]) {
+    const keys = Object.keys((shapes.scopes || {})[scope] || {});
+    if (!keys.length) { runtimeNote += `(${scope} 形狀抽到 0 鍵,沙箱可能壞了)`; continue; }
+    for (const k of keys) {
+      if (registered.has(`${scope}.${k}`) || registered.has(k)) continue;
+      runtimeUnregistered.push({ key: `${scope}.${k}`, scope, field: k });
+    }
+  }
+  if (shapes.uncaptured && shapes.uncaptured.length) runtimeNote += `(normalizer 抓不到形狀:${shapes.uncaptured.join(", ")})`;
+} catch (e) {
+  runtimeNote = `(normalizer 形狀讀取失敗:${String(e && e.message).slice(0, 80)})`;
+  runtimeUnregistered = null;   // 讀不到 = 量不到,不是 0
+}
+
+if (process.argv.includes("--runtime-json")) {
+  if (runtimeUnregistered === null) { console.log(JSON.stringify({ skipped: true, reason: "normalizer_shape_unreadable", note: runtimeNote })); process.exit(0); }
+  const byScope = {};
+  for (const u of runtimeUnregistered) byScope[u.scope] = (byScope[u.scope] || 0) + 1;
+  console.log(JSON.stringify({ defects: runtimeUnregistered.length, by_code: byScope }));
+  process.exit(0);
+}
+
 if (process.argv.includes("--uncovered-json")) {
   const byScope = {};
   for (const u of uncovered) byScope[u.scope] = (byScope[u.scope] || 0) + 1;
@@ -94,7 +128,12 @@ console.log("localStorage→SQLite 對照表覆蓋率(D18 前提紀律)\n");
 console.log(`  對照表登記欄位        ${(mapping.mappings || []).length}`);
 console.log(`  fixture 出現的欄位    ${seen.size}`);
 console.log(`  未登記                ${missing.length}`);
-console.log(`  登記了但沒被 fixture 演練  ${uncovered.length}   (棘輪層 mapping_fixture_uncovered,只准降;這就是「round-trip 無損」目前真正證明到的範圍)\n`);
+console.log(`  登記了但沒被 fixture 演練  ${uncovered.length}   (棘輪層 mapping_fixture_uncovered,只准降;這就是「round-trip 無損」目前真正證明到的範圍)`);
+console.log(`  app 會寫、對照表沒登記    ${runtimeUnregistered === null ? "量不到" : runtimeUnregistered.length}   (棘輪層 mapping_unregistered_runtime_fields,只准降;來自沙箱實跑 normalizer)${runtimeNote}\n`);
+if (runtimeUnregistered && runtimeUnregistered.length && process.argv.includes("--worklist")) {
+  console.log("  對照表沒登記的 runtime 欄位(D9-2,每欄要一個 status 詞):");
+  for (const u of runtimeUnregistered) console.log(`    · ${u.key}`);
+}
 for (const m of missing) console.log(`  ⛔ ${m.key}  —— 真實匯出形狀裡有,對照表沒有`);
 if (!missing.length) console.log("  (無)");
 if (uncovered.length && process.argv.includes("--worklist")) {

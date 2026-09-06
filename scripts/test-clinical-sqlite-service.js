@@ -192,8 +192,12 @@ function runContract(b) {
     assert.strictEqual(st.ok, true, "投影應成功:\n" + (st.summary || []).join("\n"));
     const nCases = svc.db.prepare("SELECT COUNT(*) n FROM cases").get().n;
     const nPatients = svc.db.prepare("SELECT COUNT(*) n FROM patients").get().n;
-    assert.strictEqual(nCases, FIXTURE.length); assert.strictEqual(nPatients, 1);
-    ok(`存檔後投影表重建:cases=${nCases} patients=${nPatients}`);
+    // 病人數從 fixture 算,不寫死 1:2026-09-06 fixture 加了第二病例(同一代號 FAKE-FIXTURE-A 才沒撞到這行);
+    // 之後放第二個病人時,這條會自己跟上,而不是逼人用同一代號繞過。
+    const expectPatients = new Set(FIXTURE.map((c) => String(c.patientCode || "").trim()).filter(Boolean)).size;
+    assert.strictEqual(nCases, FIXTURE.length);
+    assert.strictEqual(nPatients, expectPatients, `patients 應 = fixture 相異 patientCode 數 ${expectPatients}`);
+    ok(`存檔後投影表重建:cases=${nCases} patients=${nPatients}(fixture 相異病人 ${expectPatients})`);
     assert.strictEqual(svc.store.get(KEYS.STORAGE), bytes, "投影重建不得動到正本");
     ok("重建投影後正本位元組不變");
     const tables = svc.db.prepare("SELECT COUNT(*) n FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%' AND name NOT LIKE 'clinical_%'").get().n;

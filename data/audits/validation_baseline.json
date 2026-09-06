@@ -21,6 +21,10 @@
     {
       "date": "2026-09-06",
       "reason": "mapping_fixture_uncovered 加入棘輪:對照表 105 欄位裡 fixture 只演練 31 個,把「沒演練」的 74 記成天花板(只准降);W2-1 round-trip 宣稱至此有了誠實的分母"
+    },
+    {
+      "date": "2026-09-06",
+      "reason": "mapping_unregistered_runtime_fields 加入棘輪:沙箱實跑 normalizer 讀鍵,對照表沒登記的 runtime 欄位 12 個記成天花板(只准降;每欄 status 詞待 D9-2)"
     }
   ],
   "layers": {
@@ -228,6 +232,14 @@
       "defects": 0,
       "by_code": {},
       "doc": "docs/AI_CONSTITUTION.md"
+    },
+    "mapping_unregistered_runtime_fields": {
+      "defects": 12,
+      "by_code": {
+        "case": 8,
+        "soap": 4
+      },
+      "doc": "docs/TING_PENDING_RULINGS_2026-08-31.md"
     }
   }
 }
