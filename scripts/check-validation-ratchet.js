@@ -43,6 +43,17 @@ const BASELINE = "data/audits/validation_baseline.json";
 // Each entry: run the validator with --json and read `defects` (or a custom
 // extractor). Adding a layer here is how it joins the ratchet.
 const RATCHETED = [
+  /* 持久層對照表的反向覆蓋(2026-09-06):105 個登記欄位裡 fixture 只演練 33 個。
+   * 「round-trip 無損」的宣稱只證明到 33/105 —— 把沒演練的那個數字放進棘輪,補 fixture 才會有壓力。
+   * 這一層數的是「登記了但沒有任何 fixture 出現過」的欄位;把數字降下來的唯一合法方式是補 fixture,不是刪對照表。 */
+  {
+    key: "mapping_fixture_uncovered",
+    script: "scripts/validate-sqlite-mapping-coverage.js",
+    args: ["--uncovered-json"],
+    extract: (out) => JSON.parse(out).defects,
+    detail: (out) => JSON.parse(out).by_code,
+    doc: "data/clinical_cases/localstorage_sqlite_mapping.json",
+  },
   {
     key: "conditions",
     script: "scripts/validate-condition-standard.js",
@@ -199,9 +210,10 @@ const RATCHETED = [
     key: "acupoint_page_anchors",
     script: "scripts/validate-acupoint-page-anchor-accuracy.js",
     args: ["--json"],
-    /* skipped 必須爆掉,不能靜靜當 0 —— 沒有 pdftotext 就是「這一層沒量到」,
-       而 `undefined` 拿去跟基準比不會觸發 REGRESS,結果是安靜地全過。
-       這正是這個 repo 被坑最多次的形狀,所以在這裡就攔下來。 */
+    /* 這一層環境相依(CI=poppler / 本機=Xpdf)。skipped 不能靜靜當 0 —— 但也不能把其餘 15 層弄暗
+       (2026-09-02 → 09-06 就是這樣)。allowSkip:主迴圈讀到 skipped 會印 UNMEASURED + ::warning:: 並跳過比對;
+       沒有 allowSkip 的層吐 skipped 仍然走下面的 extract 直接爆。 */
+    allowSkip: true,
     extract: (out) => {
       const j = JSON.parse(out);
       if (j.skipped) throw new Error("pdftotext 不在,這一層沒有量到:" + j.reason);
@@ -260,9 +272,23 @@ const baseline = fs.existsSync(baselinePath)
   : { note: "", layers: {} };
 
 const current = {};
+const ghWarn = (title, msg) => console.log(`::warning title=${title}::${String(msg).replace(/\n/g, " ")}`);
 for (const entry of RATCHETED) {
   const res = run(entry.script, entry.args);
   const out = res.out;
+  /* 環境相依的層(目前只有 acupoint_page_anchors:CI=poppler、本機=Xpdf,-layout 分欄不同)
+   * 在「量不到」時吐 {skipped:true, reason}。這裡**不**把它當 0、也**不**讓它把整個 job 弄紅 ——
+   * 2026-09-02 → 09-06 它就是這樣讓其餘 15 層在 main 上四天沒有 gate。
+   * 處置:印 UNMEASURED + GitHub ::warning:: 註記(從 checks API 讀得到),不比對、不改基準。
+   * 只有 allowSkip 的層可以這樣;其他層吐 skipped 仍然當故障(下面 extract 會丟)。 */
+  if (entry.allowSkip) {
+    let j = null; try { j = JSON.parse(out.trim().split("\n").filter(Boolean).pop()); } catch { j = null; }
+    if (j && j.skipped === true) {
+      current[entry.key] = { skipped: true, reason: j.reason || "unknown", scanned: j.scanned, unresolved: j.unresolved, doc: entry.doc };
+      ghWarn(entry.key, `本輪未量到(${j.reason || "unknown"};scanned=${j.scanned ?? "?"} unresolved=${j.unresolved ?? "?"})— 這一層沒有 gate,其餘層照常。`);
+      continue;
+    }
+  }
   let count;
   try {
     count = entry.extract(out);
@@ -299,6 +325,11 @@ let regressed = false;
 let improved = false;
 const lines = [];
 for (const entry of RATCHETED) {
+  if (current[entry.key].skipped) {
+    const c = current[entry.key];
+    lines.push(`  UNMEASURED ${entry.key.padEnd(10)} 本輪未量到(${c.reason};scanned=${c.scanned ?? "?"} unresolved=${c.unresolved ?? "?"})— 不比對、不改基準;其餘層照常`);
+    continue;
+  }
   const now = current[entry.key].defects;
   const was = baseline.layers?.[entry.key]?.defects;
   if (was === undefined) {
@@ -337,7 +368,10 @@ if (UPDATE || REBASELINE) {
         { date: new Date().toISOString().slice(0, 10), reason: REBASELINE_REASON },
       ],
     } : baseline.rebaseline_history ? { rebaseline_history: baseline.rebaseline_history } : {}),
-    layers: Object.fromEntries(Object.entries(current).map(([k, v]) => [k, { defects: v.defects, by_code: v.by_code, doc: v.doc }])),
+    // 未量到的層:沿用基準裡原本的值,不寫 undefined(那會讓下一輪變成 NEW / 天花板消失)
+    layers: Object.fromEntries(Object.entries(current).map(([k, v]) => [k,
+      v.skipped ? (baseline.layers?.[k] || { defects: null, by_code: {}, doc: v.doc, note: "unmeasured at first record" })
+                : { defects: v.defects, by_code: v.by_code, doc: v.doc }])),
   };
   fs.writeFileSync(baselinePath, JSON.stringify(next, null, 2) + "\n", "utf8");
   console.log(`baseline ${REBASELINE ? "REBASELINED (" + REBASELINE_REASON + ")" : "updated"} → ${BASELINE}`);

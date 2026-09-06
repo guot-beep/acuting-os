@@ -715,14 +715,6 @@ jobs:
       - name: pdftotext (acupoint page-anchor accuracy needs the PDF layout)
         run: sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils
 
-      # 覆蓋率印出來給人看。ratchet 只把關「指錯」的數量,它不會告訴你這支到底
-      # **驗了幾筆** —— 而本機是 Xpdf 4.00、CI 是 poppler,兩者 -layout 的分欄不保證
-      # 一致。真的對不上時,症狀是「查不到」變多、缺陷數照樣 0(方向是安全的,
-      # 但 gate 會安靜地縮水)。所以獨立跑一次讓數字進 log:落地時是
-      # 掃到 419 / 強驗 419 / 弱檢查 0 / 查不到 0,對不起來就是抽取器差異,不是資料。
-      - name: acupoint page-anchor accuracy (coverage numbers visible in the log)
-        run: node scripts/validate-acupoint-page-anchor-accuracy.js
-
       - name: herb exam-track filler (template sentences are defects, not content)
         run: node scripts/validate-herb-track-filler.js
 
@@ -731,8 +723,35 @@ jobs:
       - name: herb search index covers every visible function (functions_zh was unindexed)
         run: node scripts/validate-herb-search-index.js
 
+      # ── 2026-09-06:六支寫好卻沒接線的驗證器(2026-08-24 盤點的差集,今天全綠)一次接上。
+      #    憲法:「靠機器守,不靠記得」。寫好沒接線比沒寫更糟 —— 它讓人以為那條線有人守著。
+      #    board-pair 原本正本缺檔時 exit 0(看不見就報綠),接線前已改成 exit 2。
+      - name: board exam pair attribution matches the outline in repo (source missing = FAIL, not PASS)
+        run: node scripts/validate-board-pair-attribution.js
+      - name: card learning hints never leak field names or record ids to readers
+        run: node scripts/validate-card-text-audience.js
+      - name: found_in_formulas counts stay within bounds
+        run: node scripts/validate-found-in-formulas-integrity.js
+      - name: herb pair sources actually reach the card
+        run: node scripts/validate-herb-pair-render.js
+      - name: rendered references resolve (only those the card shows)
+        run: node scripts/validate-rendered-reference-resolution.js
+      - name: review_status vocabulary at the render layer (twin of the data-layer lock)
+        run: node scripts/validate-review-status-vocabulary.js
+
       - name: no layer may get worse than its committed baseline
         run: node scripts/check-validation-ratchet.js
+
+      # 覆蓋率印出來給人看(掃到 / 強驗 / 弱檢查 / 查不到)。本機是 Xpdf 4.00、CI 是 poppler,
+      # -layout 分欄不同;2026-09-02 → 09-06 這一步在 CI 每次都撞 40% 斷路器 exit 2,而它排在 ratchet
+      # **之前** —— 結果是整個 job 紅、其餘 15 層四天沒有 gate,沒有人收到通知。
+      # 現在:(1) 移到 ratchet 之後;(2) continue-on-error —— 它量不到時會印 ::warning:: 註記(checks API 讀得到),
+      # 不再有能力弄暗別的層;(3) 棘輪那邊對這一層讀到 skipped 會印 UNMEASURED、不比對。
+      # 這不是把問題藏起來:問題(poppler 版面判準)還在,只是不再拖其他人下水。修好判準之前,
+      # 這一層在 CI 上的真實狀態就是「未量到」,本機仍量、仍 gate。
+      - name: acupoint page-anchor accuracy (coverage numbers visible in the log; may be unmeasurable on poppler)
+        run: node scripts/validate-acupoint-page-anchor-accuracy.js
+        continue-on-error: true
 
   clinical-data-never-committed:
     name: no patient data in git (DECISIONS D4/D7)

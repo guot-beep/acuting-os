@@ -63,6 +63,26 @@ for (const [key, { scope, field }] of seen) {
   missing.push({ key, scope, field });
 }
 
+/* 反向覆蓋(2026-09-06 加):對照表登記了 105 個欄位,fixture 只出現 33 個 ——
+ * 這支原本只守「fixture 的欄位都有登記」,對「登記了的欄位有沒有被任何 fixture 演練過」一句話都沒說,
+ * 所以「round-trip 無損」的宣稱實際只證明了 33/105(2026-09-04 覆核抓到,W2-1 由已完成降為部分完成)。
+ * 現在把「登記了但 fixture 沒演練」的欄位數量印出來,並以 --uncovered-json 給棘輪(只准降)。
+ * 這不是假裝覆蓋,是把沒覆蓋的數字放到看得見的地方。 */
+const seenFields = new Set([...seen.keys(), ...[...seen.values()].map((v) => v.field)]);
+const uncovered = [];
+for (const m of mapping.mappings || []) {
+  const key = `${m.source_scope}.${m.source_field}`;
+  if (seenFields.has(key) || seenFields.has(m.source_field)) continue;
+  uncovered.push({ key, scope: m.source_scope, field: m.source_field });
+}
+
+if (process.argv.includes("--uncovered-json")) {
+  const byScope = {};
+  for (const u of uncovered) byScope[u.scope] = (byScope[u.scope] || 0) + 1;
+  console.log(JSON.stringify({ defects: uncovered.length, by_code: byScope }));
+  process.exit(0);
+}
+
 if (AS_JSON) {
   const byCode = {};
   for (const m of missing) byCode[m.scope] = (byCode[m.scope] || 0) + 1;
@@ -73,9 +93,14 @@ if (AS_JSON) {
 console.log("localStorage→SQLite 對照表覆蓋率(D18 前提紀律)\n");
 console.log(`  對照表登記欄位        ${(mapping.mappings || []).length}`);
 console.log(`  fixture 出現的欄位    ${seen.size}`);
-console.log(`  未登記                ${missing.length}\n`);
+console.log(`  未登記                ${missing.length}`);
+console.log(`  登記了但沒被 fixture 演練  ${uncovered.length}   (棘輪層 mapping_fixture_uncovered,只准降;這就是「round-trip 無損」目前真正證明到的範圍)\n`);
 for (const m of missing) console.log(`  ⛔ ${m.key}  —— 真實匯出形狀裡有,對照表沒有`);
 if (!missing.length) console.log("  (無)");
+if (uncovered.length && process.argv.includes("--worklist")) {
+  console.log("\n  沒被演練的登記欄位(補 fixture 時照這張清單):");
+  for (const u of uncovered) console.log(`    · ${u.key}`);
+}
 if (missing.length) {
   console.log("\n修法:在 localstorage_sqlite_mapping.json 補一筆,");
   console.log("status 可為 mapped / no_destination_yet / intentionally_not_migrated ——");

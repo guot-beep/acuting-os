@@ -280,7 +280,18 @@ function main() {
   const scanned = res.ok + res.weak + res.wrong.length + res.unresolved.length;
   /* 抽到 0 個錨點 = 解析器壞了,不是資料乾淨。這個 repo 已經被這種
      「抽 0 筆卻報全過」的報告誤導過很多次。 */
+  /* 「量不到」的兩種情況(抽到 0 個 / 查不到超過 40%)怎麼離開,2026-09-06 改過:
+   *   人看的模式:照舊 exit 2 —— 工具壞了就喊。
+   *   --json(給棘輪):**不再 exit 2**,改吐 {skipped:true, reason, scanned, unresolved},由棘輪把這一層標成
+   *   「本輪未量到」並印 ::warning:: 註記。
+   * 為什麼改:CI 用 poppler、本機用 Xpdf,-layout 分欄不同,CI 上這層自 2026-09-02 起每次都撞斷路器 exit 2,
+   * 而它排在 check-validation-ratchet 之前(且 --json 也 exit 2)—— 結果不是「這一層紅」,是**整個棘輪 job 紅、
+   * 其餘 15 層四天沒有 gate**,main 上沒有人收到通知。一個環境相依的層不該有能力弄暗整個閘門;
+   * 但它也不准安靜地當 0 —— 所以是「宣告量不到」,不是「跳過」。 */
+  const ghWarn = (msg) => console.log('::warning title=acupoint_page_anchors::' + String(msg).replace(/\n/g, ' '));
   if (scanned === 0) {
+    ghWarn('一個 #p 錨點都沒抽到 — 解析器壞了,不是資料乾淨(ANCHOR_RE / ' + path.relative(ROOT, POINTS) + ')');
+    if (jsonMode) { console.log(JSON.stringify({ skipped: true, reason: 'zero_anchors_extracted', scanned: 0 })); return; }
     console.error('FAIL — 一個 #p 錨點都沒抽到。這是解析器壞了,不是資料乾淨。');
     console.error('       檢查 ANCHOR_RE 與 ' + path.relative(ROOT, POINTS) + '。');
     process.exit(2);
@@ -293,8 +304,19 @@ function main() {
      但**整批查不到**代表這支已經什麼都沒在量了,那種「安靜地全過」正是
      這個 repo 反覆吃虧的失敗模式,所以直接當工具壞掉喊出來。
      門檻放到 40%:今天是 0/419,真的撞到就一定是抽取器換了,不是資料漂移。 */
-  const unresolvedRatio = res.unresolved.length / scanned;
+  /* 測試鉤子:ACUTING_FORCE_EXTRACTOR_MISMATCH=1 強制走「量不到」路徑,讓本機(Xpdf 正常量得到)
+     也能演練 CI(poppler)那條路 —— 棘輪的 UNMEASURED 分支沒有負控就等於沒寫。只影響判定,不動資料。 */
+  const forcedMismatch = process.env.ACUTING_FORCE_EXTRACTOR_MISMATCH === "1";
+  const unresolvedRatio = forcedMismatch ? 1 : res.unresolved.length / scanned;
   if (unresolvedRatio > 0.4) {
+    const sample = res.unresolved.slice(0, 6).map((u) => u.code).join(',');
+    ghWarn(res.unresolved.length + '/' + scanned + ' 個錨點查不到該穴自身條目(' + Math.round(unresolvedRatio * 100)
+      + '%)— 版面判準對不上這台的 pdftotext(CI=poppler / 本機=Xpdf);這一層本輪未量到。例:' + sample);
+    if (jsonMode) {
+      console.log(JSON.stringify({ skipped: true, reason: 'extractor_mismatch', scanned, unresolved: res.unresolved.length,
+        unresolved_sample: res.unresolved.slice(0, 12).map((u) => u.code) }));
+      return;
+    }
     console.error('FAIL — ' + res.unresolved.length + '/' + scanned + ' 個錨點查不到該穴自身條目('
       + Math.round(unresolvedRatio * 100) + '%)。');
     console.error('       這不是資料壞,是版面判準對不上目前這個 pdftotext 的輸出;');

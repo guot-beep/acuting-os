@@ -17,6 +17,10 @@
     {
       "date": "2026-08-26",
       "reason": "validate-encoding 排除 data/audits+data/imports(誤報群,見 UNWIRED_VALIDATORS_2026-08-24)"
+    },
+    {
+      "date": "2026-09-06",
+      "reason": "mapping_fixture_uncovered 加入棘輪:對照表 105 欄位裡 fixture 只演練 31 個,把「沒演練」的 74 記成天花板(只准降);W2-1 round-trip 宣稱至此有了誠實的分母"
     }
   ],
   "layers": {
@@ -219,6 +223,14 @@
       "defects": 0,
       "by_code": {},
       "doc": "docs/AI_CONSTITUTION.md"
+    },
+    "mapping_fixture_uncovered": {
+      "defects": 74,
+      "by_code": {
+        "case": 28,
+        "soap": 46
+      },
+      "doc": "data/clinical_cases/localstorage_sqlite_mapping.json"
     }
   }
 }

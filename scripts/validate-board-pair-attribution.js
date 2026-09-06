@@ -34,7 +34,10 @@ const notes = [];
 if (!fs.existsSync(OUTLINE)) {
   console.log("validate-board-pair-attribution — SKIP");
   console.log("  考綱正本不在 curriculum/board/,無法核對。這不是 PASS,是量不到。");
-  process.exit(0);
+  /* 2026-09-06 接進 CI 時改成 exit 2:正本在 git 裡(curriculum/board/ 9 檔),CI 一定看得到;
+   * 看不到就是 checkout 壞了或檔案被搬走 —— 那時報綠等於裝一支「看不見的時候說沒事」的閘門,
+   * 正是 validate-ui-freeze 在 2026-08-31 花大力氣修掉的那種。「不知道」要 FAIL,不要 PASS。 */
+  process.exit(2);
 }
 const lines = fs.readFileSync(OUTLINE, "utf8").split("\n");
 const start = lines.findIndex((l) => /^Appendix B\. Chinese Herbal Pairs/.test(l.trim()));
