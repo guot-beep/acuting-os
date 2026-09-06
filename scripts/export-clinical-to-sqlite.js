@@ -176,6 +176,12 @@ const rowErrors = [];
 const put = (table, obj) => {
   if (!tableList.includes(table)) { rowErrors.push(`${table}:表不存在`); return false; }
   const cols = colsOf(table);
+  /* 2026-09-06:欄名不在表上 → 記錯、不寫,**不再靜靜丟掉**。
+   * 之前這裡 filter 掉不認識的欄名,三張表的 condition_id / disease_id / safety_flag_id 寫錯了兩週沒人知道,
+   * 值被丟掉後撞 NOT NULL 才露餡 —— 而且只在 fixture 第一次帶那幾欄時。
+   * 一台會把 schema 漂移藏起來的機器,比沒有機器更危險(D9 順帶項)。 */
+  const unknown = Object.keys(obj).filter((k) => !cols.includes(k) && obj[k] !== undefined);
+  if (unknown.length) { rowErrors.push(`${table}: 欄名不在表上 → ${unknown.join(", ")}(schema 漂移或 HANDLER 寫錯欄名;拒寫這一列)`); return false; }
   const use = Object.keys(obj).filter((k) => cols.includes(k) && obj[k] !== undefined);
   if (!use.length) return false;
   try {
