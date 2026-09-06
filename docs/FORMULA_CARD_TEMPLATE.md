@@ -278,7 +278,7 @@ CloudTCM 相反:有 202 筆精確名稱比對的驗證紀錄,那是**查過的**
 
 | 層 | 欄位 | 內容 | 長度 |
 |---|---|---|---|
-| 內容(英) | `actions_en` `pattern_indications_en` `modifications_en` | 課件原文,**照抄不改寫** | 可長 |
+| 內容(英) | `actions_en` `pattern_indications_en` `modifications_en` | 課件原文,**照抄不改寫**;或自對應 `_zh` **逐條對譯**(Ting 2026-09-07 裁定「你可以自己翻」),此時 `field_sources` 必須帶一條 `translated <日期> from <欄位> (<譯者>)`,藥名用庫內 Pinyin、數字逐字、不添一字。兩種來源都不算「英文缺口」 | 可長 |
 | 內容(中) | `actions_zh` `pattern_indications_zh` | 結構化中文 | 可長 |
 | **標籤** | `modern_clinical_use_tags` `study_tags` | **短標籤**,搜尋與 chip | 2–6 字 |
 | 身分 | `category` `tier` `comparison_group` `source_classic` | 分類與出典 | — |

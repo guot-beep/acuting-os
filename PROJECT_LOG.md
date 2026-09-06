@@ -1,3 +1,40 @@
+# 2026-09-07 — Ting 三句裁定後的自主批次:81 條加減翻譯落庫、355 穴假灸量清掉、黑框搬欄、對照表補齊、六個工具/規則修正
+
+Ting:「D1 現在不用,還沒開診所」「你可以自己翻」「好」「其他自行決定」。
+**MEASURED TREE: main @ d30d71db**(CI run 34065603195 success;今日連續 8 輪綠)
+
+| 項 | 裁定 | 落地 | 數字 |
+|---|---|---|---|
+| D10-1 方劑加減 zh+en | Ting:自己翻 | 執行者翻、覆核員逐句反駁 → **成立** | 23 方 80 句(烏梅丸站方評論句刪);有加減變化 99 → 122/223;卡面 modifications 空白 118 → 95/219;80/80 逐字回核 CloudTCM;藥名/數字/方名一個不多不少 |
+| D10-4 levothyroxine / semaglutide | Ting:好 | 黑框全文 warnings[0] → boxed_warning_zh/en,紅框自動出現 | 2 筆;warnings 1→0、6→5,zh=en |
+| D10-5 heparin | 自行 | 手寫查證註記補 _en + 來源 | 1 筆 |
+| D7 355 穴無來源灸量模板句 | 自行 (a) | moxa_en 清空;英文模式改印 moxa_zh 原文(同禁灸既有作法);LR9 ERROR 清空 | 356 條帳本;encoding 44 → 43(副作用) |
+| D8-1 果/種子用語 | 自行 (a) | 6 筆改引臺灣中藥典 | 藥典來源 30 → 36 |
+| D9-1 / D9-2 對照表 | 自行 | 12 欄補登 no_destination_yet;5 欄加 projection_note;fixture 補同 12 key | 對照表 105 → 117;棘輪 mapping_unregistered_runtime_fields 12 → 0 |
+| D5 穴位圖 | 自行 (b) | 358 筆定位圖網址換活的 | **卡面影響零**:正經穴不渲染 diagram_urls_en(只董氏穴印) |
+| D10-2 furosemide 偵測 | 自行 | refresh-dailymed-evidence.js 補「首節 WARNING 未編碼黑框」判準 + 離線 self-test 6 條 | 未重抓 DailyMed(Ting 核准的網路作業另排) |
+| D1 / D2 診所資訊與衛教單 | Ting:先不用 | 擱置;開診前提醒 | — |
+| D6 / D9-3 / C6 | 自行:不動 | — | — |
+
+## 誠實記下
+
+- D5 那 358 筆是把資料裡的死網址換成 11H 驗過 200 的候選,**畫面看不到差別**;要不要讓正經穴也顯示 eLotus 圖解是 UI 決定(凍結中)。
+- K4(PHI 規則)把對照表註記裡的 ISO 日期當「疑似出生日期」擋下一次 —— 誤報,日期改中文寫法;真 PHI 零。以後 `data/clinical_cases/` 底下的設計文件別寫 `YYYY-MM-DD`。
+- 新增 **D11**:ST22 關門、ST26 外陵 的 moxa_en 寫 CONTRAINDICATED、moxa_zh 是施灸步驤,中英矛盾,安全相關,未動待查古籍。
+- 翻譯三處可能要改(參附湯「閉目合面」、參蘇飲「噦」、五苓散「霍亂」的譯法),已列待裁檔給 Ting 掃。
+- 模板 §modifications_en 從「照抄不改寫」改為「或標記 translated 的逐條對譯」,對齊今天的裁定。
+
+## 驗證器(d30d71db)
+
+```
+validate-formula-standard PASS(有加減變化 122/223)· pharm-standard PASS · acupoint-standard PASS · herb-standard PASS
+content-junk PASS · bilingual-index-pairing PASS · bilingual-render-parity PASS · herb-search-index 360/360 + 219 方
+clinical:mapping-coverage PASS(117 登記 / 0 未演練 / 0 未登記)· envelope 10/10 · case-standard PASS · invariants PASS · contract-freeze PASS · sqlite-service 43 · export self-test PASS
+check-validation-ratchet 17 層:mapping_fixture_uncovered 0 · mapping_unregistered_runtime_fields 0 · encoding 43 · acupoint_page_anchors 0(Xpdf)· 其餘 flat,PASS
+refresh-dailymed-evidence --self-test 6/6 · ui-freeze PASS(凍結例外)
+```
+
+
 # 2026-09-06(續二)— 兩條內容線落地:方劑加減 zh 1 張(81 條待裁)、西藥黑框查證 30 筆降級 + 1 筆假陰性撤回;pharmPanels 空標題 bug 修掉
 
 **MEASURED TREE: main @ 925bc002**
