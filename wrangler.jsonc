@@ -1,8 +1,15 @@
-// Cloudflare deploy config for AcuTing OS(private clinical app)。
-  // 靜態資產:dist/(scripts/build-site.js 只複製 index.html 引用的檔案,並擋 curriculum// clinical// imports// docs/)。
-  // 病例服務:src/worker.mjs 只攔 /__clinical/*(run_worker_first),其餘交給資產;病例正本在 D1(D33)。
-  // 認證:每一條 /__clinical/* 都驗 Cloudflare Access 的 JWT(vars 三個 ACCESS_*);沒設 → 503 fail-closed。
+// Cloudflare deploy config for AcuTing OS。
+  // **這份設定(2026-09-06,D33 切換,Ting 裁定「推」):Worker + D1 + 通行碼。**
+  //   靜態資產:dist/(scripts/build-site.js 只複製 index.html 引用的檔案,並擋 curriculum// clinical// imports// docs/);知識庫維持公開。
+  //   病例服務:src/worker.mjs 只攔 /__clinical/*(run_worker_first),病例正本在 D1(CLINICAL_DB = acuting-clinical)。
+  //   認證:app 自己的通行碼。git 裡只有一次性**設定碼**的雜湊(CLINICAL_SETUP_*,16 碼亂數約 79 bits,公開也破不了);
+  //   Ting 的日常通行碼在第一次開 app 時於瀏覽器訂定,雜湊由 Worker 寫進 D1,**永不進這個公開 repo**。
+  //   通行碼雜湊(CLINICAL_PASS_*)與簽證秘密(CLINICAL_TOKEN_SECRET)都不准出現在這裡 —— validate-d1-deploy-gate.js 會擋。
+  //   忘記通行碼:scripts/make-clinical-setup-code.js --epoch N+1 重生四行、換掉、CLINICAL_SETUP_EPOCH +1;病例不動。
+  //
   // 這個檔由 scripts/apply-d1-production-config.js 產生;改值請改那支的參數再跑一次,並讓 validate-d1-deploy-gate.js 過。
+  // 檔頭必須描述**這一份**設定:2026-09-01 回滾曾留下講 D1 的註解配純靜態設定、2026-09-06 合併又差點留下講純靜態的註解配 D1 設定,
+  // 閘門 G5 現在兩個方向都擋。回滾 = 把本檔換回純靜態版(git 歷史 410f7308)並拿掉 index.html 的 meta,同一個 commit。
 {
   "name": "acuting-os",
   "compatibility_date": "2026-07-26",

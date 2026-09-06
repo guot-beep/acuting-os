@@ -709,8 +709,27 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "24"
+      # acupoint_page_anchors 這一層要重抽課件 PDF 的版面才能判「引的是不是那一頁」。
+      # 沒裝 poppler 時那支會回 {"skipped":true},而 ratchet 的 extract 會**丟例外**
+      # (exit 2),不會靜靜當 0 —— 也就是說這一步漏掉會讓 CI 紅,不會讓 gate 消失。
+      - name: pdftotext (acupoint page-anchor accuracy needs the PDF layout)
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils
+
+      # 覆蓋率印出來給人看。ratchet 只把關「指錯」的數量,它不會告訴你這支到底
+      # **驗了幾筆** —— 而本機是 Xpdf 4.00、CI 是 poppler,兩者 -layout 的分欄不保證
+      # 一致。真的對不上時,症狀是「查不到」變多、缺陷數照樣 0(方向是安全的,
+      # 但 gate 會安靜地縮水)。所以獨立跑一次讓數字進 log:落地時是
+      # 掃到 419 / 強驗 419 / 弱檢查 0 / 查不到 0,對不起來就是抽取器差異,不是資料。
+      - name: acupoint page-anchor accuracy (coverage numbers visible in the log)
+        run: node scripts/validate-acupoint-page-anchor-accuracy.js
+
       - name: herb exam-track filler (template sentences are defects, not content)
         run: node scripts/validate-herb-track-filler.js
+
+      # 搜尋索引與卡面同步:159/360 味藥只有 functions_zh,之前用功效關鍵字搜不到(2026-09-05)。
+      # 這支從 js/knowledge.js 解析欄位清單、對真資料重建索引逐味檢查,不是 grep 一行字串。
+      - name: herb search index covers every visible function (functions_zh was unindexed)
+        run: node scripts/validate-herb-search-index.js
 
       - name: no layer may get worse than its committed baseline
         run: node scripts/check-validation-ratchet.js

@@ -97,7 +97,9 @@ for (const edge of registry.edges || []) {
     for (const v of values) {
       checked.refs++;
       if (!known.has(v)) {
-        dangling.push({ edge: edge.id, from: rec.id, field: edge.field, target: v });
+        /* junction 檔(formula_pattern_links.json)的記錄沒有 id,來源鍵是 formula_id;
+         * 之前印成 `undefined → pattern.x`,讀報告的人找不到是哪一筆。 */
+        dangling.push({ edge: edge.id, from: rec.id || rec.formula_id || rec.source_id || rec.pattern_id || "(記錄無 id)", field: edge.field, target: v });
       }
     }
   }

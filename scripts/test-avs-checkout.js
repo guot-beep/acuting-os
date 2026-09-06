@@ -10,7 +10,11 @@
  * Scenario E  定稿後改建議庫:歷史 AVS 渲染文字不變
  * Scenario F  更正流程:v1 superseded、v2 finalized、v1 仍可讀
  * Scenario G  legacy 自由文字推斷:draft 標記 inferred、定稿存確認後結果
- * 附加:惡意/誤植診斷詞進自訂指示 → checkPatientOutputSafety 必攔
+ * 附加:惡意/誤植的**內部 id 代碼**進自訂指示 → checkPatientOutputSafety 必攔
+ *   (2026-09-02 更正原句「誤植診斷詞…必攔」:本檔注入的一直是 id 代碼
+ *    pattern.liver_qi_stagnation 與病歷代碼 P&1,從來沒有注入過中文診斷詞。
+ *    實測「肝鬱氣滯」「胃食道逆流」該閘門直接放行 —— 這一層目前靠醫師自律,
+ *    沒有測試覆蓋,也沒有機器把關。別把本檔的 118 綠燈讀成「中文診斷詞擋得住」。)
  *
  * 用法:node scripts/test-avs-checkout.js
  */
@@ -586,6 +590,32 @@ console.log("DRY_CLINIC_LOG #13 — 加味逍遙散 repro 打到端產物(HTML+T
   const dNo = AVS.buildDraftSnapshot({ kase: makeCase(), note: noteNoHerb, library: LIBRARY, clinic: CLINIC, modalityVocabulary: MODALITY_VOCAB, outcomeMetricDefs: [], nameOfAgent });
   const htmlNo = AVS.renderPatientHtml(dNo, { visitDate: noteNoHerb.visitDate });
   assert(!htmlNo.includes("調理品怎麼吃"), "#13 反向:沒開中藥就沒有這一段(不憑空生指示)");
+}
+
+/* #14 同一份 snapshot 的兩個出口對「沒有劑量」要說同一句話。
+ * HTML 版一直是 `esc(r.dose) || "—"`,純文字版原本直接內插空字串,印出來是
+ * 「・名稱　　頻率」—— 兩個全形空白,病人分不出是沒交代還是字被吃掉。
+ * 這條守的是一致性,不是有沒有值。 */
+{
+  const kase = makeCase();
+  const note = makeNote({
+    modalitiesPerformed: ["modality.acupuncture"],
+    formulaLinks: ["formula.jia_wei_xiao_yao_san"],
+    formulaHerbs: "加味逍遙散",           // 只有方名,沒有劑量也沒有頻率
+  });
+  const nameOfAgent = (id) => (id === "formula.jia_wei_xiao_yao_san" ? "加味逍遙散" : null);
+  const d = AVS.buildDraftSnapshot({ kase, note, library: LIBRARY, clinic: CLINIC, modalityVocabulary: MODALITY_VOCAB, outcomeMetricDefs: [], nameOfAgent });
+  const row = (d.medicationInstructionsSnapshot || []).find((r) => r.name === "加味逍遙散");
+  if (row && !String(row.dose || "").trim()) {
+    const text = AVS.renderPatientText(d, { visitDate: note.visitDate });
+    const line = text.split("\n").find((l) => l.includes("加味逍遙散") && l.startsWith("・"));
+    assert(!!line, "#14 Text:找得到那一行服藥指示");
+    assert(line.includes("—"), "#14 Text:沒有劑量時要印「—」,不能留兩個全形空白(要與 HTML 版一致)");
+    assert(!/　　/.test(line), "#14 Text:那一行不得出現連續兩個全形空白(=被吃掉的欄位)");
+  } else {
+    // 引擎哪天改成一定給劑量,這條就沒有守備對象了 —— 講出來,不要靜靜地變成空跑的測試
+    assert(true, "#14 略過:這個情境下引擎已保證劑量非空(斷言無對象,不是通過)");
+  }
 }
 
 console.log(`\n${pass} passed, ${fail} failed`);

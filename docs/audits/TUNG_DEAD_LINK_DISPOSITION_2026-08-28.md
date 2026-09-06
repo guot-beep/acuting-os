@@ -1,4 +1,4 @@
-# Task 11G — 董氏穴位死連結處置清單
+# Task 11G／11H — 董氏穴位死連結處置與同站圖片候選
 
 - 來源帳本：`data/audits/bundle_url_liveness_2026-08-28.json`
 - 受影響卡片：411
@@ -6,7 +6,103 @@
 - Dead distinct URLs：1133（圖片 722／參考連結 411）
 - 原始欄位 occurrences：1215（圖片 722／參考連結 493）
 - 同卡仍為 OK 的原始欄位 occurrences：2611
-- `same_site_candidate`：已驗證 0；留 null 411；本輪 live candidate checks 0
+- 圖片 `dead_urls[].same_site_candidate`：已驗證 716；留 null 6；累計候選 live checks 716 個 dead-image 欄位（361 個 unique live image HTTP checks）
+
+## Task 11H 第一批實測
+
+- 範圍：30 張卡／60 個 dead-image 原始欄位；每張卡原本的 location 與 needling 圖都對到該穴位現行 point image。
+- 路徑來源：先由 `https://www.mastertungacupuncture.org/acupuncture/traditional/points/list` 的實際目錄連結取得 point page，再核對頁面 `h1` 穴位 code，最後用真瀏覽器逐一開啟 point image。
+- 結果：目錄 1/1 HTTP 200；point pages 30/30 HTTP 200；`h1` code 30/30 相符；unique image URLs 30/30 HTTP 200。
+- 卡片：`BL1`、`BL2`、`BL3`、`BL10`–`BL36`（依 11G dead-image 數排序後的首批 30 張）。
+- `ex.le3` 百蟲窩沒有 dead-image 欄位，只有非圖片 dead references；其 Task 11I 候選另行由誤指 `Xinei (Ex-LE3)` 更正為瀏覽器驗證的 `Baichongwo (Ex-LE13)`。
+- 未調查：662/722 個 dead-image 欄位維持 `same_site_candidate: null`；沒有由檔名或 URL 規律推測候選。
+
+## Task 11H 第二批實測（2026-09-03 02:30 PDT heartbeat）
+
+- 範圍：再查 30 張卡／60 個 dead-image 原始欄位；候選累計 `60→120/722`，null `662→602`。
+- 結果：目錄 1/1 HTTP 200；point pages 30/30 HTTP 200；`h1` code 30/30 相符；unique image URLs 30/30 HTTP 200。
+- 卡片：`BL4`–`BL6`、`BL37`–`BL63`（依仍為 null 的 dead-image 數與 card id 排序後的下一批 30 張）。
+- 每個候選保留各自的 `fetched_at`、HTTP 200 與 `how_found`；其餘 602/722 維持 `same_site_candidate: null`。
+
+## Task 11H 第三批實測（2026-09-03）
+
+- 範圍：再查 30 張卡／60 個 dead-image 原始欄位；候選累計 `120→180/722`，null `602→542`。
+- 結果：目錄 1/1 HTTP 200；point pages 30/30 HTTP 200；`h1` code 30/30 相符；unique image URLs 30/30 HTTP 200。
+- 卡片：`BL7`–`BL9`、`BL64`–`BL67`、`CV1`–`CV8`、`CV10`–`CV24`（依仍為 null 的 dead-image 數與 card id 排序後的下一批 30 張）。
+- 每個候選保留各自的 `fetched_at`、HTTP 200 與 `how_found`；其餘 542/722 維持 `same_site_candidate: null`。
+
+## Task 11H 第四批實測（2026-09-03）
+
+- 範圍：再查 30 張卡／60 個 dead-image 原始欄位；候選累計 `180→240/722`，null `542→482`。
+- 結果：目錄 1/1 HTTP 200；point pages 30/30 HTTP 200；`h1` code 30/30 相符；unique image URLs 30/30 HTTP 200。
+- 卡片：`CV9`、`GB1`–`GB3`、`GB10`–`GB35`（依仍為 null 的 dead-image 數與 card id 排序後的下一批 30 張）。
+- 每個候選保留各自的 `fetched_at`、HTTP 200 與 `how_found`；其餘 482/722 維持 `same_site_candidate: null`。
+
+## Task 11H 第五批實測（2026-09-03）
+
+- 範圍：再查 30 張卡／60 個 dead-image 原始欄位；候選累計 `240→300/722`，null `482→422`。
+- 結果：目錄 1/1 HTTP 200；point pages 30/30 HTTP 200；`h1` code 30/30 相符；unique image URLs 30/30 HTTP 200。
+- 卡片：`GB4`–`GB9`、`GB36`–`GB44`、`GV1`–`GV2`、`GV10`–`GV22`（依仍為 null 的 dead-image 數與 card id 排序後的下一批 30 張）。
+- 每個候選保留各自的 `fetched_at`、HTTP 200 與 `how_found`；其餘 422/722 維持 `same_site_candidate: null`。
+
+## Task 11H 第六批實測（2026-09-03）
+
+- 範圍：再查 30 張卡／60 個 dead-image 原始欄位；候選累計 `300→360/722`，null `422→362`。
+- 結果：目錄 1/1 HTTP 200；point pages 30/30 HTTP 200；`h1` code 30/30 相符；unique image URLs 30/30 HTTP 200。
+- 卡片：`GV3`–`GV9`、`GV23`–`GV28`、`HT1`–`HT9`、`KI1`、`KI10`–`KI16`（依仍為 null 的 dead-image 數與 card id 排序後的下一批 30 張）。
+- 每個候選保留各自的 `fetched_at`、HTTP 200 與 `how_found`；其餘 362/722 維持 `same_site_candidate: null`。
+
+## Task 11H 第七批實測（2026-09-03）
+
+- 範圍：再查 30 張卡／60 個 dead-image 原始欄位；候選累計 `360→420/722`，null `362→302`。
+- 結果：目錄 1/1 HTTP 200；point pages 30/30 HTTP 200；`h1` code 30/30 相符；unique image URLs 30/30 HTTP 200。
+- 卡片：`KI2`–`KI9`、`KI17`–`KI27`、`LI1`–`LI11`（依仍為 null 的 dead-image 數與 card id 排序後的下一批 30 張）。
+- 每個候選保留各自的 `fetched_at`、HTTP 200 與 `how_found`；其餘 302/722 維持 `same_site_candidate: null`。
+
+## Task 11H 第八批實測（2026-09-04）
+
+- 範圍：調查 30 張卡／60 個 dead-image 原始欄位；找到 27 張卡的 54 個候選，累計 `420→474/722`，null `302→248`。
+- 結果：目錄 1/1 HTTP 200；point pages 與 `h1` code 30/30 相符；unique image URLs 27/27 HTTP 200。
+- 卡片：`LI12`–`LI20`、`LR1`–`LR14`、`LU1`–`LU7`（依仍為 null 的 dead-image 數與 card id 排序後的下一批 30 張）。
+- `LR9`、`LR10`、`LR11` 的 live point pages 均明寫 `Picture in preparation.`；network-idle 後 `img`／`source` 的 `src`、`data-src`、`srcset`、`data-srcset` 與 CSS background 都沒有穴位圖，因此其 6 個欄位誠實維持 null，沒有猜 URL。
+- Ting 於 2026-09-04 明確授權保留 focused nested-candidate verifier；先前「nested 722-field schema」與「verifier 不變」的派工文字衝突據此解除。
+
+## Task 11H 第九批實測（2026-09-04）
+
+- 範圍：再查 30 張卡／60 個 dead-image 原始欄位；候選累計 `474→534/722`，null `248→188`。
+- 結果：目錄 1/1 HTTP 200；point pages 30/30 HTTP 200；`h1` code 30/30 相符；unique image URLs 30/30 HTTP 200。
+- 卡片：`LU8`–`LU11`、`PC1`–`PC9`、`SI1`–`SI17`（依仍為 null 的 dead-image 數與 card id 排序後的下一批 30 張）。
+- 每個候選保留各自的 `fetched_at`、HTTP 200 與 `how_found`；其餘 188/722 維持 `same_site_candidate: null`。
+
+## Task 11H 第十批實測（2026-09-04）
+
+- 範圍：再查 30 張卡／60 個 dead-image 原始欄位；候選累計 `534→594/722`，null `188→128`。
+- 結果：目錄 1/1 HTTP 200；point pages 30/30 HTTP 200；`h1` code 30/30 相符；page images 32/32 HTTP 200。
+- 卡片：`SI18`、`SI19`、`SP1`–`SP21`、`ST1`–`ST7`（跳過已查無圖的 `LR9`–`LR11`，再依 card id 取下一批 30 張）。
+- `SP21` 與 `ST6` 各有兩張同穴位頁圖片；四張都在真瀏覽器開啟並目視確認為該 H1 穴位的不同定位視圖，依頁面 DOM 順序一對一記入兩個 dead-image 欄位，`how_found` 保留 page image index。
+- 其餘 128/722 維持 `same_site_candidate: null`；沒有由檔名或 URL 規律推測候選。
+
+## Task 11H 第十一批實測（2026-09-04）
+
+- 範圍：再查 30 張卡／60 個 dead-image 原始欄位；候選累計 `594→654/722`，null `128→68`。
+- 結果：目錄 1/1 HTTP 200；point pages 30/30 HTTP 200；`h1` code 30/30 相符；page images 31/31 HTTP 200。
+- 卡片：`ST8`–`ST37`。`ST8` 的兩張圖片均目視確認為該穴位的不同定位視圖，依 DOM 順序一對一記入兩個欄位。
+- 其餘 68/722 維持 `same_site_candidate: null`；沒有由檔名或 URL 規律推測候選。
+
+## Task 11H 第十二批實測（2026-09-04）
+
+- 範圍：再查 30 張卡／60 個 dead-image 原始欄位；候選累計 `654→714/722`，null `68→8`。
+- 結果：目錄 1/1 HTTP 200；point pages 30/30 HTTP 200；穴位 identity 30/30 相符；unique images 30/30 HTTP 200。
+- 卡片：`ST38`–`ST45`、`TE1`–`TE22`。網站目錄使用 `TH`，repo 使用 `TE`；每張 TE 卡均以同號 TH page 的 H1 pinyin 與頁面中文名交叉核對後才記入。
+- `TE18` 頁面 H1 `Chimai (TH 18)` 與代碼／拼音相符，但來源中文標成「契脈」，不同於 canonical「瘈脈」；差異已寫進 `how_found`，沒有覆蓋 canonical 名稱。
+- 其餘 8/722 維持 null：`LR9`–`LR11` 已查無圖 6 欄，`TE23` 尚待最後一批 2 欄。
+
+## Task 11H 第十三批實測（2026-09-04）
+
+- 範圍：最後 1 張未調查卡 `TE23`／2 個 dead-image 原始欄位；候選累計 `714→716/722`，null `8→6`。
+- 結果：目錄、`TH23` point page、H1／中文 identity 與 unique image 均 `1/1` 相符且 HTTP 200；圖片頁額外出現的 favicon 404 不屬候選資產。
+- 361 張 dead-image cards 均已調查：358 張／716 欄找到候選；`LR9`–`LR11` 三張 live pages 明寫圖片準備中，6 欄維持 null。
+- `TE23` 依 `TH`／`TE` channel-code alias 核對 `Sizhukong (TH 23)` 與「絲竹空」後記入，沒有修改 canonical code/name。
 
 ## 全連結 404 卡片
 
@@ -16,5 +112,6 @@
 
 - JSON 一張卡一列；同一 URL 若出現在同卡多個原始欄位，每個 `field_path` 各留一筆，避免後續修復漏欄位。
 - `summary.distinct_dead_url_count` 對應 Task 11E ledger 的 URL 聯集；occurrence 數則對應原始 JSON 欄位。
-- 本輪沒有推測替代網址，也沒有修改任何穴位 canonical JSON。
+- Task 11H 只寫入真瀏覽器驗證為 HTTP 200 的候選；沒有修改任何穴位 canonical JSON。
 - 驗證：`node scripts/audit-source-url-liveness.js --verify-disposition`。
+- verifier 保留 11G 的 URL／card／field_path 雙向核對，並補上 Task 11H nested candidate 與三個 summary 計數的契約檢查。

@@ -2,7 +2,21 @@
  *
  * 定位:診後摘要(AVS)是「病人照護指示單」,不是 SOAP 摘要、不是診斷證明、
  * 不是申報文件。內部診斷資料(pattern./cond./tdis./safety.)只用於「挑選」
- * 候選建議;病人可見輸出永遠零診斷資訊(checkPatientOutputSafety 硬擋)。
+ * 候選建議。
+ *
+ * checkPatientOutputSafety 擋到什麼程度(2026-09-02 逐項實測後改寫,原文寫的是
+ * 「病人可見輸出永遠零診斷資訊(硬擋)」—— 那句話比實作做到的多):
+ *   擋得住:BANNED_ID_PREFIXES 的七個 **id 前綴**(pattern./cond./tdis./safety./
+ *           modality./metric./avs.)、icd/cpt、patientCode。解碼到定點 + 剝 tag
+ *           雙變體掃描,拆字與多層 HTML 實體都繞不過去。
+ *   擋不住:**中文診斷詞本身**。實測「本次辨證為肝鬱氣滯、脾陽虛」與
+ *           「西醫診斷:胃食道逆流」都回傳 [] 直接放行;herb./formula./pair./
+ *           point./note./case. 這些不在名單上的 id 前綴同樣放行。
+ * 也就是說:它是「零診斷 **id** 洩漏」的閘門,不是「零診斷 **資訊**」的閘門。
+ * 醫師在 checkout 自訂欄(app.js 的 data-avs-custom-text,placeholder 寫著
+ * 「病人語言,不放診斷詞與內部代碼」)手打中文證型名,只靠醫師自律,沒有機器把關。
+ * 要不要把中文診斷詞也納入(需要詞表,且有誤殺風險 —— 「痧斑」這類正當用語不能擋)
+ * 是設計裁定,不在本檔逕自擴充。
  *
  * 所有權:AVS snapshot 掛在 Visit(note.avsSnapshots[]),不掛 Patient/Case。
  *
@@ -426,7 +440,10 @@ ${sec("下次回診", snapshot.followUpSnapshot ? `<p>回診安排:${esc(snapsho
 
     if (meds.length) {
       push("【調理品怎麼吃】");
-      meds.forEach((r) => push(`・${r.name}　${r.dose}　${r.freq}`));
+      // 與 HTML 版同一個規則:沒記錄的劑量/頻率印「—」。
+      // 少了這個 fallback,純文字版印出來是兩個全形空白,病人看到的是「名稱　　頻率」——
+      // 分不出「沒交代劑量」與「這裡本來有字」。同一份 snapshot 的兩個出口不該說不同的話。
+      meds.forEach((r) => push(`・${r.name}　${r.dose || "—"}　${r.freq || "—"}`));
       byCat("herb_caution").forEach((t) => push(`　※ ${t}`));
       push();
     }

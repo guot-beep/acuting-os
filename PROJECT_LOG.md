@@ -1,3 +1,469 @@
+# 2026-09-05 — 開診第一週:11H 驗收落地、藥用部位 176→21、搜尋修 159 味、encoding 48→44、四個工具盲區補上
+
+Ting 裁定:「自己做吧,不用給 Codex」「讓 Codex 檢查就好」。所以資料批次改由 Claude 執行
+(隔離 worktree,各配一名反駁式覆核員),Codex 的佇列改成 12R 覆核任務。
+**MEASURED TREE: claude/0904-clinic-week1 @ 47c39d24(基底 main @ b196248f)**
+
+## 落地到 main 的(本則之後 ff)
+
+| 事 | before → after | 重現 |
+|---|---|---|
+| Task 11H(Codex)穴位死圖片同站候選 | 716/722 候選,抽 12 條實開全是 200 JPEG | `node scripts/audit-source-url-liveness.js --verify-disposition` |
+| 中藥卡「使用部位」印「待補」 | **176 → 21** / 360 | `node scripts/report-card-slot-gaps.js --panel herbPanels` → `inline:part_used_en` |
+| `part_used_en` 有 field_sources | 4 → 158(CSV 128、藥典 30) | 見 `data/audits/part_used_targets_2026-09-04.json` |
+| 中藥搜尋索引漏 `functions_zh` | 搜「活血」48 → 56、「清熱」113 → 129、「養陰」1 → 4(真瀏覽器) | `node scripts/validate-herb-search-index.js`(新,已接 CI) |
+| `validate-encoding` | 48 → 44(4 條機械修;44 條全需裁定) | `node scripts/validate-encoding.js --json` |
+| 課件錨點驗證器掃到的錨點 | 400 → **545**(csv#row 之前完全不抽) | `node scripts/validate-curriculum-anchor-resolution.js` |
+| 缺口掃描器 herbPanels part_used | 232 → 176(別名 + 行內鏈解析;`--self-test` 11 條) | `node scripts/report-card-slot-gaps.js --self-test` |
+| 病人衛教單純文字版劑量 fallback | 兩個全形空白 → 「—」(與 HTML 版一致;test-avs-checkout +3 條) | `node scripts/test-avs-checkout.js` |
+| `wrangler.jsonc` 註解說謊(宣稱 D1/Access,實為純靜態) | 改成實話 + 閘門 G5 | `node scripts/validate-d1-deploy-gate.js` |
+| relation 驗證器印 `undefined →` | 印 `formula.er_chen_tang →`(junction 來源鍵是 formula_id) | `node scripts/validate-relation-registry-integrity.js` |
+
+## 覆核員推翻的、我照改的
+
+- **part-used 被推翻(零損害)**:13 張卡的值與 repo 內臺灣中藥典定義句矛盾(黃連 Root、夏枯草 Whole herb、
+  淫羊藿 Whole herb、肉蓯蓉 Whole plant、蒲黃 Charred pollen…)。CSV 同一列拉丁名欄寫 Rhizoma、口語欄寫 root,
+  執行者對白茅根扣住、對同型的 13 筆放行。**已改引藥典 #pN**(逐頁核過定義句),龍眼肉保留 CSV 錨點取 Arillus → Aril。
+  可逆,列待裁 D8-3。
+- **回報說「錨點全部可解析 PASS」是假的**:驗證器對 csv#row 不抽。已擴。負控:`#row99999` → A2、`.md#row3` → A4。
+- **encoding 執行者說 moxa 不上卡是錯的**:`app.js:5603/5630` needlingArticle 會印。**355/361 穴位卡英文模式
+  印無來源灸量模板句、LR9 印「ERROR」** → 待裁 D7(紅線 4)。
+
+## 我自己給錯、已更正的
+
+- **C6**:9/02 說 `english_exam_track` 卡面出現 0 次、建議退役、缺陷 5,495 → 約 400。三個都錯:該欄在
+  `js/knowledge.js:1527/2005/1324` 是方劑卡 actions/主治/加減的後備來源(方劑 115/219、中藥 200/360 有內容),
+  退役會清掉 115 張方劑卡看得見的內容;真實結果 3,051。待裁檔已就地更正,建議改 (c) 維持現狀。
+
+## 來源缺口(誠實留白)
+
+- 藥用部位剩 21 味:藥典無專論(龍骨、鹿茸、麝香、羚羊角、血餘炭、灶心土、硃砂、磁石、雄黃…礦物/動物/加工品)、
+  瓜蔞(藥典只有天花粉與瓜蔞子)、桑椹、蔥白、飴糖、酒、碧玉散(成方)、白僵蠶(定義句非單一名詞)。清單在執行者回報。
+- encoding 44:17 個英文病名 × 34 格(Loffler's Syndrome、Bronchiaesthenia…7 個疑為來源截斷/拼錯)、
+  `SOAP Note` 1、沉香 AD 句 1、3 味 summary_zh 英文草稿、`????` 1(初始 commit 即損毀)、LR9 ERROR。
+  逐條位置:`docs/audits/ENCODING_UNTRANSLATED_TERMS_2026-09-05.md`。
+
+## 待 Ting(全部在 docs/TING_PENDING_RULINGS_2026-08-31.md D 群)
+
+D1 診所四個真值(**急,病人手上**)· D2 拔罐/刮痧斷言 · D5 11H 候選只頂替定位圖 · D6 20 筆懸空引用 ·
+D7 355 張灸量模板句 · D8 藥用部位三個小裁定 · C6 更正後選項 · 17 個病名中文。
+
+## 驗證器輸出(整合樹 47c39d24)
+
+```
+validate-herb-standard                 PASS — no structural defects.
+validate-formula-standard              PASS — no blocking defects.
+validate-content-junk                  PASS(既有 WARN:33 方共用「6.0g～12.0g，分次開水送服。」,非本批)
+validate-encoding --json               {"defects":44}(基準 44)
+validate-curriculum-anchor-resolution  掃描 663 檔,不同錨點 545,指不到 0,PASS
+validate-herb-search-index             PASS — 360/360 味藥的卡上功效都搜得到(索引欄位 13 個)
+validate-bilingual-render-parity       PASS — no blocking defects.
+validate-knowledge-parts / render-blocking / ui-freeze / d1-deploy-gate   PASS
+test-avs-checkout                      121 passed, 0 failed
+validate-relation-registry-integrity   20 筆懸空(基準 20,見 D6)
+check-validation-ratchet               PASS — no regressions.
+```
+
+## 下一批
+
+D7 若裁 (a):一支帳本清 355 格。D8-1 若裁 (a):6 格。C6 若裁 (a′):改必填清單 + 刪 181 張樣板。
+Codex 12R:覆核 main 上 b196248f..(本 commit)這一段。
+
+
+# 2026-09-04 — Codex Task 11H 候選調查收斂
+
+- **做了什麼**：本輪續查最後 91 cards／182 dead-image fields，data commits `ea125c13`、`6ec22bcd`、`b03249ac`、`7523fbd0`；Task 11H 累計 `361/361` cards 已逐頁調查。只動 audit ledger/report，canonical `data/acupoints/**`、app/runtime、generated data 零異動。
+- **數字 before→after**：candidate fields `534→716/722`，null `188→6`；累計 358 cards／716 fields 有 browser-verified candidates，3 cards／6 fields 無圖。共 361 個 unique live image HTTP checks；`SP21`、`ST6`、`ST8` 的雙圖均依 DOM 順序逐欄對應。
+- **驗證結果**：`Self-Test Results: 14/14 fixtures behaving as expected.`；`PASS — 1133/1133 distinct dead URLs mapped to 411 cards and 1215 exact source-field occurrences; 1 all-links-dead card(s).`；candidate audit `716 verified / 6 null / 0 malformed`；`validate-content-junk: PASS`；`build-data` 後 generated 零 diff；`git diff --check` 無輸出。
+- **已知未解**：`LR9`–`LR11` live pages 明寫 `Picture in preparation.` 且 DOM/lazy attributes/CSS 無圖，6 fields 保留 null；`TE18` live source 中文 `契脈` 與 canonical `瘈脈` 差異只記證據、未改資料。ratchet 仍因既有 anchor-validator 報表解析／`pdftotext` baseline exit 1，未宣稱 green。
+- **下一步**：推到 `codex/tung-dead-link-candidates` 交 reviewer 驗收；是否套用 canonical URL 由 Ting／內容線另行裁定。推送後依 Ting 指示查看 Claude／Codex queue／Antigravity 是否新增派工。
+
+# 2026-09-04 — Codex Task 11H 第八至第九批圖片候選
+
+- **做了什麼**：Ting 授權保留 focused nested-candidate verifier 後，續查兩批共 60 cards；data commits `801d75d2`、`da744822`。只動 ledger/report，canonical `data/acupoints/**` 零異動。
+- **數字 before→after**：candidate fields `420→534/722`（+114 fields／57 cards／57 unique live images），ledger null `302→188`；累計已調查 540 fields，其中 534 找到候選、6 為 `LR9`–`LR11` 無圖，另 182 fields 未調查。
+- **驗證結果**：`Self-Test Results: 14/14 fixtures behaving as expected.`；`PASS — 1133/1133 distinct dead URLs mapped to 411 cards and 1215 exact source-field occurrences; 1 all-links-dead card(s).`；candidate audit `534 verified / 188 null / 0 malformed`；`validate-content-junk: PASS`；兩次 `build-data` 後 generated 零 diff；`git diff --check` 無輸出。
+- **已知未解**：`LR9`–`LR11` live pages 明寫 `Picture in preparation.` 且 DOM/lazy attributes/CSS 無圖，6 fields 誠實留 null；ratchet 的 anchor-validator parser／`pdftotext` baseline 仍 exit 1，未宣稱 green。
+- **下一步**：推到 `codex/tung-dead-link-candidates` 後等驗收；下一批跳過已查無圖三卡，從 `SI18`、`SI19`、`SP1`–`SP21`、`ST1`–`ST7` 繼續，仍以 30 cards 為上限。
+
+# 2026-09-03 — Codex Task 11H 第七批圖片候選
+
+- **做了什麼**：續做 Task 11H 第七個 30-card batch，data commit `e5cfb425`；範圍 `KI2`–`KI9`、`KI17`–`KI27`、`LI1`–`LI11`，canonical `data/acupoints/**` 零異動。
+- **數字 before→after**：dead-image candidates `360→420/722`（+60 fields／30 cards／30 unique live images），null `362→302`；目錄 1/1、point pages 30/30、`h1` code 30/30、images 30/30 均由真瀏覽器確認 HTTP 200。
+- **驗證結果**：`Self-Test Results: 14/14 fixtures behaving as expected.`；`PASS — 1133/1133 distinct dead URLs mapped to 411 cards and 1215 exact source-field occurrences; 1 all-links-dead card(s).`；candidate audit `420 verified / 302 null / 0 malformed`；`validate-content-junk: PASS`；`build-data` 後 generated 零 diff；`git diff --check` 無輸出。
+- **已知未解**：302/722 dead-image fields 尚未調查；ratchet 仍在既有 anchor-validator output parser 處 exit 1，未宣稱 green。11H nested schema verifier 擴充仍待 reviewer 驗收。
+- **下一步**：推到 `codex/tung-dead-link-candidates` 後等驗收；若續派，從剩餘 151 cards 依相同目錄→point page→image browser checks、每批最多 30 cards 往下查。
+
+# 2026-09-03 — Codex Task 11H 第五至第六批圖片候選
+
+- **做了什麼**：re-fetch `origin/main@626c0686` 並重讀 Codex／Antigravity handoff；續做唯一進行中 Task 11H。兩個 30-card commits：`afe5c762`、`c62e26c9`；canonical `data/acupoints/**` 零異動。
+- **數字 before→after**：dead-image candidates `240→360/722`（+120 fields／60 cards／60 unique live images），null `482→362`；每批目錄 1/1、point pages 30/30、`h1` code 30/30、images 30/30 均由真瀏覽器確認 HTTP 200。
+- **驗證結果**：原文 `Self-Test Results: 14/14 fixtures behaving as expected.`；原文 `PASS — 1133/1133 distinct dead URLs mapped to 411 cards and 1215 exact source-field occurrences; 1 all-links-dead card(s).`；`validate-content-junk: PASS`；`build-data` 後 generated 零 diff；`git diff --check` 無輸出。
+- **已知未解**：362/722 dead-image fields 尚未調查；ratchet 仍在 clean main 可重現的 anchor-validator output parser 處 exit 1，未宣稱 green。臨時 browser runner 首次 inline code syntax error 時 fail-closed、ledger 零寫入，改用 `--filename` 後兩批各 30/30 通過。
+- **下一步**：已推到 `codex/tung-dead-link-candidates`，等驗收；續查從剩餘 362 依相同目錄→point page→image browser checks、每批最多 30 cards 往下走。
+
+# 2026-09-03 — Codex Task 11H 02:30 heartbeat：第二至第四批圖片候選
+
+- **做了什麼**：re-fetch `origin/main@626c0686` 後重讀 Codex／Antigravity handoff；Antigravity 無未處理派工，續做 Codex Task 11H。三個 30-card commits：`615fb165`、`1e492c58`、`967763e5`；canonical `data/acupoints/**` 零異動。
+- **數字 before→after**：heartbeat 內 dead-image candidates `60→240/722`（+180 fields／90 cards／90 unique live images），null `662→482`；各批目錄 1/1、point pages 30/30、`h1` code 30/30、images 30/30 均以真瀏覽器確認 HTTP 200。
+- **驗證結果**：原文 `Self-Test Results: 14/14 fixtures behaving as expected.`；原文 `PASS — 1133/1133 distinct dead URLs mapped to 411 cards and 1215 exact source-field occurrences; 1 all-links-dead card(s).`；nested candidates `240 verified / 482 null / 0 malformed`；`git diff --check` 無輸出。
+- **已知未解**：482/722 dead-image fields 尚未調查；`check-validation-ratchet.js` 仍在既有 anchor-validator output parser 抽數處 exit 1，此錯誤已於上一批在 clean `origin/main@626c0686` 同樣重現，未宣稱 ratchet green。
+- **下一步**：已推到 `codex/tung-dead-link-candidates`，等驗收；若續派，從剩餘 482 依相同目錄→point page→image browser checks、每批最多 30 cards 往下查。
+
+# 2026-09-02 — Codex Task 11H 首批圖片候選＋Antigravity Task 11I identity 更正
+
+- **做了什麼**：branch `codex/tung-dead-link-candidates`，base `origin/main@626c0686`；Task 11H data commit `8a4dab23`，Task 11I correction commit `76463036`，只動 audit ledger／report／focused verifier，canonical `data/acupoints/**` 零異動。
+- **數字 before→after**：722 個 dead-image 欄位候選 `0→60`，null `722→662`；30 張卡的目錄頁／point page／unique point image 都用真瀏覽器打開，HTTP 200=`1/1 + 30/30 + 30/30`，`h1` code=`30/30`。
+- **驗證結果**：`--self-test`=`14/14`；`--verify-disposition`=`1133/1133 URLs / 1215 field occurrences / 411 cards` PASS；JSON parse、`git diff --check` PASS。`check-validation-ratchet.js` 在本 branch 與乾淨 `origin/main@626c0686` 都同樣因 anchor validator 輸出抽數失敗而 exit 1，屬已確認 baseline。
+- **已知未解**：662/722 dead-image 欄位尚未調查；既有 verifier 原本只懂 card-level candidate 且把 null 分母鎖在 411，本輪為符合 11H 明文契約補成 `dead_urls[]`／722 分母。Task 11I 的 `ex.le3` 原候選把百蟲窩錯指膝內，已改為 browser-verified `Baichongwo (Ex-LE13)`，407/8 統計不變。
+- **下一步**：已推到 `codex/tung-dead-link-candidates`，等驗收；後續依相同 30-card 小批次續查剩餘 662，仍只出候選，不改 canonical URL。
+
+# 2026-09-02 — 第二輪普查:73 條,15 條讀者是病人;兩處不實的安全宣稱已更正
+
+Ting 裁定的 (c)。8 條(五條沒人看過的渲染路徑 + 穴位家族四個平行全域)
+各配一個對抗覆測員,8/8 完成、0 被推翻。
+**MEASURED TREE: claude/practical-easley-73f009 @ 88be1d64**
+
+| | |
+|---|---|
+| 問題總數 | **73** |
+| ├ 讀者是病人 | **15** |
+| ├ 讀者是醫師 | 55 |
+| └ 兩者皆是 | 3 |
+| 分類 | 工程術語 25 / 會腐爛的承諾 12 / 其他 36 |
+
+## 先更正我自己上一則的推論
+
+批評者估「沒量的散文量 ≈ 20,400 longZH」,我照那個數字說「只掃了一半」。
+一探路才發現:**穴位家族只有 57 筆命中標記**,遠少於方藥那邊,而且多數是
+「本卡不自行補造深層結構」「保留為未核實異說,不作本卡結論」這種**來源自述** ——
+那對讀者有用,不是缺陷。**體積差距不等於缺陷差距**,我不拿那個數字當缺口報。
+
+## 已修:兩處不實的安全宣稱(逐項實測後改寫)
+
+`js/avs.js:5` 的檔頭寫著「病人可見輸出永遠零診斷資訊(checkPatientOutputSafety 硬擋)」。
+我把 12 個樣本餵給那道閘門,**放行 10 個**:
+
+| 樣本 | 結果 |
+|---|---|
+| 「本次辨證為肝鬱氣滯、脾陽虛」 | **放行** |
+| 「西醫診斷:胃食道逆流」 | **放行** |
+| `herb.` / `formula.` / `pair.` / `point.` / `note.` / `case.` id | **放行** |
+| `pattern.` / `cond.` id | 擋下 |
+
+`BANNED_ID_PREFIXES` 只有七個:`pattern. cond. tdis. safety. modality. metric. avs.`。
+也就是說它是「零診斷 **id** 洩漏」的閘門,不是「零診斷 **資訊**」的閘門。
+中文證型名靠醫師自律 —— checkout 自訂欄的 placeholder 確實寫著
+「病人語言,不放診斷詞與內部代碼」,但沒有任何機器在把關。
+
+第二處:`scripts/test-avs-checkout.js:13` 寫「惡意/誤植**診斷詞**進自訂指示 → 必攔」,
+但該檔注入的一直是 **id 代碼**(`pattern.liver_qi_stagnation`、病歷代碼 `P&1`),
+**從來沒有注入過中文診斷詞**。118 個綠燈不能被讀成「中文診斷詞擋得住」。
+
+兩處檔頭都改寫成「擋得住什麼 / 擋不住什麼」,並寫明擴充與否是設計裁定。
+**閘門行為一個字沒改** —— 要不要把中文診斷詞納入需要詞表,而且有誤殺風險
+(「痧斑」這類正當用語不能擋),那是 Ting 的裁定。118 測試仍全過。
+
+## 未修,待裁:病人衛教單上的四件事
+
+**(1) 診所資訊全是佔位字,而那是單子上唯一的聯絡方式。**
+`clinic_profile.json` 的 `clinic_name_zh` / `phone` / `website` / `address` 都是
+「(待填:…)」,病人單子頁首與頁尾各印一次。同一張紙上有 5 條建議的升級出口寫
+「請聯絡診所/請聯絡我們」,硬寫的急症清單標題也是「什麼情況請盡快與我們聯絡」——
+**急症升級路徑對病人是斷的**。
+
+三個限定條件要講清楚:該檔 dataset 欄自己寫著「Ting 開業前填入真實值」,所以這是
+**已知的開業前狀態**,不是有病人已經拿到這種單子;`js/avs.js:358` 的註解也明說
+「誠實顯示『(待填』佔位,不特判隱藏 —— 診所自己決定何時填真實值」,是刻意設計。
+覆測員補的那一層才是新的:`js/avs.js:221` 在定稿時把 clinicProfileSnapshot **凍結**,
+`:286` 的更正版深拷貝又會繼承 —— 所以填了真值也救不回已定稿的舊文件,
+而且腐爛會自我延續。**建議加一道「診所資訊未填就不准定稿/列印」的閘門**,不是改文案。
+
+**(2) 兩條建議告訴病人他做了沒做過的處置。**
+`avs.cupping_guasha_aftercare` 文字寫死「今天做了拔罐/刮痧」,但 `trigger_mode`
+預設 **ANY**,只勾拔罐就會出這條 —— 同一張紙的〈今天做了什麼〉印「拔罐」,
+建議段卻說「拔罐/刮痧」。`avs.moxa_aftercare` 同病(溫灸 vs 溫熱照射 TDP)。
+(`avs.acupuncture_aftercare` 不算:電針、耳針本來就都是針灸。)
+這不是潤稿問題,是**內容與事實不符**,改法是拆規則或改寫斷言句 —— 屬臨床內容裁定。
+
+**(3) 純文字版少一個 fallback。**HTML 版劑量留空印「—」,純文字版沒有,
+輸出成「・桂枝湯　　」(藥名後兩個全形空白)。病人拿到 email 版會分不出是
+「沒交代劑量」還是「字被吃掉」。同一份 snapshot 兩個輸出說法不一致。
+
+**(4) previsit 的錯誤訊息中英混雜到不成句**:
+「須為 0–10 的整數。Must be a 整數 in range 0–10.」—— 英文句子裡嵌了中文變數。
+六題數值驗證全部如此。
+
+## 醫師端的 55 條
+
+分佈在 care-draft 匯出、title hover 屬性、統一搜尋、穴位家族、tdis/紅旗名冊。
+沒有一條像病人端那樣涉及事實錯誤或安全出口,先不動。
+
+## agent 又蓋錯章
+
+這次 8 組裡仍有組把 MEASURED TREE 蓋成 `a093fec9`(實際 88be1d64)。
+**同一個錯誤第二輪又出現**,不是偶發筆誤 —— 下次派工單要把「怎麼取得 sha」寫成
+一行指令(`git rev-parse --short HEAD`),不要讓 agent 自己找。
+
+118 個 AVS 測試全過;avs-library / exposure-safety-render / care-draft-render /
+care-draft-phi 四支驗證器 exit 0。
+
+# 2026-09-02 — 佔位字不再假裝成內容;渲染器不再把工作分派印給讀卡的人
+
+Ting 裁定做三件:(a) 那 18 筆「主治 （待補）」與寫死的「待 Ting 填寫」、
+(b) previsit 把 id 印給病人、(c) 穴位那半邊再跑一輪普查。這則是 (a)(b)。
+
+## (a-1) 18 筆藥對的主治欄:三處都要改,只改一處沒用
+
+`usableText()`(js/knowledge.js:562)本來就會濾佔位字 —— 但 `PLACEHOLDER_RES`
+**只收英文佔位句**,中文的「（待補）」不在裡面;而 `pairCard` 又根本沒呼叫 `usableText`,
+用的是裸真值判斷。兩個缺口疊在一起,才會在卡上印出「**主治** （待補）」。
+
+改三處:
+1. `PLACEHOLDER_RES` 補中英文的裸佔位字。照該處既有紀律**只比對整串** ——
+   真的在談「待補」兩個字的句子(例如註記寫「安全欄待補」)不能被誤殺。
+2. `pairCard` 六個顯示欄位全部改走 `usableText`(原本六行都是裸真值)。
+3. 資料端:18 筆的 `indication_zh`/`_en`/`indications_zh`/`_en` 四欄值就是佔位字,
+   移除該四鍵。留著會讓缺口掃描把它們算成「已填」—— 佔位字沒有內容,它只是在假裝有。
+   腳本斷言「四欄全部是佔位字才准清」,任一欄有真內容就整批停手。
+
+## (a-2) 渲染器寫死的「待 Ting 填寫」
+
+`cellText`(:2872)對空格印死字串「待 Ting 填寫」——把內部工作分派印給讀卡的人,
+而且寫在渲染器裡,改資料改不掉。改成 `—`(title="這一格尚未填寫")。
+「還剩幾格沒填」沒有因此消失:上方統計列本來就有 `filled/total` 與
+「N 完成 · N 部分 · N 空」。實測 134 個空格全部變成 `—`,全頁再無那五個字。
+
+## 我自己改出來的第二把尺,當場修掉
+
+`cellText` 改用 `usableText` 之後,`cellStats`(:2858)還在用裸 trim ——
+**放佔位字的格子會被統計算成「已填」卻在畫面上是空的**。今天實測差 0 格
+(906 格 / 已填 150),所以是潛在不一致,但那正是這個庫最貴的病的種子。
+`cellStats` 一併改用 `usableText`,兩把尺統一。
+
+## (b) previsit:潛在缺陷,不是現行缺陷 —— 我上一則講得太重
+
+`previsit.html:400` 原本是 `return FALLBACK_PROMPTS[metricId] || { zh: metricId, en: "" }`,
+查不到題目就把原始 id 當題目印給**病人**。但查下去:
+`PREVISIT_METRICS` 是**寫死的 6 項**,而 `FALLBACK_PROMPTS` 正好覆蓋那 6 項;
+那 3 個缺 `patient_prompt_zh` 的指標(endometrial_lining / follicle_size /
+range_of_motion_deg)**根本不在問卷裡**。所以今天沒有任何病人看到 id ——
+上一則的摘要說「會把原始 id 印給病人」講得太重了,正確說法是**誰把其中一項加進問卷就會踩到**。
+
+還是修了,因為那條 fallback 就是 CLAUDE.md 第 5 條的形狀,只是還沒被觸發:
+- `metricPrompt` 查不到就回 `null`,不再用 id 充數
+- 呼叫端跳過該項並記進 `unpromptableMetrics`,同時 `console.warn`
+- payload 帶上 `unpromptableMetrics` ——「病人沒答」與「系統沒能問」不是同一件事,
+  這條紀律跟同檔案裡 `aeSelfReport.answered` 的三態設計是同一條。
+- **不編造題目**:寫病人看得懂的臨床測量題目要臨床判斷,不是這批該做的。
+
+`scripts/validate-previsit-payload.js --self-test` 全過(3 good + 33 bad);
+payload 驗證器只檢查必帶欄位、不擋額外鍵,所以新增欄位不會被拒收。
+`scripts/test-export-envelope-shapes.js` 10/10 PASS。
+
+14 支驗證器 exit 0,棘輪 PASS。艾葉卡與鑑別表都開起來看過。
+
+# 2026-09-02 — 把「別的資料集有沒有同樣的問題」從一句話變成數字:124 條,12 組
+
+昨天收 herb_pairs 的學習提示時,我自己寫了「窄閘門,只管這一個欄位;別的資料集有沒有
+同樣的問題**沒有量**」。這一輪把那句話變成數字。派 12 組平行判定 + 12 組對抗覆測 +
+1 個完備性批評(25 個 agent,tool 呼叫 852 次)。
+
+**MEASURED TREE: claude/practical-easley-73f009 @ f5acf4c8**
+
+## 我自己探路時修了兩次掃描條件
+
+第一版掃出 **10264 條「含記錄 id」** —— 幾乎全是 `herbs::id`、`composition[].herb_id`
+這種**結構連結欄位本身**,不是散文。又一次「掃描器把一切都報成壞的」。
+收緊成「含中文、長度 ≥20、非 id/連結欄位、且命中工程術語表」之後是 **997 筆、70 組**,
+再合併同族成 12 組派工。
+
+## 結果:12/12 完成,0 被覆測推翻
+
+| | |
+|---|---|
+| 問題總數 | **124** |
+| ├ 工程術語(欄位名/記錄 id/內部作業語) | 69 |
+| ├ 會腐爛的承諾(待裁定/待補/查到來源再補) | 22 |
+| └ 其他(讀者看不懂或誤導) | 33 |
+| 確認**不上畫面**的欄位 | 2 組:`formulas.correction_note`(176 筆)、`herbs.review_notes_zh`+`review_status_note_zh`(92 筆) |
+
+`correction_note` 那組值得記:它是 archive-before-replace 的存證欄,176 筆裡 153 筆含
+「紅線」、136 筆含 snake_case 欄位名 —— 但渲染端**完全沒讀它**,連搜尋索引白名單都沒有。
+覆測員另外實測:起獨立埠、逐張開啟那 176 張方劑卡比對 innerText,176/176 只有 1 個
+偶然重疊(引述的組成本來就該印)。所以這一欄不是缺陷,是**定位正確的存證區**,
+`scripts/audit-dark-fields.js:56` 早就把它列進 IGNORE。
+
+## 已經腐爛的那一條,已修
+
+`pair.hai_zao__kun_bu` 的四個安全欄位(`caution_zh/_en`、`cautions_zh/_en`)都寫著
+「昆布卡片尚待建立,先保留未連結 ID」。**但 `herb.kun_bu` 存在(name_zh=昆布),
+而且該藥對的 `herbs` 陣列早就連著它** —— 雙重假話,而且夾在「海藻反甘草」與
+「脾胃虛寒者忌用」兩則真安全資訊中間。已移除該子句,兩則真安全資訊逐一斷言保留。
+這不是措辭問題,是不實陳述。
+
+## 最貴的三類(已逐條自核)
+
+1. **`js/knowledge.js:2872` 渲染器寫死 `待 Ting 填寫`** —— 鑑別表空格會自己印出這五個字,
+   是把內部工作分派印給讀卡的人。改資料改不掉,得改渲染器。
+2. **18 筆藥對的 `indication_zh` 就是「（待補）」**,而 `pairCard`(:412)用裸真值判斷,
+   於是卡上印出「**主治** （待補）」—— 比整行不印更糟。
+3. **有毒藥卡在畫面上承認自己劑量對不上**:`herb.quan_xie` 的 `exam_pearl` 印著
+   「本卡 dosage 常用量 3-6g 與 contraindications_zh「乾品2-5g」兩個數字不一致,待 Ting 裁定」。
+   同類:`herb.gui_zhi` 的妊娠警語結尾「保留待 Ting 審核」、`herb.hua_ju_hong` 與
+   `herb.lu_cha` 的安全區塊**唯一一條**就是「安全欄待補」。
+
+## 完備性批評抓到更大的洞
+
+**穴位家族整個不在 `ACUTING_KNOWLEDGE` 裡**,所以這 12 組一條都沒碰到它們 ——
+`ACUTING_POINTS_361`(361)、`ACUTING_TUNG_INDEX`(277)、`ACUTING_AURICULAR_GB93`、
+`ACUTING_APP_DATA` 的 auricularPoints(203)/extraPoints(72)/scalpPoints(22)是另外四個全域。
+已量的七個資料集 longZH ≈ 26,600;**沒量的 ≈ 20,400 longZH + 16,600 longEN**。
+這輪大約只覆蓋了散文總量的一半多一點,而漏掉的那半包含 app 的同名主體。
+
+還有五條**有輸出但沒人看過**的渲染路徑:AVS 病人衛教單(列印/存 PDF/複製寄信,
+讀者是病人)、previsit.html 病人自填問卷、CARE/STRICTA 草稿 .md 匯出、
+`title=` hover 屬性(靜態掃描與肉眼讀卡都看不到)、統一搜尋的命中索引。
+
+### previsit.html:病人會看到原始 id(我自己核過)
+
+`previsit.html:400` `return FALLBACK_PROMPTS[metricId] || { zh: metricId, en: "" }`。
+`FALLBACK_PROMPTS` 只收 **6** 個;而 `outcomeMetrics` 27 筆裡有 **3 筆**缺
+`patient_prompt_zh`:`metric.endometrial_lining`、`metric.follicle_size`、
+`metric.range_of_motion_deg`,**三個都不在 fallback 裡**。
+也就是說這三項若被放進問卷,病人看到的題目就是 `metric.follicle_size` 這串字。
+正是 CLAUDE.md 第 5 條那個形狀,只是這次的讀者是病人。**未修,待裁**。
+
+## 對 agent 結論的兩處更正(不能照單全收)
+
+- 有一組把 **MEASURED TREE 蓋成 `a093fec9`**,實際是 `f5acf4c8`。蓋錯章的數字不可重現。
+  (完備性批評那支蓋對了,所以是單一 agent 的筆誤,不是全體讀錯樹。)
+- 同一組說我的掃描器分母不對(151 vs 176),**這個批評本身是錯的**:
+  176 是「非空」,151 是「命中工程術語表」,兩個不同分母;長度 <20 的有 0 筆。
+
+## 這一輪沒有動的
+
+除了 `pair.hai_zao__kun_bu` 那一條不實陳述,其餘 123 條**一律未動**,等裁定 ——
+它們橫跨 12 個資料集,而且有相當比例牽涉臨床/安全措辭與「這句該不該由 Ting 拍板」。
+
+14 支驗證器 exit 0,棘輪 PASS。
+
+# 2026-09-02 — 上一則說「散文講義是盲區」,那句現在不成立了:補起來,順手查出 CV12 一筆真的指錯
+
+上一則(`acupoint_page_anchors` 接線)把散文講義列成**已知盲區**:`Therapeutics Notes` 143 頁裡
+SJ5 出現在 45 頁,「被引頁有沒有提到這個穴」近乎恆真,突變測試 TE5 `#p58`→`#p3` 抓不到,
+所以那 11 筆只算弱檢查。那個判斷本身沒錯 —— **錯在我沒有先去看那些錨點掛在哪個欄位**。
+
+## 去看了欄位,盲區就不是盲區
+
+11 個散文錨點,**全部 11 個**掛在 `field_sources.compare_with` 上。那不是「這頁提過這個穴」,
+是一個強得多的宣稱:**被引的那一頁要撐得起「這兩個穴的比較」,就該同時看得到兩邊**。
+
+改成這條之後:
+
+| | 改之前 | 改之後 |
+|---|---|---|
+| 掃到 `#p` 錨點 | 419 | 419 |
+| 強檢查通過 | 408 | **419** |
+| 弱檢查(不算已驗證) | 11 | **0** |
+| 指錯 | 0 | 0(先抓到 1 筆,已修) |
+| 突變測試 | 2/3 | **3/3** |
+
+## 抓到的那一筆:CV12 引錯頁,而且是靠 CV10/CV13 對照才看得出來
+
+`CV12.field_sources.compare_with` 指 `Techniques 3 points.pdf#p14`,但 p.14 上
+CV13/CV10/ST21 一個都沒有。翻到 p.15 —— 比較句就在那裡:
+
+> REN 13 is useful for upper warmer issues …, whereas REN 12 is useful for middle warmer
+> issues and REN 10 is useful for lower warmer issues
+
+而且 **CV10 與 CV13 兩張卡本來就引 p.15**。所以是 CV12 這一筆自己差一頁。已改成 `#p15`
+(`data/acupoints/361.json`,1 處)。這一類「頁碼在範圍內、內容卻不對」正是
+`validate-curriculum-anchor-resolution.js` 結構上看不到的那種。
+
+## 為什麼敢把這條拿去 gate
+
+判準是**自己在不在**:自己找得到,就證明版面解析與代號比對在那一頁是有效的,這時候
+「對象不在」才是關於資料的證據;自己都找不到則相反(可能是解析或別名的問題),
+所以那一類仍然只計「查不到」,不 gate。
+
+比對同時認代號與穴名(`Shang Wan` / `上脘`)—— 散文比較常寫名字不寫代號,
+資料裡 pinyin 是 `Shangwan`、課件寫 `Shang Wan`,兩邊都去掉非字母再比。
+**只認代號會漏認,而漏認在這裡會直接變成假缺陷** —— 這支已經在別名表上錯過六次,
+不能再錯第七次。
+
+殘留盲區寫在檔頭:**不掛在 `compare_with` 上的散文錨點**(今天 0 筆)仍只有弱檢查。
+
+---
+
+# 2026-09-02 — 手修的 220 個錨點接上機器把關:新增 acupoint_page_anchors 這一層(基準 0)
+
+昨天到今天手工修掉 `data/acupoints/361.json` 裡 **220 個指錯頁的 `#p` 錨點**
+(171 + 拆開後再查出的 49),而 `validate-curriculum-anchor-resolution.js`
+同一天回報 **0 缺陷** —— 因為那一支只問「這一頁存不存在」,不問「引的是不是**那一頁**」。
+也就是說:那 220 個修正沒有任何東西擋它們再壞掉。這一則就是把那把尺做成 repo 的閘門。
+
+## 這一層量到什麼
+
+`scripts/validate-acupoint-page-anchor-accuracy.js`(2026-09-02 接進 ratchet,基準 0):
+
+| | 數 | 意思 |
+|---|---|---|
+| 掃到 `#p` 錨點 | 419 | |
+| 強檢查通過 | **408** | 該穴自己的條目確實在被引的那一頁 |
+| 弱檢查(散文) | 11 | 只確認該頁提到過 —— **不算已驗證**,理由見下 |
+| 指錯 | **0** | 缺陷數,由 ratchet 把關,不准變多 |
+| 查不到 | 0 | 別名表/版面判準的覆蓋率問題,**不計入缺陷** |
+
+三種來源結構不同,用三把尺:經絡課件看該穴自身那一列在哪頁;AP Point Book 看專論頁
+(整頁有 `LOCATION:` 且有一行以該代號開頭);散文講義沒有「條目」可言,只能問該頁有沒有提到。
+`compare_with` 引自己或引對比對象那一頁都算對。
+
+## 突變測試:3 種來源抓到 2 種,散文那一種是**已知盲區**
+
+一支永遠報 0 的驗證器等於沒有,所以先證明它會紅。故意把錨點改錯再跑:
+
+```
+table(經絡課件)   BL9  p2 → p5    ✓ 抓到   defects 0 → 1
+compendium(合訂本) BL62 p196 → p200 ✓ 抓到   defects 0 → 1
+prose(散文講義)   TE5  p58 → p3    ✗ 沒抓到 —— 盲區
+```
+
+盲區的成因量得出來:`Therapeutics Notes` 有 143 頁,SJ5 出現在其中 **45 頁(31%)**,
+「被引頁有沒有提到這個穴」對這種文件近乎恆真。所以那 11 筆**單獨列成弱檢查,不併進「已驗證」**——
+把它算成驗過就是虛報覆蓋率。它只擋得住「引了一頁完全沒提到這個穴」這種粗錯。
+
+## 落地前擋掉的四類假缺陷(都是我自己製造的)
+
+1. **用離開碼判斷 pdftotext 在不在** —— Git for Windows 附的 Xpdf 對 `-v`/`-h`/無參數一律回 99,
+   於是在一台**裝了** pdftotext 的機器上印出「SKIP 找不到工具」然後 exit 0:什麼都沒檢查卻發綠燈。
+   改成只看 spawn 有沒有 `ENOENT`。
+2. **`compare_with` 只准引對比對象** —— BL16/BL17 這種同檔相鄰的比較互相判錯,一口氣 37 個假缺陷。
+   引自己那一頁同樣合理,判準放寬。
+3. **合訂本用「標題後 3 行內要有 LOCATION:」** —— PC7 那頁多一行 `Ghost point` 就落到第 5 行,被誤報。
+   改成整頁判準。
+4. **少了 LOCATION: 的真專論頁** —— 再補一條:被引那頁自己有一行以該代號開頭就算對。
+   補完重跑突變測試仍 2/3,放寬沒有降低抓錯能力。
+
+方向是一致的:**只 gate「指錯」**。別名表漏一種寫法(這條我連續錯六次:`LR/LV/LIV`、
+`GB-26` 與 `GB 26*` 同檔混用、AP Point Book 的 `U.B.`/`L.I.`/`S.I.`/`St`/`Sp`/`Lu`/`Ht`/`P`/`Liv`/`K`)
+只會讓那一筆變成「查不到」,永遠不會把好資料報成壞的。漏認比報不出來更貴 ——
+它會讓人跑去修根本沒壞的東西。
+
+## 兩個不准安靜通過的出口
+
+- **沒有 pdftotext**:驗證器吐 `{"skipped":true}`,而 ratchet 的 `extract` 會**丟例外**(exit 2),
+  不會把 `undefined` 當成 0 flat 過去。負向測試四種輸入都跑過:skipped 炸、缺 defects 欄炸、0 與 3 正常回傳。
+  CI 的 ratchet job 因此加了 `apt-get install -y poppler-utils`。
+- **查不到超過 40%**:當作版面判準對不上目前這個 pdftotext(本機 Xpdf 4.00,CI 是 poppler,
+  `-layout` 分欄結果不保證一致),exit 2 喊「這支已經什麼都沒在量」,不是報資料乾淨。
+  今天是 0/419,真撞到就一定是抽取器換了。
+
+離開碼約定:人看的模式有指錯回 1;`--json` 是機器模式一律回 0(給 ratchet 讀數字);
+只有解析器/判準壞掉才回 2。
+
+---
+
 # 2026-09-02 清晨 — 卡片線續做:再落庫 3,152 條;encoding 缺陷 1,817 → 48
 
 承上一則。夜裡那兩批之後又跑完兩批,今天早上收尾。**今晚總計落庫 5,827 條,現況不符 0、錯誤 0。**

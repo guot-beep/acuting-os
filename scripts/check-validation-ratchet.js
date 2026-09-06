@@ -195,6 +195,30 @@ const RATCHETED = [
     // Chart 少一層目錄 1 筆),機械修得掉;A2/A3 要等課件檔本身的處置裁定。
     doc: "docs/AI_CONSTITUTION.md",
   },
+  {
+    key: "acupoint_page_anchors",
+    script: "scripts/validate-acupoint-page-anchor-accuracy.js",
+    args: ["--json"],
+    /* skipped 必須爆掉,不能靜靜當 0 —— 沒有 pdftotext 就是「這一層沒量到」,
+       而 `undefined` 拿去跟基準比不會觸發 REGRESS,結果是安靜地全過。
+       這正是這個 repo 被坑最多次的形狀,所以在這裡就攔下來。 */
+    extract: (out) => {
+      const j = JSON.parse(out);
+      if (j.skipped) throw new Error("pdftotext 不在,這一層沒有量到:" + j.reason);
+      if (typeof j.defects !== "number") throw new Error("報表沒有 defects");
+      return j.defects;
+    },
+    detail: (out) => JSON.parse(out).by_code,
+    // 2026-09-02 接線,基準 0。上面那支只查「頁碼在不在檔案範圍內」,
+    // 這支查「引的是不是**那一頁**」—— 兩者抓的是不同的病:
+    // 2026-09-01/02 手修的 220 筆指錯頁,上面那支同一天回報 0 缺陷。
+    // 只 gate「指錯」;代號別名表漏寫法只會變成「查不到」,不會生假缺陷。
+    // 散文講義原本是盲區(SJ5 出現在 143 頁裡的 45 頁,「有沒有提到」近乎恆真)。
+    // 後來發現那 11 個散文錨點全掛在 compare_with 上,改成「該頁要同時看得到兩邊」,
+    // 順手查出 CV12 一筆真的指錯。突變測試三種來源 3/3,419/419 全走強檢查。
+    // 殘留盲區:不掛在 compare_with 上的散文錨點(今天 0 筆)仍只有弱檢查。
+    doc: "docs/AI_CONSTITUTION.md",
+  },
   // retired_id_references sat here one day (2026-08-26, ceiling 10) while the
   // D21 herb_pairs residue and D16 pattern re-references were redirected and
   // Ting ruled on 敗毒散→人參敗毒散 (D22). Baseline hit 0 the same day — it

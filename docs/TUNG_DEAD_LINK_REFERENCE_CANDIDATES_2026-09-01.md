@@ -81,7 +81,15 @@ node -e "const j=require('./data/audits/tung_dead_link_disposition_2026-08-28.js
 
 ---
 
-## 5. 驗收指令輸出
+## 5. 2026-09-02 identity correction
+
+- `ex.le3` 卡名是百蟲窩；原候選誤指向 `Xinei (Ex-LE3)`（膝內）。
+- 以真瀏覽器重新開啟目錄頁後，實際索引是 `Ex-LE13 Baichongwo`；候選改為
+  `https://www.mastertungacupuncture.org/acupuncture/traditional/points/baichongwo-ex-le13`。
+- 目錄頁、正確候選頁均回 HTTP 200；頁面 `h1` 是 `Baichongwo (Ex-LE13)`，正文含百蟲窩。
+- 這是 found 集合內的一對一更正，`attempted`／`found`／`not_found` 數字不變；沒有修改 canonical 穴位資料。
+
+## 6. 驗收指令輸出
 
 ```
 node scripts/audit-source-url-liveness.js --self-test
@@ -90,10 +98,10 @@ node scripts/audit-source-url-liveness.js --self-test
 
 ---
 
-## 6. Commit 邊界
+## 7. Commit 邊界
 
 只修改：
-- `data/audits/tung_dead_link_reference_candidates_2026-09-01.json`（summary 統計修正）
+- `data/audits/tung_dead_link_reference_candidates_2026-09-01.json`（`ex.le3` 候選 identity 更正）
 - `docs/TUNG_DEAD_LINK_REFERENCE_CANDIDATES_2026-09-01.md`（本報告）
 
 不動：`data/audits/tung_dead_link_disposition_2026-08-28.json`、所有 `data/acupoints/**`

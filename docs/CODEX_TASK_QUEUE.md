@@ -1,5 +1,107 @@
 # Codex Task Queue
 
+## ⚡ NEXT(2026-09-05,Claude 派工):Task 12R —— **只做檢查,不做填寫**:對抗式覆核 Claude 落地的每一批
+
+> Ting 2026-09-05 裁定:「自己做吧,不用給 Codex」「讓 Codex 檢查就好」。
+> 所以原本的 12A(填 138 味藥用部位)改由 Claude 執行;Codex 的角色從今天起是**覆核員**。
+> 下面 12A 的說明保留,因為那正是你要覆核的第一批的規格。
+
+**你的預設立場是「這批有錯」。** 找不到錯也要把找的過程列出來,不要寫「看起來沒問題」。
+
+### 要覆核的範圍
+
+兩條資料線與所有工具修正已於 2026-09-05 整合並 ff 到 main。**覆核 main 上 `b196248f..HEAD`(2026-09-05 落地時 HEAD = 747ae4d8 之後一個 commit)這一段**(`git rev-list --count b196248f..origin/main` 應為 19;其中 6 個是藥用部位分批、3 個是 encoding、1 個 generated 合併重建,其餘是工具與文件:病人衛教單修正、搜尋索引、缺口掃描器別名/行內鏈、11H 待裁、藥用部位 176→21、encoding 48→44、錨點驗證器 csv#row、PROJECT_LOG)。
+每個 commit 訊息裡的數字都是宣稱,逐一重跑。
+
+### 每一批都要做的事
+
+- **重跑它宣稱的每一個數字。** commit 訊息與 PROJECT_LOG 裡每個「N 條」「N/M」都自己跑一次指令核對;對不上的列出來。
+- **diff 逐檔讀。** 憲法第 3 條:有沒有任何欄位變短、被清空、被短的覆蓋長的?`_en` 長度是否等於 `_zh`?
+- **上不上卡。** 每個被填的欄位,去 `js/knowledge.js` / `app.js` 追渲染路徑,確認它真的會顯示;特別注意 `A || B` fallback 與「宣告了卻沒用」的變數。
+- **來源錨點可重現。** `field_sources` 裡的 `csv#rowN` / `md#pN`,自己打開那一行/那一頁,內容對不對得上。抽 10 筆,列出 id。
+- **驗證器負控。** 新加的驗證器/閘門:故意弄壞一次(改掉修正、塞一筆壞資料),看它會不會亮。不亮就是假閘門,回報。
+- **不改任何檔案。** 你的產出只有一份覆核報告,寫到 `docs/audits/CODEX_REVIEW_<分支名>_<日期>.md`,格式:每條發現 = 「宣稱 / 實測 / 指令 / 判定(推翻|成立|不確定)」。
+
+### 完成的定義
+
+一份報告,每條發現都附可重現的指令;沒有「大致」「應該」「看起來」。
+
+---
+
+## (已改由 Claude 執行,保留為 12R 覆核規格)Task 12A —— 用課件 CSV 補 138 味中藥的「藥用部位」
+
+**MEASURED TREE**:`origin/main` @ `626c0686`。開工前自己重算分母(下方 verify 指令)。
+
+**為什麼是這批**:9/02 那份候選清單裡有五個桶,我今天逐桶查證,**只有這一桶在 repo 內有
+機器可解析的來源**。其餘四桶(炮製英文、體質類型、方劑加減英文、西藥黑框註記)都需要
+新來源或臨床判斷,不派。順帶更正:那份清單寫「炮製英文 349」,實測是 255,而且**中文有、
+英文沒有的是 0 筆** —— 那個桶不是翻譯工作,是整段不存在,所以更不能派。
+
+### 允許的檔案
+
+- `data/herbs/herb_canon_shortlist.json`(**只准改下面指定的 138 筆、只准動兩個 key**)
+
+### 禁止的檔案
+
+- 其他所有 `data/**`、全部 `js/**`、`app.js`、`index.html`、`scripts/**`、`docs/**`、`curriculum/**`
+- 特別注意:**不要**寫 `tcm_properties.part_used_en`。渲染器從來沒讀過那個 key
+  (`js/knowledge.js:2172` 只讀 `record.part_used_en` 與 `props.part_used_zh`),
+  寫進去等於做白工,而且會讓下一個人以為這裡填過了。
+
+### 這批的 id 清單
+
+`data/audits/part_used_targets_2026-09-04.json` —— 138 筆,每筆帶
+`{id, pinyin, plant_part_raw, csv_row}`。**只做這 138 筆**,清單以外一筆都不要碰。
+
+這 138 筆的來源是 `curriculum/herbs/pinyin_latin_herb_list.csv` 的 **Plant Part** 欄,
+用 pinyin 正規化(小寫、去空白與連字號)對上的。同一支 CSV 已經是庫裡
+`pharmaceutical_latin` 的既有來源,所以引用慣例照抄就好。
+
+### 要做的事
+
+對清單裡每一筆:
+
+1. 把 `plant_part_raw` 正規化後寫進**頂層** `part_used_en`。
+   正規化規則(CSV 大小寫很亂:`root` 32 筆、`Root`、`Rhizome`、`whole herb`…):
+   - 首字母大寫,其餘小寫:`root` → `Root`、`whole herb` → `Whole herb`、`root bark` → `Root bark`
+   - `seeds` → `Seed`、`aerial parts` → `Aerial parts`(維持 CSV 的單複數,只調大小寫,
+     **除了** `seeds`/`roots` 這種明顯複數改單數)
+   - 不要自己加形容詞。CSV 寫 `root` 就是 `Root`,**不要**擴寫成 `Dried root`——
+     那是憲法第 4 條的虛構(「乾燥」是炮製狀態,CSV 沒說)。
+2. 在同一筆的 `field_sources` 加一條,照既有慣例(見 `herb.gui_zhi` 的 `pharmaceutical_latin`):
+   ```json
+   "part_used_en": ["curriculum/herbs/pinyin_latin_herb_list.csv#row<csv_row>"]
+   ```
+   `<csv_row>` 用清單裡給的 `csv_row`,不要自己重算。
+3. **不要**動 `review_status`、不要動任何其他欄位、不要改 id。
+
+### 完成的定義
+
+1. `node scripts/build-data.js` 通過。
+2. `node scripts/validate-herb-standard.js` 與 `node scripts/validate-content-junk.js` 通過。
+3. `node scripts/check-validation-ratchet.js` **PASS**(不准有任何一層變多)。
+4. `git diff --stat` 只有 `data/herbs/herb_canon_shortlist.json` 一個檔。
+5. `git diff` 自己讀一遍:確認沒有任何欄位被清空或變短(憲法第 3 條)。
+6. 卡面驗證:下面這行應該從 138 降到 0。
+   ```bash
+   node -e 'const j=require("./data/herbs/herb_canon_shortlist.json");const H=(j.records||j).filter(r=>r.review_status!=="deprecated");const t=v=>String(v??"").trim();const p=r=>(r.tcm_properties&&typeof r.tcm_properties==="object")?r.tcm_properties:{};const ids=new Set(require("./data/audits/part_used_targets_2026-09-04.json").map(x=>x.id));console.log(H.filter(r=>ids.has(r.id)&&!t(r.part_used_en)&&!t(p(r).part_used_zh)&&!t(r.part_used_zh)).length)'
+   ```
+
+### 驗證指令(開工前先跑,確認分母對得上)
+
+```bash
+node scripts/build-data.js
+node -e 'const a=require("./data/audits/part_used_targets_2026-09-04.json");console.log("清單筆數",a.length)'   # 應為 138
+node scripts/check-validation-ratchet.js                                                                        # 開工前先記下各層數字
+```
+
+### 邊界
+
+- **做多少算多少,誠實回報**。138 筆不是必須做完的目標;做了 90 筆就回報 90,不要為了湊數字硬填。
+- CSV 對不上的那 38 筆(176 − 138)**不在這批裡**,不要去猜它們的部位。
+- 小批 commit + push(20–30 筆一批)。commit 不等於安全,這個專案被洗掉過兩次。
+- 回報照憲法第四條:動到的 id、`part_used_en` 有值的筆數 before→after、驗證器輸出**原文貼上**。
+
 ## ⚡ NEXT（2026-09-01，Claude 派工）：Task 11H——幫那 722 條死圖片找同站真候選，**限時約 2 小時，做多少算多少**
 
 **背景**：Task 11G 已驗收落地（`469b1325`）——獨立重跑 `--self-test` 13/13、`--verify-disposition`

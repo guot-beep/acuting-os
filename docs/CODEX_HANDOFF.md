@@ -1,5 +1,53 @@
 # AcuTing OS - Agent Handoff Log
 
+## [2026-09-04] Codex Handoff — Task 11H 候選調查收斂
+
+- **Branch / Base / Commits**：`codex/tung-dead-link-candidates`，base `origin/main@626c0686`；本輪 data commits `ea125c13`、`6ec22bcd`、`b03249ac`、`7523fbd0`。仍只動 audit ledger/report，canonical `data/acupoints/**`、app/runtime、generated data 零異動。
+- **Measured coverage**：本輪調查 91 cards／182 dead-image fields，candidate fields `534→716/722`，null `188→6`。Task 11H 累計 `361/361` cards 已調查；358 cards／716 fields 有 browser-verified live candidates，3 cards／6 fields 誠實維持 null。共做 361 個 unique live image HTTP checks；`SP21`、`ST6`、`ST8` 各有兩張有效不同視圖，依 point-page DOM 順序逐欄對應。
+- **Exceptions / Evidence**：`LR9`、`LR10`、`LR11` 頁面明寫 `Picture in preparation.`，network-idle 後無 `img/source` lazy URL 或 CSS background，故未猜候選。網站目錄使用 `TH1`–`TH23` 而 repo 使用 `TE1`–`TE23`，逐頁以 live directory、`h1` Pinyin/code、中文名比對；`TE18` source 中文作 `契脈`、canonical 作 `瘈脈`，只在 `how_found` 留差異，未改 canonical。`TE23` 頁面的 `favicon.ico` 404 不屬候選資產。
+- **Validation**：`--self-test`=`14/14`；`--verify-disposition`=`1133/1133 distinct URLs / 1215 exact source-field occurrences / 411 cards` PASS；candidate audit=`716 verified / 6 null / 0 malformed`；`validate-content-junk` PASS with frozen warnings；`build-data` generated zero diff；`git diff --check` clean。ratchet 仍為既知 anchor-validator 報表解析／`pdftotext` baseline，exit 1，未報成 green。
+- **Next**：Task 11H 候選調查已收斂，可交 reviewer 驗收；是否把候選寫入 canonical URL，仍需 Ting／內容線另行裁定。依 Ting 指示，推送後重新查看 Claude、Codex queue 與 Antigravity handoff 是否有新派工。
+
+## [2026-09-04] Codex Handoff — Task 11H batches 8–9
+
+- **Branch / Base / Commits**：`codex/tung-dead-link-candidates`，re-fetched base 仍為 `origin/main@626c0686`；本輪 data commits `801d75d2`、`da744822`。Ting 已明確授權保留 11H focused nested-candidate verifier，先前 verifier/file-boundary 文字衝突解除。
+- **Measured coverage**：本輪調查 60 cards／120 dead-image fields；找到 57 cards／114 fields，candidate fields `420→534/722`，ledger null `302→188`。累計調查 270 cards／540 fields，其中 267 cards／534 fields 有 live candidate，3 cards／6 fields 維持 null；另有 91 cards／182 fields 未調查。
+- **No-candidate evidence**：`LR9`、`LR10`、`LR11` 的 point pages／`h1` 皆 HTTP 200 且相符，但頁面明寫 `Picture in preparation.`；network-idle 後 `img/source` lazy attributes 與 CSS backgrounds 均無穴位圖，所以沒有猜 URL。
+- **Validation**：`--self-test`=`14/14`；`--verify-disposition`=`1133/1133 distinct URLs / 1215 exact source-field occurrences / 411 cards` PASS；candidate audit=`534 verified / 188 null / 0 malformed`；`validate-content-junk` PASS with frozen warnings；兩批各自 `build-data` generated zero diff、`git diff --check` clean。ratchet 仍為既知 anchor-validator parser／`pdftotext` baseline，exit 1，未報成 green。
+- **Next**：跳過已調查但無圖的 `LR9`–`LR11`；下一批 30 cards 是 `SI18`、`SI19`、`SP1`–`SP21`、`ST1`–`ST7`。仍只寫 ledger/report/docs，不改 canonical URLs。
+
+## [2026-09-03] Codex Handoff — Task 11H batch 7
+
+- **Branch / Base / Commit**：`codex/tung-dead-link-candidates`，base 仍為 `origin/main@626c0686`；本批 data commit `e5cfb425`。推到同名遠端分支後等待驗收。
+- **Measured coverage**：candidate fields `360→420/722`（本批 +60；累計 210 cards／210 unique point images），null `362→302`。由 live directory 實際 href 進 30 個 point pages，核對 `h1` code，再 browser-open 30 個 images；pages／code／images 各 `30/30` HTTP 200。
+- **Validation**：`--self-test`=`14/14`；`--verify-disposition`=`1133/1133 distinct URLs / 1215 exact source-field occurrences / 411 cards` PASS；nested candidate audit=`420 verified / 302 null / 0 malformed`；`validate-content-junk` PASS with frozen warnings；`build-data` generated zero diff；`git diff --check` clean。ratchet 仍為既知 anchor-validator output parser baseline，exit 1，未報成 green。
+- **Scope / Evidence**：本批 `KI2`–`KI9`、`KI17`–`KI27`、`LI1`–`LI11`；每個欄位保留 browser observation 的 `fetched_at`、HTTP 200 與含 list→point page→image 的 `how_found`。canonical `data/acupoints/**`、app/runtime、generated data 零異動。
+- **Next**：302 dead-image fields（151 cards）維持 null；下一批仍依排序取最多 30 cards，逐頁實測，不由 URL pattern 猜候選。合併前仍需 reviewer 裁定 11H nested schema verifier 擴充是否符合派工邊界。
+
+## [2026-09-03] Codex Handoff — Task 11H batches 5–6
+
+- **Branch / Base / Commits**：`codex/tung-dead-link-candidates`，re-fetched base 仍為 `origin/main@626c0686`；本輪 commits `afe5c762`、`c62e26c9`。已推到該分支，等驗收。
+- **Measured coverage**：candidate fields `240→360/722`（本輪 +120；累計 180 cards／180 unique point images），null `482→362`。兩批均由 live directory 實際 href 進 point page，核對 `h1` code，再 browser-open image；point pages／code／images 各 `60/60` HTTP 200。
+- **Validation**：`--self-test`=`14/14`；`--verify-disposition`=`1133/1133 distinct URLs / 1215 exact source-field occurrences / 411 cards` PASS；`validate-content-junk` PASS with frozen warnings；`build-data` generated zero diff；`git diff --check` clean。ratchet 仍是 clean main 可重現的 anchor-validator output parser baseline，未報成 green。
+- **Execution note**：不提交的批次 runner 首次用 inline `run-code` 遇 syntax error 時在任何 ledger write 前停止；改為 Playwright `--filename` 後才寫入，兩批各自 30/30 通過。這個工具與 browser artifacts 收工時移除。
+- **Boundary / Next**：canonical `data/acupoints/**`、app/runtime、generated data 零異動；362 dead-image fields 維持 null。續查仍以 30 cards 為上限，候選必須保留 `fetched_at`／HTTP 200／`how_found`，不由 URL pattern 猜測。
+
+## [2026-09-03] Codex Handoff — Task 11H 02:30 heartbeat batches 2–4
+
+- **Branch / Base / Commits**：`codex/tung-dead-link-candidates`，re-fetched base 仍為 `origin/main@626c0686`；本 heartbeat 三批 commits `615fb165`、`1e492c58`、`967763e5`。已推到該分支，等驗收。
+- **Measured coverage**：candidate fields `60→240/722`（heartbeat +180；累計 120 cards／120 unique point images），null `662→482`。每批 30 cards，全部由 live directory 的實際 href 進 point page，核對 `h1` code，再 browser-open image；heartbeat point pages `90/90`、code `90/90`、images `90/90` HTTP 200。
+- **Validation**：`--self-test`=`14/14`；`--verify-disposition`=`1133/1133 distinct URLs / 1215 exact source-field occurrences / 411 cards` PASS；nested candidate audit=`240 verified / 482 null / 0 malformed`；`git diff --check` clean。ratchet 仍是 clean main 可重現的 anchor-validator output parser baseline，沒有報成 green。
+- **Antigravity queue**：最新 `docs/ANTIGRAVITY_HANDOFF.md` 沒有進行中派工；Task 11I 已驗收落地，其 `ex.le3` identity mismatch 已在本 branch 前一批 `76463036` 更正，本 heartbeat 沒重做該 milestone。
+- **Boundary / Next**：canonical `data/acupoints/**`、app/runtime、generated data 零異動；482 dead-image fields 維持 null。續查時仍以 30 cards 為上限，候選必須保留 `fetched_at`／HTTP 200／`how_found`，不由 URL pattern 猜測。
+
+## [2026-09-02] Codex Handoff — Task 11H 首批圖片候選＋Task 11I identity correction
+
+- **Branch / Base / Commits**：`codex/tung-dead-link-candidates`，base `origin/main@626c0686`；Task 11I correction `76463036`；Task 11H batch `8a4dab23`。已推到該分支，等驗收。
+- **Task 11H measured coverage**：dead-image candidates `0→60/722`，null `722→662`；30 張卡、60 個 dead-image fields，來自站內目錄的 30 個 point pages，各自 `h1` code 相符，30 個 unique point images 逐一 browser-opened HTTP 200。沒有從舊檔名或 URL pattern 生候選。
+- **Task 11I correction**：`ex.le3` 卡名百蟲窩，原 ledger 候選誤指 `Xinei (Ex-LE3)` 膝內；live directory 的真條目是 `Ex-LE13 Baichongwo`，已改為 `/points/baichongwo-ex-le13`，頁面 HTTP 200／`h1`／正文中文名均核對；summary `407 found / 8 not_found` 不變。
+- **Validation**：`--self-test`=`14/14`；`--verify-disposition`=`1133/1133 distinct URLs / 1215 exact source-field occurrences / 411 cards` PASS；JSON parse、`git diff --check` PASS。ratchet 在 branch 與 clean `origin/main@626c0686` 都因既有 anchor-validator output parser 抽不到數字而 exit 1，不表示本 batch green。
+- **Boundary / Next**：canonical `data/acupoints/**`、`app.js`、`js/**`、generated data 零異動；662 個 dead-image fields 未調查。11H handoff 的 nested schema 與 11G card-level verifier 原本衝突，本輪只擴充同一 verifier 以驗 nested evidence／summary，沒有放寬既有 URL/card/field-path gates；下一批仍以 30 cards 為上限。
+
 ## [2026-08-31] Codex Handoff — Task 11G 董氏穴位死連結處置清單
 
 - **Branch / Base / Remote**：`codex/tung-dead-link-disposition`，rebase 後基底 `origin/main@9ce64a6b`；產物 commit `5e1a8fc4`。已推到該分支，等驗收。

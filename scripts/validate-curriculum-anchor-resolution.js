@@ -34,7 +34,10 @@ const SCAN_DIR = path.join(ROOT, 'data');
 // data/generated/** 是 build 產物,同一筆會被算好幾次 —— 量原始檔,不量 bundle。
 const SKIP_DIRS = new Set(['generated', 'node_modules', '.git']);
 
-const ANCHOR_RE = /curriculum\/[^"'\\\s][^"'\\]*?\.(?:md|pdf)#(?:p\d+(?:[-–]\d+)?|L\d+(?:-L\d+)?)/g;
+/* 2026-09-05 加 .csv#rowN:藥用部位那批 137 個 csv#row 錨點落地時,這支對它們完全視而不見
+ * (覆核員負控:放 2 個壞的 csv#row 進去,它一個都不抽),而回報卻寫「錨點全部可解析 PASS」。
+ * 沒被抽出的錨點不是「通過」,是「沒人看」。 */
+const ANCHOR_RE = /curriculum\/[^"'\\\s][^"'\\]*?\.(?:md|pdf|csv)#(?:p\d+(?:[-–]\d+)?|L\d+(?:-L\d+)?|row\d+)/g;
 
 function collectFiles(dir, out) {
   let entries;
@@ -73,6 +76,10 @@ function fileInfo(rel) {
   } else if (rel.endsWith('.md')) {
     const text = fs.readFileSync(abs, 'utf8');
     v = { exists: true, lineCount: text.split(/\r?\n/).length, pages: readPages(text) };
+  } else if (rel.endsWith('.csv')) {
+    // #rowN 是檔案行號(1-based,含 ## sheet 標題列與表頭),與寫入時 targets.csv_row 同一把尺
+    const text = fs.readFileSync(abs, 'utf8');
+    v = { exists: true, isCsv: true, lineCount: text.split(/\r?\n/).length };
   } else {
     // .pdf 本身不解析。它的孿生 .md 若在,就用 .md 的頁標記代查頁碼。
     const twin = rel.replace(/\.pdf$/, '.md');
@@ -163,6 +170,18 @@ function main() {
       const a = Number(lm[1]);
       const b = lm[2] ? Number(lm[2]) : a;
       if (a < 1 || a > b || b > info.lineCount) {
+        defects.push({ code: 'A2', anchor, detail: `行號超出範圍(檔案 ${info.lineCount} 行)`, citedBy });
+      } else {
+        okCount++;
+      }
+      continue;
+    }
+
+    const rm = frag.match(/^row(\d+)$/);
+    if (rm) {
+      if (!info.isCsv) { defects.push({ code: 'A4', anchor, detail: '#row 只能用在 .csv', citedBy }); continue; }
+      const n = Number(rm[1]);
+      if (n < 1 || n > info.lineCount) {
         defects.push({ code: 'A2', anchor, detail: `行號超出範圍(檔案 ${info.lineCount} 行)`, citedBy });
       } else {
         okCount++;
