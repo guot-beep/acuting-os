@@ -511,7 +511,22 @@
         "advice": "string",
         "westernConditionLinks": "array",
         "easternDiseaseLinks": "array",
-        "tcmPatternLinks": "array"
+        "tcmPatternLinks": "array",
+        "safetyFlagLinks": "array",
+        "subjective": "string",
+        "objective": "string",
+        "assessment": "string",
+        "plan": "string",
+        "pointsUsed": "string",
+        "acupointLinks": "array",
+        "retentionMinutes": "number",
+        "technique": "string",
+        "needleCount": "number",
+        "needleDepthText": "string",
+        "deqiResponse": "string",
+        "needleStimulation": "string",
+        "needleTypeText": "string",
+        "formulaHerbs": "string"
       }
     }
   },
