@@ -203,6 +203,9 @@ function main() {
    * 兩個方向都不能比:不同抽取器量出來的數字彼此沒有可比性。所以不是 Xpdf 就宣告「量不到」,
    * 由棘輪標 UNMEASURED;要在 poppler 上量,得另外用 poppler 記一組基準(或把判準做到兩者一致),不是硬比。 */
   const banner = (() => {
+    // 測試鉤子:Windows 上用 PATH 塞假的 pdftotext shim 不可靠(libuv 會先找到真的 .exe),
+    // 所以負控直接給橫幅字串。只影響「抽取器是誰」的判定,不影響抽取本身。
+    if (process.env.ACUTING_FAKE_PDFTOTEXT_BANNER) return process.env.ACUTING_FAKE_PDFTOTEXT_BANNER;
     try {
       const r = require('child_process').spawnSync('pdftotext', ['-v'], { encoding: 'utf8' });
       return `${r.stdout || ''}${r.stderr || ''}`.split('\n').slice(0, 2).join(' ').trim();

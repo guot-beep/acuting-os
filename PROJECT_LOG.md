@@ -1,3 +1,55 @@
+# 2026-09-06 — D33 切換上線;main 的 CI 從 9/02 起是紅的、棘輪四天沒有 gate,今天修好轉綠;六支驗證器接線;持久層反向覆蓋入棘輪
+
+**MEASURED TREE: main @ 1f6d8656(CI run 34044169277 全綠)**
+
+## D33 切換(Ting 裁定「推」)
+
+main `de1c84ea` → `ea15ea0f`。零病例,切換成本零。部署後探針 PASS:acuting.com / play / 知識庫 200,
+`/__clinical/*` 401 + `setup_required=true`,亂猜設定碼 401。合併時抓到一個新坑:git 零衝突地把 main 的
+「現況:純靜態」檔頭拼到 D1 設定上,舊 G5 只守一個方向 —— 已補反向。Ting 待做:第一次開 app 貼設定碼、訂通行碼。
+
+## CI:一個環境相依的步驟弄暗了整個棘輪 job 四天
+
+| | |
+|---|---|
+| 症狀 | GitHub Actions 在 main 上 626c0686 → ea15ea0f 六次 run 全 failure,沒人收到通知 |
+| 紅的步驟 | ratchet job 的「acupoint page-anchor accuracy」:本機 Xpdf 4.00 量到 419/0,CI poppler 分欄不同 |
+| 為什麼是「全暗」 | 它排在 check-validation-ratchet 之前,且 --json 也走同一個 exit 2 斷路器 → 其餘 15 層根本沒跑 |
+| 第一輪修(df204009) | 該層 --json 量不到時吐 skipped + ::warning;ratchet allowSkip → UNMEASURED 不比對;獨立步驟移後 + continue-on-error |
+| 第一輪結果 | 仍紅,但變成 ratchet 自己 exit 1(REGRESS)—— poppler 沒撞 40% 斷路器,卻產生假「指錯」>0 |
+| 第二輪修(1f6d8656) | 讀 `pdftotext -v` 橫幅,不是 Xpdf 就宣告量不到(不同抽取器的數字彼此不可比);REGRESS 改印 ::error 註記(匿名可讀) |
+| 第二輪結果 | **success**;註記:「偵測到 pdftotext version 24.02.0 The Poppler Developers — 這一層在此環境量不到」 |
+
+誠實記下:page-anchor 這一層在 CI 上現在是「未量到」,本機 Xpdf 仍量、仍 gate。要在 CI 量,得用 poppler 另記一組基準或把判準做到兩者一致。
+另一個誠實記下:第二輪落地前我的本機負控(PATH 塞假 pdftotext)其實沒跑到那條路(Windows 上 libuv 先找到真的 .exe),
+指令鏈用 `&&` 串 echo 沒有斷言預期值,照樣推了;CI 的真環境才是最終證據。已加 `ACUTING_FAKE_PDFTOTEXT_BANNER` 鉤子讓本機負控可重現。
+
+## 六支寫好沒接線的驗證器接進 CI
+
+board-pair-attribution(正本缺檔時原本 exit 0 報綠 → 改 exit 2)、card-text-audience、found-in-formulas-integrity、
+herb-pair-render、rendered-reference-resolution、review-status-vocabulary。覆核員 40 案負控:直接塞違規 22/22 抓到、
+正本缺/解析 0 都 FAIL;**但五支在「要檢查的那種東西一筆都沒抽到」時全綠**(守得住 2、部分 4、假閘門 0)。
+加下限與 malformed 桶的修正由執行者在 `claude/validator-floors-2026-09-06` 進行中。
+
+## 持久層:round-trip 的誠實分母
+
+`validate-sqlite-mapping-coverage.js` 加「登記了但沒被 fixture 演練」:105 登記 / 33 演練 / **74 未演練**,
+新棘輪層 `mapping_fixture_uncovered` 基準 74 只准降。補 fixture 的執行者在 `claude/fixture-coverage-2026-09-06` 進行中
+(規則:只加 app.js 真的會匯出的欄位;找不到寫入點的改標 mapping 狀態,不塞)。
+
+## 驗證器輸出(1f6d8656)
+
+```
+validate-acupoint-page-anchor-accuracy --json   {"defects":0,"scanned":419,"verified":419,"weak":0,"unresolved":0}(Xpdf)
+check-validation-ratchet                        16 層 flat(含 mapping_fixture_uncovered 74、acupoint_page_anchors 0),PASS
+GitHub Actions run 34044169277                  no-PHI ✓ preflight ✓ green ✓ ratchet ✓
+```
+
+## 下一批
+
+落地 claude/validator-floors(六支加下限)、claude/fixture-coverage(74 → N)、兩條內容線(方劑加減 zh / 西藥黑框查證註記)—— 各配覆核員,回來後驗收。
+
+
 # 2026-09-05 — 開診第一週:11H 驗收落地、藥用部位 176→21、搜尋修 159 味、encoding 48→44、四個工具盲區補上
 
 Ting 裁定:「自己做吧,不用給 Codex」「讓 Codex 檢查就好」。所以資料批次改由 Claude 執行
