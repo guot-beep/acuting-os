@@ -1,5 +1,8 @@
 # D1 切換:妳要做的事(不用進 Cloudflare 後台)
 
+> **2026-09-06 已切換**(main `de1c84ea`,Ting 裁定「推」)。線上 `/__clinical/*` 已回 401 + `setup_required`,
+> 知識庫照常公開。現在只剩下面「2. 切換後」那一步是妳的:第一次開 app 貼設定碼、訂通行碼。
+
 寫給 Ting。2026-09-02 改版:**Cloudflare Access 整套拿掉**,改成 app 自己的通行碼。
 之前那份清單要妳開 Zero Trust、綁信用卡、拿 AUD tag —— 那些現在一件都不用做。
 

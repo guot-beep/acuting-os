@@ -1193,3 +1193,10 @@ PASS(composition 查無藥材維持 1 味次 `formula.huang_tu_tang` 的「灶�
 > **重切步驟(15 分鐘)**:她 acuting-os → Access → Protect this Worker(All traffic,規則 Emails = 她)→ 我跑 canary(病例站鎖、acuting.com 公開)→
 > `node scripts/apply-d1-production-config.js --database-id c96bd14b-70ed-49c1-8abf-1eeb1eac651f --team-domain https://soft-snow-1c0c.cloudflareaccess.com --aud <轉址 kid>` → 閘門 → push main。
 > AUD 會隨 Access 應用程式重建而變,一律從轉址的 `kid=` 讀,不要抄舊的。
+> **切換完成(2026-09-06,Ting 裁定「推」)**:main `de1c84ea`。前提從「Access 上鎖」改為「app 通行碼」
+> (2026-09-02 附記),因為 repo 公開,通行碼雜湊不進 git:git 只放一次性設定碼雜湊(`CLINICAL_SETUP_*`),
+> 她的通行碼在第一次開 app 時訂定、雜湊由 Worker 寫進 D1。切換當下她零病例,雲端與本機皆空,成本為零。
+> 部署後探針(`canary-production-lock.js --mode passphrase`)PASS:acuting.com / play / 知識庫 200,
+> `/__clinical/*` 401 + `setup_required`。合併時抓到一個新坑並補閘門:git 零衝突地把 main 的
+> 「現況:純靜態」檔頭拼到 D1 設定上 —— G5 現在兩個方向都擋。上面「重切步驟」那段(Access 版)自此作廢。
+> 回滾錨 main@410f7308:`wrangler.jsonc` 換回 + 拿掉 index.html 的 meta,同一個 commit。

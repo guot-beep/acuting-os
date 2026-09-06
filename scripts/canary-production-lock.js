@@ -60,11 +60,16 @@ const toAccess = (r) => /\.cloudflareaccess\.com/i.test(r.loc);
     }
   } else {
     console.log("\n知識庫必須公開(通行碼只保護病例):");
+    /* Cloudflare Workers Assets 會把 /index.html 正規化成 /(307,Location 是同站路徑)。
+     * 那是公開站的正常行為,不是鎖 —— 2026-09-06 切換後探針把它報成 FAIL,差點讓人以為切換出事。
+     * 判準:200,或 3xx 且 Location 是同站(不是 *.cloudflareaccess.com、不是別的 host)。 */
+    const sameHost = (r) => { try { const u = new URL(r.loc, BASE); return u.host === new URL(BASE).host; } catch (_) { return false; } };
     for (const p of ["/", "/index.html", `/nope-${rnd}`]) {
       const r = await probe(BASE + p);
-      const okPublic = r.status === 200 && !toAccess(r);
+      const redirectedInSite = r.status >= 300 && r.status < 400 && sameHost(r) && !toAccess(r);
+      const okPublic = (r.status === 200 && !toAccess(r)) || redirectedInSite;
       if (!okPublic) bad++;
-      console.log(`  ${okPublic ? "🌐" : "⛔"} ${p.padEnd(22)} ${r.status}${toAccess(r) ? "  → 被 Access 擋住了(通行碼模式不該有 Access)" : ""}`);
+      console.log(`  ${okPublic ? "🌐" : "⛔"} ${p.padEnd(22)} ${r.status}${redirectedInSite ? "  → " + r.loc + "(同站正規化,公開)" : ""}${toAccess(r) ? "  → 被 Access 擋住了(通行碼模式不該有 Access)" : ""}`);
     }
     console.log("\n病例 API 必須擋下未帶通行證的請求:");
     for (const p of ["/__clinical/ping", "/__clinical/kv", "/__clinical/status"]) {
