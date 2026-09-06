@@ -1930,6 +1930,15 @@
         ],
         "physiologic_effect_en": [
           "dailymed:9ea0a519-dc7c-42e3-939e-2a7c80eedd25#PHARMACODYNAMICS"
+        ],
+        "boxed_warning_checked_note_zh": [
+          "data/pharmacology/dailymed_api_responses.json#drug.heparin",
+          "https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/9ea0a519-dc7c-42e3-939e-2a7c80eedd25.xml"
+        ],
+        "boxed_warning_checked_note_en": [
+          "translated 2026-09-07 from boxed_warning_checked_note_zh (Claude)",
+          "data/pharmacology/dailymed_api_responses.json#drug.heparin",
+          "https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/9ea0a519-dc7c-42e3-939e-2a7c80eedd25.xml"
         ]
       },
       "exam_trap_zh": "⚠️ 禁忌明列「無法在適當間隔進行凝血檢驗時」—— 肝素需要監測(aPTT),這與 DOAC 無監測、warfarin 用 INR 各不相同。三種抗凝劑三種監測方式。",
@@ -1983,7 +1992,8 @@
       "site_of_action_en": "Antithrombin III in plasma; the resulting complex inhibits the activated coagulation factors, particularly Xa and IIa (thrombin)",
       "site_of_action_zh": "血漿中的抗凝血酶 III;所形成的複合體再去抑制已活化的凝血因子,尤以 Xa 與 IIa(凝血酶)為主",
       "physiologic_effect_en": "Full therapeutic doses prolong the activated clotting time, activated partial thromboplastin time, prothrombin time and whole blood clotting time; low doses usually do not measurably affect them, and bleeding time is usually unaffected. Existing clots are not lysed.",
-      "physiologic_effect_zh": "足量治療劑量會延長活化凝血時間、活化部分凝血活酶時間、凝血酶原時間與全血凝固時間;低劑量通常不會造成可測得的改變,出血時間一般也不受影響。既有的血栓不會被溶解。"
+      "physiologic_effect_zh": "足量治療劑量會延長活化凝血時間、活化部分凝血活酶時間、凝血酶原時間與全血凝固時間;低劑量通常不會造成可測得的改變,出血時間一般也不受影響。既有的血栓不會被溶解。",
+      "boxed_warning_checked_note_en": "This label carries **no** boxed warning — verified, not an omission. Low-molecular-weight heparin (enoxaparin), by contrast, carries a spinal/epidural hematoma boxed warning; the two are different drugs — do not carry one over to the other."
     },
     {
       "id": "drug.losartan",
@@ -4798,12 +4808,8 @@
         "急性心肌梗塞",
         "已知對左旋甲狀腺素或任何非活性成分過敏"
       ],
-      "warnings_en": [
-        "BOXED WARNING: Thyroid hormones, including levothyroxine, should not be used for the treatment of obesity or weight loss. Doses within or above the normal range may produce serious or life-threatening toxic effects particularly when given with sympathomimetic amines."
-      ],
-      "warnings_zh": [
-        "黑框警語：包括左旋甲狀腺素在內的甲狀腺素不得用於治療肥胖或減重。在正常或超出正常範圍的劑量，尤其與擬交感神經胺合用時，可能產生嚴重或威脅生命的毒性效應。"
-      ],
+      "warnings_en": [],
+      "warnings_zh": [],
       "adverse_effects_en": [
         "Symptoms of hyperthyroidism when over-replaced: palpitations, tachycardia, anxiety, insomnia, heat intolerance, weight loss",
         "Bone loss with prolonged supraphysiologic doses",
@@ -4832,9 +4838,6 @@
         "contraindications_en": [
           "dailymed:42a26f8a-dc67-42e4-abb0-d2602afb1b7d#CONTRAINDICATIONS"
         ],
-        "warnings_en": [
-          "dailymed:42a26f8a-dc67-42e4-abb0-d2602afb1b7d#BOXED_WARNING"
-        ],
         "adverse_effects_en": [
           "dailymed:42a26f8a-dc67-42e4-abb0-d2602afb1b7d#ADVERSE_REACTIONS"
         ],
@@ -4843,6 +4846,12 @@
         ],
         "physiologic_effect_en": [
           "dailymed:42a26f8a-dc67-42e4-abb0-d2602afb1b7d#MECHANISM_OF_ACTION"
+        ],
+        "boxed_warning_zh": [
+          "dailymed:42a26f8a-dc67-42e4-abb0-d2602afb1b7d#BOXED_WARNING"
+        ],
+        "boxed_warning_en": [
+          "dailymed:42a26f8a-dc67-42e4-abb0-d2602afb1b7d#BOXED_WARNING"
         ]
       },
       "review_status": "draft",
@@ -4860,7 +4869,9 @@
       "site_of_action_en": "Thyroid receptor proteins attached to DNA in the cell nucleus",
       "site_of_action_zh": "細胞核內附著於 DNA 上的甲狀腺素受體蛋白",
       "physiologic_effect_en": "Thyroid hormones act through control of DNA transcription and protein synthesis: T3 and T4 diffuse into the nucleus and bind thyroid receptor proteins, and the hormone-nuclear receptor complex activates gene transcription and synthesis of messenger RNA and cytoplasmic proteins. Physiological actions are produced predominantly by T3, approximately 80% of which is derived from T4 by deiodination in peripheral tissues. Oral levothyroxine is a synthetic T4 that exerts the same physiologic effect as endogenous T4, maintaining normal T4 levels where a deficiency is present.",
-      "physiologic_effect_zh": "甲狀腺素透過調控 DNA 轉錄與蛋白質合成發揮作用:T3 與 T4 擴散進入細胞核並結合甲狀腺素受體蛋白,所形成的激素—核受體複合體再啟動基因轉錄與信使 RNA、細胞質蛋白的合成。生理作用主要由 T3 產生,其中約 80% 由 T4 在周邊組織去碘而來。口服 levothyroxine 為合成的 T4,作用與內生性 T4 相同,可在缺乏時維持正常的 T4 濃度。"
+      "physiologic_effect_zh": "甲狀腺素透過調控 DNA 轉錄與蛋白質合成發揮作用:T3 與 T4 擴散進入細胞核並結合甲狀腺素受體蛋白,所形成的激素—核受體複合體再啟動基因轉錄與信使 RNA、細胞質蛋白的合成。生理作用主要由 T3 產生,其中約 80% 由 T4 在周邊組織去碘而來。口服 levothyroxine 為合成的 T4,作用與內生性 T4 相同,可在缺乏時維持正常的 T4 濃度。",
+      "boxed_warning_zh": "黑框警語：包括左旋甲狀腺素在內的甲狀腺素不得用於治療肥胖或減重。在正常或超出正常範圍的劑量，尤其與擬交感神經胺合用時，可能產生嚴重或威脅生命的毒性效應。",
+      "boxed_warning_en": "BOXED WARNING: Thyroid hormones, including levothyroxine, should not be used for the treatment of obesity or weight loss. Doses within or above the normal range may produce serious or life-threatening toxic effects particularly when given with sympathomimetic amines."
     },
     {
       "id": "drug.prednisone",
@@ -5040,7 +5051,6 @@
         "已知對司美格魯肽或賦形劑嚴重過敏"
       ],
       "warnings_en": [
-        "BOXED WARNING (Ozempic): Risk of thyroid C-cell tumors. Contraindicated in patients with personal/family history of MTC or MEN2. Human relevance unknown.",
         "Pancreatitis: Discontinue if suspected.",
         "Hypoglycemia: Risk increases when combined with insulin or insulin secretagogue.",
         "Acute gallbladder disease: Increased rate reported.",
@@ -5048,7 +5058,6 @@
         "Peri-procedural aspiration risk: Delay gastric emptying may increase risk. Follow current procedural team guidance."
       ],
       "warnings_zh": [
-        "黑框警語（Ozempic）：甲狀腺C細胞腫瘤風險。MTC或MEN2個人/家族病史患者禁用。人體相關性未知。",
         "胰臟炎：若疑似應停藥。",
         "低血糖：與胰島素或胰島素促分泌劑合用時風險增加。",
         "急性膽囊疾病：報告發生率增加。",
@@ -5090,7 +5099,6 @@
           "dailymed:adec4fd2-6858-4c99-91d4-531f5f2a2d79#CONTRAINDICATIONS"
         ],
         "warnings_en": [
-          "dailymed:adec4fd2-6858-4c99-91d4-531f5f2a2d79#BOXED_WARNING",
           "dailymed:adec4fd2-6858-4c99-91d4-531f5f2a2d79#WARNINGS_AND_PRECAUTIONS"
         ],
         "adverse_effects_en": [
@@ -5102,6 +5110,12 @@
         "physiologic_effect_en": [
           "dailymed:adec4fd2-6858-4c99-91d4-531f5f2a2d79#MECHANISM_OF_ACTION",
           "dailymed:adec4fd2-6858-4c99-91d4-531f5f2a2d79#PHARMACODYNAMICS"
+        ],
+        "boxed_warning_zh": [
+          "dailymed:adec4fd2-6858-4c99-91d4-531f5f2a2d79#BOXED_WARNING"
+        ],
+        "boxed_warning_en": [
+          "dailymed:adec4fd2-6858-4c99-91d4-531f5f2a2d79#BOXED_WARNING"
         ]
       },
       "review_status": "draft",
@@ -5119,7 +5133,9 @@
       "site_of_action_en": "The GLP-1 receptor, the target for native GLP-1",
       "site_of_action_zh": "GLP-1 受體 —— 天然 GLP-1 的作用標的",
       "physiologic_effect_en": "Semaglutide stimulates insulin secretion and lowers glucagon secretion, both in a glucose-dependent manner, so that insulin secretion is stimulated and glucagon secretion inhibited when blood glucose is high; the mechanism also involves a minor delay in gastric emptying in the early postprandial phase. It lowers fasting and postprandial blood glucose and reduces body weight. The label states the mechanism of kidney-related risk reduction has not been established.",
-      "physiologic_effect_zh": "semaglutide 以葡萄糖依賴的方式促進胰島素分泌並降低升糖素分泌 —— 血糖高時才刺激胰島素、抑制升糖素;其作用另包含在餐後早期輕度延遲胃排空。可降低空腹與餐後血糖並減輕體重。標籤載明其降低腎臟相關風險的機轉尚未確立。"
+      "physiologic_effect_zh": "semaglutide 以葡萄糖依賴的方式促進胰島素分泌並降低升糖素分泌 —— 血糖高時才刺激胰島素、抑制升糖素;其作用另包含在餐後早期輕度延遲胃排空。可降低空腹與餐後血糖並減輕體重。標籤載明其降低腎臟相關風險的機轉尚未確立。",
+      "boxed_warning_zh": "黑框警語（Ozempic）：甲狀腺C細胞腫瘤風險。MTC或MEN2個人/家族病史患者禁用。人體相關性未知。",
+      "boxed_warning_en": "BOXED WARNING (Ozempic): Risk of thyroid C-cell tumors. Contraindicated in patients with personal/family history of MTC or MEN2. Human relevance unknown."
     },
     {
       "id": "drug.rosuvastatin",
