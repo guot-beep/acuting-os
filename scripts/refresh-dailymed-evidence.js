@@ -40,6 +40,43 @@ const LOINC_TO_NAME = {
 };
 
 const dry = process.argv.includes("--dry-run");
+
+/* 未編碼的黑框(2026-09-07,furosemide 案):
+ * 有些廠的 SPL 把黑框全文放在**第一個 section**、標題「WARNING」、code 42229-5(SPL UNCLASSIFIED)或沒有 code,
+ * 沒有用 34066-1。只認 LOINC 的話,verified_sections 就沒有 BOXED_WARNING,下游「未列黑框警語」的註記就成了假陰性
+ * (2026-09-06 覆核抓到,已撤回那筆)。這裡多一條判準:在第一個「已分類」section(DESCRIPTION 34089-3 等)**之前**出現、
+ * 標題以 WARNING 開頭的 section → 記成 BOXED_WARNING_UNCODED。它與 BOXED_WARNING 分開記,因為「有黑框」與「編了碼」是兩件事。
+ * 下游規則要把兩者都當「有黑框」。 */
+function detectUncodedBoxedWarning(xml) {
+  const sections = [...String(xml).matchAll(/<section\b[^>]*>([\s\S]*?)<\/section>/g)].map((m) => m[1]);
+  for (const body of sections) {
+    const codeTag = body.match(/<code\s+([^>]*)\/?>/);
+    const attrs = codeTag ? codeTag[1] : "";
+    const cm = attrs.match(/\bcode="([\d-]+)"/);
+    const code = cm ? cm[1] : null;
+    if (code && LOINC_TO_NAME[code]) return false;          // 走到第一個已分類 section 就停:黑框只會在它前面
+    const title = (body.match(/<title>\s*([^<]{1,200}?)\s*<\/title>/) || [])[1] || "";
+    if (/^(BOXED\s+)?WARNINGS?\b/i.test(title)) return true;
+  }
+  return false;
+}
+
+if (process.argv.includes("--self-test")) {
+  const wrap = (inner) => `<document>${inner}</document>`;
+  const sec = (code, title, text) => `<component><section>${code ? `<code code="${code}" codeSystem="2.16.840.1.113883.6.1"/>` : ""}<title>${title}</title><text>${text}</text></section></component>`;
+  const cases = [
+    ["furosemide 型:首節 42229-5 標題 WARNING,之後才是 DESCRIPTION", wrap(sec("42229-5", "WARNING", "Furosemide tablets are a potent diuretic...") + sec("34089-3", "DESCRIPTION", "...") + sec("34071-1", "WARNINGS", "...")), true],
+    ["首節沒有 code、標題 BOXED WARNING", wrap(sec(null, "BOXED WARNING", "...") + sec("34089-3", "DESCRIPTION", "...")), true],
+    ["正常標籤:WARNINGS(34071-1)在 DESCRIPTION 之後 → 不是黑框", wrap(sec("34089-3", "DESCRIPTION", "...") + sec("34071-1", "WARNINGS", "...")), false],
+    ["編了碼的黑框 34066-1:這條判準不管它(LOINC 那條會記 BOXED_WARNING)", wrap(sec("34066-1", "WARNING: RISK", "...") + sec("34089-3", "DESCRIPTION", "...")), false],
+    ["首節是 INDICATIONS(已分類)→ 後面的 WARNING 不算", wrap(sec("34067-9", "INDICATIONS AND USAGE", "...") + sec("42229-5", "WARNING", "...")), false],
+    ["空文件", wrap(""), false],
+  ];
+  let bad = 0;
+  for (const [name, xml, want] of cases) { const got = detectUncodedBoxedWarning(xml); console.log(`  ${got === want ? "✓" : "✗"} ${name} → ${got}`); if (got !== want) bad++; }
+  console.log(bad ? `\nFAIL — self-test ${bad} 條` : `\nPASS — self-test ${cases.length} 條(離線,不打 DailyMed)`);
+  process.exit(bad ? 1 : 0);
+}
 const DRUGS = "data/pharmacology/drugs.json";
 const EVID = "data/pharmacology/dailymed_api_responses.json";
 const today = (() => {
@@ -72,6 +109,7 @@ const today = (() => {
         const name = cm && LOINC_TO_NAME[cm[1]];
         if (name) found.add(name);
       }
+      if (detectUncodedBoxedWarning(xml)) found.add("BOXED_WARNING_UNCODED");   // 見檔頭:furosemide 型未編碼黑框
       const title = (xml.match(/<title>([^<]{5,120})<\/title>/) || [])[1];
       const before = JSON.stringify([...(e.verified_sections || [])].sort());
       const after = JSON.stringify([...found].sort());
