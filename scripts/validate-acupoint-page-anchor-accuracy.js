@@ -197,6 +197,27 @@ function main() {
     return;
   }
 
+  /* 抽取器身分(2026-09-06):基準 419/0 是用 **Xpdf 4.00**(Git for Windows 內附)記的。
+   * poppler 的 -layout 分欄不同 —— 不只會讓「查不到」變多,也會把幾個錨點判成假「指錯」,
+   * 於是 CI 上這一層對基準 0 是 REGRESS(exit 1),而 40% 斷路器根本沒觸發(df204009 那輪就是這樣)。
+   * 兩個方向都不能比:不同抽取器量出來的數字彼此沒有可比性。所以不是 Xpdf 就宣告「量不到」,
+   * 由棘輪標 UNMEASURED;要在 poppler 上量,得另外用 poppler 記一組基準(或把判準做到兩者一致),不是硬比。 */
+  const banner = (() => {
+    try {
+      const r = require('child_process').spawnSync('pdftotext', ['-v'], { encoding: 'utf8' });
+      return `${r.stdout || ''}${r.stderr || ''}`.split('\n').slice(0, 2).join(' ').trim();
+    } catch { return ''; }
+  })();
+  const isXpdf = /pdftotext version 4\.\d+/.test(banner) && /Glyph\s*&\s*Cog/i.test(banner);
+  if (!isXpdf && process.env.ACUTING_PAGE_ANCHOR_ANY_EXTRACTOR !== '1') {
+    const msg = `抽取器不是記基準用的 Xpdf 4.00(偵測到:${banner || '無法辨識'})—— 這一層在此環境量不到,不比對。`;
+    console.log('::warning title=acupoint_page_anchors::' + msg);
+    if (jsonMode) { console.log(JSON.stringify({ skipped: true, reason: 'extractor_not_xpdf', extractor: banner })); return; }
+    console.log('SKIP(量不到)— ' + msg);
+    console.log('  要硬量請設 ACUTING_PAGE_ANCHOR_ANY_EXTRACTOR=1(數字不可與 Xpdf 基準相比)。');
+    process.exit(2);
+  }
+
   const recs = JSON.parse(fs.readFileSync(POINTS, 'utf8'));
   loadNames(recs);
   const res = { ok: 0, weak: 0, wrong: [], unresolved: [] };

@@ -339,9 +339,12 @@ for (const entry of RATCHETED) {
   }
   if (now > was) {
     lines.push(`  REGRESS  ${entry.key.padEnd(12)} ${was} → ${now}   (+${now - was})  see ${entry.doc}`);
+    // GitHub 註記:CI 的 log 要 admin 才讀得到,check-runs 的 annotations 匿名可讀 —— 2026-09-06 就是靠這個才查得出哪一層紅
+    console.log(`::error title=ratchet ${entry.key}::REGRESS ${was} → ${now} (+${now - was}) ${JSON.stringify(current[entry.key].by_code || {}).slice(0, 300)}`);
     regressed = true;
   } else if (now < was) {
     lines.push(`  BETTER   ${entry.key.padEnd(12)} ${was} → ${now}   (−${was - now})`);
+    console.log(`::notice title=ratchet ${entry.key}::BETTER ${was} → ${now}`);
     improved = true;
   } else {
     lines.push(`  flat     ${entry.key.padEnd(12)} ${now}`);
