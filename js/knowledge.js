@@ -2519,6 +2519,8 @@
       const updateFormulaGrid = () => {
         const q = el("formulaFilter").value.trim().toLowerCase();
         const category = el("formulaCategoryFilter").value;
+        // 修 bug(D32 凍結例外,同 09-05 中藥 functions_zh 那條):索引了 category 與 category_en 卻漏 category_zh,
+        // 使用者打「解表劑」只搜得到 category 剛好是中文的卡。搜尋結果變多,畫面不變。
         const hit = records.filter((f) => {
           if (!recordHasConcept(f.modern_clinical_use_tags, activeConcept)) return false;
           const categoryHit = !category || category.split("||").includes(categoryLabel(f));
@@ -2529,6 +2531,7 @@
             f.pinyin,
             f.category,
             f.category_en,
+            f.category_zh,
             f.comparison_group,
             ...(f.study_tags || []),
             ...(f.modern_clinical_use_tags || [])

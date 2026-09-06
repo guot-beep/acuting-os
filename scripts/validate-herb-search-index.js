@@ -60,10 +60,40 @@ for (const h of herbs) {
 const required = ["functions", "functions_zh"];
 for (const r of required) if (!fields.some((f) => f.name === r)) problems.unshift(`索引欄位清單缺 ${r}(現有:${fields.map((f) => f.name).join(", ")})`);
 
+/* 方劑搜尋(2026-09-06 加):同一種病 —— 索引了 category 與 category_en 卻沒有 category_zh,
+ * 219 張方劑都有 category_zh,使用者打「解表劑」只搜得到 category 剛好是中文的那些。
+ * 同樣從原始碼解析欄位清單、對真資料重建索引,逐張檢查卡上分類名的前兩個字搜不搜得到。 */
+let fChecked = 0, fFields = [];
+{
+  const fa = src.indexOf("const hit = records.filter((f) => {");
+  const fs0 = fa >= 0 ? src.indexOf("const text = [", fa) : -1;
+  const fe = fs0 >= 0 ? src.indexOf("].join(", fs0) : -1;
+  if (fa < 0 || fs0 < 0 || fe < 0 || fe - fs0 > 4000) {
+    problems.push("方劑搜尋:找不到 `const hit = records.filter((f) => {` 的索引陣列(函式被改名了?)");
+  } else {
+    for (const raw of src.slice(fs0 + "const text = [".length, fe).split("\n")) {
+      const line = raw.replace(/\/\/.*$/, "").trim();
+      const m = line.match(/^(?:\.\.\.\()?f\.([A-Za-z_][A-Za-z0-9_]*)/);
+      if (m) fFields.push({ name: m[1], spread: line.startsWith("...") });
+    }
+    if (!fFields.some((f) => f.name === "category_zh")) problems.push(`方劑索引欄位清單缺 category_zh(現有:${fFields.map((f) => f.name).join(", ")})`);
+    const fj = JSON.parse(fs.readFileSync(path.join(ROOT, "data", "herbs", "formulas.json"), "utf8"));
+    const formulas = (fj.records || fj).filter((r) => r.review_status !== "deprecated");
+    const fIndex = (h) => fFields.map((f) => (f.spread ? cl(h[f.name]).join(" ") : String(h[f.name] || ""))).join(" ").toLowerCase();
+    for (const r of formulas) {
+      const cat = String(r.category_zh || "").trim();
+      if (!cat) continue;
+      fChecked++;
+      const kw = cat.replace(/[、,，;；\s(（].*$/, "").slice(0, 2);
+      if (kw && !fIndex(r).includes(kw.toLowerCase())) problems.push(`${r.id}  卡上分類「${cat}」,搜「${kw}」找不到`);
+    }
+  }
+}
+
 if (problems.length) {
   console.error(`FAIL — 中藥搜尋索引:${problems.length} 條(檢查 ${checked}/${herbs.length} 味有功效的藥;索引欄位 ${fields.length} 個)`);
   for (const p of problems.slice(0, 20)) console.error("  ⛔ " + p);
   if (problems.length > 20) console.error(`  … 另 ${problems.length - 20} 條`);
   process.exit(1);
 }
-console.log(`PASS — 中藥搜尋索引:${checked}/${herbs.length} 味藥的卡上功效都搜得到(索引欄位 ${fields.length} 個:${fields.map((f) => f.name).join(", ")})`);
+console.log(`PASS — 中藥搜尋索引:${checked}/${herbs.length} 味藥的卡上功效都搜得到(索引欄位 ${fields.length} 個:${fields.map((f) => f.name).join(", ")});方劑:${fChecked} 張的分類名都搜得到(索引欄位 ${fFields.length} 個)`);
