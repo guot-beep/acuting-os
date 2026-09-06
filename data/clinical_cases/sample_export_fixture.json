@@ -208,8 +208,28 @@
       "occupation": "fixture",
       "goals": "fixture 合成:頭痛頻率減半",
       "chiefComplaint": "fixture 合成:反覆偏頭痛兩年",
+      "historyPresent": "fixture 合成:每月發作三至四次,經前加重,休息後緩解",
+      "pastHistory": "fixture 合成:無重大病史",
+      "allergyStatus": "has",
+      "allergies": "fixture 合成:青黴素",
+      "currentMeds": "",
+      "menstrualObHistory": "fixture 合成:週期 28 天,經痛輕度",
+      "lifestyle": "fixture 合成:睡眠六小時,咖啡每日兩杯",
+      "westernConditions": [
+        "cond.migraine"
+      ],
+      "easternDiseases": [
+        "tdis.tou_tong"
+      ],
+      "tcmPatterns": [
+        "pattern.liver_qi_stagnation"
+      ],
+      "safetyFlags": [
+        "fixture 合成:無抗凝血劑使用"
+      ],
       "agentExposures": [],
       "environmentalExposures": [],
+      "summary": "fixture 合成:病程摘要",
       "soapNotes": [
         {
           "id": "soap.fixture_synthetic_2.v1",
@@ -221,7 +241,9 @@
           "lifestyleFactors": [],
           "adverseEvents": []
         }
-      ]
+      ],
+      "createdAt": "2026-01-05T09:00:00.000Z",
+      "updatedAt": "2026-01-05T09:40:00.000Z"
     }
   ]
 }

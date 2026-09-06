@@ -451,7 +451,21 @@
         "previousTreatmentNotes": "string",
         "baselineSeverity": "number",
         "goals": "string",
-        "chiefComplaint": "string"
+        "chiefComplaint": "string",
+        "historyPresent": "string",
+        "pastHistory": "string",
+        "allergyStatus": "string",
+        "allergies": "string",
+        "currentMeds": "string",
+        "menstrualObHistory": "string",
+        "lifestyle": "string",
+        "westernConditions": "array",
+        "easternDiseases": "array",
+        "tcmPatterns": "array",
+        "safetyFlags": "array",
+        "summary": "string",
+        "createdAt": "string",
+        "updatedAt": "string"
       },
       "agentExposures": {
         "id": "string",
