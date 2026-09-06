@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "exported_at": "2026-08-26T00:00:00Z",
-  "case_count": 1,
+  "case_count": 2,
   "cases": [
     {
       "id": "case.fixture_invariants_a",
@@ -178,6 +178,48 @@
               "relatedSymId": "sym.headache"
             }
           ]
+        }
+      ]
+    },
+    {
+      "id": "case.fixture_synthetic_2",
+      "patientCode": "FAKE-FIXTURE-A",
+      "caseTitle": "fixture 合成:第二病例(演練對照表其餘欄位,虛構)",
+      "caseCategory": "pain",
+      "status": "active",
+      "startDate": "2026-01-05",
+      "birthYear": 1985,
+      "birthYearMonth": "1985-04",
+      "sex": "F",
+      "genderIdentity": "woman",
+      "raceEthnicity": [
+        "reth.asian"
+      ],
+      "raceEthnicityDetail": "fixture 合成:Taiwanese",
+      "onsetApprox": "P2Y",
+      "chronicity": "chronic",
+      "coursePattern": "intermittent",
+      "previousTreatment": [
+        "acupuncture",
+        "medication"
+      ],
+      "previousTreatmentNotes": "fixture 合成:曾針灸六次;間歇服用止痛藥",
+      "baselineSeverity": 6,
+      "occupation": "fixture",
+      "goals": "fixture 合成:頭痛頻率減半",
+      "chiefComplaint": "fixture 合成:反覆偏頭痛兩年",
+      "agentExposures": [],
+      "environmentalExposures": [],
+      "soapNotes": [
+        {
+          "id": "soap.fixture_synthetic_2.v1",
+          "visitDate": "2026-01-05",
+          "visitNumber": 1,
+          "tcmPatternSelections": [],
+          "patternDifferentials": [],
+          "outcomeMetrics": [],
+          "lifestyleFactors": [],
+          "adverseEvents": []
         }
       ]
     }

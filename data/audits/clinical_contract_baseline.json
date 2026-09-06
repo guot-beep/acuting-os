@@ -1,7 +1,7 @@
 {
   "note": "D12 臨床資料契約凍結基準。additive-only:欄位可加,不准改名/改型別/移除。",
   "frozen_at": "2026-08-27",
-  "updated_at": "2026-09-02",
+  "updated_at": "2026-09-06",
   "rebaseline_history": [],
   "schema": {
     "patients": {
@@ -436,7 +436,22 @@
         "occupation": "string",
         "agentExposures": "array",
         "environmentalExposures": "array",
-        "soapNotes": "array"
+        "soapNotes": "array",
+        "caseCategory": "string",
+        "status": "string",
+        "startDate": "string",
+        "birthYear": "number",
+        "genderIdentity": "string",
+        "raceEthnicity": "array",
+        "raceEthnicityDetail": "string",
+        "onsetApprox": "string",
+        "chronicity": "string",
+        "coursePattern": "string",
+        "previousTreatment": "array",
+        "previousTreatmentNotes": "string",
+        "baselineSeverity": "number",
+        "goals": "string",
+        "chiefComplaint": "string"
       },
       "agentExposures": {
         "id": "string",

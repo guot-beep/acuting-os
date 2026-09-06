@@ -1,6 +1,6 @@
 {
   "note": "Defect-count ceiling per layer. CI fails if any count rises. Only ever lower this file — see scripts/check-validation-ratchet.js.",
-  "updated_at": "2026-09-05",
+  "updated_at": "2026-09-06",
   "rebaseline_history": [
     {
       "date": "2026-08-05",
@@ -24,6 +24,14 @@
     }
   ],
   "layers": {
+    "mapping_fixture_uncovered": {
+      "defects": 60,
+      "by_code": {
+        "case": 14,
+        "soap": 46
+      },
+      "doc": "data/clinical_cases/localstorage_sqlite_mapping.json"
+    },
     "conditions": {
       "defects": 0,
       "by_code": {},
@@ -223,14 +231,6 @@
       "defects": 0,
       "by_code": {},
       "doc": "docs/AI_CONSTITUTION.md"
-    },
-    "mapping_fixture_uncovered": {
-      "defects": 74,
-      "by_code": {
-        "case": 28,
-        "soap": 46
-      },
-      "doc": "data/clinical_cases/localstorage_sqlite_mapping.json"
     }
   }
 }
