@@ -125,19 +125,23 @@ https://acuting-os.guotingru.workers.dev/
 (或 Pages-on-Workers)。這個網址先前只存在於 Cloudflare 後台,repo 裡沒有,
 2026-09-01 才由 Ting 貼出來記進這裡。
 
-**現況(2026-09-02 起):這個 hostname 在 Cloudflare Access 後面,而且是刻意的。**
+**現況(2026-09-06 起):Worker + D1 + app 通行碼。知識庫公開,只有 `/__clinical/*` 要通行證。**
 
-匿名 `curl`(無 cookie,等同 Googlebot 或任何訪客)量到:
+匿名探針(`scripts/canary-production-lock.js --mode passphrase`,零 cookie)量到:
 
 ```text
-https://acuting-os.guotingru.workers.dev/   302
-Www-Authenticate: Cloudflare-Access
-Location: https://soft-snow-1c0c.cloudflareaccess.com/cdn-cgi/access/login/...
+https://acuting-os.guotingru.workers.dev/              200   (知識庫,公開)
+https://acuting-os.guotingru.workers.dev/index.html    307 → /(Assets 正規化,公開)
+https://acuting-os.guotingru.workers.dev/__clinical/*  401   {"auth_mode":"passphrase","setup_required":…}
+https://acuting.com/  https://play.acuting.com/         200   (公開站不受影響)
 ```
 
-依據是 **B3 / D33 裁定(2026-09-01 晚)**:「套 Access,而且是 D1 上線的前提」——
-D1 一上線,頁面本身就會載入雲端病例,所以鎖必須先在。2026-09-02 Ting 再次確認
-**維持鎖著**。
+依據 **D33 + 2026-09-02 附記 + 2026-09-06 切換完成附記**:Cloudflare Access 因 OTP 郵件事故
+與「帳號層級應用程式把公開主站鎖掉 2.5 小時」兩件事被放棄;改為 app 層通行碼,結構上不可能再鎖到知識庫。
+repo 公開,所以 git 裡只有一次性設定碼的雜湊(`CLINICAL_SETUP_*`),Ting 的通行碼雜湊在 D1,永不進 git。
+
+> **以下「2026-09-02 起在 Cloudflare Access 後面」是 09-02 至 09-05 之間短暫成立過又回滾的狀態,留著當歷史。**
+> 當時匿名 curl 量到 302 → `*.cloudflareaccess.com`;09-01 深夜回滾(bf0a64d4)後到 09-06 之間其實是純靜態、公開。
 
 > **以下是 2026-09-01 的舊量測,留著當歷史,不要拿它當現況判斷依據。**
 >

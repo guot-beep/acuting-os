@@ -132,6 +132,24 @@ Codex 的 11H 已驗收落地(`b196248f`):722 條死圖片找到 716 條同站�
    淫羊藿 Whole herb→Leaf…),因為兩個來源都在 repo 裡而藥典是正本。**這是可逆的**:
    若妳要 (b) 全部退回空白,一句話。
 
+### D9 · 病歷匯出對照表的三個缺口(補 fixture 時挖出來的;都不急,病例現在是零)
+
+補 fixture 把「登記了但沒演練」從 74 降到 0 時,執行者逐欄回到 app.js 對匯出路徑,順帶量出三件事:
+
+1. **7 個欄位的持久層去處沒定**:`currentMeds`、`workflowLink`(對照表標 no_destination_yet)、
+   `tcmPattern`、`tcmPatternLinks`、`pointsUsed`、`outcomeMetricLinks`、`effectDurationDays`(投影腳本刻意不實作)。
+   fixture 只能放「key 在、值空」,所以這 7 欄的 round-trip **仍未被證明**;棘輪的 0 不代表 105/105 都走過去回來。
+   - (a) 逐一給 schema 目的地(我提草案給妳點頭)(b) 明列為「不遷移,只留 kv 正本」。建議 (b):D1 是文件正本 + 投影,投影不完整不影響資料安全。
+2. **對照表落後 normalizer 12 欄**:case 層 `publicationConsent`、`publicationConsentDate`、六個 `reflection*`;
+   soap 層 `modalitiesPerformed`、`symptomLinks`、`herbLinks`、`avsSnapshots`。app 會匯出、對照表沒登記、fixture 刻意沒放。
+   對照表 `residual_gaps.note` 寫「zero runtime fields undocumented」已不實。這是機械工,但每欄要一個 status 詞,妳點頭我就補。
+3. **自由文字 vs id**:`westernConditions` / `easternDiseases` / `tcmPatterns` / `safetyFlags` 在 UI 是 textarea
+   (placeholder「PCOS, unexplained infertility」),對照表卻寫「EXPLODE list → one row per id」。真實資料很可能是人話不是 id,
+   遷移日 `condition_id` 欄會裝到人話。(a) UI 改成選 id(凍結後才做)(b) 投影改成純文字欄 (c) 兩欄並存。不裁也不會壞資料,只是投影會髒。
+
+順帶兩個工程項(我自己做,不用裁):`export-clinical-to-sqlite.js` 的 `put()` 會靜默丟掉表上沒有的欄名(這次三個欄名錯了兩週沒人知道),要改成 fail-loud;
+`test-clinical-sqlite-service.js:195` 假設 fixture 只有一個病人,第二病例用同一代號繞過了,之後要放第二個病人得改它。
+
 ### D4 · C6 的數字我上次給錯了(**更正,見下方 C 群的 C6**)
 
 我 9/02 建議「退役 `english_exam_track`,缺陷會從 5,495 掉到約 400」。
