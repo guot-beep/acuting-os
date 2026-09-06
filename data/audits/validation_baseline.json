@@ -33,6 +33,11 @@
       "by_code": {},
       "doc": "data/clinical_cases/localstorage_sqlite_mapping.json"
     },
+    "mapping_unregistered_runtime_fields": {
+      "defects": 0,
+      "by_code": {},
+      "doc": "docs/TING_PENDING_RULINGS_2026-08-31.md"
+    },
     "conditions": {
       "defects": 0,
       "by_code": {},
@@ -58,9 +63,9 @@
       "doc": "DECISIONS.md D3"
     },
     "encoding": {
-      "defects": 44,
+      "defects": 43,
       "by_code": {
-        "chinese_field_without_cjk": 43,
+        "chinese_field_without_cjk": 42,
         "question_mark_only": 1
       },
       "doc": "data/audits/en_zh_term_crosswalk.json"
@@ -232,14 +237,6 @@
       "defects": 0,
       "by_code": {},
       "doc": "docs/AI_CONSTITUTION.md"
-    },
-    "mapping_unregistered_runtime_fields": {
-      "defects": 12,
-      "by_code": {
-        "case": 8,
-        "soap": 4
-      },
-      "doc": "docs/TING_PENDING_RULINGS_2026-08-31.md"
     }
   }
 }

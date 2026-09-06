@@ -14,6 +14,11 @@
       "date": "2026-08-27",
       "change": "補登 18 筆 exposure/adverse/lifestyle 縱向模型欄位(D17 §5),此前整條未進對照表",
       "found_by": "scripts/validate-sqlite-mapping-coverage.js(同日新增的覆蓋率閘)"
+    },
+    {
+      "date": "2026-09-07",
+      "change": "補登 12 筆 normalizer 已會寫、對照表未登記的欄位(status no_destination_yet);5 筆投影未實作欄位加 projection_note",
+      "found_by": "scripts/validate-sqlite-mapping-coverage.js --runtime-json(棘輪層 mapping_unregistered_runtime_fields,2026-09-06 新增)"
     }
   ],
   "policy": [
@@ -30,10 +35,10 @@
     "validation": "every destination table.column is asserted to exist in schema.sql before this file is written"
   },
   "counts": {
-    "total_fields": 105,
+    "total_fields": 117,
     "by_status": {
       "mapped": 103,
-      "no_destination_yet": 2
+      "no_destination_yet": 14
     }
   },
   "status_meanings": {
@@ -473,7 +478,8 @@
       "transformation": "EXPLODE free text -> rows. Needs pattern-id resolution; unresolvable text has no column to fall back to.",
       "nullable": null,
       "data_loss_risk": "medium",
-      "status": "mapped"
+      "status": "mapped",
+      "projection_note": "投影腳本 export-clinical-to-sqlite.js 刻意不實作此欄(有值即停,不丟);D9-1 2026年9月7日 決定:D1 kv 正本保留完整值,投影可後補。fixture 只演練到「key 在、值空」,round-trip 未證明。"
     },
     {
       "source_scope": "soap",
@@ -545,7 +551,8 @@
       "transformation": "EXPLODE list -> rows. D5 canonical home. SUPERSEDED as the primary migration source by tcmPatternSelections above (2026-08, e30b806) — this field is now a flat DERIVED mirror (patternIds only, no primary/secondary information) kept for backward-compat readers, not an independent fact to also migrate. See tcmPatternSelections's entry for the full reasoning; this row is kept, not deleted, because the column/table destination itself is still correct and this field is still real data for notes that predate the reconciliation.",
       "nullable": null,
       "data_loss_risk": "none",
-      "status": "mapped"
+      "status": "mapped",
+      "projection_note": "投影腳本 export-clinical-to-sqlite.js 刻意不實作此欄(有值即停,不丟);D9-1 2026年9月7日 決定:D1 kv 正本保留完整值,投影可後補。fixture 只演練到「key 在、值空」,round-trip 未證明。"
     },
     {
       "source_scope": "soap",
@@ -599,7 +606,8 @@
       "transformation": "EXPLODE free text -> rows. Needs point-code resolution.",
       "nullable": null,
       "data_loss_risk": "medium",
-      "status": "mapped"
+      "status": "mapped",
+      "projection_note": "投影腳本 export-clinical-to-sqlite.js 刻意不實作此欄(有值即停,不丟);D9-1 2026年9月7日 決定:D1 kv 正本保留完整值,投影可後補。fixture 只演練到「key 在、值空」,round-trip 未證明。"
     },
     {
       "source_scope": "soap",
@@ -734,7 +742,8 @@
       "transformation": "Free text -> one row's notes field, no structured metric row. Ting confirmed 2026-08: the real, statistics-ready mechanism is the separate outcomeMetrics field (already mapped below to visit_outcomes with real {metricId, valueNumber} pairs, mostly on outcome_metrics.json's existing 0-10 scale for subjective measures, real clinical units — mm/days/count — for objective ones). outcomeMetricLinks (ids selected but never given a value) must not be written as a visit_outcomes row with metric_name set and value_number NULL — that reads as 'measured, result missing' when the truth is 'never measured'. This was already this file's recommended default (§6 of MIGRATION_LOCALSTORAGE_TO_SQLITE.md); 2026-08 confirms it as the decision rather than an open question.",
       "nullable": true,
       "data_loss_risk": "low",
-      "status": "mapped"
+      "status": "mapped",
+      "projection_note": "投影腳本 export-clinical-to-sqlite.js 刻意不實作此欄(有值即停,不丟);D9-1 2026年9月7日 決定:D1 kv 正本保留完整值,投影可後補。fixture 只演練到「key 在、值空」,round-trip 未證明。"
     },
     {
       "source_scope": "soap",
@@ -761,7 +770,8 @@
       "transformation": "MIGRATION-SOURCE-ONLY FALLBACK as of 2026-08 (1a3a426) — not an actively-authored field anymore, though the column and the runtime key both still exist. The canonical value for this same clinical fact (\"how many days did the last treatment's effect last\") now lives in outcomeMetrics as metric.effect_duration_days (see that entry, which is where a migration should read this fact from FIRST). computeNumericOutcomeMetrics() blanks this field on every save going forward (new or edited note) — 'one fact, one home' realized at touch-time, not in bulk — so only notes nobody has resaved since 1a3a426 shipped still carry a real value here. Precedence a migration MUST use, because it is the precedence the runtime already uses: prefer outcomeMetrics' metric.effect_duration_days for the visit; read this column ONLY when that visit's outcomeMetrics has no such entry. If BOTH exist for the same visit and disagree, that is a genuine conflict the runtime itself does not silently resolve (it shows the canonical value with a visible on-screen warning, never discards the legacy one) — a migration/audit pass must flag such rows for review rather than picking a value unilaterally, per this file's legacy-shadowed-field policy above.",
       "nullable": true,
       "data_loss_risk": "medium",
-      "status": "mapped"
+      "status": "mapped",
+      "projection_note": "投影腳本 export-clinical-to-sqlite.js 刻意不實作此欄(有值即停,不丟);D9-1 2026年9月7日 決定:D1 kv 正本保留完整值,投影可後補。fixture 只演練到「key 在、值空」,round-trip 未證明。"
     },
     {
       "source_scope": "soap",
@@ -1005,6 +1015,114 @@
       "data_loss_risk": "none",
       "status": "mapped",
       "note": "指向 adverse_event.* 詞彙(D17)。不良事件漏搬是安全等級的資料損失。 2026-08-27 補登(D18 前提紀律):D17 §5 的 exposure/adverse/lifestyle 縱向模型整條從未進對照表,由 validate-sqlite-mapping-coverage.js 抓出。去處對照 schema.sql 既有表欄。"
+    },
+    {
+      "source_scope": "case",
+      "source_field": "publicationConsent",
+      "destination": "(NO DESTINATION)",
+      "transformation": "Registered 2026年9月7日 from the normalizer-shape diff (ratchet mapping_unregistered_runtime_fields). Runtime type: string. Destination undecided — D9-2 in docs/TING_PENDING_RULINGS_2026-08-31.md.",
+      "nullable": null,
+      "data_loss_risk": "medium",
+      "status": "no_destination_yet"
+    },
+    {
+      "source_scope": "case",
+      "source_field": "publicationConsentDate",
+      "destination": "(NO DESTINATION)",
+      "transformation": "Registered 2026年9月7日 from the normalizer-shape diff (ratchet mapping_unregistered_runtime_fields). Runtime type: string. Destination undecided — D9-2 in docs/TING_PENDING_RULINGS_2026-08-31.md.",
+      "nullable": null,
+      "data_loss_risk": "medium",
+      "status": "no_destination_yet"
+    },
+    {
+      "source_scope": "case",
+      "source_field": "reflectionWhatWorked",
+      "destination": "(NO DESTINATION)",
+      "transformation": "Registered 2026年9月7日 from the normalizer-shape diff (ratchet mapping_unregistered_runtime_fields). Runtime type: string. Destination undecided — D9-2 in docs/TING_PENDING_RULINGS_2026-08-31.md.",
+      "nullable": null,
+      "data_loss_risk": "medium",
+      "status": "no_destination_yet"
+    },
+    {
+      "source_scope": "case",
+      "source_field": "reflectionWhatDidNotWork",
+      "destination": "(NO DESTINATION)",
+      "transformation": "Registered 2026年9月7日 from the normalizer-shape diff (ratchet mapping_unregistered_runtime_fields). Runtime type: string. Destination undecided — D9-2 in docs/TING_PENDING_RULINGS_2026-08-31.md.",
+      "nullable": null,
+      "data_loss_risk": "medium",
+      "status": "no_destination_yet"
+    },
+    {
+      "source_scope": "case",
+      "source_field": "reflectionWhatChanged",
+      "destination": "(NO DESTINATION)",
+      "transformation": "Registered 2026年9月7日 from the normalizer-shape diff (ratchet mapping_unregistered_runtime_fields). Runtime type: string. Destination undecided — D9-2 in docs/TING_PENDING_RULINGS_2026-08-31.md.",
+      "nullable": null,
+      "data_loss_risk": "medium",
+      "status": "no_destination_yet"
+    },
+    {
+      "source_scope": "case",
+      "source_field": "reflectionWhatSurprised",
+      "destination": "(NO DESTINATION)",
+      "transformation": "Registered 2026年9月7日 from the normalizer-shape diff (ratchet mapping_unregistered_runtime_fields). Runtime type: string. Destination undecided — D9-2 in docs/TING_PENDING_RULINGS_2026-08-31.md.",
+      "nullable": null,
+      "data_loss_risk": "medium",
+      "status": "no_destination_yet"
+    },
+    {
+      "source_scope": "case",
+      "source_field": "reflectionWhatToAdjust",
+      "destination": "(NO DESTINATION)",
+      "transformation": "Registered 2026年9月7日 from the normalizer-shape diff (ratchet mapping_unregistered_runtime_fields). Runtime type: string. Destination undecided — D9-2 in docs/TING_PENDING_RULINGS_2026-08-31.md.",
+      "nullable": null,
+      "data_loss_risk": "medium",
+      "status": "no_destination_yet"
+    },
+    {
+      "source_scope": "case",
+      "source_field": "reflectionWhatToStudy",
+      "destination": "(NO DESTINATION)",
+      "transformation": "Registered 2026年9月7日 from the normalizer-shape diff (ratchet mapping_unregistered_runtime_fields). Runtime type: string. Destination undecided — D9-2 in docs/TING_PENDING_RULINGS_2026-08-31.md.",
+      "nullable": null,
+      "data_loss_risk": "medium",
+      "status": "no_destination_yet"
+    },
+    {
+      "source_scope": "soap",
+      "source_field": "modalitiesPerformed",
+      "destination": "(NO DESTINATION)",
+      "transformation": "Registered 2026年9月7日 from the normalizer-shape diff (ratchet mapping_unregistered_runtime_fields). Runtime type: array. Destination undecided — D9-2 in docs/TING_PENDING_RULINGS_2026-08-31.md.",
+      "nullable": null,
+      "data_loss_risk": "medium",
+      "status": "no_destination_yet"
+    },
+    {
+      "source_scope": "soap",
+      "source_field": "symptomLinks",
+      "destination": "(NO DESTINATION)",
+      "transformation": "Registered 2026年9月7日 from the normalizer-shape diff (ratchet mapping_unregistered_runtime_fields). Runtime type: array. Destination undecided — D9-2 in docs/TING_PENDING_RULINGS_2026-08-31.md.",
+      "nullable": null,
+      "data_loss_risk": "medium",
+      "status": "no_destination_yet"
+    },
+    {
+      "source_scope": "soap",
+      "source_field": "herbLinks",
+      "destination": "(NO DESTINATION)",
+      "transformation": "Registered 2026年9月7日 from the normalizer-shape diff (ratchet mapping_unregistered_runtime_fields). Runtime type: array. Destination undecided — D9-2 in docs/TING_PENDING_RULINGS_2026-08-31.md.",
+      "nullable": null,
+      "data_loss_risk": "medium",
+      "status": "no_destination_yet"
+    },
+    {
+      "source_scope": "soap",
+      "source_field": "avsSnapshots",
+      "destination": "(NO DESTINATION)",
+      "transformation": "Registered 2026年9月7日 from the normalizer-shape diff (ratchet mapping_unregistered_runtime_fields). Runtime type: array. Destination undecided — D9-2 in docs/TING_PENDING_RULINGS_2026-08-31.md.",
+      "nullable": null,
+      "data_loss_risk": "medium",
+      "status": "no_destination_yet"
     }
   ],
   "residual_gaps": {
@@ -1018,7 +1136,8 @@
     "no_destination_yet_still_open": [
       "case.currentMeds",
       "soap.workflowLink"
-    ]
+    ],
+    "note_2026_09_07": "上面 2026-08 那段「zero runtime fields undocumented」已過時:2026年9月6日 用沙箱實跑 normalizer 讀鍵,找到 12 欄未登記(publicationConsent*、六個 reflection*、modalitiesPerformed、symptomLinks、herbLinks、avsSnapshots),今日補登為 no_destination_yet。這件事現在由棘輪守,不再靠人記得比對。"
   },
   "planned_mappings_d17": {
     "status": "contract_landed__migration_script_dry_run_only",
