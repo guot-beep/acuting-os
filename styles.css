@@ -6354,6 +6354,8 @@ body.nav-open .nav-panel { transform: none; }
   cursor: pointer; text-align: left;
   padding: 0.55rem 0.6rem;
   font: inherit; color: var(--ink);
+  /* 修正(手機 375px):#globalResults 搜尋結果列實測高 41px(<44px 觸控門檻)。 */
+  min-height: 44px;
 }
 .gr-item:hover, .gr-item:focus-visible { background: var(--green-soft); }
 .gr-item:focus-visible { outline: 2px solid var(--ring); outline-offset: -2px; }
