@@ -1,0 +1,90 @@
+# QA-FIVE-DAY 驗收旅程(Ting 2026-09-07 五天派工 · 包 E)
+
+> 目的:每一包落地前,用**同一條旅程**在真瀏覽器走一次,數字寫在這裡,能被一行指令或一段 javascript 重現。
+> 三條旅程對應三包:001 搜尋(包 A)、002 手機病例入口(包 B)、003 品質頁數字(包 A 後半)。
+> 渲染成本(包 C)的量測表在 `docs/audits/RENDER_COST_2026-09-07.md`;卡片語意(包 D)在 `docs/audits/CARD_REVIEW_PACK_2026-09-07.md`。
+>
+> 沒有 headless browser 依賴(package.json 零依賴,不加):能在 node 跑的契約進 CI,其餘在 Browser pane 用
+> `javascript_tool` / 真鍵盤(`computer type` + `key "Enter"`;注意 key 名是 Enter,不是 Return,後者 keydown 的
+> `event.key` 不會等於 "Enter")走一次,結果貼進本檔。
+
+## 環境紀錄
+
+| 項目 | 值 |
+|---|---|
+| 量測樹 | `claude/pkgA-search`(基底 main @103e162a) |
+| 瀏覽器 | Browser pane,`http://localhost:8642`(`scripts/dev-server.js` 服務該 worktree) |
+| 資料 | data/generated @ main 103e162a:herbs 366 · formulas 223 · conditionCanon 508 · comparisons 43 · points(runtime)947 |
+
+## QA-FIVE-DAY-001 首頁搜尋 → 開卡 → 空狀態
+
+**步驟**(每個種子各做一次;三種入口都要走:打字+Enter、打字+搜尋鈕、卡片上的搜尋標籤 `[data-search-term]`)
+1. `#ws/home`,點 `#homeSearch`,輸入種子字,等下拉出現(110ms debounce)。
+2. 看下拉**第一列**是什麼;按 Enter。
+3. 記:開了什麼(dialog id / hash / 卡片 id)、下拉有沒有關、有沒有跳到別的區塊。
+4. 無命中的種子:下拉要顯示「找不到…」,停在 `#ws/home`,不跳穴位目錄。
+
+**種子與結果**(2026-09-07,`node scripts/test-unified-search.js` + 瀏覽器 `homeSearchDestination(q)` 對照)
+
+| # | 種子 | before(main 103e162a)Enter 開的 | after(pkgA)Enter 開的 | 下拉關著時 Enter(舊路 → 新路) |
+|---|---|---|---|---|
+| 1 | `LI4` | point LI4 | point LI4 | LI4 → LI4 |
+| 2 | `合谷` | point LI4 | point LI4 | LI4 → LI4 |
+| 3 | `黃耆` | **formula 當歸六黃湯** | herb `herb.huang_qi` | **穴位目錄 0 筆** → herb.huang_qi |
+| 4 | `Huang Qi` | **formula 黃芪建中湯** | herb `herb.huang_qi` | **董氏 T88.14**(拼音撞名)→ herb.huang_qi |
+| 5 | `herb.huang_qi` | **formula 黃芪建中湯** | herb `herb.huang_qi` | **穴位目錄 0 筆** → herb.huang_qi |
+| 6 | `桂枝湯` | formula 桂枝湯 | formula 桂枝湯 | **穴位目錄 0 筆** → 桂枝湯 |
+| 7 | `formula.gui_zhi_tang` | formula 桂枝湯 | formula 桂枝湯 | **穴位目錄 0 筆** → 桂枝湯 |
+| 8 | `PCOS` | condition cond.pcos | condition cond.pcos | **穴位目錄 0 筆** → cond.pcos |
+| 9 | `失眠` | **point BL62 申脈** | condition cond.insomnia | 穴位目錄 57 筆 → cond.insomnia |
+| 10 | `zzzz_no_match_20260905` | 空狀態 | 空狀態(留在 #ws/home) | **穴位目錄 0 筆** → 空狀態 |
+
+- 開錯卡:before 4/10 → after 0/10。落到 0 筆穴位目錄:before 6/10 → after 0/10。
+- 真鍵盤:`黃耆` + Enter → `knowledgeDetailDialog` 標題「黃耆 Huang Qi · Astragalus」;`zzzz…` + Enter → `.gr-empty` 顯示、hash 仍 `#ws/home`、無 dialog。
+- 「失眠」按搜尋鈕 → `#conditionGraph`,cond.insomnia 卡在 DOM(`[data-record-id="cond.insomnia"]` 可見);
+  下拉在 t=0 關閉,以前 45ms 後被 `handlePointHashChange → render → updateContentModeUI` 叫回來蓋在頁面上(84ed1a9b 修),
+  修後 +2.9s 仍 hidden。
+- 分組順序:`失眠` → 病症(2) > 症狀(1) > 鑑別(1) > 穴位(52) > 方劑(9) > 中藥(16);`黃耆` → 中藥(5) > 方劑(16) > 病症(5)。
+- 契約鎖在 CI:`scripts/test-unified-search.js`(10 種子 + 7 單元 + 結構)、`scripts/validate-interactions.js`(四入口同路、runHomeSearch 無舊路)。
+
+**已知未解 / 待 Ting**
+- 「還有 N 筆…輸入更精確的字」不能點:以前「下拉關著再按 Enter」會把整條經的穴位帶到穴位目錄(例:`失眠` → 57 穴),
+  這條副作用路徑已移除;要「看全部」需要新入口(新功能,凍結中,進 backlog)。
+- 卡片高亮(`.gr-flash`)靠 `requestAnimationFrame`,Browser pane 隱藏時不會跑,本次沒能在自動化裡驗到它;要人眼看一次。
+- `composeHerbFrequencyText` 自動寫進病歷的「與西藥間隔至少1小時」:index.html 說明只寫「台灣醫院衛教常見建議(例:高雄榮總中醫部)」,
+  data/ 內沒有這句的來源;是否要附 URL 來源或改成不自動寫,待 Ting。
+
+## QA-FIVE-DAY-002 手機 375×812 · 病例入口與八個區塊
+
+(待包 B 回報後填:`#homeSearch #globalResults #herbRecords #conditionRecords` 知識詳情 dialog(實際 id `knowledgeDetailDialog`)`#caseWorkspace #caseToolbar #caseListPanel` 的水平溢位 / <44px 可點元素 / <12px 字 / offsetTop,before → after。)
+
+## QA-FIVE-DAY-003 品質頁數字誠實
+
+**步驟**:`#ws/quality` → 讀「製作與驗證進度」表;或 `getDomainProgress()`。
+
+| 列 | before(main 103e162a) | after(pkgA) | 為什麼 |
+|---|---|---|---|
+| 辨證鑑別 已製作 | 43/43 | 9/43,附「cells 有字 9 · cells 空 34」 | `filled({})` 以前為 true(`String({}) === "[object Object]"`);32 張 cells 是 `{}`、2 張有結構沒字 |
+| 中藥 本地卡 / 分母 | 329(2026-07-28 快照) | 366(即時) | 快照被當即時數 |
+| 中藥 template-grade | 93(2026-08-02 快照) | 88(即時) | 同上 |
+| 中藥 NCBAHM 覆蓋 | 304/304 | 304/304 **（NCBAHM 覆蓋為 2026-07-28 快照）** | 算不出來的數保留快照,但要標日期 |
+| 方劑 / 病症 已製作 | 223/223 · 505/508 | 不變 | 較嚴的 filled() 沒改變它們 |
+
+- 契約鎖在 CI:`scripts/test-quality-panel-honesty.js`(真資料 + 陰性對照:合成三張表只一張有字 → made 必為 1;快照 999 不准蓋掉即時 2;
+  結構上不准再讀 `local_herb_cards` / `template_grade` 快照)。把 filled() 改回舊版本機驗過會紅(5 條)。
+- 待 Ting:中藥列 total 仍是 NCBAHM 304(考綱分母)而 framework/grade/verified 分母是本地卡 366 —— 同一列兩種分母是舊設計,
+  要不要拆成兩列(考綱覆蓋 vs 本地卡品質)是設計題,不是 bug。
+
+## pdftotext 依賴(包 E 項目)
+
+- `scripts/validate-acupoint-page-anchor-accuracy.js` 的錨點是用 **Xpdf 4.00** `pdftotext -layout` 抽的;CI 的 poppler 版本斷行不同,會假紅。
+- 09-06 起:腳本讀 `pdftotext -v` 橫幅,非 Xpdf 就 `skipped`(`--json` 帶 skipped 物件),CI 步驟移到 ratchet 之後並 `continue-on-error`;
+  本機要真的驗錨點需要 Xpdf 4.00 在 PATH(`ACUTING_PAGE_ANCHOR_ANY_EXTRACTOR=1` 可強制跑,數字不可比)。
+- 未解:CI 上這一層永遠是 UNMEASURED。要在 CI 量,得在 workflow 裡固定裝 Xpdf 4.00(下載二進位、校驗 hash),那是 workflow 供應鏈改動,待 Ting 點頭。
+
+## SHA / CI 回報慣例(包 E 項目)
+
+- 每包一個分支 `claude/pkg<X>-*`,commit 訊息第一行寫「修正:」或「凍結例外(Ting 2026-09-07 五天派工 包 X):」(D32 閘門 grep)。
+- 2026-09-07 起 `validate.yml` 的 push 觸發加了 `claude/**`:分支自己跑 CI,不用等落 main。落地仍走 ff `git push origin HEAD:main`,
+  之後查 `https://api.github.com/repos/guot-beep/acuting-os/actions/runs?branch=main`(公開 repo,匿名可讀)。
+- 每包回報五項:做了什麼 / before→after / 原始驗證輸出 / 已知未解 / 分支 + SHA。
