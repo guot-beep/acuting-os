@@ -33640,9 +33640,9 @@
         "蟲積 → 加烏梅、川椒，減飴糖、白芍"
       ],
       "contraindications_en": [
-        "Contraindicated for those with Heat from Yin Deficiency.",
         "Eliminate sweet flavor for vomiting or roundworms.",
-        "Modify for abdominal distention."
+        "Modify for abdominal distention.",
+        "Contraindicated for those with Heat from Yin Deficiency."
       ],
       "contraindications_zh": [
         "因嘔吐或蛔蟲所致者，宜去甘味藥。",
@@ -118547,7 +118547,7 @@
       "correction_note": "【2026-08-12 君臣佐使 — Ting 裁定 1A + SOL §3】《金匱要略·腹滿寒疝宿食病脈證治》第十 給的是組成與煎服法，不指派君臣佐使；本卡不把角色寫成原典事實。\n採用的現代分析：膠飴（飴糖）＝君、蜀椒＝臣、乾薑＝臣、人參＝佐。來源：EC Way〈大建中湯〉https://ecway.hk/prescription/dajianzhongsoup（現代方劑分析，SOL 2026-08-12 引錄）。\n並存的另一說（不採用但必須記錄）：蜀椒＝君、乾薑＝臣、人參＝佐、膠飴＝佐/使。SOL §3 指出現代分析不一致，故 hierarchy_status = disputed_modern_analysis；若 Ting 指定的課本另有版本，以課本並註明版次頁碼為準。\n組成第一味的 herb_zh / name_zh 原值為拉丁拼寫「Chuan Jiao」（中文欄位放英文，憲法紅線五），改為原典用的中文藥名「蜀椒」；拼音「Chuan Jiao」仍在本列 pinyin 欄，未遺失。herb_id 仍為 herb.hua_jiao（中藥庫的花椒）。\n原方相對量取自《金匱要略·腹滿寒疝宿食病脈證治》第十：蜀椒二合、乾薑四兩、人參二兩、膠飴一升，寫入各列 classical_amount_text；既有的現代參考克數區間（decoction_reference_g）原封不動保留，未作古今換算。\nneeds_fill 原值保存：「骨架記錄：僅有考綱的官方方名。組成、君臣佐使、功效、主治、禁忌全部待從 curriculum/formulas 補齊，不可憑方名推測。」",
       "formula_song_zh": "痛嘔食艱屬大寒。腹沖頭足觸之難。\n乾薑四兩椒二合。參二飴升食粥安。",
       "formula_song_source_zh": "出自陳修園《金匱方歌括》",
-      "exam_pearl": "【考綱重點】中焦大虛大寒腹中劇痛（起塊如頭足）首選急救方（張仲景《金匱要略》名方）。蜀椒（君，溫中止痛散寒）；乾薑（臣，溫脾胃）；人參、飴糖（佐使，大補中氣、緩急止痛）。NCBAHM 2026 CH Outline p.18。",
+      "exam_pearl": "【考綱重點】中焦大虛大寒腹中劇痛（起塊如頭足）首選急救方（張仲景《金匱要略》名方）。本卡採現代分析：飴糖（君，大補中氣、緩急止痛）；蜀椒（臣，溫中止痛散寒）；乾薑（臣，溫脾胃）；人參（佐，補中益氣）——另有教學分析作蜀椒君、乾薑臣、人參佐、飴糖佐使，兩說並存，見本卡組成表說明。NCBAHM 2026 CH Outline p.18。",
       "modern_research_zh": [
         "強效解除胃腸平滑肌劇烈痙攣、鎮痛",
         "顯著促進腸道蠕動、解除腸梗阻",
@@ -119015,9 +119015,9 @@
           "decoction_reference_g": "15-30g",
           "in_formula_en": "Invigorates/nourishes Blood, dispels Stasis and relieves pain.",
           "actions_en": "Invigorates/nourishes Blood, dispels Stasis and relieves pain.",
-          "in_formula_zh": "補血養血，緩急止痛。",
-          "actions_zh": "補血養血，緩急止痛。",
-          "role_reason_zh": "補血養血，緩急止痛。",
+          "in_formula_zh": "活血化瘀，緩急止痛。",
+          "actions_zh": "活血化瘀，緩急止痛。",
+          "role_reason_zh": "活血化瘀，緩急止痛。",
           "is_alternate": false,
           "role_zh": "君"
         },
