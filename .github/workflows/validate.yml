@@ -248,6 +248,8 @@ jobs:
       # 無命中 = 空狀態,不落到 0 筆的穴位目錄。10 個種子查詢用真資料跑。
       - name: unified search ranking contract (10 seed queries, real data)
         run: node scripts/test-unified-search.js
+      - name: quality panel honesty (live counts, snapshot dates, {} is not content)
+        run: node scripts/test-quality-panel-honesty.js
       # 部署閘門:Worker 與 index.html 宣告必須同進同出;半套設定不准上 main(D33)
       - name: D1 deploy gate
         run: node scripts/validate-d1-deploy-gate.js

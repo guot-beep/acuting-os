@@ -19,48 +19,22 @@ const vm = require("vm");
 const root = path.resolve(__dirname, "..");
 const appSrc = fs.readFileSync(path.join(root, "app.js"), "utf8");
 
-/* ---- 從 app.js 抽函式:跳過字串 / 註解,做括號配對 ---- */
-function extractFunction(src, name) {
-  const sig = `\nfunction ${name}(`;
-  const at = src.indexOf(sig);
-  if (at < 0) throw new Error(`app.js 找不到 function ${name}`);
-  let i = src.indexOf("{", at);
-  let depth = 0;
-  for (; i < src.length; i++) {
-    const ch = src[i];
-    const nx = src[i + 1];
-    if (ch === "/" && nx === "/") { i = src.indexOf("\n", i); continue; }
-    if (ch === "/" && nx === "*") { i = src.indexOf("*/", i) + 1; continue; }
-    if (ch === '"' || ch === "'" || ch === "`") {
-      const quote = ch;
-      for (i++; i < src.length && src[i] !== quote; i++) if (src[i] === "\\") i++;
-      continue;
-    }
-    if (ch === "{") depth++;
-    else if (ch === "}") { depth--; if (depth === 0) return src.slice(at + 1, i + 1); }
-  }
-  throw new Error(`function ${name} 括號沒配對`);
-}
-function extractConst(src, name) {
-  const m = src.match(new RegExp(`^const ${name} = .*;$`, "m"));
-  if (!m) throw new Error(`app.js 找不到 const ${name}`);
-  // vm 裡 top-level const 不會掛到 context 物件上;測試要從 ctx 讀,改成 var
-  return m[0].replace(/^const /, "var ");
-}
-
+const { extractFunctions, extractConsts } = require("./lib/extract-app-functions");
 const FNS = ["txt", "scoreMatch", "scoreRecord", "idSlug", "knowledgeRecords", "unifiedSearch", "bestGlobalResult", "caseDeepText", "homeSearchDestination"];
-const code = [extractConst(appSrc, "GR_PER_GROUP"), extractConst(appSrc, "GR_GROUP_ORDER"), ...FNS.map((f) => extractFunction(appSrc, f))].join("\n");
+const code = extractConsts(appSrc, ["GR_PER_GROUP", "GR_GROUP_ORDER"]) + extractFunctions(appSrc, FNS);
 
-/* ---- 真資料 ---- */
+/* ---- 真資料(走 repo 唯一的 node 端載入器,不自己解析發射格式)---- */
+const { loadKnowledge, loadGeneratedGlobal } = require("./lib/load-knowledge");
+const K = loadKnowledge();
+const P361 = loadGeneratedGlobal("data/generated/points_361.js", "ACUTING_POINTS_361");
+if (!K || !P361) { console.error("FAIL — 讀不到 data/generated 知識分片或 points_361.js(先跑 node scripts/build-data.js)"); process.exit(1); }
 const ctx = {};
 vm.createContext(ctx);
 ctx.globalThis = ctx;
 ctx.window = ctx;
-for (const f of ["knowledge_core", "knowledge_ref", "knowledge_rx", "knowledge_mm", "knowledge_dx", "knowledge_pat", "points_361"]) {
-  vm.runInContext(fs.readFileSync(path.join(root, "data/generated", `${f}.js`), "utf8"), ctx, { filename: f });
-}
+ctx.ACUTING_KNOWLEDGE = K;
 // 穴位替身:只搬搜尋會讀的欄位,對應 app.js adapt361Record 的命名
-ctx.points = (ctx.ACUTING_POINTS_361 || []).map((r) => ({
+ctx.points = P361.map((r) => ({
   code: r.code, nameZh: r.chinese || r.code, nameEn: r.english || "", pinyin: r.pinyin || r.code,
   meridian: r.meridian_display || r.channel_zh || "", region: r.region || "",
   functions: r.functions_zh || r.functions || [], functionsEn: r.functions_en || [], patterns: r.tcm_pattern_ids || [],
