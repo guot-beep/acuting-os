@@ -5461,7 +5461,9 @@ body[data-content-mode="english"] .i18n-zh {
   font-weight: 800;
   justify-content: center;
   margin-top: 0.65rem;
-  min-height: 2rem;
+  /* 修正(手機 375px):「查看XX卡」是卡片主要 CTA,原 min-height 2rem(32px)
+     低於 44px 觸控門檻,366 張中藥卡 + 方劑/西藥卡共用此 class。 */
+  min-height: 44px;
   padding: 0.38rem 0.72rem;
 }
 .k-open-detail:hover,
