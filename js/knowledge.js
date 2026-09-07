@@ -14,6 +14,39 @@
   const CONTENT_MODE_KEY = "acuting-content-mode-v1";
 
   function el(id) { return document.getElementById(id); }
+
+  /* 2026-09-07 包 C(渲染成本):把 4014 行 condition 那條 lazy render 抽成一句共用的。
+     實測(docs/audits/RENDER_COST_2026-09-07.md):八個知識分頁的清單全部在開機期
+     一起塞進 DOM,不管使用者停在哪一頁都一樣——herb 6,229 + symptom 5,399 +
+     comparison 3,017 + formula 2,553 + pharm 801 = 17,998 個節點,佔開機 34,882 的 51.6%,
+     而使用者一次只看得到其中一頁。而且這筆帳不是只付一次:router.js 的 activate()
+     每次切分頁都要對所有 section 切 hidden,文件越大每一次切換越貴(踩過 condition
+     之後回首頁從 277ms 漲到 785ms)。2026-08-12 condition 那條的理由(手機因 DOM
+     過重被系統清空頁面)對另外五個分頁一字不差地成立。
+
+     為什麼掛 hashchange 而不是 IntersectionObserver:app.js 的 openGlobalResult
+     用 goToSection() → hashchange → requestAnimationFrame 去找卡片(app.js:1417/1465),
+     hashchange 的監聽器保證跑在下一個 frame 之前,rAF 才找得到;IntersectionObserver
+     是 frame 之後才回呼,會讓那條路變成「按了沒反應」。
+
+     渲染失敗時使用者看到什麼:grid 留空(不是假訊息),而且打開那一頁立刻看得見。 */
+  function renderWhenWorkspaceOpens(ws, render) {
+    let rendered = false;
+    const run = () => {
+      if (rendered) return;
+      const active = document.body.dataset.activeWs;
+      /* fail-open:index.html 的 section 沒有預設 hidden,是 router.js 執行時才收起來的。
+         router.js 沒載到(defer 失敗)時 data-active-ws 從頭到尾不存在、所有 section
+         同時攤開,「等切到那一頁」就永遠不會發生 —— 那會變成整頁清單無聲留白。
+         這種情況一律照舊全部畫出來,寧可慢也不要騙人。 */
+      if (active !== undefined && active !== ws) return;
+      rendered = true;
+      render();
+    };
+    run();                                        // 開站網址就是那一頁 → 立刻畫
+    window.addEventListener("hashchange", run);   // router.js 先跑,activeWs 已經更新
+  }
+
   function isEnglishMode() {
     try {
       return (document.body && document.body.dataset && document.body.dataset.contentMode === "english") || (typeof localStorage !== "undefined" && localStorage && localStorage.getItem(CONTENT_MODE_KEY) === "english");
@@ -2517,7 +2550,7 @@
           </select>
           <div class="cat-chips" id="formulaCatChips" aria-label="方劑分類篩選"></div>
         </details>
-        <div class="k-grid" id="formulaGrid">${renderEnhanced(records)}</div>`;
+        <div class="k-grid" id="formulaGrid"></div>`;   /* 內容由 renderWhenWorkspaceOpens 補,見檔頭 */
       formulaHost.appendChild(box);
 
       const updateFormulaGrid = () => {
@@ -2586,6 +2619,9 @@
         const button = event.target.closest('[data-detail-kind="formula"][data-detail-id]');
         if (button) openKnowledgeDetail("formula", button.dataset.detailId);
       });
+      /* 第一次進 #ws/formula 才畫 223 張卡。updateFormulaGrid 的空查詢輸出
+         與原本開機期那一行完全相同(activeConcept 開站是 null,activeConceptBar() 回 "")。 */
+      renderWhenWorkspaceOpens("formula", updateFormulaGrid);
     } else {
     const render = (list) => list.map((f) => `
       <article class="k-card">
@@ -2664,7 +2700,7 @@
         </select>
         <div class="cat-chips" id="herbCatChips" aria-label="中藥分類篩選"></div>
       </details>
-      <div class="k-grid" id="herbGrid">${renderHerbs(herbs)}</div>`;
+      <div class="k-grid" id="herbGrid"></div>`;   /* 內容由 renderWhenWorkspaceOpens 補,見檔頭 */
 
     const updateHerbGrid = () => {
       const q = el("herbFilter").value.trim().toLowerCase();
@@ -2705,6 +2741,7 @@
       const button = event.target.closest('[data-detail-kind="herb"][data-detail-id]');
       if (button) openKnowledgeDetail("herb", button.dataset.detailId);
     });
+    renderWhenWorkspaceOpens("herb", updateHerbGrid);   // 366 張,開機期最大的知識 grid
   }
 
   // ---- Pharmacology --------------------------------------------------------
@@ -2766,7 +2803,7 @@
         </select>
         <div class="cat-chips" id="pharmCatChips" aria-label="西藥分類篩選"></div>
       </details>
-      <div class="k-grid" id="pharmGrid">${renderPharm(pharmDrugs)}</div>`;
+      <div class="k-grid" id="pharmGrid"></div>`;   /* 內容由 renderWhenWorkspaceOpens 補,見檔頭 */
 
     const updatePharmGrid = () => {
       const q = el("pharmFilter").value.trim().toLowerCase();
@@ -2794,6 +2831,7 @@
       const button = event.target.closest('[data-detail-kind="pharm"][data-detail-id]');
       if (button) openKnowledgeDetail("pharm", button.dataset.detailId);
     });
+    renderWhenWorkspaceOpens("pharm", updatePharmGrid);
   }
 
   // ---- Comparisons ---------------------------------------------------------
@@ -2948,10 +2986,14 @@
 
     comparisonHost.innerHTML = `
       <input type="search" id="comparisonFilter" placeholder="${esc(modeText("搜尋鑑別表、證型、比較軸… Search comparison, pattern, axis", "Search comparisons, patterns, axes..."))}" class="k-filter" />
-      <div class="k-grid k-grid-wide" id="comparisonGrid">${renderComparisons(comparisons) || '<p class="k-missing">No comparison records yet.</p>'}</div>`;
+      <div class="k-grid k-grid-wide" id="comparisonGrid"></div>`;   /* 內容由 renderWhenWorkspaceOpens 補,見檔頭 */
 
-    el("comparisonFilter").addEventListener("input", (event) => {
-      const q = event.target.value.trim().toLowerCase();
+    /* 原本是匿名 input 監聽器;取名字才能讓第一次渲染重用同一段邏輯,
+       不必把整段條件複製一份(複製 = 兩份會分岔)。查無記錄時的字從
+       「No comparison records yet.」變成下面的「No matching comparison records.」——
+       目前 43 筆,只有整層清空才會看到,記在 audit 的 §7。 */
+    const updateComparisonGrid = () => {
+      const q = String((el("comparisonFilter") || {}).value || "").trim().toLowerCase();
       const hit = comparisons.filter((record) => {
         const text = [
           record.id,
@@ -2969,7 +3011,9 @@
         return !q || text.includes(q);
       });
       el("comparisonGrid").innerHTML = renderComparisons(hit) || '<p class="k-missing">No matching comparison records.</p>';
-    });
+    };
+    el("comparisonFilter").addEventListener("input", updateComparisonGrid);
+    renderWhenWorkspaceOpens("comparison", updateComparisonGrid);
   }
 
   // ---- Conditions ----------------------------------------------------------
@@ -3044,7 +3088,7 @@
       const sum = el("symptomSummary");
       if (sum) sum.textContent = `${hit.length} / ${symptoms.length}`;
     };
-    updateSymptoms();
+    renderWhenWorkspaceOpens("symptom", updateSymptoms);   /* 124 張,見檔頭 */
     if (el("symptomFilter")) el("symptomFilter").addEventListener("input", updateSymptoms);
     document.addEventListener("acuting:content-mode", updateSymptoms);
   }
