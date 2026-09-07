@@ -7024,7 +7024,15 @@ html { scroll-padding-top: 92px; }
 }
 .k-removed-note summary { cursor: pointer; line-height: 1.5; }
 .k-removed-note ul { margin: 0.4rem 0 0; padding-left: 1.1rem; line-height: 1.6; }
-.k-removed-note small { opacity: 0.85; }
+.k-removed-note small {
+  opacity: 0.85;
+  /* 修正(手機 375px):#conditionRecords 病症卡「移除說明」裡的稽核代號
+     (例如 CLASSICAL_REFS_ATTRIBUTION_SCAN、COND_FULLDETAIL_EYESON_02)是
+     底線連接的長字串,無空格可斷,375px 下把 <small> 撐到 340px 寬,
+     父層 <li>/<ul> 只有 243/261px,整頁 scrollWidth 溢出到 838。
+     overflow-wrap: anywhere 讓瀏覽器在必要時斷在任意字元,回到容器寬度內。 */
+  overflow-wrap: anywhere;
+}
 
 /* 內容品質軸(兩軸 maturity 的第二軸)。與 .k-comp-suspect 同一種視覺語言:
    左側色條 + 淡底,不搶標題。SAFETY_HOLD 用紅,DEFECT 用琥珀 —— 這兩者的差別
