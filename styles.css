@@ -6450,7 +6450,12 @@ html { scroll-padding-top: 92px; }
 
 /* --- Home hero: centered search + calm lotus (2026-07-25) ------------- */
 .os-dashboard.home-hero {
-  grid-template-columns: 1fr;
+  /* 修正(手機 375px):這條無 media query、雙 class 選擇器(0,0,2)的規則才是實際
+     贏過 @media(max-width:1040px) 那條 .os-dashboard 修正(0,0,1)的規則——
+     光改後者救不到首頁,因為首頁 dashboard 同時帶 .home-hero。同一顆 1fr 軌
+     blowout:#globalResults 填滿結果後把 .os-intro 撐到 418px,375px 視窗下
+     整頁溢出 71px。 */
+  grid-template-columns: minmax(0, 1fr);
   max-width: 720px;
   margin-inline: auto;
 }
