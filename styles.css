@@ -6394,6 +6394,9 @@ body.nav-open .nav-panel { transform: none; }
   background: var(--panel); border: 1px solid var(--line); border-radius: 999px;
   color: var(--ink); cursor: pointer; font: inherit; font-weight: 600;
   padding: 0.38rem 0.8rem; transition: border-color 0.12s, background 0.12s;
+  /* 修正(手機 375px):#herbRecords 分類篩選 chip 實測高度 39px(<44px 觸控門檻),
+     366 顆藥材卡共用同一顆分類列,誤觸/漏觸機率隨清單長度放大。 */
+  min-height: 44px;
 }
 .cat-chip:hover { border-color: var(--accent); }
 .cat-chip.active { background: var(--accent-dark); border-color: var(--accent-dark); color: #fff; }
