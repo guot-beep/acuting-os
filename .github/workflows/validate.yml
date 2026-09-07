@@ -21,7 +21,9 @@ on:
     # 事件觸發 CI。而 PR 一與 base 衝突,GitHub 就不建 merge ref,那個事件產生的
     # run 是零 —— gate 不是變紅,是消失,沒有人會收到通知。PR #59 就這樣暗過一次。
     # push 事件不受 PR 可合性影響,所以分支自己的 push 一定會跑,單點失效解除。
-    branches: [main, 'codex/**']
+    # claude/** 加進來(2026-09-07):Claude 執行分支以前完全沒有 CI,只有落到 main 才跑一次 ——
+    # 出事就是 main 紅。Ting 五天派工要每包附 SHA + CI,分支自己就得跑。
+    branches: [main, 'codex/**', 'claude/**']
   workflow_dispatch:
 
 # CI 通知風暴處置(2026-08-12,Ting 授權):
