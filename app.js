@@ -1215,6 +1215,9 @@ homeSearch.addEventListener("keydown", (event) => {
    "type -> see -> click", no scrolling through sections. */
 const globalResultsEl = document.querySelector("#globalResults");
 const GR_PER_GROUP = 6;
+// 打字的 110ms debounce timer。放在模組層是因為 clearGlobalResults 要能取消它:
+// 以前它關在 if (globalResultsEl) {…} 區塊裡,Enter 開卡後 110ms timer 才到,把剛關掉的下拉又畫回來(審查 M3;main 也有)。
+let grTimer = null;
 
 function knowledgeRecords(key) {
   const k = globalThis.ACUTING_KNOWLEDGE || {};
@@ -1245,15 +1248,22 @@ function scoreMatch(q, ...fields) {
  * 開哪個 —— 於是「失眠」開了申脈、「黃耆」開了當歸六黃湯(組成含黃耆,方劑排在中藥前)。
  * 身分(id / code / 名字 / 拼音 / 別名)命中永遠要贏內文(功效、主治、組成、標籤)命中:
  * 0–2 給身分,3–5 給內文;同分才看類別順序。 */
+const squashSpaces = (s) => String(s || "").toLowerCase().replace(/\s+/g, "");
 function scoreRecord(q, identity, body) {
   const idScore = scoreMatch(q, ...identity);
   if (idScore >= 0) return idScore;
+  // 拼音帶不帶空格算同一個身分:「tai chong」= Taichong、「he gu」= Hegu、「T 11.01」= T11.01。
+  // 舊路 findExactPoint 兩邊都去空白再比;09-07 第一版把舊路砍了卻沒把這條搬過來,
+  // 673 個帶空格的穴位拼音查詢從能開變成找不到、59 個開到形近的方/藥(審查 H1)。
+  const idSquashed = scoreMatch(squashSpaces(q), ...identity.filter(Boolean).map(squashSpaces));
+  if (idSquashed >= 0) return idSquashed;
   const bodyScore = scoreMatch(q, ...body);
   return bodyScore >= 0 ? bodyScore + 3 : -1;
 }
 
 // 「cond.pcos」的身分也包括 pcos、「formula.gui_zhi_tang」也包括 gui zhi tang:
-// id 的尾巴就是這筆的名字,打 PCOS 應該命中病症卡本身,而不是標題以 PCOS 開頭的鑑別表。
+// 第一個點號之後的全部(底線換空白)就是這筆的名字,打 PCOS 應該命中病症卡本身,
+// 而不是標題以 PCOS 開頭的鑑別表。穴位代碼(LI4、T88.07)不走這條:沒有命名空間前綴,回空字串。
 function idSlug(id) {
   const s = String(id || "");
   const dot = s.indexOf(".");
@@ -1261,7 +1271,15 @@ function idSlug(id) {
 }
 
 // 類別順序只在同分時才有意義;它也是 renderGlobalResults 分組順序的第二把尺。
-const GR_GROUP_ORDER = ["points", "formulas", "herbs", "conditions", "cases", "symptoms", "pharmDrugs", "comparisons"];
+// 病症、症狀排在穴位前:打「感冒」是要看感冒這個病,不是董氏「感冒一穴」(兩邊都是 prefix,同分;審查 M1)。
+// 穴位代碼 / 穴名 exact 命中的查詢(LI4、合谷)不受影響,因為那時只有穴位是 0 分。
+const GR_GROUP_ORDER = ["conditions", "symptoms", "points", "formulas", "herbs", "cases", "pharmDrugs", "comparisons"];
+const GR_KIND_BY_GROUP = { points: "point", formulas: "formula", herbs: "herb", conditions: "condition", cases: "case", symptoms: "symptom", pharmDrugs: "pharm", comparisons: "comparison" };
+function grGroupOrder(key) {
+  const order = GR_GROUP_ORDER.indexOf(key);
+  if (order < 0) throw new Error(`unifiedSearch: 分組 ${key} 沒登記在 GR_GROUP_ORDER`);   // 漏登記會讓下拉第一列和 Enter 開的分岔(審查 M7)
+  return order;
+}
 
 function unifiedSearch(rawQuery) {
   const q = String(rawQuery || "").trim().toLowerCase();
@@ -1269,6 +1287,9 @@ function unifiedSearch(rawQuery) {
   const pick = (list, mapIdentity, mapBody) => {
     const scored = [];
     for (const rec of list) {
+      // 退役卡(review_status deprecated)不進搜尋:身分優先之後它們會用自己的名字排到第一名,
+      // 列上又長得跟活卡一樣(「蘇子」開了退役的 herb.su_zi;審查 M2)。資料層不濾,這裡濾。
+      if (rec && (rec.review_status === "deprecated" || rec.reviewStatus === "deprecated")) continue;
       const s = scoreRecord(q, mapIdentity(rec), mapBody(rec));
       if (s >= 0) scored.push({ s, rec });
     }
@@ -1283,17 +1304,21 @@ function unifiedSearch(rawQuery) {
     // 別名 and the 特定穴 identity were missing too: 「合谷」 is also 虎口, and
     // 「郄穴」 is how you look for the acute-condition points.
     // 第二個函式 = 身分欄,第三個 = 內文欄(見 scoreRecord)。
+    // 舊穴位目錄(getFilteredPoints)搜得到的欄位這裡都要有,舊路已拿掉,這是唯一的入口(審查 H2):
+    // standardCode 是董氏的顯示代碼(「T 11.01」),aliases 是別名陣列;位置/解剖/區域/英文主治/證據/注意 進內文。
     points: pick(points,
-      (p) => [p.code, p.nameZh, p.nameEn, p.pinyin, txt(p.otherNamesZh)],   // 別名:「合谷」也是虎口
-      (p) => [p.meridian, p.region, txt(p.functions), txt(p.patterns), txt(p.functionsEn),
+      (p) => [p.code, p.standardCode, p.nameZh, p.nameEn, p.pinyin, txt(p.otherNamesZh), txt(p.aliases)],   // 別名:「合谷」也是虎口
+      (p) => [p.meridian, p.region, p.standardRegion, p.standardZone, p.location, p.locationEn,
+        txt(p.functions), txt(p.patterns), txt(p.functionsEn), txt(p.patternsEn), txt(p.anatomy),
         txt(p.actionTagsZh), txt(p.actionTagsEn), txt(p.diseaseTagsZh), txt(p.diseaseTagsEn),
-        txt(p.pointIdentityZh), txt(p.pointIdentityEn)]),   // 特定穴身分(郄穴)是分類不是名字
+        txt(p.pointIdentityZh), txt(p.pointIdentityEn), p.evidence, p.cautions]),   // 特定穴身分(郄穴)是分類不是名字
     formulas: pick(knowledgeRecords("formulas"),
       (f) => [f.name_zh, f.name_en, f.pinyin, f.id, idSlug(f.id), txt(f.aliases_zh)],
       (f) => [f.category_zh, f.category, txt(f.pattern_indications_zh), txt(f.composition)]),
     herbs: pick(knowledgeRecords("herbs"),
       (h) => [h.name_zh, h.name_en, h.pinyin, h.id, idSlug(h.id),
-        txt(h.aliases_zh)],   // variant characters (三稜 -> 三棱) must still find the herb
+        txt(h.aliases_zh),    // variant characters (三稜 -> 三棱) must still find the herb
+        txt(h.aliases_en)],   // 「Ma Zi Ren」是火麻仁的英文別名,不該開麻子仁丸(審查 M4)
       (h) => [h.category, txt(h.channels_entered), txt(h.functions_zh || h.functions), txt(h.modern_use_tags),
         // condition tags and indications are what a symptom search actually hits
         // (clicking 腰膝痠痛 on a card searches for it and must find these herbs)
@@ -1326,12 +1351,21 @@ function unifiedSearch(rawQuery) {
 function bestGlobalResult(res) {
   if (!res) return null;
   let best = null;
-  GR_GROUP_ORDER.forEach((key, order) => {
+  for (const key of Object.keys(res)) {
     const g = res[key];
-    if (!g || !g.items.length) return;
-    if (!best || g.best < best.score) best = { key, order, score: g.best, rec: g.items[0] };
-  });
+    const order = grGroupOrder(key);
+    if (!g || !g.items.length) continue;
+    if (!best || g.best < best.score || (g.best === best.score && order < best.order)) best = { key, order, score: g.best, rec: g.items[0] };
+  }
   return best;
+}
+
+// Enter 開的那一筆要能不經 DOM 直接開(審查 M8):這裡把搜尋記錄轉成 openSearchTarget 要的欄位。
+function searchTargetData(key, rec) {
+  if (key === "points") return { code: rec.code };
+  if (key === "cases") return { code: rec.patientCode || "" };
+  if (key === "symptoms") return { id: rec.id, name: rec.name_zh || rec.name_en || "" };
+  return { id: rec.id };
 }
 
 // `name` is escaped, so callers cannot smuggle markup through it — that is the
@@ -1383,7 +1417,7 @@ function renderGlobalResults(rawQuery) {
     const rows = obj.items.map(render).join("");
     const more = obj.total > obj.items.length
       ? `<p class="gr-more">${escapeHtml(modeText(`還有 ${obj.total - obj.items.length} 筆…輸入更精確的字`, `${obj.total - obj.items.length} more results… keep typing to narrow the search`))}</p>` : "";
-    groups.push({ best: obj.best, order: GR_GROUP_ORDER.indexOf(key), html: `<p class="gr-group__title">${title}（${obj.total}）</p>${rows}${more}` });
+    groups.push({ best: obj.best, order: grGroupOrder(key), html: `<p class="gr-group__title">${title}（${obj.total}）</p>${rows}${more}` });
   };
 
   group("points", modeText("穴位 Acupoints", "Acupoints"), res.points, (p) =>
@@ -1425,6 +1459,7 @@ function renderGlobalResults(rawQuery) {
 }
 
 function clearGlobalResults() {
+  clearTimeout(grTimer);
   if (!globalResultsEl) return;
   globalResultsEl.innerHTML = "";
   globalResultsEl.hidden = true;
@@ -1472,31 +1507,35 @@ function openKnowledgeRecord(kind, id) {
   return false;
 }
 
+// 下拉列(button.dataset)與 Enter(搜尋記錄)都從這裡開,同一個 switch,不會分岔(審查 M8)。
 function openGlobalResult(btn) {
-  const kind = btn.dataset.kind;
+  openSearchTarget(btn.dataset.kind, btn.dataset);
+}
+
+function openSearchTarget(kind, data) {
   clearGlobalResults();
   if (kind === "point") {
     homeSearch.blur();
-    selectPoint(btn.dataset.code);
+    selectPoint(data.code);
     return;
   }
   if (kind === "formula" || kind === "herb") {
-    if (openKnowledgeRecord(kind, btn.dataset.id)) return;
+    if (openKnowledgeRecord(kind, data.id)) return;
     // API 還沒載入時的退路:至少把人帶到對的區塊
     goToSection(kind === "formula" ? "ws/formula" : "ws/herb");
     return;
   }
   if (kind === "condition") {
-    openKnowledgeRecord(kind, btn.dataset.id);
+    openKnowledgeRecord(kind, data.id);
     return;
   }
   if (kind === "case") {
-    if (caseSearch) { caseSearch.value = btn.dataset.code || ""; renderClinicalCases(); }
+    if (caseSearch) { caseSearch.value = data.code || ""; renderClinicalCases(); }
     goToSection("caseWorkspace");
     return;
   }
   if (kind === "pharm") {
-    if (openKnowledgeRecord(kind, btn.dataset.id)) return;   // api.openDetail 已支援 pharm
+    if (openKnowledgeRecord(kind, data.id)) return;   // api.openDetail 已支援 pharm
     goToSection("pharmSection");
     return;
   }
@@ -1505,14 +1544,14 @@ function openGlobalResult(btn) {
     goToSection("symptomSection");
     requestAnimationFrame(() => {
       const f = document.getElementById("symptomFilter");
-      if (f) { f.value = btn.dataset.name || ""; f.dispatchEvent(new Event("input", { bubbles: true })); }
+      if (f) { f.value = data.name || ""; f.dispatchEvent(new Event("input", { bubbles: true })); }
     });
     return;
   }
   if (kind === "comparison") {
     goToSection("comparisonSection");
     requestAnimationFrame(() => {
-      const card = document.querySelector(`[data-record-id="${(window.CSS && CSS.escape) ? CSS.escape(btn.dataset.id) : btn.dataset.id}"]`);
+      const card = document.querySelector(`[data-record-id="${(window.CSS && CSS.escape) ? CSS.escape(data.id) : data.id}"]`);
       if (card) { card.scrollIntoView({ behavior: "smooth", block: "center" }); card.classList.add("gr-flash"); setTimeout(() => card.classList.remove("gr-flash"), 1600); }
     });
   }
@@ -1543,7 +1582,6 @@ document.addEventListener("click", (event) => {
 });
 
 if (globalResultsEl) {
-  let grTimer = null;
   homeSearch.addEventListener("input", () => {
     clearTimeout(grTimer);
     grTimer = setTimeout(() => renderGlobalResults(homeSearch.value), 110);
@@ -1921,8 +1959,7 @@ function runHomeSearch() {
   renderGlobalResults(query);
   const dest = homeSearchDestination(query);
   if (dest.kind === "open") {
-    const firstResult = globalResultsEl && globalResultsEl.querySelector(".gr-item");
-    if (firstResult) openGlobalResult(firstResult);
+    openSearchTarget(GR_KIND_BY_GROUP[dest.key], searchTargetData(dest.key, dest.rec));   // 不經 DOM,測試測的就是畫面開的
     return;
   }
   if (dest.kind === "cases") {
@@ -2749,7 +2786,6 @@ function getDomainProgress() {
   const K = globalThis.ACUTING_KNOWLEDGE || {};
   const recs = (key) => (K[key] && K[key].records) || [];
   const herbCoverage = K.audit?.herb_outline_coverage || {};
-  const qualityLayers = K.audit?.quality_layers || {};
   const verdicts = window.AcuTingReview ? window.AcuTingReview.allVerdicts() : [];
   const byKind = (kind, verdict) => verdicts.filter((v) => v.kind === kind && v.verdict === verdict).length;
   // 2026-09-07 包 A 修正:以前 String({}) === "[object Object]" 被當成有內容,
@@ -2786,6 +2822,7 @@ function getDomainProgress() {
   const herbProgressRow = row("中藥 Herbs", "herb", herbTotal, herbLocalCards, herbMade, herbGrade, scCount(herbs), {
     totalNote: herbCoverage.appendix_a_total ? `NCBAHM ${herbTotal} · 本地卡 ${herbLocalCards}${herbSnapLabel}` : "",
     frameworkNote: `${herbLocalCards} local cards`,
+    frameworkDenominator: herbLocalCards,   // 進度條分母:framework 366 / total(NCBAHM)304 會算成 120% 再被 overflow 裁成滿格(審查 L2)
     madeNote: herbCoverage.appendix_a_total
       ? `${herbMade}/${herbTotal} NCBAHM 覆蓋 · 缺 ${Number.isFinite(herbMissing) ? herbMissing : Math.max(0, herbTotal - herbMade)}${herbSnapLabel}`
       : "",
@@ -2834,7 +2871,7 @@ function renderProgressMatrix() {
   if (!host) return;
   const pct = (n, total) => (total ? Math.round((n / total) * 100) : 0);
   const rows = getDomainProgress().map((d) => {
-    const frameworkPct = pct(d.framework, d.total);
+    const frameworkPct = pct(d.framework, d.frameworkDenominator || d.total);
     const madePct = pct(d.made, d.total);
     const gradeTotal = d.gradeDenominator || d.total;
     const gradePct = pct(d.grade, gradeTotal);

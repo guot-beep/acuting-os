@@ -42,16 +42,20 @@ if (missingHashTargets.length) {
 // 包 A(2026-09-07):首頁搜尋四個入口(打字 / Enter / 搜尋鈕 / 卡片搜尋標籤)必須走同一條路,
 // 而且 Enter 不准再有「落到 0 筆穴位目錄」的舊路。這裡只查結構(誰呼叫誰);
 // 排名契約(身分命中贏內文命中、Enter 開的 = 下拉第一列)在 scripts/test-unified-search.js 用真資料測。
+// runHomeSearch 的本體先切出來,呼叫關係只在**本體內**斷言 —— 無界的 [\s\S]*? 會被「把兩個呼叫搬到檔案後面
+// 一個永遠不會被叫的函式」騙過(審查 H3 的負控 NC3:Enter 完全失效仍全綠)。
+const runHomeSearchSrc = (js.match(/\nfunction runHomeSearch\(\) \{[\s\S]*?\n\}\n/) || [""])[0];
 const homeSearchEntry = [
-  [/#homeSearchBtn"\)\.addEventListener\("click", runHomeSearch\)/, "#homeSearchBtn click → runHomeSearch"],
-  [/event\.key === "Enter"\) runHomeSearch\(\)/, "#homeSearch Enter → runHomeSearch"],
-  [/renderGlobalResults\(homeSearch\.value\), 110\)/, "#homeSearch input(debounce)→ renderGlobalResults"],
-  [/ACUTING_SEARCH = function[\s\S]{0,400}?renderGlobalResults\(q\)/, "ACUTING_SEARCH(卡片標籤)→ renderGlobalResults"],
-  [/function runHomeSearch\(\) \{[\s\S]*?renderGlobalResults\(query\);[\s\S]*?homeSearchDestination\(query\)/, "runHomeSearch → renderGlobalResults + homeSearchDestination(同一把尺)"]
+  [js, /#homeSearchBtn"\)\.addEventListener\("click", runHomeSearch\)/, "#homeSearchBtn click → runHomeSearch"],
+  [js, /event\.key === "Enter"\) runHomeSearch\(\)/, "#homeSearch Enter → runHomeSearch"],
+  [js, /renderGlobalResults\(homeSearch\.value\), 110\)/, "#homeSearch input(debounce)→ renderGlobalResults"],
+  [js, /ACUTING_SEARCH = function[\s\S]{0,400}?renderGlobalResults\(q\)/, "ACUTING_SEARCH(卡片標籤)→ renderGlobalResults"],
+  [runHomeSearchSrc, /renderGlobalResults\(query\);/, "runHomeSearch 本體 → renderGlobalResults(query)"],
+  [runHomeSearchSrc, /homeSearchDestination\(query\)/, "runHomeSearch 本體 → homeSearchDestination(query)(同一把尺)"],
+  [runHomeSearchSrc, /openSearchTarget\(/, "runHomeSearch 本體 → openSearchTarget(不經 DOM)"]
 ];
-const missingEntry = homeSearchEntry.filter(([re]) => !re.test(js)).map(([, label]) => label);
+const missingEntry = homeSearchEntry.filter(([hay, re]) => !re.test(hay)).map(([, , label]) => label);
 if (missingEntry.length) fail("Home search entry points must share one path.", missingEntry);
-const runHomeSearchSrc = (js.match(/function runHomeSearch\(\) \{[\s\S]*?\n\}/) || [""])[0];
 const staleFallback = runHomeSearchSrc.match(/acupointDirectory|findExactPoint|getFilteredPoints/g);
 if (!runHomeSearchSrc) fail("runHomeSearch must exist in app.js.");
 else if (staleFallback) fail("runHomeSearch must not fall back to the acupoint directory (0-result landing).", staleFallback);

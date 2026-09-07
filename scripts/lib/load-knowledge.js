@@ -22,7 +22,9 @@ const SHARDS = ["core", "ref", "rx", "mm", "dx", "pat"];
 
 function evalInto(g, rel) {
   const src = fs.readFileSync(path.join(ROOT, rel), "utf8");
-  new Function("globalThis", src + ";")(g);
+  // window 也綁到同一個物件:data/tung/point_index.js 是 window.ACUTING_TUNG_INDEX = …(2026-09-07,
+  // test-unified-search 要載全部穴位來源),只綁 globalThis 會 ReferenceError → 回 null。
+  new Function("globalThis", "window", src + ";")(g, g);
 }
 
 function loadKnowledge() {

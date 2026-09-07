@@ -31,9 +31,19 @@ function extractFunction(src, name) {
       continue;
     }
     if (ch === "{") depth++;
-    else if (ch === "}") { depth--; if (depth === 0) return src.slice(at + 1, i + 1); }
+    else if (ch === "}") { depth--; if (depth === 0) return checkExtracted(name, src.slice(at + 1, i + 1)); }
   }
   throw new Error(`function ${name} 括號沒配對`);
+}
+
+/* 讀過頭的保險(審查 M6):正規表達式字面值裡的引號會讓上面的字串跳過邏輯把後面整段吞掉,
+ * 抽出來的「一個函式」會一路含到下一個頂層宣告。app.js 的頂層函式以「\n}」在第 0 欄收尾,
+ * 本體裡不會出現第 0 欄的 function / const / let / var —— 出現就是抽錯了,寧可丟錯也不要靜默抽錯。 */
+function checkExtracted(name, text) {
+  if (!/\n\}$/.test(text)) throw new Error(`function ${name} 沒有在第 0 欄以 } 收尾,抽取結果不可信`);
+  const overrun = text.slice(1).match(/\n(function |const |let |var )/);
+  if (overrun) throw new Error(`function ${name} 抽取讀過頭:本體裡出現頂層宣告「${overrun[1].trim()}」(多半是正規表達式字面值裡有引號)`);
+  return text;
 }
 
 function extractConst(src, name) {

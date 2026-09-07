@@ -246,12 +246,6 @@ jobs:
       # 真正的 buildPassphraseAuth。少了它,設定流程(唯一會寫入通行碼記錄的路徑)在 CI 裡沒人守。
       - name: one-time setup flow (runs the real buildPassphraseAuth, not a stub)
         run: node scripts/test-setup-flow.js
-      # 包 A(2026-09-07):首頁搜尋排名契約 —— 身分命中贏內文命中;Enter 開的 = 下拉第一列;
-      # 無命中 = 空狀態,不落到 0 筆的穴位目錄。10 個種子查詢用真資料跑。
-      - name: unified search ranking contract (10 seed queries, real data)
-        run: node scripts/test-unified-search.js
-      - name: quality panel honesty (live counts, snapshot dates, {} is not content)
-        run: node scripts/test-quality-panel-honesty.js
       # 部署閘門:Worker 與 index.html 宣告必須同進同出;半套設定不准上 main(D33)
       - name: D1 deploy gate
         run: node scripts/validate-d1-deploy-gate.js
@@ -324,6 +318,14 @@ jobs:
         run: |
           git fetch --no-tags --depth=200 origin main || git fetch --no-tags origin main
           node scripts/check-branch-mergeable.js origin/main
+
+      # 包 A(2026-09-07):首頁搜尋排名契約 —— 身分命中贏內文命中;Enter 開的 = 下拉第一列;無命中 = 空狀態,
+      # 不落到 0 筆的穴位目錄。種子查詢用真資料跑。這兩支斷言的是資料內容(「黃耆」要開 herb.huang_qi),
+      # 改名/新增同名卡會讓它們紅,所以放在 D1 部署閘門與 CARE 草稿 PHI 閘門之後,紅了不擋安全層(審查 M5)。
+      - name: unified search ranking contract (seed queries, real data)
+        run: node scripts/test-unified-search.js
+      - name: quality panel honesty (live counts, snapshot dates, {} is not content)
+        run: node scripts/test-quality-panel-honesty.js
 
       - name: extra point standard
         run: node scripts/validate-extra-point-standard.js
