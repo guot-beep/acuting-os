@@ -1239,17 +1239,41 @@ function scoreMatch(q, ...fields) {
   return joined.includes(q) ? 2 : -1;                  // substring / miss
 }
 
+/* 身分欄 vs 內文欄(2026-09-07,包 A 修正)
+ * 以前八類的欄位全丟進同一個 scoreMatch:「失眠」在申脈的病症標籤裡是 exact,在失眠
+ * 病症卡的名字裡也是 exact,兩個 0 分並列,再靠固定的類別順序(穴位第一)決定 Enter
+ * 開哪個 —— 於是「失眠」開了申脈、「黃耆」開了當歸六黃湯(組成含黃耆,方劑排在中藥前)。
+ * 身分(id / code / 名字 / 拼音 / 別名)命中永遠要贏內文(功效、主治、組成、標籤)命中:
+ * 0–2 給身分,3–5 給內文;同分才看類別順序。 */
+function scoreRecord(q, identity, body) {
+  const idScore = scoreMatch(q, ...identity);
+  if (idScore >= 0) return idScore;
+  const bodyScore = scoreMatch(q, ...body);
+  return bodyScore >= 0 ? bodyScore + 3 : -1;
+}
+
+// 「cond.pcos」的身分也包括 pcos、「formula.gui_zhi_tang」也包括 gui zhi tang:
+// id 的尾巴就是這筆的名字,打 PCOS 應該命中病症卡本身,而不是標題以 PCOS 開頭的鑑別表。
+function idSlug(id) {
+  const s = String(id || "");
+  const dot = s.indexOf(".");
+  return dot >= 0 ? s.slice(dot + 1).replace(/_/g, " ") : "";
+}
+
+// 類別順序只在同分時才有意義;它也是 renderGlobalResults 分組順序的第二把尺。
+const GR_GROUP_ORDER = ["points", "formulas", "herbs", "conditions", "cases", "symptoms", "pharmDrugs", "comparisons"];
+
 function unifiedSearch(rawQuery) {
   const q = String(rawQuery || "").trim().toLowerCase();
   if (q.length < 1) return null;
-  const pick = (list, mapFields) => {
+  const pick = (list, mapIdentity, mapBody) => {
     const scored = [];
     for (const rec of list) {
-      const s = scoreMatch(q, ...mapFields(rec));
+      const s = scoreRecord(q, mapIdentity(rec), mapBody(rec));
       if (s >= 0) scored.push({ s, rec });
     }
-    scored.sort((a, b) => a.s - b.s);
-    return { total: scored.length, items: scored.slice(0, GR_PER_GROUP).map((x) => x.rec) };
+    scored.sort((a, b) => a.s - b.s);   // 穩定排序:同分保留資料順序
+    return { total: scored.length, best: scored.length ? scored[0].s : Infinity, items: scored.slice(0, GR_PER_GROUP).map((x) => x.rec) };
   };
 
   return {
@@ -1258,33 +1282,56 @@ function unifiedSearch(rawQuery) {
     // unreachable from search, which defeats the reason for keeping them short.
     // 別名 and the 特定穴 identity were missing too: 「合谷」 is also 虎口, and
     // 「郄穴」 is how you look for the acute-condition points.
-    points: pick(points, (p) => [p.code, p.nameZh, p.nameEn, p.pinyin, p.meridian, p.region,
-      txt(p.functions), txt(p.patterns), txt(p.functionsEn),
-      txt(p.actionTagsZh), txt(p.actionTagsEn), txt(p.diseaseTagsZh), txt(p.diseaseTagsEn),
-      txt(p.pointIdentityZh), txt(p.pointIdentityEn), txt(p.otherNamesZh)]),
-    formulas: pick(knowledgeRecords("formulas"), (f) => [f.name_zh, f.name_en, f.pinyin, f.id,
-      f.category_zh, f.category, txt(f.pattern_indications_zh), txt(f.composition)]),
-    herbs: pick(knowledgeRecords("herbs"), (h) => [h.name_zh, h.name_en, h.pinyin, h.id, h.category,
-      txt(h.aliases_zh),   // variant characters (三稜 -> 三棱) must still find the herb
-      txt(h.channels_entered), txt(h.functions_zh || h.functions), txt(h.modern_use_tags),
-      // condition tags and indications are what a symptom search actually hits
-      // (clicking 腰膝痠痛 on a card searches for it and must find these herbs)
-      txt(h.condition_tags_zh), txt(h.condition_tags_en), txt(h.indications_zh),
-      txt(h.modern_functions_zh), txt(h.actions_en)]),
-    conditions: pick(knowledgeRecords("conditionCanon"), (c) => [c.name_zh, c.name_en, c.id, c.category,
-      txt(c.tcm_patterns)]),
-    cases: pick(clinicalCases, (c) => [c.patientCode, c.caseTitle, c.chiefComplaint,
-      txt(c.westernConditions), txt(c.tcmPatterns)]),
+    // 第二個函式 = 身分欄,第三個 = 內文欄(見 scoreRecord)。
+    points: pick(points,
+      (p) => [p.code, p.nameZh, p.nameEn, p.pinyin, txt(p.otherNamesZh)],   // 別名:「合谷」也是虎口
+      (p) => [p.meridian, p.region, txt(p.functions), txt(p.patterns), txt(p.functionsEn),
+        txt(p.actionTagsZh), txt(p.actionTagsEn), txt(p.diseaseTagsZh), txt(p.diseaseTagsEn),
+        txt(p.pointIdentityZh), txt(p.pointIdentityEn)]),   // 特定穴身分(郄穴)是分類不是名字
+    formulas: pick(knowledgeRecords("formulas"),
+      (f) => [f.name_zh, f.name_en, f.pinyin, f.id, idSlug(f.id), txt(f.aliases_zh)],
+      (f) => [f.category_zh, f.category, txt(f.pattern_indications_zh), txt(f.composition)]),
+    herbs: pick(knowledgeRecords("herbs"),
+      (h) => [h.name_zh, h.name_en, h.pinyin, h.id, idSlug(h.id),
+        txt(h.aliases_zh)],   // variant characters (三稜 -> 三棱) must still find the herb
+      (h) => [h.category, txt(h.channels_entered), txt(h.functions_zh || h.functions), txt(h.modern_use_tags),
+        // condition tags and indications are what a symptom search actually hits
+        // (clicking 腰膝痠痛 on a card searches for it and must find these herbs)
+        txt(h.condition_tags_zh), txt(h.condition_tags_en), txt(h.indications_zh),
+        txt(h.modern_functions_zh), txt(h.actions_en)]),
+    conditions: pick(knowledgeRecords("conditionCanon"),
+      (c) => [c.name_zh, c.name_en, c.id, idSlug(c.id), txt(c.aliases_zh), txt(c.aliases_en)],
+      (c) => [c.category, txt(c.tcm_patterns)]),
+    cases: pick(clinicalCases,
+      (c) => [c.patientCode, c.caseTitle],
+      (c) => [c.chiefComplaint, txt(c.westernConditions), txt(c.tcmPatterns)]),
     // UI/UX P1#6 (2026-08-23): symptoms / pharm drugs / comparison tables each
     // have their own workspace but were unreachable from the home search —
     // typing 「頭痛」 or a drug name said "not found" while the card existed.
-    symptoms: pick(knowledgeRecords("symptoms"), (s) => [s.name_zh, s.name_en, s.pinyin, s.id,
-      txt(s.aliases_zh), txt(s.aliases_en)]),
-    pharmDrugs: pick(knowledgeRecords("pharmDrugs"), (d) => [d.name_zh, d.name_en, d.id,
-      txt(d.brand_names_en), d.mechanism_zh, d.mechanism_en]),
-    comparisons: pick(knowledgeRecords("comparisons"), (c) => [c.title_zh, c.title_en, c.id,
-      txt(c.compares)]),
+    symptoms: pick(knowledgeRecords("symptoms"),
+      (s) => [s.name_zh, s.name_en, s.pinyin, s.id, idSlug(s.id), txt(s.aliases_zh), txt(s.aliases_en)],
+      () => []),
+    pharmDrugs: pick(knowledgeRecords("pharmDrugs"),
+      (d) => [d.name_zh, d.name_en, d.id, idSlug(d.id), txt(d.brand_names_en)],
+      (d) => [d.mechanism_zh, d.mechanism_en]),
+    comparisons: pick(knowledgeRecords("comparisons"),
+      (c) => [c.title_zh, c.title_en, c.id, idSlug(c.id)],
+      (c) => [txt(c.compares)]),
   };
+}
+
+/* 全站最佳命中:各類別自己最好的那一筆裡分數最低者,同分依 GR_GROUP_ORDER。
+ * Enter / 搜尋鈕 / 卡片上的搜尋標籤 都開這一筆,而它就是下拉的第一列
+ * (renderGlobalResults 用同一把尺排分組),看到什麼就開什麼。 */
+function bestGlobalResult(res) {
+  if (!res) return null;
+  let best = null;
+  GR_GROUP_ORDER.forEach((key, order) => {
+    const g = res[key];
+    if (!g || !g.items.length) return;
+    if (!best || g.best < best.score) best = { key, order, score: g.best, rec: g.items[0] };
+  });
+  return best;
 }
 
 // `name` is escaped, so callers cannot smuggle markup through it — that is the
@@ -1329,37 +1376,39 @@ function renderGlobalResults(rawQuery) {
   if (!res) { clearGlobalResults(); return; }
 
   const groups = [];
-  const group = (title, obj, render) => {
+  // 分組順序 = 各組最佳分數(身分命中在前、內文命中在後),同分才照 GR_GROUP_ORDER。
+  // 這樣第一列永遠是 bestGlobalResult 那一筆,Enter 開的和眼睛看到的一致。
+  const group = (key, title, obj, render) => {
     if (!obj.items.length) return;
     const rows = obj.items.map(render).join("");
     const more = obj.total > obj.items.length
       ? `<p class="gr-more">${escapeHtml(modeText(`還有 ${obj.total - obj.items.length} 筆…輸入更精確的字`, `${obj.total - obj.items.length} more results… keep typing to narrow the search`))}</p>` : "";
-    groups.push(`<p class="gr-group__title">${title}（${obj.total}）</p>${rows}${more}`);
+    groups.push({ best: obj.best, order: GR_GROUP_ORDER.indexOf(key), html: `<p class="gr-group__title">${title}（${obj.total}）</p>${rows}${more}` });
   };
 
-  group(modeText("穴位 Acupoints", "Acupoints"), res.points, (p) =>
+  group("points", modeText("穴位 Acupoints", "Acupoints"), res.points, (p) =>
     grItem("point", modeText("穴位", "Point"), p.code, p.nameZh || "",
       [p.meridian, p.region].filter(Boolean).join(" · "), { code: p.code },
       `${examStarMark(p)}${escapeHtml(p.nameZh || "")}${p.nameEn ? ` <small>${escapeHtml(p.nameEn)}</small>` : ""}`));
-  group(modeText("方劑 Formulas", "Formulas"), res.formulas, (f) =>
+  group("formulas", modeText("方劑 Formulas", "Formulas"), res.formulas, (f) =>
     grItem("formula", modeText("方劑", "Formula"), "", `${f.name_zh || f.name_en || f.id}`,
       [f.name_en, f.category_zh || f.category].filter(Boolean).join(" · "), { id: f.id }));
-  group(modeText("中藥 Herbs", "Herbs"), res.herbs, (h) =>
+  group("herbs", modeText("中藥 Herbs", "Herbs"), res.herbs, (h) =>
     grItem("herb", modeText("中藥", "Herb"), "", `${h.name_zh || h.name_en || h.id}`,
       [h.pinyin, h.category].filter(Boolean).join(" · "), { id: h.id }));
-  group(modeText("病症 Conditions", "Conditions"), res.conditions, (c) =>
+  group("conditions", modeText("病症 Conditions", "Conditions"), res.conditions, (c) =>
     grItem("condition", modeText("病症", "Condition"), "", `${c.name_zh || c.name_en || c.id}`,
       [c.name_en, c.category].filter(Boolean).join(" · "), { id: c.id }));
-  group(modeText("病例 Cases", "Cases"), res.cases, (c) =>
+  group("cases", modeText("病例 Cases", "Cases"), res.cases, (c) =>
     grItem("case", modeText("病例", "Case"), c.patientCode || "", `${c.caseTitle || c.patientCode || ""}`,
       c.chiefComplaint || "", { code: c.patientCode || "" }));
-  group(modeText("症狀 Symptoms", "Symptoms"), res.symptoms, (sy) =>
+  group("symptoms", modeText("症狀 Symptoms", "Symptoms"), res.symptoms, (sy) =>
     grItem("symptom", modeText("症狀", "Symptom"), "", `${sy.name_zh || sy.name_en || sy.id}`,
       [sy.name_en, sy.pinyin].filter(Boolean).join(" · "), { id: sy.id, name: sy.name_zh || sy.name_en || "" }));
-  group(modeText("西藥 Drugs", "Drugs"), res.pharmDrugs, (d) =>
+  group("pharmDrugs", modeText("西藥 Drugs", "Drugs"), res.pharmDrugs, (d) =>
     grItem("pharm", modeText("西藥", "Drug"), "", `${d.name_zh || d.name_en || d.id}`,
       [d.name_en, txt(d.brand_names_en)].filter(Boolean).join(" · "), { id: d.id }));
-  group(modeText("辨證鑑別 Comparisons", "Comparisons"), res.comparisons, (cp) =>
+  group("comparisons", modeText("辨證鑑別 Comparisons", "Comparisons"), res.comparisons, (cp) =>
     grItem("comparison", modeText("鑑別", "Compare"), "", `${cp.title_zh || cp.title_en || cp.id}`,
       cp.title_en || "", { id: cp.id }));
 
@@ -1369,7 +1418,8 @@ function renderGlobalResults(rawQuery) {
       `No acupoints, formulas, herbs, conditions, cases, symptoms, drugs, or comparison tables found for “${rawQuery.trim()}”.`
     ))}</p>`;
   } else {
-    globalResultsEl.innerHTML = groups.join("");
+    groups.sort((a, b) => a.best - b.best || a.order - b.order);
+    globalResultsEl.innerHTML = groups.map((g) => g.html).join("");
   }
   globalResultsEl.hidden = false;
 }
@@ -1832,69 +1882,53 @@ function goToSection(id) {
   }
 }
 
+/* Enter / 搜尋鈕 只有一條路(2026-09-07,包 A 修正):
+ *   有命中 → 開全站最佳那一筆(就是下拉的第一列)
+ *   無命中、但病例的深層文字(SOAP 各欄、連結)有 → 病例區,病例搜尋框帶著關鍵字
+ *   都沒有 → 下拉顯示「找不到」,停在原地
+ * 以前下拉關著時 Enter 走另一條舊路(findExactPoint → 穴位目錄):「桂枝湯」「PCOS」「黃耆」
+ * 被送到 0 筆的穴位目錄、「Huang Qi」開了拼音撞名的董氏穴 —— 10 個種子查詢裡 6 個落到 0 穴。
+ * 現在 Enter 前先用同一個查詢把下拉渲染一次(貼上+Enter 可能快過 110ms 的 debounce),
+ * 再讀第一列;去哪裡由 homeSearchDestination 決定,它沒有 DOM,可以在 node 裡測。 */
+function caseDeepText(item) {
+  return [
+    item.patientCode, item.caseTitle, item.chiefComplaint,
+    ...(item.westernConditions || []), ...(item.easternDiseases || []), ...(item.tcmPatterns || []), ...(item.safetyFlags || []),
+    ...(item.soapNotes || []).flatMap((note) => [
+      note.workflowLink, note.cyclePhase, note.fertilityPhase, note.subjective, note.objective, note.assessment, note.plan,
+      note.pointsUsed, note.formulaHerbs, note.westernMeds, note.outcomes, note.followUp, note.technique,
+      ...(note.westernConditionLinks || []), ...(note.easternDiseaseLinks || []), ...(note.tcmPatternLinks || []), ...(note.safetyFlagLinks || []),
+      ...(note.acupointLinks || []), ...(note.formulaLinks || []), ...(note.medicationLinks || []), ...(note.outcomeMetricLinks || [])
+    ])
+  ].join(" ").toLowerCase();
+}
+
+function homeSearchDestination(query) {
+  const q = String(query || "").trim();
+  if (!q) return { kind: "empty" };
+  const best = bestGlobalResult(unifiedSearch(q));
+  if (best) return { kind: "open", key: best.key, rec: best.rec };
+  if (clinicalCases.some((item) => caseDeepText(item).includes(q.toLowerCase()))) return { kind: "cases" };
+  return { kind: "empty" };
+}
+
 function runHomeSearch() {
   const query = homeSearch.value.trim();
   if (!query) return;
-  // If the unified dropdown is showing hits, Enter/搜尋 opens the top one.
-  const firstResult = globalResultsEl && !globalResultsEl.hidden && globalResultsEl.querySelector(".gr-item");
-  if (firstResult) { openGlobalResult(firstResult); return; }
-  const caseHit = clinicalCases.some((item) => {
-    const haystack = [
-      item.patientCode,
-      item.caseTitle,
-      item.chiefComplaint,
-      ...item.westernConditions,
-      ...item.easternDiseases,
-      ...item.tcmPatterns,
-      ...item.safetyFlags,
-      ...item.soapNotes.flatMap((note) => [
-        note.workflowLink,
-        note.cyclePhase,
-        note.fertilityPhase,
-        note.subjective,
-        note.objective,
-        note.assessment,
-        note.plan,
-        note.pointsUsed,
-        note.formulaHerbs,
-        note.westernMeds,
-        note.outcomes,
-        note.followUp,
-        note.technique,
-        ...note.westernConditionLinks,
-        ...note.easternDiseaseLinks,
-        ...note.tcmPatternLinks,
-        ...note.safetyFlagLinks,
-        ...note.acupointLinks,
-        ...note.formulaLinks,
-        ...note.medicationLinks,
-        ...note.outcomeMetricLinks
-      ])
-    ].join(" ").toLowerCase();
-    return haystack.includes(query.toLowerCase());
-  });
-  if (caseHit) {
-    caseSearch.value = query;
-    renderClinicalCases();
+  renderGlobalResults(query);
+  const dest = homeSearchDestination(query);
+  if (dest.kind === "open") {
+    const firstResult = globalResultsEl && globalResultsEl.querySelector(".gr-item");
+    if (firstResult) openGlobalResult(firstResult);
+    return;
+  }
+  if (dest.kind === "cases") {
+    clearGlobalResults();
+    if (caseSearch) { caseSearch.value = query; renderClinicalCases(); }
     goToSection("caseWorkspace");
     return;
   }
-  // Exact code / name / pinyin match → open that point's single page directly.
-  const exact = findExactPoint(query);
-  if (exact) {
-    searchInput.value = query;
-    selectPoint(exact.code);
-    return;
-  }
-  searchInput.value = query;
-  render();
-  // If the query still resolves to exactly one acupoint, open it directly.
-  const matches = getFilteredPoints();
-  if (matches.length === 1) {
-    selectPoint(matches[0].code);
-    return;
-  }
-  goToSection("acupointDirectory");
+  // "empty":renderGlobalResults 已經畫了 .gr-empty,留在原地讓人看到「找不到」。
 }
 
 function cloudtcmEntry(point) {
@@ -2715,7 +2749,11 @@ function getDomainProgress() {
   const qualityLayers = K.audit?.quality_layers || {};
   const verdicts = window.AcuTingReview ? window.AcuTingReview.allVerdicts() : [];
   const byKind = (kind, verdict) => verdicts.filter((v) => v.kind === kind && v.verdict === verdict).length;
-  const filled = (v) => Array.isArray(v) ? v.length > 0 : (v != null && String(v).trim() !== "");
+  // 2026-09-07 包 A 修正:以前 String({}) === "[object Object]" 被當成有內容,
+  // 43 張鑑別表 cells 全是 {} 也算 43 張「已製作」。物件/陣列要往下看到真的有字才算。
+  const filled = (v) => Array.isArray(v) ? v.some(filled)
+    : (v && typeof v === "object") ? Object.values(v).some(filled)
+    : (v != null && String(v).trim() !== "");
   const madeCount = (arr, keys) => arr.filter((r) => keys.some((k) => filled(r[k]))).length;
   const scCount = (arr) => arr.filter((r) => (r.review_status || "") === "source_checked").length;
   const hasFieldSource = (r, key) => r.field_sources && r.field_sources[key];
@@ -2731,17 +2769,22 @@ function getDomainProgress() {
     issues: byKind(kind, "issue")
   });
 
+  // 2026-09-07 包 A 修正:快照只能提供「NCBAHM 考綱覆蓋」這種算不出來的數;
+  // 本地卡有幾張、幾張 template-grade、幾張 source_checked 都要用載入的資料即時算
+  // (快照 2026-07-28 說本地卡 329,實際已 366;08-02 快照說 93 張 template-grade)。
+  // 用到快照的數字一律標快照日期,讓人知道那不是今天量的。
+  const herbSnapDate = herbCoverage.captured_on || "";
+  const herbSnapLabel = herbSnapDate ? `（NCBAHM 覆蓋為 ${herbSnapDate} 快照）` : "";
   const herbTotal = Number(herbCoverage.appendix_a_total) || herbs.length;
   const herbMade = Number(herbCoverage.matched_to_local_cards) || madeCount(herbs, ["functions_zh", "functions", "modern_functions_zh", "actions_indications"]);
-  const herbLocalCards = Number(herbCoverage.local_herb_cards) || herbs.length;
+  const herbLocalCards = herbs.length;
   const herbMissing = Number(herbCoverage.missing_card_count);
-  const herbGrade = Number(qualityLayers.herbs?.template_grade)
-    || herbs.filter((r) => r.card_grade === "template").length;
+  const herbGrade = herbs.filter((r) => r.card_grade === "template").length;
   const herbProgressRow = row("中藥 Herbs", "herb", herbTotal, herbLocalCards, herbMade, herbGrade, scCount(herbs), {
-    totalNote: herbCoverage.appendix_a_total ? `NCBAHM ${herbTotal} · 本地卡 ${herbLocalCards}` : "",
+    totalNote: herbCoverage.appendix_a_total ? `NCBAHM ${herbTotal} · 本地卡 ${herbLocalCards}${herbSnapLabel}` : "",
     frameworkNote: `${herbLocalCards} local cards`,
     madeNote: herbCoverage.appendix_a_total
-      ? `${herbMade}/${herbTotal} NCBAHM 覆蓋 · 缺 ${Number.isFinite(herbMissing) ? herbMissing : Math.max(0, herbTotal - herbMade)}`
+      ? `${herbMade}/${herbTotal} NCBAHM 覆蓋 · 缺 ${Number.isFinite(herbMissing) ? herbMissing : Math.max(0, herbTotal - herbMade)}${herbSnapLabel}`
       : "",
     gradeDenominator: herbLocalCards,
     gradeNote: `${herbGrade}/${herbLocalCards} template-grade；其餘舊卡待重修`,
@@ -2771,10 +2814,14 @@ function getDomainProgress() {
       madeCount(conditions, ["tcm_patterns", "summary_zh", "etiology_zh"]),
       conditions.filter((r) => r.card_grade === "template").length,
       scCount(conditions)),
+    // 「表存在」與「cells 有內容」分開報(2026-09-07):cells 是 Ting 專屬,模型不代填,
+    // 所以空 cells 的張數是待她填的分母,不能被「已製作」吃掉。
     row("辨證鑑別 Comparisons", "comparison", comparisons.length, comparisons.length,
       madeCount(comparisons, ["rows", "records", "discriminators", "cells"]),
       comparisons.filter((r) => r.card_grade === "template").length,
-      scCount(comparisons)),
+      scCount(comparisons), {
+        madeNote: `${madeCount(comparisons, ["rows", "records", "discriminators", "cells"])}/${comparisons.length} 有內容 · cells 有字 ${comparisons.filter((r) => filled(r.cells)).length} · cells 空 ${comparisons.filter((r) => !filled(r.cells)).length}（Ting 專屬,模型不代填）`
+      }),
     row("病例 Cases", "case", clinicalCases.length, clinicalCases.length, clinicalCases.length, 0, 0)
   ];
 }

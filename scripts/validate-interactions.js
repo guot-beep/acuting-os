@@ -39,6 +39,24 @@ if (missingHashTargets.length) {
   fail("Internal hash links must point to existing IDs.", missingHashTargets);
 }
 
+// 包 A(2026-09-07):首頁搜尋四個入口(打字 / Enter / 搜尋鈕 / 卡片搜尋標籤)必須走同一條路,
+// 而且 Enter 不准再有「落到 0 筆穴位目錄」的舊路。這裡只查結構(誰呼叫誰);
+// 排名契約(身分命中贏內文命中、Enter 開的 = 下拉第一列)在 scripts/test-unified-search.js 用真資料測。
+const homeSearchEntry = [
+  [/#homeSearchBtn"\)\.addEventListener\("click", runHomeSearch\)/, "#homeSearchBtn click → runHomeSearch"],
+  [/event\.key === "Enter"\) runHomeSearch\(\)/, "#homeSearch Enter → runHomeSearch"],
+  [/renderGlobalResults\(homeSearch\.value\), 110\)/, "#homeSearch input(debounce)→ renderGlobalResults"],
+  [/ACUTING_SEARCH = function[\s\S]{0,400}?renderGlobalResults\(q\)/, "ACUTING_SEARCH(卡片標籤)→ renderGlobalResults"],
+  [/function runHomeSearch\(\) \{[\s\S]*?renderGlobalResults\(query\);[\s\S]*?homeSearchDestination\(query\)/, "runHomeSearch → renderGlobalResults + homeSearchDestination(同一把尺)"]
+];
+const missingEntry = homeSearchEntry.filter(([re]) => !re.test(js)).map(([, label]) => label);
+if (missingEntry.length) fail("Home search entry points must share one path.", missingEntry);
+const runHomeSearchSrc = (js.match(/function runHomeSearch\(\) \{[\s\S]*?\n\}/) || [""])[0];
+const staleFallback = runHomeSearchSrc.match(/acupointDirectory|findExactPoint|getFilteredPoints/g);
+if (!runHomeSearchSrc) fail("runHomeSearch must exist in app.js.");
+else if (staleFallback) fail("runHomeSearch must not fall back to the acupoint directory (0-result landing).", staleFallback);
+if (!/class="gr-empty"/.test(js)) fail("Unified search must render an explicit empty state (.gr-empty).");
+
 const workspaceRoutes = matches(/href="#(ws\/[^"]+)"/g).map((match) => match[1]);
 if (workspaceRoutes.length) {
   const routerPath = path.join(root, "js", "router.js");

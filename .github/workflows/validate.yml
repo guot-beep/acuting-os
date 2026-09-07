@@ -244,6 +244,10 @@ jobs:
       # 真正的 buildPassphraseAuth。少了它,設定流程(唯一會寫入通行碼記錄的路徑)在 CI 裡沒人守。
       - name: one-time setup flow (runs the real buildPassphraseAuth, not a stub)
         run: node scripts/test-setup-flow.js
+      # 包 A(2026-09-07):首頁搜尋排名契約 —— 身分命中贏內文命中;Enter 開的 = 下拉第一列;
+      # 無命中 = 空狀態,不落到 0 筆的穴位目錄。10 個種子查詢用真資料跑。
+      - name: unified search ranking contract (10 seed queries, real data)
+        run: node scripts/test-unified-search.js
       # 部署閘門:Worker 與 index.html 宣告必須同進同出;半套設定不准上 main(D33)
       - name: D1 deploy gate
         run: node scripts/validate-d1-deploy-gate.js
