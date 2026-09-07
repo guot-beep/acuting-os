@@ -1775,7 +1775,10 @@ function updateContentModeUI() {
   if (navPanel) navPanel.setAttribute("aria-label", modeText("主選單", "Main navigation"));
   document.querySelector("#navClose")?.setAttribute("aria-label", modeText("關閉選單", "Close navigation"));
   document.title = modeText("AcuTing OS", "AcuTing OS | TCM Study System");
-  if (homeSearch && homeSearch.value.trim()) renderGlobalResults(homeSearch.value);
+  // 只在下拉「已經開著」時重畫(語言切換要重譯它)。這個函式也在每次 hashchange 的 render()
+  // 裡被叫到:以前只看框裡有沒有字,於是點了病症/病例結果、頁面跳過去之後,
+  // 下拉又被叫回來蓋在新頁面上(2026-09-07 量到:click 後 45ms,由 handlePointHashChange → render → 這裡)。
+  if (homeSearch && homeSearch.value.trim() && globalResultsEl && !globalResultsEl.hidden) renderGlobalResults(homeSearch.value);
 }
 
 function activeModuleTarget() {
