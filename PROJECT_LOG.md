@@ -1,3 +1,20 @@
+# 2026-09-07(晚)— 五天派工第一天做四包:搜尋排名重寫、五個知識清單延遲渲染、手機觸控/字級、20 卡審讀 + 歸經鏈
+
+Ting:「你可以超前做,然後派發 Sonnet 5 / Opus 去做」「持續做六小時」「不用管天數,一天可以做兩三天的分量」。
+**MEASURED TREE: main @ bf50aac0**(A 3c85b7df → C 4e286c39 → B 8a3b2ba9 → D bf50aac0,每次落地 main CI 綠;分支自己也跑 CI:validate.yml push 觸發加了 claude/**)
+完整五項日報:`docs/audits/FIVE_DAY_DISPATCH_2026-09-07_REPORT.md`;驗收旅程:`docs/audits/QA_FIVE_DAY_JOURNEYS_2026-09-07.md`;新裁定 D12–D14 在裁定單。
+
+| 包 | 執行 → 審查(預設「這批有錯」)| before → after(可重現)| 落地 |
+|---|---|---|---|
+| D11(前置)| Fable | ST22/ST26「CONTRAINDICATED」= 產生器 translateMoxa 子字串規則放大「孕婦禁灸」,repo 無來源 → 清 2 句,ST9 真禁灸保留 | de358dbf |
+| A 搜尋 + 品質數字 | Fable → Opus(4 HIGH / 9 MED)全修 | 10 種子開錯卡 4 → 0、落 0 筆穴位目錄 6 → 0;拼音帶空格 673 個穴位查詢第一版砍掉、第二版救回;退役卡不進搜尋;品質頁鑑別表已製作 43/43 → 9/43、中藥 329/93(快照)→ 366/88(即時) | 3c85b7df |
+| C 渲染成本 | Opus → Opus(2 HIGH / 6 MED)全修 | 開機 DOM 34,882 → 16,883;首頁切語言 30,130(第一版收益回去 73.6%)→ 15,148;時間/heap 量不出差別(誠實列出);新閘門 validate-lazy-grid-wiring 對修正前的樹抓到 2 條 | 4e286c39 |
+| B 手機排版 | Sonnet → Sonnet(3 HIGH)HIGH 全修 | 375:首頁 scrollWidth 446 → 375、下拉 <44px 1 → 0、<12px 10 → 0、副標溢出列 16 → 0;桌面 1280 回到 main 原樣(第一版九條規則全域生效) | 8a3b2ba9 |
+| D 卡片語意 | Sonnet(唯讀)+ Fable → Sonnet(3 HIGH / 4 MED)全修 | 32 件問題(HIGH 10);帳本 18 欄落地;D29 邊 1,703 / 懸空 0;黃耆歸經 6 經 → 肺脾,表頭≠chip 31 → 0;茯苓注記搬出經名陣列;搜「脾經」找得到黃芩;新閘門 validate-herb-channel-shape | bf50aac0 |
+
+方法上這一天學到的、已寫進記憶:多類別搜尋要分身分欄/內文欄兩桶;Browser pane 隱藏時真鍵盤注入送不到頁面、rAF 不跑;
+執行 agent 的第一版四包裡三包被審查抓到 HIGH(拼音舊路、語言切換吃回收益、全域 CSS),對抗式審查不是可選項。
+
 # 2026-09-07 — Ting 三句裁定後的自主批次:81 條加減翻譯落庫、355 穴假灸量清掉、黑框搬欄、對照表補齊、六個工具/規則修正
 
 Ting:「D1 現在不用,還沒開診所」「你可以自己翻」「好」「其他自行決定」。

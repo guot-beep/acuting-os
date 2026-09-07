@@ -71,7 +71,20 @@
 
 ## QA-FIVE-DAY-002 手機 375×812 · 病例入口與八個區塊
 
-(待包 B 回報後填:`#homeSearch #globalResults #herbRecords #conditionRecords` 知識詳情 dialog(實際 id `knowledgeDetailDialog`)`#caseWorkspace #caseToolbar #caseListPanel` 的水平溢位 / <44px 可點元素 / <12px 字 / offsetTop,before → after。)
+**步驟**:`resize_window` mobile(375×812)→ 各 hash 量 `document.documentElement.scrollWidth`、區塊內可點元素 <44px 數、`fontSize` <12px 數、`offsetTop`;`#globalResults` 用 `#homeSearch` 派 `input` 事件打開。知識詳情 dialog 實際 id 是 `knowledgeDetailDialog`(`js/knowledge.js ensureDetailDialog()` 動態建立)。
+
+| 區塊 | 指標 | before(main 103e162a) | after(main 8a3b2ba9) |
+|---|---|---|---|
+| 首頁(輸入「合谷」) | 整頁 scrollWidth | 446 | 375 |
+| `#globalResults` | 列高 / <44px / <12px | 41px / 1 / 10 | 44px / 0 / 0 |
+| `#globalResults`(輸入「湯」) | 副標溢出 `.gr-item` 的列數 / 盒子 scrollWidth | 16/24 / 512 | 0/24 / 317(省略號生效) |
+| `#herbRecords` | <44px / <12px | 878 / 1,384 | 492 / 0(剩 492 顆是內嵌敘述句的引用 chip,重新設計才動得了) |
+| `#conditionRecords` | <12px / 內容溢位 | 4,391 / 416 | 3,572 / 375 |
+| `knowledgeDetailDialog`(herb.ma_huang) | <44px | 83 | 82 |
+| `#caseWorkspace` / `#caseListPanel` / `#caseEntryPoint` | offsetTop | 3,556 / 4,195 / 4,160 | 3,561 / 4,202 / 4,166(手機要滑約 4.4 個螢幕) |
+| 桌面 1280(回歸) | `.cat-chip` / `.k-open-detail` / `.k-status` / 下拉列 | 39 / 32.16 / 11.52px / 41 | 38.95 / 32.16 / 11.52px / 41(未變) |
+
+- 已知未解:`#ws/condition` 整頁 scrollWidth 838(main 就有)—— `.fab-stack`(position:fixed)在該頁被算到 773–825px,與 `.k-removed-note` 無關,獨立缺陷待修;病例入口太深是資訊架構,D32 例外三選一待 Ting(見裁定單 D13)。
 
 ## QA-FIVE-DAY-003 品質頁數字誠實
 

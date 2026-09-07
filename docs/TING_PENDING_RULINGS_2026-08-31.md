@@ -34,6 +34,26 @@
 > 已清掉兩句(英文模式改印含孕婦提醒的中文原文)。ST9 人迎 的「不宜運用灸法《甲乙》:禁不可灸」是真的,保留。
 > 附帶:同一支產生器的另一條規則就是 D7 那 355 句假灸量 —— 同源。
 
+> **2026-09-07 晚 · 五天派工第一天(A/B/C/D 都落了)留下的三個新裁定**(全文與數字在 `docs/audits/FIVE_DAY_DISPATCH_2026-09-07_REPORT.md`):
+>
+> **D12 · 病歷自動句「與西藥間隔至少1小時」沒有來源**:病例「用藥/處置」表單勾「同時有服用西藥」時,`composeHerbFrequencyText`
+> 會自動把「與西藥間隔至少1小時」寫進 frequencyText(妳 08-25 要的組合小工具)。index.html 的說明只寫「台灣醫院衛教常見建議
+> (例:高雄榮總中醫部)」,data/ 內沒有這句的來源,寫進病歷的自動句也沒有來源欄。(a) 附一個 URL 來源到說明與 field_sources
+> (b) 改成只勾選、不自動寫字,由妳手打 (c) 維持現狀。建議 (a),要妳給那個衛教頁。
+>
+> **D13 · 手機病例入口太深(D32 例外)**:375×812 下 `#caseWorkspace` offsetTop 3,561、病例入口 4,166,要滑約 4.4 個螢幕。
+> 三選一都是資訊架構,凍結中不動:(a) 既有 FAB 群(🔍/↩/☰)加一顆「新增病例」 (b) 手機版病例區整段前移 (c) 首頁「繼續上次病例」tile 加大或釘上方。
+> 建議 (a):改動最小、桌面不變。
+>
+> **D14 · 20 卡審讀包裡要妳裁的內容**(`docs/audits/CARD_REVIEW_PACK_2026-09-07.md`,有來源的 18 欄已落地):
+> (1) 大青龍湯 麻黃 `in_formula_zh` 只寫「止咳化痰」,漏了發汗解表(君藥定義性作用);(2) 一張考綱方 contraindications/cautions 全空(組成含黃耆、熟地);
+> (3) 黃芩 `dosage_g.standard_daily_g` 缺口 —— `dosage_normalized` 有 3–10g 但畫面不接(B3 劑量形狀公約未結案,同一題);
+> (4) `formula_family → derived_from` 反向缺 33/94(`scripts/link-formula-family-back.js` 可重跑,要妳點頭);(5) `formula.dao_chi_san`、`formula.long_dan_xie_gan_tang` 的 formula_family 各一條指向自己(要刪);
+> (6) composition `in_formula_zh` 系統性樣板:126 組合、炙甘草同一句 56 方共用 —— 另立批次;(7) 64/223 方 contraindications 與 cautions 逐字重複,分類原則要一次裁;
+> (8) `channels_entered` 282 筆全無來源、52 個是英文/縮寫、126 味與 channels_zh 不同 —— 現在只當鏈的最後一位,整批去留。
+>
+> 另兩條不是裁定、是待修:下拉「還有 N 筆…」不能點(要看全部得開新入口,凍結中);`#ws/condition` 整頁 scrollWidth 838(`.fab-stack` position:fixed 在該頁算到 773–825px,main 就有)。
+
 > 這四條是 9/02 普查時發現的,但當時只寫進 `PROJECT_LOG.md`(10,267 行的歷史紀錄),
 > 沒有進這份妳會讀的檔。這是我的程序疏漏 —— 真正碰到病人的三條卡在妳讀不到的地方三天。
 
