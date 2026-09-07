@@ -14,6 +14,18 @@
   const CONTENT_MODE_KEY = "acuting-content-mode-v1";
 
   function el(id) { return document.getElementById(id); }
+
+  /* 歸經要讀哪一欄(2026-09-07,包 D 審讀 HIGH #1):三個欄位裡只有 channels_zh(288/357 有 field_sources)
+     與 tcm_properties.meridian_tropism_zh(77 筆有來源)是有來源的;channels_entered 282 筆一筆來源都沒有
+     (source_hint 只寫「Bensky Materia Medica: <分類>」),而且 126 味與 channels_zh 不同 —— 黃耆被寫成歸六經。
+     以前表頭先讀 channels_entered、chip 先讀 props,同一張卡兩處講不同的事(31 張)。
+     現在表頭 / chip / 清單卡三處同一條鏈:有來源的先,沒有來源的墊底。 */
+  function herbChannelsZh(record) {
+    const props = (record && record.tcm_properties) || {};
+    const pick = [props.meridian_tropism_zh, record && record.channels_zh, record && record.channels_entered]
+      .find((v) => (Array.isArray(v) ? v.length > 0 : Boolean(v)));
+    return pick || [];
+  }
   function isEnglishMode() {
     try {
       return (document.body && document.body.dataset && document.body.dataset.contentMode === "english") || (typeof localStorage !== "undefined" && localStorage && localStorage.getItem(CONTENT_MODE_KEY) === "english");
@@ -1470,7 +1482,7 @@
       : [
           ["分類 Category", record.category || record.category_en || "待補"],
           ["性味 Properties", usableText(record.properties_taste_temp || record.taste_temperature_zh) || "待補"],
-          ["歸經 Channels", cleanList(record.channels_entered || record.channels_zh).join("、") || "待補"],
+          ["歸經 Channels", cleanList(herbChannelsZh(record)).join("、") || "待補"],   // 見 herbChannelsZh
           // All three Tier-2 sites, in Ting's order (CloudTCM → American Dragon
           // → atlas), each labelled by how far it can be trusted. A derived
           // American Dragon URL and an atlas index page are useful links but
@@ -2160,8 +2172,8 @@
                   同一張卡上,英文讀者拿到的比中文讀者少,而畫面沒說。 */ ""}
             ${detailSection("歸經", "Channels entered", detailList(
               contentMode === "english"
-                ? (cleanList(record.channels_en).length ? record.channels_en : (props.meridian_tropism_zh || record.channels_entered || record.channels_zh))
-                : (props.meridian_tropism_zh || record.channels_entered || record.channels_zh)))}
+                ? (cleanList(record.channels_en).length ? record.channels_en : herbChannelsZh(record))
+                : herbChannelsZh(record)))}
             ${/* 2026-08-12 紅線 4:此處原本是 `dose.standard_daily_g || "6~15g"`。
                   358 張中藥卡有 200 張沒有 standard_daily_g,於是全部被填上編造的
                   「6~15g」—— 其中 17 張標記有毒:雄黃卡自身寫「內服 0.05–0.1g,
@@ -2640,7 +2652,7 @@
           </header>
           <p class="k-en">${esc(h.name_en)}</p>
           <p class="k-meta">${esc(herbCategory(h))}</p>
-          <p class="k-meta">${esc((h.channels_entered || []).join(" / "))}</p>
+          <p class="k-meta">${esc(herbChannelsZh(h).join(" / "))}</p>
           <p class="k-tags">${modernInlineChips(modernTags, 5)}${exteriorChips}</p>
           ${formulaLinks.length ? `<p class="k-meta">${esc(modeText("相關方劑：", "Related formulas:"))} ${formulaChips(formulaLinks)}</p>` : ""}
           ${safetyFlags.length ? `<p class="k-flags">${esc(modeText("審核：", "Review:"))} ${safetyFlags.map(safetyFlagLabel).map(esc).join(" · ")}</p>` : ""}
