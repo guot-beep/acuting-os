@@ -45,7 +45,22 @@
   下拉在 t=0 關閉,以前 45ms 後被 `handlePointHashChange → render → updateContentModeUI` 叫回來蓋在頁面上(84ed1a9b 修),
   修後 +2.9s 仍 hidden。
 - 分組順序:`失眠` → 病症(2) > 症狀(1) > 鑑別(1) > 穴位(52) > 方劑(9) > 中藥(16);`黃耆` → 中藥(5) > 方劑(16) > 病症(5)。
-- 契約鎖在 CI:`scripts/test-unified-search.js`(10 種子 + 7 單元 + 結構)、`scripts/validate-interactions.js`(四入口同路、runHomeSearch 無舊路)。
+- 契約鎖在 CI:`scripts/test-unified-search.js`(18 種子 + 12 單元 + 替身分母 ≥900 + 結構)、`scripts/validate-interactions.js`(四入口同路、呼叫關係限定在 runHomeSearch 本體內、無舊路)。
+
+**第二輪(對抗式審查 4 HIGH / 9 MED,643382aa 修)**——第一版砍掉舊路時沒揭露它同時是這些查詢唯一的入口:
+
+| 查詢 | main(舊路) | 第一版 fdd46075 | 第二版 643382aa |
+|---|---|---|---|
+| `Tai Chong` `he gu` `zu san li`(拼音帶空格,698 個候選) | 673 開對 | 2 開對、612 找不到、59 開到形近方/藥(he gu → 百合固金湯) | 拼音去空白第二趟比對:LR3 / LI4 / ST36 |
+| `T 11.01`(董氏顯示代碼,277 筆) | 開 T11.01 | 找不到 | standardCode 進身分欄 → T11.01 |
+| `第二掌骨`(位置文字) | 穴位目錄 4 筆 | 找不到 | 位置/解剖進內文欄 → LI2(4 筆) |
+| `感冒` | 董氏 T88.07 感冒一穴 | 董氏 T88.07(prefix 平手、穴位組第一) | 病症/症狀排到穴位前 → cond.common_cold |
+| `蘇子` | 蘇子降氣湯 | **退役卡 herb.su_zi**(列上看不出退役) | 濾 deprecated → herb.zi_su_zi |
+| `Ma Zi Ren`(火麻仁英文別名) | 麻子仁丸 | 麻子仁丸 | aliases_en 進身分欄 → herb.huo_ma_ren |
+| `合谷` + Enter 後 110ms | 下拉被 timer 畫回來(main 也有) | 同 | timer 提到模組層、clearGlobalResults 取消 → +400ms 仍 hidden |
+
+- Enter 現在不經 DOM 第一列,直接開 `homeSearchDestination` 回的那一筆(openSearchTarget),測試測的物件 = 畫面開的物件。
+- 量測方法注記:Browser pane 隱藏時 `computer type/key` 的真鍵盤注入送不到頁面(keydown 監聽器收到 0 個事件),要用 `dispatchEvent(new Event("input"))` + `new KeyboardEvent("keydown",{key:"Enter"})` 走 app 真正監聽的路;pane 可見時真鍵盤可用(第一輪 黃耆+Enter 開 dialog 就是真鍵盤)。
 
 **已知未解 / 待 Ting**
 - 「還有 N 筆…輸入更精確的字」不能點:以前「下拉關著再按 Enter」會把整條經的穴位帶到穴位目錄(例:`失眠` → 57 穴),
