@@ -602,8 +602,6 @@ h1 {
   color: var(--accent-dark);
   font-weight: 600;
   cursor: pointer;
-  /* 修正(手機 375px):#caseWorkspace/#caseListPanel 實測高度 37px(<44px 觸控門檻)。 */
-  min-height: 44px;
 }
 .learn-from-toggle.active { background: #8a5a1f; color: #fffdf8; border-color: #8a5a1f; }
 
@@ -4999,9 +4997,7 @@ a { color: var(--accent-dark); }
   background: #f2ecdd;
   border-radius: 999px;
   color: #7c5a22;
-  /* 修正(手機 375px):實測 11.52px(<12px),草稿/已核對/退役狀態徽章,
-     366 張中藥卡起跳每卡一顆(見 .k-status-draft 等變體)。 */
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   padding: 0.12rem 0.55rem;
   white-space: nowrap;
 }
@@ -5446,9 +5442,7 @@ body[data-content-mode="english"] .i18n-zh {
   border-radius: 999px;
   color: var(--accent-dark);
   display: inline-block;
-  /* 修正(手機 375px):實測 11.52px(<12px),此 class 是方劑/中藥互連 chip,
-     單一藥卡常見多顆(1018 處 <12px 個案中佔最大宗)。 */
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   margin: 0.12rem 0.15rem 0 0;
   padding: 0.08rem 0.45rem;
   white-space: nowrap;
@@ -5467,9 +5461,7 @@ body[data-content-mode="english"] .i18n-zh {
   font-weight: 800;
   justify-content: center;
   margin-top: 0.65rem;
-  /* 修正(手機 375px):「查看XX卡」是卡片主要 CTA,原 min-height 2rem(32px)
-     低於 44px 觸控門檻,366 張中藥卡 + 方劑/西藥卡共用此 class。 */
-  min-height: 44px;
+  min-height: 2rem;
   padding: 0.38rem 0.72rem;
 }
 .k-open-detail:hover,
@@ -5581,9 +5573,6 @@ body[data-content-mode="english"] .i18n-zh {
   cursor: pointer;
   font-weight: 800;
   padding: 0.38rem 0.7rem;
-  /* 修正(手機 375px):#knowledgeDetailDialog「返回列表」按鈕實測高度 36px
-     (<44px 觸控門檻),是整個學習卡詳情頁唯一的返回動作。 */
-  min-height: 44px;
 }
 .k-detail-fact-grid {
   display: grid;
@@ -6348,8 +6337,7 @@ body.nav-open .nav-panel { transform: none; }
   position: sticky; top: 0;
   background: var(--panel);
   color: var(--accent-dark);
-  /* 修正(手機 375px):實測 11.84px(<12px)。 */
-  font-size: 0.75rem; font-weight: 800; letter-spacing: 0.06em;
+  font-size: 0.74rem; font-weight: 800; letter-spacing: 0.06em;
   text-transform: uppercase;
   padding: 0.5rem 0.6rem 0.3rem;
   border-bottom: 1px solid var(--line);
@@ -6360,8 +6348,6 @@ body.nav-open .nav-panel { transform: none; }
   cursor: pointer; text-align: left;
   padding: 0.55rem 0.6rem;
   font: inherit; color: var(--ink);
-  /* 修正(手機 375px):#globalResults 搜尋結果列實測高 41px(<44px 觸控門檻)。 */
-  min-height: 44px;
 }
 .gr-item:hover, .gr-item:focus-visible { background: var(--green-soft); }
 .gr-item:focus-visible { outline: 2px solid var(--ring); outline-offset: -2px; }
@@ -6375,11 +6361,15 @@ body.nav-open .nav-panel { transform: none; }
 .gr-item__sub {
   color: var(--muted); font-size: 0.83rem;
   overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  /* 修正(手機 375px,審查 H2 追根因):這是 inline <span>,overflow/text-overflow 對 inline 元素無效
+     (clientWidth 0),長英文副標照樣把 .gr-item 撐到 541px、被右邊的種類徽章蓋住,#globalResults
+     變成沒有捲軸提示的橫向小盒子(375 寬時 24 列裡 16 列溢出)。inline-block + max-width 讓省略號真的生效;
+     放得下就仍與名字同一行,放不下才自成一行截尾。 */
+  display: inline-block; max-width: 100%; vertical-align: bottom;
 }
 .gr-kind {
   flex: 0 0 auto; align-self: center;
-  /* 修正(手機 375px):實測 11.52px(<12px)。 */
-  font-size: 0.75rem; font-weight: 700;
+  font-size: 0.72rem; font-weight: 700;
   color: var(--accent-dark);
   background: var(--green-soft);
   border-radius: 999px; padding: 0.1rem 0.55rem;
@@ -6409,9 +6399,6 @@ body.nav-open .nav-panel { transform: none; }
   background: var(--panel); border: 1px solid var(--line); border-radius: 999px;
   color: var(--ink); cursor: pointer; font: inherit; font-weight: 600;
   padding: 0.38rem 0.8rem; transition: border-color 0.12s, background 0.12s;
-  /* 修正(手機 375px):#herbRecords 分類篩選 chip 實測高度 39px(<44px 觸控門檻),
-     366 顆藥材卡共用同一顆分類列,誤觸/漏觸機率隨清單長度放大。 */
-  min-height: 44px;
 }
 .cat-chip:hover { border-color: var(--accent); }
 .cat-chip.active { background: var(--accent-dark); border-color: var(--accent-dark); color: #fff; }
@@ -7991,3 +7978,25 @@ html { scroll-padding-top: 92px; }
   white-space: nowrap;
 }
 .k-dose-basis-warn { color: #b45309; font-weight: 600; }
+
+/* ---- 手機 / 平板觸控與可讀性(2026-09-07 包 B,第二輪:審查 H1)-------------------
+   第一版把這九條直接改在全域規則上,桌面 1280 也吃到:.cat-chip 39 → 44px、.k-open-detail 32 → 44px、
+   #ws/herb 整頁高 40,768 → 42,382(+1,614px)。這是「手機 375px」範圍的修正,只在 ≤ 860px(含平板)生效。
+   量(375×812,main 103e162a):#globalResults 列高 41px、.cat-chip 39px、.k-open-detail 32px、
+   .k-detail-close 36px、.learn-from-toggle 37px(<44px 觸控門檻);.k-status / .k-link-chip / .gr-kind 11.52px、
+   .gr-group__title 11.84px(<12px;後者只差 0.16px,審查 M2 認為可讀性論證較弱,一併列出讓你自己判)。 */
+@media (max-width: 860px) {
+  .gr-item,
+  .cat-chip,
+  .k-open-detail,
+  .k-detail-close,
+  .learn-from-toggle {
+    min-height: 44px;
+  }
+  .k-status,
+  .k-link-chip,
+  .gr-kind,
+  .gr-group__title {
+    font-size: 0.75rem;
+  }
+}
