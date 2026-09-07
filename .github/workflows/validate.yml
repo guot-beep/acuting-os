@@ -327,6 +327,13 @@ jobs:
       - name: quality panel honesty (live counts, snapshot dates, {} is not content)
         run: node scripts/test-quality-panel-honesty.js
 
+      # 包 C(2026-09-07):知識分頁清單改成進 workspace 才畫。新失效模式是 grid 無聲留白,
+      # 既有驗證器全讀原始碼字串、一支都不開 js/knowledge.js。這支靜態守接線(負控先跑)。
+      - name: lazy grid wiring (negative controls first)
+        run: node scripts/validate-lazy-grid-wiring.js --self-test
+      - name: lazy grid wiring
+        run: node scripts/validate-lazy-grid-wiring.js
+
       - name: extra point standard
         run: node scripts/validate-extra-point-standard.js
 

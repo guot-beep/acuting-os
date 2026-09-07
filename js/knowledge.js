@@ -18,7 +18,7 @@
   /* 2026-09-07 包 C(渲染成本):把 4014 行 condition 那條 lazy render 抽成一句共用的。
      實測(docs/audits/RENDER_COST_2026-09-07.md):八個知識分頁的清單全部在開機期
      一起塞進 DOM,不管使用者停在哪一頁都一樣——herb 6,229 + symptom 5,399 +
-     comparison 3,017 + formula 2,553 + pharm 801 = 17,998 個節點,佔開機 34,882 的 51.6%,
+     comparison 3,017 + formula 2,553 + pharm 801 = 17,999 個節點,佔開機 34,882 的 51.6%,
      而使用者一次只看得到其中一頁。而且這筆帳不是只付一次:router.js 的 activate()
      每次切分頁都要對所有 section 切 hidden,文件越大每一次切換越貴(踩過 condition
      之後回首頁從 277ms 漲到 785ms)。2026-08-12 condition 那條的理由(手機因 DOM
@@ -29,7 +29,14 @@
      hashchange 的監聽器保證跑在下一個 frame 之前,rAF 才找得到;IntersectionObserver
      是 frame 之後才回呼,會讓那條路變成「按了沒反應」。
 
-     渲染失敗時使用者看到什麼:grid 留空(不是假訊息),而且打開那一頁立刻看得見。 */
+     渲染失敗時使用者看到什麼:grid 留空(不是假訊息),而且打開那一頁立刻看得見;
+     render() 丟例外時 rendered 不會被設成 true,下次進頁會再試一次(審查 M4)。
+
+     回傳值是「已經畫過才重畫」的函式,給語言切換(acuting:content-mode)用:以前四個 grid 的
+     content-mode 監聽器在開機期就掛好,人在首頁按一下 Public EN,五個 grid 全畫回來,
+     省下的 17,999 個節點當場回去 73%(審查 M1 實測 16,883 → 30,130)。沒畫過的頁不需要重譯,
+     第一次進頁時 render 會讀當下的語言。
+     接線由 scripts/validate-lazy-grid-wiring.js 守:樣板留空的容器一定要有這個呼叫,ws 名字一定在 router 的 WORKSPACES 裡。 */
   function renderWhenWorkspaceOpens(ws, render) {
     let rendered = false;
     const run = () => {
@@ -40,11 +47,17 @@
          同時攤開,「等切到那一頁」就永遠不會發生 —— 那會變成整頁清單無聲留白。
          這種情況一律照舊全部畫出來,寧可慢也不要騙人。 */
       if (active !== undefined && active !== ws) return;
-      rendered = true;
-      render();
+      try {
+        render();
+        rendered = true;
+      } catch (e) {
+        console.error(`AcuTing: ${ws} 清單第一次渲染失敗,下次進頁會重試`, e);
+        throw e;
+      }
     };
     run();                                        // 開站網址就是那一頁 → 立刻畫
     window.addEventListener("hashchange", run);   // router.js 先跑,activeWs 已經更新
+    return () => { if (rendered) render(); };     // 語言切換:畫過的才重畫
   }
 
   function isEnglishMode() {
@@ -2582,7 +2595,6 @@
       };
       el("formulaFilter").addEventListener("input", updateFormulaGrid);
       el("formulaCategoryFilter").addEventListener("change", updateFormulaGrid);
-      document.addEventListener("acuting:content-mode", updateFormulaGrid);
       buildCategoryChips("formulaCatChips", "formulaCategoryFilter", records, categoryLabel, updateFormulaGrid, FORMULA_CATEGORY_DESC);
 
       /* Make the 方劑分類 cards bidirectional (Ting: 這邊的按鈕都不是雙向的).
@@ -2621,7 +2633,7 @@
       });
       /* 第一次進 #ws/formula 才畫 223 張卡。updateFormulaGrid 的空查詢輸出
          與原本開機期那一行完全相同(activeConcept 開站是 null,activeConceptBar() 回 "")。 */
-      renderWhenWorkspaceOpens("formula", updateFormulaGrid);
+      document.addEventListener("acuting:content-mode", renderWhenWorkspaceOpens("formula", updateFormulaGrid));   // 畫過才隨語言重畫
     } else {
     const render = (list) => list.map((f) => `
       <article class="k-card">
@@ -2735,13 +2747,12 @@
     conceptListeners.add(updateHerbGrid);
     el("herbFilter").addEventListener("input", updateHerbGrid);
     el("herbCategoryFilter").addEventListener("change", updateHerbGrid);
-    document.addEventListener("acuting:content-mode", updateHerbGrid);
     buildCategoryChips("herbCatChips", "herbCategoryFilter", herbs, herbCategory, updateHerbGrid);
     herbHost.addEventListener("click", (event) => {
       const button = event.target.closest('[data-detail-kind="herb"][data-detail-id]');
       if (button) openKnowledgeDetail("herb", button.dataset.detailId);
     });
-    renderWhenWorkspaceOpens("herb", updateHerbGrid);   // 366 張,開機期最大的知識 grid
+    document.addEventListener("acuting:content-mode", renderWhenWorkspaceOpens("herb", updateHerbGrid));   // 366 張,開機期最大的知識 grid;畫過才隨語言重畫
   }
 
   // ---- Pharmacology --------------------------------------------------------
@@ -2825,13 +2836,12 @@
     };
     el("pharmFilter").addEventListener("input", updatePharmGrid);
     el("pharmCategoryFilter").addEventListener("change", updatePharmGrid);
-    document.addEventListener("acuting:content-mode", updatePharmGrid);
     buildCategoryChips("pharmCatChips", "pharmCategoryFilter", pharmDrugs, classNameOf, updatePharmGrid);
     pharmHost.addEventListener("click", (event) => {
       const button = event.target.closest('[data-detail-kind="pharm"][data-detail-id]');
       if (button) openKnowledgeDetail("pharm", button.dataset.detailId);
     });
-    renderWhenWorkspaceOpens("pharm", updatePharmGrid);
+    document.addEventListener("acuting:content-mode", renderWhenWorkspaceOpens("pharm", updatePharmGrid));   // 畫過才隨語言重畫
   }
 
   // ---- Comparisons ---------------------------------------------------------
@@ -2991,7 +3001,7 @@
     /* 原本是匿名 input 監聽器;取名字才能讓第一次渲染重用同一段邏輯,
        不必把整段條件複製一份(複製 = 兩份會分岔)。查無記錄時的字從
        「No comparison records yet.」變成下面的「No matching comparison records.」——
-       目前 43 筆,只有整層清空才會看到,記在 audit 的 §7。 */
+       目前 43 筆,只有整層清空才會看到,記在 audit 的 §10(審查後修正)。 */
     const updateComparisonGrid = () => {
       const q = String((el("comparisonFilter") || {}).value || "").trim().toLowerCase();
       const hit = comparisons.filter((record) => {
@@ -3088,9 +3098,9 @@
       const sum = el("symptomSummary");
       if (sum) sum.textContent = `${hit.length} / ${symptoms.length}`;
     };
-    renderWhenWorkspaceOpens("symptom", updateSymptoms);   /* 124 張,見檔頭 */
+    const rerenderSymptoms = renderWhenWorkspaceOpens("symptom", updateSymptoms);   /* 124 張,見檔頭 */
     if (el("symptomFilter")) el("symptomFilter").addEventListener("input", updateSymptoms);
-    document.addEventListener("acuting:content-mode", updateSymptoms);
+    document.addEventListener("acuting:content-mode", rerenderSymptoms);   // 畫過才隨語言重畫
   }
 
   // The Antigravity pattern big-card (modal + preview renderer) is kept: that
@@ -4054,14 +4064,9 @@
     // 或被系統判定記憶體過重把頁面清空,使用者看到的就是「這個分頁壞了」——不是單次
     // 資料錯誤,是結構性問題,每次手機開站都會踩到。改成只在真的切到這個分頁時才算
     // 第一次,之後停留在分頁內的filter/type切換仍走原本的renderDx,不受影響。
-    let dxRendered = false;
-    const renderDxOnce = () => {
-      if (dxRendered || document.body.dataset.activeWs !== "condition") return;
-      dxRendered = true;
-      renderDx();
-    };
-    renderDxOnce();
-    window.addEventListener("hashchange", renderDxOnce);
+    // 2026-09-07 包 C:改走檔頭的 renderWhenWorkspaceOpens —— 同一個機制以前有兩套,這套沒有
+    // fail-open(router.js 沒載到時 condition 整層無聲留白),現在只剩一份實作(審查 M2)。
+    renderWhenWorkspaceOpens("condition", renderDx);
   }
 
   // ---- Source registry -------------------------------------------------------

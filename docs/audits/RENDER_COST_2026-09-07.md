@@ -121,7 +121,7 @@ heap（`performance.memory.usedJSHeapSize`）：51.33 / 60.75 / 60.94 MB。
   → `#ws/acu` 切換 1,647–5,314 ms → **289 / 322 ms**
   → domComplete 1,721/1,794/2,196（與 before 的 1,596–2,751 同一個噪音帶，**測不出差別**）
 * **EXP2** 把五個知識 grid 的開機內容清空（herb / formula / pharm / comparison / symptom）
-  → 34,882 → **16,884**（−17,998）
+  → 34,882 → **16,883**（−17,999）
   → `#ws/acu` 仍是 1,273–2,113 ms（**證明 acu 那筆帳全在 `#cards`，與知識 grid 無關**）
   → domComplete 1,853/1,901/2,245（同樣測不出差別）
 
@@ -172,7 +172,7 @@ symptom 的搜尋結果走「填 `#symptomFilter` → dispatch input」，反而
   真正省下的是開機與其他分頁，不是 acu 本身。
 
 ### 候選 B — 五個知識 grid 進 workspace 才渲染第一次（**本次實作**）
-* **收益**：開機 −17,998 節點（**51.6%**，34,882 → 16,884，EXP2 實測）。
+* **收益**：開機 −17,999 節點（**51.6%**，34,882 → 16,883，EXP2 實測）。
 * **bytes / 搜尋**：0 / 不影響（同上，搜尋讀 `ACUTING_KNOWLEDGE`，開卡走 `openDetail` modal）。
 * **要改**：`js/knowledge.js` 六處小改 —— 一個共用 helper + 五個區塊各兩行。
 * **為什麼是它**：這不是新設計，是把 **2026-08-12 已經在線上跑的 `renderDxOnce`
@@ -347,3 +347,24 @@ node scripts/dev-server.js 8644        # 服務 repo 根目錄
 #   document.querySelectorAll('*').length                       → 23112
 # 逐頁重複 formula / pharm / symptom / comparison，最後回到 34882。
 ```
+
+
+## 10. 審查後修正(2026-09-07,對抗式審查 42b715f8 → 第二輪)
+
+- **數字**:上文原寫 −17,998 / 16,884 的地方已改為 −17,999 / 16,883(五個子樹 6,229 + 5,399 + 3,017 + 2,553 + 801 = 17,999;
+  34,882 − 16,883 = 17,999)。原始 EXP2 多算的那 1 個節點是清空 comparisonGrid 時保留的 `No comparison records yet.` 後備段落。
+- **M1 語言切換把收益吃回去**:四個 grid 的 `acuting:content-mode` 監聽器以前在開機期就掛好,人在首頁按 Public EN,
+  五個 grid 全畫回來(實測 16,883 → 30,130,收益回去 73.6%)。現在監聽的是 `renderWhenWorkspaceOpens` 回傳的「畫過才重畫」函式;
+  沒畫過的頁第一次進頁時 render 會讀當下的語言。
+- **M4 render 丟例外**:`rendered = true` 改到 `render()` 成功之後(try/catch,console.error 後 rethrow),失敗的頁下次進頁會重試,不會永久留白。
+- **M2 兩套並存**:condition 的 `renderDxOnce`(2026-08-12,無 fail-open)改走同一個 helper;現在只剩一份實作。
+- **H2 閘門**:新增 `scripts/validate-lazy-grid-wiring.js`(靜態,不需要瀏覽器):樣板留空的容器一定要有 `renderWhenWorkspaceOpens("<ws>", …)`,
+  `<ws>` 必須在 router.js 的 WORKSPACES 且 index.html 有該 section,實作只准一份、不准再長出 `activeWs !== "x"` 的第二套;
+  `--self-test` 五條負控。以前 12 支「全綠」的驗證器一支都不開 js/knowledge.js,守不到這批的失效模式。
+- **M5 第一次進 #ws/herb 沒有變快**:審查交錯量測 before 671.6 / 580.4 / 849.0 ms vs after 628.7 / 610.1 / 936.7 ms(total),
+  after 只是把時間從「解 hidden 的 layout」搬成「render + layout」(188.8/439.9 · 171.5/438.6 · 346.0/590.7)。本包的收益是開機節點與非知識頁的切換,不是第一次進知識頁。
+- **M6 §1 的 script 表是網路時間**:`performance resource duration` 是傳輸不是 parse/exec。審查改量「最後一支 script responseEnd → DOMContentLoaded」:
+  before 474 / 435 / 449 ms,after 505 / 442 / 459 ms —— 量不出差別的結論成立,但不能用 §1 那張表當理由;原因本台量不到,不下結論。
+- **L1 文案**:comparison 清單查無記錄的字從「No comparison records yet.」改成「No matching comparison records.」(43 筆,只有整層清空才會看到)。
+- **L2 量測 host**:用 127.0.0.1 開站會多一個「你正以 127.0.0.1 開啟本系統」的 alert 節點(34,883);重現請用 localhost。
+- **H1 CI**:這條分支的 workflow 檔基底早於 `claude/**` 觸發(acab129b),所以推了沒有 run;第二輪 rebase 到 main 之後推的分支才有 CI。
