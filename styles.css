@@ -4066,7 +4066,12 @@ footer {
   }
 
   .os-dashboard {
-    grid-template-columns: 1fr;
+    /* 修正(手機 375px):#homeSearch #globalResults 375 寬時整頁水平溢位(scrollWidth 446,
+       實測溢出 71px,搜尋框與搜尋結果被裁掉右側文字)→ 單欄 1fr 軌是「彈性但不可縮」
+       (自動最小寬 = auto = 內容 min-content),一旦 .os-intro 底下出現較寬的子節點
+       (例如 #globalResults 填滿結果後)就把整個 track 撐寬過容器;minmax(0, 1fr) 把
+       軌道的自動最小寬釘在 0,讓子節點照容器寬度縮排版,不再外溢。 */
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .hero-actions {
