@@ -2738,7 +2738,8 @@
           h.pinyin,
           h.category,
           h.category_zh,
-          ...(h.channels_entered || []),
+          // 卡上看得到的經要搜得到:三個歸經欄位聯集(審查 M4:黃芩卡顯示脾經、搜「脾經」找不到;搜「心經」卻找到舊值)
+          ...(h.channels_entered || []), ...(h.channels_zh || []), ...(((h.tcm_properties || {}).meridian_tropism_zh) || []),
           // functions 與 functions_zh 是同一件事的兩種語言;159/360 味藥只有 _zh,
           // 之前只索引 functions,那 159 味用「活血」「養陰」這種功效關鍵字搜不到。
           // 修 bug(D32 凍結例外):搜尋結果變多,畫面不變。
