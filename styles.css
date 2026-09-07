@@ -5581,6 +5581,9 @@ body[data-content-mode="english"] .i18n-zh {
   cursor: pointer;
   font-weight: 800;
   padding: 0.38rem 0.7rem;
+  /* 修正(手機 375px):#knowledgeDetailDialog「返回列表」按鈕實測高度 36px
+     (<44px 觸控門檻),是整個學習卡詳情頁唯一的返回動作。 */
+  min-height: 44px;
 }
 .k-detail-fact-grid {
   display: grid;
