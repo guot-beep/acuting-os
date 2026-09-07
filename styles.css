@@ -4997,7 +4997,9 @@ a { color: var(--accent-dark); }
   background: #f2ecdd;
   border-radius: 999px;
   color: #7c5a22;
-  font-size: 0.72rem;
+  /* 修正(手機 375px):實測 11.52px(<12px),草稿/已核對/退役狀態徽章,
+     366 張中藥卡起跳每卡一顆(見 .k-status-draft 等變體)。 */
+  font-size: 0.75rem;
   padding: 0.12rem 0.55rem;
   white-space: nowrap;
 }
@@ -5442,7 +5444,9 @@ body[data-content-mode="english"] .i18n-zh {
   border-radius: 999px;
   color: var(--accent-dark);
   display: inline-block;
-  font-size: 0.72rem;
+  /* 修正(手機 375px):實測 11.52px(<12px),此 class 是方劑/中藥互連 chip,
+     單一藥卡常見多顆(1018 處 <12px 個案中佔最大宗)。 */
+  font-size: 0.75rem;
   margin: 0.12rem 0.15rem 0 0;
   padding: 0.08rem 0.45rem;
   white-space: nowrap;
