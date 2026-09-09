@@ -30,7 +30,7 @@ Ting:「D12 選 a D13 選 a D14 照建議辦」「持續優化內容跟 UI 四�
 每一列:搜尋走 `#homeSearch` value + `input` 事件、點 `#globalResults` 裡 `data-kind="condition"` 的真按鈕;`Element.prototype.scrollIntoView` 間諜(強制 behavior auto)記呼叫順序;hashchange 計數新載入時 click 內同步 0、事後 1,和 e22b7f9c 量到的一樣。
 
 ## 誠實記下
-- Browser pane 不跑 rAF(兩種 shim 就是為此),flash 動畫本身沒人眼看過;而且 pane 裡 `#conditionGraph.scrollIntoView({block:"start"})` 實測只把 scrollY 移 79px(386586 → 386665),到不了區塊頂端(267),所以 scrollY 不能當證據 —— 證據是呼叫順序與 class。
+- Browser pane 不跑 rAF(兩種 shim 就是為此),flash 動畫本身沒人眼看過(→ 同日稍後 Ting 人眼驗過:有閃);而且 pane 裡 `#conditionGraph.scrollIntoView({block:"start"})` 實測只把 scrollY 移 79px(386586 → 386665),到不了區塊頂端(267),所以 scrollY 不能當證據 —— 證據是呼叫順序與 class。
 - 改的只有 app.js openKnowledgeRecord 的 condition 分支(+12 −3);comparison 分支(e22b7f9c)沒動、沒抽共用函式(凍結中,最小改動)。data/**、id 格式沒動。
 - 基底 e22b7f9c 是另一個 session 的本機分支,尚未推到 origin;本分支也未 push。
 - 走同一條路的還有:穴位卡的病症 chip(`.point-link[data-kind="condition"]`)與診務回顧知識缺口清單(直呼 openKnowledgeRecord),一併修到,但未逐一實測。
@@ -55,7 +55,7 @@ validate-interactions failures 0 / warnings 0;validate-lazy-grid-wiring PASS(空
 - 已在 `#comparisonSection` 再搜另一張(goToSection 同 hash 的同步 dispatch):hashchange 在 click 內同步觸發 1 次、gr-flash 有、最後一次捲動 = cmp.insomnia_patterns
 
 ## 誠實記下
-- Browser pane **不跑 requestAnimationFrame**(`document.visibilityState` 是 visible、rAF 300ms 內 0 次;截圖強制畫格也不跑),**人眼沒看過 flash 動畫本身**;上面三個情境證明的是程式路徑(查得到、class 加上、卡片捲動最後執行)。同 QA_FIVE_DAY_JOURNEYS_2026-09-07 §已知未解那條,仍要人眼看一次。
+- Browser pane **不跑 requestAnimationFrame**(`document.visibilityState` 是 visible、rAF 300ms 內 0 次;截圖強制畫格也不跑),**人眼沒看過 flash 動畫本身**;上面三個情境證明的是程式路徑(查得到、class 加上、卡片捲動最後執行)。同 QA_FIVE_DAY_JOURNEYS_2026-09-07 §已知未解那條,仍要人眼看一次。→ 同日稍後 Ting 人眼驗過:鑑別表與病症各一張都閃,QA 那條已收(ab052244 之後的補記 commit)。
 - 本機兩個 Chrome 都接著 claude-in-chrome,工具要求先問人選哪一個,本 session 無人可問,沒用真 Chrome。
 - condition 分支(openKnowledgeRecord)同樣兩個時序缺陷,**沒動**(不在派工範圍),已開 task chip;證據同上表第 2、3 列。
 - 沒動 data/**;id 格式沒動;真鍵盤打進搜尋框、真滑鼠點結果那一輪也做了(hash 變 `#comparisonSection`、activeWs comparison、43/43 找得到),只是那一輪 rAF 不跑所以量不到 flash。

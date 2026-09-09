@@ -143,6 +143,7 @@ heap（`performance.memory.usedJSHeapSize`）：51.33 / 60.75 / 60.94 MB。
 * `app.js:1417`（`openKnowledgeRecord` 的 condition 分支）— condition **今天已經是 lazy**，
   這條路靠的就是「`goToSection()` → hashchange 監聽器同步跑完 → 才輪到 `requestAnimationFrame`」，
   已在線上運作，是本包沿用的機制先例。
+  → **2026-09-09 更正**:實測不成立(`location.hash` 指派後 hashchange sync 0 / microtask 0 / task 1),且 router 的 section 捲動會蓋掉卡片捲動;condition 與 comparison 兩條都已改成 hashchange 之後才找卡,見 §7-1。
 * `app.js:1465`（`openGlobalResult` 的 comparison 分支）—
   **這條路今天就已經是死的**：`renderComparisons`（`js/knowledge.js:2909`）產出的
   `<article class="k-card k-comparison-card">` **根本沒有 `data-record-id`**，
@@ -296,6 +297,7 @@ DOM 節點的記憶體在 renderer 的 DOM heap，這個 API **看不到**。
 1. **`app.js:1465` comparison 的 scroll+flash 是死路**：`renderComparisons` 沒有輸出
    `data-record-id`，before/after 都找不到卡。要修是加一個屬性（一行），
    但那會動到卡片樣板，屬於 D32 凍結面，且與本包的量測主題無關。
+   → **2026-09-09 已修**:e22b7f9c(屬性一行 + app.js 時序:hashchange 實測是任務 sync 0 / task 1,router 的區塊捲動登記在後會蓋掉卡片捲動)、add40c4a(condition 分支同法);Ting 人眼驗兩張都閃。
 2. **`#cards` 13,767 節點仍在開機期**（候選 A）。
 3. **30.3 MB script 仍全在開機載入**（候選 C）。
 4. **`#ws/condition` 第一次進站 +33,793 節點**且不會釋放——lazy 只推遲不封頂。
