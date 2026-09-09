@@ -9968,10 +9968,10 @@
       "contraindications_en": [
         "This formula is cooling and moist in nature; avoid in those with internal Phlegm-Damp or with fever due to Yang deficiency.",
         "Not appropriate for febrile disease at the stage when the pathogen is exuberant and excess, high fever has not yet abated, and Qi and Yin are not yet injured.",
-        "Contraindicated for those with internal Phlegm-Damp accumulation presenting with chest oppression, dry heaves, and a yellow, greasy tongue coating.",
-        "Contraindicated when pathogenic Heat is still exuberant and Upright Qi has not yet declined.",
-        "Contraindicated when high fever has not abated.",
-        "Contraindicated when Qi and Yin have not yet been injured."
+        "Febrile disease with chest oppression, dry heaves, and a yellow greasy tongue coat from Damp-Heat.",
+        "Febrile disease when both normal and pathogenic Qi remain abundant.",
+        "Febrile disease when fever remains high.",
+        "Febrile disease when Qi and Yin have not been injured."
       ],
       "contraindications_zh": [
         "本方清涼質潤，如內有痰濕，或陽虛發熱，均應忌用。",
@@ -10203,7 +10203,19 @@
         "formula_song": [
           "《湯頭歌訣》(汪昂)通行本/方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
         ],
-        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)"
+        "contraindications_en": [
+          "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)",
+          "2026-09-09 換回 AD 逐字原句:「Contraindicated for those with internal Phlegm-Damp accumulation presenting with chest oppression, dry heaves, and a yellow, greasy tongue coating.」→「Febrile disease with chest oppression, dry heaves, and a yellow greasy tongue coat from Damp-Heat.」—— 對應 zh「痰濕內蘊，見胸悶、乾嘔、舌苔黃膩者禁用」;改寫句(a1c2d2de/f75ddb9c 模型改寫)讓位給 AD Contraindications 逐字原句,原句原本孤懸在 cautions_en 無中譯",
+          "2026-09-09 換回 AD 逐字原句:「Contraindicated when pathogenic Heat is still exuberant and Upright Qi has not yet declined.」→「Febrile disease when both normal and pathogenic Qi remain abundant.」—— 對應 zh「邪熱正盛、正氣未衰者禁用」;改寫句(a1c2d2de/f75ddb9c 模型改寫)讓位給 AD Contraindications 逐字原句,原句原本孤懸在 cautions_en 無中譯",
+          "2026-09-09 換回 AD 逐字原句:「Contraindicated when high fever has not abated.」→「Febrile disease when fever remains high.」—— 對應 zh「高熱不退者禁用」;改寫句(a1c2d2de/f75ddb9c 模型改寫)讓位給 AD Contraindications 逐字原句,原句原本孤懸在 cautions_en 無中譯",
+          "2026-09-09 換回 AD 逐字原句:「Contraindicated when Qi and Yin have not yet been injured.」→「Febrile disease when Qi and Yin have not been injured.」—— 對應 zh「氣陰未傷者禁用」;改寫句(a1c2d2de/f75ddb9c 模型改寫)讓位給 AD Contraindications 逐字原句,原句原本孤懸在 cautions_en 無中譯"
+        ],
+        "cautions_en": [
+          "2026-09-09 去重:移除「Febrile disease with chest oppression, dry heaves, and a yellow greasy tongue coat from Damp-Heat.」—— 已換回 contraindications_en 對應索引(該欄有中譯)",
+          "2026-09-09 去重:移除「Febrile disease when Qi and Yin have not been injured.」—— 已換回 contraindications_en 對應索引(該欄有中譯)",
+          "2026-09-09 去重:移除「Febrile disease when fever remains high.」—— 已換回 contraindications_en 對應索引(該欄有中譯)",
+          "2026-09-09 去重:移除「Febrile disease when both normal and pathogenic Qi remain abundant.」—— 已換回 contraindications_en 對應索引(該欄有中譯)"
+        ]
       },
       "cloudtcm_id": 108,
       "action_profile": {
@@ -10471,12 +10483,7 @@
         "鵝口瘡",
         "發熱"
       ],
-      "cautions_en": [
-        "Febrile disease when both normal and pathogenic Qi remain abundant.",
-        "Febrile disease when fever remains high.",
-        "Febrile disease when Qi and Yin have not been injured.",
-        "Febrile disease with chest oppression, dry heaves, and a yellow greasy tongue coat from Damp-Heat."
-      ],
+      "cautions_en": [],
       "herb_drug_interactions_en": [],
       "category_zh": "清熱劑",
       "ba_fa_zh": "清法 Qing Fa (Clear)",
@@ -13063,6 +13070,9 @@
         ],
         "formula_song": [
           "《湯頭歌訣》(汪昂,含通行加減歌)或方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+        ],
+        "cautions_en": [
+          "2026-09-09 去重:移除「Dampness with a white, slippery tongue coat.」—— 與 contraindications_en 逐字重複(該欄有中譯);AD 原檔此句列於 Contraindications 標題下,cautions 側是 A1(a) 拆欄前的池化殘留"
         ]
       },
       "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。",
@@ -13266,9 +13276,7 @@
         "發熱",
         "目赤"
       ],
-      "cautions_en": [
-        "Dampness with a white, slippery tongue coat."
-      ],
+      "cautions_en": [],
       "herb_drug_interactions_en": [],
       "category_zh": "清熱劑",
       "ba_fa_zh": "清法 Qing Fa (Clear)",
@@ -13687,6 +13695,11 @@
         ],
         "modifications_zh": [
           "curriculum/herbs/方剂学汇总_extracted.md(Table 133;原文英文+拼音,zh 為忠實中譯,原句在帳本 docs/research_packs/MODIFICATIONS_PROPOSALS_2026-08-19.json evidence_quotes)"
+        ],
+        "cautions_en": [
+          "2026-09-09 去重:移除「Bleeding due to traumatic injury.」—— 與 contraindications_en 逐字重複(該欄有中譯);AD 原檔此句列於 Contraindications 標題下,cautions 側是 A1(a) 拆欄前的池化殘留",
+          "2026-09-09 去重:移除「Bleeding due to Spleen and Stomach Deficiencies.」—— 與 contraindications_en 逐字重複(該欄有中譯);AD 原檔此句列於 Contraindications 標題下,cautions 側是 A1(a) 拆欄前的池化殘留",
+          "2026-09-09 去重:移除「Bleeding due to Yang Deficiency.」—— 與 contraindications_en 逐字重複(該欄有中譯);AD 原檔此句列於 Contraindications 標題下,cautions 側是 A1(a) 拆欄前的池化殘留"
         ]
       },
       "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。",
@@ -13954,11 +13967,7 @@
         "痺證",
         "發熱"
       ],
-      "cautions_en": [
-        "Bleeding due to Yang Deficiency.",
-        "Bleeding due to Spleen and Stomach Deficiencies.",
-        "Bleeding due to traumatic injury."
-      ],
+      "cautions_en": [],
       "herb_drug_interactions_en": [],
       "category_zh": "清熱劑",
       "ba_fa_zh": "清法 Qing Fa (Clear)",
@@ -14184,8 +14193,7 @@
         "心悸不寧者、加茯神、柏子仁以養心定悸。"
       ],
       "contraindications_en": [
-        "The pathomechanism of this pattern is deficiency of the righteous Qi combined with excess pathogenic Heat, so the formula simultaneously drains Fire with bitter-cold herbs and enriches Yin with sour-sweet herbs. If the patient's presentation is predominantly deficient with little excess pathogen, this formula is not appropriate.",
-        "The pathomechanism of this formula's pattern is a mix of underlying deficiency and pathogenic excess, so it combines bitter-cold draining of fire with sour-sweet nourishing of yin. If deficiency predominates with little pathogenic excess, this formula is not suitable!"
+        "The pathomechanism of this pattern is deficiency of the righteous Qi combined with excess pathogenic Heat, so the formula simultaneously drains Fire with bitter-cold herbs and enriches Yin with sour-sweet herbs. If the patient's presentation is predominantly deficient with little excess pathogen, this formula is not appropriate."
       ],
       "contraindications_zh": [
         "本方證的病機是正虛邪實，所以一面用苦寒瀉火，一面以酸甘滋陰。如果體內虛多邪少，則非本方所宜！"
@@ -14383,7 +14391,8 @@
           "curriculum/formulas/05_Formula_Cards_041-050_清熱劑_祛濕劑.md（22 區塊方劑卡）"
         ],
         "contraindications_en": [
-          "Claude 逐條忠實翻譯既有 contraindications_zh（未新增主張，2026-08-11 F5 批次）"
+          "Claude 逐條忠實翻譯既有 contraindications_zh（未新增主張，2026-08-11 F5 批次）",
+          "2026-09-09 去重:移除「The pathomechanism of this formula's pattern is a mix of underlying deficiency and pathogenic excess, so it combines bitter-cold draining of fire with sour-sweet nourishing of yin. If deficiency predominates with little pathogenic excess, this formula is not suitable!」—— 652dfdd9 對同一 zh 句的第二種英譯;[0] 為 F5 08-11 逐條忠實翻譯(field_sources 有記)"
         ],
         "tcm_pattern_ids": [
           "derived: 本方 pattern_indications_zh 經 data/config/pattern_alias_map.json + data/pathology/pattern_registry.json name_zh 逐字對照(scripts/derive-formula-pattern-links.js,不拆複合證、不近似匹配、不用 syndromes_zh)"
@@ -16555,6 +16564,10 @@
         ],
         "formula_song": [
           "《湯頭歌訣》(汪昂)通行本/方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+        ],
+        "cautions_en": [
+          "2026-09-09 去重:移除「Tooth or gum problems due to Kidney Deficiency.」—— 與 contraindications_en 逐字重複(該欄有中譯);AD 原檔此句列於 Contraindications 標題下,cautions 側是 A1(a) 拆欄前的池化殘留",
+          "2026-09-09 去重:移除「Toothache due to Wind-Cold.」—— 與 contraindications_en 逐字重複(該欄有中譯);AD 原檔此句列於 Contraindications 標題下,cautions 側是 A1(a) 拆欄前的池化殘留"
         ]
       },
       "cloudtcm_id": 211,
@@ -16737,10 +16750,7 @@
         "顳顎關節症候群(TMJ)",
         "唇痛"
       ],
-      "cautions_en": [
-        "Toothache due to Wind-Cold.",
-        "Tooth or gum problems due to Kidney Deficiency."
-      ],
+      "cautions_en": [],
       "herb_drug_interactions_en": [],
       "category_zh": "清熱劑",
       "ba_fa_zh": "清法 Qing Fa (Clear)",
@@ -17593,6 +17603,10 @@
         ],
         "formula_song": [
           "《湯頭歌訣》(汪昂,含通行加減歌)或方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+        ],
+        "cautions_en": [
+          "2026-09-09 去重:移除「External/Biao conditions.」—— 與 contraindications_en 逐字重複(該欄有中譯);AD 原檔此句列於 Contraindications 標題下,cautions 側是 A1(a) 拆欄前的池化殘留",
+          "2026-09-09 去重:移除「Chronic dysenteric disorders from Deficiency Cold.」—— 與 contraindications_en 逐字重複(該欄有中譯);AD 原檔此句列於 Contraindications 標題下,cautions 側是 A1(a) 拆欄前的池化殘留"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/119",
@@ -17754,10 +17768,7 @@
         "Chronic dysenteric disorders from Deficiency Cold.",
         "External/Biao conditions."
       ],
-      "cautions_en": [
-        "Chronic dysenteric disorders from Deficiency Cold.",
-        "External/Biao conditions."
-      ],
+      "cautions_en": [],
       "cautions_zh": [],
       "herb_drug_interactions_en": [],
       "category_zh": "清熱劑",
@@ -18611,6 +18622,10 @@
         ],
         "contraindications_en": [
           "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 2 條(不同來源並行),對齊為 2 組;原條目逐字保留,補齊側為對側之翻譯"
+        ],
+        "cautions_en": [
+          "2026-09-09 去重:移除「Spasms or convulsions from Yin Deficiency with Liver Wind Rising.」—— 與 contraindications_en 逐字重複(該欄有中譯);AD 原檔此句列於 Contraindications 標題下,cautions 側是 A1(a) 拆欄前的池化殘留",
+          "2026-09-09 去重:移除「Early stages of Warm-Heat febrile diseases.」—— 與 contraindications_en 逐字重複(該欄有中譯);AD 原檔此句列於 Contraindications 標題下,cautions 側是 A1(a) 拆欄前的池化殘留"
         ]
       },
       "cloudtcm_id": 567,
@@ -18778,10 +18793,7 @@
         "慢性腎盂腎炎",
         "退化性關節炎"
       ],
-      "cautions_en": [
-        "Early stages of Warm-Heat febrile diseases.",
-        "Spasms or convulsions from Yin Deficiency with Liver Wind Rising."
-      ],
+      "cautions_en": [],
       "herb_drug_interactions_en": [],
       "category_zh": "清熱劑",
       "ba_fa_zh": "清法 Qing Fa (Clear)",
@@ -28137,8 +28149,7 @@
       "fetched_at": "2026-07-23T07:08:39.319Z",
       "cautions_zh": [
         "孕婦慎用",
-        "肝腎陰虛兼氣滯者慎用",
-        "氣滯兼肝腎陰虛者慎用。"
+        "肝腎陰虛兼氣滯者慎用"
       ],
       "safety_source": "cloudtcm_cautions_field",
       "safety_source_url": "https://cloudtcm.com/formula/219",
@@ -28296,7 +28307,8 @@
           "中文譯自本筆記錄既有 contraindications_en/cautions_en。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
         ],
         "cautions_zh": [
-          "中文譯自本筆記錄既有 contraindications_en/cautions_en。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
+          "中文譯自本筆記錄既有 contraindications_en/cautions_en。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11",
+          "2026-09-09 去重:移除「氣滯兼肝腎陰虛者慎用。」—— 94d00fe9 補入的近似句,原句「肝腎陰虛兼氣滯者慎用」(66dd7cb2)已對應同一 en"
         ],
         "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)",
         "formula_family": [
@@ -37099,8 +37111,7 @@
       "exact_source_url": "https://cloudtcm.com/formula/256",
       "fetched_at": "2026-07-23T07:08:47.071Z",
       "cautions_zh": [
-        "春夏或溫暖氣候慎用",
-        "春夏季節或溫暖氣候慎用。"
+        "春夏或溫暖氣候慎用"
       ],
       "syndromes_zh": [
         "少陰寒化證",
@@ -37180,7 +37191,8 @@
           "中文譯自本筆記錄既有 contraindications_en/cautions_en。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
         ],
         "cautions_zh": [
-          "中文譯自本筆記錄既有 contraindications_en/cautions_en。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
+          "中文譯自本筆記錄既有 contraindications_en/cautions_en。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11",
+          "2026-09-09 去重:移除「春夏季節或溫暖氣候慎用。」—— 94d00fe9 補入的近似句,原句「春夏或溫暖氣候慎用」已對應同一 en"
         ],
         "formula_family": [
           "curriculum/herbs/方剂学汇总_extracted.md(Table 209, source lines 1809;帳本 docs/research_packs/FORMULA_FAMILY_PROPOSALS_2026-08-19.json,劑量逐字審計)"
@@ -40719,7 +40731,6 @@
       ],
       "contraindications_en": [
         "Contraindicated for those with Excess syndromes.",
-        "Modify for concurrent Heat from Yin Deficiency.",
         "While taking this formula, avoid raw, cold, greasy, and hard-to-digest foods."
       ],
       "contraindications_zh": [
@@ -40992,7 +41003,10 @@
         "tcm_pattern_ids": [
           "derived: 本方 pattern_indications_zh 經 data/config/pattern_alias_map.json + data/pathology/pattern_registry.json name_zh 逐字對照(scripts/derive-formula-pattern-links.js,不拆複合證、不近似匹配、不用 syndromes_zh)"
         ],
-        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)",
+        "contraindications_en": [
+          "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)",
+          "2026-09-09 去重:移除「Modify for concurrent Heat from Yin Deficiency.」—— 與 cautions_en[0] 逐字重複(中譯「兼陰虛內熱者，宜加減使用」在該欄);Modify 句依拆欄規則歸注意欄"
+        ],
         "formula_family": [
           "curriculum/herbs/方剂学汇总_extracted.md(Table 252, source lines 2189;帳本 docs/research_packs/FORMULA_FAMILY_PROPOSALS_2026-08-19.json,劑量逐字審計)"
         ],
@@ -45857,7 +45871,6 @@
         "Shu Di Huang in this formula is sticky and cloying and Dang Gui is slippery and moistening; therefore it is not suitable for patients with pronounced dampness, tendency to epigastric fullness, abdominal distension, or loose stools.",
         "Contraindicated for those with acute, severe blood loss.",
         "Contraindicated for those with severe weakness or labored breathing.",
-        "Modify for those with constitutional Spleen Yang Deficiency.",
         "Contraindicated for those with dehydration.",
         "Contraindicated for those with Blood or Qi collapse."
       ],
@@ -46036,8 +46049,7 @@
       "cautions_zh": [
         "素體脾陽虛者須加減後使用",
         "脾胃虛弱者慎用——熟地黃性質滋膩礙運",
-        "孕婦慎用",
-        "脾胃虛弱者慎用，因熟地黃性質滋膩礙運。"
+        "孕婦慎用"
       ],
       "safety_source": "cloudtcm_cautions_field",
       "safety_source_url": "https://cloudtcm.com/formula/77",
@@ -46166,7 +46178,10 @@
         "actions_en": [
           "American Dragon formula page (harvested 2026-08)(完整 4 條;先前僅採用舊的 2 條摘要)"
         ],
-        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)",
+        "contraindications_en": [
+          "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)",
+          "2026-09-09 去重:移除「Modify for those with constitutional Spleen Yang Deficiency.」—— 與 cautions_en[0] 逐字重複(該欄有中譯);Modify 句依拆欄規則歸注意欄"
+        ],
         "contraindications_zh": [
           "American Dragon formula page (harvested 2026-08) — 後 7 條 en 照原文、zh 為對譯;前 2 條 zh 為 CloudTCM 原文、en 為其對譯。原 contraindications_en 為無來源草稿,2026-08-06 替換"
         ],
@@ -46196,7 +46211,8 @@
           "curriculum/formulas/01_Formula_Cards_001-010_補益劑.md（22 區塊方劑卡）"
         ],
         "cautions_zh": [
-          "中文譯自本筆記錄既有 contraindications_en/cautions_en。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
+          "中文譯自本筆記錄既有 contraindications_en/cautions_en。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11",
+          "2026-09-09 去重:移除「脾胃虛弱者慎用，因熟地黃性質滋膩礙運。」—— 94d00fe9 補入的近似句,原句「脾胃虛弱者慎用——熟地黃性質滋膩礙運」已對應同一 en"
         ],
         "herb_drug_interactions_en": [
           "FB-3 2026-08-12：原 herb_drug_interactions_en 與 modern_research_en 逐字相同（2 條），屬先前「原誤列於禁忌欄,已搬移」動作留下的重複殘留，予以清空；內容正本仍完整保留在 modern_research_en，未流失。見 docs/research_packs/FORMULA_EYESON_01.md F-06/§3 FB-3。"
@@ -52756,9 +52772,7 @@
         "大便燥結者，去菟絲子，加肉蓯蓉以潤腸通便，氣虛者，加人參以補氣。"
       ],
       "contraindications_en": [
-        "Contraindicated for those with signs of Excess Heat.",
-        "This formula is not suited for long-term use.",
-        "Contraindicated for those with and modify for those with Spleen and Stomach Deficiency."
+        "Contraindicated for those with signs of Excess Heat."
       ],
       "contraindications_zh": [
         "熱盛者禁用"
@@ -52987,7 +53001,11 @@
         "tcm_pattern_ids": [
           "derived: 本方 pattern_indications_zh 經 data/config/pattern_alias_map.json + data/pathology/pattern_registry.json name_zh 逐字對照(scripts/derive-formula-pattern-links.js,不拆複合證、不近似匹配、不用 syndromes_zh)"
         ],
-        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)",
+        "contraindications_en": [
+          "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)",
+          "2026-09-09 去重:移除「Contraindicated for those with and modify for those with Spleen and Stomach Deficiency.」—— AD 原句「Use with caution and modify for those with Spleen and Stomach Deficiency.」的損壞升格版(慎用→禁用),原句已逐字在 cautions_en[0] 並有中譯「脾胃虛弱者，宜謹慎並加減使用」",
+          "2026-09-09 去重:移除「This formula is not suited for long-term use.」—— 與 cautions_en[1] 逐字重複(中譯「本方不宜久服」在該欄)"
+        ],
         "modifications_zh": [
           "data/imports/cloudtcm/formula_url_map.json#左歸丸/pageData.ActionIndication",
           "data/imports/cloudtcm/formula_url_map.json#左歸丸/pageData.OldAdministration",
@@ -53342,10 +53360,11 @@
         },
         {
           "original_field": "cautions_en",
-          "text": "Use with caution and modify for those with Spleen and Stomach Deficiency. | Contraindicated for those with signs of Excess Heat. | This formula is not suited for long-term use. | Contraindicated for those with and modify for those with Spleen and Stomach Deficiency.",
+          "text": "Use with caution and modify for those with Spleen and Stomach Deficiency. | Contraindicated for those with signs of Excess Heat. | This formula is not suited for long-term use. | Use with caution and modify for those with Spleen and Stomach Deficiency.",
           "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
           "moved_at": "2026-08-29T04:45:25.222Z",
-          "ruling": "D28/A1(a). after=[Use with caution and modify for those with Spleen and Stomach Deficiency. | The ingredients of this formula are mainly rich, yin-nourishing and moistening; taken long-term or regularly they easily obstruct the Spleen and hinder the Stomach, so use with caution in those with Spleen deficiency diarrhea.]; needs_review(1)=[This formula is not suited for long-term use. <no_direction_token>]"
+          "ruling": "D28/A1(a). after=[Use with caution and modify for those with Spleen and Stomach Deficiency. | The ingredients of this formula are mainly rich, yin-nourishing and moistening; taken long-term or regularly they easily obstruct the Spleen and hinder the Stomach, so use with caution in those with Spleen deficiency diarrhea.]; needs_review(1)=[This formula is not suited for long-term use. <no_direction_token>]",
+          "repair_note": "2026-09-09 逐片修復:第 4 片「Contraindicated for those with and modify for those with Spleen and Stomach Deficiency.」→「Use with caution and modify for those with Spleen and Stomach Deficiency.」—— AD 原句的損壞升格版(慎用→禁用,與 94d00fe9 那 20 句同一機制);canonical cautions_en[0] 已是 AD 逐字原句"
         },
         {
           "original_field": "contraindications_zh",
@@ -58409,9 +58428,7 @@
         "腹水顯著者禁用",
         "經常腹瀉者禁用",
         "面赤發熱者禁用",
-        "孕婦禁用",
-        "明顯腹水者禁用",
-        "腹瀉頻繁者禁用"
+        "孕婦禁用"
       ],
       "herb_drug_cautions": [
         "heat_signs",
@@ -58762,7 +58779,9 @@
           "American Dragon formula page (harvested 2026-08) — en 照原文,zh 為對譯(scripts/clean-formula-safety-boilerplate.js)"
         ],
         "contraindications_zh": [
-          "American Dragon formula page (harvested 2026-08) — en 照原文,zh 為對譯(scripts/clean-formula-safety-boilerplate.js)"
+          "American Dragon formula page (harvested 2026-08) — en 照原文,zh 為對譯(scripts/clean-formula-safety-boilerplate.js)",
+          "2026-09-09 去重:移除「腹瀉頻繁者禁用」—— 476258b2 重灌加入的同義複本,原句「經常腹瀉者禁用」已對應同一 en",
+          "2026-09-09 去重:移除「明顯腹水者禁用」—— 476258b2 重灌加入的同義複本,原句「腹水顯著者禁用」已對應同一 en"
         ],
         "cloudtcm_url": [
           "data/imports/cloudtcm/formula_url_map.json(站內索引);採用前逐味比對組成,差異記於 cloudtcm_link_note"
@@ -59641,10 +59660,11 @@
         },
         {
           "original_field": "cautions_zh",
-          "text": "陰虛而口乾咽燥、舌紅無苔者禁用 | 胃腸虛弱者慎用 | 明顯腹水者禁用 | 腹瀉頻繁者禁用 | 面赤發熱者禁用 | 孕婦禁用",
+          "text": "陰虛而口乾咽燥、舌紅無苔者禁用 | 胃腸虛弱者慎用 | 腹水顯著者禁用 | 經常腹瀉者禁用 | 面赤發熱者禁用 | 孕婦禁用",
           "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
           "moved_at": "2026-08-29T04:45:25.222Z",
-          "ruling": "D28/A1(a). after=[胃腸虛弱者慎用]; needs_review(0)=[]"
+          "ruling": "D28/A1(a). after=[胃腸虛弱者慎用]; needs_review(0)=[]",
+          "repair_note": "2026-09-09 逐片修復:第 3 片「明顯腹水者禁用」→「腹水顯著者禁用」—— 同一 AD 句「Contraindicated for those with marked ascites.」的第二種中譯(476258b2 重灌加入),canonical 收斂為較早的譯句 ‖ 2026-09-09 逐片修復:第 4 片「腹瀉頻繁者禁用」→「經常腹瀉者禁用」—— 同一 AD 句「Contraindicated for those with frequent diarrhea.」的第二種中譯(476258b2 重灌加入),canonical 收斂為較早的譯句"
         }
       ],
       "symptoms_en": [
@@ -66675,8 +66695,7 @@
         "血鬱甚 → 重用川芎，加桃仁、紅花"
       ],
       "contraindications_en": [
-        "Contraindicated for those with Stagnation due to Deficiency.",
-        "Not appropriate for depression/stagnation patterns arising from deficiency."
+        "Contraindicated for those with Stagnation due to Deficiency."
       ],
       "contraindications_zh": [
         "因虛引起的鬱症不適用"
@@ -66861,6 +66880,9 @@
         ],
         "formula_song": [
           "《湯頭歌訣》(汪昂)通行本/方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+        ],
+        "contraindications_en": [
+          "2026-09-09 去重:移除「Not appropriate for depression/stagnation patterns arising from deficiency.」—— 652dfdd9 對 zh「因虛引起的鬱症不適用」的第二種英譯;[0] 為 AD 逐字原句"
         ]
       },
       "cloudtcm_id": 238,
@@ -67292,8 +67314,7 @@
       "modifications_en": [],
       "modifications_zh": [],
       "contraindications_en": [
-        "Do not use without modification for those with Yin Deficient Heat.",
-        "Not to be used unmodified in patients with Yin deficiency and heat."
+        "Do not use without modification for those with Yin Deficient Heat."
       ],
       "contraindications_zh": [
         "陰虛有熱者，不宜未經加減逕用本方"
@@ -67500,6 +67521,9 @@
         ],
         "derived_from": [
           "curriculum 方剂学汇总 Table 105 (Si Ni San)"
+        ],
+        "contraindications_en": [
+          "2026-09-09 去重:移除「Not to be used unmodified in patients with Yin deficiency and heat.」—— 652dfdd9 對 zh「陰虛有熱者，不宜未經加減逕用本方」的第二種英譯;[0] 為 AD 逐字原句"
         ]
       },
       "ad_syndromes_en": [
@@ -74780,7 +74804,8 @@
           "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處：既有 field_sources 各欄位所列課件/CloudTCM 來源）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
         ],
         "cautions_zh": [
-          "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處：既有 field_sources 各欄位所列課件/CloudTCM 來源）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
+          "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處：既有 field_sources 各欄位所列課件/CloudTCM 來源）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11",
+          "2026-09-09 去重:移除「月經期間慎用。」—— 94d00fe9 補入的近似句,原句「月經期間宜謹慎使用」已對應同一 en"
         ],
         "exact_source_url": [
           "FB-10 2026-08-12：原值「https://cloudtcm.com/formula/99」為 59 筆共用的錯誤預設值（大黃牡丹湯的頁面），與本筆自己的 source_urls/cloudtcm_id 不符；改回本筆對應的「https://cloudtcm.com/formula/571」。見 docs/research_packs/FORMULA_EYESON_01.md F-18 / §3 FB-10。"
@@ -75043,8 +75068,7 @@
         "Use with caution during menstruation."
       ],
       "cautions_zh": [
-        "月經期間宜謹慎使用",
-        "月經期間慎用。"
+        "月經期間宜謹慎使用"
       ],
       "herb_drug_interactions_en": [],
       "category_zh": "理血劑",
@@ -75416,7 +75440,8 @@
           "https://cloudtcm.com/formula/441(「出處:《醫林改錯》卷下」;帳本 docs/research_packs/SOURCE_CLASSIC_WEB_PROPOSALS_2026-08-19.json)"
         ],
         "contraindications_en": [
-          "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 2 條(不同來源並行),對齊為 2 組;原條目逐字保留,補齊側為對側之翻譯"
+          "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 2 條(不同來源並行),對齊為 2 組;原條目逐字保留,補齊側為對側之翻譯",
+          "2026-09-09 去重:移除「Not to be used for spotting caused by Blood deficiency.」—— 652dfdd9 對 zh「血虛所致點滴出血者不宜使用」的第二種英譯;[1] 為 AD 逐字原句"
         ],
         "formula_song": [
           "《湯頭歌訣》(汪昂,含通行加減歌)或方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
@@ -75650,8 +75675,7 @@
       ],
       "contraindications_en": [
         "Contraindicated during pregnancy.",
-        "Do not use for spotting due to Blood Deficiency.",
-        "Not to be used for spotting caused by Blood deficiency."
+        "Do not use for spotting due to Blood Deficiency."
       ],
       "cautions_en": [],
       "cautions_zh": [],
@@ -79356,6 +79380,11 @@
         ],
         "related_formulas": [
           "curriculum/formulas/ (Board exam high-frequency sister formula associations)"
+        ],
+        "cautions_en": [
+          "2026-09-09 去重:移除「Pronounced Dampness.」—— 與 contraindications_en 逐字重複(該欄有中譯);AD 原檔此句列於 Contraindications 標題下,cautions 側是 A1(a) 拆欄前的池化殘留",
+          "2026-09-09 去重:移除「Abundant Heat and severely damaged Yin.」—— 與 contraindications_en 逐字重複(該欄有中譯);AD 原檔此句列於 Contraindications 標題下,cautions 側是 A1(a) 拆欄前的池化殘留",
+          "2026-09-09 去重:移除「Without Heat.」—— 與 contraindications_en 逐字重複(該欄有中譯);AD 原檔此句列於 Contraindications 標題下,cautions 側是 A1(a) 拆欄前的池化殘留"
         ]
       },
       "cloudtcm_id": 273,
@@ -79586,11 +79615,7 @@
         "少尿",
         "發熱"
       ],
-      "cautions_en": [
-        "Without Heat.",
-        "Abundant Heat and severely damaged Yin.",
-        "Pronounced Dampness."
-      ],
+      "cautions_en": [],
       "herb_drug_interactions_en": [],
       "category_zh": "祛濕劑",
       "ba_fa_zh": "課件未指派單一八法；依本方功效與證型判讀",
@@ -107124,9 +107149,7 @@
       "fetched_at": "2026-07-23T07:08:51.649Z",
       "cautions_zh": [
         "風寒或熱邪所致咳嗽、呃逆者慎用",
-        "表熱所致高熱煩躁者慎用",
-        "表熱所致之高熱煩躁者慎用。",
-        "風寒或熱邪所致之咳嗽、呃逆者慎用。"
+        "表熱所致高熱煩躁者慎用"
       ],
       "safety_source": "cloudtcm_cautions_field",
       "safety_source_url": "https://cloudtcm.com/formula/221",
@@ -107209,7 +107232,9 @@
           "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處：見本筆 field_sources.contraindications 或 field_sources.composition 等既有出處欄位）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
         ],
         "cautions_zh": [
-          "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處：見本筆 field_sources.contraindications 或 field_sources.composition 等既有出處欄位）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
+          "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處：見本筆 field_sources.contraindications 或 field_sources.composition 等既有出處欄位）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11",
+          "2026-09-09 去重:移除「風寒或熱邪所致之咳嗽、呃逆者慎用。」—— 94d00fe9 補入的近似句,原句「風寒或熱邪所致咳嗽、呃逆者慎用」已對應同一 en",
+          "2026-09-09 去重:移除「表熱所致之高熱煩躁者慎用。」—— 94d00fe9 補入的近似句,原句「表熱所致高熱煩躁者慎用」已對應同一 en"
         ],
         "tcm_pattern_ids": [
           "derived: 本方 pattern_indications_zh 經 data/config/pattern_alias_map.json + data/pathology/pattern_registry.json name_zh 逐字對照(scripts/derive-formula-pattern-links.js,不拆複合證、不近似匹配、不用 syndromes_zh)"
@@ -123108,7 +123133,6 @@
       ],
       "contraindications_en": [
         "Contraindicated during pregnancy.",
-        "If this formula leads to diarrhea without a complete cure, use a different formula.",
         "Contraindicated for those who are weak and deficient."
       ],
       "formula_family": [],
@@ -123183,7 +123207,8 @@
           "curriculum/herbs/方剂学汇总_extracted.md(Table 481;原文英文+拼音,zh 為忠實中譯,原句在帳本 docs/research_packs/MODIFICATIONS_PROPOSALS_2026-08-19.json evidence_quotes)"
         ],
         "contraindications_en": [
-          "2026-08-19 雙語聯集對齊：原 contraindications_zh 2 條 / contraindications_en 4 條(不同來源並行),對齊為 4 組;原條目逐字保留,補齊側為對側之翻譯"
+          "2026-08-19 雙語聯集對齊：原 contraindications_zh 2 條 / contraindications_en 4 條(不同來源並行),對齊為 4 組;原條目逐字保留,補齊側為對側之翻譯",
+          "2026-09-09 去重:移除「If this formula leads to diarrhea without a complete cure, use a different formula.」—— 與 cautions_en[0] 逐字重複(中譯「若服用本方導致腹瀉未能痊癒，宜改用他方。」在該欄)"
         ]
       },
       "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。",
@@ -128040,6 +128065,11 @@
         ],
         "source_classic": [
           "curriculum/formulas/20_Formula_Cards_191-201_未分類-考點與補充劑.md(「# 198. 犀角地黄丸 · Xi Jiao Di Huang Tang — Classical / course source: Qian Jin Yao Fang」;帳本 docs/research_packs/SOURCE_CLASSIC_PROPOSALS_2026-08-19.json)"
+        ],
+        "cautions_en": [
+          "2026-09-09 去重:移除「Bleeding due to traumatic injury.」—— 與 contraindications_en 逐字重複(該欄有中譯);AD 原檔此句列於 Contraindications 標題下,cautions 側是 A1(a) 拆欄前的池化殘留",
+          "2026-09-09 去重:移除「Bleeding due to Spleen and Stomach Deficiencies.」—— 與 contraindications_en 逐字重複(該欄有中譯);AD 原檔此句列於 Contraindications 標題下,cautions 側是 A1(a) 拆欄前的池化殘留",
+          "2026-09-09 去重:移除「Bleeding due to Yang Deficiency.」—— 與 contraindications_en 逐字重複(該欄有中譯);AD 原檔此句列於 Contraindications 標題下,cautions 側是 A1(a) 拆欄前的池化殘留"
         ]
       },
       "ad_syndromes_en": [
@@ -128323,11 +128353,7 @@
         "痛痺",
         "發熱"
       ],
-      "cautions_en": [
-        "Bleeding due to Yang Deficiency.",
-        "Bleeding due to Spleen and Stomach Deficiencies.",
-        "Bleeding due to traumatic injury."
-      ],
+      "cautions_en": [],
       "cautions_zh": [],
       "herb_drug_interactions_en": [],
       "category_zh": "清熱劑",
@@ -137857,7 +137883,6 @@
       ],
       "contraindications_en": [
         "Contraindicated during pregnancy.",
-        "If this formula leads to diarrhea without a complete cure, use a different formula.",
         "Contraindicated for those who are weak and deficient."
       ],
       "cautions_en": [
@@ -137895,7 +137920,10 @@
         "cautions_zh": [
           "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處：American Dragon Formula Index, American_Dragon_201_Formulas_Name_Actions_Syndromes.md, 2026-08-07 匯入）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
         ],
-        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)"
+        "contraindications_en": [
+          "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)",
+          "2026-09-09 去重:移除「If this formula leads to diarrhea without a complete cure, use a different formula.」—— 與 cautions_en[0] 逐字重複(中譯「若服用本方導致腹瀉未能痊癒，宜改用他方。」在該欄)"
+        ]
       },
       "category": "未分類 / 考點與補充劑",
       "ba_fa_zh": "課件未指派單一八法；依本方功效與證型判讀",
