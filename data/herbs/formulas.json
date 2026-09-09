@@ -74144,7 +74144,11 @@
           "decoction_reference_g": "各等分（原文未給克數，見 source_classic）",
           "is_alternate": false,
           "role_zh": "君",
-          "role_en": "Chief"
+          "role_en": "Chief",
+          "in_formula_en": "Acrid (sweet) & warm to open Meridians [open exit/sewer], reduce Blood stasis, promote Qi Hua [Function of the Qi in the uterus].",
+          "in_formula_zh": "辛（甘）溫以通經脈（開通出路），消散瘀血，促進氣化（胞宮氣之功能）。",
+          "actions_zh": "辛（甘）溫以通經脈（開通出路），消散瘀血，促進氣化（胞宮氣之功能）。",
+          "role_reason_zh": "辛（甘）溫以通經脈（開通出路），消散瘀血，促進氣化（胞宮氣之功能）。"
         },
         {
           "herb_id": "herb.fu_ling",
@@ -74159,7 +74163,11 @@
           "decoction_reference_g": "各等分（原文未給克數，見 source_classic）",
           "is_alternate": false,
           "role_zh": "臣",
-          "role_en": "Deputy"
+          "role_en": "Deputy",
+          "in_formula_en": "Tonifies Sp, dries damp, calms Spirit to help calm fetus, promotes urination. With gui zhi to treat Blood stasis due to damp accumulation.",
+          "in_formula_zh": "健脾燥濕，安神以助安胎，通利小便；配桂枝治濕聚所致之血瘀。",
+          "actions_zh": "健脾燥濕，安神以助安胎，通利小便；配桂枝治濕聚所致之血瘀。",
+          "role_reason_zh": "健脾燥濕，安神以助安胎，通利小便；配桂枝治濕聚所致之血瘀。"
         },
         {
           "herb_id": "herb.mu_dan_pi",
@@ -74174,7 +74182,11 @@
           "decoction_reference_g": "各等分（原文未給克數，見 source_classic）",
           "is_alternate": false,
           "role_zh": "佐",
-          "role_en": "Assistant"
+          "role_en": "Assistant",
+          "in_formula_en": "Moves Blood, breaks up and dispels blood stasis, disperses accumulation, reduces abdominal masses.",
+          "in_formula_zh": "活血，破散瘀血，消散積聚，消腹中癥塊。",
+          "actions_zh": "活血，破散瘀血，消散積聚，消腹中癥塊。",
+          "role_reason_zh": "活血，破散瘀血，消散積聚，消腹中癥塊。"
         },
         {
           "herb_id": "herb.tao_ren",
@@ -74189,7 +74201,11 @@
           "decoction_reference_g": "各等分（原文未給克數，見 source_classic）",
           "is_alternate": false,
           "role_zh": "佐",
-          "role_en": "Assistant"
+          "role_en": "Assistant",
+          "in_formula_en": "Moves Blood, reduces Blood stasis, clears heat.",
+          "in_formula_zh": "活血，消散瘀血，清熱。",
+          "actions_zh": "活血，消散瘀血，清熱。",
+          "role_reason_zh": "活血，消散瘀血，清熱。"
         },
         {
           "herb_id": "herb.bai_shao",
@@ -74381,6 +74397,12 @@
         ],
         "source_classic": [
           "curriculum/formulas/15_Formula_Cards_141-150_治風劑_祛痰劑.md#L3261"
+        ],
+        "composition_in_formula_en": [
+          "composition[0] herb.gui_zhi:15_Formula_Cards_141-150_治風劑_祛痰劑.md:3118-3119 (Bastyr/Chenoweth 君臣佐使表；AD 藥表無本方；此表誤掛於 #149 茯苓丸卡下，內容為桂枝茯苓丸；原文 Herbal Formulations Comprehensive.docx.md:6590-6591, p.110；末尾「Pair: Gui Zhi & Fu Ling」為配對標註非作用句，未抄入)(2026-09-09 補填,zh 譯自 en)",
+          "composition[1] herb.fu_ling:15_Formula_Cards_141-150_治風劑_祛痰劑.md:3120-3121 (Bastyr/Chenoweth 君臣佐使表；AD 藥表無本方；此表誤掛於 #149 茯苓丸卡下，內容為桂枝茯苓丸；原文 Herbal Formulations Comprehensive.docx.md:6592-6593, p.110)(2026-09-09 補填,zh 譯自 en)",
+          "composition[2] herb.mu_dan_pi:15_Formula_Cards_141-150_治風劑_祛痰劑.md:3124-3125 (Bastyr/Chenoweth 君臣佐使表；AD 藥表無本方；此表誤掛於 #149 茯苓丸卡下，內容為桂枝茯苓丸；原文 Herbal Formulations Comprehensive.docx.md:6596-6597, p.110)(2026-09-09 補填,zh 譯自 en)",
+          "composition[3] herb.tao_ren:15_Formula_Cards_141-150_治風劑_祛痰劑.md:3123 (Bastyr/Chenoweth 君臣佐使表；AD 藥表無本方；此表誤掛於 #149 茯苓丸卡下，內容為桂枝茯苓丸；原文 Herbal Formulations Comprehensive.docx.md:6595, p.110；末尾「Pair: Tao Ren & Mu Dan Pi」為配對標註非作用句，未抄入)(2026-09-09 補填,zh 譯自 en)"
         ]
       },
       "cloudtcm_id": 189,
@@ -107841,11 +107863,11 @@
           "pharmaceutical_latin": "Rx. Ginseng",
           "dose_g": "3-9g",
           "decoction_reference_g": "3-9g",
-          "in_formula_en": "",
+          "in_formula_en": "AD notes inclusion in some versions to support Qi.",
           "actions_en": "AD notes inclusion in some versions to support Qi.",
-          "in_formula_zh": "大補元氣，補脾益肺，復脈固脫，安神益智。",
-          "actions_zh": "大補元氣，補脾益肺，復脈固脫，安神益智。",
-          "role_reason_zh": "大補元氣，補脾益肺，復脈固脫，安神益智。",
+          "in_formula_zh": "據來源註記，部分版本加入本品以益氣。",
+          "actions_zh": "據來源註記，部分版本加入本品以益氣。",
+          "role_reason_zh": "據來源註記，部分版本加入本品以益氣。",
           "is_alternate": true,
           "role_zh": "佐"
         }
@@ -108057,6 +108079,9 @@
         ],
         "formula_song_zh": [
           "https://www.zhongyifangji.com/cht/prescription/detail/id/132"
+        ],
+        "composition_in_formula_en": [
+          "composition[15] herb.ren_shen:AD_Selected_Formulas_Name_Herbs_Actions.md:672(2026-09-09 補填,zh 譯自 en)"
         ]
       },
       "cloudtcm_id": 231,
