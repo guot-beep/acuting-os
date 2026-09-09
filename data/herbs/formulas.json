@@ -1920,8 +1920,7 @@
         "Contraindicated for those with coughing due to Yin Deficiency.",
         "Contraindicated for those with cough and wheezing due to Lung Heat with expectoration of thick, yellow sputum.",
         "Contraindicated for those with a sore throat and a rapid pulse.",
-        "Contraindicated for those with dry mouth and throat with thick, yellow sputum.",
-        "Contraindicated for those with for those with hypertension."
+        "Contraindicated for those with dry mouth and throat with thick, yellow sputum."
       ],
       "contraindications_zh": [
         "不宜長期服用。",
@@ -1930,8 +1929,7 @@
         "陰虛乾咳無痰者禁用",
         "肺熱咳喘、吐黃稠痰者禁用",
         "咽痛、脈數者禁用",
-        "口乾咽燥、痰稠黃者禁用",
-        "高血壓者禁用。"
+        "口乾咽燥、痰稠黃者禁用"
       ],
       "safety_flags": [],
       "source_urls": [
@@ -2486,10 +2484,11 @@
         },
         {
           "original_field": "cautions_en",
-          "text": "Do not use long term. | Contraindicated for those with Heat conditions. | Contraindicated for those with hemoptysis. | Contraindicated for those with coughing due to Yin Deficiency. | Contraindicated for those with dry mouth and throat with thick, yellow sputum. | Contraindicated for those with a sore throat and a rapid pulse. | Use with caution for those with hypertension. | Contraindicated for those with for those with hypertension.",
+          "text": "Do not use long term. | Contraindicated for those with Heat conditions. | Contraindicated for those with hemoptysis. | Contraindicated for those with coughing due to Yin Deficiency. | Contraindicated for those with dry mouth and throat with thick, yellow sputum. | Contraindicated for those with a sore throat and a rapid pulse. | Use with caution for those with hypertension. | Use with caution for those with hypertension.",
           "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
           "moved_at": "2026-08-29T04:42:38.012Z",
-          "ruling": "D28/A1(a). after=[Use with caution in patients with severe heart disease or hypertension. | Use with caution during pregnancy. | Use with caution for those with hypertension.]; needs_review(0)=[]"
+          "ruling": "D28/A1(a). after=[Use with caution in patients with severe heart disease or hypertension. | Use with caution during pregnancy. | Use with caution for those with hypertension.]; needs_review(0)=[]",
+          "repair_note": "2026-09-09:封存裡的英文是 AD 原句被機械改寫的損壞版(「Use with caution for those with X」→「Contraindicated for those with for those with X」,慎用升格成禁用),改回 AD 逐字原句;來源 curriculum/formulas/American_Dragon_201_Formulas_Name_Treats_Contraindications_Interactions.md"
         },
         {
           "original_field": "contraindications_zh",
@@ -25393,22 +25392,14 @@
         "Contraindicated for those with Liver Fire.",
         "Contraindicated for those with bleeding gums.",
         "Chai Hu ascends and disperses while Huang Qin and Ban Xia are drying in nature, so this formula is contraindicated for those with Yin deficiency and scanty Blood.",
-        "Long-term use may cause headache, dizziness, bleeding gums, and pneumonia.",
-        "Contraindicated for those with for those with Liver Yang Rising.",
-        "Contraindicated for those with for those with hypertension.",
-        "Contraindicated for those with for those with hematemesis due to Yin Deficiency.",
-        "Contraindicated for those with for those with Yin and/or Blood Deficiency."
+        "Long-term use may cause headache, dizziness, bleeding gums, and pneumonia."
       ],
       "contraindications_zh": [
         "上實下虛者禁用",
         "肝火者禁用",
         "牙齦出血者禁用",
         "柴胡升散，芩、夏性燥，故對陰虛血少者禁用。",
-        "長期服用可能引起頭痛、頭暈，牙齦出血、肺炎",
-        "肝陽上亢者禁用。",
-        "高血壓者禁用。",
-        "陰虛吐血者禁用。",
-        "陰虛或血虛者禁用。"
+        "長期服用可能引起頭痛、頭暈，牙齦出血、肺炎"
       ],
       "herb_drug_cautions": [
         "liver_disease_review",
@@ -26541,10 +26532,11 @@
         },
         {
           "original_field": "cautions_en",
-          "text": "Contraindicated for those with Excess above and deficiency below. | Contraindicated for those with Liver Fire. | Contraindicated for those with bleeding gums. | Use with caution for those with Liver Yang Rising. | Use with caution for those with hypertension. | Use with caution for those with hematemesis due to Yin Deficiency. | Use with caution for those with Yin and/or Blood Deficiency. | Contraindicated for those with for those with Liver Yang Rising. | Contraindicated for those with for those with hypertension. | Contraindicated for those with for those with hematemesis due to Yin Deficiency. | Contraindicated for those with for those with Yin and/or Blood Deficiency.",
+          "text": "Contraindicated for those with Excess above and deficiency below. | Contraindicated for those with Liver Fire. | Contraindicated for those with bleeding gums. | Use with caution for those with Liver Yang Rising. | Use with caution for those with hypertension. | Use with caution for those with hematemesis due to Yin Deficiency. | Use with caution for those with Yin and/or Blood Deficiency. | Use with caution for those with Liver Yang Rising. | Use with caution for those with hypertension. | Use with caution for those with hematemesis due to Yin Deficiency. | Use with caution for those with Yin and/or Blood Deficiency.",
           "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
           "moved_at": "2026-08-29T04:44:46.971Z",
-          "ruling": "D28/A1(a). after=[Use with caution for those with Liver Yang Rising, hypertension, or vomiting of blood due to Yin deficiency. | Use with caution for those with Liver Yang Rising. | Use with caution for those with hypertension. | Use with caution for those with hematemesis due to Yin Deficiency. | Use with caution for those with Yin and/or Blood Deficiency.]; needs_review(1)=[Long-term use may cause headache, dizziness, bleeding gums, and pneumonia. <no_direction_token>]"
+          "ruling": "D28/A1(a). after=[Use with caution for those with Liver Yang Rising, hypertension, or vomiting of blood due to Yin deficiency. | Use with caution for those with Liver Yang Rising. | Use with caution for those with hypertension. | Use with caution for those with hematemesis due to Yin Deficiency. | Use with caution for those with Yin and/or Blood Deficiency.]; needs_review(1)=[Long-term use may cause headache, dizziness, bleeding gums, and pneumonia. <no_direction_token>]",
+          "repair_note": "2026-09-09:封存裡的英文是 AD 原句被機械改寫的損壞版(「Use with caution for those with X」→「Contraindicated for those with for those with X」,慎用升格成禁用),改回 AD 逐字原句;來源 curriculum/formulas/American_Dragon_201_Formulas_Name_Treats_Contraindications_Interactions.md"
         },
         {
           "original_field": "contraindications_zh",
@@ -27911,12 +27903,10 @@
         "此方是中醫婦科的常用方，常用於治療各種「月經不調」，經常加香附、陳皮以疏肝解鬱。陰虛嚴重者，加熟地以養肝。肝鬱化火者，加牡丹皮、梔子以清熱涼血。"
       ],
       "contraindications_en": [
-        "Liver constraint mostly arises from unfulfilled emotions; the person taking this formula must also work at the psychological level to release stress for it to be effective. Otherwise the medicine is 'free and easy' (xiao yao) while the person is not, and the benefit will be limited.",
-        "Contraindicated for those with for those with Qi Stagnation with underlying Liver and Kidney Yin Deficiency."
+        "Liver constraint mostly arises from unfulfilled emotions; the person taking this formula must also work at the psychological level to release stress for it to be effective. Otherwise the medicine is 'free and easy' (xiao yao) while the person is not, and the benefit will be limited."
       ],
       "contraindications_zh": [
-        "肝鬱多因情志不遂所致，服用的人也必須從心理下手釋放壓力，才會有效果。否則藥血「逍遙」而人不逍遙，效果有限。",
-        "氣滯兼肝腎陰虛者禁用。"
+        "肝鬱多因情志不遂所致，服用的人也必須從心理下手釋放壓力，才會有效果。否則藥血「逍遙」而人不逍遙，效果有限。"
       ],
       "herb_drug_cautions": [
         "pregnancy_review",
@@ -28147,7 +28137,8 @@
       "fetched_at": "2026-07-23T07:08:39.319Z",
       "cautions_zh": [
         "孕婦慎用",
-        "肝腎陰虛兼氣滯者慎用"
+        "肝腎陰虛兼氣滯者慎用",
+        "氣滯兼肝腎陰虛者慎用。"
       ],
       "safety_source": "cloudtcm_cautions_field",
       "safety_source_url": "https://cloudtcm.com/formula/219",
@@ -28946,10 +28937,11 @@
         },
         {
           "original_field": "cautions_en",
-          "text": "Use with caution during pregnancy. | Use with caution for those with Qi Stagnation with underlying Liver and Kidney Yin Deficiency. | Contraindicated for those with for those with Qi Stagnation with underlying Liver and Kidney Yin Deficiency.",
+          "text": "Use with caution during pregnancy. | Use with caution for those with Qi Stagnation with underlying Liver and Kidney Yin Deficiency. | Use with caution for those with Qi Stagnation with underlying Liver and Kidney Yin Deficiency.",
           "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
           "moved_at": "2026-08-29T04:44:46.971Z",
-          "ruling": "D28/A1(a). after=[Use with caution during pregnancy. | Use with caution for those with Qi Stagnation with underlying Liver and Kidney Yin Deficiency.]; needs_review(1)=[Liver constraint mostly arises from unfulfilled emotions; the person taking this formula must also work at the psychological level to release stress for it to be effective. Otherwise the medicine is 'free and easy' (xiao yao) while the person is not, and the benefit will be limited. <no_direction_token>]"
+          "ruling": "D28/A1(a). after=[Use with caution during pregnancy. | Use with caution for those with Qi Stagnation with underlying Liver and Kidney Yin Deficiency.]; needs_review(1)=[Liver constraint mostly arises from unfulfilled emotions; the person taking this formula must also work at the psychological level to release stress for it to be effective. Otherwise the medicine is 'free and easy' (xiao yao) while the person is not, and the benefit will be limited. <no_direction_token>]",
+          "repair_note": "2026-09-09:封存裡的英文是 AD 原句被機械改寫的損壞版(「Use with caution for those with X」→「Contraindicated for those with for those with X」,慎用升格成禁用),改回 AD 逐字原句;來源 curriculum/formulas/American_Dragon_201_Formulas_Name_Treats_Contraindications_Interactions.md"
         },
         {
           "original_field": "contraindications_zh",
@@ -36971,8 +36963,7 @@
         "眩暈、耳鳴、慢性頭痛 → 加白芷、防風"
       ],
       "contraindications_en": [
-        "Contraindicated for those with Yin Deficiency with Empty Fire.",
-        "Contraindicated for those with during Spring and Summer or in warm climates."
+        "Contraindicated for those with Yin Deficiency with Empty Fire."
       ],
       "contraindications_zh": [
         "陰虛火旺者禁用"
@@ -37108,7 +37099,8 @@
       "exact_source_url": "https://cloudtcm.com/formula/256",
       "fetched_at": "2026-07-23T07:08:47.071Z",
       "cautions_zh": [
-        "春夏或溫暖氣候慎用"
+        "春夏或溫暖氣候慎用",
+        "春夏季節或溫暖氣候慎用。"
       ],
       "syndromes_zh": [
         "少陰寒化證",
@@ -37586,10 +37578,11 @@
         },
         {
           "original_field": "cautions_en",
-          "text": "Contraindicated for those with Yin Deficiency with Empty Fire. | Use with caution during Spring and Summer or in warm climates. | Contraindicated for those with during Spring and Summer or in warm climates.",
+          "text": "Contraindicated for those with Yin Deficiency with Empty Fire. | Use with caution during Spring and Summer or in warm climates. | Use with caution during Spring and Summer or in warm climates.",
           "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
           "moved_at": "2026-08-29T04:44:46.971Z",
-          "ruling": "D28/A1(a). after=[Use with caution during Spring and Summer or in warm climates.]; needs_review(0)=[]"
+          "ruling": "D28/A1(a). after=[Use with caution during Spring and Summer or in warm climates.]; needs_review(0)=[]",
+          "repair_note": "2026-09-09:封存裡的英文是 AD 原句被機械改寫的損壞版(「Use with caution for those with X」→「Contraindicated for those with for those with X」,慎用升格成禁用),改回 AD 逐字原句;來源 curriculum/formulas/American_Dragon_201_Formulas_Name_Treats_Contraindications_Interactions.md"
         },
         {
           "original_field": "contraindications_zh",
@@ -38910,12 +38903,8 @@
         "畏寒怕冷者，加炮薑、附子以溫中祛寒。",
         "痰多清稀者，加乾薑、細辛以溫肺化飲。"
       ],
-      "contraindications_en": [
-        "Contraindicated for those with for those with a high fever, Yin Deficiency Heat, Qi Stagnation, Body Fluid Deficiency, irritability, thirst or constipation."
-      ],
-      "contraindications_zh": [
-        "本方性較溫燥，真陰虧損者忌用"
-      ],
+      "contraindications_en": [],
+      "contraindications_zh": [],
       "herb_drug_cautions": [
         "cloying_digestive_effect",
         "phlegm_pattern_review",
@@ -39657,10 +39646,11 @@
         },
         {
           "original_field": "cautions_en",
-          "text": "Use with caution for those with a high fever, Yin Deficiency Heat, Qi Stagnation, Body Fluid Deficiency, irritability, thirst or constipation. | Contraindicated for those with for those with a high fever, Yin Deficiency Heat, Qi Stagnation, Body Fluid Deficiency, irritability, thirst or constipation.",
+          "text": "Use with caution for those with a high fever, Yin Deficiency Heat, Qi Stagnation, Body Fluid Deficiency, irritability, thirst or constipation. | Use with caution for those with a high fever, Yin Deficiency Heat, Qi Stagnation, Body Fluid Deficiency, irritability, thirst or constipation.",
           "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
           "moved_at": "2026-08-29T04:44:46.971Z",
-          "ruling": "D28/A1(a). after=[Use with caution for those with a high fever, Yin Deficiency Heat, Qi Stagnation, Body Fluid Deficiency, irritability, thirst or constipation.]; needs_review(0)=[]"
+          "ruling": "D28/A1(a). after=[Use with caution for those with a high fever, Yin Deficiency Heat, Qi Stagnation, Body Fluid Deficiency, irritability, thirst or constipation.]; needs_review(0)=[]",
+          "repair_note": "2026-09-09:封存裡的英文是 AD 原句被機械改寫的損壞版(「Use with caution for those with X」→「Contraindicated for those with for those with X」,慎用升格成禁用),改回 AD 逐字原句;來源 curriculum/formulas/American_Dragon_201_Formulas_Name_Treats_Contraindications_Interactions.md"
         }
       ],
       "symptoms_en": [
@@ -40730,8 +40720,7 @@
       "contraindications_en": [
         "Contraindicated for those with Excess syndromes.",
         "Modify for concurrent Heat from Yin Deficiency.",
-        "While taking this formula, avoid raw, cold, greasy, and hard-to-digest foods.",
-        "Contraindicated for those with for those with Exterior or Interior Heat conditions."
+        "While taking this formula, avoid raw, cold, greasy, and hard-to-digest foods."
       ],
       "contraindications_zh": [
         "實證者禁用",
@@ -41523,10 +41512,11 @@
         },
         {
           "original_field": "cautions_en",
-          "text": "Contraindicated for those with Excess syndromes. | Modify for concurrent Heat from Yin Deficiency. | Use with caution during pregnancy. | Use with caution for those with Exterior or Interior Heat conditions. | Contraindicated for those with for those with Exterior or Interior Heat conditions.",
+          "text": "Contraindicated for those with Excess syndromes. | Modify for concurrent Heat from Yin Deficiency. | Use with caution during pregnancy. | Use with caution for those with Exterior or Interior Heat conditions. | Use with caution for those with Exterior or Interior Heat conditions.",
           "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
           "moved_at": "2026-08-29T04:44:46.971Z",
-          "ruling": "D28/A1(a). after=[Use with caution during pregnancy. | Use with caution for those with Exterior or Interior Heat conditions.]; needs_review(2)=[Modify for concurrent Heat from Yin Deficiency. <no_direction_token> | While taking this formula, avoid raw, cold, greasy, and hard-to-digest foods. <ambiguous_avoidance>]"
+          "ruling": "D28/A1(a). after=[Use with caution during pregnancy. | Use with caution for those with Exterior or Interior Heat conditions.]; needs_review(2)=[Modify for concurrent Heat from Yin Deficiency. <no_direction_token> | While taking this formula, avoid raw, cold, greasy, and hard-to-digest foods. <ambiguous_avoidance>]",
+          "repair_note": "2026-09-09:封存裡的英文是 AD 原句被機械改寫的損壞版(「Use with caution for those with X」→「Contraindicated for those with for those with X」,慎用升格成禁用),改回 AD 逐字原句;來源 curriculum/formulas/American_Dragon_201_Formulas_Name_Treats_Contraindications_Interactions.md"
         },
         {
           "original_field": "contraindications_zh",
@@ -45869,8 +45859,7 @@
         "Contraindicated for those with severe weakness or labored breathing.",
         "Modify for those with constitutional Spleen Yang Deficiency.",
         "Contraindicated for those with dehydration.",
-        "Contraindicated for those with Blood or Qi collapse.",
-        "Contraindicated for those with for those with Spleen and Stomach Deficiency due to the Stagnating nature of Shu Di Huang."
+        "Contraindicated for those with Blood or Qi collapse."
       ],
       "contraindications_zh": [
         "用於慢性病，但是不嚴重者。不能用於急性嚴重失血或其他血虛，包括嚴重的虛弱，此時應補氣(當歸補血湯)。",
@@ -46047,7 +46036,8 @@
       "cautions_zh": [
         "素體脾陽虛者須加減後使用",
         "脾胃虛弱者慎用——熟地黃性質滋膩礙運",
-        "孕婦慎用"
+        "孕婦慎用",
+        "脾胃虛弱者慎用，因熟地黃性質滋膩礙運。"
       ],
       "safety_source": "cloudtcm_cautions_field",
       "safety_source_url": "https://cloudtcm.com/formula/77",
@@ -46685,10 +46675,11 @@
         },
         {
           "original_field": "cautions_en",
-          "text": "Contraindicated for those with acute, severe blood loss. | Contraindicated for those with severe weakness or labored breathing. | Modify for those with constitutional Spleen Yang Deficiency. | Contraindicated for those with dehydration. | Use with caution for those with Spleen and Stomach Deficiency due to the Stagnating nature of Shu Di Huang. | Contraindicated for those with Blood or Qi collapse. | Use with caution during pregnancy. | Contraindicated for those with for those with Spleen and Stomach Deficiency due to the Stagnating nature of Shu Di Huang.",
+          "text": "Contraindicated for those with acute, severe blood loss. | Contraindicated for those with severe weakness or labored breathing. | Modify for those with constitutional Spleen Yang Deficiency. | Contraindicated for those with dehydration. | Use with caution for those with Spleen and Stomach Deficiency due to the Stagnating nature of Shu Di Huang. | Contraindicated for those with Blood or Qi collapse. | Use with caution during pregnancy. | Use with caution for those with Spleen and Stomach Deficiency due to the Stagnating nature of Shu Di Huang.",
           "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
           "moved_at": "2026-08-29T04:45:25.222Z",
-          "ruling": "D28/A1(a). after=[Use with caution for those with Spleen and Stomach Deficiency due to the Stagnating nature of Shu Di Huang. | Use with caution during pregnancy.]; needs_review(3)=[For chronic conditions that are not severe. Not for acute severe blood loss or other Blood deficiency with severe debility, in which case tonify Qi instead (Dang Gui Bu Xue Tang). <no_direction_token> | Shu Di Huang in this formula is sticky and cloying and Dang Gui is slippery and moistening; therefore it is not suitable for patients with pronounced dampness, tendency to epigastric fullness, abdominal distension, or loose stools. <no_direction_token> | Modify for those with constitutional Spleen Yang Deficiency. <no_direction_token>]"
+          "ruling": "D28/A1(a). after=[Use with caution for those with Spleen and Stomach Deficiency due to the Stagnating nature of Shu Di Huang. | Use with caution during pregnancy.]; needs_review(3)=[For chronic conditions that are not severe. Not for acute severe blood loss or other Blood deficiency with severe debility, in which case tonify Qi instead (Dang Gui Bu Xue Tang). <no_direction_token> | Shu Di Huang in this formula is sticky and cloying and Dang Gui is slippery and moistening; therefore it is not suitable for patients with pronounced dampness, tendency to epigastric fullness, abdominal distension, or loose stools. <no_direction_token> | Modify for those with constitutional Spleen Yang Deficiency. <no_direction_token>]",
+          "repair_note": "2026-09-09:封存裡的英文是 AD 原句被機械改寫的損壞版(「Use with caution for those with X」→「Contraindicated for those with for those with X」,慎用升格成禁用),改回 AD 逐字原句;來源 curriculum/formulas/American_Dragon_201_Formulas_Name_Treats_Contraindications_Interactions.md"
         },
         {
           "original_field": "contraindications_zh",
@@ -58050,8 +58041,7 @@
         "Contraindicated for those with frequent diarrhea.",
         "Contraindicated for those with facial flushing with fever.",
         "Contraindicated during pregnancy.",
-        "Contraindicated for those with Yin Deficiency with dry mouth and throat and a red tongue with no coat.",
-        "Contraindicated for those with for those with gastrointestinal weakness."
+        "Contraindicated for those with Yin Deficiency with dry mouth and throat and a red tongue with no coat."
       ],
       "cautions_en": [
         "Use with caution for those with gastrointestinal weakness."
@@ -58124,10 +58114,11 @@
         },
         {
           "original_field": "cautions_en",
-          "text": "Contraindicated for those with Yin Deficiency with dry mouth and throat and a red tongue with no coat. | Use with caution for those with gastrointestinal weakness. | Contraindicated for those with marked ascites. | Contraindicated for those with frequent diarrhea. | Contraindicated for those with facial flushing with fever. | Contraindicated during pregnancy. | Contraindicated for those with for those with gastrointestinal weakness.",
+          "text": "Contraindicated for those with Yin Deficiency with dry mouth and throat and a red tongue with no coat. | Use with caution for those with gastrointestinal weakness. | Contraindicated for those with marked ascites. | Contraindicated for those with frequent diarrhea. | Contraindicated for those with facial flushing with fever. | Contraindicated during pregnancy. | Use with caution for those with gastrointestinal weakness.",
           "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
           "moved_at": "2026-08-29T04:45:25.222Z",
-          "ruling": "D28/A1(a). after=[Use with caution for those with gastrointestinal weakness.]; needs_review(0)=[]"
+          "ruling": "D28/A1(a). after=[Use with caution for those with gastrointestinal weakness.]; needs_review(0)=[]",
+          "repair_note": "2026-09-09:封存裡的英文是 AD 原句被機械改寫的損壞版(「Use with caution for those with X」→「Contraindicated for those with for those with X」,慎用升格成禁用),改回 AD 逐字原句;來源 curriculum/formulas/American_Dragon_201_Formulas_Name_Treats_Contraindications_Interactions.md"
         },
         {
           "original_field": "contraindications_zh",
@@ -58411,8 +58402,7 @@
         "Contraindicated for those with marked ascites.",
         "Contraindicated for those with frequent diarrhea.",
         "Contraindicated for those with facial flushing with fever.",
-        "Contraindicated during pregnancy.",
-        "Contraindicated for those with for those with gastrointestinal weakness."
+        "Contraindicated during pregnancy."
       ],
       "contraindications_zh": [
         "陰虛而口乾咽燥、舌紅無苔者禁用",
@@ -59636,10 +59626,11 @@
         },
         {
           "original_field": "cautions_en",
-          "text": "Contraindicated for those with Yin Deficiency with dry mouth and throat and a red tongue with no coat. | Use with caution for those with gastrointestinal weakness. | Contraindicated for those with marked ascites. | Contraindicated for those with frequent diarrhea. | Contraindicated for those with facial flushing with fever. | Contraindicated during pregnancy. | Contraindicated for those with for those with gastrointestinal weakness.",
+          "text": "Contraindicated for those with Yin Deficiency with dry mouth and throat and a red tongue with no coat. | Use with caution for those with gastrointestinal weakness. | Contraindicated for those with marked ascites. | Contraindicated for those with frequent diarrhea. | Contraindicated for those with facial flushing with fever. | Contraindicated during pregnancy. | Use with caution for those with gastrointestinal weakness.",
           "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
           "moved_at": "2026-08-29T04:45:25.222Z",
-          "ruling": "D28/A1(a). after=[Use with caution for those with gastrointestinal weakness.]; needs_review(0)=[]"
+          "ruling": "D28/A1(a). after=[Use with caution for those with gastrointestinal weakness.]; needs_review(0)=[]",
+          "repair_note": "2026-09-09:封存裡的英文是 AD 原句被機械改寫的損壞版(「Use with caution for those with X」→「Contraindicated for those with for those with X」,慎用升格成禁用),改回 AD 逐字原句;來源 curriculum/formulas/American_Dragon_201_Formulas_Name_Treats_Contraindications_Interactions.md"
         },
         {
           "original_field": "contraindications_zh",
@@ -75046,14 +75037,14 @@
         "愛滋病 / 免疫功能低下"
       ],
       "contraindications_en": [
-        "Contraindicated during pregnancy.",
-        "Contraindicated for those with during menstruation."
+        "Contraindicated during pregnancy."
       ],
       "cautions_en": [
         "Use with caution during menstruation."
       ],
       "cautions_zh": [
-        "月經期間宜謹慎使用"
+        "月經期間宜謹慎使用",
+        "月經期間慎用。"
       ],
       "herb_drug_interactions_en": [],
       "category_zh": "理血劑",
@@ -75095,10 +75086,11 @@
         },
         {
           "original_field": "cautions_en",
-          "text": "Use with caution during menstruation. | Contraindicated during pregnancy. | Contraindicated for those with during menstruation.",
+          "text": "Use with caution during menstruation. | Contraindicated during pregnancy. | Use with caution during menstruation.",
           "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
           "moved_at": "2026-08-29T04:46:06.239Z",
-          "ruling": "D28/A1(a). after=[Use with caution during menstruation.]; needs_review(0)=[]"
+          "ruling": "D28/A1(a). after=[Use with caution during menstruation.]; needs_review(0)=[]",
+          "repair_note": "2026-09-09:封存裡的英文是 AD 原句被機械改寫的損壞版(「Use with caution for those with X」→「Contraindicated for those with for those with X」,慎用升格成禁用),改回 AD 逐字原句;來源 curriculum/formulas/American_Dragon_201_Formulas_Name_Treats_Contraindications_Interactions.md"
         },
         {
           "original_field": "contraindications_zh",
@@ -104110,15 +104102,13 @@
         "Do not use long term.",
         "This powder form is now rarely produced; the formula has gradually been replaced by prepared medicines such as Huai Jiao Wan — select accordingly in clinical practice.",
         "This formula is indeed effective for bleeding of the lower large intestine with a relatively simple cause. For bloody stool of complex cause that persists without healing, however, it treats only the manifestation, not the root; the cause should be investigated and a curative treatment sought.",
-        "Contraindicated for those with rectal bleeding with symptoms of Q i or Yin Deficiency.",
-        "Contraindicated for those with for those with Middle Jiao Deficiency Cold."
+        "Contraindicated for those with rectal bleeding with symptoms of Q i or Yin Deficiency."
       ],
       "contraindications_zh": [
         "本方藥性寒涼，故只宜暫用．不宜久服",
         "對中焦虛寒而大便下血者，則當慎用。",
         "現多無無此散劑生產，本方漸被槐角丸等一類成藥所代替，臨床時注意選用。",
-        "本方對於原因比較單純的大腸下部出血，確有療效。但對於原因複雜，病久不愈的便血，本方只能治標，不能治本，應探查病因，尋求根治方法。",
-        "便血兼氣虛或陰虛見症者禁用。"
+        "本方對於原因比較單純的大腸下部出血，確有療效。但對於原因複雜，病久不愈的便血，本方只能治標，不能治本，應探查病因，尋求根治方法。"
       ],
       "safety_flags": [],
       "source_urls": [
@@ -104388,10 +104378,11 @@
         },
         {
           "original_field": "cautions_en",
-          "text": "Do not use long term. | Use with caution for those with Middle Jiao Deficiency Cold. | Contraindicated for those with rectal bleeding with symptoms of Q i or Yin Deficiency. | Contraindicated for those with for those with Middle Jiao Deficiency Cold.",
+          "text": "Do not use long term. | Use with caution for those with Middle Jiao Deficiency Cold. | Contraindicated for those with rectal bleeding with symptoms of Q i or Yin Deficiency. | Use with caution for those with Middle Jiao Deficiency Cold.",
           "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
           "moved_at": "2026-08-29T04:46:36.527Z",
-          "ruling": "D28/A1(a). after=[Use with caution for those with Middle Jiao Deficiency Cold.]; needs_review(2)=[This powder form is now rarely produced; the formula has gradually been replaced by prepared medicines such as Huai Jiao Wan — select accordingly in clinical practice. <no_direction_token> | This formula is indeed effective for bleeding of the lower large intestine with a relatively simple cause. For bloody stool of complex cause that persists without healing, however, it treats only the manifestation, not the root; the cause should be investigated and a curative treatment sought. <no_direction_token>]"
+          "ruling": "D28/A1(a). after=[Use with caution for those with Middle Jiao Deficiency Cold.]; needs_review(2)=[This powder form is now rarely produced; the formula has gradually been replaced by prepared medicines such as Huai Jiao Wan — select accordingly in clinical practice. <no_direction_token> | This formula is indeed effective for bleeding of the lower large intestine with a relatively simple cause. For bloody stool of complex cause that persists without healing, however, it treats only the manifestation, not the root; the cause should be investigated and a curative treatment sought. <no_direction_token>]",
+          "repair_note": "2026-09-09:封存裡的英文是 AD 原句被機械改寫的損壞版(「Use with caution for those with X」→「Contraindicated for those with for those with X」,慎用升格成禁用),改回 AD 逐字原句;來源 curriculum/formulas/American_Dragon_201_Formulas_Name_Treats_Contraindications_Interactions.md"
         }
       ],
       "symptoms_en": [
@@ -107019,16 +107010,12 @@
       "contraindications_en": [
         "Contraindicated for those with Dampness.",
         "Contraindicated for those with Lung atrophy due to Deficiency Cold.",
-        "Contraindicated in cases of Dampness.",
-        "Contraindicated for those with for those with cough or hiccup due to Wind-Cold or Heat.",
-        "Contraindicated for those with for those with high fever and irritability due to Exterior Heat."
+        "Contraindicated in cases of Dampness."
       ],
       "contraindications_zh": [
         "濕邪者禁用",
         "肺痿病，有虛熱與虛寒之分。屬於虛寒者，不宜使用本方",
-        "濕者禁用",
-        "風寒或熱邪所致之咳嗽、呃逆者禁用。",
-        "表熱所致之高熱煩躁者禁用。"
+        "濕者禁用"
       ],
       "safety_flags": [],
       "source_urls": [
@@ -107137,7 +107124,9 @@
       "fetched_at": "2026-07-23T07:08:51.649Z",
       "cautions_zh": [
         "風寒或熱邪所致咳嗽、呃逆者慎用",
-        "表熱所致高熱煩躁者慎用"
+        "表熱所致高熱煩躁者慎用",
+        "表熱所致之高熱煩躁者慎用。",
+        "風寒或熱邪所致之咳嗽、呃逆者慎用。"
       ],
       "safety_source": "cloudtcm_cautions_field",
       "safety_source_url": "https://cloudtcm.com/formula/221",
@@ -107499,10 +107488,11 @@
         },
         {
           "original_field": "cautions_en",
-          "text": "Use with caution for those with cough or hiccup due to Wind-Cold or Heat. | Contraindicated for those with Dampness. | Use with caution for those with high fever and irritability due to Exterior Heat. | Contraindicated for those with Lung atrophy due to Deficiency Cold. | Contraindicated for those with for those with cough or hiccup due to Wind-Cold or Heat. | Contraindicated for those with for those with high fever and irritability due to Exterior Heat.",
+          "text": "Use with caution for those with cough or hiccup due to Wind-Cold or Heat. | Contraindicated for those with Dampness. | Use with caution for those with high fever and irritability due to Exterior Heat. | Contraindicated for those with Lung atrophy due to Deficiency Cold. | Use with caution for those with cough or hiccup due to Wind-Cold or Heat. | Use with caution for those with high fever and irritability due to Exterior Heat.",
           "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
           "moved_at": "2026-08-29T04:46:36.527Z",
-          "ruling": "D28/A1(a). after=[Use with caution for those with cough or hiccup due to Wind-Cold or Heat. | Use with caution for those with high fever and irritability due to Exterior Heat.]; needs_review(0)=[]"
+          "ruling": "D28/A1(a). after=[Use with caution for those with cough or hiccup due to Wind-Cold or Heat. | Use with caution for those with high fever and irritability due to Exterior Heat.]; needs_review(0)=[]",
+          "repair_note": "2026-09-09:封存裡的英文是 AD 原句被機械改寫的損壞版(「Use with caution for those with X」→「Contraindicated for those with for those with X」,慎用升格成禁用),改回 AD 逐字原句;來源 curriculum/formulas/American_Dragon_201_Formulas_Name_Treats_Contraindications_Interactions.md"
         },
         {
           "original_field": "contraindications_zh",
@@ -110574,7 +110564,7 @@
       "cautions_zh": [
         "孕婦禁用",
         "脾胃虛弱者慎用",
-        "胃虛者禁用。"
+        "胃虛者慎用。"
       ],
       "safety_source": "cloudtcm_cautions_field",
       "safety_source_url": "https://cloudtcm.com/formula/478",
@@ -110861,7 +110851,7 @@
       "cautions_en": [
         "Contraindicated during pregnancy.",
         "Use with caution for those with Stomach Deficiency.",
-        "Contraindicated for those with for those with Stomach Deficiency."
+        "Use with caution for those with Stomach Deficiency."
       ],
       "herb_drug_interactions_en": [],
       "category_zh": "理血劑",
@@ -121780,8 +121770,7 @@
         "濕熱內侵所致痿證者禁用"
       ],
       "contraindications_en": [
-        "Contraindicated for those with atrophy caused by Damp-Heat Invasion.",
-        "Contraindicated for those with for those with weak digestion."
+        "Contraindicated for those with atrophy caused by Damp-Heat Invasion."
       ],
       "formula_family": [],
       "review_status": "draft",
@@ -121840,7 +121829,13 @@
         "source_classic": [
           "curriculum/formulas/19_Formula_Cards_181-190_未分類-考點與補充劑.md(「# 184. 二至丸 · Er Zhi Wan — Classical / course source: Yi Fang Ji Jie」;帳本 docs/research_packs/SOURCE_CLASSIC_PROPOSALS_2026-08-19.json)"
         ],
-        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)"
+        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)",
+        "modifications_zh": [
+          "curriculum/formulas/19_Formula_Cards_181-190_未分類-考點與補充劑.md:1180-1181 (§13 Modifications, Bastyr/Chenoweth; 兩行實為同一表格列: '+ sang shen zi | Sweet, cool; Stronger effect in enriching yin and Lr, K tonifying blood')",
+          "curriculum/formulas/19_Formula_Cards_181-190_未分類-考點與補充劑.md:1321-1322 (§21 Source Variations 內的原始課件文字,同一列)",
+          "curriculum/formulas/Herbal Formulations Comprehensive.docx.md:4552-4553 (Bastyr/Chenoweth 原始課件 Modifications 列)",
+          "2026-09-09 課件 §13 抄錄(en 逐字)+ 譯中文,Opus 覆核"
+        ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/345",
       "cloudtcm_id": 345,
@@ -122032,10 +122027,11 @@
         },
         {
           "original_field": "cautions_en",
-          "text": "Use with caution for those with weak digestion. | Contraindicated for those with atrophy caused by Damp-Heat Invasion. | Contraindicated for those with for those with weak digestion.",
+          "text": "Use with caution for those with weak digestion. | Contraindicated for those with atrophy caused by Damp-Heat Invasion. | Use with caution for those with weak digestion.",
           "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
           "moved_at": "2026-08-29T04:47:03.669Z",
-          "ruling": "D28/A1(a). after=[Use with caution for those with weak digestion.]; needs_review(0)=[]"
+          "ruling": "D28/A1(a). after=[Use with caution for those with weak digestion.]; needs_review(0)=[]",
+          "repair_note": "2026-09-09:封存裡的英文是 AD 原句被機械改寫的損壞版(「Use with caution for those with X」→「Contraindicated for those with for those with X」,慎用升格成禁用),改回 AD 逐字原句;來源 curriculum/formulas/American_Dragon_201_Formulas_Name_Treats_Contraindications_Interactions.md"
         },
         {
           "original_field": "contraindications_zh",
@@ -122064,6 +122060,12 @@
         "bitter taste in the mouth",
         "nocturnal emission",
         "menorrhagia (excessive menstruation)"
+      ],
+      "modifications_zh": [
+        "欲加強滋養肝腎之陰、補血之效（桑椹甘、寒）→ 加桑椹"
+      ],
+      "modifications_en": [
+        "For a stronger effect in enriching Liver and Kidney yin and tonifying blood (Sang Shen Zi is sweet and cool) → add Sang Shen Zi"
       ]
     },
     {
@@ -123107,8 +123109,7 @@
       "contraindications_en": [
         "Contraindicated during pregnancy.",
         "If this formula leads to diarrhea without a complete cure, use a different formula.",
-        "Contraindicated for those who are weak and deficient.",
-        "Contraindicated for those with for those with Spleen Deficiency."
+        "Contraindicated for those who are weak and deficient."
       ],
       "formula_family": [],
       "review_status": "draft",
@@ -123347,10 +123348,11 @@
         },
         {
           "original_field": "cautions_en",
-          "text": "Contraindicated during pregnancy. | If this formula leads to diarrhea without a complete cure, use a different formula. | Contraindicated for those who are weak and deficient. | Use with caution for those with Spleen Deficiency. | Contraindicated for those with for those with Spleen Deficiency.",
+          "text": "Contraindicated during pregnancy. | If this formula leads to diarrhea without a complete cure, use a different formula. | Contraindicated for those who are weak and deficient. | Use with caution for those with Spleen Deficiency. | Use with caution for those with Spleen Deficiency.",
           "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
           "moved_at": "2026-08-29T04:47:03.669Z",
-          "ruling": "D28/A1(a). after=[Use with caution for those with Spleen Deficiency.]; needs_review(1)=[If this formula leads to diarrhea without a complete cure, use a different formula. <no_direction_token>]"
+          "ruling": "D28/A1(a). after=[Use with caution for those with Spleen Deficiency.]; needs_review(1)=[If this formula leads to diarrhea without a complete cure, use a different formula. <no_direction_token>]",
+          "repair_note": "2026-09-09:封存裡的英文是 AD 原句被機械改寫的損壞版(「Use with caution for those with X」→「Contraindicated for those with for those with X」,慎用升格成禁用),改回 AD 逐字原句;來源 curriculum/formulas/American_Dragon_201_Formulas_Name_Treats_Contraindications_Interactions.md"
         },
         {
           "original_field": "contraindications_zh",
@@ -137856,8 +137858,7 @@
       "contraindications_en": [
         "Contraindicated during pregnancy.",
         "If this formula leads to diarrhea without a complete cure, use a different formula.",
-        "Contraindicated for those who are weak and deficient.",
-        "Contraindicated for those with for those with Spleen Deficiency."
+        "Contraindicated for those who are weak and deficient."
       ],
       "cautions_en": [
         "If this formula leads to diarrhea without a complete cure, use a different formula.",
@@ -137910,17 +137911,19 @@
       "import_artifacts": [
         {
           "original_field": "contraindications_en",
-          "text": "Contraindicated during pregnancy. | If this formula leads to diarrhea without a complete cure, use a different formula. | Contraindicated for those who are weak and deficient. | Use with caution for those with Spleen Deficiency. | Contraindicated for those with for those with Spleen Deficiency.",
+          "text": "Contraindicated during pregnancy. | If this formula leads to diarrhea without a complete cure, use a different formula. | Contraindicated for those who are weak and deficient. | Use with caution for those with Spleen Deficiency. | Use with caution for those with Spleen Deficiency.",
           "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
           "moved_at": "2026-08-29T04:47:59.758Z",
-          "ruling": "D28/A1(a). after=[Contraindicated during pregnancy. | Contraindicated for those who are weak and deficient. | Contraindicated for those with for those with Spleen Deficiency.]; needs_review(1)=[If this formula leads to diarrhea without a complete cure, use a different formula. <no_direction_token>]"
+          "ruling": "D28/A1(a). after=[Contraindicated during pregnancy. | Contraindicated for those who are weak and deficient. | Contraindicated for those with for those with Spleen Deficiency.]; needs_review(1)=[If this formula leads to diarrhea without a complete cure, use a different formula. <no_direction_token>]",
+          "repair_note": "2026-09-09:封存裡的英文是 AD 原句被機械改寫的損壞版(「Use with caution for those with X」→「Contraindicated for those with for those with X」,慎用升格成禁用),改回 AD 逐字原句;來源 curriculum/formulas/American_Dragon_201_Formulas_Name_Treats_Contraindications_Interactions.md"
         },
         {
           "original_field": "cautions_en",
-          "text": "Contraindicated during pregnancy. | If this formula leads to diarrhea without a complete cure, use a different formula. | Contraindicated for those who are weak and deficient. | Use with caution for those with Spleen Deficiency. | Contraindicated for those with for those with Spleen Deficiency.",
+          "text": "Contraindicated during pregnancy. | If this formula leads to diarrhea without a complete cure, use a different formula. | Contraindicated for those who are weak and deficient. | Use with caution for those with Spleen Deficiency. | Use with caution for those with Spleen Deficiency.",
           "reason": "A1(a) legacy duplicate-pair remigration: contraindications_* and cautions_* pooled the same legacy text with no direction distinction; re-split by source-supported direction per docs/research_packs/A1_FORMULA_SAFETY_MIGRATION_RULES_2026-08-27.md — original array preserved verbatim here before rewrite.",
           "moved_at": "2026-08-29T04:47:59.758Z",
-          "ruling": "D28/A1(a). after=[Use with caution for those with Spleen Deficiency.]; needs_review(1)=[If this formula leads to diarrhea without a complete cure, use a different formula. <no_direction_token>]"
+          "ruling": "D28/A1(a). after=[Use with caution for those with Spleen Deficiency.]; needs_review(1)=[If this formula leads to diarrhea without a complete cure, use a different formula. <no_direction_token>]",
+          "repair_note": "2026-09-09:封存裡的英文是 AD 原句被機械改寫的損壞版(「Use with caution for those with X」→「Contraindicated for those with for those with X」,慎用升格成禁用),改回 AD 逐字原句;來源 curriculum/formulas/American_Dragon_201_Formulas_Name_Treats_Contraindications_Interactions.md"
         },
         {
           "original_field": "contraindications_zh",
