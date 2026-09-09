@@ -1,3 +1,25 @@
+# 2026-09-09 — 修 bug:首頁搜尋開病症卡,同鑑別表的兩個時序缺陷(openKnowledgeRecord condition 分支)
+
+派工來源:e22b7f9c 的「誠實記下」(condition 分支同樣兩個時序缺陷,不在該包範圍,另開 task)。
+**MEASURED TREE: claude/confident-panini-508fd1,基底 claude/confident-easley-1ab6b4 @ e22b7f9c(= main b8f7f1c8 + 鑑別表修法)**(本機 `node scripts/dev-server.js` 8361,Browser pane)
+
+| 情境(rAF shim / 目標卡;grid 畫出來 819 張 `[data-record-id]`)| before(e22b7f9c 的 app.js)| after |
+|---|---|---|
+| 新載入、`setTimeout(0)` shim(回呼在 hashchange 任務之後)/ cond.insomnia 失眠,第 152 張(index 151)| 找到卡、gr-flash 有,但 scrollIntoView 順序 [卡, SECTION#conditionGraph] —— router 的區塊捲動最後跑,蓋掉卡片捲動 | 順序 [SECTION#conditionGraph, 卡],卡最後;gr-flash 有 |
+| 新載入、`queueMicrotask` shim(回呼在 hashchange 任務之前)/ cond.migraine 偏頭痛,第 73 張(index 72)| grid 還是 0 張時就去查,查不到;gr-flash **無**;只有 SECTION 捲動 | 找到卡、gr-flash 有、順序 [SECTION, 卡] |
+| 已在 `#conditionGraph` 再搜另一張(goToSection 同 hash 的同步 dispatch)/ cond.eczema 濕疹,第 290 張(index 289)| hashchange 在 click 內同步 1 次;找到卡、flash 有、卡最後(舊碼這個情境本來就對:router 的 rAF 在同步 dispatch 裡先登記)| 同 before,通過 |
+
+每一列:搜尋走 `#homeSearch` value + `input` 事件、點 `#globalResults` 裡 `data-kind="condition"` 的真按鈕;`Element.prototype.scrollIntoView` 間諜(強制 behavior auto)記呼叫順序;hashchange 計數新載入時 click 內同步 0、事後 1,和 e22b7f9c 量到的一樣。
+
+## 誠實記下
+- Browser pane 不跑 rAF(兩種 shim 就是為此),flash 動畫本身沒人眼看過;而且 pane 裡 `#conditionGraph.scrollIntoView({block:"start"})` 實測只把 scrollY 移 79px(386586 → 386665),到不了區塊頂端(267),所以 scrollY 不能當證據 —— 證據是呼叫順序與 class。
+- 改的只有 app.js openKnowledgeRecord 的 condition 分支(+12 −3);comparison 分支(e22b7f9c)沒動、沒抽共用函式(凍結中,最小改動)。data/**、id 格式沒動。
+- 基底 e22b7f9c 是另一個 session 的本機分支,尚未推到 origin;本分支也未 push。
+- 走同一條路的還有:穴位卡的病症 chip(`.point-link[data-kind="condition"]`)與診務回顧知識缺口清單(直呼 openKnowledgeRecord),一併修到,但未逐一實測。
+
+## 驗證器(工作樹,commit 前;ui-freeze 在 commit 後跑)
+validate-interactions failures 0 / warnings 0;validate-lazy-grid-wiring PASS(空容器 5 / lazy 呼叫 6 / router workspaces 13);test-unified-search PASS(18 種子 + 12 斷言);check-validation-ratchet PASS 全 flat(encoding 43、relation_integrity 20、content_quality 3、herb_canon 5495、herb_track_filler 1131,其餘 0)。
+
 # 2026-09-09 — 修 bug:首頁搜尋開鑑別表,以前落在區塊頂端、43 張表哪一張看不出來(樣板一個屬性 + 時序兩處)
 
 派工來源:2026-09-07 包 C 渲染成本審計 §7-1(該包刻意不修,因為動到卡片樣板)。

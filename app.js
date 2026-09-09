@@ -1497,11 +1497,20 @@ function openKnowledgeRecord(kind, id) {
     return api.openPattern(id);
   }
   if (kind === "condition") {
-    goToSection("conditionGraph");
-    requestAnimationFrame(() => {
+    /* 2026-09-09 修 bug:同 openSearchTarget 的 comparison 分支(實測理由寫在那裡)。
+       病症 grid 是 renderWhenWorkspaceOpens 在 hashchange 才畫的,而 location.hash 指派後 hashchange 是排程任務
+       (sync 0 / microtask 0 / task 1)—— 包 C 審計(RENDER_COST_2026-09-07 §4)把這條路寫成「hashchange 監聽器
+       同步跑完才輪到 rAF」的機制先例,實測不成立:rAF 先跑就查不到卡 → 沒 flash。就算查到了,router.js 在
+       hashchange 裡排的 section scrollIntoView({block:"start"}) 登記在卡片捲動之後、同一幀後跑會蓋掉它 →
+       使用者落在病症區頂端,五百多張卡哪一張看不出來。
+       所以先掛一次性 hashchange 監聽(排在 router / knowledge 的監聽之後;goToSection 同 hash 時的同步 dispatch
+       也接得到),等它們跑完再排 rAF。查不到卡(id 打錯、卡退役)時使用者看到什麼:停在病症區頂端,同以前。 */
+    const flashCard = () => {
       const card = document.querySelector(`[data-record-id="${(window.CSS && CSS.escape) ? CSS.escape(id) : id}"]`);
       if (card) { card.scrollIntoView({ behavior: "smooth", block: "center" }); card.classList.add("gr-flash"); setTimeout(() => card.classList.remove("gr-flash"), 1600); }
-    });
+    };
+    window.addEventListener("hashchange", () => requestAnimationFrame(flashCard), { once: true });
+    goToSection("conditionGraph");
     return true;
   }
   return false;
