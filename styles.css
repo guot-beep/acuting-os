@@ -6425,6 +6425,7 @@ body.nav-open .nav-panel { transform: none; }
 .fab--search { background: var(--accent); }
 .fab--history { background: var(--gold); color: #26200e; }
 .fab--menu { background: var(--nav-bg); }
+.fab--newcase { background: var(--accent-dark, var(--accent)); font-size: 1.6rem; }   /* D13(Ting 2026-09-09 選 a):手機病例入口 */
 .fab__label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
 /* The menu FAB stays reachable in every situation and at every width — it is
    fixed to the corner, so the ☰ is always one tap away without scrolling back

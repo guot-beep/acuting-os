@@ -284,7 +284,6 @@
       "exact_source_url": "https://cloudtcm.com/formula/2",
       "fetched_at": "2026-07-23T07:08:37.898Z",
       "cautions_zh": [
-        "酒客（濕熱內蘊者）不宜，服之易致嘔。",
         "暑天或天候炎熱時宜謹慎使用。"
       ],
       "safety_source": "cloudtcm_cautions_field",
@@ -1159,7 +1158,6 @@
       "fetched_at": "2026-07-23T07:08:38.180Z",
       "cautions_zh": [
         "高血壓者慎用",
-        "忌大汗",
         "只宜短期服用",
         "瘡家、衄家、亡血家慎用（血汗同源，重劑不可發汗）",
         "嚴重心臟病、高血壓患者慎用",
@@ -1302,7 +1300,6 @@
       ],
       "cautions_en": [
         "Use caution for those with hypertension.",
-        "Avoid profuse perspiration.",
         "Use only for short periods of time.",
         "Use with caution in patients with sores, recurrent nosebleeds, or significant blood loss (Blood and sweat share the same source; do not induce sweating with heavy diaphoretic doses).",
         "Use with caution in patients with severe heart disease or hypertension.",
@@ -4558,7 +4555,10 @@
         "tcm_pattern_ids": [
           "derived: 本方 pattern_indications_zh 經 data/config/pattern_alias_map.json + data/pathology/pattern_registry.json name_zh 逐字對照(scripts/derive-formula-pattern-links.js,不拆複合證、不近似匹配、不用 syndromes_zh)"
         ],
-        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)"
+        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)",
+        "derived_from": [
+          "由 銀翹散 的 formula_family 反向產生"
+        ]
       },
       "cloudtcm_id": 162,
       "condition_tags_zh": [
@@ -4904,7 +4904,17 @@
       ],
       "ba_fa_en": [
         "sweating method (release the exterior)"
-      ]
+      ],
+      "derived_from": {
+        "formula_id": "formula.yin_qiao_san",
+        "name_zh": "銀翹散",
+        "relation": "加",
+        "change": [
+          "加桑葉、菊花、杏仁；減金銀花、連翹、荊芥、豆豉"
+        ],
+        "indication_zh": "",
+        "source": ""
+      }
     },
     {
       "id": "formula.xiang_su_san",
@@ -5691,6 +5701,9 @@
         ],
         "source_classic": [
           "https://www.zhongyifangji.com/home/prescription/detail/id/111(「敗毒散(《太平惠民和剂局方》)頁【附方】:荆防败毒散 出自《摄生众妙方》」;帳本 docs/research_packs/SOURCE_CLASSIC_WEB_PROPOSALS_2026-08-19.json)"
+        ],
+        "derived_from": [
+          "curriculum 方剂学汇总 Table 55 (Ren Shen Bai Du San)"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/183",
@@ -6013,7 +6026,19 @@
       ],
       "ba_fa_en": [
         "sweating method (releasing the exterior)"
-      ]
+      ],
+      "derived_from": {
+        "formula_id": "formula.ren_shen_bai_du_san",
+        "name_zh": "人參敗毒散",
+        "relation": "加",
+        "change": [
+          "-人參",
+          "+荊芥",
+          "+防風"
+        ],
+        "indication_zh": "體實者之風寒濕重證（無汗）",
+        "source": "curriculum 方剂学汇总 Table 55 (Ren Shen Bai Du San)"
+      }
     },
     {
       "id": "formula.chai_ge_jie_ji_tang",
@@ -6470,14 +6495,12 @@
       ],
       "contraindications_en": [
         "Contraindicate for those with no Interior Heat.",
-        "Do not use if the Yang Ming has been already attacked with constipation and abdominal pain.",
         "Avoid acrid, oily or spicy foods while taking this formula."
       ],
       "tongue_zh": "正常",
       "pulse_zh": "浮而稍洪。",
       "contraindications_zh": [
         "無裡熱者不宜使用",
-        "陽明已受邪而見便秘、腹痛者不用",
         "服藥期間忌辛辣、油膩之品"
       ],
       "ad_syndromes_en": [
@@ -6580,9 +6603,7 @@
         "Avoid acrid, oily or spicy foods while taking this formula."
       ],
       "cautions_zh": [
-        "無裡熱者不宜使用",
-        "陽明已受邪而見便秘、腹痛者不用",
-        "服藥期間忌辛辣、油膩之品"
+        "陽明已受邪而見便秘、腹痛者不用"
       ],
       "herb_drug_interactions_en": [],
       "category_zh": "解表劑",
@@ -7215,7 +7236,6 @@
         "目赤"
       ],
       "contraindications_en": [
-        "This formula may cause exterior Deficiency in rashes that surface evenly.",
         "Contraindicated for those with measles toxin sinking internally (symptoms: shortness of breath, rough breathing, cough, wheezing).",
         "Contraindicated if the measles are fully erupted and the Heat has gone deeper with rapid breathing, dyspnea and cough."
       ],
@@ -7234,7 +7254,6 @@
       "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/ShengMaGeGenTang.html",
       "taiwan_pharmacopeia_zh": "有收載(臺灣中藥典 p.132)",
       "contraindications_zh": [
-        "本方可能使疹透發過於均勻而致表虛。",
         "麻疹毒邪內陷者禁用（見氣短、呼吸粗促、咳嗽、喘鳴等症）。",
         "疹已透發、熱邪內陷而見呼吸急促、喘息、咳嗽者禁用。"
       ],
@@ -11805,6 +11824,9 @@
         ],
         "source_classic": [
           "《金匱要略·驚悸吐衄下血胸滿瘀血病脈證治》瀉心湯(心氣不足,吐血衄血,瀉心湯主之)+ 方劑學通行內容;2026-08-19 重建,待 Ting 複核"
+        ],
+        "derived_from": [
+          "由 黃連解毒湯 的 formula_family 反向產生"
         ]
       },
       "clinical_classification_zh": "臨床常用專病處方",
@@ -11833,11 +11855,9 @@
         "Contraindicated in Spleen-Stomach Deficiency Cold."
       ],
       "cautions_en": [
-        "Not suitable where there is no excess Fire and exuberant Heat.",
         "Use with caution during pregnancy."
       ],
       "cautions_zh": [
-        "非實火熱盛者不宜使用。",
         "孕婦慎用。"
       ],
       "contraindications_zh": [
@@ -11892,7 +11912,17 @@
           "moved_at": "2026-08-29T04:42:38.012Z",
           "ruling": "D28/A1(a). after=[孕婦慎用。]; needs_review(2)=[非實火熱盛者不宜使用。 <ambiguous_avoidance> | 脾胃虛寒者忌服。 <no_direction_token>]"
         }
-      ]
+      ],
+      "derived_from": {
+        "formula_id": "formula.huang_lian_jie_du_tang",
+        "name_zh": "黃連解毒湯",
+        "relation": "加",
+        "change": [
+          "加大黃 9g"
+        ],
+        "indication_zh": "",
+        "source": ""
+      }
     },
     {
       "id": "formula.liang_ge_san",
@@ -14982,6 +15012,9 @@
         ],
         "tcm_pattern_ids": [
           "derived: 本方 pattern_indications_zh 經 data/config/pattern_alias_map.json + data/pathology/pattern_registry.json name_zh 逐字對照(scripts/derive-formula-pattern-links.js,不拆複合證、不近似匹配、不用 syndromes_zh)"
+        ],
+        "derived_from": [
+          "由 導赤散 的 formula_family 反向產生"
         ]
       },
       "cloudtcm_id": 281,
@@ -15087,19 +15120,7 @@
           "differentiator_en": "Xie Xin Tang purges Heart/Spleen fire with bitter-cold herbs; Dao Chi San clears Heart heat while nourishing Yin and guiding heat out via urine."
         }
       ],
-      "formula_family": [
-        {
-          "formula_id": "formula.dao_chi_san",
-          "name_zh": "導赤散",
-          "relation": "同類",
-          "change": [
-            "原方結構"
-          ],
-          "change_en": [
-            "Base formula structure"
-          ]
-        }
-      ],
+      "formula_family": [],
       "applications_zh": [
         "急性口炎（嘴破）",
         "口腔潰瘍",
@@ -15411,7 +15432,17 @@
       ],
       "ba_fa_en": [
         "clearing method"
-      ]
+      ],
+      "derived_from": {
+        "formula_id": "formula.dao_chi_san",
+        "name_zh": "導赤散",
+        "relation": "同類",
+        "change": [
+          "原方結構"
+        ],
+        "indication_zh": "",
+        "source": ""
+      }
     },
     {
       "id": "formula.long_dan_xie_gan_tang",
@@ -15874,6 +15905,9 @@
         ],
         "tcm_pattern_ids": [
           "derived: 本方 pattern_indications_zh 經 data/config/pattern_alias_map.json + data/pathology/pattern_registry.json name_zh 逐字對照(scripts/derive-formula-pattern-links.js,不拆複合證、不近似匹配、不用 syndromes_zh)"
+        ],
+        "derived_from": [
+          "由 龍膽瀉肝湯 的 formula_family 反向產生"
         ]
       },
       "cloudtcm_id": 286,
@@ -16009,19 +16043,7 @@
           "differentiator_en": "Huang Lian Jie Du Tang purges fire from all three burners; Long Dan Xie Gan Tang targets Liver/GB fire and lower burner damp-heat."
         }
       ],
-      "formula_family": [
-        {
-          "formula_id": "formula.long_dan_xie_gan_tang",
-          "name_zh": "龍膽瀉肝湯",
-          "relation": "同類",
-          "change": [
-            "原方結構"
-          ],
-          "change_en": [
-            "Base formula structure"
-          ]
-        }
-      ],
+      "formula_family": [],
       "applications_zh": [
         "急性膽囊炎",
         "急性中耳炎",
@@ -16185,7 +16207,17 @@
       ],
       "ba_fa_en": [
         "clearing method"
-      ]
+      ],
+      "derived_from": {
+        "formula_id": "formula.long_dan_xie_gan_tang",
+        "name_zh": "龍膽瀉肝湯",
+        "relation": "同類",
+        "change": [
+          "原方結構"
+        ],
+        "indication_zh": "",
+        "source": ""
+      }
     },
     {
       "id": "formula.qing_wei_san",
@@ -21809,7 +21841,6 @@
       ],
       "contraindications_zh": [
         "孕婦禁用",
-        "體虛者僅於必要時使用，並加補益之品",
         "小承氣湯具有瀉下作用，因此孕婦、哺乳期婦女、小兒、體弱者不宜服用。"
       ],
       "safety_flags": [],
@@ -22082,6 +22113,9 @@
         ],
         "formula_song": [
           "《湯頭歌訣》(汪昂,含通行加減歌)或方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+        ],
+        "derived_from": [
+          "curriculum 方剂学汇总 Table 61 (Da Cheng Qi Tang)"
         ]
       },
       "cloudtcm_id": 40,
@@ -22473,7 +22507,17 @@
       ],
       "ba_fa_en": [
         "purging method"
-      ]
+      ],
+      "derived_from": {
+        "formula_id": "formula.da_cheng_qi_tang",
+        "name_zh": "大承氣湯",
+        "relation": "減",
+        "change": [
+          "-芒硝（大黃 12、厚朴 6、枳實 6-9 同煎）"
+        ],
+        "indication_zh": "陽明腑實輕證，無燥堅",
+        "source": "curriculum 方剂学汇总 Table 61 (Da Cheng Qi Tang)"
+      }
     },
     {
       "id": "formula.tiao_wei_cheng_qi_tang",
@@ -22870,6 +22914,9 @@
         ],
         "formula_song": [
           "《湯頭歌訣》(汪昂,含通行加減歌)或方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+        ],
+        "derived_from": [
+          "curriculum 方剂学汇总 Table 61 (Da Cheng Qi Tang)"
         ]
       },
       "cloudtcm_id": 277,
@@ -23259,7 +23306,19 @@
       ],
       "ba_fa_en": [
         "purging method (draining downward)"
-      ]
+      ],
+      "derived_from": {
+        "formula_id": "formula.da_cheng_qi_tang",
+        "name_zh": "大承氣湯",
+        "relation": "減",
+        "change": [
+          "-枳實",
+          "-厚朴",
+          "+甘草（大黃 12 與甘草 6 同煎、芒硝 9-12）"
+        ],
+        "indication_zh": "陽明腑實輕證，無痞滿",
+        "source": "curriculum 方剂学汇总 Table 61 (Da Cheng Qi Tang)"
+      }
     },
     {
       "id": "formula.zeng_ye_cheng_qi_tang",
@@ -23431,6 +23490,9 @@
         ],
         "formula_song": [
           "《湯頭歌訣》(汪昂,含通行加減歌)或方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+        ],
+        "derived_from": [
+          "curriculum/formulas/12_Formula_Cards_111-120_理氣劑_瀉下劑.md"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/557",
@@ -23480,7 +23542,18 @@
         "Generates fluids to moisten intestines, increases intestinal fluid secretion",
         "Gentle purgation without damaging upright Qi",
         "Immunomodulatory, anti-inflammatory"
-      ]
+      ],
+      "derived_from": {
+        "formula_id": "formula.zeng_ye_tang",
+        "name_zh": "增液湯",
+        "relation": "加",
+        "change": [
+          "+大黃",
+          "+芒硝"
+        ],
+        "indication_zh": "熱結陰虧，燥屎不行，大便秘結者",
+        "source": "curriculum/formulas/12_Formula_Cards_111-120_理氣劑_瀉下劑.md"
+      }
     },
     {
       "id": "formula.da_huang_mu_dan_tang",
@@ -24273,8 +24346,6 @@
       ],
       "contraindications_zh": [
         "孕婦禁用",
-        "血虛便秘者，宜加減使用",
-        "體質甚虛者，宜加減使用",
         "對麻子仁過敏者禁用：如果對麻子仁過敏，應避免服用麻子仁丸。",
         "麻子仁是大麻的種子，需要驗尿者不宜服用。"
       ],
@@ -27573,6 +27644,9 @@
         ],
         "contraindications_en": [
           "translated: 本卡 contraindications_zh 逐條忠實翻譯(紅線5 同長同序,強度不升降)"
+        ],
+        "derived_from": [
+          "curriculum 方剂学汇总 Table 94 (Xiao Chai Hu Tang)"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/170",
@@ -27617,7 +27691,18 @@
         "Regulates immune and autonomic nervous systems"
       ],
       "composition_suspect_cleared_note": "2026-08-19 原組成僅剩方名首味柴胡,依《傷寒論》146條(小柴胡湯+桂枝湯合半)重建九味",
-      "source_classic": "《傷寒論》第146條(正源)；《金匱要略・瘧病脈證并治》附方「柴胡桂枝湯方」亦收錄同方——課件與通行本出典不一致,兩者並記，裁定見 RULING_QUEUE_2026-08-19 #6"
+      "source_classic": "《傷寒論》第146條(正源)；《金匱要略・瘧病脈證并治》附方「柴胡桂枝湯方」亦收錄同方——課件與通行本出典不一致,兩者並記，裁定見 RULING_QUEUE_2026-08-19 #6",
+      "derived_from": {
+        "formula_id": "formula.xiao_chai_hu_tang",
+        "name_zh": "小柴胡湯",
+        "relation": "加",
+        "change": [
+          "+桂枝",
+          "+白芍"
+        ],
+        "indication_zh": "少陽證兼表證未解",
+        "source": "curriculum 方剂学汇总 Table 94 (Xiao Chai Hu Tang)"
+      }
     },
     {
       "id": "formula.xiao_yao_san",
@@ -29180,14 +29265,10 @@
       "modifications_en": [],
       "modifications_zh": [],
       "contraindications_en": [
-        "Contraindicated for those with underlying Deficiency and Cold.",
-        "This formula may reduce tremors caused by antipsychotic-induced Parkinson's disease.",
-        "This formula may be effective in treating menopausal symptoms induced by gonadotropin-releasing hormone agonist therapy without a negative effect on serum estradiol levels."
+        "Contraindicated for those with underlying Deficiency and Cold."
       ],
       "contraindications_zh": [
-        "素體虛寒者禁用",
-        "本方可能減輕抗精神病藥物誘發帕金森氏症所致之震顫",
-        "本方可能有效治療促性腺激素釋放激素促效劑療法所致之更年期症狀，且不會對血清雌二醇濃度造成負面影響"
+        "素體虛寒者禁用"
       ],
       "herb_drug_cautions": [
         "pregnancy_review",
@@ -29544,6 +29625,9 @@
         ],
         "formula_song": [
           "《湯頭歌訣》(汪昂,含通行加減歌)或方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+        ],
+        "derived_from": [
+          "curriculum 方剂学汇总 Table 109 (Xiao Yao San)"
         ]
       },
       "cloudtcm_id": 65,
@@ -30247,7 +30331,18 @@
       ],
       "ba_fa_en": [
         "harmonizing method"
-      ]
+      ],
+      "derived_from": {
+        "formula_id": "formula.xiao_yao_san",
+        "name_zh": "逍遙散",
+        "relation": "加",
+        "change": [
+          "+牡丹皮",
+          "+梔子"
+        ],
+        "indication_zh": "兼肝經鬱熱或肝火（又名丹梔逍遙散）",
+        "source": "curriculum 方剂学汇总 Table 109 (Xiao Yao San)"
+      }
     },
     {
       "id": "formula.tong_xie_yao_fang",
@@ -32946,6 +33041,9 @@
         ],
         "formula_family": [
           "curriculum/formulas/14_Formula_Cards_131-140_溫裡劑_治風劑.md(Fu Zi Li Zhong Wan card, Section 17 Modifications;帳本 docs/research_packs/FORMULA_FAMILY_PROPOSALS_2026-08-24.json,劑量逐字審計)"
+        ],
+        "derived_from": [
+          "curriculum 方剂学汇总 Table 214 (Li Zhong Wan)"
         ]
       },
       "clinical_classification_zh": "臨床常用專病處方",
@@ -33450,7 +33548,17 @@
       ],
       "ba_fa_en": [
         "warming method"
-      ]
+      ],
+      "derived_from": {
+        "formula_id": "formula.li_zhong_wan",
+        "name_zh": "理中丸",
+        "relation": "加",
+        "change": [
+          "+附子"
+        ],
+        "indication_zh": "裡寒重證；虛寒性反覆口瘡",
+        "source": "curriculum 方剂学汇总 Table 214 (Li Zhong Wan)"
+      }
     },
     {
       "id": "formula.xiao_jian_zhong_tang",
@@ -33640,13 +33748,9 @@
         "蟲積 → 加烏梅、川椒，減飴糖、白芍"
       ],
       "contraindications_en": [
-        "Eliminate sweet flavor for vomiting or roundworms.",
-        "Modify for abdominal distention.",
         "Contraindicated for those with Heat from Yin Deficiency."
       ],
       "contraindications_zh": [
-        "因嘔吐或蛔蟲所致者，宜去甘味藥。",
-        "腹脹（中滿）者宜隨證加減。",
         "陰虛內熱者禁用"
       ],
       "safety_flags": [],
@@ -34581,6 +34685,9 @@
         ],
         "formula_song": [
           "《湯頭歌訣》(汪昂,含通行加減歌)或方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+        ],
+        "derived_from": [
+          "curriculum 方剂学汇总 Table 218 (Xiao Jian Zhong Tang)"
         ]
       },
       "clinical_classification_zh": "臨床常用專病處方",
@@ -34888,9 +34995,7 @@
         "肝硬化"
       ],
       "contraindications_en": [
-        "Contraindicated for those with Heat from Yin Deficiency.",
-        "Eliminate sweet flavor for vomiting from roundworms.",
-        "Modify for abdominal distention."
+        "Eliminate sweet flavor for vomiting from roundworms."
       ],
       "cautions_en": [
         "Eliminate sweet flavor for vomiting from roundworms.",
@@ -34903,9 +35008,7 @@
       "herb_drug_interactions_en": [],
       "category_zh": "溫裡劑",
       "contraindications_zh": [
-        "因蛔蟲所致嘔吐者，宜去甘味藥。",
-        "陰虛內熱者禁用",
-        "腹脹（中滿）者宜隨證加減。"
+        "陰虛內熱者禁用"
       ],
       "source_classic": "《金匱要略》",
       "formula_song_zh": "小建湯加兩半耆。諸虛里急治無遺。\n急當甘緩虛當補。愈信長沙百世師。",
@@ -34977,7 +35080,17 @@
         "hemorrhoids",
         "fever with a preference for hot drinks",
         "dry skin"
-      ]
+      ],
+      "derived_from": {
+        "formula_id": "formula.xiao_jian_zhong_tang",
+        "name_zh": "小建中湯",
+        "relation": "加",
+        "change": [
+          "+黃芪 9g"
+        ],
+        "indication_zh": "氣虛較重：氣短、自汗、脈微弱",
+        "source": "curriculum 方剂学汇总 Table 218 (Xiao Jian Zhong Tang)"
+      }
     },
     {
       "id": "formula.si_ni_tang",
@@ -36079,13 +36192,11 @@
       "modifications_en": [],
       "modifications_zh": [],
       "contraindications_en": [
-        "For very severe vomiting, take the formula cool.",
         "Contraindicated for vomiting or acid regurgitation due to Heat, vomiting due to Stomach Heat, vomiting due to Yin deficiency, and headache due to Liver Yang Rising.",
         "Contraindicated for those with vomiting or acid reflux due to Heat.",
         "Contraindicated for those with headache due to Liver Yang Rising."
       ],
       "contraindications_zh": [
-        "嘔吐甚劇者，藥宜冷服",
         "因熱而致的嘔吐反酸忌，胃熱嘔吐，陰虛嘔吐，或肝陽上亢之頭痛均禁用本方。",
         "因熱而致之嘔吐反酸者禁用",
         "肝陽上亢之頭痛者禁用"
@@ -37686,12 +37797,10 @@
         "氣虛甚 → 加黃耆"
       ],
       "contraindications_en": [
-        "Contraindicated for those with Excess Syndromes with high fever, irritability, thirst and constipation.",
-        "Contraindicated for those with Deficiency Heat, high fever or a combination of irritability, thirst and constipation unless modified."
+        "Contraindicated for those with Excess Syndromes with high fever, irritability, thirst and constipation."
       ],
       "contraindications_zh": [
-        "實證而高熱、煩躁、口渴、便秘者禁用",
-        "虛熱、高熱,或煩躁口渴便秘並見者,非經加減不用"
+        "實證而高熱、煩躁、口渴、便秘者禁用"
       ],
       "herb_drug_cautions": [
         "cloying_digestive_effect",
@@ -39124,6 +39233,9 @@
           "data/imports/cloudtcm/formula_url_map.json#六君子湯/pageData.ActionIndication",
           "https://cloudtcm.com/formula/54",
           "translated 2026-09-07 from modifications_zh (Claude)"
+        ],
+        "derived_from": [
+          "curriculum 方剂学汇总 Table 248 (Si Jun Zi Tang)"
         ]
       },
       "cloudtcm_id": 54,
@@ -39593,7 +39705,18 @@
       ],
       "ba_fa_en": [
         "tonifying method"
-      ]
+      ],
+      "derived_from": {
+        "formula_id": "formula.si_jun_zi_tang",
+        "name_zh": "四君子湯",
+        "relation": "加",
+        "change": [
+          "+陳皮 3",
+          "+半夏 4.5（同生薑、大棗）"
+        ],
+        "indication_zh": "脾虛兼痰濕：納呆、痞悶、噁心嘔吐",
+        "source": "curriculum 方剂学汇总 Table 248 (Si Jun Zi Tang)"
+      }
     },
     {
       "id": "formula.xiang_sha_liu_jun_zi_tang",
@@ -39892,6 +40015,9 @@
         ],
         "contraindications_en": [
           "translated: 本卡 contraindications_zh 逐條忠實翻譯(紅線5 同長同序,強度不升降)"
+        ],
+        "derived_from": [
+          "curriculum 方剂学汇总 Table 248 (Si Jun Zi Tang)"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/150",
@@ -40307,7 +40433,20 @@
       ],
       "ba_fa_en": [
         "tonifying method"
-      ]
+      ],
+      "derived_from": {
+        "formula_id": "formula.si_jun_zi_tang",
+        "name_zh": "四君子湯",
+        "relation": "加",
+        "change": [
+          "+陳皮",
+          "+半夏",
+          "+砂仁",
+          "+木香"
+        ],
+        "indication_zh": "脾胃氣虛兼氣滯痰阻：噯氣、嘔吐、泄瀉、脘腹脹痛",
+        "source": "curriculum 方剂学汇总 Table 248 (Si Jun Zi Tang)"
+      }
     },
     {
       "id": "formula.shen_ling_bai_zhu_san",
@@ -40613,7 +40752,6 @@
       ],
       "contraindications_zh": [
         "實證者禁用",
-        "兼陰虛內熱者，宜加減使用",
         "服用本方，禁食生冷、油膩、不易消化之物"
       ],
       "safety_flags": [],
@@ -45760,7 +45898,6 @@
         "本方中的熟地性質黏滯、當歸性滑潤，因此對於濕氣較重、容易中滿、腹脹或大便稀溏的患者不宜使用。",
         "急性嚴重失血者禁用",
         "嚴重虛弱或呼吸費力者禁用",
-        "素體脾陽虛者須加減後使用",
         "脫水者禁用",
         "氣血暴脫者禁用"
       ],
@@ -46983,6 +47120,9 @@
           "data/imports/cloudtcm/formula_url_map.json#桃紅四物湯/pageData.ActionIndication",
           "https://cloudtcm.com/formula/171",
           "translated 2026-09-07 from modifications_zh (Claude)"
+        ],
+        "derived_from": [
+          "curriculum 方剂学汇总 Table 269 (Si Wu Tang)"
         ]
       },
       "cloudtcm_id": 171,
@@ -47065,7 +47205,18 @@
       ],
       "cautions_en": [
         "Contraindicated in menorrhagia, bleeding disorders, and pregnancy."
-      ]
+      ],
+      "derived_from": {
+        "formula_id": "formula.si_wu_tang",
+        "name_zh": "四物湯",
+        "relation": "加",
+        "change": [
+          "+桃仁",
+          "+紅花"
+        ],
+        "indication_zh": "月經先期、經血夾暗塊、腹痛",
+        "source": "curriculum 方剂学汇总 Table 269 (Si Wu Tang)"
+      }
     },
     {
       "id": "formula.jiao_ai_tang",
@@ -47330,6 +47481,9 @@
         ],
         "formula_song_zh": [
           "https://jicheng.tw/tcm/book/%E9%87%91%E5%8C%B1%E6%96%B9%E6%AD%8C%E6%8B%AC/index.html"
+        ],
+        "derived_from": [
+          "curriculum 方剂学汇总 Table 269 (Si Wu Tang)"
         ]
       },
       "clinical_classification_zh": "臨床常用專病處方",
@@ -47632,7 +47786,19 @@
       ],
       "ba_fa_en": [
         "tonifying method"
-      ]
+      ],
+      "derived_from": {
+        "formula_id": "formula.si_wu_tang",
+        "name_zh": "四物湯",
+        "relation": "加",
+        "change": [
+          "+阿膠",
+          "+艾葉",
+          "+甘草"
+        ],
+        "indication_zh": "衝任虛損：崩漏、胎漏、先兆流產、產後虛弱",
+        "source": "curriculum 方剂学汇总 Table 269 (Si Wu Tang)"
+      }
     },
     {
       "id": "formula.dang_gui_bu_xue_tang",
@@ -49700,6 +49866,9 @@
         ],
         "source_classic": [
           "https://www.zhongyifangji.com/home/prescription/detail/id/7(「八珍汤頁【附方】:十全大补汤《太平惠民和剂局方》;cloudtcm /formula/20:原名十全散出自《傳信適用方》,宋《太平惠民和劑局方》更名十全大補湯」;帳本 docs/research_packs/SOURCE_CLASSIC_WEB_PROPOSALS_2026-08-19.json)"
+        ],
+        "derived_from": [
+          "curriculum 方剂学汇总 Table 278 (Ba Zhen Tang)"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/20",
@@ -50409,7 +50578,18 @@
       ],
       "ba_fa_en": [
         "tonifying method"
-      ]
+      ],
+      "derived_from": {
+        "formula_id": "formula.ba_zhen_tang",
+        "name_zh": "八珍湯",
+        "relation": "加",
+        "change": [
+          "+黃芪",
+          "+肉桂"
+        ],
+        "indication_zh": "氣血兩虛偏於氣虛而有寒象：虛勞",
+        "source": "curriculum 方剂学汇总 Table 278 (Ba Zhen Tang)"
+      }
     },
     {
       "id": "formula.taishan_pan_shi_san",
@@ -51046,7 +51226,6 @@
         "Contraindicated for those with Yang Deficiency."
       ],
       "contraindications_zh": [
-        "濕邪偏盛之地區，使用本方宜謹慎",
         "陽虛者禁用"
       ],
       "herb_drug_cautions": [
@@ -52616,7 +52795,6 @@
         "Contraindicated for those with and modify for those with Spleen and Stomach Deficiency."
       ],
       "contraindications_zh": [
-        "脾胃虛弱者，宜謹慎並加減使用",
         "熱盛者禁用"
       ],
       "safety_flags": [],
@@ -54825,6 +55003,9 @@
         ],
         "contraindications_en": [
           "translated: 本卡 contraindications_zh 逐條忠實翻譯(紅線5 同長同序,強度不升降)"
+        ],
+        "derived_from": [
+          "curriculum 方剂学汇总 Table 295 (You Gui Wan)"
         ]
       },
       "clinical_classification_zh": "臨床常用專病處方",
@@ -55053,7 +55234,20 @@
       ],
       "ba_fa_en": [
         "tonifying method"
-      ]
+      ],
+      "derived_from": {
+        "formula_id": "formula.you_gui_wan",
+        "name_zh": "右歸丸",
+        "relation": "減",
+        "change": [
+          "-鹿角膠",
+          "-菟絲子",
+          "-當歸",
+          "+炙甘草"
+        ],
+        "indication_zh": "腎陽虛衰憊：腹痛、腰痠、肢冷、脈細；真寒假熱",
+        "source": "curriculum 方剂学汇总 Table 295 (You Gui Wan)"
+      }
     },
     {
       "id": "formula.qi_ju_di_huang_wan",
@@ -55328,6 +55522,9 @@
         ],
         "contraindications_en": [
           "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 2 條(不同來源並行),對齊為 2 組;原條目逐字保留,補齊側為對側之翻譯"
+        ],
+        "derived_from": [
+          "curriculum 方剂学汇总 Table 300 (Liu Wei Di Huang Wan)"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/115",
@@ -55862,7 +56059,18 @@
       ],
       "ba_fa_en": [
         "tonifying method"
-      ]
+      ],
+      "derived_from": {
+        "formula_id": "formula.liu_wei_di_huang_wan",
+        "name_zh": "六味地黃丸",
+        "relation": "加",
+        "change": [
+          "+枸杞子 9g",
+          "+白菊花 9g"
+        ],
+        "indication_zh": "肝腎陰虛:視物昏花、畏光、迎風流淚",
+        "source": "curriculum 方剂学汇总 Table 300 (Liu Wei Di Huang Wan)"
+      }
     },
     {
       "id": "formula.zhi_bai_di_huang_wan",
@@ -56131,6 +56339,9 @@
         "source_classic": [
           "https://www.zhongyifangji.com/home/prescription/detail/id/31",
           "https://cloudtcm.com/formula/137"
+        ],
+        "derived_from": [
+          "curriculum 方剂学汇总 Table 300 (Liu Wei Di Huang Wan)"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/137",
@@ -56800,7 +57011,18 @@
       ],
       "ba_fa_en": [
         "tonifying method"
-      ]
+      ],
+      "derived_from": {
+        "formula_id": "formula.liu_wei_di_huang_wan",
+        "name_zh": "六味地黃丸",
+        "relation": "加",
+        "change": [
+          "+知母 6g",
+          "+黃柏 6g"
+        ],
+        "indication_zh": "陰虛火旺、骨蒸勞熱：盜汗；濕熱淋證",
+        "source": "curriculum 方剂学汇总 Table 300 (Liu Wei Di Huang Wan)"
+      }
     },
     {
       "id": "formula.shen_qi_wan",
@@ -63046,17 +63268,14 @@
       ],
       "contraindications_en": [
         "Contraindicated for those with Damp-Heat in the Lower Jiao.",
-        "Modify for Kidney Fire Blazing.",
         "Contraindicated for those with Externally contracted pathogens.",
         "Discontinue use of acrid, spicy foods and avoid sexual intercourse while taking this formula."
       ],
       "cautions_en": [
-        "Modify for Kidney Fire Blazing.",
-        "Discontinue use of acrid, spicy foods and avoid sexual intercourse while taking this formula."
+        "Modify for Kidney Fire Blazing."
       ],
       "cautions_zh": [
-        "腎火熾盛者宜加減使用",
-        "服用本方期間，忌辛辣食物並避免房事"
+        "腎火熾盛者宜加減使用"
       ],
       "herb_drug_interactions_en": [],
       "category_zh": "固澀劑",
@@ -63066,7 +63285,6 @@
       "taiwan_pharmacopeia_zh": "有收載(臺灣中藥典 p.135)",
       "contraindications_zh": [
         "下焦濕熱者禁用",
-        "腎火熾盛者宜加減使用",
         "外感者禁用",
         "服用本方期間，忌辛辣食物並避免房事"
       ],
@@ -67333,6 +67551,9 @@
         ],
         "related_formulas": [
           "curriculum/formulas/ (Board exam high-frequency sister formula associations)"
+        ],
+        "derived_from": [
+          "curriculum 方剂学汇总 Table 105 (Si Ni San)"
         ]
       },
       "ad_syndromes_en": [
@@ -67705,7 +67926,21 @@
         "restlessness",
         "abdominal pain and cramping",
         "breast distention and pain"
-      ]
+      ],
+      "derived_from": {
+        "formula_id": "formula.si_ni_san",
+        "name_zh": "四逆散",
+        "relation": "加",
+        "change": [
+          "-枳實",
+          "+陳皮",
+          "+川芎",
+          "+香附",
+          "+枳殼"
+        ],
+        "indication_zh": "肝氣鬱結重證：脅肋疼痛、往來寒熱",
+        "source": "curriculum 方剂学汇总 Table 105 (Si Ni San)"
+      }
     },
     {
       "id": "formula.gua_lou_xie_bai_ban_xia_tang",
@@ -67856,6 +68091,9 @@
         ],
         "contraindications_en": [
           "translated: 本卡 contraindications_zh 逐條忠實翻譯(紅線5 同長同序,強度不升降)"
+        ],
+        "derived_from": [
+          "curriculum 方剂学汇总 Table 416 (Gua Lou Xie Bai Bai Jiu Tang)"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/357",
@@ -67899,7 +68137,17 @@
         "Strong antispasmodic, analgesic, expectorant, antiasthmatic",
         "Inhibits platelet aggregation"
       ],
-      "composition_suspect_cleared_note": "2026-08-19 原組成僅剩方名首味瓜蔞,依《金匱要略》胸痹篇(白酒湯加半夏)重建四味"
+      "composition_suspect_cleared_note": "2026-08-19 原組成僅剩方名首味瓜蔞,依《金匱要略》胸痹篇(白酒湯加半夏)重建四味",
+      "derived_from": {
+        "formula_id": "formula.gua_lou_xie_bai_bai_jiu_tang",
+        "name_zh": "瓜蔞薤白白酒湯",
+        "relation": "加",
+        "change": [
+          "+半夏"
+        ],
+        "indication_zh": "胸痹疼痛較甚、痰濁明顯者",
+        "source": "curriculum 方剂学汇总 Table 416 (Gua Lou Xie Bai Bai Jiu Tang)"
+      }
     },
     {
       "id": "formula.ban_xia_hou_po_tang",
@@ -71240,8 +71488,6 @@
         "血熱者禁用",
         "痰阻者禁用",
         "孕婦禁用",
-        "須確認病人神志已清醒、體溫正常",
-        "須確認出血已止、脈象緩和",
         "此中藥在中風急性期絕對禁用！本方宜用於病人神志清醒、體溫正常、出血已止、脈象緩弱者。",
         "高血壓者可服用，但陰虛血熱者忌服。",
         "使用本方需久服才能有效，愈後還應繼續服用，以鞏固療效，防止復發，王氏謂：「服此方愈後，藥不可斷，或隔三五日吃一付，或七八日吃一付。」但若中風後半身不遂屬陰虛陽亢，痰阻血瘀，見舌紅苔黃、脈洪大有力者，非本方所宜。"
@@ -71987,7 +72233,6 @@
         "產後因熱迫血妄行之出血者禁用",
         "孕婦禁用",
         "有出血傾向或活動性出血疾病者禁用",
-        "惡露已正常排出，僅輕微腹痛者，宜加減使用",
         "本方宜用于產後血虛寒凝之證，血熱而有瘀滯者忌用。生化湯用於臨床，必須本著養血生新、活血化瘀這一治療原則，用治於 「血塊痛」 者，方能收到良好的效果，決不能以此當作補養劑而濫用之"
       ],
       "safety_flags": [],
@@ -72611,7 +72856,6 @@
         "This formula is a remedy for treating the branch in acute situations; once bleeding stops, seek the cause and address the root to consolidate the effect. It is not appropriate for bleeding of the deficiency-cold type. As a powder it can be taken internally or applied externally, but it should be prepared in advance so the fire qi dissipates before use. The ingredients are all charred, but take care to 'preserve their nature' (cun xing), otherwise the effect is unreliable."
       ],
       "contraindications_zh": [
-        "治療期間病人應安靜臥床",
         "虛寒性出血者禁用",
         "本方為急則治標之劑，血止之後，還當審因圖本，方能鞏固療效；對虛寒性出血則不宜使用。本方為散劑，既可內服，也能外用，但應預先制備，使火氣消退，方可使用。方中藥物皆燒炭，但應注意「存性」，否則藥效不確。"
       ],
@@ -77895,7 +78139,6 @@
         "This formula is not for long-term use; in weak patients it is often combined with formulas that tonify the Spleen and Stomach."
       ],
       "contraindications_zh": [
-        "過量症狀：頭暈、目眩、口淡、食慾不振",
         "大汗傷津、體液耗竭者禁用",
         "嘔吐過度者禁用",
         "腹瀉過度者禁用",
@@ -80316,6 +80559,9 @@
           "data/imports/cloudtcm/formula_url_map.json#二妙散/pageData.ActionIndication",
           "https://cloudtcm.com/formula/368",
           "translated 2026-09-07 from modifications_zh (Claude)"
+        ],
+        "derived_from": [
+          "curriculum/formulas/06_Formula_Cards_051-060_祛濕劑.md"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/368",
@@ -80600,7 +80846,18 @@
         "If there is damp-heat leg qi, Yi Yi Ren, Mu Gua, Bing Lang and the like may be added to percolate dampness and discharge turbidity.",
         "If there is damp-heat vaginal discharge, Chi Fu Ling, Zhi Zi, Yi Yi Ren, Che Qian Zi and the like may be added to percolate dampness and check discharge",
         "If there are damp sores or damp itching of the lower body, Long Dan Cao, Ze Xie, Chi Xiao Dou and Tu Fu Ling may be added to dispel damp-heat and resolve sore toxin."
-      ]
+      ],
+      "derived_from": {
+        "formula_id": "formula.si_miao_wan",
+        "name_zh": "四妙丸",
+        "relation": "減",
+        "change": [
+          "-薏苡仁",
+          "-牛膝"
+        ],
+        "indication_zh": "濕熱下注筋骨疼痛，足膝紅腫者",
+        "source": "curriculum/formulas/06_Formula_Cards_051-060_祛濕劑.md"
+      }
     },
     {
       "id": "formula.si_miao_wan",
@@ -80776,6 +81033,9 @@
         ],
         "name_en": [
           "curriculum/formulas/06_Formula_Cards_051-060_祛濕劑.md (American Dragon display name: SI MIAO WAN - 四妙丸 - FOUR MARVEL PILL); 另見 AD_Selected_Formulas_Name_Herbs_Actions.md / American_Dragon_201_Formulas_Name_Actions_Syndromes.md / American_Dragon_201_Formulas_Name_Treats_Contraindications_Interactions.md 四處引用一致"
+        ],
+        "derived_from": [
+          "curriculum 方剂学汇总 Table 564 (Er Miao San)"
         ]
       },
       "clinical_classification_zh": "臨床常用專病處方",
@@ -81045,7 +81305,18 @@
         "especially numbness of the legs",
         "weak legs",
         "swollen feet with joint pain; thick, foul-smelling yellow vaginal discharge and damp sores of the lower limbs may be seen"
-      ]
+      ],
+      "derived_from": {
+        "formula_id": "formula.er_miao_san",
+        "name_zh": "二妙散",
+        "relation": "加",
+        "change": [
+          "+川牛膝",
+          "+薏苡仁"
+        ],
+        "indication_zh": "濕熱下注：痿證、下肢麻木無力、足腫痛",
+        "source": "curriculum 方剂学汇总 Table 564 (Er Miao San)"
+      }
     },
     {
       "id": "formula.zhen_wu_tang",
@@ -83931,7 +84202,6 @@
       "contraindications_en": [
         "Chronic Lin Syndrome.",
         "Pregnancy.",
-        "Long term use may produce weakness, palpitations, light headedness and loss of appetite.",
         "Chronic disease with weakness.",
         "Deficiency Cold.",
         "Avoid in those with chronic headache or palpitations.",
@@ -83940,7 +84210,6 @@
       "contraindications_zh": [
         "久病淋證者禁用",
         "孕婦禁用",
-        "長期服用可能導致虛弱、心悸、頭暈及食慾不振",
         "久病體虛者禁用",
         "虛寒者禁用",
         "長期頭痛、心悸忌服",
@@ -85860,12 +86129,10 @@
         "虛煩失眠甚 → 加酸棗仁、麥冬"
       ],
       "contraindications_en": [
-        "Wen Dan Tang regulates Qi, transforms Phlegm, clears the Gallbladder and harmonizes the Stomach, but is not intended for long-term use. While taking this formula, eat a bland diet and avoid spicy, greasy, raw or cold foods.",
-        "Not appropriate for dizziness, insomnia or palpitations due to Yin deficiency with Blood deficiency."
+        "Wen Dan Tang regulates Qi, transforms Phlegm, clears the Gallbladder and harmonizes the Stomach, but is not intended for long-term use. While taking this formula, eat a bland diet and avoid spicy, greasy, raw or cold foods."
       ],
       "contraindications_zh": [
-        "溫膽湯具有理氣化痰、清膽和胃的功效，但不宜長期服用。服用本方期間，應注意飲食清淡，避免辛辣刺激、油膩生冷的食物。",
-        "對陰虛血少之眩暈、失眠、心悸等不適用"
+        "溫膽湯具有理氣化痰、清膽和胃的功效，但不宜長期服用。服用本方期間，應注意飲食清淡，避免辛辣刺激、油膩生冷的食物。"
       ],
       "safety_flags": [],
       "source_urls": [
@@ -86017,7 +86284,6 @@
       "exact_source_url": "https://cloudtcm.com/formula/250",
       "fetched_at": "2026-07-23T07:08:57.097Z",
       "cautions_zh": [
-        "溫膽湯具有理氣化痰、清膽和胃的功效，但不宜長期服用。服用本方期間，應注意飲食清淡，避免辛辣刺激、油膩生冷的食物。",
         "對陰虛血少之眩暈、失眠、心悸等不適用"
       ],
       "safety_source": "cloudtcm_cautions_field",
@@ -86519,7 +86785,6 @@
         "耳痛"
       ],
       "cautions_en": [
-        "Wen Dan Tang regulates qi, transforms Phlegm, clears the Gallbladder, and harmonizes the Stomach, but is not suitable for long-term use; while taking it, keep the diet bland and avoid spicy, greasy, or raw and cold foods.",
         "Not suitable for dizziness, insomnia, or palpitations due to Yin deficiency with Blood depletion."
       ],
       "herb_drug_interactions_en": [],
@@ -92014,7 +92279,6 @@
         "單側疼痛"
       ],
       "contraindications_en": [
-        "Because this formula is quite harsh, warming and drying, it should only be prescribed for those with a relatively strong constitution.",
         "Contraindicated for those with Yin Deficiency.",
         "Contraindicated during pregnancy."
       ],
@@ -92030,7 +92294,6 @@
       "course_level_en": "Formulations 2 — 1st group: Detailed Knowledge",
       "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/XiaoHuoLuoDan.html",
       "contraindications_zh": [
-        "本方藥性峻烈溫燥，僅適用於體質較強者",
         "陰虛者禁用",
         "孕婦禁用"
       ],
@@ -96359,12 +96622,10 @@
       ],
       "cautions_en": [
         "Discontinue use when consciousness returns.",
-        "Do not take Zhu Sha in large amounts or for a long time.",
         "Side effects from overuse include: sweating, nausea, vomiting, cold extremities, a frozen effect, dyspnea, palpitations, dizziness and vertigo."
       ],
       "cautions_zh": [
         "神志恢復清醒後應即停藥",
-        "硃砂不宜大量或長期服用",
         "過量服用之副作用包括：出汗、噁心、嘔吐、四肢冰冷、僵滯感、呼吸困難、心悸及頭暈目眩"
       ],
       "herb_drug_interactions_en": [],
@@ -96374,8 +96635,7 @@
       "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/ZiXueDan.html",
       "contraindications_zh": [
         "孕婦禁用",
-        "硃砂不宜大量或長期服用",
-        "過量服用之副作用包括：出汗、噁心、嘔吐、四肢冰冷、僵滯感、呼吸困難、心悸及頭暈目眩"
+        "硃砂不宜大量或長期服用"
       ],
       "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 3 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：Han Shui Shi（in_formula_zh、actions_zh、role_reason_zh）、滑石（in_formula_zh、actions_zh、role_reason_zh）、Jin Bo（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。\n[2026-08-12 FB-19 眼讀止血 round 2] public_safe true → false:含硃砂/犀角/青木香(重金屬與管制/瀕危藥材),安全欄位覆蓋不足。 這是可逆的下架動作,未刪除任何內容、未新增任何臨床敘述;安全欄位補齊並經審核後可回復。見 docs/research_packs/FORMULA_EYESON_02.md。\n【2026-08-12 紅線五：組成 _zh 拉丁拼寫改中文】第2味 herb_zh「Han Shui Shi」→「寒水石」、name_zh「Han Shui Shi」→「寒水石」；第4味 herb_zh「Xi Jiao」→「犀角」、name_zh「Xi Jiao」→「犀角」；第12味 herb_zh「(Qing Mu Xiang)」→「(青木香)」、name_zh「(Qing Mu Xiang)」→「(青木香)」；第18味 herb_zh「Zhi Xiao Shi」→「制硝石」、name_zh「Zhi Xiao Shi」→「制硝石」；第19味 herb_zh「Jin Bo」→「金箔」、name_zh「Jin Bo」→「金箔」。拼音原值仍在各列 pinyin 欄；中文名依該列 herb_id 於 herb_canon_shortlist 的中文名＋原拼寫的炮製前綴／部位後綴（炒、酒炒、制、穗、梢…）對照填入。\n【2026-08-12 樣板句清除 — 錯置的甘草功效（變體）】以下 2 味藥的所列欄位原值逐字同為「和中健脾，調和諸藥。」（原文保存於此）：麝香（in_formula_zh、actions_zh、role_reason_zh）、磁石（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。",
       "source_classic": "《外台秘要》",
@@ -104643,11 +104903,9 @@
       "modifications_en": [],
       "modifications_zh": [],
       "contraindications_en": [
-        "Use only for Damp-Heat type sudden turmoil disorder.",
         "Contraindicated for Cold-Dampness."
       ],
       "contraindications_zh": [
-        "本方僅適用於濕熱型霍亂",
         "寒濕者禁用"
       ],
       "safety_flags": [],
@@ -106899,8 +107157,7 @@
       "fetched_at": "2026-07-23T07:08:51.649Z",
       "cautions_zh": [
         "風寒或熱邪所致咳嗽、呃逆者慎用",
-        "表熱所致高熱煩躁者慎用",
-        "肺痿病，有虛熱與虛寒之分。屬於虛寒者，不宜使用本方"
+        "表熱所致高熱煩躁者慎用"
       ],
       "safety_source": "cloudtcm_cautions_field",
       "safety_source_url": "https://cloudtcm.com/formula/221",
@@ -108243,7 +108500,6 @@
         "Contraindicated during pregnancy."
       ],
       "contraindications_zh": [
-        "本方僅適用於風寒夾痰所致之中風（口眼喎斜、半身不遂）。",
         "若屬氣虛血瘀，或肝風內動之口眼喁斜、半身不遂，不宜使用。",
         "本方偏溫燥。若屬肝陽化風、肝風內動，或氣虛血瘀所致之口眼喎斜、半身不遂者，不宜使用。白附子與全蠍皆有毒，且全方皆使用生品，藥勢較峻烈，劑量不可過大。",
         "孕婦禁用。",
@@ -116038,7 +116294,6 @@
       "exact_source_url": "https://cloudtcm.com/formula/82",
       "fetched_at": "2026-07-23T07:09:01.011Z",
       "cautions_zh": [
-        "大便溏瀉者，不宜使用本方。",
         "本方性寒，脾胃虛寒者慎用。",
         "孕婦慎用。"
       ],
@@ -116402,7 +116657,6 @@
         "clearing method"
       ],
       "cautions_en": [
-        "Not suitable for those with loose stools or diarrhea.",
         "This formula is cold in nature; use with caution in those with Spleen and Stomach Deficiency Cold.",
         "Use with caution during pregnancy."
       ]
@@ -116675,6 +116929,9 @@
         ],
         "source_classic": [
           "https://www.zhongyifangji.com/home/prescription/detail/id/179(「枳实薤白桂枝汤【出处】《金匮要略》」;帳本 docs/research_packs/SOURCE_CLASSIC_WEB_PROPOSALS_2026-08-19.json)"
+        ],
+        "derived_from": [
+          "curriculum 方剂学汇总 Table 416 (Gua Lou Xie Bai Bai Jiu Tang)"
         ]
       },
       "ad_syndromes_en": [
@@ -116802,7 +117059,20 @@
         "drooling",
         "shortness of breath",
         "localized chest distention, with a sensation of surging upward from the rib-side to the chest"
-      ]
+      ],
+      "derived_from": {
+        "formula_id": "formula.gua_lou_xie_bai_bai_jiu_tang",
+        "name_zh": "瓜蔞薤白白酒湯",
+        "relation": "加",
+        "change": [
+          "+枳實",
+          "+厚朴",
+          "+桂枝",
+          "-白酒"
+        ],
+        "indication_zh": "胸痹氣結較甚：心中痞氣、脹滿",
+        "source": "curriculum 方剂学汇总 Table 416 (Gua Lou Xie Bai Bai Jiu Tang)"
+      }
     },
     {
       "id": "formula.zuo_jin_wan",
@@ -117818,12 +118088,10 @@
         "Atrophy disorder (Wei Syndrome) due to Liver and Kidney Deficiency"
       ],
       "contraindications_zh": [
-        "實火者禁用",
-        "服藥期間應避免辛辣刺激性食物"
+        "實火者禁用"
       ],
       "contraindications_en": [
-        "Contraindicated for those with Excess Fire.",
-        "Avoid foods that are acrid and spicy."
+        "Contraindicated for those with Excess Fire."
       ],
       "formula_family": [],
       "review_status": "draft",
@@ -118773,7 +119041,6 @@
         "Yi Yin"
       ],
       "contraindications_zh": [
-        "宜漸進給藥，見汗出即停服",
         "少陰證者禁用",
         "陽虛者禁用",
         "表虛中風證者禁用",
@@ -118783,7 +119050,6 @@
         "表虛（衛氣虛）者禁用"
       ],
       "contraindications_en": [
-        "Administer gradually and stop when sweating has begun.",
         "Contraindicated for those with Shao Yin syndrome.",
         "Contraindicated for those with Yang Deficiency.",
         "Contraindicated for those with Windstroke patterns with External Deficiency.",
@@ -118834,6 +119100,9 @@
         ],
         "contraindications_en": [
           "2026-08-19 雙語聯集對齊：原 contraindications_zh 2 條 / contraindications_en 8 條(不同來源並行),對齊為 8 組;原條目逐字保留,補齊側為對側之翻譯"
+        ],
+        "derived_from": [
+          "由 麻黃湯 的 formula_family 反向產生"
         ]
       },
       "ad_syndromes_en": [
@@ -118994,7 +119263,17 @@
         "agitation",
         "absence of sweating",
         "difficulty breathing"
-      ]
+      ],
+      "derived_from": {
+        "formula_id": "formula.ma_huang_tang",
+        "name_zh": "麻黃湯",
+        "relation": "加",
+        "change": [
+          "加石膏 15g、生薑 9g、大棗 4枚；倍麻黃"
+        ],
+        "indication_zh": "",
+        "source": ""
+      }
     },
     {
       "id": "formula.dan_shen_yin",
@@ -120826,6 +121105,9 @@
         ],
         "source_classic": [
           "https://cloudtcm.com/formula/5468(「都氣丸,出處:《症因脈治》卷三」;帳本 docs/research_packs/SOURCE_CLASSIC_WEB_PROPOSALS_2026-08-19.json)"
+        ],
+        "derived_from": [
+          "curriculum 方剂学汇总 Table 300 (Liu Wei Di Huang Wan)"
         ]
       },
       "ad_syndromes_en": [
@@ -120993,7 +121275,17 @@
         "dizziness",
         "tinnitus",
         "seminal emission"
-      ]
+      ],
+      "derived_from": {
+        "formula_id": "formula.liu_wei_di_huang_wan",
+        "name_zh": "六味地黃丸",
+        "relation": "加",
+        "change": [
+          "+五味子 6g"
+        ],
+        "indication_zh": "腎陰虛：動則喘促、呃逆",
+        "source": "curriculum 方剂学汇总 Table 300 (Liu Wei Di Huang Wan)"
+      }
     },
     {
       "id": "formula.er_xian_tang",
@@ -122817,7 +123109,6 @@
       ],
       "contraindications_zh": [
         "孕婦禁用",
-        "若服用本方導致腹瀉未能痊癒，宜改用他方。",
         "體虛氣血不足者禁用。"
       ],
       "contraindications_en": [
@@ -125916,14 +126207,12 @@
       "contraindications_zh": [
         "體弱虛證者禁用",
         "體虛者禁用",
-        "風熱者禁用",
-        "大量服用可能導致汗出過多，若為有汗之感冒則恐傷津耗陽"
+        "風熱者禁用"
       ],
       "contraindications_en": [
         "Contraindicated for those with weak and Deficient Conditions.",
         "Contraindicated for those with weakness.",
-        "Contraindicated for those with Wind-Heat.",
-        "Large doses may cause excess perspiration Common cold with perspiration and injure Fluids and Yang."
+        "Contraindicated for those with Wind-Heat."
       ],
       "formula_family": [],
       "review_status": "draft",
@@ -127350,11 +127639,9 @@
         "Spleen Deficiency with vigorous Dampness and Qi Stagnation (Pi Shui - Skin Water)"
       ],
       "contraindications_zh": [
-        "脾虛甚者宜配伍健脾藥",
         "服藥期間忌食不易消化的食物"
       ],
       "contraindications_en": [
-        "With severe Spleen Deficiency, use Spleen tonifying herbs.",
         "Avoid difficult to digest foods while taking this formula."
       ],
       "formula_family": [],
@@ -127529,12 +127816,10 @@
         "喘促"
       ],
       "cautions_en": [
-        "With severe Spleen Deficiency, use Spleen tonifying herbs.",
-        "Avoid difficult to digest foods while taking this formula."
+        "With severe Spleen Deficiency, use Spleen tonifying herbs."
       ],
       "cautions_zh": [
-        "脾虛甚者宜配伍健脾藥",
-        "服藥期間忌食不易消化的食物"
+        "脾虛甚者宜配伍健脾藥"
       ],
       "herb_drug_interactions_en": [],
       "category_zh": "未分類 / 考點與補充劑",
@@ -130069,8 +130354,7 @@
       "course_level_en": "Not listed in the Formulations 1/2 knowledge-level lists",
       "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/XianFangHuoMingYin.html",
       "contraindications_zh": [
-        "陰證（深部）瘡瘍已潰破者禁用",
-        "副作用：噁心、嘔吐"
+        "陰證（深部）瘡瘍已潰破者禁用"
       ],
       "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 2 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：白芷（in_formula_zh、actions_zh、role_reason_zh）、Zhi Chuan Shan Jia（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。\n【2026-08-12 紅線五：組成 _zh 拉丁拼寫改中文】第4味 herb_zh「Dang Gui Wei」→「當歸尾」、name_zh「Dang Gui Wei」→「當歸尾」；第6味 herb_zh「Chao Zao Jiao Ci」→「炒皂角刺」、name_zh「Chao Zao Jiao Ci」→「炒皂角刺」；第7味 herb_zh「Zhi Chuan Shan Jia」→「制穿山甲」、name_zh「Zhi Chuan Shan Jia」→「制穿山甲」。拼音原值仍在各列 pinyin 欄；中文名依該列 herb_id 於 herb_canon_shortlist 的中文名＋原拼寫的炮製前綴／部位後綴（炒、酒炒、制、穗、梢…）對照填入。\n【2026-08-12 樣板句清除 — 錯置的甘草功效（變體）】以下 1 味藥的所列欄位原值逐字同為「和中健脾，調和諸藥。」（原文保存於此）：炒皂角刺（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。",
       "source_classic": "《校注婦人良方》",
@@ -130363,8 +130647,7 @@
         "結節性紅斑"
       ],
       "contraindications_en": [
-        "Cold, Qi Deficiency, or Blood Deficiency.",
-        "Avoid scratching the affected area while taking the formula."
+        "Cold, Qi Deficiency, or Blood Deficiency."
       ],
       "cautions_en": [
         "Cold, Qi Deficiency, or Blood Deficiency.",
@@ -130380,8 +130663,7 @@
       "course_level_en": "Not listed in the Formulations 1/2 knowledge-level lists",
       "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/SiMiaoYongAnTang.html",
       "contraindications_zh": [
-        "寒證、氣虛或血虛者禁用",
-        "服用本方期間，宜避免搔抓患部"
+        "寒證、氣虛或血虛者禁用"
       ],
       "source_classic": "《驗方新編》",
       "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/SiMiaoYongAnTang.html",
@@ -131065,8 +131347,7 @@
         "全身疼痛"
       ],
       "contraindications_en": [
-        "Wind-Cold-Damp Bi.",
-        "Avoid spicy, pungent, oily or greasy foods while taking this formula."
+        "Wind-Cold-Damp Bi."
       ],
       "cautions_en": [
         "Wind-Cold-Damp Bi.",
@@ -131083,8 +131364,7 @@
       "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/DangGuiNianTongTang.html",
       "taiwan_pharmacopeia_zh": "臺灣中藥典 第 128 號(THP p.133)",
       "contraindications_zh": [
-        "風寒濕痹者禁用",
-        "服用本方期間，宜避免辛辣、油膩食物"
+        "風寒濕痹者禁用"
       ],
       "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 2 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：羌活（in_formula_zh、actions_zh、role_reason_zh）、茵陳蒿（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。\n【2026-08-12 紅線五：組成 _zh 拉丁拼寫改中文】第6味 name_zh「Dang Gui Shen」→「當歸身」；第11味 name_zh「Jiu Chao Ku Shen」→「酒炒苦參」；第12味 name_zh「Chao Huang Qin」→「炒黃芩」；第13味 name_zh「Jiu Xi Zhi Mu」→「酒洗知母」。拼音原值仍在各列 pinyin 欄；中文名依該列 herb_id 於 herb_canon_shortlist 的中文名＋原拼寫的炮製前綴／部位後綴（炒、酒炒、制、穗、梢…）對照填入。\n【2026-08-12 樣板句清除 — 錯置的甘草功效（變體）】以下 1 味藥的所列欄位原值逐字同為「和中健脾，調和諸藥。」（原文保存於此）：酒炒苦參（actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。",
       "source_classic": "《醫學啟源》",
@@ -131240,6 +131520,9 @@
         ],
         "contraindications_en": [
           "translated: 本卡 contraindications_zh 逐條忠實翻譯(紅線5 同長同序,強度不升降)"
+        ],
+        "derived_from": [
+          "curriculum/formulas/06_Formula_Cards_051-060_祛濕劑.md"
         ]
       },
       "actions_en": [
@@ -131386,7 +131669,17 @@
         "lower back pain",
         "yellow, thick, foul-smelling vaginal discharge",
         "damp sores on the lower limbs"
-      ]
+      ],
+      "derived_from": {
+        "formula_id": "formula.si_miao_wan",
+        "name_zh": "四妙丸",
+        "relation": "減",
+        "change": [
+          "-薏苡仁"
+        ],
+        "indication_zh": "濕熱下注肢體痿痺，膝脛紅腫痛者",
+        "source": "curriculum/formulas/06_Formula_Cards_051-060_祛濕劑.md"
+      }
     },
     {
       "id": "formula.shen_su_yin",
@@ -134617,8 +134910,6 @@
         "便秘"
       ],
       "contraindications_en": [
-        "Use only for acute diseases.",
-        "Take only long enough to achieve results (only a few doses).",
         "Contraindicated during pregnancy.",
         "Contraindicated for weak patients."
       ],
@@ -134637,8 +134928,6 @@
       "course_level_en": "Formulations 1 — 2nd group: Familiar With The Information",
       "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/DaXianXiongTang.html",
       "contraindications_zh": [
-        "本方僅適用於急性病證",
-        "服藥中病即止（僅需數劑）",
         "孕婦禁用",
         "體虛者禁用"
       ],
@@ -135234,6 +135523,9 @@
         ],
         "source_classic": [
           "curriculum/formulas/Herbal Formulations Comprehensive.docx.md(「Wen Pi Tang (Qian Jin Yao Fang) Minus Xi Xin; SP Yang Xu causing cold accumulation, consti」;帳本 docs/research_packs/SOURCE_CLASSIC_PROPOSALS_2026-08-19.json)"
+        ],
+        "derived_from": [
+          "curriculum 方剂学汇总 Table 77 (Da Huang Fu Zi Tang)"
         ]
       },
       "actions_en": [
@@ -135426,7 +135718,20 @@
       ],
       "ba_fa_en": [
         "purging method (draining downward)"
-      ]
+      ],
+      "derived_from": {
+        "formula_id": "formula.da_huang_fu_zi_tang",
+        "name_zh": "大黃附子湯",
+        "relation": "加",
+        "change": [
+          "-細辛",
+          "+乾薑",
+          "+人參",
+          "+甘草"
+        ],
+        "indication_zh": "脾陽虛寒積便秘；久痢赤白",
+        "source": "curriculum 方剂学汇总 Table 77 (Da Huang Fu Zi Tang)"
+      }
     },
     {
       "id": "formula.hao_qin_qing_dan_tang",
@@ -136469,7 +136774,6 @@
         "盜汗"
       ],
       "contraindications_en": [
-        "Cinnabaris Zhu Sha is no longer used appropriate substitutions must be made.",
         "Contraindicated for those in whom Yin Deficiency is the primary condition.",
         "Contraindicated during pregnancy.",
         "Contraindicated for pediatric or geriatric patients."
@@ -136489,7 +136793,6 @@
       "course_level_en": "Not listed in the Formulations 1/2 knowledge-level lists",
       "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/ZhuShaAnShenWan.html",
       "contraindications_zh": [
-        "朱砂現已不再使用，須以適當藥物替代",
         "以陰虛為主證者禁用",
         "孕婦禁用",
         "孩童或老年患者禁用"
@@ -137209,8 +137512,6 @@
       "course_level_en": "Not listed in the Formulations 1/2 knowledge-level lists",
       "american_dragon_url": "https://www.americandragon.com/Herb%20Formulas%20copy/CiZhuWan.html",
       "contraindications_zh": [
-        "因腎肝陰虛火旺所致視聽異常者宜加減使用",
-        "長期治療宜謹慎",
         "孕婦禁用",
         "孩童或老年患者禁用"
       ],
@@ -137628,7 +137929,6 @@
       "taiwan_pharmacopeia_zh": "有收載(臺灣中藥典 p.133)",
       "contraindications_zh": [
         "孕婦禁用",
-        "若服用本方導致腹瀉未能痊癒，宜改用他方。",
         "體虛氣血不足者禁用。"
       ],
       "id_fix_note": "2026-08-11 F2 resolution: this was a duplicate import stub of formula.fu_yuan_huo_xue_tang (corrupt placeholder id). Content merged into canonical card where its fields were empty; stub deprecated, never deleted (D6).",

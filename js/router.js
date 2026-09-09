@@ -143,6 +143,21 @@
     });
   }
   if (fabHistory) fabHistory.addEventListener("click", () => window.history.back());
+  // D13(Ting 2026-09-09 選 a):375×812 手機上病例入口在 offsetTop 4,166,要滑 4.4 個螢幕;
+  // FAB 群加一顆「新增病例」—— 切到病例 workspace,再按既有的 #newCaseBtn(唯一的新增入口,
+  // 唯讀保護 / 通行碼那些守門都在它後面,這裡不另開路)。
+  const fabNewCase = document.getElementById("fabNewCase");
+  if (fabNewCase) {
+    fabNewCase.addEventListener("click", () => {
+      if (window.location.hash !== "#ws/cases") window.location.hash = "#ws/cases";
+      // setTimeout 而不是 requestAnimationFrame:背景分頁 / 隱藏視窗不跑 rAF,按了就沒反應;
+      // hashchange 是一個 task,排在它後面的 timer 一定看得到 router 已切好的 workspace。
+      setTimeout(() => {
+        const btn = document.getElementById("newCaseBtn");
+        if (btn) { btn.scrollIntoView({ block: "center" }); btn.click(); }
+      }, 60);
+    });
+  }
 
   route();
 })();

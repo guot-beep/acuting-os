@@ -1649,6 +1649,9 @@ function composeHerbFrequencyText() {
   if (timesPerDay) parts.push(`一天${timesPerDay}次`);
   if (timing) parts.push(zhOnly(timing));
   if (formType) parts.push(zhOnly(formType));
+  // D12(Ting 2026-09-09 選 a):這句的來源在 index.html 勾選框下方的說明(臺中榮總護理衛教 2024-11-10:
+  // 「同時服用西藥與中藥至少間隔1小時」;中國醫藥大學中西醫結合研究所 2026-07-22:一至二小時不是固定安全標準)。
+  // 寫進病歷的是妳勾選後組出來的一句話,不是資料欄位,所以來源放在說明文而不是 field_sources。
   if (separateFromWestern) parts.push("與西藥間隔至少1小時");
   if (!parts.length) return;
   const freqInput = form.elements.frequencyText;
