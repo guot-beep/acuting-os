@@ -1,3 +1,21 @@
+# 2026-09-09 — 三裁定執行(D12 選 a、D13 選 a、D14 照建議辦)+ 方劑安全欄內容批次
+
+Ting:「D12 選 a D13 選 a D14 照建議辦」「持續優化內容跟 UI 四小時又十分鐘」。
+**MEASURED TREE: claude/d12-d14 @ 08e10347**(基底 main b8f7f1c8;落地 = 本條 log 的下一個 commit,ff 到 main)
+五項回報:`docs/audits/FIVE_DAY_DISPATCH_2026-09-07_REPORT.md` 末段「2026-09-09」;Codex 交接:`docs/CODEX_HANDOFF.md` 頂端。
+
+| 項 | 做法 | before → after |
+|---|---|---|
+| D12 自動句來源 | index.html 說明改引臺中榮總護理衛教(2024-11-10)與中國醫大中西醫結合研究所(2026-07-22)兩個查證來源 | 無 URL → 2 個 |
+| D13 手機病例入口(凍結例外) | FAB 群加「＋ 新增病例」→ #ws/cases + #newCaseBtn;setTimeout 不用 rAF | 滑 4.4 個螢幕 → 一按 |
+| D14-4/5 家族連結 | link-formula-family-back --apply(0 遺失);2 條自我循環移除 | derived_from 0 → 29 |
+| D14-6 本方功效樣板 | 37+1 列譯自 in_formula_en(Sonnet 譯 + Opus 覆核) | 樣板 37 → 4(英文也通用) |
+| D14-7 禁忌/注意逐字重複 | 機械規則 41 方 54 句 + 23 方逐句判定 27 句;英文一律不刪、跟著搬 | 64 方 → 0 |
+| D14-8 channels_entered | 52 個英文/縮寫 → 中文經名 | 52 → 0 |
+| 中英陣列對齊(附帶) | 79 + 27 列 workflow 對齊 + 覆核 + 落地器機械再檢(不丟句/等長/expect 逐字/交叉重複整對丟) | 84 列 → 19 列 |
+| 未做 | 補肺湯禁忌(無來源)、黃芩劑量(B3)、63 個家族成員無卡、派工稿的三條病例旅程(本機無 Worker) | — |
+
+過程中被 CI 抓到一次(去重時照索引刪掉的 4 句英文只剩封存 → 回填,規則改成「去重只動中文」);API 限額打掉約 30 個 agent,用 resume 補跑。
 # 2026-09-09 — 修 bug:首頁搜尋開病症卡,同鑑別表的兩個時序缺陷(openKnowledgeRecord condition 分支)
 
 派工來源:e22b7f9c 的「誠實記下」(condition 分支同樣兩個時序缺陷,不在該包範圍,另開 task)。
