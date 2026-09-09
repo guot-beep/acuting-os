@@ -1273,8 +1273,9 @@ function idSlug(id) {
 // 類別順序只在同分時才有意義;它也是 renderGlobalResults 分組順序的第二把尺。
 // 病症、症狀排在穴位前:打「感冒」是要看感冒這個病,不是董氏「感冒一穴」(兩邊都是 prefix,同分;審查 M1)。
 // 穴位代碼 / 穴名 exact 命中的查詢(LI4、合谷)不受影響,因為那時只有穴位是 0 分。
-const GR_GROUP_ORDER = ["conditions", "symptoms", "points", "formulas", "herbs", "cases", "pharmDrugs", "comparisons"];
-const GR_KIND_BY_GROUP = { points: "point", formulas: "formula", herbs: "herb", conditions: "condition", cases: "case", symptoms: "symptom", pharmDrugs: "pharm", comparisons: "comparison" };
+// 證型(patterns)排在病症/症狀後、穴位前:「血虛」「肝鬱」這種辨證用語要開證型卡,不是標籤含它的穴位或方。
+const GR_GROUP_ORDER = ["conditions", "symptoms", "patterns", "points", "formulas", "herbs", "cases", "pharmDrugs", "comparisons"];
+const GR_KIND_BY_GROUP = { points: "point", formulas: "formula", herbs: "herb", conditions: "condition", cases: "case", symptoms: "symptom", patterns: "pattern", pharmDrugs: "pharm", comparisons: "comparison" };
 function grGroupOrder(key) {
   const order = GR_GROUP_ORDER.indexOf(key);
   if (order < 0) throw new Error(`unifiedSearch: 分組 ${key} 沒登記在 GR_GROUP_ORDER`);   // 漏登記會讓下拉第一列和 Enter 開的分岔(審查 M7)
@@ -1342,6 +1343,12 @@ function unifiedSearch(rawQuery) {
     comparisons: pick(knowledgeRecords("comparisons"),
       (c) => [c.title_zh, c.title_en, c.id, idSlug(c.id)],
       (c) => [txt(c.compares)]),
+    // 證型(2026-09-09 修正):搜尋框 placeholder 從 08-11 起就寫「例:血虛」,但證型從來不在搜尋範圍,
+    // 「血虛」開的是內文含它的潤腸丸。patternLibrary 是證型大卡(openPattern)讀的那一份;patternRegistry 是 id 權威、
+    // 但沒有卡可開,所以搜尋只走 patternLibrary。
+    patterns: pick(knowledgeRecords("patternLibrary"),
+      (p) => [p.name_zh, p.name_en, p.id, idSlug(p.id), txt(p.aliases_zh), txt(p.aliases_en)],
+      (p) => [txt(p.key_signs_zh), txt(p.treatment_principle_zh)]),
   };
 }
 
@@ -1442,14 +1449,17 @@ function renderGlobalResults(rawQuery) {
   group("pharmDrugs", modeText("西藥 Drugs", "Drugs"), res.pharmDrugs, (d) =>
     grItem("pharm", modeText("西藥", "Drug"), "", `${d.name_zh || d.name_en || d.id}`,
       [d.name_en, txt(d.brand_names_en)].filter(Boolean).join(" · "), { id: d.id }));
+  group("patterns", modeText("證型 Patterns", "Patterns"), res.patterns, (p) =>
+    grItem("pattern", modeText("證型", "Pattern"), "", `${p.name_zh || p.name_en || p.id}`,
+      p.name_en || "", { id: p.id }));
   group("comparisons", modeText("辨證鑑別 Comparisons", "Comparisons"), res.comparisons, (cp) =>
     grItem("comparison", modeText("鑑別", "Compare"), "", `${cp.title_zh || cp.title_en || cp.id}`,
       cp.title_en || "", { id: cp.id }));
 
   if (!groups.length) {
     globalResultsEl.innerHTML = `<p class="gr-empty">${escapeHtml(modeText(
-      `找不到「${rawQuery.trim()}」相關的穴位、方劑、中藥、病症、病例、症狀、西藥或鑑別表。`,
-      `No acupoints, formulas, herbs, conditions, cases, symptoms, drugs, or comparison tables found for “${rawQuery.trim()}”.`
+      `找不到「${rawQuery.trim()}」相關的穴位、方劑、中藥、病症、證型、病例、症狀、西藥或鑑別表。`,
+      `No acupoints, formulas, herbs, conditions, patterns, cases, symptoms, drugs, or comparison tables found for “${rawQuery.trim()}”.`
     ))}</p>`;
   } else {
     groups.sort((a, b) => a.best - b.best || a.order - b.order);
@@ -1546,6 +1556,11 @@ function openSearchTarget(kind, data) {
   if (kind === "pharm") {
     if (openKnowledgeRecord(kind, data.id)) return;   // api.openDetail 已支援 pharm
     goToSection("pharmSection");
+    return;
+  }
+  if (kind === "pattern") {
+    if (openKnowledgeRecord("pattern", data.id)) return;   // api.openPattern:證型大卡(modal)
+    goToSection("ws/condition");                            // API 還沒載入時的退路:證型住在病症 workspace
     return;
   }
   if (kind === "symptom") {

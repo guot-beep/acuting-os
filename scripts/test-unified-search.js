@@ -79,7 +79,10 @@ const SEEDS = [
   { q: "第二掌骨", want: { key: "points" } },
   { q: "感冒", want: { key: "conditions", id: "cond.common_cold" }, neverKey: "points" },
   { q: "蘇子", want: { key: null }, never: "herb.su_zi" },
-  { q: "Ma Zi Ren", want: { key: "herbs" }, never: "formula.ma_zi_ren_wan" }
+  { q: "Ma Zi Ren", want: { key: "herbs" }, never: "formula.ma_zi_ren_wan" },
+  // 證型(2026-09-09):placeholder 承諾的「血虛」要開證型卡,不是內文含它的方
+  { q: "血虛", want: { key: "patterns", id: "pattern.blood_deficiency" }, never: "formula.run_chang_wan" },
+  { q: "Blood Deficiency", want: { key: "patterns", id: "pattern.blood_deficiency" } }
 ];
 const idOf = (key, rec) => (key === "points" ? rec.code : rec.id);
 const rows = [];
