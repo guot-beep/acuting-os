@@ -5782,6 +5782,13 @@ body[data-content-mode="english"] .i18n-zh {
   font-weight: 800;
   padding: 0.38rem 0.65rem;
   text-decoration: none;
+  /* 修正(手機 375px):#ws/condition conditionSources() 對「純網址、無前後
+     文字」的 source 條目會直接把整個 URL 當成連結文字(label 退回 url)——
+     例如 nichd.nih.gov 那條無空格可斷,375px 下把 <a> 撐到 524px 寬,
+     父層 .k-source-links 只有 258px,一路把 documentElement.scrollWidth
+     推到 838,連帶 position:fixed 的 .fab-stack 被算到視窗外。
+     overflow-wrap: anywhere 讓長網址在容器寬度內斷行。 */
+  overflow-wrap: anywhere;
 }
 .k-source-links a:hover,
 .k-source-links a:focus-visible { background: #f4ecdc; outline: 2px solid #c59631; outline-offset: 1px; }
@@ -5798,6 +5805,14 @@ body[data-content-mode="english"] .i18n-zh {
   margin-top: 0.7rem;
   padding-top: 0.65rem;
 }
+/* 修正(手機 375px):protocolEvidenceBlock()(js/knowledge.js)整塊用行內
+   style 畫,裡面的 <p> 沒有 class,只能靠這個後代選擇器補 overflow-wrap。
+   內容是「匯入出處」說明,常以一段不含空格的長網址收尾(如
+   orthoinfo.aaos.org 的頁面),375px 下把 <p> 撐到 442px,連帶
+   .k-protocol-evidence / .k-condition-related 兩層外殼一起被撐寬,
+   是 documentElement.scrollWidth=838 的第二個來源(去掉它仍不夠,見
+   .k-condition-scope small 與 .k-source-links a 兩處同批修正)。 */
+.k-protocol-evidence p { overflow-wrap: anywhere; }
 .k-condition-related > strong { color: var(--accent-dark); }
 .k-condition-related > strong small { margin-left: 0.3rem; }
 .k-condition-flags { margin-top: 0.65rem; }
@@ -6990,7 +7005,16 @@ html { scroll-padding-top: 92px; }
   line-height: 1.6;
 }
 .k-condition-scope p { margin: 0.35rem 0 0; }
-.k-condition-scope small { display: block; margin-top: 0.4rem; opacity: 0.7; }
+.k-condition-scope small {
+  display: block;
+  margin-top: 0.4rem;
+  opacity: 0.7;
+  /* 修正(手機 375px):#ws/condition 這個 <small> 印的是整條「來源:...」
+     citation,常帶一段不含空格的長網址(如 knowledge.lancashire.ac.uk 的
+     eprint 連結),white-space 是 normal 但沒有 overflow-wrap,375px 下
+     被撐到 778px,是本頁 documentElement.scrollWidth=838 的最大單一來源。 */
+  overflow-wrap: anywhere;
+}
 .k-scope-precaution {
   padding: 0.35rem 0.5rem;
   border-radius: 4px;
