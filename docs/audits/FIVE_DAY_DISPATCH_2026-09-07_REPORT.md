@@ -116,3 +116,45 @@
 ## 今日新增的閘門 / 契約(進 CI)
 
 `test-unified-search.js`、`test-quality-panel-honesty.js`、`validate-lazy-grid-wiring.js`(+ self-test)、`validate-interactions.js` 四入口同路檢查;`validate.yml` push 觸發加 `claude/**`;`scripts/lib/extract-app-functions.js`(app.js 頂層函式抽取,讀過頭會丟錯)、`load-knowledge.js` 綁 `window`。
+
+---
+
+# 2026-09-09 · 三裁定執行(D12 選 a、D13 選 a、D14 照建議辦)+ 內容批次
+
+分支 `claude/d12-d14`(基底 main b8f7f1c8),落地 SHA 見 PROJECT_LOG。方法同第一天:我量分母、派 Sonnet/Opus 做、每批對抗式覆核、機械再檢、CI 綠才落。
+中途 API 限額(429)打掉約 30 個 agent,用 resume 補跑(已完成的走快取)。
+
+**(1) 做了什麼**
+- D12:病歷自動句「與西藥間隔至少1小時」的說明改引兩個查證過的來源:臺中榮民總醫院護理衛教〈我可以合併使用中藥嗎？〉(2024-11-10)「同時服用西藥與中藥至少間隔1小時。」;中國醫藥大學中西醫結合研究所〈中藥、西藥宜間隔多少時間？〉(2026-07-22 更新)「不宜視為適用於所有中西藥組合的固定安全標準」。原文寫的高雄榮總中醫部那頁 403 抓不到,不引。
+- D13(凍結例外):FAB 群加「＋ 新增病例」→ 切到 #ws/cases 後按既有 #newCaseBtn(守門都在它後面);用 setTimeout 不用 rAF(背景分頁不跑 rAF,本機隱藏 pane 實測抓到)。375×812:52×52、視窗內、按下 → caseDialog 開。
+- D14-1 大青龍湯麻黃 in_formula_zh「止咳化痰。」→「發汗解表,宣肺利水,止咳平喘,溫散寒邪。」(併入 D14-6 批次)。
+- D14-2 補肺湯禁忌/注意:課件 §15 與 AD 都沒有 → 仍待補,不代填。
+- D14-3 黃芩劑量:B3 劑量形狀公約未結案,不逐卡補。
+- D14-4 `link-formula-family-back.js --apply`:29 方補 derived_from(0 遺失、0 既有鍵值變動);63 個家族成員資料庫沒有,不憑空建。
+- D14-5 兩條指向自己的 formula_family 移除。
+- D14-6 本方功效樣板:37 列(zh = 藥材通用功效且 en 有本方特異句)+ 麻黃 1 列 → 33 列改(89 欄)、4 列英文本身也通用(unchanged)、1 列覆核未過。
+- D14-7 禁忌/注意逐字重複 64 方:機械規則(含禁字留禁忌欄、否則留注意欄)落地 41 方 54 句;會清空某欄的 23 方交給逐句判定(Sonnet 判定 + Opus 覆核 18 ok / 5 只改引證行號)→ 27 句各歸一欄,12 方某欄清空(每方附「repo 內找不到該層級句子」的查證)。英文句一律不刪:去重時照索引刪掉的 27 個 en 陣列被 CI(formula safety reachability)抓到 4 句只剩封存 → 回填;改成「去重只動中文,英文跟著搬到對側欄」。
+- D14-8 channels_entered 52 個英文/縮寫 → 中文經名(純對映)。
+- 附帶:方劑 _zh/_en 陣列長度不等 84 列 / 69 方 → 兩批對齊 workflow(79 + 27 列;Sonnet 對齊 + Opus 覆核 70 + 24 ok)→ 落地器機械再檢(不丟句、等長、expect 逐字、語言不混、交叉重複整對丟)→ 剩 19 列 / 19 方(覆核未過或機械檢查擋下)。
+
+**(2) before → after**
+
+| 指標 | before(main b8f7f1c8) | after(claude/d12-d14) |
+|---|---|---|
+| 本方功效 = 藥材通用功效樣板(且 en 有特異句) | 37 列 | 4 列(英文也通用) |
+| 禁忌/注意逐字重複的方 | 64 | 0(機械 41 + 判定 23) |
+| _zh/_en 長度不等(5 個安全/主治欄) | 84 列 / 69 方 | 19 列 / 19 方 |
+| derived_from(方劑家族反向) | 0 | 29 |
+| formula_family 指向自己 | 2 | 0 |
+| channels_entered 非中文 token | 52 | 0 |
+| 病歷自動句來源 | 無 URL | 2 個查證來源(標日期) |
+| 手機病例入口 | 滑 4.4 個螢幕 | FAB 一按 |
+
+**(3) 原始驗證**:每批 `validate-formula-standard / content-junk / bilingual-index-pairing / bilingual-render-parity / formula-safety-reachability / card-text-audience / check-validation-ratchet` 全 PASS;帳本 apply-field-ledger 各批「現況不符 0」;分支 CI 6fd3d4d0 failure(抓到 4 句英文只剩封存)→ f730d199 success;後續 commit 的 CI 見 PROJECT_LOG。
+
+**(4) 已知未解**
+- 19 列 _zh/_en 仍長度不等(覆核未過:例 當歸四逆湯「春夏或溫暖氣候禁用」英文出處存疑、膈下逐瘀湯 en「Contraindicated for those with during menstruation.」AD 原句語病);另 4 方(黃連阿膠湯、越鞠丸、柴胡疏肝散、少腹逐瘀湯)判定後 en 比 zh 多一句替代譯文(印兩次是雜訊、少印是安全問題)。
+- 補肺湯禁忌/注意仍空(無來源);黃芩劑量待 B3;63 個家族成員無卡。
+- 小青龍湯 en「Contraindicated for those with for those with hypertension.」(AD 原句語病,對側欄已有「高血壓者慎用」)—— 該不該退役,待 Ting。
+
+**(5) SHA**:`6fd3d4d0` `2e48c141` `f730d199` `f8ccf9c2` `12ab81f0`;審查與落地見 PROJECT_LOG。
