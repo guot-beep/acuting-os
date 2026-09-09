@@ -370,3 +370,136 @@ node scripts/dev-server.js 8644        # 服務 repo 根目錄
 - **L1 文案**:comparison 清單查無記錄的字從「No comparison records yet.」改成「No matching comparison records.」(43 筆,只有整層清空才會看到)。
 - **L2 量測 host**:用 127.0.0.1 開站會多一個「你正以 127.0.0.1 開啟本系統」的 alert 節點(34,883);重現請用 localhost。
 - **H1 CI**:這條分支的 workflow 檔基底早於 `claude/**` 觸發(acab129b),所以推了沒有 run;第二輪 rebase 到 main 之後推的分支才有 CI。
+
+---
+
+## 11. 候選 A 落地(2026-09-09):穴位清單 `#cards` 進 `#ws/acu` 才畫第一次
+
+**量測樹**:`claude/pkgC-cards-lazy`,開工基底 `origin/main @ 45a74011`(`ab052244` 是它的前一個 commit)。
+**量測台**:`node scripts/dev-server.js 8653` 服務本 worktree,Chromium 開 `http://localhost:8653/`
+(§10 L2:不用 127.0.0.1,否則多一個原點別名 alert 節點)。重載一律用 `?r=N` / `?a=N` 查詢字串
+——`navigate` 到只有 hash 不同的網址**不會重新載入**(同文件 hash 變更),量到的會是上一次的 boot。
+每組量三次;節點數在同一份程式碼下**完全確定**(三次三個一樣的數字),時間數字噪音大只列原始值。
+
+> **這一節的 before 不是 §2 的 34,882**:§2 量的是候選 B 落地之前的樹。候選 B 已經在 main 上,
+> 所以本節 before = 16,888(§6 的 16,883 加上 main 之後新增的 5 個節點,主要是 D13 的手機新增病例 FAB)。
+> 兩節的 before **不可相減**。
+
+### 11.1 改了什麼
+
+`app.js` +105 −1 行,其他 UI 檔零改動(`index.html` / `styles.css` / `js/router.js` / `js/knowledge.js` 都沒動)。
+
+* **延遲點**:`render()` 裡的 `renderCards(filtered)` 換成 `renderCardsWhenAcuOpen(filtered)`。
+  沒到時候就直接 return,**render() 其他的狀態(地圖、filter 摘要、detail 三態、resultCount、
+  病例/病人/品質各區)照舊全部更新** —— 只有卡片這一段被推遲。
+* **守門**(`acuCardsShouldRender()`,三個訊號依序):
+  1. `acuCardsRendered` 已經 true → 直接畫(畫過之後 25 個 render() 呼叫點的行為與改動前一字不差);
+  2. `document.body.dataset.activeWs === "acu"`(router 已經切好);
+  3. **hash 自己**(`#ws/acu` / `#point/<code>` / 任何 `closest("section[data-workspace]")` 落在 acu 的 `#<elementId>`)。
+  第 3 條是這一條與候選 B 最關鍵的差別:`index.html` 的 script 順序是 **app.js → router.js → js/knowledge.js**,
+  所以 app.js 註冊的 hashchange 監聽器**跑在 router 的 `route()` 之前**,那一刻 `activeWs` 還是上一頁的值。
+  `js/knowledge.js` 的 `renderWhenWorkspaceOpens` 可以只看 `activeWs`,是因為它排在 router 後面;
+  這裡照抄會讓「從首頁按進穴位目錄」那一次永遠等不到人畫。網址是權威來源,與監聽器順序無關。
+* **觸發點**:`window.addEventListener("hashchange", renderAcuCardsIfWorkspaceOpen)`
+  + `DOMContentLoaded`(defer script 一定在它之前全部執行完)+ `load` / `setTimeout` 備援。
+  **不用 rAF / IntersectionObserver**:背景分頁與隱藏視窗不跑 rAF(router.js `fabNewCase` 註解記過同一個坑),
+  而 IntersectionObserver 是 frame 之後才回呼,`#point/` 那條路 router 用 rAF 捲到 `detailCard` 會來不及。
+* **fail-open**:`index.html` 的 section 沒有預設 `hidden`,是 router.js 執行時才收起來的。
+  開機期結束後 `data-active-ws` 仍不存在 = router.js 沒載到、所有 section 同時攤開 →
+  **一律照舊全部畫**(§7 第 6 點對 `renderDxOnce` 的同一條要求)。
+* **狀態放在檔頭 boot-order 區**(`ACU_WORKSPACE` / `acuCardsRendered` / `acuCardsGateSettled`):
+  `render()` 在檔案上方就 top-level 跑過一次,`let` 放在函式旁邊會是 TDZ,而 TDZ 的 ReferenceError
+  會讓 `render()` 整個中止 —— 那正是 §5 說候選 A 風險高的那個失效模式(穴位清單無聲變空)。
+* **旗標排在畫之後**:`acuCardsRendered = true` 在 `renderCards()` **回來之後**才設;
+  renderCards 丟例外時旗標留在 false,下次進 acu 會再試一次(§10 M4 同一條),例外照舊往外傳、不吞。
+
+### 11.2 before → after(節點,三次重載三次一樣)
+
+| | before(`origin/main` 45a74011) | after | 差 |
+|---|---:|---:|---:|
+| **開機停 `#ws/home`,全站節點** | **16,888** ×3 | **3,121** ×3 | **−13,767(−81.5%)** |
+| `#cards` children / 子樹 | 947 / 13,767 | **0 / 0** | −947 / −13,767 |
+| `#cards [data-point-card]` | 947 | **0** | −947 |
+| 卡片 listener(每張 click + keydown,`renderCards` 原始碼) | 1,894 | **0** | −1,894 |
+| `[onclick]` 內嵌處理器(對照組,與本包無關) | 1 | 1 | 0 |
+| 開機後**切到 `#ws/acu`**,全站節點 | 16,888 | **16,888** | **0(收斂回 before)** |
+| 切到 acu 後 `#cards` children / 子樹 | 947 / 13,767 | **947 / 13,767** | **0** |
+| 首張 / 末張卡 | 睛明 BL1 / 腑巢二十三穴 | **同左** | — |
+
+`16,888 − 13,767 = 3,121`,**差額逐一等於 `#cards` 子樹**;進 acu 之後總數一個節點不多不少地回到 16,888。
+
+**時間(噪音大,列原始值,不取平均;結論同 §6.3:這台機器量不出差別)**
+
+| | `#ws/acu` 第一次切換 handlers_ms(三次) | domInteractive / domComplete(三次) |
+|---|---|---|
+| before | 1,124.9 · 3,133.7 · 650.7 | 1095/2199 · 353/1153 · 57/779 |
+| after | 898.1 · 1,494.5 · 560.0 | 366/900 · 87/550 · 46/452 |
+
+兩組完全重疊。**本節只宣稱節點數**;「切分頁變快」「省記憶體」這台量測台量不到,不寫成戰功。
+after 第一次進 acu 仍要付一次排版錢(§5 早就寫明),省下的是開機與**每一次非 acu 的分頁切換**。
+
+### 11.3 沒有內容遺失:八條路徑,每條走三次
+
+判準:**卡片數 = before 的 947(或該 filter 的 before 值),且 detailCard 有內容**。
+三次結果完全相同,下表只列一組數字(三次皆同)。
+
+| # | 路徑 | before | after | detailCard |
+|---|---|---:|---:|---|
+| 1 | 開機停 `#ws/home` → 切 `#ws/acu` | 947 / 13,767 | **947 / 13,767** | — |
+| 2 | 深連結 reload `#point/LI4` | 947 / 13,767,全站 17,850 | **947 / 13,767,全站 17,850** | **57,756 字元**「合谷 LI4」 |
+| 3 | 深連結 reload `#point/T88.07`(董氏) | 947 / 13,767,全站 17,078 | **947 / 13,767,全站 17,078** | **11,142 字元**「感冒一穴」 |
+| 4 | 深連結 reload `#point/EX-HN3`(經外奇穴) | 947 / 13,767,全站 17,159 | **947 / 13,767,全站 17,159** | **15,508 字元**「印堂」 |
+| 5 | 首頁搜「合谷」+ `KeyboardEvent('keydown',{key:'Enter'})` | 947,hash → `#point/LI4` | **947**,hash → `#point/LI4` | **57,756 字元** |
+| 5b | 同上,但**開機後直接搜**(卡片一張都還沒畫) | n/a | **0 → 947**,hash → `#point/LI4` | **57,756 字元** |
+| 6 | 穴位目錄 filter 打「太衝」→ 清空 | 5 → 947 | **5 → 947** | — |
+| 7 | 經絡 tab:`十四正經` → 分支 `LI` | 361 → 34(首「商陽」) | **361 → 34**(首「商陽」) | — |
+| 8 | 上一頁 / 下一頁(home → acu → point/LI4 → back ×2 → forward ×2) | 每一站 947 / 13,767 | **每一站 947 / 13,767** | LI4 站 **57,756 字元** |
+| 9 | 語言切換:清單未畫時按 `#modeEnglishBtn`,再進 acu | 947(英)/ 12,048,全站 15,153 | **947(英)/ 12,048,全站 15,153** | — |
+
+第 9 條是 §10 M1 那條教訓的同一個形狀:人在首頁按 Public EN 時 `#cards` 仍是 **0**(全站 3,105),
+收益沒有被吃回去;進 acu 才第一次畫,而且讀的是**當下**的語言(`Showing 947 / 947 acupoints`,
+首張卡 `睛明 Bright Eyes Jingming · Bladder BL1`)。再按回雙語 → 947 / 13,767 / 16,888,**逐一等於 before**。
+
+**額外走的四條(不在派工清單,但都是真的進站方式)**
+
+| 路徑 | 結果 |
+|---|---|
+| 開機網址就是 `#acupointDirectory`(元素錨點,`clearPointDetailHash` 與首頁 chip 走這條) | 開機當下就 947 / 13,767,全站 16,888 |
+| 開機 `#ws/channels` → `#acupunctureWorkspace` 錨點 → `#ws/home` → `#ws/acu` | 0 → 947 → 947(離開 acu 不會掉) → 947 |
+| 開機**沒有 hash** → 點導覽列 `acu` 連結 | 0(全站 3,121)→ 947 / 13,767 |
+| **fail-open 實測**:另起一台 server 讓 `/js/router.js` 回 404,其餘照原樣 | `data-active-ws` **不存在**、16 個 section **0 個 hidden**(全部攤開)、`#cards` 仍是 **947 / 13,767**(全站 68,680,知識 grid 也照 §7-6 的 fail-open 全畫) |
+
+最後一條是這一包最重要的一條:它證明 router.js 沒載到時清單**不會**無聲留白 ——
+而那正是 §5 把候選 A 排在候選 B 後面的理由。
+
+**console**:before / after 都只有 `__clinical/ping` 404(本機沒有 Worker)與它引發的唯讀保護 alert。
+以 `Error` 過濾 console:**0 筆**(沒有 ReferenceError / TypeError)。人眼截圖確認:
+穴位目錄第一張卡 `睛明 Bright Eyes / Jingming · Bladder / 膀胱經 / BL1`,標籤列與「開啟單穴頁 BL1」動作列都在,
+`getBoundingClientRect()` 361×323,`#cards` scrollHeight 281,121。
+
+### 11.4 新閘門
+
+`scripts/validate-lazy-cards-wiring.js`(靜態,不需要瀏覽器),八條斷言:
+ACU_WORKSPACE 的名字要在 `js/router.js` 的 WORKSPACES 且 `index.html` 有那個 section ·
+`render()` 必須走包裝函式、不准直接叫 `renderCards()` · 包裝函式必須真的呼叫 `renderCards()` 且用
+`acuCardsShouldRender()` 守門 · `acuCardsRendered = true` 必須排在 `renderCards()` **之後** ·
+一定要有 hashchange 觸發點 · 一定要有開機期 settle(DOMContentLoaded + 備援)·
+fail-open 那一條不准被刪 · 三個狀態變數必須宣告在第一個 `render()` 之前(TDZ)。
+**負控 11/11**,全在記憶體字串副本上做,不寫工作區任何檔案。
+CI 兩步(負控先跑)排在 `lazy grid wiring` 旁邊。
+
+**為什麼是第二支閘門,不是擴充 `validate-lazy-grid-wiring.js`**:兩個機制的**契約不同** ——
+knowledge 那條只看 `activeWs`(它排在 router 後面),這條以 **hash** 為權威(它排在 router 前面)。
+§7 第 5 點那條「收斂成一份」講的是 `renderDxOnce` 與 `renderWhenWorkspaceOpens`(同一個契約的兩份實作),
+不含這一條。硬併成一支會逼出一個「兩種契約都放行」的鬆判準,那比兩支各自嚴格更糟。
+
+### 11.5 這一包**沒有**解決的
+
+1. `#cards` 的 13,767 個節點只是**推遲**,不是封頂:進過 acu 之後就一直在 DOM 裡,
+   跟 §7 第 4 點 condition 那條一樣。要封頂得做分批 / 虛擬清單,是另一個包。
+2. **第一次進 acu 沒有變快**(§11.2 的時間表兩組重疊),原因與 §10 M5 相同:
+   時間從「解 hidden 的 layout」搬成「render + layout」。
+3. 30.3 MB script 仍全在開機載入(候選 C,§5 已否決,理由不變)。
+4. 時間與記憶體的收益**這台量測台量不到**(§6.3 / §7 第 7 點),本節不宣稱。
+5. 派工單寫的開工 SHA 是 `ab052244`,實際 `origin/main` 已經前進到 `45a74011`(多一個文件 commit)。
+   本節的 before 量在 `45a74011` 上,與派工單當時的樹差 5 個節點以內,但**數字是分支範圍的**。

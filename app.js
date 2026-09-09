@@ -73,6 +73,17 @@ let learnFromMode = false;
 // renderClinicalCases 會讀它,而 render() 在檔案上方就執行 —— 放在下面會是 TDZ。
 let practiceAuditOpen = false;
 
+/* 穴位清單延遲渲染的狀態(2026-09-07 包 C 候選 A)。宣告在檔頭 boot-order 區、
+   不在 renderCardsWhenAcuOpen 旁邊:render() 全檔 25 處呼叫,而且在 applyPointHash()
+   後面就 top-level 跑過一次,let 放在下面會是 TDZ,而 TDZ 的 ReferenceError 會讓
+   render() 整個中止 —— 那個失效模式的樣子正是「穴位清單無聲變空」(同 practiceAuditOpen /
+   activeChannelCode 兩次踩過的坑,見那兩個宣告旁的註解)。
+   ACU_WORKSPACE 的值必須等於 index.html 那個 section 的 data-workspace 與
+   js/router.js 的 WORKSPACES 成員;由 scripts/validate-lazy-cards-wiring.js 守。 */
+const ACU_WORKSPACE = "acu";
+let acuCardsRendered = false;      // 已經畫過第一次沒有?畫過之後 render() 行為與改動前一字不差
+let acuCardsGateSettled = false;   // 所有 defer script(含 router.js)都跑完了沒有?fail-open 的前提
+
 // Metadata-driven numeric outcome metric config (2026-08-09) — prototype
 // covering exactly the two metrics already proven (metric.pain_score,
 // metric.sleep_hours). Declared here, near OUTCOME_VERDICTS, rather than
@@ -1812,6 +1823,21 @@ searchInput?.addEventListener("keydown", (event) => {
 applyPointHash();
 render();
 
+/* 穴位清單第一次渲染的觸發點(2026-09-07 包 C 候選 A)。上面那次 render() 已經跑過,
+   若開機網址不在 acu,`#cards` 現在是空的 —— 這兩行把「切到 acu 就補畫」接起來。
+   1. hashchange:唯一會讓 router.activate() 換 workspace 的事件(導覽都是
+      `<a href="#ws/…">`,goToSection 在同 hash 時也會自己 dispatch 一次,
+      history back/forward 同樣走這裡)。這個監聽器排在 handlePointHashChange 之後,
+      所以正常路徑上 handlePointHashChange 的 render() 會先把卡片畫好,這裡只是接住
+      它 early-return 的那幾條路(isSyncingPointHash / #ws/channels)。
+   2. DOMContentLoaded:defer script 一定在 DOMContentLoaded **之前**全部執行完,
+      所以那一刻才問得出「router.js 到底有沒有載到」—— fail-open 的前提。
+      load 再補一次,萬一 DOMContentLoaded 被別的例外吃掉;settleAcuCardsGate 是冪等的。 */
+window.addEventListener("hashchange", renderAcuCardsIfWorkspaceOpen);
+if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", settleAcuCardsGate);
+else setTimeout(settleAcuCardsGate, 0);
+window.addEventListener("load", settleAcuCardsGate);
+
 function setContentMode(mode) {
   contentMode = mode;
   localStorage.setItem(CONTENT_MODE_KEY, contentMode);
@@ -2479,7 +2505,7 @@ function render() {
     selectedCode = filtered[0]?.code || points[0]?.code || "";
   }
   renderMap(filtered);
-  renderCards(filtered);
+  renderCardsWhenAcuOpen(filtered);   // 包 C 候選 A:第一次要等 acu 打開(見該函式註解)
   renderActiveFilterSummary(filtered);
   document.body.classList.toggle("point-detail-mode", detailMode);
   if (cardsEl) cardsEl.hidden = detailMode;
@@ -4431,6 +4457,84 @@ function handleModelClick(event) {
     .map((item) => ({ ...item, distance: Math.hypot(item.projected.x - x, item.projected.y - y) }))
     .sort((a, b) => a.distance - b.distance)[0];
   if (closest && closest.distance < 20) selectPoint(closest.point.code);
+}
+
+/* ── 穴位清單「進 acu 才畫第一次」(2026-09-07 包 C 候選 A,凍結例外) ──────────
+   量到的事實(docs/audits/RENDER_COST_2026-09-07.md §2/§4/§5):`#cards` 947 張卡
+   = 13,767 個節點 + 1,894 個 listener(每張卡 click + keydown),是開機 DOM 最大的
+   單一筆,佔 39.5%;而它與使用者停在哪一頁**完全無關** —— 停在首頁也照畫,一張都
+   看不到。§4 EXP1(暫時註解掉這一句)實測:開機 34,882 → 21,115 節點,切到 #ws/acu
+   從 1,647–5,314 ms 掉到 289/322 ms。這筆帳也不是只付一次:router.js 的 activate()
+   每切一次分頁就要對所有 section 切 hidden,文件越大每次切換越貴。
+
+   延遲到什麼時候:acu workspace 打開 —— `#ws/acu`、`#point/<code>` 深連結、
+   或任何落在 acu section 裡的 `#<elementId>` 錨點(`#acupointDirectory` /
+   `#acupunctureWorkspace`,clearPointDetailHash 與首頁 library chip 都走這條)。
+   畫過之後 acuCardsRendered 永遠是 true,25 個 render() 呼叫點的行為與改動前一樣。
+
+   為什麼**讀 hash**,不是只讀 document.body.dataset.activeWs:index.html 的 script
+   順序是 app.js → router.js → js/knowledge.js,所以 app.js 註冊的 hashchange 監聽器
+   **跑在 router 的 route() 之前**,那一刻 activeWs 還是上一頁的值。js/knowledge.js 的
+   renderWhenWorkspaceOpens 可以只看 activeWs,是因為它排在 router 後面 —— 這裡不行,
+   照抄會讓「從首頁按進穴位目錄」那一次永遠等不到人畫。網址是權威來源,與監聽器
+   順序無關;activeWs 只當第二個訊號(router 已經切好時直接成立)。
+
+   為什麼不用 rAF / IntersectionObserver:背景分頁與隱藏視窗不跑 rAF,按了就沒反應
+   (router.js fabNewCase 的註解記過同一個坑);IntersectionObserver 是 frame 之後才
+   回呼,而 `#point/` 那條路 router 用 rAF 捲到 detailCard,會來不及。
+
+   fail-open:index.html 的 section **沒有預設 hidden**,是 router.js 執行時才收起來的。
+   router.js 沒載到時 data-active-ws 從頭到尾不存在、所有 section 同時攤開,「等切到
+   acu」就永遠不會發生 = 穴位清單無聲留白(這個專案最貴的那一類缺陷)。所以開機期
+   結束後(所有 defer script 都跑完)只要 data-active-ws 還是不存在,一律照舊全部畫。
+
+   渲染失敗時使用者看到什麼:acuCardsRendered 只在 renderCards 回來之後才設 true,
+   renderCards 丟例外時旗標留在 false,下次進 acu 會再試一次(不會永久留白);
+   例外照舊往外傳,與改動前的行為相同,不吞。
+   接線由 scripts/validate-lazy-cards-wiring.js 守(靜態,不需要瀏覽器)。 */
+function hashTargetsAcuWorkspace() {
+  const hash = window.location.hash || "";
+  if (hash.startsWith("#ws/")) return hash.slice(4) === ACU_WORKSPACE;
+  if (hash.startsWith("#point/")) return true;
+  if (hash.length > 1) {
+    // `#<elementId>`:router.js 會啟動「那個元素所在的」workspace,這裡照同一條規則問。
+    let target = null;
+    try { target = document.getElementById(decodeURIComponent(hash.slice(1))); } catch (e) { target = null; }
+    const host = target && target.closest ? target.closest("section[data-workspace]") : null;
+    if (host) return host.getAttribute("data-workspace") === ACU_WORKSPACE;
+  }
+  return false;
+}
+
+function acuCardsShouldRender() {
+  if (acuCardsRendered) return true;
+  const active = document.body && document.body.dataset ? document.body.dataset.activeWs : undefined;
+  if (acuCardsGateSettled && active === undefined) return true;   // fail-open:router 沒載到
+  if (active === ACU_WORKSPACE) return true;
+  return hashTargetsAcuWorkspace();
+}
+
+// render() 裡取代 renderCards(filtered) 的那一句:還沒到時候就先不畫卡片,
+// render() 其他的狀態(filter 摘要、detail 三態、計數、地圖)照舊全部更新。
+function renderCardsWhenAcuOpen(filtered) {
+  if (!acuCardsShouldRender()) return;
+  renderCards(filtered);
+  acuCardsRendered = true;
+}
+
+// 切到 acu 的補畫觸發點。走完整 render() 而不是只叫 renderCards:
+// selectedCode 的夾取、detail/list 三態、resultCount 都在 render() 裡,少走一步就會不一致。
+function renderAcuCardsIfWorkspaceOpen() {
+  if (acuCardsRendered) return;          // 畫過了:之後由 render() 自己維護
+  if (!acuCardsShouldRender()) return;
+  render();
+}
+
+// 開機期結束(所有 defer script 都跑完)才有資格判斷「router 到底載到了沒有」。
+function settleAcuCardsGate() {
+  if (acuCardsGateSettled) return;
+  acuCardsGateSettled = true;
+  renderAcuCardsIfWorkspaceOpen();
 }
 
 function renderCards(filtered) {

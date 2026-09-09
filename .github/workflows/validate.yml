@@ -334,6 +334,15 @@ jobs:
       - name: lazy grid wiring
         run: node scripts/validate-lazy-grid-wiring.js
 
+      # 包 C 候選 A(2026-09-07):穴位清單 #cards(947 卡 / 13,767 節點 / 1,894 listener)也改成進
+      # acu workspace 才畫第一次。失效模式只有一種形狀:穴位清單無聲變空(render() 全檔 25 處呼叫 +
+      # 檔頭一整排 TDZ 警告)。契約與 knowledge grid 那條不同(以 hash 為權威,因為 app.js 排在
+      # router.js 之前),所以是另一支閘門、另一組負控。負控先跑。
+      - name: lazy acupoint-cards wiring (negative controls first)
+        run: node scripts/validate-lazy-cards-wiring.js --self-test
+      - name: lazy acupoint-cards wiring
+        run: node scripts/validate-lazy-cards-wiring.js
+
       # 包 D(2026-09-07):中藥歸經三個顯示點與搜尋索引同一條有來源的鏈;有來源欄的元素必須是乾淨經名
       # (茯苓的 meridian_tropism_zh[3] 曾是一句編輯注記,13 支驗證器全綠)。負控先跑。
       - name: herb channel shape + render chain (negative controls first)
