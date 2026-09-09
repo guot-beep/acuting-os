@@ -32,11 +32,17 @@ Ting:「D12 選 a D13 選 a D14 照建議辦」「持續優化內容跟 UI 四�
 ## 誠實記下
 - Browser pane 不跑 rAF(兩種 shim 就是為此),flash 動畫本身沒人眼看過(→ 同日稍後 Ting 人眼驗過:有閃);而且 pane 裡 `#conditionGraph.scrollIntoView({block:"start"})` 實測只把 scrollY 移 79px(386586 → 386665),到不了區塊頂端(267),所以 scrollY 不能當證據 —— 證據是呼叫順序與 class。
 - 改的只有 app.js openKnowledgeRecord 的 condition 分支(+12 −3);comparison 分支(e22b7f9c)沒動、沒抽共用函式(凍結中,最小改動)。data/**、id 格式沒動。
-- 基底 e22b7f9c 是另一個 session 的本機分支,尚未推到 origin;本分支也未 push。
+- 基底 e22b7f9c 是另一個 session 的本機分支,尚未推到 origin;本分支也未 push。(→ 兩者後來都上了 main,見下方「落地狀態」)
 - 走同一條路的還有:穴位卡的病症 chip(`.point-link[data-kind="condition"]`)與診務回顧知識缺口清單(直呼 openKnowledgeRecord),一併修到,但未逐一實測。
 
 ## 驗證器(工作樹,commit 前;ui-freeze 在 commit 後跑)
 validate-interactions failures 0 / warnings 0;validate-lazy-grid-wiring PASS(空容器 5 / lazy 呼叫 6 / router workspaces 13);test-unified-search PASS(18 種子 + 12 斷言);check-validation-ratchet PASS 全 flat(encoding 43、relation_integrity 20、content_quality 3、herb_canon 5495、herb_track_filler 1131,其餘 0)。
+
+## 落地狀態(2026-09-09 補)
+- add40c4a **已在 main**,但不是本 session 推的:另一個 session 推了 origin/claude/confident-panini-508fd1(= add40c4a)並落地;Ting 說「push it and land on main」時 `git branch -r --contains add40c4a` 已列出 origin/main。基底 e22b7f9c 同時也上了 main(上面「尚未推到 origin」那句已過時)。
+- main CI(validate):add40c4a success(2026-09-09T16:35:24Z);之後的 head ab052244 success(16:53:48Z)。查法:`curl -s "https://api.github.com/repos/guot-beep/acuting-os/actions/runs?branch=main&per_page=6"`(本機沒有 gh)。
+- 落地後 main 上 app.js 的 condition 分支與 add40c4a 逐字相同(sed 抽段 diff → IDENTICAL);add40c4a → ab052244 之間 app.js 唯一的差是 D12 的 3 行註解(composeHerbFrequencyText,別處);js/router.js 的差是 D13 新增病例 FAB,`route()` 沒動,本修法依賴的 hashchange 監聽順序不變。
+- 本機分支 `git rebase origin/main` 後 == origin/main(rebase 把已在上游的 commit 靜默丟掉,印的仍是 Successfully rebased),沒有東西可推;dev server 已停。
 
 # 2026-09-09 — 修 bug:首頁搜尋開鑑別表,以前落在區塊頂端、43 張表哪一張看不出來(樣板一個屬性 + 時序兩處)
 
