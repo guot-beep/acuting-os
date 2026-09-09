@@ -1549,11 +1549,21 @@ function openSearchTarget(kind, data) {
     return;
   }
   if (kind === "comparison") {
-    goToSection("comparisonSection");
-    requestAnimationFrame(() => {
+    /* 2026-09-09 修 bug:這條路以前從來沒發生過 scroll + gr-flash(RENDER_COST_2026-09-07 §7-1)。
+       一、鑑別卡樣板沒印 data-record-id(js/knowledge.js 已補)。
+       二、時序(本機實測):鑑別表 grid 是 renderWhenWorkspaceOpens 在 hashchange 才畫的,而 location.hash
+           指派後 hashchange 是排程任務(sync 0 / microtask 0 / task 1),rAF 若先跑就查不到卡 → 沒 flash。
+       三、router.js 在 hashchange 裡也排一個 rAF 把 section 捲到頂(block:start),它排在這裡的 rAF 之後、
+           同一幀裡後跑,會把卡片的 smooth scroll 蓋掉 → 使用者永遠落在區塊頂端,43 張表哪一張看不出來。
+       所以先掛一次性的 hashchange 監聽(排在 router / knowledge 的監聽之後;goToSection 同 hash 時的
+       同步 dispatch 也接得到),等它們跑完再排 rAF:grid 已畫好、router 的捲動已排在前面。
+       查不到卡(id 打錯、卡退役)時使用者看到什麼:停在鑑別區頂端,同以前。 */
+    const flashCard = () => {
       const card = document.querySelector(`[data-record-id="${(window.CSS && CSS.escape) ? CSS.escape(data.id) : data.id}"]`);
       if (card) { card.scrollIntoView({ behavior: "smooth", block: "center" }); card.classList.add("gr-flash"); setTimeout(() => card.classList.remove("gr-flash"), 1600); }
-    });
+    };
+    window.addEventListener("hashchange", () => requestAnimationFrame(flashCard), { once: true });
+    goToSection("comparisonSection");
   }
 }
 

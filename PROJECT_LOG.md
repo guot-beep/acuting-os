@@ -1,3 +1,28 @@
+# 2026-09-09 — 修 bug:首頁搜尋開鑑別表,以前落在區塊頂端、43 張表哪一張看不出來(樣板一個屬性 + 時序兩處)
+
+派工來源:2026-09-07 包 C 渲染成本審計 §7-1(該包刻意不修,因為動到卡片樣板)。
+**MEASURED TREE: claude/confident-easley-1ab6b4,基底 main @ b8f7f1c8**(本機 `node scripts/dev-server.js`,Browser pane)
+
+| 項 | before → after(可重現)| 檔 |
+|---|---|---|
+| 鑑別卡樣板缺 `data-record-id` | 進站 `#comparisonSection` 後 `document.querySelectorAll('.k-comparison-card[data-record-id]').length`:0/43 → 43/43 | js/knowledge.js renderComparisons |
+| hashchange 不是同步 | `location.hash` 指派後監聽器觸發:sync 0 / microtask 0 / task 1 —— 包 C 審計「跨檔相依」寫「hashchange 監聽器同步跑完才輪到 rAF」,實測不成立;grid 是 hashchange 才畫,rAF 先跑就查不到卡、沒 flash | app.js openSearchTarget comparison 分支 |
+| router 的區塊捲動蓋掉卡片捲動 | rAF 登記順序 [app.js 卡片, router section]:同一幀 router 的 `scrollIntoView({block:"start"})` 後跑 → 永遠落在區塊頂端。改後 scrollIntoView 呼叫順序 [SECTION#comparisonSection, 卡],三個情境皆卡片最後 | 同上(一次性 hashchange 監聽先掛、再 goToSection、監聽內才排 rAF)|
+
+三個情境(rAF 換成 setTimeout(0) / queueMicrotask 兩種 shim + `Element.prototype.scrollIntoView` 間諜;搜尋走 `#homeSearch` input 事件與 `#globalResults` 真按鈕 click):
+- 新載入、回呼在 hashchange 任務之後:grid 0 → 43、找到卡、gr-flash 有、最後一次捲動 = cmp.clear_heat_category(grid 第 43 張)
+- 新載入、回呼在 hashchange 任務之前(修前這個情境沒 flash、沒卡片捲動):同上,通過
+- 已在 `#comparisonSection` 再搜另一張(goToSection 同 hash 的同步 dispatch):hashchange 在 click 內同步觸發 1 次、gr-flash 有、最後一次捲動 = cmp.insomnia_patterns
+
+## 誠實記下
+- Browser pane **不跑 requestAnimationFrame**(`document.visibilityState` 是 visible、rAF 300ms 內 0 次;截圖強制畫格也不跑),**人眼沒看過 flash 動畫本身**;上面三個情境證明的是程式路徑(查得到、class 加上、卡片捲動最後執行)。同 QA_FIVE_DAY_JOURNEYS_2026-09-07 §已知未解那條,仍要人眼看一次。
+- 本機兩個 Chrome 都接著 claude-in-chrome,工具要求先問人選哪一個,本 session 無人可問,沒用真 Chrome。
+- condition 分支(openKnowledgeRecord)同樣兩個時序缺陷,**沒動**(不在派工範圍),已開 task chip;證據同上表第 2、3 列。
+- 沒動 data/**;id 格式沒動;真鍵盤打進搜尋框、真滑鼠點結果那一輪也做了(hash 變 `#comparisonSection`、activeWs comparison、43/43 找得到),只是那一輪 rAF 不跑所以量不到 flash。
+
+## 驗證器(工作樹,commit 前;ui-freeze 在 commit 後跑)
+validate-interactions failures 0 / warnings 0;validate-lazy-grid-wiring PASS(空容器 5 / lazy 呼叫 6);test-unified-search PASS(18 種子 + 12 斷言);check-validation-ratchet PASS 全 flat(encoding 43、relation_integrity 20、content_quality 3、herb_canon 5495、herb_track_filler 1131,其餘 0)。
+
 # 2026-09-07(晚)— 五天派工第一天做四包:搜尋排名重寫、五個知識清單延遲渲染、手機觸控/字級、20 卡審讀 + 歸經鏈
 
 Ting:「你可以超前做,然後派發 Sonnet 5 / Opus 去做」「持續做六小時」「不用管天數,一天可以做兩三天的分量」。

@@ -2966,8 +2966,11 @@
       const dimensions = record.dimensions || [];
       const stats = cellStats(record);
       const sourceLabel = record.source_condition_id ? conditionLabel(record.source_condition_id) : "";
+      /* data-record-id:首頁搜尋開鑑別表(app.js openSearchTarget "comparison")靠這個屬性
+         scrollIntoView + gr-flash。以前只有這一種卡沒印它(herb/formula/pharm/symptom/pattern/condition 都有),
+         搜尋結果點了只落在鑑別區頂端,43 張表哪一張看不出來(RENDER_COST_2026-09-07 §7-1)。 */
       return `
-        <article class="k-card k-comparison-card">
+        <article class="k-card k-comparison-card" data-record-id="${esc(record.id)}">
           <header>
             <strong>${esc(record.title_zh || record.id)} <small>${esc(record.title_en || "")}</small></strong>
             ${statusPill(record.review_status || record.status)}
