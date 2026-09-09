@@ -43,6 +43,7 @@ validate-interactions failures 0 / warnings 0;validate-lazy-grid-wiring PASS(空
 - main CI(validate):add40c4a success(2026-09-09T16:35:24Z);之後的 head ab052244 success(16:53:48Z)。查法:`curl -s "https://api.github.com/repos/guot-beep/acuting-os/actions/runs?branch=main&per_page=6"`(本機沒有 gh)。
 - 落地後 main 上 app.js 的 condition 分支與 add40c4a 逐字相同(sed 抽段 diff → IDENTICAL);add40c4a → ab052244 之間 app.js 唯一的差是 D12 的 3 行註解(composeHerbFrequencyText,別處);js/router.js 的差是 D13 新增病例 FAB,`route()` 沒動,本修法依賴的 hashchange 監聽順序不變。
 - 本機分支 `git rebase origin/main` 後 == origin/main(rebase 把已在上游的 commit 靜默丟掉,印的仍是 Successfully rebased),沒有東西可推;dev server 已停。
+- 45a74011(QA 收條,在本補記之前落地):Ting 人眼驗搜尋開卡的 gr-flash,鑑別表 / 病症各一張都閃 —— 上面「flash 動畫本身沒人眼看過」那條未解已收掉;RENDER_COST §跨檔相依「hashchange 同步」已更正、§7-1 標已修。本補記本身:5e14714e(push HEAD:main,fast-forward)。
 
 # 2026-09-09 — 修 bug:首頁搜尋開鑑別表,以前落在區塊頂端、43 張表哪一張看不出來(樣板一個屬性 + 時序兩處)
 
