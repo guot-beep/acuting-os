@@ -37,10 +37,24 @@ for (const r of recs) if (r.derived_from) delete r.derived_from;
 
 let linked = 0;
 const missing = [];
+const selfRef = [], doubleClaim = [];
 for (const base of recs) {
   for (const fam of base.formula_family || []) {
     const target = (fam.formula_id && byId.get(fam.formula_id)) || byName.get(String(fam.name_zh || "").trim());
     if (!target) { missing.push(`${base.name_zh} → ${fam.name_zh || fam.formula_id}`); continue; }
+    // 2026-09-09 審查 H5/M1:基方把自己列在家族裡(產生器樣板的「原方結構」)會做出指向自己的 derived_from;
+    // 兩個基方認領同一個衍生方(三妙丸:二妙散+牛膝 / 四妙丸−薏苡仁;增液承氣湯:增液湯+大黃芒硝 / 大承氣湯換藥)
+    // 以前是後寫的蓋掉先寫的,靜默。現在:自指跳過;雙重認領取 relation「加」的那條(衍生的正統血緣),否則留第一條,並列印。
+    if (target.id === base.id) { selfRef.push(base.name_zh); continue; }
+    if (target.derived_from) {
+      const prev = target.derived_from;
+      // 衍生的正統血緣 = 純加味(change 全是「+」):三妙丸 = 二妙散 + 牛膝、增液承氣湯 = 增液湯 + 大黃芒硝;
+      // 「−枳實 −厚朴 +玄參…」那種換藥關係不是它的原方。兩邊都純加或都不純 → 留第一條。
+      const pure = (ch) => Array.isArray(ch) && ch.length > 0 && ch.every((c) => /^s*[+＋]/.test(String(c)));
+      const pick = (pure(fam.change) && !pure(prev.change)) ? "new" : "prev";
+      doubleClaim.push(`${target.name_zh}:${prev.name_zh}(${prev.relation})vs ${base.name_zh}(${fam.relation || ""})→ 取 ${pick === "new" ? base.name_zh : prev.name_zh}`);
+      if (pick === "prev") continue;
+    }
     target.derived_from = {
       formula_id: base.id,
       name_zh: base.name_zh,
@@ -67,6 +81,8 @@ if (missing.length) {
   missing.forEach((m) => console.log("    " + m));
 }
 
+if (selfRef.length) console.log(`  ⚠️ 基方把自己列在家族裡,跳過 ${selfRef.length}:${selfRef.join("、")}`);
+if (doubleClaim.length) console.log(`  ⚠️ 雙重認領 ${doubleClaim.length}:\n    ${doubleClaim.join("\n    ")}`);
 if (!APPLY) { console.log("\n(dry run — pass --apply)"); process.exit(0); }
 const indent = /^\{?\[?\n(\s+)"/.exec(raw)?.[1]?.length || 2;
 fs.writeFileSync(FILE, JSON.stringify(data, null, indent) + (raw.endsWith("\n") ? "\n" : ""), "utf8");

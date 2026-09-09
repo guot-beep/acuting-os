@@ -1,7 +1,7 @@
 # 2026-09-09 — 三裁定執行(D12 選 a、D13 選 a、D14 照建議辦)+ 方劑安全欄內容批次
 
 Ting:「D12 選 a D13 選 a D14 照建議辦」「持續優化內容跟 UI 四小時又十分鐘」。
-**MEASURED TREE: claude/d12-d14 @ 08e10347**(基底 main b8f7f1c8;落地 = 本條 log 的下一個 commit,ff 到 main)
+**MEASURED TREE: claude/d12-d14**(rebase 到 main 33e9e823 之後;落地 = 本分支 tip,ff 到 main)。對抗式審查 5 HIGH / 7 MED 全修(見日報末段)。
 五項回報:`docs/audits/FIVE_DAY_DISPATCH_2026-09-07_REPORT.md` 末段「2026-09-09」;Codex 交接:`docs/CODEX_HANDOFF.md` 頂端。
 
 | 項 | 做法 | before → after |

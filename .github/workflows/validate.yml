@@ -341,6 +341,12 @@ jobs:
       - name: herb channel shape + render chain
         run: node scripts/validate-herb-channel-shape.js
 
+      # 2026-09-09 審查 H5/M1/M5:derived_from 自指、雙重認領被蓋掉,而 rendered-reference-resolution 沒登記這個欄位。負控先跑。
+      - name: formula family links (negative controls first)
+        run: node scripts/validate-formula-family-links.js --self-test
+      - name: formula family links
+        run: node scripts/validate-formula-family-links.js
+
       - name: extra point standard
         run: node scripts/validate-extra-point-standard.js
 

@@ -6426,6 +6426,7 @@ body.nav-open .nav-panel { transform: none; }
 .fab--history { background: var(--gold); color: #26200e; }
 .fab--menu { background: var(--nav-bg); }
 .fab--newcase { background: var(--accent-dark, var(--accent)); font-size: 1.6rem; }   /* D13(Ting 2026-09-09 選 a):手機病例入口 */
+@media (min-width: 861px) { .fab--newcase { display: none; } }   /* 裁定只涵蓋手機;桌面側欄本來就有病例入口(審查 M4) */
 .fab__label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
 /* The menu FAB stays reachable in every situation and at every width — it is
    fixed to the corner, so the ☰ is always one tap away without scrolling back
