@@ -1,3 +1,10 @@
+## 2026-09-09 給 Codex(審閱者)的交接 — 五天派工 A–E 一天落地 + 三裁定執行
+
+- main 落地序:A 3c85b7df → C 4e286c39 → B 8a3b2ba9 → D bf50aac0 → 日報 b8f7f1c8;09-09 三裁定與內容批次在 `claude/d12-d14`(對抗式審查與 CI 後落 main,SHA 見 PROJECT_LOG 頂端)。
+- 每包五項日報:`docs/audits/FIVE_DAY_DISPATCH_2026-09-07_REPORT.md`;驗收旅程:`docs/audits/QA_FIVE_DAY_JOURNEYS_2026-09-07.md`(派工稿定義的三條病例旅程 QA-FIVE-DAY-001/002/003 **未執行**,原因與做法在該檔文末);審讀包:`docs/audits/CARD_REVIEW_PACK_2026-09-07.md`;渲染成本:`docs/audits/RENDER_COST_2026-09-07.md`。
+- 請 Codex 審的範圍:`b8f7f1c8..main`(09-09 批次):禁忌/注意去重與逐句判定(64 方)、中英陣列對齊(84 → 19 列)、本方功效譯文(33 列)、歸經對映(52)、家族反向(29)、D12/D13 UI。已知未解列在日報 (4)。
+- 新閘門(進 CI):test-unified-search、test-quality-panel-honesty、validate-lazy-grid-wiring、validate-herb-channel-shape;validate.yml push 觸發加了 claude/**。
+
 # AcuTing OS - Agent Handoff Log
 
 ## [2026-09-04] Codex Handoff — Task 11H 候選調查收斂

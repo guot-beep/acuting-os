@@ -16,7 +16,7 @@
 | 瀏覽器 | Browser pane,`http://localhost:8642`(`scripts/dev-server.js` 服務該 worktree) |
 | 資料 | data/generated @ main 103e162a:herbs 366 · formulas 223 · conditionCanon 508 · comparisons 43 · points(runtime)947 |
 
-## QA-FIVE-DAY-001 首頁搜尋 → 開卡 → 空狀態
+## QA-SEARCH-001 首頁搜尋 → 開卡 → 空狀態(原誤標為 QA-FIVE-DAY-001,2026-09-09 更正)
 
 **步驟**(每個種子各做一次;三種入口都要走:打字+Enter、打字+搜尋鈕、卡片上的搜尋標籤 `[data-search-term]`)
 1. `#ws/home`,點 `#homeSearch`,輸入種子字,等下拉出現(110ms debounce)。
@@ -69,7 +69,7 @@
 - `composeHerbFrequencyText` 自動寫進病歷的「與西藥間隔至少1小時」:index.html 說明只寫「台灣醫院衛教常見建議(例:高雄榮總中醫部)」,
   data/ 內沒有這句的來源;是否要附 URL 來源或改成不自動寫,待 Ting。
 
-## QA-FIVE-DAY-002 手機 375×812 · 病例入口與八個區塊
+## QA-MOBILE-002 手機 375×812 · 病例入口與八個區塊(原誤標為 QA-FIVE-DAY-002,2026-09-09 更正)
 
 **步驟**:`resize_window` mobile(375×812)→ 各 hash 量 `document.documentElement.scrollWidth`、區塊內可點元素 <44px 數、`fontSize` <12px 數、`offsetTop`;`#globalResults` 用 `#homeSearch` 派 `input` 事件打開。知識詳情 dialog 實際 id 是 `knowledgeDetailDialog`(`js/knowledge.js ensureDetailDialog()` 動態建立)。
 
@@ -86,7 +86,7 @@
 
 - 已知未解:`#ws/condition` 整頁 scrollWidth 838(main 就有)—— `.fab-stack`(position:fixed)在該頁被算到 773–825px,與 `.k-removed-note` 無關,獨立缺陷待修;病例入口太深是資訊架構,D32 例外三選一待 Ting(見裁定單 D13)。
 
-## QA-FIVE-DAY-003 品質頁數字誠實
+## QA-QUALITY-003 品質頁數字誠實(原誤標為 QA-FIVE-DAY-003,2026-09-09 更正)
 
 **步驟**:`#ws/quality` → 讀「製作與驗證進度」表;或 `getDomainProgress()`。
 
@@ -116,3 +116,14 @@
 - 2026-09-07 起 `validate.yml` 的 push 觸發加了 `claude/**`:分支自己跑 CI,不用等落 main。落地仍走 ff `git push origin HEAD:main`,
   之後查 `https://api.github.com/repos/guot-beep/acuting-os/actions/runs?branch=main`(公開 repo,匿名可讀)。
 - 每包回報五項:做了什麼 / before→after / 原始驗證輸出 / 已知未解 / 分支 + SHA。
+
+
+## QA-FIVE-DAY-001 / 002 / 003(Codex 派工稿定義的病例旅程)— **未執行**
+
+| ID | 旅程(派工稿原文) | 狀態 | 為什麼還沒做 / 怎麼做 |
+|---|---|---|---|
+| QA-FIVE-DAY-001 | 新病例 → SOAP → 重載 | 未執行 | 本機 dev server 沒有 Worker,病例服務「唯讀保護中」,`#newCaseBtn` 開得了 dialog 但存不進去。要在 (a) 有 D1 的測試 origin(wrangler dev + 測試資料庫,launch.json 已有 d1-local-8797 項目)或 (b) localStorage 模式(關掉 clinical-sqlite-backend 的雲端探測)跑;只用合成病人代碼(FAKE-*),不匯入真資料。 |
+| QA-FIVE-DAY-002 | 已有病例 → Visit Brief → 追蹤 | 未執行 | 同上;「Visit Brief」對應 app 內的診後摘要(AVS)入口,id 待對照 `js/avs.js`。 |
+| QA-FIVE-DAY-003 | 匯出 → 隔離入口還原 → 逐欄對帳 | 未執行 | 匯出/匯入走 `#exportCasesBtn` / `#importCasesFile`;逐欄對帳可用 `scripts/test-clinical-sqlite-service.js` 的 fixture 思路(sample_export_fixture.json)在測試 origin 做。 |
+
+派工稿包 B 的驗收尺寸是 390×844 與 1440×900、整頁 `scrollWidth ≤ clientWidth+1`:本輪量的是 375×812 與 1280×900;`#ws/condition` 整頁 838 溢位(`.fab-stack` 定位,main 就有)未修 → 包 B 驗收**未全達**,列待辦。
