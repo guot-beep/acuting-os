@@ -1,3 +1,28 @@
+# 2026-09-09 — 凍結例外(Ting 指示):comparison / condition 的「切區後找卡閃一下」抽成 goToSectionAndFlashCard
+
+Ting:「把 comparison 和 condition 抽成共用函式」。純重構,行為不變。凍結例外理由:同一段時序邏輯兩份已各修一次、隔一個 session(e22b7f9c / add40c4a),第三條「goToSection 之後查 DOM」的路再長出來又會分岔;抽成一份後新路一律走它。
+**MEASURED TREE: 工作樹 = main @ 5cd85bcb + 本次重構**(本機 `node scripts/dev-server.js` 8361,Browser pane;方法同 add40c4a:rAF 兩種 shim + `Element.prototype.scrollIntoView` 間諜,搜尋走 `#homeSearch` input 事件 + `#globalResults` 真按鈕)
+
+| 情境(rAF shim / 目標卡)| 結果 |
+|---|---|
+| condition 新載入 `setTimeout(0)` / cond.insomnia 第 152 張(index 151)| 找到卡、gr-flash 有、scrollIntoView 順序 [SECTION#conditionGraph, 卡] |
+| condition 新載入 `queueMicrotask` / cond.migraine 第 73 張 | 同上 |
+| condition 同 hash 同步 dispatch / cond.eczema 第 290 張 | hashchange 在 click 內同步 1 次;同上 |
+| comparison 新載入 `setTimeout(0)` / cmp.insomnia_patterns 第 1 張 | 找到卡、gr-flash 有、順序 [SECTION#comparisonSection, 卡] |
+| comparison 新載入 `queueMicrotask` / cmp.clear_heat_category 第 43 張(最後一張)| 同上 |
+| comparison 同 hash / cmp.internal_wind 第 38 張 | hashchange 同步 1 次;同上 |
+
+六個情境的呼叫順序與 add40c4a 落地後量到的逐字相同。app.js +26 −29:新函式 `goToSectionAndFlashCard(sectionId, recordId)`,兩段實測註解合成一段放在函式上(含「查不到卡時使用者看到什麼:停在該區塊頂端」),兩個分支各剩一行呼叫。
+
+## 誠實記下
+- 第一輪 comparison 的 queueMicrotask / 同 hash 兩個情境,查詢「清熱」「頭痛」在鑑別表 0 筆命中(標題裡沒有這兩個詞;搜尋只比 title_zh/title_en/id/compares),換「龍膽瀉肝湯」「天麻鉤藤飲」才跑到。cmp.insomnia_patterns 是 grid 第 1 張,「非首張」的證據靠另外兩個鑑別表情境。
+- Browser pane 仍不跑 rAF、scrollY 不可信(同前兩條);flash 動畫本身這次沒人眼看(Ting 45a74011 看的是重構前的版本)。
+- 沒動 data/**、id 格式、樣板;scripts/ 沒有任何檔 grep 這兩段原文(只 grep `openSearchTarget(` 存在)。
+- validate-ui-freeze 在 commit 後跑,PASS 才 push;這條若在 main 上,表示那一關過了(commit 訊息自稱凍結例外並附 Ting 的指示)。
+
+## 驗證器(工作樹,commit 前)
+validate-interactions failures 0 / warnings 0;validate-lazy-grid-wiring PASS(空容器 5 / lazy 呼叫 6 / router workspaces 13);test-unified-search PASS(20 種子 + 12 斷言);check-validation-ratchet PASS 全 flat(encoding 43、relation_integrity 20、content_quality 3、herb_canon 5495、herb_track_filler 1131,其餘 0)。
+
 # 2026-09-09 — 三裁定執行(D12 選 a、D13 選 a、D14 照建議辦)+ 方劑安全欄內容批次
 
 Ting:「D12 選 a D13 選 a D14 照建議辦」「持續優化內容跟 UI 四小時又十分鐘」。

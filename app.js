@@ -1496,6 +1496,29 @@ function canOpenKnowledgeRecord(kind, id) {
   return typeof api.hasRecord === "function" && api.hasRecord(kind, id);
 }
 
+/* 「切到某一區、等它畫好、把那一張卡捲到中間並閃一下」。
+ * comparison(openSearchTarget)與 condition(openKnowledgeRecord)兩條路以前各寫一份,同一個時序 bug 各修一次、
+ * 隔了一個 session(e22b7f9c / add40c4a);Ting 2026-09-09 要求抽成一份,之後新的「goToSection 之後查 DOM」一律走這裡。
+ *
+ * 時序(本機實測,2026-09-09):
+ * 一、這兩個 grid 都是 renderWhenWorkspaceOpens 在 hashchange 才畫的,而 location.hash 指派後 hashchange 是排程任務
+ *     (sync 0 / microtask 0 / task 1)—— RENDER_COST_2026-09-07 §4 原本寫「監聽器同步跑完才輪到 rAF」,實測不成立:
+ *     rAF 若先跑就查不到卡 → 沒 flash。
+ * 二、router.js 在 hashchange 裡也排一個 rAF 把 section 捲到頂(block:start);它登記在 click 期間排的 rAF 之後、
+ *     同一幀裡後跑,會把卡片的 smooth scroll 蓋掉 → 使用者永遠落在區塊頂端,幾百張卡哪一張看不出來。
+ * 所以先掛一次性的 hashchange 監聽(排在 router / knowledge 的監聽之後;goToSection 同 hash 時的同步 dispatch 也接得到),
+ * 等它們跑完再排 rAF:grid 已畫好、router 的捲動已排在前面。
+ *
+ * 查不到卡(id 打錯、卡退役、樣板沒印 data-record-id)時使用者看到什麼:停在該區塊頂端,同以前;不另外報錯。 */
+function goToSectionAndFlashCard(sectionId, recordId) {
+  const flashCard = () => {
+    const card = document.querySelector(`[data-record-id="${(window.CSS && CSS.escape) ? CSS.escape(recordId) : recordId}"]`);
+    if (card) { card.scrollIntoView({ behavior: "smooth", block: "center" }); card.classList.add("gr-flash"); setTimeout(() => card.classList.remove("gr-flash"), 1600); }
+  };
+  window.addEventListener("hashchange", () => requestAnimationFrame(flashCard), { once: true });
+  goToSection(sectionId);
+}
+
 function openKnowledgeRecord(kind, id) {
   if (!id) return false;
   const api = globalThis.ACUTING_KNOWLEDGE_API;
@@ -1507,20 +1530,7 @@ function openKnowledgeRecord(kind, id) {
     return api.openPattern(id);
   }
   if (kind === "condition") {
-    /* 2026-09-09 修 bug:同 openSearchTarget 的 comparison 分支(實測理由寫在那裡)。
-       病症 grid 是 renderWhenWorkspaceOpens 在 hashchange 才畫的,而 location.hash 指派後 hashchange 是排程任務
-       (sync 0 / microtask 0 / task 1)—— 包 C 審計(RENDER_COST_2026-09-07 §4)把這條路寫成「hashchange 監聽器
-       同步跑完才輪到 rAF」的機制先例,實測不成立:rAF 先跑就查不到卡 → 沒 flash。就算查到了,router.js 在
-       hashchange 裡排的 section scrollIntoView({block:"start"}) 登記在卡片捲動之後、同一幀後跑會蓋掉它 →
-       使用者落在病症區頂端,五百多張卡哪一張看不出來。
-       所以先掛一次性 hashchange 監聽(排在 router / knowledge 的監聽之後;goToSection 同 hash 時的同步 dispatch
-       也接得到),等它們跑完再排 rAF。查不到卡(id 打錯、卡退役)時使用者看到什麼:停在病症區頂端,同以前。 */
-    const flashCard = () => {
-      const card = document.querySelector(`[data-record-id="${(window.CSS && CSS.escape) ? CSS.escape(id) : id}"]`);
-      if (card) { card.scrollIntoView({ behavior: "smooth", block: "center" }); card.classList.add("gr-flash"); setTimeout(() => card.classList.remove("gr-flash"), 1600); }
-    };
-    window.addEventListener("hashchange", () => requestAnimationFrame(flashCard), { once: true });
-    goToSection("conditionGraph");
+    goToSectionAndFlashCard("conditionGraph", id);   // 病症 grid 是 lazy 的;時序與查不到時的行為見 goToSectionAndFlashCard
     return true;
   }
   return false;
@@ -1573,21 +1583,8 @@ function openSearchTarget(kind, data) {
     return;
   }
   if (kind === "comparison") {
-    /* 2026-09-09 修 bug:這條路以前從來沒發生過 scroll + gr-flash(RENDER_COST_2026-09-07 §7-1)。
-       一、鑑別卡樣板沒印 data-record-id(js/knowledge.js 已補)。
-       二、時序(本機實測):鑑別表 grid 是 renderWhenWorkspaceOpens 在 hashchange 才畫的,而 location.hash
-           指派後 hashchange 是排程任務(sync 0 / microtask 0 / task 1),rAF 若先跑就查不到卡 → 沒 flash。
-       三、router.js 在 hashchange 裡也排一個 rAF 把 section 捲到頂(block:start),它排在這裡的 rAF 之後、
-           同一幀裡後跑,會把卡片的 smooth scroll 蓋掉 → 使用者永遠落在區塊頂端,43 張表哪一張看不出來。
-       所以先掛一次性的 hashchange 監聽(排在 router / knowledge 的監聽之後;goToSection 同 hash 時的
-       同步 dispatch 也接得到),等它們跑完再排 rAF:grid 已畫好、router 的捲動已排在前面。
-       查不到卡(id 打錯、卡退役)時使用者看到什麼:停在鑑別區頂端,同以前。 */
-    const flashCard = () => {
-      const card = document.querySelector(`[data-record-id="${(window.CSS && CSS.escape) ? CSS.escape(data.id) : data.id}"]`);
-      if (card) { card.scrollIntoView({ behavior: "smooth", block: "center" }); card.classList.add("gr-flash"); setTimeout(() => card.classList.remove("gr-flash"), 1600); }
-    };
-    window.addEventListener("hashchange", () => requestAnimationFrame(flashCard), { once: true });
-    goToSection("comparisonSection");
+    // 鑑別卡樣板的 data-record-id 是 e22b7f9c 才補的(RENDER_COST_2026-09-07 §7-1);時序見 goToSectionAndFlashCard
+    goToSectionAndFlashCard("comparisonSection", data.id);
   }
 }
 
