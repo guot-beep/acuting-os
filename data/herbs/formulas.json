@@ -424,6 +424,9 @@
         ],
         "tcm_pattern_ids": [
           "derived: 本方 pattern_indications_zh 經 data/config/pattern_alias_map.json + data/pathology/pattern_registry.json name_zh 逐字對照(scripts/derive-formula-pattern-links.js,不拆複合證、不近似匹配、不用 syndromes_zh)"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「白潤」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 2,
@@ -860,7 +863,8 @@
       ],
       "ba_fa_en": [
         "sweating method / releasing the exterior"
-      ]
+      ],
+      "coating_en": "White and moist"
     },
     {
       "id": "formula.ma_huang_tang",
@@ -1247,7 +1251,10 @@
         "tcm_pattern_ids": [
           "derived: 本方 pattern_indications_zh 經 data/config/pattern_alias_map.json + data/pathology/pattern_registry.json name_zh 逐字對照(scripts/derive-formula-pattern-links.js,不拆複合證、不近似匹配、不用 syndromes_zh)"
         ],
-        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)"
+        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)",
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「薄白潤」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ]
       },
       "on_board_list": true,
       "exam_importance": "★ NCBAHM 2026 CH 考綱 Appendix C 官方應試方劑 —— Domain I.B（方劑，11%：組成／君臣佐使／功效主治／配伍／八法／替代）、Domain II（安全，24%：禁忌與毒性）、Domain III.A（開方，22%）",
@@ -1691,7 +1698,8 @@
         "nasal congestion with clear discharge",
         "chest oppression",
         "stiff neck"
-      ]
+      ],
+      "coating_en": "Thin, white and moist"
     },
     {
       "id": "formula.xiao_qing_long_tang",
@@ -2138,7 +2146,16 @@
         "tcm_pattern_ids": [
           "derived: 本方 pattern_indications_zh 經 data/config/pattern_alias_map.json + data/pathology/pattern_registry.json name_zh 逐字對照(scripts/derive-formula-pattern-links.js,不拆複合證、不近似匹配、不用 syndromes_zh)"
         ],
-        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)"
+        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)",
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「粉紅」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「白潤膩」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「浮緊。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ]
       },
       "cloudtcm_id": 41,
       "action_profile": {
@@ -2540,7 +2557,10 @@
       ],
       "ba_fa_en": [
         "sweating method"
-      ]
+      ],
+      "tongue_en": "Pink",
+      "coating_en": "White, moist and greasy",
+      "pulse_en": "Floating and tight"
     },
     {
       "id": "formula.jiu_wei_qiang_huo_tang",
@@ -2939,6 +2959,15 @@
         ],
         "modifications_zh": [
           "curriculum/herbs/方剂学汇总_extracted.md(Table 24;原文英文+拼音,zh 為忠實中譯,原句在帳本 docs/research_packs/MODIFICATIONS_PROPOSALS_2026-08-19.json evidence_quotes)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「正常」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「白」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「浮。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 9,
@@ -3147,7 +3176,10 @@
       ],
       "ba_fa_en": [
         "sweating method"
-      ]
+      ],
+      "tongue_en": "Normal",
+      "coating_en": "White",
+      "pulse_en": "Floating"
     },
     {
       "id": "formula.yin_qiao_san",
@@ -3662,6 +3694,9 @@
         ],
         "contraindications_en": [
           "2026-08-19 雙語聯集對齊：原 contraindications_zh 3 條 / contraindications_en 2 條(不同來源並行),對齊為 4 組;原條目逐字保留,補齊側為對側之翻譯"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「薄黃或薄白」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 271,
@@ -4147,7 +4182,8 @@
       ],
       "ba_fa_en": [
         "sweating method"
-      ]
+      ],
+      "coating_en": "Thin and yellow or thin and white"
     },
     {
       "id": "formula.sang_ju_yin",
@@ -4561,6 +4597,9 @@
         "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)",
         "derived_from": [
           "由 銀翹散 的 formula_family 反向產生"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「薄黃或薄白」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 162,
@@ -4917,7 +4956,8 @@
         ],
         "indication_zh": "",
         "source": ""
-      }
+      },
+      "coating_en": "Thin and yellow or thin and white"
     },
     {
       "id": "formula.xiang_su_san",
@@ -5102,6 +5142,15 @@
         ],
         "contraindications_en": [
           "translated: 本卡 contraindications_zh 逐條忠實翻譯(紅線5 同長同序,強度不升降)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「正常」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「薄白」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「浮或浮沉並見。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/317",
@@ -5344,7 +5393,10 @@
       ],
       "ba_fa_en": [
         "sweating method (release the exterior)"
-      ]
+      ],
+      "tongue_en": "Normal",
+      "coating_en": "Thin and white",
+      "pulse_en": "Floating, or floating and deep seen together"
     },
     {
       "id": "formula.jing_fang_bai_du_san",
@@ -5707,6 +5759,15 @@
         ],
         "derived_from": [
           "curriculum 方剂学汇总 Table 55 (Ren Shen Bai Du San)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「正常」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「薄白」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「浮或浮數。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/183",
@@ -6041,7 +6102,10 @@
         ],
         "indication_zh": "體實者之風寒濕重證（無汗）",
         "source": "curriculum 方剂学汇总 Table 55 (Ren Shen Bai Du San)"
-      }
+      },
+      "tongue_en": "Normal",
+      "coating_en": "Thin and white",
+      "pulse_en": "Floating or floating and rapid"
     },
     {
       "id": "formula.chai_ge_jie_ji_tang",
@@ -6396,6 +6460,9 @@
         ],
         "source_classic": [
           "curriculum/formulas/Herbal Formulations Comprehensive.docx.md(「Chai Ge Jie Ji Tang 柴葛解肌汤 (Bupleurum And Kudzu Decoction To Release The Muscle Layer ) ...」;帳本 docs/research_packs/SOURCE_CLASSIC_PROPOSALS_2026-08-19.json)"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「薄黃」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/173",
@@ -6657,7 +6724,8 @@
       ],
       "ba_fa_en": [
         "sweating method (releasing the exterior)"
-      ]
+      ],
+      "coating_en": "Thin and yellow"
     },
     {
       "id": "formula.ge_gen_tang",
@@ -7124,6 +7192,12 @@
         ],
         "formula_song": [
           "《湯頭歌訣》(汪昂,含通行加減歌)或方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「紅乾」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「浮數。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/57",
@@ -7318,7 +7392,9 @@
       ],
       "ba_fa_en": [
         "sweating method"
-      ]
+      ],
+      "tongue_en": "Red and dry",
+      "pulse_en": "Floating and rapid"
     },
     {
       "id": "formula.cang_er_zi_san",
@@ -7927,6 +8003,9 @@
         ],
         "taiwan_pharmacopeia_zh": [
           "curriculum/formulas/08_Formula_Cards_071-080_解表劑.md（22 區塊方劑卡）"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「白膩」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/12",
@@ -8411,7 +8490,8 @@
       ],
       "ba_fa_en": [
         "sweating method"
-      ]
+      ],
+      "coating_en": "White and greasy"
     },
     {
       "id": "formula.jia_jian_wei_rui_tang",
@@ -9249,7 +9329,10 @@
         "tcm_pattern_ids": [
           "derived: 本方 pattern_indications_zh 經 data/config/pattern_alias_map.json + data/pathology/pattern_registry.json name_zh 逐字對照(scripts/derive-formula-pattern-links.js,不拆複合證、不近似匹配、不用 syndromes_zh)"
         ],
-        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)"
+        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)",
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「黃乾或白」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ]
       },
       "cloudtcm_id": 98,
       "action_profile": {
@@ -9749,7 +9832,8 @@
       ],
       "ba_fa_en": [
         "clearing method"
-      ]
+      ],
+      "coating_en": "Yellow and dry or white"
     },
     {
       "id": "formula.zhu_ye_shi_gao_tang",
@@ -10215,6 +10299,15 @@
           "2026-09-09 去重:移除「Febrile disease when Qi and Yin have not been injured.」—— 已換回 contraindications_en 對應索引(該欄有中譯)",
           "2026-09-09 去重:移除「Febrile disease when fever remains high.」—— 已換回 contraindications_en 對應索引(該欄有中譯)",
           "2026-09-09 去重:移除「Febrile disease when both normal and pathogenic Qi remain abundant.」—— 已換回 contraindications_en 對應索引(該欄有中譯)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「紅」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「少或無」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「數虛或細數。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 108,
@@ -10545,7 +10638,10 @@
       ],
       "ba_fa_en": [
         "clearing method"
-      ]
+      ],
+      "tongue_en": "Red",
+      "coating_en": "Scanty or none",
+      "pulse_en": "Rapid and deficient or thin and rapid"
     },
     {
       "id": "formula.huang_lian_jie_du_tang",
@@ -10996,6 +11092,9 @@
         ],
         "cautions_zh": [
           "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處：見本筆 field_sources.contraindications 或 field_sources.composition 等既有出處欄位）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「黃」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 244,
@@ -11678,7 +11777,8 @@
       ],
       "ba_fa_en": [
         "clearing method"
-      ]
+      ],
+      "coating_en": "Yellow"
     },
     {
       "id": "formula.xie_xin_tang",
@@ -11844,6 +11944,15 @@
         ],
         "derived_from": [
           "由 黃連解毒湯 的 formula_family 反向產生"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「紅」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「黃」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「數有力」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "clinical_classification_zh": "臨床常用專病處方",
@@ -11939,7 +12048,10 @@
         ],
         "indication_zh": "",
         "source": ""
-      }
+      },
+      "tongue_en": "Red",
+      "coating_en": "Yellow",
+      "pulse_en": "Rapid and forceful"
     },
     {
       "id": "formula.liang_ge_san",
@@ -12227,6 +12339,15 @@
         ],
         "formula_song": [
           "《湯頭歌訣》(汪昂,含通行加減歌)或方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「紅、邊紅」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「黃乾或白乾」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「滑，可數。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/204",
@@ -12663,7 +12784,10 @@
       ],
       "ba_fa_en": [
         "clearing method"
-      ]
+      ],
+      "tongue_en": "Red, red edges",
+      "coating_en": "Yellow and dry or white and dry",
+      "pulse_en": "Slippery, possibly rapid"
     },
     {
       "id": "formula.qing_ying_tang",
@@ -13073,6 +13197,15 @@
         ],
         "cautions_en": [
           "2026-09-09 去重:移除「Dampness with a white, slippery tongue coat.」—— 與 contraindications_en 逐字重複(該欄有中譯);AD 原檔此句列於 Contraindications 標題下,cautions 側是 A1(a) 拆欄前的池化殘留"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「絳紅而乾」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「少」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「細數或數。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。",
@@ -13331,7 +13464,10 @@
       ],
       "ba_fa_en": [
         "clearing method"
-      ]
+      ],
+      "tongue_en": "Crimson-red and dry",
+      "coating_en": "Scanty",
+      "pulse_en": "Thin and rapid or rapid"
     },
     {
       "id": "formula.xi_jiao_di_huang_tang",
@@ -13700,6 +13836,12 @@
           "2026-09-09 去重:移除「Bleeding due to traumatic injury.」—— 與 contraindications_en 逐字重複(該欄有中譯);AD 原檔此句列於 Contraindications 標題下,cautions 側是 A1(a) 拆欄前的池化殘留",
           "2026-09-09 去重:移除「Bleeding due to Spleen and Stomach Deficiencies.」—— 與 contraindications_en 逐字重複(該欄有中譯);AD 原檔此句列於 Contraindications 標題下,cautions 側是 A1(a) 拆欄前的池化殘留",
           "2026-09-09 去重:移除「Bleeding due to Yang Deficiency.」—— 與 contraindications_en 逐字重複(該欄有中譯);AD 原檔此句列於 Contraindications 標題下,cautions 側是 A1(a) 拆欄前的池化殘留"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「絳紅有芒刺或深紫」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「細數。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。",
@@ -14027,7 +14169,9 @@
       ],
       "ba_fa_en": [
         "clearing method"
-      ]
+      ],
+      "tongue_en": "Crimson-red with prickles or deep purple",
+      "pulse_en": "Thin and rapid"
     },
     {
       "id": "formula.huang_lian_e_jiao_tang",
@@ -14411,6 +14555,15 @@
           "data/imports/cloudtcm/formula_url_map.json#黃連阿膠湯/pageData.ActionIndication",
           "https://cloudtcm.com/formula/306",
           "translated 2026-09-07 from modifications_zh (Claude)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「紅或深紅乾」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「黃而乾」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「細數。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 306,
@@ -14682,7 +14835,10 @@
       ],
       "ba_fa_en": [
         "clearing method"
-      ]
+      ],
+      "tongue_en": "Red or deep-red and dry",
+      "coating_en": "Yellow and dry",
+      "pulse_en": "Thin and rapid"
     },
     {
       "id": "formula.dao_chi_san",
@@ -15028,6 +15184,15 @@
         ],
         "tcm_pattern_ids": [
           "derived: 本方 pattern_indications_zh 經 data/config/pattern_alias_map.json + data/pathology/pattern_registry.json name_zh 逐字對照(scripts/derive-formula-pattern-links.js,不拆複合證、不近似匹配、不用 syndromes_zh)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「紅或舌尖紅，可有潰瘍」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「黃」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「實數或滑數。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 281,
@@ -15445,7 +15610,10 @@
       ],
       "ba_fa_en": [
         "clearing method"
-      ]
+      ],
+      "tongue_en": "Red or red tip, possibly with ulcers",
+      "coating_en": "Yellow",
+      "pulse_en": "Excess and rapid or slippery and rapid"
     },
     {
       "id": "formula.long_dan_xie_gan_tang",
@@ -15910,6 +16078,9 @@
         ],
         "tcm_pattern_ids": [
           "derived: 本方 pattern_indications_zh 經 data/config/pattern_alias_map.json + data/pathology/pattern_registry.json name_zh 逐字對照(scripts/derive-formula-pattern-links.js,不拆複合證、不近似匹配、不用 syndromes_zh)"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「黃或黃膩」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 286,
@@ -16209,7 +16380,8 @@
       ],
       "ba_fa_en": [
         "clearing method"
-      ]
+      ],
+      "coating_en": "Yellow or yellow and greasy"
     },
     {
       "id": "formula.qing_wei_san",
@@ -16568,6 +16740,15 @@
         "cautions_en": [
           "2026-09-09 去重:移除「Tooth or gum problems due to Kidney Deficiency.」—— 與 contraindications_en 逐字重複(該欄有中譯);AD 原檔此句列於 Contraindications 標題下,cautions 側是 A1(a) 拆欄前的池化殘留",
           "2026-09-09 去重:移除「Toothache due to Wind-Cold.」—— 與 contraindications_en 逐字重複(該欄有中譯);AD 原檔此句列於 Contraindications 標題下,cautions 側是 A1(a) 拆欄前的池化殘留"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「紅」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「少或黃」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「滑大數。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 211,
@@ -16805,7 +16986,10 @@
       ],
       "ba_fa_en": [
         "clearing method"
-      ]
+      ],
+      "tongue_en": "Red",
+      "coating_en": "Scanty or yellow",
+      "pulse_en": "Slippery, large and rapid"
     },
     {
       "id": "formula.xie_bai_san",
@@ -17004,6 +17188,15 @@
         ],
         "formula_song": [
           "《湯頭歌訣》(汪昂)通行本/方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「紅」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「黃」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「細數，可弦。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/295",
@@ -17312,7 +17505,10 @@
       ],
       "ba_fa_en": [
         "clearing method"
-      ]
+      ],
+      "tongue_en": "Red",
+      "coating_en": "Yellow",
+      "pulse_en": "Thin and rapid, may be wiry"
     },
     {
       "id": "formula.shao_yao_tang",
@@ -17607,6 +17803,15 @@
         "cautions_en": [
           "2026-09-09 去重:移除「External/Biao conditions.」—— 與 contraindications_en 逐字重複(該欄有中譯);AD 原檔此句列於 Contraindications 標題下,cautions 側是 A1(a) 拆欄前的池化殘留",
           "2026-09-09 去重:移除「Chronic dysenteric disorders from Deficiency Cold.」—— 與 contraindications_en 逐字重複(該欄有中譯);AD 原檔此句列於 Contraindications 標題下,cautions 側是 A1(a) 拆欄前的池化殘留"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「紅」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「黃膩厚」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「數、滑數或浮。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/119",
@@ -17834,7 +18039,10 @@
       ],
       "ba_fa_en": [
         "clearing method"
-      ]
+      ],
+      "tongue_en": "Red",
+      "coating_en": "Yellow, greasy and thick",
+      "pulse_en": "Rapid, slippery and rapid, or floating"
     },
     {
       "id": "formula.bai_tou_weng_tang",
@@ -18031,6 +18239,15 @@
         ],
         "contraindications_en": [
           "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 2 條(不同來源並行),對齊為 2 組;原條目逐字保留,補齊側為對側之翻譯"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「紅」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「黃」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「弦數。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/97",
@@ -18272,7 +18489,10 @@
       ],
       "ba_fa_en": [
         "clearing method"
-      ]
+      ],
+      "tongue_en": "Red",
+      "coating_en": "Yellow",
+      "pulse_en": "Wiry and rapid"
     },
     {
       "id": "formula.qing_hao_bie_jia_tang",
@@ -18626,6 +18846,9 @@
         "cautions_en": [
           "2026-09-09 去重:移除「Spasms or convulsions from Yin Deficiency with Liver Wind Rising.」—— 與 contraindications_en 逐字重複(該欄有中譯);AD 原檔此句列於 Contraindications 標題下,cautions 側是 A1(a) 拆欄前的池化殘留",
           "2026-09-09 去重:移除「Early stages of Warm-Heat febrile diseases.」—— 與 contraindications_en 逐字重複(該欄有中譯);AD 原檔此句列於 Contraindications 標題下,cautions 側是 A1(a) 拆欄前的池化殘留"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「少」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 567,
@@ -18835,7 +19058,8 @@
       ],
       "ba_fa_en": [
         "clearing method"
-      ]
+      ],
+      "coating_en": "Scanty"
     },
     {
       "id": "formula.qing_gu_san",
@@ -19079,6 +19303,15 @@
         ],
         "modifications_zh": [
           "curriculum/herbs/方剂学汇总_extracted.md(Table 191;原文英文+拼音,zh 為忠實中譯,原句在帳本 docs/research_packs/MODIFICATIONS_PROPOSALS_2026-08-19.json evidence_quotes)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「紅乾」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「少或無」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「細數。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "clinical_classification_zh": "臨床常用專病處方",
@@ -19230,7 +19463,10 @@
       ],
       "ba_fa_en": [
         "clearing method"
-      ]
+      ],
+      "tongue_en": "Red and dry",
+      "coating_en": "Scanty or none",
+      "pulse_en": "Thin and rapid"
     },
     {
       "id": "formula.dang_gui_liu_huang_tang",
@@ -19501,6 +19737,15 @@
         ],
         "contraindications_en": [
           "translated: 本卡 contraindications_zh 逐條忠實翻譯(紅線5 同長同序,強度不升降)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「紅」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「少或無」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「細數或沉細。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/253",
@@ -19624,7 +19869,10 @@
       ],
       "ba_fa_en": [
         "clearing method"
-      ]
+      ],
+      "tongue_en": "Red",
+      "coating_en": "Scanty or none",
+      "pulse_en": "Thin and rapid, or deep and thin"
     },
     {
       "id": "formula.liu_yi_san",
@@ -19761,6 +20009,9 @@
         ],
         "contraindications_zh": [
           "https://zhongyifangji.com/cht/prescription/detail/id/30(「3. 注意事項：若陰虛，內無濕熱，或小便清長者忌用。」;帳本 docs/research_packs/CONTRAINDICATIONS_BACKFILL_2026-08-19.json)"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「薄黃膩」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/53",
@@ -19873,7 +20124,8 @@
       ],
       "contraindications_en": [
         "Contraindicated in yin deficiency, in the absence of internal damp-heat, or when the urine is clear and copious."
-      ]
+      ],
+      "coating_en": "Thin, yellow and greasy"
     },
     {
       "id": "formula.wu_wei_xiao_du_yin",
@@ -20095,6 +20347,15 @@
         ],
         "formula_song": [
           "《湯頭歌訣》(汪昂,含通行加減歌)或方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「紅」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「黃膩」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「數。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "clinical_classification_zh": "臨床常用專病處方",
@@ -20347,7 +20608,10 @@
       ],
       "ba_fa_en": [
         "clearing method"
-      ]
+      ],
+      "tongue_en": "Red",
+      "coating_en": "Yellow and greasy",
+      "pulse_en": "Rapid"
     },
     {
       "id": "formula.qing_wen_bai_du_yin",
@@ -21165,6 +21429,9 @@
         ],
         "modifications_zh": [
           "curriculum/herbs/方剂学汇总_extracted.md(Table 60;原文英文+拼音,zh 為忠實中譯,原句在帳本 docs/research_packs/MODIFICATIONS_PROPOSALS_2026-08-19.json evidence_quotes)"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「黃乾或黑乾」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 32,
@@ -21687,7 +21954,8 @@
       ],
       "ba_fa_en": [
         "purging method"
-      ]
+      ],
+      "coating_en": "Yellow and dry, or black and dry"
     },
     {
       "id": "formula.xiao_cheng_qi_tang",
@@ -22103,6 +22371,9 @@
         ],
         "derived_from": [
           "curriculum 方剂学汇总 Table 61 (Da Cheng Qi Tang)"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「深黃乾或黑乾」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 40,
@@ -22505,7 +22776,8 @@
         ],
         "indication_zh": "陽明腑實輕證，無燥堅",
         "source": "curriculum 方剂学汇总 Table 61 (Da Cheng Qi Tang)"
-      }
+      },
+      "coating_en": "Dark yellow and dry, or black and dry"
     },
     {
       "id": "formula.tiao_wei_cheng_qi_tang",
@@ -22904,6 +23176,9 @@
         ],
         "derived_from": [
           "curriculum 方剂学汇总 Table 61 (Da Cheng Qi Tang)"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「黃或黑」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 277,
@@ -23305,7 +23580,8 @@
         ],
         "indication_zh": "陽明腑實輕證，無痞滿",
         "source": "curriculum 方剂学汇总 Table 61 (Da Cheng Qi Tang)"
-      }
+      },
+      "coating_en": "Yellow or black"
     },
     {
       "id": "formula.zeng_ye_cheng_qi_tang",
@@ -23737,6 +24013,15 @@
         ],
         "formula_song": [
           "《湯頭歌訣》(汪昂,含通行加減歌)或方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「粉紅」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「薄白或黃膩」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「滑數、緊、弦緊或緊數。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "clinical_classification_zh": "臨床常用專病處方",
@@ -24112,7 +24397,10 @@
       ],
       "ba_fa_en": [
         "purging method (draining downward)"
-      ]
+      ],
+      "tongue_en": "Pink",
+      "coating_en": "Thin and white, or yellow and greasy",
+      "pulse_en": "Slippery and rapid, tight, wiry and tight, or tight and rapid"
     },
     {
       "id": "formula.ma_zi_ren_wan",
@@ -24520,6 +24808,15 @@
         ],
         "formula_song": [
           "《湯頭歌訣》(汪昂,含通行加減歌)或方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「粉紅或紅」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「黃乾」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「滑數、細數、沉數或浮澀。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 222,
@@ -24752,7 +25049,10 @@
       ],
       "ba_fa_en": [
         "purging method (draining downward)"
-      ]
+      ],
+      "tongue_en": "Pink or red",
+      "coating_en": "Yellow and dry",
+      "pulse_en": "Slippery and rapid, thin and rapid, deep and rapid, or floating and choppy"
     },
     {
       "id": "formula.run_chang_wan",
@@ -25145,6 +25445,9 @@
         ],
         "contraindications_en": [
           "translated: 本卡 contraindications_zh 逐條忠實翻譯(紅線5 同長同序,強度不升降)"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「薄白」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/559",
@@ -25208,7 +25511,8 @@
         "Warms and tonifies Kidney Yang, moistens intestines to unblock bowels",
         "Promotes intestinal motility, increases intestinal fluid secretion",
         "Immunomodulatory, improves lower-extremity circulation"
-      ]
+      ],
+      "coating_en": "Thin and white"
     },
     {
       "id": "formula.xiao_chai_hu_tang",
@@ -25804,6 +26108,9 @@
         ],
         "related_formulas": [
           "curriculum/formulas/ (Board exam high-frequency sister formula associations)"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「薄白」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 43,
@@ -26602,7 +26909,8 @@
       ],
       "ba_fa_en": [
         "harmonizing method"
-      ]
+      ],
+      "coating_en": "Thin and white"
     },
     {
       "id": "formula.da_chai_hu_tang",
@@ -27029,6 +27337,15 @@
         ],
         "formula_song": [
           "《湯頭歌訣》(汪昂,含通行加減歌)或方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「正常或紅」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「黃或厚黃」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「弦有力或弦緊有力。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 35,
@@ -27390,7 +27707,10 @@
       ],
       "ba_fa_en": [
         "harmonizing method"
-      ]
+      ],
+      "tongue_en": "Normal or red",
+      "coating_en": "Yellow, or thick and yellow",
+      "pulse_en": "Wiry and forceful, or wiry, tight and forceful"
     },
     {
       "id": "formula.chai_hu_gui_zhi_tang",
@@ -28319,6 +28639,9 @@
         ],
         "related_formulas": [
           "curriculum/formulas/ (Board exam high-frequency sister formula associations)"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「薄白或薄黃」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 219,
@@ -29005,7 +29328,8 @@
       ],
       "ba_fa_en": [
         "harmonizing method"
-      ]
+      ],
+      "coating_en": "Thin and white, or thin and yellow"
     },
     {
       "id": "formula.jia_wei_xiao_yao_san",
@@ -29616,6 +29940,15 @@
         ],
         "derived_from": [
           "curriculum 方剂学汇总 Table 109 (Xiao Yao San)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「紅或邊紅」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「薄黃」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「細弦數或弦緊數。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 65,
@@ -30330,7 +30663,10 @@
         ],
         "indication_zh": "兼肝經鬱熱或肝火（又名丹梔逍遙散）",
         "source": "curriculum 方剂学汇总 Table 109 (Xiao Yao San)"
-      }
+      },
+      "tongue_en": "Red or red sides",
+      "coating_en": "Thin and yellow",
+      "pulse_en": "Thin, wiry and rapid, or wiry, tight and rapid"
     },
     {
       "id": "formula.tong_xie_yao_fang",
@@ -30653,6 +30989,15 @@
         ],
         "related_formulas": [
           "curriculum/formulas/ (Board exam high-frequency sister formula associations)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「粉紅」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「薄白」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「弦緩或細弦。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 563,
@@ -30861,7 +31206,10 @@
       ],
       "ba_fa_en": [
         "harmonizing method"
-      ]
+      ],
+      "tongue_en": "Pink",
+      "coating_en": "Thin and white",
+      "pulse_en": "Wiry and moderate, or thin and wiry"
     },
     {
       "id": "formula.ban_xia_xie_xin_tang",
@@ -31366,6 +31714,9 @@
         ],
         "pattern_indications_en": [
           "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 2 條 / pattern_indications_en 4 條(不同來源並行),對齊為 5 組;原條目逐字保留,補齊側為對側之翻譯"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「薄黃膩」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 67,
@@ -31813,7 +32164,8 @@
       ],
       "ba_fa_en": [
         "harmonizing method"
-      ]
+      ],
+      "coating_en": "Thin, yellow and greasy"
     },
     {
       "id": "formula.li_zhong_wan",
@@ -32275,6 +32627,9 @@
         ],
         "pattern_indications_en": [
           "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 3 條 / pattern_indications_en 11 條(不同來源並行),對齊為 12 組;原條目逐字保留,補齊側為對側之翻譯"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「白或無」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。",
@@ -32814,7 +33169,8 @@
       ],
       "ba_fa_en": [
         "warming method"
-      ]
+      ],
+      "coating_en": "White or none"
     },
     {
       "id": "formula.fu_zi_li_zhong_wan",
@@ -33029,6 +33385,15 @@
         ],
         "derived_from": [
           "curriculum 方剂学汇总 Table 214 (Li Zhong Wan)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「淡，可濕潤」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「白」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「沉微遲。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "clinical_classification_zh": "臨床常用專病處方",
@@ -33542,7 +33907,10 @@
         ],
         "indication_zh": "裡寒重證；虛寒性反覆口瘡",
         "source": "curriculum 方剂学汇总 Table 214 (Li Zhong Wan)"
-      }
+      },
+      "tongue_en": "Pale, may be moist",
+      "coating_en": "White",
+      "pulse_en": "Deep, faint and slow"
     },
     {
       "id": "formula.xiao_jian_zhong_tang",
@@ -33997,6 +34365,15 @@
         ],
         "contraindications_en": [
           "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 3 條(不同來源並行),對齊為 4 組;原條目逐字保留,補齊側為對側之翻譯"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「淡」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「白」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「細弦緩或細弱。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 39,
@@ -34428,7 +34805,10 @@
       ],
       "ba_fa_en": [
         "warming method"
-      ]
+      ],
+      "tongue_en": "Pale",
+      "coating_en": "White",
+      "pulse_en": "Thin, wiry and moderate or thin and weak"
     },
     {
       "id": "formula.huang_qi_jian_zhong_tang",
@@ -34672,6 +35052,15 @@
         ],
         "derived_from": [
           "curriculum 方剂学汇总 Table 218 (Xiao Jian Zhong Tang)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「淡」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「白」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「微細弱、沉遲或浮大弱。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "clinical_classification_zh": "臨床常用專病處方",
@@ -35074,7 +35463,10 @@
         ],
         "indication_zh": "氣虛較重：氣短、自汗、脈微弱",
         "source": "curriculum 方剂学汇总 Table 218 (Xiao Jian Zhong Tang)"
-      }
+      },
+      "tongue_en": "Pale",
+      "coating_en": "White",
+      "pulse_en": "Faint, thin and weak, deep and slow, or floating, large and weak"
     },
     {
       "id": "formula.si_ni_tang",
@@ -36416,6 +36808,15 @@
         ],
         "pattern_indications_en": [
           "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 3 條 / pattern_indications_en 5 條(不同來源並行),對齊為 5 組;原條目逐字保留,補齊側為對側之翻譯"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「淡」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「白滑」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「遲弱、沉、遲細或遲弦。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 111,
@@ -36778,7 +37179,10 @@
       ],
       "ba_fa_en": [
         "warming method"
-      ]
+      ],
+      "tongue_en": "Pale",
+      "coating_en": "White and slippery",
+      "pulse_en": "Slow and weak, deep, slow and thin, or slow and wiry"
     },
     {
       "id": "formula.dang_gui_si_ni_tang",
@@ -37215,7 +37619,10 @@
         "pattern_indications_en": [
           "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 1 條 / pattern_indications_en 2 條(不同來源並行),對齊為 2 組;原條目逐字保留,補齊側為對側之翻譯"
         ],
-        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)"
+        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)",
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「白」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ]
       },
       "cloudtcm_id": 256,
       "action_profile": {
@@ -37625,7 +38032,8 @@
       ],
       "ba_fa_en": [
         "warming method"
-      ]
+      ],
+      "coating_en": "White"
     },
     {
       "id": "formula.si_jun_zi_tang",
@@ -38107,6 +38515,9 @@
         ],
         "modifications_zh": [
           "curriculum/herbs/方剂学汇总_extracted.md(Table 247;原文英文+拼音,zh 為忠實中譯,原句在帳本 docs/research_packs/MODIFICATIONS_PROPOSALS_2026-08-19.json evidence_quotes)"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「白」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 75,
@@ -38675,7 +39086,8 @@
       ],
       "ba_fa_en": [
         "tonifying method"
-      ]
+      ],
+      "coating_en": "White"
     },
     {
       "id": "formula.liu_jun_zi_tang",
@@ -39220,6 +39632,15 @@
         ],
         "derived_from": [
           "curriculum 方剂学汇总 Table 248 (Si Jun Zi Tang)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「淡胖，可有齒痕」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「白膩」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「濡弱。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 54,
@@ -39701,7 +40122,10 @@
         ],
         "indication_zh": "脾虛兼痰濕：納呆、痞悶、噁心嘔吐",
         "source": "curriculum 方剂学汇总 Table 248 (Si Jun Zi Tang)"
-      }
+      },
+      "tongue_en": "Pale and swollen, possibly tooth-marked",
+      "coating_en": "White and greasy",
+      "pulse_en": "Soggy and weak"
     },
     {
       "id": "formula.xiang_sha_liu_jun_zi_tang",
@@ -40003,6 +40427,15 @@
         ],
         "derived_from": [
           "curriculum 方剂学汇总 Table 248 (Si Jun Zi Tang)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「淡胖，可齒痕」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「薄白」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「弱或虛。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/150",
@@ -40431,7 +40864,10 @@
         ],
         "indication_zh": "脾胃氣虛兼氣滯痰阻：噯氣、嘔吐、泄瀉、脘腹脹痛",
         "source": "curriculum 方剂学汇总 Table 248 (Si Jun Zi Tang)"
-      }
+      },
+      "tongue_en": "Pale and swollen, possibly tooth-marked",
+      "coating_en": "Thin and white",
+      "pulse_en": "Weak or deficient"
     },
     {
       "id": "formula.shen_ling_bai_zhu_san",
@@ -41018,6 +41454,15 @@
         ],
         "formula_song": [
           "《湯頭歌訣》(汪昂)通行本/方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「淡或淡紅」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「白，可膩」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「細緩或緩弱。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 194,
@@ -41568,7 +42013,10 @@
       ],
       "ba_fa_en": [
         "tonifying method"
-      ]
+      ],
+      "tongue_en": "Pale or pale-red",
+      "coating_en": "White, possibly greasy",
+      "pulse_en": "Thin and moderate or moderate and weak"
     },
     {
       "id": "formula.bu_zhong_yi_qi_tang",
@@ -43695,6 +44143,15 @@
         ],
         "modifications_zh": [
           "curriculum/herbs/方剂学汇总_extracted.md(Table 377;原文英文+拼音,zh 為忠實中譯,原句在帳本 docs/research_packs/MODIFICATIONS_PROPOSALS_2026-08-19.json evidence_quotes)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「淡或粉紅」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「白」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「浮虛、濡。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 86,
@@ -43940,7 +44397,10 @@
       ],
       "ba_fa_en": [
         "tonifying method"
-      ]
+      ],
+      "tongue_en": "Pale or pink",
+      "coating_en": "White",
+      "pulse_en": "Floating and deficient, soggy"
     },
     {
       "id": "formula.sheng_mai_san",
@@ -44367,6 +44827,9 @@
         ],
         "formula_song": [
           "《湯頭歌訣》(汪昂)通行本/方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「薄而乾」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。",
@@ -44829,7 +45292,8 @@
       ],
       "ba_fa_en": [
         "tonifying method"
-      ]
+      ],
+      "coating_en": "Thin and dry"
     },
     {
       "id": "formula.ren_shen_yang_rong_tang",
@@ -45243,6 +45707,15 @@
         "source_classic": [
           "curriculum/formulas/01_Formula_Cards_001-010_補益劑.md",
           "https://www1.ndmctsgh.edu.tw/MedChinese/Detail/C1/B0989.html"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「淡」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「白」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「細弱、細數弱或沉弱。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/10",
@@ -45727,7 +46200,10 @@
       ],
       "ba_fa_en": [
         "tonifying method"
-      ]
+      ],
+      "tongue_en": "Pale",
+      "coating_en": "White",
+      "pulse_en": "Thin and weak, thin, rapid and weak, or deep and weak"
     },
     {
       "id": "formula.si_wu_tang",
@@ -46222,6 +46698,9 @@
         ],
         "formula_family": [
           "curriculum/herbs/方剂学汇总_extracted.md(Table 269, source lines 2328,2329,2330,2331;帳本 docs/research_packs/FORMULA_FAMILY_PROPOSALS_2026-08-19.json,劑量逐字審計)"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「正常」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 77,
@@ -46739,7 +47218,8 @@
       ],
       "ba_fa_en": [
         "tonifying method"
-      ]
+      ],
+      "coating_en": "Normal"
     },
     {
       "id": "formula.tao_hong_si_wu_tang",
@@ -47470,6 +47950,15 @@
         ],
         "derived_from": [
           "curriculum 方剂学汇总 Table 269 (Si Wu Tang)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「淡」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「薄白或白潤」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「細弱。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "clinical_classification_zh": "臨床常用專病處方",
@@ -47784,7 +48273,10 @@
         ],
         "indication_zh": "衝任虛損：崩漏、胎漏、先兆流產、產後虛弱",
         "source": "curriculum 方剂学汇总 Table 269 (Si Wu Tang)"
-      }
+      },
+      "tongue_en": "Pale",
+      "coating_en": "Thin and white or white and moist",
+      "pulse_en": "Thin and weak"
     },
     {
       "id": "formula.dang_gui_bu_xue_tang",
@@ -48114,6 +48606,12 @@
         ],
         "contraindications_en": [
           "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 2 條(不同來源並行),對齊為 2 組;原條目逐字保留,補齊側為對側之翻譯"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「淡」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「洪大而按之無力，或大而弱。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 251,
@@ -48431,7 +48929,9 @@
       ],
       "ba_fa_en": [
         "tonifying method"
-      ]
+      ],
+      "tongue_en": "Pale",
+      "pulse_en": "Flooding and large but forceless on pressure, or large and weak"
     },
     {
       "id": "formula.ba_zhen_tang",
@@ -48954,6 +49454,15 @@
         ],
         "contraindications_en": [
           "2026-08-19 雙語聯集對齊：原 contraindications_zh 3 條 / contraindications_en 1 條(不同來源並行),對齊為 4 組;原條目逐字保留,補齊側為對側之翻譯"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「淡」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「薄白」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「細弱或大而空弱。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 18,
@@ -49515,7 +50024,10 @@
       ],
       "ba_fa_en": [
         "tonifying method"
-      ]
+      ],
+      "tongue_en": "Pale",
+      "coating_en": "Thin and white",
+      "pulse_en": "Thin and weak, or large but empty and weak"
     },
     {
       "id": "formula.shi_quan_da_bu_tang",
@@ -49855,6 +50367,9 @@
         ],
         "derived_from": [
           "curriculum 方剂学汇总 Table 278 (Ba Zhen Tang)"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「薄白」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/20",
@@ -50575,7 +51090,8 @@
         ],
         "indication_zh": "氣血兩虛偏於氣虛而有寒象：虛勞",
         "source": "curriculum 方剂学汇总 Table 278 (Ba Zhen Tang)"
-      }
+      },
+      "coating_en": "Thin and white"
     },
     {
       "id": "formula.taishan_pan_shi_san",
@@ -50905,6 +51421,15 @@
         ],
         "source_classic": [
           "https://cloudtcm.com/formula/570(「泰山磐石散「《景岳全書》時方」,亦見《胎產心法》《婦科玉尺》《古今醫統大全》等」;帳本 docs/research_packs/SOURCE_CLASSIC_WEB_PROPOSALS_2026-08-19.json)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「淡」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「滑或薄白」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「滑而無力或沉弱。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/570",
@@ -51029,7 +51554,10 @@
       ],
       "ba_fa_en": [
         "tonifying method"
-      ]
+      ],
+      "tongue_en": "Pale",
+      "coating_en": "Slippery or thin and white",
+      "pulse_en": "Slippery and forceless or deep and weak"
     },
     {
       "id": "formula.liu_wei_di_huang_wan",
@@ -51621,6 +52149,9 @@
         ],
         "contraindications_en": [
           "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 3 條(不同來源並行),對齊為 3 組;原條目逐字保留,補齊側為對側之翻譯"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「少或無」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 55,
@@ -52550,7 +53081,8 @@
       ],
       "ba_fa_en": [
         "tonifying method"
-      ]
+      ],
+      "coating_en": "Scanty or absent"
     },
     {
       "id": "formula.zuo_gui_wan",
@@ -53016,6 +53548,15 @@
           "data/imports/cloudtcm/formula_url_map.json#左歸丸/pageData.OldAdministration",
           "https://cloudtcm.com/formula/81",
           "translated 2026-09-07 from modifications_zh (Claude)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「紅而光」(Claude 譯 + 對抗式覆核,採覆核修正版);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「少或無」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「細數。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 81,
@@ -53407,7 +53948,10 @@
       ],
       "ba_fa_en": [
         "tonifying method"
-      ]
+      ],
+      "tongue_en": "Red and mirror-like",
+      "coating_en": "Scanty or absent",
+      "pulse_en": "Thin and rapid"
     },
     {
       "id": "formula.zuo_gui_yin",
@@ -53605,6 +54149,12 @@
         ],
         "source_classic": [
           "https://www.zhongyifangji.com/home/prescription/detail/id/50(「左归丸(《景岳全书》)頁【附方】:左归饮《景岳全书》」;帳本 docs/research_packs/SOURCE_CLASSIC_WEB_PROPOSALS_2026-08-19.json)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「紅」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「剝或光」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "clinical_classification_zh": "臨床常用專病處方",
@@ -53789,7 +54339,9 @@
       ],
       "ba_fa_en": [
         "tonifying method"
-      ]
+      ],
+      "tongue_en": "Red",
+      "coating_en": "Peeled or mirror-like"
     },
     {
       "id": "formula.you_gui_wan",
@@ -54273,6 +54825,12 @@
           "data/imports/cloudtcm/formula_url_map.json#右歸丸/pageData.OldAdministration",
           "https://cloudtcm.com/formula/70",
           "translated 2026-09-07 from modifications_zh (Claude)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「淡」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「沉遲弱。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 70,
@@ -54737,7 +55295,9 @@
       ],
       "ba_fa_en": [
         "tonifying method"
-      ]
+      ],
+      "tongue_en": "Pale",
+      "pulse_en": "Deep, slow and weak"
     },
     {
       "id": "formula.you_gui_yin",
@@ -54987,6 +55547,12 @@
         ],
         "derived_from": [
           "curriculum 方剂学汇总 Table 295 (You Gui Wan)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「淡」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「白」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "clinical_classification_zh": "臨床常用專病處方",
@@ -55228,7 +55794,9 @@
         ],
         "indication_zh": "腎陽虛衰憊：腹痛、腰痠、肢冷、脈細；真寒假熱",
         "source": "curriculum 方剂学汇总 Table 295 (You Gui Wan)"
-      }
+      },
+      "tongue_en": "Pale",
+      "coating_en": "White"
     },
     {
       "id": "formula.qi_ju_di_huang_wan",
@@ -55506,6 +56074,15 @@
         ],
         "derived_from": [
           "curriculum 方剂学汇总 Table 300 (Liu Wei Di Huang Wan)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「紅」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「少或無」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「細數。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/115",
@@ -56051,7 +56628,10 @@
         ],
         "indication_zh": "肝腎陰虛:視物昏花、畏光、迎風流淚",
         "source": "curriculum 方剂学汇总 Table 300 (Liu Wei Di Huang Wan)"
-      }
+      },
+      "tongue_en": "Red",
+      "coating_en": "Scanty or none",
+      "pulse_en": "Thin and rapid"
     },
     {
       "id": "formula.zhi_bai_di_huang_wan",
@@ -56323,6 +56903,15 @@
         ],
         "derived_from": [
           "curriculum 方剂学汇总 Table 300 (Liu Wei Di Huang Wan)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「紅」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「少或無」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「細數，尺位可偏大。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/137",
@@ -57003,7 +57592,10 @@
         ],
         "indication_zh": "陰虛火旺、骨蒸勞熱：盜汗；濕熱淋證",
         "source": "curriculum 方剂学汇总 Table 300 (Liu Wei Di Huang Wan)"
-      }
+      },
+      "tongue_en": "Red",
+      "coating_en": "Scanty or none",
+      "pulse_en": "Thin and rapid, may be somewhat large at the rear position"
     },
     {
       "id": "formula.shen_qi_wan",
@@ -57298,6 +57890,15 @@
         ],
         "modifications_en": [
           "curriculum/herbs/方剂学汇总_extracted.md — Jin Gui Shen Qi Wan [金匮肾气丸] section, Modifications table (Table 290, right columns); cross-checked with curriculum/formulas/Herbal Formulations Comprehensive.docx.md（2026-08-19 課件 Modifications 表逐列抽取）"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「淡，可腫」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「薄白潤」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「沉、沉細或弱遲。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "clinical_classification_zh": "臨床常用專病處方",
@@ -58181,7 +58782,10 @@
       ],
       "ba_fa_en": [
         "tonifying method"
-      ]
+      ],
+      "tongue_en": "Pale, may be swollen",
+      "coating_en": "Thin, white and moist",
+      "pulse_en": "Deep, deep and thin, or weak and slow"
     },
     {
       "id": "formula.jin_gui_shen_qi_wan",
@@ -58824,6 +59428,9 @@
         ],
         "modifications_zh": [
           "curriculum/herbs/方剂学汇总_extracted.md(Table 290;原文英文+拼音,zh 為忠實中譯,原句在帳本 docs/research_packs/MODIFICATIONS_PROPOSALS_2026-08-19.json evidence_quotes)"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「薄白潤」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "condition_tags_zh": [
@@ -59694,7 +60301,8 @@
       ],
       "ba_fa_en": [
         "tonifying method"
-      ]
+      ],
+      "coating_en": "Thin, white and moist"
     },
     {
       "id": "formula.zhi_gan_cao_tang",
@@ -60204,6 +60812,15 @@
         ],
         "formula_song": [
           "《湯頭歌訣》(汪昂)通行本/方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「淡而光或紅」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「薄白或無」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「結代、微弱無力或細數。」(Claude 譯 + 對抗式覆核,採覆核修正版);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 136,
@@ -60541,7 +61158,10 @@
       ],
       "ba_fa_en": [
         "tonifying method"
-      ]
+      ],
+      "tongue_en": "Pale and shiny, or red",
+      "coating_en": "Thin and white, or none",
+      "pulse_en": "Knotted and intermittent, faint, weak and forceless, or thin and rapid"
     },
     {
       "id": "formula.yi_guan_jian",
@@ -60953,6 +61573,15 @@
         ],
         "contraindications_en": [
           "2026-08-19 雙語聯集對齊：原 contraindications_zh 3 條 / contraindications_en 1 條(不同來源並行),對齊為 4 組;原條目逐字保留,補齊側為對側之翻譯"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「紅乾」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「少或無」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「細弱或弦而無力。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 359,
@@ -61389,7 +62018,10 @@
       ],
       "ba_fa_en": [
         "tonifying method"
-      ]
+      ],
+      "tongue_en": "Red and dry",
+      "coating_en": "Scanty or none",
+      "pulse_en": "Thin and weak, or wiry and forceless"
     },
     {
       "id": "formula.mu_li_san",
@@ -61636,6 +62268,15 @@
         ],
         "pattern_indications_en": [
           "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 1 條 / pattern_indications_en 3 條(不同來源並行),對齊為 4 組;原條目逐字保留,補齊側為對側之翻譯"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「淡紅」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「白、少或無」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「細弱。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。",
@@ -61747,7 +62388,10 @@
         "vexation and agitation",
         "weakness",
         "lethargy"
-      ]
+      ],
+      "tongue_en": "Pale-red",
+      "coating_en": "White, scanty or none",
+      "pulse_en": "Thin and weak"
     },
     {
       "id": "formula.zhen_ren_yang_zang_tang",
@@ -62168,6 +62812,15 @@
         ],
         "formula_song": [
           "《湯頭歌訣》(汪昂,含通行加減歌)或方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「淡」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「白」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「細遲。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "ad_syndromes_en": [
@@ -62314,7 +62967,10 @@
         "weak legs",
         "sore lower back",
         "pale yellow complexion"
-      ]
+      ],
+      "tongue_en": "Pale",
+      "coating_en": "White",
+      "pulse_en": "Thin and slow"
     },
     {
       "id": "formula.si_shen_wan",
@@ -62633,6 +63289,15 @@
         ],
         "formula_song": [
           "《湯頭歌訣》(汪昂)通行本/方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「淡」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「薄白」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「沉遲無力。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。",
@@ -62808,7 +63473,10 @@
         "cold limbs",
         "fatigue with a preference for lying down",
         "periumbilical abdominal pain, often preceded by borborygmus before dawn"
-      ]
+      ],
+      "tongue_en": "Pale",
+      "coating_en": "Thin and white",
+      "pulse_en": "Deep, slow and forceless"
     },
     {
       "id": "formula.jin_suo_gu_jing_wan",
@@ -63073,6 +63741,15 @@
         ],
         "formula_song": [
           "《湯頭歌訣》(汪昂,含通行加減歌)或方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「淡」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「薄白」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「細弱或沉弱。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/138",
@@ -63326,7 +64003,10 @@
         "midline pain",
         "tinnitus",
         "muscle weakness"
-      ]
+      ],
+      "tongue_en": "Pale",
+      "coating_en": "Thin and white",
+      "pulse_en": "Thin and weak, or deep and weak"
     },
     {
       "id": "formula.sang_piao_xiao_san",
@@ -63586,6 +64266,15 @@
         ],
         "contraindications_en": [
           "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 2 條(不同來源並行),對齊為 2 組;原條目逐字保留,補齊側為對側之翻譯"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「淡或淡紅」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「薄白」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「細遲弱或沉弱。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/160",
@@ -63804,7 +64493,10 @@
         "forgetfulness",
         "fatigue",
         "poor appetite"
-      ]
+      ],
+      "tongue_en": "Pale or pale-red",
+      "coating_en": "Thin and white",
+      "pulse_en": "Thin, slow and weak, or deep and weak"
     },
     {
       "id": "formula.suo_quan_wan",
@@ -63952,6 +64644,15 @@
         ],
         "source_classic": [
           "curriculum/formulas/Herbal Formulations Comprehensive.docx.md(「Suo quan wan [缩泉丸] (shut the sluice pill) source: fu ren liang fang」;帳本 docs/research_packs/SOURCE_CLASSIC_PROPOSALS_2026-08-19.json)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「淡」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「白」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「沉弱。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "clinical_classification_zh": "臨床常用專病處方",
@@ -64076,7 +64777,10 @@
         "spermatorrhea",
         "dribbling after urination",
         "vaginal discharge"
-      ]
+      ],
+      "tongue_en": "Pale",
+      "coating_en": "White",
+      "pulse_en": "Deep and weak"
     },
     {
       "id": "formula.shou_tai_wan",
@@ -65446,6 +66150,9 @@
         ],
         "contraindications_en": [
           "2026-08-19 雙語聯集對齊：原 contraindications_zh 2 條 / contraindications_en 1 條(不同來源並行),對齊為 3 組;原條目逐字保留,補齊側為對側之翻譯"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「少苔」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 58,
@@ -65552,7 +66259,8 @@
       ],
       "cautions_en": [
         "The classical formula contains Cinnabar (Zhu Sha), which is toxic and unsuitable for long-term use; modern pharmaceutical preparations do not contain Cinnabar and may be taken. This formula contains many Yin-nourishing substances, so it is not suitable for long-term use in patients with Spleen-Stomach deficiency, poor appetite, or loose stool."
-      ]
+      ],
+      "coating_en": "Scanty coating"
     },
     {
       "id": "formula.gan_mai_da_zao_tang",
@@ -65946,6 +66654,9 @@
         ],
         "contraindications_zh": [
           "https://cloudtcm.com/formula/89(「臨床辨證要點（不適用情況）：排除實證舌脈：舌苔厚膩（痰濕、食滯）、脈滑實有力者，不宜使用，恐甘味助濕滯。熱盛津傷之象：舌紅絳、苔黃燥，脈洪大數實，屬實火亢盛，非」;帳本 docs/research_packs/CONTRAINDICATIONS_BACKFILL_2026-08-19.json)"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「少」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 89,
@@ -66218,7 +66929,8 @@
         "frequent yawning",
         "oversensitivity or excessive self-consciousness",
         "insomnia"
-      ]
+      ],
+      "coating_en": "Scanty"
     },
     {
       "id": "formula.chai_hu_jia_long_gu_mu_li_tang",
@@ -66883,6 +67595,15 @@
         ],
         "contraindications_en": [
           "2026-09-09 去重:移除「Not appropriate for depression/stagnation patterns arising from deficiency.」—— 652dfdd9 對 zh「因虛引起的鬱症不適用」的第二種英譯;[0] 為 AD 逐字原句"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「正常」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「薄白、膩或滑」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「弦緊或動。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 238,
@@ -67125,7 +67846,10 @@
         "mild cough with copious phlegm",
         "poor appetite",
         "indigestion"
-      ]
+      ],
+      "tongue_en": "Normal",
+      "coating_en": "Thin and white, greasy or slippery",
+      "pulse_en": "Wiry and tight, or stirring"
     },
     {
       "id": "formula.chai_hu_shu_gan_san",
@@ -68539,6 +69263,15 @@
         ],
         "formula_song": [
           "《湯頭歌訣》(汪昂)通行本/方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「粉紅」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「薄白、白潤或白膩」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「滑弦、弦遲或緊。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 71,
@@ -68989,7 +69722,10 @@
         "women may have irregular menstruation",
         "dysmenorrhea",
         "breast pain"
-      ]
+      ],
+      "tongue_en": "Pink",
+      "coating_en": "Thin and white, white and moist, or white and greasy",
+      "pulse_en": "Slippery and wiry, wiry and slow, or tight"
     },
     {
       "id": "formula.su_zi_jiang_qi_tang",
@@ -69439,6 +70175,15 @@
         ],
         "formula_song": [
           "《湯頭歌訣》(汪昂)通行本/方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「淡」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「厚白膩或黏」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「滑或濡。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 299,
@@ -69704,7 +70449,10 @@
         "epigastric distension",
         "clouded consciousness",
         "tinnitus"
-      ]
+      ],
+      "tongue_en": "Pale",
+      "coating_en": "Thick, white and greasy or sticky",
+      "pulse_en": "Slippery or soggy"
     },
     {
       "id": "formula.ju_pi_zhu_ru_tang",
@@ -69905,6 +70653,9 @@
         ],
         "contraindications_en": [
           "translated: 本卡 contraindications_zh 逐條忠實翻譯(紅線5 同長同序,強度不升降)"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「黃」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/283",
@@ -69966,7 +70717,8 @@
         "Regulates autonomic nervous system"
       ],
       "composition_suspect_cleared_note": "2026-08-19 原組成僅剩方名首味橘皮,依《金匱要略》橘皮竹茹湯重建六味,君臣佐使照 curriculum Table 440",
-      "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 1 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：橘皮（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。\n【2026-08-27 C5b 復原記錄】上段稽核註記於 a7b8a040 佚失(全庫 167 方唯一一張),2026-08-14 合併時發現;本日自 61cf1198 逐字取回,獨立 commit 補上,不藏在 merge 裡。"
+      "correction_note": "【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 1 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：橘皮（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。\n【2026-08-27 C5b 復原記錄】上段稽核註記於 a7b8a040 佚失(全庫 167 方唯一一張),2026-08-14 合併時發現;本日自 61cf1198 逐字取回,獨立 commit 補上,不藏在 merge 裡。",
+      "coating_en": "Yellow"
     },
     {
       "id": "formula.xue_fu_zhu_yu_tang",
@@ -70607,6 +71359,12 @@
         ],
         "related_formulas": [
           "curriculum/formulas/09_Formula_Cards_081-090_解表劑_理血劑.md #084-088 (Classical/course source: Yi Lin Gai Cuo, 王清任《醫林改錯》五首逐瘀湯,依身體部位分主治:胸中血府/膈下/少腹/週身痛/頭面清竅)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「暗紅或紫、邊有瘀點」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「澀或弦緊等。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 109,
@@ -71231,7 +71989,9 @@
         "nails",
         "complexion",
         "sclera that may appear dark purple, and possible hair loss"
-      ]
+      ],
+      "tongue_en": "Dusky-red or purple, with purple spots on the sides",
+      "pulse_en": "Choppy or wiry and tight, among others"
     },
     {
       "id": "formula.bu_yang_huan_wu_tang",
@@ -71685,6 +72445,15 @@
           "data/imports/cloudtcm/formula_url_map.json#補陽還五湯/pageData.ActionIndication",
           "https://cloudtcm.com/formula/264",
           "translated 2026-09-07 from modifications_zh (Claude)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「正常」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「白」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「緩。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 264,
@@ -72049,7 +72818,10 @@
         "excessive salivation",
         "cold limbs",
         "lack of strength"
-      ]
+      ],
+      "tongue_en": "Normal",
+      "coating_en": "White",
+      "pulse_en": "Moderate"
     },
     {
       "id": "formula.sheng_hua_tang",
@@ -72367,6 +73139,15 @@
         ],
         "formula_song": [
           "《湯頭歌訣》(汪昂,含通行加減歌)或方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「淡紫或淡而有紫點」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「正常」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「沉澀。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 90,
@@ -72576,7 +73357,10 @@
       "symptoms_en": [
         "incomplete lochial discharge, with cold, hard, and painful lower abdomen aggravated by pressure, possibly with a palpable mass",
         "dark purplish blood"
-      ]
+      ],
+      "tongue_en": "Pale-purple or pale with purple spots",
+      "coating_en": "Normal",
+      "pulse_en": "Deep and choppy"
     },
     {
       "id": "formula.shi_hui_san",
@@ -72981,6 +73765,12 @@
         ],
         "formula_song": [
           "《湯頭歌訣》(汪昂,含通行加減歌)或方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「紅」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「數。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 573,
@@ -73135,7 +73925,9 @@
         "hemoptysis",
         "hematemesis",
         "spitting blood"
-      ]
+      ],
+      "tongue_en": "Red",
+      "pulse_en": "Rapid"
     },
     {
       "id": "formula.wen_jing_tang",
@@ -73712,6 +74504,12 @@
         ],
         "formula_song": [
           "《湯頭歌訣》(汪昂)通行本/方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「紫或有瘀點」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「細澀。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 249,
@@ -74103,7 +74901,9 @@
         "loose stools",
         "cold limbs",
         "aversion to cold"
-      ]
+      ],
+      "tongue_en": "Purple or with purple spots",
+      "pulse_en": "Thin and choppy"
     },
     {
       "id": "formula.gui_zhi_fu_ling_wan",
@@ -74416,6 +75216,9 @@
           "composition[1] herb.fu_ling:15_Formula_Cards_141-150_治風劑_祛痰劑.md:3120-3121 (Bastyr/Chenoweth 君臣佐使表；AD 藥表無本方；此表誤掛於 #149 茯苓丸卡下，內容為桂枝茯苓丸；原文 Herbal Formulations Comprehensive.docx.md:6592-6593, p.110)(2026-09-09 補填,zh 譯自 en)",
           "composition[2] herb.mu_dan_pi:15_Formula_Cards_141-150_治風劑_祛痰劑.md:3124-3125 (Bastyr/Chenoweth 君臣佐使表；AD 藥表無本方；此表誤掛於 #149 茯苓丸卡下，內容為桂枝茯苓丸；原文 Herbal Formulations Comprehensive.docx.md:6596-6597, p.110)(2026-09-09 補填,zh 譯自 en)",
           "composition[3] herb.tao_ren:15_Formula_Cards_141-150_治風劑_祛痰劑.md:3123 (Bastyr/Chenoweth 君臣佐使表；AD 藥表無本方；此表誤掛於 #149 茯苓丸卡下，內容為桂枝茯苓丸；原文 Herbal Formulations Comprehensive.docx.md:6595, p.110；末尾「Pair: Tao Ren & Mu Dan Pi」為配對標註非作用句，未抄入)(2026-09-09 補填,zh 譯自 en)"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「白或黃」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 189,
@@ -74486,7 +75289,8 @@
         "gastrointestinal bleeding",
         "uterine bleeding (beng-lou)",
         "wheezing"
-      ]
+      ],
+      "coating_en": "White or yellow"
     },
     {
       "id": "formula.ge_xia_zhu_yu_tang",
@@ -74821,6 +75625,15 @@
         ],
         "related_formulas": [
           "curriculum/formulas/09_Formula_Cards_081-090_解表劑_理血劑.md #084-088 (Classical/course source: Yi Lin Gai Cuo, 王清任《醫林改錯》五首逐瘀湯,依身體部位分主治:胸中血府/膈下/少腹/週身痛/頭面清竅)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「側邊紫點」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「正常」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「弦、澀或緊。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/571",
@@ -75147,7 +75960,10 @@
         "breast distention",
         "abdominal tumor",
         "distention and fullness in the hypochondrium"
-      ]
+      ],
+      "tongue_en": "Purple spots on the sides",
+      "coating_en": "Normal",
+      "pulse_en": "Wiry, choppy or tight"
     },
     {
       "id": "formula.shao_fu_zhu_yu_tang",
@@ -75448,6 +76264,15 @@
         ],
         "related_formulas": [
           "curriculum/formulas/09_Formula_Cards_081-090_解表劑_理血劑.md #084-088 (Classical/course source: Yi Lin Gai Cuo, 王清任《醫林改錯》五首逐瘀湯,依身體部位分主治:胸中血府/膈下/少腹/週身痛/頭面清竅)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「淡」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「白」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「澀。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/441",
@@ -75753,7 +76578,10 @@
         "low mood",
         "cold limbs",
         "vaginal discharge"
-      ]
+      ],
+      "tongue_en": "Pale",
+      "coating_en": "White",
+      "pulse_en": "Choppy"
     },
     {
       "id": "formula.shen_tong_zhu_yu_tang",
@@ -76089,6 +76917,15 @@
           "data/imports/cloudtcm/formula_url_map.json#身痛逐瘀湯/pageData.ActionIndication",
           "https://cloudtcm.com/formula/120",
           "translated 2026-09-07 from modifications_zh (Claude)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「紫或有瘀斑」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「薄白」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「澀。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/120",
@@ -76291,7 +77128,10 @@
       "modifications_en": [
         "If there is slight heat: add Cang Zhu and Huang Bai to clear heat and dry dampness.",
         "If there is weakness: add Huang Qi in a measured amount of one to two liang to tonify qi and support the right."
-      ]
+      ],
+      "tongue_en": "Purple or with purple spots",
+      "coating_en": "Thin and white",
+      "pulse_en": "Choppy"
     },
     {
       "id": "formula.ping_wei_san",
@@ -76732,6 +77572,15 @@
         ],
         "modifications_zh": [
           "curriculum/herbs/方剂学汇总_extracted.md(Table 546;原文英文+拼音,zh 為忠實中譯,原句在帳本 docs/research_packs/MODIFICATIONS_PROPOSALS_2026-08-19.json evidence_quotes)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「淡胖」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「厚白膩」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「滑緩或遲緩。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 79,
@@ -77114,7 +77963,10 @@
         "chest fullness",
         "persistent bitter taste in the mouth",
         "headache triggered by odors"
-      ]
+      ],
+      "tongue_en": "Pale and swollen",
+      "coating_en": "Thick, white and greasy",
+      "pulse_en": "Slippery and moderate or slow and moderate"
     },
     {
       "id": "formula.huo_xiang_zheng_qi_san",
@@ -77648,6 +78500,15 @@
         ],
         "contraindications_en": [
           "2026-08-19 雙語聯集對齊：原 contraindications_zh 5 條 / contraindications_en 3 條(不同來源並行),對齊為 7 組;原條目逐字保留,補齊側為對側之翻譯"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「正常」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「白膩」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「濡緩或浮而有力。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 298,
@@ -77949,7 +78810,10 @@
         "cholera-like vomiting and diarrhea",
         "malaria-like alternating chills and fever",
         "loose stools"
-      ]
+      ],
+      "tongue_en": "Normal",
+      "coating_en": "White and greasy",
+      "pulse_en": "Soggy and moderate or floating and forceful"
     },
     {
       "id": "formula.wu_ling_san",
@@ -78429,6 +79293,15 @@
           "data/imports/cloudtcm/formula_url_map.json#五苓散/pageData.ActionIndication",
           "https://cloudtcm.com/formula/50",
           "translated 2026-09-07 from modifications_zh (Claude)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「正常」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「白滑」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「浮數。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 50,
@@ -78990,7 +79863,10 @@
         "lower abdominal distention with palpitations",
         "extreme thirst",
         "dizziness and abdominal pain"
-      ]
+      ],
+      "tongue_en": "Normal",
+      "coating_en": "White and slippery",
+      "pulse_en": "Floating and rapid"
     },
     {
       "id": "formula.zhu_ling_tang",
@@ -79385,6 +80261,15 @@
           "2026-09-09 去重:移除「Pronounced Dampness.」—— 與 contraindications_en 逐字重複(該欄有中譯);AD 原檔此句列於 Contraindications 標題下,cautions 側是 A1(a) 拆欄前的池化殘留",
           "2026-09-09 去重:移除「Abundant Heat and severely damaged Yin.」—— 與 contraindications_en 逐字重複(該欄有中譯);AD 原檔此句列於 Contraindications 標題下,cautions 側是 A1(a) 拆欄前的池化殘留",
           "2026-09-09 去重:移除「Without Heat.」—— 與 contraindications_en 逐字重複(該欄有中譯);AD 原檔此句列於 Contraindications 標題下,cautions 側是 A1(a) 拆欄前的池化殘留"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「紅或深紅乾」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「薄黃或無」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「細數或數有力。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 273,
@@ -79669,7 +80554,10 @@
         "dry skin",
         "sunken eyes",
         "fever worse at night"
-      ]
+      ],
+      "tongue_en": "Red or deep-red and dry",
+      "coating_en": "Thin and yellow or absent",
+      "pulse_en": "Thin and rapid or rapid and forceful"
     },
     {
       "id": "formula.san_ren_tang",
@@ -80098,6 +80986,15 @@
           "data/imports/cloudtcm/formula_url_map.json#三仁湯/pageData.ActionIndication",
           "https://cloudtcm.com/formula/401",
           "translated 2026-09-07 from modifications_zh (Claude)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「正常」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「白膩」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「弦細濡或濡軟。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 401,
@@ -80388,7 +81285,10 @@
         "fullness and distension of the chest and abdomen, possibly with aversion to cold",
         "nausea",
         "heavy-headedness"
-      ]
+      ],
+      "tongue_en": "Normal",
+      "coating_en": "White and greasy",
+      "pulse_en": "Wiry, thin and soggy or soggy and soft"
     },
     {
       "id": "formula.er_miao_san",
@@ -80545,6 +81445,15 @@
         ],
         "derived_from": [
           "curriculum/formulas/06_Formula_Cards_051-060_祛濕劑.md"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「正常」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「黃膩」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「濡數。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/368",
@@ -80836,7 +81745,10 @@
         ],
         "indication_zh": "濕熱下注筋骨疼痛，足膝紅腫者",
         "source": "curriculum/formulas/06_Formula_Cards_051-060_祛濕劑.md"
-      }
+      },
+      "tongue_en": "Normal",
+      "coating_en": "Yellow and greasy",
+      "pulse_en": "Soggy and rapid"
     },
     {
       "id": "formula.si_miao_wan",
@@ -81015,6 +81927,15 @@
         ],
         "derived_from": [
           "curriculum 方剂学汇总 Table 564 (Er Miao San)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「正常」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「黃膩」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「濡數。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "clinical_classification_zh": "臨床常用專病處方",
@@ -81291,7 +82212,10 @@
         ],
         "indication_zh": "濕熱下注：痿證、下肢麻木無力、足腫痛",
         "source": "curriculum 方剂学汇总 Table 564 (Er Miao San)"
-      }
+      },
+      "tongue_en": "Normal",
+      "coating_en": "Yellow and greasy",
+      "pulse_en": "Soggy and rapid"
     },
     {
       "id": "formula.zhen_wu_tang",
@@ -81772,6 +82696,9 @@
         ],
         "contraindications_en": [
           "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 2 條(不同來源並行),對齊為 2 組;原條目逐字保留,補齊側為對側之翻譯"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「白潤」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 180,
@@ -82314,7 +83241,8 @@
         "nasal congestion with clear discharge",
         "impaired vision",
         "papules, etc."
-      ]
+      ],
+      "coating_en": "White and moist"
     },
     {
       "id": "formula.shi_pi_yin",
@@ -82666,6 +83594,15 @@
         ],
         "related_formulas": [
           "curriculum/formulas/ (Board exam high-frequency sister formula associations)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「淡」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「厚膩」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「沉遲或沉細。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "clinical_classification_zh": "臨床常用專病處方",
@@ -82715,7 +83652,10 @@
         "formula.wu_ling_san",
         "formula.zhu_ling_tang",
         "formula.ling_gui_zhu_gan_tang"
-      ]
+      ],
+      "tongue_en": "Pale",
+      "coating_en": "Thick and greasy",
+      "pulse_en": "Deep and slow or deep and thin"
     },
     {
       "id": "formula.fang_ji_huang_qi_tang",
@@ -83110,6 +84050,15 @@
           "data/imports/cloudtcm/formula_url_map.json#防己黃耆湯/pageData.ActionIndication",
           "https://cloudtcm.com/formula/526",
           "translated 2026-09-07 from modifications_zh (Claude)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「淡」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「白或舌體腫潤」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「浮弱、濡細。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 526,
@@ -83317,7 +84266,10 @@
         "abdominal distension",
         "lower leg edema",
         "fatigue; constitutional edema may also be seen in women"
-      ]
+      ],
+      "tongue_en": "Pale",
+      "coating_en": "White or swollen and moist tongue body",
+      "pulse_en": "Floating and weak, soggy and thin"
     },
     {
       "id": "formula.yin_chen_hao_tang",
@@ -83632,6 +84584,15 @@
         ],
         "contraindications_en": [
           "2026-08-19 雙語聯集對齊：原 contraindications_zh 3 條 / contraindications_en 2 條(不同來源並行),對齊為 5 組;原條目逐字保留,補齊側為對側之翻譯"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「粉紅」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「黃膩」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「滑數、沉實或滑利數。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 188,
@@ -83934,7 +84895,10 @@
         "edema",
         "chest oppression",
         "constipation, possibly progressing to mania"
-      ]
+      ],
+      "tongue_en": "Pink",
+      "coating_en": "Yellow and greasy",
+      "pulse_en": "Slippery and rapid, deep and excess, or slippery, smooth and rapid"
     },
     {
       "id": "formula.ba_zheng_san",
@@ -84411,7 +85375,16 @@
         "tcm_pattern_ids": [
           "derived: 本方 pattern_indications_zh 經 data/config/pattern_alias_map.json + data/pathology/pattern_registry.json name_zh 逐字對照(scripts/derive-formula-pattern-links.js,不拆複合證、不近似匹配、不用 syndromes_zh)"
         ],
-        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)"
+        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)",
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「紅」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「厚黃膩」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「滑數。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ]
       },
       "cloudtcm_id": 15,
       "action_profile": {
@@ -84748,7 +85721,10 @@
         "distending lower back pain",
         "agitation",
         "parched lips"
-      ]
+      ],
+      "tongue_en": "Red",
+      "coating_en": "Thick, yellow and greasy",
+      "pulse_en": "Slippery and rapid"
     },
     {
       "id": "formula.ling_gui_zhu_gan_tang",
@@ -84916,6 +85892,9 @@
           "data/imports/cloudtcm/formula_url_map.json#苓桂朮甘湯/pageData.ActionIndication",
           "https://cloudtcm.com/formula/151",
           "translated 2026-09-07 from modifications_zh (Claude)"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「白潤或膩」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/151",
@@ -84981,7 +85960,8 @@
         "For cough with vomiting of thin drool, add Ban Xia and Chen Pi.",
         "For dry retching and vertex headache, add Wu Zhu Yu.",
         "For bodily cold, add Fu Zi to warm and disperse water qi; for Spleen qi deficiency, add Dang Shen and Huang Qi to boost qi and fortify the Spleen."
-      ]
+      ],
+      "coating_en": "White and moist or greasy"
     },
     {
       "id": "formula.er_chen_tang",
@@ -85433,7 +86413,16 @@
         "pattern_indications_en": [
           "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 2 條 / pattern_indications_en 5 條(不同來源並行),對齊為 5 組;原條目逐字保留,補齊側為對側之翻譯"
         ],
-        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)"
+        "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)",
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「正常或淡」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「白厚膩」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「滑。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ]
       },
       "cloudtcm_id": 7,
       "condition_tags_zh": [
@@ -85883,7 +86872,10 @@
         "poor appetite",
         "loose stool",
         "heavy sensation in the body"
-      ]
+      ],
+      "tongue_en": "Normal or pale",
+      "coating_en": "White, thick and greasy",
+      "pulse_en": "Slippery"
     },
     {
       "id": "formula.wen_dan_tang",
@@ -86367,6 +87359,15 @@
         ],
         "pattern_indications_en": [
           "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 1 條 / pattern_indications_en 4 條(不同來源並行),對齊為 4 組;原條目逐字保留,補齊側為對側之翻譯"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「粉紅或舌尖紅」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「黃膩」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「滑數或弦數。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 250,
@@ -86819,7 +87820,10 @@
         "irritability",
         "depression",
         "slight thirst, and poor appetite after a severe illness"
-      ]
+      ],
+      "tongue_en": "Pink or red tip",
+      "coating_en": "Yellow and greasy",
+      "pulse_en": "Slippery and rapid or wiry and rapid"
     },
     {
       "id": "formula.ban_xia_bai_zhu_tian_ma_tang",
@@ -87273,6 +88277,15 @@
         ],
         "pattern_indications_en": [
           "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 1 條 / pattern_indications_en 2 條(不同來源並行),對齊為 2 組;原條目逐字保留,補齊側為對側之翻譯"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「正常」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「白膩」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「弦滑或濡滑。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 69,
@@ -87606,7 +88619,10 @@
         "edema",
         "may suddenly lose consciousness",
         "excessive drooling, or drowsiness after meals"
-      ]
+      ],
+      "tongue_en": "Normal",
+      "coating_en": "White and greasy",
+      "pulse_en": "Wiry and slippery or soggy and slippery"
     },
     {
       "id": "formula.qing_qi_hua_tan_wan",
@@ -87960,6 +88976,15 @@
         ],
         "formula_song_zh": [
           "https://www.zhongyifangji.com/cht/prescription/detail/id/115"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「絳紅」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「黃、黃膩或黃滑」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「數、滑數或滑。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。",
@@ -88136,7 +89161,10 @@
         "dry mouth",
         "constipation",
         "scanty, dark urine"
-      ]
+      ],
+      "tongue_en": "Crimson red",
+      "coating_en": "Yellow, yellow and greasy, or yellow and slippery",
+      "pulse_en": "Rapid, slippery and rapid, or slippery"
     },
     {
       "id": "formula.xiao_xian_xiong_tang",
@@ -88433,6 +89461,15 @@
         ],
         "cautions_zh": [
           "中文譯自本筆記錄既有 contraindications_en/cautions_en（原始英文出處見該筆 field_sources.contraindications_en / en 陣列本身）。本次僅補忠實中譯，未新增未查證主張 — 2026-08-11"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「正常」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「黃膩」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「滑浮或滑數。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 419,
@@ -88699,7 +89736,10 @@
         "cough with yellow, sticky phlegm",
         "constipation",
         "bitter taste in the mouth"
-      ]
+      ],
+      "tongue_en": "Normal",
+      "coating_en": "Yellow and greasy",
+      "pulse_en": "Slippery and floating or slippery and rapid"
     },
     {
       "id": "formula.san_zi_yang_qin_tang",
@@ -88876,6 +89916,15 @@
         ],
         "pattern_indications_en": [
           "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 1 條 / pattern_indications_en 6 條(不同來源並行),對齊為 6 組;原條目逐字保留,補齊側為對側之翻譯"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「正常」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「白膩」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「滑。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/25",
@@ -89052,7 +90101,10 @@
         "indigestion",
         "hiccup",
         "shortness of breath"
-      ]
+      ],
+      "tongue_en": "Normal",
+      "coating_en": "White and greasy",
+      "pulse_en": "Slippery"
     },
     {
       "id": "formula.chuan_xiong_cha_tiao_san",
@@ -89461,6 +90513,15 @@
         ],
         "formula_song": [
           "《湯頭歌訣》(汪昂)通行本/方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「正常」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「薄白」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「浮。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 45,
@@ -89630,7 +90691,10 @@
         "vertigo",
         "feeling cold",
         "copious phlegm"
-      ]
+      ],
+      "tongue_en": "Normal",
+      "coating_en": "Thin and white",
+      "pulse_en": "Floating"
     },
     {
       "id": "formula.xiao_feng_san",
@@ -90148,6 +91212,15 @@
         ],
         "formula_song": [
           "《湯頭歌訣》(汪昂)通行本/方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「粉紅」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「黃或白」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「浮有力而數，或濡數。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 176,
@@ -90369,7 +91442,10 @@
         "oozing, possibly widespread",
         "thirst",
         "rash that worsens in hot weather, with possibly severe itching"
-      ]
+      ],
+      "tongue_en": "Pink",
+      "coating_en": "Yellow or white",
+      "pulse_en": "Floating, forceful and rapid, or soggy and rapid"
     },
     {
       "id": "formula.tian_ma_gou_teng_yin",
@@ -90835,6 +91911,12 @@
         ],
         "formula_song": [
           "《湯頭歌訣》(汪昂)通行本/方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「紅」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「弦數或弦緊數。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 314,
@@ -91139,7 +92221,9 @@
         "tongue tremor",
         "deviation of the eyes and mouth",
         "coma"
-      ]
+      ],
+      "tongue_en": "Red",
+      "pulse_en": "Wiry and rapid or wiry, tight and rapid"
     },
     {
       "id": "formula.zhen_gan_xi_feng_tang",
@@ -91608,6 +92692,9 @@
         ],
         "contraindications_en": [
           "2026-08-19 雙語聯集對齊：原 contraindications_zh 4 條 / contraindications_en 5 條(不同來源並行),對齊為 5 組;原條目逐字保留,補齊側為對側之翻譯"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「紅。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。",
@@ -91902,7 +92989,8 @@
         "deviation of the mouth and eye",
         "trembling",
         "limited movement of the limbs"
-      ]
+      ],
+      "tongue_en": "Red"
     },
     {
       "id": "formula.xiao_huo_luo_dan",
@@ -92140,6 +93228,12 @@
         ],
         "contraindications_en": [
           "2026-08-19 雙語聯集對齊：原 contraindications_zh 2 條 / contraindications_en 3 條(不同來源並行),對齊為 3 組;原條目逐字保留,補齊側為對側之翻譯"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「正常」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「白潤。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "clinical_classification_zh": "臨床常用專病處方",
@@ -92345,7 +93439,9 @@
         "heaviness and pain of the low back and legs",
         "fixed or migratory pain of the bones and joints with reduced range of motion",
         "prolonged numbness or paralysis of the hands and feet"
-      ]
+      ],
+      "tongue_en": "Normal",
+      "coating_en": "White and moist"
     },
     {
       "id": "formula.bao_he_wan",
@@ -92732,6 +93828,15 @@
         ],
         "formula_song": [
           "《湯頭歌訣》(汪昂)通行本/方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「粉紅」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「黃膩」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「滑。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 142,
@@ -92996,7 +94101,10 @@
       ],
       "ba_fa_en": [
         "reducing method (dispersing accumulation)"
-      ]
+      ],
+      "tongue_en": "Pink",
+      "coating_en": "Yellow and greasy",
+      "pulse_en": "Slippery"
     },
     {
       "id": "formula.jian_pi_wan",
@@ -93446,6 +94554,15 @@
         ],
         "modifications_zh": [
           "curriculum/herbs/方剂学汇总_extracted.md(Table 640;原文英文+拼音,zh 為忠實中譯,原句在帳本 docs/research_packs/MODIFICATIONS_PROPOSALS_2026-08-19.json evidence_quotes)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「正常」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「微黃膩」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「虛弱。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 193,
@@ -93609,7 +94726,10 @@
       ],
       "ba_fa_en": [
         "reducing method"
-      ]
+      ],
+      "tongue_en": "Normal",
+      "coating_en": "Slightly yellow and greasy",
+      "pulse_en": "Deficient and weak"
     },
     {
       "id": "formula.sang_xing_tang",
@@ -93834,6 +94954,15 @@
         ],
         "formula_song_zh": [
           "https://www.zhongyifangji.com/cht/prescription/detail/id/97"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「紅或舌尖紅」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「薄白乾或薄黃乾」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「浮數、數大或弱數。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/327",
@@ -94042,7 +95171,10 @@
         "dry nose",
         "aversion to cold",
         "thirst, possibly with hemoptysis, and scanty, sticky phlegm or almost no phlegm"
-      ]
+      ],
+      "tongue_en": "Red or red tip",
+      "coating_en": "Thin, white and dry or thin, yellow and dry",
+      "pulse_en": "Floating and rapid, rapid and large, or weak and rapid"
     },
     {
       "id": "formula.sha_shen_mai_men_dong_tang",
@@ -94275,6 +95407,15 @@
         ],
         "related_formulas": [
           "curriculum/formulas/ (Board exam high-frequency sister formula associations)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「紅」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「少，可能偏乾」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「細數。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "clinical_classification_zh": "臨床常用專病處方",
@@ -94612,7 +95753,10 @@
         "low-grade fever",
         "night sweats",
         "epigastric pain"
-      ]
+      ],
+      "tongue_en": "Red",
+      "coating_en": "Scanty, possibly somewhat dry",
+      "pulse_en": "Thin and rapid"
     },
     {
       "id": "formula.zhi_sou_san",
@@ -94858,6 +96002,15 @@
         ],
         "formula_song_zh": [
           "https://www.zhongyifangji.com/cht/prescription/detail/id/36"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「正常」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「薄白」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「浮緩。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/60",
@@ -95087,7 +96240,10 @@
         "copious phlegm that is difficult to expectorate",
         "headache",
         "asthma."
-      ]
+      ],
+      "tongue_en": "Normal",
+      "coating_en": "Thin and white",
+      "pulse_en": "Floating and moderate"
     },
     {
       "id": "formula.an_gong_niu_huang_wan",
@@ -95764,6 +96920,9 @@
         ],
         "formula_song_zh": [
           "https://www.zhongyifangji.com/cht/prescription/detail/id/64"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「黃」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "composition_source_note_zh": "組成與劑量以課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表為主；CloudTCM formula/4361 用於交叉核對組成與功用。CloudTCM 仍列犀角，本資料庫依現代替代與課件整理列水牛角。2026-08-01 依 FORMULA_CARD_TEMPLATE F7（君藥 1–2 味）正規化角色層級：牛黃保留為君，水牛角、麝香列臣以呈現清熱涼血與芳香開竅相助；未改組成或劑量。American Dragon 未找到精確安宮牛黃丸方頁，未列為本方來源。",
@@ -96047,7 +97206,8 @@
         "vexation and oppression, with irritability",
         "vertigo",
         "cold limbs (reversal cold), possibly with a pale red rash."
-      ]
+      ],
+      "coating_en": "Yellow"
     },
     {
       "id": "formula.zi_xue_dan",
@@ -96496,6 +97656,15 @@
         ],
         "contraindications_en": [
           "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 4 條(不同來源並行),對齊為 4 組;原條目逐字保留,補齊側為對側之翻譯"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「絳紅」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「黃乾」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「有力、弦、數。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "clinical_classification_zh": "臨床常用專病處方",
@@ -96704,7 +97873,10 @@
         "abnormal behavior",
         "cold limbs",
         "hysteria-like presentation, with a pale-red rash possibly present"
-      ]
+      ],
+      "tongue_en": "Crimson-red",
+      "coating_en": "Yellow and dry",
+      "pulse_en": "Forceful, wiry and rapid"
     },
     {
       "id": "formula.zhi_bao_dan",
@@ -97093,6 +98265,9 @@
         ],
         "pattern_indications_en": [
           "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 1 條 / pattern_indications_en 6 條(不同來源並行),對齊為 6 組;原條目逐字保留,補齊側為對側之翻譯"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「黃厚膩而穢濁」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 493,
@@ -97404,7 +98579,8 @@
         "spasms of the limbs",
         "clenched jaw (trismus)",
         "sudden loss of consciousness"
-      ]
+      ],
+      "coating_en": "Yellow, thick, greasy and foul-turbid"
     },
     {
       "id": "formula.yang_he_tang",
@@ -97641,6 +98817,15 @@
         ],
         "formula_song": [
           "《湯頭歌訣》(汪昂)通行本/方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「很淡或淡粉紅」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「白」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「細無力或沉遲。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "clinical_classification_zh": "臨床常用專病處方",
@@ -97801,7 +98986,10 @@
         "the affected area is not hot to the touch",
         "no thirst",
         "may present with joint swelling and pain, along with muscle wasting of the thigh or calf"
-      ]
+      ],
+      "tongue_en": "Very pale or pale-pink",
+      "coating_en": "White",
+      "pulse_en": "Thin and forceless or deep and slow"
     },
     {
       "id": "formula.gui_pi_tang",
@@ -98523,6 +99711,9 @@
         ],
         "modifications_zh": [
           "curriculum/herbs/方剂学汇总_extracted.md(Table 281;原文英文+拼音,zh 為忠實中譯,原句在帳本 docs/research_packs/MODIFICATIONS_PROPOSALS_2026-08-19.json evidence_quotes)"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「白」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 293,
@@ -99228,7 +100419,8 @@
       ],
       "ba_fa_en": [
         "tonifying method"
-      ]
+      ],
+      "coating_en": "White"
     },
     {
       "id": "formula.bai_du_san",
@@ -100408,6 +101600,15 @@
           "data/imports/cloudtcm/formula_url_map.json#百合固金湯/pageData.ActionIndication",
           "https://cloudtcm.com/formula/106",
           "translated 2026-09-07 from modifications_zh (Claude)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「紅」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「少或無」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「細數。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 106,
@@ -100577,7 +101778,10 @@
         "may present with hemoptysis",
         "agitation",
         "reduced urine output"
-      ]
+      ],
+      "tongue_en": "Red",
+      "coating_en": "Scanty or absent",
+      "pulse_en": "Thin and rapid"
     },
     {
       "id": "formula.bei_mu_gua_lou_san",
@@ -100815,6 +102019,9 @@
         ],
         "pattern_indications_zh": [
           "curriculum/formulas/Herbal Formulations Comprehensive.docx.md p.144 (replaced the scraped placeholder 「貝母瓜蔞散主治證候」)"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「少苔」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。\n⚠️ pattern_indications_zh 目前是樣板佔位句「貝母瓜蔞散主治證候」（方名＋主治證候），不是真內容；2026-08-11 依課件補上英文主治，中文主治 repo 內查無來源，不硬翻，待 Ting 覆寫。",
@@ -100840,7 +102047,8 @@
         "Antispasmodic, antiasthmatic",
         "Antibacterial action"
       ],
-      "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/BeiMuGuaLouSan.html"
+      "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/BeiMuGuaLouSan.html",
+      "coating_en": "Scanty coating"
     },
     {
       "id": "formula.da_ding_feng_zhu",
@@ -101243,6 +102451,15 @@
         ],
         "source_classic": [
           "https://www.zhongyifangji.com/home/prescription/detail/id/12(「大定风珠【出处】《温病条辨》」;帳本 docs/research_packs/SOURCE_CLASSIC_WEB_PROPOSALS_2026-08-19.json)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「深紅」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「薄或剝」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「弱而微。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "ad_syndromes_en": [
@@ -101499,7 +102716,10 @@
         "night sweats",
         "soreness and aching of the lower back and knees",
         "seminal emission during dreams; the patient may approach a state of shock, with low-grade fever and dry skin"
-      ]
+      ],
+      "tongue_en": "Deep red",
+      "coating_en": "Thin or peeled",
+      "pulse_en": "Weak and faint"
     },
     {
       "id": "formula.ding_chuan_tang",
@@ -101957,6 +103177,9 @@
         ],
         "formula_song": [
           "《湯頭歌訣》(汪昂)通行本/方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「黃膩」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 130,
@@ -102013,7 +103236,8 @@
       "formula_song": "定喘白果與麻黃，款冬半夏白皮桑，\n蘇杏黃芩兼甘草，肺寒膈熱喘哮嘗。",
       "cautions_en": [
         "Not suitable for exterior Wind-Cold invasion with no sweating and no phlegm.\nNot suitable for Qi deficiency with a weak pulse.\nIf newly contracted Wind-Cold presents with aversion to cold and fever, no sweating, and wheezing, but without internal Phlegm-Heat; or in long-standing asthma with Lung-Kidney Yin deficiency - neither case should use this formula."
-      ]
+      ],
+      "coating_en": "Yellow and greasy"
     },
     {
       "id": "formula.du_huo_ji_sheng_tang",
@@ -102657,6 +103881,15 @@
         ],
         "composition_in_formula_en": [
           "composition[12] herb.shu_di_huang:AD_Selected_Formulas_Name_Herbs_Actions.md:962(2026-09-09 補填,zh 譯自 en)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「淡」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「薄白或白潤」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「細弱遲、沉細弱或滑。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 285,
@@ -102960,7 +104193,10 @@
         "tinnitus",
         "muscle cramps",
         "dizziness"
-      ]
+      ],
+      "tongue_en": "Pale",
+      "coating_en": "Thin and white or white and moist",
+      "pulse_en": "Thin, weak and slow, deep, thin and weak, or slippery"
     },
     {
       "id": "formula.gan_lu_xiao_du_dan",
@@ -103447,6 +104683,15 @@
           "data/imports/cloudtcm/formula_url_map.json#甘露消毒丹/pageData.ActionIndication",
           "https://cloudtcm.com/formula/88",
           "translated 2026-09-07 from modifications_zh (Claude)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「紅、正常或淡白」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「厚膩白或乾黃」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「濡數。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 88,
@@ -103708,7 +104953,10 @@
         "dysentery",
         "sweet, sticky, or bitter taste in the mouth",
         "abnormal bowel movements"
-      ]
+      ],
+      "tongue_en": "Red, normal or pale-white",
+      "coating_en": "Thick, greasy and white or dry and yellow",
+      "pulse_en": "Soggy and rapid"
     },
     {
       "id": "formula.gu_chong_tang",
@@ -104291,6 +105539,12 @@
           "data/imports/cloudtcm/formula_url_map.json#槐花散/pageData.ActionIndication",
           "https://cloudtcm.com/formula/268",
           "translated 2026-09-07 from modifications_zh (Claude)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「紅」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「弦數或濡數。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 268,
@@ -104414,7 +105668,9 @@
         "fresh blood from the bowels, usually before defecation but sometimes after",
         "blood in the stool",
         "bleeding hemorrhoids, with blood that is bright red or dark red."
-      ]
+      ],
+      "tongue_en": "Red",
+      "pulse_en": "Wiry and rapid or soggy and rapid"
     },
     {
       "id": "formula.huang_tu_tang",
@@ -104677,6 +105933,9 @@
         ],
         "actions_en": [
           "curriculum/formulas/Herbal Formulations Comprehensive.docx.md#L6957-L6978"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「白」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "composition_source_note_zh": "組成、君臣佐使、劑量、功用與主證依 curriculum/formulas/Herbal Formulations Comprehensive.docx.md:6952-6973。",
@@ -104702,7 +105961,8 @@
         "Promotes RBC and hemoglobin synthesis",
         "Improves vascular permeability"
       ],
-      "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/HuangTuTang.html"
+      "exact_source_url": "https://www.americandragon.com/Herb%20Formulas%20copy/HuangTuTang.html",
+      "coating_en": "White"
     },
     {
       "id": "formula.lian_po_yin",
@@ -105041,6 +106301,15 @@
         ],
         "source_classic": [
           "https://www.zhongyifangji.com/home/prescription/detail/id/125(「连朴饮【出处】《霍乱论》」;帳本 docs/research_packs/SOURCE_CLASSIC_WEB_PROPOSALS_2026-08-19.json)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「正常」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「黃膩」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「滑數或滑弦。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "ad_syndromes_en": [
@@ -105260,7 +106529,10 @@
         "abdominal pain",
         "bitter taste in the mouth",
         "scanty, dark or reddish urine"
-      ]
+      ],
+      "tongue_en": "Normal",
+      "coating_en": "Yellow and greasy",
+      "pulse_en": "Slippery and rapid or slippery and wiry"
     },
     {
       "id": "formula.ling_jiao_gou_teng_tang",
@@ -105735,6 +107007,15 @@
         ],
         "contraindications_en": [
           "2026-08-19 雙語聯集對齊：原 contraindications_zh 4 條 / contraindications_en 1 條(不同來源並行),對齊為 5 組;原條目逐字保留,補齊側為對側之翻譯"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「深紅乾燥，或焦而有芒刺」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「黃乾」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「弦數或弦滑。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 575,
@@ -105996,7 +107277,10 @@
         "severe headache",
         "loss of consciousness",
         "opisthotonos, and thick yellow phlegm"
-      ]
+      ],
+      "tongue_en": "Deep red and dry, or scorched with prickles",
+      "coating_en": "Yellow and dry",
+      "pulse_en": "Wiry and rapid or wiry and slippery"
     },
     {
       "id": "formula.ma_xing_shi_gan_tang",
@@ -106426,6 +107710,9 @@
         ],
         "formula_song": [
           "《湯頭歌訣》(汪昂)通行本/方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「黃或白」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 224,
@@ -106834,7 +108121,8 @@
       ],
       "ba_fa_en": [
         "sweating method (releasing the exterior)"
-      ]
+      ],
+      "coating_en": "Yellow or white"
     },
     {
       "id": "formula.mai_men_dong_tang",
@@ -107254,6 +108542,15 @@
         "modifications_zh": [
           "data/imports/cloudtcm/formula_url_map.json#麥門冬湯/pageData.ActionIndication",
           "https://cloudtcm.com/formula/221"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「紅乾」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「少或無」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「細數或虛數。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 221,
@@ -107550,7 +108847,10 @@
         "flushed face",
         "vexing heat in the five centers (palms, soles, and chest)",
         "vomiting"
-      ]
+      ],
+      "tongue_en": "Red and dry",
+      "coating_en": "Scanty or none",
+      "pulse_en": "Thin and rapid or deficient and rapid"
     },
     {
       "id": "formula.pu_ji_xiao_du_yin",
@@ -108098,6 +109398,15 @@
         ],
         "composition_in_formula_en": [
           "composition[15] herb.ren_shen:AD_Selected_Formulas_Name_Herbs_Actions.md:672(2026-09-09 補填,zh 譯自 en)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「紅乾」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「粉白或黃」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「浮數有力或數有力。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 231,
@@ -108380,7 +109689,10 @@
       ],
       "ba_fa_en": [
         "clearing method"
-      ]
+      ],
+      "tongue_en": "Red and dry",
+      "coating_en": "Powdery white or yellow",
+      "pulse_en": "Floating, rapid and forceful or rapid and forceful"
     },
     {
       "id": "formula.qian_zheng_san",
@@ -108667,6 +109979,15 @@
         ],
         "contraindications_en": [
           "2026-08-19 雙語聯集對齊：原 contraindications_zh 3 條 / contraindications_en 5 條(不同來源並行),對齊為 8 組;原條目逐字保留,補齊側為對側之翻譯"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「正常」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「薄白」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「弦，或緊細，或浮數。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 574,
@@ -108839,7 +110160,10 @@
         "difficulty speaking",
         "possible aversion to cold",
         "spasms of the limbs"
-      ]
+      ],
+      "tongue_en": "Normal",
+      "coating_en": "Thin and white",
+      "pulse_en": "Wiry, or tight and thin, or floating and rapid"
     },
     {
       "id": "formula.qing_zao_jiu_fei_tang",
@@ -109353,6 +110677,15 @@
           "data/imports/cloudtcm/formula_url_map.json#清燥救肺湯/pageData.ActionIndication",
           "https://cloudtcm.com/formula/216",
           "translated 2026-09-07 from modifications_zh (Claude)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「舌尖紅而乾」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「薄黃、白乾或無苔」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「可浮數、大而弱，或虛大數。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 216,
@@ -109723,7 +111056,10 @@
         "no sweating",
         "agitation",
         "itching"
-      ]
+      ],
+      "tongue_en": "Red and dry tip",
+      "coating_en": "Thin and yellow, white and dry, or no coating",
+      "pulse_en": "May be floating and rapid, large and weak, or deficient, large and rapid"
     },
     {
       "id": "formula.shi_pi_san",
@@ -110159,6 +111495,15 @@
         ],
         "source_classic": [
           "https://www.zhongyifangji.com/home/prescription/detail/id/156(「实脾散【出处】《重订严氏济生方》」;帳本 docs/research_packs/SOURCE_CLASSIC_WEB_PROPOSALS_2026-08-19.json)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「淡」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「厚膩」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「沉遲或沉細。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "ad_syndromes_en": [
@@ -110361,7 +111706,10 @@
         "loose, unformed stools",
         "scanty urination",
         "poor appetite"
-      ]
+      ],
+      "tongue_en": "Pale",
+      "coating_en": "Thick and greasy",
+      "pulse_en": "Deep and slow or deep and thin"
     },
     {
       "id": "formula.shi_xiao_san",
@@ -110674,6 +112022,12 @@
         ],
         "pattern_indications_en": [
           "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 1 條 / pattern_indications_en 3 條(不同來源並行),對齊為 3 組;原條目逐字保留,補齊側為對側之翻譯"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「有紫色瘀點」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「弦澀緊。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 478,
@@ -110914,7 +112268,9 @@
         "postpartum bleeding",
         "pain below the heart",
         "swelling and pain from trauma."
-      ]
+      ],
+      "tongue_en": "With purple spots",
+      "pulse_en": "Wiry, choppy and tight"
     },
     {
       "id": "formula.si_ni_san",
@@ -111371,6 +112727,9 @@
         ],
         "pattern_indications_en": [
           "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 1 條 / pattern_indications_en 4 條(不同來源並行),對齊為 5 組;原條目逐字保留,補齊側為對側之翻譯"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「薄黃或白，也可黃白膩」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 78,
@@ -111903,7 +113262,8 @@
       ],
       "ba_fa_en": [
         "harmonizing method"
-      ]
+      ],
+      "coating_en": "Thin and yellow or white, may also be yellow-white and greasy"
     },
     {
       "id": "formula.su_he_xiang_wan",
@@ -112443,6 +113803,15 @@
         ],
         "contraindications_en": [
           "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 4 條(不同來源並行),對齊為 4 組;原條目逐字保留,補齊側為對側之翻譯"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「淡」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「白滑或白膩」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「沉滑，或沉實遲，或弦緊有力。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "correction_note": "2026-08-06:actions_zh 原誤作「清熱解表、調理氣血」——本方為溫開劑,依課件表367 更正為溫通中焦/芳香開竅/行氣/化濁。組成仍待由課件表368 建立(15 味,課件標 4 味君藥,與 F7「君藥 1-2 味」不符,需 Ting 裁定),故本卡尚未列為已整理。\n【2026-08-12 樣板句清除 — 錯置的甘草功效】以下 2 味藥的所列欄位原值逐字同為「健脾和中，調和諸藥。」（原文保存於此）：麝香（in_formula_zh、actions_zh、role_reason_zh）、訶子（in_formula_zh、actions_zh、role_reason_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。\n【2026-08-12 紅線五：組成 _zh 拉丁拼寫改中文】第4味 herb_zh「An Xi Xiang」→「安息香」、name_zh「An Xi Xiang」→「安息香」；第12味 herb_zh「Xi Jiao」→「犀角」、name_zh「Xi Jiao」→「犀角」。拼音原值仍在各列 pinyin 欄；中文名依該列 herb_id 於 herb_canon_shortlist 的中文名＋原拼寫的炮製前綴／部位後綴（炒、酒炒、制、穗、梢…）對照填入。\n【2026-08-12 樣板句清除 — 錯置的甘草功效（變體）】以下 2 味藥的所列欄位原值逐字同為「和中健脾，調和諸藥。」（原文保存於此）：冰片（in_formula_zh、actions_zh、role_reason_zh）、香附（actions_zh）。該句描述的是甘草在方中的本方功效，匯入樣板誤蓋到非甘草藥味上（紅線 6 樣板句），與各味自身功效不符，屬錯層內容，故清空；卡片回退顯示各味既有的英文 in_formula_en。未在無具名來源下新增逐味中文功效——留空比樣板句誠實。",
@@ -112642,7 +114011,10 @@
         "pale complexion",
         "cold limbs",
         "fixed staring gaze."
-      ]
+      ],
+      "tongue_en": "Pale",
+      "coating_en": "White and slippery or white and greasy",
+      "pulse_en": "Deep and slippery, or deep, excess and slow, or wiry, tight and forceful"
     },
     {
       "id": "formula.tao_he_cheng_qi_tang",
@@ -113084,6 +114456,15 @@
         ],
         "formula_song_zh": [
           "https://www.zhongyifangji.com/cht/prescription/detail/id/101"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「紅乾」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「黃」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「沉實或澀。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 169,
@@ -113663,7 +115044,10 @@
         "incessant lochia",
         "severe dyspnea",
         "chest distension"
-      ]
+      ],
+      "tongue_en": "Red and dry",
+      "coating_en": "Yellow",
+      "pulse_en": "Deep and excess or choppy"
     },
     {
       "id": "formula.wan_dai_tang",
@@ -114095,6 +115479,15 @@
         ],
         "formula_song": [
           "《湯頭歌訣》(汪昂)通行本/方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「淡」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「白」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「濡弱或緩遲濡浮。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 112,
@@ -114293,7 +115686,10 @@
           "moved_at": "2026-08-29T04:47:03.669Z",
           "ruling": "D28/A1(a). after=[]; needs_review(1)=[This formula is for 'Spleen-deficiency type vaginal discharge'; it is not suitable when the discharge is red-and-white or yellow-red, thick, sticky and foul-smelling, accompanied by signs of Damp-Heat pouring downward such as a red tongue and a rapid pulse. <no_direction_token>]"
         }
-      ]
+      ],
+      "tongue_en": "Pale",
+      "coating_en": "White",
+      "pulse_en": "Soggy and weak or moderate, slow, soggy and floating"
     },
     {
       "id": "formula.wu_mei_wan",
@@ -114790,6 +116186,15 @@
           "data/imports/cloudtcm/formula_url_map.json#烏梅丸/pageData.ActionIndication",
           "https://cloudtcm.com/formula/179",
           "translated 2026-09-07 from modifications_zh (Claude)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「紅、地圖舌樣或淡」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「白」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「伏，或弦緊。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 179,
@@ -115011,7 +116416,10 @@
         "dry throat",
         "turbid urine",
         "polydipsia (excessive thirst)"
-      ]
+      ],
+      "tongue_en": "Red, geographic tongue-like, or pale",
+      "coating_en": "White",
+      "pulse_en": "Hidden, or wiry and tight"
     },
     {
       "id": "formula.xing_su_san",
@@ -115442,6 +116850,15 @@
         ],
         "formula_song": [
           "《湯頭歌訣》(汪昂)通行本/方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「粉紅」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「薄白而乾」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「浮弦、浮緊或弦。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 114,
@@ -115640,7 +117057,10 @@
         "possible wheezing",
         "nasal congestion with sticky discharge",
         "sore throat"
-      ]
+      ],
+      "tongue_en": "Pink",
+      "coating_en": "Thin, white and dry",
+      "pulse_en": "Floating and wiry, floating and tight, or wiry"
     },
     {
       "id": "formula.xuan_fu_dai_zhe_tang",
@@ -115938,6 +117358,9 @@
         ],
         "contraindications_zh": [
           "https://zhongyifangji.com/cht/prescription/detail/id/112(「3. 注意事項：方中代赭石性寒沉降，質重礙胃，胃虛者用量宜小。」;帳本 docs/research_packs/CONTRAINDICATIONS_BACKFILL_2026-08-19.json)"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「白滑」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 62,
@@ -116005,7 +117428,8 @@
         "poor appetite",
         "vomiting during menstruation",
         "chest tightness and distention"
-      ]
+      ],
+      "coating_en": "White and slippery"
     },
     {
       "id": "formula.yu_nu_jian",
@@ -116419,6 +117843,12 @@
         ],
         "formula_song": [
           "《湯頭歌訣》(汪昂)通行本/方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「紅乾」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「白或黃而乾」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 82,
@@ -116680,7 +118110,9 @@
       "cautions_en": [
         "This formula is cold in nature; use with caution in those with Spleen and Stomach Deficiency Cold.",
         "Use with caution during pregnancy."
-      ]
+      ],
+      "tongue_en": "Red and dry",
+      "coating_en": "White or yellow and dry"
     },
     {
       "id": "formula.zhi_shi_xie_bai_gui_zhi_tang",
@@ -116954,6 +118386,15 @@
         ],
         "derived_from": [
           "curriculum 方剂学汇总 Table 416 (Gua Lou Xie Bai Bai Jiu Tang)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「正常」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「白膩」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「沉弦或沉緊。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "ad_syndromes_en": [
@@ -117094,7 +118535,10 @@
         ],
         "indication_zh": "胸痹氣結較甚：心中痞氣、脹滿",
         "source": "curriculum 方剂学汇总 Table 416 (Gua Lou Xie Bai Bai Jiu Tang)"
-      }
+      },
+      "tongue_en": "Normal",
+      "coating_en": "White and greasy",
+      "pulse_en": "Deep and wiry or deep and tight"
     },
     {
       "id": "formula.zuo_jin_wan",
@@ -117378,6 +118822,15 @@
         "contraindications_en": "docs/research_packs/CONTRA_ALIGN_PROPOSALS_2026-08-19.json (pre-reviewed ledger)",
         "formula_song": [
           "《湯頭歌訣》(汪昂)通行本/方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「紅」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「黃」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「弦數。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_id": 566,
@@ -117561,7 +119014,10 @@
       ],
       "ba_fa_en": [
         "clearing method"
-      ]
+      ],
+      "tongue_en": "Red",
+      "coating_en": "Yellow",
+      "pulse_en": "Wiry and rapid"
     },
     {
       "id": "formula.bu_fei_tang",
@@ -117778,6 +119234,15 @@
         "source_classic": [
           "https://www.dayi.org.cn/prescriptions/901379?from=sg",
           "https://www.zysj.com.cn/lilunshuji/yifangjijie/193.html"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「淡」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「薄白」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「弱、虛弱，或大而虛。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "ad_syndromes_en": [
@@ -117965,7 +119430,10 @@
         "little desire to speak",
         "aversion to cold",
         "pale complexion"
-      ]
+      ],
+      "tongue_en": "Pale",
+      "coating_en": "Thin and white",
+      "pulse_en": "Weak, deficient and weak, or large and deficient"
     },
     {
       "id": "formula.da_bu_yin_wan",
@@ -118180,6 +119648,15 @@
         ],
         "pattern_indications_en": [
           "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 1 條 / pattern_indications_en 4 條(不同來源並行),對齊為 5 組;原條目逐字保留,補齊側為對側之翻譯"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「紅」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「少或無」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「細，尺部可實數。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。",
@@ -118466,7 +119943,10 @@
         "dizziness and vertigo",
         "vexing heat in the five centers (palms, soles, and chest)",
         "cough"
-      ]
+      ],
+      "tongue_en": "Red",
+      "coating_en": "Scanty or none",
+      "pulse_en": "Thin, may be excess and rapid at the rear position"
     },
     {
       "id": "formula.da_jian_zhong_tang",
@@ -118661,6 +120141,15 @@
           "同記錄 correction_note / composition[].role_zh(Ting 2026-08-12 裁定 1A:飴糖君、蜀椒乾薑臣、人參佐)",
           "EC Way〈大建中湯〉https://ecway.hk/prescription/dajianzhongsoup（現代方劑分析，SOL 2026-08-12 引錄）",
           "人參短語沿用 composition[2].role_reason_zh「大補元氣」;2026-09-07 審讀包 #17"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「淡或暗紫」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「白膩或滑」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「細緊、遲弦、沉細或伏。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "ad_syndromes_en": [
@@ -118872,7 +120361,10 @@
         "For dry mouth, add Bai Shao.",
         "For numbness of the hands and feet, add Gui Zhi."
       ],
-      "cloudtcm_id": 34
+      "cloudtcm_id": 34,
+      "tongue_en": "Pale or dusky purple",
+      "coating_en": "White and greasy or slippery",
+      "pulse_en": "Thin and tight, slow and wiry, deep and thin, or hidden"
     },
     {
       "id": "formula.da_qing_long_tang",
@@ -119115,6 +120607,15 @@
         ],
         "derived_from": [
           "由 麻黃湯 的 formula_family 反向產生"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「正常」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「薄白或黃」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「浮緊、數、緊數或弦緊。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "ad_syndromes_en": [
@@ -119285,7 +120786,10 @@
         ],
         "indication_zh": "",
         "source": ""
-      }
+      },
+      "tongue_en": "Normal",
+      "coating_en": "Thin and white or yellow",
+      "pulse_en": "Floating and tight, rapid, tight and rapid, or wiry and tight"
     },
     {
       "id": "formula.dan_shen_yin",
@@ -119448,6 +120952,15 @@
           "同列 in_formula_en「Invigorates/nourishes Blood, dispels Stasis and relieves pain」(American Dragon Formula Dataset, AD_Selected_Formulas_Name_Herbs_Actions.md, 2026-08-07)",
           "同記錄 exam_pearl「丹參(君,重用一兩,專活血化瘀)」;herb.dan_shen 分類 活血化瘀藥",
           "2026-09-07 審讀包 #24:原「補血養血」方向錯,改活血化瘀並保留養血"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「紫、有瘀點」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「正常」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「澀或弦緊。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。",
@@ -119650,7 +121163,10 @@
         "constipation",
         "epigastric pain",
         "poor appetite"
-      ]
+      ],
+      "tongue_en": "Purple, with purple spots",
+      "coating_en": "Normal",
+      "pulse_en": "Choppy or wiry and tight"
     },
     {
       "id": "formula.dang_gui_shao_yao_san",
@@ -119853,6 +121369,15 @@
           "data/imports/cloudtcm/formula_url_map.json#當歸芍藥散/pageData.ActionIndication",
           "https://cloudtcm.com/formula/257",
           "translated 2026-09-07 from modifications_zh (Claude)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「淡或粉紅，邊緣可有瘀點」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「薄白或白膩」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「沉弱、濡浮細遲、弦細或弦澀。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "ad_syndromes_en": [
@@ -120100,7 +121625,10 @@
         "Rib-side pain: Yu Jin and Chuan Lian Zi may be added to course the Liver, invigorate blood and relieve pain.",
         "Habitual miscarriage: if it belongs to Liver-Spleen weakness with insufficiency of qi and blood, Ze Xie may be removed, and Sheng Ma, Huang Qi, E Jiao and Ai Ye Tan added to calm the fetus and stop bleeding."
       ],
-      "cloudtcm_id": 257
+      "cloudtcm_id": 257,
+      "tongue_en": "Pale or pink, may have purple spots on the edges",
+      "coating_en": "Thin and white or white and greasy",
+      "pulse_en": "Deep and weak; soggy, floating, thin and slow; wiry and thin; or wiry and choppy"
     },
     {
       "id": "formula.dang_gui_yin_zi",
@@ -120395,6 +121923,15 @@
         ],
         "contraindications_en": [
           "translated: 本卡 contraindications_zh 逐條忠實翻譯(紅線5 同長同序,強度不升降)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「淡」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「薄白」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「細浮數或細弦。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "ad_syndromes_en": [
@@ -120515,7 +122052,10 @@
         "scaling, with itching worse at night",
         "possibly accompanied by swelling",
         "abscess or ulceration"
-      ]
+      ],
+      "tongue_en": "Pale",
+      "coating_en": "Thin and white",
+      "pulse_en": "Thin, floating and rapid, or thin and wiry"
     },
     {
       "id": "formula.ding_zhi_wan",
@@ -120677,6 +122217,15 @@
         "source_classic": [
           "https://zh.wikipedia.org/wiki/%E5%AE%9A%E5%BF%97%E4%B8%B8",
           "https://www.nricm.edu.tw/p/404-1000-5664.php?Lang=zh-tw"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「正常或淡；慢性或先天者可見由中線延伸至舌尖的深窄裂紋」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「薄白」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「弦細或弱、細、數。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "ad_syndromes_en": [
@@ -120862,7 +122411,10 @@
         "spontaneous sweating",
         "worry",
         "dizziness"
-      ]
+      ],
+      "tongue_en": "Normal or pale; in chronic or congenital cases a deep, narrow crack extending from the midline to the tip may be seen",
+      "coating_en": "Thin and white",
+      "pulse_en": "Wiry and thin, or weak, thin, rapid"
     },
     {
       "id": "formula.du_qi_wan",
@@ -121116,6 +122668,15 @@
         ],
         "derived_from": [
           "curriculum 方剂学汇总 Table 300 (Liu Wei Di Huang Wan)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「紅」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「少或無」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「細數。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "ad_syndromes_en": [
@@ -121293,7 +122854,10 @@
         ],
         "indication_zh": "腎陰虛：動則喘促、呃逆",
         "source": "curriculum 方剂学汇总 Table 300 (Liu Wei Di Huang Wan)"
-      }
+      },
+      "tongue_en": "Red",
+      "coating_en": "Scanty or none",
+      "pulse_en": "Thin and rapid"
     },
     {
       "id": "formula.er_xian_tang",
@@ -121507,6 +123071,15 @@
           "https://cloudtcm.com/formula/344",
           "https://www.zysj.com.cn/zhongyaofang/erxiantang/index.html",
           "curriculum/formulas/Formulations Summary Chart.docx.md#L1426-L1428"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「淡」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「薄白」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「細數。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "ad_syndromes_en": [
@@ -121730,7 +123303,10 @@
         "headache",
         "palpitations",
         "insomnia"
-      ]
+      ],
+      "tongue_en": "Pale",
+      "coating_en": "Thin and white",
+      "pulse_en": "Thin and rapid"
     },
     {
       "id": "formula.er_zhi_wan",
@@ -121860,6 +123436,15 @@
           "curriculum/formulas/19_Formula_Cards_181-190_未分類-考點與補充劑.md:1321-1322 (§21 Source Variations 內的原始課件文字,同一列)",
           "curriculum/formulas/Herbal Formulations Comprehensive.docx.md:4552-4553 (Bastyr/Chenoweth 原始課件 Modifications 列)",
           "2026-09-09 課件 §13 抄錄(en 逐字)+ 譯中文,Opus 覆核"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「紅乾」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「少或無」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「細數。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/345",
@@ -122091,7 +123676,10 @@
       ],
       "modifications_en": [
         "For a stronger effect in enriching Liver and Kidney yin and tonifying blood (Sang Shen Zi is sweet and cool) → add Sang Shen Zi"
-      ]
+      ],
+      "tongue_en": "Red and dry",
+      "coating_en": "Scanty or none",
+      "pulse_en": "Thin and rapid"
     },
     {
       "id": "formula.fang_feng_tong_sheng_san",
@@ -122523,6 +124111,15 @@
         ],
         "contraindications_en": [
           "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 3 條(不同來源並行),對齊為 3 組;原條目逐字保留,補齊側為對側之翻譯"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「紅」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「白或黃膩」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「洪數、弦滑、浮滑數、浮滑弦數或浮滑洪數。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "composition_source_note_zh": "組成與劑量取自課件 Herbal Formulations Comprehensive / Formulations Summary Chart 的 Rank/Herb/Amount 表。2026-08-01 依 FORMULA_CARD_TEMPLATE F7（君藥 1–2 味）正規化角色層級：防風、麻黃保留為君以解表散風；大黃、芒硝列臣以瀉下通腑、清裡熱；未改組成或劑量。尚未完成完整方義與主治重修。",
@@ -122943,7 +124540,10 @@
         "obesity",
         "abdominal or epigastric distention",
         "heaviness of the head"
-      ]
+      ],
+      "tongue_en": "Red",
+      "coating_en": "White or yellow and greasy",
+      "pulse_en": "Flooding and rapid; wiry and slippery; floating, slippery and rapid; floating, slippery, wiry and rapid; or floating, slippery, flooding and rapid"
     },
     {
       "id": "formula.fu_yuan_huo_xue_tang",
@@ -123209,6 +124809,12 @@
         "contraindications_en": [
           "2026-08-19 雙語聯集對齊：原 contraindications_zh 2 條 / contraindications_en 4 條(不同來源並行),對齊為 4 組;原條目逐字保留,補齊側為對側之翻譯",
           "2026-09-09 去重:移除「If this formula leads to diarrhea without a complete cure, use a different formula.」—— 與 cautions_en[0] 逐字重複(中譯「若服用本方導致腹瀉未能痊癒，宜改用他方。」在該欄)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「可暗紫或有瘀點」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「弦或澀。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。",
@@ -123405,7 +125011,9 @@
         "severe pain in the chest, hypochondrium, or flank",
         "bruising, with pain that may follow the course of the Liver and Gallbladder channels.",
         "Pain in the chest, hypochondrium, or subcostal region following traumatic injury, often a fixed stabbing pain aggravated by pressure, or with localized bruising and swelling; the pain may impede turning the body, breathing, or movement."
-      ]
+      ],
+      "tongue_en": "May be dusky purple or have purple spots",
+      "pulse_en": "Wiry or choppy"
     },
     {
       "id": "formula.ge_gen_huang_qin_huang_lian_tang",
@@ -123587,6 +125195,15 @@
         ],
         "pattern_indications_en": [
           "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 2 條 / pattern_indications_en 3 條(不同來源並行),對齊為 5 組;原條目逐字保留,補齊側為對側之翻譯"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「紅」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「黃膩」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「數。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。",
@@ -123909,7 +125526,10 @@
         "stiffness or spasm of the neck and back",
         "dry mouth",
         "difficulty breathing with sweating, possibly with wheezing"
-      ]
+      ],
+      "tongue_en": "Red",
+      "coating_en": "Yellow and greasy",
+      "pulse_en": "Rapid"
     },
     {
       "id": "formula.gu_jing_wan",
@@ -124144,6 +125764,15 @@
         ],
         "contraindications_en": [
           "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 3 條(不同來源並行),對齊為 3 組;原條目逐字保留,補齊側為對側之翻譯"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「紅」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「正常或黃」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「弦、弦數、緊數或滑數。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。",
@@ -124294,7 +125923,10 @@
         "deep red urine",
         "flushed face",
         "difficulty with bowel movements"
-      ]
+      ],
+      "tongue_en": "Red",
+      "coating_en": "Normal or yellow",
+      "pulse_en": "Wiry, wiry and rapid, tight and rapid, or slippery and rapid"
     },
     {
       "id": "formula.gui_zhi_shao_yao_zhi_mu_tang",
@@ -124549,6 +126181,15 @@
         ],
         "pattern_indications_en": [
           "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 2 條 / pattern_indications_en 3 條(不同來源並行),對齊為 5 組;原條目逐字保留,補齊側為對側之翻譯"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「正常」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「白膩或薄黃膩」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「弦滑或滑數。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "ad_syndromes_en": [
@@ -124735,7 +126376,10 @@
         "numbness of the limbs",
         "paralysis",
         "fatigue"
-      ]
+      ],
+      "tongue_en": "Normal",
+      "coating_en": "White and greasy or thin, yellow and greasy",
+      "pulse_en": "Wiry and slippery or slippery and rapid"
     },
     {
       "id": "formula.jin_ling_zi_san",
@@ -124848,6 +126492,15 @@
         ],
         "source_classic": [
           "https://www.zhongyifangji.com/home/prescription/detail/id/84(「金铃子散【出处】《太平圣惠方》录自《袖珍方》」;帳本 docs/research_packs/SOURCE_CLASSIC_WEB_PROPOSALS_2026-08-19.json)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「紅」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「黃」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「弦數。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "ad_syndromes_en": [
@@ -124966,7 +126619,10 @@
           "moved_at": "2026-08-29T04:47:03.669Z",
           "ruling": "D28/A1(a). after=[孕婦慎用]; needs_review(0)=[]"
         }
-      ]
+      ],
+      "tongue_en": "Red",
+      "coating_en": "Yellow",
+      "pulse_en": "Wiry and rapid"
     },
     {
       "id": "formula.liang_fu_wan",
@@ -125138,6 +126794,15 @@
         ],
         "contraindications_en": [
           "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 5 條(不同來源並行),對齊為 5 組;原條目逐字保留,補齊側為對側之翻譯"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「粉紅」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「白」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「弦緊或沉遲。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。",
@@ -125296,7 +126961,10 @@
         "no thirst, with a preference for hot drinks",
         "vomiting",
         "abdominal pain during menstruation."
-      ]
+      ],
+      "tongue_en": "Pink",
+      "coating_en": "White",
+      "pulse_en": "Wiry and tight or deep and slow"
     },
     {
       "id": "formula.ling_jiao_gou_teng_yin",
@@ -125887,6 +127555,15 @@
         ],
         "source_classic": [
           "curriculum/formulas/12_Formula_Cards_111-120_理氣劑_瀉下劑.md(「# 113. 暖肝煎 · Nuan Gan Jian — Classical / course source: Jing Yue Quan Shu」;帳本 docs/research_packs/SOURCE_CLASSIC_PROPOSALS_2026-08-19.json)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「淡，尤根部兩側」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「白潤」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「沉緊或弦細遲。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。",
@@ -126059,7 +127736,10 @@
         "abdominal pain after menstruation",
         "scrotal swelling and pain, possibly with nausea and vomiting",
         "poor appetite"
-      ]
+      ],
+      "tongue_en": "Pale, especially at both sides of the root",
+      "coating_en": "White and moist",
+      "pulse_en": "Deep and tight or wiry, thin and slow"
     },
     {
       "id": "formula.qiang_huo_sheng_shi_tang",
@@ -126293,6 +127973,15 @@
         ],
         "contraindications_en": [
           "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 6 條(不同來源並行),對齊為 6 組;原條目逐字保留,補齊側為對側之翻譯"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「粉紅」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「白或白膩」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「浮、浮遲、浮濡或浮緊。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "composition_source_note_zh": "組成取自課件 Herbal Formulations Comprehensive 的 Rank/Herb/Amount 表（君臣佐使與劑量）。尚未經 AD / CloudTCM 交叉核對。",
@@ -126537,7 +128226,10 @@
         "chills",
         "lassitude",
         "scanty urination"
-      ]
+      ],
+      "tongue_en": "Pink",
+      "coating_en": "White or white and greasy",
+      "pulse_en": "Floating, floating and slow, floating and soggy, or floating and tight"
     },
     {
       "id": "formula.shao_yao_gan_cao_tang",
@@ -126650,6 +128342,15 @@
         ],
         "source_classic": [
           "https://cloudtcm.com/formula/118(「芍藥甘草湯,出處:《傷寒論》。組成:芍藥4兩,甘草(炙)4兩」;帳本 docs/research_packs/SOURCE_CLASSIC_WEB_PROPOSALS_2026-08-19.json)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「正常或微紅」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「無或微黃」(Claude 譯 + 對抗式覆核,採覆核修正版);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「弦數或細數。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "ad_syndromes_en": [
@@ -127113,7 +128814,10 @@
           "quarantined": "2026-08-27",
           "ruling": "TING_RULING_SHEET_2026-08-27 A0b(b):25 段 HOLD 全數隔離,僅 RISK_DIRECTION_KEEP 上畫面"
         }
-      ]
+      ],
+      "tongue_en": "Normal or slightly red",
+      "coating_en": "No coating or slightly yellow",
+      "pulse_en": "Wiry and rapid or thin and rapid"
     },
     {
       "id": "formula.tian_tai_wu_yao_san",
@@ -127346,6 +129050,15 @@
         ],
         "contraindications_en": [
           "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 2 條(不同來源並行),對齊為 2 組;原條目逐字保留,補齊側為對側之翻譯"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「淡」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「白」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「沉遲或弦緊。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "ad_syndromes_en": [
@@ -127530,7 +129243,10 @@
         "swelling and pain of the testicles",
         "flank pain",
         "vaginal discharge."
-      ]
+      ],
+      "tongue_en": "Pale",
+      "coating_en": "White",
+      "pulse_en": "Deep and slow or wiry and tight"
     },
     {
       "id": "formula.wu_pi_san",
@@ -127709,6 +129425,15 @@
         ],
         "modifications_zh": [
           "curriculum/herbs/方剂学汇总_extracted.md(Table 583;原文英文+拼音,zh 為忠實中譯,原句在帳本 docs/research_packs/MODIFICATIONS_PROPOSALS_2026-08-19.json evidence_quotes)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「正常」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「白滑」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「細緩、滑、沉緩或沉遲。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "cloudtcm_url": "https://cloudtcm.com/formula/48",
@@ -127880,7 +129605,10 @@
         "heaviness of the limbs",
         "difficulty breathing",
         "rapid, labored breathing or breathlessness"
-      ]
+      ],
+      "tongue_en": "Normal",
+      "coating_en": "White and slippery",
+      "pulse_en": "Thin and moderate, slippery, deep and moderate, or deep and slow"
     },
     {
       "id": "formula.xi_jiao_di_huang_wan",
@@ -128070,6 +129798,12 @@
           "2026-09-09 去重:移除「Bleeding due to traumatic injury.」—— 與 contraindications_en 逐字重複(該欄有中譯);AD 原檔此句列於 Contraindications 標題下,cautions 側是 A1(a) 拆欄前的池化殘留",
           "2026-09-09 去重:移除「Bleeding due to Spleen and Stomach Deficiencies.」—— 與 contraindications_en 逐字重複(該欄有中譯);AD 原檔此句列於 Contraindications 標題下,cautions 側是 A1(a) 拆欄前的池化殘留",
           "2026-09-09 去重:移除「Bleeding due to Yang Deficiency.」—— 與 contraindications_en 逐字重複(該欄有中譯);AD 原檔此句列於 Contraindications 標題下,cautions 側是 A1(a) 拆欄前的池化殘留"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「深紅或絳紅」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「細數或數。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "ad_syndromes_en": [
@@ -128402,7 +130136,9 @@
         "hematuria",
         "subcutaneous bleeding, purpura, and other bleeding manifestations",
         "confusion or coma may also occur"
-      ]
+      ],
+      "tongue_en": "Deep red or crimson",
+      "pulse_en": "Thin and rapid or rapid"
     },
     {
       "id": "formula.xiao_ji_yin_zi",
@@ -128692,6 +130428,15 @@
         ],
         "contraindications_en": [
           "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 3 條(不同來源並行),對齊為 3 組;原條目逐字保留,補齊側為對側之翻譯"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「紅或舌尖紅」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「薄黃」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「實數或細數。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "ad_syndromes_en": [
@@ -128907,7 +130652,10 @@
         "vexation and agitation",
         "frequent urination",
         "scanty, red-colored urine"
-      ]
+      ],
+      "tongue_en": "Red or red tip",
+      "coating_en": "Thin and yellow",
+      "pulse_en": "Excess and rapid or thin and rapid"
     },
     {
       "id": "formula.xie_huang_san",
@@ -129074,6 +130822,15 @@
         ],
         "source_classic": [
           "https://www.zhongyifangji.com/home/prescription/detail/id/114(「清胃散(《脾胃论》)頁【附方】:泻黄散 出自《小儿药证直诀》(又名泻脾散)」;帳本 docs/research_packs/SOURCE_CLASSIC_WEB_PROPOSALS_2026-08-19.json)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「紅」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「正常或黃」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「數。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "ad_syndromes_en": [
@@ -129223,7 +130980,10 @@
         "dry lips",
         "nosebleed",
         "in children, may present with tongue protrusion or thrusting, along with restlessness"
-      ]
+      ],
+      "tongue_en": "Red",
+      "coating_en": "Normal or yellow",
+      "pulse_en": "Rapid"
     },
     {
       "id": "formula.zeng_ye_tang",
@@ -129377,6 +131137,15 @@
         ],
         "formula_family": [
           "curriculum/formulas/12_Formula_Cards_111-120_理氣劑_瀉下劑.md(Zeng Ye Tang card, Section 17 Modifications;帳本 docs/research_packs/FORMULA_FAMILY_PROPOSALS_2026-08-24.json,劑量逐字審計)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「紅、乾、薄」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「無苔或黃乾」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「細而略數、弱無力，或沉無力。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "ad_syndromes_en": [
@@ -129567,7 +131336,10 @@
         "dry throat",
         "dry nose",
         "dizziness."
-      ]
+      ],
+      "tongue_en": "Red, dry and thin",
+      "coating_en": "No coating or yellow and dry",
+      "pulse_en": "Thin and slightly rapid, weak and forceless, or deep and forceless"
     },
     {
       "id": "formula.wei_jing_tang",
@@ -129683,6 +131455,15 @@
         ],
         "formula_song": [
           "《湯頭歌訣》(汪昂)通行本/方劑學教材通行歌訣，2026-08-19 憑通行文本錄入，待 Ting 對照課件複核"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「紅」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「黃膩」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「滑數。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "actions_en": [
@@ -129856,7 +131637,10 @@
       ],
       "ba_fa_en": [
         "clearing method"
-      ]
+      ],
+      "tongue_en": "Red",
+      "coating_en": "Yellow and greasy",
+      "pulse_en": "Slippery and rapid"
     },
     {
       "id": "formula.xian_fang_huo_ming_yin",
@@ -130137,6 +131921,15 @@
         ],
         "source_classic": [
           "https://www.zhongyifangji.com/home/prescription/detail/id/37(「仙方活命饮【出处】《校注妇人良方》」;帳本 docs/research_packs/SOURCE_CLASSIC_WEB_PROPOSALS_2026-08-19.json)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「正常」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「薄白或黃」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「數而有力。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "actions_en": [
@@ -130403,7 +132196,10 @@
       ],
       "ba_fa_en": [
         "clearing method"
-      ]
+      ],
+      "tongue_en": "Normal",
+      "coating_en": "Thin and white or yellow",
+      "pulse_en": "Rapid and forceful"
     },
     {
       "id": "formula.si_miao_yong_an_tang",
@@ -130522,6 +132318,15 @@
         ],
         "source_classic": [
           "https://cloudtcm.com/formula/652(「「四妙勇安湯」出處:「《驗方新編》卷二」」;帳本 docs/research_packs/SOURCE_CLASSIC_WEB_PROPOSALS_2026-08-19.json)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「紅」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「正常」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「數。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "actions_en": [
@@ -130702,7 +132507,10 @@
       ],
       "ba_fa_en": [
         "clearing method"
-      ]
+      ],
+      "tongue_en": "Red",
+      "coating_en": "Normal",
+      "pulse_en": "Rapid"
     },
     {
       "id": "formula.dang_gui_nian_tong_tang",
@@ -131047,6 +132855,15 @@
         ],
         "pattern_indications_en": [
           "2026-08-19 雙語聯集對齊：原 pattern_indications_zh 2 條 / pattern_indications_en 3 條(不同來源並行),對齊為 4 組;原條目逐字保留,補齊側為對側之翻譯"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「正常」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「膩而微黃」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「弦數、濡緩、滑數或沉緊。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "actions_en": [
@@ -131389,7 +133206,10 @@
           "moved_at": "2026-08-29T04:47:32.128Z",
           "ruling": "D28/A1(a). after=[]; needs_review(1)=[服用本方期間，宜避免辛辣、油膩食物 <no_direction_token>]"
         }
-      ]
+      ],
+      "tongue_en": "Normal",
+      "coating_en": "Greasy and slightly yellow",
+      "pulse_en": "Wiry and rapid, soggy and moderate, slippery and rapid, or deep and tight"
     },
     {
       "id": "formula.san_miao_wan",
@@ -131528,6 +133348,15 @@
         ],
         "derived_from": [
           "curriculum 方剂学汇总 Table 564 (Er Miao San)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「粉紅，可腫」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「黃膩」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「數。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "actions_en": [
@@ -131684,7 +133513,10 @@
         ],
         "indication_zh": "濕熱下注：足部麻木、灼痛、無力",
         "source": "curriculum 方剂学汇总 Table 564 (Er Miao San)"
-      }
+      },
+      "tongue_en": "Pink, possibly swollen",
+      "coating_en": "Yellow and greasy",
+      "pulse_en": "Rapid"
     },
     {
       "id": "formula.shen_su_yin",
@@ -131980,6 +133812,15 @@
           "data/imports/cloudtcm/formula_url_map.json#參蘇飲/pageData.OldAdministration",
           "https://cloudtcm.com/formula/196",
           "translated 2026-09-07 from modifications_zh (Claude)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「淡厚」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「白或白膩」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「浮弱。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "actions_en": [
@@ -132190,7 +134031,10 @@
         "For hiccough, add Ge Gen",
         "For abdominal pain, add Shao Yao."
       ],
-      "cloudtcm_id": 196
+      "cloudtcm_id": 196,
+      "tongue_en": "Pale and thick",
+      "coating_en": "White or white and greasy",
+      "pulse_en": "Floating and weak"
     },
     {
       "id": "formula.zai_zao_san",
@@ -132461,6 +134305,15 @@
         ],
         "contraindications_en": [
           "translated: 本卡 contraindications_zh 逐條忠實翻譯(紅線5 同長同序,強度不升降)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「淡」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「白」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「浮大無力或沉無力。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "actions_en": [
@@ -132598,7 +134451,10 @@
       ],
       "ba_fa_en": [
         "sweating method (exterior-releasing strategy)"
-      ]
+      ],
+      "tongue_en": "Pale",
+      "coating_en": "White",
+      "pulse_en": "Floating, large and forceless or deep and forceless"
     },
     {
       "id": "formula.cong_chi_tang",
@@ -132672,6 +134528,15 @@
         ],
         "contraindications_en": [
           "translated: 本卡 contraindications_zh 逐條忠實翻譯(紅線5 同長同序,強度不升降)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「正常」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「薄白」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「浮。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "actions_en": [
@@ -132759,7 +134624,10 @@
       ],
       "ba_fa_en": [
         "sweating method"
-      ]
+      ],
+      "tongue_en": "Normal",
+      "coating_en": "Thin and white",
+      "pulse_en": "Floating"
     },
     {
       "id": "formula.tong_qiao_huo_xue_tang",
@@ -132972,6 +134840,15 @@
         ],
         "related_formulas": [
           "curriculum/formulas/09_Formula_Cards_081-090_解表劑_理血劑.md #084-088 (Classical/course source: Yi Lin Gai Cuo, 王清任《醫林改錯》五首逐瘀湯,依身體部位分主治:胸中血府/膈下/少腹/週身痛/頭面清竅)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「暗或有瘀點」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「正常」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「澀。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "actions_en": [
@@ -133245,7 +135122,10 @@
         "consumption-like emaciation",
         "muscle weakness",
         "sudden blindness"
-      ]
+      ],
+      "tongue_en": "Dusky or with purple spots",
+      "coating_en": "Normal",
+      "pulse_en": "Choppy"
     },
     {
       "id": "formula.jiu_xian_san",
@@ -133551,6 +135431,12 @@
         ],
         "source_classic": [
           "https://www.zhongyifangji.com/home/prescription/detail/id/2(「九仙散 出处:《卫生宝鉴》」;帳本 docs/research_packs/SOURCE_CLASSIC_WEB_PROPOSALS_2026-08-19.json)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「紅嫩」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「虛數。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "actions_en": [
@@ -133704,7 +135590,9 @@
         "shortness of breath",
         "difficulty breathing",
         "spontaneous sweating"
-      ]
+      ],
+      "tongue_en": "Red and tender",
+      "pulse_en": "Deficient and rapid"
     },
     {
       "id": "formula.tao_hua_tang",
@@ -133804,6 +135692,15 @@
         ],
         "source_classic": [
           "https://www.zhongyifangji.com/home/prescription/detail/id/105(「真人养脏汤頁【附方】:桃花汤《伤寒论》」;帳本 docs/research_packs/SOURCE_CLASSIC_WEB_PROPOSALS_2026-08-19.json)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「淡」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「正常」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「遲弱、微細。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "actions_en": [
@@ -133974,7 +135871,10 @@
         "dysentery with dark blood and pus in the stool",
         "abdominal pain relieved by warmth and pressure",
         "difficult urination"
-      ]
+      ],
+      "tongue_en": "Pale",
+      "coating_en": "Normal",
+      "pulse_en": "Slow and weak, faint and thin"
     },
     {
       "id": "formula.gua_lou_xie_bai_bai_jiu_tang",
@@ -134100,6 +136000,15 @@
         ],
         "contraindications_en": [
           "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 4 條(不同來源並行),對齊為 4 組;原條目逐字保留,補齊側為對側之翻譯"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「淡或粉紅」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「厚膩」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「沉弦或沉緊。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "actions_en": [
@@ -134351,7 +136260,10 @@
         "shortness of breath",
         "drooling",
         "copious phlegm with coughing."
-      ]
+      ],
+      "tongue_en": "Pale or pink",
+      "coating_en": "Thick and greasy",
+      "pulse_en": "Deep and wiry or deep and tight"
     },
     {
       "id": "formula.hou_po_wen_zhong_tang",
@@ -134546,6 +136458,15 @@
         ],
         "source_classic": [
           "curriculum/formulas/12_Formula_Cards_111-120_理氣劑_瀉下劑.md(「# 111. 厚朴溫中湯 · Hou Po Wen Zhong Tang — Classical / course source: Nei Wai Shang Bian Huo L」;帳本 docs/research_packs/SOURCE_CLASSIC_PROPOSALS_2026-08-19.json)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「淡」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「白滑」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「沉弦或滑細。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "actions_en": [
@@ -134712,7 +136633,10 @@
         "vomiting of clear fluid",
         "vaginal discharge",
         "drowsiness"
-      ]
+      ],
+      "tongue_en": "Pale",
+      "coating_en": "White and slippery",
+      "pulse_en": "Deep and wiry or slippery and thin"
     },
     {
       "id": "formula.da_xian_xiong_tang",
@@ -134815,6 +136739,15 @@
         ],
         "contraindications_en": [
           "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 4 條(不同來源並行),對齊為 4 組;原條目逐字保留,補齊側為對側之翻譯"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「正常」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「非常乾」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「沉緊有力。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "actions_en": [
@@ -134981,7 +136914,10 @@
       ],
       "ba_fa_en": [
         "purging method (draining downward)"
-      ]
+      ],
+      "tongue_en": "Normal",
+      "coating_en": "Very dry",
+      "pulse_en": "Deep, tight and forceful"
     },
     {
       "id": "formula.da_huang_fu_zi_tang",
@@ -135087,6 +137023,15 @@
         ],
         "contraindications_en": [
           "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 2 條(不同來源並行),對齊為 2 組;原條目逐字保留,補齊側為對側之翻譯"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「正常」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「白膩」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「沉緊弦。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "actions_en": [
@@ -135391,7 +137336,10 @@
       ],
       "ba_fa_en": [
         "purging method (draining downward)"
-      ]
+      ],
+      "tongue_en": "Normal",
+      "coating_en": "White and greasy",
+      "pulse_en": "Deep, tight and wiry"
     },
     {
       "id": "formula.wen_pi_tang",
@@ -135532,6 +137480,15 @@
         ],
         "derived_from": [
           "curriculum 方剂学汇总 Table 77 (Da Huang Fu Zi Tang)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「淡」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「白」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「沉弦。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "actions_en": [
@@ -135737,7 +137694,10 @@
         ],
         "indication_zh": "脾陽虛寒積便秘；久痢赤白",
         "source": "curriculum 方剂学汇总 Table 77 (Da Huang Fu Zi Tang)"
-      }
+      },
+      "tongue_en": "Pale",
+      "coating_en": "White",
+      "pulse_en": "Deep and wiry"
     },
     {
       "id": "formula.hao_qin_qing_dan_tang",
@@ -135971,6 +137931,15 @@
         ],
         "modifications_zh": [
           "curriculum/herbs/方剂学汇总_extracted.md(Table 97;原文英文+拼音,zh 為忠實中譯,原句在帳本 docs/research_packs/MODIFICATIONS_PROPOSALS_2026-08-19.json evidence_quotes)"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「紅」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「黃或白黃相兼而膩」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「左弦數、右滑數。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "actions_en": [
@@ -136227,7 +138196,10 @@
       ],
       "ba_fa_en": [
         "harmonizing method"
-      ]
+      ],
+      "tongue_en": "Red",
+      "coating_en": "Yellow or white and yellow intermixed, and greasy",
+      "pulse_en": "Left wiry and rapid, right slippery and rapid"
     },
     {
       "id": "formula.fu_ling_wan",
@@ -136349,6 +138321,15 @@
         ],
         "source_classic": [
           "https://www.cnpharm.com/c/2022-03-28/821547.shtml"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「正常」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「白膩」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「沉細，或細弦。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "actions_zh": [
@@ -136475,7 +138456,10 @@
         "pain in both arms and shoulders",
         "difficulty raising the arms, possibly more severe on one side",
         "numbness in both hands, or in all four limbs"
-      ]
+      ],
+      "tongue_en": "Normal",
+      "coating_en": "White and greasy",
+      "pulse_en": "Deep and thin, or thin and wiry"
     },
     {
       "id": "formula.zhu_sha_an_shen_wan",
@@ -136619,6 +138603,15 @@
         ],
         "contraindications_en": [
           "2026-08-19 雙語聯集對齊：原 contraindications_zh 1 條 / contraindications_en 5 條(不同來源並行),對齊為 5 組;原條目逐字保留,補齊側為對側之翻譯"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「紅或舌尖紅」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「正常」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「細數。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "actions_en": [
@@ -136861,7 +138854,10 @@
         "night sweats",
         "shortness of breath",
         "nausea"
-      ]
+      ],
+      "tongue_en": "Red or red tip",
+      "coating_en": "Normal",
+      "pulse_en": "Thin and rapid"
     },
     {
       "id": "formula.zhen_zhu_mu_wan",
@@ -137077,6 +139073,15 @@
         "source_classic": [
           "curriculum/herbs/方剂学汇总_extracted.md#L3022",
           "https://www.zysj.com.cn/zhongyaofang/zhenzhumuwan/index.html"
+        ],
+        "tongue_en": [
+          "2026-09-09 譯自本筆 tongue_zh「紅、淡或粉紅」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "coating_en": [
+          "2026-09-09 譯自本筆 coating_zh「少或無」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
+        ],
+        "pulse_en": [
+          "2026-09-09 譯自本筆 pulse_zh「細弦。」(Claude 譯 + 對抗式覆核);未新增 zh 沒有的主張"
         ]
       },
       "actions_en": [
@@ -137235,7 +139240,10 @@
         "easily startled",
         "insomnia",
         "vertigo"
-      ]
+      ],
+      "tongue_en": "Red, pale or pink",
+      "coating_en": "Scanty or none",
+      "pulse_en": "Thin and wiry"
     },
     {
       "id": "formula.ci_zhu_wan",
