@@ -204,11 +204,14 @@
 | 方劑卡英文模式舌/苔/脈 | 印中文(en 從未讀) | english → en‖zh |
 | 開機停首頁 DOM 節點(cards-lazy,實作者量在 65a74a5f;審查修後我量在 4252fd53 的樹,router.js 延遲 4 s 同 3,121) | 16,888 | 3,121(進 acu 後 16,888) |
 | 方劑卡 Public EN「症狀表現」印中文散文的卡 | 196 | 30(166 列英譯落地) |
+| 方劑卡 Public EN「現代對應病名」印中文 chip 的卡 | 97 | 0(渲染器 en‖zh + 219 名字典 → 97 方 1,301 項) |
+| 方劑 symptoms_en 缺 | 7 方 | 0 |
 
 **(3) 原始驗證**:每批 `validate-formula-standard / content-junk / formula-safety-reachability / rendered-reference-resolution / bilingual-index-pairing / check-validation-ratchet` PASS;UI 修正另跑 `validate-interactions 0/0 / render-blocking / ui-freeze / test-unified-search(20 種子)`;去重批自檢 diff:陣列變短 23 列(清空 8 列,全是 cautions_en 純複本)、變長 0、記錄 223 → 223。cards-lazy:實作者自跑 validate-lazy-cards-wiring(+11 負控)/ lazy-grid-wiring / interactions / unified-search / ratchet 全綠,八條路徑 ×3 卡片數逐一等於 before。
 
 **(4) 已知未解**
 - 11 張課件方劑卡 §13 加減是相鄰方的(歸屬汙染),要不要退役那些段落待 Ting;小青龍湯 AD 語病 en 待 Ting;補肺湯禁忌/注意無來源;黃芩劑量待 B3;composition 27 列無來源、226 列中英皆通用句;三條病例旅程 QA-FIVE-DAY-001/002/003 仍未執行(需 D1 測試 origin)。
+- 病名資料裡 8 個含 CJK 相容字(U+F98A 力、U+F962 異;重症肌無力 ×1、子宮內膜異位症 ×6 等 7 方)與 3 個疑錯字(尿道膿傷→膿瘍、女性乳房腫廇→腫瘤、癲狂狂躁)zh 未動,英譯照原意;要不要正規化/改字待 Ting。
 - `validate-bilingual-render-parity` 的盲區:欄名在 knowledge.js 任一處出現就算「有讀」(tongue_en 出現在證型面板與搜尋索引),量不到方劑卡那一段沒讀 —— 要升級成「哪個 renderer 函式讀了哪個欄」才守得住。
 - 全庫 `_zh/_en` 兩側非空不等長 540 列裡,361 穴 cautions 120 列是「zh 多句 / en 一句定位+警告」的各自成列欄,渲染器分開印,不算缺陷;桂枝湯 symptoms 9/8 待看。
 - cards-lazy(已落 4252fd53):13,767 個節點只是推遲不是封頂;第一次進 acu 沒有變快(時間搬到 render+layout)。對抗審查 2 MED 全修(settle 死碼 / 閘門純形狀),LOW 1 不動;兩個反駁者被 429 打掉,M1 由第三個反駁者 + 獨立實測確認。細節 `docs/audits/RENDER_COST_2026-09-07.md` §11.6。
