@@ -1,3 +1,23 @@
+# 2026-09-09 — 持續優化第二輪(Ting:「持續優化七小時」「CI 綠就推 main」「持續做150分鐘」)
+
+**MEASURED TREE: claude/opt-0909b → opt-0909c → opt-0909d,各自 rebase 到當時的 main 之後 ff 落地(落地 SHA 見表)。** 中途另一 session 推了 bf568e3f(comparison/condition 抽共用函式)到 main,本輪分支各自 rebase,無衝突。
+五項回報:`docs/audits/FIVE_DAY_DISPATCH_2026-09-07_REPORT.md` 末段「2026-09-09 · 第二輪」;Codex 交接:`docs/CODEX_HANDOFF.md` 頂端。
+
+| 項 | 做法 | before → after | main SHA |
+|---|---|---|---|
+| 證型進首頁搜尋(修正) | 搜尋框 placeholder 從 08-11 起寫「例:血虛」,證型卻從不在搜尋範圍;加 patterns 分組(patternLibrary)+ openSearchTarget pattern 分支 + 契約種子 2 條 | 「血虛」開潤腸丸 → 開 pattern.blood_deficiency | 7f90d2f5 |
+| composition 缺 in_formula_en | 33 列 / 7 方:repo 內有來源的補填(AD 藥表替代註記逐字 + 譯中文),沒來源的不填 | 6 補、27 留空 | bbbd14cf、23db713b |
+| _zh/_en 對齊第三批 | 只套沒有損壞英文句的列 | 4 列 | fc5b8713 |
+| 20 句損壞英文安全句 | 「Use with caution for those with X」被機械改寫成「Contraindicated for those with for those with X」(慎用升格成禁用)→ 改回 AD 逐字原句、歸注意欄、封存逐片修復 20 片 / 16 封存(repair_note 留原文) | 20 → 0;reachability R2 回基線 1 | 94d00fe9 |
+| 加減(modifications)補填 | 課件 §13 精確切段得 15 候選 → 覆核發現 11 張卡的 §13 其實是相鄰方的加減(歸屬汙染)→ 只落地二至丸 1 條;審計 `docs/audits/CURRICULUM_MODIFICATIONS_MISATTRIBUTION_2026-09-09.md` | 1 條落地;11 張卡待 Ting 裁 | 94d00fe9、5cd85bcb |
+| 手機 375px #ws/condition 溢位(修正) | 整頁 838px 溢位 → 病症卡三處來源引用長字串缺 overflow-wrap:anywhere(FAB 因此被算到視窗外) | 838 → 375 | 9aec041c |
+| 安全欄未對齊收尾 | 剩下 23 列全是欄位間逐字重複 / 同義近似句(其中 6 句是我 94d00fe9 多塞進去的近似句)→ 42 個動作 / 22 方,0 新翻譯,移除的句子逐字記進 field_sources;封存逐片修 3 | 23 列 → 0;R2 4 → 1 | db1b2733 |
+| 方劑卡舌/苔/脈英文模式(修正) | formulaGlance 三列一直只印 _zh;改走同區塊「煎法」列的規則 english → en‖zh | tongue_en 42 / pulse_en 48 從未上畫面 → 會印 | opt-0909d(CI 後落) |
+| 舌/苔/脈 zh-only 英譯 | 503 列(tongue 160 / coating 187 / pulse 156),11 批 Claude 譯 + 對抗式覆核(500 ok、3 採覆核修正、1 列 zh 疑漏標點不翻)+ 落地器逐字 expect + 形狀檢查 | both/zhOnly:tongue 42/160 → 202/0、coating 0/187 → 187/0、pulse 48/156 → 203/1 | opt-0909d(CI 後落) |
+| 穴位清單延遲渲染(包 C 候選 A,凍結例外) | Opus 實作於 `claude/pkgC-cards-lazy`(render() 的 renderCards 改成進 acu 才畫第一次;hash 自己判定 + activeWs + fail-open;新閘門 validate-lazy-cards-wiring 11 條負控) | 實作者量:開機停首頁 16,888 → 3,121 節點(−81.5%),進 acu 後收斂回 16,888;八條路徑 ×3 同 | 三鏡頭對抗審查後 CI 落 |
+
+其他量測:全庫 `_zh/_en` 陣列「兩側都非空但不等長」540 列 —— 361 穴 diagram_urls 361 / cautions 120 是各自成列、非逐索引配對的欄(渲染器分開印,不是缺陷)、aliases 57 本來就不必等長、桂枝湯 symptoms 9/8 待看;方劑安全欄 0。
+坑:GitHub 匿名 Actions API 一小時 60 次打滿 → CI 狀態改用 Browser pane 讀 Actions 頁(本機無 gh);第一次審查 workflow 三個 agent 全被 session limit(429)打掉,resume 重跑;`validate-bilingual-render-parity` 對 tongue_en/pulse_en 報 0 缺口 —— 它只找 knowledge.js 任一處有沒有出現欄名,證型面板有讀就算「有讀」,量不到「方劑卡那一段沒讀」(另記)。
 # 2026-09-09 — 凍結例外(Ting 指示):comparison / condition 的「切區後找卡閃一下」抽成 goToSectionAndFlashCard
 
 Ting:「把 comparison 和 condition 抽成共用函式」。純重構,行為不變。凍結例外理由:同一段時序邏輯兩份已各修一次、隔一個 session(e22b7f9c / add40c4a),第三條「goToSection 之後查 DOM」的路再長出來又會分岔;抽成一份後新路一律走它。

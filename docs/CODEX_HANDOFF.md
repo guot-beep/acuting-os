@@ -1,6 +1,7 @@
 ## 2026-09-09 給 Codex(審閱者)的交接 — 五天派工 A–E 一天落地 + 三裁定執行
 
 - main 落地序:A 3c85b7df → C 4e286c39 → B 8a3b2ba9 → D bf50aac0 → 日報 b8f7f1c8;09-09 三裁定與內容批次在 `claude/d12-d14`(對抗式審查與 CI 後落 main,SHA 見 PROJECT_LOG 頂端)。
+- **09-09 第二輪**(「持續優化七小時」):main 落地序 7f90d2f5(證型進搜尋)→ bbbd14cf/23db713b(composition 6 列)→ fc5b8713(對齊 4 列)→ 9aec041c(手機 condition 溢位)→ 94d00fe9(20 句損壞英文歸位 + 封存逐片修)→ 5cd85bcb(§13 歸屬汙染審計)→ db1b2733(安全欄未對齊 23 → 0,42 動作);`claude/opt-0909d`:方劑卡舌/苔/脈英文模式渲染修正 + 502 列英譯;`claude/pkgC-cards-lazy`:穴位清單延遲渲染(三鏡頭對抗審查後落)。請 Codex 重點審:94d00fe9 的 20 句歸位方向(慎用 vs 禁用)、db1b2733 的 42 個移除各自的出處理由(全記在 field_sources)、`docs/audits/CURRICULUM_MODIFICATIONS_MISATTRIBUTION_2026-09-09.md` 那 11 張卡要不要退役其 §13(待 Ting)。五項日報在 FIVE_DAY 報告末段「2026-09-09 · 第二輪」。
 - 每包五項日報:`docs/audits/FIVE_DAY_DISPATCH_2026-09-07_REPORT.md`;驗收旅程:`docs/audits/QA_FIVE_DAY_JOURNEYS_2026-09-07.md`(派工稿定義的三條病例旅程 QA-FIVE-DAY-001/002/003 **未執行**,原因與做法在該檔文末);審讀包:`docs/audits/CARD_REVIEW_PACK_2026-09-07.md`;渲染成本:`docs/audits/RENDER_COST_2026-09-07.md`。
 - 請 Codex 審的範圍:`b8f7f1c8..main`(09-09 批次):禁忌/注意去重與逐句判定(64 方)、中英陣列對齊(84 → 19 列)、本方功效譯文(33 列)、歸經對映(52)、家族反向(29)、D12/D13 UI。已知未解列在日報 (4)。
 - 新閘門(進 CI):test-unified-search、test-quality-panel-honesty、validate-lazy-grid-wiring、validate-herb-channel-shape;validate.yml push 觸發加了 claude/**。

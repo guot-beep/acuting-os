@@ -171,3 +171,45 @@
 - M3 審查時(f730d199)中英長度差比 main 差(73 vs 55);對齊兩批落地後現況 18/223,已優於 main。
 - L1–L3 三句譯文修(真人養臟湯石榴皮「收澀固腸。」、參苓白朮散白扁豆去「止瀉」、清胃散升麻「升散火邪」)。
 - 審查確認全對:D14-8 歸經對映 52/52、D12 兩個來源逐字與日期、D13 手機實測、去重「不刪除」(0 句消失、0 欄雙空)、build 乾淨、無夾帶。
+
+---
+
+# 2026-09-09 · 第二輪(「持續優化七小時」)
+
+分支 `claude/opt-0909b` → `opt-0909c` → `opt-0909d`(各自 rebase 到當時 main 後 ff 落地)。方法同前:量分母 → 派 workflow(譯/填 + 對抗式覆核)→ 落地器逐字 expect + 機械再檢 → 驗證器 → CI 綠才落。
+
+**(1) 做了什麼**
+- 證型進首頁搜尋(修正 7f90d2f5):placeholder 08-11 起寫「例:血虛」,但 unifiedSearch 從沒有 patterns 分組 —— 「血虛」開的是內文含它的潤腸丸。加 patterns 分組(讀 patternLibrary,即 openPattern 讀的那份)、openSearchTarget 的 pattern 分支(API 未載入時退到 #ws/condition)、空狀態文案、契約種子「血虛」「Blood Deficiency」→ pattern.blood_deficiency。
+- composition 缺 in_formula_en 33 列 / 7 方(bbbd14cf、23db713b):只有 repo 內有來源的 6 列補(AD 藥表替代註記逐字 + 中譯),27 列無來源留空;第 6 列(獨活寄生湯熟地黃)第一次被落地器擋下,因 zh 含「AD」字樣,改寫後補。
+- _zh/_en 對齊第三批(fc5b8713):10 列裡 4 列可對(生脈散、四妙勇安湯、當歸拈痛湯、大陷胸湯),其餘等損壞英文修完。
+- 20 句損壞英文安全句(94d00fe9):形狀「Contraindicated for those with for those with X」= AD 原句「Use with caution for those with X」被機械替換(慎用升格成禁用)。逐句改回 AD 逐字原句、搬到注意欄、封存 import_artifacts 逐片同步修(20 片 / 16 封存,repair_note 留原文);reachability R2 一度 4 → 回基線 1。附帶二至丸加減 1 條。
+- 加減補填(94d00fe9、5cd85bcb):§13 精確切段 15 候選 → 覆核抓到 11 張卡的 §13 是相鄰方的加減(課件抽取的歸屬汙染,例:某方卡列的是下一方的加減)→ 只落地二至丸 1 條,其餘不填;審計寫在 `docs/audits/CURRICULUM_MODIFICATIONS_MISATTRIBUTION_2026-09-09.md`,11 張卡要不要退役其 §13 待 Ting。
+- 手機 375px #ws/condition 溢位(修正 9aec041c):整頁 838px 溢位,根因是病症卡三處來源引用的不含空格長字串(k-condition-scope small 來源列、k-protocol-evidence p 匯入說明、k-source-links a 純網址)把祖先撐寬,一路頂到 documentElement 讓 position:fixed 的 FAB 容區塊跟著變寬 → 三處補 overflow-wrap:anywhere,不裁內容。
+- 安全欄未對齊收尾(db1b2733):重量 23 列,逐列追出處後全是重複 —— (A) 我 94d00fe9 往 cautions_zh 多塞的近似句 6 句(原欄早有同義舊句,只差「之」「——」語序,norm 去重抓不到);(B) 08-28 A1(a) 重灌加入的同義複本 2 句;(C) 跨欄逐字重複的 en 24 句(8 方的 cautions_en 整欄是 contraindications_en 的池化殘留,AD 原檔這些句列在 Contraindications 標題下);(D) 652dfdd9(09-02 第三批英文補齊)對同一 zh 句再生成的第二種英譯 4 句;(E) 竹葉石膏湯 4 句模型改寫句讓位給孤懸在 cautions_en 的 AD 逐字原句。42 個動作 / 22 方,0 新翻譯,移除的句子逐字記進 field_sources;封存逐片修 3(左歸丸損壞升格句、金匱腎氣丸兩句第二譯)。
+- 方劑卡舌/苔/脈英文模式(修正,opt-0909d):formulaGlance 三列一直 cleanList(record.tongue_zh …),不看 contentMode;同區塊「煎法」列早就是 english → en‖zh。三列改走同一規則(glanceSign)。既有 tongue_en 46 / pulse_en 48 從未上過畫面。
+- 舌/苔/脈 zh-only 英譯 503 列(tongue 160 / coating 187 / pulse 156;量在 data/generated、非退役 219 方):11 批 workflow(Claude 譯 + 對抗式覆核;詞彙表固定 浮=floating、細=thin、濡=soggy、洪=flooding、絳=crimson、澀=choppy),落地器逐字 expect + 形狀(無中文、首字母大寫、無句號、≤160)+ en 現值必須為空。結果 502/503 落地:500 ok、3 採覆核修正(左歸丸舌「光」→ mirror-like、炙甘草湯脈「結代」去掉自加的 or、芍藥甘草湯苔「無」→ No coating)、1 列不翻(玉女煎脈「浮實滑虛大，或洪大數、數。」五個脈象黏在一起疑漏標點,留空待查)。
+- 穴位清單延遲渲染(包 C 候選 A,凍結例外;`claude/pkgC-cards-lazy`):Opus 實作 —— render() 的 renderCards(filtered) 換成 renderCardsWhenAcuOpen;守門三訊號(已畫過 / body.dataset.activeWs==="acu" / hash 自己判定 #ws/acu、#point/、落在 acu section 的 #<id>),讀 hash 而不只讀 activeWs 是因為 app.js 的 hashchange 監聽器跑在 router 的 route() 之前;觸發點 hashchange + DOMContentLoaded + load/setTimeout;fail-open(router 沒載到 → 全畫);新閘門 validate-lazy-cards-wiring 11 條負控進 CI。
+
+**(2) before → after**
+
+| 指標 | before | after |
+|---|---|---|
+| 首頁搜「血虛」 | 潤腸丸(內文含) | 證型卡 pattern.blood_deficiency |
+| composition in_formula_en 缺 | 33 列 / 7 方 | 27 列(無來源) |
+| 損壞英文安全句「for those with for those with」 | 20 | 0 |
+| 安全欄 _zh/_en 長度不等(contraindications/cautions) | 19 列(上一輪末)→ 23 列(修損壞英文後重量) | 0 |
+| 方劑 formula_safety_reachability R2(只在封存) | 1(基線) | 1(中途 4,修封存後回 1) |
+| #ws/condition 手機 375px 頁寬 | 838 | 375 |
+| 加減(modifications)有內容的方 | — | +1(二至丸);11 張課件卡歸屬汙染列冊 |
+| 方劑卡英文模式舌/苔/脈 | 印中文(en 從未讀) | english → en‖zh |
+| 開機停首頁 DOM 節點(cards-lazy,實作者量在 65a74a5f) | 16,888 | 3,121(進 acu 後 16,888) |
+
+**(3) 原始驗證**:每批 `validate-formula-standard / content-junk / formula-safety-reachability / rendered-reference-resolution / bilingual-index-pairing / check-validation-ratchet` PASS;UI 修正另跑 `validate-interactions 0/0 / render-blocking / ui-freeze / test-unified-search(20 種子)`;去重批自檢 diff:陣列變短 23 列(清空 8 列,全是 cautions_en 純複本)、變長 0、記錄 223 → 223。cards-lazy:實作者自跑 validate-lazy-cards-wiring(+11 負控)/ lazy-grid-wiring / interactions / unified-search / ratchet 全綠,八條路徑 ×3 卡片數逐一等於 before。
+
+**(4) 已知未解**
+- 11 張課件方劑卡 §13 加減是相鄰方的(歸屬汙染),要不要退役那些段落待 Ting;小青龍湯 AD 語病 en 待 Ting;補肺湯禁忌/注意無來源;黃芩劑量待 B3;composition 27 列無來源、226 列中英皆通用句;三條病例旅程 QA-FIVE-DAY-001/002/003 仍未執行(需 D1 測試 origin)。
+- `validate-bilingual-render-parity` 的盲區:欄名在 knowledge.js 任一處出現就算「有讀」(tongue_en 出現在證型面板與搜尋索引),量不到方劑卡那一段沒讀 —— 要升級成「哪個 renderer 函式讀了哪個欄」才守得住。
+- 全庫 `_zh/_en` 兩側非空不等長 540 列裡,361 穴 cautions 120 列是「zh 多句 / en 一句定位+警告」的各自成列欄,渲染器分開印,不算缺陷;桂枝湯 symptoms 9/8 待看。
+- cards-lazy:13,767 個節點只是推遲不是封頂;第一次進 acu 沒有變快(時間搬到 render+layout);實作者自測 = 自審,對抗審查見 PROJECT_LOG 該條。
+
+**(5) SHA**:`7f90d2f5` `bbbd14cf` `23db713b` `fc5b8713` `9aec041c` `94d00fe9` `5cd85bcb` `db1b2733`;opt-0909d 與 cards-lazy 的落地 SHA 見 PROJECT_LOG。
