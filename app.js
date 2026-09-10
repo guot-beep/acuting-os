@@ -1832,10 +1832,17 @@ render();
       它 early-return 的那幾條路(isSyncingPointHash / #ws/channels)。
    2. DOMContentLoaded:defer script 一定在 DOMContentLoaded **之前**全部執行完,
       所以那一刻才問得出「router.js 到底有沒有載到」—— fail-open 的前提。
-      load 再補一次,萬一 DOMContentLoaded 被別的例外吃掉;settleAcuCardsGate 是冪等的。 */
+      load 再補一次,萬一 DOMContentLoaded 被別的例外吃掉;settleAcuCardsGate 是冪等的。
+      審查修正(2026-09-09,實測 scratchpad/defer-test):defer script 執行時 readyState 是
+      "interactive",不是 "loading" —— 原本的 `readyState === "loading"` 分支永遠不會走,
+      一律落到 setTimeout(0);而那個 timer 在本檔跑完 1ms 就回呼,還沒下載完的下一個 defer
+      script 要等它到了才執行(實測 1214ms)。router.js 比 app.js 晚到時,settle 會在
+      router 設 data-active-ws 之前發生 → 誤判「router 沒載到」→ fail-open 全畫 947 張,
+      這次載入的延遲渲染整個被靜默關掉。所以:只要 DOMContentLoaded 還沒發(readyState
+      不是 "complete")就等它;setTimeout 只留給「兩個事件都已經過了」的情況(動態插入)。 */
 window.addEventListener("hashchange", renderAcuCardsIfWorkspaceOpen);
-if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", settleAcuCardsGate);
-else setTimeout(settleAcuCardsGate, 0);
+if (document.readyState === "complete") setTimeout(settleAcuCardsGate, 0);
+else document.addEventListener("DOMContentLoaded", settleAcuCardsGate);
 window.addEventListener("load", settleAcuCardsGate);
 
 function setContentMode(mode) {

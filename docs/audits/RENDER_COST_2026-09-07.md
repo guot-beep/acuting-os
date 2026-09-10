@@ -401,7 +401,9 @@ node scripts/dev-server.js 8644        # 服務 repo 根目錄
   `js/knowledge.js` 的 `renderWhenWorkspaceOpens` 可以只看 `activeWs`,是因為它排在 router 後面;
   這裡照抄會讓「從首頁按進穴位目錄」那一次永遠等不到人畫。網址是權威來源,與監聽器順序無關。
 * **觸發點**:`window.addEventListener("hashchange", renderAcuCardsIfWorkspaceOpen)`
-  + `DOMContentLoaded`(defer script 一定在它之前全部執行完)+ `load` / `setTimeout` 備援。
+  + `DOMContentLoaded`(defer script 一定在它之前全部執行完)+ `load` 備援;`setTimeout(0)` **只在 `readyState === "complete"`(兩個事件都已經過了)才用**。
+  審查修正(§11.6 M1):第一版寫成 `readyState === "loading" ? DOMContentLoaded : setTimeout(0)`,但 defer script 執行時 readyState 已是 `interactive`,
+  DOMContentLoaded 那條是死碼,實際只剩 setTimeout(0) —— 它會搶在還沒下載完的 router.js 之前跑(實測 1 ms vs 1214 ms),誤判「router 沒載到」→ fail-open 全畫。
   **不用 rAF / IntersectionObserver**:背景分頁與隱藏視窗不跑 rAF(router.js `fabNewCase` 註解記過同一個坑),
   而 IntersectionObserver 是 frame 之後才回呼,`#point/` 那條路 router 用 rAF 捲到 `detailCard` 會來不及。
 * **fail-open**:`index.html` 的 section 沒有預設 `hidden`,是 router.js 執行時才收起來的。
@@ -483,9 +485,12 @@ after 第一次進 acu 仍要付一次排版錢(§5 早就寫明),省下的是�
 ACU_WORKSPACE 的名字要在 `js/router.js` 的 WORKSPACES 且 `index.html` 有那個 section ·
 `render()` 必須走包裝函式、不准直接叫 `renderCards()` · 包裝函式必須真的呼叫 `renderCards()` 且用
 `acuCardsShouldRender()` 守門 · `acuCardsRendered = true` 必須排在 `renderCards()` **之後** ·
-一定要有 hashchange 觸發點 · 一定要有開機期 settle(DOMContentLoaded + 備援)·
+一定要有**活的** hashchange 觸發點(被 `//` 或 `/* */` 註解掉算沒有)· 開機期 settle 必須掛 DOMContentLoaded + load,不准用 `readyState === "loading"` 當條件、setTimeout 只准在 `complete` 分支 ·
 fail-open 那一條不准被刪 · 三個狀態變數必須宣告在第一個 `render()` 之前(TDZ)。
-**負控 11/11**,全在記憶體字串副本上做,不寫工作區任何檔案。
+此外(§11.6 M2 之後)把五個守門函式抽出來在假 document / window / render / renderCards 上跑**行為真值表**:
+空 hash 不畫、`#ws/acu` 畫、`#ws/home` 不畫、`#point/` 畫、落在 acu section 的 `#id` 畫、activeWs=acu 畫、settle 後 activeWs 不存在才 fail-open、
+renderCards 收到的是同一個 filtered 陣列、丟例外時旗標留在 false、trigger 只在該畫時叫 render()、settle 冪等 —— 反轉、永遠 false、`!==`、提前 return、換參數,字串比對看不出來,真值表看得出來。
+**負控 21/21**(原 11 + 審查後加 10),全在記憶體字串副本上做,不寫工作區任何檔案。
 CI 兩步(負控先跑)排在 `lazy grid wiring` 旁邊。
 
 **為什麼是第二支閘門,不是擴充 `validate-lazy-grid-wiring.js`**:兩個機制的**契約不同** ——
@@ -503,3 +508,19 @@ knowledge 那條只看 `activeWs`(它排在 router 後面),這條以 **hash** �
 4. 時間與記憶體的收益**這台量測台量不到**(§6.3 / §7 第 7 點),本節不宣稱。
 5. 派工單寫的開工 SHA 是 `ab052244`,實際 `origin/main` 已經前進到 `45a74011`(多一個文件 commit)。
    本節的 before 量在 `45a74011` 上,與派工單當時的樹差 5 個節點以內,但**數字是分支範圍的**。
+
+### 11.6 對抗式審查(2026-09-09,三鏡頭:導航路徑 / 閘門與二階效應 / 真瀏覽器重測;每條發現再派一個反駁者)
+
+- **M1(三個鏡頭各自抓到、反駁者確認、我自己的 defer-test 也重現)**:開機期 settle 不是「所有 defer script 跑完」。
+  `if (document.readyState === "loading")` 在 defer script 執行時恆為 false(規範 the end 步驟 3 先設 interactive、步驟 5 才跑 defer),
+  DOMContentLoaded 那條是死碼,實際只剩 `setTimeout(settleAcuCardsGate, 0)`;parser 等下一支 defer script 下載時 event loop 會跑 timer,
+  settle 就在 router.js 之前發生 → `acuCardsShouldRender()` 走 fail-open → 首頁全畫 947 張(實測:router.js 延遲 6 s 時 activeWs=home、cards=947、nodes=16,889;
+  不延遲時 cards=0、nodes=3,122)。使用者不會看錯卡或少卡,但延遲渲染在冷快取 / 慢網路 / 手機上會無聲退回改動前。
+  **修**:`readyState === "complete"` 才用 setTimeout,否則等 DOMContentLoaded(+ load 備援);閘門加「不准用 loading 條件、setTimeout 只准在 complete 分支」兩條負控。
+- **M2(閘門鏡頭)**:`validate-lazy-cards-wiring.js` 純形狀比對 —— 15 種語意破壞 14 種仍綠(註解掉觸發點、守門永遠 false、`!==`、提前 return、`renderCards([])`)。
+  **修**:觸發點要「活的」(isLive:同行前面有 `//` 或在 `/* */` 裡算死);五個守門函式抽出來跑行為真值表(§11.4);負控 11 → 21。
+- **LOW(閘門鏡頭)**:`renderAcuCardsIfWorkspaceOpen` 在 handlePointHashChange 已經 render() 的路徑上是多餘的一次判斷(畫過後立刻 return,不重畫);
+  它接的是 handlePointHashChange early-return 的兩條路(isSyncingPointHash / #ws/channels)。不動,註解已寫明。
+- 導航鏡頭 20 條路徑(含 legacy/、純 `<a href="#point/…">` 入口、matrix-point-link、回目錄、語言切換、history)全部會畫或正確不畫;
+  DOM 消費者掃描:全庫只有 renderCards 寫 #cards / [data-point-card],沒有其他讀者會拿到空集合。
+- 兩個反駁者(閘門鏡頭與瀏覽器鏡頭對 M1 的複本)被 API 限額(429)打掉,未跑;M1 已由第三個反駁者與獨立實測確認。

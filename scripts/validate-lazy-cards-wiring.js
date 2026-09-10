@@ -1,4 +1,4 @@
-/* 穴位清單延遲渲染的接線閘門(2026-09-07 包 C 候選 A)
+/* 穴位清單延遲渲染的接線閘門(2026-09-07 包 C 候選 A;2026-09-09 審查後加行為測試)
  *
  * 包 C 候選 A 把穴位目錄 `#cards`(947 張卡 / 13,767 個節點 / 1,894 個 listener,佔開機 DOM 的 39.5%)
  * 改成「進 acu workspace 才畫第一次」(app.js renderCardsWhenAcuOpen)。這批新造的失效模式只有一種形狀:
@@ -10,18 +10,27 @@
  * 這條路不能照抄:index.html 的 script 順序是 app.js → router.js → js/knowledge.js,
  * app.js 註冊的 hashchange 監聽器跑在 router 的 route() 之前,那一刻 activeWs 還是上一頁的值。
  * 兩個機制的**契約不同**(一個看 activeWs,一個以 hash 為權威),所以是兩支閘門、兩份負控,
- * 不是同一個機制長出第二套實作。RENDER_COST_2026-09-07 §7 第 5 點那條「收斂成一份」講的是
- * renderDxOnce 與 renderWhenWorkspaceOpens,不含這一條。
+ * 不是同一個機制長出第二套實作。
  *
- * 這支只做八件事,不需要瀏覽器:
+ * 靜態八件事(不需要瀏覽器):
  *   1. `ACU_WORKSPACE` 的值必須在 js/router.js 的 WORKSPACES 裡,且 index.html 有那個 data-workspace 的 section。
  *   2. render() 必須走 renderCardsWhenAcuOpen(),不准直接叫 renderCards()。
  *   3. renderCardsWhenAcuOpen 必須真的呼叫 renderCards(),而且守門用的是 acuCardsShouldRender()。
  *   4. `acuCardsRendered = true` 必須排在 renderCards() **之後**(render 丟例外時不准把旗標鎖死 → 永久留白)。
- *   5. 一定要有 hashchange 觸發點(切到 acu 才補畫的唯一事件來源)。
- *   6. 一定要有開機期 settle(DOMContentLoaded / load):defer script 全部跑完才問得出 router 載到沒有。
+ *   5. 一定要有**活的**(沒被註解掉的)hashchange 觸發點。
+ *   6. 開機期 settle 必須掛在 DOMContentLoaded(+ load 備援),而且**不准用 `readyState === "loading"` 當條件**:
+ *      defer script 執行時 readyState 已是 "interactive",那個分支是死碼,實際只剩 setTimeout(0),
+ *      而 timer 會搶在還沒下載完的 router.js 之前跑 → 誤判 router 沒載到 → fail-open 全畫 947 張(審查 2026-09-09,三個鏡頭各自實測到)。
+ *      setTimeout(settleAcuCardsGate) 只准在 `readyState === "complete"`(兩個事件都過了)的分支裡。
  *   7. fail-open:settle 之後 activeWs 仍不存在(router.js 沒載到、所有 section 攤開)必須照舊全部畫。
  *   8. 三個狀態變數必須宣告在第一個 render() 之前(TDZ:let 在下面 = ReferenceError = render() 整個中止)。
+ *
+ * 行為測試(審查 2026-09-09 M2:「純形狀比對,15 種語意破壞 14 種仍綠」):
+ *   9. 把五個守門函式的原始碼抽出來,在假的 document / window / render / renderCards 上跑真值表 ——
+ *      空 hash 不畫、#ws/acu 畫、#ws/home 不畫、#point/ 畫、落在 acu section 的 #id 畫、activeWs=acu 畫、
+ *      settle 後 activeWs 不存在才 fail-open、renderCards 收到的是同一個 filtered 陣列(不准 renderCards([]))、
+ *      renderCards 丟例外時旗標留在 false、trigger 只在該畫時叫 render()、settle 冪等。
+ *      反轉的判斷、永遠 false、`!==`、提前 return、換掉參數,靜態比對看不出來,真值表看得出來。
  *
  * 自測全在記憶體裡的字串副本上做,**不寫工作區任何檔案**(D32 的硬規則 —— 這個專案出過
  * gate 自己寫進追蹤檔、併發 session 把資料弄成永久損壞的事)。
@@ -56,6 +65,101 @@ function functionBody(src, name) {
 
 function countDecl(src, name) {
   return (src.match(new RegExp(`function\\s+${name}\\s*\\(`, "g")) || []).length;
+}
+
+/* 「活的」= 不在行註解後面、也不在區塊註解裡。字串比對抓得到被 `//` 或 `/* */` 註解掉的觸發點,
+   這是審查抓到的第一種靜默破壞(註解掉 hashchange 那一行,舊閘門照樣綠)。
+   啟發式:同一行前面有 `//`(排除 `://`)、或最近一個 `/*` 在最近一個 `*\/` 之後,就算死的。 */
+function isLive(src, idx) {
+  const lineStart = src.lastIndexOf("\n", idx - 1) + 1;
+  const prefix = src.slice(lineStart, idx);
+  if (/(^|[^:])\/\//.test(prefix)) return false;
+  const lastOpen = src.lastIndexOf("/*", idx), lastClose = src.lastIndexOf("*/", idx);
+  if (lastOpen !== -1 && lastOpen > lastClose) return false;
+  return true;
+}
+function findLive(src, rx) {
+  const g = new RegExp(rx.source, rx.flags.includes("g") ? rx.flags : rx.flags + "g");
+  let m;
+  while ((m = g.exec(src))) { if (isLive(src, m.index)) return m; }
+  return null;
+}
+function lineOf(src, idx) { return src.slice(src.lastIndexOf("\n", idx - 1) + 1, src.indexOf("\n", idx) === -1 ? src.length : src.indexOf("\n", idx)); }
+function prevLineOf(src, idx) { const ls = src.lastIndexOf("\n", idx - 1); if (ls <= 0) return ""; return lineOf(src, ls - 1); }
+
+/* ── 行為測試的假環境:只放五個守門函式 + 它們會碰到的全域 ── */
+const GATE_FNS = ["hashTargetsAcuWorkspace", "acuCardsShouldRender", "renderCardsWhenAcuOpen", "renderAcuCardsIfWorkspaceOpen", "settleAcuCardsGate"];
+function buildHarness(appSrc) {
+  const acuMatch = appSrc.match(/const ACU_WORKSPACE = "([a-zA-Z0-9_-]+)"/);
+  if (!acuMatch) return null;
+  const fns = GATE_FNS.map((n) => { const fb = functionBody(appSrc, n); return fb ? appSrc.slice(fb.at, fb.end + 1) : null; });
+  if (fns.some((f) => !f)) return null;
+  const body = `
+    const ACU_WORKSPACE = ${JSON.stringify(acuMatch[1])};
+    let acuCardsRendered = false, acuCardsGateSettled = false;
+    const calls = { render: 0, renderCards: [] };
+    let renderCardsThrows = false;
+    const state = { hash: "", activeWs: undefined, elements: {}, filtered: [] };
+    const document = {
+      get body() { return { dataset: state.activeWs === undefined ? {} : { activeWs: state.activeWs } }; },
+      getElementById(id) { return state.elements[id] || null; }
+    };
+    const window = { get location() { return { hash: state.hash }; } };
+    function renderCards(list) { calls.renderCards.push(list); if (renderCardsThrows) throw new Error("renderCards boom"); }
+    function render() { calls.render++; renderCardsWhenAcuOpen(state.filtered); }
+    ${fns.join("\n")}
+    return {
+      set(k, v) { if (k === "rendered") acuCardsRendered = v; else if (k === "settled") acuCardsGateSettled = v; else if (k === "throws") renderCardsThrows = v; else state[k] = v; },
+      get() { return { rendered: acuCardsRendered, settled: acuCardsGateSettled, render: calls.render, renderCards: calls.renderCards.slice() }; },
+      should: () => acuCardsShouldRender(),
+      wrap: (f) => renderCardsWhenAcuOpen(f),
+      trigger: () => renderAcuCardsIfWorkspaceOpen(),
+      settle: () => settleAcuCardsGate(),
+      reset() { acuCardsRendered = false; acuCardsGateSettled = false; calls.render = 0; calls.renderCards.length = 0; renderCardsThrows = false; state.hash = ""; state.activeWs = undefined; state.elements = {}; state.filtered = []; }
+    };`;
+  try { return { api: new Function(body)(), acu: acuMatch[1] }; } catch (e) { return { error: e }; }
+}
+
+function behaviorFailures(appSrc) {
+  const built = buildHarness(appSrc);
+  if (!built) return ["行為測試:抽不到五個守門函式或 ACU_WORKSPACE(抽 0 筆一律 FAIL)"];
+  if (built.error) return [`行為測試:守門函式在假環境裡跑不起來:${built.error.message}`];
+  const h = built.api, ACU = built.acu, out = [];
+  const expect = (label, cond) => { if (!cond) out.push(`行為測試:${label}`); };
+  const section = (ws) => ({ closest: () => ({ getAttribute: () => ws }) });
+  let r;
+  h.reset(); expect("空 hash、未 settle、無 activeWs 時不該畫(現在會畫)", h.should() === false);
+  h.reset(); h.set("hash", "#ws/" + ACU); expect(`#ws/${ACU} 該畫(現在不畫)`, h.should() === true);
+  h.reset(); h.set("hash", "#ws/home"); expect("#ws/home 不該畫(現在會畫)", h.should() === false);
+  h.reset(); h.set("hash", "#ws/" + ACU + "x"); expect(`#ws/${ACU}x(前綴相同的別的 workspace)不該畫`, h.should() === false);
+  h.reset(); h.set("hash", "#point/LI4"); expect("#point/LI4 該畫", h.should() === true);
+  h.reset(); h.set("hash", "#pointless"); expect("#pointless(不是 #point/)不該畫", h.should() === false);
+  h.reset(); h.set("hash", "#acupointDirectory"); h.set("elements", { acupointDirectory: section(ACU) }); expect("落在 acu section 的 #<id> 該畫", h.should() === true);
+  h.reset(); h.set("hash", "#caseWorkspace"); h.set("elements", { caseWorkspace: section("cases") }); expect("落在別的 section 的 #<id> 不該畫", h.should() === false);
+  h.reset(); h.set("hash", "#nope"); expect("找不到元素的 #<id> 不該畫", h.should() === false);
+  h.reset(); h.set("activeWs", ACU); expect("activeWs=acu 該畫(router 已切好)", h.should() === true);
+  h.reset(); h.set("activeWs", "home"); expect("activeWs=home 不該畫", h.should() === false);
+  h.reset(); h.set("settled", true); expect("settle 後 activeWs 不存在要 fail-open 全畫(現在不畫 → router 沒載到會無聲留白)", h.should() === true);
+  h.reset(); h.set("settled", true); h.set("activeWs", "home"); expect("settle 後 activeWs=home 不該畫(fail-open 判斷反了)", h.should() === false);
+  h.reset(); h.set("rendered", true); h.set("activeWs", "home"); expect("畫過之後任何時候都該畫(render() 行為要與改動前相同)", h.should() === true);
+  // 包裝函式
+  h.reset(); h.set("hash", "#ws/home"); h.wrap([1, 2]); r = h.get(); expect("不該畫時 renderCardsWhenAcuOpen 不准叫 renderCards", r.renderCards.length === 0 && r.rendered === false);
+  h.reset(); h.set("hash", "#ws/" + ACU); const arr = [{ code: "LI4" }]; h.wrap(arr); r = h.get();
+  expect("該畫時 renderCardsWhenAcuOpen 要叫 renderCards 剛好一次", r.renderCards.length === 1);
+  expect("renderCards 收到的必須是同一個 filtered 陣列(不准 renderCards([]) 之類的替身)", r.renderCards[0] === arr);
+  expect("畫完 acuCardsRendered 要是 true", r.rendered === true);
+  h.reset(); h.set("hash", "#ws/" + ACU); h.set("throws", true); let threw = false; try { h.wrap([]); } catch (e) { threw = true; } r = h.get();
+  expect("renderCards 丟例外時例外要往外傳(不吞)", threw);
+  expect("renderCards 丟例外時 acuCardsRendered 要留在 false(下次進 acu 再試)", r.rendered === false);
+  // 觸發點
+  h.reset(); h.set("hash", "#ws/home"); h.trigger(); expect("不該畫時 renderAcuCardsIfWorkspaceOpen 不准叫 render()", h.get().render === 0);
+  h.reset(); h.set("hash", "#ws/" + ACU); h.trigger(); r = h.get(); expect("該畫時 renderAcuCardsIfWorkspaceOpen 要走完整 render()(一次)且畫到卡", r.render === 1 && r.renderCards.length === 1 && r.rendered === true);
+  h.trigger(); expect("畫過之後 renderAcuCardsIfWorkspaceOpen 不准再叫 render()", h.get().render === 1);
+  // settle
+  h.reset(); h.set("activeWs", "home"); h.settle(); r = h.get(); expect("settle 要把 acuCardsGateSettled 設 true", r.settled === true); expect("settle 時 activeWs=home 不准畫", r.render === 0);
+  h.reset(); h.settle(); r = h.get(); expect("settle 時 activeWs 不存在要 fail-open 走 render()", r.render === 1 && r.rendered === true);
+  h.settle(); expect("settle 要冪等(第二次不准再 render)", h.get().render === 1);
+  return out;
 }
 
 function check(appSrc, routerSrc, htmlSrc) {
@@ -120,10 +224,10 @@ function check(appSrc, routerSrc, htmlSrc) {
     }
   }
 
-  // ── 5. hashchange 觸發點 ──
-  const hashHook = appSrc.match(/window\.addEventListener\(\s*"hashchange"\s*,\s*(renderAcuCardsIfWorkspaceOpen)\s*\)/);
+  // ── 5. hashchange 觸發點(要活的) ──
+  const hashHook = findLive(appSrc, /window\.addEventListener\(\s*"hashchange"\s*,\s*renderAcuCardsIfWorkspaceOpen\s*\)/);
   if (!hashHook) {
-    failures.push('找不到 window.addEventListener("hashchange", renderAcuCardsIfWorkspaceOpen) —— 從別的分頁切到 acu 時沒有人補畫清單');
+    failures.push('找不到活的 window.addEventListener("hashchange", renderAcuCardsIfWorkspaceOpen)(不存在或被註解掉)—— 從別的分頁切到 acu 時沒有人補畫清單');
   }
   const trigger = functionBody(appSrc, "renderAcuCardsIfWorkspaceOpen");
   if (!trigger) failures.push("app.js 抽不到 renderAcuCardsIfWorkspaceOpen 的本體");
@@ -136,13 +240,25 @@ function check(appSrc, routerSrc, htmlSrc) {
     }
   }
 
-  // ── 6. 開機期 settle:defer script 全部跑完那一刻 ──
-  const hasDcl = /addEventListener\(\s*"DOMContentLoaded"\s*,\s*settleAcuCardsGate\s*\)/.test(appSrc);
-  const hasLoad = /addEventListener\(\s*"load"\s*,\s*settleAcuCardsGate\s*\)/.test(appSrc);
-  const hasTimer = /setTimeout\(\s*settleAcuCardsGate\s*,/.test(appSrc);
-  facts.settleHooks = [hasDcl && "DOMContentLoaded", hasLoad && "load", hasTimer && "setTimeout"].filter(Boolean);
-  if (!hasDcl) failures.push('找不到 addEventListener("DOMContentLoaded", settleAcuCardsGate) —— 開機期沒有結束點,fail-open 永遠不會生效');
-  if (!hasLoad && !hasTimer) failures.push("settleAcuCardsGate 只有一個觸發點,沒有備援(load 或 setTimeout)");
+  // ── 6. 開機期 settle:DOMContentLoaded(活的、沒被 "loading" 條件關掉)+ load 備援;setTimeout 只准在 complete 分支 ──
+  const dcl = findLive(appSrc, /addEventListener\(\s*"DOMContentLoaded"\s*,\s*settleAcuCardsGate\s*\)/);
+  const load = findLive(appSrc, /addEventListener\(\s*"load"\s*,\s*settleAcuCardsGate\s*\)/);
+  const timer = findLive(appSrc, /setTimeout\(\s*settleAcuCardsGate\s*,/);
+  facts.settleHooks = [dcl && "DOMContentLoaded", load && "load", timer && "setTimeout(complete)"].filter(Boolean);
+  if (!dcl) failures.push('找不到活的 addEventListener("DOMContentLoaded", settleAcuCardsGate) —— 開機期沒有結束點,fail-open 永遠不會生效');
+  else {
+    const around = prevLineOf(appSrc, dcl.index) + "\n" + lineOf(appSrc, dcl.index);
+    if (/readyState\s*===\s*"loading"/.test(around)) {
+      failures.push('DOMContentLoaded 的 settle 掛在 `readyState === "loading"` 條件下 —— defer script 執行時 readyState 已是 "interactive",這個分支是死碼;實際只剩 setTimeout(0),會搶在晚到的 router.js 之前 settle → 誤判 router 沒載到 → 首頁全畫 947 張(審查 2026-09-09)');
+    }
+  }
+  if (!load) failures.push('找不到活的 addEventListener("load", settleAcuCardsGate) —— DOMContentLoaded 被別的例外吃掉時沒有備援');
+  if (timer) {
+    const around = prevLineOf(appSrc, timer.index) + "\n" + lineOf(appSrc, timer.index);
+    if (!/readyState\s*===\s*"complete"/.test(around)) {
+      failures.push('setTimeout(settleAcuCardsGate, …) 沒有被 `readyState === "complete"` 守著 —— defer 執行期的 timer 會在下一支 defer script(router.js)還沒到時就跑,settle 早於 router 設 data-active-ws → fail-open 全畫');
+    }
+  }
   const settle = functionBody(appSrc, "settleAcuCardsGate");
   if (!settle) failures.push("app.js 抽不到 settleAcuCardsGate 的本體");
   else {
@@ -190,6 +306,11 @@ function check(appSrc, routerSrc, htmlSrc) {
     }
   }
 
+  // ── 9. 行為真值表(靜態比對看不出的:反轉、永遠 false、!==、提前 return、換參數) ──
+  const beh = behaviorFailures(appSrc);
+  facts.behaviorChecks = beh.length ? "FAIL" : "PASS";
+  failures.push(...beh);
+
   return { failures, facts };
 }
 
@@ -200,22 +321,37 @@ if (process.argv.includes("--self-test")) {
   const r = read("js/router.js");
   const h = read("index.html");
   const hit = (src, rx) => check(src, r, h).failures.some((f) => rx.test(f));
+  const must = (label, from, to) => { if (!a.includes(from)) { console.log(`  ✗ ${label}(自測樣板找不到「${from.slice(0, 60)}」,app.js 改了要同步改自測)`); return null; } return a.replace(from, to); };
+  const NEW_SETTLE = 'if (document.readyState === "complete") setTimeout(settleAcuCardsGate, 0);\nelse document.addEventListener("DOMContentLoaded", settleAcuCardsGate);';
+  const OLD_SETTLE = 'if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", settleAcuCardsGate);\nelse setTimeout(settleAcuCardsGate, 0);';
+  const HASH_LINE = 'window.addEventListener("hashchange", renderAcuCardsIfWorkspaceOpen);';
   const cases = [
     ["原樣要綠", check(a, r, h).failures.length === 0],
     ["render() 直接叫 renderCards 要紅",
       hit(a.replace("renderCardsWhenAcuOpen(filtered);", "renderCards(filtered);"), /直接呼叫了 renderCards/)],
-    ["拿掉 hashchange 觸發要紅",
-      hit(a.replace('window.addEventListener("hashchange", renderAcuCardsIfWorkspaceOpen);', ""), /hashchange/)],
+    ["拿掉 hashchange 觸發要紅", hit(a.replace(HASH_LINE, ""), /hashchange/)],
+    ["hashchange 觸發被 // 註解掉要紅", hit(a.replace(HASH_LINE, "// " + HASH_LINE), /hashchange/)],
     ["拿掉開機期 settle 要紅",
       hit(a.split("\n").filter((l) => !/settleAcuCardsGate\)/.test(l) && !/setTimeout\(settleAcuCardsGate/.test(l)).join("\n"), /DOMContentLoaded/)],
+    ["settle 接線被 /* */ 包起來要紅", (() => { const s = must("settle 接線被 /* */ 包起來要紅", NEW_SETTLE, "/* " + NEW_SETTLE + " */"); return s !== null && hit(s, /DOMContentLoaded/); })()],
+    ["settle 用 readyState === \"loading\" 當條件(死碼)要紅", (() => { const s = must("settle loading", NEW_SETTLE, OLD_SETTLE); return s !== null && hit(s, /"loading"/); })()],
+    ["setTimeout settle 沒有 complete 守著要紅", (() => { const s = must("setTimeout 無守", NEW_SETTLE, 'document.addEventListener("DOMContentLoaded", settleAcuCardsGate);\nsetTimeout(settleAcuCardsGate, 0);'); return s !== null && hit(s, /setTimeout\(settleAcuCardsGate/); })()],
     ["ACU_WORKSPACE 打錯要紅",
       hit(a.replace('const ACU_WORKSPACE = "acu"', 'const ACU_WORKSPACE = "acupoints"'), /不在 js\/router\.js 的 WORKSPACES/)],
     ["拿掉 fail-open 要紅",
       hit(a.split("\n").filter((l) => !/acuCardsGateSettled && active === undefined/.test(l)).join("\n"), /fail-open/)],
+    ["fail-open 寫成 !== undefined 要紅", (() => { const s = must("fail-open !==", "acuCardsGateSettled && active === undefined", "acuCardsGateSettled && active !== undefined"); return s !== null && hit(s, /fail-open|行為測試/); })()],
+    ["activeWs 判斷反轉(!== ACU_WORKSPACE)要紅", (() => { const s = must("activeWs 反轉", "if (active === ACU_WORKSPACE) return true;", "if (active !== ACU_WORKSPACE) return true;"); return s !== null && hit(s, /行為測試/); })()],
+    ["hash 判斷永遠 false 要紅", (() => { const s = must("hash 永遠 false", "return hashTargetsAcuWorkspace();", "return false;"); return s !== null && hit(s, /行為測試|沒有問 hash/); })()],
+    // 注意:`const hash = window.location.hash || "";` 在 handlePointHashChange 也有一份(排在前面),
+    // replace 會先打到那一份 → 自測假綠。要換只在 hashTargetsAcuWorkspace 出現的那一行。
+    ["hashTargetsAcuWorkspace 提前 return false 要紅", (() => { const s = must("提前 return", '  if (hash.startsWith("#ws/")) return hash.slice(4) === ACU_WORKSPACE;', '  return false;\n  if (hash.startsWith("#ws/")) return hash.slice(4) === ACU_WORKSPACE;'); return s !== null && hit(s, /行為測試/); })()],
+    ["renderCards([]) 替身要紅", (() => { const s = must("renderCards([])", "  renderCards(filtered);\n  acuCardsRendered = true;", "  renderCards([]);\n  acuCardsRendered = true;"); return s !== null && hit(s, /同一個 filtered 陣列/); })()],
     ["旗標搬到 renderCards 之前要紅",
-      hit(a.replace("  renderCards(filtered);\n  acuCardsRendered = true;", "  acuCardsRendered = true;\n  renderCards(filtered);"), /排在 renderCards/)],
+      hit(a.replace("  renderCards(filtered);\n  acuCardsRendered = true;", "  acuCardsRendered = true;\n  renderCards(filtered);"), /排在 renderCards|留在 false/)],
     ["包裝函式不真的畫要紅",
       hit(a.replace("  renderCards(filtered);\n  acuCardsRendered = true;", "  acuCardsRendered = true;"), /沒有真的呼叫 renderCards/)],
+    ["trigger 畫過之後還叫 render() 要紅", (() => { const s = must("trigger 重複 render", "  if (acuCardsRendered) return;          // 畫過了:之後由 render() 自己維護\n", ""); return s !== null && hit(s, /不准再叫 render/); })()],
     ["狀態宣告搬到檔尾(TDZ)要紅",
       hit(a.replace(/^let acuCardsRendered = false;.*$/m, "").concat("\nlet acuCardsRendered = false;\n"), /TDZ/)],
     ["hashTargetsAcuWorkspace 少一條進站方式要紅",
@@ -232,10 +368,11 @@ const result = check(read("app.js"), read("js/router.js"), read("index.html"));
 console.log(
   `穴位清單延遲渲染接線:ACU_WORKSPACE="${result.facts.acuWorkspace}"` +
   `(router workspaces ${result.facts.workspaces.length})· 包裝實作 ${result.facts.wrapperImpls} 份` +
-  `· renderCards 實作 ${result.facts.renderCardsImpls} 份· 開機期 settle 觸發點 ${(result.facts.settleHooks || []).join("+") || "(無)"}`
+  `· renderCards 實作 ${result.facts.renderCardsImpls} 份· 開機期 settle 觸發點 ${(result.facts.settleHooks || []).join("+") || "(無)"}` +
+  `· 行為真值表 ${result.facts.behaviorChecks || "(未跑)"}`
 );
 for (const f of result.failures) console.log(`  ✗ ${f}`);
 console.log(result.failures.length
   ? `\nFAIL — ${result.failures.length} 條`
-  : "\nPASS — 穴位清單有人在 acu 打開時畫、workspace 名字存在、router 沒載到會照舊全部畫、狀態不在 TDZ。");
+  : "\nPASS — 穴位清單有人在 acu 打開時畫、workspace 名字存在、router 沒載到會照舊全部畫、狀態不在 TDZ、守門真值表全對。");
 process.exit(result.failures.length ? 1 : 0);
