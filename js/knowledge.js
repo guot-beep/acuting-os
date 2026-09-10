@@ -1041,7 +1041,12 @@
   }
 
   function formulaModernDiseaseSection(record) {
-    const list = cleanList(record.modern_diseases_zh);
+    /* 2026-09-10 修正:這段只讀 modern_diseases_zh,contentMode 是 english 時 97 張卡照樣印中文病名
+       (區塊標題與說明都已是英文,中間的 chip 卻是中文)。照「煎法」「舌/苔/脈」同一規則:
+       english → en 有值就用 en,否則退回 zh;雙語模式照舊印 zh。en 是逐項對映的字典譯名(順序同 zh),
+       但這裡是 chip 雲、不逐索引配對,所以不要求等長 —— 有就整份印。 */
+    const zhList = cleanList(record.modern_diseases_zh), enList = cleanList(record.modern_diseases_en);
+    const list = (contentMode === "english" && enList.length) ? enList : zhList;
     if (!list.length) return "";
     return `<section class="k-detail-section">
       <h3>${esc(modeText("現代對應病名（關聯，非主治）", "Modern disease associations (not indications)"))}</h3>
