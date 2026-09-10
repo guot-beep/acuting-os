@@ -1060,6 +1060,15 @@
        so requiring 中文 on the 中文 side drops the cell entirely on them and
        keeps all 91 real 八法 (清法 Qing Fa, 汗法 / 解表法, …). */
     const baFaZh = /[一-鿿]/.test(String(record.ba_fa_zh || "")) ? usableText(record.ba_fa_zh) : "";
+    /* 舌/苔/脈(2026-09-09 修正):這三列一直只印 _zh,contentMode 是 english 時照樣是中文 ——
+       既有 tongue_en 42 / pulse_en 48 筆從來沒上過畫面(validate-bilingual-render-parity 說的
+       「英文側缺口」正是這個形狀:資料有、渲染器沒讀)。照同一區塊「煎法」那列的規則:
+       英文模式 en || zh,雙語模式 zh || en;哪一側都沒有就整列不印(下面的 filter)。 */
+    const glanceSign = (zhValue, enValue) => {
+      const zh = cleanList(zhValue), en = cleanList(enValue);
+      const pick = contentMode === "english" ? (en.length ? en : zh) : (zh.length ? zh : en);
+      return pick.join(pick === en ? ", " : "、");
+    };
     const bits = [
       /* 國考用的英文方名(170 張)。卡片標題印的是拼音「Gui Zhi Tang」,而考卷上
        * 寫的是「Cinnamon Twig Decoction」—— 那個名字先前完全沒上過畫面。 */
@@ -1069,11 +1078,11 @@
       ["課程分級 Course level", usableText(record.course_level_en)],
       ["八法 Ba Fa", [baFaZh, usableText(record.ba_fa_en)].filter(Boolean).join(" · ")],
       ["出典 Source", usableText(record.source_classic)],
-      ["舌 Tongue", cleanList(record.tongue_zh).join("、")],
+      ["舌 Tongue", glanceSign(record.tongue_zh, record.tongue_en)],
       // 苔 sat in 171 records and rendered nowhere — the row jumped 舌 → 脈.
       // (本分支曾把苔併進「舌」那一列;採用 main 的獨立列,避免印兩次。)
-      ["苔 Coating", cleanList(record.coating_zh).join("、")],
-      ["脈 Pulse", cleanList(record.pulse_zh).join("、")],
+      ["苔 Coating", glanceSign(record.coating_zh, record.coating_en)],
+      ["脈 Pulse", glanceSign(record.pulse_zh, record.pulse_en)],
       ["煎法 Preparation", usableText(contentMode === "english" ? (record.preparation_en || record.preparation_zh) : (record.preparation_zh || record.preparation_en))],
       ["臺灣藥典 TW Pharmacopeia", usableText(record.taiwan_pharmacopeia_zh)]
     ].filter(([, v]) => v);
