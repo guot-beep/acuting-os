@@ -1,3 +1,29 @@
+# 2026-09-12 — 上課筆記帶得出來(匯出/匯入 UI)+ 重發一次性設定碼
+
+Ting:「我想上課先在 local 先儲存一些筆記(穴位),然後之後你幫我更新」、「設定碼重發吧,我都不知道那串在哪裡」。
+**MEASURED TREE: claude/notes-export-ui @ 70c454d7 與 claude/setup-code-epoch2 @ 8dcd9705,各自 rebase 到當時 main 後 ff 落地。**
+
+| 項 | 做法 | before → after | main SHA |
+|---|---|---|---|
+| 重發設定碼 | 09-02 交付的明碼只在對話裡,她找不到。掃 Downloads / docs / 所有暫存目錄 / 27 份舊對話,拿現行 `CLINICAL_SETUP_HASH` 當試金石逐一驗證,格式相符的候選**沒有一組通過** → 重發。`make-clinical-setup-code.js --epoch 2` 產新四行,明碼只交給她、不進任何檔案 | EPOCH 1 → 2;線上 `setup_required` 仍 true(從未設定過,D1 無 pass record,病例零影響) | 8dcd9705 |
+| 臨床筆記匯出/匯入(凍結例外) | `exportNotes`/`importNotes` 2026-07-30 就寫好,**全庫零呼叫端**,只有 console 叫得到 —— 她課堂上寫的筆記實際出不了那台瀏覽器。補:首頁磁貼 + 導覽連結 + `#notesTransferPanel` 面板(匯出鈕、匯入檔案選擇器、狀態列、唯讀原因)、未匯出置頂橫幅(門檻 2 天,病歷是 7 天) | UI 呼叫端 0 → 1 組;`app.js +21 / index.html +33 / js/notes.js +298 / styles.css +96` | 70c454d7 |
+
+**狀態列刻意印 origin**:localStorage 綁 origin 而 origin **含 port**,`localhost:8663` 與 `localhost:8361` 是兩個櫃子。
+她換 port 起 dev server 時筆記會「不見」(一個字沒少,只是這個 origin 看不到),那行 origin 是她唯一能自己看懂發生什麼事的線索。
+
+**實作者順手修掉兩個既有缺陷**(不是這批新造的):
+1. `importNotes({merge:false})` 建的是全新 store 物件,身上沒有 `__locked` → 會把還救得回來的壞掉原始位元組永久蓋掉,正是 `storeLocked` 當初要防的事故。閘門移到 `importNotes` 最上面,不論 merge 與否都先問。
+2. 橫幅若照抄 `app.js renderBackupBanner()` 的 `if (existing) return`,印筆數時會留一個「有 1 則」而實際 3 則的假數字(病歷那條印天數所以看不出來)。改成更新標籤而非 early-return,標籤放自己的 span,重畫不清掉旁邊的錯誤訊息。
+
+**驗證**:閘門九支 exit 全 0(`validate-ui-freeze` / `interactions` 0-0 / `render-blocking` / `lazy-cards-wiring` 含 self-test 21 條 / `lazy-grid-wiring` / `test-unified-search` / `care-draft-phi` / `clinical-store-phi-boundary` / `ratchet`)。
+真瀏覽器 round-trip(自建 8691/8692 兩個 port):3 則匯出→清空→匯入,文字逐字相同、`created_at` 未被改;衝突兩個方向都正確(本機較新時檔案不覆蓋,且訊息說出「1 則沒有寫入」);8692 起手 0 則,匯入後 1 則(證明換 port = 另一個櫃子);壞 JSON 時匯出與匯入雙雙被擋、原始位元組逐字完整、錯誤訊息不轉述內容、橫幅在唯讀時不出現。
+375px:`scrollWidth` 375 = `innerWidth`,把狀態列網址換成線上那串長 origin 後溢位仍 0(`overflow-wrap: anywhere` 生效),無元素超出視窗,匯出鈕 46px / 匯入 48px(過 44px 觸控下限)。截圖在 pane 隱藏時全黑不可用,故列量測值。
+
+**部署**:推 main 由 Workers Builds 自動部署,兩批都一分鐘內上線。設定碼生效以「正確碼 + 故意過弱通行碼」探測確認(回 `weak_passphrase` = 碼對、不寫入、不記失敗;錯碼會回 `setup_code_invalid` 並記一次失敗)。限流是同來源 15 分鐘 8 次,探測共用掉 2 次。
+
+**已知未解**:三個對抗審查鏡頭(資料安全 / 真瀏覽器 / 契約凍結)沒跑成 —— workflow 在實作者回報時 StructuredOutput 連 5 次解析失敗而整個中止,實作本身已完成並推出分支。這批的覆核是主線讀 diff + 上述實測,不是三個獨立鏡頭。
+另:中藥卡 Public EN 渲染器批(`claude/herb-en-mode`)與方劑深度層 51 筆翻譯,都被 API 限額打斷,未完成。
+
 # 2026-09-09 — 持續優化第二輪(Ting:「持續優化七小時」「CI 綠就推 main」「持續做150分鐘」)
 
 **MEASURED TREE: claude/opt-0909b → opt-0909c → opt-0909d,各自 rebase 到當時的 main 之後 ff 落地(落地 SHA 見表)。** 中途另一 session 推了 bf568e3f(comparison/condition 抽共用函式)到 main,本輪分支各自 rebase,無衝突。
