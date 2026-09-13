@@ -4918,6 +4918,12 @@ a { color: var(--accent-dark); }
 }
 .notes-reminder-banner__status { font-weight: 500; flex-basis: 100%; }
 
+.notes-transfer {
+  /* 從導覽或橫幅跳過來時要停在橫幅下面 —— 橫幅是 position:sticky;top:0,
+     而它正是把她送到這裡的那一條。96px 是全站既有的 scroll-margin-top;
+     375px 上橫幅會折成三行(實測 122px),所以手機另外加到 150px。 */
+  scroll-margin-top: 96px;
+}
 .notes-transfer__card {
   background: var(--panel);
   border: 1px solid var(--line);
@@ -4970,6 +4976,7 @@ a { color: var(--accent-dark); }
   text-decoration: none;
 }
 @media (max-width: 480px) {
+  .notes-transfer { scroll-margin-top: 150px; }
   .notes-transfer__card { padding: 12px 12px; }
   .notes-transfer__actions > * { flex: 1 1 100%; }
   .notes-transfer__actions .file-label { justify-content: center; }

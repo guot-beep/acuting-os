@@ -472,17 +472,31 @@
     const stale = !s.locked && s.pending > 0
       && (!s.lastExportAt || exportAgeDays(readExportMeta()) >= EXPORT_STALE_DAYS);
     if (!stale) { if (existing) existing.remove(); return; }
-    if (existing) return;
 
-    const banner = document.createElement("div");
-    banner.className = "notes-reminder-banner";
+    /* 橫幅上的數字會變(她又寫了兩則),所以已經存在時要**更新標籤**而不是
+       early-return。病歷那條 renderBackupBanner() 是 `if (existing) return`,
+       它印的是天數所以看起來沒事;這裡印的是筆數,照抄就會在畫面上留一個
+       「有 1 則」而實際有 3 則的假數字。標籤放在自己的 span 裡,
+       這樣重畫不會清掉旁邊那塊錯誤訊息(匯出失敗時只有它說得出原因)。 */
     const days = s.lastExportAt ? Math.floor(exportAgeDays(readExportMeta())) : null;
     const label = days === null
       ? t(`有 ${s.pending} 則臨床筆記從未匯出過`, `${s.pending} clinical note(s) have never been exported`)
       : t(`有 ${s.pending} 則臨床筆記在 ${days} 天前那次匯出之後有變更`,
           `${s.pending} clinical note(s) changed since the export ${days} day(s) ago`);
-    banner.appendChild(document.createTextNode(
-      `📝 ${label}（${t("只存在這個來源", "stored only on this source")} ${s.origin}）— `));
+    const labelText = `📝 ${label}（${t("只存在這個來源", "stored only on this source")} ${s.origin}）— `;
+
+    if (existing) {
+      const labelEl = existing.querySelector("[data-notes-banner-label]");
+      if (labelEl) labelEl.textContent = labelText;
+      return;
+    }
+
+    const banner = document.createElement("div");
+    banner.className = "notes-reminder-banner";
+    const labelEl = document.createElement("span");
+    labelEl.setAttribute("data-notes-banner-label", "");
+    labelEl.textContent = labelText;
+    banner.appendChild(labelEl);
 
     const bannerStatus = document.createElement("span");
     bannerStatus.className = "notes-reminder-banner__status";
