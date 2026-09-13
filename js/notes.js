@@ -252,6 +252,14 @@
   }
 
   function importNotes(json, { merge = true } = {}) {
+    /* 唯讀鎖:不論 merge 與否都先問一次。
+     *
+     * merge:true 走 readStore(),拿回來的物件帶 __locked,writeStore 會擋。
+     * 但 merge:false 建的是一個全新的 store 物件,身上沒有 __locked —— 那條路
+     * 會把還救得回來的原始位元組永久蓋掉,正是 storeLocked 當初要防的事故。
+     * 匯入是唯一從 UI 進得來的整批寫入,所以這道閘門放在函式最上面。 */
+    readStore();
+    if (storeLocked) throw new Error(storeLocked);
     let parsed;
     try {
       parsed = typeof json === "string" ? JSON.parse(json) : json;
@@ -276,6 +284,269 @@
     return { added, total: Object.keys(store.notes).length };
   }
 
+  /* ---------- 檔案進出 UI(凍結例外,Ting 2026-09-12) ----------
+
+     她的原話:「我想上課先在 local 先儲存一些筆記(穴位),然後之後你幫我更新」。
+     上面的 exportNotes()/importNotes() 2026-07-30 就寫好了,但**全庫沒有任何
+     地方呼叫它們** —— 只有開 DevTools 打指令才叫得到。也就是說她課堂上寫的
+     筆記實際上出不了那台瀏覽器,而那正是她唯一要求的流程。這一段就是補這個洞:
+     一顆按鈕出檔案,一個檔案選擇器進來。
+
+     還有一件她完全無法自己看出來的事,所以狀態列刻意把它印出來:
+     localStorage 是綁 origin 的,而 **origin 包含 port**。
+     `http://localhost:8663` 與 `http://localhost:8361` 是兩個不同的櫃子。
+     她下一堂課用另一個 port 起 dev server,上一堂課的筆記就「不見了」——
+     其實一個字都沒少,只是這個 origin 看不到。那一行 origin 不是裝飾,
+     它是她唯一能自己看懂發生什麼事的線索。
+
+     這一層不做伺服器同步、不寫 data/**、不碰病歷的 localStorage。 */
+
+  /* 上次匯出時間存自己的 key。不塞進筆記 store:store 的形狀就是匯出檔的形狀,
+     多一個欄位會流進檔案、再流回來,污染資料層(而且會被當成一則壞筆記)。 */
+  const EXPORT_META_KEY = "acuting-notes-export-meta-v1";
+
+  /* 門檻 2 天。病歷那邊是 7 天(app.js BACKUP_STALE_DAYS),筆記比它短,三個理由:
+     (1) 筆記只有一份副本,病歷至少還有歷次匯出的歷史檔;
+     (2) 一堂課能累積十幾則,兩天就足以累積到「重寫一次會很痛」;
+     (3) 她的流程本身就是「課後把筆記帶到網站」—— 隔兩天還沒帶過去,
+         就是這個流程卡住了,值得在畫面最上面說一句。
+     再短會變成天天叫(她本來就會連著幾天上課),再長就失去提醒的意義。 */
+  const EXPORT_STALE_DAYS = 2;
+
+  const t = (zh, en) => (isEnglish() ? en : zh);
+
+  /* file:// 開啟時 location.origin 是字串 "null" —— 那種情況印 href 才看得懂。 */
+  const originLabel = () =>
+    (location.origin && location.origin !== "null") ? location.origin : location.href;
+
+  function readExportMeta() {
+    try {
+      const parsed = JSON.parse(localStorage.getItem(EXPORT_META_KEY) || "null");
+      if (parsed && typeof parsed === "object") return parsed;
+    } catch (err) { /* 壞掉/無痕:當成「從未匯出」。這個 meta 是提醒用的,不是資料,
+                       重算沒有損失 —— 而方向是安全的(會多提醒,不會少提醒)。 */ }
+    return { lastExportAt: null, lastExportCount: null, lastExportOrigin: null };
+  }
+
+  function writeExportMeta(meta) {
+    try { localStorage.setItem(EXPORT_META_KEY, JSON.stringify(meta)); return true; }
+    catch (err) { return false; }   // 寫不進去 = 橫幅繼續提醒,方向安全
+  }
+
+  function exportAgeDays(meta) {
+    if (!meta || !meta.lastExportAt) return Infinity;
+    const ms = Date.now() - new Date(meta.lastExportAt).getTime();
+    return Number.isFinite(ms) ? ms / 86400000 : Infinity;
+  }
+
+  /* 上次匯出之後才改過的筆記。橫幅只根據這個數字出現,所以「匯出完什麼都沒寫」
+     不會在兩天後再被叫一次。 */
+  function pendingNotes() {
+    const since = readExportMeta().lastExportAt;
+    return allNotes().filter((n) => !since || String(n.updated_at || "") > String(since));
+  }
+
+  function transferSummary() {
+    const store = readStore();
+    const locked = storeLockReason();
+    const meta = readExportMeta();
+    return {
+      locked,
+      count: locked ? null : Object.keys(store.notes).length,
+      pending: locked ? null : pendingNotes().length,
+      lastExportAt: meta.lastExportAt || null,
+      lastExportCount: Number.isFinite(meta.lastExportCount) ? meta.lastExportCount : null,
+      origin: originLabel()
+    };
+  }
+
+  /* 匯出。回傳 {ok, message} —— 失敗時 ok:false,呼叫端**絕不**顯示成功字樣。
+     三種一定要擋下來的失敗:
+       - 唯讀鎖:此時 readStore() 回空 store,照著匯出會產生一個「0 則」的檔案,
+         而那個檔案看起來跟「真的沒有筆記」一模一樣 —— 最糟的失敗形狀。
+       - 0 則:不下載空檔,直接說這個來源沒有東西。
+       - Blob/URL 例外:訊息照實說「檔案沒有產生」。 */
+  function runExport() {
+    const locked = (readStore(), storeLockReason());
+    if (locked) {
+      return { ok: false, message: t(
+        `不能匯出:${locked}`,
+        `Cannot export: ${locked}`) };
+    }
+    const total = Object.keys(readStore().notes).length;
+    if (!total) {
+      return { ok: false, message: t(
+        `這個來源(${originLabel()})目前沒有任何筆記,沒有東西可以匯出。如果你記得寫過,很可能是寫在另一個網址或 port 上 —— 換 port 等於換一個儲存空間。`,
+        `No notes on this source (${originLabel()}), so there is nothing to export. If you remember writing some, they are probably on another URL or port — a different port is a different storage space.`) };
+    }
+    let payload;
+    try {
+      payload = exportNotes();
+    } catch (err) {
+      return { ok: false, message: t(
+        `匯出失敗,檔案沒有產生:${err && err.message ? err.message : err}`,
+        `Export failed, no file was produced: ${err && err.message ? err.message : err}`) };
+    }
+    writeExportMeta({
+      lastExportAt: payload.exported_at,
+      lastExportCount: payload.count,
+      lastExportOrigin: originLabel()
+    });
+    /* 用「已產生」而不是「已下載」:瀏覽器的下載封鎖(或沙箱)攔掉 a.click() 時
+       這裡收不到任何訊號,宣告「已下載」就是宣告我們量不到的事。 */
+    return { ok: true, message: t(
+      `已產生匯出檔(${payload.count} 則):acuting-clinical-notes-${payload.exported_at.slice(0, 10)}.json。若瀏覽器沒有出現下載,檢查下載封鎖設定後再按一次 —— 上次匯出時間已更新為現在。`,
+      `Export file produced (${payload.count} notes): acuting-clinical-notes-${payload.exported_at.slice(0, 10)}.json. If no download appeared, check your browser's download blocking and press again — the last-export time is already set to now.`) };
+  }
+
+  /* 匯入。新增與更新分開數:importNotes 的 added 把「新增」和「覆蓋較舊的本機版」
+     算在一起,而她需要知道的是「這次帶進來幾則新的」。 */
+  function runImport(text) {
+    const before = new Set(allNotes().map((n) => keyOf(n.kind, n.id)));
+    let result;
+    try {
+      result = importNotes(text, { merge: true });
+    } catch (err) {
+      return { ok: false, message: t(
+        `匯入失敗,筆記庫沒有被改動:${err && err.message ? err.message : err}`,
+        `Import failed, the notes store was not changed: ${err && err.message ? err.message : err}`) };
+    }
+    let incoming = null;
+    try {
+      const parsed = JSON.parse(text);
+      if (Array.isArray(parsed && parsed.notes)) incoming = parsed.notes.length;
+    } catch (err) { /* 走到這裡 importNotes 已經成功,所以解析不會失敗;
+                       真的失敗就少報一個數字,不影響已經寫進去的內容。 */ }
+    const after = allNotes();
+    const created = after.filter((n) => !before.has(keyOf(n.kind, n.id))).length;
+    const updated = Math.max(0, result.added - created);
+    const kept = incoming === null ? null : Math.max(0, incoming - result.added);
+    let message = t(
+      `已匯入到 ${originLabel()}:新增 ${created} 則、更新 ${updated} 則,目前共 ${result.total} 則。`,
+      `Imported into ${originLabel()}: ${created} added, ${updated} updated, ${result.total} total.`);
+    if (kept !== null) {
+      message += t(
+        `檔案裡有 ${incoming} 則${kept ? `,其中 ${kept} 則沒有寫入(本機版本較新,或那筆缺少 kind/id/內容)` : ""}。`,
+        ` The file held ${incoming} note(s)${kept ? `; ${kept} were not written (the local copy is newer, or the entry lacked kind/id/text)` : ""}.`);
+    }
+    return { ok: true, message };
+  }
+
+  function showTransferStatus(result) {
+    const host = document.getElementById("notesTransferStatus");
+    if (!host) return;
+    host.textContent = result.message;
+    host.classList.toggle("is-error", !result.ok);
+  }
+
+  function renderTransferStatusLine() {
+    const host = document.getElementById("notesStatusLine");
+    if (!host) return;
+    const s = transferSummary();
+    const bits = [];
+    bits.push(`${esc(t("目前來源", "Current source"))} <code>${esc(s.origin)}</code>`);
+    bits.push(s.locked
+      ? `<strong class="notes-transfer__locked">${esc(t("筆記庫唯讀保護中(筆數無法信任)", "Notes store is read-only (count cannot be trusted)"))}</strong>`
+      : `<strong>${s.count}</strong> ${esc(t("則筆記", s.count === 1 ? "note" : "notes"))}`);
+    bits.push(s.lastExportAt
+      ? `${esc(t("上次匯出", "Last export"))} ${esc(formatStamp(s.lastExportAt))}${s.lastExportCount === null ? "" : `(${s.lastExportCount} ${esc(t("則", "notes"))})`}`
+      : esc(t("從未匯出", "Never exported")));
+    if (!s.locked && s.pending) {
+      bits.push(`<strong class="notes-transfer__pending">${s.pending} ${esc(t("則尚未匯出", "not yet exported"))}</strong>`);
+    }
+    host.innerHTML = bits.join(" · ");
+
+    const why = document.getElementById("notesLockReason");
+    if (why) {
+      why.textContent = s.locked || "";
+      why.hidden = !s.locked;
+    }
+  }
+
+  /* 置頂橫幅。形狀照 app.js renderBackupBanner()(病歷那條)—— 同一個問題、
+     同一個提醒語法,只是換一層資料;顏色刻意不同,兩條橫幅同時出現時要分得出來。 */
+  function renderExportBanner() {
+    const existing = document.querySelector(".notes-reminder-banner");
+    const s = transferSummary();
+    // 唯讀時不提醒匯出:此時能匯出的是一份空檔,提醒她去做那件事是在幫倒忙。
+    const stale = !s.locked && s.pending > 0
+      && (!s.lastExportAt || exportAgeDays(readExportMeta()) >= EXPORT_STALE_DAYS);
+    if (!stale) { if (existing) existing.remove(); return; }
+    if (existing) return;
+
+    const banner = document.createElement("div");
+    banner.className = "notes-reminder-banner";
+    const days = s.lastExportAt ? Math.floor(exportAgeDays(readExportMeta())) : null;
+    const label = days === null
+      ? t(`有 ${s.pending} 則臨床筆記從未匯出過`, `${s.pending} clinical note(s) have never been exported`)
+      : t(`有 ${s.pending} 則臨床筆記在 ${days} 天前那次匯出之後有變更`,
+          `${s.pending} clinical note(s) changed since the export ${days} day(s) ago`);
+    banner.appendChild(document.createTextNode(
+      `📝 ${label}（${t("只存在這個來源", "stored only on this source")} ${s.origin}）— `));
+
+    const bannerStatus = document.createElement("span");
+    bannerStatus.className = "notes-reminder-banner__status";
+
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.textContent = t("立即匯出", "Export now");
+    btn.addEventListener("click", () => {
+      const result = runExport();
+      showTransferStatus(result);
+      // 失敗時把原因寫在橫幅上而不是只寫進面板:這顆按鈕按得到的地方可能不是
+      // 首頁,面板那行她看不到 —— 看不到的錯誤等於靜默失敗。
+      if (!result.ok) { bannerStatus.textContent = ` ${result.message}`; return; }
+      renderNotesTransfer();
+    });
+    banner.appendChild(btn);
+
+    const link = document.createElement("a");
+    link.href = "#notesTransferPanel";
+    link.textContent = t("筆記進出…", "Notes transfer…");
+    banner.appendChild(link);
+
+    banner.appendChild(bannerStatus);
+
+    document.body.prepend(banner);
+  }
+
+  function renderNotesTransfer() {
+    renderTransferStatusLine();
+    renderExportBanner();
+  }
+
+  function bindTransfer() {
+    document.addEventListener("click", (event) => {
+      if (!event.target.closest || !event.target.closest("[data-notes-export]")) return;
+      showTransferStatus(runExport());
+      renderNotesTransfer();
+    });
+
+    document.addEventListener("change", (event) => {
+      const input = event.target.closest && event.target.closest("[data-notes-import]");
+      if (!input || !input.files || !input.files[0]) return;
+      const file = input.files[0];
+      const reader = new FileReader();
+      reader.onerror = () => {
+        showTransferStatus({ ok: false, message: t(
+          `讀不到檔案「${file.name}」,筆記庫沒有被改動。`,
+          `Could not read "${file.name}"; the notes store was not changed.`) });
+        input.value = "";
+      };
+      reader.onload = () => {
+        showTransferStatus(runImport(String(reader.result == null ? "" : reader.result)));
+        input.value = "";   // 同一個檔案再選一次也要能觸發 change
+        renderNotesTransfer();
+        document.dispatchEvent(new CustomEvent("acuting:notes-imported"));
+      };
+      reader.readAsText(file);
+    });
+
+    // 卡片上存/刪一則就重畫狀態列與橫幅(筆數、尚未匯出數都會變)。
+    document.addEventListener("acuting:note-saved", renderNotesTransfer);
+    renderNotesTransfer();
+  }
+
   window.AcuTingNotes = {
     panel,
     noteFor,
@@ -285,12 +556,19 @@
     importNotes,
     count: () => Object.keys(readStore().notes).length,
     // 唯讀原因(null = 正常)。呼叫端可據此在畫面上說明為何不能寫。
-    lockReason: () => { readStore(); return storeLockReason(); }
+    lockReason: () => { readStore(); return storeLockReason(); },
+    // 檔案進出層:UI 用這三個,不要在別處重寫門檻與 origin 判斷。
+    transferSummary,
+    runExport,
+    runImport,
+    renderTransfer: renderNotesTransfer
   };
 
+  function boot() { bind(); bindTransfer(); }
+
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", bind, { once: true });
+    document.addEventListener("DOMContentLoaded", boot, { once: true });
   } else {
-    bind();
+    boot();
   }
 })();

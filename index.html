@@ -72,6 +72,12 @@
           </label>
           <button id="resetBtn" class="danger" type="button" data-mode-text data-bilingual="還原範例" data-english="Reset demo">還原範例</button>
         </div>
+        <!-- 凍結例外(Ting 2026-09-12):任何 workspace 都要兩次點擊到得了筆記進出。
+             這裡放連結而不是匯出按鈕 —— 匯出失敗的原因必須看得到,而面板才有
+             那塊訊息區;在導覽裡按下去看不到回饋的按鈕就是靜默失敗。 -->
+        <div class="nav-tools-row">
+          <a class="ghost nav-tools-link" href="#notesTransferPanel" data-mode-text data-bilingual="臨床筆記進出" data-english="Notes transfer">臨床筆記進出</a>
+        </div>
       </div>
     </aside>
 
@@ -97,6 +103,33 @@
         </div>
       </section>
 
+      <!-- 凍結例外(Ting 2026-09-12):上課在 local 寫穴位筆記,課後要能帶到網站。
+           筆記只住在瀏覽器 localStorage,而 localStorage 綁 origin(含 port),
+           所以這個面板的第一行刻意把 origin 整串印出來。 -->
+      <section class="notes-transfer" data-workspace="home" id="notesTransferPanel" aria-label="臨床筆記進出" data-mode-aria-label data-bilingual-aria-label="臨床筆記進出" data-english-aria-label="Clinical notes transfer">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">My Clinical Notes · 筆記進出</p>
+            <h2 data-mode-text data-bilingual="把「我的臨床筆記」帶出去 / 帶進來" data-english="Move &quot;My Clinical Notes&quot; in and out">把「我的臨床筆記」帶出去 / 帶進來</h2>
+            <p data-mode-text data-bilingual="上課時寫在卡片上的筆記只存在你當下這個瀏覽器裡。匯出成一個 JSON 檔帶走，回到網站（或換一台裝置、換一個 port）再匯入，筆記就跟著過去。這一層不上傳、不進資料庫、不混入有來源的內容。" data-english="Notes written on cards live only in the browser you wrote them in. Export one JSON file, then import it on the website (or on another device or port) to carry them across. Nothing is uploaded, nothing enters the sourced database.">上課時寫在卡片上的筆記只存在你當下這個瀏覽器裡。匯出成一個 JSON 檔帶走，回到網站（或換一台裝置、換一個 port）再匯入，筆記就跟著過去。這一層不上傳、不進資料庫、不混入有來源的內容。</p>
+          </div>
+          <span class="data-pill">local only</span>
+        </div>
+        <div class="notes-transfer__card">
+          <p id="notesStatusLine" class="notes-transfer__status-line"></p>
+          <p id="notesLockReason" class="notes-transfer__lock-reason" hidden></p>
+          <p class="notes-transfer__hint" data-mode-text data-bilingual="上面那串網址是重點：瀏覽器是按「網址 + port」分櫃子存的。用 http://localhost:8663 上課、下次改用 http://localhost:8361，上一堂課的筆記不會消失，但那一櫃看不到它 —— 要帶過去只能靠下面的匯出／匯入。" data-english="That URL matters: the browser keeps a separate box per URL and port. Notes written on http://localhost:8663 are still there if you next start the server on http://localhost:8361, but that box cannot see them — export and import is the only way across.">上面那串網址是重點：瀏覽器是按「網址 + port」分櫃子存的。用 http://localhost:8663 上課、下次改用 http://localhost:8361，上一堂課的筆記不會消失，但那一櫃看不到它 —— 要帶過去只能靠下面的匯出／匯入。</p>
+          <div class="notes-transfer__actions">
+            <button type="button" id="notesExportBtn" data-notes-export data-mode-text data-bilingual="匯出筆記檔" data-english="Export notes file">匯出筆記檔</button>
+            <label class="ghost file-label">
+              <span data-mode-text data-bilingual="匯入筆記檔…" data-english="Import notes file…">匯入筆記檔…</span>
+              <input id="notesImportFile" type="file" accept="application/json,.json" data-notes-import />
+            </label>
+          </div>
+          <p id="notesTransferStatus" class="notes-transfer__result" role="status" aria-live="polite"></p>
+          <p class="notes-transfer__fineprint" data-mode-text data-bilingual="匯入是合併：同一張卡兩邊都寫過時，留下最後修改時間較新的那一則，舊的不會蓋掉新的。匯出檔標為私人，可能含病人相關敘述，分享或 commit 前請自己看一遍。" data-english="Import merges: when both sides have a note on the same card, the one edited more recently wins and older text never overwrites newer. The export file is marked private and may contain patient-adjacent detail — read it before sharing or committing.">匯入是合併：同一張卡兩邊都寫過時，留下最後修改時間較新的那一則，舊的不會蓋掉新的。匯出檔標為私人，可能含病人相關敘述，分享或 commit 前請自己看一遍。</p>
+        </div>
+      </section>
 
       <section class="database-health" data-workspace="quality" id="databaseHealth" aria-label="Database health and completion tracking">
         <div id="auditFileStrip" class="k-records"></div>

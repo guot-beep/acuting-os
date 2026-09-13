@@ -2677,6 +2677,27 @@ function renderHomeQuickGrid() {
     { href: "#ws/condition", eyebrow: en ? "Conditions" : "病症", title: String(count("conditionCanon")), sub: en ? "western canon" : "西醫病名庫" },
     { href: "#ws/quality", eyebrow: en ? "Quality" : "品質", title: String(count("symptoms") + count("tdisRegistry")), sub: en ? "sym + TCM disease" : "症狀+中醫病名" }
   );
+  /* 凍結例外(Ting 2026-09-12):上課在 local 寫的穴位筆記要能帶到網站,
+   * 所以首頁第一個畫面就要有入口。做成磁貼(而不是按鈕)是因為這個格子是
+   * <a> 連結的格子;按鈕硬塞進來會長得像連結卻不是連結。
+   * 數字與唯讀狀態都問 js/notes.js,不在這裡重算門檻或 origin。 */
+  const notesSummary = window.AcuTingNotes && window.AcuTingNotes.transferSummary
+    ? window.AcuTingNotes.transferSummary() : null;
+  if (notesSummary) {
+    const sub = notesSummary.locked
+      ? (en ? "store read-only" : "筆記庫唯讀保護中")
+      : notesSummary.pending
+        ? (en ? `${notesSummary.pending} not exported` : `${notesSummary.pending} 則尚未匯出`)
+        : notesSummary.lastExportAt
+          ? (en ? "exported, up to date" : "已匯出,無待帶出")
+          : (en ? "never exported" : "從未匯出");
+    tiles.push({
+      href: "#notesTransferPanel",
+      eyebrow: en ? "My notes" : "我的筆記",
+      title: notesSummary.locked ? "!" : String(notesSummary.count),
+      sub
+    });
+  }
   host.innerHTML = tiles.map((t) => `
     <a class="home-tile ${t.cls || ""}" href="${t.href}">
       <small>${escapeHtml(t.eyebrow)}</small>

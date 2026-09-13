@@ -4886,6 +4886,95 @@ a { color: var(--accent-dark); }
   cursor: pointer;
 }
 
+/* 凍結例外(Ting 2026-09-12):臨床筆記檔案進出面板 + 未匯出橫幅。
+   橫幅顏色刻意與病歷的 .backup-reminder-banner(土金)不同 —— 兩條可能同時
+   出現在畫面最上面,她要能一眼分出「病歷沒備份」與「筆記沒帶出去」。 */
+.notes-reminder-banner {
+  background: #2f5d50;
+  color: #f3fbf7;
+  font-weight: 600;
+  padding: 0.7rem 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  line-height: 1.5;
+}
+.notes-reminder-banner button {
+  background: #f3fbf7;
+  color: #234a3e;
+  border: none;
+  border-radius: 6px;
+  padding: 0.3rem 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.notes-reminder-banner a {
+  color: #cfe9de;
+  font-weight: 600;
+}
+.notes-reminder-banner__status { font-weight: 500; flex-basis: 100%; }
+
+.notes-transfer__card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.notes-transfer__status-line {
+  margin: 0;
+  font-weight: 600;
+  /* 長 origin(含 port、含路徑)在 375px 上一定要能斷行,否則整個面板被撐爆。 */
+  overflow-wrap: anywhere;
+}
+.notes-transfer__status-line code {
+  background: var(--green-soft, #eef3ef);
+  border-radius: 5px;
+  padding: 1px 6px;
+  font-size: 0.95em;
+}
+.notes-transfer__pending { color: #8a3d1f; }
+.notes-transfer__locked { color: #8a1f1f; }
+.notes-transfer__lock-reason {
+  margin: 0;
+  color: #8a1f1f;
+  background: #fdeeee;
+  border: 1px solid #e6bcbc;
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+.notes-transfer__hint, .notes-transfer__fineprint {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.88em;
+  overflow-wrap: anywhere;
+}
+.notes-transfer__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+.notes-transfer__result { margin: 0; min-height: 1.2em; overflow-wrap: anywhere; }
+.notes-transfer__result.is-error { color: #8a1f1f; font-weight: 600; }
+.nav-tools-row a.nav-tools-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+@media (max-width: 480px) {
+  .notes-transfer__card { padding: 12px 12px; }
+  .notes-transfer__actions > * { flex: 1 1 100%; }
+  .notes-transfer__actions .file-label { justify-content: center; }
+}
+
 /* CS4: autocomplete chip picker for SOAP link fields (no hand-typed ids) */
 .link-picker { position: relative; }
 .link-chips { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 0.35rem; }
