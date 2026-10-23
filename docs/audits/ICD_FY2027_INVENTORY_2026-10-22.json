@@ -1,0 +1,38 @@
+{
+  "generated": "2026-10-22",
+  "source": {
+    "listing": "https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Publications/ICD10CM/2027/",
+    "file": "icd10cm-code-descriptions-2027.zip",
+    "sha256": "93e3ad6004badf470c55bfe679b748ae88fd9b2b421851e409eec382c7713b9a",
+    "bytes": 2192779,
+    "reference_used": "icd10cm-order-2027.txt(全碼 + 可申報旗標)",
+    "why_not_codes_file": "icd10cm-codes-2027.txt 只收可申報碼,用它會把分類標頭誤判成已刪除",
+    "fy2027_total_codes": 98403,
+    "addenda_add": 190,
+    "addenda_delete": 30
+  },
+  "denominator": {
+    "versioned_entries": 679,
+    "distinct_codes": 676,
+    "conditions": 150
+  },
+  "summary": {
+    "still_billable": 675,
+    "header_code_claimed_billable": 1,
+    "header_code_marked_nonbillable": 0,
+    "removed_in_fy2027": 0,
+    "description_drift": 0
+  },
+  "header_code_claimed_billable": [
+    {
+      "code": "M72.2",
+      "ours": "Plantar fascial fibromatosis",
+      "fy2027": "Plantar fascial fibromatosis",
+      "uses": [
+        "xwalk.plantar_fasciitis(cond.plantar_fasciitis)"
+      ]
+    }
+  ],
+  "removed_in_fy2027": [],
+  "description_drift": []
+}
