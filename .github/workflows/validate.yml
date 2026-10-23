@@ -354,6 +354,16 @@ jobs:
       - name: lazy acupoint-cards wiring
         run: node scripts/validate-lazy-cards-wiring.js
 
+      # 2026-10-22:中藥卡禁忌/慎用的中英配對。舊版 pairEn 兩側各自挑來源(safety_info vs 記錄頂層)
+      # 又沒有等長護欄 —— 58 個欄位跨層硬配、96 句英文安全句從來沒上過畫面(滑石的「布包煎」提示
+      # 被配上一句不相干的禁忌;川芎「孕婦慎用（Contraindicated with heavy menstrual bleeding.）」)。
+      # 既有三支都看不到:index-pairing 不比「跨層」、render-parity 只問欄位有沒有被讀到、
+      # safety-reachability 只管方劑。負控先跑。
+      - name: herb safety zh/en pairing (negative controls first)
+        run: node scripts/validate-herb-safety-pairing.js --self-test
+      - name: herb safety zh/en pairing
+        run: node scripts/validate-herb-safety-pairing.js
+
       # 包 D(2026-09-07):中藥歸經三個顯示點與搜尋索引同一條有來源的鏈;有來源欄的元素必須是乾淨經名
       # (茯苓的 meridian_tropism_zh[3] 曾是一句編輯注記,13 支驗證器全綠)。負控先跑。
       - name: herb channel shape + render chain (negative controls first)

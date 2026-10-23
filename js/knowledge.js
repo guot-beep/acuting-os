@@ -2203,19 +2203,41 @@
     /* Safety text lives in safety_info on newer records but at the top level on
        CloudTCM-sourced ones; read both or the panel renders empty. English is
        paired in when the record carries it (Safety deepening from CloudTCM /
-       American Dragon is a later pass — see HERB_RECORD_STANDARD §5). */
-    const pairEn = (zhList, enList) => zhList.map((zh, i) => {
-      const en = (enList && enList[i]) || "";
-      return en ? `${zh}（${en}）` : zh;
-    });
-    const contraList = pairEn(
-      cleanList(safety.contraindications_zh).length ? cleanList(safety.contraindications_zh) : cleanList(record.contraindications_zh),
-      cleanList(safety.contraindications_en).length ? cleanList(safety.contraindications_en) : cleanList(record.contraindications_en)
-    );
-    const cautionList = pairEn(
-      cleanList(safety.cautions_zh).length ? cleanList(safety.cautions_zh) : cleanList(record.cautions_zh),
-      cleanList(safety.cautions_en).length ? cleanList(safety.cautions_en) : cleanList(record.cautions_en)
-    );
+       American Dragon is a later pass — see HERB_RECORD_STANDARD §5).
+     *
+     * 2026-10-22 修正 —— 舊版 pairEn 有兩個缺陷,實測 360 味非退役中藥裡
+     * 58 個欄位中招、96 句英文安全文字從來沒上過畫面:
+     *
+     *   (1) **中英各自獨立挑來源**。兩行分別問「safety_info 有沒有」,所以可能
+     *       中文取自 safety_info、英文取自記錄頂層 —— 那是兩份不同的清單,卻被
+     *       逐索引硬配成「中文（英文）」。31 味如此。
+     *       滑石 cautions:中文是「布包煎」的煎服提示,括號裡配上
+     *       「Contraindicated in Spleen deficiency with weak Qi」,兩件事無關。
+     *   (2) **逐索引配對沒有等長護欄**。en 比 zh 長時,尾巴整段被 map 丟掉
+     *       (zh 1 / en 12 就只印得出 1 句),zh 比 en 長時後面的中文配到空字串。
+     *       川芎 contraindications:「孕婦慎用（Contraindicated with heavy
+     *       menstrual bleeding.）」—— 配錯對象。
+     *
+     * 錯的翻譯比沒有翻譯糟,看不見的禁忌又比兩者都糟。所以規則是:
+     *   - 來源各自挑(維持舊的 fallback,免得把本來看得到的內容弄不見),
+     *     但**只有兩側來自同一層、且等長**時才逐索引配對 —— 那才保證是
+     *     「同一份清單的兩個語言版本」,也正是 validate-bilingual-index-pairing
+     *     對方劑卡守的那條規則(R2:要嘛等長,要嘛留空,不准跨欄位湊);
+     *   - 其餘情況分開印:中文一份、英文一份,**一句都不丟、一句都不配**。
+     * 中藥卡先前沒有對應的閘門,本批補 scripts/validate-herb-safety-pairing.js。 */
+    const safetyList = (field) => {
+      const zhSrc = cleanList(safety[`${field}_zh`]).length ? safety : record;
+      const enSrc = cleanList(safety[`${field}_en`]).length ? safety : record;
+      const zh = cleanList(zhSrc[`${field}_zh`]);
+      const en = cleanList(enSrc[`${field}_en`]);
+      // 同一層 + 等長 = 同一份清單的兩個語言版本,逐索引配對是安全的(輸出與舊版逐字相同)
+      if (zhSrc === enSrc && zh.length && zh.length === en.length) {
+        return zh.map((z, i) => `${z}（${en[i]}）`);
+      }
+      return [...zh, ...en];
+    };
+    const contraList = safetyList("contraindications");
+    const cautionList = safetyList("cautions");
 
     return [
       { 
