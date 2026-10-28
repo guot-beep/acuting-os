@@ -1,3 +1,30 @@
+# 2026-10-28(續)— 落地 10/22 卡在分支上的中藥卡禁忌/慎用配對修正(056fa618 = 644d2560 rebase),並量出它露出來的三種資料問題
+
+**MEASURED TREE: claude/herb-safety-pairing-r2 @ 056fa618(疊在 main @ 3175f90e 之上;盤點 commit 08c86fde 因內容已在上游被 rebase 自動略過)**
+
+10/22 那條分支兩次 CI 都紅在 XW7,與它改的東西無關;上一筆修好 CI 之後這筆才落得了地。
+
+**我的審查(對抗式,逐行讀 diff)**:新的 `safetyList` 來源仍各自 fallback(本來看得到的不會消失);只有「同一層且等長」才逐索引配對,其餘中、英各自整份印出,沒有 `||` 吞掉任一邊的路徑;`safety` 在同一函式開頭定義為 `record.safety_info || {}`,沒有 undefined 路徑;清單逐項進 `<li>`。可以落地。
+
+| 項 | 結果 |
+|---|---|
+| 新閘門 validate-herb-safety-pairing(今天的資料) | 360 味 · 有內容的安全欄 720 · 逐索引配對 655 · 假配對 0 · 看不到的英文句 0;self-test 12 條 PASS |
+| 本機 green job(含新閘門兩步) | steps 121 · pass 119 · fail 0 · multiline-skipped 2 |
+| UI 凍結 | PASS(1 個 UI 檔,commit 訊息自稱修正) |
+| 真瀏覽器讀卡(dev server,知識庫 API 開卡、讀出 li 原文) | 滑石慎用段「布包煎」不再括上不相干的禁忌,英文 12 句全部現身;川芎禁忌段「孕婦慎用」不再掛「heavy menstrual bleeding」那句英文 |
+
+## 修正露出來的資料問題(量在畫面,未動資料;屬中藥線的嚴重度歸類判斷)
+
+以前英文尾巴被截掉看不到,現在看得到了,所以這三件事第一次可以被量到:
+
+| 現象 | 句數 | 涉及味數 | 例 |
+|---|---:|---:|---|
+| 「Contraindicated…」英文句放在**慎用**段 | 361 | 148 | 香薷、白芷、細辛 |
+| 「Use with caution…」英文句放在**禁忌**段 | 108 | 106 | 羌活、淡豆豉、蘆根 |
+| 同一段完全重複的句子 | 1 | 1 | 川芎 cautions_en「Contraindicated in upper excess with lower deficiency…」×2 |
+
+前兩列方向相反、規模不小,與 2026-09-09 方劑那批「慎用被機械改寫成禁用」(94d00fe9)同型風險:錯的嚴重度比沒有翻譯糟。要逐句回來源(CloudTCM / American Dragon)核「原文是忌用還是慎用」才能搬欄,這是判斷題,不是機械題 —— 列為下一個獨立批次,不在本筆動。
+
 # 2026-10-28 — main CI 回綠:ICD-10-CM FY2027 換版落地(675 碼重新戳記、M72.2 開更正佇列不替人選碼)+ CI 加每週排程
 
 Ting:「繼續優化」。
