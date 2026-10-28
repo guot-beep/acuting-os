@@ -25,6 +25,13 @@ on:
     # 出事就是 main 紅。Ting 五天派工要每包附 SHA + CI,分支自己就得跑。
     branches: [main, 'codex/**', 'claude/**']
   workflow_dispatch:
+  # schedule 加進來(2026-10-28):有些閘門是按日曆變紅的,不是按 commit。
+  # ICD crosswalk 的 679 個碼 2026-09-30 到期,XW7 從 10/01 起就會紅 —— 但 9/12 之後沒人推,
+  # CI 一次都沒跑,紅燈與到期前 42 天的預警都沒人看到,直到 10/22 有人推分支才發現(六週)。
+  # 每週一次在 main 上跑,紅了 GitHub 會寄信給最後改這行排程的人。非 PR 事件,preflight 一律全跑。
+  # 注意:公開 repo 60 天沒有任何 commit,GitHub 會自動停用排程。
+  schedule:
+    - cron: "17 3 * * 1"
 
 # CI 通知風暴處置(2026-08-12,Ting 授權):
 #   1. concurrency:同一 PR(以 PR number 分組)或同一 branch(push/dispatch
@@ -206,7 +213,11 @@ jobs:
       - name: runtime red-flag resolver
         run: node scripts/validate-red-flag-runtime.js
         
-      - name: FY2026 ICD crosswalk mappings
+      # 負控先跑:XW7 的「已被取代」例外只准在後繼碼全數排進開放審查佇列、
+      # 或全數已是現行條目時成立;自測 15 條(12 負控)保證這個例外沒有被放寬。
+      - name: ICD crosswalk mappings (negative controls first)
+        run: node scripts/validate-crosswalk-mappings.js --self-test
+      - name: ICD crosswalk mappings (versioned, calendar-checked)
         run: node scripts/validate-crosswalk-mappings.js
         
       - name: acupoint card standard

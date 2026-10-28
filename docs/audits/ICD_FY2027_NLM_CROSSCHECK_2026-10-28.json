@@ -1,0 +1,4769 @@
+{
+  "generated": "2026-10-28",
+  "purpose": "Independent per-code cross-check of the 676 distinct versioned ICD-10-CM codes in data/interop/condition_crosswalk.json against the FY2027 release, corroborating docs/audits/ICD_FY2027_INVENTORY_2026-10-22.md (which read the CDC/NCHS files).",
+  "not_canonical_source": "NLM Clinical Tables is NOT on the COND_INGESTION_SPEC section 1 whitelist for ICD codes and descriptions. The canonical source is the CDC/NCHS FY2027 file read on 2026-10-22; this ledger is a second, independent source that must agree with it.",
+  "endpoint": "https://clinicaltables.nlm.nih.gov/api/icd10cm/v3/search?sf=code&terms=<CODE>&maxList=50&df=code,name",
+  "fy2027_detected_by": "M72.2 is a billable code in FY2026; on 2026-10-28 the API no longer returns it and returns M72.20 / M72.21 / M72.22 instead, so the API was already serving FY2027.",
+  "method": "one query per distinct code; billable_same_desc = the exact code is returned and its name equals our description byte-for-byte; not_billable_has_children = the exact code is absent but codes extending it are returned; absent = neither.",
+  "denominator": {
+    "distinct_codes": 676
+  },
+  "summary": {
+    "billable_same_desc": 675,
+    "not_billable_has_children": 1
+  },
+  "agreement_with_cdc_inventory": "CDC inventory 2026-10-22: still_billable 675, header_code_claimed_billable 1 (M72.2), removed 0, description_drift 0. This ledger: billable_same_desc 675, not_billable_has_children 1 (M72.2), absent 0, billable_desc_differs 0.",
+  "rows": [
+    {
+      "code": "E28.2",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.pcos"
+      ]
+    },
+    {
+      "code": "N80.00",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.01",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.02",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.03",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.101",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.102",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.103",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.109",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.111",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.112",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.113",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.119",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.121",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.122",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.123",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.129",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.201",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.202",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.203",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.209",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.211",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.212",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.213",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.219",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.221",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.222",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.223",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.229",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.30",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.311",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.312",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.319",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.321",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.322",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.329",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.331",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.332",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.333",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.339",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.341",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.342",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.343",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.349",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.351",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.352",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.353",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.359",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.361",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.362",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.363",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.369",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.371",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.372",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.373",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.379",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.381",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.382",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.383",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.389",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.391",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.392",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.399",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.3A1",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.3A2",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.3A3",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.3A9",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.3B1",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.3B2",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.3B3",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.3B9",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.3C1",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.3C2",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.3C3",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.3C9",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.40",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.41",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.42",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.8",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.9",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.B4",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.B5",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.B6",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.C0",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.C10",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.C11",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.C19",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.C2",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.C3",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.C4",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.C9",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.D0",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.D1",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.D2",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.D3",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.D4",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.D5",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.D6",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "N80.D9",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.endometriosis"
+      ]
+    },
+    {
+      "code": "D25.0",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.uterine_fibroids"
+      ]
+    },
+    {
+      "code": "D25.1",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.uterine_fibroids"
+      ]
+    },
+    {
+      "code": "D25.2",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.uterine_fibroids"
+      ]
+    },
+    {
+      "code": "D25.9",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.uterine_fibroids"
+      ]
+    },
+    {
+      "code": "N94.4",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.primary_dysmenorrhea"
+      ]
+    },
+    {
+      "code": "N94.3",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.pms"
+      ]
+    },
+    {
+      "code": "N92.6",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.irregular_menstruation"
+      ]
+    },
+    {
+      "code": "N92.0",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.menorrhagia"
+      ]
+    },
+    {
+      "code": "N92.1",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.menorrhagia"
+      ]
+    },
+    {
+      "code": "N91.5",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.oligomenorrhea"
+      ]
+    },
+    {
+      "code": "N91.3",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.oligomenorrhea"
+      ]
+    },
+    {
+      "code": "N91.4",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.oligomenorrhea"
+      ]
+    },
+    {
+      "code": "N91.1",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.amenorrhea"
+      ]
+    },
+    {
+      "code": "N97.0",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.female_infertility"
+      ]
+    },
+    {
+      "code": "N97.1",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.female_infertility"
+      ]
+    },
+    {
+      "code": "N97.2",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.female_infertility"
+      ]
+    },
+    {
+      "code": "N97.8",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.female_infertility",
+        "xwalk.luteal_phase_defect"
+      ]
+    },
+    {
+      "code": "N97.9",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.female_infertility"
+      ]
+    },
+    {
+      "code": "N46.01",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.male_infertility"
+      ]
+    },
+    {
+      "code": "N46.021",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.male_infertility"
+      ]
+    },
+    {
+      "code": "N46.022",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.male_infertility"
+      ]
+    },
+    {
+      "code": "N46.023",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.male_infertility"
+      ]
+    },
+    {
+      "code": "N46.024",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.male_infertility"
+      ]
+    },
+    {
+      "code": "N46.025",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.male_infertility"
+      ]
+    },
+    {
+      "code": "N46.029",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.male_infertility"
+      ]
+    },
+    {
+      "code": "N46.11",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.male_infertility"
+      ]
+    },
+    {
+      "code": "N46.121",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.male_infertility"
+      ]
+    },
+    {
+      "code": "N46.122",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.male_infertility"
+      ]
+    },
+    {
+      "code": "N46.123",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.male_infertility"
+      ]
+    },
+    {
+      "code": "N46.124",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.male_infertility"
+      ]
+    },
+    {
+      "code": "N46.125",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.male_infertility"
+      ]
+    },
+    {
+      "code": "N46.129",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.male_infertility"
+      ]
+    },
+    {
+      "code": "N46.8",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.male_infertility"
+      ]
+    },
+    {
+      "code": "N46.9",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.male_infertility"
+      ]
+    },
+    {
+      "code": "E28.39",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.diminished_ovarian_reserve"
+      ]
+    },
+    {
+      "code": "E28.310",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.diminished_ovarian_reserve"
+      ]
+    },
+    {
+      "code": "E28.319",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.diminished_ovarian_reserve"
+      ]
+    },
+    {
+      "code": "Z31.83",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.ivf_support"
+      ]
+    },
+    {
+      "code": "N96",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.recurrent_pregnancy_loss"
+      ]
+    },
+    {
+      "code": "E28.8",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.luteal_phase_defect"
+      ]
+    },
+    {
+      "code": "N95.1",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.menopause_syndrome"
+      ]
+    },
+    {
+      "code": "O21.0",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.hyperemesis_gravidarum"
+      ]
+    },
+    {
+      "code": "O21.1",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.hyperemesis_gravidarum"
+      ]
+    },
+    {
+      "code": "O21.2",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.hyperemesis_gravidarum"
+      ]
+    },
+    {
+      "code": "O21.8",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.hyperemesis_gravidarum"
+      ]
+    },
+    {
+      "code": "O21.9",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.hyperemesis_gravidarum"
+      ]
+    },
+    {
+      "code": "O32.1XX0",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.breech_presentation"
+      ]
+    },
+    {
+      "code": "O32.1XX1",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.breech_presentation"
+      ]
+    },
+    {
+      "code": "O32.1XX2",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.breech_presentation"
+      ]
+    },
+    {
+      "code": "O32.1XX3",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.breech_presentation"
+      ]
+    },
+    {
+      "code": "O32.1XX4",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.breech_presentation"
+      ]
+    },
+    {
+      "code": "O32.1XX5",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.breech_presentation"
+      ]
+    },
+    {
+      "code": "O32.1XX9",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.breech_presentation"
+      ]
+    },
+    {
+      "code": "O92.4",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.postpartum_hypolactation"
+      ]
+    },
+    {
+      "code": "R10.20",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.chronic_pelvic_pain"
+      ]
+    },
+    {
+      "code": "R10.21",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.chronic_pelvic_pain"
+      ]
+    },
+    {
+      "code": "R10.22",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.chronic_pelvic_pain"
+      ]
+    },
+    {
+      "code": "R10.23",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.chronic_pelvic_pain"
+      ]
+    },
+    {
+      "code": "R10.24",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.chronic_pelvic_pain"
+      ]
+    },
+    {
+      "code": "N73.1",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.pid_chronic"
+      ]
+    },
+    {
+      "code": "N73.4",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.pid_chronic"
+      ]
+    },
+    {
+      "code": "N73.6",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.pid_chronic"
+      ]
+    },
+    {
+      "code": "N73.8",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.pid_chronic"
+      ]
+    },
+    {
+      "code": "N73.9",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.pid_chronic"
+      ]
+    },
+    {
+      "code": "B37.31",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.vulvovaginal_candidiasis"
+      ]
+    },
+    {
+      "code": "B37.32",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.vulvovaginal_candidiasis"
+      ]
+    },
+    {
+      "code": "N85.8",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.thin_endometrium"
+      ]
+    },
+    {
+      "code": "F32.81",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.pmdd"
+      ]
+    },
+    {
+      "code": "N94.5",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.secondary_dysmenorrhea"
+      ]
+    },
+    {
+      "code": "M54.50",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.chronic_low_back_pain"
+      ]
+    },
+    {
+      "code": "M54.51",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.chronic_low_back_pain"
+      ]
+    },
+    {
+      "code": "M54.59",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.chronic_low_back_pain"
+      ]
+    },
+    {
+      "code": "S39.012A",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.acute_lumbar_sprain"
+      ]
+    },
+    {
+      "code": "S39.012D",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.acute_lumbar_sprain"
+      ]
+    },
+    {
+      "code": "S39.012S",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.acute_lumbar_sprain"
+      ]
+    },
+    {
+      "code": "M51.26",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.lumbar_disc_herniation"
+      ]
+    },
+    {
+      "code": "M51.27",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.lumbar_disc_herniation"
+      ]
+    },
+    {
+      "code": "M51.16",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.lumbar_disc_herniation"
+      ]
+    },
+    {
+      "code": "M51.17",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.lumbar_disc_herniation"
+      ]
+    },
+    {
+      "code": "M54.30",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.sciatica"
+      ]
+    },
+    {
+      "code": "M54.31",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.sciatica"
+      ]
+    },
+    {
+      "code": "M54.32",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.sciatica"
+      ]
+    },
+    {
+      "code": "M47.812",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.cervical_spondylosis"
+      ]
+    },
+    {
+      "code": "M47.12",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.cervical_spondylosis"
+      ]
+    },
+    {
+      "code": "M47.22",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.cervical_spondylosis"
+      ]
+    },
+    {
+      "code": "M47.892",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.cervical_spondylosis"
+      ]
+    },
+    {
+      "code": "M54.2",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.neck_pain_stiff"
+      ]
+    },
+    {
+      "code": "S13.4XXA",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.whiplash"
+      ]
+    },
+    {
+      "code": "S13.4XXD",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.whiplash"
+      ]
+    },
+    {
+      "code": "S13.4XXS",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.whiplash"
+      ]
+    },
+    {
+      "code": "M75.00",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.frozen_shoulder"
+      ]
+    },
+    {
+      "code": "M75.01",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.frozen_shoulder"
+      ]
+    },
+    {
+      "code": "M75.02",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.frozen_shoulder"
+      ]
+    },
+    {
+      "code": "M75.100",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.rotator_cuff"
+      ]
+    },
+    {
+      "code": "M75.101",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.rotator_cuff"
+      ]
+    },
+    {
+      "code": "M75.102",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.rotator_cuff"
+      ]
+    },
+    {
+      "code": "M75.110",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.rotator_cuff"
+      ]
+    },
+    {
+      "code": "M75.111",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.rotator_cuff"
+      ]
+    },
+    {
+      "code": "M75.112",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.rotator_cuff"
+      ]
+    },
+    {
+      "code": "M75.120",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.rotator_cuff"
+      ]
+    },
+    {
+      "code": "M75.121",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.rotator_cuff"
+      ]
+    },
+    {
+      "code": "M75.122",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.rotator_cuff"
+      ]
+    },
+    {
+      "code": "M77.10",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.lateral_epicondylitis"
+      ]
+    },
+    {
+      "code": "M77.11",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.lateral_epicondylitis"
+      ]
+    },
+    {
+      "code": "M77.12",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.lateral_epicondylitis"
+      ]
+    },
+    {
+      "code": "M77.00",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.medial_epicondylitis"
+      ]
+    },
+    {
+      "code": "M77.01",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.medial_epicondylitis"
+      ]
+    },
+    {
+      "code": "M77.02",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.medial_epicondylitis"
+      ]
+    },
+    {
+      "code": "G56.00",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.carpal_tunnel"
+      ]
+    },
+    {
+      "code": "G56.01",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.carpal_tunnel"
+      ]
+    },
+    {
+      "code": "G56.02",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.carpal_tunnel"
+      ]
+    },
+    {
+      "code": "G56.03",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.carpal_tunnel"
+      ]
+    },
+    {
+      "code": "M65.4",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.de_quervain"
+      ]
+    },
+    {
+      "code": "M65.30",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.trigger_finger"
+      ]
+    },
+    {
+      "code": "M65.311",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.trigger_finger"
+      ]
+    },
+    {
+      "code": "M65.312",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.trigger_finger"
+      ]
+    },
+    {
+      "code": "M65.319",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.trigger_finger"
+      ]
+    },
+    {
+      "code": "M65.321",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.trigger_finger"
+      ]
+    },
+    {
+      "code": "M65.322",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.trigger_finger"
+      ]
+    },
+    {
+      "code": "M65.329",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.trigger_finger"
+      ]
+    },
+    {
+      "code": "M65.331",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.trigger_finger"
+      ]
+    },
+    {
+      "code": "M65.332",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.trigger_finger"
+      ]
+    },
+    {
+      "code": "M65.339",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.trigger_finger"
+      ]
+    },
+    {
+      "code": "M65.341",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.trigger_finger"
+      ]
+    },
+    {
+      "code": "M65.342",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.trigger_finger"
+      ]
+    },
+    {
+      "code": "M65.349",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.trigger_finger"
+      ]
+    },
+    {
+      "code": "M65.351",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.trigger_finger"
+      ]
+    },
+    {
+      "code": "M65.352",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.trigger_finger"
+      ]
+    },
+    {
+      "code": "M65.359",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.trigger_finger"
+      ]
+    },
+    {
+      "code": "M17.0",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.knee_osteoarthritis"
+      ]
+    },
+    {
+      "code": "M17.10",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.knee_osteoarthritis"
+      ]
+    },
+    {
+      "code": "M17.11",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.knee_osteoarthritis"
+      ]
+    },
+    {
+      "code": "M17.12",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.knee_osteoarthritis"
+      ]
+    },
+    {
+      "code": "M17.2",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.knee_osteoarthritis"
+      ]
+    },
+    {
+      "code": "M17.30",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.knee_osteoarthritis"
+      ]
+    },
+    {
+      "code": "M17.31",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.knee_osteoarthritis"
+      ]
+    },
+    {
+      "code": "M17.32",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.knee_osteoarthritis"
+      ]
+    },
+    {
+      "code": "M17.4",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.knee_osteoarthritis"
+      ]
+    },
+    {
+      "code": "M17.5",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.knee_osteoarthritis"
+      ]
+    },
+    {
+      "code": "M17.9",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.knee_osteoarthritis"
+      ]
+    },
+    {
+      "code": "M22.2X1",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.patellofemoral_pain"
+      ]
+    },
+    {
+      "code": "M22.2X2",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.patellofemoral_pain"
+      ]
+    },
+    {
+      "code": "M22.2X9",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.patellofemoral_pain"
+      ]
+    },
+    {
+      "code": "S83.200A",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.200D",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.200S",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.201A",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.201D",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.201S",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.202A",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.202D",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.202S",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.203A",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.203D",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.203S",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.204A",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.204D",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.204S",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.205A",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.205D",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.205S",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.206A",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.206D",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.206S",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.207A",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.207D",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.207S",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.209A",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.209D",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.209S",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.211A",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.211D",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.211S",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.212A",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.212D",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.212S",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.219A",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.219D",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.219S",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.221A",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.221D",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.221S",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.222A",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.222D",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.222S",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.229A",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.229D",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.229S",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.231A",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.231D",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.231S",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.232A",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.232D",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.232S",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.239A",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.239D",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.239S",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.241A",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.241D",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.241S",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.242A",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.242D",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.242S",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.249A",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.249D",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.249S",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.251A",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.251D",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.251S",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.252A",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.252D",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.252S",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.259A",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.259D",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.259S",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.261A",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.261D",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.261S",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.262A",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.262D",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.262S",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.269A",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.269D",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.269S",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.271A",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.271D",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.271S",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.272A",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.272D",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.272S",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.279A",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.279D",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.279S",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.281A",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.281D",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.281S",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.282A",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.282D",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.282S",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.289A",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.289D",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S83.289S",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.meniscus_injury"
+      ]
+    },
+    {
+      "code": "S93.401A",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.ankle_sprain"
+      ]
+    },
+    {
+      "code": "S93.401D",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.ankle_sprain"
+      ]
+    },
+    {
+      "code": "S93.401S",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.ankle_sprain"
+      ]
+    },
+    {
+      "code": "S93.402A",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.ankle_sprain"
+      ]
+    },
+    {
+      "code": "S93.402D",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.ankle_sprain"
+      ]
+    },
+    {
+      "code": "S93.402S",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.ankle_sprain"
+      ]
+    },
+    {
+      "code": "S93.409A",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.ankle_sprain"
+      ]
+    },
+    {
+      "code": "S93.409D",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.ankle_sprain"
+      ]
+    },
+    {
+      "code": "S93.409S",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.ankle_sprain"
+      ]
+    },
+    {
+      "code": "S93.411A",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.ankle_sprain"
+      ]
+    },
+    {
+      "code": "S93.411D",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.ankle_sprain"
+      ]
+    },
+    {
+      "code": "S93.411S",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.ankle_sprain"
+      ]
+    },
+    {
+      "code": "S93.412A",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.ankle_sprain"
+      ]
+    },
+    {
+      "code": "S93.412D",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.ankle_sprain"
+      ]
+    },
+    {
+      "code": "S93.412S",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.ankle_sprain"
+      ]
+    },
+    {
+      "code": "S93.419A",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.ankle_sprain"
+      ]
+    },
+    {
+      "code": "S93.419D",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.ankle_sprain"
+      ]
+    },
+    {
+      "code": "S93.419S",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.ankle_sprain"
+      ]
+    },
+    {
+      "code": "S93.421A",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.ankle_sprain"
+      ]
+    },
+    {
+      "code": "S93.421D",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.ankle_sprain"
+      ]
+    },
+    {
+      "code": "S93.421S",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.ankle_sprain"
+      ]
+    },
+    {
+      "code": "S93.422A",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.ankle_sprain"
+      ]
+    },
+    {
+      "code": "S93.422D",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.ankle_sprain"
+      ]
+    },
+    {
+      "code": "S93.422S",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.ankle_sprain"
+      ]
+    },
+    {
+      "code": "S93.429A",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.ankle_sprain"
+      ]
+    },
+    {
+      "code": "S93.429D",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.ankle_sprain"
+      ]
+    },
+    {
+      "code": "S93.429S",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.ankle_sprain"
+      ]
+    },
+    {
+      "code": "S93.431A",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.ankle_sprain"
+      ]
+    },
+    {
+      "code": "S93.431D",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.ankle_sprain"
+      ]
+    },
+    {
+      "code": "S93.431S",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.ankle_sprain"
+      ]
+    },
+    {
+      "code": "S93.432A",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.ankle_sprain"
+      ]
+    },
+    {
+      "code": "S93.432D",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.ankle_sprain"
+      ]
+    },
+    {
+      "code": "S93.432S",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.ankle_sprain"
+      ]
+    },
+    {
+      "code": "S93.439A",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.ankle_sprain"
+      ]
+    },
+    {
+      "code": "S93.439D",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.ankle_sprain"
+      ]
+    },
+    {
+      "code": "S93.439S",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.ankle_sprain"
+      ]
+    },
+    {
+      "code": "S93.491A",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.ankle_sprain"
+      ]
+    },
+    {
+      "code": "S93.491D",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.ankle_sprain"
+      ]
+    },
+    {
+      "code": "S93.491S",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.ankle_sprain"
+      ]
+    },
+    {
+      "code": "S93.492A",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.ankle_sprain"
+      ]
+    },
+    {
+      "code": "S93.492D",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.ankle_sprain"
+      ]
+    },
+    {
+      "code": "S93.492S",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.ankle_sprain"
+      ]
+    },
+    {
+      "code": "S93.499A",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.ankle_sprain"
+      ]
+    },
+    {
+      "code": "S93.499D",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.ankle_sprain"
+      ]
+    },
+    {
+      "code": "S93.499S",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.ankle_sprain"
+      ]
+    },
+    {
+      "code": "M72.2",
+      "verdict": "not_billable_has_children",
+      "ours": "Plantar fascial fibromatosis",
+      "nlm": null,
+      "children": [
+        [
+          "M72.20",
+          "Plantar fascial fibromatosis, unspecified foot"
+        ],
+        [
+          "M72.21",
+          "Plantar fascial fibromatosis, right foot"
+        ],
+        [
+          "M72.22",
+          "Plantar fascial fibromatosis, left foot"
+        ]
+      ],
+      "records": [
+        "xwalk.plantar_fasciitis"
+      ]
+    },
+    {
+      "code": "M76.60",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.achilles_tendinopathy"
+      ]
+    },
+    {
+      "code": "M76.61",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.achilles_tendinopathy"
+      ]
+    },
+    {
+      "code": "M76.62",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.achilles_tendinopathy"
+      ]
+    },
+    {
+      "code": "M16.0",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.hip_osteoarthritis"
+      ]
+    },
+    {
+      "code": "M16.10",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.hip_osteoarthritis"
+      ]
+    },
+    {
+      "code": "M16.11",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.hip_osteoarthritis"
+      ]
+    },
+    {
+      "code": "M16.12",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.hip_osteoarthritis"
+      ]
+    },
+    {
+      "code": "M16.2",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.hip_osteoarthritis"
+      ]
+    },
+    {
+      "code": "M16.30",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.hip_osteoarthritis"
+      ]
+    },
+    {
+      "code": "M16.31",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.hip_osteoarthritis"
+      ]
+    },
+    {
+      "code": "M16.32",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.hip_osteoarthritis"
+      ]
+    },
+    {
+      "code": "M16.4",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.hip_osteoarthritis"
+      ]
+    },
+    {
+      "code": "M16.50",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.hip_osteoarthritis"
+      ]
+    },
+    {
+      "code": "M16.51",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.hip_osteoarthritis"
+      ]
+    },
+    {
+      "code": "M16.52",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.hip_osteoarthritis"
+      ]
+    },
+    {
+      "code": "M16.6",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.hip_osteoarthritis"
+      ]
+    },
+    {
+      "code": "M16.7",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.hip_osteoarthritis"
+      ]
+    },
+    {
+      "code": "M16.9",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.hip_osteoarthritis"
+      ]
+    },
+    {
+      "code": "G57.00",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.piriformis_syndrome"
+      ]
+    },
+    {
+      "code": "G57.01",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.piriformis_syndrome"
+      ]
+    },
+    {
+      "code": "G57.02",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.piriformis_syndrome"
+      ]
+    },
+    {
+      "code": "G57.03",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.piriformis_syndrome"
+      ]
+    },
+    {
+      "code": "M79.7",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.fibromyalgia"
+      ]
+    },
+    {
+      "code": "M79.10",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.myofascial_pain"
+      ]
+    },
+    {
+      "code": "M79.11",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.myofascial_pain"
+      ]
+    },
+    {
+      "code": "M79.12",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.myofascial_pain"
+      ]
+    },
+    {
+      "code": "M79.18",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.myofascial_pain"
+      ]
+    },
+    {
+      "code": "M26.601",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.tmd"
+      ]
+    },
+    {
+      "code": "M26.602",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.tmd"
+      ]
+    },
+    {
+      "code": "M26.603",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.tmd"
+      ]
+    },
+    {
+      "code": "M26.609",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.tmd"
+      ]
+    },
+    {
+      "code": "M26.611",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.tmd"
+      ]
+    },
+    {
+      "code": "M26.612",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.tmd"
+      ]
+    },
+    {
+      "code": "M26.613",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.tmd"
+      ]
+    },
+    {
+      "code": "M26.619",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.tmd"
+      ]
+    },
+    {
+      "code": "M26.621",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.tmd"
+      ]
+    },
+    {
+      "code": "M26.622",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.tmd"
+      ]
+    },
+    {
+      "code": "M26.623",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.tmd"
+      ]
+    },
+    {
+      "code": "M26.629",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.tmd"
+      ]
+    },
+    {
+      "code": "M26.631",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.tmd"
+      ]
+    },
+    {
+      "code": "M26.632",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.tmd"
+      ]
+    },
+    {
+      "code": "M26.633",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.tmd"
+      ]
+    },
+    {
+      "code": "M26.639",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.tmd"
+      ]
+    },
+    {
+      "code": "M26.641",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.tmd"
+      ]
+    },
+    {
+      "code": "M26.642",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.tmd"
+      ]
+    },
+    {
+      "code": "M26.643",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.tmd"
+      ]
+    },
+    {
+      "code": "M26.649",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.tmd"
+      ]
+    },
+    {
+      "code": "M26.651",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.tmd"
+      ]
+    },
+    {
+      "code": "M26.652",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.tmd"
+      ]
+    },
+    {
+      "code": "M26.653",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.tmd"
+      ]
+    },
+    {
+      "code": "M26.659",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.tmd"
+      ]
+    },
+    {
+      "code": "M26.69",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.tmd"
+      ]
+    },
+    {
+      "code": "G44.201",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.tension_headache"
+      ]
+    },
+    {
+      "code": "G44.209",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.tension_headache"
+      ]
+    },
+    {
+      "code": "G44.211",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.tension_headache"
+      ]
+    },
+    {
+      "code": "G44.219",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.tension_headache"
+      ]
+    },
+    {
+      "code": "G44.221",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.tension_headache"
+      ]
+    },
+    {
+      "code": "G44.229",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.tension_headache"
+      ]
+    },
+    {
+      "code": "G43.001",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.migraine"
+      ]
+    },
+    {
+      "code": "G43.009",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.migraine"
+      ]
+    },
+    {
+      "code": "G43.011",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.migraine"
+      ]
+    },
+    {
+      "code": "G43.019",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.migraine"
+      ]
+    },
+    {
+      "code": "G43.101",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.migraine"
+      ]
+    },
+    {
+      "code": "G43.109",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.migraine"
+      ]
+    },
+    {
+      "code": "G43.111",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.migraine"
+      ]
+    },
+    {
+      "code": "G43.119",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.migraine"
+      ]
+    },
+    {
+      "code": "G43.401",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.migraine"
+      ]
+    },
+    {
+      "code": "G43.409",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.migraine"
+      ]
+    },
+    {
+      "code": "G43.411",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.migraine"
+      ]
+    },
+    {
+      "code": "G43.419",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.migraine"
+      ]
+    },
+    {
+      "code": "G43.501",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.migraine"
+      ]
+    },
+    {
+      "code": "G43.509",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.migraine"
+      ]
+    },
+    {
+      "code": "G43.511",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.migraine"
+      ]
+    },
+    {
+      "code": "G43.519",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.migraine"
+      ]
+    },
+    {
+      "code": "G43.601",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.migraine"
+      ]
+    },
+    {
+      "code": "G43.609",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.migraine"
+      ]
+    },
+    {
+      "code": "G43.611",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.migraine"
+      ]
+    },
+    {
+      "code": "G43.619",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.migraine"
+      ]
+    },
+    {
+      "code": "G43.701",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.migraine"
+      ]
+    },
+    {
+      "code": "G43.709",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.migraine"
+      ]
+    },
+    {
+      "code": "G43.711",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.migraine"
+      ]
+    },
+    {
+      "code": "G43.719",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.migraine"
+      ]
+    },
+    {
+      "code": "G43.801",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.migraine"
+      ]
+    },
+    {
+      "code": "G43.809",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.migraine"
+      ]
+    },
+    {
+      "code": "G43.811",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.migraine"
+      ]
+    },
+    {
+      "code": "G43.819",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.migraine"
+      ]
+    },
+    {
+      "code": "G43.901",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.migraine"
+      ]
+    },
+    {
+      "code": "G43.909",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.migraine"
+      ]
+    },
+    {
+      "code": "G43.911",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.migraine"
+      ]
+    },
+    {
+      "code": "G43.919",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.migraine"
+      ]
+    },
+    {
+      "code": "G43.E01",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.migraine"
+      ]
+    },
+    {
+      "code": "G43.E09",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.migraine"
+      ]
+    },
+    {
+      "code": "G43.E11",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.migraine"
+      ]
+    },
+    {
+      "code": "G43.E19",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.migraine"
+      ]
+    },
+    {
+      "code": "G44.001",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.cluster_headache"
+      ]
+    },
+    {
+      "code": "G44.009",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.cluster_headache"
+      ]
+    },
+    {
+      "code": "G44.011",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.cluster_headache"
+      ]
+    },
+    {
+      "code": "G44.019",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.cluster_headache"
+      ]
+    },
+    {
+      "code": "G44.021",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.cluster_headache"
+      ]
+    },
+    {
+      "code": "G44.029",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.cluster_headache"
+      ]
+    },
+    {
+      "code": "M10.00",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.011",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.012",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.019",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.021",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.022",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.029",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.031",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.032",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.039",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.041",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.042",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.049",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.051",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.052",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.059",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.061",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.062",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.069",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.071",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.072",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.079",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.08",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.09",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.10",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.111",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.112",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.119",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.121",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.122",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.129",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.131",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.132",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.139",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.141",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.142",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.149",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.151",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.152",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.159",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.161",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.162",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.169",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.171",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.172",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.179",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.18",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.19",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.20",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.211",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.212",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.219",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.221",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.222",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.229",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.231",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.232",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.239",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.241",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.242",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.249",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.251",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.252",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.259",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.261",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.262",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.269",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.271",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.272",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.279",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.28",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.29",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.40",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.411",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.412",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.419",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.421",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.422",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.429",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.431",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.432",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.439",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.441",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.442",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.449",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.451",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.452",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.459",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.461",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.462",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.469",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.471",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.472",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.479",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.48",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.49",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M10.9",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gout"
+      ]
+    },
+    {
+      "code": "M05.9",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.rheumatoid_arthritis"
+      ]
+    },
+    {
+      "code": "M06.9",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.rheumatoid_arthritis"
+      ]
+    },
+    {
+      "code": "K21.00",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gerd"
+      ]
+    },
+    {
+      "code": "K21.01",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gerd"
+      ]
+    },
+    {
+      "code": "K21.9",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gerd"
+      ]
+    },
+    {
+      "code": "K30",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.functional_dyspepsia"
+      ]
+    },
+    {
+      "code": "K29.50",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.chronic_gastritis"
+      ]
+    },
+    {
+      "code": "K29.51",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.chronic_gastritis"
+      ]
+    },
+    {
+      "code": "K27.0",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.peptic_ulcer"
+      ]
+    },
+    {
+      "code": "K27.1",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.peptic_ulcer"
+      ]
+    },
+    {
+      "code": "K27.2",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.peptic_ulcer"
+      ]
+    },
+    {
+      "code": "K27.3",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.peptic_ulcer"
+      ]
+    },
+    {
+      "code": "K27.4",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.peptic_ulcer"
+      ]
+    },
+    {
+      "code": "K27.5",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.peptic_ulcer"
+      ]
+    },
+    {
+      "code": "K27.6",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.peptic_ulcer"
+      ]
+    },
+    {
+      "code": "K27.7",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.peptic_ulcer"
+      ]
+    },
+    {
+      "code": "K27.9",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.peptic_ulcer"
+      ]
+    },
+    {
+      "code": "K58.0",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.ibs"
+      ]
+    },
+    {
+      "code": "K58.1",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.ibs"
+      ]
+    },
+    {
+      "code": "K58.2",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.ibs"
+      ]
+    },
+    {
+      "code": "K58.8",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.ibs"
+      ]
+    },
+    {
+      "code": "K58.9",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.ibs"
+      ]
+    },
+    {
+      "code": "K50.90",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.ibd"
+      ]
+    },
+    {
+      "code": "K50.911",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.ibd"
+      ]
+    },
+    {
+      "code": "K50.912",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.ibd"
+      ]
+    },
+    {
+      "code": "K50.913",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.ibd"
+      ]
+    },
+    {
+      "code": "K50.914",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.ibd"
+      ]
+    },
+    {
+      "code": "K50.918",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.ibd"
+      ]
+    },
+    {
+      "code": "K50.919",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.ibd"
+      ]
+    },
+    {
+      "code": "K51.90",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.ibd"
+      ]
+    },
+    {
+      "code": "K51.911",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.ibd"
+      ]
+    },
+    {
+      "code": "K51.912",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.ibd"
+      ]
+    },
+    {
+      "code": "K51.913",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.ibd"
+      ]
+    },
+    {
+      "code": "K51.914",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.ibd"
+      ]
+    },
+    {
+      "code": "K51.918",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.ibd"
+      ]
+    },
+    {
+      "code": "K51.919",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.ibd"
+      ]
+    },
+    {
+      "code": "K59.00",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.chronic_constipation"
+      ]
+    },
+    {
+      "code": "K59.01",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.chronic_constipation"
+      ]
+    },
+    {
+      "code": "K59.02",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.chronic_constipation"
+      ]
+    },
+    {
+      "code": "K59.03",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.chronic_constipation"
+      ]
+    },
+    {
+      "code": "K59.04",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.chronic_constipation"
+      ]
+    },
+    {
+      "code": "K59.09",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.chronic_constipation"
+      ]
+    },
+    {
+      "code": "K59.1",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.chronic_diarrhea"
+      ]
+    },
+    {
+      "code": "R11.0",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.nausea_vomiting",
+        "xwalk.cinv"
+      ]
+    },
+    {
+      "code": "R11.10",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.nausea_vomiting"
+      ]
+    },
+    {
+      "code": "R11.11",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.nausea_vomiting"
+      ]
+    },
+    {
+      "code": "R11.12",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.nausea_vomiting"
+      ]
+    },
+    {
+      "code": "R11.13",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.nausea_vomiting"
+      ]
+    },
+    {
+      "code": "R11.14",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.nausea_vomiting"
+      ]
+    },
+    {
+      "code": "R11.15",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.nausea_vomiting"
+      ]
+    },
+    {
+      "code": "R11.16",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.nausea_vomiting"
+      ]
+    },
+    {
+      "code": "R11.2",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.nausea_vomiting",
+        "xwalk.cinv"
+      ]
+    },
+    {
+      "code": "K64.0",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.hemorrhoids"
+      ]
+    },
+    {
+      "code": "K64.1",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.hemorrhoids"
+      ]
+    },
+    {
+      "code": "K64.2",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.hemorrhoids"
+      ]
+    },
+    {
+      "code": "K64.3",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.hemorrhoids"
+      ]
+    },
+    {
+      "code": "K64.4",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.hemorrhoids"
+      ]
+    },
+    {
+      "code": "K64.5",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.hemorrhoids"
+      ]
+    },
+    {
+      "code": "K64.8",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.hemorrhoids"
+      ]
+    },
+    {
+      "code": "K64.9",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.hemorrhoids"
+      ]
+    },
+    {
+      "code": "K76.0",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.nafld"
+      ]
+    },
+    {
+      "code": "K82.8",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.gallbladder_dysfunction"
+      ]
+    },
+    {
+      "code": "T45.1X5A",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.cinv"
+      ]
+    },
+    {
+      "code": "T45.1X5D",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.cinv"
+      ]
+    },
+    {
+      "code": "T45.1X5S",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.cinv"
+      ]
+    },
+    {
+      "code": "K91.89",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.post_op_ileus"
+      ]
+    },
+    {
+      "code": "K90.41",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.food_sensitivity"
+      ]
+    },
+    {
+      "code": "K90.49",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.food_sensitivity"
+      ]
+    },
+    {
+      "code": "G51.0",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.bells_palsy"
+      ]
+    },
+    {
+      "code": "I69.30",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.stroke_rehab"
+      ]
+    },
+    {
+      "code": "G62.9",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.peripheral_neuropathy"
+      ]
+    },
+    {
+      "code": "E11.42",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.diabetic_neuropathy"
+      ]
+    },
+    {
+      "code": "G50.0",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.trigeminal_neuralgia"
+      ]
+    },
+    {
+      "code": "B02.29",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.postherpetic_neuralgia"
+      ]
+    },
+    {
+      "code": "G20.A1",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.parkinsons"
+      ]
+    },
+    {
+      "code": "G20.A2",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.parkinsons"
+      ]
+    },
+    {
+      "code": "G20.B1",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.parkinsons"
+      ]
+    },
+    {
+      "code": "G20.B2",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.parkinsons"
+      ]
+    },
+    {
+      "code": "G35.A",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.multiple_sclerosis"
+      ]
+    },
+    {
+      "code": "G35.B0",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.multiple_sclerosis"
+      ]
+    },
+    {
+      "code": "G35.B1",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.multiple_sclerosis"
+      ]
+    },
+    {
+      "code": "G35.B2",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.multiple_sclerosis"
+      ]
+    },
+    {
+      "code": "G35.C0",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.multiple_sclerosis"
+      ]
+    },
+    {
+      "code": "G35.C1",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.multiple_sclerosis"
+      ]
+    },
+    {
+      "code": "G35.C2",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.multiple_sclerosis"
+      ]
+    },
+    {
+      "code": "G35.D",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.multiple_sclerosis"
+      ]
+    },
+    {
+      "code": "G25.0",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.essential_tremor"
+      ]
+    },
+    {
+      "code": "R42",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.dizziness_vertigo"
+      ]
+    },
+    {
+      "code": "H81.01",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.menieres"
+      ]
+    },
+    {
+      "code": "H81.02",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.menieres"
+      ]
+    },
+    {
+      "code": "H81.03",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.menieres"
+      ]
+    },
+    {
+      "code": "H81.09",
+      "verdict": "billable_same_desc",
+      "records": [
+        "xwalk.menieres"
+      ]
+    }
+  ]
+}

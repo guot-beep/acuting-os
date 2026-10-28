@@ -1,3 +1,47 @@
+# 2026-10-28 — main CI 回綠:ICD-10-CM FY2027 換版落地(675 碼重新戳記、M72.2 開更正佇列不替人選碼)+ CI 加每週排程
+
+Ting:「繼續優化」。
+**MEASURED TREE: claude/optimize-2026-10-28 @ 本 commit(基底 main @ 8ced6cf7 + cherry-pick 08c86fde 的盤點報告)**
+
+**為什麼先做這個**:main 從 9/12 起沒有人推,所以 Actions 上看不到紅燈;但本機照 CI 的 green job 逐步跑,今天推一次就會紅在一步 —— XW7(679 個版本化 ICD 碼 `effective_to 2026-09-30` 已過)。10/22 那條分支(`claude/herb-safety-pairing`)兩次 CI 都紅在這一步,連帶它的中藥卡安全句修正(644d2560)也落不了地。CI 紅著 = 全部閘門失明。
+
+| 項 | 做法 | before → after |
+|---|---|---|
+| 本機照跑 CI green job(118→119 步,失敗不中斷) | 自寫執行器逐步執行 validate.yml 的單行步驟 | fail 1(XW7)→ 0;117 過、2 步多行另驗(generated 已提交 PASS) |
+| 675 碼重新戳記 | `scripts/apply-icd-fy2027-restamp.js`:兩份獨立來源互核才寫 —— CDC/NCHS 正本(10/22 盤點讀過,zip sha256 93e3ad60…,白名單內)+ NLM 逐碼旁證(今天 676 次查詢);舊戳記與舊 source **先搬**進 `release_history` **再改** | 版本化條目 FY2026 679 → FY2027 678 / FY2026 1;`icd10_version` FY2027 0 → 80 筆記錄 |
+| M72.2(xwalk.plantar_fasciitis) | FY2027 刪除可申報、拆成 M72.20/.21/.22(未指定側/右/左)。**不替 Ting 選碼**:FY2026 條目原樣留作歷史 + `superseded_in/superseded_by`;記錄開 `icd10_correction_queue`,照 2026-08-08 前庭性偏頭痛佇列(XW5 前例)的形狀,三碼列為候選、一個都不升格 | review_status source_checked → correction_queued;候選 3、升格 0 |
+| XW7 學會「已被取代」 | 例外只准在:取代版本晚於原版本、後繼碼格式正確且非自己、且後繼碼**全數**在同一記錄的**開放**審查佇列,或**全數**已是現行條目。每次執行都印出待裁的那一筆 | 自測 15 條(12 負控)PASS;四個故意改壞的版本自測全抓到 |
+| CI 加每週排程 | `schedule: cron "17 3 * * 1"`;日曆型閘門不再等有人推才會紅 | 排程觸發 0 → 1 |
+
+**沒有損失(結構化比對,不是看行數)**:舊檔每一欄在新檔都以原值存在;變動只限 release/effective_from/effective_to/source(各 678,舊值全部能從 release_history 逐字找回)、icd10_version 80、plantar 那筆的 review_status 與原本空字串的 documentation_note_zh;新增 release_history 678、superseded_in/by 各 1、佇列 1。description / status / billable / mapping_type 一筆未動。
+
+**畫面影響零**:crosswalk 不進 build-data 的 bundle,渲染端對它零讀取(2026-10-28 grep);病症卡的「ICD hint」讀的是病症線自己的 `icd_hint`,本批不碰(plantar 那張仍印 M72.2,FY2027 它是分類標頭,當提示仍成立)。
+
+## 待 Ting 裁定(一條,附分母)
+
+**xwalk.plantar_fasciitis 改對應哪個後繼碼。** 10/22 盤點的建議(未套用):三碼都列為 leaf_option(crosswalk 現有 630 筆側別/部位葉碼就是這個形狀),M72.20 當預設,看診依實際側別選;保留「plantar fascial fibromatosis 對足底筋膜炎是索引支持的近似、不是精確對應」的註記。
+執行成本:3 筆條目 + 關佇列,一支腳本、約十分鐘;裁定前 CI 照樣綠(XW7 例外守住),每次執行都會印出這一筆。
+
+## 誠實記下
+
+- **憲法所有權表沒有列 `data/interop/**`**;crosswalk 歷來的 commit 都由各線共用的 guot-beep 帳號推送,作者欄看不出歸屬。本批改的是版本戳記而非臨床內容,依 2026-08-14「查證過的批次直接落地,只有歸屬/狀態/臨床裁定等 Ting」辦理;不同意就 revert 這一個 commit,`release_history` 讓還原是逐字的。
+- 引用的 CDC 正本是 10/22 那次讀的(本 session 沒有重新下載);本 session 的獨立證據是 NLM 逐碼旁證,兩者 676/676 一致。NLM 不在白名單,只當旁證,`source` 欄兩者都寫明。
+- M72.2 條目仍帶 `billable: true / status: source_checked`:那是它 FY2026 窗口內的事實(XW6 要求兩者並存),窗口與 superseded 欄已界定範圍。
+- 排程的兩個限制:失敗通知只寄給最後改排程那行的人;公開 repo 60 天零 commit 會被 GitHub 停用。
+- 10/22 盤點的未解照舊:`data/billing/` 的 CPT / payer 規則有沒有年度戳記未查。
+
+## 驗證器(本工作樹)
+
+```
+node scripts/validate-crosswalk-mappings.js --self-test   → self-test PASS — 15/15 cases (12 negative controls, 3 positive)
+node scripts/validate-crosswalk-mappings.js               → XW7: 1 superseded entry kept as history:
+                                                              xwalk.plantar_fasciitis M72.2 (FY2026) → M72.20 / M72.21 / M72.22 in FY2027 — awaiting coding review
+                                                            crosswalk mappings: 679 versioned entries · 81 conditions covered · 0 defects
+node scripts/apply-icd-fy2027-restamp.js                  → ABORT(已是 FY2027,重跑一律擋下)
+本機 green job                                            → steps 119 · pass 117 · fail 0 · multiline-skipped 2
+本機 ratchet job                                          → 11 步 10 過;唯一失敗是 sudo apt-get(Linux runner 安裝步驟,Windows 跑不了),check-validation-ratchet PASS
+```
+
 # 2026-09-12 — 上課筆記帶得出來(匯出/匯入 UI)+ 重發一次性設定碼
 
 Ting:「我想上課先在 local 先儲存一些筆記(穴位),然後之後你幫我更新」、「設定碼重發吧,我都不知道那串在哪裡」。
