@@ -1,3 +1,42 @@
+# 2026-10-31 — 病例頁改版:以病人為單位的列表、兩組搜尋、三層標籤、ATG-1984F 代號(D34,D32 凍結例外)
+
+**MEASURED TREE: feat/cases-v2 @ 1c83345f,基底 origin/main @ 9030ec02**
+
+Ting 10/29:「我覺得這個介面很亂 應該有更好的架構去搜尋病例」;10/31:「你先幫我區分吧 哪個情況好就用哪個」、
+「ATG-1984F 這種可以」、「持續做兩小時不停止」。先做可點原型(虛構病人,claude.ai artifact)給她看,再接進 app。
+
+**改了什麼**(裁定與理由見 DECISIONS D34):
+- 病例列表一個 patientCode 一列;同人多病例收進詳情頁分頁。列上:代號、主訴、最近就診(相對日)+ 診數、⚑、標籤、日期未填數。
+- 搜尋:代號/病例名稱命中一組,只在內文命中另一組並附「第 N 診 · 日期 · 欄位」;多詞 AND;`/` 跳到搜尋框。
+- 篩選:關注度 / ICPC-2 章節(只列實際用到的)/ 診所 / 狀態 / 30·90 天 / 有紅旗 / 日期未填;排序:重點優先 / 最近 / 代號 / 診數。
+- 三層標籤(case 層新欄位,全部 additive、空 = 未設定):`attentionTier` `attentionSince` `icpcChapters` `careContexts` `clinicSite`。
+  詳情頁一鍵改關注度(R9 快照回滾寫入);重點 ≥42 天提醒是否改回一般。
+- 工具列只留搜尋 + 新增病例,其餘收進「⋯ 更多」(所有 id 不變);導覽列穴位匯入改名「匯入穴位 JSON」;
+  三段介紹(病歷系統/保險/生殖流程)位元組不變地搬到工作區之後 —— 進病例頁第一屏就是病人列表。
+- 備份橫幅:D1 上改說「正本在雲端 D1」(過去說「只存在本機瀏覽器」);開機時先畫、後端接上後會重寫文字。
+- SOAP 卡片與表單欄名中英對照(S 主觀 Subjective …)。
+- 修既有缺陷:表單沒有「出生年」欄,只有年份的病例第一次編輯存檔就被清空(10/28 往返測試抓到)。
+- SQLite 投影:3 欄進 `cases`,2 張子表 `case_icpc_chapters` / `case_care_contexts`(29 → 31 張);對照表 5 條 mapped。
+
+**量測**(可重現指令在右):
+| 項 | 結果 | 指令 |
+|---|---|---|
+| 搜尋/分組/篩選/排序/代號解析真值表 | 38/38 PASS | `node scripts/validate-case-search.js` |
+| 契約凍結 | 新增 15、移除 0、改型別 0 | `node scripts/validate-clinical-contract-freeze.js` |
+| SQLite 對照覆蓋 | 未登記 0、app 會寫沒登記 0 | `node scripts/validate-sqlite-mapping-coverage.js` |
+| ratchet | 0 regress | `node scripts/check-validation-ratchet.js` |
+| CI 全清單本機跑 | 129/129 PASS | validate.yml 的每一行 `run: node` |
+| 真瀏覽器 e2e(本機 wrangler dev + 本機 D1,10 筆虛構病例) | 見下 | — |
+
+e2e(虛構病例,正式 D1 一筆沒碰):寫入後重載從 D1 讀回 10 病例 / 標籤 8·8·7 筆全回來;9 位病人分組與重點優先排序正確;
+`sp6` → 內容符合 3、說明列指到第幾診;`sp6 經痛` → 1;`ach` → 身分組;篩選 疑難/日期未填/系統 N/外部診所 結果逐一對;
+空結果說出「3 位被篩選條件排除」;一鍵改關注度 rev 1→2、再按取消回到未設定;新增病例打 `ATG-1984F` 自動帶入 F/1984,
+標籤存檔 rev 3→4;三筆既有病例「開編輯→不改→存」0 欄位差異(只有出生年 1970 的那筆保住了);手機 390px 無橫向溢出。
+清理:e2e 伺服器只停自己的程序(命令列含 port),本機 D1 persist 目錄已刪(Test-Path False)。
+
+**沒做 / 留給下一步**:病人總覽(唯讀 patientsWorkspace)仍獨立存在,未併入;既有 26 筆病例的代號沒有改成新格式
+(改代號會換 patientId,要她給對照表、一次做完);標籤需要她自己逐位標 —— 沒有任何一筆被自動標上。
+
 # 2026-10-28(續)— 落地 10/22 卡在分支上的中藥卡禁忌/慎用配對修正(056fa618 = 644d2560 rebase),並量出它露出來的三種資料問題
 
 **MEASURED TREE: claude/herb-safety-pairing-r2 @ 056fa618(疊在 main @ 3175f90e 之上;盤點 commit 08c86fde 因內容已在上游被 rebase 自動略過)**
