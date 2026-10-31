@@ -67,7 +67,7 @@
         <div class="nav-tools-row">
           <button id="exportBtn" class="ghost" type="button" data-mode-text data-bilingual="匯出 JSON" data-english="Export JSON">匯出 JSON</button>
           <label class="ghost file-label">
-            <span data-mode-text data-bilingual="匯入 JSON" data-english="Import JSON">匯入 JSON</span>
+            <span data-mode-text data-bilingual="匯入穴位 JSON" data-english="Import points JSON" title="匯入穴位資料(不是病例;病例請到病例頁的「⋯ 更多 → 匯入病例」)">匯入穴位 JSON</span>
             <input id="importFile" type="file" accept="application/json" />
           </label>
           <button id="resetBtn" class="danger" type="button" data-mode-text data-bilingual="還原範例" data-english="Reset demo">還原範例</button>
@@ -236,100 +236,9 @@
       </section>
 
 
-      <section class="patient-system" data-workspace="cases" id="patientSystem" aria-label="我的病歷系統">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">Patient Record System</p>
-            <h2>我的病歷系統 / Clinical Charting</h2>
-            <p>這一區是你未來臨床每天會用的入口：先用去識別化 patient code 建病例，再用 SOAP note 追蹤每次治療、用針、方藥、頻率、變化與保險文件需要的紀錄。</p>
-          </div>
-          <span class="data-pill">私用病例資料</span>
-        </div>
-        <div class="patient-action-grid">
-          <a class="patient-action-card" href="#caseWorkspace" id="patientNewCaseLink">
-            <span class="card-icon">CH</span>
-            <strong>新增病例</strong>
-            <small>建立 patient code、主訴、西醫診斷、中醫病名、辨證與治療目標。</small>
-          </a>
-          <a class="patient-action-card" href="#caseWorkspace" id="patientSoapLink">
-            <span class="card-icon">SO</span>
-            <strong>新增 SOAP</strong>
-            <small>每次看診記錄 S/O/A/P、用穴、手法、方藥、西藥、療效與下次計畫。</small>
-          </a>
-          <a class="patient-action-card" href="#caseWorkspace" id="patientTrackLink">
-            <span class="card-icon">TR</span>
-            <strong>療程追蹤</strong>
-            <small>追蹤疼痛量表、週期、睡眠、情緒、消化、不孕療程節點與客觀變化。</small>
-          </a>
-          <span id="billingAnchor" class="anchor-target" aria-hidden="true"></span>
-          <a class="patient-action-card" href="#billingSection">
-            <span class="card-icon">BI</span>
-            <strong>保險紀錄準備</strong>
-            <small>保留 coding-ready documentation 概念：診斷、醫療必要性、治療內容與反應。</small>
-          </a>
-        </div>
-        <div class="patient-note">
-          <strong>病歷安全原則</strong>
-          <span>目前請只輸入去識別化資料：patient code，不放完整姓名、完整生日、電話、地址、保險號碼或任何可直接辨識身分的資訊。</span>
-        </div>
-      </section>
 
 
-      <section class="billing-section" data-workspace="cases" id="billingSection" aria-label="Billing documentation workflow">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">Billing Documentation</p>
-            <h2>Insurance documentation / Coding-ready Notes</h2>
-            <p>This workspace does not submit claims. It prepares charting structure for future insurance practice: diagnosis context, medical necessity, treatment details, response, follow-up plan, and safety notes.</p>
-          </div>
-          <span class="data-pill">documentation scaffold</span>
-        </div>
-        <div class="billing-grid">
-          <article><span>SOAP</span><strong>Subjective / Objective / Assessment / Plan</strong><small>Every visit should connect treatment choices back to a chart note, not only a point list.</small></article>
-          <article><span>Diagnosis</span><strong>Western condition + TCM pattern</strong><small>Keep biomedical diagnosis, traditional disease name, and TCM pattern separate for future ICD-10 and treatment logic.</small></article>
-          <article><span>Treatment</span><strong>Points, method, time, response</strong><small>Track points, technique, retention, moxa/e-stim, patient response, and next plan.</small></article>
-          <article><span>Safety</span><strong>Privacy and red flags</strong><small>Do not publish real patient data on GitHub Pages. Real billing needs HIPAA/EHR and clinic workflow review.</small></article>
-        </div>
-      </section>
 
-      <section class="fertility-section" data-workspace="cases" id="fertilityWorkflow" aria-label="Fertility clinical workflow">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">Fertility Workflow</p>
-            <h2 data-mode-text data-bilingual="不孕症 / IVF-IUI 臨床紀錄骨架" data-english="Fertility / IVF-IUI Clinical Documentation Scaffold">不孕症 / IVF-IUI 臨床紀錄骨架</h2>
-            <p data-mode-text data-bilingual="這一層把西醫診斷、週期階段、IUI/IVF 節點、西藥、針灸、方劑、安全旗標和 SOAP note 連在一起。它是臨床紀錄與查詢工具，不取代生殖科醫囑。" data-english="This layer connects biomedical diagnoses, cycle phases, IUI/IVF milestones, medications, acupuncture, formulas, safety flags, and SOAP notes. It is a charting and lookup scaffold, not a replacement for reproductive-medicine guidance.">這一層把西醫診斷、週期階段、IUI/IVF 節點、西藥、針灸、方劑、安全旗標和 SOAP note 連在一起。它是臨床紀錄與查詢工具，不取代生殖科醫囑。</p>
-          </div>
-          <span class="data-pill">documentation scaffold</span>
-        </div>
-        <div class="fertility-workflow-grid">
-          <article class="fertility-card">
-            <span>PCOS / OI</span>
-            <strong data-mode-text data-bilingual="排卵誘導輔助紀錄" data-english="Ovulation-induction support notes">排卵誘導輔助紀錄</strong>
-            <small>Track cycle day, letrozole/clomiphene/metformin/progesterone context, ovulation signs, PCOS patterns, safety flags.</small>
-          </article>
-          <article class="fertility-card">
-            <span>IUI</span>
-            <strong data-mode-text data-bilingual="人工授精週期" data-english="IUI cycle">人工授精週期</strong>
-            <small>Track trigger timing, IUI date, luteal support, two-week wait, clinic herb/acupuncture restrictions.</small>
-          </article>
-          <article class="fertility-card">
-            <span>IVF</span>
-            <strong data-mode-text data-bilingual="促排、取卵、植入" data-english="Stimulation, retrieval, transfer">促排、取卵、植入</strong>
-            <small>Track stimulation day, monitoring notes, trigger/retrieval, transfer prep, luteal support, OHSS warning signs.</small>
-          </article>
-          <article class="fertility-card">
-            <span>Transfer</span>
-            <strong data-mode-text data-bilingual="胚胎植入 / 黃體期" data-english="Embryo transfer / luteal phase">胚胎植入 / 黃體期</strong>
-            <small>Track progesterone/estradiol/aspirin/anticoagulant context, bleeding, cramping, anxiety, sleep, pregnancy test window.</small>
-          </article>
-        </div>
-        <div class="fertility-link-grid">
-          <div><strong>Workflows</strong><span>ovulation-induction / IVF / transfer seeds</span></div>
-          <div><strong>Meds</strong><span>letrozole / clomiphene / metformin / progesterone context</span></div>
-          <div><strong>Cycle</strong><span>menses / follicular / ovulation / luteal phase vocabulary</span></div>
-          <div><strong>Safety</strong><span>pregnancy, anticoagulant, OHSS, clinic restriction, red-flag review</span></div>
-        </div>
-      </section>
 
       <section class="directory-layout" data-workspace="acu" id="acupointDirectory" aria-label="穴位資料庫" data-mode-aria-label data-bilingual-aria-label="穴位資料庫" data-english-aria-label="Acupoint directory">
         <aside class="directory-sidebar" aria-label="穴道分類" data-mode-aria-label data-bilingual-aria-label="穴道分類" data-english-aria-label="Acupoint categories">
@@ -602,7 +511,7 @@
             <p class="eyebrow">Clinical Case Notebook</p>
             <h2 data-mode-text data-bilingual="病例紀錄 / SOAP Notes" data-english="Clinical Cases / SOAP Notes">病例紀錄 / SOAP Notes</h2>
           </div>
-          <span class="data-pill" data-mode-text data-bilingual="本機去識別化紀錄" data-english="Local de-identified records">本機去識別化紀錄</span>
+          <span class="data-pill" data-mode-text data-bilingual="去識別化紀錄" data-english="De-identified records">去識別化紀錄</span>
         </div>
         <nav class="section-quicknav" aria-label="Clinical case workspace quick navigation">
           <a href="#caseToolbar">Actions</a>
@@ -610,16 +519,38 @@
           <a href="#caseDetail">Selected Case</a>
           <a href="#billingSection">Billing Scaffold</a>
         </nav>
+        <!-- 病例頁改版(2026-10-31):工具列只留每天用的兩樣(搜尋、新增病例);
+             匯入/匯出/診務回顧/新增 SOAP 收進「⋯ 更多」。所有 id 不變,既有接線與驗證器照舊找得到。 -->
         <div class="case-toolbar" id="caseToolbar">
-          <input id="caseSearch" type="search" placeholder="搜尋 patient code、case、病名、證型、用穴、方藥..." />
-          <button id="newCaseBtn" type="button" data-mode-text data-bilingual="新增病例" data-english="New case">新增病例</button>
-          <button id="newSoapBtn" class="ghost" type="button" data-mode-text data-bilingual="新增 SOAP" data-english="New SOAP">新增 SOAP</button>
+          <input id="caseSearch" type="search" autocomplete="off" placeholder="搜尋代號、病名、證型、穴位、方藥… 例:ATG、SP6 失眠(按 / 跳到這裡)" />
+          <button id="newCaseBtn" type="button" data-mode-text data-bilingual="+ 新增病例" data-english="+ New case">+ 新增病例</button>
+          <details class="case-more-menu" id="caseMoreMenu">
+            <summary aria-label="更多病例功能">⋯ 更多</summary>
+            <div class="case-more-items">
+          <button id="newSoapBtn" class="ghost" type="button" data-mode-text data-bilingual="新增 SOAP(目前選取的病例)" data-english="New SOAP (selected case)">新增 SOAP(目前選取的病例)</button>
           <button id="exportCasesBtn" class="ghost" type="button" data-mode-text data-bilingual="匯出病例" data-english="Export cases">匯出病例</button>
           <button id="practiceAuditBtn" class="ghost" type="button" aria-pressed="false" aria-controls="practiceAuditPanel" data-mode-text data-bilingual="診務回顧 Practice Audit" data-english="Practice Audit">診務回顧 Practice Audit</button>
           <label class="ghost file-label">
             <span data-mode-text data-bilingual="匯入病例" data-english="Import cases">匯入病例</span>
             <input id="importCasesFile" type="file" accept="application/json" />
           </label>
+            </div>
+          </details>
+        </div>
+        <div class="case-filters" id="caseFilters" role="group" aria-label="病人篩選">
+          <div class="case-seg" role="group" aria-label="關注度">
+            <button type="button" data-case-tier-filter="all" aria-pressed="true">全部</button>
+            <button type="button" class="tier-focus" data-case-tier-filter="focus" aria-pressed="false">重點</button>
+            <button type="button" class="tier-complex" data-case-tier-filter="complex" aria-pressed="false">疑難</button>
+            <button type="button" class="tier-routine" data-case-tier-filter="routine" aria-pressed="false">一般</button>
+          </div>
+          <select id="caseIcpcFilter" aria-label="系統分類"><option value="">全部系統</option></select>
+          <select id="caseClinicFilter" aria-label="看診地點"><option value="all">兩邊診所</option><option value="bastyr">Bastyr</option><option value="external">外部診所</option></select>
+          <select id="caseStatusFilter" aria-label="病例狀態"><option value="all">全部狀態</option><option value="active">治療中 active</option><option value="paused">暫停 paused</option><option value="closed">結案 closed</option></select>
+          <select id="caseRecentFilter" aria-label="最近就診"><option value="">不限時間</option><option value="30">30 天內有就診</option><option value="90">90 天內有就診</option></select>
+          <label class="case-chip"><input type="checkbox" id="caseFlagFilter" /> ⚑ 有紅旗</label>
+          <label class="case-chip case-chip-gold"><input type="checkbox" id="caseUndatedFilter" /> 日期未填</label>
+          <label class="case-sort">排序 <select id="caseSortSelect"><option value="tier">重點優先</option><option value="recent">最近就診</option><option value="code">代號</option><option value="visits">就診次數</option></select></label>
         </div>
         <!-- Dry Clinic #7 續：病歷綁定開啟網址，file:// / localhost / 部署網址是三個
              互不相通的資料庫。永遠顯示「我現在在哪一個」，讓開錯書籤在存進第一筆
@@ -639,7 +570,103 @@
           </aside>
           <section class="case-detail-panel" id="caseDetail"></section>
         </div>
-        <p class="note" data-mode-text data-bilingual="病例紀錄目前存於此瀏覽器本機。請使用 patient_code，避免輸入完整姓名、完整生日、電話、地址、保險資料等直接識別資訊。" data-english="Clinical case records are currently stored locally in this browser. Use patient_code and avoid full names, full birth dates, phone numbers, addresses, insurance details, or other directly identifying information.">病例紀錄目前存於此瀏覽器本機。請使用 patient_code，避免輸入完整姓名、完整生日、電話、地址、保險資料等直接識別資訊。</p>
+        <p class="note" data-mode-text data-bilingual="病例存在這個網址綁定的病例資料庫(正式網站是雲端 D1,手機與電腦同一份;左下角徽章顯示目前用的是哪一個)。請使用病人代號,避免輸入完整姓名、完整生日、電話、地址、保險資料等直接識別資訊。" data-english="Cases are stored in the case database bound to this URL (the production site uses cloud D1, shared by phone and computer; the badge at the bottom left shows which one is active). Use a patient code and avoid full names, full birth dates, phone numbers, addresses, insurance details, or other directly identifying information.">病例存在這個網址綁定的病例資料庫(正式網站是雲端 D1,手機與電腦同一份;左下角徽章顯示目前用的是哪一個)。請使用病人代號,避免輸入完整姓名、完整生日、電話、地址、保險資料等直接識別資訊。</p>
+      </section>
+
+      <!-- 病例頁改版(2026-10-31):這兩段介紹原本排在病例工作區前面,一進病例頁要捲過兩個畫面
+           才看得到病人列表。內容原封不動,只搬到工作區後面。 -->
+      <section class="patient-system" data-workspace="cases" id="patientSystem" aria-label="我的病歷系統">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Patient Record System</p>
+            <h2>我的病歷系統 / Clinical Charting</h2>
+            <p>這一區是你未來臨床每天會用的入口：先用去識別化 patient code 建病例，再用 SOAP note 追蹤每次治療、用針、方藥、頻率、變化與保險文件需要的紀錄。</p>
+          </div>
+          <span class="data-pill">私用病例資料</span>
+        </div>
+        <div class="patient-action-grid">
+          <a class="patient-action-card" href="#caseWorkspace" id="patientNewCaseLink">
+            <span class="card-icon">CH</span>
+            <strong>新增病例</strong>
+            <small>建立 patient code、主訴、西醫診斷、中醫病名、辨證與治療目標。</small>
+          </a>
+          <a class="patient-action-card" href="#caseWorkspace" id="patientSoapLink">
+            <span class="card-icon">SO</span>
+            <strong>新增 SOAP</strong>
+            <small>每次看診記錄 S/O/A/P、用穴、手法、方藥、西藥、療效與下次計畫。</small>
+          </a>
+          <a class="patient-action-card" href="#caseWorkspace" id="patientTrackLink">
+            <span class="card-icon">TR</span>
+            <strong>療程追蹤</strong>
+            <small>追蹤疼痛量表、週期、睡眠、情緒、消化、不孕療程節點與客觀變化。</small>
+          </a>
+          <span id="billingAnchor" class="anchor-target" aria-hidden="true"></span>
+          <a class="patient-action-card" href="#billingSection">
+            <span class="card-icon">BI</span>
+            <strong>保險紀錄準備</strong>
+            <small>保留 coding-ready documentation 概念：診斷、醫療必要性、治療內容與反應。</small>
+          </a>
+        </div>
+        <div class="patient-note">
+          <strong>病歷安全原則</strong>
+          <span>目前請只輸入去識別化資料：patient code，不放完整姓名、完整生日、電話、地址、保險號碼或任何可直接辨識身分的資訊。</span>
+        </div>
+      </section>
+
+      <section class="billing-section" data-workspace="cases" id="billingSection" aria-label="Billing documentation workflow">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Billing Documentation</p>
+            <h2>Insurance documentation / Coding-ready Notes</h2>
+            <p>This workspace does not submit claims. It prepares charting structure for future insurance practice: diagnosis context, medical necessity, treatment details, response, follow-up plan, and safety notes.</p>
+          </div>
+          <span class="data-pill">documentation scaffold</span>
+        </div>
+        <div class="billing-grid">
+          <article><span>SOAP</span><strong>Subjective / Objective / Assessment / Plan</strong><small>Every visit should connect treatment choices back to a chart note, not only a point list.</small></article>
+          <article><span>Diagnosis</span><strong>Western condition + TCM pattern</strong><small>Keep biomedical diagnosis, traditional disease name, and TCM pattern separate for future ICD-10 and treatment logic.</small></article>
+          <article><span>Treatment</span><strong>Points, method, time, response</strong><small>Track points, technique, retention, moxa/e-stim, patient response, and next plan.</small></article>
+          <article><span>Safety</span><strong>Privacy and red flags</strong><small>Do not publish real patient data on GitHub Pages. Real billing needs HIPAA/EHR and clinic workflow review.</small></article>
+        </div>
+      </section>
+
+      <section class="fertility-section" data-workspace="cases" id="fertilityWorkflow" aria-label="Fertility clinical workflow">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Fertility Workflow</p>
+            <h2 data-mode-text data-bilingual="不孕症 / IVF-IUI 臨床紀錄骨架" data-english="Fertility / IVF-IUI Clinical Documentation Scaffold">不孕症 / IVF-IUI 臨床紀錄骨架</h2>
+            <p data-mode-text data-bilingual="這一層把西醫診斷、週期階段、IUI/IVF 節點、西藥、針灸、方劑、安全旗標和 SOAP note 連在一起。它是臨床紀錄與查詢工具，不取代生殖科醫囑。" data-english="This layer connects biomedical diagnoses, cycle phases, IUI/IVF milestones, medications, acupuncture, formulas, safety flags, and SOAP notes. It is a charting and lookup scaffold, not a replacement for reproductive-medicine guidance.">這一層把西醫診斷、週期階段、IUI/IVF 節點、西藥、針灸、方劑、安全旗標和 SOAP note 連在一起。它是臨床紀錄與查詢工具，不取代生殖科醫囑。</p>
+          </div>
+          <span class="data-pill">documentation scaffold</span>
+        </div>
+        <div class="fertility-workflow-grid">
+          <article class="fertility-card">
+            <span>PCOS / OI</span>
+            <strong data-mode-text data-bilingual="排卵誘導輔助紀錄" data-english="Ovulation-induction support notes">排卵誘導輔助紀錄</strong>
+            <small>Track cycle day, letrozole/clomiphene/metformin/progesterone context, ovulation signs, PCOS patterns, safety flags.</small>
+          </article>
+          <article class="fertility-card">
+            <span>IUI</span>
+            <strong data-mode-text data-bilingual="人工授精週期" data-english="IUI cycle">人工授精週期</strong>
+            <small>Track trigger timing, IUI date, luteal support, two-week wait, clinic herb/acupuncture restrictions.</small>
+          </article>
+          <article class="fertility-card">
+            <span>IVF</span>
+            <strong data-mode-text data-bilingual="促排、取卵、植入" data-english="Stimulation, retrieval, transfer">促排、取卵、植入</strong>
+            <small>Track stimulation day, monitoring notes, trigger/retrieval, transfer prep, luteal support, OHSS warning signs.</small>
+          </article>
+          <article class="fertility-card">
+            <span>Transfer</span>
+            <strong data-mode-text data-bilingual="胚胎植入 / 黃體期" data-english="Embryo transfer / luteal phase">胚胎植入 / 黃體期</strong>
+            <small>Track progesterone/estradiol/aspirin/anticoagulant context, bleeding, cramping, anxiety, sleep, pregnancy test window.</small>
+          </article>
+        </div>
+        <div class="fertility-link-grid">
+          <div><strong>Workflows</strong><span>ovulation-induction / IVF / transfer seeds</span></div>
+          <div><strong>Meds</strong><span>letrozole / clomiphene / metformin / progesterone context</span></div>
+          <div><strong>Cycle</strong><span>menses / follicular / ovulation / luteal phase vocabulary</span></div>
+          <div><strong>Safety</strong><span>pregnancy, anticoagulant, OHSS, clinic restriction, red-flag review</span></div>
+        </div>
       </section>
 
       <!-- Patient Longitudinal Workspace W1 (docs/PATIENT_WORKSPACE_DESIGN_v1.md).
@@ -740,7 +767,7 @@
         <div class="form-grid">
           <fieldset class="form-section" data-nav-label="身分">
             <legend><span class="form-section-step">1</span>身分 Identity</legend>
-            <label>Patient code<input name="patientCode" required placeholder="P-2026-001" /></label>
+            <label>病人代號 Patient code<input name="patientCode" required placeholder="ATG-1984F" autocomplete="off" /><small id="patientCodeHint" class="field-hint">格式:族裔字母 + 姓名縮寫 - 出生年 + 性別,例 ATG-1984F(A 亞洲 / B 黑人 / W 白人 / M 墨西哥)</small></label>
             <label>病例標題 Case title<input name="caseTitle" required placeholder="PCOS fertility support" /></label>
             <label>分類快選 Category quick-pick<select id="caseCategoryQuick"><option value="">—</option><option value="fertility">Fertility 生殖/助孕</option><option value="pain">Pain 疼痛</option><option value="digestive">Digestive 消化</option><option value="sleep">Sleep 睡眠</option><option value="stress_mood">Stress / mood 壓力/情緒</option><option value="respiratory">Respiratory 呼吸系統</option><option value="gynecology">Gynecology 婦科</option><option value="dermatology">Dermatology 皮膚</option><option value="internal_medicine">Internal medicine 內科</option><option value="general">General 一般</option><option value="__other__">Other / custom 其他</option></select></label>
             <label>分類 Category<input name="caseCategory" placeholder="fertility / pain / internal medicine" /></label>
@@ -748,9 +775,26 @@
             <label>開始日期<input name="startDate" type="date" /></label>
           </fieldset>
 
+          <!-- 病例頁改版(2026-10-31):三層標籤 + 看診地點。全部選填;空 = 未設定,
+               列表排在「一般」那層但不顯示徽章。選項由 app.js 從 js/case-search.js 的詞彙表長出來。 -->
+          <fieldset class="form-section" data-nav-label="標籤">
+            <legend><span class="form-section-step">·</span>標籤 Tags<small>列表上的顏色與篩選;隨時可以改</small></legend>
+            <label>關注度 Attention<select name="attentionTier" id="caseAttentionTier"></select></label>
+            <label>看診地點 Clinic<select name="clinicSite" id="caseClinicSite"></select></label>
+            <div class="wide">
+              <p class="race-ethnicity-title">系統分類 Body system — ICPC-2 章節,可複選</p>
+              <div id="caseIcpcOptions" class="checkbox-group tag-checkbox-group" role="group" aria-label="ICPC-2 chapters"></div>
+            </div>
+            <div class="wide">
+              <p class="race-ethnicity-title">照護情境 Care context — 可複選</p>
+              <div id="caseContextOptions" class="checkbox-group tag-checkbox-group" role="group" aria-label="Care contexts"></div>
+            </div>
+          </fieldset>
+
           <fieldset class="form-section" data-nav-label="背景">
             <legend><span class="form-section-step">2</span>背景 Background<small>穩定不變的底子，通常只填一次</small></legend>
             <label>出生年月 Birth (year-month)<input name="birthYearMonth" type="month" min="1900-01" max="2100-12" /></label>
+            <label>出生年 Birth year<small>只知道年份時填這格;有年月時以年月為準</small><input name="birthYear" type="number" min="1900" max="2100" step="1" inputmode="numeric" /></label>
             <label>出生時性別 Sex at birth<select name="sex"><option value="">—</option><option value="F">F 女</option><option value="M">M 男</option><option value="Other">Other</option></select></label>
             <label>性別認同 Gender identity（選填 optional）<select name="genderIdentity"><option value="">—</option><option value="woman">Woman 女性</option><option value="man">Man 男性</option><option value="nonbinary">Non-binary</option><option value="other">Other</option><option value="unknown">Unknown 不確定</option><option value="prefer_not_to_answer">Prefer not to answer 不願回答</option></select></label>
             <label>職業 Occupation<input name="occupation" placeholder="選填" /></label>
@@ -874,13 +918,13 @@
           <fieldset class="form-section soap-s" data-nav-label="S 主觀">
             <legend><span class="form-section-step">S</span>Subjective 主觀<small>病人說的</small></legend>
             <button type="button" class="ghost wide" id="pastePrevisitBtn" data-mode-text data-bilingual="貼上診前資料" data-english="Paste pre-visit intake">貼上診前資料 Paste pre-visit intake</button>
-            <label class="wide soap-section">S - Subjective<textarea name="subjective" rows="5" placeholder="主訴、變化、疼痛、睡眠、情緒、消化、月經/不孕、西藥更新、red flags"></textarea></label>
+            <label class="wide soap-section">S 主觀 Subjective — 病人怎麼說<textarea name="subjective" rows="5" placeholder="主訴、變化、疼痛、睡眠、情緒、消化、月經/不孕、西藥更新、red flags"></textarea></label>
             <label class="wide">Symptom links<textarea name="symptomLinks" rows="2" placeholder="sym.headache, sym.insomnia"></textarea></label>
           </fieldset>
 
           <fieldset class="form-section soap-o" data-nav-label="O 客觀">
             <legend><span class="form-section-step">O</span>Objective 客觀<small>你看到、摸到的</small></legend>
-            <label class="wide soap-section">O - Objective 望聞切<textarea name="objective" rows="3" placeholder="神色形態、望診、觸診、ROM、生命徵象、labs/imaging"></textarea></label>
+            <label class="wide soap-section">O 客觀 Objective — 望聞切<textarea name="objective" rows="3" placeholder="神色形態、望診、觸診、ROM、生命徵象、labs/imaging"></textarea></label>
             <label>舌質 Tongue body<input name="tongueBody" placeholder="淡紅 / 紅 / 淡白 / 紫暗；胖大 / 齒痕 / 裂紋" /></label>
             <label>舌苔 Tongue coating<input name="tongueCoating" placeholder="薄白 / 黃膩 / 少苔 / 無苔" /></label>
             <label class="wide">脈象 Pulse<input name="pulse" placeholder="浮沉遲數 / 弦滑細澀…（可分左右寸關尺）" /></label>
@@ -889,7 +933,7 @@
 
           <fieldset class="form-section soap-a" data-nav-label="A 辨證">
             <legend><span class="form-section-step">A</span>Assessment 辨證<small>四診合參與連結</small></legend>
-            <label class="wide soap-section">A - Assessment 辨證<textarea name="assessment" rows="2" placeholder="四診合參、西醫診斷、安全判斷"></textarea></label>
+            <label class="wide soap-section">A 評估 Assessment — 辨證<textarea name="assessment" rows="2" placeholder="四診合參、西醫診斷、安全判斷"></textarea></label>
             <label class="wide">主證型 Primary TCM pattern<small>搜尋選擇「一個」主證型 search, pick ONE</small><textarea name="tcmPatternPrimary" rows="1" placeholder="搜尋主證型…"></textarea></label>
             <label class="wide">次證型 Secondary TCM pattern(s)<small>可複選 select zero or more</small><textarea name="tcmPatternSecondary" rows="2" placeholder="搜尋次證型，可複選…"></textarea></label>
             <label class="wide">證型/病機記錄 TCM diagnosis notes<small>自由文字，沿用既有欄位、保留舊病歷內容 free text — same field as before, legacy content preserved</small><textarea name="tcmPattern" rows="2" placeholder="肝鬱脾虛、腎陰虛…（辨證脈絡、細節、舊資料）"></textarea></label>
@@ -901,7 +945,7 @@
 
           <fieldset class="form-section soap-p" data-nav-label="P 治法">
             <legend><span class="form-section-step">P</span>Plan 治法處方<small>這次做了什麼、交代什麼</small></legend>
-            <label class="wide soap-section">P - Plan 治法處方<textarea name="plan" rows="3" placeholder="整體治療計畫、homecare"></textarea></label>
+            <label class="wide soap-section">P 計畫 Plan — 治法處方<textarea name="plan" rows="3" placeholder="整體治療計畫、homecare"></textarea></label>
             <label class="wide">治法 Treatment principle<input name="treatmentPrinciple" placeholder="疏肝健脾、滋陰降火…" /></label>
             <label class="wide">用穴 Acupuncture points<textarea name="pointsUsed" rows="2" placeholder="SP6 bilateral, ST36 bilateral, LR3 bilateral"></textarea></label>
             <label class="wide">Acupoint record links<textarea name="acupointLinks" rows="2" placeholder="SP6, ST36, LR3, CV4"></textarea></label>
@@ -1186,6 +1230,7 @@
     <script defer src="js/previsit-validator.js"></script>
     <script defer src="js/practice-audit.js"></script>
     <script defer src="js/care-draft.js"></script>
+    <script defer src="js/case-search.js"></script>
     <script defer src="app.js"></script>
     <script defer src="js/router.js"></script>
     <script defer src="js/knowledge.js"></script>    <script type="module">

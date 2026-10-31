@@ -29,7 +29,7 @@
  *   node scripts/export-clinical-to-sqlite.js --self-test
  *
  * `--into`(2026-09-01,遷移日加的):不砍檔、不建新檔,而是在**既有的** .db 裡
- * 把 schema.sql 的 29 張投影表整組 DROP 再重建。給 clinical-sqlite-service.js
+ * 把 schema.sql 的 31 張投影表整組 DROP 再重建。給 clinical-sqlite-service.js
  * 用 —— 那個檔案裡還有 clinical_kv(病例信封正本),這支只准碰 schema.sql
  * 列名的表,其餘一律不動。整個重建在單一交易裡,中途失敗就整組回滾,
  * 上一版投影原樣留著。
@@ -219,6 +219,8 @@ const HANDLERS = {
   "case.safetyFlags": () => true,
   "case.raceEthnicity": () => true,
   "case.previousTreatment": () => true,
+  "case.icpcChapters": () => true,          // D34:explodeCase → case_icpc_chapters
+  "case.careContexts": () => true,          // D34:explodeCase → case_care_contexts
   "soap.acupointLinks": () => true,
   "soap.retentionMinutes": () => true,
   "soap.technique": () => true,
@@ -393,6 +395,8 @@ for (const c of cases) {
   explodeCase("case_safety_flags", c.safetyFlags, "flag_type");
   explodeCase("case_race_ethnicity", c.raceEthnicity, "race_ethnicity_id");
   explodeCase("case_previous_treatment", c.previousTreatment, "treatment_type");
+  explodeCase("case_icpc_chapters", c.icpcChapters, "icpc_chapter");
+  explodeCase("case_care_contexts", c.careContexts, "care_context");
   explodeObjects("case_agent_exposures", c.agentExposures, "case_id", S(c.id), "agentexp");
   explodeObjects("case_environmental_exposures", c.environmentalExposures, "case_id", S(c.id), "envexp");
 
@@ -539,7 +543,7 @@ db.exec("COMMIT;");   // 先提交再量檔案大小,否則 fresh 模式印出 0
 const total = [...counts.values()].reduce((a, b) => a + b, 0);
 console.log(`\n合計 ${total} 列,寫在 ${counts.size} 張表。檔案 ${(fs.statSync(outFile).size / 1024).toFixed(0)} KB`);
 console.log(`\n⚠️  ${outFile} 是臨床資料,絕對不可 commit(D7)。`);
-if (INTO) console.log("    這 29 張是查詢用的投影表,由 clinical-sqlite-service.js 在每次存檔後重建;正本是同一個檔案裡的 clinical_kv。");
+if (INTO) console.log("    這 31 張是查詢用的投影表,由 clinical-sqlite-service.js 在每次存檔後重建;正本是同一個檔案裡的 clinical_kv。");
 else console.log("    localStorage 仍是唯一正本;不要這份副本時直接刪檔,app 完全不受影響。");
 
 db.close();

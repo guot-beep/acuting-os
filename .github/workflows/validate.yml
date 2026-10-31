@@ -335,6 +335,10 @@ jobs:
       # 改名/新增同名卡會讓它們紅,所以放在 D1 部署閘門與 CARE 草稿 PHI 閘門之後,紅了不擋安全層(審查 M5)。
       - name: unified search ranking contract (seed queries, real data)
         run: node scripts/test-unified-search.js
+      # 病例頁改版(2026-10-31):病人分組 / 身分欄優先的兩組搜尋 / 關注度·ICPC-2·診所篩選 / ATG-1984F 代號解析。
+      # 虛構病例真值表,測 js/case-search.js 真正在跑的那份(require,不複製邏輯)。
+      - name: case search contract (patient grouping, two-bucket search, tag filters)
+        run: node scripts/validate-case-search.js
       - name: quality panel honesty (live counts, snapshot dates, {} is not content)
         run: node scripts/test-quality-panel-honesty.js
 

@@ -7,7 +7,7 @@
  *   T3 兩個分頁:過期分頁的寫入 409、被拒內容進 conflict-backup、refresh 後看到對方;
  *      store 自己那層樂觀鎖在 SQLite backend 上照樣觸發
  *   T4 history:每次覆寫前的舊值都在;每個 key 最多留 200 筆
- *   T5 投影:存檔後 29 張表重建、正本位元組不變;halt 情境下正本照存、投影狀態 !ok、
+ *   T5 投影:存檔後 31 張表重建、正本位元組不變;halt 情境下正本照存、投影狀態 !ok、
  *      上一版投影完好(投影失敗不擋臨床存檔)
  *   T6 真 HTTP:ping / PUT / GET 逐位元組 / 409 / 靜態 index.html / 路徑穿越 / Host 檢查
  *   T7 非 loopback 不探測(線上版一個請求都不發);SPA fallback 的 200 不算服務
@@ -183,7 +183,7 @@ function runContract(b) {
     A.removeKey("k.hist"); A.removeKey("k.prune");
   }
 
-  console.log("\nT5 投影(29 張表)");
+  console.log("\nT5 投影(31 張表)");
   {
     S.load();
     S.save(FIXTURE);
@@ -201,8 +201,8 @@ function runContract(b) {
     assert.strictEqual(svc.store.get(KEYS.STORAGE), bytes, "投影重建不得動到正本");
     ok("重建投影後正本位元組不變");
     const tables = svc.db.prepare("SELECT COUNT(*) n FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%' AND name NOT LIKE 'clinical_%'").get().n;
-    assert.strictEqual(tables, 29, `投影表應 29 張,實際 ${tables}`);
-    ok("schema.sql 的 29 張表都在,與 clinical_* 三張並存");
+    assert.strictEqual(tables, 31, `投影表應 31 張,實際 ${tables}`);
+    ok("schema.sql 的 31 張表都在(D34 加 case_icpc_chapters、case_care_contexts),與 clinical_* 三張並存");
 
     // halt-not-drop:currentMeds 是 no_destination_yet
     const halting = FIXTURE.map((c) => ({ ...c, currentMeds: "aspirin 100mg" }));

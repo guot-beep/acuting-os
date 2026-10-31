@@ -117,6 +117,11 @@ CREATE TABLE IF NOT EXISTS cases (
   -- treatment consent, which is outside this system's scope.
   publication_consent TEXT CHECK (publication_consent IS NULL OR publication_consent IN ('granted','declined','pending')),
   publication_consent_date TEXT,
+  -- 病例頁改版(2026-10-31,DECISIONS D34)。關注度是工作流程標記(重點/疑難/一般),
+  -- 不是臨床分級;NULL = 未設定(app 存 "",exporter 的 S() 轉 NULL),從不推斷成 routine。
+  attention_tier TEXT CHECK (attention_tier IS NULL OR attention_tier IN ('focus','complex','routine')),
+  attention_since TEXT,
+  clinic_site TEXT CHECK (clinic_site IS NULL OR clinic_site IN ('bastyr','external')),
   FOREIGN KEY (patient_id) REFERENCES patients(id)
 );
 
@@ -143,6 +148,23 @@ CREATE TABLE IF NOT EXISTS case_previous_treatment (
   case_id TEXT NOT NULL,
   treatment_type TEXT NOT NULL,
   PRIMARY KEY (case_id, treatment_type),
+  FOREIGN KEY (case_id) REFERENCES cases(id)
+);
+
+-- D34(2026-10-31):ICPC-2(WONCA)章節字母,一個病例可複選。詞彙表在 js/case-search.js。
+-- 與 case_race_ethnicity 同形:一列一個選取值。
+CREATE TABLE IF NOT EXISTS case_icpc_chapters (
+  case_id TEXT NOT NULL,
+  icpc_chapter TEXT NOT NULL CHECK (icpc_chapter IN ('A','B','D','F','H','K','L','N','P','R','S','T','U','W','X','Y','Z')),
+  PRIMARY KEY (case_id, icpc_chapter),
+  FOREIGN KEY (case_id) REFERENCES cases(id)
+);
+
+-- D34:跨系統的照護情境(腫瘤整合照護、備孕/IVF、妊娠、慢性疼痛、兒童、高齡/多重用藥)。
+CREATE TABLE IF NOT EXISTS case_care_contexts (
+  case_id TEXT NOT NULL,
+  care_context TEXT NOT NULL,
+  PRIMARY KEY (case_id, care_context),
   FOREIGN KEY (case_id) REFERENCES cases(id)
 );
 

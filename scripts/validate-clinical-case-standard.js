@@ -71,6 +71,9 @@ const DATE_FIELDS = new Set([
   // the camelCase twin of start_date above — added 2026-09-06 when the fixture
   // first carried a real case.startDate value.
   'visitDate', 'resolvedDate', 'createdAt', 'updatedAt', 'startDate',
+  // attentionSince = 設成目前關注度(重點/疑難/一般)的那天,app 自己蓋的時間戳
+  // (setCaseAttentionTier / saveCaseFromForm 用 localDateISO())—— 2026-10-31 病例頁改版加入。
+  'attentionSince',
 ]);
 
 /* Matched against the FIELD the string sits in, never the whole path. Matching

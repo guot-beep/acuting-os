@@ -1,7 +1,7 @@
 {
   "note": "D12 臨床資料契約凍結基準。additive-only:欄位可加,不准改名/改型別/移除。",
   "frozen_at": "2026-08-27",
-  "updated_at": "2026-09-06",
+  "updated_at": "2026-10-31",
   "rebaseline_history": [],
   "schema": {
     "patients": {
@@ -40,7 +40,10 @@
       "race_ethnicity_detail": "TEXT",
       "allergy_status": "TEXT",
       "publication_consent": "TEXT",
-      "publication_consent_date": "TEXT"
+      "publication_consent_date": "TEXT",
+      "attention_tier": "TEXT",
+      "attention_since": "TEXT",
+      "clinic_site": "TEXT"
     },
     "case_race_ethnicity": {
       "case_id": "TEXT",
@@ -49,6 +52,14 @@
     "case_previous_treatment": {
       "case_id": "TEXT",
       "treatment_type": "TEXT"
+    },
+    "case_icpc_chapters": {
+      "case_id": "TEXT",
+      "icpc_chapter": "TEXT"
+    },
+    "case_care_contexts": {
+      "case_id": "TEXT",
+      "care_context": "TEXT"
     },
     "case_intake_baseline": {
       "id": "TEXT",
@@ -459,6 +470,11 @@
         "previousTreatmentNotes": "string",
         "baselineSeverity": "number",
         "goals": "string",
+        "attentionTier": "string",
+        "attentionSince": "string",
+        "icpcChapters": "array",
+        "careContexts": "array",
+        "clinicSite": "string",
         "chiefComplaint": "string",
         "historyPresent": "string",
         "pastHistory": "string",
@@ -588,6 +604,11 @@
         "baselineSeverity": "string",
         "occupation": "string",
         "goals": "string",
+        "attentionTier": "string",
+        "attentionSince": "string",
+        "icpcChapters": "array",
+        "careContexts": "array",
+        "clinicSite": "string",
         "publicationConsent": "string",
         "publicationConsentDate": "string",
         "chiefComplaint": "string",
@@ -778,6 +799,8 @@
     "classify": {
       "case.raceEthnicity": "scalar_array",
       "case.previousTreatment": "scalar_array",
+      "case.icpcChapters": "scalar_array",
+      "case.careContexts": "scalar_array",
       "case.westernConditions": "scalar_array",
       "case.easternDiseases": "scalar_array",
       "case.tcmPatterns": "scalar_array",

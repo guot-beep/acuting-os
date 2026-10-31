@@ -8122,3 +8122,103 @@ html { scroll-padding-top: 92px; }
     font-size: 0.75rem;
   }
 }
+
+/* ===== 病例頁改版(2026-10-31):病人列表 / 篩選 / 標籤 =====
+   關注度只有這一層用強色(列表左側色條);系統章節與照護情境用中性徽章,避免顏色過載。 */
+:root {
+  --tier-focus: #b07a1f;
+  --tier-focus-soft: #f8ecd2;
+  --tier-complex: #7d4a72;
+  --tier-complex-soft: #f1e4ee;
+  --tier-routine: #8c9a76;
+  --tier-routine-soft: #eef0e2;
+}
+.case-toolbar { flex-wrap: wrap; align-items: center; }
+.case-toolbar input#caseSearch { min-width: 220px; font-size: 1rem; }
+.case-more-menu { position: relative; }
+.case-more-menu > summary {
+  list-style: none; cursor: pointer; border: 1px solid var(--line); border-radius: 8px;
+  padding: 0.5rem 0.85rem; background: var(--panel); font-weight: 600; white-space: nowrap;
+}
+.case-more-menu > summary::-webkit-details-marker { display: none; }
+.case-more-menu[open] > summary { border-color: var(--gold); }
+.case-more-items {
+  position: absolute; right: 0; top: calc(100% + 6px); z-index: 30; display: grid; gap: 0.35rem;
+  min-width: 240px; padding: 0.5rem; background: var(--panel); border: 1px solid var(--line);
+  border-radius: 10px; box-shadow: var(--shadow);
+}
+.case-more-items > button, .case-more-items > label { width: 100%; text-align: left; justify-content: flex-start; }
+
+.case-filters { display: flex; flex-wrap: wrap; gap: 0.5rem 0.75rem; align-items: center; margin: -0.25rem 0 0.85rem; font-size: 0.86rem; }
+.case-filters select { border: 1px solid var(--line); border-radius: 8px; background: var(--panel); padding: 0.3rem 0.5rem; font-size: 0.86rem; }
+.case-seg { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; background: var(--panel); }
+.case-seg button { border: 0; border-radius: 0; background: none; padding: 0.3rem 0.8rem; color: var(--muted); font-weight: 600; box-shadow: none; }
+.case-seg button[aria-pressed="true"] { background: var(--nav-bg); color: var(--nav-ink); }
+.case-seg button.tier-focus[aria-pressed="true"] { background: var(--tier-focus); color: #fff; }
+.case-seg button.tier-complex[aria-pressed="true"] { background: var(--tier-complex); color: #fff; }
+.case-seg button.tier-routine[aria-pressed="true"] { background: var(--tier-routine); color: #fff; }
+.case-chip { display: inline-flex; gap: 0.3rem; align-items: center; border: 1px solid var(--line); border-radius: 999px; padding: 0.2rem 0.7rem; background: var(--panel); color: var(--muted); cursor: pointer; }
+.case-chip:has(input:checked) { border-color: var(--warn); color: var(--warn); background: #f7e6df; }
+.case-chip-gold:has(input:checked) { border-color: var(--gold); color: #8a6630; background: var(--tier-focus-soft); }
+.case-sort { margin-left: auto; color: var(--muted); display: inline-flex; gap: 0.35rem; align-items: center; }
+
+.patient-group-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.06em; color: #8a6630; padding: 0.35rem 0.2rem 0; }
+.case-list-item.patient-row {
+  grid-template-columns: minmax(0, 1fr) auto; gap: 0.15rem 0.6rem; padding: 0.6rem 0.7rem 0.6rem 0.95rem;
+  box-shadow: inset 5px 0 0 var(--row-tier, transparent);
+}
+.patient-row.tier-focus { --row-tier: var(--tier-focus); }
+.patient-row.tier-complex { --row-tier: var(--tier-complex); }
+.patient-row.tier-routine { --row-tier: var(--tier-routine); }
+.case-list-item.patient-row span { font-weight: 500; color: var(--ink); font-size: 0.8rem; }
+.patient-row .patient-row-who { display: flex; gap: 0.4rem; align-items: baseline; min-width: 0; }
+.case-list-item.patient-row .patient-row-code { font-family: ui-monospace, Consolas, monospace; font-weight: 700; color: var(--accent-dark); font-size: 0.88rem; }
+.case-list-item.patient-row .patient-row-flag { color: var(--warn); font-weight: 800; }
+.case-list-item.patient-row .patient-row-when { color: var(--muted); text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; font-size: 0.75rem; }
+.case-list-item.patient-row .patient-row-when.undated, .case-list-item.patient-row .undated { color: #8a6630; }
+.patient-row .patient-row-title { grid-column: 1 / -1; font-size: 0.92rem; }
+.case-list-item.patient-row .patient-row-cc { grid-column: 1 / -1; color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.patient-row .patient-row-tags { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 0.25rem; margin-top: 0.15rem; }
+.case-list-item.patient-row .patient-row-hit { grid-column: 1 / -1; background: var(--paper); border-radius: 6px; padding: 0.2rem 0.45rem; margin-top: 0.2rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.patient-row .patient-row-hit em { font-style: normal; font-weight: 700; color: #8a6630; margin-right: 0.35rem; }
+.patient-row mark, .case-detail-panel mark { background: #f3dfa9; color: inherit; border-radius: 2px; padding: 0 1px; }
+
+.case-tier { font-size: 0.72rem; font-weight: 700; border-radius: 999px; padding: 0 0.5rem; white-space: nowrap; }
+.case-list-item.patient-row .case-tier-focus, .case-tier-focus { background: var(--tier-focus-soft); color: var(--tier-focus); }
+.case-list-item.patient-row .case-tier-complex, .case-tier-complex { background: var(--tier-complex-soft); color: var(--tier-complex); }
+.case-icpc, .case-context, .case-clinic, .case-status-pill { font-size: 0.72rem; border-radius: 6px; padding: 0 0.4rem; white-space: nowrap; }
+.case-list-item.patient-row .case-icpc, .case-icpc { border: 1px solid var(--line); color: var(--muted); }
+.case-icpc b, .icpc-letter { font-family: ui-monospace, Consolas, monospace; color: var(--ink); margin-right: 0.2rem; }
+.case-list-item.patient-row .case-context, .case-context { border: 1px dashed #cdbfa5; color: var(--ink); background: var(--paper); }
+.case-list-item.patient-row .case-clinic, .case-clinic { background: var(--green-soft); color: var(--accent-dark); }
+.case-list-item.patient-row .case-status-pill, .case-status-pill { border: 1px solid var(--line); color: var(--muted); }
+
+.case-sibling-tabs { display: flex; flex-wrap: wrap; gap: 0.35rem; margin: 0.25rem 0 0.6rem; }
+.case-sibling-tabs button { display: grid; text-align: left; border: 1px solid var(--line); background: var(--panel); border-radius: 8px; padding: 0.35rem 0.7rem; color: var(--muted); box-shadow: none; }
+.case-sibling-tabs button small { font-size: 0.72rem; font-weight: 400; }
+.case-sibling-tabs button[aria-selected="true"] { border-color: var(--gold); background: var(--tier-focus-soft); color: var(--ink); font-weight: 700; }
+.case-tag-bar { display: grid; gap: 0.45rem; background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 0.6rem 0.75rem; margin: 0 0 0.85rem; font-size: 0.85rem; }
+.case-tag-line { display: flex; flex-wrap: wrap; gap: 0.35rem; align-items: center; }
+.case-tag-key { color: var(--muted); min-width: 3.4rem; font-size: 0.8rem; }
+.case-tag-key-inline { margin-left: 0.6rem; min-width: 0; }
+.case-tag-empty { color: var(--muted); font-size: 0.8rem; }
+.case-tier-pick { display: inline-flex; gap: 0.3rem; }
+.case-tier-btn { border: 1px solid var(--line); background: var(--panel); border-radius: 999px; padding: 0.15rem 0.75rem; color: var(--muted); font-size: 0.82rem; box-shadow: none; }
+.case-tier-btn.tier-focus[aria-pressed="true"] { background: var(--tier-focus); border-color: var(--tier-focus); color: #fff; }
+.case-tier-btn.tier-complex[aria-pressed="true"] { background: var(--tier-complex); border-color: var(--tier-complex); color: #fff; }
+.case-tier-btn.tier-routine[aria-pressed="true"] { background: var(--tier-routine); border-color: var(--tier-routine); color: #fff; }
+.case-tag-nudge { color: var(--tier-focus); font-size: 0.8rem; font-weight: 600; }
+.case-tag-since { color: var(--muted); font-size: 0.78rem; }
+.case-tag-edit { margin-left: auto; font-size: 0.8rem; padding: 0.15rem 0.6rem; }
+.soap-block .soap-block-sub { font-family: var(--sans); font-weight: 400; font-size: 0.72rem; color: var(--muted); margin-left: 0.25rem; }
+.tag-checkbox-group { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 0.25rem 0.75rem; }
+.tag-checkbox-group small { color: var(--muted); }
+#patientCodeHint { display: block; margin-top: 0.2rem; font-size: 0.78rem; color: var(--muted); font-weight: 400; }
+#patientCodeHint[data-state="ok"] { color: var(--accent-dark); }
+#patientCodeHint[data-state="other"] { color: #8a6630; }
+
+@media (max-width: 860px) {
+  .case-sort { margin-left: 0; }
+  .case-toolbar input#caseSearch { flex-basis: 100%; }
+  .case-more-items { right: auto; left: 0; }
+}

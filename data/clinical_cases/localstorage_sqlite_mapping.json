@@ -1123,6 +1123,51 @@
       "nullable": null,
       "data_loss_risk": "medium",
       "status": "no_destination_yet"
+    },
+    {
+      "source_scope": "case",
+      "source_field": "attentionTier",
+      "destination": "cases.attention_tier",
+      "transformation": "as-is. D34 workflow label (focus|complex|routine), CHECK-constrained in schema.sql. \"\" (unset) becomes NULL via S(); never inferred as routine.",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "case",
+      "source_field": "attentionSince",
+      "destination": "cases.attention_since",
+      "transformation": "as-is. Date the current attention tier was set (app-stamped localDateISO); drives the focus-review nudge.",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "case",
+      "source_field": "icpcChapters",
+      "destination": "case_icpc_chapters",
+      "transformation": "EXPLODE array of ICPC-2 chapter letters -> one row per value (case_id, icpc_chapter), same shape as case_race_ethnicity. Vocabulary in js/case-search.js.",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "case",
+      "source_field": "careContexts",
+      "destination": "case_care_contexts",
+      "transformation": "EXPLODE array of care-context keys -> one row per value (case_id, care_context), same shape as case_race_ethnicity.",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "case",
+      "source_field": "clinicSite",
+      "destination": "cases.clinic_site",
+      "transformation": "as-is. D34 where the patient is seen (bastyr|external), CHECK-constrained in schema.sql.",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped"
     }
   ],
   "residual_gaps": {
