@@ -7928,6 +7928,7 @@ function renderPatientCaseList() {
   const query = caseSearch.value.trim();
   const res = S.buildPatientList(clinicalCases, { query, filters: caseListFilters, sort: caseListSort });
   syncCaseIcpcFilterOptions(res.usedIcpc);
+  syncCaseFiltersToggle();
   const visible = [...res.identity, ...res.content].map((x) => x.patient);
   // 選取中的病例不在可見列表裡(被搜尋/篩選掉)→ 改選第一位的主要病例;列表空了就保持原選取,
   // 詳情照常顯示,不要因為打了一個字就把正在看的病人收掉。
@@ -7984,10 +7985,25 @@ function syncCaseIcpcFilterOptions(usedIcpc) {
   if (!sel.value) caseListFilters.icpc = "";
 }
 
+// 手機的「篩選」按鈕:顯示目前套用了幾個條件。收起時看不到篩選列,
+// 沒有這個數字的話,「列表少了人」會看起來像資料不見。
+function syncCaseFiltersToggle() {
+  const btn = document.querySelector("#caseFiltersToggle");
+  if (!btn) return;
+  const f = caseListFilters;
+  const active = [f.tier !== "all", !!f.icpc, f.clinic !== "all", f.status !== "all", !!f.recentDays, f.flagged, f.undated].filter(Boolean).length;
+  btn.textContent = active ? `篩選 · ${active}` : "篩選";
+  btn.classList.toggle("has-active", active > 0);
+}
+
 function wireCaseListFilters() {
   const bar = document.querySelector("#caseFilters");
   if (!bar || bar.dataset.wired) return;
   bar.dataset.wired = "1";
+  document.querySelector("#caseFiltersToggle")?.addEventListener("click", (e) => {
+    const open = bar.classList.toggle("is-open");
+    e.currentTarget.setAttribute("aria-expanded", String(open));
+  });
   bar.querySelectorAll("[data-case-tier-filter]").forEach((b) => b.addEventListener("click", () => {
     caseListFilters.tier = b.dataset.caseTierFilter;
     bar.querySelectorAll("[data-case-tier-filter]").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
@@ -8020,6 +8036,7 @@ function renderPatientHeaderBar(item) {
     : (tier && since !== null ? `<span class="case-tag-since">標記 ${since} 天</span>` : "");
   const chips = (list, render, empty) => list.length ? list.map(render).join("") : `<span class="case-tag-empty">${empty}</span>`;
   return `${tabs}
+    ${siblings.length > 1 ? renderPatientCrossCaseOverview(item, siblings) : ""}
     <div class="case-tag-bar">
       <div class="case-tag-line"><span class="case-tag-key">關注度</span>
         <span class="case-tier-pick">${Object.entries(S.CASE_TIERS).map(([k, v]) =>
@@ -8034,7 +8051,35 @@ function renderPatientHeaderBar(item) {
     </div>`;
 }
 
+// 病人總覽併進病例頁:同一位病人有兩個以上病例時,跨病例的警訊、用藥總帳、
+// 資料落差直接摺在病例上方,不必切到「病人」頁。渲染器與病人頁共用同一組,
+// 兩邊不會講出不同的話。單一病例的病人不畫 —— 內容會跟下面的病例欄位重複。
+function renderPatientCrossCaseOverview(item, siblings) {
+  let patient = null;
+  try {
+    patient = (window.AcuTingClinicalStore?.getPatientsView?.(clinicalCases) || []).find((p) => p.patientCode === item.patientCode) || null;
+  } catch (e) {
+    patient = null;   // 讀不到病人視圖時只少「落差」一段;警訊與用藥直接從病例算,不受影響
+  }
+  const conflictsHtml = patient ? renderPatientConflictsHtml(patient) : "";
+  const flagCount = new Set(siblings.flatMap((c) => c.safetyFlags || [])).size;
+  const agentCount = new Set(siblings.flatMap((c) => (c.agentExposures || []).map((e) => `${e.agentType}|${(e.agentId || e.nameText || "").toLowerCase().trim()}`))).size;
+  const summaryBits = [`${siblings.length} 個病例`, `警訊 ${flagCount}`, `用藥 ${agentCount}`];
+  // 預設收起(手機上展開會佔掉將近一整個畫面);病例間有資料不一致時,摘要列直接標出來。
+  return `
+    <details class="patient-overview">
+      <summary><strong>病人跨病例總覽 Patient overview</strong><small>${escapeHtml(summaryBits.join(" · "))}</small>${conflictsHtml ? `<small class="overview-warn">⚠ 病例間資料不一致</small>` : ""}</summary>
+      ${conflictsHtml}
+      ${renderPatientSafetyRollupHtml(siblings)}
+      ${renderPatientAgentLedgerHtml(siblings)}
+    </details>`;
+}
+
 function wirePatientHeaderBar(item) {
+  // 手機上點病人會捲到詳情;這顆(只在窄螢幕顯示)捲回列表,不用一路往上滑過整份病歷。
+  document.querySelector("#caseBackToList")?.addEventListener("click", () => {
+    document.querySelector("#caseListPanel")?.scrollIntoView({ block: "start" });
+  });
   caseDetail.querySelectorAll("[data-sibling-case]").forEach((b) => b.addEventListener("click", () => {
     selectedCaseId = b.dataset.siblingCase;
     renderClinicalCases();
@@ -8337,8 +8382,16 @@ function renderPatientConflictsHtml(patient) {
   const conflicts = patient.conflicts || {};
   const needsReview = patient.needsReview || [];
   if (!Object.keys(conflicts).length && !needsReview.length) return "";
+  // 來源標病例名稱而不是內部 id(case.xxx 對看診的人沒有意義);名稱找不到才退回 id。
+  const caseLabel = (id) => clinicalCases.find((c) => c.id === id)?.caseTitle || id || "?";
+  // 欄位名對照 clinical-store.js 的 PATIENT_FIELDS;沒列到的照原欄位名顯示。
+  const fieldLabel = {
+    birthYearMonth: "出生年月 birthYearMonth", birthYear: "出生年 birthYear", sex: "性別 sex", genderIdentity: "性別認同 genderIdentity",
+    raceEthnicity: "族裔 raceEthnicity", raceEthnicityDetail: "族裔細節 raceEthnicityDetail", occupation: "職業 occupation",
+    allergyStatus: "過敏狀態 allergyStatus", allergies: "過敏 allergies",
+  };
   const rows = Object.entries(conflicts).map(([field, entries]) => `
-    <div class="brief-row"><small>${escapeHtml(field)}</small><span>${(entries || []).map((e) => escapeHtml(`${e.value || "(空 empty)"} [${e.caseId || "?"}${e.updatedAt ? " · " + e.updatedAt : ""}]`)).join(" vs ")}</span></div>
+    <div class="brief-row"><small>${escapeHtml(fieldLabel[field] || field)}</small><span>${(entries || []).map((e) => escapeHtml(`${e.value || "(空 empty)"} [${caseLabel(e.caseId)}${e.updatedAt ? " · " + String(e.updatedAt).slice(0, 10) : ""}]`)).join(" vs ")}</span></div>
   `).join("");
   return `
     <div class="visit-brief">
@@ -8980,6 +9033,7 @@ function renderClinicalCaseDetail(item) {
   });
 
   caseDetail.innerHTML = `
+    <button type="button" class="ghost case-back-to-list" id="caseBackToList">← 病人列表</button>
     <div class="case-detail-head">
       <div>
         <p class="eyebrow">${escapeHtml(item.patientCode || "Patient")}</p>

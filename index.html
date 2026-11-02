@@ -524,6 +524,8 @@
         <div class="case-toolbar" id="caseToolbar">
           <input id="caseSearch" type="search" autocomplete="off" placeholder="搜尋代號、病名、證型、穴位、方藥… 例:ATG、SP6 失眠(按 / 跳到這裡)" />
           <button id="newCaseBtn" type="button" data-mode-text data-bilingual="+ 新增病例" data-english="+ New case">+ 新增病例</button>
+          <!-- 手機上篩選列預設收起(只有窄螢幕看得到這顆),讓病人列表一進頁就在第一個畫面;有套用篩選時按鈕上顯示數量。 -->
+          <button id="caseFiltersToggle" class="ghost case-filters-toggle" type="button" aria-expanded="false" aria-controls="caseFilters">篩選</button>
           <details class="case-more-menu" id="caseMoreMenu">
             <summary aria-label="更多病例功能">⋯ 更多</summary>
             <div class="case-more-items">
@@ -547,7 +549,7 @@
           <select id="caseIcpcFilter" aria-label="系統分類"><option value="">全部系統</option></select>
           <select id="caseClinicFilter" aria-label="看診地點"><option value="all">兩邊診所</option><option value="bastyr">Bastyr</option><option value="external">外部診所</option></select>
           <select id="caseStatusFilter" aria-label="病例狀態"><option value="all">全部狀態</option><option value="active">治療中 active</option><option value="paused">暫停 paused</option><option value="closed">結案 closed</option></select>
-          <select id="caseRecentFilter" aria-label="最近就診"><option value="">不限時間</option><option value="30">30 天內有就診</option><option value="90">90 天內有就診</option></select>
+          <select id="caseRecentFilter" aria-label="最近就診"><option value="">不限時間</option><option value="7">7 天內(這週)</option><option value="30">30 天內有就診</option><option value="90">90 天內有就診</option></select>
           <label class="case-chip"><input type="checkbox" id="caseFlagFilter" /> ⚑ 有紅旗</label>
           <label class="case-chip case-chip-gold"><input type="checkbox" id="caseUndatedFilter" /> 日期未填</label>
           <label class="case-sort">排序 <select id="caseSortSelect"><option value="tier">重點優先</option><option value="recent">最近就診</option><option value="code">代號</option><option value="visits">就診次數</option></select></label>

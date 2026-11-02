@@ -8217,8 +8217,24 @@ html { scroll-padding-top: 92px; }
 #patientCodeHint[data-state="ok"] { color: var(--accent-dark); }
 #patientCodeHint[data-state="other"] { color: #8a6630; }
 
+.patient-overview { border: 1px solid var(--line); border-radius: 10px; background: var(--panel); padding: 0.45rem 0.75rem; margin: 0 0 0.6rem; }
+.patient-overview > summary { cursor: pointer; display: flex; flex-wrap: wrap; gap: 0.2rem 0.6rem; align-items: baseline; font-size: 0.88rem; }
+.patient-overview > summary small { color: var(--muted); font-size: 0.78rem; }
+.patient-overview[open] > summary { margin-bottom: 0.5rem; }
+.case-filters-toggle, .case-back-to-list { display: none; }
+.case-filters-toggle.has-active { border-color: var(--gold); color: #8a6630; font-weight: 700; }
+
 @media (max-width: 860px) {
   .case-sort { margin-left: 0; }
   .case-toolbar input#caseSearch { flex-basis: 100%; }
   .case-more-items { right: auto; left: 0; }
+  .case-filters-toggle { display: inline-flex; }
+  .case-filters:not(.is-open) { display: none; }
+  .case-back-to-list { display: inline-flex; margin-bottom: 0.4rem; font-size: 0.82rem; padding: 0.2rem 0.7rem; }
+  #caseWorkspace > .section-quicknav { display: none; }
+  /* 舊的窄螢幕規則把工具列每個元件撐成一整行(四行 ≈ 224px);改成搜尋一行、三顆按鈕一行。 */
+  #caseToolbar { grid-template-columns: minmax(0, 1fr) auto auto; }
+  #caseToolbar input#caseSearch { grid-column: 1 / -1; }
+  #caseToolbar > button, #caseToolbar .case-more-menu > summary { width: auto; }
 }
+.patient-overview .overview-warn { color: var(--warn); font-weight: 700; }
