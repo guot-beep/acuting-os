@@ -12,11 +12,11 @@
  *
  * 「文件 + 投影」兩層:
  *   - clinical_kv 是**正本**:app 存什麼字串,這裡就是那個字串。
- *   - schema.sql 的 31 張表是**投影**:病例 key 每次寫入後,spawn
+ *   - schema.sql 的 32 張表是**投影**:病例 key 每次寫入後,spawn
  *     export-clinical-to-sqlite.js --into 在同一個檔案裡整組重建,供 SQL 查詢。
  *     投影失敗**不擋存檔** —— 正本已落地;失敗原因寫進 clinical_meta.projection_status,
  *     app 左下角的徽章會顯示出來(fail-visible:不靜默,也不因為查詢表而拒絕臨床存檔)。
- *   為什麼不反過來(31 張表當正本、讀回時組回病例物件):對照表有 5 條刻意未實作、
+ *   為什麼不反過來(32 張表當正本、讀回時組回病例物件):對照表有 5 條刻意未實作、
  *   多條 JOIN / EXPLODE 是有損轉換,反推 = 臨床資料遺失。正本必須是無損的那一層。
  *
  * 多分頁:全域 revision;每次寫入帶 If-Match(上次看到的 revision),不符 → 409、零寫入。
@@ -176,7 +176,7 @@ function createStore(db) {
   };
 }
 
-// ── 投影(schema.sql 31 張表,由 exporter --into 重建)─────────────────────
+// ── 投影(schema.sql 32 張表,由 exporter --into 重建)─────────────────────
 function createProjection(db, dbFile, store, opts) {
   const exporter = (opts && opts.exporter) || EXPORTER;
   const log = (opts && opts.log) || (() => {});
@@ -239,7 +239,7 @@ function createProjection(db, dbFile, store, opts) {
             cases: src.cases.length, duration_ms: Date.now() - started, summary: lines.slice(-30),
           };
           try { setStatus(st); } catch (e) { log(`projection: 狀態寫不進去:${e.message}`); }
-          log(`projection ${st.ok ? "✓" : "✗"} ${src.cases.length} 筆病例 → 31 張投影表(exit ${code},${st.duration_ms} ms)`);
+          log(`projection ${st.ok ? "✓" : "✗"} ${src.cases.length} 筆病例 → 32 張投影表(exit ${code},${st.duration_ms} ms)`);
           running = false; inflight = null;
           if (pending) schedule("pending");
           resolve(st);

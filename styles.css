@@ -8227,7 +8227,7 @@ html { scroll-padding-top: 92px; }
 @media (max-width: 860px) {
   .case-sort { margin-left: 0; }
   .case-toolbar input#caseSearch { flex-basis: 100%; }
-  .case-more-items { right: auto; left: 0; }
+  .case-more-items { right: 0; left: auto; max-width: calc(100vw - 2rem); }   /* 「⋯ 更多」在工具列最右邊,選單往左展開才不會超出畫面 */
   .case-filters-toggle { display: inline-flex; }
   .case-filters:not(.is-open) { display: none; }
   .case-back-to-list { display: inline-flex; margin-bottom: 0.4rem; font-size: 0.82rem; padding: 0.2rem 0.7rem; }
@@ -8301,3 +8301,42 @@ html { scroll-padding-top: 92px; }
 @media (max-width: 860px) {
   .handoff-row { grid-template-columns: minmax(0, 1fr); }
 }
+
+/* ── 病例標題標準(2026-11-02):[★] [AQZ] [F/41] [主❤️] [次❤️] [🌙] ───────────────── */
+.case-label { display: inline-flex; flex-wrap: wrap; align-items: baseline; gap: 0.1rem 0.4rem; min-width: 0; }
+.case-label .cl-code { font-family: ui-monospace, Consolas, monospace; font-weight: 700; color: var(--accent-dark); white-space: nowrap; letter-spacing: 0.02em; }
+.case-label .cl-code-fallback { font-weight: 500; color: var(--muted); }
+.case-label .cl-sexage { font-family: ui-monospace, Consolas, monospace; color: var(--ink); white-space: nowrap; font-size: 0.92em; }
+.case-label .cl-star { color: #b7862f; font-weight: 700; }
+.case-label .cl-star-routine { color: var(--muted); }
+.case-label .cl-heart, .case-label .cl-moon { font-size: 0.95em; line-height: 1; }
+.case-label .cl-heart:not(.cl-heart-primary) { opacity: 0.8; font-size: 0.85em; }
+.case-label .case-label-btn { border: 0; background: none; padding: 0 0.1rem; margin: 0; box-shadow: none; cursor: pointer; border-radius: 4px; font: inherit; }
+.case-label .case-label-btn:hover { background: var(--paper); outline: 1px solid var(--line); }
+.case-detail-label { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.2rem 0.6rem; font-size: 0.95rem; letter-spacing: 0; text-transform: none; }
+.case-permanent-id { font-family: ui-monospace, Consolas, monospace; color: var(--muted); font-size: 0.72rem; font-weight: 400; }
+.case-list-item.patient-row .patient-row-flag { font-size: 0.8rem; }
+.case-list-item.patient-row .patient-row-who { flex-wrap: wrap; }
+
+/* 列表左邊的色條 = 主❤️ 類別(沒分類就沒有色條) */
+.patient-row.cat-derm_wellness { --row-tier: #c9c2b8; }
+.patient-row.cat-womens_health { --row-tier: #e58fb0; }
+.patient-row.cat-cardiovascular { --row-tier: #d24b4b; }
+.patient-row.cat-musculoskeletal { --row-tier: #e8893a; }
+.patient-row.cat-gi_metabolic { --row-tier: #e1b53a; }
+.patient-row.cat-respiratory_immune { --row-tier: #5aa65a; }
+.patient-row.cat-urinary_renal { --row-tier: #6cc3d8; }
+.patient-row.cat-neuro_ent { --row-tier: #3f7fd0; }
+.patient-row.cat-mental_sleep { --row-tier: #9a6bc9; }
+.patient-row.cat-complex { --row-tier: #3a3a3a; }
+
+.case-heart-chip { font-size: 0.8rem; border-radius: 999px; padding: 0.05rem 0.55rem; border: 1px solid var(--line); background: var(--panel); white-space: nowrap; }
+.case-heart-chip.is-primary { border-color: var(--gold); background: var(--tier-focus-soft); font-weight: 600; }
+.case-suggest { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 0.3rem; font-size: 0.8rem; color: #8a6630; border: 1px dashed #cdbfa5; border-radius: 999px; padding: 0.05rem 0.2rem 0.05rem 0.6rem; }
+.case-suggest small { color: var(--muted); }
+.case-suggest button { font-size: 0.78rem; padding: 0.05rem 0.55rem; }
+.case-suggest-list { display: flex; flex-wrap: wrap; gap: 0.3rem; align-items: center; font-size: 0.8rem; color: var(--muted); }
+.case-suggest-list button { font-size: 0.8rem; padding: 0.1rem 0.6rem; }
+.case-tier-btn[aria-pressed="true"] { background: var(--nav-bg); border-color: var(--nav-bg); color: var(--nav-ink); }
+.case-tag-editor-grid label:has(input:disabled) { opacity: 0.45; }
+.tag-checkbox-group label:has(input:disabled) { opacity: 0.45; }

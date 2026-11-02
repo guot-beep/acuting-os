@@ -1168,6 +1168,51 @@
       "nullable": true,
       "data_loss_risk": "none",
       "status": "mapped"
+    },
+    {
+      "source_scope": "case",
+      "source_field": "displayCode",
+      "destination": "cases.display_code",
+      "transformation": "as-is. 11/02 顯示代號(族群字母 + 名姓縮寫,例 AQZ),給人看的、不唯一;病人的永久鍵仍是 patientCode / patients.id。\"\" 經 S() 轉 NULL。",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "case",
+      "source_field": "categoryPrimary",
+      "destination": "cases.category_primary",
+      "transformation": "as-is. 11/02 ❤️ 主疾病類別,CHECK-constrained in schema.sql;詞彙表在 js/case-search.js CASE_CATEGORIES。\"\" = 未設定 → NULL,從不推斷。",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "case",
+      "source_field": "categorySecondary",
+      "destination": "case_category_secondary",
+      "transformation": "EXPLODE array of category keys -> one row per value (case_id, category), same shape as case_icpc_chapters. App 端限制最多 2 個、不含主類別。",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "case",
+      "source_field": "caseHighlight",
+      "destination": "cases.case_highlight",
+      "transformation": "as-is. 11/02 ★ 病例價值(important|notable|routine),CHECK-constrained。\"\" = 未標 → NULL,畫面不顯示星星。",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped"
+    },
+    {
+      "source_scope": "case",
+      "source_field": "treatmentStage",
+      "destination": "cases.treatment_stage",
+      "transformation": "as-is. 11/02 🌙 治療進度(new|active|followup|closed),CHECK-constrained。\"\" = 未確認 → NULL;與舊 status 欄分開,舊欄位預設 active 不代表已確認。",
+      "nullable": true,
+      "data_loss_risk": "none",
+      "status": "mapped"
     }
   ],
   "residual_gaps": {

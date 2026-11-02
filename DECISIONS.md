@@ -1230,3 +1230,30 @@ PASS(composition 查無藥材維持 1 味次 `formula.huang_tu_tang` 的「灶�
   順帶修掉:表單過去沒有「出生年」欄,只有年份的病例第一次編輯存檔就被清空(10/28 往返測試抓到)。
 - **Reconsider only if**:列表一次超過 ~200 位病人(屆時考慮虛擬捲動與伺服端查詢);或 Ting 要把中醫科別
   與 ICPC-2 並列(加一個章節→科別的對照即可,資料欄不必改)。
+
+## D35 — 病例標題標準:★ 顯示代號 性別/年齡 ❤️ 🌙(取代 D34 的標籤與代號格式) · LOCKED(Ting 裁定,2026-11-02)
+
+- **凍結例外的理由(D32)**:Ting 2026-11-02 交來 *AcuTing OS Clinical Case Labeling Standard*,要求病例列表、詳情、
+  SOAP 頁統一同一套標題,並「整合一下 統一這樣標註」。D34 的關注度 / ICPC-2 / ATG-1984F 上線兩天、**正式站 26 筆
+  一筆都還沒標**(量過:attentionTier 0、icpcChapters 0),此時換掉不需搬任何資料。
+- **標題格式**:`[★/☆/✨] [顯示代號] [性別/年齡] [主❤️] [次❤️…] [🌙]` + 主訴,例 `★ AQZ F/41 🧡 💜 🌓`。
+  由欄位自動產生(`js/case-search.js` 的 `caseLabel` / `caseLabelText`),列表、詳情、SOAP 對話框共用,不手打。
+  - ❤️ `categoryPrimary` 1 個 + `categorySecondary` 最多 2 個(不含主類別),十類代碼見 `CASE_CATEGORIES`。
+  - ★ `caseHighlight`:important / notable / routine。🌙 `treatmentStage`:new / active / followup / closed。
+  - **沒確認就不顯示**:星星、月亮空值不畫;舊 `status` 欄(空值預設 active)不當作「已確認治療中」。
+    設月亮時同步舊 status(followup → paused),讓舊消費端(主要病例挑選等)不脫節。
+  - 🚩 紅旗(safetyFlags)維持獨立欄位,不與三層混用。
+- **代號(Ting 指出「出生年 vs 年齡」要分開)**:
+  - **顯示代號** `displayCode` = 族群字母 + 名姓縮寫(AQZ),給人看、**不唯一**、只填已確認的。
+  - **性別/年齡** 顯示時從 sex 與 birthYearMonth / birthYear 計算,不寫進代號(年齡會變)。
+  - **永久鍵** 仍是 `patientCode`(→ patients.id),新病人由系統產生 `PT-` + 6 碼亂數 —— 不是縮寫、不是年齡(標準第 5 條)。
+    既有 26 位的舊代號照當永久鍵;改顯示代號不動永久鍵,所以不會把病人拆成兩個(這是比 D34 安全的地方:
+    D34 的 ATG-1984F 本身就是永久鍵,換代號 = 換 patientId)。
+- **分類建議**:依主訴/病例名稱關鍵字,只顯示建議與理由(命中的字),她按了才寫入;🖤 複雜不在建議裡(標準第 8 條)。
+- **保留不刪**:D34 的 `attentionTier` / `attentionSince` / `icpcChapters` 留在資料契約(只准加),畫面不再讀寫,
+  表單存檔時原值照留。`careContexts`、`clinicSite` 照舊。
+- **資料**:case 層新增 `displayCode` `categoryPrimary` `categorySecondary` `caseHighlight` `treatmentStage`
+  (additive、預設空);schema.sql +4 欄 +1 表(投影 31 → 32 張),SQLite 對照表、fixture、契約基準一併收。
+- **未做(標準第 9 條)**:匯出 / 分享給外部 AI 時改用隨機去識別化 Case ID —— CARE 草稿本來就不帶 patientCode/caseTitle;
+  其他匯出路徑另案。
+- **Reconsider only if**:顯示代號撞號多到列表分不清(屆時在列上加永久編號後四碼);或她要按中醫科別另開一層。

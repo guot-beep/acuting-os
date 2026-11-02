@@ -6,7 +6,8 @@
  * 守的規則:
  *   - 只 append,不覆蓋:既有 SOAP 一筆不少、既有病例欄位不被改寫(只補空白,可關)
  *   - 候選代號在系統裡找得到才接上;找不到 / 沒代號 → 不自動建立
- *   - 新病人要 ATG-1984F 格式 + 明確勾「建立」;性別/出生年不符只警告
+ *   - 配對先比病人編號、再比顯示代號(只有一位才算);新病人要顯示代號(AQZ)+ 明確勾「建立」,
+ *     永久病人編號由系統產生,不是縮寫
  *   - 同日已有 SOAP → 預設不匯;同一筆交接匯過 → 不再匯
  *   - 安全旗標只併入新的
  *
@@ -21,7 +22,9 @@ const CASES = [
     safetyFlags: ["既有旗標"], soapNotes: [{ id: "n1", visitDate: "" }, { id: "n2", visitDate: "2026-10-20" }] },
   { id: "c2", patientCode: "DUP", caseTitle: "舊病例", status: "closed", soapNotes: [{ id: "n3", visitDate: "2026-01-01" }] },
   { id: "c3", patientCode: "DUP", caseTitle: "現在的病例", status: "active", soapNotes: [{ id: "n4", visitDate: "2026-10-29" }] },
-  { id: "c4", patientCode: "WJD-1975M", caseTitle: "已是新代號", status: "active", soapNotes: [] },
+  { id: "c4", patientCode: "PT-K7Q2", displayCode: "WJD", caseTitle: "有顯示代號", status: "active", soapNotes: [] },
+  { id: "c5", patientCode: "PT-M3X9", displayCode: "ATT", caseTitle: "同顯示代號之一", status: "active", soapNotes: [] },
+  { id: "c6", patientCode: "PT-Z8R1", displayCode: "att", caseTitle: "同顯示代號之二", status: "active", soapNotes: [] },
 ];
 const NEWCASE = { caseTitle: "新問題", sex: "女", birthYear: 1992, chiefComplaint: "腰痛", historyPresent: "新病史", pastHistory: "新既往史" };
 const ITEMS = [
@@ -59,17 +62,20 @@ check("同日已有 SOAP → 標出來、預設不匯", () => row(p0, "r05").sam
 check("同日已有 SOAP → 她勾了才匯", () => row(plan({ r05: { include: true } }), "r05").include);
 check("接到的那個病例同日有 SOAP 才算(r04 接 c3 同日 → 擋;改接 c2 → 不擋)", () => row(p0, "r04").sameDate && !row(plan({ r04: { caseId: "c2" } }), "r04").sameDate);
 
+console.log("顯示代號配對");
+check("填顯示代號、剛好一位病人 → 接到那位(列上顯示的是他的病人編號)", () => { const r = row(plan({ r02: { code: "wjd" } }), "r02"); return r.status === "append" && r.targetCaseId === "c4" && r.code === "PT-K7Q2"; });
+check("填顯示代號、兩位病人同代號 → 不猜,要她改填病人編號", () => { const r = row(plan({ r02: { code: "ATT", createNew: true } }), "r02"); return r.status === "ambiguous" && !r.include && /PT-M3X9/.test(r.errors[0]); });
+check("填病人編號 → 直接接上", () => row(plan({ r02: { code: "PT-M3X9" } }), "r02").targetCaseId === "c5");
+
 console.log("新病人");
-check("填了舊格式代號 → 錯誤、不匯", () => { const r = row(plan({ r02: { code: "AB", createNew: true } }), "r02"); return r.errors.length > 0 && !r.include; });
-check("填了新格式但沒勾建立 → 不匯", () => !row(plan({ r02: { code: "axm-1992f" } }), "r02").include);
-check("新格式 + 勾建立 → 匯,代號正規化成大寫", () => { const r = row(plan({ r02: { code: "axm-1992f", createNew: true } }), "r02"); return r.include && r.code === "AXM-1992F"; });
-check("性別/出生年不符 → 只警告", () => { const r = row(plan({ r02: { code: "AXM-1990M", createNew: true } }), "r02"); return r.include && r.warnings.length === 2; });
-check("兩筆新病人同一個新代號 → 兩筆都擋", () => { const p = plan({ r02: { code: "AXM-1992F", createNew: true }, r03: { code: "AXM-1992F", createNew: true } }); return !row(p, "r02").include && !row(p, "r03").include; });
-check("填的代號剛好是既有病人 → 變成接到既有病例", () => row(plan({ r02: { code: "WJD-1975M" } }), "r02").status === "append");
+check("填了含數字的代號 → 錯誤、不匯", () => { const r = row(plan({ r02: { code: "AXM92", createNew: true } }), "r02"); return r.errors.length > 0 && !r.include; });
+check("填了顯示代號但沒勾建立 → 不匯", () => !row(plan({ r02: { code: "axm" } }), "r02").include);
+check("顯示代號 + 勾建立 → 匯,代號正規化成大寫", () => { const r = row(plan({ r02: { code: "a x m", createNew: true } }), "r02"); return r.include && r.code === "AXM"; });
+check("兩筆新病人同一個顯示代號 → 不擋,但提醒可能是同一人", () => { const p = plan({ r02: { code: "AXM", createNew: true }, r03: { code: "AXM", createNew: true } }); return row(p, "r02").include && row(p, "r03").include && /同一人/.test(row(p, "r02").warnings.join()); });
 
 console.log("寫入(只加不蓋)");
-const pA = plan({ r02: { code: "AXM-1992F", createNew: true } });
-const out = H.applyHandoff(CASES, ITEMS, pA, "2026-11-02T00:00:00.000Z");
+const pA = plan({ r02: { code: "AXM", createNew: true } });
+const out = H.applyHandoff(CASES, ITEMS, pA, "2026-11-02T00:00:00.000Z", (ref, i) => ["PT-K7Q2", "PT-NEW1"][i]);
 const c1 = out.find((c) => c.id === "c1");
 check("既有 SOAP 一筆不少,新的接在後面", () => c1.soapNotes.length === 3 && c1.soapNotes[0].id === "n1" && c1.soapNotes[2].subjective === "S1");
 check("新 SOAP id 由 ref 決定(重匯可辨識)", () => c1.soapNotes[2].id === H.noteIdFor("r01"));
@@ -77,7 +83,9 @@ check("既有欄位不覆蓋(historyPresent、sex 保留原值)", () => c1.histo
 check("空白欄位補上(birthYear、pastHistory)", () => c1.birthYear === 1992 && c1.pastHistory === "新既往史");
 check("補空白可關掉", () => { const o = H.applyHandoff(CASES, ITEMS, plan({ r01: { fillEmpty: false } })); const c = o.find((x) => x.id === "c1"); return !c.pastHistory && c.soapNotes.length === 3; });
 check("安全旗標只併入新的", () => c1.safetyFlags.join() === "既有旗標,新旗標");
-check("新病人建立一個病例、帶這次就診", () => { const c = out.find((x) => x.patientCode === "AXM-1992F"); return c && c.id === H.caseIdFor("r02") && c.soapNotes.length === 1 && c.caseTitle === "新問題"; });
+check("新病人建立一個病例、帶這次就診;顯示代號 AXM", () => { const c = out.find((x) => x.id === H.caseIdFor("r02")); return c && c.displayCode === "AXM" && c.soapNotes.length === 1 && c.caseTitle === "新問題"; });
+check("新病人的永久編號由系統給、跟現有編號撞到就換一個,不是縮寫", () => { const c = out.find((x) => x.id === H.caseIdFor("r02")); return c.patientCode === "PT-NEW1" && c.patientCode !== c.displayCode; });
+check("產生不出編號 → 整筆拒絕(不寫半套)", () => { try { H.applyHandoff(CASES, ITEMS, pA, "", () => "PT-K7Q2"); return false; } catch (e) { return true; } });
 check("沒勾的列一律不動(r03、r05)", () => out.length === CASES.length + 1 && !out.some((c) => (c.soapNotes || []).some((n) => n.subjective === "S5" || n.subjective === "S3")));
 check("不改原陣列", () => CASES[0].soapNotes.length === 2 && !CASES[0].pastHistory);
 check("匯過一次 → 再預覽就是「已匯入」", () => { const p = H.planHandoff(out, ITEMS, {}); return row(p, "r01").status === "already_imported" && row(p, "r02").status === "already_imported" && !p.toApply.some((r) => r.ref === "r01"); });

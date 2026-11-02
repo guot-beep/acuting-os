@@ -122,6 +122,12 @@ CREATE TABLE IF NOT EXISTS cases (
   attention_tier TEXT CHECK (attention_tier IS NULL OR attention_tier IN ('focus','complex','routine')),
   attention_since TEXT,
   clinic_site TEXT CHECK (clinic_site IS NULL OR clinic_site IN ('bastyr','external')),
+  -- 2026-11-02 病例標題標準(❤️ / ★ / 🌙,取代 attention_tier 與 ICPC-2 的畫面角色;舊欄位保留)。
+  -- display_code 是給人看的族群字母+名姓縮寫,不唯一;病人的永久鍵仍是 patients.id。NULL = 未設定。
+  display_code TEXT,
+  category_primary TEXT CHECK (category_primary IS NULL OR category_primary IN ('derm_wellness','womens_health','cardiovascular','musculoskeletal','gi_metabolic','respiratory_immune','urinary_renal','neuro_ent','mental_sleep','complex')),
+  case_highlight TEXT CHECK (case_highlight IS NULL OR case_highlight IN ('important','notable','routine')),
+  treatment_stage TEXT CHECK (treatment_stage IS NULL OR treatment_stage IN ('new','active','followup','closed')),
   FOREIGN KEY (patient_id) REFERENCES patients(id)
 );
 
@@ -161,6 +167,14 @@ CREATE TABLE IF NOT EXISTS case_icpc_chapters (
 );
 
 -- D34:跨系統的照護情境(腫瘤整合照護、備孕/IVF、妊娠、慢性疼痛、兒童、高齡/多重用藥)。
+-- 2026-11-02:❤️ 次疾病類別,每個病例最多 2 個(app 端限制)。與 case_icpc_chapters 同形。
+CREATE TABLE IF NOT EXISTS case_category_secondary (
+  case_id TEXT NOT NULL,
+  category TEXT NOT NULL CHECK (category IN ('derm_wellness','womens_health','cardiovascular','musculoskeletal','gi_metabolic','respiratory_immune','urinary_renal','neuro_ent','mental_sleep','complex')),
+  PRIMARY KEY (case_id, category),
+  FOREIGN KEY (case_id) REFERENCES cases(id)
+);
+
 CREATE TABLE IF NOT EXISTS case_care_contexts (
   case_id TEXT NOT NULL,
   care_context TEXT NOT NULL,

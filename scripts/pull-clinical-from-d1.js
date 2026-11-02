@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * pull-clinical-from-d1.js — 把雲端(D1)的整本病例拉回桌機當備份 + 建 31 張投影表供查詢。
+ * pull-clinical-from-d1.js — 把雲端(D1)的整本病例拉回桌機當備份 + 建 32 張投影表供查詢。
  *
  * 用法(建議把鑰匙放環境變數,不要寫在指令列):
  *   $env:CF_ACCESS_CLIENT_ID="…"; $env:CF_ACCESS_CLIENT_SECRET="…"
@@ -11,7 +11,7 @@
  *   1. GET {url}/__clinical/kv(帶 Access service token 標頭;Access 會換成 JWT 交給 Worker)
  *   2. 寫 <out>/acuting-clinical-d1-<時間>.json(v1 信封:{schema_version:1, exported_at, source:"d1", revision, cases})
  *      —— 這份 JSON 可以直接用 app 的「匯入」還原(回滾用)。
- *   3. 用 export-clinical-to-sqlite.js 建 <out>/acuting-clinical-d1-<時間>.db(31 張表,可下 SQL)。
+ *   3. 用 export-clinical-to-sqlite.js 建 <out>/acuting-clinical-d1-<時間>.db(32 張表,可下 SQL)。
  *   4. 只留最近 --keep 份(json 與 db 各算)。
  * 產物是臨床資料:預設放 Documents\AcuTing\backups(repo 外),**絕不** commit(D7)。螢幕只印筆數,不印內容。
  */

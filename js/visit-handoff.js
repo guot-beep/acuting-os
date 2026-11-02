@@ -5,8 +5,10 @@
  * 帶錯一筆就蓋掉。每週交接的本質是「加一次就診」,所以獨立一條只會 append 的路。
  *
  * 規則(交接檔自帶的 instructionsForClaude + 專案紅線):
- *   - 代號是唯一配對鍵。交接檔裡的代號只是「候選」,在她系統裡找到才算數;找不到就擱著。
- *   - 沒有代號的病人不自動建立:要她在預覽裡填 ATG-1984F 格式代號、並勾「建立新病人」。
+ *   - 配對:交接檔裡的代號只是「候選」,在她系統裡找到才算數 —— 先比病人編號(patientCode,永久鍵),
+ *     再比顯示代號(displayCode,例 AQZ;只有剛好一位病人是這個代號才算);都找不到就擱著。
+ *   - 沒有代號的病人不自動建立:要她在預覽裡填顯示代號(族群字母 + 名姓縮寫,例 AQZ)、並勾「建立新病人」。
+ *     新病人的永久編號由系統產生(不是縮寫、不是年齡,11/02 Labeling Standard 第 5 條)。
  *   - 同一病例已有同日 SOAP → 預設不匯入(她勾了才加)。同一筆交接匯過一次 → 不再匯。
  *   - 既有病例的欄位不覆蓋:只補空白欄位(可取消)+ 新的安全旗標併進去。
  *   - visitNumber 不推算;空的就是空的。
@@ -16,22 +18,18 @@
   "use strict";
 
   const SCHEMA = "acuting-visit-handoff-v1";
-  const CODE_RE = /^([A-Za-z])([A-Za-z]{1,4})-(\d{4})([FMXfmx])$/;
+  // 顯示代號:族群字母 + 名姓縮寫(與 js/case-search.js 的 parseDisplayCode 同一條規則)。
+  const DISPLAY_CODE_RE = /^([A-Za-z])([A-Za-z]{1,4})$/;
   const str = (v) => (v === null || v === undefined ? "" : String(v));
   const arr = (v) => (Array.isArray(v) ? v : []);
   const filled = (v) => (Array.isArray(v) ? v.length > 0 : v !== "" && v !== null && v !== undefined);
 
-  function normalizeCode(code) {
-    const t = str(code).trim();
-    const m = CODE_RE.exec(t);
-    return m ? `${m[1].toUpperCase()}${m[2].toUpperCase()}-${m[3]}${m[4].toUpperCase()}` : t;
+  const normalizeCode = (code) => str(code).trim();
+  const compactDisplay = (code) => str(code).trim().replace(/[\s.-]+/g, "");
+  function isDisplayCode(code) {
+    return DISPLAY_CODE_RE.test(compactDisplay(code));
   }
-  function isNewFormatCode(code) {
-    const m = CODE_RE.exec(str(code).trim());
-    if (!m) return false;
-    const y = Number(m[3]);
-    return y >= 1900 && y <= new Date().getFullYear();
-  }
+  const normalizeDisplay = (code) => (isDisplayCode(code) ? compactDisplay(code).toUpperCase() : str(code).trim());
 
   // 交接檔只收這個 schema;形狀不對就整份拒絕(訊息只講形狀,不轉述內容)。
   function parseHandoff(json) {
@@ -64,11 +62,14 @@
   function planHandoff(cases, items, choices) {
     choices = choices || {};
     const byCode = new Map();
+    const byDisplay = new Map();   // 顯示代號 → Set(病人編號)
     for (const c of cases) {
       const code = str(c.patientCode).trim();
       if (!code) continue;
       if (!byCode.has(code)) byCode.set(code, []);
       byCode.get(code).push(c);
+      const dc = normalizeDisplay(c.displayCode);
+      if (dc) { if (!byDisplay.has(dc)) byDisplay.set(dc, new Set()); byDisplay.get(dc).add(code); }
     }
     const existingNoteIds = new Set(cases.flatMap((c) => arr(c.soapNotes).map((n) => n.id)));
     const existingCaseIds = new Set(cases.map((c) => c.id));
@@ -83,7 +84,17 @@
         return row;
       }
       if (!code) { row.status = "needs_code"; return row; }
-      const owned = byCode.get(code);
+      // 先比病人編號;再比顯示代號(剛好一位才接上,兩位以上要她改填病人編號)
+      let ownerCode = byCode.has(code) ? code : "";
+      const viaDisplay = !ownerCode && byDisplay.get(normalizeDisplay(code));
+      if (viaDisplay && viaDisplay.size === 1) ownerCode = [...viaDisplay][0];
+      if (viaDisplay && viaDisplay.size > 1) {
+        row.status = "ambiguous";
+        row.errors.push(`有 ${viaDisplay.size} 位病人的顯示代號都是 ${normalizeDisplay(code)},請改填病人編號(${[...viaDisplay].join("、")})`);
+        return row;
+      }
+      const owned = ownerCode ? byCode.get(ownerCode) : null;
+      if (ownerCode) row.code = ownerCode;
       if (owned && owned.length) {
         const target = owned.find((c) => c.id === ch.caseId) || defaultTargetCase(owned);
         row.status = "append";
@@ -104,31 +115,41 @@
       // 系統裡沒有這個代號
       if (!it.newCase) { row.status = "code_not_found"; row.errors.push("系統裡找不到這個代號,而這筆沒有附新病人的病例資料"); return row; }
       row.status = "new_patient";
-      if (!isNewFormatCode(code)) {
+      // 交接檔帶來的候選代號在系統裡找不到 → 擱著。要建立新病人,得由她自己打一個顯示代號,
+      // 不拿交接檔的舊代號(例:上一批交接的舊代號)直接當新病人的代號。
+      if (ch.code === undefined && row.candidateCode) {
+        row.errors.push("系統裡找不到這個候選代號。是新病人的話,請在代號欄改填顯示代號(族群字母 + 名姓縮寫,例 AQZ)");
+      } else if (!isDisplayCode(code)) {
         row.errors.push(code === row.candidateCode
-          ? "系統裡找不到這個候選代號。是新病人的話,請填 ATG-1984F 格式的新代號"
-          : "新病人請用 ATG-1984F 格式(族裔字母 + 姓名縮寫 - 出生年 + 性別)");
+          ? "系統裡找不到這個候選代號。是新病人的話,請填顯示代號(族群字母 + 名姓縮寫,例 AQZ)"
+          : "新病人請填顯示代號:族群字母 + 名姓縮寫,例 AQZ(只用字母)");
       } else {
-        const m = CODE_RE.exec(code);
-        const sex = { 女: "F", 男: "M", F: "F", M: "M" }[str(it.newCase.sex).trim()] || "";
-        if (sex && m[4].toUpperCase() !== sex) row.warnings.push(`病例資料性別是 ${sex},代號寫 ${m[4].toUpperCase()}`);
-        if (filled(it.newCase.birthYear) && String(it.newCase.birthYear) !== m[3]) row.warnings.push(`病例資料出生年是 ${it.newCase.birthYear},代號寫 ${m[3]}`);
+        row.code = normalizeDisplay(code);
+        if (byDisplay.has(row.code)) row.warnings.push(`已經有病人的顯示代號是 ${row.code} —— 如果是同一人,改填他的病人編號(${[...byDisplay.get(row.code)].join("、")})`);
       }
       row.include = !row.errors.length && ch.createNew === true;
       return row;
     });
-    // 兩筆新病人填了同一個新代號 → 擋(同一人兩次就診請先建一筆,再用第二筆接上)
+    // 兩筆新病人填同一個顯示代號:顯示代號本來就不唯一,不擋;但提醒 —— 同一人兩次就診會變成兩位病人
     const newCodes = new Map();
     for (const r of rows) if (r.status === "new_patient" && !r.errors.length) newCodes.set(r.code, (newCodes.get(r.code) || 0) + 1);
-    for (const r of rows) if (r.status === "new_patient" && newCodes.get(r.code) > 1) { r.errors.push(`有另一筆新病人也填了 ${r.code}`); r.include = false; }
+    for (const r of rows) if (r.status === "new_patient" && newCodes.get(r.code) > 1) r.warnings.push(`另一筆新病人也填了 ${r.code} —— 如果是同一人,先建立一筆、寫入後再把另一筆接上`);
     for (const r of rows) if (r.errors.length) r.include = false;
     // 每一列各自獨立:有錯的列不匯,不擋其他列。
     return { rows, toApply: rows.filter((r) => r.include) };
   }
 
   // 回傳新的病例陣列(不改原陣列)。只處理 plan 裡 include 的列。
-  function applyHandoff(cases, items, plan, now) {
+  function applyHandoff(cases, items, plan, now, newPatientId) {
     now = now || new Date().toISOString();
+    const taken = new Set(cases.map((c) => str(c.patientCode).trim()).filter(Boolean));
+    const mintId = (ref) => {
+      for (let i = 0; i < 50; i++) {
+        const id = newPatientId ? newPatientId(ref, i) : "";
+        if (id && !taken.has(id)) { taken.add(id); return id; }
+      }
+      throw new Error("無法產生不重複的病人編號");
+    };
     const byRef = new Map(items.map((it) => [it.ref, it]));
     let out = cases.map((c) => c);
     const newCases = [];
@@ -144,13 +165,13 @@
           return next;
         });
       } else if (r.status === "new_patient") {
-        newCases.push(Object.assign({}, it.newCase, { id: caseIdFor(r.ref), patientCode: r.code, soapNotes: [note], createdAt: now, updatedAt: now }));
+        newCases.push(Object.assign({}, it.newCase, { id: caseIdFor(r.ref), patientCode: mintId(r.ref), displayCode: r.code, soapNotes: [note], createdAt: now, updatedAt: now }));
       }
     }
     return [...newCases, ...out];
   }
 
-  const api = { SCHEMA, parseHandoff, planHandoff, applyHandoff, normalizeCode, isNewFormatCode, noteIdFor, caseIdFor };
+  const api = { SCHEMA, parseHandoff, planHandoff, applyHandoff, isDisplayCode, normalizeDisplay, noteIdFor, caseIdFor };
   if (typeof module === "object" && module.exports) module.exports = api;
   else global.AcuTingVisitHandoff = api;
 })(typeof window !== "undefined" ? window : globalThis);

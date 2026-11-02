@@ -522,7 +522,7 @@
         <!-- 病例頁改版(2026-10-31):工具列只留每天用的兩樣(搜尋、新增病例);
              匯入/匯出/診務回顧/新增 SOAP 收進「⋯ 更多」。所有 id 不變,既有接線與驗證器照舊找得到。 -->
         <div class="case-toolbar" id="caseToolbar">
-          <input id="caseSearch" type="search" autocomplete="off" placeholder="搜尋代號、病名、證型、穴位、方藥… 例:ATG、SP6 失眠(按 / 跳到這裡)" />
+          <input id="caseSearch" type="search" autocomplete="off" placeholder="搜尋代號、病名、證型、穴位、方藥… 例:AQZ、SP6 失眠(按 / 跳到這裡)" />
           <button id="newCaseBtn" type="button" data-mode-text data-bilingual="+ 新增病例" data-english="+ New case">+ 新增病例</button>
           <!-- 手機上篩選列預設收起(只有窄螢幕看得到這顆),讓病人列表一進頁就在第一個畫面;有套用篩選時按鈕上顯示數量。 -->
           <button id="caseFiltersToggle" class="ghost case-filters-toggle" type="button" aria-expanded="false" aria-controls="caseFilters">篩選</button>
@@ -535,7 +535,7 @@
             <span>匯入就診交接(只加新 SOAP)</span>
             <input id="importHandoffFile" type="file" accept="application/json" />
           </label>
-          <button id="codeMigrationBtn" class="ghost" type="button" aria-controls="codeMigrationPanel">舊代號轉成 ATG-1984F</button>
+          <button id="codeMigrationBtn" class="ghost" type="button" aria-controls="codeMigrationPanel">批次設定顯示代號(AQZ)</button>
           <button id="practiceAuditBtn" class="ghost" type="button" aria-pressed="false" aria-controls="practiceAuditPanel" data-mode-text data-bilingual="診務回顧 Practice Audit" data-english="Practice Audit">診務回顧 Practice Audit</button>
           <label class="ghost file-label">
             <span data-mode-text data-bilingual="匯入病例" data-english="Import cases">匯入病例</span>
@@ -545,20 +545,21 @@
           </details>
         </div>
         <div class="case-filters" id="caseFilters" role="group" aria-label="病人篩選">
-          <div class="case-seg" role="group" aria-label="關注度">
-            <button type="button" data-case-tier-filter="all" aria-pressed="true">全部</button>
-            <button type="button" class="tier-focus" data-case-tier-filter="focus" aria-pressed="false">重點</button>
-            <button type="button" class="tier-complex" data-case-tier-filter="complex" aria-pressed="false">疑難</button>
-            <button type="button" class="tier-routine" data-case-tier-filter="routine" aria-pressed="false">一般</button>
+          <div class="case-seg" role="group" aria-label="★ 病例價值">
+            <button type="button" data-case-highlight-filter="all" aria-pressed="true">全部</button>
+            <button type="button" data-case-highlight-filter="important" aria-pressed="false" title="重要教學">★</button>
+            <button type="button" data-case-highlight-filter="notable" aria-pressed="false" title="明顯療效">✨</button>
+            <button type="button" data-case-highlight-filter="routine" aria-pressed="false" title="一般">☆</button>
+            <button type="button" data-case-highlight-filter="unset" aria-pressed="false" title="還沒標星星">未標</button>
           </div>
-          <select id="caseIcpcFilter" aria-label="系統分類"><option value="">全部系統</option></select>
+          <select id="caseCategoryFilter" aria-label="❤️ 疾病類別"><option value="">❤️ 全部類別</option></select>
           <select id="caseClinicFilter" aria-label="看診地點"><option value="all">兩邊診所</option><option value="bastyr">Bastyr</option><option value="external">外部診所</option></select>
-          <select id="caseStatusFilter" aria-label="病例狀態"><option value="all">全部狀態</option><option value="active">治療中 active</option><option value="paused">暫停 paused</option><option value="closed">結案 closed</option></select>
+          <select id="caseStageFilter" aria-label="🌙 治療進度"><option value="all">🌙 全部進度</option><option value="new">🌑 初診</option><option value="active">🌓 治療中</option><option value="followup">🌙 待追蹤</option><option value="closed">🌕 結案</option><option value="unset">未確認</option></select>
           <select id="caseRecentFilter" aria-label="最近就診"><option value="">不限時間</option><option value="7">7 天內(這週)</option><option value="30">30 天內有就診</option><option value="90">90 天內有就診</option></select>
-          <label class="case-chip"><input type="checkbox" id="caseFlagFilter" /> ⚑ 有紅旗</label>
+          <label class="case-chip"><input type="checkbox" id="caseFlagFilter" /> 🚩 紅旗</label>
           <label class="case-chip case-chip-gold"><input type="checkbox" id="caseUndatedFilter" /> 日期未填</label>
-          <label class="case-chip case-chip-gold" title="沒設關注度、也沒有系統分類的病人"><input type="checkbox" id="caseUntaggedFilter" /> 未標籤 <span id="caseUntaggedCount"></span></label>
-          <label class="case-sort">排序 <select id="caseSortSelect"><option value="tier">重點優先</option><option value="recent">最近就診</option><option value="code">代號</option><option value="visits">就診次數</option></select></label>
+          <label class="case-chip case-chip-gold" title="還沒選主要疾病類別(❤️)的病人"><input type="checkbox" id="caseUntaggedFilter" /> 未分類 <span id="caseUntaggedCount"></span></label>
+          <label class="case-sort">排序 <select id="caseSortSelect"><option value="highlight">★ 優先</option><option value="recent">最近就診</option><option value="code">代號</option><option value="visits">就診次數</option></select></label>
         </div>
         <!-- Dry Clinic #7 續：病歷綁定開啟網址，file:// / localhost / 部署網址是三個
              互不相通的資料庫。永遠顯示「我現在在哪一個」，讓開錯書籤在存進第一筆
@@ -567,7 +568,7 @@
         <!-- 診務回顧:病例反過來告訴你該補哪些卡片。預設收起,按工具列的按鈕展開。
              資料全部來自本機已存在的病例,不另外儲存、不外送。 -->
         <section class="practice-audit-panel" id="practiceAuditPanel" aria-label="診務回顧 Practice Audit" hidden></section>
-        <!-- 舊代號 → ATG-1984F 批次轉換(D34 續三)。新代號一律由 Ting 逐位輸入,程式不猜;先匯出備份才能套用。 -->
+        <!-- 批次設定顯示代號(11/02 標準:族群字母 + 名姓縮寫,例 AQZ)。只寫 displayCode、不動病人編號;一律由 Ting 逐位輸入,先匯出備份才能套用。 -->
         <section class="code-migration-panel" id="codeMigrationPanel" aria-label="病人代號轉換" hidden></section>
         <!-- 就診交接預覽(D34 續四):只 append 新 SOAP;既有病例欄位只補空白。先匯出備份才能寫入。 -->
         <section class="code-migration-panel handoff-panel" id="handoffPanel" aria-label="就診交接預覽" hidden></section>
@@ -779,23 +780,25 @@
         <div class="form-grid">
           <fieldset class="form-section" data-nav-label="身分">
             <legend><span class="form-section-step">1</span>身分 Identity</legend>
-            <label>病人代號 Patient code<input name="patientCode" required placeholder="ATG-1984F" autocomplete="off" /><small id="patientCodeHint" class="field-hint">格式:族裔字母 + 姓名縮寫 - 出生年 + 性別,例 ATG-1984F(A 亞洲 / B 黑人 / W 白人 / M 墨西哥)</small></label>
+            <label>顯示代號 Display code<input name="displayCode" placeholder="AQZ" autocomplete="off" spellcheck="false" /><small id="displayCodeHint" class="field-hint">族群字母 + 名姓縮寫,例 AQZ(A 亞洲 / B 黑人 / W 白人 / M 墨西哥)。只填已確認的;性別/年齡會從下面的性別、出生年自動算出來。</small></label>
+            <label>病人編號 Patient ID<input name="patientCode" placeholder="新病人留空 = 系統自動產生" autocomplete="off" spellcheck="false" /><small id="patientCodeHint" class="field-hint">把同一位病人的病例串在一起的永久編號,不是縮寫也不是年齡。既有病人不要改;同一位病人開新病例時填他的編號。</small></label>
             <label>病例標題 Case title<input name="caseTitle" required placeholder="PCOS fertility support" /></label>
             <label>分類快選 Category quick-pick<select id="caseCategoryQuick"><option value="">—</option><option value="fertility">Fertility 生殖/助孕</option><option value="pain">Pain 疼痛</option><option value="digestive">Digestive 消化</option><option value="sleep">Sleep 睡眠</option><option value="stress_mood">Stress / mood 壓力/情緒</option><option value="respiratory">Respiratory 呼吸系統</option><option value="gynecology">Gynecology 婦科</option><option value="dermatology">Dermatology 皮膚</option><option value="internal_medicine">Internal medicine 內科</option><option value="general">General 一般</option><option value="__other__">Other / custom 其他</option></select></label>
             <label>分類 Category<input name="caseCategory" placeholder="fertility / pain / internal medicine" /></label>
-            <label>狀態 Status<select name="status"><option value="active">active</option><option value="paused">paused</option><option value="closed">closed</option></select></label>
+            <label>治療進度 🌙 Stage<select name="treatmentStage" id="caseTreatmentStage"></select></label>
             <label>開始日期<input name="startDate" type="date" /></label>
           </fieldset>
 
-          <!-- 病例頁改版(2026-10-31):三層標籤 + 看診地點。全部選填;空 = 未設定,
-               列表排在「一般」那層但不顯示徽章。選項由 app.js 從 js/case-search.js 的詞彙表長出來。 -->
+          <!-- 病例標題標準(2026-11-02):❤️ 疾病類別 / ★ 病例價值 + 照護情境 / 看診地點。全部選填;
+               空 = 未設定,畫面上不顯示、不假定。選項由 app.js 從 js/case-search.js 的詞彙表長出來。 -->
           <fieldset class="form-section" data-nav-label="標籤">
             <legend><span class="form-section-step">·</span>標籤 Tags<small>列表上的顏色與篩選;隨時可以改</small></legend>
-            <label>關注度 Attention<select name="attentionTier" id="caseAttentionTier"></select></label>
+            <label>主類別 ❤️ Primary<select name="categoryPrimary" id="caseCategoryPrimary"></select></label>
+            <label>病例價值 ★ Highlight<select name="caseHighlight" id="caseHighlightSelect"></select></label>
             <label>看診地點 Clinic<select name="clinicSite" id="caseClinicSite"></select></label>
             <div class="wide">
-              <p class="race-ethnicity-title">系統分類 Body system — ICPC-2 章節,可複選</p>
-              <div id="caseIcpcOptions" class="checkbox-group tag-checkbox-group" role="group" aria-label="ICPC-2 chapters"></div>
+              <p class="race-ethnicity-title">次類別 ❤️ Secondary — 最多 2 個,不含主類別<small id="caseCategorySuggest" class="field-hint"></small></p>
+              <div id="caseCategorySecondaryOptions" class="checkbox-group tag-checkbox-group" role="group" aria-label="Secondary categories"></div>
             </div>
             <div class="wide">
               <p class="race-ethnicity-title">照護情境 Care context — 可複選</p>

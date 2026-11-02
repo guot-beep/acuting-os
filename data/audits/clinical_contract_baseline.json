@@ -1,7 +1,7 @@
 {
   "note": "D12 臨床資料契約凍結基準。additive-only:欄位可加,不准改名/改型別/移除。",
   "frozen_at": "2026-08-27",
-  "updated_at": "2026-10-31",
+  "updated_at": "2026-11-02",
   "rebaseline_history": [],
   "schema": {
     "patients": {
@@ -43,7 +43,11 @@
       "publication_consent_date": "TEXT",
       "attention_tier": "TEXT",
       "attention_since": "TEXT",
-      "clinic_site": "TEXT"
+      "clinic_site": "TEXT",
+      "display_code": "TEXT",
+      "category_primary": "TEXT",
+      "case_highlight": "TEXT",
+      "treatment_stage": "TEXT"
     },
     "case_race_ethnicity": {
       "case_id": "TEXT",
@@ -56,6 +60,10 @@
     "case_icpc_chapters": {
       "case_id": "TEXT",
       "icpc_chapter": "TEXT"
+    },
+    "case_category_secondary": {
+      "case_id": "TEXT",
+      "category": "TEXT"
     },
     "case_care_contexts": {
       "case_id": "TEXT",
@@ -475,6 +483,11 @@
         "icpcChapters": "array",
         "careContexts": "array",
         "clinicSite": "string",
+        "displayCode": "string",
+        "categoryPrimary": "string",
+        "categorySecondary": "array",
+        "caseHighlight": "string",
+        "treatmentStage": "string",
         "chiefComplaint": "string",
         "historyPresent": "string",
         "pastHistory": "string",
@@ -609,6 +622,11 @@
         "icpcChapters": "array",
         "careContexts": "array",
         "clinicSite": "string",
+        "displayCode": "string",
+        "categoryPrimary": "string",
+        "categorySecondary": "array",
+        "caseHighlight": "string",
+        "treatmentStage": "string",
         "publicationConsent": "string",
         "publicationConsentDate": "string",
         "chiefComplaint": "string",
@@ -801,6 +819,7 @@
       "case.previousTreatment": "scalar_array",
       "case.icpcChapters": "scalar_array",
       "case.careContexts": "scalar_array",
+      "case.categorySecondary": "scalar_array",
       "case.westernConditions": "scalar_array",
       "case.easternDiseases": "scalar_array",
       "case.tcmPatterns": "scalar_array",

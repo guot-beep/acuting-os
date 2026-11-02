@@ -71,8 +71,8 @@ const LEARN_FROM_VERDICTS = ["no_change", "worsened"];
 let learnFromMode = false;
 // 病例頁改版(2026-10-31)病人列表的篩選與排序。同 practiceAuditOpen:renderClinicalCases
 // 開機就會讀,宣告必須在第一次 render() 之前。只活在這個分頁,不寫 localStorage。
-const caseListFilters = { tier: "all", icpc: "", clinic: "all", status: "all", recentDays: "", flagged: false, undated: false, untagged: false };
-let caseListSort = "tier";
+const caseListFilters = { highlight: "all", category: "", clinic: "all", stage: "all", recentDays: "", flagged: false, undated: false, untagged: false };
+let caseListSort = "highlight";
 // 詳情頁頂端的一次性提示(例:存好標籤後病人不再符合篩選、清單換到下一位)。顯示一次就清掉。
 let caseDetailFlash = "";
 // 舊代號轉換面板的狀態:草稿只在記憶體(不寫進任何儲存),關掉分頁就沒了 —— 代號本身就是半識別資訊。
@@ -1811,7 +1811,10 @@ deleteCaseBtn.addEventListener("click", deleteCurrentCase);
 deleteSoapBtn.addEventListener("click", deleteCurrentSoap);
 caseSearch.addEventListener("input", () => { learnFromMode = false; renderClinicalCases(); });
 wireCaseListFilters();
-caseForm.elements.patientCode?.addEventListener("input", () => updatePatientCodeHint(true));
+caseForm.elements.displayCode?.addEventListener("input", () => updatePatientCodeHint());
+caseForm.elements.patientCode?.addEventListener("input", () => updatePatientCodeHint());
+caseForm.elements.categoryPrimary?.addEventListener("change", () => syncSecondaryCategoryChoices(caseForm));
+document.querySelector("#caseCategorySecondaryOptions")?.addEventListener("change", () => syncSecondaryCategoryChoices(caseForm));
 // 「/」直接跳到病例搜尋(只在病例工作區可見、且游標不在輸入框時)
 document.addEventListener("keydown", (e) => {
   if (e.key !== "/" || e.ctrlKey || e.metaKey || e.altKey) return;
@@ -6227,6 +6230,13 @@ function normalizeClinicalCase(value) {
     icpcChapters: Array.isArray(value.icpcChapters) ? value.icpcChapters.map(String) : [],   // ICPC-2 章節字母
     careContexts: Array.isArray(value.careContexts) ? value.careContexts.map(String) : [],   // oncology/fertility/...
     clinicSite: String(value.clinicSite || ""),             // 'bastyr' | 'external'
+    // 11/02 Ting 的病例標題標準(取代上面的關注度 / ICPC-2,那兩個欄位留著不刪)。
+    // 全部 additive、預設空 = 未確認:沒標的星星、月亮畫面上不顯示,不替她假定。
+    displayCode: String(value.displayCode || ""),           // 顯示代號 族群字母+名姓縮寫(AQZ);不唯一,永久鍵仍是 patientCode
+    categoryPrimary: String(value.categoryPrimary || ""),   // ❤️ 主疾病類別(js/case-search.js CASE_CATEGORIES)
+    categorySecondary: Array.isArray(value.categorySecondary) ? value.categorySecondary.map(String) : [],   // ❤️ 次類別,最多 2
+    caseHighlight: String(value.caseHighlight || ""),       // ★ 'important' | 'notable' | 'routine'
+    treatmentStage: String(value.treatmentStage || ""),     // 🌙 'new' | 'active' | 'followup' | 'closed'
     // Publication consent (academic-readiness batch, pre-9/01 freeze; CARE
     // requires informed consent BEFORE a case report can be written). Case-
     // level, D4-style: "" = never asked (the default for every existing
@@ -7946,24 +7956,55 @@ function caseHitSnippet(text, token) {
   return (s > 0 ? "…" : "") + t.slice(s, i + 40) + (i + 40 < t.length ? "…" : "");
 }
 
+// 病例標題(11/02 標準):[★] [AQZ] [F/41] [主❤️] [次❤️] [🌙]。列表、詳情、SOAP 對話框共用同一份資料
+// (js/case-search.js 的 caseLabel)。clickable 時每個符號是按鈕,按了就用它篩選病人列表 ——
+// 只在詳情頁用;列表的每一列本身已經是按鈕,裡面不能再放按鈕。
+function caseLabelHtml(l, { clickable = false, fallbackCode = "" } = {}) {
+  const S = AcuTingCaseSearch;
+  const piece = (cls, text, title, filter) => clickable && filter
+    ? `<button type="button" class="${cls} case-label-btn" data-quick-filter="${escapeAttribute(filter)}" title="${escapeAttribute(title + " —— 按一下篩選")}">${text}</button>`
+    : `<span class="${cls}" title="${escapeAttribute(title)}">${text}</span>`;
+  const out = [];
+  if (l.highlight) { const h = S.CASE_HIGHLIGHTS[l.highlight]; out.push(piece(`cl-star cl-star-${l.highlight}`, h.icon, `${h.zh} ${h.en}`, "highlight:" + l.highlight)); }
+  const code = l.displayCode || fallbackCode;
+  if (code) out.push(`<span class="cl-code${l.displayCode ? "" : " cl-code-fallback"}" title="${l.displayCode ? "顯示代號" : "病人編號(還沒設顯示代號)"}">${escapeHtml(code)}</span>`);
+  if (l.sexAge) out.push(`<span class="cl-sexage" title="性別/年齡(依出生年計算)">${escapeHtml(l.sexAge)}</span>`);
+  for (const k of [l.primary, ...(l.secondary || [])].filter(Boolean)) {
+    const c = S.CASE_CATEGORIES[k];
+    out.push(piece(`cl-heart${k === l.primary ? " cl-heart-primary" : ""}`, c.icon, `${k === l.primary ? "主" : "次"}類別:${c.zh} ${c.en}`, "category:" + k));
+  }
+  if (l.stage) { const st = S.CASE_STAGES[l.stage]; out.push(piece("cl-moon", st.icon, `${st.zh} ${st.en}`, "stage:" + l.stage)); }
+  return `<span class="case-label">${out.join("")}</span>`;
+}
+
+// 新病人的永久編號:PT- + 6 碼亂數(去掉 0/O/1/I/L 易混字)。不是縮寫、不是年齡,
+// 跟現有編號撞到就重抽(11/02 標準第 5 條)。
+function generatePatientId() {
+  const taken = new Set(clinicalCases.map((c) => String(c.patientCode || "").trim()));
+  const ALPHA = "23456789ABCDEFGHJKMNPQRSTUVWXYZ";
+  for (;;) {
+    const bytes = crypto.getRandomValues(new Uint8Array(6));
+    const id = "PT-" + [...bytes].map((b) => ALPHA[b % ALPHA.length]).join("");
+    if (!taken.has(id)) return id;
+  }
+}
+
 function patientRowHtml(p, hit, tokens) {
   const S = AcuTingCaseSearch;
-  const tier = p.tier || "routine";
   const when = p.lastVisit
     ? `${caseRelativeDate(p.lastVisit)} · 共 ${p.visitCount} 診`
     : (p.visitCount ? `日期未填 · ${p.visitCount} 診` : "尚無就診");
   const active = p.cases.some((c) => c.id === selectedCaseId);
   const titles = p.cases.map((c) => c.caseTitle || "Untitled case").join(" / ");
+  // 病人列:星星取所有病例最高的那顆;代號/性別年齡取有填的;❤️ 與 🌙 跟著主要病例
+  const label = { ...p.label, highlight: p.highlight, displayCode: p.displayCode, sexAge: p.sexAge };
   const tags = [
-    p.tier && p.tier !== "routine" ? `<span class="case-tier case-tier-${p.tier}">${S.CASE_TIERS[p.tier].zh}</span>` : "",
-    ...p.icpc.map((k) => `<span class="case-icpc" title="ICPC-2 ${k} ${escapeAttribute(S.ICPC2_CHAPTERS[k].en)}"><b>${k}</b>${escapeHtml(S.ICPC2_CHAPTERS[k].zh)}</span>`),
     ...p.contexts.map((k) => `<span class="case-context">${escapeHtml(S.CARE_CONTEXTS[k].zh)}</span>`),
     p.clinic ? `<span class="case-clinic">${escapeHtml(S.CLINIC_SITES[p.clinic].zh)}</span>` : "",
-    p.statuses.length === 1 && p.statuses[0] !== "active" ? `<span class="case-status-pill">${escapeHtml(p.statuses[0])}</span>` : "",
   ].filter(Boolean).join("");
   const reason = hit ? (tokens.find((t) => String(hit.text).toLowerCase().includes(t)) || tokens[0]) : "";
-  return `<button type="button" class="case-list-item patient-row tier-${tier} ${active ? "active" : ""}" data-patient-key="${escapeAttribute(p.key)}" data-primary-case="${escapeAttribute(p.primaryCaseId)}">
-      <span class="patient-row-who"><span class="patient-row-code">${caseHighlight(p.patientCode || "No code", tokens)}</span>${p.safetyFlags.length ? `<span class="patient-row-flag" title="${escapeAttribute(p.safetyFlags.join("、"))}">⚑</span>` : ""}</span>
+  return `<button type="button" class="case-list-item patient-row cat-${p.category || "none"} ${active ? "active" : ""}" data-patient-key="${escapeAttribute(p.key)}" data-primary-case="${escapeAttribute(p.primaryCaseId)}">
+      <span class="patient-row-who">${caseLabelHtml(label, { fallbackCode: p.patientCode || "No code" })}${p.safetyFlags.length ? `<span class="patient-row-flag" title="🚩 ${escapeAttribute(p.safetyFlags.join("、"))}">🚩</span>` : ""}</span>
       <span class="patient-row-when ${p.lastVisit ? "" : "undated"}">${escapeHtml(when)}${p.undatedCount && p.lastVisit ? ` · <span class="undated">${p.undatedCount} 筆未填日期</span>` : ""}</span>
       <strong class="patient-row-title">${caseHighlight(titles, tokens)}</strong>
       ${p.chiefComplaint ? `<span class="patient-row-cc">${escapeHtml(p.chiefComplaint)}</span>` : ""}
@@ -7976,7 +8017,7 @@ function renderPatientCaseList() {
   const S = AcuTingCaseSearch;
   const query = caseSearch.value.trim();
   const res = S.buildPatientList(clinicalCases, { query, filters: caseListFilters, sort: caseListSort });
-  syncCaseIcpcFilterOptions(res.usedIcpc);
+  syncCaseCategoryFilterOptions();
   syncCaseFiltersToggle();
   const untaggedCount = document.querySelector("#caseUntaggedCount");
   if (untaggedCount) untaggedCount.textContent = String(res.untaggedCount ?? "");
@@ -7999,7 +8040,7 @@ function renderPatientCaseList() {
           <strong>這個入口目前有 0 筆病例</strong>
           <div class="entry-point-line">目前入口:${escapeHtml(entryPointLabel())}</div>
           <p>病歷綁定開啟網址:不同網址是互不相通的資料庫。如果你之前記過病例,很可能是開錯了網址。</p>
-          <p>確定是第一次使用,就按「新增病例」用病人代號(例 ATG-1984F)建立第一筆。</p>
+          <p>確定是第一次使用,就按「新增病例」用顯示代號(例 AQZ)建立第一筆,病人編號留空讓系統產生。</p>
         </div>`;
     return;
   }
@@ -8023,17 +8064,15 @@ function renderPatientCaseList() {
   });
 }
 
-function syncCaseIcpcFilterOptions(usedIcpc) {
-  const sel = document.querySelector("#caseIcpcFilter");
-  if (!sel) return;
-  const want = ["", ...usedIcpc].join(",");
-  if (sel.dataset.options === want) return;
-  sel.dataset.options = want;
+// ❤️ 篩選選單:十類全列(她用符號找病人,沒有病人的類別選了就是空清單,會說出原因)。
+function syncCaseCategoryFilterOptions() {
+  const sel = document.querySelector("#caseCategoryFilter");
+  if (!sel || sel.dataset.built) return;
+  sel.dataset.built = "1";
   const S = AcuTingCaseSearch;
-  sel.innerHTML = `<option value="">全部系統</option>` +
-    usedIcpc.map((k) => `<option value="${k}">${k} ${escapeHtml(S.ICPC2_CHAPTERS[k].zh)}</option>`).join("");
-  sel.value = usedIcpc.includes(caseListFilters.icpc) ? caseListFilters.icpc : "";
-  if (!sel.value) caseListFilters.icpc = "";
+  sel.innerHTML = `<option value="">❤️ 全部類別</option>` +
+    Object.entries(S.CASE_CATEGORIES).map(([k, v]) => `<option value="${k}">${v.icon} ${escapeHtml(v.zh)}</option>`).join("");
+  sel.value = caseListFilters.category;
 }
 
 // 手機的「篩選」按鈕:顯示目前套用了幾個條件。收起時看不到篩選列,
@@ -8042,9 +8081,33 @@ function syncCaseFiltersToggle() {
   const btn = document.querySelector("#caseFiltersToggle");
   if (!btn) return;
   const f = caseListFilters;
-  const active = [f.tier !== "all", !!f.icpc, f.clinic !== "all", f.status !== "all", !!f.recentDays, f.flagged, f.undated, f.untagged].filter(Boolean).length;
+  const active = [f.highlight !== "all", !!f.category, f.clinic !== "all", f.stage !== "all", !!f.recentDays, f.flagged, f.undated, f.untagged].filter(Boolean).length;
   btn.textContent = active ? `篩選 · ${active}` : "篩選";
   btn.classList.toggle("has-active", active > 0);
+}
+
+// 篩選狀態 → 篩選列的控制項(點符號篩選時,篩選列要跟著顯示同一個條件)。
+function syncCaseFilterControls() {
+  const f = caseListFilters;
+  document.querySelectorAll("[data-case-highlight-filter]").forEach((x) => x.setAttribute("aria-pressed", String(x.dataset.caseHighlightFilter === f.highlight)));
+  const set = (id, v) => { const el = document.getElementById(id); if (el) el.value = v; };
+  set("caseCategoryFilter", f.category);
+  set("caseStageFilter", f.stage);
+  set("caseClinicFilter", f.clinic);
+}
+
+// 點詳情標題裡的 ★ / ❤️ / 🌙:用它篩選病人列表(再點一次同一個 = 取消)。
+function applyCaseQuickFilter(spec) {
+  const [kind, value] = String(spec).split(":");
+  const f = caseListFilters;
+  if (kind === "highlight") f.highlight = f.highlight === value ? "all" : value;
+  else if (kind === "category") f.category = f.category === value ? "" : value;
+  else if (kind === "stage") f.stage = f.stage === value ? "all" : value;
+  else return;
+  learnFromMode = false;
+  syncCaseFilterControls();
+  renderClinicalCases();
+  document.querySelector("#caseListPanel")?.scrollIntoView({ block: "start" });
 }
 
 function wireCaseListFilters() {
@@ -8055,16 +8118,16 @@ function wireCaseListFilters() {
     const open = bar.classList.toggle("is-open");
     e.currentTarget.setAttribute("aria-expanded", String(open));
   });
-  bar.querySelectorAll("[data-case-tier-filter]").forEach((b) => b.addEventListener("click", () => {
-    caseListFilters.tier = b.dataset.caseTierFilter;
-    bar.querySelectorAll("[data-case-tier-filter]").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+  bar.querySelectorAll("[data-case-highlight-filter]").forEach((b) => b.addEventListener("click", () => {
+    caseListFilters.highlight = b.dataset.caseHighlightFilter;
+    syncCaseFilterControls();
     learnFromMode = false;
     renderClinicalCases();
   }));
   const bind = (id, apply) => document.getElementById(id)?.addEventListener("change", (e) => { apply(e.target); learnFromMode = false; renderClinicalCases(); });
-  bind("caseIcpcFilter", (el) => { caseListFilters.icpc = el.value; });
+  bind("caseCategoryFilter", (el) => { caseListFilters.category = el.value; });
   bind("caseClinicFilter", (el) => { caseListFilters.clinic = el.value; });
-  bind("caseStatusFilter", (el) => { caseListFilters.status = el.value; });
+  bind("caseStageFilter", (el) => { caseListFilters.stage = el.value; });
   bind("caseRecentFilter", (el) => { caseListFilters.recentDays = el.value; });
   bind("caseFlagFilter", (el) => { caseListFilters.flagged = el.checked; });
   bind("caseUndatedFilter", (el) => { caseListFilters.undated = el.checked; });
@@ -8072,30 +8135,37 @@ function wireCaseListFilters() {
   bind("caseSortSelect", (el) => { caseListSort = el.value; });
 }
 
-// 詳情頁頂端:同一位病人的其他病例分頁 + 標籤列(關注度一鍵切換)。
+// 詳情頁頂端:同一位病人的其他病例分頁 + 標籤列(★ / 🌙 一鍵切換,❤️ 就地編輯)。
 function renderPatientHeaderBar(item) {
   const S = globalThis.AcuTingCaseSearch;
   if (!S || !item) return "";
   const siblings = item.patientCode ? clinicalCases.filter((c) => c.patientCode === item.patientCode) : [item];
   const tabs = siblings.length > 1
-    ? `<div class="case-sibling-tabs" role="tablist" aria-label="同一位病人的病例">${siblings.map((c) =>
-        `<button type="button" role="tab" data-sibling-case="${escapeAttribute(c.id)}" aria-selected="${c.id === item.id}">${escapeHtml(c.caseTitle || "Untitled case")}<small>${escapeHtml(c.status || "active")} · ${(c.soapNotes || []).length} 診</small></button>`).join("")}</div>`
+    ? `<div class="case-sibling-tabs" role="tablist" aria-label="同一位病人的病例">${siblings.map((c) => {
+        const st = S.stageOf(c);
+        return `<button type="button" role="tab" data-sibling-case="${escapeAttribute(c.id)}" aria-selected="${c.id === item.id}">${escapeHtml(c.caseTitle || "Untitled case")}<small>${st ? S.CASE_STAGES[st].icon + " " + S.CASE_STAGES[st].zh : "進度未確認"} · ${(c.soapNotes || []).length} 診</small></button>`;
+      }).join("")}</div>`
     : "";
-  const tier = S.CASE_TIERS[item.attentionTier] ? item.attentionTier : "";
-  const since = tier && item.attentionSince ? AcuTingCaseSearch.daysBetween(item.attentionSince, new Date()) : null;
-  const nudge = tier === "focus" && S.focusNeedsReview(item.attentionSince)
-    ? `<span class="case-tag-nudge">已標重點 ${since} 天 —— 還需要每次細看嗎?可以改回「一般」。</span>`
-    : (tier && since !== null ? `<span class="case-tag-since">標記 ${since} 天</span>` : "");
+  const highlight = S.highlightOf(item), stage = S.stageOf(item), primary = S.categoryOf(item);
+  const hearts = [primary, ...S.secondaryOf(item)].filter(Boolean)
+    .map((k) => `<span class="case-heart-chip${k === primary ? " is-primary" : ""}">${S.CASE_CATEGORIES[k].icon} ${escapeHtml(S.CASE_CATEGORIES[k].zh)}</span>`).join("");
+  const suggestion = primary ? null : S.suggestCategories(item)[0];
   const chips = (list, render, empty) => list.length ? list.map(render).join("") : `<span class="case-tag-empty">${empty}</span>`;
   return `${tabs}
     ${siblings.length > 1 ? renderPatientCrossCaseOverview(item, siblings) : ""}
     <div class="case-tag-bar">
-      <div class="case-tag-line"><span class="case-tag-key">關注度</span>
-        <span class="case-tier-pick">${Object.entries(S.CASE_TIERS).map(([k, v]) =>
-          `<button type="button" class="case-tier-btn tier-${k}" data-set-tier="${k}" aria-pressed="${tier === k}" title="${escapeAttribute(v.hint)}">${v.zh}</button>`).join("")}</span>
-        ${nudge}
+      <div class="case-tag-line"><span class="case-tag-key">★ 價值</span>
+        <span class="case-tier-pick">${Object.entries(S.CASE_HIGHLIGHTS).map(([k, v]) =>
+          `<button type="button" class="case-tier-btn hl-${k}" data-set-highlight="${k}" aria-pressed="${highlight === k}" title="${escapeAttribute(v.en)}">${v.icon} ${v.zh}</button>`).join("")}</span>
+        ${highlight ? "" : `<span class="case-tag-empty">未標(再按一次已選的那顆 = 取消)</span>`}
       </div>
-      <div class="case-tag-line"><span class="case-tag-key">系統</span>${chips(item.icpcChapters || [], (k) => S.ICPC2_CHAPTERS[k] ? `<span class="case-icpc"><b>${k}</b>${escapeHtml(S.ICPC2_CHAPTERS[k].zh)}</span>` : "", "未分類")}
+      <div class="case-tag-line"><span class="case-tag-key">🌙 進度</span>
+        <span class="case-tier-pick">${Object.entries(S.CASE_STAGES).map(([k, v]) =>
+          `<button type="button" class="case-tier-btn st-${k}" data-set-stage="${k}" aria-pressed="${stage === k}" title="${escapeAttribute(v.en)}">${v.icon} ${v.zh}</button>`).join("")}</span>
+        ${stage ? "" : `<span class="case-tag-empty">未確認 —— 不顯示月亮</span>`}
+      </div>
+      <div class="case-tag-line"><span class="case-tag-key">❤️ 類別</span>${hearts || `<span class="case-tag-empty">未分類</span>`}
+        ${suggestion ? `<span class="case-suggest">建議 ${S.CASE_CATEGORIES[suggestion.code].icon} ${escapeHtml(S.CASE_CATEGORIES[suggestion.code].zh)}<small>(主訴有「${escapeHtml(suggestion.hits.slice(0, 3).join("」「"))}」)</small><button type="button" class="ghost" data-accept-suggest="${suggestion.code}">採用</button></span>` : ""}
         <span class="case-tag-key case-tag-key-inline">情境</span>${chips(item.careContexts || [], (k) => S.CARE_CONTEXTS[k] ? `<span class="case-context">${escapeHtml(S.CARE_CONTEXTS[k].zh)}</span>` : "", "無")}
         ${S.CLINIC_SITES[item.clinicSite] ? `<span class="case-clinic">${escapeHtml(S.CLINIC_SITES[item.clinicSite].zh)}</span>` : ""}
         <button type="button" class="ghost case-tag-edit" id="editCaseTagsInline" aria-expanded="false" aria-controls="caseTagEditor">編輯標籤</button>
@@ -8137,42 +8207,83 @@ function wirePatientHeaderBar(item) {
     selectedCaseId = b.dataset.siblingCase;
     renderClinicalCases();
   }));
-  caseDetail.querySelectorAll("[data-set-tier]").forEach((b) => b.addEventListener("click", () => {
-    const next = b.dataset.setTier === item.attentionTier ? "" : b.dataset.setTier;   // 再按一次同一顆 = 取消(回到未設定)
-    setCaseAttentionTier(item.id, next);
+  // 再按一次同一顆 = 取消(回到未設定)
+  caseDetail.querySelectorAll("[data-set-highlight]").forEach((b) => b.addEventListener("click", () => {
+    const next = b.dataset.setHighlight === item.caseHighlight ? "" : b.dataset.setHighlight;
+    setCaseFields(item.id, { caseHighlight: next }, "★");
   }));
+  caseDetail.querySelectorAll("[data-set-stage]").forEach((b) => b.addEventListener("click", () => {
+    const next = b.dataset.setStage === item.treatmentStage ? "" : b.dataset.setStage;
+    // 月亮有確認才同步舊 status 欄;取消月亮時舊欄位維持原值(不擅自改回 active)
+    const patch = { treatmentStage: next };
+    if (next) patch.status = AcuTingCaseSearch.CASE_STAGES[next].legacyStatus;
+    setCaseFields(item.id, patch, "🌙");
+  }));
+  caseDetail.querySelector("[data-accept-suggest]")?.addEventListener("click", (e) => {
+    setCaseFields(item.id, { categoryPrimary: e.currentTarget.dataset.acceptSuggest, categorySecondary: (item.categorySecondary || []).filter((k) => k !== e.currentTarget.dataset.acceptSuggest) }, "❤️");
+  });
+  caseDetail.querySelectorAll("[data-quick-filter]").forEach((b) => b.addEventListener("click", () => applyCaseQuickFilter(b.dataset.quickFilter)));
   const tagEditor = document.querySelector("#caseTagEditor");
   const tagToggle = document.querySelector("#editCaseTagsInline");
   tagToggle?.addEventListener("click", () => {
     tagEditor.hidden = !tagEditor.hidden;
     tagToggle.setAttribute("aria-expanded", String(!tagEditor.hidden));
   });
+  // 次類別最多 2 個、不能跟主類別相同:勾滿就把其他的鎖住
+  tagEditor?.addEventListener("change", () => syncSecondaryCategoryChoices(tagEditor, "tagPrimary", "tagSecondary"));
+  syncSecondaryCategoryChoices(tagEditor, "tagPrimary", "tagSecondary");
+  tagEditor?.querySelectorAll("[data-suggest-pick]").forEach((b) => b.addEventListener("click", () => {
+    const radio = tagEditor.querySelector(`input[name="tagPrimary"][value="${b.dataset.suggestPick}"]`);
+    if (radio) { radio.checked = true; syncSecondaryCategoryChoices(tagEditor, "tagPrimary", "tagSecondary"); }
+  }));
   // 取消 = 重畫一次,勾選回到已存的值;只把面板藏起來的話,下次打開還留著沒存的勾。
   tagEditor?.querySelector("[data-tag-cancel]")?.addEventListener("click", () => renderClinicalCases());
   tagEditor?.querySelector("[data-tag-save]")?.addEventListener("click", () => {
     const picked = (name) => [...tagEditor.querySelectorAll(`input[name="${name}"]:checked`)].map((el) => el.value);
-    setCaseTags(item.id, {
-      icpcChapters: picked("tagIcpc"),
+    const primary = tagEditor.querySelector('input[name="tagPrimary"]:checked')?.value || "";
+    setCaseFields(item.id, {
+      categoryPrimary: primary,
+      categorySecondary: picked("tagSecondary").filter((k) => k !== primary).slice(0, AcuTingCaseSearch.MAX_SECONDARY_CATEGORIES),
       careContexts: picked("tagContext"),
       clinicSite: tagEditor.querySelector("[name=tagClinic]")?.value || "",
-    });
+    }, "標籤");
   });
   tagEditor?.querySelector("[data-tag-full]")?.addEventListener("click", () => {
     openCaseEditor(item);
-    caseForm.querySelector("#caseAttentionTier")?.closest("fieldset")?.scrollIntoView({ block: "start" });
+    caseForm.querySelector("#caseCategoryPrimary")?.closest("fieldset")?.scrollIntoView({ block: "start" });
   });
 }
 
-// 詳情頁直接改標籤(系統分類 / 情境 / 診所),不必打開整份病例表單。
-// 關注度不在這裡 —— 上面那排按鈕本來就一鍵切換。
+// 次類別勾選規則(表單與就地編輯共用):不能勾主類別那一個、最多勾 2 個,勾滿其他的鎖住。
+function syncSecondaryCategoryChoices(root, primaryName = "categoryPrimary", secondaryName = "categorySecondary") {
+  if (!root) return;
+  const primaryEl = root.querySelector(`[name="${primaryName}"]:checked`) || root.querySelector(`select[name="${primaryName}"]`);
+  const primary = primaryEl ? primaryEl.value : "";
+  const boxes = [...root.querySelectorAll(`input[name="${secondaryName}"]`)];
+  boxes.forEach((b) => { if (b.value === primary) b.checked = false; });
+  const count = boxes.filter((b) => b.checked).length;
+  boxes.forEach((b) => { b.disabled = b.value === primary || (!b.checked && count >= AcuTingCaseSearch.MAX_SECONDARY_CATEGORIES); });
+}
+
+// 詳情頁直接改 ❤️ 類別 / 情境 / 診所,不必打開整份病例表單。★ 與 🌙 在上面那兩排一鍵切換。
 function renderCaseTagEditor(item) {
   const S = globalThis.AcuTingCaseSearch;
   const has = (list, k) => (list || []).includes(k);
+  const primary = S.categoryOf(item);
+  const suggestions = S.suggestCategories(item);
   return `
     <div class="case-tag-editor" id="caseTagEditor" hidden>
-      <div class="case-tag-editor-group"><strong>系統分類 ICPC-2</strong><small>可複選;依病人實際的問題歸章,不是依治療方式</small>
-        <div class="case-tag-editor-grid">${Object.entries(S.ICPC2_CHAPTERS).map(([k, v]) =>
-          `<label><input type="checkbox" name="tagIcpc" value="${k}" ${has(item.icpcChapters, k) ? "checked" : ""} /><b class="icpc-letter">${k}</b>${escapeHtml(v.zh)}</label>`).join("")}</div>
+      <div class="case-tag-editor-group"><strong>主類別 ❤️</strong><small>選一個。🖤 複雜/多系統要符合複雜病例標準,不是「有好幾個問題」就算。</small>
+        ${suggestions.length ? `<div class="case-suggest-list">依主訴建議:${suggestions.map((sg) => `<button type="button" class="ghost" data-suggest-pick="${sg.code}" title="主訴有「${escapeAttribute(sg.hits.join("」「"))}」">${S.CASE_CATEGORIES[sg.code].icon} ${escapeHtml(S.CASE_CATEGORIES[sg.code].zh)}</button>`).join("")}<small>(按一下只是先選上,存檔才算)</small></div>` : `<div class="case-suggest-list"><small>主訴沒有可以判斷的關鍵字,請自己選。</small></div>`}
+        <div class="case-tag-editor-grid">
+          <label><input type="radio" name="tagPrimary" value="" ${primary ? "" : "checked"} />未分類</label>
+          ${Object.entries(S.CASE_CATEGORIES).map(([k, v]) =>
+            `<label title="${escapeAttribute(v.en)}"><input type="radio" name="tagPrimary" value="${k}" ${primary === k ? "checked" : ""} />${v.icon} ${escapeHtml(v.zh)}</label>`).join("")}
+        </div>
+      </div>
+      <div class="case-tag-editor-group"><strong>次類別 ❤️</strong><small>最多 2 個,不含主類別</small>
+        <div class="case-tag-editor-grid">${Object.entries(S.CASE_CATEGORIES).map(([k, v]) =>
+          `<label title="${escapeAttribute(v.en)}"><input type="checkbox" name="tagSecondary" value="${k}" ${has(item.categorySecondary, k) ? "checked" : ""} />${v.icon} ${escapeHtml(v.zh)}</label>`).join("")}</div>
       </div>
       <div class="case-tag-editor-group"><strong>情境</strong>
         <div class="case-tag-editor-grid">${Object.entries(S.CARE_CONTEXTS).map(([k, v]) =>
@@ -8190,41 +8301,24 @@ function renderCaseTagEditor(item) {
     </div>`;
 }
 
-// 同 setCaseAttentionTier 的 R9 寫入模式:先快照、persist 失敗就整個退回。
-function setCaseTags(caseId, tags) {
+// 標籤一鍵 / 就地寫入:R9 模式(先快照、persist 失敗就整個退回)。
+function setCaseFields(caseId, patch, what) {
   const snapshot = structuredClone(clinicalCases);
   const now = new Date().toISOString();
-  clinicalCases = clinicalCases.map((c) => c.id === caseId
-    ? normalizeClinicalCase({ ...c, icpcChapters: tags.icpcChapters, careContexts: tags.careContexts, clinicSite: tags.clinicSite, updatedAt: now })
-    : c);
+  clinicalCases = clinicalCases.map((c) => c.id === caseId ? normalizeClinicalCase({ ...c, ...patch, updatedAt: now }) : c);
   if (!persistClinicalCases()) {
     clinicalCases = snapshot;
     return;
   }
   noteClinicalSave();
-  // 開著「未標籤」之類的篩選時,存完這位就不在清單裡,列表會自動換到下一位 —— 講出來,不要讓畫面無聲換人。
+  // 開著「未分類」之類的篩選時,存完這位就不在清單裡,列表會自動換到下一位 —— 講出來,不要讓畫面無聲換人。
   const saved = clinicalCases.find((c) => c.id === caseId);
-  const who = saved?.patientCode || saved?.caseTitle || "這位病人";
+  const who = saved?.displayCode || saved?.patientCode || saved?.caseTitle || "這位病人";
   const res = AcuTingCaseSearch.buildPatientList(clinicalCases, { query: caseSearch.value.trim(), filters: caseListFilters, sort: caseListSort });
   const stillListed = [...res.identity, ...res.content].some((x) => x.patient.cases.some((c) => c.id === caseId));
   caseDetailFlash = stillListed || !res.total
-    ? `已存 ${who} 的標籤。`
-    : `已存 ${who} 的標籤。這位病人已不符合目前的篩選,所以畫面換到清單上的下一位。`;
-  renderClinicalCases();
-}
-
-// 關注度一鍵切換:同 saveCaseFromForm 的 R9 寫入模式(先快照、persist 失敗就整個退回)。
-function setCaseAttentionTier(caseId, tier) {
-  const snapshot = structuredClone(clinicalCases);
-  const now = new Date().toISOString();
-  clinicalCases = clinicalCases.map((c) => c.id === caseId
-    ? normalizeClinicalCase({ ...c, attentionTier: tier, attentionSince: tier ? localDateISO() : "", updatedAt: now })
-    : c);
-  if (!persistClinicalCases()) {
-    clinicalCases = snapshot;
-    return;
-  }
-  noteClinicalSave();
+    ? `已存 ${who} 的${what || "標籤"}。`
+    : `已存 ${who} 的${what || "標籤"}。這位病人已不符合目前的篩選,所以畫面換到清單上的下一位。`;
   renderClinicalCases();
 }
 
@@ -8924,8 +9018,8 @@ function renderCaseSwimlanes(item, notesAsc) {
  * 這一層唯一的職責邊界:**不得在畫面上補計算層刻意不說的話。**
  * 沒有具名來源的 metric,計算層只給變化量與 caveat,畫面就照樣只畫那兩個,
  * 不准自己加箭頭顏色或「改善」字樣去暗示臨床顯著性。 */
-// ---- 舊代號 → ATG-1984F ----
-// 檢查與套用的邏輯在 js/case-search.js(planCodeMigration / applyCodeMigration,有真值表);
+// ---- 批次設定顯示代號(AQZ)----
+// 檢查與套用的邏輯在 js/case-search.js(planDisplayCodes / applyDisplayCodes,有真值表);
 // 這裡只負責畫面與寫入(R9:快照 → persist → 失敗整批退回)。
 function renderCodeMigrationPanel() {
   const panel = document.getElementById("codeMigrationPanel");
@@ -8933,32 +9027,26 @@ function renderCodeMigrationPanel() {
   panel.hidden = !codeMigrationOpen;
   if (!codeMigrationOpen) { panel.innerHTML = ""; return; }
   const S = AcuTingCaseSearch;
-  const plan = S.planCodeMigration(clinicalCases, codeMigrationDraft);
-  const todo = plan.rows.filter((r) => !r.alreadyNewFormat);
-  const done = plan.rows.length - todo.length;
-  const ref = (code) => {
-    const cases = clinicalCases.filter((c) => c.patientCode === code);
-    const sex = [...new Set(cases.map((c) => c.sex).filter(Boolean))].join("/");
-    const year = [...new Set(cases.map((c) => (c.birthYearMonth || "").slice(0, 4) || (c.birthYear ? String(c.birthYear) : "")).filter(Boolean))].join("/");
-    return { titles: cases.map((c) => c.caseTitle || "Untitled").join("、"), facts: [sex && `性別 ${sex}`, year && `出生年 ${year}`].filter(Boolean).join(" · ") || "病歷沒記性別/出生年" };
-  };
+  const patients = S.groupCasesByPatient(clinicalCases);
+  const todo = patients.filter((p) => !p.displayCode);
+  const done = patients.length - todo.length;
   const resultHtml = codeMigrationResult ? `
-    <div class="code-mig-result" role="status"><strong>已換好 ${codeMigrationResult.length} 位:</strong>
-      <ul>${codeMigrationResult.map((r) => `<li><code>${escapeHtml(r.oldCode)}</code> → <code>${escapeHtml(r.newCode)}</code></li>`).join("")}</ul></div>` : "";
+    <div class="code-mig-result" role="status"><strong>已設定 ${codeMigrationResult.length} 位:</strong>
+      <ul>${codeMigrationResult.map((r) => `<li><code>${escapeHtml(r.patientCode || "(無編號)")}</code> → <code>${escapeHtml(r.newCode)}</code></li>`).join("")}</ul></div>` : "";
   panel.innerHTML = `
     <div class="code-mig-head">
-      <strong>舊代號轉成 ATG-1984F</strong>
+      <strong>批次設定顯示代號(AQZ)</strong>
       <button type="button" class="ghost" data-mig-close>關閉</button>
     </div>
-    <p class="code-mig-note">新代號由你逐位填:族裔字母(A 亞洲 / B 黑人 / W 白人 / M 墨西哥)+ 姓名縮寫 - 出生年 + 性別,例 <code>ATG-1984F</code>。
-      空白 = 不動。同一位病人的所有病例會一起換。程式只檢查,不幫你猜出生年。${done ? ` 已是新格式的 ${done} 位不列出。` : ""}</p>
+    <p class="code-mig-note">顯示代號 = 族群字母(A 亞洲 / B 黑人 / W 白人 / M 墨西哥)+ 名姓縮寫,例 <code>AQZ</code>。只填已確認的,空白 = 不動。
+      只會寫「顯示代號」,病人編號一個字都不改,所以不會把病人拆開。性別/年齡會自動從病例的性別、出生年算。${done ? ` 已設定的 ${done} 位不列出。` : ""}</p>
     ${resultHtml}
-    ${todo.length ? `<div class="code-mig-rows">${todo.map((r) => { const x = ref(r.oldCode); return `
-      <div class="code-mig-row" data-mig-row="${escapeAttribute(r.oldCode)}">
-        <div class="code-mig-old"><code>${escapeHtml(r.oldCode)}</code><small>${escapeHtml(x.titles)}</small><small>${escapeHtml(x.facts)}</small></div>
-        <input type="text" autocomplete="off" spellcheck="false" placeholder="新代號" aria-label="${escapeAttribute(r.oldCode)} 的新代號" data-mig-input="${escapeAttribute(r.oldCode)}" value="${escapeAttribute(codeMigrationDraft[r.oldCode] || "")}" />
-        <div class="code-mig-status" data-mig-status="${escapeAttribute(r.oldCode)}"></div>
-      </div>`; }).join("")}</div>` : `<div class="case-empty">所有病人都已經是新格式。</div>`}
+    ${todo.length ? `<div class="code-mig-rows">${todo.map((p) => `
+      <div class="code-mig-row" data-mig-row="${escapeAttribute(p.key)}">
+        <div class="code-mig-old"><code>${escapeHtml(p.patientCode || "(無編號)")}</code><small>${escapeHtml(p.cases.map((c) => c.caseTitle || "Untitled").join("、"))}</small><small>${escapeHtml(p.sexAge || "病歷沒記性別/出生年")}</small></div>
+        <input type="text" autocomplete="off" spellcheck="false" placeholder="AQZ" aria-label="${escapeAttribute(p.patientCode || "病例")} 的顯示代號" data-mig-input="${escapeAttribute(p.key)}" value="${escapeAttribute(codeMigrationDraft[p.key] || "")}" />
+        <div class="code-mig-status" data-mig-status="${escapeAttribute(p.key)}"></div>
+      </div>`).join("")}</div>` : `<div class="case-empty">每位病人都已經有顯示代號。要改個別病人,請在病例表單裡改。</div>`}
     <div class="code-mig-actions">
       <button type="button" class="ghost" data-mig-backup>1. 先匯出備份</button>
       <button type="button" data-mig-apply disabled>2. 套用</button>
@@ -8983,14 +9071,12 @@ function renderCodeMigrationPanel() {
 function syncCodeMigrationStatus() {
   const panel = document.getElementById("codeMigrationPanel");
   if (!panel || panel.hidden) return;
-  const plan = AcuTingCaseSearch.planCodeMigration(clinicalCases, codeMigrationDraft);
-  const byOld = new Map(plan.rows.map((r) => [r.oldCode, r]));
+  const plan = AcuTingCaseSearch.planDisplayCodes(clinicalCases, codeMigrationDraft);
+  const byKey = new Map(plan.rows.map((r) => [r.key, r]));
   panel.querySelectorAll("[data-mig-status]").forEach((cell) => {
-    const r = byOld.get(cell.dataset.migStatus);
-    const typed = String(codeMigrationDraft[cell.dataset.migStatus] || "").trim();
+    const r = byKey.get(cell.dataset.migStatus);
     cell.className = `code-mig-status ${r && r.status === "error" ? "is-error" : r && r.status === "ok" ? (r.warnings.length ? "is-warn" : "is-ok") : ""}`;
-    cell.innerHTML = !r || r.status === "unchanged"
-      ? (typed ? "跟原代號一樣,不動" : "")
+    cell.innerHTML = !r || r.status === "unchanged" ? ""
       : r.status === "error" ? r.errors.map(escapeHtml).join("<br>")
       : `→ <code>${escapeHtml(r.newCode)}</code>${r.warnings.length ? `<br>⚠ ${r.warnings.map(escapeHtml).join("<br>⚠ ")}` : ""}`;
   });
@@ -9004,30 +9090,30 @@ function syncCodeMigrationStatus() {
   }
   if (summary) {
     summary.textContent = plan.blocked ? `有 ${plan.blocked} 列要先改正`
-      : !plan.changes.length ? "還沒有要換的代號"
+      : !plan.changes.length ? "還沒有填任何顯示代號"
       : !codeMigrationBackedUp ? "先按「匯出備份」才能套用"
-      : `準備換 ${plan.changes.length} 位${plan.changes.some((r) => r.warnings.length) ? "(有 ⚠ 的請再看一眼)" : ""}`;
+      : `準備設定 ${plan.changes.length} 位${plan.changes.some((r) => r.warnings.length) ? "(有 ⚠ 的請再看一眼)" : ""}`;
   }
 }
 
 function applyCodeMigrationFromPanel() {
   const S = AcuTingCaseSearch;
-  const plan = S.planCodeMigration(clinicalCases, codeMigrationDraft);
+  const plan = S.planDisplayCodes(clinicalCases, codeMigrationDraft);
   if (!codeMigrationBackedUp || plan.blocked || !plan.changes.length) return;
-  const lines = plan.changes.map((r) => `${r.oldCode} → ${r.newCode}${r.warnings.length ? "  ⚠ " + r.warnings.join(";") : ""}`);
-  if (!confirm(`要換掉 ${plan.changes.length} 位病人的代號(所有病例一起換):\n\n${lines.join("\n")}\n\n確定?`)) return;
+  const lines = plan.changes.map((r) => `${r.patientCode || "(無編號)"} → ${r.newCode}${r.warnings.length ? "  ⚠ " + r.warnings.join(";") : ""}`);
+  if (!confirm(`要設定 ${plan.changes.length} 位病人的顯示代號(病人編號不變):\n\n${lines.join("\n")}\n\n確定?`)) return;
   const snapshot = structuredClone(clinicalCases);
   const now = new Date().toISOString();
   const changedIds = new Set(plan.changes.flatMap((r) => r.caseIds));
-  clinicalCases = S.applyCodeMigration(clinicalCases, plan)
+  clinicalCases = S.applyDisplayCodes(clinicalCases, plan)
     .map((c) => (changedIds.has(c.id) ? normalizeClinicalCase({ ...c, updatedAt: now }) : c));
   if (!persistClinicalCases()) {
     clinicalCases = snapshot;
     return;
   }
   noteClinicalSave();
-  codeMigrationResult = plan.changes.map((r) => ({ oldCode: r.oldCode, newCode: r.newCode }));
-  for (const r of plan.changes) delete codeMigrationDraft[r.oldCode];
+  codeMigrationResult = plan.changes.map((r) => ({ patientCode: r.patientCode, newCode: r.newCode }));
+  for (const r of plan.changes) delete codeMigrationDraft[r.key];
   renderClinicalCases();
   renderCodeMigrationPanel();
 }
@@ -9050,7 +9136,7 @@ function renderHandoffPanel() {
       <button type="button" class="ghost" data-ho-close>關閉</button>
     </div>
     <p class="code-mig-note">只會<b>新增</b> SOAP;既有病例的欄位不改,只補空白(每筆可取消)。交接檔的代號只是候選,在系統裡找到才接上;
-      沒代號的病人請填 <code>ATG-1984F</code> 格式代號,再勾「建立新病人」。同一天已有 SOAP 的預設不匯。</p>
+      沒代號的病人:是既有病人就填他的病人編號(或唯一的顯示代號);新病人填顯示代號(例 <code>AQZ</code>),再勾「建立新病人」—— 系統會給他一個永久編號。同一天已有 SOAP 的預設不匯。</p>
     ${resultHtml}
     <div class="handoff-rows">${items.map((it) => {
       const d = it.display || {};
@@ -9062,7 +9148,7 @@ function renderHandoffPanel() {
           ${d.flags ? `<small class="handoff-flag">⚑ ${escapeHtml(d.flags)}</small>` : ""}
         </div>
         <label class="handoff-code">代號<input type="text" autocomplete="off" spellcheck="false" data-ho-code="${escapeAttribute(it.ref)}"
-          value="${escapeAttribute(handoffChoices[it.ref]?.code ?? it.patientCode ?? "")}" placeholder="ATG-1984F" /></label>
+          value="${escapeAttribute(handoffChoices[it.ref]?.code ?? it.patientCode ?? "")}" placeholder="AQZ 或病人編號" /></label>
         <div class="handoff-status" data-ho-status="${escapeAttribute(it.ref)}"></div>
       </div>`; }).join("")}</div>
     <div class="code-mig-actions">
@@ -9110,7 +9196,7 @@ function syncHandoffStatus() {
     const err = r.errors.map((w) => `<div class="is-error">${escapeHtml(w)}</div>`).join("");
     let html = "";
     if (r.status === "already_imported") html = `<div class="is-ok">這筆已經匯入過,不再重複。</div>`;
-    else if (r.status === "needs_code") html = `<div class="handoff-muted">沒有代號 —— 不會匯入。填系統裡已有的代號就接到那位病人;新病人填新代號。</div>`;
+    else if (r.status === "needs_code") html = `<div class="handoff-muted">沒有代號 —— 不會匯入。既有病人填病人編號;新病人填顯示代號(例 AQZ)。</div>`;
     else if (r.status === "append") {
       const choicesHtml = r.targetChoices.length > 1
         ? `<select data-ho-ref="${ref}" data-ho-case>${r.targetChoices.map((c) => `<option value="${escapeAttribute(c.id)}" ${c.id === r.targetCaseId ? "selected" : ""}>${escapeHtml(c.title || "Untitled")}(${escapeHtml(c.status)} · ${c.visits} 診)</option>`).join("")}</select>`
@@ -9120,7 +9206,7 @@ function syncHandoffStatus() {
         ${r.fillFields.length ? `<label class="handoff-check"><input type="checkbox" data-ho-ref="${ref}" data-ho-fill ${r.fillEmpty ? "checked" : ""} /> 補病例空白欄位:${escapeHtml(r.fillFields.map((k) => HANDOFF_FIELD_LABELS[k] || k).join("、"))}</label>` : ""}
         ${r.newFlags.length ? `<div class="handoff-flag">新增安全旗標 ${r.newFlags.length} 項:${escapeHtml(r.newFlags.join("；"))}</div>` : ""}`;
     } else if (r.status === "new_patient") {
-      html = r.errors.length ? "" : `<label class="handoff-check"><input type="checkbox" data-ho-ref="${ref}" data-ho-create ${r.include ? "checked" : ""} /> 建立新病人 <code>${escapeHtml(r.code)}</code></label>`;
+      html = r.errors.length ? "" : `<label class="handoff-check"><input type="checkbox" data-ho-ref="${ref}" data-ho-create ${r.include ? "checked" : ""} /> 建立新病人,顯示代號 <code>${escapeHtml(r.code)}</code>(永久編號由系統產生)</label>`;
     } else if (r.status === "code_not_found") html = "";
     cell.className = `handoff-status ${r.include ? "will-write" : ""}`;
     cell.innerHTML = html + err + warn;
@@ -9149,12 +9235,12 @@ function applyHandoffFromPanel() {
   const label = (ref) => (handoffDoc.items.find((it) => it.ref === ref)?.display?.label) || ref;
   const lines = plan.toApply.map((r) => r.status === "append"
     ? `${label(r.ref)} → ${r.code} 加一次就診${r.newFlags.length ? `(+${r.newFlags.length} 安全旗標)` : ""}${r.fillEmpty && r.fillFields.length ? `(補 ${r.fillFields.length} 欄)` : ""}`
-    : `${label(r.ref)} → 新病人 ${r.code}`);
+    : `${label(r.ref)} → 新病人(顯示代號 ${r.code})`);
   if (!confirm(`要寫入 ${plan.toApply.length} 筆:\n\n${lines.join("\n")}\n\n確定?`)) return;
   const snapshot = structuredClone(clinicalCases);
   const prevSelected = selectedCaseId;
   const touched = new Set(plan.toApply.map((r) => (r.status === "append" ? r.targetCaseId : H.caseIdFor(r.ref))));
-  const next = H.applyHandoff(clinicalCases, handoffDoc.items, plan, new Date().toISOString())
+  const next = H.applyHandoff(clinicalCases, handoffDoc.items, plan, new Date().toISOString(), () => generatePatientId())
     .map((c) => (touched.has(c.id) ? normalizeClinicalCase(c) : c));
   if (window.AcuTingClinicalStore?.checkClinicalInvariants) {
     const inv = AcuTingClinicalStore.checkClinicalInvariants(next);
@@ -9408,9 +9494,9 @@ function renderClinicalCaseDetail(item) {
     ${caseDetailFlash ? `<div class="case-flash" role="status">${escapeHtml(caseDetailFlash)}</div>` : ""}
     <div class="case-detail-head">
       <div>
-        <p class="eyebrow">${escapeHtml(item.patientCode || "Patient")}</p>
+        <p class="eyebrow case-detail-label">${caseLabelHtml(AcuTingCaseSearch.caseLabel(item), { clickable: true, fallbackCode: item.patientCode || "Patient" })}${item.displayCode ? `<small class="case-permanent-id" title="病人編號(永久、系統用)">${escapeHtml(item.patientCode || "")}</small>` : ""}</p>
         <h3>${escapeHtml(item.caseTitle || "Untitled case")}</h3>
-        <div class="case-meta">${escapeHtml([item.caseCategory, item.status, item.startDate].filter(Boolean).join(" · "))}</div>
+        <div class="case-meta">${escapeHtml([item.caseCategory, item.startDate].filter(Boolean).join(" · "))}</div>
       </div>
       <div class="case-actions">
         <button class="ghost" type="button" id="editCaseInline">編輯病例</button>
@@ -10396,19 +10482,21 @@ function wireSubmitFailureFeedback(form, errorEl) {
 
 function openCaseEditor(item = null) {
   editingCaseId = item?.id || null;
-  document.querySelector("#caseDialogTitle").textContent = item ? `編輯 ${item.patientCode}` : "新增病例";
+  document.querySelector("#caseDialogTitle").textContent = item ? `編輯 ${AcuTingCaseSearch.caseLabelText(item) || item.patientCode}` : "新增病例";
   deleteCaseBtn.hidden = !item;
   const fallback = {
-    // 代號由她依 ATG-1984F 格式自己打(2026-10-31);不再預填 P-年-流水號,
-    // 預填的假代號一旦沒改就存進去,會變成一個對不回任何人的病人。
+    // 病人編號留空 = 存檔時系統產生永久編號(11/02 標準:永久鍵不是縮寫、不是年齡);
+    // 顯示代號(AQZ)由她自己打。不預填任何假值 —— 沒改就存進去會變成對不回任何人的病人。
     patientCode: "",
+    displayCode: "",
     caseTitle: "",
-    attentionTier: "",
+    caseHighlight: "",
+    categoryPrimary: "",
+    categorySecondary: [],
+    treatmentStage: "",
     clinicSite: "",
-    icpcChapters: [],
     careContexts: [],
     caseCategory: "",
-    status: "active",
     startDate: localDateISO(),
     birthYear: "",
     birthYearMonth: "",
@@ -10449,7 +10537,7 @@ function openCaseEditor(item = null) {
   const data = { ...fallback, ...(item || {}) };
   renderRaceEthnicityOptions();                                    // build checkboxes from the bundled vocabulary before hydrating
   renderCaseTagOptions();                                          // 標籤區的選項同理:先長出來再水合
-  const CHECKBOX_GROUP_FIELDS = new Set(["raceEthnicity", "previousTreatment", "icpcChapters", "careContexts"]);
+  const CHECKBOX_GROUP_FIELDS = new Set(["raceEthnicity", "previousTreatment", "categorySecondary", "careContexts"]);
   Object.entries(data).forEach(([key, value]) => {
     if (CHECKBOX_GROUP_FIELDS.has(key)) return;                    // handled below — RadioNodeList.value is meaningless for checkboxes
     if (!caseForm.elements[key]) return;
@@ -10460,7 +10548,8 @@ function openCaseEditor(item = null) {
   });
   setCheckboxGroup(caseForm, "raceEthnicity", data.raceEthnicity);
   setCheckboxGroup(caseForm, "previousTreatment", data.previousTreatment);
-  setCheckboxGroup(caseForm, "icpcChapters", data.icpcChapters);
+  setCheckboxGroup(caseForm, "categorySecondary", data.categorySecondary);
+  syncSecondaryCategoryChoices(caseForm);
   setCheckboxGroup(caseForm, "careContexts", data.careContexts);
   // 有出生年月時,年份欄顯示空白(以年月為準),避免兩格各寫一個年份互相矛盾
   if (caseForm.elements.birthYear) caseForm.elements.birthYear.value = data.birthYearMonth ? "" : (data.birthYear || "");
@@ -10538,20 +10627,19 @@ function setupCaseLinkAutocomplete() {
 function renderCaseTagOptions() {
   const S = globalThis.AcuTingCaseSearch;
   if (!S) return;
-  const tier = document.querySelector("#caseAttentionTier");
-  if (tier && !tier.options.length) {
-    tier.innerHTML = `<option value="">未設定 —</option>` +
-      Object.entries(S.CASE_TIERS).map(([k, v]) => `<option value="${k}">${v.zh} ${v.en} — ${escapeHtml(v.hint)}</option>`).join("");
-  }
-  const site = document.querySelector("#caseClinicSite");
-  if (site && !site.options.length) {
-    site.innerHTML = `<option value="">未設定 —</option>` +
-      Object.entries(S.CLINIC_SITES).map(([k, v]) => `<option value="${k}">${escapeHtml(v.zh)}</option>`).join("");
-  }
-  const icpc = document.querySelector("#caseIcpcOptions");
-  if (icpc && !icpc.children.length) {
-    icpc.innerHTML = Object.entries(S.ICPC2_CHAPTERS).map(([k, v]) =>
-      `<label><input type="checkbox" name="icpcChapters" value="${k}" /><b class="icpc-letter">${k}</b> ${escapeHtml(v.zh)} <small>${escapeHtml(v.en)}</small></label>`).join("");
+  const fill = (sel, html) => { const el = document.querySelector(sel); if (el && !el.options.length) el.innerHTML = html; };
+  fill("#caseTreatmentStage", `<option value="">未確認 —(不顯示月亮)</option>` +
+    Object.entries(S.CASE_STAGES).map(([k, v]) => `<option value="${k}">${v.icon} ${v.zh} ${v.en}</option>`).join(""));
+  fill("#caseHighlightSelect", `<option value="">未標 —</option>` +
+    Object.entries(S.CASE_HIGHLIGHTS).map(([k, v]) => `<option value="${k}">${v.icon} ${v.zh} ${v.en}</option>`).join(""));
+  fill("#caseCategoryPrimary", `<option value="">未分類 —</option>` +
+    Object.entries(S.CASE_CATEGORIES).map(([k, v]) => `<option value="${k}">${v.icon} ${escapeHtml(v.zh)} ${escapeHtml(v.en)}</option>`).join(""));
+  fill("#caseClinicSite", `<option value="">未設定 —</option>` +
+    Object.entries(S.CLINIC_SITES).map(([k, v]) => `<option value="${k}">${escapeHtml(v.zh)}</option>`).join(""));
+  const sec = document.querySelector("#caseCategorySecondaryOptions");
+  if (sec && !sec.children.length) {
+    sec.innerHTML = Object.entries(S.CASE_CATEGORIES).map(([k, v]) =>
+      `<label><input type="checkbox" name="categorySecondary" value="${k}" />${v.icon} ${escapeHtml(v.zh)} <small>${escapeHtml(v.en)}</small></label>`).join("");
   }
   const ctx = document.querySelector("#caseContextOptions");
   if (ctx && !ctx.children.length) {
@@ -10560,31 +10648,34 @@ function renderCaseTagOptions() {
   }
 }
 
-// 代號照 ATG-1984F 格式打時,下方提示會解析出什麼;性別/出生年空著才「建議」帶入,
-// 已經填了的值一律不動(她填的優先於代號推出來的)。只有她正在打代號時(fill=true)
-// 才帶入;打開舊病例的表單只顯示解析結果,不替舊紀錄填任何欄位。
-function updatePatientCodeHint(fill = false) {
-  const hint = document.querySelector("#patientCodeHint");
-  const input = caseForm?.elements?.patientCode;
+// 顯示代號(AQZ)打的時候,下方提示會解析出族群字母與縮寫;病人編號打的時候,提示「這是既有病人」或「新病人」。
+// 不再從代號帶入性別或出生年(11/02:代號不含這兩項,年齡從出生年算)。
+function updatePatientCodeHint() {
   const S = globalThis.AcuTingCaseSearch;
-  if (!hint || !input || !S) return;
-  const parsed = S.parsePatientCode(input.value);
-  if (!input.value.trim()) {
-    hint.textContent = "格式:族裔字母 + 姓名縮寫 - 出生年 + 性別,例 ATG-1984F(A 亞洲 / B 黑人 / W 白人 / M 墨西哥)";
-    hint.dataset.state = "";
-    return;
+  const dHint = document.querySelector("#displayCodeHint");
+  const dInput = caseForm?.elements?.displayCode;
+  if (S && dHint && dInput) {
+    const v = dInput.value.trim();
+    const parsed = v ? S.parseDisplayCode(v) : null;
+    dHint.dataset.state = !v ? "" : parsed ? "ok" : "other";
+    dHint.textContent = !v
+      ? "族群字母 + 名姓縮寫,例 AQZ(A 亞洲 / B 黑人 / W 白人 / M 墨西哥)。只填已確認的;性別/年齡會從下面的性別、出生年自動算出來。"
+      : parsed
+        ? `${parsed.ethnicity || `族群字母 ${parsed.ethnicityLetter}(不在 A/B/W/M 裡)`} · 縮寫 ${parsed.initials} → 標題顯示 ${parsed.code}`
+        : "格式不對:只用字母,族群字母 + 名姓縮寫,例 AQZ。";
   }
-  if (!parsed) {
-    hint.textContent = "這個代號不是 ATG-1984F 格式 —— 可以照樣存;性別與出生年請在「背景」區自己填。";
-    hint.dataset.state = "other";
-    return;
+  const pHint = document.querySelector("#patientCodeHint");
+  const pInput = caseForm?.elements?.patientCode;
+  if (pHint && pInput) {
+    const v = pInput.value.trim();
+    const owners = v ? clinicalCases.filter((c) => c.patientCode === v && c.id !== editingCaseId) : [];
+    pHint.dataset.state = owners.length ? "ok" : "";
+    pHint.textContent = !v
+      ? "新病人留空 —— 存檔時系統產生永久編號(不是縮寫、不是年齡)。同一位病人開新病例時,填他的編號。"
+      : owners.length
+        ? `這是既有病人的編號(已有 ${owners.length} 個病例:${owners.map((c) => c.caseTitle || "Untitled").slice(0, 3).join("、")})—— 這個病例會歸在同一位病人底下。`
+        : "系統裡還沒有這個編號 —— 會當成一位新病人。既有病人不要改編號。";
   }
-  const filled = [];
-  if (fill && !caseForm.elements.sex.value) { caseForm.elements.sex.value = parsed.sex; filled.push("性別"); }
-  if (fill && !caseForm.elements.birthYearMonth.value && !caseForm.elements.birthYear.value) { caseForm.elements.birthYear.value = parsed.birthYear; filled.push("出生年"); }
-  hint.textContent = `${parsed.ethnicity || parsed.ethnicityLetter} · 縮寫 ${parsed.initials} · ${parsed.birthYear} 年生 · ${parsed.sex}` +
-    (filled.length ? ` —— 已幫你帶入${filled.join("、")}(可改)` : "");
-  hint.dataset.state = "ok";
 }
 
 function renderRaceEthnicityOptions() {
@@ -10707,8 +10798,17 @@ function saveCaseFromForm(event) {
   const data = Object.fromEntries(formData.entries());
   const raceEthnicity = formData.getAll("raceEthnicity");
   const previousTreatment = formData.getAll("previousTreatment");
-  const icpcChapters = formData.getAll("icpcChapters");
   const careContexts = formData.getAll("careContexts");
+  const categorySecondary = formData.getAll("categorySecondary").filter((k) => k !== data.categoryPrimary);
+  if (categorySecondary.length > AcuTingCaseSearch.MAX_SECONDARY_CATEGORIES) {
+    alert(`次類別最多 ${AcuTingCaseSearch.MAX_SECONDARY_CATEGORIES} 個。`);
+    return;
+  }
+  const displayCodeRaw = String(data.displayCode || "").trim();
+  if (displayCodeRaw && !AcuTingCaseSearch.parseDisplayCode(displayCodeRaw)) {
+    alert("顯示代號格式:族群字母 + 名姓縮寫,例 AQZ(只用字母,2–5 個)。或留空。");
+    return;
+  }
   // 出生年:有年月以年月為準;只有年份時存年份;兩格都空 → 保留既有值以外的唯一合法狀態是空。
   // (過去表單沒有年份欄,只有年份的病例第一次存檔就被清掉 —— 2026-10-28 匯入往返測試抓到。)
   const birthYearRaw = String(data.birthYear || "").trim();
@@ -10734,24 +10834,32 @@ function saveCaseFromForm(event) {
 
   const now = new Date().toISOString();
   const current = clinicalCases.find((item) => item.id === editingCaseId);
+  // 病人編號:新病例留空 → 產生永久編號;既有病例被清空 → 沿用原本的(清空不能把病人拆出去)。
+  const typedPatientCode = String(data.patientCode || "").trim();
+  const patientCode = typedPatientCode || current?.patientCode || generatePatientId();
+  const stage = String(data.treatmentStage || "");
   const nextCase = normalizeClinicalCase({
     ...(current || {}),
     id: current?.id || createId("case"),
-    patientCode: data.patientCode.trim(),
+    patientCode,
+    displayCode: displayCodeRaw ? AcuTingCaseSearch.normalizeDisplayCode(displayCodeRaw) : "",
     caseTitle: data.caseTitle.trim(),
     caseCategory: data.caseCategory.trim(),
-    status: data.status,
+    // 🌙 有確認才同步舊 status 欄;沒確認就保留原值(新病例預設 active,與 normalizer 一致)
+    treatmentStage: stage,
+    status: stage ? AcuTingCaseSearch.CASE_STAGES[stage].legacyStatus : (current?.status || "active"),
     startDate: data.startDate,
     birthYearMonth: (data.birthYearMonth || "").trim(),
     birthYear: (data.birthYearMonth ? Number(String(data.birthYearMonth).slice(0, 4)) : (birthYearRaw ? Number(birthYearRaw) : "")),
     sex: (data.sex || "").trim(),
-    attentionTier: (data.attentionTier || "").trim(),
-    // 關注度有變才重設日期;沒變就沿用原本的(重點輪替提醒靠它算天數)
-    attentionSince: ((data.attentionTier || "") === (current?.attentionTier || ""))
-      ? String(current?.attentionSince || "")
-      : (data.attentionTier ? localDateISO() : ""),
+    // 10/31 的關注度與 ICPC-2 已不在表單上(11/02 改成 ❤️/★/🌙);既有值原樣保留,不清掉
+    attentionTier: current?.attentionTier || "",
+    attentionSince: current?.attentionSince || "",
+    icpcChapters: current?.icpcChapters || [],
+    caseHighlight: String(data.caseHighlight || ""),
+    categoryPrimary: String(data.categoryPrimary || ""),
+    categorySecondary,
     clinicSite: (data.clinicSite || "").trim(),
-    icpcChapters,
     careContexts,
     genderIdentity: (data.genderIdentity || "").trim(),
     raceEthnicity,
@@ -11039,7 +11147,9 @@ function openSoapEditor(note = null) {
     return;
   }
   editingSoapId = note?.id || null;
-  document.querySelector("#soapDialogTitle").textContent = note ? "編輯 SOAP Note" : `新增 SOAP - ${activeCase.patientCode}`;
+  // SOAP 頁跟列表、詳情用同一套標題(11/02 標準)
+  const soapHeadline = AcuTingCaseSearch.caseLabelText(activeCase) || activeCase.displayCode || activeCase.patientCode;
+  document.querySelector("#soapDialogTitle").textContent = note ? `編輯 SOAP Note · ${soapHeadline}` : `新增 SOAP · ${soapHeadline}`;
   deleteSoapBtn.hidden = !note;
   const previousNote = findPreviousSoapNote(activeCase.soapNotes, editingSoapId);
   renderPreviousVisitPanel(previousNote);
