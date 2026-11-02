@@ -80,6 +80,19 @@ let codeMigrationOpen = false;
 let codeMigrationBackedUp = false;
 let codeMigrationResult = null;
 const codeMigrationDraft = {};
+// 就診交接預覽的狀態:交接檔只留在記憶體,不寫進任何儲存;關掉分頁就沒了。
+let handoffDoc = null;
+let handoffChoices = {};
+let handoffBackedUp = false;
+let handoffResult = null;
+// 預覽裡「補病例空白欄位」顯示用的欄位中文名(交接檔 newCase 的 key)。
+const HANDOFF_FIELD_LABELS = {
+  caseTitle: "病例名稱", caseCategory: "分類", startDate: "起始日", birthYear: "出生年", sex: "性別", occupation: "職業",
+  chiefComplaint: "主訴", historyPresent: "現病史", pastHistory: "既往史", menstrualObHistory: "月經/婦科史", lifestyle: "生活",
+  goals: "目標", allergyStatus: "過敏狀態", allergies: "過敏", currentMeds: "目前用藥", previousTreatment: "過往治療",
+  previousTreatmentNotes: "過往治療備註", baselineSeverity: "基線嚴重度", chronicity: "病程", coursePattern: "病程型態",
+  westernConditions: "西醫診斷", easternDiseases: "中醫病名", tcmPatterns: "證型", safetyFlags: "安全旗標",
+};
 // 診務回顧面板的開合。宣告在這裡而不是 renderPracticeAuditPanel 旁邊:
 // renderClinicalCases 會讀它,而 render() 在檔案上方就執行 —— 放在下面會是 TDZ。
 let practiceAuditOpen = false;
@@ -1814,6 +1827,28 @@ document.querySelector("#learnFromToggle")?.addEventListener("click", (e) => {
   e.currentTarget.setAttribute("aria-pressed", String(learnFromMode));
   e.currentTarget.classList.toggle("active", learnFromMode);
   renderClinicalCases();
+});
+document.querySelector("#importHandoffFile")?.addEventListener("change", (event) => {
+  const file = event.target.files[0];
+  event.target.value = "";
+  if (!file || !window.AcuTingVisitHandoff) return;
+  const reader = new FileReader();
+  reader.onload = () => {
+    try {
+      handoffDoc = AcuTingVisitHandoff.parseHandoff(reader.result);
+    } catch (e) {
+      // 訊息只講形狀,不轉述內容
+      alert("就診交接檔讀取失敗:" + (e && e.message || e) + "\n沒有寫入任何資料。");
+      return;
+    }
+    handoffChoices = {};
+    handoffBackedUp = false;
+    handoffResult = null;
+    document.querySelector("#caseMoreMenu")?.removeAttribute("open");
+    renderHandoffPanel();
+    document.querySelector("#handoffPanel")?.scrollIntoView({ block: "start" });
+  };
+  reader.readAsText(file);
 });
 document.querySelector("#codeMigrationBtn")?.addEventListener("click", () => {
   codeMigrationOpen = !codeMigrationOpen;
@@ -8997,6 +9032,150 @@ function applyCodeMigrationFromPanel() {
   renderCodeMigrationPanel();
 }
 
+// ---- 就診交接匯入 ----
+// 配對/寫入規則在 js/visit-handoff.js(有真值表);這裡只負責預覽畫面與 R9 寫入。
+function renderHandoffPanel() {
+  const panel = document.getElementById("handoffPanel");
+  if (!panel) return;
+  panel.hidden = !handoffDoc;
+  if (!handoffDoc) { panel.innerHTML = ""; return; }
+  const items = handoffDoc.items;
+  const meta = handoffDoc.meta || {};
+  const resultHtml = handoffResult ? `
+    <div class="code-mig-result" role="status"><strong>已寫入 ${handoffResult.length} 筆:</strong>
+      <ul>${handoffResult.map((r) => `<li>${escapeHtml(r)}</li>`).join("")}</ul></div>` : "";
+  panel.innerHTML = `
+    <div class="code-mig-head">
+      <strong>就診交接預覽 · ${items.length} 筆${meta.dates ? ` · ${escapeHtml(meta.dates)}` : ""}</strong>
+      <button type="button" class="ghost" data-ho-close>關閉</button>
+    </div>
+    <p class="code-mig-note">只會<b>新增</b> SOAP;既有病例的欄位不改,只補空白(每筆可取消)。交接檔的代號只是候選,在系統裡找到才接上;
+      沒代號的病人請填 <code>ATG-1984F</code> 格式代號,再勾「建立新病人」。同一天已有 SOAP 的預設不匯。</p>
+    ${resultHtml}
+    <div class="handoff-rows">${items.map((it) => {
+      const d = it.display || {};
+      return `
+      <div class="handoff-row" data-ho-row="${escapeAttribute(it.ref)}">
+        <div class="handoff-what">
+          <strong>${escapeHtml(d.label || it.ref)} · ${escapeHtml(it.note.visitDate || "日期未填")}</strong>
+          <span>${escapeHtml(d.title || (it.newCase && it.newCase.caseTitle) || "")}</span>
+          ${d.flags ? `<small class="handoff-flag">⚑ ${escapeHtml(d.flags)}</small>` : ""}
+        </div>
+        <label class="handoff-code">代號<input type="text" autocomplete="off" spellcheck="false" data-ho-code="${escapeAttribute(it.ref)}"
+          value="${escapeAttribute(handoffChoices[it.ref]?.code ?? it.patientCode ?? "")}" placeholder="ATG-1984F" /></label>
+        <div class="handoff-status" data-ho-status="${escapeAttribute(it.ref)}"></div>
+      </div>`; }).join("")}</div>
+    <div class="code-mig-actions">
+      <button type="button" class="ghost" data-ho-backup>1. 先匯出備份</button>
+      <button type="button" data-ho-apply disabled>2. 寫入</button>
+      <span class="code-mig-summary" data-ho-summary></span>
+    </div>`;
+  panel.querySelector("[data-ho-close]").addEventListener("click", () => { handoffDoc = null; renderHandoffPanel(); });
+  panel.querySelector("[data-ho-backup]").addEventListener("click", () => { exportClinicalCases(); handoffBackedUp = true; syncHandoffStatus(); });
+  panel.querySelector("[data-ho-apply]").addEventListener("click", applyHandoffFromPanel);
+  syncHandoffStatus();
+  // 面板元素本身一直在,事件委派只掛一次(每次重畫都掛會疊加)。
+  if (panel.dataset.wired) return;
+  panel.dataset.wired = "1";
+  panel.addEventListener("input", (e) => {
+    const ref = e.target.dataset.hoCode;
+    if (ref === undefined) return;
+    handoffChoices[ref] = { ...(handoffChoices[ref] || {}), code: e.target.value, caseId: undefined };
+    handoffResult = null;
+    syncHandoffStatus();
+  });
+  panel.addEventListener("change", (e) => {
+    const t = e.target;
+    const ref = t.dataset.hoRef;
+    if (ref === undefined) return;
+    const ch = (handoffChoices[ref] = { ...(handoffChoices[ref] || {}) });
+    if (t.dataset.hoCase !== undefined) { ch.caseId = t.value; delete ch.include; }
+    if (t.dataset.hoInclude !== undefined) ch.include = t.checked;
+    if (t.dataset.hoCreate !== undefined) ch.createNew = t.checked;
+    if (t.dataset.hoFill !== undefined) ch.fillEmpty = t.checked;
+    syncHandoffStatus();
+  });
+}
+
+// 每次選擇改變只重畫各列的狀態格與底部按鈕;代號輸入框不重畫(游標不跳)。
+function syncHandoffStatus() {
+  const panel = document.getElementById("handoffPanel");
+  if (!panel || panel.hidden || !handoffDoc) return;
+  const plan = AcuTingVisitHandoff.planHandoff(clinicalCases, handoffDoc.items, handoffChoices);
+  for (const r of plan.rows) {
+    const cell = panel.querySelector(`[data-ho-status="${CSS.escape(r.ref)}"]`);
+    if (!cell) continue;
+    const ref = escapeAttribute(r.ref);
+    const warn = r.warnings.map((w) => `<div class="is-warn">⚠ ${escapeHtml(w)}</div>`).join("");
+    const err = r.errors.map((w) => `<div class="is-error">${escapeHtml(w)}</div>`).join("");
+    let html = "";
+    if (r.status === "already_imported") html = `<div class="is-ok">這筆已經匯入過,不再重複。</div>`;
+    else if (r.status === "needs_code") html = `<div class="handoff-muted">沒有代號 —— 不會匯入。填系統裡已有的代號就接到那位病人;新病人填新代號。</div>`;
+    else if (r.status === "append") {
+      const choicesHtml = r.targetChoices.length > 1
+        ? `<select data-ho-ref="${ref}" data-ho-case>${r.targetChoices.map((c) => `<option value="${escapeAttribute(c.id)}" ${c.id === r.targetCaseId ? "selected" : ""}>${escapeHtml(c.title || "Untitled")}(${escapeHtml(c.status)} · ${c.visits} 診)</option>`).join("")}</select>`
+        : `<b>${escapeHtml(r.targetChoices[0].title || "Untitled")}</b>(現有 ${r.targetChoices[0].visits} 診)`;
+      html = `<div>接到 <code>${escapeHtml(r.code)}</code> 的 ${choicesHtml}</div>
+        <label class="handoff-check"><input type="checkbox" data-ho-ref="${ref}" data-ho-include ${r.include ? "checked" : ""} /> 加這次就診</label>
+        ${r.fillFields.length ? `<label class="handoff-check"><input type="checkbox" data-ho-ref="${ref}" data-ho-fill ${r.fillEmpty ? "checked" : ""} /> 補病例空白欄位:${escapeHtml(r.fillFields.map((k) => HANDOFF_FIELD_LABELS[k] || k).join("、"))}</label>` : ""}
+        ${r.newFlags.length ? `<div class="handoff-flag">新增安全旗標 ${r.newFlags.length} 項:${escapeHtml(r.newFlags.join("；"))}</div>` : ""}`;
+    } else if (r.status === "new_patient") {
+      html = r.errors.length ? "" : `<label class="handoff-check"><input type="checkbox" data-ho-ref="${ref}" data-ho-create ${r.include ? "checked" : ""} /> 建立新病人 <code>${escapeHtml(r.code)}</code></label>`;
+    } else if (r.status === "code_not_found") html = "";
+    cell.className = `handoff-status ${r.include ? "will-write" : ""}`;
+    cell.innerHTML = html + err + warn;
+    panel.querySelector(`[data-ho-row="${CSS.escape(r.ref)}"]`)?.classList.toggle("is-included", r.include);
+  }
+  const apply = panel.querySelector("[data-ho-apply]");
+  const summary = panel.querySelector("[data-ho-summary]");
+  const backup = panel.querySelector("[data-ho-backup]");
+  const nAppend = plan.toApply.filter((r) => r.status === "append").length;
+  const nNew = plan.toApply.filter((r) => r.status === "new_patient").length;
+  if (backup) backup.textContent = handoffBackedUp ? "1. 已匯出備份 ✓" : "1. 先匯出備份";
+  if (apply) {
+    apply.disabled = !handoffBackedUp || !plan.toApply.length;
+    apply.textContent = `2. 寫入 ${plan.toApply.length} 筆`;
+  }
+  if (summary) {
+    const waiting = plan.rows.filter((r) => !r.include && r.status !== "already_imported").length;
+    summary.textContent = `加就診 ${nAppend} · 新病人 ${nNew} · 暫不匯入 ${waiting}${!handoffBackedUp && plan.toApply.length ? " —— 先按「匯出備份」" : ""}`;
+  }
+}
+
+function applyHandoffFromPanel() {
+  const H = AcuTingVisitHandoff;
+  const plan = H.planHandoff(clinicalCases, handoffDoc.items, handoffChoices);
+  if (!handoffBackedUp || !plan.toApply.length) return;
+  const label = (ref) => (handoffDoc.items.find((it) => it.ref === ref)?.display?.label) || ref;
+  const lines = plan.toApply.map((r) => r.status === "append"
+    ? `${label(r.ref)} → ${r.code} 加一次就診${r.newFlags.length ? `(+${r.newFlags.length} 安全旗標)` : ""}${r.fillEmpty && r.fillFields.length ? `(補 ${r.fillFields.length} 欄)` : ""}`
+    : `${label(r.ref)} → 新病人 ${r.code}`);
+  if (!confirm(`要寫入 ${plan.toApply.length} 筆:\n\n${lines.join("\n")}\n\n確定?`)) return;
+  const snapshot = structuredClone(clinicalCases);
+  const prevSelected = selectedCaseId;
+  const touched = new Set(plan.toApply.map((r) => (r.status === "append" ? r.targetCaseId : H.caseIdFor(r.ref))));
+  const next = H.applyHandoff(clinicalCases, handoffDoc.items, plan, new Date().toISOString())
+    .map((c) => (touched.has(c.id) ? normalizeClinicalCase(c) : c));
+  if (window.AcuTingClinicalStore?.checkClinicalInvariants) {
+    const inv = AcuTingClinicalStore.checkClinicalInvariants(next);
+    if (inv.failures.length) {
+      alert(`寫入被拒絕 —— ${inv.failures.length} 筆契約違規,沒有寫入任何資料:\n\n${inv.failures.slice(0, 5).join("\n")}`);
+      return;
+    }
+  }
+  clinicalCases = next;
+  if (!persistClinicalCases()) {
+    clinicalCases = snapshot;
+    selectedCaseId = prevSelected;
+    return;
+  }
+  noteClinicalSave();
+  handoffResult = lines;
+  handoffBackedUp = false;   // 下一批寫入前再備份一次
+  renderClinicalCases();
+  renderHandoffPanel();
+}
+
 function renderPracticeAuditPanel() {
   const panel = document.getElementById("practiceAuditPanel");
   if (!panel) return;
@@ -10274,7 +10453,10 @@ function openCaseEditor(item = null) {
   Object.entries(data).forEach(([key, value]) => {
     if (CHECKBOX_GROUP_FIELDS.has(key)) return;                    // handled below — RadioNodeList.value is meaningless for checkboxes
     if (!caseForm.elements[key]) return;
-    caseForm.elements[key].value = Array.isArray(value) ? value.join("、") : value;
+    // safetyFlags 存檔時用 splitSafetyFlags(只切分號/換行,因為一條旗標本身常含「、」),
+    // 所以這裡要一行一條;用「、」接起來的話,兩條以上的旗標第一次編輯存檔就被併成一條。
+    // 其他陣列欄位存檔時用 splitList(切「、」),維持原樣。
+    caseForm.elements[key].value = Array.isArray(value) ? value.join(key === "safetyFlags" ? "\n" : "、") : value;
   });
   setCheckboxGroup(caseForm, "raceEthnicity", data.raceEthnicity);
   setCheckboxGroup(caseForm, "previousTreatment", data.previousTreatment);

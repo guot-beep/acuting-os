@@ -8277,3 +8277,23 @@ html { scroll-padding-top: 92px; }
   .code-mig-row { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
   .code-mig-status { grid-column: 1 / -1; }
 }
+
+.handoff-rows { display: grid; gap: 0.4rem; }
+.handoff-row { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(130px, 0.6fr) minmax(0, 1.5fr); gap: 0.6rem; align-items: start; border-top: 1px solid var(--line); padding: 0.45rem 0 0.2rem; box-shadow: inset 4px 0 0 transparent; padding-left: 0.5rem; }
+.handoff-row.is-included { box-shadow: inset 4px 0 0 var(--accent-dark); }
+.handoff-what { display: grid; gap: 0.1rem; min-width: 0; font-size: 0.85rem; }
+.handoff-what span { color: var(--muted); }
+.handoff-flag { color: var(--warn); font-size: 0.78rem; }
+.handoff-code { display: grid; gap: 0.15rem; font-size: 0.75rem; color: var(--muted); }
+.handoff-code input { font-family: ui-monospace, Consolas, monospace; text-transform: uppercase; border: 1px solid var(--line); border-radius: 8px; padding: 0.3rem 0.5rem; background: var(--paper); min-width: 0; }
+.handoff-status { display: grid; gap: 0.2rem; font-size: 0.82rem; }
+.handoff-status code { font-family: ui-monospace, Consolas, monospace; font-weight: 700; color: var(--accent-dark); }
+.handoff-status select { max-width: 100%; border: 1px solid var(--line); border-radius: 6px; padding: 0.1rem 0.3rem; }
+.handoff-status .is-warn { color: #8a6630; }
+.handoff-status .is-error { color: var(--warn); font-weight: 600; }
+.handoff-status .is-ok { color: var(--accent-dark); }
+.handoff-muted { color: var(--muted); }
+.handoff-check { display: flex; gap: 0.35rem; align-items: baseline; cursor: pointer; }
+@media (max-width: 860px) {
+  .handoff-row { grid-template-columns: minmax(0, 1fr); }
+}

@@ -531,6 +531,10 @@
             <div class="case-more-items">
           <button id="newSoapBtn" class="ghost" type="button" data-mode-text data-bilingual="新增 SOAP(目前選取的病例)" data-english="New SOAP (selected case)">新增 SOAP(目前選取的病例)</button>
           <button id="exportCasesBtn" class="ghost" type="button" data-mode-text data-bilingual="匯出病例" data-english="Export cases">匯出病例</button>
+          <label class="ghost file-label" title="每週交接檔:替既有病人加一次就診、或建立新病人;先預覽再寫入">
+            <span>匯入就診交接(只加新 SOAP)</span>
+            <input id="importHandoffFile" type="file" accept="application/json" />
+          </label>
           <button id="codeMigrationBtn" class="ghost" type="button" aria-controls="codeMigrationPanel">舊代號轉成 ATG-1984F</button>
           <button id="practiceAuditBtn" class="ghost" type="button" aria-pressed="false" aria-controls="practiceAuditPanel" data-mode-text data-bilingual="診務回顧 Practice Audit" data-english="Practice Audit">診務回顧 Practice Audit</button>
           <label class="ghost file-label">
@@ -565,6 +569,8 @@
         <section class="practice-audit-panel" id="practiceAuditPanel" aria-label="診務回顧 Practice Audit" hidden></section>
         <!-- 舊代號 → ATG-1984F 批次轉換(D34 續三)。新代號一律由 Ting 逐位輸入,程式不猜;先匯出備份才能套用。 -->
         <section class="code-migration-panel" id="codeMigrationPanel" aria-label="病人代號轉換" hidden></section>
+        <!-- 就診交接預覽(D34 續四):只 append 新 SOAP;既有病例欄位只補空白。先匯出備份才能寫入。 -->
+        <section class="code-migration-panel handoff-panel" id="handoffPanel" aria-label="就診交接預覽" hidden></section>
         <div class="case-grid">
           <aside class="case-list-panel" id="caseListPanel">
             <div class="mini-head">
@@ -1237,6 +1243,7 @@
     <script defer src="js/practice-audit.js"></script>
     <script defer src="js/care-draft.js"></script>
     <script defer src="js/case-search.js"></script>
+    <script defer src="js/visit-handoff.js"></script>
     <script defer src="app.js"></script>
     <script defer src="js/router.js"></script>
     <script defer src="js/knowledge.js"></script>    <script type="module">

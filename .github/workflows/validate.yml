@@ -339,6 +339,10 @@ jobs:
       # 虛構病例真值表,測 js/case-search.js 真正在跑的那份(require,不複製邏輯)。
       - name: case search contract (patient grouping, two-bucket search, tag filters)
         run: node scripts/validate-case-search.js
+      # 就診交接匯入(2026-11-02):只 append 不覆蓋、候選代號要在系統裡找得到、新病人要新格式代號+明確勾選、
+      # 同日重複預設不匯、同一筆交接不重匯。虛構病例真值表,require 真正在跑的 js/visit-handoff.js。
+      - name: visit handoff import contract (append-only, code matching, same-day duplicates)
+        run: node scripts/validate-visit-handoff.js
       - name: quality panel honesty (live counts, snapshot dates, {} is not content)
         run: node scripts/test-quality-panel-honesty.js
 
