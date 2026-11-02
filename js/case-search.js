@@ -259,6 +259,60 @@
     };
   }
 
+  // ---- 舊代號 → ATG-1984F 批次轉換 ----
+  // 新代號只來自 Ting 逐位輸入(mapping),這裡不猜任何東西;只做檢查。
+  // 錯誤(擋住套用):格式不符、跟現有另一位病人撞代號、兩個舊代號填成同一個新代號。
+  // 警告(不擋):代號裡的性別/出生年跟病歷上記的不一樣 —— 可能是病歷記錯,也可能是代號打錯,讓她看。
+  function normalizeNewCode(code) {
+    const m = PATIENT_CODE_RE.exec(str(code).trim());
+    return m ? `${m[1].toUpperCase()}${m[2].toUpperCase()}-${m[3]}${m[4].toUpperCase()}` : str(code).trim();
+  }
+  function recordedSexLetter(v) {
+    const t = str(v).trim().toLowerCase();
+    if (!t) return "";
+    if (t === "f" || t === "female" || t === "女" || t.startsWith("女")) return "F";
+    if (t === "m" || t === "male" || t === "男" || t.startsWith("男")) return "M";
+    return "";   // 其他寫法不比對,不猜
+  }
+  function planCodeMigration(cases, mapping) {
+    const patients = groupCasesByPatient(cases).filter((p) => p.patientCode);
+    const existing = new Set(patients.map((p) => p.patientCode));
+    const wanted = new Map();
+    for (const [oldCode, raw] of Object.entries(mapping || {})) {
+      const next = normalizeNewCode(raw);
+      if (next && next !== oldCode && existing.has(oldCode)) wanted.set(oldCode, next);
+    }
+    const leaving = new Set(wanted.keys());
+    const targetCount = new Map();
+    for (const next of wanted.values()) targetCount.set(next, (targetCount.get(next) || 0) + 1);
+    const rows = patients.map((p) => {
+      const newCode = wanted.get(p.patientCode) || "";
+      const row = { oldCode: p.patientCode, newCode, status: "unchanged", errors: [], warnings: [], caseIds: p.cases.map((c) => c.id),
+        alreadyNewFormat: !!parsePatientCode(p.patientCode) };
+      if (!newCode) return row;
+      const parsed = parsePatientCode(newCode);
+      if (!parsed) row.errors.push("格式要像 ATG-1984F(族裔字母 + 姓名縮寫 - 出生年 + 性別)");
+      if (existing.has(newCode) && !leaving.has(newCode)) row.errors.push(`${newCode} 已經是另一位病人的代號;合併同一人請用病例表單逐筆改`);
+      if (targetCount.get(newCode) > 1) row.errors.push(`有另一個舊代號也填了 ${newCode}`);
+      if (parsed) {
+        const sexes = [...new Set(p.cases.map((c) => recordedSexLetter(c.sex)).filter(Boolean))];
+        if (sexes.length && !sexes.includes(parsed.sex)) row.warnings.push(`病歷上性別是 ${sexes.join("/")},代號寫 ${parsed.sex}`);
+        const years = [...new Set(p.cases.map((c) => str(c.birthYearMonth).slice(0, 4) || str(c.birthYear)).filter((y) => /^\d{4}$/.test(y)))];
+        if (years.length && !years.includes(String(parsed.birthYear))) row.warnings.push(`病歷上出生年是 ${years.join("/")},代號寫 ${parsed.birthYear}`);
+      }
+      row.status = row.errors.length ? "error" : "ok";
+      return row;
+    });
+    const changes = rows.filter((r) => r.status === "ok");
+    return { rows, changes, blocked: rows.filter((r) => r.status === "error").length };
+  }
+  // 只在完全沒有錯誤時套用;回傳新的病例陣列(不改原陣列)。
+  function applyCodeMigration(cases, plan) {
+    if (plan.blocked) throw new Error("plan has errors — refuse to apply");
+    const map = new Map(plan.changes.map((r) => [r.oldCode, r.newCode]));
+    return cases.map((c) => (map.has(c.patientCode) ? Object.assign({}, c, { patientCode: map.get(c.patientCode) }) : c));
+  }
+
   function focusNeedsReview(tierSince, today) {
     if (!tierSince) return false;
     return daysBetween(tierSince.slice(0, 10), today || new Date()) >= FOCUS_REVIEW_DAYS;
@@ -267,7 +321,7 @@
   const api = {
     CASE_TIERS, ICPC2_CHAPTERS, CARE_CONTEXTS, CLINIC_SITES, FOCUS_REVIEW_DAYS, ETHNICITY_LETTERS,
     parsePatientCode, groupCasesByPatient, searchPatients, patientPassesFilters, sortPatients, buildPatientList,
-    focusNeedsReview, tokenize, daysBetween, isUntagged,
+    focusNeedsReview, tokenize, daysBetween, isUntagged, normalizeNewCode, planCodeMigration, applyCodeMigration,
   };
   if (typeof module === "object" && module.exports) module.exports = api;
   else global.AcuTingCaseSearch = api;

@@ -12,6 +12,7 @@
  *   - 關注度/系統/診所/紅旗/日期未填/未標籤/最近 N 天 篩選
  *   - 空的標籤是「未設定」:不顯示成任何一層,但「一般」篩選要收得到它
  *   - ATG-1984F 代號解析,格式不符回 null(不猜)
+ *   - 舊代號批次轉換:只用 Ting 填的新代號;格式/撞號擋住,性別/出生年不符只警告
  *
  * 用法:node scripts/validate-case-search.js
  */
@@ -94,6 +95,29 @@ console.log("排序");
 check("重點優先:重點 → 疑難 → 一般/未設定", () => { const t = list({ sort: "tier" }).identity.map((x) => x.patient.tier || "routine"); return t.join() === "focus,focus,complex,routine,routine,routine,routine"; });
 check("重點優先內部再依最近就診:ALW(10/28) 在 ACH(10/26) 前", () => codes(list({ sort: "tier" }).identity).slice(0, 2).join() === "ALW-1988F,ACH-1990F");
 check("最近就診:WJD(10/30) 第一", () => codes(list({ sort: "recent" }).identity)[0] === "WJD-1975M");
+
+console.log("代號轉換(舊 → ATG-1984F)");
+const MIG = [
+  { id: "m1", patientCode: "ABC", sex: "F", birthYear: 1970, caseTitle: "鼻炎" },
+  { id: "m2", patientCode: "ABC", caseTitle: "頭痛" },
+  { id: "m3", patientCode: "A-9999-001", sex: "男", caseTitle: "腰痛" },
+  { id: "m4", patientCode: "WJD-1975M", caseTitle: "已是新格式" },
+  { id: "m5", patientCode: "XY", caseTitle: "另一位" },
+];
+const plan = (m) => S.planCodeMigration(MIG, m);
+check("沒填 = 不動,0 筆變更", () => plan({}).changes.length === 0 && plan({}).blocked === 0);
+check("小寫輸入正規化成大寫", () => plan({ ABC: "abc-1970f" }).changes[0].newCode === "ABC-1970F");
+check("同代號兩病例一起換(caseIds 2 筆)", () => plan({ ABC: "ABC-1970F" }).changes[0].caseIds.length === 2);
+check("格式不符 → 錯誤、擋住", () => { const p = plan({ ABC: "ABC F56" }); return p.blocked === 1 && p.changes.length === 0; });
+check("撞到現有另一位病人 → 錯誤", () => plan({ XY: "WJD-1975M" }).blocked === 1);
+check("兩個舊代號填同一個新代號 → 兩列都錯", () => plan({ ABC: "AQQ-1980F", XY: "AQQ-1980F" }).blocked === 2);
+check("新代號是另一位正要換走的舊代號 → 允許(互換)", () => { const p = plan({ "WJD-1975M": "WJD-1976M", XY: "WJD-1975M" }); return p.blocked === 0 && p.changes.length === 2; });
+check("性別不符只警告不擋(病歷 男、代號 F)", () => { const p = plan({ "A-9999-001": "ALK-1980F" }); return p.blocked === 0 && /性別/.test(p.changes[0].warnings.join()); });
+check("出生年不符只警告", () => /出生年/.test(plan({ ABC: "ABC-1971F" }).changes[0].warnings.join()));
+check("相符時沒有警告", () => plan({ ABC: "ABC-1970F" }).changes[0].warnings.length === 0);
+check("已是新格式的代號被標出來", () => plan({}).rows.find((r) => r.oldCode === "WJD-1975M").alreadyNewFormat === true);
+check("套用:只換對應的病例、不動原陣列", () => { const out = S.applyCodeMigration(MIG, plan({ ABC: "ABC-1970F" })); return out.filter((c) => c.patientCode === "ABC-1970F").length === 2 && MIG[0].patientCode === "ABC" && out[2] === MIG[2]; });
+check("有錯誤時套用一律拒絕", () => { try { S.applyCodeMigration(MIG, plan({ ABC: "bad" })); return false; } catch (e) { return true; } });
 
 console.log("代號解析");
 check("ATG-1984F → A / TG / 1984 / F", () => { const p = S.parsePatientCode("ATG-1984F"); return p && p.ethnicityLetter === "A" && p.initials === "TG" && p.birthYear === 1984 && p.sex === "F"; });

@@ -8254,3 +8254,26 @@ html { scroll-padding-top: 92px; }
 .case-jump button { font-size: 0.8rem; padding: 0.2rem 0.7rem; }
 .case-jump-anchor { display: block; height: 0; scroll-margin-top: 4.5rem; }
 #caseSecSoap, #caseSecInfo { scroll-margin-top: 4.5rem; }
+
+.code-migration-panel { border: 1px solid var(--gold); border-radius: 12px; background: var(--panel); padding: 0.8rem 1rem; margin: 0 0 1rem; display: grid; gap: 0.6rem; }
+.code-migration-panel[hidden] { display: none; }
+.code-mig-head { display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; }
+.code-mig-note { margin: 0; font-size: 0.84rem; color: var(--muted); }
+.code-mig-note code, .code-mig-old code, .code-mig-status code, .code-mig-result code { font-family: ui-monospace, Consolas, monospace; font-weight: 700; color: var(--accent-dark); }
+.code-mig-rows { display: grid; gap: 0.35rem; }
+.code-mig-row { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(130px, 0.8fr) minmax(0, 1.2fr); gap: 0.6rem; align-items: center; border-top: 1px solid var(--line); padding-top: 0.35rem; }
+.code-mig-old { display: grid; gap: 0.05rem; min-width: 0; }
+.code-mig-old small { color: var(--muted); font-size: 0.75rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.code-mig-row input { font-family: ui-monospace, Consolas, monospace; text-transform: uppercase; border: 1px solid var(--line); border-radius: 8px; padding: 0.3rem 0.5rem; background: var(--paper); min-width: 0; }
+.code-mig-status { font-size: 0.8rem; }
+.code-mig-status.is-ok { color: var(--accent-dark); }
+.code-mig-status.is-warn { color: #8a6630; }
+.code-mig-status.is-error { color: var(--warn); font-weight: 600; }
+.code-mig-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
+.code-mig-summary { color: var(--muted); font-size: 0.84rem; }
+.code-mig-result { background: var(--green-soft); border-radius: 8px; padding: 0.5rem 0.75rem; font-size: 0.85rem; }
+.code-mig-result ul { margin: 0.3rem 0 0; padding-left: 1.2rem; }
+@media (max-width: 860px) {
+  .code-mig-row { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .code-mig-status { grid-column: 1 / -1; }
+}

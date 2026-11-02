@@ -75,6 +75,11 @@ const caseListFilters = { tier: "all", icpc: "", clinic: "all", status: "all", r
 let caseListSort = "tier";
 // 詳情頁頂端的一次性提示(例:存好標籤後病人不再符合篩選、清單換到下一位)。顯示一次就清掉。
 let caseDetailFlash = "";
+// 舊代號轉換面板的狀態:草稿只在記憶體(不寫進任何儲存),關掉分頁就沒了 —— 代號本身就是半識別資訊。
+let codeMigrationOpen = false;
+let codeMigrationBackedUp = false;
+let codeMigrationResult = null;
+const codeMigrationDraft = {};
 // 診務回顧面板的開合。宣告在這裡而不是 renderPracticeAuditPanel 旁邊:
 // renderClinicalCases 會讀它,而 render() 在檔案上方就執行 —— 放在下面會是 TDZ。
 let practiceAuditOpen = false;
@@ -1809,6 +1814,13 @@ document.querySelector("#learnFromToggle")?.addEventListener("click", (e) => {
   e.currentTarget.setAttribute("aria-pressed", String(learnFromMode));
   e.currentTarget.classList.toggle("active", learnFromMode);
   renderClinicalCases();
+});
+document.querySelector("#codeMigrationBtn")?.addEventListener("click", () => {
+  codeMigrationOpen = !codeMigrationOpen;
+  codeMigrationResult = null;
+  document.querySelector("#caseMoreMenu")?.removeAttribute("open");
+  renderCodeMigrationPanel();
+  if (codeMigrationOpen) document.querySelector("#codeMigrationPanel")?.scrollIntoView({ block: "start" });
 });
 document.querySelector("#practiceAuditBtn")?.addEventListener("click", (e) => {
   practiceAuditOpen = !practiceAuditOpen;
@@ -8877,6 +8889,114 @@ function renderCaseSwimlanes(item, notesAsc) {
  * 這一層唯一的職責邊界:**不得在畫面上補計算層刻意不說的話。**
  * 沒有具名來源的 metric,計算層只給變化量與 caveat,畫面就照樣只畫那兩個,
  * 不准自己加箭頭顏色或「改善」字樣去暗示臨床顯著性。 */
+// ---- 舊代號 → ATG-1984F ----
+// 檢查與套用的邏輯在 js/case-search.js(planCodeMigration / applyCodeMigration,有真值表);
+// 這裡只負責畫面與寫入(R9:快照 → persist → 失敗整批退回)。
+function renderCodeMigrationPanel() {
+  const panel = document.getElementById("codeMigrationPanel");
+  if (!panel || !globalThis.AcuTingCaseSearch) return;
+  panel.hidden = !codeMigrationOpen;
+  if (!codeMigrationOpen) { panel.innerHTML = ""; return; }
+  const S = AcuTingCaseSearch;
+  const plan = S.planCodeMigration(clinicalCases, codeMigrationDraft);
+  const todo = plan.rows.filter((r) => !r.alreadyNewFormat);
+  const done = plan.rows.length - todo.length;
+  const ref = (code) => {
+    const cases = clinicalCases.filter((c) => c.patientCode === code);
+    const sex = [...new Set(cases.map((c) => c.sex).filter(Boolean))].join("/");
+    const year = [...new Set(cases.map((c) => (c.birthYearMonth || "").slice(0, 4) || (c.birthYear ? String(c.birthYear) : "")).filter(Boolean))].join("/");
+    return { titles: cases.map((c) => c.caseTitle || "Untitled").join("、"), facts: [sex && `性別 ${sex}`, year && `出生年 ${year}`].filter(Boolean).join(" · ") || "病歷沒記性別/出生年" };
+  };
+  const resultHtml = codeMigrationResult ? `
+    <div class="code-mig-result" role="status"><strong>已換好 ${codeMigrationResult.length} 位:</strong>
+      <ul>${codeMigrationResult.map((r) => `<li><code>${escapeHtml(r.oldCode)}</code> → <code>${escapeHtml(r.newCode)}</code></li>`).join("")}</ul></div>` : "";
+  panel.innerHTML = `
+    <div class="code-mig-head">
+      <strong>舊代號轉成 ATG-1984F</strong>
+      <button type="button" class="ghost" data-mig-close>關閉</button>
+    </div>
+    <p class="code-mig-note">新代號由你逐位填:族裔字母(A 亞洲 / B 黑人 / W 白人 / M 墨西哥)+ 姓名縮寫 - 出生年 + 性別,例 <code>ATG-1984F</code>。
+      空白 = 不動。同一位病人的所有病例會一起換。程式只檢查,不幫你猜出生年。${done ? ` 已是新格式的 ${done} 位不列出。` : ""}</p>
+    ${resultHtml}
+    ${todo.length ? `<div class="code-mig-rows">${todo.map((r) => { const x = ref(r.oldCode); return `
+      <div class="code-mig-row" data-mig-row="${escapeAttribute(r.oldCode)}">
+        <div class="code-mig-old"><code>${escapeHtml(r.oldCode)}</code><small>${escapeHtml(x.titles)}</small><small>${escapeHtml(x.facts)}</small></div>
+        <input type="text" autocomplete="off" spellcheck="false" placeholder="新代號" aria-label="${escapeAttribute(r.oldCode)} 的新代號" data-mig-input="${escapeAttribute(r.oldCode)}" value="${escapeAttribute(codeMigrationDraft[r.oldCode] || "")}" />
+        <div class="code-mig-status" data-mig-status="${escapeAttribute(r.oldCode)}"></div>
+      </div>`; }).join("")}</div>` : `<div class="case-empty">所有病人都已經是新格式。</div>`}
+    <div class="code-mig-actions">
+      <button type="button" class="ghost" data-mig-backup>1. 先匯出備份</button>
+      <button type="button" data-mig-apply disabled>2. 套用</button>
+      <span class="code-mig-summary" data-mig-summary></span>
+    </div>`;
+  panel.querySelector("[data-mig-close]").addEventListener("click", () => { codeMigrationOpen = false; renderCodeMigrationPanel(); });
+  panel.querySelectorAll("[data-mig-input]").forEach((input) => input.addEventListener("input", () => {
+    codeMigrationDraft[input.dataset.migInput] = input.value;
+    codeMigrationResult = null;
+    syncCodeMigrationStatus();
+  }));
+  panel.querySelector("[data-mig-backup]").addEventListener("click", () => {
+    exportClinicalCases();
+    codeMigrationBackedUp = true;
+    syncCodeMigrationStatus();
+  });
+  panel.querySelector("[data-mig-apply]").addEventListener("click", applyCodeMigrationFromPanel);
+  syncCodeMigrationStatus();
+}
+
+// 打字時只更新每列狀態與底下的按鈕,不重畫輸入框(重畫會把游標弄丟)。
+function syncCodeMigrationStatus() {
+  const panel = document.getElementById("codeMigrationPanel");
+  if (!panel || panel.hidden) return;
+  const plan = AcuTingCaseSearch.planCodeMigration(clinicalCases, codeMigrationDraft);
+  const byOld = new Map(plan.rows.map((r) => [r.oldCode, r]));
+  panel.querySelectorAll("[data-mig-status]").forEach((cell) => {
+    const r = byOld.get(cell.dataset.migStatus);
+    const typed = String(codeMigrationDraft[cell.dataset.migStatus] || "").trim();
+    cell.className = `code-mig-status ${r && r.status === "error" ? "is-error" : r && r.status === "ok" ? (r.warnings.length ? "is-warn" : "is-ok") : ""}`;
+    cell.innerHTML = !r || r.status === "unchanged"
+      ? (typed ? "跟原代號一樣,不動" : "")
+      : r.status === "error" ? r.errors.map(escapeHtml).join("<br>")
+      : `→ <code>${escapeHtml(r.newCode)}</code>${r.warnings.length ? `<br>⚠ ${r.warnings.map(escapeHtml).join("<br>⚠ ")}` : ""}`;
+  });
+  const apply = panel.querySelector("[data-mig-apply]");
+  const summary = panel.querySelector("[data-mig-summary]");
+  const backup = panel.querySelector("[data-mig-backup]");
+  if (backup) backup.textContent = codeMigrationBackedUp ? "1. 已匯出備份 ✓" : "1. 先匯出備份";
+  if (apply) {
+    apply.disabled = !codeMigrationBackedUp || !plan.changes.length || plan.blocked > 0;
+    apply.textContent = `2. 套用 ${plan.changes.length} 位`;
+  }
+  if (summary) {
+    summary.textContent = plan.blocked ? `有 ${plan.blocked} 列要先改正`
+      : !plan.changes.length ? "還沒有要換的代號"
+      : !codeMigrationBackedUp ? "先按「匯出備份」才能套用"
+      : `準備換 ${plan.changes.length} 位${plan.changes.some((r) => r.warnings.length) ? "(有 ⚠ 的請再看一眼)" : ""}`;
+  }
+}
+
+function applyCodeMigrationFromPanel() {
+  const S = AcuTingCaseSearch;
+  const plan = S.planCodeMigration(clinicalCases, codeMigrationDraft);
+  if (!codeMigrationBackedUp || plan.blocked || !plan.changes.length) return;
+  const lines = plan.changes.map((r) => `${r.oldCode} → ${r.newCode}${r.warnings.length ? "  ⚠ " + r.warnings.join(";") : ""}`);
+  if (!confirm(`要換掉 ${plan.changes.length} 位病人的代號(所有病例一起換):\n\n${lines.join("\n")}\n\n確定?`)) return;
+  const snapshot = structuredClone(clinicalCases);
+  const now = new Date().toISOString();
+  const changedIds = new Set(plan.changes.flatMap((r) => r.caseIds));
+  clinicalCases = S.applyCodeMigration(clinicalCases, plan)
+    .map((c) => (changedIds.has(c.id) ? normalizeClinicalCase({ ...c, updatedAt: now }) : c));
+  if (!persistClinicalCases()) {
+    clinicalCases = snapshot;
+    return;
+  }
+  noteClinicalSave();
+  codeMigrationResult = plan.changes.map((r) => ({ oldCode: r.oldCode, newCode: r.newCode }));
+  for (const r of plan.changes) delete codeMigrationDraft[r.oldCode];
+  renderClinicalCases();
+  renderCodeMigrationPanel();
+}
+
 function renderPracticeAuditPanel() {
   const panel = document.getElementById("practiceAuditPanel");
   if (!panel) return;
