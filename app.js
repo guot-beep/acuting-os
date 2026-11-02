@@ -71,8 +71,10 @@ const LEARN_FROM_VERDICTS = ["no_change", "worsened"];
 let learnFromMode = false;
 // 病例頁改版(2026-10-31)病人列表的篩選與排序。同 practiceAuditOpen:renderClinicalCases
 // 開機就會讀,宣告必須在第一次 render() 之前。只活在這個分頁,不寫 localStorage。
-const caseListFilters = { tier: "all", icpc: "", clinic: "all", status: "all", recentDays: "", flagged: false, undated: false };
+const caseListFilters = { tier: "all", icpc: "", clinic: "all", status: "all", recentDays: "", flagged: false, undated: false, untagged: false };
 let caseListSort = "tier";
+// 詳情頁頂端的一次性提示(例:存好標籤後病人不再符合篩選、清單換到下一位)。顯示一次就清掉。
+let caseDetailFlash = "";
 // 診務回顧面板的開合。宣告在這裡而不是 renderPracticeAuditPanel 旁邊:
 // renderClinicalCases 會讀它,而 render() 在檔案上方就執行 —— 放在下面會是 TDZ。
 let practiceAuditOpen = false;
@@ -7929,6 +7931,8 @@ function renderPatientCaseList() {
   const res = S.buildPatientList(clinicalCases, { query, filters: caseListFilters, sort: caseListSort });
   syncCaseIcpcFilterOptions(res.usedIcpc);
   syncCaseFiltersToggle();
+  const untaggedCount = document.querySelector("#caseUntaggedCount");
+  if (untaggedCount) untaggedCount.textContent = String(res.untaggedCount ?? "");
   const visible = [...res.identity, ...res.content].map((x) => x.patient);
   // 選取中的病例不在可見列表裡(被搜尋/篩選掉)→ 改選第一位的主要病例;列表空了就保持原選取,
   // 詳情照常顯示,不要因為打了一個字就把正在看的病人收掉。
@@ -7991,7 +7995,7 @@ function syncCaseFiltersToggle() {
   const btn = document.querySelector("#caseFiltersToggle");
   if (!btn) return;
   const f = caseListFilters;
-  const active = [f.tier !== "all", !!f.icpc, f.clinic !== "all", f.status !== "all", !!f.recentDays, f.flagged, f.undated].filter(Boolean).length;
+  const active = [f.tier !== "all", !!f.icpc, f.clinic !== "all", f.status !== "all", !!f.recentDays, f.flagged, f.undated, f.untagged].filter(Boolean).length;
   btn.textContent = active ? `篩選 · ${active}` : "篩選";
   btn.classList.toggle("has-active", active > 0);
 }
@@ -8017,6 +8021,7 @@ function wireCaseListFilters() {
   bind("caseRecentFilter", (el) => { caseListFilters.recentDays = el.value; });
   bind("caseFlagFilter", (el) => { caseListFilters.flagged = el.checked; });
   bind("caseUndatedFilter", (el) => { caseListFilters.undated = el.checked; });
+  bind("caseUntaggedFilter", (el) => { caseListFilters.untagged = el.checked; });
   bind("caseSortSelect", (el) => { caseListSort = el.value; });
 }
 
@@ -8046,8 +8051,9 @@ function renderPatientHeaderBar(item) {
       <div class="case-tag-line"><span class="case-tag-key">系統</span>${chips(item.icpcChapters || [], (k) => S.ICPC2_CHAPTERS[k] ? `<span class="case-icpc"><b>${k}</b>${escapeHtml(S.ICPC2_CHAPTERS[k].zh)}</span>` : "", "未分類")}
         <span class="case-tag-key case-tag-key-inline">情境</span>${chips(item.careContexts || [], (k) => S.CARE_CONTEXTS[k] ? `<span class="case-context">${escapeHtml(S.CARE_CONTEXTS[k].zh)}</span>` : "", "無")}
         ${S.CLINIC_SITES[item.clinicSite] ? `<span class="case-clinic">${escapeHtml(S.CLINIC_SITES[item.clinicSite].zh)}</span>` : ""}
-        <button type="button" class="ghost case-tag-edit" id="editCaseTagsInline">編輯標籤</button>
+        <button type="button" class="ghost case-tag-edit" id="editCaseTagsInline" aria-expanded="false" aria-controls="caseTagEditor">編輯標籤</button>
       </div>
+      ${renderCaseTagEditor(item)}
     </div>`;
 }
 
@@ -8088,10 +8094,76 @@ function wirePatientHeaderBar(item) {
     const next = b.dataset.setTier === item.attentionTier ? "" : b.dataset.setTier;   // 再按一次同一顆 = 取消(回到未設定)
     setCaseAttentionTier(item.id, next);
   }));
-  document.querySelector("#editCaseTagsInline")?.addEventListener("click", () => {
+  const tagEditor = document.querySelector("#caseTagEditor");
+  const tagToggle = document.querySelector("#editCaseTagsInline");
+  tagToggle?.addEventListener("click", () => {
+    tagEditor.hidden = !tagEditor.hidden;
+    tagToggle.setAttribute("aria-expanded", String(!tagEditor.hidden));
+  });
+  // 取消 = 重畫一次,勾選回到已存的值;只把面板藏起來的話,下次打開還留著沒存的勾。
+  tagEditor?.querySelector("[data-tag-cancel]")?.addEventListener("click", () => renderClinicalCases());
+  tagEditor?.querySelector("[data-tag-save]")?.addEventListener("click", () => {
+    const picked = (name) => [...tagEditor.querySelectorAll(`input[name="${name}"]:checked`)].map((el) => el.value);
+    setCaseTags(item.id, {
+      icpcChapters: picked("tagIcpc"),
+      careContexts: picked("tagContext"),
+      clinicSite: tagEditor.querySelector("[name=tagClinic]")?.value || "",
+    });
+  });
+  tagEditor?.querySelector("[data-tag-full]")?.addEventListener("click", () => {
     openCaseEditor(item);
     caseForm.querySelector("#caseAttentionTier")?.closest("fieldset")?.scrollIntoView({ block: "start" });
   });
+}
+
+// 詳情頁直接改標籤(系統分類 / 情境 / 診所),不必打開整份病例表單。
+// 關注度不在這裡 —— 上面那排按鈕本來就一鍵切換。
+function renderCaseTagEditor(item) {
+  const S = globalThis.AcuTingCaseSearch;
+  const has = (list, k) => (list || []).includes(k);
+  return `
+    <div class="case-tag-editor" id="caseTagEditor" hidden>
+      <div class="case-tag-editor-group"><strong>系統分類 ICPC-2</strong><small>可複選;依病人實際的問題歸章,不是依治療方式</small>
+        <div class="case-tag-editor-grid">${Object.entries(S.ICPC2_CHAPTERS).map(([k, v]) =>
+          `<label><input type="checkbox" name="tagIcpc" value="${k}" ${has(item.icpcChapters, k) ? "checked" : ""} /><b class="icpc-letter">${k}</b>${escapeHtml(v.zh)}</label>`).join("")}</div>
+      </div>
+      <div class="case-tag-editor-group"><strong>情境</strong>
+        <div class="case-tag-editor-grid">${Object.entries(S.CARE_CONTEXTS).map(([k, v]) =>
+          `<label><input type="checkbox" name="tagContext" value="${k}" ${has(item.careContexts, k) ? "checked" : ""} />${escapeHtml(v.zh)}</label>`).join("")}</div>
+      </div>
+      <div class="case-tag-editor-group case-tag-editor-row"><strong>看診地點</strong>
+        <select name="tagClinic"><option value="">未設定 —</option>${Object.entries(S.CLINIC_SITES).map(([k, v]) =>
+          `<option value="${k}" ${item.clinicSite === k ? "selected" : ""}>${escapeHtml(v.zh)}</option>`).join("")}</select>
+      </div>
+      <div class="case-tag-editor-actions">
+        <button type="button" data-tag-save>儲存標籤</button>
+        <button type="button" class="ghost" data-tag-cancel>取消</button>
+        <button type="button" class="ghost case-tag-editor-full" data-tag-full>開完整病例表單</button>
+      </div>
+    </div>`;
+}
+
+// 同 setCaseAttentionTier 的 R9 寫入模式:先快照、persist 失敗就整個退回。
+function setCaseTags(caseId, tags) {
+  const snapshot = structuredClone(clinicalCases);
+  const now = new Date().toISOString();
+  clinicalCases = clinicalCases.map((c) => c.id === caseId
+    ? normalizeClinicalCase({ ...c, icpcChapters: tags.icpcChapters, careContexts: tags.careContexts, clinicSite: tags.clinicSite, updatedAt: now })
+    : c);
+  if (!persistClinicalCases()) {
+    clinicalCases = snapshot;
+    return;
+  }
+  noteClinicalSave();
+  // 開著「未標籤」之類的篩選時,存完這位就不在清單裡,列表會自動換到下一位 —— 講出來,不要讓畫面無聲換人。
+  const saved = clinicalCases.find((c) => c.id === caseId);
+  const who = saved?.patientCode || saved?.caseTitle || "這位病人";
+  const res = AcuTingCaseSearch.buildPatientList(clinicalCases, { query: caseSearch.value.trim(), filters: caseListFilters, sort: caseListSort });
+  const stillListed = [...res.identity, ...res.content].some((x) => x.patient.cases.some((c) => c.id === caseId));
+  caseDetailFlash = stillListed || !res.total
+    ? `已存 ${who} 的標籤。`
+    : `已存 ${who} 的標籤。這位病人已不符合目前的篩選,所以畫面換到清單上的下一位。`;
+  renderClinicalCases();
 }
 
 // 關注度一鍵切換:同 saveCaseFromForm 的 R9 寫入模式(先快照、persist 失敗就整個退回)。
@@ -9034,6 +9106,7 @@ function renderClinicalCaseDetail(item) {
 
   caseDetail.innerHTML = `
     <button type="button" class="ghost case-back-to-list" id="caseBackToList">← 病人列表</button>
+    ${caseDetailFlash ? `<div class="case-flash" role="status">${escapeHtml(caseDetailFlash)}</div>` : ""}
     <div class="case-detail-head">
       <div>
         <p class="eyebrow">${escapeHtml(item.patientCode || "Patient")}</p>
@@ -9045,8 +9118,14 @@ function renderClinicalCaseDetail(item) {
         <button type="button" id="addSoapInline" title="新增一筆 SOAP;日期預設今天,可帶入上次治療">+ 今天就診 New visit</button>
       </div>
     </div>
+    <nav class="case-jump" aria-label="跳到病歷段落">
+      <button type="button" data-case-jump="caseSecSoap">就診紀錄 SOAP · ${notes.length}</button>
+      <button type="button" class="ghost" data-case-jump="caseSecInfo">病例資料</button>
+      <button type="button" class="ghost" data-case-jump="caseSecOutcome">成效追蹤</button>
+      <button type="button" class="ghost" data-case-jump="caseSecMeds">用藥</button>
+    </nav>
     ${renderPatientHeaderBar(item)}
-    <div class="clinical-mini-grid">
+    <div class="clinical-mini-grid" id="caseSecInfo">
       <div><small>主訴 Chief complaint</small><span>${escapeHtml(item.chiefComplaint || "尚未填寫")}</span></div>
       <div><small>基本 Demographics</small><span>${escapeHtml([item.sex, (item.birthYearMonth || (item.birthYear ? String(item.birthYear) : "")), item.occupation].filter(Boolean).join(" · ") || "—")}</span></div>
       <div><small>目前主證型 Working pattern</small><span>${escapeHtml(item.tcmPatterns.join("、") || "尚未辨證")}</span></div>
@@ -9071,12 +9150,14 @@ function renderClinicalCaseDetail(item) {
     ${renderCaseReflection(item)}
     ${renderVisitBrief(item, notes)}
     ${renderCareReadinessPanel(item, notes)}
+    <span class="case-jump-anchor" id="caseSecOutcome"></span>
     ${renderOutcomeTrackingPanel(item)}
+    <span class="case-jump-anchor" id="caseSecMeds"></span>
     ${renderAgentExposuresPanel(item)}
     ${renderEnvironmentalExposuresPanel(item)}
     ${renderCaseSwimlanes(item, [...notes].reverse())}
     ${renderCaseTimeline(notes)}
-    <div class="timeline-head">
+    <div class="timeline-head" id="caseSecSoap">
       <strong>SOAP Timeline</strong>
       <small class="timeline-date">${notes.length} notes</small>
     </div>
@@ -9088,6 +9169,11 @@ function renderClinicalCaseDetail(item) {
   document.querySelector("#editCaseInline").addEventListener("click", () => openCaseEditor(item));
   document.querySelector("#addSoapInline").addEventListener("click", () => openSoapEditor());
   wirePatientHeaderBar(item);
+  // 病歷很長(手機上 SOAP 在 3000px 以下):頂端一排跳轉。用按鈕不用 #錨點,錨點會被 #ws/ 路由吃掉。
+  caseDetail.querySelectorAll("[data-case-jump]").forEach((b) => b.addEventListener("click", () => {
+    document.getElementById(b.dataset.caseJump)?.scrollIntoView({ block: "start" });
+  }));
+  caseDetailFlash = "";   // 一次性提示:畫過就清掉
   // Phase D: Meds & Supplements ledger (agentExposures[]) — add button opens
   // the dialog, row action buttons go through applyExposureChange (the only
   // authorized ledger-write path, docs/AI_WORK_HANDOFF.md HANDOFF #3).

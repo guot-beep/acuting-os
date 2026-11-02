@@ -8238,3 +8238,19 @@ html { scroll-padding-top: 92px; }
   #caseToolbar > button, #caseToolbar .case-more-menu > summary { width: auto; }
 }
 .patient-overview .overview-warn { color: var(--warn); font-weight: 700; }
+
+.case-tag-editor { display: grid; gap: 0.6rem; border-top: 1px dashed var(--line); padding-top: 0.6rem; }
+.case-tag-editor[hidden] { display: none; }
+.case-tag-editor-group { display: grid; gap: 0.3rem; }
+.case-tag-editor-group > small { color: var(--muted); font-size: 0.75rem; }
+.case-tag-editor-row { grid-template-columns: auto minmax(0, 220px); align-items: center; gap: 0.6rem; }
+.case-tag-editor-row select { border: 1px solid var(--line); border-radius: 8px; background: var(--panel); padding: 0.3rem 0.5rem; }
+.case-tag-editor-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(118px, 1fr)); gap: 0.2rem 0.6rem; }
+.case-tag-editor-grid label { display: flex; gap: 0.35rem; align-items: center; font-size: 0.84rem; cursor: pointer; }
+.case-tag-editor-actions { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.case-tag-editor-full { margin-left: auto; }
+.case-flash { background: var(--green-soft); color: var(--accent-dark); border-radius: 8px; padding: 0.4rem 0.7rem; margin: 0 0 0.5rem; font-size: 0.85rem; }
+.case-jump { display: flex; flex-wrap: wrap; gap: 0.35rem; margin: 0 0 0.6rem; }
+.case-jump button { font-size: 0.8rem; padding: 0.2rem 0.7rem; }
+.case-jump-anchor { display: block; height: 0; scroll-margin-top: 4.5rem; }
+#caseSecSoap, #caseSecInfo { scroll-margin-top: 4.5rem; }

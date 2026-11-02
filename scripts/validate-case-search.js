@@ -9,7 +9,7 @@
  *   - 一個 patientCode 一列;沒有代號的病例不被湊成同一人
  *   - 代號/病例名稱命中排在內文命中之前,內文命中要說出「哪一診、哪個欄位」
  *   - 多個詞是 AND
- *   - 關注度/系統/診所/紅旗/日期未填/最近 N 天 篩選
+ *   - 關注度/系統/診所/紅旗/日期未填/未標籤/最近 N 天 篩選
  *   - 空的標籤是「未設定」:不顯示成任何一層,但「一般」篩選要收得到它
  *   - ATG-1984F 代號解析,格式不符回 null(不猜)
  *
@@ -85,6 +85,9 @@ check("有紅旗 → WJD、WLC", () => codes(list({ filters: { flagged: true } }
 check("日期未填 → WJD、BDH", () => codes(list({ filters: { undated: true } }).identity).sort().join() === "BDH-1993F,WJD-1975M");
 check("最近 3 天內就診 → ALW(10/28)、WJD(10/30)", () => codes(list({ filters: { recentDays: 3 } }).identity).sort().join() === "ALW-1988F,WJD-1975M");
 check("篩選掉的人數有回報(讓空畫面講得出原因)", () => list({ filters: { tier: "complex" } }).hiddenByFilters === 6);
+check("未標籤 → BDH 與兩個無代號病例(沒關注度也沒系統分類)", () => list({ filters: { untagged: true } }).identity.length === 3 && codes(list({ filters: { untagged: true } }).identity).includes("BDH-1993F"));
+check("未標籤人數不受篩選影響(按鈕上的數字)", () => list({ filters: { tier: "focus" } }).untaggedCount === 3);
+check("只有關注度、沒有系統分類 → 不算未標籤", () => S.isUntagged({ tier: "routine", icpc: [] }) === false && S.isUntagged({ tier: "", icpc: ["N"] }) === false);
 check("搜尋 + 篩選同時生效", () => list({ query: "sp6", filters: { tier: "focus", clinic: "bastyr" } }).content.length === 2);
 
 console.log("排序");

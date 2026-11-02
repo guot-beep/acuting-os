@@ -200,6 +200,12 @@
     return z.toISOString().slice(0, 10);
   }
 
+  // 「還沒標」= 沒設關注度、也沒有任何系統分類。情境與診所是選填,不算在內。
+  // 給 Ting 逐位補標籤時用:列出還剩誰,而不是讓她在全部名單裡找。
+  function isUntagged(p) {
+    return !p.tier && !p.icpc.length;
+  }
+
   // 篩選。f 的每個鍵都是可選的;"all"/""/false 代表不篩。
   function patientPassesFilters(p, f, today) {
     f = f || {};
@@ -212,6 +218,7 @@
     if (f.status && f.status !== "all" && !p.statuses.includes(f.status)) return false;
     if (f.flagged && !p.safetyFlags.length) return false;
     if (f.undated && !p.undatedCount) return false;
+    if (f.untagged && !isUntagged(p)) return false;
     if (f.recentDays) {
       if (!p.lastVisit) return false;
       if (daysBetween(p.lastVisit, today || new Date()) > Number(f.recentDays)) return false;
@@ -247,6 +254,7 @@
       total: identity.length + content.length,
       patientCount: patients.length,
       hiddenByFilters: (res.identity.length + res.content.length) - (identity.length + content.length),
+      untaggedCount: patients.filter(isUntagged).length,
       usedIcpc: Object.keys(ICPC2_CHAPTERS).filter((k) => patients.some((p) => p.icpc.includes(k))),
     };
   }
@@ -259,7 +267,7 @@
   const api = {
     CASE_TIERS, ICPC2_CHAPTERS, CARE_CONTEXTS, CLINIC_SITES, FOCUS_REVIEW_DAYS, ETHNICITY_LETTERS,
     parsePatientCode, groupCasesByPatient, searchPatients, patientPassesFilters, sortPatients, buildPatientList,
-    focusNeedsReview, tokenize, daysBetween,
+    focusNeedsReview, tokenize, daysBetween, isUntagged,
   };
   if (typeof module === "object" && module.exports) module.exports = api;
   else global.AcuTingCaseSearch = api;
