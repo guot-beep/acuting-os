@@ -65,6 +65,7 @@
   const CLINIC_SITES = {
     bastyr: { zh: "Bastyr", short: "B" },
     external: { zh: "外部診所", short: "O" },
+    home: { zh: "自家", short: "H" },   // Ting 2026-11-03:家人/自己看的病例
   };
 
   // 10/31 的關注度與 ICPC-2 已被上面三層取代。欄位(attentionTier / icpcChapters)還留在資料契約裡

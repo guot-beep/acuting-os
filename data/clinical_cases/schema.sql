@@ -121,7 +121,7 @@ CREATE TABLE IF NOT EXISTS cases (
   -- 不是臨床分級;NULL = 未設定(app 存 "",exporter 的 S() 轉 NULL),從不推斷成 routine。
   attention_tier TEXT CHECK (attention_tier IS NULL OR attention_tier IN ('focus','complex','routine')),
   attention_since TEXT,
-  clinic_site TEXT CHECK (clinic_site IS NULL OR clinic_site IN ('bastyr','external')),
+  clinic_site TEXT CHECK (clinic_site IS NULL OR clinic_site IN ('bastyr','external','home')),
   -- 2026-11-02 病例標題標準(❤️ / ★ / 🌙,取代 attention_tier 與 ICPC-2 的畫面角色;舊欄位保留)。
   -- display_code 是給人看的族群字母+名姓縮寫,不唯一;病人的永久鍵仍是 patients.id。NULL = 未設定。
   display_code TEXT,
