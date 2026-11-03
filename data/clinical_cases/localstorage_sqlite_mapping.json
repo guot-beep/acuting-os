@@ -1164,7 +1164,7 @@
       "source_scope": "case",
       "source_field": "clinicSite",
       "destination": "cases.clinic_site",
-      "transformation": "as-is. D34 where the patient is seen (bastyr|external|home 自家,2026-11-03 加), CHECK-constrained in schema.sql.",
+      "transformation": "as-is. D34 where the patient is seen (bastyr|external|home 自家,2026年11月3日加), CHECK-constrained in schema.sql.",
       "nullable": true,
       "data_loss_risk": "none",
       "status": "mapped"
