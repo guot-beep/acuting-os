@@ -343,6 +343,10 @@ jobs:
       # 同日重複預設不匯、同一筆交接不重匯。虛構病例真值表,require 真正在跑的 js/visit-handoff.js。
       - name: visit handoff import contract (append-only, code matching, same-day duplicates)
         run: node scripts/validate-visit-handoff.js
+      # 藥櫃(D36,2026-11-03):帳只加不改、FEFO、補貨與常用門檻(20 g)、到期與依劑型的開封期限、開方整張檢查庫存、
+      # 開藥紀錄依病人/依病症、採購清單。虛構品項真值表,require 真正在跑的 js/herb-inventory.js。
+      - name: herb inventory contract (append-only ledger, FEFO, reorder and expiry alerts, prescriptions)
+        run: node scripts/validate-herb-inventory.js
       - name: quality panel honesty (live counts, snapshot dates, {} is not content)
         run: node scripts/test-quality-panel-honesty.js
 

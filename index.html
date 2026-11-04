@@ -49,6 +49,7 @@
           <p class="nav-group__title" data-mode-text data-bilingual="臨床 Clinical" data-english="Clinical">臨床 Clinical</p>
           <a href="#ws/cases" data-ws="cases" class="nav-sub" data-mode-text data-bilingual="病例 Cases" data-english="Cases">病例 Cases</a>
           <a href="#ws/patients" data-ws="patients" class="nav-sub" data-mode-text data-bilingual="病人 Patients" data-english="Patients">病人 Patients</a>
+          <a href="#ws/herbinv" data-ws="herbinv" class="nav-sub" data-mode-text data-bilingual="藥櫃 Inventory" data-english="Herb inventory">藥櫃 Inventory</a>
           <a href="#billingSection" class="nav-sub" data-mode-text data-bilingual="保險 Billing" data-english="Billing">保險 Billing</a>
         </div>
 
@@ -686,6 +687,19 @@
            Read-only view over getPatientsView() bridge — one row per
            patientCode, joined back to clinicalCases by caseIds. No new
            write path lives in this section. -->
+      <!-- 藥櫃(D36,2026-11-03):科學中藥 / 水藥庫存、開藥紀錄、補貨與到期提醒。畫面由 js/herb-inventory-ui.js 畫進 #herbInvApp,
+           計算在 js/herb-inventory.js(真值表 scripts/validate-herb-inventory.js)。資料跟病例同一個雲端、同一個通行碼。 -->
+      <section class="herbinv-section" data-workspace="herbinv" id="herbInventory" aria-label="藥櫃 Herb inventory">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Herb Inventory</p>
+            <h2 data-mode-text data-bilingual="藥櫃 / Herb Inventory" data-english="Herb Inventory">藥櫃 / Herb Inventory</h2>
+          </div>
+          <span class="data-pill">科中 · 水藥 · 開藥紀錄</span>
+        </div>
+        <div id="herbInvApp" class="herbinv-app"><p class="note">載入中…</p></div>
+      </section>
+
       <section class="case-workspace" data-workspace="patients" id="patientsWorkspace" aria-label="病人縱貫工作區 Patient Longitudinal Workspace">
         <div class="section-heading">
           <div>
@@ -1247,9 +1261,11 @@
     <script defer src="js/care-draft.js"></script>
     <script defer src="js/case-search.js"></script>
     <script defer src="js/visit-handoff.js"></script>
+    <script defer src="js/herb-inventory.js"></script>
     <script defer src="app.js"></script>
     <script defer src="js/router.js"></script>
-    <script defer src="js/knowledge.js"></script>    <script type="module">
+    <script defer src="js/knowledge.js"></script>
+    <script defer src="js/herb-inventory-ui.js"></script>    <script type="module">
       /* module scripts 排在所有 defer script 之後執行——執行到這裡代表所有
          defer 都「被嘗試過」，不保證都成功（失敗的 defer 不會擋住後面的
          script）。是否真的載到由 app.js 的 dataLoadGuard 判定並以紅 banner

@@ -9542,6 +9542,8 @@ function renderClinicalCaseDetail(item) {
     ${renderEnvironmentalExposuresPanel(item)}
     ${renderCaseSwimlanes(item, [...notes].reverse())}
     ${renderCaseTimeline(notes)}
+    ${/* 藥櫃(D36):只有看診地點「自家」的病例會出現(Bastyr / 外部診所走他們的藥房) */""}
+    ${window.AcuTingHerbInventoryUI ? AcuTingHerbInventoryUI.caseRxHtml(item) : ""}
     <div class="timeline-head" id="caseSecSoap">
       <strong>SOAP Timeline</strong>
       <small class="timeline-date">${notes.length} notes</small>
@@ -9554,6 +9556,7 @@ function renderClinicalCaseDetail(item) {
   document.querySelector("#editCaseInline").addEventListener("click", () => openCaseEditor(item));
   document.querySelector("#addSoapInline").addEventListener("click", () => openSoapEditor());
   wirePatientHeaderBar(item);
+  if (window.AcuTingHerbInventoryUI) AcuTingHerbInventoryUI.wireCase(caseDetail);
   // 病歷很長(手機上 SOAP 在 3000px 以下):頂端一排跳轉。用按鈕不用 #錨點,錨點會被 #ws/ 路由吃掉。
   caseDetail.querySelectorAll("[data-case-jump]").forEach((b) => b.addEventListener("click", () => {
     document.getElementById(b.dataset.caseJump)?.scrollIntoView({ block: "start" });
