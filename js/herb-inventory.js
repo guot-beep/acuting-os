@@ -63,7 +63,8 @@
       grams: num(x.grams), purpose: str(x.purpose), note: str(x.note), rxId: str(x.rxId) }));
     out.rx = arr(doc.rx).map((r) => ({ id: str(r.id), date: str(r.date), patientCode: str(r.patientCode), sexAge: str(r.sexAge),
       caseId: str(r.caseId), condition: str(r.condition), category: str(r.category), pattern: str(r.pattern), note: str(r.note),
-      items: arr(r.items).map((l) => ({ productId: str(l.productId), gpd: num(l.gpd), days: num(l.days) })) }));
+      items: arr(r.items).map((l) => ({ productId: str(l.productId), gpd: num(l.gpd), days: num(l.days) })),
+      voided: !!r.voided, voidedAt: str(r.voidedAt), voidReason: str(r.voidReason) }));
     out.settings = Object.assign(out.settings, doc.settings || {});
     out.settings.shelfByForm = Object.assign({}, DEFAULT_SETTINGS.shelfByForm, (doc.settings || {}).shelfByForm || {});
     return out;
@@ -80,9 +81,10 @@
     if (p.openedShelfMonths !== "" && p.openedShelfMonths > 0) return p.openedShelfMonths;
     return num((data.settings.shelfByForm || {})[p.form]) || 12;
   }
+  // 用量 = 用掉的 − 撤銷開方退回的(退回那筆是正數,所以直接加總)
   function usageG(data, pid, days, until) {
     const from = addDays(until, -days);
-    return -data.txns.filter((x) => x.productId === pid && x.type === "use" && x.date > from && x.date <= until).reduce((s, x) => s + x.grams, 0);
+    return -data.txns.filter((x) => x.productId === pid && (x.type === "use" || x.type === "return") && x.date > from && x.date <= until).reduce((s, x) => s + x.grams, 0);
   }
 
   function stats(data, p, today) {
@@ -105,7 +107,9 @@
     const openedLong = live.filter((l) => l.openedDate && addMonths(l.openedDate, shelfMonths(data, p)) < t);
     const frequentLow = !!p.frequent && stock < num(S.frequentMinG === undefined ? 20 : S.frequentMinG);
     const low = frequentLow || (adu > 0 && stock <= reorder) || (stock <= 0.001 && !!lastUse);
-    const slow = stock > 0 && (!lastUse || daysBetween(lastUse, t) > num(S.slowDays));
+    // 久未使用:從最後一次用量算;從沒用過的,從現存最早那批的購買日算(剛入庫的不算久未使用)
+    const idleSince = lastUse || live.map((l) => l.purchaseDate).filter(Boolean).sort()[0] || "";
+    const slow = stock > 0 && !!idleSince && daysBetween(idleSince, t) > num(S.slowDays);
     const value = live.reduce((s, l) => s + l.remaining * costPerGram(l), 0);
     return { lots, live, stock, adu, reorder, reorderAuto, dos, lastUse, expired, expiring, openedLong, frequentLow, low, slow, value, next: fefo(lots)[0] || null };
   }
@@ -179,6 +183,148 @@
     return { data: d, rx: r };
   }
 
+  // ── 修改(只改描述性欄位;數量一律走帳)──
+  const PRODUCT_EDITABLE = ["nameZh", "nameEn", "kind", "form", "brand", "code", "ratio", "packageG", "source", "madeIn", "origin", "organic", "frequent", "reorderG", "openedShelfMonths", "knowledgeId"];
+  function editProduct(data, id, patch) {
+    const i = data.products.findIndex((p) => p.id === id);
+    if (i < 0) throw new Error("找不到這個品項");
+    const next = Object.assign({}, data.products[i]);
+    for (const k of PRODUCT_EDITABLE) if (patch && Object.prototype.hasOwnProperty.call(patch, k)) next[k] = patch[k];
+    if (!str(next.nameZh).trim()) throw new Error("中文名不能空白");
+    if (!(num(next.packageG) > 0)) throw new Error("每包裝克數要大於 0");
+    const d = clone(data);
+    d.products[i] = normalize({ schema: SCHEMA, products: [next] }).products[0];
+    return d;
+  }
+  // 批次:批號、效期、購買日、價格、地點、開封日可改;克數不能改(克數錯了用盤點調整,帳才對得起來)
+  const LOT_EDITABLE = ["lotNo", "expiry", "purchaseDate", "price", "place", "openedDate"];
+  function editLot(data, id, patch) {
+    const i = data.lots.findIndex((l) => l.id === id);
+    if (i < 0) throw new Error("找不到這一批");
+    if (patch && Object.prototype.hasOwnProperty.call(patch, "gramsInit")) throw new Error("克數不能直接改;數量不對請用「盤點調整」");
+    const next = Object.assign({}, data.lots[i]);
+    for (const k of LOT_EDITABLE) if (patch && Object.prototype.hasOwnProperty.call(patch, k)) next[k] = k === "price" ? num(patch[k]) : str(patch[k]);
+    if (!next.expiry) throw new Error("效期不能空白");
+    if (!(next.price >= 0)) throw new Error("價格不能是負的");
+    const d = clone(data);
+    d.lots[i] = next;
+    return d;
+  }
+  // 撤銷開方:每一筆扣過的帳寫一筆反向的「退回」(加回同一批),開方紀錄標成已撤銷。不刪任何東西。
+  function voidRx(data, rxId, date, reason, newId) {
+    const r = data.rx.find((x) => x.id === rxId);
+    if (!r) throw new Error("找不到這張方");
+    if (r.voided) throw new Error("這張方已經撤銷過了");
+    const d = clone(data);
+    data.txns.filter((x) => x.rxId === rxId && x.type === "use").forEach((x) => {
+      d.txns.push({ id: newId("txn"), date, type: "return", productId: x.productId, lotId: x.lotId, grams: -x.grams, purpose: x.purpose, note: `撤銷開方${reason ? ":" + reason : ""}`, rxId });
+    });
+    const rr = d.rx.find((x) => x.id === rxId);
+    Object.assign(rr, { voided: true, voidedAt: date, voidReason: str(reason) });
+    return d;
+  }
+
+  // ── 一次貼上清單建檔 ──
+  // 從試算表複製(Tab 分隔)或用逗號分隔都可以;第一列是標題就照標題認欄位,沒有標題就照預設順序。
+  const BULK_HEADERS = {
+    nameZh: ["品名", "中文名", "藥名", "名稱", "name"], nameEn: ["英文", "拼音", "english", "pinyin"],
+    brand: ["品牌", "廠牌", "brand"], kind: ["種類", "kind"], form: ["劑型", "form"], code: ["編號", "品牌編號", "code"],
+    packageG: ["每包克數", "每瓶克數", "包裝克數", "包裝", "package"], packs: ["包數", "瓶數", "買了幾包", "packs"],
+    stockG: ["現有克數", "剩", "剩幾克", "庫存", "現有", "stock", "grams"], price: ["價格", "美金", "總價", "price", "usd"],
+    expiry: ["效期", "有效期限", "expiry", "exp"], purchaseDate: ["購買日", "買入日", "purchase"], source: ["購買地", "在哪買", "source"],
+    place: ["地點", "店家", "place"], origin: ["產地", "產區", "origin"], madeIn: ["製造地", "made"], organic: ["有機", "organic"],
+    frequent: ["常用", "frequent"], lotNo: ["批號", "lot"],
+  };
+  const BULK_DEFAULT_ORDER = ["nameZh", "brand", "form", "packageG", "stockG", "price", "expiry", "source"];
+  const FORM_WORDS = { granule: ["科中", "顆粒", "濃縮顆粒", "granule"], powder: ["濃縮散", "粉", "powder"], capsule: ["膠囊", "capsule"],
+    honeypill: ["蜜丸", "丸劑", "pill"], raw: ["水藥", "飲片", "生藥", "raw"], other: ["其他", "other"] };
+  const SOURCE_WORDS = { taiwan: ["台灣", "臺灣", "taiwan"], canada: ["加拿大", "canada"], baijia: ["百家"], us_online: ["網購", "美國", "online", "amazon"] };
+  const truthy = (v) => /^(y|yes|是|有|v|✓|x|1|true|★)$/i.test(str(v).trim());
+  function bulkDate(v) {
+    const t = str(v).trim().replace(/\./g, "/");
+    let m = /^(\d{4})[-/](\d{1,2})[-/](\d{1,2})$/.exec(t);
+    if (m) return `${m[1]}-${m[2].padStart(2, "0")}-${m[3].padStart(2, "0")}`;
+    m = /^(\d{4})[-/](\d{1,2})$/.exec(t);            // 只有年月 → 那個月最後一天(瓶身常只印到月)
+    if (!m) { const mm = /^(\d{1,2})[-/](\d{4})$/.exec(t); if (mm) m = [null, mm[2], mm[1]]; }
+    if (m) { const d = new Date(Date.UTC(Number(m[1]), Number(m[2]), 0)); return d.toISOString().slice(0, 10); }
+    return "";
+  }
+  function wordMatch(table, v, fallback) {
+    const t = str(v).trim().toLowerCase();
+    if (!t) return fallback;
+    for (const [k, words] of Object.entries(table)) if (words.some((w) => t.includes(w.toLowerCase()))) return k;
+    return fallback;
+  }
+  function parseBulk(text, existing) {
+    const lines = str(text).split(/\r?\n/).map((l) => l.trim()).filter((l) => l && !l.startsWith("#"));
+    if (!lines.length) return { rows: [], usedHeader: false };
+    const split = (l) => (l.includes("\t") ? l.split("\t") : l.split(/\s*[,，]\s*/)).map((c) => c.trim());
+    const head = split(lines[0]).map((h) => h.toLowerCase());
+    const colOf = {};
+    head.forEach((h, i) => { for (const [k, names] of Object.entries(BULK_HEADERS)) if (!(k in colOf) && names.some((n) => h === n.toLowerCase())) colOf[k] = i; });
+    const usedHeader = "nameZh" in colOf;
+    const order = usedHeader ? colOf : Object.fromEntries(BULK_DEFAULT_ORDER.map((k, i) => [k, i]));
+    const body = usedHeader ? lines.slice(1) : lines;
+    const products = arr(existing);
+    const rows = body.map((line, n) => {
+      const c = split(line);
+      const get = (k) => (k in order ? str(c[order[k]]).trim() : "");
+      const errors = [], warnings = [];
+      const nameZh = get("nameZh");
+      if (!nameZh) errors.push("沒有品名");
+      const form = wordMatch(FORM_WORDS, get("form"), "granule");
+      const kindRaw = get("kind");
+      // 沒寫種類:名字結尾是 湯/散/丸/飲/丹/膏/方 → 方劑,否則單味藥(預覽會顯示,可回頭在試算表改)
+      const kind = /方劑|formula/i.test(kindRaw) ? "formula" : /單味|single/i.test(kindRaw) ? "single" : (/[湯散丸飲丹膏方]$/.test(nameZh) ? "formula" : "single");
+      const packageG = num(get("packageG").replace(/[^\d.]/g, "")) || 100;
+      const packs = num(get("packs").replace(/[^\d.]/g, ""));
+      const stockRaw = get("stockG");
+      const stockG = stockRaw === "" ? (packs > 0 ? packs * packageG : 0) : num(stockRaw.replace(/[^\d.]/g, ""));
+      const price = num(get("price").replace(/[^\d.]/g, ""));
+      const expiry = bulkDate(get("expiry"));
+      if (stockG > 0 && !expiry) errors.push(get("expiry") ? `看不懂效期「${get("expiry")}」(用 2027-05-31 或 2027/05)` : "有庫存就要有效期");
+      if (stockG > 0 && !get("price")) warnings.push("沒有價格,每克成本會是 0");
+      const brand = get("brand");
+      const dup = products.find((p) => p.nameZh === nameZh && str(p.brand) === brand);
+      if (dup) warnings.push("藥櫃已有同名同品牌 —— 會入到那個品項,不另建");
+      const sourceText = get("source");
+      return { line: n + 1 + (usedHeader ? 1 : 0), errors, warnings, existingProductId: dup ? dup.id : "",
+        product: { nameZh, nameEn: get("nameEn"), kind, form, brand, code: get("code"), ratio: form === "raw" || form === "honeypill" ? "" : "5:1", packageG,
+          source: wordMatch(SOURCE_WORDS, sourceText, sourceText ? "other" : "other"), madeIn: get("madeIn"), origin: get("origin"),
+          organic: truthy(get("organic")), frequent: truthy(get("frequent")), reorderG: "", openedShelfMonths: "", knowledgeId: "", archived: false },
+        lot: stockG > 0 ? { boughtG: packs > 0 ? packs * packageG : stockG, stockG, price, expiry, purchaseDate: bulkDate(get("purchaseDate")),
+          place: get("place") || (wordMatch(SOURCE_WORDS, sourceText, "") ? "" : sourceText), lotNo: get("lotNo") } : null };
+    });
+    return { rows, usedHeader };
+  }
+  // 只套用沒有錯誤的列;買的量 > 現有量時,先入「買的量」再記一筆「建檔時已用掉」,每克成本才對。
+  function applyBulk(data, rows, newId, today, knowledgeIdOf) {
+    let d = clone(data);
+    let products = 0, lots = 0;
+    for (const r of rows) {
+      if (r.errors.length) continue;
+      let pid = r.existingProductId || (d.products.find((p) => p.nameZh === r.product.nameZh && str(p.brand) === r.product.brand) || {}).id;
+      if (!pid) {
+        pid = newId("prod");
+        const p = Object.assign({ id: pid }, r.product);
+        if (!p.knowledgeId && knowledgeIdOf) p.knowledgeId = knowledgeIdOf(p.kind, p.nameZh, p.nameEn) || "";
+        d.products.push(normalize({ schema: SCHEMA, products: [p] }).products[0]);
+        products++;
+      }
+      if (r.lot) {
+        const res = receiveLot(d, { productId: pid, gramsInit: r.lot.boughtG, price: r.lot.price, expiry: r.lot.expiry,
+          purchaseDate: r.lot.purchaseDate || today, place: r.lot.place, lotNo: r.lot.lotNo }, newId);
+        d = res.data;
+        if (r.lot.boughtG > r.lot.stockG) {
+          d.txns.push({ id: newId("txn"), date: today, type: "adjust", productId: pid, lotId: res.lot.id, grams: -round1(r.lot.boughtG - r.lot.stockG), purpose: "", note: "建檔時已用掉", rxId: "" });
+          d.lots.find((l) => l.id === res.lot.id).openedDate = today;   // 已經用過 = 已開封(真正開封日不知道,以建檔日計)
+        }
+        lots++;
+      }
+    }
+    return { data: d, products, lots };
+  }
+
   // ── 報表 ──
   const rxTotal = (r) => r.items.reduce((s, l) => s + l.gpd * l.days, 0);
   function rxCost(data, r) {
@@ -200,7 +346,7 @@
   // 一個病症:各藥開過幾次、平均一天幾克、總量(複習開藥用)
   function conditionSummary(rxList) {
     const agg = new Map();
-    rxList.forEach((r) => r.items.forEach((l) => {
+    rxList.filter((r) => !r.voided).forEach((r) => r.items.forEach((l) => {   // 撤銷的方不算進「怎麼開」
       const a = agg.get(l.productId) || { productId: l.productId, times: 0, gpdSum: 0, totalG: 0 };
       a.times++; a.gpdSum += l.gpd; a.totalG += l.gpd * l.days;
       agg.set(l.productId, a);
@@ -239,6 +385,7 @@
     emptyData, normalize, isoOf, addDays, addMonths, daysBetween,
     lotRemaining, costPerGram, lotsOf, fefo, shelfMonths, usageG, stats,
     receiveLot, use, adjust, prescribe, rxTotal, rxCost, groupRx, conditionSummary, shoppingList, frequentLowEmail,
+    editProduct, editLot, voidRx, parseBulk, applyBulk, bulkDate,
   };
   if (typeof module === "object" && module.exports) module.exports = api;
   else global.AcuTingHerbInventory = api;

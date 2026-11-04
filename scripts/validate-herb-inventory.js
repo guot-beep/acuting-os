@@ -80,7 +80,10 @@ check("已過期:效期在今天以前", () => H.stats(D, D.products[1], "2029-0
 D = H.use(D, "p.b", 10, "2026-05-02", "自用", "", newId);
 check("開封過久依劑型:水藥 36 個月內不算、超過才算", () => H.stats(D, D.products[1], "2028-05-01").openedLong.length === 0 && H.stats(D, D.products[1], "2029-05-03").openedLong.length === 1);
 check("品項可另設開封期限(水藥改 12 月)", () => { const d2 = JSON.parse(JSON.stringify(D)); d2.products[1].openedShelfMonths = 12; return H.stats(d2, d2.products[1], "2027-06-01").openedLong.length === 1; });
-check("久未使用:最後一次用量超過 120 天", () => H.stats(D, D.products[1], "2026-10-01").slow === true && H.stats(D, D.products[0], T).slow === false);
+check("剛入庫、還沒用過的不算久未使用;買了 120 天以上都沒用才算", () => { const p = { id: "p.idle", nameZh: "虛構未用", kind: "single", form: "granule", packageG: 100, reorderG: "", frequent: false };
+  let d = H.normalize({ products: [p] }); d = H.receiveLot(d, { productId: "p.idle", gramsInit: 100, price: 10, expiry: "2030-01-31", purchaseDate: "2026-06-01" }, newId).data;
+  return H.stats(d, d.products[0], "2026-06-02").slow === false && H.stats(d, d.products[0], "2026-10-15").slow === true; });
+check("久未使用:最後一次用量超過 120 天",() => H.stats(D, D.products[1], "2026-10-01").slow === true && H.stats(D, D.products[0], T).slow === false);
 
 console.log("調整 / 報廢(只加帳)");
 const n0 = D.txns.length;
@@ -113,6 +116,55 @@ check("要補的品項在清單上,並說出原因", () => !!a && a.why.length >
 check("補到目標天數,換算整包裝(至少 1 包)", () => a.packs >= 1 && Number.isInteger(a.packs));
 check("不用補的不在清單上(水藥還很多)", () => !list.some((x) => x.p.id === "p.b"));
 check("封存的品項不進清單", () => { const d2 = JSON.parse(JSON.stringify(D)); d2.products[0].archived = true; return !H.shoppingList(d2, T).some((x) => x.p.id === "p.a"); });
+
+console.log("修改(只改描述,數量走帳)");
+const ledgerBefore = JSON.stringify(D.txns);
+D = H.editProduct(D, "p.a", { brand: "品牌A2", packageG: 200, origin: "四川", frequent: false });
+check("改品項的品牌 / 包裝 / 產地 / 常用,帳一筆都不動", () => D.products[0].brand === "品牌A2" && D.products[0].packageG === 200 && D.products[0].origin === "四川" && !D.products[0].frequent && JSON.stringify(D.txns) === ledgerBefore);
+check("品項中文名空白 → 拒絕", () => throws(() => H.editProduct(D, "p.a", { nameZh: " " }), /中文名/));
+check("包裝克數 0 → 拒絕", () => throws(() => H.editProduct(D, "p.a", { packageG: 0 })));
+check("不在可改清單的欄位(例 id)不會被改", () => H.editProduct(D, "p.a", { id: "hack" }).products[0].id === "p.a");
+D = H.editLot(D, lotRaw.id, { expiry: "2030-06-30", price: 18, lotNo: "L-9", place: "百家中藥行" });
+check("改批次的效期 / 價格 / 批號 / 地點,剩餘克數不變", () => { const l = D.lots.find((x) => x.id === lotRaw.id); return l.expiry === "2030-06-30" && l.price === 18 && l.lotNo === "L-9" && H.lotRemaining(D, lotRaw.id) === 300 - 10 - 14; });
+check("改價格後每克成本跟著變", () => Math.abs(H.costPerGram(D.lots.find((x) => x.id === lotRaw.id)) - 0.06) < 1e-9);
+check("想直接改克數 → 拒絕,要用盤點調整", () => throws(() => H.editLot(D, lotRaw.id, { gramsInit: 999 }), /盤點/));
+check("效期清空 → 拒絕", () => throws(() => H.editLot(D, lotRaw.id, { expiry: "" }), /效期/));
+
+console.log("撤銷開方(只加反向帳)");
+const rxA = D.rx.find((r) => r.patientCode === "AQZ");
+const stockA0 = H.stats(D, D.products[0], T).stock, stockB0 = H.stats(D, D.products[1], T).stock, txn0 = D.txns.length;
+D = H.voidRx(D, rxA.id, T, "開錯藥", newId);
+check("撤銷:每一味的量加回原來那一批", () => H.stats(D, D.products[0], T).stock === stockA0 + 42 && H.stats(D, D.products[1], T).stock === stockB0 + 14);
+check("撤銷只加帳(return),舊帳一筆不少", () => D.txns.length === txn0 + 2 && D.txns.slice(-2).every((x) => x.type === "return" && x.rxId === rxA.id));
+check("開方紀錄留著,標成已撤銷並記原因", () => { const r = D.rx.find((x) => x.id === rxA.id); return r.voided && r.voidReason === "開錯藥" && r.voidedAt === T; });
+check("同一張方不能撤銷兩次", () => throws(() => H.voidRx(D, rxA.id, T, "", newId), /撤銷過/));
+check("撤銷的方不算進病症摘要", () => { const s = H.conditionSummary(H.groupRx(D, "condition").get("mental_sleep|失眠")); return s.length === 1 && s[0].times === 1; });
+check("撤銷的量不算日均用量(用量 = 用掉 − 退回)", () => H.usageG(D, "p.b", 90, T) === 0 + 0 && H.usageG(D, "p.b", 400, T) === 10);
+
+console.log("一次貼上清單建檔");
+check("效期格式:2027-05-31 / 2027/5/31 / 2027-05 / 05/2027", () => H.bulkDate("2027-05-31") === "2027-05-31" && H.bulkDate("2027/5/31") === "2027-05-31" && H.bulkDate("2027-05") === "2027-05-31" && H.bulkDate("05/2027") === "2027-05-31" && H.bulkDate("明年") === "");
+const TSV = ["品名\t品牌\t劑型\t每包克數\t包數\t現有克數\t價格\t效期\t購買地\t產地\t有機\t常用",
+  "虛構丸\t品牌C\t蜜丸\t150\t1\t60\t$30\t2027/12\t台灣\t\t\t是",
+  "虛構藥丙\t散裝\t水藥\t300\t\t250\t12.5\t2028-03-31\t百家中藥行\t甘肅\t有\t",
+  "\t品牌D\t科中\t100\t\t50\t10\t2027-01-01\t台灣",
+  "虛構方丁\t品牌E\t科中\t100\t\t80\t20\t下個月\t加拿大",
+  "虛構方甲\t品牌A2\t科中\t100\t\t100\t24\t2028-01-31\t台灣"].join("\n");
+const P = H.parseBulk(TSV, D.products);
+check("認得標題列,5 列資料", () => P.usedHeader && P.rows.length === 5);
+check("劑型、購買地、有機、常用從中文字認出來", () => { const r = P.rows[0], q = P.rows[1]; return r.product.form === "honeypill" && r.product.source === "taiwan" && r.product.frequent && q.product.form === "raw" && q.product.source === "baijia" && q.product.organic && q.product.origin === "甘肅"; });
+check("沒寫種類:名字結尾「丸」→ 方劑,「丙」→ 單味藥", () => P.rows[0].product.kind === "formula" && P.rows[1].product.kind === "single");
+check("價格的 $ 去掉;蜜丸 / 水藥不填濃縮比", () => P.rows[0].lot.price === 30 && P.rows[0].product.ratio === "" && P.rows[1].product.ratio === "");
+check("有包數 → 買的量 = 包數 × 每包;現有量另記", () => P.rows[0].lot.boughtG === 150 && P.rows[0].lot.stockG === 60);
+check("沒品名 / 看不懂效期 → 該列錯誤", () => P.rows[2].errors.length === 1 && /效期/.test(P.rows[3].errors[0]));
+check("同名同品牌 → 提醒會入到既有品項", () => P.rows[4].existingProductId === "p.a");
+const before2 = { p: D.products.length, l: D.lots.length };
+const A = H.applyBulk(D, P.rows, newId, T, () => "");
+check("只套用沒錯誤的列:新建 2 個品項、入 3 批(1 批入既有品項)", () => A.products === 2 && A.lots === 3 && A.data.products.length === before2.p + 2 && A.data.lots.length === before2.l + 3);
+const pill = A.data.products.find((p) => p.nameZh === "虛構丸");
+check("買 150 g 現剩 60 g:庫存 60 g、每克成本照 150 g 算(0.2)、記為已開封", () => { const s = H.stats(A.data, pill, T); const lot = s.lots[0]; return s.stock === 60 && Math.abs(H.costPerGram(lot) - 0.2) < 1e-9 && lot.openedDate === T; });
+check("建檔時已用掉的量是 adjust,不算日均用量", () => H.usageG(A.data, pill.id, 90, T) === 0 && A.data.txns.some((x) => x.type === "adjust" && x.note === "建檔時已用掉"));
+check("沒標題列時照預設順序(品名、品牌、劑型、每包克數、現有克數、價格、效期、購買地)", () => { const r = H.parseBulk("虛構湯\t品牌F\t科中\t100\t40\t22\t2027-06\t網購").rows[0]; return !r.errors.length && r.product.kind === "formula" && r.lot.stockG === 40 && r.product.source === "us_online" && r.lot.expiry === "2027-06-30"; });
+check("逗號分隔也可以;# 開頭的列當註解", () => H.parseBulk("# 註解\n虛構散, 品牌G, 濃縮散, 100, 30, 9, 2027-02-28, 加拿大").rows.length === 1);
 
 if (failures.length) {
   console.error(`\nFAIL — ${failures.length} 項`);

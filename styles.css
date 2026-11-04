@@ -8434,3 +8434,8 @@ html { scroll-padding-top: 92px; }
   .hi-two { grid-template-columns: minmax(0, 1fr); }
   .hi-hide-sm { display: none; }
 }
+.hi-lot.is-voided { opacity: 0.6; }
+.hi-lot.is-voided .hi-mono { text-decoration: line-through; }
+.hi-edit { border-color: var(--gold); }
+.hi-lot-edit { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); align-items: end; }
+#hiBulkText { width: 100%; white-space: pre; overflow-wrap: normal; overflow-x: auto; tab-size: 10; font-family: ui-monospace, Consolas, monospace; font-size: 0.82rem; border: 1px solid var(--line); border-radius: 8px; padding: 0.5rem; background: var(--paper); }

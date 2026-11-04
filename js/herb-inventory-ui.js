@@ -167,15 +167,44 @@
           <span class="hi-meta">效期 ${esc(l.expiry)}(${left < 0 ? `<b class="hi-warn-text">已過期 ${-left} 天</b>` : `${left} 天`})· 買於 ${esc(l.purchaseDate)} ${esc(l.place)} ·
             US$ ${l.price.toFixed(2)}(${H.costPerGram(l).toFixed(3)}/g)·
             ${l.openedDate ? `開封 ${esc(l.openedDate)}${openedUntil < t && l.remaining > 0.001 ? ` <b class="hi-amber-text">· 開封已超過建議期限</b>` : `,建議 ${openedUntil} 前用完`}` : "未開封"}</span>
-          ${l.remaining > 0.001 ? `<span class="hi-lot-actions"><button type="button" data-hi-adjust="${attr(l.id)}">盤點調整</button><button type="button" data-hi-discard="${attr(l.id)}">報廢這批</button></span>` : ""}
+          <span class="hi-lot-actions">${l.remaining > 0.001 ? `<button type="button" data-hi-adjust="${attr(l.id)}">盤點調整</button><button type="button" data-hi-discard="${attr(l.id)}">報廢這批</button>` : ""}<button type="button" data-hi-edit-lot="${attr(l.id)}">修改這批資訊</button></span>
         </div>`; }).join("") || `<p class="hi-hint">還沒有入庫紀錄。</p>`}</div>
       <div class="hi-toolbar">
         <button type="button" class="hi-primary" data-hi-quick-use="${attr(p.id)}">記一筆用量</button>
         <button type="button" data-hi-quick-recv="${attr(p.id)}">入庫一批</button>
         <button type="button" data-hi-frequent="${attr(p.id)}" aria-pressed="${p.frequent}">${p.frequent ? `★ 常用(低於 ${inv.settings.frequentMinG} g 提醒)` : "☆ 設為常用"}</button>
         ${kbLink(p, p.kind === "formula" ? "看方劑卡" : "看中藥卡")}
+        <button type="button" data-hi-edit-product="${attr(p.id)}" aria-expanded="${editingProduct === p.id}">編輯品項</button>
         <button type="button" data-hi-archive="${attr(p.id)}">${p.archived ? "取消封存" : "封存(不再進貨)"}</button>
       </div>
+      ${editingProduct === p.id ? productFormHtml(p) : ""}
+    </div>`;
+  }
+  // 編輯品項:只改描述(品名、品牌、劑型、包裝、產地…);庫存數量走帳,不在這裡改
+  let editingProduct = "";
+  function productFormHtml(p) {
+    const opt = (obj, cur) => Object.entries(obj).map(([k, v]) => `<option value="${k}" ${cur === k ? "selected" : ""}>${v}</option>`).join("");
+    return `<div class="hi-panel hi-edit" id="hiEditProduct">
+      <h3>編輯品項</h3>
+      <div class="hi-grid2">
+        <label class="hi-f"><span>中文名</span><input data-hi-ep="nameZh" value="${attr(p.nameZh)}"></label>
+        <label class="hi-f"><span>英文 / 拼音</span><input data-hi-ep="nameEn" value="${attr(p.nameEn)}"></label>
+        <label class="hi-f"><span>種類</span><select data-hi-ep="kind">${opt(H.KINDS, p.kind)}</select></label>
+        <label class="hi-f"><span>劑型</span><select data-hi-ep="form">${opt(H.FORMS, p.form)}</select></label>
+        <label class="hi-f"><span>品牌</span><input data-hi-ep="brand" list="hiBrandList" value="${attr(p.brand)}"></label>
+        <label class="hi-f"><span>品牌編號</span><input data-hi-ep="code" value="${attr(p.code)}"></label>
+        <label class="hi-f"><span>每包裝克數</span><input type="number" data-hi-ep="packageG" value="${attr(p.packageG)}"></label>
+        <label class="hi-f"><span>濃縮比</span><input data-hi-ep="ratio" value="${attr(p.ratio)}"></label>
+        <label class="hi-f"><span>製造地</span><select data-hi-ep="madeIn">${H.MADE_IN.map((x) => `<option ${p.madeIn === x ? "selected" : ""}>${x}</option>`).join("")}<option value="" ${p.madeIn ? "" : "selected"}>未填</option></select></label>
+        <label class="hi-f"><span>產地 / 產區</span><input data-hi-ep="origin" value="${attr(p.origin)}"></label>
+        <label class="hi-f"><span>常在哪裡買</span><select data-hi-ep="source">${opt(H.SOURCES, p.source)}</select></label>
+        <label class="hi-f"><span>補貨點(g,空白 = 自動)</span><input type="number" data-hi-ep="reorderG" value="${attr(p.reorderG)}"></label>
+        <label class="hi-f"><span>開封後幾個月用完(空白 = 依劑型)</span><input type="number" data-hi-ep="openedShelfMonths" value="${attr(p.openedShelfMonths)}"></label>
+        <div class="hi-checks"><label><input type="checkbox" data-hi-ep="organic" ${p.organic ? "checked" : ""}> 有機</label><label><input type="checkbox" data-hi-ep="frequent" ${p.frequent ? "checked" : ""}> ★ 常用</label></div>
+      </div>
+      <datalist id="hiBrandList">${Object.entries(H.BRANDS).flatMap(([g, list]) => list.map((b) => `<option value="${attr(b)}">${g}</option>`)).join("")}</datalist>
+      <div class="hi-toolbar"><button type="button" class="hi-primary" data-hi-ep-save="${attr(p.id)}">存品項</button><button type="button" data-hi-ep-cancel>取消</button>
+        <span class="hi-hint">庫存數量不在這裡改 —— 數量不對請用該批的「盤點調整」。</span></div>
     </div>`;
   }
 
@@ -243,7 +272,30 @@
         <datalist id="hiBrandList">${Object.entries(H.BRANDS).flatMap(([g, list]) => list.map((b) => `<option value="${attr(b)}">${g}</option>`)).join("")}</datalist>
         <div class="hi-toolbar"><button type="button" id="hiNSave">建立品項</button></div>
         <p class="hi-hint">名稱跟知識庫的方劑 / 中藥卡對得上時,會自動連過去。</p>
-      </aside></div>`;
+      </aside></div>
+      ${bulkHtml()}`;
+  }
+  // 一次貼上清單:從試算表複製(或照範例用逗號)→ 預覽每一列 → 只建沒錯誤的列
+  const BULK_EXAMPLE = ["品名\t品牌\t劑型\t每包克數\t包數\t現有克數\t價格\t效期\t購買地\t產地\t有機\t常用",
+    "加味逍遙散\t順天堂 Sun Ten\t科中\t100\t2\t130\t48\t2027-08\t台灣\t\t\t是",
+    "當歸\tMayway\t水藥\t454\t1\t300\t36.5\t2028-12-31\t網購\t甘肅 岷縣\t有\t"].join("\n");
+  let bulkText = "", bulkPreview = null;
+  function bulkHtml() {
+    const rows = bulkPreview ? bulkPreview.rows : [];
+    const ok = rows.filter((r) => !r.errors.length);
+    return `<section class="hi-panel" id="hiBulk"><h3>一次貼上清單建檔</h3>
+      <p class="hi-hint">從 Excel / Google 試算表選取整張表複製貼上(第一列放標題),或照下面範例一行一筆。認得的標題:品名、品牌、種類、劑型、品牌編號、每包克數、包數、現有克數、價格(美金)、效期、購買日、購買地、地點、產地、製造地、有機、常用、批號。
+        效期可寫 2027-08-31、2027/8/31 或只寫 2027-08(當月最後一天)。有「包數」又有「現有克數」時,會先入買的量、再記一筆「建檔時已用掉」,每克成本才算得對。</p>
+      <textarea id="hiBulkText" rows="7" spellcheck="false" placeholder="${attr(BULK_EXAMPLE)}">${esc(bulkText)}</textarea>
+      <div class="hi-toolbar"><button type="button" id="hiBulkPreview">預覽</button><button type="button" id="hiBulkExample">放入範例</button>
+        ${bulkPreview ? `<button type="button" class="hi-primary" id="hiBulkApply" ${ok.length ? "" : "disabled"}>建立 ${ok.length} 筆</button><span class="hi-hint">${rows.length - ok.length ? `${rows.length - ok.length} 列有錯,不會建立` : "全部可以建立"}</span>` : ""}</div>
+      ${bulkPreview ? `<div class="hi-table-wrap"><table class="hi-table"><thead><tr><th>列</th><th>品名</th><th>種類 · 劑型</th><th class="num">現有</th><th class="num">US$</th><th>效期</th><th>購買地</th><th>狀態</th></tr></thead><tbody>
+        ${rows.map((r) => `<tr><td class="num">${r.line}</td><td>${esc(r.product.nameZh || "—")} <small class="hi-hint">${esc(r.product.brand)}</small></td>
+          <td>${H.KINDS[r.product.kind]} · ${H.FORMS[r.product.form]}</td><td class="num">${r.lot ? fmtG(r.lot.stockG) : "—"}</td><td class="num">${r.lot ? r.lot.price : "—"}</td>
+          <td>${r.lot ? esc(r.lot.expiry) : "—"}</td><td>${H.SOURCES[r.product.source]}</td>
+          <td>${r.errors.length ? `<span class="hi-pill hi-warn">${r.errors.map(esc).join(";")}</span>` : r.warnings.length ? `<span class="hi-pill hi-amber">${r.warnings.map(esc).join(";")}</span>` : `<span class="hi-pill hi-ok">OK</span>`}</td></tr>`).join("")}
+      </tbody></table></div>` : ""}
+    </section>`;
   }
 
   // ── 開藥紀錄 ──
@@ -255,10 +307,11 @@
   }
   function rxCardHtml(r, showPatient) {
     const c = r.caseId && typeof clinicalCases !== "undefined" ? clinicalCases.find((x) => x.id === r.caseId) : null;
-    return `<div class="hi-lot"><span><b class="hi-mono">${esc(r.date)}</b> ${showPatient ? `<b class="hi-mono">${esc(r.patientCode)}</b> <span class="hi-hint">${esc(r.sexAge)}</span> · ` : ""}${esc(catLabel(r.category))} <b>${esc(r.condition)}</b>${r.pattern ? ` <span class="hi-hint">· ${esc(r.pattern)}</span>` : ""}</span>
+    return `<div class="hi-lot ${r.voided ? "is-voided" : ""}"><span>${r.voided ? `<span class="hi-pill">已撤銷 ${esc(r.voidedAt)}${r.voidReason ? " · " + esc(r.voidReason) : ""}</span> ` : ""}<b class="hi-mono">${esc(r.date)}</b> ${showPatient ? `<b class="hi-mono">${esc(r.patientCode)}</b> <span class="hi-hint">${esc(r.sexAge)}</span> · ` : ""}${esc(catLabel(r.category))} <b>${esc(r.condition)}</b>${r.pattern ? ` <span class="hi-hint">· ${esc(r.pattern)}</span>` : ""}</span>
       <span class="num">${fmtG(H.rxTotal(r))}</span>
       <span class="hi-meta">${r.items.map((l) => { const p = product(l.productId); return `${p ? kbLink(p, p.nameZh) : "?"} ${l.gpd} g/天 × ${l.days} 天`; }).join(" ;")} · 約 US$ ${H.rxCost(inv, r).toFixed(2)}${r.note ? " · " + esc(r.note) : ""}
-        ${c ? ` · <button type="button" class="hi-kb" data-hi-open-case="${attr(c.id)}">看病例 ↗</button>` : ""}</span></div>`;
+        ${c ? ` · <button type="button" class="hi-kb" data-hi-open-case="${attr(c.id)}">看病例 ↗</button>` : ""}</span>
+      ${r.voided ? "" : `<span class="hi-lot-actions"><button type="button" data-hi-void-rx="${attr(r.id)}">撤銷這張方(藥加回庫存)</button></span>`}</div>`;
   }
   function rxHtml() {
     const groups = H.groupRx(inv, rxLens);
@@ -275,9 +328,10 @@
       summary = `<div class="hi-grid3">${H.conditionSummary(picked).map((a) => { const p = product(a.productId);
         return `<div class="hi-stat"><small>${esc(p ? p.nameZh : "?")} · 開過 ${a.times} 次</small><b>${a.avgGpd.toFixed(1)} g/天</b><small>共 ${fmtG(a.totalG)}</small></div>`; }).join("")}</div>`;
     } else if (picked.length) {
-      summary = `<div class="hi-grid3"><div class="hi-stat"><small>開藥次數</small><b>${picked.length}</b></div>
-        <div class="hi-stat"><small>總用量</small><b>${fmtG(picked.reduce((s, r) => s + H.rxTotal(r), 0))}</b></div>
-        <div class="hi-stat"><small>藥材成本</small><b>US$ ${picked.reduce((s, r) => s + H.rxCost(inv, r), 0).toFixed(2)}</b></div></div>`;
+      const live = picked.filter((r) => !r.voided);   // 撤銷的方不算
+      summary = `<div class="hi-grid3"><div class="hi-stat"><small>開藥次數</small><b>${live.length}</b></div>
+        <div class="hi-stat"><small>總用量</small><b>${fmtG(live.reduce((s, r) => s + H.rxTotal(r), 0))}</b></div>
+        <div class="hi-stat"><small>藥材成本</small><b>US$ ${live.reduce((s, r) => s + H.rxCost(inv, r), 0).toFixed(2)}</b></div></div>`;
     }
     const d = rxDraft;
     const hc = homeCases();
@@ -433,6 +487,59 @@
       const next = JSON.parse(JSON.stringify(inv)); const p = next.products.find((x) => x.id === b.dataset.hiArchive); p.archived = !p.archived;
       commit(next, p.archived ? `${p.nameZh} 已封存(帳還在)` : `${p.nameZh} 取消封存`); render();
     }));
+    // 編輯品項
+    el.querySelectorAll("[data-hi-edit-product]").forEach((b) => b.addEventListener("click", () => {
+      editingProduct = editingProduct === b.dataset.hiEditProduct ? "" : b.dataset.hiEditProduct; render();
+      root().querySelector("#hiEditProduct")?.scrollIntoView({ block: "nearest" });
+    }));
+    el.querySelector("[data-hi-ep-cancel]")?.addEventListener("click", () => { editingProduct = ""; render(); });
+    el.querySelector("[data-hi-ep-save]")?.addEventListener("click", (e) => {
+      const patch = {};
+      el.querySelectorAll("[data-hi-ep]").forEach((x) => { patch[x.dataset.hiEp] = x.type === "checkbox" ? x.checked : x.value; });
+      patch.packageG = Number(patch.packageG);
+      if (patch.reorderG !== "") patch.reorderG = Number(patch.reorderG);
+      if (patch.openedShelfMonths !== "") patch.openedShelfMonths = Number(patch.openedShelfMonths);
+      const old = product(e.target.dataset.hiEpSave);
+      if (patch.nameZh !== old.nameZh || patch.kind !== old.kind) patch.knowledgeId = findKnowledgeId(patch.kind, patch.nameZh, patch.nameEn) || "";
+      try { if (commit(H.editProduct(inv, old.id, patch), `已更新 ${patch.nameZh}`)) editingProduct = ""; } catch (err) { msg = { text: err.message, ok: false }; }
+      render();
+    });
+    // 修改批次資訊(批號、效期、購買日、價格、地點;克數不能改)
+    el.querySelectorAll("[data-hi-edit-lot]").forEach((b) => b.addEventListener("click", () => {
+      const lot = inv.lots.find((l) => l.id === b.dataset.hiEditLot);
+      const cell = b.closest(".hi-lot");
+      if (!lot || !cell || cell.querySelector(".hi-adjust-form")) return;
+      cell.insertAdjacentHTML("beforeend", `<span class="hi-adjust-form hi-lot-edit">
+        <label class="hi-f"><span>批號</span><input data-hi-el="lotNo" value="${attr(lot.lotNo)}"></label>
+        <label class="hi-f"><span>效期</span><input type="date" data-hi-el="expiry" value="${attr(lot.expiry)}"></label>
+        <label class="hi-f"><span>購買日</span><input type="date" data-hi-el="purchaseDate" value="${attr(lot.purchaseDate)}"></label>
+        <label class="hi-f"><span>總價(美金)</span><input type="number" step="0.01" min="0" data-hi-el="price" value="${attr(lot.price)}"></label>
+        <label class="hi-f"><span>購買地點</span><input data-hi-el="place" value="${attr(lot.place)}"></label>
+        <label class="hi-f"><span>開封日</span><input type="date" data-hi-el="openedDate" value="${attr(lot.openedDate)}"></label>
+        <button type="button" class="hi-primary" data-hi-el-save>存這批</button></span>`);
+      cell.querySelector("[data-hi-el-save]").addEventListener("click", () => {
+        const patch = {};
+        cell.querySelectorAll("[data-hi-el]").forEach((x) => { patch[x.dataset.hiEl] = x.value; });
+        try { commit(H.editLot(inv, lot.id, patch), "這批資訊已更新(克數沒動)"); } catch (err) { msg = { text: err.message, ok: false }; }
+        render();
+      });
+    }));
+    wireVoid(el, render);
+    // 一次貼上清單
+    el.querySelector("#hiBulkExample")?.addEventListener("click", () => { bulkText = BULK_EXAMPLE; bulkPreview = null; render(); root().querySelector("#hiBulk")?.scrollIntoView({ block: "start" }); });
+    el.querySelector("#hiBulkPreview")?.addEventListener("click", () => {
+      bulkText = val(el, "hiBulkText");
+      bulkPreview = H.parseBulk(bulkText, inv.products);
+      if (!bulkPreview.rows.length) msg = { text: "沒有讀到任何一列", ok: false };
+      render(); root().querySelector("#hiBulk")?.scrollIntoView({ block: "start" });
+    });
+    el.querySelector("#hiBulkApply")?.addEventListener("click", () => {
+      try {
+        const res = H.applyBulk(inv, H.parseBulk(bulkText, inv.products).rows, newId, today(), findKnowledgeId);
+        if (commit(res.data, `已建立 ${res.products} 個品項、入庫 ${res.lots} 批`)) { bulkText = ""; bulkPreview = null; tab = "stock"; }
+      } catch (err) { msg = { text: err.message, ok: false }; }
+      render();
+    });
     el.querySelectorAll("[data-hi-adjust]").forEach((b) => b.addEventListener("click", () => {
       const lot = inv.lots.find((l) => l.id === b.dataset.hiAdjust);
       const cell = b.closest(".hi-lot");
@@ -540,6 +647,22 @@
     });
   }
 
+  // 撤銷開方:先在卡片上展開「原因 + 確定」,按了才寫(藥量以反向帳加回)。藥櫃頁與病例頁共用。
+  function wireVoid(container, after) {
+    container.querySelectorAll("[data-hi-void-rx]").forEach((b) => b.addEventListener("click", () => {
+      const cell = b.closest(".hi-lot");
+      if (!cell || cell.querySelector(".hi-adjust-form")) return;
+      cell.insertAdjacentHTML("beforeend", `<span class="hi-adjust-form"><input placeholder="撤銷原因,例:開錯藥、病人沒拿"><button type="button" class="hi-danger">確定撤銷,藥加回庫存</button></span>`);
+      const [reasonEl, ok] = cell.querySelectorAll(".hi-adjust-form input, .hi-adjust-form button");
+      ok.addEventListener("click", () => {
+        ensure();
+        try { commit(H.voidRx(inv, b.dataset.hiVoidRx, today(), reasonEl.value.trim(), newId), "已撤銷這張方,藥量加回庫存(紀錄保留)"); }
+        catch (err) { msg = { text: err.message, ok: false }; }
+        after();
+      });
+    }));
+  }
+
   // 從自家病例帶入開方欄位(代號、性別年齡、病症、類別、證型)
   function fillRxFromCase(caseId) {
     const c = caseId && typeof clinicalCases !== "undefined" ? clinicalCases.find((x) => x.id === caseId) : null;
@@ -565,6 +688,7 @@
   }
   function wireCase(container) {
     container.querySelectorAll("[data-hi-case-rx]").forEach((b) => b.addEventListener("click", () => startRxForCase(b.dataset.hiCaseRx)));
+    wireVoid(container, () => { if (typeof renderClinicalCases === "function") renderClinicalCases(); });
     container.querySelectorAll(".hi-in-case [data-hi-kb]").forEach((b) => b.addEventListener("click", () => {
       const [kind, id] = b.dataset.hiKb.split("|");
       if (!(id && typeof openKnowledgeRecord === "function" && openKnowledgeRecord(kind, id))) window.location.hash = `#ws/${kind}`;
