@@ -31,6 +31,50 @@
   }
   const normalizeDisplay = (code) => (isDisplayCode(code) ? compactDisplay(code).toUpperCase() : str(code).trim());
 
+  // 標註欄位(D35 標題:★ 顯示代號 性別/年齡 ❤️ 🌙)。2026-11-05 加「只補標註」項目(沒有 note、只有 labels):
+  // 一次替既有病人補代號與標註,一樣只填空白、不覆蓋。詞彙表只認 js/case-search.js 那一份,這裡不另抄。
+  const LABEL_KEYS = ["displayCode", "categoryPrimary", "categorySecondary", "treatmentStage", "caseHighlight", "careContexts", "birthYear"];
+  const LABEL_NAMES = { displayCode: "顯示代號", categoryPrimary: "主類別", categorySecondary: "次類別", treatmentStage: "治療進度",
+    caseHighlight: "病例價值", careContexts: "照護情境", birthYear: "出生年" };
+  function vocab() {
+    if (global.AcuTingCaseSearch) return global.AcuTingCaseSearch;
+    if (typeof require === "function") return require("./case-search.js");
+    throw new Error("找不到 AcuTingCaseSearch 詞彙表");
+  }
+  // 只檢查帶來的標註值認不認得;onlyLabelKeys = 只補標註項目(不收其他欄位)。
+  function labelErrors(l, onlyLabelKeys) {
+    const S = vocab();
+    const e = [];
+    if (onlyLabelKeys) for (const k of Object.keys(l)) if (!LABEL_KEYS.includes(k)) e.push(`只補標註不收「${k}」`);
+    if (filled(l.displayCode) && !isDisplayCode(l.displayCode)) e.push(`顯示代號格式不對:${str(l.displayCode)}(族群字母 + 名姓縮寫,例 AQZ)`);
+    if (filled(l.categoryPrimary) && !S.CASE_CATEGORIES[l.categoryPrimary]) e.push(`不認得的主類別:${str(l.categoryPrimary)}`);
+    if (l.categorySecondary !== undefined && !Array.isArray(l.categorySecondary)) e.push("次類別要是清單");
+    const sec = arr(l.categorySecondary);
+    for (const k of sec) if (!S.CASE_CATEGORIES[k]) e.push(`不認得的次類別:${str(k)}`);
+    if (sec.length > S.MAX_SECONDARY_CATEGORIES) e.push(`次類別最多 ${S.MAX_SECONDARY_CATEGORIES} 個`);
+    if (filled(l.categoryPrimary) && sec.includes(l.categoryPrimary)) e.push("次類別不能跟主類別重複");
+    if (filled(l.treatmentStage) && !S.CASE_STAGES[l.treatmentStage]) e.push(`不認得的治療進度:${str(l.treatmentStage)}`);
+    if (filled(l.caseHighlight) && !S.CASE_HIGHLIGHTS[l.caseHighlight]) e.push(`不認得的病例價值:${str(l.caseHighlight)}`);
+    if (l.careContexts !== undefined && !Array.isArray(l.careContexts)) e.push("照護情境要是清單");
+    for (const k of arr(l.careContexts)) if (!S.CARE_CONTEXTS[k]) e.push(`不認得的照護情境:${str(k)}`);
+    if (filled(l.birthYear)) {
+      const y = Number(l.birthYear);
+      if (!Number.isInteger(y) || y < 1900 || y > new Date().getFullYear()) e.push(`出生年不對:${str(l.birthYear)}`);
+    }
+    return e;
+  }
+  // 次類別跟主類別是一組:病例已經有自己的主類別時,不單獨補次類別(可能跟她的主類別重複或不搭)。
+  const pickLabels = (o) => Object.fromEntries(LABEL_KEYS.filter((k) => o && o[k] !== undefined).map((k) => [k, o[k]]));
+  // 設了 🌙 就同步舊 status(app 的 setCaseFields / 表單存檔也是這樣做),舊消費端才不脫節。
+  const legacyStatusFor = (stage) => vocab().CASE_STAGES[stage].legacyStatus;
+  function keepCategoryPair(fields, warnings) {
+    if (fields.includes("categorySecondary") && !fields.includes("categoryPrimary")) {
+      warnings.push("病例已有主類別,次類別不另補");
+      return fields.filter((k) => k !== "categorySecondary");
+    }
+    return fields;
+  }
+
   // 交接檔只收這個 schema;形狀不對就整份拒絕(訊息只講形狀,不轉述內容)。
   function parseHandoff(json) {
     const doc = typeof json === "string" ? JSON.parse(json) : json;
@@ -41,7 +85,10 @@
       if (!str(it.ref)) throw new Error(`第 ${i + 1} 筆缺 ref`);
       if (refs.has(it.ref)) throw new Error(`ref 重複:第 ${i + 1} 筆`);
       refs.add(it.ref);
-      if (!it.note || typeof it.note !== "object") throw new Error(`第 ${i + 1} 筆缺 note`);
+      const hasNote = !!it.note && typeof it.note === "object";
+      const hasLabels = !!it.labels && typeof it.labels === "object" && !Array.isArray(it.labels);
+      if (!hasNote && !hasLabels) throw new Error(`第 ${i + 1} 筆缺 note(或只補標註的 labels)`);
+      if (hasNote && hasLabels) throw new Error(`第 ${i + 1} 筆同時有 note 與 labels —— 就診的標註請放在 newCase`);
     });
     return doc;
   }
@@ -77,7 +124,7 @@
       const ch = choices[it.ref] || {};
       const typed = ch.code !== undefined ? ch.code : it.patientCode;
       const code = normalizeCode(typed);
-      const row = { ref: it.ref, code, candidateCode: str(it.patientCode), visitDate: str(it.note.visitDate), status: "", include: false,
+      const row = { ref: it.ref, code, candidateCode: str(it.patientCode), visitDate: str(it.note && it.note.visitDate), status: "", include: false,
         targetCaseId: "", targetChoices: [], sameDate: false, newFlags: [], fillFields: [], fillEmpty: false, errors: [], warnings: [] };
       if (existingNoteIds.has(noteIdFor(it.ref)) || existingCaseIds.has(caseIdFor(it.ref))) {
         row.status = "already_imported";
@@ -95,6 +142,39 @@
       }
       const owned = ownerCode ? byCode.get(ownerCode) : null;
       if (ownerCode) row.code = ownerCode;
+      // 只補標註:不加 SOAP,只填這位病人空著的標註欄位;已經有值的一律不動(不一樣就提醒)。
+      if (!it.note) {
+        if (!owned || !owned.length) { row.status = "code_not_found"; row.errors.push("只補標註只接既有病人 —— 系統裡找不到這個代號"); return row; }
+        row.status = "labels";
+        const L = it.labels;
+        row.errors.push(...labelErrors(L, true));
+        if (row.errors.length) return row;
+        const target = owned.find((c) => c.id === ch.caseId) || defaultTargetCase(owned);
+        row.targetCaseId = target.id;
+        row.targetChoices = owned.map((c) => ({ id: c.id, title: str(c.caseTitle), status: str(c.status || "active"), visits: arr(c.soapNotes).length }));
+        let fields = LABEL_KEYS.filter((k) => k !== "displayCode" && filled(L[k]) && !filled(target[k])
+          && !(k === "birthYear" && filled(target.birthYearMonth)));
+        fields = keepCategoryPair(fields, row.warnings);
+        for (const k of LABEL_KEYS) {
+          if (k !== "displayCode" && filled(L[k]) && filled(target[k]) && JSON.stringify(target[k]) !== JSON.stringify(k === "birthYear" ? Number(L[k]) : L[k])) {
+            row.warnings.push(`${LABEL_NAMES[k]}已經有值,不覆蓋`);
+          }
+        }
+        // 顯示代號是病人層級:這位病人每個病例都還沒有才補(補到他所有病例);已有不同的 → 不動、提醒。
+        if (filled(L.displayCode)) {
+          const want = normalizeDisplay(L.displayCode);
+          const have = [...new Set(owned.map((c) => normalizeDisplay(c.displayCode)).filter(Boolean))];
+          if (!have.length) {
+            fields.unshift("displayCode");
+            const others = [...(byDisplay.get(want) || [])].filter((p) => p !== ownerCode);
+            if (others.length) row.warnings.push(`已經有別的病人的顯示代號是 ${want}(${others.join("、")})—— 顯示代號可以重複,確認不是同一人`);
+          } else if (!have.includes(want)) row.warnings.push(`這位病人已經有顯示代號 ${have.join("、")},不改成 ${want}`);
+        }
+        row.fillFields = fields;
+        row.fillEmpty = true;
+        row.include = fields.length > 0 && (ch.include !== undefined ? !!ch.include : true);
+        return row;
+      }
       if (owned && owned.length) {
         const target = owned.find((c) => c.id === ch.caseId) || defaultTargetCase(owned);
         row.status = "append";
@@ -105,9 +185,10 @@
         const have = new Set(arr(target.safetyFlags).map(str));
         row.newFlags = arr(it.safetyFlags).map(str).filter((f) => f && !have.has(f));
         // safetyFlags 不走「補空白」:上面 newFlags 已經逐條併入,兩邊都做會重複處理。
-        row.fillFields = Object.keys(it.newCase || {}).filter((k) => k !== "id" && k !== "patientCode" && k !== "soapNotes" && k !== "safetyFlags"
+        row.fillFields = keepCategoryPair(Object.keys(it.newCase || {}).filter((k) => k !== "id" && k !== "patientCode" && k !== "soapNotes" && k !== "safetyFlags"
           && filled(it.newCase[k]) && !filled(target[k])
-          && !(k === "birthYear" && filled(target.birthYearMonth)));   // 已有出生年月就不另補出生年
+          && !(k === "birthYear" && filled(target.birthYearMonth))), row.warnings);   // 已有出生年月就不另補出生年
+        row.errors.push(...labelErrors(pickLabels(it.newCase), false));
         row.fillEmpty = ch.fillEmpty !== undefined ? !!ch.fillEmpty : true;
         if (row.sameDate) row.warnings.push(`這個病例 ${row.visitDate} 已經有一筆 SOAP —— 可能重複,預設不匯入`);
         return row;
@@ -127,6 +208,9 @@
         row.code = normalizeDisplay(code);
         if (byDisplay.has(row.code)) row.warnings.push(`已經有病人的顯示代號是 ${row.code} —— 如果是同一人,改填他的病人編號(${[...byDisplay.get(row.code)].join("、")})`);
       }
+      const newLabels = pickLabels(it.newCase);
+      delete newLabels.displayCode;   // 新病人的顯示代號用她在預覽打的那個
+      row.errors.push(...labelErrors(newLabels, false));
       row.include = !row.errors.length && ch.createNew === true;
       return row;
     });
@@ -155,23 +239,47 @@
     const newCases = [];
     for (const r of plan.toApply) {
       const it = byRef.get(r.ref);
+      if (r.status === "labels") {
+        const L = it.labels;
+        out = out.map((c) => {
+          if (str(c.patientCode).trim() !== r.code) return c;
+          const isTarget = c.id === r.targetCaseId;
+          const next = Object.assign({}, c);
+          let changed = false;
+          for (const k of r.fillFields) {
+            if (k === "displayCode") { if (!filled(c.displayCode)) { next.displayCode = normalizeDisplay(L.displayCode); changed = true; } continue; }
+            if (!isTarget) continue;
+            next[k] = k === "birthYear" ? Number(L[k]) : L[k];
+            if (k === "treatmentStage") next.status = legacyStatusFor(L[k]);
+            changed = true;
+          }
+          if (changed) next.updatedAt = now;
+          return changed ? next : c;
+        });
+        continue;
+      }
       const note = Object.assign({}, it.note, { id: noteIdFor(r.ref), createdAt: now, updatedAt: now });
       if (r.status === "append") {
         out = out.map((c) => {
           if (c.id !== r.targetCaseId) return c;
           const next = Object.assign({}, c, { soapNotes: [...arr(c.soapNotes), note], updatedAt: now });
           if (r.newFlags.length) next.safetyFlags = [...arr(c.safetyFlags), ...r.newFlags];
-          if (r.fillEmpty) for (const k of r.fillFields) next[k] = it.newCase[k];
+          if (r.fillEmpty) for (const k of r.fillFields) {
+            next[k] = it.newCase[k];
+            if (k === "treatmentStage") next.status = legacyStatusFor(it.newCase[k]);
+          }
           return next;
         });
       } else if (r.status === "new_patient") {
-        newCases.push(Object.assign({}, it.newCase, { id: caseIdFor(r.ref), patientCode: mintId(r.ref), displayCode: r.code, soapNotes: [note], createdAt: now, updatedAt: now }));
+        const nc = Object.assign({}, it.newCase, { id: caseIdFor(r.ref), patientCode: mintId(r.ref), displayCode: r.code, soapNotes: [note], createdAt: now, updatedAt: now });
+        if (filled(nc.treatmentStage)) nc.status = legacyStatusFor(nc.treatmentStage);
+        newCases.push(nc);
       }
     }
     return [...newCases, ...out];
   }
 
-  const api = { SCHEMA, parseHandoff, planHandoff, applyHandoff, isDisplayCode, normalizeDisplay, noteIdFor, caseIdFor };
+  const api = { SCHEMA, LABEL_KEYS, LABEL_NAMES, parseHandoff, planHandoff, applyHandoff, isDisplayCode, normalizeDisplay, noteIdFor, caseIdFor };
   if (typeof module === "object" && module.exports) module.exports = api;
   else global.AcuTingVisitHandoff = api;
 })(typeof window !== "undefined" ? window : globalThis);

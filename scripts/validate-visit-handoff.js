@@ -90,6 +90,42 @@ check("沒勾的列一律不動(r03、r05)", () => out.length === CASES.length +
 check("不改原陣列", () => CASES[0].soapNotes.length === 2 && !CASES[0].pastHistory);
 check("匯過一次 → 再預覽就是「已匯入」", () => { const p = H.planHandoff(out, ITEMS, {}); return row(p, "r01").status === "already_imported" && row(p, "r02").status === "already_imported" && !p.toApply.some((r) => r.ref === "r01"); });
 
+console.log("只補標註(沒有 note、只有 labels;2026-11-05)");
+const LC = [
+  { id: "L1", patientCode: "OLDA", caseTitle: "腰痛", status: "active", categoryPrimary: "", categorySecondary: [], soapNotes: [{ id: "x1", visitDate: "2026-10-01" }] },
+  { id: "L2", patientCode: "OLDA", caseTitle: "舊病例", status: "closed", soapNotes: [] },
+  { id: "L3", patientCode: "OLDB", displayCode: "WQB", caseTitle: "已標過", status: "active", categoryPrimary: "mental_sleep", categorySecondary: [], treatmentStage: "followup", birthYear: 1970, soapNotes: [] },
+  { id: "L4", patientCode: "OLDC", displayCode: "AQZ", caseTitle: "另一位", status: "active", soapNotes: [] },
+];
+const LI = [
+  { ref: "L-a", patientCode: "OLDA", labels: { displayCode: "a q z", categoryPrimary: "musculoskeletal", categorySecondary: ["gi_metabolic"], treatmentStage: "active", birthYear: 1950 } },
+  { ref: "L-b", patientCode: "OLDB", labels: { displayCode: "WQX", categoryPrimary: "musculoskeletal", categorySecondary: ["neuro_ent"], treatmentStage: "active", caseHighlight: "important" } },
+  { ref: "L-c", patientCode: "NOPE", labels: { categoryPrimary: "musculoskeletal" } },
+  { ref: "L-d", patientCode: "OLDC", labels: { categoryPrimary: "heart", treatmentStage: "soon" } },
+  { ref: "L-e", patientCode: "OLDC", labels: { categoryPrimary: "musculoskeletal", chiefComplaint: "偷塞主訴" } },
+];
+const lp = (ch) => H.planHandoff(LC, LI, ch || {});
+check("只有 labels 的項目讀得進來;note 與 labels 同時有 → 拒絕", () => H.parseHandoff({ schema: H.SCHEMA, items: LI }).items.length === 5
+  && (() => { try { H.parseHandoff({ schema: H.SCHEMA, items: [{ ref: "x", note: {}, labels: {} }] }); return false; } catch (e) { return true; } })());
+check("既有病人 → 只補標註,預設要寫;不加 SOAP", () => { const r = row(lp(), "L-a"); return r.status === "labels" && r.include && r.targetCaseId === "L1"; });
+check("要補的欄位:顯示代號、主次類別、治療進度、出生年", () => row(lp(), "L-a").fillFields.join() === "displayCode,categoryPrimary,categorySecondary,treatmentStage,birthYear");
+check("顯示代號跟別的病人一樣 → 提醒(不擋)", () => /AQZ/.test(row(lp(), "L-a").warnings.join()));
+check("已經有值的欄位一律不覆蓋,並提醒;已有主類別 → 次類別也不補", () => { const r = row(lp(), "L-b"); return r.fillFields.join() === "caseHighlight" && /顯示代號 WQB/.test(r.warnings.join()) && /主類別已經有值/.test(r.warnings.join()) && /次類別不另補/.test(r.warnings.join()); });
+check("系統裡沒有這個人 → 不建立、不寫", () => { const r = row(lp(), "L-c"); return r.status === "code_not_found" && !r.include; });
+check("不認得的類別 / 進度 → 這列錯誤、不寫", () => { const r = row(lp(), "L-d"); return r.errors.length === 2 && !r.include; });
+check("只補標註不收其他欄位(例 主訴)→ 錯誤", () => { const r = row(lp(), "L-e"); return !r.include && /chiefComplaint/.test(r.errors.join()); });
+check("可以取消單列", () => !row(lp({ "L-a": { include: false } }), "L-a").include);
+const lo = H.applyHandoff(LC, LI, lp(), "2026-11-05T00:00:00.000Z");
+const L1o = lo.find((c) => c.id === "L1"), L2o = lo.find((c) => c.id === "L2"), L3o = lo.find((c) => c.id === "L3");
+check("寫入:目標病例補上類別、進度、出生年;設了進度同步舊 status", () => L1o.categoryPrimary === "musculoskeletal" && L1o.categorySecondary.join() === "gi_metabolic" && L1o.treatmentStage === "active" && L1o.status === "active" && L1o.birthYear === 1950);
+check("寫入:顯示代號補到這位病人每個病例(正規化成 AQZ),其他欄位只動目標病例", () => L1o.displayCode === "AQZ" && L2o.displayCode === "AQZ" && !L2o.categoryPrimary && L2o.status === "closed");
+check("寫入:不加任何 SOAP", () => L1o.soapNotes.length === 1 && L2o.soapNotes.length === 0);
+check("寫入:已有值的病人只補空白(caseHighlight),代號與類別保留原值", () => L3o.caseHighlight === "important" && L3o.displayCode === "WQB" && L3o.categoryPrimary === "mental_sleep" && L3o.treatmentStage === "followup" && L3o.status === "active");
+check("寫入:不改原陣列", () => !LC[0].displayCode && !LC[0].categoryPrimary);
+check("再匯一次 → 沒有空白可補,不寫", () => { const p = H.planHandoff(lo, LI, {}); return !row(p, "L-a").include && row(p, "L-a").fillFields.length === 0; });
+check("就診項目的 newCase 標註也檢查:不認得的類別 → 錯誤", () => { const p = H.planHandoff(LC, [{ ref: "v1", patientCode: "OLDA", newCase: { categoryPrimary: "nope" }, note: { visitDate: "2026-11-01" } }], {}); return !p.rows[0].include && /主類別/.test(p.rows[0].errors.join()); });
+check("新病人帶 🌙 → 同步舊 status", () => { const its = [{ ref: "v2", patientCode: "", newCase: { caseTitle: "x", treatmentStage: "followup" }, note: { visitDate: "2026-11-01" } }]; const p = H.planHandoff(LC, its, { v2: { code: "WZZ", createNew: true } }); const o = H.applyHandoff(LC, its, p, "", () => "PT-ZZ"); const c = o.find((x) => x.id === H.caseIdFor("v2")); return c.treatmentStage === "followup" && c.status === "paused"; });
+
 if (failures.length) {
   console.log(`\nFAIL — ${failures.length} 項`);
   process.exit(1);

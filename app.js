@@ -92,7 +92,20 @@ const HANDOFF_FIELD_LABELS = {
   goals: "目標", allergyStatus: "過敏狀態", allergies: "過敏", currentMeds: "目前用藥", previousTreatment: "過往治療",
   previousTreatmentNotes: "過往治療備註", baselineSeverity: "基線嚴重度", chronicity: "病程", coursePattern: "病程型態",
   westernConditions: "西醫診斷", easternDiseases: "中醫病名", tcmPatterns: "證型", safetyFlags: "安全旗標",
+  displayCode: "顯示代號", categoryPrimary: "❤️ 主類別", categorySecondary: "次類別", treatmentStage: "🌙 治療進度",
+  caseHighlight: "★ 病例價值", careContexts: "照護情境",
 };
+// 交接預覽裡把標註值畫成她看得懂的樣子(圖示 + 中文),詞彙表只認 js/case-search.js。
+function handoffLabelValue(key, value) {
+  const S = globalThis.AcuTingCaseSearch;
+  const one = (table, k) => (S && S[table][k] ? `${S[table][k].icon || ""}${S[table][k].zh}` : String(k));
+  if (key === "categoryPrimary") return one("CASE_CATEGORIES", value);
+  if (key === "categorySecondary") return (value || []).map((k) => one("CASE_CATEGORIES", k)).join(" ");
+  if (key === "treatmentStage") return one("CASE_STAGES", value);
+  if (key === "caseHighlight") return one("CASE_HIGHLIGHTS", value);
+  if (key === "careContexts") return (value || []).map((k) => one("CARE_CONTEXTS", k)).join("、");
+  return String(value);
+}
 // 診務回顧面板的開合。宣告在這裡而不是 renderPracticeAuditPanel 旁邊:
 // renderClinicalCases 會讀它,而 render() 在檔案上方就執行 —— 放在下面會是 TDZ。
 let practiceAuditOpen = false;
@@ -9143,7 +9156,7 @@ function renderHandoffPanel() {
       return `
       <div class="handoff-row" data-ho-row="${escapeAttribute(it.ref)}">
         <div class="handoff-what">
-          <strong>${escapeHtml(d.label || it.ref)} · ${escapeHtml(it.note.visitDate || "日期未填")}</strong>
+          <strong>${escapeHtml(d.label || it.ref)} · ${escapeHtml(it.note ? (it.note.visitDate || "日期未填") : "只補標註")}</strong>
           <span>${escapeHtml(d.title || (it.newCase && it.newCase.caseTitle) || "")}</span>
           ${d.flags ? `<small class="handoff-flag">⚑ ${escapeHtml(d.flags)}</small>` : ""}
         </div>
@@ -9207,6 +9220,14 @@ function syncHandoffStatus() {
         ${r.newFlags.length ? `<div class="handoff-flag">新增安全旗標 ${r.newFlags.length} 項:${escapeHtml(r.newFlags.join("；"))}</div>` : ""}`;
     } else if (r.status === "new_patient") {
       html = r.errors.length ? "" : `<label class="handoff-check"><input type="checkbox" data-ho-ref="${ref}" data-ho-create ${r.include ? "checked" : ""} /> 建立新病人,顯示代號 <code>${escapeHtml(r.code)}</code>(永久編號由系統產生)</label>`;
+    } else if (r.status === "labels") {
+      const it = handoffDoc.items.find((x) => x.ref === r.ref);
+      const target = r.targetChoices.find((c) => c.id === r.targetCaseId) || r.targetChoices[0];
+      html = !target ? "" : !r.fillFields.length
+        ? `<div class="handoff-muted">只補標註:<code>${escapeHtml(r.code)}</code> 沒有空白的標註欄位可補 —— 不會寫入。</div>`
+        : `<label class="handoff-check"><input type="checkbox" data-ho-ref="${ref}" data-ho-include ${r.include ? "checked" : ""} />
+            只補標註到 <code>${escapeHtml(r.code)}</code> 的 <b>${escapeHtml(target.title || "Untitled")}</b>(不加 SOAP、只填空白):</label>
+          <div>${r.fillFields.map((k) => `${escapeHtml(HANDOFF_FIELD_LABELS[k] || k)} ${escapeHtml(handoffLabelValue(k, it.labels[k]))}`).join(" · ")}</div>`;
     } else if (r.status === "code_not_found") html = "";
     cell.className = `handoff-status ${r.include ? "will-write" : ""}`;
     cell.innerHTML = html + err + warn;
@@ -9217,6 +9238,7 @@ function syncHandoffStatus() {
   const backup = panel.querySelector("[data-ho-backup]");
   const nAppend = plan.toApply.filter((r) => r.status === "append").length;
   const nNew = plan.toApply.filter((r) => r.status === "new_patient").length;
+  const nLabels = plan.toApply.filter((r) => r.status === "labels").length;
   if (backup) backup.textContent = handoffBackedUp ? "1. 已匯出備份 ✓" : "1. 先匯出備份";
   if (apply) {
     apply.disabled = !handoffBackedUp || !plan.toApply.length;
@@ -9224,7 +9246,7 @@ function syncHandoffStatus() {
   }
   if (summary) {
     const waiting = plan.rows.filter((r) => !r.include && r.status !== "already_imported").length;
-    summary.textContent = `加就診 ${nAppend} · 新病人 ${nNew} · 暫不匯入 ${waiting}${!handoffBackedUp && plan.toApply.length ? " —— 先按「匯出備份」" : ""}`;
+    summary.textContent = `加就診 ${nAppend} · 新病人 ${nNew}${nLabels ? ` · 補標註 ${nLabels}` : ""} · 暫不匯入 ${waiting}${!handoffBackedUp && plan.toApply.length ? " —— 先按「匯出備份」" : ""}`;
   }
 }
 
@@ -9235,11 +9257,17 @@ function applyHandoffFromPanel() {
   const label = (ref) => (handoffDoc.items.find((it) => it.ref === ref)?.display?.label) || ref;
   const lines = plan.toApply.map((r) => r.status === "append"
     ? `${label(r.ref)} → ${r.code} 加一次就診${r.newFlags.length ? `(+${r.newFlags.length} 安全旗標)` : ""}${r.fillEmpty && r.fillFields.length ? `(補 ${r.fillFields.length} 欄)` : ""}`
-    : `${label(r.ref)} → 新病人(顯示代號 ${r.code})`);
+    : r.status === "labels"
+      ? `${label(r.ref)} → ${r.code} 只補標註 ${r.fillFields.length} 欄(${r.fillFields.map((k) => HANDOFF_FIELD_LABELS[k] || k).join("、")})`
+      : `${label(r.ref)} → 新病人(顯示代號 ${r.code})`);
   if (!confirm(`要寫入 ${plan.toApply.length} 筆:\n\n${lines.join("\n")}\n\n確定?`)) return;
   const snapshot = structuredClone(clinicalCases);
   const prevSelected = selectedCaseId;
-  const touched = new Set(plan.toApply.map((r) => (r.status === "append" ? r.targetCaseId : H.caseIdFor(r.ref))));
+  const labelOwners = new Set(plan.toApply.filter((r) => r.status === "labels").map((r) => r.code));
+  const touched = new Set([
+    ...plan.toApply.map((r) => (r.status === "new_patient" ? H.caseIdFor(r.ref) : r.targetCaseId)),
+    ...clinicalCases.filter((c) => labelOwners.has(String(c.patientCode || "").trim())).map((c) => c.id),   // 顯示代號補到他所有病例
+  ]);
   const next = H.applyHandoff(clinicalCases, handoffDoc.items, plan, new Date().toISOString(), () => generatePatientId())
     .map((c) => (touched.has(c.id) ? normalizeClinicalCase(c) : c));
   if (window.AcuTingClinicalStore?.checkClinicalInvariants) {
