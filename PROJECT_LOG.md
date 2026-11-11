@@ -1,3 +1,52 @@
+# 2026-11-11 — 全系統掃描:藥櫃帳 11 個缺陷修正 + 儲存層三道保護(另一台裝置會蓋掉扣帳、過期批排第一、站外備份自 9/06 起失效)
+
+**MEASURED TREE: claude/herb-inventory-hardening,基底 origin/main @ 0feff5b1**
+
+Ting 要「掃描整個系統、專業優化,尤其病例和藥材」。先量 main:12 支主驗證器全 exit 0、ratchet 無退步。
+內容線的數字只量不動(不是程式線的檔);程式線讀到的缺陷都用探針實測確認後才修。只動 js/ scripts/ src/ 與 CI。
+
+**藥櫃(js/herb-inventory.js、herb-inventory-ui.js)——每一條都先在 main 重現**
+
+- **另一台裝置的扣帳會被靜默蓋掉。** 這一頁把整本帳放記憶體、每次整本寫回;別台寫入後 adapter 自動重讀拿到新 revision,
+  這一頁拿舊的那本算出來的帳就帶著新 revision 寫成功。對照組用真的服務 + adapter 重現:手機開的方消失、庫存 95 g(應 53 g)。
+  修:`makeSession` 記住讀到的位元組,寫之前比對,不同就拒絕、重讀、請她再做一次(病例的 lastSyncedRaw 同一招)。
+- **過期批排第一。** 過期批效期最早,FEFO 反而標它「下一瓶用這批」,開方先從它扣。修:過期排最後;
+  開給病人的方不從過期批出(沒過期的不夠就整張拒絕並說明);自用仍可記,畫面提醒。
+- **過期的量把補貨提醒蓋掉。** ★ 常用:可用 15 g + 過期 100 g 不提醒(115 > 20)。補貨 / 常用門檻 / 可用天數改看可用量。
+- 日期不驗:用量日期空白或亂打會記帳、開封日變成 "abc";貼上建檔 `2027-13` 悄悄變 2028-01-31、`2027-02-31` 原樣收下。現在都拒絕。
+- 貼上建檔:現有 130 g、1 包 × 100 g → 悄悄只記 100 g。改照現有克數入並提醒。
+- 撤銷的方:開方那個月仍算用量、撤銷那週是 −60 g(週圖負長條)、月用量圖永遠算進去、仍算「最後使用」。改成一把尺 `usageTxns`。
+- 「N 天到期」顯示的是入庫順序第一批(81 天),不是最快到期那批(9 天)。
+- 每筆帳先取到 0.1 g 才入帳:3.33 g × 30 次帳上多 0.9 g。帳改記到 0.01 g。
+- 月底加月份溢出(8/31 + 6 月 = 3/3)→ 2/28。沒用量的品項印「補貨點 -0 g」→ 0 g。可用天數排序 Infinity − Infinity = NaN。
+
+**儲存層**
+
+- `PROTECTED_KEYS` 加藥櫃鍵:必帶 If-Match、不能 DELETE(原本可以一鍵刪掉整本帳)。
+- 衝突備份槽分開:藥櫃一次 409 原本會蓋掉還沒救回的病例衝突備份(共用一格、後寫的贏)。
+- `pull-clinical-from-d1.js`:9/06 正式站改通行碼之後,這支只會帶 Access token,每次 401 —— **站外備份實際上是壞的**。
+  加通行碼登入(只讀環境變數 `ACUTING_CLINICAL_PASSPHRASE`),並把藥櫃一起備份(原本只拉病例鍵)。
+
+**驗證**(一行可重現)
+
+- `node scripts/validate-herb-inventory.js`:70 → 98 條 PASS(含對照組:沒有基準比對時遺失真的發生)。
+- `node scripts/test-herb-inventory-guards.js`(新,已進 CI):12 條 PASS。
+- 既有:test-clinical-handler 35、test-clinical-sqlite-service 43、test-passphrase-flow 28、test-clinical-kv-core 30,條數不變。
+- 本機跑 validate.yml 的單行步驟:132 個 node 步驟 0 紅(4 個多行區塊與 git diff --check、apt 那步沒跑)。
+- 瀏覽器(localhost:8711,記憶體假儲存 + 虛構品項):過期批不標下一瓶、開方 42 g 可用 15 g → 拒絕且零寫入、
+  背後換掉儲存內容再按扣庫存 → 拒絕且對方那筆還在、補貨點印 0 g。**沒有**用本機 wrangler 跑通行碼那條路的畫面;adapter 那段由 node 測試蓋。
+
+**沒做、要她裁的**
+
+- 開藥紀錄「依病人」用顯示代號分組,而顯示代號可以重複(D35)→ 兩位同代號的病人會併成一條時間軸。要在 rx 上多存永久病人編號。
+- 備份腳本沒有排程在跑;要不要每天自動拉一次(通行碼要放在這台電腦的環境變數)。
+- 過期批「不開給病人」是我照專業藥局慣例定的,會擋開方;她若要改成只提醒,一行。
+
+**內容線只量不動(main @ 0feff5b1,`node scripts/validate-herb-standard.js`)**:中藥 366 張 ——
+dosage 294/366、properties_taste_temp 292/366、safety_flags 305/366、condition_tags_en 171/366、
+contraindications_en 缺 6、帶聲調拼音 0/366;35 張引用 repo 裡沒有的 BASTYR 考綱;劑量欄仍未接到卡片上(D5 列管)。
+ratchet:herb_canon 5495、herb_track_filler 1131、relation_integrity 20、encoding 43(皆持平)。
+
 # 2026-11-05 — 就診交接加「只補標註」項目:一次替既有病人補 D35 代號與標註(D32 凍結例外)
 
 **MEASURED TREE: feat/cases-v2 @ f3be982f,基底 origin/main @ ac5ca7e9**

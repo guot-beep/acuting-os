@@ -31,7 +31,8 @@ export const AUTH_HEADER = "x-acuting-auth";
 export const MAX_BODY = 64 * 1024 * 1024;
 /* 正本鍵不准 DELETE:app 在 v1 世界從不刪主槽;一個失控的 client 迴圈或被劫持的 session 也不能一鍵清空整本簿子。
  * 要「清空」只能寫入 "[]"(留在 history 裡),不能刪列。 */
-export const PROTECTED_KEYS = new Set(["acuting-clinical-cases-v1", "acuting-clinical-v2-staging"]);
+export const PROTECTED_KEYS = new Set(["acuting-clinical-cases-v1", "acuting-clinical-v2-staging",
+  "acuting-herb-inventory-v1"]);   // 藥櫃(D36)是只加不改的帳:同樣必帶 If-Match、不能 DELETE(2026-11-11 補;原本可以一鍵刪掉整本帳)
 
 const isLoopback = (h) => h === "127.0.0.1" || h === "localhost" || h === "[::1]" || h === "::1";
 

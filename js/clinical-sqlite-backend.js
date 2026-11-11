@@ -101,6 +101,9 @@
       try { const j = JSON.parse(r.text); msg = j.message || j.error || ""; } catch (_) { /* 非 JSON */ }
       return new Error("SQLite 服務拒絕" + what + "(HTTP " + r.status + (msg ? ":" + msg : "") + ")。零寫入。");
     }
+    /* 病例家族的鍵(acuting-clinical-*)沿用原本那一格;其他鍵(藥櫃)各有自己的一格 ——
+     * 原本全部共用一格、後寫的贏:藥櫃一次 409 就會把還沒救回來的病例衝突備份蓋掉。 */
+    const stashKeyFor = (k) => (String(k).indexOf("acuting-clinical-") === 0 ? CONFLICT_BACKUP_KEY : String(k) + "-conflict-backup");
     function stash(k, v, why) {
       try {
         let parsed = null, cases = null;
@@ -108,7 +111,7 @@
         if (Array.isArray(parsed)) cases = parsed;
         else if (parsed && Array.isArray(parsed.cases)) cases = parsed.cases;
         const payload = JSON.stringify({ stashed_at: new Date().toISOString(), reason: why, key: k, cases: cases, raw: cases ? undefined : v });
-        const r = transport("PUT", API + "/kv/" + encodeURIComponent(CONFLICT_BACKUP_KEY), payload, { "Content-Type": "text/plain; charset=utf-8", ...WRITE_HEADERS });
+        const r = transport("PUT", API + "/kv/" + encodeURIComponent(stashKeyFor(k)), payload, { "Content-Type": "text/plain; charset=utf-8", ...WRITE_HEADERS });
         return r.status === 200 && !!parseWriteAck(r.text);   // 200 + 登入頁 HTML 不算備份成功
       } catch (_) { return false; }
     }
@@ -135,7 +138,7 @@
         const ok = stash(k, s, "另一個分頁(或匯入工具)在本分頁上次讀取之後寫入過(SQLite revision 衝突)");
         try { refresh(); } catch (_) { /* 已在錯誤路徑上 */ }
         throw new Error("拒絕寫入:另一個分頁(或匯入工具)在這之後存過檔,直接寫入會蓋掉它的內容。\n" +
-          "本分頁的內容" + (ok ? "已備份到 SQLite 的 " + CONFLICT_BACKUP_KEY + "(沒有遺失)" : "**備份也失敗了**") + "。\n" +
+          "本分頁的內容" + (ok ? "已備份到 SQLite 的 " + stashKeyFor(k) + "(沒有遺失)" : "**備份也失敗了**") + "。\n" +
           "做法:重新載入本頁(會看到最新內容),再把剛才的修改補一次。");
       }
       throw failure(r, "寫入");

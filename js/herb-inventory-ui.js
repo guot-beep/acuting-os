@@ -21,36 +21,28 @@
   // ── 儲存 ──
   const backend = () => { const b = window.AcuTingClinicalBackend; return b && typeof b.readKey === "function" && typeof b.writeKey === "function" ? b : null; };
   let inv = null, loadError = "", tab = "stock", selected = "", msg = { text: "", ok: true };
-  function load() {
-    loadError = "";
-    try {
+  // 讀、記住基準、寫之前比對 —— 都在純函式層的 makeSession(有真值表:另一台裝置寫過就拒絕,不會把對方的帳蓋掉)
+  const session = H.makeSession({
+    read() {
       const b = backend();
-      let raw = null;
-      if (b) raw = b.readKey(H.STORAGE_KEY);
-      else { try { raw = localStorage.getItem(H.STORAGE_KEY); } catch (_) { raw = null; } }
-      inv = H.normalize(raw ? JSON.parse(raw) : null);
-    } catch (e) {
-      inv = null;
-      loadError = String((e && e.message) || e);
-    }
-    return inv;
-  }
-  function ensure() { return inv || load(); }
-  // 成功才換掉記憶體;失敗什麼都不改、重讀、說出原因
-  function commit(next, okText) {
-    const s = JSON.stringify(next);
-    try {
+      if (b) return b.readKey(H.STORAGE_KEY);
+      try { return localStorage.getItem(H.STORAGE_KEY); } catch (_) { return null; }
+    },
+    write(s) {
       const b = backend();
       if (b) b.writeKey(H.STORAGE_KEY, s);
       else localStorage.setItem(H.STORAGE_KEY, s);
-      inv = next;
-      msg = { text: okText || "已存", ok: true };
-      return true;
-    } catch (e) {
-      load();
-      msg = { text: "沒有存到:" + String((e && e.message) || e), ok: false };
-      return false;
-    }
+    },
+  });
+  function load() { inv = session.load(); loadError = session.error(); return inv; }
+  function ensure() { inv = session.ensure(); loadError = session.error(); return inv; }
+  // 成功才換掉記憶體;失敗什麼都不改、重讀、說出原因
+  function commit(next, okText) {
+    const r = session.commit(next);
+    inv = session.data();
+    loadError = session.error();
+    msg = r.ok ? { text: okText || "已存", ok: true } : { text: r.message, ok: false };
+    return r.ok;
   }
   const storeLabel = () => (backend() ? (backend().state && backend().state().backend === "d1" ? "雲端(與病例同一本)" : "本機病例服務") : "這個瀏覽器(沒有雲端服務)");
 
@@ -113,7 +105,8 @@
       if (stockFilter.source !== "all" && p.source !== stockFilter.source) return false;
       if (stockFilter.alerts && !(s.low || s.expiring.length || s.expired.length || s.openedLong.length || s.slow)) return false;
       return true;
-    }).sort((a, b) => (b.s.low - a.s.low) || (a.s.dos - b.s.dos) || a.p.nameZh.localeCompare(b.p.nameZh));
+    }).sort((a, b) => { const dos = (x) => (Number.isFinite(x.s.dos) ? x.s.dos : 1e12);   // Infinity − Infinity 是 NaN,排序會亂
+      return (b.s.low - a.s.low) || (dos(a) - dos(b)) || a.p.nameZh.localeCompare(b.p.nameZh); });
     const sel = selected && product(selected);
     return `<div class="hi-two">
       <section class="hi-panel">
@@ -127,10 +120,11 @@
         ${inv.products.length ? `<div class="hi-table-wrap"><table class="hi-table">
           <thead><tr><th>藥品</th><th class="num">庫存</th><th class="num hi-hide-sm">日均</th><th class="num">可用天數</th><th>狀態</th></tr></thead>
           <tbody>${rows.map(({ p, s }) => {
-            const pct = s.reorder > 0 ? Math.min(100, (s.stock / (s.reorder * 2)) * 100) : 100;
+            const pct = s.reorder > 0 ? Math.min(100, (s.usable / (s.reorder * 2)) * 100) : 100;
+            const expG = Math.round((s.stock - s.usable) * 10) / 10;
             return `<tr class="hi-row ${p.id === selected ? "is-sel" : ""}" data-hi-pid="${attr(p.id)}" tabindex="0">
               <td><span class="hi-kind">${H.KINDS[p.kind]} · ${H.FORMS[p.form]}</span><div class="hi-name">${productName(p)}</div></td>
-              <td class="num">${fmtG(s.stock)}<div class="hi-gauge"><i class="${s.low ? "low" : ""}" style="width:${pct}%"></i></div></td>
+              <td class="num">${fmtG(s.stock)}${expG > 0 ? `<div class="hi-hint">可用 ${fmtG(s.usable)}</div>` : ""}<div class="hi-gauge"><i class="${s.low ? "low" : ""}" style="width:${pct}%"></i></div></td>
               <td class="num hi-hide-sm">${s.adu ? s.adu.toFixed(1) + " g" : "—"}</td>
               <td class="num">${Number.isFinite(s.dos) ? Math.floor(s.dos) + " 天" : "—"}</td>
               <td>${statusPills(s)}</td></tr>`; }).join("") || `<tr><td colspan="5" class="hi-hint">沒有符合的藥品。</td></tr>`}</tbody></table></div>`
@@ -151,7 +145,7 @@
         <div class="hi-hint">${esc(p.nameEn)} · ${esc(p.brand)} ${esc(p.code)} · ${p.packageG} g/包裝</div>
         <div class="hi-hint">${esc(originText(p) || "產地未填")} · 常在${H.SOURCES[p.source]}買 · 開封後 ${H.shelfMonths(inv, p)} 個月內用完</div></div>
       <div class="hi-grid3">
-        <div class="hi-stat"><small>庫存</small><b>${fmtG(s.stock)}</b></div>
+        <div class="hi-stat"><small>庫存${s.stock > s.usable ? `(可用 ${fmtG(s.usable)})` : ""}</small><b>${fmtG(s.stock)}</b></div>
         <div class="hi-stat"><small>可用天數</small><b>${Number.isFinite(s.dos) ? Math.floor(s.dos) : "—"}</b></div>
         <div class="hi-stat"><small>補貨點</small><b>${fmtG(s.reorder)}</b></div>
       </div>
@@ -214,11 +208,15 @@
     const p = useDraft.pid && product(useDraft.pid);
     const s = p ? H.stats(inv, p, today()) : null;
     const recent = inv.txns.filter((x) => x.type === "use").slice(-10).reverse();
+    const nextExpired = s && s.next && H.isExpired(s.next, today());
+    const expiredG = s ? Math.round((s.stock - s.usable) * 10) / 10 : 0;
     return `<div class="hi-two">
       <section class="hi-panel">
         <h3>記一筆用量</h3>
         <label class="hi-f"><span>藥品</span><select id="hiUsePid"><option value="">選一個…</option>${inv.products.filter((x) => !x.archived).map((x) => `<option value="${attr(x.id)}" ${x.id === useDraft.pid ? "selected" : ""}>${esc(x.nameZh)} · ${esc(x.brand)}</option>`).join("")}</select></label>
-        ${s ? `<div class="hi-hint">庫存 ${fmtG(s.stock)} · 會先扣 ${s.next ? `批號 ${esc(s.next.lotNo || "—")}(${s.next.openedDate ? "已開封" : "未開封,這次記為開封"},效期 ${esc(s.next.expiry)})` : "—"}</div>` : ""}
+        ${s ? `<div class="hi-hint">庫存 ${fmtG(s.stock)} · 會先扣 ${s.next ? `批號 ${esc(s.next.lotNo || "—")}(${s.next.openedDate ? "已開封" : "未開封,這次記為開封"},效期 ${esc(s.next.expiry)})` : "—"}</div>
+          ${nextExpired ? `<div class="hi-msg is-err" role="status">沒過期的已經用完,剩下的 ${fmtG(expiredG)} 都是已過期的批次。真的用了才記;不用的話到庫存頁把那批報廢。</div>`
+            : expiredG > 0 ? `<div class="hi-hint"><b class="hi-warn-text">另有 ${fmtG(expiredG)} 已過期</b>,排在最後才扣;不用的話到庫存頁報廢。</div>` : ""}` : ""}
         <div class="hi-grid2">
           <label class="hi-f"><span>用了幾克</span><input id="hiUseG" type="number" inputmode="decimal" min="0.5" step="0.5" value="${attr(useDraft.grams)}" placeholder="例:6"></label>
           <label class="hi-f"><span>日期</span><input id="hiUseDate" type="date" value="${attr(useDraft.date || today())}"></label>
@@ -391,14 +389,15 @@
   function dataHtml() {
     const t = today();
     const months = Array.from({ length: 6 }, (_, i) => { const d = new Date(t + "T00:00:00Z"); d.setUTCMonth(d.getUTCMonth() - (5 - i)); return d.toISOString().slice(0, 7); });
-    const byMonth = months.map((m) => -inv.txns.filter((x) => x.type === "use" && x.date.startsWith(m)).reduce((s, x) => s + x.grams, 0));
+    const used = H.usageTxns(inv);   // 撤銷的方不算用量(跟日均用量同一把尺)
+    const byMonth = months.map((m) => -used.filter((x) => x.date.startsWith(m)).reduce((s, x) => s + x.grams, 0));
     const max = Math.max(1, ...byMonth), W = 520, HH = 170, bw = 56, gap = (W - 40 - bw * 6) / 5;
     const bars = byMonth.map((g, i) => { const h = (g / max) * (HH - 40); const x = 40 + i * (bw + gap);
       return `<rect x="${x}" y="${HH - 22 - h}" width="${bw}" height="${h}" rx="4"></rect><text x="${x + bw / 2}" y="${HH - 8}" text-anchor="middle">${months[i].slice(5)}月</text><text x="${x + bw / 2}" y="${HH - 26 - h}" text-anchor="middle">${Math.round(g)}</text>`; }).join("");
     const top = inv.products.map((p) => ({ p, g: H.usageG(inv, p.id, 90, t) })).filter((x) => x.g > 0).sort((a, b) => b.g - a.g).slice(0, 10);
     const topMax = Math.max(1, ...top.map((x) => x.g));
     const purposes = {};
-    inv.txns.filter((x) => x.type === "use" && x.date > H.addDays(t, -90)).forEach((x) => { purposes[x.purpose || "未填"] = (purposes[x.purpose || "未填"] || 0) - x.grams; });
+    used.filter((x) => x.date > H.addDays(t, -90)).forEach((x) => { purposes[x.purpose || "未填"] = (purposes[x.purpose || "未填"] || 0) - x.grams; });
     const pMax = Math.max(1, ...Object.values(purposes));
     const costs = inv.products.map((p) => { const l = H.lotsOf(inv, p.id).sort((a, b) => String(b.purchaseDate).localeCompare(String(a.purchaseDate)))[0]; return { p, c: l ? H.costPerGram(l) : null }; }).filter((x) => x.c !== null).sort((a, b) => b.c - a.c);
     return `<div class="hi-two">

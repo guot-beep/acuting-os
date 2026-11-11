@@ -347,6 +347,10 @@ jobs:
       # 開藥紀錄依病人/依病症、採購清單。虛構品項真值表,require 真正在跑的 js/herb-inventory.js。
       - name: herb inventory contract (append-only ledger, FEFO, reorder and expiry alerts, prescriptions)
         run: node scripts/validate-herb-inventory.js
+      # 藥櫃在儲存層的三道保護(2026-11-11 掃描補的):保護鍵(必帶 If-Match、不能 DELETE)、
+      # 衝突備份槽與病例分開、備份腳本用通行碼登入並把藥櫃一起拉到站外(通行碼錯 / 沒給 = 零寫入)。
+      - name: herb inventory storage guards (protected key, separate conflict slot, off-site backup with passphrase)
+        run: node scripts/test-herb-inventory-guards.js
       - name: quality panel honesty (live counts, snapshot dates, {} is not content)
         run: node scripts/test-quality-panel-honesty.js
 

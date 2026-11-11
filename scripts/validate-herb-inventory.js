@@ -166,8 +166,156 @@ check("建檔時已用掉的量是 adjust,不算日均用量", () => H.usageG(A.
 check("沒標題列時照預設順序(品名、品牌、劑型、每包克數、現有克數、價格、效期、購買地)", () => { const r = H.parseBulk("虛構湯\t品牌F\t科中\t100\t40\t22\t2027-06\t網購").rows[0]; return !r.errors.length && r.product.kind === "formula" && r.lot.stockG === 40 && r.product.source === "us_online" && r.lot.expiry === "2027-06-30"; });
 check("逗號分隔也可以;# 開頭的列當註解", () => H.parseBulk("# 註解\n虛構散, 品牌G, 濃縮散, 100, 30, 9, 2027-02-28, 加拿大").rows.length === 1);
 
-if (failures.length) {
-  console.error(`\nFAIL — ${failures.length} 項`);
-  process.exit(1);
+
+// ── 2026-11-11 掃描補的規則 ──
+console.log("過期批次(不排第一、不開給病人)");
+{
+  let E = H.emptyData();
+  E.products.push({ id: "p.e", nameZh: "虛構方戊", kind: "formula", form: "granule", brand: "品牌E", packageG: 100 });
+  E = H.normalize(E);
+  const oldLot = H.receiveLot(E, { productId: "p.e", gramsInit: 100, price: 20, expiry: "2026-09-30", purchaseDate: "2024-01-01" }, newId); E = oldLot.data;   // 已過期
+  const goodLot = H.receiveLot(E, { productId: "p.e", gramsInit: 50, price: 20, expiry: "2028-01-31", purchaseDate: "2026-10-01" }, newId); E = goodLot.data;
+  const pe = E.products[0];
+  check("過期批的效期最早,但「下一瓶」是沒過期的那批", () => H.stats(E, pe, T).next.id === goodLot.lot.id);
+  check("庫存 150 g 照帳算,其中可用(沒過期)50 g", () => { const st = H.stats(E, pe, T); return st.stock === 150 && st.usable === 50 && st.expired.length === 1; });
+  check("開方只從沒過期的批次扣", () => { const r = H.prescribe(E, { date: T, patientCode: "ZZZ", condition: "虛構", items: [{ productId: "p.e", gpd: 5, days: 7 }] }, newId);
+    return r.data.txns.filter((x) => x.type === "use").every((x) => x.lotId === goodLot.lot.id); });
+  check("沒過期的不夠 → 整張方拒絕,訊息說出是過期批(零寫入)", () => throws(() => H.prescribe(E, { date: T, patientCode: "ZZZ", condition: "虛構", items: [{ productId: "p.e", gpd: 10, days: 7 }] }, newId), /已過期的批次,不開給病人/));
+  check("自用的用量可以動到過期批,但排在最後才扣", () => { const d = H.use(E, "p.e", 60, T, "自用", "", newId); const u = d.txns.filter((x) => x.type === "use");
+    return u.length === 2 && u[0].lotId === goodLot.lot.id && u[0].grams === -50 && u[1].lotId === oldLot.lot.id && u[1].grams === -10; });
+  check("沒給日期的 fefo(舊呼叫法)維持原本順序:效期最早的在前", () => H.fefo(H.lotsOf(E, "p.e"))[0].id === oldLot.lot.id);
 }
-console.log("\nPASS — 藥櫃帳只加不改、FEFO、補貨與常用門檻、到期與開封期限、開方、開藥紀錄分組、採購清單都照規格。");
+
+console.log("日期要是真的日期");
+{
+  let E = H.emptyData();
+  E.products.push({ id: "p.f", nameZh: "虛構藥己", kind: "single", form: "raw", brand: "", packageG: 100 });
+  E = H.normalize(E);
+  const lot = (o) => Object.assign({ productId: "p.f", gramsInit: 100, price: 10, expiry: "2028-01-31", purchaseDate: T }, o);
+  check("入庫:效期不是日期 / 不存在的日期 / 購買日空白 都拒絕", () => throws(() => H.receiveLot(E, lot({ expiry: "abc" }), newId), /有效期限/)
+    && throws(() => H.receiveLot(E, lot({ expiry: "2027-02-31" }), newId), /有效期限/) && throws(() => H.receiveLot(E, lot({ purchaseDate: "" }), newId), /購買日/));
+  const R = H.receiveLot(E, lot({}), newId); E = R.data;
+  check("用量:日期空白 / 亂打 都拒絕(原本會記一筆沒有日期的帳、開封日變成 abc)", () => throws(() => H.use(E, "p.f", 5, "", "自用", "", newId), /日期/) && throws(() => H.use(E, "p.f", 5, "abc", "自用", "", newId), /日期/));
+  check("修改批次:效期 / 開封日不是日期拒絕;開封日可以清空", () => throws(() => H.editLot(E, R.lot.id, { expiry: "2027-13-01" }), /效期/)
+    && throws(() => H.editLot(E, R.lot.id, { openedDate: "x" }), /開封日/) && H.editLot(E, R.lot.id, { openedDate: "" }).lots[0].openedDate === "");
+  check("貼上建檔:不存在的日期當看不懂(2027-13、2027/00、2027-02-31、13/2027 都回空)", () => ["2027-13", "2027/00", "2027-02-31", "2027-13-01", "13/2027"].every((v) => H.bulkDate(v) === ""));
+  check("貼上建檔:效期寫 2027-13 → 那一列標錯誤,不建立", () => H.parseBulk("品名\t現有克數\t效期\n虛構湯\t50\t2027-13", []).rows[0].errors.some((e) => /看不懂效期/.test(e)));
+  check("月底加月份不溢出:8/31 + 6 月 = 2/28、1/31 + 1 月 = 2/28、閏年 2/29", () => H.addMonths("2026-08-31", 6) === "2027-02-28" && H.addMonths("2026-01-31", 1) === "2026-02-28"
+    && H.addMonths("2027-08-31", 6) === "2028-02-29" && H.addMonths("2026-11-03", 24) === "2028-11-03");
+}
+
+console.log("帳的精度、到期排序、貼上的包數");
+{
+  let E = H.emptyData();
+  E.products.push({ id: "p.g", nameZh: "虛構散庚", kind: "formula", form: "granule", brand: "品牌G", packageG: 100 });
+  E = H.normalize(E);
+  E = H.receiveLot(E, { productId: "p.g", gramsInit: 100, price: 20, expiry: "2027-01-31", purchaseDate: "2026-01-01" }, newId).data;   // 89 天
+  E = H.receiveLot(E, { productId: "p.g", gramsInit: 100, price: 20, expiry: "2026-11-20", purchaseDate: "2026-02-01" }, newId).data;   // 17 天
+  check("快到期的批次:最快到期的排第一(畫面顯示的天數拿第一筆)", () => { const ex = H.stats(E, E.products[0], T).expiring; return ex.length === 2 && ex[0].expiry === "2026-11-20"; });
+  let F = E;
+  for (let i = 0; i < 30; i++) F = H.use(F, "p.g", 3.33, T, "自用", "", newId);
+  check("3.33 g 扣 30 次:帳上剩 100.1 g(原本每筆先取到 0.1,會多出 0.9 g)", () => Math.abs(H.stats(F, F.products[0], T).stock - 100.1) < 1e-9);
+  const pv = H.parseBulk("品名\t品牌\t每包克數\t包數\t現有克數\t價格\t效期\n虛構丹\t品牌H\t100\t1\t130\t20\t2028-12-31", []);
+  const ap = H.applyBulk(H.emptyData(), pv.rows, newId, T);
+  check("貼上:現有 130 g 比 1 包 × 100 g 多 → 照 130 g 入庫並提醒(原本悄悄只記 100 g)", () => pv.rows[0].warnings.some((w) => /請確認包數/.test(w)) && H.stats(ap.data, ap.data.products[0], T).stock === 130);
+}
+
+console.log("過期的量不算可用(補貨提醒看可用量)");
+{
+  let E = H.emptyData();
+  E.products.push({ id: "p.k", nameZh: "虛構湯癸", kind: "formula", form: "granule", brand: "品牌K", packageG: 100, frequent: true });
+  E = H.normalize(E);
+  E = H.receiveLot(E, { productId: "p.k", gramsInit: 100, price: 20, expiry: "2026-09-30", purchaseDate: "2024-01-01" }, newId).data;   // 已過期 100 g
+  E = H.receiveLot(E, { productId: "p.k", gramsInit: 15, price: 5, expiry: "2028-01-31", purchaseDate: "2026-10-01" }, newId).data;    // 可用 15 g
+  const st = H.stats(E, E.products[0], T);
+  check("★ 常用:可用 15 g + 過期 100 g → 低於 20 g 要提醒(原本看總量 115 g,不提醒)", () => st.stock === 115 && st.usable === 15 && st.frequentLow === true && st.low === true);
+  check("email 寫的是可用量,並註明另有多少已過期", () => { const m = H.frequentLowEmail(E, T); return !!m && /可用的剩 15 g/.test(m.lines[0]) && /另有 100 g 已過期/.test(m.lines[0]); });
+  check("沒有用量時補貨點是 0,不是 -0(畫面印過「補貨點 -0 g」)", () => Object.is(st.reorder, 0) && Object.is(H.usageG(E, "p.k", 90, T), 0));
+}
+
+console.log("撤銷的方不算用量(各個時間窗都一樣)");
+{
+  let E = H.emptyData();
+  E.products.push({ id: "p.h", nameZh: "虛構飲辛", kind: "formula", form: "granule", brand: "品牌I", packageG: 200 });
+  E = H.normalize(E);
+  E = H.receiveLot(E, { productId: "p.h", gramsInit: 200, price: 40, expiry: "2028-01-31", purchaseDate: "2026-08-01" }, newId).data;
+  const rr = H.prescribe(E, { date: "2026-10-01", patientCode: "ZZZ", condition: "虛構", items: [{ productId: "p.h", gpd: 6, days: 10 }] }, newId);
+  const V = H.voidRx(rr.data, rr.rx.id, T, "開錯", newId);
+  check("十月開、十一月撤銷:開方那個月與撤銷那一週的用量都是 0(原本是 +60 與 −60)", () => H.usageG(V, "p.h", 31, "2026-10-31") === 0 && H.usageG(V, "p.h", 7, T) === 0);
+  check("usageTxns 不含撤銷那張方的 use;庫存加回 200 g;帳一筆都沒刪", () => H.usageTxns(V).length === 0 && H.stats(V, V.products[0], T).stock === 200 && V.txns.length === rr.data.txns.length + 1);
+  check("撤銷後不再算「最後一次使用」(久未使用從購買日算)", () => H.stats(V, V.products[0], T).lastUse === "");
+}
+
+// ── 兩台裝置:真的病例服務 + 真的 backend adapter ──
+async function twoDevices() {
+  console.log("兩台裝置(真的病例服務 + adapter;另一台寫過就拒絕,不蓋掉對方的帳)");
+  const fs = require("fs"), os = require("os");
+  let svcMod;
+  try { svcMod = require("./clinical-sqlite-service.js"); } catch (e) { check("載入本機病例服務", () => "載入失敗:" + e.message); return; }
+  require("../js/clinical-sqlite-backend.js");
+  const B = global.AcuTingClinicalSqliteBackend;
+  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), "acuting-herbinv-test-"));
+  const svc = await svcMod.startServer({ dbFile: path.join(tmp, "t.db"), port: 0, root: path.join(__dirname, ".."), log: () => {} });
+  try {
+    const host = "127.0.0.1:" + svc.port;
+    const transport = (method, p, body, headers) => {
+      const h = {}; for (const k in (headers || {})) h[k.toLowerCase()] = headers[k]; h.host = host;
+      const out = svc.handle({ method, url: p, headers: h, body });
+      return { status: out.status, text: Buffer.isBuffer(out.body) ? out.body.toString("utf8") : String(out.body) };
+    };
+    const device = () => { const b = B.makeBackend(transport, {}); b.refresh(); return b; };
+    const io = (b) => ({ read: () => b.readKey(H.STORAGE_KEY), write: (s) => b.writeKey(H.STORAGE_KEY, s) });
+    const seed = () => { let d = H.emptyData(); d.products.push({ id: "p.z", nameZh: "虛構方壬", kind: "formula", form: "granule", brand: "品牌Z", packageG: 100 }); d = H.normalize(d);
+      return H.receiveLot(d, { productId: "p.z", gramsInit: 100, price: 20, expiry: "2028-01-31", purchaseDate: "2026-10-01" }, newId).data; };
+    const rxOf = (data) => H.prescribe(data, { date: T, patientCode: "ZZZ", condition: "虛構", items: [{ productId: "p.z", gpd: 6, days: 7 }] }, newId).data;
+
+    // 對照組:沒有基準比對的寫法(修之前的 commit)—— 必須真的重現遺失,不然這一段什麼都沒測到
+    {
+      const desk = device(), phone = device();
+      desk.writeKey(H.STORAGE_KEY, JSON.stringify(seed()));
+      phone.markStale();
+      const deskMem = H.normalize(JSON.parse(desk.readKey(H.STORAGE_KEY)));            // 桌機開著藥櫃頁,整本在記憶體
+      phone.writeKey(H.STORAGE_KEY, JSON.stringify(rxOf(H.normalize(JSON.parse(phone.readKey(H.STORAGE_KEY))))));   // 手機開了一張方
+      desk.markStale();                                                                 // 桌機 10 秒 ping 發現 revision 變了
+      let wrote = true;
+      try { desk.writeKey(H.STORAGE_KEY, JSON.stringify(H.use(deskMem, "p.z", 5, T, "自用", "", newId))); } catch (_) { wrote = false; }
+      const after = H.normalize(JSON.parse(device().readKey(H.STORAGE_KEY)));
+      check("對照組(沒有基準比對):桌機寫入成功、手機那張方消失 —— 這就是要防的遺失", () => wrote && after.rx.length === 0 && H.stats(after, after.products[0], T).stock === 95);
+      desk.removeKey(H.STORAGE_KEY);
+    }
+    // 修正後:makeSession
+    {
+      const desk = device(), phone = device();
+      const sDesk = H.makeSession(io(desk)), sPhone = H.makeSession(io(phone));
+      check("空的藥櫃:load 得到空帳,第一次寫入成功", () => sDesk.load().products.length === 0 && sDesk.commit(seed()).ok === true);
+      phone.markStale();
+      check("手機讀到桌機剛建的品項,開一張方(扣 42 g)", () => sPhone.load().products.length === 1 && sPhone.commit(rxOf(sPhone.data())).ok === true);
+      desk.markStale();
+      const stale = sDesk.data();
+      const r = sDesk.commit(H.use(stale, "p.z", 5, T, "自用", "", newId));
+      check("桌機拿舊的那本存檔 → 拒絕,說明是別處更新過", () => r.ok === false && r.conflict === true && /另一台裝置/.test(r.message));
+      const cloud = H.normalize(JSON.parse(device().readKey(H.STORAGE_KEY)));
+      check("雲端那本沒被動:手機的方還在、庫存 58 g", () => cloud.rx.length === 1 && H.stats(cloud, cloud.products[0], T).stock === 58);
+      check("桌機已換成最新的那本;照最新的再做一次就成功(58 − 5 = 53 g,方還在)", () => { const d = sDesk.data(); if (d.rx.length !== 1) return false;
+        const again = sDesk.commit(H.use(d, "p.z", 5, T, "自用", "", newId)); const c = H.normalize(JSON.parse(device().readKey(H.STORAGE_KEY)));
+        return again.ok === true && c.rx.length === 1 && H.stats(c, c.products[0], T).stock === 53; });
+      phone.markStale();
+      check("ensure:別處寫過就自動換成新的那本(病例頁的開藥紀錄不會停在舊的)", () => H.stats(sPhone.ensure(), sPhone.data().products[0], T).stock === 53);
+      check("讀到壞掉的內容:不給資料、有錯誤訊息,而且之後的寫入被拒絕(不拿空帳蓋掉)", () => { const bad = device(); bad.writeKey(H.STORAGE_KEY, "{not json"); const sb = H.makeSession(io(bad));
+        const loaded = sb.load(); const w = sb.commit(H.emptyData());
+        return loaded === null && !!sb.error() && w.ok === false && device().readKey(H.STORAGE_KEY) === "{not json"; });
+    }
+  } finally {
+    try { if (svc.close) await svc.close(); else if (svc.server && svc.server.close) svc.server.close(); } catch (_) { /* */ }
+    try { fs.rmSync(tmp, { recursive: true, force: true }); } catch (_) { /* Windows 上 db 檔可能還被占著 */ }
+  }
+}
+
+twoDevices().catch((e) => { check("兩台裝置測試跑完", () => "例外:" + (e && e.stack || e)); }).then(() => {
+  if (failures.length) {
+    console.error(`\nFAIL — ${failures.length} 項`);
+    process.exit(1);
+  }
+  console.log("\nPASS — 藥櫃帳只加不改、FEFO(過期批排最後、不開給病人)、補貨與常用門檻、到期與開封期限、開方、撤銷、開藥紀錄分組、採購清單、兩台裝置不互蓋,都照規格。");
+  process.exit(0);
+});
