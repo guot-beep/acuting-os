@@ -1,3 +1,21 @@
+# 2026-11-12 — d77cf3ac 的 UI 凍結聲明補記(main CI 紅燈:凍結閘門,其餘 130 步綠)
+
+**MEASURED TREE: main @ d77cf3ac(GitHub Actions run 43266639319)**
+
+d77cf3ac 動了 3 個 UI 檔(js/herb-inventory.js、js/herb-inventory-ui.js、js/clinical-sqlite-backend.js),
+commit 訊息沒有寫明是修 bug,`validate-ui-freeze.js`(D32)照規則擋下:131 步裡紅 1 步(#117),其餘綠。
+落地前本機那輪沒有帶 `FREEZE_BASE=<push 前的 tip>` 跑這一支,所以沒抓到 —— 落地前要用
+`FREEZE_BASE=$(git rev-parse origin/main) node scripts/validate-ui-freeze.js` 跑一次。
+
+**聲明(照實):**
+
+- 那個 commit 是**修 bug**:另一台裝置蓋掉扣帳、過期批排成下一瓶、過期量蓋掉補貨提醒、日期不驗、貼上建檔少記、
+  撤銷的方仍算用量、到期天數顯示錯批、帳的精度、月底溢出、補貨點 -0 g、衝突備份槽互蓋。每一條都在 0feff5b1 上重現過。
+- 其中**一條不是修 bug、是新規則**:「開給病人的方不從過期批出,沒過期的不夠就整張拒絕」。
+  這條是 Claude 照專業藥局慣例定的,會擋開方;Ting 2026-11-12 在讀過這一點之後說「推上 main」,
+  但沒有就這條單獨下裁定。她若要改成只提醒不擋,是 `prescribe()` 裡一個判斷。
+- 沒有新畫面、沒有新入口、沒有改版面;畫面上多的只有三處文字(可用量、過期提醒、被拒的原因)。
+
 # 2026-11-11 — 全系統掃描:藥櫃帳 11 個缺陷修正 + 儲存層三道保護(另一台裝置會蓋掉扣帳、過期批排第一、站外備份自 9/06 起失效)
 
 **MEASURED TREE: claude/herb-inventory-hardening,基底 origin/main @ 0feff5b1**
