@@ -2076,6 +2076,13 @@
     </section>`;
   }
 
+  // 劑量顯示規則在 js/herb-dose.js;那支沒載到時退回原本的行為(只顯示已整理的那一欄)
+  function herbDoseDisplay(record, curated) {
+    const D = typeof window !== "undefined" ? window.AcuTingHerbDose : null;
+    if (D && typeof D.displayDose === "function") return D.displayDose(record);
+    return { kind: curated ? "curated" : "none", text: curated || "", source: "", sourceUrl: "", reason: "" };
+  }
+
   function herbPanels(record) {
     const exam = record.english_exam_track || {};
     const props = record.tcm_properties || {};
@@ -2264,7 +2271,20 @@
                   在 77 張卡上食療上限高於藥用上限,盲撈會顯示更危險的數字。
                   154 張卡的真實上限確實在那裡,接上去需要先定形狀公約(見
                   docs/TING_DECISION_QUEUE.md B3)。*/ ""}
-            ${detailSection("常用劑量", "Standard & Granule Dose", `<p><strong>生藥日服量：</strong>${esc(dose.standard_daily_g || "待補")}</p>${dose.granule_dose_g ? `<p><strong>濃縮藥粉 (5:1)：</strong>${esc(dose.granule_dose_g)}</p>` : ""}`)}
+            ${/* 2026-11-12 修 bug:145 張卡顯示「待補」,而資料裡有帶出處的藥用範圍。
+                  顯示什麼由 js/herb-dose.js 的 displayDose 決定(純函式,閘門 D6 對每一張卡跑):
+                  既有的 dose.standard_daily_g 優先;否則只在「單一筆、有出處、沒有任何旗標、不是有毒藥」時
+                  顯示來源原文並標明是單一來源的參考範圍;食療用量永遠不顯示;被扣住的照實寫原因。
+                  這裡仍然不直接讀劑量暗欄位 —— 模組沒載到就退回原本的行為(只讀 dose.standard_daily_g)。 */ ""}
+            ${detailSection("常用劑量", "Standard & Granule Dose", (() => {
+              const dd = herbDoseDisplay(record, dose.standard_daily_g);
+              const main = dd.kind === "reference"
+                ? `${esc(dd.text)}<br><small class="k-dose-note">參考範圍 · 來源 ${dd.sourceUrl ? `<a href="${esc(dd.sourceUrl)}" target="_blank" rel="noopener noreferrer">${esc(dd.source)}</a>` : esc(dd.source)}(單一來源,未經藥典核對)</small>`
+                : dd.kind === "held"
+                  ? `待補<br><small class="k-dose-note">資料裡有數字,但暫不顯示:${esc(dd.reason)}</small>`
+                  : esc(dd.text || "待補");
+              return `<p><strong>生藥日服量：</strong>${main}</p>${dose.granule_dose_g ? `<p><strong>濃縮藥粉 (5:1)：</strong>${esc(dose.granule_dose_g)}</p>` : ""}`;
+            })())}
             ${detailSection("使用部位", "Part used", `<p>${esc(
               (contentMode === "english" && usableText(record.part_used_en)) || props.part_used_zh || usableText(record.part_used_en) || "待補"
             )}</p>`)}

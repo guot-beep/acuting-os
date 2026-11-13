@@ -30,6 +30,12 @@
  * 這支**不驗證劑量數字對不對**。2025 年版藥典正文拿不到之前,沒有人(包括
  * 這支程式)有資格判定哪個數字是對的。它只保證:沒查證過的數字不會自己跑到畫面上。
  *
+ * 2026-11-12 更新(Ting:「補,用之前的規則」):145 張卡顯示「待補」而資料裡有帶出處的藥用範圍。
+ * 接線改成**只有一條路**:js/herb-dose.js 的 displayDose(純函式)。js/knowledge.js 仍然不准直接讀
+ * record.dosage / record.dosage_normalized(D1 照舊擋);而 displayDose 會顯示什麼,由 D6 對**每一張卡**實跑:
+ * 食療數字永遠不出現、D3/D4/D5 的卡逐張確認沒有被放出來、有毒藥不靠單一來源自動顯示、顯示的字就是資料裡的原文。
+ * 這仍然不是查證 —— 畫面上寫的是「單一來源的參考範圍,未經藥典核對」。
+ *
  * 用法:
  *   node scripts/validate-herb-dosage-shape.js
  *   node scripts/validate-herb-dosage-shape.js --self-test   # 負控:確認每條檢查真的會失敗
@@ -42,6 +48,8 @@ const path = require("path");
 const ROOT = path.join(__dirname, "..");
 const HERBS = path.join(ROOT, "data/herbs/herb_canon_shortlist.json");
 const KNOWLEDGE = path.join(ROOT, "js/knowledge.js");
+const HERB_DOSE = path.join(ROOT, "js/herb-dose.js");
+const INDEX_HTML = path.join(ROOT, "index.html");
 
 /* 基線。只准降,不准升 —— 與 check-validation-ratchet 同一個規矩。 */
 const BASELINE = {
@@ -101,9 +109,13 @@ function checkRenderGuard(knowledgeSrc) {
     return false;
   }
 
-  const window = src.slice(anchor, anchor + 700);
+  // 劑量區塊只准兩種來源:既有的 dose.standard_daily_g,或 js/herb-dose.js 的 displayDose(經 herbDoseDisplay)。
+  const window = src.slice(anchor, anchor + 1400);
   if (!/dose\.standard_daily_g/.test(window)) {
     fail.push("D1 劑量區塊不再讀 dose.standard_daily_g —— 換成了別的來源,請確認不是 record.dosage。");
+  }
+  if (/herbDoseDisplay\(/.test(src) && !/window\.AcuTingHerbDose/.test(src)) {
+    fail.push("D1 herbDoseDisplay 不是走 window.AcuTingHerbDose.displayDose —— 劑量顯示規則只准在 js/herb-dose.js。");
   }
 
   /* 全檔掃:record.dosage 後面沒有 _g,就是把暗欄位接上來了。
@@ -225,7 +237,66 @@ function checkSafetyHold(recs, guardIntact) {
       fail.push(`D5 ${h.id}(${h.name})仍在 SAFETY_HOLD,而 record.dosage 已被接上畫面。`);
     }
   }
-  if (guardIntact) note.push(`D5 具名 SAFETY_HOLD 列管中:${SAFETY_HOLD.length} 張(均未上畫面)`);
+  if (guardIntact) note.push(`D5 具名 SAFETY_HOLD 列管中:${SAFETY_HOLD.length} 張(均未上畫面;D6 逐張確認)`);
+}
+
+/* ---------- D6:displayDose 對每一張卡實際會顯示什麼 ----------
+ *
+ * D1 是字串檢查,守的是「knowledge.js 不直接讀暗欄位」。D6 守的是行為:把真的模組 require 進來,
+ * 對全部記錄跑一次,逐張確認它沒有把不該出現的數字放上畫面。
+ */
+function loadDoseModule() {
+  delete require.cache[require.resolve(HERB_DOSE)];
+  return require(HERB_DOSE);
+}
+function checkDisplay(recs, D, dietary, contradictory) {
+  const stats = { curated: 0, reference: 0, held: 0, none: 0 };
+  const dietaryIds = new Set(dietary.map((c) => c.id));
+  const contraIds = new Set(contradictory.map((c) => c.id));
+  const holdIds = new Set(SAFETY_HOLD.map((h) => h.id));
+  for (const id of holdIds) if (!D.SAFETY_HOLD_IDS.includes(id)) fail.push(`D6 ${id} 在閘門的 SAFETY_HOLD 清單上,但 js/herb-dose.js 的 SAFETY_HOLD_IDS 沒有它。`);
+  for (const id of D.SAFETY_HOLD_IDS) if (!holdIds.has(id)) fail.push(`D6 js/herb-dose.js 列管了 ${id},但閘門的 SAFETY_HOLD 沒有 —— 兩邊要同一份。`);
+  for (const r of recs) {
+    let d;
+    try { d = D.displayDose(r); } catch (e) { fail.push(`D6 ${r.id} displayDose 拋錯:${e.message}`); continue; }
+    stats[d.kind] = (stats[d.kind] || 0) + 1;
+    const curated = String(((r.dosage_g || {}).standard_daily_g) || "").trim();
+    if (curated) {
+      if (d.kind !== "curated" || d.text !== curated) fail.push(`D6 ${r.id}(${r.name_zh})已有整理過的劑量「${curated}」,displayDose 卻顯示別的(${d.kind}:${d.text})。`);
+      continue;
+    }
+    if (d.kind !== "reference") {
+      if (d.text) fail.push(`D6 ${r.id}(${r.name_zh})kind=${d.kind} 卻帶著要顯示的字「${d.text}」。`);
+      continue;
+    }
+    // 以下:這張卡會新顯示一個數字。逐條確認它有資格。
+    const dn = r.dosage_normalized || {};
+    const med = Array.isArray(dn.medicinal) ? dn.medicinal : [];
+    const diet = Array.isArray(dn.dietary) ? dn.dietary : [];
+    const where = `D6 ${r.id}(${r.name_zh})顯示「${d.text}」`;
+    if (holdIds.has(r.id)) fail.push(`${where},但它在 SAFETY_HOLD。`);
+    if (contraIds.has(r.id) || (dn.flags || {}).route_contradiction) fail.push(`${where},但它是 D4 給法矛盾的卡。`);
+    if ((dn.flags || {}).magnitude_suspicious) fail.push(`${where},但它被標量級可疑。`);
+    if (med.length !== 1 || d.text !== String(med[0].verbatim).trim()) fail.push(`${where},不是「唯一一筆藥用範圍的原文」。`);
+    // 食療那一筆的原文不准出現 —— 除非它跟藥用那一筆逐字相同(龍膽草、吳茱萸:兩欄都寫「3-6克」/「1-3克」,
+    // 顯示的確實是藥用那一筆;全庫實跑時這條第一版把龍膽草誤判成食療)。
+    const isMedicinalText = med.length === 1 && d.text === String(med[0].verbatim).trim();
+    if (/食療/.test(d.text) || (!isMedicinalText && diet.some((x) => String(x.verbatim).trim() === d.text))) fail.push(`${where},那是食療用量。`);
+    if (dietaryIds.has(r.id) && med[0] && upperBound(d.text) > Math.max(med[0].high_g, upperBound(med[0].verbatim) || 0)) fail.push(`${where},數字超過這張卡的藥用上限(D3 食療超量卡)。`);
+    if (!d.source) fail.push(`${where},沒有出處。`);
+    if (/待[^。;;]{0,12}(核對|確認|查證)|⚠/.test(String(med[0] && med[0].attributed_to))) fail.push(`${where},但出處寫明待核對。`);
+    if (D.saysToxic(r)) fail.push(`${where},但卡片自己寫著有毒。`);
+    const flags = (r.safety_flags || []).filter((f) => typeof f === "string" && /toxic|dose_preparation_review|not_for_self_treatment|heavy_metal|prohibited|safety_review_pending|aristolochic/i.test(f));
+    if (flags.length) fail.push(`${where},但它帶著 ${flags.join("、")}。`);
+  }
+  return stats;
+}
+// 模組被載入頁面了嗎(沒載到的話 knowledge.js 會退回舊行為,畫面不會壞,但這次的修正就等於沒上)
+function checkWiring() {
+  const html = fs.readFileSync(INDEX_HTML, "utf8");
+  const a = html.indexOf('src="js/herb-dose.js"'), b = html.indexOf('src="js/knowledge.js"');
+  if (a < 0) fail.push("D6 index.html 沒有載入 js/herb-dose.js。");
+  else if (b >= 0 && a > b) fail.push("D6 js/herb-dose.js 排在 js/knowledge.js 後面 —— 畫中藥卡時模組還沒在。");
 }
 
 /* ---------- 主流程 ---------- */
@@ -240,6 +311,8 @@ function run(opts) {
   const dietary = findDietaryConflicts(recs);
   const contradictory = findSelfContradictory(recs);
   checkSafetyHold(recs, guardIntact);
+  const display = checkDisplay(recs, opts.doseModule || loadDoseModule(), dietary, contradictory);
+  if (!opts.doseModule) checkWiring();
 
   // 耦合:暗欄位沒接線時這兩類只是提示;一旦接線,立刻變成逐張封鎖。
   if (!guardIntact) {
@@ -250,8 +323,9 @@ function run(opts) {
       fail.push(`D4 ${c.id}(${c.name}) 卡片他處寫明只入丸散/不入湯劑,dosage 卻寫入湯劑且達 ${c.upper}g,而 dosage 已被接上畫面。`);
     }
   } else {
-    note.push(`D3 食療上限 > 藥用上限:${dietary.length} 張(暗欄位未接線,暫不封鎖)`);
-    note.push(`D4 自身矛盾(丸散 vs 湯劑):${contradictory.length} 張(同上)`);
+    note.push(`D3 食療上限 > 藥用上限:${dietary.length} 張(食療數字不上畫面,D6 逐張確認)`);
+    note.push(`D4 自身矛盾(丸散 vs 湯劑):${contradictory.length} 張(不顯示,D6 逐張確認)`);
+    note.push(`D6 卡上的劑量:已整理 ${display.curated}、單一來源參考範圍 ${display.reference}、有數字但扣住 ${display.held}、沒有資料 ${display.none}`);
   }
 
   if (dietary.length > BASELINE.dietary_over_medicinal) {
@@ -261,7 +335,7 @@ function run(opts) {
     fail.push(`D4 矛盾卡從 ${BASELINE.self_contradictory} 增加到 ${contradictory.length} —— 只准降不准升。`);
   }
 
-  return { tally, dietary, contradictory, guardIntact };
+  return { tally, dietary, contradictory, guardIntact, display };
 }
 
 /* ---------- 負控:每條檢查都必須能失敗 ---------- */
@@ -349,6 +423,58 @@ function selfTest() {
         return fail.some((f) => /找不到這筆記錄/.test(f));
       },
     },
+    ...(() => {
+      const D = loadDoseModule();
+      const good = () => ({ id: "herb.fixture", name_zh: "測試", safety_flags: ["pregnancy_review"], properties_taste_temp: "辛、溫",
+        dosage_normalized: { no_new_numbers: true, flags: { dietary_exceeds_medicinal: true, route_contradiction: false, magnitude_suspicious: false, unattributed_numbers: false },
+          medicinal: [{ route: "unclear", low_g: 3, high_g: 9, verbatim: "3-9克", attributed_to: "https://cloudtcm.com/herb/1" }],
+          dietary: [{ low_g: 10, high_g: 30, verbatim: "10-30克", attributed_to: "https://cloudtcm.com/herb/1" }] } });
+      const kind = (mut) => { const r = good(); mut(r); return D.displayDose(r).kind; };
+      const heldWhen = (name, mut) => ({ name: "D6 " + name + " → 不顯示", run: () => kind(mut) === "held" });
+      // 「壞掉的模組」:把不該顯示的東西顯示出來,閘門必須抓到
+      const caught = (name, fake, rec, re) => ({ name: "D6 閘門抓得到:" + name, run: () => {
+        fail.length = 0; note.length = 0;
+        const r = rec || good();
+        checkDisplay([r], Object.assign({}, D, { displayDose: fake }), findDietaryConflicts([r]), findSelfContradictory([r]));
+        return fail.some((f) => re.test(f));
+      } });
+      const ref = (text, o) => () => Object.assign({ kind: "reference", text, source: "CloudTCM", sourceUrl: "", reason: "" }, o || {});
+      const toxic = good(); toxic.properties_taste_temp = "辛、溫、有毒";
+      const flagged = good(); flagged.safety_flags = ["toxicity_review"];
+      const curated = good(); curated.dosage_g = { standard_daily_g: "3–9g(課件)" };
+      return [
+        { name: "D6 乾淨的單一來源藥用範圍 → 顯示原文與出處(不誤擋)", run: () => { const d = D.displayDose(good()); return d.kind === "reference" && d.text === "3-9克" && d.source === "CloudTCM"; } },
+        { name: "D6 食療上限較高的卡:顯示的是藥用 3-9克,不是食療 10-30克", run: () => !/10|30/.test(D.displayDose(good()).text) },
+        { name: "D6 已整理的劑量優先,不被參考範圍蓋掉", run: () => { const d = D.displayDose(curated); return d.kind === "curated" && d.text === "3–9g(課件)"; } },
+        { name: "D6 「無毒」不算有毒(不誤擋)", run: () => kind((r) => { r.properties_taste_temp = "甘、平、無毒"; }) === "reference" },
+        heldWhen("卡片寫有毒", (r) => { r.properties_taste_temp = "辛、溫、有小毒"; }),
+        heldWhen("safety_info 寫有毒", (r) => { r.safety_info = { toxicity_zh: "有毒" }; }),
+        heldWhen("toxicity_review 旗標", (r) => { r.safety_flags = ["toxicity_review"]; }),
+        heldWhen("dose_preparation_review 旗標", (r) => { r.safety_flags = ["dose_preparation_review"]; }),
+        heldWhen("not_for_self_treatment 旗標", (r) => { r.safety_flags = ["not_for_self_treatment"]; }),
+        heldWhen("安全審查未完", (r) => { r.safety_review_pending = true; }),
+        heldWhen("給法矛盾", (r) => { r.dosage_normalized.flags.route_contradiction = true; }),
+        heldWhen("量級可疑", (r) => { r.dosage_normalized.flags.magnitude_suspicious = true; }),
+        heldWhen("數字沒有出處(旗標)", (r) => { r.dosage_normalized.flags.unattributed_numbers = true; }),
+        heldWhen("數字沒有出處(空字串)", (r) => { r.dosage_normalized.medicinal[0].attributed_to = ""; }),
+        heldWhen("出處寫明待核對", (r) => { r.dosage_normalized.medicinal[0].attributed_to = "藥典。⚠️ 數字待 Ting 以手邊藥典核對後升級。"; }),
+        heldWhen("藥用範圍兩筆", (r) => { r.dosage_normalized.medicinal.push({ route: "powder", low_g: 1, high_g: 3, verbatim: "研末 1-3g", attributed_to: "x" }); }),
+        heldWhen("只有食療、沒有藥用", (r) => { r.dosage_normalized.medicinal = []; }),
+        heldWhen("原文與整形後數字對不上", (r) => { r.dosage_normalized.medicinal[0].high_g = 12; }),
+        heldWhen("原文混有食療", (r) => { r.dosage_normalized.medicinal[0].verbatim = "3-9克(食療)"; }),
+        heldWhen("沒有聲明未新增數字", (r) => { r.dosage_normalized.no_new_numbers = false; }),
+        heldWhen("具名列管", (r) => { r.id = "herb.su_he_xiang"; }),
+        heldWhen("沒有旗標物件", (r) => { delete r.dosage_normalized.flags; }),
+        caught("顯示了食療用量", ref("10-30克"), null, /那是食療用量|不是「唯一一筆藥用範圍的原文」/),
+        caught("顯示了不是原文的數字", ref("6-15g"), null, /不是「唯一一筆藥用範圍的原文」/),
+        caught("有毒藥被顯示", ref("3-9克"), toxic, /卡片自己寫著有毒/),
+        caught("帶毒性旗標的藥被顯示", ref("3-9克"), flagged, /帶著 toxicity_review/),
+        caught("沒有出處就顯示", ref("3-9克", { source: "" }), null, /沒有出處/),
+        caught("已整理的劑量被換掉", ref("3-9克"), curated, /已有整理過的劑量/),
+        caught("列管卡被顯示", ref("3-9克"), Object.assign(good(), { id: "herb.su_he_xiang" }), /SAFETY_HOLD/),
+        caught("模組少了列管名單", () => ({ kind: "none", text: "" }), null, /SAFETY_HOLD_IDS 沒有它/, true),
+      ].map((c, i, all) => (i === all.length - 1 ? { name: c.name, run: () => { fail.length = 0; checkDisplay([], Object.assign({}, D, { SAFETY_HOLD_IDS: [] }), [], []); return fail.some((f) => /SAFETY_HOLD_IDS 沒有它/.test(f)); } } : c));
+    })(),
   ];
 
   let bad = 0;
@@ -371,7 +497,7 @@ if (require.main === module) {
   }
   const res = run({});
   console.log("dosage 形狀分布:", JSON.stringify(res.tally));
-  console.log(`renderer 未讀 record.dosage(暗欄位仍未接線): ${res.guardIntact ? "是" : "否"}`);
+  console.log(`js/knowledge.js 沒有直接讀劑量暗欄位(只經 js/herb-dose.js): ${res.guardIntact ? "是" : "否"}`);
   for (const n of note) console.log("  NOTE  " + n);
   if (fail.length) {
     console.log("");
@@ -382,4 +508,4 @@ if (require.main === module) {
   console.log("\nvalidate-herb-dosage-shape: PASS —— no blocking defects.");
 }
 
-module.exports = { run, findDietaryConflicts, findSelfContradictory, checkRenderGuard, checkShapes };
+module.exports = { run, findDietaryConflicts, findSelfContradictory, checkRenderGuard, checkShapes, checkDisplay };
