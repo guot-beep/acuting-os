@@ -1,3 +1,12 @@
+# 2026-11-12 — 裁定:藥櫃「過期批不開給病人」維持擋下
+
+**MEASURED TREE: main @ bad67bf0**
+
+Ting 2026-11-12 裁定:**維持擋下**。開給自家病人的方不從已過期的批次出;沒過期的量不夠,整張方拒絕並說明
+(`js/herb-inventory.js` 的 `prescribe()`;真值表在 `scripts/validate-herb-inventory.js`「過期批次」段 6 條)。
+自用 / 家人的用量仍可記到過期批(排最後才扣,畫面提醒)。前一則紀錄裡「等 Ting 單獨裁定」這一項到此結案。
+這個 commit 只動 PROJECT_LOG.md,沒有改程式。
+
 # 2026-11-12 — d77cf3ac 的 UI 凍結聲明補記(main CI 紅燈:凍結閘門,其餘 130 步綠)
 
 **MEASURED TREE: main @ d77cf3ac(GitHub Actions run 43266639319)**
