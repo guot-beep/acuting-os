@@ -2601,6 +2601,9 @@ function render() {
   renderClinicalCases();
   renderPatientsWorkspace();   // Patient Workspace W1
   renderBackupBanner();   // CS1
+  // D37 半年開藥回顧提醒。藥櫃 UI 是較晚載入的 defer 腳本:開機第一次 render 時還不在 → 跳過,下一次 render 補上。
+  // 雲端還沒接上時它自己不畫(查不到時使用者看到的是「沒有這條橫幅」,不是假提醒)。
+  if (window.AcuTingHerbInventoryUI && typeof window.AcuTingHerbInventoryUI.renderReviewReminder === "function") window.AcuTingHerbInventoryUI.renderReviewReminder();
   renderDirectoryFilters();
   renderSystemToggleDrawer();
   renderChannelsWorkspace();

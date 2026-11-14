@@ -88,6 +88,9 @@
       ["amber", n((x) => x.s.openedLong.length), "開封過久", "超過開封後期限", "stock"],
       ["", n((x) => x.s.slow), "久未使用", `${inv.settings.slowDays} 天沒用`, "stock"],
     ];
+    // 半年回顧到期(D37):只在到期時多一格,沒到期不佔位
+    const rem = RXP() ? RXP().reminderState(inv.settings.rxReview, t) : null;
+    if (rem && rem.due) items.push(["warn", "🗓", "半年開藥回顧", rem.firstTime ? "還沒做過" : "到期了", "review"]);
     return `<div class="hi-alerts">${items.map(([cls, c, label, sub, go]) =>
       `<button type="button" class="hi-alert ${c ? cls : ""}" data-hi-go="${go}"><b>${c}</b><span>${label} · ${sub}</span></button>`).join("")}
       <button type="button" class="hi-alert hi-calm" data-hi-go="data"><b>US$ ${value.toFixed(0)}</b><span>庫存價值 · 近 30 天用 ${fmtG(month)}</span></button></div>`;
@@ -416,6 +419,176 @@
       </aside></div>`;
   }
 
+  // ── 半年回顧(D37,Ting 2026-11-14)──
+  // 兩條線分開:「學校與診所」= 病歷(clinicSite ≠ home)的自由文字開方;「藥櫃」= 自用與自家病人的實際用量帳。
+  // 全部即時從病歷與藥櫃算,不另存任何病人資料;只存她的三個採購假設與「上次看過的日期」(都在藥櫃同一份雲端資料)。
+  const RXP = () => window.AcuTingRxProfile;
+  const CS = () => window.AcuTingCaseSearch || {};
+  let reviewRange = null, resolverMemo = null;
+  function rxResolver() {
+    if (!resolverMemo && window.ACUTING_KNOWLEDGE && RXP()) resolverMemo = RXP().buildResolver(window.ACUTING_KNOWLEDGE);
+    return resolverMemo;
+  }
+  const siteLabel = (k) => ((CS().CLINIC_SITES || {})[k] || {}).zh || (k === "(未填)" ? "未填" : k);
+  // 不重用上面的 catLabel:那支查不到時回空字串,這裡查不到要說「未填」
+  const rvCatLabel = (k) => { const c = (CS().CASE_CATEGORIES || {})[k]; return c ? `${c.icon} ${c.zh}` : (k || "未填"); };
+  const SEX = { F: "女", M: "男", female: "女", male: "男" };
+  const gTxt = (g) => (g === null ? "—" : fmtG(g));
+  function distRows(obj, label) {
+    const rows = Object.entries(obj).sort((a, b) => b[1] - a[1]);
+    const max = Math.max(1, ...rows.map((r) => r[1]));
+    return rows.map(([k, n]) => `<div class="hi-hbar"><span>${esc(label(k))}</span><span class="hi-track"><i style="width:${(n / max) * 100}%"></i></span><span class="num">${n}</span></div>`).join("") || `<p class="hi-hint">—</p>`;
+  }
+  function rxLine(p) {
+    const items = p.items.map((it) => `${esc(it.name)}${Number.isFinite(it.parts) ? ` ${it.parts}` : ""}`).join("、");
+    const dose = p.unitsUnknown ? "單位原文未記" : p.gpd !== null ? `${p.gpd} g/天` : (p.fromLinks ? "只有方劑連結" : "沒寫服法");
+    return `${items} <small class="hi-hint">· ${dose}${p.days ? ` · ${p.days} 天` : ""}</small>`;
+  }
+  function reviewData() {
+    const R = RXP(), t = today();
+    const S = R.reviewSettings(inv.settings.rxReview);
+    const range = reviewRange || { from: R.addDays(t, -S.periodDays), to: t };
+    const resolve = rxResolver();
+    const cases = typeof clinicalCases !== "undefined" ? clinicalCases : [];
+    const col = R.collectVisits(cases, { from: range.from, to: range.to, today: t, excludeSites: ["home"], resolve, nameOf: resolve && resolve.nameOf });
+    return { R, t, S, range, cases, visits: col.visits, undated: col.undated, mix: R.caseMix(col.visits), sum: R.summarizeRx(col.visits, inv.settings.rxReview),
+      plan: R.inventoryPlan(H, inv, t, inv.settings.rxReview), rem: R.reminderState(inv.settings.rxReview, t) };
+  }
+  // 這個分頁算的是任意病歷;算到一半出錯時只壞這一頁、大聲說原因 —— 不能讓整個藥櫃停在「載入中…」(2026-11-14 實測過一次)
+  function reviewHtml() {
+    try { return reviewHtmlInner(); }
+    catch (e) {
+      try { console.error("半年回顧:", e); } catch (_) { /* */ }
+      return `<section class="hi-panel hi-error"><b>半年回顧算到一半出錯了</b><p>${esc(e && e.message || e)}</p><p class="hi-hint">其他分頁不受影響;沒有寫入任何東西。</p></section>`;
+    }
+  }
+  function reviewHtmlInner() {
+    if (!RXP()) return `<section class="hi-panel hi-error"><b>半年回顧模組沒載到</b><p class="hi-hint">重新整理頁面。</p></section>`;
+    const { R, t, S, range, cases, visits, undated, mix, sum, plan, rem } = reviewData();
+    const remText = rem.due
+      ? (rem.firstTime ? "還沒做過半年回顧。看完按最下面的「我看過了」,半年後系統會再提醒。" : `已到半年(上次 ${esc(S.lastReviewedAt)})。看完按「我看過了」。`)
+      : `上次看過 ${esc(S.lastReviewedAt)},下次提醒 ${esc(rem.nextDue)}(還有 ${rem.daysLeft} 天)。`;
+    const setF = (k, label, hint, ph) => `<label class="hi-f"><span>${label}</span><input type="number" min="0" step="any" data-rv-set="${k}" value="${attr(S[k])}" placeholder="${attr(ph || "")}"><small class="hi-hint">${hint}</small></label>`;
+    const caseById = new Map(cases.map((c) => [String(c.id), c]));
+    // caseLabelText 的第二個參數要 Date 物件;跟其他呼叫端一樣不傳(用現在),標題空的退回顯示代號 / 病人編號
+    const labelOf = (v) => { const c = caseById.get(v.caseId); return c ? ((typeof CS().caseLabelText === "function" ? CS().caseLabelText(c) : "") || c.displayCode || c.patientCode) : v.caseId; };
+    const rxVisits = visits.filter((v) => v.prescribed).sort((a, b) => b.date.localeCompare(a.date));
+    const noDaysYet = !S.rxDays;
+    const tableRows = sum.rows.map((r) => {
+      const notes = [];
+      if (!r.id) notes.push(`<span class="hi-pill">知識庫沒有這張卡</span>`);
+      if (r.noDose) notes.push(`<span class="hi-pill hi-amber">${r.noDose} 張沒寫服法或單位</span>`);
+      if (r.slowForBottle) notes.push(`<span class="hi-pill hi-amber">兩年用不到 ${S.bottleG} g,開封會過期</span>`);
+      const name = r.id ? kbLink({ kind: r.kind === "formula" ? "formula" : "single", knowledgeId: r.id }, r.name) : esc(r.name);
+      return `<tr><td>${name}</td><td class="num">${r.rxCount}</td><td class="num">${r.patients}</td><td class="num">${gTxt(r.grams)}</td>
+        <td class="num">${r.bottles === null ? "—" : r.bottles}</td><td class="num"><b>${r.bottlesToBuy === null ? "—" : r.bottlesToBuy}</b></td><td class="num">${r.bottlesPerYear === null ? "—" : r.bottlesPerYear}</td><td>${notes.join(" ")}</td></tr>`;
+    }).join("");
+    const planRows = plan.map((r) => `<tr><td>${r.frequent ? `<span class="hi-star">★</span> ` : ""}${r.knowledgeId ? kbLink({ kind: r.kind, knowledgeId: r.knowledgeId }, r.name) : esc(r.name)} <small class="hi-hint">${esc(r.brand)}</small></td>
+      <td class="num">${fmtG(r.used)}</td><td class="num">${fmtG(r.usable)}</td><td class="num">${r.packageG} g</td><td class="num">${r.bottlesUsed}</td><td class="num"><b>${r.bottlesToBuy}</b></td></tr>`).join("");
+    return `<section class="hi-panel rv-head">
+      <h3>半年開藥回顧與科中採購建議</h3>
+      <p class="${rem.due ? "hi-msg is-err" : "hi-hint"}">${remText}</p>
+      <div class="hi-grid3">
+        <label class="hi-f"><span>從</span><input type="date" id="rvFrom" value="${attr(range.from)}"></label>
+        <label class="hi-f"><span>到</span><input type="date" id="rvTo" value="${attr(range.to)}"></label>
+        <div class="hi-f"><span>&nbsp;</span><button type="button" id="rvReset">回到最近半年</button></div>
+      </div>
+      <h3>採購假設(你填的,不是病歷資料)</h3>
+      <div class="hi-grid3">
+        ${setF("bottleG", "一罐幾克", "科中常見 200 g 一罐;換算罐數用。", "200")}
+        ${setF("rxDays", "每張方平均開幾天", "病歷都沒記天數。沒填之前,罐數算不出來。", "例 7")}
+        ${setF("fallbackGpd", "沒寫服法的方,一天算幾克", "只用在原文沒寫「每次幾克、一天幾次」的方;不填就只計張數。", "不填")}
+      </div>
+    </section>
+
+    <section class="hi-panel">
+      <h3>一、學校與診所的病例(不含自家)· ${esc(range.from)} – ${esc(range.to)}</h3>
+      <div class="hi-table-wrap"><table class="hi-table rv-kpi"><tbody>
+        <tr><th>接觸的病人</th><td class="num">${mix.patients}</td><th>就診次數</th><td class="num">${mix.visits}</td></tr>
+        <tr><th>有開藥的病人</th><td class="num">${mix.prescribedPatients}</td><th>有開藥的就診</th><td class="num">${mix.prescribedVisits}</td></tr>
+      </tbody></table></div>
+      ${undated ? `<p class="hi-hint">另有 ${undated} 筆 SOAP 沒有就診日期,沒算進任何期間(不拿建立日期頂替 —— 那是匯入那天,不是看診那天)。補上就診日期就會算。</p>` : ""}
+      <div class="hi-two">
+        <div><h3>看診地點</h3>${distRows(mix.bySite, siteLabel)}<h3>年齡</h3>${distRows(mix.byAge, (k) => k)}</div>
+        <div><h3>病例類別</h3>${distRows(mix.byCategory, rvCatLabel)}<h3>性別</h3>${distRows(mix.bySex, (k) => SEX[k] || k)}</div>
+      </div>
+      ${mix.topConditions.length ? `<h3>最常見的病症</h3>${distRows(Object.fromEntries(mix.topConditions), (k) => k)}` : ""}
+
+      <h3>有開藥的就診(${rxVisits.length})</h3>
+      ${rxVisits.length ? `<div class="hi-table-wrap"><table class="hi-table"><thead><tr><th>日期</th><th>病例</th><th>地點</th><th>開方(原文的份數與服法)</th></tr></thead><tbody>
+        ${rxVisits.map((v) => `<tr><td>${esc(v.date)}</td><td>${esc(labelOf(v))}</td><td>${esc(siteLabel(v.site))}</td>
+          <td>${v.prescriptions.length ? v.prescriptions.map(rxLine).join("<br>") : `<span class="hi-hint">有寫開方文字,但讀不出藥名與份數</span>`}</td></tr>`).join("")}
+      </tbody></table></div>` : `<p class="hi-hint">這段期間沒有開藥的紀錄。</p>`}
+
+      <h3>開過的方與單味藥 → 科中採購建議</h3>
+      <p class="hi-hint">${sum.rxTotal} 張方裡 ${sum.rxWithGrams} 張算得出克數。克數 = 原文的每天總量 × 該味份數比例 × 天數;份數、每次幾克、一天幾次都只用原文寫了的。${noDaysYet ? " <b>還沒填「每張方平均開幾天」,所以罐數都是 —。</b>" : ` 天數用你填的 ${S.rxDays} 天。`}「一年約」= 這段期間的量照比例換成一年。</p>
+      ${sum.rows.length ? `<div class="hi-table-wrap"><table class="hi-table"><thead><tr><th>方劑 / 單味藥</th><th class="num">開過幾張</th><th class="num">病人</th><th class="num">期間克數</th><th class="num">約幾罐</th><th class="num">建議買</th><th class="num">一年約</th><th>備註</th></tr></thead>
+        <tbody>${tableRows}</tbody></table></div>` : `<p class="hi-hint">這段期間沒有讀得出藥名的開方。</p>`}
+    </section>
+
+    <section class="hi-panel">
+      <h3>二、藥櫃(自用與自家病人)· 這段期間的實際用量</h3>
+      <p class="hi-hint">直接用藥櫃帳上的用量(撤銷的方不算),「建議再買」= 同樣用量再一段期間、扣掉現在可用的量,換算成整罐(每罐克數用品項自己設的包裝)。</p>
+      ${plan.length ? `<div class="hi-table-wrap"><table class="hi-table"><thead><tr><th>品項</th><th class="num">期間用量</th><th class="num">目前可用</th><th class="num">每罐</th><th class="num">期間用了幾罐</th><th class="num">建議再買</th></tr></thead>
+        <tbody>${planRows}</tbody></table></div>` : `<p class="hi-hint">藥櫃這段期間沒有用量紀錄。</p>`}
+      <div class="hi-toolbar">
+        <button type="button" id="rvCopy">複製採購建議(CSV,不含病人)</button>
+        <button type="button" id="rvDone" class="primary">我看過了,半年後再提醒</button>
+      </div>
+    </section>`;
+  }
+  function reviewCsv() {
+    const { S, sum, plan, range } = reviewData();
+    const rows = [["來源", "期間", "方劑/單味藥", "開過幾張/期間用量", "病人", "期間克數", "約幾罐", "建議買(罐)", "一年約(罐)", "每罐克數"]];
+    sum.rows.forEach((r) => rows.push(["學校與診所病例", `${range.from}~${range.to}`, r.name, r.rxCount, r.patients, r.grams ?? "", r.bottles ?? "", r.bottlesToBuy ?? "", r.bottlesPerYear ?? "", S.bottleG]));
+    plan.forEach((r) => rows.push(["藥櫃", `${range.from}~${range.to}`, r.name, r.used, "", r.used, r.bottlesUsed, r.bottlesToBuy, "", r.packageG]));
+    return rows;
+  }
+
+  // 首頁提醒:到期才畫;雲端還沒接上 / 讀不到時不畫(不准出現假提醒,也不因此寫入任何東西)。
+  // render() 一頁會跑很多次,成功讀到的結果記 5 分鐘;讀失敗不記,下一次 render 再試。
+  let reminderCache = null, reminderHiddenThisPage = false;
+  function reviewReminderState() {
+    const R = RXP();
+    if (!R) return null;
+    if (reminderCache && Date.now() - reminderCache.at < 5 * 60e3) return reminderCache.state;
+    try {
+      const data = inv || ensure();
+      if (!data || loadError) return null;
+      const state = R.reminderState(data.settings.rxReview, today());
+      reminderCache = { at: Date.now(), state };
+      return state;
+    } catch (_) { return null; }
+  }
+  function renderReviewReminder() {
+    const existing = document.querySelector(".rx-review-banner");
+    const st = reminderHiddenThisPage || window.location.hash === "#ws/herbinv" ? null : reviewReminderState();
+    if (!st || !st.due) { if (existing) existing.remove(); return; }
+    if (existing) return;
+    const banner = document.createElement("div");
+    banner.className = "rx-review-banner";
+    banner.setAttribute("role", "status");
+    banner.innerHTML = `<span>🗓 ${st.firstTime ? "可以做第一次半年開藥回顧了" : "半年開藥回顧到了"}:這半年接觸的病例、有開藥的病例、開了哪些方,以及科中大約要買幾罐。</span>`;
+    const go = document.createElement("button");
+    go.type = "button";
+    go.textContent = "去看";
+    go.addEventListener("click", openReview);
+    const later = document.createElement("button");
+    later.type = "button";
+    later.className = "rx-review-later";
+    later.textContent = "這次先不要";
+    later.addEventListener("click", () => { reminderHiddenThisPage = true; banner.remove(); });
+    banner.append(go, later);
+    document.body.prepend(banner);
+  }
+  function openReview() {
+    tab = "review";
+    const b = document.querySelector(".rx-review-banner");
+    if (b) b.remove();
+    if (window.location.hash === "#ws/herbinv") render();
+    else window.location.hash = "#ws/herbinv";
+  }
+
   // ── 設定 ──
   function settingsHtml() {
     const S = inv.settings;
@@ -437,7 +610,7 @@
   }
 
   // ── 主畫面 ──
-  const TABS = [["stock", "庫存"], ["rx", "開藥紀錄"], ["use", "記用量"], ["receive", "入庫"], ["shop", "採購清單"], ["data", "數據"], ["settings", "設定"]];
+  const TABS = [["stock", "庫存"], ["rx", "開藥紀錄"], ["use", "記用量"], ["receive", "入庫"], ["shop", "採購清單"], ["data", "數據"], ["review", "半年回顧"], ["settings", "設定"]];
   function render() {
     const el = root();
     if (!el) return;
@@ -445,7 +618,7 @@
       el.innerHTML = `<div class="hi-panel hi-error"><b>藥櫃讀不到</b><p>${esc(loadError)}</p><p class="hi-hint">病例服務沒連上或通行碼過期時會這樣;重新整理頁面。這時不會寫入任何東西。</p></div>`;
       return;
     }
-    const body = { stock: stockHtml, rx: rxHtml, use: useHtml, receive: receiveHtml, shop: shopHtml, data: dataHtml, settings: settingsHtml }[tab]();
+    const body = { stock: stockHtml, rx: rxHtml, use: useHtml, receive: receiveHtml, shop: shopHtml, data: dataHtml, review: reviewHtml, settings: settingsHtml }[tab]();
     el.innerHTML = `${alertsHtml()}
       <nav class="hi-tabs" role="tablist" aria-label="藥櫃功能">${TABS.map(([k, v]) => `<button type="button" role="tab" data-hi-tab="${k}" aria-selected="${tab === k}">${v}</button>`).join("")}</nav>
       ${msg.text ? `<div class="hi-msg ${msg.ok ? "is-ok" : "is-err"}" role="status">${esc(msg.text)}</div>` : ""}
@@ -637,6 +810,35 @@
       const rows = [["日期", "類型", "藥品", "品牌", "批號", "克數", "用途", "備註"]].concat(inv.txns.map((x) => { const p = product(x.productId), l = inv.lots.find((y) => y.id === x.lotId); return [x.date, x.type, p && p.nameZh, p && p.brand, l && l.lotNo, x.grams, x.purpose, x.note]; }));
       copy(rows.map((r) => r.map((v) => `"${String(v ?? "").replace(/"/g, '""')}"`).join(",")).join("\n"), `已複製 ${rows.length - 1} 筆,可貼進試算表`);
     });
+    // 半年回顧(D37)
+    const rvSave = (patch, okText) => {
+      const next = JSON.parse(JSON.stringify(inv));
+      next.settings.rxReview = Object.assign({}, next.settings.rxReview || {}, patch);
+      if (commit(next, okText)) reminderCache = null;
+      render();
+    };
+    el.querySelectorAll("[data-rv-set]").forEach((i) => i.addEventListener("change", () => {
+      const v = i.value.trim();
+      rvSave({ [i.dataset.rvSet]: v === "" ? "" : Number(v) }, "採購假設已存");
+    }));
+    const rvRange = () => {
+      const f = val(el, "rvFrom"), to = val(el, "rvTo");
+      if (RXP() && RXP().isISODate(f) && RXP().isISODate(to) && f <= to) { reviewRange = { from: f, to }; render(); }
+      else { msg = { text: "期間要是兩個真的日期,而且「從」不能晚於「到」", ok: false }; render(); }
+    };
+    el.querySelector("#rvFrom")?.addEventListener("change", rvRange);
+    el.querySelector("#rvTo")?.addEventListener("change", rvRange);
+    el.querySelector("#rvReset")?.addEventListener("click", () => { reviewRange = null; render(); });
+    el.querySelector("#rvCopy")?.addEventListener("click", () => {
+      const rows = reviewCsv();
+      copy(rows.map((r) => r.map((v) => `"${String(v ?? "").replace(/"/g, '""')}"`).join(",")).join("\n"), `已複製 ${rows.length - 1} 列採購建議(不含病人),可貼進試算表`);
+    });
+    el.querySelector("#rvDone")?.addEventListener("click", () => {
+      const t = today();
+      rvSave({ lastReviewedAt: t }, `已記下:下次提醒 ${RXP().addDays(t, RXP().reviewSettings(inv.settings.rxReview).periodDays)}`);
+      const b = document.querySelector(".rx-review-banner");
+      if (b) b.remove();
+    });
     el.querySelectorAll("[data-hi-set]").forEach((i) => i.addEventListener("change", () => { const next = JSON.parse(JSON.stringify(inv)); next.settings[i.dataset.hiSet] = Number(i.value); commit(next, "設定已存"); render(); }));
     el.querySelectorAll("[data-hi-shelf]").forEach((i) => i.addEventListener("change", () => { const next = JSON.parse(JSON.stringify(inv)); next.settings.shelfByForm[i.dataset.hiShelf] = Number(i.value); commit(next, "設定已存"); render(); }));
     el.querySelector("#hiEmailTo")?.addEventListener("change", (e) => { const next = JSON.parse(JSON.stringify(inv)); next.settings.emailTo = e.target.value.trim(); commit(next, "Email 已存"); render(); });
@@ -702,9 +904,11 @@
     else window.location.hash = "#ws/herbinv";
   }
 
-  const onRoute = () => { if (window.location.hash === "#ws/herbinv") { load(); render(); } };
+  // 半年提醒也在這裡畫:app.js 開機第一次 render() 時這支還沒載入(它是最後一支 defer),
+  // 若只靠 app.js 的 render(),打開首頁什麼都不點的話提醒永遠不會出現。
+  const onRoute = () => { if (window.location.hash === "#ws/herbinv") { load(); render(); } renderReviewReminder(); };
   window.addEventListener("hashchange", onRoute);
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", onRoute); else onRoute();
 
-  window.AcuTingHerbInventoryUI = { render, caseRxHtml, wireCase, startRxForCase, reload: load };
+  window.AcuTingHerbInventoryUI = { render, caseRxHtml, wireCase, startRxForCase, reload: load, renderReviewReminder, openReview };
 })();

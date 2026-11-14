@@ -4918,6 +4918,33 @@ a { color: var(--accent-dark); }
 }
 .notes-reminder-banner__status { font-weight: 500; flex-basis: 100%; }
 
+/* D37(Ting 2026-11-14)半年開藥回顧提醒。刻意**不黏頂**(position:static):它不急,
+   而上面兩條(病歷備份、筆記帶出)都是 sticky top:0,三條黏在一起會互相蓋住。顏色第三種,一眼分得出來。 */
+.rx-review-banner {
+  background: #34497a;
+  color: #f4f6fc;
+  font-weight: 600;
+  padding: 0.7rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  line-height: 1.5;
+}
+.rx-review-banner button {
+  background: #f4f6fc;
+  color: #24345a;
+  border: none;
+  border-radius: 6px;
+  padding: 0.3rem 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  min-height: 44px;
+}
+.rx-review-banner button.rx-review-later { background: transparent; color: #dfe5f5; border: 1px solid #8fa0c8; font-weight: 500; }
+.rv-kpi th { font-weight: 500; color: var(--muted); }
+.rv-kpi td.num { font-size: 1.15rem; font-weight: 700; }
+
 .notes-transfer {
   /* 從導覽或橫幅跳過來時要停在橫幅下面 —— 橫幅是 position:sticky;top:0,
      而它正是把她送到這裡的那一條。96px 是全站既有的 scroll-margin-top;

@@ -351,6 +351,10 @@ jobs:
       # 衝突備份槽與病例分開、備份腳本用通行碼登入並把藥櫃一起拉到站外(通行碼錯 / 沒給 = 零寫入)。
       - name: herb inventory storage guards (protected key, separate conflict slot, off-site backup with passphrase)
         run: node scripts/test-herb-inventory-guards.js
+      # 半年開藥回顧(D37,2026-11-14):病歷自由文字開方解析(中英並列只算中文、日期不當天數、單位未記不換算)、
+      # 沒填天數不准算出罐數、自家病例不進病歷線、半年提醒到期。虛構開方,require 真正在跑的 js/rx-profile.js。
+      - name: semi-annual prescription review (free-text rx parsing, bottles only from recorded or user-entered numbers)
+        run: node scripts/test-rx-profile.js
       - name: quality panel honesty (live counts, snapshot dates, {} is not content)
         run: node scripts/test-quality-panel-honesty.js
 
