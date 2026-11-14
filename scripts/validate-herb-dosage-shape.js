@@ -277,14 +277,27 @@ function checkDisplay(recs, D, dietary, contradictory) {
     if (holdIds.has(r.id)) fail.push(`${where},但它在 SAFETY_HOLD。`);
     if (contraIds.has(r.id) || (dn.flags || {}).route_contradiction) fail.push(`${where},但它是 D4 給法矛盾的卡。`);
     if ((dn.flags || {}).magnitude_suspicious) fail.push(`${where},但它被標量級可疑。`);
-    if (med.length !== 1 || d.text !== String(med[0].verbatim).trim()) fail.push(`${where},不是「唯一一筆藥用範圍的原文」。`);
+    // 顯示的字必須是「藥用原文」:單筆 = 那一筆逐字;多筆 = 每一筆原文(去句尾標點)照順序用;並列
+    // (Ting 2026-11-14 裁示並列顯示)。閘門自己重算一次期望值,不信模組。
+    const trimTail = (v) => String(v == null ? "" : v).trim().replace(/[。;;\s]+$/, "");
+    const expected = med.length === 1 ? String(med[0].verbatim).trim() : med.map((m) => trimTail(m && m.verbatim)).join(";");
+    const isMedicinalText = med.length >= 1 && d.text === expected;
+    if (!isMedicinalText) fail.push(`${where},不是藥用範圍的原文(單筆逐字 / 多筆逐筆並列)。`);
+    if (med.length > 1) {
+      const srcs = new Set(med.map((m) => String((m && m.attributed_to) || "").trim()));
+      if (srcs.size !== 1 || srcs.has("")) fail.push(`${where},多筆並列但出處不是同一個。`);
+      for (const m of med) {
+        const nums = (String((m && m.verbatim) || "").match(/\d+(?:\.\d+)?/g) || []).map(Number);
+        if (!m || !Number.isFinite(m.low_g) || !Number.isFinite(m.high_g) || !nums.includes(m.low_g) || !nums.includes(m.high_g)) fail.push(`${where},多筆並列但其中一筆的原文與整形數字對不上。`);
+      }
+    }
     // 食療那一筆的原文不准出現 —— 除非它跟藥用那一筆逐字相同(龍膽草、吳茱萸:兩欄都寫「3-6克」/「1-3克」,
     // 顯示的確實是藥用那一筆;全庫實跑時這條第一版把龍膽草誤判成食療)。
-    const isMedicinalText = med.length === 1 && d.text === String(med[0].verbatim).trim();
     if (/食療/.test(d.text) || (!isMedicinalText && diet.some((x) => String(x.verbatim).trim() === d.text))) fail.push(`${where},那是食療用量。`);
-    if (dietaryIds.has(r.id) && med[0] && upperBound(d.text) > Math.max(med[0].high_g, upperBound(med[0].verbatim) || 0)) fail.push(`${where},數字超過這張卡的藥用上限(D3 食療超量卡)。`);
+    const medUpper = Math.max(0, ...med.map((m) => Math.max(Number(m && m.high_g) || 0, upperBound(m && m.verbatim) || 0)));
+    if (dietaryIds.has(r.id) && med[0] && upperBound(d.text) > medUpper) fail.push(`${where},數字超過這張卡的藥用上限(D3 食療超量卡)。`);
     if (!d.source) fail.push(`${where},沒有出處。`);
-    if (/待[^。;;]{0,12}(核對|確認|查證)|⚠/.test(String(med[0] && med[0].attributed_to))) fail.push(`${where},但出處寫明待核對。`);
+    if (med.some((m) => /待[^。;;]{0,12}(核對|確認|查證)|⚠/.test(String(m && m.attributed_to)))) fail.push(`${where},但出處寫明待核對。`);
     if (D.saysToxic(r)) fail.push(`${where},但卡片自己寫著有毒。`);
     const flags = (r.safety_flags || []).filter((f) => typeof f === "string" && /toxic|dose_preparation_review|not_for_self_treatment|heavy_metal|prohibited|safety_review_pending|aristolochic/i.test(f));
     if (flags.length) fail.push(`${where},但它帶著 ${flags.join("、")}。`);
@@ -442,6 +455,8 @@ function selfTest() {
       const toxic = good(); toxic.properties_taste_temp = "辛、溫、有毒";
       const flagged = good(); flagged.safety_flags = ["toxicity_review"];
       const curated = good(); curated.dosage_g = { standard_daily_g: "3–9g(課件)" };
+      const two = (r) => { r.dosage_normalized.medicinal.push({ route: "powder", low_g: 1, high_g: 3, verbatim: "研末,每次1-3g。", attributed_to: "https://cloudtcm.com/herb/1" }); return r; };
+      const twoRec = () => two(good());
       return [
         { name: "D6 乾淨的單一來源藥用範圍 → 顯示原文與出處(不誤擋)", run: () => { const d = D.displayDose(good()); return d.kind === "reference" && d.text === "3-9克" && d.source === "CloudTCM"; } },
         { name: "D6 食療上限較高的卡:顯示的是藥用 3-9克,不是食療 10-30克", run: () => !/10|30/.test(D.displayDose(good()).text) },
@@ -458,15 +473,25 @@ function selfTest() {
         heldWhen("數字沒有出處(旗標)", (r) => { r.dosage_normalized.flags.unattributed_numbers = true; }),
         heldWhen("數字沒有出處(空字串)", (r) => { r.dosage_normalized.medicinal[0].attributed_to = ""; }),
         heldWhen("出處寫明待核對", (r) => { r.dosage_normalized.medicinal[0].attributed_to = "藥典。⚠️ 數字待 Ting 以手邊藥典核對後升級。"; }),
-        heldWhen("藥用範圍兩筆", (r) => { r.dosage_normalized.medicinal.push({ route: "powder", low_g: 1, high_g: 3, verbatim: "研末 1-3g", attributed_to: "x" }); }),
+        { name: "D6 藥用範圍兩筆、同出處、都乾淨 → 兩筆原文並列(不誤擋)", run: () => { const r = good(); two(r); const d = D.displayDose(r); return d.kind === "reference" && d.text === "3-9克;研末,每次1-3g" && d.source === "CloudTCM"; } },
+        heldWhen("藥用範圍兩筆但出處不同", (r) => { two(r); r.dosage_normalized.medicinal[1].attributed_to = "x"; }),
+        heldWhen("藥用範圍兩筆,第二筆沒有數字", (r) => { two(r); delete r.dosage_normalized.medicinal[1].low_g; }),
+        heldWhen("藥用範圍兩筆,第二筆原文與數字對不上", (r) => { two(r); r.dosage_normalized.medicinal[1].high_g = 6; }),
+        heldWhen("藥用範圍兩筆,第二筆混有食療", (r) => { two(r); r.dosage_normalized.medicinal[1].verbatim = "食療 1-3g"; }),
+        heldWhen("藥用範圍兩筆,第二筆出處待核對", (r) => { two(r); r.dosage_normalized.medicinal.forEach((m) => { m.attributed_to = "藥典。⚠️ 數字待 Ting 核對。"; }); }),
+        heldWhen("藥用範圍兩筆但有毒(細辛、全蠍)", (r) => { two(r); r.properties_taste_temp = "辛、溫、有毒"; }),
+        heldWhen("藥用範圍兩筆但帶毒性旗標", (r) => { two(r); r.safety_flags = ["toxicity_review"]; }),
+        caught("多筆只顯示其中一筆", ref("3-9克"), twoRec(), /不是藥用範圍的原文/),
+        caught("多筆並列但出處不同", ref("3-9克;研末,每次1-3g"), (() => { const r = twoRec(); r.dosage_normalized.medicinal[1].attributed_to = "x"; return r; })(), /出處不是同一個/),
+        caught("多筆並列但一筆數字對不上", ref("3-9克;研末,每次1-3g"), (() => { const r = twoRec(); r.dosage_normalized.medicinal[1].high_g = 6; return r; })(), /對不上/),
         heldWhen("只有食療、沒有藥用", (r) => { r.dosage_normalized.medicinal = []; }),
         heldWhen("原文與整形後數字對不上", (r) => { r.dosage_normalized.medicinal[0].high_g = 12; }),
         heldWhen("原文混有食療", (r) => { r.dosage_normalized.medicinal[0].verbatim = "3-9克(食療)"; }),
         heldWhen("沒有聲明未新增數字", (r) => { r.dosage_normalized.no_new_numbers = false; }),
         heldWhen("具名列管", (r) => { r.id = "herb.su_he_xiang"; }),
         heldWhen("沒有旗標物件", (r) => { delete r.dosage_normalized.flags; }),
-        caught("顯示了食療用量", ref("10-30克"), null, /那是食療用量|不是「唯一一筆藥用範圍的原文」/),
-        caught("顯示了不是原文的數字", ref("6-15g"), null, /不是「唯一一筆藥用範圍的原文」/),
+        caught("顯示了食療用量", ref("10-30克"), null, /那是食療用量|不是藥用範圍的原文/),
+        caught("顯示了不是原文的數字", ref("6-15g"), null, /不是藥用範圍的原文/),
         caught("有毒藥被顯示", ref("3-9克"), toxic, /卡片自己寫著有毒/),
         caught("帶毒性旗標的藥被顯示", ref("3-9克"), flagged, /帶著 toxicity_review/),
         caught("沒有出處就顯示", ref("3-9克", { source: "" }), null, /沒有出處/),

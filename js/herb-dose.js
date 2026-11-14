@@ -11,7 +11,8 @@
  *   - 出處寫著「待核對」的(雄黃、硃砂)→ 不顯示。
  *   - 有毒 / 劑量炮製要審 / 不可自行用藥 / 安全審查未完的藥 → 不顯示,逐張等 Ting 裁定。
  *     寧可留「待補」:沒查證的數字出現在有毒藥的卡上,比空白糟。
- *   - 藥用範圍不只一筆(細辛、佩蘭、白及、全蠍、薤白)→ 不顯示(哪一筆是「常用」要人判)。
+ *   - 藥用範圍不只一筆 → 每一筆原文並列(Ting 2026-11-14 裁示;佩蘭、白及、薤白),不替她挑哪一筆是「常用」。
+ *     每一筆都要過同一組檢查且同一出處;細辛、全蠍有毒,照樣扣住。
  *   - 這裡不產生任何數字:顯示的字串就是資料裡的 verbatim 原文。
  * 已有 dosage_g.standard_daily_g 的卡不受影響(那一欄優先)。
  * 行為真值表在 scripts/validate-herb-dosage-shape.js(D6,對全部記錄逐張跑)。
@@ -71,23 +72,31 @@
     const med = arr(dn.medicinal).filter((m) => m && typeof m === "object");
     const numeric = med.filter((m) => Number.isFinite(m.low_g) && Number.isFinite(m.high_g) && m.low_g > 0 && m.high_g >= m.low_g);
     if (!numeric.length) return held("沒有可辨識的藥用數字");
-    if (med.length !== 1) return held("藥用範圍不只一筆");
-    const m = numeric[0];
-    const verbatim = str(m.verbatim).trim();
-    const attributed = str(m.attributed_to).trim();
-    if (!verbatim) return held("沒有原文");
-    if (!attributed) return held("數字沒有出處");
-    if (/待[^。;;]{0,12}(核對|確認|查證)|⚠/.test(attributed)) return held("出處寫明待核對");
-    if (/食療/.test(verbatim)) return held("原文混有食療用量");
-    // 原文裡的數字必須就是 low / high(整形時沒有改過數字)
-    const nums = (verbatim.match(/\d+(?:\.\d+)?/g) || []).map(Number);
-    if (!nums.includes(m.low_g) || !nums.includes(m.high_g)) return held("原文與整形後的數字對不上");
+    // 2026-11-14 Ting 裁示「並列顯示」:藥用範圍不只一筆時(乾品 / 鮮品、煎湯 / 研末),
+    // 不替她挑哪一筆是「常用」,每一筆原文照資料順序並列。條件比單筆更嚴:
+    // **每一筆**都要過同一組檢查、而且全部同一個出處;有毒 / 帶旗標的照樣扣住(細辛、全蠍)。
+    if (numeric.length !== med.length) return held("藥用範圍不只一筆,其中有沒有數字的");
+    const attributed = str(med[0].attributed_to).trim();
+    const texts = [];
+    for (const m of med) {
+      const verbatim = str(m.verbatim).trim();
+      const a = str(m.attributed_to).trim();
+      if (!verbatim) return held("沒有原文");
+      if (!a) return held("數字沒有出處");
+      if (a !== attributed) return held("藥用範圍不只一筆,出處不同");
+      if (/待[^。;;]{0,12}(核對|確認|查證)|⚠/.test(a)) return held("出處寫明待核對");
+      if (/食療/.test(verbatim)) return held("原文混有食療用量");
+      // 原文裡的數字必須就是 low / high(整形時沒有改過數字)
+      const nums = (verbatim.match(/\d+(?:\.\d+)?/g) || []).map(Number);
+      if (!nums.includes(m.low_g) || !nums.includes(m.high_g)) return held("原文與整形後的數字對不上");
+      texts.push(verbatim.replace(/[。;;\s]+$/, ""));
+    }
     if (saysToxic(record)) return held("性味欄寫著有毒或小毒");
     const hf = holdFlags(record);
     if (hf.length) return held("安全旗標:" + hf.join("、"));
     if (record.safety_review_pending) return held("安全審查未完");
     const s = sourceLabel(attributed);
-    return out("reference", { text: verbatim, source: s.label, sourceUrl: s.url, granule });
+    return out("reference", { text: texts.length === 1 ? str(med[0].verbatim).trim() : texts.join(";"), source: s.label, sourceUrl: s.url, granule, parts: texts.length });
   }
 
   const api = { displayDose, saysToxic, holdFlags, sourceLabel, SAFETY_HOLD_IDS, HOLD_FLAGS };
