@@ -8467,3 +8467,86 @@ html { scroll-padding-top: 92px; }
 .hi-edit { border-color: var(--gold); }
 .hi-lot-edit { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); align-items: end; }
 #hiBulkText { width: 100%; white-space: pre; overflow-wrap: normal; overflow-x: auto; tab-size: 10; font-family: ui-monospace, Consolas, monospace; font-size: 0.82rem; border: 1px solid var(--line); border-radius: 8px; padding: 0.5rem; background: var(--paper); }
+
+/* ── 今日診前單 Pre-shift(2026-11-20)── 手機為主:單欄卡片、注意事項置頂;列印時收掉輸入框 */
+.preshift-app { display: grid; gap: 0.9rem; max-width: 880px; }
+.ps-head { display: grid; gap: 0.45rem; }
+.ps-datebar { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; }
+.ps-datebar input[type="date"] { font-size: 1rem; padding: 0.3rem 0.5rem; }
+.ps-dayline { font-family: var(--serif); font-size: 1.25rem; margin: 0; }
+.ps-stats { display: flex; flex-wrap: wrap; gap: 0.4rem 1rem; align-items: baseline; font-size: 0.92rem; }
+.ps-stats b { font-size: 1.15rem; font-variant-numeric: tabular-nums; }
+.ps-stat-warn { color: var(--warn); }
+.ps-progress { height: 6px; border-radius: 999px; background: var(--line); overflow: hidden; }
+.ps-progress i { display: block; height: 100%; background: var(--accent); }
+.ps-msg { margin: 0; padding: 0.45rem 0.7rem; border-radius: 8px; font-size: 0.9rem; }
+.ps-msg.ok { background: var(--green-soft); color: var(--accent-dark); }
+.ps-msg.bad { background: #f6e3da; color: var(--warn); font-weight: 600; }
+.ps-picker { display: grid; gap: 0.4rem; }
+.ps-picker-bar { display: flex; gap: 0.4rem; }
+.ps-picker-bar input[type="search"] { flex: 1 1 auto; min-width: 0; font-size: 1rem; padding: 0.5rem 0.7rem; }
+.ps-picker-bar input[type="time"] { flex: 0 0 auto; font-size: 1rem; }
+.ps-hits { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.3rem; }
+.ps-hits button { width: 100%; display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.3rem 0.6rem; text-align: left; padding: 0.5rem 0.7rem; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; color: var(--ink); cursor: pointer; }
+.ps-hits button:hover, .ps-hits button:focus-visible { border-color: var(--accent); }
+.ps-hits small { color: var(--muted); }
+.ps-hits b { margin-left: auto; color: var(--accent-dark); }
+.ps-list { display: grid; gap: 0.75rem; }
+.ps-card { background: var(--panel); border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: 12px; padding: 0.75rem 0.85rem; display: grid; gap: 0.5rem; box-shadow: var(--shadow-soft); }
+.ps-card.has-flag { border-left-color: var(--warn); }
+.ps-card.is-done { opacity: 0.62; }
+.ps-card.is-done .ps-title strong { text-decoration: line-through; text-decoration-thickness: 1px; }
+.ps-card.ps-missing { border-left-color: var(--muted); }
+.ps-row1 { display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; }
+.ps-check { position: relative; width: 30px; height: 30px; flex: 0 0 auto; cursor: pointer; }
+.ps-check input { position: absolute; inset: 0; opacity: 0; margin: 0; cursor: pointer; }
+.ps-check span { position: absolute; inset: 0; border: 2px solid var(--accent); border-radius: 8px; background: var(--paper); }
+.ps-check input:checked + span { background: var(--accent); }
+.ps-check input:checked + span::after { content: "✓"; position: absolute; inset: 0; display: grid; place-items: center; color: #fff; font-weight: 700; }
+.ps-check input:focus-visible + span { outline: 2px solid var(--gold); outline-offset: 2px; }
+.ps-time-input { font-size: 1.05rem; font-variant-numeric: tabular-nums; font-weight: 700; padding: 0.15rem 0.3rem; border: 1px solid var(--line); border-radius: 6px; background: var(--paper); color: var(--ink); }
+.ps-time { font-weight: 700; font-variant-numeric: tabular-nums; }
+.ps-ident { display: flex; flex-wrap: wrap; gap: 0.2rem 0.5rem; align-items: baseline; }
+.ps-code { font-weight: 800; font-size: 1.15rem; letter-spacing: 0.03em; }
+.ps-pid { font-family: ui-monospace, Consolas, monospace; font-size: 0.82rem; color: var(--muted); border: 1px solid var(--line); border-radius: 6px; padding: 0 0.35rem; }
+.ps-sexage { font-variant-numeric: tabular-nums; color: var(--muted); }
+.ps-title { display: grid; gap: 0.1rem; }
+.ps-title strong { font-family: var(--serif); font-size: 1.02rem; }
+.ps-title small { color: var(--muted); }
+.ps-attn { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.3rem; }
+.ps-attn li { display: grid; gap: 0.05rem; padding: 0.35rem 0.55rem; border-radius: 8px; font-size: 0.9rem; }
+.ps-attn small { color: var(--muted); font-size: 0.78rem; }
+.ps-flag { background: #f6e3da; color: var(--warn); }
+.ps-mention { background: var(--tier-focus-soft, #f8ecd2); color: #7a5410; }
+.ps-maybe { background: var(--paper); color: var(--muted); border: 1px dashed var(--line); }
+.ps-attn-none { font-size: 0.8rem; color: var(--muted); }
+.ps-lastvisit { font-size: 0.88rem; color: var(--muted); display: flex; flex-wrap: wrap; gap: 0.3rem 0.8rem; }
+.ps-lastvisit b { color: var(--ink); font-variant-numeric: tabular-nums; }
+.ps-donetag { color: var(--accent-dark); font-weight: 600; }
+.ps-last { margin: 0; display: grid; gap: 0.2rem; font-size: 0.9rem; }
+.ps-last div { display: grid; grid-template-columns: 6.2em 1fr; gap: 0.5rem; }
+.ps-last dt { color: var(--muted); font-size: 0.8rem; padding-top: 0.1rem; }
+.ps-last dd { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+.ps-last-empty { font-size: 0.88rem; color: var(--muted); }
+.ps-actions { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.ps-actions .ps-remove { margin-left: auto; color: var(--muted); }
+.ps-notebox, .ps-daynote { display: grid; gap: 0.4rem; }
+.ps-notebox textarea, .ps-daynote textarea { width: 100%; box-sizing: border-box; font: inherit; font-size: 1rem; padding: 0.5rem; border: 1px solid var(--line); border-radius: 8px; background: var(--paper); color: var(--ink); }
+.ps-notebox button, .ps-daynote > button { justify-self: start; }
+.ps-daynote { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 0.75rem 0.85rem; }
+.ps-daynote h4 { margin: 0; font-family: var(--serif); }
+.ps-notes { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.35rem; }
+.ps-notes li { border-left: 3px solid var(--gold); padding: 0.15rem 0 0.15rem 0.6rem; }
+.ps-notes time { font-size: 0.76rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.ps-notes p { margin: 0.1rem 0 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+@media (max-width: 560px) {
+  .ps-last div { grid-template-columns: 1fr; gap: 0; }
+  .ps-actions .ps-remove { margin-left: 0; }
+}
+@media print {
+  body[data-active-ws="preshift"] .topbar, body[data-active-ws="preshift"] .nav-panel, body[data-active-ws="preshift"] .nav-scrim, .ps-noprint, .ps-actions, .ps-notebox textarea, .ps-notebox button { display: none !important; }
+  .preshift-app { max-width: none; }
+  .ps-card { box-shadow: none; break-inside: avoid; padding: 0.4rem 0.6rem; }
+  .ps-card.is-done { opacity: 1; }
+  .ps-time-input { border: 0; }
+}

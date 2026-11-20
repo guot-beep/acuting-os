@@ -9539,6 +9539,7 @@ function renderClinicalCaseDetail(item) {
       <button type="button" class="ghost" data-case-jump="caseSecInfo">病例資料</button>
       <button type="button" class="ghost" data-case-jump="caseSecOutcome">成效追蹤</button>
       <button type="button" class="ghost" data-case-jump="caseSecMeds">用藥</button>
+      <button type="button" class="ghost" data-case-jump="caseSecPreshiftNotes">心得</button>
     </nav>
     ${renderPatientHeaderBar(item)}
     <div class="clinical-mini-grid" id="caseSecInfo">
@@ -9582,12 +9583,15 @@ function renderClinicalCaseDetail(item) {
     <div class="soap-timeline">
       ${notes.length ? notes.map(renderSoapNoteCard).join("") : `<div class="case-empty">尚未有 SOAP note。點「新增 SOAP」開始第一診。</div>`}
     </div>
+    ${/* 診前單心得(2026-11-20):Ting 在今日診前單寫的心得,帶時間排在病例最後面(只讀,存在診前單那一本) */""}
+    ${window.AcuTingPreshiftUI ? AcuTingPreshiftUI.caseNotesHtml(item) : ""}
   `;
 
   document.querySelector("#editCaseInline").addEventListener("click", () => openCaseEditor(item));
   document.querySelector("#addSoapInline").addEventListener("click", () => openSoapEditor());
   wirePatientHeaderBar(item);
   if (window.AcuTingHerbInventoryUI) AcuTingHerbInventoryUI.wireCase(caseDetail);
+  if (window.AcuTingPreshiftUI) AcuTingPreshiftUI.wireCase(caseDetail);
   // 病歷很長(手機上 SOAP 在 3000px 以下):頂端一排跳轉。用按鈕不用 #錨點,錨點會被 #ws/ 路由吃掉。
   caseDetail.querySelectorAll("[data-case-jump]").forEach((b) => b.addEventListener("click", () => {
     document.getElementById(b.dataset.caseJump)?.scrollIntoView({ block: "start" });

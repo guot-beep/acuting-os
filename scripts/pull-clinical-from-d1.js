@@ -16,6 +16,7 @@
  *   3. 用 export-clinical-to-sqlite.js 建 <out>/acuting-clinical-d1-<時間>.db(32 張表,可下 SQL)。
  *   4. 藥櫃(acuting-herb-inventory-v1:品項、批次、異動帳、開藥紀錄)另存 <out>/acuting-herb-inventory-d1-<時間>.json,
  *      內容就是 app「匯出藥櫃備份」的那一份。雲端沒有藥櫃資料就不寫這個檔。
+ *   4b. 今日診前單(acuting-preshift-v1:哪天看誰、勾完成、心得)原文另存 <out>/acuting-preshift-d1-<時間>.json;沒有就不寫。
  *   5. 只留最近 --keep 份(各種檔各算)。
  * 產物是臨床資料:預設放 Documents\AcuTing\backups(repo 外),**絕不** commit(D7)。螢幕只印筆數,不印內容。
  */
@@ -34,6 +35,7 @@ const CLIENT_ID = process.env.CF_ACCESS_CLIENT_ID || arg("--client-id", "");
 const CLIENT_SECRET = process.env.CF_ACCESS_CLIENT_SECRET || arg("--client-secret", "");
 const KEY = "acuting-clinical-cases-v1";
 const INVENTORY_KEY = "acuting-herb-inventory-v1";
+const PRESHIFT_KEY = "acuting-preshift-v1";   // 今日診前單:排程 + 心得(2026-11-20)
 const PASSPHRASE = process.env.ACUTING_CLINICAL_PASSPHRASE || "";
 const EXPORTER = path.join(__dirname, "export-clinical-to-sqlite.js");
 
@@ -104,6 +106,16 @@ const EXPORTER = path.join(__dirname, "export-clinical-to-sqlite.js");
     console.log(`藥櫃備份 → ${f}(品項 ${(inventory.products || []).length}、批次 ${(inventory.lots || []).length}、異動 ${inventory.txns.length}、開方 ${(inventory.rx || []).length})`);
   }
 
+  const psRaw = j.keys[PRESHIFT_KEY];
+  if (psRaw === undefined) console.log("診前單:雲端還沒有診前單資料,沒有寫診前單備份。");
+  else {
+    const f = path.join(OUT, `acuting-preshift-d1-${stamp}.json`);
+    fs.writeFileSync(f, psRaw);   // 原文照存:心得是她打的字,備份不經過任何解析
+    let n = "";
+    try { const p = JSON.parse(psRaw); n = `(心得 ${Array.isArray(p.notes) ? p.notes.length : "?"} 則、排過 ${p.days ? Object.keys(p.days).length : "?"} 天)`; } catch (_) { n = "(⚠️ 不是 JSON,原文照存)"; }
+    console.log(`診前單備份 → ${f}${n}`);
+  }
+
   let dbOk = false;
   try {
     const out = execFileSync(process.execPath, [EXPORTER, jsonFile, dbFile], { encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] });
@@ -116,7 +128,7 @@ const EXPORTER = path.join(__dirname, "export-clinical-to-sqlite.js");
   }
   console.log(`${dbOk ? "SQLite 投影" : "SQLite 投影(不完整)"} → ${dbFile}`);
 
-  for (const [prefix, ext] of [["acuting-clinical-d1-", ".json"], ["acuting-clinical-d1-", ".db"], ["acuting-herb-inventory-d1-", ".json"], ["acuting-herb-inventory-d1-", ".raw.txt"]]) {
+  for (const [prefix, ext] of [["acuting-clinical-d1-", ".json"], ["acuting-clinical-d1-", ".db"], ["acuting-herb-inventory-d1-", ".json"], ["acuting-herb-inventory-d1-", ".raw.txt"], ["acuting-preshift-d1-", ".json"]]) {
     const files = fs.readdirSync(OUT).filter((f) => f.startsWith(prefix) && f.endsWith(ext)).sort();
     while (files.length > KEEP) { const f = files.shift(); try { fs.unlinkSync(path.join(OUT, f)); } catch (_) { /* */ } }
   }

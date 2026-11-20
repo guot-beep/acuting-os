@@ -47,6 +47,7 @@
 
         <div class="nav-group">
           <p class="nav-group__title" data-mode-text data-bilingual="臨床 Clinical" data-english="Clinical">臨床 Clinical</p>
+          <a href="#ws/preshift" data-ws="preshift" class="nav-sub" data-mode-text data-bilingual="今日診前單 Pre-shift" data-english="Pre-shift">今日診前單 Pre-shift</a>
           <a href="#ws/cases" data-ws="cases" class="nav-sub" data-mode-text data-bilingual="病例 Cases" data-english="Cases">病例 Cases</a>
           <a href="#ws/patients" data-ws="patients" class="nav-sub" data-mode-text data-bilingual="病人 Patients" data-english="Patients">病人 Patients</a>
           <a href="#ws/herbinv" data-ws="herbinv" class="nav-sub" data-mode-text data-bilingual="藥櫃 Inventory" data-english="Herb inventory">藥櫃 Inventory</a>
@@ -689,6 +690,19 @@
            write path lives in this section. -->
       <!-- 藥櫃(D36,2026-11-03):科學中藥 / 水藥庫存、開藥紀錄、補貨與到期提醒。畫面由 js/herb-inventory-ui.js 畫進 #herbInvApp,
            計算在 js/herb-inventory.js(真值表 scripts/validate-herb-inventory.js)。資料跟病例同一個雲端、同一個通行碼。 -->
+      <!-- 今日診前單 Pre-shift(2026-11-20):選哪天、幾點、看哪幾個病例,勾完成、寫心得。畫面 js/preshift-ui.js,
+           計算 js/preshift.js(真值表 scripts/validate-preshift.js)。病例只讀;排程與心得跟病例同一個雲端、同一個通行碼。 -->
+      <section class="preshift-section" data-workspace="preshift" id="preshift" aria-label="今日診前單 Pre-shift">
+        <div class="section-heading ps-noprint">
+          <div>
+            <p class="eyebrow">Pre-shift</p>
+            <h2 data-mode-text data-bilingual="今日診前單 / Pre-shift" data-english="Pre-shift">今日診前單 / Pre-shift</h2>
+          </div>
+          <span class="data-pill">時間 · 注意事項 · 上次 SOAP · 心得</span>
+        </div>
+        <div id="preshiftApp" class="preshift-app"><p class="note">載入中…</p></div>
+      </section>
+
       <section class="herbinv-section" data-workspace="herbinv" id="herbInventory" aria-label="藥櫃 Herb inventory">
         <div class="section-heading">
           <div>
@@ -1262,12 +1276,14 @@
     <script defer src="js/case-search.js"></script>
     <script defer src="js/visit-handoff.js"></script>
     <script defer src="js/herb-inventory.js"></script>
+    <script defer src="js/preshift.js"></script>
     <script defer src="js/rx-profile.js"></script>
     <script defer src="js/herb-dose.js"></script>
     <script defer src="app.js"></script>
     <script defer src="js/router.js"></script>
     <script defer src="js/knowledge.js"></script>
-    <script defer src="js/herb-inventory-ui.js"></script>    <script type="module">
+    <script defer src="js/herb-inventory-ui.js"></script>
+    <script defer src="js/preshift-ui.js"></script>    <script type="module">
       /* module scripts 排在所有 defer script 之後執行——執行到這裡代表所有
          defer 都「被嘗試過」，不保證都成功（失敗的 defer 不會擋住後面的
          script）。是否真的載到由 app.js 的 dataLoadGuard 判定並以紅 banner
