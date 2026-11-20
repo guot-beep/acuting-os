@@ -1177,7 +1177,16 @@
       "nullable": true,
       "data_loss_risk": "none",
       "status": "mapped"
+    },    {
+      "source_scope": "case",
+      "source_field": "formerPatientCodes",
+      "destination": "(NO DESTINATION)",
+      "transformation": "病人編號轉換(js/patient-id-migration.js):轉成 PT- 之前用過的舊永久編號,只當別名(週交接/搜尋認得、發號避開)。D1 正本以 JSON 原樣保存;SQLite schema 還沒有對應的表(之後若需要 = 跟 case_care_contexts 同形的一欄一列)。",
+      "nullable": true,
+      "data_loss_risk": "low",
+      "status": "no_destination_yet"
     },
+
     {
       "source_scope": "case",
       "source_field": "categoryPrimary",
