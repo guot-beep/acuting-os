@@ -77,6 +77,13 @@ let caseListSort = "highlight";
 let caseDetailFlash = "";
 // 舊代號轉換面板的狀態:草稿只在記憶體(不寫進任何儲存),關掉分頁就沒了 —— 代號本身就是半識別資訊。
 let codeMigrationOpen = false;
+let patientIdMigOpen = false;
+let patientIdMigBackedUp = false;
+let patientIdMigChecked = false;
+let patientIdMigBusy = false;
+let patientIdMigResult = null;
+let patientIdMigError = "";
+let patientIdMigDraft = {};
 let codeMigrationBackedUp = false;
 let codeMigrationResult = null;
 const codeMigrationDraft = {};
@@ -1873,6 +1880,19 @@ document.querySelector("#codeMigrationBtn")?.addEventListener("click", () => {
   renderCodeMigrationPanel();
   if (codeMigrationOpen) document.querySelector("#codeMigrationPanel")?.scrollIntoView({ block: "start" });
 });
+document.querySelector("#patientIdMigBtn")?.addEventListener("click", () => {
+  patientIdMigOpen = !patientIdMigOpen;
+  patientIdMigResult = null;
+  patientIdMigError = "";
+  if (patientIdMigOpen && globalThis.AcuTingPatientIdMigration) {
+    // 每次打開都重新預填(已經打過的保留):她可以改成別處已在用的 PT 號,或清空 = 這次不換
+    const fresh = AcuTingPatientIdMigration.suggestPatientIds(clinicalCases);
+    patientIdMigDraft = Object.assign(fresh, patientIdMigDraft);
+  }
+  document.querySelector("#caseMoreMenu")?.removeAttribute("open");
+  renderPatientIdMigrationPanel();
+  if (patientIdMigOpen) document.querySelector("#patientIdMigPanel")?.scrollIntoView({ block: "start" });
+});
 document.querySelector("#practiceAuditBtn")?.addEventListener("click", (e) => {
   practiceAuditOpen = !practiceAuditOpen;
   e.currentTarget.classList.toggle("active", practiceAuditOpen);
@@ -2288,7 +2308,10 @@ function loadClinicalCases() {
   }
 }
 
-function persistClinicalCases() {
+// opts.renames / opts.idByCode:只有「病人編號轉換」會帶 —— 改走 store.renamePatientCodes
+// (v2 世界要同一個病人物件換 id+code,一般 save 會留下空殼病人)。其他守門完全一樣。
+function persistClinicalCases(opts) {
+  const renames = opts && opts.renames;
   if (clinicalStoreIntegrityError) {
     alert("唯讀保護中,拒絕存檔(避免覆蓋半載入的資料):\n" + clinicalStoreIntegrityError);
     return false;
@@ -2302,8 +2325,13 @@ function persistClinicalCases() {
     return false;
   }
   try {
+    if (renames && !(window.AcuTingClinicalStore && typeof AcuTingClinicalStore.renamePatientCodes === "function")) {
+      alert("病人編號轉換需要 clinical-store 模組,沒載入 —— 什麼都沒寫。請重新整理。");
+      return false;
+    }
     if (window.AcuTingClinicalStore) {
-      AcuTingClinicalStore.save(clinicalCases);
+      if (renames) AcuTingClinicalStore.renamePatientCodes(clinicalCases, renames, opts.idByCode);
+      else AcuTingClinicalStore.save(clinicalCases);
       // v2 模式:存檔後補建 pending 病人(fire-and-forget;失敗不影響已存病歷)
       if (AcuTingClinicalStore.activeIsV2 && AcuTingClinicalStore.activeIsV2() && AcuTingClinicalStore.syncPendingPatients) {
         // M3:病人 id 鑄造失敗過去只有 console.error —— 病例存進去了、病人列表
@@ -6215,6 +6243,9 @@ function normalizeClinicalCase(value) {
   return {
     id: String(value.id || createId("case")),
     patientCode: String(value.patientCode || ""),
+    // 轉成 PT- 之前用過的病人編號(js/patient-id-migration.js)。只當別名:週交接/搜尋認得舊編號,
+    // 新發的號不會撞到;畫面與輸出一律不顯示。沒轉換過的病例 = []。
+    formerPatientCodes: Array.isArray(value.formerPatientCodes) ? value.formerPatientCodes.map(String).filter((s) => s.trim()) : [],
     caseTitle: String(value.caseTitle || ""),
     caseCategory: String(value.caseCategory || ""),
     status: String(value.status || "active"),
@@ -7996,7 +8027,7 @@ function caseLabelHtml(l, { clickable = false, fallbackCode = "" } = {}) {
 // 新病人的永久編號:PT- + 6 碼亂數(去掉 0/O/1/I/L 易混字)。不是縮寫、不是年齡,
 // 跟現有編號撞到就重抽(11/02 標準第 5 條)。
 function generatePatientId() {
-  const taken = new Set(clinicalCases.map((c) => String(c.patientCode || "").trim()));
+  const taken = new Set(clinicalCases.flatMap((c) => [String(c.patientCode || "").trim(), ...(c.formerPatientCodes || []).map((f) => String(f).trim())]));
   const ALPHA = "23456789ABCDEFGHJKMNPQRSTUVWXYZ";
   for (;;) {
     const bytes = crypto.getRandomValues(new Uint8Array(6));
@@ -9132,6 +9163,145 @@ function applyCodeMigrationFromPanel() {
   for (const r of plan.changes) delete codeMigrationDraft[r.key];
   renderClinicalCases();
   renderCodeMigrationPanel();
+}
+
+// ---- 病人編號轉換(舊編號 → PT-xxxxxx,2026-11-20)----
+// 規則在 js/patient-id-migration.js(有真值表);寫入在 js/clinical-store.js renamePatientCodes()。
+// 這裡:預覽(舊 → 新逐列)、先匯出備份、勾「已逐列核對」才能套用(不用 confirm(),畫面本身就是確認)。
+function renderPatientIdMigrationPanel() {
+  const panel = document.getElementById("patientIdMigPanel");
+  if (!panel) return;
+  panel.hidden = !patientIdMigOpen;
+  if (!patientIdMigOpen) { panel.innerHTML = ""; return; }
+  const M = globalThis.AcuTingPatientIdMigration;
+  if (!M) { panel.innerHTML = '<div class="case-empty">病人編號轉換模組沒有載入,請重新整理。</div>'; return; }
+  const plan = M.planPatientIdMigration(clinicalCases, patientIdMigDraft);
+  const titlesOf = (ids) => clinicalCases.filter((c) => ids.includes(c.id)).map((c) => c.caseTitle || "Untitled").join("、");
+  const resultHtml = patientIdMigResult ? `
+    <div class="code-mig-result" role="status"><strong>已轉換 ${patientIdMigResult.length} 位(OneNote / ChatGPT 請照這張表改):</strong>
+      <ul data-pim-result>${patientIdMigResult.map((r) => `<li><code>${escapeHtml(r.oldCode)}</code> → <code>${escapeHtml(r.newCode)}</code>${r.displayCodes.length ? ` <small>(${escapeHtml(r.displayCodes.join("、"))})</small>` : ""}</li>`).join("")}</ul>
+      <button type="button" class="ghost" data-pim-copy>複製對照表</button></div>` : "";
+  panel.innerHTML = `
+    <div class="code-mig-head">
+      <strong>轉換病人編號 → PT-xxxxxx</strong>
+      <button type="button" class="ghost" data-pim-close>關閉</button>
+    </div>
+    <p class="code-mig-note">只改「病人編號」(永久鍵)。顯示代號、病例、SOAP 一個字都不動;同一位病人的所有病例一起換,不會被拆開。
+      舊編號會留成別名:交接檔還寫舊編號時照樣接到同一位病人。新編號已經先幫你抽好,可以改成別處已經在用的 PT 號;清空 = 這次不換。
+      ${plan.standard ? `已經是 PT- 格式的 ${plan.standard} 位不列出。` : ""}${plan.blankCases ? ` 沒有編號的病例 ${plan.blankCases} 筆不在這裡處理。` : ""}</p>
+    ${resultHtml}
+    ${patientIdMigError ? `<div class="code-mig-status is-error" role="alert" data-pim-error>${escapeHtml(patientIdMigError)}</div>` : ""}
+    ${plan.rows.length ? `<div class="code-mig-rows">${plan.rows.map((r) => `
+      <div class="code-mig-row" data-pim-row="${escapeAttribute(r.key)}">
+        <div class="code-mig-old"><code>${escapeHtml(r.oldCode)}</code><small>${escapeHtml(r.displayCodes.join("、") || "(沒有顯示代號)")} · ${r.caseIds.length} 個病例</small><small>${escapeHtml(titlesOf(r.caseIds))}</small></div>
+        <input type="text" autocomplete="off" spellcheck="false" placeholder="PT-xxxxxx" aria-label="${escapeAttribute(r.oldCode)} 的新病人編號" data-pim-input="${escapeAttribute(r.key)}" value="${escapeAttribute(patientIdMigDraft[r.key] || "")}" />
+        <div class="code-mig-status" data-pim-status="${escapeAttribute(r.key)}"></div>
+      </div>`).join("")}</div>` : `<div class="case-empty">每位病人的編號都已經是 PT- 格式。</div>`}
+    <div class="code-mig-actions">
+      <button type="button" class="ghost" data-pim-backup>1. 先匯出備份</button>
+      <label class="case-chip"><input type="checkbox" data-pim-check ${patientIdMigChecked ? "checked" : ""} /> 2. 我已逐列核對舊 → 新</label>
+      <button type="button" data-pim-apply disabled>3. 套用</button>
+      <span class="code-mig-summary" data-pim-summary></span>
+    </div>`;
+  panel.querySelector("[data-pim-close]").addEventListener("click", () => { patientIdMigOpen = false; renderPatientIdMigrationPanel(); });
+  panel.querySelectorAll("[data-pim-input]").forEach((input) => input.addEventListener("input", () => {
+    patientIdMigDraft[input.dataset.pimInput] = input.value;
+    patientIdMigChecked = false;   // 改過對照表就要重新核對
+    const box = panel.querySelector("[data-pim-check]");
+    if (box) box.checked = false;
+    syncPatientIdMigrationStatus();
+  }));
+  panel.querySelector("[data-pim-check]").addEventListener("change", (e) => { patientIdMigChecked = e.target.checked; syncPatientIdMigrationStatus(); });
+  panel.querySelector("[data-pim-backup]").addEventListener("click", () => {
+    exportClinicalCases();
+    patientIdMigBackedUp = true;
+    syncPatientIdMigrationStatus();
+  });
+  panel.querySelector("[data-pim-apply]").addEventListener("click", applyPatientIdMigrationFromPanel);
+  panel.querySelector("[data-pim-copy]")?.addEventListener("click", () => {
+    const text = (patientIdMigResult || []).map((r) => `${r.oldCode}\t${r.newCode}`).join("\n");
+    try { navigator.clipboard.writeText(text); } catch (_) { /* 複製失敗就照畫面抄 */ }
+  });
+  syncPatientIdMigrationStatus();
+}
+
+function syncPatientIdMigrationStatus() {
+  const panel = document.getElementById("patientIdMigPanel");
+  if (!panel || panel.hidden || !globalThis.AcuTingPatientIdMigration) return;
+  const plan = AcuTingPatientIdMigration.planPatientIdMigration(clinicalCases, patientIdMigDraft);
+  const byKey = new Map(plan.rows.map((r) => [r.key, r]));
+  panel.querySelectorAll("[data-pim-status]").forEach((cell) => {
+    const r = byKey.get(cell.dataset.pimStatus);
+    cell.className = `code-mig-status ${r && r.status === "error" ? "is-error" : r && r.status === "ok" ? "is-ok" : ""}`;
+    cell.innerHTML = !r || r.status === "skip" ? "這次不換"
+      : r.status === "error" ? r.errors.map(escapeHtml).join("<br>")
+      : `<code>${escapeHtml(r.oldCode)}</code> → <code>${escapeHtml(r.newCode)}</code>`;
+  });
+  const apply = panel.querySelector("[data-pim-apply]");
+  const backup = panel.querySelector("[data-pim-backup]");
+  const summary = panel.querySelector("[data-pim-summary]");
+  if (backup) backup.textContent = patientIdMigBackedUp ? "1. 已匯出備份 ✓" : "1. 先匯出備份";
+  if (apply) {
+    apply.disabled = patientIdMigBusy || !patientIdMigBackedUp || !patientIdMigChecked || !plan.changes.length || plan.blocked > 0;
+    apply.textContent = patientIdMigBusy ? "寫入中…" : `3. 套用 ${plan.changes.length} 位`;
+  }
+  if (summary) {
+    summary.textContent = plan.blocked ? `有 ${plan.blocked} 列要先改正`
+      : !plan.changes.length ? "沒有要換的"
+      : !patientIdMigBackedUp ? "先按「匯出備份」才能套用"
+      : !patientIdMigChecked ? "核對完勾第 2 項才能套用"
+      : `準備轉換 ${plan.changes.length} 位`;
+  }
+}
+
+async function applyPatientIdMigrationFromPanel() {
+  const M = globalThis.AcuTingPatientIdMigration;
+  const store = window.AcuTingClinicalStore;
+  if (!M || patientIdMigBusy) return;
+  const plan = M.planPatientIdMigration(clinicalCases, patientIdMigDraft);
+  if (!patientIdMigBackedUp || !patientIdMigChecked || plan.blocked || !plan.changes.length) return;
+  const fail = (msg) => { patientIdMigBusy = false; patientIdMigError = msg; renderPatientIdMigrationPanel(); };
+  if (!store || typeof store.renamePatientCodes !== "function") return fail("clinical-store 模組沒載入,什麼都沒寫。請重新整理。");
+  if (clinicalStoreIntegrityError) return fail("唯讀保護中,什麼都沒寫:" + clinicalStoreIntegrityError);
+  patientIdMigBusy = true;
+  patientIdMigError = "";
+  syncPatientIdMigrationStatus();
+  // v2 世界:新病人 id = 新編號的雜湊(async)。先全部算完,之後的寫入整段同步。
+  const idByCode = new Map();
+  try {
+    if (store.activeIsV2()) {
+      if (!globalThis.crypto || !crypto.subtle) return fail("這個瀏覽器環境沒有 crypto.subtle,算不出病人 id,什麼都沒寫。請用部署網址開。");
+      const sha = (s) => crypto.subtle.digest("SHA-256", new TextEncoder().encode(s))
+        .then((b) => [...new Uint8Array(b)].map((x) => x.toString(16).padStart(2, "0")).join(""));
+      for (const r of plan.changes) idByCode.set(r.newCode, await store.canonicalPatientIdOf(r.newCode, sha));
+    }
+  } catch (e) {
+    return fail("算病人 id 失敗,什麼都沒寫:" + String((e && e.message) || e));
+  }
+  // ---- 從這裡到 persist 全同步 ----
+  const again = M.planPatientIdMigration(clinicalCases, patientIdMigDraft);
+  const sig = (p) => JSON.stringify(p.changes.map((r) => [r.oldCode, r.newCode, r.caseIds]));
+  if (again.blocked || sig(again) !== sig(plan)) return fail("計算期間病例有變動,什麼都沒寫。請再看一次對照表、重新套用。");
+  const snapshot = structuredClone(clinicalCases);
+  const now = new Date().toISOString();
+  const changedIds = new Set(plan.changes.flatMap((r) => r.caseIds));
+  const next = M.applyPatientIdMigration(clinicalCases, plan)
+    .map((c) => (changedIds.has(c.id) ? normalizeClinicalCase({ ...c, updatedAt: now }) : c));
+  const check = M.verifyPatientIdMigration(snapshot, next, plan);
+  if (!check.ok) return fail("寫入前檢查沒過,什麼都沒寫:" + check.failures.slice(0, 3).join(";"));
+  clinicalCases = next;
+  const renames = plan.changes.map((r) => ({ from: r.oldCode, to: r.newCode }));
+  if (!persistClinicalCases({ renames, idByCode })) {
+    clinicalCases = snapshot;
+    return fail("存檔失敗,已整批退回(畫面上的資料跟轉換前一樣)。");
+  }
+  patientIdMigBusy = false;
+  patientIdMigChecked = false;
+  patientIdMigResult = plan.changes.map((r) => ({ oldCode: r.oldCode, newCode: r.newCode, displayCodes: r.displayCodes }));
+  for (const r of plan.changes) delete patientIdMigDraft[r.key];
+  noteClinicalSave();
+  renderClinicalCases();
+  renderPatientIdMigrationPanel();
 }
 
 // ---- 就診交接匯入 ----

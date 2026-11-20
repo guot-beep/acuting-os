@@ -343,6 +343,10 @@ jobs:
       # 同日重複預設不匯、同一筆交接不重匯。虛構病例真值表,require 真正在跑的 js/visit-handoff.js。
       - name: visit handoff import contract (append-only, code matching, same-day duplicates)
         run: node scripts/validate-visit-handoff.js
+      # 病人編號轉換(2026-11-20):舊永久編號 → PT-xxxxxx。只換永久鍵、同一位不拆不併、撞號擋下、v1/v2 一次寫入
+      # 失敗零寫入(v2 病人物件換 id+code,不留空殼)、交接與搜尋認得舊編號。虛構病例真值表,require 真正在跑的模組。
+      - name: patient id migration contract (legacy code -> PT-, atomic rename, v2 envelope re-key)
+        run: node scripts/validate-patient-id-migration.js
       # 藥櫃(D36,2026-11-03):帳只加不改、FEFO、補貨與常用門檻(20 g)、到期與依劑型的開封期限、開方整張檢查庫存、
       # 開藥紀錄依病人/依病症、採購清單。虛構品項真值表,require 真正在跑的 js/herb-inventory.js。
       - name: herb inventory contract (append-only ledger, FEFO, reorder and expiry alerts, prescriptions)

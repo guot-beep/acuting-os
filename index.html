@@ -538,6 +538,7 @@
             <input id="importHandoffFile" type="file" accept="application/json" />
           </label>
           <button id="codeMigrationBtn" class="ghost" type="button" aria-controls="codeMigrationPanel">批次設定顯示代號(AQZ)</button>
+          <button id="patientIdMigBtn" class="ghost" type="button" aria-controls="patientIdMigPanel">轉換病人編號 → PT-</button>
           <button id="practiceAuditBtn" class="ghost" type="button" aria-pressed="false" aria-controls="practiceAuditPanel" data-mode-text data-bilingual="診務回顧 Practice Audit" data-english="Practice Audit">診務回顧 Practice Audit</button>
           <label class="ghost file-label">
             <span data-mode-text data-bilingual="匯入病例" data-english="Import cases">匯入病例</span>
@@ -572,6 +573,8 @@
         <section class="practice-audit-panel" id="practiceAuditPanel" aria-label="診務回顧 Practice Audit" hidden></section>
         <!-- 批次設定顯示代號(11/02 標準:族群字母 + 名姓縮寫,例 AQZ)。只寫 displayCode、不動病人編號;一律由 Ting 逐位輸入,先匯出備份才能套用。 -->
         <section class="code-migration-panel" id="codeMigrationPanel" aria-label="病人代號轉換" hidden></section>
+        <!-- 病人編號轉換(11/20 標準):舊永久編號 → PT-xxxxxx,顯示代號不動;先匯出備份、逐列核對才能套用。 -->
+        <section class="code-migration-panel" id="patientIdMigPanel" aria-label="病人編號轉換" hidden></section>
         <!-- 就診交接預覽(D34 續四):只 append 新 SOAP;既有病例欄位只補空白。先匯出備份才能寫入。 -->
         <section class="code-migration-panel handoff-panel" id="handoffPanel" aria-label="就診交接預覽" hidden></section>
         <div class="case-grid">
@@ -1274,6 +1277,7 @@
     <script defer src="js/practice-audit.js"></script>
     <script defer src="js/care-draft.js"></script>
     <script defer src="js/case-search.js"></script>
+    <script defer src="js/patient-id-migration.js"></script>
     <script defer src="js/visit-handoff.js"></script>
     <script defer src="js/herb-inventory.js"></script>
     <script defer src="js/preshift.js"></script>
