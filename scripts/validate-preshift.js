@@ -115,6 +115,55 @@ const plain = P.summarizeCase({ id: "c2", allergies: "NKDA", soapNotes: [] }, { 
 check("NKDA 不算過敏旗標、沒 SOAP = 初診", plain.attention.length === 0 && plain.last === null && plain.lastVisit === "");
 check("summarizeCase(null)", P.summarizeCase(null) === null);
 
+// ── 4b. 草稿 3–7(Ting 選「依病歷規則產生」):每行有出處;「可能遇到的問題」只引用知識庫穴位卡的原文 ──
+global.window = global;
+require("../data/generated/points_361.js");
+const PTS = global.ACUTING_POINTS_361;
+const PT_LIST = Array.isArray(PTS) ? PTS : (PTS.records || Object.values(PTS));
+check("穴位資料載得到(分母合理)", PT_LIST.length >= 300, PT_LIST.length);
+const flat = (v) => (Array.isArray(v) ? v.join("\n") : (v ? String(v) : ""));
+const pointCautions = (code) => { const p = PT_LIST.find((r) => String(r.code || "").toUpperCase() === code); return p ? [flat(p.cautions), flat(p.cautions_zh), flat(p.cautions_en)].filter(Boolean).join("\n") : ""; };
+check("GB21 穴位卡本身寫了孕婦與氣胸(前提)", /孕/.test(pointCautions("GB21")) && /氣胸|pneumothorax/i.test(pointCautions("GB21")));
+const draftCase = {
+  id: "case.fake2", patientCode: "PT-000002", caseTitle: "虛構 頸痛", safetyFlags: ["氣胸史(虛構)"], historyPresent: "虛構:備孕中",
+  soapNotes: [{ id: "v9", visitDate: "2026-01-02", pointsUsed: "GB21 合谷LI4 LV3 STRESS3", formulaHerbs: "虛構湯", treatmentPrinciple: "疏肝", plan: "虛構計畫",
+    advice: "虛構醫囑", ifIneffectivePlan: "虛構備案", referralOrSupervisorQuestion: "虛構問題", followUp: "一週後",
+    adverseEvents: [{ nameText: "虛構瘀青", severity: "mild" }], outcomeMetrics: [{ metricId: "metric.pain_score", valueNumber: 6 }] }],
+};
+const ds = P.summarizeCase(draftCase, { today: D, pointCautions });
+const DR = ds.drafts;
+const allDrafts = [...DR.ask, ...DR.problems, ...DR.points, ...DR.suggestions, ...DR.herbs];
+check("每一行草稿都有出處", allDrafts.length > 0 && allDrafts.every((x) => String(x.source || "").trim()), allDrafts.filter((x) => !x.source));
+check("穴位解析:GB21、黏中文的 LI4、LV3;STRESS3 不算", DR.points.map((p) => p.code).join() === "GB21,LI4,LV3", DR.points);
+check("GB21 對到氣胸 + 備孕兩條高風險", DR.problems.filter((x) => x.text.startsWith("GB21") && x.level === "high").length === 2, DR.problems);
+check("LI4 對到備孕", DR.problems.some((x) => x.text.startsWith("LI4") && /備孕/.test(x.text)));
+check("有問題的穴位在第 5 項標 ⚠", DR.points.find((p) => p.code === "GB21").warn && DR.points.find((p) => p.code === "LI4").warn);
+const quoteOk = DR.problems.filter((x) => /穴位卡/.test(x.source)).every((x) => {
+  const m = /「([^」]+)」/.exec(x.text); const code = /穴位卡 (\S+) /.exec(x.source)[1];
+  return m && pointCautions(code).replace(/\s+/g, " ").includes(m[1].replace(/…$/, "").replace(/\s+/g, " "));
+});
+check("「可能遇到的問題」引號裡的字逐字出自穴位卡(不是程式自己寫的)", quoteOk, DR.problems);
+check("本次要問:preceptor 問題 / 確認備孕 / 不良反應 / 再量指標 / 追蹤",
+  DR.ask.some((x) => x.text === "虛構問題") && DR.ask.some((x) => /確認:懷孕/.test(x.text)) && DR.ask.some((x) => /虛構瘀青/.test(x.text))
+  && DR.ask.some((x) => /pain_score.*6/.test(x.text)) && DR.ask.some((x) => /追蹤:一週後/.test(x.text)), DR.ask);
+check("建議 = 治則 / 計畫 / 醫囑 / 若沒效,原文", ["治則:疏肝", "虛構計畫", "醫囑:虛構醫囑", "若沒效:虛構備案"].every((t) => DR.suggestions.some((x) => x.text === t)), DR.suggestions);
+check("中藥延續上次 + 備孕要 preceptor 確認", DR.herbs[0].text === "虛構湯" && DR.herbs.some((x) => x.level === "high" && /preceptor/.test(x.text)));
+check("草稿不改病例", JSON.stringify(draftCase).includes("STRESS3") && draftCase.soapNotes.length === 1 && !("drafts" in draftCase));
+const negCase = JSON.parse(JSON.stringify(draftCase)); negCase.historyPresent = "無懷孕"; negCase.safetyFlags = [];
+const dn = P.summarizeCase(negCase, { today: D, pointCautions }).drafts;
+check("否定句「無懷孕」不觸發備孕 × 穴位", !dn.problems.some((x) => /備孕/.test(x.text)) && !dn.herbs.some((x) => /preceptor/.test(x.text)), dn.problems);
+check("沒有氣胸旗標時 GB21 只剩低風險的深度提醒", dn.problems.some((x) => x.text.startsWith("GB21") && x.level === "low") && !dn.problems.some((x) => x.level === "high" && x.text.startsWith("GB21")));
+const none = P.summarizeCase({ id: "c3", soapNotes: [] }, { today: D, pointCautions }).drafts;
+check("初診、病歷沒寫什麼 → 沒有草稿", Object.values(none).every((l) => l.length === 0));
+const first = P.summarizeCase({ id: "c4", currentMeds: "虛構 warfarin", pastHistory: "無高血壓", soapNotes: [] }, { today: D, pointCautions }).drafts;
+check("初診也會列「本次要問 確認」(文字提到的事)", first.ask.some((x) => /確認:抗凝/.test(x.text)) && first.problems.length === 0 && first.points.length === 0, first);
+check("否定句的確認寫出原句、說可能是「沒有」", first.ask.some((x) => /確認:高血壓.*可能是「沒有」.*無高血壓/.test(x.text)), first.ask);
+check("preceptor 問題排第一", DR.ask[0].text === "虛構問題", DR.ask);
+check("病況(事實)跟草稿是分開的欄位", Array.isArray(ds.conditions) && !ds.conditions.some((c) => /虛構計畫|虛構湯/.test(c.text)));
+const uiSrc = fs.readFileSync(path.join(ROOT, "js/preshift-ui.js"), "utf8");
+check("畫面:草稿區標「草稿」「不是決定」且每行印出處", /class="ps-drafts"/.test(uiSrc) && /不是決定/.test(uiSrc) && /出處:\$\{esc\(x\.source\)\}/.test(uiSrc));
+check("畫面:病歷資料與草稿是兩個區塊", /function chartHtml/.test(uiSrc) && /function draftsHtml/.test(uiSrc) && /\$\{chartHtml\(s\)\}\s*\$\{draftsHtml\(s\)\}/.test(uiSrc));
+
 // ── 5. 兩台裝置 ──
 function fakeIo(initial) {
   const io = { raw: initial, writes: 0, failNext: 0, read() { return this.raw; }, write(s) { if (this.failNext > 0) { this.failNext--; throw new Error("409 模擬"); } this.writes++; this.raw = s; }, refresh() {} };

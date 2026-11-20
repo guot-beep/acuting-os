@@ -8550,3 +8550,21 @@ html { scroll-padding-top: 92px; }
   .ps-card.is-done { opacity: 1; }
   .ps-time-input { border: 0; }
 }
+/* 診前單:病歷事實(實線)與草稿(虛線、斜紋底)分開 —— 草稿絕不能長得像已經決定的病歷 */
+.ps-chart, .ps-drafts { display: grid; gap: 0.35rem; border-radius: 10px; padding: 0.55rem 0.65rem; }
+.ps-chart { background: var(--paper); border: 1px solid var(--line); }
+.ps-drafts { border: 1.5px dashed var(--gold); background: repeating-linear-gradient(135deg, transparent 0 10px, rgba(185, 139, 68, 0.05) 10px 20px); }
+.ps-chart h5, .ps-drafts h5 { margin: 0; font-size: 0.88rem; display: flex; flex-wrap: wrap; gap: 0.2rem 0.5rem; align-items: baseline; }
+.ps-drafts h5 { color: #7a5410; }
+.ps-chart h5 small, .ps-drafts h5 small { font-weight: 400; color: var(--muted); font-size: 0.76rem; }
+.ps-sub { font-size: 0.78rem; font-weight: 700; color: var(--muted); margin-top: 0.15rem; }
+.ps-draft-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.25rem; font-size: 0.9rem; }
+.ps-draft-list li { display: grid; gap: 0.05rem; padding-left: 0.6rem; border-left: 2px solid var(--line); }
+.ps-draft-list li small, .ps-src { color: var(--muted); font-size: 0.74rem; font-style: italic; }
+.ps-draft-list li.ps-d-high { border-left-color: var(--warn); }
+.ps-draft-list li.ps-d-high span { color: var(--warn); font-weight: 600; }
+.ps-draft-list li.ps-d-low { border-left-color: var(--gold); }
+.ps-pointchips { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+.ps-pt { font-family: ui-monospace, Consolas, monospace; font-size: 0.86rem; padding: 0.05rem 0.45rem; border: 1px dashed var(--accent); border-radius: 6px; }
+.ps-pt.is-warn { border: 1.5px solid var(--warn); color: var(--warn); font-weight: 700; }
+@media print { .ps-drafts { background: none; } }

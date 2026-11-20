@@ -51,6 +51,15 @@
     return P.summarizeCase(c, {
       today: today(),
       caseSearch: S(),
+      // 「可能遇到的問題」只引用知識庫穴位卡自己的注意事項(中文 + 英文都看)
+      pointCautions: (code) => {
+        const list = typeof points !== "undefined" && Array.isArray(points) ? points : [];
+        const p = list.find((x) => String(x.code || "").toUpperCase() === code);
+        if (!p) return "";
+        const en = Array.isArray(p.pointCautionsEn) ? p.pointCautionsEn.join("\n") : String(p.pointCautionsEn || "");
+        return [p.cautions, en].filter(Boolean).join("\n");
+      },
+      metricLabel: (id) => (typeof outcomeMetricPanelLabel === "function" ? outcomeMetricPanelLabel(id) : String(id).replace(/^metric\./, "")),
       formulaName: (id) => (typeof resolveFormulaName === "function" ? resolveFormulaName(id) : id),
     });
   }
@@ -67,12 +76,43 @@
         <small>${esc(a.source)}提到${a.negated ? "(可能是否定句)" : ""}:「${esc(a.snippet)}」· 自動找到,請核對</small></li>`;
     }).join("")}</ul>`;
   }
-  function lastHtml(s) {
-    if (!s.last) return `<div class="ps-last ps-last-empty">還沒有 SOAP —— 初診。</div>`;
-    const L = s.last;
-    const rows = [["證型", L.pattern], ["治則", L.principle], ["穴位", L.points], ["方藥", L.herbs], ["評估 A", L.assessment], ["計畫 P", L.plan], ["下次", L.followUp], ["問 preceptor", L.askPreceptor]]
-      .filter(([, v]) => v);
-    return `<dl class="ps-last">${rows.map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join("") || `<div><dd>上次 SOAP 這幾欄都沒填。</dd></div>`}</dl>`;
+  // 1–2:病歷事實(原文)
+  function chartHtml(s) {
+    const rows = [...s.conditions.map((c) => [c.label, c.text])];
+    if (s.last) {
+      if (s.last.pattern) rows.push(["上次證型", s.last.pattern]);
+      if (s.last.assessment) rows.push(["上次評估 A", s.last.assessment]);
+    }
+    return `<section class="ps-chart" aria-label="病歷資料">
+      <h5>病歷資料 <small>Chart · 原文</small></h5>
+      <div class="ps-sub">1 注意事項</div>
+      ${attentionHtml(s.attention)}
+      <div class="ps-sub">2 病況</div>
+      ${rows.length ? `<dl class="ps-last">${rows.map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>` : `<div class="ps-last-empty">病歷沒有填診斷、證型或用藥。</div>`}
+    </section>`;
+  }
+  // 3–7:草稿(依上次 SOAP + 規則整理,不是決定)。每一行都寫出處。
+  function draftsHtml(s) {
+    const D = s.drafts;
+    const block = (n, title, list, empty) => `<div class="ps-sub">${n} ${esc(title)}</div>${list.length
+      ? `<ul class="ps-draft-list">${list.map((x) => `<li class="${x.level === "high" ? "ps-d-high" : x.level === "low" ? "ps-d-low" : ""}"><span>${x.warn ? "⚠ " : ""}${esc(x.text)}</span><small>出處:${esc(x.source)}</small></li>`).join("")}</ul>`
+      : `<div class="ps-last-empty">${esc(empty)}</div>`}`;
+    const pts = D.points.length
+      ? `<div class="ps-sub">5 要扎的穴位</div><div class="ps-pointchips">${D.points.map((p) => `<span class="ps-pt${p.warn ? " is-warn" : ""}" title="${attr(p.source)}">${p.warn ? "⚠ " : ""}${esc(p.text)}</span>`).join("")}</div><small class="ps-src">出處:${esc(D.points[0].source)}(延續上次)</small>`
+      : `<div class="ps-sub">5 要扎的穴位</div><div class="ps-last-empty">上次 SOAP 沒有記錄用穴。</div>`;
+    if (!s.last) return `<section class="ps-drafts" aria-label="草稿">
+      <h5>草稿 <small>Draft · 不是決定,看診時再確認</small></h5>
+      ${block(3, "本次要問", D.ask, "病歷文字裡沒有找到要特別確認的事。")}
+      <div class="ps-last-empty">還沒有 SOAP —— 初診,4–7 沒有可以延續的內容。</div>
+    </section>`;
+    return `<section class="ps-drafts" aria-label="草稿">
+      <h5>草稿 <small>Draft · 依上次 SOAP 整理,不是決定,看診時再確認</small></h5>
+      ${block(3, "本次要問", D.ask, "上次沒有留下要追蹤的問題。")}
+      ${block(4, "可能遇到的問題", D.problems, "沒有從病人旗標 × 穴位卡注意事項對到的問題。")}
+      ${pts}
+      ${block(6, "建議", D.suggestions, "上次沒有填治則、計畫或醫囑。")}
+      ${block(7, "中藥處方(延續上次)", D.herbs, "上次沒有開藥。")}
+    </section>`;
   }
   function notesListHtml(list) {
     return list.length ? `<ol class="ps-notes">${list.map((n) => `<li><time>${esc(fmtStamp(n.createdAt))}</time><p>${esc(n.text)}</p></li>`).join("")}</ol>` : "";
@@ -98,10 +138,10 @@
       </div>
       <div class="ps-title"><strong>${esc(s.title || s.chiefComplaint || "未命名病例")}</strong>
         ${s.title && s.chiefComplaint && s.chiefComplaint !== s.title ? `<small>主訴 ${esc(s.chiefComplaint)}</small>` : ""}</div>
-      ${attentionHtml(s.attention)}
       <div class="ps-lastvisit">上次就診 <b>${esc(s.lastVisit || "—")}</b>${s.daysSince !== null && s.daysSince >= 0 ? `(${s.daysSince} 天前)` : ""} · 共 ${s.visits} 診
         ${e.done && e.doneAt ? `<span class="ps-donetag">✓ ${esc(fmtStamp(e.doneAt).slice(11))} 完成</span>` : ""}</div>
-      ${lastHtml(s)}
+      ${chartHtml(s)}
+      ${draftsHtml(s)}
       <div class="ps-actions">
         <button type="button" class="ghost" data-ps-open="${attr(c.id)}">打開病例 / 寫 SOAP</button>
         <button type="button" class="ghost" data-ps-togglenote="${attr(e.id)}" aria-expanded="${open}">心得${notes.length ? `(${notes.length})` : ""}</button>

@@ -184,7 +184,91 @@
 
   const daysBetween = (a, b) => (isISODate(a) && isISODate(b) ? Math.round((Date.parse(b + "T00:00:00Z") - Date.parse(a + "T00:00:00Z")) / 86400000) : null);
 
-  /** opts: { today: "YYYY-MM-DD", caseSearch: js/case-search.js 的 api(可省), formulaName(id) }
+  // ── 草稿(2026-11-20 Ting:每位病人事先要看到 3 本次要問 / 4 可能遇到的問題 / 5 要扎的穴位 / 6 建議 / 7 更新的中藥處方)。
+  // Ting 選「依病歷規則產生」(不是 AI 寫):每一行都是從病歷某一欄搬過來或由一條寫死的規則對出來,一定帶 source,
+  // 畫面上一律標「草稿」,跟病歷事實分開。這裡不產生任何病歷沒有的臨床內容 —— 「可能遇到的問題」的文字來自
+  // 知識庫穴位卡自己的 cautions(opts.pointCautions),不是這支程式寫的。
+  // 前後不能黏英文字母(「STRESS3」不是 ST),可以黏中文(「合谷LI4」)
+  const POINT_CODE_RE = /(?<![A-Za-z])(LU|LI|ST|SP|HT|SI|BL|KI|PC|SJ|TE|TB|GB|LR|LV|DU|GV|REN|CV)\s?-?(\d{1,2})(?!\d)/gi;
+  const CODE_ALIAS = { LV: "LR", TB: "SJ", TE: "SJ", DU: "GV", REN: "CV" };
+  function pointCodesOf(note) {
+    const out = [], seen = new Set();
+    const push = (raw, canon) => { const k = canon.toUpperCase(); if (!seen.has(k)) { seen.add(k); out.push({ raw, code: k }); } };
+    for (const l of arr(note && note.acupointLinks)) { const m = /^([A-Za-z]+)\s?-?(\d{1,2})$/.exec(str(l).trim()); if (m) push(str(l).trim(), m[1] + m[2]); else if (str(l).trim()) push(str(l).trim(), str(l).trim()); }
+    const text = str(note && note.pointsUsed);
+    let m; POINT_CODE_RE.lastIndex = 0;
+    while ((m = POINT_CODE_RE.exec(text))) push(m[0], m[1].toUpperCase() + m[2]);
+    return out;
+  }
+  // 知識庫的穴位代號有的用 LR、有的用 LV:兩個都查
+  function cautionFor(code, lookup) {
+    if (typeof lookup !== "function") return "";
+    const m = /^([A-Z]+)(\d+)$/.exec(code);
+    const tries = [code];
+    if (m) { if (CODE_ALIAS[m[1]]) tries.push(CODE_ALIAS[m[1]] + m[2]); for (const [a, b] of Object.entries(CODE_ALIAS)) if (b === m[1]) tries.push(a + m[2]); }
+    for (const t of tries) { const c = str(lookup(t)).trim(); if (c) return c; }
+    return "";
+  }
+  const firstSentenceWith = (text, re) => {
+    const parts = str(text).split(/[\n。;;!!]|(?<=\.)\s/).map((x) => x.trim()).filter(Boolean);
+    const hit = parts.find((p) => re.test(p));
+    return hit ? clip(hit, 70) : "";
+  };
+  const RISK = {
+    pregnancy: /孕|pregnan/i,
+    pneumothorax: /氣胸|pneumothorax|肺尖|傷及肺/i,
+    anticoagulant: /出血|動脈|血管|bleed|arter/i,
+  };
+  // attention 裡「病人有這件事」的判準:旗標原文命中,或文字提到且不是否定句
+  function patientHas(attention, code) {
+    const rule = KEYWORD_RULES.find((r) => r[0] === code);
+    return attention.some((a) => (a.level === "flag" && rule && rule[2].test(a.label)) || (a.code === code && a.level === "mention"));
+  }
+
+  function buildDrafts(item, last, attention, o) {
+    const d = { ask: [], problems: [], points: [], suggestions: [], herbs: [] };
+    const add = (list, text, source, extra) => { const t = str(text).trim(); if (t) list.push(Object.assign({ text: t, source }, extra || {})); };
+    // 3. 本次要問 —— 文字裡提到、但沒有正式旗標的事,初診也要問
+    for (const a of attention) {
+      if (a.level === "mention") add(d.ask, `確認:${a.label}`, `病歷只在「${a.source}」文字提到,沒有正式旗標`);
+      else if (a.level === "maybe") add(d.ask, `確認:${a.label}(病歷寫的可能是「沒有」:「${a.snippet}」)`, `病歷「${a.source}」`);
+    }
+    if (!last) return d;
+    const when = str(last.visitDate) || "上次";
+    const src = (field) => `${when} SOAP「${field}」`;
+    d.ask.unshift(...(str(last.referralOrSupervisorQuestion).trim() ? [{ text: str(last.referralOrSupervisorQuestion).trim(), source: src("問 preceptor"), kind: "preceptor" }] : []));
+    for (const ev of arr(last.adverseEvents)) add(d.ask, `上次的不良反應現在如何:${str(ev.nameText || ev.eventId)}${ev.severity ? "(" + ev.severity + ")" : ""}`, src("不良事件"));
+    for (const m of arr(last.outcomeMetrics)) {
+      if (!m || m.valueNumber === undefined || m.valueNumber === null || m.valueNumber === "") continue;
+      const label = typeof o.metricLabel === "function" ? o.metricLabel(m.metricId) : str(m.metricId).replace(/^metric\./, "");
+      add(d.ask, `再量一次 ${label}(上次 ${m.valueNumber})`, src("成效指標"));
+    }
+    add(d.ask, last.followUp ? `追蹤:${clip(str(last.followUp).trim(), 120)}` : "", src("下次計畫"));
+    // 5. 要扎的穴位(延續上次)+ 4. 可能遇到的問題(病人旗標 × 穴位卡 cautions)
+    const has = { pregnancy: patientHas(attention, "pregnancy"), pneumothorax: patientHas(attention, "pneumothorax"), anticoagulant: patientHas(attention, "anticoagulant") };
+    const LABEL = { pregnancy: "懷孕 / 備孕", pneumothorax: "氣胸史", anticoagulant: "抗凝血" };
+    for (const { raw, code } of pointCodesOf(last)) {
+      const caution = cautionFor(code, o.pointCautions);
+      const hits = Object.keys(RISK).filter((k) => has[k] && RISK[k].test(caution));
+      d.points.push({ text: raw, code, source: src("用穴"), warn: hits.length > 0 });
+      for (const k of hits) d.problems.push({ text: `${raw}:病人有${LABEL[k]},穴位卡寫「${firstSentenceWith(caution, RISK[k])}」`, source: `穴位卡 ${code} 的注意事項 × 病人${LABEL[k]}`, level: "high" });
+      if (!hits.length && RISK.pneumothorax.test(caution)) d.problems.push({ text: `${raw}:「${firstSentenceWith(caution, RISK.pneumothorax)}」`, source: `穴位卡 ${code} 的注意事項(深度)`, level: "low" });
+    }
+    if (!d.points.length) add(d.points, firstFilled(last.pointsUsed, arr(last.acupointLinks)), src("用穴"));
+    for (const ev of arr(last.adverseEvents)) add(d.problems, `上次發生過:${str(ev.nameText || ev.eventId)}`, src("不良事件"), { level: "high" });
+    // 6. 建議(上次的治則 / 計畫 / 醫囑 / 無效時的備案,原文)
+    add(d.suggestions, last.treatmentPrinciple ? `治則:${clip(str(last.treatmentPrinciple).trim(), 120)}` : "", src("治則"));
+    add(d.suggestions, last.plan ? clip(str(last.plan).trim(), 200) : "", src("P 計畫"));
+    add(d.suggestions, last.advice ? `醫囑:${clip(str(last.advice).trim(), 160)}` : "", src("醫囑"));
+    add(d.suggestions, last.ifIneffectivePlan ? `若沒效:${clip(str(last.ifIneffectivePlan).trim(), 160)}` : "", src("若無效的備案"));
+    // 7. 中藥處方(延續上次,原文)
+    const fname = typeof o.formulaName === "function" ? o.formulaName : (x) => x;
+    add(d.herbs, firstFilled(last.formulaHerbs, arr(last.formulaLinks).map(fname), arr(last.herbLinks)), src("方藥"));
+    if (d.herbs.length && has.pregnancy) d.herbs.push({ text: "病人有懷孕 / 備孕紀錄:處方要請 preceptor 確認", source: "規則:懷孕 / 備孕 × 有處方", level: "high" });
+    return d;
+  }
+
+  /** opts: { today: "YYYY-MM-DD", caseSearch: js/case-search.js 的 api(可省), formulaName(id), pointCautions(code) → 字串, metricLabel(id) }
    *  caseSearch.caseLabel 第二個參數要 Date(傳 ISO 字串會在 ageOf 丟錯 —— 第一版就踩到,真值表用真的 case-search 守著)。 */
   function summarizeCase(item, opts) {
     const o = opts || {};
@@ -195,6 +279,7 @@
     const fname = typeof o.formulaName === "function" ? o.formulaName : (x) => x;
     const visits = arr(item.soapNotes).length;
     const lastVisit = last ? str(last.visitDate) : "";
+    const attention = attentionItems(item, last);
     return {
       caseId: str(item.id),
       displayCode: str(lab.displayCode || item.displayCode).trim(),
@@ -215,7 +300,14 @@
         followUp: clip(str(last.followUp).trim(), 120),
         askPreceptor: clip(str(last.referralOrSupervisorQuestion).trim(), 160),
       } : null,
-      attention: attentionItems(item, last),
+      attention,
+      // 2. 病況(病歷原文,事實)
+      conditions: [
+        ["西醫診斷", arr(item.westernConditions).join("、")], ["中醫病名", arr(item.easternDiseases).join("、")],
+        ["目前證型", arr(item.tcmPatterns).join("、")], ["目前用藥", clip(str(item.currentMeds).trim(), 160)],
+        ["既往史", clip(str(item.pastHistory).trim(), 160)],
+      ].filter(([, v]) => str(v).trim()).map(([label, text]) => ({ label, text })),
+      drafts: buildDrafts(item, last, attention, o),
     };
   }
 
@@ -265,7 +357,7 @@
     emptyData, normalize, isISODate, isTime,
     addEntry, setTime, setDone, removeEntry, addNote,
     dayEntries, caseNotes, dayNotes, datesWithEntries,
-    lastNoteOf, attentionItems, summarizeCase, daysBetween,
+    lastNoteOf, attentionItems, summarizeCase, daysBetween, pointCodesOf, buildDrafts,
     makeStore,
   };
   if (typeof module === "object" && module.exports) module.exports = api;
