@@ -148,11 +148,9 @@
     return parsed;
   }
 
-  function save(cases) {
-    // 樂觀鎖:任何寫入之前先確認沒有別的分頁在本分頁載入之後寫過(見 writeKey 上方)
-    assertOwnsWrite(cases);
-    if (activeIsV2()) {
-      const env = readStagingEnvelopeOrThrow("save");
+  /* save() 與 renamePatientCodes() 共用:把 cases 放進 envelope、重算 Patient↔Case 隸屬、
+   * revision +1、單一 writeKey。呼叫端已做過 assertOwnsWrite 並讀好 env。 */
+  function writeEnvelopeWithCases(env, cases) {
       env.cases = cases;
       // Patient↔Case 同步:既有 patient 的 caseIds 重算(patientCode 隸屬);
       // case.patientId 對得上的維持;沒有 patient 的 code 進 pending 清單。
@@ -183,11 +181,69 @@
       env.runtime_revision = nextRevision;
       env.last_runtime_save_at = new Date().toISOString();
       writeKey(STAGING_KEY, JSON.stringify(env));   // 單一 setItem = 原子替換
+  }
+
+  function save(cases) {
+    // 樂觀鎖:任何寫入之前先確認沒有別的分頁在本分頁載入之後寫過(見 writeKey 上方)
+    assertOwnsWrite(cases);
+    if (activeIsV2()) {
+      const env = readStagingEnvelopeOrThrow("save");
+      writeEnvelopeWithCases(env, cases);
       return;
     }
     const serialized = JSON.stringify(cases, null, 2);
     backend.write(serialized);
     lastSyncedRaw = serialized;   // v1 不走 writeKey,基準要自己同步
+  }
+
+  /* 病人編號轉換(2026-11-20;規則與預覽在 js/patient-id-migration.js)。
+   * cases = 已經換好 patientCode 的整份病例;renames = [{from, to}];
+   * idByCode = Map(新編號 → canonicalPatientIdOf(新編號)),呼叫端先 await 算好 ——
+   * 這個函式本身全同步、單一 writeKey,跟 save() 一樣原子。
+   *
+   * 為什麼不能直接 save():v2 的 patient.id 是 patientCode 的雜湊(R10-D3 immutable 契約)。
+   * 直接 save 會讓舊病人物件留下 caseIds=[] 的空殼、新編號進 pending、再鑄一位新病人 ——
+   * 病人層的欄位(含遷移時人工裁決過的 fields/adjudicationsApplied)全留在空殼上。
+   * 這裡改成「同一個病人物件換 id 與 code」,舊的 id/code 記在 renamedFrom。
+   * 任何檢查不過 = throw,零寫入。v1 世界沒有病人層,就是一般 save()。 */
+  function renamePatientCodes(cases, renames, idByCode) {
+    const list = Array.isArray(renames) ? renames : [];
+    const froms = new Set(), tos = new Set();
+    for (const r of list) {
+      const from = String((r && r.from) || "").trim(), to = String((r && r.to) || "").trim();
+      if (!from || !to || from === to) throw new Error("renamePatientCodes: each rename needs a distinct non-blank from/to — write refused");
+      if (froms.has(from) || tos.has(to)) throw new Error("renamePatientCodes: duplicate from/to in renames — write refused");
+      froms.add(from); tos.add(to);
+    }
+    if (!list.length) throw new Error("renamePatientCodes: nothing to rename — write refused");
+    for (const c of cases) {
+      if (froms.has(String(c.patientCode || "").trim())) throw new Error("renamePatientCodes: a case still carries an old code — write refused");
+    }
+    if (!activeIsV2()) { save(cases); return { ok: true, world: "v1", rekeyed: 0 }; }
+    assertOwnsWrite(cases);
+    const env = readStagingEnvelopeOrThrow("renamePatientCodes");
+    const byCode = new Map(env.patients.map((p) => [String(p.patientCode || "").trim(), p]));
+    const byId = new Map(env.patients.map((p) => [p.id, p]));
+    const moves = [];
+    for (const r of list) {
+      const from = String(r.from).trim(), to = String(r.to).trim();
+      if (byCode.has(to)) throw new Error(`renamePatientCodes: new code "${to}" already belongs to patient ${byCode.get(to).id} — write refused`);
+      const p = byCode.get(from);
+      if (!p) continue;   // 還在 pending 的病人:下面重算隸屬時新編號自然進 pending,syncPendingPatients 補鑄
+      const newId = idByCode && typeof idByCode.get === "function" ? idByCode.get(to) : undefined;
+      if (typeof newId !== "string" || !/^patient\.[0-9a-f]{12}$/.test(newId)) throw new Error(`renamePatientCodes: no canonical id supplied for "${to}" — write refused`);
+      const clash = byId.get(newId);
+      if (clash && clash !== p) throw new Error(`renamePatientCodes: canonical id ${newId} for "${to}" collides with patient code "${clash.patientCode}" — write refused`);
+      moves.push({ p, from, to, newId });
+    }
+    const at = new Date().toISOString();
+    for (const m of moves) {
+      m.p.renamedFrom = (Array.isArray(m.p.renamedFrom) ? m.p.renamedFrom : []).concat([{ patientCode: m.from, id: m.p.id, at }]);
+      m.p.id = m.newId;
+      m.p.patientCode = m.to;
+    }
+    writeEnvelopeWithCases(env, cases);
+    return { ok: true, world: "v2", rekeyed: moves.length };
   }
 
   /* 存檔後補建 pending 病人(async — sha256 與遷移同款 deterministic id)。
@@ -1012,6 +1068,8 @@
     STORAGE_KEY,
     load,
     save,
+    renamePatientCodes,
+    canonicalPatientIdOf,
     syncPendingPatients,
     activeIsV2,
     verifyRuntimeEnvelope,

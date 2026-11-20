@@ -110,11 +110,16 @@
     choices = choices || {};
     const byCode = new Map();
     const byDisplay = new Map();   // 顯示代號 → Set(病人編號)
+    const byFormer = new Map();    // 舊編號(轉成 PT- 之前的)→ Set(現在的病人編號)
     for (const c of cases) {
       const code = str(c.patientCode).trim();
       if (!code) continue;
       if (!byCode.has(code)) byCode.set(code, []);
       byCode.get(code).push(c);
+      for (const f of arr(c.formerPatientCodes)) {
+        const fc = str(f).trim();
+        if (fc) { if (!byFormer.has(fc)) byFormer.set(fc, new Set()); byFormer.get(fc).add(code); }
+      }
       const dc = normalizeDisplay(c.displayCode);
       if (dc) { if (!byDisplay.has(dc)) byDisplay.set(dc, new Set()); byDisplay.get(dc).add(code); }
     }
@@ -131,8 +136,18 @@
         return row;
       }
       if (!code) { row.status = "needs_code"; return row; }
-      // 先比病人編號;再比顯示代號(剛好一位才接上,兩位以上要她改填病人編號)
+      // 先比病人編號;再比舊編號(轉成 PT- 之前的,剛好一位才接上);再比顯示代號(剛好一位才接上,兩位以上要她改填病人編號)
       let ownerCode = byCode.has(code) ? code : "";
+      const viaFormer = !ownerCode && byFormer.get(code);
+      if (viaFormer && viaFormer.size === 1) {
+        ownerCode = [...viaFormer][0];
+        row.warnings.push(`${code} 是舊病人編號,已接到現在的 ${ownerCode}(交接檔下次請寫新編號)`);
+      }
+      if (viaFormer && viaFormer.size > 1) {
+        row.status = "ambiguous";
+        row.errors.push(`舊編號 ${code} 對到 ${viaFormer.size} 位病人,請改填現在的病人編號(${[...viaFormer].join("、")})`);
+        return row;
+      }
       const viaDisplay = !ownerCode && byDisplay.get(normalizeDisplay(code));
       if (viaDisplay && viaDisplay.size === 1) ownerCode = [...viaDisplay][0];
       if (viaDisplay && viaDisplay.size > 1) {
@@ -226,7 +241,7 @@
   // 回傳新的病例陣列(不改原陣列)。只處理 plan 裡 include 的列。
   function applyHandoff(cases, items, plan, now, newPatientId) {
     now = now || new Date().toISOString();
-    const taken = new Set(cases.map((c) => str(c.patientCode).trim()).filter(Boolean));
+    const taken = new Set(cases.flatMap((c) => [str(c.patientCode).trim(), ...arr(c.formerPatientCodes).map((f) => str(f).trim())]).filter(Boolean));
     const mintId = (ref) => {
       for (let i = 0; i < 50; i++) {
         const id = newPatientId ? newPatientId(ref, i) : "";

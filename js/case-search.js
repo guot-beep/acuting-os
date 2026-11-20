@@ -260,13 +260,13 @@
   }
 
   // 搜尋:全部 token 都要在同一位病人身上出現(AND)。身分欄全中 → identity 組;否則內文全中 → content 組。
-  // 身分欄 = 病人編號 + 顯示代號 + 病例名稱。
+  // 身分欄 = 病人編號 + 舊病人編號(轉成 PT- 之前的)+ 顯示代號 + 病例名稱。
   function searchPatients(patients, query) {
     const tokens = tokenize(query);
     if (!tokens.length) return { tokens, identity: arr(patients).map((p) => ({ patient: p, hit: null })), content: [] };
     const identity = [], content = [];
     for (const p of arr(patients)) {
-      const idText = norm([p.patientCode, p.displayCode, ...p.cases.map((c) => c.caseTitle)].join(" "));
+      const idText = norm([p.patientCode, ...p.cases.flatMap((c) => arr(c.formerPatientCodes)), p.displayCode, ...p.cases.map((c) => c.caseTitle)].join(" "));
       if (tokens.every((t) => idText.includes(t))) { identity.push({ patient: p, hit: null }); continue; }
       const fields = bodyFieldsOf(p);
       const all = idText + " " + norm(fields.map((f) => f.label + " " + f.text).join(" "));
