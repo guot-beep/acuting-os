@@ -13,17 +13,34 @@
  * 「有藥對」包含由組成自動推導出來的（卡片就是那樣顯示的），
  * 「有來源」指卡片 hero 上點得開的 CloudTCM / American Dragon 頁面。
  *
+ * 2026-08-24：docstring 講的「而且沒有任何 validator 缺陷」原本只是註解，
+ * 實作只查九個區塊是否有值，從沒真的問過 validate-formula-standard.js —— 一首
+ * 九區塊都有但帶著中英未對齊之類真缺陷的方劑會被算成「完成」，高報完成數。
+ * 現在真的去問（`--json` 是它的輸出模式，唯讀，不改驗證邏輯），缺陷數當成一個
+ * 額外的「缺項」計入 missing，讓「完成」名副其實。
+ *
  *   node scripts/report-formula-completeness.js
  *   node scripts/report-formula-completeness.js --final     只列完成的方名
  */
 const fs = require("fs");
 const path = require("path");
+const { execFileSync } = require("child_process");
 const ROOT = path.join(__dirname, "..");
 const ONLY_FINAL = process.argv.includes("--final");
 
 const recs = JSON.parse(fs.readFileSync(path.join(ROOT, "data/herbs/formulas.json"), "utf8")).records;
 const pairsDoc = JSON.parse(fs.readFileSync(path.join(ROOT, "data/herbs/herb_pairs.json"), "utf8"));
 const PAIRS = pairsDoc.records || pairsDoc.pairs || pairsDoc;
+
+// Cross-check against the real validator's defect list (by id) — read-only,
+// same data validate-formula-standard.js's own --worklist prints from.
+let DEFECTS = {};
+try {
+  const out = execFileSync(process.execPath, [path.join(__dirname, "validate-formula-standard.js"), "--json"], { encoding: "utf8" });
+  DEFECTS = JSON.parse(out);
+} catch (e) {
+  console.error("warning: could not run validate-formula-standard.js --json, completeness will not reflect validator defects:", e.message);
+}
 
 const filled = (v) => v !== undefined && v !== null && (Array.isArray(v) ? v.length > 0 : String(v).trim() !== "");
 const hasRole = (r) => (r.composition || []).some((h) => String(h?.role_zh || h?.role || "").trim());
@@ -47,7 +64,9 @@ const CHECKS = [
 
 const rows = recs.map((r) => {
   const missing = CHECKS.filter(([, fn]) => !fn(r)).map(([k]) => k);
-  return { name: r.name_zh || r.id, cat: r.category_zh || r.category || "未分類", missing };
+  const defects = DEFECTS[r.id] || [];
+  if (defects.length) missing.push(`驗證器缺陷(${defects.length})`);
+  return { name: r.name_zh || r.id, cat: r.category_zh || r.category || "未分類", missing, defects };
 });
 
 const done = rows.filter((r) => !r.missing.length).sort((a, b) => a.cat.localeCompare(b.cat, "zh-Hant"));
