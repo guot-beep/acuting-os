@@ -8568,3 +8568,5 @@ html { scroll-padding-top: 92px; }
 .ps-pt { font-family: ui-monospace, Consolas, monospace; font-size: 0.86rem; padding: 0.05rem 0.45rem; border: 1px dashed var(--accent); border-radius: 6px; }
 .ps-pt.is-warn { border: 1.5px solid var(--warn); color: var(--warn); font-weight: 700; }
 @media print { .ps-drafts { background: none; } }
+.ps-dot { color: var(--muted); margin: 0 0.1rem; }
+.ps-marker { color: var(--gold); }

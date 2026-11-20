@@ -285,6 +285,9 @@
       displayCode: str(lab.displayCode || item.displayCode).trim(),
       patientId: str(item.patientCode).trim(),
       sexAge: str(lab.sexAge),
+      // Ting 的命名標準(2026-11-20,OneNote / OS / ChatGPT 共用):`★ CODE · ID · F39 · CC; CC` —— 性別年齡不帶斜線
+      sexAgeStd: str(lab.sexAge).replace("/", ""),
+      marker: lab.highlight && cs && cs.CASE_HIGHLIGHTS && cs.CASE_HIGHLIGHTS[lab.highlight] ? str(cs.CASE_HIGHLIGHTS[lab.highlight].icon) : "",
       title: str(item.caseTitle).trim(),
       chiefComplaint: str(item.chiefComplaint).trim(),
       visits,

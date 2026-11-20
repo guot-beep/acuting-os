@@ -63,10 +63,14 @@
       formulaName: (id) => (typeof resolveFormulaName === "function" ? resolveFormulaName(id) : id),
     });
   }
+  // 命名標準:★ CODE · ID · F39(後面接病名 CC,跟 OneNote 頁名同一把鑰匙)
   function idLine(s) {
-    return `<span class="ps-code">${esc(s.displayCode || "(未設顯示代號)")}</span>
-      ${s.patientId ? `<span class="ps-pid" title="系統病人 ID">${esc(s.patientId)}</span>` : ""}
-      ${s.sexAge ? `<span class="ps-sexage">${esc(s.sexAge)}</span>` : ""}`;
+    const dot = `<span class="ps-dot" aria-hidden="true">·</span>`;
+    return [
+      `<span class="ps-code">${s.marker ? `<span class="ps-marker">${esc(s.marker)}</span> ` : ""}${esc(s.displayCode || "(未設顯示代號)")}</span>`,
+      s.patientId ? `<span class="ps-pid" title="系統病人 ID">${esc(s.patientId)}</span>` : "",
+      s.sexAgeStd ? `<span class="ps-sexage">${esc(s.sexAgeStd)}</span>` : "",
+    ].filter(Boolean).join(dot);
   }
   function attentionHtml(list) {
     if (!list.length) return `<div class="ps-attn ps-attn-none">沒有記錄的安全旗標或過敏 —— 不等於沒有,問診時仍要確認。</div>`;
