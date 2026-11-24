@@ -107,6 +107,38 @@ put("sym.records", recs(rd("data/symptoms/symptoms.json")).length);
 put("exam.records(data/anatomy/exams.json)", fs.existsSync(path.join(root, "data/anatomy/exams.json")) ? recs(rd("data/anatomy/exams.json")).length : "file absent");
 for (const f of ["muscles", "bones", "nerves", "vessels"]) put(`anatomy.${f}`, recs(rd(`data/anatomy/${f}.json`)).length);
 
+// ── 3b. red flags (Safety Layer Phase 1 is frozen — this only counts it) ──
+put("redflag.with_evidence", `${rf.filter((x) => (x.evidence || []).length).length}/${rf.length}`);
+put("redflag.distinct_entities", new Set(rf.map((x) => x.entity_id)).size);
+put("cond.red_flags_en_prose", `${countFilled(conds, "red_flags_en")}/${conds.length}`);
+put("cond.red_flag_refs", `${countFilled(conds, "red_flag_refs")}/${conds.length}`);
+const syms = recs(rd("data/symptoms/symptoms.json"));
+put("sym.red_flags_en_prose", `${countFilled(syms, "red_flags_en")}/${syms.length}`);
+put("safetyFlag.vocabulary", (rd("data/herbs/formula_safety_flags.json").flags || []).length);
+const condIds = new Set(conds.map((c) => c.id));
+const symIds = new Set(syms.map((s) => s.id));
+// Ting's three example patterns: which pieces exist (ids hand-listed, no fuzzy match)
+const PATTERN_PIECES = {
+  "pe_dvt": { cond: ["cond.pulmonary_embolism", "cond.deep_vein_thrombosis"], sym: ["sym.chest_pain", "sym.leg_swelling", "sym.calf_pain", "sym.shortness_of_breath"] },
+  "pediatric_hip_limp": { cond: ["cond.slipped_capital_femoral_epiphysis", "cond.septic_arthritis", "cond.legg_calve_perthes"], sym: ["sym.hip_pain", "sym.limp"] },
+  "post_trauma_neck": { cond: ["cond.cervical_spine_injury", "cond.concussion_mtbi"], sym: ["sym.neck_pain", "sym.headache"] },
+};
+for (const [k, p] of Object.entries(PATTERN_PIECES)) {
+  const rfOn = rf.filter((x) => p.cond.includes(x.entity_id)).length;
+  put(`rfpattern.${k}`, `cond ${p.cond.filter((i) => condIds.has(i)).length}/${p.cond.length} · sym ${p.sym.filter((i) => symIds.has(i)).length}/${p.sym.length} · registry flags on those conds ${rfOn}`);
+}
+
+// ── 3c. freshness (offline: dates already in the repo, no network) ──
+const TODAY = process.env.REPORT_TODAY || new Date().toISOString().slice(0, 10);
+const daysOld = (d) => Math.round((Date.parse(TODAY) - Date.parse(d)) / 86400000);
+const labels = rd("data/pharmacology/dailymed_verified_labels_manifest.json").labels || [];
+const ages = labels.map((l) => l.retrieved_date).filter(Boolean).map(daysOld);
+put("freshness.today", TODAY);
+put("freshness.dailymed_labels_retrieved_dates", [...new Set(labels.map((l) => l.retrieved_date))].sort().join(","));
+put("freshness.dailymed_labels_over_90d", `${ages.filter((a) => a > 90).length}/${labels.length}`);
+put("names.cond_pcos", (() => { const c = conds.find((x) => x.id === "cond.pcos"); return c ? `${c.name_en} | aliases:${JSON.stringify(c.aliases || c.aliases_en || null)} | name_history:${c.name_history ? "yes" : "none"}` : "absent"; })());
+put("names.cards_with_name_history", conds.filter((c) => c.name_history).length + drugs.filter((d) => d.name_history).length);
+
 // ── 4. case record + render paths (structure only — never reads patient data) ──
 const app = fs.readFileSync(path.join(root, "app.js"), "utf8");
 const preshift = fs.readFileSync(path.join(root, "js/preshift.js"), "utf8");

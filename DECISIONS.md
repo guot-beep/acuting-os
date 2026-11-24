@@ -1327,6 +1327,14 @@ PASS(composition 查無藥材維持 1 味次 `formula.huang_tu_tang` 的「灶�
   5. **系統只列配對與來源,不判斷嚴重度、不擋處方、不跳視窗**;「沒命中」寫「已比對 N 條,沒有符合,不代表安全」,
      「無交互作用」字樣不准出現。這是修改 `app.js` 補充劑安全備註「不做交互作用比對」的立場 —— 需 Ting 明確點頭。
   6. 「扎了幾週沒進步」的轉診提醒,**門檻只能是 Ting 自己設的數字**(畫面標「你的設定」),系統不自訂臨床門檻。
+  7. **紅旗組合 `rfp.*`**(新命名空間,檔案 `data/pathology/red_flag_patterns.json`):一組症狀/檢查/年齡/情境/用藥旗標
+     → 懷疑的 `cond.*` + 登錄同一套轉診分級;每筆必須有來源。**與凍結的 Safety Layer Phase 1 並排**:可引用 `rf.*`,
+     不改它、不進它的驗證器。命中不自動寫進 `safetyFlags`。
+  8. **名稱是屬性、代碼是鍵**:`cond.*` / `drug.*` 加 `name_history`(同一形狀);改顯示名稱前必須先把舊名搬進歷史(閘門擋)。
+     第一個實例:PCOS → PMOS(Lancet 2026-05-12;ICD 預計 2028)。
+  9. **過期是缺陷**:離線閘門 `validate-source-freshness.js` 依 `last_checked` × 來源查核週期計缺陷進 ratchet,
+     **掛在 validate.yml 既有的每週排程**,不另開排程;連網比對 `watch-sources.js` 不進 CI,只產生待審佇列,從不自動改卡。
+     授權不允許轉載的來源(MSK About Herbs、NatMed、MedlinePlus 的 ASHP 藥物說明)只能記「查過、日期、連結」。
 - **UI 凍結(D32)**:第 0 期起每個動 `js/**` 的 commit 都是凍結例外,commit 訊息附 Ting 核准原話。
 - **不重開 Safety Layer Phase 1**;這是另一條線。
 - **Reconsider only if**:檢查卡需要連到尚未存在的解剖層(屆時 `exam.*` 加 `muscle_ids`,不改 `supports_condition_ids`);
