@@ -580,6 +580,38 @@ Ting 舉的例子,重點在**還沒想到那個病**時,一組症狀就該讓人
 - 預期對得上的地方:「red flag / referral」題 → `rfp.*` 候選清單;藥理題 → 重點藥卡優先序;理學檢查題 → 檢查卡第一批。
   **題目本身不進 repo**(版權,而且 repo 是公開的)。
 
+### 15.3 SWCS2(西醫臨床 2)課程素材:已讀結構,沒有匯入(2026-11-24)
+
+Ting 指出 SWCS2 的課程內容在她的 ChatGPT 網站和電腦檔案裡。網站回 401(要登入),**沒讀到**。
+電腦裡用檔名找到 106 個相關檔,其中她的 **BoardPrep 讀書 app**(ChatGPT 專案資料夾;上面 §15.2 說「找不到」的考試 app 就是它)
+已經把 SWCS2 期末整理成結構化資料 `window.AG_SWCS2_DATA`。我只讀了**欄位結構、筆數、來源欄**,沒有讀病例內文,也沒有搬任何內容。
+網站很可能是同一份資料的部署版,**這一點沒核對**。
+
+| 資料 | 筆數 | 欄位 | 對到本設計的哪裡 |
+|---|---|---|---|
+| Lab 檢查 `tests` | 50(分 11 區:腦神經/神經/頸/胸廓出口/肩/肘/腕/腰/髖薦/膝/踝足) | `aim` `demo` `finding` `negative` `say` `term` `note` `source` | 幾乎就是 `exam.*` 的形狀:`aim`→篩什麼、`demo`→怎麼做、`finding`/`negative`→陽性/陰性。**缺** `action_tier` 與 `supports_condition_ids`(要我們補) |
+| 病例 `cases` | 6(課堂情境改寫,不是病人) | `summary` `branches` `choices` `safety` `report` | `safety` 欄 → `rfp.*` 候選(例:發燒+劇烈頭痛+頸僵先排腦膜炎;Lab 50 Homan → 疑 DVT 走評估流程) |
+| Lecture `chapters` | 9 | `steps` `terms` `notes` `questions` | 檢查卡的名詞與中英對照參考 |
+| 練習題 `questions` | 75 | `license` 全部 = 自製題;`review_status` **75/75 = needs verification** | 只能拿來對照範圍,**不能當正確答案** |
+| 臨床參考 `clinicalReferences` | 10 | 名稱+網址 | 可直接登記為公開來源:CDC 腦膜炎警訊、Thomas 腦膜徵準確度(PubMed 12060874)、ACR 踝外傷/下背痛與馬尾、NICE NG158(DVT)、NEI 視網膜急症、Wu(Finkelstein vs Eichhoff,PMC6103758)、AAPM&R 檢查表、INTOS 胸廓出口共識、NIMH |
+
+量測(唯讀;腳本讀的是 repo 外的私人檔,所以放在共享筆記資料夾,不進 repo):50 項裡 46 項有「轉診/急診」類字眼,**只有 4 項有敏感度/特異度** —— 跟 §3 的規則一致:
+準確度沒有來源就留空。粗略的名稱字串比對,50 項裡只有 15 項的名稱出現在 repo 的 `data/generated/` 某處
+(字串比對很粗,只當量級參考)。
+
+**怎麼用(設計,不是匯入):**
+
+1. **範圍與順序**:檢查卡第一批 = SWCS2 Lab 50 項 ∩ BIO II.B,先做跟紅旗連著的
+   (Kernig/Brudzinski、SLR/Slump、Homan、踝/膝外傷那幾項)。每張卡記 `curriculum_refs: ["swcs2_lab#N"]` 當成「課程有教」的標記。
+2. **卡片文字不從講義抄**:講義(Lab Packet、WC2 Orthopedic Assessments、老師的 Lecture、歷屆學長姐筆記)是校內教材,
+   repo 是公開的,不能放。卡片文字改寫自公開來源(上表的 10 條 + Magee / Bates),講義只當成「核對用」。
+3. **課程名稱 ≠ 文獻名稱**:Lab 27 課堂叫 Finkelstein,文獻叫 Eichhoff。這正是 §13 的情況 —— 檢查卡也要有
+   `aliases` 和「課程用名/文獻用名」的註記,不能二選一把另一個吞掉。
+4. **病例的 `safety` 欄**只拿來挑 `rfp.*` 候選題目,組合條件和分級要從公開指引(NICE、CDC、ACR)寫,並附來源。
+
+**沒讀、要先問的**:BoardPrep 的 `clinic.js` / `clinic-content.js`(名稱看起來可能有臨床內容)、六份病例的內文、
+講義本文。
+
 ---
 
 ## 8b. 給 Ting 的問題(增補)
@@ -588,7 +620,9 @@ Ting 舉的例子,重點在**還沒想到那個病**時,一組症狀就該讓人
 9. **查核週期**(作業規則,不是臨床門檻):標籤 90 天可以嗎?上線時 52/52 份標籤都會過期,要不要先排一批全部重查?
 10. **Bastyr 有沒有給你 Natural Medicines(NatMed Pro)或 Lexicomp 的帳號?** 有的話,畫面可以記「已查 NatMed,日期」;內容仍不能抄進來。
 11. **Notion**:要我讀哪些頁或資料庫?哪些有病人資料、不能碰?
-12. **考試 app**:在哪裡、什麼格式?題目是自己寫的還是買來的?
+12. **考試 app**:~~在哪裡?~~ 已找到(BoardPrep,§15.3)。剩下:BIO/FOM 711 題裡有沒有買來的題目?有的話那些只對照範圍。
+14. **檢查卡第一批**用 SWCS2 Lab 50 項當範圍和順序,可以嗎?(卡片文字從公開來源寫,講義不進 repo)
+15. BoardPrep 的 `clinic.js` / `clinic-content.js` 可以讀嗎?裡面有沒有病人資料?
 13. **紅旗組合第一批**:先做你舉的三組(PE/DVT、兒童髖痛跛行、外傷後頸痛),再從 Anzaldua / Stephenson 補?這兩本你手上有嗎?
 
 ## 9b. 分期(增補後)
@@ -596,7 +630,7 @@ Ting 舉的例子,重點在**還沒想到那個病**時,一組症狀就該讓人
 | 期 | 原本 | 增補 |
 |---|---|---|
 | 0 | 接線(§9) | + 離線「過期」閘門,先做成顯式佇列(CI 綠、52 筆在佇列裡看得到)+ `name_history` 欄位與閘門(先只用在 `cond.pcos`) |
-| 1 | 檢查卡試做 | + `rfp.*` 第一批(Ting 的三組)+ SOAP 紅框 + 診前單「本次要問」;同時派單給症狀線/病症線補 `sym.calf_pain`、`sym.hip_pain`、`sym.limp` 與兒童髖部三張卡 |
+| 1 | 檢查卡試做(範圍 = SWCS2 Lab 50 項 ∩ BIO II.B,先做連著紅旗的,§15.3) | + `rfp.*` 第一批(Ting 的三組)+ SOAP 紅框 + 診前單「本次要問」;同時派單給症狀線/病症線補 `sym.calf_pain`、`sym.hip_pain`、`sym.limp` 與兒童髖部三張卡 |
 | 2 | 重點族群藥卡 | + `watch-sources.js` 連網比對 → 待審佇列(DailyMed、openFDA、RxNav 三個先上) |
 | 3 | 非標籤交互邊 | + 藥物紅旗(標籤警語 × 症狀) |
 | — | — | Notion / 考試 app:Ting 回答 §8b 問題 11–12 後,先交「對照表」,不匯入 |
