@@ -1306,3 +1306,28 @@ PASS(composition 查無藥材維持 1 味次 `formula.huang_tu_tang` 的「灶�
 - **閘門**:`scripts/test-rx-profile.js` 61 條真值表進 CI(突變測試 7/7 抓到)。
 - **Reconsider only if**:病歷開始記天數(屆時天數假設只當後備);或她開診所後要依預估門診量放大推估;
   或要每半年自動寄信(與 D36 的每日 email 同一個 Cloudflare 寄信綁定)。
+
+## D38 — 病例西醫層:檢查卡 `exam.*`、用藥清單沿用 `agentExposures`、中西藥交互「只列配對與來源」 · PROPOSED(Claude 設計,2026-11-24,等 Ting 核准)
+
+- **背景**:Ting 2026-11-24 要把西醫檢查、藥理、中西藥交互放進病例 —— 很多病人(IVF、腸胃病、憂鬱、癌症)用藥複雜,
+  而且看過「一個基本骨科檢查就能及早轉 MRI,卻扎了好幾週」的例子。設計全文 `docs/CLINICAL_WESTERN_LAYER_DESIGN.md`;
+  數字用 `node scripts/report-clinical-western-inventory.js` 重現(量測版本 `cfeff188`)。
+- **What(提案鎖住的部分)**:
+  1. **新命名空間 `exam.*` / `examcluster.*`**(檢查程序,不是診斷實體,所以不違反 D11)。
+     「支持哪個診斷」只連 `cond.*`;**AM 線 §2.6 草案裡的 `injury.*` 不建**(會變成第五套診斷命名空間)。
+     邊存在檢查卡上,病症卡的「相關檢查」由建置推出來(D13)。檔案放 `data/exams/clinical_exams.json`。
+  2. **陽性 ≠ 診斷**;`if_positive.action_tier` 沿用紅旗登錄的轉診分級(`emergency_referral｜urgent_referral｜routine_referral`,加 `monitor`),
+     **沒有具名來源就不存在**;敏感度/特異度沒有具名研究就是 null。
+  3. **用藥清單不另建**:沿用 D17 §5 的 `case.agentExposures`,只加 additive 欄位
+     (`agentType: herbal`、`scheduleType`、`scheduleText`、`lastDoseApprox`、`nextDoseApprox`、`prescriberText`)。
+     病人層級的清單用推的(同 patientCode 的病例聯集,衝突就標出來),不搬資料。
+  4. **交互作用:兩個儲存處,一個推導出來的索引**。標籤來源留在 `drug.*.herb_drug_interactions_graded`;
+     非標籤來源放新檔 `data/pharmacology/herb_drug_edges.json`(`hde.*`);建置時合成同一種形狀的 `interactionIndex`,
+     **畫面只讀索引**。兩個軸:`direction`(`caution`/`co_use_claim`)× `evidence_level`;`co_use_claim` 永遠不進警示區。
+  5. **系統只列配對與來源,不判斷嚴重度、不擋處方、不跳視窗**;「沒命中」寫「已比對 N 條,沒有符合,不代表安全」,
+     「無交互作用」字樣不准出現。這是修改 `app.js` 補充劑安全備註「不做交互作用比對」的立場 —— 需 Ting 明確點頭。
+  6. 「扎了幾週沒進步」的轉診提醒,**門檻只能是 Ting 自己設的數字**(畫面標「你的設定」),系統不自訂臨床門檻。
+- **UI 凍結(D32)**:第 0 期起每個動 `js/**` 的 commit 都是凍結例外,commit 訊息附 Ting 核准原話。
+- **不重開 Safety Layer Phase 1**;這是另一條線。
+- **Reconsider only if**:檢查卡需要連到尚未存在的解剖層(屆時 `exam.*` 加 `muscle_ids`,不改 `supports_condition_ids`);
+  或要依證據等級自動算嚴重度(要先有來源本身給的分級,不由系統推)。
