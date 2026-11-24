@@ -1335,6 +1335,9 @@ PASS(composition 查無藥材維持 1 味次 `formula.huang_tu_tang` 的「灶�
   9. **過期是缺陷**:離線閘門 `validate-source-freshness.js` 依 `last_checked` × 來源查核週期計缺陷進 ratchet,
      **掛在 validate.yml 既有的每週排程**,不另開排程;連網比對 `watch-sources.js` 不進 CI,只產生待審佇列,從不自動改卡。
      授權不允許轉載的來源(MSK About Herbs、NatMed、MedlinePlus 的 ASHP 藥物說明)只能記「查過、日期、連結」。
+  10. **檢查卡第一批的範圍與順序 = SWCS2 Lab 50 項**(Ting 2026-11-24 核准原話:「Use those 50」)。每張卡記
+      `curriculum_refs: ["swcs2_lab#N"]`;卡片文字從公開來源寫,校內講義不進 repo;課程用名與文獻用名不同時兩個都留(`aliases`)。
+      **這一點已核准;D38 其餘各點仍是 PROPOSED。**
 - **UI 凍結(D32)**:第 0 期起每個動 `js/**` 的 commit 都是凍結例外,commit 訊息附 Ting 核准原話。
 - **不重開 Safety Layer Phase 1**;這是另一條線。
 - **Reconsider only if**:檢查卡需要連到尚未存在的解剖層(屆時 `exam.*` 加 `muscle_ids`,不改 `supports_condition_ids`);

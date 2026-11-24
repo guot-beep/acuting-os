@@ -601,7 +601,7 @@ Ting 指出 SWCS2 的課程內容在她的 ChatGPT 網站和電腦檔案裡。�
 
 **怎麼用(設計,不是匯入):**
 
-1. **範圍與順序**:檢查卡第一批 = SWCS2 Lab 50 項 ∩ BIO II.B,先做跟紅旗連著的
+1. **範圍與順序**:檢查卡第一批 = SWCS2 Lab 全部 50 項(Ting 2026-11-24 核准),施工先做跟紅旗連著的
    (Kernig/Brudzinski、SLR/Slump、Homan、踝/膝外傷那幾項)。每張卡記 `curriculum_refs: ["swcs2_lab#N"]` 當成「課程有教」的標記。
 2. **卡片文字不從講義抄**:講義(Lab Packet、WC2 Orthopedic Assessments、老師的 Lecture、歷屆學長姐筆記)是校內教材,
    repo 是公開的,不能放。卡片文字改寫自公開來源(上表的 10 條 + Magee / Bates),講義只當成「核對用」。
@@ -621,7 +621,8 @@ Ting 指出 SWCS2 的課程內容在她的 ChatGPT 網站和電腦檔案裡。�
 10. **Bastyr 有沒有給你 Natural Medicines(NatMed Pro)或 Lexicomp 的帳號?** 有的話,畫面可以記「已查 NatMed,日期」;內容仍不能抄進來。
 11. **Notion**:要我讀哪些頁或資料庫?哪些有病人資料、不能碰?
 12. **考試 app**:~~在哪裡?~~ 已找到(BoardPrep,§15.3)。剩下:BIO/FOM 711 題裡有沒有買來的題目?有的話那些只對照範圍。
-14. **檢查卡第一批**用 SWCS2 Lab 50 項當範圍和順序,可以嗎?(卡片文字從公開來源寫,講義不進 repo)
+14. ~~**檢查卡第一批**用 SWCS2 Lab 50 項當範圍和順序,可以嗎?~~ **已答(2026-11-24):「Use those 50」** → D38 第 10 點。
+    範圍是全部 50 項(不再取 ∩ BIO II.B);施工順序仍先做連著紅旗的那幾項。
 15. BoardPrep 的 `clinic.js` / `clinic-content.js` 可以讀嗎?裡面有沒有病人資料?
 13. **紅旗組合第一批**:先做你舉的三組(PE/DVT、兒童髖痛跛行、外傷後頸痛),再從 Anzaldua / Stephenson 補?這兩本你手上有嗎?
 
@@ -630,7 +631,7 @@ Ting 指出 SWCS2 的課程內容在她的 ChatGPT 網站和電腦檔案裡。�
 | 期 | 原本 | 增補 |
 |---|---|---|
 | 0 | 接線(§9) | + 離線「過期」閘門,先做成顯式佇列(CI 綠、52 筆在佇列裡看得到)+ `name_history` 欄位與閘門(先只用在 `cond.pcos`) |
-| 1 | 檢查卡試做(範圍 = SWCS2 Lab 50 項 ∩ BIO II.B,先做連著紅旗的,§15.3) | + `rfp.*` 第一批(Ting 的三組)+ SOAP 紅框 + 診前單「本次要問」;同時派單給症狀線/病症線補 `sym.calf_pain`、`sym.hip_pain`、`sym.limp` 與兒童髖部三張卡 |
+| 1 | 檢查卡試做(範圍 = SWCS2 Lab 50 項,Ting 已核准;先做連著紅旗的,§15.3) | + `rfp.*` 第一批(Ting 的三組)+ SOAP 紅框 + 診前單「本次要問」;同時派單給症狀線/病症線補 `sym.calf_pain`、`sym.hip_pain`、`sym.limp` 與兒童髖部三張卡 |
 | 2 | 重點族群藥卡 | + `watch-sources.js` 連網比對 → 待審佇列(DailyMed、openFDA、RxNav 三個先上) |
 | 3 | 非標籤交互邊 | + 藥物紅旗(標籤警語 × 症狀) |
 | — | — | Notion / 考試 app:Ting 回答 §8b 問題 11–12 後,先交「對照表」,不匯入 |
