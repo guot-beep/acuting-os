@@ -151,7 +151,7 @@
     return out.filter(([, t]) => str(t).trim());
   }
 
-  function attentionItems(item, last) {
+  function attentionItems(item, last, ic) {
     const out = [];
     for (const f of arr(item.safetyFlags)) if (str(f).trim()) out.push({ level: "flag", label: str(f).trim(), source: "安全旗標" });
     for (const f of arr(last && last.safetyFlagLinks)) if (str(f).trim()) out.push({ level: "flag", label: str(f).trim(), source: "上次 SOAP 安全警示" });
@@ -167,6 +167,12 @@
         out.push({ level: negated ? "maybe" : "mention", code, label, source: src, snippet: snippetAround(text, m.index, m[0].length), negated });
         break;
       }
+    }
+    // D38:結構化用藥裡帶「出血風險」旗標的藥(藥卡 integrative_clinical_flags)。跟上面「文字提到」分開列,
+    // 不合併成同一句 —— 一個是她記在用藥清單裡的事實,一個是自動在文字裡找到、要她核對的線索。
+    for (const d of arr(ic && ic.drugs)) {
+      if (!arr(d.flags).some((x) => x && x.id === "bleeding_risk")) continue;
+      out.push({ level: "flag", code: "anticoagulant", structured: true, label: `用藥有出血風險:${str(d.name)}`, source: "結構化用藥(藥卡旗標)" });
     }
     return out;
   }
@@ -222,7 +228,7 @@
   // attention 裡「病人有這件事」的判準:旗標原文命中,或文字提到且不是否定句
   function patientHas(attention, code) {
     const rule = KEYWORD_RULES.find((r) => r[0] === code);
-    return attention.some((a) => (a.level === "flag" && rule && rule[2].test(a.label)) || (a.code === code && a.level === "mention"));
+    return attention.some((a) => (a.level === "flag" && rule && rule[2].test(a.label)) || (a.code === code && (a.level === "mention" || a.structured === true)));
   }
 
   function buildDrafts(item, last, attention, o) {
@@ -255,6 +261,20 @@
       if (!hits.length && RISK.pneumothorax.test(caution)) d.problems.push({ text: `${raw}:「${firstSentenceWith(caution, RISK.pneumothorax)}」`, source: `穴位卡 ${code} 的注意事項(深度)`, level: "low" });
     }
     if (!d.points.length) add(d.points, firstFilled(last.pointsUsed, arr(last.acupointLinks)), src("用穴"));
+    // D38 交互檢查:目前用藥 × 上次處方 / 在用的補充劑。三層各自一行,措辭固定;判斷是醫師的。
+    const ic = o.ic;
+    if (ic) {
+      for (const a of arr(ic.tierA)) add(d.problems, `${a.drugName} × ${a.otherName}${a.via ? "(" + a.via + ")" : ""}:${a.evidenceLabel}${a.effectZh ? " — " + clip(a.effectZh, 80) : ""}`, "藥卡標籤的中藥交互列 × " + src("方藥"), { level: "high" });
+      const groups = new Map();
+      for (const b of arr(ic.tierB)) {
+        const k = b.drugId + "|" + b.riskClassId;
+        const g = groups.get(k) || { drug: b.drugName, risk: b.riskName, others: [] };
+        g.others.push(b.otherName + (b.via ? "(" + b.via + ")" : ""));
+        groups.set(k, g);
+      }
+      for (const g of groups.values()) add(d.problems, `兩張卡都標了${g.risk}:${g.drug} × ${g.others.join("、")} —— 不是交互作用的證據`, "藥卡旗標 × 中藥卡 / 補充劑卡旗標(D38 B 層)", { level: "low" });
+      for (const c of arr(ic.tierC)) add(d.problems, `${c.drugName}:針刺注意「${clip(str(c.noteZh || c.noteEn).replace(/\*\*([^*]+)\*\*/g, "$1"), 120)}」`, `藥卡「${c.drugName}」的針刺注意`, { level: "high" });
+    }
     for (const ev of arr(last.adverseEvents)) add(d.problems, `上次發生過:${str(ev.nameText || ev.eventId)}`, src("不良事件"), { level: "high" });
     // 6. 建議(上次的治則 / 計畫 / 醫囑 / 無效時的備案,原文)
     add(d.suggestions, last.treatmentPrinciple ? `治則:${clip(str(last.treatmentPrinciple).trim(), 120)}` : "", src("治則"));
@@ -279,7 +299,10 @@
     const fname = typeof o.formulaName === "function" ? o.formulaName : (x) => x;
     const visits = arr(item.soapNotes).length;
     const lastVisit = last ? str(last.visitDate) : "";
-    const attention = attentionItems(item, last);
+    // D38:opts.interactionCheck(item, last) → js/interaction-check.js 的結果。沒給(舊呼叫端 / 模組沒載入)→ null,
+    // 畫面照舊只有文字比對 —— 不會假裝比對過。
+    const ic = typeof o.interactionCheck === "function" ? o.interactionCheck(item, last) : null;
+    const attention = attentionItems(item, last, ic);
     return {
       caseId: str(item.id),
       displayCode: str(lab.displayCode || item.displayCode).trim(),
@@ -307,10 +330,15 @@
       // 2. 病況(病歷原文,事實)
       conditions: [
         ["西醫診斷", arr(item.westernConditions).join("、")], ["中醫病名", arr(item.easternDiseases).join("、")],
-        ["目前證型", arr(item.tcmPatterns).join("、")], ["目前用藥", clip(str(item.currentMeds).trim(), 160)],
+        ["目前證型", arr(item.tcmPatterns).join("、")],
+        ["結構化用藥", arr(item.agentExposures).filter((e) => e && (e.status === "current" || e.status === "prn"))
+          .map((e) => str(e.nameText).trim() || (ic && str((arr(ic.drugs).find((x) => x.exposureId === str(e.id)) || {}).name)) || "(未命名)")
+          .join("、")],
+        ["目前用藥", clip(str(item.currentMeds).trim(), 160)],
         ["既往史", clip(str(item.pastHistory).trim(), 160)],
       ].filter(([, v]) => str(v).trim()).map(([label, text]) => ({ label, text })),
-      drafts: buildDrafts(item, last, attention, o),
+      drafts: buildDrafts(item, last, attention, Object.assign({}, o, { ic })),
+      interaction: ic,
     };
   }
 

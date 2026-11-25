@@ -182,6 +182,7 @@ const knowledge = {
   modernApplicationVocabulary: readJson("data/config/modern_application_vocabulary.json"),  // bilingual labels + type for 現代運用 tags
   comparisonGroupVocabulary: readJson("data/config/comparison_group_vocabulary.json"),      // bilingual labels for 鑑別群組
   safetyFlagVocabulary: readJson("data/config/safety_flag_vocabulary.json"),                 // bilingual labels for safety_flags
+  integrativeFlagCrosswalk: readJson("data/config/integrative_flag_crosswalk.json"),     // D38 B-tier: drug-card flags × herb/supp-card flags (same KIND of risk, not an interaction claim)
   conditionCategoryVocabulary: readJson("data/config/condition_category_vocabulary.json"),  // bilingual labels for condition_canon `category` — lets point/herb/formula cards group related_conditions by system without storing the category twice
   // D11's four namespaces each group by their own controlled vocabulary. The
   // Diagnosis tab needs all three in the bundle or it can only print raw ids —
@@ -375,7 +376,7 @@ const KNOWLEDGE_PARTS = {
   ],
   ref: [
     "channelsAndCharts", "pharmDrugs", "pharmDrugClasses", "pharmDrugTargets",
-    "pharmDrugSystems", "supplementRecords", "medications",
+    "pharmDrugSystems", "supplementRecords", "medications", "integrativeFlagCrosswalk",
     "cloudtcmDiseaseEntries", "cloudtcmDiseaseCategories", "cloudtcmRefMap",
   ],
   rx: ["formulas", "formulaHdiReview"],

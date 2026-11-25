@@ -61,6 +61,12 @@
       },
       metricLabel: (id) => (typeof outcomeMetricPanelLabel === "function" ? outcomeMetricPanelLabel(id) : String(id).replace(/^metric\./, "")),
       formulaName: (id) => (typeof resolveFormulaName === "function" ? resolveFormulaName(id) : id),
+      // D38 交互檢查:目前用藥 × 上次處方。模組或知識庫沒載入 → 回 null,診前單只剩文字比對(不假裝比對過)。
+      interactionCheck: (item, last) => {
+        const IC = window.AcuTingInteractionCheck, K = globalThis.ACUTING_KNOWLEDGE;
+        if (!IC || !K) return null;
+        return IC.check(K, { exposures: item.agentExposures || [], formulaLinks: (last && last.formulaLinks) || [], herbLinks: (last && last.herbLinks) || [] });
+      },
     });
   }
   // 命名標準:★ CODE · ID · F39(後面接病名 CC,跟 OneNote 頁名同一把鑰匙)
@@ -112,7 +118,9 @@
     return `<section class="ps-drafts" aria-label="草稿">
       <h5>草稿 <small>Draft · 依上次 SOAP 整理,不是決定,看診時再確認</small></h5>
       ${block(3, "本次要問", D.ask, "上次沒有留下要追蹤的問題。")}
-      ${block(4, "可能遇到的問題", D.problems, "沒有從病人旗標 × 穴位卡注意事項對到的問題。")}
+      ${block(4, "可能遇到的問題", D.problems, s.interaction && s.interaction.drugs.some((x) => x.section === "pharmDrugs")
+        ? `沒有從病人旗標 × 穴位卡注意事項對到的問題;用藥 × 上次處方:${window.AcuTingInteractionCheck.noHitText(s.interaction.comparedA)}`
+        : "沒有從病人旗標 × 穴位卡注意事項對到的問題。")}
       ${pts}
       ${block(6, "建議", D.suggestions, "上次沒有填治則、計畫或醫囑。")}
       ${block(7, "中藥處方(延續上次)", D.herbs, "上次沒有開藥。")}

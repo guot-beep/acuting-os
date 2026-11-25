@@ -7331,6 +7331,84 @@ function renderLifestyleAdverseEventsView(note) {
     </div>`;
 }
 
+/* 交互檢查卡(D38 第 0 期,Ting 2026-11-25 核准「Approve D38」;設計 docs/CLINICAL_WESTERN_LAYER_DESIGN.md §4–§5)
+ *
+ * 目前用藥(使用中 / 需要時)× 最近一次 SOAP 的處方(formulaLinks 展開成組成 + herbLinks)× 病人在用的補充劑。
+ * 計算全在 js/interaction-check.js(純函式,真值表 scripts/validate-interaction-check.js);這裡只畫。
+ * 三層分開畫,一層一個小標題,絕不合併成同一句。系統只列配對與來源:不判斷嚴重度、不擋處方、不跳視窗。
+ * 查不到時使用者看到什麼(每一種都明說,不靜默):
+ *   模組沒載入          → 「⃠ 交互檢查沒有執行:模組未載入」
+ *   藥沒有卡            → 引擎的 TEXT.noCard / noAgentId 原句
+ *   方劑沒有結構化組成  → TEXT.noComposition 原句
+ *   有卡、沒命中        → noHitText(N):「已比對 N 條…這不代表安全」 */
+function renderInteractionCheckCard(item) {
+  const IC = window.AcuTingInteractionCheck;
+  const K = globalThis.ACUTING_KNOWLEDGE;
+  const exposures = item.agentExposures || [];
+  const active = exposures.filter((e) => e && (e.status === "current" || e.status === "prn"));
+  if (!active.length) return "";   // 沒有目前用藥:這張卡沒有東西可比,整張不畫(用藥區自己會說「尚未記錄用藥」)
+  const head = `<div class="timeline-head"><strong>交互檢查 Interaction check</strong></div>`;
+  if (!IC || !K) return `<section class="interaction-check">${head}<p class="interaction-unchecked">⃠ 交互檢查沒有執行:模組未載入</p></section>`;
+  const P = window.AcuTingPreshift;
+  const last = P && typeof P.lastNoteOf === "function" ? P.lastNoteOf(item) : null;
+  const rx = last ? { formulaLinks: last.formulaLinks || [], herbLinks: last.herbLinks || [] } : { formulaLinks: [], herbLinks: [] };
+  const r = IC.check(K, { exposures, ...rx });
+  const T = IC.TEXT;
+  const rxWhen = last ? (last.visitDate ? `${last.visitDate} 的處方` : "最近一次 SOAP 的處方") : "還沒有 SOAP 處方";
+  const srcHtml = (sources) => sources.map((s) => {
+    const m = /^dailymed:([0-9a-f-]{36})/i.exec(s);
+    return m
+      ? `<a href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=${escapeHtml(m[1])}" target="_blank" rel="noopener">DailyMed 標籤</a>`
+      : escapeHtml(s);
+  }).join(" · ");
+  const parts = [];
+  parts.push(`<p class="interaction-scope"><small>目前用藥 × ${escapeHtml(rxWhen)}與病人在用的補充劑。只列配對與來源,不判斷嚴重度;判斷是醫師的。</small></p>`);
+  const unchecked = r.drugs.filter((d) => !d.checked);
+  if (unchecked.length) {
+    parts.push(`<ul class="interaction-unchecked">${unchecked.map((d) => `<li>${escapeHtml(d.name || "(未命名)")}:${escapeHtml(d.reason)}</li>`).join("")}</ul>`);
+  }
+  if (r.unresolved.length) {
+    parts.push(`<ul class="interaction-unchecked">${r.unresolved.map((u) => `<li>${u.name ? `${escapeHtml(u.name)}:` : "處方裡有一項:"}${escapeHtml(u.text)}</li>`).join("")}</ul>`);
+  }
+  // A
+  const aBody = r.tierA.length
+    ? `<ul>${r.tierA.map((a) => `<li><strong>${escapeHtml(a.drugName)} × ${escapeHtml(a.otherName)}</strong>${a.via ? `(${escapeHtml(a.via)})` : ""}${a.effectZh ? ` — ${escapeHtml(a.effectZh)}` : ""} <span class="agent-safety-flag">${escapeHtml(a.evidenceLabel)}</span>${a.sources.length ? `<em>來源:${srcHtml(a.sources)}</em>` : `<em>⃠ 這一列沒有來源</em>`}${a.noteZh ? `<small>${escapeHtml(a.noteZh)}</small>` : ""}</li>`).join("")}</ul>`
+    : `<p>${escapeHtml(r.hasOtherSide ? IC.noHitText(r.comparedA) : T.noPrescription)}</p>`;
+  parts.push(`<div class="interaction-tier interaction-tier-a"><h4>A · ${escapeHtml(T.tierAHeading)}</h4>${aBody}</div>`);
+  // B
+  if (r.hasOtherSide) {
+    const flagNames = (flags) => flags.map((f) => f.label).filter(Boolean).join("、");
+    // 一組 = 一種藥 × 一類風險,底下列所有命中的中藥 / 補充劑(一味一行會洗版,讀不出重點)
+    const bBody = r.tierB.length
+      ? `<ul>${IC.groupTierB(r.tierB).map((g) => `<li><strong>${escapeHtml(g.riskName)}:${escapeHtml(g.drugName)}</strong>${flagNames(g.drugFlags) ? `(藥卡:${escapeHtml(flagNames(g.drugFlags))})` : ""} ×
+          <ul>${g.items.map((b) => `<li>${escapeHtml(b.otherName)}${b.via ? `(${escapeHtml(b.via)})` : ""}${flagNames(b.otherFlags) ? ` <span class="interaction-other-flags">${b.otherKind === "supp" ? "補充劑卡" : "中藥卡"}:${escapeHtml(flagNames(b.otherFlags))}</span>` : ""}${b.otherQuotes.map((q) => `<small>「${escapeHtml(q)}」</small>`).join("")}</li>`).join("")}</ul></li>`).join("")}</ul>`
+      : `<p>沒有兩張卡都標了同一類風險的組合;這不代表安全。</p>`;
+    parts.push(`<div class="interaction-tier interaction-tier-b"><h4>B · ${escapeHtml(T.tierBHeading)}</h4><p class="interaction-tier-note"><small>${escapeHtml(T.tierBNote)}</small></p>${bBody}</div>`);
+  }
+  // C
+  if (r.tierC.length) {
+    parts.push(`<div class="interaction-tier interaction-tier-c"><h4>C · ${escapeHtml(T.tierCHeading)}</h4><ul>${r.tierC.map((c) => `<li><strong>${escapeHtml(c.drugName)}</strong>:${IC.boldMarks(escapeHtml(c.noteZh || c.noteEn))}</li>`).join("")}</ul></div>`);
+  }
+  return `<section class="interaction-check" data-interaction-check>${head}${parts.join("")}</section>`;
+}
+
+/* 用藥列下方的針刺注意 + 整合旗標(D38 C 層)。20/59 張藥卡帶 acupuncture_note_zh,過去只在藥卡上看得到。
+ * 文字逐字來自卡片。沒有卡 / 卡上沒寫 → 不畫(「沒有卡」已經由 renderAgentExposureSafety 明說)。
+ * 旗標只畫對照表有中文名的;沒有中文名的旗標不畫,不印生 enum。 */
+function renderAgentExposureAcuNote(exposure) {
+  const IC = window.AcuTingInteractionCheck;
+  const K = globalThis.ACUTING_KNOWLEDGE;
+  if (!IC || !K) return "";
+  const hit = IC.lookup(K, exposure.agentId);
+  if (!hit || hit.section !== "pharmDrugs") return "";
+  const card = hit.record;
+  const note = String(card.acupuncture_note_zh || "").trim() || String(card.acupuncture_note_en || "").trim();
+  const flags = (Array.isArray(card.integrative_clinical_flags) ? card.integrative_clinical_flags : [])
+    .map((f) => IC.drugFlagLabel(K, f)).filter(Boolean);
+  if (!note && !flags.length) return "";
+  return `<div class="agent-acu-note">${flags.length ? `<p class="agent-acu-flags">${flags.map((f) => `<span class="agent-safety-flag">${escapeHtml(f)}</span>`).join(" ")}</p>` : ""}${note ? `<p><strong>針刺注意</strong> ${IC.boldMarks(escapeHtml(note))}</p>` : ""}</div>`;
+}
+
 function renderAgentExposuresPanel(item) {
   const store = window.AcuTingClinicalStore;
   const all = item.agentExposures || [];
@@ -7507,6 +7585,7 @@ function renderAgentExposureRow(exposure) {
         <small>劑量/頻率 Dose &amp; freq</small><span>${escapeHtml(doseFreq)}</span>
       </div>
       ${renderAgentExposureSafety(exposure)}
+      ${renderAgentExposureAcuNote(exposure)}
       <div class="agent-exposure-actions">
         <button type="button" class="ghost" data-agent-exposure-action="dose_changed" data-exposure-id="${escapeHtml(exposure.id)}">改劑量</button>
         <button type="button" class="ghost" data-agent-exposure-action="frequency_changed" data-exposure-id="${escapeHtml(exposure.id)}">改頻率</button>
@@ -9740,6 +9819,7 @@ function renderClinicalCaseDetail(item) {
     <span class="case-jump-anchor" id="caseSecOutcome"></span>
     ${renderOutcomeTrackingPanel(item)}
     <span class="case-jump-anchor" id="caseSecMeds"></span>
+    ${renderInteractionCheckCard(item)}
     ${renderAgentExposuresPanel(item)}
     ${renderEnvironmentalExposuresPanel(item)}
     ${renderCaseSwimlanes(item, [...notes].reverse())}

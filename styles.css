@@ -738,6 +738,22 @@ h1 {
 /* 「沒查過」跟「查過沒事」在畫面上必須分得出來,否則前者會被讀成後者。 */
 .agent-safety-unchecked small { color: var(--muted); font-size: .72rem; font-style: italic; }
 @media print { .agent-safety-contra[open] summary { list-style: none; } }
+/* D38 交互檢查卡:三層分開,一層一個小標題。A 用黑框同色系(有記載);B 用中性色 —— 它不是交互作用的證據。 */
+.interaction-check { margin: 0.6rem 0; border: 1px solid var(--line, rgba(0,0,0,.12)); border-radius: 8px; padding: 6px 12px 10px; }
+.interaction-check h4 { margin: 0.5rem 0 0.2rem; font-size: .78rem; letter-spacing: .02em; }
+.interaction-check ul { margin: 2px 0 0 1.1em; padding: 0; }
+.interaction-check li { margin: 3px 0; font-size: .8rem; line-height: 1.45; }
+.interaction-check li em, .interaction-check li small { display: block; font-style: normal; font-size: .7rem; color: var(--muted); }
+.interaction-check p { margin: 2px 0; font-size: .8rem; }
+.interaction-tier-a h4 { color: #9c2f22; }
+.interaction-tier-b h4 { color: var(--muted); }
+.interaction-tier-note small, .interaction-scope small { color: var(--muted); font-size: .72rem; }
+.interaction-unchecked { color: var(--muted); font-size: .74rem; font-style: italic; }
+.agent-acu-note { margin-top: 0.35rem; font-size: .78rem; line-height: 1.45; }
+.agent-acu-note p { margin: 2px 0; }
+.agent-acu-flags { display: flex; flex-wrap: wrap; gap: 4px; }
+.interaction-check li ul { margin-top: 2px; }
+.interaction-other-flags { font-size: .7rem; color: var(--muted); }
 .agent-exposure-actions { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.5rem; }
 .agent-exposure-actions button { padding: 0.4rem 0.6rem; font-size: 0.78rem; }
 .agent-exposure-timeline { margin-top: 0.5rem; font-size: 0.82rem; }

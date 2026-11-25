@@ -1,0 +1,85 @@
+{
+  "vocabulary_version": "1.0",
+  "created_at": "2026-11-25",
+  "decision": "D38 (ACCEPTED 2026-11-25) · docs/CLINICAL_WESTERN_LAYER_DESIGN.md §4.2",
+  "name_zh": "整合旗標對照表(藥卡旗標 × 中藥卡/補充劑卡旗標)",
+  "name_en": "Integrative flag crosswalk (drug-card flags × herb/supplement-card flags)",
+  "purpose": "B-tier matching only. A risk class lists which drug-card integrative_clinical_flags and which herb-card safety_flags / supplement interaction_flags talk about the same KIND of risk. A match means 'both cards each flag this kind of risk' — it is NOT a claim that the two interact, and the screen must never word it as one. No severity, no thresholds, no new clinical content: every flag already exists on its card.",
+  "review_status": "draft",
+  "authored_by": "claude (judgment mapping; Ting approved D38)",
+  "drug_flag_labels": {
+    "bleeding_risk": { "name_zh": "出血風險", "name_en": "Bleeding risk" },
+    "procedural_safety": { "name_zh": "侵入性處置要注意", "name_en": "Procedural safety" },
+    "cough_side_effect": { "name_zh": "副作用:咳嗽", "name_en": "Cough side effect" },
+    "electrolyte_hyperkalemia": { "name_zh": "電解質:高血鉀", "name_en": "Hyperkalemia" },
+    "electrolyte_hypokalemia": { "name_zh": "電解質:低血鉀", "name_en": "Hypokalemia" },
+    "angioedema_risk": { "name_zh": "血管性水腫風險", "name_en": "Angioedema risk" },
+    "bradycardia": { "name_zh": "心跳過慢", "name_en": "Bradycardia" },
+    "tachycardia": { "name_zh": "心跳過快", "name_en": "Tachycardia" },
+    "orthostatic_hypotension": { "name_zh": "姿勢性低血壓", "name_en": "Orthostatic hypotension" },
+    "masking_hypoglycemia": { "name_zh": "可能掩蓋低血糖", "name_en": "May mask hypoglycemia" },
+    "glucose_effects": { "name_zh": "影響血糖", "name_en": "Glucose effects" },
+    "sedation_dizziness": { "name_zh": "鎮靜 / 頭暈", "name_en": "Sedation / dizziness" },
+    "immunosuppression": { "name_zh": "免疫抑制", "name_en": "Immunosuppression" },
+    "infection_risk": { "name_zh": "感染風險", "name_en": "Infection risk" },
+    "bone_health": { "name_zh": "骨骼健康", "name_en": "Bone health" }
+  },
+  "risk_classes": [
+    {
+      "id": "bleeding",
+      "name_zh": "出血類",
+      "name_en": "Bleeding",
+      "drug_flags": ["bleeding_risk"],
+      "herb_flags": ["anticoagulant_review", "bleeding_review", "active_bleeding_medical_review"],
+      "supplement_flags": ["anticoagulant"]
+    },
+    {
+      "id": "sedation",
+      "name_zh": "鎮靜類",
+      "name_en": "Sedation",
+      "drug_flags": ["sedation_dizziness"],
+      "herb_flags": ["sedative_medication_review"],
+      "supplement_flags": []
+    },
+    {
+      "id": "glucose",
+      "name_zh": "血糖類",
+      "name_en": "Blood glucose",
+      "drug_flags": ["glucose_effects", "masking_hypoglycemia"],
+      "herb_flags": ["blood_sugar_review"],
+      "supplement_flags": []
+    },
+    {
+      "id": "low_blood_pressure",
+      "name_zh": "低血壓類",
+      "name_en": "Low blood pressure",
+      "drug_flags": ["orthostatic_hypotension"],
+      "herb_flags": ["hypotension"],
+      "supplement_flags": []
+    },
+    {
+      "id": "heart_rhythm",
+      "name_zh": "心律類",
+      "name_en": "Heart rhythm",
+      "drug_flags": ["bradycardia", "tachycardia"],
+      "herb_flags": ["arrhythmia_risk"],
+      "supplement_flags": []
+    },
+    {
+      "id": "low_potassium",
+      "name_zh": "低血鉀 / 電解質類",
+      "name_en": "Low potassium / electrolytes",
+      "drug_flags": ["electrolyte_hypokalemia"],
+      "herb_flags": ["pseudoaldosteronism_long_term", "dehydration_electrolyte_review"],
+      "supplement_flags": []
+    },
+    {
+      "id": "immune",
+      "name_zh": "免疫抑制類",
+      "name_en": "Immunosuppression",
+      "drug_flags": ["immunosuppression"],
+      "herb_flags": [],
+      "supplement_flags": ["immunosuppressant"]
+    }
+  ]
+}

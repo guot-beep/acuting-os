@@ -359,6 +359,11 @@ jobs:
       # 注意事項(旗標置頂、關鍵字附原句、否定句標「可能」)、兩台裝置疊加不蓋掉、接線。虛構病例,require 真正在跑的 js/preshift.js。
       - name: pre-shift view contract (schedule, append-only notes, read-only cases, attention items, concurrent writes)
         run: node scripts/validate-preshift.js
+      # D38 交互檢查(2026-11-25,Ting「Approve D38」):只列配對與來源。索引不吃掉標籤列、對照表的旗標真的存在、
+      # 華法林 × 血府逐瘀湯 B 層命中數 = 獨立算出的味數、「無交互作用」零次、來源被拿掉要說沒來源(突變)、
+      # 病例頁與診前單真的畫得出來。虛構病例,真的知識庫,從 app.js 抽真正在跑的函式。
+      - name: interaction check truth table (A label pairs, B same-risk flags, C acupuncture notes, render + pre-shift)
+        run: node scripts/validate-interaction-check.js
       # 半年開藥回顧(D37,2026-11-14):病歷自由文字開方解析(中英並列只算中文、日期不當天數、單位未記不換算)、
       # 沒填天數不准算出罐數、自家病例不進病歷線、半年提醒到期。虛構開方,require 真正在跑的 js/rx-profile.js。
       - name: semi-annual prescription review (free-text rx parsing, bottles only from recorded or user-entered numbers)

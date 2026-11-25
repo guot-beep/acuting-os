@@ -921,7 +921,7 @@
           "note_zh": "藥庫另有白果(herb.bai_guo,銀杏種子)。標籤寫 Ginkgo biloba,一般指葉萃取物 —— 兩者不等同,未合併。"
         },
         {
-          "with": null,
+          "with": "supp.garlic",
           "with_label_en": "Garlic",
           "with_label_zh": "大蒜",
           "effect_en": "Named in the warfarin label as a botanical that may affect anticoagulation",
@@ -933,7 +933,7 @@
           "herb_card_status_zh": "藥庫無此卡"
         },
         {
-          "with": null,
+          "with": "supp.st_johns_wort",
           "with_label_en": "St. John’s wort",
           "with_label_zh": "聖約翰草",
           "effect_en": "Named in the warfarin label as a botanical that may affect anticoagulation",
@@ -945,7 +945,7 @@
           "herb_card_status_zh": "藥庫無此卡"
         },
         {
-          "with": null,
+          "with": "supp.echinacea",
           "with_label_en": "Echinacea",
           "with_label_zh": "紫錐花",
           "effect_en": "Named in the warfarin label as a botanical that may affect anticoagulation",
@@ -969,7 +969,7 @@
           "herb_card_status_zh": "藥庫無此卡"
         },
         {
-          "with": null,
+          "with": "supp.coq10",
           "with_label_en": "Co-enzyme Q10",
           "with_label_zh": "輔酶 Q10",
           "effect_en": "Named in the warfarin label as a botanical that may affect anticoagulation",
@@ -1037,6 +1037,10 @@
         ],
         "physiologic_effect_en": [
           "dailymed:c9928956-bb7b-4ec2-bc38-d3c9c4199cae#PHARMACODYNAMICS"
+        ],
+        "integrative_clinical_flags": [
+          "dailymed:c9928956-bb7b-4ec2-bc38-d3c9c4199cae#CONTRAINDICATIONS",
+          "dailymed:c9928956-bb7b-4ec2-bc38-d3c9c4199cae#ADVERSE_REACTIONS"
         ]
       },
       "gap_note_zh": "交互作用已分級(10 條,全部引用標籤)。植物藥標記為 unknown 並記錄已查來源。機轉、不良反應、作用部位與生理效應已於 2026-08-11 自標籤補入。孕期仍待補。",
@@ -1215,7 +1219,10 @@
       "site_of_action_en": "P2Y12 class of ADP receptors on platelets",
       "site_of_action_zh": "血小板上的 P2Y12 型 ADP 受體",
       "physiologic_effect_en": "Irreversible inhibition of ADP-induced platelet aggregation for the remainder of the platelet lifespan, about 7 to 10 days; average inhibition at steady state on 75 mg daily is 40% to 60%, and aggregation returns to baseline about 5 days after discontinuation",
-      "physiologic_effect_zh": "不可逆地抑制 ADP 誘發的血小板凝集,作用持續至該批血小板生命週期結束,約 7 至 10 天;每日 75 mg 於穩定狀態的平均抑制率為 40% 至 60%,停藥後約 5 天凝集功能回到基線"
+      "physiologic_effect_zh": "不可逆地抑制 ADP 誘發的血小板凝集,作用持續至該批血小板生命週期結束,約 7 至 10 天;每日 75 mg 於穩定狀態的平均抑制率為 40% 至 60%,停藥後約 5 天凝集功能回到基線",
+      "integrative_clinical_flags": [
+        "bleeding_risk"
+      ]
     },
     {
       "id": "drug.apixaban",
@@ -1268,6 +1275,10 @@
         ],
         "physiologic_effect_en": [
           "dailymed:a454cd24-0c6d-46e8-b1e4-197388606175#MECHANISM_OF_ACTION"
+        ],
+        "integrative_clinical_flags": [
+          "dailymed:a454cd24-0c6d-46e8-b1e4-197388606175#CONTRAINDICATIONS",
+          "dailymed:a454cd24-0c6d-46e8-b1e4-197388606175#ADVERSE_REACTIONS"
         ]
       },
       "acupuncture_note_zh": "黑框第二段講的是**神經軸麻醉與脊椎穿刺**,不是針灸。標籤沒有針對針刺給任何門檻,不要把這一條讀成「不能針」,也不要縮成「比較會出血」—— 它指名的後果是長期或永久癱瘓。臨床上可用的判斷是:督脈與夾脊等近脊椎深刺要特別謹慎,並確認最近一次服藥時間。DOAC 沒有 INR 可查,這是它與 warfarin 最大的差別。",
@@ -1307,7 +1318,10 @@
       "site_of_action_en": "Factor Xa, both free and clot-bound, and the prothrombinase complex",
       "site_of_action_zh": "游離態與結合於血栓上的 FXa,以及凝血酶原酶複合體",
       "physiologic_effect_en": "Decreased thrombin generation and thrombus development; no direct effect on platelet aggregation, but indirect inhibition of thrombin-induced platelet aggregation",
-      "physiologic_effect_zh": "減少凝血酶生成與血栓形成;對血小板凝集沒有直接作用,但可間接抑制凝血酶誘發的血小板凝集"
+      "physiologic_effect_zh": "減少凝血酶生成與血栓形成;對血小板凝集沒有直接作用,但可間接抑制凝血酶誘發的血小板凝集",
+      "integrative_clinical_flags": [
+        "bleeding_risk"
+      ]
     },
     {
       "id": "drug.rivaroxaban",
@@ -1360,6 +1374,10 @@
         ],
         "physiologic_effect_en": [
           "dailymed:481b7802-5093-43e7-bbd9-1532197eb6e6#PHARMACODYNAMICS"
+        ],
+        "integrative_clinical_flags": [
+          "dailymed:481b7802-5093-43e7-bbd9-1532197eb6e6#CONTRAINDICATIONS",
+          "dailymed:481b7802-5093-43e7-bbd9-1532197eb6e6#ADVERSE_REACTIONS"
         ]
       },
       "acupuncture_note_zh": "黑框第二段講的是**神經軸麻醉與脊椎穿刺**,不是針灸。標籤沒有針對針刺給任何門檻,不要把這一條讀成「不能針」,也不要縮成「比較會出血」—— 它指名的後果是長期或永久癱瘓。臨床上可用的判斷是:督脈與夾脊等近脊椎深刺要特別謹慎,並確認最近一次服藥時間。DOAC 沒有 INR 可查,這是它與 warfarin 最大的差別。",
@@ -1396,7 +1414,10 @@
       "site_of_action_en": "Free factor Xa and the prothrombinase complex",
       "site_of_action_zh": "游離態 FXa 與凝血酶原酶複合體",
       "physiologic_effect_en": "Dose-dependent inhibition of factor Xa activity with dose-dependent prolongation of prothrombin time and activated partial thromboplastin time; monitoring of the anticoagulant effect by anti-factor Xa activity or a clotting test is not recommended",
-      "physiologic_effect_zh": "呈劑量依賴性地抑制 FXa 活性,凝血酶原時間與活化部分凝血活酶時間也隨劑量延長;但不建議以抗 FXa 活性或凝血試驗來監測其抗凝血效果"
+      "physiologic_effect_zh": "呈劑量依賴性地抑制 FXa 活性,凝血酶原時間與活化部分凝血活酶時間也隨劑量延長;但不建議以抗 FXa 活性或凝血試驗來監測其抗凝血效果",
+      "integrative_clinical_flags": [
+        "bleeding_risk"
+      ]
     },
     {
       "id": "drug.dabigatran",
@@ -1455,6 +1476,10 @@
         "physiologic_effect_en": [
           "dailymed:3a8ec82a-c367-40dc-9302-e1896fcb05ea#MECHANISM_OF_ACTION",
           "dailymed:3a8ec82a-c367-40dc-9302-e1896fcb05ea#PHARMACODYNAMICS"
+        ],
+        "integrative_clinical_flags": [
+          "dailymed:3a8ec82a-c367-40dc-9302-e1896fcb05ea#CONTRAINDICATIONS",
+          "dailymed:3a8ec82a-c367-40dc-9302-e1896fcb05ea#ADVERSE_REACTIONS"
         ]
       },
       "exam_trap_zh": "⚠️ 機械性人工心臟瓣膜:達比加群是禁忌,華法林是適應症 —— 方向完全相反。這是 DOAC 不能一律取代 warfarin 的具體例子。",
@@ -1501,7 +1526,10 @@
       "site_of_action_en": "Thrombin (factor IIa), both free and clot-bound",
       "site_of_action_zh": "凝血酶(第二凝血因子活化型),包括游離態與結合於血栓上者",
       "physiologic_effect_en": "Prevention of thrombus development by blocking conversion of fibrinogen to fibrin; at therapeutic doses it prolongs aPTT, ECT, TT and dTT, while INR is relatively insensitive and cannot be interpreted as it is for warfarin",
-      "physiologic_effect_zh": "阻斷纖維蛋白原轉為纖維蛋白,藉此防止血栓形成;治療劑量下會延長 aPTT、ECT、TT 與 dTT,而 INR 對其相對不敏感,不能比照 warfarin 的方式判讀"
+      "physiologic_effect_zh": "阻斷纖維蛋白原轉為纖維蛋白,藉此防止血栓形成;治療劑量下會延長 aPTT、ECT、TT 與 dTT,而 INR 對其相對不敏感,不能比照 warfarin 的方式判讀",
+      "integrative_clinical_flags": [
+        "bleeding_risk"
+      ]
     },
     {
       "id": "drug.ticagrelor",
@@ -1557,6 +1585,11 @@
         ],
         "physiologic_effect_en": [
           "dailymed:557351f1-47b7-216d-e063-6394a90afb51#PHARMACODYNAMICS"
+        ],
+        "integrative_clinical_flags": [
+          "dailymed:557351f1-47b7-216d-e063-6394a90afb51#BOXED_WARNING",
+          "dailymed:557351f1-47b7-216d-e063-6394a90afb51#CONTRAINDICATIONS",
+          "dailymed:557351f1-47b7-216d-e063-6394a90afb51#ADVERSE_REACTIONS"
         ]
       },
       "exam_trap_zh": "⚠️ 禁忌是**顱內出血**病史,不是 TIA／中風 —— 那是普拉格雷。兩者常被對調。另外黑框特別寫「若可能不要停藥」,因為停藥本身會增加心血管事件。",
@@ -1590,7 +1623,10 @@
       "site_of_action_en": "Platelet P2Y12 ADP receptor",
       "site_of_action_zh": "血小板 P2Y12 ADP 受體",
       "physiologic_effect_en": "Reversible inhibition of platelet aggregation; maximum inhibition is reached at around 2 hours after a loading dose and maintained for at least 8 hours, and by 5 days after the last dose inhibition is similar to placebo",
-      "physiologic_effect_zh": "可逆地抑制血小板凝集;給予負荷劑量後約 2 小時達最大抑制並可維持至少 8 小時,末次給藥後 5 天抑制程度已與安慰劑相當"
+      "physiologic_effect_zh": "可逆地抑制血小板凝集;給予負荷劑量後約 2 小時達最大抑制並可維持至少 8 小時,末次給藥後 5 天抑制程度已與安慰劑相當",
+      "integrative_clinical_flags": [
+        "bleeding_risk"
+      ]
     },
     {
       "id": "drug.prasugrel",
@@ -1646,6 +1682,11 @@
         ],
         "physiologic_effect_en": [
           "dailymed:f51e64e0-f556-65d0-a876-fb709aaeefea#PHARMACODYNAMICS"
+        ],
+        "integrative_clinical_flags": [
+          "dailymed:f51e64e0-f556-65d0-a876-fb709aaeefea#BOXED_WARNING",
+          "dailymed:f51e64e0-f556-65d0-a876-fb709aaeefea#CONTRAINDICATIONS",
+          "dailymed:f51e64e0-f556-65d0-a876-fb709aaeefea#ADVERSE_REACTIONS"
         ]
       },
       "exam_trap_zh": "⚠️ TIA／中風病史是普拉格雷的禁忌 —— 這一條 clopidogrel 與 ticagrelor 都沒有。三個 P2Y12 抑制劑不可互換。",
@@ -1679,7 +1720,10 @@
       "site_of_action_en": "P2Y12 class of ADP receptors on platelets",
       "site_of_action_zh": "血小板上的 P2Y12 型 ADP 受體",
       "physiologic_effect_en": "Approximately 90% of patients achieve at least 50% inhibition of platelet aggregation within 1 hour of a 60 mg loading dose, with maximum inhibition about 80%; aggregation returns to baseline over 5 to 9 days after discontinuation, reflecting new platelet production",
-      "physiologic_effect_zh": "給予 60 mg 負荷劑量後 1 小時內,約 90% 的病人血小板凝集抑制達 50% 以上,最大抑制約 80%;停藥後 5 至 9 天凝集功能回到基線,反映的是新血小板生成而非藥物本身的藥動學"
+      "physiologic_effect_zh": "給予 60 mg 負荷劑量後 1 小時內,約 90% 的病人血小板凝集抑制達 50% 以上,最大抑制約 80%;停藥後 5 至 9 天凝集功能回到基線,反映的是新血小板生成而非藥物本身的藥動學",
+      "integrative_clinical_flags": [
+        "bleeding_risk"
+      ]
     },
     {
       "id": "drug.aspirin",
@@ -1738,6 +1782,9 @@
         "boxed_warning_checked_note_en": [
           "data/pharmacology/dailymed_api_responses.json#drug.aspirin",
           "https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/ac94cce3-9a39-41de-bb8b-10a5e5b8e83b.xml"
+        ],
+        "integrative_clinical_flags": [
+          "dailymed:ac94cce3-9a39-41de-bb8b-10a5e5b8e83b#WARNINGS"
         ]
       },
       "label_format_note_zh": "本筆引用的是 OTC「Drug Facts」格式標籤,不是處方藥的 PLR/舊格式 —— 沒有 BOXED WARNING 區段,對應內容在 Do not use 與 Warnings。欄位對照時要注意,不要因為沒有 boxed_warning 就以為漏查。",
@@ -1760,7 +1807,10 @@
       "medlineplus_verified_on": "2026-08-09",
       "medlineplus_scope": "ingredient_broad",
       "boxed_warning_checked_note_zh": "依 DailyMed SPL(查證日 2026-08-11,setid ac94cce3-9a39-41de-bb8b-10a5e5b8e83b)未標記黑框警語區段(LOINC 34066-1)。",
-      "boxed_warning_checked_note_en": "Per the DailyMed SPL (checked 2026-08-11, setid ac94cce3-9a39-41de-bb8b-10a5e5b8e83b), no boxed-warning section (LOINC 34066-1) is coded."
+      "boxed_warning_checked_note_en": "Per the DailyMed SPL (checked 2026-08-11, setid ac94cce3-9a39-41de-bb8b-10a5e5b8e83b), no boxed-warning section (LOINC 34066-1) is coded.",
+      "integrative_clinical_flags": [
+        "bleeding_risk"
+      ]
     },
     {
       "id": "drug.enoxaparin",
@@ -1817,6 +1867,10 @@
         ],
         "physiologic_effect_en": [
           "dailymed:5e7568a6-cf8a-4de2-86ba-b94c8ab4c806#PHARMACODYNAMICS"
+        ],
+        "integrative_clinical_flags": [
+          "dailymed:5e7568a6-cf8a-4de2-86ba-b94c8ab4c806#CONTRAINDICATIONS",
+          "dailymed:5e7568a6-cf8a-4de2-86ba-b94c8ab4c806#ADVERSE_REACTIONS"
         ]
       },
       "acupuncture_note_zh": "這是全 P1 層唯一列出**風險因子清單**的黑框,其中兩條值得注意:①「併用影響止血的藥物(NSAID、抗血小板藥、其他抗凝劑)」——雙重抗凝／抗血小板的病人風險更高;②「曾有創傷性或反覆的硬膜外／脊椎穿刺病史」。第②條講的是硬膜外與脊椎穿刺,**不是針灸**,標籤沒有把針刺納入。但它說明了「反覆穿刺」本身是風險因子,近脊椎深刺時值得納入判斷。標籤未給任何針灸門檻,不要自行推導一個。",
@@ -1865,7 +1919,10 @@
       "site_of_action_en": "Factor Xa and, to a much lesser extent, factor IIa (thrombin)",
       "site_of_action_zh": "第十凝血因子活化型 (FXa),對第二凝血因子活化型(凝血酶)的作用則小得多",
       "physiologic_effect_en": "Anti-factor Xa activity predominates over anti-factor IIa activity, with a mean ratio of 14.0 compared with 1.22 for unfractionated heparin; thrombin time and aPTT are increased up to 1.8 times control values",
-      "physiologic_effect_zh": "抗 FXa 活性明顯強於抗 FIIa 活性,平均比值為 14.0,而未分餾肝素僅 1.22;凝血酶時間與 aPTT 最多可延長至對照值的 1.8 倍"
+      "physiologic_effect_zh": "抗 FXa 活性明顯強於抗 FIIa 活性,平均比值為 14.0,而未分餾肝素僅 1.22;凝血酶時間與 aPTT 最多可延長至對照值的 1.8 倍",
+      "integrative_clinical_flags": [
+        "bleeding_risk"
+      ]
     },
     {
       "id": "drug.heparin",
@@ -1939,6 +1996,11 @@
           "translated 2026-09-07 from boxed_warning_checked_note_zh (Claude)",
           "data/pharmacology/dailymed_api_responses.json#drug.heparin",
           "https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/9ea0a519-dc7c-42e3-939e-2a7c80eedd25.xml"
+        ],
+        "integrative_clinical_flags": [
+          "dailymed:9ea0a519-dc7c-42e3-939e-2a7c80eedd25#CONTRAINDICATIONS",
+          "dailymed:9ea0a519-dc7c-42e3-939e-2a7c80eedd25#WARNINGS_AND_PRECAUTIONS",
+          "dailymed:9ea0a519-dc7c-42e3-939e-2a7c80eedd25#ADVERSE_REACTIONS"
         ]
       },
       "exam_trap_zh": "⚠️ 禁忌明列「無法在適當間隔進行凝血檢驗時」—— 肝素需要監測(aPTT),這與 DOAC 無監測、warfarin 用 INR 各不相同。三種抗凝劑三種監測方式。",
@@ -1993,7 +2055,10 @@
       "site_of_action_zh": "血漿中的抗凝血酶 III;所形成的複合體再去抑制已活化的凝血因子,尤以 Xa 與 IIa(凝血酶)為主",
       "physiologic_effect_en": "Full therapeutic doses prolong the activated clotting time, activated partial thromboplastin time, prothrombin time and whole blood clotting time; low doses usually do not measurably affect them, and bleeding time is usually unaffected. Existing clots are not lysed.",
       "physiologic_effect_zh": "足量治療劑量會延長活化凝血時間、活化部分凝血活酶時間、凝血酶原時間與全血凝固時間;低劑量通常不會造成可測得的改變,出血時間一般也不受影響。既有的血栓不會被溶解。",
-      "boxed_warning_checked_note_en": "This label carries **no** boxed warning — verified, not an omission. Low-molecular-weight heparin (enoxaparin), by contrast, carries a spinal/epidural hematoma boxed warning; the two are different drugs — do not carry one over to the other."
+      "boxed_warning_checked_note_en": "This label carries **no** boxed warning — verified, not an omission. Low-molecular-weight heparin (enoxaparin), by contrast, carries a spinal/epidural hematoma boxed warning; the two are different drugs — do not carry one over to the other.",
+      "integrative_clinical_flags": [
+        "bleeding_risk"
+      ]
     },
     {
       "id": "drug.losartan",
@@ -6373,7 +6438,7 @@
       ],
       "herb_drug_interactions_graded": [
         {
-          "with": null,
+          "with": "supp.st_johns_wort",
           "with_label_en": "St. John's Wort (Hypericum perforatum)",
           "with_label_zh": "聖約翰草(貫葉連翹)",
           "effect_en": "Named in the estradiol label as a CYP3A4 inducer that may reduce plasma estrogen concentrations",
@@ -6541,7 +6606,7 @@
       ],
       "herb_drug_interactions_graded": [
         {
-          "with": null,
+          "with": "supp.st_johns_wort",
           "with_label_en": "St. John's Wort (rifampin listed alongside as CYP3A4 inducer example)",
           "with_label_zh": "聖約翰草(標籤與 rifampin 並列為 CYP3A4 誘導劑範例)",
           "effect_en": "CYP3A4 induction may decrease zolpidem plasma levels/effect",
@@ -7085,7 +7150,7 @@
       ],
       "herb_drug_interactions_graded": [
         {
-          "with": null,
+          "with": "supp.st_johns_wort",
           "with_label_en": "St. John's Wort",
           "with_label_zh": "聖約翰草",
           "effect_en": "Listed among serotonergic agents/examples that increase serotonin syndrome risk in the sertraline label's drug interaction section",
@@ -7265,7 +7330,7 @@
       ],
       "herb_drug_interactions_graded": [
         {
-          "with": null,
+          "with": "supp.st_johns_wort",
           "with_label_en": "St. John's Wort",
           "with_label_zh": "聖約翰草",
           "effect_en": "Listed among serotonergic agents that increase serotonin syndrome risk with escitalopram",
@@ -7467,7 +7532,7 @@
       ],
       "herb_drug_interactions_graded": [
         {
-          "with": null,
+          "with": "supp.st_johns_wort",
           "with_label_en": "St. John's Wort",
           "with_label_zh": "聖約翰草",
           "effect_en": "Named in the trazodone label's drug interaction table as an example serotonergic agent increasing serotonin syndrome risk",
@@ -8328,7 +8393,7 @@
       ],
       "herb_drug_interactions_graded": [
         {
-          "with": null,
+          "with": "supp.st_johns_wort",
           "with_label_en": "St. John's Wort",
           "with_label_zh": "聖約翰草",
           "effect_en": "CYP2C19/3A4 induction substantially decreases omeprazole plasma concentrations — avoid concomitant use",
