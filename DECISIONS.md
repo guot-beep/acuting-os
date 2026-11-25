@@ -1307,7 +1307,7 @@ PASS(composition 查無藥材維持 1 味次 `formula.huang_tu_tang` 的「灶�
 - **Reconsider only if**:病歷開始記天數(屆時天數假設只當後備);或她開診所後要依預估門診量放大推估;
   或要每半年自動寄信(與 D36 的每日 email 同一個 Cloudflare 寄信綁定)。
 
-## D38 — 病例西醫層:檢查卡 `exam.*`、用藥清單沿用 `agentExposures`、中西藥交互「只列配對與來源」 · PROPOSED(Claude 設計,2026-11-24,等 Ting 核准)
+## D38 — 病例西醫層:檢查卡 `exam.*`、用藥清單沿用 `agentExposures`、中西藥交互「只列配對與來源」 · ACCEPTED(Claude 設計 2026-11-24;Ting 2026-11-25 核准原話:「Approve D38」)
 
 - **背景**:Ting 2026-11-24 要把西醫檢查、藥理、中西藥交互放進病例 —— 很多病人(IVF、腸胃病、憂鬱、癌症)用藥複雜,
   而且看過「一個基本骨科檢查就能及早轉 MRI,卻扎了好幾週」的例子。設計全文 `docs/CLINICAL_WESTERN_LAYER_DESIGN.md`;
@@ -1337,7 +1337,7 @@ PASS(composition 查無藥材維持 1 味次 `formula.huang_tu_tang` 的「灶�
      授權不允許轉載的來源(MSK About Herbs、NatMed、MedlinePlus 的 ASHP 藥物說明)只能記「查過、日期、連結」。
   10. **檢查卡第一批的範圍與順序 = SWCS2 Lab 50 項**(Ting 2026-11-24 核准原話:「Use those 50」)。每張卡記
       `curriculum_refs: ["swcs2_lab#N"]`;卡片文字從公開來源寫,校內講義不進 repo;課程用名與文獻用名不同時兩個都留(`aliases`)。
-      **這一點已核准;D38 其餘各點仍是 PROPOSED。**
+      (2026-11-24 先核准這一點;2026-11-25 整份 D38 核准。)
 - **UI 凍結(D32)**:第 0 期起每個動 `js/**` 的 commit 都是凍結例外,commit 訊息附 Ting 核准原話。
 - **不重開 Safety Layer Phase 1**;這是另一條線。
 - **Reconsider only if**:檢查卡需要連到尚未存在的解剖層(屆時 `exam.*` 加 `muscle_ids`,不改 `supports_condition_ids`);

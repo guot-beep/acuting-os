@@ -1,6 +1,6 @@
 # 病例西醫層設計:西醫檢查 × 用藥清單 × 中西藥交互
 
-**狀態:僅設計,等 Ting 核准(DECISIONS 提案 D38)。** 這份文件沒有改任何 `data/**` 或 `js/**`。
+**狀態:D38 已核准(Ting 2026-11-25「Approve D38」),第 0 期施工中。** 設計本身沒有改任何 `data/**` 或 `js/**`;施工另有 commit。
 **量測的版本:** `claude/suspicious-williams-968e01` @ `cfeff188`(= 2026-11-24 時的 `origin/main`)。
 **怎麼重新量:** `node scripts/report-clinical-western-inventory.js`(唯讀、不讀病人資料;本文的每個數字都出自它)。
 **和既有規則的關係:** 這是新的一條線,**不重開也不擴充 Safety Layer Phase 1(已凍結)**。
